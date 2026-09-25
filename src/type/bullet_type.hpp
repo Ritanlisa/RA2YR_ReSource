@@ -108,16 +108,6 @@ public:
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x46c730
     int ProcessImpact(int a1);  // 0x69fc10
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    unsigned char * Construct(ObjectClass * aP1);  // 0x46BBC0
-    unsigned int * GetROF(unsigned int * a1, int * a2);  // 0x46C4F0
-    int GetClassIdentifier(int a1, unsigned int * a2);  // 0x46C750
-    int GetTypeIdentifier();  // 0x46C850
-    int GetObjectSize();  // 0x46C860
-    char Stub(int a1, int a2);  // 0x46C870
-    int StubReturnFalse(int a1);  // 0x46C880
-    BulletTypeClass * ddtor(void ** Block, char a2);  // 0x46C890
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

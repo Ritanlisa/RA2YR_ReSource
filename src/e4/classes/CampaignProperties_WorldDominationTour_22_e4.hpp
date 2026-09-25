@@ -5,10 +5,19 @@
 
 namespace gamemd {
 struct CampaignProperties_WorldDominationTour_22 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+    void* q004;  // 0x4
+    int q008;  // 0x8
+    unsigned int q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    unsigned int q018;  // 0x18
+    unsigned char q01C;  // 0x1C
+    unsigned int q024;  // 0x24
+// --- flat members (END) ---
     int Seek(int a2);  // 0x5D2770
     int Read(unsigned int * a2);  // 0x5D2900
-    VectorClass * QueryInterface(char a2);  // 0x5D2CA0
+    VectorClass_flat * QueryInterface(char a2);  // 0x5D2CA0
     BOOL AddRef();  // 0x76F0F0
     unsigned int * Release();  // 0x76F1A0
     unsigned int * ddtor();  // 0x76F1B0

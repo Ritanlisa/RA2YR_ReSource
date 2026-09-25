@@ -1,8 +1,15 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/VoxelPaletteClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x758A30
+namespace gamemd {
 int VoxelPaletteClass::ConvertFromFile(int a2)
 {
   int v3; // ebx
@@ -21,12 +28,12 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
   v5 = v9[1]; /*0x758a66*/
   *this = v9[0]; /*0x758a6a*/
   v6 = v9[3]; /*0x758a6c*/
-  *(this + 2) = v4; /*0x758a70*/
-  v7 = *(this + 4); /*0x758a73*/
-  *(this + 1) = v5; /*0x758a76*/
-  *(this + 3) = v6; /*0x758a79*/
+  this->q020 = v4; /*0x758a70*/
+  v7 = this->u32_10; /*0x758a73*/
+  this->u32_4 = v5; /*0x758a76*/
+  this->u32_C = v6; /*0x758a79*/
   if ( (*(int (__thiscall **)(int, int, int))(*(_DWORD *)a2 + 36))(a2, v7, 768) != 768 /*0x758aaa*/
-    || (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a2 + 36))(a2, *(this + 5), *(this + 2) << 8) != *(this + 2) << 8 )
+    || (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a2 + 36))(a2, this->u32_14, this->q020 << 8) != this->q020 << 8 )
   {
   LABEL_5:
     v3 = 1; /*0x758aac*/
@@ -34,7 +41,9 @@ int VoxelPaletteClass::ConvertFromFile(int a2)
   (*(void (__thiscall **)(int))(*(_DWORD *)a2 + 52))(a2); /*0x758ab5*/
   return v3; /*0x758ab8*/
 }
+} // namespace gamemd
 // 0x753B70
+namespace gamemd {
 int VoxelPaletteClass::LoadFromFile()
 {
   int v2; // esi
@@ -49,3 +58,4 @@ int VoxelPaletteClass::LoadFromFile()
   VoxelPalette::Reset((int)v4); /*0x753bbf*/
   return v2; /*0x753bc6*/
 }
+} // namespace gamemd

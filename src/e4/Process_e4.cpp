@@ -2,14 +2,18 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x664610
+namespace gamemd {
 bool Process::WaitForExit(DWORD dwMilliseconds, CellStruct * aP2)
 {
   const HANDLE *v3; // esi
   BOOL v5; // eax
 
-  v3 = this + 7; /*0x664614*/
+  v3 = &this->q01C; /*0x664614*/
   Debug::Log(); /*0x66461d*/
   if ( !*v3 ) /*0x664629*/
     return 1; /*0x664629*/
@@ -35,3 +39,4 @@ bool Process::WaitForExit(DWORD dwMilliseconds, CellStruct * aP2)
     return 0; /*0x66468c*/
   }
 }
+} // namespace gamemd

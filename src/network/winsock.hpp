@@ -45,13 +45,6 @@ protected:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* ProcessPacket(int a1);  // 0x770270 -- WinsockInterface::ProcessPacket
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    int Destru_vt13();  // 0x7B2740
-    int Destru_vt14(int a1);  // 0x7B2750
-    char Destru_vt15(int a1);  // 0x7B2760
-    int Destru_vt16(int a1, int a2, int a3, int a4);  // 0x7B2770
-    SOCKET * Destru_vt00(SOCKET * Block, char a2);  // 0x7B2780
-// --- e4 declarations (END) ---
 };
 
 // CSP: IPXInterfaceClass matched via T1
@@ -111,14 +104,6 @@ protected:
     int GetAddress();  // 0x7b25e0
     int ReceivePacket(int a1, int a2);  // 0x7b26d0
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    unsigned int * Construct();  // 0x7B0D90
-    void StubReturnFalse(int a1, int a2);  // 0x7B1720
-    void GetQueueSize();  // 0x7B1730
-    int COMStub_Return0();  // 0x7B1740
-    int Send(int a1);  // 0x7B1750
-    int COMStub_Return1();  // 0x7B1770
-// --- e4 declarations (END) ---
 };
 
 class UDPInterfaceClass
@@ -167,9 +152,6 @@ protected:
     int sendPacket(int a1);  // 0x7b4550 -- UDPInterfaceClass::sendPacket
     void* receivePacket(int a1);  // 0x7b45d0 -- UDPInterfaceClass::receivePacket
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    UDPInterfaceClass * Destructor(void *** Block, char a2);  // 0x7B4170
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

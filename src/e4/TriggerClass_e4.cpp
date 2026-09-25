@@ -2,6 +2,16 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/TriggerClass_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/TEventClass_e4.hpp"
+#include "e4/classes/Trigger_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x610950
 namespace gamemd {
@@ -24,10 +34,10 @@ char TriggerClass::FindByEventType(char a1)
     if ( dword_AC1CC8 ) /*0x610978*/
       (**(void (__thiscall ***)(int, int))dword_AC1CC8)(dword_AC1CC8, 1); /*0x61097e*/
     dword_AC1CC8 = 0; /*0x610982*/
-    v2 = __2_YAPAXI_Z(0x20u); /*0x61098d*/
+    v2 = RA2_OPNEW(0x20u); /*0x61098d*/
     if ( v2 ) /*0x610994*/
     {
-      v4 = HIDWORD(xmmword_AC1CB8); /*0x61099b*/
+      v4 = IDA_HIDWORD(xmmword_AC1CB8); /*0x61099b*/
       v3 = DWORD2(xmmword_AC1CB8); /*0x61099b*/
       v2[1] = DWORD2(xmmword_AC1CB8); /*0x6109a1*/
       v2[2] = v4; /*0x6109a9*/
@@ -60,16 +70,16 @@ char TriggerClass::FindByEventType(char a1)
     v6 = -1; /*0x610a42*/
   else
     v6 = ((int)(unsigned __int8)dword_AC48B0 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x610a8d*/
-       | (BYTE1(dword_AC48B0) >> g_BitMask_Blue << g_BitMask_Green)
-       | (BYTE2(dword_AC48B0) >> g_BitMask_Red << g_BitShift_Blue);
+       | (IDA_BYTE1(dword_AC48B0) >> g_BitMask_Blue << g_BitMask_Green)
+       | (IDA_BYTE2(dword_AC48B0) >> g_BitMask_Red << g_BitShift_Blue);
   (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0); /*0x610a9d*/
   (*(void (__thiscall **)(int, __int128 *, int))(*(_DWORD *)g_DSurface_Primary + 20))(g_DSurface_Primary, &v8, v6); /*0x610aae*/
   (*(void (__thiscall **)(int))(*(_DWORD *)g_DSurface_Primary + 96))(g_DSurface_Primary); /*0x610ab9*/
   Team_Find((int *)&v8, g_DSurface_Primary, 8, 4); /*0x610aca*/
   v7 = wcslen(word_AC1CCC); /*0x610ae0*/
   DrawTextRendererTextAligned(yTop, 0, (int *)&v8, word_AC1CCC, v7, 1, 1, g_DSurface_Primary, 0); /*0x610afb*/
-  HIDWORD(v8) -= 2; /*0x610b1e*/
-  LODWORD(v8) = v8 + 1; /*0x610b2a*/
+  IDA_HIDWORD(v8) -= 2; /*0x610b1e*/
+  IDA_LODWORD(v8) = v8 + 1; /*0x610b2a*/
   ++DWORD1(v8); /*0x610b2e*/
   DWORD2(v8) -= 2; /*0x610b32*/
   DrawDialogGradient((int *)g_DSurface_Primary, (int *)&v8, 1, -1); /*0x610b36*/
@@ -80,7 +90,7 @@ char TriggerClass::FindByEventType(char a1)
 namespace gamemd {
 int TriggerClass::GetValue()
 {
-  return *(this + 21); /*0x71fa33*/
+  return *(&this->vtable31); /*0x71fa33*/
 }
 }
 // 0x7264C0
@@ -93,26 +103,26 @@ int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, 
   int v11; // [esp-10h] [ebp-18h]
   char v12; // [esp+7h] [ebp-1h]
 
-  if ( !*(_BYTE *)(this + 68) || *(_BYTE *)(this + 48) ) /*0x7264cf*/
+  if ( !this->enabled || this->destroyed ) /*0x7264cf*/
     return 0; /*0x7265b4*/
   v12 = 1; /*0x7264e2*/
   if ( a4 ) /*0x7264e7*/
     goto LABEL_16; /*0x7264e7*/
   v7 = 0; /*0x7264f0*/
-  v8 = *(_DWORD **)(*(_DWORD *)(this + 36) + 172); /*0x7264f2*/
+  v8 = this->buildingType->FirstEvent; /*0x7264f2*/
   if ( !v8 ) /*0x7264fa*/
     goto LABEL_16; /*0x7264fa*/
   do /*0x72658b*/
   {
-    if ( (*(_DWORD *)(this + 64) & (1 << v7)) != 0 /*0x726540*/
+    if ( (this->occuredEvents & (1 << v7)) != 0 /*0x726540*/
       || (v11 = a6,
-          Owner = HouseClass::FindOwner(*(void **)(*(_DWORD *)(*(_DWORD *)(this + 36) + 164) + 180)),
-          TEventClass::Execute(v8, aP1, Owner, aP2, (int *)(this + 52), (int)&a5, v11)) )
+          Owner = HouseClass::FindOwner(*(void **)(this->buildingType->House + 180)),
+          TEventClass::Execute(v8, aP1, Owner, aP2, (int *)(&this->abstractFlags2), (int)&a5, v11)) )
     {
       if ( TriggerClass::GetValue(v8) ) /*0x726551*/
-        *(_DWORD *)(this + 44) = TriggerClass::GetValue(v8); /*0x726561*/
+        this->house = TriggerClass::GetValue(v8); /*0x726561*/
       if ( a5 && TEventClass::GetStateA(v8) && TEventClass::GetStateB_SpyEvent(v8) ) /*0x726579*/
-        *(_DWORD *)(this + 64) |= 1 << v7; /*0x726582*/
+        this->occuredEvents |= 1 << v7; /*0x726582*/
     }
     else
     {
@@ -126,7 +136,7 @@ int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, 
   {
   LABEL_16:
     if ( a5 ) /*0x7265a0*/
-      BuildingClass::ProcessUpgradeEffects((int *)this); /*0x7265a4*/
+      BuildingClass::ProcessUpgradeEffects(); /*0x7265a4*/
   }
   return v12; /*0x7265af*/
 }
@@ -157,10 +167,10 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x726876*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x72687f*/
-      *aP0 = (int)&TriggerClass::`vftable'; /*0x726884*/
-      aP0[1] = (int)&TriggerClass::`vftable'; /*0x72688a*/
-      aP0[2] = (int)&TriggerClass::`vftable'; /*0x726891*/
-      aP0[3] = (int)&TriggerClass::`vftable'; /*0x726898*/
+      *aP0 = (int)&(void*)(void*)&TriggerClass_vftable; /*0x726884*/
+      aP0[1] = (int)&(void*)(void*)&TriggerClass_vftable; /*0x72688a*/
+      aP0[2] = (int)&(void*)(void*)&TriggerClass_vftable; /*0x726891*/
+      aP0[3] = (int)&(void*)(void*)&TriggerClass_vftable; /*0x726898*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x7268a8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x7268b6*/

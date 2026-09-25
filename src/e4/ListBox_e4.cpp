@@ -1,8 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/ListBox_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/LinkedList_flat_e4.hpp"
 
 // 0x614190
+namespace gamemd {
 unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar_t * lParam)
 {
   LRESULT (__stdcall *v4)(HWND, UINT, WPARAM, LPARAM); // esi
@@ -247,11 +252,11 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
       if ( (WindowLongA & 4) != 0 ) /*0x614450*/
       {
         v16 = CallWindowProcA(lpPrevWndFunc, hWnd, 0xEu, 0, 0) + 3; /*0x614473*/
-        v17 = (char *)__2_YAPAXI_Z(v16); /*0x614486*/
+        v17 = (char *)RA2_OPNEW(v16); /*0x614486*/
         CallWindowProcA(lpPrevWndFunc, hWnd, 0xDu, v16, (LPARAM)v17); /*0x61448e*/
         strcat(v17, String2); /*0x6144b3*/
         CallWindowProcA(lpPrevWndFunc, hWnd, 0xCu, 0, (LPARAM)v17); /*0x6144cb*/
-        __3_YAXPAX_Z(v17); /*0x6144ce*/
+        RA2_OPDEL(v17); /*0x6144ce*/
         v18 = GetWindowLongA(hWnd, -12); /*0x6144e0*/
         v36 = hWnd; /*0x6144f7*/
         v35 = v18 | 0x5010000; /*0x6144f8*/
@@ -272,3 +277,4 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
     return 0; /*0x61454c*/
   }
 }
+} // namespace gamemd

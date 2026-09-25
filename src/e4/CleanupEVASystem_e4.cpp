@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/ColorListClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x72DC20
 namespace gamemd {
@@ -17,7 +21,7 @@ void sub_72DC20()
     if ( dword_B0FB48 ) /*0x72dc35*/
     {
       FileTreeNode::Destroy(dword_B0FB48); /*0x72dc39*/
-      __3_YAXPAX_Z(v0); /*0x72dc3f*/
+      RA2_OPDEL(v0); /*0x72dc3f*/
     }
     byte_B0FCC8 = 0; /*0x72dc47*/
   }
@@ -28,7 +32,7 @@ void sub_72DC20()
     if ( dword_B0FB10 ) /*0x72dc64*/
     {
       FileTreeNode::Destroy(dword_B0FB10); /*0x72dc68*/
-      __3_YAXPAX_Z(v1); /*0x72dc6e*/
+      RA2_OPDEL(v1); /*0x72dc6e*/
     }
     byte_B0FCCA = 0; /*0x72dc76*/
   }
@@ -39,7 +43,7 @@ void sub_72DC20()
     if ( dword_B0F9F8 ) /*0x72dc93*/
     {
       FileTreeNode::Destroy(dword_B0F9F8); /*0x72dc97*/
-      __3_YAXPAX_Z(v2); /*0x72dc9d*/
+      RA2_OPDEL(v2); /*0x72dc9d*/
     }
     byte_B0FCCB = 0; /*0x72dca5*/
   }
@@ -50,7 +54,7 @@ void sub_72DC20()
     if ( dword_B0FA6C ) /*0x72dcc2*/
     {
       FileTreeNode::Destroy(dword_B0FA6C); /*0x72dcc6*/
-      __3_YAXPAX_Z(v3); /*0x72dccc*/
+      RA2_OPDEL(v3); /*0x72dccc*/
     }
     byte_B0FCCC = 0; /*0x72dcd4*/
   }

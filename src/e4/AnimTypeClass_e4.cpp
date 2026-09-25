@@ -6,6 +6,13 @@
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/VoxelAnimType_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/ArtConfig_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/Animation_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x41E350
 namespace gamemd {
@@ -13,7 +20,7 @@ unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
 {
   int v3; // eax
 
-  AbstractTypeClass::Constructor((int)this, aP1); /*0x41e359*/
+  AbstractTypeClass::Constructor(aP1); /*0x41e359*/
   *(&this->vtable48) = -1; /*0x41e363*/
   *(&this->uniqueId2) = -1; /*0x41e369*/
   *(&this->uniqueId6) = 0; /*0x41e374*/
@@ -37,10 +44,10 @@ unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
   *(&this->abstractFlags6) = 0; /*0x41e3ef*/
   *(&this->nextArrayIndex5) = 0; /*0x41e3f5*/
   *(&this->nextArrayIndex6) = 0; /*0x41e3fb*/
-  *this = &AITriggerTypeClass::`vftable'; /*0x41e401*/
-  this->vtable2 = &AITriggerTypeClass::`vftable'; /*0x41e407*/
-  this->vtable3 = &AITriggerTypeClass::`vftable'; /*0x41e40e*/
-  this->vtable4 = &AITriggerTypeClass::`vftable'; /*0x41e415*/
+  *this = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e401*/
+  this->vtable2 = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e407*/
+  this->vtable3 = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e40e*/
+  this->vtable4 = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e415*/
   memset(&this->u32_E4, 0, 0x20u); /*0x41e41c*/
   if ( g_AnimTypeInitQueue < dword_A8B208 /*0x41e452*/
     || (byte_A8B20D || !dword_A8B208)
@@ -65,7 +72,7 @@ unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
   int v5; // eax
   void **v6; // ecx
 
-  ObjectTypeClass::ConstructFull((int)this, aP1); /*0x42753a*/
+  ObjectTypeClass::ConstructFull(aP1); /*0x42753a*/
   *(&this->DetailLevel5) = -1; /*0x427544*/
   *(&this->DetailLevel6) = 0; /*0x42754a*/
   *(&this->DetailLevel7) = 0; /*0x427550*/
@@ -143,10 +150,10 @@ unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
   this->Shadow = 0; /*0x42771e*/
   this->PsiWarning = 0; /*0x427724*/
   this->ShouldFogRemove = 1; /*0x42772a*/
-  *this = &AnimTypeClass::`vftable'; /*0x427731*/
-  this->vtable2 = &AnimTypeClass::`vftable'; /*0x427737*/
-  this->vtable3 = &AnimTypeClass::`vftable'; /*0x42773d*/
-  this->vtable4 = &AnimTypeClass::`vftable'; /*0x427744*/
+  *this = &(void*)(void*)&AnimTypeClass_vftable; /*0x427731*/
+  this->vtable2 = &(void*)(void*)&AnimTypeClass_vftable; /*0x427737*/
+  this->vtable3 = &(void*)(void*)&AnimTypeClass_vftable; /*0x42773d*/
+  this->vtable4 = &(void*)(void*)&AnimTypeClass_vftable; /*0x427744*/
   AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x42774b*/
   this->q234 = 1; /*0x427750*/
   this->q22F = 1; /*0x427757*/
@@ -211,18 +218,18 @@ void* AnimTypeClass::GetWarhead(int a2)
   char v9; // dl
   char Buffer[512]; // [esp+4h] [ebp-200h] BYREF
 
-  LOBYTE(v3) = this->DemandLoad; /*0x427b59*/
+  IDA_LOBYTE(v3) = this->DemandLoad; /*0x427b59*/
   if ( !(_BYTE)v3 ) /*0x427b61*/
   {
     if ( this->q22C ) /*0x427b67*/
     {
-      LOBYTE(v3) = ObjectTypeClass::Load2DArt((char *)this); /*0x427b71*/
+      IDA_LOBYTE(); /*0x427b71*/
     }
     else
     {
       if ( this->Image && this->ImageAllocated ) /*0x427b85*/
       {
-        __3_YAXPAX_Z(*(void **)(&this->DetailLevel4)); /*0x427b90*/
+        RA2_OPDEL(*(void **)(&this->DetailLevel4)); /*0x427b90*/
         this->ImageAllocated = 0; /*0x427b98*/
       }
       v4 = this->ImageFile; /*0x427b9f*/
@@ -260,7 +267,7 @@ void* AnimTypeClass::GetWarhead(int a2)
     this->MiddleFrameWidth = v6->u32_6 / 2; /*0x427c6b*/
     this->q29C = -1; /*0x427c74*/
     this->q2A0 = -1; /*0x427c7a*/
-    LOBYTE(v3) = -1; /*0x427c71*/
+    IDA_LOBYTE(v3, unsigned int a1) = -1; /*0x427c71*/
   }
   return v3; /*0x427c80*/
 }
@@ -353,16 +360,16 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2)
       *(_DWORD *)(a1 + 704) *= 2; /*0x427d6d*/
     v5 = *(_DWORD *)(a1 + 704); /*0x427d73*/
     if ( *(_DWORD *)(a1 + 700) > v5 ) /*0x427d81*/
-      *(_DWORD *)(a1 + 700) = v5; /*0x427d83*/
+      *(_DWORD *, unsigned int a1)(a1 + 700) = v5; /*0x427d83*/
   }
   if ( *(_BYTE *)(a1 + 504) ) /*0x427d89*/
   {
     if ( !*(_DWORD *)(a1 + 164) ) /*0x427d93*/
     {
       *(_BYTE *)(a1 + 556) = INIClass::ReadBool_Overwrite(a1 + 36, g_INI_Key_Theater, *(_BYTE *)(a1 + 556)); /*0x427db4*/
-      *(_BYTE *)(a1 + 567) = INIClass::ReadBool_Overwrite(a1 + 36, aNewtheater, *(_BYTE *)(a1 + 567)); /*0x427dd1*/
+      *(_BYTE *, unsigned int a1)(a1 + 567) = INIClass::ReadBool_Overwrite(a1 + 36, aNewtheater, *(_BYTE *)(a1 + 567)); /*0x427dd1*/
     }
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)a1 + 160))(a1, -1); /*0x427ddd*/
+    (*(void (__thiscall **, unsigned int a1)(int, int))(*(_DWORD *)a1 + 160))(a1, -1); /*0x427ddd*/
   }
   *(_DWORD *)(a1 + 868) = AnimTypeClass::ReadINIString(a1 + 36, aLayer, *(_DWORD *)(a1 + 868)); /*0x427df7*/
   *(_BYTE *)(a1 + 865) = INIClass::ReadBool_Overwrite(a1 + 36, aAltpalette, *(_BYTE *)(a1 + 865)); /*0x427e14*/
@@ -432,7 +439,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2)
   v15 = *(_DWORD *)(a1 + 796); /*0x42818e*/
   v16 = *(_DWORD *)(a1 + 792); /*0x428194*/
   *(double *)(a1 + 808) = a2; /*0x42819a*/
-  INIClass::ReadDouble_Overwrite(a1 + 36, (int)aMinzvel, COERCE_DOUBLE(__PAIR64__(v15, v16))); /*0x4281aa*/
+  INIClass::ReadDouble_Overwrite(a1 + 36, (int)aMinzvel, COERCE_DOUBLE(IDA___PAIR64__(v15, v16))); /*0x4281aa*/
   v17 = *(_DWORD *)(a1 + 844); /*0x4281af*/
   *(double *)(a1 + 792) = a2; /*0x4281b7*/
   v18 = INIClass::ReadInt_Overwrite(a1 + 36, aMakeinfantry, v17); /*0x4281c4*/
@@ -557,7 +564,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2)
       goto LABEL_47; /*0x4284af*/
     }
   LABEL_43:
-    v40 = __2_YAPAXI_Z(0x378u); /*0x42848c*/
+    v40 = RA2_OPNEW(0x378u); /*0x42848c*/
     if ( v40 ) /*0x428496*/
       v41 = AnimTypeClass::Construct(v40, Source); /*0x42849f*/
     else
@@ -589,7 +596,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2)
   if ( g_BuildingTypeCount2 <= 0 ) /*0x42851a*/
   {
   LABEL_54:
-    v44 = __2_YAPAXI_Z(0x378u); /*0x428544*/
+    v44 = RA2_OPNEW(0x378u); /*0x428544*/
     if ( v44 ) /*0x428553*/
     {
       v45 = AnimTypeClass::Construct(v44, Source); /*0x42855c*/
@@ -628,7 +635,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2)
       goto LABEL_70; /*0x428629*/
     }
   LABEL_65:
-    v48 = __2_YAPAXI_Z(0x378u); /*0x428606*/
+    v48 = RA2_OPNEW(0x378u); /*0x428606*/
     if ( v48 ) /*0x428610*/
       v49 = AnimTypeClass::Construct(v48, Source); /*0x428619*/
     else
@@ -716,10 +723,10 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( a1 ) /*0x428823*/
     {
       ObjectTypeClass::Construct((_DWORD *)a1, (int)&v3); /*0x42882c*/
-      *(_DWORD *)a1 = &AnimTypeClass::`vftable'; /*0x428831*/
-      *(_DWORD *)(a1 + 4) = &AnimTypeClass::`vftable'; /*0x428837*/
-      *(_DWORD *)(a1 + 8) = &AnimTypeClass::`vftable'; /*0x42883e*/
-      *(_DWORD *)(a1 + 12) = &AnimTypeClass::`vftable'; /*0x428845*/
+      *(_DWORD *)a1 = &(void*)(void*)&AnimTypeClass_vftable; /*0x428831*/
+      *(_DWORD *)(a1 + 4) = &(void*)(void*)&AnimTypeClass_vftable; /*0x428837*/
+      *(_DWORD *)(a1 + 8) = &(void*)(void*)&AnimTypeClass_vftable; /*0x42883e*/
+      *(_DWORD *)(a1 + 12) = &(void*)(void*)&AnimTypeClass_vftable; /*0x428845*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x42884e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x428855*/
@@ -768,31 +775,31 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   int v13; // edx
   int v14; // ecx
 
-  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x4289d9*/
+  AbstractTypeClass::ProcessPower(a2); /*0x4289d9*/
   Power::TimerProcess(this->Layer); /*0x4289e7*/
-  LOBYTE(v3) = this->Normalized; /*0x4289ec*/
+  IDA_LOBYTE(v3) = this->Normalized; /*0x4289ec*/
   Power::FlagProcess(a2, v3); /*0x4289f5*/
-  LOBYTE(v4) = this->Flat; /*0x4289fa*/
+  IDA_LOBYTE(v4) = this->Flat; /*0x4289fa*/
   v5 = Power::FlagProcess(a2, v4); /*0x428a03*/
-  LOBYTE(v5) = this->Translucent; /*0x428a08*/
+  IDA_LOBYTE(v5) = this->Translucent; /*0x428a08*/
   Power::FlagProcess(a2, v5); /*0x428a11*/
-  LOBYTE(v6) = this->Scorch; /*0x428a16*/
+  IDA_LOBYTE(v6) = this->Scorch; /*0x428a16*/
   Power::FlagProcess(a2, v6); /*0x428a1f*/
-  LOBYTE(v7) = this->Flamer; /*0x428a24*/
+  IDA_LOBYTE(v7) = this->Flamer; /*0x428a24*/
   v8 = Power::FlagProcess(a2, v7); /*0x428a2d*/
-  LOBYTE(v8) = this->Crater; /*0x428a32*/
+  IDA_LOBYTE(v8) = this->Crater; /*0x428a32*/
   Power::FlagProcess(a2, v8); /*0x428a3b*/
-  LOBYTE(v9) = this->Sticky; /*0x428a40*/
+  IDA_LOBYTE(v9) = this->Sticky; /*0x428a40*/
   Power::FlagProcess(a2, v9); /*0x428a49*/
-  LOBYTE(v10) = this->PingPong; /*0x428a4e*/
+  IDA_LOBYTE(v10) = this->PingPong; /*0x428a4e*/
   v11 = Power::FlagProcess(a2, v10); /*0x428a57*/
-  LOBYTE(v11) = this->Reverse; /*0x428a5c*/
+  IDA_LOBYTE(v11) = this->Reverse; /*0x428a5c*/
   Power::FlagProcess(a2, v11); /*0x428a65*/
-  LOBYTE(v12) = this->Shadow; /*0x428a6a*/
+  IDA_LOBYTE(v12) = this->Shadow; /*0x428a6a*/
   Power::FlagProcess(a2, v12); /*0x428a73*/
   Power::TimerProcess(this->MiddleFrameWidth); /*0x428a81*/
   Checksummer::Add_double((unsigned int *)a2, this->Damage, this->q2AC); /*0x428a96*/
-  LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
+  IDA_LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
   Power::FlagProcess(a2, v13); /*0x428aa4*/
   Power::TimerProcess(this->Rate); /*0x428ab2*/
   Power::TimerProcess(this->q2B4); /*0x428ac0*/
@@ -807,7 +814,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   Power::TimerProcess(this->q2DC); /*0x428b3e*/
   Power::TimerProcess(this->q2E0); /*0x428b4c*/
   Power::TimerProcess(this->q2EC); /*0x428b5a*/
-  LOBYTE(v14) = this->Tiled; /*0x428b5f*/
+  IDA_LOBYTE(v14) = this->Tiled; /*0x428b5f*/
   return Power::FlagProcess(a2, v14); /*0x428b6d*/
 }
 }
@@ -823,7 +830,7 @@ AnimTypeClass * * AnimTypeClass::FindOrCreate()
   if ( g_BuildingTypeCount2 <= 0 ) /*0x428bb1*/
   {
   LABEL_6:
-    if ( __2_YAPAXI_Z(0x378u) ) /*0x428bdb*/
+    if ( RA2_OPNEW(0x378u) ) /*0x428bdb*/
       return AnimTypeClass::Construct(Source); /*0x428bf1*/
     return 0; /*0x428be5*/
   }
@@ -853,7 +860,7 @@ int AnimTypeClass::GetDamage()
   char Buffer[512]; // [esp+DCh] [ebp-200h] BYREF
 
   result = this->Image; /*0x428c39*/
-  if ( !result && *(&this->u32_1582) ) /*0x428c47*/
+  if ( !result && *(&this->q1582) ) /*0x428c47*/
   {
     Debug::Log(); /*0x428c5e*/
     v3 = &this->u32_7E0; /*0x428c69*/
@@ -883,7 +890,7 @@ int AnimTypeClass::GetDamage()
       this->Image = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
         *(&this->DetailLevel8) = 1; /*0x428d55*/
-      v10[0] = &CCFileClass::`vftable'; /*0x428d63*/
+      v10[0] = &(void*)(void*)&CCFileClass_vftable; /*0x428d63*/
       v12 = 0; /*0x428d6b*/
       Vector::Clear((int)v11); /*0x428d76*/
       v10[0] = &off_7E1668; /*0x428d7f*/
@@ -891,7 +898,7 @@ int AnimTypeClass::GetDamage()
     }
     (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)&this->DetailLevel0))(this, *((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x428d9c*/
     v6 = this->Image; /*0x428da2*/
-    v7[0] = &CCFileClass::`vftable'; /*0x428dac*/
+    v7[0] = &(void*)(void*)&CCFileClass_vftable; /*0x428dac*/
     v9 = 0; /*0x428db4*/
     Vector::Clear((int)v8); /*0x428dbc*/
     v7[0] = &off_7E1668; /*0x428dc5*/
@@ -907,14 +914,12 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2)
 {
   int v3; // eax
   int v4; // eax
-  _DWORD *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &AnimTypeClass::`vftable'; /*0x428ead*/
-  this->vtable2 = &AnimTypeClass::`vftable'; /*0x428eb3*/
-  this->vtable3 = &AnimTypeClass::`vftable'; /*0x428eba*/
-  this->vtable4 = &AnimTypeClass::`vftable'; /*0x428ec1*/
-  v6 = this; /*0x428ecf*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &v6); /*0x428ed3*/
+  *this = &(void*)(void*)&AnimTypeClass_vftable; /*0x428ead*/
+  this->vtable2 = &(void*)(void*)&AnimTypeClass_vftable; /*0x428eb3*/
+  this->vtable3 = &(void*)(void*)&AnimTypeClass_vftable; /*0x428eba*/
+  this->vtable4 = &(void*)(void*)&AnimTypeClass_vftable; /*0x428ec1*/
+  v3 = (*(int (__thiscall **)(int *, _DWORD **))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &this); /*0x428ed3*/
   if ( v3 != -1 && v3 < g_AnimManager && v3 < --g_AnimManager ) /*0x428eee*/
   {
     do /*0x428f06*/
@@ -924,8 +929,7 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2)
     }
     while ( v3 < g_AnimManager ); /*0x428f06*/
   }
-  v6 = this; /*0x428f18*/
-  v4 = (*(int (__thiscall **)(int *, _DWORD **))(AnimTypeClass_Array + 16))(&AnimTypeClass_Array, &v6); /*0x428f1c*/
+  v4 = (*(int (__thiscall **)(int *, _DWORD **))(AnimTypeClass_Array + 16))(&AnimTypeClass_Array, &this); /*0x428f1c*/
   if ( v4 != -1 && v4 < g_BuildingTypeCount2 && v4 < --g_BuildingTypeCount2 ) /*0x428f37*/
   {
     do /*0x428f4f*/
@@ -935,9 +939,9 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2)
     }
     while ( v4 < g_BuildingTypeCount2 ); /*0x428f4f*/
   }
-  ObjectTypeClass::Destruct((int)this); /*0x428f53*/
+  ObjectTypeClass::Destruct(); /*0x428f53*/
   if ( (a2 & 1) != 0 ) /*0x428f5d*/
-    __3_YAXPAX_Z(this); /*0x428f60*/
+    RA2_OPDEL(); /*0x428f60*/
   return this; /*0x428f6a*/
 }
 } // namespace gamemd
@@ -970,20 +974,20 @@ char AnimTypeClass::GetLoopCount(int a2)
   int v2; // eax
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
 
-  LOBYTE(v2) = g_ArmageddonMode; /*0x427a80*/
+  IDA_LOBYTE(v2) = g_ArmageddonMode; /*0x427a80*/
   if ( g_ArmageddonMode || a2 != dword_822CF8 ) /*0x427aa0*/
   {
     if ( !this->q22C || this->DemandLoad ) /*0x427ab0*/
     {
-      LOBYTE(v2) = this->q237; /*0x427b2b*/
+      IDA_LOBYTE(v2) = this->q237; /*0x427b2b*/
       if ( (_BYTE)v2 ) /*0x427b33*/
-        LOBYTE(v2) = (*(int (__thiscall **)(void *, int))(*(_DWORD *)&this->DetailLevel0))(this, a2); /*0x427b3a*/
+        IDA_LOBYTE(a2); /*0x427b3a*/
     }
     else
     {
       if ( this->Image && this->ImageAllocated ) /*0x427ac4*/
       {
-        __3_YAXPAX_Z(*((void **)&this->uniqueId1)); /*0x427acf*/
+        RA2_OPDEL(*((void **)&this->uniqueId1)); /*0x427acf*/
         this->ImageAllocated = 0; /*0x427ad7*/
       }
       this->Image = 0; /*0x427af6*/
@@ -1076,7 +1080,7 @@ int AnimTypeClass::Thunk_AnimTypeClass_sub_428E50()
 namespace gamemd {
 int AnimTypeClass::GetAuxField()
 {
-  return *(&this->DetailLevel5); /*0x428e66*/
+  return *(this + 165); /*0x428e66*/
 }
 } // namespace gamemd
 

@@ -1,15 +1,20 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Font_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4346C0
+namespace gamemd {
 int Font::GetGlyphDataForChar(AbstractClass * aP1)
 {
   _DWORD *v2; // ecx
   int result; // eax
   int v4; // edx
 
-  v2 = (_DWORD *)*(this + 1); /*0x4346c0*/
+  v2 = (_DWORD *)this->Font_field_04; /*0x4346c0*/
   result = 0; /*0x4346c3*/
   if ( v2 ) /*0x4346c7*/
   {
@@ -19,11 +24,12 @@ int Font::GetGlyphDataForChar(AbstractClass * aP1)
   }
   return result; /*0x4346ee*/
 }
+} // namespace gamemd
 // 0x434CD0
+namespace gamemd {
 int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, int aP1a, AbstractClass * aP4, AbstractClass * aP5, AbstractClass * aP6, AbstractClass * aP7, AbstractClass * aP8, AbstractClass * aP9)
 {
   int v10; // edi
-  _WORD *v11; // ebp
   __int16 v12; // ax
   int v13; // ebx
   int v14; // esi
@@ -71,18 +77,18 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   v10 = 0; /*0x434cdb*/
   if ( !aP0 ) /*0x434cdf*/
     return 0; /*0x434cdf*/
-  v11 = aP2; /*0x434ce5*/
+  aP2 = aP2; /*0x434ce5*/
   if ( !aP2 ) /*0x434ceb*/
     return 0; /*0x43530a*/
   FontRenderer::InitContext(aP1); /*0x434cf8*/
   Field::Int_Set(aP1a); /*0x434d04*/
   v12 = 0; /*0x434d0f*/
   v13 = 0; /*0x434d11*/
-  v14 = *(unsigned __int16 *)(aP0 + 36); /*0x434d13*/
-  HIWORD(v15) = HIWORD(aP2); /*0x434d17*/
+  v14 = aP0->u32_24; /*0x434d13*/
+  IDA_HIWORD(v15) = IDA_HIWORD(aP2); /*0x434d17*/
   v16 = 0; /*0x434d19*/
   v47 = 0; /*0x434d1b*/
-  LOWORD(v15) = *aP2; /*0x434d1f*/
+  IDA_LOWORD(v15) = *aP2; /*0x434d1f*/
   v50 = 0; /*0x434d22*/
   v48 = 0; /*0x434d29*/
   v45 = 0; /*0x434d2d*/
@@ -93,7 +99,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
     switch ( (__int16)v49 ) /*0x434d59*/
     {
       case 9: /*0x434d59*/
-        v10 = *(_DWORD *)(aP0 + 40) + v10 - (*(_DWORD *)(aP0 + 40) + v10) % *(_DWORD *)(aP0 + 40); /*0x434ef7*/
+        v10 = aP0->q028 + v10 - (aP0->q028 + v10) % aP0->q028; /*0x434ef7*/
         goto LABEL_55; /*0x434ef9*/
       case 10: /*0x434d59*/
       case 13: /*0x434d59*/
@@ -112,7 +118,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           }
         }
         xLeft = aP1a + v17; /*0x434d97*/
-        if ( v11 >= aP2 ) /*0x434da1*/
+        if ( aP2 >= aP2 ) /*0x434da1*/
           goto LABEL_20; /*0x434da1*/
         v18 = aP8; /*0x434da7*/
         v19 = aP8 - v45 - 1; /*0x434db7*/
@@ -142,9 +148,9 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   LABEL_18:
           if ( v21 == -1 ) /*0x434e84*/
             goto LABEL_73; /*0x434e84*/
-          LOWORD(v18) = *v11++; /*0x434e8e*/
+          IDA_LOWORD(v18) = *aP2++; /*0x434e8e*/
           xLeft = FontClass::RenderGlyph(v18, xLeft, aP4, v21); /*0x434ea6*/
-          if ( v11 < aP2 ) /*0x434eb0*/
+          if ( aP2 < aP2 ) /*0x434eb0*/
           {
             v18 = aP8; /*0x434dc0*/
             continue; /*0x434dc0*/
@@ -154,7 +160,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   LABEL_20:
         v10 = 0; /*0x434ebe*/
         v13 = 0; /*0x434ec0*/
-        v23 = *(_DWORD *)(aP0 + 28); /*0x434ec2*/
+        v23 = aP0->u32_1C; /*0x434ec2*/
         v47 += v23; /*0x434ec7*/
         if ( aP6 ) /*0x434ed1*/
         {
@@ -163,7 +169,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         }
         aP4 += v23; /*0x434edd*/
   LABEL_23:
-        ++v11; /*0x434ee1*/
+        ++aP2; /*0x434ee1*/
         goto LABEL_55; /*0x434ee4*/
       case 32: /*0x434d59*/
         v50 = v10; /*0x434f02*/
@@ -179,7 +185,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
             goto LABEL_55; /*0x434f29*/
         }
         ++v13; /*0x434f37*/
-        v25 = *v24 + *(_DWORD *)(aP0 + 44); /*0x434f3b*/
+        v25 = *v24 + aP0->u32_2C; /*0x434f3b*/
         v10 += v25; /*0x434f41*/
         if ( !aP5 || v10 <= aP5 ) /*0x434f4d*/
           goto LABEL_55; /*0x434f4d*/
@@ -210,7 +216,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           }
         }
         xLeft = aP1a + v27; /*0x434fa9*/
-        if ( v11 >= aP2 ) /*0x434fb3*/
+        if ( aP2 >= aP2 ) /*0x434fb3*/
           goto LABEL_50; /*0x434fb3*/
         v28 = aP8; /*0x434fb9*/
         v29 = v45; /*0x434fbd*/
@@ -231,33 +237,33 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           break; /*0x434fef*/
         if ( v30 < aP9 ) /*0x434ff9*/
         {
-          LOBYTE(v43) = (unsigned __int8)((unsigned __int16)v14 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x435028*/
-          HIBYTE(v43) = (unsigned __int8)((unsigned __int16)v14 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435035*/
+          IDA_LOBYTE(v43) = (unsigned __int8)((unsigned __int16)v14 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x435028*/
+          IDA_HIBYTE(v43) = (unsigned __int8)((unsigned __int16)v14 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435035*/
           v53 = v43; /*0x43504b*/
           v54 = (unsigned __int8)((unsigned __int16)v14 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435054*/
           Color::Lerp((unsigned __int8 *)&v53, v31 * (255 / aP9), (unsigned __int8 *)&byte_A80220); /*0x435066*/
-          HIWORD(v32) = HIWORD(g_BitShift_Red); /*0x4350b2*/
+          IDA_HIWORD(v32) = IDA_HIWORD(g_BitShift_Red); /*0x4350b2*/
           v33 = ((unsigned __int8)v53 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4350ba*/
               | (v54 >> g_BitMask_Red << g_BitShift_Blue)
-              | (HIBYTE(v53) >> g_BitMask_Blue << g_BitMask_Green);
+              | (IDA_HIBYTE(v53) >> g_BitMask_Blue << g_BitMask_Green);
         }
       }
       if ( v33 == -1 ) /*0x4350bf*/
         break; /*0x4350bf*/
-      LOWORD(v32) = *v11++; /*0x4350c9*/
+      IDA_LOWORD(v32) = *aP2++; /*0x4350c9*/
       xLeft = FontClass::RenderGlyph(v32, xLeft, aP4, v33); /*0x4350e1*/
-      if ( v11 >= aP2 ) /*0x4350eb*/
+      if ( aP2 >= aP2 ) /*0x4350eb*/
       {
         v26 = v48; /*0x4350f1*/
   LABEL_50:
         if ( aP2 == v26 ) /*0x4350f9*/
         {
           v48 = 0; /*0x4350fb*/
-          ++v11; /*0x435103*/
+          ++aP2; /*0x435103*/
         }
         v10 = 0; /*0x43510e*/
         v13 = 0; /*0x435110*/
-        v34 = *(_DWORD *)(aP0 + 28); /*0x435112*/
+        v34 = aP0->u32_1C; /*0x435112*/
         v47 += v34; /*0x435117*/
         if ( aP6 && v47 >= aP6 ) /*0x435127*/
           break; /*0x435127*/
@@ -266,7 +272,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         v12 = (__int16)v49; /*0x43512d*/
         v35 = aP2 + 1; /*0x435135*/
         aP2 = v35; /*0x435138*/
-        LOWORD(v35) = *v35; /*0x43513c*/
+        IDA_LOWORD(v35) = *v35; /*0x43513c*/
         v49 = v35; /*0x435142*/
         if ( !(_WORD)v35 ) /*0x435146*/
         {
@@ -295,7 +301,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
       }
     }
     xLeft = aP1a + v36; /*0x435194*/
-    if ( v11 < aP2 ) /*0x43519e*/
+    if ( aP2 < aP2 ) /*0x43519e*/
     {
       v37 = aP8; /*0x4351a4*/
       v38 = aP8 - v16 - 1; /*0x4351b2*/
@@ -313,22 +319,22 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
             break; /*0x4351cc*/
           if ( v38 < aP9 ) /*0x4351d6*/
           {
-            LOBYTE(v55) = (unsigned __int8)((unsigned __int16)v14 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x435205*/
-            HIBYTE(v55) = (unsigned __int8)((unsigned __int16)v14 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435212*/
+            IDA_LOBYTE(v55) = (unsigned __int8)((unsigned __int16)v14 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x435205*/
+            IDA_HIBYTE(v55) = (unsigned __int8)((unsigned __int16)v14 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435212*/
             v53 = v55; /*0x435228*/
             v54 = (unsigned __int8)((unsigned __int16)v14 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435231*/
             Color::Lerp((unsigned __int8 *)&v53, v39 * (255 / aP9), (unsigned __int8 *)&byte_A80220); /*0x435243*/
-            HIWORD(v40) = HIWORD(g_BitShift_Red); /*0x43528f*/
+            IDA_HIWORD(v40) = IDA_HIWORD(g_BitShift_Red); /*0x43528f*/
             v41 = ((unsigned __int8)v53 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x435297*/
                 | (v54 >> g_BitMask_Red << g_BitShift_Blue)
-                | (HIBYTE(v53) >> g_BitMask_Blue << g_BitMask_Green);
+                | (IDA_HIBYTE(v53) >> g_BitMask_Blue << g_BitMask_Green);
           }
         }
         if ( v41 == -1 ) /*0x43529c*/
           break; /*0x43529c*/
-        LOWORD(v40) = *v11++; /*0x4352a2*/
+        IDA_LOWORD(v40) = *aP2++; /*0x4352a2*/
         xLeft = FontClass::RenderGlyph(v40, xLeft, aP4, v41); /*0x4352ba*/
-        if ( v11 >= aP2 ) /*0x4352c4*/
+        if ( aP2 >= aP2 ) /*0x4352c4*/
           break; /*0x4352c4*/
         v16 = v45; /*0x4352c6*/
         v37 = aP8; /*0x4352ca*/
@@ -339,3 +345,4 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   BufferIO::Cleanup(aP1); /*0x4352ed*/
   return 1; /*0x435157*/
 }
+} // namespace gamemd

@@ -1243,7 +1243,7 @@ int* SetMember15A99F0(void* _this, int a0) // thiscall
 //   {
 //   v2 = (void *)*(v0 - 3);
 //   v0 -= 3;
-//   __3_YAXPAX_Z(v2);
+//   RA2_OPDEL(v2);
 //   --v1;
 //   *v0 = 0;
 //   }
@@ -1361,12 +1361,12 @@ int ReturnZero5AE4F0(int a0) // stdcall
 // IDA: 0x5AE500  proposal: String::NotEquals
 // IDA: char __thiscall sub_5AE500(_DWORD *this, const char **a2)
 //   const char **v3; // eax
-//   LOBYTE(v3) = String::NotEquals(a2, 0);
+//   IDA_LOBYTE(v3) = String::NotEquals(a2, 0);
 //   if ( (_BYTE)v3 )
 //   {
 //   v3 = sub_5CF840(this + 20, a2);
 //   if ( v3 )
-//   LOBYTE(v3) = nullsub_24(v3);
+//   IDA_LOBYTE(v3) = nullsub_24(v3);
 //   }
 //   return (char)v3;
 char String_NotEquals(void* _this, int a0) // thiscall
@@ -1737,7 +1737,7 @@ int ReturnZero5B3AA0()
 // IDA: 0x5B4400  proposal: MethodStub5B4400
 // IDA: void __thiscall sub_5B4400(int this)
 //   if ( *(_DWORD *)(this + 36) && *(_BYTE *)(this + 18) )
-//   __3_YAXPAX_Z(*(void **)(this + 36));
+//   RA2_OPDEL(*(void **)(this + 36));
 //   *(_DWORD *)(this + 36) = 0;
 //   *(_BYTE *)(this + 18) = 0;
 void MethodStub5B4400(void* _this) // thiscall
@@ -2353,7 +2353,7 @@ int MethodStub5BF8B0()
 
 // IDA: 0x5C0630  proposal: MethodStub5C0630
 // IDA: void __thiscall sub_5C0630(_DWORD *this)
-//   *this = &MovieHandle::`vftable';
+//   ((void**)this)[0] = (void*)(void*)(void*)&MovieHandle_vftable;
 void MethodStub5C0630(void* _this) // thiscall
 {
 }
@@ -2925,7 +2925,7 @@ void InitFloatConst5CAC70()
 
 // IDA: 0x5CAE60  proposal: MultiplayerTeam::Destructor
 // IDA: void __thiscall sub_5CAE60(void **this)
-//   *this = &MultiplayerSiegeDefenderTeam::`vftable';
+//   ((void**)this)[0] = (void*)(void*)(void*)&MultiplayerSiegeDefenderTeam_vftable;
 //   MultiplayerTeam::Destructor(this);
 void MultiplayerTeam_Destructor(void* _this) // thiscall
 {
@@ -2933,7 +2933,7 @@ void MultiplayerTeam_Destructor(void* _this) // thiscall
 
 // IDA: 0x5CAF00  proposal: MultiplayerTeam::Destructor5CAF00
 // IDA: void __thiscall sub_5CAF00(void **this)
-//   *this = &MultiplayerSiegeAttackerTeam::`vftable';
+//   ((void**)this)[0] = (void*)(void*)(void*)&MultiplayerSiegeAttackerTeam_vftable;
 //   MultiplayerTeam::Destructor(this);
 void MultiplayerTeam_Destructor5CAF00(void* _this) // thiscall
 {
@@ -3102,7 +3102,7 @@ int ArithmeticCompute5D7550(int a0) // stdcall
 
 // IDA: 0x5D7580  proposal: MethodStub5D7580
 // IDA: _DWORD *__thiscall sub_5D7580(_DWORD *this)
-//   *this = &MultiplayerGameMode::InitializerBase::`vftable';
+//   *this = &MultiplayerGameMode::InitializerBase_vftable;
 //   return this;
 int* MethodStub5D7580(void* _this) // thiscall
 {
@@ -3111,7 +3111,7 @@ int* MethodStub5D7580(void* _this) // thiscall
 
 // IDA: 0x5D7CD0  proposal: MethodStub5D7CD0
 // IDA: void __thiscall sub_5D7CD0(_DWORD *this)
-//   *this = &MultiplayerGameMode::InitializerBase::`vftable';
+//   *this = &MultiplayerGameMode::InitializerBase_vftable;
 void MethodStub5D7CD0(void* _this) // thiscall
 {
 }

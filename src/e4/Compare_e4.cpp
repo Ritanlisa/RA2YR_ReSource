@@ -1,8 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Compare_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x46DC90
+namespace gamemd {
 int Compare::Field96(const void * a1, const void * a2)
 {
   int v2; // eax
@@ -15,3 +18,4 @@ int Compare::Field96(const void * a1, const void * a2)
   else
     return v2 <= v3 ? 1 : -1;
 }
+} // namespace gamemd

@@ -184,11 +184,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     bool GetBlip(int a1, int a2, int a3, int a4);  // 0x6a8420
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    unsigned int * initRadarSurface();  // 0x4F4220
-    int Destruct();  // 0x652C00
-    void Destru_vt50();  // 0x652D90
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

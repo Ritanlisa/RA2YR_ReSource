@@ -1,13 +1,19 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/GameOption_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x69ACC0
+namespace gamemd {
 int GameOption::GetField()
 {
-  return **(this + 99); /*0x69acc8*/
+  return *this->q18C; /*0x69acc8*/
 }
+} // namespace gamemd
 // 0x69ACD0
+namespace gamemd {
 void * GameOption::SetDescriptionWStr(CampaignScore * aP1)
 {
   wchar_t *result; // eax
@@ -16,33 +22,37 @@ void * GameOption::SetDescriptionWStr(CampaignScore * aP1)
   if ( aP1 ) /*0x69acd9*/
   {
     result = wcsncpy(this, aP1, 0x2Cu); /*0x69acdf*/
-    *(this + 43) = 0; /*0x69ace7*/
+    *(&this->u32_103) = 0; /*0x69ace7*/
   }
   else
   {
     StringCSF = GetStringCSF(g_Str_MSG_NoDescription, 0, g_Str_File_Session_CPP, 2845); /*0x69ad02*/
-    return wcscpy(this, StringCSF); /*0x69ad09*/
+    return wcscpy(StringCSF); /*0x69ad09*/
   }
   return result; /*0x69aced*/
 }
+} // namespace gamemd
 // 0x69AD80
+namespace gamemd {
 void * GameOption::SetDigest(CCINIClass * aP1)
 {
   char *result; // eax
 
   if ( aP1 ) /*0x69ad89*/
   {
-    result = strncpy(this + 348, aP1, 0x20u); /*0x69ad95*/
-    *(this + 379) = 0; /*0x69ad9d*/
+    result = strncpy(&this->u32_570, aP1, 0x20u); /*0x69ad95*/
+    *(&this->u32_949) = 0; /*0x69ad9d*/
   }
   else
   {
     result = (char *)(strlen(g_Str_No_Digest) + 1); /*0x69adb3*/
-    qmemcpy(this + 348, g_Str_No_Digest, (unsigned int)result); /*0x69adc8*/
+    qmemcpy(&this->u32_570, g_Str_No_Digest, (unsigned int)result); /*0x69adc8*/
   }
   return result; /*0x69ada4*/
 }
+} // namespace gamemd
 // 0x5E9560
+namespace gamemd {
 char GameOption::CheckDuplicate()
 {
   LPARAM *v0; // eax
@@ -55,3 +65,4 @@ char GameOption::CheckDuplicate()
   }
   return 0; /*0x5e957b*/
 }
+} // namespace gamemd

@@ -5,6 +5,13 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/BuildingPlacement_e4.hpp"
+#include "e4/classes/BuildingLightClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5FF850
 namespace gamemd {
@@ -41,14 +48,11 @@ Coord * * BuildingLight::CalculateShading()
   int v31; // [esp+18h] [ebp-7Ch]
   int v32; // [esp+1Ch] [ebp-78h]
   int v33; // [esp+20h] [ebp-74h]
-  int v34; // [esp+24h] [ebp-70h]
   int i; // [esp+28h] [ebp-6Ch]
   int j; // [esp+2Ch] [ebp-68h]
-  int v37; // [esp+30h] [ebp-64h]
   int v38; // [esp+34h] [ebp-60h]
   unsigned __int16 *v39; // [esp+38h] [ebp-5Ch] BYREF
   _BYTE *v40; // [esp+3Ch] [ebp-58h] BYREF
-  _DWORD *v41; // [esp+40h] [ebp-54h]
   unsigned __int8 v42; // [esp+44h] [ebp-50h]
   unsigned __int8 v43; // [esp+45h] [ebp-4Fh]
   unsigned __int8 v44; // [esp+46h] [ebp-4Eh]
@@ -60,28 +64,27 @@ Coord * * BuildingLight::CalculateShading()
   int v50[4]; // [esp+74h] [ebp-20h] BYREF
   _DWORD v51[4]; // [esp+84h] [ebp-10h] BYREF
 
-  v41 = this; /*0x5ff85c*/
-  v2 = *(this + 5) & 0xF; /*0x5ff863*/
-  if ( (*(this + 5) & 0xE) != 0 || (v3 = PingPongBuffer::GetWriteOffset(), (unsigned int)dword_ABCD44 >= v3) ) /*0x5ff879*/
+  v2 = this->q014 & 0xF; /*0x5ff863*/
+  if ( (this->q014 & 0xE) != 0 || (v3 = PingPongBuffer::GetWriteOffset(), (unsigned int)dword_ABCD44 >= v3) ) /*0x5ff879*/
   {
-    LOBYTE(v3) = Coord::To_Screen(g_TacticalClass_Instance, this, v45); /*0x5ff88b*/
+    IDA_LOBYTE(v3) = Coord::To_Screen(g_TacticalClass_Instance, this, v45); /*0x5ff88b*/
     if ( (_BYTE)v3 ) /*0x5ff892*/
     {
-      if ( (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) == 0 || (LOBYTE(v3) = Game::Stub3((int)this), !(_BYTE)v3) ) /*0x5ff8b2*/
+      if ( (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) == 0 || (IDA_LOBYTE(v3) = Game::Stub3((int)this), !(_BYTE)v3) ) /*0x5ff8b2*/
       {
         v50[0] = v45[0] - 128; /*0x5ff8c9*/
         v51[0] = DSurface_ViewBounds; /*0x5ff8d9*/
         v51[1] = g_Map_VisibleRect; /*0x5ff8e6*/
-        v4 = *(this + 3); /*0x5ff8ed*/
+        v4 = this->u32_C; /*0x5ff8ed*/
         v51[3] = g_DSurface_WindowOffset; /*0x5ff8f0*/
         v5 = byte_83358C[v4]; /*0x5ff8ff*/
         v50[1] = v45[1] - 64; /*0x5ff906*/
-        v37 = g_DSurface_Hidden_2; /*0x5ff912*/
+        g_DSurface_Hidden_2 = g_DSurface_Hidden_2; /*0x5ff912*/
         v50[2] = 255; /*0x5ff916*/
         v50[3] = 127; /*0x5ff91e*/
         v51[2] = g_Map_VisibleRectOffset; /*0x5ff925*/
         if ( v5 < 64 ) /*0x5ff92c*/
-          v5 = v5 * *(this + 4) / 64; /*0x5ff93d*/
+          v5 = v5 * this->u32_10 / 64; /*0x5ff93d*/
         v6 = *(_DWORD *)g_DSurface_Hidden_2; /*0x5ff946*/
         v38 = dword_AC1698[v5]; /*0x5ff94a*/
         v7 = (*(int (__thiscall **)(int))(v6 + 116))(g_DSurface_Hidden_2); /*0x5ff951*/
@@ -91,11 +94,11 @@ Coord * * BuildingLight::CalculateShading()
         v49[1] = 0; /*0x5ff966*/
         v47 = 255; /*0x5ff96a*/
         v49[2] = 255; /*0x5ff96e*/
-        v34 = v7; /*0x5ff9a3*/
+        v7 = v7; /*0x5ff9a3*/
         v29 = 0; /*0x5ff9a7*/
         v48 = 127; /*0x5ff9ac*/
         v49[3] = 127; /*0x5ff9b0*/
-        LOBYTE(v3) = CalcSurfaceBlitRects(v37, (int)v51, v50, v38, v49, v46, &v29, (int *)&v39, (int *)&v40); /*0x5ff9b7*/
+        IDA_LOBYTE(v3) = CalcSurfaceBlitRects(g_DSurface_Hidden_2, (int)v51, v50, v38, v49, v46, &v29, (int *)&v39, (int *)&v40); /*0x5ff9b7*/
         if ( (_BYTE)v3 ) /*0x5ff9be*/
         {
           v8 = v39; /*0x5ff9c4*/
@@ -105,7 +108,7 @@ Coord * * BuildingLight::CalculateShading()
           if ( v2 ) /*0x5ff9e2*/
           {
   LABEL_23:
-            v9 = *(this + 5); /*0x5ffb1c*/
+            v9 = this->q014; /*0x5ffb1c*/
             if ( (v9 & 1) != 0 ) /*0x5ffb21*/
             {
               j = 0; /*0x5ffb2b*/
@@ -117,7 +120,7 @@ Coord * * BuildingLight::CalculateShading()
                   for ( i = 0; i < v10; ++i ) /*0x5ffb41*/
                   {
                     v11 = *v30 == 0; /*0x5ffb4e*/
-                    LOBYTE(v33) = *v30++; /*0x5ffb50*/
+                    IDA_LOBYTE(v33) = *v30++; /*0x5ffb50*/
                     if ( !v11 ) /*0x5ffb58*/
                     {
                       v12 = *v8; /*0x5ffb62*/
@@ -128,7 +131,7 @@ Coord * * BuildingLight::CalculateShading()
                           | (((256 - (unsigned __int8)v33) * v44) >> 8 >> g_BitMask_Red << g_BitShift_Blue)
                           | (((256 - (unsigned __int8)v33) * v43) >> 8 >> g_BitMask_Blue << g_BitMask_Green);
                       v10 = v47; /*0x5ffc1d*/
-                      v7 = v34; /*0x5ffc21*/
+                      v7 = v7; /*0x5ffc21*/
                     }
                     ++v8; /*0x5ffc29*/
                   }
@@ -152,14 +155,14 @@ Coord * * BuildingLight::CalculateShading()
                   for ( j = 0; j < v13; ++j ) /*0x5ffc92*/
                   {
                     v11 = *v30 == 0; /*0x5ffc9f*/
-                    LOBYTE(v33) = *v30++; /*0x5ffca1*/
+                    IDA_LOBYTE(v33) = *v30++; /*0x5ffca1*/
                     if ( !v11 ) /*0x5ffca9*/
                     {
                       v14 = *v8; /*0x5ffcaf*/
                       v15 = (unsigned __int8)v33 + 256; /*0x5ffcd0*/
                       v42 = (unsigned __int8)(*v8 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x5ffcdf*/
                       v43 = (unsigned __int8)(v14 >> g_BitMask_Green) << g_BitMask_Blue; /*0x5ffd00*/
-                      v16 = v41[5]; /*0x5ffd0a*/
+                      v16 = this->q014; /*0x5ffd0a*/
                       v44 = (unsigned __int8)(v14 >> g_BitShift_Blue) << g_BitMask_Red; /*0x5ffd0d*/
                       v17 = v42; /*0x5ffd1d*/
                       v18 = v43; /*0x5ffd22*/
@@ -183,7 +186,7 @@ Coord * * BuildingLight::CalculateShading()
                           v19 = 255; /*0x5ffd70*/
                       }
                       v20 = (v18 >> g_BitMask_Blue << g_BitMask_Green) | (v17 >> g_BitShift_Green_0 << g_BitShift_Red); /*0x5ffd9f*/
-                      v7 = v34; /*0x5ffda1*/
+                      v7 = v7; /*0x5ffda1*/
                       *v8 = (v19 >> g_BitMask_Red << g_BitShift_Blue) | v20; /*0x5ffda9*/
                       v13 = v47; /*0x5ffdac*/
                     }
@@ -209,7 +212,7 @@ Coord * * BuildingLight::CalculateShading()
                   for ( j = 0; j < v21; ++j ) /*0x5ffe15*/
                   {
                     v11 = *v30 == 0; /*0x5ffe22*/
-                    LOBYTE(v33) = *v30++; /*0x5ffe24*/
+                    IDA_LOBYTE(v33) = *v30++; /*0x5ffe24*/
                     if ( !v11 ) /*0x5ffe2c*/
                     {
                       v22 = *v8; /*0x5ffe32*/
@@ -231,7 +234,7 @@ Coord * * BuildingLight::CalculateShading()
                           | (v27 >> g_BitMask_Blue << g_BitMask_Green)
                           | (v25 >> g_BitShift_Green_0 << g_BitShift_Red);
                       v21 = v47; /*0x5fff17*/
-                      v7 = v34; /*0x5fff1b*/
+                      v7 = v7; /*0x5fff1b*/
                     }
                     ++v8; /*0x5fff23*/
                   }
@@ -277,8 +280,8 @@ Coord * * BuildingLight::CalculateShading()
                 goto LABEL_23;
             }
           }
-          (*(void (__thiscall **)(int))(*(_DWORD *)v37 + 96))(v37); /*0x5fff6b*/
-          LOBYTE(v3) = (*(int (__thiscall **)(int))(*(_DWORD *)v38 + 96))(v38); /*0x5fff74*/
+          (*(void (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden_2 + 96))(g_DSurface_Hidden_2); /*0x5fff6b*/
+          IDA_LOBYTE(v3) = (*(int (__thiscall **)(int))(*(_DWORD *)v38 + 96))(v38); /*0x5fff74*/
         }
       }
     }

@@ -13,6 +13,8 @@
 #include "e4/classes/E4Recv_76F210_e4.hpp"
 #include "e4/classes/E4Recv_76F500_e4.hpp"
 #include "e4/classes/E4Recv_771800_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x767FB0
 namespace gamemd {
@@ -21,13 +23,13 @@ rc_ptr * ConstructWDTSelection_Create_767FB0(rc_ptr_base * a1, int a2, int a3, R
   void *v6; // eax
   void *v7; // edi
 
-  v6 = __2_YAPAXI_Z(0xD4u); /*0x767fbb*/
+  v6 = RA2_OPNEW(0xD4u); /*0x767fbb*/
   if ( v6 ) /*0x767fc5*/
     v7 = ConstructWDTSelection_Create_767FB0_Create(v6, a2, a3, aP3); /*0x767fd9*/
   else
     v7 = 0; /*0x767fdd*/
   ComPtr::Constructor(a1); /*0x767fe1*/
-  *a1 = &rc_ptr<WorldDominationTour::Map>::`vftable'; /*0x767fe8*/
+  *a1 = &(void*)(void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x767fe8*/
   ComPtr::Set(a1, (int)v7); /*0x767fef*/
   return a1; /*0x767ff6*/
 }

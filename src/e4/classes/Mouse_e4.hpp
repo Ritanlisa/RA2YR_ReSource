@@ -5,6 +5,21 @@
 
 namespace gamemd {
 struct Mouse {
+    unsigned int q008;
+    unsigned int u32_48;
+    unsigned int u32_49;
+    unsigned int q0080;
+    unsigned int q0081;
+    unsigned int q555A;
+    unsigned int u32_1174;
+    unsigned int u32_1176;
+    unsigned int u32_1178;
+    unsigned int u32_117A;
+    unsigned int u32_117C;
+    unsigned int u32_4;
+    unsigned int u32_555C;
+    unsigned int u32_5560;
+    unsigned int u32_5568;
     void* vfptr;  // minimal E2 declaration
     int SetBounds(IUnknown * aP1);  // 0x4A8BF0
     char SetCursor(ObjectClass * aP1, ObjectClass * aP2);  // 0x5BDC80

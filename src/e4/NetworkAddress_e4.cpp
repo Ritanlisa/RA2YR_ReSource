@@ -1,17 +1,22 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/NetworkAddress_e4.hpp"
+#include "e4/classes/NetworkClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/Multiplayer_e4.hpp"
 
 // 0x53ECE0
+namespace gamemd {
 unsigned int * NetworkAddress::Assign(unsigned int * a1, IUnknown * aP2, short a4)
 {
   _DWORD *result; // eax
   char *v5; // ecx
 
   result = this; /*0x53ece4*/
-  v5 = (char *)(this + 1); /*0x53ece9*/
+  v5 = &this->u32_4; /*0x53ece9*/
   *(_DWORD *)v5 = *(_DWORD *)aP2; /*0x53ecec*/
-  *((_WORD *)v5 + 2) = *(_WORD *)(aP2 + 4); /*0x53ecf4*/
+  *((_WORD *)v5 + 2) = aP2->vtable2; /*0x53ecf4*/
   if ( dword_828140 == 1 ) /*0x53ed01*/
   {
     *result = *a1; /*0x53ed09*/
@@ -23,3 +28,4 @@ unsigned int * NetworkAddress::Assign(unsigned int * a1, IUnknown * aP2, short a
   }
   return result; /*0x53ecf3*/
 }
+} // namespace gamemd

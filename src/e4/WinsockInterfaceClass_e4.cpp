@@ -2,51 +2,53 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/NetworkClass_e4.hpp"
+#include "e4/classes/WinsockInterfaceClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x7B1AB0
-W WinsockInterfaceClass::WinsockInterfaceClass()
+WinsockInterfaceClass::WinsockInterfaceClass()
 {
   char v2; // al
   void *v3; // eax
   void *v4; // eax
   void *v5; // eax
 
-  v2 = *(_BYTE *)(this + 258152); /*0x7b1ab6*/
-  *(_DWORD *)this = &WinsockInterfaceClass::`vftable'; /*0x7b1abc*/
+  v2 = this->q3F068; /*0x7b1ab6*/
+  *(_DWORD *)this = &(void*)(void*)&WinsockInterfaceClass_vftable; /*0x7b1abc*/
   if ( v2 ) /*0x7b1ac4*/
   {
-    NetworkClass::UnregisterAsync((SOCKET *)this); /*0x7b1ac6*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)this + 4))(this); /*0x7b1ad0*/
+    NetworkClass::UnregisterAsync(); /*0x7b1ac6*/
+    (*(void (__thiscall **)(int))(this->u32_4)(this); /*0x7b1ad0*/
     WSACleanup(); /*0x7b1ad3*/
-    *(_BYTE *)(this + 258152) = 0; /*0x7b1ad8*/
+    this->q3F068 = 0; /*0x7b1ad8*/
   }
-  v3 = *(void **)(this + 60); /*0x7b1ade*/
-  *(_DWORD *)(this + 56) = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1ae1*/
-  if ( v3 && *(_BYTE *)(this + 69) ) /*0x7b1aec*/
+  v3 = *(void **)(&this->q0180); /*0x7b1ade*/
+  this->u32_38 = &(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b1ae1*/
+  if ( v3 && this->u32_45 ) /*0x7b1aec*/
   {
-    __3_YAXPAX_Z(v3); /*0x7b1af2*/
-    *(_DWORD *)(this + 60) = 0; /*0x7b1afa*/
+    RA2_OPDEL(v3); /*0x7b1af2*/
+    this->u32_3C = 0; /*0x7b1afa*/
   }
-  *(_BYTE *)(this + 69) = 0; /*0x7b1afd*/
-  *(_DWORD *)(this + 64) = 0; /*0x7b1b00*/
-  v4 = *(void **)(this + 36); /*0x7b1b03*/
-  *(_DWORD *)(this + 32) = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1b06*/
-  if ( v4 && *(_BYTE *)(this + 45) ) /*0x7b1b11*/
+  this->u32_45 = 0; /*0x7b1afd*/
+  this->u32_40 = 0; /*0x7b1b00*/
+  v4 = *(void **)(&this->u32_C6); /*0x7b1b03*/
+  this->u32_20 = &(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b1b06*/
+  if ( v4 && this->q02D ) /*0x7b1b11*/
   {
-    __3_YAXPAX_Z(v4); /*0x7b1b17*/
-    *(_DWORD *)(this + 36) = 0; /*0x7b1b1f*/
+    RA2_OPDEL(v4); /*0x7b1b17*/
+    this->q024 = 0; /*0x7b1b1f*/
   }
-  *(_BYTE *)(this + 45) = 0; /*0x7b1b22*/
-  *(_DWORD *)(this + 40) = 0; /*0x7b1b25*/
-  v5 = *(void **)(this + 12); /*0x7b1b28*/
-  *(_DWORD *)(this + 8) = &VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b1b2b*/
-  if ( v5 && *(_BYTE *)(this + 21) ) /*0x7b1b36*/
+  this->q02D = 0; /*0x7b1b22*/
+  this->u32_28 = 0; /*0x7b1b25*/
+  v5 = *(void **)(&this->u32_42); /*0x7b1b28*/
+  this->u32_8 = &(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b1b2b*/
+  if ( v5 && this->q015 ) /*0x7b1b36*/
   {
-    __3_YAXPAX_Z(v5); /*0x7b1b3c*/
-    *(_DWORD *)(this + 12) = 0; /*0x7b1b44*/
+    RA2_OPDEL(v5); /*0x7b1b3c*/
+    this->u32_C = 0; /*0x7b1b44*/
   }
-  *(_BYTE *)(this + 21) = 0; /*0x7b1b47*/
-  *(_DWORD *)(this + 16) = 0; /*0x7b1b4a*/
+  this->q015 = 0; /*0x7b1b47*/
+  this->u32_10 = 0; /*0x7b1b4a*/
 }
 // 0x7B2740
 int WinsockInterfaceClass::Destru_vt13()
@@ -76,43 +78,43 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
   void *v5; // eax
   void *v6; // eax
 
-  v3 = *((_BYTE *)this + 258152); /*0x7b2786*/
-  *this = (SOCKET)&WinsockInterfaceClass::`vftable'; /*0x7b278c*/
+  v3 = this->q3F068; /*0x7b2786*/
+  *this = (SOCKET)&(void*)(void*)&WinsockInterfaceClass_vftable; /*0x7b278c*/
   if ( v3 ) /*0x7b2794*/
   {
-    NetworkClass::UnregisterAsync(this); /*0x7b2796*/
-    (*(void (__thiscall **)(SOCKET *))(*this + 4))(this); /*0x7b27a0*/
+    NetworkClass::UnregisterAsync(); /*0x7b2796*/
+    this->AddRef(); /*0x7b27a0*/
     WSACleanup(); /*0x7b27a3*/
-    *((_BYTE *)this + 258152) = 0; /*0x7b27a8*/
+    this->q3F068 = 0; /*0x7b27a8*/
   }
-  v4 = (void *)*(this + 15); /*0x7b27ae*/
-  *(this + 14) = (SOCKET)&VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b27b1*/
-  if ( v4 && *((_BYTE *)this + 69) ) /*0x7b27bc*/
+  v4 = (void *)*(&this->u32_45); /*0x7b27ae*/
+  *(&this->u32_44) = (SOCKET)&(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b27b1*/
+  if ( v4 && this->u32_45 ) /*0x7b27bc*/
   {
-    __3_YAXPAX_Z(v4); /*0x7b27c2*/
-    *(this + 15) = 0; /*0x7b27ca*/
+    RA2_OPDEL(v4); /*0x7b27c2*/
+    *(&this->u32_45) = 0; /*0x7b27ca*/
   }
-  *((_BYTE *)this + 69) = 0; /*0x7b27cd*/
-  *(this + 16) = 0; /*0x7b27d0*/
-  v5 = (void *)*(this + 9); /*0x7b27d3*/
-  *(this + 8) = (SOCKET)&VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b27d6*/
-  if ( v5 && *((_BYTE *)this + 45) ) /*0x7b27e1*/
+  this->u32_45 = 0; /*0x7b27cd*/
+  *(&this->u32_46) = 0; /*0x7b27d0*/
+  v5 = (void *)this->q024; /*0x7b27d3*/
+  this->u32_20 = (SOCKET)&(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b27d6*/
+  if ( v5 && this->q02D ) /*0x7b27e1*/
   {
-    __3_YAXPAX_Z(v5); /*0x7b27e7*/
-    *(this + 9) = 0; /*0x7b27ef*/
+    RA2_OPDEL(v5); /*0x7b27e7*/
+    this->q024 = 0; /*0x7b27ef*/
   }
-  *((_BYTE *)this + 45) = 0; /*0x7b27f2*/
-  *(this + 10) = 0; /*0x7b27f5*/
-  v6 = (void *)*(this + 3); /*0x7b27f8*/
-  *(this + 2) = (SOCKET)&VectorClass<WinsockInterfaceClass::WinsockBufferType *>::`vftable'; /*0x7b27fb*/
-  if ( v6 && *((_BYTE *)this + 21) ) /*0x7b2806*/
+  this->q02D = 0; /*0x7b27f2*/
+  *(&this->u32_40) = 0; /*0x7b27f5*/
+  v6 = (void *)this->u32_C; /*0x7b27f8*/
+  this->u32_8 = (SOCKET)&(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b27fb*/
+  if ( v6 && this->q015 ) /*0x7b2806*/
   {
-    __3_YAXPAX_Z(v6); /*0x7b280c*/
-    *(this + 3) = 0; /*0x7b2814*/
+    RA2_OPDEL(v6); /*0x7b280c*/
+    this->u32_C = 0; /*0x7b2814*/
   }
-  *((_BYTE *)this + 21) = 0; /*0x7b281b*/
-  *(this + 4) = 0; /*0x7b2820*/
+  this->q015 = 0; /*0x7b281b*/
+  this->u32_10 = 0; /*0x7b2820*/
   if ( (a2 & 1) != 0 ) /*0x7b2823*/
-    __3_YAXPAX_Z(this); /*0x7b2826*/
+    RA2_OPDEL(); /*0x7b2826*/
   return this; /*0x7b2830*/
 }

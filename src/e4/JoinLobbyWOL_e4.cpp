@@ -1,6 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/IsometricTileClass_e4.hpp"
+#include "e4/classes/IsometricTileTypeClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x72BE80
 namespace gamemd {
@@ -34,14 +41,14 @@ void sub_72BED0()
       if ( dword_B0FA9C ) /*0x72beed*/
       {
         FileTreeNode::Destroy(dword_B0FA9C); /*0x72bef1*/
-        __3_YAXPAX_Z(v0); /*0x72bef7*/
+        RA2_OPDEL(v0); /*0x72bef7*/
       }
       byte_B0FD38 = 0; /*0x72beff*/
     }
     dword_B0FA9C = 0; /*0x72bf0b*/
     if ( dword_B0FD3C ) /*0x72bf13*/
     {
-      __3_YAXPAX_Z(dword_B0FD3C); /*0x72bf16*/
+      RA2_OPDEL(dword_B0FD3C); /*0x72bf16*/
       dword_B0FD3C = 0; /*0x72bf1e*/
     }
     if ( dword_B0FD40 ) /*0x72bf2c*/

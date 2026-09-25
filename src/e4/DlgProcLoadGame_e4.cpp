@@ -5,6 +5,8 @@
 #include "e4/classes/E4Recv_696AE0_e4.hpp"
 #include "e4/classes/E4Recv_696C40_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Draw_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x696AE0
 namespace gamemd {
@@ -12,7 +14,6 @@ HWND E4Recv_696AE0::sub_696AE0()
 {
   HWND DlgItem; // edi
   HWND result; // eax
-  HWND v4; // ebp
   char *v5; // esi
   LRESULT v6; // edi
   int v7; // eax
@@ -20,7 +21,7 @@ HWND E4Recv_696AE0::sub_696AE0()
 
   DlgItem = GetDlgItem(*(HWND *)this, 1629); /*0x696b05*/
   result = GetDlgItem(*(HWND *)this, 1630); /*0x696b07*/
-  v4 = result; /*0x696b0b*/
+  result = result; /*0x696b0b*/
   if ( DlgItem ) /*0x696b0d*/
   {
     if ( result ) /*0x696b15*/
@@ -33,12 +34,12 @@ HWND E4Recv_696AE0::sub_696AE0()
       if ( strlen(v5) ) /*0x696b4f*/
       {
         _strupr(v5); /*0x696b5b*/
-        v6 = SendMessageA(v4, 0x4C4u, 0xFFFFFFFF, (LPARAM)v5); /*0x696b6e*/
+        v6 = SendMessageA(result, 0x4C4u, 0xFFFFFFFF, (LPARAM)v5); /*0x696b6e*/
         if ( v6 == -1 ) /*0x696b73*/
         {
-          v8 = (char *)__2_YAPAXI_Z(0x29u); /*0x696b8c*/
+          v8 = (char *)RA2_OPNEW(0x29u); /*0x696b8c*/
           strcpy(v8, v5); /*0x696ba2*/
-          result = (HWND)SendMessageA(v4, 0x4C8u, 0, (LPARAM)v8); /*0x696bb1*/
+          result = (HWND)SendMessageA(result, 0x4C8u, 0, (LPARAM)v8); /*0x696bb1*/
           v6 = (LRESULT)result; /*0x696bb3*/
           if ( result == HWND_MESSAGE|0x2 ) /*0x696bb8*/
             return result; /*0x696bb8*/
@@ -54,9 +55,9 @@ HWND E4Recv_696AE0::sub_696AE0()
             *(_DWORD *)(dword_A8DB50 + 4 * v7) = v8; /*0x696c11*/
           }
         }
-        SendMessageA(v4, 0x186u, v6, 0); /*0x696c1d*/
-        SendMessageA(v4, 0x197u, v6, 0); /*0x696c28*/
-        *(_DWORD *)(this + 152) = v6; /*0x696c2e*/
+        SendMessageA(result, 0x186u, v6, 0); /*0x696c1d*/
+        SendMessageA(result, 0x197u, v6, 0); /*0x696c28*/
+        this->M152 = v6; /*0x696c2e*/
         return (HWND)this; /*0x696c2a*/
       }
     }

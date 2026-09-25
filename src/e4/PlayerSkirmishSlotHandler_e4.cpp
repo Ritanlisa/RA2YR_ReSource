@@ -4,6 +4,8 @@
 #include "e4/classes/E4Recv_5DB600_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
+#include "e4/classes/Player_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5DAF30
 namespace gamemd {

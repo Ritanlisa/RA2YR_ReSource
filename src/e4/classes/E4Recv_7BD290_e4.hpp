@@ -5,7 +5,12 @@
 
 namespace gamemd {
 struct E4Recv_7BD290 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    unsigned int M1980;  // 0x7BC
+    unsigned int q1980;  // 0x1980
+    unsigned int q6528;  // 0x6528
+// --- flat members (END) ---
     char sub_7BD290();  // 0x7BD290
 };
 } // namespace gamemd

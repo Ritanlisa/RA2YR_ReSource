@@ -13,6 +13,15 @@
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Waypoint_e4.hpp"
+#include "e4/classes/Event_Dispatch_e4.hpp"
+#include "e4/classes/E4Recv_633AC0_e4.hpp"
+#include "e4/classes/Factory_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
 
 // 0x48D080
 namespace gamemd {
@@ -55,7 +64,7 @@ int Event::Dispatch()
   }
   if ( v0 == 4 ) /*0x48d169*/
   {
-    LOBYTE(v0) = byte_B77DC2; /*0x48d16b*/
+    IDA_LOBYTE(v0) = byte_B77DC2; /*0x48d16b*/
     if ( !byte_B77DC2 ) /*0x48d172*/
     {
       v0 = time(0); /*0x48d176*/
@@ -124,7 +133,7 @@ void sub_5E95E0()
         && v2 != g_Lobby_MaxPlayers
         && (wchar_t *)v2 != g_Lobby_PlayerReady
         && v0 == g_MPCooperativeState
-        && *(_DWORD *)(v2 + 107) == -1 )
+        && v2->q1AC == -1 )
       {
         break; /*0x5e9645*/
       }
@@ -161,7 +170,7 @@ void sub_796960()
   __int16 v10; // [esp+244h] [ebp-4h]
   char v11; // [esp+246h] [ebp-2h]
 
-  LOBYTE(v0) = g_GameMode_Current[0]; /*0x796960*/
+  IDA_LOBYTE(v0) = g_GameMode_Current[0]; /*0x796960*/
   if ( g_GameMode_Current[0] == 4 ) /*0x796970*/
     return v0; /*0x796970*/
   Waypoint::InitInvalid(v7); /*0x79697a*/
@@ -222,7 +231,7 @@ void sub_796960()
         }
       }
   LABEL_24:
-      LOBYTE(v0) = Event::Dispatch(); /*0x796b09*/
+      IDA_LOBYTE(v0) = Event::Dispatch(); /*0x796b09*/
     }
   }
   return v0; /*0x796ad4*/

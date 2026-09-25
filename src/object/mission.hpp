@@ -120,25 +120,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int AssignTeamMemberMissions(int a1, int a2);  // 0x6ed7e0 -- Mission::AssignTeamMemberMissions
     int GetMissionDelay();  // 0x70f770 -- Mission::GetMissionDelay
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    int vt_entry_1FC();  // 0x41BF30
-    int Return450A();  // 0x5B2E10
-    int Return450B();  // 0x5B2E20
-    int Return450C();  // 0x5B2E30
-    int Return450D();  // 0x5B2ED0
-    int Return450E();  // 0x5B2EE0
-    int Return450G();  // 0x5B2F10
-    int Return450H();  // 0x5B2F20
-    int Return450I();  // 0x5B2F40
-    int Return450J();  // 0x5B2F50
-    int Return450K();  // 0x5B2F80
-    int Return450L();  // 0x5B2F90
-    int Return450F();  // 0x5B2FA0
-    int Return450M();  // 0x5B2FB0
-    int Return450N();  // 0x5B2FC0
-    char LoadFromINI(unsigned int * a2);  // 0x5B3760
-    int HasValidTarget();  // 0x5B3A10
-// --- e4 declarations (END) ---
 };
 
 } // namespace game

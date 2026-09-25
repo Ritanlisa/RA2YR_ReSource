@@ -54,9 +54,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ComputeHousePowerChecksum(int a1);  // 0x68b940 -- Power::ComputeHousePowerChecksum
     int ChangedHouse(int a1);  // 0x750090 -- Power::ChangedHouse
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    void checkLowPower();  // 0x63F7E0
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

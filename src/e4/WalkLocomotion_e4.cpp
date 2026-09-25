@@ -7,6 +7,9 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/Team_e4.hpp"
+#include "e4/classes/MEMORY_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x6A01A0
 namespace gamemd {
@@ -33,11 +36,11 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
   v3 = aP1; /*0x6a01a0*/
   if ( *aP1 != g_OverlayTypeConfig || aP1[1] != qword_B077FC || (v5 = aP1[2], v5 != MEMORY[0xB07800]) ) /*0x6a01ce*/
   {
-    LOBYTE(v5) = *(_BYTE *)(this + 96); /*0x6a01d4*/
+    IDA_LOBYTE(v5) = this->ptr_60; /*0x6a01d4*/
     v6 = aP3; /*0x6a01d7*/
     if ( !(_BYTE)v5 ) /*0x6a01dd*/
     {
-      v5 = *(_DWORD *)(this + 88); /*0x6a01e3*/
+      v5 = this->q058; /*0x6a01e3*/
       if ( v5 != -1 ) /*0x6a01e9*/
       {
         v5 = byte_7F2A40[12 * v5]; /*0x6a01f2*/
@@ -50,7 +53,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
           {
             v9 = (_DWORD *)(v8 + 12 * v5); /*0x6a021d*/
             aP3 = v9[2]; /*0x6a0223*/
-            if ( *(_DWORD *)(this + 92) < v5 ) /*0x6a022c*/
+            if ( this->q05C < v5 ) /*0x6a022c*/
             {
               v10 = v9[1]; /*0x6a0234*/
               v18[0] = *v9; /*0x6a0237*/
@@ -60,25 +63,25 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
               v12 = *(_DWORD *)(v5 + 4); /*0x6a0259*/
               if ( !v6 ) /*0x6a025c*/
               {
-                v13 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 464))(*(_DWORD *)(this + 12)); /*0x6a0263*/
-                v14 = *(_DWORD *)(this + 12); /*0x6a0269*/
+                v13 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->q0042) + 464))(this->q00C); /*0x6a0263*/
+                v14 = this->q00C; /*0x6a0269*/
                 v19 = v11; /*0x6a026c*/
                 v20 = v12; /*0x6a0270*/
                 v21 = v13; /*0x6a0274*/
                 (*(void (__thiscall **)(int, int *))(*(_DWORD *)v14 + 244))(v14, &v19); /*0x6a027f*/
-                LOBYTE(v5) = (*(int (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(this + 12) + 244))( /*0x6a028f*/
-                               *(_DWORD *)(this + 12),
+                IDA_LOBYTE(v5) = (*(int (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(&this->q0042) + 244))( /*0x6a028f*/
+                               this->q00C,
                                aP1);
                 return v5; /*0x6a029c*/
               }
               if ( v6 == 1 || v6 == 3 ) /*0x6a02a7*/
               {
-                v15 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 464))(*(_DWORD *)(this + 12)); /*0x6a02ae*/
-                v16 = *(_DWORD *)(this + 12); /*0x6a02b4*/
+                v15 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->q0042) + 464))(this->q00C); /*0x6a02ae*/
+                v16 = this->q00C; /*0x6a02b4*/
                 v21 = v15; /*0x6a02b7*/
                 v19 = v11; /*0x6a02bb*/
                 v20 = v12; /*0x6a02bf*/
-                LOBYTE(v5) = (*(int (__thiscall **)(int, int *))(*(_DWORD *)v16 + 240))(v16, &v19); /*0x6a02ca*/
+                IDA_LOBYTE(v5) = (*(int (__thiscall **)(int, int *))(*(_DWORD *)v16 + 240))(v16, &v19); /*0x6a02ca*/
               }
               v3 = aP1; /*0x6a02d0*/
             }
@@ -89,14 +92,14 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
     if ( v6 ) /*0x6a02d6*/
     {
       if ( v6 == 1 || v6 == 3 ) /*0x6a02f6*/
-        LOBYTE(v5) = (*(int (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(this + 12) + 240))( /*0x6a02fe*/
-                       *(_DWORD *)(this + 12),
+        IDA_LOBYTE(v5) = (*(int (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(&this->q0042) + 240))( /*0x6a02fe*/
+                       this->q00C,
                        v3);
     }
     else
     {
-      LOBYTE(v5) = (*(int (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(this + 12) + 244))( /*0x6a02de*/
-                     *(_DWORD *)(this + 12),
+      IDA_LOBYTE(v5) = (*(int (__thiscall **)(_DWORD, _DWORD *))(**(_DWORD **)(&this->q0042) + 244))( /*0x6a02de*/
+                     this->q00C,
                      v3);
     }
   }
@@ -106,7 +109,6 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
 // 0x6A05F0
 namespace gamemd {
 int WalkLocomotion::ProcessCollision(char a2)
-{
 {
   MouseClass *v13; // ecx
   MouseClass *v21; // ecx
@@ -214,9 +216,9 @@ int WalkLocomotion::ProcessCollision(char a2)
       int v14 = v12;
       char v15 = 0;
       int v16 = *(_DWORD *)&v13->__pad_1D4[936];
-      LODWORD(varD0) = *(_DWORD *)&v13->__pad_1D4[932];
+      IDA_LODWORD(varD0) = *(_DWORD *)&v13->__pad_1D4[932];
       int v17 = v13->field_0;
-      HIDWORD(varD0) = v16;
+      IDA_HIDWORD(varD0) = v16;
       int v18 = (*(int (__thiscall **)(MouseClass *))(v17 + 132))(v13);
       if ( v14 >= *(_DWORD *)(v18 + 760) )
       {
@@ -247,9 +249,9 @@ int WalkLocomotion::ProcessCollision(char a2)
         else
           v22 = this->q140;
         varD0 = v22;
-        int v23 = HIDWORD(varD0);
+        int v23 = IDA_HIDWORD(varD0);
         this->q140 = v22;
-        (*(void (__stdcall **)(_DWORD, int))(v21->field_0 + 1348))(LODWORD(varD0), v23);
+        (*(void (__stdcall **)(_DWORD, int))(v21->field_0 + 1348))(IDA_LODWORD(varD0), v23);
       }
       else
       {
@@ -272,11 +274,11 @@ int WalkLocomotion::ProcessCollision(char a2)
           }
           varD0 = v24;
           (*(void (__stdcall **)(_DWORD, _DWORD))(v21->field_0 + 1348))(
-            LODWORD(v24),
-            HIDWORD(*(unsigned __int64 *)&v24));
+            IDA_LODWORD(v24),
+            IDA_HIDWORD(*(unsigned __int64 *)&v24));
           goto LABEL_37;
         }
-        (*(void (__stdcall **)(_DWORD, _DWORD))(v21->field_0 + 1348))(LODWORD(varD0), HIDWORD(varD0));
+        (*(void (__stdcall **)(_DWORD, _DWORD))(v21->field_0 + 1348))(IDA_LODWORD(varD0), IDA_HIDWORD(varD0));
       }
 LABEL_37:
       if ( (*(int (__thiscall **)(_DWORD))(*this->q00C + 44))(this->q00C) == 1 )
@@ -327,7 +329,7 @@ LABEL_37:
     {
       int v34 = *(_DWORD *)(*(_DWORD *)&g_CellDirectionOffsets[84652] + 4 * v33);
       aP4 = *(ObjectClass **)(v34 + 40);
-      int v35 = SHIWORD(aP4) << 8;
+      int v35 = IDA_SHIWORD(aP4) << 8;
       *v31 = ((__int16)aP4 << 8) + 128;
       v36 = this->q00C;
       this->WalkLocomotion_field_0x44 = v35 + 128;
@@ -339,7 +341,7 @@ LABEL_37:
       int v37 = *(_DWORD *)(v34 + 48) & 7;
       aP4 = *(ObjectClass **)(v34 + 36);
       *(_WORD *)&aP3[8] = *((_WORD *)&Direction_X_Offsets.field_0 + 2 * v37) + (_WORD)aP4;
-      *(_WORD *)&aP3[10] = HIWORD(aP4) + *((_WORD *)&DataGlobal_89F68A + 2 * v37);
+      *(_WORD *)&aP3[10] = IDA_HIWORD(aP4) + *((_WORD *)&DataGlobal_89F68A + 2 * v37);
       aP4 = *(ObjectClass **)&aP3[8];
       _DWORD * v38 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&aP4);
       Coords = (ObjectClass *)CellClass::GetCoords(v38, (int *)&aP3.attachedBomb);
@@ -354,7 +356,7 @@ LABEL_37:
       GroundHeight = Cell::GetGroundHeight(&aP3.nextArrayIndex);
       aP4 = *(ObjectClass **)(v34 + 40);
       int v43 = *(_DWORD *)(v34 + 448);
-      aP3.referenceCount = (SHIWORD(aP4) << 8) + 128;
+      aP3.referenceCount = (IDA_SHIWORD(aP4) << 8) + 128;
       aP3.nextArrayIndex = ((__int16)aP4 << 8) + 128;
       aP3.NeedsSaveOrLink = 0;
       *(_DWORD *)(this->q00C + 1392) = GroundHeight
@@ -399,9 +401,9 @@ LABEL_37:
   bool v178 = 0;
   if ( v29 != 8 && v29 != -1 )
   {
-    LOBYTE(v48) = 0;
-    HIBYTE(v48) = v45[4];
-    LOWORD(aP4) = v48;
+    IDA_LOBYTE(v48) = 0;
+    IDA_HIBYTE(v48) = v45[4];
+    IDA_LOWORD(aP4) = v48;
     v178 = (((((unsigned int)aP4 >> 12) + 1) >> 1) & 7) != v29;
   }
   while ( 1 )
@@ -442,8 +444,8 @@ LABEL_37:
               (IUnknown *)aP3.customSound_controller,
               (ObjectClass *)&aP3.abstractFlags);
       int v59 = v58[1];
-      LOWORD(aP3.customSound_controller[4]) = *v58 / 256;
-      HIWORD(aP3.customSound_controller[4]) = v59 / 256;
+      IDA_LOWORD(aP3.customSound_controller[4]) = *v58 / 256;
+      IDA_HIWORD(aP3.customSound_controller[4]) = v59 / 256;
       aP3.customSound_controller[3] = aP3.customSound_controller[4];
     }
     else
@@ -591,10 +593,10 @@ LABEL_101:
     char v82 = v81->__pad_74[0];
     v81->__pad_74[0] = 0;
     (*(void (__thiscall **)(_DWORD, _DWORD))(*this->q00C + 460))(this->q00C, 0);
-    LOBYTE(v83) = 0;
+    IDA_LOBYTE(v83) = 0;
     *(_BYTE *)(this->q00C + 116) = v82;
-    HIBYTE(v83) = aP3.abstractFlags;
-    LOWORD(aP3.owningHouseIndex) = v83;
+    IDA_HIBYTE(v83) = aP3.abstractFlags;
+    IDA_LOWORD(aP3.owningHouseIndex) = v83;
     FacingClass::Set_SyncLog((char *)(this->q00C + 904), &aP3.owningHouseIndex);
     int v84 = this->q05C;
     if ( v84 && *(int *)((char *)dword_7F296C + aP3.objectTypeFlags) == v84 )
@@ -612,9 +614,9 @@ LABEL_101:
       {
         if ( v86 )
         {
-          LOBYTE(v87) = 0;
-          HIBYTE(v87) = *(_BYTE *)(*(_DWORD *)&aP3.bombVisible + 4);
-          LOWORD(aP3.fallRate) = v87;
+          IDA_LOBYTE(v87) = 0;
+          IDA_HIBYTE(v87) = *(_BYTE *)(*(_DWORD *)&aP3.bombVisible + 4);
+          IDA_LOWORD(aP3.fallRate) = v87;
           *(_DWORD *)&aP3[12] = aP3.uniqueId + 8 * (((((unsigned int)aP3.fallRate >> 12) + 1) >> 1) & 7);
           char * v88 = (char *)(12 * *(_DWORD *)&aP3[12] + 8333888);
           char v89 = byte_7F2A40[12 * *(_DWORD *)&aP3[12]];
@@ -634,8 +636,8 @@ LABEL_101:
               *(_DWORD *)v182 = v94;
               *(_DWORD *)&v182[8] = v96;
               *(_DWORD *)&v182[4] = v95;
-              LOWORD(aP3.customSound) = v94 / 256;
-              HIWORD(aP3.customSound) = v95 / 256;
+              IDA_LOWORD(aP3.customSound) = v94 / 256;
+              IDA_HIWORD(aP3.customSound) = v95 / 256;
               *(_DWORD *)aP3[0] = aP3.customSound;
               int v97 = v90->field_0;
               LandHeight = ObjectClass::GetLandHeight(v90);
@@ -721,7 +723,7 @@ LABEL_101:
                     }
                     else
                     {
-                      WalkLocomotion::MoveTo(this, (IUnknown *)v182, 1);
+                      WalkLocomotion::MoveTo((IUnknown *)v182, 1);
                       (*(void (__thiscall **)(_DWORD, int, int))(*this->q00C + 1348))(
                         this->q00C,
                         aP3.ambientSoundController[2],
@@ -739,9 +741,9 @@ LABEL_101:
                   CellClass::DamageAllObjects(eax134);
                   break;
                 case 3:
-                  LOWORD(aP3.spawnStatus) = *(_DWORD *)v182 / 256;
+                  IDA_LOWORD(aP3.spawnStatus) = *(_DWORD *)v182 / 256;
                   v111 = this->q00C;
-                  HIWORD(aP3.spawnStatus) = *(_DWORD *)&v182[4] / 256;
+                  IDA_HIWORD(aP3.spawnStatus) = *(_DWORD *)&v182[4] / 256;
                   *(_DWORD *)&aP3[12] = aP3.spawnStatus;
                   Cell::IsPassableAllied((int)v111, (__int16 *)&aP3[12]);
                   break;
@@ -753,10 +755,10 @@ LABEL_101:
                         v113 = *(TechnoClass **)(ecx137 + 8),
   int v115; // ecx
                         v115 = *((char *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)v182) + 283),
-                        LOBYTE(aP4) = 1,
+                        IDA_LOBYTE(aP4) = 1,
                         (int)abs32((int)v113 / g_OverlayTypeConfig.field_40 - v115) <= 2) )
                   {
-                    LOBYTE(aP4) = 0;
+                    IDA_LOBYTE(aP4) = 0;
                   }
                   _DWORD * v116 = Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)(&this->u32_184));
                   Cell::ApplyDamage(v116, &g_OverlayTypeConfig, 1, 1, (IUnknown *)aP4);
@@ -843,7 +845,7 @@ LABEL_101:
                              this->q00C)
                          + 8)
              - this->u32_3C;
-      if ( (int)((HIDWORD(rax156) ^ rax156) - HIDWORD(rax156)) < 2 * g_OverlayTypeConfig.field_40 )
+      if ( (int)((IDA_HIDWORD(rax156) ^ rax156) - IDA_HIDWORD(rax156)) < 2 * g_OverlayTypeConfig.field_40 )
       {
         v180 = 1;
         this->ptr_34 = g_OverlayTypeConfig.field_0;
@@ -933,9 +935,9 @@ LABEL_141:
   aP3.visibilityFlags = *eax178d;
   *(_DWORD *)&aP3.needsRedraw = eax178d[1];
   v158 = (TechnoClass *)eax178d[2];
-  LODWORD(varD0) = aP3.customSound_controller[0] + aP3.visibilityFlags;
+  IDA_LODWORD(varD0) = aP3.customSound_controller[0] + aP3.visibilityFlags;
   *(_DWORD *)&aP3.hasParachute = v158;
-  HIDWORD(varD0) = aP3.customSound_controller[1] + *(_DWORD *)&aP3.needsRedraw;
+  IDA_HIDWORD(varD0) = aP3.customSound_controller[1] + *(_DWORD *)&aP3.needsRedraw;
   v183 = (IUnknown *)&v158->__pad_0[aP3.customSound_controller[2]];
   v159 = (IUnknown *)Coord::To_Cell(&DataGlobal_87F7E8, (IUnknown *)aP3.customSound_controller);
   aP3.fallRate = (int)v159;
@@ -946,7 +948,7 @@ LABEL_141:
   *(_DWORD *)&v182[4] = edx178;
   v163 = *(TechnoClass **)(v162 + 8);
   *(_DWORD *)&v182[8] = v163;
-  unsigned __int64 v165 = __PAIR64__(edx178, *(unsigned int *)v182);
+  unsigned __int64 v165 = IDA___PAIR64__(edx178, *(unsigned int *)v182);
   if ( v161 == v155 || v161 == v159 )
   {
     v165 = *(_QWORD *)&varD0;
@@ -1004,12 +1006,10 @@ LABEL_190:
   }
 }
 } // namespace gamemd
-}
 
 // 0x6A1C80
 namespace gamemd {
 int WalkLocomotion::Update(unsigned char * a2, int a3, int a4)
-{
 {
   char result; // al
   wchar_t *v16; // edi
@@ -1184,8 +1184,8 @@ LABEL_31:
   v18[1] = v21;
   v18[2] = v20;
   int v23 = this->q00C;
-  LOWORD(v216) = this->ptr_34 / 256;
-  WORD1(v216) = this->u32_38 / 256;
+  IDA_LOWORD(v216) = this->ptr_34 / 256;
+  IDA_WORD1(v216) = this->u32_38 / 256;
   char v24 = FootClass::MovementStep(v23, (int)v16, SLODWORD(v216), 0, 0, v213);
   _DWORD * v25 = this->q00C;
   if ( !v24 )
@@ -1258,8 +1258,8 @@ LABEL_31:
                         &v226);
       int v32 = v31[1];
       unsigned int v33 = ((unsigned int)((*Value >> 12) + 1) >> 1) & 7;
-      LOWORD(a2) = LOWORD(Direction_X_Offsets[v33]) + *v31 / 256;
-      HIWORD(a2) = v32 / 256 + HIWORD(Direction_X_Offsets[v33]);
+      IDA_LOWORD(a2) = IDA_LOWORD(Direction_X_Offsets[v33]) + *v31 / 256;
+      IDA_HIWORD(a2) = v32 / 256 + IDA_HIWORD(Direction_X_Offsets[v33]);
       a4 = (int)a2;
       if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (__int16 *)&a4, 1) )
       {
@@ -1293,8 +1293,8 @@ LABEL_31:
           v217 = 0;
           v220 = 0;
           v221 = 0;
-          LODWORD(v216) = ((__int16)a4 << 8) + 128;
-          HIDWORD(v216) = (SHIWORD(a4) << 8) + 128;
+          IDA_LODWORD(v216) = ((__int16)a4 << 8) + 128;
+          IDA_HIDWORD(v216) = (IDA_SHIWORD(a4) << 8) + 128;
           GroundHeight = Cell::GetGroundHeight(&v216);
           ClosestObject = Object::FindClosestObjectCell(v41, &v220, v43 > GroundHeight + 2 * DataGlobal_B07838, 0);
           if ( ClosestObject )
@@ -1323,7 +1323,7 @@ LABEL_31:
                 v226 = (_DWORD *)*v48;
                 v227 = (wchar_t *)v48[1];
                 __int64 v49 = this->u32_3C - v48[2];
-                if ( (int)((HIDWORD(v49) ^ v49) - HIDWORD(v49)) < 2 * DataGlobal_B07838 )
+                if ( (int)((IDA_HIDWORD(v49) ^ v49) - IDA_HIDWORD(v49)) < 2 * DataGlobal_B07838 )
                 {
                   v220 = (_DWORD *)*v48;
                   v221 = v48[1];
@@ -1356,15 +1356,15 @@ LABEL_31:
               if ( (v41[80] & 0x100) == 0
   _DWORD *v51; // ecx
                 || (v51 = this->q00C,
-                    LOBYTE(a2) = 1,
+                    IDA_LOBYTE(a2) = 1,
                     v51 += 39,
                     v226 = (_DWORD *)*v51,
                     v227 = (wchar_t *)v51[1],
   __int64 v52; // rax
                     v52 = v51[2] / DataGlobal_B07838 - *((char *)v41 + 283),
-                    (int)((HIDWORD(v52) ^ v52) - HIDWORD(v52)) <= 2) )
+                    (int)((IDA_HIDWORD(v52) ^ v52) - IDA_HIDWORD(v52)) <= 2) )
               {
-                LOBYTE(a2) = 0;
+                IDA_LOBYTE(a2) = 0;
               }
               Cell::ApplyDamage(v41, (int)&g_OverlayTypeConfig, 1, 1, (char)a2);
             }
@@ -1443,10 +1443,10 @@ LABEL_31:
   _DWORD * v57 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD **))(*v25 + 72))(v25, &v226);
   int v58 = v57[1];
   int v59 = *(_DWORD *)(this->q00C + 1504) & 7;
-  v60 = HIWORD(Direction_X_Offsets[v59]);
-  LOWORD(v216) = *v57 / 256 + LOWORD(Direction_X_Offsets[v59]);
-  WORD1(v216) = v58 / 256 + v60;
-  v218 = LODWORD(v216);
+  v60 = IDA_HIWORD(Direction_X_Offsets[v59]);
+  IDA_LOWORD(v216) = *v57 / 256 + IDA_LOWORD(Direction_X_Offsets[v59]);
+  IDA_WORD1(v216) = v58 / 256 + v60;
+  v218 = IDA_LODWORD(v216);
   if ( LayerClass::IsWithinUsableArea(&DataGlobal_87F7E8, (__int16 *)&v218, 1) )
   {
     _BYTE * v61 = this->q00C;
@@ -1472,8 +1472,8 @@ LABEL_31:
     {
       _DWORD * v66 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v218);
       _DWORD * v67 = (_DWORD *)(this->q00C + 156);
-      LODWORD(v216) = ((__int16)v218 << 8) + 128;
-      HIDWORD(v216) = (SHIWORD(v218) << 8) + 128;
+      IDA_LODWORD(v216) = ((__int16)v218 << 8) + 128;
+      IDA_HIDWORD(v216) = (IDA_SHIWORD(v218) << 8) + 128;
       v217 = 0;
       v226 = (_DWORD *)*v67;
       v227 = (wchar_t *)v67[1];
@@ -1502,7 +1502,7 @@ LABEL_31:
             v226 = (_DWORD *)*v73;
             v227 = (wchar_t *)v73[1];
             __int64 v74 = this->u32_3C - v73[2];
-            if ( (int)((HIDWORD(v74) ^ v74) - HIDWORD(v74)) < 2 * DataGlobal_B07838 )
+            if ( (int)((IDA_HIDWORD(v74) ^ v74) - IDA_HIDWORD(v74)) < 2 * DataGlobal_B07838 )
             {
               v220 = (_DWORD *)*v73;
               v221 = v73[1];
@@ -1525,17 +1525,17 @@ LABEL_31:
           if ( (v66[80] & 0x100) == 0
   _DWORD *v76; // ecx
             || (v76 = this->q00C,
-                LOBYTE(v216) = 1,
+                IDA_LOBYTE(v216) = 1,
                 v76 += 39,
                 v226 = (_DWORD *)*v76,
                 v227 = (wchar_t *)v76[1],
   __int64 v77; // rax
                 v77 = v76[2] / DataGlobal_B07838 - *((char *)v66 + 283),
-                (int)((HIDWORD(v77) ^ v77) - HIDWORD(v77)) <= 2) )
+                (int)((IDA_HIDWORD(v77) ^ v77) - IDA_HIDWORD(v77)) <= 2) )
           {
-            LOBYTE(v216) = 0;
+            IDA_LOBYTE(v216) = 0;
           }
-          Cell::ApplyDamage(v66, (int)&g_OverlayTypeConfig, 1, 1, SLOBYTE(v216));
+          Cell::ApplyDamage(v66, (int)&g_OverlayTypeConfig, 1, 1, IDA_SLOBYTE(v216));
         }
       }
     }
@@ -1575,21 +1575,21 @@ LABEL_125:
     *(_BYTE *)(v86 + 1675) = 1;
   if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(*this->q00C + 668))(this->q00C) )
     return 1;
-  LOWORD(v216) = v223 / 256;
+  IDA_LOWORD(v216) = v223 / 256;
   v87 = this->q00C;
-  WORD1(v216) = v224 / 256;
-  v219 = LODWORD(v216);
+  IDA_WORD1(v216) = v224 / 256;
+  v219 = IDA_LODWORD(v216);
   if ( !Cell::IsPassableAllied(v87, (__int16 *)&v219) )
     return 1;
   if ( abs16(*(_WORD *)ProgressTimer::GetValue((_WORD *)(this->q00C + 904), &v220) - ((_WORD)v6 << 13)) )
   {
-    LOWORD(a4) = (_WORD)v6 << 13;
+    IDA_LOWORD(a4) = (_WORD)v6 << 13;
     (*(void (__stdcall **)(int, int))(this->q05C)(v215, a4);
     return 1;
   }
-  LOWORD(v216) = v223 / 256;
-  WORD1(v216) = v224 / 256;
-  v215 = LODWORD(v216);
+  IDA_LOWORD(v216) = v223 / 256;
+  IDA_WORD1(v216) = v224 / 256;
+  v215 = IDA_LODWORD(v216);
   v88 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
   v89 = this->q00C;
   v90 = v88;
@@ -1604,19 +1604,19 @@ LABEL_125:
           0,
           1);
   v92 = this->q00C;
-  LODWORD(v216) = v91;
+  IDA_LODWORD(v216) = v91;
   (*(void (__thiscall **)(int, int))(*(_DWORD *)v92 + 292))(v92, 1);
   if ( SLODWORD(v216) < 7
     && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3220)
-    || (LODWORD(v216) == 5 || LODWORD(v216) == 4)
+    || (IDA_LODWORD(v216) == 5 || IDA_LODWORD(v216) == 4)
     && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3368)
     && !v90[17] )
   {
-    LODWORD(v216) = 0;
+    IDA_LODWORD(v216) = 0;
   }
   v93 = v90[17];
-  v94 = LODWORD(v216);
-  if ( v93 != -1 && !LODWORD(v216) && *(_BYTE *)(*((_DWORD *)g_BuildingTypeClass_Array + v93) + 557) )
+  v94 = IDA_LODWORD(v216);
+  if ( v93 != -1 && !IDA_LODWORD(v216) && *(_BYTE *)(*((_DWORD *)g_BuildingTypeClass_Array + v93) + 557) )
   {
 LABEL_148:
     v214 = 1;
@@ -1624,7 +1624,7 @@ LABEL_148:
   }
   if ( v93 != -1 )
   {
-    if ( !LODWORD(v216) )
+    if ( !IDA_LODWORD(v216) )
     {
       if ( !*(_BYTE *)(*((_DWORD *)g_BuildingTypeClass_Array + v93) + 680)
         || *(_DWORD *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 1460) != 12 )
@@ -1635,9 +1635,9 @@ LABEL_148:
     }
     goto LABEL_153;
   }
-  if ( LODWORD(v216) )
+  if ( IDA_LODWORD(v216) )
   {
-    v94 = LODWORD(v216);
+    v94 = IDA_LODWORD(v216);
 LABEL_153:
     if ( v94 == 3 )
     {
@@ -1681,7 +1681,7 @@ LABEL_153:
               v227 = (wchar_t *)v117[1],
   __int64 v118; // rax
               v118 = this->u32_3C - v117[2],
-              (int)((HIDWORD(v118) ^ v118) - HIDWORD(v118)) >= 2 * DataGlobal_B07838)
+              (int)((IDA_HIDWORD(v118) ^ v118) - IDA_HIDWORD(v118)) >= 2 * DataGlobal_B07838)
           || (v220 = (_DWORD *)*v117,
               v221 = v117[1],
               v222 = v117[2],
@@ -1696,10 +1696,10 @@ LABEL_153:
                 v121 = v120[2],
   int v122; // ecx
                 v122 = *((char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215) + 283),
-                LOBYTE(a4) = 1,
+                IDA_LOBYTE(a4) = 1,
                 (int)abs32(v121 / DataGlobal_B07838 - v122) <= 2) )
           {
-            LOBYTE(a4) = 0;
+            IDA_LOBYTE(a4) = 0;
           }
           char v210 = a4;
           _DWORD * v123 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v215);
@@ -1746,7 +1746,7 @@ LABEL_155:
         this->u8_63 = 0;
         this->q048 = v98;
       }
-      if ( LODWORD(v216) == 2 )
+      if ( IDA_LODWORD(v216) == 2 )
       {
         int v99 = this->q00C;
         if ( !*(_BYTE *)(v99 + 1719) )
@@ -1784,8 +1784,8 @@ LABEL_166:
 LABEL_171:
                 v108 = 1;
 LABEL_199:
-                LOWORD(a4) = this->ptr_34 / 256;
-                HIWORD(a4) = this->u32_38 / 256;
+                IDA_LOWORD(a4) = this->ptr_34 / 256;
+                IDA_HIWORD(a4) = this->u32_38 / 256;
                 char v125 = FootClass::MovementStep(v102, v103, a4, 0, (v108 != 0) + 1, v213);
                 int v126 = this->q00C;
                 if ( !v126 )
@@ -1819,7 +1819,7 @@ LABEL_204:
         }
         goto LABEL_209;
       }
-      if ( LODWORD(v216) != 5 && LODWORD(v216) != 4 )
+      if ( IDA_LODWORD(v216) != 5 && IDA_LODWORD(v216) != 4 )
       {
 LABEL_209:
         if ( *(_BYTE *)(this->q00C + 1674) )
@@ -1858,7 +1858,7 @@ LABEL_209:
           (*(void (__thiscall **)(_DWORD, int, void *, _DWORD))(v138 + 500))(this->q00C, 1, v139, 0);
         }
 LABEL_219:
-        if ( LODWORD(v216) != 7 )
+        if ( IDA_LODWORD(v216) != 7 )
         {
           *(_BYTE *)(this->q00C + 1674) = 0;
           this->WalkLocomotion_field_0x58 = -1;
@@ -1980,15 +1980,15 @@ LABEL_242:
   {
     double * v151 = this->q00C;
     if ( v148 != v151[175] )
-      (*(void (__thiscall **)(double *, _DWORD, _DWORD))(*(_DWORD *)v151 + 1348))(v151, LODWORD(v216), HIDWORD(v216));
+      (*(void (__thiscall **)(double *, _DWORD, _DWORD))(*(_DWORD *)v151 + 1348))(v151, IDA_LODWORD(v216), IDA_HIDWORD(v216));
   }
   else
   {
     this->q140 = v148;
   }
   v152 = this->q00C;
-  LOWORD(v216) = v223 / 256;
-  WORD1(v216) = v224 / 256;
+  IDA_LOWORD(v216) = v223 / 256;
+  IDA_WORD1(v216) = v224 / 256;
   (*(void (__thiscall **)(int, double *, int))(*(_DWORD *)v152 + 1332))(v152, &v216, 1);
   v153 = this->q00C;
   v154 = v153[377];
@@ -1999,9 +1999,9 @@ LABEL_242:
     int v157 = *v155 - this->ptr_34;
     int v158 = v155[1];
     int v159 = v155[2];
-    LODWORD(v216) = v157;
+    IDA_LODWORD(v216) = v157;
     int v160 = this->u32_3C;
-    HIDWORD(v216) = v158 - v156;
+    IDA_HIDWORD(v216) = v158 - v156;
     v217 = v159 - v160;
   double v161; // st7
     v161 = Math::Sqrt(
@@ -2016,8 +2016,8 @@ LABEL_262:
     }
     char v162 = *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3220);
     int v163 = this->q00C;
-    LOWORD(v216) = this->ptr_34 / 256;
-    WORD1(v216) = this->u32_38 / 256;
+    IDA_LOWORD(v216) = this->ptr_34 / 256;
+    IDA_WORD1(v216) = this->u32_38 / 256;
     result = FootClass::MovementStep(v163, v156, SLODWORD(v216), v162 != 0, 0, v213);
     if ( !result )
     {
@@ -2072,8 +2072,8 @@ LABEL_263:
       int v174 = v224 + DataGlobal_89F6DC[2 * v173];
       v223 += DataGlobal_89F6D8[2 * v173];
       v224 = v174;
-      LOWORD(a4) = v223 / 256;
-      HIWORD(a4) = v174 / 256;
+      IDA_LOWORD(a4) = v223 / 256;
+      IDA_HIWORD(a4) = v174 / 256;
       int v209 = v219;
       v215 = a4;
       int v175 = *v172;
@@ -2147,7 +2147,7 @@ LABEL_263:
                 v227 = (wchar_t *)v186[1],
   __int64 v187; // rax
                 v187 = this->u32_3C - v186[2],
-                (int)((HIDWORD(v187) ^ v187) - HIDWORD(v187)) >= 2 * DataGlobal_B07838)
+                (int)((IDA_HIDWORD(v187) ^ v187) - IDA_HIDWORD(v187)) >= 2 * DataGlobal_B07838)
             || (v226 = (_DWORD *)*v186,
                 v227 = (wchar_t *)v186[1],
                 v228 = v186[2],
@@ -2157,7 +2157,7 @@ LABEL_263:
             if ( (v189[80] & 0x100) == 0
   _DWORD *v190; // edx
               || (v190 = this->q00C,
-                  LOBYTE(a4) = 1,
+                  IDA_LOBYTE(a4) = 1,
                   v190 += 39,
   int v191; // edi
                   v191 = *((char *)v189 + 283),
@@ -2165,9 +2165,9 @@ LABEL_263:
                   v227 = (wchar_t *)v190[1],
   __int64 v192; // rax
                   v192 = v190[2] / DataGlobal_B07838 - v191,
-                  (int)((HIDWORD(v192) ^ v192) - HIDWORD(v192)) <= 2) )
+                  (int)((IDA_HIDWORD(v192) ^ v192) - IDA_HIDWORD(v192)) <= 2) )
             {
-              LOBYTE(a4) = 0;
+              IDA_LOBYTE(a4) = 0;
             }
             Cell::ApplyDamage(v189, (int)&g_OverlayTypeConfig, 1, 1, a4);
 LABEL_291:
@@ -2268,9 +2268,9 @@ LABEL_333:
 LABEL_336:
   v195 = (int *)(&this->u32_184);
   *(_DWORD *)(this->q00C + 1596) = -1;
-  LOWORD(a4) = v223 / 256;
+  IDA_LOWORD(a4) = v223 / 256;
   v196 = this->q00C;
-  HIWORD(a4) = v224 / 256;
+  IDA_HIWORD(a4) = v224 / 256;
   *(_DWORD *)(v196 + 1368) = a4;
   *(_BYTE *)(this->q00C + 1674) = 0;
   this->q05C = 0;
@@ -2319,11 +2319,10 @@ LABEL_336:
 }
 
 } // namespace gamemd
-}
 
 // 0x6A3DB0
 namespace gamemd {
-unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2, ObjectClass * aP3)
+unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2, ObjectClass * v4)
 {
   int v4; // eax
   int v5; // ebx
@@ -2332,8 +2331,8 @@ unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2
   int v8; // edx
   int v9; // ecx
 
-  v4 = *aP3; /*0x6a3dbd*/
-  v5 = dword_7F2A48[3 * *(this + 22)]; /*0x6a3dc1*/
+  v4 = *v4; /*0x6a3dbd*/
+  v5 = dword_7F2A48[3 * *(&this->q0082)]; /*0x6a3dc1*/
   v6 = *aP2; /*0x6a3dcf*/
   v7 = aP2[1]; /*0x6a3dd1*/
   if ( (v5 & 1) != 0 ) /*0x6a3dd4*/
@@ -2352,9 +2351,9 @@ unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2
     v7 = -v7; /*0x6a3e05*/
     v4 = (unsigned __int8)(0x80 - v4); /*0x6a3e0d*/
   }
-  *aP3 = v4; /*0x6a3e0f*/
-  v8 = *(this + 16); /*0x6a3e12*/
-  v9 = *(this + 17); /*0x6a3e15*/
+  *v4 = v4; /*0x6a3e0f*/
+  v8 = *(&this->q0046); /*0x6a3e12*/
+  v9 = *(&this->q0047); /*0x6a3e15*/
   *aP1 = v6 + v8; /*0x6a3e22*/
   aP1[1] = v7 + v9; /*0x6a3e25*/
   return aP1; /*0x6a3e20*/

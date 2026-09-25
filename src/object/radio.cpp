@@ -169,13 +169,13 @@ int RadioClass::PowerDrainUpdate(int a2)
     // vtable[11]; returns the (re-read) Capacity. Power::TimerProcess (0x4A1D50)
     // and the link vtable slots are not yet callable here -> deferred.
     COMStub_13(a2);                                  // IDA 0x65ab1a
-    for (int i = 0; i < radioLinks.Capacity; ++i)    // *(this+58) re-read each iter
+    for (int i = 0; i < radioLinks.Capacity; ++i)    // this->u32_E8 re-read each iter
     {
-        TechnoClass* link = radioLinks[i];           // *(this+57)[i]
+        TechnoClass* link = radioLinks[i];           // this->u32_E4[i]
         if (!link)
             continue;
     }
-    return radioLinks.Capacity;                      // *(this+58)
+    return radioLinks.Capacity;                      // this->u32_E8
 }
 
 // ============================================================

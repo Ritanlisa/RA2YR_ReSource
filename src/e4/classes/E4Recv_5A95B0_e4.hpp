@@ -5,7 +5,12 @@
 
 namespace gamemd {
 struct E4Recv_5A95B0 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    unsigned int M60;  // 0x3C
+    unsigned int q060;  // 0x60
+    unsigned int q150;  // 0x150
+// --- flat members (END) ---
     CCINIClass * PlaceRandomAIBuildings();  // 0x5A95B0
 };
 } // namespace gamemd

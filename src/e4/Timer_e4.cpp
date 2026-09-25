@@ -3,6 +3,9 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/ToolTipManager_7_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x46B640
 namespace gamemd {
@@ -18,20 +21,19 @@ namespace gamemd {
 int Timer::StartDouble(double a2)
 {
   int v3; // eax
-  wchar_t *v4; // ecx
   int v6; // [esp+8h] [ebp-Ch]
 
-  if ( *(this + 24) || (LOBYTE(v3) = *(this + 25), (_BYTE)v3) ) /*0x4a5252*/
+  if ( *(&this->ptr_84) || (IDA_LOBYTE(v3) = *(&this->ptr_85), (_BYTE)v3) ) /*0x4a5252*/
   {
-    *(this + 24) = 1; /*0x4a525e*/
+    *(&this->ptr_84) = 1; /*0x4a525e*/
     *(double *)this = a2 * 900.0; /*0x4a5262*/
     v3 = Math::RoundToInt(a2 * 900.0); /*0x4a5264*/
-    v4 = g_CurrentFrame; /*0x4a5269*/
-    *(this + 25) = 0; /*0x4a5272*/
-    *((_DWORD *)this + 2) = v4; /*0x4a5276*/
-    *((_DWORD *)this + 3) = v6; /*0x4a527c*/
-    *((_DWORD *)this + 4) = v3; /*0x4a527f*/
-    *((_DWORD *)this + 5) = v3; /*0x4a5282*/
+    g_CurrentFrame = g_CurrentFrame; /*0x4a5269*/
+    *(&this->ptr_85) = 0; /*0x4a5272*/
+    this->ptr_8 = g_CurrentFrame; /*0x4a5276*/
+    this->u32_C = v6; /*0x4a527c*/
+    this->u32_10 = v3; /*0x4a527f*/
+    this->u32_14 = v3; /*0x4a5282*/
   }
   return v3; /*0x4a5285*/
 }
@@ -69,19 +71,19 @@ int Timer::PumpMessages()
   HWND v2; // eax
   HWND result; // eax
 
-  if ( (HWND)(((int)*(this + 198) + 1) % 256) != *(this + 197) ) /*0x54f73e*/
+  if ( (HWND)(((int)*(&this->q04C8) + 1) % 256) != *(&this->q04C7) ) /*0x54f73e*/
     MessageLoop(); /*0x54f740*/
-  v2 = *(this + 198); /*0x54f745*/
-  *(this + 197) = v2; /*0x54f74b*/
+  v2 = *(&this->q04C8); /*0x54f745*/
+  *(&this->q04C7) = v2; /*0x54f74b*/
   if ( (HWND)(((int)v2 + 1) % 256) == v2 ) /*0x54f766*/
   {
-    result = *(this + 198); /*0x54f77b*/
-    *(this + 197) = result; /*0x54f781*/
+    result = *(&this->q04C8); /*0x54f77b*/
+    *(&this->q04C7) = result; /*0x54f781*/
   }
   else
   {
     result = MessageLoop(); /*0x54f768*/
-    *(this + 197) = *(this + 198); /*0x54f773*/
+    *(&this->q04C7) = *(&this->q04C8); /*0x54f773*/
   }
   return result; /*0x54f779*/
 }
@@ -177,7 +179,7 @@ unsigned long long Timer::ReadTSC(unsigned int * a1)
   unsigned __int64 result; // rax
 
   result = __rdtsc(); /*0x7c6068*/
-  *a1 = HIDWORD(result); /*0x7c606d*/
+  *a1 = IDA_HIDWORD(result); /*0x7c606d*/
   return result; /*0x7c606f*/
 }
 } // namespace gamemd

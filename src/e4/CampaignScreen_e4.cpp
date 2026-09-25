@@ -2,6 +2,15 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Campaign_e4.hpp"
+#include "e4/classes/Campaign_WorldDominationTour_16_e4.hpp"
+#include "e4/classes/Color_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/Campaign_WorldDominationTour_24_e4.hpp"
 
 // 0x470D30
 namespace gamemd {
@@ -84,7 +93,7 @@ void CampaignScreen_Init()
         case 0x4EDu: /*0x47138e*/
           Screen::Capture(1, 0, wParam, (int)a1); /*0x47139c*/
           ShowWindow(hWnd, 0); /*0x4713a4*/
-          Dialog::InitWindow(hWnd, 1); /*0x4713ad*/
+          Dialog::InitWindow(hWnd, 1, unsigned int a3); /*0x4713ad*/
           return 0; /*0x4713be*/
       }
       return 0; /*0x471396*/
@@ -92,13 +101,13 @@ void CampaignScreen_Init()
     if ( a3 == 1175 ) /*0x470d7b*/
     {
       DlgItem = GetDlgItem(hWnd, 1835); /*0x471364*/
-      PostMessageA(DlgItem, 0x4D7u, 0, (LPARAM)hWnd); /*0x471373*/
+      PostMessageA(DlgItem, 0x4D7u, 0, (LPARAM, unsigned int a3)hWnd); /*0x471373*/
       return 0; /*0x471385*/
     }
     if ( a3 == 15 ) /*0x470d84*/
     {
       Dialog::DrawBackground(hWnd); /*0x471343*/
-      Dialog::StopBink(hWnd); /*0x47134a*/
+      Dialog::StopBink(hWnd, unsigned int a3); /*0x47134a*/
       return 0; /*0x47135b*/
     }
     if ( a3 != 272 ) /*0x470d90*/
@@ -168,8 +177,8 @@ void CampaignScreen_Init()
       v20 = Color::ConvertToRGB( /*0x47102c*/
               (unsigned __int8 *)(*((_DWORD *)BuildingTypeClass_AnimTable + *(_DWORD *)(dword_89DFE0[v52] + 40)) + 776),
               (int)v56);
-      LOWORD(v55) = *(_WORD *)v20; /*0x471034*/
-      BYTE2(v55) = *(_BYTE *)(v20 + 2); /*0x47103c*/
+      IDA_LOWORD(v55) = *(_WORD *)v20; /*0x471034*/
+      IDA_BYTE2(v55) = *(_BYTE *)(v20 + 2); /*0x47103c*/
       v21 = dword_89DFE0[v52]; /*0x471067*/
       v54 = 24 * v52; /*0x471071*/
       v22 = (unsigned __int8)v55 | (*(unsigned __int16 *)((char *)&v55 + 1) << 8); /*0x471081*/

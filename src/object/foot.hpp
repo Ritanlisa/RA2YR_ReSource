@@ -350,10 +350,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     void FootClass_ImbueLocomotor();  // 0x710000
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    void Stub(int a1);  // 0x41C120
-    int Destruct();  // 0x4D3590
-// --- e4 declarations (END) ---
 };
 
 } // namespace game

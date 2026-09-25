@@ -129,16 +129,6 @@ public:
     int GetGameplayValue();  // 0x524790
     void* ClampToGroundHeight(int a1, int a2);  // 0x5247d0
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int Constructor(ObjectClass * aP1);  // 0x5236A0
-    char CreateInfantry(short * a2, AbstractClass * ppv);  // 0x523B40
-    int StubReturnFalse();  // 0x5247A0
-    int GetClassIdentifier(int a1, unsigned int * a2);  // 0x524C70
-    int GetTypeIdentifier();  // 0x524D40
-    int GetObjectSize();  // 0x524D50
-    InfantryTypeClass * ddtor(int Block, char a2);  // 0x524D70
-    int DTOR();  // 0x5239D0（删除式析构：4 重 vfptr 安装 + 全局类型数组自摘 + 三向量清理 + 尾调 TechnoTypeClass::DTOR）
-// --- e4 declarations (END) ---
 };
 
 // G22 E1: InfantryTypes registry (0xA8E348; ctor register / dtor compaction).

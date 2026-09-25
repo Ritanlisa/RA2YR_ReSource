@@ -2,18 +2,24 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Control_e4.hpp"
+#include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x48E620
+namespace gamemd {
 int Control::DispatchClick(ControlClass * aP1)
 {
   int v2; // ecx
 
-  v2 = *(this + 10); /*0x48e623*/
+  v2 = *(&this->q0040); /*0x48e623*/
   if ( v2 ) /*0x48e628*/
     (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v2 + 108))(v2, 0); /*0x48e62e*/
   return GadgetClass::ClearState(aP1); /*0x48e63d*/
 }
+} // namespace gamemd
 // 0x60B950
+namespace gamemd {
 int Control::RepositionControlsDialog()
 {
   HWND Parent; // esi
@@ -294,7 +300,9 @@ int Control::RepositionControlsDialog()
     return MoveWindow(hWnda, X, v3, nWidth, nHeight, 0); /*0x60c090*/
   return result; /*0x60c0af*/
 }
+} // namespace gamemd
 // 0x60C540
+namespace gamemd {
 int Control::CheckControlTypeDialog()
 {
   _DWORD *v1; // eax
@@ -380,3 +388,4 @@ int Control::CheckControlTypeDialog()
   *((_BYTE *)v3 + 189) = 1; /*0x60c7bf*/
   return 1; /*0x60c58b*/
 }
+} // namespace gamemd

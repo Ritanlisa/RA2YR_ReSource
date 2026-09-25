@@ -4,8 +4,15 @@
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Lobby_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x4E5D60
+namespace gamemd {
 int Lobby::InvalidatePlayerSlots()
 {
   int i; // esi
@@ -58,7 +65,9 @@ int Lobby::InvalidatePlayerSlots()
   }
   return result; /*0x4e5e0e*/
 }
+} // namespace gamemd
 // 0x5EB060
+namespace gamemd {
 void Lobby::UpdatePlayerLabels()
 {
   int v1; // esi
@@ -365,7 +374,9 @@ void Lobby::UpdatePlayerLabels()
   }
   while ( v16 + 1 < 8 );
 }
+} // namespace gamemd
 // 0x5EBA00
+namespace gamemd {
 void Lobby::SetupPlayerWidgets()
 {
   int v1; // esi
@@ -481,7 +492,9 @@ void Lobby::SetupPlayerWidgets()
     }
   }
 }
+} // namespace gamemd
 // 0x77DB90
+namespace gamemd {
 int Lobby::BuildPlayerList()
 {
   wchar_t **v0; // esi
@@ -524,3 +537,4 @@ int Lobby::BuildPlayerList()
   while ( (int)v0 < (int)&g_PlayerNameListEnd ); /*0x77dc6e*/
   return (*(int (__stdcall **)(LPVOID, char *))(*(_DWORD *)ppv + 60))(ppv, Destination); /*0x77dc84*/
 }
+} // namespace gamemd

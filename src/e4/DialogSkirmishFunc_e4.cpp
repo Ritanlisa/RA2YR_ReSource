@@ -5,11 +5,21 @@
 #include "e4/classes/Session_e4.hpp"
 #include "e4/classes/Waypoint_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Lobby_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/Skirmish_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/Surface_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/CoordStruct_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x6ACEE0
 namespace gamemd {
 AbstractClass * * DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog * hWnd, int nIDDlgItem, int a3, int a4)
-{
 {
   HWND DlgItem; // eax
   LRESULT v9; // eax
@@ -60,19 +70,19 @@ AbstractClass * * DialogSkirmishFunc_UpdateMultiEngineer(SkirmishDialog * hWnd, 
   wchar_t *v71; // [esp-10h] [ebp-270h]
   CampaignScore *v72; // [esp+0h] [ebp-260h]
   int _0c; // [esp+0h] [ebp-260h]
-  VectorClass *Format; // [esp+10h] [ebp-250h]
-  VectorClass *Formata; // [esp+10h] [ebp-250h]
-  VectorClass *Formatb; // [esp+10h] [ebp-250h]
-  VectorClass *Formatc; // [esp+10h] [ebp-250h]
-  VectorClass *v75; // [esp+14h] [ebp-24Ch]
-  VectorClass *ResourceID3; // [esp+14h] [ebp-24Ch]
+  VectorClass_flat *Format; // [esp+10h] [ebp-250h]
+  VectorClass_flat *Formata; // [esp+10h] [ebp-250h]
+  VectorClass_flat *Formatb; // [esp+10h] [ebp-250h]
+  VectorClass_flat *Formatc; // [esp+10h] [ebp-250h]
+  VectorClass_flat *v75; // [esp+14h] [ebp-24Ch]
+  VectorClass_flat *ResourceID3; // [esp+14h] [ebp-24Ch]
   wchar_t *v82; // [esp+18h] [ebp-248h] BYREF
   int var244; // [esp+1Ch] [ebp-244h]
-  VectorClass *nIDDlgItema; // [esp+20h] [ebp-240h]
+  VectorClass_flat *nIDDlgItema; // [esp+20h] [ebp-240h]
   CampaignScore *v85; // [esp+24h] [ebp-23Ch]
   CampaignScore *v86; // [esp+28h] [ebp-238h]
   int *WindowLongA; // [esp+2Ch] [ebp-234h]
-  VectorClass *v83; // [esp+30h] [ebp-230h]
+  VectorClass_flat *v83; // [esp+30h] [ebp-230h]
   CampaignScore *v89; // [esp+34h] [ebp-22Ch]
   char lParam[40]; // [esp+38h] [ebp-228h] BYREF
   wchar_t Destination[256]; // [esp+60h] [ebp-200h] BYREF
@@ -112,7 +122,7 @@ LABEL_151:
           sub_4E3690((HWND)hWnd, v70);
           break;
         case 1450:
-          Formatc = *(VectorClass **)&HouseClass_Player[29956];
+          Formatc = *(VectorClass_flat **)&HouseClass_Player[29956];
           v60 = *(CCINIClass **)&HouseClass_Player[29960];
           strcpy((char *)Destination, &HouseClass_Player[31636]);
           wcscpy(Destination, (const wchar_t *)&HouseClass_Player[30166]);
@@ -132,9 +142,9 @@ LABEL_151:
               if ( *(&g_MatrixTransformState + 2257) )
               {
                 ComPtr::Dtor(*(&g_MatrixTransformState + 2257));
-                __3_YAXPAX_Z(v61);
+                RA2_OPDEL(v61);
               }
-              _DWORD * v62 = (_DWORD *)__2_YAPAXI_Z(4u);
+              _DWORD * v62 = (_DWORD *)RA2_OPNEW(4u);
               if ( v62 )
                 v63 = (ObjectClass *)unknown_libname_27(v62);
               ObjectClass *v63 = 0;
@@ -178,8 +188,8 @@ LABEL_151:
                 if ( *(&g_MatrixTransformState + 2257) )
                 {
                   ComPtr::Dtor(*(&g_MatrixTransformState + 2257));
-                  __3_YAXPAX_Z(v67);
-                  _DWORD * v68 = (_DWORD *)__2_YAPAXI_Z(4u);
+                  RA2_OPDEL(v67);
+                  _DWORD * v68 = (_DWORD *)RA2_OPNEW(4u);
                   if ( v68 )
                     v69 = (ObjectClass *)unknown_libname_27(v68);
                   ObjectClass *v69 = 0;
@@ -214,7 +224,7 @@ LABEL_151:
               DlgItem = GetDlgItem((HWND)hWnd, 1559);
               EnableWindow(DlgItem, 0);
             }
-            Format = (VectorClass *)ReadPlayerCountMap(*(int *)&HouseClass_Player[29960]);
+            Format = (VectorClass_flat *)ReadPlayerCountMap(*(int *)&HouseClass_Player[29960]);
             v75 = 0;
             do
             {
@@ -249,7 +259,7 @@ LABEL_151:
               }
               v9 = SendDlgItemMessageA((HWND)hWnd, v8, 0x147u, 0, 0);
               if ( (unsigned int)SendDlgItemMessageA((HWND)hWnd, v8, 0x150u, v9, 0) <= 2 )
-                v75 = (VectorClass *)((char *)v75 + 1);
+                v75 = (VectorClass_flat *)((char *)v75 + 1);
               ++v6;
             }
             while ( v6 < 7 );
@@ -354,7 +364,7 @@ LABEL_151:
             {
               if ( var244 == 1559 )
               {
-                v83 = (VectorClass *)&stru_82083C;
+                v83 = (VectorClass_flat *)&stru_82083C;
                 v71 = GetStringCSF(g_Str_TXT_OK, 0, (CampaignScore *)&stru_830620[63020], 1129);
                 v26 = WideString::GetOrEmpty(&v82);
                 Dialog::ShowMessageBox((int)v26, v71, 0, 0, 0, (int)v72);
@@ -408,9 +418,9 @@ LABEL_151:
                 v32 = 1291;
               }
               ResourceID2CSF = GetResourceID2CSF((void *)v31);
-              Formata = (VectorClass *)GetResourceIDCSF((void *)v31);
-              ResourceID3 = (VectorClass *)GetResourceID3CSF((void *)v31);
-              nIDDlgItema = (VectorClass *)GetResourceID4CSF((void *)v31);
+              Formata = (VectorClass_flat *)GetResourceIDCSF((void *)v31);
+              ResourceID3 = (VectorClass_flat *)GetResourceID3CSF((void *)v31);
+              nIDDlgItema = (VectorClass_flat *)GetResourceID4CSF((void *)v31);
               v34 = SendDlgItemMessageA((HWND)hWnd, v32, 0x147u, 0, 0);
               if ( (unsigned int)SendDlgItemMessageA((HWND)hWnd, v32, 0x150u, v34, 0) <= 2 )
               {
@@ -442,7 +452,7 @@ LABEL_151:
             }
             while ( v31 < 7 );
             char * v36 = 0;
-            Formatb = (VectorClass *)&HouseClass_Player[30372];
+            Formatb = (VectorClass_flat *)&HouseClass_Player[30372];
             do
             {
   int v43; // edx
@@ -479,7 +489,7 @@ LABEL_151:
                 v37 = 1291;
               }
               int v38 = GetResourceID2CSF(++v36);
-              nIDDlgItema = (VectorClass *)GetResourceIDCSF(v36);
+              nIDDlgItema = (VectorClass_flat *)GetResourceIDCSF(v36);
               v39 = SendDlgItemMessageA((HWND)hWnd, v37, 0x147u, 0, 0);
               v40 = SendDlgItemMessageA((HWND)hWnd, v37, 0x150u, v39, 0);
               v41 = GetComboBoxSelected((ReferenceCounted *)hWnd, v38, 0xFFFFFFFF);
@@ -502,7 +512,7 @@ LABEL_151:
               *(_DWORD *)&Formatb[-1].IsInitialized = v43;
               Formatb->vtable0 = (void *)v41;
               Formatb->Items = (void *)ComboBoxSelectedRaw;
-              Formatb = (VectorClass *)((char *)Formatb + 12);
+              Formatb = (VectorClass_flat *)((char *)Formatb + 12);
             }
             while ( (int)(v36 + 1) < 8 );
             v44 = GetComboBoxSelectedRaw((ReferenceCounted *)hWnd, 1698, 0xFFFFFFFF);
@@ -511,7 +521,7 @@ LABEL_151:
             SessionClass::AssignColor(&HouseClass_Player[29932], v44, (MPCooperative *)1);
             *(_DWORD *)&HouseClass_Player[30288] = v45;
             *(_DWORD *)&HouseClass_Player[30296] = v46;
-            int v47 = __2_YAPAXI_Z(0x85u);
+            int v47 = RA2_OPNEW(0x85u);
             int v48 = v47;
             if ( v47 )
             {
@@ -580,7 +590,7 @@ LABEL_151:
             if ( *(&g_MatrixTransformState + 2257) )
             {
               ComPtr::Dtor(*(&g_MatrixTransformState + 2257));
-              __3_YAXPAX_Z(v59);
+              RA2_OPDEL(v59);
               *(&g_MatrixTransformState + 2257) = 0;
             }
             *WindowLongA = var244;
@@ -624,4 +634,3 @@ LABEL_153:
   }
 }
 } // namespace gamemd
-}

@@ -12,18 +12,17 @@
 #include "app/cmdline.hpp"
 
 // 0x5D67B0
-namespace gamemd { void* GameConfig::Constructor() {
-  char **v1; // edi
+namespace gamemd { 
+void* GameConfig::Constructor() {
   _DWORD *v2; // eax
   _DWORD *v3; // esi
   _DWORD v6[22]; // [esp+Ch] [ebp-6Ch] BYREF
   char v7[12]; // [esp+64h] [ebp-14h] BYREF
   int v8; // [esp+70h] [ebp-8h]
 
-  v1 = this; /*0x5d67b5*/
   if ( !*(&this->ptr_44) ) /*0x5d67bd*/
   {
-    v2 = __2_YAPAXI_Z(0x58u); /*0x5d67c9*/
+    v2 = RA2_OPNEW(0x58u); /*0x5d67c9*/
     v3 = v2; /*0x5d67ce*/
     if ( v2 ) /*0x5d67d5*/
     {
@@ -31,12 +30,11 @@ namespace gamemd { void* GameConfig::Constructor() {
       v2[2] = 0; /*0x5d67e1*/
       v2[5] = 0; /*0x5d67e6*/
       v2[6] = 0; /*0x5d67e9*/
-      v2[4] = &GenericNode::`vftable'; /*0x5d67ec*/
+      v2[4] = &(void*)(void*)&GenericNode_vftable; /*0x5d67ec*/
       GenericNode::Constructor(v2 + 7); /*0x5d67f2*/
-      v3[3] = &GenericList::`vftable'; /*0x5d67fa*/
+      v3[3] = &(void*)(void*)&GenericList_vftable; /*0x5d67fa*/
       LinkedList::Prepend(v3 + 4, (int)(v3 + 7)); /*0x5d6801*/
-      v1 = this; /*0x5d6806*/
-      v3[3] = &List<INIClass::INISection *>::`vftable'; /*0x5d680a*/
+      v3[3] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x5d680a*/
       v3[10] = 0; /*0x5d6811*/
       v3[11] = 0; /*0x5d6814*/
       v3[12] = 0; /*0x5d6817*/
@@ -50,21 +48,22 @@ namespace gamemd { void* GameConfig::Constructor() {
     {
       v3 = 0; /*0x5d682f*/
     }
-    v1[14] = (char *)v3; /*0x5d6839*/
-    CCFileClass::Construct2(v6, v1 + 11); /*0x5d683c*/
+    this->q038 = (char *)v3; /*0x5d6839*/
+    CCFileClass::Construct2(v6, &this->ptr_41); /*0x5d683c*/
     if ( CCFileClass::Open(v6, 0) ) /*0x5d6846*/
-      CCINIClass::Load(v1[14], (int)v6, 0, 0); /*0x5d685a*/
-    v6[0] = &CCFileClass::`vftable'; /*0x5d6863*/
+      CCINIClass::Load(this->q038, (int)v6, 0, 0); /*0x5d685a*/
+    v6[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5d6863*/
     v8 = 0; /*0x5d686b*/
     Vector::Clear((int)v7); /*0x5d686f*/
     v6[0] = &off_7E1668; /*0x5d6878*/
     BufferIOFileClass::Dtor(v6); /*0x5d6880*/
   }
-  return v1[14]; /*0x5d6888*/
+  return this->q038; /*0x5d6888*/
 }
 }
 // 0x77E7A0
-namespace gamemd { int GameConfig::BuildChecksum() {
+namespace gamemd { 
+int GameConfig::BuildChecksum() {
   int v2; // ecx
   int *v3; // eax
   int v4; // esi

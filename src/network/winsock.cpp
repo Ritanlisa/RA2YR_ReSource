@@ -47,14 +47,14 @@ bool WinsockInterfaceClass::initialize()
         return false;
     }
 
-    if (LOBYTE(wsaData.wVersion) < 1 || (LOBYTE(wsaData.wVersion) == 1 && HIBYTE(wsaData.wVersion) < 1))
+    if (IDA_LOBYTE(wsaData.wVersion) < 1 || (IDA_LOBYTE(wsaData.wVersion) == 1 && IDA_HIBYTE(wsaData.wVersion) < 1))
     {
         LOG_WARN("Winsock version is less than 1.1");
         WSACleanup();
         return false;
     }
 
-    LOG_INFO("Winsock version is %d.%d", LOBYTE(wsaData.wVersion), HIBYTE(wsaData.wVersion));
+    LOG_INFO("Winsock version is %d.%d", IDA_LOBYTE(wsaData.wVersion), IDA_HIBYTE(wsaData.wVersion));
 
     Initialized = true;
     return true;

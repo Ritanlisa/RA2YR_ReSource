@@ -4,6 +4,9 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/SaveGame_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/IStream_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x67CEF0
 namespace gamemd {

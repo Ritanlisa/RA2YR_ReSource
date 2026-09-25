@@ -25,11 +25,18 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/LinkedList_flat_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x6C6F50
 namespace gamemd {
 int ProcessGameResults(char a1)
-{
 {
   IUnknown *v2; // esi
   char *inited; // eax
@@ -164,21 +171,21 @@ int ProcessGameResults(char a1)
   }
   Debug::Log();
   v2 = dword_B779D4;
-  char * v3 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v3 = (char *)RA2_OPNEW(0x10u);
   if ( v3 )
     inited = TerrainInitMap(v3, (RandomStruct *)&stru_830620[72452], v2);
   else
     inited = 0;
-  LinkedList::PushFront(v262, (IUnknown *)inited);
+  LinkedList_flat::PushFront(v262, (IUnknown *)inited);
   if ( g_GameMode_Current == (CellStruct *)4 && g_GameOptionsFlags == 3 )
   {
     v5 = g_GameDifficulty;
-    char * v6 = (char *)__2_YAPAXI_Z(0x10u);
+    char * v6 = (char *)RA2_OPNEW(0x10u);
     if ( v6 )
       char * v7 = NetMessage::Pack4(v6, (RandomStruct *)&stru_830620[72444], (int)v5);
     else
       v7 = 0;
-    LinkedList::PushFront(v262, (IUnknown *)v7);
+    LinkedList_flat::PushFront(v262, (IUnknown *)v7);
     v8 = dword_B77D6C;
     if ( !a1 )
       v8 = dword_B73814;
@@ -187,125 +194,125 @@ int ProcessGameResults(char a1)
   {
     v8 = dword_B77D6C;
   }
-  char * v9 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v9 = (char *)RA2_OPNEW(0x10u);
   if ( v9 )
     char * v10 = TerrainInitMap(v9, (RandomStruct *)&stru_830620[72436], (IUnknown *)v8);
   else
     v10 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v10);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v10);
   v11 = dword_B779C4;
-  char * v12 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v12 = (char *)RA2_OPNEW(0x10u);
   if ( v12 )
     char * v13 = TerrainInitMap(v12, (RandomStruct *)&stru_830620[72428], v11);
   else
     v13 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v13);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v13);
   if ( g_GameMode_Current == (CellStruct *)4 && g_GameOptionsFlags == 3 && a1 )
     dword_B779C4 = 0;
-  LOBYTE(v264.vfptr) = DataGlobal_00A8B8C2 == 1;
-  char * v14 = (char *)__2_YAPAXI_Z(0x10u);
+  IDA_LOBYTE(v264.vfptr) = DataGlobal_00A8B8C2 == 1;
+  char * v14 = (char *)RA2_OPNEW(0x10u);
   if ( v14 )
     char * v15 = String::AllocAndCopy(v14, (RandomStruct *)&stru_830620[72420], (IUnknown *)v264.vfptr);
   else
     v15 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v15);
-  LOBYTE(v264.vfptr) = DataGlobal_A8B8C1 == 1;
-  char * v16 = (char *)__2_YAPAXI_Z(0x10u);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v15);
+  IDA_LOBYTE(v264.vfptr) = DataGlobal_A8B8C1 == 1;
+  char * v16 = (char *)RA2_OPNEW(0x10u);
   if ( v16 )
     char * v17 = String::AllocAndCopy(v16, (RandomStruct *)&stru_830620[72412], (IUnknown *)v264.vfptr);
   else
     v17 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v17);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v17);
   v19 = (ObjectClass *)(*(_DWORD *)&g_OverlayTypeConfig[17744] / 0x3Cu);
-  eax31 = (char *)__2_YAPAXI_Z(0x10u);
+  eax31 = (char *)RA2_OPNEW(0x10u);
   if ( eax31 )
     char * v20 = TerrainInitMap(eax31, (RandomStruct *)&stru_830620[72404], (IUnknown *)v19);
   else
     v20 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v20);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v20);
   v21 = (IUnknown *)g_Rules_Bases;
-  char * v22 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v22 = (char *)RA2_OPNEW(0x10u);
   if ( v22 )
     char * v23 = TerrainInitMap(v22, (RandomStruct *)&stru_830620[72396], v21);
   else
     v23 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v23);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v23);
   bool v24 = (_BYTE)ShortGame != 0;
-  char * v25 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v25 = (char *)RA2_OPNEW(0x10u);
   if ( v25 )
     char * v26 = TerrainInitMap(v25, (RandomStruct *)&stru_830620[72388], (IUnknown *)v24);
   else
     v26 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v26);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v26);
   bool v27 = (_BYTE)SWAllowed != 0;
-  char * v28 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v28 = (char *)RA2_OPNEW(0x10u);
   if ( v28 )
     char * v29 = TerrainInitMap(v28, (RandomStruct *)&stru_830620[72380], (IUnknown *)v27);
   else
     v29 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v29);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v29);
   v30 = g_ScenarioFlags;
-  char * v31 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v31 = (char *)RA2_OPNEW(0x10u);
   if ( v31 )
     char * v32 = TerrainInitMap(v31, (RandomStruct *)&stru_830620[72372], v30);
   else
     v32 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v32);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v32);
   v33 = (IUnknown *)(((_BYTE)MCVRedeploy == 1) + 2 * ((_BYTE)g_Rules_ShortGame == 1));
-  char * v34 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v34 = (char *)RA2_OPNEW(0x10u);
   if ( v34 )
     char * v35 = TerrainInitMap(v34, (RandomStruct *)&stru_830620[72364], v33);
   else
     v35 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v35);
-  LOBYTE(v264.vfptr) = (_BYTE)Bases != 0;
-  char * v36 = (char *)__2_YAPAXI_Z(0x10u);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v35);
+  IDA_LOBYTE(v264.vfptr) = (_BYTE)Bases != 0;
+  char * v36 = (char *)RA2_OPNEW(0x10u);
   if ( v36 )
     char * v37 = String::AllocAndCopy(v36, (RandomStruct *)&stru_830620[72356], (IUnknown *)v264.vfptr);
   else
     v37 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v37);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v37);
   bool v38 = (_BYTE)Crates != 0;
-  char * v39 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v39 = (char *)RA2_OPNEW(0x10u);
   if ( v39 )
     char * v40 = TerrainInitMap(v39, (RandomStruct *)&stru_830620[72348], (IUnknown *)v38);
   else
     v40 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v40);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v40);
   v41 = (IUnknown *)g_Rules_AlliesAllowed;
-  char * v42 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v42 = (char *)RA2_OPNEW(0x10u);
   if ( v42 )
     char * v43 = TerrainInitMap(v42, (RandomStruct *)&stru_830620[72340], v41);
   else
     v43 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v43);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v43);
   v44 = (IUnknown *)g_Rules_MultiEngineer;
-  char * v45 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v45 = (char *)RA2_OPNEW(0x10u);
   if ( v45 )
     char * v46 = TerrainInitMap(v45, (RandomStruct *)&stru_830620[59868], v44);
   else
     v46 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v46);
-  char * v47 = (char *)__2_YAPAXI_Z(0x10u);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v46);
+  char * v47 = (char *)RA2_OPNEW(0x10u);
   if ( v47 )
     char * v48 = BuildResultPacket(v47, &stru_830620[72332], (IUnknown *)&Destination);
   else
     v48 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v48);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v48);
   v49 = (IUnknown *)dword_B77780;
-  char * v50 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v50 = (char *)RA2_OPNEW(0x10u);
   if ( v50 )
     char * v51 = TerrainInitMap(v50, (RandomStruct *)&stru_830620[72324], v49);
   else
     v51 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v51);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v51);
   v52 = (IUnknown *)dword_B77CE0;
-  char * v53 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v53 = (char *)RA2_OPNEW(0x10u);
   if ( v53 )
     char * v54 = TerrainInitMap(v53, (RandomStruct *)&stru_830620[72316], v52);
   else
     v54 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v54);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v54);
   if ( (int)HouseClass_Count > 0 )
   {
     v55 = HouseClass_Array;
@@ -392,18 +399,18 @@ int ProcessGameResults(char a1)
     v269 = v73;
   }
 LABEL_95:
-  char * v75 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v75 = (char *)RA2_OPNEW(0x10u);
   if ( v75 )
     char * v76 = TerrainInitMap(v75, (RandomStruct *)&stru_830620[72308], v68);
   else
     v76 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v76);
-  char * v77 = (char *)__2_YAPAXI_Z(0x10u);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v76);
+  char * v77 = (char *)RA2_OPNEW(0x10u);
   if ( v77 )
     char * v78 = TerrainInitMap(v77, (RandomStruct *)&stru_830620[72300], v269);
   else
     v78 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v78);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v78);
   if ( dword_B779C4 == (IUnknown *)1 )
   {
     LoadPlayerProfile(&v264, (const char **)&g_WebBrowser);
@@ -462,17 +469,17 @@ LABEL_95:
     while ( v79 < (unsigned int)aP2 );
   }
   int v82 = *(_DWORD *)dword_B77788;
-  char * v83 = (char *)__2_YAPAXI_Z(0x10u);
+  char * v83 = (char *)RA2_OPNEW(0x10u);
   if ( v83 )
     char * v84 = NetMessage::Pack4(v83, (RandomStruct *)&stru_830620[72292], v82);
   else
     v84 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v84);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v84);
   if ( *(_DWORD *)&g_OverlayTypeConfig[17744] / 60 )
   {
     v86 = (IUnknown *)(*(_DWORD *)&g_NetworkPlayerBuffer[5960]
                      / (unsigned int)(*(_DWORD *)&g_OverlayTypeConfig[17744] / 60));
-    eax130 = (char *)__2_YAPAXI_Z(0x10u);
+    eax130 = (char *)RA2_OPNEW(0x10u);
     if ( eax130 )
     {
       v87 = TerrainInitMap(eax130, (RandomStruct *)&stru_830620[72284], v86);
@@ -481,7 +488,7 @@ LABEL_95:
   }
   else
   {
-    char * v88 = (char *)__2_YAPAXI_Z(0x10u);
+    char * v88 = (char *)RA2_OPNEW(0x10u);
     if ( v88 )
     {
       v87 = NetMessage::Pack4(v88, (RandomStruct *)&stru_830620[72284], 0);
@@ -490,22 +497,22 @@ LABEL_95:
   }
   v87 = 0;
 LABEL_135:
-  LinkedList::PushFront(v262, (IUnknown *)v87);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v87);
   v89 = *(IUnknown **)&g_NetworkPlayerBuffer[5412];
-  v90 = (char *)__2_YAPAXI_Z(0x10u);
+  v90 = (char *)RA2_OPNEW(0x10u);
   if ( v90 )
     v91 = TerrainInitMap(v90, (RandomStruct *)&stru_830620[72276], v89);
   else
     v91 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v91);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v91);
   ModuleInternalVersion = GetModuleInternalVersion((int)&g_NetworkPlayerBuffer[5796]);
   wsprintfA(v286, &stru_830620[72272], ModuleInternalVersion);
-  v93 = (char *)__2_YAPAXI_Z(0x10u);
+  v93 = (char *)RA2_OPNEW(0x10u);
   if ( v93 )
     v94 = BuildResultPacket(v93, &stru_830620[72264], (IUnknown *)v286);
   else
     v94 = 0;
-  LinkedList::PushFront(v262, (IUnknown *)v94);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v94);
   GetModuleFileNameA((HMODULE)g_hInstance, Filename, 0x118u);
   v273 = 0;
   v274 = 1;
@@ -523,18 +530,18 @@ LABEL_135:
   {
     LastWriteTime.dwLowDateTime = htonl(LastWriteTime.dwLowDateTime);
     LastWriteTime.dwHighDateTime = htonl(LastWriteTime.dwHighDateTime);
-    char * v95 = (char *)__2_YAPAXI_Z(0x10u);
+    char * v95 = (char *)RA2_OPNEW(0x10u);
     if ( v95 )
       char * v96 = NetMessage::Pack(v95, &stru_830620[72256], (IUnknown *)&LastWriteTime, (IUnknown *)8);
     else
       v96 = 0;
-    LinkedList::PushFront(v262, (IUnknown *)v96);
+    LinkedList_flat::PushFront(v262, (IUnknown *)v96);
   }
   if ( g_GameOptionsFlags != 1 )
   {
     if ( g_GameOptionsFlags == 2 )
     {
-      char * v99 = (char *)__2_YAPAXI_Z(0x10u);
+      char * v99 = (char *)RA2_OPNEW(0x10u);
       if ( v99 )
       {
         v98 = TerrainInitMap(v99, (RandomStruct *)&stru_830620[72248], (IUnknown *)4);
@@ -545,7 +552,7 @@ LABEL_135:
     {
       if ( g_GameOptionsFlags != 4 )
         goto LABEL_158;
-      char * v100 = (char *)__2_YAPAXI_Z(0x10u);
+      char * v100 = (char *)RA2_OPNEW(0x10u);
       if ( v100 )
       {
         v98 = TerrainInitMap(v100, (RandomStruct *)&stru_830620[72248], (IUnknown *)1);
@@ -556,22 +563,22 @@ LABEL_156:
     v98 = 0;
     goto LABEL_157;
   }
-  v97 = (char *)__2_YAPAXI_Z(0x10u);
+  v97 = (char *)RA2_OPNEW(0x10u);
   if ( !v97 )
     goto LABEL_156;
   v98 = TerrainInitMap(v97, (RandomStruct *)&stru_830620[72248], (IUnknown *)2);
 LABEL_157:
-  LinkedList::PushFront(v262, (IUnknown *)v98);
+  LinkedList_flat::PushFront(v262, (IUnknown *)v98);
 LABEL_158:
   if ( g_GameStateFlags )
   {
     v101 = (IUnknown *)(*(int (__thiscall **)(SkirmishDialog *))(*(_DWORD *)g_GameStateFlags->__pad_0 + 184))(g_GameStateFlags);
-    char * v102 = (char *)__2_YAPAXI_Z(0x10u);
+    char * v102 = (char *)RA2_OPNEW(0x10u);
     if ( v102 )
       char * v103 = TerrainInitMap(v102, (RandomStruct *)&stru_830620[72240], v101);
     else
       v103 = 0;
-    LinkedList::PushFront(v262, (IUnknown *)v103);
+    LinkedList_flat::PushFront(v262, (IUnknown *)v103);
   }
   v104 = 0;
   v268 = 0;
@@ -587,88 +594,88 @@ LABEL_158:
       char v106 = (_BYTE)v104 + 48;
       char v263 = (_BYTE)v104 + 48;
       stru_830620[71971] = (_BYTE)v104 + 48;
-      char * v107 = (char *)__2_YAPAXI_Z(0x10u);
+      char * v107 = (char *)RA2_OPNEW(0x10u);
       if ( v107 )
         char * v108 = BuildResultPacket(v107, &stru_830620[71968], (IUnknown *)(v105 + 90100));
       else
         v108 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v108);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v108);
       v110 = *(ObjectClass **)(v105 + 512);
       stru_830620[72147] = v106;
-      eax169 = (char *)__2_YAPAXI_Z(0x10u);
+      eax169 = (char *)RA2_OPNEW(0x10u);
       if ( eax169 )
         char * v111 = TerrainInitMap(eax169, (RandomStruct *)&stru_830620[72144], (IUnknown *)v110);
       else
         v111 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v111);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v111);
       v113 = *(ObjectClass **)(v105 + 516);
       stru_830620[72155] = v106;
-      eax172 = (char *)__2_YAPAXI_Z(0x10u);
+      eax172 = (char *)RA2_OPNEW(0x10u);
       if ( eax172 )
         char * v114 = TerrainInitMap(eax172, (RandomStruct *)&stru_830620[72152], (IUnknown *)v113);
       else
         v114 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v114);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v114);
       stru_830620[71979] = v106;
       v116 = *(ObjectClass **)(v105 + 488);
-      eax175 = (char *)__2_YAPAXI_Z(0x10u);
+      eax175 = (char *)RA2_OPNEW(0x10u);
       if ( eax175 )
         char * v117 = TerrainInitMap(eax175, (RandomStruct *)&stru_830620[71976], (IUnknown *)v116);
       else
         v117 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v117);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v117);
       stru_830620[71987] = v106;
       v118 = v268;
       if ( dword_B779C4 == (IUnknown *)2 )
         v118 = *(IUnknown **)(v105 + 516);
-      char * v119 = (char *)__2_YAPAXI_Z(0x10u);
+      char * v119 = (char *)RA2_OPNEW(0x10u);
       if ( v119 )
         char * v120 = TerrainInitMap(v119, (RandomStruct *)&stru_830620[71984], v118);
       else
         v120 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v120);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v120);
       stru_830620[72139] = v106;
-      char * v121 = (char *)__2_YAPAXI_Z(0x10u);
+      char * v121 = (char *)RA2_OPNEW(0x10u);
       if ( v121 )
         char * v122 = TerrainInitMap(v121, (RandomStruct *)&stru_830620[72136], v284[(_DWORD)v268]);
       else
         v122 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v122);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v122);
       stru_830620[72163] = v106;
       char v123 = *(_BYTE *)(v105 + 520);
-      LOBYTE(v270) = 0;
+      IDA_LOBYTE(v270) = 0;
       if ( v123 )
-        LOBYTE(v270) = *(_BYTE *)(v105 + 583) == 0;
-      char * v124 = (char *)__2_YAPAXI_Z(0x10u);
+        IDA_LOBYTE(v270) = *(_BYTE *)(v105 + 583) == 0;
+      char * v124 = (char *)RA2_OPNEW(0x10u);
       if ( v124 )
         char * v125 = String::AllocAndCopy(v124, (RandomStruct *)&stru_830620[72160], v270);
       else
         v125 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v125);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v125);
       stru_830620[71995] = v106;
       v127 = *(ObjectClass **)(v105 + 90196);
-      eax191 = (char *)__2_YAPAXI_Z(0x10u);
+      eax191 = (char *)RA2_OPNEW(0x10u);
       if ( eax191 )
         char * v128 = TerrainInitMap(eax191, (RandomStruct *)&stru_830620[71992], (IUnknown *)v127);
       else
         v128 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v128);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v128);
       stru_830620[72003] = v106;
       v130 = *(ObjectClass **)(*(_DWORD *)(v105 + 52) + 184);
-      eax194 = (char *)__2_YAPAXI_Z(0x10u);
+      eax194 = (char *)RA2_OPNEW(0x10u);
       if ( eax194 )
         char * v131 = TerrainInitMap(eax194, (RandomStruct *)&stru_830620[72000], (IUnknown *)v130);
       else
         v131 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v131);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v131);
       stru_830620[72011] = v106;
       int v132 = (*(int (__stdcall **)(int))(*(_DWORD *)(v105 + 36) + 24))(v105 + 36);
-      char * v133 = (char *)__2_YAPAXI_Z(0x10u);
+      char * v133 = (char *)RA2_OPNEW(0x10u);
       if ( v133 )
         char * v134 = NetMessage::Pack4(v133, (RandomStruct *)&stru_830620[72008], v132);
       else
         v134 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v134);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v134);
       stru_830620[72059] = v106;
       stru_830620[72051] = v106;
       stru_830620[72067] = v106;
@@ -685,7 +692,7 @@ LABEL_158:
           v264.vfptr = (void *)(v136 + 1);
       }
       v138 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 2864));
-      eax204 = (char *)__2_YAPAXI_Z(0x10u);
+      eax204 = (char *)RA2_OPNEW(0x10u);
       if ( eax204 )
   char *v139; // eax
         v139 = NetMessage::Pack(
@@ -695,7 +702,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v139 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v139);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v139);
       int v140 = *(_DWORD *)(v105 + 6968);
       int v141 = 0;
       for ( v264.vfptr = 0; v141 < v140; ++v141 )
@@ -704,7 +711,7 @@ LABEL_158:
           v264.vfptr = (void *)(v141 + 1);
       }
       v143 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 4920));
-      eax211 = (char *)__2_YAPAXI_Z(0x10u);
+      eax211 = (char *)RA2_OPNEW(0x10u);
       if ( eax211 )
   char *v144; // eax
         v144 = NetMessage::Pack(
@@ -714,7 +721,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v144 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v144);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v144);
       int v145 = *(_DWORD *)(v105 + 2856);
       int v146 = 0;
       for ( v264.vfptr = 0; v146 < v145; ++v146 )
@@ -723,7 +730,7 @@ LABEL_158:
           v264.vfptr = (void *)(v146 + 1);
       }
       v148 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 808));
-      eax218 = (char *)__2_YAPAXI_Z(0x10u);
+      eax218 = (char *)RA2_OPNEW(0x10u);
       if ( eax218 )
   char *v149; // eax
         v149 = NetMessage::Pack(
@@ -733,7 +740,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v149 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v149);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v149);
       int v150 = *(_DWORD *)(v105 + 9024);
       int v151 = 0;
       for ( v264.vfptr = 0; v151 < v150; ++v151 )
@@ -742,7 +749,7 @@ LABEL_158:
           v264.vfptr = (void *)(v151 + 1);
       }
       v153 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 6976));
-      eax225 = (char *)__2_YAPAXI_Z(0x10u);
+      eax225 = (char *)RA2_OPNEW(0x10u);
       if ( eax225 )
   char *v154; // eax
         v154 = NetMessage::Pack(
@@ -752,7 +759,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v154 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v154);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v154);
       Array::ByteSwap((u_long *)(v105 + 2864));
       Array::ByteSwap((u_long *)(v105 + 4920));
       Array::ByteSwap((u_long *)(v105 + 808));
@@ -804,7 +811,7 @@ LABEL_158:
           v264.vfptr = (void *)(v165 + 1);
       }
       v167 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 2864));
-      eax247 = (char *)__2_YAPAXI_Z(0x10u);
+      eax247 = (char *)RA2_OPNEW(0x10u);
       if ( eax247 )
   char *v168; // eax
         v168 = NetMessage::Pack(
@@ -814,7 +821,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v168 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v168);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v168);
       int v169 = *(_DWORD *)(v105 + 6968);
       int v170 = 0;
       for ( n = 0; n < v169; ++n )
@@ -823,12 +830,12 @@ LABEL_158:
           v170 = n + 1;
       }
       v173 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 4920));
-      eax254 = (char *)__2_YAPAXI_Z(0x10u);
+      eax254 = (char *)RA2_OPNEW(0x10u);
       if ( eax254 )
         char * v174 = NetMessage::Pack(eax254, &stru_830620[72016], (IUnknown *)v173, (IUnknown *)(4 * v170));
       else
         v174 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v174);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v174);
       int v175 = *(_DWORD *)(v105 + 2856);
       int v176 = 0;
       for ( ii = 0; ii < v175; ++ii )
@@ -837,12 +844,12 @@ LABEL_158:
           v176 = ii + 1;
       }
       v179 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 808));
-      eax261 = (char *)__2_YAPAXI_Z(0x10u);
+      eax261 = (char *)RA2_OPNEW(0x10u);
       if ( eax261 )
         char * v180 = NetMessage::Pack(eax261, &stru_830620[72032], (IUnknown *)v179, (IUnknown *)(4 * v176));
       else
         v180 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v180);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v180);
       int v181 = *(_DWORD *)(v105 + 9024);
       int v182 = 0;
       for ( jj = 0; jj < v181; ++jj )
@@ -851,12 +858,12 @@ LABEL_158:
           v182 = jj + 1;
       }
       v185 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 6976));
-      eax268 = (char *)__2_YAPAXI_Z(0x10u);
+      eax268 = (char *)RA2_OPNEW(0x10u);
       if ( eax268 )
         char * v186 = NetMessage::Pack(eax268, &stru_830620[72040], (IUnknown *)v185, (IUnknown *)(4 * v182));
       else
         v186 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v186);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v186);
       HouseClass::NetworkConvert((_DWORD *)(v105 + 11088));
       HouseClass::NetworkConvert((_DWORD *)(v105 + 13144));
       HouseClass::NetworkConvert((_DWORD *)(v105 + 9032));
@@ -879,7 +886,7 @@ LABEL_158:
         while ( v187 < v188 );
       }
       v190 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 11088));
-      eax275 = (char *)__2_YAPAXI_Z(0x10u);
+      eax275 = (char *)RA2_OPNEW(0x10u);
       if ( eax275 )
   char *v191; // eax
         v191 = NetMessage::Pack(
@@ -889,7 +896,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v191 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v191);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v191);
       int v192 = *(_DWORD *)(v105 + 15192);
       int v193 = 0;
       for ( kk = 0; kk < v192; ++kk )
@@ -898,12 +905,12 @@ LABEL_158:
           v193 = kk + 1;
       }
       v196 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 13144));
-      eax282 = (char *)__2_YAPAXI_Z(0x10u);
+      eax282 = (char *)RA2_OPNEW(0x10u);
       if ( eax282 )
         char * v197 = NetMessage::Pack(eax282, &stru_830620[72080], (IUnknown *)v196, (IUnknown *)(4 * v193));
       else
         v197 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v197);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v197);
       int v198 = *(_DWORD *)(v105 + 11080);
       int v199 = 0;
       for ( mm = 0; mm < v198; ++mm )
@@ -912,12 +919,12 @@ LABEL_158:
           v199 = mm + 1;
       }
       v202 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 9032));
-      eax289 = (char *)__2_YAPAXI_Z(0x10u);
+      eax289 = (char *)RA2_OPNEW(0x10u);
       if ( eax289 )
         char * v203 = NetMessage::Pack(eax289, &stru_830620[72096], (IUnknown *)v202, (IUnknown *)(4 * v199));
       else
         v203 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v203);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v203);
       int v204 = *(_DWORD *)(v105 + 17248);
       int v205 = 0;
       for ( nn = 0; nn < v204; ++nn )
@@ -926,12 +933,12 @@ LABEL_158:
           v205 = nn + 1;
       }
       v208 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 15200));
-      eax296 = (char *)__2_YAPAXI_Z(0x10u);
+      eax296 = (char *)RA2_OPNEW(0x10u);
       if ( eax296 )
         char * v209 = NetMessage::Pack(eax296, &stru_830620[72104], (IUnknown *)v208, (IUnknown *)(4 * v205));
       else
         v209 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v209);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v209);
       stru_830620[72115] = v263;
       HouseClass::NetworkConvert((_DWORD *)(v105 + 17256));
       int v210 = *(_DWORD *)(v105 + 19304);
@@ -942,7 +949,7 @@ LABEL_158:
           v264.vfptr = (void *)(v211 + 1);
       }
       v213 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 17256));
-      eax303 = (char *)__2_YAPAXI_Z(0x10u);
+      eax303 = (char *)RA2_OPNEW(0x10u);
       if ( eax303 )
   char *v214; // eax
         v214 = NetMessage::Pack(
@@ -952,7 +959,7 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v214 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v214);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v214);
       stru_830620[72123] = v263;
       HouseClass::NetworkConvert((_DWORD *)(v105 + 19312));
       int v215 = *(_DWORD *)(v105 + 21360);
@@ -963,7 +970,7 @@ LABEL_158:
           v264.vfptr = (void *)(v216 + 1);
       }
       v218 = (ObjectClass *)__0Iostream_init_QAE_XZ_7((Iostream_init *)(v105 + 19312));
-      eax310 = (char *)__2_YAPAXI_Z(0x10u);
+      eax310 = (char *)RA2_OPNEW(0x10u);
       if ( eax310 )
   char *v219; // eax
         v219 = NetMessage::Pack(
@@ -973,23 +980,23 @@ LABEL_158:
                  (IUnknown *)(4 * (int)v264.vfptr));
       else
         v219 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v219);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v219);
       char v220 = v263;
       stru_830620[72131] = v263;
       v222 = *(ObjectClass **)(v105 + 736);
-      eax313 = (char *)__2_YAPAXI_Z(0x10u);
+      eax313 = (char *)RA2_OPNEW(0x10u);
       if ( eax313 )
         char * v223 = TerrainInitMap(eax313, (RandomStruct *)&stru_830620[72128], (IUnknown *)v222);
       else
         v223 = 0;
-      LinkedList::PushFront(v262, (IUnknown *)v223);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v223);
       stru_830620[72171] = v220;
       v224 = v269;
       v225 = v268;
       if ( v269 == v268 )
       {
         v226 = (IUnknown *)DataGlobal_84E863;
-        char * v227 = (char *)__2_YAPAXI_Z(0x10u);
+        char * v227 = (char *)RA2_OPNEW(0x10u);
         if ( v227 )
         {
           v228 = TerrainInitMap(v227, (RandomStruct *)&stru_830620[72168], v226);
@@ -998,7 +1005,7 @@ LABEL_158:
       }
       else
       {
-        char * v229 = (char *)__2_YAPAXI_Z(0x10u);
+        char * v229 = (char *)RA2_OPNEW(0x10u);
         if ( v229 )
         {
           v228 = NetMessage::Pack4(v229, (RandomStruct *)&stru_830620[72168], -1);
@@ -1007,12 +1014,12 @@ LABEL_158:
       }
       v228 = 0;
 LABEL_322:
-      LinkedList::PushFront(v262, (IUnknown *)v228);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v228);
       stru_830620[72179] = v220;
       if ( v224 == v225 )
       {
         unsigned int v230 = Performance::MeasureTicks();
-        char * v231 = (char *)__2_YAPAXI_Z(0x10u);
+        char * v231 = (char *)RA2_OPNEW(0x10u);
         if ( v231 )
         {
           v232 = NetMessage::Pack4(v231, (RandomStruct *)&stru_830620[72176], v230);
@@ -1021,7 +1028,7 @@ LABEL_322:
       }
       else
       {
-        char * v233 = (char *)__2_YAPAXI_Z(0x10u);
+        char * v233 = (char *)RA2_OPNEW(0x10u);
         if ( v233 )
         {
           v232 = NetMessage::Pack4(v233, (RandomStruct *)&stru_830620[72176], -1);
@@ -1030,21 +1037,21 @@ LABEL_322:
       }
       v232 = 0;
 LABEL_328:
-      LinkedList::PushFront(v262, (IUnknown *)v232);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v232);
       stru_830620[72187] = v220;
       if ( v224 == v225 )
       {
         Buffer.dwLength = 32;
         GlobalMemoryStatus(&Buffer);
         dwTotalPhys = Buffer.dwTotalPhys;
-        char * v235 = (char *)__2_YAPAXI_Z(0x10u);
+        char * v235 = (char *)RA2_OPNEW(0x10u);
         if ( !v235 )
           goto LABEL_333;
         v236 = NetMessage::Pack4(v235, (RandomStruct *)&stru_830620[72184], dwTotalPhys);
       }
       else
       {
-        char * v237 = (char *)__2_YAPAXI_Z(0x10u);
+        char * v237 = (char *)RA2_OPNEW(0x10u);
         if ( !v237 )
         {
 LABEL_333:
@@ -1054,7 +1061,7 @@ LABEL_333:
         v236 = NetMessage::Pack4(v237, (RandomStruct *)&stru_830620[72184], -1);
       }
 LABEL_334:
-      LinkedList::PushFront(v262, (IUnknown *)v236);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v236);
       stru_830620[72195] = v220;
       if ( v224 == v225 && *(_DWORD *)&g_CellDirectionOffsets[2564] )
       {
@@ -1069,7 +1076,7 @@ LABEL_334:
         }
   int v288; // [esp+198h] [ebp-8220h]
         unsigned int v238 = (v288 + 0xFFFFF) & 0xFFF00000;
-        char * v239 = (char *)__2_YAPAXI_Z(0x10u);
+        char * v239 = (char *)RA2_OPNEW(0x10u);
         if ( !v239 )
         {
 LABEL_341:
@@ -1080,13 +1087,13 @@ LABEL_341:
       }
       else
       {
-        char * v241 = (char *)__2_YAPAXI_Z(0x10u);
+        char * v241 = (char *)RA2_OPNEW(0x10u);
         if ( !v241 )
           goto LABEL_341;
         v240 = NetMessage::Pack4(v241, (RandomStruct *)&stru_830620[72192], -1);
       }
 LABEL_342:
-      LinkedList::PushFront(v262, (IUnknown *)v240);
+      LinkedList_flat::PushFront(v262, (IUnknown *)v240);
 LABEL_343:
       v268 = (IUnknown *)((char *)&v225->field_0 + 1);
       if ( (char *)&v225->field_0 + 1 >= (char *)aP2 )
@@ -1127,7 +1134,7 @@ LABEL_343:
     qmemcpy(&v290[2], vfptr, 4 * (*(_DWORD *)&g_OverlayTypeConfig[17816] >> 2));
     char * v247 = &vfptr[4 * v245];
     _DWORD * v246 = &v290[v245 + 2];
-    LOBYTE(v245) = v244;
+    IDA_LOBYTE(v245) = v244;
     int v248 = *(_DWORD *)&g_OverlayTypeConfig[17756];
     qmemcpy(v246, v247, v245 & 3);
     int v249 = *(_DWORD *)&g_OverlayTypeConfig[17752];
@@ -1141,7 +1148,7 @@ LABEL_343:
       int v250 = 2 * *(_DWORD *)&g_OverlayTypeConfig[17752];
       if ( 2 * *(_DWORD *)&g_OverlayTypeConfig[17752] < 10 )
         v250 = 10;
-      char * v251 = (char *)__2_YAPAXI_Z(32776 * v250);
+      char * v251 = (char *)RA2_OPNEW(32776 * v250);
       memset(v251, 0, 4 * ((unsigned int)(32776 * v250) >> 2));
       v252 = *(AbstractClass **)&g_OverlayTypeConfig[17760];
       if ( *(_DWORD *)&g_OverlayTypeConfig[17760] )
@@ -1152,7 +1159,7 @@ LABEL_343:
         qmemcpy(&v251[4 * v254], (char *)v252 + 4 * v254, v253 & 3);
         v252 = *(AbstractClass **)&g_OverlayTypeConfig[17760];
       }
-      __3_YAXPAX_Z(v252);
+      RA2_OPDEL(v252);
       v249 = *(_DWORD *)&g_OverlayTypeConfig[17752];
       v255 = v251;
       *(_DWORD *)&g_OverlayTypeConfig[17760] = v251;
@@ -1162,7 +1169,7 @@ LABEL_343:
         int v256 = 2 * *(_DWORD *)&g_OverlayTypeConfig[17752];
         if ( 2 * *(_DWORD *)&g_OverlayTypeConfig[17752] < 10 )
           v256 = 10;
-        char * v257 = (char *)__2_YAPAXI_Z(32776 * v256);
+        char * v257 = (char *)RA2_OPNEW(32776 * v256);
         memset(v257, 0, 4 * ((unsigned int)(32776 * v256) >> 2));
         v258 = *(AbstractClass **)&g_OverlayTypeConfig[17760];
         if ( *(_DWORD *)&g_OverlayTypeConfig[17760] )
@@ -1173,7 +1180,7 @@ LABEL_343:
           qmemcpy(&v257[4 * v260], (char *)v258 + 4 * v260, v259 & 3);
           v258 = *(AbstractClass **)&g_OverlayTypeConfig[17760];
         }
-        __3_YAXPAX_Z(v258);
+        RA2_OPDEL(v258);
         v249 = *(_DWORD *)&g_OverlayTypeConfig[17752];
         v255 = v257;
         *(_DWORD *)&g_OverlayTypeConfig[17760] = v257;
@@ -1198,13 +1205,12 @@ LABEL_343:
     vfptr = (char *)v264.vfptr;
     *(_DWORD *)&g_OverlayTypeConfig[17752] = v249 + 1;
   }
-  __3_YAXPAX_Z(vfptr);
+  RA2_OPDEL(vfptr);
   g_NetworkPlayerBuffer[8900] = 1;
   RawFileClass::Dtor((int *)&v272);
   ResultNode::CleanupList(v262);
 }
 } // namespace gamemd
-}
 
 // 0x6C87F0
 namespace gamemd {
@@ -1679,17 +1685,17 @@ unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int a
 {
   int Instance; // ebx
 
-  GadgetClass::Construct(this, aP1, aP5, aP3, aP4, 0, 0); /*0x6c6560*/
+  GadgetClass::Construct(aP1, aP5, aP3, aP4, 0, 0); /*0x6c6560*/
   Buffer::Init(&this->u32_24, 0, 0); /*0x6c656c*/
-  *(&this->u32_42) = 0; /*0x6c657e*/
-  *(&this->u32_43) = a4; /*0x6c6585*/
-  *this = &StaticButtonClass::`vftable'; /*0x6c6588*/
-  StaticButtonClass::Draw((void **)this, String, 0); /*0x6c658e*/
+  this->M48 = 0; /*0x6c657e*/
+  this->M52 = a4; /*0x6c6585*/
+  *this = &(void*)(void*)&StaticButtonClass_vftable; /*0x6c6588*/
+  StaticButtonClass::Draw(String, 0); /*0x6c658e*/
   if ( aP3 == -1 || aP4 == -1 ) /*0x6c659b*/
   {
     Instance = TextRenderer::GetInstance(); /*0x6c65a8*/
     if ( aP3 == -1 ) /*0x6c65aa*/
-      this->M20 = Text::MeasureWidth(*(&this->u32_42), 0); /*0x6c65b9*/
+      this->M20 = Text::MeasureWidth(this->M48, 0); /*0x6c65b9*/
     if ( aP4 == -1 ) /*0x6c65bf*/
       this->M24 = *(_DWORD *)(Instance + 28); /*0x6c65c4*/
   }
@@ -1867,7 +1873,7 @@ namespace gamemd {
 void sub_6C6B60()
 {
   g_SidebarButtonState = 0; /*0x6c6b65*/
-  __3_YAXPAX_Z(g_SidebarPool); /*0x6c6b70*/
+  RA2_OPDEL(g_SidebarPool); /*0x6c6b70*/
 }
 } // namespace gamemd
 
@@ -1875,10 +1881,10 @@ void sub_6C6B60()
 namespace gamemd {
 rc_ptr * E4Recv_6C8840::sub_6C8840(char a2)
 {
-  *this = &rc_ptr<PlayerProfile>::`vftable'; /*0x6c8843*/
-  ComPtr::Release(this); /*0x6c8849*/
+  *this = &(void*)(void*)&rc_ptr_PlayerProfile_vftable; /*0x6c8843*/
+  ComPtr::Release(); /*0x6c8849*/
   if ( (a2 & 1) != 0 ) /*0x6c8853*/
-    __3_YAXPAX_Z(this); /*0x6c8856*/
+    RA2_OPDEL(); /*0x6c8856*/
   return this; /*0x6c8860*/
 }
 } // namespace gamemd
@@ -1899,13 +1905,13 @@ char E4Recv_6C8900::sub_6C8900()
   v4 = 2 * v2; /*0x6c8913*/
   if ( 2 * v2 < 10 ) /*0x6c891b*/
     v4 = 10; /*0x6c891d*/
-  v5 = __2_YAPAXI_Z(32776 * v4); /*0x6c8932*/
+  v5 = RA2_OPNEW(32776 * v4); /*0x6c8932*/
   memset(v5, 0, 4 * ((unsigned int)(32776 * v4) >> 2)); /*0x6c893d*/
   v7 = (int)v5; /*0x6c8947*/
   v6 = (const void *)this->M8; /*0x6c894d*/
   if ( v6 ) /*0x6c8952*/
     qmemcpy(v5, v6, 32776 * *this); /*0x6c8967*/
-  __3_YAXPAX_Z((void *)this->M8); /*0x6c8974*/
+  RA2_OPDEL((void *)this->M8); /*0x6c8974*/
   this->M4 = v4; /*0x6c8980*/
   this->M8 = v7; /*0x6c8983*/
   return 1; /*0x6c890f*/
@@ -1931,7 +1937,7 @@ unsigned int * E4Recv_6C89B0::sub_6C89B0(size_t Size)
   void *v3; // eax
 
   *this = Size; /*0x6c89b8*/
-  v3 = __2_YAPAXI_Z(Size); /*0x6c89ba*/
+  v3 = RA2_OPNEW(Size); /*0x6c89ba*/
   this->M4 = v3; /*0x6c89c2*/
   this->M8 = v3; /*0x6c89c5*/
   return this; /*0x6c89ca*/
@@ -2389,8 +2395,8 @@ int E4Recv_6C9940::sub_6C9940(char a2, char a3, unsigned char a4)
   unsigned __int16 v4; // ax
   int result; // eax
 
-  HIBYTE(v4) = a2; /*0x6c9946*/
-  LOBYTE(v4) = a3; /*0x6c9950*/
+  IDA_HIBYTE(v4) = a2; /*0x6c9946*/
+  IDA_LOBYTE(v4) = a3; /*0x6c9950*/
   result = a4 | (v4 << 8); /*0x6c9957*/
   this->M8 = result; /*0x6c9959*/
   return result; /*0x6c995c*/
@@ -2406,13 +2412,13 @@ void E4Recv_6C9960::sub_6C9960(wchar_t * String)
 
   if ( this->M20 ) /*0x6c9964*/
   {
-    __3_YAXPAX_Z(this->M20); /*0x6c996c*/
+    RA2_OPDEL(this->M20); /*0x6c996c*/
     this->M20 = 0; /*0x6c9974*/
   }
   if ( String ) /*0x6c9981*/
   {
     v3 = wcslen(String); /*0x6c9984*/
-    v4 = (wchar_t *)__2_YAPAXI_Z(2 * v3 + 2); /*0x6c998e*/
+    v4 = (wchar_t *)RA2_OPNEW(2 * v3 + 2); /*0x6c998e*/
     this->M20 = v4; /*0x6c9996*/
     if ( v4 ) /*0x6c999b*/
       wcscpy(v4, String); /*0x6c999f*/
@@ -2877,13 +2883,13 @@ namespace gamemd {
 int sub_6CF070()
 {
   sub_6CF8F0(&dword_B0C114, 0, 0); /*0x6cf079*/
-  dword_B0C114 = (int)&DynamicVectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf087*/
+  dword_B0C114 = (int)&(void*)(void*)&DynamicVectorClass_SwizzlePointerClass_vftable; /*0x6cf087*/
   dword_B0C128 = 10; /*0x6cf091*/
   dword_B0C124 = 0; /*0x6cf09b*/
   sub_6CF8F0(&dword_B0C12C, 0, 0); /*0x6cf0a5*/
-  dword_B0C12C = (int)&DynamicVectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf0b4*/
+  dword_B0C12C = (int)&(void*)(void*)&DynamicVectorClass_SwizzlePointerClass_vftable; /*0x6cf0b4*/
   dword_B0C13C = 0; /*0x6cf0be*/
-  SwizzleManagerClass_Instance = (int)&SwizzleManagerClass::`vftable'; /*0x6cf0c8*/
+  SwizzleManagerClass_Instance = (int)&(void*)(void*)&SwizzleManagerClass_vftable; /*0x6cf0c8*/
   dword_B0C128 = 1000; /*0x6cf0d2*/
   dword_B0C140 = 1000; /*0x6cf0d7*/
   return atexit(SwizzleManagerClass::Register); /*0x6cf0e2*/
@@ -2895,35 +2901,33 @@ namespace gamemd {
 unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
 {
   _DWORD *v4; // eax
-  int v5; // ecx
   _DWORD *v7; // eax
   _DWORD *v8; // ecx
-  int v9; // edx
 
   this->M4 = 0; /*0x6cf8fd*/
   this->M8 = a2; /*0x6cf900*/
   this->M12 = 1; /*0x6cf903*/
   this->M13 = 0; /*0x6cf907*/
-  *this = &VectorClass<SwizzlePointerClass>::`vftable'; /*0x6cf90a*/
+  *this = &(void*)(void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf90a*/
   if ( !a2 ) /*0x6cf910*/
     return this; /*0x6cf910*/
   if ( !a3 ) /*0x6cf918*/
   {
-    v7 = __2_YAPAXI_Z(8 * a2); /*0x6cf942*/
+    v7 = RA2_OPNEW(8 * a2); /*0x6cf942*/
     if ( v7 ) /*0x6cf94c*/
     {
       v8 = v7; /*0x6cf951*/
       if ( a2 - 1 >= 0 ) /*0x6cf955*/
       {
-        v9 = a2; /*0x6cf957*/
+        a2 = a2; /*0x6cf957*/
         do /*0x6cf961*/
         {
           *v8 = 0; /*0x6cf958*/
           v8[1] = 0; /*0x6cf95a*/
           v8 += 2; /*0x6cf95d*/
-          --v9; /*0x6cf960*/
+          --a2; /*0x6cf960*/
         }
-        while ( v9 ); /*0x6cf961*/
+        while ( a2 ); /*0x6cf961*/
         this->M4 = v7; /*0x6cf963*/
         this->M13 = 1; /*0x6cf966*/
         return this; /*0x6cf96f*/
@@ -2940,15 +2944,15 @@ unsigned int * E4Recv_6CF8F0::sub_6CF8F0(int a2, unsigned int * a3)
   v4 = a3; /*0x6cf91d*/
   if ( a2 - 1 >= 0 ) /*0x6cf921*/
   {
-    v5 = a2; /*0x6cf923*/
+    a2 = a2; /*0x6cf923*/
     do /*0x6cf92d*/
     {
       *v4 = 0; /*0x6cf924*/
       v4[1] = 0; /*0x6cf926*/
       v4 += 2; /*0x6cf929*/
-      --v5; /*0x6cf92c*/
+      --a2; /*0x6cf92c*/
     }
-    while ( v5 ); /*0x6cf92d*/
+    while ( a2 ); /*0x6cf92d*/
   }
   this->M4 = a3; /*0x6cf92f*/
   return this; /*0x6cf934*/

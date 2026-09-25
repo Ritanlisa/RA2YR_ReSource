@@ -1,8 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/GUID_e4.hpp"
+#include "e4/classes/Compare_e4.hpp"
+#include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x53EE70
+namespace gamemd {
 bool GUID::Compare(int a2)
 {
   _WORD *v4; // edi
@@ -15,13 +20,13 @@ bool GUID::Compare(int a2)
   bool v11; // zf
 
   if ( dword_828140 == 2 ) /*0x53ee7d*/
-    return *((_DWORD *)this + 1) == *(_DWORD *)(a2 + 4) && *(_WORD *)this == *(_WORD *)a2; /*0x53ef1b*/
-  if ( (*this || *(this + 1) || *(this + 2) || *(this + 3)) /*0x53eed8*/
-    && (*(_BYTE *)a2 || *(_BYTE *)(a2 + 1) || *(_BYTE *)(a2 + 2) || *(_BYTE *)(a2 + 3)) )
+    return this->Data4 == a2->vtable2 && *(_WORD *)this == *(_WORD *)a2; /*0x53ef1b*/
+  if ( (*this || this->Data4 || this->q020 || this->u32_C) /*0x53eed8*/
+    && (*(_BYTE *)a2 || a2->vtable2 || a2->vtable3 || a2->vtable4) )
   {
     v8 = 3; /*0x53eef8*/
     v9 = (_WORD *)(a2 + 4); /*0x53eefd*/
-    v10 = this + 4; /*0x53ef00*/
+    v10 = &this->u32_10; /*0x53ef00*/
     v11 = 1; /*0x53ef03*/
     do /*0x53ef05*/
     {
@@ -35,7 +40,7 @@ bool GUID::Compare(int a2)
   }
   v4 = (_WORD *)(a2 + 4); /*0x53eedf*/
   v5 = 3; /*0x53eee2*/
-  v6 = this + 4; /*0x53eee7*/
+  v6 = &this->u32_10; /*0x53eee7*/
   v7 = 1; /*0x53eeea*/
   do /*0x53eeec*/
   {
@@ -47,3 +52,4 @@ bool GUID::Compare(int a2)
   while ( v7 ); /*0x53eeec*/
   return v7; /*0x53ee9f*/
 }
+} // namespace gamemd

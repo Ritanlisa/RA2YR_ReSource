@@ -2,8 +2,12 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_6C61C0_e4.hpp"
+#include "e4/classes/COM_e4.hpp"
+#include "e4/classes/CSF_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x43A500
+namespace gamemd {
 int COM::GetClassID(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x43a506*/
@@ -14,13 +18,17 @@ int COM::GetClassID(int a1, unsigned int * a2)
   a2[3] = 1303416651; /*0x43a530*/
   return 0; /*0x43a50d*/
 }
+} // namespace gamemd
 // 0x55A950
+namespace gamemd {
 LONG COM::AddRef(int a1)
 {
   ++g_BulletClassPool; /*0x55a95f*/
   return InterlockedIncrement((volatile LONG *)(a1 + 20)); /*0x55a96b*/
 }
+} // namespace gamemd
 // 0x55A970
+namespace gamemd {
 LONG COM::ReleaseRef(volatile LONG * a1)
 {
   LONG v1; // esi
@@ -31,3 +39,4 @@ LONG COM::ReleaseRef(volatile LONG * a1)
     (*(void (__thiscall **)(volatile LONG *, int))(*a1 + 32))(a1, 1); /*0x55a99d*/
   return v1; /*0x55a9a2*/
 }
+} // namespace gamemd

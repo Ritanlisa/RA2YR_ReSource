@@ -9,6 +9,7 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/TeamTypeClass_28_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x6F0AB0
 namespace gamemd {
@@ -18,13 +19,11 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   int v5; // eax
   int v6; // ebx
   char *v7; // ecx
-  int v8; // edx
   int v9; // ecx
   int WallPenetratorThreshold_high; // edx
   int *v11; // ecx
   int v12; // esi
   char *v13; // edi
-  int v14; // ebp
   _DWORD *v15; // eax
   int v16; // eax
   int v17; // ebx
@@ -52,14 +51,11 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   int v39; // ecx
   int v40; // esi
   bool v41; // zf
-  int v42; // eax
   void *v43; // eax
   int v44; // ecx
   int v45; // eax
   void ***v46; // ecx
   void *v47; // eax
-  int v48; // edx
-  int v50; // ecx
   char v51; // [esp+13h] [ebp-4Dh]
   _DWORD v53[2]; // [esp+18h] [ebp-48h] BYREF
   int v54; // [esp+20h] [ebp-40h]
@@ -81,7 +77,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   v55 = aP0; /*0x6f0ab9*/
   Team_Helper_6F2230(0, 0); /*0x6f0ac9*/
   v5 = *(_DWORD *)(a2 + 22016); /*0x6f0ace*/
-  v56 = &TypeList<TeamTypeClass const *>::`vftable'; /*0x6f0ad4*/
+  v56 = &(void*)(void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0ad4*/
   v54 = 0; /*0x6f0adf*/
   if ( v5 != -1 ) /*0x6f0ae3*/
     v54 = *(_DWORD *)&HouseClass_Array->gap0[4 * v5]; /*0x6f0aee*/
@@ -92,27 +88,27 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     if ( g_HouseClass_AIProductionState > 0 ) /*0x6f0b2a*/
     {
       v7 = (char *)g_TeamClassPool; /*0x6f0b2c*/
-      v8 = g_HouseClass_AIProductionState; /*0x6f0b32*/
+      g_HouseClass_AIProductionState = g_HouseClass_AIProductionState; /*0x6f0b32*/
       do /*0x6f0b4d*/
       {
-        if ( *(_DWORD *)(v7->u32_2C == a2 ) /*0x6f0b39*/
+        if ( *(_DWORD *)(v7->q02C == a2 ) /*0x6f0b39*/
         {
           ++v6; /*0x6f0b3e*/
           if ( *(_BYTE *)(*(_DWORD *)(v7->q024 + 246) ) /*0x6f0b3f*/
             ++v3; /*0x6f0b48*/
         }
         v7 += 4; /*0x6f0b49*/
-        --v8; /*0x6f0b4c*/
+        --g_HouseClass_AIProductionState; /*0x6f0b4c*/
       }
-      while ( v8 ); /*0x6f0b4d*/
+      while ( g_HouseClass_AIProductionState ); /*0x6f0b4d*/
     }
     v9 = 4 * *(_DWORD *)(a2 + 388); /*0x6f0b5b*/
-    WallPenetratorThreshold_high = HIDWORD(g_RulesClass_Instance->WallPenetratorThreshold); /*0x6f0b5e*/
-    LOBYTE(v53[0]) = 0; /*0x6f0b64*/
+    WallPenetratorThreshold_high = IDA_HIDWORD(g_RulesClass_Instance->WallPenetratorThreshold); /*0x6f0b5e*/
+    IDA_LOBYTE(v53[0]) = 0; /*0x6f0b64*/
     if ( v6 < *(_DWORD *)(WallPenetratorThreshold_high + v9) || v3 < v6 / 2 ) /*0x6f0b77*/
     {
-      if ( v3 > *(_DWORD *)(LODWORD(g_RulesClass_Instance->ElevationIncrementBonus) + v9) ) /*0x6f0bd4*/
-        LOBYTE(v53[0]) = 1; /*0x6f0bd6*/
+      if ( v3 > *(_DWORD *)(IDA_LODWORD(g_RulesClass_Instance->ElevationIncrementBonus) + v9) ) /*0x6f0bd4*/
+        IDA_LOBYTE(v53[0]) = 1; /*0x6f0bd6*/
     }
     else
     {
@@ -121,33 +117,33 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
       if ( g_HouseClass_AIProductionState > 0 ) /*0x6f0b82*/
       {
         v13 = (char *)g_TeamClassPool; /*0x6f0b84*/
-        v14 = g_HouseClass_AIProductionState; /*0x6f0b8a*/
+        g_HouseClass_AIProductionState = g_HouseClass_AIProductionState; /*0x6f0b8a*/
         do /*0x6f0bb6*/
         {
           v15 = *(_DWORD **)v13; /*0x6f0b90*/
-          if ( *(_DWORD *)(v13->u32_2C == a2 && *(_BYTE *)(v15[9] + 246) && v15[20] < v12 ) /*0x6f0bac*/
+          if ( *(_DWORD *)(v13->q02C == a2 && *(_BYTE *)(v15[9] + 246) && v15[20] < v12 ) /*0x6f0bac*/
           {
             v11 = *(int **)v13; /*0x6f0bae*/
             v12 = v15[20]; /*0x6f0bb0*/
           }
           v13 += 4; /*0x6f0bb2*/
-          --v14; /*0x6f0bb5*/
+          --g_HouseClass_AIProductionState; /*0x6f0bb5*/
         }
-        while ( v14 ); /*0x6f0bb6*/
+        while ( g_HouseClass_AIProductionState ); /*0x6f0bb6*/
         if ( v11 ) /*0x6f0bba*/
         {
           v16 = *v11; /*0x6f0bbc*/
           --v6; /*0x6f0bc0*/
-          LOBYTE(v53[0]) = 1; /*0x6f0bc1*/
+          IDA_LOBYTE(v53[0]) = 1; /*0x6f0bc1*/
           (*(void (__thiscall **)(int *, int))(v16 + 32))(v11, 1); /*0x6f0bc6*/
         }
       }
     }
-    if ( v6 < *(_DWORD *)(HIDWORD(g_RulesClass_Instance->WallPenetratorThreshold) + 4 * *(_DWORD *)(a2 + 388)) ) /*0x6f0bf4*/
+    if ( v6 < *(_DWORD *)(IDA_HIDWORD(g_RulesClass_Instance->WallPenetratorThreshold) + 4 * *(_DWORD *)(a2 + 388)) ) /*0x6f0bf4*/
     {
       v17 = 0; /*0x6f0bfa*/
       Team_Helper_6F27F0(0, 0); /*0x6f0c02*/
-      v62 = &DynamicVectorClass<DiscreteDistributionClass<AITriggerTypeClass>::DistributionObject<AITriggerTypeClass *>>::`vftable'; /*0x6f0c0b*/
+      v62 = &(void*)(void*)&DynamicVectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f0c0b*/
       v66 = 10; /*0x6f0c13*/
       v65 = 0; /*0x6f0c1b*/
       v67 = 0; /*0x6f0c1f*/
@@ -239,7 +235,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
         *((_DWORD *)Block + v30) = v29; /*0x6f0dbf*/
       }
   LABEL_58:
-      v62 = &VectorClass<DiscreteDistributionClass<AITriggerTypeClass>::DistributionObject<AITriggerTypeClass *>>::`vftable'; /*0x6f0dc2*/
+      v62 = &(void*)(void*)&VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f0dc2*/
       if ( v63 && v64 ) /*0x6f0dd8*/
         Team_Helper_6F26E0(v63, 3); /*0x6f0de0*/
     }
@@ -260,11 +256,11 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     *(_DWORD *)(v40 + 8) = 0; /*0x6f0e73*/
     *(_BYTE *)(v40 + 12) = 1; /*0x6f0e76*/
     *(_BYTE *)(v40 + 13) = 0; /*0x6f0e7a*/
-    *(_DWORD *)v40 = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x6f0e7e*/
+    *(_DWORD *)v40 = &(void*)(void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0e7e*/
     if ( !v41 ) /*0x6f0e84*/
     {
       VectorClass::ClearAndFree3(v40); /*0x6f0e8c*/
-      v42 = v58; /*0x6f0e92*/
+      v58 = v58; /*0x6f0e92*/
       v41 = v58 == 0; /*0x6f0e96*/
       *(_DWORD *)(v40 + 8) = v58; /*0x6f0e98*/
       if ( v41 ) /*0x6f0e9b*/
@@ -274,7 +270,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
       }
       else
       {
-        v43 = __2_YAPAXI_Z(4 * v42); /*0x6f0ea5*/
+        v43 = RA2_OPNEW(4 * v58); /*0x6f0ea5*/
         *(_DWORD *)(v40 + 4) = v43; /*0x6f0eaf*/
         if ( v43 ) /*0x6f0eb2*/
         {
@@ -294,15 +290,15 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
       }
       v31 = Block; /*0x6f0f77*/
     }
-    v50 = v61; /*0x6f0f7f*/
+    v61 = v61; /*0x6f0f7f*/
     *(_DWORD *)(v40 + 16) = v60; /*0x6f0f85*/
-    *(_DWORD *)(v40 + 20) = v50; /*0x6f0f88*/
-    *(_DWORD *)v40 = &TypeList<TeamTypeClass const *>::`vftable'; /*0x6f0f8b*/
-    v56 = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x6f0f91*/
+    *(_DWORD *)(v40 + 20) = v61; /*0x6f0f88*/
+    *(_DWORD *)v40 = &(void*)(void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0f8b*/
+    v56 = &(void*)(void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f91*/
     if ( v31 ) /*0x6f0f99*/
     {
       if ( v59 ) /*0x6f0fa1*/
-        __3_YAXPAX_Z(v31); /*0x6f0fa4*/
+        RA2_OPDEL(v31); /*0x6f0fa4*/
     }
   }
   else
@@ -311,7 +307,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     while ( 1 ) /*0x6f0dfa*/
     {
       v34 = *(_DWORD *)v33; /*0x6f0dfa*/
-      if ( *(_DWORD *)(v33->u32_2C == a2 && (*(_BYTE *)(v34 + 123) || !*(_BYTE *)(v34 + 127)) ) /*0x6f0e0c*/
+      if ( *(_DWORD *)(v33->q02C == a2 && (*(_BYTE *)(v34 + 123) || !*(_BYTE *)(v34 + 127)) ) /*0x6f0e0c*/
       {
         v35 = 0; /*0x6f0e17*/
         if ( v60 > 0 ) /*0x6f0e1b*/
@@ -335,7 +331,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     v60 = 0; /*0x6f0ee7*/
     if ( Block && v59 ) /*0x6f0ef3*/
     {
-      __3_YAXPAX_Z(Block); /*0x6f0ef6*/
+      RA2_OPDEL(Block); /*0x6f0ef6*/
       Block = 0; /*0x6f0efe*/
     }
     v40 = (int)v55; /*0x6f0f02*/
@@ -346,18 +342,18 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     v46[2] = 0; /*0x6f0f19*/
     *((_BYTE *)v46 + 12) = 1; /*0x6f0f1c*/
     *((_BYTE *)v46 + 13) = 0; /*0x6f0f20*/
-    *v46 = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x6f0f24*/
+    *v46 = &(void*)(void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f24*/
     Team_Helper_6F2780(&v56); /*0x6f0f2a*/
-    *(_DWORD *)v40 = &TypeList<TeamTypeClass const *>::`vftable'; /*0x6f0f2f*/
-    v56 = &VectorClass<TeamTypeClass const *>::`vftable'; /*0x6f0f35*/
+    *(_DWORD *)v40 = &(void*)(void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0f2f*/
+    v56 = &(void*)(void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f35*/
     v47 = Block; /*0x6f0f3d*/
-    v48 = v61; /*0x6f0f45*/
+    v61 = v61; /*0x6f0f45*/
     v41 = Block == 0; /*0x6f0f49*/
     *(_DWORD *)(v40 + 16) = v60; /*0x6f0f4b*/
-    *(_DWORD *)(v40 + 20) = v48; /*0x6f0f4e*/
+    *(_DWORD *)(v40 + 20) = v61; /*0x6f0f4e*/
     if ( !v41 && v59 ) /*0x6f0f59*/
     {
-      __3_YAXPAX_Z(v47); /*0x6f0f5c*/
+      RA2_OPDEL(v47); /*0x6f0f5c*/
       return v40; /*0x6f0f6d*/
     }
   }
@@ -439,7 +435,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
      && (!*(_BYTE *)(aP0[432] + 3779)
       || aP0[43] != 11
       || BuildingClass::GetHealthRatio((int *)v13) > *((double *)g_RulesClass_Instance + 737)
-      || (*(int (__thiscall **)(int))(v13->u32_2C)(v13) != 6
+      || (*(int (__thiscall **)(int))(v13->q02C)(v13) != 6
       || (*(int (__thiscall **)(_DWORD, _DWORD))(*v13->q520 + 132))(
            v13->q520,
            v13->q21C) <= 0)) )
@@ -453,7 +449,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
   *aP6 = v14; /*0x6f8b5d*/
   if ( !Object::IsAlliedWithObjectHouse((_DWORD *)aP0[135], v14)
     || TechnoClass::GetValue(aP0, -1) < 0
-    || !(unsigned __int8)House::IsCurrentPlayer((#375 *)aP0[135])
+    || !(unsigned __int8)House::IsCurrentPlayer((void *)aP0[135])
     && aP0
     && (*(int (__thiscall **)(_DWORD *))(*aP0 + 44))(aP0) == 15
     && *(_BYTE *)(*((*(int (__thiscall **)(_DWORD *))(*aP0 + 44))(aP0) == 15 ? aP0 + 432 : (_DWORD *)1728) + 3779)
@@ -472,7 +468,7 @@ char E4Recv_6F03F0::sub_6F03F0()
 {
   int *v1; // esi
 
-  v1 = *(&this->u32_81); /*0x6f03f2*/
+  v1 = *(this + 21); /*0x6f03f2*/
   if ( !v1 ) /*0x6f03f9*/
     return 0; /*0x6f0423*/
   while ( *(int *)((*(int (__thiscall **)(int *))(*v1 + 132))(v1) + 1668) > 0 && v1[191] <= 0 ) /*0x6f0417*/

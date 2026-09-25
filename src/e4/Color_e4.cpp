@@ -2,9 +2,13 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Color_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x517440
-int Color::ConvertToRGB(int a2)
+namespace gamemd {
+int Color::ConvertToRGB(int v9)
 {
   int v2; // esi
   int v3; // ebx
@@ -12,13 +16,12 @@ int Color::ConvertToRGB(int a2)
   unsigned int v5; // eax
   unsigned int v6; // eax
   unsigned int v7; // edx
-  __int16 v9; // [esp+10h] [ebp-20h]
   _DWORD v10[5]; // [esp+14h] [ebp-1Ch]
   int v11; // [esp+28h] [ebp-8h]
   unsigned int v12; // [esp+2Ch] [ebp-4h]
 
-  v2 = *(this + 2); /*0x51744b*/
-  v3 = *(this + 1); /*0x517453*/
+  v2 = this->q008; /*0x51744b*/
+  v3 = this->q004; /*0x517453*/
   v4 = 3 * *this; /*0x51745c*/
   v10[2] = v2; /*0x51745f*/
   v4 *= 2; /*0x517463*/
@@ -28,16 +31,17 @@ int Color::ConvertToRGB(int a2)
   v10[4] = v11; /*0x5174bb*/
   v12 = v2 * (255 - v3 * (255 - v4 % 255) / 0xFFu) / 0xFF; /*0x5174e2*/
   v5 = ((unsigned int)(v4 / 255) > 4 ? -4 : 2) + v4 / 255;
-  LOBYTE(v9) = v10[v5]; /*0x51750f*/
+  IDA_LOBYTE(v9) = v10[v5]; /*0x51750f*/
   v6 = (v5 > 4 ? -4 : 2) + v5;
   v7 = v6 + (v6 > 4 ? -4 : 2);
-  LOBYTE(v6) = v10[v6]; /*0x51752c*/
-  HIBYTE(v9) = v10[v7]; /*0x517535*/
-  *(_WORD *)a2 = v9; /*0x517544*/
-  *(_BYTE *)(a2 + 2) = v6; /*0x51754a*/
-  return a2; /*0x517530*/
+  IDA_LOBYTE(v6) = v10[v6]; /*0x51752c*/
+  IDA_HIBYTE(v9) = v10[v7]; /*0x517535*/
+  *(_WORD *)v9 = v9; /*0x517544*/
+  *(_BYTE *)(v9 + 2) = v6; /*0x51754a*/
 }
+} // namespace gamemd
 // 0x661020
+namespace gamemd {
 unsigned char * Color::Lerp2(int a2, int a3, float a4)
 {
   double v4; // st7
@@ -60,7 +64,9 @@ unsigned char * Color::Lerp2(int a2, int a3, float a4)
     return this; /*0x661154*/
   }
 }
+} // namespace gamemd
 // 0x661190
+namespace gamemd {
 unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
 {
   double v4; // st7
@@ -88,22 +94,24 @@ unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
   {
     v5 = 0.0; /*0x66121f*/
   }
-  *(this + 1) = Math::RoundToInt(v5); /*0x661245*/
+  this->Items = Math::RoundToInt(v5); /*0x661245*/
   v6 = (double)a2[2] * a3; /*0x661253*/
   if ( v6 > 255.0 || v6 >= 0.0 ) /*0x661273*/
   {
     if ( v6 > 255.0 ) /*0x661299*/
       v6 = 255.0; /*0x66129d*/
-    *(this + 2) = Math::RoundToInt(v6); /*0x6612a8*/
+    this->Capacity = Math::RoundToInt(v6); /*0x6612a8*/
     return this; /*0x6612ab*/
   }
   else
   {
-    *(this + 2) = Math::RoundToInt(0.0); /*0x661282*/
+    this->Capacity = Math::RoundToInt(0.0); /*0x661282*/
     return this; /*0x661285*/
   }
 }
+} // namespace gamemd
 // 0x6612C0
+namespace gamemd {
 unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2)
 {
   unsigned __int8 v3; // bl
@@ -111,16 +119,18 @@ unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2)
   unsigned __int8 v5; // bl
   unsigned __int8 result; // al
 
-  v3 = *(this + 1); /*0x6612f2*/
+  v3 = this->vtable2; /*0x6612f2*/
   *this += aP1 * (*a2 - *this) / 256; /*0x6612f5*/
   v4 = v3 + aP1 * (a2[1] - v3) / 256; /*0x661315*/
-  v5 = *(this + 2); /*0x661317*/
-  *(this + 1) = v4; /*0x66131a*/
+  v5 = this->vtable3; /*0x661317*/
+  this->vtable2 = v4; /*0x66131a*/
   result = v5 + aP1 * (a2[2] - v5) / 256; /*0x66133d*/
-  *(this + 2) = result; /*0x661340*/
+  this->vtable3 = result; /*0x661340*/
   return result; /*0x66132a*/
 }
+} // namespace gamemd
 // 0x75F540
+namespace gamemd {
 unsigned int * Color::RGBFromFloat(IUnknown * aP1, float a3)
 {
   double v3; // st7
@@ -137,3 +147,4 @@ unsigned int * Color::RGBFromFloat(IUnknown * aP1, float a3)
   *(this + 2) = v6; /*0x75f5a3*/
   return this; /*0x75f5ac*/
 }
+} // namespace gamemd

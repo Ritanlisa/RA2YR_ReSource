@@ -116,9 +116,6 @@ struct VoxelAnim
     // === FUNCS-MOVE (BEGIN) ===
     int ComputeTransform(int a1, int a2, int a3, int a4);  // 0x7586f0
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    char Draw(unsigned int * a2);  // 0x75AEC0
-// --- e4 declarations (END) ---
 };
 
 // Voxel section info -- runtime query results (VoxelSection_GetInfo @ 0x7564B0)

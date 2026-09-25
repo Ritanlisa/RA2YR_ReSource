@@ -5,7 +5,12 @@
 
 namespace gamemd {
 struct E4Recv_6812C0 {
-    void* vfptr;  // minimal E2 declaration
-    int Map_Save_6812C0(CellStruct * aP1);  // 0x6812C0
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    unsigned int M1008;  // 0x3F0
+    unsigned int q1008;  // 0x1008
+    unsigned int q4104;  // 0x4104
+// --- flat members (END) ---
+    int Map_Save_6812C0(void* aP1);  // 0x6812C0
 };
 } // namespace gamemd

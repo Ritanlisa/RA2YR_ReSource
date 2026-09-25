@@ -1411,7 +1411,7 @@ int* SetMember16107E0(void* _this) // thiscall
 
 // IDA: 0x624080  proposal: MethodStub624080
 // IDA: _DWORD *__thiscall sub_624080(_DWORD *this)
-//   *this = &OwnerDraw::DialogControl::`vftable';
+//   *this = &OwnerDraw::DialogControl_vftable;
 //   return this;
 int* MethodStub624080(void* _this) // thiscall
 {
@@ -1420,7 +1420,7 @@ int* MethodStub624080(void* _this) // thiscall
 
 // IDA: 0x624090  proposal: MethodStub624090
 // IDA: void __thiscall sub_624090(_DWORD *this)
-//   *this = &OwnerDraw::DialogControl::`vftable';
+//   *this = &OwnerDraw::DialogControl_vftable;
 void MethodStub624090(void* _this) // thiscall
 {
 }
@@ -1856,7 +1856,7 @@ int SetMember12631F10(void* _this, int a0, int a1) // thiscall
 
 // IDA: 0x631F30  proposal: MethodStub631F30
 // IDA: void __thiscall sub_631F30(_DWORD *this)
-//   *this = &PixelFXClass::`vftable';
+//   ((void**)this)[0] = (void*)(void*)(void*)&PixelFXClass_vftable;
 void MethodStub631F30(void* _this) // thiscall
 {
 }
@@ -1888,7 +1888,7 @@ int MethodEncodeVarInt631FE0(void* _this, int a0) // thiscall
 //   int result; // eax
 //   sub_5C8E40(this, a2, a3, a4, 64);
 //   result = *this;
-//   LOBYTE(result) = *this | 1;
+//   IDA_LOBYTE(result) = *this | 1;
 //   *this = result;
 //   return result;
 int MethodSub5C8E40(void* _this, int a0, int a1, int a2) // thiscall

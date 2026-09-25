@@ -104,14 +104,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int LoadWDTDecompress(int a1, int a2);  // 0x76b0a0 -- File::LoadWDTDecompress
     int ParseAudioFileRIFF();  // 0x7c12b0 -- File::ParseAudioFileRIFF
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    unsigned int * loc_401950(unsigned int * Block, char a2);  // 0x401950
-    int StubReturnFalse();  // 0x65C5F0
-    char Stub(int a1);  // 0x65C600
-    int Delete();  // 0x65D190
-    int GetState();  // 0x76F020
-    int SetState();  // 0x76F070
-// --- e4 declarations (END) ---
 };
 
 class RawFileClass : public FileClass
@@ -168,9 +160,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* QueryInterface(int a1);  // 0x65D3A0
     bool Write();  // 0x65D420
     // --- gap2 auto-generated stub declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    void Dtor();  // 0x65CA00
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

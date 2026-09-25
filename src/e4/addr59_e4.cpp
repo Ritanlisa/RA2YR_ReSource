@@ -15,16 +15,23 @@
 #include "e4/classes/Terrain_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/VectorClass_ptr_MapRegionClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/MEMORY_e4.hpp"
+#include "e4/classes/SuperWeaponTypeClass_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5904B0
 namespace gamemd {
 void PlaceCabhutMap(FootClass * aP0)
 {
-  int *v1; // ebp
   int v2; // ebx
   int v3; // edi
   _DWORD *v4; // eax
-  _DWORD *v5; // esi
   void *v7; // eax
   int Owner; // edi
   int IndexByName; // ebx
@@ -34,40 +41,40 @@ void PlaceCabhutMap(FootClass * aP0)
   int v13; // edx
   _DWORD v14[3]; // [esp+10h] [ebp-Ch] BYREF
 
-  v1 = aP0; /*0x5904b5*/
+  aP0 = aP0; /*0x5904b5*/
   v2 = aP0[1]; /*0x5904bb*/
   if ( v2 >= aP0[3] + v2 + 1 ) /*0x5904c7*/
     return 0; /*0x59052b*/
   while ( 1 ) /*0x5904c9*/
   {
-    v3 = *v1; /*0x5904c9*/
-    if ( *v1 < v1[2] + *v1 + 1 ) /*0x5904d5*/
+    v3 = *aP0; /*0x5904c9*/
+    if ( *aP0 < aP0[2] + *aP0 + 1 ) /*0x5904d5*/
       break; /*0x5904d5*/
   LABEL_7:
-    if ( ++v2 >= v1[3] + v1[1] + 1 ) /*0x590529*/
+    if ( ++v2 >= aP0[3] + aP0[1] + 1 ) /*0x590529*/
       return 0; /*0x590529*/
   }
   while ( 1 ) /*0x5904db*/
   {
-    LOWORD(aP0) = v3; /*0x5904db*/
-    HIWORD(aP0) = v2; /*0x5904e6*/
+    IDA_LOWORD(aP0) = v3; /*0x5904db*/
+    IDA_HIWORD(aP0) = v2; /*0x5904e6*/
     v4 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&aP0); /*0x5904eb*/
-    v5 = v4; /*0x5904f0*/
-    if ( v4[17] == -1 && Cell::IsEmpty(v4) && !v5[57] ) /*0x590503*/
+    v4 = v4; /*0x5904f0*/
+    if ( v4[17] == -1 && Cell::IsEmpty(v4) && !v4[57] ) /*0x590503*/
       break; /*0x590503*/
-    if ( ++v3 >= v1[2] + *v1 + 1 ) /*0x59051a*/
+    if ( ++v3 >= aP0[2] + *aP0 + 1 ) /*0x59051a*/
       goto LABEL_7; /*0x59051a*/
   }
   v7 = (void *)SuperWeaponTypeClass::FindByName(g_INI_Key_Neutral); /*0x59053c*/
   Owner = HouseClass::FindOwner(v7); /*0x59054d*/
   IndexByName = BuildingTypeClass::FindIndexByName(aCabhut); /*0x590559*/
-  v10 = __2_YAPAXI_Z(0x720u); /*0x59055b*/
+  v10 = RA2_OPNEW(0x720u); /*0x59055b*/
   if ( v10 ) /*0x590565*/
     v11 = (int *)BuildingClass::Construct((int)v10, *((_DWORD *)g_TriggerTypeCount + IndexByName), Owner); /*0x590574*/
   else
     v11 = 0; /*0x59057b*/
-  v12 = *((__int16 *)v5 + 18) << 8; /*0x590588*/
-  v14[1] = (*((__int16 *)v5 + 19) << 8) + 128; /*0x590597*/
+  v12 = *((__int16 *)v4 + 18) << 8; /*0x590588*/
+  v14[1] = (*((__int16 *)v4 + 19) << 8) + 128; /*0x590597*/
   v14[0] = v12 + 128; /*0x59059f*/
   v13 = *v11; /*0x5905a3*/
   v14[2] = 0; /*0x5905aa*/
@@ -216,7 +223,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
   int v37; // [esp+3Ch] [ebp-4h]
 
   v31 = a2; /*0x594426*/
-  v4 = __2_YAPAXI_Z(0x50u); /*0x59442e*/
+  v4 = RA2_OPNEW(0x50u); /*0x59442e*/
   if ( v4 ) /*0x594438*/
     v5 = RandomMap::TerrainTileDataConstructor(v4, *(_DWORD *)(a1 + 36)); /*0x594445*/
   else
@@ -226,7 +233,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
   v29 = v6; /*0x59445a*/
   VectorClass::CellConstructor(&v32, 0, 0); /*0x59445e*/
   v7 = *(__int16 *)(a1 + 36) + g_MapCellWidth * *(__int16 *)(a1 + 38); /*0x594478*/
-  v32 = &DynamicVectorClass<Cell>::`vftable'; /*0x59447a*/
+  v32 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x59447a*/
   v36 = 0; /*0x594482*/
   v37 = 20000; /*0x59448d*/
   *((_DWORD *)g_MapTileArray + 20 * v7 + 15) = v6; /*0x594498*/
@@ -260,7 +267,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
           }
         }
       }
-      *((_DWORD *)g_MapTileArray + 20 * (__int16)v13 + 20 * g_MapCellWidth * SHIWORD(v13) + 14) = v6; /*0x59454a*/
+      *((_DWORD *)g_MapTileArray + 20 * (__int16)v13 + 20 * g_MapCellWidth * IDA_SHIWORD(v13) + 14) = v6; /*0x59454a*/
       ++v5[3]; /*0x594552*/
       v14 = v5[12]; /*0x594555*/
       if ( v5[14] < v14 /*0x594578*/
@@ -277,8 +284,8 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
       while ( 1 ) /*0x594598*/
       {
         v19 = v18 & 7; /*0x594598*/
-        LOWORD(v28) = v13 + LOWORD(Direction_X_Offsets[v19]); /*0x5945ba*/
-        HIWORD(v28) = HIWORD(v26) + HIWORD(Direction_X_Offsets[v19]); /*0x5945c3*/
+        IDA_LOWORD(v28) = v13 + IDA_LOWORD(Direction_X_Offsets[v19]); /*0x5945ba*/
+        IDA_HIWORD(v28) = IDA_HIWORD(v26) + IDA_HIWORD(Direction_X_Offsets[v19]); /*0x5945c3*/
         v30 = v28; /*0x5945d2*/
         v20 = (__int16 *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v30); /*0x5945d6*/
         v21 = v20[18]; /*0x5945db*/
@@ -307,7 +314,7 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
         }
         if ( ++v18 >= 8 ) /*0x5946b7*/
           break; /*0x5946b7*/
-        LOWORD(v13) = v26; /*0x594592*/
+        IDA_LOWORD(v13) = v26; /*0x594592*/
       }
       v9 = v36; /*0x5946bd*/
       v10 = v36; /*0x5946c1*/
@@ -317,11 +324,11 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
       v6 = v29; /*0x5944f8*/
     }
   }
-  v32 = &VectorClass<Cell>::`vftable'; /*0x5946d2*/
+  v32 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5946d2*/
   if ( Block ) /*0x5946dd*/
   {
     if ( v35 ) /*0x5946e5*/
-      __3_YAXPAX_Z(Block); /*0x5946e8*/
+      RA2_OPDEL(Block); /*0x5946e8*/
   }
 }
 }
@@ -334,7 +341,6 @@ ObjectClass * * RandomMap_DistributeTerrain()
   int v2; // ebx
   int v3; // ebp
   int i; // esi
-  int v5; // ebx
   int v6; // edi
   _DWORD *v7; // eax
   _DWORD *v8; // ecx
@@ -348,7 +354,6 @@ ObjectClass * * RandomMap_DistributeTerrain()
   int v16; // eax
   int v17; // edx
   int *v18; // ecx
-  int v19; // esi
   int v20; // edi
   int v21; // ebx
   int v22; // ebp
@@ -381,9 +386,9 @@ ObjectClass * * RandomMap_DistributeTerrain()
     v0 = 400.0; /*0x594b95*/
   v32 = Math::RoundToInt(v0); /*0x594ba5*/
   v1 = Terrain::ConnectivityGraph(&MapClass_Instance); /*0x594ba9*/
-  HIWORD(v3) = 0; /*0x594bb4*/
+  IDA_HIWORD(v3) = 0; /*0x594bb4*/
   v2 = v35[dword_ABE014]; /*0x594bb6*/
-  LOWORD(v3) = *(_WORD *)(dword_87F800[v2] + 2 * v1); /*0x594bc1*/
+  IDA_LOWORD(v3) = *(_WORD *)(dword_87F800[v2] + 2 * v1); /*0x594bc1*/
   Map_Helper_58CE90(); /*0x594bc5*/
   LayerClass::CellIteratorReset(&MapClass_Instance); /*0x594bcf*/
   for ( i = LayerClass::CellIteratorNext(&MapClass_Instance); i; i = LayerClass::CellIteratorNext(&MapClass_Instance) ) /*0x594be2*/
@@ -396,7 +401,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
       FloodFillRandomMapTerrain(v3); /*0x594c32*/
     }
   }
-  v5 = g_RandomMap_TileData; /*0x594c4f*/
+  g_RandomMap_TileData = g_RandomMap_TileData; /*0x594c4f*/
   v6 = g_RandomMap_TileData - 1; /*0x594c51*/
   if ( g_RandomMap_TileData - 1 >= 0 ) /*0x594c54*/
   {
@@ -410,7 +415,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
         if ( v8 ) /*0x594c6b*/
         {
           TileNode::Cleanup(v8); /*0x594c6d*/
-          __3_YAXPAX_Z(v9); /*0x594c73*/
+          RA2_OPDEL(v9); /*0x594c73*/
           v7 = g_RandomMap_TerrainState; /*0x594c78*/
         }
       }
@@ -428,7 +433,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   for ( j = 0; j < g_RandomMap_TileData; ++j ) /*0x594cc9*/
   {
     v11 = *(_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + j) + 8) /*0x594ce8*/
-        + v5 * (500000 - *(_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + j) + 12));
+        + g_RandomMap_TileData * (500000 - *(_DWORD *)(*((_DWORD *)g_RandomMap_TerrainState + j) + 12));
     v12 = (char *)g_RandomMap_TerrainState + 4 * j; /*0x594cea*/
     if ( NumOfElements + 1 <= 0 || (unsigned __int8)Map_Helper_5AD930(10) ) /*0x594d06*/
     {
@@ -460,20 +465,20 @@ ObjectClass * * RandomMap_DistributeTerrain()
   if ( v40 > 0 ) /*0x594dd7*/
   {
     v18 = (int *)Block; /*0x594dd9*/
-    v19 = v40; /*0x594ddd*/
+    v40 = v40; /*0x594ddd*/
     do /*0x594dea*/
     {
       v20 = *v18++; /*0x594ddf*/
       v17 += v20->vtable4; /*0x594de7*/
-      --v19; /*0x594de9*/
+      --v40; /*0x594de9*/
     }
-    while ( v19 ); /*0x594dea*/
+    while ( v40 ); /*0x594dea*/
     v30 = v17; /*0x594dec*/
   }
   v21 = 0; /*0x594df6*/
   v22 = 0; /*0x594df8*/
   v23 = 0; /*0x594dfa*/
-  for ( m = (unsigned int)dword_ABE028; v23 < v40; HIDWORD(m) = v22 ) /*0x594e06*/
+  for ( m = (unsigned int)dword_ABE028; v23 < v40; IDA_HIDWORD(m) = v22 ) /*0x594e06*/
   {
     v24 = *((_DWORD *)Block + v23); /*0x594e0c*/
     v21 += *(_DWORD *)(v24 + 12); /*0x594e12*/
@@ -504,10 +509,10 @@ ObjectClass * * RandomMap_DistributeTerrain()
     }
   }
   ComputeMapCameraBounds(); /*0x594ee3*/
-  __3_YAXPAX_Z(0); /*0x594eed*/
-  v36 = &VectorClass<MapRegionClass *>::`vftable'; /*0x594efb*/
+  RA2_OPDEL(0); /*0x594eed*/
+  v36 = &(void*)(void*)&VectorClass_MapRegionClass___vftable; /*0x594efb*/
   if ( Block && v39 ) /*0x594f25*/
-    __3_YAXPAX_Z(Block); /*0x594f28*/
+    RA2_OPDEL(Block); /*0x594f28*/
   return 1; /*0x594f03*/
 }
 }
@@ -537,10 +542,10 @@ AbstractTypeClass * * CleanupRandomMapCache()
   int v19; // [esp+2Ch] [ebp-4h]
 
   Map_Cleanup(0, 0); /*0x595cef*/
-  v14 = &DynamicVectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x595cf4*/
+  v14 = &(void*)(void*)&DynamicVectorClass__WIN32_FIND_DATAA___vftable; /*0x595cf4*/
   v19 = 10; /*0x595cfc*/
   j = 0; /*0x595d09*/
-  i = (struct _WIN32_FIND_DATAA *)__2_YAPAXI_Z(0x140u); /*0x595d19*/
+  i = (struct _WIN32_FIND_DATAA *)RA2_OPNEW(0x140u); /*0x595d19*/
   FirstFileA = FindFirstFileA(aRmcacheMmp, i); /*0x595d27*/
   if ( FirstFileA != (HANDLE)-1 ) /*0x595d2c*/
   {
@@ -549,9 +554,9 @@ AbstractTypeClass * * CleanupRandomMapCache()
       v2 = j++; /*0x595d6a*/
       *((_DWORD *)Block + v2) = i; /*0x595d75*/
     }
-    for ( i = (struct _WIN32_FIND_DATAA *)__2_YAPAXI_Z(0x140u); /*0x595d8f*/
+    for ( i = (struct _WIN32_FIND_DATAA *)RA2_OPNEW(0x140u); /*0x595d8f*/
           FindNextFileA(FirstFileA, i);
-          i = (struct _WIN32_FIND_DATAA *)__2_YAPAXI_Z(0x140u) )
+          i = (struct _WIN32_FIND_DATAA *)RA2_OPNEW(0x140u) )
     {
       if ( j < v16 /*0x595dc2*/
         || (v17 || !v16)
@@ -564,7 +569,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
     }
     FindClose(FirstFileA); /*0x595df3*/
   }
-  __3_YAXPAX_Z(i); /*0x595dfa*/
+  RA2_OPDEL(i); /*0x595dfa*/
   v4 = j; /*0x595dff*/
   if ( j <= 70 ) /*0x595e09*/
   {
@@ -625,7 +630,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
     {
       if ( !DeleteFileA((LPCSTR)v7[v5] + 44) ) /*0x595ef5*/
         goto LABEL_36; /*0x595ef5*/
-      __3_YAXPAX_Z(*((void **)Block + v5)); /*0x595f03*/
+      RA2_OPDEL(*((void **)Block + v5)); /*0x595f03*/
       v9 = j; /*0x595f08*/
       if ( v5 < j ) /*0x595f11*/
       {
@@ -649,7 +654,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
   {
     do /*0x595f85*/
     {
-      __3_YAXPAX_Z(*v7); /*0x595f50*/
+      RA2_OPDEL(*v7); /*0x595f50*/
       v11 = j == 0; /*0x595f5c*/
       if ( j > 0 ) /*0x595f5e*/
       {
@@ -670,11 +675,11 @@ AbstractTypeClass * * CleanupRandomMapCache()
     }
     while ( !v11 ); /*0x595f85*/
   }
-  v14 = &VectorClass<_WIN32_FIND_DATAA *>::`vftable'; /*0x595f89*/
+  v14 = &(void*)(void*)&VectorClass__WIN32_FIND_DATAA___vftable; /*0x595f89*/
   if ( v7 ) /*0x595f91*/
   {
     if ( v17 ) /*0x595f99*/
-      __3_YAXPAX_Z(v7); /*0x595f9c*/
+      RA2_OPDEL(v7); /*0x595f9c*/
   }
 }
 }
@@ -702,12 +707,12 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
   struct _WIN32_FIND_DATAA FindFileData; // [esp+130h] [ebp-140h] BYREF
 
   ComPtr::Constructor(v15); /*0x595fc2*/
-  v15[0] = &rc_ptr<WDTTerritory>::`vftable'; /*0x595fd8*/
+  v15[0] = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x595fd8*/
   if ( g_GameMode_Current[0] == 4 && g_GameOptionsFlags == 3 ) /*0x595fe5*/
   {
     v4 = FindWDTTerritoryClass(v16, *(int *)g_GameDifficulty); /*0x595ff1*/
     ComPtr::Set(v15, v4[1]); /*0x595ffe*/
-    v16[0] = &rc_ptr<WDTTerritory>::`vftable'; /*0x596007*/
+    v16[0] = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x596007*/
     ComPtr::Release(v16); /*0x59600b*/
   }
   if ( v15[1] ) /*0x596016*/
@@ -716,7 +721,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
   memset(Destination, 0, sizeof(Destination)); /*0x596033*/
   strncpy(Destination, aRmcache, 0x80u); /*0x596047*/
   strncat(Destination, v5, 0x80u); /*0x59605a*/
-  __3_YAXPAX_Z(v5); /*0x596060*/
+  RA2_OPDEL(v5); /*0x596060*/
   strncat(Destination, aMmp, 0x80u); /*0x596077*/
   CCFileClass::Construct(v18, Destination); /*0x59608b*/
   if ( CCFileClass::Open(v18, 0) ) /*0x596097*/
@@ -724,7 +729,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
     v6 = g_Map_TiberiumConfig; /*0x5960a4*/
     if ( !g_Map_TiberiumConfig ) /*0x5960ab*/
     {
-      v7 = __2_YAPAXI_Z(4u); /*0x5960af*/
+      v7 = RA2_OPNEW(4u); /*0x5960af*/
       if ( v7 ) /*0x5960b9*/
         v6 = (void *)unknown_libname_27(v7); /*0x5960bd*/
       else
@@ -739,7 +744,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
       if ( g_Map_TiberiumConfig ) /*0x596109*/
       {
         ComPtr::Dtor(g_Map_TiberiumConfig); /*0x59610d*/
-        __3_YAXPAX_Z(v8); /*0x596113*/
+        RA2_OPDEL(v8); /*0x596113*/
       }
       g_Map_TiberiumConfig = 0; /*0x59611f*/
       RawFileClass::Dtor(v17); /*0x596125*/
@@ -749,7 +754,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
     if ( g_Map_TiberiumConfig ) /*0x596137*/
     {
       ComPtr::Dtor(g_Map_TiberiumConfig); /*0x59613b*/
-      __3_YAXPAX_Z(v9); /*0x596141*/
+      RA2_OPDEL(v9); /*0x596141*/
     }
     g_Map_TiberiumConfig = 0; /*0x596149*/
   }
@@ -763,7 +768,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
     MapPreview::Upload((int *)g_Map_TiberiumConfig); /*0x5961aa*/
   if ( dword_ABE150 ) /*0x5961b7*/
     (**(void (__thiscall ***)(int, int))dword_ABE150)(dword_ABE150, 1); /*0x5961bd*/
-  v10 = __2_YAPAXI_Z(0x178u); /*0x5961c4*/
+  v10 = RA2_OPNEW(0x178u); /*0x5961c4*/
   if ( v10 ) /*0x5961ce*/
     v11 = (HWND *)MapSeedClass::Constructor(v10); /*0x5961d2*/
   else
@@ -771,7 +776,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
   dword_ABE150 = (int)v11; /*0x5961e7*/
   qmemcpy(v11, dword_ABDFD8, 0x178u); /*0x5961ec*/
   ScenarioClass::SetFileName((char *)g_ScenarioClass_Instance, g_INI_Key_RandomMap); /*0x5961f9*/
-  LOBYTE(v12) = 0; /*0x5961fe*/
+  IDA_LOBYTE(v12) = 0; /*0x5961fe*/
   ScreenSaver::Process(v12); /*0x596200*/
   v13 = g_Map_TiberiumConfig; /*0x596205*/
   if ( g_Map_TiberiumConfig ) /*0x59620f*/
@@ -790,7 +795,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
     if ( v13 ) /*0x59628a*/
     {
       ComPtr::Dtor(v13); /*0x59628e*/
-      __3_YAXPAX_Z(v13); /*0x596294*/
+      RA2_OPDEL(v13); /*0x596294*/
     }
     g_Map_TiberiumConfig = 0; /*0x59629c*/
   }
@@ -800,12 +805,12 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
     dword_ABE150 = 0; /*0x5962b2*/
   }
   LABEL_39:
-  v18[0] = &CCFileClass::`vftable'; /*0x5962b8*/
+  v18[0] = &(void*)(void*)&CCFileClass_vftable; /*0x5962b8*/
   v20 = 0; /*0x5962c7*/
   Vector::Clear((int)v19); /*0x5962ce*/
   v18[0] = &off_7E1668; /*0x5962d7*/
   BufferIOFileClass::Dtor(v18); /*0x5962df*/
-  v15[0] = &rc_ptr<WDTTerritory>::`vftable'; /*0x5962e8*/
+  v15[0] = &(void*)(void*)&rc_ptr_WDTTerritory_vftable; /*0x5962e8*/
   return ComPtr::Release(v15); /*0x5962f5*/
 }
 }
@@ -891,8 +896,8 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
   v27 = 0; /*0x59a978*/
   if ( (double)(unsigned int)Random::State(&g_Randomizer) * 2.328306437080797e-10 >= 0.5 ) /*0x59a9a2*/
   {
-    HIDWORD(v25) = v24; /*0x59a9c6*/
-    LODWORD(v25) = aP2[3] / v6; /*0x59a9ca*/
+    IDA_HIDWORD(v25) = v24; /*0x59a9c6*/
+    IDA_LODWORD(v25) = aP2[3] / v6; /*0x59a9ca*/
     v30 = v25; /*0x59a9ce*/
   }
   else
@@ -906,12 +911,12 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
   v34 = aP2[1]; /*0x59a9df*/
   v33 = *aP2; /*0x59a9e9*/
   VectorClass::Construct(&v43, 0, 0); /*0x59a9ed*/
-  v43 = &DynamicVectorClass<int>::`vftable'; /*0x59a9f8*/
+  v43 = &(void*)(void*)&DynamicVectorClass_int_vftable; /*0x59a9f8*/
   v48 = 10; /*0x59aa00*/
   v47 = 0; /*0x59aa0b*/
   VectorClass::Construct(&v37, 0, 0); /*0x59aa12*/
   v10 = 0; /*0x59aa1b*/
-  v37 = &DynamicVectorClass<int>::`vftable'; /*0x59aa1f*/
+  v37 = &(void*)(void*)&DynamicVectorClass_int_vftable; /*0x59aa1f*/
   v42 = 10; /*0x59aa27*/
   i = 0; /*0x59aa2f*/
   if ( v23 > 0 ) /*0x59aa33*/
@@ -927,7 +932,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
         *((_DWORD *)v44 + v11) = v5; /*0x59aa7f*/
       }
       if ( i < v39 /*0x59aaaf*/
-        || (BYTE1(v40) || !v39)
+        || (IDA_BYTE1(v40) || !v39)
         && v42 > 0
         && ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v37[2])(&v37, v42 + v39, 0) )
       {
@@ -997,7 +1002,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
           v21[2] = v24 - 4; /*0x59ac28*/
           v21[3] = v25 - 4; /*0x59ac2b*/
         }
-        v33 += HIDWORD(v25); /*0x59ac40*/
+        v33 += IDA_HIDWORD(v25); /*0x59ac40*/
         v22 = v28 == 1; /*0x59ac4a*/
         v34 += v27; /*0x59ac4b*/
         --v28; /*0x59ac4f*/
@@ -1015,19 +1020,19 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
       v33 = *v7; /*0x59ac8f*/
     ++v16; /*0x59aca0*/
   }
-  v37 = &VectorClass<int>::`vftable'; /*0x59acb8*/
-  if ( Block && BYTE1(v40) ) /*0x59acc4*/
+  v37 = &(void*)(void*)&VectorClass_int_vftable; /*0x59acb8*/
+  if ( Block && IDA_BYTE1(v40) ) /*0x59acc4*/
   {
-    __3_YAXPAX_Z(Block); /*0x59acc7*/
+    RA2_OPDEL(Block); /*0x59acc7*/
     Block = 0; /*0x59accf*/
   }
-  v43 = &VectorClass<int>::`vftable'; /*0x59acdb*/
-  BYTE1(v40) = 0; /*0x59ace2*/
+  v43 = &(void*)(void*)&VectorClass_int_vftable; /*0x59acdb*/
+  IDA_BYTE1(v40) = 0; /*0x59ace2*/
   v39 = 0; /*0x59ace9*/
   if ( v44 ) /*0x59acf2*/
   {
     if ( v46 ) /*0x59acfa*/
-      __3_YAXPAX_Z(v44); /*0x59acfd*/
+      RA2_OPDEL(v44); /*0x59acfd*/
   }
 }
 }
@@ -1122,10 +1127,8 @@ int E4Recv_5942F0::sub_5942F0(int * a2)
   _BYTE *v9; // eax
   int v10; // [esp+8h] [ebp-Ch]
   __int16 v11[2]; // [esp+Ch] [ebp-8h] BYREF
-  _DWORD *v12; // [esp+10h] [ebp-4h]
 
   v2 = a2; /*0x5942f5*/
-  v12 = this; /*0x5942f9*/
   v3 = a2[1]; /*0x5942fd*/
   result = v3 + a2[3]; /*0x594303*/
   v10 = v3; /*0x594305*/
@@ -1148,9 +1151,9 @@ int E4Recv_5942F0::sub_5942F0(int * a2)
             if ( (__int16)v6 - v7 < v5 && v7 - (__int16)v6 < v5 && v8 <= g_MapCellCount ) /*0x594356*/
             {
               if ( g_MapTileArray ) /*0x594360*/
-                *((_DWORD *)g_MapTileArray + 20 * (__int16)v6 + 20 * g_MapCellWidth * v7 + 14) = v12[2]; /*0x59437a*/
+                *((_DWORD *)g_MapTileArray + 20 * (__int16)v6 + 20 * g_MapCellWidth * v7 + 14) = this->vtable3; /*0x59437a*/
               v9 = CellCoord::To_CellObj(&MapClass_Instance, v11); /*0x594388*/
-              v9[283] = *((_BYTE *)v12 + 16); /*0x594394*/
+              v9[283] = this->uniqueId; /*0x594394*/
               v5 = g_MapCellHeight_Value; /*0x59439a*/
             }
             v3 = v10; /*0x5943a0*/
@@ -1188,10 +1191,10 @@ double sub_598000()
 namespace gamemd {
 unsigned int * E4Recv_5980A0::sub_5980A0(int a2)
 {
-  this->M8 = 0; /*0x5980a4*/
+  *(this + 2) = 0; /*0x5980a4*/
   *(_BYTE *)this = 0; /*0x5980a7*/
-  this->M12 = 0; /*0x5980a9*/
-  this->M16 = a2; /*0x5980b0*/
+  *(this + 3) = 0; /*0x5980a9*/
+  *(this + 4) = a2; /*0x5980b0*/
   return this; /*0x5980b3*/
 }
 } // namespace gamemd

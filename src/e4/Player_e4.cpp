@@ -2,8 +2,12 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Player_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5E8DC0
+namespace gamemd {
 void Player::BuildListString()
 {
   wchar_t **v2; // edi
@@ -47,7 +51,9 @@ void Player::BuildListString()
   }
   while ( (int)v2 < (int)&g_PlayerNameListEnd ); /*0x5e8e89*/
 }
+} // namespace gamemd
 // 0x5E8BF0
+namespace gamemd {
 wchar_t * Player::FindByName()
 {
   int v3; // ebp
@@ -82,10 +88,13 @@ wchar_t * Player::FindByName()
   }
   return (wchar_t *)v5; /*0x5e8c0e*/
 }
+} // namespace gamemd
 // 0x5E9440
+namespace gamemd {
 BOOL Player::IsObserver()
 {
   return this /*0x5e9461*/
       && (this == (void *)g_Lobby_PlayerTeam || this == (void *)g_Lobby_PlayerSide
                                              || this == (void *)g_Lobby_PlayerColor);
 }
+} // namespace gamemd

@@ -584,9 +584,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindClosestForRepair(int a1);  // 0x4dfcb0
     int FindClosestForRepair2(int a1);  // 0x4dfe00
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    char processCapture();  // 0x712130
-// --- e4 declarations (END) ---
 };
 
 // External globals
@@ -606,8 +603,7 @@ int RoundToInt(double value); // 0x7C5F00 — round to nearest
 } // namespace Math
 
 class SuperWeapon {
-public:
-    static void UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse); // 0x50AF10 (IDA arg is the house pointer)
+void UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse); // 0x50AF10 (IDA arg is the house pointer)
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int CreateUnits();  // 0x445F80
     int CreateNukePayload();  // 0x46B310
@@ -620,9 +616,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int UpdateSuperWeaponReadyState(int a1);  // 0x6CBCA0
     void DispatchTeam(int a1, int a2);  // 0x6EFE60
     // --- gap2 auto-generated stub declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    char GetField10();  // 0x6CC2A0
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

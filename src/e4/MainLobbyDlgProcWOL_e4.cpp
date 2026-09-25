@@ -6,6 +6,9 @@
 #include "e4/classes/E4Recv_77A7A0_e4.hpp"
 #include "e4/classes/E4Recv_798F50_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/EventQueue_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x624020
 namespace gamemd {
@@ -18,10 +21,10 @@ LRESULT MainLobbyDlgProcWOL_Assign(HWND hWnd, WPARAM wParam, void ** a3)
   v5 = SendMessageA(hWnd, 0x149u, wParam, 0); /*0x624039*/
   if ( v5 <= 0 ) /*0x62403d*/
     SafeDelete::Ptr(a3); /*0x624043*/
-  v6 = (wchar_t *)__2_YAPAXI_Z(2 * v5 + 4); /*0x624055*/
+  v6 = (wchar_t *)RA2_OPNEW(2 * v5 + 4); /*0x624055*/
   v7 = SendMessageA(hWnd, 0x4C3u, wParam, (LPARAM)v6); /*0x624061*/
   WideString::Assign_Alt(a3, v6); /*0x624068*/
-  __3_YAXPAX_Z(v6); /*0x62406e*/
+  RA2_OPDEL(v6); /*0x62406e*/
   return v7; /*0x624078*/
 }
 } // namespace gamemd

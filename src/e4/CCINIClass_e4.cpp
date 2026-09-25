@@ -1,6 +1,14 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/CCToolTip_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/SHA1_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x41F2E0
 namespace gamemd {
@@ -43,7 +51,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
           goto LABEL_11; /*0x41f434*/
         }
   LABEL_9:
-        v9 = __2_YAPAXI_Z(0x110u); /*0x41f378*/
+        v9 = RA2_OPNEW(0x110u); /*0x41f378*/
         if ( v9 ) /*0x41f387*/
         {
           v7 = AnimTypeClass::Construct2(v9, (char *)StringByIndex); /*0x41f391*/
@@ -104,7 +112,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 namespace gamemd {
 int CCINIClass::GetDB()
 {
-  return *(this + 1); /*0x473453*/
+  return this->q004; /*0x473453*/
 }
 }
 // 0x4741F0
@@ -132,9 +140,9 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   v10[2] = 0; /*0x474217*/
   v10[3] = aP1; /*0x47421b*/
   v11 = 0; /*0x47421f*/
-  v10[0] = &FileStraw::`vftable'; /*0x474223*/
+  v10[0] = &(void*)(void*)&FileStraw_vftable; /*0x474223*/
   v5 = INIClass::LoadFile(v10, aP2); /*0x474230*/
-  *(this + 64) = 0; /*0x474232*/
+  *(&this->u32_184) = 0; /*0x474232*/
   if ( !v5 || !a3 ) /*0x474244*/
     goto LABEL_7; /*0x474244*/
   v6 = INIClass::GetBase64Data((int)g_INI_Key_Digest, (int)v21, 0x14u); /*0x47425b*/
@@ -156,12 +164,12 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   v16 = -1732584194; /*0x4742ad*/
   v17 = 271733878; /*0x4742b5*/
   v18 = -1009589776; /*0x4742bd*/
-  v12[0] = &SHAPipe::`vftable'; /*0x4742c5*/
+  v12[0] = &(void*)(void*)&SHAPipe_vftable; /*0x4742c5*/
   INIClass::WriteToString(v12); /*0x4742cd*/
-  SHA1::ComputeThunk(this + 65); /*0x4742da*/
-  *(this + 64) = 1; /*0x4742e3*/
+  SHA1::ComputeThunk(&this->u32_185); /*0x4742da*/
+  *(&this->u32_184) = 1; /*0x4742e3*/
   Pipe::Dtor(v12); /*0x4742e7*/
-  v8 = memcmp(v21, this + 65, 0x14u) == 0; /*0x4742fa*/
+  v8 = memcmp(v21, &this->q104, 0x14u) == 0; /*0x4742fa*/
   v7 = 2; /*0x4742fd*/
   if ( v8 ) /*0x474302*/
   LABEL_7:
@@ -173,7 +181,7 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
 }
 // 0x535B30
 namespace gamemd {
-unsigned int * CCINIClass::CCINIClass()
+CCINIClass::CCINIClass()
 {
   _DWORD *result; // eax
   _DWORD *v2; // esi
@@ -184,17 +192,17 @@ unsigned int * CCINIClass::CCINIClass()
   int v7; // edi
 
   result = this; /*0x535b30*/
-  v2 = this + 4; /*0x535b36*/
-  v3 = this + 7; /*0x535b39*/
+  v2 = &this->u32_10; /*0x535b36*/
+  v3 = &this->u32_1C; /*0x535b39*/
   result[1] = 0; /*0x535b3c*/
   result[2] = 0; /*0x535b3f*/
   v2[1] = 0; /*0x535b42*/
   v2[2] = 0; /*0x535b45*/
-  *v2 = &GenericNode::`vftable'; /*0x535b48*/
+  *v2 = &(void*)(void*)&GenericNode_vftable; /*0x535b48*/
   v3[1] = 0; /*0x535b4e*/
   v3[2] = 0; /*0x535b51*/
-  *v3 = &GenericNode::`vftable'; /*0x535b54*/
-  result[3] = &GenericList::`vftable'; /*0x535b5d*/
+  *v3 = &(void*)(void*)&GenericNode_vftable; /*0x535b54*/
+  result[3] = &(void*)(void*)&GenericList_vftable; /*0x535b5d*/
   if ( v3 ) /*0x535b64*/
   {
     v4 = v3[1]; /*0x535b66*/
@@ -203,7 +211,7 @@ unsigned int * CCINIClass::CCINIClass()
       v5 = v3[2]; /*0x535b6d*/
       if ( v5 ) /*0x535b72*/
       {
-        *(_DWORD *)(v5 + 4) = v4; /*0x535b74*/
+        this->v4 = v4; /*0x535b74*/
         *(_DWORD *)(v3[1] + 8) = v3[2]; /*0x535b7d*/
         v3[2] = 0; /*0x535b80*/
         v3[1] = 0; /*0x535b83*/
@@ -215,9 +223,9 @@ unsigned int * CCINIClass::CCINIClass()
   v3[1] = v6; /*0x535b8c*/
   v7 = v2[1]; /*0x535b8f*/
   if ( v7 ) /*0x535b94*/
-    *(_DWORD *)(v7 + 8) = v3; /*0x535b96*/
+    this->v3 = v3; /*0x535b96*/
   v2[1] = v3; /*0x535b99*/
-  result[3] = &List<INIClass::INISection *>::`vftable'; /*0x535b9c*/
+  result[3] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x535b9c*/
   result[10] = 0; /*0x535ba4*/
   result[11] = 0; /*0x535ba7*/
   result[12] = 0; /*0x535baa*/
@@ -292,13 +300,13 @@ IUnknown * CCINIClass::WriteHouses()
   char Source[32]; // [esp+Ch] [ebp-40h] BYREF
   char Buffer[32]; // [esp+2Ch] [ebp-20h] BYREF
 
-  INIClass::ClearSection((int)this, (int)g_INI_Key_Houses, 0); /*0x50116f*/
+  INIClass::ClearSection((int)g_INI_Key_Houses, 0); /*0x50116f*/
   result = HouseClass_Count; /*0x501174*/
   for ( i = 0; i < HouseClass_Count; ++i ) /*0x50117d*/
   {
     strcpy(Source, (const char *)(*(_DWORD *)&HouseClass_Array->gap0[4 * i] + 90100)); /*0x5011ac*/
     sprintf(Buffer, g_Str_Trace, i); /*0x5011ba*/
-    INIClass::SetString(this, (unsigned __int8 *)g_INI_Key_Houses, Buffer, Source); /*0x5011d3*/
+    INIClass::SetString((unsigned __int8 *)g_INI_Key_Houses, Buffer, Source); /*0x5011d3*/
     result = HouseClass_Count; /*0x5011d8*/
   }
   v4 = 0; /*0x5011e3*/
@@ -306,7 +314,7 @@ IUnknown * CCINIClass::WriteHouses()
   {
     do /*0x501200*/
     {
-      HouseClass::SaveToINI(*(_DWORD *)&HouseClass_Array->gap0[4 * v4], this); /*0x5011f3*/
+      HouseClass::SaveToINI(); /*0x5011f3*/
       result = HouseClass_Count; /*0x5011f8*/
       ++v4; /*0x5011fd*/
     }

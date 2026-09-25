@@ -5,7 +5,26 @@
 
 namespace gamemd {
 struct MSPCXAnim_42 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+    void* q004;  // 0x4
+    int q008;  // 0x8
+    bool q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    int q010;  // 0x10
+    bool IsInitialized;  // 0x12
+    int Count;  // 0x16
+    bool q018;  // 0x18
+    unsigned char q01C;  // 0x1C
+    bool q024;  // 0x24
+    unsigned char q028;  // 0x28
+    int q034;  // 0x34
+    unsigned char q038;  // 0x38
+    unsigned char q04C;  // 0x4C
+    unsigned char q050;  // 0x50
+    bool q054;  // 0x54
+    unsigned int q0042;
+// --- flat members (END) ---
     char AllocCopyData_8B(int a2, unsigned int * a3);  // 0x5D09C0
     void FreeData();  // 0x5D05A0
     unsigned int GetCount_8B(int a2);  // 0x5D05D0
@@ -27,6 +46,6 @@ struct MSPCXAnim_42 {
     DynamicVector * Constructor_VectorClass_Point2D_(char a2);  // 0x5D1710
     DynamicVector * Constructor_VectorClass_MSTextEntry___(char a2);  // 0x5D17B0
     DynamicVector * Constructor_VectorClass_MapSelection___(char a2);  // 0x5D1850
-    VectorClass * QueryInterface(char a2);  // 0x5D1940
+    VectorClass_flat * QueryInterface(char a2);  // 0x5D1940
 };
 } // namespace gamemd

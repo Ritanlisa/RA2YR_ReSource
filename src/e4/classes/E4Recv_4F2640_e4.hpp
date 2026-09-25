@@ -5,7 +5,16 @@
 
 namespace gamemd {
 struct E4Recv_4F2640 {
-    void* vfptr;  // minimal E2 declaration
-    int sub_4F2640(int (__thiscall ***a2)(unsigned int, int) a1);  // 0x4F2640
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    AbstractClass * ptr_4;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned int M84;  // 0x54
+    unsigned int q084;  // 0x84
+    unsigned int q774;  // 0x774
+    unsigned int q1908;  // 0x1908
+    unsigned int q6408;  // 0x6408
+// --- flat members (END) ---
+    int sub_4F2640(int (__thiscall ***a2)(unsigned int, int));  // 0x4F2640
 };
 } // namespace gamemd

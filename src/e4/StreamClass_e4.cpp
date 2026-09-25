@@ -1,26 +1,36 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/StreamClass_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x411310
+namespace gamemd {
 int StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
 {
-  return (*(int (__thiscall **)(_DWORD, char *, _DWORD))(**(this + 5) + 20))(*(this + 5), &a3, a2); /*0x411328*/
+  return (*(int (__thiscall **)(_DWORD, char *, _DWORD))(*this->q014 + 20))(this->q014, &a3, a2); /*0x411328*/
 }
+} // namespace gamemd
 // 0x4114B0
+namespace gamemd {
 unsigned int StreamClass::ReadAndSeek(MouseClass * aP1, MouseClass * aP2)
 {
   int v4; // edi
   unsigned int result; // eax
 
-  v4 = (*(int (__thiscall **)(_DWORD, int, int))(**(_DWORD **)(this + 20) + 92))(*(_DWORD *)(this + 20), aP1, aP2); /*0x4114c9*/
-  (*(void (__thiscall **)(_DWORD))(**(_DWORD **)(this + 20) + 96))(*(_DWORD *)(this + 20)); /*0x4114cd*/
-  result = v4 + *(_DWORD *)(this + 16); /*0x4114d6*/
-  if ( result >= *(_DWORD *)(this + 28) ) /*0x4114da*/
-    result -= *(_DWORD *)(this + 32); /*0x4114dc*/
+  v4 = (*(int (__thiscall **)(_DWORD, int, int))(**(_DWORD **)(&this->u32_80) + 92))(this->q014, aP1, aP2); /*0x4114c9*/
+  (*(void (__thiscall **)(_DWORD))(**(_DWORD **)(&this->u32_80) + 96))(this->q014); /*0x4114cd*/
+  result = v4 + this->StreamClass_field_0C; /*0x4114d6*/
+  if ( result >= this->u32_1C ) /*0x4114da*/
+    result -= this->q020; /*0x4114dc*/
   return result; /*0x4114df*/
 }
+} // namespace gamemd
 // 0x45AEA0
+namespace gamemd {
 int StreamClass::Set2(unsigned int * a2)
 {
   int v3; // edi
@@ -57,7 +67,9 @@ int StreamClass::Set2(unsigned int * a2)
     return -2147467262; /*0x45af0e*/
   }
 }
+} // namespace gamemd
 // 0x45AF20
+namespace gamemd {
 int StreamClass::Set(IUnknown * aP1)
 {
   int v3; // edi
@@ -94,37 +106,50 @@ int StreamClass::Set(IUnknown * aP1)
     return -2147467262; /*0x45af8e*/
   }
 }
+} // namespace gamemd
 // 0x4B4C30
+namespace gamemd {
 BOOL StreamClass::IsInactive(IUnknown * aP0)
 {
-  return *(_BYTE *)(aP0 + 17) == 0; /*0x4b4c3e*/
+  return aP0->u8_11 == 0; /*0x4b4c3e*/
 }
+} // namespace gamemd
 // 0x4B4C50
+namespace gamemd {
 int StreamClass::Vt32Thunk(int a1)
 {
   return (*(int (__stdcall **)(int))(*(_DWORD *)a1 + 128))(a1); /*0x4b4c5d*/
 }
+} // namespace gamemd
 // 0x55A710
+namespace gamemd {
 int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 {
-  *(_DWORD *)(aP0 + 8) = a2; /*0x55a718*/
-  *(_DWORD *)(aP0 + 4) = a2; /*0x55a71b*/
+  aP0->u32_8 = a2; /*0x55a718*/
+  aP0->vtable2 = a2; /*0x55a71b*/
   return 0; /*0x55a720*/
 }
+} // namespace gamemd
 // 0x55A8F0
+namespace gamemd {
 int StreamClass::SetDirty(unsigned char * a1)
 {
   a1[12] = 1; /*0x55a8f5*/
   return (*(int (__stdcall **)(_BYTE *))(*(_DWORD *)a1 + 96))(a1); /*0x55a8fe*/
 }
+} // namespace gamemd
 // 0x55A910
+namespace gamemd {
 int StreamClass::ClearDirty(unsigned char * a1)
 {
   a1[12] = 0; /*0x55a915*/
   return (*(int (__stdcall **)(_BYTE *))(*(_DWORD *)a1 + 96))(a1); /*0x55a91e*/
 }
+} // namespace gamemd
 // 0x55A930
+namespace gamemd {
 char StreamClass::GetDirty(int a1)
 {
   return *(_BYTE *)(a1 + 12); /*0x55a937*/
 }
+} // namespace gamemd

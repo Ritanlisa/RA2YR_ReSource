@@ -1647,6 +1647,99 @@ def load_all_maps():
 
 
 # ===================================================================
+# --auto incremental PASS cache + worker sharding
+# ===================================================================
+# Full-pool --auto used to re-verify every completed function on every run
+# (~12.7k x ~6s = ~20h). Two orthogonal cuts, neither weakens the check:
+#
+# 1. Incremental PASS cache (.omo/verify_auto_cache.json): a PASS verdict is
+#    reused ONLY when the function's C++ text, its IDA pseudocode text, AND
+#    the verifier/map inputs (this file, member_lookup.json, signals.json)
+#    are byte-identical to the verified state. Any edit re-verifies. FAIL
+#    verdicts are never cached.
+# 2. Worker sharding: functions are independent; N spawn workers each load
+#    the maps once (memory: ~286MB per worker -- keep <= 3 per the project
+#    memory discipline).
+
+VERIFY_CACHE_PATH = os.path.join(str(PROJECT_ROOT), '.omo',
+                                 'verify_auto_cache.json')
+
+
+def _sha1_text(t):
+    import hashlib
+    return hashlib.sha1(t.encode('utf-8', errors='replace')).hexdigest()
+
+
+def _gate_env_key():
+    import hashlib
+    h = hashlib.sha1()
+    for f in (os.path.abspath(__file__),
+              os.path.join(str(PROJECT_ROOT), 'tools', 'member_lookup.json'),
+              os.path.join(str(PROJECT_ROOT), 'signals.json')):
+        try:
+            st = os.stat(f)
+            h.update(('%s:%d:%d;' % (os.path.basename(f), st.st_size,
+                                     int(st.st_mtime))).encode())
+        except OSError:
+            h.update(('%s:missing;' % f).encode())
+    return h.hexdigest()[:16]
+
+
+def _cpp_fn_hash(addr):
+    try:
+        loc = find_cpp_function_by_addr(addr)
+        if isinstance(loc, dict) and loc.get('lines') is not None:
+            return _sha1_text(''.join(loc['lines']))
+    except Exception:
+        pass
+    return 'x'
+
+
+def _verify_cache_load():
+    try:
+        with open(VERIFY_CACHE_PATH, 'r') as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def _verify_cache_save(cache):
+    try:
+        os.makedirs(os.path.dirname(VERIFY_CACHE_PATH), exist_ok=True)
+        tmp = VERIFY_CACHE_PATH + '.tmp'
+        with open(tmp, 'w') as f:
+            json.dump(cache, f)
+        os.replace(tmp, VERIFY_CACHE_PATH)
+    except OSError as e:
+        print("exec-flow: WARN cache write failed: %s" % e, file=sys.stderr)
+
+
+_POOL_M = None
+_POOL_SIGNALS = None
+
+
+def _pool_init():
+    global _POOL_M, _POOL_SIGNALS
+    _POOL_M = load_all_maps()
+    _POOL_SIGNALS = _load_efv()["cpp_events"].get_signals()
+
+
+def _pool_verify(task):
+    addr, name = task
+    ida_decomp, cached = load_ida_cache(addr)
+    disp = name or ("sub_%X" % addr)
+    if not ida_decomp or not ida_decomp.strip():
+        return (addr, None, '', '')
+    passed, info = verify_single_function(addr, name or cached, disp, _POOL_M,
+                                          ida_decomp, verbose=False,
+                                          signals=_POOL_SIGNALS)
+    reason = ''
+    if not passed and isinstance(info, dict):
+        reason = str(info.get('reason') or '')[:220]
+    return (addr, bool(passed), reason, _sha1_text(ida_decomp))
+
+
+# ===================================================================
 # Main (unchanged from original)
 # ===================================================================
 
@@ -1665,6 +1758,12 @@ def main():
     p.add_argument("--fetch-cache", action="store_true",
                    help="pre-fill IDA cache for ALL completed=true functions")
     p.add_argument("--verbose", "-v", action="store_true")
+    p.add_argument("--workers", type=int, default=1,
+                   help="(--auto) shard the verify over N worker processes; "
+                        "each loads the ~286MB maps (keep <= 3, memory)")
+    p.add_argument("--no-cache", action="store_true",
+                   help="(--auto) disable the incremental PASS cache "
+                        "(full re-verify of every completed function)")
     args = p.parse_args()
 
     M = load_all_maps()
@@ -1714,6 +1813,14 @@ def main():
         any_verified = False
         fetched = skipped_no_ida = 0
         signals = _load_efv()["cpp_events"].get_signals()
+        use_cache = not getattr(args, 'no_cache', False)
+        env_key = _gate_env_key() if use_cache else None
+        vcache = _verify_cache_load() if use_cache else {}
+        name_map = dict(completed)
+
+        # phase A: fetch missing IDA texts + fingerprint split (cheap reads)
+        todo = []
+        cached_pass = 0
         for addr, name in completed:
             disp = name or f"sub_{addr:X}"
             ida_decomp, cached = load_ida_cache(addr)
@@ -1726,23 +1833,85 @@ def main():
                 if ida_decomp is None:
                     print(f"SKIP (IDA has no pseudocode): {disp}")
                     continue
-                cached = M.addr_to_name.get(addr) or name
                 fetched += 1
-            any_verified = True
-            passed, info = verify_single_function(addr, name or cached, disp, M,
-                                                  ida_decomp, verbose=args.verbose,
-                                                  signals=signals)
-            if passed:
-                pass  # PASS suppressed
-            else:
-                all_passed = False
-                cpp_loc = find_cpp_function_by_addr(addr)
-                if isinstance(cpp_loc, dict):
-                    cpp_loc = f"{cpp_loc.get('file','?')}:{cpp_loc.get('start_line','?')}"
-                cpp_loc = cpp_loc or '?'
-                print(f"FAIL: {cpp_loc}: {disp} -- translation incomplete")
-                if info.get("reject") and info.get("reason"):
-                    print(f"  {info['reason']}")
+            ent = vcache.get(str(addr))
+            if (use_cache and isinstance(ent, dict) and ent.get('k') == env_key
+                    and ent.get('f') == [_cpp_fn_hash(addr),
+                                         _sha1_text(ida_decomp)]):
+                cached_pass += 1
+                continue
+            todo.append((addr, name))
+
+        print(f"exec-flow: {len(completed)} completed | {cached_pass} "
+              f"cached-PASS | {len(todo)} to verify", file=sys.stderr)
+
+        # phase B: verify the changed/uncached set (sharded or sequential)
+        def _report_fail(addr, reason):
+            cpp_loc = find_cpp_function_by_addr(addr)
+            if isinstance(cpp_loc, dict):
+                cpp_loc = (f"{cpp_loc.get('file','?')}:"
+                           f"{cpp_loc.get('start_line','?')}")
+            cpp_loc = cpp_loc or '?'
+            print(f"FAIL: {cpp_loc}: {name_map.get(addr, f'sub_{addr:X}')} "
+                  f"-- translation incomplete")
+            if reason:
+                print(f"  {reason}")
+
+        results = []
+        workers = max(1, min(int(getattr(args, 'workers', 1) or 1), 3))
+        if workers > 1 and len(todo) >= 32:
+            import multiprocessing as mp
+            ctx = mp.get_context('spawn')
+            with ctx.Pool(processes=workers, initializer=_pool_init) as pool:
+                for addr, passed, reason, _ish in pool.imap_unordered(
+                        _pool_verify, todo, chunksize=8):
+                    if passed is None:
+                        print(f"SKIP (no cache): sub_{addr:X}")
+                        continue
+                    any_verified = True
+                    if not passed:
+                        all_passed = False
+                        _report_fail(addr, reason)
+                    results.append((addr, passed))
+        else:
+            for addr, name in todo:
+                disp = name or f"sub_{addr:X}"
+                ida_decomp, cached = load_ida_cache(addr)
+                if not ida_decomp or not ida_decomp.strip():
+                    print(f"SKIP (no cache): {disp}")
+                    continue
+                any_verified = True
+                passed, info = verify_single_function(
+                    addr, name or cached, disp, M, ida_decomp,
+                    verbose=args.verbose, signals=signals)
+                if not passed:
+                    all_passed = False
+                    reason = ''
+                    if isinstance(info, dict) and info.get("reject")                             and info.get("reason"):
+                        reason = str(info['reason'])
+                    _report_fail(addr, reason)
+                results.append((addr, passed))
+
+        # phase C: persist the PASS cache (pruned to the current pool)
+        if use_cache:
+            new_cache = {}
+            addr_set = {a for a, _ in completed}
+            for a, ent in vcache.items():
+                try:
+                    ai = int(a)
+                except ValueError:
+                    continue
+                if ai in addr_set and isinstance(ent, dict)                         and ent.get('k') == env_key:
+                    new_cache[a] = ent
+            for addr, passed in results:
+                if not passed:
+                    continue
+                ida_text = load_ida_cache(addr)[0] or ''
+                new_cache[str(addr)] = {'k': env_key,
+                                        'f': [_cpp_fn_hash(addr),
+                                              _sha1_text(ida_text)],
+                                        'v': 1}
+            _verify_cache_save(new_cache)
         if fetched:
             print(f"exec-flow: auto-cached {fetched} IDA pseudocode entries.",
                   file=sys.stderr)

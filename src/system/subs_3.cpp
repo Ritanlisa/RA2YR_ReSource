@@ -1525,7 +1525,7 @@ int InitZero600510()
 // IDA: 0x612910  proposal: InitGlobal612910
 // IDA: void __cdecl sub_612910()
 //   g_ComboBoxState = 0;
-//   __3_YAXPAX_Z(dword_AC1DE8);
+//   RA2_OPDEL(dword_AC1DE8);
 void InitGlobal612910()
 {
 }

@@ -3,8 +3,16 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Event_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/SyncDelay_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/DDraw_e4.hpp"
+#include "e4/classes/Surface_e4.hpp"
+#include "e4/classes/SwizzleManagerClass_19_e4.hpp"
+#include "e4/classes/TacticalMap_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x55E160
+namespace gamemd {
 signed int SyncDelay::Start()
 {
   int v0; // ecx
@@ -182,11 +190,14 @@ signed int SyncDelay::Start()
   dword_ABCD90 = 60; /*0x55e3f7*/
   return result; /*0x55e3fd*/
 }
+} // namespace gamemd
 // 0x55F6C0
+namespace gamemd {
 int SyncDelay::Check(unsigned int * a2)
 {
   _DWORD *v2; // eax
 
-  v2 = (_DWORD *)*(this + 4); /*0x55f6c0*/
+  v2 = (_DWORD *)this->q010; /*0x55f6c0*/
   return v2 && *v2 == *a2; /*0x55f6d3*/
 }
+} // namespace gamemd

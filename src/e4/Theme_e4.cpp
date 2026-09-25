@@ -3,36 +3,40 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Theme_e4.hpp"
+#include "e4/classes/ThemeClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x720B20
+namespace gamemd {
 int Theme::QueueSong(IUnknown * aP1)
 {
   int IsSoundEnabled; // eax
 
-  LOBYTE(IsSoundEnabled) = g_ThemeMIXLoaded; /*0x720b20*/
+  IDA_LOBYTE(IsSoundEnabled) = g_ThemeMIXLoaded; /*0x720b20*/
   if ( g_ThemeMIXLoaded ) /*0x720b2a*/
   {
     IsSoundEnabled = Audio::IsSoundEnabled(); /*0x720b2c*/
     if ( IsSoundEnabled ) /*0x720b33*/
     {
-      LOBYTE(IsSoundEnabled) = byte_A8ED64; /*0x720b35*/
+      IDA_LOBYTE(IsSoundEnabled) = byte_A8ED64; /*0x720b35*/
       if ( !byte_A8ED64 ) /*0x720b3c*/
       {
-        LOBYTE(IsSoundEnabled) = aP1; /*0x720b3e*/
-        *(_DWORD *)(this + 8) = aP1; /*0x720b45*/
-        if ( aP1 != -1 && aP1 != -2 && aP1 != *(_DWORD *)(this + 4) ) /*0x720b52*/
+        IDA_LOBYTE(IsSoundEnabled) = aP1; /*0x720b3e*/
+        this->u32_8 = aP1; /*0x720b45*/
+        if ( aP1 != -1 && aP1 != -2 && aP1 != this->ptr_4 ) /*0x720b52*/
         {
-          LOBYTE(IsSoundEnabled) = Debug::Log("Theme::QueueSong(%d)\n", aP1); /*0x720b5a*/
-          if ( *(_DWORD *)(this + 44) ) /*0x720b5f*/
+          IDA_LOBYTE(IsSoundEnabled) = Debug::Log("Theme::QueueSong(%d)\n", aP1); /*0x720b5a*/
+          if ( this->audioSample ) /*0x720b5f*/
           {
-            if ( *(_BYTE *)(this + 17) && !AudioSample::IsBuffering() ) /*0x720b70*/
-              Audio::Release(*(_DWORD *)(this + 44)); /*0x720b7c*/
-            LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(*(_DWORD *)(this + 44)) != 0; /*0x720b8b*/
+            if ( this->u8_11 && !AudioSample::IsBuffering() ) /*0x720b70*/
+              Audio::Release(this->audioSample); /*0x720b7c*/
+            IDA_LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(this->audioSample) != 0; /*0x720b8b*/
             if ( (_BYTE)IsSoundEnabled == 1 ) /*0x720b90*/
             {
-              if ( *(_DWORD *)(this + 44) ) /*0x720b92*/
-                LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(); /*0x720b99*/
-              *(_BYTE *)(this + 17) = 1; /*0x720b9e*/
+              if ( this->audioSample ) /*0x720b92*/
+                IDA_LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(); /*0x720b99*/
+              this->u8_11 = 1; /*0x720b9e*/
             }
           }
         }
@@ -41,57 +45,62 @@ int Theme::QueueSong(IUnknown * aP1)
   }
   return IsSoundEnabled; /*0x720ba2*/
 }
+} // namespace gamemd
 // 0x720EA0
+namespace gamemd {
 int Theme::Stop(ObjectClass * aP1)
 {
   int IsSoundEnabled; // eax
   int v4; // ecx
 
-  LOBYTE(IsSoundEnabled) = g_ThemeMIXLoaded; /*0x720ea0*/
+  IDA_LOBYTE(IsSoundEnabled) = g_ThemeMIXLoaded; /*0x720ea0*/
   if ( g_ThemeMIXLoaded ) /*0x720eaa*/
   {
     IsSoundEnabled = Audio::IsSoundEnabled(); /*0x720eb0*/
     if ( IsSoundEnabled ) /*0x720eb7*/
     {
-      LOBYTE(IsSoundEnabled) = byte_A8ED64; /*0x720ebd*/
+      IDA_LOBYTE(IsSoundEnabled) = byte_A8ED64; /*0x720ebd*/
       if ( !byte_A8ED64 && *this != -1 ) /*0x720ecd*/
       {
-        if ( !aP1 || !*(this + 11) ) /*0x720edb*/
+        if ( !aP1 || !*(&this->ptr_41) ) /*0x720edb*/
           goto LABEL_14; /*0x720edb*/
-        if ( *((_BYTE *)this + 17) && !AudioSample::IsBuffering() ) /*0x720ee9*/
-          Audio::Release(*(this + 11)); /*0x720ef5*/
-        if ( Audio::IsSoundPlaying(*(this + 11)) != 0 ) /*0x720f04*/
+        if ( this->u8_11 && !AudioSample::IsBuffering() ) /*0x720ee9*/
+          Audio::Release(*(&this->ptr_41)); /*0x720ef5*/
+        if ( Audio::IsSoundPlaying(*(&this->ptr_41)) != 0 ) /*0x720f04*/
         {
-          LOBYTE(IsSoundEnabled) = Debug::Log("Theme::Stop(%d) - Fading\n", *(this + 1)); /*0x720f14*/
-          if ( *(this + 11) ) /*0x720f19*/
-            LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(); /*0x720f23*/
-          *((_BYTE *)this + 17) = 1; /*0x720f28*/
+          IDA_LOBYTE(IsSoundEnabled) = Debug::Log("Theme::Stop(%d) - Fading\n", this->ptr_4); /*0x720f14*/
+          if ( *(&this->ptr_41) ) /*0x720f19*/
+            IDA_LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(); /*0x720f23*/
+          this->u8_11 = 1; /*0x720f28*/
         }
         else
         {
   LABEL_14:
-          LOBYTE(IsSoundEnabled) = Debug::Log("Theme::Stop(%d)\n", *(this + 1)); /*0x720f37*/
-          v4 = *(this + 11); /*0x720f3c*/
+          IDA_LOBYTE(IsSoundEnabled) = Debug::Log("Theme::Stop(%d)\n", this->ptr_4); /*0x720f37*/
+          v4 = *(&this->ptr_41); /*0x720f3c*/
           if ( v4 ) /*0x720f44*/
-            LOBYTE(IsSoundEnabled) = Audio::Release(v4); /*0x720f46*/
+            IDA_LOBYTE(IsSoundEnabled) = Audio::Release(v4); /*0x720f46*/
         }
         *this = -1; /*0x720f4b*/
-        *(this + 1) = -1; /*0x720f51*/
-        *(this + 2) = -1; /*0x720f58*/
+        this->ptr_4 = -1; /*0x720f51*/
+        this->u32_8 = -1; /*0x720f58*/
       }
     }
   }
   return IsSoundEnabled; /*0x720f5f*/
 }
+} // namespace gamemd
 // 0x720FD0
+namespace gamemd {
 int Theme::IsPlaying()
 {
-  if ( !*(_DWORD *)(this + 44) ) /*0x720fd3*/
+  if ( !this->audioSample ) /*0x720fd3*/
     return 0; /*0x721002*/
-  if ( *(_BYTE *)(this + 17) ) /*0x720fda*/
+  if ( this->u8_11 ) /*0x720fda*/
   {
     if ( !AudioSample::IsBuffering() ) /*0x720fe1*/
-      Audio::Release(*(_DWORD **)(this + 44)); /*0x720fed*/
+      Audio::Release(*(_DWORD **)(&this->ptr_44)); /*0x720fed*/
   }
-  return Audio::IsSoundPlaying(*(_DWORD **)(this + 44)) != 0; /*0x720ffe*/
+  return Audio::IsSoundPlaying(*(_DWORD **)(&this->ptr_44)) != 0; /*0x720ffe*/
 }
+} // namespace gamemd

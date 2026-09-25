@@ -1,8 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/ShipLocomotionClass_e4.hpp"
+#include "e4/classes/IStream_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x69EE90
+namespace gamemd {
 HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
 {
   IStream *v2; // edi
@@ -17,8 +21,8 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x69eeaa*/
   {
     a1[26] = 0; /*0x69eeac*/
-    *a1 = (int)&ShipLocomotionClass::`vftable'; /*0x69eeb3*/
-    a1[1] = (int)&ShipLocomotionClass::`vftable'; /*0x69eeb9*/
+    *a1 = (int)&(void*)(void*)&ShipLocomotionClass_vftable; /*0x69eeb3*/
+    a1[1] = (int)&(void*)(void*)&ShipLocomotionClass_vftable; /*0x69eeb9*/
     a1[6] = (int)&off_7F2D68; /*0x69eec0*/
   }
   v2->lpVtbl->Read(v2, &pStm, 1, 0); /*0x69eed3*/
@@ -31,7 +35,9 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
   *v5 = 0; /*0x69eef5*/
   return OleLoadFromStream(v2, &IID_ILocomotion, v5); /*0x69ef01*/
 }
+} // namespace gamemd
 // 0x69EF10
+namespace gamemd {
 HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
 {
   IStream *v3; // esi
@@ -52,12 +58,12 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   if ( !v4[26] ) /*0x69ef36*/
   {
     v12.lpVtbl = v3->lpVtbl; /*0x69efd3*/
-    LOBYTE(a3) = 0; /*0x69efdf*/
+    IDA_LOBYTE(a3) = 0; /*0x69efdf*/
     v12.lpVtbl->Write(v3, &a3, 1, 0); /*0x69efe4*/
     return v5; /*0x69efe8*/
   }
   lpVtbl = v3->lpVtbl; /*0x69ef3c*/
-  LOBYTE(a3) = 1; /*0x69ef48*/
+  IDA_LOBYTE(a3) = 1; /*0x69ef48*/
   lpVtbl->Write(v3, &a3, 1, 0); /*0x69ef4d*/
   v7 = (int (__stdcall ***)(_DWORD, void *, int **))v4[26]; /*0x69ef50*/
   pPStm = 0; /*0x69ef53*/
@@ -84,7 +90,9 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm); /*0x69efc8*/
   return v10; /*0x69efcd*/
 }
+} // namespace gamemd
 // 0x6A3E60
+namespace gamemd {
 int ShipLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x6a3e66*/
@@ -95,24 +103,29 @@ int ShipLocomotionClass::ddtor(int a1, unsigned int * a2)
   a2[3] = 1822515787; /*0x6a3e90*/
   return 0; /*0x6a3e6d*/
 }
+} // namespace gamemd
 // 0x6A42A0
+namespace gamemd {
 int ShipLocomotionClass::StubReturn112()
 {
   return 112; /*0x6a42a5*/
 }
+} // namespace gamemd
 // 0x6A42B0
+namespace gamemd {
 ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
 {
   int v3; // eax
 
-  *this = &ShipLocomotionClass::`vftable'; /*0x6a42b3*/
-  *(this + 1) = &ShipLocomotionClass::`vftable'; /*0x6a42b9*/
-  *(this + 6) = &off_7F2D68; /*0x6a42c0*/
-  v3 = *(this + 26); /*0x6a42c7*/
+  *this = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x6a42b3*/
+  this->vtable2 = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x6a42b9*/
+  this->vtable3 = &off_7F2D68; /*0x6a42c0*/
+  v3 = *(&this->u32_86); /*0x6a42c7*/
   if ( v3 ) /*0x6a42cc*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 8))(v3); /*0x6a42d1*/
-  LocomotionClass::Construct(this); /*0x6a42d6*/
+    (*(void (__stdcall **)(int))(v3->q008)(v3); /*0x6a42d1*/
+  LocomotionClass::Construct(); /*0x6a42d6*/
   if ( (a2 & 1) != 0 ) /*0x6a42e0*/
-    __3_YAXPAX_Z(this); /*0x6a42e3*/
+    RA2_OPDEL(); /*0x6a42e3*/
   return this; /*0x6a42ed*/
 }
+} // namespace gamemd

@@ -498,12 +498,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int UpdateVariant7(int a1, int a2);  // 0x572440
     int UpdateVariant8(int a1, int a2);  // 0x5727e0
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int StubReturn11();  // 0x487E60
-    int StubReturn328();  // 0x487E70
-    int GetBridgeIndex();  // 0x48BA80
-    int GetOccupiedRatio();  // 0x65B510
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

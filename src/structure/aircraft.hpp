@@ -175,9 +175,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     void* Update(int a1, int a2);  // 0x413f80
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int GetCursorOverObject(IUnknown * aP1, IUnknown * a3);  // 0x417CC0
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

@@ -2,6 +2,10 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Factory_e4.hpp"
+#include "e4/classes/INIEntry_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x476EB0
 namespace gamemd {
@@ -13,7 +17,7 @@ int INIEntry::GetTechnoType(CCINIClass * aP1, unsigned char * a2)
   int IndexByName; // eax
   char Destination[128]; // [esp+4h] [ebp-80h] BYREF
 
-  INIClass::GetString(this, aP1, a2, g_Str__none_, Destination, 128); /*0x476ed5*/
+  INIClass::GetString(aP1, a2, g_Str__none_, Destination, 128); /*0x476ed5*/
   ExitCellByName = Factory::FindExitCellByName(Destination); /*0x476ede*/
   if ( ExitCellByName != -1 ) /*0x476ee6*/
     return *((_DWORD *)Factory_ExitCellTable + ExitCellByName); /*0x476eef*/

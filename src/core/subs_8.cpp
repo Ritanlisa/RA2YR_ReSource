@@ -707,10 +707,10 @@ void MathSinCos6D1BF0()
 
 // IDA: 0x6D1E80  proposal: AbstractClass::SetMember1
 // IDA: void __thiscall sub_6D1E80(_DWORD *this)
-//   *this = &Tactical::`vftable';
-//   *(this + 1) = &Tactical::`vftable';
-//   *(this + 2) = &Tactical::`vftable';
-//   *(this + 3) = &Tactical::`vftable';
+//   ((void**)this)[0] = (void*)(void*)(void*)&Tactical_vftable;
+//   *(this + 1) = (void*)(void*)&Tactical_vftable;
+//   *(this + 2) = (void*)(void*)&Tactical_vftable;
+//   *(this + 3) = (void*)(void*)&Tactical_vftable;
 //   TacticalClass_Instance = 0;
 //   AbstractClass::DTOR(this);
 void AbstractClass_SetMember1(void* _this) // thiscall
@@ -1145,7 +1145,7 @@ int Callatexit6E6A50()
 
 // IDA: 0x6E6A80  proposal: Sub6E6A80
 // IDA: void __cdecl sub_6E6A80()
-//   __3_YAXPAX_Z(BuildingLoadQueue_Array);
+//   RA2_OPDEL(BuildingLoadQueue_Array);
 //   BuildingLoadQueue_Array = 0;
 //   BuildingLoadQueue_Count = 0;
 //   BuildingLoadQueue_Capacity = 0;
@@ -3313,8 +3313,8 @@ char ReturnNegativeOne72A980()
 
 // IDA: 0x72A9A0  proposal: ReturnZero72A9A0
 // IDA: char sub_72A9A0()
-//   LOWORD(dword_B0FA1C) = 0;
-//   BYTE2(dword_B0FA1C) = 0;
+//   IDA_LOWORD(dword_B0FA1C) = 0;
+//   IDA_BYTE2(dword_B0FA1C) = 0;
 //   return 0;
 char ReturnZero72A9A0()
 {

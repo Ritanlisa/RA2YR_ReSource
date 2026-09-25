@@ -2,6 +2,9 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/TubeClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x7281A0
 namespace gamemd {
@@ -15,10 +18,10 @@ int TubeClass::LoadState(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x7281b6*/
     {
       AbstractClass::Constructor(aP0); /*0x7281ba*/
-      aP0->parent_gap[0] = (int)&TubeClass::`vftable'; /*0x7281bf*/
-      aP0->parent_gap[1] = (int)&TubeClass::`vftable'; /*0x7281c5*/
-      aP0->parent_gap[2] = (int)&TubeClass::`vftable'; /*0x7281cc*/
-      aP0->parent_gap[3] = (int)&TubeClass::`vftable'; /*0x7281d3*/
+      aP0->parent_gap[0] = (int)&(void*)(void*)&TubeClass_vftable; /*0x7281bf*/
+      aP0->parent_gap[1] = (int)&(void*)(void*)&TubeClass_vftable; /*0x7281c5*/
+      aP0->parent_gap[2] = (int)&(void*)(void*)&TubeClass_vftable; /*0x7281cc*/
+      aP0->parent_gap[3] = (int)&(void*)(void*)&TubeClass_vftable; /*0x7281d3*/
     }
     return 0; /*0x7281da*/
   }

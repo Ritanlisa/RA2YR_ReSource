@@ -2,45 +2,54 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4325C0
+namespace gamemd {
 AudioController * * CCFileClass::Close()
 {
   char result; // al
   int v3; // eax
 
-  if ( !*(this + 41) ) /*0x4325c3*/
+  if ( !*(&this->FileName1) ) /*0x4325c3*/
     return ((int (*)(void))FileClass::CloseHandle)(); /*0x432607*/
   BufferIO::Flush(); /*0x4325ca*/
-  result = *(this + 38); /*0x4325cf*/
+  result = *(&this->Handle8); /*0x4325cf*/
   if ( result ) /*0x4325d4*/
   {
-    if ( *((_DWORD *)this + 20) ) /*0x4325d6*/
+    if ( this->MixFileIndex ) /*0x4325d6*/
     {
       v3 = *(_DWORD *)this; /*0x4325dd*/
-      *(this + 41) = 0; /*0x4325e1*/
+      *(&this->FileName1) = 0; /*0x4325e1*/
       result = (*(int (__thiscall **)(_BYTE *))(v3 + 52))(this); /*0x4325e5*/
-      *(this + 41) = 1; /*0x4325e8*/
-      *(this + 38) = 0; /*0x4325ec*/
-      *(this + 37) = 0; /*0x4325f0*/
+      *(&this->FileName1) = 1; /*0x4325e8*/
+      *(&this->Handle8) = 0; /*0x4325ec*/
+      *(&this->Handle7) = 0; /*0x4325f0*/
       return result; /*0x4325f5*/
     }
     result = FileClass::CloseHandle(this); /*0x4325f8*/
-    *(this + 38) = 0; /*0x4325fd*/
+    *(&this->Handle8) = 0; /*0x4325fd*/
   }
-  *(this + 37) = 0; /*0x432601*/
+  *(&this->Handle7) = 0; /*0x432601*/
   return result; /*0x4325f4*/
 }
+} // namespace gamemd
 // 0x535A70
+namespace gamemd {
 int CCFileClass::Destruct()
 {
-  *this = &CCFileClass::`vftable'; /*0x535a76*/
-  *(this + 25) = 0; /*0x535a7c*/
-  Vector::Clear((int)(this + 22)); /*0x535a83*/
+  *this = &(void*)(void*)&CCFileClass_vftable; /*0x535a76*/
+  *(&this->FileSize5) = 0; /*0x535a7c*/
+  Vector::Clear((int)(&this->FileSize2)); /*0x535a83*/
   *this = &off_7E1668; /*0x535a8a*/
-  return BufferIOFileClass::Dtor(this); /*0x535a95*/
+  return BufferIOFileClass::Dtor(); /*0x535a95*/
 }
+} // namespace gamemd
 // 0x65D0D0
+namespace gamemd {
 int CCFileClass::GetFileSize()
 {
   DWORD FileSize; // edi
@@ -50,34 +59,36 @@ int CCFileClass::GetFileSize()
   int v6; // [esp-8h] [ebp-10h]
 
   FileSize = 0; /*0x65d0d4*/
-  result = *(this + 4); /*0x65d0d6*/
+  result = this->FileName; /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
   {
-    if ( (*(unsigned __int8 (__thiscall **)(int *))(*this + 24))(this) ) /*0x65d0e0*/
+    if ( this->Destru_vt06() ) /*0x65d0e0*/
     {
-      FileSize = GetFileSize((HANDLE)*(this + 5), 0); /*0x65d0f2*/
+      FileSize = GetFileSize((HANDLE)this->FileTimeDateLo, 0); /*0x65d0f2*/
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
         v4 = *this; /*0x65d0fd*/
-        v6 = *(this + 6); /*0x65d0ff*/
+        v6 = this->FileNameAllocated; /*0x65d0ff*/
         LastError = GetLastError(); /*0x65d102*/
-        (*(void (__thiscall **)(int *, DWORD, _DWORD, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
-        result = -1 - *(this + 3); /*0x65d113*/
-        *(this + 4) = result; /*0x65d116*/
+        this->Destru_vt16(LastError, 0, v6); /*0x65d10b*/
+        result = -1 - this->Handle; /*0x65d113*/
+        this->FileName = result; /*0x65d116*/
         return result; /*0x65d11b*/
       }
     }
-    else if ( (*(int (__thiscall **)(int *, int))(*this + 28))(this, 1) ) /*0x65d122*/
+    else if ( this->Load_1(1) ) /*0x65d122*/
     {
-      FileSize = (*(int (__thiscall **)(int *))(*this + 44))(this); /*0x65d130*/
-      (*(void (__thiscall **)(int *))(*this + 52))(this); /*0x65d136*/
+      FileSize = this->GetSize(); /*0x65d130*/
+      this->Reset_8(); /*0x65d136*/
     }
-    result = FileSize - *(this + 3); /*0x65d13e*/
-    *(this + 4) = result; /*0x65d140*/
+    result = FileSize - this->Handle; /*0x65d13e*/
+    this->FileName = result; /*0x65d140*/
   }
   return result; /*0x65d119*/
 }
+} // namespace gamemd
 // 0x69E320
+namespace gamemd {
 void CCFileClass::ProcessStream(unsigned int a1)
 {
   _DWORD *v1; // edi
@@ -118,7 +129,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
               *((_DWORD *)v3 + 2) = 0; /*0x69e38a*/
             }
           }
-          __3_YAXPAX_Z(v3); /*0x69e38e*/
+          RA2_OPDEL(v3); /*0x69e38e*/
         }
         v1[3] = 0; /*0x69e396*/
         *((_BYTE *)v1 + 16) = 0; /*0x69e399*/
@@ -156,9 +167,10 @@ void CCFileClass::ProcessStream(unsigned int a1)
         *((_DWORD *)v6 + 2) = 0; /*0x69e407*/
       }
     }
-    __3_YAXPAX_Z(v6); /*0x69e40b*/
+    RA2_OPDEL(v6); /*0x69e40b*/
     dword_B077B4 = 0; /*0x69e413*/
     dword_B077B8 = 0; /*0x69e419*/
     dword_B077BC = 0; /*0x69e41f*/
   }
 }
+} // namespace gamemd

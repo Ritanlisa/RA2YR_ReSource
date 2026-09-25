@@ -9,6 +9,11 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/LoadOptions_e4.hpp"
+#include "e4/classes/OverlayTypeClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4F11B0
 namespace gamemd {
@@ -60,7 +65,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
       }
       if ( (_WORD)a3 == 5 ) /*0x4f1220*/
       {
-        v5 = HIWORD(a3); /*0x4f1232*/
+        v5 = IDA_HIWORD(a3); /*0x4f1232*/
         if ( a4 == GetDlgItem(hDlg, 1321) ) /*0x4f1239*/
         {
           v6 = (&off_822730)[v5]; /*0x4f123b*/
@@ -84,7 +89,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
       }
       return 0; /*0x4f1253*/
     }
-    v10 = HIWORD(a3); /*0x4f12a8*/
+    v10 = IDA_HIWORD(a3); /*0x4f12a8*/
     WindowLongA = (_DWORD *)GetWindowLongA(hDlg, 8); /*0x4f12b1*/
     if ( (byte_A8EDF8 & 1) == 0 ) /*0x4f12be*/
     {
@@ -167,7 +172,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
         else
           swprintf(Buffer, (const size_t)&off_8240B4, (const wchar_t *const)g_ScenarioClass_Instance + 2541); /*0x4f1439*/
         LoadOptions::LoadOptions(v26); /*0x4f1469*/
-        ((void (__stdcall *)(wchar_t *))ShowSaveLoadDialog)(Buffer); /*0x4f1470*/
+        ShowSaveLoadDialog(Buffer); /*0x4f1470*/
         v16 = v26; /*0x4f1475*/
       }
       LoadOptions::Cleanup(v16); /*0x4f14b3*/
@@ -282,7 +287,7 @@ AbstractClass * * Options::Screen_Save()
   v5 = GetDlgItem(hDlg, 1537); /*0x55fb0d*/
   if ( v5 ) /*0x55fb11*/
   {
-    LOBYTE(v6) = SendMessageA(v5, 0xF0u, 0, 0) == 1; /*0x55fb22*/
+    IDA_LOBYTE(v6) = SendMessageA(v5, 0xF0u, 0, 0) == 1; /*0x55fb22*/
     byte_A8EB7E = v6; /*0x55fb25*/
     SetGlobalFlag(v6); /*0x55fb2b*/
   }
@@ -358,7 +363,7 @@ char Options::Screen_Dialog()
       {
         if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x55fcec*/
           break; /*0x55fcec*/
-        LOBYTE(v2) = 0; /*0x55fcee*/
+        IDA_LOBYTE(v2) = 0; /*0x55fcee*/
         ScreenSaver::Process(v2); /*0x55fcf0*/
       }
       Options::Screen_Save(v1); /*0x55fcff*/
@@ -377,7 +382,7 @@ char Options::Screen_Dialog()
         {
           if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x55fd71*/
             break; /*0x55fd71*/
-          LOBYTE(v5) = 0; /*0x55fd73*/
+          IDA_LOBYTE(v5) = 0; /*0x55fd73*/
           ScreenSaver::Process(v5); /*0x55fd75*/
         }
         Dialog::Destroy(v4); /*0x55fd84*/
@@ -411,14 +416,14 @@ int Options::DeleteAndZero()
     v3 = 0; /*0x6244ed*/
     do /*0x62450e*/
     {
-      v4 = *(this + 2) + v3; /*0x6244f4*/
+      v4 = this->q008 + v3; /*0x6244f4*/
       DeleteAndZero::Alt((void **)(v4 + 8)); /*0x6244f9*/
       DeleteAndZero::Alt((void **)(v4 + 4)); /*0x624501*/
       result = *this; /*0x624506*/
       ++v2; /*0x624508*/
       v3 += 24; /*0x624509*/
     }
-    while ( v2 < *this ); /*0x62450e*/
+    while (); /*0x62450e*/
     *this = 0; /*0x624511*/
   }
   return result; /*0x624518*/
@@ -436,7 +441,7 @@ int Options::EnsureCapacity()
   int v8; // [esp+8h] [ebp-4h]
 
   v2 = *this; /*0x6248a5*/
-  v3 = *(this + 1); /*0x6248a8*/
+  v3 = this->u32_4; /*0x6248a8*/
   if ( 3 * v2 > v3 ) /*0x6248b0*/
     return 0; /*0x6248b3*/
   v5 = v3 / 2; /*0x6248bf*/
@@ -444,14 +449,14 @@ int Options::EnsureCapacity()
     v5 = 10; /*0x6248c6*/
   if ( v5 >= v3 ) /*0x6248cd*/
     return 0; /*0x6248d0*/
-  v6 = __2_YAPAXI_Z(24 * v5); /*0x6248dd*/
-  v7 = (const void *)*(this + 2); /*0x6248e2*/
+  v6 = RA2_OPNEW(24 * v5); /*0x6248dd*/
+  v7 = (const void *)this->q008; /*0x6248e2*/
   v8 = (int)v6; /*0x6248ea*/
   if ( v7 ) /*0x6248ee*/
     qmemcpy(v6, v7, 24 * *this); /*0x624901*/
-  __3_YAXPAX_Z((void *)*(this + 2)); /*0x62490f*/
-  *(this + 2) = v8; /*0x62491b*/
-  *(this + 1) = v5; /*0x62491e*/
+  RA2_OPDEL((void *)this->q008); /*0x62490f*/
+  this->q008 = v8; /*0x62491b*/
+  this->u32_4 = v5; /*0x62491e*/
   return 1; /*0x6248b2*/
 }
 }
@@ -465,7 +470,7 @@ int Options::GrowBuffer()
   int v6; // [esp+4h] [ebp-4h]
 
   v2 = *this; /*0x6253b4*/
-  if ( *this < *(this + 1) ) /*0x6253bb*/
+  if ( *this < this->u32_4 ) /*0x6253bb*/
     return 0; /*0x6253bd*/
   v4 = 2 * v2; /*0x6253c4*/
   v6 = 2 * v2; /*0x6253cb*/
@@ -474,16 +479,16 @@ int Options::GrowBuffer()
     v6 = 10; /*0x6253d1*/
     v4 = 10; /*0x6253d9*/
   }
-  v5 = __2_YAPAXI_Z(4 * v4); /*0x6253ec*/
+  v5 = RA2_OPNEW(4 * v4); /*0x6253ec*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x6253fa*/
-  if ( *(this + 2) ) /*0x625403*/
+  if ( this->q008 ) /*0x625403*/
   {
-    qmemcpy(v5, (const void *)*(this + 2), 4 * *this); /*0x625418*/
+    qmemcpy(v5, (const void *)this->q008, 4 * *this); /*0x625418*/
     v4 = v6; /*0x625421*/
   }
-  __3_YAXPAX_Z((void *)*(this + 2)); /*0x625429*/
-  *(this + 1) = v4; /*0x625431*/
-  *(this + 2) = (int)v5; /*0x625434*/
+  RA2_OPDEL((void *)this->q008); /*0x625429*/
+  this->u32_4 = v4; /*0x625431*/
+  this->q008 = (int)v5; /*0x625434*/
   return 1; /*0x6253bf*/
 }
 }
@@ -499,7 +504,7 @@ int Options::ReadOptionValue()
   int v8; // [esp+8h] [ebp-4h]
 
   v2 = *this; /*0x6254d5*/
-  v3 = *(this + 1); /*0x6254d8*/
+  v3 = this->u32_4; /*0x6254d8*/
   if ( 3 * v2 > v3 ) /*0x6254e0*/
     return 0; /*0x6254e3*/
   v5 = v3 / 2; /*0x6254ef*/
@@ -507,14 +512,14 @@ int Options::ReadOptionValue()
     v5 = 10; /*0x6254f6*/
   if ( v5 >= v3 ) /*0x6254fd*/
     return 0; /*0x625500*/
-  v6 = __2_YAPAXI_Z(20 * v5); /*0x62550d*/
-  v7 = (const void *)*(this + 2); /*0x625512*/
+  v6 = RA2_OPNEW(20 * v5); /*0x62550d*/
+  v7 = (const void *)this->q008; /*0x625512*/
   v8 = (int)v6; /*0x62551a*/
   if ( v7 ) /*0x62551e*/
     qmemcpy(v6, v7, 20 * *this); /*0x625531*/
-  __3_YAXPAX_Z((void *)*(this + 2)); /*0x62553f*/
-  *(this + 2) = v8; /*0x62554b*/
-  *(this + 1) = v5; /*0x62554e*/
+  RA2_OPDEL((void *)this->q008); /*0x62553f*/
+  this->q008 = v8; /*0x62554b*/
+  this->u32_4 = v5; /*0x62554e*/
   return 1; /*0x6254e2*/
 }
 }
@@ -527,12 +532,12 @@ AbstractClass * * Options::DestroyComposite(char a2)
   _DWORD *v5; // edx
   void *v6; // esi
 
-  if ( *((_DWORD *)this + 11) ) /*0x625563*/
+  if ( this->u32_2C ) /*0x625563*/
   {
-    __3_YAXPAX_Z(*((void **)this + 11)); /*0x62556b*/
-    *((_DWORD *)this + 11) = 0; /*0x625573*/
+    RA2_OPDEL(*((void **)&this->u32_41)); /*0x62556b*/
+    this->u32_2C = 0; /*0x625573*/
   }
-  for ( i = (_DWORD *)*((_DWORD *)this + 14); i; i = (_DWORD *)*((_DWORD *)this + 14) ) /*0x62557f*/
+  for ( i = (_DWORD *)this->ptr_38; i; i = (_DWORD *)this->ptr_38 ) /*0x62557f*/
   {
     v4 = i; /*0x625581*/
     v5 = 0; /*0x625583*/
@@ -546,19 +551,19 @@ AbstractClass * * Options::DestroyComposite(char a2)
     if ( v5 ) /*0x62559d*/
       *v5 = *v4; /*0x6255a1*/
     else
-      *((_DWORD *)this + 14) = *v4; /*0x6255a7*/
-    __3_YAXPAX_Z(v4); /*0x6255ab*/
+      this->ptr_38 = *v4; /*0x6255a7*/
+    RA2_OPDEL(v4); /*0x6255ab*/
   LABEL_12:
     ; /*0x6255b3*/
   }
-  v6 = (void *)*((_DWORD *)this + 16); /*0x6255bb*/
+  v6 = (void *)this->q100; /*0x6255bb*/
   if ( v6 ) /*0x6255c0*/
   {
-    DeleteAndZero::Alt(*((void ***)this + 16)); /*0x6255c4*/
-    __3_YAXPAX_Z(v6); /*0x6255ca*/
+    DeleteAndZero::Alt(*((void ***)&this->u32_46)); /*0x6255c4*/
+    RA2_OPDEL(v6); /*0x6255ca*/
   }
   if ( (a2 & 1) != 0 ) /*0x6255d9*/
-    __3_YAXPAX_Z(this); /*0x6255dc*/
+    RA2_OPDEL(); /*0x6255dc*/
   return this; /*0x6255e6*/
 }
 }
@@ -567,7 +572,6 @@ namespace gamemd {
 void * Options::RebuildDropdownList(ObjectClass * aP1)
 {
   _DWORD *v2; // ebp
-  int *v3; // edi
   int v4; // ebx
   int *v5; // esi
   int v6; // eax
@@ -588,14 +592,13 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
   int v23; // [esp+2Ch] [ebp-4h]
 
   v2 = aP1; /*0x6255f5*/
-  v3 = this; /*0x6255fb*/
   v4 = 0; /*0x625600*/
   *this = *aP1; /*0x625602*/
-  v5 = this + 2; /*0x625607*/
-  *(this + 1) = aP1[1]; /*0x62560a*/
-  *(this + 2) = 0; /*0x625615*/
-  *(this + 3) = 0; /*0x625617*/
-  *(this + 4) = 0; /*0x62561a*/
+  v5 = &this->q008; /*0x625607*/
+  this->u32_4 = aP1[1]; /*0x62560a*/
+  this->q008 = 0; /*0x625615*/
+  this->q00C = 0; /*0x625617*/
+  this->q010 = 0; /*0x62561a*/
   unknown_libname_74(&v19); /*0x62561d*/
   unknown_libname_74(&v20); /*0x625626*/
   v18 = 0; /*0x62562e*/
@@ -616,7 +619,6 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
     }
     while ( v4 < *v5 ); /*0x625665*/
     v2 = aP1; /*0x625667*/
-    v3 = this; /*0x62566b*/
   }
   *v5 = 0; /*0x62566f*/
   v9 = v2[2]; /*0x625675*/
@@ -656,11 +658,9 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
         break; /*0x62574c*/
       v2 = aP1; /*0x62568a*/
     }
-    v3 = this; /*0x625752*/
   }
   DeleteAndZero::Alt(&v20); /*0x62575a*/
   DeleteAndZero::Alt(&v19); /*0x625763*/
-  return v3; /*0x62576a*/
 }
 }
 // 0x625A20
@@ -679,13 +679,13 @@ int Options::SaveOptionValue()
   v4 = 2 * v2; /*0x625a33*/
   if ( 2 * v2 < 10 ) /*0x625a3b*/
     v4 = 10; /*0x625a3d*/
-  v5 = __2_YAPAXI_Z(20 * v4); /*0x625a4f*/
+  v5 = RA2_OPNEW(20 * v4); /*0x625a4f*/
   memset(v5, 0, 4 * ((unsigned int)(20 * v4) >> 2)); /*0x625a5a*/
   v7 = (int)v5; /*0x625a64*/
   v6 = (const void *)*(this + 2); /*0x625a6a*/
   if ( v6 ) /*0x625a6f*/
     qmemcpy(v5, v6, 20 * *this); /*0x625a80*/
-  __3_YAXPAX_Z((void *)*(this + 2)); /*0x625a8d*/
+  RA2_OPDEL((void *)*(this + 2)); /*0x625a8d*/
   *(this + 1) = v4; /*0x625a99*/
   *(this + 2) = v7; /*0x625a9c*/
   return 1; /*0x625a2f*/
@@ -799,7 +799,7 @@ void Options::SetVoiceVolume(float volume, int pad)
     v4 = volume; /*0x5fa5a4*/
   *(this + 15) = v4; /*0x5fa5b0*/
   v5 = Math::RoundToInt(v4 * 255.0); /*0x5fa5b9*/
-  ThemeClass::GetField(v5, HIDWORD(v5)); /*0x5fa5c0*/
+  ThemeClass::GetField(v5, IDA_HIDWORD(v5)); /*0x5fa5c0*/
   v6 = Math::RoundToInt(*(this + 15) * 16384.0); /*0x5fa5ce*/
   EndBufferMixer((int *)g_MixerChannel_Voice, v6); /*0x5fa5db*/
   if ( pad ) /*0x5fa5e6*/
@@ -811,7 +811,6 @@ void Options::SetVoiceVolume(float volume, int pad)
 // 0x618D40
 namespace gamemd {
 int Options::DialogProc(CCINIClass hWnd)
-{
 {
     int *v4;
     int v5;
@@ -859,13 +858,12 @@ int Options::DialogProc(CCINIClass hWnd)
     int v47;
 }
 } // namespace gamemd
-}
 
 // 0x624460
 namespace gamemd {
 void Options::ClearComboBoxes()
 {
-  DeleteAndZero::Alt(this + 2); /*0x624466*/
+  this->DListNode_2.Alt(); /*0x624466*/
   DeleteAndZero::Alt(this + 1); /*0x62446e*/
 }
 } // namespace gamemd

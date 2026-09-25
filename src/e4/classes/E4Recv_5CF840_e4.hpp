@@ -5,7 +5,19 @@
 
 namespace gamemd {
 struct E4Recv_5CF840 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    unsigned int M72;  // 0x48
+    unsigned int M84;  // 0x54
+    unsigned int q084;  // 0x84
+    unsigned int q114;  // 0x114
+    unsigned int q630;  // 0x630
+    unsigned int q774;  // 0x774
+    unsigned int q1584;  // 0x1584
+    unsigned int q1908;  // 0x1908
+    unsigned int q5508;  // 0x5508
+    unsigned int q6408;  // 0x6408
+// --- flat members (END) ---
     const char ** sub_5CF840(MapSelect * aP1);  // 0x5CF840
 };
 } // namespace gamemd

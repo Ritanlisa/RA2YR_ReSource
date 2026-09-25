@@ -5,14 +5,32 @@
 
 namespace gamemd {
 struct JumpjetLocomotionClass_26 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+    void* q004;  // 0x4
+    int q008;  // 0x8
+    bool q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    int q010;  // 0x10
+    bool IsInitialized;  // 0x12
+    int Count;  // 0x16
+    bool q018;  // 0x18
+    unsigned char q01C;  // 0x1C
+    bool q024;  // 0x24
+    unsigned char q028;  // 0x28
+    int q034;  // 0x34
+    unsigned char q038;  // 0x38
+    unsigned char q04C;  // 0x4C
+    unsigned char q050;  // 0x50
+    bool q054;  // 0x54
+// --- flat members (END) ---
     int FindItem(unsigned int * a2);  // 0x54EB20
     void ClearBuffer();  // 0x54E890
     char AddRef(int a2);  // 0x54E8F0
     char Release(int a2, unsigned int * a3);  // 0x54E930
     void ddtor();  // 0x54E9E0
     char SetCapacity(int a2, unsigned int * a3);  // 0x54EA70
-    VectorClass * QueryInterface(char a2);  // 0x54EB50
+    VectorClass_flat * QueryInterface(char a2);  // 0x54EB50
     DynamicVector * Constructor_VectorClass_KamikazeControl___(char a2);  // 0x54EBA0
     unsigned int PointerToIndex(int a2);  // 0x54E8C0
     int Seek(int a2);  // 0x54E8E0

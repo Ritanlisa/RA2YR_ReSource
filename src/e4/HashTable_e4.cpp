@@ -2,15 +2,24 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/Compare_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x624760
-int HashTable::Get(IUnknown * aP1, IUnknown * aP2)
+namespace gamemd {
+int HashTable_flat::Get(IUnknown * aP1, IUnknown * aP2)
 {
   _DWORD *v4; // eax
 
-  if ( !*(this + 1) ) /*0x624764*/
+  if ( !this->u32_4 ) /*0x624764*/
     return 0; /*0x62476c*/
-  v4 = *(_DWORD **)(*this + 4 * (((int (__thiscall *)(_DWORD *))*(this + 6))(aP1) & ((1 << *(this + 3)) - 1))); /*0x62478a*/
+  v4 = *(_DWORD **)(*this + 4 * (((int (__thiscall *)(_DWORD *))this->u32_18)(aP1) & ((1 << this->u32_C) - 1))); /*0x62478a*/
   if ( !v4 ) /*0x62478f*/
     return 0; /*0x624792*/
   while ( *v4 != *aP1 ) /*0x62479c*/
@@ -22,65 +31,66 @@ int HashTable::Get(IUnknown * aP1, IUnknown * aP2)
   *aP2 = v4 + 1; /*0x6247c3*/
   return 1; /*0x62476b*/
 }
+} // namespace gamemd
 // 0x624FC0
-AbstractClass * * HashTable::Grow2()
+namespace gamemd {
+AbstractClass * * HashTable_flat::Grow2()
 {
   int v2; // esi
   _DWORD *v3; // ebp
   int v4; // edi
   void *v5; // edi
   unsigned int v6; // edx
-  int *v7; // edi
-  int v8; // ebp
   int v9; // esi
   int v10; // edx
   int v11; // ecx
   int v12; // eax
-  _DWORD *v13; // [esp+4h] [ebp-4h]
 
-  if ( *((_BYTE *)this + 20) != 1 ) /*0x624fc8*/
+  if ( *((_BYTE *)v5 + 20) != 1 ) /*0x624fc8*/
   {
-    v2 = *(this + 2); /*0x624fd0*/
-    v3 = (_DWORD *)*this; /*0x624fd3*/
-    v4 = *(this + 3) + 1; /*0x624fdc*/
-    *(this + 2) = 2 * v2; /*0x624fdd*/
-    v13 = v3; /*0x624fe0*/
-    *(this + 3) = v4; /*0x624fe8*/
-    v5 = __2_YAPAXI_Z(8 * v2); /*0x624ff3*/
-    v6 = 4 * *(this + 2); /*0x624ff8*/
-    *this = v5; /*0x624fff*/
+    v2 = v5->vtable3; /*0x624fd0*/
+    v3 = (_DWORD *)*v5; /*0x624fd3*/
+    v4 = v5->vtable4 + 1; /*0x624fdc*/
+    v5->vtable3 = 2 * v2; /*0x624fdd*/
+    v3 = v3; /*0x624fe0*/
+    v5->vtable4 = v4; /*0x624fe8*/
+    v5 = RA2_OPNEW(8 * v2); /*0x624ff3*/
+    v6 = 4 * v5->vtable3; /*0x624ff8*/
+    *v5 = v5; /*0x624fff*/
     memset(v5, 0, v6); /*0x625004*/
     if ( v2 > 0 ) /*0x62500f*/
     {
-      v7 = v3; /*0x625011*/
-      v8 = v2; /*0x625013*/
+      v3 = v3; /*0x625011*/
+      v2 = v2; /*0x625013*/
       do /*0x62504d*/
       {
-        v9 = *v7; /*0x625015*/
-        if ( *v7 ) /*0x625015*/
+        v9 = *v3; /*0x625015*/
+        if ( *v3 ) /*0x625015*/
         {
           do /*0x625047*/
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x62502b*/
-            v11 = *(_DWORD *)(*this + 4 * v10); /*0x62502f*/
-            *(_DWORD *)(*this + 4 * v10) = v9; /*0x625035*/
+            v10 = ((int (__thiscall *)(int))v5->nextArrayIndex)(v9) & ((1 << v5->vtable4) - 1); /*0x62502b*/
+            v11 = *(_DWORD *)(*v5 + 4 * v10); /*0x62502f*/
+            *(_DWORD *)(*v5 + 4 * v10) = v9; /*0x625035*/
             v12 = *(_DWORD *)(v9 + 516); /*0x625037*/
             *(_DWORD *)(v9 + 516) = v11; /*0x62503d*/
             v9 = v12; /*0x625043*/
           }
           while ( v12 ); /*0x625047*/
         }
-        ++v7; /*0x625049*/
-        --v8; /*0x62504c*/
+        ++v3; /*0x625049*/
+        --v2; /*0x62504c*/
       }
-      while ( v8 ); /*0x62504d*/
-      v3 = v13; /*0x62504f*/
+      while ( v2 ); /*0x62504d*/
+      v3 = v3; /*0x62504f*/
     }
-    __3_YAXPAX_Z(v3); /*0x625054*/
+    RA2_OPDEL(v3); /*0x625054*/
   }
 }
+} // namespace gamemd
 // 0x625090
-AbstractClass * * HashTable::RemoveAndResize(unsigned int * a2, unsigned char * a3)
+namespace gamemd {
+AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned char * a3)
 {
   int v4; // eax
   int v7; // edi
@@ -114,11 +124,11 @@ AbstractClass * * HashTable::RemoveAndResize(unsigned int * a2, unsigned char * 
   int *v35; // [esp+20h] [ebp+8h]
   int *v36; // [esp+20h] [ebp+8h]
 
-  v4 = *(this + 1); /*0x62509b*/
+  v4 = this->vtable2; /*0x62509b*/
   if ( !v4 ) /*0x6250a0*/
     return 0; /*0x6250a5*/
-  v33 = (double)(unsigned int)(v4 - 1) / (double)(int)*(this + 2); /*0x6250d0*/
-  v7 = ((int (__thiscall *)(_DWORD *))*(this + 6))(a2) & ((1 << *(this + 3)) - 1); /*0x6250e4*/
+  v33 = (double)(unsigned int)(v4 - 1) / (double)(int)this->vtable3; /*0x6250d0*/
+  v7 = ((int (__thiscall *)(_DWORD *))this->nextArrayIndex)(a2) & ((1 << this->vtable4) - 1); /*0x6250e4*/
   v8 = *(_DWORD **)(*this + 4 * v7); /*0x6250e6*/
   if ( !v8 ) /*0x6250eb*/
     return 0; /*0x6250f0*/
@@ -128,23 +138,23 @@ AbstractClass * * HashTable::RemoveAndResize(unsigned int * a2, unsigned char * 
     *a3 = *((_BYTE *)v8 + 8); /*0x62511b*/
     v32 = *(_DWORD **)(*this + 4 * v7); /*0x625122*/
     v10 = v32[3]; /*0x625123*/
-    __3_YAXPAX_Z(v32); /*0x625126*/
+    RA2_OPDEL(v32); /*0x625126*/
     *(_DWORD *)(*this + 4 * v7) = v10; /*0x625134*/
-    v11 = v33 < *((double *)this + 4); /*0x62513a*/
-    v12 = v33 == *((double *)this + 4); /*0x62513a*/
-    --*(this + 1); /*0x62513e*/
+    v11 = v33 < this->needsSave; /*0x62513a*/
+    v12 = v33 == this->needsSave; /*0x62513a*/
+    --this->vtable2; /*0x62513e*/
     if ( v11 || v12 ) /*0x625143*/
     {
-      v13 = *(this + 2); /*0x62514c*/
-      if ( v13 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x62515e*/
+      v13 = this->vtable3; /*0x62514c*/
+      if ( v13 > *(&this->vtable22) && this->abstractFlags != 1 ) /*0x62515e*/
       {
         v14 = (int *)*this; /*0x625167*/
         v35 = (int *)*this; /*0x62516b*/
-        v15 = *(this + 3) - 1; /*0x625171*/
-        *(this + 2) = v13 >> 1; /*0x625172*/
-        *(this + 3) = v15; /*0x62517c*/
-        v16 = __2_YAPAXI_Z(4 * (v13 >> 1)); /*0x625188*/
-        v17 = 4 * *(this + 2); /*0x62518d*/
+        v15 = this->vtable4 - 1; /*0x625171*/
+        this->vtable3 = v13 >> 1; /*0x625172*/
+        this->vtable4 = v15; /*0x62517c*/
+        v16 = RA2_OPNEW(4 * (v13 >> 1)); /*0x625188*/
+        v17 = 4 * this->vtable3; /*0x62518d*/
         *this = v16; /*0x625194*/
         memset(v16, 0, v17); /*0x625199*/
         if ( (int)v13 > 0 ) /*0x6251a4*/
@@ -156,7 +166,7 @@ AbstractClass * * HashTable::RemoveAndResize(unsigned int * a2, unsigned char * 
             {
               do /*0x6251d2*/
               {
-                v19 = ((int (__thiscall *)(int))*(this + 6))(v18) & ((1 << *(this + 3)) - 1); /*0x6251bc*/
+                v19 = ((int (__thiscall *)(int))this->nextArrayIndex)(v18) & ((1 << this->vtable4) - 1); /*0x6251bc*/
                 v20 = *(_DWORD *)(*this + 4 * v19); /*0x6251c0*/
                 *(_DWORD *)(*this + 4 * v19) = v18; /*0x6251c6*/
                 v21 = *(_DWORD *)(v18 + 12); /*0x6251c8*/
@@ -171,7 +181,7 @@ AbstractClass * * HashTable::RemoveAndResize(unsigned int * a2, unsigned char * 
           while ( v13 ); /*0x6251d8*/
           v14 = v35; /*0x6251da*/
         }
-        __3_YAXPAX_Z(v14); /*0x6251df*/
+        RA2_OPDEL(v14); /*0x6251df*/
       }
     }
     return 1; /*0x6251ea*/
@@ -191,23 +201,23 @@ AbstractClass * * HashTable::RemoveAndResize(unsigned int * a2, unsigned char * 
       }
       *a3 = *((_BYTE *)v22 + 8); /*0x625220*/
       v8[3] = v22[3]; /*0x625225*/
-      --*(this + 1); /*0x62522c*/
-      __3_YAXPAX_Z(v22); /*0x62522f*/
+      --this->vtable2; /*0x62522c*/
+      RA2_OPDEL(v22); /*0x62522f*/
       v34 = 1; /*0x625237*/
     }
   LABEL_23:
-    if ( v33 <= *((double *)this + 4) ) /*0x625248*/
+    if ( v33 <= this->needsSave ) /*0x625248*/
     {
-      v23 = *(this + 2); /*0x62524e*/
-      if ( v23 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x625260*/
+      v23 = this->vtable3; /*0x62524e*/
+      if ( v23 > *(&this->vtable22) && this->abstractFlags != 1 ) /*0x625260*/
       {
-        v24 = *(this + 3); /*0x625262*/
+        v24 = this->vtable4; /*0x625262*/
         v25 = (int *)*this; /*0x625265*/
         v36 = (int *)*this; /*0x625269*/
-        *(this + 2) = v23 >> 1; /*0x62526f*/
-        *(this + 3) = v24 - 1; /*0x625277*/
-        v26 = __2_YAPAXI_Z(4 * (v23 >> 1)); /*0x625282*/
-        v27 = 4 * *(this + 2); /*0x625287*/
+        this->vtable3 = v23 >> 1; /*0x62526f*/
+        this->vtable4 = v24 - 1; /*0x625277*/
+        v26 = RA2_OPNEW(4 * (v23 >> 1)); /*0x625282*/
+        v27 = 4 * this->vtable3; /*0x625287*/
         *this = v26; /*0x62528e*/
         memset(v26, 0, v27); /*0x625293*/
         if ( (int)v23 > 0 ) /*0x62529e*/
@@ -219,7 +229,7 @@ AbstractClass * * HashTable::RemoveAndResize(unsigned int * a2, unsigned char * 
             {
               do /*0x6252cc*/
               {
-                v29 = ((int (__thiscall *)(int))*(this + 6))(v28) & ((1 << *(this + 3)) - 1); /*0x6252b6*/
+                v29 = ((int (__thiscall *)(int))this->nextArrayIndex)(v28) & ((1 << this->vtable4) - 1); /*0x6252b6*/
                 v30 = *(_DWORD *)(*this + 4 * v29); /*0x6252ba*/
                 *(_DWORD *)(*this + 4 * v29) = v28; /*0x6252c0*/
                 v31 = *(_DWORD *)(v28 + 12); /*0x6252c2*/
@@ -234,128 +244,130 @@ AbstractClass * * HashTable::RemoveAndResize(unsigned int * a2, unsigned char * 
           while ( v23 ); /*0x6252d2*/
           v25 = v36; /*0x6252d4*/
         }
-        __3_YAXPAX_Z(v25); /*0x6252d9*/
+        RA2_OPDEL(v25); /*0x6252d9*/
       }
     }
     return v34; /*0x6252e1*/
   }
 }
+} // namespace gamemd
 // 0x625780
-void HashTable::Shrink2()
+namespace gamemd {
+void HashTable_flat::Shrink2()
 {
   unsigned int v2; // esi
   int *v3; // ebp
   int v4; // edi
   void *v5; // edi
   unsigned int v6; // edx
-  int *v7; // edi
-  unsigned int v8; // ebp
   int v9; // esi
   int v10; // edx
   int v11; // ecx
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  v2 = *(this + 2); /*0x625785*/
-  if ( v2 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x625797*/
+  v2 = v5->vtable3; /*0x625785*/
+  if ( v2 > v5->u32_30 && *((_BYTE *)v5 + 20) != 1 ) /*0x625797*/
   {
-    v3 = (int *)*this; /*0x6257a0*/
-    v4 = *(this + 3); /*0x6257a3*/
-    v13 = (int *)*this; /*0x6257a6*/
-    *(this + 2) = v2 >> 1; /*0x6257ac*/
-    *(this + 3) = v4 - 1; /*0x6257b4*/
-    v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x6257bf*/
-    v6 = 4 * *(this + 2); /*0x6257c4*/
-    *this = v5; /*0x6257cb*/
+    v3 = (int *)*v5; /*0x6257a0*/
+    v4 = v5->vtable4; /*0x6257a3*/
+    v13 = (int *)*v5; /*0x6257a6*/
+    v5->vtable3 = v2 >> 1; /*0x6257ac*/
+    v5->vtable4 = v4 - 1; /*0x6257b4*/
+    v5 = RA2_OPNEW(4 * (v2 >> 1)); /*0x6257bf*/
+    v6 = 4 * v5->vtable3; /*0x6257c4*/
+    *v5 = v5; /*0x6257cb*/
     memset(v5, 0, v6); /*0x6257d0*/
     if ( (int)v2 > 0 ) /*0x6257db*/
     {
-      v7 = v3; /*0x6257dd*/
-      v8 = v2; /*0x6257df*/
+      v3 = v3; /*0x6257dd*/
+      v2 = v2; /*0x6257df*/
       do /*0x625813*/
       {
-        v9 = *v7; /*0x6257e1*/
-        if ( *v7 ) /*0x6257e1*/
+        v9 = *v3; /*0x6257e1*/
+        if ( *v3 ) /*0x6257e1*/
         {
           do /*0x62580d*/
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x6257f7*/
-            v11 = *(_DWORD *)(*this + 4 * v10); /*0x6257fb*/
-            *(_DWORD *)(*this + 4 * v10) = v9; /*0x625801*/
+            v10 = ((int (__thiscall *)(int))v5->nextArrayIndex)(v9) & ((1 << v5->vtable4) - 1); /*0x6257f7*/
+            v11 = *(_DWORD *)(*v5 + 4 * v10); /*0x6257fb*/
+            *(_DWORD *)(*v5 + 4 * v10) = v9; /*0x625801*/
             v12 = *(_DWORD *)(v9 + 8); /*0x625803*/
             *(_DWORD *)(v9 + 8) = v11; /*0x625806*/
             v9 = v12; /*0x625809*/
           }
           while ( v12 ); /*0x62580d*/
         }
-        ++v7; /*0x62580f*/
-        --v8; /*0x625812*/
+        ++v3; /*0x62580f*/
+        --v2; /*0x625812*/
       }
-      while ( v8 ); /*0x625813*/
+      while ( v2 ); /*0x625813*/
       v3 = v13; /*0x625815*/
     }
-    __3_YAXPAX_Z(v3); /*0x62581a*/
+    RA2_OPDEL(v3); /*0x62581a*/
   }
 }
+} // namespace gamemd
 // 0x625830
-void HashTable::Rebuild2()
+namespace gamemd {
+void HashTable_flat::Rebuild2()
 {
   unsigned int v2; // esi
   int *v3; // ebp
   int v4; // edi
   void *v5; // edi
   unsigned int v6; // edx
-  int *v7; // edi
-  unsigned int v8; // ebp
   int v9; // esi
   int v10; // edx
   int v11; // ecx
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  v2 = *(this + 2); /*0x625835*/
-  if ( v2 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x625847*/
+  v2 = v5->vtable3; /*0x625835*/
+  if ( v2 > v5->u32_30 && *((_BYTE *)v5 + 20) != 1 ) /*0x625847*/
   {
-    v3 = (int *)*this; /*0x625850*/
-    v4 = *(this + 3); /*0x625853*/
-    v13 = (int *)*this; /*0x625856*/
-    *(this + 2) = v2 >> 1; /*0x62585c*/
-    *(this + 3) = v4 - 1; /*0x625864*/
-    v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x62586f*/
-    v6 = 4 * *(this + 2); /*0x625874*/
-    *this = v5; /*0x62587b*/
+    v3 = (int *)*v5; /*0x625850*/
+    v4 = v5->vtable4; /*0x625853*/
+    v13 = (int *)*v5; /*0x625856*/
+    v5->vtable3 = v2 >> 1; /*0x62585c*/
+    v5->vtable4 = v4 - 1; /*0x625864*/
+    v5 = RA2_OPNEW(4 * (v2 >> 1)); /*0x62586f*/
+    v6 = 4 * v5->vtable3; /*0x625874*/
+    *v5 = v5; /*0x62587b*/
     memset(v5, 0, v6); /*0x625880*/
     if ( (int)v2 > 0 ) /*0x62588b*/
     {
-      v7 = v3; /*0x62588d*/
-      v8 = v2; /*0x62588f*/
+      v3 = v3; /*0x62588d*/
+      v2 = v2; /*0x62588f*/
       do /*0x6258c9*/
       {
-        v9 = *v7; /*0x625891*/
-        if ( *v7 ) /*0x625891*/
+        v9 = *v3; /*0x625891*/
+        if ( *v3 ) /*0x625891*/
         {
           do /*0x6258c3*/
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x6258a7*/
-            v11 = *(_DWORD *)(*this + 4 * v10); /*0x6258ab*/
-            *(_DWORD *)(*this + 4 * v10) = v9; /*0x6258b1*/
+            v10 = ((int (__thiscall *)(int))v5->nextArrayIndex)(v9) & ((1 << v5->vtable4) - 1); /*0x6258a7*/
+            v11 = *(_DWORD *)(*v5 + 4 * v10); /*0x6258ab*/
+            *(_DWORD *)(*v5 + 4 * v10) = v9; /*0x6258b1*/
             v12 = *(_DWORD *)(v9 + 516); /*0x6258b3*/
             *(_DWORD *)(v9 + 516) = v11; /*0x6258b9*/
             v9 = v12; /*0x6258bf*/
           }
           while ( v12 ); /*0x6258c3*/
         }
-        ++v7; /*0x6258c5*/
-        --v8; /*0x6258c8*/
+        ++v3; /*0x6258c5*/
+        --v2; /*0x6258c8*/
       }
-      while ( v8 ); /*0x6258c9*/
+      while ( v2 ); /*0x6258c9*/
       v3 = v13; /*0x6258cb*/
     }
-    __3_YAXPAX_Z(v3); /*0x6258d0*/
+    RA2_OPDEL(v3); /*0x6258d0*/
   }
 }
+} // namespace gamemd
 // 0x625F60
-int HashTable::FindString(char * Str1, IUnknown * aP2)
+namespace gamemd {
+int HashTable_flat::FindString(char * Str1, IUnknown * aP2)
 {
   int v3; // esi
 
@@ -371,8 +383,10 @@ int HashTable::FindString(char * Str1, IUnknown * aP2)
   *aP2 = **(_DWORD **)(v3 + 8); /*0x625f9f*/
   return v3 != 0; /*0x625f86*/
 }
+} // namespace gamemd
 // 0x625FB0
-int HashTable::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
+namespace gamemd {
+int HashTable_flat::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
 {
   int v4; // ebx
   unsigned int v6; // ecx
@@ -393,8 +407,10 @@ int HashTable::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
   *aP3 = *(unsigned __int16 *)(v4 + 6); /*0x626013*/
   return v4 != 0; /*0x625fd6*/
 }
+} // namespace gamemd
 // 0x6B9530
-CampaignClass * * HashTable::Clear()
+namespace gamemd {
+CampaignClass * * HashTable_flat::Clear()
 {
   int v2; // ecx
   unsigned int v3; // edi
@@ -412,8 +428,6 @@ CampaignClass * * HashTable::Clear()
   int *v15; // ebx
   void *v16; // edi
   unsigned int v17; // edx
-  int *v18; // edi
-  unsigned int v19; // ebx
   int v20; // esi
   int v21; // edx
   int v22; // ecx
@@ -426,26 +440,25 @@ CampaignClass * * HashTable::Clear()
   int *v29; // [esp+10h] [ebp-31Ch]
   void *v30; // [esp+14h] [ebp-318h] BYREF
   __int64 v31; // [esp+18h] [ebp-314h]
-  int v32; // [esp+20h] [ebp-30Ch]
   int v33; // [esp+24h] [ebp-308h]
   _DWORD v34[193]; // [esp+28h] [ebp-304h] BYREF
 
   unknown_libname_73(&v30); /*0x6b9540*/
   while ( 1 ) /*0x6b9545*/
   {
-    v2 = *(_DWORD *)(this + 4); /*0x6b9545*/
+    v2 = v16->vtable2; /*0x6b9545*/
     v3 = 0; /*0x6b9548*/
     if ( !v2 ) /*0x6b954c*/
       break; /*0x6b954c*/
-    v4 = *(_DWORD *)(this + 8); /*0x6b9552*/
+    v4 = v16->vtable3; /*0x6b9552*/
     v31 = (unsigned int)(v2 - 1); /*0x6b9556*/
-    v32 = v4; /*0x6b9562*/
+    v4 = v4; /*0x6b9562*/
     v33 = 0; /*0x6b9566*/
     v5 = 0; /*0x6b956e*/
     v28 = (double)v31 / (double)v4; /*0x6b9572*/
     if ( v4 <= 0 ) /*0x6b9576*/
       break; /*0x6b9576*/
-    v6 = *(int **)this; /*0x6b957f*/
+    v6 = *(int **)v16; /*0x6b957f*/
     while ( !*v6 ) /*0x6b9583*/
     {
       ++v5; /*0x6b9585*/
@@ -455,62 +468,62 @@ CampaignClass * * HashTable::Clear()
     }
     if ( v5 == -1 ) /*0x6b9596*/
       break; /*0x6b9596*/
-    v7 = *(const char ***)(*(_DWORD *)this + 4 * v5); /*0x6b959c*/
+    v7 = *(const char ***)(*(_DWORD *)v16 + 4 * v5); /*0x6b959c*/
     String::Reassign((char **)&v30, v7); /*0x6b95a4*/
-    v8 = *(int **)this; /*0x6b95a9*/
+    v8 = *(int **)v16; /*0x6b95a9*/
     qmemcpy(v34, v7 + 1, sizeof(v34)); /*0x6b95b8*/
     v9 = (_DWORD *)v8[v5]; /*0x6b95ba*/
     v10 = v9[194]; /*0x6b95bf*/
     if ( v9 ) /*0x6b95c5*/
     {
       DeleteAndZero((void **)v8[v5]); /*0x6b95c9*/
-      __3_YAXPAX_Z(v9); /*0x6b95cf*/
+      RA2_OPDEL(v9); /*0x6b95cf*/
     }
-    *(_DWORD *)(*(_DWORD *)this + 4 * v5) = v10; /*0x6b95de*/
-    v11 = v28 < *(double *)(this + 32); /*0x6b95e4*/
-    v12 = v28 == *(double *)(this + 32); /*0x6b95e4*/
-    --*(_DWORD *)(this + 4); /*0x6b95e8*/
+    *(_DWORD *)(*(_DWORD *)v16 + 4 * v5) = v10; /*0x6b95de*/
+    v11 = v28 < v16->NeedsSaveOrLink; /*0x6b95e4*/
+    v12 = v28 == v16->NeedsSaveOrLink; /*0x6b95e4*/
+    --v16->vtable2; /*0x6b95e8*/
     if ( v11 || v12 ) /*0x6b95ed*/
     {
-      v13 = *(_DWORD *)(this + 8); /*0x6b95f6*/
-      if ( v13 > *(_DWORD *)(this + 48) && *(_BYTE *)(this + 20) != 1 ) /*0x6b9608*/
+      v13 = v16->vtable3; /*0x6b95f6*/
+      if ( v13 > v16->u32_30 && v16->abstractFlags != 1 ) /*0x6b9608*/
       {
-        v14 = *(_DWORD *)(this + 12); /*0x6b960e*/
-        v15 = *(int **)this; /*0x6b9611*/
-        v29 = *(int **)this; /*0x6b9616*/
-        *(_DWORD *)(this + 8) = v13 >> 1; /*0x6b961d*/
-        *(_DWORD *)(this + 12) = v14 - 1; /*0x6b9627*/
-        v16 = __2_YAPAXI_Z(4 * (v13 >> 1)); /*0x6b9633*/
-        v17 = 4 * *(_DWORD *)(this + 8); /*0x6b9638*/
-        *(_DWORD *)this = v16; /*0x6b963f*/
+        v14 = v16->vtable4; /*0x6b960e*/
+        v15 = *(int **)v16; /*0x6b9611*/
+        v29 = *(int **)v16; /*0x6b9616*/
+        v16->vtable3 = v13 >> 1; /*0x6b961d*/
+        v16->vtable4 = v14 - 1; /*0x6b9627*/
+        v16 = RA2_OPNEW(4 * (v13 >> 1)); /*0x6b9633*/
+        v17 = 4 * v16->vtable3; /*0x6b9638*/
+        *(_DWORD *)v16 = v16; /*0x6b963f*/
         memset(v16, 0, v17); /*0x6b9645*/
         if ( (int)v13 > 0 ) /*0x6b9650*/
         {
-          v18 = v15; /*0x6b9652*/
-          v19 = v13; /*0x6b9654*/
+          v15 = v15; /*0x6b9652*/
+          v13 = v13; /*0x6b9654*/
           do /*0x6b968f*/
           {
-            v20 = *v18; /*0x6b9656*/
-            if ( *v18 ) /*0x6b9656*/
+            v20 = *v15; /*0x6b9656*/
+            if ( *v15 ) /*0x6b9656*/
             {
               do /*0x6b9689*/
               {
-                v21 = (*(int (__thiscall **)(int))(this + 24))(v20) & ((1 << *(_DWORD *)(this + 12)) - 1); /*0x6b966c*/
-                v22 = *(_DWORD *)(*(_DWORD *)this + 4 * v21); /*0x6b9671*/
-                *(_DWORD *)(*(_DWORD *)this + 4 * v21) = v20; /*0x6b9677*/
+                v21 = (*(int (__thiscall **)(int))(v16 + 24))(v20) & ((1 << v16->vtable4) - 1); /*0x6b966c*/
+                v22 = *(_DWORD *)(*(_DWORD *)v16 + 4 * v21); /*0x6b9671*/
+                *(_DWORD *)(*(_DWORD *)v16 + 4 * v21) = v20; /*0x6b9677*/
                 v23 = *(_DWORD *)(v20 + 776); /*0x6b9679*/
                 *(_DWORD *)(v20 + 776) = v22; /*0x6b967f*/
                 v20 = v23; /*0x6b9685*/
               }
               while ( v23 ); /*0x6b9689*/
             }
-            ++v18; /*0x6b968b*/
-            --v19; /*0x6b968e*/
+            ++v15; /*0x6b968b*/
+            --v13; /*0x6b968e*/
           }
-          while ( v19 ); /*0x6b968f*/
+          while ( v13 ); /*0x6b968f*/
           v15 = v29; /*0x6b9691*/
         }
-        __3_YAXPAX_Z(v15); /*0x6b9696*/
+        RA2_OPDEL(v15); /*0x6b9696*/
       }
     }
     if ( v34[0] ) /*0x6b96a4*/
@@ -518,40 +531,42 @@ CampaignClass * * HashTable::Clear()
   }
   LABEL_23:
   DeleteAndZero(&v30); /*0x6b96b5*/
-  if ( *(_DWORD *)(this + 8) ) /*0x6b96be*/
+  if ( v16->vtable3 ) /*0x6b96be*/
   {
     do /*0x6b96fe*/
     {
-      v24 = *(_DWORD *)(*(_DWORD *)this + 4 * v3); /*0x6b96c6*/
+      v24 = *(_DWORD *)(*(_DWORD *)v16 + 4 * v3); /*0x6b96c6*/
       while ( v24 ) /*0x6b96cb*/
       {
         v25 = (void **)v24; /*0x6b96cd*/
         v24 = *(_DWORD *)(v24 + 776); /*0x6b96cf*/
         DeleteAndZero(v25); /*0x6b96db*/
-        __3_YAXPAX_Z(v25); /*0x6b96e1*/
+        RA2_OPDEL(v25); /*0x6b96e1*/
       }
       ++v3; /*0x6b96f0*/
-      *(_DWORD *)(*(_DWORD *)this + 4 * v3 - 4) = 0; /*0x6b96f1*/
+      *(_DWORD *)(*(_DWORD *)v16 + 4 * v3 - 4) = 0; /*0x6b96f1*/
     }
-    while ( v3 < *(_DWORD *)(this + 8) ); /*0x6b96fe*/
+    while ( v3 < v16->vtable3 ); /*0x6b96fe*/
   }
-  v26 = *(_DWORD *)(this + 8); /*0x6b9702*/
-  v27 = *(_DWORD *)(this + 48); /*0x6b9705*/
-  *(_DWORD *)(this + 4) = 0; /*0x6b970a*/
+  v26 = v16->vtable3; /*0x6b9702*/
+  v27 = v16->u32_30; /*0x6b9705*/
+  v16->vtable2 = 0; /*0x6b970a*/
   if ( v26 > v27 ) /*0x6b970d*/
   {
     do /*0x6b9725*/
     {
-      if ( *(_BYTE *)(this + 20) ) /*0x6b970f*/
+      if ( v16->abstractFlags ) /*0x6b970f*/
         break; /*0x6b9714*/
-      HashTable::RebuildEx((_DWORD *)this); /*0x6b9718*/
+      HashTable::RebuildEx(); /*0x6b9718*/
     }
-    while ( *(_DWORD *)(this + 8) > *(_DWORD *)(this + 48) ); /*0x6b9725*/
+    while ( v16->vtable3 > v16->u32_30 ); /*0x6b9725*/
   }
-  __3_YAXPAX_Z(*(void **)this); /*0x6b972b*/
+  RA2_OPDEL(); /*0x6b972b*/
 }
+} // namespace gamemd
 // 0x6BA140
-int HashTable::Find(const char * a1, ConvertClass * aP2)
+namespace gamemd {
+int HashTable_flat::Find(const char * a1, ConvertClass * aP2)
 {
   int v4; // esi
   const void *v6; // esi
@@ -590,8 +605,10 @@ int HashTable::Find(const char * a1, ConvertClass * aP2)
     return 0; /*0x6ba1cd*/
   }
 }
+} // namespace gamemd
 // 0x6BA230
-CampaignClass * * HashTable::RemoveEntry(const char * a2)
+namespace gamemd {
+CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
 {
   int v3; // eax
   int v4; // esi
@@ -611,12 +628,12 @@ CampaignClass * * HashTable::RemoveEntry(const char * a2)
   _DWORD v18[193]; // [esp+18h] [ebp-304h] BYREF
 
   String::Assign((char **)&v16, a2); /*0x6ba247*/
-  v3 = *(_DWORD *)(this + 4); /*0x6ba24c*/
+  v3 = this->q004; /*0x6ba24c*/
   v18[0] = 0; /*0x6ba253*/
   if ( !v3 ) /*0x6ba257*/
     goto LABEL_24; /*0x6ba257*/
   v4 = *(_DWORD *)(*(_DWORD *)this /*0x6ba273*/
-                 + 4 * ((*(int (__thiscall **)(void **))(this + 24))(&v16) & ((1 << *(_DWORD *)(this + 12)) - 1)));
+                 + 4 * ((*(int (__thiscall **)(void **))(&this->u32_84))(&v16) & ((1 << this->q00C) - 1)));
   if ( !v4 ) /*0x6ba278*/
     goto LABEL_24; /*0x6ba278*/
   while ( !String::Compare((const char **)v4, (const char **)&v16) ) /*0x6ba28c*/
@@ -628,30 +645,30 @@ CampaignClass * * HashTable::RemoveEntry(const char * a2)
   v5 = (const void *)(v4 + 4); /*0x6ba2a5*/
   if ( v5 ) /*0x6ba2ab*/
     qmemcpy(v18, v5, sizeof(v18)); /*0x6ba2b6*/
-  v6 = *(_DWORD *)(this + 4); /*0x6ba2b8*/
+  v6 = this->q004; /*0x6ba2b8*/
   if ( v6 ) /*0x6ba2bd*/
   {
-    v7 = *(_DWORD *)(this + 8); /*0x6ba2c3*/
+    v7 = this->u32_8; /*0x6ba2c3*/
     v17 = (unsigned int)(v6 - 1); /*0x6ba2c7*/
     *(float *)&v17 = (double)v17 / (double)v7; /*0x6ba2e3*/
-    v8 = (*(int (__thiscall **)(void **))(this + 24))(&v16) & ((1 << *(_DWORD *)(this + 12)) - 1); /*0x6ba2f5*/
-    v9 = *(_DWORD *)(*(_DWORD *)this + 4 * v8); /*0x6ba2f9*/
+    v8 = (*(int (__thiscall **)(void **))(&this->u32_84))(&v16) & ((1 << this->q00C) - 1); /*0x6ba2f5*/
+    v9 = *(_DWORD *)(*(_DWORD *)&this->u32_10 * v8); /*0x6ba2f9*/
     if ( v9 ) /*0x6ba2fe*/
     {
       if ( String::Compare((const char **)v9, (const char **)&v16) ) /*0x6ba30b*/
       {
-        v10 = *(_DWORD **)(*(_DWORD *)this + 4 * v8); /*0x6ba316*/
+        v10 = *(_DWORD **)(*(_DWORD *)&this->u32_10 * v8); /*0x6ba316*/
         v11 = v10[194]; /*0x6ba31b*/
         if ( v10 ) /*0x6ba321*/
         {
-          DeleteAndZero(*(void ***)(*(_DWORD *)this + 4 * v8)); /*0x6ba325*/
-          __3_YAXPAX_Z(v10); /*0x6ba32b*/
+          DeleteAndZero(*(void ***)(*(_DWORD *)&this->u32_10 * v8)); /*0x6ba325*/
+          RA2_OPDEL(v10); /*0x6ba32b*/
         }
         v12 = *(float *)&v17; /*0x6ba335*/
-        *(_DWORD *)(*(_DWORD *)this + 4 * v8) = v11; /*0x6ba339*/
-        v13 = v12 < *(double *)(this + 32); /*0x6ba33f*/
-        v14 = v12 == *(double *)(this + 32); /*0x6ba33f*/
-        --*(_DWORD *)(this + 4); /*0x6ba343*/
+        *(_DWORD *)(*(_DWORD *)&this->u32_10 * v8) = v11; /*0x6ba339*/
+        v13 = v12 < *(double *)(&this->q00C2); /*0x6ba33f*/
+        v14 = v12 == *(double *)(&this->q00C2); /*0x6ba33f*/
+        --this->q004; /*0x6ba343*/
         if ( !v13 && !v14 ) /*0x6ba348*/
           goto LABEL_22; /*0x6ba34b*/
       }
@@ -668,15 +685,15 @@ CampaignClass * * HashTable::RemoveEntry(const char * a2)
               goto LABEL_20; /*0x6ba373*/
           }
           *(_DWORD *)(v9 + 776) = *(_DWORD *)(v15 + 776); /*0x6ba37d*/
-          --*(_DWORD *)(this + 4); /*0x6ba389*/
+          --this->q004; /*0x6ba389*/
           DeleteAndZero((void **)v15); /*0x6ba390*/
-          __3_YAXPAX_Z((void *)v15); /*0x6ba396*/
+          RA2_OPDEL((void *)v15); /*0x6ba396*/
         }
   LABEL_20:
-        if ( *(float *)&v17 > *(double *)(this + 32) ) /*0x6ba3aa*/
+        if ( *(float *)&v17 > *(double *)(&this->q00C2) ) /*0x6ba3aa*/
           goto LABEL_22; /*0x6ba3aa*/
       }
-      HashTable::RebuildEx((_DWORD *)this); /*0x6ba3ae*/
+      HashTable::RebuildEx(); /*0x6ba3ae*/
     }
   }
   LABEL_22:
@@ -685,8 +702,10 @@ CampaignClass * * HashTable::RemoveEntry(const char * a2)
   LABEL_24:
   DeleteAndZero(&v16); /*0x6ba3c2*/
 }
+} // namespace gamemd
 // 0x6BAC40
-AbstractClass * * HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
+namespace gamemd {
+AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
 {
   int v4; // eax
   int v7; // ebx
@@ -700,8 +719,6 @@ AbstractClass * * HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
   int v15; // edi
   void *v16; // edi
   unsigned int v17; // edx
-  int *v18; // edi
-  unsigned int v19; // ebx
   int v20; // esi
   int v21; // edx
   int v22; // ecx
@@ -712,8 +729,6 @@ AbstractClass * * HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
   int *v27; // ebx
   void *v28; // edi
   unsigned int v29; // edx
-  int *v30; // edi
-  unsigned int v31; // ebx
   int v32; // esi
   int v33; // edx
   int v34; // ecx
@@ -724,11 +739,11 @@ AbstractClass * * HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
   int *v39; // [esp+24h] [ebp+8h]
   int *v40; // [esp+24h] [ebp+8h]
 
-  v4 = *(this + 1); /*0x6bac4b*/
+  v4 = this->vtable2; /*0x6bac4b*/
   if ( !v4 ) /*0x6bac50*/
     return 0; /*0x6bac55*/
-  v37 = (double)(unsigned int)(v4 - 1) / (double)(int)*(this + 2); /*0x6bac80*/
-  v7 = ((int (__thiscall *)(const char **))*(this + 6))(aP1) & ((1 << *(this + 3)) - 1); /*0x6bac95*/
+  v37 = (double)(unsigned int)(v4 - 1) / (double)(int)this->vtable3; /*0x6bac80*/
+  v7 = ((int (__thiscall *)(const char **))this->nextArrayIndex)(aP1) & ((1 << this->vtable4) - 1); /*0x6bac95*/
   v8 = *(_DWORD *)(*this + 4 * v7); /*0x6bac97*/
   v36 = v8; /*0x6bac9c*/
   if ( !v8 ) /*0x6baca0*/
@@ -741,38 +756,38 @@ AbstractClass * * HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
     if ( v9 ) /*0x6bacda*/
     {
       DeleteAndZero(*(void ***)(*this + 4 * v7)); /*0x6bacde*/
-      __3_YAXPAX_Z(v9); /*0x6bace4*/
+      RA2_OPDEL(v9); /*0x6bace4*/
     }
     *(_DWORD *)(*this + 4 * v7) = v10; /*0x6bacf3*/
-    v11 = v37 < *((double *)this + 4); /*0x6bacf9*/
-    v12 = v37 == *((double *)this + 4); /*0x6bacf9*/
-    --*(this + 1); /*0x6bacfd*/
+    v11 = v37 < this->needsSave; /*0x6bacf9*/
+    v12 = v37 == this->needsSave; /*0x6bacf9*/
+    --this->vtable2; /*0x6bacfd*/
     if ( v11 || v12 ) /*0x6bad02*/
     {
-      v13 = *(this + 2); /*0x6bad0b*/
-      if ( v13 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x6bad1d*/
+      v13 = this->vtable3; /*0x6bad0b*/
+      if ( v13 > *(&this->vtable22) && this->abstractFlags != 1 ) /*0x6bad1d*/
       {
         v14 = (int *)*this; /*0x6bad26*/
         v39 = (int *)*this; /*0x6bad2b*/
-        v15 = *(this + 3) - 1; /*0x6bad31*/
-        *(this + 2) = v13 >> 1; /*0x6bad32*/
-        *(this + 3) = v15; /*0x6bad3c*/
-        v16 = __2_YAPAXI_Z(4 * (v13 >> 1)); /*0x6bad48*/
-        v17 = 4 * *(this + 2); /*0x6bad4d*/
+        v15 = this->vtable4 - 1; /*0x6bad31*/
+        this->vtable3 = v13 >> 1; /*0x6bad32*/
+        this->vtable4 = v15; /*0x6bad3c*/
+        v16 = RA2_OPNEW(4 * (v13 >> 1)); /*0x6bad48*/
+        v17 = 4 * this->vtable3; /*0x6bad4d*/
         *this = v16; /*0x6bad54*/
         memset(v16, 0, v17); /*0x6bad5a*/
         if ( (int)v13 > 0 ) /*0x6bad65*/
         {
-          v18 = v14; /*0x6bad67*/
-          v19 = v13; /*0x6bad69*/
+          v14 = v14; /*0x6bad67*/
+          v13 = v13; /*0x6bad69*/
           do /*0x6bada4*/
           {
-            v20 = *v18; /*0x6bad6b*/
-            if ( *v18 ) /*0x6bad6b*/
+            v20 = *v14; /*0x6bad6b*/
+            if ( *v14 ) /*0x6bad6b*/
             {
               do /*0x6bad9e*/
               {
-                v21 = ((int (__thiscall *)(int))*(this + 6))(v20) & ((1 << *(this + 3)) - 1); /*0x6bad81*/
+                v21 = ((int (__thiscall *)(int))this->nextArrayIndex)(v20) & ((1 << this->vtable4) - 1); /*0x6bad81*/
                 v22 = *(_DWORD *)(*this + 4 * v21); /*0x6bad86*/
                 *(_DWORD *)(*this + 4 * v21) = v20; /*0x6bad8c*/
                 v23 = *(_DWORD *)(v20 + 776); /*0x6bad8e*/
@@ -781,13 +796,13 @@ AbstractClass * * HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
               }
               while ( v23 ); /*0x6bad9e*/
             }
-            ++v18; /*0x6bada0*/
-            --v19; /*0x6bada3*/
+            ++v14; /*0x6bada0*/
+            --v13; /*0x6bada3*/
           }
-          while ( v19 ); /*0x6bada4*/
+          while ( v13 ); /*0x6bada4*/
           v14 = v39; /*0x6bada6*/
         }
-        __3_YAXPAX_Z(v14); /*0x6badab*/
+        RA2_OPDEL(v14); /*0x6badab*/
       }
     }
     return 1; /*0x6badb6*/
@@ -807,38 +822,38 @@ AbstractClass * * HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
       }
       qmemcpy(a2, (const void *)(v24 + 4), 0x304u); /*0x6badfa*/
       *(_DWORD *)(v36 + 776) = *(_DWORD *)(v24 + 776); /*0x6bae02*/
-      --*(this + 1); /*0x6bae0e*/
+      --this->vtable2; /*0x6bae0e*/
       DeleteAndZero((void **)v24); /*0x6bae15*/
-      __3_YAXPAX_Z((void *)v24); /*0x6bae1b*/
+      RA2_OPDEL((void *)v24); /*0x6bae1b*/
       v38 = 1; /*0x6bae23*/
     }
   LABEL_24:
-    if ( v37 <= *((double *)this + 4) ) /*0x6bae34*/
+    if ( v37 <= this->needsSave ) /*0x6bae34*/
     {
-      v25 = *(this + 2); /*0x6bae3a*/
-      if ( v25 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x6bae4c*/
+      v25 = this->vtable3; /*0x6bae3a*/
+      if ( v25 > *(&this->vtable22) && this->abstractFlags != 1 ) /*0x6bae4c*/
       {
-        v26 = *(this + 3); /*0x6bae52*/
+        v26 = this->vtable4; /*0x6bae52*/
         v27 = (int *)*this; /*0x6bae55*/
         v40 = (int *)*this; /*0x6bae5a*/
-        *(this + 2) = v25 >> 1; /*0x6bae60*/
-        *(this + 3) = v26 - 1; /*0x6bae68*/
-        v28 = __2_YAPAXI_Z(4 * (v25 >> 1)); /*0x6bae73*/
-        v29 = 4 * *(this + 2); /*0x6bae78*/
+        this->vtable3 = v25 >> 1; /*0x6bae60*/
+        this->vtable4 = v26 - 1; /*0x6bae68*/
+        v28 = RA2_OPNEW(4 * (v25 >> 1)); /*0x6bae73*/
+        v29 = 4 * this->vtable3; /*0x6bae78*/
         *this = v28; /*0x6bae7f*/
         memset(v28, 0, v29); /*0x6bae85*/
         if ( (int)v25 > 0 ) /*0x6bae90*/
         {
-          v30 = v27; /*0x6bae92*/
-          v31 = v25; /*0x6bae94*/
+          v27 = v27; /*0x6bae92*/
+          v25 = v25; /*0x6bae94*/
           do /*0x6baecf*/
           {
-            v32 = *v30; /*0x6bae96*/
-            if ( *v30 ) /*0x6bae96*/
+            v32 = *v27; /*0x6bae96*/
+            if ( *v27 ) /*0x6bae96*/
             {
               do /*0x6baec9*/
               {
-                v33 = ((int (__thiscall *)(int))*(this + 6))(v32) & ((1 << *(this + 3)) - 1); /*0x6baeac*/
+                v33 = ((int (__thiscall *)(int))this->nextArrayIndex)(v32) & ((1 << this->vtable4) - 1); /*0x6baeac*/
                 v34 = *(_DWORD *)(*this + 4 * v33); /*0x6baeb1*/
                 *(_DWORD *)(*this + 4 * v33) = v32; /*0x6baeb7*/
                 v35 = *(_DWORD *)(v32 + 776); /*0x6baeb9*/
@@ -847,20 +862,22 @@ AbstractClass * * HashTable::RemoveHashTableEntry(ObjectClass * aP1, void * a2)
               }
               while ( v35 ); /*0x6baec9*/
             }
-            ++v30; /*0x6baecb*/
-            --v31; /*0x6baece*/
+            ++v27; /*0x6baecb*/
+            --v25; /*0x6baece*/
           }
-          while ( v31 ); /*0x6baecf*/
+          while ( v25 ); /*0x6baecf*/
           v27 = v40; /*0x6baed1*/
         }
-        __3_YAXPAX_Z(v27); /*0x6baed6*/
+        RA2_OPDEL(v27); /*0x6baed6*/
       }
     }
     return v38; /*0x6baede*/
   }
 }
+} // namespace gamemd
 // 0x6BAEF0
-AbstractClass * * HashTable::RebuildEx()
+namespace gamemd {
+AbstractClass * * HashTable_flat::RebuildEx()
 {
   unsigned int v2; // esi
   int *v3; // ebp
@@ -875,56 +892,56 @@ AbstractClass * * HashTable::RebuildEx()
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  v2 = *(this + 2); /*0x6baef5*/
-  if ( v2 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x6baf07*/
+  v2 = v5->vtable3; /*0x6baef5*/
+  if ( v2 > v5->u32_30 && *((_BYTE *)v5 + 20) != 1 ) /*0x6baf07*/
   {
-    v3 = (int *)*this; /*0x6baf10*/
-    v4 = *(this + 3); /*0x6baf13*/
-    v13 = (int *)*this; /*0x6baf16*/
-    *(this + 2) = v2 >> 1; /*0x6baf1c*/
-    *(this + 3) = v4 - 1; /*0x6baf24*/
-    v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x6baf2f*/
-    v6 = 4 * *(this + 2); /*0x6baf34*/
-    *this = v5; /*0x6baf3b*/
+    v3 = (int *)*v5; /*0x6baf10*/
+    v4 = v5->vtable4; /*0x6baf13*/
+    v13 = (int *)*v5; /*0x6baf16*/
+    v5->vtable3 = v2 >> 1; /*0x6baf1c*/
+    v5->vtable4 = v4 - 1; /*0x6baf24*/
+    v5 = RA2_OPNEW(4 * (v2 >> 1)); /*0x6baf2f*/
+    v6 = 4 * v5->vtable3; /*0x6baf34*/
+    *v5 = v5; /*0x6baf3b*/
     memset(v5, 0, v6); /*0x6baf40*/
     if ( (int)v2 > 0 ) /*0x6baf4b*/
     {
-      v7 = v3; /*0x6baf4d*/
-      v8 = v2; /*0x6baf4f*/
+      v3 = v3; /*0x6baf4d*/
+      v2 = v2; /*0x6baf4f*/
       do /*0x6baf89*/
       {
-        v9 = *v7; /*0x6baf51*/
-        if ( *v7 ) /*0x6baf51*/
+        v9 = *v3; /*0x6baf51*/
+        if ( *v3 ) /*0x6baf51*/
         {
           do /*0x6baf83*/
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x6baf67*/
-            v11 = *(_DWORD *)(*this + 4 * v10); /*0x6baf6b*/
-            *(_DWORD *)(*this + 4 * v10) = v9; /*0x6baf71*/
+            v10 = ((int (__thiscall *)(int))v5->nextArrayIndex)(v9) & ((1 << v5->vtable4) - 1); /*0x6baf67*/
+            v11 = *(_DWORD *)(*v5 + 4 * v10); /*0x6baf6b*/
+            *(_DWORD *)(*v5 + 4 * v10) = v9; /*0x6baf71*/
             v12 = *(_DWORD *)(v9 + 776); /*0x6baf73*/
             *(_DWORD *)(v9 + 776) = v11; /*0x6baf79*/
             v9 = v12; /*0x6baf7f*/
           }
           while ( v12 ); /*0x6baf83*/
         }
-        ++v7; /*0x6baf85*/
-        --v8; /*0x6baf88*/
+        ++v3; /*0x6baf85*/
+        --v2; /*0x6baf88*/
       }
-      while ( v8 ); /*0x6baf89*/
+      while ( v2 ); /*0x6baf89*/
       v3 = v13; /*0x6baf8b*/
     }
-    __3_YAXPAX_Z(v3); /*0x6baf90*/
+    RA2_OPDEL(v3); /*0x6baf90*/
   }
 }
+} // namespace gamemd
 // 0x724730
-ObjectClass * * HashTable::Remove(int a2)
+namespace gamemd {
+ObjectClass * * HashTable_flat::Remove(int a2)
 {
   _DWORD *v3; // esi
   _DWORD *v4; // eax
   int v5; // eax
   _DWORD *v6; // eax
-  int v7; // eax
-  void **v8; // eax
   void *v9; // eax
   void *v10; // ecx
   int *v11; // edi
@@ -941,10 +958,10 @@ ObjectClass * * HashTable::Remove(int a2)
   void *Block; // [esp+8h] [ebp-Ch] BYREF
   int v23; // [esp+Ch] [ebp-8h] BYREF
 
-  v3 = this + 147; /*0x72473d*/
-  if ( !*(this + 148) ) /*0x724745*/
+  v3 = &this->q24C; /*0x72473d*/
+  if ( !this->q250 ) /*0x724745*/
     return; /*0x724745*/
-  v4 = (_DWORD *)*(this + 151); /*0x72474b*/
+  v4 = (_DWORD *)this->q25C; /*0x72474b*/
   if ( !v4 || *v4 != a2 ) /*0x72475a*/
   {
     v5 = CommandClass::BinarySearchAction(&a2); /*0x724763*/
@@ -969,11 +986,11 @@ ObjectClass * * HashTable::Remove(int a2)
   v8 = (void **)&unk_B78820; /*0x7247a6*/
   LABEL_13:
   v9 = *v8; /*0x7247ab*/
-  v10 = (void *)*(this + 1); /*0x7247ad*/
+  v10 = (void *)this->Position; /*0x7247ad*/
   Block = v9; /*0x7247b2*/
   if ( v10 == v9 && v10 ) /*0x7247ba*/
   {
-    (*(void (__thiscall **)(int *, int *))(*this + 8))(this, this + 6); /*0x7247c5*/
+    this->release(this + 6); /*0x7247c5*/
     v9 = Block; /*0x7247c8*/
   }
   v11 = (int *)v9; /*0x7247cd*/
@@ -1007,26 +1024,28 @@ ObjectClass * * HashTable::Remove(int a2)
       }
     }
   }
-  v19 = (*(int (__thiscall **)(int *, void **))(*(this + 141) + 16))(this + 141, &Block); /*0x72486e*/
+  v19 = (*(int (__thiscall **)(int *, void **))(this->q08D + 16))(&this->q08D, &Block); /*0x72486e*/
   if ( v19 != -1 ) /*0x724875*/
   {
-    v20 = *(this + 145); /*0x724877*/
+    v20 = this->q091; /*0x724877*/
     if ( v19 < v20 ) /*0x72487c*/
     {
       v21 = v20 - 1; /*0x72487e*/
-      for ( *(this + 145) = v21; /*0x724884*/
-            v19 < *(this + 145);
-            *(_DWORD *)(*(this + 142) + 4 * v19 - 4) = *(_DWORD *)(*(this + 142) + 4 * v19) )
+      for ( this->q091 = v21; /*0x724884*/
+            v19 < this->q091;
+            *(_DWORD *)(this->q08E + 4 * v19 - 4) = *(_DWORD *)(this->q08E + 4 * v19) )
       {
         ++v19; /*0x724889*/
       }
     }
   }
   if ( Block ) /*0x72489e*/
-    __3_YAXPAX_Z(Block); /*0x7248a1*/
+    RA2_OPDEL(Block); /*0x7248a1*/
 }
+} // namespace gamemd
 // 0x7ACE60
-unsigned int HashTable::CleanupAndResize()
+namespace gamemd {
+unsigned int HashTable_flat::CleanupAndResize()
 {
   unsigned int i; // ebp
   int v3; // esi
@@ -1045,69 +1064,71 @@ unsigned int HashTable::CleanupAndResize()
   int v16; // eax
   int *v17; // [esp+10h] [ebp-4h]
 
-  for ( i = 0; i < *(this + 2); *(_DWORD *)(*this + 4 * i - 4) = 0 ) /*0x7ace67*/
+  for ( i = 0; i < *(v9 + 2); *(_DWORD *)(*v9 + 4 * i - 4) = 0 ) /*0x7ace67*/
   {
-    v3 = *(_DWORD *)(*this + 4 * i); /*0x7ace72*/
+    v3 = *(_DWORD *)(*v9 + 4 * i); /*0x7ace72*/
     while ( v3 ) /*0x7ace77*/
     {
       v4 = (void **)v3; /*0x7ace79*/
-      v3 = *(_DWORD *)(v3 + 8); /*0x7ace7b*/
+      v3 = v3->SessionClass_field_08; /*0x7ace7b*/
       DeleteAndZero(v4); /*0x7ace84*/
-      __3_YAXPAX_Z(v4); /*0x7ace8a*/
+      RA2_OPDEL(v4); /*0x7ace8a*/
     }
     ++i; /*0x7ace98*/
   }
-  result = *(this + 12); /*0x7acea8*/
-  v6 = *(this + 2); /*0x7aceab*/
-  for ( *(this + 1) = 0; v6 > result; v6 = *(this + 2) ) /*0x7aceb7*/
+  result = *(v9 + 12); /*0x7acea8*/
+  v6 = *(v9 + 2); /*0x7aceab*/
+  for ( *(v9 + 1) = 0; v6 > result; v6 = *(v9 + 2) ) /*0x7aceb7*/
   {
-    if ( *((_BYTE *)this + 20) ) /*0x7acebd*/
+    if ( *((_BYTE *)v9 + 20) ) /*0x7acebd*/
       break; /*0x7acec2*/
     if ( v6 > result ) /*0x7aceca*/
     {
-      v7 = *(this + 3); /*0x7aced0*/
-      v8 = (int *)*this; /*0x7aced3*/
-      v17 = (int *)*this; /*0x7aced7*/
-      *(this + 2) = v6 >> 1; /*0x7acede*/
-      *(this + 3) = v7 - 1; /*0x7acee8*/
-      v9 = __2_YAPAXI_Z(4 * (v6 >> 1)); /*0x7acef4*/
-      v10 = 4 * *(this + 2); /*0x7acef9*/
-      *this = v9; /*0x7acf00*/
+      v7 = *(v9 + 3); /*0x7aced0*/
+      v8 = (int *)*v9; /*0x7aced3*/
+      v17 = (int *)*v9; /*0x7aced7*/
+      *(v9 + 2) = v6 >> 1; /*0x7acede*/
+      *(v9 + 3) = v7 - 1; /*0x7acee8*/
+      v9 = RA2_OPNEW(4 * (v6 >> 1)); /*0x7acef4*/
+      v10 = 4 * *(v9 + 2); /*0x7acef9*/
+      *v9 = v9; /*0x7acf00*/
       memset(v9, 0, v10); /*0x7acf05*/
       if ( (int)v6 > 0 ) /*0x7acf10*/
       {
-        v11 = v8; /*0x7acf12*/
-        v12 = v6; /*0x7acf14*/
+        v8 = v8; /*0x7acf12*/
+        v6 = v6; /*0x7acf14*/
         do /*0x7acf48*/
         {
-          v13 = *v11; /*0x7acf16*/
-          if ( *v11 ) /*0x7acf16*/
+          v13 = *v8; /*0x7acf16*/
+          if ( *v8 ) /*0x7acf16*/
           {
             do /*0x7acf42*/
             {
-              v14 = ((int (__thiscall *)(int))*(this + 6))(v13) & ((1 << *(this + 3)) - 1); /*0x7acf2c*/
-              v15 = *(_DWORD *)(*this + 4 * v14); /*0x7acf30*/
-              *(_DWORD *)(*this + 4 * v14) = v13; /*0x7acf36*/
+              v14 = ((int (__thiscall *)(int))*(v9 + 6))(v13) & ((1 << *(v9 + 3)) - 1); /*0x7acf2c*/
+              v15 = *(_DWORD *)(*v9 + 4 * v14); /*0x7acf30*/
+              *(_DWORD *)(*v9 + 4 * v14) = v13; /*0x7acf36*/
               v16 = *(_DWORD *)(v13 + 8); /*0x7acf38*/
               *(_DWORD *)(v13 + 8) = v15; /*0x7acf3b*/
               v13 = v16; /*0x7acf3e*/
             }
             while ( v16 ); /*0x7acf42*/
           }
-          ++v11; /*0x7acf44*/
-          --v12; /*0x7acf47*/
+          ++v8; /*0x7acf44*/
+          --v6; /*0x7acf47*/
         }
-        while ( v12 ); /*0x7acf48*/
+        while ( v6 ); /*0x7acf48*/
         v8 = v17; /*0x7acf4a*/
       }
-      __3_YAXPAX_Z(v8); /*0x7acf4f*/
+      RA2_OPDEL(v8); /*0x7acf4f*/
     }
-    result = *(this + 12); /*0x7acf57*/
+    result = *(v9 + 12); /*0x7acf57*/
   }
   return result; /*0x7acf65*/
 }
+} // namespace gamemd
 // 0x7ACF70
-unsigned int HashTable::Rebuild()
+namespace gamemd {
+unsigned int HashTable_flat::Rebuild()
 {
   unsigned int i; // ebp
   int v3; // esi
@@ -1118,84 +1139,84 @@ unsigned int HashTable::Rebuild()
   int *v8; // ebp
   void *v9; // edi
   unsigned int v10; // edx
-  int *v11; // edi
-  unsigned int v12; // ebp
   int v13; // esi
   int v14; // edx
   int v15; // ecx
   int v16; // eax
   int *v17; // [esp+10h] [ebp-4h]
 
-  for ( i = 0; i < *(this + 2); *(_DWORD *)(*this + 4 * i - 4) = 0 ) /*0x7acf77*/
+  for ( i = 0; i < *(v9 + 2); *(_DWORD *)(*v9 + 4 * i - 4) = 0 ) /*0x7acf77*/
   {
-    v3 = *(_DWORD *)(*this + 4 * i); /*0x7acf82*/
+    v3 = *(_DWORD *)(*v9 + 4 * i); /*0x7acf82*/
     while ( v3 ) /*0x7acf87*/
     {
       v4 = (void **)v3; /*0x7acf89*/
-      v3 = *(_DWORD *)(v3 + 272); /*0x7acf8b*/
+      v3 = v3->u32_110; /*0x7acf8b*/
       DeleteAndZero(v4); /*0x7acf97*/
-      __3_YAXPAX_Z(v4); /*0x7acf9d*/
+      RA2_OPDEL(v4); /*0x7acf9d*/
     }
     ++i; /*0x7acfab*/
   }
-  result = *(this + 12); /*0x7acfbb*/
-  v6 = *(this + 2); /*0x7acfbe*/
-  for ( *(this + 1) = 0; v6 > result; v6 = *(this + 2) ) /*0x7acfca*/
+  result = *(v9 + 12); /*0x7acfbb*/
+  v6 = *(v9 + 2); /*0x7acfbe*/
+  for ( *(v9 + 1) = 0; v6 > result; v6 = *(v9 + 2) ) /*0x7acfca*/
   {
-    if ( *((_BYTE *)this + 20) ) /*0x7acfd0*/
+    if ( *((_BYTE *)v9 + 20) ) /*0x7acfd0*/
       break; /*0x7acfd5*/
     if ( v6 > result ) /*0x7acfdd*/
     {
-      v7 = *(this + 3); /*0x7acfe3*/
-      v8 = (int *)*this; /*0x7acfe6*/
-      v17 = (int *)*this; /*0x7acfea*/
-      *(this + 2) = v6 >> 1; /*0x7acff1*/
-      *(this + 3) = v7 - 1; /*0x7acffb*/
-      v9 = __2_YAPAXI_Z(4 * (v6 >> 1)); /*0x7ad007*/
-      v10 = 4 * *(this + 2); /*0x7ad00c*/
-      *this = v9; /*0x7ad013*/
+      v7 = *(v9 + 3); /*0x7acfe3*/
+      v8 = (int *)*v9; /*0x7acfe6*/
+      v17 = (int *)*v9; /*0x7acfea*/
+      *(v9 + 2) = v6 >> 1; /*0x7acff1*/
+      *(v9 + 3) = v7 - 1; /*0x7acffb*/
+      v9 = RA2_OPNEW(4 * (v6 >> 1)); /*0x7ad007*/
+      v10 = 4 * *(v9 + 2); /*0x7ad00c*/
+      *v9 = v9; /*0x7ad013*/
       memset(v9, 0, v10); /*0x7ad018*/
       if ( (int)v6 > 0 ) /*0x7ad023*/
       {
-        v11 = v8; /*0x7ad025*/
-        v12 = v6; /*0x7ad027*/
+        v8 = v8; /*0x7ad025*/
+        v6 = v6; /*0x7ad027*/
         do /*0x7ad061*/
         {
-          v13 = *v11; /*0x7ad029*/
-          if ( *v11 ) /*0x7ad029*/
+          v13 = *v8; /*0x7ad029*/
+          if ( *v8 ) /*0x7ad029*/
           {
             do /*0x7ad05b*/
             {
-              v14 = ((int (__thiscall *)(int))*(this + 6))(v13) & ((1 << *(this + 3)) - 1); /*0x7ad03f*/
-              v15 = *(_DWORD *)(*this + 4 * v14); /*0x7ad043*/
-              *(_DWORD *)(*this + 4 * v14) = v13; /*0x7ad049*/
+              v14 = ((int (__thiscall *)(int))*(v9 + 6))(v13) & ((1 << *(v9 + 3)) - 1); /*0x7ad03f*/
+              v15 = *(_DWORD *)(*v9 + 4 * v14); /*0x7ad043*/
+              *(_DWORD *)(*v9 + 4 * v14) = v13; /*0x7ad049*/
               v16 = *(_DWORD *)(v13 + 272); /*0x7ad04b*/
               *(_DWORD *)(v13 + 272) = v15; /*0x7ad051*/
               v13 = v16; /*0x7ad057*/
             }
             while ( v16 ); /*0x7ad05b*/
           }
-          ++v11; /*0x7ad05d*/
-          --v12; /*0x7ad060*/
+          ++v8; /*0x7ad05d*/
+          --v6; /*0x7ad060*/
         }
-        while ( v12 ); /*0x7ad061*/
+        while ( v6 ); /*0x7ad061*/
         v8 = v17; /*0x7ad063*/
       }
-      __3_YAXPAX_Z(v8); /*0x7ad068*/
+      RA2_OPDEL(v8); /*0x7ad068*/
     }
-    result = *(this + 12); /*0x7ad070*/
+    result = *(v9 + 12); /*0x7ad070*/
   }
   return result; /*0x7ad07e*/
 }
+} // namespace gamemd
 // 0x7ADC60
-int HashTable::LookupString(const char ** a2, unsigned int * a3)
+namespace gamemd {
+int HashTable_flat::LookupString(const char ** a2, unsigned int * a3)
 {
   bool result; // al
   int v4; // esi
 
-  if ( !*(this + 1) ) /*0x7adc64*/
+  if ( !*(v9 + 1) ) /*0x7adc64*/
     return 0; /*0x7adc6c*/
-  v4 = *(_DWORD *)(*this + 4 * (((int (__thiscall *)(const char **))*(this + 6))(a2) & ((1 << *(this + 3)) - 1))); /*0x7adc8a*/
+  v4 = *(_DWORD *)(*v9 + 4 * (((int (__thiscall *)(const char **))*(v9 + 6))(a2) & ((1 << *(v9 + 3)) - 1))); /*0x7adc8a*/
   if ( !v4 ) /*0x7adc8f*/
     return 0; /*0x7adc92*/
   while ( 1 ) /*0x7adc9b*/
@@ -1203,15 +1224,17 @@ int HashTable::LookupString(const char ** a2, unsigned int * a3)
     result = String::Compare((const char **)v4, a2); /*0x7adc9b*/
     if ( result ) /*0x7adca2*/
       break; /*0x7adca2*/
-    v4 = *(_DWORD *)(v4 + 112); /*0x7adca4*/
+    v4 = v4->u32_70; /*0x7adca4*/
     if ( !v4 ) /*0x7adca9*/
       return result; /*0x7adca9*/
   }
   *a3 = v4 + 4; /*0x7adcc5*/
   return 1; /*0x7adc6b*/
 }
+} // namespace gamemd
 // 0x7ADCD0
-AbstractClass * * HashTable::Insert(ObjectClass * aP1, void * a2)
+namespace gamemd {
+AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
 {
   int v4; // eax
   int v7; // ebx
@@ -1237,8 +1260,6 @@ AbstractClass * * HashTable::Insert(ObjectClass * aP1, void * a2)
   int *v27; // ebx
   void *v28; // edi
   unsigned int v29; // edx
-  int *v30; // edi
-  unsigned int v31; // ebx
   int v32; // esi
   int v33; // edx
   int v34; // ecx
@@ -1249,11 +1270,11 @@ AbstractClass * * HashTable::Insert(ObjectClass * aP1, void * a2)
   int *v39; // [esp+24h] [ebp+8h]
   int *v40; // [esp+24h] [ebp+8h]
 
-  v4 = *(this + 1); /*0x7adcdb*/
+  v4 = this->vtable2; /*0x7adcdb*/
   if ( !v4 ) /*0x7adce0*/
     return 0; /*0x7adce5*/
-  v37 = (double)(unsigned int)(v4 - 1) / (double)(int)*(this + 2); /*0x7add10*/
-  v7 = ((int (__thiscall *)(const char **))*(this + 6))(aP1) & ((1 << *(this + 3)) - 1); /*0x7add25*/
+  v37 = (double)(unsigned int)(v4 - 1) / (double)(int)this->vtable3; /*0x7add10*/
+  v7 = ((int (__thiscall *)(const char **))this->nextArrayIndex)(aP1) & ((1 << this->vtable4) - 1); /*0x7add25*/
   v8 = *(_DWORD *)(*this + 4 * v7); /*0x7add27*/
   v36 = v8; /*0x7add2c*/
   if ( !v8 ) /*0x7add30*/
@@ -1266,38 +1287,38 @@ AbstractClass * * HashTable::Insert(ObjectClass * aP1, void * a2)
     if ( v9 ) /*0x7add67*/
     {
       DeleteAndZero(*(void ***)(*this + 4 * v7)); /*0x7add6b*/
-      __3_YAXPAX_Z(v9); /*0x7add71*/
+      RA2_OPDEL(v9); /*0x7add71*/
     }
     *(_DWORD *)(*this + 4 * v7) = v10; /*0x7add80*/
-    v11 = v37 < *((double *)this + 4); /*0x7add86*/
-    v12 = v37 == *((double *)this + 4); /*0x7add86*/
-    --*(this + 1); /*0x7add8a*/
+    v11 = v37 < this->needsSave; /*0x7add86*/
+    v12 = v37 == this->needsSave; /*0x7add86*/
+    --this->vtable2; /*0x7add8a*/
     if ( v11 || v12 ) /*0x7add8f*/
     {
-      v13 = *(this + 2); /*0x7add98*/
-      if ( v13 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7addaa*/
+      v13 = this->vtable3; /*0x7add98*/
+      if ( v13 > *(&this->vtable22) && this->abstractFlags != 1 ) /*0x7addaa*/
       {
         v14 = (int *)*this; /*0x7addb3*/
         v39 = (int *)*this; /*0x7addb8*/
-        v15 = *(this + 3) - 1; /*0x7addbe*/
-        *(this + 2) = v13 >> 1; /*0x7addbf*/
-        *(this + 3) = v15; /*0x7addc9*/
-        v16 = __2_YAPAXI_Z(4 * (v13 >> 1)); /*0x7addd5*/
-        v17 = 4 * *(this + 2); /*0x7addda*/
+        v15 = this->vtable4 - 1; /*0x7addbe*/
+        this->vtable3 = v13 >> 1; /*0x7addbf*/
+        this->vtable4 = v15; /*0x7addc9*/
+        v16 = RA2_OPNEW(4 * (v13 >> 1)); /*0x7addd5*/
+        v17 = 4 * this->vtable3; /*0x7addda*/
         *this = v16; /*0x7adde1*/
         memset(v16, 0, v17); /*0x7adde7*/
         if ( (int)v13 > 0 ) /*0x7addf2*/
         {
-          v18 = v14; /*0x7addf4*/
-          v19 = v13; /*0x7addf6*/
+          v14 = v14; /*0x7addf4*/
+          v13 = v13; /*0x7addf6*/
           do /*0x7ade2b*/
           {
-            v20 = *v18; /*0x7addf8*/
-            if ( *v18 ) /*0x7addf8*/
+            v20 = *v14; /*0x7addf8*/
+            if ( *v14 ) /*0x7addf8*/
             {
               do /*0x7ade25*/
               {
-                v21 = ((int (__thiscall *)(int))*(this + 6))(v20) & ((1 << *(this + 3)) - 1); /*0x7ade0e*/
+                v21 = ((int (__thiscall *)(int))this->nextArrayIndex)(v20) & ((1 << this->vtable4) - 1); /*0x7ade0e*/
                 v22 = *(_DWORD *)(*this + 4 * v21); /*0x7ade13*/
                 *(_DWORD *)(*this + 4 * v21) = v20; /*0x7ade19*/
                 v23 = *(_DWORD *)(v20 + 112); /*0x7ade1b*/
@@ -1306,13 +1327,13 @@ AbstractClass * * HashTable::Insert(ObjectClass * aP1, void * a2)
               }
               while ( v23 ); /*0x7ade25*/
             }
-            ++v18; /*0x7ade27*/
-            --v19; /*0x7ade2a*/
+            ++v14; /*0x7ade27*/
+            --v13; /*0x7ade2a*/
           }
-          while ( v19 ); /*0x7ade2b*/
+          while ( v13 ); /*0x7ade2b*/
           v14 = v39; /*0x7ade2d*/
         }
-        __3_YAXPAX_Z(v14); /*0x7ade32*/
+        RA2_OPDEL(v14); /*0x7ade32*/
       }
     }
     return 1; /*0x7ade3d*/
@@ -1332,38 +1353,38 @@ AbstractClass * * HashTable::Insert(ObjectClass * aP1, void * a2)
       }
       qmemcpy(a2, (const void *)(v24 + 4), 0x6Cu); /*0x7ade7b*/
       *(_DWORD *)(v36 + 112) = *(_DWORD *)(v24 + 112); /*0x7ade80*/
-      --*(this + 1); /*0x7ade89*/
+      --this->vtable2; /*0x7ade89*/
       DeleteAndZero((void **)v24); /*0x7ade90*/
-      __3_YAXPAX_Z((void *)v24); /*0x7ade96*/
+      RA2_OPDEL((void *)v24); /*0x7ade96*/
       v38 = 1; /*0x7ade9e*/
     }
   LABEL_24:
-    if ( v37 <= *((double *)this + 4) ) /*0x7adeaf*/
+    if ( v37 <= this->needsSave ) /*0x7adeaf*/
     {
-      v25 = *(this + 2); /*0x7adeb5*/
-      if ( v25 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7adec7*/
+      v25 = this->vtable3; /*0x7adeb5*/
+      if ( v25 > *(&this->vtable22) && this->abstractFlags != 1 ) /*0x7adec7*/
       {
-        v26 = *(this + 3); /*0x7adecd*/
+        v26 = this->vtable4; /*0x7adecd*/
         v27 = (int *)*this; /*0x7aded0*/
         v40 = (int *)*this; /*0x7aded5*/
-        *(this + 2) = v25 >> 1; /*0x7adedb*/
-        *(this + 3) = v26 - 1; /*0x7adee3*/
-        v28 = __2_YAPAXI_Z(4 * (v25 >> 1)); /*0x7adeee*/
-        v29 = 4 * *(this + 2); /*0x7adef3*/
+        this->vtable3 = v25 >> 1; /*0x7adedb*/
+        this->vtable4 = v26 - 1; /*0x7adee3*/
+        v28 = RA2_OPNEW(4 * (v25 >> 1)); /*0x7adeee*/
+        v29 = 4 * this->vtable3; /*0x7adef3*/
         *this = v28; /*0x7adefa*/
         memset(v28, 0, v29); /*0x7adf00*/
         if ( (int)v25 > 0 ) /*0x7adf0b*/
         {
-          v30 = v27; /*0x7adf0d*/
-          v31 = v25; /*0x7adf0f*/
+          v27 = v27; /*0x7adf0d*/
+          v25 = v25; /*0x7adf0f*/
           do /*0x7adf44*/
           {
-            v32 = *v30; /*0x7adf11*/
-            if ( *v30 ) /*0x7adf11*/
+            v32 = *v27; /*0x7adf11*/
+            if ( *v27 ) /*0x7adf11*/
             {
               do /*0x7adf3e*/
               {
-                v33 = ((int (__thiscall *)(int))*(this + 6))(v32) & ((1 << *(this + 3)) - 1); /*0x7adf27*/
+                v33 = ((int (__thiscall *)(int))this->nextArrayIndex)(v32) & ((1 << this->vtable4) - 1); /*0x7adf27*/
                 v34 = *(_DWORD *)(*this + 4 * v33); /*0x7adf2c*/
                 *(_DWORD *)(*this + 4 * v33) = v32; /*0x7adf32*/
                 v35 = *(_DWORD *)(v32 + 112); /*0x7adf34*/
@@ -1372,20 +1393,22 @@ AbstractClass * * HashTable::Insert(ObjectClass * aP1, void * a2)
               }
               while ( v35 ); /*0x7adf3e*/
             }
-            ++v30; /*0x7adf40*/
-            --v31; /*0x7adf43*/
+            ++v27; /*0x7adf40*/
+            --v25; /*0x7adf43*/
           }
-          while ( v31 ); /*0x7adf44*/
+          while ( v25 ); /*0x7adf44*/
           v27 = v40; /*0x7adf46*/
         }
-        __3_YAXPAX_Z(v27); /*0x7adf4b*/
+        RA2_OPDEL(v27); /*0x7adf4b*/
       }
     }
     return v38; /*0x7adf53*/
   }
 }
+} // namespace gamemd
 // 0x7AE1F0
-AbstractClass * * HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
+namespace gamemd {
+AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
 {
   int v4; // eax
   int v7; // edi
@@ -1399,8 +1422,7 @@ AbstractClass * * HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
   int *v15; // ebx
   void *v16; // edi
   unsigned int v17; // edx
-  int v18; // edi
-  int v19; // edx
+  int v13; // edx
   int v20; // ecx
   int v21; // eax
   int v22; // edi
@@ -1418,11 +1440,11 @@ AbstractClass * * HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
   int *v34; // [esp+20h] [ebp+8h]
   int *v35; // [esp+20h] [ebp+8h]
 
-  v4 = *(this + 1); /*0x7ae1fb*/
+  v4 = this->vtable2; /*0x7ae1fb*/
   if ( !v4 ) /*0x7ae200*/
     return 0; /*0x7ae205*/
-  v32 = (double)(unsigned int)(v4 - 1) / (double)(int)*(this + 2); /*0x7ae230*/
-  v7 = ((int (__thiscall *)(const char **))*(this + 6))(aP1) & ((1 << *(this + 3)) - 1); /*0x7ae244*/
+  v32 = (double)(unsigned int)(v4 - 1) / (double)(int)this->vtable3; /*0x7ae230*/
+  v7 = ((int (__thiscall *)(const char **))this->nextArrayIndex)(aP1) & ((1 << this->vtable4) - 1); /*0x7ae244*/
   v8 = *(_DWORD *)(*this + 4 * v7); /*0x7ae246*/
   if ( !v8 ) /*0x7ae24b*/
     return 0; /*0x7ae250*/
@@ -1434,24 +1456,24 @@ AbstractClass * * HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
     if ( v9 ) /*0x7ae27c*/
     {
       DeleteAndZero(*(void ***)(*this + 4 * v7)); /*0x7ae280*/
-      __3_YAXPAX_Z(v9); /*0x7ae286*/
+      RA2_OPDEL(v9); /*0x7ae286*/
     }
     *(_DWORD *)(*this + 4 * v7) = v10; /*0x7ae294*/
-    v11 = v32 < *((double *)this + 4); /*0x7ae29a*/
-    v12 = v32 == *((double *)this + 4); /*0x7ae29a*/
-    --*(this + 1); /*0x7ae29e*/
+    v11 = v32 < this->needsSave; /*0x7ae29a*/
+    v12 = v32 == this->needsSave; /*0x7ae29a*/
+    --this->vtable2; /*0x7ae29e*/
     if ( v11 || v12 ) /*0x7ae2a3*/
     {
-      v13 = *(this + 2); /*0x7ae2ac*/
-      if ( v13 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7ae2be*/
+      v13 = this->vtable3; /*0x7ae2ac*/
+      if ( v13 > *(&this->vtable22) && this->abstractFlags != 1 ) /*0x7ae2be*/
       {
-        v14 = *(this + 3); /*0x7ae2c0*/
+        v14 = this->vtable4; /*0x7ae2c0*/
         v15 = (int *)*this; /*0x7ae2c3*/
         v34 = (int *)*this; /*0x7ae2c7*/
-        *(this + 2) = v13 >> 1; /*0x7ae2cd*/
-        *(this + 3) = v14 - 1; /*0x7ae2d5*/
-        v16 = __2_YAPAXI_Z(4 * (v13 >> 1)); /*0x7ae2e0*/
-        v17 = 4 * *(this + 2); /*0x7ae2e5*/
+        this->vtable3 = v13 >> 1; /*0x7ae2cd*/
+        this->vtable4 = v14 - 1; /*0x7ae2d5*/
+        v16 = RA2_OPNEW(4 * (v13 >> 1)); /*0x7ae2e0*/
+        v17 = 4 * this->vtable3; /*0x7ae2e5*/
         *this = v16; /*0x7ae2ec*/
         memset(v16, 0, v17); /*0x7ae2f1*/
         if ( (int)v13 > 0 ) /*0x7ae2fc*/
@@ -1463,7 +1485,7 @@ AbstractClass * * HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
             {
               do /*0x7ae32a*/
               {
-                v19 = ((int (__thiscall *)(int))*(this + 6))(v18) & ((1 << *(this + 3)) - 1); /*0x7ae314*/
+                v19 = ((int (__thiscall *)(int))this->nextArrayIndex)(v18) & ((1 << this->vtable4) - 1); /*0x7ae314*/
                 v20 = *(_DWORD *)(*this + 4 * v19); /*0x7ae318*/
                 *(_DWORD *)(*this + 4 * v19) = v18; /*0x7ae31e*/
                 v21 = *(_DWORD *)(v18 + 8); /*0x7ae320*/
@@ -1478,7 +1500,7 @@ AbstractClass * * HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
           while ( v13 ); /*0x7ae330*/
           v15 = v34; /*0x7ae332*/
         }
-        __3_YAXPAX_Z(v15); /*0x7ae337*/
+        RA2_OPDEL(v15); /*0x7ae337*/
       }
     }
     return 1; /*0x7ae342*/
@@ -1498,24 +1520,24 @@ AbstractClass * * HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
       }
       *aP2 = *(_DWORD *)(v22 + 4); /*0x7ae375*/
       *(_DWORD *)(v8 + 8) = *(_DWORD *)(v22 + 8); /*0x7ae37a*/
-      --*(this + 1); /*0x7ae383*/
+      --this->vtable2; /*0x7ae383*/
       DeleteAndZero((void **)v22); /*0x7ae38a*/
-      __3_YAXPAX_Z((void *)v22); /*0x7ae390*/
+      RA2_OPDEL((void *)v22); /*0x7ae390*/
       v33 = 1; /*0x7ae398*/
     }
   LABEL_23:
-    if ( v32 <= *((double *)this + 4) ) /*0x7ae3a9*/
+    if ( v32 <= this->needsSave ) /*0x7ae3a9*/
     {
-      v23 = *(this + 2); /*0x7ae3af*/
-      if ( v23 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7ae3c1*/
+      v23 = this->vtable3; /*0x7ae3af*/
+      if ( v23 > *(&this->vtable22) && this->abstractFlags != 1 ) /*0x7ae3c1*/
       {
         v24 = (int *)*this; /*0x7ae3ca*/
         v35 = (int *)*this; /*0x7ae3ce*/
-        v25 = *(this + 3) - 1; /*0x7ae3d4*/
-        *(this + 2) = v23 >> 1; /*0x7ae3d5*/
-        *(this + 3) = v25; /*0x7ae3df*/
-        v26 = __2_YAPAXI_Z(4 * (v23 >> 1)); /*0x7ae3eb*/
-        v27 = 4 * *(this + 2); /*0x7ae3f0*/
+        v25 = this->vtable4 - 1; /*0x7ae3d4*/
+        this->vtable3 = v23 >> 1; /*0x7ae3d5*/
+        this->vtable4 = v25; /*0x7ae3df*/
+        v26 = RA2_OPNEW(4 * (v23 >> 1)); /*0x7ae3eb*/
+        v27 = 4 * this->vtable3; /*0x7ae3f0*/
         *this = v26; /*0x7ae3f7*/
         memset(v26, 0, v27); /*0x7ae3fc*/
         if ( (int)v23 > 0 ) /*0x7ae407*/
@@ -1527,7 +1549,7 @@ AbstractClass * * HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
             {
               do /*0x7ae435*/
               {
-                v29 = ((int (__thiscall *)(int))*(this + 6))(v28) & ((1 << *(this + 3)) - 1); /*0x7ae41f*/
+                v29 = ((int (__thiscall *)(int))this->nextArrayIndex)(v28) & ((1 << this->vtable4) - 1); /*0x7ae41f*/
                 v30 = *(_DWORD *)(*this + 4 * v29); /*0x7ae423*/
                 *(_DWORD *)(*this + 4 * v29) = v28; /*0x7ae429*/
                 v31 = *(_DWORD *)(v28 + 8); /*0x7ae42b*/
@@ -1542,14 +1564,16 @@ AbstractClass * * HashTable::Lookup(ObjectClass * aP1, TechnoTypeClass * aP2)
           while ( v23 ); /*0x7ae43b*/
           v24 = v35; /*0x7ae43d*/
         }
-        __3_YAXPAX_Z(v24); /*0x7ae442*/
+        RA2_OPDEL(v24); /*0x7ae442*/
       }
     }
     return v33; /*0x7ae44a*/
   }
 }
+} // namespace gamemd
 // 0x7AE510
-AbstractClass * * HashTable::Grow()
+namespace gamemd {
+AbstractClass * * HashTable_flat::Grow()
 {
   int v2; // esi
   _DWORD *v3; // ebp
@@ -1564,58 +1588,57 @@ AbstractClass * * HashTable::Grow()
   int v12; // eax
   _DWORD *v13; // [esp+4h] [ebp-4h]
 
-  if ( *((_BYTE *)this + 20) != 1 ) /*0x7ae518*/
+  if ( this->abstractFlags != 1 ) /*0x7ae518*/
   {
-    v2 = *(this + 2); /*0x7ae520*/
+    v2 = this->vtable3; /*0x7ae520*/
     v3 = (_DWORD *)*this; /*0x7ae523*/
     v4 = *(this + 3) + 1; /*0x7ae52c*/
     *(this + 2) = 2 * v2; /*0x7ae52d*/
-    v13 = v3; /*0x7ae530*/
-    *(this + 3) = v4; /*0x7ae538*/
-    v5 = __2_YAPAXI_Z(8 * v2); /*0x7ae543*/
-    v6 = 4 * *(this + 2); /*0x7ae548*/
-    *this = v5; /*0x7ae54f*/
+    v3 = v3; /*0x7ae530*/
+    v5->vtable4 = v4; /*0x7ae538*/
+    v5 = RA2_OPNEW(8 * v2); /*0x7ae543*/
+    v6 = 4 * v5->vtable3; /*0x7ae548*/
+    *v5 = v5; /*0x7ae54f*/
     memset(v5, 0, v6); /*0x7ae554*/
     if ( v2 > 0 ) /*0x7ae55f*/
     {
-      v7 = v3; /*0x7ae561*/
-      v8 = v2; /*0x7ae563*/
+      v3 = v3; /*0x7ae561*/
+      v2 = v2; /*0x7ae563*/
       do /*0x7ae597*/
       {
-        v9 = *v7; /*0x7ae565*/
-        if ( *v7 ) /*0x7ae565*/
+        v9 = *v3; /*0x7ae565*/
+        if ( *v3 ) /*0x7ae565*/
         {
           do /*0x7ae591*/
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x7ae57b*/
-            v11 = *(_DWORD *)(*this + 4 * v10); /*0x7ae57f*/
-            *(_DWORD *)(*this + 4 * v10) = v9; /*0x7ae585*/
+            v10 = ((int (__thiscall *)(int))v5->nextArrayIndex)(v9) & ((1 << v5->vtable4) - 1); /*0x7ae57b*/
+            v11 = *(_DWORD *)(*v5 + 4 * v10); /*0x7ae57f*/
+            *(_DWORD *)(*v5 + 4 * v10) = v9; /*0x7ae585*/
             v12 = *(_DWORD *)(v9 + 8); /*0x7ae587*/
             *(_DWORD *)(v9 + 8) = v11; /*0x7ae58a*/
             v9 = v12; /*0x7ae58d*/
           }
           while ( v12 ); /*0x7ae591*/
         }
-        ++v7; /*0x7ae593*/
-        --v8; /*0x7ae596*/
+        ++v3; /*0x7ae593*/
+        --v2; /*0x7ae596*/
       }
-      while ( v8 ); /*0x7ae597*/
-      v3 = v13; /*0x7ae599*/
+      while ( v2 ); /*0x7ae597*/
+      v3 = v3; /*0x7ae599*/
     }
-    __3_YAXPAX_Z(v3); /*0x7ae59e*/
+    RA2_OPDEL(v3); /*0x7ae59e*/
   }
 }
+} // namespace gamemd
 // 0x7AE950
-AbstractClass * * HashTable::FindWOLHashTableEntry(const char ** a2, void * a3)
+namespace gamemd {
+AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void * a3)
 {
   int v4; // eax
-  int v7; // ebx
-  int v8; // esi
   _DWORD *v9; // esi
   int v10; // edi
   bool v11; // c0
   bool v12; // c3
-  unsigned int v13; // esi
   int *v14; // ebx
   int v15; // edi
   void *v16; // edi
@@ -1632,8 +1655,6 @@ AbstractClass * * HashTable::FindWOLHashTableEntry(const char ** a2, void * a3)
   int *v27; // ebx
   void *v28; // edi
   unsigned int v29; // edx
-  int *v30; // edi
-  unsigned int v31; // ebx
   int v32; // esi
   int v33; // edx
   int v34; // ecx
@@ -1644,11 +1665,11 @@ AbstractClass * * HashTable::FindWOLHashTableEntry(const char ** a2, void * a3)
   int *v39; // [esp+24h] [ebp+8h]
   int *v40; // [esp+24h] [ebp+8h]
 
-  v4 = *(this + 1); /*0x7ae95b*/
+  v4 = this->vtable2; /*0x7ae95b*/
   if ( !v4 ) /*0x7ae960*/
     return 0; /*0x7ae965*/
-  v37 = (double)(unsigned int)(v4 - 1) / (double)(int)*(this + 2); /*0x7ae990*/
-  v7 = ((int (__thiscall *)(const char **))*(this + 6))(a2) & ((1 << *(this + 3)) - 1); /*0x7ae9a5*/
+  v37 = (double)(unsigned int)(v4 - 1) / (double)(int)this->vtable3; /*0x7ae990*/
+  v7 = ((int (__thiscall *)(const char **))this->nextArrayIndex)(a2) & ((1 << this->vtable4) - 1); /*0x7ae9a5*/
   v8 = *(_DWORD *)(*this + 4 * v7); /*0x7ae9a7*/
   v36 = v8; /*0x7ae9ac*/
   if ( !v8 ) /*0x7ae9b0*/
@@ -1661,38 +1682,38 @@ AbstractClass * * HashTable::FindWOLHashTableEntry(const char ** a2, void * a3)
     if ( v9 ) /*0x7ae9ea*/
     {
       DeleteAndZero(*(void ***)(*this + 4 * v7)); /*0x7ae9ee*/
-      __3_YAXPAX_Z(v9); /*0x7ae9f4*/
+      RA2_OPDEL(v9); /*0x7ae9f4*/
     }
     *(_DWORD *)(*this + 4 * v7) = v10; /*0x7aea03*/
-    v11 = v37 < *((double *)this + 4); /*0x7aea09*/
-    v12 = v37 == *((double *)this + 4); /*0x7aea09*/
-    --*(this + 1); /*0x7aea0d*/
+    v11 = v37 < this->needsSave; /*0x7aea09*/
+    v12 = v37 == this->needsSave; /*0x7aea09*/
+    --this->vtable2; /*0x7aea0d*/
     if ( v11 || v12 ) /*0x7aea12*/
     {
-      v13 = *(this + 2); /*0x7aea1b*/
-      if ( v13 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7aea2d*/
+      v13 = this->vtable3; /*0x7aea1b*/
+      if ( v13 > *(&this->vtable22) && this->abstractFlags != 1 ) /*0x7aea2d*/
       {
         v14 = (int *)*this; /*0x7aea36*/
         v39 = (int *)*this; /*0x7aea3b*/
-        v15 = *(this + 3) - 1; /*0x7aea41*/
-        *(this + 2) = v13 >> 1; /*0x7aea42*/
-        *(this + 3) = v15; /*0x7aea4c*/
-        v16 = __2_YAPAXI_Z(4 * (v13 >> 1)); /*0x7aea58*/
-        v17 = 4 * *(this + 2); /*0x7aea5d*/
+        v15 = this->vtable4 - 1; /*0x7aea41*/
+        this->vtable3 = v13 >> 1; /*0x7aea42*/
+        this->vtable4 = v15; /*0x7aea4c*/
+        v16 = RA2_OPNEW(4 * (v13 >> 1)); /*0x7aea58*/
+        v17 = 4 * this->vtable3; /*0x7aea5d*/
         *this = v16; /*0x7aea64*/
         memset(v16, 0, v17); /*0x7aea6a*/
         if ( (int)v13 > 0 ) /*0x7aea75*/
         {
-          v18 = v14; /*0x7aea77*/
-          v19 = v13; /*0x7aea79*/
+          v14 = v14; /*0x7aea77*/
+          v13 = v13; /*0x7aea79*/
           do /*0x7aeab4*/
           {
-            v20 = *v18; /*0x7aea7b*/
-            if ( *v18 ) /*0x7aea7b*/
+            v20 = *v14; /*0x7aea7b*/
+            if ( *v14 ) /*0x7aea7b*/
             {
               do /*0x7aeaae*/
               {
-                v21 = ((int (__thiscall *)(int))*(this + 6))(v20) & ((1 << *(this + 3)) - 1); /*0x7aea91*/
+                v21 = ((int (__thiscall *)(int))this->nextArrayIndex)(v20) & ((1 << this->vtable4) - 1); /*0x7aea91*/
                 v22 = *(_DWORD *)(*this + 4 * v21); /*0x7aea96*/
                 *(_DWORD *)(*this + 4 * v21) = v20; /*0x7aea9c*/
                 v23 = *(_DWORD *)(v20 + 272); /*0x7aea9e*/
@@ -1701,13 +1722,13 @@ AbstractClass * * HashTable::FindWOLHashTableEntry(const char ** a2, void * a3)
               }
               while ( v23 ); /*0x7aeaae*/
             }
-            ++v18; /*0x7aeab0*/
-            --v19; /*0x7aeab3*/
+            ++v14; /*0x7aeab0*/
+            --v13; /*0x7aeab3*/
           }
-          while ( v19 ); /*0x7aeab4*/
+          while ( v13 ); /*0x7aeab4*/
           v14 = v39; /*0x7aeab6*/
         }
-        __3_YAXPAX_Z(v14); /*0x7aeabb*/
+        RA2_OPDEL(v14); /*0x7aeabb*/
       }
     }
     return 1; /*0x7aeac6*/
@@ -1727,38 +1748,38 @@ AbstractClass * * HashTable::FindWOLHashTableEntry(const char ** a2, void * a3)
       }
       qmemcpy(a3, (const void *)(v24 + 4), 0x10Cu); /*0x7aeb0a*/
       *(_DWORD *)(v36 + 272) = *(_DWORD *)(v24 + 272); /*0x7aeb12*/
-      --*(this + 1); /*0x7aeb1e*/
+      --this->vtable2; /*0x7aeb1e*/
       DeleteAndZero((void **)v24); /*0x7aeb25*/
-      __3_YAXPAX_Z((void *)v24); /*0x7aeb2b*/
+      RA2_OPDEL((void *)v24); /*0x7aeb2b*/
       v38 = 1; /*0x7aeb33*/
     }
   LABEL_24:
-    if ( v37 <= *((double *)this + 4) ) /*0x7aeb44*/
+    if ( v37 <= this->needsSave ) /*0x7aeb44*/
     {
-      v25 = *(this + 2); /*0x7aeb4a*/
-      if ( v25 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7aeb5c*/
+      v25 = this->vtable3; /*0x7aeb4a*/
+      if ( v25 > *(&this->vtable22) && this->abstractFlags != 1 ) /*0x7aeb5c*/
       {
-        v26 = *(this + 3); /*0x7aeb62*/
+        v26 = this->vtable4; /*0x7aeb62*/
         v27 = (int *)*this; /*0x7aeb65*/
         v40 = (int *)*this; /*0x7aeb6a*/
-        *(this + 2) = v25 >> 1; /*0x7aeb70*/
-        *(this + 3) = v26 - 1; /*0x7aeb78*/
-        v28 = __2_YAPAXI_Z(4 * (v25 >> 1)); /*0x7aeb83*/
-        v29 = 4 * *(this + 2); /*0x7aeb88*/
+        this->vtable3 = v25 >> 1; /*0x7aeb70*/
+        this->vtable4 = v26 - 1; /*0x7aeb78*/
+        v28 = RA2_OPNEW(4 * (v25 >> 1)); /*0x7aeb83*/
+        v29 = 4 * this->vtable3; /*0x7aeb88*/
         *this = v28; /*0x7aeb8f*/
         memset(v28, 0, v29); /*0x7aeb95*/
         if ( (int)v25 > 0 ) /*0x7aeba0*/
         {
-          v30 = v27; /*0x7aeba2*/
-          v31 = v25; /*0x7aeba4*/
+          v27 = v27; /*0x7aeba2*/
+          v25 = v25; /*0x7aeba4*/
           do /*0x7aebdf*/
           {
-            v32 = *v30; /*0x7aeba6*/
-            if ( *v30 ) /*0x7aeba6*/
+            v32 = *v27; /*0x7aeba6*/
+            if ( *v27 ) /*0x7aeba6*/
             {
               do /*0x7aebd9*/
               {
-                v33 = ((int (__thiscall *)(int))*(this + 6))(v32) & ((1 << *(this + 3)) - 1); /*0x7aebbc*/
+                v33 = ((int (__thiscall *)(int))this->nextArrayIndex)(v32) & ((1 << this->vtable4) - 1); /*0x7aebbc*/
                 v34 = *(_DWORD *)(*this + 4 * v33); /*0x7aebc1*/
                 *(_DWORD *)(*this + 4 * v33) = v32; /*0x7aebc7*/
                 v35 = *(_DWORD *)(v32 + 272); /*0x7aebc9*/
@@ -1767,20 +1788,22 @@ AbstractClass * * HashTable::FindWOLHashTableEntry(const char ** a2, void * a3)
               }
               while ( v35 ); /*0x7aebd9*/
             }
-            ++v30; /*0x7aebdb*/
-            --v31; /*0x7aebde*/
+            ++v27; /*0x7aebdb*/
+            --v25; /*0x7aebde*/
           }
-          while ( v31 ); /*0x7aebdf*/
+          while ( v25 ); /*0x7aebdf*/
           v27 = v40; /*0x7aebe1*/
         }
-        __3_YAXPAX_Z(v27); /*0x7aebe6*/
+        RA2_OPDEL(v27); /*0x7aebe6*/
       }
     }
     return v38; /*0x7aebee*/
   }
 }
+} // namespace gamemd
 // 0x7AEC00
-void HashTable::Shrink()
+namespace gamemd {
+void HashTable_flat::Shrink()
 {
   unsigned int v2; // esi
   int *v3; // ebp
@@ -1795,15 +1818,15 @@ void HashTable::Shrink()
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  v2 = *(this + 2); /*0x7aec05*/
-  if ( v2 > *(this + 12) && *((_BYTE *)this + 20) != 1 ) /*0x7aec17*/
+  v2 = this->vtable3; /*0x7aec05*/
+  if ( v2 > *(&this->vtable22) && this->abstractFlags != 1 ) /*0x7aec17*/
   {
     v3 = (int *)*this; /*0x7aec20*/
-    v4 = *(this + 3); /*0x7aec23*/
+    v4 = this->vtable4; /*0x7aec23*/
     v13 = (int *)*this; /*0x7aec26*/
-    *(this + 2) = v2 >> 1; /*0x7aec2c*/
+    this->vtable3 = v2 >> 1; /*0x7aec2c*/
     *(this + 3) = v4 - 1; /*0x7aec34*/
-    v5 = __2_YAPAXI_Z(4 * (v2 >> 1)); /*0x7aec3f*/
+    v5 = RA2_OPNEW(4 * (v2 >> 1)); /*0x7aec3f*/
     v6 = 4 * *(this + 2); /*0x7aec44*/
     *this = v5; /*0x7aec4b*/
     memset(v5, 0, v6); /*0x7aec50*/
@@ -1833,11 +1856,14 @@ void HashTable::Shrink()
       while ( v8 ); /*0x7aec99*/
       v3 = v13; /*0x7aec9b*/
     }
-    __3_YAXPAX_Z(v3); /*0x7aeca0*/
+    RA2_OPDEL(v3); /*0x7aeca0*/
   }
 }
+} // namespace gamemd
 // 0x625070
-int HashTable::ComputeHash(int a2)
+namespace gamemd {
+int HashTable_flat::ComputeHash(int a2)
 {
   return (*(int (__thiscall **)(int))(this + 24))(a2) & ((1 << *(_DWORD *)(this + 12)) - 1); /*0x625084*/
 }
+} // namespace gamemd

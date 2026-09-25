@@ -1,6 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/UnitClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/RadarClass_e4.hpp"
 
 // 0x5D7030
 namespace gamemd {
@@ -22,7 +27,7 @@ void AI_CreateMCV()
   v4 = BuildingClass::FindBySWType(ppv, (int)g_RulesClass_Instance + 2848); /*0x5d705e*/
   if ( v4 ) /*0x5d7062*/
   {
-    v5 = __2_YAPAXI_Z(0x8E8u); /*0x5d7069*/
+    v5 = RA2_OPNEW(0x8E8u); /*0x5d7069*/
     if ( v5 ) /*0x5d7073*/
     {
       v6 = (int *)UnitClass::Construct((int)v5, v4, v3); /*0x5d7079*/

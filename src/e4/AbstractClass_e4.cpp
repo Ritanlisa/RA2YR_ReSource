@@ -8,6 +8,8 @@
 #include "e4/classes/MPCooperative_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x438E70
 namespace gamemd {
@@ -23,21 +25,21 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
   int v11; // edx
   _DWORD v12[3]; // [esp+Ch] [ebp-Ch] BYREF
 
-  if ( aP1 && (*((int (__thiscall **)(#375 **))*aP1 + 11))(aP1) == 15 && aP2 && !aP2[14] ) /*0x438ea3*/
+  if ( aP1 && (*((int (__thiscall **)(void **))*aP1 + 11))(aP1) == 15 && aP2 && !aP2[14] ) /*0x438ea3*/
   {
-    v4 = (AbstractClass *)__2_YAPAXI_Z(0x5Cu); /*0x438eaf*/
+    v4 = (AbstractClass *)RA2_OPNEW(0x5Cu); /*0x438eaf*/
     v5 = v4; /*0x438eb4*/
     if ( v4 ) /*0x438ebb*/
     {
       AbstractClass::Constructor(v4); /*0x438ec3*/
       *(int *)((char *)v5[2].parent_gap + 2) = 0; /*0x438ecb*/
-      v5->parent_gap[0] = (int)&BombClass::`vftable'; /*0x438ece*/
-      v5->parent_gap[1] = (int)&BombClass::`vftable'; /*0x438ed4*/
-      v5->parent_gap[2] = (int)&BombClass::`vftable'; /*0x438edb*/
-      v5->parent_gap[3] = (int)&BombClass::`vftable'; /*0x438ee2*/
+      v5->parent_gap[0] = (int)&(void*)(void*)&BombClass_vftable; /*0x438ece*/
+      v5->parent_gap[1] = (int)&(void*)(void*)&BombClass_vftable; /*0x438ed4*/
+      v5->parent_gap[2] = (int)&(void*)(void*)&BombClass_vftable; /*0x438edb*/
+      v5->parent_gap[3] = (int)&(void*)(void*)&BombClass_vftable; /*0x438ee2*/
       *(_DWORD *)&v5->Dirty = 0; /*0x438ee9*/
       *(int *)((char *)v5[1].parent_gap + 3) = 0; /*0x438eec*/
-      BYTE2(v5[2].parent_gap[1]) = 0; /*0x438eef*/
+      IDA_BYTE2(v5[2].parent_gap[1]) = 0; /*0x438eef*/
       AudioController::Init((int *)((char *)&v5[1].parent_gap[4] + 3)); /*0x438ef2*/
       *(int *)((char *)&v5[1].RefCount + 3) = g_RulesClass_Instance->BunkerWallsDownSound; /*0x438f03*/
       if ( dword_89C678 < dword_89C670 /*0x438f37*/
@@ -56,7 +58,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     {
       v5 = 0; /*0x438f58*/
     }
-    *(_DWORD *)&v5->Dirty = (*((int (__thiscall **)(#375 **))*aP1 + 15))(aP1); /*0x438f62*/
+    *(_DWORD *)&v5->Dirty = (*((int (__thiscall **)(void **))*aP1 + 15))(aP1); /*0x438f62*/
     v5->RefCount = (int)aP1; /*0x438f69*/
     *(int *)((char *)v5[1].parent_gap + 3) = (int)aP2; /*0x438f6c*/
     *(int *)((char *)&v5[1].parent_gap[2] + 3) = (int)g_CurrentFrame; /*0x438f75*/
@@ -65,14 +67,14 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
     *(int *)((char *)&v5[1].parent_gap[3] + 3) = v7; /*0x438f8c*/
     aP2[14] = v5; /*0x438f8f*/
     v8 = this->vtable3; /*0x438f92*/
-    if ( this->u16_A < v8 /*0x438fb4*/
+    if ( this->uniqueId < v8 /*0x438fb4*/
       || (this->q034 || !v8)
       && (v9 = this->abstractFlags, v9 > 0)
       && this->COMStub_Release(v8 + v9, 0) )
     {
-      v10 = this->u16_A; /*0x438fbb*/
+      v10 = this->uniqueId; /*0x438fbb*/
       v11 = this->vtable2; /*0x438fbe*/
-      this->u16_A = v10 + 1; /*0x438fc4*/
+      this->uniqueId = v10 + 1; /*0x438fc4*/
       *(_DWORD *)(v11 + 4 * v10) = v5; /*0x438fc7*/
     }
     *(&this->vtable22) = 1; /*0x438fca*/
@@ -115,7 +117,7 @@ bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
 
 // 0x4FB9B0
 namespace gamemd {
-VectorClass * * AbstractClass_RemoveObjectFromHouse()
+VectorClass_flat * * AbstractClass_RemoveObjectFromHouse()
 {
   void **v5; // ebp
   int v7; // eax
@@ -351,9 +353,9 @@ ObjectClass * * AbstractClass_getPathDirection()
 namespace gamemd {
 unsigned int * AbstractClass::checkVisibility(char a2)
 {
-  *this = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d7fd9*/
+  *this = &(void*)(void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d7fd9*/
   if ( (a2 & 1) != 0 ) /*0x5d7fdf*/
-    __3_YAXPAX_Z(this); /*0x5d7fe2*/
+    RA2_OPDEL(); /*0x5d7fe2*/
   return this; /*0x5d7fec*/
 }
 }
@@ -361,9 +363,9 @@ unsigned int * AbstractClass::checkVisibility(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::updateVisibilityState(char a2)
 {
-  *this = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8039*/
+  *this = &(void*)(void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8039*/
   if ( (a2 & 1) != 0 ) /*0x5d803f*/
-    __3_YAXPAX_Z(this); /*0x5d8042*/
+    RA2_OPDEL(); /*0x5d8042*/
   return this; /*0x5d804c*/
 }
 }
@@ -371,9 +373,9 @@ unsigned int * AbstractClass::updateVisibilityState(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::processFogReveal(char a2)
 {
-  *this = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8059*/
+  *this = &(void*)(void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8059*/
   if ( (a2 & 1) != 0 ) /*0x5d805f*/
-    __3_YAXPAX_Z(this); /*0x5d8062*/
+    RA2_OPDEL(); /*0x5d8062*/
   return this; /*0x5d806c*/
 }
 }
@@ -381,9 +383,9 @@ unsigned int * AbstractClass::processFogReveal(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::checkShroudState(char a2)
 {
-  *this = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8079*/
+  *this = &(void*)(void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8079*/
   if ( (a2 & 1) != 0 ) /*0x5d807f*/
-    __3_YAXPAX_Z(this); /*0x5d8082*/
+    RA2_OPDEL(); /*0x5d8082*/
   return this; /*0x5d808c*/
 }
 }
@@ -391,9 +393,9 @@ unsigned int * AbstractClass::checkShroudState(char a2)
 namespace gamemd {
 unsigned int * AbstractClass::updateShroudMap(char a2)
 {
-  *this = &MultiplayerGameMode::InitializerBase::`vftable'; /*0x5d8099*/
+  *this = &(void*)(void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8099*/
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
-    __3_YAXPAX_Z(this); /*0x5d80a2*/
+    RA2_OPDEL(); /*0x5d80a2*/
   return this; /*0x5d80ac*/
 }
 }
@@ -612,10 +614,10 @@ int AbstractClass::initVtableBase()
 namespace gamemd {
 void AbstractClass::DTOR()
 {
-  *this = &AbstractClass::`vftable'; /*0x4101f0*/
-  this->vtable2 = &AbstractClass::`vftable'; /*0x4101f6*/
-  this->vtable3 = &AbstractClass::`vftable'; /*0x4101fd*/
-  this->vtable4 = &AbstractClass::`vftable'; /*0x410204*/
+  *this = &(void*)(void*)&AbstractClass_vftable; /*0x4101f0*/
+  this->vtable2 = &(void*)(void*)&AbstractClass_vftable; /*0x4101f6*/
+  this->vtable3 = &(void*)(void*)&AbstractClass_vftable; /*0x4101fd*/
+  this->vtable4 = &(void*)(void*)&AbstractClass_vftable; /*0x410204*/
 }
 } // namespace gamemd
 
@@ -649,27 +651,25 @@ int AbstractClass::GenerateUniqueID(int a1)
 
 // 0x410320
 namespace gamemd {
-int AbstractClass::SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP1, ObjectTypeClass * aP2)
+int AbstractClass::SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0, ObjectTypeClass * aP2)
 {
-  int *v3; // esi
   int result; // eax
   int v5; // eax
   int v6; // ebx
   int v7; // eax
-  int *v8; // [esp-4h] [ebp-18h]
 
-  v3 = aP1; /*0x410321*/
-  if ( !aP1 ) /*0x410328*/
+  aP0 = aP0; /*0x410321*/
+  if ( !aP0 ) /*0x410328*/
     return -2147467261; /*0x41032b*/
-  v5 = *aP1; /*0x410338*/
-  v8 = aP1; /*0x410343*/
-  aP1 = aP0; /*0x410344*/
-  result = aP1->IsClean(v8, &aP1, 4, 0); /*0x410348*/
+  v5 = *aP0; /*0x410338*/
+  aP0 = aP0; /*0x410343*/
+  aP0 = aP0; /*0x410344*/
+  result = aP0->IsClean(&aP0, 4, 0); /*0x410348*/
   if ( result >= 0 ) /*0x41034d*/
   {
-    v6 = *v3; /*0x410352*/
+    v6 = *aP0; /*0x410352*/
     v7 = (*(int (__thiscall **)(int *, _DWORD))(*aP0 + 48))(aP0, 0); /*0x410358*/
-    result = v3->IsClean(aP0, v7); /*0x41035e*/
+    result = aP0->IsClean(aP0, v7); /*0x41035e*/
     if ( result >= 0 ) /*0x410364*/
     {
       if ( aP2 ) /*0x41036c*/
@@ -693,7 +693,7 @@ int AbstractClass::SaveLoad_Prefix_0(AbstractClass * aP0, AbstractClass * aP1)
   v2 = (int *)aP1; /*0x410381*/
   if ( !aP1 ) /*0x410387*/
     return -2147467261; /*0x410389*/
-  result = (*(int (__stdcall **)(int, int *, int, _DWORD))(aP1->vtable4)(aP1, &aP1, 4, 0); /*0x41039e*/
+  result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)aP1 + 12))(aP1, &aP1, 4, 0); /*0x41039e*/
   if ( result >= 0 ) /*0x4103a3*/
   {
     SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, aP1, (int)aP0); /*0x4103b7*/
@@ -713,7 +713,7 @@ int AbstractClass::computeDistance()
 {
   int result; // eax
 
-  LOBYTE(result) = 1; /*0x410440*/
+  IDA_LOBYTE(result) = 1; /*0x410440*/
   return result; /*0x410442*/
 }
 } // namespace gamemd
@@ -768,7 +768,7 @@ int AbstractClass::COMStub_Return0_20()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x410520*/
+  IDA_LOBYTE(result) = 0; /*0x410520*/
   return result; /*0x410522*/
 }
 } // namespace gamemd
@@ -779,7 +779,7 @@ int AbstractClass::COMStub_Return0_21()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x410530*/
+  IDA_LOBYTE(result) = 0; /*0x410530*/
   return result; /*0x410532*/
 }
 } // namespace gamemd
@@ -816,7 +816,7 @@ Surface * AbstractClass::getObjectValue(char a2)
 {
   *(_DWORD *)this = &Surface_Vtable; /*0x4115d9*/
   if ( (a2 & 1) != 0 ) /*0x4115df*/
-    __3_YAXPAX_Z(this); /*0x4115e2*/
+    RA2_OPDEL(); /*0x4115e2*/
   return this; /*0x4115ec*/
 }
 } // namespace gamemd
@@ -833,7 +833,7 @@ int AbstractClass::GetField9()
 namespace gamemd {
 unsigned int AbstractClass::updateLayer()
 {
-  return this->u32_C8; /*0x425526*/
+  return this->q0C8; /*0x425526*/
 }
 } // namespace gamemd
 
@@ -843,7 +843,7 @@ int AbstractClass::COMStub_Return0_25()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x426390*/
+  IDA_LOBYTE(result) = 0; /*0x426390*/
   return result; /*0x426392*/
 }
 } // namespace gamemd
@@ -862,7 +862,7 @@ int AbstractClass::COMStub_Return0_32()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x4263b0*/
+  IDA_LOBYTE(result) = 0; /*0x4263b0*/
   return result; /*0x4263b2*/
 }
 } // namespace gamemd
@@ -881,7 +881,7 @@ int AbstractClass::getCoordCenter()
 {
   int result; // eax
 
-  LOBYTE(result) = 1; /*0x426410*/
+  IDA_LOBYTE(result) = 1; /*0x426410*/
   return result; /*0x426412*/
 }
 } // namespace gamemd
@@ -892,7 +892,7 @@ int AbstractClass::COMStub_Return0_49()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x426420*/
+  IDA_LOBYTE(result) = 0; /*0x426420*/
   return result; /*0x426422*/
 }
 } // namespace gamemd
@@ -903,7 +903,7 @@ int AbstractClass::COMStub_50()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x426430*/
+  IDA_LOBYTE(result) = 0; /*0x426430*/
   return result; /*0x426432*/
 }
 } // namespace gamemd
@@ -964,7 +964,7 @@ int AbstractClass::COMStub_Return0_88()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x426490*/
+  IDA_LOBYTE(result) = 0; /*0x426490*/
   return result; /*0x426492*/
 }
 } // namespace gamemd
@@ -1003,7 +1003,7 @@ int AbstractClass::COMStub_Return0_117()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x4264e0*/
+  IDA_LOBYTE(result) = 0; /*0x4264e0*/
   return result; /*0x4264e2*/
 }
 } // namespace gamemd
@@ -1014,7 +1014,7 @@ int AbstractClass::COMStub_Return0_118()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x4264f0*/
+  IDA_LOBYTE(result) = 0; /*0x4264f0*/
   return result; /*0x4264f2*/
 }
 } // namespace gamemd
@@ -1025,7 +1025,7 @@ int AbstractClass::COMStub_Return0_119()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x426500*/
+  IDA_LOBYTE(result) = 0; /*0x426500*/
   return result; /*0x426502*/
 }
 } // namespace gamemd
@@ -1036,7 +1036,7 @@ int AbstractClass::getCoordCenter2()
 {
   int result; // eax
 
-  LOBYTE(result) = 1; /*0x426510*/
+  IDA_LOBYTE(result) = 1; /*0x426510*/
   return result; /*0x426512*/
 }
 } // namespace gamemd
@@ -1069,9 +1069,9 @@ int AbstractClass::getMapCoords()
 namespace gamemd {
 std::locale::facet * AbstractClass::setMapCoords(char a2)
 {
-  *(_DWORD *)this = &Animate::`vftable'; /*0x427279*/
+  *(_DWORD *)this = &(void*)(void*)&Animate_vftable; /*0x427279*/
   if ( (a2 & 1) != 0 ) /*0x42727f*/
-    __3_YAXPAX_Z(this); /*0x427282*/
+    RA2_OPDEL(); /*0x427282*/
   return this; /*0x42728c*/
 }
 } // namespace gamemd
@@ -1153,9 +1153,9 @@ int AbstractClass::compareType(int a1)
 namespace gamemd {
 Blitter * AbstractClass::getTileIndex(char a2)
 {
-  *(_DWORD *)this = &Blitter::`vftable'; /*0x499cc9*/
+  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499cc9*/
   if ( (a2 & 1) != 0 ) /*0x499ccf*/
-    __3_YAXPAX_Z(this); /*0x499cd2*/
+    RA2_OPDEL(); /*0x499cd2*/
   return this; /*0x499cdc*/
 }
 } // namespace gamemd
@@ -1164,9 +1164,9 @@ Blitter * AbstractClass::getTileIndex(char a2)
 namespace gamemd {
 BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 {
-  *(_DWORD *)this = &Blitter::`vftable'; /*0x499ce9*/
+  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499ce9*/
   if ( (a2 & 1) != 0 ) /*0x499cef*/
-    __3_YAXPAX_Z(this); /*0x499cf2*/
+    RA2_OPDEL(); /*0x499cf2*/
   return this; /*0x499cfc*/
 }
 } // namespace gamemd
@@ -1175,9 +1175,9 @@ BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 namespace gamemd {
 BlitTransXlat * AbstractClass::getOverlayType(char a2)
 {
-  *(_DWORD *)this = &Blitter::`vftable'; /*0x499d09*/
+  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499d09*/
   if ( (a2 & 1) != 0 ) /*0x499d0f*/
-    __3_YAXPAX_Z(this); /*0x499d12*/
+    RA2_OPDEL(); /*0x499d12*/
   return this; /*0x499d1c*/
 }
 } // namespace gamemd
@@ -1186,9 +1186,9 @@ BlitTransXlat * AbstractClass::getOverlayType(char a2)
 namespace gamemd {
 std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 {
-  *(_DWORD *)this = &Blitter::`vftable'; /*0x499d29*/
+  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x499d29*/
   if ( (a2 & 1) != 0 ) /*0x499d2f*/
-    __3_YAXPAX_Z(this); /*0x499d32*/
+    RA2_OPDEL(); /*0x499d32*/
   return this; /*0x499d3c*/
 }
 } // namespace gamemd
@@ -1197,9 +1197,9 @@ std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 namespace gamemd {
 RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 {
-  *(_DWORD *)this = &RLEBlitter::`vftable'; /*0x499da9*/
+  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x499da9*/
   if ( (a2 & 1) != 0 ) /*0x499daf*/
-    __3_YAXPAX_Z(this); /*0x499db2*/
+    RA2_OPDEL(); /*0x499db2*/
   return this; /*0x499dbc*/
 }
 } // namespace gamemd
@@ -1208,7 +1208,7 @@ RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 namespace gamemd {
 int AbstractClass::GetType()
 {
-  return *(&this->vtable32); /*0x4ca163*/
+  return *(&this->q0082); /*0x4ca163*/
 }
 } // namespace gamemd
 
@@ -1247,8 +1247,8 @@ char AbstractClass::getCurrentMission()
 namespace gamemd {
 unsigned int AbstractClass::queueMission(int a2)
 {
-  if ( this->vtable4 ) /*0x4e01c0*/
-    return (unsigned int)(a2 - this->vtable2) >> 2; /*0x4e01d5*/
+  if ( this->IsInitialized ) /*0x4e01c0*/
+    return (unsigned int)(a2 - this->Items) >> 2; /*0x4e01d5*/
   else
     return 0; /*0x4e01c7*/
 }
@@ -1260,7 +1260,7 @@ GScreenClass * AbstractClass::getHouseHandle(char a2)
 {
   *(_DWORD *)this = &off_7EA6FC; /*0x4f4c09*/
   if ( (a2 & 1) != 0 ) /*0x4f4c0f*/
-    __3_YAXPAX_Z(this); /*0x4f4c12*/
+    RA2_OPDEL(); /*0x4f4c12*/
   return this; /*0x4f4c1c*/
 }
 } // namespace gamemd
@@ -1394,13 +1394,13 @@ int AbstractClass::COMStub_Ret450_151()
 namespace gamemd {
 MissionClass * AbstractClass::getWeaponRange(char a2)
 {
-  *this = &MissionClass::`vftable'; /*0x5b3a63*/
-  this->vtable2 = &MissionClass::`vftable'; /*0x5b3a69*/
-  this->vtable3 = &MissionClass::`vftable'; /*0x5b3a70*/
-  this->vtable4 = &MissionClass::`vftable'; /*0x5b3a77*/
-  ObjectClass::Dtor(this); /*0x5b3a7e*/
+  *this = &(void*)(void*)&MissionClass_vftable; /*0x5b3a63*/
+  this->vtable2 = &(void*)(void*)&MissionClass_vftable; /*0x5b3a69*/
+  this->vtable3 = &(void*)(void*)&MissionClass_vftable; /*0x5b3a70*/
+  this->vtable4 = &(void*)(void*)&MissionClass_vftable; /*0x5b3a77*/
+  ObjectClass::Dtor(); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
-    __3_YAXPAX_Z(this); /*0x5b3a8b*/
+    RA2_OPDEL(); /*0x5b3a8b*/
   return this; /*0x5b3a95*/
 }
 } // namespace gamemd
@@ -1409,7 +1409,7 @@ MissionClass * AbstractClass::getWeaponRange(char a2)
 namespace gamemd {
 char AbstractClass::validatePathNode()
 {
-  return *(&this->vtable30); /*0x5c02e3*/
+  return *(&this->width0); /*0x5c02e3*/
 }
 } // namespace gamemd
 
@@ -1435,7 +1435,7 @@ unsigned int * AbstractClass::processRevealArea(const wchar_t ** a1, const wchar
 {
   _DWORD *v6; // eax
 
-  v6 = __2_YAPAXI_Z(0x40u); /*0x5d81f2*/
+  v6 = RA2_OPNEW(0x40u); /*0x5d81f2*/
   if ( v6 ) /*0x5d81fc*/
     return MPBattleClass::MPSiegeClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d821e*/
   else
@@ -1449,7 +1449,7 @@ unsigned int * AbstractClass::computeRevealRadius(const wchar_t ** a1, const wch
 {
   _DWORD *v6; // eax
 
-  v6 = __2_YAPAXI_Z(0x40u); /*0x5d8232*/
+  v6 = RA2_OPNEW(0x40u); /*0x5d8232*/
   if ( v6 ) /*0x5d823c*/
     return MPBattleClass::MPUnholyAllianceClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d825e*/
   else
@@ -1463,7 +1463,7 @@ unsigned int * AbstractClass::applyRevealToCell(const wchar_t ** a1, const wchar
 {
   _DWORD *v6; // eax
 
-  v6 = __2_YAPAXI_Z(0x40u); /*0x5d8272*/
+  v6 = RA2_OPNEW(0x40u); /*0x5d8272*/
   if ( v6 ) /*0x5d827c*/
     return MPBattleClass::MPFreeForAllClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d829e*/
   else
@@ -1477,7 +1477,7 @@ unsigned int * AbstractClass::checkRevealCell(const wchar_t ** a1, const wchar_t
 {
   _DWORD *v6; // eax
 
-  v6 = __2_YAPAXI_Z(0x344u); /*0x5d82b5*/
+  v6 = RA2_OPNEW(0x344u); /*0x5d82b5*/
   if ( v6 ) /*0x5d82bf*/
     return MPCooperative::ctor(v6, a1, a2, a3, a4, a5, a6); /*0x5d82e1*/
   else
@@ -1515,7 +1515,7 @@ int AbstractClass::COMStub_Return0_37()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x5f42b0*/
+  IDA_LOBYTE(result) = 0; /*0x5f42b0*/
   return result; /*0x5f42b2*/
 }
 } // namespace gamemd
@@ -1526,7 +1526,7 @@ int AbstractClass::COMStub_Return0_38()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x5f42c0*/
+  IDA_LOBYTE(result) = 0; /*0x5f42c0*/
   return result; /*0x5f42c2*/
 }
 } // namespace gamemd
@@ -1537,7 +1537,7 @@ int AbstractClass::COMStub_Return0_39()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x5f42d0*/
+  IDA_LOBYTE(result) = 0; /*0x5f42d0*/
   return result; /*0x5f42d2*/
 }
 } // namespace gamemd
@@ -1548,7 +1548,7 @@ int AbstractClass::COMStub_Return0_40()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x5f42e0*/
+  IDA_LOBYTE(result) = 0; /*0x5f42e0*/
   return result; /*0x5f42e2*/
 }
 } // namespace gamemd
@@ -1617,7 +1617,7 @@ int AbstractClass::COMStub_81()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x5f4350*/
+  IDA_LOBYTE(result) = 0; /*0x5f4350*/
   return result; /*0x5f4352*/
 }
 } // namespace gamemd
@@ -1628,7 +1628,7 @@ int AbstractClass::COMStub_80()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x5f4360*/
+  IDA_LOBYTE(result) = 0; /*0x5f4360*/
   return result; /*0x5f4362*/
 }
 } // namespace gamemd
@@ -1649,7 +1649,7 @@ int AbstractClass::COMStub_89()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x5f4380*/
+  IDA_LOBYTE(result) = 0; /*0x5f4380*/
   return result; /*0x5f4382*/
 }
 } // namespace gamemd
@@ -1741,7 +1741,7 @@ char AbstractClass::updateTeamState()
 namespace gamemd {
 char AbstractClass::processTeamOrder()
 {
-  return *(&this->vtable38); /*0x65c333*/
+  return *(&this->ptr_88); /*0x65c333*/
 }
 } // namespace gamemd
 
@@ -1749,7 +1749,7 @@ char AbstractClass::processTeamOrder()
 namespace gamemd {
 int AbstractClass::checkTeamObjective()
 {
-  return this->u16_A; /*0x65c4a3*/
+  return this->q010; /*0x65c4a3*/
 }
 } // namespace gamemd
 
@@ -1757,7 +1757,7 @@ int AbstractClass::checkTeamObjective()
 namespace gamemd {
 void AbstractClass::resetTeamState()
 {
-  *(&this->vtable38) = 0; /*0x65c540*/
+  *(&this->ptr_88) = 0; /*0x65c540*/
 }
 } // namespace gamemd
 
@@ -1765,9 +1765,9 @@ void AbstractClass::resetTeamState()
 namespace gamemd {
 FileClass * AbstractClass::processAITrigger(char a2)
 {
-  *this = &FileClass::`vftable'; /*0x65c619*/
+  *this = &(void*)(void*)&FileClass_vftable; /*0x65c619*/
   if ( (a2 & 1) != 0 ) /*0x65c61f*/
-    __3_YAXPAX_Z(this); /*0x65c622*/
+    RA2_OPDEL(); /*0x65c622*/
   return this; /*0x65c62c*/
 }
 } // namespace gamemd

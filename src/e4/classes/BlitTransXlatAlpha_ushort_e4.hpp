@@ -5,7 +5,11 @@
 
 namespace gamemd {
 struct BlitTransXlatAlpha_ushort {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    void* vtable1;  // 0x0
+    void* q004;  // 0x4
+    AbstractClass * ptr_8;  // 0x8
+// --- flat members (END) ---
     int Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9);  // 0x493930
     int Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9);  // 0x493A60
     int Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9);  // 0x493B90

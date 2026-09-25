@@ -5,7 +5,10 @@
 
 namespace gamemd {
 struct VectorClass_ptr_InfantryClass {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    AbstractClass * ptr_4;  // 0x4
+    unsigned char u8_D;  // 0xD
+// --- flat members (END) ---
     void Remove();  // 0x45A4D0
 };
 } // namespace gamemd

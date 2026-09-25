@@ -2,8 +2,14 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/FileSystem_e4.hpp"
+#include "e4/classes/File_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/FilePipe_30_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
 
 // 0x626DA0
+namespace gamemd {
 int FileSystem::ProcessNextFileExtension()
 {
   _DWORD *v0; // edi
@@ -39,17 +45,17 @@ int FileSystem::ProcessNextFileExtension()
   v0 = g_FileExtensionState; /*0x626da7*/
   if ( !g_FileExtensionState ) /*0x626db1*/
   {
-    v1 = __2_YAPAXI_Z(0x10u); /*0x626db9*/
+    v1 = RA2_OPNEW(0x10u); /*0x626db9*/
     v0 = v1; /*0x626dbe*/
     if ( v1 ) /*0x626dc5*/
     {
       *v1 = -1; /*0x626dc9*/
-      v2 = __2_YAPAXI_Z(0x18u); /*0x626dcf*/
+      v2 = RA2_OPNEW(0x18u); /*0x626dcf*/
       v3 = v2; /*0x626dd4*/
       if ( v2 ) /*0x626ddb*/
       {
         StringVector::Construct(v2, 0, 0); /*0x626de1*/
-        *v3 = &DynamicVectorClass<char *>::`vftable'; /*0x626de6*/
+        *v3 = &(void*)(void*)&DynamicVectorClass_char___vftable; /*0x626de6*/
         v3[5] = 10; /*0x626dec*/
         v3[4] = 0; /*0x626df3*/
       }
@@ -58,12 +64,12 @@ int FileSystem::ProcessNextFileExtension()
         v3 = 0; /*0x626df8*/
       }
       v0[1] = v3; /*0x626dfc*/
-      if ( __2_YAPAXI_Z(0x18u) ) /*0x626dff*/
+      if ( RA2_OPNEW(0x18u) ) /*0x626dff*/
         v4 = FileExtension::Constructor(0, 0); /*0x626e0f*/
       else
         v4 = 0; /*0x626e16*/
       v0[2] = v4; /*0x626e1a*/
-      v5 = (int *)__2_YAPAXI_Z(0x10u); /*0x626e1d*/
+      v5 = (int *)RA2_OPNEW(0x10u); /*0x626e1d*/
       if ( v5 ) /*0x626e27*/
         v0[3] = DynamicVectorArray::Constructor(v5, 10, 31, (int)HashStringMod31); /*0x626e39*/
       else
@@ -165,7 +171,9 @@ int FileSystem::ProcessNextFileExtension()
   }
   return v27; /*0x626eb6*/
 }
+} // namespace gamemd
 // 0x5F76B0
+namespace gamemd {
 void FileSystem::InitPipShapes()
 {
   int v0[9]; // [esp+0h] [ebp-24h] BYREF
@@ -207,7 +215,9 @@ void FileSystem::InitPipShapes()
     RawFileClass::Dtor(v0); /*0x5f77e6*/
   }
 }
+} // namespace gamemd
 // 0x72D350
+namespace gamemd {
 void FileSystem::CleanupTrees()
 {
   void *v0; // esi
@@ -223,7 +233,7 @@ void FileSystem::CleanupTrees()
       if ( dword_B0FB34 ) /*0x72d378*/
       {
         FileTreeNode::Destroy(dword_B0FB34); /*0x72d37c*/
-        __3_YAXPAX_Z(v0); /*0x72d382*/
+        RA2_OPDEL(v0); /*0x72d382*/
       }
       byte_B0FC70 = 0; /*0x72d38a*/
     }
@@ -234,7 +244,7 @@ void FileSystem::CleanupTrees()
       if ( dword_B0FB00 ) /*0x72d3a7*/
       {
         FileTreeNode::Destroy(dword_B0FB00); /*0x72d3ab*/
-        __3_YAXPAX_Z(v1); /*0x72d3b1*/
+        RA2_OPDEL(v1); /*0x72d3b1*/
       }
       byte_B0FC71 = 0; /*0x72d3b9*/
     }
@@ -245,14 +255,14 @@ void FileSystem::CleanupTrees()
       if ( dword_B0FB30 ) /*0x72d3d6*/
       {
         FileTreeNode::Destroy(dword_B0FB30); /*0x72d3da*/
-        __3_YAXPAX_Z(v2); /*0x72d3e0*/
+        RA2_OPDEL(v2); /*0x72d3e0*/
       }
       byte_B0FC72 = 0; /*0x72d3e8*/
     }
     dword_B0FB30 = 0; /*0x72d3f3*/
     if ( dword_B0FBA4 ) /*0x72d3fc*/
     {
-      __3_YAXPAX_Z(dword_B0FBA4); /*0x72d3ff*/
+      RA2_OPDEL(dword_B0FBA4); /*0x72d3ff*/
       dword_B0FBA4 = 0; /*0x72d407*/
     }
     if ( dword_B0FBA8 ) /*0x72d415*/
@@ -262,3 +272,4 @@ void FileSystem::CleanupTrees()
     }
   }
 }
+} // namespace gamemd

@@ -1,6 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x72C240
 namespace gamemd {
@@ -34,14 +39,14 @@ void sub_72C290()
       if ( dword_B0FA30 ) /*0x72c2ad*/
       {
         FileTreeNode::Destroy(dword_B0FA30); /*0x72c2b1*/
-        __3_YAXPAX_Z(v0); /*0x72c2b7*/
+        RA2_OPDEL(v0); /*0x72c2b7*/
       }
       byte_B0FD20 = 0; /*0x72c2bf*/
     }
     dword_B0FA30 = 0; /*0x72c2cb*/
     if ( dword_B0FD24 ) /*0x72c2d3*/
     {
-      __3_YAXPAX_Z(dword_B0FD24); /*0x72c2d6*/
+      RA2_OPDEL(dword_B0FD24); /*0x72c2d6*/
       dword_B0FD24 = 0; /*0x72c2de*/
     }
     if ( dword_B0FD28 ) /*0x72c2ec*/
@@ -86,14 +91,14 @@ void sub_72C470()
       if ( dword_B0FA64 ) /*0x72c48d*/
       {
         FileTreeNode::Destroy(dword_B0FA64); /*0x72c491*/
-        __3_YAXPAX_Z(v0); /*0x72c497*/
+        RA2_OPDEL(v0); /*0x72c497*/
       }
       byte_B0FD14 = 0; /*0x72c49f*/
     }
     dword_B0FA64 = 0; /*0x72c4ab*/
     if ( dword_B0FD18 ) /*0x72c4b3*/
     {
-      __3_YAXPAX_Z(dword_B0FD18); /*0x72c4b6*/
+      RA2_OPDEL(dword_B0FD18); /*0x72c4b6*/
       dword_B0FD18 = 0; /*0x72c4be*/
     }
     if ( dword_B0FD1C ) /*0x72c4cc*/

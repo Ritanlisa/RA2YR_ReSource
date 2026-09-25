@@ -11,10 +11,18 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/VectorClass_ptr_ConvertClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/ParticleSystemClass_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/Options_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/SkirmishDialog_e4.hpp"
 
 // 0x4E0A00
 namespace gamemd {
-unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
+unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a2)
 {
   _DWORD *v4; // eax
   int v5; // ecx
@@ -28,15 +36,15 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
   this->M8 = a2; /*0x4e0a11*/
   this->M12 = 1; /*0x4e0a14*/
   this->M13 = 0; /*0x4e0a18*/
-  *this = &VectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a1c*/
+  *this = &(void*)(void*)&VectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass___vftable; /*0x4e0a1c*/
   if ( a2 ) /*0x4e0a22*/
   {
-    if ( a3 ) /*0x4e0a2a*/
+    if ( a2 ) /*0x4e0a2a*/
     {
-      *a3 = a2; /*0x4e0a2f*/
+      *a2 = a2; /*0x4e0a2f*/
       if ( a2 - 1 >= 0 ) /*0x4e0a36*/
       {
-        v4 = a3 + 2; /*0x4e0a38*/
+        v4 = a2 + 2; /*0x4e0a38*/
         v5 = a2; /*0x4e0a3b*/
         do /*0x4e0a46*/
         {
@@ -46,11 +54,11 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
         }
         while ( v5 ); /*0x4e0a46*/
       }
-      this->M4 = a3 + 1; /*0x4e0a48*/
+      this->M4 = a2 + 1; /*0x4e0a48*/
     }
     else
     {
-      v6 = __2_YAPAXI_Z(8 * a2 + 4); /*0x4e0a55*/
+      v6 = RA2_OPNEW(8 * a2 + 4); /*0x4e0a55*/
       if ( v6 ) /*0x4e0a5f*/
       {
         *v6 = a2; /*0x4e0a64*/
@@ -77,7 +85,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a3)
       this->M13 = 1; /*0x4e0a86*/
     }
   }
-  *this = &DynamicVectorClass<DiscreteDistributionClass<CellClass>::DistributionObject<CellClass *>>::`vftable'; /*0x4e0a8a*/
+  *this = &(void*)(void*)&DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass___vftable; /*0x4e0a8a*/
   this->M20 = 10; /*0x4e0a90*/
   this->M16 = 0; /*0x4e0a97*/
   return this; /*0x4e0aa0*/
@@ -122,7 +130,7 @@ void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   {
     if ( a2 == 273 ) /*0x4e200d*/
     {
-      v30 = HIWORD(a3); /*0x4e233f*/
+      v30 = IDA_HIWORD(a3); /*0x4e233f*/
       WindowLongA = (_DWORD *)GetWindowLongA(hDlg, 8); /*0x4e2342*/
       switch ( (unsigned __int16)a3 ) /*0x4e2354*/
       {
@@ -240,7 +248,7 @@ void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
     }
     if ( (_WORD)a3 == 5 ) /*0x4e227c*/
     {
-      v25 = HIWORD(a3); /*0x4e228e*/
+      v25 = IDA_HIWORD(a3); /*0x4e228e*/
       if ( hWnd == GetDlgItem(hDlg, 1321) ) /*0x4e2295*/
       {
         v26 = (&off_822730)[v25]; /*0x4e2297*/
@@ -883,7 +891,7 @@ void SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
       break;
     default:
       v6 = -(nIDDlgItem != 1320); /*0x4e4a38*/
-      LOBYTE(v6) = v6 & 0xF8; /*0x4e4a3a*/
+      IDA_LOBYTE(v6) = v6 & 0xF8; /*0x4e4a3a*/
       v5 = v6 + 7; /*0x4e4a3c*/
       break;
   }
@@ -1036,7 +1044,7 @@ void FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
       break;
     default:
       v5 = -(nIDDlgItem != 1320); /*0x4e4c95*/
-      LOBYTE(v5) = v5 & 0xF8; /*0x4e4c97*/
+      IDA_LOBYTE(v5) = v5 & 0xF8; /*0x4e4c97*/
       v4 = v5 + 7; /*0x4e4c99*/
       break;
   }
@@ -1302,7 +1310,7 @@ void SetupLobbyFactionSlots(SessionClass * aP0, int nIDDlgItem, int a3)
       break;
     default:
       v6 = -(nIDDlgItem != 1707); /*0x4e5518*/
-      LOBYTE(v6) = v6 & 0xF8; /*0x4e551a*/
+      IDA_LOBYTE(v6) = v6 & 0xF8; /*0x4e551a*/
       v5 = v6 + 7; /*0x4e551c*/
       break;
   }
@@ -1455,7 +1463,7 @@ void FillComboBoxSides(HWND hDlg, int nIDDlgItem)
       break;
     default:
       v5 = -(nIDDlgItem != 1707); /*0x4e5775*/
-      LOBYTE(v5) = v5 & 0xF8; /*0x4e5777*/
+      IDA_LOBYTE(v5) = v5 & 0xF8; /*0x4e5777*/
       v4 = v5 + 7; /*0x4e5779*/
       break;
   }
@@ -1761,7 +1769,7 @@ int sub_4E6CE0()
   dword_A80230 = 0; /*0x4e6cec*/
   byte_A80234 = 1; /*0x4e6cf1*/
   byte_A80235 = 0; /*0x4e6cf8*/
-  HouseClass_Array_0 = (int)&DynamicVectorClass<HouseClass *>::`vftable'; /*0x4e6cfd*/
+  HouseClass_Array_0 = (int)&(void*)(void*)&DynamicVectorClass_HouseClass___vftable; /*0x4e6cfd*/
   dword_A8023C = 10; /*0x4e6d07*/
   HouseClass_Count = 0; /*0x4e6d11*/
   return atexit(sub_4E6D20); /*0x4e6d1c*/
@@ -1771,10 +1779,10 @@ int sub_4E6CE0()
 namespace gamemd {
 void sub_4E6D20()
 {
-  HouseClass_Array_0 = (int)&VectorClass<HouseClass *>::`vftable'; /*0x4e6d28*/
+  HouseClass_Array_0 = (int)&(void*)(void*)&VectorClass_HouseClass___vftable; /*0x4e6d28*/
   if ( HouseClass_Array && byte_A80235 ) /*0x4e6d3c*/
   {
-    __3_YAXPAX_Z(HouseClass_Array); /*0x4e6d3f*/
+    RA2_OPDEL(HouseClass_Array); /*0x4e6d3f*/
     HouseClass_Array = 0; /*0x4e6d47*/
   }
   byte_A80235 = 0; /*0x4e6d4d*/
@@ -1789,7 +1797,7 @@ int sub_4E7460()
   dword_A83CE8 = 0; /*0x4e746c*/
   byte_A83CEC = 1; /*0x4e7471*/
   byte_A83CED = 0; /*0x4e7478*/
-  UnitTypeClass_Array = (int)&DynamicVectorClass<UnitTypeClass *>::`vftable'; /*0x4e747d*/
+  UnitTypeClass_Array = (int)&(void*)(void*)&DynamicVectorClass_UnitTypeClass___vftable; /*0x4e747d*/
   dword_A83CF4 = 10; /*0x4e7487*/
   g_CrateCount = 0; /*0x4e7491*/
   return atexit(sub_4E74A0); /*0x4e749c*/
@@ -1799,10 +1807,10 @@ int sub_4E7460()
 namespace gamemd {
 void sub_4E74A0()
 {
-  UnitTypeClass_Array = (int)&VectorClass<UnitTypeClass *>::`vftable'; /*0x4e74a8*/
+  UnitTypeClass_Array = (int)&(void*)(void*)&VectorClass_UnitTypeClass___vftable; /*0x4e74a8*/
   if ( g_UnitTypeCount2 && byte_A83CED ) /*0x4e74bc*/
   {
-    __3_YAXPAX_Z(g_UnitTypeCount2); /*0x4e74bf*/
+    RA2_OPDEL(g_UnitTypeCount2); /*0x4e74bf*/
     g_UnitTypeCount2 = 0; /*0x4e74c7*/
   }
   byte_A83CED = 0; /*0x4e74cd*/
@@ -1817,7 +1825,7 @@ int sub_4E75E0()
   dword_A83C88 = 0; /*0x4e75ec*/
   byte_A83C8C = 1; /*0x4e75f1*/
   byte_A83C8D = 0; /*0x4e75f8*/
-  BulletTypeClass_Array = (int)&DynamicVectorClass<BulletTypeClass *>::`vftable'; /*0x4e75fd*/
+  BulletTypeClass_Array = (int)&(void*)(void*)&DynamicVectorClass_BulletTypeClass___vftable; /*0x4e75fd*/
   dword_A83C94 = 10; /*0x4e7607*/
   g_BulletTypeInitState = 0; /*0x4e7611*/
   return atexit(sub_4E7620); /*0x4e761c*/
@@ -1827,10 +1835,10 @@ int sub_4E75E0()
 namespace gamemd {
 void sub_4E7620()
 {
-  BulletTypeClass_Array = (int)&VectorClass<BulletTypeClass *>::`vftable'; /*0x4e7628*/
+  BulletTypeClass_Array = (int)&(void*)(void*)&VectorClass_BulletTypeClass___vftable; /*0x4e7628*/
   if ( dword_A83C84 && byte_A83C8D ) /*0x4e763c*/
   {
-    __3_YAXPAX_Z(dword_A83C84); /*0x4e763f*/
+    RA2_OPDEL(dword_A83C84); /*0x4e763f*/
     dword_A83C84 = 0; /*0x4e7647*/
   }
   byte_A83C8D = 0; /*0x4e764d*/
@@ -1866,11 +1874,11 @@ void unknown_libname_18()
   void *v0; // edi
 
   v0 = (void *)unk_A8EAA4; /*0x5f1654*/
-  g_EventManager = &NullModemClass::`vftable'; /*0x5f1657*/
+  g_EventManager = &(void*)(void*)&NullModemClass_vftable; /*0x5f1657*/
   if ( unk_A8EAA4 ) /*0x5f165f*/
   {
     FileFind::Close(); /*0x5f1663*/
-    __3_YAXPAX_Z(v0); /*0x5f1669*/
+    RA2_OPDEL(v0); /*0x5f1669*/
   }
   ObjectClass::FreeResources((int)&g_EventManager); /*0x5f1673*/
   if ( unk_A8EAB0 != -1 ) /*0x5f1680*/
@@ -1890,7 +1898,7 @@ void unknown_libname_18()
     g_ClipboardBuffer = 0; /*0x5f16c5*/
   }
   LABEL_10:
-  g_EventManager = &ConnManClass::`vftable'; /*0x5f16cf*/
+  g_EventManager = &(void*)(void*)&ConnManClass_vftable; /*0x5f16cf*/
 }
 }
 // 0x4E9240
@@ -1907,7 +1915,7 @@ AbstractClass * * HouseClass__vt_02_(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e925c*/
       v4 = a3; /*0x4e9272*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e926e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4e926e*/
     this->IsInitialized = 1; /*0x4e9276*/
     if ( v4 ) /*0x4e927a*/
     {
@@ -1920,7 +1928,7 @@ AbstractClass * * HouseClass__vt_02_(int a2, unsigned int * a3)
           ++i; /*0x4e929e*/
         if ( this->IsAllocated ) /*0x4e92ab*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e92b6*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4e92b6*/
           this->Items = 0; /*0x4e92be*/
         }
       }
@@ -1955,7 +1963,7 @@ AbstractClass * * ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
     if ( a3 ) /*0x4e9e3c*/
       v4 = a3; /*0x4e9e52*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x4e9e4e*/
+      v4 = RA2_OPNEW(4 * a2); /*0x4e9e4e*/
     this->IsInitialized = 1; /*0x4e9e56*/
     if ( v4 ) /*0x4e9e5a*/
     {
@@ -1968,7 +1976,7 @@ AbstractClass * * ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
           ++i; /*0x4e9e7e*/
         if ( this->IsAllocated ) /*0x4e9e8b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x4e9e96*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x4e9e96*/
           this->Items = 0; /*0x4e9e9e*/
         }
       }
@@ -1995,7 +2003,7 @@ void ParticleSystemClass__vt_03_()
 {
   if ( this->Items && this->IsAllocated ) /*0x4e9edd*/
   {
-    __3_YAXPAX_Z(this->Items); /*0x4e9ee3*/
+    RA2_OPDEL(this->Items); /*0x4e9ee3*/
     this->Items = 0; /*0x4e9eeb*/
   }
   this->IsAllocated = 0; /*0x4e9eee*/
@@ -2014,21 +2022,19 @@ void nullsub_138()
 namespace gamemd {
 unsigned int * FoggedObjectClass_42::loc_4E0D30(char a2)
 {
-{
     void *v3;
     v3 = (void *)this->Items;
     *(void**)this = &vt_VectorClass_FootClass;
     if ( v3 && this->IsAllocated )
   {
-    __3_YAXPAX_Z(v3);
+    RA2_OPDEL(v3);
     this->Items = 0;
   }
     this->IsAllocated = 0;
     this->Capacity = 0;
     if ( (a2 & 1) != 0 )
-    __3_YAXPAX_Z(this);
+    RA2_OPDEL();
     return this;
-}
 }
 } // namespace gamemd
 
@@ -2337,13 +2343,13 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   int v7; // ecx
   int v8; // eax
 
-  ControlClass::Construct((_DWORD *)this, aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
+  ControlClass::Construct(aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
   v7 = this->M48; /*0x4e2a79*/
-  *(_DWORD *)this = &GaugeClass::`vftable'; /*0x4e2a83*/
+  *(_DWORD *)this = &(void*)(void*)&GaugeClass_vftable; /*0x4e2a83*/
   if ( v7 != 255 ) /*0x4e2a89*/
   {
     this->M48 = 255; /*0x4e2a8d*/
-    VectorClass_ptr_ConvertClass::MarkDirty((_BYTE *)this); /*0x4e2a90*/
+    VectorClass_ptr_ConvertClass::MarkDirty(); /*0x4e2a90*/
   }
   v8 = 0; /*0x4e2a99*/
   if ( this->M48 < 0 ) /*0x4e2a9d*/
@@ -2351,7 +2357,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   if ( v8 != this->q034 ) /*0x4e2aa4*/
   {
     this->q034 = v8; /*0x4e2aa6*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)&this->u32_1C2))(this); /*0x4e2aad*/
+    (*(void (__thiscall **)(int))(this->q048)(this); /*0x4e2aad*/
   }
   this->M45 = 1; /*0x4e2ab2*/
   this->M46 = aP4 > aP5; /*0x4e2ab9*/
@@ -2359,7 +2365,7 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   this->M56 = 0; /*0x4e2ac0*/
   this->M60 = 0; /*0x4e2ac7*/
   this->q040 = 0; /*0x4e2ace*/
-  *(_DWORD *)this = &TriColorGaugeClass::`vftable'; /*0x4e2ad5*/
+  *(_DWORD *)this = &(void*)(void*)&TriColorGaugeClass_vftable; /*0x4e2ad5*/
   return this; /*0x4e2add*/
 }
 } // namespace gamemd
@@ -2615,7 +2621,7 @@ LPARAM * InitGameDropdownColors()
   dword_8B4074 = (int)GetStringCSF(aGuiSkyblueabbr, 0, g_Str_File_GDlgSupp_cpp, 480); /*0x4e446e*/
   dword_8B4080 = (int)GetStringCSF(aGuiPurpleabbre, 0, g_Str_File_GDlgSupp_cpp, 481); /*0x4e4489*/
   dword_8B408C = (int)GetStringCSF(aGuiPinkabbrev, 0, g_Str_File_GDlgSupp_cpp, 482); /*0x4e44a4*/
-  LODWORD(dbl_8B4098) = GetStringCSF(aGuiGrayabbrev, 0, g_Str_File_GDlgSupp_cpp, 483); /*0x4e44ae*/
+  IDA_LODWORD(dbl_8B4098) = GetStringCSF(aGuiGrayabbrev, 0, g_Str_File_GDlgSupp_cpp, 483); /*0x4e44ae*/
   v0 = dword_8B4040; /*0x4e44b3*/
   result = dword_8316A8; /*0x4e44b8*/
   do /*0x4e44d3*/
@@ -2839,7 +2845,7 @@ int E4Recv_4E6070::sub_4E6070()
   this->M104 = 0; /*0x4e6087*/
   this->M108 = 0; /*0x4e608a*/
   Debug::Log(); /*0x4e608d*/
-  memset((void *)this, 0xFFu, 0x18u); /*0x4e609f*/
+  memset(0xFFu, 0x18u); /*0x4e609f*/
   this->M24 = -1; /*0x4e60a9*/
   *(_DWORD *)(&this->u32_10 * (this->M104)++) = 2; /*0x4e60cc*/
   Debug::Log(); /*0x4e60d6*/
@@ -3064,7 +3070,7 @@ int sub_4E64E0()
   dword_A8B208 = 0; /*0x4e64ec*/
   byte_A8B20C = 1; /*0x4e64f1*/
   byte_A8B20D = 0; /*0x4e64f8*/
-  AITriggerTypeClass_Array = (int)&DynamicVectorClass<AITriggerTypeClass *>::`vftable'; /*0x4e64fd*/
+  AITriggerTypeClass_Array = (int)&(void*)(void*)&DynamicVectorClass_AITriggerTypeClass___vftable; /*0x4e64fd*/
   dword_A8B214 = 10; /*0x4e6507*/
   g_AnimTypeInitQueue = 0; /*0x4e6511*/
   return atexit(sub_4E6520); /*0x4e651c*/
@@ -3075,10 +3081,10 @@ int sub_4E64E0()
 namespace gamemd {
 void sub_4E6520()
 {
-  AITriggerTypeClass_Array = (int)&VectorClass<AITriggerTypeClass *>::`vftable'; /*0x4e6528*/
+  AITriggerTypeClass_Array = (int)&(void*)(void*)&VectorClass_AITriggerTypeClass___vftable; /*0x4e6528*/
   if ( dword_A8B204 && byte_A8B20D ) /*0x4e653c*/
   {
-    __3_YAXPAX_Z(dword_A8B204); /*0x4e653f*/
+    RA2_OPDEL(dword_A8B204); /*0x4e653f*/
     dword_A8B204 = 0; /*0x4e6547*/
   }
   byte_A8B20D = 0; /*0x4e654d*/
@@ -3094,7 +3100,7 @@ int sub_4E6560()
   LightConvertClass_Array = 0; /*0x4e656c*/
   byte_8B4184 = 1; /*0x4e6571*/
   byte_8B4185 = 0; /*0x4e6578*/
-  dword_8B4178 = (int)&DynamicVectorClass<TriggerTypeClass *>::`vftable'; /*0x4e657d*/
+  dword_8B4178 = (int)&(void*)(void*)&DynamicVectorClass_TriggerTypeClass___vftable; /*0x4e657d*/
   dword_8B418C = 10; /*0x4e6587*/
   g_MultiplayerLogBuffer = 0; /*0x4e6591*/
   return atexit(sub_4E65A0); /*0x4e659c*/
@@ -3105,10 +3111,10 @@ int sub_4E6560()
 namespace gamemd {
 void sub_4E65A0()
 {
-  dword_8B4178 = (int)&VectorClass<TriggerTypeClass *>::`vftable'; /*0x4e65a8*/
+  dword_8B4178 = (int)&(void*)(void*)&VectorClass_TriggerTypeClass___vftable; /*0x4e65a8*/
   if ( dword_8B417C && byte_8B4185 ) /*0x4e65bc*/
   {
-    __3_YAXPAX_Z(dword_8B417C); /*0x4e65bf*/
+    RA2_OPDEL(dword_8B417C); /*0x4e65bf*/
     dword_8B417C = 0; /*0x4e65c7*/
   }
   byte_8B4185 = 0; /*0x4e65cd*/
@@ -3124,7 +3130,7 @@ int sub_4E65E0()
   dword_A8EAF0 = 0; /*0x4e65ec*/
   byte_A8EAF4 = 1; /*0x4e65f1*/
   byte_A8EAF5 = 0; /*0x4e65f8*/
-  TriggerClass_Array = (int)&DynamicVectorClass<TriggerClass *>::`vftable'; /*0x4e65fd*/
+  TriggerClass_Array = (int)&(void*)(void*)&DynamicVectorClass_TriggerClass___vftable; /*0x4e65fd*/
   dword_A8EAFC = 10; /*0x4e6607*/
   g_ProductionQueueState = 0; /*0x4e6611*/
   return atexit(sub_4E6620); /*0x4e661c*/
@@ -3135,10 +3141,10 @@ int sub_4E65E0()
 namespace gamemd {
 void sub_4E6620()
 {
-  TriggerClass_Array = (int)&VectorClass<TriggerClass *>::`vftable'; /*0x4e6628*/
+  TriggerClass_Array = (int)&(void*)(void*)&VectorClass_TriggerClass___vftable; /*0x4e6628*/
   if ( g_TriggerClassCapacity && byte_A8EAF5 ) /*0x4e663c*/
   {
-    __3_YAXPAX_Z(g_TriggerClassCapacity); /*0x4e663f*/
+    RA2_OPDEL(g_TriggerClassCapacity); /*0x4e663f*/
     g_TriggerClassCapacity = 0; /*0x4e6647*/
   }
   byte_A8EAF5 = 0; /*0x4e664d*/
@@ -3154,7 +3160,7 @@ int sub_4E6660()
   dword_8B4198 = 0; /*0x4e666c*/
   byte_8B419C = 1; /*0x4e6671*/
   byte_8B419D = 0; /*0x4e6678*/
-  dword_8B4190 = (int)&DynamicVectorClass<BuildingLightClass *>::`vftable'; /*0x4e667d*/
+  dword_8B4190 = (int)&(void*)(void*)&DynamicVectorClass_BuildingLightClass___vftable; /*0x4e667d*/
   dword_8B41A4 = 10; /*0x4e6687*/
   dword_8B41A0 = 0; /*0x4e6691*/
   return atexit(sub_4E66A0); /*0x4e669c*/
@@ -3165,10 +3171,10 @@ int sub_4E6660()
 namespace gamemd {
 void sub_4E66A0()
 {
-  dword_8B4190 = (int)&VectorClass<BuildingLightClass *>::`vftable'; /*0x4e66a8*/
+  dword_8B4190 = (int)&(void*)(void*)&VectorClass_BuildingLightClass___vftable; /*0x4e66a8*/
   if ( dword_8B4194 && byte_8B419D ) /*0x4e66bc*/
   {
-    __3_YAXPAX_Z(dword_8B4194); /*0x4e66bf*/
+    RA2_OPDEL(dword_8B4194); /*0x4e66bf*/
     dword_8B4194 = 0; /*0x4e66c7*/
   }
   byte_8B419D = 0; /*0x4e66cd*/
@@ -3184,7 +3190,7 @@ int sub_4E66E0()
   dword_A80210 = 0; /*0x4e66ec*/
   byte_A80214 = 1; /*0x4e66f1*/
   byte_A80215 = 0; /*0x4e66f8*/
-  dword_A80208 = (int)&DynamicVectorClass<ParticleSystemClass *>::`vftable'; /*0x4e66fd*/
+  dword_A80208 = (int)&(void*)(void*)&DynamicVectorClass_ParticleSystemClass___vftable; /*0x4e66fd*/
   dword_A8021C = 10; /*0x4e6707*/
   g_GameCleanupState = 0; /*0x4e6711*/
   return atexit(sub_4E6720); /*0x4e671c*/
@@ -3195,10 +3201,10 @@ int sub_4E66E0()
 namespace gamemd {
 void sub_4E6720()
 {
-  dword_A80208 = (int)&VectorClass<ParticleSystemClass *>::`vftable'; /*0x4e6728*/
+  dword_A80208 = (int)&(void*)(void*)&VectorClass_ParticleSystemClass___vftable; /*0x4e6728*/
   if ( dword_A8020C && byte_A80215 ) /*0x4e673c*/
   {
-    __3_YAXPAX_Z(dword_A8020C); /*0x4e673f*/
+    RA2_OPDEL(dword_A8020C); /*0x4e673f*/
     dword_A8020C = 0; /*0x4e6747*/
   }
   byte_A80215 = 0; /*0x4e674d*/
@@ -3214,7 +3220,7 @@ int sub_4E6760()
   dword_8B4140 = 0; /*0x4e676c*/
   byte_8B4144 = 1; /*0x4e6771*/
   byte_8B4145 = 0; /*0x4e6778*/
-  dword_8B4138 = (int)&DynamicVectorClass<TubeClass *>::`vftable'; /*0x4e677d*/
+  dword_8B4138 = (int)&(void*)(void*)&DynamicVectorClass_TubeClass___vftable; /*0x4e677d*/
   dword_8B414C = 10; /*0x4e6787*/
   g_UnitTypeCount = 0; /*0x4e6791*/
   return atexit(sub_4E67A0); /*0x4e679c*/
@@ -3225,10 +3231,10 @@ int sub_4E6760()
 namespace gamemd {
 void sub_4E67A0()
 {
-  dword_8B4138 = (int)&VectorClass<TubeClass *>::`vftable'; /*0x4e67a8*/
+  dword_8B4138 = (int)&(void*)(void*)&VectorClass_TubeClass___vftable; /*0x4e67a8*/
   if ( g_PathClass_State && byte_8B4145 ) /*0x4e67bc*/
   {
-    __3_YAXPAX_Z(g_PathClass_State); /*0x4e67bf*/
+    RA2_OPDEL(g_PathClass_State); /*0x4e67bf*/
     g_PathClass_State = 0; /*0x4e67c7*/
   }
   byte_8B4145 = 0; /*0x4e67cd*/
@@ -3244,7 +3250,7 @@ int sub_4E67E0()
   dword_A8EC40 = 0; /*0x4e67ec*/
   g_GameObjectManager = 1; /*0x4e67f1*/
   byte_A8EC45 = 0; /*0x4e67f8*/
-  dword_A8EC38 = (int)&DynamicVectorClass<WaveClass *>::`vftable'; /*0x4e67fd*/
+  dword_A8EC38 = (int)&(void*)(void*)&DynamicVectorClass_WaveClass___vftable; /*0x4e67fd*/
   dword_A8EC4C = 10; /*0x4e6807*/
   dword_A8EC48 = 0; /*0x4e6811*/
   return atexit(sub_4E6820); /*0x4e681c*/
@@ -3255,10 +3261,10 @@ int sub_4E67E0()
 namespace gamemd {
 void sub_4E6820()
 {
-  dword_A8EC38 = (int)&VectorClass<WaveClass *>::`vftable'; /*0x4e6828*/
+  dword_A8EC38 = (int)&(void*)(void*)&VectorClass_WaveClass___vftable; /*0x4e6828*/
   if ( dword_A8EC3C && byte_A8EC45 ) /*0x4e683c*/
   {
-    __3_YAXPAX_Z(dword_A8EC3C); /*0x4e683f*/
+    RA2_OPDEL(dword_A8EC3C); /*0x4e683f*/
     dword_A8EC3C = 0; /*0x4e6847*/
   }
   byte_A8EC45 = 0; /*0x4e684d*/
@@ -3270,10 +3276,10 @@ void sub_4E6820()
 namespace gamemd {
 void sub_4E68A0()
 {
-  BulletClass_Array = (int)&VectorClass<BulletClass *>::`vftable'; /*0x4e68a8*/
+  BulletClass_Array = (int)&(void*)(void*)&VectorClass_BulletClass___vftable; /*0x4e68a8*/
   if ( dword_A8ED44 && byte_A8ED4D ) /*0x4e68bc*/
   {
-    __3_YAXPAX_Z(dword_A8ED44); /*0x4e68bf*/
+    RA2_OPDEL(dword_A8ED44); /*0x4e68bf*/
     dword_A8ED44 = 0; /*0x4e68c7*/
   }
   byte_A8ED4D = 0; /*0x4e68cd*/
@@ -3289,7 +3295,7 @@ int sub_4E68E0()
   dword_A8EC58 = 0; /*0x4e68ec*/
   byte_A8EC5C = 1; /*0x4e68f1*/
   byte_A8EC5D = 0; /*0x4e68f8*/
-  OverlayClass_Array = (int)&DynamicVectorClass<OverlayClass *>::`vftable'; /*0x4e68fd*/
+  OverlayClass_Array = (int)&(void*)(void*)&DynamicVectorClass_OverlayClass___vftable; /*0x4e68fd*/
   dword_A8EC64 = 10; /*0x4e6907*/
   dword_A8EC60 = 0; /*0x4e6911*/
   return atexit(sub_4E6920); /*0x4e691c*/
@@ -3300,10 +3306,10 @@ int sub_4E68E0()
 namespace gamemd {
 void sub_4E6920()
 {
-  OverlayClass_Array = (int)&VectorClass<OverlayClass *>::`vftable'; /*0x4e6928*/
+  OverlayClass_Array = (int)&(void*)(void*)&VectorClass_OverlayClass___vftable; /*0x4e6928*/
   if ( g_ObjectClass_Capacity && byte_A8EC5D ) /*0x4e693c*/
   {
-    __3_YAXPAX_Z(g_ObjectClass_Capacity); /*0x4e693f*/
+    RA2_OPDEL(g_ObjectClass_Capacity); /*0x4e693f*/
     g_ObjectClass_Capacity = 0; /*0x4e6947*/
   }
   byte_A8EC5D = 0; /*0x4e694d*/
@@ -3319,7 +3325,7 @@ int sub_4E6960()
   dword_A83DD0 = 0; /*0x4e696c*/
   byte_A83DD4 = 1; /*0x4e6971*/
   byte_A83DD5 = 0; /*0x4e6978*/
-  dword_A83DC8 = (int)&DynamicVectorClass<ParticleClass *>::`vftable'; /*0x4e697d*/
+  dword_A83DC8 = (int)&(void*)(void*)&DynamicVectorClass_ParticleClass___vftable; /*0x4e697d*/
   dword_A83DDC = 10; /*0x4e6987*/
   dword_A83DD8 = 0; /*0x4e6991*/
   return atexit(sub_4E69A0); /*0x4e699c*/
@@ -3330,10 +3336,10 @@ int sub_4E6960()
 namespace gamemd {
 void sub_4E69A0()
 {
-  dword_A83DC8 = (int)&VectorClass<ParticleClass *>::`vftable'; /*0x4e69a8*/
+  dword_A83DC8 = (int)&(void*)(void*)&VectorClass_ParticleClass___vftable; /*0x4e69a8*/
   if ( dword_A83DCC && byte_A83DD5 ) /*0x4e69bc*/
   {
-    __3_YAXPAX_Z(dword_A83DCC); /*0x4e69bf*/
+    RA2_OPDEL(dword_A83DCC); /*0x4e69bf*/
     dword_A83DCC = 0; /*0x4e69c7*/
   }
   byte_A83DD5 = 0; /*0x4e69cd*/
@@ -3349,7 +3355,7 @@ int sub_4E69E0()
   dword_A8B1E8 = 0; /*0x4e69ec*/
   byte_A8B1EC = 1; /*0x4e69f1*/
   byte_A8B1ED = 0; /*0x4e69f8*/
-  SmudgeClass_Array = (int)&DynamicVectorClass<SmudgeClass *>::`vftable'; /*0x4e69fd*/
+  SmudgeClass_Array = (int)&(void*)(void*)&DynamicVectorClass_SmudgeClass___vftable; /*0x4e69fd*/
   dword_A8B1F4 = 10; /*0x4e6a07*/
   dword_A8B1F0 = 0; /*0x4e6a11*/
   return atexit(sub_4E6A20); /*0x4e6a1c*/
@@ -3360,10 +3366,10 @@ int sub_4E69E0()
 namespace gamemd {
 void sub_4E6A20()
 {
-  SmudgeClass_Array = (int)&VectorClass<SmudgeClass *>::`vftable'; /*0x4e6a28*/
+  SmudgeClass_Array = (int)&(void*)(void*)&VectorClass_SmudgeClass___vftable; /*0x4e6a28*/
   if ( dword_A8B1E4 && byte_A8B1ED ) /*0x4e6a3c*/
   {
-    __3_YAXPAX_Z(dword_A8B1E4); /*0x4e6a3f*/
+    RA2_OPDEL(dword_A8B1E4); /*0x4e6a3f*/
     dword_A8B1E4 = 0; /*0x4e6a47*/
   }
   byte_A8B1ED = 0; /*0x4e6a4d*/
@@ -3379,7 +3385,7 @@ int sub_4E6A60()
   dword_A8E990 = 0; /*0x4e6a6c*/
   byte_A8E994 = 1; /*0x4e6a71*/
   byte_A8E995 = 0; /*0x4e6a78*/
-  dword_A8E988 = (int)&DynamicVectorClass<TerrainClass *>::`vftable'; /*0x4e6a7d*/
+  dword_A8E988 = (int)&(void*)(void*)&DynamicVectorClass_TerrainClass___vftable; /*0x4e6a7d*/
   dword_A8E99C = 10; /*0x4e6a87*/
   dword_A8E998 = 0; /*0x4e6a91*/
   return atexit(sub_4E6AA0); /*0x4e6a9c*/
@@ -3390,10 +3396,10 @@ int sub_4E6A60()
 namespace gamemd {
 void sub_4E6AA0()
 {
-  dword_A8E988 = (int)&VectorClass<TerrainClass *>::`vftable'; /*0x4e6aa8*/
+  dword_A8E988 = (int)&(void*)(void*)&VectorClass_TerrainClass___vftable; /*0x4e6aa8*/
   if ( dword_A8E98C && byte_A8E995 ) /*0x4e6abc*/
   {
-    __3_YAXPAX_Z(dword_A8E98C); /*0x4e6abf*/
+    RA2_OPDEL(dword_A8E98C); /*0x4e6abf*/
     dword_A8E98C = 0; /*0x4e6ac7*/
   }
   byte_A8E995 = 0; /*0x4e6acd*/
@@ -3409,7 +3415,7 @@ int sub_4E6AE0()
   dword_A83DF0 = 0; /*0x4e6aec*/
   byte_A83DF4 = 1; /*0x4e6af1*/
   byte_A83DF5 = 0; /*0x4e6af8*/
-  InfantryClass_Array = (int)&DynamicVectorClass<InfantryClass *>::`vftable'; /*0x4e6afd*/
+  InfantryClass_Array = (int)&(void*)(void*)&DynamicVectorClass_InfantryClass___vftable; /*0x4e6afd*/
   dword_A83DFC = 10; /*0x4e6b07*/
   g_BuildingClass_Count = 0; /*0x4e6b11*/
   return atexit(sub_4E6B20); /*0x4e6b1c*/
@@ -3420,10 +3426,10 @@ int sub_4E6AE0()
 namespace gamemd {
 void sub_4E6B20()
 {
-  InfantryClass_Array = (int)&VectorClass<InfantryClass *>::`vftable'; /*0x4e6b28*/
+  InfantryClass_Array = (int)&(void*)(void*)&VectorClass_InfantryClass___vftable; /*0x4e6b28*/
   if ( g_InfantryClassLimit && byte_A83DF5 ) /*0x4e6b3c*/
   {
-    __3_YAXPAX_Z(g_InfantryClassLimit); /*0x4e6b3f*/
+    RA2_OPDEL(g_InfantryClassLimit); /*0x4e6b3f*/
     g_InfantryClassLimit = 0; /*0x4e6b47*/
   }
   byte_A83DF5 = 0; /*0x4e6b4d*/
@@ -3439,7 +3445,7 @@ int sub_4E6B60()
   dword_A8EB48 = 0; /*0x4e6b6c*/
   byte_A8EB4C = 1; /*0x4e6b71*/
   byte_A8EB4D = 0; /*0x4e6b78*/
-  BuildingClass_Array = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4e6b7d*/
+  BuildingClass_Array = (int)&(void*)(void*)&DynamicVectorClass_BuildingClass___vftable; /*0x4e6b7d*/
   dword_A8EB54 = 10; /*0x4e6b87*/
   g_BuildingProductionState = 0; /*0x4e6b91*/
   return atexit(sub_4E6BA0); /*0x4e6b9c*/
@@ -3450,10 +3456,10 @@ int sub_4E6B60()
 namespace gamemd {
 void sub_4E6BA0()
 {
-  BuildingClass_Array = (int)&VectorClass<BuildingClass *>::`vftable'; /*0x4e6ba8*/
+  BuildingClass_Array = (int)&(void*)(void*)&VectorClass_BuildingClass___vftable; /*0x4e6ba8*/
   if ( g_BuildingClass_InstanceCount && byte_A8EB4D ) /*0x4e6bbc*/
   {
-    __3_YAXPAX_Z(g_BuildingClass_InstanceCount); /*0x4e6bbf*/
+    RA2_OPDEL(g_BuildingClass_InstanceCount); /*0x4e6bbf*/
     g_BuildingClass_InstanceCount = 0; /*0x4e6bc7*/
   }
   byte_A8EB4D = 0; /*0x4e6bcd*/
@@ -3469,7 +3475,7 @@ int sub_4E6BE0()
   dword_A8E398 = 0; /*0x4e6bec*/
   byte_A8E39C = 1; /*0x4e6bf1*/
   byte_A8E39D = 0; /*0x4e6bf8*/
-  AircraftClass_Array = (int)&DynamicVectorClass<AircraftClass *>::`vftable'; /*0x4e6bfd*/
+  AircraftClass_Array = (int)&(void*)(void*)&DynamicVectorClass_AircraftClass___vftable; /*0x4e6bfd*/
   dword_A8E3A4 = 10; /*0x4e6c07*/
   g_AircraftClassCount = 0; /*0x4e6c11*/
   return atexit(sub_4E6C20); /*0x4e6c1c*/
@@ -3480,10 +3486,10 @@ int sub_4E6BE0()
 namespace gamemd {
 void sub_4E6C20()
 {
-  AircraftClass_Array = (int)&VectorClass<AircraftClass *>::`vftable'; /*0x4e6c28*/
+  AircraftClass_Array = (int)&(void*)(void*)&VectorClass_AircraftClass___vftable; /*0x4e6c28*/
   if ( dword_A8E394 && byte_A8E39D ) /*0x4e6c3c*/
   {
-    __3_YAXPAX_Z(dword_A8E394); /*0x4e6c3f*/
+    RA2_OPDEL(dword_A8E394); /*0x4e6c3f*/
     dword_A8E394 = 0; /*0x4e6c47*/
   }
   byte_A8E39D = 0; /*0x4e6c4d*/
@@ -3499,7 +3505,7 @@ int sub_4E6C60()
   dword_8B4110 = 0; /*0x4e6c6c*/
   byte_8B4114 = 1; /*0x4e6c71*/
   byte_8B4115 = 0; /*0x4e6c78*/
-  UnitClass_Array = (int)&DynamicVectorClass<UnitClass *>::`vftable'; /*0x4e6c7d*/
+  UnitClass_Array = (int)&(void*)(void*)&DynamicVectorClass_UnitClass___vftable; /*0x4e6c7d*/
   dword_8B411C = 10; /*0x4e6c87*/
   g_HouseClass_BuildState = 0; /*0x4e6c91*/
   return atexit(sub_4E6CA0); /*0x4e6c9c*/
@@ -3510,10 +3516,10 @@ int sub_4E6C60()
 namespace gamemd {
 void sub_4E6CA0()
 {
-  UnitClass_Array = (int)&VectorClass<UnitClass *>::`vftable'; /*0x4e6ca8*/
+  UnitClass_Array = (int)&(void*)(void*)&VectorClass_UnitClass___vftable; /*0x4e6ca8*/
   if ( g_UnitClassPool && byte_8B4115 ) /*0x4e6cbc*/
   {
-    __3_YAXPAX_Z(g_UnitClassPool); /*0x4e6cbf*/
+    RA2_OPDEL(g_UnitClassPool); /*0x4e6cbf*/
     g_UnitClassPool = 0; /*0x4e6cc7*/
   }
   byte_8B4115 = 0; /*0x4e6ccd*/
@@ -3529,7 +3535,7 @@ int sub_4E6D60()
   dword_A8E9B0 = 0; /*0x4e6d6c*/
   byte_A8E9B4 = 1; /*0x4e6d71*/
   byte_A8E9B5 = 0; /*0x4e6d78*/
-  AnimClass_Array = (int)&DynamicVectorClass<AnimClass *>::`vftable'; /*0x4e6d7d*/
+  AnimClass_Array = (int)&(void*)(void*)&DynamicVectorClass_AnimClass___vftable; /*0x4e6d7d*/
   dword_A8E9BC = 10; /*0x4e6d87*/
   g_AnimClassCount = 0; /*0x4e6d91*/
   return atexit(sub_4E6DA0); /*0x4e6d9c*/
@@ -3540,10 +3546,10 @@ int sub_4E6D60()
 namespace gamemd {
 void sub_4E6DA0()
 {
-  AnimClass_Array = (int)&VectorClass<AnimClass *>::`vftable'; /*0x4e6da8*/
+  AnimClass_Array = (int)&(void*)(void*)&VectorClass_AnimClass___vftable; /*0x4e6da8*/
   if ( g_AnimClassPool && byte_A8E9B5 ) /*0x4e6dbc*/
   {
-    __3_YAXPAX_Z(g_AnimClassPool); /*0x4e6dbf*/
+    RA2_OPDEL(g_AnimClassPool); /*0x4e6dbf*/
     g_AnimClassPool = 0; /*0x4e6dc7*/
   }
   byte_A8E9B5 = 0; /*0x4e6dcd*/
@@ -3559,7 +3565,7 @@ int sub_4E6DE0()
   dword_8B40F0 = 0; /*0x4e6dec*/
   byte_8B40F4 = 1; /*0x4e6df1*/
   byte_8B40F5 = 0; /*0x4e6df8*/
-  TeamClass_Array = (int)&DynamicVectorClass<TeamClass *>::`vftable'; /*0x4e6dfd*/
+  TeamClass_Array = (int)&(void*)(void*)&DynamicVectorClass_TeamClass___vftable; /*0x4e6dfd*/
   dword_8B40FC = 10; /*0x4e6e07*/
   g_HouseClass_AIProductionState = 0; /*0x4e6e11*/
   return atexit(sub_4E6E20); /*0x4e6e1c*/
@@ -3570,10 +3576,10 @@ int sub_4E6DE0()
 namespace gamemd {
 void sub_4E6E20()
 {
-  TeamClass_Array = (int)&VectorClass<TeamClass *>::`vftable'; /*0x4e6e28*/
+  TeamClass_Array = (int)&(void*)(void*)&VectorClass_TeamClass___vftable; /*0x4e6e28*/
   if ( g_TeamClassPool && byte_8B40F5 ) /*0x4e6e3c*/
   {
-    __3_YAXPAX_Z(g_TeamClassPool); /*0x4e6e3f*/
+    RA2_OPDEL(g_TeamClassPool); /*0x4e6e3f*/
     g_TeamClassPool = 0; /*0x4e6e47*/
   }
   byte_8B40F5 = 0; /*0x4e6e4d*/
@@ -3589,7 +3595,7 @@ int sub_4E6E60()
   dword_A83E38 = 0; /*0x4e6e6c*/
   byte_A83E3C = 1; /*0x4e6e71*/
   byte_A83E3D = 0; /*0x4e6e78*/
-  dword_A83E30 = (int)&DynamicVectorClass<FactoryClass *>::`vftable'; /*0x4e6e7d*/
+  dword_A83E30 = (int)&(void*)(void*)&DynamicVectorClass_FactoryClass___vftable; /*0x4e6e7d*/
   dword_A83E44 = 10; /*0x4e6e87*/
   g_TeamTypeCapacity = 0; /*0x4e6e91*/
   return atexit(sub_4E6EA0); /*0x4e6e9c*/
@@ -3600,10 +3606,10 @@ int sub_4E6E60()
 namespace gamemd {
 void sub_4E6EA0()
 {
-  dword_A83E30 = (int)&VectorClass<FactoryClass *>::`vftable'; /*0x4e6ea8*/
+  dword_A83E30 = (int)&(void*)(void*)&VectorClass_FactoryClass___vftable; /*0x4e6ea8*/
   if ( g_TeamTypeCount && byte_A83E3D ) /*0x4e6ebc*/
   {
-    __3_YAXPAX_Z(g_TeamTypeCount); /*0x4e6ebf*/
+    RA2_OPDEL(g_TeamTypeCount); /*0x4e6ebf*/
     g_TeamTypeCount = 0; /*0x4e6ec7*/
   }
   byte_A83E3D = 0; /*0x4e6ecd*/
@@ -3619,7 +3625,7 @@ int sub_4E6EE0()
   dword_A83D00 = 0; /*0x4e6eec*/
   byte_A83D04 = 1; /*0x4e6ef1*/
   byte_A83D05 = 0; /*0x4e6ef8*/
-  dword_A83CF8 = (int)&DynamicVectorClass<CampaignClass *>::`vftable'; /*0x4e6efd*/
+  dword_A83CF8 = (int)&(void*)(void*)&DynamicVectorClass_CampaignClass___vftable; /*0x4e6efd*/
   dword_A83D0C = 10; /*0x4e6f07*/
   g_UnitTypeInitState = 0; /*0x4e6f11*/
   return atexit(sub_4E6F20); /*0x4e6f1c*/
@@ -3630,10 +3636,10 @@ int sub_4E6EE0()
 namespace gamemd {
 void sub_4E6F20()
 {
-  dword_A83CF8 = (int)&VectorClass<CampaignClass *>::`vftable'; /*0x4e6f28*/
+  dword_A83CF8 = (int)&(void*)(void*)&VectorClass_CampaignClass___vftable; /*0x4e6f28*/
   if ( g_CampaignTypeArray && byte_A83D05 ) /*0x4e6f3c*/
   {
-    __3_YAXPAX_Z(g_CampaignTypeArray); /*0x4e6f3f*/
+    RA2_OPDEL(g_CampaignTypeArray); /*0x4e6f3f*/
     g_CampaignTypeArray = 0; /*0x4e6f47*/
   }
   byte_A83D05 = 0; /*0x4e6f4d*/
@@ -3649,7 +3655,7 @@ int sub_4E6F60()
   dword_8B4128 = 0; /*0x4e6f6c*/
   byte_8B412C = 1; /*0x4e6f71*/
   byte_8B412D = 0; /*0x4e6f78*/
-  dword_8B4120 = (int)&DynamicVectorClass<SideClass *>::`vftable'; /*0x4e6f7d*/
+  dword_8B4120 = (int)&(void*)(void*)&DynamicVectorClass_SideClass___vftable; /*0x4e6f7d*/
   dword_8B4134 = 10; /*0x4e6f87*/
   g_ObjectTypeList = 0; /*0x4e6f91*/
   return atexit(sub_4E6FA0); /*0x4e6f9c*/
@@ -3660,10 +3666,10 @@ int sub_4E6F60()
 namespace gamemd {
 void sub_4E6FA0()
 {
-  dword_8B4120 = (int)&VectorClass<SideClass *>::`vftable'; /*0x4e6fa8*/
+  dword_8B4120 = (int)&(void*)(void*)&VectorClass_SideClass___vftable; /*0x4e6fa8*/
   if ( dword_8B4124 && byte_8B412D ) /*0x4e6fbc*/
   {
-    __3_YAXPAX_Z(dword_8B4124); /*0x4e6fbf*/
+    RA2_OPDEL(dword_8B4124); /*0x4e6fbf*/
     dword_8B4124 = 0; /*0x4e6fc7*/
   }
   byte_8B412D = 0; /*0x4e6fcd*/
@@ -3679,7 +3685,7 @@ int sub_4E6FE0()
   dword_A83CA0 = 0; /*0x4e6fec*/
   byte_A83CA4 = 1; /*0x4e6ff1*/
   byte_A83CA5 = 0; /*0x4e6ff8*/
-  dword_A83C98 = (int)&DynamicVectorClass<HouseTypeClass *>::`vftable'; /*0x4e6ffd*/
+  dword_A83C98 = (int)&(void*)(void*)&DynamicVectorClass_HouseTypeClass___vftable; /*0x4e6ffd*/
   dword_A83CAC = 10; /*0x4e7007*/
   g_SuperWeaponTypeArray = 0; /*0x4e7011*/
   return atexit(sub_4E7020); /*0x4e701c*/
@@ -3690,10 +3696,10 @@ int sub_4E6FE0()
 namespace gamemd {
 void sub_4E7020()
 {
-  dword_A83C98 = (int)&VectorClass<HouseTypeClass *>::`vftable'; /*0x4e7028*/
+  dword_A83C98 = (int)&(void*)(void*)&VectorClass_HouseTypeClass___vftable; /*0x4e7028*/
   if ( g_SuperWeaponTypeCount && byte_A83CA5 ) /*0x4e703c*/
   {
-    __3_YAXPAX_Z(g_SuperWeaponTypeCount); /*0x4e703f*/
+    RA2_OPDEL(g_SuperWeaponTypeCount); /*0x4e703f*/
     g_SuperWeaponTypeCount = 0; /*0x4e7047*/
   }
   byte_A83CA5 = 0; /*0x4e704d*/
@@ -3709,7 +3715,7 @@ int sub_4E7060()
   dword_A8E8D8 = 0; /*0x4e706c*/
   byte_A8E8DC = 1; /*0x4e7071*/
   byte_A8E8DD = 0; /*0x4e7078*/
-  dword_A8E8D0 = (int)&DynamicVectorClass<TaskForceClass *>::`vftable'; /*0x4e707d*/
+  dword_A8E8D0 = (int)&(void*)(void*)&DynamicVectorClass_TaskForceClass___vftable; /*0x4e707d*/
   dword_A8E8E4 = 10; /*0x4e7087*/
   g_MultiplayerLogFlags = 0; /*0x4e7091*/
   return atexit(sub_4E70A0); /*0x4e709c*/
@@ -3720,10 +3726,10 @@ int sub_4E7060()
 namespace gamemd {
 void sub_4E70A0()
 {
-  dword_A8E8D0 = (int)&VectorClass<TaskForceClass *>::`vftable'; /*0x4e70a8*/
+  dword_A8E8D0 = (int)&(void*)(void*)&VectorClass_TaskForceClass___vftable; /*0x4e70a8*/
   if ( g_MultiplayerLogEntry && byte_A8E8DD ) /*0x4e70bc*/
   {
-    __3_YAXPAX_Z(g_MultiplayerLogEntry); /*0x4e70bf*/
+    RA2_OPDEL(g_MultiplayerLogEntry); /*0x4e70bf*/
     g_MultiplayerLogEntry = 0; /*0x4e70c7*/
   }
   byte_A8E8DD = 0; /*0x4e70cd*/
@@ -3739,7 +3745,7 @@ int sub_4E70E0()
   dword_A8ECA8 = 0; /*0x4e70ec*/
   byte_A8ECAC = 1; /*0x4e70f1*/
   byte_A8ECAD = 0; /*0x4e70f8*/
-  TeamTypeClass_Array = (int)&DynamicVectorClass<TeamTypeClass *>::`vftable'; /*0x4e70fd*/
+  TeamTypeClass_Array = (int)&(void*)(void*)&DynamicVectorClass_TeamTypeClass___vftable; /*0x4e70fd*/
   dword_A8ECB4 = 10; /*0x4e7107*/
   g_MultiplayerLogState = 0; /*0x4e7111*/
   return atexit(sub_4E7120); /*0x4e711c*/
@@ -3750,10 +3756,10 @@ int sub_4E70E0()
 namespace gamemd {
 void sub_4E7120()
 {
-  TeamTypeClass_Array = (int)&VectorClass<TeamTypeClass *>::`vftable'; /*0x4e7128*/
+  TeamTypeClass_Array = (int)&(void*)(void*)&VectorClass_TeamTypeClass___vftable; /*0x4e7128*/
   if ( g_TeamTypePool && byte_A8ECAD ) /*0x4e713c*/
   {
-    __3_YAXPAX_Z(g_TeamTypePool); /*0x4e713f*/
+    RA2_OPDEL(g_TeamTypePool); /*0x4e713f*/
     g_TeamTypePool = 0; /*0x4e7147*/
   }
   byte_A8ECAD = 0; /*0x4e714d*/
@@ -3769,7 +3775,7 @@ int sub_4E7160()
   dword_8B41D0 = 0; /*0x4e716c*/
   byte_8B41D4 = 1; /*0x4e7171*/
   byte_8B41D5 = 0; /*0x4e7178*/
-  dword_8B41C8 = (int)&DynamicVectorClass<ScriptTypeClass *>::`vftable'; /*0x4e717d*/
+  dword_8B41C8 = (int)&(void*)(void*)&DynamicVectorClass_ScriptTypeClass___vftable; /*0x4e717d*/
   dword_8B41DC = 10; /*0x4e7187*/
   g_MultiplayerDebugState = 0; /*0x4e7191*/
   return atexit(sub_4E71A0); /*0x4e719c*/
@@ -3780,10 +3786,10 @@ int sub_4E7160()
 namespace gamemd {
 void sub_4E71A0()
 {
-  dword_8B41C8 = (int)&VectorClass<ScriptTypeClass *>::`vftable'; /*0x4e71a8*/
+  dword_8B41C8 = (int)&(void*)(void*)&VectorClass_ScriptTypeClass___vftable; /*0x4e71a8*/
   if ( g_MultiplayerSyncState && byte_8B41D5 ) /*0x4e71bc*/
   {
-    __3_YAXPAX_Z(g_MultiplayerSyncState); /*0x4e71bf*/
+    RA2_OPDEL(g_MultiplayerSyncState); /*0x4e71bf*/
     g_MultiplayerSyncState = 0; /*0x4e71c7*/
   }
   byte_8B41D5 = 0; /*0x4e71cd*/
@@ -3799,7 +3805,7 @@ int sub_4E71E0()
   dword_A83D88 = 0; /*0x4e71ec*/
   byte_A83D8C = 1; /*0x4e71f1*/
   byte_A83D8D = 0; /*0x4e71f8*/
-  dword_A83D80 = (int)&DynamicVectorClass<OverlayTypeClass *>::`vftable'; /*0x4e71fd*/
+  dword_A83D80 = (int)&(void*)(void*)&DynamicVectorClass_OverlayTypeClass___vftable; /*0x4e71fd*/
   dword_A83D94 = 10; /*0x4e7207*/
   g_ObjectTypeConfig = 0; /*0x4e7211*/
   return atexit(sub_4E7220); /*0x4e721c*/
@@ -3810,10 +3816,10 @@ int sub_4E71E0()
 namespace gamemd {
 void sub_4E7220()
 {
-  dword_A83D80 = (int)&VectorClass<OverlayTypeClass *>::`vftable'; /*0x4e7228*/
+  dword_A83D80 = (int)&(void*)(void*)&VectorClass_OverlayTypeClass___vftable; /*0x4e7228*/
   if ( g_BuildingTypeClass_Array && byte_A83D8D ) /*0x4e723c*/
   {
-    __3_YAXPAX_Z(g_BuildingTypeClass_Array); /*0x4e723f*/
+    RA2_OPDEL(g_BuildingTypeClass_Array); /*0x4e723f*/
     g_BuildingTypeClass_Array = 0; /*0x4e7247*/
   }
   byte_A83D8D = 0; /*0x4e724d*/
@@ -3829,7 +3835,7 @@ int sub_4E7260()
   dword_A8EC20 = 0; /*0x4e726c*/
   byte_A8EC24 = 1; /*0x4e7271*/
   byte_A8EC25 = 0; /*0x4e7278*/
-  dword_A8EC18 = (int)&DynamicVectorClass<SmudgeTypeClass *>::`vftable'; /*0x4e727d*/
+  dword_A8EC18 = (int)&(void*)(void*)&DynamicVectorClass_SmudgeTypeClass___vftable; /*0x4e727d*/
   dword_A8EC2C = 10; /*0x4e7287*/
   FactoryClass_Count = 0; /*0x4e7291*/
   return atexit(sub_4E72A0); /*0x4e729c*/
@@ -3840,10 +3846,10 @@ int sub_4E7260()
 namespace gamemd {
 void sub_4E72A0()
 {
-  dword_A8EC18 = (int)&VectorClass<SmudgeTypeClass *>::`vftable'; /*0x4e72a8*/
+  dword_A8EC18 = (int)&(void*)(void*)&VectorClass_SmudgeTypeClass___vftable; /*0x4e72a8*/
   if ( FactoryClass_Array && byte_A8EC25 ) /*0x4e72bc*/
   {
-    __3_YAXPAX_Z(FactoryClass_Array); /*0x4e72bf*/
+    RA2_OPDEL(FactoryClass_Array); /*0x4e72bf*/
     FactoryClass_Array = 0; /*0x4e72c7*/
   }
   byte_A8EC25 = 0; /*0x4e72cd*/
@@ -3859,7 +3865,7 @@ int sub_4E72E0()
   dword_A8E320 = 0; /*0x4e72ec*/
   byte_A8E324 = 1; /*0x4e72f1*/
   byte_A8E325 = 0; /*0x4e72f8*/
-  dword_A8E318 = (int)&DynamicVectorClass<TerrainTypeClass *>::`vftable'; /*0x4e72fd*/
+  dword_A8E318 = (int)&(void*)(void*)&DynamicVectorClass_TerrainTypeClass___vftable; /*0x4e72fd*/
   dword_A8E32C = 10; /*0x4e7307*/
   g_RulesClassInitState = 0; /*0x4e7311*/
   return atexit(sub_4E7320); /*0x4e731c*/
@@ -3870,10 +3876,10 @@ int sub_4E72E0()
 namespace gamemd {
 void sub_4E7320()
 {
-  dword_A8E318 = (int)&VectorClass<TerrainTypeClass *>::`vftable'; /*0x4e7328*/
+  dword_A8E318 = (int)&(void*)(void*)&VectorClass_TerrainTypeClass___vftable; /*0x4e7328*/
   if ( dword_A8E31C && byte_A8E325 ) /*0x4e733c*/
   {
-    __3_YAXPAX_Z(dword_A8E31C); /*0x4e733f*/
+    RA2_OPDEL(dword_A8E31C); /*0x4e733f*/
     dword_A8E31C = 0; /*0x4e7347*/
   }
   byte_A8E325 = 0; /*0x4e734d*/
@@ -3889,7 +3895,7 @@ int sub_4E7360()
   dword_A83C70 = 0; /*0x4e736c*/
   byte_A83C74 = 1; /*0x4e7371*/
   byte_A83C75 = 0; /*0x4e7378*/
-  dword_A83C68 = (int)&DynamicVectorClass<BuildingTypeClass *>::`vftable'; /*0x4e737d*/
+  dword_A83C68 = (int)&(void*)(void*)&DynamicVectorClass_BuildingTypeClass___vftable; /*0x4e737d*/
   dword_A83C7C = 10; /*0x4e7387*/
   g_TriggerClassCount = 0; /*0x4e7391*/
   return atexit(sub_4E73A0); /*0x4e739c*/
@@ -3900,10 +3906,10 @@ int sub_4E7360()
 namespace gamemd {
 void sub_4E73A0()
 {
-  dword_A83C68 = (int)&VectorClass<BuildingTypeClass *>::`vftable'; /*0x4e73a8*/
+  dword_A83C68 = (int)&(void*)(void*)&VectorClass_BuildingTypeClass___vftable; /*0x4e73a8*/
   if ( g_TriggerTypeCount && byte_A83C75 ) /*0x4e73bc*/
   {
-    __3_YAXPAX_Z(g_TriggerTypeCount); /*0x4e73bf*/
+    RA2_OPDEL(g_TriggerTypeCount); /*0x4e73bf*/
     g_TriggerTypeCount = 0; /*0x4e73c7*/
   }
   byte_A83C75 = 0; /*0x4e73cd*/
@@ -3919,7 +3925,7 @@ int sub_4E73E0()
   dword_A8B220 = 0; /*0x4e73ec*/
   byte_A8B224 = 1; /*0x4e73f1*/
   byte_A8B225 = 0; /*0x4e73f8*/
-  AircraftTypeClass_Array = (int)&DynamicVectorClass<AircraftTypeClass *>::`vftable'; /*0x4e73fd*/
+  AircraftTypeClass_Array = (int)&(void*)(void*)&DynamicVectorClass_AircraftTypeClass___vftable; /*0x4e73fd*/
   dword_A8B22C = 10; /*0x4e7407*/
   g_TypeClass_FindCache = 0; /*0x4e7411*/
   return atexit(sub_4E7420); /*0x4e741c*/
@@ -3930,10 +3936,10 @@ int sub_4E73E0()
 namespace gamemd {
 void sub_4E7420()
 {
-  AircraftTypeClass_Array = (int)&VectorClass<AircraftTypeClass *>::`vftable'; /*0x4e7428*/
+  AircraftTypeClass_Array = (int)&(void*)(void*)&VectorClass_AircraftTypeClass___vftable; /*0x4e7428*/
   if ( g_AircraftTypeCount && byte_A8B225 ) /*0x4e743c*/
   {
-    __3_YAXPAX_Z(g_AircraftTypeCount); /*0x4e743f*/
+    RA2_OPDEL(g_AircraftTypeCount); /*0x4e743f*/
     g_AircraftTypeCount = 0; /*0x4e7447*/
   }
   byte_A8B225 = 0; /*0x4e744d*/
@@ -3949,7 +3955,7 @@ int sub_4E74E0()
   dword_8B4158 = 0; /*0x4e74ec*/
   byte_8B415C = 1; /*0x4e74f1*/
   byte_8B415D = 0; /*0x4e74f8*/
-  AnimTypeClass_Array = (int)&DynamicVectorClass<AnimTypeClass *>::`vftable'; /*0x4e74fd*/
+  AnimTypeClass_Array = (int)&(void*)(void*)&DynamicVectorClass_AnimTypeClass___vftable; /*0x4e74fd*/
   dword_8B4164 = 10; /*0x4e7507*/
   g_BuildingTypeCount2 = 0; /*0x4e7511*/
   return atexit(sub_4E7520); /*0x4e751c*/
@@ -3960,10 +3966,10 @@ int sub_4E74E0()
 namespace gamemd {
 void sub_4E7520()
 {
-  AnimTypeClass_Array = (int)&VectorClass<AnimTypeClass *>::`vftable'; /*0x4e7528*/
+  AnimTypeClass_Array = (int)&(void*)(void*)&VectorClass_AnimTypeClass___vftable; /*0x4e7528*/
   if ( g_AnimTypeCount && byte_8B415D ) /*0x4e753c*/
   {
-    __3_YAXPAX_Z(g_AnimTypeCount); /*0x4e753f*/
+    RA2_OPDEL(g_AnimTypeCount); /*0x4e753f*/
     g_AnimTypeCount = 0; /*0x4e7547*/
   }
   byte_8B415D = 0; /*0x4e754d*/
@@ -3979,7 +3985,7 @@ int sub_4E7560()
   dword_A8E350 = 0; /*0x4e756c*/
   byte_A8E354 = 1; /*0x4e7571*/
   byte_A8E355 = 0; /*0x4e7578*/
-  InfantryTypeClass_Array = (int)&DynamicVectorClass<InfantryTypeClass *>::`vftable'; /*0x4e757d*/
+  InfantryTypeClass_Array = (int)&(void*)(void*)&DynamicVectorClass_InfantryTypeClass___vftable; /*0x4e757d*/
   dword_A8E35C = 10; /*0x4e7587*/
   g_LoadScreenProgress = 0; /*0x4e7591*/
   return atexit(sub_4E75A0); /*0x4e759c*/
@@ -3990,10 +3996,10 @@ int sub_4E7560()
 namespace gamemd {
 void sub_4E75A0()
 {
-  InfantryTypeClass_Array = (int)&VectorClass<InfantryTypeClass *>::`vftable'; /*0x4e75a8*/
+  InfantryTypeClass_Array = (int)&(void*)(void*)&VectorClass_InfantryTypeClass___vftable; /*0x4e75a8*/
   if ( Factory_ExitCellTable && byte_A8E355 ) /*0x4e75bc*/
   {
-    __3_YAXPAX_Z(Factory_ExitCellTable); /*0x4e75bf*/
+    RA2_OPDEL(Factory_ExitCellTable); /*0x4e75bf*/
     Factory_ExitCellTable = 0; /*0x4e75c7*/
   }
   byte_A8E355 = 0; /*0x4e75cd*/
@@ -4009,7 +4015,7 @@ int sub_4E7660()
   dword_A8EB30 = 0; /*0x4e766c*/
   byte_A8EB34 = 1; /*0x4e7671*/
   byte_A8EB35 = 0; /*0x4e7678*/
-  VoxelAnimTypeClass_Array = (int)&DynamicVectorClass<VoxelAnimTypeClass *>::`vftable'; /*0x4e767d*/
+  VoxelAnimTypeClass_Array = (int)&(void*)(void*)&DynamicVectorClass_VoxelAnimTypeClass___vftable; /*0x4e767d*/
   dword_A8EB3C = 10; /*0x4e7687*/
   g_MultiplayerPool = 0; /*0x4e7691*/
   return atexit(sub_4E76A0); /*0x4e769c*/
@@ -4020,10 +4026,10 @@ int sub_4E7660()
 namespace gamemd {
 void sub_4E76A0()
 {
-  VoxelAnimTypeClass_Array = (int)&VectorClass<VoxelAnimTypeClass *>::`vftable'; /*0x4e76a8*/
+  VoxelAnimTypeClass_Array = (int)&(void*)(void*)&VectorClass_VoxelAnimTypeClass___vftable; /*0x4e76a8*/
   if ( dword_A8EB2C && byte_A8EB35 ) /*0x4e76bc*/
   {
-    __3_YAXPAX_Z(dword_A8EB2C); /*0x4e76bf*/
+    RA2_OPDEL(dword_A8EB2C); /*0x4e76bf*/
     dword_A8EB2C = 0; /*0x4e76c7*/
   }
   byte_A8EB35 = 0; /*0x4e76cd*/
@@ -4039,7 +4045,7 @@ int sub_4E76E0()
   dword_A8ED30 = 0; /*0x4e76ec*/
   byte_A8ED34 = 1; /*0x4e76f1*/
   byte_A8ED35 = 0; /*0x4e76f8*/
-  dword_A8ED28 = (int)&DynamicVectorClass<IsometricTileTypeClass *>::`vftable'; /*0x4e76fd*/
+  dword_A8ED28 = (int)&(void*)(void*)&DynamicVectorClass_IsometricTileTypeClass___vftable; /*0x4e76fd*/
   dword_A8ED3C = 10; /*0x4e7707*/
   g_TechnoClassCount = 0; /*0x4e7711*/
   return atexit(sub_4E7720); /*0x4e771c*/
@@ -4050,10 +4056,10 @@ int sub_4E76E0()
 namespace gamemd {
 void sub_4E7720()
 {
-  dword_A8ED28 = (int)&VectorClass<IsometricTileTypeClass *>::`vftable'; /*0x4e7728*/
+  dword_A8ED28 = (int)&(void*)(void*)&VectorClass_IsometricTileTypeClass___vftable; /*0x4e7728*/
   if ( g_FrameCounter && byte_A8ED35 ) /*0x4e773c*/
   {
-    __3_YAXPAX_Z(g_FrameCounter); /*0x4e773f*/
+    RA2_OPDEL(g_FrameCounter); /*0x4e773f*/
     g_FrameCounter = 0; /*0x4e7747*/
   }
   byte_A8ED35 = 0; /*0x4e774d*/
@@ -4069,7 +4075,7 @@ int sub_4E7760()
   dword_A83DA0 = 0; /*0x4e776c*/
   byte_A83DA4 = 1; /*0x4e7771*/
   byte_A83DA5 = 0; /*0x4e7778*/
-  dword_A83D98 = (int)&DynamicVectorClass<ParticleTypeClass *>::`vftable'; /*0x4e777d*/
+  dword_A83D98 = (int)&(void*)(void*)&DynamicVectorClass_ParticleTypeClass___vftable; /*0x4e777d*/
   dword_A83DAC = 10; /*0x4e7787*/
   g_BuildingTypeInitState = 0; /*0x4e7791*/
   return atexit(sub_4E77A0); /*0x4e779c*/
@@ -4080,10 +4086,10 @@ int sub_4E7760()
 namespace gamemd {
 void sub_4E77A0()
 {
-  dword_A83D98 = (int)&VectorClass<ParticleTypeClass *>::`vftable'; /*0x4e77a8*/
+  dword_A83D98 = (int)&(void*)(void*)&VectorClass_ParticleTypeClass___vftable; /*0x4e77a8*/
   if ( g_BuildingProductionQueue && byte_A83DA5 ) /*0x4e77bc*/
   {
-    __3_YAXPAX_Z(g_BuildingProductionQueue); /*0x4e77bf*/
+    RA2_OPDEL(g_BuildingProductionQueue); /*0x4e77bf*/
     g_BuildingProductionQueue = 0; /*0x4e77c7*/
   }
   byte_A83DA5 = 0; /*0x4e77cd*/
@@ -4099,7 +4105,7 @@ int sub_4E77E0()
   dword_A83D70 = 0; /*0x4e77ec*/
   byte_A83D74 = 1; /*0x4e77f1*/
   byte_A83D75 = 0; /*0x4e77f8*/
-  dword_A83D68 = (int)&DynamicVectorClass<ParticleSystemTypeClass *>::`vftable'; /*0x4e77fd*/
+  dword_A83D68 = (int)&(void*)(void*)&DynamicVectorClass_ParticleSystemTypeClass___vftable; /*0x4e77fd*/
   dword_A83D7C = 10; /*0x4e7807*/
   g_InfantryTypeInitState = 0; /*0x4e7811*/
   return atexit(sub_4E7820); /*0x4e781c*/
@@ -4110,10 +4116,10 @@ int sub_4E77E0()
 namespace gamemd {
 void sub_4E7820()
 {
-  dword_A83D68 = (int)&VectorClass<ParticleSystemTypeClass *>::`vftable'; /*0x4e7828*/
+  dword_A83D68 = (int)&(void*)(void*)&VectorClass_ParticleSystemTypeClass___vftable; /*0x4e7828*/
   if ( dword_A83D6C && byte_A83D75 ) /*0x4e783c*/
   {
-    __3_YAXPAX_Z(dword_A83D6C); /*0x4e783f*/
+    RA2_OPDEL(dword_A83D6C); /*0x4e783f*/
     dword_A83D6C = 0; /*0x4e7847*/
   }
   byte_A83D75 = 0; /*0x4e784d*/
@@ -4129,7 +4135,7 @@ int sub_4E7860()
   dword_A8E338 = 0; /*0x4e786c*/
   byte_A8E33C = 1; /*0x4e7871*/
   byte_A8E33D = 0; /*0x4e7878*/
-  dword_A8E330 = (int)&DynamicVectorClass<SuperWeaponTypeClass *>::`vftable'; /*0x4e787d*/
+  dword_A8E330 = (int)&(void*)(void*)&DynamicVectorClass_SuperWeaponTypeClass___vftable; /*0x4e787d*/
   dword_A8E344 = 10; /*0x4e7887*/
   g_HouseClassInitState = 0; /*0x4e7891*/
   return atexit(sub_4E78A0); /*0x4e789c*/
@@ -4140,10 +4146,10 @@ int sub_4E7860()
 namespace gamemd {
 void sub_4E78A0()
 {
-  dword_A8E330 = (int)&VectorClass<SuperWeaponTypeClass *>::`vftable'; /*0x4e78a8*/
+  dword_A8E330 = (int)&(void*)(void*)&VectorClass_SuperWeaponTypeClass___vftable; /*0x4e78a8*/
   if ( g_SuperWeaponPool && byte_A8E33D ) /*0x4e78bc*/
   {
-    __3_YAXPAX_Z(g_SuperWeaponPool); /*0x4e78bf*/
+    RA2_OPDEL(g_SuperWeaponPool); /*0x4e78bf*/
     g_SuperWeaponPool = 0; /*0x4e78c7*/
   }
   byte_A8E33D = 0; /*0x4e78cd*/
@@ -4159,7 +4165,7 @@ int sub_4E78E0()
   dword_A83CC0 = 0; /*0x4e78ec*/
   byte_A83CC4 = 1; /*0x4e78f1*/
   byte_A83CC5 = 0; /*0x4e78f8*/
-  dword_A83CB8 = (int)&DynamicVectorClass<SuperClass *>::`vftable'; /*0x4e78fd*/
+  dword_A83CB8 = (int)&(void*)(void*)&DynamicVectorClass_SuperClass___vftable; /*0x4e78fd*/
   dword_A83CCC = 10; /*0x4e7907*/
   dword_A83CC8 = 0; /*0x4e7911*/
   return atexit(sub_4E7920); /*0x4e791c*/
@@ -4170,10 +4176,10 @@ int sub_4E78E0()
 namespace gamemd {
 void sub_4E7920()
 {
-  dword_A83CB8 = (int)&VectorClass<SuperClass *>::`vftable'; /*0x4e7928*/
+  dword_A83CB8 = (int)&(void*)(void*)&VectorClass_SuperClass___vftable; /*0x4e7928*/
   if ( dword_A83CBC && byte_A83CC5 ) /*0x4e793c*/
   {
-    __3_YAXPAX_Z(dword_A83CBC); /*0x4e793f*/
+    RA2_OPDEL(dword_A83CBC); /*0x4e793f*/
     dword_A83CBC = 0; /*0x4e7947*/
   }
   byte_A83CC5 = 0; /*0x4e794d*/
@@ -4189,7 +4195,7 @@ int sub_4E7960()
   dword_A83D58 = 0; /*0x4e796c*/
   byte_A83D5C = 1; /*0x4e7971*/
   byte_A83D5D = 0; /*0x4e7978*/
-  SuperClass_ShowTimers = (int)&DynamicVectorClass<SuperClass *>::`vftable'; /*0x4e797d*/
+  SuperClass_ShowTimers = (int)&(void*)(void*)&DynamicVectorClass_SuperClass___vftable; /*0x4e797d*/
   dword_A83D64 = 10; /*0x4e7987*/
   dword_A83D60 = 0; /*0x4e7991*/
   return atexit(sub_4E79A0); /*0x4e799c*/
@@ -4200,10 +4206,10 @@ int sub_4E7960()
 namespace gamemd {
 void sub_4E79A0()
 {
-  SuperClass_ShowTimers = (int)&VectorClass<SuperClass *>::`vftable'; /*0x4e79a8*/
+  SuperClass_ShowTimers = (int)&(void*)(void*)&VectorClass_SuperClass___vftable; /*0x4e79a8*/
   if ( dword_A83D54 && byte_A83D5D ) /*0x4e79bc*/
   {
-    __3_YAXPAX_Z(dword_A83D54); /*0x4e79bf*/
+    RA2_OPDEL(dword_A83D54); /*0x4e79bf*/
     dword_A83D54 = 0; /*0x4e79c7*/
   }
   byte_A83D5D = 0; /*0x4e79cd*/
@@ -4219,7 +4225,7 @@ int sub_4E79E0()
   dword_A8EC80 = 0; /*0x4e79ec*/
   byte_A8EC84 = 1; /*0x4e79f1*/
   byte_A8EC85 = 0; /*0x4e79f8*/
-  TechnoClass_Array = (TechnoClass *)&DynamicVectorClass<TechnoClass *>::`vftable'; /*0x4e79fd*/
+  TechnoClass_Array = (TechnoClass *)&(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x4e79fd*/
   dword_A8EC8C = 10; /*0x4e7a07*/
   g_SidebarState = 0; /*0x4e7a11*/
   return atexit(sub_4E7A20); /*0x4e7a1c*/
@@ -4230,10 +4236,10 @@ int sub_4E79E0()
 namespace gamemd {
 void sub_4E7A20()
 {
-  TechnoClass_Array = (TechnoClass *)&VectorClass<TechnoClass *>::`vftable'; /*0x4e7a28*/
+  TechnoClass_Array = (TechnoClass *)&(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x4e7a28*/
   if ( g_TechnoClass_Count && byte_A8EC85 ) /*0x4e7a3c*/
   {
-    __3_YAXPAX_Z(g_TechnoClass_Count); /*0x4e7a3f*/
+    RA2_OPDEL(g_TechnoClass_Count); /*0x4e7a3f*/
     g_TechnoClass_Count = 0; /*0x4e7a47*/
   }
   byte_A8EC85 = 0; /*0x4e7a4d*/
@@ -4249,7 +4255,7 @@ int sub_4E7A60()
   dword_A8EB08 = 0; /*0x4e7a6c*/
   byte_A8EB0C = 1; /*0x4e7a71*/
   byte_A8EB0D = 0; /*0x4e7a78*/
-  dword_A8EB00 = (int)&DynamicVectorClass<TechnoTypeClass *>::`vftable'; /*0x4e7a7d*/
+  dword_A8EB00 = (int)&(void*)(void*)&DynamicVectorClass_TechnoTypeClass___vftable; /*0x4e7a7d*/
   dword_A8EB14 = 10; /*0x4e7a87*/
   dword_A8EB10 = 0; /*0x4e7a91*/
   return atexit(sub_4E7AA0); /*0x4e7a9c*/
@@ -4260,10 +4266,10 @@ int sub_4E7A60()
 namespace gamemd {
 void sub_4E7AA0()
 {
-  dword_A8EB00 = (int)&VectorClass<TechnoTypeClass *>::`vftable'; /*0x4e7aa8*/
+  dword_A8EB00 = (int)&(void*)(void*)&VectorClass_TechnoTypeClass___vftable; /*0x4e7aa8*/
   if ( dword_A8EB04 && byte_A8EB0D ) /*0x4e7abc*/
   {
-    __3_YAXPAX_Z(dword_A8EB04); /*0x4e7abf*/
+    RA2_OPDEL(dword_A8EB04); /*0x4e7abf*/
     dword_A8EB04 = 0; /*0x4e7ac7*/
   }
   byte_A8EB0D = 0; /*0x4e7acd*/
@@ -4279,7 +4285,7 @@ int sub_4E7AE0()
   dword_A8E368 = 0; /*0x4e7aec*/
   byte_A8E36C = 1; /*0x4e7af1*/
   byte_A8E36D = 0; /*0x4e7af8*/
-  dword_A8E360 = (int)&DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4e7afd*/
+  dword_A8E360 = (int)&(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4e7afd*/
   dword_A8E374 = 10; /*0x4e7b07*/
   g_PlacementCellPool = 0; /*0x4e7b11*/
   return atexit(sub_4E7B20); /*0x4e7b1c*/
@@ -4290,10 +4296,10 @@ int sub_4E7AE0()
 namespace gamemd {
 void sub_4E7B20()
 {
-  dword_A8E360 = (int)&VectorClass<ObjectClass *>::`vftable'; /*0x4e7b28*/
+  dword_A8E360 = (int)&(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4e7b28*/
   if ( dword_A8E364 && byte_A8E36D ) /*0x4e7b3c*/
   {
-    __3_YAXPAX_Z(dword_A8E364); /*0x4e7b3f*/
+    RA2_OPDEL(dword_A8E364); /*0x4e7b3f*/
     dword_A8E364 = 0; /*0x4e7b47*/
   }
   byte_A8E36D = 0; /*0x4e7b4d*/
@@ -4309,7 +4315,7 @@ int sub_4E7B60()
   dword_A8E970 = 0; /*0x4e7b6c*/
   byte_A8E974 = 1; /*0x4e7b71*/
   byte_A8E975 = 0; /*0x4e7b78*/
-  dword_A8E968 = (int)&DynamicVectorClass<AbstractTypeClass *>::`vftable'; /*0x4e7b7d*/
+  dword_A8E968 = (int)&(void*)(void*)&DynamicVectorClass_AbstractTypeClass___vftable; /*0x4e7b7d*/
   dword_A8E97C = 10; /*0x4e7b87*/
   g_AbstractTypePool = 0; /*0x4e7b91*/
   return atexit(sub_4E7BA0); /*0x4e7b9c*/
@@ -4320,10 +4326,10 @@ int sub_4E7B60()
 namespace gamemd {
 void sub_4E7BA0()
 {
-  dword_A8E968 = (int)&VectorClass<AbstractTypeClass *>::`vftable'; /*0x4e7ba8*/
+  dword_A8E968 = (int)&(void*)(void*)&VectorClass_AbstractTypeClass___vftable; /*0x4e7ba8*/
   if ( dword_A8E96C && byte_A8E975 ) /*0x4e7bbc*/
   {
-    __3_YAXPAX_Z(dword_A8E96C); /*0x4e7bbf*/
+    RA2_OPDEL(dword_A8E96C); /*0x4e7bbf*/
     dword_A8E96C = 0; /*0x4e7bc7*/
   }
   byte_A8E975 = 0; /*0x4e7bcd*/
@@ -4339,7 +4345,7 @@ int sub_4E7BE0()
   dword_8B41E8 = 0; /*0x4e7bec*/
   byte_8B41EC = 1; /*0x4e7bf1*/
   byte_8B41ED = 0; /*0x4e7bf8*/
-  dword_8B41E0 = (int)&DynamicVectorClass<BuildingClass *>::`vftable'; /*0x4e7bfd*/
+  dword_8B41E0 = (int)&(void*)(void*)&DynamicVectorClass_BuildingClass___vftable; /*0x4e7bfd*/
   dword_8B41F4 = 10; /*0x4e7c07*/
   dword_8B41F0 = 0; /*0x4e7c11*/
   return atexit(sub_4E7C20); /*0x4e7c1c*/
@@ -4350,10 +4356,10 @@ int sub_4E7BE0()
 namespace gamemd {
 void sub_4E7C20()
 {
-  dword_8B41E0 = (int)&VectorClass<BuildingClass *>::`vftable'; /*0x4e7c28*/
+  dword_8B41E0 = (int)&(void*)(void*)&VectorClass_BuildingClass___vftable; /*0x4e7c28*/
   if ( dword_8B41E4 && byte_8B41ED ) /*0x4e7c3c*/
   {
-    __3_YAXPAX_Z(dword_8B41E4); /*0x4e7c3f*/
+    RA2_OPDEL(dword_8B41E4); /*0x4e7c3f*/
     dword_8B41E4 = 0; /*0x4e7c47*/
   }
   byte_8B41ED = 0; /*0x4e7c4d*/
@@ -4369,7 +4375,7 @@ int sub_4E7C60()
   dword_A83E08 = 0; /*0x4e7c6c*/
   byte_A83E0C = 1; /*0x4e7c71*/
   byte_A83E0D = 0; /*0x4e7c78*/
-  dword_A83E00 = (int)&DynamicVectorClass<AnimClass *>::`vftable'; /*0x4e7c7d*/
+  dword_A83E00 = (int)&(void*)(void*)&DynamicVectorClass_AnimClass___vftable; /*0x4e7c7d*/
   dword_A83E14 = 10; /*0x4e7c87*/
   dword_A83E10 = 0; /*0x4e7c91*/
   return atexit(sub_4E7CA0); /*0x4e7c9c*/
@@ -4380,10 +4386,10 @@ int sub_4E7C60()
 namespace gamemd {
 void sub_4E7CA0()
 {
-  dword_A83E00 = (int)&VectorClass<AnimClass *>::`vftable'; /*0x4e7ca8*/
+  dword_A83E00 = (int)&(void*)(void*)&VectorClass_AnimClass___vftable; /*0x4e7ca8*/
   if ( dword_A83E04 && byte_A83E0D ) /*0x4e7cbc*/
   {
-    __3_YAXPAX_Z(dword_A83E04); /*0x4e7cbf*/
+    RA2_OPDEL(dword_A83E04); /*0x4e7cbf*/
     dword_A83E04 = 0; /*0x4e7cc7*/
   }
   byte_A83E0D = 0; /*0x4e7ccd*/
@@ -4395,7 +4401,7 @@ void sub_4E7CA0()
 namespace gamemd {
 void sub_4E7CE0()
 {
-  pUnk.lpVtbl = (struct IUnknownVtbl *)&TiberianSunClassFactory::`vftable'; /*0x4e7ce0*/
+  pUnk.lpVtbl = (struct IUnknownVtbl *)&(void*)(void*)&TiberianSunClassFactory_vftable; /*0x4e7ce0*/
 }
 } // namespace gamemd
 
@@ -4412,7 +4418,7 @@ int sub_4E7D10()
 namespace gamemd {
 int unknown_libname_13()
 {
-  g_MixFile_LoadCount[0] = &RandomStraw::`vftable'; /*0x66170d*/
+  g_MixFile_LoadCount[0] = &(void*)(void*)&RandomStraw_vftable; /*0x66170d*/
   g_MixFile_LoadCount[3] = 0; /*0x661713*/
   g_MixFile_LoadCount[4] = 0; /*0x661716*/
   memset(&g_MixFile_LoadCount[5], 0, 0x100u); /*0x661719*/
@@ -4428,7 +4434,7 @@ int sub_4E7D40()
   dword_A8ECC0 = 0; /*0x4e7d4c*/
   byte_A8ECC4 = 1; /*0x4e7d51*/
   byte_A8ECC5 = 0; /*0x4e7d58*/
-  ObjectClass_CurrentObjects = (ObjectClass *)&DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4e7d5d*/
+  ObjectClass_CurrentObjects = (ObjectClass *)&(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4e7d5d*/
   dword_A8ECCC = 10; /*0x4e7d67*/
   g_SelectionManager = 0; /*0x4e7d71*/
   return atexit(sub_4E7D80); /*0x4e7d7c*/
@@ -4439,10 +4445,10 @@ int sub_4E7D40()
 namespace gamemd {
 void sub_4E7D80()
 {
-  ObjectClass_CurrentObjects = (ObjectClass *)&VectorClass<ObjectClass *>::`vftable'; /*0x4e7d88*/
+  ObjectClass_CurrentObjects = (ObjectClass *)&(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4e7d88*/
   if ( g_ObjectClass_CurrentCount && byte_A8ECC5 ) /*0x4e7d9c*/
   {
-    __3_YAXPAX_Z(g_ObjectClass_CurrentCount); /*0x4e7d9f*/
+    RA2_OPDEL(g_ObjectClass_CurrentCount); /*0x4e7d9f*/
     g_ObjectClass_CurrentCount = 0; /*0x4e7da7*/
   }
   byte_A8ECC5 = 0; /*0x4e7dad*/
@@ -4463,7 +4469,7 @@ int sub_4E7DC0()
 namespace gamemd {
 void sub_4E7DE0()
 {
-  g_CoordScatterManager = (int)&VersionClass::`vftable'; /*0x4e7de0*/
+  g_CoordScatterManager = (int)&(void*)(void*)&VersionClass_vftable; /*0x4e7de0*/
 }
 } // namespace gamemd
 
@@ -4543,10 +4549,10 @@ int sub_4E7E30()
 namespace gamemd {
 void sub_4E7E50()
 {
-  dword_A83D24 = (int)&VectorClass<ThemeControl *>::`vftable'; /*0x4e7e58*/
+  dword_A83D24 = (int)&(void*)(void*)&VectorClass_ThemeControl___vftable; /*0x4e7e58*/
   if ( dword_A83D28 && byte_A83D31 ) /*0x4e7e6c*/
   {
-    __3_YAXPAX_Z(dword_A83D28); /*0x4e7e6f*/
+    RA2_OPDEL(dword_A83D28); /*0x4e7e6f*/
     dword_A83D28 = 0; /*0x4e7e77*/
   }
   byte_A83D31 = 0; /*0x4e7e7d*/
@@ -4616,7 +4622,7 @@ int sub_4E7F30()
   dword_8B41B0 = 0; /*0x4e7f3c*/
   byte_8B41B4 = 1; /*0x4e7f41*/
   byte_8B41B5 = 0; /*0x4e7f48*/
-  dword_8B41A8 = (int)&DynamicVectorClass<TagClass *>::`vftable'; /*0x4e7f4d*/
+  dword_8B41A8 = (int)&(void*)(void*)&DynamicVectorClass_TagClass___vftable; /*0x4e7f4d*/
   dword_8B41BC = 10; /*0x4e7f57*/
   dword_8B41B8 = 0; /*0x4e7f61*/
   return atexit(sub_4E7F70); /*0x4e7f6c*/
@@ -4627,10 +4633,10 @@ int sub_4E7F30()
 namespace gamemd {
 void sub_4E7F70()
 {
-  dword_8B41A8 = (int)&VectorClass<TagClass *>::`vftable'; /*0x4e7f78*/
+  dword_8B41A8 = (int)&(void*)(void*)&VectorClass_TagClass___vftable; /*0x4e7f78*/
   if ( dword_8B41AC && byte_8B41B5 ) /*0x4e7f8c*/
   {
-    __3_YAXPAX_Z(dword_8B41AC); /*0x4e7f8f*/
+    RA2_OPDEL(dword_8B41AC); /*0x4e7f8f*/
     dword_8B41AC = 0; /*0x4e7f97*/
   }
   byte_8B41B5 = 0; /*0x4e7f9d*/
@@ -4646,7 +4652,7 @@ int sub_4E7FB0()
   dword_8B40D0 = 0; /*0x4e7fbc*/
   byte_8B40D4 = 1; /*0x4e7fc1*/
   byte_8B40D5 = 0; /*0x4e7fc8*/
-  dword_8B40C8 = (int)&DynamicVectorClass<TagClass *>::`vftable'; /*0x4e7fcd*/
+  dword_8B40C8 = (int)&(void*)(void*)&DynamicVectorClass_TagClass___vftable; /*0x4e7fcd*/
   dword_8B40DC = 10; /*0x4e7fd7*/
   g_ScenarioUpdateState = 0; /*0x4e7fe1*/
   return atexit(sub_4E7FF0); /*0x4e7fec*/
@@ -4657,10 +4663,10 @@ int sub_4E7FB0()
 namespace gamemd {
 void sub_4E7FF0()
 {
-  dword_8B40C8 = (int)&VectorClass<TagClass *>::`vftable'; /*0x4e7ff8*/
+  dword_8B40C8 = (int)&(void*)(void*)&VectorClass_TagClass___vftable; /*0x4e7ff8*/
   if ( dword_8B40CC && byte_8B40D5 ) /*0x4e800c*/
   {
-    __3_YAXPAX_Z(dword_8B40CC); /*0x4e800f*/
+    RA2_OPDEL(dword_8B40CC); /*0x4e800f*/
     dword_8B40CC = 0; /*0x4e8017*/
   }
   byte_8B40D5 = 0; /*0x4e801d*/
@@ -4830,7 +4836,7 @@ void HouseClass::vt_03_()
 {
   if ( this->vtable2 && this->relatedTagsCapacity ) /*0x4e92fd*/
   {
-    __3_YAXPAX_Z(this->vtable2); /*0x4e9303*/
+    RA2_OPDEL(this->vtable2); /*0x4e9303*/
     this->vtable2 = 0; /*0x4e930b*/
   }
   this->relatedTagsCapacity = 0; /*0x4e930e*/
@@ -4908,42 +4914,42 @@ unsigned int ParticleSystemClass::vt_05_(int a2)
 
 // 0x4EF4E0
 namespace gamemd {
-VectorClass * HouseClass::vt_00_(char a2)
+VectorClass_flat * HouseClass::vt_00_(char a2)
 {
   void *v3; // eax
 
   v3 = (void *)this->vtable2; /*0x4ef4e3*/
-  *this = &VectorClass<TagClass *>::`vftable'; /*0x4ef4e6*/
+  *this = &(void*)(void*)&VectorClass_TagClass___vftable; /*0x4ef4e6*/
   if ( v3 && this->relatedTagsCapacity ) /*0x4ef4f0*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef4f8*/
+    RA2_OPDEL(v3); /*0x4ef4f8*/
     this->vtable2 = 0; /*0x4ef500*/
   }
   this->relatedTagsCapacity = 0; /*0x4ef50b*/
   this->vtable3 = 0; /*0x4ef511*/
   if ( (a2 & 1) != 0 ) /*0x4ef518*/
-    __3_YAXPAX_Z(this); /*0x4ef51b*/
+    RA2_OPDEL(); /*0x4ef51b*/
   return this; /*0x4ef525*/
 }
 } // namespace gamemd
 
 // 0x4EF800
 namespace gamemd {
-VectorClass * ParticleSystemClass::vt_00_(char a2)
+VectorClass_flat * ParticleSystemClass::vt_00_(char a2)
 {
   void *v3; // eax
 
   v3 = (void *)this->vtable2; /*0x4ef803*/
-  *this = &VectorClass<ParticleClass *>::`vftable'; /*0x4ef806*/
+  *this = &(void*)(void*)&VectorClass_ParticleClass___vftable; /*0x4ef806*/
   if ( v3 && this->attachedTag ) /*0x4ef810*/
   {
-    __3_YAXPAX_Z(v3); /*0x4ef818*/
+    RA2_OPDEL(v3); /*0x4ef818*/
     this->vtable2 = 0; /*0x4ef820*/
   }
   this->attachedTag = 0; /*0x4ef82b*/
   this->vtable3 = 0; /*0x4ef831*/
   if ( (a2 & 1) != 0 ) /*0x4ef838*/
-    __3_YAXPAX_Z(this); /*0x4ef83b*/
+    RA2_OPDEL(); /*0x4ef83b*/
   return this; /*0x4ef845*/
 }
 } // namespace gamemd

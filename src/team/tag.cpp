@@ -32,7 +32,7 @@ bool TagClass::HasCrossesHorizontalLineEvent() const
 {
   _DWORD *v1; // ecx
 
-  v1 = (_DWORD *)*(this + 9); /*0x6e5320*/
+  v1 = (_DWORD *)this->buildingType; /*0x6e5320*/
   return v1 && TagTypeClass::HasCrossesHorizontalLineEvent(v1); /*0x6e5335*/
 }
 // 0x6e5300
@@ -40,7 +40,7 @@ bool TagClass::HasCrossesVerticalLineEvent() const
 {
   _DWORD *v1; // ecx
 
-  v1 = (_DWORD *)*(this + 9); /*0x6e5300*/
+  v1 = (_DWORD *)this->buildingType; /*0x6e5300*/
   return v1 && TagTypeClass::HasCrossesVerticalLineEvent(v1); /*0x6e5315*/
 }
 // 0x6e5340
@@ -48,7 +48,7 @@ bool TagClass::HasZoneEntryByEvent() const
 {
   _DWORD *v1; // ecx
 
-  v1 = (_DWORD *)*(this + 9); /*0x6e5340*/
+  v1 = (_DWORD *)this->buildingType; /*0x6e5340*/
   return v1 && TagTypeClass::HasZoneEntryByEvent(v1); /*0x6e5355*/
 }
 bool TagClass::HasAllowWinAction() const
@@ -104,7 +104,7 @@ bool TagClass::IsOnlyInstanceOfType() const
   v1 = 0; /*0x6e5859*/
   if ( g_GameObjectCleanup <= 0 ) /*0x6e585d*/
     return 1; /*0x6e587d*/
-  for ( i = (char *)g_TagClassCount; *(_DWORD **)i == this || *(_DWORD *)(*(_DWORD *)i + 36) != *(this + 9); i += 4 ) /*0x6e585f*/
+  for ( i = (char *)g_TagClassCount; *(_DWORD **)i == this || *(_DWORD *)(i->q024 != this->buildingType; i += 4 ) /*0x6e585f*/
   {
     if ( ++v1 >= g_GameObjectCleanup ) /*0x6e587b*/
       return 1; /*0x6e587b*/
@@ -174,7 +174,7 @@ void TagClass::Destroy()
 {
   int result; // eax
 
-  *(this + 52) = 1; /*0x6e5233*/
+  *(&this->abstractFlags2) = 1; /*0x6e5233*/
   result = dword_B0F6A0; /*0x6e5237*/
   if ( g_LaserDrawConfig < dword_B0F6A0 /*0x6e5270*/
     || (byte_B0F6A5 || !dword_B0F6A0)
@@ -193,8 +193,8 @@ void TagClass::Destroy()
 // 0x6e55c0
 void TagClass::AddTrigger(TriggerClass* trigger)
 {
-  *(_DWORD *)(trigger + 40) = *(this + 10); /*0x6e55c7*/
-  *(this + 10) = trigger; /*0x6e55ca*/
+  trigger->nextTrigger = *(&this->vtable20); /*0x6e55c7*/
+  *(&this->vtable20) = trigger; /*0x6e55ca*/
   return trigger; /*0x6e55cd*/
 }
 bool TagClass::RemoveTrigger(TriggerClass* trigger)
@@ -262,7 +262,7 @@ bool TagTypeClass::HasCrossesHorizontalLineEvent() const
 {
   _DWORD *v1; // esi
 
-  v1 = (_DWORD *)*(this + 40); /*0x6e6251*/
+  v1 = (_DWORD *)*(&this->uniqueId0); /*0x6e6251*/
   if ( !v1 ) /*0x6e6259*/
     return 0; /*0x6e6270*/
   while ( !HouseClass::HasType25Building(v1) ) /*0x6e6264*/
@@ -278,7 +278,7 @@ bool TagTypeClass::HasCrossesVerticalLineEvent() const
 {
   _DWORD *v1; // esi
 
-  v1 = (_DWORD *)*(this + 40); /*0x6e6281*/
+  v1 = (_DWORD *)*(&this->uniqueId0); /*0x6e6281*/
   if ( !v1 ) /*0x6e6289*/
     return 0; /*0x6e62a0*/
   while ( !HouseClass::HasType26Building(v1) ) /*0x6e6294*/
@@ -294,7 +294,7 @@ bool TagTypeClass::HasZoneEntryByEvent() const
 {
   int v1; // esi
 
-  v1 = *(this + 40); /*0x6e62b1*/
+  v1 = *(&this->uniqueId0); /*0x6e62b1*/
   if ( !v1 ) /*0x6e62b9*/
     return 0; /*0x6e62d0*/
   while ( !HouseClass::FindType24((std::codecvt_base **)v1) ) /*0x6e62c4*/

@@ -5,7 +5,26 @@
 
 namespace gamemd {
 struct ParticleSystemClass_32 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+    void* q004;  // 0x4
+    int q008;  // 0x8
+    bool q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    int q010;  // 0x10
+    bool IsInitialized;  // 0x12
+    int Count;  // 0x16
+    bool q018;  // 0x18
+    unsigned char q01C;  // 0x1C
+    bool q024;  // 0x24
+    unsigned char q028;  // 0x28
+    int q034;  // 0x34
+    unsigned char q038;  // 0x38
+    unsigned char q04C;  // 0x4C
+    unsigned char q050;  // 0x50
+    bool q054;  // 0x54
+    unsigned int q0042;
+// --- flat members (END) ---
     void ClearBuffer();  // 0x4E82F0
     void Destroy();  // 0x4E87E0
     int Write(int a2);  // 0x4E8830
@@ -19,7 +38,7 @@ struct ParticleSystemClass_32 {
     char CopyParticles2(int a2, unsigned int * a3);  // 0x4EB640
     int FindParticle2(unsigned int * a2);  // 0x4EB6F0
     DynamicVector * Constructor_VectorClass_BuildingClass___(char a2);  // 0x4EF5D0
-    VectorClass * QueryInterface(char a2);  // 0x4EFDF0
+    VectorClass_flat * QueryInterface(char a2);  // 0x4EFDF0
     DynamicVector * Constructor_VectorClass_TerrainClass___(char a2);  // 0x4EFE40
     DynamicVector * Constructor_VectorClass_AircraftClass___(char a2);  // 0x4EFEE0
     unsigned int PointerToIndex(int a2);  // 0x4E8320

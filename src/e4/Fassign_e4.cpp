@@ -1,6 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Explosion_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/TerrainTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x7D7C31
 namespace gamemd {

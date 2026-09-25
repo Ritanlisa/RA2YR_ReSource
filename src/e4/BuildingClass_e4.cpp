@@ -3,6 +3,13 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/Building_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x453E20
 namespace gamemd {
@@ -223,12 +230,12 @@ int BuildingClass::AssignDestination_SyncLog()
   int v3; // [esp+8h] [ebp+4h]
   int v4; // [esp+Ch] [ebp+8h]
 
-  if ( *((_DWORD *)this + 43) != 19 ) /*0x455d5a*/
+  if ( this->currentMission != 19 ) /*0x455d5a*/
   {
-    if ( (*(unsigned __int8 (__thiscall **)(#377 *))(*(_DWORD *)this + 644))(this) /*0x455d73*/
-      || *(_BYTE *)(*((_DWORD *)this + 328) + 5817) )
+    if ( (*(unsigned __int8 (__thiscall **)(void *))(*(_DWORD *)&this->turretChargeTimer4))(this) /*0x455d73*/
+      || this->Type->ConstructionYard )
     {
-      TechnoClass::SetFocus(this, v3); /*0x455d80*/
+      TechnoClass::SetFocus(v3); /*0x455d80*/
     }
     return IPersistStream::Stub(v3, v4); /*0x455d8d*/
   }
@@ -383,8 +390,8 @@ int BuildingClass::AnimController()
   int v11; // edx
   _DWORD v12[4]; // [esp+Ch] [ebp-10h] BYREF
 
-  Value = ProgressTimer::GetValue((_WORD *)(*(this + 10) + 904), v12); /*0x629736*/
-  v3 = *(this + 18); /*0x62973b*/
+  Value = ProgressTimer::GetValue((_WORD *)(*(&this->vtable20) + 904), v12); /*0x629736*/
+  v3 = *(&this->vtable28); /*0x62973b*/
   v4 = *Value; /*0x62973e*/
   if ( v3 < 0 ) /*0x629742*/
     goto LABEL_6; /*0x629742*/
@@ -401,16 +408,16 @@ int BuildingClass::AnimController()
     v5 = 160; /*0x62975e*/
   v6 = 4; /*0x629763*/
   LABEL_8:
-  v7 = *(this + 20) + 1; /*0x629768*/
-  *(this + 20) = v7; /*0x62976e*/
+  v7 = *(&this->vtable30) + 1; /*0x629768*/
+  *(&this->vtable30) = v7; /*0x62976e*/
   if ( v7 >= v6 ) /*0x629773*/
   {
-    v8 = *(this + 19); /*0x629775*/
-    *(this + 20) = 0; /*0x629778*/
-    *(this + 19) = ++v8; /*0x629782*/
+    v8 = *(&this->vtable29); /*0x629775*/
+    *(&this->vtable30) = 0; /*0x629778*/
+    *(&this->vtable29) = ++v8; /*0x629782*/
     if ( v8 >= 10 ) /*0x629788*/
       return 1; /*0x629792*/
-    v10 = (_DWORD *)*(this + 17); /*0x629793*/
+    v10 = (_DWORD *)*(&this->vtable27); /*0x629793*/
     if ( v10 ) /*0x629798*/
     {
       v10[45] = g_CurrentFrame; /*0x6297af*/
@@ -418,7 +425,7 @@ int BuildingClass::AnimController()
       v10[48] = 128; /*0x6297b7*/
       v10[46] = v11; /*0x6297bf*/
       v10[47] = 128; /*0x6297c5*/
-      *(_DWORD *)(*(this + 17) + 172) = v5 + *(this + 19) + 10 * ((((v4 >> 12) + 1) >> 1) & 7); /*0x6297d7*/
+      *(_DWORD *)(*(&this->vtable27) + 172) = v5 + *(&this->vtable29) + 10 * ((((v4 >> 12) + 1) >> 1) & 7); /*0x6297d7*/
     }
   }
   return 0; /*0x62978a*/
@@ -435,7 +442,7 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
   result = RadioClass::LoadState(aP0, aP2); /*0x70bf5c*/
   if ( result >= 0 ) /*0x70bf65*/
   {
-    *(_DWORD *)(aP0 + 1300) = 0; /*0x70bf79*/
+    aP0->planningToken = 0; /*0x70bf79*/
     ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP0 + 540); /*0x70bf7f*/
     v3 = aP0 + 772; /*0x70bf84*/
     v4 = 8; /*0x70bf8a*/
@@ -481,17 +488,17 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
     ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP0 + 712); /*0x70c1cc*/
     ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP0 + 468); /*0x70c1dd*/
     AudioController::Init((_DWORD *)(aP0 + 1160)); /*0x70c1e8*/
-    *(_DWORD *)(aP0 + 1180) = 1; /*0x70c1f3*/
-    *(_DWORD *)(aP0 + 1184) = 0; /*0x70c1fd*/
+    aP0->isTurretRotateSoundPlaying = 1; /*0x70c1f3*/
+    aP0->turretIsRotating = 0; /*0x70c1fd*/
     AudioController::Init((_DWORD *)(aP0 + 1188)); /*0x70c203*/
-    *(_BYTE *)(aP0 + 1208) = 0; /*0x70c20e*/
-    *(_DWORD *)(aP0 + 1212) = 0; /*0x70c214*/
+    aP0->isGattlingSoundPlaying = 0; /*0x70c20e*/
+    aP0->unknown_4BC = 0; /*0x70c214*/
     AudioController::Init((_DWORD *)(aP0 + 1216)); /*0x70c21a*/
-    *(_BYTE *)(aP0 + 1236) = 0; /*0x70c225*/
-    *(_DWORD *)(aP0 + 1240) = 0; /*0x70c22b*/
+    aP0->isUnusedGattlingSoundPlaying = 0; /*0x70c225*/
+    aP0->unknown_4D8 = 0; /*0x70c22b*/
     AudioController::Init((_DWORD *)(aP0 + 1244)); /*0x70c231*/
-    *(_DWORD *)(aP0 + 1264) = -1; /*0x70c23a*/
-    *(_DWORD *)(aP0 + 1268) = -1; /*0x70c240*/
+    aP0->queuedVoiceIndex = -1; /*0x70c23a*/
+    aP0->unknown_4F4 = -1; /*0x70c240*/
     return 0; /*0x70c246*/
   }
   return result; /*0x70c249*/
@@ -505,10 +512,10 @@ int BuildingClass::processCapture()
   int v2; // ecx
   char result; // al
 
-  v1 = *(this + 550); /*0x712130*/
+  v1 = *(&this->q0DC0); /*0x712130*/
   if ( !v1 ) /*0x712138*/
     return 0; /*0x712138*/
-  v2 = *(this + 557); /*0x71213a*/
+  v2 = *(&this->q0DC7); /*0x71213a*/
   result = 1; /*0x712140*/
   if ( v1 != v2 && *(int *)(v1 + 156) <= 1 && (!v2 || *(int *)(v2 + 156) <= 1) ) /*0x71215f*/
     return 0; /*0x712161*/
@@ -528,37 +535,36 @@ namespace gamemd {
 void BuildingClass::ClearSuperWeaponAnim()
 {
   char result; // al
-  int v3; // ecx
   bool v4; // bl
   int v5; // eax
   char v6; // cl
 
-  result = *(_BYTE *)(this + 1794); /*0x451694*/
+  result = this->UpgradeLevel; /*0x451694*/
   if ( result ) /*0x45169c*/
   {
-    v3 = result; /*0x4516a1*/
+    result = result; /*0x4516a1*/
     v4 = 0; /*0x4516a4*/
-    v5 = *(_DWORD *)(this + 4 * result + 1512); /*0x4516a6*/
+    v5 = *(_DWORD *)(&this->uniqueId * result + 1512); /*0x4516a6*/
     if ( v5 && (v4 = *(_DWORD *)(v5 + 5872) != -1, *(_BYTE *)(v5 + 3233)) ) /*0x4516c0*/
     {
-      BuildingClass::ClearAnims((int *)this, 9); /*0x4516ce*/
-      *(_DWORD *)(this + 4 * *(char *)(this + 1794) + 1512) = 0; /*0x4516dc*/
-      *(_BYTE *)(this + 1794) = 0; /*0x4516e7*/
-      *(_DWORD *)(this + 1532) = -1; /*0x4516ee*/
+      BuildingClass::ClearAnims(9); /*0x4516ce*/
+      *(_DWORD *)(&this->uniqueId * this->UpgradeLevel + 1512) = 0; /*0x4516dc*/
+      this->UpgradeLevel = 0; /*0x4516e7*/
+      this->BuildingClass_field_5FC = -1; /*0x4516ee*/
       if ( v4 ) /*0x4516f8*/
       {
-        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(*(_DWORD *)(this + 540)); /*0x451700*/
+        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->owner); /*0x451700*/
         return 1; /*0x451709*/
       }
     }
     else
     {
-      BuildingClass::ClearAnims((int *)this, v3 - 1); /*0x45170e*/
-      v6 = *(_BYTE *)(this + 1794) - 1; /*0x451719*/
-      *(_BYTE *)(this + 1794) = v6; /*0x45171b*/
-      *(_DWORD *)(this + 4 * v6 + 1516) = 0; /*0x451726*/
+      BuildingClass::ClearAnims(result - 1); /*0x45170e*/
+      v6 = this->UpgradeLevel - 1; /*0x451719*/
+      this->UpgradeLevel = v6; /*0x45171b*/
+      *(_DWORD *)(&this->uniqueId * v6 + 1516) = 0; /*0x451726*/
       if ( v4 ) /*0x451731*/
-        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(*(_DWORD *)(this + 540)); /*0x451739*/
+        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->owner); /*0x451739*/
     }
     return 1; /*0x45173f*/
   }
@@ -593,11 +599,11 @@ int BuildingClass::FindInPointerArray(unsigned int * a2)
   int result; // eax
   _DWORD *i; // ecx
 
-  v2 = *(this + 4); /*0x45a610*/
+  v2 = this->q010; /*0x45a610*/
   result = 0; /*0x45a613*/
   if ( v2 <= 0 ) /*0x45a618*/
     return -1; /*0x45a62f*/
-  for ( i = (_DWORD *)*(this + 1); *i != *a2; ++i ) /*0x45a61e*/
+  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x45a61e*/
   {
     if ( ++result >= v2 ) /*0x45a62d*/
       return -1; /*0x45a62d*/

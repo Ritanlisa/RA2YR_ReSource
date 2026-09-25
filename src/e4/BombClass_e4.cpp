@@ -3,25 +3,29 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
+#include "e4/classes/BombClass_e4.hpp"
+#include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/CellStruct_e4.hpp"
 
 // 0x4385D0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int BombClass::AbstractClass()
 {
   int v2; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4385d4*/
-  *(_DWORD *)(this + 84) = 0; /*0x4385de*/
-  *(_DWORD *)this = &BombClass::`vftable'; /*0x4385e1*/
-  *(_DWORD *)(this + 4) = &BombClass::`vftable'; /*0x4385e7*/
-  *(_DWORD *)(this + 8) = &BombClass::`vftable'; /*0x4385ee*/
-  *(_DWORD *)(this + 12) = &BombClass::`vftable'; /*0x4385f5*/
-  *(_DWORD *)(this + 40) = 0; /*0x4385fc*/
-  *(_DWORD *)(this + 44) = 0; /*0x4385ff*/
-  *(_BYTE *)(this + 88) = 0; /*0x438602*/
-  AudioController::Init((_DWORD *)(this + 60)); /*0x438605*/
-  *(_DWORD *)(this + 80) = g_RulesClass_Instance->BunkerWallsDownSound; /*0x438615*/
+  AbstractClass::Constructor(); /*0x4385d4*/
+  this->BombClass_field_54 = 0; /*0x4385de*/
+  *(_DWORD *)this = &(void*)(void*)&BombClass_vftable; /*0x4385e1*/
+  this->vtable2 = &(void*)(void*)&BombClass_vftable; /*0x4385e7*/
+  this->vtable3 = &(void*)(void*)&BombClass_vftable; /*0x4385ee*/
+  this->vtable4 = &(void*)(void*)&BombClass_vftable; /*0x4385f5*/
+  this->BombClass_field_28 = 0; /*0x4385fc*/
+  this->BombClass_field_2C = 0; /*0x4385ff*/
+  this->BombClass_field_58 = 0; /*0x438602*/
+  AudioController::Init((_DWORD *)(&this->nextArrayIndex0)); /*0x438605*/
+  this->q050 = g_RulesClass_Instance->BunkerWallsDownSound; /*0x438615*/
   if ( dword_89C678 < dword_89C670 /*0x43864a*/
     || (byte_89C675 || !dword_89C670)
     && dword_89C67C > 0
@@ -36,18 +40,16 @@ int BombClass::AbstractClass()
   return this; /*0x43866b*/
 }
 } // namespace ra2
-}
 
 // 0x438A00
-namespace ra2 {
-namespace game {
+namespace gamemd {
 void * BombClass::GetCurrentFrame()
 {
   int v2; // ecx
 
-  if ( *(this + 12) == 1 ) /*0x438a04*/
+  if ( *(&this->vtable22) == 1 ) /*0x438a04*/
     return (Iostream_init *)12; /*0x438a06*/
-  v2 = 2 * (((int)g_CurrentFrame - *(this + 13)) / (g_RulesClass_Instance->WaterCrate[1] / 6)); /*0x438a4c*/
+  v2 = 2 * (((int)g_CurrentFrame - *(&this->vtable23)) / (g_RulesClass_Instance->WaterCrate[1] / 6)); /*0x438a4c*/
   if ( (int)g_CurrentFrame % (2 * g_RulesClass_Instance->WaterCrate[3]) >= g_RulesClass_Instance->WaterCrate[3] ) /*0x438a53*/
     ++v2; /*0x438a55*/
   if ( v2 < 12 ) /*0x438a59*/
@@ -56,21 +58,17 @@ void * BombClass::GetCurrentFrame()
     return __0Iostream_init_QAE_XZ_1((Iostream_init *)0xB); /*0x438a5c*/
 }
 } // namespace ra2
-}
 
 // 0x438A70
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int BombClass::TimeToExplode()
 {
-  return !*(_DWORD *)(this + 48) && (int)g_CurrentFrame > *(_DWORD *)(this + 56) && !*(_BYTE *)(this + 88); /*0x438a8c*/
+  return !this->audioController && (int)g_CurrentFrame > this->q038 && !this->BombClass_field_58; /*0x438a8c*/
 }
 } // namespace ra2
-}
 
 // 0x438A90
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int BombClass::Stat(int * a2)
 {
   int v3; // edx
@@ -81,61 +79,55 @@ int BombClass::Stat(int * a2)
   int v8; // eax
   int v9; // eax
 
-  AbstractClass::ProcessPower((#378 *)this); /*0x438a99*/
-  v4 = *(_DWORD *)(this + 40); /*0x438a9e*/
+  AbstractClass::ProcessPower(); /*0x438a99*/
+  v4 = this->BombClass_field_28; /*0x438a9e*/
   if ( v4 ) /*0x438aa3*/
   {
     v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x438aac*/
     Power::TimerProcess(v5); /*0x438ab2*/
   }
-  v6 = *(_DWORD *)(this + 36); /*0x438ab7*/
+  v6 = this->q024; /*0x438ab7*/
   if ( v6 ) /*0x438abc*/
   {
     v7 = (*(int (__stdcall **)(int))(*(_DWORD *)(v6 + 4) + 16))(v6 + 4); /*0x438ac5*/
     Power::TimerProcess(v7); /*0x438acb*/
   }
-  v8 = *(_DWORD *)(this + 44); /*0x438ad0*/
+  v8 = this->BombClass_field_2C; /*0x438ad0*/
   if ( v8 ) /*0x438ad5*/
   {
     v9 = (*(int (__stdcall **)(int))(*(_DWORD *)(v8 + 4) + 16))(v8 + 4); /*0x438ade*/
     Power::TimerProcess(v9); /*0x438ae4*/
   }
-  LOBYTE(v3) = *(_BYTE *)(this + 88); /*0x438ae9*/
+  IDA_LOBYTE(v3) = this->BombClass_field_58; /*0x438ae9*/
   return Power::FlagProcess(a2, v3); /*0x438af4*/
 }
 } // namespace ra2
-}
 
 // 0x438550
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int BombClass::InitPool()
 {
   dword_89C66C = 0; /*0x438557*/
   dword_89C670 = 0; /*0x43855c*/
   byte_89C674 = 1; /*0x438561*/
   byte_89C675 = 0; /*0x438568*/
-  dword_89C668 = (int)&DynamicVectorClass<BombClass *>::`vftable'; /*0x43856d*/
+  dword_89C668 = (int)&(void*)(void*)&DynamicVectorClass_BombClass___vftable; /*0x43856d*/
   dword_89C67C = 10; /*0x438577*/
   dword_89C678 = 0; /*0x438581*/
   return atexit(globalHelper_038590); /*0x43858c*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x4389F0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int BombClass::IsDeathBomb()
 {
-  return *(this + 12); /*0x4389f3*/
+  return *(&this->vtable22); /*0x4389f3*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x438B00
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int BombClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x438b06*/
@@ -146,12 +138,10 @@ int BombClass::ddtor(int a1, unsigned int * a2)
   a2[3] = 1822515787; /*0x438b30*/
   return 0; /*0x438b0d*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x438B40
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int BombClass::Write(AbstractClass * aP0, int aP1)
 {
   int Prefix_0; // edi
@@ -162,10 +152,10 @@ int BombClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x438b59*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x438b62*/
-      *aP0 = (int)&BombClass::`vftable'; /*0x438b67*/
-      aP0[1] = (int)&BombClass::`vftable'; /*0x438b6d*/
-      aP0[2] = (int)&BombClass::`vftable'; /*0x438b74*/
-      aP0[3] = (int)&BombClass::`vftable'; /*0x438b7b*/
+      *aP0 = (int)&(void*)(void*)&BombClass_vftable; /*0x438b67*/
+      aP0[1] = (int)&(void*)(void*)&BombClass_vftable; /*0x438b6d*/
+      aP0[2] = (int)&(void*)(void*)&BombClass_vftable; /*0x438b74*/
+      aP0[3] = (int)&(void*)(void*)&BombClass_vftable; /*0x438b7b*/
     }
     AudioController::Init(aP0 + 15); /*0x438b85*/
     aP0[21] = 0; /*0x438b8d*/
@@ -175,34 +165,28 @@ int BombClass::Write(AbstractClass * aP0, int aP1)
   }
   return Prefix_0; /*0x438bbd*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x438BD0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int BombClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
   return AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x438be4*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x4393F0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 BombClass * BombClass::CopyTo(char a2)
 {
   int v3; // eax
-  _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &BombClass::`vftable'; /*0x4393f7*/
-  *(this + 1) = &BombClass::`vftable'; /*0x4393fd*/
-  *(this + 2) = &BombClass::`vftable'; /*0x439404*/
-  *(this + 3) = &BombClass::`vftable'; /*0x43940b*/
-  AudioFileClass::Release(this + 15); /*0x439412*/
-  v5 = this; /*0x439427*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_89C668 + 16))(&dword_89C668, &v5); /*0x43942b*/
+  *this = &(void*)(void*)&BombClass_vftable; /*0x4393f7*/
+  this->vtable2 = &(void*)(void*)&BombClass_vftable; /*0x4393fd*/
+  this->vtable3 = &(void*)(void*)&BombClass_vftable; /*0x439404*/
+  this->vtable4 = &(void*)(void*)&BombClass_vftable; /*0x43940b*/
+  AudioFileClass::Release(&this->vtable25); /*0x439412*/
+  v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_89C668 + 16))(&dword_89C668, &this); /*0x43942b*/
   if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/
   {
     do /*0x43945e*/
@@ -212,10 +196,9 @@ BombClass * BombClass::CopyTo(char a2)
     }
     while ( v3 < dword_89C678 ); /*0x43945e*/
   }
-  AbstractClass::DTOR(this); /*0x439462*/
+  AbstractClass::DTOR(); /*0x439462*/
   if ( (a2 & 1) != 0 ) /*0x43946c*/
-    __3_YAXPAX_Z(this); /*0x43946f*/
+    RA2_OPDEL(); /*0x43946f*/
   return this; /*0x439479*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd

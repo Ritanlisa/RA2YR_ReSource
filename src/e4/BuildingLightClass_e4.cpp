@@ -5,13 +5,22 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/BuildingLightClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/BuildingLight_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/BulletTypeClass_e4.hpp"
+#include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/Building_e4.hpp"
 
 // 0x436BE0
 namespace gamemd {
 unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
 {
   _DWORD *result; // eax
-  _DWORD *v3; // edi
   int v4; // edx
   int v5; // eax
   int v6; // ebx
@@ -30,39 +39,35 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
   void *v19; // [esp+24h] [ebp-44h]
   int v21; // [esp+2Ch] [ebp-3Ch]
   _DWORD *v22; // [esp+30h] [ebp-38h]
-  int v23; // [esp+34h] [ebp-34h] BYREF
   _DWORD *v24; // [esp+38h] [ebp-30h] BYREF
-  int v25; // [esp+3Ch] [ebp-2Ch]
   int v26; // [esp+44h] [ebp-24h]
-  int v27; // [esp+48h] [ebp-20h]
   int v28; // [esp+4Ch] [ebp-1Ch]
   int v29; // [esp+58h] [ebp-10h]
   char v30[12]; // [esp+5Ch] [ebp-Ch] BYREF
 
   result = aP1; /*0x436be9*/
-  v3 = this; /*0x436bef*/
-  *(this + 44) = 0; /*0x436bfa*/
-  *(this + 55) = aP1; /*0x436c00*/
-  *(this + 45) = 0; /*0x436c06*/
+  *(&this->uniqueId4) = 0; /*0x436bfa*/
+  *(&this->abstractFlags5) = aP1; /*0x436c00*/
+  *(&this->uniqueId5) = 0; /*0x436c06*/
   if ( aP1 == (_DWORD *)3 ) /*0x436c0c*/
   {
-    v4 = *(_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD **))(*this + 440))(this, &v24); /*0x436c21*/
-    v5 = v3[57]; /*0x436c23*/
-    v25 = v4; /*0x436c29*/
+    v4 = *(_DWORD *)this->GetCellCoords_Alt(&v24); /*0x436c21*/
+    v5 = this->FollowingObject; /*0x436c23*/
+    v4 = v4; /*0x436c29*/
     v19 = &unk_98967F; /*0x436c2d*/
     v22 = 0; /*0x436c3b*/
-    v24 = *(_DWORD **)(v5 + 540); /*0x436c3f*/
+    v24 = v5->q21C; /*0x436c3f*/
     v17 = -1; /*0x436c43*/
     do /*0x436d74*/
     {
       v6 = -1; /*0x436c53*/
       v21 = -1; /*0x436c58*/
-      LOWORD(v18) = v25 + v17; /*0x436c5c*/
+      IDA_LOWORD(v18) = v4 + v17; /*0x436c5c*/
       do /*0x436d62*/
       {
-        HIWORD(v18) = v6 + HIWORD(v25); /*0x436c6c*/
-        v23 = v18; /*0x436c7b*/
-        v7 = (_DWORD *)*((_DWORD *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v23) + 57); /*0x436c84*/
+        IDA_HIWORD(v18) = v6 + IDA_HIWORD(v4); /*0x436c6c*/
+        v18 = v18; /*0x436c7b*/
+        v7 = (_DWORD *)*((_DWORD *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v18) + 57); /*0x436c84*/
         if ( v7 ) /*0x436c8c*/
         {
           while ( 1 ) /*0x436c98*/
@@ -72,15 +77,15 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
               && !Object::IsAlliedWithObjectHouse(v24, (int)v7) )
             {
               v8 = *v7; /*0x436ccc*/
-              v9 = v3 + 39; /*0x436cce*/
-              v10 = v3[39]; /*0x436cd0*/
+              v9 = &this->location; /*0x436cce*/
+              v10 = this->location; /*0x436cd0*/
               v11 = v9[1]; /*0x436cd2*/
               v29 = v9[2]; /*0x436cdf*/
-              v12 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, char *))(v8 + 72))(v7, v30); /*0x436ce3*/
+              v12 = (_DWORD *)v7->GetInvalidCoord(v30); /*0x436ce3*/
               v13 = v12[1] - v11; /*0x436ced*/
               v26 = *v12 - v10; /*0x436cf3*/
               v14 = v12[2]; /*0x436cf7*/
-              v27 = v13; /*0x436cfa*/
+              v13 = v13; /*0x436cfa*/
               v28 = v14 - v29; /*0x436d07*/
               v15 = Math::Sqrt((double)v26 * (double)v26 + (double)(v14 - v29) * (double)(v14 - v29) + (double)v13 * (double)v13); /*0x436d2c*/
               v16 = (void *)Math::RoundToInt(v15); /*0x436d34*/
@@ -93,10 +98,8 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
             v7 = (_DWORD *)v7[12]; /*0x436d47*/
             if ( !v7 ) /*0x436d4c*/
               break; /*0x436d4c*/
-            v3 = this; /*0x436c94*/
           }
           v6 = v21; /*0x436d52*/
-          v3 = this; /*0x436d56*/
         }
         v21 = ++v6; /*0x436d5e*/
       }
@@ -106,7 +109,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
     while ( v17 < 2 ); /*0x436d74*/
     result = v22; /*0x436d7a*/
     if ( v22 ) /*0x436d80*/
-      v3[56] = v22; /*0x436d82*/
+      this->BuildingLightClass_field_E0 = v22; /*0x436d82*/
   }
   return result; /*0x436d88*/
 }
@@ -116,16 +119,15 @@ namespace gamemd {
 BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
 {
   int v3; // eax
-  #374 *v5; // [esp+4h] [ebp-4h] BYREF
+  void *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(_DWORD *)this = &BuildingLightClass::`vftable'; /*0x4370c4*/
-  *((_DWORD *)this + 1) = &BuildingLightClass::`vftable'; /*0x4370ca*/
-  *((_DWORD *)this + 2) = &BuildingLightClass::`vftable'; /*0x4370d1*/
-  *((_DWORD *)this + 3) = &BuildingLightClass::`vftable'; /*0x4370d8*/
+  *(_DWORD *)this = &(void*)(void*)&BuildingLightClass_vftable; /*0x4370c4*/
+  *((_DWORD *)this + 1) = &(void*)(void*)&BuildingLightClass_vftable; /*0x4370ca*/
+  this->vtable3 = &(void*)(void*)&BuildingLightClass_vftable; /*0x4370d1*/
+  this->vtable4 = &(void*)(void*)&BuildingLightClass_vftable; /*0x4370d8*/
   if ( (unsigned __int8)ObjectClass::Undeploy(this) ) /*0x4370df*/
     VectorClass::RemoveItem(&g_GameConfigManager, (int)this); /*0x4370ee*/
-  v5 = this; /*0x437103*/
-  v3 = (*(int (__thiscall **)(int *, #374 **))(dword_8B4190 + 16))(&dword_8B4190, &v5); /*0x437107*/
+  v3 = (*(int (__thiscall **)(int *, void **))(dword_8B4190 + 16))(&dword_8B4190, &this); /*0x437107*/
   if ( v3 != -1 && v3 < dword_8B41A0 && v3 < --dword_8B41A0 ) /*0x437122*/
   {
     do /*0x43713a*/
@@ -135,9 +137,9 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
     }
     while ( v3 < dword_8B41A0 ); /*0x43713a*/
   }
-  ObjectClass::Dtor(this); /*0x43713e*/
+  ObjectClass::Dtor(); /*0x43713e*/
   if ( (a2 & 1) != 0 ) /*0x437148*/
-    __3_YAXPAX_Z(this); /*0x43714b*/
+    RA2_OPDEL(); /*0x43714b*/
   return this; /*0x437155*/
 }
 } // namespace gamemd
@@ -176,9 +178,9 @@ signed int BuildingLightClass::UpdateOscillation()
   int v29; // [esp+2Ch] [ebp-8h]
   int v30; // [esp+30h] [ebp-4h]
 
-  v24 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 456))(*(_DWORD *)(this + 12)); /*0x513d3a*/
+  v24 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->vtable22) + 456))(this->vtable4); /*0x513d3a*/
   v26 = v24; /*0x513d3e*/
-  v2 = *(_DWORD *)(this + 12); /*0x513d42*/
+  v2 = this->vtable4; /*0x513d42*/
   if ( *(_DWORD *)(v2 + 1504) != -1 ) /*0x513d4c*/
   {
     v3 = (int *)(v2 + 156); /*0x513d52*/
@@ -186,7 +188,7 @@ signed int BuildingLightClass::UpdateOscillation()
     v29 = v3[1]; /*0x513d65*/
     v30 = v3[2]; /*0x513d71*/
     GroundHeight = Cell::GetGroundHeight(&v28); /*0x513d7a*/
-    v5 = *(_DWORD *)(this + 12); /*0x513d7c*/
+    v5 = this->vtable4; /*0x513d7c*/
     v6 = (int *)(v5 + 156); /*0x513d8b*/
     v7 = *(_DWORD *)(v5 + 1504) & 7; /*0x513d8d*/
     v8 = *v6; /*0x513d90*/
@@ -198,10 +200,10 @@ signed int BuildingLightClass::UpdateOscillation()
     v28 = v12; /*0x513dbb*/
     v30 = v10; /*0x513dbf*/
     if ( Cell::GetGroundHeight(&v28) > GroundHeight ) /*0x513dca*/
-      v26 = v24 - HIDWORD(g_RulesClass_Instance->VeteranROF); /*0x513ddc*/
+      v26 = v24 - IDA_HIDWORD(g_RulesClass_Instance->VeteranROF); /*0x513ddc*/
   }
-  v25 = Math::RoundToInt((double)v24 + *(double *)(this + 96)); /*0x513dec*/
-  v13 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(this + 12) + 4) + 16))(*(_DWORD *)(this + 12) + 4); /*0x513df9*/
+  v25 = Math::RoundToInt((double)v24 + *(double *)(&this->objectTypeFlags6)); /*0x513dec*/
+  v13 = (*(int (__stdcall **)(int))(*(_DWORD *)(this->vtable4 + 4) + 16))(this->vtable4 + 4); /*0x513df9*/
   if ( (v13 & 1) != 0 ) /*0x513dfe*/
     v14 = 1.0; /*0x513e00*/
   else
@@ -213,38 +215,38 @@ signed int BuildingLightClass::UpdateOscillation()
   v18 = Math::RoundToInt(v17 + v17 + (double)v25); /*0x513e5d*/
   if ( v18 < 0 ) /*0x513e66*/
   {
-    *(_DWORD *)(this + 96) = 0; /*0x513e68*/
-    *(_DWORD *)(this + 100) = 0; /*0x513e6b*/
+    this->q060 = 0; /*0x513e68*/
+    this->customSound = 0; /*0x513e6b*/
     v18 = 0; /*0x513e6e*/
   }
-  v19 = *(_DWORD *)(this + 12); /*0x513e70*/
+  v19 = this->vtable4; /*0x513e70*/
   v20 = *(_BYTE *)(v19 + 116); /*0x513e74*/
   *(_BYTE *)(v19 + 116) = 0; /*0x513e77*/
-  (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 460))(*(_DWORD *)(this + 12), v18); /*0x513e7f*/
-  result = *(_DWORD *)(this + 12); /*0x513e85*/
+  (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(&this->vtable22) + 460))(this->vtable4, v18); /*0x513e7f*/
+  result = this->vtable4; /*0x513e85*/
   *(_BYTE *)(result + 116) = v20; /*0x513e8c*/
   v22 = g_RulesClass_Instance; /*0x513e8f*/
   if ( v26 < SHIDWORD(g_RulesClass_Instance->VeteranROF) ) /*0x513e9b*/
   {
-    if ( StreamClass::GetDirty(this + 4) ) /*0x513ea1*/
-      *(double *)(this + 96) = ((double)SHIDWORD(g_RulesClass_Instance->VeteranROF) /*0x513ec8*/
+    if ( this->vtable2.GetDirty() ) /*0x513ea1*/
+      *(double *)(&this->objectTypeFlags6) = ((double)SHIDWORD(g_RulesClass_Instance->VeteranROF) /*0x513ec8*/
                               + (double)SHIDWORD(g_RulesClass_Instance->VeteranROF)
                               - (double)v26)
                              / (double)SHIDWORD(g_RulesClass_Instance->VeteranROF)
                              * (double)g_RulesClass_Instance[1].WeatherConBoltExplosion
-                             + *(double *)(this + 96);
+                             + *(double *)(&this->objectTypeFlags6);
     v22 = g_RulesClass_Instance; /*0x513ecd*/
     result = SHIDWORD(g_RulesClass_Instance->VeteranROF) / 4; /*0x513edf*/
     if ( v26 < result ) /*0x513ee4*/
     {
       result = (unsigned int)((unsigned __int64)(1431655766LL * g_RulesClass_Instance[1].WeatherConBoltExplosion) >> 32) >> 31; /*0x513ef5*/
-      *(double *)(this + 96) = (double)(g_RulesClass_Instance[1].WeatherConBoltExplosion / 3) + *(double *)(this + 96); /*0x513f05*/
+      *(double *)(&this->objectTypeFlags6) = (double)(g_RulesClass_Instance[1].WeatherConBoltExplosion / 3) + *(double *)(&this->objectTypeFlags6); /*0x513f05*/
       v22 = g_RulesClass_Instance; /*0x513f08*/
     }
   }
-  v23 = *(double *)(this + 96) - (double)v22[1].WeatherConBoltExplosion; /*0x513f15*/
-  *(double *)(this + 96) = v23; /*0x513f18*/
-  *(double *)(this + 96) = v23 * *(double *)&g_RulesClass_Instance->GameForming; /*0x513f27*/
+  v23 = *(double *)(&this->objectTypeFlags6) - (double)v22[1].WeatherConBoltExplosion; /*0x513f15*/
+  *(double *)(&this->objectTypeFlags6) = v23; /*0x513f18*/
+  *(double *)(&this->objectTypeFlags6) = v23 * *(double *)&g_RulesClass_Instance->GameForming; /*0x513f27*/
   return result; /*0x513f2a*/
 }
 }

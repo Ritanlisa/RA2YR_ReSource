@@ -10,12 +10,15 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/Particle_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x46D350
 namespace gamemd {
 void E4Recv_46D350::sub_46D350()
 {
-  *this = &CampaignScoreClass::`vftable'; /*0x46d350*/
+  *this = &(void*)(void*)&CampaignScoreClass_vftable; /*0x46d350*/
 }
 } // namespace gamemd
 
@@ -214,7 +217,7 @@ void sub_46DA70()
     v2 = *(_DWORD *)&HouseClass_Array->gap0[4 * v1]; /*0x46da9a*/
     if ( v2 /*0x46dab7*/
       && v2->attachedTag->q698 != 1
-      && (unsigned __int8)House::IsCurrentPlayer(*(#375 **)&HouseClass_Array->gap0[4 * v1]) )
+      && (unsigned __int8)House::IsCurrentPlayer(*(void **)&HouseClass_Array->gap0[4 * v1]) )
     {
       v3 = g_CampaignScoreFlags++; /*0x46dacf*/
       v4 = 28 * v3; /*0x46dae1*/
@@ -229,7 +232,7 @@ void sub_46DA70()
       if ( !v2->u8_1F5 ) /*0x46db23*/
       {
         ++dword_A8D228[28 * v3]; /*0x46db34*/
-        dword_A8D584 = v3; /*0x46db3a*/
+        v3 = v3; /*0x46db3a*/
       }
       v6 = (int *)(v2 + 21476); /*0x46db40*/
       v7 = 20; /*0x46db46*/
@@ -630,13 +633,13 @@ void sub_466320()
 {
   if ( (byte_89DDD0 & 1) == 0 ) /*0x46632a*/
   {
-    dword_89DE18 = (int)&VectorClass<BulletClass *>::`vftable'; /*0x46632e*/
+    dword_89DE18 = (int)&(void*)(void*)&VectorClass_BulletClass___vftable; /*0x46632e*/
     byte_89DDD0 |= 1u; /*0x466341*/
     if ( dword_89DE1C ) /*0x466347*/
     {
       if ( byte_89DE25 ) /*0x466351*/
       {
-        __3_YAXPAX_Z(dword_89DE1C); /*0x466354*/
+        RA2_OPDEL(dword_89DE1C); /*0x466354*/
         dword_89DE1C = 0; /*0x46635c*/
       }
     }
@@ -1073,7 +1076,7 @@ int sub_46D310()
 namespace gamemd {
 void sub_46D480()
 {
-  *((_BYTE *)&g_GameModeOptionState + a2) = BYTE4(result); /*0x46d480*/
+  *((_BYTE *)&g_GameModeOptionState + a2) = IDA_BYTE4(result); /*0x46d480*/
   return result; /*0x46d486*/
 }
 }

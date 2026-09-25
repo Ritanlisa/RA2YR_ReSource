@@ -5,7 +5,32 @@
 
 namespace gamemd {
 struct Conflict_WorldDominationTour_12 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+    void* q004;  // 0x4
+    int q008;  // 0x8
+    unsigned int q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    int q010;  // 0x10
+    unsigned char q014;  // 0x14
+    int Count;  // 0x16
+    unsigned int q018;  // 0x18
+    unsigned char q01C;  // 0x1C
+    unsigned int q024;  // 0x24
+    unsigned char q028;  // 0x28
+    int q034;  // 0x34
+    unsigned char q038;  // 0x38
+    unsigned char q04C;  // 0x4C
+    unsigned char q050;  // 0x50
+    unsigned int q054;  // 0x54
+    unsigned int Capacity;
+    unsigned int IsInitialized;
+    unsigned int Items;
+    unsigned int Items2;
+    unsigned int Items3;
+    unsigned int q0042;
+    unsigned int q0043;
+// --- flat members (END) ---
     char Release(int a2, unsigned int * a3);  // 0x766C10
     char Constructor_1(int a2, unsigned int * a3);  // 0x766DC0
     unsigned int * Seek(unsigned int * a2, int a3);  // 0x766850
@@ -15,7 +40,7 @@ struct Conflict_WorldDominationTour_12 {
     int ddtor();  // 0x766D30
     int Read(int a2);  // 0x766D60
     int IndexOf(int a2);  // 0x766F40
-    VectorClass * QueryInterface(char a2);  // 0x766FC0
+    VectorClass_flat * QueryInterface(char a2);  // 0x766FC0
     DynamicVector * Constructor_2(char a2);  // 0x767080
     unsigned int PointerToIndex(int a2);  // 0x766830
     unsigned int Write(int a2);  // 0x766DA0

@@ -43,10 +43,6 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     int ApplyPostDamageEffects();  // 0x46a310 -- Warhead::ApplyPostDamageEffects
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    char RemoveFromDamageList(int a2);  // 0x452820
-    int ProcessDamageArea();  // 0x65B580
-// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -66,10 +62,6 @@ public:
     static void sub_565660();
 
     int32_t     DamageArea_field_00;       // 0x00
-// --- e4 declarations (BEGIN) ---
-    char CheckOccupancyEligibility();  // 0x4D0180
-    unsigned int * CalcScatterOffset(unsigned int * a2, short * a3);  // 0x565660
-// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -308,7 +300,7 @@ class TClassFactory_MechLocomotionClass : public IClassFactory
 {
 public:
     TClassFactory_MechLocomotionClass() = default;
-    virtual ~TClassFactory_MechLocomotionClass() = default;  // 0x6C4D90
+    virtual ~RadarHashVector();  // 0x6C4D90
 
     // IClassFactory
     // wrapper: delegates to TClassFactory_MechLocomotionClass::ddtor at 0x6C4D90
@@ -325,10 +317,6 @@ public:
     // === FUNCS-MOVE (BEGIN) ===
     int GetSize(int a1, int a2);  // 0x6c4e10
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    LONG GetClassName();  // 0x6C4D60
-    int ddtor();  // 0x6C4D90
-// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -441,11 +429,6 @@ public:
     bool IronCurtainCharged(int a1, int a2);  // 0x41f0d0
     bool ChronoSphereCharged(int a1, int a2);  // 0x41f180
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int GetTypeIdentifier();  // 0x41FFD0
-    int GetObjectSize();  // 0x41FFE0
-    AITriggerTypeClass * ddtor(unsigned int * Block, char a2);  // 0x41FFF0
-// --- e4 declarations (END) ---
 };
 // 7 methods in IDA
 // CSP: AnimFile matched via T1
@@ -471,9 +454,6 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* QueryInterface(int a1);  // 0x4272a0 -- AnimFile::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    char * Stub();  // 0x427290
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class AnimSequence
@@ -565,9 +545,6 @@ public:
     int Write(int a1);  // 0x5c5750 -- CoopCampaignVector::Write
     void* QueryInterface(int a1);  // 0x5c5940 -- CoopCampaignVector::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    unsigned int * Construct(MultiplayerGameMode * aP1, MultiplayerGameMode * aP2);  // 0x5C5A80
-// --- e4 declarations (END) ---
 };
 // 2 methods in IDA
 // CSP: Coord2D matched via T1
@@ -664,10 +641,6 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* CopyTo(int a1);  // 0x4c5ac0 -- EMPulseClass::CopyTo
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    int StubReturn52();  // 0x4C5AA0
-    int StubReturn55();  // 0x4C5AB0
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 // CSP: ExplosionClass matched via T1
@@ -893,13 +866,6 @@ public:
     int SaveToINI(int a1, int a2, int a3);  // 0x549d70
     int GetClassIdentifier(int a1, int a2);  // 0x549d90
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int GetTypeIdentifier();  // 0x54A140
-    int GetObjectSize();  // 0x54A150
-    IsometricTileTypeClass * ddtor(void * Block, char a2);  // 0x54A170
-    DynamicVector * Constructor(unsigned int * Block, char a2);  // 0x54A760
-    unsigned int * Constructor_0(int a2, int a3);  // 0x54A850
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class Lightning
@@ -954,9 +920,6 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* QueryInterface(int a1);  // 0x69d520 -- MapFile::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    unsigned int * Constructor(int a2, int a3);  // 0x69D770
-// --- e4 declarations (END) ---
 };
 // 2 methods in IDA
 class MapPreview
@@ -1048,12 +1011,6 @@ public:
     void* SetCell();  // 0x597fc0
     void* Validate();  // 0x597fe0
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    char PlaceCityArea(short * a2, short * a3, void * a4);
-    char PlaceCityBlockVariant(void* a2, void* a3, void* a4);
-    char PlaceCityBlockDiagonal(void* a2, void* a3, void* a4);
-    char PlaceCityBlockVariant2(void* a2, void* a3, void* a4);  // 0x593af0  // 0x593030  // 0x592af0  // 0x591740
-// --- e4 declarations (END) ---
 };
 // 3 methods in IDA
 class MapSizeGameOption_WorldDominationTour
@@ -1148,7 +1105,7 @@ public:
 class RadarHashVector
 {
 public:
-    virtual ~RadarHashVector() = default;  // 0x658A70
+    virtual ~RadarHashVector();  // 0x658A70
 
     virtual void Clear(); // 0x658890
     virtual void GetCount(); // 0x6588C0
@@ -1177,11 +1134,6 @@ public:
     int FindItemIndex(int a1);  // 0x658c20 -- RadarHashVector::FindItemIndex
     void* QueryInterface(int a1);  // 0x658d10 -- RadarHashVector::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    void ddtor();  // 0x658A70
-    char * Destructor(unsigned int * Block, char a2);  // 0x658C60
-    unsigned int * Construct(MapClass * aP1, MapClass * aP2);  // 0x658DE0
-// --- e4 declarations (END) ---
 };
 // 8 methods in IDA
 class ScoreAnimClass
@@ -1208,10 +1160,6 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* Constructor_ScoreFontClass(int a1);  // 0x6910a0 -- ScoreAnimClass::Constructor_ScoreFontClass
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    unsigned int * Constructor_ScoreAnimClass_0(unsigned int * Block, char a2);  // 0x691000
-    unsigned int * Constructor_ScoreAnimClass_1(unsigned int * Block, char a2);  // 0x691020
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class ScoreBoard
@@ -1279,9 +1227,6 @@ public:
     void* LoadCountryFlags(int a1);  // 0x690ae0 -- ScoreScreen::LoadCountryFlags
     void RemoveItem(int a1, int a2, int a3, int a4, int a5);  // 0x7712c0 -- ScoreScreen::RemoveItem
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    unsigned int * Constructor(ScoreAnimClass * aP1, int a3, int a4);  // 0x690F30
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class ScoreScreenClass
@@ -1393,7 +1338,7 @@ public:
 class TClassFactory_CampaignClass
 {
 public:
-    virtual ~TClassFactory_CampaignClass() = default;  // 0x6C0290
+    virtual ~RadarHashVector();  // 0x6C0290
 
     virtual void AddRefCOM(); // 0x6C00C0
     virtual void Release(); // 0x6C00E0
@@ -1413,10 +1358,6 @@ public:
     // === FUNCS-MOVE (BEGIN) ===
     int GetSize(int a1, int a2);  // 0x6c0310
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    LONG GetClassName();  // 0x6C0260
-    int ddtor();  // 0x6C0290
-// --- e4 declarations (END) ---
 };
 // 4 methods in IDA
 class TClassFactory_CellClass
@@ -1488,9 +1429,6 @@ public:
     int Read(int a1);  // 0x4e0440 -- AbstractClassVector::Read
     int Write(int a1);  // 0x4e0480 -- AbstractClassVector::Write
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    unsigned int * Construct(IUnknown * aP1, IUnknown * aP2);  // 0x4E0E80
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 // CSP: ActionQueue matched via T1
@@ -1557,13 +1495,6 @@ public:
     uint8_t AlphaShapeClass_field_0x1C[4];
     uint8_t AlphaShapeClass_field_0x20[4];
     uint8_t AlphaShapeClass_field_0x24[4];
-// --- e4 declarations (BEGIN) ---
-    int SD_vt13(int a2);  // 0x420DA0
-    int SD_vt05(AbstractClass * aP0, int aP1);  // 0x420DE0
-    int SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x420E40
-    int SD_vt10(int a2, int a3);  // 0x420E70
-    AlphaShapeClass * SDDTOR(unsigned int * Block, char a2);  // 0x421730
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class AngerVector
@@ -1897,9 +1828,6 @@ public:
     // === FUNCS-MOVE (BEGIN) ===
     int HandleChatChannelList(int a1, int a2, int a3);  // 0x7aa870
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    ObjectClass * DeleteAndZero(void ** Block, char a2);  // 0x7AD350
-// --- e4 declarations (END) ---
 };
 // 2 methods in IDA
 // CSP: CDROM matched via T1
@@ -2084,9 +2012,6 @@ public:
     int Release();  // 0x7ac820
     int QueryInterface(int a1, int a2, int a3);  // 0x7ac870
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int ddtor();  // 0x7A40F0
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 // CSP: Compression matched via T1
@@ -2148,10 +2073,6 @@ public:
     int Unadvise(int a1, int a2, int a3);  // 0x4a0630
     int EnumConnections(int a1, int a2);  // 0x4a0700
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int GetConnectionInterface(unsigned int * a1, int a2);  // 0x4A0760
-    unsigned int * Construct(unsigned int * a1, ConnectionPointClass * aP2);  // 0x4A0870
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class ConnectionPointVector
@@ -2260,11 +2181,6 @@ public:
     int Write(int a1, int a2);  // 0x4a7b90
     int Seek(int a1, int a2, int a3);  // 0x4a7c10
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int ddtor(int a1, unsigned int * a2);  // 0x4A7C30
-    int StubReturn64();  // 0x4A7C70
-    int StubReturn73();  // 0x4A7C80
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class DiskSpace
@@ -2444,10 +2360,6 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* QueryInterface(int a1);  // 0x4e30d0 -- GaugeClass::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    int Stub();  // 0x4E30A0
-    bool Draw(int a2);  // 0x4E30B0
-// --- e4 declarations (END) ---
 };
 // 3 methods in IDA
 class GenericVector
@@ -2697,9 +2609,6 @@ public:
     virtual void Destructor(); // 0x552060
 
     uint8_t LCWPipe_field_0x04[4];
-// --- e4 declarations (BEGIN) ---
-    int Dtor();  // 0x552060
-// --- e4 declarations (END) ---
 };
 // 2 methods in IDA
 class LCWPipe_Destru
@@ -2723,9 +2632,6 @@ public:
     virtual void Destructor(); // 0x552450
 
     uint8_t LCWStraw_field_0x04[4];
-// --- e4 declarations (BEGIN) ---
-    int Dtor();  // 0x552450
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class LCWStraw_Destru
@@ -2987,9 +2893,6 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void* QueryInterface(int a1);  // 0x5ceb80 -- MSOverlayAnim::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    void StubReturnFalse(int a1);  // 0x5CEB50
-// --- e4 declarations (END) ---
 };
 // 7 methods in IDA
 // CSP: MSPCXAnim matched via T1
@@ -3017,9 +2920,6 @@ public:
     void SetPalette(int a1);  // 0x5cea40 -- MSPCXAnim::SetPalette
     void* QueryInterface(int a1);  // 0x5ced70 -- MSPCXAnim::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    char Stub();  // 0x5CEAB0
-// --- e4 declarations (END) ---
 };
 // 6 methods in IDA
 // CSP: MSPrintAnim matched via T1
@@ -3095,9 +2995,6 @@ public:
     void* GetFrameRect(int a1);  // 0x5cd290 -- MSVQAnim::GetFrameRect
     void* QueryInterface(int a1);  // 0x5cecb0 -- MSVQAnim::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    char Stub();  // 0x5CD320
-// --- e4 declarations (END) ---
 };
 // 2 methods in IDA
 class Megawealth
@@ -3294,9 +3191,6 @@ public:
     uint8_t ObjectVector_field_0x0C[4];
     uint8_t ObjectVector_field_0x10[4];
     uint8_t ObjectVector_field_0x14[4];
-// --- e4 declarations (BEGIN) ---
-    unsigned int * Construct(IUnknown * aP1, IUnknown * aP2);  // 0x4D0440
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class ObserverClass
@@ -5245,15 +5139,6 @@ public:
     int Update(int a1, int a2, int a3);  // 0x74eee0
     int CheckStatus();  // 0x74ef00
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int ddtor(int a1, unsigned int * a2);  // 0x74F2D0
-    int StubReturn63();  // 0x74F310
-    int StubReturn264();  // 0x74F320
-// --- e4 declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    void Update_0x74D7C0();
-    void UpdateVeinholeMonster();  // 0x74d7c0  // 0x74D7C0
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class VersionInfo
@@ -5301,9 +5186,6 @@ public:
     uint8_t VtableStub_field_0x18[4];
     uint8_t VtableStub_field_0x1C[4];
     uint8_t VtableStub_field_0x20[4];
-// --- e4 declarations (BEGIN) ---
-    char RetZero_eax_35(int a1);  // 0x65D690
-// --- e4 declarations (END) ---
 };
 // 2 methods in IDA
 // CSP: WDTClass matched via T1
@@ -5452,9 +5334,6 @@ public:
     int LogCommErrors(int a1, int a2, int a3, int a4);  // 0x7754d0 -- WinModemClass::LogCommErrors
     void* QueryInterface(int a1);  // 0x775610 -- WinModemClass::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    int ddtor(int a2);  // 0x7754A0
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class WonlineStringDialogControl

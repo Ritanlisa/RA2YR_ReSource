@@ -63,8 +63,6 @@ struct VoxLib
     float   ZCompress;
     int32_t VoxLib_field_78;
     int32_t VoxLib_field_7C;
-// --- e4 declarations (BEGIN) ---
-// --- e4 declarations (END) ---
 };
 
 struct MotLib
@@ -182,13 +180,6 @@ protected:
     int SaveLoad_Prefix(int a1, int a2);  // 0x74b810
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x74b8d0
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    unsigned int * Constructor(ObjectClass * aP1);  // 0x74AD80
-    int GetObjectSize();  // 0x74BA00
-    char Stub(int a1, int a2);  // 0x74BA10
-    int StubReturnFalse(int a1);  // 0x74BA20
-    VoxelAnimTypeClass * ddtor(void ** Block, char a2);  // 0x74BA30
-// --- e4 declarations (END) ---
 };
 
 

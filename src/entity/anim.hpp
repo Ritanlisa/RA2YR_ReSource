@@ -137,17 +137,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int MissionStubReturnZero2(int a1, int a2);  // 0x426540
     int GetAnimation(int a1, int a2);  // 0x7298f0
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    void Destruct(AbstractClass * a2);  // 0x4228E0
-    int InWhichLayer_AttachedObjectLayer();  // 0x424CB0
-    int MissionStubReturnZero();  // 0x426530
-// --- e4 declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    char sub_773590(int a2, int a3);  // 0x773590
-// --- e4 declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    char * sub_4C68E0(int a2, int a3, IUnknown * aP3, IUnknown * aP4, int a6, char a7, int a8, char a9, int a10, int a11);  // 0x4C68E0
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

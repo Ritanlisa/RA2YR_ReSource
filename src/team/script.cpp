@@ -28,12 +28,11 @@ ScriptActionNode* ScriptClass::GetNextAction(
 {
   int v2; // edx
   int v3; // ecx
-  _DWORD *result; // eax
 
-  v2 = *(this + 9); /*0x691540*/
-  v3 = *(this + 11); /*0x691543*/
-  result = a2; /*0x691554*/
-  if ( v3 + 1 < *(_DWORD *)(v2 + 160) ) /*0x691552*/
+  v2 = this->buildingType; /*0x691540*/
+  v3 = *(&this->vtable21); /*0x691543*/
+  a2 = a2; /*0x691554*/
+  if ( v3 + 1 < v2->u32_A0 ) /*0x691552*/
   {
     *a2 = *(_DWORD *)(v2 + 8 * v3 + 172); /*0x691571*/
     a2[1] = *(_DWORD *)(v2 + 8 * v3 + 176); /*0x69157a*/
@@ -43,7 +42,6 @@ ScriptActionNode* ScriptClass::GetNextAction(
     *a2 = -1; /*0x69155e*/
     a2[1] = 0; /*0x691560*/
   }
-  return result; /*0x69155d*/
 }
 bool ScriptClass::HasNextAction() const
 {

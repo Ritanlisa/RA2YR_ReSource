@@ -3,6 +3,8 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/TrajectoryHelper_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4CC100
 namespace gamemd {
@@ -41,14 +43,14 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
     return 0; /*0x4cc11d*/
   v5 = *a1; /*0x4cc12d*/
   v6 = a1[1]; /*0x4cc136*/
-  LOWORD(v21) = *aP0 / 256; /*0x4cc151*/
-  HIWORD(v21) = aP0[1] / 256; /*0x4cc156*/
+  IDA_LOWORD(v21) = *aP0 / 256; /*0x4cc151*/
+  IDA_HIWORD(v21) = aP0[1] / 256; /*0x4cc156*/
   v25 = v21; /*0x4cc15f*/
-  LOWORD(v18) = v5 / 256; /*0x4cc171*/
-  HIWORD(v18) = v6 / 256; /*0x4cc184*/
+  IDA_LOWORD(v18) = v5 / 256; /*0x4cc171*/
+  IDA_HIWORD(v18) = v6 / 256; /*0x4cc184*/
   v26 = v18; /*0x4cc18d*/
   v7 = abs32((__int16)v21 - (__int16)v18); /*0x4cc1aa*/
-  v8 = abs32(SHIWORD(v21) - SHIWORD(v18)); /*0x4cc1af*/
+  v8 = abs32(IDA_SHIWORD(v21) - IDA_SHIWORD(v18)); /*0x4cc1af*/
   if ( v7 <= v8 ) /*0x4cc1b3*/
     v7 = v8; /*0x4cc1b5*/
   v9 = v6 - aP0[1]; /*0x4cc1bf*/
@@ -83,8 +85,8 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
     result = TrajectoryHelper::GetObstacle(v28, v27, (int)v13, v14, v15, aP0[2] + v22, arg0, a3); /*0x4cc281*/
     if ( result ) /*0x4cc288*/
       break; /*0x4cc288*/
-    LOWORD(v23) = v14 / 256; /*0x4cc2a2*/
-    HIWORD(v23) = v15 / 256; /*0x4cc2b5*/
+    IDA_LOWORD(v23) = v14 / 256; /*0x4cc2a2*/
+    IDA_HIWORD(v23) = v15 / 256; /*0x4cc2b5*/
     v29 = v23; /*0x4cc2be*/
     v13 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v29); /*0x4cc2c2*/
     v19 += v30; /*0x4cc2dd*/
@@ -107,7 +109,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
   int v12; // ebx
   int v13; // eax
   bool v14; // al
-  #375 *v15; // ecx
+  void *v15; // ecx
   _DWORD *v16; // eax
   int v17; // edi
   int v18; // ebx
@@ -130,7 +132,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
   int v35; // ebx
   int v37; // eax
   bool v38; // al
-  #375 *v39; // ecx
+  void *v39; // ecx
   int v41; // [esp+20h] [ebp-24h]
   _DWORD *v42; // [esp+20h] [ebp-24h]
   int v43; // [esp+24h] [ebp-20h] BYREF
@@ -141,8 +143,8 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
   char v48[12]; // [esp+38h] [ebp-Ch] BYREF
 
   v8 = a2; /*0x4cc36b*/
-  LOWORD(v41) = a4 / 256; /*0x4cc382*/
-  HIWORD(v41) = a5 / 256; /*0x4cc3a0*/
+  IDA_LOWORD(v41) = a4 / 256; /*0x4cc382*/
+  IDA_HIWORD(v41) = a5 / 256; /*0x4cc3a0*/
   v44 = a1; /*0x4cc3a9*/
   v43 = v41; /*0x4cc3ad*/
   v10 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v43); /*0x4cc3b6*/
@@ -165,8 +167,8 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
     if ( v10 != (_DWORD *)v8 /*0x4cc47c*/
       && v14
       && a1[283] <= v8[283]
-      && (!LOBYTE(g_RulesClass_Instance[1].DMisl[3])
-       || (v15 = *(#375 **)&HouseClass_Array->gap0[4 * v10[20]]) == 0
+      && (!IDA_LOBYTE(g_RulesClass_Instance[1].DMisl[3])
+       || (v15 = *(void **)&HouseClass_Array->gap0[4 * v10[20]]) == 0
        || !(unsigned __int8)HouseClass::IsAlliedWith(v15, other)) )
     {
   LABEL_16:
@@ -220,9 +222,9 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
             v38 = v37 != -1 && *(_BYTE *)(*(_DWORD *)&g_BuildingTypeClass_Array->gap0[4 * v37] + 680); /*0x4cc5ff*/
             if ( v33 != (_DWORD *)a2 && v38 && v44[283] <= a2[283] ) /*0x4cc61f*/
             {
-              if ( !LOBYTE(g_RulesClass_Instance[1].DMisl[3]) ) /*0x4cc627*/
+              if ( !IDA_LOBYTE(g_RulesClass_Instance[1].DMisl[3]) ) /*0x4cc627*/
                 return v42; /*0x4cc627*/
-              v39 = *(#375 **)&HouseClass_Array->gap0[4 * v33[20]]; /*0x4cc639*/
+              v39 = *(void **)&HouseClass_Array->gap0[4 * v33[20]]; /*0x4cc639*/
               if ( !v39 || !(unsigned __int8)HouseClass::IsAlliedWith(v39, other) ) /*0x4cc645*/
                 return v42; /*0x4cc64c*/
             }

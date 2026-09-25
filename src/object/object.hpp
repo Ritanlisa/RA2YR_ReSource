@@ -597,40 +597,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void CleanupSidebarResources();  // 0x6a5bf0
     int FindOwner(int a1, int a2);  // 0x6e45e0
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int GetMember06();  // 0x401940
-    int COMStub_108();  // 0x4264D0
-    char GetStateFlag();  // 0x4886A0
-    int GetMember09();  // 0x4CA120
-    char SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3, FootClass * aP4);  // 0x4D7D50
-    float * BuildTransform(unsigned int * a1, float * a2, unsigned int * a3);  // 0x513F40
-    int GetWidth();  // 0x556620
-    void Dtor();  // 0x5F3B80
-    int DropAsBomb_Track();  // 0x5F4160
-    int GetBoundsRect();  // 0x5F4870
-    char Release();  // 0x6241C0
-    int GetMember01();  // 0x6241D0
-    char FindPlacementPosition(int a2, int a3, int a4, int a5);  // 0x718260
-    unsigned int * loc_7A2E70(char a2);  // 0x7A2E70
-// --- e4 declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    void sub_47A080(DWORD a2);  // 0x47A080
-    char sub_47A1B0(DWORD BytesReturned);  // 0x47A1B0
-    char sub_47A2D0(DWORD BytesReturned);  // 0x47A2D0
-    void sub_550080();  // 0x550080
-    int sub_632A70(int a2, int a3, ObjectClass * aP3);  // 0x632A70
-    GenericNode * sub_764A20();  // 0x764A20
-    unsigned char ToggleSidebarDisplay(unsigned int * a0, TabClass * aP1, int a3, int _20, SidebarClass * a4, char a6);  // 0x6A7D70
-// --- e4 declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    char DispatchTeamOrders(int a2, int a3);  // 0x6EF110
-    rc_ptr * ShowWDTTerritorySelection(unsigned int * a2);  // 0x76CDA0
-    int ReadSettingsWOL();  // 0x779C90
-    int SavePersonaConfigWOL();  // 0x779F10
-    int InitializeWestwoodOnline();  // 0x785370
-    wchar_t * HandlePageWOL();  // 0x78A6B0
-    void ShowWDTTerritorySelection_Show();  // 0x76E180
-// --- e4 declarations (END) ---
 };
 
 } // namespace game

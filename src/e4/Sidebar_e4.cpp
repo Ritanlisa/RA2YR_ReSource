@@ -5,6 +5,9 @@
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/House_e4.hpp"
+#include "e4/classes/TeamTypeClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4FA350
 namespace gamemd {
@@ -35,7 +38,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
     v6 = (int)a1; /*0x4fa36d*/
     v8 = TechnoTypeClass::GetByTypeAndIndex((int)a1, aP2); /*0x4fa375*/
     if ( a1 == (void *)6 || a1 == (void *)7 ) /*0x4fa382*/
-      v22 = *(_DWORD *)(v8 + 3592); /*0x4fa394*/
+      v22 = v8->qE08; /*0x4fa394*/
     else
       v22 = 0; /*0x4fa384*/
     v7 = v22; /*0x4fa398*/
@@ -52,24 +55,24 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
     case 1: /*0x4fa3b0*/
     case 40: /*0x4fa3b0*/
       if ( aP3 ) /*0x4fa3c9*/
-        v21 = *(_BYTE *)(this + 21459); /*0x4fa3d1*/
+        v21 = this->u8_53D3; /*0x4fa3d1*/
       else
-        v21 = *(_BYTE *)(this + 21458); /*0x4fa3dd*/
+        v21 = this->u8_53D2; /*0x4fa3dd*/
       break; /*0x4fa3d5*/
     case 2: /*0x4fa3b0*/
     case 3: /*0x4fa3b0*/
-      v21 = *(_BYTE *)(this + 21456); /*0x4fa406*/
+      v21 = this->q53D0; /*0x4fa406*/
       break; /*0x4fa40a*/
     case 6: /*0x4fa3b0*/
     case 7: /*0x4fa3b0*/
       if ( v7 == 5 ) /*0x4fa3e6*/
-        v21 = *(_BYTE *)(this + 21464); /*0x4fa3ee*/
+        v21 = this->q53D8; /*0x4fa3ee*/
       else
-        v21 = *(_BYTE *)(this + 21460); /*0x4fa3fa*/
+        v21 = this->q53D4; /*0x4fa3fa*/
       break; /*0x4fa3f2*/
     case 15: /*0x4fa3b0*/
     case 16: /*0x4fa3b0*/
-      v21 = *(_BYTE *)(this + 21457); /*0x4fa3bd*/
+      v21 = this->u8_53D1; /*0x4fa3bd*/
       break; /*0x4fa3c1*/
     default:
       v21 = 0; /*0x4fa40c*/
@@ -93,24 +96,24 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
     case 1: /*0x4fa47b*/
     case 40: /*0x4fa47b*/
       if ( aP3 ) /*0x4fa4b0*/
-        v10 = *(_DWORD *)(this + 21432); /*0x4fa4b2*/
+        v10 = this->u32_53B8; /*0x4fa4b2*/
       else
-        v10 = *(_DWORD *)(this + 21428); /*0x4fa4ba*/
+        v10 = this->u32_53B4; /*0x4fa4ba*/
       break; /*0x4fa4b8*/
     case 2: /*0x4fa47b*/
     case 3: /*0x4fa47b*/
-      v10 = *(_DWORD *)(this + 21420); /*0x4fa4d7*/
+      v10 = this->u32_53AC; /*0x4fa4d7*/
       break; /*0x4fa4dd*/
     case 6: /*0x4fa47b*/
     case 7: /*0x4fa47b*/
       if ( v7 == 5 ) /*0x4fa4c5*/
-        v10 = *(_DWORD *)(this + 21452); /*0x4fa4c7*/
+        v10 = this->u32_53CC; /*0x4fa4c7*/
       else
-        v10 = *(_DWORD *)(this + 21436); /*0x4fa4cf*/
+        v10 = this->u32_53BC; /*0x4fa4cf*/
       break; /*0x4fa4cd*/
     case 15: /*0x4fa47b*/
     case 16: /*0x4fa47b*/
-      v10 = *(_DWORD *)(this + 21424); /*0x4fa482*/
+      v10 = this->u32_53B0; /*0x4fa482*/
       break; /*0x4fa488*/
     default:
       v10 = 0; /*0x4fa4df*/
@@ -118,67 +121,67 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
   }
   if ( !v10 ) /*0x4fa4e3*/
   {
-    v11 = __2_YAPAXI_Z(0x74u); /*0x4fa4e7*/
+    v11 = RA2_OPNEW(0x74u); /*0x4fa4e7*/
     if ( !v11 ) /*0x4fa4f1*/
       goto LABEL_40; /*0x4fa4f1*/
     v10 = TeamTypeClass::Construct((int)v11); /*0x4fa4fa*/
     if ( !v10 ) /*0x4fa4fe*/
       goto LABEL_40; /*0x4fa4fe*/
   }
-  if ( *(_DWORD *)(v10 + 56) && !*(_BYTE *)(v10 + 112) && v6 == 7 ) /*0x4fa531*/
+  if ( v10->queuedCapacity && !v10->isSuspended && v6 == 7 ) /*0x4fa531*/
     goto LABEL_40; /*0x4fa531*/
   switch ( v6 ) /*0x4fa564*/
   {
     case 1: /*0x4fa564*/
     case 40: /*0x4fa564*/
       if ( aP3 ) /*0x4fa571*/
-        *(_DWORD *)(this + 21432) = v10; /*0x4fa573*/
+        this->u32_53B8 = v10; /*0x4fa573*/
       else
-        *(_DWORD *)(this + 21428) = v10; /*0x4fa57b*/
+        this->u32_53B4 = v10; /*0x4fa57b*/
       break; /*0x4fa579*/
     case 2: /*0x4fa564*/
     case 3: /*0x4fa564*/
-      *(_DWORD *)(this + 21420) = v10; /*0x4fa5a2*/
+      this->u32_53AC = v10; /*0x4fa5a2*/
       break; /*0x4fa5a2*/
     case 6: /*0x4fa564*/
     case 7: /*0x4fa564*/
       if ( v22 == 5 ) /*0x4fa590*/
-        *(_DWORD *)(this + 21452) = v10; /*0x4fa592*/
+        this->u32_53CC = v10; /*0x4fa592*/
       else
-        *(_DWORD *)(this + 21436) = v10; /*0x4fa59a*/
+        this->u32_53BC = v10; /*0x4fa59a*/
       break; /*0x4fa598*/
     case 15: /*0x4fa564*/
     case 16: /*0x4fa564*/
-      *(_DWORD *)(this + 21424) = v10; /*0x4fa583*/
+      this->u32_53B0 = v10; /*0x4fa583*/
       break; /*0x4fa589*/
     default:
       break;
   }
   v13 = 0; /*0x4fa5a8*/
-  if ( *(_BYTE *)(v10 + 112) ) /*0x4fa5a8*/
+  if ( v10->isSuspended ) /*0x4fa5a8*/
   {
-    v14 = *(_DWORD *)(v10 + 88); /*0x4fa5b1*/
+    v14 = v10->q058; /*0x4fa5b1*/
     if ( v14 ) /*0x4fa5b6*/
     {
       if ( (*(int (__thiscall **)(int))(*(_DWORD *)v14 + 132))(v14) == v9 ) /*0x4fa5c2*/
       {
         v13 = 1; /*0x4fa5c4*/
   LABEL_55:
-        if ( !*(_DWORD *)(v10 + 80) || a5 || v13 ) /*0x4fa5f6*/
+        if ( !v10->u32_50 || a5 || v13 ) /*0x4fa5f6*/
         {
-          v16 = *(_BYTE *)(v10 + 112); /*0x4fa622*/
+          v16 = v10->isSuspended; /*0x4fa622*/
           ProductionClass::StartTimer(v10, v24); /*0x4fa628*/
-          if ( !v16 && g_GameMode_Current[0] && *(_BYTE *)(this + 492) ) /*0x4fa63a*/
+          if ( !v16 && g_GameMode_Current[0] && this->u8_1EC ) /*0x4fa63a*/
           {
-            v17 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(v10 + 88) + 132))(*(_DWORD *)(v10 + 88)); /*0x4fa649*/
+            v17 = (*(int (__thiscall **)(_DWORD))(*v10->q058 + 132))(v10->q058); /*0x4fa649*/
             v18 = (int)(54 * ((int)dword_A8B558 * (int)g_ScenarioState / 0x3Cu)) /*0x4fa67b*/
                 / (*(int (__thiscall **)(int))(*(_DWORD *)v17 + 136))(v17);
             if ( v18 >= 53 ) /*0x4fa680*/
               v18 = 53; /*0x4fa682*/
             if ( v21 ) /*0x4fa68d*/
-              *(_DWORD *)(v10 + 36) = v18; /*0x4fa68f*/
+              v10->production = v18; /*0x4fa68f*/
           }
-          if ( HouseClass_Player == (#375 *)this ) /*0x4fa698*/
+          if ( HouseClass_Player == (void *)this ) /*0x4fa698*/
             Sidebar::FindProductionType(v10, a1, aP2); /*0x4fa6aa*/
           return 0; /*0x4fa6b2*/
         }
@@ -191,49 +194,49 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
       }
     }
   }
-  if ( (unsigned __int8)FactoryClass::DemandProduction(v9, (#375 *)this, a5) ) /*0x4fa5db*/
+  if ( (unsigned __int8)FactoryClass::DemandProduction(v9, (void *)this, a5) ) /*0x4fa5db*/
     goto LABEL_55; /*0x4fa5df*/
   Debug::Log(); /*0x4fa6c4*/
-  if ( *(_DWORD *)(v10 + 80) || *(_DWORD *)(v10 + 88) ) /*0x4fa6d9*/
+  if ( v10->u32_50 || v10->q058 ) /*0x4fa6d9*/
     return 3; /*0x4fa807*/
   Debug::Log(); /*0x4fa6ec*/
   Debug::Log(); /*0x4fa6fc*/
   Debug::Log(); /*0x4fa70a*/
-  v19 = *(_DWORD *)(v10 + 88); /*0x4fa70f*/
+  v19 = v10->q058; /*0x4fa70f*/
   if ( v19 ) /*0x4fa717*/
     (*(void (__thiscall **)(int))(*(_DWORD *)v19 + 44))(v19); /*0x4fa71b*/
   Debug::Log(); /*0x4fa729*/
-  v20 = *(_DWORD *)(v10 + 88); /*0x4fa72e*/
+  v20 = v10->q058; /*0x4fa72e*/
   if ( v20 ) /*0x4fa736*/
     (*(void (__thiscall **)(int))(*(_DWORD *)v20 + 64))(v20); /*0x4fa73a*/
   Debug::Log(); /*0x4fa748*/
   Debug::Log(); /*0x4fa758*/
-  (*(void (__thiscall **)(int, int))(*(_DWORD *)v10 + 32))(v10, 1); /*0x4fa76a*/
+  (*(void (__thiscall **)(int, int))(v10->NeedsSaveOrLink)(v10, 1); /*0x4fa76a*/
   switch ( v23 ) /*0x4fa782*/
   {
     case 0: /*0x4fa782*/
     case 39: /*0x4fa782*/
       if ( aP3 ) /*0x4fa78f*/
-        *(_DWORD *)(this + 21432) = 0; /*0x4fa791*/
+        this->u32_53B8 = 0; /*0x4fa791*/
       else
-        *(_DWORD *)(this + 21428) = 0; /*0x4fa7a6*/
+        this->u32_53B4 = 0; /*0x4fa7a6*/
       result = 3; /*0x4fa79a*/
       break; /*0x4fa7a3*/
     case 1: /*0x4fa782*/
     case 2: /*0x4fa782*/
-      *(_DWORD *)(this + 21420) = 0; /*0x4fa801*/
+      this->u32_53AC = 0; /*0x4fa801*/
       return 3; /*0x4fa801*/
     case 5: /*0x4fa782*/
     case 6: /*0x4fa782*/
       if ( v22 == 5 ) /*0x4fa7d5*/
-        *(_DWORD *)(this + 21452) = 0; /*0x4fa7d7*/
+        this->u32_53CC = 0; /*0x4fa7d7*/
       else
-        *(_DWORD *)(this + 21436) = 0; /*0x4fa7ec*/
+        this->u32_53BC = 0; /*0x4fa7ec*/
       result = 3; /*0x4fa7e0*/
       break; /*0x4fa7e9*/
     case 14: /*0x4fa782*/
     case 15: /*0x4fa782*/
-      *(_DWORD *)(this + 21424) = 0; /*0x4fa7bb*/
+      this->u32_53B0 = 0; /*0x4fa7bb*/
       result = 3; /*0x4fa7c4*/
       break; /*0x4fa7cd*/
     default:
@@ -256,29 +259,29 @@ int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
       goto LABEL_3;
     case 2: /*0x5007b7*/
     case 3: /*0x5007b7*/
-      *(this + 21456) = a5; /*0x500807*/
+      *(&this->u32_21846) = a5; /*0x500807*/
       break; /*0x500807*/
     case 6: /*0x5007b7*/
     case 7: /*0x5007b7*/
       if ( a4 == 5 ) /*0x5007e5*/
       {
-        *(this + 21464) = a5; /*0x5007ec*/
+        this->q53D8 = a5; /*0x5007ec*/
       }
       else
       {
-        *(this + 21460) = a5; /*0x5007fa*/
+        this->q14F50 = a5; /*0x5007fa*/
         result = a5; /*0x5007f5*/
       }
       break; /*0x5007f2*/
     case 15: /*0x5007b7*/
     case 16: /*0x5007b7*/
-      *(this + 21457) = a5; /*0x5007be*/
+      *(&this->u32_21847) = a5; /*0x5007be*/
   LABEL_3:
       result = a3; /*0x5007c4*/
       if ( a3 ) /*0x5007ca*/
-        *(this + 21459) = a5; /*0x5007cc*/
+        *(&this->u32_21849) = a5; /*0x5007cc*/
       else
-        *(this + 21458) = a5; /*0x5007d6*/
+        *(&this->u32_21848) = a5; /*0x5007d6*/
       break; /*0x5007d3*/
     default:
       return result;
@@ -346,11 +349,11 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
     if ( v6 ) /*0x63634e*/
     {
       FactoryClass::FinishProduction((int)v4, (int)v6); /*0x636353*/
-      __3_YAXPAX_Z(*((void **)Blocka + 1)); /*0x636360*/
+      RA2_OPDEL(*((void **)Blocka + 1)); /*0x636360*/
       v7 = (*(int (__thiscall **)(int *, void **))(*v4 + 16))(v4, &Blocka); /*0x636371*/
       if ( v7 != -1 ) /*0x636377*/
         Vector4::EraseAt_Copy(v4, v7); /*0x63637c*/
-      __3_YAXPAX_Z(Blocka); /*0x636386*/
+      RA2_OPDEL(Blocka); /*0x636386*/
       if ( !v4[4] && v4 ) /*0x636397*/
         FactoryClass::RemoveFromArrays(v4, 1); /*0x63639d*/
     }
@@ -360,7 +363,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
     Blocka = (void *)*Block; /*0x6363b1*/
     v8 = *((_DWORD *)Blocka + 135); /*0x6363b5*/
     v9 = *(_DWORD *)(v8 + 48); /*0x6363bb*/
-    if ( (unsigned __int8)House::IsHumanPlayer((#375 *)v8) && HouseClass_Player ) /*0x6363ce*/
+    if ( (unsigned __int8)House::IsHumanPlayer((void *)v8) && HouseClass_Player ) /*0x6363ce*/
       v9 = *((_DWORD *)HouseClass_Player + 12); /*0x6363d0*/
     DecFactoryClassCounter(v9); /*0x6363d5*/
     VectorClass::EraseAt(&dword_AC4C40, (int)&Blocka); /*0x6363e4*/
@@ -401,18 +404,18 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
     *(Block + 37) = -1; /*0x6364ca*/
     *((_BYTE *)Block + 153) = 0; /*0x6364d0*/
     v15 = (void *)*(Block + 2); /*0x6364d7*/
-    *(_DWORD *)v10 = &VectorClass<PlanningNodeClass *>::`vftable'; /*0x6364de*/
+    *(_DWORD *)v10 = &(void*)(void*)&VectorClass_PlanningNodeClass___vftable; /*0x6364de*/
     if ( v15 ) /*0x6364e4*/
     {
       if ( *((_BYTE *)Block + 17) ) /*0x6364e6*/
       {
-        __3_YAXPAX_Z(v15); /*0x6364ee*/
+        RA2_OPDEL(v15); /*0x6364ee*/
         *(Block + 2) = 0; /*0x6364f6*/
       }
     }
     *((_BYTE *)Block + 17) = 0; /*0x6364fa*/
     *(Block + 3) = 0; /*0x6364fe*/
-    __3_YAXPAX_Z(Block); /*0x636501*/
+    RA2_OPDEL(Block); /*0x636501*/
   }
 }
 }
@@ -421,23 +424,22 @@ namespace gamemd {
 int Sidebar::RemoveItem(int a2)
 {
   int v2; // edx
-  int v3; // eax
   int v4; // edx
 
-  v2 = *(this + 4); /*0x63f040*/
-  v3 = a2; /*0x63f043*/
+  v2 = this->q010; /*0x63f040*/
+  a2 = a2; /*0x63f043*/
   if ( a2 >= v2 ) /*0x63f049*/
     return 0; /*0x63f06c*/
   v4 = v2 - 1; /*0x63f04b*/
-  *(this + 4) = v4; /*0x63f04e*/
+  this->q010 = v4; /*0x63f04e*/
   if ( a2 < v4 ) /*0x63f051*/
   {
     do /*0x63f064*/
     {
-      ++v3; /*0x63f057*/
-      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3); /*0x63f05b*/
+      ++a2; /*0x63f057*/
+      *(_DWORD *)(this->u32_4 + 4 * a2 - 4) = *(_DWORD *)(this->u32_4 + 4 * a2); /*0x63f05b*/
     }
-    while ( v3 < *(this + 4) ); /*0x63f064*/
+    while ( a2 < this->q010 ); /*0x63f064*/
   }
   return 1; /*0x63f069*/
 }
@@ -462,9 +464,9 @@ ObjectClass * * Sidebar::Render(char a2)
   int v17; // [esp+8h] [ebp-1Ch]
   int v18[4]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( (a2 || *(_BYTE *)(this + 5388)) && byte_884B8D ) /*0x63fb43*/
+  if ( (a2 || this->q150C) && byte_884B8D ) /*0x63fb43*/
   {
-    *(_BYTE *)(this + 5388) = 0; /*0x63fb49*/
+    this->q150C = 0; /*0x63fb49*/
     g_TooltipActive = 1; /*0x63fb55*/
     if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x63fb5d*/
       v3 = 0; /*0x63fb70*/
@@ -473,13 +475,13 @@ ObjectClass * * Sidebar::Render(char a2)
     v16 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x63fb78*/
     v4 = g_DSurface_SidebarBounds + 69; /*0x63fb80*/
     v5 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, &v16); /*0x63fb8c*/
-    v6 = *(_DWORD *)(this + 5424); /*0x63fb91*/
+    v6 = this->q1530; /*0x63fb91*/
     v18[0] = *v5; /*0x63fb97*/
     v18[1] = v5[1]; /*0x63fb9e*/
     v18[2] = v5[2]; /*0x63fba5*/
     v18[3] = v5[3]; /*0x63fbb1*/
-    v7 = *(_DWORD *)(this + 5428); /*0x63fbc6*/
-    v8 = *(_DWORD *)(this + 5420); /*0x63fbce*/
+    v7 = this->q1534; /*0x63fbc6*/
+    v8 = this->q152C; /*0x63fbce*/
     if ( (dword_B0B504 + 3) / 3 - v7 - v6 - v8 > 0 ) /*0x63fbdc*/
     {
       v9 = (dword_B0B504 + 3) / 3 - v7 - v6 - v8; /*0x63fbde*/
@@ -509,7 +511,7 @@ ObjectClass * * Sidebar::Render(char a2)
       }
       while ( v9 ); /*0x63fc24*/
     }
-    v10 = *(_DWORD *)(this + 5404); /*0x63fc26*/
+    v10 = this->q151C; /*0x63fc26*/
     v11 = 0; /*0x63fc2c*/
     if ( v10 > 0 && (v10 & 1) == 0 ) /*0x63fc3e*/
     {
@@ -535,7 +537,7 @@ ObjectClass * * Sidebar::Render(char a2)
       v4 += 3; /*0x63fc82*/
       v11 = 1; /*0x63fc85*/
     }
-    v12 = *(_DWORD *)(this + 5420); /*0x63fc8a*/
+    v12 = this->q152C; /*0x63fc8a*/
     if ( v12 > 0 ) /*0x63fc92*/
     {
       if ( v11 < v12 ) /*0x63fc96*/
@@ -564,11 +566,11 @@ ObjectClass * * Sidebar::Render(char a2)
           v4 += 3; /*0x63fcde*/
           ++v11; /*0x63fce1*/
         }
-        while ( v11 < *(_DWORD *)(this + 5420) ); /*0x63fce4*/
+        while ( v11 < this->q152C ); /*0x63fce4*/
       }
       v11 = 0; /*0x63fce6*/
     }
-    v13 = *(_DWORD *)(this + 5424); /*0x63fce8*/
+    v13 = this->q1530; /*0x63fce8*/
     if ( v13 > 0 ) /*0x63fcf0*/
     {
       if ( v11 < v13 ) /*0x63fcf4*/
@@ -597,11 +599,11 @@ ObjectClass * * Sidebar::Render(char a2)
           v4 += 3; /*0x63fd3c*/
           ++v11; /*0x63fd3f*/
         }
-        while ( v11 < *(_DWORD *)(this + 5424) ); /*0x63fd42*/
+        while ( v11 < this->q1530 ); /*0x63fd42*/
       }
       v11 = 0; /*0x63fd44*/
     }
-    v14 = *(_DWORD *)(this + 5428); /*0x63fd46*/
+    v14 = this->q1534; /*0x63fd46*/
     if ( v14 > 0 && v11 < v14 ) /*0x63fd52*/
     {
       do /*0x63fda0*/
@@ -628,7 +630,7 @@ ObjectClass * * Sidebar::Render(char a2)
         v4 += 3; /*0x63fd9a*/
         ++v11; /*0x63fd9d*/
       }
-      while ( v11 < *(_DWORD *)(this + 5428) ); /*0x63fda0*/
+      while ( v11 < this->q1534 ); /*0x63fda0*/
     }
   }
   return RadarClass::Destru_vt16(a2); /*0x63fdb1*/
@@ -654,7 +656,6 @@ int Sidebar::ActivateTab(IUnknown * aP1)
 namespace gamemd {
 AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
 {
-  int v3; // esi
   int v4; // ebp
   int v5; // edi
   int v6; // eax
@@ -671,7 +672,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
   int v17; // [esp+40h] [ebp-14h]
   struct tagRECT Rect; // [esp+44h] [ebp-10h] BYREF
 
-  if ( !*(this + 21413) || !g_WTFMode || !g_BounceClassInit ) /*0x6a7109*/
+  if ( !this->q53A5 || !g_WTFMode || !g_BounceClassInit ) /*0x6a7109*/
     goto LABEL_25; /*0x6a7109*/
   GetClientRect(g_hWnd, &Rect); /*0x6a711b*/
   Point.x = Rect.left; /*0x6a7129*/
@@ -699,7 +700,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
       && dword_880A00 == dword_B07DD4
       && !a2 )
     {
-      if ( *(this + 21416) )
+      if ( this->q53A8 )
       {
         y = Point.y; /*0x6a72d1*/
         v10 = Point.x + (byte_A8EB7C != 0 ? g_Map_VisibleRectOffset : 0);
@@ -716,9 +717,9 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
           &v14,
           0,
           1);
-        *(this + 21416) = 0; /*0x6a7315*/
+        this->q53A8 = 0; /*0x6a7315*/
       }
-      v3 = dword_886F98; /*0x6a7332*/
+      dword_886F98 = dword_886F98; /*0x6a7332*/
       v17 = g_DSurface_ViewBounds; /*0x6a733e*/
       v14 = 0; /*0x6a7348*/
       v4 = g_DSurface_SidebarBounds + Point.y; /*0x6a734e*/
@@ -728,7 +729,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
       v6 = (*(int (__thiscall **)(int))(*(_DWORD *)DSurface_Sidebar + 128))(DSurface_Sidebar); /*0x6a7363*/
       v10 = v5; /*0x6a7386*/
       y = v4; /*0x6a738a*/
-      v12 = v3; /*0x6a738e*/
+      v12 = dword_886F98; /*0x6a738e*/
       v13 = v6 - g_DSurface_SidebarBounds; /*0x6a7392*/
       (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x6a739d*/
         g_DSurface_Primary,
@@ -774,7 +775,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     }
     goto LABEL_24; /*0x6a73a0*/
   }
-  if ( *(this + 21416) )
+  if ( this->q53A8 )
   {
     (*(void (__thiscall **)(int, int, int))(*(_DWORD *)g_WWMouseClass_Instance + 60))( /*0x6a71c7*/
       g_WWMouseClass_Instance,
@@ -795,7 +796,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
       &v10,
       0,
       1);
-    *(this + 21416) = 0; /*0x6a722f*/
+    this->q53A8 = 0; /*0x6a722f*/
   LABEL_24:
     byte_B0B519 = 1; /*0x6a7481*/
   }
@@ -806,7 +807,6 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
 // 0x6A9540
 namespace gamemd {
 void Sidebar_UpdateProductionDisplay()
-{
 {
   char result; // al
   IUnknown *v6; // ebx
@@ -932,12 +932,12 @@ LABEL_13:
               aP1 = 0;
               if ( v90 >= v20 )
               {
-                LOBYTE(v73) = 0;
+                IDA_LOBYTE(v73) = 0;
               }
               else
               {
-                if ( !*(_BYTE *)(v19 + 52) || (HIBYTE(v73) = 1, HouseClass_Player[45136]) )
-                  HIBYTE(v73) = 0;
+                if ( !*(_BYTE *)(v19 + 52) || (IDA_HIBYTE(v73) = 1, HouseClass_Player[45136]) )
+                  IDA_HIBYTE(v73) = 0;
                 int v21 = *(_DWORD *)(v84 + 52 * v90 + 92);
                 int * v22 = (int *)(v84 + 52 * v90);
                 int * v87 = v22;
@@ -950,7 +950,7 @@ LABEL_13:
                     aP2 = 0;
                   else
                     aP2 = *(ConvertClass **)(v32 + 184);
-                  LOBYTE(v73) = 1;
+                  IDA_LOBYTE(v73) = 1;
                   IsCliffWall = !SuperClass::ShouldDrawProgress(*(_DWORD *)(*(_DWORD *)(HouseClass_Player.field_0 + 600)
                                                                           + 4 * v31));
                   BufferCount = (size_t)SuperClass::NameReadiness(*(_DWORD *)(*(_DWORD *)(HouseClass_Player.field_0 + 600)
@@ -991,7 +991,7 @@ LABEL_13:
                     if ( !v86 )
                     {
                       v16 = v77;
-                      LOBYTE(v73) = 0;
+                      IDA_LOBYTE(v73) = 0;
                       _DWORD * v28 = (_DWORD *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2));
                       switch ( *v28 )
                       {
@@ -1002,14 +1002,14 @@ LABEL_13:
                         case 1:
                           Member09 = 0;
                           v78 = 1;
-                          LOBYTE(v73) = 1;
+                          IDA_LOBYTE(v73) = 1;
                           if ( *v28 != 1 )
                             goto LABEL_45;
                           v27 = v87[27];
                           goto LABEL_43;
                         case 2:
                           int v29 = 0;
-                          LOBYTE(v73) = 1;
+                          IDA_LOBYTE(v73) = 1;
                           IsCliffWall = 0;
                           v16 = 1;
                           if ( *v28 == 1 )
@@ -1021,7 +1021,7 @@ LABEL_13:
                           ProductionState = v29;
                           goto LABEL_59;
                         case 3:
-                          LOBYTE(v73) = 1;
+                          IDA_LOBYTE(v73) = 1;
                           IsCliffWall = 1;
                           v16 = 0;
                           goto LABEL_59;
@@ -1029,7 +1029,7 @@ LABEL_13:
                           goto LABEL_59;
                       }
                     }
-                    LOBYTE(v73) = 1;
+                    IDA_LOBYTE(v73) = 1;
                     IsCliffWall = ObjectClass::IsCliffWall((_DWORD *)v86);
                     if ( IsCliffWall )
                       BufferCount = (size_t)GetStringCSF(g_Str_TXT_READY, 0, &stru_830620[62628], 3411);
@@ -1081,15 +1081,15 @@ LABEL_59:
                     0,
                     0);
                 }
-                if ( HIBYTE(v73) )
+                if ( IDA_HIBYTE(v73) )
                 {
                   *(_DWORD *)&aP3[152] = v15;
                   *(_DWORD *)&aP3[156] = v17;
                   *(_DWORD *)&aP3[160] = 60;
                   *(_DWORD *)&aP3[164] = 48;
-                  BYTE2(v82) = stru_B05488[42390];
+                  IDA_BYTE2(v82) = stru_B05488[42390];
                   int v33 = **(_DWORD **)&stru_87C374[44940];
-                  LOWORD(v82) = *(_WORD *)&stru_B05488[42388];
+                  IDA_LOWORD(v82) = *(_WORD *)&stru_B05488[42388];
                   (*(void (__thiscall **)(_DWORD, char *, char *, int))(v33 + 84))(
                     *(_DWORD *)&stru_87C374[44940],
                     &aP3[88],
@@ -1157,7 +1157,7 @@ LABEL_59:
                     | ((unsigned __int8)stru_B05488[42390] >> stru_89E138[11428] << stru_89E138[11424]);
                 if ( aP1 )
                 {
-                  LOBYTE(v34) = aP1->__pad_BC0[270];
+                  IDA_LOBYTE(v34) = aP1->__pad_BC0[270];
                   v69 = v34;
                   int v36 = (*(int (__thiscall **)(IUnknown *))(aP1->field_0 + 44))(aP1);
                   BuildLimit = (int *)HouseClass::GetBuildLimit(HouseClass_Player.field_0, v36, v69, 0);
@@ -1605,7 +1605,6 @@ LABEL_121:
   return result;
 }
 } // namespace gamemd
-}
 
 // 0x6A6140
 namespace gamemd {

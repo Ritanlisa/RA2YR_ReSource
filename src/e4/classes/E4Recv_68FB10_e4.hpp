@@ -5,7 +5,17 @@
 
 namespace gamemd {
 struct E4Recv_68FB10 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    unsigned int M12;  // 0xC
+    unsigned int q018;  // 0x18
+    unsigned int q024;  // 0x24
+    unsigned int q054;  // 0x54
+    unsigned int q084;  // 0x84
+    unsigned int q774;  // 0x774
+    unsigned int q1908;  // 0x1908
+    unsigned int q6408;  // 0x6408
+// --- flat members (END) ---
     unsigned int * sub_68FB10(unsigned int * a2, int a3, size_t BufferCount, wchar_t * Format, wchar_t * a6, int a7, int a8);  // 0x68FB10
 };
 } // namespace gamemd

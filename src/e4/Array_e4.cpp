@@ -2,6 +2,10 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Array_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ArtConfig_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x557AC0
 namespace gamemd {
@@ -52,11 +56,10 @@ namespace gamemd {
 int Array::RemoveAt(int a2)
 {
   int v2; // edx
-  int v3; // eax
   int v4; // edx
 
   v2 = this->q010; /*0x63e590*/
-  v3 = a2; /*0x63e593*/
+  a2 = a2; /*0x63e593*/
   if ( a2 >= v2 ) /*0x63e599*/
     return 0; /*0x63e5bc*/
   v4 = v2 - 1; /*0x63e59b*/
@@ -65,10 +68,10 @@ int Array::RemoveAt(int a2)
   {
     do /*0x63e5b4*/
     {
-      ++v3; /*0x63e5a7*/
-      *(_DWORD *)(this->q004 + 4 * v3 - 4) = *(_DWORD *)(this->q004 + 4 * v3); /*0x63e5ab*/
+      ++a2; /*0x63e5a7*/
+      *(_DWORD *)(this->q004 + 4 * a2 - 4) = *(_DWORD *)(this->q004 + 4 * a2); /*0x63e5ab*/
     }
-    while ( v3 < this->q010 ); /*0x63e5b4*/
+    while ( a2 < this->q010 ); /*0x63e5b4*/
   }
   return 1; /*0x63e5b9*/
 }
@@ -77,7 +80,7 @@ int Array::RemoveAt(int a2)
 namespace gamemd {
 int Array::Get(int a2)
 {
-  return *(_DWORD *)(*(&this->q0147) + 4 * a2); /*0x65ad4d*/
+  return *(_DWORD *)(*(&this->abstractFlags7) + 4 * a2); /*0x65ad4d*/
 }
 }
 // 0x65ADF0
@@ -88,11 +91,11 @@ int Array::ContainsValue(IUnknown * aP1)
   int v3; // edx
   _DWORD *i; // ecx
 
-  v2 = *(&this->q0148); /*0x65adf1*/
+  v2 = *(&this->u32_148); /*0x65adf1*/
   v3 = 0; /*0x65adf7*/
   if ( v2 <= 0 ) /*0x65adfc*/
     return 0; /*0x65ae1a*/
-  for ( i = (_DWORD *)*(&this->q0147); *i && *i != aP1; ++i ) /*0x65adfe*/
+  for ( i = (_DWORD *)*(&this->u32_147); *i && *i != aP1; ++i ) /*0x65adfe*/
   {
     if ( ++v3 >= v2 ) /*0x65ae18*/
       return 0; /*0x65ae18*/
@@ -108,7 +111,7 @@ int Array::Zero()
   _DWORD *v2; // edx
 
   result = 0; /*0x7490d6*/
-  if ( (int)*(&this->u32_CC2) > 0 ) /*0x7490da*/
+  if ( (int)*(this + 512) > 0 ) /*0x7490da*/
   {
     v2 = this; /*0x7490dd*/
     do /*0x7490f1*/
@@ -117,7 +120,7 @@ int Array::Zero()
       ++result; /*0x7490eb*/
       ++v2; /*0x7490ec*/
     }
-    while ( result < *(&this->u32_CC2) ); /*0x7490f1*/
+    while ( result < *(this + 512) ); /*0x7490f1*/
   }
   return result; /*0x7490f4*/
 }
@@ -129,7 +132,7 @@ void Array::ByteSwap()
   signed int v2; // ebx
   u_long *v3; // esi
 
-  if ( *(&this->u32_CC3) && (v2 = 0, (int)*(&this->u32_CC2) > 0) ) /*0x749169*/
+  if ( *(this + 513) && (v2 = 0, (int)*(this + 512) > 0) ) /*0x749169*/
   {
     v3 = this; /*0x74916c*/
     do /*0x749184*/
@@ -138,12 +141,12 @@ void Array::ByteSwap()
       ++v2; /*0x74917e*/
       ++v3; /*0x74917f*/
     }
-    while ( v2 < (int)*(&this->u32_CC2) ); /*0x749184*/
-    *(&this->u32_CC3) = 0; /*0x749186*/
+    while ( v2 < (int)*(this + 512) ); /*0x749184*/
+    *(this + 513) = 0; /*0x749186*/
   }
   else
   {
-    *(&this->u32_CC3) = 0; /*0x749191*/
+    *(this + 513) = 0; /*0x749191*/
   }
 }
 }
@@ -151,10 +154,10 @@ void Array::ByteSwap()
 namespace gamemd {
 int Array::GetElement(CampaignScore * aP1)
 {
-  if ( aP1 < 0 || aP1 >= *(&this->q0044) ) /*0x76398b*/
+  if ( aP1 < 0 || aP1 >= *(this + 14) ) /*0x76398b*/
     return 0; /*0x763999*/
   else
-    return *(&this->q0041) + 12 * aP1; /*0x763993*/
+    return *(this + 11) + 12 * aP1; /*0x763993*/
 }
 }
 // 0x7ACD30
@@ -166,7 +169,7 @@ int Array::CleanupArrayWOL()
 
   for ( i = 0; i < *this; ++i ) /*0x7acd39*/
   {
-    DeleteAndZero((void **)(this->q008 + 4 * i)); /*0x7acd41*/
+    DeleteAndZero((void **)(*(this + 2) + 4 * i)); /*0x7acd41*/
     result = *this; /*0x7acd46*/
   }
   *this = 0; /*0x7acd4d*/
@@ -175,7 +178,7 @@ int Array::CleanupArrayWOL()
 }
 // 0x7AD790
 namespace gamemd {
-AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
+AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
 {
   int v4; // esi
   int v5; // ecx
@@ -191,52 +194,52 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * aP2)
   int v16; // [esp+Ch] [ebp-4h]
   int v17; // [esp+Ch] [ebp-4h]
 
-  v4 = aP2; /*0x7ad795*/
+  v4 = v5; /*0x7ad795*/
   v5 = *this; /*0x7ad799*/
-  if ( aP2 > v5 ) /*0x7ad79e*/
+  if ( v5 > v5 ) /*0x7ad79e*/
   {
-    aP2 = v5; /*0x7ad7a0*/
+    v5 = v5; /*0x7ad7a0*/
     v4 = v5; /*0x7ad7a4*/
   }
-  v6 = this->q004; /*0x7ad7a6*/
+  v6 = *(this + 1); /*0x7ad7a6*/
   if ( v4 >= v6 && v5 >= v6 ) /*0x7ad7b4*/
   {
     v7 = 2 * v5; /*0x7ad7b6*/
     if ( 2 * v5 < 10 ) /*0x7ad7bc*/
       v7 = 10; /*0x7ad7be*/
-    v8 = __2_YAPAXI_Z(268 * v7); /*0x7ad7d7*/
+    v8 = RA2_OPNEW(268 * v7); /*0x7ad7d7*/
     memset(v8, 0, 4 * ((unsigned int)(268 * v7) >> 2)); /*0x7ad7e2*/
     v16 = (int)v8; /*0x7ad7ec*/
-    v9 = (const void *)this->q008; /*0x7ad7f2*/
+    v9 = (const void *)*(this + 2); /*0x7ad7f2*/
     if ( v9 ) /*0x7ad7f7*/
       qmemcpy(v8, v9, 268 * *this); /*0x7ad80f*/
-    __3_YAXPAX_Z((void *)this->q008); /*0x7ad81c*/
-    v4 = aP2; /*0x7ad825*/
-    this->q008 = v16; /*0x7ad82c*/
-    this->q004 = v7; /*0x7ad82f*/
+    RA2_OPDEL((void *)*(this + 2)); /*0x7ad81c*/
+    v4 = v5; /*0x7ad825*/
+    *(this + 2) = v16; /*0x7ad82c*/
+    *(this + 1) = v7; /*0x7ad82f*/
   }
   v10 = *this; /*0x7ad832*/
-  if ( *this >= this->q004 ) /*0x7ad839*/
+  if ( *this >= *(this + 1) ) /*0x7ad839*/
   {
     v11 = 2 * v10; /*0x7ad83b*/
     if ( 2 * v10 < 10 ) /*0x7ad841*/
       v11 = 10; /*0x7ad843*/
-    v12 = __2_YAPAXI_Z(268 * v11); /*0x7ad85c*/
+    v12 = RA2_OPNEW(268 * v11); /*0x7ad85c*/
     memset(v12, 0, 4 * ((unsigned int)(268 * v11) >> 2)); /*0x7ad867*/
     v17 = (int)v12; /*0x7ad871*/
-    v13 = (const void *)this->q008; /*0x7ad877*/
+    v13 = (const void *)*(this + 2); /*0x7ad877*/
     if ( v13 ) /*0x7ad87c*/
       qmemcpy(v12, v13, 268 * *this); /*0x7ad894*/
-    __3_YAXPAX_Z((void *)this->q008); /*0x7ad8a1*/
-    v4 = aP2; /*0x7ad8aa*/
-    this->q008 = v17; /*0x7ad8b1*/
-    this->q004 = v11; /*0x7ad8b4*/
+    RA2_OPDEL((void *)*(this + 2)); /*0x7ad8a1*/
+    v4 = v5; /*0x7ad8aa*/
+    *(this + 2) = v17; /*0x7ad8b1*/
+    *(this + 1) = v11; /*0x7ad8b4*/
   }
   if ( v4 < *this ) /*0x7ad8bc*/
-    memcpy((void *)(this->q008 + 268 * (v4 + 1)), (const void *)(this->q008 + 268 * v4), 268 * *this - 268 * v4); /*0x7ad8f2*/
-  v14 = (void *)(this->q008 + 268 * v4); /*0x7ad907*/
+    memcpy((void *)(*(this + 2) + 268 * (v4 + 1)), (const void *)(*(this + 2) + 268 * v4), 268 * *this - 268 * v4); /*0x7ad8f2*/
+  v14 = (void *)(*(this + 2) + 268 * v4); /*0x7ad907*/
   if ( v14 ) /*0x7ad90c*/
-    qmemcpy(v14, a1, 0x10Cu); /*0x7ad917*/
+    qmemcpy(v14, a1, 0x10Cu, unsigned int a3); /*0x7ad917*/
   ++*this; /*0x7ad91e*/
   return 1; /*0x7ad91b*/
 }
@@ -258,7 +261,7 @@ int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall 
       a1 += a2; /*0x40690e*/
       --v6; /*0x406910*/
     }
-    while ( v6 ); /*0x406911*/
+    while (v6, unsigned int a1); /*0x406911*/
   }
   return result; /*0x406917*/
 }
@@ -300,9 +303,9 @@ void Array::Cleanup()
     for ( i = 0; i < this->q040; ++i ) /*0x49b732*/
     {
       if ( *(_DWORD *)(this->u32_3C + 4 * i) ) /*0x49b737*/
-        __3_YAXPAX_Z(*(void **)(this->u32_3C + 4 * i)); /*0x49b73f*/
+        RA2_OPDEL(*(void **)(this->u32_3C + 4 * i)); /*0x49b73f*/
     }
-    __3_YAXPAX_Z(*(void **)(&this->u32_180)); /*0x49b753*/
+    RA2_OPDEL(*(void **)(&this->u32_180)); /*0x49b753*/
   }
 }
 } // namespace gamemd
@@ -318,13 +321,13 @@ char Array::GetElementAt(unsigned int * a2, int a3)
   result = 0; /*0x49d079*/
   *a2 = 0; /*0x49d07e*/
   if ( a3 == -1 ) /*0x49d084*/
-    v3 = this->q038; /*0x49d086*/
-  if ( v3 < 0 || v3 >= this->q040 ) /*0x49d094*/
+    v3 = *(_DWORD *)(this + 56); /*0x49d086*/
+  if ( v3 < 0 || v3 >= *(_DWORD *)(this + 64) ) /*0x49d094*/
     v3 = -1; /*0x49d096*/
-  if ( this->q06C ) /*0x49d09a*/
+  if ( *(_BYTE *)(this + 108) ) /*0x49d09a*/
   {
     if ( v3 != -1 ) /*0x49d0a5*/
-      *a2 = *(_DWORD *)(this->u32_3C + 4 * v3); /*0x49d0ad*/
+      *a2 = *(_DWORD *)(*(_DWORD *)(this + 60) + 4 * v3); /*0x49d0ad*/
     if ( *a2 ) /*0x49d0af*/
       return 1; /*0x49d0b4*/
   }
@@ -343,7 +346,7 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
 
   if ( aP0 ) /*0x55b887*/
   {
-    if ( (*(int (__thiscall **)(int))(aP0->u32_2C)(aP0) == 44 ) /*0x55b893*/
+    if ( (*(int (__thiscall **)(int))(*(_DWORD *)aP0 + 44))(aP0) == 44 ) /*0x55b893*/
     {
       v2 = g_ScenarioUpdateState; /*0x55b895*/
       v3 = 0; /*0x55b89b*/

@@ -30,10 +30,6 @@ public:
     AbstractType __stdcall whatAmI() const;
     int objectSize() const;
     void calculateChecksum(void* checksum) const;
-// --- e4 declarations (BEGIN) ---
-    double * Create();  // 0x659110
-    unsigned int * InitState(rc_ptr_base * aP1);  // 0x6593F0
-// --- e4 declarations (END) ---
 // --- G21 L6 draw* 族归属迁入（真身均为属性设置器，写字段即返回） ---
     char drawSelectionBox(uint8_t* a2);   // 0x659470  3 字节 RGB 拷入 +0x20
     int drawHealthBar(int a2);            // 0x659490  写 +0x0C

@@ -5,7 +5,15 @@
 
 namespace gamemd {
 struct E4Recv_4DB8A0 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    unsigned int u32_A4;  // 0xA4
+    unsigned int q164;  // 0x164
+    unsigned int M1652;  // 0x674
+    unsigned int q854;  // 0x854
+    unsigned int q5714;  // 0x5714
+    unsigned int u32_A43;
+// --- flat members (END) ---
     LPVOID sub_4DB8A0();  // 0x4DB8A0
 };
 } // namespace gamemd

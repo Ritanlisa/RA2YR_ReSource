@@ -3,8 +3,13 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/WalkLocomotion_e4.hpp"
+#include "e4/classes/WalkLocomotionClass_e4.hpp"
+#include "e4/classes/IStream_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x6A0310
+namespace gamemd {
 int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long long a4)
 {
   int v4; // eax
@@ -14,8 +19,6 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
   __int64 v8; // kr00_8
   _DWORD *v9; // eax
   int v11; // [esp-4h] [ebp-20h]
-  unsigned int v12; // [esp+10h] [ebp-Ch] BYREF
-  __int64 v13; // [esp+14h] [ebp-8h]
 
   *(_DWORD *)(a1 + 84) = a2; /*0x6a0323*/
   *(_DWORD *)(a1 + 88) = 0; /*0x6a0326*/
@@ -23,42 +26,42 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
   if ( a3 != g_OverlayTypeConfig || a4 != qword_B077FC ) /*0x6a0340*/
   {
     v5 = a1 - 4; /*0x6a0358*/
-    v13 = a4; /*0x6a035b*/
+    a4 = a4; /*0x6a035b*/
     v6 = (unsigned int *)(a1 - 4 + 64); /*0x6a0363*/
-    v12 = a3; /*0x6a036a*/
-    if ( *v6 != g_OverlayTypeConfig || __PAIR64__(*(_DWORD *)(a1 - 4 + 72), *(_DWORD *)(a1 + 64)) != qword_B077FC ) /*0x6a0375*/
+    a3 = a3; /*0x6a036a*/
+    if ( *v6 != g_OverlayTypeConfig || IDA___PAIR64__(*(_DWORD *)(a1 - 4 + 72), *(_DWORD *)(a1 + 64)) != qword_B077FC ) /*0x6a0375*/
     {
       *v6 = g_OverlayTypeConfig; /*0x6a0386*/
       *(_DWORD *)(a1 + 64) = qword_B077FC; /*0x6a038d*/
-      v7 = HIDWORD(qword_B077FC); /*0x6a0390*/
-      *(_BYTE *)(v5 + 99) = 0; /*0x6a0396*/
+      v7 = IDA_HIDWORD(qword_B077FC); /*0x6a0390*/
+      v5->u8_63 = 0; /*0x6a0396*/
       *(_DWORD *)(a1 - 4 + 72) = v7; /*0x6a039a*/
       v4 = g_OverlayTypeConfig; /*0x6a039d*/
     }
-    if ( __PAIR64__(a4, a3) != __PAIR64__(qword_B077FC, v4) /*0x6a03be*/
-      || (LOBYTE(v4) = BYTE4(qword_B077FC), HIDWORD(a4) != HIDWORD(qword_B077FC)) )
+    if ( IDA___PAIR64__(a4, a3) != IDA___PAIR64__(qword_B077FC, v4) /*0x6a03be*/
+      || (IDA_LOBYTE(v4) = IDA_BYTE4(qword_B077FC), IDA_HIDWORD(a4) != IDA_HIDWORD(qword_B077FC)) )
     {
-      v8 = v13; /*0x6a03c4*/
-      *(_BYTE *)(v5 + 99) = 1; /*0x6a03ca*/
+      v8 = a4; /*0x6a03c4*/
+      v5->u8_63 = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
       *(_QWORD *)(a1 + 64) = v8; /*0x6a03d0*/
-      v11 = *(_DWORD *)(v5 + 12); /*0x6a03dd*/
-      v9 = Coord::To_Cell(&MapClass_Instance, &v12); /*0x6a03e4*/
-      if ( !CrateClass::ProcessPickup(v9, v11) || *(_BYTE *)(*(_DWORD *)(v5 + 12) + 129) ) /*0x6a03f7*/
+      v11 = v5->q00C; /*0x6a03dd*/
+      v9 = Coord::To_Cell(&MapClass_Instance, &a3); /*0x6a03e4*/
+      if ( !CrateClass::ProcessPickup(v9, v11) || v5->q00C->q204 ) /*0x6a03f7*/
       {
-        LOBYTE(v4) = *(_BYTE *)(*(_DWORD *)(v5 + 12) + 144); /*0x6a043d*/
+        IDA_LOBYTE(v4) = v5->q00C->q090; /*0x6a043d*/
         if ( (_BYTE)v4 ) /*0x6a0445*/
         {
-          LOBYTE(v4) = g_OverlayTypeConfig; /*0x6a0447*/
+          IDA_LOBYTE(v4) = g_OverlayTypeConfig; /*0x6a0447*/
           *v6 = g_OverlayTypeConfig; /*0x6a044c*/
           *(_QWORD *)(a1 + 64) = qword_B077FC; /*0x6a0454*/
-          *(_BYTE *)(v5 + 99) = 0; /*0x6a0460*/
+          v5->u8_63 = 0; /*0x6a0460*/
         }
       }
       else
       {
-        WalkLocomotion::MoveTo(a1 - 4, &v12, 1); /*0x6a040a*/
-        LOBYTE(v4) = a1 + 48; /*0x6a040f*/
+        WalkLocomotion::MoveTo(a1 - 4, &a3, 1); /*0x6a040a*/
+        IDA_LOBYTE(v4) = a1 + 48; /*0x6a040f*/
         *(_DWORD *)(a1 + 48) = a3; /*0x6a041a*/
         *(_QWORD *)(a1 + 52) = a4; /*0x6a041c*/
         *(_DWORD *)(a1 + 76) = 0; /*0x6a0422*/
@@ -68,7 +71,9 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
   }
   return v4; /*0x6a0430*/
 }
+} // namespace gamemd
 // 0x6A3F50
+namespace gamemd {
 int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
 {
   int v4; // esi
@@ -101,7 +106,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
   v23 = v6; /*0x6a3f75*/
   v24 = v7; /*0x6a3f79*/
   v25 = v8; /*0x6a3f7d*/
-  if ( v6 == g_OverlayTypeConfig && __PAIR64__(v8, v7) == qword_B077FC ) /*0x6a3f89*/
+  if ( v6 == g_OverlayTypeConfig && IDA___PAIR64__(v8, v7) == qword_B077FC ) /*0x6a3f89*/
     return 0; /*0x6a3f89*/
   if ( !*(_BYTE *)(v4 + 92) ) /*0x6a3f97*/
   {
@@ -144,7 +149,9 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
       && (unsigned __int16)(v24 / 256) == (unsigned __int16)(a3 / 256)
       && (int)abs32(v25 - a4) <= dword_B07838;
 }
+} // namespace gamemd
 // 0x75C640
+namespace gamemd {
 int WalkLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x75c646*/
@@ -155,7 +162,9 @@ int WalkLocomotionClass::ddtor(int a1, unsigned int * a2)
   a2[3] = -777003740; /*0x75c670*/
   return 0; /*0x75c64d*/
 }
+} // namespace gamemd
 // 0x75C680
+namespace gamemd {
 HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
 {
   IStream *v2; // edi
@@ -170,9 +179,9 @@ HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x75c69a*/
   {
     a1[14] = 0; /*0x75c69c*/
-    *a1 = (int)&WalkLocomotionClass::`vftable'; /*0x75c6a3*/
-    a1[1] = (int)&WalkLocomotionClass::`vftable'; /*0x75c6a9*/
-    a1[6] = (int)&WalkLocomotionClass::`vftable'; /*0x75c6b0*/
+    *a1 = (int)&(void*)(void*)&WalkLocomotionClass_vftable; /*0x75c6a3*/
+    a1[1] = (int)&(void*)(void*)&WalkLocomotionClass_vftable; /*0x75c6a9*/
+    a1[6] = (int)&(void*)(void*)&WalkLocomotionClass_vftable; /*0x75c6b0*/
   }
   v2->lpVtbl->Read(v2, &pStm, 1, 0); /*0x75c6c3*/
   if ( !(_BYTE)pStm ) /*0x75c6cc*/
@@ -184,7 +193,9 @@ HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
   *v5 = 0; /*0x75c6e5*/
   return OleLoadFromStream(v2, &IID_ILocomotion, v5); /*0x75c6f1*/
 }
+} // namespace gamemd
 // 0x75C700
+namespace gamemd {
 HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
 {
   IStream *v3; // esi
@@ -205,12 +216,12 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   if ( !v4[14] ) /*0x75c726*/
   {
     v12.lpVtbl = v3->lpVtbl; /*0x75c7c3*/
-    LOBYTE(a3) = 0; /*0x75c7cf*/
+    IDA_LOBYTE(a3) = 0; /*0x75c7cf*/
     v12.lpVtbl->Write(v3, &a3, 1, 0); /*0x75c7d4*/
     return v5; /*0x75c7d8*/
   }
   lpVtbl = v3->lpVtbl; /*0x75c72c*/
-  LOBYTE(a3) = 1; /*0x75c738*/
+  IDA_LOBYTE(a3) = 1; /*0x75c738*/
   lpVtbl->Write(v3, &a3, 1, 0); /*0x75c73d*/
   v7 = (int (__stdcall ***)(_DWORD, void *, int **))v4[14]; /*0x75c740*/
   pPStm = 0; /*0x75c743*/
@@ -237,24 +248,29 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm); /*0x75c7b8*/
   return v10; /*0x75c7bd*/
 }
+} // namespace gamemd
 // 0x75CBD0
+namespace gamemd {
 int WalkLocomotionClass::StubReturn60()
 {
   return 60; /*0x75cbd5*/
 }
+} // namespace gamemd
 // 0x75CBE0
+namespace gamemd {
 WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
 {
   int v3; // eax
 
-  *this = &WalkLocomotionClass::`vftable'; /*0x75cbe3*/
-  *(this + 1) = &WalkLocomotionClass::`vftable'; /*0x75cbe9*/
-  *(this + 6) = &WalkLocomotionClass::`vftable'; /*0x75cbf0*/
+  *this = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75cbe3*/
+  *(this + 1) = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75cbe9*/
+  *(this + 6) = &(void*)(void*)&WalkLocomotionClass_vftable; /*0x75cbf0*/
   v3 = *(this + 14); /*0x75cbf7*/
   if ( v3 ) /*0x75cbfc*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 8))(v3); /*0x75cc01*/
-  LocomotionClass::Construct(this); /*0x75cc06*/
+  LocomotionClass::Construct(); /*0x75cc06*/
   if ( (a2 & 1) != 0 ) /*0x75cc10*/
-    __3_YAXPAX_Z(this); /*0x75cc13*/
+    RA2_OPDEL(); /*0x75cc13*/
   return this; /*0x75cc1d*/
 }
+} // namespace gamemd

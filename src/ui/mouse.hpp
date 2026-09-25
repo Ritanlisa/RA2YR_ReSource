@@ -106,19 +106,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int checkHotspot(int a1, int a2);  // 0x7BA380
     void* QueryInterface(int a1);  // 0x7BA3A0
     // --- gap2 auto-generated stub declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    int COMStub();  // 0x7B89F0
-    unsigned int * initSurface();  // 0x7B9040
-    BOOL hideCursor();  // 0x7B9930
-    void captureMouse();  // 0x7B9A60
-    void releaseMouse();  // 0x7B9C30
-    int checkVisible();  // 0x7B9D80
-    MouseClass * updateHotspot(unsigned int * Block, char a2);  // 0x7BA300
-    char checkCapture();  // 0x7BA330
-    int checkRegion();  // 0x7BA340
-    int checkBounds();  // 0x7BA350
-    unsigned int * updatePosition(unsigned int * a2);  // 0x7BA360
-// --- e4 declarations (END) ---
 };
 
 class MouseClass : public RadarClass
@@ -178,10 +165,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SetCursor(int a1, int a2);  // 0x5bdc80 -- Mouse::SetCursor
     int ReleaseCapture();  // 0x6938c0 -- Mouse::ReleaseCapture
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    char ToggleContextGadget(int a1, int a2);  // 0x6D1770
-    char LoadCursors();  // 0x72DDB0
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

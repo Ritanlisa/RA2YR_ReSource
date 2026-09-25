@@ -37,6 +37,12 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/UnitClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x52B6D0
 namespace gamemd {
@@ -273,7 +279,7 @@ void * sub_730F30()
   if ( !MuteSWLaunches ) /*0x730f3a*/
   {
     result = g_CurrentFrame; /*0x730f51*/
-    if ( dword_84555C + LODWORD(g_RulesClass_Instance->IceBreakingWeight) < (int)g_CurrentFrame ) /*0x730f5a*/
+    if ( dword_84555C + IDA_LODWORD(g_RulesClass_Instance->IceBreakingWeight) < (int)g_CurrentFrame ) /*0x730f5a*/
     {
       v1 = EventClass::AddEvent(v2, *((_DWORD *)HouseClass_Player + 12), 0x2Du); /*0x730f6c*/
       if ( Networking_LastEventIndex < 128 ) /*0x730f7b*/
@@ -359,8 +365,8 @@ AbstractClass * * sub_7318F0()
           if ( g_GameMode_Current[0] ) /*0x73195a*/
           {
             if ( (*(_DWORD *)g_ScenarioClass_Instance & 0x400) == 0 /*0x731981*/
-              && BYTE1(g_RulesClass_Instance[1].FlamingInfantry)
-              && HIBYTE(g_RulesClass_Instance[1].InfantryHeadPop) )
+              && IDA_BYTE1(g_RulesClass_Instance[1].FlamingInfantry)
+              && IDA_HIBYTE(g_RulesClass_Instance[1].InfantryHeadPop) )
             {
               result = EventClass::Add2(v1, *((_DWORD *)HouseClass_Player + 12), 3u, (int)result); /*0x73199c*/
               if ( Networking_LastEventIndex < 128 ) /*0x7319ab*/
@@ -638,7 +644,6 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
   int v22; // [esp+18h] [ebp-18h]
   int v23; // [esp+1Ch] [ebp-14h]
   int v24; // [esp+20h] [ebp-10h]
-  __int16 v25; // [esp+24h] [ebp-Ch]
   int v28; // [esp+38h] [ebp+8h]
 
   v4 = aP0; /*0x6217ea*/
@@ -653,7 +658,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
       v6 = 1; /*0x621813*/
       v20 = 1; /*0x621818*/
     }
-    v24 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)aP1 + 92))(aP1, 0, 0); /*0x62182c*/
+    v24 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(aP1->q05C)(aP1, 0, 0); /*0x62182c*/
     if ( v24 ) /*0x621830*/
     {
       v28 = 0; /*0x621839*/
@@ -662,7 +667,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
         v7 = a3; /*0x62184a*/
         do /*0x6219b1*/
         {
-          v8 = *v4 + (v28 + v4[1]) * ((*(int (__thiscall **)(int))(*(_DWORD *)v5 + 116))(v5) / 2); /*0x62186b*/
+          v8 = *v4 + (v28 + v4[1]) * ((*(int (__thiscall **)(int))(v5->q074)(v5) / 2); /*0x62186b*/
           v9 = v4[3] / 4; /*0x621876*/
           if ( v28 == 3 * v9 ) /*0x621880*/
             v19 = 1; /*0x621882*/
@@ -681,21 +686,21 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
               {
                 v12 = v11 / v4[2]; /*0x6218c5*/
                 v13 = *v10; /*0x6218d8*/
-                v25 = v7; /*0x6218e7*/
-                g_GameScreenFlags = v12; /*0x6218fc*/
+                v7 = v7; /*0x6218e7*/
+                v12 = v12; /*0x6218fc*/
                 g_GameScreenConfig = 255 - v12; /*0x621908*/
                 v14 = g_ScreenSaverState /*0x62192d*/
                     & ((g_GameScreenConfig * (unsigned __int16)(v13 & g_ScreenSaverState)
                       + v12 * (unsigned int)(unsigned __int16)(v7 & g_ScreenSaverState)) >> 8);
-                v15 = HIWORD(g_ScreenSaverState) /*0x621946*/
-                    & ((g_GameScreenConfig * (unsigned __int16)(HIWORD(g_ScreenSaverState) & v13)
-                      + v12 * (unsigned int)(unsigned __int16)(HIWORD(g_ScreenSaverState) & v7)) >> 8);
+                v15 = IDA_HIWORD(g_ScreenSaverState) /*0x621946*/
+                    & ((g_GameScreenConfig * (unsigned __int16)(IDA_HIWORD(g_ScreenSaverState) & v13)
+                      + v12 * (unsigned int)(unsigned __int16)(IDA_HIWORD(g_ScreenSaverState) & v7)) >> 8);
                 v16 = g_GameScreenConfig * (unsigned __int16)(v13 & g_CreditsScreenState); /*0x621958*/
                 v4 = aP0; /*0x62195b*/
                 v6 = v20; /*0x62195f*/
-                v17 = v16 + v12 * (unsigned __int16)(v25 & g_CreditsScreenState); /*0x621963*/
+                v17 = v16 + v12 * (unsigned __int16)(v7 & g_CreditsScreenState); /*0x621963*/
                 v10 = v21; /*0x621965*/
-                LOWORD(v14) = v15 | v14; /*0x621969*/
+                IDA_LOWORD(v14) = v15 | v14; /*0x621969*/
                 v7 = a3; /*0x62196b*/
                 *v21 = (v17 >> 8) | v14; /*0x621974*/
                 v5 = aP1; /*0x621977*/
@@ -717,7 +722,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
         }
         while ( v28 < v4[3] ); /*0x6219b1*/
       }
-      (*(void (__thiscall **)(int))(*(_DWORD *)v5 + 96))(v5); /*0x6219bd*/
+      (*(void (__thiscall **)(int))(v5->q060)(v5); /*0x6219bd*/
     }
   }
 }
@@ -1077,10 +1082,10 @@ LRESULT UI_Assign_623F60(HWND hWnd, WPARAM wParam, void ** a3)
   v5 = SendMessageA(hWnd, 0x18Au, wParam, 0); /*0x623f79*/
   if ( v5 <= 0 ) /*0x623f7d*/
     SafeDelete::Ptr(a3); /*0x623f83*/
-  v6 = (wchar_t *)__2_YAPAXI_Z(2 * v5 + 4); /*0x623f95*/
+  v6 = (wchar_t *)RA2_OPNEW(2 * v5 + 4); /*0x623f95*/
   v7 = SendMessageA(hWnd, 0x4B6u, wParam, (LPARAM)v6); /*0x623fa1*/
   WideString::Assign_Alt(a3, v6); /*0x623fa8*/
-  __3_YAXPAX_Z(v6); /*0x623fae*/
+  RA2_OPDEL(v6); /*0x623fae*/
   return v7; /*0x623fb8*/
 }
 } // namespace gamemd
@@ -1171,7 +1176,7 @@ char sub_63AB00(int a1, int a2)
 {
   int v2; // eax
 
-  LOBYTE(v2) = byte_AC4CF4; /*0x63ab00*/
+  IDA_LOBYTE(v2) = byte_AC4CF4; /*0x63ab00*/
   byte_AC4CB0 = 0; /*0x63ab09*/
   if ( byte_AC4CF4 ) /*0x63ab0f*/
   {
@@ -1344,7 +1349,7 @@ void sub_6AC480(int a1, int * a2, unsigned int * a3, int a4)
       v18 = *(_WORD *)v8; /*0x6ac4d7*/
       v19 = *(_BYTE *)(v8 + 2); /*0x6ac4e1*/
       v9 = ((unsigned __int8)v18 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6ac52e*/
-         | (HIBYTE(v18) >> g_BitMask_Blue << g_BitMask_Green)
+         | (IDA_HIBYTE(v18) >> g_BitMask_Blue << g_BitMask_Green)
          | (v19 >> g_BitMask_Red << g_BitShift_Blue);
       v10 = a3[2]; /*0x6ac536*/
       v11 = a3[1]; /*0x6ac539*/
@@ -1778,7 +1783,7 @@ char sub_732CA0()
 {
   DWORD Time; // eax
 
-  LOBYTE(Time) = byte_B0FE65; /*0x732ca0*/
+  IDA_LOBYTE(Time) = byte_B0FE65; /*0x732ca0*/
   if ( !byte_B0FE65 ) /*0x732ca7*/
   {
     byte_B0FE65 = 1; /*0x732ca9*/
@@ -1795,7 +1800,7 @@ char sub_732CC0()
 {
   int v0; // eax
 
-  LOBYTE(v0) = byte_B0FE65; /*0x732cc0*/
+  IDA_LOBYTE(v0) = byte_B0FE65; /*0x732cc0*/
   if ( byte_B0FE65 ) /*0x732cc7*/
   {
     byte_B0FE65 = 0; /*0x732cc9*/
@@ -1803,7 +1808,7 @@ char sub_732CC0()
     if ( v0 <= 500 ) /*0x732ce6*/
     {
       SelectAllOfType(); /*0x732ce8*/
-      LOBYTE(v0) = MapClass::MarkForRedraw(&MapClass_Instance, 1); /*0x732cf4*/
+      IDA_LOBYTE(v0) = MapClass::MarkForRedraw(&MapClass_Instance, 1); /*0x732cf4*/
     }
   }
   return v0; /*0x732cf9*/
@@ -1830,11 +1835,11 @@ unsigned short sub_734120()
   v4 = *v0; /*0x734150*/
   v1 = v4; /*0x73414e*/
   dword_845558 = timeGetTime(); /*0x73415d*/
-  result = HIWORD(v4); /*0x734162*/
-  if ( __PAIR32__(HIWORD(v4), v1) != dword_B0FDF0 ) /*0x734167*/
+  result = IDA_HIWORD(v4); /*0x734162*/
+  if ( IDA___PAIR32__(IDA_HIWORD(v4), v1) != dword_B0FDF0 ) /*0x734167*/
   {
     v5 = ((__int16)v1 << 8) + 128; /*0x73418c*/
-    v6 = (SHIWORD(v4) << 8) + 128; /*0x73419c*/
+    v6 = (IDA_SHIWORD(v4) << 8) + 128; /*0x73419c*/
     v7 = 0; /*0x7341a0*/
     v3 = (*((char *)Coord::To_Cell(&MapClass_Instance, &v5) + 283) << 8) / 2; /*0x7341c6*/
     v6 -= v3; /*0x7341cc*/
@@ -1970,7 +1975,7 @@ wchar_t ** sub_7B83E0(wchar_t ** a1, const char ** a2)
   else
     v4 = 0; /*0x7b83ee*/
   v5 = (int)(((7 * (v4 + 1)) >> 3) + 1) / 2; /*0x7b840f*/
-  v6 = (wchar_t *)__2_YAPAXI_Z(2 * v5 + 2); /*0x7b841b*/
+  v6 = (wchar_t *)RA2_OPNEW(2 * v5 + 2); /*0x7b841b*/
   v7 = (char *)*a2; /*0x7b841d*/
   if ( !*a2 ) /*0x7b841d*/
     v7 = &g_INI_DefaultBuffer; /*0x7b8426*/
@@ -1979,20 +1984,20 @@ wchar_t ** sub_7B83E0(wchar_t ** a1, const char ** a2)
     v8 = wcslen(v6) + 1; /*0x7b8442*/
   else
     v8 = 1; /*0x7b8445*/
-  v9 = (wchar_t *)__2_YAPAXI_Z(2 * v8); /*0x7b844e*/
+  v9 = (wchar_t *)RA2_OPNEW(2 * v8); /*0x7b844e*/
   v10 = v9; /*0x7b8453*/
   *v9 = 0; /*0x7b845a*/
   if ( v6 ) /*0x7b845f*/
     wcscpy(v9, v6); /*0x7b8463*/
-  __3_YAXPAX_Z(v6); /*0x7b846c*/
+  RA2_OPDEL(v6); /*0x7b846c*/
   *a1 = 0; /*0x7b8474*/
   if ( v10 ) /*0x7b847d*/
   {
     v11 = wcslen(v10); /*0x7b8480*/
-    v12 = (wchar_t *)__2_YAPAXI_Z(2 * v11 + 2); /*0x7b848a*/
+    v12 = (wchar_t *)RA2_OPNEW(2 * v11 + 2); /*0x7b848a*/
     *a1 = v12; /*0x7b8491*/
     wcscpy(v12, v10); /*0x7b8494*/
-    __3_YAXPAX_Z(v10); /*0x7b849a*/
+    RA2_OPDEL(v10); /*0x7b849a*/
   }
   return a1; /*0x7b84a2*/
 }

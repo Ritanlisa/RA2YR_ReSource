@@ -69,9 +69,6 @@ public:
     int32_t     MoveFeedback_field_24;               // 0x24
     int32_t     MoveFeedback_field_28;               // 0x28
     int32_t     MoveFeedback_field_2C;               // 0x2C
-// --- e4 declarations (BEGIN) ---
-    DynamicVector * Constructor(unsigned int * Block, char a2);  // 0x40C160
-// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -134,7 +131,7 @@ public:
     // IDA 0x43AD00
     void Init();  // 0x43AD00
     // IDA 0x488030
-    void Constructor_VectorClass_ObjectClass();  // 0x488030
+    void Constructor_VectorClass_ObjectClass___();  // 0x488030
     // IDA 0x632B70
     void RotateBufferCrypto();  // 0x632B70
     // IDA 0x6C89E0
@@ -201,11 +198,6 @@ public:
     void*       m_pipe;             // 0x1C
     int32_t     Delegate_field_20;           // 0x20
     int32_t     Delegate_field_24;           // 0x24
-// --- e4 declarations (BEGIN) ---
-    int ProcessBitmapAndDispatch();  // 0x42DF40
-    int StreamToBuffer(char * a1, int a3);  // 0x4A2780
-    GenericNode * Constructor_GenericNode(GenericNode ** Block, char a2);  // 0x52AE20
-// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -250,9 +242,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     void* InitTriple256(int a1);  // 0x5f75e0
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int ClearAllMemberFlags();  // 0x48B2A0
-// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -278,11 +267,6 @@ public:
     static int32_t GetRefCount();
 
     int32_t     m_RefCount;     // 0x00
-// --- e4 declarations (BEGIN) ---
-    int Get();  // 0x76F080
-    unsigned int * Release();  // 0x76F160
-    unsigned int * ddtor();  // 0x76F170
-// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -679,9 +663,6 @@ public:
 
     static HWND    s_hWnd;        // 0x00
     static HINSTANCE s_hInstance; // 0x04
-// --- e4 declarations (BEGIN) ---
-    int Constructor_VectorClass_Wstring_();  // 0x69A1F0
-// --- e4 declarations (END) ---
 };
 
 
@@ -749,10 +730,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* coUninitialize(int a1);  // 0x767880
     void* marshalInterface(int a1);  // 0x767C50
     // --- gap2 auto-generated stub declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    VectorCursor * disconnectPoint(unsigned int * Block, char a2);  // 0x7669F0
-    rc_ptr_base * lockServer(rc_ptr_base * Block, char a2);  // 0x767010
-// --- e4 declarations (END) ---
 };
 // 2 methods in IDA
 // CSP: COMClassFactory matched via T1
@@ -919,9 +896,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int QueryInterface2(int a1, int a2, int a3);  // 0x6c0050
     int GetStringValue(int a1, int a2);  // 0x55ab40
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int Thunk_COMObject_sub_4E30C0();  // 0x4E30C0
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class CRC32
@@ -1019,9 +993,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     int Skip(int a1);  // 0x4a0b10
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int _vt06(unsigned int * a1, unsigned int * a2);  // 0x4A0B20
-// --- e4 declarations (END) ---
 };
 // 6 methods in IDA
 class EnumConnectionsClass
@@ -1045,9 +1016,6 @@ public:
     // === FUNCS-MOVE (BEGIN) ===
     int Skip(int a1);  // 0x4a0180
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int _vt06(unsigned int * a1, unsigned int * a2);  // 0x4A0190
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class EventBuffer
@@ -1125,9 +1093,6 @@ public:
     uint8_t GraphicMenuAnimItem_field_0x0C[4];
     uint8_t GraphicMenuAnimItem_field_0x10[4];
     uint8_t GraphicMenuAnimItem_field_0x14[4];
-// --- e4 declarations (BEGIN) ---
-    VectorCursor * Constructor(char a2);  // 0x4F3FD0
-// --- e4 declarations (END) ---
 };
 // 5 methods in IDA
 class GraphicMenuImageItem
@@ -1157,9 +1122,6 @@ public:
     virtual void Destructor(); // 0x4F3A70
 
     uint8_t GraphicMenuItem_field_0x04[4];
-// --- e4 declarations (BEGIN) ---
-    void Dtor();  // 0x4F3A70
-// --- e4 declarations (END) ---
 };
 // 2 methods in IDA
 class GraphicMenuItem_Destru
@@ -1643,7 +1605,7 @@ public:
 class VectorCursor
 {
 public:
-    virtual ~VectorCursor() = default;  // 0x76F190
+    virtual ~ddtor() = default;  // 0x76F190
 
     virtual void Construct(); // 0x76F0C0
     virtual void HasNext(); // 0x76F0E0
@@ -1658,10 +1620,6 @@ public:
     uint8_t VectorCursor_field_0x10[4];
     uint8_t VectorCursor_field_0x14[4];
     uint8_t VectorCursor_field_0x18[4];
-// --- e4 declarations (BEGIN) ---
-    unsigned int * Release();  // 0x76F180
-    unsigned int * ddtor();  // 0x76F190
-// --- e4 declarations (END) ---
 };
 // 3 methods in IDA
 class VectorCursor_uint_DynamicVectorClass_uint

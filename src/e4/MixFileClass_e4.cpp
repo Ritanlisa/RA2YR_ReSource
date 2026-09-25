@@ -1,8 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/MixFile_e4.hpp"
+#include "e4/classes/Mission_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x69E210
+namespace gamemd {
 void MixFileClass::CleanupCache()
 {
   _DWORD *v0; // edi
@@ -43,7 +48,7 @@ void MixFileClass::CleanupCache()
               *((_DWORD *)v1 + 2) = 0; /*0x69e272*/
             }
           }
-          __3_YAXPAX_Z(v1); /*0x69e276*/
+          RA2_OPDEL(v1); /*0x69e276*/
         }
         v0[3] = 0; /*0x69e27e*/
         *((_BYTE *)v0 + 16) = 0; /*0x69e281*/
@@ -81,13 +86,15 @@ void MixFileClass::CleanupCache()
         *((_DWORD *)v4 + 2) = 0; /*0x69e2f1*/
       }
     }
-    __3_YAXPAX_Z(v4); /*0x69e2f5*/
+    RA2_OPDEL(v4); /*0x69e2f5*/
     dword_B077B4 = 0; /*0x69e2fd*/
     dword_B077B8 = 0; /*0x69e303*/
     dword_B077BC = 0; /*0x69e309*/
   }
 }
+} // namespace gamemd
 // 0x69E180
+namespace gamemd {
 void MixFileClass::DestroyCache()
 {
   void *v0; // esi
@@ -128,7 +135,7 @@ void MixFileClass::DestroyCache()
             *((_DWORD *)v0 + 2) = 0; /*0x69e1e9*/
           }
         }
-        __3_YAXPAX_Z(v0); /*0x69e1ed*/
+        RA2_OPDEL(v0); /*0x69e1ed*/
       }
       v0 = v1; /*0x69e1f7*/
     }
@@ -140,3 +147,4 @@ void MixFileClass::DestroyCache()
     dword_B077B0 = 0; /*0x69e205*/
   }
 }
+} // namespace gamemd

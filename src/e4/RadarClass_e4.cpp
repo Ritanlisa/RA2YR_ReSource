@@ -1,6 +1,16 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Radar_e4.hpp"
+#include "e4/classes/RadioClass_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x652C00
 namespace gamemd {
@@ -12,19 +22,19 @@ CampaignClass * * RadarClass::Destruct()
   void *v5; // eax
   void *v6; // eax
 
-  *this = &RadarClass::`vftable'; /*0x652c0c*/
-  AudioFileClass::Release(this + 1328); /*0x652c12*/
-  TacticalClass::FreeResources(this); /*0x652c19*/
-  v2 = (char *)(this + 1314); /*0x652c1e*/
+  *this = &(void*)(void*)&RadarClass_vftable; /*0x652c0c*/
+  AudioFileClass::Release(&this->q2108); /*0x652c12*/
+  TacticalClass::FreeResources(); /*0x652c19*/
+  v2 = (char *)(&this->u32_20C4); /*0x652c1e*/
   v3 = 22; /*0x652c24*/
   do /*0x652c53*/
   {
     v4 = (void *)*((_DWORD *)v2 - 5); /*0x652c2b*/
     v2 -= 24; /*0x652c2e*/
-    *(_DWORD *)v2 = &VectorClass<Point2D>::`vftable'; /*0x652c33*/
+    *(_DWORD *)v2 = &(void*)(void*)&VectorClass_Point2D_vftable; /*0x652c33*/
     if ( v4 && v2[13] ) /*0x652c3b*/
     {
-      __3_YAXPAX_Z(v4); /*0x652c41*/
+      RA2_OPDEL(v4); /*0x652c41*/
       *((_DWORD *)v2 + 1) = 0; /*0x652c49*/
     }
     --v3; /*0x652c4c*/
@@ -32,25 +42,25 @@ CampaignClass * * RadarClass::Destruct()
     *((_DWORD *)v2 + 2) = 0; /*0x652c50*/
   }
   while ( v3 ); /*0x652c53*/
-  v5 = (void *)*(this + 1176); /*0x652c55*/
-  *(this + 1175) = &VectorClass<Point2D>::`vftable'; /*0x652c5b*/
-  if ( v5 && *((_BYTE *)this + 4713) ) /*0x652c69*/
+  v5 = (void *)*(&this->u32_1D46); /*0x652c55*/
+  *(&this->u32_1D45) = &(void*)(void*)&VectorClass_Point2D_vftable; /*0x652c5b*/
+  if ( v5 && this->u8_1269 ) /*0x652c69*/
   {
-    __3_YAXPAX_Z(v5); /*0x652c72*/
-    *(this + 1176) = 0; /*0x652c7a*/
+    RA2_OPDEL(v5); /*0x652c72*/
+    *(&this->u32_1D46) = 0; /*0x652c7a*/
   }
-  *((_BYTE *)this + 4713) = 0; /*0x652c80*/
-  *(this + 1177) = 0; /*0x652c86*/
-  v6 = (void *)*(this + 1162); /*0x652c8c*/
-  *(this + 1161) = &VectorClass<Cell>::`vftable'; /*0x652c92*/
-  if ( v6 && *((_BYTE *)this + 4657) ) /*0x652ca0*/
+  this->u8_1269 = 0; /*0x652c80*/
+  *(&this->u32_1D47) = 0; /*0x652c86*/
+  v6 = (void *)*(&this->u32_1D02); /*0x652c8c*/
+  *(&this->u32_1D01) = &(void*)(void*)&VectorClass_Cell_vftable; /*0x652c92*/
+  if ( v6 && this->u8_1231 ) /*0x652ca0*/
   {
-    __3_YAXPAX_Z(v6); /*0x652ca9*/
-    *(this + 1162) = 0; /*0x652cb1*/
+    RA2_OPDEL(v6); /*0x652ca9*/
+    *(&this->u32_1D02) = 0; /*0x652cb1*/
   }
-  *((_BYTE *)this + 4657) = 0; /*0x652cb9*/
-  *(this + 1163) = 0; /*0x652cbf*/
-  return MapClass::Destruct(this); /*0x652cca*/
+  this->u8_1231 = 0; /*0x652cb9*/
+  *(&this->u32_1D03) = 0; /*0x652cbf*/
+  return MapClass::Destruct(unsigned int a1); /*0x652cca*/
 }
 }
 // 0x654650
@@ -84,23 +94,23 @@ void RadarClass_RecreateSurface()
     if ( v5 ) /*0x654687*/
     {
       (**v5)(v5, 1); /*0x65468d*/
-      *(_DWORD *)(a1 + 4640) = 0; /*0x65468f*/
+      *(_DWORD *, unsigned int a1)(a1 + 4640) = 0; /*0x65468f*/
     }
     if ( *(_DWORD *)(a1 + 4668) ) /*0x654695*/
     {
-      __3_YAXPAX_Z(*(void **)(a1 + 4668)); /*0x6546a0*/
-      *(_DWORD *)(a1 + 4668) = 0; /*0x6546a8*/
+      RA2_OPDEL(*(void **)(a1 + 4668)); /*0x6546a0*/
+      *(_DWORD *, unsigned int a1)(a1 + 4668) = 0; /*0x6546a8*/
     }
     if ( *(_DWORD *)(a1 + 4724) ) /*0x6546ae*/
     {
-      __3_YAXPAX_Z(*(void **)(a1 + 4724)); /*0x6546b9*/
-      *(_DWORD *)(a1 + 4724) = 0; /*0x6546c1*/
+      RA2_OPDEL(*(void **)(a1 + 4724)); /*0x6546b9*/
+      *(_DWORD *, unsigned int a1, unsigned int a2)(a1 + 4724) = 0; /*0x6546c1*/
     }
     GenerateImageThumbnail(v18, v4, v4, 1); /*0x6546d3*/
     v6 = (*(int (__thiscall **)(_DWORD, int))(**(_DWORD **)(a1 + 4640) + 124))(*(_DWORD *)(a1 + 4640), a2); /*0x6546e0*/
     v7 = *(_DWORD *)(a1 + 4640); /*0x6546e3*/
     *(_DWORD *)(a1 + 5284) = v6; /*0x6546e9*/
-    v8 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 128))(v7); /*0x6546f1*/
+    v8 = (*(int (__thiscall **)(int))(v7->q080)(v7); /*0x6546f1*/
     v9 = *(_DWORD *)(a1 + 5284); /*0x6546f7*/
     v10 = *(_DWORD *)(a1 + 4592); /*0x6546fd*/
     *(_DWORD *)(a1 + 5288) = v8; /*0x65470b*/
@@ -115,15 +125,15 @@ void RadarClass_RecreateSurface()
     if ( v12 ) /*0x654752*/
     {
       (**v12)(v12, 1); /*0x654758*/
-      *(_DWORD *)(a1 + 4636) = 0; /*0x65475a*/
+      *(_DWORD *, unsigned int a1)(a1 + 4636) = 0; /*0x65475a*/
     }
-    v13 = (char *)__2_YAPAXI_Z(0x24u); /*0x654767*/
+    v13 = (char *)RA2_OPNEW(0x24u); /*0x654767*/
     if ( v13 ) /*0x65476e*/
     {
       v18[0] = *(_DWORD *)(a1 + 4640); /*0x65477d*/
       v14 = v18[0]; /*0x654777*/
       v17 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v18[0] + 128))(v18[0]); /*0x654789*/
-      v15 = (*(int (__thiscall **)(int))(*(_DWORD *)v14 + 124))(v14); /*0x65478e*/
+      v15 = (*(int (__thiscall **)(int))(v14->u32_7C)(v14); /*0x65478e*/
       v16 = DSurface::Construct(v13, v15, v17, 1, 0); /*0x654794*/
     }
     else
@@ -131,7 +141,7 @@ void RadarClass_RecreateSurface()
       v16 = 0; /*0x65479b*/
     }
     *(_DWORD *)(a1 + 4636) = v16; /*0x65479d*/
-    (*(void (__thiscall **)(char *, _DWORD))(*(_DWORD *)v16 + 24))(v16, 0); /*0x6547a8*/
+    (*(void (__thiscall **)(char *, _DWORD))(v16->nextArrayIndex)(v16, 0); /*0x6547a8*/
     return RadarClass::UpdateFoundationShapesCustom(a1); /*0x6547ad*/
   }
   return result; /*0x6547b3*/
@@ -320,8 +330,8 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
     return 1; /*0x6a869b*/
   if ( v28 > v29 ) /*0x6a869e*/
     return 0; /*0x6a86a9*/
-  v30 = (*(int (__thiscall **)(int, #375 *))(*(_DWORD *)v16 + 132))(v16, HouseClass_Player); /*0x6a86bf*/
-  v31 = (*(int (__thiscall **)(_DWORD *, #375 *))(*v25 + 132))(v25, HouseClass_Player); /*0x6a86c9*/
+  v30 = (*(int (__thiscall **)(int, void *))(*(_DWORD *)v16 + 132))(v16, HouseClass_Player); /*0x6a86bf*/
+  v31 = (*(int (__thiscall **)(_DWORD *, void *))(*v25 + 132))(v25, HouseClass_Player); /*0x6a86c9*/
   if ( v30 < v31 ) /*0x6a86d1*/
     return 1; /*0x6a86dc*/
   if ( v30 > v31 ) /*0x6a86df*/
@@ -335,9 +345,9 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
 namespace gamemd {
 unsigned int * RadarClass::initRadarSurface()
 {
-  *(this + 1) = 0; /*0x4f4224*/
-  *(this + 2) = 0; /*0x4f4227*/
-  *(this + 3) = 2; /*0x4f422a*/
+  this->q004 = 0; /*0x4f4224*/
+  this->q008 = 0; /*0x4f4227*/
+  this->q00C = 2; /*0x4f422a*/
   *this = &off_7EA6FC; /*0x4f4231*/
   return this; /*0x4f4237*/
 }
@@ -349,13 +359,13 @@ void RadarClass::Destru_vt50()
 {
   if ( byte_B048F9 ) /*0x652d9a*/
   {
-    __3_YAXPAX_Z(dword_B048E0); /*0x652da2*/
+    RA2_OPDEL(dword_B048E0); /*0x652da2*/
     byte_B048F9 = 0; /*0x652daa*/
   }
   dword_B048E0 = 0; /*0x652db5*/
   if ( byte_B048F8 ) /*0x652dbd*/
   {
-    __3_YAXPAX_Z(dword_B048AC); /*0x652dc6*/
+    RA2_OPDEL(dword_B048AC); /*0x652dc6*/
     byte_B048F8 = 0; /*0x652dce*/
   }
   dword_B048AC = 0; /*0x652dd4*/

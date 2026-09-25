@@ -5,7 +5,11 @@
 
 namespace gamemd {
 struct E4Recv_4964D0 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    unsigned int M4;  // 0x4
+    unsigned int M8;  // 0x8
+// --- flat members (END) ---
     int sub_4964D0();  // 0x4964D0
 };
 } // namespace gamemd

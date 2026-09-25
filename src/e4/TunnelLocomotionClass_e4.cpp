@@ -2,8 +2,13 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/TunnelLocomotionClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x728C00
+namespace gamemd {
 void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
 {
   _DWORD *v2; // esi
@@ -71,10 +76,10 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
                 v9,
                 0,
                 0);
-        v16 = HIWORD(v7); /*0x728cf3*/
+        v16 = IDA_HIWORD(v7); /*0x728cf3*/
         if ( (_WORD)v7 != (_WORD)dword_B0F8F0 ) /*0x728cf7*/
           goto LABEL_8; /*0x728cf7*/
-        if ( HIWORD(v7) == HIWORD(dword_B0F8F0) ) /*0x728d09*/
+        if ( IDA_HIWORD(v7) == IDA_HIWORD(dword_B0F8F0) ) /*0x728d09*/
         {
           v10[0] = 0; /*0x728d33*/
           v10[1] = 0; /*0x728d38*/
@@ -96,9 +101,9 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
                   v10,
                   0,
                   0);
-          v16 = HIWORD(v7); /*0x728d44*/
+          v16 = IDA_HIWORD(v7); /*0x728d44*/
         }
-        if ( __PAIR32__(v16, v7) == dword_B0F8F0 ) /*0x728d4f*/
+        if ( IDA___PAIR32__(v16, v7) == dword_B0F8F0 ) /*0x728d4f*/
         {
           (*(void (__stdcall **)(int, _DWORD, int, _DWORD, int, int, _DWORD))(*(_DWORD *)a1[2] + 364))( /*0x728d7c*/
             a1[2] + 108,
@@ -125,7 +130,9 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
       return;
   }
 }
+} // namespace gamemd
 // 0x72A110
+namespace gamemd {
 int TunnelLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x72a116*/
@@ -136,7 +143,9 @@ int TunnelLocomotionClass::ddtor(int a1, unsigned int * a2)
   a2[3] = -777003740; /*0x72a140*/
   return 0; /*0x72a11d*/
 }
+} // namespace gamemd
 // 0x72A150
+namespace gamemd {
 int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
 {
   int result; // eax
@@ -147,28 +156,33 @@ int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x72a168*/
     {
-      *a1 = (int)&LocomotionClass::`vftable'; /*0x72a16a*/
-      a1[1] = (int)&LocomotionClass::`vftable'; /*0x72a170*/
+      *a1 = (int)&(void*)(void*)&LocomotionClass_vftable; /*0x72a16a*/
+      a1[1] = (int)&(void*)(void*)&LocomotionClass_vftable; /*0x72a170*/
       v3 = g_CurrentFrame; /*0x72a177*/
       a1[12] = 0; /*0x72a17d*/
       a1[10] = (int)v3; /*0x72a180*/
       a1[13] = 0; /*0x72a183*/
-      *a1 = (int)&TunnelLocomotionClass::`vftable'; /*0x72a186*/
-      a1[1] = (int)&TunnelLocomotionClass::`vftable'; /*0x72a18c*/
+      *a1 = (int)&(void*)(void*)&TunnelLocomotionClass_vftable; /*0x72a186*/
+      a1[1] = (int)&(void*)(void*)&TunnelLocomotionClass_vftable; /*0x72a18c*/
     }
   }
   return result; /*0x72a193*/
 }
+} // namespace gamemd
 // 0x72A200
+namespace gamemd {
 int TunnelLocomotionClass::StubReturn60()
 {
   return 60; /*0x72a205*/
 }
+} // namespace gamemd
 // 0x72A210
+namespace gamemd {
 TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(char a2)
 {
-  LocomotionClass::Construct(this); /*0x72a213*/
+  LocomotionClass::Construct(); /*0x72a213*/
   if ( (a2 & 1) != 0 ) /*0x72a21d*/
-    __3_YAXPAX_Z(this); /*0x72a220*/
+    RA2_OPDEL(); /*0x72a220*/
   return this; /*0x72a22a*/
 }
+} // namespace gamemd

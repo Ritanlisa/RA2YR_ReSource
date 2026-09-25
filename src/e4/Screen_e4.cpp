@@ -4,6 +4,11 @@
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x52FEC0
 namespace gamemd {
@@ -14,17 +19,15 @@ void Screen_Capture()
   int v6; // ebp
   _DWORD *v7; // eax
   _DWORD *v8; // esi
-  char result; // al
-  int retaddr; // [esp+26h] [ebp+0h]
 
   v4 = a2; /*0x52fec5*/
   if ( !a2 ) /*0x52fecf*/
     v4 = g_DSurface_Hidden; /*0x52fed1*/
-  (*(void (__thiscall **)(int, _DWORD, int, int))(*(_DWORD *)v4 + 24))(v4, 0, a4, a3); /*0x52fede*/
-  v5 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 124))(v4); /*0x52fee8*/
-  v6 = (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 128))(v4); /*0x52fef4*/
-  retaddr = v5; /*0x52ff00*/
-  v7 = __2_YAPAXI_Z(0x20u); /*0x52ff08*/
+  (*(void (__thiscall **)(int, _DWORD, int, int))(v4->nextArrayIndex)(v4, 0, a4, a3); /*0x52fede*/
+  v5 = (*(int (__thiscall **)(int))(v4->q07C)(v4); /*0x52fee8*/
+  v6 = (*(int (__thiscall **)(int))(v4->q080)(v4); /*0x52fef4*/
+  v5 = v5; /*0x52ff00*/
+  v7 = RA2_OPNEW(0x20u); /*0x52ff08*/
   v8 = v7; /*0x52ff0d*/
   if ( v7 ) /*0x52ff14*/
   {
@@ -41,13 +44,12 @@ void Screen_Capture()
     v8 = 0; /*0x52ff48*/
   }
   Render_Draw(0); /*0x52ff52*/
-  (*(void (__thiscall **)(int, _DWORD *))(*(_DWORD *)v4 + 4))(v4, v8); /*0x52ff60*/
+  (*(void (__thiscall **)(int, _DWORD *))(v4->vtable2)(v4, v8); /*0x52ff60*/
   if ( v8 ) /*0x52ff67*/
     (*(void (__thiscall **)(_DWORD *, int))*v8)(v8, 1); /*0x52ff6f*/
-  result = a1; /*0x52ff71*/
+  a1 = a1; /*0x52ff71*/
   if ( a1 ) /*0x52ff77*/
     return Frame::Present(0); /*0x52ff7f*/
-  return result; /*0x52ff84*/
 }
 }
 // 0x68F060
@@ -170,24 +172,24 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   v56 = v10; /*0x68f14d*/
   v55 = v6; /*0x68f15a*/
   v57 = 4; /*0x68f15e*/
-  LOWORD(v53) = -18947; /*0x68f166*/
-  BYTE2(v53) = 28; /*0x68f170*/
+  IDA_LOWORD(v53) = -18947; /*0x68f166*/
+  IDA_BYTE2(v53) = 28; /*0x68f170*/
   (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)v11 + 28))(v11, &v55, &v53, 25); /*0x68f17b*/
   v58 = v61; /*0x68f189*/
   v55 = v6 + 4; /*0x68f18d*/
   v12 = *(this + 2); /*0x68f191*/
   v56 = v72; /*0x68f19b*/
   v57 = 7; /*0x68f19f*/
-  LOWORD(v53) = -18947; /*0x68f1a7*/
-  BYTE2(v53) = 28; /*0x68f1b1*/
+  IDA_LOWORD(v53) = -18947; /*0x68f1a7*/
+  IDA_BYTE2(v53) = 28; /*0x68f1b1*/
   (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)v12 + 28))(v12, &v55, &v53, 50); /*0x68f1bc*/
   v58 = v61; /*0x68f1ca*/
   v55 = v6 + 11; /*0x68f1ce*/
   v13 = *(this + 2); /*0x68f1d2*/
   v56 = v72; /*0x68f1dc*/
   v57 = 4; /*0x68f1e0*/
-  LOWORD(v53) = -18947; /*0x68f1e8*/
-  BYTE2(v53) = 28; /*0x68f1f2*/
+  IDA_LOWORD(v53) = -18947; /*0x68f1e8*/
+  IDA_BYTE2(v53) = 28; /*0x68f1f2*/
   (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)v13 + 28))(v13, &v55, &v53, 25); /*0x68f1fd*/
   v62 = v6 + 132; /*0x68f20a*/
   v55 = v6 + 132; /*0x68f20e*/
@@ -196,24 +198,24 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
   v73 = v7 - v59; /*0x68f21d*/
   v56 = v7 - v59; /*0x68f221*/
   v57 = 4; /*0x68f22c*/
-  LOWORD(v53) = 7418; /*0x68f234*/
-  BYTE2(v53) = 28; /*0x68f23d*/
+  IDA_LOWORD(v53) = 7418; /*0x68f234*/
+  IDA_BYTE2(v53) = 28; /*0x68f23d*/
   (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)v14 + 28))(v14, &v55, &v53, 25); /*0x68f248*/
   v55 = v6 + 136; /*0x68f255*/
   v56 = v73; /*0x68f259*/
   v57 = 7; /*0x68f25d*/
   v15 = *(this + 2); /*0x68f269*/
   v58 = v59; /*0x68f26c*/
-  LOWORD(v53) = 7418; /*0x68f277*/
-  BYTE2(v53) = 28; /*0x68f280*/
+  IDA_LOWORD(v53) = 7418; /*0x68f277*/
+  IDA_BYTE2(v53) = 28; /*0x68f280*/
   (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)v15 + 28))(v15, &v55, &v53, 50); /*0x68f28b*/
   v58 = v59; /*0x68f29c*/
   v55 = v6 + 143; /*0x68f2a0*/
   v16 = *(this + 2); /*0x68f2a4*/
   v56 = v73; /*0x68f2ae*/
   v57 = 4; /*0x68f2b2*/
-  LOWORD(v53) = 7418; /*0x68f2ba*/
-  BYTE2(v53) = 28; /*0x68f2c3*/
+  IDA_LOWORD(v53) = 7418; /*0x68f2ba*/
+  IDA_BYTE2(v53) = 28; /*0x68f2c3*/
   (*(void (__thiscall **)(int, int *, int *, int))(*(_DWORD *)v16 + 28))(v16, &v55, &v53, 25); /*0x68f2ce*/
   v17 = (int)aP1; /*0x68f2d8*/
   v18 = 1; /*0x68f2df*/
@@ -355,7 +357,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
         }
       }
     }
-    Screen::TransitionLoop(this, 1); /*0x68f625*/
+    Screen::TransitionLoop(1); /*0x68f625*/
     v63 += 2; /*0x68f646*/
     v53 -= 2; /*0x68f651*/
     v75 += 2 * (_DWORD)aP1; /*0x68f660*/
@@ -445,7 +447,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     v7 - *(_DWORD *)(*(this + 3) + 8) - v59,
     2);
   (*(void (__thiscall **)(_DWORD, wchar_t *))(*(_DWORD *)*(this + 3) + 8))(*(this + 3), v76); /*0x68f878*/
-  return Screen::TransitionLoop(this, 20); /*0x68f884*/
+  return Screen::TransitionLoop(20); /*0x68f884*/
 }
 // 0x690160
 int Screen::TransitionLoop(int a2)
@@ -472,7 +474,7 @@ int Screen::TransitionLoop(int a2)
   v16 = 1; /*0x69017c*/
   do
   {
-    Screen::CleanupTransitionObjects(this); /*0x690189*/
+    Screen::CleanupTransitionObjects(); /*0x690189*/
     GetClientRect(g_hWnd, &Rect); /*0x69019a*/
     ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x6901ab*/
     v3 = *this; /*0x6901b1*/

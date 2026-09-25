@@ -2,39 +2,47 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/House_e4.hpp"
+#include "e4/classes/FlyLocomotionClass_e4.hpp"
+#include "e4/classes/FogOfWar_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ObjectVector_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4CC9A0
+namespace gamemd {
 int FlyLocomotionClass::LocomotionClass()
 {
-  int v2; // edx
 
-  LocomotionClass::Init((_DWORD *)this); /*0x4cc9a3*/
-  *(_BYTE *)(this + 24) = 0; /*0x4cc9ad*/
-  *(_DWORD *)(this + 28) = dword_8B3C78; /*0x4cc9b6*/
-  *(_DWORD *)(this + 32) = dword_8B3C7C; /*0x4cc9be*/
-  *(_DWORD *)(this + 36) = dword_8B3C80; /*0x4cc9c7*/
-  *(_DWORD *)(this + 40) = dword_8B3C78; /*0x4cc9d3*/
-  *(_DWORD *)(this + 44) = dword_8B3C7C; /*0x4cc9dc*/
-  v2 = dword_8B3C80; /*0x4cc9df*/
-  *(_DWORD *)(this + 64) = 0; /*0x4cc9e5*/
-  *(_DWORD *)(this + 72) = 0; /*0x4cc9e8*/
-  *(_BYTE *)(this + 52) = 0; /*0x4cc9eb*/
-  *(_DWORD *)(this + 56) = 0; /*0x4cc9ee*/
-  *(_DWORD *)(this + 68) = 0; /*0x4cc9f1*/
-  *(_DWORD *)(this + 76) = 0; /*0x4cc9f4*/
-  *(_BYTE *)(this + 80) = 0; /*0x4cc9f7*/
-  *(_BYTE *)(this + 81) = 0; /*0x4cc9fa*/
-  *(_BYTE *)(this + 82) = 0; /*0x4cc9fd*/
-  *(_BYTE *)(this + 83) = 0; /*0x4cca00*/
-  *(_DWORD *)(this + 84) = 0; /*0x4cca03*/
-  *(_DWORD *)(this + 88) = 0; /*0x4cca06*/
-  *(_BYTE *)(this + 92) = 0; /*0x4cca09*/
-  *(_DWORD *)this = &FlyLocomotionClass::`vftable'; /*0x4cca0c*/
-  *(_DWORD *)(this + 4) = &FlyLocomotionClass::`vftable'; /*0x4cca12*/
-  *(_DWORD *)(this + 48) = v2; /*0x4cca1b*/
+  LocomotionClass::Init(); /*0x4cc9a3*/
+  this->AirportBound = 0; /*0x4cc9ad*/
+  this->MovingDestination = dword_8B3C78; /*0x4cc9b6*/
+  this->u32_20 = dword_8B3C7C; /*0x4cc9be*/
+  this->q024 = dword_8B3C80; /*0x4cc9c7*/
+  this->XYZ2 = dword_8B3C78; /*0x4cc9d3*/
+  this->u32_2C = dword_8B3C7C; /*0x4cc9dc*/
+  dword_8B3C80 = dword_8B3C80; /*0x4cc9df*/
+  this->q040 = 0; /*0x4cc9e5*/
+  this->q048 = 0; /*0x4cc9e8*/
+  this->HasMoveOrder = 0; /*0x4cc9eb*/
+  this->FlightLevel = 0; /*0x4cc9ee*/
+  this->CurrentSpeed = 0; /*0x4cc9f1*/
+  this->IsTakingOff = 0; /*0x4cc9f4*/
+  this->q050 = 0; /*0x4cc9f7*/
+  this->u8_51 = 0; /*0x4cc9fa*/
+  this->u8_52 = 0; /*0x4cc9fd*/
+  this->FlyLocomotionClass_field_bool_53 = 0; /*0x4cca00*/
+  this->FlyLocomotionClass_field_54 = 0; /*0x4cca03*/
+  this->FlyLocomotionClass_field_58 = 0; /*0x4cca06*/
+  this->IsElevating = 0; /*0x4cca09*/
+  *(_DWORD *)this = &(void*)(void*)&FlyLocomotionClass_vftable; /*0x4cca0c*/
+  this->vtable2 = &(void*)(void*)&FlyLocomotionClass_vftable; /*0x4cca12*/
+  this->ptr_30 = dword_8B3C80; /*0x4cca1b*/
   return this; /*0x4cca1e*/
 }
+} // namespace gamemd
 // 0x4CFE80
+namespace gamemd {
 void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
 {
   int v2; // ecx
@@ -62,16 +70,16 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   if ( *(_DWORD *)(*(_DWORD *)(a1 + 8) + 692) ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
   ObjectVector::Construct(&v16, 0, 0); /*0x4cfea2*/
-  v16 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4cfeb7*/
+  v16 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4cfeb7*/
   v21 = 10; /*0x4cfebb*/
   v20 = 0; /*0x4cfebf*/
   ObjectVector::Construct(&v10, 0, 0); /*0x4cfec3*/
-  v10 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x4cfecd*/
+  v10 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4cfecd*/
   v15 = 10; /*0x4cfed3*/
   v14 = 0; /*0x4cfed7*/
   if ( !g_GameMode_Current[0] /*0x4cfeef*/
     || (v2 = *(_DWORD *)(*(_DWORD *)(a1 + 8) + 540), *(_DWORD *)(v2 + 22016) == -1)
-    || (v22 = 1, (unsigned __int8)House::IsCurrentPlayer((#375 *)v2)) )
+    || (v22 = 1, (unsigned __int8)House::IsCurrentPlayer((void *)v2)) )
   {
     v22 = 0; /*0x4cfefd*/
   }
@@ -85,7 +93,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
                                                                                  + 22016)] )
         continue; /*0x4cff5e*/
     }
-    else if ( (unsigned __int8)HouseClass::IsAlliedWith(*(#375 **)(*(_DWORD *)(a1 + 8) + 540), *(#375 **)(v4 + 540)) ) /*0x4cff32*/
+    else if ( (unsigned __int8)HouseClass::IsAlliedWith(*(void **)(*(_DWORD *)(a1 + 8) + 540), *(void **)(v4 + 540)) ) /*0x4cff32*/
     {
       continue; /*0x4cff39*/
     }
@@ -99,7 +107,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
        || !*(_BYTE *)(*(_DWORD *)(v4 + 1732) + 3598)) )
     {
       if ( g_GameMode_Current[0] /*0x4d003d*/
-        && (unsigned __int8)House::IsCurrentPlayer(*(#375 **)(*(_DWORD *)(a1 + 8) + 540))
+        && (unsigned __int8)House::IsCurrentPlayer(*(void **)(*(_DWORD *)(a1 + 8) + 540))
         && !*(_BYTE *)(*(_DWORD *)(*(_DWORD *)(v4 + 540) + 52) + 422)
         && ((*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 1
          || (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 6
@@ -147,22 +155,24 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   }
   (*(void (__stdcall **)(_DWORD))(v9 + 968))(v8[v7]); /*0x4d011b*/
   LABEL_45:
-  v10 = &VectorClass<ObjectClass *>::`vftable'; /*0x4d0121*/
+  v10 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4d0121*/
   if ( Block && v13 ) /*0x4d0136*/
   {
-    __3_YAXPAX_Z(Block); /*0x4d0139*/
+    RA2_OPDEL(Block); /*0x4d0139*/
     Block = 0; /*0x4d0141*/
   }
-  v16 = &VectorClass<ObjectClass *>::`vftable'; /*0x4d0149*/
+  v16 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4d0149*/
   v13 = 0; /*0x4d0150*/
   v12 = 0; /*0x4d0154*/
   if ( v17 ) /*0x4d0159*/
   {
     if ( v19 ) /*0x4d015f*/
-      __3_YAXPAX_Z(v17); /*0x4d0162*/
+      RA2_OPDEL(v17); /*0x4d0162*/
   }
 }
+} // namespace gamemd
 // 0x4CFC80
+namespace gamemd {
 int FlyLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x4cfc86*/
@@ -173,7 +183,9 @@ int FlyLocomotionClass::ddtor(int a1, unsigned int * a2)
   a2[3] = -777003740; /*0x4cfcb0*/
   return 0; /*0x4cfc8d*/
 }
+} // namespace gamemd
 // 0x4CFCC0
+namespace gamemd {
 int FlyLocomotionClass::BeginMove(int * a1, int * a2)
 {
   int result; // eax
@@ -183,24 +195,29 @@ int FlyLocomotionClass::BeginMove(int * a1, int * a2)
   {
     if ( a1 ) /*0x4cfcd6*/
     {
-      *a1 = (int)&FlyLocomotionClass::`vftable'; /*0x4cfcd8*/
-      a1[1] = (int)&FlyLocomotionClass::`vftable'; /*0x4cfcde*/
+      *a1 = (int)&(void*)(void*)&FlyLocomotionClass_vftable; /*0x4cfcd8*/
+      a1[1] = (int)&(void*)(void*)&FlyLocomotionClass_vftable; /*0x4cfcde*/
     }
   }
   return result; /*0x4cfce5*/
 }
+} // namespace gamemd
 // 0x4D0390
+namespace gamemd {
 int FlyLocomotionClass::StubReturn96()
 {
   return 96; /*0x4d0395*/
 }
+} // namespace gamemd
 // 0x4D03A0
+namespace gamemd {
 FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 {
-  *this = &FlyLocomotionClass::`vftable'; /*0x4d03a3*/
-  *(this + 1) = &FlyLocomotionClass::`vftable'; /*0x4d03a9*/
-  LocomotionClass::Construct(this); /*0x4d03b0*/
+  *this = &(void*)(void*)&FlyLocomotionClass_vftable; /*0x4d03a3*/
+  *(this + 1) = &(void*)(void*)&FlyLocomotionClass_vftable; /*0x4d03a9*/
+  LocomotionClass::Construct(); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
-    __3_YAXPAX_Z(this); /*0x4d03bd*/
+    RA2_OPDEL(); /*0x4d03bd*/
   return this; /*0x4d03c7*/
 }
+} // namespace gamemd

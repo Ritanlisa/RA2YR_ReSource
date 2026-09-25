@@ -7,6 +7,14 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Weapon_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/Color_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ObjectVector_e4.hpp"
+#include "e4/classes/WeaponTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/WebBrowser_e4.hpp"
 
 // 0x53AE00
 namespace gamemd {
@@ -19,7 +27,7 @@ int sub_53AE00()
   v1 = 3; /*0x53ae1c*/
   if ( HouseClass_Player ) /*0x53ae23*/
     v1 = *((_DWORD *)HouseClass_Player + 22549); /*0x53ae25*/
-  return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53ae47*/
+  return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v1, 16454, 150, 0, unsigned int a1); /*0x53ae47*/
 }
 }
 // 0x659CA0
@@ -42,7 +50,7 @@ void Weapon_Update()
   if ( !*(_BYTE *)(a1 + 8) ) /*0x659ca7*/
   {
     *(_BYTE *)(a1 + 8) = 1; /*0x659cae*/
-    Weapon_Update_Update(a1); /*0x659cb2*/
+    Weapon_Update_Update(a1, unsigned int a2); /*0x659cb2*/
   }
   if ( *(_BYTE *)(a1 + 9) ) /*0x659cb7*/
   {
@@ -54,11 +62,11 @@ void Weapon_Update()
       do /*0x659e01*/
       {
         v4 = Weapon_Update_Update_659FF0(a1); /*0x659ceb*/
-        LOWORD(a2) = (unsigned __int8)(*(_BYTE *)(a1 + 194) >> g_BitMask_Red); /*0x659d13*/
-        LOWORD(v4) = (unsigned __int8)(*(_BYTE *)(a1 + 193) >> g_BitMask_Blue); /*0x659d28*/
-        LODWORD(v4) = (_DWORD)v4 << g_BitMask_Green; /*0x659d30*/
+        IDA_LOWORD(a2) = (unsigned __int8)(*(_BYTE *)(a1 + 194) >> g_BitMask_Red); /*0x659d13*/
+        IDA_LOWORD(v4) = (unsigned __int8)(*(_BYTE *)(a1 + 193) >> g_BitMask_Blue); /*0x659d28*/
+        IDA_LODWORD(v4) = (_DWORD)v4 << g_BitMask_Green; /*0x659d30*/
         v5 = v4 | (a2 << g_BitShift_Blue); /*0x659d40*/
-        LOWORD(v4) = (unsigned __int8)(*(_BYTE *)(a1 + 192) >> g_BitShift_Green_0); /*0x659d45*/
+        IDA_LOWORD(v4) = (unsigned __int8)(*(_BYTE *)(a1 + 192) >> g_BitShift_Green_0); /*0x659d45*/
         a2 = ((_DWORD)v4 << g_BitShift_Red) | v5; /*0x659d55*/
         Coord::To_Screen(g_TacticalClass_Instance, (_DWORD *)(a1 + 156), v14); /*0x659d57*/
         Coord::To_Screen(g_TacticalClass_Instance, (_DWORD *)(a1 + 168), v13); /*0x659d68*/
@@ -76,7 +84,7 @@ void Weapon_Update()
             &DSurface_ViewBounds,
             v14,
             v13,
-            (__int16)a2,
+            (__int16, unsigned int a1)a2,
             v6,
             -2 - v7,
             0);
@@ -85,7 +93,7 @@ void Weapon_Update()
         v9 = *(_DWORD *)(a1 + 136) + 1; /*0x659df7*/
         *(_DWORD *)(a1 + 136) = v9; /*0x659df9*/
       }
-      while ( v9 < v8 ); /*0x659e01*/
+      while (v9 < v8, unsigned int a1); /*0x659e01*/
     }
   }
   v10 = *(_DWORD *)(a1 + 60); /*0x659e0c*/
@@ -128,12 +136,9 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   int v33; // esi
   void *v34; // eax
   int v35; // edx
-  int v36; // edx
-  int v37; // ecx
   int v39; // esi
   int v40; // esi
   int v41; // edx
-  int v42; // edx
   int v43; // ecx
   float v44; // [esp+18h] [ebp-C4h]
   char v45; // [esp+2Bh] [ebp-B1h]
@@ -145,7 +150,6 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   int v51; // [esp+3Ch] [ebp-A0h]
   int v52; // [esp+40h] [ebp-9Ch]
   int v53; // [esp+44h] [ebp-98h]
-  int v54; // [esp+48h] [ebp-94h]
   float v55; // [esp+4Ch] [ebp-90h]
   float v56; // [esp+50h] [ebp-8Ch]
   float v57; // [esp+54h] [ebp-88h]
@@ -158,55 +162,48 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   float v64; // [esp+70h] [ebp-6Ch]
   int v65; // [esp+74h] [ebp-68h] BYREF
   int v66; // [esp+78h] [ebp-64h]
-  int v67; // [esp+7Ch] [ebp-60h]
   float v68; // [esp+80h] [ebp-5Ch]
   float v69; // [esp+84h] [ebp-58h]
   float v70; // [esp+88h] [ebp-54h]
-  float v71; // [esp+8Ch] [ebp-50h]
   float v72; // [esp+90h] [ebp-4Ch]
   float v73; // [esp+94h] [ebp-48h]
-  int *v74; // [esp+98h] [ebp-44h]
   int v75; // [esp+9Ch] [ebp-40h]
   int v76; // [esp+A0h] [ebp-3Ch]
-  int v77; // [esp+A4h] [ebp-38h]
   float v78; // [esp+A8h] [ebp-34h] BYREF
   float v79; // [esp+ACh] [ebp-30h]
   float v80; // [esp+B0h] [ebp-2Ch]
   double v81; // [esp+B4h] [ebp-28h]
-  double v82; // [esp+BCh] [ebp-20h]
-  double v83; // [esp+C4h] [ebp-18h]
   int v84[3]; // [esp+D0h] [ebp-Ch] BYREF
 
-  v74 = this; /*0x70c6a0*/
   v5 = (int *)(*(int (__thiscall **)(int *, float *))(*aP3 + 72))(aP3, &v78); /*0x70c6b2*/
   v65 = *v5; /*0x70c6ba*/
   v66 = v5[1]; /*0x70c6c4*/
   v6 = v5[2]; /*0x70c6ca*/
   v7 = *aP2; /*0x70c6cd*/
-  v67 = v6; /*0x70c6cf*/
-  v54 = v7; /*0x70c6d3*/
+  v6 = v6; /*0x70c6cf*/
+  v7 = v7; /*0x70c6d3*/
   v8 = (double)v7; /*0x70c6d7*/
   v45 = 0; /*0x70c6e5*/
-  LOWORD(v46) = v7 / 256; /*0x70c6ed*/
+  IDA_LOWORD(v46) = v7 / 256; /*0x70c6ed*/
   v9 = aP2[1]; /*0x70c6f2*/
-  v71 = v8; /*0x70c6f5*/
+  v8 = v8; /*0x70c6f5*/
   v64 = *(float *)&v9; /*0x70c6f9*/
   v72 = (float)v9; /*0x70c702*/
   v10 = *aP2; /*0x70c711*/
   v73 = (float)aP2[2]; /*0x70c713*/
-  HIWORD(v46) = v9 / 256; /*0x70c725*/
+  IDA_HIWORD(v46) = v9 / 256; /*0x70c725*/
   v69 = (float)v66; /*0x70c72e*/
   v58 = v46; /*0x70c736*/
   v11 = aP2[1]; /*0x70c73a*/
   v59 = v10; /*0x70c73d*/
   v60 = v11; /*0x70c741*/
-  v70 = (float)v67; /*0x70c745*/
+  v70 = (float)v6; /*0x70c745*/
   v61 = aP2[2]; /*0x70c750*/
-  v55 = (double)v65 - v71; /*0x70c758*/
+  v55 = (double)v65 - v8; /*0x70c758*/
   v56 = v69 - v72; /*0x70c764*/
   v57 = v70 - v73; /*0x70c773*/
   ObjectVector::Construct(&v48, 0, 0); /*0x70c777*/
-  v48 = &DynamicVectorClass<ObjectClass *>::`vftable'; /*0x70c77c*/
+  v48 = &(void*)(void*)&DynamicVectorClass_ObjectClass___vftable; /*0x70c77c*/
   v53 = 10; /*0x70c784*/
   v52 = 0; /*0x70c78c*/
   v47 = 0; /*0x70c790*/
@@ -217,11 +214,11 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
     v59 = *v12; /*0x70c7b9*/
     v60 = v12[1]; /*0x70c7c0*/
     v61 = v12[2]; /*0x70c7c7*/
-    if ( __PAIR32__(v60 / 256, v59 / 256) != LODWORD(v58) ) /*0x70c7ec*/
+    if ( IDA___PAIR32__(v60 / 256, v59 / 256) != IDA_LODWORD(v58) ) /*0x70c7ec*/
     {
-      LOWORD(v54) = v59 / 256; /*0x70c7f9*/
-      HIWORD(v54) = v60 / 256; /*0x70c802*/
-      v58 = *(float *)&v54; /*0x70c811*/
+      IDA_LOWORD(v7) = v59 / 256; /*0x70c7f9*/
+      IDA_HIWORD(v7) = v60 / 256; /*0x70c802*/
+      v58 = *(float *)&v7; /*0x70c811*/
       v13 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v58); /*0x70c815*/
       if ( (v13[80] & 0x100) != 0 && v61 >= dword_B0EB34 * (*((char *)v13 + 283) + 4) ) /*0x70c83c*/
         v14 = (int *)v13[58]; /*0x70c83e*/
@@ -229,12 +226,12 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
         v14 = (int *)v13[57]; /*0x70c846*/
       while ( v14 ) /*0x70c84e*/
       {
-        if ( v14 == v74 ) /*0x70c858*/
+        if ( v14 == this ) /*0x70c858*/
           goto LABEL_31; /*0x70c858*/
         if ( v14 == aP3 ) /*0x70c860*/
           v45 = 1; /*0x70c862*/
-        HIBYTE(v63) = v14[5] & 1; /*0x70c874*/
-        if ( !HIBYTE(v63) ) /*0x70c878*/
+        IDA_HIBYTE(v63) = v14[5] & 1; /*0x70c874*/
+        if ( !IDA_HIBYTE(v63) ) /*0x70c878*/
           goto LABEL_31; /*0x70c878*/
         v15 = *v14; /*0x70c87e*/
         v62 = 0.0; /*0x70c882*/
@@ -247,10 +244,10 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
           v75 = v14[39]; /*0x70c8a2*/
           v16 = v14[41]; /*0x70c8b3*/
           v76 = v14[40]; /*0x70c8b6*/
-          v77 = v16; /*0x70c8c4*/
+          v16 = v16; /*0x70c8c4*/
           v79 = (float)v76; /*0x70c8cb*/
           v80 = (float)v16; /*0x70c8d9*/
-          v17 = (double)v75 - v71; /*0x70c8e0*/
+          v17 = (double)v75 - v8; /*0x70c8e0*/
           v18 = v79 - v72; /*0x70c8eb*/
           v19 = v80 - v73; /*0x70c8f6*/
           v20 = v18 * v57 - v19 * v56; /*0x70c906*/
@@ -258,9 +255,9 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
           v22 = v56 * v17 - v18 * v55; /*0x70c922*/
           v68 = v21 * v57 - v22 * v56; /*0x70c932*/
           v69 = v22 * v55 - v57 * v20; /*0x70c942*/
-          v82 = v69; /*0x70c95a*/
+          v69 = v69; /*0x70c95a*/
           v81 = v20 * v56 - v21 * v55; /*0x70c961*/
-          v83 = v68; /*0x70c96c*/
+          v68 = v68; /*0x70c96c*/
           v64 = v81 * v19 + v69 * v18 + v68 * v17; /*0x70c985*/
           v23 = Math::Sqrt(v68 * v68 + v81 * v81 + v69 * v69); /*0x70c9c3*/
           v24 = fabs(v64 / v23); /*0x70c9cf*/
@@ -288,7 +285,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   LABEL_24:
         if ( v52 >= v50 ) /*0x70ca1d*/
         {
-          if ( !BYTE1(v51) && v50 /*0x70ca40*/
+          if ( !IDA_BYTE1(v51) && v50 /*0x70ca40*/
             || v53 <= 0
             || !((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v48[2])(&v48, v53 + v50, 0) )
           {
@@ -328,7 +325,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   LABEL_48:
         if ( v52 < v50 ) /*0x70cb70*/
           goto LABEL_54; /*0x70cb70*/
-        if ( (BYTE1(v51) || !v50) && v53 > 0 ) /*0x70cb84*/
+        if ( (IDA_BYTE1(v51) || !v50) && v53 > 0 ) /*0x70cb84*/
         {
           if ( ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v48[2])(&v48, v53 + v50, 0) ) /*0x70cb93*/
           {
@@ -346,14 +343,14 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
       {
         do /*0x70cbf5*/
         {
-          v62 = *(float *)(aP4 + 152); /*0x70cbc3*/
+          v62 = aP4->u8_98; /*0x70cbc3*/
           (*(void (__thiscall **)(_DWORD, float *, _DWORD, _DWORD, int *, _DWORD, _DWORD, _DWORD))(**((_DWORD **)Block + v39) /*0x70cbe8*/
                                                                                                  + 364))(
             *((_DWORD *)Block + v39),
             &v62,
             0,
-            *(_DWORD *)(aP4 + 172),
-            v74,
+            aP4->q02B,
+            this,
             0,
             0,
             0);
@@ -367,16 +364,16 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
         if ( Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 99) < v40 ) /*0x70cc31*/
           LayerClass::DestroyCliff((int *)&MapClass_Instance, v41, (int)aP3); /*0x70cc39*/
       }
-      v42 = v66; /*0x70cc45*/
-      v48 = &VectorClass<ObjectClass *>::`vftable'; /*0x70cc4b*/
+      v66 = v66; /*0x70cc45*/
+      v48 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x70cc4b*/
       *a1 = v65; /*0x70cc53*/
-      v43 = v67; /*0x70cc55*/
-      a1[1] = v42; /*0x70cc59*/
+      v43 = v6; /*0x70cc55*/
+      a1[1] = v66; /*0x70cc59*/
       a1[2] = v43; /*0x70cc5c*/
       if ( Block ) /*0x70cc65*/
       {
-        if ( BYTE1(v51) ) /*0x70cc6d*/
-          __3_YAXPAX_Z(Block); /*0x70cc70*/
+        if ( IDA_BYTE1(v51) ) /*0x70cc6d*/
+          RA2_OPDEL(Block); /*0x70cc70*/
       }
       return a1; /*0x70cc78*/
     }
@@ -391,12 +388,12 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
       LayerClass::DestroyCliff((int *)&MapClass_Instance, v35, (int)v34); /*0x70cb2b*/
     }
   }
-  v36 = v60; /*0x70cb37*/
-  v48 = &VectorClass<ObjectClass *>::`vftable'; /*0x70cb3d*/
+  v60 = v60; /*0x70cb37*/
+  v48 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x70cb3d*/
   *a1 = v59; /*0x70cb45*/
-  v37 = v61; /*0x70cb47*/
-  a1[1] = v36; /*0x70cb4b*/
-  a1[2] = v37; /*0x70cb4e*/
+  v61 = v61; /*0x70cb47*/
+  a1[1] = v60; /*0x70cb4b*/
+  a1[2] = v61; /*0x70cb4e*/
   ObjectVector::ddtor(&v48); /*0x70cb55*/
   return a1; /*0x70cb5c*/
 }

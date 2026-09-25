@@ -202,17 +202,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindProductionType(int a1, int a2, int a3);  // 0x6a6140 -- Sidebar::FindProductionType
     void FlushSidebarTooltip(int a1);  // 0x6a70e0 -- Sidebar::FlushSidebarTooltip
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    char draw();  // 0x4C9C50
-    int draw2();  // 0x4CA170
-    void CreateScrollButtons();  // 0x653010
-    int InitPositions();  // 0x6A5090
-    int CalcBounds(char a1);  // 0x6A5130
-    void * LoadAssets();  // 0x6A5840
-    int Redraw(char a2);  // 0x6A6C30
-    int SwitchTab(int a2);  // 0x6A7590
-    char LoadResources();  // 0x6ABD30
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

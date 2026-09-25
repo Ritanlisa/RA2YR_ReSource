@@ -3,6 +3,13 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/MainMenu_e4.hpp"
+#include "e4/classes/EventQueue_e4.hpp"
+#include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/Main_e4.hpp"
 
 // 0x531CC0
 namespace gamemd {
@@ -18,13 +25,12 @@ long MainMenu_Screen()
   const char **v9; // edi
   _BYTE v11[2]; // [esp+6h] [ebp-1Eh] BYREF
   LONG dwNewLong; // [esp+8h] [ebp-1Ch] BYREF
-  HWND hWnd; // [esp+Ch] [ebp-18h]
   struct _SYSTEMTIME SystemTime; // [esp+10h] [ebp-14h] BYREF
 
   dwNewLong = 18; /*0x531cc7*/
   SetSoundWarning(-1); /*0x531ccf*/
   v2 = (HWND)CreateDialog(0xE2u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))MainMenu::DlgProc, 0); /*0x531ce5*/
-  hWnd = v2; /*0x531ce9*/
+  v2 = v2; /*0x531ce9*/
   if ( v2 ) /*0x531ced*/
   {
     SetWindowLongA(v2, 8, (LONG)&dwNewLong); /*0x531cfe*/
@@ -38,8 +44,8 @@ long MainMenu_Screen()
         v4 = (g_DisplayWidth - 800) / 2; /*0x531d51*/
       else
         v4 = 0; /*0x531d43*/
-      if ( MEMORY[0x8A00A8] > 600 ) /*0x531d5d*/
-        v5 = (MEMORY[0x8A00A8] - 600) / 2; /*0x531d6b*/
+      if ( DataGlobal_8A00A8 > 600 ) /*0x531d5d*/
+        v5 = (DataGlobal_8A00A8 - 600) / 2; /*0x531d6b*/
       else
         v5 = 0; /*0x531d5f*/
       SetWindowPos(DlgItem, 0, v4, v5, -1, -1, 0xDu); /*0x531d78*/
@@ -47,7 +53,7 @@ long MainMenu_Screen()
       if ( g_DisplayWidth == 640 ) /*0x531d9a*/
         SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM)aRa2tsS); /*0x531da1*/
       else
-        SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM)aRa2tsL); /*0x531db0*/
+        SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM, unsigned int a1, unsigned int a2)aRa2tsL); /*0x531db0*/
     }
     do /*0x531f04*/
     {
@@ -57,7 +63,7 @@ long MainMenu_Screen()
       {
         g_LoadScreenFlag = 0; /*0x531dd0*/
         Screen::Capture(1, 0, a1, a2); /*0x531dd7*/
-        Frame::Present(0); /*0x531de6*/
+        Frame::Present(0, unsigned int a1, unsigned int a2); /*0x531de6*/
       }
       if ( (unsigned __int16)EventQueue::Process(g_BinkMoviePlayer) ) /*0x531df1*/
       {
@@ -68,7 +74,7 @@ long MainMenu_Screen()
           a2 = (char)v6; /*0x531e1c*/
           if ( !isalnum((char)v6) || (_BYTE)a1 == 126 ) /*0x531e33*/
           {
-            memset(Str, 0, sizeof(Str)); /*0x531f3e*/
+            memset(Str, 0, sizeof(Str, unsigned int a1)); /*0x531f3e*/
           }
           else
           {
@@ -88,7 +94,7 @@ long MainMenu_Screen()
             {
               v9 += 4; /*0x531e98*/
               ++v8; /*0x531e9b*/
-              if ( (int)v9 >= (int)off_825C6C ) /*0x531ea2*/
+              if ( (int, unsigned int a1, unsigned int a2)v9 >= (int)off_825C6C ) /*0x531ea2*/
                 goto LABEL_27; /*0x531ea2*/
             }
             *(_BYTE *)*(&g_PlayerHouseFlags + 4 * v8) = *(_BYTE *)*(&g_PlayerHouseFlags + 4 * v8) == 0; /*0x531ebf*/
@@ -104,7 +110,7 @@ long MainMenu_Screen()
       ; /*0x531eff*/
     }
     while ( dwNewLong == 18 ); /*0x531f04*/
-    Dialog::Destroy(hWnd); /*0x531f0e*/
+    Dialog::Destroy(v2); /*0x531f0e*/
     GetSystemTime(&SystemTime); /*0x531f18*/
     Random::AdvanceRandomBytes(SystemTime.wMilliseconds); /*0x531f28*/
   }

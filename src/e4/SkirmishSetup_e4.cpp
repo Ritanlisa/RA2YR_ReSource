@@ -5,6 +5,14 @@
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/Session_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/SkirmishSetup_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/Skirmish_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Sidebar_e4.hpp"
 
 // 0x5D6130
 namespace gamemd {
@@ -28,7 +36,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
     {
       g_MultiplayerMode |= 1u; /*0x5d6171*/
       MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d617c*/
-      g_MultiplayerModeConfig = (int)&DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d6181*/
+      g_MultiplayerModeConfig = (int)&(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d6181*/
       dword_ABFDB4 = 10; /*0x5d618b*/
       g_MultiplayerGameList = 0; /*0x5d619a*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d61a0*/
@@ -39,7 +47,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
     {
       g_MultiplayerMode |= 1u; /*0x5d61c4*/
       MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(&g_MultiplayerModeConfig, 0, 0); /*0x5d61cf*/
-      g_MultiplayerModeConfig = (int)&DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d61d4*/
+      g_MultiplayerModeConfig = (int)&(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d61d4*/
       dword_ABFDB4 = 10; /*0x5d61de*/
       g_MultiplayerGameList = 0; /*0x5d61ed*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d61f3*/
@@ -162,7 +170,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
               MultiMissionVector::Constructor(0, 0); /*0x5e6a67*/
               a2 = g_MultiplayerOptions; /*0x5e6a6c*/
               v12 = 0; /*0x5e6a72*/
-              v44[0] = &DynamicVectorClass<MultiMission const *>::`vftable'; /*0x5e6a76*/
+              v44[0] = &(void*)(void*)&DynamicVectorClass_MultiMission_const___vftable; /*0x5e6a76*/
               v46 = 10; /*0x5e6a7e*/
               for ( i = 0; v12 < a2; ++v12 ) /*0x5e6a8e*/
               {
@@ -172,7 +180,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
               }
               DlgItem = GetDlgItem(v8, 1363); /*0x5e6ac2*/
               (*(void (__thiscall **)(LRESULT, HWND, _DWORD *, _DWORD))(*(_DWORD *)v11 + 76))(v11, DlgItem, v44, 0); /*0x5e6ad4*/
-              v44[0] = &VectorClass<MultiMission const *>::`vftable'; /*0x5e6adb*/
+              v44[0] = &(void*)(void*)&VectorClass_MultiMission_const___vftable; /*0x5e6adb*/
               VectorClass::Cleanup3(v44); /*0x5e6ae3*/
               v9 = (int)a6; /*0x5e6ae8*/
             }
@@ -184,7 +192,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
             Session::PrepareGame(v8); /*0x5e6b17*/
           g_GameRulesOptions = dword_AC10E0; /*0x5e6b22*/
           LoadScenarioClassByIndex(dword_AC10E0); /*0x5e6b28*/
-          LOBYTE(v9) = HandleMultiplayerMapSelection(v8); /*0x5e6b38*/
+          IDA_LOBYTE(v9) = HandleMultiplayerMapSelection(v8); /*0x5e6b38*/
           Screen::Capture(1, 0, v9, a2); /*0x5e6b3a*/
           if ( !(_BYTE)v9 ) /*0x5e6b41*/
           {
@@ -200,7 +208,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
       }
       return 0; /*0x5e69dd*/
     }
-    if ( (unsigned __int16)a5 == 1771 && !byte_AC11C8 && HIWORD(a5) == 1 ) /*0x5e6b96*/
+    if ( (unsigned __int16)a5 == 1771 && !byte_AC11C8 && IDA_HIWORD(a5) == 1 ) /*0x5e6b96*/
     {
       v14 = hWnd; /*0x5e6b9c*/
       v15 = 0; /*0x5e6ba6*/
@@ -219,7 +227,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
             {
               (*(void (__thiscall **)(LRESULT))(*(_DWORD *)v18 + 16))(v18); /*0x5e6c23*/
               MultiMissionVector::Constructor(0, 0); /*0x5e6c2c*/
-              v44[0] = &DynamicVectorClass<MultiMission const *>::`vftable'; /*0x5e6c36*/
+              v44[0] = &(void*)(void*)&DynamicVectorClass_MultiMission_const___vftable; /*0x5e6c36*/
               v46 = 10; /*0x5e6c40*/
               i = 0; /*0x5e6c48*/
               a4 = g_MultiplayerOptions; /*0x5e6c4c*/
@@ -236,9 +244,9 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
               }
               v19 = GetDlgItem(v14, 1363); /*0x5e6c8d*/
               (*(void (__thiscall **)(LRESULT, HWND, _DWORD *, _DWORD))(*(_DWORD *)v18 + 76))(v18, v19, v44, 0); /*0x5e6c9b*/
-              v44[0] = &VectorClass<MultiMission const *>::`vftable'; /*0x5e6ca2*/
+              v44[0] = &(void*)(void*)&VectorClass_MultiMission_const___vftable; /*0x5e6ca2*/
               VectorClass::Cleanup3(v44); /*0x5e6caa*/
-              LOBYTE(a6) = (*(int (__thiscall **)(LRESULT))(*(_DWORD *)v18 + 60))(v18); /*0x5e6cbc*/
+              IDA_LOBYTE(a6) = (*(int (__thiscall **)(LRESULT))(*(_DWORD *)v18 + 60))(v18); /*0x5e6cbc*/
               v20 = GetDlgItem(v14, 1411); /*0x5e6cc0*/
               EnableWindow(v20, (unsigned __int8)a6); /*0x5e6cce*/
               if ( &word_AC0EC8 ) /*0x5e6cdb*/
@@ -308,7 +316,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
     if ( First ) /*0x5e6ee5*/
     {
       MultiMissionVector::Constructor(0, 0); /*0x5e6ef1*/
-      v44[0] = &DynamicVectorClass<MultiMission const *>::`vftable'; /*0x5e6efb*/
+      v44[0] = &(void*)(void*)&DynamicVectorClass_MultiMission_const___vftable; /*0x5e6efb*/
       v46 = 10; /*0x5e6f05*/
       i = 0; /*0x5e6f0d*/
       a6 = (char *)g_MultiplayerOptions; /*0x5e6f11*/
@@ -325,10 +333,10 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
       }
       v38 = GetDlgItem(v36, 1363); /*0x5e6f4d*/
       (*(void (__thiscall **)(int, HWND, _DWORD *, _DWORD))(*(_DWORD *)First + 76))(First, v38, v44, 0); /*0x5e6f5b*/
-      v44[0] = &VectorClass<MultiMission const *>::`vftable'; /*0x5e6f62*/
+      v44[0] = &(void*)(void*)&VectorClass_MultiMission_const___vftable; /*0x5e6f62*/
       VectorClass::Cleanup3(v44); /*0x5e6f6a*/
     }
-    LOBYTE(hWnd) = (*(int (__thiscall **)(int))(*(_DWORD *)First + 60))(First); /*0x5e6f7c*/
+    IDA_LOBYTE(hWnd) = (*(int (__thiscall **)(int))(*(_DWORD *)First + 60))(First); /*0x5e6f7c*/
     v39 = GetDlgItem(v36, 1411); /*0x5e6f80*/
     EnableWindow(v39, (unsigned __int8)hWnd); /*0x5e6f8e*/
     v40 = g_GameRulesOptions; /*0x5e6f94*/
@@ -421,7 +429,7 @@ int SkirmishSetup::PlayButtonClickAnim()
   if ( !v5 || !v6 ) /*0x6082f4*/
     return 0; /*0x6082b8*/
   PlayVocClass(g_RulesClass_Instance->AddPlanningModeCommandSound, 0x2000, 1.0, 0); /*0x60830f*/
-  LOBYTE(v7) = IsWindowEnabled(hWnd); /*0x608329*/
+  IDA_LOBYTE(v7) = IsWindowEnabled(hWnd); /*0x608329*/
   EnableWindow(hWnd, 0); /*0x60832d*/
   EnumChildWindows(hWnd, Dialog::MapControlToAction, 1); /*0x60833d*/
   RenderGadgetClassAnimation(hWnd, 1); /*0x608343*/
@@ -466,9 +474,9 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
   if ( g_UIControlState ) /*0x5e85ef*/
   {
     ComPtr::Dtor(g_UIControlState); /*0x5e85f3*/
-    __3_YAXPAX_Z(v2); /*0x5e85f9*/
+    RA2_OPDEL(v2); /*0x5e85f9*/
   }
-  v3 = __2_YAPAXI_Z(4u); /*0x5e8603*/
+  v3 = RA2_OPNEW(4u); /*0x5e8603*/
   if ( v3 ) /*0x5e860d*/
     v4 = (void *)unknown_libname_27(v3); /*0x5e8611*/
   else
@@ -480,7 +488,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
   {
   LABEL_18:
     v6 = GameConfig::ComputeCRC(); /*0x5e8655*/
-    v7 = (wchar_t *)__2_YAPAXI_Z(0x1BCu); /*0x5e8662*/
+    v7 = (wchar_t *)RA2_OPNEW(0x1BCu); /*0x5e8662*/
     if ( v7 ) /*0x5e866c*/
       v8 = SessionClass::ParseGameInfo(v7, g_Str_File_RandMap_Sed, &word_ABE050, v6, 1, 0, 2, 4); /*0x5e8688*/
     else
@@ -496,7 +504,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
       v9 = g_MultiplayerOptions++; /*0x5e86d2*/
       *(_DWORD *)(g_MultiplayerGameState + 4 * v9) = v8; /*0x5e86e1*/
     }
-    __3_YAXPAX_Z(v6); /*0x5e86e5*/
+    RA2_OPDEL(v6); /*0x5e86e5*/
     return v5; /*0x5e86ed*/
   }
   else

@@ -4,6 +4,11 @@
 #include "e4/classes/NetworkClass_e4.hpp"
 #include "e4/classes/EventClass_e4.hpp"
 #include "e4/classes/ScriptAction_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/SOCKET_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x639FD0
 namespace gamemd {
@@ -62,7 +67,7 @@ AbstractClass * * NetworkClass::RecordEvent()
   if ( FactoryClass::GetFlag() ) /*0x6ffe39*/
   {
     result = NetworkClass::ExecutePlanningModeCmd(v5); /*0x6ffe46*/
-    LOBYTE(result) = 0; /*0x6ffe4b*/
+    IDA_LOBYTE(result) = 0; /*0x6ffe4b*/
   }
   else
   {
@@ -77,7 +82,7 @@ AbstractClass * * NetworkClass::RecordEvent()
       Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F; /*0x6ffe9d*/
       result = ++Networking_LastEventIndex; /*0x6ffea7*/
     }
-    LOBYTE(result) = 1; /*0x6ffeae*/
+    IDA_LOBYTE(result) = 1; /*0x6ffeae*/
   }
   return result; /*0x6ffe4d*/
 }
@@ -91,13 +96,13 @@ AnimClass * * NetworkClass::UnregisterAsync()
   SOCKET result; // eax
 
   v2 = g_hWnd; /*0x7b1c53*/
-  v3 = *(this + 64539); /*0x7b1c59*/
+  v3 = *(&this->u32_64D49); /*0x7b1c59*/
   if ( v3 != -1 && g_hWnd ) /*0x7b1c66*/
   {
     WSAAsyncSelect(v3, g_hWnd, 0, 0); /*0x7b1c6e*/
     v2 = g_hWnd; /*0x7b1c73*/
   }
-  result = *(this + 64540); /*0x7b1c79*/
+  result = *(&this->u32_64D80); /*0x7b1c79*/
   if ( result != -1 ) /*0x7b1c83*/
   {
     if ( v2 ) /*0x7b1c87*/

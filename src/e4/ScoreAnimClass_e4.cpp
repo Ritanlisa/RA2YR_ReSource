@@ -1,36 +1,43 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/ScoreAnimClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x691000
+namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 {
-  *this = &ScoreAnimClass::`vftable'; /*0x691009*/
+  *this = &(void*)(void*)&ScoreAnimClass_vftable; /*0x691009*/
   if ( (a2 & 1) != 0 ) /*0x69100f*/
-    __3_YAXPAX_Z(this); /*0x691012*/
+    RA2_OPDEL(); /*0x691012*/
   return this; /*0x69101c*/
 }
+} // namespace gamemd
 // 0x691020
+namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
 {
-  *this = &ScoreAnimClass::`vftable'; /*0x691029*/
+  *this = &(void*)(void*)&ScoreAnimClass_vftable; /*0x691029*/
   if ( (a2 & 1) != 0 ) /*0x69102f*/
-    __3_YAXPAX_Z(this); /*0x691032*/
+    RA2_OPDEL(); /*0x691032*/
   return this; /*0x69103c*/
 }
+} // namespace gamemd
 // 0x6910A0
+namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
 {
   void *v3; // eax
   char *v4; // eax
 
-  v3 = (void *)*(this + 3); /*0x6910a6*/
-  *this = &ScoreFontClass::`vftable'; /*0x6910a9*/
-  if ( v3 && *((_BYTE *)this + 16) == 1 ) /*0x6910b7*/
+  v3 = (void *)this->u32_C; /*0x6910a6*/
+  *this = &(void*)(void*)&ScoreFontClass_vftable; /*0x6910a9*/
+  if ( v3 && this->q010 == 1 ) /*0x6910b7*/
   {
-    __3_YAXPAX_Z(v3); /*0x6910ba*/
-    *(this + 3) = 0; /*0x6910c2*/
-    *((_BYTE *)this + 16) = 0; /*0x6910c5*/
+    RA2_OPDEL(v3); /*0x6910ba*/
+    this->u32_C = 0; /*0x6910c2*/
+    this->q010 = 0; /*0x6910c5*/
   }
   if ( !--dword_B0558C ) /*0x6910d3*/
   {
@@ -44,6 +51,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
     while ( (int)v4 < (int)((char *)&dbl_B055A8 + 4) ); /*0x6910e7*/
   }
   if ( (a2 & 1) != 0 ) /*0x6910ee*/
-    __3_YAXPAX_Z(this); /*0x6910f1*/
+    RA2_OPDEL(); /*0x6910f1*/
   return this; /*0x6910fb*/
 }
+} // namespace gamemd

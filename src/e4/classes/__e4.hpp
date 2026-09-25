@@ -11,7 +11,7 @@ struct _ {
     void ddtor();  // 0x74F4B0
     int Read(unsigned int * a2);  // 0x74F4E0
     unsigned int Write(int a2);  // 0x74F520
-    VectorClass * QueryInterface(char a2);  // 0x74F650
+    VectorClass_flat * QueryInterface(char a2);  // 0x74F650
     int Seek(int a2);  // 0x74F3B0
 };
 } // namespace gamemd

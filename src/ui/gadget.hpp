@@ -76,10 +76,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* InitProperties();  // 0x600630 -- Gadget::InitProperties
     int Dtor();  // 0x4E1390 -- GadgetClass::Dtor
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    int DrawBuildingPlacement(ControlClass * aP1);  // 0x557920
-    BOOL FindByWindow(HWND hWnd, LPARAM a2);  // 0x60AAB0
-// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -182,8 +178,7 @@ public:
     // unmatched: no callgraph reference and no git history record
     std::vector<GadgetClass*>& Gadgets();
 
-protected:
-    void DrawBackground(DSurface* surface);
+void DrawBackground(DSurface* surface);
 
     int x, y, w, h;
     bool visible = true;
@@ -198,11 +193,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int UpdateControlState(int a1, int a2);  // 0x624930 -- Dialog::UpdateControlState
     void GrowBuffer();  // 0x624be0 -- Dialog::GrowBuffer
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    char GetFlag();  // 0x5D6350
-    ATOM RegisterWinClasses();  // 0x60D450
-    BOOL Reposition(SkirmishDialog * aP0, LPARAM a2);  // 0x775BC0
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

@@ -1,6 +1,9 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/DiskLaserClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/Display_e4.hpp"
 
 // 0x72B8E0
 namespace gamemd {
@@ -34,14 +37,14 @@ void sub_72B930()
       if ( dword_B0FB54 ) /*0x72b94d*/
       {
         FileTreeNode::Destroy(dword_B0FB54); /*0x72b951*/
-        __3_YAXPAX_Z(v0); /*0x72b957*/
+        RA2_OPDEL(v0); /*0x72b957*/
       }
       byte_B0FD5C = 0; /*0x72b95f*/
     }
     dword_B0FB54 = 0; /*0x72b96b*/
     if ( dword_B0FD60 ) /*0x72b973*/
     {
-      __3_YAXPAX_Z(dword_B0FD60); /*0x72b976*/
+      RA2_OPDEL(dword_B0FD60); /*0x72b976*/
       dword_B0FD60 = 0; /*0x72b97e*/
     }
     if ( dword_B0FD64 ) /*0x72b98c*/

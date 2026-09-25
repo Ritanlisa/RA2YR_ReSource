@@ -59,10 +59,6 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     int GetSpeed();  // 0x5422f0 -- Connection::GetSpeed
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    void dtor();  // 0x48BEE0
-    int StubReturnFalse();  // 0x48C590
-// --- e4 declarations (END) ---
 };
 
 // CSP: IPXConnClass matched via T1+T3
@@ -84,9 +80,6 @@ public:
     uint32_t  RemoteAddress[3];
     uint16_t  RemoteSocket;
     uint8_t   padding[2];
-// --- e4 declarations (BEGIN) ---
-    void * constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3, IPXConnClass * aP4, unsigned int * a5, int a7, wchar_t * Source, int aP8);  // 0x53F430
-// --- e4 declarations (END) ---
 };
 
 // CSP: IPXManagerClass matched via T1
@@ -127,11 +120,6 @@ public:
     int ddtor(int a1, int a2, int a3);  // 0x5415f0 -- IPXManagerClass::ddtor
     void* QueryInterface(int a1);  // 0x5430e0 -- IPXManagerClass::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    int sendPacket(int a2, int a3, int a4);  // 0x540D80
-    int receivePacket(int a2);  // 0x541070
-    void StubReturnFalse(int a1, int a2);  // 0x543040
-// --- e4 declarations (END) ---
 };
 
 class ModemConnectionClass : public ConnectionClass
@@ -184,13 +172,6 @@ public:
     int sendData();  // 0x774670 -- NullModemClass::sendData
     int receiveData();  // 0x7747c0 -- NullModemClass::receiveData
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    int COMStub();  // 0x5F1950
-    int COMStub_Return0(int a1);  // 0x5F3520
-    int Send(int a1);  // 0x5F3530
-    int ddtor(int a2, int a3, int a4);  // 0x5F35A0
-    int GetMember23();  // 0x7754C0
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

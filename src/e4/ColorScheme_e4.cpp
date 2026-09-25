@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/ColorScheme_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x68C8D0
 namespace gamemd {
@@ -8,17 +10,15 @@ int ColorScheme::Destructor()
 {
   void (__thiscall ***v2)(_DWORD, int); // ecx
   int result; // eax
-  int v4; // [esp+4h] [ebp-4h] BYREF
 
-  if ( *(_DWORD *)(this + 772) ) /*0x68c8d4*/
-    free(*(void **)(this + 772)); /*0x68c8df*/
-  v2 = *(void (__thiscall ****)(_DWORD, int))(this + 780); /*0x68c8e7*/
-  *(_DWORD *)(this + 772) = 0; /*0x68c8ed*/
+  if ( this->q304 ) /*0x68c8d4*/
+    free(*(void **)(&this->u32_1342)); /*0x68c8df*/
+  v2 = *(void (__thiscall ****)(_DWORD, int))(&this->u32_1380); /*0x68c8e7*/
+  this->q304 = 0; /*0x68c8ed*/
   if ( v2 ) /*0x68c8f9*/
     (**v2)(v2, 1); /*0x68c8ff*/
-  *(_DWORD *)(this + 780) = 0; /*0x68c905*/
-  v4 = this; /*0x68c91b*/
-  result = (*(int (__thiscall **)(int *, int *))(ColorScheme_Array + 16))(&ColorScheme_Array, &v4); /*0x68c91f*/
+  this->u32_30C = 0; /*0x68c905*/
+  result = (*(int (__thiscall **)(int *, int *))(ColorScheme_Array + 16))(&ColorScheme_Array, &this); /*0x68c91f*/
   if ( result != -1 && result < g_AnimClass_SaveState && result < --g_AnimClass_SaveState ) /*0x68c93b*/
   {
     do /*0x68c953*/

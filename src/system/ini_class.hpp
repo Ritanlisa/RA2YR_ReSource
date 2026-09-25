@@ -173,11 +173,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadCoord(int a1, int a2, int a3, int a4);  // 0x474620
     int ReadInt(int a1, int a2, int a3);  // 0x5278f0
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int sub_44FE60();  // 0x44FE60
-    void SetGameOptionsPing();  // 0x7A0EA0
-    int WOLobby_Play();  // 0x5E3850
-// --- e4 declarations (END) ---
 };
 
 // IDA: CCINIClass @ 0x535B30 -- size ~0x58 (88 bytes)
@@ -233,15 +228,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ReadTypeList(int a1, int a2);  // 0x41f2e0
     int ReadInfantryTypeList(int a1, int a2);  // 0x41f490
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int GetDB();  // 0x473450
-// --- e4 declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    char InitFromINIEVA();  // 0x753000
-// --- e4 declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    void FillBuddyListWOL();  // 0x79AF10
-// --- e4 declarations (END) ---
 };
 
 // Hash table for INI section lookup (used by INIClass::BinarySearchSection)

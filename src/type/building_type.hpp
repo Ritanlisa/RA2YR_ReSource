@@ -351,13 +351,6 @@ public:
     // === FUNCS-MOVE (BEGIN) ===
     void LoadRepairAnimations(int a1);  // 0x45e970
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int GetClassIdentifier();  // 0x465380
-    int GetTypeIdentifier();  // 0x465D90
-    int GetObjectSize();  // 0x465DA0
-    int ddtor();  // 0x465DC0
-    unsigned int * Construct(AbstractClass * aP1);  // 0x644BE0
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

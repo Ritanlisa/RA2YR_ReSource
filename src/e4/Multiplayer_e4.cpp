@@ -6,8 +6,23 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Multiplayer_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/NetworkGameSetup_e4.hpp"
+#include "e4/classes/NetworkAddress_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/PlayerClass_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
 
 // 0x688380
+namespace gamemd {
 void * Multiplayer::FindStartPositions()
 {
   int v1; // esi
@@ -46,7 +61,7 @@ void * Multiplayer::FindStartPositions()
   VectorClass::CellConstructor(&v25, 0, 0); /*0x688395*/
   v3 = (char *)g_ScenarioClass_Instance; /*0x68839a*/
   v4 = 10; /*0x6883a0*/
-  v25 = &DynamicVectorClass<Cell>::`vftable'; /*0x6883a5*/
+  v25 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x6883a5*/
   v30 = 10; /*0x6883ad*/
   v29 = 0; /*0x6883b1*/
   v5 = 0; /*0x6883b5*/
@@ -106,7 +121,7 @@ void * Multiplayer::FindStartPositions()
     v3 = (char *)g_ScenarioClass_Instance; /*0x6884b9*/
   LABEL_24:
     v23 = *(_DWORD *)&v3[4 * i + 1586]; /*0x6884bf*/
-    Debug::Log("Multiplayer start waypoint found at cell %d,%d\n", (__int16)v23, SHIWORD(v23)); /*0x6884d9*/
+    Debug::Log("Multiplayer start waypoint found at cell %d,%d\n", (__int16)v23, IDA_SHIWORD(v23)); /*0x6884d9*/
     v4 = v30; /*0x6884de*/
     v3 = (char *)g_ScenarioClass_Instance; /*0x6884e2*/
     v2 = v21; /*0x6884e8*/
@@ -119,9 +134,9 @@ void * Multiplayer::FindStartPositions()
       do /*0x688643*/
       {
         v14 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, g_AircraftTrackerState - 10); /*0x688551*/
-        LOWORD(v22) = dword_87F90C /*0x688573*/
+        IDA_LOWORD(v22) = dword_87F90C /*0x688573*/
                     + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 10, g_AircraftTrackerPool - 10);
-        HIWORD(v22) = v14 + dword_87F910 + 10; /*0x688588*/
+        IDA_HIWORD(v22) = v14 + dword_87F910 + 10; /*0x688588*/
         v19 = v22; /*0x688594*/
         v23 = 0; /*0x6885ab*/
         v19 = *LayerClass::Pathfinding_Find( /*0x6885c3*/
@@ -152,7 +167,7 @@ void * Multiplayer::FindStartPositions()
             v15 = v29++; /*0x688612*/
             *((_DWORD *)Block + v15) = v19; /*0x68861d*/
           }
-          Debug::Log("Random multiplayer start waypoint added at cell %d,%d\n", (__int16)v19, SHIWORD(v19)); /*0x688631*/
+          Debug::Log("Random multiplayer start waypoint added at cell %d,%d\n", (__int16)v19, IDA_SHIWORD(v19)); /*0x688631*/
         }
       }
       while ( v29 < v20 ); /*0x688643*/
@@ -163,19 +178,21 @@ void * Multiplayer::FindStartPositions()
   v2[2] = 0; /*0x688654*/
   *((_BYTE *)v2 + 13) = 0; /*0x688657*/
   *((_BYTE *)v2 + 12) = 1; /*0x68865f*/
-  *v2 = &VectorClass<Cell>::`vftable'; /*0x688663*/
+  *v2 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x688663*/
   Multiplayer::CopyDataArray(&v25); /*0x688669*/
-  *v2 = &DynamicVectorClass<Cell>::`vftable'; /*0x68866e*/
-  v25 = &VectorClass<Cell>::`vftable'; /*0x688674*/
+  *v2 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x68866e*/
+  v25 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x688674*/
   v16 = Block; /*0x68867c*/
   v17 = v30; /*0x688684*/
   v2[4] = v29; /*0x688688*/
   v2[5] = v17; /*0x68868d*/
   if ( v16 && v28 ) /*0x688698*/
-    __3_YAXPAX_Z(v16); /*0x68869b*/
+    RA2_OPDEL(v16); /*0x68869b*/
   return v2; /*0x6886a5*/
 }
+} // namespace gamemd
 // 0x68C2B0
+namespace gamemd {
 unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
 {
   int v3; // edi
@@ -185,35 +202,37 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
 
   if ( this == aP1 ) /*0x68c2bb*/
     return this; /*0x68c2bb*/
-  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x68c2bf*/
+  this->vt_slot_12(); /*0x68c2bf*/
   v3 = aP1[2]; /*0x68c2c2*/
-  *(this + 2) = v3; /*0x68c2c7*/
+  this->u32_8 = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/
   {
-    *(this + 1) = 0; /*0x68c319*/
-    *((_BYTE *)this + 13) = 0; /*0x68c320*/
+    this->u32_4 = 0; /*0x68c319*/
+    this->u8_D = 0; /*0x68c320*/
     return this; /*0x68c324*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x68c2d4*/
+  v4 = RA2_OPNEW(4 * v3); /*0x68c2d4*/
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
-  *(this + 1) = v4; /*0x68c2eb*/
+  this->u32_4 = v4; /*0x68c2eb*/
   if ( !v4 ) /*0x68c2ee*/
     return this; /*0x68c2ee*/
-  v5 = *(this + 2); /*0x68c2f0*/
+  v5 = this->u32_8; /*0x68c2f0*/
   v6 = 0; /*0x68c2f3*/
-  *((_BYTE *)this + 13) = 1; /*0x68c2f7*/
+  this->u8_D = 1; /*0x68c2f7*/
   if ( v5 <= 0 ) /*0x68c2fb*/
     return this; /*0x68c2fb*/
   do /*0x68c30f*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(aP1[1] + 4 * v6); /*0x68c306*/
+    *(_DWORD *)(this->u32_4 + 4 * v6) = *(_DWORD *)(aP1[1] + 4 * v6); /*0x68c306*/
     ++v6; /*0x68c30c*/
   }
-  while ( v6 < *(this + 2) ); /*0x68c30f*/
+  while ( v6 < this->u32_8 ); /*0x68c30f*/
   return this; /*0x68c313*/
 }
+} // namespace gamemd
 // 0x69AE90
+namespace gamemd {
 void Multiplayer::ShowProgress(int a2)
 {
   double v3; // st7
@@ -238,7 +257,7 @@ void Multiplayer::ShowProgress(int a2)
     v12 = (double)v11; /*0x69aed6*/
     if ( Progress::GetWeighted(0) * 100.0 < v12 ) /*0x69aef1*/
       Network::UpdateLatencyDisplay(0, v12, NAN); /*0x69af0a*/
-    if ( *(this + 2579) != 1 ) /*0x69af16*/
+    if ( *(&this->u32_4049) != 1 ) /*0x69af16*/
     {
       Ticks = Timer::GetTicks(); /*0x69af26*/
       switch ( *this ) /*0x69af3e*/
@@ -249,7 +268,7 @@ void Multiplayer::ShowProgress(int a2)
           v13[0] = 108; /*0x69b0a2*/
           v7 = Progress::GetWeighted(0); /*0x69b0aa*/
           *(int *)((char *)&v13[6] + 1) = Math::RoundToInt(v7 * 100.0); /*0x69b0c0*/
-          LOBYTE(v13[6]) = g_EventDispatchState; /*0x69b0d5*/
+          IDA_LOBYTE(v13[6]) = g_EventDispatchState; /*0x69b0d5*/
           Stream::WriteBlock(v13, 250, 0); /*0x69b0d9*/
           Stream::ReadPacket(&g_EventManager); /*0x69b0e3*/
           while ( Count::GetCountQueue(&g_EventManager) > 5 ) /*0x69b0f5*/
@@ -316,8 +335,11 @@ void Multiplayer::ShowProgress(int a2)
     }
   }
 }
+} // namespace gamemd
 // 0x53F1F0
+namespace gamemd {
 void Multiplayer::Screen()
 {
   dword_828140 = (int)this; /*0x53f1f0*/
 }
+} // namespace gamemd

@@ -5,11 +5,14 @@
 #include "e4/classes/Building_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/WWMouseClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x7B9040
+namespace gamemd {
 unsigned int * WWMouseClass::initSurface()
 {
-  _DWORD *result; // eax
   int v2; // ecx
   int v3; // ebp
   int v4; // ebx
@@ -19,20 +22,19 @@ unsigned int * WWMouseClass::initSurface()
   _DWORD v8[4]; // [esp+4h] [ebp-20h] BYREF
   _DWORD v9[4]; // [esp+14h] [ebp-10h] BYREF
 
-  result = this; /*0x7b9040*/
-  if ( (int)*(this + 20) > 0 && (int)*(this + 21) > 0 ) /*0x7b9052*/
+  if ( (int)*(&this->q0080) > 0 && (int)*(&this->q0081) > 0 ) /*0x7b9052*/
   {
-    v2 = *(this + 9); /*0x7b9054*/
+    v2 = this->q024; /*0x7b9054*/
     if ( v2 ) /*0x7b9059*/
     {
-      v3 = result[17]; /*0x7b905b*/
+      v3 = this->q044; /*0x7b905b*/
       if ( v3 ) /*0x7b9060*/
       {
-        v4 = result[21]; /*0x7b9069*/
-        v5 = result[19]; /*0x7b906d*/
-        v6 = result[20]; /*0x7b9071*/
-        v9[0] = result[11] + result[18]; /*0x7b9074*/
-        v7 = result[12]; /*0x7b9078*/
+        v4 = this->q054; /*0x7b9069*/
+        v5 = this->q04C; /*0x7b906d*/
+        v6 = this->q050; /*0x7b9071*/
+        v9[0] = this->q02C + this->Rect0; /*0x7b9074*/
+        v7 = this->q030; /*0x7b9078*/
         v8[0] = 0; /*0x7b907f*/
         v8[1] = 0; /*0x7b9083*/
         v9[2] = v6; /*0x7b908f*/
@@ -40,7 +42,7 @@ unsigned int * WWMouseClass::initSurface()
         v9[1] = v7 + v5; /*0x7b9097*/
         v8[2] = v6; /*0x7b909b*/
         v8[3] = v4; /*0x7b909f*/
-        return (_DWORD *)(*(int (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)v2 + 8))( /*0x7b90ab*/
+        return (_DWORD *)(*(int (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(v2->vtable3)( /*0x7b90ab*/
                            v2,
                            v9,
                            v3,
@@ -50,9 +52,10 @@ unsigned int * WWMouseClass::initSurface()
       }
     }
   }
-  return result; /*0x7b90b1*/
 }
+} // namespace gamemd
 // 0x7B9930
+namespace gamemd {
 int WWMouseClass::hideCursor()
 {
   int v2; // ecx
@@ -66,25 +69,25 @@ int WWMouseClass::hideCursor()
 
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b994f*/
     Debug::Log(); /*0x7b9960*/
-  if ( !*(this + 3) ) /*0x7b9968*/
+  if ( !this->q00C ) /*0x7b9968*/
   {
-    if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*this + 28))(this) ) /*0x7b9977*/
+    if ( this->checkCapture() ) /*0x7b9977*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9994*/
         Debug::Log(); /*0x7b99a5*/
-      if ( (int)*(this + 20) > 0 && (int)*(this + 21) > 0 ) /*0x7b99ba*/
+      if ( (int)*(&this->q0080) > 0 && (int)*(&this->q0081) > 0 ) /*0x7b99ba*/
       {
-        v2 = *(this + 9); /*0x7b99bc*/
+        v2 = this->q024; /*0x7b99bc*/
         if ( v2 ) /*0x7b99c1*/
         {
-          v3 = *(this + 17); /*0x7b99c3*/
+          v3 = *(&this->q0047); /*0x7b99c3*/
           if ( v3 ) /*0x7b99c8*/
           {
-            v4 = *(this + 19); /*0x7b99cd*/
-            v5 = *(this + 20); /*0x7b99d3*/
-            v6 = *(this + 21); /*0x7b99d7*/
-            v10[0] = *(this + 11) + *(this + 18); /*0x7b99da*/
-            v7 = *(this + 12) + v4; /*0x7b99e1*/
+            v4 = *(&this->q0049); /*0x7b99cd*/
+            v5 = *(&this->q0080); /*0x7b99d3*/
+            v6 = *(&this->q0081); /*0x7b99d7*/
+            v10[0] = *(&this->q0041) + *(&this->q0048); /*0x7b99da*/
+            v7 = *(&this->q0042) + v4; /*0x7b99e1*/
             v9[0] = 0; /*0x7b99e7*/
             v9[1] = 0; /*0x7b99eb*/
             v10[2] = v5; /*0x7b99f4*/
@@ -110,10 +113,12 @@ int WWMouseClass::hideCursor()
         ; /*0x7b9a33*/
     }
   }
-  --*(this + 3); /*0x7b9a3f*/
+  --this->q00C; /*0x7b9a3f*/
   return ReleaseMutex(hMutex); /*0x7b9a4f*/
 }
+} // namespace gamemd
 // 0x7B9A60
+namespace gamemd {
 void* WWMouseClass::captureMouse()
 {
   int v2; // edx
@@ -121,10 +126,6 @@ void* WWMouseClass::captureMouse()
   int v4; // edi
   int v5; // edx
   int v6; // edi
-  int v7; // eax
-  int v8; // ecx
-  int v9; // edx
-  int v10; // edi
   int v11; // ebp
   int *v12; // eax
   int v13; // ebp
@@ -137,69 +138,71 @@ void* WWMouseClass::captureMouse()
   _DWORD v20[4]; // [esp+14h] [ebp-20h] BYREF
   _DWORD v21[4]; // [esp+24h] [ebp-10h] BYREF
 
-  if ( this && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 28))(this) ) /*0x7b9a70*/
+  if ( this && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)&this->q0088))(this) ) /*0x7b9a70*/
   {
     Debug::Log(); /*0x7b9a82*/
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9aa3*/
       Debug::Log(); /*0x7b9ab4*/
     v2 = *(_DWORD *)this; /*0x7b9abc*/
-    *(_BYTE *)(this + 16) = 1; /*0x7b9ac0*/
+    this->q010 = 1; /*0x7b9ac0*/
     if ( !(*(unsigned __int8 (__thiscall **)(int))(v2 + 8))(this) ) /*0x7b9ac4*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9ae7*/
         Debug::Log(); /*0x7b9af8*/
-      if ( BSurface::CreateTripleBuffer(this) && *(_DWORD *)(this + 36) ) /*0x7b9b0f*/
+      if ( BSurface::CreateTripleBuffer(this) && this->q024 ) /*0x7b9b0f*/
       {
         Rect::Set(&v16, 0, 0, 0, 0); /*0x7b9b26*/
-        if ( *(_DWORD *)(this + 4) ) /*0x7b9b2b*/
+        if ( this->q004 ) /*0x7b9b2b*/
         {
           UI_Helper_7BA2C0(); /*0x7b9b32*/
-          FoundationSize = Building::GetFoundationSize(v21, *(_DWORD *)(this + 8)); /*0x7b9b43*/
+          FoundationSize = Building::GetFoundationSize(v21, this->q008); /*0x7b9b43*/
           v16 = *FoundationSize; /*0x7b9b4c*/
           v17 = FoundationSize[1]; /*0x7b9b53*/
           v18 = FoundationSize[2]; /*0x7b9b5a*/
-          v4 = *(_DWORD *)(this + 60); /*0x7b9b5e*/
+          v4 = this->q03C; /*0x7b9b5e*/
           v19 = FoundationSize[3]; /*0x7b9b64*/
-          v5 = *(_DWORD *)(this + 20) - v4; /*0x7b9b6b*/
-          v6 = *(_DWORD *)(this + 64); /*0x7b9b6d*/
+          v5 = this->q014 - v4; /*0x7b9b6b*/
+          v6 = this->XY2; /*0x7b9b6d*/
           v16 += v5; /*0x7b9b72*/
-          v17 += *(_DWORD *)(this + 24) - v6; /*0x7b9b7d*/
+          v17 += this->q018 - v6; /*0x7b9b7d*/
           ReleaseMutex(hMutex); /*0x7b9b88*/
         }
-        v7 = v16; /*0x7b9b8a*/
-        v8 = v17; /*0x7b9b8e*/
-        v9 = v18; /*0x7b9b98*/
-        v10 = v19; /*0x7b9b9c*/
+        v16 = v16; /*0x7b9b8a*/
+        v17 = v17; /*0x7b9b8e*/
+        v18 = v18; /*0x7b9b98*/
+        v19 = v19; /*0x7b9b9c*/
         v20[0] = v16; /*0x7b9ba0*/
-        *(_DWORD *)(this + 72) = v16; /*0x7b9ba4*/
-        v20[2] = v9; /*0x7b9ba7*/
-        v20[3] = v10; /*0x7b9bab*/
-        *(_DWORD *)(this + 76) = v8; /*0x7b9bb1*/
-        *(_DWORD *)(this + 80) = v9; /*0x7b9bb6*/
-        *(_DWORD *)(this + 84) = v10; /*0x7b9bb9*/
-        v11 = v7 + *(_DWORD *)(this + 44); /*0x7b9bbf*/
-        v12 = *(int **)(this + 68); /*0x7b9bc1*/
+        this->Rect0 = v16; /*0x7b9ba4*/
+        v20[2] = v18; /*0x7b9ba7*/
+        v20[3] = v19; /*0x7b9bab*/
+        this->q04C = v17; /*0x7b9bb1*/
+        this->q050 = v18; /*0x7b9bb6*/
+        this->q054 = v19; /*0x7b9bb9*/
+        v11 = v16 + this->q02C; /*0x7b9bbf*/
+        v12 = *(int **)(&this->q0188); /*0x7b9bc1*/
         v20[0] = v11; /*0x7b9bc4*/
-        v20[1] = *(_DWORD *)(this + 48) + v8; /*0x7b9bcd*/
+        v20[1] = this->q030 + v17; /*0x7b9bcd*/
         v13 = *v12; /*0x7b9bd1*/
-        v15 = *(_DWORD *)(this + 36); /*0x7b9bdb*/
-        v14 = Rect::Set(v21, 0, 0, v9, v10); /*0x7b9be6*/
+        v15 = this->q024; /*0x7b9bdb*/
+        v14 = Rect::Set(v21, 0, 0, v18, v19); /*0x7b9be6*/
         (*(void (__thiscall **)(_DWORD, _DWORD *, int, _DWORD *, _DWORD, int))(v13 + 8))( /*0x7b9bef*/
-          *(_DWORD *)(this + 68),
+          this->q044,
           v14,
           v15,
           v20,
           0,
           1);
       }
-      Mouse::DrawCursor((_DWORD *)this, *(int **)(this + 36), 0, 0); /*0x7b9bfd*/
+      Mouse::DrawCursor(*(int **)(&this->q00C6), 0, 0); /*0x7b9bfd*/
       ReleaseMutex(hMutex); /*0x7b9c09*/
     }
     ShowCursor(0); /*0x7b9c0d*/
     ReleaseMutex(hMutex); /*0x7b9c19*/
   }
 }
+} // namespace gamemd
 // 0x7B9C30
+namespace gamemd {
 void WWMouseClass::releaseMouse()
 {
   int v2; // edx
@@ -212,30 +215,30 @@ void WWMouseClass::releaseMouse()
   _DWORD v9[4]; // [esp+4h] [ebp-20h] BYREF
   _DWORD v10[4]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( this && (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)this + 28))(this) ) /*0x7b9c40*/
+  if ( this && (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)&this->q0088))(this) ) /*0x7b9c40*/
   {
     Debug::Log(); /*0x7b9c51*/
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9c72*/
       Debug::Log(); /*0x7b9c83*/
     v2 = *(_DWORD *)this; /*0x7b9c8b*/
-    *(this + 16) = 0; /*0x7b9c8f*/
+    *(&this->q0046) = 0; /*0x7b9c8f*/
     if ( !(*(unsigned __int8 (__thiscall **)(_BYTE *))(v2 + 8))(this) ) /*0x7b9c93*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9cb0*/
         Debug::Log(); /*0x7b9cc1*/
-      if ( *((int *)this + 20) > 0 && *((int *)this + 21) > 0 ) /*0x7b9cd6*/
+      if ( this->q050 > 0 && this->q054 > 0 ) /*0x7b9cd6*/
       {
-        v3 = *((_DWORD *)this + 9); /*0x7b9cd8*/
+        v3 = this->q024; /*0x7b9cd8*/
         if ( v3 ) /*0x7b9cdd*/
         {
-          v4 = *((_DWORD *)this + 17); /*0x7b9cdf*/
+          v4 = this->q044; /*0x7b9cdf*/
           if ( v4 ) /*0x7b9ce4*/
           {
-            v5 = *((_DWORD *)this + 19); /*0x7b9ce9*/
-            v6 = *((_DWORD *)this + 20); /*0x7b9cef*/
-            v7 = *((_DWORD *)this + 21); /*0x7b9cf3*/
-            v10[0] = *((_DWORD *)this + 11) + *((_DWORD *)this + 18); /*0x7b9cf6*/
-            v8 = *((_DWORD *)this + 12) + v5; /*0x7b9cfd*/
+            v5 = this->q04C; /*0x7b9ce9*/
+            v6 = this->q050; /*0x7b9cef*/
+            v7 = this->q054; /*0x7b9cf3*/
+            v10[0] = this->q02C + this->Rect0; /*0x7b9cf6*/
+            v8 = this->q030 + v5; /*0x7b9cfd*/
             v9[0] = 0; /*0x7b9d03*/
             v9[1] = 0; /*0x7b9d07*/
             v10[2] = v6; /*0x7b9d10*/
@@ -260,12 +263,16 @@ void WWMouseClass::releaseMouse()
     ReleaseMutex(hMutex); /*0x7b9d5c*/
   }
 }
+} // namespace gamemd
 // 0x7BA340
+namespace gamemd {
 int WWMouseClass::checkRegion()
 {
-  return *(this + 7); /*0x7ba343*/
+  return this->q01C; /*0x7ba343*/
 }
+} // namespace gamemd
 // 0x7BA360
+namespace gamemd {
 unsigned int * WWMouseClass::updatePosition(unsigned int * a2)
 {
   int v3; // edx
@@ -273,35 +280,45 @@ unsigned int * WWMouseClass::updatePosition(unsigned int * a2)
 
   v3 = *(this + 7); /*0x7ba364*/
   v4 = *(this + 8); /*0x7ba367*/
-  *a2 = v3; /*0x7ba36a*/
-  a2[1] = v4; /*0x7ba36c*/
-  return a2; /*0x7ba36f*/
+  *v3 = v3; /*0x7ba36a*/
+  v3[1] = v4; /*0x7ba36c*/
 }
+} // namespace gamemd
 // 0x7B89F0
+namespace gamemd {
 int WWMouseClass::COMStub()
 {
-  return *(this + 3); /*0x7b89f3*/
+  return this->q00C; /*0x7b89f3*/
 }
+} // namespace gamemd
 // 0x7B9D80
+namespace gamemd {
 int WWMouseClass::checkVisible()
 {
-  return (*(int (__thiscall **)(void *))(*(_DWORD *)this + 16))(this);
+  return 0;
 }
+} // namespace gamemd
 // 0x7BA300
+namespace gamemd {
 MouseClass * WWMouseClass::updateHotspot(char a2)
 {
-  *this = &Mouse::`vftable'; /*0x7ba309*/
+  *this = &(void*)(void*)&Mouse_vftable; /*0x7ba309*/
   if ( (a2 & 1) != 0 ) /*0x7ba30f*/
-    __3_YAXPAX_Z(this); /*0x7ba312*/
+    RA2_OPDEL(); /*0x7ba312*/
   return this; /*0x7ba31c*/
 }
+} // namespace gamemd
 // 0x7BA330
+namespace gamemd {
 char WWMouseClass::checkCapture()
 {
-  return *(this + 16); /*0x7ba333*/
+  return *(&this->u32_46); /*0x7ba333*/
 }
+} // namespace gamemd
 // 0x7BA350
+namespace gamemd {
 int WWMouseClass::checkBounds()
 {
   return *(this + 8); /*0x7ba353*/
 }
+} // namespace gamemd

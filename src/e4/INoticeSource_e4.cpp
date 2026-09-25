@@ -2,9 +2,14 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/INoticeSource_e4.hpp"
+#include "e4/classes/IPXConnClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4105F0
+namespace gamemd {
 int INoticeSource::Dispatch(int a1)
 {
   return AbstractClass::COMStub_AddRef(a1 - 4);
 }
+} // namespace gamemd

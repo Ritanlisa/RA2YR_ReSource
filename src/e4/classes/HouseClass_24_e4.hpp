@@ -5,13 +5,23 @@
 
 namespace gamemd {
 struct HouseClass_24 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+    void* q004;  // 0x4
+    int q008;  // 0x8
+    bool q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    bool IsInitialized;  // 0x12
+    bool q018;  // 0x18
+    unsigned char q01C;  // 0x1C
+    bool q024;  // 0x24
+// --- flat members (END) ---
     int Seek(int a2);  // 0x4F28A0
     char AddRef(int a2);  // 0x4F28E0
     char Release(int a2, unsigned int * a3);  // 0x4F2920
     void ddtor();  // 0x4F29D0
     int Read(unsigned int * a2);  // 0x4F2A00
-    VectorClass * QueryInterface(char a2);  // 0x4F2B60
+    VectorClass_flat * QueryInterface(char a2);  // 0x4F2B60
     unsigned int Write(int a2);  // 0x4F2A40
 };
 } // namespace gamemd

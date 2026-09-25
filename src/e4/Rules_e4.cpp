@@ -4,11 +4,26 @@
 #include "e4/classes/Rules_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/RulesClass_e4.hpp"
+#include "e4/classes/VocClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/Rect_e4.hpp"
+#include "e4/classes/ScoreScreen_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/SaveGame_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/Scenario_e4.hpp"
 
 // 0x6691E0
 namespace gamemd {
 int Rules::ReadMiscINI()
-{
 {
   int result; // eax
   int Int_Overwrite; // eax
@@ -96,14 +111,14 @@ int Rules::ReadMiscINI()
   CCINIClass *v241; // edx
   CCINIClass *v242; // edx
   CCINIClass *v243; // edx
-  VectorClass *ebp360; // ebp
+  VectorClass_flat *ebp360; // ebp
   CCINIClass *v245; // eax
   CCINIClass *v246; // eax
   CCINIClass *v247; // eax
   CCINIClass *v248; // eax
   double Double_Overwrite; // st7
   int Coord; // eax
-  TypeList *v258; // [esp-Ch] [ebp-E0h]
+  TypeList_flat *v258; // [esp-Ch] [ebp-E0h]
   __int16 v259; // [esp-8h] [ebp-DCh]
   INIClass *aP3_8; // [esp+8h] [ebp-CCh]
   int aP3_12; // [esp+Ch] [ebp-C8h]
@@ -1289,7 +1304,7 @@ int Rules::ReadMiscINI()
       v157 = v156;
     }
     *(_DWORD *)&this->__pad_240[456] = v157;
-    LOBYTE(this->ElevationBonusCap[1]) = INIClass::ReadBool_Overwrite(
+    IDA_LOBYTE(this->ElevationBonusCap[1]) = INIClass::ReadBool_Overwrite(
                                            (int)v273,
                                            (unsigned __int8 *)&stru_830620[39048],
                                            (CCINIClass *)&stru_830620[40828],
@@ -1471,7 +1486,7 @@ int Rules::ReadMiscINI()
     }
     this->BuildingDamageSound = v181;
   int v256; // [esp-14h] [ebp-E8h] BYREF
-    IntVector::Copy(&v256, (VectorClass *)&this->HealCrateSound);
+    IntVector::Copy(&v256, (VectorClass_flat *)&this->HealCrateSound);
     INIClassIntList = (CCINIClass *)GetINIClassIntList(
                                       (int)&v264,
                                       v273,
@@ -1485,14 +1500,14 @@ int Rules::ReadMiscINI()
                                       this->ScatterSound,
                                       this->DeploySound,
                                       *(int *)&v260[8]);
-    TypeList::Copy(&this->HealCrateSound, INIClassIntList);
+    TypeList_flat::Copy(&this->HealCrateSound, INIClassIntList);
     this->ScatterSound = INIClassIntList->sectionHead[0];
     this->DeploySound = INIClassIntList->sectionHead[1];
     this->StormSound = INIClassIntList->sectionHead[2];
     v264 = (void **)&vt_VectorClass_int;
   char v266; // [esp+A9h] [ebp-2Bh]
     if ( Block && v266 )
-      __3_YAXPAX_Z(Block);
+      RA2_OPDEL(Block);
     int v183 = this->LightningSounds[0];
     if ( !INIClass::GetString(
             v273,
@@ -1757,7 +1772,7 @@ int Rules::ReadMiscINI()
       v218 = v217;
     }
     *(_DWORD *)&this->__pad_704[44] = v218;
-    IntVector::Copy(&v256, (VectorClass *)&this->__pad_704[48]);
+    IntVector::Copy(&v256, (VectorClass_flat *)&this->__pad_704[48]);
     v219 = (CCINIClass *)GetINIClassIntList(
                            (int)&v264,
                            v273,
@@ -1770,13 +1785,13 @@ int Rules::ReadMiscINI()
                            *(_DWORD *)&this->__pad_704[64],
                            *(_DWORD *)&this->__pad_704[68],
                            *(int *)&v260[8]);
-    TypeList::Copy(&this->__pad_704[48], v219);
+    TypeList_flat::Copy(&this->__pad_704[48], v219);
     *(_DWORD *)&this->__pad_704[64] = v219->sectionHead[0];
     *(_DWORD *)&this->__pad_704[68] = v219->sectionHead[1];
     *(_DWORD *)&this->__pad_704[72] = v219->sectionHead[2];
     v264 = (void **)&vt_VectorClass_int;
     if ( Block && v266 )
-      __3_YAXPAX_Z(Block);
+      RA2_OPDEL(Block);
     int v220 = *(_DWORD *)&this->__pad_704[76];
     if ( !INIClass::GetString(
             v273,
@@ -1800,7 +1815,7 @@ int Rules::ReadMiscINI()
            (INIClass *)aP1.headNode,
            *(int *)&v260[8]) )
     {
-      DynamicVectorClass::AnimTypeConstructor(&v264, 0, 0);
+      DynamicVectorClass_flat::AnimTypeConstructor(&v264, 0, 0);
       v264 = (void **)&vt_TypeList_AnimTypeClass_const;
       for ( i = (AbstractClass *)strtok((char *)aP1.headNode, (ObjectClass *)&stru_817F40.nextObject);
             i;
@@ -1810,17 +1825,17 @@ int Rules::ReadMiscINI()
           break;
         *(_DWORD *)aP1[0] = AnimTypeClass::FindOrCreate(i);
         if ( *(_DWORD *)aP1[0] )
-          DynamicVector::Add_Alt4(&v264, (VectorClass *)&aP1);
+          DynamicVector::Add_Alt4(&v264, (VectorClass_flat *)&aP1);
       }
-      TypeList::AnimTypeCopy(&v267, (VectorClass *)&v264);
+      TypeList_flat::AnimTypeCopy(&v267, (VectorClass_flat *)&v264);
       v264 = (void **)&vt_VectorClass_AnimTypeClass_const;
-      DynamicVectorClass::Destroy_Alt((int)&v264);
+      DynamicVectorClass_flat::Destroy_Alt((int)&v264);
     }
     else
     {
-      TypeList::AnimTypeCopy(&v267, (VectorClass *)&this->Easy[17]);
+      TypeList_flat::AnimTypeCopy(&v267, (VectorClass_flat *)&this->Easy[17]);
     }
-    VectorClass::CopyDefault(&this->Easy[17], (VectorClass *)&v267);
+    VectorClass_flat::CopyDefault(&this->Easy[17], (VectorClass_flat *)&v267);
   int v270; // [esp+C8h] [ebp-Ch]
     this->Normal[1] = v270;
   int v271; // [esp+CCh] [ebp-8h]
@@ -1831,7 +1846,7 @@ int Rules::ReadMiscINI()
   char v269; // [esp+C5h] [ebp-Fh]
   void *v268; // [esp+BCh] [ebp-18h]
     if ( v268 && v269 )
-      __3_YAXPAX_Z(v268);
+      RA2_OPDEL(v268);
     if ( INIClass::GetString(
            v273,
            (INIClass *)&stru_830620[39048],
@@ -1840,7 +1855,7 @@ int Rules::ReadMiscINI()
            (INIClass *)aP1.headNode,
            128) )
     {
-      DynamicVectorClass::AnimTypeConstructor(&v264, 0, 0);
+      DynamicVectorClass_flat::AnimTypeConstructor(&v264, 0, 0);
       v264 = (void **)&vt_TypeList_AnimTypeClass_const;
       for ( j = (AbstractClass *)strtok((char *)aP1.headNode, (ObjectClass *)&stru_817F40.nextObject);
             j;
@@ -1850,20 +1865,20 @@ int Rules::ReadMiscINI()
           break;
         *(_DWORD *)aP1[0] = AnimTypeClass::FindOrCreate(j);
         if ( *(_DWORD *)aP1[0] )
-          DynamicVector::Add_Alt4(&v264, (VectorClass *)&aP1);
+          DynamicVector::Add_Alt4(&v264, (VectorClass_flat *)&aP1);
       }
-      TypeList::AnimTypeCopy(&v267, (VectorClass *)&v264);
+      TypeList_flat::AnimTypeCopy(&v267, (VectorClass_flat *)&v264);
       v264 = (void **)&vt_VectorClass_AnimTypeClass_const;
-      DynamicVectorClass::Destroy_Alt((int)&v264);
+      DynamicVectorClass_flat::Destroy_Alt((int)&v264);
     }
     else
     {
-      TypeList::AnimTypeCopy(&v267, (VectorClass *)&this->Easy[10]);
+      TypeList_flat::AnimTypeCopy(&v267, (VectorClass_flat *)&this->Easy[10]);
     }
     InfantryTypeClass::CopyDataArray(&this->Easy[10], (DynamicVector *)&v267);
     this->Easy[16] = v272;
     v267 = (void **)&vt_VectorClass_AnimTypeClass_const;
-    DynamicVectorClass::Destroy_Alt((int)&v267);
+    DynamicVectorClass_flat::Destroy_Alt((int)&v267);
     int v224 = this->Normal[4];
     if ( INIClass::GetString(
            v273,
@@ -1938,11 +1953,11 @@ int Rules::ReadMiscINI()
       v232 = (AnimTypeClass *)v231;
     }
     this->Normal[17] = (int)v232;
-    HIBYTE(this->ElevationIncrementBonus[0]) = INIClass::ReadBool_Overwrite(
+    IDA_HIBYTE(this->ElevationIncrementBonus[0]) = INIClass::ReadBool_Overwrite(
                                                  (int)v273,
                                                  (unsigned __int8 *)&stru_830620[39048],
                                                  (CCINIClass *)&stru_830620[40304],
-                                                 HIBYTE(this->ElevationIncrementBonus[0]));
+                                                 IDA_HIBYTE(this->ElevationIncrementBonus[0]));
     this->Crush = 0;
     this->CrateRadius = 1072693248;
     v233 = (CCINIClass *)this->RefundPercent[0];
@@ -1963,11 +1978,11 @@ int Rules::ReadMiscINI()
     *(_DWORD *)&v260[4] = &stru_830620[40256];
     *(_DWORD *)v260 = &stru_830620[39048];
     *(_DWORD *)&this->__pad_C3C[2176] = INIClass::ReadCoord(*(double *)v260, *(int *)&v260[8], aP3_8, aP3_12);
-    BYTE2(this->ElevationIncrementBonus[0]) = INIClass::ReadBool_Overwrite(
+    IDA_BYTE2(this->ElevationIncrementBonus[0]) = INIClass::ReadBool_Overwrite(
                                                 (int)v273,
                                                 (unsigned __int8 *)&stru_830620[39048],
                                                 (CCINIClass *)&stru_830620[40244],
-                                                BYTE2(this->ElevationIncrementBonus[0]));
+                                                IDA_BYTE2(this->ElevationIncrementBonus[0]));
     this->RepairRate[0] = INIClass::ReadInt_Overwrite(
                             (int)v273,
                             (unsigned __int8 *)&stru_830620[39048],
@@ -1994,11 +2009,11 @@ int Rules::ReadMiscINI()
                                                       (INIClass *)&stru_830620[39048],
                                                       (unsigned __int8 *)&stru_830620[40188],
                                                       (INIClass *)v238);
-    BYTE2(this->ElevationIncrementBonus[1]) = INIClass::ReadBool_Overwrite(
+    IDA_BYTE2(this->ElevationIncrementBonus[1]) = INIClass::ReadBool_Overwrite(
                                                 (int)v273,
                                                 (unsigned __int8 *)&stru_830620[39048],
                                                 (CCINIClass *)&stru_830620[40172],
-                                                BYTE2(this->ElevationIncrementBonus[1]));
+                                                IDA_BYTE2(this->ElevationIncrementBonus[1]));
     v239 = *(CCINIClass **)&this->__pad_C3C[2188];
     *(_DWORD *)&v260[8] = *(_DWORD *)&this->__pad_C3C[2192];
     *(double *)&this->__pad_C3C[2188] = INIClass::ReadDouble_Overwrite(
@@ -2040,7 +2055,7 @@ int Rules::ReadMiscINI()
                                    (CCINIClass *)&stru_830620[40084],
                                    (INIClass *)this->IceSolidifyFrameTime);
     (*(void (__thiscall **)(int *))(this->VeteranROF[0] + 12))(this->VeteranROF);
-    DynamicVectorClass::Copy(&v256, (DynamicVector *)this->VeteranROF);
+    DynamicVectorClass_flat::Copy(&v256, (DynamicVector *)this->VeteranROF);
     ebp360 = GetINIClassIntList(
                (int)&v264,
                v273,
@@ -2053,7 +2068,7 @@ int Rules::ReadMiscINI()
                *(int *)v260,
                *(int *)&v260[4],
                *(int *)&v260[8]);
-    TypeList::Copy(this->VeteranROF, ebp360);
+    TypeList_flat::Copy(this->VeteranROF, ebp360);
     this->CloakSound = (int)ebp360[1].vtable0;
     this->SellSound = (int)ebp360[1].Items;
     this->GameClosed = ebp360[1].Capacity;
@@ -2061,7 +2076,7 @@ int Rules::ReadMiscINI()
     if ( Block )
     {
       if ( v266 )
-        __3_YAXPAX_Z(Block);
+        RA2_OPDEL(Block);
     }
     v245 = (CCINIClass *)this->AmbientChangeRate[1];
     *(_DWORD *)&v260[8] = this->AmbientChangeStep[0];
@@ -2189,45 +2204,43 @@ int Rules::ReadMiscINI()
                                 (int)v273,
                                 (INIClass *)&stru_830620[39048],
                                 (unsigned __int8 *)&stru_830620[39728],
-                                (INIClass *)LODWORD(v255));
-    LOBYTE(result) = 1;
+                                (INIClass *)IDA_LODWORD(v255));
+    IDA_LOBYTE(result) = 1;
   }
   else
   {
-    LOBYTE(result) = 0;
+    IDA_LOBYTE(result) = 0;
   }
   return result;
 }
 
 } // namespace gamemd
-}
 
 // 0x66BBB0
 namespace gamemd {
 IUnknown * * Rules::ReadCombatINI()
 {
-{
   int result; // eax
   int Int_Overwrite; // eax
   ObjectClass *i; // eax
-  VectorClass *v6; // edx
+  VectorClass_flat *v6; // edx
   ObjectClass *j; // eax
   ObjectClass *k; // eax
-  VectorClass *v14; // ecx
+  VectorClass_flat *v14; // ecx
   ObjectClass *m; // eax
-  VectorClass *v18; // edx
+  VectorClass_flat *v18; // edx
   ObjectClass *n; // eax
   AbstractClass *ii; // eax
-  VectorClass *v26; // ecx
+  VectorClass_flat *v26; // ecx
   CCINIClass *v44; // ebx
   CCINIClass *v45; // eax
   char Bool_Overwrite; // al
   WeaponTypeClass *v49; // ebx
   WeaponTypeClass *v50; // eax
-  VectorClass *v56; // eax
+  VectorClass_flat *v56; // eax
   CCINIClass *v58; // eax
-  VectorClass *v59; // eax
-  VectorClass *v60; // eax
+  VectorClass_flat *v59; // eax
+  VectorClass_flat *v60; // eax
   AnimTypeClass *ebx112; // ebx
   AnimTypeClass *v57; // eax
   AnimTypeClass *ebx115; // ebx
@@ -2272,7 +2285,7 @@ IUnknown * * Rules::ReadCombatINI()
   WarheadTypeClass *v111; // ecx
   void **_FFFFFFEC; // [esp-14h] [ebp-E4h] BYREF
   CCINIClass *v113; // [esp-10h] [ebp-E0h]
-  VectorClass *_FFFFFFF4; // [esp-Ch] [ebp-DCh]
+  VectorClass_flat *_FFFFFFF4; // [esp-Ch] [ebp-DCh]
   __int16 v114; // [esp-8h] [ebp-D8h]
   INIClass *aP3_8; // [esp+8h] [ebp-C8h]
   int aP3_12; // [esp+Ch] [ebp-C4h]
@@ -2343,22 +2356,22 @@ IUnknown * * Rules::ReadCombatINI()
       }
       SmudgeTypeList::Copy(aP1_4, (CCINIClass *)&aP1_4[0].sectionCount);
       aP1_4[0].sectionCount = (int)&vt_VectorClass_SmudgeTypeClass_const;
-      VectorClass::ClearAndFree((int)&aP1_4[0].sectionCount);
+      VectorClass_flat::ClearAndFree((int)&aP1_4[0].sectionCount);
     }
     else
     {
       SmudgeTypeList::Copy(aP1_4, (CCINIClass *)&this->NodBaseDefenseCoefficient[1]);
     }
-    VectorClass::CopySmudge(&this->NodBaseDefenseCoefficient[1], aP1_4);
+    VectorClass_flat::CopySmudge(&this->NodBaseDefenseCoefficient[1], aP1_4);
     int v5 = aP1_4[0].sectionHead[1];
-    v6 = (VectorClass *)aP1_4[0].sectionHead[2];
+    v6 = (VectorClass_flat *)aP1_4[0].sectionHead[2];
     this->MaximumBaseDefenseValue = aP1_4[0].sectionHead[0];
     void * v7 = (void *)aP1_4[0].headNode[0];
     this->BaseUnit[0] = v5;
     this->HarvesterUnit[0] = (int)v6;
     *(_DWORD *)aP1_4[0].__pad_0 = &vt_VectorClass_SmudgeTypeClass_const;
-    if ( v7 && BYTE1(aP1_4[0].headNode[2]) )
-      __3_YAXPAX_Z(v7);
+    if ( v7 && IDA_BYTE1(aP1_4[0].headNode[2]) )
+      RA2_OPDEL(v7);
     if ( INIClass::GetString(
            v120,
            (INIClass *)&stru_830620[39020],
@@ -2381,13 +2394,13 @@ IUnknown * * Rules::ReadCombatINI()
       }
       SmudgeTypeList::Copy(aP1_4, (CCINIClass *)&aP1_4[0].sectionCount);
       aP1_4[0].sectionCount = (int)&vt_VectorClass_SmudgeTypeClass_const;
-      VectorClass::ClearAndFree((int)&aP1_4[0].sectionCount);
+      VectorClass_flat::ClearAndFree((int)&aP1_4[0].sectionCount);
     }
     else
     {
       SmudgeTypeList::Copy(aP1_4, (CCINIClass *)this->PadAircraft);
     }
-    VectorClass::CopySmudge(this->PadAircraft, aP1_4);
+    VectorClass_flat::CopySmudge(this->PadAircraft, aP1_4);
     void * v9 = (void *)aP1_4[0].sectionHead[0];
     void * v10 = (void *)aP1_4[0].sectionHead[1];
     this->BombParachute = (void *)aP1_4[0].sectionHead[2];
@@ -2395,8 +2408,8 @@ IUnknown * * Rules::ReadCombatINI()
     this->SmokeAlt = v9;
     this->MoveFlash = v10;
     *(_DWORD *)aP1_4[0].__pad_0 = &vt_VectorClass_SmudgeTypeClass_const;
-    if ( v11 && BYTE1(aP1_4[0].headNode[2]) )
-      __3_YAXPAX_Z(v11);
+    if ( v11 && IDA_BYTE1(aP1_4[0].headNode[2]) )
+      RA2_OPDEL(v11);
     if ( INIClass::GetString(
            v120,
            (INIClass *)&stru_830620[39020],
@@ -2419,22 +2432,22 @@ IUnknown * * Rules::ReadCombatINI()
       }
       SmudgeTypeList::Copy(aP1_4, (CCINIClass *)&aP1_4[0].sectionCount);
       aP1_4[0].sectionCount = (int)&vt_VectorClass_SmudgeTypeClass_const;
-      VectorClass::ClearAndFree((int)&aP1_4[0].sectionCount);
+      VectorClass_flat::ClearAndFree((int)&aP1_4[0].sectionCount);
     }
     else
     {
       SmudgeTypeList::Copy(aP1_4, (CCINIClass *)&this->Parachute);
     }
-    VectorClass::CopySmudge(&this->Parachute, aP1_4);
+    VectorClass_flat::CopySmudge(&this->Parachute, aP1_4);
     void * v13 = (void *)aP1_4[0].sectionHead[0];
-    v14 = (VectorClass *)aP1_4[0].sectionHead[2];
+    v14 = (VectorClass_flat *)aP1_4[0].sectionHead[2];
     this->EliteFlashTimer = aP1_4[0].sectionHead[1];
     void * v15 = (void *)aP1_4[0].headNode[0];
     this->Paratrooper = v13;
     this->ChronoDelay = (int)v14;
     *(_DWORD *)aP1_4[0].__pad_0 = &vt_VectorClass_SmudgeTypeClass_const;
-    if ( v15 && BYTE1(aP1_4[0].headNode[2]) )
-      __3_YAXPAX_Z(v15);
+    if ( v15 && IDA_BYTE1(aP1_4[0].headNode[2]) )
+      RA2_OPDEL(v15);
     if ( INIClass::GetString(
            v120,
            (INIClass *)&stru_830620[39020],
@@ -2457,22 +2470,22 @@ IUnknown * * Rules::ReadCombatINI()
       }
       SmudgeTypeList::Copy(aP1_4, (CCINIClass *)&aP1_4[0].sectionCount);
       aP1_4[0].sectionCount = (int)&vt_VectorClass_SmudgeTypeClass_const;
-      VectorClass::ClearAndFree((int)&aP1_4[0].sectionCount);
+      VectorClass_flat::ClearAndFree((int)&aP1_4[0].sectionCount);
     }
     else
     {
       SmudgeTypeList::Copy(aP1_4, (CCINIClass *)&this->ChronoReinfDelay);
     }
-    VectorClass::CopySmudge(&this->ChronoReinfDelay, aP1_4);
+    VectorClass_flat::CopySmudge(&this->ChronoReinfDelay, aP1_4);
     void * v17 = (void *)aP1_4[0].sectionHead[1];
-    v18 = (VectorClass *)aP1_4[0].sectionHead[2];
+    v18 = (VectorClass_flat *)aP1_4[0].sectionHead[2];
     this->ChronoRangeMinimum = aP1_4[0].sectionHead[0];
     void * v19 = (void *)aP1_4[0].headNode[0];
     this->AlliedDisguise = v17;
     this->SovietDisguise = v18;
     *(_DWORD *)aP1_4[0].__pad_0 = &vt_VectorClass_SmudgeTypeClass_const;
-    if ( v19 && BYTE1(aP1_4[0].headNode[2]) )
-      __3_YAXPAX_Z(v19);
+    if ( v19 && IDA_BYTE1(aP1_4[0].headNode[2]) )
+      RA2_OPDEL(v19);
     if ( INIClass::GetString(
            v120,
            (INIClass *)&stru_830620[39020],
@@ -2495,13 +2508,13 @@ IUnknown * * Rules::ReadCombatINI()
       }
       SmudgeTypeList::Copy(aP1_4, (CCINIClass *)&aP1_4[0].sectionCount);
       aP1_4[0].sectionCount = (int)&vt_VectorClass_SmudgeTypeClass_const;
-      VectorClass::ClearAndFree((int)&aP1_4[0].sectionCount);
+      VectorClass_flat::ClearAndFree((int)&aP1_4[0].sectionCount);
     }
     else
     {
       SmudgeTypeList::Copy(aP1_4, (CCINIClass *)&this->ThirdDisguise);
     }
-    VectorClass::CopySmudge(&this->ThirdDisguise, aP1_4);
+    VectorClass_flat::CopySmudge(&this->ThirdDisguise, aP1_4);
     float v21 = *(float *)aP1_4[0].sectionHead;
     int v22 = aP1_4[0].sectionHead[1];
     this->HarvesterTooFarDistance = aP1_4[0].sectionHead[2];
@@ -2509,8 +2522,8 @@ IUnknown * * Rules::ReadCombatINI()
     this->AIMinorSuperReadyPercent = v21;
     this->AISafeDistance = v22;
     *(_DWORD *)aP1_4[0].__pad_0 = &vt_VectorClass_SmudgeTypeClass_const;
-    if ( v23 && BYTE1(aP1_4[0].headNode[2]) )
-      __3_YAXPAX_Z(v23);
+    if ( v23 && IDA_BYTE1(aP1_4[0].headNode[2]) )
+      RA2_OPDEL(v23);
     if ( INIClass::GetString(
            v120,
            (INIClass *)&stru_830620[39020],
@@ -2519,7 +2532,7 @@ IUnknown * * Rules::ReadCombatINI()
            (INIClass *)&aP1_4[0].unknown38,
            128) )
     {
-      DynamicVectorClass::AnimTypeConstructor(&aP1_4[0].sectionCount, 0, 0);
+      DynamicVectorClass_flat::AnimTypeConstructor(&aP1_4[0].sectionCount, 0, 0);
       aP1_4[0].sectionCount = (int)&vt_TypeList_AnimTypeClass_const;
       for ( ii = (AbstractClass *)strtok((char *)&aP1_4[0].unknown38, (ObjectClass *)&stru_817F40.nextObject);
             ii;
@@ -2529,26 +2542,26 @@ IUnknown * * Rules::ReadCombatINI()
           break;
         IntList = (CCINIClass *)AnimTypeClass::FindOrCreate(ii);
         if ( IntList )
-          DynamicVector::Add_Alt4(&aP1_4[0].sectionCount, (VectorClass *)&IntList);
+          DynamicVector::Add_Alt4(&aP1_4[0].sectionCount, (VectorClass_flat *)&IntList);
       }
-      TypeList::AnimTypeCopy(aP1_4, (VectorClass *)&aP1_4[0].sectionCount);
+      TypeList_flat::AnimTypeCopy(aP1_4, (VectorClass_flat *)&aP1_4[0].sectionCount);
       aP1_4[0].sectionCount = (int)&vt_VectorClass_AnimTypeClass_const;
-      DynamicVectorClass::Destroy_Alt((int)&aP1_4[0].sectionCount);
+      DynamicVectorClass_flat::Destroy_Alt((int)&aP1_4[0].sectionCount);
     }
     else
     {
-      TypeList::AnimTypeCopy(aP1_4, (VectorClass *)&this->Normal[9]);
+      TypeList_flat::AnimTypeCopy(aP1_4, (VectorClass_flat *)&this->Normal[9]);
     }
-    VectorClass::CopyDefault(&this->Normal[9], (VectorClass *)aP1_4);
+    VectorClass_flat::CopyDefault(&this->Normal[9], (VectorClass_flat *)aP1_4);
     int v25 = aP1_4[0].sectionHead[0];
-    v26 = (VectorClass *)aP1_4[0].sectionHead[2];
+    v26 = (VectorClass_flat *)aP1_4[0].sectionHead[2];
     this->Normal[14] = aP1_4[0].sectionHead[1];
     void * v27 = (void *)aP1_4[0].headNode[0];
     this->Normal[13] = v25;
     this->Normal[15] = (int)v26;
     *(_DWORD *)aP1_4[0].__pad_0 = &vt_VectorClass_AnimTypeClass_const;
-    if ( v27 && BYTE1(aP1_4[0].headNode[2]) )
-      __3_YAXPAX_Z(v27);
+    if ( v27 && IDA_BYTE1(aP1_4[0].headNode[2]) )
+      RA2_OPDEL(v27);
     int v28 = *(_DWORD *)&this->__pad_C3C[840];
     if ( INIClass::GetString(
            v120,
@@ -2833,7 +2846,7 @@ IUnknown * * Rules::ReadCombatINI()
                                          (CCINIClass *)&stru_830620[43444],
                                          *(INIClass **)&this->__pad_C3C[804]);
     IntList = (CCINIClass *)&_FFFFFFEC;
-    DynamicVectorClass::Copy(&_FFFFFFEC, (DynamicVector *)&this->__pad_C3C[684]);
+    DynamicVectorClass_flat::Copy(&_FFFFFFEC, (DynamicVector *)&this->__pad_C3C[684]);
     *(_DWORD *)IntList->__pad_0 = &vt_TypeList_int;
     IntList = (CCINIClass *)INIClass::ReadIntList(
                               v120,
@@ -2847,8 +2860,8 @@ IUnknown * * Rules::ReadCombatINI()
                               *(int *)aP3,
                               *(int *)&aP3[4],
                               *(int *)&aP3[8]);
-    TypeList::Copy(&this->__pad_C3C[684], IntList);
-    v56 = (VectorClass *)IntList;
+    TypeList_flat::Copy(&this->__pad_C3C[684], IntList);
+    v56 = (VectorClass_flat *)IntList;
     *(_DWORD *)&this->__pad_C3C[700] = IntList->sectionHead[0];
     *(_DWORD *)&this->__pad_C3C[704] = v56[1].Items;
     int v52 = v56[1].Capacity;
@@ -2856,9 +2869,9 @@ IUnknown * * Rules::ReadCombatINI()
     *(_DWORD *)&this->__pad_C3C[708] = v52;
     aP1_4[0].sectionCount = (int)&vt_VectorClass_int;
     if ( v58 && aP1_4[0].__pad_20[9] )
-      __3_YAXPAX_Z(v58);
+      RA2_OPDEL(v58);
     IntList = (CCINIClass *)&_FFFFFFEC;
-    DynamicVectorClass::Copy(&_FFFFFFEC, (DynamicVector *)&this->__pad_C3C[712]);
+    DynamicVectorClass_flat::Copy(&_FFFFFFEC, (DynamicVector *)&this->__pad_C3C[712]);
     *(_DWORD *)IntList->__pad_0 = &vt_TypeList_int;
     IntList = (CCINIClass *)INIClass::ReadIntList(
                               v120,
@@ -2872,16 +2885,16 @@ IUnknown * * Rules::ReadCombatINI()
                               *(int *)aP3,
                               *(int *)&aP3[4],
                               *(int *)&aP3[8]);
-    TypeList::Copy(&this->__pad_C3C[712], IntList);
-    v59 = (VectorClass *)IntList;
+    TypeList_flat::Copy(&this->__pad_C3C[712], IntList);
+    v59 = (VectorClass_flat *)IntList;
     *(_DWORD *)&this->__pad_C3C[728] = IntList->sectionHead[0];
     *(_DWORD *)&this->__pad_C3C[732] = v59[1].Items;
     *(_DWORD *)&this->__pad_C3C[736] = v59[1].Capacity;
     aP1_4[0].sectionCount = (int)&vt_VectorClass_int;
     if ( *(_DWORD *)aP1_4[0].__pad_20 && aP1_4[0].__pad_20[9] )
-      __3_YAXPAX_Z(*(void **)aP1_4[0].__pad_20);
+      RA2_OPDEL(*(void **)aP1_4[0].__pad_20);
     IntList = (CCINIClass *)&_FFFFFFEC;
-    DynamicVectorClass::Copy(&_FFFFFFEC, (DynamicVector *)&this->__pad_C3C[740]);
+    DynamicVectorClass_flat::Copy(&_FFFFFFEC, (DynamicVector *)&this->__pad_C3C[740]);
     *(_DWORD *)IntList->__pad_0 = &vt_TypeList_int;
     IntList = (CCINIClass *)INIClass::ReadIntList(
                               v120,
@@ -2895,14 +2908,14 @@ IUnknown * * Rules::ReadCombatINI()
                               *(int *)aP3,
                               *(int *)&aP3[4],
                               *(int *)&aP3[8]);
-    TypeList::Copy(&this->__pad_C3C[740], IntList);
-    v60 = (VectorClass *)IntList;
+    TypeList_flat::Copy(&this->__pad_C3C[740], IntList);
+    v60 = (VectorClass_flat *)IntList;
     *(_DWORD *)&this->__pad_C3C[756] = IntList->sectionHead[0];
     *(_DWORD *)&this->__pad_C3C[760] = v60[1].Items;
     *(_DWORD *)&this->__pad_C3C[764] = v60[1].Capacity;
     aP1_4[0].sectionCount = (int)&vt_VectorClass_int;
     if ( *(_DWORD *)aP1_4[0].__pad_20 && aP1_4[0].__pad_20[9] )
-      __3_YAXPAX_Z(*(void **)aP1_4[0].__pad_20);
+      RA2_OPDEL(*(void **)aP1_4[0].__pad_20);
     *(_DWORD *)&this->__pad_240[208] = INIClass::ReadInt_Overwrite(
                                          (int)v120,
                                          (unsigned __int8 *)&stru_830620[39020],
@@ -3230,9 +3243,9 @@ IUnknown * * Rules::ReadCombatINI()
                (int)v120,
                (unsigned __int8 *)&stru_830620[39020],
                (CCINIClass *)&stru_830620[42764],
-               BYTE1(this->ElevationIncrementBonus[0]));
-    char v104 = HIBYTE(this->ElevationIncrementBonus[1]);
-    BYTE1(this->ElevationIncrementBonus[0]) = al151a;
+               IDA_BYTE1(this->ElevationIncrementBonus[0]));
+    char v104 = IDA_HIBYTE(this->ElevationIncrementBonus[1]);
+    IDA_BYTE1(this->ElevationIncrementBonus[0]) = al151a;
   char v105; // al
     v105 = INIClass::ReadBool_Overwrite(
              (int)v120,
@@ -3240,8 +3253,8 @@ IUnknown * * Rules::ReadCombatINI()
              (CCINIClass *)&stru_830620[42748],
              v104);
     char v106 = this->ElevationBonusCap[0];
-    HIBYTE(this->ElevationIncrementBonus[1]) = v105;
-    LOBYTE(this->ElevationBonusCap[0]) = INIClass::ReadBool_Overwrite(
+    IDA_HIBYTE(this->ElevationIncrementBonus[1]) = v105;
+    IDA_LOBYTE(this->ElevationBonusCap[0]) = INIClass::ReadBool_Overwrite(
                                            (int)v120,
                                            (unsigned __int8 *)&stru_830620[39020],
                                            (CCINIClass *)&stru_830620[42728],
@@ -3251,9 +3264,9 @@ IUnknown * * Rules::ReadCombatINI()
              (int)v120,
              (unsigned __int8 *)&stru_830620[39020],
              (CCINIClass *)&stru_830620[42712],
-             BYTE1(this->ElevationBonusCap[0]));
-    char v108 = BYTE1(this->ElevationIncrementBonus[1]);
-    BYTE1(this->ElevationBonusCap[0]) = v107;
+             IDA_BYTE1(this->ElevationBonusCap[0]));
+    char v108 = IDA_BYTE1(this->ElevationIncrementBonus[1]);
+    IDA_BYTE1(this->ElevationBonusCap[0]) = v107;
   char v109; // al
     v109 = INIClass::ReadBool_Overwrite(
              (int)v120,
@@ -3261,7 +3274,7 @@ IUnknown * * Rules::ReadCombatINI()
              (CCINIClass *)&stru_830620[42696],
              v108);
     v111 = (WarheadTypeClass *)this->URepairRate[0];
-    BYTE1(this->ElevationIncrementBonus[1]) = v109;
+    IDA_BYTE1(this->ElevationIncrementBonus[1]) = v109;
     this->URepairRate[0] = (int)WarheadTypeClass::loadWarheadINI(
                                   v120,
                                   (CCINIClass *)&stru_830620[39020],
@@ -3273,20 +3286,19 @@ IUnknown * * Rules::ReadCombatINI()
                (CCINIClass *)&stru_830620[42668],
                (INIClass *)this->RadLightFactor[1]);
     this->RadLightFactor[1] = result;
-    LOBYTE(result) = 1;
+    IDA_LOBYTE(result) = 1;
   }
   else
   {
-    LOBYTE(result) = 0;
+    IDA_LOBYTE(result) = 0;
   }
   return result;
 }
 } // namespace gamemd
-}
 
 // 0x67A570
 namespace gamemd {
-unsigned int * Rules::CopyDataArray(VectorClass * aP1)
+unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
 {
   int v3; // eax
   void *v4; // eax
@@ -3295,35 +3307,35 @@ unsigned int * Rules::CopyDataArray(VectorClass * aP1)
 
   if ( this == aP1 ) /*0x67a57a*/
     goto LABEL_8; /*0x67a57a*/
-  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x67a57e*/
+  this->vt_slot_12(); /*0x67a57e*/
   v3 = aP1[2]; /*0x67a581*/
-  *(this + 2) = v3; /*0x67a586*/
+  this->u32_8 = v3; /*0x67a586*/
   if ( !v3 ) /*0x67a589*/
   {
-    *(this + 1) = 0; /*0x67a5d6*/
-    *((_BYTE *)this + 13) = 0; /*0x67a5dd*/
+    this->u32_4 = 0; /*0x67a5d6*/
+    this->u8_D = 0; /*0x67a5dd*/
   LABEL_8:
-    *(this + 4) = aP1[4]; /*0x67a5e1*/
-    *(this + 5) = aP1[5]; /*0x67a5ea*/
+    this->u32_10 = aP1[4]; /*0x67a5e1*/
+    this->u32_14 = aP1[5]; /*0x67a5ea*/
     return this; /*0x67a5ed*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x67a593*/
-  *(this + 1) = v4; /*0x67a59b*/
+  v4 = RA2_OPNEW(4 * v3); /*0x67a593*/
+  this->u32_4 = v4; /*0x67a59b*/
   if ( !v4 ) /*0x67a5a0*/
     goto LABEL_8; /*0x67a5a0*/
-  v5 = *(this + 2); /*0x67a5a2*/
+  v5 = this->u32_8; /*0x67a5a2*/
   v6 = 0; /*0x67a5a5*/
-  *((_BYTE *)this + 13) = 1; /*0x67a5a9*/
+  this->u8_D = 1; /*0x67a5a9*/
   if ( v5 <= 0 ) /*0x67a5ad*/
     goto LABEL_8; /*0x67a5ad*/
   do /*0x67a5c1*/
   {
-    *(_DWORD *)(*(this + 1) + 4 * v6) = *(_DWORD *)(aP1[1] + 4 * v6); /*0x67a5b8*/
+    *(_DWORD *)(this->u32_4 + 4 * v6) = *(_DWORD *)(aP1[1] + 4 * v6); /*0x67a5b8*/
     ++v6; /*0x67a5be*/
   }
-  while ( v6 < *(this + 2) ); /*0x67a5c1*/
-  *(this + 4) = aP1[4]; /*0x67a5c6*/
-  *(this + 5) = aP1[5]; /*0x67a5cc*/
+  while ( v6 < this->u32_8 ); /*0x67a5c1*/
+  this->u32_10 = aP1[4]; /*0x67a5c6*/
+  this->u32_14 = aP1[5]; /*0x67a5cc*/
   return this; /*0x67a5d1*/
 }
 }

@@ -70,9 +70,6 @@ public:
     void*       m_FontData;     // 0x00
     int32_t     Font_field_04;       // 0x04
     int32_t     Font_field_08;       // 0x08
-// --- e4 declarations (BEGIN) ---
-    int GetGlyphDataForChar(AbstractClass * aP1);  // 0x4346C0
-// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -385,9 +382,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int LoadCampaignScoreAssetsGame();  // 0x72D300
     void* LoadScreenAssets();  // 0x72D460
     // --- gap2 auto-generated stub declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    void PlayerSkirmishSlotHandler_Handle_7A28B0();  // 0x7A28B0
-// --- e4 declarations (END) ---
 };
 // 2 methods in IDA
 class CampaignSelect
@@ -476,14 +470,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     void* OnClick(int a1, int a2, int a3, int a4, int a5, int a6, int a7);  // 0x488520
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int COMStub();  // 0x4886B0
-    void StubReturnFalse(int a1, int a2, int a3);  // 0x48E650
-    int COMStub_Return0();  // 0x4AEBA0
-    void StubReturnVoid();  // 0x4E1510
-    void StubReturn();  // 0x4E1520
-    int ddtor(int a2);  // 0x557E10
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class CheckSum
@@ -669,9 +655,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     void* OnKeyUp(int a1, int a2, int a3);  // 0x4b5030
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int COMStub();  // 0x4B55A0
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class DropPod

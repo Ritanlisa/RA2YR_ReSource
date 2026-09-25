@@ -58,13 +58,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int PowerDrainUpdate(void* a1);  // 0x728630
     void* ProcessEvent(int a1);  // 0x728710
     // --- gap2 auto-generated stub declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    int LoadState(AbstractClass * aP0, int aP1);  // 0x7281A0
-    int SaveState(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x7281E0
-    int StubReturn452();  // 0x7286B0
-    int StubReturn53();  // 0x7286C0
-    int ddtor(int a1, unsigned int * a2);  // 0x7286D0
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

@@ -56,9 +56,6 @@ public:
     int32_t     BombClass_field_54;           // +0x54 (this+84)
     bool        BombClass_field_58;           // +0x58 (this+88)
     uint8_t     pad_59[3];         // +0x59..+0x5B
-// --- e4 declarations (BEGIN) ---
-    int AbstractClass();  // 0x4385D0
-// --- e4 declarations (END) ---
 };
 
 } // namespace game

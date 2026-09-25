@@ -3,20 +3,28 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/BlowStraw_29_e4.hpp"
+#include "e4/classes/ScrollClass_e4.hpp"
+#include "e4/classes/BlowStraw_29__e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x6922E0
+namespace gamemd {
 int ScrollClass::Scroll(int * a1, MouseClass * aP2)
 {
-  TacticalClass::ProcessView(this); /*0x6922e3*/
-  return BlowStraw_29_::Seek(this, a1, aP2); /*0x6922f9*/
+  TacticalClass::ProcessView(); /*0x6922e3*/
+  return BlowStraw_29_::Seek(a1, aP2); /*0x6922f9*/
 }
+} // namespace gamemd
 // 0x6938F0
+namespace gamemd {
 ScrollClass * ScrollClass::Read(char a2)
 {
   char *v3; // esi
   int v4; // edi
 
-  v3 = this + 21484; /*0x6938f5*/
+  v3 = &this->u32_14FB0; /*0x6938f5*/
   v4 = 4; /*0x6938fb*/
   do /*0x693916*/
   {
@@ -25,8 +33,9 @@ ScrollClass * ScrollClass::Read(char a2)
     --v4; /*0x693915*/
   }
   while ( v4 ); /*0x693916*/
-  RadarClass::Destruct(this); /*0x69391a*/
+  RadarClass::Destruct(); /*0x69391a*/
   if ( (a2 & 1) != 0 ) /*0x693924*/
-    __3_YAXPAX_Z(this); /*0x693927*/
+    RA2_OPDEL(); /*0x693927*/
   return this; /*0x69392f*/
 }
+} // namespace gamemd

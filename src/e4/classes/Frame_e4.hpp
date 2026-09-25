@@ -1,0 +1,20 @@
+// GENERATED flat e4 class (mechanical, supply_e4_class_decls)
+#pragma once
+
+#include "e4/classes/_fwd_e4.hpp"
+
+namespace gamemd {
+
+struct Frame {
+// --- flat members (BEGIN) ---
+    void* q004;  // 0x4
+    void* q008;  // 0x8
+    void* q00C;  // 0xC
+    void* q018;  // 0x18
+    void* q024;  // 0x24
+// --- flat members (END) ---
+    TechnoTypeClass * * Present(IUnknown * aP1);
+    int Init();
+};
+
+} // namespace gamemd

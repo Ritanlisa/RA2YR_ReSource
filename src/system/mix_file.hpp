@@ -24,9 +24,6 @@ public:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void* Constructor();  // 0x40E320
     // --- gap2 auto-generated stub declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    GenericNode * sub_40E390(char a2);  // 0x40E390
-// --- e4 declarations (END) ---
 };
 
 template <typename T>
@@ -40,9 +37,6 @@ public:
 
 protected:
     explicit Node(const noinit_t&) noexcept;
-// --- e4 declarations (BEGIN) ---
-    unsigned int * Init();  // 0x49EA10
-// --- e4 declarations (END) ---
 };
 
 template <typename T>
@@ -61,24 +55,6 @@ protected:
 public:
     GenericNode Head;
     GenericNode Tail;
-// --- e4 declarations (BEGIN) ---
-    int Init();  // 0x407450
-    int * Next();  // 0x407520
-    int Prepend(int a2);  // 0x40E340
-    int Pop();  // 0x473430
-    char LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4);  // 0x4791F0
-    void * MoveNode(void * a2);  // 0x556600
-    unsigned int * FindPrev();  // 0x556640
-    unsigned int * FindNext();  // 0x556670
-    int InsertAfter(int a2);  // 0x5566A0
-    unsigned int * Attach(int a2);  // 0x5566D0
-    int Append(int a2);  // 0x556700
-    int RemoveNode();  // 0x556730
-    void Remove(unsigned int * a2);  // 0x623460
-    int PushFront(IUnknown * aP1);  // 0x625AE0
-    void RelinkNode(int a2);  // 0x632D10
-    char Contains(IUnknown * aP1);  // 0x6E5380
-// --- e4 declarations (END) ---
 };
 
 struct MixHeaderData

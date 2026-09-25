@@ -11,6 +11,13 @@ if(WIN32)
 # /MP: enable multi-process MSVC compilation (parallel translation units)
 endif()
 
+# IDA Hex-Rays pseudocode vocabulary (bitfield macros, qmemcpy, ...) forced
+# into every TU: regen_bodies_from_export lands IDA output verbatim as bodies.
+# /FI runs before every source; header is self-contained.
+if(WIN32)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /FI\"${CMAKE_SOURCE_DIR}/src/core/ida_compat.h\"")
+endif()
+
 # Collect all source files (exclude src/app/ — duplicates of app/ files; exclude _generated/ — stub placeholders)
 file(GLOB_RECURSE HEADERS
     "src/*.hpp"

@@ -24,8 +24,7 @@ void AudioVideoUpdate();
 // IDA 0x69BAB0 -- WTFMode (Westwood Technology Framework debug mode)
 // CSP: WTFMode matched via T1
 class WTFMode {
-public:
-    static bool Init(int* mode);  // 0x69BAB0
+bool Init(int* mode);  // 0x69BAB0
     static bool Shutdown(int* mode);  // 0x69BB40
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ResetUnitFlags();  // 0x41DB40

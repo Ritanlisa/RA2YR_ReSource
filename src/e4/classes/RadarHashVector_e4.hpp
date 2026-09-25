@@ -1,0 +1,88 @@
+// GENERATED flat e4 class (mechanical, supply_e4_class_decls)
+#pragma once
+
+#include "e4/classes/_fwd_e4.hpp"
+
+namespace gamemd {
+
+struct RadarHashVector {
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    unsigned char q010;  // 0x10
+    unsigned char q014;  // 0x14
+    int Count;  // 0x16
+    unsigned char q018;  // 0x18
+    unsigned char q01C;  // 0x1C
+    unsigned char q020;  // 0x20
+    unsigned char q024;  // 0x24
+    unsigned char q028;  // 0x28
+    unsigned char q02C;  // 0x2C
+    unsigned char q030;  // 0x30
+    int q034;  // 0x34
+    unsigned char q038;  // 0x38
+    unsigned char q040;  // 0x40
+    unsigned char q044;  // 0x44
+    unsigned char q048;  // 0x48
+    unsigned char q04C;  // 0x4C
+    unsigned char q050;  // 0x50
+    unsigned char q054;  // 0x54
+    unsigned char q058;  // 0x58
+    unsigned char q064;  // 0x64
+    unsigned char q068;  // 0x68
+    unsigned char q06C;  // 0x6C
+    unsigned char q070;  // 0x70
+    unsigned char q074;  // 0x74
+    unsigned char q080;  // 0x80
+    unsigned char q084;  // 0x84
+    unsigned char q088;  // 0x88
+    unsigned char q094;  // 0x94
+    unsigned char q098;  // 0x98
+    unsigned char q100;  // 0x100
+    unsigned char q104;  // 0x104
+    unsigned char q108;  // 0x108
+    unsigned char q10C;  // 0x10C
+    unsigned char q114;  // 0x114
+    unsigned char q118;  // 0x118
+    unsigned char q11C;  // 0x11C
+    unsigned char q120;  // 0x120
+    unsigned char q124;  // 0x124
+    unsigned char q128;  // 0x128
+    unsigned char q12C;  // 0x12C
+    int q130;  // 0x130
+    unsigned char q134;  // 0x134
+    unsigned char q13C;  // 0x13C
+    unsigned char q140;  // 0x140
+    unsigned char q148;  // 0x148
+    unsigned char q14C;  // 0x14C
+    unsigned char q154;  // 0x154
+    unsigned char q158;  // 0x158
+    unsigned char q260;  // 0x260
+    unsigned char q264;  // 0x264
+    unsigned char q268;  // 0x268
+    unsigned char q270;  // 0x270
+    unsigned char q274;  // 0x274
+    unsigned char q280;  // 0x280
+    unsigned char q284;  // 0x284
+    unsigned char q288;  // 0x288
+    unsigned char q290;  // 0x290
+    unsigned int Capacity;
+    unsigned int IsInitialized;
+    unsigned int Items;
+    unsigned int q0042;
+    unsigned int u32_14;
+// --- flat members (END) ---
+    AbstractClass * * ComputeHashIndex(int a2, char * a3);
+    VectorClass_flat * QueryInterface(char a2);
+    char * Destructor(char a2);
+    int FindItemIndex(unsigned int * a2);
+    int Read(unsigned int * a2);
+    unsigned int * Construct(MapClass * aP1, MapClass * aP2);
+    unsigned int Write(int a2);
+    void ddtor();
+};
+
+} // namespace gamemd

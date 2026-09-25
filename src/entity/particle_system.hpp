@@ -85,15 +85,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Stub();  // 0x630220
     void* resetSystemState(int a1, int a2);  // 0x6302A0
     // --- gap2 auto-generated stub declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    void GetClassIdentifier();  // 0x4E8470
-    unsigned int LoadTypeData(int a2);  // 0x4E84A0
-    int SaveToINI(int a2);  // 0x4E84C0
-    void initParticleArray();  // 0x4E8780
-    int StubReturn2();  // 0x62FE80
-    int GetObjectSize();  // 0x630200
-    int GetTypeIdentifier();  // 0x630210
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

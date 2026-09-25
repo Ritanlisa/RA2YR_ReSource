@@ -47,10 +47,6 @@ public:
     int ProcessTurn(int a1);  // 0x5ca800 -- MultiplayerSiege::ProcessTurn
     void* QueryInterface(int a1);  // 0x5cabd0 -- MultiplayerSiege::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    char CheckStatus(int a1);  // 0x5CA9B0
-    char GetResult(unsigned int * ppv, int a2);  // 0x5CAAC0
-// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -76,9 +72,6 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     void ShowProgress(int a1);  // 0x69ae90 -- Multiplayer::ShowProgress
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    unsigned int * CopyDataArray(ObjectClass * aP1);  // 0x68C2B0
-// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -177,9 +170,6 @@ public:
     int Connect(int a1, int a2);  // 0x540650 -- IPXGlobalConnClass::Connect
     void* QueryInterface(int a1);  // 0x540670 -- IPXGlobalConnClass::QueryInterface
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    int ddtor(int a2, int a3);  // 0x540630
-// --- e4 declarations (END) ---
 };
 // 4 methods in IDA
 class Modem
@@ -564,12 +554,6 @@ public:
     // === FUNCS-MOVE (BEGIN) ===
     int Connect(int a1, int a2, int a3, int a4, int a5, int a6);  // 0x7b3720
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int COMStub_Ret2();  // 0x7B40F0
-// --- e4 declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    short ddtor(WinsockInterfaceClass * aP1, unsigned int arg4, unsigned char * a3, unsigned int a5, WinsockInterfaceClass * aP5, char a7, short a8);  // 0x7B36C0
-// --- e4 declarations (END) ---
 };
 // 1 methods in IDA
 class WOLGameClass

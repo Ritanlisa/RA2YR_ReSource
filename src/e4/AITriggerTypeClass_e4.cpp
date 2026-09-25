@@ -7,8 +7,20 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Super_e4.hpp"
+#include "e4/classes/AITriggerTypeClass_e4.hpp"
+#include "e4/classes/HouseTypeClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/VoxelAnimClass_e4.hpp"
+#include "e4/classes/VoxelAnimTypeClass_e4.hpp"
+#include "e4/classes/WarheadTypeClass_e4.hpp"
+#include "e4/classes/WeaponTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/UnitClass_e4.hpp"
 
 // 0x41EC90
+namespace gamemd {
 int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
 {
   _DWORD *v3; // edi
@@ -91,7 +103,9 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
   }
   return result; /*0x41ecdc*/
 }
+} // namespace gamemd
 // 0x41EE90
+namespace gamemd {
 DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
 {
   int v4; // esi
@@ -157,7 +171,9 @@ DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
   }
   return result; /*0x41ef58*/
 }
+} // namespace gamemd
 // 0x41F0D0
+namespace gamemd {
 int AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
 {
   int v2; // edx
@@ -198,7 +214,9 @@ int AITriggerTypeClass::IronCurtainCharged(int a1, int a2)
   return 1.0 - *(float *)&g_RulesClass_Instance->RefineryRatio >= (double)v9 /*0x41f167*/
                                                                 / (double)Super::GetDefaultTimer((_DWORD *)v6);
 }
+} // namespace gamemd
 // 0x41F180
+namespace gamemd {
 int AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
 {
   int v2; // edx
@@ -239,7 +257,9 @@ int AITriggerTypeClass::ChronoSphereCharged(int a1, int a2)
   return 1.0 - *(float *)&g_RulesClass_Instance->RefineryRatio >= (double)v9 /*0x41f217*/
                                                                 / (double)Super::GetDefaultTimer((_DWORD *)v6);
 }
+} // namespace gamemd
 // 0x41F230
+namespace gamemd {
 int AITriggerTypeClass::HouseCredits(int a2, int a3)
 {
   char v3; // bl
@@ -274,7 +294,9 @@ int AITriggerTypeClass::HouseCredits(int a2, int a3)
   }
   return result; /*0x41f260*/
 }
+} // namespace gamemd
 // 0x41F580
+namespace gamemd {
 ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
 {
   char *v3; // eax
@@ -291,7 +313,6 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
   char *v14; // eax
   unsigned int v15; // edi
   bool v16; // zf
-  char *v17; // esi
   int v18; // ecx
   char v19; // dl
   char v20; // al
@@ -420,25 +441,25 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
   strcpy(v40, "00"); /*0x41f807*/
   v15 = 0; /*0x41f80e*/
   v16 = *v14 == 0; /*0x41f810*/
-  v17 = v14; /*0x41f812*/
-  LODWORD(v41) = 0; /*0x41f818*/
+  v14 = v14; /*0x41f812*/
+  IDA_LODWORD(v41) = 0; /*0x41f818*/
   if ( !v16 ) /*0x41f81c*/
   {
     do /*0x41f876*/
     {
-      if ( isspace(*v17) ) /*0x41f822*/
+      if ( isspace(*v14) ) /*0x41f822*/
       {
         do /*0x41f834*/
-          v18 = *++v17; /*0x41f82e*/
+          v18 = *++v14; /*0x41f82e*/
         while ( isspace(v18) ); /*0x41f834*/
       }
-      v19 = *v17; /*0x41f840*/
-      v20 = *++v17; /*0x41f842*/
+      v19 = *v14; /*0x41f840*/
+      v20 = *++v14; /*0x41f842*/
       v40[0] = v19; /*0x41f848*/
       if ( v20 ) /*0x41f84c*/
       {
         v40[1] = v20; /*0x41f84e*/
-        ++v17; /*0x41f852*/
+        ++v14; /*0x41f852*/
       }
       else
       {
@@ -449,7 +470,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
       *(_BYTE *)(v15 + &this->u32_588) = globalHelper_0C9DBD(v40, &v41, 16); /*0x41f86f*/
       ++v15; /*0x41f87b*/
     }
-    while ( *v17 ); /*0x41f876*/
+    while ( *v14 ); /*0x41f876*/
   }
   v21 = strtok(0, Delimiter); /*0x41f886*/
   if ( v21 ) /*0x41f890*/
@@ -524,7 +545,9 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
   }
   return 1; /*0x41fab7*/
 }
+} // namespace gamemd
 // 0x41FD60
+namespace gamemd {
 int AITriggerTypeClass::RegisterSuccess()
 {
   int v1; // edx
@@ -545,19 +568,21 @@ int AITriggerTypeClass::RegisterSuccess()
   if ( v3 < *(double *)(&this->q04C2) ) /*0x41fdc4*/
   {
     this->q0B8 = this->q0C0; /*0x41fdcc*/
-    this->u32_BC = this->q0C4; /*0x41fdd8*/
+    this->q0BC = this->q0C4; /*0x41fdd8*/
   }
   if ( *(double *)(&this->q0484) > *(double *)(&this->u32_500) ) /*0x41fdef*/
   {
-    this->q0B8 = this->u32_C8; /*0x41fdf7*/
-    this->u32_BC = this->q0CC; /*0x41fe03*/
+    this->q0B8 = this->q0C8; /*0x41fdf7*/
+    this->q0BC = this->q0CC; /*0x41fe03*/
   }
   result = this->q104 + 1; /*0x41fe0f*/
   this->q104 = result; /*0x41fe11*/
   this->q108 = v1 + 1; /*0x41fe17*/
   return result; /*0x41fe1e*/
 }
+} // namespace gamemd
 // 0x41FE20
+namespace gamemd {
 int AITriggerTypeClass::RegisterFailure()
 {
   int v1; // edx
@@ -586,34 +611,34 @@ int AITriggerTypeClass::RegisterFailure()
   {
     this->q0B8 = this->q0C0; /*0x41fe95*/
     result = this->q0C4; /*0x41fe9b*/
-    this->u32_BC = result; /*0x41fea1*/
+    this->q0BC = result; /*0x41fea1*/
   }
   v6 = *(double *)(&this->q0484); /*0x41fea7*/
   v7 = v6 < *(double *)(&this->u32_500); /*0x41fead*/
   v8 = 0; /*0x41fead*/
   v9 = v6 == *(double *)(&this->u32_500); /*0x41fead*/
-  LOWORD(result) = v5; /*0x41feb3*/
+  IDA_LOWORD(result) = v5; /*0x41feb3*/
   if ( v6 > *(double *)(&this->u32_500) ) /*0x41feb8*/
   {
-    this->q0B8 = this->u32_C8; /*0x41fec0*/
+    this->q0B8 = this->q0C8; /*0x41fec0*/
     result = this->q0CC; /*0x41fec6*/
-    this->u32_BC = result; /*0x41fecc*/
+    this->q0BC = result; /*0x41fecc*/
   }
   this->q108 = v1 + 1; /*0x41fed3*/
   return result; /*0x41fed9*/
 }
+} // namespace gamemd
 // 0x41FFF0
+namespace gamemd {
 AITriggerTypeClass * AITriggerTypeClass::ddtor(char a2)
 {
   int v3; // eax
-  _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &AITriggerTypeClass::`vftable'; /*0x41fffd*/
-  this->vtable2 = &AITriggerTypeClass::`vftable'; /*0x420003*/
-  this->vtable3 = &AITriggerTypeClass::`vftable'; /*0x42000a*/
-  this->vtable4 = &AITriggerTypeClass::`vftable'; /*0x420011*/
-  v5 = this; /*0x42001f*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(AITriggerTypeClass_Array + 16))(&AITriggerTypeClass_Array, &v5); /*0x420023*/
+  *this = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x41fffd*/
+  this->vtable2 = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x420003*/
+  this->vtable3 = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x42000a*/
+  this->vtable4 = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x420011*/
+  v3 = (*(int (__thiscall **)(int *, _DWORD **))(AITriggerTypeClass_Array + 16))(&AITriggerTypeClass_Array, &this); /*0x420023*/
   if ( v3 != -1 && v3 < g_AnimTypeInitQueue && v3 < --g_AnimTypeInitQueue ) /*0x42003e*/
   {
     do /*0x420056*/
@@ -623,21 +648,26 @@ AITriggerTypeClass * AITriggerTypeClass::ddtor(char a2)
     }
     while ( v3 < g_AnimTypeInitQueue ); /*0x420056*/
   }
-  AbstractTypeClass::Dtor(this); /*0x42005a*/
+  AbstractTypeClass::Dtor(); /*0x42005a*/
   if ( (a2 & 1) != 0 ) /*0x420064*/
-    __3_YAXPAX_Z(this); /*0x420067*/
+    RA2_OPDEL(); /*0x420067*/
   return this; /*0x420071*/
 }
+} // namespace gamemd
 // 0x41FFD0
+namespace gamemd {
 int AITriggerTypeClass::GetTypeIdentifier()
 {
   return 59; /*0x41ffd5*/
 }
+} // namespace gamemd
 // 0x41FFE0
+namespace gamemd {
 int AITriggerTypeClass::GetObjectSize()
 {
   return 272; /*0x41ffe5*/
 }
+} // namespace gamemd
 // 0x420370
 namespace gamemd {
 void AITriggerTypeClass_40::ClearBuffer()
@@ -648,11 +678,11 @@ void AITriggerTypeClass_40::ClearBuffer()
   this->q010 = 0; /*0x420379*/
   if ( v2 && this->IsAllocated ) /*0x420380*/
   {
-    __3_YAXPAX_Z(v2); /*0x420386*/
+    RA2_OPDEL(v2); /*0x420386*/
     this->Items = 0; /*0x42038e*/
   }
   this->IsAllocated = 0; /*0x420391*/
-  this->Capacity = 0; /*0x420394*/
+  this->q008 = 0; /*0x420394*/
 }
 } // namespace gamemd
 
@@ -660,7 +690,7 @@ void AITriggerTypeClass_40::ClearBuffer()
 namespace gamemd {
 unsigned int AITriggerTypeClass_40::PointerToIndex(int a2)
 {
-  if ( this->q00C ) /*0x4203a0*/
+  if ( *(_BYTE *)(this + 12) ) /*0x4203a0*/
     return (unsigned int)(a2 - this->Items) >> 2; /*0x4203b5*/
   else
     return 0; /*0x4203a7*/
@@ -671,7 +701,7 @@ unsigned int AITriggerTypeClass_40::PointerToIndex(int a2)
 namespace gamemd {
 int AITriggerTypeClass_40::Seek(int a2)
 {
-  return *(_DWORD *)(this->Items + 4 * a2); /*0x4203ca*/
+  return *(_DWORD *)(*(this + 1) + 4 * a2); /*0x4203ca*/
 }
 } // namespace gamemd
 
@@ -714,12 +744,12 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x42041c*/
   {
-    this->q00C = 0; /*0x420426*/
+    this->IsInitialized = 0; /*0x420426*/
     if ( a3 ) /*0x42042c*/
       v4 = a3; /*0x420442*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x42043e*/
-    this->q00C = 1; /*0x420446*/
+      v4 = RA2_OPNEW(4 * a2); /*0x42043e*/
+    this->IsInitialized = 1; /*0x420446*/
     if ( v4 ) /*0x42044a*/
     {
       if ( this->Items ) /*0x420455*/
@@ -731,7 +761,7 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
           ++i; /*0x42046e*/
         if ( this->IsAllocated ) /*0x42047b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x420486*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x420486*/
           this->Items = 0; /*0x42048e*/
         }
       }
@@ -757,9 +787,9 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void AITriggerTypeClass_40::ddtor()
 {
-  if ( this->Items && this->IsAllocated ) /*0x4204cd*/
+  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x4204cd*/
   {
-    __3_YAXPAX_Z(this->Items); /*0x4204d3*/
+    RA2_OPDEL(this->Items); /*0x4204d3*/
     this->Items = 0; /*0x4204db*/
   }
   this->IsAllocated = 0; /*0x4204de*/
@@ -775,7 +805,7 @@ int AITriggerTypeClass_40::Read(unsigned int * a2)
   int v3; // edx
   _DWORD *i; // ecx
 
-  if ( !this->q00C ) /*0x4204f0*/
+  if ( !this->IsInitialized ) /*0x4204f0*/
     return 0; /*0x4204f8*/
   v3 = this->Capacity; /*0x4204fe*/
   result = 0; /*0x420501*/
@@ -794,7 +824,7 @@ int AITriggerTypeClass_40::Read(unsigned int * a2)
 namespace gamemd {
 unsigned int AITriggerTypeClass_40::Write(int a2)
 {
-  if ( this->q00C ) /*0x420530*/
+  if ( *(_BYTE *)(this + 12) ) /*0x420530*/
     return (unsigned int)(a2 - this->Items) >> 2; /*0x420545*/
   else
     return 0; /*0x420537*/
@@ -812,36 +842,36 @@ char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x42055c*/
   {
-    this->q00C = 0; /*0x420562*/
+    this->IsInitialized = 0; /*0x420562*/
     if ( a3 ) /*0x420568*/
       v4 = a3; /*0x42057e*/
     else
-      v4 = __2_YAPAXI_Z(4 * a2); /*0x42057a*/
-    this->q00C = 1; /*0x420582*/
+      v4 = RA2_OPNEW(4 * a2); /*0x42057a*/
+    this->IsInitialized = 1; /*0x420582*/
     if ( !v4 ) /*0x420586*/
       return 0; /*0x4205fa*/
     if ( this->Items ) /*0x420588*/
     {
-      v5 = this->Capacity; /*0x42058f*/
+      v5 = this->q008; /*0x42058f*/
       if ( a2 < v5 ) /*0x420594*/
         v5 = a2; /*0x420596*/
       for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x42059c*/
         ++i; /*0x4205a1*/
       if ( this->IsAllocated ) /*0x4205ae*/
       {
-        __3_YAXPAX_Z(*((void **)this + 1)); /*0x4205b9*/
+        RA2_OPDEL(*((void **)this + 1)); /*0x4205b9*/
         this->Items = 0; /*0x4205c1*/
       }
     }
     this->Items = v4; /*0x4205ca*/
-    this->Capacity = a2; /*0x4205d2*/
+    this->q008 = a2; /*0x4205d2*/
     this->IsAllocated = a3 == 0; /*0x4205d5*/
   }
   else
   {
     (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x4205de*/
   }
-  v7 = this->Capacity; /*0x4205e1*/
+  v7 = this->q008; /*0x4205e1*/
   if ( v7 < this->q010 ) /*0x4205e9*/
     this->q010 = v7; /*0x4205eb*/
   return 1; /*0x4205ee*/
@@ -870,21 +900,21 @@ int AITriggerTypeClass_40::FindItem(unsigned int * a2)
 }
 // 0x420630
 namespace gamemd {
-VectorClass * AITriggerTypeClass_40::QueryInterface(char a2)
+VectorClass_flat * AITriggerTypeClass_40::QueryInterface(char a2)
 {
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x420633*/
-  *this = &VectorClass<AlphaLightingRemapClass *>::`vftable'; /*0x420636*/
+  *this = &(void*)(void*)&VectorClass_AlphaLightingRemapClass___vftable; /*0x420636*/
   if ( v3 && this->IsAllocated ) /*0x420640*/
   {
-    __3_YAXPAX_Z(v3); /*0x420648*/
+    RA2_OPDEL(v3); /*0x420648*/
     this->Items = 0; /*0x420650*/
   }
   this->IsAllocated = 0; /*0x42065b*/
   this->Capacity = 0; /*0x420661*/
   if ( (a2 & 1) != 0 ) /*0x420668*/
-    __3_YAXPAX_Z(this); /*0x42066b*/
+    RA2_OPDEL(); /*0x42066b*/
   return this; /*0x420675*/
 }
 } // namespace gamemd
@@ -895,17 +925,17 @@ DynamicVector * AITriggerTypeClass_40::Constructor_VectorClass_AlphaLightingRema
 {
   void *v3; // eax
 
-  v3 = (void *)this->Items; /*0x420683*/
-  *this = &VectorClass<AlphaLightingRemapClass *>::`vftable'; /*0x420686*/
-  if ( v3 && this->IsAllocated ) /*0x420690*/
+  v3 = (void *)*(this + 1); /*0x420683*/
+  *this = &(void*)(void*)&VectorClass_AlphaLightingRemapClass___vftable; /*0x420686*/
+  if ( v3 && *((_BYTE *)this + 13) ) /*0x420690*/
   {
-    __3_YAXPAX_Z(v3); /*0x420698*/
-    this->Items = 0; /*0x4206a0*/
+    RA2_OPDEL(v3); /*0x420698*/
+    *(this + 1) = 0; /*0x4206a0*/
   }
-  this->IsAllocated = 0; /*0x4206ab*/
-  this->Capacity = 0; /*0x4206b1*/
+  *((_BYTE *)this + 13) = 0; /*0x4206ab*/
+  *(this + 2) = 0; /*0x4206b1*/
   if ( (a2 & 1) != 0 ) /*0x4206b8*/
-    __3_YAXPAX_Z(this); /*0x4206bb*/
+    RA2_OPDEL(); /*0x4206bb*/
   return this; /*0x4206c5*/
 }
 } // namespace gamemd

@@ -8,6 +8,20 @@
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/Count_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
+#include "e4/classes/RawFileClass_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/Settings_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x5D1D80
 namespace gamemd {
@@ -21,18 +35,18 @@ int Session::RemoveTeam(MSShapeAnim * aP1)
   result = (int)a2; /*0x5d1d80*/
   if ( a2 ) /*0x5d1d87*/
   {
-    v3 = this + 6; /*0x5d1d8c*/
-    result = (*(int (__thiscall **)(aP1 *, aP1))(*(this + 6) + 16))(this + 6, &a2); /*0x5d1d96*/
+    v3 = &this->u32_18; /*0x5d1d8c*/
+    result = (*(int (__thiscall **)(aP1 *, aP1))(this->u32_18 + 16))(&this->u32_18, &a2); /*0x5d1d96*/
     if ( result != -1 ) /*0x5d1d9c*/
     {
-      result = (*(int (__thiscall **)(aP1 *, aP1))(*v3 + 16))(v3, &a2); /*0x5d1da7*/
+      result = (*(int (__thiscall **)(aP1 *, aP1))(this->u32_16)(v3, &a2); /*0x5d1da7*/
       if ( result != -1 ) /*0x5d1dad*/
       {
         v4 = v3[4]; /*0x5d1daf*/
         if ( result < v4 ) /*0x5d1db4*/
         {
           v5 = v4 - 1; /*0x5d1db6*/
-          for ( v3[4] = v5; result < v3[4]; *(aP1 *)(v3[1] + 4 * result - 4) = *(aP1 *)(v3[1] + 4 * result) ) /*0x5d1dbc*/
+          for ( v3[4] = v5; result < v3[4]; *(aP1 *, unsigned int a2)(v3[1] + 4 * result - 4) = *(aP1 *)(v3[1] + 4 * result) ) /*0x5d1dbc*/
             ++result; /*0x5d1dc1*/
         }
       }
@@ -71,7 +85,7 @@ int Session::PrepareGame()
   if ( g_UIControlState ) /*0x5e74f6*/
   {
     ComPtr::Dtor(g_UIControlState); /*0x5e74fa*/
-    __3_YAXPAX_Z(v1); /*0x5e7500*/
+    RA2_OPDEL(v1); /*0x5e7500*/
   }
   g_UIControlState = 0; /*0x5e7513*/
   switch ( g_GameMode_Current ) /*0x5e7521*/
@@ -162,7 +176,7 @@ int Session::PrepareGame()
           if ( g_UIControlState ) /*0x5e782d*/
           {
             ComPtr::Dtor(g_UIControlState); /*0x5e7831*/
-            __3_YAXPAX_Z(v12); /*0x5e7837*/
+            RA2_OPDEL(v12); /*0x5e7837*/
             g_UIControlState = 0; /*0x5e783f*/
           }
           goto LABEL_44; /*0x5e783f*/
@@ -174,14 +188,14 @@ int Session::PrepareGame()
       if ( !g_UIControlState ) /*0x5e7704*/
         return InvalidateRect(hWnd, 0, 0); /*0x5e7704*/
       ComPtr::Dtor(g_UIControlState); /*0x5e770c*/
-      __3_YAXPAX_Z(v8); /*0x5e7712*/
+      RA2_OPDEL(v8); /*0x5e7712*/
       g_UIControlState = 0; /*0x5e771a*/
       return InvalidateRect(hWnd, 0, 0); /*0x5e7733*/
     default:
   LABEL_44:
       v13 = CCFileClass::Construct(Str, &Destination); /*0x5e7845*/
       v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x5e7858*/
-      *(_DWORD *)Str = &CCFileClass::`vftable'; /*0x5e7864*/
+      *(_DWORD *)Str = &(void*)(void*)&CCFileClass_vftable; /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/
       *(_DWORD *)&Str[100] = 0; /*0x5e786f*/
       Vector::Clear((int)&Str[88]); /*0x5e7876*/
@@ -189,7 +203,7 @@ int Session::PrepareGame()
       result = BufferIOFileClass::Dtor(Str); /*0x5e7887*/
       if ( !v15 ) /*0x5e788e*/
       {
-        result = (int)__2_YAPAXI_Z(4u); /*0x5e7892*/
+        result = (int)RA2_OPNEW(4u); /*0x5e7892*/
         if ( !result ) /*0x5e789c*/
         {
           g_UIControlState = 0; /*0x5e78e4*/
@@ -249,8 +263,8 @@ int Session::GetPlayerOption()
   int result; // eax
 
   result = -2; /*0x69b706*/
-  if ( *(this + 94) != -2 ) /*0x69b70d*/
-    return *(this + 93); /*0x69b70f*/
+  if ( *(&this->q0244) != -2 ) /*0x69b70d*/
+    return *(&this->q0243); /*0x69b70f*/
   return result; /*0x69b715*/
 }
 }
@@ -261,8 +275,8 @@ int Session::GetPlayerColor()
   int result; // eax
 
   result = -2; /*0x69b726*/
-  if ( *(this + 88) != -2 ) /*0x69b72d*/
-    return *(this + 87); /*0x69b72f*/
+  if ( this->q160 != -2 ) /*0x69b72d*/
+    return this->q15C; /*0x69b72f*/
   return result; /*0x69b735*/
 }
 }
@@ -280,9 +294,9 @@ int Session::StartGame()
   if ( g_UIControlState ) /*0x5ed393*/
   {
     ComPtr::Dtor(g_UIControlState); /*0x5ed397*/
-    __3_YAXPAX_Z(v2); /*0x5ed39d*/
+    RA2_OPDEL(v2); /*0x5ed39d*/
   }
-  v3 = __2_YAPAXI_Z(4u); /*0x5ed3a7*/
+  v3 = RA2_OPNEW(4u); /*0x5ed3a7*/
   if ( v3 ) /*0x5ed3b2*/
     v4 = (void *)unknown_libname_27(v3); /*0x5ed3b6*/
   else

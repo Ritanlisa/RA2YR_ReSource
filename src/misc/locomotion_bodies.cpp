@@ -16,7 +16,7 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv) {
   if ( !memcmp(iid, &IID_IUnknown, 0x10u) ) /*0x55a9df*/
   {
     if ( this ) /*0x55a9e5*/
-      v4 = this + 4; /*0x55a9e7*/
+      v4 = &this->u32_10; /*0x55a9e7*/
     else
       v4 = 0; /*0x55a9ec*/
     *ppv = v4; /*0x55a9ee*/
@@ -26,7 +26,7 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv) {
   if ( !memcmp(iid, &IID_ILocomotion, 0x10u) ) /*0x55aa13*/
   {
     if ( this ) /*0x55aa1a*/
-      v5 = this + 4; /*0x55aa1c*/
+      v5 = &this->u32_10; /*0x55aa1c*/
     else
       v5 = 0; /*0x55aa21*/
     *ppv = v5; /*0x55aa23*/
@@ -35,7 +35,7 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv) {
     *ppv = this; /*0x55aa3a*/
   if ( !*ppv ) /*0x55aa3c*/
     return -2147467262; /*0x55aa41*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)this + 4))(this); /*0x55aa4c*/
+  (*(void (__stdcall **)(int))(this->vtable2)(this); /*0x55aa4c*/
   return 0; /*0x55a9bd*/
 }
 ULONG __stdcall LocomotionClass::AddRef() { return ++RefCount; }
@@ -111,120 +111,34 @@ ZGradient __stdcall LocomotionClass::Z_Gradient() { return ZGradient::Deg90; }
 
 // 0x69ec50
 bool __stdcall LocomotionClass::Process() { return true; }
-  wchar_t *v2; // ecx
   int v3; // ecx
 
   LocomotionClass::Init((_DWORD *)this); /*0x69ec53*/
-  *(_DWORD *)(this + 28) = 0; /*0x69ec5d*/
-  *(_DWORD *)(this + 32) = 0; /*0x69ec60*/
-  v2 = g_CurrentFrame; /*0x69ec63*/
-  *(_DWORD *)(this + 44) = 0; /*0x69ec69*/
-  *(_DWORD *)(this + 36) = v2; /*0x69ec6c*/
-  *(_DWORD *)(this + 48) = 0; /*0x69ec6f*/
-  *(_DWORD *)(this + 52) = g_OverlayTypeConfig; /*0x69ec78*/
-  *(_QWORD *)(this + 56) = qword_B077FC; /*0x69ec80*/
-  *(_DWORD *)(this + 64) = g_OverlayTypeConfig; /*0x69ec95*/
-  *(_DWORD *)(this + 68) = qword_B077FC; /*0x69ec9e*/
-  v3 = HIDWORD(qword_B077FC); /*0x69eca1*/
-  *(_DWORD *)(this + 80) = 0; /*0x69eca7*/
-  *(_DWORD *)(this + 76) = 0; /*0x69ecaa*/
-  *(_DWORD *)(this + 72) = v3; /*0x69ecad*/
-  *(_DWORD *)(this + 84) = 0; /*0x69ecb3*/
-  *(_DWORD *)(this + 88) = -1; /*0x69ecb6*/
-  *(_DWORD *)(this + 92) = -1; /*0x69ecb9*/
-  *(_BYTE *)(this + 96) = 0; /*0x69ecbc*/
-  *(_BYTE *)(this + 97) = 0; /*0x69ecbf*/
-  *(_BYTE *)(this + 98) = 0; /*0x69ecc2*/
-  *(_BYTE *)(this + 99) = 0; /*0x69ecc5*/
-  *(_BYTE *)(this + 100) = 0; /*0x69ecc8*/
-  *(_BYTE *)(this + 101) = 1; /*0x69eccb*/
-  *(_DWORD *)(this + 104) = 0; /*0x69eccf*/
-  *(_DWORD *)this = &ShipLocomotionClass::`vftable'; /*0x69ecd2*/
-  *(_DWORD *)(this + 4) = &ShipLocomotionClass::`vftable'; /*0x69ecd8*/
-  *(_DWORD *)(this + 24) = &off_7F2D68; /*0x69ecdf*/
+  this->u32_1C = 0; /*0x69ec5d*/
+  this->q020 = 0; /*0x69ec60*/
+  g_CurrentFrame = g_CurrentFrame; /*0x69ec63*/
+  this->u32_2C = 0; /*0x69ec69*/
+  this->q024 = g_CurrentFrame; /*0x69ec6c*/
+  this->u32_30 = 0; /*0x69ec6f*/
+  this->q034 = g_OverlayTypeConfig; /*0x69ec78*/
+  this->q038 = qword_B077FC; /*0x69ec80*/
+  this->q040 = g_OverlayTypeConfig; /*0x69ec95*/
+  this->q044 = qword_B077FC; /*0x69ec9e*/
+  v3 = IDA_HIDWORD(qword_B077FC); /*0x69eca1*/
+  this->q050 = 0; /*0x69eca7*/
+  this->u32_4C = 0; /*0x69ecaa*/
+  this->q048 = v3; /*0x69ecad*/
+  this->ptr_24 = 0; /*0x69ecb3*/
+  this->q058 = -1; /*0x69ecb6*/
+  this->q05C = -1; /*0x69ecb9*/
+  this->u8_60 = 0; /*0x69ecbc*/
+  this->__pad_061 = 0; /*0x69ecbf*/
+  this->u8_62 = 0; /*0x69ecc2*/
+  this->u8_63 = 0; /*0x69ecc5*/
+  this->q064 = 0; /*0x69ecc8*/
+  this->u32_65 = 1; /*0x69eccb*/
+  this->q068 = 0; /*0x69eccf*/
+  *(_DWORD *)this = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd2*/
+  this->vtable2 = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd8*/
+  this->ptr_18 = &off_7F2D68; /*0x69ecdf*/
   return this; /*0x69ece8*/
-}
-        v10 = 0; /*0x4c92ab*/
-        goto LABEL_12; /*0x4c92ad*/
-      LOWORD(v9) = v9 - ((_WORD)g_CurrentFrame - v8); /*0x4c9291*/
-    v10 = v9; /*0x4c9293*/
-  LABEL_12:
-    LOWORD(v16) = v16 - v10 * (v6 / (__int16)v7); /*0x4c9295*/
-  v11 = v16; /*0x4c92a5*/
-  LABEL_16:
-  this->StartFacing = v11; /*0x4c92b1*/
-  v12 = *(_DWORD *)a1; /*0x4c92bb*/
-  *(_DWORD *)this = *(_DWORD *)a1; /*0x4c92bd*/
-  if ( v3 > 0 ) /*0x4c92bf*/
-  {
-    v13 = abs16(v12 - this->StartFacing) / v3; /*0x4c92da*/
-    v14 = &this->q020; /*0x4c92e0*/
-    *v14 = g_CurrentFrame; /*0x4c92e3*/
-    v14[1] = v17; /*0x4c92e5*/
-    v14[2] = v13; /*0x4c92e8*/
-  return 1; /*0x4c92f1*/
-// 0x4C9300
-int FacingClass::Set_SyncLog(unsigned int* a1)
-{
-  int *v3; // ebx
-  int v4; // eax
-  int v5; // edx
-  int v6; // ebx
-  __int16 v7; // cx
-  int v8; // ecx
-  _DWORD *v9; // esi
-  char result; // al
-  int v11; // [esp+8h] [ebp-10h]
-  int v12; // [esp+10h] [ebp-8h]
-
-  if ( *((__int16 *)this + 10) > 0 ) /*0x4c930c*/
-  {
-    v3 = (int *)(this + 8); /*0x4c930e*/
-    if ( Locomotor::GetSpeed((int *)this + 2) ) /*0x4c9313*/
-    {
-      v4 = abs16(*(_WORD *)this - *((_WORD *)this + 2)) / *((__int16 *)this + 10); /*0x4c9333*/
-      v11 = *(_DWORD *)this; /*0x4c9337*/
-      if ( (__int16)v4 <= 0 ) /*0x4c933e*/
-      {
-  LABEL_9:
-        LOWORD(v8) = v11; /*0x4c936a*/
-        goto LABEL_12; /*0x4c936f*/
-      }
-      v5 = *((_DWORD *)this + 4); /*0x4c9340*/
-      v6 = *v3; /*0x4c9343*/
-      if ( v6 != -1 ) /*0x4c9348*/
-      {
-        if ( (int)g_CurrentFrame - v6 >= v5 ) /*0x4c9354*/
-        {
-          v7 = 0; /*0x4c9371*/
-          goto LABEL_8; /*0x4c9373*/
-        }
-        LOWORD(v5) = v5 - ((_WORD)g_CurrentFrame - v6); /*0x4c9356*/
-      }
-      v7 = v5; /*0x4c9358*/
-  LABEL_8:
-      LOWORD(v11) = v11 - v7 * ((__int16)(*(_WORD *)this - *((_WORD *)this + 2)) / (__int16)v4); /*0x4c935a*/
-      goto LABEL_9; /*0x4c9365*/
-    }
-  }
-  v8 = *(_DWORD *)this; /*0x4c9375*/
-  LABEL_12:
-  if ( (_WORD)v8 == *(_WORD *)a1 ) /*0x4c937e*/
-  {
-    v9 = this + 8; /*0x4c93b3*/
-    result = 0; /*0x4c93b6*/
-    *v9 = g_CurrentFrame; /*0x4c93b8*/
-    v9[1] = v12; /*0x4c93ba*/
-  }
-  else
-  {
-    *(_DWORD *)this = *a1; /*0x4c9382*/
-    *((_DWORD *)this + 1) = *a1; /*0x4c9386*/
-    v9 = this + 8; /*0x4c9390*/
-    *v9 = g_CurrentFrame; /*0x4c9393*/
-    v9[1] = v12; /*0x4c9399*/
-    result = 1; /*0x4c939c*/
-  }
-  v9[2] = 0; /*0x4c939e*/
-  return result; /*0x4c93a1*/
-}

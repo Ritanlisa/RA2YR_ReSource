@@ -2,6 +2,11 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Array_e4.hpp"
+#include "e4/classes/CheckListClass_e4.hpp"
+#include "e4/classes/BuildingAnim_e4.hpp"
+#include "e4/classes/ColorListClass_e4.hpp"
+#include "e4/classes/LinkedList_flat_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x488520
 namespace gamemd {
@@ -71,18 +76,18 @@ void CheckListClass_OnClick()
 // 0x4886B0
 int CheckListClass::COMStub()
 {
-  return *(this + 17); /*0x4886b3*/
+  return *(&this->q0047); /*0x4886b3*/
 }
 // 0x557E10
 int CheckListClass::ddtor(int a2)
 {
-  if ( *(_BYTE *)(this + 84) ) /*0x557e18*/
+  if ( this->IsReadOnly ) /*0x557e18*/
   {
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 280) + 12))(this + 280, a2); /*0x557e2c*/
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 184) + 12))(this + 184, a2); /*0x557e3c*/
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)(this + 88) + 12))(this + 88, a2); /*0x557e46*/
+    (*(void (__thiscall **)(int, int))(this->q118 + 12))(&this->q118, a2); /*0x557e2c*/
+    (*(void (__thiscall **)(int, int))(this->subList2 + 12))(&this->u32_2E0, a2); /*0x557e3c*/
+    (*(void (__thiscall **)(int, int))(this->subList1 + 12))(&this->subList1, a2); /*0x557e46*/
   }
-  return LinkedList::InsertAfter((_DWORD *)this, a2); /*0x557e51*/
+  return LinkedList::InsertAfter(a2); /*0x557e51*/
 }
 // 0x48E650
 void CheckListClass::StubReturnFalse(int a1, int a2, int a3)

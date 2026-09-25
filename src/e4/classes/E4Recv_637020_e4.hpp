@@ -5,7 +5,15 @@
 
 namespace gamemd {
 struct E4Recv_637020 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    unsigned int q060;  // 0x60
+    unsigned int M152;  // 0x98
+    unsigned int q150;  // 0x150
+    unsigned int q338;  // 0x338
+    unsigned int q824;  // 0x824
+    unsigned int q2084;  // 0x2084
+// --- flat members (END) ---
     bool _WasExplicitlyAttached_ExternalContextBase_details_Concurrency__QBE_NXZ();  // 0x637020
 };
 } // namespace gamemd

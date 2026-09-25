@@ -5,6 +5,14 @@
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/Theme_e4.hpp"
+#include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
+#include "e4/classes/ScoreScreen_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x77E110
 namespace gamemd {
@@ -31,12 +39,12 @@ Coord * * sub_77E110()
     {
   LABEL_5:
       Theme::Stop(&g_BuildingTypeClass_Count, 0); /*0x77e16a*/
-      LOBYTE(v0) = Theme::QueueSong((int)&g_BuildingTypeClass_Count, -2); /*0x77e176*/
+      IDA_LOBYTE(v0) = Theme::QueueSong((int)&g_BuildingTypeClass_Count, -2); /*0x77e176*/
     }
   }
   else
   {
-    LOBYTE(v0) = Theme::QueueSong((int)&g_BuildingTypeClass_Count, -3); /*0x77e1c2*/
+    IDA_LOBYTE(v0) = Theme::QueueSong((int)&g_BuildingTypeClass_Count, -3); /*0x77e1c2*/
   }
   return v0; /*0x77e17b*/
 }
@@ -69,9 +77,9 @@ void sub_785EA0()
       while ( v2 ) /*0x785edb*/
       {
         v3 = (void **)v2; /*0x785edd*/
-        v2 = *(_DWORD *)(v2 + 8); /*0x785edf*/
+        v2 = v2->SessionClass_field_08; /*0x785edf*/
         DeleteAndZero(v3); /*0x785ee8*/
-        __3_YAXPAX_Z(v3); /*0x785eee*/
+        RA2_OPDEL(v3); /*0x785eee*/
       }
       *((_DWORD *)g_WOL_MessageQueue + i++) = 0; /*0x785f01*/
     }
@@ -129,7 +137,7 @@ void sub_785EA0()
     Current = Dialog::GetCurrent(); /*0x786056*/
     result = GetDlgItem(Current, 1344); /*0x786061*/
     if ( result ) /*0x786069*/
-      return SetFocus(result); /*0x78606c*/
+      return SetFocus(result, unsigned int a1, unsigned int a2); /*0x78606c*/
   }
   return result; /*0x786072*/
 }
@@ -234,14 +242,14 @@ void sub_72C830()
       if ( dword_B0F9E8 ) /*0x72c84d*/
       {
         FileTreeNode::Destroy(dword_B0F9E8); /*0x72c851*/
-        __3_YAXPAX_Z(v0); /*0x72c857*/
+        RA2_OPDEL(v0); /*0x72c857*/
       }
       byte_B0FCFC = 0; /*0x72c85f*/
     }
     dword_B0F9E8 = 0; /*0x72c86b*/
     if ( dword_B0FD00 ) /*0x72c873*/
     {
-      __3_YAXPAX_Z(dword_B0FD00); /*0x72c876*/
+      RA2_OPDEL(dword_B0FD00); /*0x72c876*/
       dword_B0FD00 = 0; /*0x72c87e*/
     }
     if ( dword_B0FD04 ) /*0x72c88c*/

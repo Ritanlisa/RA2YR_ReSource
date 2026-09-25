@@ -5,7 +5,9 @@
 
 namespace gamemd {
 struct E4Recv_4080A0 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int u32_290;  // 0x290
+// --- flat members (END) ---
     char * sub_4080A0();  // 0x4080A0
 };
 } // namespace gamemd

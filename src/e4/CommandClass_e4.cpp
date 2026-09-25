@@ -2,8 +2,17 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Array_e4.hpp"
+#include "e4/classes/CommandClass_e4.hpp"
+#include "e4/classes/Com_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/Struct_e4.hpp"
+#include "e4/classes/ToolTipManager_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/GameLoop_e4.hpp"
 
 // 0x6D1200
+namespace gamemd {
 int CommandClass::BuildBar()
 {
   int *v2; // esi
@@ -51,11 +60,11 @@ int CommandClass::BuildBar()
   do /*0x6d1224*/
   {
     (*(void (__thiscall **)(int *))(*v2 + 32))(v2); /*0x6d1210*/
-    (*(void (__thiscall **)(void *, int *))(*(_DWORD *)this + 48))(this, v2); /*0x6d1218*/
+    (*(void (__thiscall **)(void *, int *))(*(_DWORD *)&this->q0108))(this, v2); /*0x6d1218*/
     v2 += 24; /*0x6d121b*/
   }
   while ( (int)v2 < (int)&dword_B0CB20 ); /*0x6d1224*/
-  (*(void (__thiscall **)(void *, _DWORD *))(*(_DWORD *)this + 48))(this, dword_B0CCB0); /*0x6d122f*/
+  (*(void (__thiscall **)(void *, _DWORD *))(*(_DWORD *)&this->q0108))(this, dword_B0CCB0); /*0x6d122f*/
   v3 = g_ObjectTrackingPool[dword_B0CD24]; /*0x6d1238*/
   if ( v3 <= 0x18 ) /*0x6d1241*/
   {
@@ -164,14 +173,14 @@ int CommandClass::BuildBar()
   PushCommandClass::Execute(v35, (int)aTipTypeselect); /*0x6d14d8*/
   return PushCommandClass::Execute(dword_B0CCB0, (int)aTipThumbopen); /*0x6d14ec*/
 }
+} // namespace gamemd
 // 0x724580
+namespace gamemd {
 int CommandClass::AddAction(ToolTipManager * aP1)
 {
-  int v2; // edi
   int *v4; // esi
   int v5; // eax
   _DWORD *v7; // eax
-  _DWORD *v8; // ebp
   int v9; // eax
   int v10; // ecx
   int v11; // eax
@@ -179,16 +188,15 @@ int CommandClass::AddAction(ToolTipManager * aP1)
   int v13; // eax
   int v14; // ebx
   _DWORD *v15; // eax
-  _DWORD *v16; // edi
   int i; // eax
   int v18; // ecx
   int v19; // ecx
   int v20; // eax
 
-  v2 = aP1; /*0x724584*/
-  v4 = (int *)(this + 588); /*0x72458c*/
+  aP1 = aP1; /*0x724584*/
+  v4 = (int *)(&this->u32_E88); /*0x72458c*/
   aP1 = *(_DWORD *)aP1; /*0x724592*/
-  if ( *(_DWORD *)(this + 592) ) /*0x724596*/
+  if ( this->u32_250 ) /*0x724596*/
   {
     if ( (unsigned __int8)CommandClass::executeAction(&aP1) ) /*0x7245a4*/
       return 0; /*0x7245ab*/
@@ -199,33 +207,33 @@ int CommandClass::AddAction(ToolTipManager * aP1)
       return 0; /*0x7245ca*/
     }
   }
-  v7 = __2_YAPAXI_Z(0x1Cu); /*0x7245cf*/
-  v8 = v7; /*0x7245d4*/
+  v7 = RA2_OPNEW(0x1Cu); /*0x7245cf*/
+  v7 = v7; /*0x7245d4*/
   if ( v7 ) /*0x7245db*/
   {
-    *v7 = *(_DWORD *)v2; /*0x7245e6*/
-    v7[1] = *(_DWORD *)(v2 + 4); /*0x7245ee*/
-    v7[2] = *(_DWORD *)(v2 + 8); /*0x7245f3*/
-    v7[3] = *(_DWORD *)(v2 + 12); /*0x7245f9*/
-    v7[4] = *(_DWORD *)(v2 + 16); /*0x7245ff*/
-    v7[5] = *(_DWORD *)(v2 + 20); /*0x724605*/
-    *((_BYTE *)v7 + 24) = *(_BYTE *)(v2 + 24); /*0x724611*/
-    v9 = *(_DWORD *)(this + 572); /*0x724614*/
-    if ( *(_DWORD *)(this + 580) < v9 /*0x724641*/
-      || (*(_BYTE *)(this + 577) || !v9)
-      && (v10 = *(_DWORD *)(this + 584), v10 > 0)
-      && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(this + 564) + 8))(this + 564, v9 + v10, 0) )
+    *v7 = *(_DWORD *)aP1; /*0x7245e6*/
+    v7[1] = aP1->Position; /*0x7245ee*/
+    v7[2] = aP1->u32_8; /*0x7245f3*/
+    v7[3] = aP1->ToolTipText; /*0x7245f9*/
+    v7[4] = aP1->Duration; /*0x7245ff*/
+    v7[5] = aP1->DisplayTimer; /*0x724605*/
+    *((_BYTE *)v7 + 24) = aP1->q018; /*0x724611*/
+    v9 = this->u32_23C; /*0x724614*/
+    if ( this->q244 < v9 /*0x724641*/
+      || (this->u8_241 || !v9)
+      && (v10 = this->u32_248, v10 > 0)
+      && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->u32_234 + 8))(&this->u32_8D0, v9 + v10, 0) )
     {
-      v11 = *(_DWORD *)(this + 580); /*0x72464c*/
-      v12 = *(_DWORD *)(this + 568); /*0x72464f*/
-      *(_DWORD *)(this + 580) = v11 + 1; /*0x724655*/
-      *(_DWORD *)(v12 + 4 * v11) = v8; /*0x724658*/
+      v11 = this->q244; /*0x72464c*/
+      v12 = this->u32_238; /*0x72464f*/
+      this->q244 = v11 + 1; /*0x724655*/
+      *(_DWORD *)(v12 + 4 * v11) = v7; /*0x724658*/
       v13 = v4[2]; /*0x72465e*/
       if ( v4[1] + 1 <= v13 ) /*0x724664*/
       {
   LABEL_19:
-        *(_DWORD *)(*v4 + 8 * v4[1]) = *v8; /*0x7246f4*/
-        *(_DWORD *)(*v4 + 8 * v4[1] + 4) = v8; /*0x724704*/
+        *(_DWORD *)(*v4 + 8 * v4[1]) = *v7; /*0x7246f4*/
+        *(_DWORD *)(*v4 + 8 * v4[1] + 4) = v7; /*0x724704*/
         v20 = v4[1] + 1; /*0x72470b*/
         *((_BYTE *)v4 + 12) = 0; /*0x72470c*/
         v4[1] = v20; /*0x724710*/
@@ -242,27 +250,28 @@ int CommandClass::AddAction(ToolTipManager * aP1)
         aP1 = 10; /*0x72466e*/
       }
       v14 = v13 + aP1; /*0x72468a*/
-      v15 = __2_YAPAXI_Z(8 * (v13 + aP1)); /*0x724695*/
-      v16 = v15; /*0x72469a*/
+      v15 = RA2_OPNEW(8 * (v13 + aP1)); /*0x724695*/
+      v15 = v15; /*0x72469a*/
       if ( v15 ) /*0x7246a1*/
       {
         Array::ForEach((int)v15, 8, v14, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_6); /*0x7246ac*/
-        for ( i = 0; i < v4[1]; v16[2 * i - 1] = *(_DWORD *)(v18 + 8 * i - 4) ) /*0x7246b8*/
+        for ( i = 0; i < v4[1]; v15[2 * i - 1] = *(_DWORD *)(v18 + 8 * i - 4) ) /*0x7246b8*/
         {
           v18 = *v4; /*0x7246ba*/
           ++i; /*0x7246bc*/
-          v16[2 * i - 2] = *(_DWORD *)(*v4 + 8 * i - 8); /*0x7246c1*/
+          v15[2 * i - 2] = *(_DWORD *)(*v4 + 8 * i - 8); /*0x7246c1*/
         }
-        __3_YAXPAX_Z((void *)*v4); /*0x7246d7*/
+        RA2_OPDEL((void *)*v4); /*0x7246d7*/
         v19 = aP1 + v4[2]; /*0x7246e6*/
-        *v4 = (int)v16; /*0x7246e8*/
+        *v4 = (int)v15; /*0x7246e8*/
         v4[2] = v19; /*0x7246ea*/
         v4[4] = 0; /*0x7246ed*/
         goto LABEL_19; /*0x7246ed*/
       }
       return 1; /*0x724719*/
     }
-    __3_YAXPAX_Z(v8); /*0x72471d*/
+    RA2_OPDEL(v7); /*0x72471d*/
   }
   return 0; /*0x7245c4*/
 }
+} // namespace gamemd

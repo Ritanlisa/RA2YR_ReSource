@@ -3227,7 +3227,7 @@ int ReturnZero555D60()
 
 // IDA: 0x556510  proposal: MethodStub556510
 // IDA: int __thiscall sub_556510(int this)
-//   *(_DWORD *)this = &LightConvertClass::`vftable';
+//   *(_DWORD *)this = (void*)(void*)&LightConvertClass_vftable;
 //   return sub_490400(this);
 int MethodStub556510(void* _this) // thiscall
 {
@@ -3236,10 +3236,10 @@ int MethodStub556510(void* _this) // thiscall
 
 // IDA: 0x556520  proposal: MethodSub490400
 // IDA: _DWORD *__thiscall sub_556520(_DWORD *Block, char a2)
-//   *Block = &LightConvertClass::`vftable';
+//   *Block = (void*)(void*)&LightConvertClass_vftable;
 //   sub_490400((int)Block);
 //   if ( (a2 & 1) != 0 )
-//   __3_YAXPAX_Z(Block);
+//   RA2_OPDEL(Block);
 //   return Block;
 int* MethodSub490400(void* _this, int a0) // thiscall
 {

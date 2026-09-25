@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5C7EC0
 namespace gamemd {
@@ -157,8 +159,8 @@ void sub_5C7EC0(const void * a1, int a2)
         goto LABEL_24; /*0x5c8040*/
     }
   }
-  LOWORD(dword_ABF6B4) = HIWORD(dword_ABF5A4); /*0x5c8091*/
-  LOWORD(dword_ABF5A0[0]) = dword_ABF5A4; /*0x5c8091*/
+  IDA_LOWORD(dword_ABF6B4) = IDA_HIWORD(dword_ABF5A4); /*0x5c8091*/
+  IDA_LOWORD(dword_ABF5A0[0]) = dword_ABF5A4; /*0x5c8091*/
   return 0; /*0x5c809a*/
 }
 }

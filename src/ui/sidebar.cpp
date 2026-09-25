@@ -73,13 +73,13 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
       v24 = absType == 57 || absType == 32 || absType == 31 ? 1 : -1;
       break;
   }
-  v7 = *(this + 997 * v24 + 1382); /*0x6a63cf*/
+  v7 = *(&this->u32_F94 * v24 + 1382); /*0x6a63cf*/
   if ( v7 > 75 ) /*0x6a63d9*/
     return 0; /*0x6a63d9*/
   v8 = 0; /*0x6a63df*/
   if ( v7 > 0 ) /*0x6a63e3*/
   {
-    v9 = this + 997 * v24 + 1383; /*0x6a63e5*/
+    v9 = &this->u32_F94 * v24 + 1383; /*0x6a63e5*/
     while ( v9[1] != absType || *v9 != idxType ) /*0x6a63ef*/
     {
       ++v8; /*0x6a63f5*/
@@ -93,7 +93,7 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
   if ( !g_IKnowWhatImDoing && absType != 31 ) /*0x6a6409*/
     VoxClass::FindAndPlay(aEvaNewconstruc, -1); /*0x6a6415*/
   TabCameoListClass::AddCameo_ReplaceItAll(absType, idxType); /*0x6a641e*/
-  *((_BYTE *)this + 3988 * v24 + 5504) = 1; /*0x6a6423*/
+  *((_BYTE *)&this->u32_3E50 * v24 + 5504) = 1; /*0x6a6423*/
   v10 = 0; /*0x6a6427*/
   g_CameoRenderFlag = 1; /*0x6a6429*/
   v11 = 0; /*0x6a6430*/
@@ -110,16 +110,16 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
   LABEL_37:
   if ( dword_B0B478 ) /*0x6a6455*/
   {
-    *(this + 5350) = 1; /*0x6a6457*/
-    *(this + 5349) = 0; /*0x6a6461*/
+    *(&this->u32_85C0) = 1; /*0x6a6457*/
+    *(&this->u32_8589) = 0; /*0x6a6461*/
   }
   LABEL_39:
   v13 = v24; /*0x6a6467*/
   if ( !DialogControl::IsHidden((_BYTE *)&unk_B07C48 + 96 * v24) ) /*0x6a647a*/
     DialogControl::Hide((_BYTE *)&unk_B07C48 + 96 * v24); /*0x6a6485*/
-  if ( v24 == *(this + 5351) ) /*0x6a6490*/
+  if ( v24 == *(&this->u32_85C1) ) /*0x6a6490*/
     Tactical::UpdateUIVisibility(this); /*0x6a6494*/
-  (*(void (__thiscall **)(int *, int))(*this + 216))(this, 1); /*0x6a649f*/
+  this->ToggleSidebarDisplay(1); /*0x6a649f*/
   if ( v23 == -1 ) /*0x6a64aa*/
   {
     v14 = this + 1382; /*0x6a64b0*/
@@ -133,23 +133,23 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
         break; /*0x6a64c6*/
       }
     }
-    v15 = *(this + 5351); /*0x6a64c9*/
+    v15 = *(&this->u32_85C1); /*0x6a64c9*/
     if ( v10 != v15 ) /*0x6a64d1*/
     {
       GadgetClass::Hide((char *)&unk_B07C48 + 96 * v15); /*0x6a64e3*/
       v16 = 0; /*0x6a64f5*/
-      v17 = (int)(this + 997 * *(this + 5351) + 1361); /*0x6a64fd*/
-      *((_BYTE *)this + 3988 * *(this + 5351) + 5472) = 0; /*0x6a6504*/
+      v17 = (int)(&this->u32_F94 * *(&this->u32_85C1) + 1361); /*0x6a64fd*/
+      *((_BYTE *)&this->u32_3E50 * *(&this->u32_85C1) + 5472) = 0; /*0x6a6504*/
       do /*0x6a652f*/
       {
         Tactical::SelectObject(56 * (v16 + 60 * *(_DWORD *)(v17 + 56)) + 11566720); /*0x6a6526*/
         ++v16; /*0x6a652b*/
       }
       while ( v16 < 60 ); /*0x6a652f*/
-      *(this + 5351) = v10; /*0x6a6534*/
+      *(&this->u32_85C1) = v10; /*0x6a6534*/
       GadgetClass::Show((char *)&unk_B07C48 + 96 * v10); /*0x6a6543*/
-      v18 = (int)(this + 997 * *(this + 5351) + 1361); /*0x6a6560*/
-      *((_BYTE *)this + 3988 * *(this + 5351) + 5472) = 1; /*0x6a6567*/
+      v18 = (int)(&this->u32_F94 * *(&this->u32_85C1) + 1361); /*0x6a6560*/
+      *((_BYTE *)&this->u32_3E50 * *(&this->u32_85C1) + 5472) = 1; /*0x6a6567*/
       v19 = UI_Add_6AC430(&MapClass_Instance); /*0x6a6570*/
       for ( i = 0; i < v19; ++i ) /*0x6a6576*/
       {
@@ -159,13 +159,13 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
       g_CameoRenderFlag = 1; /*0x6a65bf*/
       Tactical::UpdateUIVisibility(this); /*0x6a65c6*/
       v13 = v24; /*0x6a65cb*/
-      *((_BYTE *)this + 21415) = 1; /*0x6a65cf*/
+      this->q53A7 = 1; /*0x6a65cf*/
     }
   }
   v21 = *this; /*0x6a65d6*/
-  *((_BYTE *)this + 21414) = 1; /*0x6a65dc*/
-  (*(void (__thiscall **)(int *, _DWORD))(v21 + 56))(this, 0); /*0x6a65e3*/
-  if ( v13 == *(this + 5351) ) /*0x6a65ec*/
+  this->q53A6 = 1; /*0x6a65dc*/
+  this->MarkForRedraw(0); /*0x6a65e3*/
+  if ( v13 == *(&this->u32_85C1) ) /*0x6a65ec*/
     g_TooltipActive = 1; /*0x6a65ee*/
   return 1; /*0x6a65f5*/
 }

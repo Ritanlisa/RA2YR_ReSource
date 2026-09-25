@@ -4,6 +4,12 @@
 #include "e4/classes/EventClass_e4.hpp"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/PsyDom_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/CaptureManagerClass_e4.hpp"
+#include "e4/classes/RadarClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x53B080
 namespace gamemd {
@@ -51,7 +57,7 @@ void PsyDom::Fire()
   int v39; // [esp+5Ch] [ebp-8h]
   int v40; // [esp+60h] [ebp-4h]
 
-  v0 = __2_YAPAXI_Z(0x14u); /*0x53b08e*/
+  v0 = RA2_OPNEW(0x14u); /*0x53b08e*/
   if ( v0 ) /*0x53b097*/
   {
     v1 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&PsyDom_Coords); /*0x53b0a3*/
@@ -69,7 +75,7 @@ void PsyDom::Fire()
   v32[0] = *v6; /*0x53b104*/
   v32[1] = v6[1]; /*0x53b110*/
   v32[2] = v6[2]; /*0x53b117*/
-  v7 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53b11b*/
+  v7 = (void **)RA2_OPNEW(0x1C8u); /*0x53b11b*/
   if ( v7 ) /*0x53b125*/
     PsyDom_Anim = (int)AnimClass::ctor(v7, v4, v32, 0, 1, (void *)0x600, 0, 0); /*0x53b13e*/
   else
@@ -86,7 +92,7 @@ void PsyDom::Fire()
     v8 = 10; /*0x53b181*/
   v9 = dword_7ED3D0[v8]; /*0x53b186*/
   EventClass::resetEvent(&v35, 0, 0); /*0x53b193*/
-  v35 = &DynamicVectorClass<TechnoClass *>::`vftable'; /*0x53b19a*/
+  v35 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x53b19a*/
   v40 = 10; /*0x53b1a2*/
   v39 = 0; /*0x53b1aa*/
   if ( v9 > 0 )
@@ -96,9 +102,9 @@ void PsyDom::Fire()
     do
     {
       v11 = *v10; /*0x53b1bd*/
-      HIWORD(v30) = HIWORD(*v10); /*0x53b1c6*/
-      HIWORD(v28) = HIWORD(PsyDom_Coords) + HIWORD(v30); /*0x53b1dd*/
-      LOWORD(v28) = PsyDom_Coords + v11; /*0x53b1e2*/
+      IDA_HIWORD(v30) = IDA_HIWORD(*v10); /*0x53b1c6*/
+      IDA_HIWORD(v28) = IDA_HIWORD(PsyDom_Coords) + IDA_HIWORD(v30); /*0x53b1dd*/
+      IDA_LOWORD(v28) = PsyDom_Coords + v11; /*0x53b1e2*/
       v30 = v28; /*0x53b1f7*/
       v31[0] = 0; /*0x53b1fb*/
       v31[1] = 0; /*0x53b1ff*/
@@ -114,7 +120,7 @@ void PsyDom::Fire()
           v14 = *(_DWORD *)(i + 704); /*0x53b276*/
           if ( v14 ) /*0x53b27e*/
             CaptureManagerClass::FreeUnit(*(_DWORD **)(v14 + 700), 0, (int)v10, (_DWORD *)i, v26, v27); /*0x53b287*/
-          (*(void (__thiscall **)(int, #375 *, int))(*(_DWORD *)i + 980))(i, PsyDom_Owner, 1); /*0x53b298*/
+          (*(void (__thiscall **)(int, void *, int))(*(_DWORD *)i + 980))(i, PsyDom_Owner, 1); /*0x53b298*/
           v15 = *(_DWORD *)i; /*0x53b29e*/
           *(_BYTE *)(i + 708) = 1; /*0x53b2a2*/
           v16 = *(_DWORD *)((*(int (__thiscall **)(int))(v15 + 132))(i) + 1548); /*0x53b2af*/
@@ -125,7 +131,7 @@ void PsyDom::Fire()
           v33[0] = v18; /*0x53b2d0*/
           v33[1] = v19; /*0x53b2d4*/
           v33[2] = v16 + v20; /*0x53b2d8*/
-          v21 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53b2dc*/
+          v21 = (void **)RA2_OPNEW(0x1C8u); /*0x53b2dc*/
           if ( v21 ) /*0x53b2e6*/
             v22 = AnimClass::ctor( /*0x53b306*/
                     v21,
@@ -142,7 +148,7 @@ void PsyDom::Fire()
           if ( v22 ) /*0x53b317*/
             BuildingClass::AimTurret(v22, (_BYTE *)i); /*0x53b31c*/
           if ( v39 < v37 /*0x53b34b*/
-            || (BYTE1(v38) || !v37)
+            || (IDA_BYTE1(v38) || !v37)
             && v40 > 0
             && ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v35[2])(&v35, v40 + v37, 0) )
           {
@@ -164,11 +170,11 @@ void PsyDom::Fire()
     for ( j = v39 - 1; j >= 0; --j ) /*0x53b3af*/
       (*(void (__thiscall **)(_DWORD, int, _DWORD))(**((_DWORD **)Block + j) + 488))(*((_DWORD *)Block + j), 15, 0); /*0x53b3bd*/
   }
-  v35 = &VectorClass<TechnoClass *>::`vftable'; /*0x53b3ca*/
+  v35 = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x53b3ca*/
   if ( Block ) /*0x53b3d4*/
   {
-    if ( BYTE1(v38) ) /*0x53b3da*/
-      __3_YAXPAX_Z(Block); /*0x53b3dd*/
+    if ( IDA_BYTE1(v38) ) /*0x53b3da*/
+      RA2_OPDEL(Block); /*0x53b3dd*/
   }
 }
 }

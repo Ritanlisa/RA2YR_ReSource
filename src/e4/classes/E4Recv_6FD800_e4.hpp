@@ -5,7 +5,9 @@
 
 namespace gamemd {
 struct E4Recv_6FD800 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+// --- flat members (END) ---
     int Vf72(int, ...);  // G6 vtable slot dispatch
     int SpreadRadiationAreaEffect(InfantryClass * aP1);  // 0x6FD800
 };

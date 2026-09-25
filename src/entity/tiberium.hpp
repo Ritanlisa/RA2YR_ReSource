@@ -116,12 +116,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int SaveLoad_Prefix(int a1, int a2);  // 0x721e80
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x7220d0
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    char Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a7, char a8);  // 0x5A0160
-    int ddtor(int a1, unsigned int * a2);  // 0x721E40
-    int StubReturn296();  // 0x7236E0
-    int StubReturn46();  // 0x7236F0
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

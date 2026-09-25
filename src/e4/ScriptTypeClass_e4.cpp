@@ -3,6 +3,12 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/ScriptTypeClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/TaskForceClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x691D50
 namespace gamemd {
@@ -30,10 +36,10 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x691da6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x691daf*/
-      *aP0 = &ScriptTypeClass::`vftable'; /*0x691db4*/
-      aP0[1] = &ScriptTypeClass::`vftable'; /*0x691dba*/
-      aP0[2] = &ScriptTypeClass::`vftable'; /*0x691dc1*/
-      aP0[3] = &ScriptTypeClass::`vftable'; /*0x691dc8*/
+      *aP0 = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691db4*/
+      aP0[1] = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691dba*/
+      aP0[2] = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691dc1*/
+      aP0[3] = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691dc8*/
     }
     return 0; /*0x691dcf*/
   }
@@ -75,15 +81,13 @@ namespace gamemd {
 ScriptTypeClass * ScriptTypeClass::ddtor(char a2)
 {
   int v3; // eax
-  void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &ScriptTypeClass::`vftable'; /*0x691fa6*/
-  *(this + 1) = &ScriptTypeClass::`vftable'; /*0x691fac*/
-  *(this + 2) = &ScriptTypeClass::`vftable'; /*0x691fb3*/
-  *(this + 3) = &ScriptTypeClass::`vftable'; /*0x691fba*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x691fc1*/
-  v5 = this; /*0x691fd6*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(dword_8B41C8 + 16))(&dword_8B41C8, &v5); /*0x691fda*/
+  *this = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691fa6*/
+  this->vtable2 = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691fac*/
+  this->vtable3 = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691fb3*/
+  this->vtable4 = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691fba*/
+  AbstractClass::AnnounceExpiredPointer(1); /*0x691fc1*/
+  v3 = (*(int (__thiscall **)(int *, void ***))(dword_8B41C8 + 16))(&dword_8B41C8, &this); /*0x691fda*/
   if ( v3 != -1 && v3 < g_MultiplayerDebugState && v3 < --g_MultiplayerDebugState ) /*0x691ff5*/
   {
     do /*0x69200d*/
@@ -93,9 +97,9 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2)
     }
     while ( v3 < g_MultiplayerDebugState ); /*0x69200d*/
   }
-  AbstractTypeClass::Dtor(this); /*0x692011*/
+  AbstractTypeClass::Dtor(); /*0x692011*/
   if ( (a2 & 1) != 0 ) /*0x69201b*/
-    __3_YAXPAX_Z(this); /*0x69201e*/
+    RA2_OPDEL(); /*0x69201e*/
   return this; /*0x692028*/
 }
 } // namespace gamemd

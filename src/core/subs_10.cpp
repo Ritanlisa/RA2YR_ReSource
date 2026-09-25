@@ -629,7 +629,7 @@ int Callatexit77B980()
 // IDA: 0x77B9A0  proposal: Sub77B9A0
 // IDA: void __cdecl sub_77B9A0()
 //   g_WOL_ChatState = 0;
-//   __3_YAXPAX_Z(g_WOL_ConnectionHandler);
+//   RA2_OPDEL(g_WOL_ConnectionHandler);
 void Sub77B9A0()
 {
 }
@@ -648,7 +648,7 @@ int Callatexit77B9C0()
 // IDA: 0x77B9E0  proposal: Sub77B9E0
 // IDA: void __cdecl sub_77B9E0()
 //   g_WOL_State = 0;
-//   __3_YAXPAX_Z(g_WOL_ConnectionFlags);
+//   RA2_OPDEL(g_WOL_ConnectionFlags);
 void Sub77B9E0()
 {
 }
@@ -667,7 +667,7 @@ int Callatexit77BA00()
 // IDA: 0x77BA20  proposal: Sub77BA20
 // IDA: void __cdecl sub_77BA20()
 //   g_WOL_RequestState = 0;
-//   __3_YAXPAX_Z(g_WOL_RequestFlags);
+//   RA2_OPDEL(g_WOL_RequestFlags);
 void Sub77BA20()
 {
 }
@@ -970,7 +970,7 @@ int Callunknownlibname7377D0F0()
 // IDA: 0x77D120  proposal: ComPtrDispatch
 // IDA: int sub_77D120()
 //   ComPtr::Constructor(&dword_B75E48);
-//   dword_B75E48 = (int)&rc_ptr<PlayerProfile>::`vftable';
+//   dword_B75E48 = (int)(void*)(void*)&rc_ptr_PlayerProfile_vftable;
 //   return atexit(sub_77D140);
 int ComPtrDispatch()
 {
@@ -979,7 +979,7 @@ int ComPtrDispatch()
 
 // IDA: 0x77D140  proposal: ReleaseComPtr
 // IDA: void __cdecl sub_77D140()
-//   dword_B75E48 = (int)&rc_ptr<PlayerProfile>::`vftable';
+//   dword_B75E48 = (int)(void*)(void*)&rc_ptr_PlayerProfile_vftable;
 //   ComPtr::Release(&dword_B75E48);
 void ReleaseComPtr()
 {
@@ -1039,7 +1039,7 @@ int Callunknownlibname7377DA20()
 //   else
 //   {
 //   v4 = -(v2 = -1);
-//   LOBYTE(v4) = v4 & 0xFE;
+//   IDA_LOBYTE(v4) = v4 & 0xFE;
 //   return v4 + 1;
 //   }
 int ReturnZero781380(int a0, int a1)
@@ -1070,7 +1070,7 @@ int ReturnOne7813B0(int a0, int a1)
 //   if ( v2 == *(_DWORD *)(a2 + 8) )
 //   return _strcmpi(*(const void **)(a1 + 4), *(const void **)(a2 + 4));
 //   v3 = -(v2 != 0);
-//   LOBYTE(v3) = v3 & 0xFE;
+//   IDA_LOBYTE(v3) = v3 & 0xFE;
 //   return v3 + 1;
 int Callstrcmpi781CC0(int a0, int a1)
 {
@@ -1085,7 +1085,7 @@ int Callstrcmpi781CC0(int a0, int a1)
 //   if ( v2 == a2[2] )
 //   return _strcmpi(a2[1], *((const void **)a1 + 1));
 //   v3 = -(v2 != 0);
-//   LOBYTE(v3) = v3 & 0xFE;
+//   IDA_LOBYTE(v3) = v3 & 0xFE;
 //   return v3 + 1;
 int Callstrcmpi781CF0(int a0, int a1)
 {
@@ -1216,7 +1216,7 @@ int Callatexit7B00D0()
 // IDA: 0x7B0110  proposal: ComPtrDispatch7B0110
 // IDA: int sub_7B0110()
 //   ComPtr::Constructor(&dword_B77F58);
-//   dword_B77F58 = (int)&rc_ptr<WDTState>::`vftable';
+//   dword_B77F58 = (int)(void*)(void*)&rc_ptr_WDTState_vftable;
 //   return atexit(sub_7B0130);
 int ComPtrDispatch7B0110()
 {
@@ -1225,7 +1225,7 @@ int ComPtrDispatch7B0110()
 
 // IDA: 0x7B0130  proposal: ReleaseComPtr7B0130
 // IDA: void __cdecl sub_7B0130()
-//   dword_B77F58 = (int)&rc_ptr<WDTState>::`vftable';
+//   dword_B77F58 = (int)(void*)(void*)&rc_ptr_WDTState_vftable;
 //   ComPtr::Release(&dword_B77F58);
 void ReleaseComPtr7B0130()
 {
@@ -1234,7 +1234,7 @@ void ReleaseComPtr7B0130()
 // IDA: 0x7B0150  proposal: ComPtrDispatch7B0150
 // IDA: int sub_7B0150()
 //   ComPtr::Constructor(&dword_B77F70);
-//   dword_B77F70 = (int)&rc_ptr<WDTState>::`vftable';
+//   dword_B77F70 = (int)(void*)(void*)&rc_ptr_WDTState_vftable;
 //   return atexit(sub_7B0170);
 int ComPtrDispatch7B0150()
 {
@@ -1243,7 +1243,7 @@ int ComPtrDispatch7B0150()
 
 // IDA: 0x7B0170  proposal: ReleaseComPtr7B0170
 // IDA: void __cdecl sub_7B0170()
-//   dword_B77F70 = (int)&rc_ptr<WDTState>::`vftable';
+//   dword_B77F70 = (int)(void*)(void*)&rc_ptr_WDTState_vftable;
 //   ComPtr::Release(&dword_B77F70);
 void ReleaseComPtr7B0170()
 {
@@ -1252,7 +1252,7 @@ void ReleaseComPtr7B0170()
 // IDA: 0x7B0190  proposal: ComPtrDispatch7B0190
 // IDA: int sub_7B0190()
 //   ComPtr::Constructor(&dword_B77F68);
-//   dword_B77F68 = (int)&rc_ptr<WorldDominationTour::Campaign>::`vftable';
+//   dword_B77F68 = (int)(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable;
 //   return atexit(sub_7B01B0);
 int ComPtrDispatch7B0190()
 {
@@ -1261,7 +1261,7 @@ int ComPtrDispatch7B0190()
 
 // IDA: 0x7B01B0  proposal: ReleaseComPtr7B01B0
 // IDA: void __cdecl sub_7B01B0()
-//   dword_B77F68 = (int)&rc_ptr<WorldDominationTour::Campaign>::`vftable';
+//   dword_B77F68 = (int)(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable;
 //   ComPtr::Release(&dword_B77F68);
 void ReleaseComPtr7B01B0()
 {
@@ -1270,7 +1270,7 @@ void ReleaseComPtr7B01B0()
 // IDA: 0x7B01D0  proposal: ComPtrDispatch7B01D0
 // IDA: int sub_7B01D0()
 //   ComPtr::Constructor(&dword_B77F78);
-//   dword_B77F78 = (int)&rc_ptr<WorldDominationTour::Campaign>::`vftable';
+//   dword_B77F78 = (int)(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable;
 //   return atexit(sub_7B01F0);
 int ComPtrDispatch7B01D0()
 {
@@ -1279,7 +1279,7 @@ int ComPtrDispatch7B01D0()
 
 // IDA: 0x7B01F0  proposal: ReleaseComPtr7B01F0
 // IDA: void __cdecl sub_7B01F0()
-//   dword_B77F78 = (int)&rc_ptr<WorldDominationTour::Campaign>::`vftable';
+//   dword_B77F78 = (int)(void*)(void*)&rc_ptr_WorldDominationTour_Campaign_vftable;
 //   ComPtr::Release(&dword_B77F78);
 void ReleaseComPtr7B01F0()
 {
@@ -1900,7 +1900,7 @@ void* MethodStub7C8B38(void* _this, int a0) // thiscall
 // IDA: void *__thiscall sub_7CA993(void *Block, char a2)
 //   j_Exception_Destructor(Block);
 //   if ( (a2 & 1) != 0 )
-//   __3_YAXPAX_Z(Block);
+//   RA2_OPDEL(Block);
 //   return Block;
 void* MethodJExceptionDestructor(void* _this, int a0) // thiscall
 {
@@ -1910,7 +1910,7 @@ void* MethodJExceptionDestructor(void* _this, int a0) // thiscall
 // IDA: 0x7CA9B4  proposal: MethodStub7CA9B4
 // IDA: exception *__thiscall sub_7CA9B4(exception *this, struct exception *a2)
 //   __0exception_QAE_ABV0__Z(this, a2);
-//   *(_DWORD *)this = &__non_rtti_object::`vftable';
+//   *(_DWORD *)this = (void*)(void*)&__non_rtti_object_vftable;
 //   return this;
 void* MethodStub7CA9B4(void* _this, int a0) // thiscall
 {
@@ -1920,7 +1920,7 @@ void* MethodStub7CA9B4(void* _this, int a0) // thiscall
 // IDA: 0x7CA9CC  proposal: MethodStub7CA9CC
 // IDA: exception *__thiscall sub_7CA9CC(exception *this, struct exception *a2)
 //   __0exception_QAE_ABV0__Z(this, a2);
-//   *(_DWORD *)this = &bad_typeid::`vftable';
+//   *(_DWORD *)this = (void*)(void*)&bad_typeid_vftable;
 //   return this;
 void* MethodStub7CA9CC(void* _this, int a0) // thiscall
 {
@@ -1931,7 +1931,7 @@ void* MethodStub7CA9CC(void* _this, int a0) // thiscall
 // IDA: void *__thiscall sub_7CA9E4(void *Block, char a2)
 //   j_Exception_Destructor_2(Block);
 //   if ( (a2 & 1) != 0 )
-//   __3_YAXPAX_Z(Block);
+//   RA2_OPDEL(Block);
 //   return Block;
 void* MethodJExceptionDestructor2(void* _this, int a0) // thiscall
 {
@@ -1942,7 +1942,7 @@ void* MethodJExceptionDestructor2(void* _this, int a0) // thiscall
 // IDA: void *__thiscall sub_7CAC13(void *Block, char a2)
 //   j_Exception_Destructor_3(Block);
 //   if ( (a2 & 1) != 0 )
-//   __3_YAXPAX_Z(Block);
+//   RA2_OPDEL(Block);
 //   return Block;
 void* MethodJExceptionDestructor3(void* _this, int a0) // thiscall
 {
@@ -1952,7 +1952,7 @@ void* MethodJExceptionDestructor3(void* _this, int a0) // thiscall
 // IDA: 0x7CAC34  proposal: MethodStub7CAC34
 // IDA: exception *__thiscall sub_7CAC34(exception *this, struct exception *a2)
 //   __0exception_QAE_ABV0__Z(this, a2);
-//   *(_DWORD *)this = &bad_cast::`vftable';
+//   *(_DWORD *)this = (void*)(void*)&bad_cast_vftable;
 //   return this;
 void* MethodStub7CAC34(void* _this, int a0) // thiscall
 {
@@ -1963,7 +1963,7 @@ void* MethodStub7CAC34(void* _this, int a0) // thiscall
 // IDA: _DWORD *__thiscall sub_7D2E6E(_DWORD *this)
 //   *(this + 1) = 0;
 //   *(this + 2) = 0;
-//   *this = &exception::`vftable';
+//   ((void**)this)[0] = (void*)(void*)(void*)&exception_vftable;
 //   return this;
 int* SetMember17D2E6E(void* _this) // thiscall
 {
@@ -1974,7 +1974,7 @@ int* SetMember17D2E6E(void* _this) // thiscall
 // IDA: void *__thiscall sub_7D2E7F(void *Block, char a2)
 //   Exception::Destructor(Block);
 //   if ( (a2 & 1) != 0 )
-//   __3_YAXPAX_Z(Block);
+//   RA2_OPDEL(Block);
 //   return Block;
 void* Exception_Destructor(void* _this, int a0) // thiscall
 {
@@ -2032,7 +2032,7 @@ int ReturnOne7DC278()
 // IDA: _DWORD *__thiscall sub_7DCDF2(_DWORD *Block, char a2)
 //   sub_7DCE3B(Block);
 //   if ( (a2 & 1) != 0 )
-//   __3_YAXPAX_Z(Block);
+//   RA2_OPDEL(Block);
 //   return Block;
 int* MethodSub7DCE3B(void* _this, int a0) // thiscall
 {
@@ -2046,7 +2046,7 @@ int* MethodSub7DCE3B(void* _this, int a0) // thiscall
 //   v3 = *(_DWORD *)(a2 + 8);
 //   *(this + 3) = 0;
 //   *(this + 2) = v3;
-//   *this = &_com_error::`vftable';
+//   ((void**)this)[0] = (void*)(void*)(void*)&_com_error_vftable;
 //   if ( v3 )
 //   (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 4))(v3);
 //   return this;
@@ -2060,7 +2060,7 @@ int* SetMember17DCE0E(void* _this, int a0) // thiscall
 //   HLOCAL result; // eax
 //   void *v3; // esi
 //   result = (HLOCAL)*(this + 2);
-//   *this = &_com_error::`vftable';
+//   ((void**)this)[0] = (void*)(void*)(void*)&_com_error_vftable;
 //   if ( result )
 //   result = (HLOCAL)(*(int (__stdcall **)(HLOCAL))(*(_DWORD *)result + 8))(result);
 //   v3 = (void *)*(this + 3);
@@ -2088,12 +2088,12 @@ int Calllock()
 // IDA: void __cdecl __spoils<ecx> sub_7E01D2(_BYTE *a1, _BYTE *a2, _BYTE *a3, int a4)
 //   int v7; // eax
 //   int v8; // ecx
-//   HIWORD(v7) = 0;
+//   IDA_HIWORD(v7) = 0;
 //   v8 = 2 * a4;
 //   do
 //   {
-//   LOBYTE(v7) = *a1;
-//   BYTE1(v7) = *a2;
+//   IDA_LOBYTE(v7) = *a1;
+//   IDA_BYTE1(v7) = *a2;
 //   ++a1;
 //   ++a2;
 //   *a3++ = byte_A8F91C[v7];

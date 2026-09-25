@@ -5,7 +5,13 @@
 
 namespace gamemd {
 struct NetworkClass {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    void* q004;  // 0x4
+    void* q700;  // 0x700
+    void* q6034;  // 0x6034
+    unsigned int u32_64D4;  // 0x64D4
+    unsigned int u32_64D8;  // 0x64D8
+// --- flat members (END) ---
     int ExecutePlanningModeCmd();  // 0x639FD0
     int RecordEvent();  // 0x6FFE00
     SOCKET UnregisterAsync();  // 0x7B1C50

@@ -7,6 +7,14 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/ParticleClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/Particle_e4.hpp"
+#include "e4/classes/ParticleSystemClass_e4.hpp"
+#include "e4/classes/StreamClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/ParticleSystemTypeClass_e4.hpp"
 
 // 0x62CEC0
 namespace gamemd {
@@ -39,24 +47,24 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
   int v28; // [esp+2Ch] [ebp-8h]
   int v29; // [esp+30h] [ebp-4h]
 
-  if ( (unsigned int)dword_ABCD44 >= PingPongBuffer::GetWriteOffset() || *(_DWORD *)(*((_DWORD *)this + 43) + 744) ) /*0x62cedc*/
+  if ( (unsigned int)dword_ABCD44 >= PingPongBuffer::GetWriteOffset() || *(_DWORD *)(this->q0AC + 744) ) /*0x62cedc*/
   {
-    if ( g_lParam || (v4 = *(_DWORD *)(*((_DWORD *)this + 43) + 788), v4 != 1) && v4 != 3 ) /*0x62cf0b*/
+    if ( g_lParam || (v4 = *(_DWORD *)(this->q0AC + 788), v4 != 1) && v4 != 3 ) /*0x62cf0b*/
     {
       if ( g_ArmageddonMode /*0x62cf58*/
         || !g_hWnd
         || (*(_DWORD *)g_ScenarioClass_Instance & 0x1000) == 0
-        || (v27 = *((_DWORD *)this + 39),
-            v28 = *((_DWORD *)this + 40),
-            v29 = *((_DWORD *)this + 41),
+        || (v27 = this->u32_9C,
+            v28 = this->q0A0,
+            v29 = this->q0A4,
             !Game::Stub3((int)&v27)) )
       {
-        v5 = *(_DWORD *)(*((_DWORD *)this + 43) + 788); /*0x62cf6b*/
+        v5 = *(_DWORD *)(this->q0AC + 788); /*0x62cf6b*/
         if ( v5 == 3 || v5 == 4 ) /*0x62cf7d*/
         {
-          v26[0] = *((_DWORD *)this + 39); /*0x62d036*/
-          v26[1] = *((_DWORD *)this + 40); /*0x62d048*/
-          v26[2] = *((_DWORD *)this + 41); /*0x62d054*/
+          v26[0] = this->u32_9C; /*0x62d036*/
+          v26[1] = this->q0A0; /*0x62d048*/
+          v26[2] = this->q0A4; /*0x62d054*/
           Coord::To_Screen(g_TacticalClass_Instance, v26, &v27); /*0x62d058*/
           v12 = g_Map_VisibleRect + v28; /*0x62d06b*/
           v28 += g_Map_VisibleRect; /*0x62d071*/
@@ -73,22 +81,22 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
               {
                 v15 = v28 - *((_DWORD *)g_ZBufferDescriptor + 1); /*0x62d0d4*/
                 v26[0] = v27; /*0x62d0d9*/
-                v16 = ZCoordToScreenY(*((_DWORD *)this + 41)); /*0x62d0e8*/
+                v16 = ZCoordToScreenY(this->q0A4); /*0x62d0e8*/
                 v17 = (unsigned __int16)(*((_WORD *)g_ZBufferDescriptor + 2) + *((_WORD *)g_ZBufferDescriptor + 18) - v28) /*0x62d10f*/
                     - v16
                     - 50;
                 if ( v17 < *(unsigned __int16 *)Audio::GetSamplePosition((int)g_ZBufferDescriptor, v26[0], v15) ) /*0x62d11e*/
                 {
-                  v18 = *((_DWORD *)this + 45); /*0x62d124*/
+                  v18 = this->q0B4; /*0x62d124*/
                   if ( v18 ) /*0x62d12c*/
-                    v19 = *(_DWORD *)(*((_DWORD *)this + 43) + 700) + 3 * v18; /*0x62d13f*/
+                    v19 = *(_DWORD *)(this->q0AC + 700) + 3 * v18; /*0x62d13f*/
                   else
-                    v19 = (int)this + 176; /*0x62d12e*/
+                    v19 = (int)&this->u32_2C0; /*0x62d12e*/
                   v20 = *(_WORD *)v19; /*0x62d145*/
                   v21 = *(_BYTE *)(v19 + 2); /*0x62d148*/
-                  LOWORD(v26[0]) = v20; /*0x62d14b*/
-                  BYTE2(v26[0]) = v21; /*0x62d15a*/
-                  v22 = 1.0 - *((double *)this + 23); /*0x62d16d*/
+                  IDA_LOWORD(v26[0]) = v20; /*0x62d14b*/
+                  IDA_BYTE2(v26[0]) = v21; /*0x62d15a*/
+                  v22 = 1.0 - this->q0B8; /*0x62d16d*/
                   v23 = Math::RoundToInt(v22); /*0x62d1c9*/
                   v24 = Math::RoundToInt(v22); /*0x62d1ea*/
                   v25 = Math::RoundToInt(v22); /*0x62d215*/
@@ -111,16 +119,16 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
         }
         else
         {
-          v6 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 464))(this); /*0x62cf87*/
+          v6 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q0B84))(this); /*0x62cf87*/
           v7 = -15 - ZCoordToScreenY(v6); /*0x62cf9d*/
-          v8 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 108))(this); /*0x62cfa2*/
+          v8 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q0288))(this); /*0x62cfa2*/
           if ( v8 ) /*0x62cfa6*/
           {
             v9 = 10240; /*0x62cfb0*/
-            v10 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 488))(this); /*0x62cfb5*/
+            v10 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q0C08))(this); /*0x62cfb5*/
             if ( g_lParam == 2 ) /*0x62cfc2*/
             {
-              v11 = *((_BYTE *)this + 303); /*0x62cfc4*/
+              v11 = this->Translucency; /*0x62cfc4*/
               if ( v11 == 25 ) /*0x62cfcd*/
               {
                 v9 = 10242; /*0x62cfcf*/
@@ -175,41 +183,41 @@ void ParticleClass::AdjustHeight()
   int v12; // [esp+Ch] [ebp-10h]
   _DWORD v13[3]; // [esp+10h] [ebp-Ch] BYREF
 
-  v2 = *(_DWORD *)(*((_DWORD *)this + 43) + 788); /*0x62d5ec*/
+  v2 = *(_DWORD *)(this->q0AC + 788); /*0x62d5ec*/
   if ( !v2 ) /*0x62d5f5*/
-    return BuildingClass::UpdateFloatPosition(this); /*0x62d6db*/
+    return BuildingClass::UpdateFloatPosition(); /*0x62d6db*/
   v3 = v2 - 1; /*0x62d5fb*/
   if ( !v3 ) /*0x62d5fc*/
-    return ParticleClass::CheckWaterImpact(this); /*0x62d6cf*/
+    return ParticleClass::CheckWaterImpact(); /*0x62d6cf*/
   result = v3 - 1; /*0x62d602*/
   if ( !result ) /*0x62d603*/
   {
-    v5 = *(this + 57); /*0x62d609*/
-    *(float *)v13 = *(this + 39); /*0x62d623*/
-    v6 = *((_DWORD *)this + 40); /*0x62d627*/
-    *(float *)&v13[2] = *(this + 41); /*0x62d630*/
-    v7 = *((_DWORD *)this + 41); /*0x62d636*/
+    v5 = *(&this->q0147); /*0x62d609*/
+    *(float *)v13 = *(&this->vtable49); /*0x62d623*/
+    v6 = this->q0A0; /*0x62d627*/
+    *(float *)&v13[2] = *(&this->q0101); /*0x62d630*/
+    v7 = this->q0A4; /*0x62d636*/
     v10 = v13[0]; /*0x62d639*/
     v11 = v6; /*0x62d640*/
     v12 = v7; /*0x62d644*/
     v13[1] = v6; /*0x62d648*/
     if ( v5 > 0.0 ) /*0x62d64c*/
     {
-      v8 = *((_DWORD *)this + 66); /*0x62d654*/
-      v10 = *((_DWORD *)this + 64) + v13[0]; /*0x62d65c*/
-      v11 = *((_DWORD *)this + 65) + v6; /*0x62d66a*/
+      v8 = this->q108; /*0x62d654*/
+      v10 = this->q100 + v13[0]; /*0x62d65c*/
+      v11 = this->q104 + v6; /*0x62d66a*/
       v12 = v8 + v7; /*0x62d66e*/
     }
-    if ( *(this + 57) > 0.0 ) /*0x62d683*/
+    if ( *(&this->q0147) > 0.0 ) /*0x62d683*/
     {
       GroundHeight = Cell::GetGroundHeight(v13); /*0x62d69e*/
       if ( Cell::GetGroundHeight(&v10) > GroundHeight ) /*0x62d6a7*/
       {
-        *((_BYTE *)this + 301) = 1; /*0x62d6ab*/
-        *((_BYTE *)this + 305) = 1; /*0x62d6b1*/
+        this->q12D = 1; /*0x62d6ab*/
+        this->q4C4 = 1; /*0x62d6b1*/
       }
     }
-    return (*(int (__thiscall **)(float *, int *))(*(_DWORD *)this + 436))(this, &v10); /*0x62d6c0*/
+    return (&v10); /*0x62d6c0*/
   }
   return result; /*0x62d6c8*/
 }
@@ -248,10 +256,10 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
     if ( aP1 ) /*0x62d7b6*/
     {
       ObjectClass::Init(aP1, (int)&aP1a); /*0x62d7bf*/
-      *aP1 = &ParticleClass::`vftable'; /*0x62d7c4*/
-      aP1[1] = &ParticleClass::`vftable'; /*0x62d7ca*/
-      aP1[2] = &ParticleClass::`vftable'; /*0x62d7d1*/
-      aP1[3] = &ParticleClass::`vftable'; /*0x62d7d8*/
+      *aP1 = &(void*)(void*)&ParticleClass_vftable; /*0x62d7c4*/
+      aP1[1] = &(void*)(void*)&ParticleClass_vftable; /*0x62d7ca*/
+      aP1[2] = &(void*)(void*)&ParticleClass_vftable; /*0x62d7d1*/
+      aP1[3] = &(void*)(void*)&ParticleClass_vftable; /*0x62d7d8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 43); /*0x62d7eb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 73); /*0x62d7fc*/
@@ -268,7 +276,7 @@ int ParticleClass::CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2)
   int result; // eax
 
   result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x62d820*/
-  *(_BYTE *)(aP0 + 304) = 1; /*0x62d825*/
+  aP0->q130 = 1; /*0x62d825*/
   return result; /*0x62d82c*/
 }
 } // namespace gamemd

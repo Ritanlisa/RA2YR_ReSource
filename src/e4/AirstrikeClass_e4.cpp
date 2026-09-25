@@ -2,10 +2,18 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/AirstrikeClass_e4.hpp"
+#include "e4/classes/AircraftTypeClass_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/AlphaShapeClass_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x41D860
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int AirstrikeClass::SpawnAircraft(int * a2)
 {
   int v3; // eax
@@ -19,8 +27,6 @@ int AirstrikeClass::SpawnAircraft(int * a2)
   int v12; // eax
   int v13; // eax
   int v14; // [esp-14h] [ebp-38h]
-  int v15; // [esp-Ch] [ebp-30h]
-  int v16; // [esp+10h] [ebp-14h] BYREF
   int v17; // [esp+14h] [ebp-10h]
   _DWORD v18[3]; // [esp+18h] [ebp-Ch] BYREF
   int v19; // [esp+28h] [ebp+4h]
@@ -41,14 +47,14 @@ int AirstrikeClass::SpawnAircraft(int * a2)
     v5 = this->AirstrikeClass_field_24; /*0x41d8b9*/
   }
   v7 = (_DWORD *)(*(int (__thiscall **)(int *, _DWORD *))(*a2 + 72))(a2, v18); /*0x41d8c9*/
-  LOWORD(v19) = *v7 / 256; /*0x41d8dc*/
-  HIWORD(v19) = v7[1] / 256; /*0x41d8f5*/
-  v16 = v19; /*0x41d902*/
-  v8 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v16); /*0x41d907*/
-  v15 = v17; /*0x41d916*/
+  IDA_LOWORD(v19) = *v7 / 256; /*0x41d8dc*/
+  IDA_HIWORD(v19) = v7[1] / 256; /*0x41d8f5*/
+  v19 = v19; /*0x41d902*/
+  v8 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v19); /*0x41d907*/
+  v17 = v17; /*0x41d916*/
   v14 = (int)v8; /*0x41d919*/
   v9 = (unsigned int *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->referenceCount6) + 60))(this->owner); /*0x41d91f*/
-  result = PlaceAircraftOnMap(v9, v4, v5, 1, v14, 0, v15, 0, this); /*0x41d926*/
+  result = PlaceAircraftOnMap(v9, v4, v5, 1, v14, 0, v17, 0, this); /*0x41d926*/
   this->q02C = result; /*0x41d92d*/
   this->EliteAirstrikeTeamTypeIndex = result; /*0x41d930*/
   if ( result ) /*0x41d933*/
@@ -91,11 +97,9 @@ int AirstrikeClass::SpawnAircraft(int * a2)
   return result; /*0x41da0b*/
 }
 } // namespace ra2
-}
 
 // 0x41DA20
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int AirstrikeClass::ReassignTarget(int a2)
 {
   int v3; // ecx
@@ -110,7 +114,7 @@ int AirstrikeClass::ReassignTarget(int a2)
   int *v12; // esi
   int v13; // edi
 
-  v3 = this->AirstrikeClass_field_5C; /*0x41da26*/
+  v3 = this->q05C; /*0x41da26*/
   if ( v3 && (v4 = *(_DWORD *)(v3 + 1496)) != 0 )
   {
     v5 = *(_DWORD *)(v3 + 764); /*0x41da37*/
@@ -120,14 +124,14 @@ int AirstrikeClass::ReassignTarget(int a2)
       if ( !v4 ) /*0x41da4d*/
         goto LABEL_6; /*0x41da4d*/
     }
-    LOBYTE(v8) = WTFMode::ResetUnitFlags(this); /*0x41da5c*/
+    IDA_LOBYTE(); /*0x41da5c*/
   }
   else
   {
   LABEL_6:
-    v6 = this->u32_50; /*0x41da4f*/
+    v6 = this->q050; /*0x41da4f*/
     if ( v6 )
-      v7 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v6 + 44))(this->u32_50) == 6 ? (_DWORD *)v6 : 0;
+      v7 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v6 + 44))(this->q050) == 6 ? (_DWORD *)v6 : 0;
     else
       v7 = 0; /*0x41da56*/
     if ( a2 )
@@ -141,7 +145,7 @@ int AirstrikeClass::ReassignTarget(int a2)
       (*(void (__thiscall **)(_DWORD *))(v10 + 344))(v7); /*0x41daae*/
       (*(void (__thiscall **)(_DWORD *, int))(*v7 + 292))(v7, 2); /*0x41daba*/
     }
-    this->u32_50 = 0; /*0x41dac2*/
+    this->q050 = 0; /*0x41dac2*/
     if ( v9 ) /*0x41dac9*/
     {
       v11 = *v9; /*0x41dacb*/
@@ -149,10 +153,10 @@ int AirstrikeClass::ReassignTarget(int a2)
       (*(void (__thiscall **)(_DWORD *, int))(v11 + 348))(v9, 100000); /*0x41dada*/
       (*(void (__thiscall **)(_DWORD *, int))(*v9 + 292))(v9, 2); /*0x41dae6*/
     }
-    v8 = this->EliteAirstrikeTeamTypeIndex; /*0x41daec*/
-    v12 = *(int **)(&this->AirstrikeClass_field_242); /*0x41daef*/
+    v8 = this->u32_30; /*0x41daec*/
+    v12 = *(int **)(&this->q0242); /*0x41daef*/
     v13 = 0; /*0x41daf2*/
-    for ( this->u32_50 = a2; v13 < v8; ++v13 ) /*0x41daf9*/
+    for ( this->q050 = a2; v13 < v8; ++v13 ) /*0x41daf9*/
     {
       if ( v12 ) /*0x41dafd*/
       {
@@ -160,36 +164,33 @@ int AirstrikeClass::ReassignTarget(int a2)
         {
           (*(void (__thiscall **)(int *, int))(*v12 + 968))(v12, a2); /*0x41db0e*/
           (*(void (__thiscall **)(int *, int, _DWORD))(*v12 + 488))(v12, 1, 0); /*0x41db1c*/
-          this->AirstrikeClass_field_3D = 1; /*0x41db22*/
+          this->u8_3D = 1; /*0x41db22*/
         }
         v12 = (int *)v12[374]; /*0x41db26*/
       }
-      v8 = this->EliteAirstrikeTeamTypeIndex; /*0x41db2c*/
+      v8 = this->u32_30; /*0x41db2c*/
     }
   }
   return v8; /*0x41da61*/
 }
 } // namespace ra2
-}
 
 // 0x41DC80
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int AirstrikeClass::RemoveAircraft(AudioController * aP1)
 {
   int result; // eax
   int v3; // edi
-  wchar_t *v4; // edx
 
-  result = this->AirstrikeClass_field_5C; /*0x41dc80*/
+  result = this->q05C; /*0x41dc80*/
   v3 = 0; /*0x41dc8c*/
   if ( result == aP1 ) /*0x41dc90*/
   {
-    this->AirstrikeClass_field_5C = aP1->q176; /*0x41dc98*/
-    aP1->q176 = 0; /*0x41dc9b*/
-    result = this->EliteAirstrikeTeamTypeIndex - 1; /*0x41dca4*/
-    this->EliteAirstrikeTeamTypeIndex = result; /*0x41dca5*/
-    aP1->u32_294 = 0; /*0x41dca8*/
+    this->q05C = *(_DWORD *)(aP1 + 1496); /*0x41dc98*/
+    *(_DWORD *)(aP1 + 1496) = 0; /*0x41dc9b*/
+    result = this->u32_30 - 1; /*0x41dca4*/
+    this->u32_30 = result; /*0x41dca5*/
+    *(_DWORD *)(aP1 + 660) = 0; /*0x41dca8*/
   }
   else if ( result ) /*0x41dcb2*/
   {
@@ -197,11 +198,11 @@ int AirstrikeClass::RemoveAircraft(AudioController * aP1)
     {
       if ( result->u32_5D8 == aP1 ) /*0x41dcbc*/
       {
-        result->u32_5D8 = aP1->q176; /*0x41dcc4*/
-        aP1->q176 = 0; /*0x41dcca*/
+        result->u32_5D8 = *(_DWORD *)(aP1 + 1496); /*0x41dcc4*/
+        *(_DWORD *)(aP1 + 1496) = 0; /*0x41dcca*/
         result = 0; /*0x41dcd3*/
-        --this->EliteAirstrikeTeamTypeIndex; /*0x41dcd6*/
-        aP1->u32_294 = 0; /*0x41dcd9*/
+        --this->u32_30; /*0x41dcd6*/
+        *(_DWORD *)(aP1 + 660) = 0; /*0x41dcd9*/
       }
       else
       {
@@ -211,32 +212,28 @@ int AirstrikeClass::RemoveAircraft(AudioController * aP1)
     }
     while ( v3 <= 100 && result ); /*0x41dceb*/
   }
-  if ( this->EliteAirstrikeTeamTypeIndex <= 0 ) /*0x41dcf0*/
+  if ( this->u32_30 <= 0 ) /*0x41dcf0*/
   {
-    v4 = g_CurrentFrame; /*0x41dcf2*/
-    this->AirstrikeClass_field_3C = 0; /*0x41dcf8*/
-    this->q040 = v4; /*0x41dcfb*/
-    this->AirstrikeClass_field_3D = 0; /*0x41dcfe*/
+    g_CurrentFrame = g_CurrentFrame; /*0x41dcf2*/
+    this->u32_3C = 0; /*0x41dcf8*/
+    this->q040 = g_CurrentFrame; /*0x41dcfb*/
+    this->u8_3D = 0; /*0x41dcfe*/
   }
   return result; /*0x41dd01*/
 }
 } // namespace ra2
-}
 
 // 0x41DD50
-namespace ra2 {
-namespace game {
+namespace gamemd {
 void * AirstrikeClass::CopyTo(char a2)
 {
   int v3; // eax
-  _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &AirstrikeClass::`vftable'; /*0x41dd5d*/
-  this->vtable2 = &AirstrikeClass::`vftable'; /*0x41dd63*/
-  this->vtable3 = &AirstrikeClass::`vftable'; /*0x41dd6a*/
-  this->vtable4 = &AirstrikeClass::`vftable'; /*0x41dd71*/
-  v5 = this; /*0x41dd7f*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_889FB8 + 16))(&dword_889FB8, &v5); /*0x41dd83*/
+  *this = &(void*)(void*)&AirstrikeClass_vftable; /*0x41dd5d*/
+  this->vtable2 = &(void*)(void*)&AirstrikeClass_vftable; /*0x41dd63*/
+  this->vtable3 = &(void*)(void*)&AirstrikeClass_vftable; /*0x41dd6a*/
+  this->vtable4 = &(void*)(void*)&AirstrikeClass_vftable; /*0x41dd71*/
+  v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_889FB8 + 16))(&dword_889FB8, &this); /*0x41dd83*/
   if ( v3 != -1 && v3 < dword_889FC8 && v3 < --dword_889FC8 ) /*0x41dd9e*/
   {
     do /*0x41ddb6*/
@@ -246,17 +243,15 @@ void * AirstrikeClass::CopyTo(char a2)
     }
     while ( v3 < dword_889FC8 ); /*0x41ddb6*/
   }
-  AbstractClass::DTOR(this); /*0x41ddba*/
+  AbstractClass::DTOR(); /*0x41ddba*/
   if ( (a2 & 1) != 0 ) /*0x41ddc4*/
-    __3_YAXPAX_Z(this); /*0x41ddc7*/
+    RA2_OPDEL(); /*0x41ddc7*/
   return this; /*0x41ddd1*/
 }
 } // namespace ra2
-}
 
 // 0x420E90
-namespace ra2 {
-namespace game {
+namespace gamemd {
 AbstractClass * * AirstrikeClass::UpdateAll()
 {
   _DWORD *v0; // eax
@@ -266,7 +261,7 @@ AbstractClass * * AirstrikeClass::UpdateAll()
   int v4; // esi
   _BYTE *v5; // edx
 
-  LOBYTE(v0) = byte_89A134; /*0x420e90*/
+  IDA_LOBYTE(v0) = byte_89A134; /*0x420e90*/
   if ( !byte_89A134 ) /*0x420e98*/
   {
     byte_89A134 = 1; /*0x420e9a*/
@@ -285,14 +280,14 @@ AbstractClass * * AirstrikeClass::UpdateAll()
       }
       else
       {
-        LOBYTE(v3) = 0; /*0x420ee7*/
+        IDA_LOBYTE(v3) = 0; /*0x420ee7*/
       }
   LABEL_8:
       byte_88A118[v1++] = v3; /*0x420ef8*/
       if ( v1 >= 0x10000 ) /*0x420f05*/
         goto LABEL_9; /*0x420f05*/
     }
-    LOBYTE(v3) = -1; /*0x420ef3*/
+    IDA_LOBYTE(v3) = -1; /*0x420ef3*/
     goto LABEL_8; /*0x420ef3*/
   }
   LABEL_9:
@@ -315,12 +310,10 @@ AbstractClass * * AirstrikeClass::UpdateAll()
   return (char)v0; /*0x420f38*/
 }
 } // namespace ra2
-}
 
 // 0x41D380
-namespace ra2 {
-namespace game {
-int AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
+namespace gamemd {
+AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
 {
   int v3; // eax
   int v4; // eax
@@ -335,11 +328,11 @@ int AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
   int v13; // ecx
   int v14; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x41d384*/
-  *(_DWORD *)this = &AirstrikeClass::`vftable'; /*0x41d389*/
-  this->vtable2 = &AirstrikeClass::`vftable'; /*0x41d38f*/
-  this->vtable3 = &AirstrikeClass::`vftable'; /*0x41d396*/
-  this->vtable4 = &AirstrikeClass::`vftable'; /*0x41d39d*/
+  AbstractClass::Constructor(); /*0x41d384*/
+  *(_DWORD *)this = &(void*)(void*)&AirstrikeClass_vftable; /*0x41d389*/
+  this->vtable2 = &(void*)(void*)&AirstrikeClass_vftable; /*0x41d38f*/
+  this->vtable3 = &(void*)(void*)&AirstrikeClass_vftable; /*0x41d396*/
+  this->vtable4 = &(void*)(void*)&AirstrikeClass_vftable; /*0x41d39d*/
   if ( dword_889FC8 < dword_889FC0 /*0x41d3d9*/
     || (byte_889FC5 || !dword_889FC0)
     && dword_889FCC > 0
@@ -354,7 +347,7 @@ int AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
   this->AirstrikeClass_field_3C = 0; /*0x41d3fc*/
   this->owner = aP1; /*0x41d3ff*/
   this->AirstrikeClass_field_3D = 0; /*0x41d402*/
-  v4 = (*(int (__thiscall **)(int))(aP1->hasParachute)(aP1); /*0x41d407*/
+  v4 = (*(int (__thiscall **)(int))(*(_DWORD *)aP1 + 132))(aP1); /*0x41d407*/
   v5 = this->owner; /*0x41d413*/
   this->AirstrikeClass_field_24 = *(_DWORD *)(v4 + 1564); /*0x41d416*/
   v6 = (*(int (__thiscall **)(int))(*(_DWORD *)v5 + 132))(v5); /*0x41d41b*/
@@ -375,22 +368,18 @@ int AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
   this->u32_50 = 0; /*0x41d47d*/
   return this; /*0x41d482*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x41D6E0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int AirstrikeClass::Stat(AbstractClass * aP1)
 {
-  return AbstractClass::ProcessPower(this); /*0x41d6ea*/
+  return AbstractClass::ProcessPower(); /*0x41d6ea*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x41D6F0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
 {
   int Prefix_0; // edi
@@ -401,10 +390,10 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x41d709*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x41d712*/
-      *aP0 = (int)&AirstrikeClass::`vftable'; /*0x41d717*/
-      aP0[1] = (int)&AirstrikeClass::`vftable'; /*0x41d71d*/
-      aP0[2] = (int)&AirstrikeClass::`vftable'; /*0x41d724*/
-      aP0[3] = (int)&AirstrikeClass::`vftable'; /*0x41d72b*/
+      *aP0 = (int)&(void*)(void*)&AirstrikeClass_vftable; /*0x41d717*/
+      aP0[1] = (int)&(void*)(void*)&AirstrikeClass_vftable; /*0x41d71d*/
+      aP0[2] = (int)&(void*)(void*)&AirstrikeClass_vftable; /*0x41d724*/
+      aP0[3] = (int)&(void*)(void*)&AirstrikeClass_vftable; /*0x41d72b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 19); /*0x41d73b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 20); /*0x41d749*/
@@ -414,22 +403,18 @@ int AirstrikeClass::Write(AbstractClass * aP0, int aP1)
   }
   return Prefix_0; /*0x41d77a*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x41D780
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int AirstrikeClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
   return AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x41d794*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x41D7A0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int AirstrikeClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x41d7a6*/
@@ -440,22 +425,19 @@ int AirstrikeClass::ddtor(int a1, unsigned int * a2)
   a2[3] = -1672772828; /*0x41d7d0*/
   return 0; /*0x41d7ad*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x41D830
-namespace ra2 {
-namespace game {
+namespace gamemd {
 char AirstrikeClass::StartMission(int * a2)
 {
   char result; // al
 
   result = (char)a2; /*0x41d835*/
-  if ( !this->AirstrikeClass_field_3C ) /*0x41d830*/
-    return AirstrikeClass::SpawnAircraft(this, a2); /*0x41d83c*/
-  if ( a2 != *(int **)(&this->q0200) ) /*0x41d847*/
-    return AirstrikeClass::ReassignTarget(this, (int)a2); /*0x41d84a*/
+  if ( !*(_BYTE *)(this + 60) ) /*0x41d830*/
+    return AirstrikeClass::SpawnAircraft(a2); /*0x41d83c*/
+  if ( a2 != *(int **)(this + 80) ) /*0x41d847*/
+    return AirstrikeClass::ReassignTarget((int)a2); /*0x41d84a*/
   return result; /*0x41d841*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd

@@ -1,28 +1,33 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/Gadget_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/LinkClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x4E12F0
 namespace gamemd {
 void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass * aP3, ControlClass * aP4, GadgetClass * aP5, GadgetClass * aP6)
 {
-  _DWORD *result; // eax
 
-  result = this; /*0x4e12f4*/
-  *(this + 4) = aP2; /*0x4e12fb*/
-  *(this + 3) = aP1; /*0x4e1302*/
-  *(this + 6) = aP4; /*0x4e1309*/
-  *(this + 5) = aP3; /*0x4e1312*/
-  *(this + 1) = 0; /*0x4e1319*/
-  *(this + 2) = 0; /*0x4e131c*/
-  *((_BYTE *)this + 28) = 0; /*0x4e131f*/
-  *((_BYTE *)this + 30) = 0; /*0x4e1322*/
-  *((_BYTE *)this + 29) = aP6; /*0x4e1327*/
-  *(this + 8) = aP5; /*0x4e132a*/
-  *this = &GadgetClass::`vftable'; /*0x4e132d*/
+  this->Height = aP2; /*0x4e12fb*/
+  this->Width = aP1; /*0x4e1302*/
+  this->ID = aP4; /*0x4e1309*/
+  this->Visible = aP3; /*0x4e1312*/
+  this->X = 0; /*0x4e1319*/
+  this->Y = 0; /*0x4e131c*/
+  this->q01C = 0; /*0x4e131f*/
+  this->q01E = 0; /*0x4e1322*/
+  this->q01D = aP6; /*0x4e1327*/
+  this->u32_20 = aP5; /*0x4e132a*/
+  *this = &(void*)(void*)&GadgetClass_vftable; /*0x4e132d*/
   if ( aP6 ) /*0x4e1334*/
-    *(this + 8) = aP5 | 5; /*0x4e1339*/
-  return result; /*0x4e1333*/
+    this->u32_20 = aP5 | 5; /*0x4e1339*/
 }
 }
 // 0x4E1390
@@ -32,13 +37,13 @@ GadgetClass * * GadgetClass::Dtor()
   int v1; // eax
   int v2; // eax
 
-  *this = &GadgetClass::`vftable'; /*0x4e1390*/
+  *this = &(void*)(void*)&GadgetClass_vftable; /*0x4e1390*/
   v1 = dword_8B3E90; /*0x4e1396*/
   if ( this == (_DWORD *)dword_8B3E90 ) /*0x4e139f*/
   {
-    v2 = *(this + 8); /*0x4e13a1*/
-    BYTE1(v2) &= ~1u; /*0x4e13a4*/
-    *(this + 8) = v2; /*0x4e13a7*/
+    v2 = this->u32_20; /*0x4e13a1*/
+    IDA_BYTE1(v2) &= ~1u; /*0x4e13a4*/
+    this->u32_20 = v2; /*0x4e13a7*/
     v1 = 0; /*0x4e13aa*/
     dword_8B3E90 = 0; /*0x4e13ac*/
   }
@@ -66,31 +71,31 @@ int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
     return 0; /*0x557a0b*/
   (*(void (__thiscall **)(int, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)g_WWMouseClass_Instance + 32))( /*0x557965*/
     g_WWMouseClass_Instance,
-    *(_DWORD *)(this + 12),
-    *(_DWORD *)(this + 16),
-    *(_DWORD *)(this + 20),
-    *(_DWORD *)(this + 24));
-  v3 = *(_DWORD *)(this + 20); /*0x55796b*/
-  v4 = *(_DWORD *)(this + 16); /*0x55796e*/
-  v9[0] = *(_DWORD *)(this + 12); /*0x557971*/
-  v5 = *(_DWORD *)(this + 24); /*0x557975*/
+    this->q00C,
+    this->u32_10,
+    this->q014,
+    this->u32_18);
+  v3 = this->q014; /*0x55796b*/
+  v4 = this->u32_10; /*0x55796e*/
+  v9[0] = this->q00C; /*0x557971*/
+  v5 = this->u32_18; /*0x557975*/
   v9[2] = v3; /*0x557978*/
   v9[3] = v5; /*0x55797c*/
   v9[1] = v4; /*0x55798b*/
   DrawBuildingTilesSHP(v9, 4, 1); /*0x55798f*/
-  if ( *(_DWORD *)(this + 68) ) /*0x557994*/
+  if ( this->q044 ) /*0x557994*/
   {
-    for ( i = 0; i < *(_DWORD *)(this + 80); ++i ) /*0x5579a2*/
+    for ( i = 0; i < this->q050; ++i ) /*0x5579a2*/
     {
-      v7 = i + *(_DWORD *)(this + 368); /*0x5579ad*/
-      if ( *(_DWORD *)(this + 68) > v7 ) /*0x5579b1*/
-        (*(void (__thiscall **)(int, int, int, int, int, bool))(*(_DWORD *)this + 200))( /*0x5579e0*/
+      v7 = i + this->q170; /*0x5579ad*/
+      if ( this->q044 > v7 ) /*0x5579b1*/
+        (*(void (__thiscall **)(int, int, int, int, int, bool))(*(_DWORD *)&this->q0500))( /*0x5579e0*/
           this,
           v7,
-          *(_DWORD *)(this + 12) + 1,
-          i * *(_DWORD *)(this + 76) + *(_DWORD *)(this + 16) + 1,
-          *(_DWORD *)(this + 20) - 2,
-          v7 == *(_DWORD *)(this + 364));
+          this->q00C + 1,
+          i * this->q04C + this->u32_10 + 1,
+          this->q014 - 2,
+          v7 == this->__pad_16C);
     }
   }
   (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 36))(g_WWMouseClass_Instance); /*0x5579f6*/
@@ -269,18 +274,18 @@ AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
   size_t v3; // eax
   wchar_t *v4; // eax
 
-  if ( *(this + 10) ) /*0x623564*/
+  if ( *(&this->vtable20) ) /*0x623564*/
   {
-    __3_YAXPAX_Z(*(this + 10)); /*0x62356c*/
-    *(this + 10) = 0; /*0x623574*/
+    RA2_OPDEL(*(&this->vtable20)); /*0x62356c*/
+    *(&this->vtable20) = 0; /*0x623574*/
   }
   if ( aP1 ) /*0x623581*/
   {
     if ( *aP1 ) /*0x623583*/
     {
       v3 = wcslen(aP1); /*0x62358a*/
-      v4 = (wchar_t *)__2_YAPAXI_Z(2 * v3 + 2); /*0x623594*/
-      *(this + 10) = v4; /*0x62359b*/
+      v4 = (wchar_t *)RA2_OPNEW(2 * v3 + 2); /*0x623594*/
+      *(&this->vtable20) = v4; /*0x62359b*/
       wcscpy(v4, aP1); /*0x62359e*/
     }
   }

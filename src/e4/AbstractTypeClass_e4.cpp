@@ -2,8 +2,12 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x410800
+namespace gamemd {
 int AbstractTypeClass::Constructor(AbstractClass * aP1)
 {
   char *v3; // ebx
@@ -12,15 +16,15 @@ int AbstractTypeClass::Constructor(AbstractClass * aP1)
   char Destination[48]; // [esp+20h] [ebp-34h] BYREF
   char v8; // [esp+50h] [ebp-4h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x410809*/
+  AbstractClass::Constructor(); /*0x410809*/
   v3 = (char *)(&this->vtable46); /*0x410812*/
   this->q024 = 0; /*0x410817*/
   this->UINameLabel = 0; /*0x41081a*/
   this->Name = 0; /*0x41081e*/
-  *(_DWORD *)this = &AbstractTypeClass::`vftable'; /*0x410822*/
-  this->vtable2 = &AbstractTypeClass::`vftable'; /*0x410829*/
-  this->vtable3 = &AbstractTypeClass::`vftable'; /*0x410830*/
-  this->vtable4 = &AbstractTypeClass::`vftable'; /*0x410837*/
+  *(_DWORD *)this = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410822*/
+  this->vtable2 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410829*/
+  this->vtable3 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410830*/
+  this->vtable4 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410837*/
   if ( aP1 ) /*0x41083e*/
   {
     strncpy(Destination, aP1, 0x18u); /*0x410895*/
@@ -74,18 +78,18 @@ int AbstractTypeClass::Constructor(AbstractClass * aP1)
   }
   return this; /*0x410948*/
 }
+} // namespace gamemd
 // 0x4109C0
+namespace gamemd {
 int AbstractTypeClass::Dtor()
 {
   int v2; // eax
-  _DWORD *v4; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &AbstractTypeClass::`vftable'; /*0x4109cd*/
-  this->vtable2 = &AbstractTypeClass::`vftable'; /*0x4109d3*/
-  this->vtable3 = &AbstractTypeClass::`vftable'; /*0x4109da*/
-  this->vtable4 = &AbstractTypeClass::`vftable'; /*0x4109e1*/
-  v4 = this; /*0x4109ef*/
-  v2 = (*(int (__thiscall **)(int *, _DWORD **))(dword_A8E968 + 16))(&dword_A8E968, &v4); /*0x4109f3*/
+  *this = &(void*)(void*)&AbstractTypeClass_vftable; /*0x4109cd*/
+  this->vtable2 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x4109d3*/
+  this->vtable3 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x4109da*/
+  this->vtable4 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x4109e1*/
+  v2 = (*(int (__thiscall **)(int *, _DWORD **))(dword_A8E968 + 16))(&dword_A8E968, &this); /*0x4109f3*/
   if ( v2 != -1 && v2 < g_AbstractTypePool && v2 < --g_AbstractTypePool ) /*0x410a0e*/
   {
     do /*0x410a26*/
@@ -95,9 +99,11 @@ int AbstractTypeClass::Dtor()
     }
     while ( v2 < g_AbstractTypePool ); /*0x410a26*/
   }
-  return AbstractClass::DTOR(this); /*0x410a2f*/
+  return AbstractClass::DTOR(); /*0x410a2f*/
 }
+} // namespace gamemd
 // 0x410A60
+namespace gamemd {
 int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
 {
   char *v3; // edi
@@ -156,18 +162,18 @@ int AbstractTypeClass::LoadFromINI(AbstractTypeClass * aP1)
     this->UIName = &g_TypeClass_DefaultString; /*0x410b69*/
   return 1; /*0x410b57*/
 }
+} // namespace gamemd
 // 0x410C30
+namespace gamemd {
 AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
 {
   int v3; // eax
-  _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &AbstractTypeClass::`vftable'; /*0x410c3d*/
-  this->vtable2 = &AbstractTypeClass::`vftable'; /*0x410c43*/
-  this->vtable3 = &AbstractTypeClass::`vftable'; /*0x410c4a*/
-  this->vtable4 = &AbstractTypeClass::`vftable'; /*0x410c51*/
-  v5 = this; /*0x410c5f*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_A8E968 + 16))(&dword_A8E968, &v5); /*0x410c63*/
+  *this = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410c3d*/
+  this->vtable2 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410c43*/
+  this->vtable3 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410c4a*/
+  this->vtable4 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410c51*/
+  v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_A8E968 + 16))(&dword_A8E968, &this); /*0x410c63*/
   if ( v3 != -1 && v3 < g_AbstractTypePool && v3 < --g_AbstractTypePool ) /*0x410c7e*/
   {
     do /*0x410c96*/
@@ -177,34 +183,40 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
     }
     while ( v3 < g_AbstractTypePool ); /*0x410c96*/
   }
-  AbstractClass::DTOR(this); /*0x410c9a*/
+  AbstractClass::DTOR(); /*0x410c9a*/
   if ( (a2 & 1) != 0 ) /*0x410ca4*/
-    __3_YAXPAX_Z(this); /*0x410ca7*/
+    RA2_OPDEL(); /*0x410ca7*/
   return this; /*0x410cb1*/
 }
+} // namespace gamemd
 // 0x410960
+namespace gamemd {
 int AbstractTypeClass::Init(AbstractTypeClass * aP1)
 {
   char v3; // al
 
-  AbstractClass::InitVtables((_DWORD *)this, aP1); /*0x410968*/
-  v3 = this->UINameLabel; /*0x41096d*/
-  *(_DWORD *)this = &AbstractTypeClass::`vftable'; /*0x410975*/
-  this->vtable2 = &AbstractTypeClass::`vftable'; /*0x41097b*/
-  this->vtable3 = &AbstractTypeClass::`vftable'; /*0x410982*/
-  this->vtable4 = &AbstractTypeClass::`vftable'; /*0x410989*/
+  AbstractClass::InitVtables(aP1); /*0x410968*/
+  v3 = this->q03D; /*0x41096d*/
+  *(_DWORD *)this = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410975*/
+  this->vtable2 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x41097b*/
+  this->vtable3 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410982*/
+  this->vtable4 = &(void*)(void*)&AbstractTypeClass_vftable; /*0x410989*/
   if ( v3 ) /*0x410990*/
-    this->UIName = GetStringCSF((wchar_t *)(&this->nextArrayIndex1), 0, aDRa2mdpostAbst, 127); /*0x4109a0*/
+    this->q060 = GetStringCSF((wchar_t *)(&this->nextArrayIndex1), 0, aDRa2mdpostAbst, 127); /*0x4109a0*/
   else
-    this->UIName = &g_TypeClass_DefaultString; /*0x4109a9*/
+    this->q060 = &g_TypeClass_DefaultString; /*0x4109a9*/
   return this; /*0x4109a5*/
 }
+} // namespace gamemd
 // 0x410A40
+namespace gamemd {
 BOOL AbstractTypeClass::NameEquals(void * a2)
 {
-  return _strcmpi(a2, (const void *)(&this->vtable46)) == 0; /*0x410a56*/
+  return _strcmpi(a2, (const void *)(this + 36)) == 0; /*0x410a56*/
 }
+} // namespace gamemd
 // 0x410B90
+namespace gamemd {
 char AbstractTypeClass::WriteINI(CCINIClass * aP1)
 {
   unsigned __int8 *v3; // edi
@@ -216,38 +228,51 @@ char AbstractTypeClass::WriteINI(CCINIClass * aP1)
     INIClass::SetString(aP1, v3, g_INI_Key_UIName, &this->nextArrayIndex1); /*0x410bca*/
   return 1; /*0x410bcf*/
 }
+} // namespace gamemd
 // 0x410BE0
+namespace gamemd {
 int AbstractTypeClass::ProcessPower(AbstractClass * aP1)
 {
-  AbstractClass::ProcessPower((int)this, aP1); /*0x410be9*/
-  Checksum::AddString(&this->vtable46); /*0x410bf4*/
-  Checksum::AddString(&this->u32_280); /*0x410bff*/
-  return Checksum::AddString(&this->nextArrayIndex1); /*0x410c0f*/
+  AbstractClass::ProcessPower(aP1); /*0x410be9*/
+  Checksum::AddString(this + 36); /*0x410bf4*/
+  this->Checksum_64.AddString(); /*0x410bff*/
+  return this->Checksum_3D.AddString(); /*0x410c0f*/
 }
+} // namespace gamemd
 // 0x410C20
+namespace gamemd {
 int AbstractTypeClass::StubReturnFalse()
 {
   int result; // eax
 
   return result; /*0x410c20*/
 }
+} // namespace gamemd
 // 0x5F75B0
+namespace gamemd {
 int AbstractTypeClass::GetData()
 {
   return 0; /*0x5f75b2*/
 }
+} // namespace gamemd
 // 0x5F7610
+namespace gamemd {
 int AbstractTypeClass::GetType(int a1)
 {
   return 0; /*0x5f7612*/
 }
+} // namespace gamemd
 // 0x5F7620
+namespace gamemd {
 int AbstractTypeClass::SetType()
 {
   return 0; /*0x5f7622*/
 }
+} // namespace gamemd
 // 0x5F7630
+namespace gamemd {
 int AbstractTypeClass::Validate()
 {
   return 0; /*0x5f7632*/
 }
+} // namespace gamemd

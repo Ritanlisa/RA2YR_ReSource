@@ -1,8 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/IStream_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4A3020
+namespace gamemd {
 int IStream::Read(IStream * pstm, void * pv, ULONG cb)
 {
   _DWORD *v3; // ecx
@@ -38,3 +41,4 @@ int IStream::Read(IStream * pstm, void * pv, ULONG cb)
   }
   return result; /*0x4a3088*/
 }
+} // namespace gamemd

@@ -33,6 +33,9 @@ def run(script, *args, grep=None):
 
 
 def main():
+    print('[step4] a0. 孤儿体清除 (regen span 前置清洁)')
+    run('fix_orphan_bodies.py', '--apply',
+        grep=('orphan bodies',))
     print('[step4] a. 函数体整体重生成')
     run('regen_bodies_from_export.py', '--apply',
         grep=('bodies replaced', 'bodies kept', 'manifest'))
@@ -42,6 +45,12 @@ def main():
     print('[step4] a3. 花括号 sanitizer (单一权威, 修 regen 残留不平衡)')
     run('fix_leaks_general.py', '--apply',
         grep=('close-braces', 'files changed'))
+    print('[step4] a4. IDA 词汇 + 空返回擦洗 (kept 体覆盖)')
+    run('rewrite_ida_vocab.py', '--apply',
+        grep=('vocab rewrites',))
+    print('[step4] a5. this 形参剔除 (成员形态非法参数)')
+    run('fix_this_param.py', '--apply',
+        grep=('this-params',))
     print('[step4] b. canon 重生成')
     run('gen_cpp_canon.py', grep=('classes emitted', 'members table'))
     # (rewrite_member_refs 已退役: 它从 ida_cache 桶重建文件, 与 regen 的
@@ -49,9 +58,9 @@ def main():
     #  regen 落地 + fix_addr 树内改写 + register 供给。)
     print('[step4] c. 声明前置到首用点 (lower_temp_decls)')
     run('lower_temp_decls.py', grep=('moved', 'decls', 'DONE'))
-    print('[step4] d. fix_addr 到不动点')
+    print('[step4] d. fix_addr 到不动点 (workers<=3 内存纪律)')
     for rnd in range(1, 7):
-        out = run('fix_addr_violations.py', '--no-verify', '--workers', '8',
+        out = run('fix_addr_violations.py', '--no-verify', '--workers', '3',
                   grep=('files changed', 'real functions fixed'))
         fixed = 0
         for ln in out.split('\n'):
@@ -63,8 +72,25 @@ def main():
         print(f'    round {rnd}: fixed={fixed}')
         if fixed == 0:
             break
+    print('[step4] e0. e4 头清理 (超界偏移/方法名成员/垃圾行)')
+    run('clean_e4_headers.py', '--apply', grep=('cleaned',))
+    print('[step4] e. e4 宇宙声明供给')
+    run('upgrade_e4_flat_classes.py', '--apply',
+        grep=('flat upgrade',))
+    run('supply_e4_class_decls.py', '--apply',
+        grep=('headers created', 'member-def classes'))
+    run('fix_e4_decl_syntax.py', '--apply',
+        grep=('decl syntax fixes', 'ctor defs'))
+    run('align_tree_decls.py', '--e4', '--force', '--apply',
+        grep=('signature drift',))
+    run('gen_e4_fwd.py', '--apply',
+        grep=('fwd declarations',))
+    print('[step4] f. 符号承载 (vtable 反引号 + 裸全局 + vocab)')
+    run('gen_vtable_symbols.py', '--apply',
+        grep=('vtable symbols',))
+    run('gen_ida_globals.py', '--apply',
+        grep=('bare globals',))
     print('[step4] DONE')
-
 
 if __name__ == '__main__':
     main()

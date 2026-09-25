@@ -2,8 +2,15 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/CreditsScreen_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/CreateTeamCommand_e4.hpp"
 
 // 0x531A00
+namespace gamemd {
 INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
@@ -66,8 +73,11 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531bfc*/
   return 0; /*0x531bfe*/
 }
+} // namespace gamemd
 // 0x4A3C00
+namespace gamemd {
 void CreditsScreen::Init()
 {
   *this = 0; /*0x4a3c00*/
 }
+} // namespace gamemd

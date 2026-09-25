@@ -4,6 +4,9 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/LightningStorm_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x539EB0
 namespace gamemd {
@@ -23,8 +26,8 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
     for ( ; !LayerClass::CoordinatesLegal(&MapClass_Instance, (__int16 *)&a3); a3 = v12 ) /*0x539edd*/
     {
       v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, g_AircraftTrackerState); /*0x539f04*/
-      LOWORD(v12) = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, g_AircraftTrackerPool); /*0x539f1e*/
-      HIWORD(v12) = v7; /*0x539f23*/
+      IDA_LOWORD(v12) = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, g_AircraftTrackerPool); /*0x539f1e*/
+      IDA_HIWORD(v12) = v7; /*0x539f23*/
     }
     result = a3; /*0x539f3e*/
   }
@@ -48,7 +51,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
       for ( LightningStorm_Active = 1; v8 < HouseClass_Count; ++v8 ) /*0x539fb0*/
       {
         if ( !LightningStorm_Owner /*0x539fc5*/
-          || !(unsigned __int8)HouseClass::IsAlliedWith(LightningStorm_Owner, *(#375 **)&HouseClass_Array->gap0[4 * v8]) )
+          || !(unsigned __int8)HouseClass::IsAlliedWith(LightningStorm_Owner, *(void **)&HouseClass_Array->gap0[4 * v8]) )
         {
           v9 = *(_DWORD *)&HouseClass_Array->gap0[4 * v8]; /*0x539fd3*/
           if ( !*(_BYTE *)(v9 + 501) && !MuteSWLaunches ) /*0x539fe7*/
@@ -58,7 +61,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
       if ( HouseClass_Player ) /*0x53a000*/
         *((_BYTE *)HouseClass_Player + 22393) = 1; /*0x53a002*/
       ScenarioClass::UpdateLighting(); /*0x53a009*/
-      if ( LOBYTE(g_RulesClass_Instance[1].WobblesPerSecond) ) /*0x53a014*/
+      if ( IDA_LOBYTE(g_RulesClass_Instance[1].WobblesPerSecond) ) /*0x53a014*/
       {
         v10 = 3; /*0x53a023*/
         if ( HouseClass_Player ) /*0x53a02a*/
@@ -101,15 +104,15 @@ AnimClass * * LightningStorm::Strike(IUnknown * aP0)
      + dword_A9FA90 * *((char *)v1 + 283);
   result = ((__int16)aP0 << 8) + 128; /*0x53a1bb*/
   v9[0] = result; /*0x53a1c8*/
-  v9[1] = (SHIWORD(aP0) << 8) + 128; /*0x53a1cc*/
+  v9[1] = (IDA_SHIWORD(aP0) << 8) + 128; /*0x53a1cc*/
   v9[2] = v3; /*0x53a1d0*/
-  if ( result != dword_A9FA30 || (SHIWORD(aP0) << 8) + 128 != qword_A9FA34 || v3 != MEMORY[0xA9FA38] ) /*0x53a1e4*/
+  if ( result != dword_A9FA30 || (IDA_SHIWORD(aP0) << 8) + 128 != qword_A9FA34 || v3 != DataGlobal_A9FA38 ) /*0x53a1e4*/
   {
     v5 = *(void **)(g_RulesClass_Instance->DrainAnimationType /*0x53a213*/
                   + 4
                   * ((unsigned int)Random::State((_DWORD *)g_ScenarioClass_Instance + 134)
                    % g_RulesClass_Instance->ChronoBlast));
-    v6 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a216*/
+    v6 = (void **)RA2_OPNEW(0x1C8u); /*0x53a216*/
     if ( v6 ) /*0x53a220*/
       v7 = AnimClass::ctor(v6, v5, v9, 0, 1, (void *)0x600, 0, 0); /*0x53a23c*/
     else
@@ -189,7 +192,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
                 + 4
                 * ((unsigned int)Random::State((_DWORD *)g_ScenarioClass_Instance + 134)
                  % g_RulesClass_Instance->ChronoSparkle1));
-  v8 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a366*/
+  v8 = (void **)RA2_OPNEW(0x1C8u); /*0x53a366*/
   if ( v8 ) /*0x53a370*/
     v9 = AnimClass::ctor(v8, v7, v34, 0, 1, (void *)0x600, 0, 0); /*0x53a38c*/
   else
@@ -209,9 +212,9 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   v28 = *((char *)v3 + 283); /*0x53a413*/
   v11 = (void **)(v28 * dword_A9FA90 + ((v3[80] & 0x100) != 0 ? dword_A9FA84 : 0));
   v31 = ((__int16)v27 << 8) + 128; /*0x53a43d*/
-  v32 = (SHIWORD(v27) << 8) + 128; /*0x53a441*/
+  v32 = (IDA_SHIWORD(v27) << 8) + 128; /*0x53a441*/
   v33 = v11; /*0x53a445*/
-  if ( v31 != dword_A9FA30 || __PAIR64__((unsigned int)v11, (SHIWORD(v27) << 8) + 128) != qword_A9FA34 ) /*0x53a451*/
+  if ( v31 != dword_A9FA30 || IDA___PAIR64__((unsigned int)v11, (IDA_SHIWORD(v27) << 8) + 128) != qword_A9FA34 ) /*0x53a451*/
   {
     v12 = g_RulesClass_Instance; /*0x53a45f*/
     if ( g_RulesClass_Instance->GDIGateOne > 0 ) /*0x53a46c*/
@@ -224,8 +227,8 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
       v12 = g_RulesClass_Instance; /*0x53a4a3*/
     }
     Climb = v12[1].Climb; /*0x53a4ae*/
-    WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(Climb, HIDWORD(v12[1].WobblesPerSecond), v3[59], &v31); /*0x53a4c7*/
-    v16 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a4d3*/
+    WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(Climb, IDA_HIDWORD(v12[1].WobblesPerSecond), v3[59], &v31); /*0x53a4c7*/
+    v16 = (void **)RA2_OPNEW(0x1C8u); /*0x53a4d3*/
     if ( v16 ) /*0x53a4da*/
     {
       v17 = (void *)Return::HRESULT_Fail(v31, v32, (int)v33); /*0x53a4f7*/
@@ -256,17 +259,17 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
           break;
       }
     }
-    CreateSmokeEffectAt(Climb, HIDWORD(g_RulesClass_Instance[1].WobblesPerSecond), v31, v32, (int)v33, 0, 0); /*0x53a581*/
-    PlaySoundEffectAt(&v31, Climb, 0, HIDWORD(g_RulesClass_Instance[1].WobblesPerSecond), 1, (int)LightningStorm_Owner); /*0x53a5d0*/
+    CreateSmokeEffectAt(Climb, IDA_HIDWORD(g_RulesClass_Instance[1].WobblesPerSecond), v31, v32, (int)v33, 0, 0); /*0x53a581*/
+    PlaySoundEffectAt(&v31, Climb, 0, IDA_HIDWORD(g_RulesClass_Instance[1].WobblesPerSecond), 1, (int)LightningStorm_Owner); /*0x53a5d0*/
     if ( v18 == Cell::IsBridge(v3) /*0x53a607*/
       && (v29 = 0, v30 = 0, v20 == Object::FindClosestObjectCell(v3, &v29, 0, 0))
       && *((char *)v3 + 283) == v28 )
     {
-      LOBYTE(v11) = v25; /*0x53a60d*/
+      IDA_LOBYTE(v11) = v25; /*0x53a60d*/
     }
     else
     {
-      LOBYTE(v11) = 1; /*0x53a609*/
+      IDA_LOBYTE(v11) = 1; /*0x53a609*/
     }
     if ( !v26 ) /*0x53a617*/
     {
@@ -278,7 +281,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
           v21 = v11; /*0x53a635*/
           do /*0x53a691*/
           {
-            v11 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x53a63c*/
+            v11 = (void **)RA2_OPNEW(0x1C8u); /*0x53a63c*/
             v22 = v11; /*0x53a641*/
             if ( v11 ) /*0x53a648*/
             {
@@ -286,7 +289,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
                       (_DWORD *)g_ScenarioClass_Instance + 134,
                       0,
                       g_RulesClass_Instance->BaseUnderAttackSound - 1);
-              LOBYTE(v11) = (unsigned __int8)AnimClass::ctor( /*0x53a68b*/
+              IDA_LOBYTE(v11) = (unsigned __int8)AnimClass::ctor( /*0x53a68b*/
                                                v22,
                                                *(void **)(g_RulesClass_Instance->CreateUnitSound + 4 * v23),
                                                &v31,

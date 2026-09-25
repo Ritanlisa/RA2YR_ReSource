@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Super_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x6CC260
 namespace gamemd {
@@ -9,9 +10,9 @@ int Super::GetDefaultTimer()
 {
   int result; // eax
 
-  result = *(this + 9); /*0x6cc260*/
+  result = this->q024; /*0x6cc260*/
   if ( result == -1 ) /*0x6cc266*/
-    return *(_DWORD *)(*(this + 10) + 176); /*0x6cc26b*/
+    return *(_DWORD *)(this->q028 + 176); /*0x6cc26b*/
   return result; /*0x6cc271*/
 }
 }

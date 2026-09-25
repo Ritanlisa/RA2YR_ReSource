@@ -1,0 +1,17 @@
+// GENERATED flat e4 class (mechanical, supply_e4_class_decls)
+#pragma once
+
+#include "e4/classes/_fwd_e4.hpp"
+
+namespace gamemd {
+
+struct Player {
+// --- flat members (BEGIN) ---
+    void* q004;  // 0x4
+// --- flat members (END) ---
+    BOOL IsObserver();
+    void BuildListString();
+    wchar_t * FindByName();
+};
+
+} // namespace gamemd

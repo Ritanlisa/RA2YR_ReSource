@@ -2,6 +2,20 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/GameConfig_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/GameClass_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/BombClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x5E84D0
 namespace gamemd {
@@ -53,7 +67,7 @@ char * GameConfig::ComputeCRC()
     }
   }
   while ( v2 > 0 ); /*0x5e854a*/
-  v8 = (char *)__2_YAPAXI_Z(0xCu); /*0x5e8553*/
+  v8 = (char *)RA2_OPNEW(0xCu); /*0x5e8553*/
   sprintf(v8, "%08X", v0); /*0x5e855c*/
   qmemcpy(&word_ABE050, v11, 0x100u); /*0x5e8572*/
   return v8; /*0x5e8574*/
@@ -95,7 +109,7 @@ int GameConfig::ComputeHash()
   v6[1] = 0; /*0x679de9*/
   v6[2] = 0; /*0x679ded*/
   GenericList::Constructor(v7); /*0x679df1*/
-  v7[0] = &List<INIClass::INISection *>::`vftable'; /*0x679dfa*/
+  v7[0] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x679dfa*/
   memset(&v7[7], 0, 12); /*0x679e07*/
   v8 = 0; /*0x679e13*/
   v9 = 0; /*0x679e17*/
@@ -106,7 +120,7 @@ int GameConfig::ComputeHash()
   if ( CCINIClass::Load(v6, (int)v12, 0, 0) ) /*0x679e3b*/
     dword_B053B4 = Hash::ComputeHashSHA1((int)v6); /*0x679e4d*/
   byte_B053B8 = 1; /*0x679e59*/
-  v12[0] = &CCFileClass::`vftable'; /*0x679e60*/
+  v12[0] = &(void*)(void*)&CCFileClass_vftable; /*0x679e60*/
   v14 = 0; /*0x679e68*/
   Vector::Clear((int)v13); /*0x679e6f*/
   v12[0] = &off_7E1668; /*0x679e78*/

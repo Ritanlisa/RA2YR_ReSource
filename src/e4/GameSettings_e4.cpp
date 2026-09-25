@@ -4,8 +4,14 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
+#include "e4/classes/GameSettings_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/NetworkAddress_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5FA620
+namespace gamemd {
 AbstractClass * * GameSettings::Read()
 {
   int v2; // eax
@@ -175,7 +181,7 @@ AbstractClass * * GameSettings::Read()
     v30 = 1.0; /*0x5faa3c*/
   *((float *)this + 15) = v30; /*0x5faa42*/
   v31 = Math::RoundToInt(v30 * 255.0); /*0x5faa4b*/
-  ThemeClass::GetField(v31, HIDWORD(v31)); /*0x5faa52*/
+  ThemeClass::GetField(v31, IDA_HIDWORD(v31)); /*0x5faa52*/
   v32 = Math::RoundToInt(*((float *)this + 15) * 16384.0); /*0x5faa60*/
   EndBufferMixer(g_MixerChannel_Voice, v32); /*0x5faa6d*/
   Debug::Log("VoiceVolume = %f\n", *((float *)this + 15)); /*0x5faa80*/
@@ -243,13 +249,15 @@ AbstractClass * * GameSettings::Read()
   *((_DWORD *)this + 21) = INIClass::ReadInt_Overwrite(g_INI_Key_Network, aNetcard, v55); /*0x5facbd*/
   INIClass::GetString((int)g_INI_Key_Network, (int)g_INI_Key_DestNet, &g_INI_DefaultBuffer, (char *)this + 88, 0x40u); /*0x5facda*/
   Debug::Log(aComplete); /*0x5face4*/
-  LOBYTE(v47) = *((_BYTE *)this + 29); /*0x5face9*/
+  IDA_LOBYTE(v47) = *((_BYTE *)this + 29); /*0x5face9*/
   nullsub_36(v47); /*0x5facf5*/
-  LOBYTE(v48) = *((_BYTE *)this + 30); /*0x5facfa*/
+  IDA_LOBYTE(v48) = *((_BYTE *)this + 30); /*0x5facfa*/
   SetGlobalFlag(v48); /*0x5facfd*/
-  return GameSettings::ParseNetworkAddress(this); /*0x5fad09*/
+  return GameSettings::ParseNetworkAddress(); /*0x5fad09*/
 }
+} // namespace gamemd
 // 0x5FB050
+namespace gamemd {
 void * GameSettings::ParseNetworkAddress()
 {
   unsigned __int16 v2; // ax
@@ -265,7 +273,7 @@ void * GameSettings::ParseNetworkAddress()
   __int16 v12; // [esp+14h] [ebp-10h]
   _DWORD v13[3]; // [esp+18h] [ebp-Ch] BYREF
 
-  v2 = *((_WORD *)this + 37); /*0x5fb057*/
+  v2 = this->u16_4A; /*0x5fb057*/
   if ( v2 == 0xFFFF ) /*0x5fb05f*/
   {
     Network::GetField(g_NetworkManager, 34835); /*0x5fb066*/
@@ -274,12 +282,12 @@ void * GameSettings::ParseNetworkAddress()
   {
     Network::GetField(g_NetworkManager, v2 + 0x4000); /*0x5fb079*/
   }
-  v3 = this + 88; /*0x5fb07e*/
+  v3 = &this->u32_160; /*0x5fb07e*/
   result = 0; /*0x5fb086*/
   v5 = strlen(v3) + 1; /*0x5fb088*/
   if ( v5 != 1 ) /*0x5fb08d*/
   {
-    v6 = (char *)__2_YAPAXI_Z(v5); /*0x5fb09a*/
+    v6 = (char *)RA2_OPNEW(v5); /*0x5fb09a*/
     strcpy(v6, v3); /*0x5fb0b8*/
     v7 = 0; /*0x5fb0c1*/
     result = strtok(v6, asc_826598); /*0x5fb0c3*/
@@ -307,7 +315,9 @@ void * GameSettings::ParseNetworkAddress()
   }
   return result; /*0x5fb159*/
 }
+} // namespace gamemd
 // 0x721290
+namespace gamemd {
 void GameSettings::SetScoreVolume(int volume)
 {
   int result; // eax
@@ -315,10 +325,12 @@ void GameSettings::SetScoreVolume(int volume)
   result = volume; /*0x721290*/
   if ( volume >= 255 ) /*0x721299*/
     result = 255; /*0x72129b*/
-  *(this + 3) = result; /*0x7212a0*/
+  this->u32_C = result; /*0x7212a0*/
   return result; /*0x7212a3*/
 }
+} // namespace gamemd
 // 0x7931A0
+namespace gamemd {
 char * GameSettings::FindFlagged()
 {
   int v0; // eax
@@ -338,3 +350,4 @@ char * GameSettings::FindFlagged()
   }
   return &g_IsMultiplayerSession; /*0x7931dc*/
 }
+} // namespace gamemd

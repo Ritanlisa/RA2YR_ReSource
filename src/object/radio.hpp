@@ -51,10 +51,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int Constructor();  // 0x5B2DA0
     void* ProcessEvent(int a1);  // 0x65AEB0
     // --- gap2 auto-generated stub declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    unsigned int * Release();  // 0x65A750
-    char HasFreeLink();  // 0x65ADC0
-// --- e4 declarations (END) ---
 };
 
 } // namespace game

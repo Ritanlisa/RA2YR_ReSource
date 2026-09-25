@@ -3,6 +3,10 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
+#include "e4/classes/GameLoop_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x786EF0
 namespace gamemd {
@@ -91,14 +95,14 @@ void sub_72BCF0()
       if ( dword_B0FA98 ) /*0x72bd0d*/
       {
         FileTreeNode::Destroy(dword_B0FA98); /*0x72bd11*/
-        __3_YAXPAX_Z(v0); /*0x72bd17*/
+        RA2_OPDEL(v0); /*0x72bd17*/
       }
       byte_B0FD44 = 0; /*0x72bd1f*/
     }
     dword_B0FA98 = 0; /*0x72bd2b*/
     if ( dword_B0FD48 ) /*0x72bd33*/
     {
-      __3_YAXPAX_Z(dword_B0FD48); /*0x72bd36*/
+      RA2_OPDEL(dword_B0FD48); /*0x72bd36*/
       dword_B0FD48 = 0; /*0x72bd3e*/
     }
     if ( dword_B0FD4C ) /*0x72bd4c*/
@@ -143,14 +147,14 @@ void sub_72C650()
       if ( dword_B0FB0C ) /*0x72c66d*/
       {
         FileTreeNode::Destroy(dword_B0FB0C); /*0x72c671*/
-        __3_YAXPAX_Z(v0); /*0x72c677*/
+        RA2_OPDEL(v0); /*0x72c677*/
       }
       byte_B0FD08 = 0; /*0x72c67f*/
     }
     dword_B0FB0C = 0; /*0x72c68b*/
     if ( dword_B0FD0C ) /*0x72c693*/
     {
-      __3_YAXPAX_Z(dword_B0FD0C); /*0x72c696*/
+      RA2_OPDEL(dword_B0FD0C); /*0x72c696*/
       dword_B0FD0C = 0; /*0x72c69e*/
     }
     if ( dword_B0FD10 ) /*0x72c6ac*/

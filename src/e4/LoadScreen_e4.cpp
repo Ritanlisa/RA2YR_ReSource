@@ -1,9 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/LoadScreen_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x643E60
+namespace gamemd {
 int LoadScreen::IsActive()
 {
-  return *(this + 25) != 0; /*0x643e6a*/
+  return *(&this->q0085) != 0; /*0x643e6a*/
 }
+} // namespace gamemd

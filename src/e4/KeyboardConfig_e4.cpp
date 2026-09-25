@@ -3,8 +3,21 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/KeyboardConfig_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/JumpjetLocomotion_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x533D20
+namespace gamemd {
 int KeyboardConfig::LoadINI()
 {
   int v0; // esi
@@ -26,7 +39,7 @@ int KeyboardConfig::LoadINI()
   CCFileClass::Construct(v10, aKeyboardmdIni); /*0x533d47*/
   if ( CCINIClass::Load(v8, (int)v10, 0, 0) ) /*0x533d57*/
   {
-    __3_YAXPAX_Z(Base); /*0x533d6c*/
+    RA2_OPDEL(Base); /*0x533d6c*/
     v0 = 0; /*0x533d74*/
     Base = 0; /*0x533d7a*/
     NumOfElements = 0; /*0x533d85*/
@@ -68,7 +81,7 @@ int KeyboardConfig::LoadINI()
   LABEL_14:
       ++i; /*0x533e98*/
     }
-    v10[0] = &CCFileClass::`vftable'; /*0x533ec0*/
+    v10[0] = &(void*)(void*)&CCFileClass_vftable; /*0x533ec0*/
     v12 = 0; /*0x533ec8*/
     Vector::Clear((int)v11); /*0x533ecf*/
     v10[0] = &off_7E1668; /*0x533ed8*/
@@ -79,7 +92,7 @@ int KeyboardConfig::LoadINI()
   else
   {
     Debug::Log(); /*0x533efe*/
-    v10[0] = &CCFileClass::`vftable'; /*0x533f0d*/
+    v10[0] = &(void*)(void*)&CCFileClass_vftable; /*0x533f0d*/
     v12 = 0; /*0x533f15*/
     Vector::Clear((int)v11); /*0x533f1c*/
     v10[0] = &off_7E1668; /*0x533f25*/
@@ -88,7 +101,9 @@ int KeyboardConfig::LoadINI()
     return 0; /*0x533f3b*/
   }
 }
+} // namespace gamemd
 // 0x538B80
+namespace gamemd {
 AbstractClass * * KeyboardConfig::ReleaseBuffer(int a2)
 {
   char *v3; // edi
@@ -99,19 +114,20 @@ AbstractClass * * KeyboardConfig::ReleaseBuffer(int a2)
 
   if ( a2 < 0 ) /*0x538b8c*/
     return 0; /*0x538b8c*/
-  v3 = (char *)__2_YAPAXI_Z(8 * (a2 + *(_DWORD *)(this + 8))); /*0x538ba0*/
+  v3 = (char *)RA2_OPNEW(8 * (a2 + v3->vtable3)); /*0x538ba0*/
   if ( !v3 ) /*0x538ba7*/
     return 0; /*0x538c00*/
-  for ( i = 0; i < *(_DWORD *)(this + 4); *(_DWORD *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
+  for ( i = 0; i < v3->vtable2; *(_DWORD *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
   {
     v5 = 8 * i; /*0x538bb9*/
-    v6 = (_DWORD *)(*(_DWORD *)this + 8 * i++); /*0x538bc2*/
+    v6 = (_DWORD *)(*(_DWORD *)v3 + 8 * i++); /*0x538bc2*/
     *(_DWORD *)&v3[v5] = *v6; /*0x538bc7*/
   }
-  __3_YAXPAX_Z(*(void **)this); /*0x538bdb*/
-  v7 = a2 + *(_DWORD *)(this + 8); /*0x538be6*/
-  *(_DWORD *)this = v3; /*0x538be8*/
-  *(_DWORD *)(this + 8) = v7; /*0x538bea*/
-  *(_DWORD *)(this + 16) = 0; /*0x538bed*/
+  RA2_OPDEL(); /*0x538bdb*/
+  v7 = a2 + v3->vtable3; /*0x538be6*/
+  *(_DWORD *)v3 = v3; /*0x538be8*/
+  v3->vtable3 = v7; /*0x538bea*/
+  v3->uniqueId = 0; /*0x538bed*/
   return 1; /*0x538bf4*/
 }
+} // namespace gamemd

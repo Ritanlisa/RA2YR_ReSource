@@ -1,8 +1,15 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/GameSetup_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x60D320
+namespace gamemd {
 int GameSetup::LookupDialogHash()
 {
   _DWORD *v1; // eax
@@ -27,7 +34,9 @@ int GameSetup::LookupDialogHash()
   else
     return 0; /*0x60d366*/
 }
+} // namespace gamemd
 // 0x698F90
+namespace gamemd {
 AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
 {
   int v4; // ebp
@@ -36,17 +45,17 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   char Buffer[16]; // [esp+10h] [ebp-10h] BYREF
 
   INIClass::SetInt(aP1, Block, g_INI_Key_GameMode, *(_DWORD *)this, 0); /*0x698fae*/
-  INIClass::SetInt(aP1, Block, aScenindex, *(_DWORD *)(this + 4), 0); /*0x698fc1*/
-  INIClass::SetInt(aP1, Block, g_INI_Key_GameSpeed, *(_DWORD *)(this + 8), 0); /*0x698fd4*/
-  INIClass::SetInt(aP1, Block, g_INI_Key_Credits, *(_DWORD *)(this + 12), 0); /*0x698fe7*/
-  INIClass::SetInt(aP1, Block, g_INI_Key_UnitCount, *(_DWORD *)(this + 16), 0); /*0x698ffa*/
-  INIClass::SetBool(aP1, Block, g_INI_Key_ShortGame, *(_BYTE *)(this + 20)); /*0x69900b*/
-  INIClass::SetBool(aP1, Block, g_INI_Key_SuperWeaponsAllowed, *(_BYTE *)(this + 21)); /*0x69901c*/
-  INIClass::SetBool(aP1, Block, g_INI_Key_BuildOffAlly, *(_BYTE *)(this + 22)); /*0x69902d*/
-  INIClass::SetBool(aP1, Block, aMcvrepacks, *(_BYTE *)(this + 23)); /*0x69903e*/
-  INIClass::SetBool(aP1, Block, aCratesappear, *(_BYTE *)(this + 24)); /*0x69904f*/
+  INIClass::SetInt(aP1, Block, aScenindex, this->q004, 0); /*0x698fc1*/
+  INIClass::SetInt(aP1, Block, g_INI_Key_GameSpeed, this->ptr_8, 0); /*0x698fd4*/
+  INIClass::SetInt(aP1, Block, g_INI_Key_Credits, this->q00C, 0); /*0x698fe7*/
+  INIClass::SetInt(aP1, Block, g_INI_Key_UnitCount, this->q010, 0); /*0x698ffa*/
+  INIClass::SetBool(aP1, Block, g_INI_Key_ShortGame, this->q014); /*0x69900b*/
+  INIClass::SetBool(aP1, Block, g_INI_Key_SuperWeaponsAllowed, this->u8_15); /*0x69901c*/
+  INIClass::SetBool(aP1, Block, g_INI_Key_BuildOffAlly, this->u8_16); /*0x69902d*/
+  INIClass::SetBool(aP1, Block, aMcvrepacks, this->u8_17); /*0x69903e*/
+  INIClass::SetBool(aP1, Block, aCratesappear, this->q018); /*0x69904f*/
   v4 = 1; /*0x699054*/
-  v5 = (int *)(this + 44); /*0x699059*/
+  v5 = (int *)(&this->q0104); /*0x699059*/
   do /*0x69908e*/
   {
     sprintf(Buffer, "Slot%02d", v4); /*0x699067*/
@@ -57,3 +66,4 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   while ( v4 < 8 ); /*0x69908e*/
   return result; /*0x699090*/
 }
+} // namespace gamemd

@@ -1,0 +1,13 @@
+// GENERATED flat e4 class (mechanical, supply_e4_class_decls)
+#pragma once
+
+namespace gamemd {
+
+struct CopyProtection {
+    void* vfptr;
+    bool CheckLauncher();
+    char CheckProtectedData();
+    char NotifyLauncher();
+};
+
+} // namespace gamemd

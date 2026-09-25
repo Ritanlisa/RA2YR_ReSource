@@ -3,50 +3,51 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_76AAF0_e4.hpp"
 #include "e4/classes/E4Recv_76B790_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x76AAF0
 namespace gamemd {
 unsigned int * E4Recv_76AAF0::sub_76AAF0()
 {
-  *(this + 1) = 0; /*0x76aaf7*/
+  this->M4 = 0; /*0x76aaf7*/
   *this = &off_7F7220; /*0x76aafa*/
-  *(this + 2) = 0; /*0x76ab00*/
-  *((_BYTE *)this + 14) = 10; /*0x76ab03*/
-  *((_BYTE *)this + 15) = 10; /*0x76ab06*/
-  *((_WORD *)this + 8) = 10000; /*0x76ab09*/
-  *((_WORD *)this + 6) = 0; /*0x76ab0f*/
-  *((_BYTE *)this + 29) = 0; /*0x76ab13*/
-  *((_BYTE *)this + 30) = 0; /*0x76ab16*/
-  *((_BYTE *)this + 31) = 0; /*0x76ab19*/
-  *((_BYTE *)this + 34) = 0; /*0x76ab1e*/
-  *((_BYTE *)this + 37) = 0; /*0x76ab21*/
-  *((_BYTE *)this + 40) = 0; /*0x76ab24*/
-  *((_BYTE *)this + 46) = 0; /*0x76ab27*/
-  *((_BYTE *)this + 49) = 0; /*0x76ab2a*/
-  *((_BYTE *)this + 52) = 0; /*0x76ab2d*/
-  *((_BYTE *)this + 32) = 100; /*0x76ab35*/
-  *((_BYTE *)this + 35) = 100; /*0x76ab38*/
-  *((_BYTE *)this + 38) = 100; /*0x76ab3b*/
-  *((_BYTE *)this + 41) = 100; /*0x76ab3e*/
-  *((_BYTE *)this + 44) = 100; /*0x76ab41*/
-  *((_BYTE *)this + 47) = 100; /*0x76ab44*/
-  *((_BYTE *)this + 50) = 100; /*0x76ab47*/
-  *((_BYTE *)this + 53) = 100; /*0x76ab4a*/
-  *((_BYTE *)this + 18) = 1; /*0x76ab4d*/
-  *((_BYTE *)this + 19) = 1; /*0x76ab51*/
-  *((_BYTE *)this + 20) = 2; /*0x76ab55*/
-  *((_BYTE *)this + 28) = 1; /*0x76ab59*/
-  *((_BYTE *)this + 33) = 50; /*0x76ab5d*/
-  *((_BYTE *)this + 36) = 50; /*0x76ab60*/
-  *((_BYTE *)this + 39) = 50; /*0x76ab63*/
-  *((_BYTE *)this + 42) = 50; /*0x76ab66*/
-  *((_BYTE *)this + 43) = 1; /*0x76ab69*/
-  *((_BYTE *)this + 45) = 50; /*0x76ab6d*/
-  *((_BYTE *)this + 48) = 50; /*0x76ab70*/
-  *((_BYTE *)this + 51) = 50; /*0x76ab73*/
-  *((_BYTE *)this + 54) = 50; /*0x76ab76*/
-  *(this + 14) = -1; /*0x76ab79*/
-  *(this + 15) = -1; /*0x76ab7c*/
+  this->M8 = 0; /*0x76ab00*/
+  this->M14 = 10; /*0x76ab03*/
+  this->M15 = 10; /*0x76ab06*/
+  this->M16 = 10000; /*0x76ab09*/
+  this->M12 = 0; /*0x76ab0f*/
+  this->M29 = 0; /*0x76ab13*/
+  this->M30 = 0; /*0x76ab16*/
+  this->M31 = 0; /*0x76ab19*/
+  this->u32_22 = 0; /*0x76ab1e*/
+  this->u32_25 = 0; /*0x76ab21*/
+  this->q028 = 0; /*0x76ab24*/
+  this->M46 = 0; /*0x76ab27*/
+  this->u32_31 = 0; /*0x76ab2a*/
+  this->M34 = 0; /*0x76ab2d*/
+  this->M20 = 100; /*0x76ab35*/
+  this->M35 = 100; /*0x76ab38*/
+  this->M38 = 100; /*0x76ab3b*/
+  this->u32_29 = 100; /*0x76ab3e*/
+  this->M44 = 100; /*0x76ab41*/
+  this->M47 = 100; /*0x76ab44*/
+  this->M32 = 100; /*0x76ab47*/
+  this->u32_35 = 100; /*0x76ab4a*/
+  this->M48 = 1; /*0x76ab4d*/
+  this->M19 = 1; /*0x76ab51*/
+  this->q014 = 2; /*0x76ab55*/
+  this->M28 = 1; /*0x76ab59*/
+  this->q084 = 50; /*0x76ab5d*/
+  this->q024 = 50; /*0x76ab60*/
+  this->M39 = 50; /*0x76ab63*/
+  this->M42 = 50; /*0x76ab66*/
+  this->M43 = 1; /*0x76ab69*/
+  this->M45 = 50; /*0x76ab6d*/
+  this->q030 = 50; /*0x76ab70*/
+  this->M33 = 50; /*0x76ab73*/
+  this->M36 = 50; /*0x76ab76*/
+  *(&this->M44) = -1; /*0x76ab79*/
+  *(&this->M45) = -1; /*0x76ab7c*/
   return this; /*0x76ab7f*/
 }
 } // namespace gamemd

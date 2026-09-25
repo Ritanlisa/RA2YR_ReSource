@@ -3,6 +3,13 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
+#include "e4/classes/NullModemClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/WinModemClass_e4.hpp"
 
 // 0x5F03B0
 namespace gamemd {
@@ -68,7 +75,7 @@ char NullModem_TestConnection()
       v22 = 0; /*0x5f04be*/
       v5 = v9; /*0x5f04d1*/
       v21[0] = 100; /*0x5f04d3*/
-      LOBYTE(v21[6]) = g_TauntCommandState; /*0x5f04db*/
+      IDA_LOBYTE(v21[6]) = g_TauntCommandState; /*0x5f04db*/
       Stream::WriteBlock((int)&g_EventManager, (int)v21, 250, 0); /*0x5f04df*/
     }
     if ( ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v23, (int)v20) > 0 ) /*0x5f04fd*/
@@ -89,7 +96,7 @@ char NullModem_TestConnection()
         memset(v21, 0, sizeof(v21)); /*0x5f0560*/
         v22 = 0; /*0x5f0571*/
         v21[0] = 100; /*0x5f0573*/
-        LOBYTE(v21[6]) = g_TauntCommandState; /*0x5f057b*/
+        IDA_LOBYTE(v21[6]) = g_TauntCommandState; /*0x5f057b*/
         Stream::WriteBlock((int)&g_EventManager, (int)v21, 250, 1); /*0x5f057f*/
         v11 = g_PerformanceTickOffset; /*0x5f0589*/
         if ( g_LastPerformanceTick != -1 ) /*0x5f0594*/

@@ -7,6 +7,14 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/DDraw_e4.hpp"
+#include "e4/classes/DSurface_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
 
 // 0x437FD0
 namespace gamemd {
@@ -14,7 +22,7 @@ int GameClass::initGameMode(int a2, int a3)
 {
   if ( !*this ) /*0x437fd3*/
     WinAPI::Wrapper(-2147467261); /*0x437fdd*/
-  return (*(int (__stdcall **)(_DWORD, int, int))(*(_DWORD *)*this + 12))(*this, a3, a2); /*0x437ff4*/
+  return (a3, a2); /*0x437ff4*/
 }
 }
 // 0x4381D0
@@ -25,17 +33,17 @@ unsigned int * GameClass::processFrame(int a2, int a3)
   _DWORD *v5; // eax
   _DWORD *v6; // ecx
 
-  result = (_DWORD *)*(this + 3); /*0x4381d3*/
+  result = (_DWORD *)this->u32_C; /*0x4381d3*/
   if ( !result ) /*0x4381d8*/
   {
-    v5 = __2_YAPAXI_Z(4u); /*0x4381dc*/
+    v5 = RA2_OPNEW(4u); /*0x4381dc*/
     if ( v5 ) /*0x4381e6*/
       result = sub_437F50(v5); /*0x4381ea*/
     else
       result = 0; /*0x4381f1*/
-    *(this + 3) = result; /*0x4381f3*/
+    this->u32_C = result; /*0x4381f3*/
   }
-  v6 = (_DWORD *)*(this + 3); /*0x4381f6*/
+  v6 = (_DWORD *)this->u32_C; /*0x4381f6*/
   if ( v6 ) /*0x4381fc*/
     return (_DWORD *)GameClass::initGameMode(v6, a2, a3); /*0x438208*/
   return result; /*0x4381f9*/
@@ -49,17 +57,17 @@ unsigned int * GameClass::updateUI(int a2, int a3)
   _DWORD *v5; // eax
   _DWORD *v6; // ecx
 
-  result = (_DWORD *)*(this + 3); /*0x438303*/
+  result = (_DWORD *)this->u32_C; /*0x438303*/
   if ( !result ) /*0x438308*/
   {
-    v5 = __2_YAPAXI_Z(4u); /*0x43830c*/
+    v5 = RA2_OPNEW(4u); /*0x43830c*/
     if ( v5 ) /*0x438316*/
       result = sub_437F50(v5); /*0x43831a*/
     else
       result = 0; /*0x438321*/
-    *(this + 3) = result; /*0x438323*/
+    this->u32_C = result; /*0x438323*/
   }
-  v6 = (_DWORD *)*(this + 3); /*0x438326*/
+  v6 = (_DWORD *)this->u32_C; /*0x438326*/
   if ( v6 ) /*0x43832c*/
     return (_DWORD *)GameClass::initGameMode(v6, a2, a3); /*0x438338*/
   return result; /*0x438329*/
@@ -80,7 +88,7 @@ int GameClass::loadScenarioFiles(ObjectClass * aP1)
   int v11; // [esp+2Ch] [ebp-14h]
   struct tagRECT Rect; // [esp+30h] [ebp-10h] BYREF
 
-  result = *(this + 1); /*0x5d2267*/
+  result = this->u32_4; /*0x5d2267*/
   if ( result > 0 ) /*0x5d226c*/
   {
     GetClientRect(g_hWnd, &Rect); /*0x5d227e*/
@@ -91,7 +99,7 @@ int GameClass::loadScenarioFiles(ObjectClass * aP1)
         g_WWMouseClass_Instance,
         aP1,
         0);
-    result = *(this + 1); /*0x5d22ab*/
+    result = this->u32_4; /*0x5d22ab*/
     v5 = 0; /*0x5d22af*/
     if ( result > 0 ) /*0x5d22b3*/
     {
@@ -99,7 +107,7 @@ int GameClass::loadScenarioFiles(ObjectClass * aP1)
       v7 = 0; /*0x5d22b8*/
       do /*0x5d231d*/
       {
-        v6 = (int *)(*(this + 3) + result); /*0x5d22c7*/
+        v6 = (int *)(this->u32_C + result); /*0x5d22c7*/
         v8 = *v6; /*0x5d22ce*/
         v9 = v6[1]; /*0x5d22d5*/
         v10 = v6[2]; /*0x5d22dc*/
@@ -118,9 +126,9 @@ int GameClass::loadScenarioFiles(ObjectClass * aP1)
         result = v7 + 16; /*0x5d2314*/
         v7 += 16; /*0x5d2319*/
       }
-      while ( v5 < *(this + 1) ); /*0x5d231d*/
+      while ( v5 < this->u32_4 ); /*0x5d231d*/
     }
-    *(this + 1) = 0; /*0x5d2320*/
+    this->u32_4 = 0; /*0x5d2320*/
     if ( g_WWMouseClass_Instance ) /*0x5d2330*/
       return (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)g_WWMouseClass_Instance + 64))( /*0x5d2337*/
                g_WWMouseClass_Instance,
@@ -150,7 +158,7 @@ int GameClass::FrameLoop(int a2)
     do /*0x5d24dc*/
     {
       Event::Dispatch(); /*0x5d2437*/
-      (*(void (__thiscall **)(_DWORD *))(*this + 8))(this); /*0x5d2440*/
+      this->vt_slot_8(); /*0x5d2440*/
       DDraw::WaitForIdle(); /*0x5d2443*/
       DSurface::RenderToSurface(g_DSurface_Hidden); /*0x5d2451*/
       GameClass::loadScenarioFiles(g_DSurface_Hidden); /*0x5d245f*/
@@ -166,7 +174,7 @@ int GameClass::FrameLoop(int a2)
             v4 = v10 - v3; /*0x5d248f*/
           v10 = v4; /*0x5d2495*/
         }
-        DDraw::HandleSuspend(this); /*0x5d249f*/
+        DDraw::HandleSuspend(); /*0x5d249f*/
         Ticks = Timer::GetTicks(); /*0x5d24b3*/
       }
       Sleep(0); /*0x5d24b9*/
@@ -194,12 +202,11 @@ int GameClass::FrameLoop(int a2)
 namespace gamemd {
 int GameClass::FindOpenSlot()
 {
-  int v1; // ebp
   int v2; // ebx
   int v4; // esi
   char v5; // al
 
-  v1 = g_MultiplayerOptions; /*0x5d6372*/
+  g_MultiplayerOptions = g_MultiplayerOptions; /*0x5d6372*/
   v2 = 0; /*0x5d6379*/
   if ( g_MultiplayerOptions <= 0 ) /*0x5d6380*/
     return -1; /*0x5d63cc*/
@@ -208,18 +215,18 @@ int GameClass::FindOpenSlot()
     v4 = *(_DWORD *)(g_MultiplayerGameState + 4 * v2); /*0x5d6387*/
     if ( IsRandMap::Sed(v4) ) /*0x5d638c*/
     {
-      v5 = (*(int (__thiscall **)(char *))(*(_DWORD *)this + 60))(this); /*0x5d6399*/
+      v5 = (*(int (__thiscall **)(char *))(*(_DWORD *)&this->u32_180))(this); /*0x5d6399*/
     }
     else
     {
-      if ( !*(_BYTE *)(v4 + 380) && Network::IsMultiplayerActive() ) /*0x5d63a8*/
+      if ( !v4->q5F0 && Network::IsMultiplayerActive() ) /*0x5d63a8*/
         goto LABEL_8; /*0x5d63af*/
-      v5 = GameClass::initPlayerData(this + 48); /*0x5d63b7*/
+      v5 = GameClass::initPlayerData(&this->q0108); /*0x5d63b7*/
     }
     if ( v5 ) /*0x5d63be*/
       return v2; /*0x5d63c5*/
   LABEL_8:
-    if ( ++v2 >= v1 ) /*0x5d63c3*/
+    if ( ++v2 >= g_MultiplayerOptions ) /*0x5d63c3*/
       return -1; /*0x5d63c3*/
   }
 }
@@ -230,9 +237,9 @@ int GameClass::GetRelatedObject()
 {
   int v1; // ecx
 
-  v1 = *(this + 1); /*0x631d30*/
+  v1 = this->q004; /*0x631d30*/
   if ( v1 ) /*0x631d35*/
-    return (*(int (__thiscall **)(int))(*(_DWORD *)v1 + 4))(v1); /*0x631d39*/
+    return (*(int (__thiscall **)(int))(v1->q004)(v1); /*0x631d39*/
   else
     return 0; /*0x631d3c*/
 }
@@ -251,44 +258,44 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
   char v12[256]; // [esp+8h] [ebp-100h] BYREF
 
   v3 = Src; /*0x632dc7*/
-  if ( Src && aP2 >= 1 && *(_DWORD *)(this + 56) ) /*0x632de7*/
+  if ( Src && aP2 >= 1 && this->q038 ) /*0x632de7*/
   {
     v5 = 0; /*0x632df6*/
-    if ( *(_BYTE *)(this + 12) ) /*0x632df2*/
+    if ( this->q00C ) /*0x632df2*/
     {
-      if ( *(_DWORD *)(this + 52) ) /*0x632e01*/
+      if ( this->q034 ) /*0x632e01*/
       {
-        v9 = *(_DWORD *)(this + 320); /*0x632e6f*/
+        v9 = this->q050; /*0x632e6f*/
         if ( v9 >= aP2 ) /*0x632e7e*/
           v9 = aP2; /*0x632e80*/
-        memcpy((void *)(*(_DWORD *)(this + 316) - *(_DWORD *)(this + 320) + this + 60), Src, v9); /*0x632e97*/
+        memcpy((void *)(this->u32_13C - this->q050 + &this->q0180), Src, v9); /*0x632e97*/
         v3 = &Src[v9]; /*0x632eb0*/
-        v10 = *(_DWORD *)(this + 320) == v9; /*0x632eb2*/
+        v10 = this->q050 == v9; /*0x632eb2*/
         aP2 -= v9; /*0x632eb4*/
-        *(_DWORD *)(this + 320) -= v9; /*0x632ebb*/
+        this->q050 -= v9; /*0x632ebb*/
         if ( !v10 ) /*0x632ec1*/
           return v5 + Delegate::Dispatch((_DWORD *)this, (int)v3, aP2); /*0x632ec1*/
-        BigInt::RSAOperation(*(_DWORD *)(this + 56), (char *)(this + 60), *(_DWORD *)(this + 316), v12); /*0x632ed6*/
-        GameClass::processFrame((_DWORD *)(this + 20), (int)v12, 56); /*0x632ee5*/
+        BigInt::RSAOperation(this->q038, (char *)(&this->q0180), this->u32_13C, v12); /*0x632ed6*/
+        GameClass::processFrame((_DWORD *)(&this->q0080), (int)v12, 56); /*0x632ee5*/
       }
       else
       {
         memset(v12, 0, sizeof(v12)); /*0x632e17*/
-        (*(void (__thiscall **)(_DWORD, char *, int))(**(_DWORD **)(this + 16) + 8))(*(_DWORD *)(this + 16), v12, 56); /*0x632e21*/
-        v6 = *(_DWORD *)(this + 56); /*0x632e24*/
+        (*(void (__thiscall **)(_DWORD, char *, int))(**(_DWORD **)(&this->q0046) + 8))(this->q010, v12, 56); /*0x632e21*/
+        v6 = this->q038; /*0x632e24*/
         if ( v6 ) /*0x632e29*/
           v7 = (*(_DWORD *)(v6 + 512) - 1) / 8 * (55 / ((*(_DWORD *)(v6 + 512) - 1) / 8) + 1); /*0x632e4a*/
         else
           v7 = 0; /*0x632e2b*/
-        v8 = BigInt::DecryptBlock(v6, v12, v7, (char *)(this + 60)); /*0x632e57*/
-        v5 = Delegate::Dispatch((_DWORD *)this, this + 60, v8); /*0x632e65*/
-        GameClass::processFrame((_DWORD *)(this + 20), (int)v12, 56); /*0x632e6d*/
+        v8 = BigInt::DecryptBlock(v6, v12, v7, (char *)(&this->q0180)); /*0x632e57*/
+        v5 = Delegate::Dispatch((_DWORD *)this, &this->q03C, v8); /*0x632e65*/
+        GameClass::processFrame((_DWORD *)(&this->q0080), (int)v12, 56); /*0x632e6d*/
       }
-      *(_BYTE *)(this + 12) = 0; /*0x632eea*/
+      this->q00C = 0; /*0x632eea*/
     }
     return v5 + Delegate::Dispatch((_DWORD *)this, (int)v3, aP2); /*0x632f0a*/
   }
-  return Delegate::Dispatch((_DWORD *)this, (int)Src, aP2); /*0x632f02*/
+  return Delegate::Dispatch((int)Src, aP2); /*0x632f02*/
 }
 }
 // 0x633130
@@ -300,7 +307,6 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
   int v6; // eax
   int v7; // eax
   int v8; // ecx
-  int v9; // ebx
   int v10; // eax
   int v12; // ecx
   int v13; // eax
@@ -312,58 +318,58 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
   v3 = a2; /*0x633138*/
   v4 = Size; /*0x633141*/
   if ( !a2 ) /*0x63314c*/
-    return Delegate::Invoke((_DWORD *)this, (int)a2, Size); /*0x63314c*/
+    return Delegate::Invoke((int)a2, Size); /*0x63314c*/
   if ( Size < 1 ) /*0x633155*/
-    return Delegate::Invoke((_DWORD *)this, (int)a2, Size); /*0x633155*/
-  v6 = *(_DWORD *)(this + 56); /*0x63315b*/
+    return Delegate::Invoke((int)a2, Size); /*0x633155*/
+  v6 = this->q038; /*0x63315b*/
   if ( !v6 ) /*0x633160*/
-    return Delegate::Invoke((_DWORD *)this, (int)a2, Size); /*0x6332e5*/
+    return Delegate::Invoke((int)a2, Size); /*0x6332e5*/
   v16 = 0; /*0x633169*/
-  if ( *(_BYTE *)(this + 12) ) /*0x633166*/
+  if ( this->q00C ) /*0x633166*/
   {
-    if ( *(_DWORD *)(this + 52) == 1 ) /*0x63317d*/
+    if ( this->q034 == 1 ) /*0x63317d*/
     {
       v7 = Delegate::Invoke( /*0x6331a6*/
              (_DWORD *)this,
              (int)Src,
              ((*(_DWORD *)(v6 + 512) - 1) / 8 + 1) * (55 / ((*(_DWORD *)(v6 + 512) - 1) / 8) + 1));
-      v8 = *(_DWORD *)(this + 56); /*0x6331ab*/
-      v9 = v7; /*0x6331ae*/
+      v8 = this->q038; /*0x6331ab*/
+      v7 = v7; /*0x6331ae*/
       if ( v8 ) /*0x6331b2*/
         v10 = ((*(_DWORD *)(v8 + 512) - 1) / 8 + 1) * (55 / ((*(_DWORD *)(v8 + 512) - 1) / 8) + 1); /*0x6331d4*/
       else
         v10 = 0; /*0x6331b4*/
-      if ( v9 != v10 ) /*0x6331d9*/
+      if ( v7 != v10 ) /*0x6331d9*/
         return 0; /*0x6331e7*/
-      BigInt::RSAOperation(v8, Src, v9, (char *)(this + 60)); /*0x6331f4*/
-      GameClass::updateUI((_DWORD *)(this + 20), this + 60, 56); /*0x6331fc*/
+      BigInt::RSAOperation(v8, Src, v7, (char *)(&this->q0180)); /*0x6331f4*/
+      GameClass::updateUI((_DWORD *)(&this->q0080), &this->q03C, 56); /*0x6331fc*/
     }
     else
     {
       memset(Src, 0, sizeof(Src)); /*0x63320d*/
-      (*(void (__thiscall **)(_DWORD, char *, int))(**(_DWORD **)(this + 16) + 8))(*(_DWORD *)(this + 16), Src, 56); /*0x633217*/
-      v12 = *(_DWORD *)(this + 56); /*0x63321a*/
+      (*(void (__thiscall **)(_DWORD, char *, int))(**(_DWORD **)(&this->q0046) + 8))(this->q010, Src, 56); /*0x633217*/
+      v12 = this->q038; /*0x63321a*/
       if ( v12 ) /*0x63321f*/
         v13 = (*(_DWORD *)(v12 + 512) - 1) / 8 * (55 / ((*(_DWORD *)(v12 + 512) - 1) / 8) + 1); /*0x633240*/
       else
         v13 = 0; /*0x633221*/
-      v14 = BigInt::DecryptBlock(v12, Src, v13, (char *)(this + 60)); /*0x63324d*/
-      *(_DWORD *)(this + 320) = v14; /*0x633258*/
-      *(_DWORD *)(this + 316) = v14; /*0x63325e*/
-      GameClass::updateUI((_DWORD *)(this + 20), (int)Src, 56); /*0x633268*/
+      v14 = BigInt::DecryptBlock(v12, Src, v13, (char *)(&this->q0180)); /*0x63324d*/
+      this->q140 = v14; /*0x633258*/
+      this->q13C = v14; /*0x63325e*/
+      GameClass::updateUI((_DWORD *)(&this->q0080), (int)Src, 56); /*0x633268*/
     }
     v4 = Size; /*0x63326d*/
-    *(_BYTE *)(this + 12) = 0; /*0x633274*/
+    this->q00C = 0; /*0x633274*/
   }
-  v15 = *(_DWORD *)(this + 320); /*0x633278*/
+  v15 = this->q140; /*0x633278*/
   if ( v15 > 0 ) /*0x633280*/
   {
     if ( v4 >= v15 ) /*0x633284*/
-      v4 = *(_DWORD *)(this + 320); /*0x633286*/
-    memcpy(a2, (const void *)(*(_DWORD *)(this + 316) - v15 + this + 60), v4); /*0x633297*/
+      v4 = this->q140; /*0x633286*/
+    memcpy(a2, (const void *)(this->q13C - v15 + &this->q0180), v4); /*0x633297*/
     v3 = &a2[v4]; /*0x6332ac*/
     v16 = v4; /*0x6332b2*/
-    *(_DWORD *)(this + 320) -= v4; /*0x6332b6*/
+    this->q140 -= v4; /*0x6332b6*/
     v4 = Size - v4; /*0x6332c3*/
   }
   return v16 + Delegate::Invoke((_DWORD *)this, (int)v3, v4); /*0x6331db*/
@@ -376,15 +382,15 @@ int GameClass::initPlayerData(const char ** a2)
   int v3; // eax
   int v5; // esi
 
-  v3 = *(this + 109); /*0x69ae15*/
+  v3 = *(&this->q0289); /*0x69ae15*/
   if ( !v3 ) /*0x69ae1d*/
     return String::Equals_Alt(a2, aStandard_0); /*0x69ae28*/
   v5 = 0; /*0x69ae33*/
   if ( v3 <= 0 ) /*0x69ae37*/
     return 0; /*0x69ae5d*/
-  while ( !String::Compare(a2, (const char **)(*(this + 106) + 4 * v5)) ) /*0x69ae50*/
+  while ( !String::Compare(a2, (const char **)(*(&this->q0286) + 4 * v5)) ) /*0x69ae50*/
   {
-    if ( ++v5 >= *(this + 109) ) /*0x69ae5b*/
+    if ( ++v5 >= *(&this->q0289) ) /*0x69ae5b*/
       return 0; /*0x69ae5b*/
   }
   return 1; /*0x69ae2d*/
@@ -443,7 +449,7 @@ ObjectClass * * GameClass::Shutdown()
         }
         while ( v5 ); /*0x6bed27*/
       }
-      __3_YAXPAX_Z(v1); /*0x6bed2b*/
+      RA2_OPDEL(v1); /*0x6bed2b*/
     }
     byte_B0BCF4 = 0; /*0x6bed34*/
   }
@@ -460,34 +466,34 @@ int GameClass::ReadVersionFile()
   int v3; // eax
   int v5[9]; // [esp+4h] [ebp-24h] BYREF
 
-  if ( (*(_BYTE *)(this + 68) & 8) == 0 ) /*0x74f96a*/
+  if ( (this->u8_44 & 8) == 0 ) /*0x74f96a*/
   {
     RawFileClass::Construct(v5, (int)g_Str_File_VERSION_TXT); /*0x74f97c*/
     if ( FileClass::Open(v5, 0) ) /*0x74f988*/
     {
-      FileClass::Read(v5, (char *)(this + 42), 16); /*0x74f99b*/
-      for ( *(_BYTE *)(this + 57) = 0; /*0x74f9b5*/
-            *(_BYTE *)(strlen((const char *)(this + 42)) + this + 41) == 13;
-            *(_BYTE *)(strlen((const char *)(this + 42)) + this + 41) = 0 )
+      FileClass::Read(v5, (char *)(&this->q0102), 16); /*0x74f99b*/
+      for ( this->q039 = 0; /*0x74f9b5*/
+            *(_BYTE *)(strlen((const char *)(&this->q0102)) + &this->q0101) == 13;
+            *(_BYTE *)(strlen((const char *)(&this->q0102)) + &this->q0101) = 0 )
       {
         ; /*0x74f9c5*/
       }
     }
     else
     {
-      *(_BYTE *)(this + 42) = 0; /*0x74f9d9*/
+      this->__pad_02A = 0; /*0x74f9d9*/
     }
     RawFileClass::Dtor(v5); /*0x74f9e0*/
-    v2 = *(_DWORD *)(this + 68); /*0x74f9e5*/
-    LOBYTE(v2) = v2 | 8; /*0x74f9e9*/
-    *(_DWORD *)(this + 68) = v2; /*0x74f9ec*/
+    v2 = this->u8_44; /*0x74f9e5*/
+    IDA_LOBYTE(v2) = v2 | 8; /*0x74f9e9*/
+    this->u8_44 = v2; /*0x74f9ec*/
   }
-  v3 = *(_DWORD *)(this + 68); /*0x74f9f0*/
+  v3 = this->u8_44; /*0x74f9f0*/
   if ( (v3 & 2) != 0 ) /*0x74f9f5*/
-    return *(_WORD *)(this + 8); /*0x74f9f7*/
-  LOBYTE(v3) = v3 | 2; /*0x74fa00*/
-  *(_WORD *)(this + 8) = 1; /*0x74fa02*/
-  *(_DWORD *)(this + 68) = v3; /*0x74fa08*/
+    return this->u32_8; /*0x74f9f7*/
+  IDA_LOBYTE(v3) = v3 | 2; /*0x74fa00*/
+  this->u32_8 = 1; /*0x74fa02*/
+  this->u8_44 = v3; /*0x74fa08*/
   return 1; /*0x74f9fb*/
 }
 }
@@ -499,34 +505,34 @@ int GameClass::ReadVersionFile2()
   int v3; // eax
   int v5[9]; // [esp+4h] [ebp-24h] BYREF
 
-  if ( (*(_BYTE *)(this + 68) & 8) == 0 ) /*0x74fa2a*/
+  if ( (this->u8_44 & 8) == 0 ) /*0x74fa2a*/
   {
     RawFileClass::Construct(v5, (int)g_Str_File_VERSION_TXT); /*0x74fa3c*/
     if ( FileClass::Open(v5, 0) ) /*0x74fa48*/
     {
-      FileClass::Read(v5, (char *)(this + 42), 16); /*0x74fa5b*/
-      for ( *(_BYTE *)(this + 57) = 0; /*0x74fa75*/
-            *(_BYTE *)(strlen((const char *)(this + 42)) + this + 41) == 13;
-            *(_BYTE *)(strlen((const char *)(this + 42)) + this + 41) = 0 )
+      FileClass::Read(v5, (char *)(&this->q0102), 16); /*0x74fa5b*/
+      for ( this->q039 = 0; /*0x74fa75*/
+            *(_BYTE *)(strlen((const char *)(&this->q0102)) + &this->q0101) == 13;
+            *(_BYTE *)(strlen((const char *)(&this->q0102)) + &this->q0101) = 0 )
       {
         ; /*0x74fa85*/
       }
     }
     else
     {
-      *(_BYTE *)(this + 42) = 0; /*0x74fa99*/
+      this->__pad_02A = 0; /*0x74fa99*/
     }
     RawFileClass::Dtor(v5); /*0x74faa0*/
-    v2 = *(_DWORD *)(this + 68); /*0x74faa5*/
-    LOBYTE(v2) = v2 | 8; /*0x74faa9*/
-    *(_DWORD *)(this + 68) = v2; /*0x74faac*/
+    v2 = this->u8_44; /*0x74faa5*/
+    IDA_LOBYTE(v2) = v2 | 8; /*0x74faa9*/
+    this->u8_44 = v2; /*0x74faac*/
   }
-  v3 = *(_DWORD *)(this + 68); /*0x74fab0*/
+  v3 = this->u8_44; /*0x74fab0*/
   if ( (v3 & 4) != 0 ) /*0x74fab5*/
-    return *(_WORD *)(this + 10); /*0x74fab7*/
-  LOBYTE(v3) = v3 | 4; /*0x74fac0*/
-  *(_WORD *)(this + 10) = 1; /*0x74fac2*/
-  *(_DWORD *)(this + 68) = v3; /*0x74fac8*/
+    return this->u16_A; /*0x74fab7*/
+  IDA_LOBYTE(v3) = v3 | 4; /*0x74fac0*/
+  this->u16_A = 1; /*0x74fac2*/
+  this->u8_44 = v3; /*0x74fac8*/
   return 1; /*0x74fabb*/
 }
 }
@@ -539,13 +545,13 @@ void GameClass::ReadVersionString()
   RawFileClass::Construct(v2, (int)g_Str_File_VERSION_TXT); /*0x74fc92*/
   if ( FileClass::Open(v2, 0) ) /*0x74fc9e*/
   {
-    FileClass::Read(v2, this + 42, 16); /*0x74fcb1*/
-    for ( *(this + 57) = 0; *(this + strlen(this + 42) + 41) == 13; *(this + strlen(this + 42) + 41) = 0 ) /*0x74fccb*/
+    FileClass::Read(v2, &this->u32_A8, 16); /*0x74fcb1*/
+    for ( *(&this->ptr_147) = 0; *(this + strlen(&this->q0102) + 41) == 13; *(this + strlen(&this->q0102) + 41) = 0 ) /*0x74fccb*/
       ; /*0x74fcdb*/
   }
   else
   {
-    *(this + 42) = 0; /*0x74fcfe*/
+    *(&this->q0102) = 0; /*0x74fcfe*/
   }
   RawFileClass::Dtor(v2); /*0x74fd05*/
 }
@@ -561,21 +567,21 @@ int GameClass::processNetworkPacket(void * Src, signed int Size)
   signed int v8; // eax
 
   result = 0; /*0x7ba3c4*/
-  v5 = *(this + 3); /*0x7ba3c6*/
+  v5 = this->q00C; /*0x7ba3c6*/
   if ( v5 && Src && Size > 0 ) /*0x7ba3db*/
   {
-    v6 = *(this + 4); /*0x7ba3dd*/
+    v6 = this->q010; /*0x7ba3dd*/
     v7 = Size; /*0x7ba3e3*/
     if ( v6 ) /*0x7ba3e5*/
     {
-      v8 = v6 - *(this + 6); /*0x7ba3ea*/
+      v8 = v6 - this->q018; /*0x7ba3ea*/
       v7 = Size; /*0x7ba3ec*/
       if ( Size >= v8 ) /*0x7ba3f0*/
         v7 = v8; /*0x7ba3f2*/
     }
     if ( v7 > 0 ) /*0x7ba3f6*/
-      memcpy((void *)(v5 + *(this + 6)), Src, v7); /*0x7ba400*/
-    *(this + 6) += v7; /*0x7ba40d*/
+      memcpy((void *)(v5 + this->q018), Src, v7); /*0x7ba400*/
+    this->q018 += v7; /*0x7ba40d*/
     return v7; /*0x7ba410*/
   }
   return result; /*0x7ba413*/
@@ -586,9 +592,9 @@ namespace gamemd {
 int * GameClass::initDisplay(char a2)
 {
   Vector::Clear((int)(this + 3)); /*0x4aeca6*/
-  Pipe::Dtor(this); /*0x4aecad*/
+  Pipe::Dtor(); /*0x4aecad*/
   if ( (a2 & 1) != 0 ) /*0x4aecb7*/
-    __3_YAXPAX_Z(this); /*0x4aecba*/
+    RA2_OPDEL(); /*0x4aecba*/
   return this; /*0x4aecc4*/
 }
 } // namespace gamemd
@@ -640,9 +646,9 @@ wchar_t * GameClass::GetDifficultyString()
 namespace gamemd {
 unsigned int * GameClass::saveGameState(char a2)
 {
-  *this = &PixelFXClass::`vftable'; /*0x631f49*/
+  *this = &(void*)(void*)&PixelFXClass_vftable; /*0x631f49*/
   if ( (a2 & 1) != 0 ) /*0x631f4f*/
-    __3_YAXPAX_Z(this); /*0x631f52*/
+    RA2_OPDEL(); /*0x631f52*/
   return this; /*0x631f5c*/
 }
 } // namespace gamemd
@@ -651,7 +657,7 @@ unsigned int * GameClass::saveGameState(char a2)
 namespace gamemd {
 int GameClass::loadGameState(int a2)
 {
-  return (*(int (__thiscall **)(void *, int))(*(_DWORD *)this + 12))(this, a2); /*0x632fea*/
+  return (a2); /*0x632fea*/
 }
 } // namespace gamemd
 
@@ -662,19 +668,19 @@ PKPipe * GameClass::validateGameFile(char a2)
   int *v3; // ebx
   int *v4; // esi
 
-  v3 = (int *)*(this + 8); /*0x632ff5*/
-  v4 = this + 5; /*0x632ff8*/
-  *(this + 5) = &BlowPipe::`vftable'; /*0x632ffd*/
+  v3 = (int *)this->q020; /*0x632ff5*/
+  v4 = &this->q014; /*0x632ff8*/
+  this->q014 = &(void*)(void*)&BlowPipe_vftable; /*0x632ffd*/
   if ( v3 ) /*0x633003*/
   {
     COMObject::Release(v3); /*0x633007*/
-    __3_YAXPAX_Z(v3); /*0x63300d*/
+    RA2_OPDEL(v3); /*0x63300d*/
   }
   v4[3] = 0; /*0x633017*/
   Pipe::Dtor(v4); /*0x63301e*/
-  Pipe::Dtor(this); /*0x633025*/
+  Pipe::Dtor(); /*0x633025*/
   if ( (a2 & 1) != 0 ) /*0x63302f*/
-    __3_YAXPAX_Z(this); /*0x633032*/
+    RA2_OPDEL(); /*0x633032*/
   return this; /*0x63303c*/
 }
 } // namespace gamemd
@@ -683,7 +689,7 @@ PKPipe * GameClass::validateGameFile(char a2)
 namespace gamemd {
 int GameClass::parseGameOptions(int a2)
 {
-  return (*(int (__thiscall **)(void *, int))(*(_DWORD *)this + 4))(this, a2); /*0x63336a*/
+  return (a2); /*0x63336a*/
 }
 } // namespace gamemd
 
@@ -694,19 +700,19 @@ PKStrawClass * GameClass::applyGameSettings(char a2)
   int *v3; // ebx
   int *v4; // esi
 
-  v3 = (int *)*(this + 8); /*0x633375*/
-  v4 = this + 5; /*0x633378*/
-  *(this + 5) = &BlowStraw::`vftable'; /*0x63337d*/
+  v3 = (int *)this->q020; /*0x633375*/
+  v4 = &this->q014; /*0x633378*/
+  this->q014 = &(void*)(void*)&BlowStraw_vftable; /*0x63337d*/
   if ( v3 ) /*0x633383*/
   {
     COMObject::Release(v3); /*0x633387*/
-    __3_YAXPAX_Z(v3); /*0x63338d*/
+    RA2_OPDEL(v3); /*0x63338d*/
   }
   v4[3] = 0; /*0x633397*/
   Straw::Dtor(v4); /*0x63339e*/
-  Straw::Dtor(this); /*0x6333a5*/
+  Straw::Dtor(); /*0x6333a5*/
   if ( (a2 & 1) != 0 ) /*0x6333af*/
-    __3_YAXPAX_Z(this); /*0x6333b2*/
+    RA2_OPDEL(); /*0x6333b2*/
   return this; /*0x6333bc*/
 }
 } // namespace gamemd

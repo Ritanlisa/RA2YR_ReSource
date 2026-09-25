@@ -1,21 +1,28 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/EventQueue_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x54F000
+namespace gamemd {
 int EventQueue::Process()
 {
   int v2; // eax
 
-  if ( (*(this + 198) + 1) % 256 != *(this + 197) ) /*0x54f01e*/
+  if ( (this->q318 + 1) % 256 != this->q314 ) /*0x54f01e*/
     MessageLoop(); /*0x54f020*/
-  v2 = *(this + 197); /*0x54f025*/
-  if ( v2 == *(this + 198) ) /*0x54f033*/
+  v2 = this->q314; /*0x54f025*/
+  if ( v2 == this->q318 ) /*0x54f033*/
     return 0; /*0x54f035*/
   else
     return *((_WORD *)this + v2 + 138); /*0x54f03a*/
 }
+} // namespace gamemd
 // 0x54F050
+namespace gamemd {
 int EventQueue::Read()
 {
   int v2; // eax
@@ -84,14 +91,17 @@ int EventQueue::Read()
   }
   return result; /*0x54f177*/
 }
+} // namespace gamemd
 // 0x54F650
+namespace gamemd {
 int EventQueue::Check()
 {
   int v1; // eax
 
-  v1 = *(this + 197); /*0x54f650*/
-  if ( v1 == *(this + 198) ) /*0x54f65e*/
+  v1 = this->q314; /*0x54f650*/
+  if ( v1 == this->q318 ) /*0x54f65e*/
     return 0; /*0x54f669*/
   else
     return *((_WORD *)this + v1 + 138); /*0x54f660*/
 }
+} // namespace gamemd

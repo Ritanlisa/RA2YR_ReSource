@@ -139,11 +139,11 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
   int v38; // [esp+44h] [ebp+Ch]
   int v39; // [esp+48h] [ebp+10h]
 
-  v6 = *(_DWORD *)(this + 364); /*0x556098*/
+  v6 = this->q16C; /*0x556098*/
   if ( v6 >= 1 )
   {
-    if ( !*(_DWORD *)(this + 400) ) /*0x5560a8*/
-      *(_DWORD *)(this + 400) = &unk_829C20; /*0x5560b2*/
+    if ( !this->q190 ) /*0x5560a8*/
+      this->q190 = &unk_829C20; /*0x5560b2*/
     v7 = red; /*0x5560bc*/
     if ( red == -1 )
     {
@@ -169,40 +169,40 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
     {
       if ( v7 == -1 ) /*0x556128*/
       {
-        v7 = *(_DWORD *)(this + 420); /*0x55612a*/
-        v12 = *(_DWORD *)(this + 428); /*0x556130*/
-        v11 = *(_DWORD *)(this + 424); /*0x556136*/
+        v7 = this->q1A4; /*0x55612a*/
+        v12 = this->u32_1AC; /*0x556130*/
+        v11 = this->q1A8; /*0x556136*/
       }
       else
       {
-        *(_DWORD *)(this + 420) = v7; /*0x556145*/
-        *(_DWORD *)(this + 424) = v11; /*0x55614b*/
-        *(_DWORD *)(this + 428) = v12; /*0x556151*/
+        this->q1A4 = v7; /*0x556145*/
+        this->q1A8 = v11; /*0x55614b*/
+        this->u32_1AC = v12; /*0x556151*/
       }
-      *(_BYTE *)(this + 432) = 1; /*0x55613c*/
+      this->u8_1B0 = 1; /*0x55613c*/
     }
     else
     {
       if ( v7 == -1 ) /*0x556163*/
       {
-        v7 = *(_DWORD *)(this + 408); /*0x556165*/
-        v11 = *(_DWORD *)(this + 412); /*0x55616b*/
-        v12 = *(_DWORD *)(this + 416); /*0x556171*/
+        v7 = this->q198; /*0x556165*/
+        v11 = this->q19C; /*0x55616b*/
+        v12 = this->u32_1A0; /*0x556171*/
       }
       else
       {
-        *(_DWORD *)(this + 408) = v7; /*0x556179*/
-        *(_DWORD *)(this + 412) = v11; /*0x55617f*/
-        *(_DWORD *)(this + 416) = v12; /*0x556185*/
+        this->q198 = v7; /*0x556179*/
+        this->q19C = v11; /*0x55617f*/
+        this->u32_1A0 = v12; /*0x556185*/
       }
-      *(_BYTE *)(this + 432) = 0; /*0x55618b*/
+      this->u8_1B0 = 0; /*0x55618b*/
     }
     v32 = Math::RoundToInt((double)(1000 * v7) * 0.065536); /*0x5561b1*/
     v34 = Math::RoundToInt((double)(1000 * v11) * 0.065536); /*0x5561d5*/
     v35 = Math::RoundToInt((double)(1000 * v12) * 0.065536); /*0x5561f8*/
     v13 = 0; /*0x556202*/
     v30 = v6 - 1; /*0x55620e*/
-    v14 = *(_WORD **)(this + 368); /*0x55621e*/
+    v14 = *(_WORD **)(&this->q0908); /*0x55621e*/
     v31 = (30 * v6 / 200 - 1) & ((30 * v6 / 200 - 1 <= 0) - 1); /*0x55623a*/
     if ( v31 >= (v6 - 1) >> 1 ) /*0x55623e*/
       v31 = (v6 - 1) >> 1; /*0x556240*/
@@ -234,38 +234,38 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
         {
           case 0: /*0x5562de*/
             ConvertRGB24toRGB565( /*0x5562f8*/
-              *(_DWORD *)(this + 392),
+              this->q188,
               v14,
               __SPAIR64__(v16, v15),
               __SPAIR64__(v18, v17),
-              *(_DWORD *)(this + 400));
+              this->q190);
             v14 += 256; /*0x556300*/
             break; /*0x556306*/
           case 1: /*0x5562de*/
             ConvertRGB24to655( /*0x55631e*/
-              *(_DWORD *)(this + 392),
+              this->q188,
               v14,
               __SPAIR64__(v16, v15),
               __SPAIR64__(v18, v17),
-              *(_DWORD *)(this + 400));
+              this->q190);
             v14 += 256; /*0x556326*/
             break; /*0x55632c*/
           case 2: /*0x5562de*/
             ConvertRGB24to556( /*0x556344*/
-              *(_DWORD *)(this + 392),
+              this->q188,
               v14,
               __SPAIR64__(v16, v15),
               __SPAIR64__(v18, v17),
-              *(_DWORD *)(this + 400));
+              this->q190);
             v14 += 256; /*0x55634c*/
             break; /*0x556352*/
           case 3: /*0x5562de*/
             ConvertRGB24to565( /*0x55636a*/
-              *(_DWORD *)(this + 392),
+              this->q188,
               v14,
               __SPAIR64__(v16, v15),
               __SPAIR64__(v18, v17),
-              *(_DWORD *)(this + 400));
+              this->q190);
             v14 += 256; /*0x556372*/
             break; /*0x556378*/
           default:
@@ -274,8 +274,8 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
             v19 = 1; /*0x556389*/
             while ( 1 ) /*0x5563bb*/
             {
-              v20 = (unsigned __int8 *)(*(_DWORD *)(this + 392) + 3 * (v19 % 256)); /*0x5563bb*/
-              if ( *(_BYTE *)(*(_DWORD *)(this + 400) + v19) ) /*0x55639a*/
+              v20 = (unsigned __int8 *)(this->q188 + 3 * (v19 % 256)); /*0x5563bb*/
+              if ( *(_BYTE *)(this->q190 + v19) ) /*0x55639a*/
               {
                 v21 = (v15 * *v20) >> 16; /*0x5563d7*/
                 v22 = (v37 * v20[1]) >> 16; /*0x5563da*/
@@ -310,7 +310,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
         v13 = 2 * v32 + v33; /*0x5564ae*/
         v27 += 2 * v34; /*0x5564c3*/
         v28 += 2 * v35; /*0x5564d3*/
-        v6 = *(_DWORD *)(this + 364); /*0x5564d7*/
+        v6 = this->q16C; /*0x5564d7*/
         v29 += 0x10000; /*0x5564dd*/
         ++v26; /*0x5564e5*/
         v33 = v13; /*0x5564eb*/

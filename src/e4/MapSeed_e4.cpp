@@ -3,29 +3,44 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/MapSeed_e4.hpp"
+#include "e4/classes/Compare_e4.hpp"
+#include "e4/classes/Map_e4.hpp"
+#include "e4/classes/MapSeedClass_e4.hpp"
+#include "e4/classes/MapSeedClass_18_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x597730
+namespace gamemd {
 int MapSeed::ValidateName(int a2)
 {
   if ( a2 ) /*0x597736*/
-    return (*(int (__stdcall **)(int, char *))(*(_DWORD *)this + 8))(a2, this + 120); /*0x597740*/
+    return (*(int (__stdcall **)(int, char *))(this->q008)(a2, &this->u32_300); /*0x597740*/
   else
-    return (unsigned __int8)ShowSaveLoadDialog(this + 120) != 0; /*0x597752*/
+    return (unsigned __int8)ShowSaveLoadDialog(&this->u32_300) != 0; /*0x597752*/
 }
+} // namespace gamemd
 // 0x5AC230
+namespace gamemd {
 int MapSeed::IsCellInBounds()
 {
   int v1; // edx
   int v2; // eax
 
   v1 = *this; /*0x5ac230*/
-  v2 = *(this + 1); /*0x5ac233*/
+  v2 = this->q004; /*0x5ac233*/
   return v2 + v1 > g_MapCellHeight_Value /*0x5ac25f*/
       && v1 - v2 < g_MapCellHeight_Value
       && v2 - v1 < g_MapCellHeight_Value
       && v2 + v1 <= g_MapCellCount;
 }
+} // namespace gamemd
 // 0x79C520
+namespace gamemd {
 int MapSeed::CheckName()
 {
   char **v2; // eax
@@ -79,7 +94,9 @@ int MapSeed::CheckName()
     }
   }
 }
+} // namespace gamemd
 // 0x79C650
+namespace gamemd {
 AbstractClass * * MapSeed::InsertName()
 {
   int v2; // eax
@@ -194,3 +211,4 @@ AbstractClass * * MapSeed::InsertName()
     goto LABEL_33; /*0x79c8b3*/
   }
 }
+} // namespace gamemd

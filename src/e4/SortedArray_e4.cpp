@@ -1,8 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/SortedArray_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x52B620
+namespace gamemd {
 int SortedArray::BinarySearch(CCINIClass * aP1)
 {
   size_t result; // eax
@@ -11,18 +16,18 @@ int SortedArray::BinarySearch(CCINIClass * aP1)
   int v6; // ecx
   int v7; // esi
 
-  result = (size_t)*(this + 1); /*0x52b623*/
+  result = (size_t)this->q004; /*0x52b623*/
   if ( result ) /*0x52b628*/
   {
-    if ( !*((_BYTE *)this + 12) ) /*0x52b62e*/
+    if ( !this->q00C ) /*0x52b62e*/
     {
-      qsort(*this, result, 8u, CompareFunc4Int); /*0x52b640*/
-      *(this + 4) = 0; /*0x52b648*/
-      *((_BYTE *)this + 12) = 1; /*0x52b64f*/
+      qsort(result, 8u, CompareFunc4Int); /*0x52b640*/
+      this->q010 = 0; /*0x52b648*/
+      this->q00C = 1; /*0x52b64f*/
     }
     v4 = *this; /*0x52b659*/
     v5 = *aP1; /*0x52b65b*/
-    v6 = (int)*(this + 1); /*0x52b65d*/
+    v6 = (int)this->q004; /*0x52b65d*/
     if ( v6 <= 0 ) /*0x52b662*/
       return 0; /*0x52b68e*/
     while ( 1 ) /*0x52b66b*/
@@ -45,7 +50,9 @@ int SortedArray::BinarySearch(CCINIClass * aP1)
   }
   return result; /*0x52b62a*/
 }
+} // namespace gamemd
 // 0x5387D0
+namespace gamemd {
 int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
 {
   int v4; // eax
@@ -78,7 +85,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   {
     v5 = 10; /*0x5387e6*/
   }
-  v6 = (char *)__2_YAPAXI_Z(8 * (v4 + v5)); /*0x538807*/
+  v6 = (char *)RA2_OPNEW(8 * (v4 + v5)); /*0x538807*/
   if ( v6 ) /*0x53880e*/
   {
     for ( i = 0; i < *(_DWORD *)(this + 4); *(_DWORD *)&v6[v8 + 4] = v9[1] ) /*0x53881c*/
@@ -87,7 +94,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
       v9 = (_DWORD *)(*(_DWORD *)this + 8 * i++); /*0x538829*/
       *(_DWORD *)&v6[v8] = *v9; /*0x53882e*/
     }
-    __3_YAXPAX_Z(*(void **)this); /*0x538842*/
+    RA2_OPDEL(); /*0x538842*/
     v10 = *(_DWORD *)(this + 8); /*0x538847*/
     *(_DWORD *)this = v6; /*0x53884f*/
     *(_DWORD *)(this + 8) = v5 + v10; /*0x538851*/
@@ -96,7 +103,9 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   }
   return 0; /*0x538864*/
 }
+} // namespace gamemd
 // 0x5388A0
+namespace gamemd {
 ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
 {
   size_t v3; // eax
@@ -112,16 +121,16 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   int v14; // eax
   int v15; // [esp+10h] [ebp-8h]
 
-  v3 = *(_DWORD *)(this + 4); /*0x5388a9*/
+  v3 = this->q004; /*0x5388a9*/
   if ( !v3 ) /*0x5388ae*/
     return 0; /*0x5388ae*/
-  if ( !*(_BYTE *)(this + 12) ) /*0x5388b0*/
+  if ( !this->q00C ) /*0x5388b0*/
   {
-    qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5388c2*/
-    *(_DWORD *)(this + 16) = 0; /*0x5388ca*/
-    *(_BYTE *)(this + 12) = 1; /*0x5388d1*/
+    qsort(v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5388c2*/
+    this->q010 = 0; /*0x5388ca*/
+    this->q00C = 1; /*0x5388d1*/
   }
-  v4 = *(_DWORD *)(this + 4); /*0x5388d9*/
+  v4 = this->q004; /*0x5388d9*/
   v5 = *(_DWORD **)this; /*0x5388e0*/
   v15 = *aP1; /*0x5388e4*/
   if ( v4 <= 0 ) /*0x5388e8*/
@@ -148,21 +157,23 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   v9 = (int)&v7[-*(_DWORD *)this] >> 3; /*0x53892b*/
   if ( v9 == -1 ) /*0x538931*/
     return 0; /*0x538920*/
-  for ( i = v9 + 1; i < *(_DWORD *)(this + 4); *(_DWORD *)(v12 - 4) = *(_DWORD *)(v12 + 4) ) /*0x538939*/
+  for ( i = v9 + 1; i < this->q004; *(_DWORD *)(v12 - 4) = *(_DWORD *)(v12 + 4) ) /*0x538939*/
   {
-    v11 = *(_DWORD *)(*(_DWORD *)this + 8 * i); /*0x53893d*/
-    v12 = *(_DWORD *)this + 8 * i++; /*0x538940*/
+    v11 = *(_DWORD *)(*(_DWORD *)&this->u32_20 * i); /*0x53893d*/
+    v12 = *(_DWORD *)&this->u32_20 * i++; /*0x538940*/
     *(_DWORD *)(v12 - 8) = v11; /*0x538944*/
   }
   v13 = *(_DWORD **)this; /*0x538957*/
-  v14 = *(_DWORD *)(this + 4) - 1; /*0x538959*/
-  *(_DWORD *)(this + 4) = v14; /*0x53895c*/
+  v14 = this->q004 - 1; /*0x538959*/
+  this->q004 = v14; /*0x53895c*/
   v13[2 * v14] = 0; /*0x53895f*/
   v13[2 * v14 + 1] = 0; /*0x538962*/
-  *(_DWORD *)(this + 16) = 0; /*0x538966*/
+  this->q010 = 0; /*0x538966*/
   return 1; /*0x538917*/
 }
+} // namespace gamemd
 // 0x538980
+namespace gamemd {
 int SortedArray::FindPair(int * a2)
 {
   size_t v3; // ecx
@@ -173,19 +184,19 @@ int SortedArray::FindPair(int * a2)
   int v9; // esi
   char *v10; // edx
 
-  v3 = *(_DWORD *)(this + 4); /*0x538985*/
+  v3 = this->q004; /*0x538985*/
   if ( !v3 ) /*0x53898b*/
     return 0; /*0x53898b*/
-  v4 = *(_DWORD **)(this + 16); /*0x53898d*/
+  v4 = *(_DWORD **)(&this->q0046); /*0x53898d*/
   if ( v4 && *v4 == *a2 ) /*0x53899e*/
     return 1; /*0x5389a6*/
-  if ( !*(_BYTE *)(this + 12) ) /*0x5389a9*/
+  if ( !this->q00C ) /*0x5389a9*/
   {
-    qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5389bb*/
-    *(_DWORD *)(this + 16) = 0; /*0x5389c3*/
-    *(_BYTE *)(this + 12) = 1; /*0x5389ca*/
+    qsort(v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5389bb*/
+    this->q010 = 0; /*0x5389c3*/
+    this->q00C = 1; /*0x5389ca*/
   }
-  v6 = *(_DWORD *)(this + 4); /*0x5389ce*/
+  v6 = this->q004; /*0x5389ce*/
   v7 = *a2; /*0x5389d1*/
   v8 = *(_DWORD **)this; /*0x5389d3*/
   if ( v6 <= 0 ) /*0x5389d7*/
@@ -209,6 +220,7 @@ int SortedArray::FindPair(int * a2)
   }
   if ( !v10 ) /*0x538a09*/
     return 0; /*0x538a04*/
-  *(_DWORD *)(this + 16) = v10; /*0x538a0d*/
+  this->q010 = v10; /*0x538a0d*/
   return 1; /*0x5389a0*/
 }
+} // namespace gamemd

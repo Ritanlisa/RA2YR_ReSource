@@ -70,6 +70,12 @@
 #include "e4/classes/E4Recv_6C5D50_e4.hpp"
 #include "e4/classes/E4Recv_6C5ED0_e4.hpp"
 #include "e4/classes/E4Recv_6C6050_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/CreateTeamCommand_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x6BF8D0
 namespace gamemd {
@@ -82,7 +88,7 @@ int E4Recv_6BF8D0::CreateTClassFactory_CellClass()
     *a3 = a1; /*0x6bf916*/
   if ( !*a3 ) /*0x6bf918*/
     return -2147467262; /*0x6bf920*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bf92c*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bf92c*/
   return 0; /*0x6bf8de*/
 }
 } // namespace gamemd
@@ -98,7 +104,7 @@ int E4Recv_6BFA50::CreateTClassFactory_EMPulseClass()
     *a3 = a1; /*0x6bfa96*/
   if ( !*a3 ) /*0x6bfa98*/
     return -2147467262; /*0x6bfaa0*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bfaac*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bfaac*/
   return 0; /*0x6bfa5e*/
 }
 } // namespace gamemd
@@ -114,7 +120,7 @@ int E4Recv_6BFBD0::CreateTClassFactory_LightSourceClass()
     *a3 = a1; /*0x6bfc16*/
   if ( !*a3 ) /*0x6bfc18*/
     return -2147467262; /*0x6bfc20*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bfc2c*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bfc2c*/
   return 0; /*0x6bfbde*/
 }
 } // namespace gamemd
@@ -130,7 +136,7 @@ int E4Recv_6BFD50::CreateTClassFactory_SideClass()
     *a3 = a1; /*0x6bfd96*/
   if ( !*a3 ) /*0x6bfd98*/
     return -2147467262; /*0x6bfda0*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bfdac*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bfdac*/
   return 0; /*0x6bfd5e*/
 }
 } // namespace gamemd
@@ -146,7 +152,7 @@ int E4Recv_6BFED0::CreateTClassFactory_TiberiumClass()
     *a3 = a1; /*0x6bff16*/
   if ( !*a3 ) /*0x6bff18*/
     return -2147467262; /*0x6bff20*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bff2c*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6bff2c*/
   return 0; /*0x6bfede*/
 }
 } // namespace gamemd
@@ -162,7 +168,7 @@ int E4Recv_6C01D0::CreateTClassFactory_CampaignClass()
     *a3 = a1; /*0x6c0216*/
   if ( !*a3 ) /*0x6c0218*/
     return -2147467262; /*0x6c0220*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6c022c*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6c022c*/
   return 0; /*0x6c01de*/
 }
 } // namespace gamemd
@@ -178,7 +184,7 @@ int E4Recv_6C0350::CreateTClassFactory_BuildingLightClass()
     *a3 = a1; /*0x6c0396*/
   if ( !*a3 ) /*0x6c0398*/
     return -2147467262; /*0x6c03a0*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6c03ac*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6c03ac*/
   return 0; /*0x6c035e*/
 }
 } // namespace gamemd
@@ -194,7 +200,7 @@ int E4Recv_6C04D0::CreateTClassFactory_WaypointPathClass()
     *a3 = a1; /*0x6c0516*/
   if ( !*a3 ) /*0x6c0518*/
     return -2147467262; /*0x6c0520*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6c052c*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6c052c*/
   return 0; /*0x6c04de*/
 }
 } // namespace gamemd
@@ -210,7 +216,7 @@ int E4Recv_6C0650::CreateTClassFactory_TemporalClass()
     *a3 = a1; /*0x6c0696*/
   if ( !*a3 ) /*0x6c0698*/
     return -2147467262; /*0x6c06a0*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6c06ac*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6c06ac*/
   return 0; /*0x6c065e*/
 }
 } // namespace gamemd
@@ -226,7 +232,7 @@ int E4Recv_6C07D0::CreateTClassFactory_AirstrikeClass()
     *a3 = a1; /*0x6c0816*/
   if ( !*a3 ) /*0x6c0818*/
     return -2147467262; /*0x6c0820*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6c082c*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6c082c*/
   return 0; /*0x6c07de*/
 }
 } // namespace gamemd

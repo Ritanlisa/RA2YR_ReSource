@@ -5,7 +5,16 @@
 
 namespace gamemd {
 struct E4Recv_6E3380 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    unsigned int M68;  // 0x44
+    unsigned int q068;  // 0x68
+    unsigned int q104;  // 0x104
+    unsigned int q260;  // 0x260
+    unsigned int q608;  // 0x608
+    unsigned int q1544;  // 0x1544
+    unsigned int q5444;  // 0x5444
+// --- flat members (END) ---
     char sub_6E3380(int a2, int a3, int a4, int a5);  // 0x6E3380
 };
 } // namespace gamemd

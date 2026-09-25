@@ -3,6 +3,10 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Waypoint_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/WaypointPathClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5023B0
 namespace gamemd {
@@ -19,11 +23,11 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
 
   v2 = 0; /*0x5023b8*/
   v10 = 0; /*0x5023bb*/
-  for ( i = this + 528; ; i += 4 ) /*0x5023bf*/
+  for ( i = &this->u32_840; ; i += 4 ) /*0x5023bf*/
   {
     if ( !*(_DWORD *)i ) /*0x5023c5*/
     {
-      v4 = __2_YAPAXI_Z(0x40u); /*0x5023cc*/
+      v4 = RA2_OPNEW(0x40u); /*0x5023cc*/
       if ( v4 ) /*0x5023d6*/
         v5 = WaypointPathClass::Construct((int)v4, v2); /*0x5023db*/
       else
@@ -32,7 +36,7 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
     }
     v6 = *(_DWORD **)i; /*0x5023e6*/
     v7 = 0; /*0x5023e8*/
-    if ( *(int *)(*(_DWORD *)i + 56) > 0 ) /*0x5023ef*/
+    if ( *(int *)(this->u32_878 > 0 ) /*0x5023ef*/
       break; /*0x5023ef*/
   LABEL_12:
     v10 = ++v2; /*0x502437*/
@@ -45,7 +49,7 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
     if ( (unsigned __int16)(*Element / 256) == *aP1 && (unsigned __int16)(Element[1] / 256) == aP1[1] ) /*0x502422*/
       return Element; /*0x502441*/
     v6 = *(_DWORD **)i; /*0x502424*/
-    if ( ++v7 >= *(_DWORD *)(*(_DWORD *)i + 56) ) /*0x50242a*/
+    if ( ++v7 >= *(_DWORD *)(this->u32_878 ) /*0x50242a*/
     {
       v2 = v10; /*0x50242c*/
       goto LABEL_12; /*0x50242c*/
@@ -58,15 +62,15 @@ namespace gamemd {
 void * Waypoint::InitInvalid()
 {
   *this = -1; /*0x53ecb4*/
-  *(this + 1) = -1; /*0x53ecb6*/
-  *(this + 2) = -1; /*0x53ecb9*/
-  *(this + 3) = -1; /*0x53ecbc*/
-  *(this + 4) = -1; /*0x53ecbf*/
-  *(this + 5) = -1; /*0x53ecc2*/
-  *(this + 6) = -1; /*0x53ecc5*/
-  *(this + 7) = -1; /*0x53ecc8*/
-  *(this + 8) = -1; /*0x53eccb*/
-  *(this + 9) = -1; /*0x53ecce*/
+  this->ptr_4 = -1; /*0x53ecb6*/
+  this->ptr_8 = -1; /*0x53ecb9*/
+  this->u32_C = -1; /*0x53ecbc*/
+  this->u32_10 = -1; /*0x53ecbf*/
+  this->u32_14 = -1; /*0x53ecc2*/
+  this->u32_18 = -1; /*0x53ecc5*/
+  this->u32_1C = -1; /*0x53ecc8*/
+  this->q020 = -1; /*0x53eccb*/
+  this->q024 = -1; /*0x53ecce*/
   return this; /*0x53ecd1*/
 }
 }
@@ -77,14 +81,12 @@ int Waypoint::FindCell(unsigned int * a2)
   int v3; // ecx
   _DWORD *i; // edi
   int v6; // [esp+10h] [ebp-8h]
-  int *v7; // [esp+14h] [ebp-4h]
 
   v3 = 0; /*0x763a59*/
-  v7 = this; /*0x763a5b*/
-  v6 = *(this + 14); /*0x763a64*/
+  v6 = *(&this->ptr_44); /*0x763a64*/
   if ( v6 <= 0 ) /*0x763a68*/
     return 0; /*0x763adc*/
-  for ( i = (_DWORD *)*(this + 11); /*0x763a6e*/
+  for ( i = (_DWORD *)*(&this->ptr_41); /*0x763a6e*/
         (unsigned __int16)(*i / 256) != (unsigned __int16)(*a2 / 256)
      || (unsigned __int16)(i[1] / 256) != (unsigned __int16)(a2[1] / 256);
         i += 3 )
@@ -92,7 +94,7 @@ int Waypoint::FindCell(unsigned int * a2)
     if ( ++v3 >= v6 ) /*0x763ac5*/
       return 0; /*0x763ac5*/
   }
-  v7[9] = v3; /*0x763ad0*/
+  this->q024 = v3; /*0x763ad0*/
   return 1; /*0x763acd*/
 }
 }

@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Particle_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4664C0
 namespace gamemd {
@@ -10,27 +12,27 @@ int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, Techn
   int result; // eax
 
   result = aP1; /*0x4664c4*/
-  *(_DWORD *)(this + 268) = aP2; /*0x4664c8*/
-  *(_DWORD *)(this + 272) = a7; /*0x4664d2*/
-  *(_DWORD *)(this + 296) = aP5; /*0x4664dc*/
-  *(_BYTE *)(this + 224) = aP7; /*0x4664e6*/
-  *(_DWORD *)(this + 108) = aP4; /*0x4664f6*/
-  *(_DWORD *)(this + 172) = aP1; /*0x4664fb*/
-  *(_DWORD *)(this + 176) = aP3; /*0x466501*/
-  *(_BYTE *)(this + 300) = 0; /*0x466507*/
-  *(_BYTE *)(this + 301) = *(_BYTE *)(aP1 + 758); /*0x466513*/
-  if ( *(_BYTE *)(aP1 + 681) && aP3 ) /*0x466525*/
+  this->q10C = aP2; /*0x4664c8*/
+  this->q110 = a7; /*0x4664d2*/
+  this->q128 = aP5; /*0x4664dc*/
+  this->q0E0 = aP7; /*0x4664e6*/
+  this->q06C = aP4; /*0x4664f6*/
+  this->q0AC = aP1; /*0x4664fb*/
+  this->q0B0 = aP3; /*0x466501*/
+  this->q12C = 0; /*0x466507*/
+  this->u8_12D = *(_BYTE *)(aP1 + 758); /*0x466513*/
+  if ( aP1->qAA4 && aP3 ) /*0x466525*/
   {
-    result = *(_DWORD *)(*(_DWORD *)(aP3 + 540) + 90196); /*0x46652d*/
-    *(_DWORD *)(this + 276) = result; /*0x466533*/
+    result = aP3->q21C->u32_16054; /*0x46652d*/
+    this->q114 = result; /*0x466533*/
   }
   else
   {
-    *(_DWORD *)(this + 276) = -1; /*0x46653b*/
+    this->q114 = -1; /*0x46653b*/
   }
-  *(_DWORD *)(this + 336) = 256; /*0x466546*/
-  *(_DWORD *)(this + 340) = 0; /*0x466550*/
-  *(_BYTE *)(this + 344) = 0; /*0x466556*/
+  this->q150 = 256; /*0x466546*/
+  this->q154 = 0; /*0x466550*/
+  this->q158 = 0; /*0x466556*/
   return result; /*0x466545*/
 }
 }

@@ -5,7 +5,24 @@
 
 namespace gamemd {
 struct String {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    ObjectClass * ptr_4;  // 0x4
+    unsigned int u16_6;  // 0x6
+    ObjectClass * ptr_8;  // 0x8
+    unsigned int u32_C;  // 0xC
+    unsigned int q018;  // 0x18
+    unsigned int q024;  // 0x24
+    unsigned int q054;  // 0x54
+    unsigned int u32_70;  // 0x70
+    unsigned int q084;  // 0x84
+    unsigned int q274;  // 0x274
+    unsigned int q628;  // 0x628
+    unsigned int q774;  // 0x774
+    unsigned int q1908;  // 0x1908
+    unsigned int q5494;  // 0x5494
+    unsigned int q6408;  // 0x6408
+    void* ptr_88;
+// --- flat members (END) ---
     void AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2);  // 0x49B760
     char * AllocAndCopy(RandomStruct * aP1, IUnknown * aP2);  // 0x4CB5E0
     void Release();  // 0x5BD5A0

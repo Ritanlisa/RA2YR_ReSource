@@ -4,19 +4,20 @@
 #include "e4/classes/E4Recv_765380_e4.hpp"
 #include "e4/classes/E4Recv_766060_e4.hpp"
 #include "e4/classes/Campaign_WorldDominationTour_24_e4.hpp"
+#include "e4/classes/Campaign_WorldDominationTour_24__e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x765380
 namespace gamemd {
 unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
 {
-  int v4; // edx
   void **v5; // [esp+4h] [ebp-Ch] BYREF
   char *v6; // [esp+8h] [ebp-8h]
   int v7; // [esp+Ch] [ebp-4h]
 
-  v6 = this + 24; /*0x765387*/
+  v6 = &this->u32_60; /*0x765387*/
   v7 = 0; /*0x76538f*/
-  v5 = &VectorCursor<rc_ptr<WorldDominationTour::Conflict>,DynamicVectorClass<rc_ptr<WorldDominationTour::Conflict>>>::`vftable'; /*0x765397*/
+  v5 = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765397*/
   if ( Campaign_WorldDominationTour_24_::AddRef(&v5) ) /*0x76539f*/
   {
     do /*0x7653db*/
@@ -27,10 +28,10 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
     }
     while ( ((unsigned __int8 (__thiscall *)(void ***))v5[1])(&v5) ); /*0x7653db*/
   }
-  v4 = v7; /*0x7653ea*/
+  v7 = v7; /*0x7653ea*/
   a2[1] = v6; /*0x7653ef*/
-  a2[2] = v4; /*0x7653f2*/
-  *a2 = &VectorCursor<rc_ptr<WorldDominationTour::Conflict>,DynamicVectorClass<rc_ptr<WorldDominationTour::Conflict>>>::`vftable'; /*0x7653f5*/
+  a2[2] = v7; /*0x7653f2*/
+  *a2 = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x7653f5*/
   return a2; /*0x7653ee*/
 }
 } // namespace gamemd

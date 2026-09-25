@@ -135,17 +135,17 @@ ScenarioClass::ScenarioClass() noexcept
     // IDA 0x683381: offset +13504 = CurrentFrame
     // IDA 0x683387: offset +13512 = 0
 
-    // IDA 0x68338D: TypeList::TechnoTypeConstructor(this+13524, 0, 0)
+    // IDA 0x68338D: this->TypeList_34D4.TechnoTypeConstructor(0, 0)
     // IDA 0x683397: offset +13540 = 0
     // IDA 0x68339A: offset +13544 = 10
     // IDA 0x68339D: vtable assignment (TypeList<TechnoTypeClass*>)
 
-    // IDA 0x6833AD: VectorClass::Construct(this+13552, 0, 0)
+    // IDA 0x6833AD: this->VectorClass_34F0.Construct(0, 0)
     // IDA 0x6833B2: offset +13572 = 10
     // IDA 0x6833B5: offset +13568 = 0
     // IDA 0x6833B8: vtable assignment (TypeList<int>)
 
-    // IDA 0x6833C8: VectorClass::Construct(this+13580, 0, 0)
+    // IDA 0x6833C8: this->VectorClass_350C.Construct(0, 0)
     // IDA 0x6833CF: offset +13600 = 10
     // IDA 0x6833D2: offset +13596 = 0
     // IDA 0x6833D5: vtable assignment (TypeList<int>)

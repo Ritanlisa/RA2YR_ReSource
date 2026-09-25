@@ -2,36 +2,40 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/RadSiteClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/RadarHashVector_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x65B1E0
 namespace gamemd {
-unsigned int * RadSiteClass::RadSiteClass()
+RadSiteClass::RadSiteClass()
 {
-  wchar_t *v2; // edx
   int v3; // eax
 
-  AbstractClass::Constructor((int)this); /*0x65b1e3*/
-  *(this + 9) = 0; /*0x65b1ea*/
-  *(this + 10) = g_CurrentFrame; /*0x65b1f3*/
-  *(this + 12) = 0; /*0x65b1f6*/
-  v2 = g_CurrentFrame; /*0x65b1f9*/
-  *(this + 15) = 0; /*0x65b1ff*/
-  *(this + 13) = v2; /*0x65b202*/
-  *((_WORD *)this + 32) = 0; /*0x65b205*/
-  *((_WORD *)this + 33) = 0; /*0x65b209*/
-  *(this + 17) = 0; /*0x65b20d*/
-  *(this + 18) = 0; /*0x65b210*/
-  *(this + 19) = 0; /*0x65b213*/
-  *(this + 20) = 0; /*0x65b216*/
-  *(this + 21) = 0; /*0x65b219*/
-  *(this + 25) = 0; /*0x65b21c*/
-  *(this + 26) = 0; /*0x65b21f*/
-  *(this + 27) = 0; /*0x65b222*/
-  *(this + 28) = 0; /*0x65b225*/
-  *this = &RadSiteClass::`vftable'; /*0x65b228*/
-  *(this + 1) = &RadSiteClass::`vftable'; /*0x65b22e*/
-  *(this + 2) = &RadSiteClass::`vftable'; /*0x65b235*/
-  *(this + 3) = &RadSiteClass::`vftable'; /*0x65b23c*/
+  AbstractClass::Constructor(); /*0x65b1e3*/
+  this->LightSource = 0; /*0x65b1ea*/
+  *(&this->vtable20) = g_CurrentFrame; /*0x65b1f3*/
+  *(&this->vtable22) = 0; /*0x65b1f6*/
+  g_CurrentFrame = g_CurrentFrame; /*0x65b1f9*/
+  *(&this->vtable25) = 0; /*0x65b1ff*/
+  *(&this->vtable23) = g_CurrentFrame; /*0x65b202*/
+  this->BaseCell = 0; /*0x65b205*/
+  this->ptr_42 = 0; /*0x65b209*/
+  *(&this->vtable27) = 0; /*0x65b20d*/
+  *(&this->vtable28) = 0; /*0x65b210*/
+  *(&this->vtable29) = 0; /*0x65b213*/
+  *(&this->vtable30) = 0; /*0x65b216*/
+  *(&this->vtable31) = 0; /*0x65b219*/
+  *(&this->vtable35) = 0; /*0x65b21c*/
+  *(&this->vtable36) = 0; /*0x65b21f*/
+  *(&this->vtable37) = 0; /*0x65b222*/
+  *(&this->vtable38) = 0; /*0x65b225*/
+  *this = &(void*)(void*)&RadSiteClass_vftable; /*0x65b228*/
+  this->vtable2 = &(void*)(void*)&RadSiteClass_vftable; /*0x65b22e*/
+  this->vtable3 = &(void*)(void*)&RadSiteClass_vftable; /*0x65b235*/
+  this->vtable4 = &(void*)(void*)&RadSiteClass_vftable; /*0x65b23c*/
   if ( dword_B04BE0 < dword_B04BD8 /*0x65b277*/
     || (byte_B04BDD || !dword_B04BD8)
     && dword_B04BE4 > 0
@@ -80,10 +84,10 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
       aP0[10] = v3; /*0x65b404*/
       aP0[13] = g_CurrentFrame; /*0x65b40c*/
       aP0[15] = 0; /*0x65b40f*/
-      *aP0 = &RadSiteClass::`vftable'; /*0x65b416*/
-      aP0[1] = &RadSiteClass::`vftable'; /*0x65b41c*/
-      aP0[2] = &RadSiteClass::`vftable'; /*0x65b423*/
-      aP0[3] = &RadSiteClass::`vftable'; /*0x65b42a*/
+      *aP0 = &(void*)(void*)&RadSiteClass_vftable; /*0x65b416*/
+      aP0[1] = &(void*)(void*)&RadSiteClass_vftable; /*0x65b41c*/
+      aP0[2] = &(void*)(void*)&RadSiteClass_vftable; /*0x65b423*/
+      aP0[3] = &(void*)(void*)&RadSiteClass_vftable; /*0x65b42a*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x65b43a*/
   }

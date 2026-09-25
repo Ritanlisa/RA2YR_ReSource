@@ -5,7 +5,14 @@
 
 namespace gamemd {
 struct E4Recv_77A760 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    unsigned int M8;  // 0x8
+    unsigned int M56;  // 0x38
+    unsigned int q134;  // 0x134
+    unsigned int q308;  // 0x308
+    unsigned int q1910;  // 0x1910
+// --- flat members (END) ---
     char sub_77A760(char a2);  // 0x77A760
 };
 } // namespace gamemd

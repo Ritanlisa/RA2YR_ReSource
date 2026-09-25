@@ -1,10 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AudioController_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x409DE0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4, signed int * a5)
 {
   signed int v7; // edx
@@ -109,11 +110,9 @@ int AudioController::LoadThemeBank(int a1, char * a2, signed int * a3, char * a4
   }
 }
 } // namespace ra2
-}
 
 // 0x72D170
-namespace ra2 {
-namespace game {
+namespace gamemd {
 void AudioController::GetVolume()
 {
   void *v0; // esi
@@ -126,14 +125,14 @@ void AudioController::GetVolume()
       if ( dword_B0FAB8 ) /*0x72d18d*/
       {
         FileTreeNode::Destroy(dword_B0FAB8); /*0x72d191*/
-        __3_YAXPAX_Z(v0); /*0x72d197*/
+        RA2_OPDEL(v0); /*0x72d197*/
       }
       byte_B0FCCD = 0; /*0x72d19f*/
     }
     dword_B0FAB8 = 0; /*0x72d1ab*/
     if ( dword_B0FCD0 ) /*0x72d1b3*/
     {
-      __3_YAXPAX_Z(dword_B0FCD0); /*0x72d1b6*/
+      RA2_OPDEL(dword_B0FCD0); /*0x72d1b6*/
       dword_B0FCD0 = 0; /*0x72d1be*/
     }
     if ( dword_B0FCD4 ) /*0x72d1cc*/
@@ -144,5 +143,4 @@ void AudioController::GetVolume()
   }
   byte_B0FCCE = 0; /*0x72d1da*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd

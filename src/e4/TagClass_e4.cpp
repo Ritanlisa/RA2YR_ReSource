@@ -4,6 +4,17 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
+#include "e4/classes/TagClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/TauntCommandClass_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/TaskForceClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x6E4F60
 namespace gamemd {
@@ -12,11 +23,9 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
   _DWORD *v2; // ecx
   int v3; // eax
   void ***v4; // ecx
-  int v5; // ecx
   _DWORD *v6; // ecx
   int v7; // eax
   void ***v8; // ecx
-  int v9; // ecx
   int v10; // eax
   int v11; // eax
   int OwnerHouseClass; // eax
@@ -30,16 +39,16 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
   int v20; // eax
   _DWORD v22[4]; // [esp+10h] [ebp-10h] BYREF
 
-  *this = &TagClass::`vftable'; /*0x6e4f69*/
-  *(this + 1) = &TagClass::`vftable'; /*0x6e4f6f*/
-  *(this + 2) = &TagClass::`vftable'; /*0x6e4f76*/
-  *(this + 3) = &TagClass::`vftable'; /*0x6e4f7d*/
-  AbstractClass::AnnounceExpiredPointer(this); /*0x6e4f84*/
+  *this = &(void*)(void*)&TagClass_vftable; /*0x6e4f69*/
+  this->vtable2 = &(void*)(void*)&TagClass_vftable; /*0x6e4f6f*/
+  this->vtable3 = &(void*)(void*)&TagClass_vftable; /*0x6e4f76*/
+  this->vtable4 = &(void*)(void*)&TagClass_vftable; /*0x6e4f7d*/
+  AbstractClass::AnnounceExpiredPointer(); /*0x6e4f84*/
   if ( g_WTFMode ) /*0x6e4f90*/
   {
     if ( g_BounceClassInit ) /*0x6e4f9d*/
     {
-      v2 = *(this + 9); /*0x6e4f9f*/
+      v2 = this->buildingType; /*0x6e4f9f*/
       if ( v2 ) /*0x6e4fa4*/
       {
         if ( (Debug::AccumFlags(v2) & 0x10) != 0 ) /*0x6e4fad*/
@@ -61,11 +70,11 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
                 goto LABEL_9; /*0x6e4fcb*/
             }
           }
-          v5 = dword_A83CDC; /*0x6e4fd0*/
+          dword_A83CDC = dword_A83CDC; /*0x6e4fd0*/
           if ( dword_A83CDC >= v3 ) /*0x6e4fd8*/
           {
             --dword_A83CDC; /*0x6e4fdd*/
-            if ( v5 - 1 < 0 && !g_ScenarioUpdateState ) /*0x6e4fe6*/
+            if ( dword_A83CDC - 1 < 0 && !g_ScenarioUpdateState ) /*0x6e4fe6*/
               dword_A83CDC = 0; /*0x6e4fe8*/
           }
         }
@@ -75,7 +84,7 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
     {
       if ( g_BounceClassInit ) /*0x6e5002*/
       {
-        v6 = *(this + 9); /*0x6e5004*/
+        v6 = this->buildingType; /*0x6e5004*/
         if ( v6 ) /*0x6e5009*/
         {
           if ( (Debug::AccumFlags(v6) & 4) != 0 ) /*0x6e5012*/
@@ -97,11 +106,11 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
                   goto LABEL_22; /*0x6e5030*/
               }
             }
-            v9 = dword_A83DBC; /*0x6e5035*/
+            dword_A83DBC = dword_A83DBC; /*0x6e5035*/
             if ( dword_A83DBC >= v7 ) /*0x6e503d*/
             {
               --dword_A83DBC; /*0x6e5042*/
-              if ( v9 - 1 < 0 && !dword_8B41B8 ) /*0x6e504b*/
+              if ( dword_A83DBC - 1 < 0 && !dword_8B41B8 ) /*0x6e504b*/
                 dword_A83DBC = 0; /*0x6e504d*/
             }
           }
@@ -111,15 +120,15 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
       {
         if ( g_BounceClassInit ) /*0x6e5063*/
         {
-          v10 = (int)*(this + 10); /*0x6e5065*/
+          v10 = (int)*(&this->vtable20); /*0x6e5065*/
           if ( v10 ) /*0x6e506a*/
           {
-            v11 = *(_DWORD *)(v10 + 36); /*0x6e506c*/
+            v11 = v10->buildingType; /*0x6e506c*/
             if ( v11 ) /*0x6e5071*/
             {
-              if ( *(_DWORD *)(v11 + 164) && (unsigned __int8)TagClass::HasValidHouse(*(this + 9)) ) /*0x6e5080*/
+              if ( *(_DWORD *)(v11 + 164) && (unsigned __int8)TagClass::HasValidHouse(this->buildingType) ) /*0x6e5080*/
               {
-                OwnerHouseClass = HouseClass::FindOwner(*(void **)(*(_DWORD *)(*((_DWORD *)*(this + 10) + 9) + 164) + 184)); /*0x6e509b*/
+                OwnerHouseClass = HouseClass::FindOwner(*(void **)(*(_DWORD *)(*((_DWORD *)*(&this->vtable20) + 9) + 164) + 184)); /*0x6e509b*/
                 v13 = *(_DWORD *)(OwnerHouseClass + 636); /*0x6e50a0*/
                 if ( v13 ) /*0x6e50a8*/
                   *(_DWORD *)(OwnerHouseClass + 636) = v13 - 1; /*0x6e50ab*/
@@ -134,7 +143,7 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
       }
     }
   }
-  v15 = (int)*(this + 10); /*0x6e50cd*/
+  v15 = (int)*(&this->vtable20); /*0x6e50cd*/
   if ( v15 ) /*0x6e50d2*/
   {
     v16 = dword_B0F6A0; /*0x6e50d4*/
@@ -155,7 +164,7 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
       }
       v16 = dword_B0F6A0; /*0x6e5128*/
   LABEL_45:
-      v15 = *(_DWORD *)(v15 + 40); /*0x6e512d*/
+      v15 = v15->nextTrigger; /*0x6e512d*/
     }
     while ( v15 ); /*0x6e50d9*/
   }
@@ -192,8 +201,8 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
     }
     while ( v20 < g_GameObjectCleanup ); /*0x6e520c*/
   }
-  AbstractClass::AnnounceExpiredPointer(this); /*0x6e5212*/
-  return AbstractClass::DTOR(this); /*0x6e521e*/
+  AbstractClass::AnnounceExpiredPointer(); /*0x6e5212*/
+  return AbstractClass::DTOR(); /*0x6e521e*/
 }
 }
 // 0x6E6220
@@ -202,7 +211,7 @@ int TagClass::HasValidHouse()
 {
   _DWORD *v1; // esi
 
-  v1 = (_DWORD *)*(this + 40); /*0x6e6221*/
+  v1 = (_DWORD *)*(&this->uniqueId0); /*0x6e6221*/
   if ( !v1 ) /*0x6e6229*/
     return 0; /*0x6e6240*/
   while ( !HouseClass::FindType15(v1) ) /*0x6e6234*/
@@ -222,28 +231,28 @@ Coord * * TagClass::Unlink()
   int result; // eax
   int v4; // ecx
 
-  *(_BYTE *)(*(this + 10) + 624) = 0; /*0x71ade9*/
-  *(_DWORD *)(*(this + 10) + 632) = 0; /*0x71adf2*/
-  v2 = *(this + 17); /*0x71adf8*/
-  *(this + 10) = 0; /*0x71adfd*/
+  *(_BYTE *)(*(&this->vtable20) + 624) = 0; /*0x71ade9*/
+  *(_DWORD *)(*(&this->vtable20) + 632) = 0; /*0x71adf2*/
+  v2 = *(&this->vtable27); /*0x71adf8*/
+  *(&this->vtable20) = 0; /*0x71adfd*/
   if ( v2 ) /*0x71ae00*/
   {
-    if ( *(int **)(v2 + 64) == this ) /*0x71ae05*/
-      *(_DWORD *)(v2 + 64) = 0; /*0x71ae07*/
-    TagClass::Unlink(*(this + 17)); /*0x71ae0d*/
+    if ( v2->q040 == this ) /*0x71ae05*/
+      v2->q040 = 0; /*0x71ae07*/
+    TagClass::Unlink(*(&this->vtable27)); /*0x71ae0d*/
   }
-  result = *(this + 16); /*0x71ae12*/
+  result = *(&this->vtable26); /*0x71ae12*/
   if ( result ) /*0x71ae17*/
   {
-    if ( *(int **)(result + 68) == this ) /*0x71ae1c*/
-      *(_DWORD *)(result + 68) = 0; /*0x71ae1e*/
-    result = TagClass::Unlink(*(this + 16)); /*0x71ae24*/
+    if ( result->q044 == this ) /*0x71ae1c*/
+      result->q044 = 0; /*0x71ae1e*/
+    result = TagClass::Unlink(*(&this->vtable26)); /*0x71ae24*/
   }
-  v4 = *(this + 9); /*0x71ae29*/
-  *(this + 17) = 0; /*0x71ae2c*/
-  *(this + 16) = 0; /*0x71ae31*/
-  *(this + 15) = 0; /*0x71ae34*/
-  *(this + 14) = 0; /*0x71ae37*/
+  v4 = this->creationFrame; /*0x71ae29*/
+  *(&this->vtable27) = 0; /*0x71ae2c*/
+  *(&this->vtable26) = 0; /*0x71ae31*/
+  *(&this->vtable25) = 0; /*0x71ae34*/
+  *(&this->vtable24) = 0; /*0x71ae37*/
   if ( v4 ) /*0x71ae3a*/
     return (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v4 + 1156))(v4, 0, 1); /*0x71ae41*/
   return result; /*0x71ae47*/
@@ -256,15 +265,15 @@ int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
   int v4; // eax
   int result; // eax
 
-  if ( *(_DWORD *)(this + 36) == a2 ) /*0x6e561a*/
-    *(_DWORD *)(this + 36) = 0; /*0x6e561c*/
-  v4 = *(_DWORD *)(this + 40); /*0x6e5623*/
+  if ( this->buildingType == a2 ) /*0x6e561a*/
+    this->buildingType = 0; /*0x6e561c*/
+  v4 = this->firstTrigger; /*0x6e5623*/
   if ( v4 == a2 ) /*0x6e5628*/
-    *(_DWORD *)(this + 40) = *(_DWORD *)(v4 + 40); /*0x6e562d*/
-  result = *(_DWORD *)(this + 36); /*0x6e5630*/
+    this->firstTrigger = v4->nextTrigger; /*0x6e562d*/
+  result = this->buildingType; /*0x6e5630*/
   if ( !result ) /*0x6e5635*/
   {
-    *(_BYTE *)(this + 52) = 1; /*0x6e5637*/
+    this->destroyed = 1; /*0x6e5637*/
     result = dword_B0F6A0; /*0x6e563b*/
     if ( g_LaserDrawConfig < dword_B0F6A0 /*0x6e5675*/
       || (byte_B0F6A5 || !dword_B0F6A0)
@@ -305,16 +314,16 @@ int TagClass::ProcessTag(int * a2)
   int v4; // eax
   int v5; // eax
 
-  AbstractClass::ProcessPower((#378 *)this); /*0x6e56e9*/
-  v3 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(this + 36) + 4) + 16))(*(_DWORD *)(this + 36) + 4); /*0x6e56f7*/
+  AbstractClass::ProcessPower(); /*0x6e56e9*/
+  v3 = (*(int (__stdcall **)(int))(this->buildingType->vtable2 + 16))(this->buildingType + 4); /*0x6e56f7*/
   Power::TimerProcess(v3); /*0x6e56fd*/
-  v4 = *(_DWORD *)(this + 40); /*0x6e5702*/
+  v4 = this->firstTrigger; /*0x6e5702*/
   if ( v4 ) /*0x6e5707*/
   {
-    v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x6e5710*/
+    v5 = (*(int (__stdcall **)(int))(v4->vtable2 + 16))(v4 + 4); /*0x6e5710*/
     v4 = Power::TimerProcess(v5); /*0x6e5716*/
   }
-  LOBYTE(v4) = *(_BYTE *)(this + 52); /*0x6e571b*/
+  IDA_LOBYTE(v4) = this->destroyed; /*0x6e571b*/
   return Power::FlagProcess(a2, v4); /*0x6e5726*/
 }
 } // namespace gamemd
@@ -331,10 +340,10 @@ int TagClass::LoadTag(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6e5746*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x6e574f*/
-      *aP0 = &TagClass::`vftable'; /*0x6e5754*/
-      aP0[1] = &TagClass::`vftable'; /*0x6e575a*/
-      aP0[2] = &TagClass::`vftable'; /*0x6e5761*/
-      aP0[3] = &TagClass::`vftable'; /*0x6e5768*/
+      *aP0 = &(void*)(void*)&TagClass_vftable; /*0x6e5754*/
+      aP0[1] = &(void*)(void*)&TagClass_vftable; /*0x6e575a*/
+      aP0[2] = &(void*)(void*)&TagClass_vftable; /*0x6e5761*/
+      aP0[3] = &(void*)(void*)&TagClass_vftable; /*0x6e5768*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x6e5778*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x6e5786*/
@@ -377,9 +386,9 @@ int TagClass::StubReturn44()
 namespace gamemd {
 TagClass * TagClass::ProcessTrigger(char a2)
 {
-  TagClass::Destructor(this); /*0x6e58b3*/
+  TagClass::Destructor(); /*0x6e58b3*/
   if ( (a2 & 1) != 0 ) /*0x6e58bd*/
-    __3_YAXPAX_Z(this); /*0x6e58c0*/
+    RA2_OPDEL(); /*0x6e58c0*/
   return this; /*0x6e58ca*/
 }
 } // namespace gamemd

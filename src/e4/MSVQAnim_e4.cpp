@@ -2,8 +2,11 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/BinkMovie_e4.hpp"
+#include "e4/classes/MSVQAnim_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5CD290
+namespace gamemd {
 void * MSVQAnim::GetFrameRect(int * a2)
 {
   int v3; // eax
@@ -18,7 +21,7 @@ void * MSVQAnim::GetFrameRect(int * a2)
     dword_ABFBAC = 0; /*0x5cd2c3*/
     atexit(nullsub_190); /*0x5cd2c9*/
   }
-  v3 = *(this + 7); /*0x5cd2d1*/
+  v3 = this->q01C; /*0x5cd2d1*/
   v4 = (int *)(v3 + 52); /*0x5cd2d6*/
   if ( !v3 ) /*0x5cd2d9*/
     v4 = &dword_ABFBA0; /*0x5cd2db*/
@@ -28,35 +31,40 @@ void * MSVQAnim::GetFrameRect(int * a2)
   a2[3] = v4[3]; /*0x5cd2fb*/
   return a2; /*0x5cd2e8*/
 }
+} // namespace gamemd
 // 0x5CD320
+namespace gamemd {
 int MSVQAnim::Stub()
 {
-  return *(this + 45); /*0x5cd323*/
+  return *(&this->u32_105); /*0x5cd323*/
 }
+} // namespace gamemd
 // 0x5CECB0
+namespace gamemd {
 MSVQAnim * MSVQAnim::QueryInterface(char a2)
 {
   void (__thiscall ***v3)(_DWORD, int); // ecx
   _DWORD **v4; // ecx
   void *v5; // edi
 
-  v3 = (void (__thiscall ***)(_DWORD, int))*(this + 10); /*0x5cecb3*/
-  *this = &MSVQAnim::`vftable'; /*0x5cecb6*/
+  v3 = (void (__thiscall ***)(_DWORD, int))*(&this->q0040); /*0x5cecb3*/
+  *this = &(void*)(void*)&MSVQAnim_vftable; /*0x5cecb6*/
   if ( v3 ) /*0x5cecbe*/
     (**v3)(v3, 1); /*0x5cecc4*/
-  v4 = (_DWORD **)*(this + 7); /*0x5cecc6*/
+  v4 = (_DWORD **)this->q01C; /*0x5cecc6*/
   if ( v4 ) /*0x5ceccc*/
   {
     MovieContext::Cleanup(v4); /*0x5cecce*/
-    v5 = (void *)*(this + 7); /*0x5cecd3*/
+    v5 = (void *)this->q01C; /*0x5cecd3*/
     if ( v5 ) /*0x5cecd8*/
     {
-      BinkMovie::Cleanup((_DWORD *)*(this + 7)); /*0x5cecdc*/
-      __3_YAXPAX_Z(v5); /*0x5cece2*/
+      BinkMovie::Cleanup((_DWORD *)this->q01C); /*0x5cecdc*/
+      RA2_OPDEL(v5); /*0x5cece2*/
     }
   }
-  *this = &MSAnim::`vftable'; /*0x5cecee*/
+  *this = &(void*)(void*)&MSAnim_vftable; /*0x5cecee*/
   if ( (a2 & 1) != 0 ) /*0x5cecf7*/
-    __3_YAXPAX_Z(this); /*0x5cecfa*/
+    RA2_OPDEL(); /*0x5cecfa*/
   return this; /*0x5ced04*/
 }
+} // namespace gamemd

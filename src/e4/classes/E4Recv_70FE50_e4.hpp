@@ -5,7 +5,23 @@
 
 namespace gamemd {
 struct E4Recv_70FE50 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    unsigned int q044;  // 0x44
+    unsigned int q068;  // 0x68
+    unsigned int q104;  // 0x104
+    unsigned int M460;  // 0x1CC
+    unsigned int M468;  // 0x1D4
+    unsigned int q260;  // 0x260
+    unsigned int q460;  // 0x460
+    unsigned int q468;  // 0x468
+    unsigned int q608;  // 0x608
+    unsigned int q1120;  // 0x1120
+    unsigned int q1128;  // 0x1128
+    unsigned int q1544;  // 0x1544
+    unsigned int q4384;  // 0x4384
+    unsigned int q5444;  // 0x5444
+// --- flat members (END) ---
     int sub_70FE50();  // 0x70FE50
 };
 } // namespace gamemd

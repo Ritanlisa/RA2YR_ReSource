@@ -4,6 +4,14 @@
 #include "e4/classes/Building_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/Display_e4.hpp"
+#include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/Territory_WorldDominationTour_8_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/TriggerTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/ThemeClass_e4.hpp"
 
 // 0x4A60D0
 namespace gamemd {
@@ -47,7 +55,7 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
   if ( a6 ) /*0x4b96f7*/
   {
     v11 = *a4 - Text::MeasureWidth((int)&word_8A0870, 0) / 2; /*0x4b971b*/
-    v12 = *a4 - Text::MeasureWidth((int)&word_8A08C0, 0) / 2; /*0x4b972b*/
+    v12 = *a4 - Text::MeasureWidth((int, unsigned int a4)&word_8A08C0, 0) / 2; /*0x4b972b*/
   }
   else
   {
@@ -116,7 +124,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
 
   if ( a2 == -1 && aP2 == -1 ) /*0x642c9a*/
   {
-    v20 = *(char *)(this + 97); /*0x642cb1*/
+    v20 = this->u32_184; /*0x642cb1*/
     FoundationSize = Building::GetFoundationSize(v22, 0); /*0x642cb5*/
     v8 = 0; /*0x642cbc*/
     Default = 0; /*0x642cc2*/
@@ -154,17 +162,17 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
     Viewport = Display::GetViewport(v22); /*0x642d8d*/
     v15 = Viewport[2] - v12; /*0x642dac*/
     v16 = (Viewport[3] - v13) / 2; /*0x642db9*/
-    *(_DWORD *)(this + 104) = v15 / 2; /*0x642dbb*/
-    *(_DWORD *)(this + 108) = v16; /*0x642dbe*/
+    this->u32_68 = v15 / 2; /*0x642dbb*/
+    this->u32_6C = v16; /*0x642dbe*/
   }
   else
   {
-    *(_DWORD *)(this + 104) = a2; /*0x642dc4*/
-    *(_DWORD *)(this + 108) = aP2; /*0x642dc7*/
+    this->u32_68 = a2; /*0x642dc4*/
+    this->u32_6C = aP2; /*0x642dc7*/
   }
-  *(_DWORD *)(this + 80) = aP3; /*0x642dd6*/
-  *(_BYTE *)(this + 112) = aP4; /*0x642dd9*/
-  *(_BYTE *)(this + 113) = a6; /*0x642ddc*/
+  this->u32_50 = aP3; /*0x642dd6*/
+  this->u8_70 = aP4; /*0x642dd9*/
+  this->u8_71 = a6; /*0x642ddc*/
   return a6; /*0x642ddf*/
 }
 }
@@ -209,7 +217,7 @@ void * TextRenderer::MeasureBuilding2()
   v19 = 15; /*0x642f62*/
   do /*0x642f86*/
   {
-    *v10++ = *(_WORD *)CharToWideString(g_Str_W); /*0x642f7b*/
+    *v10++ = *(_WORD *, unsigned int a1, unsigned int a2, unsigned int a3)CharToWideString(g_Str_W); /*0x642f7b*/
     --v19; /*0x642f82*/
   }
   while ( v19 ); /*0x642f86*/
@@ -265,7 +273,7 @@ TriggerTypeClass * TextRenderer::Destructor(char a2)
 {
   TriggerClass::ProcessEvents(); /*0x727cd3*/
   if ( (a2 & 1) != 0 ) /*0x727cdd*/
-    __3_YAXPAX_Z(this); /*0x727ce0*/
+    RA2_OPDEL(); /*0x727ce0*/
   return this; /*0x727cea*/
 }
 } // namespace gamemd

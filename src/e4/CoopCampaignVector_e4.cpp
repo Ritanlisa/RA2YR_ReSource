@@ -1,50 +1,61 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/CoopCampaignVector_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5C5750
+namespace gamemd {
 unsigned int CoopCampaignVector::Write(int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x5c5750*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 2; /*0x5c5765*/
+  if ( this->q00C ) /*0x5c5750*/
+    return (unsigned int)(a2 - this->q004) >> 2; /*0x5c5765*/
   else
     return 0; /*0x5c5757*/
 }
+} // namespace gamemd
 // 0x5C5940
-VectorClass * CoopCampaignVector::QueryInterface(char a2)
+namespace gamemd {
+VectorClass_flat * CoopCampaignVector::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(this + 1); /*0x5c5943*/
-  *this = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5946*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5c5950*/
+  v3 = (void *)this->q004; /*0x5c5943*/
+  *this = &(void*)(void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5946*/
+  if ( v3 && this->IsAllocated ) /*0x5c5950*/
   {
-    __3_YAXPAX_Z(v3); /*0x5c5958*/
-    *(this + 1) = 0; /*0x5c5960*/
+    RA2_OPDEL(v3); /*0x5c5958*/
+    this->q004 = 0; /*0x5c5960*/
   }
-  *((_BYTE *)this + 13) = 0; /*0x5c596b*/
-  *(this + 2) = 0; /*0x5c5971*/
+  this->IsAllocated = 0; /*0x5c596b*/
+  this->q008 = 0; /*0x5c5971*/
   if ( (a2 & 1) != 0 ) /*0x5c5978*/
-    __3_YAXPAX_Z(this); /*0x5c597b*/
+    RA2_OPDEL(); /*0x5c597b*/
   return this; /*0x5c5985*/
 }
+} // namespace gamemd
 // 0x5C5A80
+namespace gamemd {
 unsigned int * CoopCampaignVector::Construct(MultiplayerGameMode * aP1, MultiplayerGameMode * aP2)
 {
-  *(this + 1) = 0; /*0x5c5a8b*/
-  *(this + 2) = aP1; /*0x5c5a8e*/
-  *((_BYTE *)this + 12) = 1; /*0x5c5a91*/
-  *((_BYTE *)this + 13) = 0; /*0x5c5a95*/
-  *this = &VectorClass<CoopCampaignClass *>::`vftable'; /*0x5c5a98*/
+  this->q004 = 0; /*0x5c5a8b*/
+  this->q008 = aP1; /*0x5c5a8e*/
+  this->q00C = 1; /*0x5c5a91*/
+  this->IsAllocated = 0; /*0x5c5a95*/
+  *this = &(void*)(void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
     if ( aP2 ) /*0x5c5aa6*/
     {
-      *(this + 1) = aP2; /*0x5c5aa8*/
+      this->q004 = aP2; /*0x5c5aa8*/
       return this; /*0x5c5aae*/
     }
-    *(this + 1) = __2_YAPAXI_Z(4 * aP1); /*0x5c5abd*/
-    *((_BYTE *)this + 13) = 1; /*0x5c5ac0*/
+    this->q004 = RA2_OPNEW(4 * aP1); /*0x5c5abd*/
+    this->IsAllocated = 1; /*0x5c5ac0*/
   }
   return this; /*0x5c5aad*/
 }
+} // namespace gamemd

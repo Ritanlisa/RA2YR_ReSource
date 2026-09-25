@@ -68,8 +68,6 @@ struct StartingTechnoStruct
 {
     TechnoTypeClass* unit;
     CellStruct       cell;
-// --- e4 declarations (BEGIN) ---
-// --- e4 declarations (END) ---
 };
 
 struct AngerStruct
@@ -763,19 +761,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int InitAlliances();  // 0x5d74a0
     void FindStartPositions();  // 0x5ee9d0
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int vt_placeholder_02();  // 0x4E8260
-    std::locale::facet * initAngerStruct(char a2);  // 0x4E8270
-    VectorCursor * vt_placeholder_07(char a2);  // 0x4F28C0
-    unsigned int * vt_placeholder_09();  // 0x4F2B40
-    unsigned int * vt_placeholder_10();  // 0x4F2B50
-    char IonSensitivesShouldBeOffline();  // 0x53A130
-    char Set();  // 0x54B980
-    int GetStatus(IUnknown * aP1);  // 0x6ABC60
-// --- e4 declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    int sub_5092F0(int a2);  // 0x5092F0
-// --- e4 declarations (END) ---
 };
 
 

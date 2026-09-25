@@ -5,7 +5,22 @@
 
 namespace gamemd {
 struct E4Recv_52AAF0 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    AbstractClass * ptr_10;  // 0x10
+    unsigned int u32_14;  // 0x14
+    AbstractClass * q018;  // 0x18
+    unsigned int q020;  // 0x20
+    AbstractClass * ptr_18;  // 0x24
+    AbstractClass * q034;  // 0x34
+    unsigned int q050;  // 0x50
+    AbstractClass * q054;  // 0x54
+    unsigned int q080;  // 0x80
+    AbstractClass * q084;  // 0x84
+    unsigned int q128;  // 0x128
+    AbstractClass * q130;  // 0x130
+    AbstractClass * q304;  // 0x304
+    AbstractClass * q774;  // 0x774
+// --- flat members (END) ---
     void sub_52AAF0();  // 0x52AAF0
 };
 } // namespace gamemd

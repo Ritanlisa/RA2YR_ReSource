@@ -1615,7 +1615,7 @@ int ReturnZero46D310()
 
 // IDA: 0x46D480  proposal: ArithmeticCompute46D480
 // IDA: __int64 __usercall sub_46D480@<edx:eax>(__int64 result@<edx:eax>, int a2@<ecx>)
-//   *((_BYTE *)&g_GameModeOptionState + a2) = BYTE4(result);
+//   *((_BYTE *)&g_GameModeOptionState + a2) = IDA_BYTE4(result);
 //   return result;
 int ArithmeticCompute46D480(int a0, int a1)
 {
@@ -1632,7 +1632,7 @@ char MethodStub46D490(void* _this) // thiscall
 
 // IDA: 0x470C30  proposal: MethodStub470C30
 // IDA: void __thiscall sub_470C30(_DWORD *this)
-//   *this = &CampaignEndScoreClass::`vftable';
+//   ((void**)this)[0] = (void*)(void*)(void*)&CampaignEndScoreClass_vftable;
 void MethodStub470C30(void* _this) // thiscall
 {
 }
@@ -2383,7 +2383,7 @@ int ReturnZero48B0C0()
 // IDA: void *__thiscall sub_48BB00(void *Block, char a2)
 //   sub_48B1F0(Block);
 //   if ( (a2 & 1) != 0 )
-//   __3_YAXPAX_Z(Block);
+//   RA2_OPDEL(Block);
 //   return Block;
 void* MethodSub48B1F0(void* _this, int a0) // thiscall
 {
@@ -2405,9 +2405,9 @@ int ReturnZero48BB20()
 // IDA: 0x48BB40  proposal: HotkeyOptions::Method
 // IDA: bool __fastcall sub_48BB40(int a1, int a2)
 //   int v2; // eax
-//   BYTE1(a2) &= ~8u;
+//   IDA_BYTE1(a2) &= ~8u;
 //   v2 = a2;
-//   BYTE1(v2) = BYTE1(a2) & 0xE8;
+//   IDA_BYTE1(v2) = IDA_BYTE1(a2) & 0xE8;
 //   return a2 == v2 || (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)a1 + 20))(a1, a2) == 0;
 bool HotkeyOptions_Method(int a0, int a1) // fastcall
 {

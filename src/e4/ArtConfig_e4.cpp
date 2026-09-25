@@ -2,8 +2,15 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/ArtConfig_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x76FC50
+namespace gamemd {
 int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3)
 {
   char **v5; // ebp
@@ -21,7 +28,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   CCFileClass::Construct2(v11, (char **)(&this->u32_C2)); /*0x76fc74*/
   if ( CCFileClass::Open(v11, 0) ) /*0x76fc7f*/
   {
-    v8 = __2_YAPAXI_Z(0x4Cu); /*0x76fc8a*/
+    v8 = RA2_OPNEW(0x4Cu); /*0x76fc8a*/
     if ( v8 ) /*0x76fc94*/
       v9 = MSOverlayAnim::Init(v8, v5, v7, v6, a3, 0, (int)(aP1 + 6), 1, 0, 0); /*0x76fcb6*/
     else
@@ -30,12 +37,13 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
     (*(void (__thiscall **)(void *, _DWORD))(v9->q004)(v9, 0); /*0x76fcc8*/
     PriorityQueue::Add(aP1, this->ptr_28); /*0x76fcd6*/
   }
-  v11[0] = &CCFileClass::`vftable'; /*0x76fcdf*/
+  v11[0] = &(void*)(void*)&CCFileClass_vftable; /*0x76fcdf*/
   v13 = 0; /*0x76fce7*/
   Vector::Clear((int)v12); /*0x76fcef*/
   v11[0] = &off_7E1668; /*0x76fcf8*/
   return BufferIOFileClass::Dtor(v11); /*0x76fd05*/
 }
+} // namespace gamemd
 // 0x76F910
 namespace gamemd {
 rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, ReferenceCounted * Source, char ** a4, ReferenceCounted * aP5)
@@ -43,13 +51,13 @@ rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, Reference
   char *v8; // eax
   char *v9; // edi
 
-  v8 = (char *)__2_YAPAXI_Z(0x30u); /*0x76f918*/
+  v8 = (char *)RA2_OPNEW(0x30u); /*0x76f918*/
   if ( v8 ) /*0x76f922*/
     v9 = WorldDominationTour::Territory::Constructor(v8, edx0, a2, Source, a4, aP5); /*0x76f940*/
   else
     v9 = 0; /*0x76f944*/
   ComPtr::Constructor(a1); /*0x76f948*/
-  *a1 = &rc_ptr<WorldDominationTour::Territory>::`vftable'; /*0x76f94f*/
+  *a1 = &(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76f94f*/
   ComPtr::Set(a1, (int)v9); /*0x76f956*/
   return a1; /*0x76f95d*/
 }

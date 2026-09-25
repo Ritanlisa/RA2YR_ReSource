@@ -3361,7 +3361,7 @@ int ReturnZero4E64C0()
 
 // IDA: 0x4E7CE0  proposal: Sub4E7CE0
 // IDA: void sub_4E7CE0()
-//   pUnk.lpVtbl = (struct IUnknownVtbl *)&TiberianSunClassFactory::`vftable';
+//   pUnk.lpVtbl = (struct IUnknownVtbl *)(void*)(void*)&TiberianSunClassFactory_vftable;
 void Sub4E7CE0()
 {
 }
@@ -3386,7 +3386,7 @@ int Callatexit4E7DC0()
 
 // IDA: 0x4E7DE0  proposal: Sub4E7DE0
 // IDA: void __cdecl sub_4E7DE0()
-//   g_CoordScatterManager = (int)&VersionClass::`vftable';
+//   g_CoordScatterManager = (int)(void*)(void*)&VersionClass_vftable;
 void Sub4E7DE0()
 {
 }

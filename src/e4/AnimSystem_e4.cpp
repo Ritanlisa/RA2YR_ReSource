@@ -1,8 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/AnimSystem_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x75A790
+namespace gamemd {
 char AnimSystem::Init()
 {
   int i; // edx
@@ -20,3 +23,4 @@ char AnimSystem::Init()
   byte_B45BA8[0] |= 0x40u; /*0x75a7bf*/
   return result; /*0x75a7bc*/
 }
+} // namespace gamemd

@@ -2,27 +2,32 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/LightSourceClass_e4.hpp"
+#include "e4/classes/ListBox_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x554760
+namespace gamemd {
 unsigned int * LightSourceClass::Construct(int a2, int a3, LightSourceClass * aP3, int a5, int a6, int a7, TintStruct * aP7, int a9)
 {
   int v10; // eax
 
-  AbstractClass::Constructor((int)this); /*0x554763*/
-  *(this + 10) = a7; /*0x554774*/
-  *(this + 9) = a6; /*0x554777*/
-  *(this + 11) = aP7; /*0x55477e*/
-  *(this + 12) = a9; /*0x554788*/
-  *(this + 13) = 2; /*0x55478f*/
-  *(this + 14) = a2; /*0x554796*/
-  *((_BYTE *)this + 72) = 0; /*0x55479c*/
-  *this = &LightSourceClass::`vftable'; /*0x5547a0*/
-  *(this + 15) = a3; /*0x5547a6*/
-  *(this + 17) = a5; /*0x5547ad*/
-  *(this + 1) = &LightSourceClass::`vftable'; /*0x5547b0*/
-  *(this + 16) = aP3; /*0x5547b7*/
-  *(this + 2) = &LightSourceClass::`vftable'; /*0x5547ba*/
-  *(this + 3) = &LightSourceClass::`vftable'; /*0x5547c1*/
+  AbstractClass::Constructor(); /*0x554763*/
+  *(&this->vtable20) = a7; /*0x554774*/
+  this->LightIntensity = a6; /*0x554777*/
+  *(&this->vtable21) = aP7; /*0x55477e*/
+  *(&this->vtable22) = a9; /*0x554788*/
+  *(&this->vtable23) = 2; /*0x55478f*/
+  *(&this->vtable24) = a2; /*0x554796*/
+  this->Activated = 0; /*0x55479c*/
+  *this = &(void*)(void*)&LightSourceClass_vftable; /*0x5547a0*/
+  *(&this->vtable25) = a3; /*0x5547a6*/
+  *(&this->vtable27) = a5; /*0x5547ad*/
+  this->vtable2 = &(void*)(void*)&LightSourceClass_vftable; /*0x5547b0*/
+  *(&this->vtable26) = aP3; /*0x5547b7*/
+  this->vtable3 = &(void*)(void*)&LightSourceClass_vftable; /*0x5547ba*/
+  this->vtable4 = &(void*)(void*)&LightSourceClass_vftable; /*0x5547c1*/
   if ( g_BridgeCellPool < dword_ABCA18 /*0x5547fd*/
     || (byte_ABCA1D || !dword_ABCA18)
     && dword_ABCA24 > 0
@@ -36,27 +41,28 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, LightSourceClass * aP
   }
   return this; /*0x55481e*/
 }
+} // namespace gamemd
 // 0x554830
+namespace gamemd {
 int LightSourceClass::Constructor()
 {
-  int v2; // edx
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x554833*/
-  *(_DWORD *)(this + 36) = 0; /*0x55483d*/
-  *(_DWORD *)(this + 40) = 0; /*0x554840*/
-  *(_DWORD *)(this + 44) = 0; /*0x554843*/
-  *(_DWORD *)(this + 48) = 0; /*0x554846*/
-  *(_DWORD *)(this + 56) = dword_ABCA00; /*0x55484f*/
-  *(_DWORD *)(this + 60) = dword_ABCA04; /*0x554857*/
-  v2 = dword_ABCA08; /*0x55485a*/
-  *(_DWORD *)(this + 68) = 0; /*0x554860*/
-  *(_BYTE *)(this + 72) = 0; /*0x554863*/
-  *(_DWORD *)(this + 64) = v2; /*0x554866*/
-  *(_DWORD *)this = &LightSourceClass::`vftable'; /*0x554869*/
-  *(_DWORD *)(this + 4) = &LightSourceClass::`vftable'; /*0x55486f*/
-  *(_DWORD *)(this + 8) = &LightSourceClass::`vftable'; /*0x554876*/
-  *(_DWORD *)(this + 12) = &LightSourceClass::`vftable'; /*0x55487d*/
+  AbstractClass::Constructor(); /*0x554833*/
+  this->LightIntensity = 0; /*0x55483d*/
+  this->LightTint = 0; /*0x554840*/
+  this->q02C = 0; /*0x554843*/
+  this->q030 = 0; /*0x554846*/
+  this->Location = dword_ABCA00; /*0x55484f*/
+  this->q03C = dword_ABCA04; /*0x554857*/
+  dword_ABCA08 = dword_ABCA08; /*0x55485a*/
+  this->LightVisibility = 0; /*0x554860*/
+  this->Activated = 0; /*0x554863*/
+  this->q040 = dword_ABCA08; /*0x554866*/
+  *(_DWORD *)this = &(void*)(void*)&LightSourceClass_vftable; /*0x554869*/
+  this->vtable2 = &(void*)(void*)&LightSourceClass_vftable; /*0x55486f*/
+  this->vtable3 = &(void*)(void*)&LightSourceClass_vftable; /*0x554876*/
+  this->vtable4 = &(void*)(void*)&LightSourceClass_vftable; /*0x55487d*/
   if ( g_BridgeCellPool < dword_ABCA18 /*0x5548b6*/
     || (byte_ABCA1D || !dword_ABCA18)
     && dword_ABCA24 > 0
@@ -70,12 +76,16 @@ int LightSourceClass::Constructor()
   }
   return this; /*0x5548d7*/
 }
+} // namespace gamemd
 // 0x555070
+namespace gamemd {
 int LightSourceClass::Stat(AbstractClass * aP1)
 {
-  return AbstractClass::ProcessPower(this); /*0x55507a*/
+  return AbstractClass::ProcessPower(); /*0x55507a*/
 }
+} // namespace gamemd
 // 0x555080
+namespace gamemd {
 int LightSourceClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x555086*/
@@ -86,7 +96,9 @@ int LightSourceClass::ddtor(int a1, unsigned int * a2)
   a2[3] = -1252326136; /*0x5550b0*/
   return 0; /*0x55508d*/
 }
+} // namespace gamemd
 // 0x5550C0
+namespace gamemd {
 int LightSourceClass::Write(AbstractClass * aP0, int aP1)
 {
   int result; // eax
@@ -97,16 +109,18 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x5550d6*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x5550df*/
-      *aP0 = &LightSourceClass::`vftable'; /*0x5550e4*/
-      aP0[1] = &LightSourceClass::`vftable'; /*0x5550ea*/
-      aP0[2] = &LightSourceClass::`vftable'; /*0x5550f1*/
-      aP0[3] = &LightSourceClass::`vftable'; /*0x5550f8*/
+      *aP0 = &(void*)(void*)&LightSourceClass_vftable; /*0x5550e4*/
+      aP0[1] = &(void*)(void*)&LightSourceClass_vftable; /*0x5550ea*/
+      aP0[2] = &(void*)(void*)&LightSourceClass_vftable; /*0x5550f1*/
+      aP0[3] = &(void*)(void*)&LightSourceClass_vftable; /*0x5550f8*/
     }
     return 0; /*0x5550ff*/
   }
   return result; /*0x555101*/
 }
+} // namespace gamemd
 // 0x555110
+namespace gamemd {
 int LightSourceClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
 {
   int result; // eax
@@ -116,27 +130,33 @@ int LightSourceClass::Seek(TechnoTypeClass * aP0, int * a1, int aP2)
     return 0; /*0x555128*/
   return result; /*0x55512a*/
 }
+} // namespace gamemd
 // 0x555130
+namespace gamemd {
 int LightSourceClass::StubReturn76()
 {
   return 76; /*0x555135*/
 }
+} // namespace gamemd
 // 0x555140
+namespace gamemd {
 int LightSourceClass::StubReturn54()
 {
   return 54; /*0x555145*/
 }
+} // namespace gamemd
 // 0x555150
+namespace gamemd {
 LightSourceClass * LightSourceClass::CopyTo(char a2)
 {
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &LightSourceClass::`vftable'; /*0x555156*/
-  *(this + 1) = &LightSourceClass::`vftable'; /*0x55515c*/
-  *(this + 2) = &LightSourceClass::`vftable'; /*0x555163*/
-  *(this + 3) = &LightSourceClass::`vftable'; /*0x55516a*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x555171*/
+  *this = &(void*)(void*)&LightSourceClass_vftable; /*0x555156*/
+  *(this + 1) = &(void*)(void*)&LightSourceClass_vftable; /*0x55515c*/
+  *(this + 2) = &(void*)(void*)&LightSourceClass_vftable; /*0x555163*/
+  *(this + 3) = &(void*)(void*)&LightSourceClass_vftable; /*0x55516a*/
+  AbstractClass::AnnounceExpiredPointer(1); /*0x555171*/
   v5 = this; /*0x555186*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_ABCA10 + 16))(&dword_ABCA10, &v5); /*0x55518a*/
   if ( v3 != -1 && v3 < g_BridgeCellPool && v3 < --g_BridgeCellPool ) /*0x5551a5*/
@@ -151,10 +171,11 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   if ( *((_BYTE *)this + 72) ) /*0x5551bf*/
   {
     *((_BYTE *)this + 72) = 0; /*0x5551ca*/
-    TacticalClass::ScrollView(this, 0); /*0x5551ce*/
+    TacticalClass::ScrollView(0); /*0x5551ce*/
   }
-  AbstractClass::DTOR(this); /*0x5551d5*/
+  AbstractClass::DTOR(); /*0x5551d5*/
   if ( (a2 & 1) != 0 ) /*0x5551df*/
-    __3_YAXPAX_Z(this); /*0x5551e2*/
+    RA2_OPDEL(); /*0x5551e2*/
   return this; /*0x5551ec*/
 }
+} // namespace gamemd

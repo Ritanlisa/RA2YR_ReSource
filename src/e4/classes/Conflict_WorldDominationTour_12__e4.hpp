@@ -5,7 +5,20 @@
 
 namespace gamemd {
 struct Conflict_WorldDominationTour_12_ {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    AbstractClass * ptr_4;  // 0x4
+    AbstractClass * ptr_8;  // 0x8
+    unsigned char u8_D;  // 0xD
+    AbstractClass * ptr_10;  // 0x10
+    AbstractClass * q034;  // 0x34
+    AbstractClass * q130;  // 0x130
+    AbstractClass * q304;  // 0x304
+    unsigned int IsAllocated;
+    unsigned int Items;
+    unsigned int q008;
+    unsigned int q010;
+// --- flat members (END) ---
     int ReleaseBuffer();  // 0x766800
+    static double Constructor_3(...);  // C2597 interim stub
 };
 } // namespace gamemd

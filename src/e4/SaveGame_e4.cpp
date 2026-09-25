@@ -5,6 +5,11 @@
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/RulesClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4391C0
 namespace gamemd {
@@ -18,7 +23,7 @@ int SaveGame::LoadArrayData(int * a2)
   int v8; // [esp+40h] [ebp-4h] BYREF
 
   v3 = *a2; /*0x4391cc*/
-  v8 = *(this + 4); /*0x4391d9*/
+  v8 = this->u32_10; /*0x4391d9*/
   result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v3 + 16))(a2, &v8, 4, 0); /*0x4391dd*/
   if ( result >= 0 ) /*0x4391e2*/
   {
@@ -27,13 +32,13 @@ int SaveGame::LoadArrayData(int * a2)
     {
   LABEL_5:
       v6 = *a2; /*0x43920c*/
-      v8 = *(this + 10); /*0x43921b*/
+      v8 = *(&this->q0040); /*0x43921b*/
       result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v6 + 16))(a2, &v8, 4, 0); /*0x43921f*/
       if ( result >= 0 ) /*0x439224*/
       {
         for ( i = 0; i < v8; ++i ) /*0x43922e*/
         {
-          result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*a2 + 16))(a2, *(this + 7) + 4 * i, 4, 0); /*0x43923e*/
+          result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*a2 + 16))(a2, this->u32_1C + 4 * i, 4, 0); /*0x43923e*/
           if ( result < 0 ) /*0x439243*/
             break; /*0x439243*/
         }
@@ -43,7 +48,7 @@ int SaveGame::LoadArrayData(int * a2)
     {
       while ( 1 ) /*0x4391fc*/
       {
-        result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*a2 + 16))(a2, *(this + 1) + 4 * v5, 4, 0); /*0x4391fc*/
+        result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*a2 + 16))(a2, this->q004 + 4 * v5, 4, 0); /*0x4391fc*/
         if ( result < 0 ) /*0x439201*/
           break; /*0x439201*/
         if ( ++v5 >= v8 ) /*0x43920a*/
@@ -64,13 +69,13 @@ int SaveGame::WriteDataArray(int * a2)
   int v6; // [esp+20h] [ebp-4h] BYREF
 
   v3 = *a2; /*0x54e75c*/
-  v6 = *(this + 7); /*0x54e769*/
+  v6 = this->u32_1C; /*0x54e769*/
   result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v3 + 16))(a2, &v6, 4, 0); /*0x54e76d*/
   if ( result >= 0 ) /*0x54e772*/
   {
     for ( i = 0; i < v6; ++i ) /*0x54e77c*/
     {
-      result = (*(int (__stdcall **)(int *, _DWORD, int, _DWORD))(*a2 + 16))(a2, *(_DWORD *)(*(this + 4) + 4 * i), 8, 0); /*0x54e78c*/
+      result = (*(int (__stdcall **)(int *, _DWORD, int, _DWORD))(*a2 + 16))(a2, *(_DWORD *)(this->u32_10 + 4 * i), 8, 0); /*0x54e78c*/
       if ( result < 0 ) /*0x54e791*/
         break; /*0x54e791*/
     }
@@ -84,14 +89,13 @@ int SaveGame::SaveTriggerEvents()
 {
   int v2; // ecx
   int v4; // edi
-  int v5; // [esp+20h] [ebp-4h] BYREF
 
   v2 = *this; /*0x6607e0*/
-  v5 = g_TriggerEventState; /*0x6607e6*/
-  if ( (*(int (__stdcall **)(int *, int *, int, _DWORD))(v2 + 16))(this, &v5, 4, 0) < 0 ) /*0x6607ef*/
+  g_TriggerEventState = g_TriggerEventState; /*0x6607e6*/
+  if ( this->vt_slot_16(&g_TriggerEventState, 4, 0) < 0 ) /*0x6607ef*/
     return 0; /*0x6607f6*/
   v4 = 0; /*0x6607fb*/
-  if ( v5 > 0 ) /*0x6607ff*/
+  if ( g_TriggerEventState > 0 ) /*0x6607ff*/
   {
     while ( (*(int (__stdcall **)(int *, _DWORD, int, _DWORD))(*this + 16))( /*0x660817*/
               this,
@@ -99,18 +103,17 @@ int SaveGame::SaveTriggerEvents()
               64,
               0) >= 0 )
     {
-      if ( ++v4 >= v5 ) /*0x660820*/
-        return (*(int (__stdcall **)(int *, __int16 *, int, _DWORD))(*this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x660820*/
+      if ( ++v4 >= g_TriggerEventState ) /*0x660820*/
+        return this->vt_slot_16(&word_B04D78, 4, 0) >= 0; /*0x660820*/
     }
     return 0; /*0x660817*/
   }
-  return (*(int (__stdcall **)(int *, __int16 *, int, _DWORD))(*this + 16))(this, &word_B04D78, 4, 0) >= 0; /*0x6607f1*/
+  return this->vt_slot_16(&word_B04D78, 4, 0) >= 0; /*0x6607f1*/
 }
 }
 // 0x67D300
 namespace gamemd {
 int SaveGame::Start()
-{
 {
   char result; // al
   int i; // ebx
@@ -880,7 +883,6 @@ int SaveGame::Start()
   return result;
 }
 } // namespace gamemd
-}
 
 // 0x67F7E0
 namespace gamemd {
@@ -899,7 +901,7 @@ int SaveGame::LoadMainGameState()
   result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(*this + 16))(this, &dword_A8ED78, 4, 0); /*0x67f7f1*/
   if ( result >= 0 )
   {
-    result = (*(int (__stdcall **)(int *, #375 **, int, _DWORD))(*this + 16))(this, &HouseClass_Player, 4, 0); /*0x67f808*/
+    result = (*(int (__stdcall **)(int *, void **, int, _DWORD))(*this + 16))(this, &HouseClass_Player, 4, 0); /*0x67f808*/
     if ( result >= 0 )
     {
       result = (*(int (__stdcall **)(int *, wchar_t **, int, _DWORD))(*this + 16))(this, &g_CurrentFrame, 4, 0); /*0x67f81f*/
@@ -917,7 +919,7 @@ int SaveGame::LoadMainGameState()
             result = (*(int (__stdcall **)(int *, float *, int, _DWORD))(*this + 16))(this, flt_89EA40, 432, 0); /*0x67f879*/
             if ( result >= 0 )
             {
-              SuperWeaponClass::LoadFromSaveStream(this); /*0x67f895*/
+              SuperWeaponClass::LoadFromSaveStream(); /*0x67f895*/
               v5 = *this; /*0x67f8a0*/
               v10 = (wchar_t *)g_ScenarioUpdateState; /*0x67f8ac*/
               result = (*(int (__stdcall **)(int *, wchar_t **, int, _DWORD))(v5 + 16))(this, &v10, 4, 0); /*0x67f8b0*/
@@ -1201,20 +1203,19 @@ int SaveGame::CountLinkedList()
 namespace gamemd {
 int SaveGame::SaveIteratedData(int a2)
 {
-  int v2; // esi
   int v3; // ebp
   _DWORD *i; // edi
   int v5; // ecx
   int result; // eax
   int v7; // ebx
 
-  v2 = a2; /*0x413853*/
+  a2 = a2; /*0x413853*/
   v3 = 0; /*0x413858*/
-  for ( i = this + 1; ; i += 6 ) /*0x41385a*/
+  for ( i = &this->Items; ; i += 6 ) /*0x41385a*/
   {
-    v5 = *(_DWORD *)v2; /*0x413860*/
+    v5 = *(_DWORD *)a2; /*0x413860*/
     a2 = i[3]; /*0x41386c*/
-    result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v5 + 16))(v2, &a2, 4, 0); /*0x413870*/
+    result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v5 + 16))(a2, &a2, 4, 0); /*0x413870*/
     if ( result < 0 ) /*0x413875*/
       break; /*0x413875*/
     v7 = 0; /*0x41387b*/
@@ -1222,7 +1223,7 @@ int SaveGame::SaveIteratedData(int a2)
     {
       do /*0x41388e*/
       {
-        result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))(v2, *i + 4 * v7, 4, 0); /*0x41388e*/
+        result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)a2 + 16))(a2, *i + 4 * v7, 4, 0); /*0x41388e*/
         if ( result < 0 ) /*0x413893*/
           return result; /*0x413893*/
       }
@@ -2994,7 +2995,7 @@ int SaveGame::WriteMagicHeader()
   {
     v4 = *this; /*0x7533cf*/
     v5 = 1450145861; /*0x7533db*/
-    return (*(int (__stdcall **)(int *, int *, int, _DWORD))(v4 + 16))(this, &v5, 4, 0); /*0x7533e3*/
+    return (&v5, 4, 0); /*0x7533e3*/
   }
   return result; /*0x7533e6*/
 }

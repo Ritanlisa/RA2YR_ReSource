@@ -456,7 +456,7 @@ namespace gamemd {
 // IDA: 0x401190  proposal: BufferUpdateVolumeSettingsHelper
 // IDA: int __fastcall sub_401190(int a1, int a2)
 //   int v2; // edx
-//   v2 = (unsigned __int64)(1374389535LL * a2 * HIWORD(*(_DWORD *)(a1 + 44))) >> 32;
+//   v2 = (unsigned __int64)(1374389535LL * a2 * IDA_HIWORD(*(_DWORD *)(a1 + 44))) >> 32;
 //   return ((unsigned int)v2 >> 31) + (v2 >> 5);
 int BufferUpdateVolumeSettingsHelper(int a0, int a1) // fastcall
 {
@@ -643,7 +643,7 @@ int GetMember5405160(void* _this) // thiscall
 // IDA: int __thiscall sub_4052E0(_DWORD *this)
 //   int result; // eax
 //   result = *(this + 6);
-//   LOBYTE(result) = result | 8;
+//   IDA_LOBYTE(result) = result | 8;
 //   *(this + 6) = result;
 //   return result;
 int SetMember6(void* _this) // thiscall
@@ -805,7 +805,7 @@ int MethodRequest(void* _this) // thiscall
 // IDA: int __thiscall sub_407160(int *this)
 //   int result; // eax
 //   result = *this;
-//   LOBYTE(result) = *this | 1;
+//   IDA_LOBYTE(result) = *this | 1;
 //   *this = result;
 //   return result;
 int MethodStub407160(void* _this) // thiscall
@@ -881,7 +881,7 @@ int SetMember5(void* _this) // thiscall
 //   a1[5] = a2[7] + v4;
 //   a2[12] = (int)a1;
 //   v5 = a1[4];
-//   LOBYTE(v5) = v5 & 0xFD;
+//   IDA_LOBYTE(v5) = v5 & 0xFD;
 //   a1[4] = v5;
 //   return v5;
 char InsertLinkedList(int a0, int a1) // fastcall
@@ -1427,7 +1427,7 @@ char* ArithmeticCompute40D8E0()
 // IDA: 0x40D900  proposal: ReturnSub626020
 // IDA: char *__fastcall sub_40D900(int a1)
 //   _BYTE v2[4]; // [esp+0h] [ebp-4h] BYREF
-//   v2[3] = HIBYTE(a1);
+//   v2[3] = IDA_HIBYTE(a1);
 //   v2[0] = 0;
 //   v2[1] = 0;
 //   v2[2] = 0;
@@ -1440,7 +1440,7 @@ char* ReturnSub626020(int a0) // fastcall
 // IDA: 0x40D920  proposal: ReturnSub62602040D920
 // IDA: char *__fastcall sub_40D920(int a1)
 //   _BYTE v2[4]; // [esp+0h] [ebp-4h] BYREF
-//   v2[3] = HIBYTE(a1);
+//   v2[3] = IDA_HIBYTE(a1);
 //   v2[0] = -1;
 //   v2[1] = -1;
 //   v2[2] = -1;
@@ -1748,7 +1748,7 @@ int ReturnZero40DF70()
 // IDA: void **__thiscall sub_40E4A0(void **Block, char a2)
 //   HashTable::DestroyHashTableINIClass(Block);
 //   if ( (a2 & 1) != 0 )
-//   __3_YAXPAX_Z(Block);
+//   RA2_OPDEL(Block);
 //   return Block;
 void* HashTable_Destroy(void* _this, int a0) // thiscall
 {

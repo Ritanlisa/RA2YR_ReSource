@@ -5,7 +5,36 @@
 
 namespace gamemd {
 struct E4Recv_4F2F10 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    unsigned int M16;  // 0x10
+    unsigned int M20;  // 0x14
+    unsigned int M24;  // 0x18
+    unsigned int M28;  // 0x1C
+    unsigned int q020;  // 0x20
+    unsigned int q024;  // 0x24
+    unsigned int q028;  // 0x28
+    unsigned int M32;  // 0x32
+    unsigned int q034;  // 0x34
+    unsigned int M36;  // 0x36
+    unsigned int q040;  // 0x40
+    unsigned int q050;  // 0x50
+    unsigned int q054;  // 0x54
+    unsigned int q064;  // 0x64
+    unsigned int q080;  // 0x80
+    unsigned int q084;  // 0x84
+    unsigned int q100;  // 0x100
+    unsigned int q128;  // 0x128
+    unsigned int q130;  // 0x130
+    unsigned int q304;  // 0x304
+    unsigned int q598;  // 0x598
+    unsigned int q774;  // 0x774
+    unsigned int q1634;  // 0x1634
+    unsigned int q1908;  // 0x1908
+    unsigned int q5170;  // 0x5170
+    unsigned int q5684;  // 0x5684
+    unsigned int q6408;  // 0x6408
+// --- flat members (END) ---
     int * sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, GraphicMenuAnimItem * aP3, int * a4, GraphicMenuAnimItem * aP5, char ** a6, GraphicMenuAnimItem * aP7, GraphicMenuAnimItem * aP8);  // 0x4F2F10
 };
 } // namespace gamemd

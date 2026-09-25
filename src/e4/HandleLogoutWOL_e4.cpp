@@ -1,6 +1,7 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/e4_protos.h"
 
 // 0x7AC500
 namespace gamemd {
@@ -41,7 +42,7 @@ int sub_7AC500(int a1)
     {
       ((void (__stdcall *)(_DWORD))*v4)(v4[1]); /*0x7ac571*/
       v5 = (_DWORD *)v4[2]; /*0x7ac573*/
-      __3_YAXPAX_Z(v4); /*0x7ac577*/
+      RA2_OPDEL(v4); /*0x7ac577*/
       v4 = v5; /*0x7ac57f*/
     }
     while ( v5 ); /*0x7ac583*/

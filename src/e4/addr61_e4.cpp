@@ -4,6 +4,10 @@
 #include "e4/classes/E4Recv_6107E0_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/CoordStruct_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x610570
 namespace gamemd {
@@ -27,7 +31,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
   memset(v15, 0, sizeof(v15)); /*0x6105a0*/
   v15[26] = (void *)11; /*0x6105a4*/
   v15[25] = (void *)g_FogOfWarState; /*0x6105ac*/
-  v2 = __2_YAPAXI_Z(4u); /*0x6105b0*/
+  v2 = RA2_OPNEW(4u); /*0x6105b0*/
   if ( v2 ) /*0x6105bc*/
     v3 = (void *)unknown_libname_74(v2); /*0x6105c0*/
   else
@@ -39,7 +43,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
   Dialog::BindGadgetData(&g_DialogHashMap_Base, (int *)&hWnd, (char *)v15); /*0x6105f2*/
   if ( v15[10] ) /*0x6105fd*/
   {
-    __3_YAXPAX_Z(v15[10]); /*0x610600*/
+    RA2_OPDEL(v15[10]); /*0x610600*/
     v15[10] = 0; /*0x610608*/
   }
   v4 = v15[13]; /*0x61060c*/
@@ -64,7 +68,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
           *v5 = *v6; /*0x610634*/
         else
           v15[13] = *(void **)v6; /*0x61063a*/
-        __3_YAXPAX_Z(v6); /*0x61063f*/
+        RA2_OPDEL(v6); /*0x61063f*/
         v4 = v15[13]; /*0x610644*/
       }
   LABEL_16:
@@ -85,7 +89,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
       if ( *v8 == hWnd ) /*0x6106c7*/
       {
         v9 = v8[2]; /*0x6106c9*/
-        __3_YAXPAX_Z(*((void **)g_DialogPool + v7)); /*0x6106cd*/
+        RA2_OPDEL(*((void **)g_DialogPool + v7)); /*0x6106cd*/
         v10 = *(float *)&v14; /*0x6106db*/
         *((_DWORD *)g_DialogPool + v7) = v9; /*0x6106df*/
         --g_DialogPoolCount; /*0x6106ee*/
@@ -105,7 +109,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
         }
         v8[2] = v11[2]; /*0x610716*/
         --g_DialogPoolCount; /*0x610720*/
-        __3_YAXPAX_Z(v11); /*0x610726*/
+        RA2_OPDEL(v11); /*0x610726*/
       }
   LABEL_29:
       if ( *(float *)&v14 <= dbl_AC18E0 ) /*0x61073d*/
@@ -116,7 +120,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
   LABEL_31:
   WindowLongA = (void *)GetWindowLongA(hWnd, -21); /*0x610749*/
   if ( WindowLongA ) /*0x61075c*/
-    __3_YAXPAX_Z(WindowLongA); /*0x61075f*/
+    RA2_OPDEL(WindowLongA); /*0x61075f*/
   SetWindowLongA(hWnd, -21, 0); /*0x610772*/
   Object::RemoveObjectArray(hWnd); /*0x61077f*/
   return 1; /*0x610784*/
@@ -172,7 +176,7 @@ char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
   DWORD2(xmmword_AC1CB8) = *(_DWORD *)(a1 + 8); /*0x610917*/
   v6 = *(_DWORD *)(a1 + 12); /*0x61091c*/
   dword_AC1DCC = 1; /*0x61091f*/
-  HIDWORD(xmmword_AC1CB8) = v6; /*0x610925*/
+  IDA_HIDWORD(xmmword_AC1CB8) = v6; /*0x610925*/
   dword_AC1DD4 = a3; /*0x61092d*/
   return TriggerClass::FindByEventType(1); /*0x610938*/
 }
@@ -268,7 +272,7 @@ void sub_612930()
     {
       v3 = v2; /*0x61294b*/
       v2 = (_DWORD *)v2[3]; /*0x61294d*/
-      __3_YAXPAX_Z(v3); /*0x612951*/
+      RA2_OPDEL(v3); /*0x612951*/
     }
     *((_DWORD *)dword_AC1858 + i++) = 0; /*0x612964*/
   }
@@ -284,7 +288,7 @@ void sub_612930()
       v6 = v0; /*0x6129af*/
       dword_AC1860 = v0 >> 1; /*0x6129b4*/
       --dword_AC1864; /*0x6129c0*/
-      dword_AC1858 = __2_YAPAXI_Z(4 * (v0 >> 1)); /*0x6129d9*/
+      dword_AC1858 = RA2_OPNEW(4 * (v0 >> 1)); /*0x6129d9*/
       memset(dword_AC1858, 0, 4 * dword_AC1860); /*0x6129e1*/
       if ( v6 > 0 ) /*0x6129e3*/
       {
@@ -311,13 +315,13 @@ void sub_612930()
         }
         while ( v8 ); /*0x612a22*/
       }
-      __3_YAXPAX_Z(v5); /*0x612a25*/
+      RA2_OPDEL(v5); /*0x612a25*/
       v4 = dword_AC1888; /*0x612a2a*/
       v0 = dword_AC1860; /*0x612a30*/
     }
     while ( dword_AC1860 > (unsigned int)dword_AC1888 ); /*0x612a3a*/
   }
-  __3_YAXPAX_Z(dword_AC1858); /*0x612a46*/
+  RA2_OPDEL(dword_AC1858); /*0x612a46*/
 }
 }
 // 0x612A60
@@ -447,7 +451,7 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
       v15[3] = v18; /*0x61d7d6*/
       if ( !v8 ) /*0x61d7da*/
       {
-        v9 = __2_YAPAXI_Z(0x20u); /*0x61d7e7*/
+        v9 = RA2_OPNEW(0x20u); /*0x61d7e7*/
         if ( v9 ) /*0x61d7ee*/
         {
           v10 = Rect.bottom - Rect.top + 1; /*0x61d802*/
@@ -487,7 +491,7 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
       ValidateRect(v4, 0); /*0x61d8eb*/
       return 0; /*0x61d8f3*/
     case 0x401u: /*0x61d75b*/
-      v7 = HIWORD(a4); /*0x61d77d*/
+      v7 = IDA_HIWORD(a4); /*0x61d77d*/
       v6[58] = (unsigned __int16)a4; /*0x61d780*/
       v6[59] = v7; /*0x61d786*/
       return 0; /*0x61d793*/
@@ -551,7 +555,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
           {
             if ( !*(_DWORD *)(result + 20) ) /*0x61ee1e*/
             {
-              v11 = __2_YAPAXI_Z(0x20u); /*0x61ee2c*/
+              v11 = RA2_OPNEW(0x20u); /*0x61ee2c*/
               if ( v11 ) /*0x61ee33*/
               {
                 v12 = v21; /*0x61ee35*/
@@ -629,7 +633,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
   {
     v7 = hWnd; /*0x61ed23*/
   }
-  return CallWindowProcA(v5, v7, v4, wParam, lParam); /*0x61ed43*/
+  return CallWindowProcA(v5, v7, v4, wParam, lParam, unsigned int a1, unsigned int a2); /*0x61ed43*/
 }
 }
 // 0x61EF70
@@ -645,9 +649,9 @@ void FormatHotkeyDisplayString()
   CHAR String[32]; // [esp+Ch] [ebp-214h] BYREF
   wchar_t Format[250]; // [esp+2Ch] [ebp-1F4h] BYREF
 
-  result = HIBYTE(a1); /*0x61ef7c*/
+  result = IDA_HIBYTE(a1); /*0x61ef7c*/
   v3 = a1; /*0x61ef84*/
-  LOBYTE(Format[0]) = 0; /*0x61ef88*/
+  IDA_LOBYTE(Format[0]) = 0; /*0x61ef88*/
   *a2 = 0; /*0x61ef8d*/
   if ( (a1 & 0x800) == 0 ) /*0x61ef92*/
   {
@@ -657,8 +661,8 @@ void FormatHotkeyDisplayString()
       GetKeyNameTextA((v4 << 16) | 0x2000001, String, 32); /*0x61efc2*/
       strcat((char *)Format, String); /*0x61efe8*/
       strcat((char *)Format, asc_835A34); /*0x61f014*/
-      LOBYTE(result) = HIBYTE(v3); /*0x61f016*/
-      LOBYTE(a1) = v3; /*0x61f021*/
+      IDA_LOBYTE(result) = IDA_HIBYTE(v3); /*0x61f016*/
+      IDA_LOBYTE(a1) = v3; /*0x61f021*/
     }
     if ( (result & 2) != 0 ) /*0x61f027*/
     {
@@ -666,8 +670,8 @@ void FormatHotkeyDisplayString()
       GetKeyNameTextA((v5 << 16) | 0x2000001, String, 32); /*0x61f03f*/
       strcat((char *)Format, String); /*0x61f065*/
       strcat((char *)Format, asc_835A34); /*0x61f091*/
-      LOBYTE(result) = HIBYTE(v3); /*0x61f093*/
-      LOBYTE(a1) = v3; /*0x61f09e*/
+      IDA_LOBYTE(result) = IDA_HIBYTE(v3); /*0x61f093*/
+      IDA_LOBYTE(a1) = v3; /*0x61f09e*/
     }
     if ( (result & 1) != 0 ) /*0x61f0a4*/
     {
@@ -675,7 +679,7 @@ void FormatHotkeyDisplayString()
       GetKeyNameTextA((v6 << 16) | 0x2000001, String, 32); /*0x61f0bc*/
       strcat((char *)Format, String); /*0x61f0e2*/
       strcat((char *)Format, asc_835A34); /*0x61f10e*/
-      LOBYTE(a1) = v3; /*0x61f117*/
+      IDA_LOBYTE(a1) = v3; /*0x61f117*/
     }
     v7 = MapVirtualKeyA((unsigned __int8)a1, 0); /*0x61f124*/
     GetKeyNameTextA((v7 << 16) | 0x2000001, String, 32); /*0x61f136*/
@@ -688,7 +692,6 @@ void FormatHotkeyDisplayString()
 // 0x61F210
 namespace gamemd {
 char Dialog_InitCountryIcons(int a1, int a2)
-{
 {
 
   LoadPaletteFromFile((int)g_DialogHashTable, a2, DataGlobal_833654, 2, 0);
@@ -1075,7 +1078,6 @@ char Dialog_InitCountryIcons(int a1, int a2)
   return LoadPaletteFromFile((int)g_DialogHashTable, v191, DataGlobal_00835A38, 2, 0);
 }
 } // namespace gamemd
-}
 
 // 0x6107A0
 namespace gamemd {
@@ -1102,8 +1104,8 @@ unsigned int * E4Recv_6107E0::sub_6107E0()
   this->M16 = 0; /*0x6107ef*/
   this->M20 = 0; /*0x6107f2*/
   *(&this->q0189) = 0; /*0x6107f6*/
-  *(&this->u32_1C0) = 0; /*0x6107fc*/
-  *(&this->u32_1C1) = 0; /*0x610802*/
+  this->M280 = 0; /*0x6107fc*/
+  this->M284 = 0; /*0x610802*/
   return this; /*0x610808*/
 }
 } // namespace gamemd
@@ -1113,6 +1115,6 @@ namespace gamemd {
 void sub_612910()
 {
   g_ComboBoxState = 0; /*0x612915*/
-  __3_YAXPAX_Z(dword_AC1DE8); /*0x612920*/
+  RA2_OPDEL(dword_AC1DE8); /*0x612920*/
 }
 } // namespace gamemd

@@ -5,6 +5,9 @@
 
 namespace gamemd {
 struct _com_error {
+    unsigned int q004;
+    unsigned int q008;
+    unsigned int q00C;
     void* vfptr;  // minimal E2 declaration
     unsigned int * sub_7DCE0E(int a2);  // 0x7DCE0E
     HLOCAL sub_7DCE3B();  // 0x7DCE3B

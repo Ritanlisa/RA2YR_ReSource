@@ -1,11 +1,15 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/BlitTransLucent25AlphaZReadWrite_ushort_e4.hpp"
+#include "e4/classes/BlitTransLucent25Alpha_ushort_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x496130
+namespace gamemd {
 int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x496167*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(this->q004)( /*0x496167*/
            this,
            a2,
            a3,
@@ -18,16 +22,17 @@ int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0(int a2, int a3, int a4, i
            a10,
            a11);
 }
+} // namespace gamemd
 // 0x496250
+namespace gamemd {
 unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
-  int v11; // edx
   _WORD *result; // eax
   int v16; // edx
   int v17; // edi
   unsigned __int8 v19; // dl
 
-  v11 = a5; /*0x496250*/
+  a5 = a5; /*0x496250*/
   result = a1; /*0x496254*/
   if ( a5 <= 0 ) /*0x496263*/
   {
@@ -38,12 +43,12 @@ unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsi
     do /*0x496278*/
     {
       if ( *a2++ ) /*0x496265*/
-        --v11; /*0x496275*/
+        --a5; /*0x496275*/
       else
-        v11 -= *a2++; /*0x496270*/
+        a5 -= *a2++; /*0x496270*/
     }
-    while ( v11 > 0 ); /*0x496278*/
-    v16 = -v11; /*0x49627e*/
+    while ( a5 > 0 ); /*0x496278*/
+    v16 = -a5; /*0x49627e*/
     v17 = a4 - v16; /*0x496280*/
     result = &a1[v16]; /*0x496282*/
   }
@@ -52,7 +57,7 @@ unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsi
     if ( *a2++ ) /*0x49628f*/
     {
       --v17; /*0x4962b8*/
-      *result = *(this + 2) & (*result >> 1); /*0x4962b9*/
+      *result = this->ptr_8 & (*result >> 1); /*0x4962b9*/
       ++result; /*0x4962bc*/
     }
     else
@@ -64,7 +69,9 @@ unsigned short * BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Lucent50(unsi
   }
   return result; /*0x4962c3*/
 }
+} // namespace gamemd
 // 0x494500
+namespace gamemd {
 int BlitTransLucent25Alpha_ushort::CallBlit0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49452a*/
@@ -78,7 +85,9 @@ int BlitTransLucent25Alpha_ushort::CallBlit0(int a2, int a3, int a4, int a5, int
            a8,
            0);
 }
+} // namespace gamemd
 // 0x494530
+namespace gamemd {
 int BlitTransLucent25Alpha_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49455a*/
@@ -92,7 +101,9 @@ int BlitTransLucent25Alpha_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, i
            a8,
            0);
 }
+} // namespace gamemd
 // 0x494560
+namespace gamemd {
 int BlitTransLucent25Alpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49458a*/
@@ -106,7 +117,9 @@ int BlitTransLucent25Alpha_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, i
            a8,
            0);
 }
+} // namespace gamemd
 // 0x496170
+namespace gamemd {
 int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
   int v11; // edx
@@ -156,7 +169,9 @@ int BlitTransLucent25AlphaZReadWrite_ushort::Blit_RLE_Remap(int arg0, unsigned c
   }
   return result; /*0x4961fa*/
 }
+} // namespace gamemd
 // 0x496210
+namespace gamemd {
 int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x496247*/
@@ -172,7 +187,9 @@ int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_0(int a2, int a3, int a4,
            a10,
            a11);
 }
+} // namespace gamemd
 // 0x4962D0
+namespace gamemd {
 int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x496307*/
@@ -188,63 +205,76 @@ int BlitTransLucent25AlphaZReadWrite_ushort::CallBlit0_1(int a2, int a3, int a4,
            a10,
            a11);
 }
+} // namespace gamemd
 // 0x49A340
+namespace gamemd {
 BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(this + 2); /*0x49a348*/
-  *this = &BlitTransLucent25Alpha<unsigned short>::`vftable'; /*0x49a34b*/
+  v3 = (void *)this->ptr_8; /*0x49a348*/
+  *this = &(void*)(void*)&BlitTransLucent25Alpha_unsigned_short_vftable; /*0x49a34b*/
   FractalNoise::Dtor(v3); /*0x49a352*/
-  *(this + 2) = 0; /*0x49a35b*/
-  *this = &Blitter::`vftable'; /*0x49a364*/
+  this->ptr_8 = 0; /*0x49a35b*/
+  *this = &(void*)(void*)&Blitter_vftable; /*0x49a364*/
   if ( (a2 & 1) != 0 ) /*0x49a36a*/
-    __3_YAXPAX_Z(this); /*0x49a36d*/
+    RA2_OPDEL(); /*0x49a36d*/
   return this; /*0x49a377*/
 }
+} // namespace gamemd
 // 0x49A380
+namespace gamemd {
 std::locale::facet * BlitTransLucent25Alpha_ushort::Constructor_Blitter(char a2)
 {
-  *(_DWORD *)this = &Blitter::`vftable'; /*0x49a389*/
+  *(_DWORD *)this = &(void*)(void*)&Blitter_vftable; /*0x49a389*/
   if ( (a2 & 1) != 0 ) /*0x49a38f*/
-    __3_YAXPAX_Z(this); /*0x49a392*/
+    RA2_OPDEL(); /*0x49a392*/
   return this; /*0x49a39c*/
 }
+} // namespace gamemd
 // 0x49A720
+namespace gamemd {
 BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushort::Blit(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(this + 2); /*0x49a728*/
-  *this = &BlitTransLucent25AlphaZReadWrite<unsigned short>::`vftable'; /*0x49a72b*/
+  v3 = (void *)this->ptr_8; /*0x49a728*/
+  *this = &(void*)(void*)&BlitTransLucent25AlphaZReadWrite_unsigned_short_vftable; /*0x49a72b*/
   FractalNoise::Dtor(v3); /*0x49a732*/
-  *(this + 2) = 0; /*0x49a73b*/
-  *this = &Blitter::`vftable'; /*0x49a744*/
+  this->ptr_8 = 0; /*0x49a73b*/
+  *this = &(void*)(void*)&Blitter_vftable; /*0x49a744*/
   if ( (a2 & 1) != 0 ) /*0x49a74a*/
-    __3_YAXPAX_Z(this); /*0x49a74d*/
+    RA2_OPDEL(); /*0x49a74d*/
   return this; /*0x49a757*/
 }
+} // namespace gamemd
 // 0x49A760
+namespace gamemd {
 RLEBlitTransXlat * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter(char a2)
 {
-  *(_DWORD *)this = &RLEBlitter::`vftable'; /*0x49a769*/
+  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a769*/
   if ( (a2 & 1) != 0 ) /*0x49a76f*/
-    __3_YAXPAX_Z(this); /*0x49a772*/
+    RA2_OPDEL(); /*0x49a772*/
   return this; /*0x49a77c*/
 }
+} // namespace gamemd
 // 0x49A780
+namespace gamemd {
 std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_0(char a2)
 {
-  *(_DWORD *)this = &RLEBlitter::`vftable'; /*0x49a789*/
+  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a789*/
   if ( (a2 & 1) != 0 ) /*0x49a78f*/
-    __3_YAXPAX_Z(this); /*0x49a792*/
+    RA2_OPDEL(); /*0x49a792*/
   return this; /*0x49a79c*/
 }
+} // namespace gamemd
 // 0x49A7A0
+namespace gamemd {
 std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitter_1(char a2)
 {
-  *(_DWORD *)this = &RLEBlitter::`vftable'; /*0x49a7a9*/
+  *(_DWORD *)this = &(void*)(void*)&RLEBlitter_vftable; /*0x49a7a9*/
   if ( (a2 & 1) != 0 ) /*0x49a7af*/
-    __3_YAXPAX_Z(this); /*0x49a7b2*/
+    RA2_OPDEL(); /*0x49a7b2*/
   return this; /*0x49a7bc*/
 }
+} // namespace gamemd

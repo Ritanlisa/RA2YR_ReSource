@@ -5,7 +5,9 @@
 
 namespace gamemd {
 struct E4Recv_6D04D0 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+// --- flat members (END) ---
     int Vf52(int, ...);  // G6 vtable slot dispatch
     int sub_6D04D0();  // 0x6D04D0
 };

@@ -1,8 +1,14 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/COMClass_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/GameOption_e4.hpp"
+#include "e4/classes/VectorCursor_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x767010
+namespace gamemd {
 void * COMClass::lockServer(char a2)
 {
   int v3; // eax
@@ -15,7 +21,7 @@ void * COMClass::lockServer(char a2)
   {
     v3 = *(this - 1); /*0x76701d*/
     v4 = (char *)(this - 1); /*0x767021*/
-    v5 = this + 2 * v3; /*0x767024*/
+    v5 = &this->q008 * v3; /*0x767024*/
     v6 = v3 - 1; /*0x767027*/
     if ( v6 >= 0 ) /*0x767028*/
     {
@@ -23,30 +29,33 @@ void * COMClass::lockServer(char a2)
       do /*0x76703f*/
       {
         v5 -= 2; /*0x76702e*/
-        *v5 = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x767033*/
+        *v5 = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x767033*/
         ComPtr::Release(v5); /*0x767039*/
         --v7; /*0x76703e*/
       }
       while ( v7 ); /*0x76703f*/
     }
     if ( (a2 & 1) != 0 ) /*0x767045*/
-      __3_YAXPAX_Z(v4); /*0x767048*/
+      RA2_OPDEL(v4); /*0x767048*/
     return v4; /*0x767050*/
   }
   else
   {
-    *this = &rc_ptr<WorldDominationTour::GameOption>::`vftable'; /*0x76705a*/
-    ComPtr::Release(this); /*0x767060*/
+    *this = &(void*)(void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76705a*/
+    ComPtr::Release(); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
-      __3_YAXPAX_Z(this); /*0x76706b*/
+      RA2_OPDEL(); /*0x76706b*/
     return (char *)this; /*0x767073*/
   }
 }
+} // namespace gamemd
 // 0x7669F0
+namespace gamemd {
 VectorCursor * COMClass::disconnectPoint(char a2)
 {
-  *this = &VectorCursor<rc_ptr<WorldDominationTour::GameOption>,DynamicVectorClass<rc_ptr<WorldDominationTour::GameOption>>>::`vftable'; /*0x7669f9*/
+  *this = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7669f9*/
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
-    __3_YAXPAX_Z(this); /*0x766a02*/
+    RA2_OPDEL(); /*0x766a02*/
   return this; /*0x766a0c*/
 }
+} // namespace gamemd

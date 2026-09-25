@@ -53,15 +53,6 @@ protected:
     void* QueryInterface(int a1);  // 0x4d2d60 -- FoggedObjectClass::QueryInterface
     void* DrawVector_Constructor(int a1, int a2);  // 0x4d2db0 -- FoggedObject::DrawVector_Constructor
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    int Constructor(BuildingClass * aP1, FoggedObjectClass * aP2);  // 0x4D0EF0
-    int SaveToINI(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x4D24A0
-    int LoadTypeData(int * a1, int a2);  // 0x4D2510
-    int GetTypeIdentifier();  // 0x4D27B0
-    int GetObjectSize();  // 0x4D27C0
-    int GetClassIdentifier(int a1, unsigned int * a2);  // 0x4D27D0
-    FoggedObjectClass * ddtor(void * Block, char a2);  // 0x4D2910
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

@@ -32,19 +32,19 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
   int j; // [esp+Eh] [ebp-8h]
   int v20; // [esp+12h] [ebp-4h]
 
-  LOBYTE(v1) = g_WTFMode; /*0x50af10*/
+  IDA_LOBYTE(v1) = g_WTFMode; /*0x50af10*/
   if ( g_WTFMode ) /*0x50af1d*/
   {
-    v17 = HouseClass_Player == (#375 *)ownerHouse; /*0x50af31*/
+    v17 = HouseClass_Player == (void *)ownerHouse; /*0x50af31*/
     v1 = 0; /*0x50af36*/
-    for ( i = 0; i < *(_DWORD *)(ownerHouse + 612); ++i ) /*0x50af3a*/
+    for ( i = 0; i < ownerHouse->lastBuiltInfantryType; ++i ) /*0x50af3a*/
     {
-      v3 = *(_BYTE **)(*(_DWORD *)(ownerHouse + 600) + 4 * v1); /*0x50af4d*/
-      if ( !v3[109] || (!v3[96] || v3[110] && v3[109]) && !*(_BYTE *)(ownerHouse + 501) ) /*0x50af70*/
+      v3 = *(_BYTE **)(ownerHouse->supersCount + 4 * v1); /*0x50af4d*/
+      if ( !v3[109] || (!v3[96] || v3[110] && v3[109]) && !ownerHouse->defeated ) /*0x50af70*/
         goto LABEL_55; /*0x50af78*/
       v4 = 0; /*0x50af84*/
       v16 = 0; /*0x50af88*/
-      if ( !*(_BYTE *)(ownerHouse + 501) ) /*0x50af7e*/
+      if ( !ownerHouse->defeated ) /*0x50af7e*/
       {
         v5 = 0; /*0x50af99*/
         for ( j = 0; v5 < g_BuildingProductionState; j = ++v5 ) /*0x50afa1*/
@@ -53,7 +53,7 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
           if ( !*(_BYTE *)(v6 + 129) && *(_BYTE *)(v6 + 144) ) /*0x50afbe*/
           {
             v20 = (*(int (__stdcall **)(int))(*(_DWORD *)(*(_DWORD *)(v6 + 540) + 4) + 16))(*(_DWORD *)(v6 + 540) + 4); /*0x50afe3*/
-            if ( v20 == (*(int (__stdcall **)(int))(*(_DWORD *)(ownerHouse + 4) + 16))(ownerHouse + 4) ) /*0x50aff0*/
+            if ( v20 == (*(int (__stdcall **)(int))(ownerHouse->vtable2 + 16))(ownerHouse + 4) ) /*0x50aff0*/
             {
               v7 = (int *)(v6 + 1516); /*0x50aff2*/
               v8 = 3; /*0x50aff8*/
@@ -84,18 +84,18 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
           }
         }
       }
-      v10 = *(_BYTE **)(*(_DWORD *)(*(_DWORD *)(ownerHouse + 600) + 4 * i) + 40); /*0x50b078*/
+      v10 = *(_BYTE **)(*(_DWORD *)(ownerHouse->supersCount + 4 * i) + 40); /*0x50b078*/
       if ( v10[231] && !SWAllowed ) /*0x50b099*/
         v16 = 0; /*0x50b09b*/
-      v11 = *(_DWORD *)(ownerHouse + 21412); /*0x50b0a0*/
-      v12 = *(_DWORD *)(ownerHouse + 21416); /*0x50b0a6*/
-      if ( v11 < v12 && v12 && (!v11 || (double)*(int *)(ownerHouse + 21412) / (double)*(int *)(ownerHouse + 21416) < 1.0) ) /*0x50b0d3*/
+      v11 = ownerHouse->powerOutput; /*0x50b0a0*/
+      v12 = ownerHouse->powerDrain; /*0x50b0a6*/
+      if ( v11 < v12 && v12 && (!v11 || (double)ownerHouse->powerOutput / (double)ownerHouse->powerDrain < 1.0) ) /*0x50b0d3*/
         v4 = 0; /*0x50b0d5*/
       (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)v10 + 64))(v10); /*0x50b0d9*/
       Status = HouseClass::GetStatus((void *)0x39, 0); /*0x50b0ea*/
-      if ( !v16 || *(_BYTE *)(ownerHouse + 501) ) /*0x50b0f4*/
+      if ( !v16 || ownerHouse->defeated ) /*0x50b0f4*/
       {
-        if ( !(unsigned __int8)SuperClass::Lose(*(_DWORD *)(*(_DWORD *)(ownerHouse + 600) + 4 * i)) || !HouseClass_Player ) /*0x50b179*/
+        if ( !(unsigned __int8)SuperClass::Lose(*(_DWORD *)(ownerHouse->supersCount + 4 * i)) || !HouseClass_Player ) /*0x50b179*/
           goto LABEL_55; /*0x50b179*/
         if ( !v17 ) /*0x50b181*/
           goto LABEL_54; /*0x50b181*/
@@ -113,7 +113,7 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
       else
       {
         v14 = i; /*0x50b108*/
-        if ( (unsigned __int8)SuperWeapon::GetField10(*(_DWORD *)(*(_DWORD *)(ownerHouse + 600) + 4 * i)) /*0x50b123*/
+        if ( (unsigned __int8)SuperWeapon::GetField10(*(_DWORD *)(ownerHouse->supersCount + 4 * i)) /*0x50b123*/
           && (unsigned __int8)SuperClass::SetOnHold(1) )
         {
           goto LABEL_45; /*0x50b12a*/
@@ -129,7 +129,7 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
         goto LABEL_53; /*0x50b158*/
       }
   LABEL_54:
-      *(_BYTE *)(ownerHouse + 508) = 1; /*0x50b1a5*/
+      ownerHouse->recheckTechTree = 1; /*0x50b1a5*/
   LABEL_55:
       v1 = i + 1; /*0x50b1ac*/
     }

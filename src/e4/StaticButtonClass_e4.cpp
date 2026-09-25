@@ -2,19 +2,24 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/StaticButtonClass_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x6C6880
+namespace gamemd {
 StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(this + 12); /*0x6c6883*/
-  *this = &StaticButtonClass::`vftable'; /*0x6c6886*/
+  v3 = (void *)*(&this->u32_42); /*0x6c6883*/
+  *this = &(void*)(void*)&StaticButtonClass_vftable; /*0x6c6886*/
   if ( v3 ) /*0x6c688e*/
-    __3_YAXPAX_Z(v3); /*0x6c6891*/
+    RA2_OPDEL(v3); /*0x6c6891*/
   Vector::Clear((int)(this + 9)); /*0x6c689c*/
-  GadgetClass::Dtor(this); /*0x6c68a3*/
+  GadgetClass::Dtor(); /*0x6c68a3*/
   if ( (a2 & 1) != 0 ) /*0x6c68ad*/
-    __3_YAXPAX_Z(this); /*0x6c68b0*/
+    RA2_OPDEL(); /*0x6c68b0*/
   return this; /*0x6c68ba*/
 }
+} // namespace gamemd

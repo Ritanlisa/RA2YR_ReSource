@@ -9,8 +9,21 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/VoxelAnimType_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/ObjectVector_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x46C790
+namespace gamemd {
 BulletTypeClass * * ObjectTypeClass::FindOrCreate()
 {
   int v2; // esi
@@ -21,7 +34,7 @@ BulletTypeClass * * ObjectTypeClass::FindOrCreate()
   if ( g_BulletTypeInitState <= 0 ) /*0x46c7c1*/
   {
   LABEL_6:
-    if ( __2_YAPAXI_Z(0x2F8u) ) /*0x46c7eb*/
+    if ( RA2_OPNEW(0x2F8u) ) /*0x46c7eb*/
       return BulletTypeClass::Construct(Source); /*0x46c801*/
     return 0; /*0x46c7f5*/
   }
@@ -32,7 +45,9 @@ BulletTypeClass * * ObjectTypeClass::FindOrCreate()
   }
   return *((_DWORD *)dword_A83C84 + v2); /*0x46c7ff*/
 }
+} // namespace gamemd
 // 0x473980
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_473980()
 {
   int v2; // edi
@@ -51,7 +66,9 @@ int ObjectTypeClass::loadTypeMember_473980()
   }
   return v2; /*0x4739bd*/
 }
+} // namespace gamemd
 // 0x474940
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2, int a4)
 {
   int v4; // edi
@@ -71,7 +88,9 @@ int ObjectTypeClass::loadTypeMember_5474940(CCINIClass * aP1, unsigned char * a2
   }
   return dword_81B9B4[2 * v4]; /*0x47498b*/
 }
+} // namespace gamemd
 // 0x474F50
+namespace gamemd {
 int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
 {
   char *v4; // eax
@@ -87,10 +106,12 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
   {
     v4 = (char *)(*((_DWORD *)g_SuperWeaponPool + a4) + 36); /*0x474f65*/
   }
-  INIClass::GetString(this, a2, a3, v4, Destination, 32); /*0x474f85*/
+  INIClass::GetString(a2, a3, v4, Destination, 32); /*0x474f85*/
   return ObjectTypeClass_Read(Destination); /*0x474f93*/
 }
+} // namespace gamemd
 // 0x5F7090
+namespace gamemd {
 int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
 {
   _DWORD *v3; // eax
@@ -101,22 +122,22 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   char Destination[24]; // [esp+8h] [ebp-1Ch] BYREF
   char v10; // [esp+20h] [ebp-4h]
 
-  AbstractTypeClass::Constructor(this, aP1); /*0x5f709c*/
-  v3 = (_DWORD *)(this + 200); /*0x5f70a3*/
-  *(_BYTE *)(this + 152) = 0; /*0x5f70a9*/
-  *(_BYTE *)(this + 153) = 0; /*0x5f70af*/
-  *(_BYTE *)(this + 154) = 0; /*0x5f70b5*/
-  *(_DWORD *)(this + 156) = 0; /*0x5f70bb*/
-  *(_DWORD *)(this + 160) = 0; /*0x5f70c1*/
-  *(_DWORD *)(this + 164) = 0; /*0x5f70c7*/
-  *(_BYTE *)(this + 168) = 0; /*0x5f70cd*/
-  *(_DWORD *)(this + 172) = 0; /*0x5f70d3*/
-  *(_DWORD *)(this + 176) = 0; /*0x5f70d9*/
-  *(_DWORD *)(this + 180) = 0; /*0x5f70df*/
-  *(_DWORD *)(this + 184) = 0; /*0x5f70e5*/
-  *(_DWORD *)(this + 188) = 0; /*0x5f70eb*/
-  *(_DWORD *)(this + 192) = 0; /*0x5f70f1*/
-  *(_DWORD *)(this + 196) = 0; /*0x5f70f7*/
+  AbstractTypeClass::Constructor(aP1); /*0x5f709c*/
+  v3 = (_DWORD *)(&this->u32_500); /*0x5f70a3*/
+  this->q098 = 0; /*0x5f70a9*/
+  this->q264 = 0; /*0x5f70af*/
+  this->q268 = 0; /*0x5f70b5*/
+  this->Armor = 0; /*0x5f70bb*/
+  this->q0A0 = 0; /*0x5f70c1*/
+  this->q0A4 = 0; /*0x5f70c7*/
+  this->ImageAllocated = 0; /*0x5f70cd*/
+  this->AlphaImage = 0; /*0x5f70d3*/
+  this->MainVoxel = 0; /*0x5f70d9*/
+  this->q0B4 = 0; /*0x5f70df*/
+  this->q0B8 = 0; /*0x5f70e5*/
+  this->ChargerTurrets = 0; /*0x5f70eb*/
+  this->u32_C0 = 0; /*0x5f70f1*/
+  this->q0C4 = 0; /*0x5f70f7*/
   v4 = 18; /*0x5f70fd*/
   do /*0x5f710b*/
   {
@@ -126,7 +147,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
     --v4; /*0x5f710a*/
   }
   while ( v4 ); /*0x5f710b*/
-  v5 = (_DWORD *)(this + 344); /*0x5f710d*/
+  v5 = (_DWORD *)(&this->u32_884); /*0x5f710d*/
   v6 = 18; /*0x5f7113*/
   do /*0x5f7121*/
   {
@@ -136,59 +157,59 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
     --v6; /*0x5f7120*/
   }
   while ( v6 ); /*0x5f7121*/
-  *(_BYTE *)(this + 488) = 0; /*0x5f712e*/
-  *(_DWORD *)(this + 492) = 0; /*0x5f7134*/
-  *(_DWORD *)(this + 496) = -1; /*0x5f713a*/
-  *(_DWORD *)(this + 500) = -1; /*0x5f7140*/
-  *(_BYTE *)(this + 504) = 0; /*0x5f7146*/
-  *(_BYTE *)(this + 529) = 0; /*0x5f7148*/
-  *(_BYTE *)(this + 530) = 0; /*0x5f714e*/
-  *(_BYTE *)(this + 531) = 0; /*0x5f7156*/
-  *(_BYTE *)(this + 558) = 1; /*0x5f715c*/
-  *(_BYTE *)(this + 560) = 1; /*0x5f7162*/
-  *(_BYTE *)(this + 561) = 1; /*0x5f7168*/
-  *(_BYTE *)(this + 565) = 1; /*0x5f716e*/
-  *(_BYTE *)(this + 556) = 0; /*0x5f7176*/
-  *(_BYTE *)(this + 557) = 0; /*0x5f717c*/
-  *(_BYTE *)(this + 559) = 0; /*0x5f7182*/
-  *(_BYTE *)(this + 562) = 0; /*0x5f7188*/
-  *(_BYTE *)(this + 563) = 0; /*0x5f718e*/
-  *(_BYTE *)(this + 564) = 0; /*0x5f7194*/
-  *(_BYTE *)(this + 566) = 0; /*0x5f719a*/
-  *(_BYTE *)(this + 567) = 0; /*0x5f71a0*/
-  *(_BYTE *)(this + 568) = 0; /*0x5f71a6*/
-  *(_BYTE *)(this + 569) = 0; /*0x5f71ac*/
-  *(_BYTE *)(this + 570) = 0; /*0x5f71b2*/
-  *(_BYTE *)(this + 571) = 0x80; /*0x5f71b8*/
-  *(_BYTE *)(this + 572) = 0x80; /*0x5f71be*/
-  *(_BYTE *)(this + 573) = 0x80; /*0x5f71c4*/
-  *(_DWORD *)(this + 576) = 16; /*0x5f71ca*/
-  *(_DWORD *)(this + 580) = 0; /*0x5f71d4*/
-  *(_DWORD *)(this + 584) = 0; /*0x5f71da*/
-  *(_DWORD *)(this + 588) = 0; /*0x5f71e0*/
-  *(_BYTE *)(this + 592) = 0; /*0x5f71e6*/
-  *(_DWORD *)(this + 596) = 0; /*0x5f71ec*/
-  *(_DWORD *)(this + 600) = 0; /*0x5f71f2*/
-  *(_DWORD *)(this + 604) = 0; /*0x5f71f8*/
-  *(_DWORD *)(this + 608) = 0; /*0x5f71fe*/
-  *(_BYTE *)(this + 612) = 0; /*0x5f7204*/
-  *(_DWORD *)(this + 616) = 0; /*0x5f720a*/
-  *(_DWORD *)(this + 620) = 0; /*0x5f7213*/
-  *(_DWORD *)(this + 624) = 0; /*0x5f7219*/
-  *(_DWORD *)(this + 628) = 0; /*0x5f721f*/
-  *(_BYTE *)(this + 632) = 0; /*0x5f7225*/
-  *(_DWORD *)(this + 636) = 0; /*0x5f722b*/
-  *(_DWORD *)(this + 640) = 0; /*0x5f7231*/
-  *(_DWORD *)(this + 644) = 0; /*0x5f7237*/
-  *(_DWORD *)(this + 648) = 0; /*0x5f723d*/
-  *(_BYTE *)(this + 652) = 0; /*0x5f7243*/
-  *(_DWORD *)(this + 656) = 0; /*0x5f7249*/
-  *(_DWORD *)this = &ObjectTypeClass::`vftable'; /*0x5f7251*/
-  *(_DWORD *)(this + 4) = &ObjectTypeClass::`vftable'; /*0x5f7258*/
-  *(_DWORD *)(this + 8) = &ObjectTypeClass::`vftable'; /*0x5f725f*/
-  *(_DWORD *)(this + 12) = &ObjectTypeClass::`vftable'; /*0x5f7266*/
-  if ( this + 36 != this + 504 ) /*0x5f726d*/
-    qmemcpy((void *)(this + 504), (const void *)(this + 36), 0x19u); /*0x5f7274*/
+  this->q1E8 = 0; /*0x5f712e*/
+  this->MaxDimension = 0; /*0x5f7134*/
+  this->CrushSound = -1; /*0x5f713a*/
+  this->AmbientSound = -1; /*0x5f7140*/
+  this->ImageFile_0x19 = 0; /*0x5f7146*/
+  this->q211 = 0; /*0x5f7148*/
+  this->q212 = 0; /*0x5f714e*/
+  this->AlphaImageFile = 0; /*0x5f7156*/
+  this->q22E = 1; /*0x5f715c*/
+  this->q230 = 1; /*0x5f7162*/
+  this->q231 = 1; /*0x5f7168*/
+  this->q235 = 1; /*0x5f716e*/
+  this->q22C = 0; /*0x5f7176*/
+  this->q22D = 0; /*0x5f717c*/
+  this->q22F = 0; /*0x5f7182*/
+  this->q232 = 0; /*0x5f7188*/
+  this->q233 = 0; /*0x5f718e*/
+  this->q234 = 0; /*0x5f7194*/
+  this->q236 = 0; /*0x5f719a*/
+  this->q237 = 0; /*0x5f71a0*/
+  this->q238 = 0; /*0x5f71a6*/
+  this->q239 = 0; /*0x5f71ac*/
+  this->q23A = 0; /*0x5f71b2*/
+  this->q23B = 0x80; /*0x5f71b8*/
+  this->u8_23C = 0x80; /*0x5f71be*/
+  this->q23D = 0x80; /*0x5f71c4*/
+  this->LineTrailColorDecrement = 16; /*0x5f71ca*/
+  this->VoxelCaches_4 = 0; /*0x5f71d4*/
+  this->q248 = 0; /*0x5f71da*/
+  this->q24C = 0; /*0x5f71e0*/
+  this->q940 = 0; /*0x5f71e6*/
+  this->q254 = 0; /*0x5f71ec*/
+  this->q258 = 0; /*0x5f71f2*/
+  this->q25C = 0; /*0x5f71f8*/
+  this->q260 = 0; /*0x5f71fe*/
+  this->q264 = 0; /*0x5f7204*/
+  this->q268 = 0; /*0x5f720a*/
+  this->q26C = 0; /*0x5f7213*/
+  this->q270 = 0; /*0x5f7219*/
+  this->q274 = 0; /*0x5f721f*/
+  this->q278 = 0; /*0x5f7225*/
+  this->q27C = 0; /*0x5f722b*/
+  this->q280 = 0; /*0x5f7231*/
+  this->q284 = 0; /*0x5f7237*/
+  this->q288 = 0; /*0x5f723d*/
+  this->q28C = 0; /*0x5f7243*/
+  this->q290 = 0; /*0x5f7249*/
+  *(_DWORD *)this = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7251*/
+  this->vtable2 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7258*/
+  this->vtable3 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f725f*/
+  this->vtable4 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7266*/
+  if ( &this->u32_90 != &this->u32_C84 ) /*0x5f726d*/
+    qmemcpy((void *)(&this->u32_C84), (const void *)(&this->vtable46), 0x19u); /*0x5f7274*/
   if ( &g_INI_DefaultBuffer ) /*0x5f727e*/
   {
     strncpy(Destination, &g_INI_DefaultBuffer, 0x18u); /*0x5f7292*/
@@ -198,10 +219,10 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   {
     Destination[0] = 0; /*0x5f7280*/
   }
-  if ( Destination != (char *)(this + 531) ) /*0x5f72aa*/
+  if ( Destination != (char *)(&this->u32_D41) ) /*0x5f72aa*/
   {
-    qmemcpy((void *)(this + 531), Destination, 0x18u); /*0x5f72b5*/
-    *(_BYTE *)(this + 555) = v10; /*0x5f72b7*/
+    qmemcpy((void *)(&this->u32_D41), Destination, 0x18u); /*0x5f72b5*/
+    this->u8_22B = v10; /*0x5f72b7*/
   }
   if ( dword_AC1428 < dword_AC1420 /*0x5f72ee*/
     || (byte_AC1425 || !dword_AC1420)
@@ -216,7 +237,9 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   }
   return this; /*0x5f730f*/
 }
+} // namespace gamemd
 // 0x5F7320
+namespace gamemd {
 unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
 {
   _DWORD *v3; // eax
@@ -225,8 +248,8 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
   int v6; // edx
 
   AbstractTypeClass::Init(aP1); /*0x5f7328*/
-  v3 = this + 50; /*0x5f732f*/
-  *(this + 41) = 0; /*0x5f7335*/
+  v3 = &this->u32_C8; /*0x5f732f*/
+  *(&this->uniqueId1) = 0; /*0x5f7335*/
   v4 = 18; /*0x5f733b*/
   do /*0x5f7349*/
   {
@@ -236,7 +259,7 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
     --v4; /*0x5f7348*/
   }
   while ( v4 ); /*0x5f7349*/
-  v5 = this + 86; /*0x5f734b*/
+  v5 = &this->u32_158; /*0x5f734b*/
   v6 = 18; /*0x5f7351*/
   do /*0x5f735f*/
   {
@@ -246,33 +269,35 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
     --v6; /*0x5f735e*/
   }
   while ( v6 ); /*0x5f735f*/
-  *(this + 145) = 0; /*0x5f7361*/
-  *(this + 146) = 0; /*0x5f7367*/
-  *(this + 147) = 0; /*0x5f736d*/
-  *((_BYTE *)this + 592) = 0; /*0x5f7373*/
-  *(this + 149) = 0; /*0x5f7379*/
-  *(this + 150) = 0; /*0x5f737f*/
-  *(this + 151) = 0; /*0x5f7385*/
-  *(this + 152) = 0; /*0x5f738b*/
-  *((_BYTE *)this + 612) = 0; /*0x5f7391*/
-  *(this + 154) = 0; /*0x5f7397*/
-  *(this + 155) = 0; /*0x5f739d*/
-  *(this + 156) = 0; /*0x5f73a3*/
-  *(this + 157) = 0; /*0x5f73a9*/
-  *((_BYTE *)this + 632) = 0; /*0x5f73af*/
-  *(this + 159) = 0; /*0x5f73b5*/
-  *(this + 160) = 0; /*0x5f73bb*/
-  *(this + 161) = 0; /*0x5f73c1*/
-  *(this + 162) = 0; /*0x5f73c7*/
-  *((_BYTE *)this + 652) = 0; /*0x5f73cd*/
-  *(this + 164) = 0; /*0x5f73d3*/
-  *this = &ObjectTypeClass::`vftable'; /*0x5f73d9*/
-  *(this + 1) = &ObjectTypeClass::`vftable'; /*0x5f73df*/
-  *(this + 2) = &ObjectTypeClass::`vftable'; /*0x5f73e6*/
-  *(this + 3) = &ObjectTypeClass::`vftable'; /*0x5f73ed*/
+  *(&this->u32_385) = 0; /*0x5f7361*/
+  *(&this->u32_386) = 0; /*0x5f7367*/
+  *(&this->u32_387) = 0; /*0x5f736d*/
+  this->q940 = 0; /*0x5f7373*/
+  *(&this->u32_389) = 0; /*0x5f7379*/
+  *(&this->zero_3C0) = 0; /*0x5f737f*/
+  *(&this->zero_3C1) = 0; /*0x5f7385*/
+  *(&this->zero_3C2) = 0; /*0x5f738b*/
+  this->q264 = 0; /*0x5f7391*/
+  *(&this->zero_3C4) = 0; /*0x5f7397*/
+  *(&this->zero_3C5) = 0; /*0x5f739d*/
+  *(&this->zero_3C6) = 0; /*0x5f73a3*/
+  *(&this->zero_3C7) = 0; /*0x5f73a9*/
+  this->q278 = 0; /*0x5f73af*/
+  *(&this->zero_3C9) = 0; /*0x5f73b5*/
+  *(&this->q0400) = 0; /*0x5f73bb*/
+  *(&this->q0401) = 0; /*0x5f73c1*/
+  *(&this->q0402) = 0; /*0x5f73c7*/
+  this->q28C = 0; /*0x5f73cd*/
+  *(&this->q0404) = 0; /*0x5f73d3*/
+  *this = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f73d9*/
+  this->vtable2 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f73df*/
+  this->vtable3 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f73e6*/
+  this->vtable4 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f73ed*/
   return this; /*0x5f73f6*/
 }
+} // namespace gamemd
 // 0x5F7400
+namespace gamemd {
 SomeVoxelCache * * ObjectTypeClass::Destruct()
 {
   int v2; // eax
@@ -280,14 +305,12 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   int v4; // ebx
   int *v5; // edi
   int v6; // ebx
-  int v8; // [esp+Ch] [ebp-4h] BYREF
 
-  *(_DWORD *)this = &ObjectTypeClass::`vftable'; /*0x5f740b*/
-  *(_DWORD *)(this + 4) = &ObjectTypeClass::`vftable'; /*0x5f7411*/
-  *(_DWORD *)(this + 8) = &ObjectTypeClass::`vftable'; /*0x5f7418*/
-  *(_DWORD *)(this + 12) = &ObjectTypeClass::`vftable'; /*0x5f741f*/
-  v8 = this; /*0x5f7431*/
-  v2 = (*(int (__thiscall **)(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &v8); /*0x5f7435*/
+  *(_DWORD *)this = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f740b*/
+  this->vtable2 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7411*/
+  this->vtable3 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f7418*/
+  this->vtable4 = &(void*)(void*)&ObjectTypeClass_vftable; /*0x5f741f*/
+  v2 = (*(int (__thiscall **)(int *, int *))(dword_AC1418 + 16))(&dword_AC1418, &this); /*0x5f7435*/
   if ( v2 != -1 && v2 < dword_AC1428 && v2 < --dword_AC1428 ) /*0x5f7450*/
   {
     do /*0x5f7468*/
@@ -297,38 +320,38 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
     }
     while ( v2 < dword_AC1428 ); /*0x5f7468*/
   }
-  if ( *(_BYTE *)(this + 168) && *(_DWORD *)(this + 164) ) /*0x5f7476*/
+  if ( this->ImageAllocated && this->q0A4 ) /*0x5f7476*/
   {
-    __3_YAXPAX_Z(*(void **)(this + 164)); /*0x5f7481*/
-    *(_DWORD *)(this + 164) = 0; /*0x5f7489*/
-    *(_BYTE *)(this + 168) = 0; /*0x5f748f*/
+    RA2_OPDEL(*(void **)(&this->q0404)); /*0x5f7481*/
+    this->q0A4 = 0; /*0x5f7489*/
+    this->ImageAllocated = 0; /*0x5f748f*/
   }
-  ObjectTypeClass::CleanupWeapons((char *)this); /*0x5f7497*/
-  __3_YAXPAX_Z(*(void **)(this + 640)); /*0x5f74a3*/
-  *(_DWORD *)(this + 640) = 0; /*0x5f74a8*/
-  *(_DWORD *)(this + 644) = 0; /*0x5f74ae*/
-  *(_DWORD *)(this + 648) = 0; /*0x5f74b4*/
-  *(_BYTE *)(this + 652) = 0; /*0x5f74ba*/
-  *(_DWORD *)(this + 656) = 0; /*0x5f74c0*/
-  __3_YAXPAX_Z(*(void **)(this + 620)); /*0x5f74cd*/
-  *(_DWORD *)(this + 620) = 0; /*0x5f74d2*/
-  *(_DWORD *)(this + 624) = 0; /*0x5f74d8*/
-  *(_DWORD *)(this + 628) = 0; /*0x5f74de*/
-  *(_BYTE *)(this + 632) = 0; /*0x5f74e4*/
-  *(_DWORD *)(this + 636) = 0; /*0x5f74ea*/
-  __3_YAXPAX_Z(*(void **)(this + 600)); /*0x5f74f7*/
-  *(_DWORD *)(this + 600) = 0; /*0x5f74fc*/
-  *(_DWORD *)(this + 604) = 0; /*0x5f7502*/
-  *(_DWORD *)(this + 608) = 0; /*0x5f7508*/
-  *(_BYTE *)(this + 612) = 0; /*0x5f750e*/
-  *(_DWORD *)(this + 616) = 0; /*0x5f7514*/
-  __3_YAXPAX_Z(*(void **)(this + 580)); /*0x5f7521*/
-  *(_DWORD *)(this + 580) = 0; /*0x5f7526*/
-  *(_DWORD *)(this + 584) = 0; /*0x5f752c*/
-  *(_DWORD *)(this + 588) = 0; /*0x5f7532*/
-  *(_BYTE *)(this + 592) = 0; /*0x5f7538*/
-  *(_DWORD *)(this + 596) = 0; /*0x5f753e*/
-  v3 = (int *)(this + 488); /*0x5f7547*/
+  ObjectTypeClass::CleanupWeapons(); /*0x5f7497*/
+  RA2_OPDEL(*(void **)(&this->q1000)); /*0x5f74a3*/
+  this->q280 = 0; /*0x5f74a8*/
+  this->q284 = 0; /*0x5f74ae*/
+  this->q288 = 0; /*0x5f74b4*/
+  this->q28C = 0; /*0x5f74ba*/
+  this->q290 = 0; /*0x5f74c0*/
+  RA2_OPDEL(*(void **)(&this->q0F80)); /*0x5f74cd*/
+  this->q26C = 0; /*0x5f74d2*/
+  this->q270 = 0; /*0x5f74d8*/
+  this->q274 = 0; /*0x5f74de*/
+  this->q278 = 0; /*0x5f74e4*/
+  this->q27C = 0; /*0x5f74ea*/
+  RA2_OPDEL(*(void **)(&this->q0F00)); /*0x5f74f7*/
+  this->q258 = 0; /*0x5f74fc*/
+  this->q25C = 0; /*0x5f7502*/
+  this->q260 = 0; /*0x5f7508*/
+  this->q264 = 0; /*0x5f750e*/
+  this->q268 = 0; /*0x5f7514*/
+  RA2_OPDEL(*(void **)(&this->q0E80)); /*0x5f7521*/
+  this->VoxelCaches_4 = 0; /*0x5f7526*/
+  this->q248 = 0; /*0x5f752c*/
+  this->q24C = 0; /*0x5f7532*/
+  this->q940 = 0; /*0x5f7538*/
+  this->q254 = 0; /*0x5f753e*/
+  v3 = (int *)(&this->u32_C08); /*0x5f7547*/
   v4 = 18; /*0x5f754d*/
   do /*0x5f755d*/
   {
@@ -337,7 +360,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
     --v4; /*0x5f755c*/
   }
   while ( v4 ); /*0x5f755d*/
-  v5 = (int *)(this + 344); /*0x5f755f*/
+  v5 = (int *)(&this->u32_884); /*0x5f755f*/
   v6 = 18; /*0x5f7565*/
   do /*0x5f7575*/
   {
@@ -346,12 +369,14 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
     --v6; /*0x5f7574*/
   }
   while ( v6 ); /*0x5f7575*/
-  ObjectTypeClass::ReleaseWaveAndString((int *)(this + 192)); /*0x5f757d*/
-  ObjectTypeClass::ReleaseWaveAndString((int *)(this + 184)); /*0x5f7588*/
-  ObjectTypeClass::ReleaseWaveAndString((int *)(this + 176)); /*0x5f7593*/
-  return AbstractTypeClass::Dtor((_DWORD *)this); /*0x5f759f*/
+  ObjectTypeClass::ReleaseWaveAndString((int *)(&this->u32_4C2)); /*0x5f757d*/
+  ObjectTypeClass::ReleaseWaveAndString((int *)(&this->u32_484)); /*0x5f7588*/
+  ObjectTypeClass::ReleaseWaveAndString((int *)(&this->u32_446)); /*0x5f7593*/
+  return AbstractTypeClass::Dtor(); /*0x5f759f*/
 }
+} // namespace gamemd
 // 0x5F77F0
+namespace gamemd {
 void ObjectTypeClass::UnloadPipsSHP()
 {
   int v0; // eax
@@ -399,7 +424,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v5 ); /*0x5f7826*/
       }
-      __3_YAXPAX_Z(v1); /*0x5f7829*/
+      RA2_OPDEL(v1); /*0x5f7829*/
     }
     byte_AC1488 = 0; /*0x5f7831*/
   }
@@ -423,7 +448,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v11 ); /*0x5f7866*/
       }
-      __3_YAXPAX_Z(v7); /*0x5f7869*/
+      RA2_OPDEL(v7); /*0x5f7869*/
     }
     byte_AC1489 = 0; /*0x5f7871*/
   }
@@ -447,7 +472,7 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v17 ); /*0x5f78a6*/
       }
-      __3_YAXPAX_Z(v13); /*0x5f78a9*/
+      RA2_OPDEL(v13); /*0x5f78a9*/
     }
     byte_AC148A = 0; /*0x5f78b1*/
   }
@@ -471,12 +496,14 @@ void ObjectTypeClass::UnloadPipsSHP()
         }
         while ( v23 ); /*0x5f78e6*/
       }
-      __3_YAXPAX_Z(v19); /*0x5f78e9*/
+      RA2_OPDEL(v19); /*0x5f78e9*/
     }
     byte_AC148B = 0; /*0x5f78f1*/
   }
 }
+} // namespace gamemd
 // 0x5F9070
+namespace gamemd {
 AbstractClass * * ObjectTypeClass::Load2DArt()
 {
   char *v2; // edi
@@ -495,12 +522,12 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
   char v15; // [esp+25h] [ebp-203h]
   char Buffer[256]; // [esp+128h] [ebp-100h] BYREF
 
-  if ( *(this + 529) && *((_DWORD *)g_ScenarioClass_Instance + 1174) == 1 && !*(this + 168) ) /*0x5f9096*/
+  if ( *(&this->q0D09) && *((_DWORD *)g_ScenarioClass_Instance + 1174) == 1 && !*(&this->q0408) ) /*0x5f9096*/
   {
-    if ( !*(this + 530) ) /*0x5f90a0*/
+    if ( !*(&this->u32_D40) ) /*0x5f90a0*/
     {
-      v2 = this + 504; /*0x5f90ab*/
-      sprintf(Buffer, off_832AE8, this + 504); /*0x5f90bf*/
+      v2 = &this->u32_7E0; /*0x5f90ab*/
+      sprintf(Buffer, off_832AE8, &this->u32_C84); /*0x5f90bf*/
       if ( Buffer ) /*0x5f90d0*/
       {
         strncpy(Destination, Buffer, 0x18u); /*0x5f90e7*/
@@ -513,21 +540,21 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
       if ( Destination != v2 ) /*0x5f90fa*/
       {
         qmemcpy(v2, Destination, 0x18u); /*0x5f9105*/
-        *(this + 528) = v13; /*0x5f9107*/
+        *(&this->q0D08) = v13; /*0x5f9107*/
       }
-      *(this + 530) = 1; /*0x5f9108*/
+      *(&this->u32_D40) = 1; /*0x5f9108*/
     }
   }
   else
   {
-    *(this + 530) = 0; /*0x5f9112*/
+    *(&this->u32_D40) = 0; /*0x5f9112*/
   }
-  _makepath(&Source, 0, 0, this + 504, Ext); /*0x5f912e*/
-  if ( *(this + 556) ) /*0x5f9133*/
+  _makepath(&Source, 0, 0, &this->u32_7E0, Ext); /*0x5f912e*/
+  if ( *(&this->u32_DC6) ) /*0x5f9133*/
   {
-    _makepath(&Source, 0, 0, this + 504, (const char *)&off_7E1BC6 + 112 * *((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x5f9169*/
+    _makepath(&Source, 0, 0, &this->u32_7E0, (const char *)&off_7E1BC6 + 112 * *((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x5f9169*/
   }
-  else if ( *(this + 567) ) /*0x5f9173*/
+  else if ( *(&this->q0E07) ) /*0x5f9173*/
   {
     v3 = *((_DWORD *)g_ScenarioClass_Instance + 1174); /*0x5f9183*/
     if ( v3 != -1 ) /*0x5f918c*/
@@ -542,52 +569,54 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
         v15 = byte_7E1BCE[112 * v3]; /*0x5f91dd*/
     }
   }
-  if ( *(this + 168) && *((_DWORD *)this + 41) ) /*0x5f91eb*/
-    __3_YAXPAX_Z(*((void **)this + 41)); /*0x5f91f6*/
+  if ( *(&this->q0408) && this->q0A4 ) /*0x5f91eb*/
+    RA2_OPDEL(*((void **)&this->uniqueId1)); /*0x5f91f6*/
   v6 = *(_DWORD *)this; /*0x5f91fe*/
-  *((_DWORD *)this + 41) = 0; /*0x5f9203*/
-  *(this + 168) = 0; /*0x5f920d*/
+  this->q0A4 = 0; /*0x5f9203*/
+  *(&this->q0408) = 0; /*0x5f920d*/
   if ( (*(int (__thiscall **)(char *))(v6 + 44))(this) == 21 /*0x5f9227*/
-    || (*(int (__thiscall **)(char *))(*(_DWORD *)this + 44))(this) == 5 )
+    || (*(int (__thiscall **)(char *))(*(_DWORD *)&this->uniqueId4))(this) == 5 )
   {
     v9 = SearchMIXFile(&Source, 1); /*0x5f9267*/
-    *((_DWORD *)this + 41) = v9; /*0x5f926e*/
+    this->q0A4 = v9; /*0x5f926e*/
     if ( v9 ) /*0x5f9274*/
       goto LABEL_41; /*0x5f9274*/
     v15 = 71; /*0x5f9276*/
     v8 = 1; /*0x5f927b*/
     goto LABEL_40; /*0x5f927b*/
   }
-  if ( (*(int (__thiscall **)(char *))(*(_DWORD *)this + 44))(this) != 30 /*0x5f9241*/
-    && (*(int (__thiscall **)(char *))(*(_DWORD *)this + 44))(this) != 37 )
+  if ( (*(int (__thiscall **)(char *))(*(_DWORD *)&this->uniqueId4))(this) != 30 /*0x5f9241*/
+    && (*(int (__thiscall **)(char *))(*(_DWORD *)&this->uniqueId4))(this) != 37 )
   {
     v7 = SearchMIXFile(&Source, 0); /*0x5f9249*/
-    *((_DWORD *)this + 41) = v7; /*0x5f9250*/
+    this->q0A4 = v7; /*0x5f9250*/
     if ( !v7 ) /*0x5f9256*/
     {
       v15 = 71; /*0x5f9258*/
       v8 = 0; /*0x5f925d*/
   LABEL_40:
-      *((_DWORD *)this + 41) = SearchMIXFile(&Source, v8); /*0x5f927d*/
+      this->q0A4 = SearchMIXFile(&Source, v8); /*0x5f927d*/
     }
   }
   LABEL_41:
-  result = *((_DWORD *)this + 41); /*0x5f928c*/
+  result = this->q0A4; /*0x5f928c*/
   if ( result ) /*0x5f9294*/
   {
-    v11 = *(_WORD *)(result + 2); /*0x5f9296*/
-    LOWORD(result) = *(_WORD *)(result + 4); /*0x5f929a*/
+    v11 = result->vtable3; /*0x5f9296*/
+    IDA_LOWORD(result) = result->vtable2; /*0x5f929a*/
     if ( v11 <= (__int16)result ) /*0x5f92a1*/
       result = (__int16)result; /*0x5f92a8*/
     else
       result = v11; /*0x5f92a3*/
     if ( result <= 8 ) /*0x5f92ae*/
       result = 8; /*0x5f92b0*/
-    *((_DWORD *)this + 123) = result; /*0x5f92b5*/
+    this->MaxDimension = result; /*0x5f92b5*/
   }
   return result; /*0x5f92bb*/
 }
+} // namespace gamemd
 // 0x5F92D0
+namespace gamemd {
 void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
 {
   int v3; // edi
@@ -628,14 +657,14 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   INIClass::ResetSection(aP1); /*0x5f92e3*/
   if ( !(unsigned __int8)AbstractTypeClass::LoadFromINI(aP1) ) /*0x5f92eb*/
     return 0; /*0x5f969e*/
-  strcpy(Source, this + 504); /*0x5f931c*/
-  INIClass::GetString(aP1, (unsigned __int8 *)this + 36, (unsigned __int8 *)g_INI_Key_Image, Source, this + 504, 25); /*0x5f933b*/
-  v34 = strcpy(Source, this + 531); /*0x5f9366*/
-  INIClass::GetString(aP1, (unsigned __int8 *)this + 36, (unsigned __int8 *)aAlphaimage, Source, this + 531, 25); /*0x5f9386*/
-  v3 = *((_DWORD *)this + 124); /*0x5f938b*/
+  strcpy(Source, &this->u32_C84); /*0x5f931c*/
+  INIClass::GetString(aP1, (unsigned __int8 *)&this->u32_90, (unsigned __int8 *)g_INI_Key_Image, Source, &this->u32_7E0, 25); /*0x5f933b*/
+  v34 = strcpy(Source, &this->u32_D41); /*0x5f9366*/
+  INIClass::GetString(aP1, (unsigned __int8 *)&this->u32_90, (unsigned __int8 *)aAlphaimage, Source, &this->u32_84C, 25); /*0x5f9386*/
+  v3 = this->CrushSound; /*0x5f938b*/
   if ( INIClass::GetString( /*0x5f93a8*/
          aP1,
-         (unsigned __int8 *)this + 36,
+         (unsigned __int8 *)&this->u32_90,
          (unsigned __int8 *)aCrushsound,
          &g_INI_DefaultBuffer,
          Destination,
@@ -645,11 +674,11 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
     if ( Index != -1 ) /*0x5f93bd*/
       v3 = Index; /*0x5f93bf*/
   }
-  *((_DWORD *)this + 124) = v3; /*0x5f93d5*/
-  v5 = *((_DWORD *)this + 125); /*0x5f93db*/
+  this->CrushSound = v3; /*0x5f93d5*/
+  v5 = this->AmbientSound; /*0x5f93db*/
   if ( !INIClass::GetString( /*0x5f93f9*/
           aP1,
-          (unsigned __int8 *)this + 36,
+          (unsigned __int8 *)&this->u32_90,
           (unsigned __int8 *)aAmbientsound,
           &g_INI_DefaultBuffer,
           Destination,
@@ -658,80 +687,84 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   {
     v6 = v5; /*0x5f93fb*/
   }
-  v7 = *(this + 557); /*0x5f93fd*/
-  *((_DWORD *)this + 125) = v6; /*0x5f9403*/
-  Bool_Overwrite = INIClass::ReadBool_Overwrite(this + 36, aCrushable, v7); /*0x5f9412*/
-  v27 = *(this + 558); /*0x5f941f*/
-  *(this + 557) = Bool_Overwrite; /*0x5f9426*/
-  *(this + 558) = INIClass::ReadBool_Overwrite(this + 36, aBombable, v27); /*0x5f9431*/
-  v9 = INIClass::ReadBool_Overwrite(this + 36, aNospawnalt, *(this + 488)); /*0x5f9446*/
-  v10 = *(this + 529); /*0x5f944b*/
-  *(this + 488) = v9; /*0x5f9451*/
-  v11 = INIClass::ReadBool_Overwrite(this + 36, aAlternatearcti, v10); /*0x5f9460*/
-  v28 = *(this + 559); /*0x5f946d*/
-  *(this + 529) = v11; /*0x5f9474*/
-  *(this + 559) = INIClass::ReadBool_Overwrite(this + 36, aRadarinvisible, v28); /*0x5f947f*/
-  v12 = INIClass::ReadBool_Overwrite(this + 36, aSelectable, *(this + 560)); /*0x5f9494*/
-  v13 = *(this + 561); /*0x5f9499*/
-  *(this + 560) = v12; /*0x5f949f*/
-  v14 = INIClass::ReadBool_Overwrite(this + 36, aLegaltarget, v13); /*0x5f94ae*/
-  v29 = *((_DWORD *)this + 39); /*0x5f94bb*/
-  *(this + 561) = v14; /*0x5f94c2*/
-  *((_DWORD *)this + 39) = ArmorType::FindIndex(this + 36, g_INI_Key_Armor, v29); /*0x5f94cd*/
-  Int_Overwrite = INIClass::ReadInt_Overwrite(this + 36, aStrength, *((_DWORD *)this + 40)); /*0x5f94e2*/
-  v16 = *(this + 563); /*0x5f94e7*/
-  *((_DWORD *)this + 40) = Int_Overwrite; /*0x5f94ed*/
-  v17 = INIClass::ReadBool_Overwrite(this + 36, aImmune, v16); /*0x5f94fc*/
-  v30 = *(this + 562); /*0x5f9509*/
-  *(this + 563) = v17; /*0x5f9510*/
-  *(this + 562) = INIClass::ReadBool_Overwrite(this + 36, aInsignificant, v30); /*0x5f951b*/
-  *(this + 568) = INIClass::ReadBool_Overwrite(this + 36, aHasradialindic, *(this + 568)); /*0x5f9549*/
+  v7 = *(&this->u32_DC7); /*0x5f93fd*/
+  this->AmbientSound = v6; /*0x5f9403*/
+  Bool_Overwrite = INIClass::ReadBool_Overwrite(&this->u32_90, aCrushable, v7); /*0x5f9412*/
+  v27 = *(&this->u32_DC8); /*0x5f941f*/
+  *(&this->u32_DC7) = Bool_Overwrite; /*0x5f9426*/
+  *(&this->u32_DC8) = INIClass::ReadBool_Overwrite(&this->u32_90, aBombable, v27); /*0x5f9431*/
+  v9 = INIClass::ReadBool_Overwrite(&this->u32_90, aNospawnalt, *(&this->u32_C08)); /*0x5f9446*/
+  v10 = *(&this->q0D09); /*0x5f944b*/
+  *(&this->u32_C08) = v9; /*0x5f9451*/
+  v11 = INIClass::ReadBool_Overwrite(&this->u32_90, aAlternatearcti, v10); /*0x5f9460*/
+  v28 = *(&this->u32_DC9); /*0x5f946d*/
+  *(&this->q0D09) = v11; /*0x5f9474*/
+  *(&this->u32_DC9) = INIClass::ReadBool_Overwrite(&this->u32_90, aRadarinvisible, v28); /*0x5f947f*/
+  v12 = INIClass::ReadBool_Overwrite(&this->u32_90, aSelectable, *(&this->q0E00)); /*0x5f9494*/
+  v13 = *(&this->q0E01); /*0x5f9499*/
+  *(&this->q0E00) = v12; /*0x5f949f*/
+  v14 = INIClass::ReadBool_Overwrite(&this->u32_90, aLegaltarget, v13); /*0x5f94ae*/
+  v29 = this->Armor; /*0x5f94bb*/
+  *(&this->q0E01) = v14; /*0x5f94c2*/
+  this->Armor = ArmorType::FindIndex(&this->u32_90, g_INI_Key_Armor, v29); /*0x5f94cd*/
+  Int_Overwrite = INIClass::ReadInt_Overwrite(&this->u32_90, aStrength, this->q0A0); /*0x5f94e2*/
+  v16 = *(&this->q0E03); /*0x5f94e7*/
+  this->q0A0 = Int_Overwrite; /*0x5f94ed*/
+  v17 = INIClass::ReadBool_Overwrite(&this->u32_90, aImmune, v16); /*0x5f94fc*/
+  v30 = *(&this->q0E02); /*0x5f9509*/
+  *(&this->q0E03) = v17; /*0x5f9510*/
+  *(&this->q0E02) = INIClass::ReadBool_Overwrite(&this->u32_90, aInsignificant, v30); /*0x5f951b*/
+  *(&this->q0E08) = INIClass::ReadBool_Overwrite(&this->u32_90, aHasradialindic, *(&this->q0E08)); /*0x5f9549*/
   Coord = INIClass::GetCoord( /*0x5f954f*/
             aP1,
             (int)&v34,
-            (unsigned __int8 *)this + 36,
+            (unsigned __int8 *)&this->u32_90,
             (unsigned __int8 *)aRadialcolor,
-            (unsigned __int8 *)this + 152);
-  v19 = *(this + 569); /*0x5f9557*/
-  *((_WORD *)this + 76) = *(_WORD *)Coord; /*0x5f955d*/
-  *(this + 154) = *(_BYTE *)(Coord + 2); /*0x5f956c*/
-  v20 = INIClass::ReadBool_Overwrite(this + 36, aIgnoresfiresto, v19); /*0x5f956f*/
-  v31 = *(this + 570); /*0x5f9580*/
-  *(this + 569) = v20; /*0x5f958c*/
-  *(this + 570) = INIClass::ReadBool_Overwrite(this + 504, aUselinetrail, v31); /*0x5f959d*/
+            (unsigned __int8 *)&this->zero_3C2);
+  v19 = *(&this->q0E09); /*0x5f9557*/
+  this->q098 = *(_WORD *)Coord; /*0x5f955d*/
+  *(&this->zero_3C4) = *(_BYTE *)(Coord + 2); /*0x5f956c*/
+  v20 = INIClass::ReadBool_Overwrite(&this->u32_90, aIgnoresfiresto, v19); /*0x5f956f*/
+  v31 = *(&this->u32_E40); /*0x5f9580*/
+  *(&this->q0E09) = v20; /*0x5f958c*/
+  *(&this->u32_E40) = INIClass::ReadBool_Overwrite(&this->u32_7E0, aUselinetrail, v31); /*0x5f959d*/
   v21 = INIClass::GetCoord( /*0x5f95b4*/
           (unsigned __int8 ***)&CCINIClass_INI_Art,
           (int)&v34,
-          (unsigned __int8 *)this + 504,
+          (unsigned __int8 *)&this->u32_7E0,
           (unsigned __int8 *)aLinetrailcolor,
-          (unsigned __int8 *)this + 571);
-  *(_WORD *)(this + 571) = *(_WORD *)v21; /*0x5f95bc*/
-  v32 = *((_DWORD *)this + 144); /*0x5f95cd*/
-  *(this + 573) = *(_BYTE *)(v21 + 2); /*0x5f95d4*/
-  v22 = INIClass::ReadInt_Overwrite(this + 504, aLinetrailcolor_0, v32); /*0x5f95d7*/
-  v23 = *(this + 556); /*0x5f95dc*/
-  *((_DWORD *)this + 144) = v22; /*0x5f95e2*/
-  v24 = INIClass::ReadBool_Overwrite(this + 504, g_INI_Key_Theater, v23); /*0x5f95f4*/
-  v33 = *(this + 567); /*0x5f9604*/
-  *(this + 556) = v24; /*0x5f960b*/
-  *(this + 567) = INIClass::ReadBool_Overwrite(this + 504, aNewtheater, v33); /*0x5f9616*/
-  v25 = INIClass::ReadBool_Overwrite(this + 504, aVoxel, *(this + 566)); /*0x5f962e*/
-  *(this + 566) = v25; /*0x5f9634*/
-  if ( !v25 && (*(int (__thiscall **)(char *))(*(_DWORD *)this + 44))(this) != 5 ) /*0x5f9649*/
-    ObjectTypeClass::Load2DArt(this); /*0x5f964d*/
-  if ( *(this + 531) ) /*0x5f9652*/
+          (unsigned __int8 *)&this->u32_E41);
+  this->q23B = *(_WORD *)v21; /*0x5f95bc*/
+  v32 = this->LineTrailColorDecrement; /*0x5f95cd*/
+  *(&this->u32_E43) = *(_BYTE *)(v21 + 2); /*0x5f95d4*/
+  v22 = INIClass::ReadInt_Overwrite(&this->u32_7E0, aLinetrailcolor_0, v32); /*0x5f95d7*/
+  v23 = *(&this->u32_DC6); /*0x5f95dc*/
+  this->LineTrailColorDecrement = v22; /*0x5f95e2*/
+  v24 = INIClass::ReadBool_Overwrite(&this->u32_7E0, g_INI_Key_Theater, v23); /*0x5f95f4*/
+  v33 = *(&this->q0E07); /*0x5f9604*/
+  *(&this->u32_DC6) = v24; /*0x5f960b*/
+  *(&this->q0E07) = INIClass::ReadBool_Overwrite(&this->u32_7E0, aNewtheater, v33); /*0x5f9616*/
+  v25 = INIClass::ReadBool_Overwrite(&this->u32_7E0, aVoxel, *(&this->q0E06)); /*0x5f962e*/
+  *(&this->q0E06) = v25; /*0x5f9634*/
+  if ( !v25 && (*(int (__thiscall **)(char *))(*(_DWORD *)&this->uniqueId4))(this) != 5 ) /*0x5f9649*/
+    ObjectTypeClass::Load2DArt(); /*0x5f964d*/
+  if ( *(&this->u32_D41) ) /*0x5f9652*/
   {
-    _makepath(Buffer, 0, 0, this + 531, Ext); /*0x5f9674*/
-    *((_DWORD *)this + 43) = SearchMIXFile(Buffer, 0); /*0x5f968a*/
+    _makepath(Buffer, 0, 0, &this->u32_84C, Ext); /*0x5f9674*/
+    this->AlphaImage = SearchMIXFile(Buffer, 0); /*0x5f968a*/
   }
   return 1; /*0x5f9690*/
 }
+} // namespace gamemd
 // 0x5F9710
+namespace gamemd {
 void ObjectTypeClass::SetRTTI71()
 {
   *(this + 1) = 71; /*0x5f9710*/
 }
+} // namespace gamemd
 // 0x5F9720
+namespace gamemd {
 int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
 {
   void *v2; // ebp
@@ -745,7 +778,7 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
   int v10; // ecx
   char Buffer[260]; // [esp+10h] [ebp-104h] BYREF
 
-  __3_YAXPAX_Z(*(void **)(aP0 + 580)); /*0x5f973e*/
+  RA2_OPDEL(*(void **)(aP0 + 580)); /*0x5f973e*/
   *(_DWORD *)(aP0 + 580) = 0; /*0x5f974e*/
   *(_DWORD *)(aP0 + 584) = 0; /*0x5f9750*/
   *(_DWORD *)(aP0 + 588) = 0; /*0x5f9753*/
@@ -758,42 +791,42 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
   if ( v2 ) /*0x5f977f*/
   {
     WaveClass::Destroy(*(_DWORD *)(aP0 + 176)); /*0x5f9783*/
-    __3_YAXPAX_Z(v2); /*0x5f9789*/
+    RA2_OPDEL(v2); /*0x5f9789*/
   }
   v3 = *(void ***)(aP0 + 180); /*0x5f9791*/
   *(_DWORD *)(aP0 + 176) = 0; /*0x5f9797*/
   if ( v3 ) /*0x5f979f*/
   {
     String::Release(v3); /*0x5f97a3*/
-    __3_YAXPAX_Z(v3); /*0x5f97a9*/
+    RA2_OPDEL(v3); /*0x5f97a9*/
   }
   v4 = *(void **)(aP0 + 184); /*0x5f97b1*/
   *(_DWORD *)(aP0 + 180) = 0; /*0x5f97b7*/
   if ( v4 ) /*0x5f97bf*/
   {
     WaveClass::Destroy((int)v4); /*0x5f97c3*/
-    __3_YAXPAX_Z(v4); /*0x5f97c9*/
+    RA2_OPDEL(v4); /*0x5f97c9*/
   }
   v5 = *(void ***)(aP0 + 188); /*0x5f97d1*/
   *(_DWORD *)(aP0 + 184) = 0; /*0x5f97d7*/
   if ( v5 ) /*0x5f97df*/
   {
     String::Release(v5); /*0x5f97e3*/
-    __3_YAXPAX_Z(v5); /*0x5f97e9*/
+    RA2_OPDEL(v5); /*0x5f97e9*/
   }
   v6 = *(void **)(aP0 + 192); /*0x5f97f1*/
   *(_DWORD *)(aP0 + 188) = 0; /*0x5f97f7*/
   if ( v6 ) /*0x5f97ff*/
   {
     WaveClass::Destroy((int)v6); /*0x5f9803*/
-    __3_YAXPAX_Z(v6); /*0x5f9809*/
+    RA2_OPDEL(v6); /*0x5f9809*/
   }
   v7 = *(void ***)(aP0 + 196); /*0x5f9811*/
   *(_DWORD *)(aP0 + 192) = 0; /*0x5f9817*/
   if ( v7 ) /*0x5f981f*/
   {
     String::Release(v7); /*0x5f9823*/
-    __3_YAXPAX_Z(v7); /*0x5f9829*/
+    RA2_OPDEL(v7); /*0x5f9829*/
   }
   *(_DWORD *)(aP0 + 196) = 0; /*0x5f9833*/
   ObjectTypeClass::CleanupWeapons(aP0); /*0x5f9839*/
@@ -862,23 +895,25 @@ int ObjectTypeClass::LoadCleanup(IUnknown * aP0, ObjectTypeClass * aP1)
   }
   return result; /*0x5f993e*/
 }
+} // namespace gamemd
 // 0x712040
+namespace gamemd {
 SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
 {
-  #375 *v1; // eax
+  void *v1; // eax
   int result; // eax
 
   v1 = HouseClass_Player; /*0x712040*/
   if ( !HouseClass_Player ) /*0x71204a*/
-    return *(this + 444); /*0x7120bf*/
+    return *(&this->MainVoxel4); /*0x7120bf*/
   if ( *((_BYTE *)HouseClass_Player + 703) ) /*0x71204c*/
   {
-    if ( (*(int (__thiscall **)(_DWORD *))(*this + 44))(this) == 16 ) /*0x712060*/
+    if ( this->getAltitude() == 16 ) /*0x712060*/
     {
-      result = *(this + 452); /*0x712062*/
+      result = *(&this->TurretVoxel2); /*0x712062*/
       if ( result ) /*0x71206a*/
       {
-        if ( *((_BYTE *)this + 3214) ) /*0x71206c*/
+        if ( this->Trainable ) /*0x71206c*/
           return result; /*0x712074*/
       }
     }
@@ -886,19 +921,20 @@ SHPStruct * * ObjectTypeClass::SelectArtOrAlt()
   }
   if ( !v1 /*0x7120a1*/
     || !*((_BYTE *)v1 + 704)
-    || (*(int (__thiscall **)(_DWORD *))(*this + 44))(this) != 40
-    && ((*(int (__thiscall **)(_DWORD *))(*this + 44))(this) != 7 || !*(this + 258)) )
+    || this->getAltitude() != 40
+    && (this->getAltitude() != 7 || !*(&this->Name8)) )
   {
-    return *(this + 444); /*0x7120a1*/
+    return *(&this->MainVoxel4); /*0x7120a1*/
   }
-  result = *(this + 452); /*0x7120ab*/
-  if ( !result || !*((_BYTE *)this + 3214) ) /*0x7120b5*/
-    return *(this + 444); /*0x7120bd*/
+  result = *(&this->TurretVoxel2); /*0x7120ab*/
+  if ( !result || !this->Trainable ) /*0x7120b5*/
+    return *(&this->MainVoxel4); /*0x7120bd*/
   return result; /*0x7120c5*/
 }
+} // namespace gamemd
 // 0x712170
+namespace gamemd {
 int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char *** a2)
-{
 {
   WeaponTypeClass *v5; // edi
   WeaponTypeClass *v6; // eax
@@ -1426,17 +1462,17 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
         break;
       aP2.headNode[2] = (int)UnitTypeClass::FindOrCreate(i);
       if ( aP2.headNode[2] )
-        DynamicVector::Add2(&aP2.unknown30, (VectorClass *)&aP2.headNode[2]);
+        DynamicVector::Add2(&aP2.unknown30, (VectorClass_flat *)&aP2.headNode[2]);
     }
-    TypeList::CopyVoxelAnim(aP2.sectionHead, (VectorClass *)&aP2.unknown30);
+    TypeList_flat::CopyVoxelAnim(aP2.sectionHead, (VectorClass_flat *)&aP2.unknown30);
     aP2.unknown30 = (int)&vt_VectorClass_VoxelAnimTypeClass_const;
     Vector::Cleanup2((int)&aP2.unknown30);
   }
   else
   {
-    TypeList::CopyVoxelAnim(aP2.sectionHead, (VectorClass *)(v4 + 788));
+    TypeList_flat::CopyVoxelAnim(aP2.sectionHead, (VectorClass_flat *)(v4 + 788));
   }
-  VectorClass::CopyAssign((_DWORD *)(v4 + 788), (VectorClass *)aP2.sectionHead);
+  VectorClass_flat::CopyAssign((_DWORD *)(v4 + 788), (VectorClass_flat *)aP2.sectionHead);
   int v22 = *(_DWORD *)aP2[32];
   int v23 = *(_DWORD *)&aP2[36];
   *(_DWORD *)(v4 + 812) = *(_DWORD *)&aP2[40];
@@ -1445,7 +1481,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   aP2.sectionHead[0] = (int)&vt_VectorClass_VoxelAnimTypeClass_const;
   Vector::Cleanup2((int)aP2.sectionHead);
   aP2.headNode[2] = (int)&v412;
-  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 816));
+  DynamicVectorClass_flat::Copy(&v412, (DynamicVector *)(v4 + 816));
   *(_DWORD *)aP2.headNode[2] = &vt_TypeList_int;
   inited = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   aP2.headNode[2] = INIClass::ReadIntList(
@@ -1460,13 +1496,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                       *(int *)aP3,
                       *(int *)&aP3[4],
                       *(int *)&aP3[8]);
-  TypeList::Copy((_DWORD *)(v4 + 816), (_DWORD *)aP2.headNode[2]);
+  TypeList_flat::Copy((_DWORD *)(v4 + 816), (_DWORD *)aP2.headNode[2]);
   int v25 = aP2.headNode[2];
   *(_DWORD *)(v4 + 832) = *(_DWORD *)(aP2.headNode[2] + 16);
   *(_DWORD *)(v4 + 836) = *(_DWORD *)(v25 + 20);
   *(_DWORD *)(v4 + 840) = *(_DWORD *)(v25 + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  VectorClass::Destroy((int)aP2.sectionHead);
+  VectorClass_flat::Destroy((int)aP2.sectionHead);
   if ( INIClass::GetString(
          (unsigned __int8 ***)aP0,
          (INIClass *)(v4 + 36),
@@ -1475,7 +1511,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
          String,
          128) )
   {
-    DynamicVectorClass::AnimTypeConstructor(&aP2.unknown30, 0, 0);
+    DynamicVectorClass_flat::AnimTypeConstructor(&aP2.unknown30, 0, 0);
     aP2.unknown30 = (int)&vt_TypeList_AnimTypeClass_const;
     for ( j = (AbstractClass *)strtok(String[0].__pad_0, (ObjectClass *)&stru_817F40.nextObject);
           j;
@@ -1485,24 +1521,24 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
         break;
       aP2.headNode[2] = (int)AnimTypeClass::FindOrCreate(j);
       if ( aP2.headNode[2] )
-        DynamicVector::Add_Alt4(&aP2.unknown30, (VectorClass *)&aP2.headNode[2]);
+        DynamicVector::Add_Alt4(&aP2.unknown30, (VectorClass_flat *)&aP2.headNode[2]);
     }
-    TypeList::AnimTypeCopy(aP2.sectionHead, (VectorClass *)&aP2.unknown30);
+    TypeList_flat::AnimTypeCopy(aP2.sectionHead, (VectorClass_flat *)&aP2.unknown30);
     aP2.unknown30 = (int)&vt_VectorClass_AnimTypeClass_const;
-    DynamicVectorClass::Destroy_Alt((int)&aP2.unknown30);
+    DynamicVectorClass_flat::Destroy_Alt((int)&aP2.unknown30);
   }
   else
   {
-    TypeList::AnimTypeCopy(aP2.sectionHead, (VectorClass *)(v4 + 1476));
+    TypeList_flat::AnimTypeCopy(aP2.sectionHead, (VectorClass_flat *)(v4 + 1476));
   }
-  VectorClass::CopyDefault((_DWORD *)(v4 + 1476), (VectorClass *)aP2.sectionHead);
+  VectorClass_flat::CopyDefault((_DWORD *)(v4 + 1476), (VectorClass_flat *)aP2.sectionHead);
   edx29 = *(_DWORD *)&aP2[36];
   int v28 = *(_DWORD *)&aP2[40];
   *(_DWORD *)(v4 + 1492) = *(_DWORD *)aP2[32];
   *(_DWORD *)(v4 + 1496) = edx29;
   *(_DWORD *)(v4 + 1500) = v28;
   aP2.sectionHead[0] = (int)&vt_VectorClass_AnimTypeClass_const;
-  DynamicVectorClass::Destroy_Alt((int)aP2.sectionHead);
+  DynamicVectorClass_flat::Destroy_Alt((int)aP2.sectionHead);
   *(_BYTE *)(v4 + 2054) = INIClass::ReadBool_Overwrite(
                             (int)aP0,
                             (unsigned __int8 *)(v4 + 36),
@@ -1661,7 +1697,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
     *(_DWORD *)(v4 + 2736) = 0;
   }
   *(_DWORD *)aP2[0] = &v412;
-  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1128));
+  DynamicVectorClass_flat::Copy(&v412, (DynamicVector *)(v4 + 1128));
   **(_DWORD **)aP2[0] = &vt_TypeList_int;
   v33 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(_DWORD *)aP2[0] = GetINIClassIntList(
@@ -1676,15 +1712,15 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
-  TypeList::Copy((_DWORD *)(v4 + 1128), *(_DWORD **)aP2[0]);
+  TypeList_flat::Copy((_DWORD *)(v4 + 1128), *(_DWORD **)aP2[0]);
   eax56 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1144) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1148) = *(_DWORD *)(eax56 + 20);
   *(_DWORD *)(v4 + 1152) = *(_DWORD *)(eax56 + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  VectorClass::Destroy((int)aP2.sectionHead);
+  VectorClass_flat::Destroy((int)aP2.sectionHead);
   *(_DWORD *)aP2[0] = &v412;
-  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1044));
+  DynamicVectorClass_flat::Copy(&v412, (DynamicVector *)(v4 + 1044));
   **(_DWORD **)aP2[0] = &vt_TypeList_int;
   v35 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(_DWORD *)aP2[0] = GetINIClassIntList(
@@ -1699,15 +1735,15 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
-  TypeList::Copy((_DWORD *)(v4 + 1044), *(_DWORD **)aP2[0]);
+  TypeList_flat::Copy((_DWORD *)(v4 + 1044), *(_DWORD **)aP2[0]);
   eax56a = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1060) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1064) = *(_DWORD *)(eax56a + 20);
   *(_DWORD *)(v4 + 1068) = *(_DWORD *)(eax56a + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  VectorClass::Destroy((int)aP2.sectionHead);
+  VectorClass_flat::Destroy((int)aP2.sectionHead);
   *(_DWORD *)aP2[0] = &v412;
-  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1072));
+  DynamicVectorClass_flat::Copy(&v412, (DynamicVector *)(v4 + 1072));
   **(_DWORD **)aP2[0] = &vt_TypeList_int;
   v37 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(_DWORD *)aP2[0] = GetINIClassIntList(
@@ -1722,15 +1758,15 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
-  TypeList::Copy((_DWORD *)(v4 + 1072), *(_DWORD **)aP2[0]);
+  TypeList_flat::Copy((_DWORD *)(v4 + 1072), *(_DWORD **)aP2[0]);
   eax56b = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1088) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1092) = *(_DWORD *)(eax56b + 20);
   *(_DWORD *)(v4 + 1096) = *(_DWORD *)(eax56b + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  VectorClass::Destroy((int)aP2.sectionHead);
+  VectorClass_flat::Destroy((int)aP2.sectionHead);
   *(_DWORD *)aP2[0] = &v412;
-  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1100));
+  DynamicVectorClass_flat::Copy(&v412, (DynamicVector *)(v4 + 1100));
   **(_DWORD **)aP2[0] = &vt_TypeList_int;
   v39 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(_DWORD *)aP2[0] = GetINIClassIntList(
@@ -1745,15 +1781,15 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
-  TypeList::Copy((_DWORD *)(v4 + 1100), *(_DWORD **)aP2[0]);
+  TypeList_flat::Copy((_DWORD *)(v4 + 1100), *(_DWORD **)aP2[0]);
   eax56c = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1116) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1120) = *(_DWORD *)(eax56c + 20);
   *(_DWORD *)(v4 + 1124) = *(_DWORD *)(eax56c + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  VectorClass::Destroy((int)aP2.sectionHead);
+  VectorClass_flat::Destroy((int)aP2.sectionHead);
   *(_DWORD *)aP2[0] = &v412;
-  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1156));
+  DynamicVectorClass_flat::Copy(&v412, (DynamicVector *)(v4 + 1156));
   **(_DWORD **)aP2[0] = &vt_TypeList_int;
   v41 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(_DWORD *)aP2[0] = GetINIClassIntList(
@@ -1768,15 +1804,15 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
-  TypeList::Copy((_DWORD *)(v4 + 1156), *(_DWORD **)aP2[0]);
+  TypeList_flat::Copy((_DWORD *)(v4 + 1156), *(_DWORD **)aP2[0]);
   int v51 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1172) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1176) = *(_DWORD *)(v51 + 20);
   *(_DWORD *)(v4 + 1180) = *(_DWORD *)(v51 + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  VectorClass::Destroy((int)aP2.sectionHead);
+  VectorClass_flat::Destroy((int)aP2.sectionHead);
   *(_DWORD *)aP2[0] = &v412;
-  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1184));
+  DynamicVectorClass_flat::Copy(&v412, (DynamicVector *)(v4 + 1184));
   **(_DWORD **)aP2[0] = &vt_TypeList_int;
   v43 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(_DWORD *)aP2[0] = GetINIClassIntList(
@@ -1791,15 +1827,15 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
-  TypeList::Copy((_DWORD *)(v4 + 1184), *(_DWORD **)aP2[0]);
+  TypeList_flat::Copy((_DWORD *)(v4 + 1184), *(_DWORD **)aP2[0]);
   int v53 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1200) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1204) = *(_DWORD *)(v53 + 20);
   *(_DWORD *)(v4 + 1208) = *(_DWORD *)(v53 + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  VectorClass::Destroy((int)aP2.sectionHead);
+  VectorClass_flat::Destroy((int)aP2.sectionHead);
   *(_DWORD *)aP2[0] = &v412;
-  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1212));
+  DynamicVectorClass_flat::Copy(&v412, (DynamicVector *)(v4 + 1212));
   **(_DWORD **)aP2[0] = &vt_TypeList_int;
   v45 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(_DWORD *)aP2[0] = GetINIClassIntList(
@@ -1814,15 +1850,15 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
-  TypeList::Copy((_DWORD *)(v4 + 1212), *(_DWORD **)aP2[0]);
+  TypeList_flat::Copy((_DWORD *)(v4 + 1212), *(_DWORD **)aP2[0]);
   int v55 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1228) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1232) = *(_DWORD *)(v55 + 20);
   *(_DWORD *)(v4 + 1236) = *(_DWORD *)(v55 + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  VectorClass::Destroy((int)aP2.sectionHead);
+  VectorClass_flat::Destroy((int)aP2.sectionHead);
   *(_DWORD *)aP2[0] = &v412;
-  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1240));
+  DynamicVectorClass_flat::Copy(&v412, (DynamicVector *)(v4 + 1240));
   **(_DWORD **)aP2[0] = &vt_TypeList_int;
   v47 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(_DWORD *)aP2[0] = GetINIClassIntList(
@@ -1837,13 +1873,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
-  TypeList::Copy((_DWORD *)(v4 + 1240), *(_DWORD **)aP2[0]);
+  TypeList_flat::Copy((_DWORD *)(v4 + 1240), *(_DWORD **)aP2[0]);
   int v57 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1256) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1260) = *(_DWORD *)(v57 + 20);
   *(_DWORD *)(v4 + 1264) = *(_DWORD *)(v57 + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  VectorClass::Destroy((int)aP2.sectionHead);
+  VectorClass_flat::Destroy((int)aP2.sectionHead);
   v49 = *(CCINIClass **)(v4 + 1324);
   if ( INIClass::GetString(
          (unsigned __int8 ***)aP0,
@@ -2092,7 +2128,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
          *(INIClass **)&aP3[4],
          *(int *)&aP3[8]) )
   {
-    DynamicVectorClass::BuildingTypeConstructor(&aP2.unknown30, 0, 0);
+    DynamicVectorClass_flat::BuildingTypeConstructor(&aP2.unknown30, 0, 0);
     aP2.unknown30 = (int)&vt_TypeList_BuildingTypeClass_const;
     for ( k = strtok((char *)&aP2.CCINIClass_field_4C, (ObjectClass *)&stru_817F40.nextObject);
           k;
@@ -2102,24 +2138,24 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
         break;
       *(_DWORD *)aP2[0] = BuildingTypeClass::FindOrCreate(k);
       if ( *(_DWORD *)aP2[0] )
-        DynamicVector::Add_Alt3(&aP2.unknown30, (VectorClass *)&aP2);
+        DynamicVector::Add_Alt3(&aP2.unknown30, (VectorClass_flat *)&aP2);
     }
-    TypeList::BuildingTypeCopy(aP2.sectionHead, (VectorClass *)&aP2.unknown30);
+    TypeList_flat::BuildingTypeCopy(aP2.sectionHead, (VectorClass_flat *)&aP2.unknown30);
     aP2.unknown30 = (int)&vt_VectorClass_BuildingTypeClass_const;
-    DynamicVectorClass::Destroy((int)&aP2.unknown30);
+    DynamicVectorClass_flat::Destroy((int)&aP2.unknown30);
   }
   else
   {
-    TypeList::BuildingTypeCopy(aP2.sectionHead, (VectorClass *)(v4 + 1000));
+    TypeList_flat::BuildingTypeCopy(aP2.sectionHead, (VectorClass_flat *)(v4 + 1000));
   }
-  VectorClass::CopyBuilding((_DWORD *)(v4 + 1000), (VectorClass *)aP2.sectionHead);
+  VectorClass_flat::CopyBuilding((_DWORD *)(v4 + 1000), (VectorClass_flat *)aP2.sectionHead);
   int v86 = *(_DWORD *)aP2[32];
   int v87 = *(_DWORD *)&aP2[36];
   *(_DWORD *)(v4 + 1024) = *(_DWORD *)&aP2[40];
   *(_DWORD *)(v4 + 1016) = v86;
   *(_DWORD *)(v4 + 1020) = v87;
   aP2.sectionHead[0] = (int)&vt_VectorClass_BuildingTypeClass_const;
-  DynamicVectorClass::Destroy((int)aP2.sectionHead);
+  DynamicVectorClass_flat::Destroy((int)aP2.sectionHead);
   v88 = *(BuildingTypeClass **)(v4 + 1028);
   if ( INIClass::GetString(
          (unsigned __int8 ***)aP0,
@@ -2262,7 +2298,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   }
   *(_DWORD *)(v4 + 1384) = v103;
   *(_DWORD *)aP2[0] = &v412;
-  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1268));
+  DynamicVectorClass_flat::Copy(&v412, (DynamicVector *)(v4 + 1268));
   **(_DWORD **)aP2[0] = &vt_TypeList_int;
   v95 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(_DWORD *)aP2[0] = GetINIClassIntList(
@@ -2277,16 +2313,16 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
-  TypeList::Copy((_DWORD *)(v4 + 1268), *(_DWORD **)aP2[0]);
+  TypeList_flat::Copy((_DWORD *)(v4 + 1268), *(_DWORD **)aP2[0]);
   int v105 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1284) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1288) = *(_DWORD *)(v105 + 20);
   *(_DWORD *)(v4 + 1292) = *(_DWORD *)(v105 + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  if ( aP2.sectionHead[1] && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z((void *)aP2.sectionHead[1]);
+  if ( aP2.sectionHead[1] && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL((void *)aP2.sectionHead[1]);
   *(_DWORD *)aP2[0] = &v412;
-  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1296));
+  DynamicVectorClass_flat::Copy(&v412, (DynamicVector *)(v4 + 1296));
   **(_DWORD **)aP2[0] = &vt_TypeList_int;
   v97 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(_DWORD *)aP2[0] = GetINIClassIntList(
@@ -2301,7 +2337,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              *(int *)aP3,
                              *(int *)&aP3[4],
                              *(int *)&aP3[8]);
-  TypeList::Copy((_DWORD *)(v4 + 1296), *(_DWORD **)aP2[0]);
+  TypeList_flat::Copy((_DWORD *)(v4 + 1296), *(_DWORD **)aP2[0]);
   int v107 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1312) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1316) = *(_DWORD *)(v107 + 20);
@@ -2309,8 +2345,8 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   void * v109 = (void *)aP2.sectionHead[1];
   *(_DWORD *)(v4 + 1320) = v108;
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  if ( v109 && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z(v109);
+  if ( v109 && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL(v109);
   int v110 = *(_DWORD *)(v4 + 1388);
   if ( !INIClass::GetString(
           (unsigned __int8 ***)aP0,
@@ -2631,7 +2667,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
          (INIClass *)&aP2.CCINIClass_field_4C,
          128) )
   {
-    DynamicVectorClass::AnimTypeConstructor(&aP2.unknown30, 0, 0);
+    DynamicVectorClass_flat::AnimTypeConstructor(&aP2.unknown30, 0, 0);
     aP2.unknown30 = (int)&vt_TypeList_AnimTypeClass_const;
     for ( m = (AbstractClass *)strtok((char *)&aP2.CCINIClass_field_4C, (ObjectClass *)&stru_817F40.nextObject);
           m;
@@ -2641,17 +2677,17 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
         break;
       *(_DWORD *)aP2[0] = AnimTypeClass::FindOrCreate(m);
       if ( *(_DWORD *)aP2[0] )
-        DynamicVector::Add_Alt4(&aP2.unknown30, (VectorClass *)&aP2);
+        DynamicVector::Add_Alt4(&aP2.unknown30, (VectorClass_flat *)&aP2);
     }
-    TypeList::AnimTypeCopy(aP2.sectionHead, (VectorClass *)&aP2.unknown30);
+    TypeList_flat::AnimTypeCopy(aP2.sectionHead, (VectorClass_flat *)&aP2.unknown30);
     aP2.unknown30 = (int)&vt_VectorClass_AnimTypeClass_const;
-    DynamicVectorClass::Destroy_Alt((int)&aP2.unknown30);
+    DynamicVectorClass_flat::Destroy_Alt((int)&aP2.unknown30);
   }
   else
   {
-    TypeList::AnimTypeCopy(aP2.sectionHead, (VectorClass *)(v4 + 1836));
+    TypeList_flat::AnimTypeCopy(aP2.sectionHead, (VectorClass_flat *)(v4 + 1836));
   }
-  VectorClass::CopyDefault((_DWORD *)(v4 + 1836), (VectorClass *)aP2.sectionHead);
+  VectorClass_flat::CopyDefault((_DWORD *)(v4 + 1836), (VectorClass_flat *)aP2.sectionHead);
   int v147 = *(_DWORD *)&aP2[36];
   int v148 = *(_DWORD *)&aP2[40];
   *(_DWORD *)(v4 + 1852) = *(_DWORD *)aP2[32];
@@ -2659,8 +2695,8 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(_DWORD *)(v4 + 1856) = v147;
   *(_DWORD *)(v4 + 1860) = v148;
   aP2.sectionHead[0] = (int)&vt_VectorClass_AnimTypeClass_const;
-  if ( v149 && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z(v149);
+  if ( v149 && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL(v149);
   if ( INIClass::GetString(
          (unsigned __int8 ***)aP0,
          (INIClass *)(v4 + 36),
@@ -2669,7 +2705,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
          (INIClass *)&aP2.CCINIClass_field_4C,
          128) )
   {
-    DynamicVectorClass::AnimTypeConstructor(&aP2.unknown30, 0, 0);
+    DynamicVectorClass_flat::AnimTypeConstructor(&aP2.unknown30, 0, 0);
     aP2.unknown30 = (int)&vt_TypeList_AnimTypeClass_const;
     for ( n = (AbstractClass *)strtok((char *)&aP2.CCINIClass_field_4C, (ObjectClass *)&stru_817F40.nextObject);
           n;
@@ -2679,17 +2715,17 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
         break;
       *(_DWORD *)aP2[0] = AnimTypeClass::FindOrCreate(n);
       if ( *(_DWORD *)aP2[0] )
-        DynamicVector::Add_Alt4(&aP2.unknown30, (VectorClass *)&aP2);
+        DynamicVector::Add_Alt4(&aP2.unknown30, (VectorClass_flat *)&aP2);
     }
-    TypeList::AnimTypeCopy(aP2.sectionHead, (VectorClass *)&aP2.unknown30);
+    TypeList_flat::AnimTypeCopy(aP2.sectionHead, (VectorClass_flat *)&aP2.unknown30);
     aP2.unknown30 = (int)&vt_VectorClass_AnimTypeClass_const;
-    DynamicVectorClass::Destroy_Alt((int)&aP2.unknown30);
+    DynamicVectorClass_flat::Destroy_Alt((int)&aP2.unknown30);
   }
   else
   {
-    TypeList::AnimTypeCopy(aP2.sectionHead, (VectorClass *)(v4 + 1864));
+    TypeList_flat::AnimTypeCopy(aP2.sectionHead, (VectorClass_flat *)(v4 + 1864));
   }
-  VectorClass::CopyDefault((_DWORD *)(v4 + 1864), (VectorClass *)aP2.sectionHead);
+  VectorClass_flat::CopyDefault((_DWORD *)(v4 + 1864), (VectorClass_flat *)aP2.sectionHead);
   int v151 = *(_DWORD *)&aP2[36];
   int v152 = *(_DWORD *)&aP2[40];
   *(_DWORD *)(v4 + 1880) = *(_DWORD *)aP2[32];
@@ -2697,8 +2733,8 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(_DWORD *)(v4 + 1884) = v151;
   *(_DWORD *)(v4 + 1888) = v152;
   aP2.sectionHead[0] = (int)&vt_VectorClass_AnimTypeClass_const;
-  if ( v153 && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z(v153);
+  if ( v153 && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL(v153);
   v154 = *(ParticleSystemTypeClass **)(v4 + 1892);
   if ( INIClass::GetString(
          (unsigned __int8 ***)aP0,
@@ -2765,7 +2801,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
          *(INIClass **)&aP3[4],
          *(int *)&aP3[8]) )
   {
-    TypeList::ParticleConstructor(&aP2.unknown30, 0, 0);
+    TypeList_flat::ParticleConstructor(&aP2.unknown30, 0, 0);
     aP2.unknown30 = (int)&vt_TypeList_ParticleSystemTypeClass_const;
     for ( ii = (ObjectClass *)strtok((char *)&aP2.CCINIClass_field_4C, (ObjectClass *)&stru_817F40.nextObject);
           ii;
@@ -2775,15 +2811,15 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
         break;
       *(_DWORD *)aP2[0] = BuildingTypeClass::LoadOrGet(ii);
       if ( *(_DWORD *)aP2[0] )
-        TypeList::PushBack(&aP2.unknown30, (VectorClass *)&aP2);
+        TypeList_flat::PushBack(&aP2.unknown30, (VectorClass_flat *)&aP2);
     }
-    VectorClass::CopyParticle(aP2.sectionHead, (DynamicVector *)&aP2.unknown30);
+    VectorClass_flat::CopyParticle(aP2.sectionHead, (DynamicVector *)&aP2.unknown30);
     aP2.unknown30 = (int)&vt_VectorClass_ParticleSystemTypeClass_const;
-    VectorClass::Cleanup((int)&aP2.unknown30);
+    VectorClass_flat::Cleanup((int)&aP2.unknown30);
   }
   else
   {
-    VectorClass::CopyParticle(aP2.sectionHead, (DynamicVector *)(v4 + 1912));
+    VectorClass_flat::CopyParticle(aP2.sectionHead, (DynamicVector *)(v4 + 1912));
   }
   ObjectTypeClass::loadTypeMember_5717C00((_DWORD *)(v4 + 1912), aP2.sectionHead);
   int v163 = *(_DWORD *)aP2[32];
@@ -2793,8 +2829,8 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(_DWORD *)(v4 + 1928) = v163;
   *(_DWORD *)(v4 + 1932) = v164;
   aP2.sectionHead[0] = (int)&vt_VectorClass_ParticleSystemTypeClass_const;
-  if ( v165 && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z(v165);
+  if ( v165 && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL(v165);
   if ( INIClass::GetString(
          (unsigned __int8 ***)aP0,
          (INIClass *)(v4 + 36),
@@ -2803,7 +2839,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
          (INIClass *)&aP2.CCINIClass_field_4C,
          128) )
   {
-    TypeList::ParticleConstructor(&aP2.unknown30, 0, 0);
+    TypeList_flat::ParticleConstructor(&aP2.unknown30, 0, 0);
     aP2.unknown30 = (int)&vt_TypeList_ParticleSystemTypeClass_const;
     for ( jj = (ObjectClass *)strtok((char *)&aP2.CCINIClass_field_4C, (ObjectClass *)&stru_817F40.nextObject);
           jj;
@@ -2813,15 +2849,15 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
         break;
       *(_DWORD *)aP2[0] = BuildingTypeClass::LoadOrGet(jj);
       if ( *(_DWORD *)aP2[0] )
-        TypeList::PushBack(&aP2.unknown30, (VectorClass *)&aP2);
+        TypeList_flat::PushBack(&aP2.unknown30, (VectorClass_flat *)&aP2);
     }
-    VectorClass::CopyParticle(aP2.sectionHead, (DynamicVector *)&aP2.unknown30);
+    VectorClass_flat::CopyParticle(aP2.sectionHead, (DynamicVector *)&aP2.unknown30);
     aP2.unknown30 = (int)&vt_VectorClass_ParticleSystemTypeClass_const;
-    VectorClass::Cleanup((int)&aP2.unknown30);
+    VectorClass_flat::Cleanup((int)&aP2.unknown30);
   }
   else
   {
-    VectorClass::CopyParticle(aP2.sectionHead, (DynamicVector *)(v4 + 1940));
+    VectorClass_flat::CopyParticle(aP2.sectionHead, (DynamicVector *)(v4 + 1940));
   }
   ObjectTypeClass::loadTypeMember_5717C00((_DWORD *)(v4 + 1940), aP2.sectionHead);
   int v167 = *(_DWORD *)aP2[32];
@@ -2831,8 +2867,8 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   *(_DWORD *)(v4 + 1956) = v167;
   *(_DWORD *)(v4 + 1960) = v168;
   aP2.sectionHead[0] = (int)&vt_VectorClass_ParticleSystemTypeClass_const;
-  if ( v169 && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z(v169);
+  if ( v169 && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL(v169);
   eax231 = INIClass::GetCoord2(
              (unsigned __int8 ***)aP0,
              &aP2.unknown30,
@@ -3010,7 +3046,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (CCINIClass *)&stru_830620[79768],
                             *(INIClass **)(v4 + 996));
   *(_DWORD *)aP2[0] = &v412;
-  DynamicVectorClass::Copy(&v412, (DynamicVector *)(v4 + 1592));
+  DynamicVectorClass_flat::Copy(&v412, (DynamicVector *)(v4 + 1592));
   **(_DWORD **)aP2[0] = &vt_TypeList_int;
   v171 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   *(_DWORD *)aP2[0] = LoadBuildingTypeClassPrerequisites(
@@ -3019,16 +3055,16 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              v171,
                              (unsigned __int8 *)&stru_830620[79752],
                              v412);
-  TypeList::Copy((_DWORD *)(v4 + 1592), *(_DWORD **)aP2[0]);
+  TypeList_flat::Copy((_DWORD *)(v4 + 1592), *(_DWORD **)aP2[0]);
   int v181 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1608) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1612) = *(_DWORD *)(v181 + 20);
   *(_DWORD *)(v4 + 1616) = *(_DWORD *)(v181 + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  if ( aP2.sectionHead[1] && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z((void *)aP2.sectionHead[1]);
+  if ( aP2.sectionHead[1] && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL((void *)aP2.sectionHead[1]);
   *(_DWORD *)aP2[0] = &v412;
-  IntVector::Copy(&v412, (VectorClass *)(v4 + 1620));
+  IntVector::Copy(&v412, (VectorClass_flat *)(v4 + 1620));
   v173 = *(CCINIClass **)aP2[0];
   *(_DWORD *)(*(_DWORD *)aP2[0] + 16) = *(_DWORD *)(v4 + 1636);
   v173->sectionHead[1] = *(_DWORD *)(v4 + 1640);
@@ -3040,14 +3076,14 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              v174,
                              (unsigned __int8 *)&stru_830620[79728],
                              v412);
-  TypeList::Copy((_DWORD *)(v4 + 1620), *(_DWORD **)aP2[0]);
+  TypeList_flat::Copy((_DWORD *)(v4 + 1620), *(_DWORD **)aP2[0]);
   int v184 = *(_DWORD *)aP2[0];
   *(_DWORD *)(v4 + 1636) = *(_DWORD *)(*(_DWORD *)aP2[0] + 16);
   *(_DWORD *)(v4 + 1640) = *(_DWORD *)(v184 + 20);
   *(_DWORD *)(v4 + 1644) = *(_DWORD *)(v184 + 24);
   aP2.sectionHead[0] = (int)&vt_VectorClass_int;
-  if ( aP2.sectionHead[1] && BYTE1(aP2.sectionCount) )
-    __3_YAXPAX_Z((void *)aP2.sectionHead[1]);
+  if ( aP2.sectionHead[1] && IDA_BYTE1(aP2.sectionCount) )
+    RA2_OPDEL((void *)aP2.sectionHead[1]);
   *(_DWORD *)(v4 + 1512) = INIClass::ReadInt_Overwrite(
                              (int)aP0,
                              (unsigned __int8 *)(v4 + 36),
@@ -3479,7 +3515,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)(v4 + 36),
                             (CCINIClass *)&stru_830620[78628],
                             *(_BYTE *)(v4 + 3226));
-  LOBYTE(ecx258) = *(_BYTE *)(v4 + 3227);
+  IDA_LOBYTE(ecx258) = *(_BYTE *)(v4 + 3227);
   *(_DWORD *)&aP3[8] = ecx258;
   *(_DWORD *)&aP3[4] = &stru_830620[78612];
   v188 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3488,7 +3524,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v188,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258) = *(_BYTE *)(v4 + 3348);
+  IDA_LOBYTE(edx258) = *(_BYTE *)(v4 + 3348);
   *(_DWORD *)&aP3[8] = edx258;
   *(_DWORD *)&aP3[4] = &stru_830620[78600];
   v190 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3497,7 +3533,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v190,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax258a) = *(_BYTE *)(v4 + 3360);
+  IDA_LOBYTE(eax258a) = *(_BYTE *)(v4 + 3360);
   *(_DWORD *)&aP3[8] = eax258a;
   *(_DWORD *)&aP3[4] = &stru_830620[78588];
   v192 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3548,7 +3584,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              (unsigned __int8 *)v197,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
-  LOBYTE(ecx258a) = *(_BYTE *)(v4 + 3223);
+  IDA_LOBYTE(ecx258a) = *(_BYTE *)(v4 + 3223);
   *(_DWORD *)&aP3[8] = ecx258a;
   *(_DWORD *)&aP3[4] = &stru_830620[78536];
   v199 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3557,7 +3593,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v199,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258b) = *(_BYTE *)(v4 + 3222);
+  IDA_LOBYTE(edx258b) = *(_BYTE *)(v4 + 3222);
   *(_DWORD *)&aP3[8] = edx258b;
   *(_DWORD *)&aP3[4] = &stru_830620[78524];
   v201 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3566,7 +3602,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v201,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax258b) = *(_BYTE *)(v4 + 3218);
+  IDA_LOBYTE(eax258b) = *(_BYTE *)(v4 + 3218);
   *(_DWORD *)&aP3[8] = eax258b;
   *(_DWORD *)&aP3[4] = &stru_830620[50772];
   v203 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3575,7 +3611,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v203,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258b) = *(_BYTE *)(v4 + 3217);
+  IDA_LOBYTE(ecx258b) = *(_BYTE *)(v4 + 3217);
   *(_DWORD *)&aP3[8] = ecx258b;
   *(_DWORD *)&aP3[4] = &stru_830620[78508];
   v205 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3584,7 +3620,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v205,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258c) = *(_BYTE *)(v4 + 1749);
+  IDA_LOBYTE(edx258c) = *(_BYTE *)(v4 + 1749);
   *(_DWORD *)&aP3[8] = edx258c;
   *(_DWORD *)&aP3[4] = &stru_830620[78480];
   v207 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3593,7 +3629,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v207,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax258c) = *(_BYTE *)(v4 + 1748);
+  IDA_LOBYTE(eax258c) = *(_BYTE *)(v4 + 1748);
   *(_DWORD *)&aP3[8] = eax258c;
   *(_DWORD *)&aP3[4] = &stru_830620[78468];
   v209 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3602,7 +3638,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v209,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258c) = *(_BYTE *)(v4 + 3216);
+  IDA_LOBYTE(ecx258c) = *(_BYTE *)(v4 + 3216);
   *(_DWORD *)&aP3[8] = ecx258c;
   *(_DWORD *)&aP3[4] = &stru_830620[78456];
   v211 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3611,7 +3647,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v211,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258d) = *(_BYTE *)(v4 + 3367);
+  IDA_LOBYTE(edx258d) = *(_BYTE *)(v4 + 3367);
   *(_DWORD *)&aP3[8] = edx258d;
   *(_DWORD *)&aP3[4] = &stru_830620[78440];
   v213 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3620,7 +3656,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v213,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax258d) = *(_BYTE *)(v4 + 3368);
+  IDA_LOBYTE(eax258d) = *(_BYTE *)(v4 + 3368);
   *(_DWORD *)&aP3[8] = eax258d;
   *(_DWORD *)&aP3[4] = &stru_81BB58;
   v215 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3629,7 +3665,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v215,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258d) = *(_BYTE *)(v4 + 3369);
+  IDA_LOBYTE(ecx258d) = *(_BYTE *)(v4 + 3369);
   *(_DWORD *)&aP3[8] = ecx258d;
   *(_DWORD *)&aP3[4] = &stru_830620[78428];
   v217 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3638,7 +3674,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v217,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258e) = *(_BYTE *)(v4 + 3370);
+  IDA_LOBYTE(edx258e) = *(_BYTE *)(v4 + 3370);
   *(_DWORD *)&aP3[8] = edx258e;
   *(_DWORD *)&aP3[4] = &stru_830620[78408];
   v219 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3647,7 +3683,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v219,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax258e) = *(_BYTE *)(v4 + 3373);
+  IDA_LOBYTE(eax258e) = *(_BYTE *)(v4 + 3373);
   *(_DWORD *)&aP3[8] = eax258e;
   *(_DWORD *)&aP3[4] = &stru_830620[52920];
   v221 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3656,7 +3692,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v221,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258e) = *(_BYTE *)(v4 + 3383);
+  IDA_LOBYTE(ecx258e) = *(_BYTE *)(v4 + 3383);
   *(_DWORD *)&aP3[8] = ecx258e;
   *(_DWORD *)&aP3[4] = &stru_830620[78388];
   v223 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3665,7 +3701,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v223,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258f) = *(_BYTE *)(v4 + 3433);
+  IDA_LOBYTE(edx258f) = *(_BYTE *)(v4 + 3433);
   *(_DWORD *)&aP3[8] = edx258f;
   *(_DWORD *)&aP3[4] = &stru_830620[78376];
   v225 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3675,7 +3711,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   int v235; // eax
-  LOBYTE(v235) = *(_BYTE *)(v4 + 3434);
+  IDA_LOBYTE(v235) = *(_BYTE *)(v4 + 3434);
   *(_DWORD *)&aP3[8] = v235;
   *(_DWORD *)&aP3[4] = &stru_830620[78360];
   v227 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3684,7 +3720,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v227,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258f) = *(_BYTE *)(v4 + 3390);
+  IDA_LOBYTE(ecx258f) = *(_BYTE *)(v4 + 3390);
   *(_DWORD *)&aP3[8] = ecx258f;
   *(_DWORD *)&aP3[4] = &stru_830620[78352];
   v229 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3729,7 +3765,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              (unsigned __int8 *)v234,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
-  LOBYTE(ecx258g) = *(_BYTE *)(v4 + 3412);
+  IDA_LOBYTE(ecx258g) = *(_BYTE *)(v4 + 3412);
   *(_DWORD *)&aP3[8] = ecx258g;
   *(_DWORD *)&aP3[4] = &stru_830620[78264];
   v236 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3771,7 +3807,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
               *(CCINIClass **)&aP3[4],
               *(INIClass **)&aP3[8]);
   *(_DWORD *)(v4 + 3428) = eax258g;
-  LOBYTE(eax258g) = *(_BYTE *)(v4 + 3432);
+  IDA_LOBYTE(eax258g) = *(_BYTE *)(v4 + 3432);
   *(_DWORD *)&aP3[8] = eax258g;
   *(_DWORD *)&aP3[4] = &stru_830620[78200];
   v242 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3780,7 +3816,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v242,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258h) = *(_BYTE *)(v4 + 3385);
+  IDA_LOBYTE(ecx258h) = *(_BYTE *)(v4 + 3385);
   *(_DWORD *)&aP3[8] = ecx258h;
   *(_DWORD *)&aP3[4] = &stru_830620[78180];
   v244 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3789,7 +3825,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v244,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258g) = *(_BYTE *)(v4 + 3386);
+  IDA_LOBYTE(edx258g) = *(_BYTE *)(v4 + 3386);
   *(_DWORD *)&aP3[8] = edx258g;
   *(_DWORD *)&aP3[4] = &stru_830620[78168];
   v246 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3798,7 +3834,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v246,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax258h) = *(_BYTE *)(v4 + 3384);
+  IDA_LOBYTE(eax258h) = *(_BYTE *)(v4 + 3384);
   *(_DWORD *)&aP3[8] = eax258h;
   *(_DWORD *)&aP3[4] = &stru_830620[78152];
   v248 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3807,7 +3843,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v248,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258i) = *(_BYTE *)(v4 + 3381);
+  IDA_LOBYTE(ecx258i) = *(_BYTE *)(v4 + 3381);
   *(_DWORD *)&aP3[8] = ecx258i;
   *(_DWORD *)&aP3[4] = &stru_830620[78132];
   v250 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3816,7 +3852,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v250,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258h) = *(_BYTE *)(v4 + 3382);
+  IDA_LOBYTE(edx258h) = *(_BYTE *)(v4 + 3382);
   *(_DWORD *)&aP3[8] = edx258h;
   *(_DWORD *)&aP3[4] = &stru_830620[78108];
   v252 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3826,7 +3862,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   int v262; // eax
-  LOBYTE(v262) = *(_BYTE *)(v4 + 3478);
+  IDA_LOBYTE(v262) = *(_BYTE *)(v4 + 3478);
   *(_DWORD *)&aP3[8] = v262;
   *(_DWORD *)&aP3[4] = &stru_830620[78088];
   v254 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3835,7 +3871,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v254,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx258j) = *(_BYTE *)(v4 + 3374);
+  IDA_LOBYTE(ecx258j) = *(_BYTE *)(v4 + 3374);
   *(_DWORD *)&aP3[8] = ecx258j;
   *(_DWORD *)&aP3[4] = &stru_830620[78076];
   v256 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3844,7 +3880,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v256,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258i) = *(_BYTE *)(v4 + 3479);
+  IDA_LOBYTE(edx258i) = *(_BYTE *)(v4 + 3479);
   *(_DWORD *)&aP3[8] = edx258i;
   *(_DWORD *)&aP3[4] = &stru_830620[78068];
   v258 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3853,7 +3889,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v258,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax258j) = *(_BYTE *)(v4 + 3387);
+  IDA_LOBYTE(eax258j) = *(_BYTE *)(v4 + 3387);
   *(_DWORD *)&aP3[8] = eax258j;
   *(_DWORD *)&aP3[4] = &stru_830620[78052];
   v260 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3871,7 +3907,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   int v271; // edx
-  LOBYTE(v271) = *(_BYTE *)(v4 + 3480);
+  IDA_LOBYTE(v271) = *(_BYTE *)(v4 + 3480);
   *(_DWORD *)&aP3[8] = v271;
   *(_DWORD *)&aP3[4] = &stru_830620[78016];
   v263 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3937,7 +3973,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             *(unsigned __int8 **)aP3,
                             *(INIClass **)&aP3[4]);
   int v280; // eax
-  LOBYTE(v280) = *(_BYTE *)(v4 + 3468);
+  IDA_LOBYTE(v280) = *(_BYTE *)(v4 + 3468);
   *(_DWORD *)&aP3[8] = v280;
   *(_DWORD *)&aP3[4] = &stru_830620[77884];
   v272 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3954,7 +3990,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              (unsigned __int8 *)v273,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
-  LOBYTE(edx258k) = *(_BYTE *)(v4 + 3476);
+  IDA_LOBYTE(edx258k) = *(_BYTE *)(v4 + 3476);
   *(_DWORD *)&aP3[8] = edx258k;
   *(_DWORD *)&aP3[4] = &stru_830620[77856];
   v275 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3964,7 +4000,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   int v285; // eax
-  LOBYTE(v285) = *(_BYTE *)(v4 + 3477);
+  IDA_LOBYTE(v285) = *(_BYTE *)(v4 + 3477);
   *(_DWORD *)&aP3[8] = v285;
   *(_DWORD *)&aP3[4] = &stru_830620[77844];
   v277 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3974,7 +4010,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   int v287; // ecx
-  LOBYTE(v287) = *(_BYTE *)(v4 + 1728);
+  IDA_LOBYTE(v287) = *(_BYTE *)(v4 + 1728);
   *(_DWORD *)&aP3[8] = v287;
   *(_DWORD *)&aP3[4] = &stru_830620[77824];
   v279 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3984,7 +4020,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   int v289; // edx
-  LOBYTE(v289) = *(_BYTE *)(v4 + 1729);
+  IDA_LOBYTE(v289) = *(_BYTE *)(v4 + 1729);
   *(_DWORD *)&aP3[8] = v289;
   *(_DWORD *)&aP3[4] = &stru_830620[77796];
   v281 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -3994,7 +4030,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   int v291; // eax
-  LOBYTE(v291) = *(_BYTE *)(v4 + 3234);
+  IDA_LOBYTE(v291) = *(_BYTE *)(v4 + 3234);
   *(_DWORD *)&aP3[8] = v291;
   *(_DWORD *)&aP3[4] = &stru_830620[77780];
   v283 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -4064,7 +4100,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   v298 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
   int v308 = INIClass::ReadInt_Overwrite((int)aP0, (unsigned __int8 *)v298, *(CCINIClass **)&aP3[4], *(INIClass **)&aP3[8]);
   ObjectTypeClass::loadTypeMember_5717A80((_DWORD *)(v4 + 3256), v308);
-  LOBYTE(ecx258l) = *(_BYTE *)(v4 + 3371);
+  IDA_LOBYTE(ecx258l) = *(_BYTE *)(v4 + 3371);
   *(_DWORD *)&aP3[8] = ecx258l;
   *(_DWORD *)&aP3[4] = &stru_830620[77600];
   v301 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -4073,7 +4109,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v301,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(edx258m) = *(_BYTE *)(v4 + 3517);
+  IDA_LOBYTE(edx258m) = *(_BYTE *)(v4 + 3517);
   *(_DWORD *)&aP3[8] = edx258m;
   *(_DWORD *)&aP3[4] = &stru_830620[77588];
   v303 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -4245,7 +4281,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             v323,
                             *(unsigned __int8 **)aP3,
                             *(INIClass **)&aP3[4]);
-  LOBYTE(eax273) = *(_BYTE *)(v4 + 3516);
+  IDA_LOBYTE(eax273) = *(_BYTE *)(v4 + 3516);
   *(_DWORD *)&aP3[8] = eax273;
   *(_DWORD *)&aP3[4] = &stru_830620[77300];
   v325 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -4254,7 +4290,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v325,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(ecx273) = *(_BYTE *)(v4 + 3500);
+  IDA_LOBYTE(ecx273) = *(_BYTE *)(v4 + 3500);
   *(_DWORD *)&aP3[8] = ecx273;
   *(_DWORD *)&aP3[4] = &stru_830620[77288];
   v327 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 36));
@@ -4272,13 +4308,13 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   _makepath(aP4[32], 0, 0, (ObjectClass *)v329, *(const char **)&aP3[8]);
   if ( *(_BYTE *)(v4 + 168) && *(_DWORD *)(v4 + 164) )
   {
-    __3_YAXPAX_Z(*(void **)(v4 + 164));
+    RA2_OPDEL(*(void **)(v4 + 164));
     *(_DWORD *)(v4 + 164) = 0;
     *(_BYTE *)(v4 + 168) = 0;
   }
   if ( (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) != 7 )
   {
-    LOBYTE(v340) = 0;
+    IDA_LOBYTE(v340) = 0;
     *(_DWORD *)(v4 + 164) = SearchMIXFile(aP4[32], v340);
   }
   *(_DWORD *)&aP3[8] = 32;
@@ -4317,7 +4353,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
   int v344; // ecx
-  LOBYTE(v344) = *(_BYTE *)(v4 + 3279);
+  IDA_LOBYTE(v344) = *(_BYTE *)(v4 + 3279);
   *(_DWORD *)&aP3[8] = v344;
   *(_DWORD *)&aP3[4] = &stru_830620[77176];
   v334 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
@@ -4327,7 +4363,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   int v346; // edx
-  LOBYTE(v346) = *(_BYTE *)(v4 + 3363);
+  IDA_LOBYTE(v346) = *(_BYTE *)(v4 + 3363);
   *(_DWORD *)&aP3[8] = v346;
   *(_DWORD *)&aP3[4] = &unk_818610;
   v336 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
@@ -4336,7 +4372,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             (unsigned __int8 *)v336,
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
-  LOBYTE(eax283) = *(_BYTE *)(v4 + 3365);
+  IDA_LOBYTE(eax283) = *(_BYTE *)(v4 + 3365);
   *(_DWORD *)&aP3[8] = eax283;
   *(_DWORD *)&aP3[4] = &stru_830620[77164];
   v338 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
@@ -4353,7 +4389,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                              (unsigned __int8 *)v339,
                              *(CCINIClass **)&aP3[4],
                              *(INIClass **)&aP3[8]);
-  LOBYTE(edx283b) = *(_BYTE *)(v4 + 3518);
+  IDA_LOBYTE(edx283b) = *(_BYTE *)(v4 + 3518);
   *(_DWORD *)&aP3[8] = edx283b;
   *(_DWORD *)&aP3[4] = &stru_830620[77132];
   v341 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
@@ -4363,7 +4399,7 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
                             *(CCINIClass **)&aP3[4],
                             aP3[8]);
   int v353; // eax
-  LOBYTE(v353) = *(_BYTE *)(v4 + 3519);
+  IDA_LOBYTE(v353) = *(_BYTE *)(v4 + 3519);
   *(_DWORD *)&aP3[8] = v353;
   *(_DWORD *)&aP3[4] = &stru_830620[77112];
   v343 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
@@ -4394,12 +4430,12 @@ int ObjectTypeClass::LoadExtras(CCINIClass * aP0, double _38C, unsigned char ***
   _makepath(aP4[32], 0, 0, (ObjectClass *)v347, *(const char **)&aP3[8]);
   if ( !*(_DWORD *)(v4 + 1776) )
   {
-    LOBYTE(v360) = 0;
+    IDA_LOBYTE(v360) = 0;
     *(_DWORD *)(v4 + 1776) = SearchMIXFile(aP4[32], v360);
 LABEL_286:
     if ( !*(_DWORD *)(v4 + 1776) )
     {
-      LOBYTE(edx283) = 0;
+      IDA_LOBYTE(edx283) = 0;
       *(_DWORD *)(v4 + 1776) = SearchMIXFile(g_Str_File_XXICON_SHP, edx283);
     }
   }
@@ -4424,7 +4460,7 @@ LABEL_286:
     _makepath(aP4[32], 0, 0, (ObjectClass *)v350, *(const char **)&aP3[8]);
     if ( !*(_DWORD *)(v4 + 1808) )
     {
-      LOBYTE(edx289) = 0;
+      IDA_LOBYTE(edx289) = 0;
       *(_DWORD *)(v4 + 1808) = SearchMIXFile(aP4[32], edx289);
     }
   }
@@ -4472,7 +4508,7 @@ LABEL_286:
                            *(CCINIClass **)&aP3[4],
                            *(INIClass **)&aP3[8]);
         sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620[77032], (INIClass *)aP2.sectionHead);
-        LOBYTE(edx294) = v351->abstractFlags;
+        IDA_LOBYTE(edx294) = v351->abstractFlags;
         *(_DWORD *)&aP3[8] = edx294;
         *(_DWORD *)&aP3[4] = String;
         v357 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
@@ -4484,7 +4520,7 @@ LABEL_286:
         *(_DWORD *)&aP3[8] = aP2.headNode[2];
         *(_DWORD *)&aP3[4] = &stru_830620[81120];
         *(_DWORD *)aP3 = aP2.sectionHead;
-        LOBYTE(v351->abstractFlags) = al294;
+        IDA_LOBYTE(v351->abstractFlags) = al294;
         sprintf(*(char *const *)aP3, *(ObjectClass **)&aP3[4], *(INIClass **)&aP3[8]);
         sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620[77084], (INIClass *)aP2.sectionHead);
         *(_DWORD *)&aP3[8] = v351;
@@ -4519,7 +4555,7 @@ LABEL_286:
                                         *(CCINIClass **)&aP3[4],
                                         *(INIClass **)&aP3[8]);
         sprintf(String[0].__pad_0, (ObjectClass *)&stru_830620[77032], (INIClass *)aP2.sectionHead);
-        LOBYTE(edx294a) = v351->abstractFlags;
+        IDA_LOBYTE(edx294a) = v351->abstractFlags;
         *(_DWORD *)&aP3[8] = edx294a;
         *(_DWORD *)&aP3[4] = String;
         v364 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
@@ -4677,7 +4713,7 @@ LABEL_286:
     aP2.headNode[2] = v401;
   }
   while ( (int)v392 < 5 );
-  LOBYTE(v401) = *(_BYTE *)(v4 + 2052);
+  IDA_LOBYTE(v401) = *(_BYTE *)(v4 + 2052);
   *(_DWORD *)&aP3[8] = v401;
   *(_DWORD *)&aP3[4] = &stru_830620[76748];
   v388 = (INIClass *)__0Iostream_init_QAE_XZ_4((Iostream_init *)(v4 + 504));
@@ -4738,10 +4774,11 @@ LABEL_286:
   }
   return 1;
 }
-}
+} // namespace gamemd
 
 
 // 0x7170A0
+namespace gamemd {
 int ObjectTypeClass::DeserializeArrays()
 {
   int result; // eax
@@ -4807,22 +4844,26 @@ int ObjectTypeClass::DeserializeArrays()
   }
   return result; /*0x71719a*/
 }
+} // namespace gamemd
 // 0x717820
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717820()
 {
   int v2; // eax
   const char *v3; // ecx
 
-  LOBYTE(v2) = *(_BYTE *)(this + 3536); /*0x717823*/
-  v3 = (const char *)(this + 3536); /*0x717829*/
+  IDA_LOBYTE(v2) = this->u8_DD0; /*0x717823*/
+  v3 = (const char *)(&this->q5846); /*0x717829*/
   if ( (_BYTE)v2 ) /*0x717831*/
   {
     v2 = FileExtension::MapHandler(v3); /*0x717833*/
-    *(_DWORD *)(this + 3568) = v2; /*0x717838*/
+    this->u32_DF0 = v2; /*0x717838*/
   }
   return v2; /*0x71783e*/
 }
+} // namespace gamemd
 // 0x717C00
+namespace gamemd {
 unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
 {
   int v3; // eax
@@ -4841,7 +4882,7 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
     *((_BYTE *)this + 13) = 0; /*0x717c61*/
     return this; /*0x717c65*/
   }
-  v4 = __2_YAPAXI_Z(4 * v3); /*0x717c23*/
+  v4 = RA2_OPNEW(4 * v3); /*0x717c23*/
   *(this + 1) = v4; /*0x717c2b*/
   if ( !v4 ) /*0x717c30*/
     return this; /*0x717c30*/
@@ -4858,7 +4899,9 @@ unsigned int * ObjectTypeClass::loadTypeMember_5717C00(unsigned int * a2)
   while ( v6 < *(this + 2) ); /*0x717c51*/
   return this; /*0x717c55*/
 }
+} // namespace gamemd
 // 0x41CBF0
+namespace gamemd {
 unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
 {
   int v1; // esi
@@ -4869,7 +4912,9 @@ unsigned int * ObjectTypeClass::vt_entry_7C(unsigned int * a1)
   a1[2] = v1; /*0x41cc0c*/
   return a1; /*0x41cc0f*/
 }
+} // namespace gamemd
 // 0x41CF80
+namespace gamemd {
 unsigned int * ObjectTypeClass::Copy(unsigned int * a0, ObjectTypeClass * aP1)
 {
   *a0 = *aP1; /*0x41cf8d*/
@@ -4877,15 +4922,19 @@ unsigned int * ObjectTypeClass::Copy(unsigned int * a0, ObjectTypeClass * aP1)
   a0[2] = aP1[2]; /*0x41cf99*/
   return a0; /*0x41cf95*/
 }
+} // namespace gamemd
 // 0x474690
+namespace gamemd {
 char ObjectTypeClass::ReadBool(INIClass * Block, INIClass * aP2, int a4)
 {
   char Buffer[32]; // [esp+4h] [ebp-20h] BYREF
 
   sprintf(Buffer, "%d", 360 * a4 / 256); /*0x4746ba*/
-  return INIClass::SetString(this, Block, aP2, Buffer); /*0x4746d8*/
+  return INIClass::SetString(Block, aP2, Buffer); /*0x4746d8*/
 }
+} // namespace gamemd
 // 0x4746E0
+namespace gamemd {
 int ObjectTypeClass::ReadPrerequisite(unsigned char * a2, unsigned char * a3, int a4)
 {
   char String[32]; // [esp+0h] [ebp-20h] BYREF
@@ -4895,7 +4944,9 @@ int ObjectTypeClass::ReadPrerequisite(unsigned char * a2, unsigned char * a3, in
   else
     return a4; /*0x47472f*/
 }
+} // namespace gamemd
 // 0x474740
+namespace gamemd {
 unsigned char ** ObjectTypeClass::ReadSoundList(unsigned char ** a2, unsigned char * a3, unsigned char * a4, unsigned char ** a5)
 {
   char Buffer[64]; // [esp+0h] [ebp-40h] BYREF
@@ -4903,7 +4954,7 @@ unsigned char ** ObjectTypeClass::ReadSoundList(unsigned char ** a2, unsigned ch
   if ( INIClass::GetString(this, a3, a4, &g_INI_DefaultBuffer, Buffer, 64) ) /*0x474759*/
   {
     sscanf(Buffer, "%d,%d", &a4, &a3); /*0x474776*/
-    HIWORD(a4) = (_WORD)a3; /*0x47478e*/
+    IDA_HIWORD(a4) = (_WORD)a3; /*0x47478e*/
     *a2 = a4; /*0x47479a*/
     return a2; /*0x474785*/
   }
@@ -4913,40 +4964,48 @@ unsigned char ** ObjectTypeClass::ReadSoundList(unsigned char ** a2, unsigned ch
     return a2; /*0x4747a6*/
   }
 }
+} // namespace gamemd
 // 0x4747C0
+namespace gamemd {
 char ObjectTypeClass::ReadBool2(INIClass * Block, INIClass * aP2, short * a4)
 {
   char Buffer[64]; // [esp+4h] [ebp-40h] BYREF
 
   sprintf(Buffer, "%d,%d", *a4, a4[1]); /*0x4747dd*/
-  return INIClass::SetString(this, Block, aP2, Buffer); /*0x4747fb*/
+  return INIClass::SetString(Block, aP2, Buffer); /*0x4747fb*/
 }
+} // namespace gamemd
 // 0x4749E0
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_54749E0(CCINIClass * aP1, unsigned char * a2, unsigned int a4)
 {
   char *v5; // eax
   char Destination[32]; // [esp+4h] [ebp-20h] BYREF
 
   v5 = sub_473960(a4); /*0x4749f1*/
-  INIClass::GetString(this, aP1, a2, v5, Destination, 32); /*0x474a03*/
+  INIClass::GetString(aP1, a2, v5, Destination, 32); /*0x474a03*/
   return ObjectTypeClass::loadTypeMember_473980(Destination); /*0x474a11*/
 }
+} // namespace gamemd
 // 0x474D50
+namespace gamemd {
 char ObjectTypeClass::ReadString(INIClass * Block, INIClass * aP2, unsigned char * a4)
 {
   char Buffer[64]; // [esp+4h] [ebp-40h] BYREF
 
   sprintf(Buffer, "%d,%d,%d", *a4, a4[1], a4[2]); /*0x474d75*/
-  return INIClass::SetString(this, Block, aP2, Buffer); /*0x474d93*/
+  return INIClass::SetString(Block, aP2, Buffer); /*0x474d93*/
 }
+} // namespace gamemd
 // 0x474E40
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5474E40(INIClass * aP1, unsigned char * a2, int a4)
 {
   int v4; // edi
   const void **v5; // esi
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
 
-  INIClass::GetString(this, aP1, a2, (&off_81BA88)[a4], Destination, 32); /*0x474e62*/
+  INIClass::GetString(aP1, a2, (&off_81BA88)[a4], Destination, 32); /*0x474e62*/
   v4 = 0; /*0x474e67*/
   v5 = (const void **)&off_81BA88; /*0x474e69*/
   while ( _strcmpi(Destination, *v5) ) /*0x474e80*/
@@ -4958,38 +5017,46 @@ int ObjectTypeClass::loadTypeMember_5474E40(INIClass * aP1, unsigned char * a2, 
   }
   return v4; /*0x474e8e*/
 }
+} // namespace gamemd
 // 0x474FA0
+namespace gamemd {
 int ObjectTypeClass::ReadDouble(unsigned char * a2, unsigned char * a3, int a4)
 {
   char Destination[100]; // [esp+4h] [ebp-64h] BYREF
 
-  INIClass::GetString(this, a2, a3, &g_INI_DefaultBuffer, Destination, 100); /*0x474fba*/
+  INIClass::GetString(a2, a3, &g_INI_DefaultBuffer, Destination, 100); /*0x474fba*/
   if ( strlen(Destination) ) /*0x474fc3*/
     return VocClass::FindByName(Destination); /*0x474fd4*/
   else
     return a4; /*0x474fdf*/
 }
+} // namespace gamemd
 // 0x474FF0
+namespace gamemd {
 int ObjectTypeClass::ReadDouble2(INIClass * aP1, unsigned char * a2, void * a4)
 {
   char *Name; // eax
   char Destination[32]; // [esp+4h] [ebp-20h] BYREF
 
   Name = AbstractType::FindName(a4); /*0x475001*/
-  INIClass::GetString(this, aP1, a2, Name, Destination, 32); /*0x475013*/
+  INIClass::GetString(aP1, a2, Name, Destination, 32); /*0x475013*/
   return StringTable::Lookup(Destination); /*0x475021*/
 }
+} // namespace gamemd
 // 0x475060
+namespace gamemd {
 int ObjectTypeClass::ReadBool3(INIClass * aP1, unsigned char * a2, void * a4)
 {
   char *v5; // eax
   char Destination[32]; // [esp+4h] [ebp-20h] BYREF
 
   v5 = sub_45DD20(a4); /*0x475071*/
-  INIClass::GetString(this, aP1, a2, v5, Destination, 32); /*0x475083*/
+  INIClass::GetString(aP1, a2, v5, Destination, 32); /*0x475083*/
   return sub_45DD50(Destination); /*0x475091*/
 }
+} // namespace gamemd
 // 0x476240
+namespace gamemd {
 char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTypeClass * aP3)
 {
   int i; // ebp
@@ -5014,13 +5081,15 @@ char ObjectTypeClass::ReadTypeListINI(unsigned char * Block, char * a2, ObjectTy
     v5 = *(_DWORD *)(aP3 + 4); /*0x4762b1*/
     v9 = 0; /*0x4762b4*/
     v6 = *(_DWORD *)(v5 + 4 * i); /*0x4762bc*/
-    v9 = HIBYTE(v6); /*0x4762c6*/
+    v9 = IDA_HIBYTE(v6); /*0x4762c6*/
     v8 = v6 & 0xFFFFFF; /*0x4762ce*/
     strcat(Source, (const char *)(System_Read_6E7330(&v8) + 36)); /*0x4762fa*/
   }
   return INIClass::SetString(v10, Block, a2, Source); /*0x47632e*/
 }
+} // namespace gamemd
 // 0x476FC0
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_476FC0(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
 {
   char *v5; // eax
@@ -5032,7 +5101,9 @@ int ObjectTypeClass::loadTypeMember_476FC0(CCINIClass * aP1, unsigned char * a2,
   else
     return aP3; /*0x477012*/
 }
+} // namespace gamemd
 // 0x477590
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2, CCINIClass * aP3)
 {
   char *v4; // esi
@@ -5040,7 +5111,7 @@ int ObjectTypeClass::loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2
   bool v6; // zf
   char String[128]; // [esp+8h] [ebp-80h] BYREF
 
-  INIClass::GetString(this, aP1, a2, (&off_81BABC)[aP3], String, 128); /*0x4775c1*/
+  INIClass::GetString(aP1, a2, (&off_81BABC)[aP3], String, 128); /*0x4775c1*/
   v4 = strtok(String, Delimiter); /*0x4775d5*/
   result = _strcmpi(v4, g_INI_Key_None); /*0x4775dd*/
   if ( result ) /*0x4775e7*/
@@ -5059,7 +5130,9 @@ int ObjectTypeClass::loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2
   }
   return result; /*0x4775e9*/
 }
+} // namespace gamemd
 // 0x48DFF0
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_48DFF0()
 {
   int v2; // edi
@@ -5078,7 +5151,9 @@ int ObjectTypeClass::loadTypeMember_48DFF0()
   }
   return v2; /*0x48e01c*/
 }
+} // namespace gamemd
 // 0x5F1C30
+namespace gamemd {
 int ObjectTypeClass::CreateInstance(CampaignScore * aP1, CampaignScore * aP2)
 {
   if ( *(_DWORD *)(this + 60) ) /*0x5f1c30*/
@@ -5086,7 +5161,9 @@ int ObjectTypeClass::CreateInstance(CampaignScore * aP1, CampaignScore * aP2)
   else
     return 0; /*0x5f1c37*/
 }
+} // namespace gamemd
 // 0x5F61A0
+namespace gamemd {
 void ObjectTypeClass::ReleaseWaveAndString()
 {
   void *v2; // edi
@@ -5095,19 +5172,21 @@ void ObjectTypeClass::ReleaseWaveAndString()
   v2 = (void *)*this; /*0x5f61a4*/
   if ( *this ) /*0x5f61a4*/
   {
-    WaveClass::Destroy(*this); /*0x5f61ac*/
-    __3_YAXPAX_Z(v2); /*0x5f61b2*/
+    WaveClass::Destroy(); /*0x5f61ac*/
+    RA2_OPDEL(v2); /*0x5f61b2*/
   }
   v3 = (void **)*(this + 1); /*0x5f61ba*/
   *this = 0; /*0x5f61bd*/
   if ( v3 ) /*0x5f61c5*/
   {
     String::Release(v3); /*0x5f61c9*/
-    __3_YAXPAX_Z(v3); /*0x5f61cf*/
+    RA2_OPDEL(v3); /*0x5f61cf*/
   }
   *(this + 1) = 0; /*0x5f61d7*/
 }
+} // namespace gamemd
 // 0x5F75C0
+namespace gamemd {
 unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
 {
   *a1 = 10; /*0x5f75cd*/
@@ -5115,7 +5194,9 @@ unsigned int * ObjectTypeClass::InitTripleTen(unsigned int * a1)
   a1[2] = 10; /*0x5f75d6*/
   return a1; /*0x5f75d9*/
 }
+} // namespace gamemd
 // 0x5F8080
+namespace gamemd {
 void ObjectTypeClass::CleanupWeapons()
 {
   char *v1; // esi
@@ -5125,7 +5206,7 @@ void ObjectTypeClass::CleanupWeapons()
   void *v5; // edi
   void *v6; // edi
 
-  v1 = this + 204; /*0x5f8084*/
+  v1 = &this->u32_330; /*0x5f8084*/
   v2 = 18; /*0x5f808a*/
   do /*0x5f8107*/
   {
@@ -5133,28 +5214,28 @@ void ObjectTypeClass::CleanupWeapons()
     if ( v3 ) /*0x5f8096*/
     {
       WaveClass::Destroy(*((_DWORD *)v1 - 1)); /*0x5f809a*/
-      __3_YAXPAX_Z(v3); /*0x5f80a0*/
+      RA2_OPDEL(v3); /*0x5f80a0*/
       *((_DWORD *)v1 - 1) = 0; /*0x5f80a8*/
     }
     v4 = *(void ***)v1; /*0x5f80ab*/
     if ( *(_DWORD *)v1 ) /*0x5f80ab*/
     {
       String::Release(*(void ***)v1); /*0x5f80b3*/
-      __3_YAXPAX_Z(v4); /*0x5f80b9*/
+      RA2_OPDEL(v4); /*0x5f80b9*/
       *(_DWORD *)v1 = 0; /*0x5f80c1*/
     }
     v5 = (void *)*((_DWORD *)v1 + 35); /*0x5f80c3*/
     if ( v5 ) /*0x5f80cb*/
     {
       WaveClass::Destroy(*((_DWORD *)v1 + 35)); /*0x5f80cf*/
-      __3_YAXPAX_Z(v5); /*0x5f80d5*/
+      RA2_OPDEL(v5); /*0x5f80d5*/
       *((_DWORD *)v1 + 35) = 0; /*0x5f80dd*/
     }
     v6 = (void *)*((_DWORD *)v1 + 36); /*0x5f80e3*/
     if ( v6 ) /*0x5f80eb*/
     {
       String::Release(*((void ***)v1 + 36)); /*0x5f80ef*/
-      __3_YAXPAX_Z(v6); /*0x5f80f5*/
+      RA2_OPDEL(v6); /*0x5f80f5*/
       *((_DWORD *)v1 + 36) = 0; /*0x5f80fd*/
     }
     v1 += 8; /*0x5f8103*/
@@ -5162,26 +5243,32 @@ void ObjectTypeClass::CleanupWeapons()
   }
   while ( v2 ); /*0x5f8107*/
 }
+} // namespace gamemd
 // 0x5F9AE0
+namespace gamemd {
 ObjectTypeClass * ObjectTypeClass::Destru_vt08(char a2)
 {
-  ObjectTypeClass::Destruct((int)this); /*0x5f9ae3*/
+  ObjectTypeClass::Destruct(); /*0x5f9ae3*/
   if ( (a2 & 1) != 0 ) /*0x5f9aed*/
-    __3_YAXPAX_Z(this); /*0x5f9af0*/
+    RA2_OPDEL(); /*0x5f9af0*/
   return this; /*0x5f9afa*/
 }
+} // namespace gamemd
 // 0x5F9B60
+namespace gamemd {
 int ObjectTypeClass::FreeLoaderBuffer()
 {
-  __3_YAXPAX_Z(*(void **)this); /*0x5f9b66*/
+  RA2_OPDEL(); /*0x5f9b66*/
   *(_DWORD *)this = 0; /*0x5f9b70*/
-  *(_DWORD *)(this + 4) = 0; /*0x5f9b72*/
-  *(_DWORD *)(this + 8) = 0; /*0x5f9b75*/
-  *(_BYTE *)(this + 12) = 0; /*0x5f9b78*/
-  *(_DWORD *)(this + 16) = 0; /*0x5f9b7b*/
+  this->vtable2 = 0; /*0x5f9b72*/
+  this->vtable3 = 0; /*0x5f9b75*/
+  this->vtable4 = 0; /*0x5f9b78*/
+  this->uniqueId = 0; /*0x5f9b7b*/
   return 0; /*0x5f9b7e*/
 }
+} // namespace gamemd
 // 0x6E5E70
+namespace gamemd {
 int ObjectTypeClass::FindByName()
 {
   int v2; // ebx
@@ -5202,7 +5289,9 @@ int ObjectTypeClass::FindByName()
   }
   return v3; /*0x6e5eb8*/
 }
+} // namespace gamemd
 // 0x7179D0
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_57179D0(WeaponTypeClass * aP1, CCINIClass * aP2)
 {
   if ( this != aP2 ) /*0x7179d7*/
@@ -5220,13 +5309,17 @@ int ObjectTypeClass::loadTypeMember_57179D0(WeaponTypeClass * aP1, CCINIClass * 
   *(_WORD *)(aP1 + 16) = *((_WORD *)this + 8); /*0x717a1a*/
   return aP1; /*0x717a19*/
 }
+} // namespace gamemd
 // 0x717A30
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A30(int a2)
 {
   *this = a2; /*0x717a34*/
   return a2; /*0x717a36*/
 }
+} // namespace gamemd
 // 0x717A50
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A50(int a2)
 {
   int result; // eax
@@ -5234,15 +5327,19 @@ int ObjectTypeClass::loadTypeMember_5717A50(int a2)
   result = a2; /*0x717a50*/
   if ( a2 <= 0 ) /*0x717a56*/
     result = 1; /*0x717a58*/
-  *(this + 1) = result; /*0x717a5d*/
+  this->q004 = result; /*0x717a5d*/
   return result; /*0x717a60*/
 }
+} // namespace gamemd
 // 0x717A70
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A70()
 {
-  return *(this + 1); /*0x717a73*/
+  return this->q004; /*0x717a73*/
 }
+} // namespace gamemd
 // 0x717A80
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717A80(int a2)
 {
   int result; // eax
@@ -5250,15 +5347,19 @@ int ObjectTypeClass::loadTypeMember_5717A80(int a2)
   result = a2; /*0x717a80*/
   if ( a2 <= 0 ) /*0x717a86*/
     result = 1; /*0x717a88*/
-  *(this + 2) = result; /*0x717a8d*/
+  this->q008 = result; /*0x717a8d*/
   return result; /*0x717a90*/
 }
+} // namespace gamemd
 // 0x717AA0
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717AA0()
 {
-  return *(this + 2); /*0x717aa3*/
+  return this->q008; /*0x717aa3*/
 }
+} // namespace gamemd
 // 0x717AB0
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717AB0(int a2)
 {
   int result; // eax
@@ -5266,26 +5367,34 @@ int ObjectTypeClass::loadTypeMember_5717AB0(int a2)
   result = a2; /*0x717ab0*/
   if ( a2 <= 0 ) /*0x717ab6*/
     result = 1; /*0x717ab8*/
-  *(this + 3) = result; /*0x717abd*/
+  this->__pad_00C = result; /*0x717abd*/
   return result; /*0x717ac0*/
 }
+} // namespace gamemd
 // 0x717AD0
+namespace gamemd {
 int ObjectTypeClass::loadTypeMember_5717AD0()
 {
-  return *(this + 3); /*0x717ad3*/
+  return this->__pad_00C; /*0x717ad3*/
 }
+} // namespace gamemd
 // 0x717AE0
+namespace gamemd {
 BOOL ObjectTypeClass::loadTypeMember_5717AE0()
 {
   return *this == 0; /*0x717ae9*/
 }
+} // namespace gamemd
 // 0x717BF0
+namespace gamemd {
 unsigned int * ObjectTypeClass::CheckFlag(ObjectTypeClass * aP1)
 {
-  *this = &DynamicVectorClass<AnimTypeClass const *>::`vftable'; /*0x717bf2*/
+  *this = &(void*)(void*)&DynamicVectorClass_AnimTypeClass_const___vftable; /*0x717bf2*/
   return this; /*0x717bf8*/
 }
+} // namespace gamemd
 // 0x71CB90
+namespace gamemd {
 int ObjectTypeClass::ReadDestroyAnim()
 {
   int result; // eax
@@ -5295,7 +5404,7 @@ int ObjectTypeClass::ReadDestroyAnim()
   _BYTE v6[4]; // [esp+Ch] [ebp-10h] BYREF
   char Buffer[12]; // [esp+10h] [ebp-Ch] BYREF
 
-  INIClass::ClearSection((int)this, (int)aTerrain, 0); /*0x71cb9f*/
+  INIClass::ClearSection((int)aTerrain, 0); /*0x71cb9f*/
   result = dword_A8E998; /*0x71cba4*/
   for ( i = 0; i < dword_A8E998; ++i ) /*0x71cbad*/
   {
@@ -5305,11 +5414,12 @@ int ObjectTypeClass::ReadDestroyAnim()
       if ( *(_BYTE *)(v4 + 144) ) /*0x71cbcb*/
       {
         v5 = *(_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v4 + 440))(v4, v6); /*0x71cbe6*/
-        sprintf(Buffer, "%d", (__int16)v5 + 1000 * SHIWORD(v5)); /*0x71cc09*/
-        INIClass::SetString(this, (unsigned __int8 *)aTerrain, Buffer, (char *)(*(_DWORD *)(v4 + 200) + 36)); /*0x71cc29*/
+        sprintf(Buffer, "%d", (__int16)v5 + 1000 * IDA_SHIWORD(v5)); /*0x71cc09*/
+        INIClass::SetString((unsigned __int8 *)aTerrain, Buffer, (char *)(*(_DWORD *)(v4 + 200) + 36)); /*0x71cc29*/
       }
     }
     result = dword_A8E998; /*0x71cc2e*/
   }
   return result; /*0x71cc3d*/
 }
+} // namespace gamemd

@@ -5,7 +5,18 @@
 
 namespace gamemd {
 struct VectorCursor_uint_DynamicVectorClass_uint____13 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int u32_4;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
+    unsigned int q018;  // 0x18
+    unsigned int q024;  // 0x24
+    unsigned int q054;  // 0x54
+    unsigned int q084;  // 0x84
+    unsigned int q774;  // 0x774
+    unsigned int q1908;  // 0x1908
+    unsigned int q6408;  // 0x6408
+// --- flat members (END) ---
     void Remove();  // 0x4F42D0
     void Count(int a2, int a3);  // 0x4F4BB0
     void Add();  // 0x4F42A0

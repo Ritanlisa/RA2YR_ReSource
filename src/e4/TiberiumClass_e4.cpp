@@ -6,6 +6,12 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/RandomMap_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/TiberiumClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/Tiberium_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5A0160
 namespace gamemd {
@@ -41,12 +47,12 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
   v28 = (_DWORD *)RandomMap::CellListAlloc(a1); /*0x5a0171*/
   for ( i = 0; i < a2; ++i ) /*0x5a0181*/
   {
-    v8 = __2_YAPAXI_Z(0x18u); /*0x5a0189*/
+    v8 = RA2_OPNEW(0x18u); /*0x5a0189*/
     v9 = v8; /*0x5a018e*/
     if ( v8 ) /*0x5a0195*/
     {
       VectorClass::CellConstructor(v8, 0, 0); /*0x5a019b*/
-      *v9 = &DynamicVectorClass<Cell>::`vftable'; /*0x5a01a0*/
+      *v9 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x5a01a0*/
       v9[5] = 10; /*0x5a01a6*/
       v9[4] = 0; /*0x5a01ad*/
       v29 = v9; /*0x5a01b0*/
@@ -69,9 +75,9 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
           v12 = (_WORD *)(v10[1] + 4 * v31); /*0x5a01f3*/
           v13 = (_WORD *)(4 * (v11 & 7) + 9041544); /*0x5a01fe*/
           v14 = *v13 + *v12; /*0x5a0205*/
-          LOWORD(v13) = v12[1] + v13[1]; /*0x5a020c*/
-          LOWORD(v32) = v14; /*0x5a0210*/
-          HIWORD(v32) = (_WORD)v13; /*0x5a0215*/
+          IDA_LOWORD(v13) = v12[1] + v13[1]; /*0x5a020c*/
+          IDA_LOWORD(v32) = v14; /*0x5a0210*/
+          IDA_HIWORD(v32) = (_WORD)v13; /*0x5a0215*/
           v30 = v32; /*0x5a021e*/
           v15 = (__int16)v13; /*0x5a0225*/
           v16 = (__int16)v13 + v14; /*0x5a0228*/
@@ -138,49 +144,48 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
 }
 // 0x7216C0
 namespace gamemd {
-unsigned int * TiberiumClass::TiberiumClass(ObjectClass * aP1)
+TiberiumClass::TiberiumClass(ObjectClass * aP1)
 {
-  wchar_t *v3; // edx
   int v4; // eax
   int v5; // eax
 
-  AbstractTypeClass::Constructor((int)this, aP1); /*0x7216ca*/
-  *(this + 40) = -1717986918; /*0x7216dc*/
-  *(this + 44) = -1717986918; /*0x7216e7*/
-  *(this + 38) = -1; /*0x7216f1*/
-  *(this + 39) = 0; /*0x7216fb*/
-  *(this + 41) = 1069128089; /*0x721701*/
-  *(this + 42) = 0; /*0x721707*/
-  *(this + 45) = 1069128089; /*0x72170d*/
-  *(this + 46) = 0; /*0x721713*/
-  *(this + 47) = 0; /*0x721719*/
-  *(this + 48) = 0; /*0x72171f*/
-  AnimTypeVector::Constructor(this + 49, 0, 0); /*0x721725*/
-  *(this + 54) = 10; /*0x72172a*/
-  *(this + 53) = 0; /*0x721731*/
-  *(this + 49) = &TypeList<AnimTypeClass const *>::`vftable'; /*0x721734*/
-  *(this + 56) = 0; /*0x72173a*/
-  *(this + 57) = 0; /*0x721740*/
-  *(this + 58) = 0; /*0x721746*/
-  *(this + 59) = 0; /*0x72174c*/
-  *(this + 60) = 0; /*0x721752*/
-  *(this + 61) = 0; /*0x721758*/
-  *(this + 62) = 0; /*0x72175e*/
-  *(this + 63) = 0; /*0x721764*/
-  *(this + 64) = g_CurrentFrame; /*0x721770*/
-  *(this + 66) = 0; /*0x721776*/
-  *(this + 67) = 0; /*0x72177c*/
-  *(this + 68) = 0; /*0x721782*/
-  *(this + 69) = 0; /*0x721788*/
-  *(this + 70) = 0; /*0x72178e*/
-  v3 = g_CurrentFrame; /*0x721794*/
-  *(this + 73) = 0; /*0x72179a*/
-  *(this + 71) = v3; /*0x7217a0*/
-  *this = &TiberiumClass::`vftable'; /*0x7217a6*/
-  *(this + 1) = &TiberiumClass::`vftable'; /*0x7217ac*/
-  *(this + 2) = &TiberiumClass::`vftable'; /*0x7217b3*/
-  *(this + 3) = &TiberiumClass::`vftable'; /*0x7217ba*/
-  *(this + 38) = g_CrateProcessState; /*0x7217c6*/
+  AbstractTypeClass::Constructor(aP1); /*0x7216ca*/
+  *(&this->uniqueId0) = -1717986918; /*0x7216dc*/
+  *(&this->uniqueId4) = -1717986918; /*0x7216e7*/
+  *(&this->vtable48) = -1; /*0x7216f1*/
+  *(&this->vtable49) = 0; /*0x7216fb*/
+  *(&this->uniqueId1) = 1069128089; /*0x721701*/
+  *(&this->uniqueId2) = 0; /*0x721707*/
+  *(&this->uniqueId5) = 1069128089; /*0x72170d*/
+  *(&this->uniqueId6) = 0; /*0x721713*/
+  *(&this->uniqueId7) = 0; /*0x721719*/
+  *(&this->uniqueId8) = 0; /*0x72171f*/
+  AnimTypeVector::Constructor(&this->q0C4, 0, 0); /*0x721725*/
+  *(&this->abstractFlags4) = 10; /*0x72172a*/
+  *(&this->abstractFlags3) = 0; /*0x721731*/
+  *(&this->uniqueId9) = &(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x721734*/
+  *(&this->abstractFlags6) = 0; /*0x72173a*/
+  *(&this->abstractFlags7) = 0; /*0x721740*/
+  *(&this->abstractFlags8) = 0; /*0x721746*/
+  *(&this->abstractFlags9) = 0; /*0x72174c*/
+  *(&this->nextArrayIndex0) = 0; /*0x721752*/
+  *(&this->nextArrayIndex1) = 0; /*0x721758*/
+  *(&this->nextArrayIndex2) = 0; /*0x72175e*/
+  *(&this->nextArrayIndex3) = 0; /*0x721764*/
+  *(&this->nextArrayIndex4) = g_CurrentFrame; /*0x721770*/
+  *(&this->nextArrayIndex6) = 0; /*0x721776*/
+  *(&this->nextArrayIndex7) = 0; /*0x72177c*/
+  *(&this->nextArrayIndex8) = 0; /*0x721782*/
+  *(&this->nextArrayIndex9) = 0; /*0x721788*/
+  *(&this->referenceCount0) = 0; /*0x72178e*/
+  g_CurrentFrame = g_CurrentFrame; /*0x721794*/
+  *(&this->referenceCount3) = 0; /*0x72179a*/
+  *(&this->referenceCount1) = g_CurrentFrame; /*0x7217a0*/
+  *this = &(void*)(void*)&TiberiumClass_vftable; /*0x7217a6*/
+  this->vtable2 = &(void*)(void*)&TiberiumClass_vftable; /*0x7217ac*/
+  this->vtable3 = &(void*)(void*)&TiberiumClass_vftable; /*0x7217b3*/
+  this->vtable4 = &(void*)(void*)&TiberiumClass_vftable; /*0x7217ba*/
+  *(&this->vtable48) = g_CrateProcessState; /*0x7217c6*/
   if ( g_CrateProcessState < dword_B0F4F0 /*0x7217fe*/
     || (byte_B0F4F5 || !dword_B0F4F0)
     && dword_B0F4FC > 0
@@ -192,7 +197,7 @@ unsigned int * TiberiumClass::TiberiumClass(ObjectClass * aP1)
     v4 = g_CrateProcessState++; /*0x72180b*/
     *(_DWORD *)&BuildingClass_InstanceArray->gap0[4 * v4] = this; /*0x72181a*/
   }
-  (*(void (__thiscall **)(_DWORD *))(*(this + 49) + 12))(this + 49); /*0x721821*/
+  (*(void (__thiscall **)(_DWORD *))(*(&this->uniqueId9) + 12))(&this->uniqueId9); /*0x721821*/
   if ( g_AnimManager < g_AnimTypePool /*0x721857*/
     || (g_AnimPoolLocked || !g_AnimTypePool)
     && g_AnimManagerConfig > 0
@@ -202,7 +207,7 @@ unsigned int * TiberiumClass::TiberiumClass(ObjectClass * aP1)
          0) )
   {
     v5 = g_AnimManager++; /*0x721864*/
-    *((_DWORD *)g_AnimPoolCount + v5) = this; /*0x721873*/
+    *((_DWORD *, unsigned int a1, unsigned int a2)g_AnimPoolCount + v5) = this; /*0x721873*/
   }
   return this; /*0x721878*/
 }
@@ -270,7 +275,7 @@ int TiberiumClass::LoadFromINI(unsigned char *** aP1)
          128) )
   {
     DynamicVectorClass::AnimTypeConstructor(v25, 0, 0); /*0x721b6c*/
-    v25[0] = &TypeList<AnimTypeClass const *>::`vftable'; /*0x721b7b*/
+    v25[0] = &(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x721b7b*/
     for ( i = strtok(String, Delimiter); i; i = strtok(0, Delimiter) ) /*0x721b8d*/
     {
       if ( !*i ) /*0x721b8f*/
@@ -280,12 +285,12 @@ int TiberiumClass::LoadFromINI(unsigned char *** aP1)
         DynamicVector::Add_Alt4(v25, &v19); /*0x721bac*/
     }
     TypeList::AnimTypeCopy(v20, v25); /*0x721bcd*/
-    v25[0] = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x721bd6*/
-    DynamicVectorClass::Destroy_Alt((int)v25); /*0x721bde*/
+    v25[0] = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x721bd6*/
+    DynamicVectorClass::Destroy_Alt((int, unsigned int a1)v25); /*0x721bde*/
   }
   else
   {
-    TypeList::AnimTypeCopy(v20, (_DWORD *)(a1 + 196)); /*0x721bf0*/
+    TypeList::AnimTypeCopy(v20, (_DWORD *, unsigned int a1)(a1 + 196)); /*0x721bf0*/
   }
   VectorClass::CopyDefault((_DWORD *)(a1 + 196), v20); /*0x721c03*/
   v12 = v23; /*0x721c0c*/
@@ -294,9 +299,9 @@ int TiberiumClass::LoadFromINI(unsigned char *** aP1)
   v14 = (void *)v20[1]; /*0x721c17*/
   *(_DWORD *)(a1 + 216) = v12; /*0x721c1b*/
   *(_DWORD *)(a1 + 220) = v13; /*0x721c1e*/
-  v20[0] = &VectorClass<AnimTypeClass const *>::`vftable'; /*0x721c21*/
+  v20[0] = &(void*)(void*)&VectorClass_AnimTypeClass_const___vftable; /*0x721c21*/
   if ( v14 && v21 ) /*0x721c34*/
-    __3_YAXPAX_Z(v14); /*0x721c37*/
+    RA2_OPDEL(v14); /*0x721c37*/
   switch ( INIClass::ReadInt_Overwrite(a1 + 36, g_INI_Key_Image, -1) ) /*0x721c55*/
   {
     case 0xFFFFFFFF: /*0x721c55*/
@@ -338,7 +343,6 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
   int j; // ecx
   void **v9; // ecx
   int v10; // eax
-  int v11; // ebx
   int result; // eax
   int v13; // edi
 
@@ -350,47 +354,47 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     for ( i = 0; i <= *v4; *(_DWORD *)(v4[2] + 4 * i - 4) = 0 ) /*0x721e9a*/
       ++i; /*0x721e9f*/
     *v4 = 0; /*0x721eaa*/
-    v6 = *(void ***)(v2 + 244); /*0x721eac*/
+    v6 = v2->q0F4; /*0x721eac*/
     if ( v6 ) /*0x721eb4*/
       Scalar::Dtor(v6, 1); /*0x721eb8*/
-    *(_DWORD *)(v2 + 244) = 0; /*0x721ebd*/
+    v2->q0F4 = 0; /*0x721ebd*/
   }
-  if ( *(_DWORD *)(v2 + 252) ) /*0x721ec3*/
+  if ( v2->u32_FC ) /*0x721ec3*/
   {
-    __3_YAXPAX_Z(*(void **)(v2 + 252)); /*0x721ece*/
-    *(_DWORD *)(v2 + 252) = 0; /*0x721ed6*/
+    RA2_OPDEL(v2->u32_FC); /*0x721ece*/
+    v2->u32_FC = 0; /*0x721ed6*/
   }
-  if ( *(_DWORD *)(v2 + 248) ) /*0x721edc*/
+  if ( v2->u32_F8 ) /*0x721edc*/
   {
-    __3_YAXPAX_Z(*(void **)(v2 + 248)); /*0x721ee7*/
-    *(_DWORD *)(v2 + 248) = 0; /*0x721eef*/
+    RA2_OPDEL(v2->u32_F8); /*0x721ee7*/
+    v2->u32_F8 = 0; /*0x721eef*/
   }
-  v7 = *(_DWORD **)(v2 + 272); /*0x721ef5*/
-  *(_DWORD *)(v2 + 240) = 0; /*0x721efb*/
+  v7 = v2->q110; /*0x721ef5*/
+  v2->q0F0 = 0; /*0x721efb*/
   if ( v7 ) /*0x721f03*/
   {
     for ( j = 0; j <= *v7; *(_DWORD *)(v7[2] + 4 * j - 4) = 0 ) /*0x721f0b*/
       ++j; /*0x721f10*/
     *v7 = 0; /*0x721f1b*/
-    v9 = *(void ***)(v2 + 272); /*0x721f1d*/
+    v9 = v2->q110; /*0x721f1d*/
     if ( v9 ) /*0x721f25*/
       Scalar::Dtor(v9, 1); /*0x721f29*/
-    *(_DWORD *)(v2 + 272) = 0; /*0x721f2e*/
+    v2->q110 = 0; /*0x721f2e*/
   }
-  if ( *(_DWORD *)(v2 + 280) ) /*0x721f34*/
+  if ( v2->q118 ) /*0x721f34*/
   {
-    __3_YAXPAX_Z(*(void **)(v2 + 280)); /*0x721f3f*/
-    *(_DWORD *)(v2 + 280) = 0; /*0x721f47*/
+    RA2_OPDEL(v2->q118); /*0x721f3f*/
+    v2->q118 = 0; /*0x721f47*/
   }
-  if ( *(_DWORD *)(v2 + 276) ) /*0x721f4d*/
+  if ( v2->q114 ) /*0x721f4d*/
   {
-    __3_YAXPAX_Z(*(void **)(v2 + 276)); /*0x721f58*/
-    *(_DWORD *)(v2 + 276) = 0; /*0x721f60*/
+    RA2_OPDEL(v2->q114); /*0x721f58*/
+    v2->q114 = 0; /*0x721f60*/
   }
-  v10 = *(_DWORD *)(v2 + 196); /*0x721f66*/
-  *(_DWORD *)(v2 + 268) = 0; /*0x721f74*/
+  v10 = v2->q0C4; /*0x721f66*/
+  v2->q10C = 0; /*0x721f74*/
   (*(void (__thiscall **)(int))(v10 + 12))(v2 + 196); /*0x721f7a*/
-  v11 = a2; /*0x721f7d*/
+  a2 = a2; /*0x721f7d*/
   result = AbstractClass::SaveLoad_Prefix_0((_DWORD *)v2, a2); /*0x721f83*/
   if ( result >= 0 ) /*0x721f8a*/
   {
@@ -398,24 +402,24 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     {
       AbstractTypeClass::Init(v2, (int)&a1); /*0x721f9b*/
       DynamicVectorClass::AnimTypeConstructor((_DWORD *)(v2 + 196), 0, 0); /*0x721fa4*/
-      *(_DWORD *)(v2 + 196) = &TypeList<AnimTypeClass const *>::`vftable'; /*0x721fb0*/
+      v2->q0C4 = &(void*)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x721fb0*/
       Timer::Start((_DWORD *)(v2 + 256), 0); /*0x721fb6*/
       Timer::Start((_DWORD *)(v2 + 284), 0); /*0x721fc2*/
-      *(_DWORD *)v2 = &TiberiumClass::`vftable'; /*0x721fc7*/
-      *(_DWORD *)(v2 + 4) = &TiberiumClass::`vftable'; /*0x721fcd*/
-      *(_DWORD *)(v2 + 8) = &TiberiumClass::`vftable'; /*0x721fd4*/
-      *(_DWORD *)(v2 + 12) = &TiberiumClass::`vftable'; /*0x721fdb*/
+      *(_DWORD *)v2 = &(void*)(void*)&TiberiumClass_vftable; /*0x721fc7*/
+      v2->vtable2 = &(void*)(void*)&TiberiumClass_vftable; /*0x721fcd*/
+      v2->vtable3 = &(void*)(void*)&TiberiumClass_vftable; /*0x721fd4*/
+      v2->vtable4 = &(void*)(void*)&TiberiumClass_vftable; /*0x721fdb*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 224)); /*0x721fee*/
     if ( v2 != -196 ) /*0x721ff5*/
       AnimTypeList::Constructor((_DWORD *)(v2 + 196)); /*0x721ff9*/
-    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v11 + 12))(v11, &a1, 4, 0); /*0x722009*/
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, &a1, 4, 0); /*0x722009*/
     result = 0; /*0x72200c*/
     if ( a1 > 0 ) /*0x722012*/
     {
       do /*0x722037*/
       {
-        (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v11 + 12))(v11, &a2, 4, 0); /*0x722023*/
+        (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, &a2, 4, 0); /*0x722023*/
         DynamicVector::Add_Alt4((_DWORD *)(v2 + 196), &a2); /*0x72202d*/
         ++v3; /*0x722032*/
       }
@@ -423,19 +427,19 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
       result = 0; /*0x722039*/
     }
     v13 = 0; /*0x722041*/
-    if ( *(int *)(v2 + 212) > 0 ) /*0x722045*/
+    if ( v2->u32_D4 > 0 ) /*0x722045*/
     {
       do /*0x722064*/
-        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(*(_DWORD *)(v2 + 200) + 4 * v13++)); /*0x722056*/
-      while ( v13 < *(_DWORD *)(v2 + 212) ); /*0x722064*/
+        ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2->u32_C8 + 4 * v13++)); /*0x722056*/
+      while ( v13 < v2->u32_D4 ); /*0x722064*/
       result = 0; /*0x722066*/
     }
-    *(_DWORD *)(v2 + 272) = 0; /*0x722068*/
-    *(_DWORD *)(v2 + 276) = 0; /*0x72206e*/
-    *(_DWORD *)(v2 + 280) = 0; /*0x722074*/
-    *(_DWORD *)(v2 + 244) = 0; /*0x72207a*/
-    *(_DWORD *)(v2 + 248) = 0; /*0x722080*/
-    *(_DWORD *)(v2 + 252) = 0; /*0x722086*/
+    v2->q110 = 0; /*0x722068*/
+    v2->q114 = 0; /*0x72206e*/
+    v2->q118 = 0; /*0x722074*/
+    v2->q0F4 = 0; /*0x72207a*/
+    v2->u32_F8 = 0; /*0x722080*/
+    v2->u32_FC = 0; /*0x722086*/
   }
   return result; /*0x72208c*/
 }

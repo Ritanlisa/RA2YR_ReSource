@@ -65,16 +65,6 @@ public:
     int SaveLoad_Prefix(int a1, int a2);  // 0x71e1d0
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x71e240
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    char LoadFromINI(unsigned char *** aP1);  // 0x71DEA0
-    int GetClassIdentifier(int a1, unsigned int * a2);  // 0x71E260
-    int GetTypeIdentifier();  // 0x71E330
-    int GetObjectSize();  // 0x71E340
-    TerrainTypeClass * ddtor(AbstractClass * a2, char a3);  // 0x71E360
-// --- e4 declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    unsigned int * Construct(int a2, unsigned char a3, unsigned char a4, MapClass * aP4, char a6);  // 0x5447C0
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

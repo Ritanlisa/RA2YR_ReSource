@@ -162,10 +162,10 @@ INT_PTR CALLBACK BaseProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
     case WM_COMMAND: {
         // IDA: handles button clicks via ControlDialogHandler
-        // LOWORD(wParam) = control ID, HIWORD(wParam) = notification code
-        if (HIWORD(wParam) == BN_CLICKED) {
+        // IDA_LOWORD(wParam) = control ID, IDA_HIWORD(wParam) = notification code
+        if (IDA_HIWORD(wParam) == BN_CLICKED) {
             // Forward to control handler
-            // ControlDialogHandler(hWnd, LOWORD(wParam));
+            // ControlDialogHandler(hWnd, IDA_LOWORD(wParam));
         }
         return TRUE;
     }

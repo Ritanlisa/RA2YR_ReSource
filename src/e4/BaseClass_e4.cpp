@@ -2,12 +2,15 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/BaseClass_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x42EE30
 namespace gamemd {
-int BaseClass::LoadBaseNodeClass(VectorClass * aP0, int a2)
+int BaseClass::LoadBaseNodeClass(VectorClass_flat * aP0, int a2)
 {
-  int v2; // edi
   int v3; // ecx
   int v4; // ebp
   int v5; // ecx
@@ -28,34 +31,34 @@ int BaseClass::LoadBaseNodeClass(VectorClass * aP0, int a2)
   int v21; // [esp+88h] [ebp-14h] BYREF
   _DWORD v22[4]; // [esp+8Ch] [ebp-10h] BYREF
 
-  v2 = a2; /*0x42ee3a*/
+  a2 = a2; /*0x42ee3a*/
   if ( (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, aP0, 120, 0) >= 0 ) /*0x42ee4b*/
   {
     if ( aP0 ) /*0x42ee53*/
     {
       BaseNodeClass::Vector_Constructor((_DWORD *)(aP0 + 4), 0, 0); /*0x42ee5e*/
-      *(_DWORD *)(aP0 + 4) = &DynamicVectorClass<BaseNodeClass>::`vftable'; /*0x42ee6a*/
-      *(_DWORD *)(aP0 + 24) = 10; /*0x42ee70*/
-      *(_DWORD *)(aP0 + 20) = 0; /*0x42ee77*/
+      aP0->Items = &(void*)(void*)&DynamicVectorClass_BaseNodeClass_vftable; /*0x42ee6a*/
+      aP0->q018 = 10; /*0x42ee70*/
+      aP0->u32_14 = 0; /*0x42ee77*/
       DynamicVector::Constructor_Cell((_DWORD *)(aP0 + 32), 0, 0); /*0x42ee7e*/
       DynamicVector::Constructor_Cell((_DWORD *)(aP0 + 56), 0, 0); /*0x42ee8a*/
-      *(_DWORD *)aP0 = &BaseClass::`vftable'; /*0x42ee8f*/
+      *(_DWORD *)aP0 = &(void*)(void*)&BaseClass_vftable; /*0x42ee8f*/
     }
-    v3 = *(_DWORD *)v2; /*0x42ee96*/
+    v3 = *(_DWORD *)a2; /*0x42ee96*/
     a2 = 0; /*0x42eea2*/
-    if ( (*(int (__stdcall **)(int, int *, int, _DWORD))(v3 + 12))(v2, &a2, 4, 0) >= 0 ) /*0x42eeaf*/
+    if ( (*(int (__stdcall **)(int, int *, int, _DWORD))(v3 + 12))(a2, &a2, 4, 0) >= 0 ) /*0x42eeaf*/
     {
       v4 = 0; /*0x42eeb9*/
       if ( a2 <= 0 ) /*0x42eebd*/
       {
   LABEL_14:
-        if ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &a2, 4, 0) >= 0 ) /*0x42ef4f*/
+        if ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, &a2, 4, 0) >= 0 ) /*0x42ef4f*/
         {
           v10 = 0; /*0x42ef59*/
           if ( a2 <= 0 ) /*0x42ef5d*/
           {
   LABEL_24:
-            if ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &a2, 4, 0) >= 0 ) /*0x42efd6*/
+            if ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, &a2, 4, 0) >= 0 ) /*0x42efd6*/
             {
               v15 = 0; /*0x42efdc*/
               if ( a2 <= 0 ) /*0x42efe0*/
@@ -65,20 +68,20 @@ int BaseClass::LoadBaseNodeClass(VectorClass * aP0, int a2)
               }
               else
               {
-                while ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &v21, 4, 0) >= 0 ) /*0x42eff3*/
+                while ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, &v21, 4, 0) >= 0 ) /*0x42eff3*/
                 {
-                  v16 = *(_DWORD *)(aP0 + 64); /*0x42eff9*/
-                  if ( *(_DWORD *)(aP0 + 72) < v16 /*0x42f021*/
-                    || (*(_BYTE *)(aP0 + 69) || !v16)
-                    && (v17 = *(_DWORD *)(aP0 + 76), v17 > 0)
-                    && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(aP0 + 56) + 8))(
+                  v16 = aP0->q040; /*0x42eff9*/
+                  if ( aP0->q048 < v16 /*0x42f021*/
+                    || (aP0->q114 || !v16)
+                    && (v17 = aP0->q04C, v17 > 0)
+                    && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(aP0->q038 + 8))(
                          aP0 + 56,
                          v16 + v17,
                          0) )
                   {
-                    v18 = *(_DWORD *)(aP0 + 72); /*0x42f028*/
-                    v19 = *(_DWORD *)(aP0 + 60); /*0x42f02b*/
-                    *(_DWORD *)(aP0 + 72) = v18 + 1; /*0x42f031*/
+                    v18 = aP0->q048; /*0x42f028*/
+                    v19 = aP0->__pad_03C; /*0x42f02b*/
+                    aP0->q048 = v18 + 1; /*0x42f031*/
                     *(_DWORD *)(v19 + 4 * v18) = v21; /*0x42f038*/
                   }
                   if ( ++v15 >= a2 ) /*0x42f042*/
@@ -89,20 +92,20 @@ int BaseClass::LoadBaseNodeClass(VectorClass * aP0, int a2)
           }
           else
           {
-            while ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, &v21, 4, 0) >= 0 ) /*0x42ef70*/
+            while ( (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, &v21, 4, 0) >= 0 ) /*0x42ef70*/
             {
-              v11 = *(_DWORD *)(aP0 + 40); /*0x42ef7a*/
-              if ( *(_DWORD *)(aP0 + 48) < v11 /*0x42efa2*/
-                || (*(_BYTE *)(aP0 + 45) || !v11)
-                && (v12 = *(_DWORD *)(aP0 + 52), v12 > 0)
-                && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(aP0 + 32) + 8))(
+              v11 = aP0->q028; /*0x42ef7a*/
+              if ( aP0->q030 < v11 /*0x42efa2*/
+                || (aP0->q02D || !v11)
+                && (v12 = aP0->q034, v12 > 0)
+                && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(aP0->q020 + 8))(
                      aP0 + 32,
                      v11 + v12,
                      0) )
               {
-                v13 = *(_DWORD *)(aP0 + 48); /*0x42efa9*/
-                v14 = *(_DWORD *)(aP0 + 36); /*0x42efac*/
-                *(_DWORD *)(aP0 + 48) = v13 + 1; /*0x42efb2*/
+                v13 = aP0->q030; /*0x42efa9*/
+                v14 = aP0->q024; /*0x42efac*/
+                aP0->q030 = v13 + 1; /*0x42efb2*/
                 *(_DWORD *)(v14 + 4 * v13) = v21; /*0x42efb9*/
               }
               if ( ++v10 >= a2 ) /*0x42efc3*/
@@ -113,18 +116,18 @@ int BaseClass::LoadBaseNodeClass(VectorClass * aP0, int a2)
       }
       else
       {
-        while ( (*(int (__stdcall **)(int, _DWORD *, int, _DWORD))(*(_DWORD *)v2 + 12))(v2, v22, 16, 0) >= 0 ) /*0x42eed0*/
+        while ( (*(int (__stdcall **)(int, _DWORD *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, v22, 16, 0) >= 0 ) /*0x42eed0*/
         {
-          v5 = *(_DWORD *)(aP0 + 12); /*0x42eeda*/
-          if ( *(_DWORD *)(aP0 + 20) < v5 /*0x42ef02*/
-            || (*(_BYTE *)(aP0 + 17) || !v5)
-            && (v6 = *(_DWORD *)(aP0 + 24), v6 > 0)
-            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)(aP0 + 4) + 8))(aP0 + 4, v5 + v6, 0) )
+          v5 = aP0->IsInitialized; /*0x42eeda*/
+          if ( aP0->u32_14 < v5 /*0x42ef02*/
+            || (aP0->q011 || !v5)
+            && (v6 = aP0->q018, v6 > 0)
+            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(aP0->Items + 8))(aP0 + 4, v5 + v6, 0) )
           {
-            v7 = *(_DWORD *)(aP0 + 20); /*0x42ef09*/
+            v7 = aP0->u32_14; /*0x42ef09*/
             v8 = v22[0]; /*0x42ef0c*/
-            *(_DWORD *)(aP0 + 20) = v7 + 1; /*0x42ef13*/
-            v9 = (_DWORD *)(*(_DWORD *)(aP0 + 8) + 16 * v7); /*0x42ef1c*/
+            aP0->u32_14 = v7 + 1; /*0x42ef13*/
+            v9 = (_DWORD *)(aP0->Capacity + 16 * v7); /*0x42ef1c*/
             *v9 = v8; /*0x42ef1e*/
             v9[1] = v22[1]; /*0x42ef24*/
             v9[2] = v22[2]; /*0x42ef2b*/

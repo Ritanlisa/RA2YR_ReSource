@@ -6,6 +6,13 @@
 #include "e4/classes/E4Recv_69E900_e4.hpp"
 #include "e4/classes/E4Recv_74CDB0_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/Helper_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/MPBattleClass_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/TeamTypeClass_e4.hpp"
+#include "e4/classes/XSurface_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x6F2040
 namespace gamemd {
@@ -55,7 +62,7 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
   v10[0] = 0; /*0x437253*/
   v10[1] = 0; /*0x43725b*/
   v10[2] = v9; /*0x437263*/
-  LOBYTE(v6) = XSurface::BlitPart((int *)&v11, v10, a1, (void **)a2, 0, 1); /*0x437270*/
+  IDA_LOBYTE(v6) = XSurface::BlitPart((int *)&v11, v10, a1, (void **)a2, 0, 1); /*0x437270*/
   Vector::Clear((int)v16); /*0x437272*/
   return v6; /*0x4371e7*/
 }
@@ -79,7 +86,7 @@ unsigned int * sub_5D81B0(const wchar_t ** a1, const wchar_t ** a2, const char *
 {
   _DWORD *v6; // eax
 
-  v6 = __2_YAPAXI_Z(0x40u); /*0x5d81b2*/
+  v6 = RA2_OPNEW(0x40u); /*0x5d81b2*/
   if ( v6 ) /*0x5d81bc*/
     return MPBattleClass::MPManBattleClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d81de*/
   else

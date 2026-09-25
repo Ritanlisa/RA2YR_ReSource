@@ -1,11 +1,18 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/PageUserCommandClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Options_e4.hpp"
+#include "e4/classes/LoadOptions_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x537DD0
-unsigned int * PageUserCommandClass::PageUserCommandClass()
+PageUserCommandClass::PageUserCommandClass()
 {
-  *this = &PageUserCommandClass::`vftable'; /*0x537dd2*/
+  *this = &(void*)(void*)&PageUserCommandClass_vftable; /*0x537dd2*/
   return this; /*0x537dd8*/
 }
 // 0x537DE0

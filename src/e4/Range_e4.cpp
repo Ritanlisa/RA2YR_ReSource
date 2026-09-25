@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x598030
 namespace gamemd {
@@ -15,7 +17,7 @@ long long Range_RandomInt(MouseClass * aP0, MapClass * aP1)
 
   v5 = aP1 - aP0 + 1; /*0x59803e*/
   v3 = (double)v5; /*0x598046*/
-  LODWORD(v5) = aP0; /*0x59804a*/
+  IDA_LODWORD(v5) = aP0; /*0x59804a*/
   v7 = (double)v5; /*0x59805a*/
   do /*0x598089*/
   {

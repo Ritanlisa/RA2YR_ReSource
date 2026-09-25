@@ -1,8 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/TextBuffer_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/Territory_WorldDominationTour_8_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5BCC90
+namespace gamemd {
 int TextBuffer::Init()
 {
   int v1; // edi
@@ -12,7 +17,7 @@ int TextBuffer::Init()
   int v5; // esi
 
   v1 = 0; /*0x5bcc93*/
-  v2 = this + 2000; /*0x5bcc95*/
+  v2 = &this->u32_1F40; /*0x5bcc95*/
   do /*0x5bccbe*/
   {
     v3 = this + v1; /*0x5bcc9b*/
@@ -31,6 +36,7 @@ int TextBuffer::Init()
     ++v2; /*0x5bccb8*/
   }
   while ( v1 < 25 ); /*0x5bccbe*/
-  *(this + 10036) = 1; /*0x5bccc8*/
-  return Text::DrawRepeated(this, 0, 0, 80, 25); /*0x5bccd4*/
+  *(&this->u32_FAC6) = 1; /*0x5bccc8*/
+  return Text::DrawRepeated(0, 0, 80, 25); /*0x5bccd4*/
 }
+} // namespace gamemd

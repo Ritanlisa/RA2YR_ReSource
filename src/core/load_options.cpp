@@ -93,14 +93,14 @@ LoadOptions::LoadOptions() {
   v2[2] = 0; /*0x55874b*/
   *((_BYTE *)v2 + 12) = 1; /*0x55874e*/
   *((_BYTE *)v2 + 13) = 0; /*0x558752*/
-  *v2 = &DynamicVectorClass<FileEntryClass *>::`vftable'; /*0x558755*/
+  *v2 = &(void*)(void*)&DynamicVectorClass_FileEntryClass___vftable; /*0x558755*/
   v2[5] = 10; /*0x55875b*/
   v2[4] = 0; /*0x558762*/
   this->Items = 0; /*0x558765*/
   this->q00C = 0; /*0x558768*/
   this->q014 = 0; /*0x55876b*/
   v3 = *v2; /*0x55876e*/
-  *this = &LoadOptionsClass::`vftable'; /*0x558770*/
+  *this = &(void*)(void*)&LoadOptionsClass_vftable; /*0x558770*/
   this->Capacity = &off_829EA0; /*0x558776*/
   this->max_entries = 2048; /*0x55877d*/
   (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v2); /*0x558784*/
@@ -119,16 +119,16 @@ void LoadOptions::Cleanup() {
   void *v5; // eax
 
   v2 = 0; /*0x558797*/
-  for ( *this = &LoadOptionsClass::`vftable'; v2 < *(&this->Items2); ++v2 ) /*0x5587a4*/
-    __3_YAXPAX_Z(*(void **)(this->q024 + 4 * v2)); /*0x5587ad*/
+  for ( *this = &(void*)(void*)&LoadOptionsClass_vftable; v2 < *(&this->Items2); ++v2 ) /*0x5587a4*/
+    RA2_OPDEL(*(void **)(this->q024 + 4 * v2)); /*0x5587ad*/
   v3 = this->is_active; /*0x5587bd*/
   v4 = &this->is_active; /*0x5587c0*/
   (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4); /*0x5587c5*/
   v5 = (void *)v4[1]; /*0x5587c8*/
-  *v4 = &VectorClass<FileEntryClass *>::`vftable'; /*0x5587cb*/
+  *v4 = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x5587cb*/
   if ( v5 && *((_BYTE *)v4 + 13) ) /*0x5587d5*/
   {
-    __3_YAXPAX_Z(v5); /*0x5587db*/
+    RA2_OPDEL(v5); /*0x5587db*/
     v4[1] = 0; /*0x5587e3*/
   }
   *((_BYTE *)v4 + 13) = 0; /*0x5587e6*/
@@ -398,7 +398,7 @@ AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out
     if ( out_buffer ) /*0x55a20c*/
       v4 = out_buffer; /*0x55a222*/
     else
-      v4 = __2_YAPAXI_Z(4 * new_size); /*0x55a21e*/
+      v4 = RA2_OPNEW(4 * new_size); /*0x55a21e*/
     this->q00C = 1; /*0x55a226*/
     if ( v4 ) /*0x55a22a*/
     {
@@ -411,7 +411,7 @@ AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out
           ++i; /*0x55a24e*/
         if ( this->IsAllocated ) /*0x55a25b*/
         {
-          __3_YAXPAX_Z(*((void **)this + 1)); /*0x55a266*/
+          RA2_OPDEL(*((void **)this + 1)); /*0x55a266*/
           this->Items = 0; /*0x55a26e*/
         }
       }
@@ -435,7 +435,7 @@ AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out
 void LoadOptions::ClearBuffer() {
   if ( this->Items && this->IsAllocated ) /*0x55a2ad*/
   {
-    __3_YAXPAX_Z(this->Items); /*0x55a2b3*/
+    RA2_OPDEL(this->Items); /*0x55a2b3*/
     this->Items = 0; /*0x55a2bb*/
   }
   this->IsAllocated = 0; /*0x55a2be*/
@@ -678,10 +678,10 @@ uint32_t LoadOptions::GetFlag99() const {
 uint32_t LoadOptions::GetFlag252() const {
   return *(&this->q0642); /*0x6812d6*/
 }
-uint32_t LoadOptions::GetMode() const { return mode; }
-void LoadOptions::SetMode(uint32_t m) { mode = m; }
-const char* LoadOptions::GetExtension() const { return extension; }
-void LoadOptions::SetExtension(const char* ext) { extension = ext; }
+uint32_t LoadOptions::GetMode() const { return m; }
+void LoadOptions::SetMode(uint32_t m) { m = m; }
+const char* LoadOptions::GetExtension() const { return ext; }
+void LoadOptions::SetExtension(const char* ext) { ext = ext; }
 uint32_t LoadOptions::GetCount() const { return count; }
 FileEntryClass** LoadOptions::GetEntries() { return entries; }
 uint32_t LoadOptions::GetCapacity() const { return capacity; }

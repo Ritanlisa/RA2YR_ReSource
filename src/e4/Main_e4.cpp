@@ -3,8 +3,11 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Main_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4E1D00
+namespace gamemd {
 void Main::CreateDialog()
 {
   unsigned __int16 v2; // cx
@@ -23,23 +26,24 @@ void Main::CreateDialog()
   if ( Dialog ) /*0x4e1d50*/
   {
     SetWindowLongA(Dialog, 8, (LONG)&dwNewLong); /*0x4e1d5a*/
-    Dialog::Show(*this); /*0x4e1d62*/
+    Dialog::Show(); /*0x4e1d62*/
     for ( i = dwNewLong; dwNewLong == -1; i = dwNewLong ) /*0x4e1d6e*/
     {
       if ( Dialog::PumpMessages() == 1 ) /*0x4e1d77*/
         dwNewLong = 2; /*0x4e1d79*/
       if ( !g_WTFMode ) /*0x4e1d88*/
       {
-        LOBYTE(v5) = 0; /*0x4e1d8a*/
+        IDA_LOBYTE(v5) = 0; /*0x4e1d8a*/
         ScreenSaver::Process(v5); /*0x4e1d8c*/
       }
     }
     if ( i == 1 ) /*0x4e1d9d*/
     {
-      GameOptions::GameSpeedChanged(this); /*0x4e1da1*/
+      GameOptions::GameSpeedChanged(); /*0x4e1da1*/
       ScenarioClass::SaveGameOptions((int)g_GameModeOptions); /*0x4e1dab*/
     }
-    Dialog::Destroy(*this); /*0x4e1db2*/
+    Dialog::Destroy(); /*0x4e1db2*/
   }
   Debug::Log(); /*0x4e1dd0*/
 }
+} // namespace gamemd

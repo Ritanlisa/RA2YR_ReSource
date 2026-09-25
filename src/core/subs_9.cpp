@@ -1322,7 +1322,7 @@ int ReturnZero74C340()
 //   *(this + 15) = 0;
 //   *(this + 16) = 0;
 //   *(this + 17) = v2 & 0xFFFFFFF0;
-//   *this = &VersionClass::`vftable';
+//   ((void**)this)[0] = (void*)(void*)(void*)&VersionClass_vftable;
 //   *((_BYTE *)this + 42) = 0;
 //   *((_BYTE *)this + 12) = 0;
 //   return this;
@@ -2660,7 +2660,7 @@ int ReturnZero767E50()
 
 // IDA: 0x767EC0  proposal: VtableStub::5CB6C0
 // IDA: void __thiscall sub_767EC0(_DWORD *this)
-//   *this = &MSFrameAnim::`vftable';
+//   ((void**)this)[0] = (void*)(void*)(void*)&MSFrameAnim_vftable;
 //   VtableStub::5CB6C0(this);
 void VtableStub_5CB6C0(void* _this) // thiscall
 {
@@ -3215,7 +3215,7 @@ int ReturnZero770230()
 
 // IDA: 0x771890  proposal: VtableStub::5CB6C0771890
 // IDA: void __thiscall sub_771890(_DWORD *this)
-//   *this = &WorldDominationTour::Voices::Anim::`vftable';
+//   *this = &WorldDominationTour::Voices::Anim_vftable;
 //   VtableStub::5CB6C0(this);
 void VtableStub_5CB6C0771890(void* _this) // thiscall
 {
@@ -3227,7 +3227,7 @@ void VtableStub_5CB6C0771890(void* _this) // thiscall
 //   *((_DWORD *)this + 1) = 0;
 //   *((_DWORD *)this + 2) = 0;
 //   *(this + 13) = 0;
-//   *(_DWORD *)this = &DynamicVectorClass<unsigned int>::`vftable';
+//   *(_DWORD *)this = &DynamicVectorClass<unsigned int_vftable;
 //   *((_DWORD *)this + 5) = 10;
 //   *((_DWORD *)this + 4) = 0;
 //   return 0;
@@ -3240,10 +3240,10 @@ int SetMember127719E0(void* _this) // thiscall
 // IDA: void __thiscall sub_771A00(_DWORD *this)
 //   void *v2; // eax
 //   v2 = (void *)*(this + 1);
-//   *this = &VectorClass<unsigned int>::`vftable';
+//   *this = &VectorClass<unsigned int_vftable;
 //   if ( v2 && *((_BYTE *)this + 13) )
 //   {
-//   __3_YAXPAX_Z(v2);
+//   RA2_OPDEL(v2);
 //   *(this + 1) = 0;
 //   }
 //   *((_BYTE *)this + 13) = 0;

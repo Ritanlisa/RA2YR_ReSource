@@ -1,22 +1,25 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/IsometricTileClass_e4.hpp"
+#include "e4/classes/Isometric_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x543780
-I * IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileClass * aP2)
+IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileClass * aP2)
 {
   int v4; // eax
 
-  ObjectClass::ctor(this); /*0x543786*/
-  *((_DWORD *)this + 43) = *((_DWORD *)g_FrameCounter + aP1); /*0x54379c*/
-  *(_DWORD *)this->gap0 = &IsometricTileClass::`vftable'; /*0x5437a2*/
-  *(_DWORD *)&this->gap0[4] = &IsometricTileClass::`vftable'; /*0x5437a8*/
-  *(_DWORD *)&this->gap0[8] = &IsometricTileClass::`vftable'; /*0x5437af*/
-  *(_DWORD *)&this->gap0[12] = &IsometricTileClass::`vftable'; /*0x5437b6*/
+  ObjectClass::ctor(); /*0x543786*/
+  this->q0AC = *((_DWORD *)g_FrameCounter + aP1); /*0x54379c*/
+  *(_DWORD *)this->gap0 = &(void*)(void*)&IsometricTileClass_vftable; /*0x5437a2*/
+  *(_DWORD *)&this->gap0[4] = &(void*)(void*)&IsometricTileClass_vftable; /*0x5437a8*/
+  *(_DWORD *)&this->gap0[8] = &(void*)(void*)&IsometricTileClass_vftable; /*0x5437af*/
+  *(_DWORD *)&this->gap0[12] = &(void*)(void*)&IsometricTileClass_vftable; /*0x5437b6*/
   if ( *aP2 != word_AA06D0 || aP2[1] != word_AA06D2 ) /*0x5437d4*/
   {
     this->gap0[129] = 0; /*0x543805*/
-    ObjectClass::SetPosition((#374 *)this); /*0x54380c*/
+    ObjectClass::SetPosition(); /*0x54380c*/
     (*(void (__thiscall **)(IsometricTileClass *, int))(*(_DWORD *)this->gap0 + 292))(this, 1); /*0x543818*/
   }
   if ( dword_87F760 < dword_87F758 /*0x543855*/

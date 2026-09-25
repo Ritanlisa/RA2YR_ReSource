@@ -6,23 +6,26 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Team_e4.hpp"
+#include "e4/classes/TemporalClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/TerrainTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x71A450
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int TemporalClass::Constructor()
 {
-  wchar_t *v2; // eax
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x71a453*/
-  v2 = g_CurrentFrame; /*0x71a458*/
-  *(_DWORD *)(this + 52) = 0; /*0x71a45d*/
-  *(_DWORD *)(this + 44) = v2; /*0x71a464*/
-  *(_DWORD *)this = &TemporalClass::`vftable'; /*0x71a467*/
-  *(_DWORD *)(this + 4) = &TemporalClass::`vftable'; /*0x71a46d*/
-  *(_DWORD *)(this + 8) = &TemporalClass::`vftable'; /*0x71a474*/
-  *(_DWORD *)(this + 12) = &TemporalClass::`vftable'; /*0x71a47b*/
+  AbstractClass::Constructor(); /*0x71a453*/
+  g_CurrentFrame = g_CurrentFrame; /*0x71a458*/
+  this->TemporalClass_field_34 = 0; /*0x71a45d*/
+  this->q02C = g_CurrentFrame; /*0x71a464*/
+  *(_DWORD *)this = &(void*)(void*)&TemporalClass_vftable; /*0x71a467*/
+  this->vtable2 = &(void*)(void*)&TemporalClass_vftable; /*0x71a46d*/
+  this->vtable3 = &(void*)(void*)&TemporalClass_vftable; /*0x71a474*/
+  this->vtable4 = &(void*)(void*)&TemporalClass_vftable; /*0x71a47b*/
   if ( dword_B0EC70 < dword_B0EC68 /*0x71a4b7*/
     || (byte_B0EC6D || !dword_B0EC68)
     && dword_B0EC74 > 0
@@ -37,30 +40,28 @@ int TemporalClass::Constructor()
   return this; /*0x71a4d8*/
 }
 } // namespace ra2
-}
 
 // 0x71A4E0
-namespace ra2 {
-namespace game {
-unsigned int * TemporalClass::TemporalClass(TechnoClass * aP1)
+namespace gamemd {
+TemporalClass::TemporalClass(TechnoClass * aP1)
 {
   int v3; // eax
   int v5; // [esp+Ch] [ebp-8h]
 
-  AbstractClass::Constructor((int)this); /*0x71a4e7*/
-  *(this + 11) = g_CurrentFrame; /*0x71a4fb*/
-  *(this + 13) = 0; /*0x71a4fe*/
-  *this = &TemporalClass::`vftable'; /*0x71a501*/
-  *(this + 1) = &TemporalClass::`vftable'; /*0x71a507*/
-  *(this + 2) = &TemporalClass::`vftable'; /*0x71a50e*/
-  *(this + 3) = &TemporalClass::`vftable'; /*0x71a515*/
-  *(this + 9) = aP1; /*0x71a51c*/
-  *(this + 10) = 0; /*0x71a51f*/
-  *(this + 11) = g_CurrentFrame; /*0x71a529*/
-  *(this + 12) = v5; /*0x71a52c*/
-  *(this + 13) = 0; /*0x71a52f*/
-  *(this + 16) = 0; /*0x71a532*/
-  *(this + 17) = 0; /*0x71a535*/
+  AbstractClass::Constructor(); /*0x71a4e7*/
+  *(&this->vtable21) = g_CurrentFrame; /*0x71a4fb*/
+  *(&this->vtable23) = 0; /*0x71a4fe*/
+  *this = &(void*)(void*)&TemporalClass_vftable; /*0x71a501*/
+  this->vtable2 = &(void*)(void*)&TemporalClass_vftable; /*0x71a507*/
+  this->vtable3 = &(void*)(void*)&TemporalClass_vftable; /*0x71a50e*/
+  this->vtable4 = &(void*)(void*)&TemporalClass_vftable; /*0x71a515*/
+  this->creationFrame = aP1; /*0x71a51c*/
+  *(&this->vtable20) = 0; /*0x71a51f*/
+  *(&this->vtable21) = g_CurrentFrame; /*0x71a529*/
+  *(&this->vtable22) = v5; /*0x71a52c*/
+  *(&this->vtable23) = 0; /*0x71a52f*/
+  *(&this->vtable26) = 0; /*0x71a532*/
+  *(&this->vtable27) = 0; /*0x71a535*/
   if ( dword_B0EC70 < dword_B0EC68 /*0x71a569*/
     || (byte_B0EC6D || !dword_B0EC68)
     && dword_B0EC74 > 0
@@ -72,18 +73,16 @@ unsigned int * TemporalClass::TemporalClass(TechnoClass * aP1)
     v3 = dword_B0EC70++; /*0x71a576*/
     *((_DWORD *)dword_B0EC64 + v3) = this; /*0x71a585*/
   }
-  *(this + 18) = 0; /*0x71a588*/
-  *(this + 19) = 0; /*0x71a58b*/
-  *(this + 14) = 0; /*0x71a58e*/
-  *(this + 15) = 0; /*0x71a591*/
+  *(&this->vtable28) = 0; /*0x71a588*/
+  *(&this->vtable29) = 0; /*0x71a58b*/
+  *(&this->vtable24) = 0; /*0x71a58e*/
+  *(&this->vtable25) = 0; /*0x71a591*/
   return this; /*0x71a596*/
 }
 } // namespace ra2
-}
 
 // 0x71A760
-namespace ra2 {
-namespace game {
+namespace gamemd {
 void ** TemporalClass::ProcessTimeWarp()
 {
   _DWORD *v2; // ecx
@@ -130,16 +129,16 @@ void ** TemporalClass::ProcessTimeWarp()
   _BYTE v43[12]; // [esp+2Ch] [ebp-18h] BYREF
   _BYTE v44[12]; // [esp+38h] [ebp-Ch] BYREF
 
-  v2 = (_DWORD *)*(this + 10); /*0x71a76b*/
-  if ( v2 && (int *)v2[158] == this && *(this + 16) )
+  v2 = (_DWORD *)*(&this->vtable20); /*0x71a76b*/
+  if ( v2 && (int *)v2[158] == this && *(&this->vtable26) )
   {
     v2[158] = 0; /*0x71a77f*/
-    *(_BYTE *)(*(this + 10) + 624) = 0; /*0x71a78a*/
-    return (void **)TagClass::Unlink(this); /*0x71a790*/
+    *(_BYTE *)(*(&this->vtable20) + 624) = 0; /*0x71a78a*/
+    return 0; /*0x71a790*/
   }
   else
   {
-    v4 = *(this + 9); /*0x71a79d*/
+    v4 = this->creationFrame; /*0x71a79d*/
     if ( !v4 ) /*0x71a7a2*/
       goto LABEL_10; /*0x71a7a2*/
     if ( !*(_BYTE *)(v4 + 130) ) /*0x71a7a8*/
@@ -147,7 +146,7 @@ void ** TemporalClass::ProcessTimeWarp()
     if ( !v2 ) /*0x71a7b6*/
       goto LABEL_10; /*0x71a7b6*/
     v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD *, _BYTE *))(*v2 + 72))(v2, v43); /*0x71a7c9*/
-    v6 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)*(this + 9) + 72))(*(this + 9), v44); /*0x71a7d2*/
+    v6 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)this->creationFrame + 72))(this->creationFrame, v44); /*0x71a7d2*/
     v7 = v5[1]; /*0x71a7d9*/
     v8 = *v6 - *v5; /*0x71a7dc*/
     v9 = v6[1]; /*0x71a7de*/
@@ -159,32 +158,32 @@ void ** TemporalClass::ProcessTimeWarp()
     v12 = Math::Sqrt((double)v8 * (double)v8 + (double)v11 * (double)v11 + (double)(v9 - v7) * (double)(v9 - v7)); /*0x71a81f*/
     if ( (int)Math::RoundToInt(v12) > g_RulesClass_Instance->FireSupress << 8 )
     {
-      return (void **)FactoryClass::CompleteItem(this); /*0x71a841*/
+      return 0; /*0x71a841*/
     }
     else
     {
   LABEL_10:
-      v13 = (int **)*(this + 17); /*0x71a84e*/
+      v13 = (int **)*(&this->vtable27); /*0x71a84e*/
       WarpPerStep = 0; /*0x71a851*/
       if ( v13 ) /*0x71a855*/
         WarpPerStep = TemporalClass::GetWarpPerStep(v13, 1); /*0x71a85e*/
-      v15 = (int *)*(this + 9); /*0x71a860*/
+      v15 = (int *)this->creationFrame; /*0x71a860*/
       v16 = *v15; /*0x71a864*/
       v17 = (*(int (__thiscall **)(int *, _DWORD))(*v15 + 740))(v15, 0); /*0x71a866*/
-      v18 = (*(int (__thiscall **)(_DWORD, int))(v16 + 1016))(*(this + 9), v17); /*0x71a870*/
-      v19 = *(this + 18); /*0x71a878*/
+      v18 = (*(int (__thiscall **)(_DWORD, int))(v16 + 1016))(this->creationFrame, v17); /*0x71a870*/
+      v19 = *(&this->vtable28); /*0x71a878*/
       v20 = *(_DWORD *)(*(_DWORD *)v18 + 164); /*0x71a87b*/
-      *(this + 19) = v20; /*0x71a881*/
+      *(&this->vtable29) = v20; /*0x71a881*/
       result = (void **)(v19 - (WarpPerStep + v20)); /*0x71a888*/
-      *(this + 18) = (int)result; /*0x71a88a*/
+      *(&this->vtable28) = (int)result; /*0x71a88a*/
       if ( (int)result <= 0 )
       {
-        if ( *(this + 10) ) /*0x71a895*/
+        if ( *(&this->vtable20) ) /*0x71a895*/
         {
-          result = (void **)__2_YAPAXI_Z(0x1C8u); /*0x71a8c2*/
+          result = (void **)RA2_OPNEW(0x1C8u); /*0x71a8c2*/
           if ( result ) /*0x71a8cc*/
           {
-            v22 = (int *)(*(this + 10) + 156); /*0x71a8d2*/
+            v22 = (int *)(*(&this->vtable20) + 156); /*0x71a8d2*/
             v40 = *v22; /*0x71a8e3*/
             v41 = v22[1]; /*0x71a8ea*/
             v42 = v22[2]; /*0x71a8f6*/
@@ -201,35 +200,35 @@ void ** TemporalClass::ProcessTimeWarp()
         }
         else
         {
-          v21 = *(this + 9); /*0x71a89a*/
-          *(this + 10) = 0; /*0x71a89d*/
-          *(this + 17) = 0; /*0x71a8a2*/
-          *(this + 16) = 0; /*0x71a8a5*/
-          *(this + 15) = 0; /*0x71a8a8*/
-          *(this + 14) = 0; /*0x71a8ab*/
+          v21 = this->creationFrame; /*0x71a89a*/
+          *(&this->vtable20) = 0; /*0x71a89d*/
+          *(&this->vtable27) = 0; /*0x71a8a2*/
+          *(&this->vtable26) = 0; /*0x71a8a5*/
+          *(&this->vtable25) = 0; /*0x71a8a8*/
+          *(&this->vtable24) = 0; /*0x71a8ab*/
           if ( v21 ) /*0x71a8ae*/
             result = (void **)(*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v21 + 1156))(v21, 0, 1); /*0x71a8b5*/
         }
-        if ( *(this + 10) )
+        if ( *(&this->vtable20) )
         {
-          if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 9) + 132))(*(this + 9)) + 3214) ) /*0x71a922*/
+          if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->creationFrame + 132))(this->creationFrame) + 3214) ) /*0x71a922*/
           {
-            v23 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 10) + 132))(*(this + 10)); /*0x71a938*/
-            v24 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 9) + 132))(*(this + 9)); /*0x71a944*/
-            v39 = *(_DWORD *)(*(this + 10) + 540); /*0x71a94f*/
+            v23 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(&this->vtable20) + 132))(*(&this->vtable20)); /*0x71a938*/
+            v24 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)this->creationFrame + 132))(this->creationFrame); /*0x71a944*/
+            v39 = *(_DWORD *)(*(&this->vtable20) + 540); /*0x71a94f*/
             v25 = (*(int (__thiscall **)(int))(*(_DWORD *)v23 + 132))(v23); /*0x71a952*/
             v26 = (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v24 + 132))( /*0x71a968*/
                     v24,
-                    *(_DWORD *)(*(this + 9) + 540),
+                    *(_DWORD *)(this->creationFrame + 540),
                     v25);
-            HouseClass::AccumulateScore((float *)(*(this + 9) + 336), v26, v39); /*0x71a978*/
+            HouseClass::AccumulateScore((float *)(this->creationFrame + 336), v26, v39); /*0x71a978*/
           }
-          if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 10) + 44))(*(this + 10)) == 6 )
+          if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(&this->vtable20) + 44))(*(&this->vtable20)) == 6 )
           {
-            v27 = (_DWORD *)*(this + 10); /*0x71a98e*/
+            v27 = (_DWORD *)*(&this->vtable20); /*0x71a98e*/
             if ( v27 ) /*0x71a993*/
             {
-              if ( (*(int (__thiscall **)(_DWORD))(*v27 + 1032))(*(this + 10)) > 0 ) /*0x71a9a2*/
+              if ( (*(int (__thiscall **)(_DWORD))(*v27 + 1032))(*(&this->vtable20)) > 0 ) /*0x71a9a2*/
                 BuildingClass::AnimateUnloadUnits(v27, 0); /*0x71a9a7*/
               if ( !g_IKnowWhatImDoing && v27[70] ) /*0x71a9b4*/
               {
@@ -242,55 +241,55 @@ void ** TemporalClass::ProcessTimeWarp()
                 while ( v27[70] ); /*0x71a9d6*/
               }
             }
-            v29 = *(this + 15); /*0x71a9de*/
+            v29 = *(&this->vtable25); /*0x71a9de*/
             if ( v29 ) /*0x71a9e3*/
             {
               SuperClass::SetOnHold(v29, 0); /*0x71a9e6*/
-              *(this + 15) = 0; /*0x71a9eb*/
+              *(&this->vtable25) = 0; /*0x71a9eb*/
             }
-            v30 = (_DWORD *)*(this + 10); /*0x71a9ee*/
+            v30 = (_DWORD *)*(&this->vtable20); /*0x71a9ee*/
             if ( v30[185] )
             {
               if ( v30 )
-                v31 = (*(int (__thiscall **)(_DWORD))(*v30 + 44))(*(this + 10)) == 6 ? v30 : 0;
+                v31 = (*(int (__thiscall **)(_DWORD))(*v30 + 44))(*(&this->vtable20)) == 6 ? v30 : 0;
               else
                 v31 = 0; /*0x71a9fd*/
               BuildingClass::RemoveLimpet(v31); /*0x71aa15*/
             }
-            v32 = *(_DWORD **)(*(this + 10) + 728); /*0x71aa1d*/
+            v32 = *(_DWORD **)(*(&this->vtable20) + 728); /*0x71aa1d*/
             if ( v32 ) /*0x71aa25*/
-              TechnoClass::MutateAll(v32, *(this + 9), 0); /*0x71aa2c*/
-            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 10) + 952))(*(this + 10), *(this + 9)); /*0x71aa3a*/
-            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 10) + 224))(*(this + 10), *(this + 9)); /*0x71aa49*/
-            result = (void **)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 10) + 248))(*(this + 10)); /*0x71aa54*/
+              TechnoClass::MutateAll(v32, this->creationFrame, 0); /*0x71aa2c*/
+            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(&this->vtable20) + 952))(*(&this->vtable20), this->creationFrame); /*0x71aa3a*/
+            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(&this->vtable20) + 224))(*(&this->vtable20), this->creationFrame); /*0x71aa49*/
+            result = (void **)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(&this->vtable20) + 248))(*(&this->vtable20)); /*0x71aa54*/
             *(_BYTE *)(v27[135] + 508) = 1; /*0x71aa60*/
           }
           else
           {
-            v33 = *(this + 10); /*0x71aa69*/
+            v33 = *(&this->vtable20); /*0x71aa69*/
             v34 = *(_DWORD *)(v33 + 740); /*0x71aa6c*/
             if ( v34 )
             {
               v35 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v34 + 44))(*(_DWORD *)(v33 + 740)) == 6 ? (int *)v34 : 0;
               BuildingClass::UpdateDamageAnim(v35); /*0x71aa90*/
             }
-            v36 = *(_DWORD **)(*(this + 10) + 728); /*0x71aa98*/
+            v36 = *(_DWORD **)(*(&this->vtable20) + 728); /*0x71aa98*/
             if ( v36 ) /*0x71aaa0*/
-              TechnoClass::MutateAll(v36, *(this + 9), 0); /*0x71aaa7*/
-            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 10) + 952))(*(this + 10), *(this + 9)); /*0x71aab5*/
-            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(this + 10) + 224))(*(this + 10), *(this + 9)); /*0x71aac4*/
-            result = (void **)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(this + 10) + 248))(*(this + 10)); /*0x71aacf*/
+              TechnoClass::MutateAll(v36, this->creationFrame, 0); /*0x71aaa7*/
+            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(&this->vtable20) + 952))(*(&this->vtable20), this->creationFrame); /*0x71aab5*/
+            (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(&this->vtable20) + 224))(*(&this->vtable20), this->creationFrame); /*0x71aac4*/
+            result = (void **)(*(int (__thiscall **)(_DWORD))(*(_DWORD *)*(&this->vtable20) + 248))(*(&this->vtable20)); /*0x71aacf*/
           }
-          v37 = *(this + 9); /*0x71aad5*/
+          v37 = this->creationFrame; /*0x71aad5*/
           if ( v37 ) /*0x71aada*/
             result = (void **)(*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v37 + 1156))(v37, 0, 1); /*0x71aae1*/
         }
-        v38 = *(this + 9); /*0x71aae7*/
-        *(this + 10) = 0; /*0x71aaea*/
-        *(this + 17) = 0; /*0x71aaef*/
-        *(this + 16) = 0; /*0x71aaf2*/
-        *(this + 15) = 0; /*0x71aaf5*/
-        *(this + 14) = 0; /*0x71aaf8*/
+        v38 = this->creationFrame; /*0x71aae7*/
+        *(&this->vtable20) = 0; /*0x71aaea*/
+        *(&this->vtable27) = 0; /*0x71aaef*/
+        *(&this->vtable26) = 0; /*0x71aaf2*/
+        *(&this->vtable25) = 0; /*0x71aaf5*/
+        *(&this->vtable24) = 0; /*0x71aaf8*/
         if ( v38 ) /*0x71aafb*/
           return (void **)(*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v38 + 1156))(v38, 0, 1); /*0x71ab02*/
       }
@@ -299,11 +298,9 @@ void ** TemporalClass::ProcessTimeWarp()
   return result; /*0x71a795*/
 }
 } // namespace ra2
-}
 
 // 0x71AB10
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int TemporalClass::GetWarpPerStep(int a2)
 {
   int WarpPerStep; // ebx
@@ -313,32 +310,28 @@ int TemporalClass::GetWarpPerStep(int a2)
   int *v7; // eax
 
   WarpPerStep = 0; /*0x71ab14*/
-  if ( *(this + 17) && a2 <= 50 ) /*0x71ab25*/
+  if ( *(&this->vtable27) && a2 <= 50 ) /*0x71ab25*/
     WarpPerStep = TemporalClass::GetWarpPerStep(a2 + 1); /*0x71ab2e*/
-  v4 = *(this + 9); /*0x71ab30*/
+  v4 = this->objectTypeFlags; /*0x71ab30*/
   v5 = *v4; /*0x71ab35*/
   v6 = (*(int (__thiscall **)(int *, _DWORD))(*v4 + 740))(v4, 0); /*0x71ab37*/
-  v7 = *(int **)(*(_DWORD *)(*(int (__thiscall **)(_DWORD, int))(v5 + 1016))(*(this + 9), v6) + 164); /*0x71ab4a*/
-  *(this + 19) = v7; /*0x71ab50*/
+  v7 = *(int **)(*(_DWORD *)(*(int (__thiscall **)(_DWORD, int))(v5 + 1016))(this->objectTypeFlags, v6) + 164); /*0x71ab4a*/
+  *(&this->vtable29) = v7; /*0x71ab50*/
   return (int)v7 + WarpPerStep; /*0x71ab49*/
 }
 } // namespace ra2
-}
 
 // 0x71B1B0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 void * TemporalClass::ProcessEvent(char a2)
 {
   int v3; // eax
-  _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &TemporalClass::`vftable'; /*0x71b1bd*/
-  *(this + 1) = &TemporalClass::`vftable'; /*0x71b1c3*/
-  *(this + 2) = &TemporalClass::`vftable'; /*0x71b1ca*/
-  *(this + 3) = &TemporalClass::`vftable'; /*0x71b1d1*/
-  v5 = this; /*0x71b1df*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_B0EC60 + 16))(&dword_B0EC60, &v5); /*0x71b1e3*/
+  *this = &(void*)(void*)&TemporalClass_vftable; /*0x71b1bd*/
+  this->vtable2 = &(void*)(void*)&TemporalClass_vftable; /*0x71b1c3*/
+  this->vtable3 = &(void*)(void*)&TemporalClass_vftable; /*0x71b1ca*/
+  this->vtable4 = &(void*)(void*)&TemporalClass_vftable; /*0x71b1d1*/
+  v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_B0EC60 + 16))(&dword_B0EC60, &this); /*0x71b1e3*/
   if ( v3 != -1 && v3 < dword_B0EC70 && v3 < --dword_B0EC70 ) /*0x71b1fe*/
   {
     do /*0x71b216*/
@@ -348,27 +341,23 @@ void * TemporalClass::ProcessEvent(char a2)
     }
     while ( v3 < dword_B0EC70 ); /*0x71b216*/
   }
-  AbstractClass::DTOR(this); /*0x71b21a*/
+  AbstractClass::DTOR(); /*0x71b21a*/
   if ( (a2 & 1) != 0 ) /*0x71b224*/
-    __3_YAXPAX_Z(this); /*0x71b227*/
+    RA2_OPDEL(); /*0x71b227*/
   return this; /*0x71b231*/
 }
 } // namespace ra2
-}
 
 // 0x71A650
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int TemporalClass::SetTarget(AbstractClass * aP1)
 {
-  return AbstractClass::ProcessPower(this); /*0x71a65a*/
+  return AbstractClass::ProcessPower(); /*0x71a65a*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x71A660
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
 {
   int Prefix_0; // edi
@@ -379,10 +368,10 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x71a679*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x71a682*/
-      *aP0 = (int)&TemporalClass::`vftable'; /*0x71a687*/
-      aP0[1] = (int)&TemporalClass::`vftable'; /*0x71a68d*/
-      aP0[2] = (int)&TemporalClass::`vftable'; /*0x71a694*/
-      aP0[3] = (int)&TemporalClass::`vftable'; /*0x71a69b*/
+      *aP0 = (int)&(void*)(void*)&TemporalClass_vftable; /*0x71a687*/
+      aP0[1] = (int)&(void*)(void*)&TemporalClass_vftable; /*0x71a68d*/
+      aP0[2] = (int)&(void*)(void*)&TemporalClass_vftable; /*0x71a694*/
+      aP0[3] = (int)&(void*)(void*)&TemporalClass_vftable; /*0x71a69b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x71a6ab*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x71a6b9*/
@@ -393,22 +382,18 @@ int TemporalClass::LoadTemporal(AbstractClass * aP0, int aP1)
   }
   return Prefix_0; /*0x71a6f8*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x71A700
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int TemporalClass::SaveTemporal(TechnoTypeClass * aP0, int * a1, int aP2)
 {
   return AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x71a714*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x71A720
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int TemporalClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x71a726*/
@@ -419,12 +404,10 @@ int TemporalClass::ddtor(int a1, unsigned int * a2)
   a2[3] = -72177148; /*0x71a750*/
   return 0; /*0x71a72d*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x71AE50
-namespace ra2 {
-namespace game {
+namespace gamemd {
 char TemporalClass::CanWarpTarget(unsigned int * a1)
 {
   int Member; // eax
@@ -460,5 +443,4 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
   }
   return 1; /*0x71ae5d*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd

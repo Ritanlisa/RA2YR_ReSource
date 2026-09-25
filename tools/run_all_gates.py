@@ -18,7 +18,8 @@ def run_gate(name, args):
 gates = [
     ("code-standards", ["tools/check_translated_functions.py"]),
     ("ida-artifact",   ["tools/check_pointer_arithmetic.py", "src/", "app/"]),
-    ("exec-flow",      ["tools/verify_execution_flow.py", "--auto"]),
+    ("exec-flow",      ["tools/verify_execution_flow.py", "--auto",
+                        "--workers", "2"]),
 ]
 
 results = {}

@@ -6,6 +6,9 @@
 #include "e4/classes/E4Recv_5EAC00_e4.hpp"
 #include "e4/classes/E4Recv_5EACD0_e4.hpp"
 #include "e4/classes/E4Recv_5EAEE0_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/RandomMap_e4.hpp"
 
 // 0x5E8D40
 namespace gamemd {

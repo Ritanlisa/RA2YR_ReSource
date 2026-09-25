@@ -338,8 +338,8 @@ bool DSurface::BlitPart(
 
   v7 = *this; /*0x4bb098*/
   v8 = (*(int (__thiscall **)(int, _BYTE *, int, int, int))(*(_DWORD *)a3 + 120))(a3, v11, a4, a5, a6); /*0x4bb0a6*/
-  v9 = (*(int (__thiscall **)(int *, _BYTE *, int, int, int))(*this + 120))(this, v12, a5, a3, v8); /*0x4bb0b9*/
-  return (*(int (__thiscall **)(int *, int))(v7 + 12))(this, v9); /*0x4bb0c2*/
+  v9 = this->GetRect(v12, a5, a3, v8); /*0x4bb0b9*/
+  return this->vt_entry_68(v9); /*0x4bb0c2*/
 }
 // ============================================================
 // IntersectSurfaceRects — IDA: 0x7BBE20 (463B)
@@ -566,11 +566,11 @@ char DSurface::BlitCore(
         int v48 = a5[2], v49 = a5[3];
         if (v48 <= 0 || v49 <= 0 || v45 <= 0 || v46 <= 0) goto hw_check;
 
-        int v29 = a5[0], v50 = v29;
+        int v29 = a5[0], v29 = v29;
         if (v43 < v29)
         {
             v45 += v43 - v29;
-            v43 = v50;
+            v43 = v29;
         }
         if (v45 < 1) goto hw_check;
 
@@ -582,8 +582,8 @@ char DSurface::BlitCore(
         }
         if (v46 < 1) goto hw_check;
 
-        if (v43 + v45 > v48 + v50)
-            v45 = v48 + v50 - v43;
+        if (v43 + v45 > v48 + v29)
+            v45 = v48 + v29 - v43;
         if (v45 < 1) goto hw_check;
 
         if (v46 + v44 > v49 + v47)
@@ -720,30 +720,13 @@ bool DSurface::Blit(
   int v48; // [esp+30h] [ebp-70h]
   int v49; // [esp+34h] [ebp-6Ch]
   int v50; // [esp+38h] [ebp-68h]
-  int *v51; // [esp+3Ch] [ebp-64h]
   int v52; // [esp+40h] [ebp-60h]
-  int v53; // [esp+44h] [ebp-5Ch]
-  int v54; // [esp+48h] [ebp-58h]
-  int v55; // [esp+4Ch] [ebp-54h]
   _DWORD v56[2]; // [esp+50h] [ebp-50h] BYREF
   int v57; // [esp+58h] [ebp-48h]
   int v58; // [esp+5Ch] [ebp-44h]
-  int v59; // [esp+60h] [ebp-40h] BYREF
-  int v60; // [esp+64h] [ebp-3Ch]
-  int v61; // [esp+68h] [ebp-38h]
-  int v62; // [esp+6Ch] [ebp-34h]
-  int v63; // [esp+70h] [ebp-30h] BYREF
-  int v64; // [esp+74h] [ebp-2Ch]
-  int v65; // [esp+78h] [ebp-28h]
-  int v66; // [esp+7Ch] [ebp-24h]
-  int v67; // [esp+80h] [ebp-20h]
-  int v68; // [esp+84h] [ebp-1Ch]
-  int v69; // [esp+88h] [ebp-18h]
-  int v70; // [esp+8Ch] [ebp-14h]
   int v71[4]; // [esp+90h] [ebp-10h] BYREF
 
   v9 = a2[2]; /*0x4bb0e1*/
-  v51 = this; /*0x4bb0e8*/
   if ( v9 <= 0 || a2[3] <= 0 || a5[2] <= 0 || a5[3] <= 0 || a3[2] <= 0 || a3[3] <= 0 || a6[2] <= 0 || a6[3] <= 0 ) /*0x4bb14e*/
     return 0; /*0x4bb14e*/
   v10 = a4; /*0x4bb154*/
@@ -752,19 +735,19 @@ bool DSurface::Blit(
     || (*(unsigned __int8 (__thiscall **)(_DWORD *))(*a4 + 108))(a4) == 1
     || (_BYTE)a7 == 1
     || (v11 = (*(int (__thiscall **)(_DWORD *))(*a4 + 112))(a4),
-        v12 = (*(int (__thiscall **)(int *))(*this + 112))(this) == v11,
+        v12 = this->vt_slot_112() == v11,
         v10 = a4,
         !v12) )
   {
     v42 = 1; /*0x4bb19f*/
   }
-  if ( *((_BYTE *)this + 24) == 1 && g_DDraw_Initialized == 1 ) /*0x4bb1b1*/
+  if ( this->q018 == 1 && g_DDraw_Initialized == 1 ) /*0x4bb1b1*/
     v13 = 0; /*0x4bb1b3*/
   else
     v13 = a8; /*0x4bb1b7*/
   if ( !v42 /*0x4bb1f8*/
     && v13 == 1
-    && (!*((_BYTE *)this + 25)
+    && (!this->q019
      || (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v10 + 132))(v10) == 1 && !v10[25])
     && a6[2] == a3[2]
     && a6[3] == a3[3] )
@@ -773,23 +756,23 @@ bool DSurface::Blit(
   }
   if ( !g_DDraw_Initialized && !g_DDraw_Active ) /*0x4bb20f*/
     return 0; /*0x4bb20f*/
-  v14 = *(this + 7); /*0x4bb215*/
-  if ( v14 && (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v14 + 96))(*(this + 7)) == -2005532222 ) /*0x4bb227*/
+  v14 = this->u32_1C; /*0x4bb215*/
+  if ( v14 && (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v14 + 96))(this->u32_1C) == -2005532222 ) /*0x4bb227*/
   {
-    if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 7) + 108))(*(this + 7)) /*0x4bb240*/
-      || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 7) + 96))(*(this + 7)) )
+    if ( (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->u32_1C + 108))(this->u32_1C) /*0x4bb240*/
+      || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->u32_1C + 96))(this->u32_1C) )
     {
       return 0; /*0x4bb245*/
     }
-    v47 = *(this + 3); /*0x4bb250*/
+    v47 = this->q00C; /*0x4bb250*/
     if ( v47 > 0 ) /*0x4bb254*/
     {
       v15 = *this; /*0x4bb256*/
-      *(this + 3) = 0; /*0x4bb25d*/
-      (*(void (__thiscall **)(int *, _DWORD, _DWORD))(v15 + 92))(this, 0, 0); /*0x4bb264*/
-      ++*(this + 3); /*0x4bb26d*/
-      (*(void (__thiscall **)(int *))(*this + 96))(this); /*0x4bb273*/
-      *(this + 3) = v47; /*0x4bb27a*/
+      this->q00C = 0; /*0x4bb25d*/
+      this->Lock(0, 0); /*0x4bb264*/
+      ++this->q00C; /*0x4bb26d*/
+      this->Unlock(); /*0x4bb273*/
+      this->q00C = v47; /*0x4bb27a*/
     }
   }
   if ( v42 == 1 ) /*0x4bb282*/
@@ -798,18 +781,18 @@ bool DSurface::Blit(
   v18 = a3[2]; /*0x4bb2aa*/
   v52 = *a3; /*0x4bb2ad*/
   v19 = a3[3]; /*0x4bb2b1*/
-  v53 = v17; /*0x4bb2b4*/
+  v17 = v17; /*0x4bb2b4*/
   v20 = *a6; /*0x4bb2b8*/
-  v55 = v19; /*0x4bb2ba*/
+  v19 = v19; /*0x4bb2ba*/
   v21 = a6[2]; /*0x4bb2be*/
-  v54 = v18; /*0x4bb2c1*/
+  v18 = v18; /*0x4bb2c1*/
   v22 = a6[1]; /*0x4bb2c5*/
-  v59 = v20; /*0x4bb2c8*/
+  v20 = v20; /*0x4bb2c8*/
   v23 = a6[3]; /*0x4bb2cc*/
-  v61 = v21; /*0x4bb2cf*/
-  v60 = v22; /*0x4bb2d3*/
+  v21 = v21; /*0x4bb2cf*/
+  v22 = v22; /*0x4bb2d3*/
   v24 = *(_DWORD *)v10; /*0x4bb2d7*/
-  v62 = v23; /*0x4bb2dd*/
+  v23 = v23; /*0x4bb2dd*/
   v25 = (int *)(*(int (__thiscall **)(_BYTE *, _DWORD *))(v24 + 120))(v10, v56); /*0x4bb2e4*/
   v26 = 0; /*0x4bb2eb*/
   v27 = 0; /*0x4bb2ed*/
@@ -861,12 +844,12 @@ bool DSurface::Blit(
     v27 = v45; /*0x4bb402*/
     v28 = v31; /*0x4bb406*/
   }
-  v64 = v26; /*0x4bb40c*/
-  v63 = v32; /*0x4bb414*/
-  v65 = v27; /*0x4bb418*/
-  v33 = *v51; /*0x4bb41c*/
-  v66 = v28; /*0x4bb426*/
-  v34 = (int *)(*(int (__thiscall **)(int *, int *))(v33 + 120))(v51, v71); /*0x4bb439*/
+  v26 = v26; /*0x4bb40c*/
+  v32 = v32; /*0x4bb414*/
+  v27 = v27; /*0x4bb418*/
+  v33 = *this; /*0x4bb41c*/
+  v28 = v28; /*0x4bb426*/
+  v34 = (int *)this->GetRect(v71); /*0x4bb439*/
   Rect::Set(0, 0, 0, 0); /*0x4bb43b*/
   v35 = *v34; /*0x4bb449*/
   v36 = a2[2]; /*0x4bb44b*/
@@ -909,22 +892,22 @@ bool DSurface::Blit(
     v41 = v45; /*0x4bb4eb*/
     v39 = v46; /*0x4bb4ef*/
   }
-  v68 = v37; /*0x4bb4f3*/
-  v69 = v41; /*0x4bb4f7*/
-  v67 = v35; /*0x4bb513*/
-  v70 = v39; /*0x4bb51a*/
-  if ( (unsigned __int8)IntersectSurfaceRects(&v59, &v63) ) /*0x4bb521*/
+  v37 = v37; /*0x4bb4f3*/
+  v41 = v41; /*0x4bb4f7*/
+  v35 = v35; /*0x4bb513*/
+  v39 = v39; /*0x4bb51a*/
+  if ( (unsigned __int8)IntersectSurfaceRects(&v20, &v32) ) /*0x4bb521*/
   {
-    v56[0] = v67 + v52; /*0x4bb544*/
-    v56[1] = v68 + v53; /*0x4bb552*/
-    v58 = v53 + v68 + v55; /*0x4bb56e*/
-    v57 = v52 + v67 + v54; /*0x4bb576*/
-    v43 = v63 + v59; /*0x4bb57d*/
-    v44 = v64 + v60; /*0x4bb588*/
-    v46 = v60 + v64 + v62; /*0x4bb5a0*/
-    v45 = v59 + v63 + v61; /*0x4bb5a4*/
-    return (*(int (__stdcall **)(int, _DWORD *, _DWORD, int *, int, _DWORD))(*(_DWORD *)v51[7] + 20))( /*0x4bb5d5*/
-             v51[7],
+    v56[0] = v35 + v52; /*0x4bb544*/
+    v56[1] = v37 + v17; /*0x4bb552*/
+    v58 = v17 + v37 + v19; /*0x4bb56e*/
+    v57 = v52 + v35 + v18; /*0x4bb576*/
+    v43 = v32 + v20; /*0x4bb57d*/
+    v44 = v26 + v22; /*0x4bb588*/
+    v46 = v22 + v26 + v23; /*0x4bb5a0*/
+    v45 = v20 + v32 + v21; /*0x4bb5a4*/
+    return (*(int (__stdcall **)(int, _DWORD *, _DWORD, int *, int, _DWORD))(*(_DWORD *)this->u32_1C + 20))( /*0x4bb5d5*/
+             this->u32_1C,
              v56,
              a4[7],
              &v43,
@@ -975,34 +958,34 @@ bool DSurface::FillRectEx(
   char v19[16]; // [esp+60h] [ebp-74h] BYREF
   _DWORD v20[25]; // [esp+70h] [ebp-64h] BYREF
 
-  if ( *(this + 7) && *(int *)(a3 + 8) > 0 && *(int *)(a3 + 12) > 0 ) /*0x4bb64d*/
+  if ( this->u32_1C && *(int *)(a3 + 8) > 0 && *(int *)(a3 + 12) > 0 ) /*0x4bb64d*/
   {
     if ( !g_DDraw_UseHWBlit /*0x4bb675*/
-      || (*(unsigned __int8 (__thiscall **)(int *))(*this + 108))(this)
-      || (*(int (__stdcall **)(_DWORD, int))(*(_DWORD *)*(this + 7) + 52))(*(this + 7), 1) )
+      || this->IsLocked()
+      || (*(int (__stdcall **)(_DWORD, int))(*(_DWORD *)this->u32_1C + 52))(this->u32_1C, 1) )
     {
       return XSurface::FillRectEx(a2, a3, a4); /*0x4bb81d*/
     }
     if ( g_DDraw_Initialized || g_DDraw_Active ) /*0x4bb690*/
     {
-      v5 = *(this + 7); /*0x4bb696*/
-      if ( !v5 || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v5 + 96))(*(this + 7)) != -2005532222 ) /*0x4bb6a8*/
+      v5 = this->u32_1C; /*0x4bb696*/
+      if ( !v5 || (*(int (__stdcall **)(_DWORD))(*(_DWORD *)v5 + 96))(this->u32_1C) != -2005532222 ) /*0x4bb6a8*/
         goto LABEL_15; /*0x4bb6a8*/
-      if ( !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 7) + 108))(*(this + 7)) /*0x4bb6c1*/
-        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)*(this + 7) + 96))(*(this + 7)) )
+      if ( !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->u32_1C + 108))(this->u32_1C) /*0x4bb6c1*/
+        && !(*(int (__stdcall **)(_DWORD))(*(_DWORD *)this->u32_1C + 96))(this->u32_1C) )
       {
-        v6 = *(this + 3); /*0x4bb6cc*/
+        v6 = this->q00C; /*0x4bb6cc*/
         if ( v6 > 0 ) /*0x4bb6d1*/
         {
           v7 = *this; /*0x4bb6d3*/
-          *(this + 3) = 0; /*0x4bb6db*/
-          (*(void (__thiscall **)(int *, _DWORD, _DWORD))(v7 + 92))(this, 0, 0); /*0x4bb6de*/
-          ++*(this + 3); /*0x4bb6e7*/
-          (*(void (__thiscall **)(int *))(*this + 96))(this); /*0x4bb6ec*/
-          *(this + 3) = v6; /*0x4bb6ef*/
+          this->q00C = 0; /*0x4bb6db*/
+          this->Lock(0, 0); /*0x4bb6de*/
+          ++this->q00C; /*0x4bb6e7*/
+          this->Unlock(); /*0x4bb6ec*/
+          this->q00C = v6; /*0x4bb6ef*/
         }
   LABEL_15:
-        v8 = (*(int (__thiscall **)(int *, char *))(*this + 120))(this, v19); /*0x4bb6f2*/
+        v8 = this->GetRect(v19); /*0x4bb6f2*/
         v9 = (_DWORD *)ClipRectIntersection(v8, 0, 0); /*0x4bb710*/
         v18[0] = *v9; /*0x4bb719*/
         v18[1] = v9[1]; /*0x4bb722*/
@@ -1015,7 +998,7 @@ bool DSurface::FillRectEx(
         v14 = v10[3]; /*0x4bb781*/
         if ( v13 > 0 && v14 > 0 ) /*0x4bb792*/
         {
-          v15 = *(this + 7); /*0x4bb79c*/
+          v15 = this->u32_1C; /*0x4bb79c*/
           v17[0] = v11; /*0x4bb79f*/
           v17[2] = v11 + v13; /*0x4bb7a3*/
           v17[3] = v12 + v14; /*0x4bb7a7*/
@@ -1045,7 +1028,7 @@ int DSurface::FillRect(const RectangleStruct& fill_rect, uint32_t color)
   int v4; // eax
   _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
 
-  v4 = (*(int (__thiscall **)(int *, _BYTE *))(*this + 120))(this, v6); /*0x4bb609*/
+  v4 = this->GetRect(v6); /*0x4bb609*/
   return DSurface::FillRectEx(this, v4, fill_rect, color); /*0x4bb614*/
 }
 // 0x4bb830
@@ -1118,11 +1101,11 @@ bool DSurface::FillRectWithFlags(
   v31 = 255 - v14; /*0x4bb97b*/
   v43 = v14; /*0x4bb983*/
   v41 = 0; /*0x4bb987*/
-  LOWORD(a2) = (unsigned __int8)(a4[2] >> g_BitMask_Red); /*0x4bb99a*/
-  LOWORD(v13) = (unsigned __int8)(a4[1] >> g_BitMask_Blue); /*0x4bb9b1*/
+  IDA_LOWORD(a2) = (unsigned __int8)(a4[2] >> g_BitMask_Red); /*0x4bb99a*/
+  IDA_LOWORD(v13) = (unsigned __int8)(a4[1] >> g_BitMask_Blue); /*0x4bb9b1*/
   v15 = v13 << g_BitMask_Green; /*0x4bb9b5*/
   v16 = v15 | (a2 << g_BitShift_Blue); /*0x4bb9c5*/
-  LOWORD(v15) = (unsigned __int8)(*a4 >> g_BitShift_Green_0); /*0x4bb9ca*/
+  IDA_LOWORD(v15) = (unsigned __int8)(*a4 >> g_BitShift_Green_0); /*0x4bb9ca*/
   v17 = (v15 << g_BitShift_Red) | v16; /*0x4bb9d2*/
   for ( i = v17; v41 < v40; ++v41 ) /*0x4bb9da*/
   {
@@ -1149,9 +1132,9 @@ bool DSurface::FillRectWithFlags(
           break; /*0x4bbabb*/
         v9 = v34; /*0x4bba5d*/
       }
-      LOWORD(v10) = v28; /*0x4bbabd*/
-      LOWORD(v17) = i; /*0x4bbac1*/
-      LOWORD(v9) = v29; /*0x4bbac5*/
+      IDA_LOWORD(v10) = v28; /*0x4bbabd*/
+      IDA_LOWORD(v17) = i; /*0x4bbac1*/
+      IDA_LOWORD(v9) = v29; /*0x4bbac5*/
       v14 = v43; /*0x4bbac9*/
     }
   }
@@ -1288,7 +1271,7 @@ int DSurface::CanLock(uint32_t /*unk1*/, uint32_t /*unk2*/)
 // 0x4baf20
 BOOL __thiscall DSurface::CheckBltStatus(_DWORD **this)
 {
-  return (*(int (__stdcall **)(_DWORD, int))(**(this + 7) + 52))(*(this + 7), 1) == 0; /*0x4baf30*/
+  return (*(int (__stdcall **)(_DWORD, int))(*this->u32_1C + 52))(this->u32_1C, 1) == 0; /*0x4baf30*/
 }
 /* ASM:
 mov     eax, [ecx+1Ch]
@@ -1310,10 +1293,10 @@ void* BSurface::Lock(int x, int y)
   int v6; // ebx
 
   v4 = *this; /*0x4115f8*/
-  ++*(this + 3); /*0x4115fb*/
-  v5 = *(this + 5); /*0x4115fe*/
-  v6 = x * (*(int (__thiscall **)(_DWORD *))(v4 + 112))(this); /*0x411608*/
-  return v6 + v5 + y * (*(int (__thiscall **)(_DWORD *))(*this + 116))(this); /*0x41161b*/
+  ++this->LockCount; /*0x4115fb*/
+  v5 = this->Buffer; /*0x4115fe*/
+  v6 = x * this->GetBytesPerPixel(); /*0x411608*/
+  return v6 + v5 + y * this->GetPitch(); /*0x41161b*/
 }
 void Surface::DrawSHP(
     ConvertClass* palette,
@@ -1430,14 +1413,14 @@ int XSurface::SetPixel(const Point2D& point, uint32_t color)
 {
   _WORD *v4; // edi
 
-  v4 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *point, point[1]); /*0x7baec6*/
+  v4 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)&this->q0242))(this, *point, point[1]); /*0x7baec6*/
   if ( !v4 ) /*0x7baeca*/
     return 0; /*0x7baf03*/
-  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 ) /*0x7baed6*/
+  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C2))(this) == 2 ) /*0x7baed6*/
     *v4 = color; /*0x7baedf*/
   else
     *(_BYTE *)v4 = color; /*0x7baef2*/
-  (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this); /*0x7baee4*/
+  (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0246))(this); /*0x7baee4*/
   return 1; /*0x7baee7*/
 }
 // 0x7bae60
@@ -1447,13 +1430,13 @@ int XSurface::GetPixel(const Point2D& point)
   _WORD *v4; // edi
 
   v3 = 0; /*0x7bae74*/
-  v4 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *point, point[1]); /*0x7bae79*/
+  v4 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)&this->q0242))(this, *point, point[1]); /*0x7bae79*/
   if ( v4 ) /*0x7bae7d*/
   {
-    if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 ) /*0x7bae89*/
+    if ( (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C2))(this) == 2 ) /*0x7bae89*/
     {
-      LOWORD(v3) = *v4; /*0x7bae8d*/
-      (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this); /*0x7bae92*/
+      IDA_LOWORD(v3) = *v4; /*0x7bae8d*/
+      (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0246))(this); /*0x7bae92*/
       return v3; /*0x7bae9a*/
     }
     v3 = *(unsigned __int8 *)v4; /*0x7baea1*/
@@ -1481,11 +1464,11 @@ int XSurface::PutPixel(const Point2D& point, uint16_t color, const RectangleStru
   v7 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *point, point[1]); /*0x7bafcf*/
   if ( !v7 ) /*0x7bafd3*/
     return 0; /*0x7bb00c*/
-  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 ) /*0x7bafdf*/
+  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C2))(this) == 2 ) /*0x7bafdf*/
     *v7 = color; /*0x7bafe8*/
   else
     *(_BYTE *)v7 = color; /*0x7baffb*/
-  (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this); /*0x7bafed*/
+  (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0246))(this); /*0x7bafed*/
   return 1; /*0x7baff0*/
 }
 // 0x7baf10
@@ -1503,17 +1486,17 @@ int XSurface::GetPixelAtCoords(const Point2D& point, const RectangleStruct& clip
     v6 = clip_rect[1]; /*0x7baf35*/
     if ( v5 >= v6 && v5 < v6 + clip_rect[3] ) /*0x7baf43*/
     {
-      v7 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, *point, point[1]); /*0x7baf50*/
+      v7 = (_WORD *)(*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)&this->q0242))(this, *point, point[1]); /*0x7baf50*/
       if ( v7 ) /*0x7baf54*/
       {
-        if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) == 2 ) /*0x7baf60*/
+        if ( (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C2))(this) == 2 ) /*0x7baf60*/
         {
-          LOWORD(v4) = *v7; /*0x7baf64*/
-          (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this); /*0x7baf69*/
+          IDA_LOWORD(v4) = *v7; /*0x7baf64*/
+          (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0246))(this); /*0x7baf69*/
           return v4; /*0x7baf71*/
         }
         v4 = *(unsigned __int8 *)v7; /*0x7baf78*/
-        (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this); /*0x7baf7c*/
+        (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0246))(this); /*0x7baf7c*/
       }
     }
   }
@@ -1525,7 +1508,7 @@ int XSurface::DrawLine(const Point2D& start, const Point2D& end, uint32_t color)
   int v5; // eax
   _BYTE v7[16]; // [esp+4h] [ebp-10h] BYREF
 
-  v5 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v7); /*0x7ba5fe*/
+  v5 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)&this->q0300))(this, v7); /*0x7ba5fe*/
   return XSurface::DrawLineEx(this, v5, start, end, color); /*0x7ba609*/
 }
 // 0x7bbab0
@@ -1538,9 +1521,9 @@ int XSurface::Fill(uint32_t color)
   _BYTE v8[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
   v3 = *this; /*0x7bbabf*/
-  v4 = (*(int (__thiscall **)(int *, _BYTE *, int))(*this + 120))(this, v7, color); /*0x7bbac5*/
-  v5 = (*(int (__thiscall **)(int *, _BYTE *, int))(*this + 120))(this, v8, v4); /*0x7bbad2*/
-  return (*(int (__thiscall **)(int *, int))(v3 + 16))(this, v5); /*0x7bbadb*/
+  v4 = this->GetRect(v7, color); /*0x7bbac5*/
+  v5 = this->GetRect(v8, v4); /*0x7bbad2*/
+  return this->FillRectEx(v5); /*0x7bbadb*/
 }
 // 0x7badc0
 bool XSurface::DrawRectEx(
@@ -1565,10 +1548,10 @@ bool XSurface::DrawRectEx(
   v12 = v9[0]; /*0x7badfb*/
   v9[1] = v5; /*0x7bae08*/
   v10[1] = v5; /*0x7bae0c*/
-  (*(void (__thiscall **)(void *, int, _DWORD *, _DWORD *, int))(*(_DWORD *)this + 44))(this, a2, v9, v10, a4); /*0x7bae17*/
-  (*(void (__thiscall **)(void *, int, _DWORD *, int *, int))(*(_DWORD *)this + 44))(this, a2, v9, &v12, a4); /*0x7bae2a*/
-  (*(void (__thiscall **)(void *, int, _DWORD *, _DWORD *, int))(*(_DWORD *)this + 44))(this, a2, v10, v11, a4); /*0x7bae3d*/
-  (*(void (__thiscall **)(void *, int, int *, _DWORD *, int))(*(_DWORD *)this + 44))(this, a2, &v12, v11, a4); /*0x7bae50*/
+  (*(void (__thiscall **)(void *, int, _DWORD *, _DWORD *, int))(*(_DWORD *)&this->q0104))(this, a2, v9, v10, a4); /*0x7bae17*/
+  (*(void (__thiscall **)(void *, int, _DWORD *, int *, int))(*(_DWORD *)&this->q0104))(this, a2, v9, &v12, a4); /*0x7bae2a*/
+  (*(void (__thiscall **)(void *, int, _DWORD *, _DWORD *, int))(*(_DWORD *)&this->q0104))(this, a2, v10, v11, a4); /*0x7bae3d*/
+  (*(void (__thiscall **)(void *, int, int *, _DWORD *, int))(*(_DWORD *)&this->q0104))(this, a2, &v12, v11, a4); /*0x7bae50*/
   return 1; /*0x7bae53*/
 }
 // IDA: 0x7BAD90 -- XSurface::DrawRect (43B)
@@ -1579,7 +1562,7 @@ int XSurface::DrawRect(const RectangleStruct& draw_rect, uint32_t color)
   int v4; // eax
   _BYTE v6[16]; // [esp+4h] [ebp-10h] BYREF
 
-  v4 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v6); /*0x7bada9*/
+  v4 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)&this->q0300))(this, v6); /*0x7bada9*/
   return XSurface::DrawRectEx(this, v4, draw_rect, color); /*0x7badb4*/
 }
 // 0x7bb020
@@ -1617,30 +1600,17 @@ bool XSurface::FillRectEx(
   int i; // ecx
   int v26; // eax
   int v27; // ebx
-  char v28; // dl
-  __int16 v29; // bx
   int v30; // edx
-  signed int v31; // ecx
   char *v32; // edi
   _WORD *v33; // eax
-  char v34; // dl
-  __int16 v35; // bx
   int v36; // edx
-  signed int v37; // ecx
-  char *v38; // edi
   _WORD *v39; // eax
   bool v40; // zf
-  void *v41; // [esp-4h] [ebp-7Ch]
-  void *v42; // [esp-4h] [ebp-7Ch]
   _DWORD v43[10]; // [esp+2Ch] [ebp-4Ch] BYREF
-  unsigned int v44; // [esp+54h] [ebp-24h]
-  int v45; // [esp+58h] [ebp-20h]
   int v46; // [esp+64h] [ebp-14h] BYREF
   int v47; // [esp+68h] [ebp-10h]
   char *v48; // [esp+6Ch] [ebp-Ch]
   signed int v49; // [esp+70h] [ebp-8h]
-  void *v50; // [esp+74h] [ebp-4h]
-  int v51; // [esp+80h] [ebp+8h]
   int v52; // [esp+80h] [ebp+8h]
   int v53; // [esp+84h] [ebp+Ch]
   int v54; // [esp+88h] [ebp+10h]
@@ -1648,12 +1618,11 @@ bool XSurface::FillRectEx(
 
   v4 = this; /*0x7bb05c*/
   v5 = a3[2]; /*0x7bb05e*/
-  v50 = this; /*0x7bb061*/
   if ( v5 <= 0 ) /*0x7bb066*/
     return 0; /*0x7bb066*/
   if ( a3[3] <= 0 ) /*0x7bb071*/
     return 0; /*0x7bb071*/
-  v6 = (*(int (__thiscall **)(void *, _DWORD *))(*(_DWORD *)this + 120))(this, v43); /*0x7bb07f*/
+  v6 = (*(int (__thiscall **)(void *, _DWORD *))(*(_DWORD *)&this->q0300))(this, v43); /*0x7bb07f*/
   v7 = (_DWORD *)ClipRectIntersection(v6, 0, 0); /*0x7bb08f*/
   v43[4] = *v7; /*0x7bb096*/
   v43[5] = v7[1]; /*0x7bb09c*/
@@ -1675,41 +1644,41 @@ bool XSurface::FillRectEx(
   v43[8] = *v14; /*0x7bb100*/
   v43[9] = v14[1]; /*0x7bb106*/
   v15 = v14[2]; /*0x7bb109*/
-  v44 = v15; /*0x7bb10c*/
+  v15 = v15; /*0x7bb10c*/
   v16 = v14[3]; /*0x7bb10f*/
-  v45 = v16; /*0x7bb114*/
+  v16 = v16; /*0x7bb114*/
   if ( v15 <= 0 ) /*0x7bb117*/
     return 0; /*0x7bb117*/
   if ( v16 <= 0 ) /*0x7bb11f*/
     return 0; /*0x7bb11f*/
-  v51 = v16; /*0x7bb125*/
-  v53 = (*(int (__thiscall **)(void *))(*(_DWORD *)v4 + 116))(v4); /*0x7bb132*/
+  v16 = v16; /*0x7bb125*/
+  v53 = (*(int (__thiscall **)(void *))(v4->q074)(v4); /*0x7bb132*/
   v17 = (_DWORD *)CellStruct::Copy(&v46); /*0x7bb139*/
-  v18 = (*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)v4 + 92))(v4, *v17, v17[1]); /*0x7bb154*/
+  v18 = (*(int (__thiscall **)(void *, _DWORD, _DWORD))(v4->__pad_05C)(v4, *v17, v17[1]); /*0x7bb154*/
   v48 = (char *)v18; /*0x7bb158*/
   if ( !v18 ) /*0x7bb15b*/
     return 0; /*0x7bb333*/
-  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)v4 + 112))(v4) == 1 ) /*0x7bb16b*/
+  if ( (*(int (__thiscall **)(void *))(v4->q070)(v4) == 1 ) /*0x7bb16b*/
   {
     v52 = 0; /*0x7bb170*/
-    if ( v45 > 0 ) /*0x7bb179*/
+    if ( v16 > 0 ) /*0x7bb179*/
     {
       do /*0x7bb1b2*/
       {
-        LOBYTE(v15) = a4; /*0x7bb185*/
-        v20 = v44; /*0x7bb187*/
-        BYTE1(v15) = a4; /*0x7bb189*/
+        IDA_LOBYTE(v15) = a4; /*0x7bb185*/
+        v20 = v15; /*0x7bb187*/
+        IDA_BYTE1(v15) = a4; /*0x7bb189*/
         v21 = v15 << 16; /*0x7bb18f*/
-        LOWORD(v21) = v15; /*0x7bb192*/
-        v22 = v44 >> 2; /*0x7bb195*/
-        memset32((void *)v18, v21, v44 >> 2); /*0x7bb198*/
+        IDA_LOWORD(v21) = v15; /*0x7bb192*/
+        v22 = v15 >> 2; /*0x7bb195*/
+        memset32((void *)v18, v21, v15 >> 2); /*0x7bb198*/
         memset((void *)(v18 + 4 * v22), a4, v20 & 3); /*0x7bb19f*/
         v18 += v53; /*0x7bb1aa*/
         ++v52; /*0x7bb1af*/
       }
-      while ( v52 < v45 ); /*0x7bb1b2*/
+      while ( v52 < v16 ); /*0x7bb1b2*/
   LABEL_9:
-      (*(void (__thiscall **)(void *))(*(_DWORD *)v50 + 96))(v50); /*0x7bb1b4*/
+      (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0246))(this); /*0x7bb1b4*/
       return 1; /*0x7bb1c6*/
     }
   }
@@ -1720,34 +1689,34 @@ bool XSurface::FillRectEx(
       if ( v15 > 1 ) /*0x7bb22f*/
       {
         v27 = v15 - 1; /*0x7bb262*/
-        v28 = v27; /*0x7bb263*/
+        v27 = v27; /*0x7bb263*/
         v49 = v27 >> 1; /*0x7bb267*/
-        v29 = a4; /*0x7bb26a*/
-        v30 = v28 & 1; /*0x7bb26f*/
+        a4 = a4; /*0x7bb26a*/
+        v30 = v27 & 1; /*0x7bb26f*/
         v48 = (char *)(a4 | (a4 << 16)); /*0x7bb277*/
-        v54 = v51; /*0x7bb285*/
+        v54 = v16; /*0x7bb285*/
         do /*0x7bb2b8*/
         {
-          *(_WORD *)v18 = v29; /*0x7bb28b*/
-          v41 = v4; /*0x7bb291*/
-          v31 = v49; /*0x7bb292*/
+          *(_WORD *)v18 = a4; /*0x7bb28b*/
+          v4 = v4; /*0x7bb291*/
+          v49 = v49; /*0x7bb292*/
           v32 = (char *)(v18 + 2); /*0x7bb295*/
           if ( v49 > 0 ) /*0x7bb29b*/
           {
             memset32(v32, (int)v48, v49); /*0x7bb2a0*/
-            v32 += 4 * v31; /*0x7bb2a0*/
+            v32 += 4 * v49; /*0x7bb2a0*/
           }
           v33 = v32; /*0x7bb2a2*/
-          v4 = v41; /*0x7bb2a4*/
+          v4 = v4; /*0x7bb2a4*/
           if ( v30 ) /*0x7bb2a7*/
-            *v33 = v29; /*0x7bb2a9*/
+            *v33 = a4; /*0x7bb2a9*/
           v18 += v53; /*0x7bb2b2*/
           --v54; /*0x7bb2b5*/
         }
         while ( v54 ); /*0x7bb2b8*/
         goto LABEL_9; /*0x7bb2b8*/
       }
-      v26 = v51; /*0x7bb237*/
+      v26 = v16; /*0x7bb237*/
       do /*0x7bb24e*/
       {
         *(_WORD *)v18 = a4; /*0x7bb248*/
@@ -1760,51 +1729,51 @@ bool XSurface::FillRectEx(
     {
       do /*0x7bb218*/
       {
-        LOWORD(v19) = a4; /*0x7bb1f3*/
+        IDA_LOWORD(v19) = a4; /*0x7bb1f3*/
         v19 <<= 16; /*0x7bb1f8*/
-        LOWORD(v19) = a4; /*0x7bb1fb*/
+        IDA_LOWORD(v19) = a4; /*0x7bb1fb*/
         memset32((void *)v18, v19, (unsigned int)v15 >> 1); /*0x7bb202*/
         v24 = (_WORD *)(v18 + 4 * ((unsigned int)v15 >> 1)); /*0x7bb202*/
         for ( i = v15 & 1; i; --i ) /*0x7bb204*/
           *v24++ = a4; /*0x7bb206*/
-        v4 = v50; /*0x7bb209*/
+        v4 = this; /*0x7bb209*/
         v18 += v53; /*0x7bb212*/
-        --v51; /*0x7bb215*/
+        --v16; /*0x7bb215*/
       }
-      while ( v51 ); /*0x7bb218*/
+      while ( v16 ); /*0x7bb218*/
     }
   }
   else
   {
-    v34 = v15; /*0x7bb2cf*/
+    v15 = v15; /*0x7bb2cf*/
     v49 = v15 >> 1; /*0x7bb2d3*/
-    v35 = a4; /*0x7bb2d6*/
-    v36 = v34 & 1; /*0x7bb2db*/
+    a4 = a4; /*0x7bb2d6*/
+    v36 = v15 & 1; /*0x7bb2db*/
     v47 = a4 | (a4 << 16); /*0x7bb2e3*/
-    v55 = v51; /*0x7bb2ed*/
+    v55 = v16; /*0x7bb2ed*/
     do /*0x7bb31a*/
     {
-      v42 = v4; /*0x7bb2f0*/
-      v37 = v49; /*0x7bb2f1*/
-      v38 = v48; /*0x7bb2f4*/
+      v4 = v4; /*0x7bb2f0*/
+      v49 = v49; /*0x7bb2f1*/
+      v48 = v48; /*0x7bb2f4*/
       if ( v49 > 0 ) /*0x7bb2fa*/
       {
         memset32(v48, v47, v49); /*0x7bb2ff*/
-        v38 += 4 * v37; /*0x7bb2ff*/
+        v48 += 4 * v49; /*0x7bb2ff*/
       }
-      v39 = v38; /*0x7bb301*/
-      v4 = v42; /*0x7bb303*/
+      v39 = v48; /*0x7bb301*/
+      v4 = v4; /*0x7bb303*/
       if ( v36 ) /*0x7bb306*/
-        *v39 = v35; /*0x7bb308*/
+        *v39 = a4; /*0x7bb308*/
       v18 += v53; /*0x7bb311*/
       v40 = v55 == 1; /*0x7bb313*/
       v48 = (char *)v18; /*0x7bb314*/
       --v55; /*0x7bb317*/
     }
     while ( !v40 ); /*0x7bb31a*/
-    v4 = v50; /*0x7bb31c*/
+    v4 = this; /*0x7bb31c*/
   }
-  (*(void (__thiscall **)(void *))(*(_DWORD *)v4 + 96))(v4); /*0x7bb21e*/
+  (*(void (__thiscall **)(void *))(v4->q060)(v4); /*0x7bb21e*/
   return 1; /*0x7bb1c0*/
 }
 // Forward-declare BlitterCopySimpleSHP (defined in shp rendering module)
@@ -1850,10 +1819,10 @@ int XSurface::BlitWhole(Surface* src, bool option1, bool option2)
   v14 = v8[2]; /*0x7bbb49*/
   v9 = v8[3]; /*0x7bbb51*/
   v10 = *this; /*0x7bbb54*/
-  v15 = v9; /*0x7bbb56*/
+  v9 = v9; /*0x7bbb56*/
   v12 = 0; /*0x7bbb6d*/
   v13 = 0; /*0x7bbb71*/
-  return (*(int (__thiscall **)(int *, int *, int *, int *, int, int))(v10 + 8))(this, &v16, src, &v12, option1, option2); /*0x7bbb78*/
+  return this->BlitPart(&v16, src, &v12, option1, option2); /*0x7bbb78*/
 }
 // 0x4bf750
 bool DSurface::DrawGradientLine(
@@ -1864,7 +1833,6 @@ bool DSurface::DrawGradientLine(
   int v11; // eax
   int v12; // ecx
   _WORD *v13; // ebx
-  int v15; // eax
   unsigned __int8 v16; // dl
   double v17; // st7
   char v19; // c0
@@ -1903,7 +1871,6 @@ bool DSurface::DrawGradientLine(
   _BYTE v60[16]; // [esp+38h] [ebp-20h] BYREF
   _WORD *v61; // [esp+5Ch] [ebp+4h]
   int i; // [esp+5Ch] [ebp+4h]
-  int v63; // [esp+60h] [ebp+8h]
   int v64; // [esp+60h] [ebp+8h]
   int v65; // [esp+64h] [ebp+Ch]
   int v66; // [esp+64h] [ebp+Ch]
@@ -1912,8 +1879,7 @@ bool DSurface::DrawGradientLine(
   __int16 v69; // [esp+74h] [ebp+1Ch]
   __int16 v70; // [esp+74h] [ebp+1Ch]
 
-  v8 = this; /*0x4bf755*/
-  v9 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 120))(this, v60); /*0x4bf766*/
+  v9 = (*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)&this->q0300))(this, v60); /*0x4bf766*/
   v10 = (int *)ClipRectIntersection(v9, 0, 0); /*0x4bf776*/
   v56 = *v10; /*0x4bf77d*/
   v57 = v10[1]; /*0x4bf784*/
@@ -1925,18 +1891,18 @@ bool DSurface::DrawGradientLine(
   v54 = v56 + *a4; /*0x4bf7c9*/
   if ( (unsigned __int8)ClipLine(&v56) ) /*0x4bf7cd*/
   {
-    v11 = v52; /*0x4bf7da*/
+    v52 = v52; /*0x4bf7da*/
     if ( v52 > v54 ) /*0x4bf7e4*/
     {
-      v12 = v53; /*0x4bf7e6*/
+      v53 = v53; /*0x4bf7e6*/
       v52 = v54; /*0x4bf7ea*/
-      v54 = v11; /*0x4bf7f2*/
+      v54 = v52; /*0x4bf7f2*/
       v53 = v55; /*0x4bf7f6*/
-      v55 = v12; /*0x4bf7fa*/
+      v55 = v53; /*0x4bf7fa*/
     }
-    if ( (*(int (__thiscall **)(void *))(*(_DWORD *)v8 + 112))(v8) == 2 ) /*0x4bf809*/
+    if ( (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C2))(this) == 2 ) /*0x4bf809*/
     {
-      v13 = (_WORD *)(*(int (__thiscall **)(void *, int, int))(*(_DWORD *)v8 + 92))(v8, v52, v53); /*0x4bf821*/
+      v13 = (_WORD *)(*(int (__thiscall **)(void *, int, int))(*(_DWORD *)&this->q0242))(this, v52, v53); /*0x4bf821*/
       v61 = v13; /*0x4bf825*/
       if ( v13 ) /*0x4bf829*/
       {
@@ -1947,7 +1913,7 @@ bool DSurface::DrawGradientLine(
             v15 = Color::Lerp2(a5, a6, *a8); /*0x4bf874*/
             v67 = *(_WORD *)v15; /*0x4bf87f*/
             v16 = *(_BYTE *)(v15 + 2) >> g_BitMask_Red; /*0x4bf895*/
-            LOWORD(v15) = (unsigned __int8)((unsigned __int8)HIBYTE(*(_WORD *)v15) >> g_BitMask_Blue); /*0x4bf8ab*/
+            IDA_LOWORD(v15) = (unsigned __int8)((unsigned __int8)IDA_HIBYTE(*(_WORD *)v15) >> g_BitMask_Blue); /*0x4bf8ab*/
             *v13 = ((unsigned __int8)((unsigned __int8)v67 >> g_BitShift_Green_0) << g_BitShift_Red) /*0x4bf8cd*/
                  | (v15 << g_BitMask_Green)
                  | (v16 << g_BitShift_Blue);
@@ -1968,16 +1934,16 @@ bool DSurface::DrawGradientLine(
             ++v13; /*0x4bf924*/
           }
   LABEL_16:
-          (*(void (__thiscall **)(void *))(*(_DWORD *)v8 + 96))(v8); /*0x4bf942*/
+          (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0246))(this); /*0x4bf942*/
           return 1; /*0x4bf953*/
         }
         if ( v52 == v54 ) /*0x4bf960*/
         {
           if ( v53 <= v55 ) /*0x4bf968*/
-            v21 = (*(int (__thiscall **)(void *))(*(_DWORD *)v8 + 116))(v8); /*0x4bf97b*/
+            v21 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4bf97b*/
           else
-            v21 = -(*(int (__thiscall **)(void *))(*(_DWORD *)v8 + 116))(v8); /*0x4bf972*/
-          v63 = v21; /*0x4bf982*/
+            v21 = -(*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4bf972*/
+          v21 = v21; /*0x4bf982*/
           v22 = abs32(v55 - v53); /*0x4bf98f*/
           if ( v22 < 0 ) /*0x4bf991*/
             goto LABEL_16; /*0x4bf991*/
@@ -1987,7 +1953,7 @@ bool DSurface::DrawGradientLine(
             v24 = Color::Lerp2(a5, a6, *a8); /*0x4bf9b8*/
             v68 = *(_WORD *)v24; /*0x4bf9c3*/
             v25 = *(_BYTE *)(v24 + 2) >> g_BitMask_Red; /*0x4bf9d9*/
-            LOWORD(v24) = (unsigned __int8)((unsigned __int8)HIBYTE(*(_WORD *)v24) >> g_BitMask_Blue); /*0x4bf9ef*/
+            IDA_LOWORD(v24) = (unsigned __int8)((unsigned __int8)IDA_HIBYTE(*(_WORD *)v24) >> g_BitMask_Blue); /*0x4bf9ef*/
             *v61 = ((unsigned __int8)((unsigned __int8)v68 >> g_BitShift_Green_0) << g_BitShift_Red) /*0x4bfa15*/
                  | (v24 << g_BitMask_Green)
                  | (v25 << g_BitShift_Blue);
@@ -2006,14 +1972,14 @@ bool DSurface::DrawGradientLine(
             *a7 = -*a7; /*0x4bfa6a*/
   LABEL_30:
             v29 = v65 == 1; /*0x4bfa6c*/
-            v61 = (_WORD *)((char *)v61 + v63); /*0x4bfa7b*/
+            v61 = (_WORD *)((char *)v61 + v21); /*0x4bfa7b*/
             --v65; /*0x4bfa7f*/
             if ( v29 ) /*0x4bfa83*/
               goto LABEL_16; /*0x4bfa83*/
           }
         }
         v30 = v54 - v52; /*0x4bfaa6*/
-        v31 = (*(int (__thiscall **)(void *))(*(_DWORD *)v8 + 116))(v8); /*0x4bfaae*/
+        v31 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4bfaae*/
         v64 = v31; /*0x4bfab3*/
         if ( v55 - v53 < 0 ) /*0x4bfab7*/
           v64 = -v31; /*0x4bfabb*/
@@ -2027,7 +1993,6 @@ bool DSurface::DrawGradientLine(
           if ( v30 < 0 ) /*0x4bfae4*/
           {
   LABEL_59:
-            v8 = this; /*0x4bfd08*/
             goto LABEL_16; /*0x4bfd08*/
           }
           while ( 1 ) /*0x4bfb06*/
@@ -2035,7 +2000,7 @@ bool DSurface::DrawGradientLine(
             v36 = Color::Lerp2(a5, a6, *a8); /*0x4bfb06*/
             v69 = *(_WORD *)v36; /*0x4bfb11*/
             v37 = *(_BYTE *)(v36 + 2) >> g_BitMask_Red; /*0x4bfb27*/
-            LOWORD(v36) = (unsigned __int8)((unsigned __int8)HIBYTE(*(_WORD *)v36) >> g_BitMask_Blue); /*0x4bfb3d*/
+            IDA_LOWORD(v36) = (unsigned __int8)((unsigned __int8)IDA_HIBYTE(*(_WORD *)v36) >> g_BitMask_Blue); /*0x4bfb3d*/
             v61[v33] = ((unsigned __int8)((unsigned __int8)v69 >> g_BitShift_Green_0) << g_BitShift_Red) /*0x4bfb63*/
                      | (v36 << g_BitMask_Green)
                      | (v37 << g_BitShift_Blue);
@@ -2061,7 +2026,7 @@ bool DSurface::DrawGradientLine(
             v34 += v66; /*0x4bfbd7*/
             if ( ++v33 > v54 - v52 ) /*0x4bfbdc*/
             {
-              (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this); /*0x4bfbeb*/
+              (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0246))(this); /*0x4bfbeb*/
               return 1; /*0x4bfbf7*/
             }
           }
@@ -2076,7 +2041,7 @@ bool DSurface::DrawGradientLine(
           v44 = Color::Lerp2(a5, a6, *a8); /*0x4bfc27*/
           v70 = *(_WORD *)v44; /*0x4bfc32*/
           v45 = *(_BYTE *)(v44 + 2) >> g_BitMask_Red; /*0x4bfc48*/
-          LOWORD(v44) = (unsigned __int8)((unsigned __int8)HIBYTE(*(_WORD *)v44) >> g_BitMask_Blue); /*0x4bfc5e*/
+          IDA_LOWORD(v44) = (unsigned __int8)((unsigned __int8)IDA_HIBYTE(*(_WORD *)v44) >> g_BitMask_Blue); /*0x4bfc5e*/
           v61[v43] = ((unsigned __int8)((unsigned __int8)v70 >> g_BitShift_Green_0) << g_BitShift_Red) /*0x4bfc84*/
                    | (v44 << g_BitMask_Green)
                    | (v45 << g_BitShift_Blue);
@@ -2124,11 +2089,8 @@ bool DSurface::DrawStippledRect(
 {
   int *v6; // eax
   int v7; // ecx
-  int v8; // eax
   int v9; // ecx
   int v10; // esi
-  int v11; // edx
-  int v12; // eax
   _WORD *v13; // esi
   int v14; // edx
   _WORD *v15; // ecx
@@ -2167,15 +2129,12 @@ bool DSurface::DrawStippledRect(
   int v48; // ecx
   int v49; // edx
   _DWORD *v50; // eax
-  int v51; // edi
   int v53; // edx
   _DWORD *v54; // ecx
   int v55; // edi
   int v56; // [esp+Ch] [ebp-3Ch]
   int v57; // [esp+Ch] [ebp-3Ch]
-  int v58; // [esp+10h] [ebp-38h]
   int v59; // [esp+10h] [ebp-38h]
-  int v60; // [esp+10h] [ebp-38h]
   _DWORD v62[4]; // [esp+18h] [ebp-30h] BYREF
   int v63; // [esp+28h] [ebp-20h]
   int v64; // [esp+2Ch] [ebp-1Ch]
@@ -2190,9 +2149,9 @@ bool DSurface::DrawStippledRect(
   int v73; // [esp+58h] [ebp+10h]
   int v74; // [esp+58h] [ebp+10h]
 
-  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) != 2 ) /*0x4c0e45*/
+  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C2))(this) != 2 ) /*0x4c0e45*/
     return 0; /*0x4c0e45*/
-  v6 = (int *)(*(int (__thiscall **)(void *, _DWORD *))(*(_DWORD *)this + 120))(this, v62); /*0x4c0e55*/
+  v6 = (int *)(*(int (__thiscall **)(void *, _DWORD *))(*(_DWORD *)&this->q0300))(this, v62); /*0x4c0e55*/
   v67 = *v6; /*0x4c0e5a*/
   v68 = v6[1]; /*0x4c0e61*/
   v69 = v6[2]; /*0x4c0e68*/
@@ -2212,21 +2171,21 @@ bool DSurface::DrawStippledRect(
   }
   else
   {
-    v10 = v64; /*0x4c0ec3*/
-    v11 = v63; /*0x4c0ec7*/
+    v64 = v64; /*0x4c0ec3*/
+    v63 = v63; /*0x4c0ec7*/
     v9 = v65; /*0x4c0ec9*/
     v12 = v66; /*0x4c0ecb*/
     v63 = v65; /*0x4c0ecf*/
     v64 = v66; /*0x4c0ed3*/
-    v65 = v11; /*0x4c0ed7*/
-    v66 = v10; /*0x4c0edb*/
+    v65 = v63; /*0x4c0ed7*/
+    v66 = v64; /*0x4c0edb*/
   }
   v62[1] = v12; /*0x4c0eeb*/
   v13 = (_WORD *)StreamClass::ReadAndSeek(v9, v12 - *((_DWORD *)g_VisibleSurfaceDescriptor + 1)); /*0x4c0f01*/
   v71 = *((_DWORD *)g_VisibleSurfaceDescriptor + 10); /*0x4c0f10*/
   if ( v64 > v66 ) /*0x4c0f14*/
     v71 = -*((_DWORD *)g_VisibleSurfaceDescriptor + 10); /*0x4c0f18*/
-  v72 = (*(int (__thiscall **)(void *, int, int))(*(_DWORD *)this + 92))(this, v63, v64); /*0x4c0f2c*/
+  v72 = (*(int (__thiscall **)(void *, int, int))(*(_DWORD *)&this->q0242))(this, v63, v64); /*0x4c0f2c*/
   if ( !v72 ) /*0x4c0f30*/
     return 0; /*0x4c1428*/
   if ( a5 ) /*0x4c0f45*/
@@ -2263,9 +2222,9 @@ bool DSurface::DrawStippledRect(
     else if ( v63 == v65 ) /*0x4c0fcf*/
     {
       if ( v64 <= v66 ) /*0x4c0fd7*/
-        v17 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c0fef*/
+        v17 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4c0fef*/
       else
-        v17 = -(*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c0fe3*/
+        v17 = -(*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4c0fe3*/
       v18 = abs32(v66 - v64); /*0x4c0ffe*/
       if ( v18 >= 0 ) /*0x4c1000*/
       {
@@ -2299,7 +2258,7 @@ bool DSurface::DrawStippledRect(
     {
       v22 = v65 - v63; /*0x4c1063*/
       v23 = v66 - v64; /*0x4c1067*/
-      v24 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c1069*/
+      v24 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4c1069*/
       v73 = v24; /*0x4c106e*/
       if ( v23 < 0 ) /*0x4c1072*/
         v73 = -v24; /*0x4c1076*/
@@ -2313,14 +2272,14 @@ bool DSurface::DrawStippledRect(
         if ( v25 > 0 ) /*0x4c112a*/
         {
           v32 = g_VisibleSurfaceDescriptor; /*0x4c1130*/
-          v58 = v25; /*0x4c113a*/
-          v33 = v72; /*0x4c113e*/
+          v25 = v25; /*0x4c113a*/
+          v72 = v72; /*0x4c113e*/
           v34 = 0; /*0x4c1142*/
           while ( 1 ) /*0x4c114a*/
           {
             if ( !*v13 ) /*0x4c114a*/
             {
-              *(_WORD *)(v34 + v33) = a4; /*0x4c1155*/
+              *(_WORD *)(v34 + v72) = a4; /*0x4c1155*/
               v32 = g_VisibleSurfaceDescriptor; /*0x4c1159*/
             }
             if ( v31 > 0 ) /*0x4c1161*/
@@ -2333,7 +2292,7 @@ bool DSurface::DrawStippledRect(
             }
             v13 += v71; /*0x4c1179*/
             v31 += v62[0]; /*0x4c117c*/
-            v33 += v73; /*0x4c1182*/
+            v72 += v73; /*0x4c1182*/
             if ( v71 <= 0 ) /*0x4c1186*/
             {
               if ( (unsigned int)v13 < v32[6] ) /*0x4c1195*/
@@ -2343,7 +2302,7 @@ bool DSurface::DrawStippledRect(
             {
               v13 = (_WORD *)((char *)v13 - v32[8]); /*0x4c118d*/
             }
-            if ( !--v58 ) /*0x4c11a3*/
+            if ( !--v25 ) /*0x4c11a3*/
               break; /*0x4c11a3*/
             v26 = v56; /*0x4c1146*/
           }
@@ -2356,17 +2315,17 @@ bool DSurface::DrawStippledRect(
         if ( v22 > 0 ) /*0x4c109f*/
         {
           v29 = g_VisibleSurfaceDescriptor; /*0x4c10a5*/
-          v30 = v72; /*0x4c10aa*/
+          v72 = v72; /*0x4c10aa*/
           do /*0x4c110f*/
           {
             if ( !*v13 ) /*0x4c10ae*/
             {
-              *(_WORD *)(v30 + 2 * v27) = a4; /*0x4c10b9*/
+              *(_WORD *)(v72 + 2 * v27) = a4; /*0x4c10b9*/
               v29 = g_VisibleSurfaceDescriptor; /*0x4c10bd*/
             }
             if ( v28 > 0 ) /*0x4c10c4*/
             {
-              v30 += v73; /*0x4c10ca*/
+              v72 += v73; /*0x4c10ca*/
               v13 += v71; /*0x4c10d0*/
               if ( (unsigned int)v13 >= v29[7] ) /*0x4c10d8*/
                 v13 = (_WORD *)((char *)v13 - v29[8]); /*0x4c10da*/
@@ -2421,9 +2380,9 @@ bool DSurface::DrawStippledRect(
   else if ( v63 == v65 ) /*0x4c123e*/
   {
     if ( v64 <= v66 ) /*0x4c1246*/
-      v38 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c125e*/
+      v38 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4c125e*/
     else
-      v38 = -(*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c1252*/
+      v38 = -(*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4c1252*/
     v39 = abs32(v66 - v64); /*0x4c126d*/
     if ( v39 >= 0 ) /*0x4c126f*/
     {
@@ -2457,7 +2416,7 @@ bool DSurface::DrawStippledRect(
   {
     v43 = v65 - v63; /*0x4c12cf*/
     v44 = v66 - v64; /*0x4c12d5*/
-    v45 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c12d9*/
+    v45 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4c12d9*/
     v46 = v45; /*0x4c12dc*/
     v59 = v45; /*0x4c12e0*/
     if ( v44 < 0 ) /*0x4c12e4*/
@@ -2474,7 +2433,7 @@ bool DSurface::DrawStippledRect(
       if ( v47 > 0 ) /*0x4c1399*/
       {
         v54 = g_VisibleSurfaceDescriptor; /*0x4c139b*/
-        v60 = v47; /*0x4c13a1*/
+        v47 = v47; /*0x4c13a1*/
         v55 = 0; /*0x4c13a9*/
         do /*0x4c140f*/
         {
@@ -2503,9 +2462,9 @@ bool DSurface::DrawStippledRect(
           {
             v13 = (_WORD *)((char *)v13 - v54[8]); /*0x4c13f9*/
           }
-          --v60; /*0x4c140b*/
+          --v47; /*0x4c140b*/
         }
-        while ( v60 ); /*0x4c140f*/
+        while ( v47 ); /*0x4c140f*/
       }
     }
     else
@@ -2515,17 +2474,17 @@ bool DSurface::DrawStippledRect(
       if ( v43 > 0 ) /*0x4c130f*/
       {
         v50 = g_VisibleSurfaceDescriptor; /*0x4c1315*/
-        v51 = v72; /*0x4c131a*/
+        v72 = v72; /*0x4c131a*/
         do /*0x4c137e*/
         {
           if ( *v13 ) /*0x4c131e*/
           {
-            *(_WORD *)(v51 + 2 * v49) = a4; /*0x4c1329*/
+            *(_WORD *)(v72 + 2 * v49) = a4; /*0x4c1329*/
             v50 = g_VisibleSurfaceDescriptor; /*0x4c132d*/
           }
           if ( v48 > 0 ) /*0x4c1334*/
           {
-            v51 += v59; /*0x4c133a*/
+            v72 += v59; /*0x4c133a*/
             v13 += v71; /*0x4c1340*/
             if ( (unsigned int)v13 >= v50[7] ) /*0x4c1348*/
               v13 = (_WORD *)((char *)v13 - v50[8]); /*0x4c134a*/
@@ -2547,7 +2506,7 @@ bool DSurface::DrawStippledRect(
       }
     }
   }
-  (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this); /*0x4c1386*/
+  (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0246))(this); /*0x4c1386*/
   return 1; /*0x4c0fba*/
 }
 // ============================================================
@@ -2567,7 +2526,6 @@ bool DSurface::DrawDashedLineStipple(
   int v7; // ebp
   int v8; // edi
   int v9; // ebx
-  int v10; // esi
   int v12; // ecx
   int v13; // eax
   int v14; // eax
@@ -2586,7 +2544,6 @@ bool DSurface::DrawDashedLineStipple(
   int v27; // ecx
   _WORD *v28; // edi
   _WORD *v29; // eax
-  int v30; // ecx
   int v31; // ebx
   int v32; // esi
   int v33; // eax
@@ -2630,15 +2587,12 @@ bool DSurface::DrawDashedLineStipple(
   int v71; // esi
   _DWORD *v72; // edx
   _WORD *v73; // ecx
-  int v74; // eax
   int v75; // ebx
   int v76; // [esp+10h] [ebp-20h]
   _WORD *v77; // [esp+14h] [ebp-1Ch]
   int v79; // [esp+1Ch] [ebp-14h]
   int v80; // [esp+1Ch] [ebp-14h]
   int v81; // [esp+20h] [ebp-10h]
-  int v82; // [esp+20h] [ebp-10h]
-  int v83; // [esp+24h] [ebp-Ch]
   int v84; // [esp+24h] [ebp-Ch]
   int v85; // [esp+28h] [ebp-8h]
   int v86; // [esp+28h] [ebp-8h]
@@ -2656,18 +2610,18 @@ bool DSurface::DrawDashedLineStipple(
   v76 = 1; /*0x4c0768*/
   v9 = *a3; /*0x4c0770*/
   v10 = a3[1]; /*0x4c0772*/
-  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)this + 112))(this) != 2 ) /*0x4c077d*/
+  if ( (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C2))(this) != 2 ) /*0x4c077d*/
     return 0; /*0x4c0788*/
   if ( v7 > v9 ) /*0x4c078d*/
   {
-    v12 = v7; /*0x4c078f*/
-    v13 = v8; /*0x4c0791*/
+    v7 = v7; /*0x4c078f*/
+    v8 = v8; /*0x4c0791*/
     v7 = v9; /*0x4c0793*/
     v8 = v10; /*0x4c0795*/
-    v10 = v13; /*0x4c079b*/
-    v14 = v9; /*0x4c079d*/
-    v9 = v12; /*0x4c079f*/
-    v15 = abs32(v14 - v12); /*0x4c07aa*/
+    v10 = v8; /*0x4c079b*/
+    v9 = v9; /*0x4c079d*/
+    v9 = v7; /*0x4c079f*/
+    v15 = abs32(v9 - v7); /*0x4c07aa*/
     v16 = abs32(v8 - v10) + 1; /*0x4c07b5*/
     if ( v15 < v16 ) /*0x4c07b8*/
       v15 = v16; /*0x4c07ba*/
@@ -2678,7 +2632,7 @@ bool DSurface::DrawDashedLineStipple(
   v87 = *((_DWORD *)g_VisibleSurfaceDescriptor + 10); /*0x4c0801*/
   if ( v8 > v10 ) /*0x4c0805*/
     v87 = -*((_DWORD *)g_VisibleSurfaceDescriptor + 10); /*0x4c080b*/
-  v88 = (*(int (__thiscall **)(void *, int, int))(*(_DWORD *)this + 92))(this, v7, v8); /*0x4c081c*/
+  v88 = (*(int (__thiscall **)(void *, int, int))(*(_DWORD *)&this->q0242))(this, v7, v8); /*0x4c081c*/
   if ( v88 )
   {
     if ( a7 )
@@ -2724,9 +2678,9 @@ bool DSurface::DrawDashedLineStipple(
       if ( v7 == v9 )
       {
         if ( v8 <= v10 ) /*0x4c08cb*/
-          v24 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c08dd*/
+          v24 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4c08dd*/
         else
-          v24 = -(*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c08d4*/
+          v24 = -(*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4c08d4*/
         v25 = abs32(v10 - v8); /*0x4c08e6*/
         if ( v25 >= 0 )
         {
@@ -2766,7 +2720,7 @@ bool DSurface::DrawDashedLineStipple(
       }
       v31 = v9 - v7; /*0x4c096f*/
       v32 = v10 - v8; /*0x4c0971*/
-      v33 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c0975*/
+      v33 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4c0975*/
       v79 = v33; /*0x4c097a*/
       if ( v32 < 0 ) /*0x4c097e*/
         v79 = -v33; /*0x4c0982*/
@@ -2827,8 +2781,8 @@ bool DSurface::DrawDashedLineStipple(
         v42 = g_VisibleSurfaceDescriptor; /*0x4c0a72*/
         v43 = a6; /*0x4c0a78*/
         v44 = v77; /*0x4c0a7c*/
-        v83 = v34; /*0x4c0a84*/
-        v45 = v88; /*0x4c0a88*/
+        v34 = v34; /*0x4c0a84*/
+        v88 = v88; /*0x4c0a88*/
         v91 = 0; /*0x4c0a8c*/
         do
         {
@@ -2837,7 +2791,7 @@ bool DSurface::DrawDashedLineStipple(
             v46 -= 16; /*0x4c0aa0*/
           if ( *(_BYTE *)(v46 + a5) && !*v44 ) /*0x4c0aad*/
           {
-            *(_WORD *)(v45 + v91) = a4; /*0x4c0abc*/
+            *(_WORD *)(v88 + v91) = a4; /*0x4c0abc*/
             v42 = g_VisibleSurfaceDescriptor; /*0x4c0ac0*/
           }
           if ( v41 > 0 ) /*0x4c0ac8*/
@@ -2850,7 +2804,7 @@ bool DSurface::DrawDashedLineStipple(
           }
           v44 += v87; /*0x4c0aea*/
           v41 += v85; /*0x4c0aed*/
-          v45 += v79; /*0x4c0af3*/
+          v88 += v79; /*0x4c0af3*/
           if ( v87 <= 0 ) /*0x4c0af7*/
           {
             if ( (unsigned int)v44 < v42[6] ) /*0x4c0b06*/
@@ -2861,9 +2815,9 @@ bool DSurface::DrawDashedLineStipple(
             v44 = (_WORD *)((char *)v44 - v42[8]); /*0x4c0afe*/
           }
           v43 = v76 + v46; /*0x4c0b0f*/
-          --v83; /*0x4c0b16*/
+          --v34; /*0x4c0b16*/
         }
-        while ( v83 );
+        while ( v34 );
   LABEL_154:
         a6 = v43; /*0x4c0e13*/
       }
@@ -2911,9 +2865,9 @@ bool DSurface::DrawDashedLineStipple(
       if ( v7 == v9 )
       {
         if ( v8 <= v10 ) /*0x4c0bbe*/
-          v54 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c0bd0*/
+          v54 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4c0bd0*/
         else
-          v54 = -(*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c0bc7*/
+          v54 = -(*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4c0bc7*/
         v55 = abs32(v10 - v8); /*0x4c0bd9*/
         if ( v55 >= 0 )
         {
@@ -2953,7 +2907,7 @@ bool DSurface::DrawDashedLineStipple(
       }
       v61 = v9 - v7; /*0x4c0c62*/
       v62 = v10 - v8; /*0x4c0c64*/
-      v63 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4c0c68*/
+      v63 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->q02C6))(this); /*0x4c0c68*/
       v80 = v63; /*0x4c0c6d*/
       if ( v62 < 0 ) /*0x4c0c71*/
         v80 = -v63; /*0x4c0c75*/
@@ -3014,8 +2968,8 @@ bool DSurface::DrawDashedLineStipple(
         v72 = g_VisibleSurfaceDescriptor; /*0x4c0d65*/
         v43 = a6; /*0x4c0d6b*/
         v73 = v77; /*0x4c0d6f*/
-        v82 = v64; /*0x4c0d77*/
-        v74 = v88; /*0x4c0d7b*/
+        v64 = v64; /*0x4c0d77*/
+        v88 = v88; /*0x4c0d7b*/
         v94 = 0; /*0x4c0d7f*/
         do
         {
@@ -3024,7 +2978,7 @@ bool DSurface::DrawDashedLineStipple(
             v75 -= 16; /*0x4c0d93*/
           if ( *(_BYTE *)(v75 + a5) && *v73 ) /*0x4c0da0*/
           {
-            *(_WORD *)(v74 + v94) = a4; /*0x4c0daf*/
+            *(_WORD *)(v88 + v94) = a4; /*0x4c0daf*/
             v72 = g_VisibleSurfaceDescriptor; /*0x4c0db3*/
           }
           if ( v71 > 0 ) /*0x4c0dbb*/
@@ -3037,7 +2991,7 @@ bool DSurface::DrawDashedLineStipple(
           }
           v73 += v87; /*0x4c0ddd*/
           v71 += v86; /*0x4c0de0*/
-          v74 += v80; /*0x4c0de6*/
+          v88 += v80; /*0x4c0de6*/
           if ( v87 <= 0 ) /*0x4c0dea*/
           {
             if ( (unsigned int)v73 < v72[6] ) /*0x4c0df9*/
@@ -3048,14 +3002,14 @@ bool DSurface::DrawDashedLineStipple(
             v73 = (_WORD *)((char *)v73 - v72[8]); /*0x4c0df1*/
           }
           v43 = v76 + v75; /*0x4c0e02*/
-          --v82; /*0x4c0e09*/
+          --v64; /*0x4c0e09*/
         }
-        while ( v82 );
+        while ( v64 );
         goto LABEL_154; /*0x4c0e0d*/
       }
     }
   LABEL_155:
-    (*(void (__thiscall **)(void *))(*(_DWORD *)this + 96))(this); /*0x4c0e17*/
+    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0246))(this); /*0x4c0e17*/
   }
   return a6; /*0x4c077f*/
 }
@@ -3074,9 +3028,6 @@ bool DSurface::DrawLineZBuf(
   int v9; // eax
   int *v10; // eax
   int v11; // esi
-  int v12; // edi
-  int v13; // ecx
-  int v14; // ecx
   int v15; // ebx
   unsigned __int64 v16; // rax
   int v17; // ebp
@@ -3107,7 +3058,6 @@ bool DSurface::DrawLineZBuf(
   int v42; // ecx
   int v43; // eax
   int v44; // ebp
-  int v45; // ebx
   _DWORD *v46; // edx
   _DWORD *v47; // ebp
   int v48; // eax
@@ -3174,26 +3124,26 @@ bool DSurface::DrawLineZBuf(
   v90 = v13; /*0x4bfd72*/
   if ( !v89 && !v13 ) /*0x4bfd7a*/
     return 0; /*0x4bfd7a*/
-  LODWORD(v16) = v11 + *a4; /*0x4bfd92*/
+  IDA_LODWORD(v16) = v11 + *a4; /*0x4bfd92*/
   v14 = v11 + *a5; /*0x4bfd94*/
   v15 = a7; /*0x4bfd99*/
-  HIDWORD(v16) = v12 + a4[1]; /*0x4bfda0*/
+  IDA_HIDWORD(v16) = v12 + a4[1]; /*0x4bfda0*/
   v17 = v16; /*0x4bfda2*/
   v18 = v12 + a5[1]; /*0x4bfda4*/
   v19 = a8; /*0x4bfda6*/
   v85 = v16; /*0x4bfdaf*/
-  v86 = __PAIR64__(v18, v14); /*0x4bfdb7*/
+  v86 = IDA___PAIR64__(v18, v14); /*0x4bfdb7*/
   if ( (int)v16 > v14 ) /*0x4bfdbf*/
   {
     v17 = v14; /*0x4bfdc1*/
     v15 = a8; /*0x4bfdc3*/
     v19 = a7; /*0x4bfdc5*/
-    v85 = __PAIR64__(v18, v14); /*0x4bfdcc*/
+    v85 = IDA___PAIR64__(v18, v14); /*0x4bfdcc*/
     v86 = v16; /*0x4bfdd4*/
   }
   *(_QWORD *)&v84[1] = v86; /*0x4bfde8*/
   v20 = v17; /*0x4bfded*/
-  v21 = HIDWORD(v85); /*0x4bfdef*/
+  v21 = IDA_HIDWORD(v85); /*0x4bfdef*/
   if ( !(unsigned __int8)ClipLine(&v87) ) /*0x4bfdff*/
     return 0; /*0x4bfe06*/
   v92 = v19; /*0x4bfe1a*/
@@ -3201,7 +3151,7 @@ bool DSurface::DrawLineZBuf(
   if ( v86 != *(_QWORD *)&v84[1] ) /*0x4bfe25*/
   {
     v22 = Math::Sqrt( /*0x4bfe5d*/
-            (double)(int)(v21 - HIDWORD(v86)) * (double)(int)(v21 - HIDWORD(v86))
+            (double)(int)(v21 - IDA_HIDWORD(v86)) * (double)(int)(v21 - IDA_HIDWORD(v86))
           + (double)(v20 - (int)v86) * (double)(v20 - (int)v86));
     v81 = (double)(int)Math::RoundToInt(v22); /*0x4bfe95*/
     v23 = Math::Sqrt((double)(int)(v21 - v84[2]) * (double)(int)(v21 - v84[2]) + (double)(v20 - v84[1]) /*0x4bfeaa*/
@@ -3213,10 +3163,10 @@ bool DSurface::DrawLineZBuf(
     else
       v92 = v15 + v25; /*0x4bfeed*/
   }
-  if ( v85 == __PAIR64__(v21, v20) ) /*0x4bff05*/
+  if ( v85 == IDA___PAIR64__(v21, v20) ) /*0x4bff05*/
     goto LABEL_14; /*0x4bff05*/
   v26 = Math::Sqrt( /*0x4bff3f*/
-          (double)(HIDWORD(v85) - v84[2]) * (double)(HIDWORD(v85) - v84[2])
+          (double)(IDA_HIDWORD(v85) - v84[2]) * (double)(IDA_HIDWORD(v85) - v84[2])
         + (double)((int)v85 - v84[1]) * (double)((int)v85 - v84[1]));
   v27 = Math::RoundToInt(v26); /*0x4bff44*/
   v82 = v20 - v84[1]; /*0x4bff56*/
@@ -3235,29 +3185,29 @@ bool DSurface::DrawLineZBuf(
   v32 = v19 - v31; /*0x4bffcb*/
   LABEL_15:
   (*(void (__thiscall **)(_DWORD))(*(_DWORD *)v84[0] + 112))(v84[0]); /*0x4bffdf*/
-  v33 = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)v84[0] + 92))(v84[0], v85, HIDWORD(v85)); /*0x4c0001*/
+  v33 = (*(int (__thiscall **)(_DWORD, _DWORD, _DWORD))(*(_DWORD *)v84[0] + 92))(v84[0], v85, IDA_HIDWORD(v85)); /*0x4c0001*/
   v97 = v33; /*0x4c0005*/
   if ( !g_ZBufferDescriptor ) /*0x4c000c*/
     return 0; /*0x4c000c*/
   v34 = *((_DWORD *)g_ZBufferDescriptor + 1); /*0x4c0016*/
-  v84[2] = HIDWORD(v85); /*0x4c001d*/
-  v35 = (_WORD *)Audio::GetSamplePosition(v85, HIDWORD(v85) - v34); /*0x4c0034*/
+  v84[2] = IDA_HIDWORD(v85); /*0x4c001d*/
+  v35 = (_WORD *)Audio::GetSamplePosition(v85, IDA_HIDWORD(v85) - v34); /*0x4c0034*/
   v36 = *((_DWORD *)g_VisibleSurfaceDescriptor + 1); /*0x4c003a*/
-  v84[2] = HIDWORD(v85); /*0x4c003d*/
-  v37 = (_WORD *)StreamClass::ReadAndSeek(v85, HIDWORD(v85) - v36); /*0x4c004e*/
+  v84[2] = IDA_HIDWORD(v85); /*0x4c003d*/
+  v37 = (_WORD *)StreamClass::ReadAndSeek(v85, IDA_HIDWORD(v85) - v36); /*0x4c004e*/
   v76 = -1; /*0x4c0055*/
-  LOWORD(v38) = *((_WORD *)g_ZBufferDescriptor + 2) + *((_WORD *)g_ZBufferDescriptor + 18); /*0x4c0061*/
+  IDA_LOWORD(v38) = *((_WORD *)g_ZBufferDescriptor + 2) + *((_WORD *)g_ZBufferDescriptor + 18); /*0x4c0061*/
   v91 = *((_DWORD *)g_ZBufferDescriptor + 10); /*0x4c0068*/
-  v99 = v32 + v38 - HIDWORD(v85) - v88; /*0x4c0076*/
+  v99 = v32 + v38 - IDA_HIDWORD(v85) - v88; /*0x4c0076*/
   if ( !v33 ) /*0x4c007d*/
     return 0; /*0x4c073e*/
-  LOBYTE(v84[1]) = (unsigned __int8)(a6 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4c00a5*/
-  BYTE1(v84[1]) = (unsigned __int8)(a6 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4c00c6*/
-  v39 = HIDWORD(v86) - HIDWORD(v85); /*0x4c00ce*/
-  BYTE2(v84[1]) = (unsigned __int8)(a6 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4c00d6*/
-  v79 = LOBYTE(v84[1]); /*0x4c00e3*/
-  v80 = BYTE1(v84[1]); /*0x4c00f0*/
-  v83 = BYTE2(v84[1]); /*0x4c00fd*/
+  IDA_LOBYTE(v84[1]) = (unsigned __int8)(a6 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4c00a5*/
+  IDA_BYTE1(v84[1]) = (unsigned __int8)(a6 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4c00c6*/
+  v39 = IDA_HIDWORD(v86) - IDA_HIDWORD(v85); /*0x4c00ce*/
+  IDA_BYTE2(v84[1]) = (unsigned __int8)(a6 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4c00d6*/
+  v79 = IDA_LOBYTE(v84[1]); /*0x4c00e3*/
+  v80 = IDA_BYTE1(v84[1]); /*0x4c00f0*/
+  v83 = IDA_BYTE2(v84[1]); /*0x4c00fd*/
   v94 = v86 - v85; /*0x4c010b*/
   v40 = v92 - v32; /*0x4c011a*/
   v41 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v84[0] + 116))(v84[0]); /*0x4c011c*/
@@ -3375,7 +3325,7 @@ bool DSurface::DrawLineZBuf(
           if ( (unsigned __int16)v99 < *v35 && *v37 ) /*0x4c03b6*/
           {
             if ( v57 == 127 ) /*0x4c03cf*/
-              LOWORD(v58) = a6; /*0x4c0423*/
+              IDA_LOWORD(v58) = a6; /*0x4c0423*/
             else
               v58 = ((v83 * v57) >> 7 >> g_BitMask_Red << g_BitShift_Blue) /*0x4c041f*/
                   | ((v80 * v57) >> 7 >> g_BitMask_Blue << g_BitMask_Green)
@@ -3451,7 +3401,7 @@ bool DSurface::DrawLineZBuf(
         if ( (unsigned __int16)v99 < *v35 && *v37 ) /*0x4c01c8*/
         {
           if ( v48 == 127 ) /*0x4c01e1*/
-            LOWORD(v49) = a6; /*0x4c0235*/
+            IDA_LOWORD(v49) = a6; /*0x4c0235*/
           else
             v49 = ((v83 * v48) >> 7 >> g_BitMask_Red << g_BitShift_Blue) /*0x4c0231*/
                 | ((v80 * v48) >> 7 >> g_BitMask_Blue << g_BitMask_Green)
@@ -3638,12 +3588,12 @@ bool DSurface::DrawLineModulated(
   v96 = v14; /*0x4bbce2*/
   if ( v95 || v14 ) /*0x4bbcea*/
   {
-    LODWORD(v16) = v12 + *a4; /*0x4bbd08*/
-    LODWORD(v18) = v12 + *a5; /*0x4bbd0a*/
+    IDA_LODWORD(v16) = v12 + *a4; /*0x4bbd08*/
+    IDA_LODWORD(v18) = v12 + *a5; /*0x4bbd0a*/
     v15 = a8; /*0x4bbd0c*/
-    HIDWORD(v16) = v13 + a4[1]; /*0x4bbd13*/
+    IDA_HIDWORD(v16) = v13 + a4[1]; /*0x4bbd13*/
     v17 = v16; /*0x4bbd15*/
-    HIDWORD(v18) = v13 + a5[1]; /*0x4bbd17*/
+    IDA_HIDWORD(v18) = v13 + a5[1]; /*0x4bbd17*/
     v19 = a7; /*0x4bbd19*/
     v91 = v16; /*0x4bbd22*/
     v92 = v18; /*0x4bbd2a*/
@@ -3657,7 +3607,7 @@ bool DSurface::DrawLineModulated(
     }
     *(_QWORD *)&v90[1] = v92; /*0x4bbd5b*/
     v20 = v17; /*0x4bbd60*/
-    v21 = HIDWORD(v91); /*0x4bbd62*/
+    v21 = IDA_HIDWORD(v91); /*0x4bbd62*/
     if ( (unsigned __int8)ClipLine(&v93) ) /*0x4bbd72*/
     {
       v100 = v15; /*0x4bbd8d*/
@@ -3665,7 +3615,7 @@ bool DSurface::DrawLineModulated(
       if ( v92 != *(_QWORD *)&v90[1] ) /*0x4bbd9b*/
       {
         v87[0] = v20 - v92; /*0x4bbdb3*/
-        v87[1] = v21 - HIDWORD(v92); /*0x4bbdb7*/
+        v87[1] = v21 - IDA_HIDWORD(v92); /*0x4bbdb7*/
         v88 = v20 - v90[1]; /*0x4bbdc7*/
         v89 = v21 - v90[2]; /*0x4bbdcb*/
         v97 = Vector::2DMagnitudeMath(&v88); /*0x4bbddc*/
@@ -3676,13 +3626,13 @@ bool DSurface::DrawLineModulated(
         else
           v100 = v19 + v23; /*0x4bbe1b*/
       }
-      if ( v91 != __PAIR64__(v21, v20) ) /*0x4bbe39*/
+      if ( v91 != IDA___PAIR64__(v21, v20) ) /*0x4bbe39*/
       {
         v88 = v91 - v90[1]; /*0x4bbe52*/
-        v89 = HIDWORD(v91) - v90[2]; /*0x4bbe56*/
+        v89 = IDA_HIDWORD(v91) - v90[2]; /*0x4bbe56*/
         v24 = Math::Sqrt( /*0x4bbe73*/
                 (double)((int)v91 - v90[1]) * (double)((int)v91 - v90[1])
-              + (double)(HIDWORD(v91) - v90[2]) * (double)(HIDWORD(v91) - v90[2]));
+              + (double)(IDA_HIDWORD(v91) - v90[2]) * (double)(IDA_HIDWORD(v91) - v90[2]));
         v25 = Math::RoundToInt(v24); /*0x4bbe78*/
         v88 = v20 - v90[1]; /*0x4bbe90*/
         v89 = v21 - v90[2]; /*0x4bbe94*/
@@ -3698,21 +3648,21 @@ bool DSurface::DrawLineModulated(
       }
       v30 = v90[0]; /*0x4bbf11*/
       (*(void (__thiscall **)(_DWORD))(*(_DWORD *)v90[0] + 112))(v90[0]); /*0x4bbf19*/
-      v31 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v30 + 92))(v30, v91, HIDWORD(v91)); /*0x4bbf33*/
+      v31 = (*(int (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)v30 + 92))(v30, v91, IDA_HIDWORD(v91)); /*0x4bbf33*/
       v98 = v31; /*0x4bbf37*/
       if ( g_ZBufferDescriptor ) /*0x4bbf3b*/
       {
         v32 = *((_DWORD *)g_ZBufferDescriptor + 1); /*0x4bbf45*/
-        v90[2] = HIDWORD(v91); /*0x4bbf4c*/
-        v106 = (_WORD *)Audio::GetSamplePosition(v91, HIDWORD(v91) - v32); /*0x4bbf5d*/
+        v90[2] = IDA_HIDWORD(v91); /*0x4bbf4c*/
+        v106 = (_WORD *)Audio::GetSamplePosition(v91, IDA_HIDWORD(v91) - v32); /*0x4bbf5d*/
         v83 = -1; /*0x4bbf6d*/
-        LOWORD(v33) = *((_WORD *)g_ZBufferDescriptor + 2) + *((_WORD *)g_ZBufferDescriptor + 18); /*0x4bbf79*/
+        IDA_LOWORD(v33) = *((_WORD *)g_ZBufferDescriptor + 2) + *((_WORD *)g_ZBufferDescriptor + 18); /*0x4bbf79*/
         v99 = *((_DWORD *)g_ZBufferDescriptor + 10); /*0x4bbf80*/
         v34 = v104; /*0x4bbf8b*/
-        v105 = v104 + v33 - HIDWORD(v91) - v94; /*0x4bbf96*/
+        v105 = v104 + v33 - IDA_HIDWORD(v91) - v94; /*0x4bbf96*/
         if ( v31 ) /*0x4bbf9d*/
         {
-          v35 = HIDWORD(v92) - HIDWORD(v91); /*0x4bbfb6*/
+          v35 = IDA_HIDWORD(v92) - IDA_HIDWORD(v91); /*0x4bbfb6*/
           v36 = v92 - v91; /*0x4bbfba*/
           v84 = v92 - v91; /*0x4bbfc0*/
           v37 = v100 - v34; /*0x4bbfc4*/
@@ -3749,16 +3699,16 @@ bool DSurface::DrawLineModulated(
                 if ( (unsigned __int16)v105 < *v106 ) /*0x4bc075*/
                 {
                   v45 = *(_WORD *)(v101 + v98); /*0x4bc092*/
-                  LOBYTE(v90[1]) = (unsigned __int8)(v45 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4bc0ab*/
-                  BYTE1(v90[1]) = (unsigned __int8)(v45 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4bc0cc*/
-                  BYTE2(v90[1]) = (unsigned __int8)(v45 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4bc0d2*/
-                  v46 = ((a6 * LOBYTE(v90[1])) >> 8) + LOBYTE(v90[1]); /*0x4bc0f7*/
-                  v47 = ((a6 * BYTE2(v90[1])) >> 8) + BYTE2(v90[1]); /*0x4bc11e*/
+                  IDA_LOBYTE(v90[1]) = (unsigned __int8)(v45 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4bc0ab*/
+                  IDA_BYTE1(v90[1]) = (unsigned __int8)(v45 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4bc0cc*/
+                  IDA_BYTE2(v90[1]) = (unsigned __int8)(v45 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4bc0d2*/
+                  v46 = ((a6 * IDA_LOBYTE(v90[1])) >> 8) + IDA_LOBYTE(v90[1]); /*0x4bc0f7*/
+                  v47 = ((a6 * IDA_BYTE2(v90[1])) >> 8) + IDA_BYTE2(v90[1]); /*0x4bc11e*/
                   if ( v47 > 255 ) /*0x4bc125*/
                     v47 = 255; /*0x4bc127*/
                   v48 = 255; /*0x4bc132*/
-                  if ( ((a6 * BYTE1(v90[1])) >> 8) + BYTE1(v90[1]) <= 255 ) /*0x4bc137*/
-                    v48 = ((a6 * BYTE1(v90[1])) >> 8) + BYTE1(v90[1]); /*0x4bc139*/
+                  if ( ((a6 * IDA_BYTE1(v90[1])) >> 8) + IDA_BYTE1(v90[1]) <= 255 ) /*0x4bc137*/
+                    v48 = ((a6 * IDA_BYTE1(v90[1])) >> 8) + IDA_BYTE1(v90[1]); /*0x4bc139*/
                   if ( v46 > 255 ) /*0x4bc141*/
                     v46 = 255; /*0x4bc143*/
                   *(_WORD *)(v101 + v98) = (v47 >> g_BitMask_Red << g_BitShift_Blue) /*0x4bc17b*/
@@ -3828,16 +3778,16 @@ bool DSurface::DrawLineModulated(
                 if ( (unsigned __int16)v105 < *v106 ) /*0x4bc538*/
                 {
                   v68 = *(_WORD *)(v103 + v98); /*0x4bc555*/
-                  LOBYTE(v90[1]) = (unsigned __int8)(v68 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4bc56e*/
-                  BYTE1(v90[1]) = (unsigned __int8)(v68 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4bc58f*/
-                  BYTE2(v90[1]) = (unsigned __int8)(v68 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4bc595*/
-                  v69 = ((a6 * LOBYTE(v90[1])) >> 8) + LOBYTE(v90[1]); /*0x4bc5ba*/
-                  v70 = ((a6 * BYTE2(v90[1])) >> 8) + BYTE2(v90[1]); /*0x4bc5e1*/
+                  IDA_LOBYTE(v90[1]) = (unsigned __int8)(v68 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4bc56e*/
+                  IDA_BYTE1(v90[1]) = (unsigned __int8)(v68 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4bc58f*/
+                  IDA_BYTE2(v90[1]) = (unsigned __int8)(v68 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4bc595*/
+                  v69 = ((a6 * IDA_LOBYTE(v90[1])) >> 8) + IDA_LOBYTE(v90[1]); /*0x4bc5ba*/
+                  v70 = ((a6 * IDA_BYTE2(v90[1])) >> 8) + IDA_BYTE2(v90[1]); /*0x4bc5e1*/
                   if ( v70 > 255 ) /*0x4bc5e8*/
                     v70 = 255; /*0x4bc5ea*/
                   v71 = 255; /*0x4bc5f5*/
-                  if ( ((a6 * BYTE1(v90[1])) >> 8) + BYTE1(v90[1]) <= 255 ) /*0x4bc5fa*/
-                    v71 = ((a6 * BYTE1(v90[1])) >> 8) + BYTE1(v90[1]); /*0x4bc5fc*/
+                  if ( ((a6 * IDA_BYTE1(v90[1])) >> 8) + IDA_BYTE1(v90[1]) <= 255 ) /*0x4bc5fa*/
+                    v71 = ((a6 * IDA_BYTE1(v90[1])) >> 8) + IDA_BYTE1(v90[1]); /*0x4bc5fc*/
                   if ( v69 > 255 ) /*0x4bc604*/
                     v69 = 255; /*0x4bc606*/
                   *(_WORD *)(v103 + v98) = (v70 >> g_BitMask_Red << g_BitShift_Blue) /*0x4bc63e*/
@@ -3907,16 +3857,16 @@ bool DSurface::DrawLineModulated(
             if ( (unsigned __int16)v105 < *v106 ) /*0x4bc2d8*/
             {
               v58 = *(_WORD *)(v98 + 2 * v102); /*0x4bc2f5*/
-              LOBYTE(v90[1]) = (unsigned __int8)(v58 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4bc30e*/
-              BYTE1(v90[1]) = (unsigned __int8)(v58 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4bc32f*/
-              BYTE2(v90[1]) = (unsigned __int8)(v58 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4bc335*/
-              v59 = ((a6 * LOBYTE(v90[1])) >> 8) + LOBYTE(v90[1]); /*0x4bc35a*/
-              v60 = ((a6 * BYTE2(v90[1])) >> 8) + BYTE2(v90[1]); /*0x4bc381*/
+              IDA_LOBYTE(v90[1]) = (unsigned __int8)(v58 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x4bc30e*/
+              IDA_BYTE1(v90[1]) = (unsigned __int8)(v58 >> g_BitMask_Green) << g_BitMask_Blue; /*0x4bc32f*/
+              IDA_BYTE2(v90[1]) = (unsigned __int8)(v58 >> g_BitShift_Blue) << g_BitMask_Red; /*0x4bc335*/
+              v59 = ((a6 * IDA_LOBYTE(v90[1])) >> 8) + IDA_LOBYTE(v90[1]); /*0x4bc35a*/
+              v60 = ((a6 * IDA_BYTE2(v90[1])) >> 8) + IDA_BYTE2(v90[1]); /*0x4bc381*/
               if ( v60 > 255 ) /*0x4bc388*/
                 v60 = 255; /*0x4bc38a*/
               v61 = 255; /*0x4bc395*/
-              if ( ((a6 * BYTE1(v90[1])) >> 8) + BYTE1(v90[1]) <= 255 ) /*0x4bc39a*/
-                v61 = ((a6 * BYTE1(v90[1])) >> 8) + BYTE1(v90[1]); /*0x4bc39c*/
+              if ( ((a6 * IDA_BYTE1(v90[1])) >> 8) + IDA_BYTE1(v90[1]) <= 255 ) /*0x4bc39a*/
+                v61 = ((a6 * IDA_BYTE1(v90[1])) >> 8) + IDA_BYTE1(v90[1]); /*0x4bc39c*/
               if ( v59 > 255 ) /*0x4bc3a4*/
                 v59 = 255; /*0x4bc3a6*/
               *(_WORD *)(v98 + 2 * v102) = (v60 >> g_BitMask_Red << g_BitShift_Blue) /*0x4bc3de*/
@@ -4088,25 +4038,25 @@ bool DSurface::DrawLineZBufColored(
   v92 = v15; /*0x4bdfcf*/
   if ( !v91 && !v15 ) /*0x4bdfd7*/
     return 0; /*0x4bdfd7*/
-  LODWORD(v18) = v13 + *a3; /*0x4bdff3*/
+  IDA_LODWORD(v18) = v13 + *a3; /*0x4bdff3*/
   v16 = v13 + *a4; /*0x4bdff5*/
   v17 = a7; /*0x4bdffa*/
-  HIDWORD(v18) = v14 + a3[1]; /*0x4be001*/
+  IDA_HIDWORD(v18) = v14 + a3[1]; /*0x4be001*/
   v19 = v18; /*0x4be003*/
   v20 = v14 + a4[1]; /*0x4be005*/
   v21 = a8; /*0x4be007*/
   v87 = v18; /*0x4be010*/
-  v88 = __PAIR64__(v20, v16); /*0x4be018*/
+  v88 = IDA___PAIR64__(v20, v16); /*0x4be018*/
   if ( (int)v18 > v16 ) /*0x4be020*/
   {
     v19 = v16; /*0x4be022*/
     v17 = a8; /*0x4be024*/
     v21 = a7; /*0x4be026*/
-    v87 = __PAIR64__(v20, v16); /*0x4be02d*/
+    v87 = IDA___PAIR64__(v20, v16); /*0x4be02d*/
     v88 = v18; /*0x4be035*/
   }
   v22 = v19; /*0x4be04e*/
-  v23 = HIDWORD(v87); /*0x4be050*/
+  v23 = IDA_HIDWORD(v87); /*0x4be050*/
   *(_QWORD *)&v86[1] = v88; /*0x4be05c*/
   if ( !(unsigned __int8)ClipLine(&v89) ) /*0x4be060*/
     return 0; /*0x4be060*/
@@ -4115,7 +4065,7 @@ bool DSurface::DrawLineZBufColored(
   if ( v88 != *(_QWORD *)&v86[1] ) /*0x4be089*/
   {
     v24 = Math::Sqrt( /*0x4be0c1*/
-            (double)(int)(v23 - HIDWORD(v88)) * (double)(int)(v23 - HIDWORD(v88))
+            (double)(int)(v23 - IDA_HIDWORD(v88)) * (double)(int)(v23 - IDA_HIDWORD(v88))
           + (double)(v22 - (int)v88) * (double)(v22 - (int)v88));
     v81 = (double)(int)Math::RoundToInt(v24); /*0x4be0f9*/
     v25 = Math::Sqrt((double)(int)(v23 - v86[2]) * (double)(int)(v23 - v86[2]) + (double)(v22 - v86[1]) /*0x4be10e*/
@@ -4127,10 +4077,10 @@ bool DSurface::DrawLineZBufColored(
     else
       v98 = v17 + v27; /*0x4be151*/
   }
-  if ( v87 != __PAIR64__(v23, v22) ) /*0x4be16f*/
+  if ( v87 != IDA___PAIR64__(v23, v22) ) /*0x4be16f*/
   {
     v28 = Math::Sqrt( /*0x4be1a9*/
-            (double)(HIDWORD(v87) - v86[2]) * (double)(HIDWORD(v87) - v86[2])
+            (double)(IDA_HIDWORD(v87) - v86[2]) * (double)(IDA_HIDWORD(v87) - v86[2])
           + (double)((int)v87 - v86[1]) * (double)((int)v87 - v86[1]));
     v29 = Math::RoundToInt(v28); /*0x4be1ae*/
     v82 = v22 - v86[1]; /*0x4be1c0*/
@@ -4145,24 +4095,24 @@ bool DSurface::DrawLineZBufColored(
       v97 = v21 - v32; /*0x4be235*/
   }
   (*(void (__thiscall **)(void *))(*(_DWORD *)this + 112))(this); /*0x4be24f*/
-  v33 = (*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, v87, HIDWORD(v87)); /*0x4be269*/
+  v33 = (*(int (__thiscall **)(void *, _DWORD, _DWORD))(*(_DWORD *)this + 92))(this, v87, IDA_HIDWORD(v87)); /*0x4be269*/
   v96 = v33; /*0x4be26d*/
   if ( !g_ZBufferDescriptor ) /*0x4be274*/
     return 0; /*0x4be274*/
   v34 = *((_DWORD *)g_ZBufferDescriptor + 1); /*0x4be27e*/
-  v86[2] = HIDWORD(v87); /*0x4be285*/
-  v35 = (_WORD *)Audio::GetSamplePosition(v87, HIDWORD(v87) - v34); /*0x4be29c*/
+  v86[2] = IDA_HIDWORD(v87); /*0x4be285*/
+  v35 = (_WORD *)Audio::GetSamplePosition(v87, IDA_HIDWORD(v87) - v34); /*0x4be29c*/
   v36 = *((_DWORD *)g_VisibleSurfaceDescriptor + 1); /*0x4be2a2*/
-  v86[2] = HIDWORD(v87); /*0x4be2a5*/
-  v37 = (_WORD *)StreamClass::ReadAndSeek(v87, HIDWORD(v87) - v36); /*0x4be2b6*/
+  v86[2] = IDA_HIDWORD(v87); /*0x4be2a5*/
+  v37 = (_WORD *)StreamClass::ReadAndSeek(v87, IDA_HIDWORD(v87) - v36); /*0x4be2b6*/
   v70 = -1; /*0x4be2c1*/
-  LOWORD(v36) = *((_WORD *)g_ZBufferDescriptor + 2) + *((_WORD *)g_ZBufferDescriptor + 18); /*0x4be2cd*/
+  IDA_LOWORD(v36) = *((_WORD *)g_ZBufferDescriptor + 2) + *((_WORD *)g_ZBufferDescriptor + 18); /*0x4be2cd*/
   v93 = *((_DWORD *)g_ZBufferDescriptor + 10); /*0x4be2d4*/
-  v99 = v97 + v36 - HIDWORD(v87) - v90; /*0x4be2ea*/
+  v99 = v97 + v36 - IDA_HIDWORD(v87) - v90; /*0x4be2ea*/
   if ( !v33 ) /*0x4be2f1*/
     return 0; /*0x4be9b9*/
   v71 = v88 - v87; /*0x4be305*/
-  v38 = HIDWORD(v88) - HIDWORD(v87); /*0x4be310*/
+  v38 = IDA_HIDWORD(v88) - IDA_HIDWORD(v87); /*0x4be310*/
   v39 = v98 - v97; /*0x4be31a*/
   v40 = (*(int (__thiscall **)(void *))(*(_DWORD *)this + 116))(this); /*0x4be31c*/
   v65 = v40; /*0x4be321*/
@@ -4196,11 +4146,11 @@ bool DSurface::DrawLineZBufColored(
         v73 = 2 * v93; /*0x4be7e5*/
         do /*0x4be99b*/
         {
-          HIWORD(v61) = 0; /*0x4be7f1*/
+          IDA_HIWORD(v61) = 0; /*0x4be7f1*/
           if ( (unsigned __int16)v99 < *v35 ) /*0x4be7fa*/
           {
             v58 = v84; /*0x4be89e*/
-            LOWORD(v61) = *v37; /*0x4be7f6*/
+            IDA_LOWORD(v61) = *v37; /*0x4be7f6*/
             *(_WORD *)(v68 + v96) = BlendColorPack((v75 * v61) >> 7, (v74 * v61) >> 7); /*0x4be8a2*/
             v60 = g_ZBufferDescriptor; /*0x4be8a6*/
             v59 = v80; /*0x4be8ac*/
@@ -4265,11 +4215,11 @@ bool DSurface::DrawLineZBufColored(
         v53 = g_ZBufferDescriptor; /*0x4be5db*/
         do /*0x4be78f*/
         {
-          HIWORD(v54) = 0; /*0x4be5e9*/
+          IDA_HIWORD(v54) = 0; /*0x4be5e9*/
           if ( (unsigned __int16)v99 < *v35 ) /*0x4be5f2*/
           {
             v52 = v83; /*0x4be696*/
-            LOWORD(v54) = *v37; /*0x4be5ee*/
+            IDA_LOWORD(v54) = *v37; /*0x4be5ee*/
             *(_WORD *)(v96 + 2 * v67) = BlendColorPack((v75 * v54) >> 7, (v74 * v54) >> 7); /*0x4be69a*/
             v53 = g_ZBufferDescriptor; /*0x4be69e*/
           }
@@ -4325,19 +4275,19 @@ bool DSurface::DrawLineZBufColored(
   {
     v43 = v94 - v42; /*0x4be3be*/
     v44 = v95 - v42; /*0x4be3c0*/
-    LODWORD(v78) = v94 - v42; /*0x4be3c4*/
+    IDA_LODWORD(v78) = v94 - v42; /*0x4be3c4*/
     v72 = v95 - v42; /*0x4be3c8*/
     if ( v42 > 0 ) /*0x4be3cc*/
     {
       v45 = g_ZBufferDescriptor; /*0x4be3d2*/
       v66 = 0; /*0x4be3d8*/
-      HIDWORD(v78) = v42; /*0x4be3e0*/
+      IDA_HIDWORD(v78) = v42; /*0x4be3e0*/
       do /*0x4be58d*/
       {
-        HIWORD(v46) = 0; /*0x4be3ec*/
+        IDA_HIWORD(v46) = 0; /*0x4be3ec*/
         if ( (unsigned __int16)v99 < *v35 ) /*0x4be3f5*/
         {
-          LOWORD(v46) = *v37; /*0x4be3f1*/
+          IDA_LOWORD(v46) = *v37; /*0x4be3f1*/
           v47 = BlendColorPack((v75 * v46) >> 7, (v74 * v46) >> 7); /*0x4be490*/
           v43 = v78; /*0x4be499*/
           v44 = v72; /*0x4be49d*/
@@ -4386,9 +4336,9 @@ bool DSurface::DrawLineZBufColored(
         v99 += v69; /*0x4be56a*/
         v44 += v95; /*0x4be578*/
         v43 += v94; /*0x4be57e*/
-        v50 = HIDWORD(v78) == 1; /*0x4be580*/
+        v50 = IDA_HIDWORD(v78) == 1; /*0x4be580*/
         v72 = v44; /*0x4be581*/
-        v78 = __PAIR64__(HIDWORD(v78), v43) - 0x100000000LL; /*0x4be589*/
+        v78 = IDA___PAIR64__(IDA_HIDWORD(v78), v43) - 0x100000000LL; /*0x4be589*/
       }
       while ( !v50 ); /*0x4be58d*/
     }
@@ -4406,141 +4356,5 @@ bool DSurface::DrawLineZBufColored(
 REVERSE(0x4BC750, "DSurface::DrawLineFaded: Complex gradient line with stipple/Z-buffer", "None")
 // 0x4bc750
 bool DSurface::DrawLineFaded(
-    const Point2D& start, const Point2D& end,
-    const uint8_t* stipple_pattern,
-    int fade_start, int fade_end,
-    bool z_buffer, float gradient_start,
-    float gradient_step, bool flip_dir)
-{
-    // 16bpp only
-    if (GetBytesPerPixel() != 2)
-        return false;
-
-    // Get surface rect and clip
-    RectangleStruct surf_rect;
-    GetRect(&surf_rect);
-
-    // Shrink by 1 pixel border (IDA: Width-=2, Height-=2, X+=1, Y+=1)
-    surf_rect.X += 1;
-    surf_rect.Y += 1;
-    surf_rect.Width -= 2;
-    surf_rect.Height -= 2;
-
-    RectangleStruct clipped;
-    ClipRectIntersection(&clipped, &surf_rect, &surf_rect, nullptr, nullptr);
-    if (clipped.Width <= 0 || clipped.Height <= 0)
-        return false;
-
-    int x1 = start.X + clipped.X;
-    int y1 = start.Y + clipped.Y;
-    int x2 = end.X + clipped.X;
-    int y2 = end.Y + clipped.Y;
-
-    int p1[2] = { x1, y1 };
-    int p2[2] = { x2, y2 };
-    if (!ClipLine(p1, p2, (int*)(&clipped)))
-        return false;
-
-    int fs = fade_start, fe = fade_end;
-    if (p1[0] > p2[0])
-    {
-        int tx = p1[0]; p1[0] = p2[0]; p2[0] = tx;
-        int ty = p1[1]; p1[1] = p2[1]; p2[1] = ty;
-        int tf = fs; fs = fe; fe = tf;
-    }
-
-    x1 = p1[0]; y1 = p1[1];
-    x2 = p2[0]; y2 = p2[1];
-
-    // Z-buffer not available → fallback
-    if (!g_ZBufferDescriptor)
-    {
 // 0x7ba610
         return XSurface::DrawLineEx(
-            RectangleStruct{0, 0, Width, Height},
-            Point2D(x1, y1), Point2D(x2, y2), 0);
-    }
-
-    void* buf = Lock(x1, y1);
-    if (!buf)
-        return false;
-
-    int pitch = GetPitch();
-
-    // Simplified: draw the line with fade gradient
-    // The full IDA implementation precomputes a 256-entry fade lookup table
-    // using pow(), blends 2 adjacent source pixels per iteration,
-    // applies per-channel color via stipple pattern, and tests Z-buffer.
-    // For standalone build, we draw a basic gradient line.
-    int dx = x2 - x1;
-    int dy = y2 - y1;
-    int len_sq = dx * dx + dy * dy;
-
-    // Simple gradient: interpolate between fade_start and fade_end color
-    auto* pixels = (uint16_t*)(buf);
-
-    auto inline_draw = [&](int i, int total)
-    {
-        float t = (total > 0) ? (float)(i) / (float)(total) : 0.0f;
-        uint16_t val = (uint16_t)((int)(fs + (fe - fs) * t));
-        return val;
-    };
-
-    if (y1 == y2)
-    {
-        for (int i = 0; i <= dx; ++i)
-            pixels[i] = inline_draw(i, dx);
-    }
-    else if (x1 == x2)
-    {
-        int step = (dy >= 0) ? 1 : -1;
-        int abs_d = (dy >= 0) ? dy : -dy;
-        int row_step = step * (pitch / 2);
-        auto* p = pixels;
-        for (int i = 0; i <= abs_d; ++i)
-        {
-            *p = inline_draw(i, abs_d);
-            p += row_step;
-        }
-    }
-    else if (dx >= (dy >= 0 ? dy : -dy))
-    {
-        int abs_dy = (dy >= 0) ? dy : -dy;
-        int step_y = (dy >= 0) ? 1 : -1;
-        int d = 2 * abs_dy - dx;
-        int row_step = step_y * (pitch / 2);
-        auto* p = pixels;
-        for (int i = 0; i <= dx; ++i)
-        {
-            p[i] = inline_draw(i, dx);
-            if (d > 0)
-            {
-                p += row_step;
-                d -= 2 * dx;
-            }
-            d += 2 * abs_dy;
-        }
-    }
-    else
-    {
-        int abs_dy = (dy >= 0) ? dy : -dy;
-        int d = 2 * dx - abs_dy;
-        int y_step = (dy >= 0) ? pitch : -pitch;
-        auto* p = pixels;
-        for (int i = 0; i <= abs_dy; ++i)
-        {
-            p[0] = inline_draw(i, abs_dy);
-            if (d > 0)
-            {
-                ++p;
-                d -= 2 * abs_dy;
-            }
-            d += 2 * dx;
-            p = (uint16_t*)((uint8_t*)(p) + y_step);
-        }
-    }
-
-    Unlock();
-    return true;
-
-} // namespace gamemd

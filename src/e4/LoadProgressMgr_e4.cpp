@@ -1,6 +1,10 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/E4Recv_779690_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x72B460
 namespace gamemd {
@@ -8,7 +12,7 @@ void sub_72B460()
 {
   if ( dword_B0FB7C ) /*0x72b46a*/
   {
-    __3_YAXPAX_Z(dword_B0FB7C); /*0x72b46d*/
+    RA2_OPDEL(dword_B0FB7C); /*0x72b46d*/
     dword_B0FB7C = 0; /*0x72b475*/
   }
   if ( dword_B0FB80 ) /*0x72b483*/
@@ -18,7 +22,7 @@ void sub_72B460()
   }
   if ( dword_B0FB84 ) /*0x72b498*/
   {
-    __3_YAXPAX_Z(dword_B0FB84); /*0x72b49b*/
+    RA2_OPDEL(dword_B0FB84); /*0x72b49b*/
     dword_B0FB84 = 0; /*0x72b4a3*/
   }
   if ( dword_B0FB88 ) /*0x72b4b1*/
@@ -28,7 +32,7 @@ void sub_72B460()
   }
   if ( dword_B0FB8C ) /*0x72b4c6*/
   {
-    __3_YAXPAX_Z(dword_B0FB8C); /*0x72b4c9*/
+    RA2_OPDEL(dword_B0FB8C); /*0x72b4c9*/
     dword_B0FB8C = 0; /*0x72b4d1*/
   }
   if ( dword_B0FB90 ) /*0x72b4df*/
@@ -50,12 +54,12 @@ void sub_72B870()
   }
   if ( dword_B0FB9C ) /*0x72b890*/
   {
-    __3_YAXPAX_Z(dword_B0FB9C); /*0x72b893*/
+    RA2_OPDEL(dword_B0FB9C); /*0x72b893*/
     dword_B0FB9C = 0; /*0x72b89b*/
   }
   if ( dword_B0FB94 ) /*0x72b8a8*/
   {
-    __3_YAXPAX_Z(dword_B0FB94); /*0x72b8ab*/
+    RA2_OPDEL(dword_B0FB94); /*0x72b8ab*/
     dword_B0FB94 = 0; /*0x72b8b3*/
   }
   if ( g_PaletteManagerPool ) /*0x72b8c1*/

@@ -3,15 +3,18 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/HotkeyOptions_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5FB320
+namespace gamemd {
 ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a3, int a4)
-{
 {
   int result; // eax
   __int16 v15; // bx
   HWND (__stdcall *v18)(HWND, int); // edi
-  const #72 *v22; // eax
+  const void *v22; // eax
   __int16 v30; // ax
   int v39; // esi
   int *v40; // eax
@@ -19,7 +22,7 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
   int v42; // eax
   int m; // esi
   __int16 v49; // ax
-  #72 *StringCSF; // eax
+  void *StringCSF; // eax
   int j; // eax
   int k; // eax
   _DWORD *v73; // [esp+10h] [ebp-11Ch]
@@ -90,13 +93,13 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
           while ( 1 ) /*0x5fbbbe*/
           {
             v55 = dword_87F5D8[45]; /*0x5fbbbe*/
-            if ( !LOBYTE(dword_87F5D8[45]) ) /*0x5fbbc5*/
+            if ( !IDA_LOBYTE(dword_87F5D8[45]) ) /*0x5fbbc5*/
             {
               qsort((void *)dword_87F5D8[42], v53, 8, CompareFuncInt); /*0x5fbbd6*/
               v53 = dword_87F5D8[43]; /*0x5fbbdb*/
               v55 = 1; /*0x5fbbe1*/
               dword_87F5D8[46] = 0; /*0x5fbbe6*/
-              LOBYTE(dword_87F5D8[45]) = 1; /*0x5fbbec*/
+              IDA_LOBYTE(dword_87F5D8[45]) = 1; /*0x5fbbec*/
             }
             if ( *(_DWORD *)(dword_87F5D8[42] + 8 * v54 + 4) == v76 ) /*0x5fbbff*/
               break; /*0x5fbbff*/
@@ -111,9 +114,9 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
               qsort((void *)dword_87F5D8[42], v53, 8, CompareFuncInt); /*0x5fbc24*/
               v53 = dword_87F5D8[43]; /*0x5fbc29*/
               dword_87F5D8[46] = 0; /*0x5fbc32*/
-              LOBYTE(dword_87F5D8[45]) = 1; /*0x5fbc38*/
+              IDA_LOBYTE(dword_87F5D8[45]) = 1; /*0x5fbc38*/
             }
-            LODWORD(v78) = v56; /*0x5fbc4a*/
+            IDA_LODWORD(v78) = v56; /*0x5fbc4a*/
             int v57 = HotkeyOptions_Helper(dword_87F5D8[42], v53, (int *)&v78); /*0x5fbc4e*/
   int v58; // eax
             if ( !v57 || (v58 = (v57 - dword_87F5D8[42]) >> 3, v58 == -1) ) /*0x5fbc63*/
@@ -142,14 +145,14 @@ LABEL_127:
         {
           if ( v53 ) /*0x5fbcd1*/
           {
-            if ( !LOBYTE(dword_87F5D8[45]) ) /*0x5fbcde*/
+            if ( !IDA_LOBYTE(dword_87F5D8[45]) ) /*0x5fbcde*/
             {
               qsort((void *)dword_87F5D8[42], v53, 8, CompareFuncInt); /*0x5fbcef*/
               v53 = dword_87F5D8[43]; /*0x5fbcf4*/
               dword_87F5D8[46] = 0; /*0x5fbcfd*/
-              LOBYTE(dword_87F5D8[45]) = 1; /*0x5fbd03*/
+              IDA_LOBYTE(dword_87F5D8[45]) = 1; /*0x5fbd03*/
             }
-            LODWORD(v78) = v50; /*0x5fbd15*/
+            IDA_LODWORD(v78) = v50; /*0x5fbd15*/
             int v62 = HotkeyOptions_Helper(dword_87F5D8[42], v53, (int *)&v78); /*0x5fbd19*/
   int v63; // eax
             if ( !v62 || (v63 = (v62 - dword_87F5D8[42]) >> 3, v63 == -1) ) /*0x5fbd2e*/
@@ -183,18 +186,18 @@ LABEL_127:
           }
           *(_DWORD *)(dword_87F5D8[42] + 8 * v53) = v50; /*0x5fbdc5*/
           *(_DWORD *)(dword_87F5D8[42] + 8 * dword_87F5D8[43]++ + 4) = v76; /*0x5fbdda*/
-          LOBYTE(dword_87F5D8[45]) = 0; /*0x5fbdea*/
+          IDA_LOBYTE(dword_87F5D8[45]) = 0; /*0x5fbdea*/
           return 1; /*0x5fbdfd*/
         }
         return 1; /*0x5fbcc9*/
       }
       v51 = GetDlgItem(hWnd, 1597); /*0x5fbb7c*/
-      StringCSF = GetStringCSF((#72 *)aErrorCannotrem, 0, g_Str_File_Options_CPP, 1012); /*0x5fbb8a*/
+      StringCSF = GetStringCSF((void *)aErrorCannotrem, 0, g_Str_File_Options_CPP, 1012); /*0x5fbb8a*/
     }
     else
     {
       v51 = GetDlgItem(hWnd, 1597); /*0x5fbb54*/
-      StringCSF = GetStringCSF((#72 *)aErrorCannotmap, 0, g_Str_File_Options_CPP, 1004); /*0x5fbb62*/
+      StringCSF = GetStringCSF((void *)aErrorCannotmap, 0, g_Str_File_Options_CPP, 1004); /*0x5fbb62*/
     }
     SendMessageA(v51, 1202, 0, StringCSF); /*0x5fbb98*/
     return 1; /*0x5fbba9*/
@@ -217,8 +220,8 @@ LABEL_127:
           do /*0x5fb5bf*/
           {
             int v21 = *(_DWORD *)(dword_87F5D8[33] + 4 * v75); /*0x5fb575*/
-            v22 = (const #72 *)(*(int (__thiscall **)(int))(*(_DWORD *)v21 + 12))(v21); /*0x5fb57d*/
-            if ( !_wcsicmp(v22, (const #72 *)lParam) ) /*0x5fb581*/
+            v22 = (const void *)(*(int (__thiscall **)(int))(*(_DWORD *)v21 + 12))(v21); /*0x5fb57d*/
+            if ( !_wcsicmp(v22, (const void *)lParam) ) /*0x5fb581*/
             {
               int v23 = (*(int (__thiscall **)(int))(*(_DWORD *)v21 + 8))(v21); /*0x5fb591*/
               int v24 = SendMessageA(v20, 1229, 0, v23); /*0x5fb59d*/
@@ -255,7 +258,7 @@ LABEL_127:
         ObjectClass *v10 = dword_87F5D8[43]; /*0x5fb3ed*/
         int v11 = 0; /*0x5fb3f2*/
   int v74; // [esp+10h] [ebp-11Ch]
-        LOWORD(v74) = 0; /*0x5fb3f6*/
+        IDA_LOWORD(v74) = 0; /*0x5fb3f6*/
         if ( dword_87F5D8[43] > 0 ) /*0x5fb3fa*/
         {
           char v12 = dword_87F5D8[45]; /*0x5fb3fc*/
@@ -269,7 +272,7 @@ LABEL_127:
               v13 = (void *)dword_87F5D8[42]; /*0x5fb41f*/
               v12 = 1; /*0x5fb425*/
               dword_87F5D8[46] = 0; /*0x5fb42a*/
-              LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb434*/
+              IDA_LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb434*/
             }
             if ( *((_DWORD *)v13 + 2 * v11 + 1) == v7 ) /*0x5fb43e*/
               break; /*0x5fb43e*/
@@ -279,7 +282,7 @@ LABEL_127:
           v74 = *((_DWORD *)v13 + 2 * v11); /*0x5fb44a*/
         }
 LABEL_16:
-        LODWORD(v78) = GetDlgItem(hWnd, 1596); /*0x5fb44e*/
+        IDA_LODWORD(v78) = GetDlgItem(hWnd, 1596); /*0x5fb44e*/
         char v14 = 0; /*0x5fb464*/
         if ( (v74 & 0x400) != 0 ) /*0x5fb469*/
           v14 = 4; /*0x5fb46b*/
@@ -289,9 +292,9 @@ LABEL_16:
           v14 |= 1u; /*0x5fb47c*/
         if ( (v74 & 0x1000) != 0 ) /*0x5fb481*/
           v14 |= 8u; /*0x5fb483*/
-        HIBYTE(v15) = v14; /*0x5fb48e*/
-        LOBYTE(v15) = v74; /*0x5fb490*/
-        FormatHotkeyDisplayString(v15, (#72 *)lParam); /*0x5fb494*/
+        IDA_HIBYTE(v15) = v14; /*0x5fb48e*/
+        IDA_LOBYTE(v15) = v74; /*0x5fb490*/
+        FormatHotkeyDisplayString(v15, (void *)lParam); /*0x5fb494*/
         SendMessageA(v78, 1202, 0, lParam); /*0x5fb4ad*/
         int v16 = GetDlgItem(hWnd, 1229); /*0x5fb4b5*/
         SendMessageA(v16, 1025, 0, 0); /*0x5fb4c1*/
@@ -314,14 +317,14 @@ LABEL_16:
     }
     if ( (unsigned __int16)a3 == 1232 ) /*0x5fb8e6*/
     {
-      if ( !HIWORD(a3) ) /*0x5fba05*/
+      if ( !IDA_HIWORD(a3) ) /*0x5fba05*/
       {
         Debug::Log(); /*0x5fba13*/
         CCFileClass::Construct(v79, aKeyboardmdIni); /*0x5fba24*/
-        FileClass::Delete((#56 *)v79); /*0x5fba2d*/
+        FileClass::Delete((void *)v79); /*0x5fba2d*/
         KeyboardConfig::LoadINI(); /*0x5fba32*/
         SendMessageA(hWnd, 1127, 0, 0); /*0x5fba41*/
-        v79[0] = &CCFileClass::`vftable'; /*0x5fba4b*/
+        v79[0] = (void*)(void*)&CCFileClass_vftable; /*0x5fba4b*/
         int v86 = 0; /*0x5fba53*/
   _BYTE v85[12]; // [esp+74h] [ebp-B8h] BYREF
         Vector::Clear((int)v85); /*0x5fba5e*/
@@ -330,13 +333,13 @@ LABEL_16:
         return 1; /*0x5fba83*/
       }
     }
-    else if ( (unsigned __int16)a3 == 1670 && !HIWORD(a3) ) /*0x5fb8f7*/
+    else if ( (unsigned __int16)a3 == 1670 && !IDA_HIWORD(a3) ) /*0x5fb8f7*/
     {
       v79[1] = 0; /*0x5fb906*/
       v79[2] = 0; /*0x5fb90a*/
   _DWORD v80[10]; // [esp+28h] [ebp-104h] BYREF
       GenericList::Constructor(v80); /*0x5fb90e*/
-      v80[0] = &List<INIClass::INISection *>::`vftable'; /*0x5fb919*/
+      v80[0] = (void*)(void*)&List_INIClass_INISection___vftable; /*0x5fb919*/
       memset(&v80[7], 0, 12); /*0x5fb921*/
       char v81 = 0; /*0x5fb92d*/
       int v82 = 0; /*0x5fb932*/
@@ -347,11 +350,11 @@ LABEL_16:
       ObjectClass *v43 = dword_87F5D8[43]; /*0x5fb94c*/
       for ( m = 0; m < dword_87F5D8[43]; ++m ) /*0x5fb955*/
       {
-        if ( !LOBYTE(dword_87F5D8[45]) ) /*0x5fb95f*/
+        if ( !IDA_LOBYTE(dword_87F5D8[45]) ) /*0x5fb95f*/
         {
           qsort((void *)dword_87F5D8[42], v43, 8, CompareFuncInt); /*0x5fb970*/
           dword_87F5D8[46] = 0; /*0x5fb978*/
-          LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb97e*/
+          IDA_LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb97e*/
         }
         int v72 = *(_DWORD *)(dword_87F5D8[42] + 8 * m); /*0x5fb992*/
         char * v45 = (char *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(dword_87F5D8[42] + 8 * m + 4) + 4))(*(_DWORD *)(dword_87F5D8[42] + 8 * m + 4)); /*0x5fb995*/
@@ -363,7 +366,7 @@ LABEL_16:
       INIClass::WriteDigest((char *)v79, (int)v87, 0); /*0x5fb9cf*/
       *v73 = 1; /*0x5fb9d8*/
       RawFileClass::Dtor(v87); /*0x5fb9e5*/
-      HashTable::DestroyHashTableINIClass(v79); /*0x5fb9ee*/
+      HashTable_flat::DestroyHashTableINIClass(v79); /*0x5fb9ee*/
       return 1; /*0x5fba02*/
     }
     return 1; /*0x5fb8fa*/
@@ -372,7 +375,7 @@ LABEL_16:
   {
     if ( (unsigned __int16)a3 == 2 ) /*0x5fb653*/
     {
-      if ( !HIWORD(a3) ) /*0x5fb6d4*/
+      if ( !IDA_HIWORD(a3) ) /*0x5fb6d4*/
       {
         KeyboardConfig::LoadINI(); /*0x5fb6dd*/
         *v73 = 2; /*0x5fb6e9*/
@@ -381,13 +384,13 @@ LABEL_16:
     }
     else if ( (unsigned __int16)a3 == 1223 ) /*0x5fb65a*/
     {
-      if ( HIWORD(a3) == 1 ) /*0x5fb6af*/
+      if ( IDA_HIWORD(a3) == 1 ) /*0x5fb6af*/
       {
         SendMessageA(hWnd, 1124, 0, 0); /*0x5fb6bf*/
         return 1; /*0x5fb6d1*/
       }
     }
-    else if ( (unsigned __int16)a3 == 1224 && HIWORD(a3) == 1 ) /*0x5fb669*/
+    else if ( (unsigned __int16)a3 == 1224 && IDA_HIWORD(a3) == 1 ) /*0x5fb669*/
     {
       SendMessageA(hWnd, 1125, 0, 0); /*0x5fb679*/
       int v28 = GetDlgItem(hWnd, 1229); /*0x5fb685*/
@@ -399,7 +402,7 @@ LABEL_16:
     }
     return 1; /*0x5fb68d*/
   }
-  if ( HIWORD(a3) != 768 ) /*0x5fb707*/
+  if ( IDA_HIWORD(a3) != 768 ) /*0x5fb707*/
     return 1; /*0x5fbed7*/
   int v29 = GetDlgItem(hWnd, 1597); /*0x5fb713*/
   SendMessageA(v29, 1202, 0, &DataGlobal_87F7E8[8147]); /*0x5fb72c*/
@@ -419,11 +422,11 @@ LABEL_16:
   _DWORD * v33 = (_DWORD *)dword_87F5D8[46]; /*0x5fb77b*/
   if ( !dword_87F5D8[46] || *(_DWORD *)dword_87F5D8[46] != v31 ) /*0x5fb787*/
   {
-    if ( !LOBYTE(dword_87F5D8[45]) ) /*0x5fb795*/
+    if ( !IDA_LOBYTE(dword_87F5D8[45]) ) /*0x5fb795*/
     {
       qsort((void *)dword_87F5D8[42], dword_87F5D8[43], 8, CompareFuncInt); /*0x5fb7a6*/
       dword_87F5D8[46] = 0; /*0x5fb7ae*/
-      LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb7b8*/
+      IDA_LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb7b8*/
     }
     ObjectClass *v34 = dword_87F5D8[43]; /*0x5fb7bf*/
     AbstractClass *v35 = (_DWORD *)dword_87F5D8[42]; /*0x5fb7c5*/
@@ -462,11 +465,11 @@ LABEL_85:
     v40 = v33 + 1; /*0x5fb8d5*/
     goto LABEL_80; /*0x5fb8d8*/
   }
-  if ( !LOBYTE(dword_87F5D8[45]) ) /*0x5fb828*/
+  if ( !IDA_LOBYTE(dword_87F5D8[45]) ) /*0x5fb828*/
   {
     qsort((void *)dword_87F5D8[42], v32, 8, CompareFuncInt); /*0x5fb839*/
     dword_87F5D8[46] = 0; /*0x5fb841*/
-    LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb84b*/
+    IDA_LOBYTE(dword_87F5D8[45]) = 1; /*0x5fb84b*/
   }
   ObjectClass *v37 = dword_87F5D8[43]; /*0x5fb852*/
   AbstractClass *v38 = (_DWORD *)dword_87F5D8[42]; /*0x5fb858*/
@@ -505,7 +508,7 @@ LABEL_81:
   SendMessageA(v42, 1202, 0, v41); /*0x5fb8b3*/
   return 1; /*0x5fb4da*/
 }
-}
+} // namespace gamemd
 
 // 0x5FC120
 namespace gamemd {

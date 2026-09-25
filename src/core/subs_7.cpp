@@ -984,7 +984,7 @@ int ReturnZero6637E0()
 //   *(this + 2) = 0;
 //   *((_BYTE *)this + 12) = 1;
 //   *((_BYTE *)this + 13) = 0;
-//   *this = &DynamicVectorClass<OwnerTalkClass::ConnectionListStruct *>::`vftable';
+//   ((void**)this)[0] = (void*)(void*)(void*)&DynamicVectorClass_OwnerTalkClass_ConnectionListStruct___vftable;
 //   *(this + 5) = 10;
 //   *(this + 4) = 0;
 //   *((_BYTE *)this + 24) = 0;
@@ -3037,17 +3037,17 @@ int Callatexit6C6B40()
 // IDA: 0x6C6B60  proposal: Sub6C6B60
 // IDA: void __cdecl sub_6C6B60()
 //   g_SidebarButtonState = 0;
-//   __3_YAXPAX_Z(g_SidebarPool);
+//   RA2_OPDEL(g_SidebarPool);
 void Sub6C6B60()
 {
 }
 
 // IDA: 0x6C8840  proposal: ComPtr::Release6C8840
 // IDA: _DWORD *__thiscall sub_6C8840(_DWORD *Block, char a2)
-//   *Block = &rc_ptr<PlayerProfile>::`vftable';
+//   *Block = (void*)(void*)&rc_ptr_PlayerProfile_vftable;
 //   ComPtr::Release(Block);
 //   if ( (a2 & 1) != 0 )
-//   __3_YAXPAX_Z(Block);
+//   RA2_OPDEL(Block);
 //   return Block;
 int* ComPtr_Release6C8840(void* _this, int a0) // thiscall
 {
@@ -3070,7 +3070,7 @@ int ReturnZero6C8990()
 // IDA: _DWORD *__thiscall sub_6C89B0(_DWORD *this, size_t Size)
 //   void *v3; // eax
 //   *this = Size;
-//   v3 = __2_YAPAXI_Z(Size);
+//   v3 = RA2_OPNEW(Size);
 //   *(this + 1) = v3;
 //   *(this + 2) = v3;
 //   return this;
@@ -3245,8 +3245,8 @@ int ReturnZero6C95A0()
 // IDA: int __thiscall sub_6C9940(_DWORD *this, char a2, char a3, unsigned __int8 a4)
 //   unsigned __int16 v4; // ax
 //   int result; // eax
-//   HIBYTE(v4) = a2;
-//   LOBYTE(v4) = a3;
+//   IDA_HIBYTE(v4) = a2;
+//   IDA_LOBYTE(v4) = a3;
 //   result = a4 | (v4 << 8);
 //   *(this + 2) = result;
 //   return result;

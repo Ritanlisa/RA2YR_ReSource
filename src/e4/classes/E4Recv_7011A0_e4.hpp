@@ -5,7 +5,9 @@
 
 namespace gamemd {
 struct E4Recv_7011A0 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+// --- flat members (END) ---
     int Vf84(int, ...);  // G6 vtable slot dispatch
     int sub_7011A0();  // 0x7011A0
 };

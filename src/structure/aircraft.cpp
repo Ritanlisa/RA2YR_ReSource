@@ -60,7 +60,7 @@ AbstractClass * * AircraftClass::Mission_Attack()
       int v2 = this->q2B4;
       this->AircraftClass_field_bool_6D2 = 0;
       int v3 = -(v2 != 0);
-      LOBYTE(v3) = v3 & 0xF7;
+      IDA_LOBYTE(v3) = v3 & 0xF7;
       this->missionStatus = v3 + 10;
       return 1;
     case 1:
@@ -129,9 +129,9 @@ LABEL_14:
           v18 = (int *)this->ComputeTransform(_BYTE v115[4]; // [esp+ACh] [ebp-60h] BYREF
                          v115, 0, 0, 0, 0);
           if ( *v18 == *v17 && v18[1] == v17[1] )
-            LOWORD(v100) = 0;
+            IDA_LOWORD(v100) = 0;
           double v19 = Math::CalcAngle((double)v18[1] - (double)v17[1], (double)*v17 - (double)*v18);
-          LOWORD(v100) = Math::RoundToInt((v19 - 1.570796326794897) * -10430.06004058427);
+          IDA_LOWORD(v100) = Math::RoundToInt((v19 - 1.570796326794897) * -10430.06004058427);
           this->secondaryFacing.Update(&v100);
           return 1;
         }
@@ -300,7 +300,7 @@ LABEL_54:
             else
             {
               int v43 = -(*(_BYTE *)(DataGlobal_87F7E8[7806] + 6113) != 0);
-              LOBYTE(v43) = v43 & 0xFD;
+              IDA_LOBYTE(v43) = v43 & 0xFD;
               this->missionStatus = v43 + 4;
             }
             if ( !this->q1B0->vt_slot_24() )
@@ -537,7 +537,7 @@ LABEL_91:
           return 1;
         }
       }
-      else if ( this->isALoaner || (unsigned __int8)House::IsCurrentPlayer((#375 *)this->focus) )
+      else if ( this->isALoaner || (unsigned __int8)House::IsCurrentPlayer((void *)this->focus) )
       {
         this->AssignTarget_SyncLog(0);
       }
@@ -2023,8 +2023,8 @@ int AircraftClass::Mission_Enter()
       if ( v26 ) /*0x416910*/
       {
         v27 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)v26 + 76))(v26, v49, a1); /*0x41691a*/
-        LOWORD(v39) = *v27 / 256; /*0x41692f*/
-        HIWORD(v39) = v27[1] / 256; /*0x416947*/
+        IDA_LOWORD(v39) = *v27 / 256; /*0x41692f*/
+        IDA_HIWORD(v39) = v27[1] / 256; /*0x416947*/
         v41 = v39; /*0x416950*/
         if ( !Cell::IsOccupied((void **)a1, (__int16 *)&v41, 1) ) /*0x416957*/
           goto LABEL_24; /*0x41695e*/
@@ -2059,8 +2059,8 @@ int AircraftClass::Mission_Enter()
         if ( v33 ) /*0x416a4f*/
         {
           v34 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)v33 + 76))(v33, v49, a1); /*0x416a59*/
-          LOWORD(v40) = *v34 / 256; /*0x416a6e*/
-          HIWORD(v40) = v34[1] / 256; /*0x416a86*/
+          IDA_LOWORD(v40) = *v34 / 256; /*0x416a6e*/
+          IDA_HIWORD(v40) = v34[1] / 256; /*0x416a86*/
           v42 = v40; /*0x416a8f*/
           if ( !Cell::IsOccupied((void **)a1, (__int16 *)&v42, 1) ) /*0x416a96*/
           {
@@ -2325,14 +2325,14 @@ int AircraftClass::MissionDispatch()
   int Member; // eax
   int v16; // eax
 
-  switch ( *(_DWORD *)(this + 172) )
+  switch ( this->currentMission )
   {
     case 4:
     case 0x1A:
     case 0x1B:
     case 0x1E:
     case 0x1F:
-      if ( *(_DWORD *)(this + 660) ) /*0x4190d3*/
+      if ( this->airstrike ) /*0x4190d3*/
         goto LABEL_4; /*0x4190db*/
   LABEL_3:
       result = 0; /*0x4190dd*/
@@ -2342,29 +2342,29 @@ int AircraftClass::MissionDispatch()
       switch ( a3 )
       {
         case 8:
-          if ( !*(_BYTE *)(*(_DWORD *)(this + 1732) + 3580) /*0x419519*/
-            || (*(int (__thiscall **)(int))(*(_DWORD *)this + 388))(this) != 2
-            || !*(_BYTE *)(this + 1048)
-            || (!*(_DWORD *)(this + 280) || (_DWORD *)CCINIClass::GetDB((_DWORD *)(this + 276)) != a2)
-            && *(_DWORD **)(this + 1444) != a2 )
+          if ( !this->Type->qDFC /*0x419519*/
+            || (*(int (__thiscall **)(int))(*(_DWORD *)&this->isInLogic8))(this) != 2
+            || !this->isTether
+            || (!this->q118 || (_DWORD *)CCINIClass::GetDB((_DWORD *)(&this->health6)) != a2)
+            && *(_DWORD **)(&this->isChronosphereImmune4) != a2 )
           {
             return FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x419519*/
           }
           return 10; /*0x419519*/
         case 14:
-          v14 = *(_DWORD *)(*(_DWORD *)(this + 1732) + 1504); /*0x41939d*/
-          if ( v14 <= 0 || *(_DWORD *)(this + 276) >= v14 ) /*0x4193b1*/
+          v14 = this->Type->Passengers; /*0x41939d*/
+          if ( v14 <= 0 || this->inAirFlag >= v14 ) /*0x4193b1*/
             return FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x4193b1*/
           FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x4193c4*/
-          if ( !*(_DWORD *)(this + 1652) ) /*0x4193c9*/
+          if ( !this->locomotor ) /*0x4193c9*/
             WinAPI::Wrapper(-2147467261); /*0x4193d8*/
-          if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 16))(*(_DWORD *)(this + 1652)) ) /*0x4193e6*/
+          if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(&this->airstrike2) + 16))(this->locomotor) ) /*0x4193e6*/
             return 1; /*0x4193e6*/
-          RateScaler::Init((_BYTE *)(this + 848), *(double *)(*(_DWORD *)(this + 1732) + 968)); /*0x419407*/
-          if ( (*(int (__thiscall **)(int, int, _DWORD *))(*(_DWORD *)this + 632))(this, 19, a2) != 1 ) /*0x41941c*/
+          RateScaler::Init((_BYTE *)(&this->initialOwner8), this->Type->DeployTime); /*0x419407*/
+          if ( (*(int (__thiscall **)(int, int, _DWORD *))(*(_DWORD *)&this->transporter2))(this, 19, a2) != 1 ) /*0x41941c*/
             return 1; /*0x41941c*/
           *a4 = (void *)this; /*0x41941e*/
-          if ( (*(int (__thiscall **)(int, int, void **, _DWORD *))(*(_DWORD *)this + 636))(this, 18, a4, a2) == 1 ) /*0x419431*/
+          if ( (*(int (__thiscall **)(int, int, void **, _DWORD *))(*(_DWORD *)&this->transporter6))(this, 18, a4, a2) == 1 ) /*0x419431*/
           {
             Member = Team::GetMember((_DWORD *)this, 0); /*0x419450*/
             (*(void (__thiscall **)(int))(*(_DWORD *)Member + 336))(Member); /*0x419459*/
@@ -2372,50 +2372,50 @@ int AircraftClass::MissionDispatch()
           }
           else
           {
-            (*(void (__thiscall **)(int, int, _DWORD *))(*(_DWORD *)this + 632))(this, 3, a2); /*0x41943a*/
+            (*(void (__thiscall **)(int, int, _DWORD *))(*(_DWORD *)&this->transporter2))(this, 3, a2); /*0x41943a*/
             return 1; /*0x419443*/
           }
         case 15:
-          if ( !*(_DWORD *)(*(_DWORD *)(this + 1732) + 1504) /*0x419492*/
+          if ( !this->Type->Passengers /*0x419492*/
             || !a2
-            || !Object::IsAlliedWithObjectHouse(*(_DWORD **)(this + 540), (int)a2) )
+            || !Object::IsAlliedWithObjectHouse(*(_DWORD **)(&this->u32_D80), (int)a2) )
           {
             goto LABEL_3; /*0x419499*/
           }
-          v16 = (*(_DWORD *)(this + 276) >= *(_DWORD *)(*(_DWORD *)(this + 1732) + 1504)) - 1; /*0x4194b9*/
-          LOBYTE(v16) = v16 & 0xF7; /*0x4194bb*/
+          v16 = (this->inAirFlag >= this->Type->Passengers) - 1; /*0x4194b9*/
+          IDA_LOBYTE(v16) = v16 & 0xF7; /*0x4194bb*/
           return v16 + 10; /*0x4194c2*/
         case 18:
           FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x4191ff*/
           v8 = *a4; /*0x419204*/
-          if ( *a4 && (*(int (__thiscall **)(void *))(*(_DWORD *)v8 + 44))(v8) == 6 ) /*0x419214*/
+          if ( *a4 && (*(int (__thiscall **)(void *))(v8->fallRate)(v8) == 6 ) /*0x419214*/
           {
             v9 = *(_DWORD *)this; /*0x419216*/
             v10 = AbstractClass::IsTechnoType(v8); /*0x41921a*/
             if ( (*(int (__thiscall **)(int, int, void *))(v9 + 632))(this, 15, v10) != 1 ) /*0x41922d*/
               return 10; /*0x419238*/
-            (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 7, 0); /*0x419241*/
+            (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)&this->missionStartTime8))(this, 7, 0); /*0x419241*/
           }
           else
           {
-            (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 2, 0); /*0x41924b*/
+            (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)&this->missionStartTime8))(this, 2, 0); /*0x41924b*/
           }
-          (*(void (__thiscall **)(int, void *, int))(*(_DWORD *)this + 1152))(this, v8, 1); /*0x419258*/
-          (*(void (__thiscall **)(int))(*(_DWORD *)this + 492))(this); /*0x419262*/
+          (*(void (__thiscall **)(int, void *, int))(*(_DWORD *)&this->isDeactivated2))(this, v8, 1); /*0x419258*/
+          (*(void (__thiscall **)(int))(*(_DWORD *)&this->missionData2))(this); /*0x419262*/
           result = 1; /*0x41926b*/
           break; /*0x419271*/
         case 19:
           FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x419281*/
-          if ( !*(_DWORD *)(this + 1652) ) /*0x419286*/
+          if ( !this->locomotor ) /*0x419286*/
             WinAPI::Wrapper(-2147467261); /*0x419295*/
-          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(this + 1652) + 16))(*(_DWORD *)(this + 1652)) ) /*0x4192a3*/
+          if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(**(_DWORD **)(&this->airstrike2) + 16))(this->locomotor) ) /*0x4192a3*/
             return 1; /*0x4192a3*/
-          v11 = *(_DWORD *)(this + 1444); /*0x4192ae*/
+          v11 = this->movementDestination; /*0x4192ae*/
           if ( !v11 ) /*0x4192b6*/
             return 1; /*0x4192b6*/
-          if ( *(_BYTE *)(*(_DWORD *)(this + 1732) + 3597) /*0x4192ee*/
+          if ( this->Type->qE0D /*0x4192ee*/
             && (*(int (__thiscall **)(int))(*(_DWORD *)v11 + 44))(v11) == 11
-            && *(_DWORD *)(this + 1444) == (*(int (__thiscall **)(int))(*(_DWORD *)this + 444))(this) )
+            && this->movementDestination == (*(int (__thiscall **)(int))(*(_DWORD *)&this->suspendedMission4))(this) )
           {
             return 1; /*0x4192f7*/
           }
@@ -2424,9 +2424,9 @@ int AircraftClass::MissionDispatch()
             return 10; /*0x41951f*/
           }
         case 21:
-          v12 = *(_DWORD *)(this + 1732); /*0x419300*/
-          if ( *(_DWORD *)(this + 276) == *(_DWORD *)(v12 + 1504) ) /*0x419312*/
-            Timer::StartDouble((_BYTE *)(this + 848), *(double *)(v12 + 968)); /*0x419328*/
+          v12 = this->Type; /*0x419300*/
+          if ( this->inAirFlag == v12->Passengers ) /*0x419312*/
+            Timer::StartDouble((_BYTE *)(&this->initialOwner8), v12->DeployTime); /*0x419328*/
           if ( a2 )
           {
             v13 = (*(int (__thiscall **)(_DWORD *))(*a2 + 44))(a2) == 15 ? a2 : 0;
@@ -2434,32 +2434,32 @@ int AircraftClass::MissionDispatch()
             {
               if ( *(_BYTE *)(v13[432] + 3777) && !*((_BYTE *)v13 + 1753) ) /*0x419359*/
               {
-                (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 968))(this, 0); /*0x419369*/
-                (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)this + 1152))(this, 0, 1); /*0x419377*/
-                (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 4, 0); /*0x419385*/
+                (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)&this->targetingTimer8))(this, 0); /*0x419369*/
+                (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)&this->isDeactivated2))(this, 0, 1); /*0x419377*/
+                (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)&this->missionStartTime8))(this, 4, 0); /*0x419385*/
               }
             }
           }
           return 5; /*0x419394*/
         case 23:
-          (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 2, 0); /*0x4191b7*/
+          (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)&this->missionStartTime8))(this, 2, 0); /*0x4191b7*/
           v6 = *(_DWORD *)this; /*0x4191bd*/
           ClosestPlacementCell = TechnoClass::FindClosestPlacementCell((int *)this); /*0x4191c3*/
           (*(void (__thiscall **)(int, void *, int))(v6 + 1152))(this, ClosestPlacementCell, 1); /*0x4191cb*/
-          (*(void (__thiscall **)(int, int))(*(_DWORD *)this + 628))(this, 3); /*0x4191d7*/
+          (*(void (__thiscall **)(int, int))(*(_DWORD *)&this->radioContact8))(this, 3); /*0x4191d7*/
           return FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x4191d7*/
         case 29:
-          if ( *(_DWORD *)(this + 692) )
+          if ( this->q2B4 )
             return 10; /*0x419160*/
           else
-            return *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) != *(_DWORD *)(this + 764) ? 10 : 1;
+            return this->Type->Ammo != this->pitchAngle ? 10 : 1;
         case 31:
-          if ( *(_DWORD *)(this + 764) >= *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) / 2 && *(_DWORD *)(this + 692) ) /*0x419124*/
+          if ( this->pitchAngle >= this->Type->Ammo / 2 && this->q2B4 ) /*0x419124*/
             return 1; /*0x419131*/
           else
             return FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x419147*/
         case 33:
-          return *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) != *(_DWORD *)(this + 764) ? 10 : 1;
+          return this->Type->Ammo != this->pitchAngle ? 10 : 1;
         default:
           return FootClass::MissionDispatch((int *)this, a2, a3, a4); /*0x4191ef*/
       }
@@ -2470,67 +2470,64 @@ int AircraftClass::MissionDispatch()
 // 0x414310
 int AircraftClass::MoveTo()
 {
-  _DWORD *v3; // ebx
   int v5; // ecx
   int v6; // edi
   int v7; // ebx
-  char v8; // bl
   int v9; // eax
   __int16 v10; // dx
-  int v11; // eax
   int v12; // ecx
   int v13; // edi
   int v15; // [esp+Ch] [ebp-Ch] BYREF
   int v16; // [esp+10h] [ebp-8h]
   int v17; // [esp+14h] [ebp-4h]
 
-  v3 = a2; /*0x414314*/
+  a2 = a2; /*0x414314*/
   v15 = *a2; /*0x414320*/
-  v5 = *(this + 433); /*0x414324*/
+  v5 = *(&this->currentMission3); /*0x414324*/
   v16 = a2[1]; /*0x41432d*/
   v17 = a2[2]; /*0x414334*/
-  if ( !*(_BYTE *)(v5 + 3432) ) /*0x414338*/
+  if ( !v5->qD68 ) /*0x414338*/
   {
-    if ( *((_BYTE *)this + 980) || !(unsigned __int8)IsCoordVisibleMap(a2) ) /*0x414352*/
+    if ( this->isALoaner || !(unsigned __int8)IsCoordVisibleMap(a2) ) /*0x414352*/
     {
-      v6 = *(this + 433); /*0x41436c*/
-      v7 = Cell::GetGroundHeight(v3); /*0x414381*/
-      v17 = (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 188))(v6) + v7; /*0x41438b*/
+      v6 = *(&this->currentMission3); /*0x41436c*/
+      v7 = Cell::GetGroundHeight(a2); /*0x414381*/
+      v17 = (*(int (__thiscall **)(int))(v6->ChargerTurrets)(v6) + v7; /*0x41438b*/
     }
     else
     {
-      v17 = Cell::GetGroundHeight(v3); /*0x414366*/
+      v17 = Cell::GetGroundHeight(a2); /*0x414366*/
     }
   }
-  v8 = a3; /*0x41438f*/
+  a3 = a3; /*0x41438f*/
   if ( !(unsigned __int8)FootClass::DispatchInput(&v15, a3) ) /*0x41439b*/
     return 0; /*0x41449d*/
-  v9 = *(this + 433); /*0x4143a8*/
-  if ( !*(_BYTE *)(v9 + 560) /*0x4143e1*/
-    || !*(_BYTE *)(v9 + 3594)
-    || *(_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD))(*this + 1016))(this, 0)
-    && *(_BYTE *)(*(_DWORD *)(*(int (__thiscall **)(_DWORD *, _DWORD))(*this + 1016))(this, 0) + 327) )
+  v9 = *(&this->currentMission3); /*0x4143a8*/
+  if ( !v9->q230 /*0x4143e1*/
+    || !v9->qE0A
+    || *(_DWORD *)this->SelectVocOrSfx(0)
+    && *(_BYTE *)(*(_DWORD *)this->SelectVocOrSfx(0) + 327) )
   {
-    *((_BYTE *)this + 980) = 1; /*0x4143eb*/
+    this->isALoaner = 1; /*0x4143eb*/
   }
-  if ( *(this + 70) ) /*0x4143f2*/
-    *((_BYTE *)this + 1737) = 1; /*0x4143fc*/
-  LOBYTE(v10) = 0; /*0x414403*/
-  HIBYTE(v10) = v8; /*0x414409*/
-  LOWORD(a2) = v10; /*0x414412*/
+  if ( *(&this->referenceCount0) ) /*0x4143f2*/
+    this->HasPassengers = 1; /*0x4143fc*/
+  IDA_LOBYTE(v10) = 0; /*0x414403*/
+  IDA_HIBYTE(v10) = a3; /*0x414409*/
+  IDA_LOWORD(a2) = v10; /*0x414412*/
   FacingClass::Set_SyncLog(&a2); /*0x414417*/
-  *(this + 64) = g_CurrentFrame; /*0x41442c*/
-  v11 = v16; /*0x41442e*/
-  *(this + 67) = 1; /*0x414432*/
-  *(this + 65) = v11; /*0x414438*/
-  *(this + 66) = 1; /*0x41443b*/
-  v12 = *(this + 433); /*0x41443e*/
-  *(this + 62) = 0; /*0x414444*/
-  v13 = (*(int (__thiscall **)(int))(*(_DWORD *)v12 + 188))(v12); /*0x414456*/
-  if ( (*(int (__thiscall **)(_DWORD *))(*this + 456))(this) == v13 ) /*0x414464*/
-    (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1348))(this, 0, 1072693248); /*0x414471*/
+  *(&this->nextArrayIndex4) = g_CurrentFrame; /*0x41442c*/
+  v16 = v16; /*0x41442e*/
+  *(&this->nextArrayIndex7) = 1; /*0x414432*/
+  *(&this->nextArrayIndex5) = v16; /*0x414438*/
+  *(&this->nextArrayIndex6) = 1; /*0x41443b*/
+  v12 = *(&this->currentMission3); /*0x41443e*/
+  *(&this->nextArrayIndex2) = 0; /*0x414444*/
+  v13 = (*(int (__thiscall **)(int))(v12->ChargerTurrets)(v12); /*0x414456*/
+  if ( this->GetZAboveGround() == v13 ) /*0x414464*/
+    this->Destru_vt337(0, 1072693248); /*0x414471*/
   else
-    (*(void (__thiscall **)(_DWORD *, _DWORD, _DWORD))(*this + 1348))(this, 0, 0); /*0x41448a*/
+    this->Destru_vt337(0, 0); /*0x41448a*/
   return 1; /*0x414477*/
 }
 // IDA: 0x417BD0 (ValidateMovement, 137B)
@@ -2557,14 +2554,14 @@ int AircraftClass::ProcessLanding()
 {
   int result; // eax
 
-  switch ( *(_DWORD *)(this + 172) ) /*0x41baab*/
+  switch ( this->currentMission ) /*0x41baab*/
   {
     case 4: /*0x41baab*/
     case 0x1A: /*0x41baab*/
     case 0x1B: /*0x41baab*/
     case 0x1E: /*0x41baab*/
     case 0x1F: /*0x41baab*/
-      if ( *(_DWORD *)(this + 660) ) /*0x41bab2*/
+      if ( this->airstrike ) /*0x41bab2*/
         goto LABEL_4; /*0x41baba*/
       result = a2 - 4; /*0x41babc*/
       switch ( a2 ) /*0x41bacc*/
@@ -2580,7 +2577,7 @@ int AircraftClass::ProcessLanding()
       }
     default:
   LABEL_4:
-      result = ParticleClass::MissionDispatch((#377 *)this); /*0x41bad3*/
+      result = ParticleClass::MissionDispatch((void *)this); /*0x41bad3*/
       break; /*0x41bad9*/
   }
   return result; /*0x41bade*/
@@ -2610,14 +2607,14 @@ int AircraftClass::ProcessReturnToBase()
   int v7; // [esp+4h] [ebp-8h] BYREF
   int v8; // [esp+8h] [ebp-4h] BYREF
 
-  if ( *(this + 361) ) /*0x415a56*/
+  if ( *(&this->isAliveFlag1) ) /*0x415a56*/
   {
-    if ( *(this + 361) == (unsigned int *)((int (__thiscall *)(unsigned int **))(*this)[111])(this) ) /*0x415aef*/
+    if ( *(&this->isAliveFlag1) == (unsigned int *)((int (__thiscall *)(unsigned int **))(*this)[111])(this) ) /*0x415aef*/
       ((void (__thiscall *)(unsigned int **, _DWORD, int))(*this)[288])(this, 0, 1); /*0x415af9*/
   }
   else
   {
-    v2 = *(this + 135); /*0x415a60*/
+    v2 = *(&this->attachedTag5); /*0x415a60*/
     TransitionCount = v2[120]; /*0x415a66*/
     if ( TransitionCount >= 4 ) /*0x415a6e*/
       TransitionCount = HouseClass::GetTransitionCount(v2); /*0x415a75*/
@@ -2675,7 +2672,7 @@ int AircraftClass::LandingCheckStub()
 int AircraftClass::ProcessPassengerEjection()
 {
   if ( *((_DWORD *)this + 43) != 30 ) /*0x41b877*/
-    *((_BYTE *)this + 1746) = 0; /*0x41b879*/
+    this->AircraftClass_field_bool_6D2 = 0; /*0x41b879*/
   return MissionClass::AdvanceState(this);
 }
 // IDA: 0x41B5C0 (CheckPassengerCount, 23B)
@@ -2729,13 +2726,13 @@ int AircraftClass::PowerDrainUpdate(int a2)
   int v5; // edx
 
   v3 = FootClass::BeginPowerUpdate((int)this, a2); /*0x41b619*/
-  LOBYTE(v3) = *(this + 1737); /*0x41b61e*/
+  IDA_LOBYTE(v3) = *(&this->q2B47); /*0x41b61e*/
   Power::FlagProcess(a2, v3); /*0x41b627*/
-  LOBYTE(v4) = *(this + 1744); /*0x41b62c*/
+  IDA_LOBYTE(v4) = *(&this->q2B84); /*0x41b62c*/
   Power::FlagProcess(a2, v4); /*0x41b635*/
-  LOBYTE(v5) = *(this + 1745); /*0x41b63a*/
+  IDA_LOBYTE(v5) = *(&this->q2B85); /*0x41b63a*/
   Power::FlagProcess(a2, v5); /*0x41b643*/
-  return Power::TimerProcess((char)*(this + 1747)); /*0x41b657*/
+  return Power::TimerProcess((char)*(&this->q2B87)); /*0x41b657*/
 }
 // IDA: 0x41B660 (HandleTargetDestroyed, 56B)
 // 0x41b660
@@ -2745,10 +2742,10 @@ AircraftTypeClass * * AircraftClass::HandleTargetDestroyed()
 
   FootClass::HandleTargetDestroyed(this, a2, a3); /*0x41b66e*/
   result = 0; /*0x41b679*/
-  if ( (int *)*(this + 435) == a2 ) /*0x41b67d*/
-    *(this + 435) = 0; /*0x41b67f*/
-  if ( (int *)*(this + 433) == a2 ) /*0x41b68b*/
-    *(this + 433) = 0; /*0x41b68d*/
+  if ( (int *)*(&this->currentMission5) == a2 ) /*0x41b67d*/
+    *(&this->currentMission5) = 0; /*0x41b67f*/
+  if ( (int *)*(&this->currentMission3) == a2 ) /*0x41b68b*/
+    *(&this->currentMission3) = 0; /*0x41b68d*/
   return result; /*0x41b693*/
 }
 // 0x414a80
@@ -2764,45 +2761,45 @@ AbstractClass * * AircraftClass::ProcessMissionTimeout()
   int v10; // [esp+14h] [ebp-8h]
   int v11; // [esp+18h] [ebp-4h]
 
-  if ( *(this + 191) ) /*0x414a86*/
+  if ( *(&this->q04C1) ) /*0x414a86*/
   {
-    if ( *(this + 173) ) /*0x414ae5*/
+    if ( *(&this->q0443) ) /*0x414ae5*/
       goto LABEL_12; /*0x414ae5*/
     if ( g_GameMode_Current[0] ) /*0x414afb*/
     {
       v5 = *this; /*0x414b03*/
-      v9 = *(this + 39); /*0x414b09*/
-      v10 = *(this + 40); /*0x414b15*/
-      v11 = *(this + 41); /*0x414b20*/
-      v6 = (*(int (__thiscall **)(_DWORD *, int, int *, _DWORD))(v5 + 964))(this, 64, &v9, 0); /*0x414b24*/
-      (*(void (__thiscall **)(_DWORD *, int))(v5 + 968))(this, v6); /*0x414b2d*/
+      v9 = *(&this->vtable49); /*0x414b09*/
+      v10 = *(&this->uniqueId0); /*0x414b15*/
+      v11 = *(&this->uniqueId1); /*0x414b20*/
+      v6 = this->SelectAutoTarget_Cloaked(64, &v9, 0); /*0x414b24*/
+      this->AssignTarget_SyncLog(v6); /*0x414b2d*/
     }
-    if ( !*(this + 173) ) /*0x414b33*/
+    if ( !*(&this->q0443) ) /*0x414b33*/
     {
       v7 = *this; /*0x414b43*/
-      v9 = *(this + 39); /*0x414b49*/
-      v10 = *(this + 40); /*0x414b57*/
-      v11 = *(this + 41); /*0x414b5e*/
-      v8 = (*(int (__thiscall **)(_DWORD *, _DWORD, int *, _DWORD))(v7 + 964))(this, 0, &v9, 0); /*0x414b64*/
-      (*(void (__thiscall **)(_DWORD *, int))(v7 + 968))(this, v8); /*0x414b6d*/
+      v9 = *(&this->vtable49); /*0x414b49*/
+      v10 = *(&this->uniqueId0); /*0x414b57*/
+      v11 = *(&this->uniqueId1); /*0x414b5e*/
+      v8 = this->SelectAutoTarget_Cloaked(0, &v9, 0); /*0x414b64*/
+      this->AssignTarget_SyncLog(v8); /*0x414b6d*/
     }
-    if ( *(this + 173) ) /*0x414b73*/
+    if ( *(&this->q0443) ) /*0x414b73*/
     {
   LABEL_12:
-      (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*this + 488))(this, 1, 0); /*0x414b9e*/
+      this->ProcessLanding(1, 0); /*0x414b9e*/
       return 1; /*0x414ba4*/
     }
     else
     {
-      (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1156))(this, 0, 1); /*0x414b86*/
+      this->ValidatePlacement(0, 1); /*0x414b86*/
       return 1; /*0x414b8c*/
     }
   }
   else
   {
-    if ( *(this + 373) ) /*0x414a90*/
+    if ( *(&this->lastLayer3) ) /*0x414a90*/
       TeamClass::LiberateMember_Start(this, -1, 0); /*0x414a9f*/
-    (*(void (__thiscall **)(_DWORD *, _DWORD, int))(*this + 1156))(this, 0, 1); /*0x414aac*/
+    this->ValidatePlacement(0, 1); /*0x414aac*/
     MissionControl = MissionClass::GetMissionControl(this); /*0x414ab4*/
     v3 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x414ad7*/
     return v3 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2); /*0x414ade*/
@@ -2827,26 +2824,26 @@ int AircraftClass::GetMissionTimer()
   int v16; // [esp+Ch] [ebp-8h]
   int v17; // [esp+10h] [ebp-4h]
 
-  v2 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 1732) + 188))(*(_DWORD *)(this + 1732)); /*0x41a5d9*/
-  if ( (*(int (__thiscall **)(int))(*(_DWORD *)this + 456))(this) == v2 ) /*0x41a5e3*/
+  v2 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->q2B42) + 188))(this->Type); /*0x41a5d9*/
+  if ( (*(int (__thiscall **)(int))(*(_DWORD *)&this->queuedMission6))(this) == v2 ) /*0x41a5e3*/
   {
-    if ( *(_DWORD *)(this + 1492) ) /*0x41a5e9*/
+    if ( this->team ) /*0x41a5e9*/
     {
-      if ( *(_DWORD *)(this + 1444) ) /*0x41a5f3*/
+      if ( this->movementDestination ) /*0x41a5f3*/
       {
         v3 = *(_DWORD *)this; /*0x41a5fd*/
-        *(_BYTE *)(this + 1748) = 1; /*0x41a605*/
+        this->AircraftClass_field_bool_6D4 = 1; /*0x41a605*/
         (*(void (__thiscall **)(int, int, _DWORD))(v3 + 488))(this, 2, 0); /*0x41a60c*/
       }
       MissionControl = MissionClass::GetMissionControl((_DWORD *)this); /*0x41a614*/
       return Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x41a622*/
     }
-    else if ( *(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 1016))(this, 0) ) /*0x41a639*/
+    else if ( *(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)&this->q1946))(this, 0) ) /*0x41a639*/
     {
-      if ( !*(_DWORD *)(this + 1492) ) /*0x41a68d*/
+      if ( !this->team ) /*0x41a68d*/
       {
         v8 = *(_DWORD *)this; /*0x41a697*/
-        *(_BYTE *)(this + 1748) = 1; /*0x41a69f*/
+        this->AircraftClass_field_bool_6D4 = 1; /*0x41a69f*/
         (*(void (__thiscall **)(int, _DWORD, int))(v8 + 1156))(this, 0, 1); /*0x41a6a6*/
       }
       return 1; /*0x41a6ad*/
@@ -2854,32 +2851,32 @@ int AircraftClass::GetMissionTimer()
     else
     {
       v6 = *(_DWORD *)this; /*0x41a644*/
-      v15 = *(_DWORD *)(this + 156); /*0x41a64a*/
-      v16 = *(_DWORD *)(this + 160); /*0x41a65b*/
-      v17 = *(_DWORD *)(this + 164); /*0x41a662*/
+      v15 = this->location; /*0x41a64a*/
+      v16 = this->q0A0; /*0x41a65b*/
+      v17 = this->q0A4; /*0x41a662*/
       v7 = Coord::To_Cell(&MapClass_Instance, &v15); /*0x41a666*/
       (*(void (__thiscall **)(int, void *, int))(v6 + 1152))(this, v7, 1); /*0x41a66e*/
-      (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 2, 0); /*0x41a67c*/
+      (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)&this->missionStartTime8))(this, 2, 0); /*0x41a67c*/
       return 1; /*0x41a683*/
     }
   }
   if ( byte_889ECC ) /*0x41a6be*/
   {
-    if ( *(_DWORD *)(this + 764) || !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 684))(this) ) /*0x41a6d2*/
+    if ( this->pitchAngle || !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)&this->deployAnim4))(this) ) /*0x41a6d2*/
       goto LABEL_14; /*0x41a6da*/
   LABEL_26:
     if ( !Team::AllMembersValid((int *)this) ) /*0x41a7bf*/
     {
-      v11 = (*(int (__thiscall **)(int, int, _DWORD, _DWORD))(*(_DWORD *)this + 1320))( /*0x41a7e6*/
+      v11 = (*(int (__thiscall **)(int, int, _DWORD, _DWORD))(*(_DWORD *)&this->currentBarrelIndex0))( /*0x41a7e6*/
               this,
-              *(_DWORD *)(this + 1732) + 1000,
+              this->Type + 1000,
               0,
               0);
       if ( v11 ) /*0x41a7ea*/
       {
-        (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 7, 0); /*0x41a7f8*/
-        (*(void (__thiscall **)(int, int, int))(*(_DWORD *)this + 1152))(this, v11, 1); /*0x41a805*/
-        (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 968))(this, 0); /*0x41a811*/
+        (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)&this->missionStartTime8))(this, 7, 0); /*0x41a7f8*/
+        (*(void (__thiscall **)(int, int, int))(*(_DWORD *)&this->isDeactivated2))(this, v11, 1); /*0x41a805*/
+        (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)&this->targetingTimer8))(this, 0); /*0x41a811*/
         return 1; /*0x41a821*/
       }
     }
@@ -2887,20 +2884,20 @@ int AircraftClass::GetMissionTimer()
   }
   if ( byte_889ECD ) /*0x41a75f*/
   {
-    if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 684))(this) /*0x41a78c*/
-      && *(_DWORD *)(this + 764) < *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) / 2 )
+    if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)&this->deployAnim4))(this) /*0x41a78c*/
+      && this->pitchAngle < this->Type->Ammo / 2 )
     {
       goto LABEL_26; /*0x41a78c*/
     }
   }
-  else if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 684))(this) /*0x41a7b7*/
-         && *(_DWORD *)(this + 764) < *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) )
+  else if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)&this->deployAnim4))(this) /*0x41a7b7*/
+         && this->pitchAngle < this->Type->Ammo )
   {
     goto LABEL_26; /*0x41a7b7*/
   }
   LABEL_14:
-  v9 = *(_DWORD *)(this + 764); /*0x41a6e0*/
-  if ( v9 != -1 && v9 < *(_DWORD *)(*(_DWORD *)(this + 1732) + 1668) / 2 ) /*0x41a702*/
+  v9 = this->pitchAngle; /*0x41a6e0*/
+  if ( v9 != -1 && v9 < this->Type->Ammo / 2 ) /*0x41a702*/
   {
     if ( Team::AllMembersValid((int *)this) ) /*0x41a70a*/
     {
@@ -2912,29 +2909,29 @@ int AircraftClass::GetMissionTimer()
       }
     }
   }
-  if ( *(_DWORD *)(this + 692) ) /*0x41a822*/
+  if ( this->q2B4 ) /*0x41a822*/
   {
-    (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 1, 0); /*0x41a834*/
+    (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)&this->missionStartTime8))(this, 1, 0); /*0x41a834*/
     return 1; /*0x41a83b*/
   }
-  else if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 684))(this) ) /*0x41a849*/
+  else if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)&this->deployAnim4))(this) ) /*0x41a849*/
   {
-    if ( (*(int (__thiscall **)(int))(*(_DWORD *)this + 456))(this) || Team::AllMembersValid((int *)this) ) /*0x41a86e*/
+    if ( (*(int (__thiscall **)(int))(*(_DWORD *)&this->queuedMission6))(this) || Team::AllMembersValid((int *)this) ) /*0x41a86e*/
     {
-      if ( !(unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540)) ) /*0x41a888*/
+      if ( !(unsigned __int8)House::IsCurrentPlayer(*(void **)(&this->u32_D80)) ) /*0x41a888*/
       {
-        v15 = *(_DWORD *)(this + 156); /*0x41a89d*/
-        v16 = *(_DWORD *)(this + 160); /*0x41a8af*/
-        v17 = *(_DWORD *)(this + 164); /*0x41a8b6*/
+        v15 = this->location; /*0x41a89d*/
+        v16 = this->q0A0; /*0x41a8af*/
+        v17 = this->q0A4; /*0x41a8b6*/
         v12 = CellClass::ScanOccupiers(&v15); /*0x41a8ba*/
         if ( v12 ) /*0x41a8c1*/
         {
-          (*(void (__thiscall **)(int, int))(*(_DWORD *)this + 968))(this, v12); /*0x41a8c8*/
-          (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)this + 488))(this, 1, 0); /*0x41a8d6*/
+          (*(void (__thiscall **)(int, int))(*(_DWORD *)&this->targetingTimer8))(this, v12); /*0x41a8c8*/
+          (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)&this->missionStartTime8))(this, 1, 0); /*0x41a8d6*/
         }
       }
-      if ( !(unsigned __int8)House::IsCurrentPlayer(*(#375 **)(this + 540)) /*0x41a8ef*/
-        || (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)this + 84))(this) )
+      if ( !(unsigned __int8)House::IsCurrentPlayer(*(void **)(&this->u32_D80)) /*0x41a8ef*/
+        || (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)&this->NeedsSaveOrLink4))(this) )
       {
         return FootClass::FindMovePosition(this); /*0x41a92b*/
       }
@@ -3017,8 +3014,7 @@ int AircraftClass::Destruct()
   int v4; // eax
   int Vtable3; // eax
   signed int v6; // ebx
-  #374 *v7; // ebp
-  int v8; // esi
+  void *v7; // ebp
   void **v9; // edx
   char *v10; // ecx
   int v11; // ecx
@@ -3026,28 +3022,28 @@ int AircraftClass::Destruct()
   _DWORD *v13; // eax
   void **v15; // [esp+10h] [ebp-4h] BYREF
 
-  v2 = this + 1; /*0x414087*/
-  *this = &AircraftClass::`vftable'; /*0x41408a*/
-  *(this + 2) = &AircraftClass::`vftable'; /*0x414090*/
-  *(this + 3) = &AircraftClass::`vftable'; /*0x414097*/
-  *(this + 1) = &AircraftClass::`vftable'; /*0x41409e*/
-  *(this + 432) = &AircraftClass::`vftable'; /*0x4140a4*/
+  v2 = &this->vtable2; /*0x414087*/
+  *this = &(void*)(void*)&AircraftClass_vftable; /*0x41408a*/
+  this->vtable3 = &(void*)(void*)&AircraftClass_vftable; /*0x414090*/
+  this->vtable4 = &(void*)(void*)&AircraftClass_vftable; /*0x414097*/
+  this->vtable2 = &(void*)(void*)&AircraftClass_vftable; /*0x41409e*/
+  *(&this->currentMission2) = &(void*)(void*)&AircraftClass_vftable; /*0x4140a4*/
   if ( g_WTFMode ) /*0x4140b5*/
   {
-    v3 = (int)*(this + 433); /*0x4140b7*/
+    v3 = (int)*(&this->currentMission3); /*0x4140b7*/
     if ( v3 ) /*0x4140c1*/
     {
-      if ( HouseClass::CanBuild(*(this + 135), v3, 0, 0) == -1 ) /*0x4140d4*/
-        *((_BYTE *)*(this + 135) + 508) = 1; /*0x4140dc*/
+      if ( HouseClass::CanBuild(*(&this->attachedTag5), v3, 0, 0) == -1 ) /*0x4140d4*/
+        *((_BYTE *)*(&this->attachedTag5) + 508) = 1; /*0x4140dc*/
       TechnoClass::CleanupAll(this, 0); /*0x4140e6*/
-      if ( *(this + 373) ) /*0x4140eb*/
+      if ( *(&this->lastLayer3) ) /*0x4140eb*/
       {
         TeamClass::LiberateMember_Start(this, -1, 0); /*0x4140f9*/
-        *(this + 373) = 0; /*0x4140fe*/
+        *(&this->lastLayer3) = 0; /*0x4140fe*/
       }
-      HouseClass::DecrementUnitCount(*(this + 135), this); /*0x41410b*/
+      HouseClass::DecrementUnitCount(*(&this->attachedTag5), this); /*0x41410b*/
       TechnoClass::CleanupDirection(this); /*0x414112*/
-      *(this + 433) = 0; /*0x414117*/
+      *(&this->currentMission3) = 0; /*0x414117*/
     }
   }
   AbstractClass::AnnounceExpiredPointer(this); /*0x414125*/
@@ -3075,11 +3071,11 @@ int AircraftClass::Destruct()
       g_BuildingLoadQueue_Dirty = 1; /*0x4141b6*/
     }
     v7 = g_BuildingLoadQueue_Array; /*0x4141bd*/
-    v8 = v6; /*0x4141c3*/
-    while ( v8 > 0 ) /*0x4141c7*/
+    v6 = v6; /*0x4141c3*/
+    while ( v6 > 0 ) /*0x4141c7*/
     {
-      v9 = (void **)*((_DWORD *)v7 + 2 * (v8 / 2)); /*0x4141d4*/
-      v10 = (char *)v7 + 8 * (v8 / 2); /*0x4141d8*/
+      v9 = (void **)*((_DWORD *)v7 + 2 * (v6 / 2)); /*0x4141d4*/
+      v10 = (char *)v7 + 8 * (v6 / 2); /*0x4141d8*/
       if ( (int)v15 >= (int)v9 ) /*0x4141e0*/
       {
         if ( v9 == v15 ) /*0x4141ea*/
@@ -3109,16 +3105,16 @@ int AircraftClass::Destruct()
           }
           break; /*0x414267*/
         }
-        v7 = (#374 *)(v10 + 8); /*0x4141ec*/
-        v8 += -1 - v8 / 2; /*0x4141f4*/
+        v7 = (void *)(v10 + 8); /*0x4141ec*/
+        v6 += -1 - v6 / 2; /*0x4141f4*/
       }
       else
       {
-        v8 /= 2; /*0x4141e2*/
+        v6 /= 2; /*0x4141e2*/
       }
     }
   }
-  *((_BYTE *)this + 144) = 0; /*0x41426d*/
+  this->isAliveFlag = 0; /*0x41426d*/
   return FootClass::Destruct(this); /*0x414208*/
 }
 // IDA: 0x417CC0 (GetCursorOverObject, 692B)
@@ -3134,12 +3130,12 @@ int AircraftClass::IsHeightAboveThreshold()
 {
   int v1; // eax
 
-  v1 = *((_DWORD *)this + 433); /*0x41b929*/
-  if ( v1 != LODWORD(g_RulesClass_Instance->MissileROTVar) && v1 != g_RulesClass_Instance->HoverHeight ) /*0x41b93d*/
+  v1 = this->Type; /*0x41b929*/
+  if ( v1 != IDA_LODWORD(g_RulesClass_Instance->MissileROTVar) && v1 != g_RulesClass_Instance->HoverHeight ) /*0x41b93d*/
     return ObjectClass::IsHeightAboveThreshold_0(this); /*0x41b941*/
-  if ( !*((_DWORD *)this + 413) ) /*0x41b948*/
+  if ( !this->locomotor ) /*0x41b948*/
     WinAPI::Wrapper(-2147467261); /*0x41b957*/
-  return (*(unsigned __int8 (__stdcall **)(_DWORD))(**((_DWORD **)this + 413) + 128))(*((_DWORD *)this + 413)) != 0; /*0x41b946*/
+  return (*(unsigned __int8 (__stdcall **)(_DWORD))(**((_DWORD **)&this->q0A43) + 128))(this->locomotor) != 0; /*0x41b946*/
 }
 // IDA: 0x41B980 (IsBelowScreen, 82B)
 int AircraftClass::IsBelowScreen()
@@ -3203,5 +3199,3 @@ int AircraftClass::CheckStateFlag2()
 
 // 0x41be70
 bool AircraftClass::StubReturnFalse2() { return false; }
-  return 0; /*0x41be72*/
-  return result; /*0x4142d4*/

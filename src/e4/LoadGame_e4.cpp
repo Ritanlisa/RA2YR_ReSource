@@ -9,8 +9,15 @@
 #include "e4/classes/MixFile_e4.hpp"
 #include "e4/classes/VectorClass_Building_e4.hpp"
 #include "e4/classes/VectorClass_ptr_SuperClass_e4.hpp"
+#include "e4/classes/LoadGame_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/RulesClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x660840
+namespace gamemd {
 int LoadGame::LoadTriggerEvents()
 {
   int v1; // edx
@@ -18,16 +25,15 @@ int LoadGame::LoadTriggerEvents()
   _DWORD *v4; // ecx
   void *v5; // esi
   int v6; // eax
-  int v7; // eax
   int v9; // esi
   _DWORD *v10; // eax
   _DWORD *v11; // eax
   int v12; // [esp+20h] [ebp-8h] BYREF
   int v13; // [esp+24h] [ebp-4h] BYREF
 
-  v1 = g_TriggerEventState; /*0x660840*/
-  v2 = g_TriggerEventState - 1; /*0x66084d*/
-  if ( g_TriggerEventState - 1 >= 0 ) /*0x660856*/
+  v1 = v1; /*0x660840*/
+  v2 = v1 - 1; /*0x66084d*/
+  if ( v1 - 1 >= 0 ) /*0x660856*/
   {
     v4 = g_TriggerPool; /*0x660858*/
     do /*0x6608cb*/
@@ -39,18 +45,18 @@ int LoadGame::LoadTriggerEvents()
         v6 = (*(int (__thiscall **)(int *, int *))(dword_B04DA8 + 16))(&dword_B04DA8, &v12); /*0x660879*/
         if ( v6 != -1 ) /*0x66087f*/
           LoadGame::RemoveItem(&dword_B04DA8, v6); /*0x660887*/
-        __3_YAXPAX_Z(v5); /*0x66088d*/
+        RA2_OPDEL(v5); /*0x66088d*/
         v4 = g_TriggerPool; /*0x660892*/
-        v1 = g_TriggerEventState; /*0x660898*/
+        v1 = v1; /*0x660898*/
       }
       if ( v2 < v1 ) /*0x6608a3*/
       {
         --v1; /*0x6608a5*/
-        v7 = v2; /*0x6608a6*/
-        for ( g_TriggerEventState = v1; v7 < g_TriggerEventState; ++v7 ) /*0x6608b0*/
+        v2 = v2; /*0x6608a6*/
+        for ( v1 = v1; v2 < v1; ++v2 ) /*0x6608b0*/
         {
-          v4[v7] = v4[v7 + 1]; /*0x6608b6*/
-          v1 = g_TriggerEventState; /*0x6608b9*/
+          v4[v2] = v4[v2 + 1]; /*0x6608b6*/
+          v1 = v1; /*0x6608b9*/
           v4 = g_TriggerPool; /*0x6608bf*/
         }
       }
@@ -58,14 +64,14 @@ int LoadGame::LoadTriggerEvents()
     }
     while ( v2 >= 0 ); /*0x6608cb*/
   }
-  if ( (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)this + 12))(this, &v13, 4, 0) < 0 ) /*0x6608dd*/
+  if ( (*(int (__stdcall **)(void *, int *, int, _DWORD))(*(_DWORD *)&this->q0042))(this, &v13, 4, 0) < 0 ) /*0x6608dd*/
     return 0; /*0x6608e8*/
   v9 = 0; /*0x6608ed*/
   if ( v13 > 0 ) /*0x6608f1*/
   {
     while ( 1 ) /*0x6608f5*/
     {
-      v10 = __2_YAPAXI_Z(0x40u); /*0x6608f5*/
+      v10 = RA2_OPNEW(0x40u); /*0x6608f5*/
       if ( v10 ) /*0x6608ff*/
       {
         v12 = 0; /*0x660901*/
@@ -75,42 +81,44 @@ int LoadGame::LoadTriggerEvents()
       {
         v11 = 0; /*0x66091b*/
       }
-      if ( (*(int (__stdcall **)(void *, _DWORD *, int, _DWORD))(*(_DWORD *)this + 12))(this, v11, 64, 0) < 0 ) /*0x660929*/
+      if ( (*(int (__stdcall **)(void *, _DWORD *, int, _DWORD))(*(_DWORD *)&this->q0042))(this, v11, 64, 0) < 0 ) /*0x660929*/
         break; /*0x660929*/
       if ( ++v9 >= v13 ) /*0x660932*/
-        return (*(int (__stdcall **)(void *, __int16 *, int, _DWORD))(*(_DWORD *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x660932*/
+        return (*(int (__stdcall **)(void *, __int16 *, int, _DWORD))(*(_DWORD *)&this->q0042))(this, &word_B04D78, 4, 0) >= 0; /*0x660932*/
     }
     return 0; /*0x660929*/
   }
-  return (*(int (__stdcall **)(void *, __int16 *, int, _DWORD))(*(_DWORD *)this + 12))(this, &word_B04D78, 4, 0) >= 0; /*0x6608df*/
+  return (*(int (__stdcall **)(void *, __int16 *, int, _DWORD))(*(_DWORD *)&this->q0042))(this, &word_B04D78, 4, 0) >= 0; /*0x6608df*/
 }
+} // namespace gamemd
 // 0x660F10
+namespace gamemd {
 int LoadGame::RemoveItem(int a2)
 {
   int v2; // edx
-  int v3; // eax
   int v4; // edx
 
-  v2 = *(this + 4); /*0x660f10*/
-  v3 = a2; /*0x660f13*/
+  v2 = this->q010; /*0x660f10*/
+  a2 = a2; /*0x660f13*/
   if ( a2 >= v2 ) /*0x660f19*/
     return 0; /*0x660f3c*/
   v4 = v2 - 1; /*0x660f1b*/
-  *(this + 4) = v4; /*0x660f1e*/
+  this->q010 = v4; /*0x660f1e*/
   if ( a2 < v4 ) /*0x660f21*/
   {
     do /*0x660f34*/
     {
-      ++v3; /*0x660f27*/
-      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3); /*0x660f2b*/
+      ++a2; /*0x660f27*/
+      *(_DWORD *)(this->Items + 4 * a2 - 4) = *(_DWORD *)(this->Items + 4 * a2); /*0x660f2b*/
     }
-    while ( v3 < *(this + 4) ); /*0x660f34*/
+    while ( a2 < this->q010 ); /*0x660f34*/
   }
   return 1; /*0x660f39*/
 }
+} // namespace gamemd
 // 0x67E730
+namespace gamemd {
 int LoadGame::Start()
-{
 {
   char result; // al
   int *Viewport; // edx
@@ -151,9 +159,9 @@ int LoadGame::Start()
     TacticalClass::SetViewDimensions(v70);
     LoadGame::LoadBlock68(&DataGlobal_8A38E0, (int)this);
     LoadTheaterClassMIX(*((_DWORD *)g_ScenarioClass_Instance + 1174));
-    RulesClass::SaveLoad_Prefix_0(&g_RulesClass_Instance->DetailMinFrameRateNormal, (int)this);
+    RulesClass::SaveLoad_Prefix_0();
   int v64; // [esp+330h] [ebp-4Ch] BYREF
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v8 = 0;
     if ( v64 > 0 )
@@ -167,7 +175,7 @@ int LoadGame::Start()
     }
 LABEL_6:
     MouseClass::LoadGameAssets(&DataGlobal_87F7E8.field_0, this);
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v9 = 0;
     if ( v64 > 0 )
@@ -191,7 +199,7 @@ LABEL_10:
     }
     if ( OleLoadFromStream(this, &IID_IUnknown, &v66) < 0 )
       return 0;
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v10 = 0;
     if ( v64 > 0 )
@@ -204,7 +212,7 @@ LABEL_10:
       return 0;
     }
 LABEL_20:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v11 = 0;
     if ( v64 > 0 )
@@ -217,7 +225,7 @@ LABEL_20:
       return 0;
     }
 LABEL_24:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v12 = 0;
     if ( v64 > 0 )
@@ -230,7 +238,7 @@ LABEL_24:
       return 0;
     }
 LABEL_28:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v13 = 0;
     if ( v64 > 0 )
@@ -243,7 +251,7 @@ LABEL_28:
       return 0;
     }
 LABEL_32:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v14 = 0;
     if ( v64 > 0 )
@@ -256,7 +264,7 @@ LABEL_32:
       return 0;
     }
 LABEL_36:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v15 = 0;
     if ( v64 > 0 )
@@ -269,7 +277,7 @@ LABEL_36:
       return 0;
     }
 LABEL_40:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v16 = 0;
     if ( v64 > 0 )
@@ -282,7 +290,7 @@ LABEL_40:
       return 0;
     }
 LABEL_44:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v17 = 0;
     if ( v64 > 0 )
@@ -295,7 +303,7 @@ LABEL_44:
       return 0;
     }
 LABEL_48:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v18 = 0;
     if ( v64 > 0 )
@@ -308,7 +316,7 @@ LABEL_48:
       return 0;
     }
 LABEL_52:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v19 = 0;
     if ( v64 > 0 )
@@ -321,7 +329,7 @@ LABEL_52:
       return 0;
     }
 LABEL_56:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v20 = 0;
     if ( v64 > 0 )
@@ -334,7 +342,7 @@ LABEL_56:
       return 0;
     }
 LABEL_60:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v21 = 0;
     if ( v64 > 0 )
@@ -347,7 +355,7 @@ LABEL_60:
       return 0;
     }
 LABEL_64:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v22 = 0;
     if ( v64 > 0 )
@@ -360,7 +368,7 @@ LABEL_64:
       return 0;
     }
 LABEL_68:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v23 = 0;
     if ( v64 > 0 )
@@ -373,7 +381,7 @@ LABEL_68:
       return 0;
     }
 LABEL_72:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v24 = 0;
     if ( v64 > 0 )
@@ -386,7 +394,7 @@ LABEL_72:
       return 0;
     }
 LABEL_76:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v25 = 0;
     if ( v64 > 0 )
@@ -399,7 +407,7 @@ LABEL_76:
       return 0;
     }
 LABEL_80:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v26 = 0;
     if ( v64 > 0 )
@@ -412,7 +420,7 @@ LABEL_80:
       return 0;
     }
 LABEL_84:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v27 = 0;
     if ( v64 > 0 )
@@ -425,7 +433,7 @@ LABEL_84:
       return 0;
     }
 LABEL_88:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v28 = 0;
     if ( v64 > 0 )
@@ -438,7 +446,7 @@ LABEL_88:
       return 0;
     }
 LABEL_92:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v29 = 0;
     if ( v64 > 0 )
@@ -451,7 +459,7 @@ LABEL_92:
       return 0;
     }
 LABEL_96:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v30 = 0;
     if ( v64 > 0 )
@@ -464,7 +472,7 @@ LABEL_96:
       return 0;
     }
 LABEL_100:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v31 = 0;
     if ( v64 > 0 )
@@ -477,7 +485,7 @@ LABEL_100:
       return 0;
     }
 LABEL_104:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v32 = 0;
     if ( v64 > 0 )
@@ -490,7 +498,7 @@ LABEL_104:
       return 0;
     }
 LABEL_108:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v33 = 0;
     if ( v64 > 0 )
@@ -503,7 +511,7 @@ LABEL_108:
       return 0;
     }
 LABEL_112:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v34 = 0;
     if ( v64 > 0 )
@@ -516,7 +524,7 @@ LABEL_112:
       return 0;
     }
 LABEL_116:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v35 = 0;
     if ( v64 > 0 )
@@ -529,7 +537,7 @@ LABEL_116:
       return 0;
     }
 LABEL_120:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v36 = 0;
     if ( v64 > 0 )
@@ -542,7 +550,7 @@ LABEL_120:
       return 0;
     }
 LABEL_124:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v37 = 0;
     if ( v64 > 0 )
@@ -555,7 +563,7 @@ LABEL_124:
       return 0;
     }
 LABEL_128:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v38 = 0;
     if ( v64 > 0 )
@@ -568,7 +576,7 @@ LABEL_128:
       return 0;
     }
 LABEL_132:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v39 = 0;
     if ( v64 > 0 )
@@ -581,7 +589,7 @@ LABEL_132:
       return 0;
     }
 LABEL_136:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v40 = 0;
     if ( v64 > 0 )
@@ -594,7 +602,7 @@ LABEL_136:
       return 0;
     }
 LABEL_140:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v41 = 0;
     if ( v64 > 0 )
@@ -607,7 +615,7 @@ LABEL_140:
       return 0;
     }
 LABEL_144:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v42 = 0;
     if ( v64 > 0 )
@@ -620,7 +628,7 @@ LABEL_144:
       return 0;
     }
 LABEL_148:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v43 = 0;
     if ( v64 > 0 )
@@ -633,7 +641,7 @@ LABEL_148:
       return 0;
     }
 LABEL_152:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v44 = 0;
     if ( v64 > 0 )
@@ -646,7 +654,7 @@ LABEL_152:
       return 0;
     }
 LABEL_156:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v45 = 0;
     if ( v64 > 0 )
@@ -659,7 +667,7 @@ LABEL_156:
       return 0;
     }
 LABEL_160:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v46 = 0;
     if ( v64 > 0 )
@@ -672,7 +680,7 @@ LABEL_160:
       return 0;
     }
 LABEL_164:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v47 = 0;
     if ( v64 > 0 )
@@ -685,7 +693,7 @@ LABEL_164:
       return 0;
     }
 LABEL_168:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v48 = 0;
     if ( v64 > 0 )
@@ -698,7 +706,7 @@ LABEL_168:
       return 0;
     }
 LABEL_172:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v49 = 0;
     if ( v64 > 0 )
@@ -711,7 +719,7 @@ LABEL_172:
       return 0;
     }
 LABEL_176:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v50 = 0;
     if ( v64 > 0 )
@@ -724,7 +732,7 @@ LABEL_176:
       return 0;
     }
 LABEL_180:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v51 = 0;
     if ( v64 > 0 )
@@ -737,7 +745,7 @@ LABEL_180:
       return 0;
     }
 LABEL_184:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v52 = 0;
     if ( v64 > 0 )
@@ -750,7 +758,7 @@ LABEL_184:
       return 0;
     }
 LABEL_188:
-    if ( (*(int (__stdcall **)(LPSTREAM, int *, int, _DWORD))(*(_DWORD *)this->__pad_0 + 12))(this, &v64, 4, 0) < 0 )
+    if (&v64, 4, 0) < 0)
       return 0;
     int v53 = 0;
     if ( v64 > 0 )
@@ -920,9 +928,10 @@ LABEL_222:
   }
   return result;
 }
-}
+} // namespace gamemd
 
 // 0x69B5B0
+namespace gamemd {
 int LoadGame::LoadBlock300(int a2)
 {
   int v2; // esi
@@ -943,7 +952,9 @@ int LoadGame::LoadBlock300(int a2)
   }
   return result; /*0x69b5f2*/
 }
+} // namespace gamemd
 // 0x751710
+namespace gamemd {
 int LoadGame::RestoreAudioState()
 {
   void *v1; // edi
@@ -1035,7 +1046,9 @@ int LoadGame::RestoreAudioState()
   }
   return result; /*0x751895*/
 }
+} // namespace gamemd
 // 0x7533F0
+namespace gamemd {
 int LoadGame::LoadMagicAndAudio()
 {
   int result; // eax
@@ -1075,7 +1088,9 @@ int LoadGame::LoadMagicAndAudio()
   }
   return result; /*0x7534c6*/
 }
+} // namespace gamemd
 // 0x54E7B0
+namespace gamemd {
 int LoadGame::LoadPointArray(int a2)
 {
   int v3; // ebx
@@ -1086,30 +1101,28 @@ int LoadGame::LoadPointArray(int a2)
   int v8; // eax
   int v9; // edx
   int v11; // [esp+28h] [ebp-8h] BYREF
-  _DWORD *v12; // [esp+2Ch] [ebp-4h]
   int v13; // [esp+34h] [ebp+4h]
 
-  v12 = this; /*0x54e7ba*/
   v3 = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, &v11, 4, 0); /*0x54e7cf*/
   if ( v3 >= 0 ) /*0x54e7d3*/
   {
     v13 = 0; /*0x54e7dd*/
     while ( v13 < v11 ) /*0x54e7e7*/
     {
-      v4 = (int *)__2_YAPAXI_Z(8u); /*0x54e7fa*/
+      v4 = (int *)RA2_OPNEW(8u); /*0x54e7fa*/
       v3 = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 12))(a2, v4, 8, 0); /*0x54e805*/
       if ( v3 < 0 ) /*0x54e809*/
         break; /*0x54e809*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4); /*0x54e811*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 1); /*0x54e81f*/
-      v5 = v12[5]; /*0x54e828*/
-      v6 = v12 + 3; /*0x54e82b*/
-      if ( v12[7] >= v5 ) /*0x54e833*/
+      v5 = this->abstractFlags; /*0x54e828*/
+      v6 = &this->vtable4; /*0x54e82b*/
+      if ( this->referenceCount >= v5 ) /*0x54e833*/
       {
-        if ( !*((_BYTE *)v12 + 25) && v5 ) /*0x54e83e*/
+        if ( !this->q064 && v5 ) /*0x54e83e*/
           continue; /*0x54e83e*/
-        v7 = v12[8]; /*0x54e840*/
-        if ( v7 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v6 + 8))(v12 + 3, v5 + v7, 0) ) /*0x54e850*/
+        v7 = this->needsSave; /*0x54e840*/
+        if ( v7 <= 0 || !(*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(*v6 + 8))(&this->vtable4, v5 + v7, 0) ) /*0x54e850*/
           continue; /*0x54e850*/
       }
       v8 = v6[4]; /*0x54e857*/
@@ -1121,6 +1134,7 @@ int LoadGame::LoadPointArray(int a2)
   }
   return v3; /*0x54e87b*/
 }
+} // namespace gamemd
 // 0x721040
 namespace gamemd {
 int sub_721040(int a1)

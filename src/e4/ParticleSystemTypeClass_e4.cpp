@@ -3,6 +3,17 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
+#include "e4/classes/ParticleSystemTypeClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/ParticleSystemClass_e4.hpp"
+#include "e4/classes/ParticleSystemClass_16_e4.hpp"
+#include "e4/classes/ParticleTypeClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/Color_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x6442D0
 namespace gamemd {
@@ -53,61 +64,61 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     return 0; /*0x644622*/
   INIClass::GetString( /*0x64430f*/
     aP1,
-    (unsigned __int8 *)(this + 36),
+    (unsigned __int8 *)(&this->vtable46),
     (unsigned __int8 *)aHoldswhat,
     &g_INI_DefaultBuffer,
     Destination,
     64);
   v3 = BuildingTypeClass::FindOrCreateEx(Destination); /*0x644318*/
-  v4 = *(_BYTE *)(this + 664); /*0x64431d*/
-  *(_DWORD *)(this + 660) = v3; /*0x644323*/
+  v4 = this->q298; /*0x64431d*/
+  this->q294 = v3; /*0x644323*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x644332*/
                      (int)aP1,
-                     (unsigned __int8 *)(this + 36),
+                     (unsigned __int8 *)(&this->vtable46),
                      (unsigned __int8 *)g_INI_Key_Spawns,
                      v4);
-  v37 = *(_DWORD *)(this + 668); /*0x64433f*/
-  *(_BYTE *)(this + 664) = Bool_Overwrite; /*0x644346*/
-  *(_DWORD *)(this + 668) = INIClass::ReadInt_Overwrite( /*0x644351*/
+  v37 = this->q29C; /*0x64433f*/
+  this->q298 = Bool_Overwrite; /*0x644346*/
+  this->q29C = INIClass::ReadInt_Overwrite( /*0x644351*/
                               (int)aP1,
-                              (unsigned __int8 *)(this + 36),
+                              (unsigned __int8 *)(&this->vtable46),
                               (unsigned __int8 *)aSpawnframes,
                               v37);
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x644366*/
                     (int)aP1,
-                    (unsigned __int8 *)(this + 36),
+                    (unsigned __int8 *)(&this->vtable46),
                     (unsigned __int8 *)aParticlecap,
-                    *(_DWORD *)(this + 676));
-  v7 = *(_DWORD *)(this + 680); /*0x64436b*/
-  *(_DWORD *)(this + 676) = Int_Overwrite; /*0x644371*/
-  v8 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), (unsigned __int8 *)aSpawnradius, v7); /*0x644380*/
-  v9 = *(float *)(this + 672); /*0x644385*/
-  *(_DWORD *)(this + 680) = v8; /*0x644390*/
-  *(float *)(this + 672) = INIClass::ReadDouble_Overwrite( /*0x6443a4*/
+                    this->q2A4);
+  v7 = this->q2A8; /*0x64436b*/
+  this->q2A4 = Int_Overwrite; /*0x644371*/
+  v8 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(&this->vtable46), (unsigned __int8 *)aSpawnradius, v7); /*0x644380*/
+  v9 = this->q2A0; /*0x644385*/
+  this->q2A8 = v8; /*0x644390*/
+  this->q2A0 = INIClass::ReadDouble_Overwrite( /*0x6443a4*/
                              (int)aP1,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (unsigned __int8 *)aSlowdown,
                              v9);
-  *(float *)(this + 684) = INIClass::ReadDouble_Overwrite( /*0x6443c3*/
+  this->q2AC = INIClass::ReadDouble_Overwrite( /*0x6443c3*/
                              (int)aP1,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (unsigned __int8 *)aSpawncutoff,
-                             *(float *)(this + 684));
+                             this->q2AC);
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x6443dd*/
                        (int)aP1,
-                       (unsigned __int8 *)(this + 36),
+                       (unsigned __int8 *)(&this->vtable46),
                        (unsigned __int8 *)aSpawntransluce,
-                       *(float *)(this + 688));
-  v11 = *(_DWORD *)(this + 696); /*0x6443e2*/
-  *(float *)(this + 688) = Double_Overwrite; /*0x6443ea*/
-  *(_DWORD *)(this + 696) = INIClass::ReadInt_Overwrite( /*0x6443fc*/
+                       this->DamageDelay);
+  v11 = this->q2B8; /*0x6443e2*/
+  this->DamageDelay = Double_Overwrite; /*0x6443ea*/
+  this->q2B8 = INIClass::ReadInt_Overwrite( /*0x6443fc*/
                               (int)aP1,
-                              (unsigned __int8 *)(this + 36),
+                              (unsigned __int8 *)(&this->vtable46),
                               (unsigned __int8 *)aLifetime,
                               v11);
   INIClass::GetString( /*0x644416*/
     aP1,
-    (unsigned __int8 *)(this + 36),
+    (unsigned __int8 *)(&this->vtable46),
     (unsigned __int8 *)aBehaveslike,
     &g_INI_DefaultBuffer,
     Destination,
@@ -127,82 +138,82 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
       break; /*0x64445e*/
     }
   }
-  *(_DWORD *)(this + 692) = v13; /*0x644461*/
+  this->q2B4 = v13; /*0x644461*/
   v14 = ParticleSystemTypeClass::ReadXYZFromINI( /*0x64447b*/
           aP1,
           v41,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (unsigned __int8 *)aSpawndirection,
-          (float *)(this + 700));
-  *(float *)(this + 700) = *v14; /*0x644482*/
-  *(float *)(this + 704) = v14[1]; /*0x64448b*/
-  v35 = *(double *)(this + 712); /*0x6444a1*/
-  *(float *)(this + 708) = v14[2]; /*0x6444aa*/
-  v15 = INIClass::ReadDouble_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), (unsigned __int8 *)aParticlesperco, v35); /*0x6444b0*/
-  v16 = *(double *)(this + 720); /*0x6444bb*/
-  *(double *)(this + 712) = v15; /*0x6444c1*/
-  v17 = INIClass::ReadDouble_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), (unsigned __int8 *)aSpiraldeltaper, v16); /*0x6444d1*/
-  v18 = *(_DWORD *)(this + 732); /*0x6444d6*/
-  v19 = *(_DWORD *)(this + 728); /*0x6444dc*/
-  *(double *)(this + 720) = v17; /*0x6444e2*/
+          (float *)(&this->q1180));
+  this->ParticleSystemTypeClass_field_2C0 = *v14; /*0x644482*/
+  this->StartScale = v14[1]; /*0x64448b*/
+  v35 = *(double *)(&this->q11C2); /*0x6444a1*/
+  this->ParticleSystemTypeClass_field_2C8 = v14[2]; /*0x6444aa*/
+  v15 = INIClass::ReadDouble_Overwrite((int)aP1, (unsigned __int8 *)(&this->vtable46), (unsigned __int8 *)aParticlesperco, v35); /*0x6444b0*/
+  v16 = *(double *)(&this->q1200); /*0x6444bb*/
+  *(double *)(&this->q11C2) = v15; /*0x6444c1*/
+  v17 = INIClass::ReadDouble_Overwrite((int)aP1, (unsigned __int8 *)(&this->vtable46), (unsigned __int8 *)aSpiraldeltaper, v16); /*0x6444d1*/
+  v18 = this->q2DC; /*0x6444d6*/
+  v19 = this->u32_2D8; /*0x6444dc*/
+  *(double *)(&this->q1200) = v17; /*0x6444e2*/
   v20 = INIClass::ReadDouble_Overwrite( /*0x6444f2*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (unsigned __int8 *)aSpiralradius,
-          COERCE_DOUBLE(__PAIR64__(v18, v19)));
-  v21 = *(_DWORD *)(this + 740); /*0x6444f7*/
-  v22 = *(_DWORD *)(this + 736); /*0x6444fd*/
-  *(double *)(this + 728) = v20; /*0x644503*/
+          COERCE_DOUBLE(IDA___PAIR64__(v18, v19)));
+  v21 = this->q2E4; /*0x6444f7*/
+  v22 = this->q2E0; /*0x6444fd*/
+  *(double *)(&this->q1208) = v20; /*0x644503*/
   v23 = INIClass::ReadDouble_Overwrite( /*0x644513*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (unsigned __int8 *)aPositionpertur,
-          COERCE_DOUBLE(__PAIR64__(v21, v22)));
-  v24 = *(double *)(this + 744); /*0x64451e*/
-  *(double *)(this + 736) = v23; /*0x644524*/
-  v25 = INIClass::ReadDouble_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), (unsigned __int8 *)aMovementpertur, v24); /*0x644534*/
-  v26 = *(_DWORD *)(this + 756); /*0x644539*/
-  v27 = *(_DWORD *)(this + 752); /*0x64453f*/
-  *(double *)(this + 744) = v25; /*0x644545*/
+          COERCE_DOUBLE(IDA___PAIR64__(v21, v22)));
+  v24 = *(double *)(&this->q1284); /*0x64451e*/
+  *(double *)(&this->q1246) = v23; /*0x644524*/
+  v25 = INIClass::ReadDouble_Overwrite((int)aP1, (unsigned __int8 *)(&this->vtable46), (unsigned __int8 *)aMovementpertur, v24); /*0x644534*/
+  v26 = this->u32_2F4; /*0x644539*/
+  v27 = this->q2F0; /*0x64453f*/
+  *(double *)(&this->q1284) = v25; /*0x644545*/
   v28 = INIClass::ReadDouble_Overwrite( /*0x644555*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (unsigned __int8 *)aVelocitypertur,
-          COERCE_DOUBLE(__PAIR64__(v26, v27)));
-  v29 = *(_BYTE *)(this + 779); /*0x64455a*/
-  *(double *)(this + 752) = v28; /*0x644562*/
-  *(_BYTE *)(this + 779) = INIClass::ReadBool_Overwrite( /*0x644574*/
+          COERCE_DOUBLE(IDA___PAIR64__(v26, v27)));
+  v29 = this->u8_30B; /*0x64455a*/
+  *(double *)(&this->q12C2) = v28; /*0x644562*/
+  this->u8_30B = INIClass::ReadBool_Overwrite( /*0x644574*/
                              (int)aP1,
-                             (unsigned __int8 *)(this + 36),
+                             (unsigned __int8 *)(&this->vtable46),
                              (unsigned __int8 *)aLaser,
                              v29);
   Coord = INIClass::GetCoord( /*0x64458e*/
             aP1,
             (int)&v39,
-            (unsigned __int8 *)(this + 36),
+            (unsigned __int8 *)(&this->vtable46),
             (unsigned __int8 *)aLasercolor,
-            (unsigned __int8 *)(this + 776));
-  v31 = *(_DWORD *)(this + 768); /*0x644596*/
-  *(_WORD *)(this + 776) = *(_WORD *)Coord; /*0x64459c*/
-  *(_BYTE *)(this + 778) = *(_BYTE *)(Coord + 2); /*0x6445af*/
-  v32 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), (unsigned __int8 *)aSparkspawnfram, v31); /*0x6445b5*/
-  v38 = *(_DWORD *)(this + 772); /*0x6445c2*/
-  *(_DWORD *)(this + 768) = v32; /*0x6445c9*/
-  *(_DWORD *)(this + 772) = INIClass::ReadInt_Overwrite( /*0x6445d4*/
+            (unsigned __int8 *)(&this->q1346));
+  v31 = this->q300; /*0x644596*/
+  this->q308 = *(_WORD *)Coord; /*0x64459c*/
+  this->q30A = *(_BYTE *)(Coord + 2); /*0x6445af*/
+  v32 = INIClass::ReadInt_Overwrite((int)aP1, (unsigned __int8 *)(&this->vtable46), (unsigned __int8 *)aSparkspawnfram, v31); /*0x6445b5*/
+  v38 = this->q304; /*0x6445c2*/
+  this->q300 = v32; /*0x6445c9*/
+  this->q304 = INIClass::ReadInt_Overwrite( /*0x6445d4*/
                               (int)aP1,
-                              (unsigned __int8 *)(this + 36),
+                              (unsigned __int8 *)(&this->vtable46),
                               (unsigned __int8 *)aLightsize,
                               v38);
   v33 = INIClass::ReadBool_Overwrite( /*0x6445e9*/
           (int)aP1,
-          (unsigned __int8 *)(this + 36),
+          (unsigned __int8 *)(&this->vtable46),
           (unsigned __int8 *)aOneframelight,
-          *(_BYTE *)(this + 780));
-  v36 = *(double *)(this + 760); /*0x6445fb*/
-  *(_BYTE *)(this + 780) = v33; /*0x644604*/
-  *(double *)(this + 760) = INIClass::ReadDouble_Overwrite( /*0x64460f*/
+          this->q30C);
+  v36 = *(double *)(&this->q1300); /*0x6445fb*/
+  this->q30C = v33; /*0x644604*/
+  *(double *)(&this->q1300) = INIClass::ReadDouble_Overwrite( /*0x64460f*/
                               (int)aP1,
-                              (unsigned __int8 *)(this + 36),
+                              (unsigned __int8 *)(&this->vtable46),
                               (unsigned __int8 *)aSpawnsparkperc,
                               v36);
   return 1; /*0x644617*/
@@ -214,18 +225,18 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
 {
   int v3; // ecx
 
-  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x644709*/
-  Power::TimerProcess(*(_DWORD *)(this + 660)); /*0x644717*/
-  LOBYTE(v3) = *(_BYTE *)(this + 664); /*0x64471c*/
+  AbstractTypeClass::ProcessPower(a2); /*0x644709*/
+  Power::TimerProcess(this->q294); /*0x644717*/
+  IDA_LOBYTE(v3) = this->q298; /*0x64471c*/
   Power::FlagProcess(a2, v3); /*0x644725*/
-  Power::TimerProcess(*(_DWORD *)(this + 668)); /*0x644733*/
-  Checksummer::Add_float((unsigned int *)a2, *(_DWORD *)(this + 672)); /*0x644741*/
-  Power::TimerProcess(*(_DWORD *)(this + 676)); /*0x64474f*/
-  Power::TimerProcess(*(_DWORD *)(this + 680)); /*0x64475d*/
-  Checksummer::Add_float((unsigned int *)a2, *(_DWORD *)(this + 684)); /*0x64476b*/
-  Checksummer::Add_float((unsigned int *)a2, *(_DWORD *)(this + 688)); /*0x644779*/
-  Power::TimerProcess(*(_DWORD *)(this + 692)); /*0x644787*/
-  return Power::TimerProcess(*(_DWORD *)(this + 696)); /*0x64479a*/
+  Power::TimerProcess(this->q29C); /*0x644733*/
+  Checksummer::Add_float((unsigned int *)a2, this->q2A0); /*0x644741*/
+  Power::TimerProcess(this->q2A4); /*0x64474f*/
+  Power::TimerProcess(this->q2A8); /*0x64475d*/
+  Checksummer::Add_float((unsigned int *)a2, this->q2AC); /*0x64476b*/
+  Checksummer::Add_float((unsigned int *)a2, this->DamageDelay); /*0x644779*/
+  Power::TimerProcess(this->q2B4); /*0x644787*/
+  return Power::TimerProcess(this->q2B8); /*0x64479a*/
 }
 }
 // 0x644960
@@ -233,15 +244,13 @@ namespace gamemd {
 ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
 {
   int v3; // eax
-  void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &ParticleSystemTypeClass::`vftable'; /*0x644966*/
-  *(this + 1) = &ParticleSystemTypeClass::`vftable'; /*0x64496c*/
-  *(this + 2) = &ParticleSystemTypeClass::`vftable'; /*0x644973*/
-  *(this + 3) = &ParticleSystemTypeClass::`vftable'; /*0x64497a*/
-  AbstractClass::AnnounceExpiredPointer(this, 1); /*0x644981*/
-  v5 = this; /*0x644996*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(dword_A83D68 + 16))(&dword_A83D68, &v5); /*0x64499a*/
+  *this = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644966*/
+  this->vtable2 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x64496c*/
+  this->vtable3 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644973*/
+  this->vtable4 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x64497a*/
+  AbstractClass::AnnounceExpiredPointer(1); /*0x644981*/
+  v3 = (*(int (__thiscall **)(int *, void ***))(dword_A83D68 + 16))(&dword_A83D68, &this); /*0x64499a*/
   if ( v3 != -1 && v3 < g_InfantryTypeInitState && v3 < --g_InfantryTypeInitState ) /*0x6449b5*/
   {
     do /*0x6449cd*/
@@ -251,9 +260,9 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
     }
     while ( v3 < g_InfantryTypeInitState ); /*0x6449cd*/
   }
-  ObjectTypeClass::Destruct((int)this); /*0x6449d1*/
+  ObjectTypeClass::Destruct(); /*0x6449d1*/
   if ( (a2 & 1) != 0 ) /*0x6449db*/
-    __3_YAXPAX_Z(this); /*0x6449de*/
+    RA2_OPDEL(); /*0x6449de*/
   return this; /*0x6449e8*/
 }
 } // namespace gamemd
@@ -316,10 +325,10 @@ int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
   if ( ObjectTypeClass::LoadCleanup((int)aP0, aP1) >= 0 && aP0 ) /*0x6447f6*/
   {
     ObjectTypeClass::Construct(aP0, (int)&aP1); /*0x6447ff*/
-    *aP0 = &ParticleSystemTypeClass::`vftable'; /*0x644804*/
-    aP0[1] = &ParticleSystemTypeClass::`vftable'; /*0x64480a*/
-    aP0[2] = &ParticleSystemTypeClass::`vftable'; /*0x644811*/
-    aP0[3] = &ParticleSystemTypeClass::`vftable'; /*0x644818*/
+    *aP0 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644804*/
+    aP0[1] = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x64480a*/
+    aP0[2] = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644811*/
+    aP0[3] = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644818*/
   }
   return 0; /*0x644821*/
 }

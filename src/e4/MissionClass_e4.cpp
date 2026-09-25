@@ -1,10 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/MissionClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5B3760
-namespace ra2 {
-namespace game {
+namespace gamemd {
 AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
 {
   char *v3; // eax
@@ -32,56 +34,56 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
     v4 = g_Str__none_; /*0x5b37a0*/
   else
     v4 = off_816CAC[*this]; /*0x5b37a7*/
-  *((_BYTE *)this + 4) = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
+  this->vtable2 = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
                            (int)a2,
                            (unsigned __int8 *)v4,
                            (unsigned __int8 *)aNothreat,
-                           *((_BYTE *)this + 4));
+                           this->vtable2);
   if ( *this == -1 ) /*0x5b37c7*/
     v5 = g_Str__none_; /*0x5b37c9*/
   else
     v5 = off_816CAC[*this]; /*0x5b37d0*/
-  *((_BYTE *)this + 5) = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
+  this->abstractFlags = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
                            (int)a2,
                            (unsigned __int8 *)v5,
                            (unsigned __int8 *)aZombie,
-                           *((_BYTE *)this + 5));
+                           this->abstractFlags);
   if ( *this == -1 ) /*0x5b37f0*/
     v6 = g_Str__none_; /*0x5b37f2*/
   else
     v6 = off_816CAC[*this]; /*0x5b37f9*/
-  *((_BYTE *)this + 6) = INIClass::ReadBool_Overwrite( /*0x5b3811*/
+  this->nextArrayIndex = INIClass::ReadBool_Overwrite( /*0x5b3811*/
                            (int)a2,
                            (unsigned __int8 *)v6,
                            (unsigned __int8 *)aRecruitable,
-                           *((_BYTE *)this + 6));
+                           this->nextArrayIndex);
   if ( *this == -1 ) /*0x5b3819*/
     v7 = g_Str__none_; /*0x5b381b*/
   else
     v7 = off_816CAC[*this]; /*0x5b3822*/
-  *((_BYTE *)this + 7) = INIClass::ReadBool_Overwrite( /*0x5b383a*/
+  this->referenceCount = INIClass::ReadBool_Overwrite( /*0x5b383a*/
                            (int)a2,
                            (unsigned __int8 *)v7,
                            (unsigned __int8 *)aParalyzed,
-                           *((_BYTE *)this + 7));
+                           this->referenceCount);
   if ( *this == -1 ) /*0x5b3842*/
     v8 = g_Str__none_; /*0x5b3844*/
   else
     v8 = off_816CAC[*this]; /*0x5b384b*/
-  *((_BYTE *)this + 8) = INIClass::ReadBool_Overwrite( /*0x5b3863*/
+  this->vtable3 = INIClass::ReadBool_Overwrite( /*0x5b3863*/
                            (int)a2,
                            (unsigned __int8 *)v8,
                            (unsigned __int8 *)aRetaliate,
-                           *((_BYTE *)this + 8));
+                           this->vtable3);
   if ( *this == -1 ) /*0x5b386b*/
     v9 = g_Str__none_; /*0x5b386d*/
   else
     v9 = off_816CAC[*this]; /*0x5b3874*/
-  *((_BYTE *)this + 9) = INIClass::ReadBool_Overwrite( /*0x5b388c*/
+  this->objectTypeFlags = INIClass::ReadBool_Overwrite( /*0x5b388c*/
                            (int)a2,
                            (unsigned __int8 *)v9,
                            (unsigned __int8 *)aScatter,
-                           *((_BYTE *)this + 9));
+                           this->objectTypeFlags);
   if ( *this == -1 ) /*0x5b3894*/
     v10 = g_Str__none_; /*0x5b3896*/
   else
@@ -90,185 +92,152 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
                        (int)a2,
                        (unsigned __int8 *)v10,
                        (unsigned __int8 *)g_INI_Key_Rate,
-                       *((double *)this + 2));
+                       this->uniqueId);
   v12 = *this; /*0x5b38b9*/
-  *((double *)this + 2) = Double_Overwrite; /*0x5b38bb*/
+  this->uniqueId = Double_Overwrite; /*0x5b38bb*/
   if ( v12 == -1 ) /*0x5b38c1*/
     v13 = g_Str__none_; /*0x5b38c3*/
   else
     v13 = off_816CAC[v12]; /*0x5b38ca*/
   v14 = INIClass::ReadDouble_Overwrite((int)a2, (unsigned __int8 *)v13, (unsigned __int8 *)aAarate, 0.0); /*0x5b38dd*/
-  *((double *)this + 3) = v14; /*0x5b38e2*/
+  this->nextArrayIndex = v14; /*0x5b38e2*/
   if ( v14 == 0.0 ) /*0x5b38f0*/
   {
-    v15 = *(this + 5); /*0x5b38f5*/
-    *(this + 6) = *(this + 4); /*0x5b38f8*/
-    *(this + 7) = v15; /*0x5b38fb*/
+    v15 = this->abstractFlags; /*0x5b38f5*/
+    this->nextArrayIndex = this->uniqueId; /*0x5b38f8*/
+    this->referenceCount = v15; /*0x5b38fb*/
   }
   return 1; /*0x5b38fe*/
 }
 } // namespace ra2
-}
 
 // 0x41BF30
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::vt_entry_1FC()
 {
   int result; // eax
 
-  LOBYTE(result) = 0; /*0x41bf30*/
+  IDA_LOBYTE(result) = 0; /*0x41bf30*/
   return result; /*0x41bf32*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B2E10
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::Return450A()
 {
   return 450; /*0x5b2e15*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B2E20
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::Return450B()
 {
   return 450; /*0x5b2e25*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B2E30
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::Return450C()
 {
   return 450; /*0x5b2e35*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B2ED0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::Return450D()
 {
   return 450; /*0x5b2ed5*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B2EE0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::Return450E()
 {
   return 450; /*0x5b2ee5*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B2F10
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::Return450G()
 {
   return 450; /*0x5b2f15*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B2F20
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::Return450H()
 {
   return 450; /*0x5b2f25*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B2F40
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::Return450I()
 {
   return 450; /*0x5b2f45*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B2F50
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::Return450J()
 {
   return 450; /*0x5b2f55*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B2F80
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::Return450K()
 {
   return 450; /*0x5b2f85*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B2F90
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::Return450L()
 {
   return 450; /*0x5b2f95*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B2FA0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::Return450F()
 {
   return 450; /*0x5b2fa5*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B2FB0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::Return450M()
 {
   return 450; /*0x5b2fb5*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B2FC0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::Return450N()
 {
   return 450; /*0x5b2fc5*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x5B3A10
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int MissionClass::HasValidTarget()
 {
-  return *((_DWORD *)this + 44) != -1; /*0x5b3a1e*/
+  return this->suspendedMission != -1; /*0x5b3a1e*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd

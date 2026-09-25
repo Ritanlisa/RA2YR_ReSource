@@ -2,8 +2,11 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/CopyProtection_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x49F5C0
+namespace gamemd {
 bool CopyProtection::CheckLauncher()
 {
   HANDLE MutexA; // esi
@@ -17,7 +20,9 @@ bool CopyProtection::CheckLauncher()
   Debug::Log("result was %d\n", v1); /*0x49f60d*/
   return v1; /*0x49f617*/
 }
+} // namespace gamemd
 // 0x49F620
+namespace gamemd {
 char CopyProtection::NotifyLauncher()
 {
   DWORD v0; // edi
@@ -61,8 +66,11 @@ char CopyProtection::NotifyLauncher()
   Debug::Log(aFailedToNotify); /*0x49f6f2*/
   return 0; /*0x49f701*/
 }
+} // namespace gamemd
 // 0x49F7A0
+namespace gamemd {
 char CopyProtection::CheckProtectedData()
 {
   return 1; /*0x49f7a2*/
 }
+} // namespace gamemd

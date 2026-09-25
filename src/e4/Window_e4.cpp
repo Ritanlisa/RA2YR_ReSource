@@ -1,13 +1,19 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Window_e4.hpp"
+#include "e4/classes/WinsockInterfaceClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4A5110
+namespace gamemd {
 int Window::IsVisible()
 {
-  return *(this + 24) && *(this + 25); /*0x4a5120*/
+  return *(&this->u32_84) && *(&this->u32_85); /*0x4a5120*/
 }
+} // namespace gamemd
 // 0x776D80
+namespace gamemd {
 char Window::ClampToScreen(int * a1)
 {
   char v1; // bl
@@ -45,3 +51,4 @@ char Window::ClampToScreen(int * a1)
   a1[3] = GetSystemMetrics(17); /*0x776dfc*/
   return 1; /*0x776e01*/
 }
+} // namespace gamemd

@@ -294,22 +294,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindOverlay(int a1, int a2, int a3);  // 0x6d97d0
     int SetPositionThunk(int a1);  // 0x653f70
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    void StubReturnTrue();  // 0x41B900
-    char StubReturnFalse();  // 0x41BEE0
-    int StubReturnFalse2();  // 0x41BF00
-    int StubReturnFalse3();  // 0x41BF10
-    int StubReturnFalse4();  // 0x41BF20
-    int StubReturnFalse5();  // 0x41BF80
-    int StubReturnFalse6();  // 0x41BF90
-    char StubReturnFalse7();  // 0x41BFB0
-    int StubReturnFalse8();  // 0x41BFC0
-    int StubReturnFalse9();  // 0x41BFD0
-    void StubReturnTrue2();  // 0x41C000
-    int StubReturnFalse10();  // 0x41C040
-    char StubReturnFalse11();  // 0x701190
-    void StubReturnTrue3();  // 0x70D980
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

@@ -180,14 +180,6 @@ private:
 public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     void vt03();  // 0x55A150
     // --- gap2 auto-generated stub declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    wchar_t * Write();  // 0x55A050
-    LoadOptions * QueryInterface(char * Block, char a2);  // 0x55A0D0
-    unsigned int vt05(int a2);  // 0x55A180
-    int vt06(int a2);  // 0x55A1A0
-    VectorClass * Constructor_VectorClass_FileEntryClass___(unsigned int * Block, char a2);  // 0x55A410
-    char * GetData();  // 0x681100
-// --- e4 declarations (END) ---
 };
 
 // ============================================================================

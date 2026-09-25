@@ -1,8 +1,15 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/HoverLocomotionClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/TubeClass_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x517070
+namespace gamemd {
 int HoverLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x517076*/
@@ -13,7 +20,9 @@ int HoverLocomotionClass::ddtor(int a1, unsigned int * a2)
   a2[3] = -777003740; /*0x5170a0*/
   return 0; /*0x51707d*/
 }
+} // namespace gamemd
 // 0x5170B0
+namespace gamemd {
 int HoverLocomotionClass::BeginMove(int a1, int * a2)
 {
   int v2; // edi
@@ -21,26 +30,31 @@ int HoverLocomotionClass::BeginMove(int a1, int * a2)
   v2 = SwizzleManager::SaveLoad((int *)a1, a2); /*0x5170c1*/
   if ( v2 >= 0 && a1 ) /*0x5170c9*/
   {
-    *(_DWORD *)a1 = &LocomotionClass::`vftable'; /*0x5170ce*/
-    *(_DWORD *)(a1 + 4) = &LocomotionClass::`vftable'; /*0x5170d4*/
+    *(_DWORD *)a1 = &(void*)(void*)&LocomotionClass_vftable; /*0x5170ce*/
+    *(_DWORD *)(a1 + 4) = &(void*)(void*)&LocomotionClass_vftable; /*0x5170d4*/
     FrameSnapshot::Init((_WORD *)(a1 + 48)); /*0x5170db*/
-    *(_DWORD *)a1 = &HoverLocomotionClass::`vftable'; /*0x5170e0*/
-    *(_DWORD *)(a1 + 4) = &HoverLocomotionClass::`vftable'; /*0x5170e6*/
+    *(_DWORD *)a1 = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5170e0*/
+    *(_DWORD *)(a1 + 4) = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5170e6*/
   }
   return v2; /*0x5170ef*/
 }
+} // namespace gamemd
 // 0x5172B0
+namespace gamemd {
 int HoverLocomotionClass::StubReturn120()
 {
   return 120; /*0x5172b5*/
 }
+} // namespace gamemd
 // 0x5172C0
+namespace gamemd {
 HoverLocomotionClass * HoverLocomotionClass::ProcessMove(char a2)
 {
-  *this = &HoverLocomotionClass::`vftable'; /*0x5172c3*/
-  *(this + 1) = &HoverLocomotionClass::`vftable'; /*0x5172c9*/
-  LocomotionClass::Construct(this); /*0x5172d0*/
+  *this = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5172c3*/
+  this->vtable2 = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5172c9*/
+  LocomotionClass::Construct(); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
-    __3_YAXPAX_Z(this); /*0x5172dd*/
+    RA2_OPDEL(); /*0x5172dd*/
   return this; /*0x5172e7*/
 }
+} // namespace gamemd

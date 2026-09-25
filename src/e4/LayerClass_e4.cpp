@@ -9,6 +9,10 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Radar_e4.hpp"
 #include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/LightConvertClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x568300
 namespace gamemd {
@@ -18,10 +22,10 @@ int LayerClass::CoordinatesLegal(IUnknown * aP1)
   int v3; // esi
   int v4; // eax
 
-  v2 = *(this + 61); /*0x568304*/
+  v2 = *(&this->q0181); /*0x568304*/
   v3 = *aP1; /*0x56830c*/
   v4 = aP1[1]; /*0x56830f*/
-  return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * *(this + 62); /*0x568337*/
+  return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * *(&this->q0182); /*0x568337*/
 }
 }
 // 0x56DC20
@@ -163,9 +167,9 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
       {
         if ( aP15 ) /*0x56dd31*/
           goto LABEL_36; /*0x56dd31*/
-        LOWORD(v87) = v85 + v26; /*0x56dd44*/
+        IDA_LOWORD(v87) = v85 + v26; /*0x56dd44*/
         v27 = (__int16)(v81 - v25); /*0x56dd49*/
-        HIWORD(v87) = v81 - v25; /*0x56dd4c*/
+        IDA_HIWORD(v87) = v81 - v25; /*0x56dd4c*/
         v75 = v87; /*0x56dd5a*/
         v28 = (__int16)(v85 + v26) + (v27 << 9); /*0x56dd61*/
         if ( v28 < 0x40000 ) /*0x56dd63*/
@@ -192,7 +196,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
           {
             if ( !aP11 /*0x56de4c*/
               || (v31 = v83 - 4 * ((v30[80] >> 8) & 1) - *((char *)v30 + 283),
-                  (int)((HIDWORD(v31) ^ v31) - HIDWORD(v31)) < 2) )
+                  (int)((IDA_HIDWORD(v31) ^ v31) - IDA_HIDWORD(v31)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v30)) /*0x56de9d*/
                 && (aP13 || (v30[80] & 0x100) == 0)
@@ -206,7 +210,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
                 v77 = v34 + 1; /*0x56dec9*/
                 if ( (_BYTE)aP7 /*0x56df18*/
                   || (v93[0] = (v33 << 8) + 128,
-                      v93[1] = (SHIWORD(v75) << 8) + 128,
+                      v93[1] = (IDA_SHIWORD(v75) << 8) + 128,
                       v93[2] = 0,
                       v35 = (_DWORD *)Terrain::ClimbCheck(v100, v93),
                       v75 == *v35) )
@@ -222,8 +226,8 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
           goto LABEL_103; /*0x56df2f*/
         if ( aP15 && v26 <= -v25 ) /*0x56df46*/
           goto LABEL_57; /*0x56df46*/
-        HIWORD(v89) = v81 + v25; /*0x56df5a*/
-        LOWORD(v89) = v85 + v26; /*0x56df5f*/
+        IDA_HIWORD(v89) = v81 + v25; /*0x56df5a*/
+        IDA_LOWORD(v89) = v85 + v26; /*0x56df5f*/
         v36 = (__int16)(v81 + v25); /*0x56df68*/
         v75 = v89; /*0x56df70*/
         v37 = (__int16)(v85 + v26) + (v36 << 9); /*0x56df77*/
@@ -251,7 +255,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
           {
             if ( !aP11 /*0x56e062*/
               || (v40 = v83 - 4 * ((v39[80] >> 8) & 1) - *((char *)v39 + 283),
-                  (int)((HIDWORD(v40) ^ v40) - HIDWORD(v40)) < 2) )
+                  (int)((IDA_HIDWORD(v40) ^ v40) - IDA_HIDWORD(v40)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v39)) /*0x56e0b3*/
                 && (aP13 || (v39[80] & 0x100) == 0)
@@ -265,7 +269,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
                 v77 = v43 + 1; /*0x56e0df*/
                 if ( (_BYTE)aP7 /*0x56e12f*/
                   || (v94[0] = (v42 << 8) + 128,
-                      v94[1] = (SHIWORD(v75) << 8) + 128,
+                      v94[1] = (IDA_SHIWORD(v75) << 8) + 128,
                       v94[2] = 0,
                       v44 = (_DWORD *)Terrain::ClimbCheck(v102, v94),
                       v75 == *v44) )
@@ -291,8 +295,8 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
       {
         if ( aP15 ) /*0x56e186*/
           goto LABEL_80; /*0x56e186*/
-        LOWORD(v84) = v85 - v78; /*0x56e19c*/
-        HIWORD(v84) = v45 + v81; /*0x56e1a1*/
+        IDA_LOWORD(v84) = v85 - v78; /*0x56e19c*/
+        IDA_HIWORD(v84) = v45 + v81; /*0x56e1a1*/
         v75 = v84; /*0x56e1b2*/
         v47 = (__int16)(v85 - v78) + ((__int16)(v45 + v81) << 9); /*0x56e1b9*/
         if ( v47 < 0x40000 ) /*0x56e1bb*/
@@ -319,7 +323,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
           {
             if ( !aP11 /*0x56e2a5*/
               || (v50 = v83 - 4 * ((v49[80] >> 8) & 1) - *((char *)v49 + 283),
-                  (int)((HIDWORD(v50) ^ v50) - HIDWORD(v50)) < 2) )
+                  (int)((IDA_HIDWORD(v50) ^ v50) - IDA_HIDWORD(v50)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v49)) /*0x56e2f6*/
                 && (aP13 || (v49[80] & 0x100) == 0)
@@ -331,7 +335,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
                 v77 = v52 + 1; /*0x56e31b*/
                 if ( (_BYTE)aP7 /*0x56e371*/
                   || (v95[0] = (v51 << 8) + 128,
-                      v95[1] = (SHIWORD(v75) << 8) + 128,
+                      v95[1] = (IDA_SHIWORD(v75) << 8) + 128,
                       v95[2] = 0,
                       v53 = (_DWORD *)Terrain::ClimbCheck(v101, v95),
                       v75 == *v53) )
@@ -345,8 +349,8 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
   LABEL_80:
         if ( v77 == 24 ) /*0x56e388*/
           goto LABEL_103; /*0x56e388*/
-        HIWORD(v79) = v45 + v81; /*0x56e39c*/
-        LOWORD(v79) = v78 + v85; /*0x56e3a6*/
+        IDA_HIWORD(v79) = v45 + v81; /*0x56e39c*/
+        IDA_LOWORD(v79) = v78 + v85; /*0x56e3a6*/
         v75 = v79; /*0x56e3b4*/
         v54 = (__int16)(v78 + v85) + ((__int16)(v45 + v81) << 9); /*0x56e3bb*/
         if ( v54 < 0x40000 ) /*0x56e3bd*/
@@ -373,7 +377,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
           {
             if ( !aP11 /*0x56e4a7*/
               || (v57 = v83 - 4 * ((v56[80] >> 8) & 1) - *((char *)v56 + 283),
-                  (int)((HIDWORD(v57) ^ v57) - HIDWORD(v57)) < 2) )
+                  (int)((IDA_HIDWORD(v57) ^ v57) - IDA_HIDWORD(v57)) < 2) )
             {
               if ( (!aP12 || (unsigned __int8)Cell::IsBuildableAdvanced(v56)) /*0x56e4f8*/
                 && (aP13 || (v56[80] & 0x100) == 0)
@@ -385,7 +389,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
                 v77 = v59 + 1; /*0x56e519*/
                 if ( (_BYTE)aP7 /*0x56e566*/
                   || (v90 = (v58 << 8) + 128,
-                      v91 = (SHIWORD(v75) << 8) + 128,
+                      v91 = (IDA_SHIWORD(v75) << 8) + 128,
                       v92 = 0,
                       v60 = (_DWORD *)Terrain::ClimbCheck(&v88, &v90),
                       v75 == *v60) )
@@ -428,7 +432,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
     v91 = (v64 << 8) + 128; /*0x56e622*/
     v92 = 0; /*0x56e626*/
     v84 = *(_DWORD *)Terrain::ClimbCheck(&v88, &v90); /*0x56e638*/
-    if ( v84 == __PAIR32__(v64, v63) ) /*0x56e63c*/
+    if ( v84 == IDA___PAIR32__(v64, v63) ) /*0x56e63c*/
     {
       v65 = i; /*0x56e645*/
       v66 = v80; /*0x56e64b*/
@@ -469,7 +473,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
         v71 = &v105[v70]; /*0x56e721*/
       v72 = (_DWORD *)*v71; /*0x56e728*/
       v73 = (__int16)*v71 - *aP14; /*0x56e73c*/
-      v79 = v73 * v73 + (SHIWORD(v72) - aP14[1]) * (SHIWORD(v72) - aP14[1]); /*0x56e751*/
+      v79 = v73 * v73 + (IDA_SHIWORD(v72) - aP14[1]) * (IDA_SHIWORD(v72) - aP14[1]); /*0x56e751*/
       v74 = Math::Sqrt((double)v79); /*0x56e75c*/
       if ( v74 < v88 ) /*0x56e76d*/
       {
@@ -486,17 +490,17 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
 namespace gamemd {
 void * LayerClass::Reveal(int a2)
 {
-  #375 *result; // eax
+  void *result; // eax
   int v4; // eax
   int v5; // edx
   int v6; // ecx
   int v7; // esi
   char v8; // [esp+10h] [ebp+4h]
 
-  result = (#375 *)a2; /*0x577d90*/
+  result = (void *)a2; /*0x577d90*/
   if ( a2 ) /*0x577da2*/
     *(_BYTE *)(*(_DWORD *)&HouseClass_Array->gap0[4 * *(_DWORD *)(a2 + 48)] + 577) = 1; /*0x577db0*/
-  if ( (#375 *)a2 == HouseClass_Player ) /*0x577dbc*/
+  if ( (void *)a2 == HouseClass_Player ) /*0x577dbc*/
   {
     if ( a2 ) /*0x577dca*/
       goto LABEL_8; /*0x577dca*/
@@ -518,7 +522,7 @@ void * LayerClass::Reveal(int a2)
   {
     HouseClass::ResetObjectOrders(0, 0); /*0x577e1e*/
     *((_BYTE *)HouseClass_Player + 576) = 1; /*0x577e29*/
-    dword_87F8F8 = g_Cell_PositionLUT; /*0x577e3a*/
+    g_Cell_PositionLUT = g_Cell_PositionLUT; /*0x577e3a*/
     dword_87F8F4 = 1; /*0x577e42*/
     dword_87F8FC = g_Cell_PositionLUT - 1; /*0x577e4b*/
     dword_87F900 = (g_Cell_PositionLUT << 11) + g_Shroud_CellArray + 4; /*0x577e5a*/
@@ -533,18 +537,18 @@ void * LayerClass::Reveal(int a2)
         v6 = *(__int16 *)(v4 + 38); /*0x577e7a*/
         if ( v5 != 7 ) /*0x577e81*/
           break; /*0x577e81*/
-        if ( v6 != *(this + 61) + 5 ) /*0x577e8e*/
+        if ( v6 != *(&this->q0181) + 5 ) /*0x577e8e*/
           goto LABEL_21; /*0x577e8e*/
   LABEL_24:
         v4 = LayerClass::CellIteratorNext(&MapClass_Instance); /*0x577ee9*/
         if ( !v4 ) /*0x577ef5*/
           goto LABEL_25; /*0x577ef5*/
       }
-      if ( v5 == 13 && v6 == *(this + 61) + 11 ) /*0x577ea2*/
+      if ( v5 == 13 && v6 == *(&this->q0181) + 11 ) /*0x577ea2*/
         goto LABEL_24; /*0x577ea2*/
   LABEL_21:
-      v7 = *(this + 62); /*0x577ea4*/
-      if ( v5 == v7 + 13 && v6 == *(this + 61) + v7 - 15 ) /*0x577ebd*/
+      v7 = *(&this->q0182); /*0x577ea4*/
+      if ( v5 == v7 + 13 && v6 == *(&this->q0181) + v7 - 15 ) /*0x577ebd*/
         goto LABEL_24; /*0x577ebd*/
   LABEL_23:
       *(_DWORD *)(v4 + 304) = 0; /*0x577ebf*/
@@ -556,7 +560,7 @@ void * LayerClass::Reveal(int a2)
   LABEL_25:
     Radar::UpdateReveal(0, 0); /*0x577efc*/
     FogOfWar::Render((int **)&MapClass_Instance); /*0x577f0d*/
-    return (#375 *)MapClass::MarkForRedraw(&MapClass_Instance, 2); /*0x577f19*/
+    return (void *)MapClass::MarkForRedraw(&MapClass_Instance, 2); /*0x577f19*/
   }
   return result; /*0x577f1e*/
 }
@@ -575,38 +579,38 @@ int LayerClass::CellIteratorNext()
   int v9; // edx
   int v10; // eax
 
-  v1 = *(this + 69); /*0x578290*/
-  v2 = *(this + 70); /*0x578297*/
+  v1 = *(&this->q0189); /*0x578290*/
+  v2 = *(&this->q01C0); /*0x578297*/
   if ( v1 ) /*0x5782a0*/
   {
-    v3 = *(this + 68) - 1; /*0x5782af*/
-    ++*(this + 67); /*0x5782b1*/
-    *(this + 69) = v1 - 1; /*0x5782b7*/
-    *(this + 68) = v3; /*0x5782c3*/
-    *(this + 70) = v2 - 2044; /*0x5782c9*/
+    v3 = *(&this->q0188) - 1; /*0x5782af*/
+    ++*(&this->q0187); /*0x5782b1*/
+    *(&this->q0189) = v1 - 1; /*0x5782b7*/
+    *(&this->q0188) = v3; /*0x5782c3*/
+    *(&this->q01C0) = v2 - 2044; /*0x5782c9*/
     return *(_DWORD *)v2; /*0x5782cf*/
   }
   else
   {
-    v5 = *(this + 68); /*0x5782d5*/
-    v6 = *(this + 67); /*0x5782db*/
-    v7 = *(this + 61); /*0x5782e1*/
-    *(this + 67) = v5; /*0x5782e8*/
-    *(this + 68) = v6; /*0x5782f2*/
+    v5 = *(&this->q0188); /*0x5782d5*/
+    v6 = *(&this->q0187); /*0x5782db*/
+    v7 = *(&this->q0181); /*0x5782e1*/
+    *(&this->q0187) = v5; /*0x5782e8*/
+    *(&this->q0188) = v6; /*0x5782f2*/
     if ( (((_BYTE)v5 - (_BYTE)v7 + (_BYTE)v6 - 1) & 1) != 0 ) /*0x5782ff*/
     {
       v8 = v7 - 1; /*0x578302*/
-      *(this + 68) = v6 + 1; /*0x578303*/
+      *(&this->q0188) = v6 + 1; /*0x578303*/
     }
     else
     {
       v8 = v7 - 2; /*0x57830c*/
-      *(this + 67) = v5 + 1; /*0x57830f*/
+      *(&this->q0187) = v5 + 1; /*0x57830f*/
     }
-    v9 = *(this + 67); /*0x57831b*/
-    v10 = *(this + 68) << 9; /*0x578321*/
-    *(this + 69) = v8; /*0x578324*/
-    *(this + 70) = *(this + 79) + 4 * (v9 + v10); /*0x578337*/
+    v9 = *(&this->q0187); /*0x57831b*/
+    v10 = *(&this->q0188) << 9; /*0x578321*/
+    *(&this->q0189) = v8; /*0x578324*/
+    *(&this->q01C0) = *(&this->q01C9) + 4 * (v9 + v10); /*0x578337*/
     return *(_DWORD *)v2; /*0x57833d*/
   }
 }
@@ -618,12 +622,12 @@ int LayerClass::CellIteratorReset()
   int v1; // eax
   int result; // eax
 
-  v1 = *(this + 61); /*0x578350*/
-  *(this + 67) = 1; /*0x578356*/
-  *(this + 68) = v1; /*0x578360*/
-  *(this + 69) = v1 - 1; /*0x578369*/
-  result = (v1 << 11) + *(this + 79) + 4; /*0x578378*/
-  *(this + 70) = result; /*0x57837c*/
+  v1 = *(&this->q0181); /*0x578350*/
+  *(&this->q0187) = 1; /*0x578356*/
+  *(&this->q0188) = v1; /*0x578360*/
+  *(&this->q0189) = v1 - 1; /*0x578369*/
+  result = (v1 << 11) + *(&this->q01C9) + 4; /*0x578378*/
+  *(&this->q01C0) = result; /*0x57837c*/
   return result; /*0x578382*/
 }
 }
@@ -652,15 +656,15 @@ int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
       v7 = &g_CellClassArray; /*0x57849d*/
     }
     v3 = (char)v7[283]; /*0x5784a8*/
-    if ( v7[284] && v4 + v5 < v3 + *(this + 61) + 2 * *(this + 64) + 4 ) /*0x5784ca*/
+    if ( v7[284] && v4 + v5 < v3 + *(&this->q0181) + 2 * *(&this->q0184) + 4 ) /*0x5784ca*/
       ++v3; /*0x5784cc*/
   }
-  v8 = *(this + 61); /*0x5784d3*/
+  v8 = *(&this->q0181); /*0x5784d3*/
   result = 0; /*0x578531*/
-  if ( v4 + v5 > v3 + v8 + 2 * *(this + 64) && v4 + v5 <= v3 + v8 + 2 * (*(this + 64) + *(this + 66)) + 2 ) /*0x5784fe*/
+  if ( v4 + v5 > v3 + v8 + 2 * *(&this->q0184) && v4 + v5 <= v3 + v8 + 2 * (*(&this->q0184) + *(&this->q0186)) + 2 ) /*0x5784fe*/
   {
-    v9 = *(this + 63); /*0x578500*/
-    if ( v5 - v4 < 2 * (v9 + *(this + 65)) - v8 && v4 - v5 < v8 - 2 * v9 ) /*0x578523*/
+    v9 = *(&this->q0183); /*0x578500*/
+    if ( v5 - v4 < 2 * (v9 + *(&this->q0185)) - v8 && v4 - v5 < v8 - 2 * v9 ) /*0x578523*/
       return 1; /*0x5784e3*/
   }
   return result; /*0x578525*/
@@ -669,7 +673,6 @@ int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
 // 0x581140
 namespace gamemd {
 void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
-{
 {
   int result; // eax
   __int16 v7; // di
@@ -704,15 +707,15 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
     int v5 = 0;
     int v6 = *v4;
     v7 = *(_WORD *)(a3 + 36) - *(unsigned __int8 *)(a3 + 282) % 6;
-    HIWORD(v99) = *(unsigned __int8 *)(a3 + 282) / -6 + *(_WORD *)(a3 + 38);
-    LOWORD(v99) = v7;
+    IDA_HIWORD(v99) = *(unsigned __int8 *)(a3 + 282) / -6 + *(_WORD *)(a3 + 38);
+    IDA_LOWORD(v99) = v7;
     _BYTE * v8 = (_BYTE *)(*(int (__thiscall **)(int *, _DWORD))(v6 + 140))(v4, 0);
     int v89 = v7;
     v95 = (v7 << 8) + 128;
     v104 = v95;
-    v93 = SHIWORD(v99);
+    v93 = IDA_SHIWORD(v99);
     v106 = 0;
-    v96 = (SHIWORD(v99) << 8) + 128;
+    v96 = (IDA_SHIWORD(v99) << 8) + 128;
     v105 = v96;
     (*(void (__thiscall **)(_BYTE *, int *))(*(_DWORD *)v8 + 436))(v8, &v104);
     int v9 = *(_DWORD *)v8;
@@ -750,15 +753,15 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
         int v16 = 0;
         if ( v15 > 0 )
         {
-          HIWORD(v94) = v5 + HIWORD(v99);
+          IDA_HIWORD(v94) = v5 + IDA_HIWORD(v99);
           do
           {
-            LOWORD(v94) = v16 + v99;
+            IDA_LOWORD(v94) = v16 + v99;
             a3 = (int)v94;
             if ( *(_DWORD *)(v92 + 4 * (v16 + v5 * v15) + 16) && LayerClass::IsWithinUsableArea(v13, (__int16 *)&a3, 1) )
             {
               *(_WORD *)(v13[28] + 10 * CellToTileIndexMap(v13, (__int16 *)&a3)) = 0;
-              unsigned int v17 = (__int16)a3 + (SHIWORD(a3) << 9);
+              unsigned int v17 = (__int16)a3 + (IDA_SHIWORD(a3) << 9);
   _DWORD *v18; // eax
               if ( v17 >= 0x40000 || (v18 = *(_DWORD **)(g_Shroud_CellArray + 4 * v17)) == 0 )
               {
@@ -782,10 +785,10 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
       int v21 = 0;
       if ( v20 > 0 )
       {
-        HIWORD(v94) = i + HIWORD(v99);
+        IDA_HIWORD(v94) = i + IDA_HIWORD(v99);
         do
         {
-          LOWORD(v94) = v21 + v99;
+          IDA_LOWORD(v94) = v21 + v99;
           a3 = (int)v94;
           if ( *(_DWORD *)(v92 + 4 * (v21 + i * v20) + 16)
             && LayerClass::IsWithinUsableArea(v13, (__int16 *)&a3, 1)
@@ -805,14 +808,14 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
       int v24 = 0;
       if ( v23 > 0 )
       {
-        HIWORD(v94) = j + HIWORD(v99);
+        IDA_HIWORD(v94) = j + IDA_HIWORD(v99);
         do
         {
-          LOWORD(v94) = v24 + v99;
+          IDA_LOWORD(v94) = v24 + v99;
           a3 = (int)v94;
           if ( *(_DWORD *)(v92 + 4 * (v24 + j * v23) + 16) && LayerClass::IsWithinUsableArea(v13, (__int16 *)&a3, 1) )
           {
-            unsigned int v25 = (__int16)a3 + (SHIWORD(a3) << 9);
+            unsigned int v25 = (__int16)a3 + (IDA_SHIWORD(a3) << 9);
   _DWORD *v26; // eax
             if ( v25 >= 0x40000 || (v26 = *(_DWORD **)(g_Shroud_CellArray + 4 * v25)) == 0 )
             {
@@ -840,9 +843,9 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
     v104 = v95;
     v105 = v96;
     Coord::To_Screen(g_TacticalClass_Instance, &v104, &v100);
-    LOWORD(a3) = v99 + 5;
-    HIWORD(a3) = HIWORD(v99) + 3;
-    unsigned int v29 = (__int16)(v99 + 5) + ((__int16)(HIWORD(v99) + 3) << 9);
+    IDA_LOWORD(a3) = v99 + 5;
+    IDA_HIWORD(a3) = IDA_HIWORD(v99) + 3;
+    unsigned int v29 = (__int16)(v99 + 5) + ((__int16)(IDA_HIWORD(v99) + 3) << 9);
   _DWORD *v30; // eax
     if ( v29 >= 0x40000 || (v30 = *(_DWORD **)(g_Shroud_CellArray + 4 * v29)) == 0 )
     {
@@ -851,7 +854,7 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
     }
     v106 = g_MapRenderState * *((char *)v30 + 283);
     v104 = ((__int16)(v99 + 5) << 8) + 128;
-    v105 = ((__int16)(HIWORD(v99) + 3) << 8) + 128;
+    v105 = ((__int16)(IDA_HIWORD(v99) + 3) << 8) + 128;
     Coord::To_Screen(g_TacticalClass_Instance, &v104, &v102);
     Cell::CreateCrater(v100 - 120, v101 - 60, v102 - v100 + 240, v103 - v101 + 120, 0);
     v94 = (int *)*((_DWORD *)g_AnimTypeCount + AnimTypeClass::FindIndex(aXgrymed1));
@@ -869,10 +872,10 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
         v93 = v89;
         if ( v89 < result )
         {
-          HIWORD(v96) = v92;
+          IDA_HIWORD(v96) = v92;
           do
           {
-            LOWORD(v96) = v31;
+            IDA_LOWORD(v96) = v31;
             a3 = 0;
             v95 = 2;
             do
@@ -895,7 +898,7 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
               {
                 a3 = (int)v94;
               }
-              v34 = (void **)__2_YAPAXI_Z(0x1C8u);
+              v34 = (void **)RA2_OPNEW(0x1C8u);
               if ( v34 )
               {
                 int v35 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -8, 8);
@@ -933,8 +936,8 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
     int * v42 = (int *)*((_DWORD *)g_FrameCounter + dword_ABC2C8 + 1);
     v43 = *(_WORD *)(a3 + 38) - (*(_BYTE *)(a3 + 282) >> 2);
     int v44 = *v42;
-    LOWORD(v99) = *(_WORD *)(a3 + 36) - (*(_BYTE *)(a3 + 282) & 3);
-    HIWORD(v99) = v43;
+    IDA_LOWORD(v99) = *(_WORD *)(a3 + 36) - (*(_BYTE *)(a3 + 282) & 3);
+    IDA_HIWORD(v99) = v43;
     _BYTE * v45 = (_BYTE *)(*(int (__thiscall **)(int *, _DWORD))(v44 + 140))(v42, 0);
     a3 = (__int16)v99;
     v95 = ((__int16)v99 << 8) + 128;
@@ -963,7 +966,7 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
     v49 = (int *)(*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)g_FrameCounter + g_TerrainTypeTable2 + 2) + 140))(
                    *((_DWORD *)g_FrameCounter + g_TerrainTypeTable2 + 2),
                    0);
-    v105 = ((__int16)(HIWORD(v99) + 3) << 8) + 128;
+    v105 = ((__int16)(IDA_HIWORD(v99) + 3) << 8) + 128;
     v104 = (a3 << 8) + 128;
     int v50 = *v49;
     v106 = 0;
@@ -978,10 +981,10 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
       int v55 = 0;
       if ( v54 > 0 )
       {
-        HIWORD(v96) = k + HIWORD(v99);
+        IDA_HIWORD(v96) = k + IDA_HIWORD(v99);
         do
         {
-          LOWORD(v96) = v55 + v99;
+          IDA_LOWORD(v96) = v55 + v99;
           v92 = v96;
           if ( *(_DWORD *)(v90 + 4 * (v55 + k * v54) + 16) && LayerClass::IsWithinUsableArea(v51, (__int16 *)&v92, 1) )
           {
@@ -997,7 +1000,7 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
               v56 = 0;
             }
             *(_WORD *)(v51[28] + 10 * v56) = 0;
-            unsigned int v58 = (__int16)v92 + (SHIWORD(v92) << 9);
+            unsigned int v58 = (__int16)v92 + (IDA_SHIWORD(v92) << 9);
   _DWORD *v59; // eax
             if ( v58 >= 0x40000 || (v59 = *(_DWORD **)(g_Shroud_CellArray + 4 * v58)) == 0 )
             {
@@ -1018,10 +1021,10 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
       int v62 = 0;
       if ( v61 > 0 )
       {
-        HIWORD(v96) = m + HIWORD(v99);
+        IDA_HIWORD(v96) = m + IDA_HIWORD(v99);
         do
         {
-          LOWORD(v96) = v62 + v99;
+          IDA_LOWORD(v96) = v62 + v99;
           v93 = v96;
           if ( *(_DWORD *)(v90 + 4 * (v62 + m * v61) + 16) && LayerClass::IsWithinUsableArea(v51, (__int16 *)&v93, 1) )
           {
@@ -1051,14 +1054,14 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
       int v67 = 0;
       if ( v66 > 0 )
       {
-        HIWORD(v96) = n + HIWORD(v99);
+        IDA_HIWORD(v96) = n + IDA_HIWORD(v99);
         do
         {
-          LOWORD(v96) = v67 + v99;
+          IDA_LOWORD(v96) = v67 + v99;
           v92 = v96;
           if ( *(_DWORD *)(v90 + 4 * (v67 + n * v66) + 16) && LayerClass::IsWithinUsableArea(v51, (__int16 *)&v92, 1) )
           {
-            unsigned int v68 = (__int16)v92 + (SHIWORD(v92) << 9);
+            unsigned int v68 = (__int16)v92 + (IDA_SHIWORD(v92) << 9);
   _DWORD *v69; // eax
             if ( v68 >= 0x40000 || (v69 = *(_DWORD **)(g_Shroud_CellArray + 4 * v68)) == 0 )
             {
@@ -1086,11 +1089,11 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
     v105 = v97;
     Coord::To_Screen(g_TacticalClass_Instance, &v104, &v102);
     int v72 = (__int16)(v99 + 3);
-    int v73 = (__int16)(HIWORD(v99) + 5) << 9;
+    int v73 = (__int16)(IDA_HIWORD(v99) + 5) << 9;
     bool v74 = v72 + v73 < 0;
     int v75 = v72 + v73;
-    LOWORD(v97) = v99 + 3;
-    HIWORD(v97) = HIWORD(v99) + 5;
+    IDA_LOWORD(v97) = v99 + 3;
+    IDA_HIWORD(v97) = IDA_HIWORD(v99) + 5;
   _DWORD *v76; // eax
     if ( v74 || v75 >= 0x40000 || (v76 = *(_DWORD **)(g_Shroud_CellArray + 4 * v75)) == 0 )
     {
@@ -1099,7 +1102,7 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
     }
     v106 = g_MapRenderState * *((char *)v76 + 283);
     v104 = ((__int16)(v99 + 3) << 8) + 128;
-    v105 = ((__int16)(HIWORD(v99) + 5) << 8) + 128;
+    v105 = ((__int16)(IDA_HIWORD(v99) + 5) << 8) + 128;
     Coord::To_Screen(g_TacticalClass_Instance, &v104, &v100);
     Cell::CreateCrater(v100 - 120, v103 - 60, v102 - v100 + 240, v101 - v103 + 120, 0);
     v95 = *((_DWORD *)g_AnimTypeCount + AnimTypeClass::FindIndex(aXgrymed1));
@@ -1118,10 +1121,10 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
         v93 = a3;
         if ( a3 < result )
         {
-          HIWORD(v98) = v91;
+          IDA_HIWORD(v98) = v91;
           do
           {
-            LOWORD(v98) = v78;
+            IDA_LOWORD(v98) = v78;
             v92 = 0;
             v97 = 2;
             do
@@ -1144,7 +1147,7 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
               {
                 v92 = v95;
               }
-              v81 = (void **)__2_YAPAXI_Z(0x1C8u);
+              v81 = (void **)RA2_OPNEW(0x1C8u);
               if ( v81 )
               {
                 int v82 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, -8, 8);
@@ -1180,4 +1183,3 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
   return result;
 }
 } // namespace gamemd
-}

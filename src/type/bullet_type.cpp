@@ -11,7 +11,7 @@ bool BulletTypeClass::SpawnAtMapCoords(CellStruct* pMapCoords, HouseClass* pOwne
 ObjectClass* BulletTypeClass::CreateObject(HouseClass* pOwner) { return nullptr; }
 bool BulletTypeClass::Rotates() const { return !this->noRotate; }
 // 0x46c840
-void BulletTypeClass::SetScaledSpawnDelay(int delay) { this->scaledSpawnDelay = delay; 
-  *(this + 186) = delay; /*0x46c844*/
+void BulletTypeClass::SetScaledSpawnDelay(int delay) { this->delay = delay; 
+  *(&this->CourseLockDuration6) = delay; /*0x46c844*/
   return delay; /*0x46c84a*/
 }

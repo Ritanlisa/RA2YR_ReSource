@@ -12,6 +12,10 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x710860
 namespace gamemd {
@@ -79,8 +83,8 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
       v6 = (unsigned __int8)HouseClass::GainedPoweredCenter(v7) != 0; /*0x7188af*/
     }
   }
-  LOWORD(v23) = a2 / 256; /*0x7188c1*/
-  HIWORD(v23) = a3 / 256; /*0x7188da*/
+  IDA_LOWORD(v23) = a2 / 256; /*0x7188c1*/
+  IDA_HIWORD(v23) = a3 / 256; /*0x7188da*/
   if ( *((_DWORD *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v23) + 59) != 2 /*0x718962*/
     || v6
     || *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->M12 + 132))(this->M12) + 3278)
@@ -89,22 +93,22 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     || *((_DWORD *)Coord::To_Cell(&MapClass_Instance, &a2) + 59) == 1 )
   {
     v13 = this->M12; /*0x718a01*/
-    LOWORD(v23) = a2 / 256; /*0x718a14*/
-    HIWORD(v23) = a3 / 256; /*0x718a2f*/
+    IDA_LOWORD(v23) = a2 / 256; /*0x718a14*/
+    IDA_HIWORD(v23) = a3 / 256; /*0x718a2f*/
     v14 = *v13; /*0x718a3c*/
     v15 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v23); /*0x718a46*/
     if ( v13->vt_slot_428(this->M12, v15, -1, -1, 0, 1) == 7 /*0x718a60*/
-      || (LOBYTE(v12) = v22) != 0 )
+      || (IDA_LOBYTE(v12) = v22) != 0 )
     {
-      LOWORD(v23) = a2 / 256; /*0x718a80*/
-      HIWORD(v23) = a3 / 256; /*0x718a95*/
+      IDA_LOWORD(v23) = a2 / 256; /*0x718a80*/
+      IDA_HIWORD(v23) = a3 / 256; /*0x718a95*/
       v16 = (int *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v23); /*0x718aa2*/
       if ( !Cell::IsGroundTypeRange(v16) || (*(int (__thiscall **)(_DWORD))(*this->M12 + 44))(this->M12) == 15 ) /*0x718abd*/
       {
         v19 = (*(int (__thiscall **)(_DWORD))(*this->M12 + 132))(this->M12); /*0x718b23*/
         v20 = (int)this->M12; /*0x718b2f*/
         v23 = *(_DWORD *)(v19 + 160); /*0x718b32*/
-        LOBYTE(v12) = (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int, _DWORD, _DWORD))(v20->q16C)( /*0x718b53*/
+        IDA_LOBYTE(v12) = (*(int (__thiscall **)(int, int *, _DWORD, int, _DWORD, int, _DWORD, _DWORD))(v20->q16C)( /*0x718b53*/
                         v20,
                         &v23,
                         0,
@@ -149,13 +153,13 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     v11 = this->M12; /*0x7189be*/
     if ( v11[266] ) /*0x7189c1*/
     {
-      LOBYTE(v12) = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v11 + 224))(v11, v11[266]); /*0x7189ce*/
+      IDA_LOBYTE(v12) = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v11 + 224))(v11, v11[266]); /*0x7189ce*/
     }
     else
     {
       v12 = (_DWORD *)v11[267]; /*0x7189dd*/
       if ( v12 ) /*0x7189e5*/
-        LOBYTE(v12) = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v11 + 228))(v11, v11[267]); /*0x7189ee*/
+        IDA_LOBYTE(v12) = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v11 + 228))(v11, v11[267]); /*0x7189ee*/
     }
   }
   return (char)v12; /*0x7189d4*/
@@ -267,13 +271,13 @@ int ObjectTypeClass_LoadTheaterSHP(int a1)
       if ( *(_BYTE *)(v4 + 168) ) /*0x71dcf4*/
       {
         if ( *(_DWORD *)(v4 + 164) ) /*0x71dd01*/
-          __3_YAXPAX_Z(*(void **)(v4 + 164)); /*0x71dd0c*/
+          RA2_OPDEL(*(void **)(v4 + 164)); /*0x71dd0c*/
       }
       *(_DWORD *)(v4 + 164) = 0; /*0x71dd18*/
       *(_BYTE *)(v4 + 168) = 0; /*0x71dd23*/
       CCFileClass::Construct(v5, Buffer); /*0x71dd29*/
       *(_DWORD *)(v4 + 164) = CCFileClass::ReadEntireFile(v5); /*0x71dd3b*/
-      v5[0] = &CCFileClass::`vftable'; /*0x71dd41*/
+      v5[0] = &(void*)(void*)&CCFileClass_vftable; /*0x71dd41*/
       v7 = 0; /*0x71dd49*/
       Vector::Clear((int)v6); /*0x71dd4d*/
       v5[0] = &off_7E1668; /*0x71dd56*/
@@ -718,7 +722,7 @@ int sub_71A3D0()
   dword_B0EC68 = 0; /*0x71a3dc*/
   byte_B0EC6C = 1; /*0x71a3e1*/
   byte_B0EC6D = 0; /*0x71a3e8*/
-  dword_B0EC60 = (int)&DynamicVectorClass<TemporalClass *>::`vftable'; /*0x71a3ed*/
+  dword_B0EC60 = (int)&(void*)(void*)&DynamicVectorClass_TemporalClass___vftable; /*0x71a3ed*/
   dword_B0EC74 = 10; /*0x71a3f7*/
   dword_B0EC70 = 0; /*0x71a401*/
   return atexit(sub_71A410); /*0x71a40c*/
@@ -729,10 +733,10 @@ int sub_71A3D0()
 namespace gamemd {
 void sub_71A410()
 {
-  dword_B0EC60 = (int)&VectorClass<TemporalClass *>::`vftable'; /*0x71a418*/
+  dword_B0EC60 = (int)&(void*)(void*)&VectorClass_TemporalClass___vftable; /*0x71a418*/
   if ( dword_B0EC64 && byte_B0EC6D ) /*0x71a42c*/
   {
-    __3_YAXPAX_Z(dword_B0EC64); /*0x71a42f*/
+    RA2_OPDEL(dword_B0EC64); /*0x71a42f*/
     dword_B0EC64 = 0; /*0x71a437*/
   }
   byte_B0EC6D = 0; /*0x71a43d*/
@@ -1197,7 +1201,7 @@ int sub_71E620()
   dword_B0F1A8 = 0; /*0x71e62c*/
   byte_B0F1AC = 1; /*0x71e631*/
   byte_B0F1AD = 0; /*0x71e638*/
-  dword_B0F1A0 = (int)&DynamicVectorClass<TEventClass *>::`vftable'; /*0x71e63d*/
+  dword_B0F1A0 = (int)&(void*)(void*)&DynamicVectorClass_TEventClass___vftable; /*0x71e63d*/
   dword_B0F1B4 = 10; /*0x71e647*/
   dword_B0F1B0 = 0; /*0x71e651*/
   return atexit(sub_71E660); /*0x71e65c*/
@@ -1208,10 +1212,10 @@ int sub_71E620()
 namespace gamemd {
 void sub_71E660()
 {
-  dword_B0F1A0 = (int)&VectorClass<TEventClass *>::`vftable'; /*0x71e668*/
+  dword_B0F1A0 = (int)&(void*)(void*)&VectorClass_TEventClass___vftable; /*0x71e668*/
   if ( dword_B0F1A4 && byte_B0F1AD ) /*0x71e67c*/
   {
-    __3_YAXPAX_Z(dword_B0F1A4); /*0x71e67f*/
+    RA2_OPDEL(dword_B0F1A4); /*0x71e67f*/
     dword_B0F1A4 = 0; /*0x71e687*/
   }
   byte_B0F1AD = 0; /*0x71e68d*/
@@ -1223,7 +1227,7 @@ void sub_71E660()
 namespace gamemd {
 int E4Recv_71FA40::sub_71FA40(int a2)
 {
-  *(&this->u32_81) = a2; /*0x71fa44*/
+  this->M84 = a2; /*0x71fa44*/
   return a2; /*0x71fa47*/
 }
 } // namespace gamemd
@@ -1246,12 +1250,12 @@ int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4
 {
   int Instance; // ebx
 
-  ToggleClass::Construct(this, aP1, aP2, aP3, aP4, aP5); /*0x71ff41*/
+  ToggleClass::Construct(aP1, aP2, aP3, aP4, aP5); /*0x71ff41*/
   this->u8_35 = aP9; /*0x71ff52*/
   this->u8_34 = a9; /*0x71ff5c*/
   this->ptr_38 = a3; /*0x71ff5f*/
   this->M60 = a4; /*0x71ff62*/
-  *(_DWORD *)this = &TextButtonClass::`vftable'; /*0x71ff65*/
+  *(_DWORD *)this = &(void*)(void*)&TextButtonClass_vftable; /*0x71ff65*/
   if ( aP4 == -1 || aP5 == -1 ) /*0x71ff70*/
   {
     Instance = TextRenderer::GetInstance(); /*0x71ff7a*/

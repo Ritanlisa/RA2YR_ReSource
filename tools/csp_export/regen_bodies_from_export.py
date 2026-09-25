@@ -65,6 +65,36 @@ for p in sorted(EXPORT.glob('*.cpp')):
 print('fresh pseudocode blocks:', len(pseudo))
 
 
+DEC_NEWDEL = re.compile(r'\b__(2_YAPAXI_Z|3_YAXPAX_Z)\s*\(')
+
+
+def dec_newdel(code):
+    return DEC_NEWDEL.sub(
+        lambda m: ('RA2_OPNEW(' if m.group(1).startswith('2_')
+                   else 'RA2_OPDEL('), code)
+
+
+IDA_VOCAB_RE = re.compile(
+    r'\b(BYTE[0-8]|WORD[0-7]|LOWORD|HIWORD|LOBYTE|HIBYTE|LODWORD|HIDWORD|SHIWORD|SLOBYTE|SHLOBYTE'
+    r'|__PAIR16__|__PAIR32__|__PAIR64__)\(')
+
+
+def ida_vocab(code):
+    """IDA bitfield macros -> IDA_-prefixed forms (ida_compat.h).
+
+    <winnt.h> defines LOBYTE/BYTE1/... with different semantics and rvalue-
+    only shapes; IDA bodies use them as lvalues, so the raw names must never
+    win — everything goes through the IDA_* spellings."""
+    return IDA_VOCAB_RE.sub(lambda m: 'IDA_' + m.group(1) + '(', code)
+
+
+TYPE_ID = re.compile(r'([ \s(\*&<>,]|^)#(\d+)')
+
+
+def type_ids(code):
+    return TYPE_ID.sub(lambda m: m.group(1) + 'void', code)
+
+
 def body_from_pseudo(code):
     """Skip the signature line(s); body = first bare `{` .. last bare `}`,
     re-indented by 2 spaces."""
@@ -126,6 +156,8 @@ for p in sorted(SRC.rglob('*.cpp')):
             i += 1
             continue
         code = pseudo.get(addr)
+        if code:
+            code = type_ids(dec_newdel(ida_vocab(code)))
         new_body = body_from_pseudo(code) if code else None
         rel = str(p.relative_to(ROOT)).replace('\\', '/')
         if new_body is None:

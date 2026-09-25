@@ -1,18 +1,23 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Count_e4.hpp"
+#include "e4/classes/Player_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x408E70
+namespace gamemd {
 AbstractClass * * Count::DecrementRefCountsAudio()
 {
   int v1; // eax
   int result; // eax
   int v3; // edx
 
-  v1 = *(this + 7) - 1; /*0x408e73*/
-  *(this + 7) = v1; /*0x408e76*/
+  v1 = this->q01C - 1; /*0x408e73*/
+  this->q01C = v1; /*0x408e76*/
   if ( v1 < 0 ) /*0x408e79*/
-    *(this + 7) = 0; /*0x408e7b*/
+    this->q01C = 0; /*0x408e7b*/
   result = *this; /*0x408e82*/
   v3 = *(_DWORD *)(*this + 152) - 1; /*0x408e8a*/
   *(_DWORD *)(*this + 152) = v3; /*0x408e8d*/
@@ -23,7 +28,9 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   }
   return result; /*0x408ea1*/
 }
+} // namespace gamemd
 // 0x46F6D0
+namespace gamemd {
 int Count::SetupAllCountriesLobby()
 {
   void *v1; // ecx
@@ -91,7 +98,7 @@ int Count::SetupAllCountriesLobby()
           SessionClass::SetPlayerOption(*v8, v6); /*0x46f7c7*/
         }
       }
-      SetupLobbyCountryCombo(this, ResourceID2, PlayerSide); /*0x46f7d3*/
+      SetupLobbyCountryCombo(ResourceID2, PlayerSide); /*0x46f7d3*/
       result = ShowWindow(hWnd, 5); /*0x46f7df*/
       v2 = (wchar_t **)v8; /*0x46f7e5*/
     }
@@ -102,31 +109,40 @@ int Count::SetupAllCountriesLobby()
   while ( (int)v2 < (int)&g_PlayerNameListEnd ); /*0x46f7ff*/
   return result; /*0x46f805*/
 }
+} // namespace gamemd
 // 0x5F1EA0
+namespace gamemd {
 int Count::GetCountQueue()
 {
   int v1; // eax
 
-  v1 = *(this + 14); /*0x5f1ea0*/
+  v1 = *(&this->q0044); /*0x5f1ea0*/
   if ( v1 ) /*0x5f1ea5*/
     return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 40); /*0x5f1eaa*/
   else
     return 0; /*0x5f1eae*/
 }
+} // namespace gamemd
 // 0x76F080
+namespace gamemd {
 int Count::Get()
 {
-  return *(this + 1); /*0x76f083*/
+  return this->q004; /*0x76f083*/
 }
+} // namespace gamemd
 // 0x76F160
+namespace gamemd {
 unsigned int * Count::Release()
 {
-  ++*(this + 2); /*0x76f162*/
+  ++this->q008; /*0x76f162*/
   return this; /*0x76f165*/
 }
+} // namespace gamemd
 // 0x76F170
+namespace gamemd {
 unsigned int * Count::ddtor()
 {
-  --*(this + 2); /*0x76f172*/
+  --this->q008; /*0x76f172*/
   return this; /*0x76f175*/
 }
+} // namespace gamemd

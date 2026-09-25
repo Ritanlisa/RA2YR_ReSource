@@ -23,11 +23,11 @@ bool TriggerClass::HasCrossesHorizontalLineEvent() const
   int v2; // eax
   _DWORD *v3; // ecx
 
-  v2 = *(this + 10); /*0x726253*/
-  v3 = (_DWORD *)*(this + 9); /*0x726256*/
+  v2 = *(&this->vtable20); /*0x726253*/
+  v3 = (_DWORD *)this->buildingType; /*0x726256*/
   if ( !v2 ) /*0x72625b*/
     return HouseClass::HasType25Building(v3); /*0x72627d*/
-  return HouseClass::HasType25Building(v3) || (unsigned __int8)TriggerClass::HasCrossesHorizontalLineEvent(*(this + 10)); /*0x726274*/
+  return HouseClass::HasType25Building(v3) || (unsigned __int8)TriggerClass::HasCrossesHorizontalLineEvent(*(&this->vtable20)); /*0x726274*/
 }
 // 0x726290
 bool TriggerClass::HasCrossesVerticalLineEvent() const
@@ -35,11 +35,11 @@ bool TriggerClass::HasCrossesVerticalLineEvent() const
   int v2; // eax
   _DWORD *v3; // ecx
 
-  v2 = *(this + 10); /*0x726293*/
-  v3 = (_DWORD *)*(this + 9); /*0x726296*/
+  v2 = *(&this->vtable20); /*0x726293*/
+  v3 = (_DWORD *)this->buildingType; /*0x726296*/
   if ( !v2 ) /*0x72629b*/
     return HouseClass::HasType26Building(v3); /*0x7262bd*/
-  return HouseClass::HasType26Building(v3) || (unsigned __int8)TriggerClass::HasCrossesVerticalLineEvent(*(this + 10)); /*0x7262b4*/
+  return HouseClass::HasType26Building(v3) || (unsigned __int8)TriggerClass::HasCrossesVerticalLineEvent(*(&this->vtable20)); /*0x7262b4*/
 }
 bool TriggerClass::HasZoneEntryByEvent() const
 {
@@ -112,26 +112,26 @@ bool TriggerClass::RegisterEvent(int event, ObjectClass* object,
   int v11; // [esp-10h] [ebp-18h]
   char v12; // [esp+7h] [ebp-1h]
 
-  if ( !*(_BYTE *)(this + 68) || *(_BYTE *)(this + 48) ) /*0x7264cf*/
+  if ( !this->enabled || this->destroyed ) /*0x7264cf*/
     return 0; /*0x7265b4*/
   v12 = 1; /*0x7264e2*/
   if ( a4 ) /*0x7264e7*/
     goto LABEL_16; /*0x7264e7*/
   v7 = 0; /*0x7264f0*/
-  v8 = *(_DWORD **)(*(_DWORD *)(this + 36) + 172); /*0x7264f2*/
+  v8 = this->buildingType->FirstEvent; /*0x7264f2*/
   if ( !v8 ) /*0x7264fa*/
     goto LABEL_16; /*0x7264fa*/
   do /*0x72658b*/
   {
-    if ( (*(_DWORD *)(this + 64) & (1 << v7)) != 0 /*0x726540*/
+    if ( (this->occuredEvents & (1 << v7)) != 0 /*0x726540*/
       || (v11 = a6,
-          Owner = HouseClass::FindOwner(*(void **)(*(_DWORD *)(*(_DWORD *)(this + 36) + 164) + 180)),
-          TEventClass::Execute(v8, a2, Owner, a3, (int *)(this + 52), (int)&a5, v11)) )
+          Owner = HouseClass::FindOwner(*(void **)(this->buildingType->House + 180)),
+          TEventClass::Execute(v8, a2, Owner, a3, (int *)(&this->abstractFlags2), (int)&a5, v11)) )
     {
       if ( TriggerClass::GetValue(v8) ) /*0x726551*/
-        *(_DWORD *)(this + 44) = TriggerClass::GetValue(v8); /*0x726561*/
+        this->house = TriggerClass::GetValue(v8); /*0x726561*/
       if ( a5 && TEventClass::GetStateA(v8) && TEventClass::GetStateB_SpyEvent(v8) ) /*0x726579*/
-        *(_DWORD *)(this + 64) |= 1 << v7; /*0x726582*/
+        this->occuredEvents |= 1 << v7; /*0x726582*/
     }
     else
     {
@@ -193,18 +193,18 @@ TriggerTypeClass::Flags TriggerTypeClass::GetFlags() const
   int v6; // eax
   int v7; // ecx
 
-  v2 = *(this + 43); /*0x7271e5*/
+  v2 = *(&this->uniqueId3); /*0x7271e5*/
   for ( i = 0; v2; i |= v4 ) /*0x7271ef*/
   {
     v4 = TriggerTypeClass::GetActionCategoryFlags(*(void **)(v2 + 44)); /*0x7271f4*/
     v2 = *(_DWORD *)(v2 + 40); /*0x7271f9*/
   }
-  for ( j = *(this + 44); j; i |= v6 ) /*0x72720a*/
+  for ( j = *(&this->uniqueId4); j; i |= v6 ) /*0x72720a*/
   {
     v6 = TriggerTypeClass::Dispatch(*(void **)(j + 44)); /*0x72720f*/
     j = *(_DWORD *)(j + 40); /*0x727214*/
   }
-  v7 = *(this + 42); /*0x72721d*/
+  v7 = *(&this->uniqueId2); /*0x72721d*/
   if ( v7 ) /*0x727225*/
     return i | TriggerTypeClass::GetFlags(v7); /*0x72722c*/
   else
@@ -244,7 +244,7 @@ bool TriggerTypeClass::HasLocalSetOrClearedEvent(int idx_local) const
   char result; // al
   int v4; // edx
 
-  v2 = (_DWORD *)*(this + 43); /*0x727050*/
+  v2 = (_DWORD *)*(&this->uniqueId3); /*0x727050*/
   result = 0; /*0x727056*/
   if ( v2 ) /*0x72705b*/
   {
@@ -263,7 +263,7 @@ bool TriggerTypeClass::HasLocalSetOrClearedEvent(int idx_local) const
 }
 bool TriggerTypeClass::HasCrossesHorizontalLineEvent() const
 {
-    for (TEventClass* evt = firstEvent; evt;
+    for (TEventClass* evt = nxt; evt;
          evt = (TEventClass*)((uintptr_t)(evt->TEventClass_field_28)))
     {
         if (evt->eventType == 25)
@@ -276,7 +276,7 @@ bool TriggerTypeClass::HasCrossesHorizontalLineEvent() const
 
 bool TriggerTypeClass::HasCrossesVerticalLineEvent() const
 {
-    for (TEventClass* evt = firstEvent; evt;
+    for (TEventClass* evt = nxt; evt;
          evt = (TEventClass*)((uintptr_t)(evt->TEventClass_field_28)))
     {
         if (evt->eventType == 26)
@@ -289,7 +289,7 @@ bool TriggerTypeClass::HasCrossesVerticalLineEvent() const
 
 bool TriggerTypeClass::HasZoneEntryByEvent() const
 {
-    for (TEventClass* evt = firstEvent; evt;
+    for (TEventClass* evt = nxt; evt;
          evt = (TEventClass*)((uintptr_t)(evt->TEventClass_field_28)))
     {
         if (evt->eventType == 4)
@@ -325,11 +325,11 @@ bool TriggerTypeClass::RemoveAction(TActionClass* action)
 
 bool TriggerTypeClass::RemoveEvent(TEventClass* event)
 {
-    if (!event || !firstEvent)
+    if (!event || !nxt)
         return false;
 
     TEventClass* prev = nullptr;
-    for (TEventClass* cur = firstEvent; cur;
+    for (TEventClass* cur = nxt; cur;
          cur = (TEventClass*)((uintptr_t)(cur->TEventClass_field_28)))
     {
         if (cur == event)
@@ -338,7 +338,7 @@ bool TriggerTypeClass::RemoveEvent(TEventClass* event)
             if (prev)
                 prev->TEventClass_field_28 = (int32_t)((uintptr_t)(nxt));
             else
-                firstEvent = nxt;
+                nxt = nxt;
             cur->ddtor();
             return true;
         }

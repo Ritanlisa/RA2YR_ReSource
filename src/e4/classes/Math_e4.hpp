@@ -5,7 +5,52 @@
 
 namespace gamemd {
 struct Math {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int u32_4;  // 0x4
+    void* q008;  // 0x8
+    void* q00C;  // 0xC
+    unsigned int u32_14;  // 0x14
+    void* q018;  // 0x18
+    unsigned int q020;  // 0x20
+    unsigned int u32_24;  // 0x24
+    unsigned int u32_28;  // 0x28
+    unsigned int u32_2C;  // 0x2C
+    unsigned int q034;  // 0x34
+    unsigned int q040;  // 0x40
+    unsigned int q044;  // 0x44
+    unsigned int u32_48;  // 0x48
+    unsigned int q050;  // 0x50
+    unsigned int q054;  // 0x54
+    unsigned int q064;  // 0x64
+    unsigned int q068;  // 0x68
+    unsigned int q080;  // 0x80
+    unsigned int q084;  // 0x84
+    unsigned int q100;  // 0x100
+    unsigned int q104;  // 0x104
+    unsigned int q114;  // 0x114
+    unsigned int q128;  // 0x128
+    unsigned int q130;  // 0x130
+    unsigned int q260;  // 0x260
+    unsigned int q304;  // 0x304
+    unsigned int q598;  // 0x598
+    unsigned int q608;  // 0x608
+    unsigned int q630;  // 0x630
+    unsigned int q774;  // 0x774
+    unsigned int q1544;  // 0x1544
+    unsigned int q1584;  // 0x1584
+    unsigned int q1634;  // 0x1634
+    unsigned int q1908;  // 0x1908
+    unsigned int q5170;  // 0x5170
+    unsigned int q5444;  // 0x5444
+    unsigned int q5508;  // 0x5508
+    unsigned int q6408;  // 0x6408
+    unsigned int referenceCount2;
+    unsigned int u32_1C;
+    unsigned int u32_40;
+    unsigned int u32_41;
+    unsigned int RoundToInt;
+    unsigned int Sqrt;
+// --- flat members (END) ---
     void Hypotenuse2D();  // 0x41C350
     double Sin(double a1);  // 0x4CAD50
     float * BuildRotationMatrix(float * a2, float a3);  // 0x5AE750
@@ -16,5 +61,9 @@ struct Math {
     double ArcTan2_Table(double a1);  // 0x4CADB0
     IUnknown * Sub16(BuildingTypeClass * aP1, IUnknown * aP2);  // 0x5B2950
     bool Abs16Cmp(IUnknown * aP1, IUnknown * aP2);  // 0x5B2990
+    static double ArcTan2(...);  // C2597 interim stub
+    static double CalcAngle(...);  // C2597 interim stub
+    static double InitDegToRad(...);  // C2597 interim stub
+    static double SinCos(...);  // C2597 interim stub
 };
 } // namespace gamemd

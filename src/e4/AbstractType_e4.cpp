@@ -2,6 +2,10 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractType_e4.hpp"
+#include "e4/classes/AddTeamCommand_e4.hpp"
+#include "e4/classes/AirstrikeClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x40DCB0
 namespace gamemd {

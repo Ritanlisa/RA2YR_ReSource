@@ -4,31 +4,41 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/VoxelAnimType_e4.hpp"
+#include "e4/classes/SmudgeTypeClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/UnitClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/TeamTypeClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/TerrainTypeClass_e4.hpp"
 
 // 0x6B5260
-S * SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
+SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
 {
   int v3; // eax
   bool v4; // zf
   int v5; // ecx
   void **v6; // edx
 
-  ObjectTypeClass::ConstructFull((int)this, aP1); /*0x6b5269*/
-  *((_DWORD *)this + 165) = -1; /*0x6b5277*/
-  *((_DWORD *)this + 166) = 1; /*0x6b5281*/
-  *((_DWORD *)this + 167) = 1; /*0x6b5287*/
-  *(this + 672) = 0; /*0x6b528d*/
-  *(this + 673) = 0; /*0x6b5294*/
-  *(_DWORD *)this = &SmudgeTypeClass::`vftable'; /*0x6b529b*/
-  *((_DWORD *)this + 1) = &SmudgeTypeClass::`vftable'; /*0x6b52a1*/
-  *((_DWORD *)this + 2) = &SmudgeTypeClass::`vftable'; /*0x6b52a7*/
-  *((_DWORD *)this + 3) = &SmudgeTypeClass::`vftable'; /*0x6b52ae*/
+  ObjectTypeClass::ConstructFull(aP1); /*0x6b5269*/
+  this->ArrayIndex = -1; /*0x6b5277*/
+  this->Width = 1; /*0x6b5281*/
+  this->Height = 1; /*0x6b5287*/
+  *(&this->q10C2) = 0; /*0x6b528d*/
+  *(&this->q10C3) = 0; /*0x6b5294*/
+  *(_DWORD *)this = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b529b*/
+  this->vtable2 = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b52a1*/
+  this->vtable3 = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b52a7*/
+  this->vtable4 = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x6b52b5*/
-  *(_WORD *)(this + 559) = 1; /*0x6b52ba*/
-  *(this + 561) = 0; /*0x6b52c7*/
-  *(this + 562) = 1; /*0x6b52ce*/
-  *(this + 563) = 1; /*0x6b52d4*/
-  *(this + 565) = 0; /*0x6b52da*/
+  this->q22F = 1; /*0x6b52ba*/
+  *(&this->q0E01) = 0; /*0x6b52c7*/
+  *(&this->q0E02) = 1; /*0x6b52ce*/
+  *(&this->q0E03) = 1; /*0x6b52d4*/
+  *(&this->q0E05) = 0; /*0x6b52da*/
   v3 = FactoryClass_Count; /*0x6b52e1*/
   if ( FactoryClass_Count < dword_A8EC20 /*0x6b5322*/
     || (byte_A8EC25 || !dword_A8EC20)
@@ -48,7 +58,7 @@ S * SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
   if ( v3 <= 0 ) /*0x6b533d*/
   {
   LABEL_11:
-    *((_DWORD *)this + 165) = -1; /*0x6b5351*/
+    this->ArrayIndex = -1; /*0x6b5351*/
     return this; /*0x6b535a*/
   }
   else
@@ -61,7 +71,7 @@ S * SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
       if ( v5 >= v3 ) /*0x6b534f*/
         goto LABEL_11; /*0x6b534f*/
     }
-    *((_DWORD *)this + 165) = v5; /*0x6b5361*/
+    this->ArrayIndex = v5; /*0x6b5361*/
     return this; /*0x6b5367*/
   }
 }
@@ -75,18 +85,17 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
   int v11; // eax
   int v12; // [esp-1Ch] [ebp-2Ch]
   int v13; // [esp+8h] [ebp-8h] BYREF
-  int v14; // [esp+Ch] [ebp-4h]
 
-  v7 = (*(int (__thiscall **)(_DWORD *))(*this + 156))(this); /*0x6b55ff*/
+  v7 = this->GetMember41_2(); /*0x6b55ff*/
   if ( v7 ) /*0x6b5603*/
   {
     v8 = a2[1]; /*0x6b5614*/
     v13 = *a2; /*0x6b5619*/
-    v14 = v8; /*0x6b561d*/
+    v8 = v8; /*0x6b561d*/
     if ( a4 ) /*0x6b5621*/
     {
-      v9 = *(this + 166); /*0x6b5623*/
-      v14 += -15 * (a4 / v9 + a4 % v9); /*0x6b5659*/
+      v9 = *(&this->q0406); /*0x6b5623*/
+      v8 += -15 * (a4 / v9 + a4 % v9); /*0x6b5659*/
       v13 += 60 * (a4 / v9 - a4 % v9) / 2; /*0x6b5661*/
     }
     v10 = CellCoord::To_CellObj(&MapClass_Instance, a6); /*0x6b5674*/
@@ -109,34 +118,34 @@ int SmudgeTypeClass::GetSize(unsigned char *** aP1)
     return 0; /*0x6b57db*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x6b570b*/
                      (int)aP1,
-                     (unsigned __int8 *)(this + 36),
+                     (unsigned __int8 *)(&this->vtable46),
                      (unsigned __int8 *)aCrater,
-                     *(_BYTE *)(this + 672));
-  v4 = *(_BYTE *)(this + 673); /*0x6b5710*/
-  *(_BYTE *)(this + 672) = Bool_Overwrite; /*0x6b5716*/
-  v5 = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(this + 36), (unsigned __int8 *)aBurn, v4); /*0x6b5725*/
-  v7 = *(_DWORD *)(this + 664); /*0x6b5732*/
-  *(_BYTE *)(this + 673) = v5; /*0x6b5739*/
-  *(_DWORD *)(this + 664) = INIClass::ReadInt_Overwrite( /*0x6b5744*/
+                     this->q2A0);
+  v4 = this->q2A1; /*0x6b5710*/
+  this->q2A0 = Bool_Overwrite; /*0x6b5716*/
+  v5 = INIClass::ReadBool_Overwrite((int)aP1, (unsigned __int8 *)(&this->vtable46), (unsigned __int8 *)aBurn, v4); /*0x6b5725*/
+  v7 = this->Width; /*0x6b5732*/
+  this->q2A1 = v5; /*0x6b5739*/
+  this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
                               (int)aP1,
-                              (unsigned __int8 *)(this + 36),
+                              (unsigned __int8 *)(&this->vtable46),
                               (unsigned __int8 *)g_INI_Key_Width,
                               v7);
-  *(_DWORD *)(this + 668) = INIClass::ReadInt_Overwrite( /*0x6b575e*/
+  this->Height = INIClass::ReadInt_Overwrite( /*0x6b575e*/
                               (int)aP1,
-                              (unsigned __int8 *)(this + 36),
+                              (unsigned __int8 *)(&this->vtable46),
                               (unsigned __int8 *)g_INI_Key_Height,
-                              *(_DWORD *)(this + 668));
-  if ( *(_BYTE *)(this + 556) ) /*0x6b5764*/
+                              this->Height);
+  if ( this->q22C ) /*0x6b5764*/
     _makepath( /*0x6b57b4*/
       Buffer,
       0,
       0,
-      (const char *)(this + 504),
+      (const char *)(&this->u32_C84),
       (const char *)&off_7E1BC6 + 112 * *((_DWORD *)g_ScenarioClass_Instance + 1174));
   else
-    _makepath(Buffer, 0, 0, (const char *)(this + 504), Ext); /*0x6b5784*/
-  *(_DWORD *)(this + 164) = SearchMIXFile(Buffer, 0); /*0x6b57c7*/
+    _makepath(Buffer, 0, 0, (const char *)(&this->u32_C84), Ext); /*0x6b5784*/
+  this->Image = SearchMIXFile(Buffer, 0, unsigned int a2); /*0x6b57c7*/
   return 1; /*0x6b57cd*/
 }
 // 0x6B6160
@@ -147,13 +156,13 @@ SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass *a2, char a3)
   void **v6; // [esp+4h] [ebp-4h] BYREF
 
   v3 = *(a3 + 41); /*0x6b6164*/
-  *a3 = &SmudgeTypeClass::`vftable'; /*0x6b616a*/
-  *(a3 + 1) = &SmudgeTypeClass::`vftable'; /*0x6b6172*/
-  *(a3 + 2) = &SmudgeTypeClass::`vftable'; /*0x6b6179*/
-  *(a3 + 3) = &SmudgeTypeClass::`vftable'; /*0x6b6180*/
+  *a3 = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b616a*/
+  *(a3 + 1) = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b6172*/
+  *(a3 + 2) = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b6179*/
+  *(a3 + 3) = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b6180*/
   if ( v3 ) /*0x6b6187*/
   {
-    __3_YAXPAX_Z(v3); /*0x6b618a*/
+    RA2_OPDEL(v3); /*0x6b618a*/
     *(a3 + 41) = 0; /*0x6b6192*/
   }
   AbstractClass::AnnounceExpiredPointer(a3, 1); /*0x6b61a0*/
@@ -170,7 +179,7 @@ SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass *a2, char a3)
   }
   ObjectTypeClass::Destruct((int)a3); /*0x6b61f0*/
   if ( (a3 & 1) != 0 ) /*0x6b61fa*/
-    __3_YAXPAX_Z(a3); /*0x6b61fd*/
+    RA2_OPDEL(a3); /*0x6b61fd*/
   return a3; /*0x6b6207*/
 }
 // 0x6B5550
@@ -181,7 +190,7 @@ bool SmudgeTypeClass::GetType(short * a2, int a3)
   bool result; // al
   int v7[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v4 = (void **)__2_YAPAXI_Z(0xB0u); /*0x6b555b*/
+  v4 = (void **)RA2_OPNEW(0xB0u); /*0x6b555b*/
   result = 0; /*0x6b55a7*/
   if ( v4 ) /*0x6b5565*/
   {
@@ -199,7 +208,7 @@ SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
 {
   void **v3; // eax
 
-  v3 = (void **)__2_YAPAXI_Z(0xB0u); /*0x6b55c8*/
+  v3 = (void **)RA2_OPNEW(0xB0u); /*0x6b55c8*/
   if ( v3 ) /*0x6b55d2*/
     return UnitClass::Create(v3, this, &dword_B0B7A8, -1); /*0x6b55de*/
   else
@@ -211,14 +220,14 @@ int SmudgeTypeClass::PowerDrainUpdate(int * a2)
   int v3; // ecx
   int v4; // edx
 
-  AbstractTypeClass::ProcessPower((char *)this, a2); /*0x6b57f9*/
-  Power::TimerProcess(*(_DWORD *)(this + 660)); /*0x6b5807*/
-  LOBYTE(v3) = *(_BYTE *)(this + 672); /*0x6b580c*/
+  AbstractTypeClass::ProcessPower(a2); /*0x6b57f9*/
+  Power::TimerProcess(this->ArrayIndex); /*0x6b5807*/
+  IDA_LOBYTE(v3) = this->q2A0; /*0x6b580c*/
   Power::FlagProcess(a2, v3); /*0x6b5815*/
-  LOBYTE(v4) = *(_BYTE *)(this + 673); /*0x6b581a*/
+  IDA_LOBYTE(v4) = this->q2A1; /*0x6b581a*/
   Power::FlagProcess(a2, v4); /*0x6b5823*/
-  Power::TimerProcess(*(_DWORD *)(this + 664)); /*0x6b5831*/
-  return Power::TimerProcess(*(_DWORD *)(this + 668)); /*0x6b5844*/
+  Power::TimerProcess(this->Width); /*0x6b5831*/
+  return Power::TimerProcess(this->Height); /*0x6b5844*/
 }
 // 0x6B5850
 int SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
@@ -231,10 +240,10 @@ int SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6b5866*/
     {
       ObjectTypeClass::Construct(aP0, (int)&aP1); /*0x6b586f*/
-      *(_DWORD *)aP0 = &SmudgeTypeClass::`vftable'; /*0x6b5874*/
-      *((_DWORD *)aP0 + 1) = &SmudgeTypeClass::`vftable'; /*0x6b587a*/
-      *((_DWORD *)aP0 + 2) = &SmudgeTypeClass::`vftable'; /*0x6b5881*/
-      *((_DWORD *)aP0 + 3) = &SmudgeTypeClass::`vftable'; /*0x6b5888*/
+      *(_DWORD *)aP0 = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b5874*/
+      *((_DWORD *)aP0 + 1) = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b587a*/
+      *((_DWORD *)aP0 + 2) = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b5881*/
+      *((_DWORD *)aP0 + 3) = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b5888*/
     }
     VoxelAnimType::LoadAnim(aP0); /*0x6b5891*/
     ObjectTypeClass::Load2DArt(aP0); /*0x6b5898*/

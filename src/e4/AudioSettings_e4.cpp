@@ -5,22 +5,31 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Options_e4.hpp"
+#include "e4/classes/AudioSettings_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x5FA440
+namespace gamemd {
 void AudioSettings::SetFlag70(char a2)
 {
-  *(this + 70) = a2; /*0x5fa444*/
-  byte_A83D22 = a2; /*0x5fa447*/
+  *(&this->u32_1C0) = a2; /*0x5fa444*/
+  a2 = a2; /*0x5fa447*/
   Debug::Log(); /*0x5fa463*/
 }
+} // namespace gamemd
 // 0x5FA470
+namespace gamemd {
 void AudioSettings::SetFlag68(char a2)
 {
-  *(this + 68) = a2; /*0x5fa474*/
-  byte_A83D20 = a2; /*0x5fa477*/
+  *(&this->q0188) = a2; /*0x5fa474*/
+  a2 = a2; /*0x5fa477*/
   Debug::Log(); /*0x5fa493*/
 }
+} // namespace gamemd
 // 0x6B6300
+namespace gamemd {
 AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
   int result; // eax
@@ -211,7 +220,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
         }
         break;
       case 0x531u: /*0x6b6733*/
-        if ( !HIWORD(a3) ) /*0x6b67b1*/
+        if ( !IDA_HIWORD(a3) ) /*0x6b67b1*/
         {
           v27 = GetDlgItem(hDlg, 1328); /*0x6b67c0*/
           v28 = v27; /*0x6b67c6*/
@@ -250,7 +259,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   }
   if ( (unsigned __int16)a3 == 1333 ) /*0x6b68a9*/
   {
-    if ( !HIWORD(a3) ) /*0x6b69c8*/
+    if ( !IDA_HIWORD(a3) ) /*0x6b69c8*/
     {
       Theme::Stop(&g_BuildingTypeClass_Count, 1); /*0x6b69d4*/
       Theme::QueueSong((int)&g_BuildingTypeClass_Count, -3); /*0x6b69e0*/
@@ -258,7 +267,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
     }
     return 0; /*0x6b69e5*/
   }
-  if ( (unsigned __int16)a3 != 1670 || HIWORD(a3) ) /*0x6b68ba*/
+  if ( (unsigned __int16)a3 != 1670 || IDA_HIWORD(a3) ) /*0x6b68ba*/
     return 0; /*0x6b69ec*/
   v33 = GetDlgItem(hDlg, 1327); /*0x6b68cf*/
   if ( v33 ) /*0x6b68d9*/
@@ -289,3 +298,4 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   *(_DWORD *)GetWindowLongA(hDlg, 8) = 1; /*0x6b69b5*/
   return 0; /*0x6b6619*/
 }
+} // namespace gamemd

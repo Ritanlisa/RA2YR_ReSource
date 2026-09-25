@@ -3,6 +3,9 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_578640_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Matrix3x4_e4.hpp"
+#include "e4/classes/ParticleSystemClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x40FFFF
 namespace gamemd {
@@ -20,7 +23,7 @@ int Math_InitDegToRad()
 namespace gamemd {
 void Math::Hypotenuse2D()
 {
-  Math::Sqrt(*this * *this + *(this + 1) * *(this + 1)); /*0x41c369*/
+  Math::Sqrt(*this * *this + this->u32_4 * this->u32_4, unsigned int a1); /*0x41c369*/
 }
 }
 // 0x4CAC40
@@ -38,11 +41,11 @@ void Math_Sqrt()
   if ( a1 <= 0.0 ) /*0x4cac65*/
     v1 = a1 * -1.0; /*0x4cac67*/
   v5 = v1; /*0x4cac6d*/
-  v3 = (unsigned int)&unk_7FFFFF & LODWORD(v5); /*0x4cac77*/
-  v4 = (LODWORD(v5) >> 23) - 127; /*0x4cac80*/
+  v3 = (unsigned int)&unk_7FFFFF & IDA_LODWORD(v5); /*0x4cac77*/
+  v4 = (IDA_LODWORD(v5) >> 23) - 127; /*0x4cac80*/
   if ( (v4 & 1) != 0 ) /*0x4cac85*/
     v3 |= (unsigned int)&ToggleClass::`RTTI Class Hierarchy Descriptor'; /*0x4cac87*/
-  return COERCE_FLOAT(((((__int16)v4 >> 1) + 127) << 23) + dword_8650BC[v3 >> 10]); /*0x4cac59*/
+  return COERCE_FLOAT(((((__int16, unsigned int a1)v4 >> 1) + 127) << 23) + dword_8650BC[v3 >> 10]); /*0x4cac59*/
 }
 }
 // 0x4CACB0
@@ -58,7 +61,7 @@ void Math_SinCos()
   v3 = (v1 / 2) & 0x80001FFF; /*0x4cacc9*/
   if ( v3 < 0 )
     v3 = (((_WORD)v3 - 1) | 0xFFFFE000) + 1 + ((int)((((_WORD)v3 - 1) | 0xFFFFE000) + 1) < 0 ? 0x2000 : 0);
-  if ( v2 && v3 < 0x1FFF ) /*0x4cace7*/
+  if (v2 && v3 < 0x1FFF, unsigned int a1) /*0x4cace7*/
     ++v3; /*0x4cace9*/
   return flt_84F084[v3]; /*0x4cacf1*/
 }
@@ -92,7 +95,7 @@ int Math::Sin(double a1)
 
   v1 = Math::RoundToInt(a1 * 651.8986469044033) & 0x80000FFF; /*0x4cad5f*/
   if ( v1 < 0 )
-    v1 = (((_WORD)v1 - 1) | 0xFFFFF000) + 1 + ((int)((((_WORD)v1 - 1) | 0xFFFFF000) + 1) < 0 ? 0x1000 : 0);
+    v1 = (((_WORD, unsigned int a2, unsigned int a1)v1 - 1) | 0xFFFFF000) + 1 + ((int)((((_WORD)v1 - 1) | 0xFFFFF000) + 1) < 0 ? 0x1000 : 0);
   return flt_85D0A4[v1]; /*0x4cad7b*/
 }
 }
@@ -144,7 +147,6 @@ void Math_CalcAngle()
 namespace gamemd {
 void * Math::BuildRotationMatrix(float * a2, float a3)
 {
-  double v3; // kr00_8
   double v5; // st7
   double v7; // st6
   double v8; // st6
@@ -156,29 +158,29 @@ void * Math::BuildRotationMatrix(float * a2, float a3)
   double v14; // st7
   float v16; // [esp+10h] [ebp+8h]
 
-  v3 = a3; /*0x5ae762*/
+  a3 = a3; /*0x5ae762*/
   v16 = Math::ArcTan2(a3); /*0x5ae76f*/
-  v5 = Math::SinCos(v3); /*0x5ae775*/
+  v5 = Math::SinCos(a3); /*0x5ae775*/
   v7 = *a2 * *a2; /*0x5ae787*/
   *this = (1.0 - v7) * v16 + v7; /*0x5ae797*/
   v8 = 1.0 - v16; /*0x5ae7a1*/
-  *(this + 1) = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/
+  this->u32_4 = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/
   v9 = a2[2] * *a2 * v8; /*0x5ae7bb*/
   v10 = v5 * a2[1]; /*0x5ae7bf*/
-  *(this + 3) = 0.0; /*0x5ae7c2*/
-  *(this + 2) = v9 + v10; /*0x5ae7c7*/
-  *(this + 4) = *a2 * a2[1] * v8 + v5 * a2[2]; /*0x5ae7d8*/
+  this->q00C = 0.0; /*0x5ae7c2*/
+  this->q008 = v9 + v10; /*0x5ae7c7*/
+  this->q040 = *a2 * a2[1] * v8 + v5 * a2[2]; /*0x5ae7d8*/
   v11 = a2[1] * a2[1]; /*0x5ae7e0*/
-  *(this + 5) = (1.0 - v11) * v16 + v11; /*0x5ae7f0*/
+  this->u32_14 = (1.0 - v11) * v16 + v11; /*0x5ae7f0*/
   v12 = a2[2] * a2[1] * v8; /*0x5ae7fb*/
   v13 = v5 * *a2; /*0x5ae7ff*/
-  *(this + 7) = 0.0; /*0x5ae801*/
-  *(this + 6) = v12 - v13; /*0x5ae806*/
-  *(this + 8) = a2[2] * *a2 * v8 - v5 * a2[1]; /*0x5ae817*/
-  *(this + 9) = a2[2] * a2[1] * v8 + v5 * *a2; /*0x5ae82b*/
+  this->u32_1C = 0.0; /*0x5ae801*/
+  this->q018 = v12 - v13; /*0x5ae806*/
+  this->q020 = a2[2] * *a2 * v8 - v5 * a2[1]; /*0x5ae817*/
+  this->u32_24 = a2[2] * a2[1] * v8 + v5 * *a2; /*0x5ae82b*/
   v14 = a2[2] * a2[2]; /*0x5ae835*/
-  *(this + 11) = 0.0; /*0x5ae83f*/
-  *(this + 10) = (1.0 - v14) * v16 + v14; /*0x5ae84a*/
+  *(&this->u32_41) = 0.0; /*0x5ae83f*/
+  *(&this->u32_40) = (1.0 - v14) * v16 + v14; /*0x5ae84a*/
   return this; /*0x5ae851*/
 }
 }
@@ -192,7 +194,7 @@ int Math::DistSq2D(TechnoClass * aP1)
   _BYTE v6[8]; // [esp+4h] [ebp-Ch] BYREF
   int v7; // [esp+Ch] [ebp-4h]
 
-  v2 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)this + 72))(this, v6); /*0x5f656e*/
+  v2 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)&this->referenceCount2))(this, v6); /*0x5f656e*/
   v3 = *v2; /*0x5f6574*/
   v4 = v2[1]; /*0x5f6576*/
   v7 = v2[2]; /*0x5f657c*/
@@ -273,7 +275,7 @@ unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, 
       --v10; /*0x64669c*/
       *(float *)((char *)v9 + (char *)&v27 - (char *)a2 - 4) = v11 + v12; /*0x64669f*/
     }
-    while ( v10 ); /*0x6466a3*/
+    while (v10, unsigned int a1); /*0x6466a3*/
   }
   v18 = v28; /*0x646703*/
   *a1 = v27; /*0x64670b*/
@@ -332,7 +334,7 @@ double Math::ArcTan(double a1)
 namespace gamemd {
 IUnknown * Math::Sub16(BuildingTypeClass * aP1, IUnknown * aP2)
 {
-  LOWORD(aP2) = *this - *aP2; /*0x5b295a*/
+  IDA_LOWORD(aP2) = *this - *aP2; /*0x5b295a*/
   *aP1 = aP2; /*0x5b2967*/
   return aP1; /*0x5b2969*/
 }
@@ -369,7 +371,7 @@ void sub_5C7DB0(unsigned short * a1, unsigned short * a2, unsigned short a3, int
       v6 = *a2++; /*0x5c7dcc*/
       v7 = v5 + (unsigned __int16)*a1 + a3 * v6; /*0x5c7dda*/
       *a1++ = v7; /*0x5c7ddc*/
-      v8 = HIWORD(v7); /*0x5c7de2*/
+      v8 = IDA_HIWORD(v7); /*0x5c7de2*/
       --v4; /*0x5c7de5*/
       v5 = v8; /*0x5c7de6*/
     }

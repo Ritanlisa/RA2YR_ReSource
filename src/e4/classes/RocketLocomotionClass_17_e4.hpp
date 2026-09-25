@@ -5,7 +5,28 @@
 
 namespace gamemd {
 struct RocketLocomotionClass_17 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+    void* q004;  // 0x4
+    int q008;  // 0x8
+    bool q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    int q010;  // 0x10
+    bool IsInitialized;  // 0x12
+    int Count;  // 0x16
+    bool q018;  // 0x18
+    unsigned char q01C;  // 0x1C
+    bool q024;  // 0x24
+    unsigned char q028;  // 0x28
+    int q034;  // 0x34
+    unsigned char q038;  // 0x38
+    unsigned char q04C;  // 0x4C
+    unsigned char q050;  // 0x50
+    bool q054;  // 0x54
+    unsigned int Capacity;
+    unsigned int Items;
+    unsigned int Items2;
+// --- flat members (END) ---
     void ddtor();  // 0x6647B0
     int UpdateMovement(int a2);  // 0x664800
     char AddRef(int a2);  // 0x664810
@@ -14,7 +35,7 @@ struct RocketLocomotionClass_17 {
     int IndexOf(unsigned int * a2);  // 0x664930
     char Release(int a2, unsigned int * a3);  // 0x664990
     int Launch(unsigned int * a2);  // 0x664A40
-    VectorClass * Constructor(char a2);  // 0x664A70
+    VectorClass_flat * Constructor(char a2);  // 0x664A70
     DynamicVector * QueryInterface(char a2);  // 0x664AC0
     unsigned int BeginMove(int a2);  // 0x6647E0
     unsigned int PointerToIndex(int a2);  // 0x664970

@@ -5,7 +5,10 @@
 
 namespace gamemd {
 struct Conflict_WorldDominationTour_26 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int u32_4;  // 0x4
+    unsigned int RefCount;  // 0x8
+// --- flat members (END) ---
     BOOL AddRef();  // 0x766920
     unsigned int * Release();  // 0x766FA0
     unsigned int * ddtor();  // 0x766FB0

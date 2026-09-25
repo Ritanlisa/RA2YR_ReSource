@@ -2,17 +2,19 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/Delegate_e4.hpp"
+#include "e4/classes/TriggerTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5BD0D0
 namespace gamemd {
 int Debug::ScrollText(CellStruct * aP1)
 {
-  char result; // al
   int v4; // eax
   int v5; // ebp
   int v6; // edx
   int v7; // edi
-  int v8; // ebx
   const char *v9; // eax
   int v10; // eax
   _DWORD *v11; // [esp+4h] [ebp-10h]
@@ -21,48 +23,47 @@ int Debug::ScrollText(CellStruct * aP1)
   const char *i; // [esp+10h] [ebp-4h]
   char v15; // [esp+18h] [ebp+4h]
 
-  result = g_MiscFlag; /*0x5bd0d0*/
+  g_MiscFlag = g_MiscFlag; /*0x5bd0d0*/
   if ( g_MiscFlag ) /*0x5bd0dd*/
   {
-    v4 = *(_DWORD *)(this + 10020); /*0x5bd0ef*/
-    v5 = *(_DWORD *)(this + 10012) + v4; /*0x5bd108*/
-    v13 = *(_DWORD *)(this + 10016) + *(_DWORD *)(this + 10024); /*0x5bd10e*/
-    v6 = v4 + *(_DWORD *)(this + 10028); /*0x5bd112*/
-    *(_BYTE *)(this + 10036) = 0; /*0x5bd119*/
+    v4 = this->u32_2724; /*0x5bd0ef*/
+    v5 = this->u32_271C + v4; /*0x5bd108*/
+    v13 = this->u32_2720 + this->u32_2728; /*0x5bd10e*/
+    v6 = v4 + this->u32_272C; /*0x5bd112*/
+    this->u8_2734 = 0; /*0x5bd119*/
     v7 = v5 + strlen(aP1); /*0x5bd127*/
     if ( v7 > v6 ) /*0x5bd12b*/
       v7 = v6; /*0x5bd12d*/
-    v8 = v5; /*0x5bd131*/
+    v5 = v5; /*0x5bd131*/
     if ( v5 < v7 ) /*0x5bd133*/
     {
       v12 = (_BYTE *)(this + v13 + 20 * v5 + 5 * v5); /*0x5bd148*/
       v9 = &aP1[-v5]; /*0x5bd15c*/
-      v11 = (_DWORD *)(this + 4 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)); /*0x5bd15e*/
+      v11 = (_DWORD *)(&this->u32_10 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)); /*0x5bd15e*/
       for ( i = &aP1[-v5]; ; v9 = i ) /*0x5bd162*/
       {
-        v15 = v9[v8]; /*0x5bd16f*/
+        v15 = v9[v5]; /*0x5bd16f*/
         *v12 = Debug_Helper(v15); /*0x5bd187*/
-        *v11 = *(_DWORD *)(this + 10000); /*0x5bd18f*/
+        *v11 = this->u32_2710; /*0x5bd18f*/
         if ( v15 == 10 ) /*0x5bd197*/
         {
-          v10 = *(_DWORD *)(this + 10016); /*0x5bd199*/
-          *(_DWORD *)(this + 10012) = 0; /*0x5bd19f*/
-          *(_DWORD *)(this + 10016) = v10 + 1; /*0x5bd1aa*/
+          v10 = this->u32_2720; /*0x5bd199*/
+          this->u32_271C = 0; /*0x5bd19f*/
+          this->u32_2720 = v10 + 1; /*0x5bd1aa*/
         }
         else
         {
-          ++*(_DWORD *)(this + 10012); /*0x5bd1b2*/
+          ++this->u32_271C; /*0x5bd1b2*/
         }
-        ++v8; /*0x5bd1c0*/
+        ++v5; /*0x5bd1c0*/
         v11 += 25; /*0x5bd1c9*/
         v12 += 25; /*0x5bd1cd*/
-        if ( v8 >= v7 ) /*0x5bd1d1*/
+        if ( v5 >= v7 ) /*0x5bd1d1*/
           break; /*0x5bd1d1*/
       }
     }
-    return Text::DrawRepeated((void *)this, v5, v13, v7 - v5, 1); /*0x5bd1e0*/
+    return Text::DrawRepeated(v5, v13, v7 - v5, 1); /*0x5bd1e0*/
   }
-  return result; /*0x5bd1e8*/
 }
 }
 // 0x6E61F0
@@ -73,7 +74,7 @@ int Debug::AccumFlags()
   int i; // edi
   int v3; // eax
 
-  v1 = *(this + 40); /*0x6e61f1*/
+  v1 = *(&this->uniqueId0); /*0x6e61f1*/
   for ( i = 0; v1; i |= v3 ) /*0x6e61fc*/
   {
     v3 = TriggerTypeClass::GetFlags(v1); /*0x6e6200*/

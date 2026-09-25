@@ -1,8 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Type_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x578540
+namespace gamemd {
 int Type::CheckAmbiguity(int a2, char a3)
 {
   int v3; // edx
@@ -20,17 +23,18 @@ int Type::CheckAmbiguity(int a2, char a3)
     v4 = *(char *)(a2 + 283); /*0x578560*/
     if ( *(_BYTE *)(a2 + 284) ) /*0x57855a*/
     {
-      if ( v3 + v5 < v4 + *(this + 61) + 2 * *(this + 64) + 4 ) /*0x578582*/
+      if ( v3 + v5 < v4 + this->q0F4 + 2 * this->q100 + 4 ) /*0x578582*/
         ++v4; /*0x578584*/
     }
   }
-  v6 = *(this + 61); /*0x57858b*/
+  v6 = this->q0F4; /*0x57858b*/
   result = 0; /*0x5785e9*/
-  if ( v3 + v5 > v4 + v6 + 2 * *(this + 64) && v3 + v5 <= v4 + v6 + 2 * (*(this + 64) + *(this + 66)) + 2 ) /*0x5785b6*/
+  if ( v3 + v5 > v4 + v6 + 2 * this->q100 && v3 + v5 <= v4 + v6 + 2 * (this->q100 + this->q108) + 2 ) /*0x5785b6*/
   {
-    v7 = *(this + 63); /*0x5785b8*/
-    if ( v5 - v3 < 2 * (v7 + *(this + 65)) - v6 && v3 - v5 < v6 - 2 * v7 ) /*0x5785db*/
+    v7 = this->q0FC; /*0x5785b8*/
+    if ( v5 - v3 < 2 * (v7 + this->q104) - v6 && v3 - v5 < v6 - 2 * v7 ) /*0x5785db*/
       return 1; /*0x57859b*/
   }
   return result; /*0x5785dd*/
 }
+} // namespace gamemd

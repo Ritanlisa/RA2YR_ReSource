@@ -5,7 +5,35 @@
 
 namespace gamemd {
 struct SaveGame {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned char q004;  // 0x4
+    bool q00A;  // 0xA
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_20;  // 0x20
+    unsigned int q028;  // 0x28
+    unsigned int q034;  // 0x34
+    unsigned int q050;  // 0x50
+    unsigned int q064;  // 0x64
+    unsigned int q080;  // 0x80
+    void* q0B4;  // 0xB4
+    unsigned int q100;  // 0x100
+    unsigned int q128;  // 0x128
+    unsigned int q130;  // 0x130
+    void* q180;  // 0x180
+    unsigned int q304;  // 0x304
+    void* q384;  // 0x384
+    unsigned int q598;  // 0x598
+    void* q900;  // 0x900
+    unsigned int qA13;  // 0xA13
+    unsigned int q1634;  // 0x1634
+    void* q2304;  // 0x2304
+    unsigned int q5170;  // 0x5170
+    unsigned int q5684;  // 0x5684
+    unsigned int __pad_0;
+    unsigned int q0040;
+    unsigned int u32_1C;
+    unsigned int vt_slot_16;
+// --- flat members (END) ---
     int LoadArrayData(int * a2);  // 0x4391C0
     int WriteDataArray(int * a2);  // 0x54E750
     bool SaveTriggerEvents();  // 0x6607D0

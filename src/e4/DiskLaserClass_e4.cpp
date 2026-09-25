@@ -2,24 +2,28 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/DiskLaserClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4A7A30
-D DiskLaserClass::DiskLaserClass()
+DiskLaserClass::DiskLaserClass()
 {
   int v2; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4a7a33*/
-  *(_DWORD *)this = &DiskLaserClass::`vftable'; /*0x4a7a3a*/
-  *(_DWORD *)(this + 4) = &DiskLaserClass::`vftable'; /*0x4a7a40*/
-  *(_DWORD *)(this + 8) = &DiskLaserClass::`vftable'; /*0x4a7a47*/
-  *(_DWORD *)(this + 12) = &DiskLaserClass::`vftable'; /*0x4a7a4e*/
-  *(_DWORD *)(this + 36) = 0; /*0x4a7a55*/
-  *(_DWORD *)(this + 40) = 0; /*0x4a7a58*/
-  *(_DWORD *)(this + 44) = 0; /*0x4a7a5b*/
-  *(_DWORD *)(this + 48) = 0; /*0x4a7a5e*/
-  *(_DWORD *)(this + 52) = 0; /*0x4a7a61*/
-  *(_DWORD *)(this + 56) = 0; /*0x4a7a64*/
-  *(_DWORD *)(this + 60) = 0; /*0x4a7a67*/
+  AbstractClass::Constructor(); /*0x4a7a33*/
+  *(_DWORD *)this = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7a3a*/
+  this->vtable2 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7a40*/
+  this->vtable3 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7a47*/
+  this->vtable4 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7a4e*/
+  this->q024 = 0; /*0x4a7a55*/
+  this->q028 = 0; /*0x4a7a58*/
+  this->q02C = 0; /*0x4a7a5b*/
+  this->q030 = 0; /*0x4a7a5e*/
+  this->q034 = 0; /*0x4a7a61*/
+  this->q038 = 0; /*0x4a7a64*/
+  this->q03C = 0; /*0x4a7a67*/
   if ( dword_8A0218 < dword_8A0210 /*0x4a7a9e*/
     || (byte_8A0215 || !dword_8A0210)
     && dword_8A021C > 0
@@ -37,14 +41,12 @@ D DiskLaserClass::DiskLaserClass()
 void * DiskLaserClass::CopyTo(char a2)
 {
   int v3; // eax
-  _DWORD *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *this = &DiskLaserClass::`vftable'; /*0x4a7c9d*/
-  *(this + 1) = &DiskLaserClass::`vftable'; /*0x4a7ca3*/
-  *(this + 2) = &DiskLaserClass::`vftable'; /*0x4a7caa*/
-  *(this + 3) = &DiskLaserClass::`vftable'; /*0x4a7cb1*/
-  v5 = this; /*0x4a7cbf*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_8A0208 + 16))(&dword_8A0208, &v5); /*0x4a7cc3*/
+  *this = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7c9d*/
+  this->vtable2 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7ca3*/
+  this->vtable3 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7caa*/
+  this->vtable4 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7cb1*/
+  v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_8A0208 + 16))(&dword_8A0208, &this); /*0x4a7cc3*/
   if ( v3 != -1 && v3 < dword_8A0218 && v3 < --dword_8A0218 ) /*0x4a7cde*/
   {
     do /*0x4a7cf6*/
@@ -54,9 +56,9 @@ void * DiskLaserClass::CopyTo(char a2)
     }
     while ( v3 < dword_8A0218 ); /*0x4a7cf6*/
   }
-  AbstractClass::DTOR(this); /*0x4a7cfa*/
+  AbstractClass::DTOR(); /*0x4a7cfa*/
   if ( (a2 & 1) != 0 ) /*0x4a7d04*/
-    __3_YAXPAX_Z(this); /*0x4a7d07*/
+    RA2_OPDEL(); /*0x4a7d07*/
   return this; /*0x4a7d11*/
 }
 // 0x4A7B90
@@ -70,10 +72,10 @@ int DiskLaserClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x4a7ba9*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x4a7bb2*/
-      *aP0 = (int)&DiskLaserClass::`vftable'; /*0x4a7bb7*/
-      aP0[1] = (int)&DiskLaserClass::`vftable'; /*0x4a7bbd*/
-      aP0[2] = (int)&DiskLaserClass::`vftable'; /*0x4a7bc4*/
-      aP0[3] = (int)&DiskLaserClass::`vftable'; /*0x4a7bcb*/
+      *aP0 = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7bb7*/
+      aP0[1] = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7bbd*/
+      aP0[2] = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7bc4*/
+      aP0[3] = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7bcb*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x4a7bdb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x4a7be9*/

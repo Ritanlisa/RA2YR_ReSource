@@ -11,6 +11,12 @@
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/Radar_e4.hpp"
 #include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/TActionClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/TClassFactory_MechLocomotionClass_e4.hpp"
+#include "e4/classes/TEventClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4FCDC0
 namespace gamemd {
@@ -18,17 +24,17 @@ int TActionClass::executeBuildAction()
 {
   char result; // al
 
-  result = *(_BYTE *)(this + 504); /*0x4fcdc0*/
+  result = this->q1F8; /*0x4fcdc0*/
   if ( !result ) /*0x4fcdc8*/
   {
-    result = *(_BYTE *)(this + 503); /*0x4fcdca*/
+    result = this->__pad_1F7; /*0x4fcdca*/
     if ( !result ) /*0x4fcdd2*/
-      return HouseClass::CheckWinCondition(this, 0); /*0x4fcdd6*/
+      return HouseClass::CheckWinCondition(0); /*0x4fcdd6*/
   }
-  if ( *(_DWORD *)(this + 664) == -1 ) /*0x4fcde3*/
+  if ( this->q298 == -1 ) /*0x4fcde3*/
   {
     result = (char)g_CurrentFrame; /*0x4fcde5*/
-    *(_DWORD *)(this + 664) = g_CurrentFrame; /*0x4fcdea*/
+    this->q298 = g_CurrentFrame; /*0x4fcdea*/
   }
   return result; /*0x4fcddb*/
 }
@@ -41,9 +47,9 @@ int TActionClass::executeMoveAction(int a2)
   int result; // eax
   _DWORD *v5; // esi
 
-  for ( i = *(this + 30) - 1; i >= 0; --i ) /*0x50d2d8*/
+  for ( i = *(&this->vtable40) - 1; i >= 0; --i ) /*0x50d2d8*/
   {
-    result = *(this + 27); /*0x50d2e0*/
+    result = *(&this->vtable37); /*0x50d2e0*/
     v5 = *(_DWORD **)(result + 4 * i); /*0x50d2e3*/
     if ( v5[184] == a2 ) /*0x50d2ec*/
     {
@@ -60,7 +66,7 @@ int TActionClass::executeMoveAction(int a2)
 namespace gamemd {
 int TActionClass::executeGuardAction(int a2)
 {
-  *(this + 5436) = a2; /*0x50da04*/
+  this->q54F0 = a2; /*0x50da04*/
   return a2; /*0x50da0a*/
 }
 }
@@ -68,8 +74,8 @@ int TActionClass::executeGuardAction(int a2)
 namespace gamemd {
 int TActionClass::executeHuntAction(int a2)
 {
-  *(this + 5437) = a2; /*0x50da24*/
-  *(this + 5439) = g_CurrentFrame; /*0x50da30*/
+  this->q54F4 = a2; /*0x50da24*/
+  this->q54FC = g_CurrentFrame; /*0x50da30*/
   return a2; /*0x50da36*/
 }
 }
@@ -77,7 +83,7 @@ int TActionClass::executeHuntAction(int a2)
 namespace gamemd {
 int TActionClass::executeDeployAction(int a2)
 {
-  *(this + 5413) = a2; /*0x50dfe4*/
+  *(&this->q8743) = a2; /*0x50dfe4*/
   return a2; /*0x50dfea*/
 }
 }
@@ -137,8 +143,8 @@ void sub_567F70(int * a1, int a2)
         {
           if ( v13 + v9 * v9 < v14 ) /*0x568033*/
           {
-            HIWORD(v22) = v9 + v21; /*0x568045*/
-            LOWORD(v22) = v10 + v20; /*0x56804a*/
+            IDA_HIWORD(v22) = v9 + v21; /*0x568045*/
+            IDA_LOWORD(v22) = v10 + v20; /*0x56804a*/
             v15 = ((__int16)(v9 + v21) << 9) + (__int16)(v10 + v20); /*0x56805c*/
             if ( v15 >= 0x40000 || (v16 = *(_DWORD **)(v12 + 4 * v15)) == 0 ) /*0x56806e*/
             {
@@ -188,36 +194,34 @@ void sub_567F70(int * a1, int a2)
 namespace gamemd {
 int TActionClass::executeRepairAction(int a2)
 {
-  int result; // eax
   int v4; // eax
   int *i; // esi
   int v6; // eax
 
-  result = a2; /*0x577c90*/
+  a2 = a2; /*0x577c90*/
   if ( a2 ) /*0x577c99*/
     *(_BYTE *)(*(_DWORD *)&HouseClass_Array->gap0[4 * *(_DWORD *)(a2 + 48)] + 577) = 0; /*0x577ca7*/
-  if ( (#375 *)a2 != HouseClass_Player ) /*0x577cb4*/
+  if ( (void *)a2 != HouseClass_Player ) /*0x577cb4*/
   {
     if ( a2 ) /*0x577cb8*/
-      return result; /*0x577cb8*/
     goto LABEL_7; /*0x577cb8*/
   }
   if ( !a2 ) /*0x577cc2*/
   LABEL_7:
     Debug::Log(); /*0x577cc4*/
   HouseClass::ResetObjectOrders(0, 0); /*0x577cd1*/
-  v4 = *(this + 61); /*0x577ce0*/
-  *(this + 67) = 1; /*0x577ce6*/
-  *(this + 68) = v4; /*0x577cf0*/
-  *(this + 69) = v4 - 1; /*0x577cf9*/
-  *(this + 70) = (v4 << 11) + *(this + 79) + 4; /*0x577d0e*/
-  for ( i = (int *)LayerClass::CellIteratorNext(this); i; i = (int *)LayerClass::CellIteratorNext(this) ) /*0x577d1d*/
+  v4 = *(&this->nextArrayIndex1); /*0x577ce0*/
+  *(&this->nextArrayIndex7) = 1; /*0x577ce6*/
+  *(&this->nextArrayIndex8) = v4; /*0x577cf0*/
+  *(&this->nextArrayIndex9) = v4 - 1; /*0x577cf9*/
+  *(&this->referenceCount0) = (v4 << 11) + *(&this->referenceCount9) + 4; /*0x577d0e*/
+  for (); i; i = (int *)LayerClass::CellIteratorNext(this) ) /*0x577d1d*/
   {
     DisplayClass::AdvanceFrameCounter(i); /*0x577d21*/
     if ( i[76] >= 0 ) /*0x577d2e*/
     {
       v6 = i[80]; /*0x577d36*/
-      LOBYTE(v6) = v6 & 0xFC; /*0x577d3f*/
+      IDA_LOBYTE(v6) = v6 & 0xFC; /*0x577d3f*/
       i[75] &= 0xFFFFFFE7; /*0x577d41*/
       i[80] = v6; /*0x577d47*/
     }
@@ -225,7 +229,7 @@ int TActionClass::executeRepairAction(int a2)
   Radar::UpdateReveal(0, 0); /*0x577d63*/
   *((_BYTE *)HouseClass_Player + 576) = 0; /*0x577d72*/
   FogOfWar::Render((int **)&MapClass_Instance); /*0x577d79*/
-  return (*(int (__thiscall **)(_DWORD *, int))(*this + 56))(this, 2); /*0x577d88*/
+  return (2); /*0x577d88*/
 }
 }
 // 0x578850
@@ -453,7 +457,7 @@ AnimClass * * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, in
 
   v7 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v8, *(this + 17)); /*0x6e1cdb*/
   GroundHeight = 0; /*0x6e1cdf*/
-  v9[1] = (SHIWORD(v7) << 8) + 128; /*0x6e1d00*/
+  v9[1] = (IDA_SHIWORD(v7) << 8) + 128; /*0x6e1d00*/
   v9[0] = ((__int16)v7 << 8) + 128; /*0x6e1d0a*/
   GroundHeight = Cell::GetGroundHeight(v9); /*0x6e1d13*/
   if ( (*((_DWORD *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v7) + 80) & 0x100) != 0 /*0x6e1d49*/
@@ -461,7 +465,7 @@ AnimClass * * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, in
   {
     GroundHeight += dword_B0E6D4; /*0x6e1d57*/
   }
-  v5 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6e1d60*/
+  v5 = (void **)RA2_OPNEW(0x1C8u); /*0x6e1d60*/
   if ( v5 ) /*0x6e1d6a*/
     *((_BYTE *)AnimClass::ctor(v5, (void *)g_RulesClass_Instance[1].BarrelDebris[1], v9, 0, 1, (void *)0x600, 0, 0) + 408) = 1; /*0x6e1d92*/
   else
@@ -481,7 +485,7 @@ AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown
 
   v8 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v9, *(this + 17)); /*0x6e22ae*/
   GroundHeight = 0; /*0x6e22b2*/
-  v10[1] = (SHIWORD(v8) << 8) + 128; /*0x6e22d3*/
+  v10[1] = (IDA_SHIWORD(v8) << 8) + 128; /*0x6e22d3*/
   v10[0] = ((__int16)v8 << 8) + 128; /*0x6e22dd*/
   GroundHeight = Cell::GetGroundHeight(v10); /*0x6e22e6*/
   if ( (*((_DWORD *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v8) + 80) & 0x100) != 0 /*0x6e231c*/
@@ -489,7 +493,7 @@ AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown
   {
     GroundHeight += dword_B0E6D4; /*0x6e232a*/
   }
-  v6 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6e2333*/
+  v6 = (void **)RA2_OPNEW(0x1C8u); /*0x6e2333*/
   if ( v6 ) /*0x6e233d*/
     *((_BYTE *)AnimClass::ctor(v6, *((void **)g_AnimTypeCount + *(this + 36)), v10, 0, 1, (void *)0x600, 0, 0) + 408) = 1; /*0x6e2368*/
   else
@@ -516,7 +520,7 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
 
   v14 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v15, *(this + 17)); /*0x6e23b1*/
   GroundHeight = 0; /*0x6e23b5*/
-  v17 = (SHIWORD(v14) << 8) + 128; /*0x6e23d6*/
+  v17 = (IDA_SHIWORD(v14) << 8) + 128; /*0x6e23d6*/
   v16 = ((__int16)v14 << 8) + 128; /*0x6e23e0*/
   GroundHeight = Cell::GetGroundHeight(&v16); /*0x6e23e9*/
   if ( (*((_DWORD *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v14) + 80) & 0x100) != 0 /*0x6e241f*/
@@ -531,7 +535,7 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
   WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(v8, *(_DWORD *)(v7 + 172), v9[59], &v16); /*0x6e246d*/
   if ( WarheadVersusMultiplier ) /*0x6e2471*/
   {
-    v11 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6e247d*/
+    v11 = (void **)RA2_OPNEW(0x1C8u); /*0x6e247d*/
     if ( v11 ) /*0x6e2484*/
     {
       v12 = (void *)Return::HRESULT_Fail(v16, v17, GroundHeight); /*0x6e24a1*/
@@ -568,7 +572,7 @@ ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, i
 
   v17 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v19, *(this + 17)); /*0x6e2c60*/
   GroundHeight = 0; /*0x6e2c64*/
-  v21 = (SHIWORD(v17) << 8) + 128; /*0x6e2c85*/
+  v21 = (IDA_SHIWORD(v17) << 8) + 128; /*0x6e2c85*/
   v20 = ((__int16)v17 << 8) + 128; /*0x6e2c8f*/
   GroundHeight = Cell::GetGroundHeight(&v20); /*0x6e2c98*/
   if ( (*((_DWORD *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v17) + 80) & 0x100) != 0 /*0x6e2cce*/
@@ -592,7 +596,7 @@ ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, i
     v24 = GroundHeight; /*0x6e2d77*/
     v23[1] = v11 % v8 + v21; /*0x6e2d7f*/
     v24 = Cell::GetGroundHeight(v23); /*0x6e2d93*/
-    v12 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6e2d9c*/
+    v12 = (void **)RA2_OPNEW(0x1C8u); /*0x6e2d9c*/
     if ( v12 ) /*0x6e2da3*/
     {
       v14 = abs32(Random::State((_DWORD *)g_ScenarioClass_Instance + 134)) & 0x80000001; /*0x6e2dba*/
@@ -635,7 +639,7 @@ int TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
   v7 = *v6; /*0x6e371b*/
   v8 = v6[1]; /*0x6e3722*/
   v9 = v6[2]; /*0x6e3725*/
-  v10 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x6e3728*/
+  v10 = (void **)RA2_OPNEW(0x1C8u); /*0x6e3728*/
   if ( v10 ) /*0x6e3732*/
   {
     v19[2] = v9 + 5; /*0x6e373b*/
@@ -648,8 +652,8 @@ int TActionClass::executeParadropAction(int a2, int a3, int a4, IUnknown * aP4)
   do /*0x6e37da*/
   {
     v13 = *((_WORD *)v11 + 1); /*0x6e377e*/
-    LOWORD(v17) = *(_WORD *)v11 + v16; /*0x6e378a*/
-    HIWORD(v17) = HIWORD(v16) + v13; /*0x6e378f*/
+    IDA_LOWORD(v17) = *(_WORD *)v11 + v16; /*0x6e378a*/
+    IDA_HIWORD(v17) = IDA_HIWORD(v16) + v13; /*0x6e378f*/
     v18 = v17; /*0x6e37a2*/
     for ( i = (_DWORD *)*((_DWORD *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v18) + 57); i; i = (_DWORD *)i[12] ) /*0x6e37b3*/
       (*(void (__thiscall **)(_DWORD *, int, _DWORD, _DWORD))(*i + 340))(i, g_RulesClass_Instance->CrateMinimum, 0, 0); /*0x6e37c9*/
@@ -732,26 +736,25 @@ int TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown * aP4)
 }
 // 0x71E6A0
 namespace gamemd {
-T TActionClass::TActionClass()
+TActionClass::TActionClass()
 {
   int v2; // ecx
   char v3; // al
   int v4; // eax
-  _DWORD *v5; // edx
   int v6; // eax
   int v7; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x71e6a4*/
-  *(_DWORD *)(this + 36) = -1; /*0x71e6ab*/
-  *(_DWORD *)(this + 40) = 0; /*0x71e6b2*/
-  *(_DWORD *)(this + 44) = 0; /*0x71e6b5*/
-  *(_DWORD *)(this + 48) = 0; /*0x71e6b8*/
-  *(_BYTE *)(this + 56) = 0; /*0x71e6bb*/
-  *(_DWORD *)(this + 84) = 0; /*0x71e6be*/
-  *(_DWORD *)this = &TEventClass::`vftable'; /*0x71e6c1*/
-  *(_DWORD *)(this + 4) = &TEventClass::`vftable'; /*0x71e6c7*/
-  *(_DWORD *)(this + 8) = &TEventClass::`vftable'; /*0x71e6ce*/
-  *(_DWORD *)(this + 12) = &TEventClass::`vftable'; /*0x71e6d5*/
+  AbstractClass::Constructor(); /*0x71e6a4*/
+  this->eventType = -1; /*0x71e6ab*/
+  this->TEventClass_field_28 = 0; /*0x71e6b2*/
+  this->TEventClass_field_2C = 0; /*0x71e6b5*/
+  this->TEventClass_field_30 = 0; /*0x71e6b8*/
+  this->TEventClass_field_38 = 0; /*0x71e6bb*/
+  this->TEventClass_field_54 = 0; /*0x71e6be*/
+  *(_DWORD *)this = &(void*)(void*)&TEventClass_vftable; /*0x71e6c1*/
+  this->vtable2 = &(void*)(void*)&TEventClass_vftable; /*0x71e6c7*/
+  this->vtable3 = &(void*)(void*)&TEventClass_vftable; /*0x71e6ce*/
+  this->vtable4 = &(void*)(void*)&TEventClass_vftable; /*0x71e6d5*/
   v2 = dword_B0F1B0; /*0x71e6dc*/
   if ( dword_B0F1B0 < dword_B0F1A8 /*0x71e71a*/
     || (byte_B0F1AD || !dword_B0F1A8)
@@ -775,16 +778,16 @@ T TActionClass::TActionClass()
   }
   else
   {
-    v5 = dword_B0F1A4; /*0x71e73a*/
-    while ( *v5 != this ) /*0x71e742*/
+    dword_B0F1A4 = dword_B0F1A4; /*0x71e73a*/
+    while ( *dword_B0F1A4 != this ) /*0x71e742*/
     {
       ++v4; /*0x71e744*/
-      ++v5; /*0x71e745*/
+      ++dword_B0F1A4; /*0x71e745*/
       if ( v4 >= v2 ) /*0x71e74a*/
         goto LABEL_11; /*0x71e74a*/
     }
   }
-  *(_DWORD *)(this + 36) = v4; /*0x71e74f*/
+  this->eventType = v4; /*0x71e74f*/
   if ( g_TActionClassState < dword_B0F660 /*0x71e786*/
     || (byte_B0F665 || !dword_B0F660)
     && dword_B0F66C > 0
@@ -807,7 +810,7 @@ T TActionClass::TActionClass()
     v7 = g_AnimManager++; /*0x71e7e6*/
     *((_DWORD *)g_AnimPoolCount + v7) = this; /*0x71e7f5*/
   }
-  *(_DWORD *)(this + 52) = 0; /*0x71e7f8*/
+  this->TEventClass_field_34 = 0; /*0x71e7f8*/
   return this; /*0x71e7fd*/
 }
 }
@@ -837,16 +840,16 @@ int TActionClass::ExecuteAction(int a2, int a3)
   int v3; // eax
   int result; // eax
 
-  v3 = *(this + 10); /*0x6dd2c0*/
+  v3 = *(&this->vtable20); /*0x6dd2c0*/
   if ( v3 == a2 ) /*0x6dd2c9*/
-    *(this + 10) = *(_DWORD *)(v3 + 40); /*0x6dd2ce*/
+    *(&this->vtable20) = v3->TActionClass_field_28; /*0x6dd2ce*/
   result = 0; /*0x6dd2d5*/
-  if ( *(this + 12) == a2 ) /*0x6dd2d9*/
-    *(this + 12) = 0; /*0x6dd2db*/
-  if ( *(this + 20) == a2 ) /*0x6dd2e1*/
-    *(this + 20) = 0; /*0x6dd2e3*/
-  if ( *(this + 19) == a2 ) /*0x6dd2ec*/
-    *(this + 19) = 0; /*0x6dd2ee*/
+  if ( *(&this->vtable22) == a2 ) /*0x6dd2d9*/
+    *(&this->vtable22) = 0; /*0x6dd2db*/
+  if ( *(&this->vtable30) == a2 ) /*0x6dd2e1*/
+    *(&this->vtable30) = 0; /*0x6dd2e3*/
+  if ( *(&this->vtable29) == a2 ) /*0x6dd2ec*/
+    *(&this->vtable29) = 0; /*0x6dd2ee*/
   return result; /*0x6dd2f1*/
 }
 } // namespace gamemd
@@ -1081,7 +1084,6 @@ char TActionClass::PlayAudioAtRandomWP(int a2, int a3, int a4, int a5)
 {
   int v5; // esi
   int v7; // edi
-  _DWORD *v8; // ebx
   __int16 *v9; // ecx
   int v10; // eax
   int v11; // ecx
@@ -1091,13 +1093,13 @@ char TActionClass::PlayAudioAtRandomWP(int a2, int a3, int a4, int a5)
 
   v5 = 0; /*0x6e178a*/
   v7 = 0; /*0x6e178e*/
-  v8 = v15; /*0x6e1790*/
+  v15 = v15; /*0x6e1790*/
   do /*0x6e17cc*/
   {
     if ( ScenarioClass::Is_Waypoint_Valid((char *)g_ScenarioClass_Instance, v7) ) /*0x6e179b*/
     {
       ++v5; /*0x6e17b7*/
-      *v8++ = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v14, v7); /*0x6e17b8*/
+      *v15++ = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v14, v7); /*0x6e17b8*/
       if ( v5 == 400 ) /*0x6e17c3*/
         break; /*0x6e17c3*/
     }
@@ -1107,7 +1109,7 @@ char TActionClass::PlayAudioAtRandomWP(int a2, int a3, int a4, int a5)
   v9 = (__int16 *)&v15[Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v5 - 1)]; /*0x6e17e3*/
   v10 = (v9[1] << 8) + 128; /*0x6e1800*/
   v13[0] = (*v9 << 8) + 128; /*0x6e1805*/
-  v11 = *(this + 36); /*0x6e1809*/
+  v11 = *(&this->vtable46); /*0x6e1809*/
   v13[1] = v10; /*0x6e180f*/
   v13[2] = 0; /*0x6e1813*/
   PlayAudioAt2(v11, v13, 0); /*0x6e181b*/
@@ -1132,8 +1134,8 @@ char TActionClass::executeGuardAreaAction(int a2, int a3, int a4, IUnknown * aP4
   v10 = *WorldCoords; /*0x6e199c*/
   v11 = WorldCoords[1]; /*0x6e19a3*/
   v12 = WorldCoords[2]; /*0x6e19b1*/
-  LOWORD(v9) = v10 / 256; /*0x6e19d1*/
-  HIWORD(v9) = v11 / 256; /*0x6e19d6*/
+  IDA_LOWORD(v9) = v10 / 256; /*0x6e19d1*/
+  IDA_HIWORD(v9) = v11 / 256; /*0x6e19d6*/
   if ( v9 != dword_B0E680 /*0x6e1a14*/
     && ((v6 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v9), (Infantry = Cell::IsBridge(v6)) != 0)
      || (Infantry = CellClass::FindInfantry(v6, 0)) != 0) )
@@ -1226,7 +1228,7 @@ char TActionClass::executeFollowAction(int a2, int a3, int a4, IUnknown * aP4)
 namespace gamemd {
 char TActionClass::executeLoadAction(int a2, int a3, int a4, IUnknown * aP4)
 {
-  #374 *v6; // eax
+  void *v6; // eax
   int v8; // [esp+4h] [ebp-14h] BYREF
   int v9; // [esp+8h] [ebp-10h] BYREF
   int v10[2]; // [esp+Ch] [ebp-Ch] BYREF
@@ -1234,7 +1236,7 @@ char TActionClass::executeLoadAction(int a2, int a3, int a4, IUnknown * aP4)
 
   v8 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v9, *(this + 17)); /*0x6e253e*/
   GroundHeight = 0; /*0x6e2542*/
-  v10[1] = (SHIWORD(v8) << 8) + 128; /*0x6e2563*/
+  v10[1] = (IDA_SHIWORD(v8) << 8) + 128; /*0x6e2563*/
   v10[0] = ((__int16)v8 << 8) + 128; /*0x6e256d*/
   GroundHeight = Cell::GetGroundHeight(v10); /*0x6e2576*/
   if ( (*((_DWORD *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v8) + 80) & 0x100) != 0 /*0x6e25ac*/
@@ -1242,7 +1244,7 @@ char TActionClass::executeLoadAction(int a2, int a3, int a4, IUnknown * aP4)
   {
     GroundHeight += dword_B0E6D4; /*0x6e25ba*/
   }
-  v6 = (#374 *)__2_YAPAXI_Z(0x148u); /*0x6e25c3*/
+  v6 = (void *)RA2_OPNEW(0x148u); /*0x6e25c3*/
   if ( v6 ) /*0x6e25cd*/
     DamageAnimClass::Constructor(v6, *((_DWORD *)dword_A8EB2C + *(this + 36)), v10, 0); /*0x6e25e8*/
   return 1; /*0x6e25ef*/
@@ -1467,7 +1469,7 @@ char TActionClass::CreateNukeEffect(AbstractClass * aP1, int a3, int a4, Abstrac
 
   v15 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v16, *(this + 17)); /*0x6e3433*/
   GroundHeight = 0; /*0x6e3437*/
-  v20 = (SHIWORD(v15) << 8) + 128; /*0x6e3458*/
+  v20 = (IDA_SHIWORD(v15) << 8) + 128; /*0x6e3458*/
   v19 = ((__int16)v15 << 8) + 128; /*0x6e3462*/
   GroundHeight = Cell::GetGroundHeight(&v19); /*0x6e346b*/
   if ( (*((_DWORD *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v15) + 80) & 0x100) != 0 ) /*0x6e3487*/
@@ -1506,7 +1508,7 @@ char TActionClass::executeLightningAction(int a2, int a3, int a4, IUnknown * aP4
 {
   if ( !a2 ) /*0x6e3b48*/
     return 0; /*0x6e3b4a*/
-  HouseClass::CreateRadarOutage(a2, *(this + 36)); /*0x6e3b56*/
+  HouseClass::CreateRadarOutage(a2, *(&this->vtable46)); /*0x6e3b56*/
   return 1; /*0x6e3b4c*/
 }
 } // namespace gamemd
@@ -1537,10 +1539,10 @@ int TActionClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x6e3dc6*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x6e3dcf*/
-      *aP0 = (int)&TActionClass::`vftable'; /*0x6e3dd4*/
-      aP0[1] = (int)&TActionClass::`vftable'; /*0x6e3dda*/
-      aP0[2] = (int)&TActionClass::`vftable'; /*0x6e3de1*/
-      aP0[3] = (int)&TActionClass::`vftable'; /*0x6e3de8*/
+      *aP0 = (int)&(void*)(void*)&TActionClass_vftable; /*0x6e3dd4*/
+      aP0[1] = (int)&(void*)(void*)&TActionClass_vftable; /*0x6e3dda*/
+      aP0[2] = (int)&(void*)(void*)&TActionClass_vftable; /*0x6e3de1*/
+      aP0[3] = (int)&(void*)(void*)&TActionClass_vftable; /*0x6e3de8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x6e3df8*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 12); /*0x6e3e06*/
@@ -1578,33 +1580,33 @@ int TActionClass::Validate(int a2)
   int v9; // eax
   int v10; // eax
 
-  AbstractClass::ProcessPower((#378 *)this); /*0x6e3e59*/
-  v3 = *(_DWORD *)(this + 40); /*0x6e3e5e*/
+  AbstractClass::ProcessPower(); /*0x6e3e59*/
+  v3 = this->TActionClass_field_28; /*0x6e3e5e*/
   if ( v3 ) /*0x6e3e63*/
   {
     v4 = (*(int (__stdcall **)(int))(*(_DWORD *)(v3 + 4) + 16))(v3 + 4); /*0x6e3e6c*/
     Power::TimerProcess(v4); /*0x6e3e72*/
   }
-  Power::TimerProcess(*(_DWORD *)(this + 44)); /*0x6e3e7d*/
-  v5 = *(_DWORD *)(this + 48); /*0x6e3e82*/
+  Power::TimerProcess(this->TActionClass_field_2C); /*0x6e3e7d*/
+  v5 = this->TActionClass_field_30; /*0x6e3e82*/
   if ( v5 ) /*0x6e3e87*/
   {
     v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(v5 + 4) + 16))(v5 + 4); /*0x6e3e90*/
     Power::TimerProcess(v6); /*0x6e3e96*/
   }
-  v7 = *(_DWORD *)(this + 76); /*0x6e3e9b*/
+  v7 = this->TActionClass_field_4C; /*0x6e3e9b*/
   if ( v7 ) /*0x6e3ea0*/
   {
     v8 = (*(int (__stdcall **)(int))(*(_DWORD *)(v7 + 4) + 16))(v7 + 4); /*0x6e3ea9*/
     Power::TimerProcess(v8); /*0x6e3eaf*/
   }
-  v9 = *(_DWORD *)(this + 80); /*0x6e3eb4*/
+  v9 = this->TActionClass_field_50; /*0x6e3eb4*/
   if ( v9 ) /*0x6e3eb9*/
   {
     v10 = (*(int (__stdcall **)(int))(*(_DWORD *)(v9 + 4) + 16))(v9 + 4); /*0x6e3ec2*/
     Power::TimerProcess(v10); /*0x6e3ec8*/
   }
-  return Power::TimerProcess(*(_DWORD *)(this + 144)); /*0x6e3edb*/
+  return Power::TimerProcess(this->Value); /*0x6e3edb*/
 }
 } // namespace gamemd
 
@@ -1632,12 +1634,11 @@ char TActionClass::executeForceShieldAction(int a2, int a3, int a4, IUnknown * a
   int IndexByName; // eax
   int v10; // ecx
   int v11; // eax
-  int v12; // esi
   int v14; // [esp+8h] [ebp-1Ch] BYREF
   _DWORD v15[3]; // [esp+Ch] [ebp-18h] BYREF
   _BYTE v16[12]; // [esp+18h] [ebp-Ch] BYREF
 
-  v5 = a2; /*0x6e4205*/
+  a2 = a2; /*0x6e4205*/
   if ( !a2 ) /*0x6e420d*/
     return 0; /*0x6e420d*/
   a2 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v14, *(this + 17)); /*0x6e4233*/
@@ -1646,7 +1647,7 @@ char TActionClass::executeForceShieldAction(int a2, int a3, int a4, IUnknown * a
   v15[0] = *v8; /*0x6e424a*/
   v15[1] = v8[1]; /*0x6e4251*/
   v15[2] = v8[2]; /*0x6e425b*/
-  IndexByName = BuildingTypeClass::FindIndexByName(this + 21); /*0x6e425f*/
+  IndexByName = this->BuildingTypeClass_15.FindIndexByName(); /*0x6e425f*/
   if ( IndexByName < 0 ) /*0x6e4266*/
     return 0; /*0x6e4266*/
   if ( IndexByName > g_TriggerClassCount ) /*0x6e426e*/
@@ -1654,16 +1655,16 @@ char TActionClass::executeForceShieldAction(int a2, int a3, int a4, IUnknown * a
   v10 = *((_DWORD *)g_TriggerTypeCount + IndexByName); /*0x6e4276*/
   if ( !v10 ) /*0x6e427b*/
     return 0; /*0x6e427b*/
-  v11 = (*(int (__thiscall **)(int, int))(*(_DWORD *)v10 + 140))(v10, v5); /*0x6e4280*/
-  v12 = v11; /*0x6e4286*/
+  v11 = (*(int (__thiscall **)(int, int))(*(_DWORD *)v10 + 140))(v10, a2); /*0x6e4280*/
+  v11 = v11; /*0x6e4286*/
   if ( !v11 ) /*0x6e428a*/
     return 0; /*0x6e428a*/
   if ( !(*(unsigned __int8 (__thiscall **)(int, _DWORD *, _DWORD))(*(_DWORD *)v11 + 1168))(v11, v15, 0) ) /*0x6e4297*/
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)v12 + 248))(v12); /*0x6e42a5*/
+    (*(void (__thiscall **)(int))(*(_DWORD *)v11 + 248))(v11); /*0x6e42a5*/
     return 0; /*0x6e42b2*/
   }
-  (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v12 + 1244))(v12, 0); /*0x6e42bb*/
+  (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v11 + 1244))(v11, 0); /*0x6e42bb*/
   return 1; /*0x6e42ab*/
 }
 } // namespace gamemd
@@ -1796,7 +1797,7 @@ int TActionClass::StubReturn47()
 namespace gamemd {
 int TActionClass::Stub()
 {
-  return *(this + 9); /*0x6e4653*/
+  return this->idxArray; /*0x6e4653*/
 }
 } // namespace gamemd
 
@@ -1804,8 +1805,8 @@ int TActionClass::Stub()
 namespace gamemd {
 int TActionClass::executeAirstrikeAction()
 {
-  *((_BYTE *)this + 68) = 1; /*0x7268f0*/
-  return BuildingClass::ProcessUpgradeEffects(this);
+  this->TActionClass_field_44 = 1; /*0x7268f0*/
+  return BuildingClass::ProcessUpgradeEffects();
 }
 } // namespace gamemd
 

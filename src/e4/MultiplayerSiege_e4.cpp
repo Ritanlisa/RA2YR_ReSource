@@ -3,8 +3,20 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/MultiplayerSiege_e4.hpp"
+#include "e4/classes/PlayerClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Multiplayer_e4.hpp"
+#include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/NetworkAddress_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5CA680
+namespace gamemd {
 int MultiplayerSiege::Read()
 {
   char result; // al
@@ -27,7 +39,9 @@ int MultiplayerSiege::Read()
   }
   return result; /*0x5ca689*/
 }
+} // namespace gamemd
 // 0x5CA6D0
+namespace gamemd {
 int MultiplayerSiege::Write(void ** a1)
 {
   char result; // al
@@ -105,7 +119,9 @@ int MultiplayerSiege::Write(void ** a1)
   }
   return result; /*0x5ca6e3*/
 }
+} // namespace gamemd
 // 0x5CA800
+namespace gamemd {
 AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
 {
   int v3; // eax
@@ -140,7 +156,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   if ( v3 >= Game_PlayerCount ) /*0x5ca84c*/
   {
     v5 = Block; /*0x5ca84e*/
-    v14 = &VectorClass<Cell>::`vftable'; /*0x5ca852*/
+    v14 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5ca852*/
     if ( !Block || !v16 ) /*0x5ca868*/
       return 0; /*0x5ca868*/
     goto LABEL_26; /*0x5ca868*/
@@ -149,25 +165,25 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
   if ( v6 < 0 || v6 >= HouseClass_Count ) /*0x5ca887*/
   {
     v5 = Block; /*0x5ca980*/
-    v14 = &VectorClass<Cell>::`vftable'; /*0x5ca984*/
+    v14 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5ca984*/
     if ( !Block || !v16 ) /*0x5ca996*/
       return 0; /*0x5ca996*/
   LABEL_26:
-    __3_YAXPAX_Z(v5); /*0x5ca998*/
+    RA2_OPDEL(v5); /*0x5ca998*/
     return 0; /*0x5ca9a4*/
   }
   v7 = *(_DWORD **)&HouseClass_Array->gap0[4 * v6]; /*0x5ca893*/
   if ( *(_BYTE *)(v7[13] + 422) ) /*0x5ca899*/
   {
     v5 = Block; /*0x5ca8a3*/
-    v14 = &VectorClass<Cell>::`vftable'; /*0x5ca8a7*/
+    v14 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5ca8a7*/
     if ( !Block || !v16 ) /*0x5ca8bd*/
       return 0; /*0x5ca8bd*/
     goto LABEL_26; /*0x5ca8bd*/
   }
   Debug::Log(); /*0x5ca8d2*/
   v8 = *(_DWORD *)Block; /*0x5ca8e0*/
-  LOBYTE(v13[0]) = 1; /*0x5ca8e2*/
+  IDA_LOBYTE(v13[0]) = 1; /*0x5ca8e2*/
   HouseClass::SetMapSeed(v7, v8); /*0x5ca8e8*/
   for ( i = 0; i < HouseClass_Count; ++i ) /*0x5ca8f6*/
   {
@@ -175,7 +191,7 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
     if ( !*(_BYTE *)(v10[13] + 422) && v10 != v7 ) /*0x5ca910*/
     {
       Debug::Log(); /*0x5ca91c*/
-      v11 = (int *)(*(int (__thiscall **)(void *, char *, int, void ***, _DWORD *))(*(_DWORD *)this + 196))( /*0x5ca939*/
+      v11 = (int *)(*(int (__thiscall **)(void *, char *, int, void ***, _DWORD *))(*(_DWORD *)&this->q04C6))( /*0x5ca939*/
                      this,
                      &a2,
                      i,
@@ -184,17 +200,21 @@ AbstractClass * * MultiplayerSiege::ProcessTurn(char a2)
       HouseClass::SetMapSeed(v10, *v11); /*0x5ca944*/
     }
   }
-  v14 = &VectorClass<Cell>::`vftable'; /*0x5ca957*/
+  v14 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5ca957*/
   if ( Block && v16 ) /*0x5ca969*/
-    __3_YAXPAX_Z(Block); /*0x5ca96c*/
+    RA2_OPDEL(Block); /*0x5ca96c*/
   return 1; /*0x5ca974*/
 }
+} // namespace gamemd
 // 0x5CA7E0
+namespace gamemd {
 char MultiplayerSiege::StubReturnFalse()
 {
   return 0; /*0x5ca7e2*/
 }
+} // namespace gamemd
 // 0x5CA9B0
+namespace gamemd {
 char MultiplayerSiege::CheckStatus(int a1)
 {
   wchar_t **v1; // eax
@@ -215,7 +235,7 @@ char MultiplayerSiege::CheckStatus(int a1)
   int v16; // eax
   int v17; // edx
 
-  v1 = (wchar_t **)__2_YAPAXI_Z(0xCu); /*0x5ca9b4*/
+  v1 = (wchar_t **)RA2_OPNEW(0xCu); /*0x5ca9b4*/
   if ( v1 ) /*0x5ca9be*/
     v2 = MPCombatTeam::Constructor(v1); /*0x5ca9c7*/
   else
@@ -231,7 +251,7 @@ char MultiplayerSiege::CheckStatus(int a1)
     *(_DWORD *)(a1 + 16) = v5 + 1; /*0x5caa06*/
     *(_DWORD *)(v6 + 4 * v5) = v2; /*0x5caa09*/
   }
-  v7 = (wchar_t **)__2_YAPAXI_Z(0xCu); /*0x5caa0e*/
+  v7 = (wchar_t **)RA2_OPNEW(0xCu); /*0x5caa0e*/
   if ( v7 ) /*0x5caa18*/
     v8 = MPCombatTeam::MPTeam(v7); /*0x5caa21*/
   else
@@ -247,16 +267,16 @@ char MultiplayerSiege::CheckStatus(int a1)
     *(_DWORD *)(a1 + 16) = v11 + 1; /*0x5caa5c*/
     *(_DWORD *)(v12 + 4 * v11) = v8; /*0x5caa5f*/
   }
-  v13 = (wchar_t **)__2_YAPAXI_Z(0xCu); /*0x5caa64*/
+  v13 = (wchar_t **)RA2_OPNEW(0xCu); /*0x5caa64*/
   if ( v13 ) /*0x5caa6e*/
     v14 = MPCombatTeam::Constructor2(v13); /*0x5caa77*/
   else
     v14 = 0; /*0x5caa7b*/
   v15 = *(_DWORD *)(a1 + 8); /*0x5caa7d*/
   if ( *(_DWORD *)(a1 + 16) < v15 /*0x5caaa7*/
-    || ((LOBYTE(v16) = *(_BYTE *)(a1 + 13), (_BYTE)v16) || !v15)
+    || ((IDA_LOBYTE(v16) = *(_BYTE *)(a1 + 13), (_BYTE)v16) || !v15)
     && (v16 = *(_DWORD *)(a1 + 20), v16 > 0)
-    && (LOBYTE(v16) = (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)a1 + 8))(a1, v15 + v16, 0), (_BYTE)v16) )
+    && (IDA_LOBYTE(v16) = (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)a1 + 8))(a1, v15 + v16, 0), (_BYTE)v16) )
   {
     v16 = *(_DWORD *)(a1 + 16); /*0x5caaa9*/
     v17 = *(_DWORD *)(a1 + 4); /*0x5caaac*/
@@ -265,7 +285,9 @@ char MultiplayerSiege::CheckStatus(int a1)
   }
   return v16; /*0x5caab8*/
 }
+} // namespace gamemd
 // 0x5CAAC0
+namespace gamemd {
 char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
 {
   int v2; // eax
@@ -273,7 +295,6 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
   _DWORD *BuildableFromArray; // esi
   void *v6; // eax
   int *v7; // eax
-  int *v8; // esi
   int v9; // ebx
   _DWORD *StartCoords; // eax
   __int16 *CurrentOption; // eax
@@ -302,29 +323,32 @@ char MultiplayerSiege::GetResult(unsigned int * ppv, int a2)
   BuildableFromArray = HouseClass::FirstBuildableFromArray(ppv, (int)&g_RulesClass_Instance->BuildDummy[1]); /*0x5cab45*/
   if ( !BuildableFromArray ) /*0x5cab49*/
     return 0; /*0x5cab49*/
-  v6 = __2_YAPAXI_Z(0x720u); /*0x5cab50*/
+  v6 = RA2_OPNEW(0x720u); /*0x5cab50*/
   if ( !v6 ) /*0x5cab5a*/
     return 0; /*0x5cab5a*/
   v7 = (int *)BuildingClass::Construct((int)v6, (int)BuildableFromArray, (int)ppv); /*0x5cab60*/
-  v8 = v7; /*0x5cab65*/
+  v7 = v7; /*0x5cab65*/
   if ( !v7 ) /*0x5cab69*/
     return 0; /*0x5cab69*/
   v9 = *v7; /*0x5cab6b*/
   StartCoords = HouseClass::GetStartCoords(ppv, v12); /*0x5cab76*/
-  if ( (*(unsigned __int8 (__thiscall **)(int *, _DWORD *, _DWORD))(v9 + 216))(v8, StartCoords, 0) ) /*0x5cab7e*/
+  if ( v7->COMStub_54(StartCoords, 0) ) /*0x5cab7e*/
     return 1; /*0x5cab7e*/
   CurrentOption = (__int16 *)HouseClass::GetCurrentOption(ppv, &a2); /*0x5cab91*/
-  if ( FindInfantryDeployPosition(v8, CurrentOption, 1) ) /*0x5cab9a*/
+  if ( FindInfantryDeployPosition(v7, CurrentOption, 1) ) /*0x5cab9a*/
     return 1; /*0x5cabbb*/
-  (*(void (__thiscall **)(int *, int))(*v8 + 32))(v8, 1); /*0x5caba9*/
+  (*(void (__thiscall **)(int *, int))(*v7 + 32))(v7, 1); /*0x5caba9*/
   return 0; /*0x5cab08*/
 }
+} // namespace gamemd
 // 0x5CABD0
+namespace gamemd {
 MultiplayerSiege * MultiplayerSiege::QueryInterface(char a2)
 {
-  *this = &MultiplayerSiege::`vftable'; /*0x5cabd3*/
-  MultiplayerGameMode::Dtor(this); /*0x5cabd9*/
+  *this = &(void*)(void*)&MultiplayerSiege_vftable; /*0x5cabd3*/
+  MultiplayerGameMode::Dtor(); /*0x5cabd9*/
   if ( (a2 & 1) != 0 ) /*0x5cabe3*/
-    __3_YAXPAX_Z(this); /*0x5cabe6*/
+    RA2_OPDEL(); /*0x5cabe6*/
   return this; /*0x5cabf0*/
 }
+} // namespace gamemd

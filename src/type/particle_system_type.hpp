@@ -77,13 +77,6 @@ public:
     int SaveLoad_Prefix(int a1, int a2);  // 0x6447e0
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x644830
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int GetObjectSize();  // 0x644920
-    int GetTypeIdentifier();  // 0x644930
-    char Stub(int a1, int a2);  // 0x644940
-    int StubReturnFalse(int a1);  // 0x644950
-    ParticleSystemTypeClass * ddtor(void ** Block, char a2);  // 0x644960
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

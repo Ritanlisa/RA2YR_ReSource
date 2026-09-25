@@ -5,7 +5,10 @@
 
 namespace gamemd {
 struct E4Recv_69B170 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    unsigned int M1672;  // 0x688
+// --- flat members (END) ---
     void ParseAndApplyAlliances();  // 0x69B170
 };
 } // namespace gamemd

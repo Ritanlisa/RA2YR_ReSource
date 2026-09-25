@@ -2,6 +2,10 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/VeinholeMonsterClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/Voxel_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5862C0
 namespace gamemd {
@@ -33,11 +37,11 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
     if ( ++v5 > a2 + aP0[1] ) /*0x58633d*/
       return 0; /*0x58633d*/
   }
-  HIWORD(v12) = v5; /*0x5862f0*/
+  IDA_HIWORD(v12) = v5; /*0x5862f0*/
   while ( 1 ) /*0x5862fb*/
   {
     v9 = ((__int16)v5 << 9) + (__int16)v8; /*0x5862fb*/
-    LOWORD(v12) = v8; /*0x5862fd*/
+    IDA_LOWORD(v12) = v8; /*0x5862fd*/
     if ( v9 >= 0x40000 || (v10 = *(_DWORD **)(g_Shroud_CellArray + 4 * v9)) == 0 ) /*0x586311*/
     {
       g_Map_GlobalCellIndex = v12; /*0x586317*/
@@ -84,8 +88,8 @@ int VeinholeMonsterClass::StubReturn264()
 // 0x74F340
 VeinholeMonsterClass * VeinholeMonsterClass::SpreadTiberium(char a2)
 {
-  DestroyVeinholeMonster(this); /*0x74f343*/
+  DestroyVeinholeMonster(); /*0x74f343*/
   if ( (a2 & 1) != 0 ) /*0x74f34d*/
-    __3_YAXPAX_Z(this); /*0x74f350*/
+    RA2_OPDEL(); /*0x74f350*/
   return this; /*0x74f35a*/
 }

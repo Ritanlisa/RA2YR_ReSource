@@ -71,6 +71,13 @@
 #include "e4/classes/E4Recv_6C5EC0_e4.hpp"
 #include "e4/classes/E4Recv_6C6040_e4.hpp"
 #include "e4/classes/RAMFileClass_e4.hpp"
+#include "e4/classes/WinMain_e4.hpp"
+#include "e4/classes/AsyncIO_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/WinModemClass_e4.hpp"
+#include "e4/classes/Window_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5BC180
 namespace gamemd {
@@ -103,7 +110,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   v19 = dword_ABF168; /*0x5bc1a5*/
   do /*0x5bc24f*/
   {
-    v4 = __2_YAPAXI_Z(0x2738u); /*0x5bc1ae*/
+    v4 = RA2_OPNEW(0x2738u); /*0x5bc1ae*/
     v5 = v4; /*0x5bc1b3*/
     if ( v4 ) /*0x5bc1ba*/
     {
@@ -202,35 +209,35 @@ int WinMain::Constructor_VectorClass_Wstring_()
   int j; // esi
   int k; // esi
 
-  for ( i = 0; i < *(this + 424); ++i ) /*0x69a200*/
+  for ( i = 0; i < *(&this->u32_A84); ++i ) /*0x69a200*/
   {
-    v3 = *(_DWORD *)(*(this + 421) + 4 * i); /*0x69a208*/
+    v3 = *(_DWORD *)(*(&this->u32_A81) + 4 * i); /*0x69a208*/
     if ( v3 ) /*0x69a20d*/
     {
-      *(_DWORD *)(v3 + 420) = &VectorClass<Wstring>::`vftable'; /*0x69a215*/
+      v3->q690 = &(void*)(void*)&VectorClass_Wstring_vftable; /*0x69a215*/
       VectorClass_Wstring::ddtor(v3 + 420); /*0x69a21b*/
-      v4 = *(void **)(v3 + 396); /*0x69a220*/
-      *(_DWORD *)(v3 + 392) = &VectorClass<enum DiskID>::`vftable'; /*0x69a226*/
+      v4 = v3->q630; /*0x69a220*/
+      v3->q188 = &(void*)(void*)&VectorClass_enum_DiskID_vftable; /*0x69a226*/
       if ( v4 && *(_BYTE *)(v3 + 405) ) /*0x69a234*/
       {
-        __3_YAXPAX_Z(v4); /*0x69a23d*/
-        *(_DWORD *)(v3 + 396) = 0; /*0x69a245*/
+        RA2_OPDEL(v4); /*0x69a23d*/
+        v3->q630 = 0; /*0x69a245*/
       }
       *(_BYTE *)(v3 + 405) = 0; /*0x69a24c*/
-      *(_DWORD *)(v3 + 400) = 0; /*0x69a252*/
-      __3_YAXPAX_Z((void *)v3); /*0x69a258*/
+      v3->q190 = 0; /*0x69a252*/
+      RA2_OPDEL((void *)v3); /*0x69a258*/
     }
   }
-  (*(void (__thiscall **)(_DWORD *))(*(this + 420) + 12))(this + 420); /*0x69a277*/
-  for ( j = 0; j < *(this + 2633); ++j ) /*0x69a284*/
-    __3_YAXPAX_Z(*(void **)(*(this + 2630) + 4 * j)); /*0x69a290*/
-  (*(void (__thiscall **)(_DWORD *))(*(this + 2629) + 12))(this + 2629); /*0x69a2af*/
-  for ( k = 0; k < *(this + 2627); ++k ) /*0x69a2bc*/
+  (*(void (__thiscall **)(_DWORD *))(*(&this->u32_A80) + 12))(&this->u32_A80); /*0x69a277*/
+  for ( j = 0; j < *(&this->u32_41C3); ++j ) /*0x69a284*/
+    RA2_OPDEL(*(void **)(*(&this->u32_41C0) + 4 * j)); /*0x69a290*/
+  (*(void (__thiscall **)(_DWORD *))(*(&this->u32_4189) + 12))(&this->u32_4189); /*0x69a2af*/
+  for ( k = 0; k < *(&this->u32_4187); ++k ) /*0x69a2bc*/
   {
-    if ( *(_DWORD *)(*(this + 2624) + 4 * k) ) /*0x69a2c4*/
-      __3_YAXPAX_Z(*(void **)(*(this + 2624) + 4 * k)); /*0x69a2cc*/
+    if ( *(_DWORD *)(*(&this->u32_4184) + 4 * k) ) /*0x69a2c4*/
+      RA2_OPDEL(*(void **)(*(&this->u32_4184) + 4 * k)); /*0x69a2cc*/
   }
-  return (*(int (__thiscall **)(_DWORD *))(*(this + 2623) + 12))(this + 2623); /*0x69a2ee*/
+  return (*(int (__thiscall **)(_DWORD *))(*(&this->u32_4183) + 12))(&this->u32_4183); /*0x69a2ee*/
 }
 // 0x734D30
 unsigned int * WinMain::ShutdownCleanup()
@@ -246,7 +253,7 @@ unsigned int * WinMain::ShutdownCleanup()
   for ( i = (void **)dword_B1CF8C; dword_B1CF8C; i = (void **)dword_B1CF8C ) /*0x734d3b*/
   {
     dword_B1CF8C = *i; /*0x734d40*/
-    __3_YAXPAX_Z(i); /*0x734d46*/
+    RA2_OPDEL(i); /*0x734d46*/
   }
   v1 = (void **)dword_B1CF78; /*0x734d57*/
   dword_B1CF8C = 0; /*0x734d5d*/
@@ -256,11 +263,11 @@ unsigned int * WinMain::ShutdownCleanup()
     {
       if ( v1[j] ) /*0x734d72*/
       {
-        __3_YAXPAX_Z(v1[j]); /*0x734d7a*/
+        RA2_OPDEL(v1[j]); /*0x734d7a*/
         v1 = (void **)dword_B1CF78; /*0x734d7f*/
       }
     }
-    __3_YAXPAX_Z(v1); /*0x734d93*/
+    RA2_OPDEL(v1); /*0x734d93*/
     dword_B1CF78 = 0; /*0x734d9b*/
   }
   v3 = (void **)dword_B1CF7C; /*0x734da1*/
@@ -270,16 +277,16 @@ unsigned int * WinMain::ShutdownCleanup()
     {
       if ( v3[k] ) /*0x734db6*/
       {
-        __3_YAXPAX_Z(v3[k]); /*0x734dbe*/
+        RA2_OPDEL(v3[k]); /*0x734dbe*/
         v3 = (void **)dword_B1CF7C; /*0x734dc3*/
       }
     }
-    __3_YAXPAX_Z(v3); /*0x734dd7*/
+    RA2_OPDEL(v3); /*0x734dd7*/
     dword_B1CF7C = 0; /*0x734ddf*/
   }
   if ( dword_B1CF74 ) /*0x734dec*/
   {
-    __3_YAXPAX_Z(dword_B1CF74); /*0x734def*/
+    RA2_OPDEL(dword_B1CF74); /*0x734def*/
     dword_B1CF74 = 0; /*0x734df7*/
   }
   result = dword_B1CF88; /*0x734dfd*/
@@ -288,7 +295,7 @@ unsigned int * WinMain::ShutdownCleanup()
     do /*0x734e15*/
     {
       v6 = (_DWORD *)*result; /*0x734e06*/
-      __3_YAXPAX_Z(result); /*0x734e09*/
+      RA2_OPDEL(result); /*0x734e09*/
       result = v6; /*0x734e13*/
     }
     while ( v6 ); /*0x734e15*/
@@ -315,7 +322,7 @@ void sub_5D7E50()
       dword_ABFDA8 = 0; /*0x5d7e81*/
       byte_ABFDAC = 1; /*0x5d7e87*/
       byte_ABFDAD = 0; /*0x5d7e8e*/
-      g_MultiplayerModeConfig = (int)&DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d7e94*/
+      g_MultiplayerModeConfig = (int)&(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7e94*/
       dword_ABFDB4 = 10; /*0x5d7e9a*/
       g_MultiplayerGameList = 0; /*0x5d7ea0*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d7ea6*/
@@ -329,7 +336,7 @@ void sub_5D7E50()
       dword_ABFDA8 = 0; /*0x5d7ed5*/
       byte_ABFDAC = 1; /*0x5d7edb*/
       byte_ABFDAD = 0; /*0x5d7ee2*/
-      g_MultiplayerModeConfig = (int)&DynamicVectorClass<MultiplayerGameMode *>::`vftable'; /*0x5d7ee8*/
+      g_MultiplayerModeConfig = (int)&(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7ee8*/
       dword_ABFDB4 = 10; /*0x5d7eee*/
       g_MultiplayerGameList = 0; /*0x5d7ef4*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d7efa*/

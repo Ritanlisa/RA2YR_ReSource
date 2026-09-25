@@ -112,13 +112,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int FindExitCellByName();  // 0x523c90 -- Factory::FindExitCellByName
     int GetLinkedIndex(int a1);  // 0x663d60 -- Factory::GetLinkedIndex
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    int ddtor(int a1, unsigned int * a2);  // 0x4CA230
-    int StubReturn12();  // 0x4CA750
-    int StubReturn116();  // 0x4CA760
-    int GetState();  // 0x636DC0
-    char GetFlag();  // 0x637AA0
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

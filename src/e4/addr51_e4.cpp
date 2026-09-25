@@ -7,6 +7,14 @@
 #include "e4/classes/E4Recv_5173F0_e4.hpp"
 #include "e4/classes/E4Recv_5176D0_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/Input_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5108F0
 namespace gamemd {
@@ -27,11 +35,11 @@ unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
   unsigned __int8 v5; // bl
   unsigned __int8 result; // al
 
-  v3 = this->u32_4; /*0x517394*/
-  this->u32_8 += a2 * (a3[2] - this->u32_8) / 256; /*0x517397*/
+  v3 = *(this + 1); /*0x517394*/
+  *(this + 2) += a2 * (a3[2] - *(this + 2)) / 256; /*0x517397*/
   v4 = v3 + a2 * (a3[1] - v3) / 256; /*0x5173b8*/
   v5 = *this; /*0x5173ba*/
-  this->u32_4 = v4; /*0x5173bc*/
+  *(this + 1) = v4; /*0x5173bc*/
   result = v5 + a2 * (*a3 - v5) / 256; /*0x5173de*/
   *this = result; /*0x5173e1*/
   return result; /*0x5173cb*/
@@ -52,7 +60,7 @@ int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
   if ( v3 < 0 ) /*0x517412*/
     v3 = a2[1] - this->u32_4; /*0x517414*/
   v4 = this->u32_8 - a2[2]; /*0x517422*/
-  if ( v4 < 0 ) /*0x517424*/
+  if (v4 < 0, unsigned int a1) /*0x517424*/
     v4 = a2[2] - this->u32_8; /*0x517426*/
   return v2 * v2 + v3 * v3 + v4 * v4; /*0x517437*/
 }
@@ -100,7 +108,7 @@ void SaveInfantryToINI()
     if ( !v4->u8_81 ) /*0x51ff28*/
     {
       sprintf(Buffer, "%d", result); /*0x51ff41*/
-      if ( (*(int (__thiscall **)(int, int, int))(v4->q184)(v4, a2, a3) == -1 ) /*0x51ff71*/
+      if ( (*(int (__thiscall **)(int, int, int))(v4->q184)(v4, v9, v8) == -1 ) /*0x51ff71*/
         v30 = v4->u32_B4; /*0x51ff79*/
       else
         v30 = (char *)(*(int (__thiscall **)(int))(v4->q184)(v4); /*0x51ff89*/
@@ -109,14 +117,14 @@ void SaveInfantryToINI()
       v7 = (const char *)(v4->u32_6C0 + 36); /*0x51ffb3*/
       v31[0] = v4->q09C; /*0x51ffb6*/
       v8 = v4->u32_422; /*0x51ffbf*/
-      v31[1] = v4->u32_A0; /*0x51ffc5*/
-      v9 = v4->q421; /*0x51ffce*/
+      v31[1] = v4->q280; /*0x51ffc5*/
+      v9 = *(unsigned __int8 *)(v4 + 1057); /*0x51ffce*/
       v31[2] = v4->q0A4; /*0x51ffd4*/
-      a3 = v8; /*0x51ffe0*/
-      a2 = v9; /*0x51ffe7*/
+      v8 = v8; /*0x51ffe0*/
+      v9 = v9; /*0x51ffe7*/
       v23 = FootClass::GetField(v4 + 336, v4->u32_214, v4->q08C); /*0x52000b*/
       v19 = FromNameIndex((int)v30); /*0x52001b*/
-      LOBYTE(v10) = Input::OffsetToDirection(v31); /*0x52001c*/
+      IDA_LOBYTE(v10) = Input::OffsetToDirection(v31); /*0x52001c*/
       v11 = (*(int (__thiscall **)(int, char *, int, char *, _DWORD))(v4->u32_1B8)( /*0x52002b*/
               v4,
               Buffer,
@@ -617,9 +625,9 @@ int sub_513C00()
 namespace gamemd {
 void E4Recv_513D00::sub_513D00()
 {
-  *this = &HoverLocomotionClass::`vftable'; /*0x513d00*/
-  this->M4 = &HoverLocomotionClass::`vftable'; /*0x513d06*/
-  LocomotionClass::Construct(this); /*0x513d0d*/
+  *this = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x513d00*/
+  this->M4 = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x513d06*/
+  LocomotionClass::Construct(); /*0x513d0d*/
 }
 } // namespace gamemd
 
@@ -652,7 +660,7 @@ int E4Recv_517110::sub_517110()
   (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v6 + 1348))(v6, 0, 1072693248); /*0x517199*/
   result = MovementAI::StepFootClass((int *)this, 0); /*0x5171a3*/
   if ( v5 ) /*0x5171aa*/
-    return MovementAI::MainFootClass((int *)this, 1); /*0x5171b0*/
+    return MovementAI::MainFootClass(1); /*0x5171b0*/
   return result; /*0x5171b5*/
 }
 } // namespace gamemd
@@ -693,7 +701,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
   if ( !RegSetValueExA(phkResult, g_INI_Key_Options, 0, 4u, &Data, 4u) ) /*0x51777b*/
     v5 = 1; /*0x517785*/
   RegCloseKey(phkResult); /*0x51778f*/
-  this->u32_10 = 0; /*0x51779f*/
+  *(this + 4) = 0; /*0x51779f*/
   strcpy(v13, g_Str_SOFTWARE_Westwood_WOLAPI_); /*0x5177c0*/
   cbData = 4; /*0x5177c4*/
   if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, v13, 0, 0xF003Fu, &hKey) ) /*0x5177e3*/
@@ -702,7 +710,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
     if ( !RegQueryValueExA(hKey, g_INI_Key_Options, 0, &Type, v7, &cbData) && Type == 4 ) /*0x517817*/
     {
       v4 = *(_DWORD *)v7; /*0x517819*/
-      this->u32_10 = 1; /*0x51781d*/
+      *(this + 4) = 1; /*0x51781d*/
       *(_DWORD *)this = v4; /*0x517821*/
     }
     RegCloseKey(hKey); /*0x517829*/

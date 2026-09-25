@@ -41,33 +41,30 @@ int Hash::InsertOrdered(void* table, const void* entry)
 // 0x69d960
 EditClass * * SHA1::Process(const void* data, uint32_t size)
 {
-  int result; // eax
-  int v5; // edi
   int v6; // ebx
 
   *(_BYTE *)this = 0; /*0x69d96f*/
   SHA1::ProcessBlock(&data, &size); /*0x69d972*/
-  result = size; /*0x69d977*/
+  size = size; /*0x69d977*/
   if ( size ) /*0x69d97d*/
   {
-    v5 = data; /*0x69d984*/
+    data = data; /*0x69d984*/
     if ( size / 64 > 0 ) /*0x69d98f*/
     {
       v6 = size / 64; /*0x69d996*/
       do /*0x69d9bb*/
       {
-        SHA1::Transform(v5, this + 6); /*0x69d99c*/
-        v5 += 64; /*0x69d9ab*/
+        SHA1::Transform(data, this + 6); /*0x69d99c*/
+        data += 64; /*0x69d9ab*/
         *(&this->u32_41) += 64; /*0x69d9ad*/
         --v6; /*0x69d9b6*/
         size -= 64; /*0x69d9b7*/
       }
       while ( v6 ); /*0x69d9bb*/
     }
-    data = v5; /*0x69d9cb*/
+    data = data; /*0x69d9cb*/
     return SHA1::ProcessBlock(&data, &size); /*0x69d9cf*/
   }
-  return result; /*0x69d9d5*/
 }
 // 0x69d9e0
 int SHA1::Compute(uint8_t digest[20])
@@ -84,13 +81,13 @@ int SHA1::Compute(uint8_t digest[20])
   _DWORD v13[16]; // [esp+28h] [ebp-40h] BYREF
 
   if ( *(_BYTE *)this ) /*0x69d9e9*/
-    qmemcpy(a2, &this->u32_4, 0x14u); /*0x69d9fb*/
-  v3 = *(&this->u32_42); /*0x69d9fd*/
-  v4 = *(&this->u32_41); /*0x69da00*/
-  qmemcpy(v13, &this->q034, sizeof(v13)); /*0x69da14*/
+    qmemcpy(a2, this + 1, 0x14u); /*0x69d9fb*/
+  v3 = *(this + 12); /*0x69d9fd*/
+  v4 = *(this + 11); /*0x69da00*/
+  qmemcpy(v13, this + 13, sizeof(v13)); /*0x69da14*/
   v5 = v3 + v4; /*0x69da18*/
   *((_BYTE *)v13 + v3) = 0x80; /*0x69da29*/
-  qmemcpy(v12, &this->u32_18, sizeof(v12)); /*0x69da2e*/
+  qmemcpy(v12, this + 6, sizeof(v12)); /*0x69da2e*/
   if ( 64 - v3 >= 9 ) /*0x69da30*/
   {
     v6 = v3 + 1; /*0x69da6a*/
@@ -103,22 +100,22 @@ int SHA1::Compute(uint8_t digest[20])
     v6 = 0; /*0x69da66*/
   }
   memset((char *)v13 + v6, 0, 64 - v6); /*0x69da7d*/
-  LOBYTE(v7) = (8 * v5) >> 24; /*0x69da99*/
-  HIBYTE(v7) = v5 >> 13; /*0x69da9e*/
+  IDA_LOBYTE(v7) = (8 * v5) >> 24; /*0x69da99*/
+  IDA_HIBYTE(v7) = v5 >> 13; /*0x69da9e*/
   v13[15] = (v5 << 27) | (v5 << 11) & 0xFF0000 | v7; /*0x69dab8*/
   SHA1::Transform(v13, v12); /*0x69dac3*/
-  qmemcpy(&this->u32_4, v12, 0x14u); /*0x69dad6*/
-  v8 = &this->u32_4; /*0x69dad8*/
+  qmemcpy(this + 1, v12, 0x14u); /*0x69dad6*/
+  v8 = this + 1; /*0x69dad8*/
   v9 = 5; /*0x69dada*/
   do /*0x69db0b*/
   {
     v10 = *v8++; /*0x69dadf*/
     --v9; /*0x69db07*/
-    *(v8 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((HIWORD(v10) | v10 & 0xFF0000) >> 8); /*0x69db08*/
+    *(v8 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((IDA_HIWORD(v10) | v10 & 0xFF0000) >> 8); /*0x69db08*/
   }
   while ( v9 ); /*0x69db0b*/
   *(_BYTE *)this = 1; /*0x69db18*/
-  qmemcpy(a2, &this->u32_4, 0x14u); /*0x69db1c*/
+  qmemcpy(a2, this + 1, 0x14u); /*0x69db1c*/
   return 20; /*0x69db1e*/
 }
 // 0x69db30
@@ -163,9 +160,9 @@ void SHA1::Transform()
   do /*0x69db76*/
   {
     v4 = *v2++; /*0x69db49*/
-    v5 = HIBYTE(v4) | ((v4 & 0xFF00 | (v4 << 16)) << 8); /*0x69db67*/
-    LOBYTE(v4) = 0; /*0x69db69*/
-    BYTE1(v4) = BYTE2(v4); /*0x69db6b*/
+    v5 = IDA_HIBYTE(v4) | ((v4 & 0xFF00 | (v4 << 16)) << 8); /*0x69db67*/
+    IDA_LOBYTE(v4) = 0; /*0x69db69*/
+    IDA_BYTE1(v4) = IDA_BYTE2(v4); /*0x69db6b*/
     --v3; /*0x69db71*/
     *(int *)((char *)v2 + v33 - (_BYTE *)a1 - 4) = (unsigned __int16)v4 | v5; /*0x69db72*/
   }

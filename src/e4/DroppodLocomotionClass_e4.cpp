@@ -6,6 +6,21 @@
 #include "e4/classes/DropPodLocomotionClass_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
+#include "e4/classes/DynamicVectorClass_AnimType_e4.hpp"
+#include "e4/classes/DynamicVectorClass_SubzoneConn_e4.hpp"
+#include "e4/classes/Return_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/BulletClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/DynamicVectorClass_PAD_e4.hpp"
+#include "e4/classes/DynamicVectorClass_uint_e4.hpp"
+#include "e4/classes/Byte_e4.hpp"
 
 // 0x4B5B70
 namespace gamemd {
@@ -59,7 +74,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   v38[2] = v3; /*0x4b5ba2*/
   VeteranCombat_high = (*(int (__thiscall **)(int *))(*v2 + 456))(v2) / 10 + 2; /*0x4b5bc9*/
   if ( SHIDWORD(g_RulesClass_Instance->VeteranCombat) > VeteranCombat_high ) /*0x4b5bd5*/
-    VeteranCombat_high = HIDWORD(g_RulesClass_Instance->VeteranCombat); /*0x4b5bd7*/
+    VeteranCombat_high = IDA_HIDWORD(g_RulesClass_Instance->VeteranCombat); /*0x4b5bd7*/
   VeteranSpeed = g_RulesClass_Instance->VeteranSpeed; /*0x4b5bf3*/
   if ( *(_BYTE *)(a1 + 24) ) /*0x4b5bdb*/
   {
@@ -84,12 +99,12 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   if ( v9 > 0 ) /*0x4b5c87*/
   {
     (*(void (__thiscall **)(int *, int *))(*v10 + 436))(v10, &v35); /*0x4b5eaa*/
-    VeteranRatio_high = (_DWORD *)HIDWORD(g_RulesClass_Instance->VeteranRatio); /*0x4b5eb6*/
+    VeteranRatio_high = (_DWORD *)IDA_HIDWORD(g_RulesClass_Instance->VeteranRatio); /*0x4b5eb6*/
     if ( VeteranRatio_high ) /*0x4b5ebe*/
     {
       if ( !((int)g_CurrentFrame % 6) ) /*0x4b5ecf*/
       {
-        v20 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5edf*/
+        v20 = (void **)RA2_OPNEW(0x1C8u); /*0x4b5edf*/
         if ( v20 ) /*0x4b5ee6*/
         {
           Index = AnimTypeClass::FindIndex(&unk_820320); /*0x4b5eed*/
@@ -111,7 +126,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
           v26 = Random::State(Randomizer_Global); /*0x4b5f91*/
           StartAudioControllerAt(*(_DWORD *)(VeteranRatio_high[48] + 4 * (v26 % v25)), (int)&v35, 0); /*0x4b5fa8*/
           PlaySoundEffectAt(v33, 2 * VeteranRatio_high[41], *(_DWORD **)(a1 + 8), VeteranRatio_high[43], 1, 0); /*0x4b5fc7*/
-          v27 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5fd6*/
+          v27 = (void **)RA2_OPNEW(0x1C8u); /*0x4b5fd6*/
           if ( v27 ) /*0x4b5fdd*/
           {
             v31 = (void *)Return::HRESULT_Fail(v33[0], v33[1], v34); /*0x4b5ffe*/
@@ -143,18 +158,18 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
     (*(void (__stdcall **)(int, _DWORD *))(*(_DWORD *)(a1 + 20) + 16))(a1 + 20, v12); /*0x4b5cee*/
     if ( (*(unsigned __int8 (__thiscall **)(int *, int *, _DWORD))(*v10 + 216))(v10, &v35, 0) ) /*0x4b5cfc*/
     {
-      v16 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5dae*/
+      v16 = (void **)RA2_OPNEW(0x1C8u); /*0x4b5dae*/
       if ( v16 ) /*0x4b5db8*/
         AnimClass::ctor(v16, (void *)g_RulesClass_Instance->DropPodPuff, &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5dd8*/
       if ( *(_BYTE *)(a1 + 24) ) /*0x4b5ddd*/
       {
-        v17 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5de9*/
+        v17 = (void **)RA2_OPNEW(0x1C8u); /*0x4b5de9*/
         if ( v17 ) /*0x4b5df3*/
           AnimClass::ctor(v17, *(void **)(g_RulesClass_Instance->DropPod[3] + 4), &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5e16*/
       }
       else
       {
-        v18 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5e18*/
+        v18 = (void **)RA2_OPNEW(0x1C8u); /*0x4b5e18*/
         if ( v18 ) /*0x4b5e22*/
           AnimClass::ctor(v18, *(void **)g_RulesClass_Instance->DropPod[3], &v35, 0, 1, (void *)0x600, 0, 0); /*0x4b5e47*/
       }
@@ -167,7 +182,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
     else
     {
       PlaySoundEffectAt(&v35, 100, *(_DWORD **)(a1 + 8), g_RulesClass_Instance->SilverCrate[5], 1, 0); /*0x4b5d28*/
-      v13 = (void **)__2_YAPAXI_Z(0x1C8u); /*0x4b5d37*/
+      v13 = (void **)RA2_OPNEW(0x1C8u); /*0x4b5d37*/
       if ( v13 ) /*0x4b5d3e*/
       {
         v30 = (void *)Return::HRESULT_Fail(v35, v36, v37); /*0x4b5d64*/
@@ -208,9 +223,9 @@ HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
   if ( a1 ) /*0x4b625a*/
   {
     a1[11] = 0; /*0x4b625c*/
-    *a1 = (int)&DropPodLocomotionClass::`vftable'; /*0x4b6263*/
-    a1[1] = (int)&DropPodLocomotionClass::`vftable'; /*0x4b6269*/
-    a1[6] = (int)&DropPodLocomotionClass::`vftable'; /*0x4b6270*/
+    *a1 = (int)&(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b6263*/
+    a1[1] = (int)&(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b6269*/
+    a1[6] = (int)&(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b6270*/
   }
   v2->lpVtbl->Read(v2, &pStm, 1, 0); /*0x4b6283*/
   if ( !(_BYTE)pStm ) /*0x4b628c*/
@@ -243,7 +258,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
     if ( v4[11] ) /*0x4b62de*/
     {
       v6.lpVtbl = v3->lpVtbl; /*0x4b62e9*/
-      LOBYTE(a3) = 1; /*0x4b62f5*/
+      IDA_LOBYTE(a3) = 1; /*0x4b62f5*/
       v6.lpVtbl->Write(v3, &a3, 1, 0); /*0x4b62fa*/
       v7 = (int (__stdcall ***)(_DWORD, void *, int **))v4[11]; /*0x4b62fd*/
       pPStm = 0; /*0x4b6300*/
@@ -273,7 +288,7 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
     else
     {
       v11.lpVtbl = v3->lpVtbl; /*0x4b6381*/
-      LOBYTE(a3) = 0; /*0x4b638d*/
+      IDA_LOBYTE(a3) = 0; /*0x4b638d*/
       return v11.lpVtbl->Write(v3, &a3, 1, 0); /*0x4b6392*/
     }
   }
@@ -289,14 +304,14 @@ DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(char a2)
 {
   int v3; // eax
 
-  *this = &DropPodLocomotionClass::`vftable'; /*0x4b66f3*/
-  *(this + 1) = &DropPodLocomotionClass::`vftable'; /*0x4b66f9*/
-  *(this + 6) = &DropPodLocomotionClass::`vftable'; /*0x4b6700*/
-  v3 = *(this + 11); /*0x4b6707*/
+  *this = &(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b66f3*/
+  this->vtable2 = &(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b66f9*/
+  this->vtable3 = &(void*)(void*)&DropPodLocomotionClass_vftable; /*0x4b6700*/
+  v3 = *(&this->vtable21); /*0x4b6707*/
   if ( v3 ) /*0x4b670c*/
     (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 8))(v3); /*0x4b6711*/
-  LocomotionClass::Construct(this); /*0x4b6716*/
+  LocomotionClass::Construct(); /*0x4b6716*/
   if ( (a2 & 1) != 0 ) /*0x4b6720*/
-    __3_YAXPAX_Z(this); /*0x4b6723*/
+    RA2_OPDEL(); /*0x4b6723*/
   return this; /*0x4b672d*/
 }

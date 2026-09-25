@@ -1,28 +1,31 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Explosion_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x53DDA0
+namespace gamemd {
 int Explosion::RemoveItem(int a2)
 {
   int v2; // edx
-  int v3; // eax
   int v4; // edx
 
-  v2 = *(this + 4); /*0x53dda0*/
-  v3 = a2; /*0x53dda3*/
+  v2 = this->q010; /*0x53dda0*/
+  a2 = a2; /*0x53dda3*/
   if ( a2 >= v2 ) /*0x53dda9*/
     return 0; /*0x53ddcc*/
   v4 = v2 - 1; /*0x53ddab*/
-  *(this + 4) = v4; /*0x53ddae*/
+  this->q010 = v4; /*0x53ddae*/
   if ( a2 < v4 ) /*0x53ddb1*/
   {
     do /*0x53ddc4*/
     {
-      ++v3; /*0x53ddb7*/
-      *(_DWORD *)(*(this + 1) + 4 * v3 - 4) = *(_DWORD *)(*(this + 1) + 4 * v3); /*0x53ddbb*/
+      ++a2; /*0x53ddb7*/
+      *(_DWORD *)(this->q004 + 4 * a2 - 4) = *(_DWORD *)(this->q004 + 4 * a2); /*0x53ddbb*/
     }
-    while ( v3 < *(this + 4) ); /*0x53ddc4*/
+    while ( a2 < this->q010 ); /*0x53ddc4*/
   }
   return 1; /*0x53ddc9*/
 }
+} // namespace gamemd

@@ -111,71 +111,6 @@ public:
     int Capacity = 0;
     bool IsInitialized = true;
     bool IsAllocated = false;
-// --- e4 declarations (BEGIN) ---
-    char AddRef(int a2);  // 0x40B140
-    char Release(int a2, char * a3);  // 0x40B180
-    void Cleanup5();  // 0x40B270
-    int GetSize(unsigned int * a2);  // 0x40B2A0
-    unsigned int GetCapacity(int a2);  // 0x40B2E0
-    VectorClass * QueryInterface(unsigned int * Block, char a2);  // 0x40B300
-    int GetAt(int a2);  // 0x40CCC0
-    int RemoveObjectById();  // 0x4137A0
-    char ResizeEx(int a2, unsigned int * a3);  // 0x42F860
-    unsigned int * CellConstructor(IUnknown * aP1, IUnknown * aP2);  // 0x42FCB0
-    void Cleanup();  // 0x45A270
-    unsigned int * ConstructorWithVtable(TechnoTypeClass * aP1, TechnoTypeClass * aP2);  // 0x45AD80
-    int * ScalarDtor(char a2);  // 0x477750
-    unsigned int * Copy(VectorClass * aP1);  // 0x4777B0
-    int GetAt_Copy(int a2);  // 0x477890
-    unsigned int * Construct(int a2, int a3);  // 0x477BE0
-    char vt02(int a2, unsigned int * a3);  // 0x477C70
-    void Destroy();  // 0x477D20
-    int vt04(unsigned int * a2);  // 0x477D50
-    unsigned int vt05(int a2);  // 0x477D90
-    char Resize(int a2, unsigned int * a3);  // 0x477E10
-    VectorClass * vt00(unsigned int * Block, char a2);  // 0x478630
-    int GetCount();  // 0x49FB60
-    void ClearAndFree2();  // 0x4A10A0
-    void CleanupTyped();  // 0x4A1330
-    char AppendCopy(DynamicVector * aP1);  // 0x4A7FE0
-    unsigned int GetIndex(int a2);  // 0x4EBFA0
-    void Cleanup4();  // 0x4ED950
-    char InsertAt(IUnknown * aP1, int a3);  // 0x50EB70
-    void ClearAndFree3();  // 0x50F830
-    unsigned int * BuildingConstructor(int a2, int a3);  // 0x510550
-    unsigned int * BuildingTypeConstructor(TechnoTypeClass * aP1, TechnoTypeClass * aP2);  // 0x5105A0
-    unsigned int * CopyConstructor(InfantryTypeClass * aP1);  // 0x512FA0
-    char PushBack(VectorClass * aP1);  // 0x5132F0
-    void ClearAndFree4();  // 0x5134D0
-    unsigned int * CopyDefault(VectorClass * aP1);  // 0x525060
-    int RemoveItem(ObjectClass * aP1);  // 0x55BAE0
-    void CleanupSubzone();  // 0x588C90
-    unsigned int * ConstructSubzone(int a2, int a3);  // 0x58AC70
-    void ddtor();  // 0x5D8640
-    void Cleanup3();  // 0x5EED00
-    void Destructor();  // 0x5FFFC0
-    unsigned int * ConstructHSV(int a2, int a3);  // 0x628DF0
-    char PushBackCopy(AbstractClass * aP1);  // 0x630250
-    void Cleanup2();  // 0x63E140
-    char Append(VectorClass * aP1);  // 0x63E540
-    char EraseAt(IUnknown * aP1);  // 0x63E900
-    unsigned int * PointConstructor(MapClass * aP1, MapClass * aP2);  // 0x658D60
-    int RemoveElement();  // 0x65A970
-    void Dtor();  // 0x679F70
-    int LoadStream(TechnoTypeClass * aP1);  // 0x67A630
-    int SaveLoad(TechnoTypeClass * aP1);  // 0x67A850
-    unsigned int * CopyAssign(VectorClass * aP1);  // 0x67AA80
-    unsigned int * CopySmudge(CCINIClass * aP1);  // 0x67AE00
-    void ClearAndFree();  // 0x67AF60
-    unsigned int * CopyBuilding(VectorClass * aP1);  // 0x67B180
-    char PushBack2(unsigned int * a2);  // 0x691160
-    unsigned int * WstringConstructor(int a2, unsigned int * a3);  // 0x69D7C0
-    int Check(Pipe * aP1, int aP2);  // 0x69E9B0
-    char RemoveAt(int a2);  // 0x6CE2D0
-    unsigned int * CopyParticle(DynamicVector * aP1);  // 0x717D20
-    int GetAtChecked(IUnknown * aP1);  // 0x763BA0
-    char Shrink();  // 0x7AE730
-// --- e4 declarations (END) ---
 };
 
 template <typename T>
@@ -242,14 +177,6 @@ public:
 
     int Count = 0;
     int CapacityIncrement = 10;
-// --- e4 declarations (BEGIN) ---
-    unsigned int * Copy(DynamicVector * aP1);  // 0x4779E0
-    unsigned int * Construct(int a2, int a3);  // 0x477DB0
-    void Destroy();  // 0x50EA00
-    void Destroy_Alt();  // 0x5251C0
-    unsigned int * AnimTypeConstructor(DynamicVector * aP1, DynamicVector * aP2);  // 0x525250
-    unsigned int * BuildingTypeConstructor(int a2, int a3);  // 0x5AC900
-// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -278,32 +205,6 @@ public:
 
     // 0x67AE70 — TypeList::operator== [distinct vtable slot 1, identical body]
     bool operator==(const VectorClass<T>& other) const override;
-// --- e4 declarations (BEGIN) ---
-    void ddtor();  // 0x477840
-    unsigned int GetCapacity(int a2);  // 0x477870
-    TypeList * QueryInterface(unsigned int * Block, char a2);  // 0x477990
-    int GetSize(unsigned int * a2);  // 0x477F10
-    unsigned int * Copy(unsigned int * a2);  // 0x478720
-    unsigned int * TechnoTypeConstructor(int a2, int a3);  // 0x478790
-    unsigned int * CopyConstructor(VectorClass * aP1);  // 0x513740
-    unsigned int * AnimTypeCopy(VectorClass * aP1);  // 0x5255F0
-    CCINIClass * BuildingTypeConstructor();  // 0x5AC400
-    unsigned int * BuildingTypeCopy(VectorClass * aP1);  // 0x5AD660
-    void InfantryCleanup();  // 0x67A030
-    int * CopyFull(VectorClass * aP1);  // 0x67A090
-    int * CopyAircraft(VectorClass * aP1);  // 0x67A110
-    int * CopyInfantry(CCINIClass * aP1);  // 0x67A290
-    CCINIClass * VoxelAnimConstructor();  // 0x67A390
-    DynamicVector * Construct();  // 0x67A4F0
-    CCINIClass * ConstructSmudge();  // 0x67A600
-    int Clear(int a2);  // 0x67A6D0
-    unsigned int * InfantryConstructor();  // 0x67A820
-    char AddRef(int a2);  // 0x67AE70
-    char Release(int a2, unsigned int * a3);  // 0x67B050
-    unsigned int * CopyVoxelAnim(VectorClass * aP1);  // 0x67C1F0
-    unsigned int * ParticleConstructor(int a2, int a3);  // 0x717C70
-    char PushBack(VectorClass * aP1);  // 0x717CD0
-// --- e4 declarations (END) ---
 };
 
 #include "vector.inl"

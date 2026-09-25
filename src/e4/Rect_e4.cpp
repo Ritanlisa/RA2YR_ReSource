@@ -1,8 +1,12 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Rect_e4.hpp"
+#include "e4/classes/RandomMap_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x487F40
+namespace gamemd {
 int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
 {
   LONG *v3; // edx
@@ -66,25 +70,30 @@ int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
     }
   }
 }
+} // namespace gamemd
 // 0x42E410
+namespace gamemd {
 IUnknown * Rect::Set(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4)
 {
-  *this = aP1; /*0x42e41a*/
-  *(this + 1) = aP2; /*0x42e420*/
-  *(this + 2) = aP3; /*0x42e427*/
-  *(this + 3) = aP4; /*0x42e42a*/
-  return this; /*0x42e42d*/
+  *aP1 = aP1; /*0x42e41a*/
+  aP1->vtable2 = aP2; /*0x42e420*/
+  aP1->vtable3 = aP3; /*0x42e427*/
+  aP1->vtable4 = aP4; /*0x42e42a*/
 }
+} // namespace gamemd
 // 0x45A130
+namespace gamemd {
 AbstractClass * Rect::Construct(IUnknown * aP1, AbstractClass * aP2, AbstractClass * aP3)
 {
   *this = *aP1; /*0x45a138*/
-  *(this + 1) = aP1[1]; /*0x45a141*/
-  *(this + 2) = aP2; /*0x45a148*/
-  *(this + 3) = aP3; /*0x45a14b*/
+  this->u32_4 = aP1[1]; /*0x45a141*/
+  this->q008 = aP2; /*0x45a148*/
+  this->q00C = aP3; /*0x45a14b*/
   return this; /*0x45a14e*/
 }
+} // namespace gamemd
 // 0x72A9E0
+namespace gamemd {
 BOOL Rect::Inflate(LPRECT lprc, int dx, int dy)
 {
   int v3; // edx
@@ -96,3 +105,4 @@ BOOL Rect::Inflate(LPRECT lprc, int dx, int dy)
   v4[3] -= 2 * v3; /*0x72a9fe*/
   return 2 * v3; /*0x72aa01*/
 }
+} // namespace gamemd

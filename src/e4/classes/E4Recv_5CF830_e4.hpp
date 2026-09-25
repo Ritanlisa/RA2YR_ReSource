@@ -5,7 +5,9 @@
 
 namespace gamemd {
 struct E4Recv_5CF830 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+// --- flat members (END) ---
     int Vf16(int, ...);  // G6 vtable slot dispatch
     int Network_Load(ObjectClass * aP1);  // 0x5CF830
 };

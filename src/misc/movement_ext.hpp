@@ -51,10 +51,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int StepFootClass(int a1);  // 0x5164D0
     int Begin();  // 0x6F9E50
     // --- gap2 auto-generated stub declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    bool IsPathMovementAllowed();  // 0x487E00
-    bool IsProgressAtEnd();  // 0x4A5150
-// --- e4 declarations (END) ---
 };
 
 // ============================================================================
@@ -83,9 +79,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int CompareAbsCoords(void* a1, void* a2);  // 0x5B29C0
     void UpdateLocomotion(void* a1);  // 0x5B2A30
     // --- gap2 auto-generated stub declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-    int * DivideAndStoreScaled(int * a2, int a3);  // 0x5B2970
-// --- e4 declarations (END) ---
 };
 
 

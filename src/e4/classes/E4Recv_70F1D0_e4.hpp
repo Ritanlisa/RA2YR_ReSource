@@ -5,7 +5,13 @@
 
 namespace gamemd {
 struct E4Recv_70F1D0 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    unsigned int M300;  // 0x12C
+    unsigned int q300;  // 0x300
+    unsigned int q768;  // 0x768
+    unsigned int q6294;  // 0x6294
+// --- flat members (END) ---
     char DrawBuildingRangeIndicator(TechnoClass * aP1, int a3);  // 0x70F1D0
 };
 } // namespace gamemd

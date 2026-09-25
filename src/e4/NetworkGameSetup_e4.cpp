@@ -1,8 +1,19 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/NetworkGameSetup_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/NetworkClass_e4.hpp"
+#include "e4/classes/ScriptAction_e4.hpp"
 
 // 0x5B9750
+namespace gamemd {
 int NetworkGameSetup::ReadRulesUnknown()
 {
   HWND result; // eax
@@ -12,11 +23,13 @@ int NetworkGameSetup::ReadRulesUnknown()
   {
     result = (HWND)SendMessageA(result, 0x400u, 0, 0); /*0x5b976f*/
     dword_A8B278 = (LPARAM)result; /*0x5b9775*/
-    *(_BYTE *)(this + 9) = 1; /*0x5b977a*/
+    this->q024 = 1; /*0x5b977a*/
   }
   return result; /*0x5b977e*/
 }
+} // namespace gamemd
 // 0x5BA970
+namespace gamemd {
 void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
 {
   char *v3; // eax
@@ -34,7 +47,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
     v9 = 0; /*0x5ba99c*/
     v8[0] = 104; /*0x5ba9a8*/
     strcpy((char *)&v8[1], g_GameSetupBuffer); /*0x5ba9c4*/
-    LOBYTE(v8[6]) = g_TauntCommandState; /*0x5ba9d4*/
+    IDA_LOBYTE(v8[6]) = g_TauntCommandState; /*0x5ba9d4*/
     wcscpy((wchar_t *)((char *)&v8[6] + 1), Source); /*0x5ba9d8*/
     Stream::WriteBlock((int)&g_EventManager, (int)v8, 250, 1); /*0x5ba9f1*/
     Stream::ReadPacket((int)&g_EventManager); /*0x5ba9fb*/
@@ -53,11 +66,14 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
     }
   }
 }
+} // namespace gamemd
 // 0x5BB560
+namespace gamemd {
 unsigned int * NetworkGameSetup::DeleteComPtr(char a2)
 {
-  ComPtr::Dtor(this); /*0x5bb563*/
+  ComPtr::Dtor(); /*0x5bb563*/
   if ( (a2 & 1) != 0 ) /*0x5bb56d*/
-    __3_YAXPAX_Z(this); /*0x5bb570*/
+    RA2_OPDEL(); /*0x5bb570*/
   return this; /*0x5bb57a*/
 }
+} // namespace gamemd

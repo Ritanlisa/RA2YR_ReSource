@@ -35,10 +35,10 @@ public:
     // wrapper: delegates to WarheadTypeClass::FindOrCreate at 0x75E3B0
     static int FindIndex(const char* pID);
 
-    virtual HRESULT __stdcall GetClassID(CLSID* pClassID) override;  // 0x524ED0 (as GetClassIdentifier)
+    virtual HRESULT __stdcall GetClassIdentifier(CLSID* pClassID) override;  // 0x524ED0 (as GetClassIdentifier)
 
-    virtual HRESULT __stdcall Load(IStream* pStm) override;  // 0x524F00 (as LoadTypeData)
-    virtual HRESULT __stdcall Save(IStream* pStm, BOOL fClearDirty) override;  // 0x524FB0 (as SaveToINI)
+    virtual HRESULT __stdcall LoadTypeData(IStream* pStm) override;  // 0x524F00 (as LoadTypeData)
+    virtual HRESULT __stdcall SaveToINI(IStream* pStm, BOOL fClearDirty) override;  // 0x524FB0 (as SaveToINI)
 
     virtual ~WarheadTypeClass() = default;  // 0x75E510 (as Destructor)
 
@@ -134,16 +134,6 @@ public:
     int SaveLoad_Prefix_0(int a1, int a2, int a3, int a4, int a5);  // 0x75e2c0
     int ReadINI(int a1, int a2, int a3);  // 0x772080
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    void GetClassIdentifier();  // 0x524ED0
-    unsigned int LoadTypeData(int a2);  // 0x524F00
-    int SaveToINI(int a2);  // 0x524FB0
-    int Init(unsigned int * a2);  // 0x525400
-    int Construct(ObjectClass * aP1);  // 0x75CEC0
-    int GetObjectSize();  // 0x75E4F0
-    int GetTypeIdentifier();  // 0x75E500
-    WarheadTypeClass * Destructor(void ** Block, char a2);  // 0x75E510
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

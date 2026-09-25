@@ -1,8 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Time_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4E24A0
+namespace gamemd {
 unsigned int Time::GetElapsedMS()
 {
   DWORD Time; // eax
@@ -15,7 +18,9 @@ unsigned int Time::GetElapsedMS()
     v1 = 3 * (Time - dword_8B3F14 - 1); /*0x4e24b3*/
   return v1 / 0x32; /*0x4e24c2*/
 }
+} // namespace gamemd
 // 0x777AC0
+namespace gamemd {
 int Time::FormatDate()
 {
   int result; // eax
@@ -34,3 +39,4 @@ int Time::FormatDate()
              SystemTime.wSecond);
   return result; /*0x777b28*/
 }
+} // namespace gamemd

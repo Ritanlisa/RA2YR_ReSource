@@ -5,7 +5,29 @@
 
 namespace gamemd {
 struct MSFont_18 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+    void* q004;  // 0x4
+    int q008;  // 0x8
+    bool q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    int q010;  // 0x10
+    bool IsInitialized;  // 0x12
+    int Count;  // 0x16
+    bool q018;  // 0x18
+    unsigned char q01C;  // 0x1C
+    bool q024;  // 0x24
+    unsigned char q028;  // 0x28
+    int q034;  // 0x34
+    unsigned char q038;  // 0x38
+    unsigned char q04C;  // 0x4C
+    unsigned char q050;  // 0x50
+    bool q054;  // 0x54
+    unsigned int Capacity;
+    unsigned int Items;
+    unsigned int Items2;
+    unsigned int q0042;
+// --- flat members (END) ---
     char SetCapacity8(int a2, unsigned int * a3);  // 0x5D55A0
     void ClearBuffer();  // 0x5D5080
     int GetSize(int a2);  // 0x5D50D0
@@ -17,7 +39,7 @@ struct MSFont_18 {
     char SetCapacity(int a2, unsigned int * a3);  // 0x5D52D0
     int FindItem(unsigned int * a2);  // 0x5D5380
     int FindPair8(unsigned int * a2);  // 0x5D56A0
-    VectorClass * QueryInterface(char a2);  // 0x5D56E0
+    VectorClass_flat * QueryInterface(char a2);  // 0x5D56E0
     DynamicVector * Constructor_VectorClass_HWND_____(char a2);  // 0x5D5730
     DynamicVector * Constructor_VectorClass_AcceleratorTracker_(char a2);  // 0x5D57D0
     unsigned int PointerToIndex(int a2);  // 0x5D50B0

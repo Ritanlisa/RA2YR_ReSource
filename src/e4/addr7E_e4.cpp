@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/WarheadTypeClass_e4.hpp"
 
 // 0x7E0000
 namespace gamemd {
@@ -31,10 +33,10 @@ void  __spoils<ecx> sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int 
       v8 = *a1; /*0x7e0040*/
       a1 = (int *)((char *)a1 + 2); /*0x7e0042*/
       v9 = __ROR4__(v8, 8); /*0x7e004f*/
-      LOBYTE(v9) = byte_A8F91C[(unsigned __int16)v8]; /*0x7e0052*/
-      BYTE1(v9) = BYTE1(v8); /*0x7e0058*/
+      IDA_LOBYTE(v9) = byte_A8F91C[(unsigned __int16)v8]; /*0x7e0052*/
+      IDA_BYTE1(v9) = IDA_BYTE1(v8); /*0x7e0058*/
       v10 = __ROR4__(v9, 8); /*0x7e005f*/
-      BYTE1(v10) = byte_A8F91C[(v8 & 0xFFFF00u) >> 8]; /*0x7e0065*/
+      IDA_BYTE1(v10) = byte_A8F91C[(v8 & 0xFFFF00u) >> 8]; /*0x7e0065*/
       *v7++ = __ROR4__(v10, 16); /*0x7e006e*/
       --v6; /*0x7e0073*/
     }
@@ -44,7 +46,7 @@ void  __spoils<ecx> sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int 
     v12 = (char *)v7 + 1; /*0x7e007d*/
     a1 = (int *)((char *)a1 + 2); /*0x7e007e*/
     *v12++ = byte_A8F91C[v11]; /*0x7e0087*/
-    *v12 = HIBYTE(v11); /*0x7e008a*/
+    *v12 = IDA_HIBYTE(v11); /*0x7e008a*/
     v12[1] = 0; /*0x7e008d*/
     a2 = (_DWORD *)((char *)a2 + a5); /*0x7e0093*/
     --a3; /*0x7e0096*/
@@ -79,10 +81,10 @@ void  __spoils<ecx> sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, uns
       v8 = *a1; /*0x7e00e0*/
       a1 = (int *)((char *)a1 + 2); /*0x7e00e2*/
       v9 = __ROR4__(v8, 8); /*0x7e00ef*/
-      LOBYTE(v9) = byte_A8F91C[(unsigned __int16)v8]; /*0x7e00f2*/
-      BYTE1(v9) = BYTE1(v8); /*0x7e00f8*/
+      IDA_LOBYTE(v9) = byte_A8F91C[(unsigned __int16)v8]; /*0x7e00f2*/
+      IDA_BYTE1(v9) = IDA_BYTE1(v8); /*0x7e00f8*/
       v10 = __ROR4__(v9, 8); /*0x7e00ff*/
-      BYTE1(v10) = byte_A8F91C[(v8 & 0xFFFF00u) >> 8]; /*0x7e0105*/
+      IDA_BYTE1(v10) = byte_A8F91C[(v8 & 0xFFFF00u) >> 8]; /*0x7e0105*/
       v11 = __ROR4__(v10, 16); /*0x7e010b*/
       *v7 = v11; /*0x7e010e*/
       *v6 = v11; /*0x7e0110*/
@@ -96,13 +98,13 @@ void  __spoils<ecx> sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, uns
     *(_BYTE *)v6 = v12; /*0x7e0124*/
     v13 = (char *)v7 + 1; /*0x7e0126*/
     v14 = (char *)v6 + 1; /*0x7e0127*/
-    LOBYTE(v12) = byte_A8F91C[v12]; /*0x7e012b*/
+    IDA_LOBYTE(v12) = byte_A8F91C[v12]; /*0x7e012b*/
     *v13 = v12; /*0x7e0131*/
     *v14 = v12; /*0x7e0133*/
     ++v13; /*0x7e0135*/
     ++v14; /*0x7e0136*/
-    *v13 = HIBYTE(v12); /*0x7e0137*/
-    *v14 = HIBYTE(v12); /*0x7e0139*/
+    *v13 = IDA_HIBYTE(v12); /*0x7e0137*/
+    *v14 = IDA_HIBYTE(v12); /*0x7e0139*/
     v13[1] = 0; /*0x7e013d*/
     v14[1] = 0; /*0x7e0140*/
     v17 = &a2[a5 >> 1]; /*0x7e0148*/
@@ -132,10 +134,10 @@ void  __spoils<ecx> ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
     v6 = *a1; /*0x7e0182*/
     a1 = (int *)((char *)a1 + 2); /*0x7e0184*/
     v7 = __ROR4__(v6, 8); /*0x7e0191*/
-    LOBYTE(v7) = byte_A8F91C[(unsigned __int16)v6]; /*0x7e0194*/
-    BYTE1(v7) = BYTE1(v6); /*0x7e019a*/
+    IDA_LOBYTE(v7) = byte_A8F91C[(unsigned __int16)v6]; /*0x7e0194*/
+    IDA_BYTE1(v7) = IDA_BYTE1(v6); /*0x7e019a*/
     v8 = __ROR4__(v7, 8); /*0x7e01a1*/
-    BYTE1(v8) = byte_A8F91C[(v6 & 0xFFFF00u) >> 8]; /*0x7e01a7*/
+    IDA_BYTE1(v8) = byte_A8F91C[(v6 & 0xFFFF00u) >> 8]; /*0x7e01a7*/
     *a2++ = __ROR4__(v8, 16); /*0x7e01b0*/
     --v3; /*0x7e01b5*/
   }
@@ -144,7 +146,7 @@ void  __spoils<ecx> ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
   *(_BYTE *)a2 = *(_WORD *)a1; /*0x7e01bd*/
   v10 = (char *)a2 + 1; /*0x7e01bf*/
   *v10++ = byte_A8F91C[v9]; /*0x7e01c6*/
-  *v10 = HIBYTE(v9); /*0x7e01c9*/
+  *v10 = IDA_HIBYTE(v9); /*0x7e01c9*/
   v10[1] = 0; /*0x7e01cc*/
 }
 } // namespace gamemd
@@ -156,12 +158,12 @@ void  __spoils<ecx> sub_7E01D2(unsigned char * a1, unsigned char * a2, unsigned 
   int v7; // eax
   int v8; // ecx
 
-  HIWORD(v7) = 0; /*0x7e01df*/
+  IDA_HIWORD(v7) = 0; /*0x7e01df*/
   v8 = 2 * a4; /*0x7e01e4*/
   do /*0x7e01f6*/
   {
-    LOBYTE(v7) = *a1; /*0x7e01e6*/
-    BYTE1(v7) = *a2; /*0x7e01e8*/
+    IDA_LOBYTE(v7) = *a1; /*0x7e01e6*/
+    IDA_BYTE1(v7) = *a2; /*0x7e01e8*/
     ++a1; /*0x7e01ea*/
     ++a2; /*0x7e01eb*/
     *a3++ = byte_A8F91C[v7]; /*0x7e01f2*/

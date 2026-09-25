@@ -5,14 +5,37 @@
 
 namespace gamemd {
 struct TypeList_VoxelAnim {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int vfptr;  // 0x0
+    void* Items;  // 0x4
+    void* Capacity;  // 0x8
+    void* IsInitialized;  // 0xC
+    unsigned char IsAllocated;  // 0xD
+    unsigned char q00E;  // 0xE
+    void* Count;  // 0x10
+    unsigned char q014;  // 0x14
+    unsigned int q018;  // 0x18
+    unsigned char q01C;  // 0x1C
+    unsigned char q020;  // 0x20
+    unsigned int q024;  // 0x24
+    unsigned char q028;  // 0x28
+    unsigned char q02C;  // 0x2C
+    unsigned char q030;  // 0x30
+    unsigned int q034;  // 0x34
+    unsigned char q038;  // 0x38
+    unsigned char q03C;  // 0x3C
+    unsigned char q044;  // 0x44
+    unsigned char q048;  // 0x48
+    unsigned char q050;  // 0x50
+    unsigned int q054;  // 0x54
+// --- flat members (END) ---
     void ddtor();  // 0x67A410
     unsigned int GetIndex(int a2);  // 0x67A440
     int Clear(int a2);  // 0x67A460
     void TypeList_vt03();  // 0x67A680
     unsigned int TypeList_vt05(int a2);  // 0x67A6B0
-    TypeList * Add(char a2);  // 0x67A990
-    TypeList * TypeList_vt00(char a2);  // 0x67A9E0
+    TypeList_flat * Add(char a2);  // 0x67A990
+    TypeList_flat * TypeList_vt00(char a2);  // 0x67A9E0
     char AddRef(int a2);  // 0x67AAF0
     char SetCapacity(int a2, unsigned int * a3);  // 0x67AB30
     int IndexOf(unsigned int * a2);  // 0x67AC10
@@ -20,7 +43,7 @@ struct TypeList_VoxelAnim {
     char Remove(int a2, unsigned int * a3);  // 0x67ACD0
     int GetSize(unsigned int * a2);  // 0x67ADD0
     int TypeList_vt04(unsigned int * a2);  // 0x67B150
-    VectorClass * Constructor(char a2);  // 0x67C010
+    VectorClass_flat * Constructor(char a2);  // 0x67C010
     DynamicVector * Constructor_0(char a2);  // 0x67C100
     DynamicVector * Constructor_1(char a2);  // 0x67C1A0
 };

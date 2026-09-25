@@ -123,15 +123,6 @@ public:
     int SaveLoad_Prefix(int a1, int a2, int a3, int a4);  // 0x772cd0
     int SaveLoad_Prefix_0(int a1, int a2, int a3, int a4, int a5);  // 0x772eb0
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int Process(ObjectClass * Source);  // 0x6CEEF0
-    unsigned int * Constructor(ObjectClass * aP1);  // 0x771C70
-    int Destructor();  // 0x771F50
-    int GetClassIdentifier(int a1, unsigned int * a2);  // 0x772C90
-    int GetObjectSize();  // 0x7730D0
-    int GetTypeIdentifier();  // 0x7730E0
-    WeaponTypeClass * ddtor(void ** Block, char a2);  // 0x7730F0
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

@@ -143,16 +143,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === FUNCS-MOVE (BEGIN) ===
     int FindByEventType(int a1);  // 0x610950
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int GetValue();  // 0x71FA30
-    int ddtor(int a1, unsigned int * a2);  // 0x726820
-    int LoadTrigger(AbstractClass * aP0, int aP1);  // 0x726860
-    int SaveTrigger(TechnoTypeClass * aP0, int * a1, int aP2);  // 0x7268D0
-    int StubReturn72();  // 0x726930
-    int StubReturn38();  // 0x726940
-// --- e4 declarations (END) ---
-// --- e4 declarations (BEGIN) ---
-// --- e4 declarations (END) ---
 };
 
 // --- TriggerTypeClass ---

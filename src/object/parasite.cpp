@@ -15,6 +15,3 @@ void ParasiteClass::calculateChecksum(void* checksum) const {}
 int ParasiteClass::StubReturn67() const { return 67; }
 // 0x62af50
 int ParasiteClass::StubReturn88() const { return 88; }
-
-} // namespace game
-} // namespace ra2

@@ -151,11 +151,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     int ValidateTarget();  // 0x46aff0
     int PowerDrainProcess(int a1, int a2);  // 0x46b560
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    int Dtor();  // 0x466560
-    int MissionStubReturnZero();  // 0x46B540
-    int MissionStubReturnZero2();  // 0x46B550
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

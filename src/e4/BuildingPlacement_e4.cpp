@@ -6,24 +6,25 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/BuildingPlacement_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4FB840
+namespace gamemd {
 void* BuildingPlacement::Activate(int a2, unsigned int * a3)
 {
-  int v4; // edi
-  _DWORD *v5; // esi
   int v6; // eax
   const void *v7; // eax
   _DWORD *v8; // eax
 
-  if ( (#375 *)this != HouseClass_Player ) /*0x4fb84c*/
+  if ( (void *)this != HouseClass_Player ) /*0x4fb84c*/
     return 0; /*0x4fb84c*/
-  if ( g_RadarBlipManager ) /*0x4fb859*/
+  if ( v6 ) /*0x4fb859*/
     return 0; /*0x4fb859*/
-  v4 = a2; /*0x4fb85f*/
+  a2 = a2; /*0x4fb85f*/
   if ( !a2 ) /*0x4fb865*/
     return 0; /*0x4fb865*/
-  v5 = a3; /*0x4fb86b*/
+  a3 = a3; /*0x4fb86b*/
   if ( !a3 ) /*0x4fb871*/
     return 0; /*0x4fb919*/
   MapClass::UnselectAll_ClearLimboLaunchers(); /*0x4fb877*/
@@ -33,24 +34,25 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
   byte_88099B = 0; /*0x4fb89b*/
   byte_88099C = 0; /*0x4fb8a2*/
   g_BuildingPlacementState = -1; /*0x4fb8a9*/
-  v6 = v5[328]; /*0x4fb8b3*/
-  g_RadarBlipPool = (int)v5; /*0x4fb8b9*/
-  g_RadarBlipManager = v6; /*0x4fb8bf*/
-  dword_880994 = *(_DWORD *)(this + 48); /*0x4fb8c7*/
-  v7 = (const void *)(*(int (__thiscall **)(_DWORD *, int))(*v5 + 264))(v5, 1); /*0x4fb8d3*/
+  v6 = a3[328]; /*0x4fb8b3*/
+  g_RadarBlipPool = (int)a3; /*0x4fb8b9*/
+  v6 = v6; /*0x4fb8bf*/
+  dword_880994 = this->q030; /*0x4fb8c7*/
+  v7 = (const void *)(*(int (__thiscall **)(_DWORD *, int))(*a3 + 264))(a3, 1); /*0x4fb8d3*/
   Mouse::SetBounds((int)&MapClass_Instance, v7); /*0x4fb8df*/
-  v8 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)v4 + 440))(v4, &a2); /*0x4fb8ed*/
+  v8 = (_DWORD *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)a2 + 440))(a2, &a2); /*0x4fb8ed*/
   Tactical::MouseMove((int)&MapClass_Instance, &a3, v8); /*0x4fb8fe*/
-  (*(void (__thiscall **)(int, int))(*(_DWORD *)v4 + 292))(v4, 2); /*0x4fb909*/
+  (*(void (__thiscall **)(int, int))(*(_DWORD *)a2 + 292))(a2, 2); /*0x4fb909*/
   return 1; /*0x4fb90f*/
 }
+} // namespace gamemd
 // 0x54C550
-VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
+namespace gamemd {
+VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
 {
   _DWORD *v2; // ebp
   _DWORD *v3; // eax
   int v4; // ecx
-  _DWORD *v5; // edi
   int v6; // eax
   unsigned int v7; // edi
   _DWORD *v8; // eax
@@ -63,7 +65,6 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
   char v15; // bl
   int v16; // edx
   int v17; // eax
-  int v18; // ebx
   _DWORD *v19; // ecx
   int v20; // ecx
   _DWORD *v21; // edi
@@ -82,14 +83,12 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
   _BYTE *v34; // ecx
   _BYTE *v35; // ecx
   int v36; // eax
-  int v37; // edi
   _DWORD *v38; // eax
   int v39; // ecx
   _DWORD *v40; // eax
   int v41; // ecx
   int v42; // edi
   int v43; // eax
-  int v45; // [esp+44h] [ebp-28h]
   int v46; // [esp+48h] [ebp-24h]
   char v47; // [esp+5Bh] [ebp-11h]
   int v48; // [esp+5Ch] [ebp-10h] BYREF
@@ -97,10 +96,10 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
   int v50; // [esp+64h] [ebp-8h]
   int v51; // [esp+68h] [ebp-4h]
 
-  v2 = (_DWORD *)(this + 64); /*0x54c55e*/
-  v3 = Coord::To_Cell(&MapClass_Instance, (_DWORD *)(this + 64)); /*0x54c562*/
-  v4 = *(_DWORD *)(this + 12); /*0x54c567*/
-  v5 = v3; /*0x54c56a*/
+  v2 = (_DWORD *)(&this->u32_184); /*0x54c55e*/
+  v3 = Coord::To_Cell(&MapClass_Instance, (_DWORD *)(&this->u32_184)); /*0x54c562*/
+  v4 = this->q00C; /*0x54c567*/
+  v3 = v3; /*0x54c56a*/
   if ( !*(_BYTE *)(v4 + 1709) ) /*0x54c56c*/
   {
     v6 = v3[59]; /*0x54c57a*/
@@ -108,96 +107,96 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
       && *(_DWORD *)(v4 + 180) != 7
       && (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 388))(v4) != 7 )
     {
-      if ( ObjectClass::HasLinkedObject(*(_DWORD *)(this + 12)) ) /*0x54c5b5*/
+      if ( ObjectClass::HasLinkedObject(this->q00C) ) /*0x54c5b5*/
       {
         v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x54c5d6*/
-        v8 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 444))(*(_DWORD *)(this + 12)); /*0x54c5da*/
-        v9 = **(_DWORD **)(this + 12); /*0x54c5e6*/
+        v8 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->q0042) + 444))(this->q00C); /*0x54c5da*/
+        v9 = **(_DWORD **)(&this->q0042); /*0x54c5e6*/
         NeighbourContent = Cell::GetNeighbourContent(v8, v7); /*0x54c5ea*/
-        (*(void (__thiscall **)(_DWORD, void *, int))(v9 + 1152))(*(_DWORD *)(this + 12), NeighbourContent, 1); /*0x54c5f3*/
-        v11 = *(_BYTE **)(this + 12); /*0x54c5f9*/
-        LOBYTE(v9) = v11[116]; /*0x54c600*/
+        (*(void (__thiscall **)(_DWORD, void *, int))(v9 + 1152))(this->q00C, NeighbourContent, 1); /*0x54c5f3*/
+        v11 = *(_BYTE **)(&this->q0042); /*0x54c5f9*/
+        IDA_LOBYTE(v9) = v11[116]; /*0x54c600*/
         (*(void (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v11 + 292))(v11, 0); /*0x54c603*/
-        v12 = *(char **)(this + 12); /*0x54c609*/
+        v12 = *(char **)(&this->q0042); /*0x54c609*/
         v12[116] = v9; /*0x54c60d*/
-        *(_DWORD *)(this + 80) = 3; /*0x54c610*/
+        this->q050 = 3; /*0x54c610*/
       }
       else
       {
-        v13 = (_DWORD *)(*(int (__stdcall **)(_DWORD))(**(_DWORD **)(this + 12) + 444))(*(_DWORD *)(this + 12)); /*0x54c624*/
+        v13 = (_DWORD *)(*(int (__stdcall **)(_DWORD))(**(_DWORD **)(&this->q0042) + 444))(this->q00C); /*0x54c624*/
         CellClass::AttachObject(v13, v46); /*0x54c62c*/
-        v14 = *(_BYTE **)(this + 12); /*0x54c631*/
+        v14 = *(_BYTE **)(&this->q0042); /*0x54c631*/
         v15 = v14[116]; /*0x54c638*/
-        LOBYTE(v12) = (*(int (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v14 + 292))(v14, 0); /*0x54c63b*/
-        *(_BYTE *)(*(_DWORD *)(this + 12) + 116) = v15; /*0x54c645*/
-        v16 = *(_DWORD *)(this + 44); /*0x54c648*/
-        *(_DWORD *)(this + 80) = 2; /*0x54c64b*/
-        *(_DWORD *)(this + 128) = v16; /*0x54c652*/
+        IDA_LOBYTE(v12) = (*(int (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)v14 + 292))(v14, 0); /*0x54c63b*/
+        *(_BYTE *)(this->q00C + 116) = v15; /*0x54c645*/
+        v16 = this->u32_2C; /*0x54c648*/
+        this->q050 = 2; /*0x54c64b*/
+        this->q080 = v16; /*0x54c652*/
       }
       return (char)v12; /*0x54c61d*/
     }
-    v48 = (*(int (__thiscall **)(_DWORD, _DWORD *, int, int, _DWORD, int))(**(_DWORD **)(this + 12) + 428))( /*0x54c675*/
-            *(_DWORD *)(this + 12),
-            v5,
+    v48 = (*(int (__thiscall **)(_DWORD, _DWORD *, int, int, _DWORD, int))(**(_DWORD **)(&this->q0042) + 428))( /*0x54c675*/
+            this->q00C,
+            v3,
             -1,
             -1,
             0,
             1);
-    LOBYTE(v17) = Input::OffsetToDirection((_DWORD *)(this + 64)); /*0x54c679*/
-    v18 = v17; /*0x54c684*/
-    if ( (unsigned __int8)BuildingPlacement::IsPlacementFlagSet(v17, BYTE1(v5[80]) & 1) /*0x54c699*/
-      || (v47 = 0, *(_BYTE *)(this + 144)) )
+    IDA_LOBYTE(v17) = Input::OffsetToDirection((_DWORD *)(&this->u32_184)); /*0x54c679*/
+    v17 = v17; /*0x54c684*/
+    if ( (unsigned __int8)BuildingPlacement::IsPlacementFlagSet(v17, IDA_BYTE1(v3[80]) & 1) /*0x54c699*/
+      || (v47 = 0, this->q090) )
     {
       v47 = 1; /*0x54c6a8*/
     }
-    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 44))(*(_DWORD *)(this + 12)) == 1 && !v18 ) /*0x54c6bc*/
+    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->q0042) + 44))(this->q00C) == 1 && !v17 ) /*0x54c6bc*/
       v47 = 1; /*0x54c6be*/
-    v19 = *(_DWORD **)(this + 12); /*0x54c6c2*/
+    v19 = *(_DWORD **)(&this->q0042); /*0x54c6c2*/
     if ( v19[45] != 7 && (*(int (__thiscall **)(_DWORD *))(*v19 + 388))(v19) != 7 ) /*0x54c6d9*/
     {
       if ( !v47 /*0x54c70c*/
-        || (*((_DWORD *)Coord::To_Cell(&MapClass_Instance, (_DWORD *)(this + 64)) + 80) & 0x100) == 0
-        && (v48 > 2 || v48 == 2 && !*(_BYTE *)(this + 144)) )
+        || (*((_DWORD *)Coord::To_Cell(&MapClass_Instance, (_DWORD *)(&this->u32_184)) + 80) & 0x100) == 0
+        && (v48 > 2 || v48 == 2 && !this->q090) )
       {
-        LOBYTE(v12) = (*(int (__stdcall **)(int))(*(_DWORD *)(this + 4) + 72))(this + 4); /*0x54ca43*/
+        IDA_LOBYTE(v12) = (*(int (__stdcall **)(int))(this->q004 + 72))(this + 4); /*0x54ca43*/
         return (char)v12; /*0x54ca4d*/
       }
-      if ( !*(_BYTE *)(this + 144) ) /*0x54c71a*/
+      if ( !this->q090 ) /*0x54c71a*/
       {
-        v20 = *(_DWORD *)(this + 12); /*0x54c724*/
-        *(_BYTE *)(this + 144) = 1; /*0x54c727*/
-        (*(void (__thiscall **)(int, int))(*(_DWORD *)v20 + 240))(v20, this + 64); /*0x54c731*/
+        v20 = this->q00C; /*0x54c724*/
+        this->q090 = 1; /*0x54c727*/
+        (*(void (__thiscall **)(int, int))(*(_DWORD *)v20 + 240))(v20, &this->u32_184); /*0x54c731*/
       }
     }
   }
-  v21 = *(_DWORD **)(this + 12); /*0x54c737*/
+  v21 = *(_DWORD **)(&this->q0042); /*0x54c737*/
   if ( v21 ) /*0x54c73c*/
   {
-    if ( (*(int (__thiscall **)(_DWORD))(*v21 + 44))(*(_DWORD *)(this + 12)) == 1 ) /*0x54c748*/
+    if ( (*(int (__thiscall **)(_DWORD))(*v21 + 44))(this->q00C) == 1 ) /*0x54c748*/
     {
       if ( *(_BYTE *)(v21[433] + 3603) ) /*0x54c750*/
       {
-        if ( !*(_BYTE *)(*(_DWORD *)(this + 12) + 1709) ) /*0x54c75d*/
+        if ( !*(_BYTE *)(this->q00C + 1709) ) /*0x54c75d*/
         {
           DeployDir = g_RulesClass_Instance->DeployDir; /*0x54c776*/
-          Value = ProgressTimer::GetValue((_WORD *)(this + 84), &v48); /*0x54c77a*/
-          LOBYTE(v24) = 0; /*0x54c77f*/
-          HIBYTE(v24) = DeployDir; /*0x54c781*/
+          Value = ProgressTimer::GetValue((_WORD *)(&this->u32_204), &v48); /*0x54c77a*/
+          IDA_LOBYTE(v24) = 0; /*0x54c77f*/
+          IDA_HIBYTE(v24) = DeployDir; /*0x54c781*/
           if ( *(_WORD *)Value != v24 ) /*0x54c786*/
           {
-            LOBYTE(v25) = 0; /*0x54c78d*/
-            HIBYTE(v25) = g_RulesClass_Instance->DeployDir; /*0x54c793*/
-            LOWORD(v48) = v25; /*0x54c799*/
-            FacingClass::Update((char *)(this + 84), &v48); /*0x54c79e*/
+            IDA_LOBYTE(v25) = 0; /*0x54c78d*/
+            IDA_HIBYTE(v25) = g_RulesClass_Instance->DeployDir; /*0x54c793*/
+            IDA_LOWORD(v48) = v25; /*0x54c799*/
+            FacingClass::Update((char *)(&this->u32_204), &v48); /*0x54c79e*/
           }
         }
       }
     }
   }
-  v26 = *(_DWORD *)(this + 12); /*0x54c7a3*/
-  *(_DWORD *)(this + 128) = 0; /*0x54c7a6*/
+  v26 = this->q00C; /*0x54c7a3*/
+  this->q080 = 0; /*0x54c7a6*/
   v27 = (*(int (__thiscall **)(int))(*(_DWORD *)v26 + 456))(v26); /*0x54c7b8*/
-  v12 = *(char **)(this + 12); /*0x54c7ba*/
+  v12 = *(char **)(&this->q0042); /*0x54c7ba*/
   if ( !v12[140] ) /*0x54c7bd*/
   {
     v28 = (int *)(v12 + 156); /*0x54c7c7*/
@@ -207,19 +206,19 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
     v12 = (char *)Coord::To_Cell(&MapClass_Instance, &v49); /*0x54c7ea*/
     if ( (*((_DWORD *)v12 + 80) & 0x100) != 0 ) /*0x54c7f8*/
     {
-      LOBYTE(v12) = dword_ABC5DC; /*0x54c7fa*/
+      IDA_LOBYTE(v12) = dword_ABC5DC; /*0x54c7fa*/
       if ( v27 >= dword_ABC5DC ) /*0x54c801*/
         v27 -= dword_ABC5DC; /*0x54c803*/
     }
   }
   if ( !v27 )
   {
-    (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(**(_DWORD **)(this + 12) + 1348))(*(_DWORD *)(this + 12), 0, 0); /*0x54c814*/
-    (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 12) + 292))(*(_DWORD *)(this + 12), 0); /*0x54c820*/
-    v29 = *(_BYTE **)(this + 12); /*0x54c826*/
+    (*(void (__thiscall **)(_DWORD, _DWORD, _DWORD))(**(_DWORD **)(&this->q0042) + 1348))(this->q00C, 0, 0); /*0x54c814*/
+    (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(&this->q0042) + 292))(this->q00C, 0); /*0x54c820*/
+    v29 = *(_BYTE **)(&this->q0042); /*0x54c826*/
     if ( !v29[1709] ) /*0x54c829*/
-      (*(void (__thiscall **)(_BYTE *, int))(*(_DWORD *)v29 + 436))(v29, this + 64); /*0x54c836*/
-    v30 = (int *)(*(_DWORD *)(this + 12) + 156); /*0x54c83f*/
+      (*(void (__thiscall **)(_BYTE *, int))(*(_DWORD *)v29 + 436))(v29, &this->u32_184); /*0x54c836*/
+    v30 = (int *)(this->q00C + 156); /*0x54c83f*/
     v49 = *v30; /*0x54c848*/
     v50 = v30[1]; /*0x54c84f*/
     v31 = v30[2]; /*0x54c853*/
@@ -228,33 +227,33 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
     v51 = v30[2]; /*0x54c870*/
     if ( v31 > Cell::GetGroundHeight(&v49) ) /*0x54c87b*/
     {
-      v32 = (int *)(*(_DWORD *)(this + 12) + 156); /*0x54c880*/
+      v32 = (int *)(this->q00C + 156); /*0x54c880*/
       v49 = *v32; /*0x54c888*/
       v50 = v32[1]; /*0x54c894*/
       v51 = v32[2]; /*0x54c8a0*/
       if ( (*((_DWORD *)Coord::To_Cell(&MapClass_Instance, &v49) + 80) & 0x100) != 0 ) /*0x54c8b2*/
-        *(_BYTE *)(*(_DWORD *)(this + 12) + 140) = 1; /*0x54c8b7*/
+        *(_BYTE *)(this->q00C + 140) = 1; /*0x54c8b7*/
     }
-    (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(this + 12) + 292))(*(_DWORD *)(this + 12), 1); /*0x54c8c5*/
+    (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)(&this->q0042) + 292))(this->q00C, 1); /*0x54c8c5*/
     *v2 = dword_ABC5A8; /*0x54c8d2*/
-    *(_DWORD *)(this + 68) = dword_ABC5AC; /*0x54c8db*/
-    v33 = *(_DWORD *)(this + 12); /*0x54c8e4*/
-    *(_DWORD *)(this + 72) = dword_ABC5B0; /*0x54c8e7*/
-    *(_BYTE *)(this + 76) = 0; /*0x54c8ea*/
+    this->q044 = dword_ABC5AC; /*0x54c8db*/
+    v33 = this->q00C; /*0x54c8e4*/
+    this->q048 = dword_ABC5B0; /*0x54c8e7*/
+    this->u8_4C = 0; /*0x54c8ea*/
     (*(void (__thiscall **)(int, int))(*(_DWORD *)v33 + 396))(v33, 2); /*0x54c8f0*/
-    (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 12) + 1152))(*(_DWORD *)(this + 12), 0, 1); /*0x54c8ff*/
-    v34 = *(_BYTE **)(this + 12); /*0x54c905*/
-    LOBYTE(v12) = v34[144]; /*0x54c908*/
+    (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(&this->q0042) + 1152))(this->q00C, 0, 1); /*0x54c8ff*/
+    v34 = *(_BYTE **)(&this->q0042); /*0x54c905*/
+    IDA_LOBYTE(v12) = v34[144]; /*0x54c908*/
     if ( (_BYTE)v12 )
     {
-      LOBYTE(v12) = v34[129]; /*0x54c916*/
+      IDA_LOBYTE(v12) = v34[129]; /*0x54c916*/
       if ( !(_BYTE)v12 )
       {
-        LOBYTE(v12) = v34[141]; /*0x54c924*/
+        IDA_LOBYTE(v12) = v34[141]; /*0x54c924*/
         if ( !(_BYTE)v12 )
         {
           (*(void (__thiscall **)(_BYTE *, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)v34 + 1164))(v34, 0, 0, 0, 0); /*0x54c93c*/
-          v35 = *(_BYTE **)(this + 12); /*0x54c942*/
+          v35 = *(_BYTE **)(&this->q0042); /*0x54c942*/
           if ( v35[144] ) /*0x54c945*/
             (*(void (__thiscall **)(_BYTE *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)v35 + 1160))( /*0x54c95b*/
               v35,
@@ -263,7 +262,7 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
               0,
               0,
               0);
-          v36 = *(_DWORD *)(this + 12); /*0x54c961*/
+          v36 = this->q00C; /*0x54c961*/
           if ( *(_BYTE *)(v36 + 144) ) /*0x54c964*/
           {
             v49 = *(_DWORD *)(v36 + 156); /*0x54c978*/
@@ -271,39 +270,39 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
             v51 = *(_DWORD *)(v36 + 164); /*0x54c986*/
             MapClass::RevealArea2(&v49, *(_DWORD *)(v36 + 608) - 3, *(_DWORD *)(v36 + 608) + 3, 0); /*0x54c9a2*/
           }
-          v48 = *(_DWORD *)(this + 12); /*0x54c9ac*/
-          v37 = v48; /*0x54c9aa*/
-          if ( *(_DWORD *)((*(int (**)(void))(*(_DWORD *)v48 + 444))() + 224) == v37 ) /*0x54c9be*/
+          v48 = this->q00C; /*0x54c9ac*/
+          v48 = v48; /*0x54c9aa*/
+          if ( *(_DWORD *)((*(int (**)(void))(*(_DWORD *)v48 + 444))() + 224) == v48 ) /*0x54c9be*/
           {
-            v38 = (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)v37 + 444))(v37); /*0x54c9c6*/
+            v38 = (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)v48 + 444))(v48); /*0x54c9c6*/
             CellClass::AttachObject(v38, 0); /*0x54c9ce*/
           }
-          GadgetGrid::RemoveItem(g_CellClassManager, *(_DWORD *)(this + 12)); /*0x54c9dc*/
-          v39 = *(_DWORD *)(this + 12); /*0x54c9e1*/
-          *(_DWORD *)(this + 80) = 0; /*0x54c9e4*/
-          v45 = v39; /*0x54c9eb*/
+          GadgetGrid::RemoveItem(g_CellClassManager, this->q00C); /*0x54c9dc*/
+          v39 = this->q00C; /*0x54c9e1*/
+          this->q050 = 0; /*0x54c9e4*/
+          v39 = v39; /*0x54c9eb*/
           v40 = (_DWORD *)(*(int (__thiscall **)(int))(*(_DWORD *)v39 + 444))(v39); /*0x54c9ee*/
-          CrateClass::ProcessPickup(v40, v45); /*0x54c9f6*/
-          v12 = *(char **)(this + 12); /*0x54c9fb*/
+          CrateClass::ProcessPickup(v40, v39); /*0x54c9f6*/
+          v12 = *(char **)(&this->q0042); /*0x54c9fb*/
           v12[1710] = 1; /*0x54c9fe*/
-          *(_BYTE *)(*(_DWORD *)(this + 12) + 1063) = 0; /*0x54ca08*/
-          *(_BYTE *)(*(_DWORD *)(this + 12) + 1061) = 0; /*0x54ca12*/
-          v41 = *(_DWORD *)(this + 12); /*0x54ca19*/
-          *(_BYTE *)(this + 144) = 0; /*0x54ca1e*/
+          *(_BYTE *)(this->q00C + 1063) = 0; /*0x54ca08*/
+          *(_BYTE *)(this->q00C + 1061) = 0; /*0x54ca12*/
+          v41 = this->q00C; /*0x54ca19*/
+          this->q090 = 0; /*0x54ca1e*/
           if ( v41 )
           {
             v12 = (char *)(*(int (__thiscall **)(int))(*(_DWORD *)v41 + 44))(v41); /*0x54ca29*/
             if ( v12 == (char *)1 )
             {
-              v42 = *(_DWORD *)(this + 12); /*0x54ca31*/
+              v42 = this->q00C; /*0x54ca31*/
               if ( v42 )
-                v43 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v42 + 44))(*(_DWORD *)(this + 12)) == 1 ? v42 : 0;
+                v43 = (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v42 + 44))(this->q00C) == 1 ? v42 : 0;
               else
                 v43 = 0; /*0x54ca38*/
               v12 = (char *)(*(int (__thiscall **)(int))(*(_DWORD *)v43 + 132))(v43); /*0x54ca62*/
               if ( v12[1709] ) /*0x54ca68*/
               {
-                v12 = *(char **)(this + 12); /*0x54ca72*/
+                v12 = *(char **)(&this->q0042); /*0x54ca72*/
                 v12[308] = 0; /*0x54ca75*/
               }
             }
@@ -314,7 +313,9 @@ VectorClass * * BuildingPlacement::ProcessBuildingPlacementAction()
   }
   return (char)v12; /*0x54c60c*/
 }
+} // namespace gamemd
 // 0x594F40
+namespace gamemd {
 unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
 {
   int v2; // esi
@@ -366,7 +367,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   double v49; // [esp+40h] [ebp-8h]
   double v50; // [esp+40h] [ebp-8h]
 
-  v2 = *(this + 8); /*0x594f51*/
+  v2 = this->q020; /*0x594f51*/
   v49 = -1.0; /*0x594f5f*/
   v41 = -1; /*0x594f6f*/
   v3 = Math::RoundToInt(((double)dword_ABE030 * 0.01 * 12.0 / (double)dword_ABE028 + 2.0) * (double)v2); /*0x594f8d*/
@@ -383,12 +384,12 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
       return 0; /*0x594fc3*/
     v36 = *(_DWORD *)(a2 + 16); /*0x594fc6*/
   }
-  v6 = __2_YAPAXI_Z(0x18u); /*0x594fcc*/
+  v6 = RA2_OPNEW(0x18u); /*0x594fcc*/
   v7 = v6; /*0x594fd1*/
   if ( v6 ) /*0x594fd8*/
   {
     VectorClass::CellConstructor(v6, 0, 0); /*0x594fde*/
-    *v7 = &DynamicVectorClass<Cell>::`vftable'; /*0x594fe3*/
+    *v7 = &(void*)(void*)&DynamicVectorClass_Cell_vftable; /*0x594fe3*/
     v7[5] = 10; /*0x594fe9*/
     v7[4] = 0; /*0x594ff0*/
     v35 = v7; /*0x594ff3*/
@@ -407,23 +408,23 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
     {
       v10 = *(_DWORD *)(*(_DWORD *)(v4 + 4) + 4 * v33); /*0x595025*/
       if ( v9 ) /*0x59502c*/
-        v39 = v9[20 * (__int16)v10 + 14 + 20 * g_MapCellWidth * SHIWORD(v10)]; /*0x595053*/
+        v39 = v9[20 * (__int16)v10 + 14 + 20 * g_MapCellWidth * IDA_SHIWORD(v10)]; /*0x595053*/
       else
         v39 = -1; /*0x59502e*/
       v11 = v33 + 1; /*0x59505b*/
       if ( v33 + 1 < v8 )
       {
         v43 = (__int16)v10; /*0x595072*/
-        v45 = SHIWORD(v10); /*0x595076*/
+        v45 = IDA_SHIWORD(v10); /*0x595076*/
         do
         {
           v37 = *(_DWORD *)(*(_DWORD *)(a2 + 4) + 4 * v11); /*0x59508b*/
           if ( v9 ) /*0x59509d*/
-            v12 = v9[20 * (__int16)v37 + 14 + 20 * g_MapCellWidth * SHIWORD(v37)]; /*0x5950b3*/
+            v12 = v9[20 * (__int16)v37 + 14 + 20 * g_MapCellWidth * IDA_SHIWORD(v37)]; /*0x5950b3*/
           else
             v12 = -1; /*0x59509f*/
           v13 = Math::Sqrt((double)((v43 - (__int16)v37) * (v43 - (__int16)v37)
-                                  + (v45 - SHIWORD(v37)) * (v45 - SHIWORD(v37))))
+                                  + (v45 - IDA_SHIWORD(v37)) * (v45 - IDA_SHIWORD(v37))))
               + (double)(v39 != v12 ? 0x14 : 0);
           if ( v11 && v13 > v49 ) /*0x5950fd*/
           {
@@ -486,7 +487,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
           {
             v25 = *(_DWORD *)(*(_DWORD *)(v4 + 4) + 4 * v34); /*0x595244*/
             if ( v9 ) /*0x595250*/
-              v42 = v9[20 * (__int16)v25 + 14 + 20 * g_MapCellWidth * SHIWORD(v25)]; /*0x595275*/
+              v42 = v9[20 * (__int16)v25 + 14 + 20 * g_MapCellWidth * IDA_SHIWORD(v25)]; /*0x595275*/
             else
               v42 = -1; /*0x595252*/
             v26 = 0; /*0x595279*/
@@ -494,16 +495,16 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
             if ( v19 > 0 )
             {
               v47 = (__int16)v25; /*0x595299*/
-              v44 = SHIWORD(v25); /*0x59529d*/
+              v44 = IDA_SHIWORD(v25); /*0x59529d*/
               do
               {
                 v46 = *(_DWORD *)(v35[1] + 4 * v26); /*0x5952b3*/
                 if ( v9 ) /*0x5952c5*/
-                  v27 = v9[20 * (__int16)v46 + 14 + 20 * g_MapCellWidth * SHIWORD(v46)]; /*0x5952db*/
+                  v27 = v9[20 * (__int16)v46 + 14 + 20 * g_MapCellWidth * IDA_SHIWORD(v46)]; /*0x5952db*/
                 else
                   v27 = -1; /*0x5952c7*/
                 v28 = Math::Sqrt((double)((v47 - (__int16)v46) * (v47 - (__int16)v46)
-                                        + (v44 - SHIWORD(v46)) * (v44 - SHIWORD(v46))))
+                                        + (v44 - IDA_SHIWORD(v46)) * (v44 - IDA_SHIWORD(v46))))
                     + (double)(v42 != v27 ? 0x14 : 0);
                 if ( v28 < v38 ) /*0x595321*/
                   v38 = v28; /*0x595323*/
@@ -566,7 +567,9 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
   }
   return v7; /*0x594fbd*/
 }
+} // namespace gamemd
 // 0x500200
+namespace gamemd {
 unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknown a3)
 {
   _DWORD *v2; // esi
@@ -598,8 +601,8 @@ unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknow
   v9 = v2[40]; /*0x50027b*/
   v13[1] = 0; /*0x50027e*/
   v15[3] = v7[2]; /*0x500286*/
-  LOWORD(a2) = v8 / 256; /*0x500296*/
-  HIWORD(a2) = v9 / 256; /*0x5002b2*/
+  IDA_LOWORD(a2) = v8 / 256; /*0x500296*/
+  IDA_HIWORD(a2) = v9 / 256; /*0x5002b2*/
   TileIndex = MapClass::GetTileIndex(&MapClass_Instance, (__int16 *)&a2, 0, 0); /*0x5002cf*/
   v11 = *LayerClass::Pathfinding_Find( /*0x5002ea*/
            &MapClass_Instance,
@@ -622,3 +625,4 @@ unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknow
   *a1 = v11; /*0x5002f2*/
   return a1; /*0x5002f0*/
 }
+} // namespace gamemd

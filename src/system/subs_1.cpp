@@ -601,7 +601,7 @@ int MainWindowProcReadHelper(int a0) // fastcall
 
 // IDA: 0x4072B0  proposal: ScenarioClass::Method
 // IDA: int __thiscall sub_4072B0(_DWORD *this)
-//   return HIWORD(*(this + 2));
+//   return IDA_HIWORD(*(this + 2));
 int ScenarioClass_Method(void* _this) // thiscall
 {
   return 0;
@@ -717,7 +717,7 @@ int InitZero40B520()
 
 // IDA: 0x40BDA0  proposal: InitZero40BDA0
 // IDA: void __cdecl sub_40BDA0()
-//   __3_YAXPAX_Z(Base);
+//   RA2_OPDEL(Base);
 //   Base = 0;
 //   NumOfElements = 0;
 //   dword_87F688 = 0;

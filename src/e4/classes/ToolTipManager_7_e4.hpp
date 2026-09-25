@@ -5,7 +5,11 @@
 
 namespace gamemd {
 struct ToolTipManager_7 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    void* Items;  // 0x4
+    int Capacity;  // 0x8
+    bool IsAllocated;  // 0xD
+// --- flat members (END) ---
     DynamicVector * QueryInterface(char a2);  // 0x724F40
 };
 } // namespace gamemd

@@ -1,8 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/Struct_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x48B2A0
+namespace gamemd {
 int Struct::ClearAllMemberFlags()
 {
   int v1; // eax
@@ -13,105 +16,112 @@ int Struct::ClearAllMemberFlags()
   int v6; // esi
   _DWORD *v7; // edi
 
-  v1 = *(this + 1); /*0x48b2a0*/
+  v1 = this->q004; /*0x48b2a0*/
   v2 = 0; /*0x48b2a7*/
-  *(this + 11) = 0; /*0x48b2ac*/
-  *(this + 15) = 0; /*0x48b2af*/
-  *(this + 5) = 0; /*0x48b2b2*/
-  *(this + 6) = 0; /*0x48b2b5*/
-  *(this + 7) = 0; /*0x48b2b8*/
-  *(this + 8) = 0; /*0x48b2bb*/
-  *(this + 10) = 0; /*0x48b2be*/
-  *(this + 14) = 0; /*0x48b2c1*/
+  *(&this->q0041) = 0; /*0x48b2ac*/
+  *(&this->q0045) = 0; /*0x48b2af*/
+  this->q014 = 0; /*0x48b2b2*/
+  this->q018 = 0; /*0x48b2b5*/
+  this->q01C = 0; /*0x48b2b8*/
+  this->q020 = 0; /*0x48b2bb*/
+  *(&this->q0040) = 0; /*0x48b2be*/
+  *(&this->q0044) = 0; /*0x48b2c1*/
   if ( v1 > 0 ) /*0x48b2c4*/
   {
     v3 = 0; /*0x48b2c6*/
     do /*0x48b327*/
     {
-      *(_DWORD *)(v3 + *(this + 9)) &= ~1u; /*0x48b2d2*/
-      *(_DWORD *)(v3 + *(this + 9)) &= ~2u; /*0x48b2de*/
-      v4 = (_DWORD *)(v3 + *(this + 9)); /*0x48b2e3*/
+      *(_DWORD *)(v3 + this->q024) &= ~1u; /*0x48b2d2*/
+      *(_DWORD *)(v3 + this->q024) &= ~2u; /*0x48b2de*/
+      v4 = (_DWORD *)(v3 + this->q024); /*0x48b2e3*/
       v3 += 36; /*0x48b2e5*/
       ++v2; /*0x48b2ed*/
       *v4 &= ~4u; /*0x48b2ee*/
-      *(_DWORD *)(v3 + *(this + 9) - 32) = 0; /*0x48b2f3*/
-      *(_DWORD *)(v3 + *(this + 9) - 28) = 0; /*0x48b2fa*/
-      *(_DWORD *)(v3 + *(this + 9) - 24) = 0; /*0x48b301*/
-      *(_DWORD *)(v3 + *(this + 9) - 20) = 0; /*0x48b308*/
-      *(_DWORD *)(v3 + *(this + 9) - 12) = 0; /*0x48b30f*/
-      *(_WORD *)(v3 + *(this + 9) - 4) = 0; /*0x48b316*/
-      *(_DWORD *)(*(this + 12) + 4 * v2 - 4) = 0; /*0x48b31e*/
+      *(_DWORD *)(v3 + this->q024 - 32) = 0; /*0x48b2f3*/
+      *(_DWORD *)(v3 + this->q024 - 28) = 0; /*0x48b2fa*/
+      *(_DWORD *)(v3 + this->q024 - 24) = 0; /*0x48b301*/
+      *(_DWORD *)(v3 + this->q024 - 20) = 0; /*0x48b308*/
+      *(_DWORD *)(v3 + this->q024 - 12) = 0; /*0x48b30f*/
+      *(_WORD *)(v3 + this->q024 - 4) = 0; /*0x48b316*/
+      *(_DWORD *)(*(&this->q0042) + 4 * v2 - 4) = 0; /*0x48b31e*/
     }
-    while ( v2 < *(this + 1) ); /*0x48b327*/
+    while ( v2 < this->q004 ); /*0x48b327*/
   }
-  result = *(this + 2); /*0x48b329*/
+  result = this->q008; /*0x48b329*/
   v6 = 0; /*0x48b32c*/
   if ( result > 0 ) /*0x48b330*/
   {
     result = 0; /*0x48b332*/
     do /*0x48b37d*/
     {
-      *(_DWORD *)(result + *(this + 13)) &= ~1u; /*0x48b33e*/
-      *(_DWORD *)(result + *(this + 13)) &= ~2u; /*0x48b34a*/
-      v7 = (_DWORD *)(result + *(this + 13)); /*0x48b34f*/
+      *(_DWORD *)(result + *(&this->q0043)) &= ~1u; /*0x48b33e*/
+      *(_DWORD *)(result + *(&this->q0043)) &= ~2u; /*0x48b34a*/
+      v7 = (_DWORD *)(result + *(&this->q0043)); /*0x48b34f*/
       result += 24; /*0x48b351*/
       ++v6; /*0x48b359*/
       *v7 &= ~4u; /*0x48b35a*/
-      *(_DWORD *)(*(this + 13) + result - 20) = 0; /*0x48b35f*/
-      *(_DWORD *)(*(this + 13) + result - 16) = 0; /*0x48b366*/
-      *(_DWORD *)(*(this + 13) + result - 8) = 0; /*0x48b36d*/
-      *(_DWORD *)(*(this + 16) + 4 * v6 - 4) = 0; /*0x48b374*/
+      *(_DWORD *)(*(&this->q0043) + result - 20) = 0; /*0x48b35f*/
+      *(_DWORD *)(*(&this->q0043) + result - 16) = 0; /*0x48b366*/
+      *(_DWORD *)(*(&this->q0043) + result - 8) = 0; /*0x48b36d*/
+      *(_DWORD *)(*(&this->q0046) + 4 * v6 - 4) = 0; /*0x48b374*/
     }
-    while ( v6 < *(this + 2) ); /*0x48b37d*/
+    while ( v6 < this->q008 ); /*0x48b37d*/
   }
-  *(this + 17) = 0; /*0x48b381*/
-  *(this + 18) = 0; /*0x48b384*/
-  *(this + 19) = 0; /*0x48b387*/
-  *(this + 21) = 0; /*0x48b38a*/
+  *(&this->q0047) = 0; /*0x48b381*/
+  *(&this->q0048) = 0; /*0x48b384*/
+  *(&this->q0049) = 0; /*0x48b387*/
+  *(&this->q0081) = 0; /*0x48b38a*/
   return result; /*0x48b37f*/
 }
+} // namespace gamemd
 // 0x48BF10
+namespace gamemd {
 int Struct::ZeroInitAndSetup()
 {
-  *(this + 13) = 0; /*0x48bf12*/
-  *(this + 14) = 0; /*0x48bf15*/
-  *(this + 15) = 0; /*0x48bf18*/
-  *(this + 16) = 0; /*0x48bf1b*/
-  *(this + 2) = 0; /*0x48bf1e*/
-  *(this + 3) = 0; /*0x48bf21*/
-  *(this + 4) = 0; /*0x48bf24*/
-  *(this + 5) = 0; /*0x48bf27*/
-  *(this + 6) = 0; /*0x48bf2a*/
-  *(this + 17) = -1; /*0x48bf30*/
-  *(this + 18) = -1; /*0x48bf33*/
-  return Struct::ClearAllMemberFlags(*(this + 1));
+  *(&this->q0043) = 0; /*0x48bf12*/
+  *(&this->q0044) = 0; /*0x48bf15*/
+  *(&this->q0045) = 0; /*0x48bf18*/
+  *(&this->q0046) = 0; /*0x48bf1b*/
+  this->q008 = 0; /*0x48bf1e*/
+  this->q00C = 0; /*0x48bf21*/
+  this->q010 = 0; /*0x48bf24*/
+  this->q014 = 0; /*0x48bf27*/
+  this->q018 = 0; /*0x48bf2a*/
+  *(&this->q0047) = -1; /*0x48bf30*/
+  *(&this->q0048) = -1; /*0x48bf33*/
+  return Struct::ClearAllMemberFlags(this->q004);
 }
+} // namespace gamemd
 // 0x4B9BD0
+namespace gamemd {
 unsigned char * Struct::Zero3()
 {
   *this = 0; /*0x4b9bd4*/
-  *(this + 1) = 0; /*0x4b9bd6*/
-  *(this + 2) = 0; /*0x4b9bd9*/
+  this->q004 = 0; /*0x4b9bd6*/
+  this->q008 = 0; /*0x4b9bd9*/
   return this; /*0x4b9bdc*/
 }
+} // namespace gamemd
 // 0x4085A0
+namespace gamemd {
 int Struct::ZeroInit32()
 {
-  memset(this, 0, 0x20u); /*0x4085aa*/
+  memset(0, 0x20u); /*0x4085aa*/
   return 0; /*0x4085ac*/
 }
+} // namespace gamemd
 // 0x53F4E0
 namespace gamemd {
 int Struct::ZeroInitAndSetup_0()
 {
-  return Struct::ZeroInitAndSetup(this);
+  return Struct::ZeroInitAndSetup();
 }
 }
 // 0x5EF280
 namespace gamemd {
 int Struct::ZeroInitAndSetup_0_0()
 {
-  return Struct::ZeroInitAndSetup(this);
+  return Struct::ZeroInitAndSetup();
 }
 }
 // 0x5F75E0

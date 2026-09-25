@@ -1,8 +1,11 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/DialogQueue_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x5D4E70
+namespace gamemd {
 int DialogQueue::PushEntry()
 {
   int result; // eax
@@ -22,7 +25,9 @@ int DialogQueue::PushEntry()
   }
   return result; /*0x5d4ec6*/
 }
+} // namespace gamemd
 // 0x5D4ED0
+namespace gamemd {
 int DialogQueue::RemoveEntry()
 {
   int result; // eax
@@ -41,3 +46,4 @@ int DialogQueue::RemoveEntry()
   }
   return result; /*0x5d4f1b*/
 }
+} // namespace gamemd

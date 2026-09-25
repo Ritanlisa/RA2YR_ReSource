@@ -11,5 +11,3 @@ AbstractType __stdcall RadSiteClass::whatAmI() const { return kObjectTypeId; }
 int RadSiteClass::objectSize() const { return sizeof(RadSiteClass); }
 // 0x65b4c0
 void RadSiteClass::SetBaseCell(CellStruct* cell) {}
-  *(this + 16) = *cell; /*0x65b4c6*/
-  return cell; /*0x65b4c9*/

@@ -1,6 +1,8 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x7781B0
 namespace gamemd {
@@ -12,9 +14,9 @@ int sub_7781B0(short a1)
   char v5; // [esp+2h] [ebp-6h]
   WCHAR WideCharStr[2]; // [esp+4h] [ebp-4h] BYREF
 
-  if ( HIBYTE(a1) ) /*0x7781b6*/
+  if ( IDA_HIBYTE(a1) ) /*0x7781b6*/
   {
-    MultiByteStr = HIBYTE(a1); /*0x7781c1*/
+    MultiByteStr = IDA_HIBYTE(a1); /*0x7781c1*/
     v4 = a1; /*0x7781c1*/
     v5 = 0; /*0x7781c5*/
   }

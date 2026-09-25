@@ -2,6 +2,10 @@
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
+#include "e4/classes/Building_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4E3560
 namespace gamemd {

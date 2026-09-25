@@ -1,6 +1,15 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/UnholyAlliance_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/UnitClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/RadarClass_e4.hpp"
 
 // 0x5CB440
 namespace gamemd {
@@ -31,7 +40,7 @@ AbstractClass * * UnholyAlliance_GetResult()
       v5 = *(_DWORD *)(g_RulesClass_Instance->AICaptureLowPower[2] + 4 * v3); /*0x5cb46b*/
       if ( v5 ) /*0x5cb470*/
       {
-        v6 = __2_YAPAXI_Z(0x8E8u); /*0x5cb47e*/
+        v6 = RA2_OPNEW(0x8E8u); /*0x5cb47e*/
         if ( v6 && (v7 = (int *)UnitClass::Construct((int)v6, v5, v4)) != 0 ) /*0x5cb497*/
         {
           CurrentOption = HouseClass::GetCurrentOption(v4, &ppv); /*0x5cb4a4*/
@@ -72,10 +81,10 @@ AbstractClass * * UnholyAlliance_GetResult()
 // 0x5CB540
 UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
 {
-  *this = &UnholyAlliance::`vftable'; /*0x5cb543*/
-  MultiplayerGameMode::Dtor(this); /*0x5cb549*/
+  *this = &(void*)(void*)&UnholyAlliance_vftable; /*0x5cb543*/
+  MultiplayerGameMode::Dtor(); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
-    __3_YAXPAX_Z(this); /*0x5cb556*/
+    RA2_OPDEL(); /*0x5cb556*/
   return this; /*0x5cb560*/
 }
 // 0x5CB3F0

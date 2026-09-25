@@ -7,6 +7,16 @@
 #include "e4/classes/Event_e4.hpp"
 #include "e4/classes/Mission_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/AsyncIO_e4.hpp"
+#include "e4/classes/AudioMixer_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/TacticalMap_e4.hpp"
+#include "e4/classes/Theme_e4.hpp"
+#include "e4/classes/VoxClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x6863E0
 namespace gamemd {

@@ -4,10 +4,14 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/Team_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/Mixer_e4.hpp"
+#include "e4/classes/TeamClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4D3590
-namespace ra2 {
-namespace game {
+namespace gamemd {
 AbstractClass * * FootClass::Destruct()
 {
   int v2; // ecx
@@ -18,92 +22,85 @@ AbstractClass * * FootClass::Destruct()
   int v7; // eax
   void *v8; // eax
   void *v9; // eax
-  void *v11; // [esp+8h] [ebp-4h] BYREF
 
-  v2 = *((_DWORD *)this + 373); /*0x4d3597*/
-  *(_DWORD *)this = &FootClass::`vftable'; /*0x4d359d*/
-  *((_DWORD *)this + 1) = &FootClass::`vftable'; /*0x4d35a5*/
-  *((_DWORD *)this + 2) = &FootClass::`vftable'; /*0x4d35ac*/
-  *((_DWORD *)this + 3) = &FootClass::`vftable'; /*0x4d35b3*/
+  v2 = this->FootClass_field_5D4; /*0x4d3597*/
+  *(_DWORD *)this = &(void*)(void*)&FootClass_vftable; /*0x4d359d*/
+  this->vtable2 = &(void*)(void*)&FootClass_vftable; /*0x4d35a5*/
+  this->vtable3 = &(void*)(void*)&FootClass_vftable; /*0x4d35ac*/
+  this->vtable4 = &(void*)(void*)&FootClass_vftable; /*0x4d35b3*/
   if ( v2 && g_WTFMode ) /*0x4d35c2*/
-    TeamClass::LiberateMember_Start(this, -1, 0); /*0x4d35c8*/
-  v11 = this; /*0x4d35dd*/
-  v3 = (*(int (__thiscall **)(int *, void **))(FootClass_Array + 16))(&FootClass_Array, &v11); /*0x4d35e1*/
+    TeamClass::LiberateMember_Start(-1, 0); /*0x4d35c8*/
+  v3 = (*(int (__thiscall **)(int *, void **))(FootClass_Array + 16))(&FootClass_Array, &this); /*0x4d35e1*/
   if ( v3 != -1 ) /*0x4d35e7*/
     FootClass::RemoveFromPointerArray(v3); /*0x4d35ef*/
-  v11 = this; /*0x4d3604*/
-  v4 = (*(int (__thiscall **)(int *, void **))(dword_B0F5D8 + 16))(&dword_B0F5D8, &v11); /*0x4d3608*/
+  v4 = (*(int (__thiscall **)(int *, void **))(dword_B0F5D8 + 16))(&dword_B0F5D8, &this); /*0x4d3608*/
   if ( v4 != -1 ) /*0x4d360e*/
     DynamicVector::RemoveItem(&dword_B0F5D8, v4); /*0x4d3616*/
-  v5 = *((_DWORD *)this + 423); /*0x4d361b*/
+  v5 = this->FootClass_field_69C; /*0x4d361b*/
   if ( v5 ) /*0x4d3623*/
   {
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)v5 + 32))(v5, 1); /*0x4d3629*/
-    *((_DWORD *)this + 423) = 0; /*0x4d362c*/
+    (*(void (__thiscall **)(int, int))(v5->needsSave)(v5, 1); /*0x4d3629*/
+    this->FootClass_field_69C = 0; /*0x4d362c*/
   }
-  if ( *((_DWORD *)this + 345) != g_FootClass_Pool ) /*0x4d3646*/
+  if ( this->FootClass_field_564 != g_FootClass_Pool ) /*0x4d3646*/
   {
-    v6 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)this + 690); /*0x4d365b*/
+    v6 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&this->inAirFlag0); /*0x4d365b*/
     if ( (void *)v6[56] == this ) /*0x4d3666*/
       v6[56] = 0; /*0x4d3668*/
   }
-  Mixer::ReleaseChannel((int **)this + 337); /*0x4d3677*/
-  AudioFileClass::Release((_DWORD *)this + 337); /*0x4d367e*/
-  v7 = *((_DWORD *)this + 413); /*0x4d3683*/
+  Mixer::ReleaseChannel((int **)&this->hasParachute7); /*0x4d3677*/
+  AudioFileClass::Release((_DWORD *)&this->hasParachute7); /*0x4d367e*/
+  v7 = this->Locomotor; /*0x4d3683*/
   if ( v7 ) /*0x4d368b*/
-    (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v7 + 8))(*((_DWORD *)this + 413)); /*0x4d3690*/
-  v8 = (void *)*((_DWORD *)this + 364); /*0x4d3693*/
-  *((_DWORD *)this + 363) = &VectorClass<AbstractClass *>::`vftable'; /*0x4d36a0*/
-  if ( v8 && *((_BYTE *)this + 1465) ) /*0x4d36a8*/
+    (*(void (__stdcall **)(_DWORD))(v7->q008)(this->Locomotor); /*0x4d3690*/
+  v8 = (void *)this->q5B0; /*0x4d3693*/
+  this->FootClass_DVC_5AC = &(void*)(void*)&VectorClass_AbstractClass___vftable; /*0x4d36a0*/
+  if ( v8 && this->u8_5B9 ) /*0x4d36a8*/
   {
-    __3_YAXPAX_Z(v8); /*0x4d36b1*/
-    *((_DWORD *)this + 364) = 0; /*0x4d36b9*/
+    RA2_OPDEL(v8); /*0x4d36b1*/
+    this->q5B0 = 0; /*0x4d36b9*/
   }
-  *((_BYTE *)this + 1465) = 0; /*0x4d36bf*/
-  *((_DWORD *)this + 365) = 0; /*0x4d36c5*/
-  v9 = (void *)*((_DWORD *)this + 355); /*0x4d36cb*/
-  *((_DWORD *)this + 354) = &VectorClass<AbstractClass *>::`vftable'; /*0x4d36d1*/
-  if ( v9 && *((_BYTE *)this + 1429) ) /*0x4d36dc*/
+  this->u8_5B9 = 0; /*0x4d36bf*/
+  this->q5B4 = 0; /*0x4d36c5*/
+  v9 = (void *)this->q58C; /*0x4d36cb*/
+  this->FootClass_DVC_588 = &(void*)(void*)&VectorClass_AbstractClass___vftable; /*0x4d36d1*/
+  if ( v9 && this->u8_595 ) /*0x4d36dc*/
   {
-    __3_YAXPAX_Z(v9); /*0x4d36e5*/
-    *((_DWORD *)this + 355) = 0; /*0x4d36ed*/
+    RA2_OPDEL(v9); /*0x4d36e5*/
+    this->q58C = 0; /*0x4d36ed*/
   }
-  *((_BYTE *)this + 1429) = 0; /*0x4d36f5*/
-  *((_DWORD *)this + 356) = 0; /*0x4d36fb*/
-  return TechnoClass::DTOR(this); /*0x4d3706*/
+  this->u8_595 = 0; /*0x4d36f5*/
+  this->q590 = 0; /*0x4d36fb*/
+  return TechnoClass::DTOR(); /*0x4d3706*/
 }
 } // namespace ra2
-}
 
 // 0x4D98C0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 void FootClass::Destroyed(int a2)
 {
   __int64 v3; // rax
   _BYTE v4[4]; // [esp+4h] [ebp-4h] BYREF
 
-  if ( (unsigned __int8)House::IsHumanPlayer(*(this + 135)) /*0x4d98dd*/
-    && !*(_BYTE *)((*((int (__thiscall **)(#375 **))*this + 33))(this) + 3412) )
+  if ( (unsigned __int8)House::IsHumanPlayer(*(&this->attachedTag5)) /*0x4d98dd*/
+    && !*(_BYTE *)((*((int (__thiscall **)(void **))*this + 33))(this) + 3412) )
   {
-    v3 = ((__int64 (__thiscall *)(#375 **, _BYTE *))*((_DWORD *)*this + 110))(this, v4); /*0x4d98f0*/
+    v3 = ((__int64 (__thiscall *)(void **, _BYTE *))*((_DWORD *)*this + 110))(this, v4); /*0x4d98f0*/
     if ( CreateTriggerClassIfFarEnough(7, SHIDWORD(v3), *(_DWORD *)v3) ) /*0x4d98fe*/
       VoxClass::FindAndPlay(aEvaUnitlost, -1); /*0x4d9911*/
   }
 }
 } // namespace ra2
-}
 
 // 0x70F7E0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 int FootClass::updateThreat()
 {
   int v1; // edx
   int v2; // eax
 
-  v1 = *(this + 96); /*0x70f7e0*/
-  v2 = *(this + 98); /*0x70f7e6*/
+  v1 = *(&this->ptr_246); /*0x70f7e0*/
+  v2 = *(&this->ptr_248); /*0x70f7e6*/
   if ( v1 != -1 ) /*0x70f7ef*/
   {
     if ( (int)g_CurrentFrame - v1 < v2 ) /*0x70f7fb*/
@@ -113,11 +110,9 @@ int FootClass::updateThreat()
   return v2 == 0; /*0x70f808*/
 }
 } // namespace ra2
-}
 
 // 0x710000
-namespace ra2 {
-namespace game {
+namespace gamemd {
 void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int a3@<edi> a3, unsigned int * ppv, IID rclsid, int a6)
 {
   _DWORD *v5; // esi
@@ -287,21 +282,17 @@ void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int 
   }
 }
 } // namespace ra2
-}
 
 // 0x41C120
-namespace ra2 {
-namespace game {
+namespace gamemd {
 void FootClass::Stub(int a1)
 {
   ; /*0x41c120*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd
 
 // 0x50DAA0
-namespace ra2 {
-namespace game {
+namespace gamemd {
 unsigned int FootClass::checkTurning()
 {
   unsigned int result; // eax
@@ -311,5 +302,4 @@ unsigned int FootClass::checkTurning()
     return 0; /*0x50daaf*/
   return result; /*0x50dab1*/
 }
-} // namespace game
-} // namespace ra2
+} // namespace gamemd

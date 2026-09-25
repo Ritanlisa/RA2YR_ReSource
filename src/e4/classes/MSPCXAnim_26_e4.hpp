@@ -5,7 +5,26 @@
 
 namespace gamemd {
 struct MSPCXAnim_26 {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned char q000;  // 0x0
+    void* q004;  // 0x4
+    int q008;  // 0x8
+    bool q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    int q010;  // 0x10
+    bool IsInitialized;  // 0x12
+    int Count;  // 0x16
+    bool q018;  // 0x18
+    unsigned char q01C;  // 0x1C
+    bool q024;  // 0x24
+    unsigned char q028;  // 0x28
+    int q034;  // 0x34
+    unsigned char q038;  // 0x38
+    unsigned char q04C;  // 0x4C
+    unsigned char q050;  // 0x50
+    bool q054;  // 0x54
+    unsigned int q0042;
+// --- flat members (END) ---
     void ddtor();  // 0x5D06D0
     unsigned int Draw(int a2);  // 0x5D0700
     int GetFrame(int a2);  // 0x5D0720
@@ -24,7 +43,7 @@ struct MSPCXAnim_26 {
     int FindIndex_0(unsigned int * a2);  // 0x5D1430
     char AllocCopyData_4B_1(int a2, unsigned int * a3);  // 0x5D15E0
     int FindIndex_1(unsigned int * a2);  // 0x5D1690
-    VectorClass * Constructor_VectorClass_MapStage___(char a2);  // 0x5D18A0
+    VectorClass_flat * Constructor_VectorClass_MapStage___(char a2);  // 0x5D18A0
     DynamicVector * QueryInterface(char a2);  // 0x5D18F0
     DynamicVector * Constructor_VectorClass_MSAnimEntry___(char a2);  // 0x5D1990
     DynamicVector * Constructor_VectorClass_MSSfxEntry___(char a2);  // 0x5D1A30

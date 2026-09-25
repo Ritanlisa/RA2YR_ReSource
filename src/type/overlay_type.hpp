@@ -86,14 +86,6 @@ public:
     int SaveLoad_Prefix(int a1, int a2);  // 0x5feaf0
     int SaveLoad_Prefix_0(int a1, int a2, int a3);  // 0x5fec10
     // === FUNCS-MOVE (END) ===
-// --- e4 declarations (BEGIN) ---
-    char LoadFromINI(unsigned char *** aP1);  // 0x5FE770
-    int GetClassIdentifier(int a1, unsigned int * a2);  // 0x5FEC30
-    int GetTypeIdentifier();  // 0x5FEF00
-    int GetObjectSize();  // 0x5FEF10
-    OverlayTypeClass * ddtor(void ** Block, char a2);  // 0x5FEF30
-    unsigned int * Construct(ObjectClass * aP1);  // 0x6440A0
-// --- e4 declarations (END) ---
 };
 
 } // namespace gamemd

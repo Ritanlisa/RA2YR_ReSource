@@ -7,8 +7,13 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/CChatEventSink_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x7AA870
+namespace gamemd {
 Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
 {
   signed int v3; // eax
@@ -70,7 +75,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
       {
   LABEL_103:
         v35[0] = 0; /*0x7aaf7c*/
-        __3_YAXPAX_Z(Block); /*0x7aaf89*/
+        RA2_OPDEL(Block); /*0x7aaf89*/
         goto LABEL_104; /*0x7aaf89*/
       }
       if ( v34 ) /*0x7aa90e*/
@@ -387,12 +392,14 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
     goto LABEL_103; /*0x7aaf20*/
   }
   v35[0] = 0; /*0x7aa8af*/
-  __3_YAXPAX_Z(0); /*0x7aa8b4*/
+  RA2_OPDEL(0); /*0x7aa8b4*/
   LABEL_104:
   DeleteAndZero(&v32); /*0x7aaf8e*/
   return 0; /*0x7aaf9a*/
 }
+} // namespace gamemd
 // 0x7AD930
+namespace gamemd {
 int CChatEventSink::GrowBuffer()
 {
   int v2; // eax
@@ -403,7 +410,7 @@ int CChatEventSink::GrowBuffer()
   int v8; // [esp+8h] [ebp-4h]
 
   v2 = *this; /*0x7ad935*/
-  v3 = *(this + 1); /*0x7ad938*/
+  v3 = this->q004; /*0x7ad938*/
   if ( 3 * v2 > v3 ) /*0x7ad940*/
     return 0; /*0x7ad943*/
   v5 = v3 / 2; /*0x7ad94f*/
@@ -411,17 +418,19 @@ int CChatEventSink::GrowBuffer()
     v5 = 10; /*0x7ad956*/
   if ( v5 >= v3 ) /*0x7ad95d*/
     return 0; /*0x7ad960*/
-  v6 = __2_YAPAXI_Z(268 * v5); /*0x7ad974*/
-  v7 = (const void *)*(this + 2); /*0x7ad979*/
+  v6 = RA2_OPNEW(268 * v5); /*0x7ad974*/
+  v7 = (const void *)this->u32_8; /*0x7ad979*/
   v8 = (int)v6; /*0x7ad981*/
   if ( v7 ) /*0x7ad985*/
     qmemcpy(v6, v7, 268 * *this); /*0x7ad99f*/
-  __3_YAXPAX_Z((void *)*(this + 2)); /*0x7ad9ad*/
-  *(this + 2) = v8; /*0x7ad9b9*/
-  *(this + 1) = v5; /*0x7ad9bc*/
+  RA2_OPDEL((void *)this->u32_8); /*0x7ad9ad*/
+  this->u32_8 = v8; /*0x7ad9b9*/
+  this->q004 = v5; /*0x7ad9bc*/
   return 1; /*0x7ad942*/
 }
+} // namespace gamemd
 // 0x7AED40
+namespace gamemd {
 int CChatEventSink::ProcessChatEvent()
 {
   int v2; // eax
@@ -431,44 +440,52 @@ int CChatEventSink::ProcessChatEvent()
   int v7; // [esp+4h] [ebp-4h]
 
   v2 = *this; /*0x7aed44*/
-  if ( *this < *(this + 1) ) /*0x7aed4b*/
+  if ( *this < this->q004 ) /*0x7aed4b*/
     return 0; /*0x7aed4d*/
   v4 = 2 * v2; /*0x7aed53*/
   if ( 2 * v2 < 10 ) /*0x7aed5b*/
     v4 = 10; /*0x7aed5d*/
-  v5 = __2_YAPAXI_Z(248 * v4); /*0x7aed72*/
+  v5 = RA2_OPNEW(248 * v4); /*0x7aed72*/
   memset(v5, 0, 4 * ((unsigned int)(248 * v4) >> 2)); /*0x7aed7d*/
   v7 = (int)v5; /*0x7aed87*/
-  v6 = (const void *)*(this + 2); /*0x7aed8d*/
+  v6 = (const void *)this->u32_8; /*0x7aed8d*/
   if ( v6 ) /*0x7aed92*/
     qmemcpy(v5, v6, 248 * *this); /*0x7aeda7*/
-  __3_YAXPAX_Z((void *)*(this + 2)); /*0x7aedb4*/
-  *(this + 1) = v4; /*0x7aedc0*/
-  *(this + 2) = v7; /*0x7aedc3*/
+  RA2_OPDEL((void *)this->u32_8); /*0x7aedb4*/
+  this->q004 = v4; /*0x7aedc0*/
+  this->u32_8 = v7; /*0x7aedc3*/
   return 1; /*0x7aed4f*/
 }
+} // namespace gamemd
 // 0x7AEE90
+namespace gamemd {
 int CChatEventSink::Check(unsigned int * a2, int a3)
 {
   if ( a3 < 0 || a3 >= *this ) /*0x7aee9a*/
     return 0; /*0x7aeead*/
-  *a2 = *(_DWORD *)(*(this + 2) + 4 * a3); /*0x7aeea6*/
+  *a2 = *(_DWORD *)(this->u32_8 + 4 * a3); /*0x7aeea6*/
   return 1; /*0x7aeeaa*/
 }
+} // namespace gamemd
 // 0x7AD350
+namespace gamemd {
 ObjectClass * CChatEventSink::DeleteAndZero(char a2)
 {
-  DeleteAndZero(this); /*0x7ad353*/
+  DeleteAndZero(); /*0x7ad353*/
   if ( (a2 & 1) != 0 ) /*0x7ad35d*/
-    __3_YAXPAX_Z(this); /*0x7ad360*/
+    RA2_OPDEL(); /*0x7ad360*/
   return this; /*0x7ad36a*/
 }
+} // namespace gamemd
 // 0x7AECB0
+namespace gamemd {
 int CChatEventSink::ComputeBucketMask(int a2)
 {
-  return (*(int (__thiscall **)(int))(this + 24))(a2) & ((1 << *(_DWORD *)(this + 12)) - 1); /*0x7aecc4*/
+  return (*(int (__thiscall **)(int))(&this->u32_84))(a2) & ((1 << this->q00C) - 1); /*0x7aecc4*/
 }
+} // namespace gamemd
 // 0x7AEDD0
+namespace gamemd {
 char CChatEventSink::EnsureCapacity(int a2)
 {
   int v3; // esi
@@ -502,19 +519,21 @@ char CChatEventSink::EnsureCapacity(int a2)
       v8 = 10; /*0x7aee36*/
     if ( v8 < v7 ) /*0x7aee3d*/
     {
-      v9 = __2_YAPAXI_Z(4 * v8); /*0x7aee47*/
+      v9 = RA2_OPNEW(4 * v8); /*0x7aee47*/
       v10 = (const void *)*((_DWORD *)this + 2); /*0x7aee4c*/
       v11 = v9; /*0x7aee54*/
       if ( v10 ) /*0x7aee58*/
         qmemcpy(v9, v10, 4 * *(_DWORD *)this); /*0x7aee66*/
-      __3_YAXPAX_Z(*((void **)this + 2)); /*0x7aee73*/
+      RA2_OPDEL(*((void **)this + 2)); /*0x7aee73*/
       *((_DWORD *)this + 2) = v11; /*0x7aee7f*/
       *((_DWORD *)this + 1) = v8; /*0x7aee82*/
     }
   }
   return 1; /*0x7aedda*/
 }
+} // namespace gamemd
 // 0x7B5E30
+namespace gamemd {
 char CChatEventSink::EncodeString(char a2)
 {
   char *v4; // eax
@@ -537,7 +556,7 @@ char CChatEventSink::EncodeString(char a2)
   v7 = &g_INI_DefaultBuffer; /*0x7b5e63*/
   if ( *this ) /*0x7b5e58*/
     v7 = (char *)*this; /*0x7b5e6a*/
-  v8 = (char *)__2_YAPAXI_Z(v5 + 1); /*0x7b5e70*/
+  v8 = (char *)RA2_OPNEW(v5 + 1); /*0x7b5e70*/
   v9 = v8; /*0x7b5e75*/
   *v8 = 0; /*0x7b5e7c*/
   if ( v7 ) /*0x7b5e80*/
@@ -547,18 +566,19 @@ char CChatEventSink::EncodeString(char a2)
   if ( v9 ) /*0x7b5e98*/
     v10 = v9; /*0x7b5e9a*/
   if ( *this ) /*0x7b5e9c*/
-    __3_YAXPAX_Z((void *)*this); /*0x7b5ea3*/
+    RA2_OPDEL(); /*0x7b5ea3*/
   *this = 0; /*0x7b5ead*/
   if ( v10 ) /*0x7b5eb3*/
     v11 = strlen(v10) + 1; /*0x7b5ebc*/
   else
     v11 = 1; /*0x7b5ec2*/
-  v12 = (const char *)__2_YAPAXI_Z(v11); /*0x7b5ec8*/
+  v12 = (const char *)RA2_OPNEW(v11); /*0x7b5ec8*/
   *this = v12; /*0x7b5ed0*/
   *v12 = 0; /*0x7b5ed4*/
   if ( v10 ) /*0x7b5ed7*/
-    strcpy((char *)*this, v10); /*0x7b5eef*/
+    strcpy(v10); /*0x7b5eef*/
   if ( v9 ) /*0x7b5efa*/
-    __3_YAXPAX_Z(v9); /*0x7b5efd*/
+    RA2_OPDEL(v9); /*0x7b5efd*/
   return 1; /*0x7b5e3b*/
 }
+} // namespace gamemd

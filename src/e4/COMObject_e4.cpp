@@ -1,8 +1,13 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/COMObject_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x4E1A00
+namespace gamemd {
 int COMObject::FindNextActive(unsigned char * a1)
 {
   if ( !a1 ) /*0x4e1a02*/
@@ -15,12 +20,16 @@ int COMObject::FindNextActive(unsigned char * a1)
   }
   return 1; /*0x4e1a18*/
 }
+} // namespace gamemd
 // 0x4E30C0
+namespace gamemd {
 int COMObject::Thunk_COMObject_sub_4E30C0()
 {
   return 4; /*0x4e30c5*/
 }
+} // namespace gamemd
 // 0x4F4240
+namespace gamemd {
 int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
   if ( !a3 ) /*0x4f4248*/
@@ -31,12 +40,16 @@ int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
   (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x4f4291*/
   return 0; /*0x4f424a*/
 }
+} // namespace gamemd
 // 0x4F43F0
+namespace gamemd {
 bool COMObject::IsSameType(GScreenClass * aP0)
 {
-  return dword_A8EF54 == (*(int (__thiscall **)(int))(*(_DWORD *)aP0 + 24))(aP0); /*0x4f4408*/
+  return dword_A8EF54 == (*(int (__thiscall **)(int))(aP0->q018)(aP0); /*0x4f4408*/
 }
+} // namespace gamemd
 // 0x55AB40
+namespace gamemd {
 int COMObject::GetStringValue(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x55ab47*/
@@ -45,14 +58,18 @@ int COMObject::GetStringValue(int a1, unsigned int * a2)
   a2[1] = 0; /*0x55ab60*/
   return 0; /*0x55ab4e*/
 }
+} // namespace gamemd
 // 0x55ABD0
+namespace gamemd {
 unsigned int * COMObject::ReturnZeroPos(int a1, unsigned int * a2)
 {
   *a2 = 0; /*0x55abd8*/
   a2[1] = 0; /*0x55abda*/
   return a2; /*0x55abdd*/
 }
+} // namespace gamemd
 // 0x55ACA0
+namespace gamemd {
 unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
 {
   _DWORD *v2; // ecx
@@ -67,22 +84,28 @@ unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
   a2[2] = v4; /*0x55acc4*/
   return a2; /*0x55acc7*/
 }
+} // namespace gamemd
 // 0x55AD10
+namespace gamemd {
 int COMObject::GetSpecialValue(int a1)
 {
   return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 1336))(*(_DWORD *)(a1 + 8)); /*0x55ad1f*/
 }
+} // namespace gamemd
 // 0x5F9970
+namespace gamemd {
 int COMObject::GetSizeMaxWrapper(AbstractClass * aP0, AbstractClass * aP1)
 {
   int result; // eax
 
   result = ObjectClass::GetSizeMax(aP0, aP1); /*0x5f997a*/
-  if ( result >= 0 ) /*0x5f9981*/
+  if (result >= 0, unsigned int a3, unsigned int a2, unsigned int a1) /*0x5f9981*/
     return 0; /*0x5f9983*/
   return result; /*0x5f9985*/
 }
+} // namespace gamemd
 // 0x6C0050
+namespace gamemd {
 int COMObject::QueryInterface2()
 {
   if ( !a3 ) /*0x6c0057*/
@@ -95,3 +118,4 @@ int COMObject::QueryInterface2()
   (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6c00ac*/
   return 0; /*0x6c005e*/
 }
+} // namespace gamemd

@@ -30,7 +30,7 @@ namespace gamemd {
 // IDA: 0x4A86E0  proposal: GadgetDispatch
 // IDA: int sub_4A86E0()
 //   GadgetClass::Construct(dword_8A06F8, 0, 0, 0, 0, 127, 1);
-//   dword_8A06F8[0] = (int)&DisplayClass::TacticalClass::`vftable';
+//   dword_8A06F8[0] = (int)&DisplayClass::TacticalClass_vftable;
 //   return atexit(sub_4A8710);
 int GadgetDispatch()
 {
@@ -51,7 +51,7 @@ void GadgetProcess()
 // IDA: 0x652870  proposal: GadgetDispatch652870
 // IDA: int sub_652870()
 //   GadgetClass::Construct(dword_B04A10, 0, 0, 0, 0, 159, 1);
-//   dword_B04A10[0] = (int)&RadarClass::RTacticalClass::`vftable';
+//   dword_B04A10[0] = (int)&RadarClass::RTacticalClass_vftable;
 //   return atexit(sub_6528A0);
 int GadgetDispatch652870()
 {
@@ -112,7 +112,7 @@ void ShapeButtonProcess652940()
 // IDA: 0x6A4C10  proposal: GadgetDispatch6A4C10
 // IDA: int sub_6A4C10()
 //   GadgetClass::Construct(&dword_B07E58, 0, 0, 1, 1, 8, 0);
-//   dword_B07E58 = (int)&SidebarClass::SBGadgetClass::`vftable';
+//   dword_B07E58 = (int)&SidebarClass::SBGadgetClass_vftable;
 //   return atexit(sub_6A4C40);
 int GadgetDispatch6A4C10()
 {

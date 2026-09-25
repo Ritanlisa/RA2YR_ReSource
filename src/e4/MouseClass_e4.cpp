@@ -1,8 +1,15 @@
 // E4 materialized pending bodies (auto-generated from full_export v3)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/classes/MovementAI_e4.hpp"
+#include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x6D1770
+namespace gamemd {
 char MouseClass::ToggleContextGadget(int a1, int a2)
 {
   unsigned int v2; // eax
@@ -43,7 +50,9 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
     return 0; /*0x6d17ef*/
   }
 }
+} // namespace gamemd
 // 0x72DDB0
+namespace gamemd {
 char MouseClass::LoadCursors()
 {
   char result; // al
@@ -65,8 +74,9 @@ char MouseClass::LoadCursors()
     LoadPaletteSimple(off_844BE4, &dword_B0FBC8, &dword_B0FBCC); /*0x72dea4*/
     LoadPaletteSimple(off_844BE8, &dword_B0FBD0, &dword_B0FBD4); /*0x72deb9*/
     LoadPaletteSimple(off_844BEC, &dword_B0FBD8, &dword_B0FBDC); /*0x72dece*/
-    result = SetupMouseClassResources(g_DisplayWidth, MEMORY[0x8A00A8]); /*0x72dedf*/
+    result = SetupMouseClassResources(g_DisplayWidth, DataGlobal_8A00A8); /*0x72dedf*/
     byte_B0FBE0 = 1; /*0x72dee4*/
   }
   return result; /*0x72deeb*/
 }
+} // namespace gamemd

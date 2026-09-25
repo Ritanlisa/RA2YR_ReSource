@@ -94,15 +94,6 @@ public:
 
 protected:
     explicit SuperWeaponTypeClass(noinit_t) noexcept;  // 0x6CE5B0
-// --- e4 declarations (BEGIN) ---
-    int SD_vt03(int a1, unsigned int * a2);  // 0x6CE7C0
-    int SD_vt11();  // 0x6CE8F0
-    int SD_vt12();  // 0x6CE900
-    int SD_vt13(int * a2);  // 0x6CE910
-    int SD_vt16();  // 0x6CEA10
-    char SD_vt25(unsigned char *** aP1);  // 0x6CEA20
-    int SD_vt27(int a2, int a3);  // 0x6CEF80
-// --- e4 declarations (END) ---
 };
 
 class SuperClass : public AbstractClass
@@ -198,11 +189,6 @@ public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
     // === SYMBOL-ANCHOR (BEGIN) ===
     int GetDefaultTimer();  // 0x6cc260 -- Super::GetDefaultTimer
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    int ddtor(int a1, unsigned int * a2);  // 0x6CDEB0
-    int StubReturn57();  // 0x6CE200
-    int StubReturn128();  // 0x6CE210
-// --- e4 declarations (END) ---
 };
 
 class LightningStorm
@@ -251,9 +237,6 @@ public:
     // === SYMBOL-ANCHOR (BEGIN) ===
     bool IsActive();  // 0x53b400 -- PsyDom::IsActive
     // === SYMBOL-ANCHOR (END) ===
-// --- e4 declarations (BEGIN) ---
-    void Update();  // 0x53AF40
-// --- e4 declarations (END) ---
 };
 
 class ChronoScreenEffect

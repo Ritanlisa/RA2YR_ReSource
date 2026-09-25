@@ -16,6 +16,15 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/Scenario_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/TerrainTypeClass_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x6F19B0
 namespace gamemd {
@@ -56,7 +65,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
       goto LABEL_11; /*0x6f1a82*/
     }
   LABEL_7:
-    v8 = __2_YAPAXI_Z(0xF8u); /*0x6f1a5d*/
+    v8 = RA2_OPNEW(0xF8u); /*0x6f1a5d*/
     if ( v8 ) /*0x6f1a67*/
       v9 = TechnoTypeClass::LoadBase(v8, Source); /*0x6f1a75*/
     else
@@ -76,8 +85,8 @@ void sub_40D1B0()
   int *v0; // esi
   int v1; // edi
 
-  MapClass_Instance.lpVtbl = (struct IUnknownVtbl *)&MouseClass::`vftable'; /*0x40d1b2*/
-  dword_884D00 = (int)&MouseClass::`vftable'; /*0x40d1bc*/
+  MapClass_Instance.lpVtbl = (struct IUnknownVtbl *)&(void*)(void*)&MouseClass_vftable; /*0x40d1b2*/
+  dword_884D00 = (int)&(void*)(void*)&MouseClass_vftable; /*0x40d1bc*/
   v0 = &dword_884B84; /*0x40d1c6*/
   v1 = 4; /*0x40d1cb*/
   do /*0x40d1f0*/
@@ -167,19 +176,18 @@ char sub_5A1F60()
 namespace gamemd {
 int E4Recv_5AFEF0::sub_5AFEF0()
 {
-  int v2; // eax
 
-  LocomotionClass::Init((_DWORD *)this); /*0x5afef3*/
-  *(_DWORD *)(this + 24) = g_MatrixTransformState; /*0x5aff01*/
-  *(_DWORD *)(this + 28) = dword_ABEE14; /*0x5aff0a*/
-  *(_DWORD *)(this + 32) = dword_ABEE18; /*0x5aff16*/
-  *(_DWORD *)(this + 36) = g_MatrixTransformState; /*0x5aff1e*/
-  *(_DWORD *)(this + 40) = dword_ABEE14; /*0x5aff26*/
-  v2 = dword_ABEE18; /*0x5aff29*/
-  *(_BYTE *)(this + 48) = 0; /*0x5aff2e*/
-  *(_DWORD *)this = &MechLocomotionClass::`vftable'; /*0x5aff32*/
-  *(_DWORD *)(this + 44) = v2; /*0x5aff38*/
-  *(_DWORD *)(this + 4) = &MechLocomotionClass::`vftable'; /*0x5aff3b*/
+  LocomotionClass::Init(); /*0x5afef3*/
+  this->q018 = g_MatrixTransformState; /*0x5aff01*/
+  this->M28 = dword_ABEE14; /*0x5aff0a*/
+  this->M32 = dword_ABEE18; /*0x5aff16*/
+  this->M24 = g_MatrixTransformState; /*0x5aff1e*/
+  this->q028 = dword_ABEE14; /*0x5aff26*/
+  dword_ABEE18 = dword_ABEE18; /*0x5aff29*/
+  this->M48 = 0; /*0x5aff2e*/
+  *(_DWORD *)this = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5aff32*/
+  this->M44 = dword_ABEE18; /*0x5aff38*/
+  this->M4 = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5aff3b*/
   return this; /*0x5aff44*/
 }
 } // namespace gamemd
@@ -236,7 +244,7 @@ char sub_6E2660(int a1, int a2, int a3, int a4)
   byte_88099A = 0; /*0x6e269a*/
   byte_88099B = 0; /*0x6e26a0*/
   byte_88099C = 0; /*0x6e26a6*/
-  Scenario::ClearScreen(); /*0x6e26ac*/
+  Scenario::ClearScreen(unsigned int a6); /*0x6e26ac*/
   return 1; /*0x6e26b3*/
 }
 } // namespace gamemd
@@ -262,7 +270,7 @@ char SmallFunc_6E3120(int _8, _UNKNOWN ** a1, unsigned int * a2, IUnknown * aP3,
     if ( BuildingType::IsSpecialType(v7) ) /*0x6e3145*/
       Field11 = BuildingType::FindOwnerHouse(v7); /*0x6e3150*/
     else
-      Field11 = HouseClass::FindOwner(v7); /*0x6e3157*/
+      Field11 = HouseClass::FindOwner(v7, unsigned int a3); /*0x6e3157*/
   }
   if ( !Field11 ) /*0x6e315e*/
     return 0; /*0x6e315e*/
@@ -275,7 +283,7 @@ char SmallFunc_6E3120(int _8, _UNKNOWN ** a1, unsigned int * a2, IUnknown * aP3,
 namespace gamemd {
 int E4Recv_728A00::sub_728A00()
 {
-  LocomotionClass::Init((_DWORD *)this); /*0x728a03*/
+  LocomotionClass::Init(); /*0x728a03*/
   *(_DWORD *)(this + 24) = 0; /*0x728a0d*/
   *(_DWORD *)(this + 28) = dword_B0F910; /*0x728a16*/
   *(_DWORD *)(this + 32) = dword_B0F914; /*0x728a1e*/
@@ -284,8 +292,8 @@ int E4Recv_728A00::sub_728A00()
   *(_DWORD *)(this + 48) = 0; /*0x728a33*/
   *(_DWORD *)(this + 52) = 0; /*0x728a36*/
   *(_BYTE *)(this + 56) = 0; /*0x728a39*/
-  *(_DWORD *)this = &TunnelLocomotionClass::`vftable'; /*0x728a3c*/
-  *(_DWORD *)(this + 4) = &TunnelLocomotionClass::`vftable'; /*0x728a42*/
+  *(_DWORD *)this = &(void*)(void*)&TunnelLocomotionClass_vftable; /*0x728a3c*/
+  *(_DWORD *)(this + 4) = &(void*)(void*)&TunnelLocomotionClass_vftable; /*0x728a42*/
   return this; /*0x728a4b*/
 }
 } // namespace gamemd

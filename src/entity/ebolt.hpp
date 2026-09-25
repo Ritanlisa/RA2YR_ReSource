@@ -19,8 +19,7 @@ using ra2::game::CoordStruct;
 // EBolt — electric bolt effect attached to a unit weapon slot.
 // Real class definition lives in IDA around 0x6FC030 area (Fire/GetSourceCoords).
 class EBolt {
-public:
-    void SetOwner(UnitClass* owner, int weaponIdx);
+void SetOwner(UnitClass* owner, int weaponIdx);
     void ClearOwner();
     CoordStruct* GetSourceCoords(CoordStruct* out) const;
     CoordStruct GetSourceCoords() const;

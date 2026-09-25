@@ -3,6 +3,10 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/E4Recv_7AE7C0_e4.hpp"
 #include "e4/classes/E4Recv_7AE8E0_e4.hpp"
+#include "e4/classes/GameMode_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/e4_protos.h"
 
 // 0x798340
 namespace gamemd {
@@ -50,14 +54,14 @@ void sub_72C0B0()
       if ( dword_B0FA4C ) /*0x72c0cd*/
       {
         FileTreeNode::Destroy(dword_B0FA4C); /*0x72c0d1*/
-        __3_YAXPAX_Z(v0); /*0x72c0d7*/
+        RA2_OPDEL(v0); /*0x72c0d7*/
       }
       byte_B0FD2C = 0; /*0x72c0df*/
     }
     dword_B0FA4C = 0; /*0x72c0eb*/
     if ( dword_B0FD30 ) /*0x72c0f3*/
     {
-      __3_YAXPAX_Z(dword_B0FD30); /*0x72c0f6*/
+      RA2_OPDEL(dword_B0FD30); /*0x72c0f6*/
       dword_B0FD30 = 0; /*0x72c0fe*/
     }
     if ( dword_B0FD34 ) /*0x72c10c*/
