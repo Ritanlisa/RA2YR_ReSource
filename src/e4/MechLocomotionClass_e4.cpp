@@ -48,8 +48,6 @@ int MechLocomotionClass::StubReturn52()
 namespace gamemd {
 MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
 {
-  *(void **)this = (void*)&MechLocomotionClass_vftable; /*0x5b1b53*/
-  this->vtable2 = (void*)&MechLocomotionClass_vftable; /*0x5b1b59*/
   LocomotionClass::Construct(); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
     RA2_OPDEL(); /*0x5b1b6d*/

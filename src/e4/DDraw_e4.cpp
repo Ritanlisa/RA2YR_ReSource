@@ -20,13 +20,13 @@ int DDraw::ReleaseSurfaces()
   v2 = this->u32_74; /*0x4a3373*/
   if ( v2 ) /*0x4a3378*/
   {
-    (*(void (__stdcall **)(int))(*(_DWORD *)v2 + 8))(v2); /*0x4a337d*/
+    (*(void (__stdcall **)(int))(*(unsigned int *)v2 + 8))(v2); /*0x4a337d*/
     this->u32_74 = 0; /*0x4a3380*/
   }
   result = this->u32_70; /*0x4a3387*/
   if ( result ) /*0x4a338c*/
   {
-    result = (*(int (__stdcall **)(_DWORD))(*(_DWORD *)result + 8))(this->u32_70); /*0x4a3391*/
+    result = (*(int (__stdcall **)(unsigned int))(*(unsigned int *)result + 8))(this->u32_70); /*0x4a3391*/
     this->u32_70 = 0; /*0x4a3394*/
   }
   return result; /*0x4a339b*/
@@ -48,7 +48,7 @@ int DDraw::CapabilityCheck()
   int v3; // [esp+Ch] [ebp-40h]
   int v4; // [esp+10h] [ebp-3Ch]
   int v5; // [esp+14h] [ebp-38h]
-  _DWORD v6[4]; // [esp+18h] [ebp-34h] BYREF
+  unsigned int v6[4]; // [esp+18h] [ebp-34h] BYREF
   int v7[9]; // [esp+28h] [ebp-24h] BYREF
 
   DSurface::Construct((char *)v7, 64, 64, 0, 0); /*0x4a3e51*/
@@ -116,7 +116,7 @@ int DDraw::WaitForIdle()
   int result; // eax
 
   do /*0x4a4846*/
-    result = (*(int (__stdcall **)(int, int))(*(_DWORD *)g_DDraw_PrimarySurface + 52))(g_DDraw_PrimarySurface, 2); /*0x4a483a*/
+    result = (*(int (__stdcall **)(int, int))(*(unsigned int *)g_DDraw_PrimarySurface + 52))(g_DDraw_PrimarySurface, 2); /*0x4a483a*/
   while ( result && result != -2005532222 ); /*0x4a4846*/
   return result; /*0x4a4848*/
 }
@@ -157,23 +157,23 @@ int DDraw::CleanupSurfaces()
   }
   if ( DataGlobal_8A0DFC ) /*0x4c1a3b*/
   {
-    (*(void (__stdcall **)(int))(*(_DWORD *)DataGlobal_8A0DFC + 8))(DataGlobal_8A0DFC); /*0x4c1a40*/
+    (*(void (__stdcall **)(int))(*(unsigned int *)DataGlobal_8A0DFC + 8))(DataGlobal_8A0DFC); /*0x4c1a40*/
     DataGlobal_8A0DFC = 0; /*0x4c1a43*/
   }
   if ( g_DrawColorState ) /*0x4c1a50*/
   {
-    (*(void (__stdcall **)(int))(*(_DWORD *)g_DrawColorState + 8))(g_DrawColorState); /*0x4c1a55*/
+    (*(void (__stdcall **)(int))(*(unsigned int *)g_DrawColorState + 8))(g_DrawColorState); /*0x4c1a55*/
     g_DrawColorState = 0; /*0x4c1a58*/
   }
   if ( dword_8A0DF4 ) /*0x4c1a65*/
   {
-    (*(void (__stdcall **)(int))(*(_DWORD *)dword_8A0DF4 + 8))(dword_8A0DF4); /*0x4c1a6a*/
+    (*(void (__stdcall **)(int))(*(unsigned int *)dword_8A0DF4 + 8))(dword_8A0DF4); /*0x4c1a6a*/
     dword_8A0DF4 = 0; /*0x4c1a6d*/
   }
   result = dword_8A0E00; /*0x4c1a73*/
   if ( dword_8A0E00 ) /*0x4c1a7a*/
   {
-    result = (*(int (__stdcall **)(int))(*(_DWORD *)dword_8A0E00 + 8))(dword_8A0E00); /*0x4c1a7f*/
+    result = (*(int (__stdcall **)(int))(*(unsigned int *)dword_8A0E00 + 8))(dword_8A0E00); /*0x4c1a7f*/
     dword_8A0E00 = 0; /*0x4c1a82*/
   }
   return result; /*0x4c1a88*/
@@ -195,8 +195,8 @@ int DDraw::HandleSuspend()
     Debug::Log(aMsenginePausin); /*0x5d2546*/
     for ( i = 0; i < *(&this->vtable20); ++i ) /*0x5d2555*/
     {
-      v4 = *(_DWORD *)(this->referenceCount + 4 * i); /*0x5d255a*/
-      (*(void (__thiscall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x5d255f*/
+      v4 = *(unsigned int *)(this->referenceCount + 4 * i); /*0x5d255a*/
+      (*(void (__thiscall **)(int))(*(unsigned int *)v4 + 8))(v4); /*0x5d255f*/
     }
     while ( !g_DDraw_Active ) /*0x5d2571*/
     {
@@ -208,8 +208,8 @@ int DDraw::HandleSuspend()
     v1 = *(&this->vtable20); /*0x5d25a5*/
     for ( j = 0; j < v1; ++j ) /*0x5d25af*/
     {
-      v6 = *(_DWORD *)(this->referenceCount + 4 * j); /*0x5d25b4*/
-      (*(void (__thiscall **)(int))(*(_DWORD *)v6 + 12))(v6); /*0x5d25b9*/
+      v6 = *(unsigned int *)(this->referenceCount + 4 * j); /*0x5d25b4*/
+      (*(void (__thiscall **)(int))(*(unsigned int *)v6 + 12))(v6); /*0x5d25b9*/
       v1 = *(&this->vtable20); /*0x5d25bc*/
     }
   }
@@ -249,7 +249,7 @@ char DDraw::CheckCapabilities()
   int v0; // eax
   HRESULT v1; // eax
   CHAR Text[80]; // [esp+Ch] [ebp-18Ch] BYREF
-  _DWORD v4[79]; // [esp+5Ch] [ebp-13Ch] BYREF
+  unsigned int v4[79]; // [esp+5Ch] [ebp-13Ch] BYREF
 
   if ( g_lpDirectDraw7 ) /*0x4a462e*/
   {

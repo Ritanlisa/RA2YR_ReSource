@@ -21,7 +21,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   unsigned int v9;
   int v10; // eax
   char *v11; // ebx
-  _DWORD *v12; // edx
+  unsigned int *v12; // edx
 
   v3 = a2; /*0x5acd32*/
   if ( a2 ) /*0x5acd3d*/
@@ -34,7 +34,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(16 * a2); /*0x5acd55*/
+      v6 = (char *)operator new(16 * a2); /*0x5acd55*/
       if ( v6 ) /*0x5acd5f*/
         v7 = v6; /*0x5acd64*/
       else
@@ -54,13 +54,13 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
           do /*0x5acdc3*/
           {
             v11 = &v7[v10]; /*0x5acda4*/
-            v12 = (_DWORD *)(v10 + this->q004); /*0x5acda7*/
+            v12 = (unsigned int *)(v10 + this->q004); /*0x5acda7*/
             v10 += 16; /*0x5acda9*/
             --v9; /*0x5acdac*/
-            *(_DWORD *)v11 = *v12; /*0x5acdaf*/
-            *((_DWORD *)v11 + 1) = v12[1]; /*0x5acdb4*/
-            *((_DWORD *)v11 + 2) = v12[2]; /*0x5acdba*/
-            *((_DWORD *)v11 + 3) = v12[3]; /*0x5acdc0*/
+            *(unsigned int *)v11 = *v12; /*0x5acdaf*/
+            *((unsigned int *)v11 + 1) = v12[1]; /*0x5acdb4*/
+            *((unsigned int *)v11 + 2) = v12[2]; /*0x5acdba*/
+            *((unsigned int *)v11 + 3) = v12[3]; /*0x5acdc0*/
           }
           while ( v9 ); /*0x5acdc3*/
           v5 = a3; /*0x5acdc5*/
@@ -68,7 +68,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
         }
         if ( this->IsAllocated ) /*0x5acdcd*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5acdd8*/
+          RA2_OPDEL(this->q004); /*0x5acdd8*/
           this->q004 = 0; /*0x5acde0*/
         }
       }
@@ -84,7 +84,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x5ace05*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5ace05*/
     return 1; /*0x5ace0b*/
   }
 }
@@ -100,7 +100,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
   unsigned int v8;
   int v9; // eax
   char *v10; // ebx
-  _DWORD *v11; // edx
+  unsigned int *v11; // edx
   void * v12;
 
   v3 = a2; /*0x5aced2*/
@@ -114,7 +114,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(16 * a2); /*0x5acef5*/
+      v6 = (char *)operator new(16 * a2); /*0x5acef5*/
       if ( v6 ) /*0x5aceff*/
         v7 = v6; /*0x5acf04*/
       else
@@ -134,13 +134,13 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
         do /*0x5acf5d*/
         {
           v10 = &v7[v9]; /*0x5acf3e*/
-          v11 = (_DWORD *)(v9 + this->q004); /*0x5acf41*/
+          v11 = (unsigned int *)(v9 + this->q004); /*0x5acf41*/
           v9 += 16; /*0x5acf43*/
           --v8; /*0x5acf46*/
-          *(_DWORD *)v10 = *v11; /*0x5acf49*/
-          *((_DWORD *)v10 + 1) = v11[1]; /*0x5acf4e*/
-          *((_DWORD *)v10 + 2) = v11[2]; /*0x5acf54*/
-          *((_DWORD *)v10 + 3) = v11[3]; /*0x5acf5a*/
+          *(unsigned int *)v10 = *v11; /*0x5acf49*/
+          *((unsigned int *)v10 + 1) = v11[1]; /*0x5acf4e*/
+          *((unsigned int *)v10 + 2) = v11[2]; /*0x5acf54*/
+          *((unsigned int *)v10 + 3) = v11[3]; /*0x5acf5a*/
         }
         while ( v8 ); /*0x5acf5d*/
         v3 = a2; /*0x5acf5f*/
@@ -148,7 +148,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
       }
       if ( this->IsAllocated ) /*0x5acf67*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5acf72*/
+        RA2_OPDEL(this->q004); /*0x5acf72*/
         this->q004 = 0; /*0x5acf7a*/
       }
     }
@@ -158,7 +158,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x5acf97*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5acf97*/
   }
   v12 = this->q008; /*0x5acf9a*/
   if ( v12 < this->q010 ) /*0x5acfa2*/
@@ -176,7 +176,6 @@ CampaignClass * * MSEngine::Destructor()
 
   SessionClass::Destruct(); /*0x5cee64*/
   v2 = *(void **)(&this->u32_1C2); /*0x5cee69*/
-  this->q044 = (void*)&VectorClass_MSSfxEntry___vftable; /*0x5cee70*/
   if ( v2 && this->u8_51 ) /*0x5cee79*/
   {
     RA2_OPDEL(v2); /*0x5cee7f*/
@@ -185,7 +184,6 @@ CampaignClass * * MSEngine::Destructor()
   this->u8_51 = 0; /*0x5cee8a*/
   this->u32_4C = 0; /*0x5cee8d*/
   v3 = *(void **)(&this->q0108); /*0x5cee90*/
-  this->q02C = (void*)&VectorClass_MSAnimEntry___vftable; /*0x5cee93*/
   if ( v3 && this->u8_39 ) /*0x5cee9e*/
   {
     RA2_OPDEL(v3); /*0x5ceea4*/
@@ -195,7 +193,6 @@ CampaignClass * * MSEngine::Destructor()
   this->q034 = 0; /*0x5ceeb5*/
   DeleteAndZero((void **)(&this->q0100)); /*0x5ceeb8*/
   v4 = this->q004; /*0x5ceebd*/
-  *(void **)this = (void*)&VectorClass_MapStage___vftable; /*0x5ceec0*/
   if ( v4 && this->IsAllocated ) /*0x5ceeca*/
   {
     RA2_OPDEL(v4); /*0x5ceed0*/
@@ -213,31 +210,27 @@ unsigned int * MSEngine::Construct()
   int v3; // edx
 
   v2 = &this->q008; /*0x5d1aa5*/
-  *((_DWORD *)v2 + 1) = 0; /*0x5d1ab2*/
-  *((_DWORD *)v2 + 2) = 0; /*0x5d1ab5*/
+  *((unsigned int *)v2 + 1) = 0; /*0x5d1ab2*/
+  *((unsigned int *)v2 + 2) = 0; /*0x5d1ab5*/
   v2[12] = 1; /*0x5d1ab8*/
   v2[13] = 0; /*0x5d1abb*/
-  *(void **)v2 = (void*)&VectorClass_TRect_int_vftable; /*0x5d1abe*/
   this->u32_1C = 0; /*0x5d1ac4*/
   this->u32_20 = 0; /*0x5d1ac7*/
   this->q024 = 1; /*0x5d1aca*/
   this->q094 = 0; /*0x5d1acd*/
-  this->u32_18 = (void*)&DynamicVectorClass_MSAnim___vftable; /*0x5d1ad0*/
   *(&this->q0041) = 10; /*0x5d1ad6*/
   *(&this->q0040) = 0; /*0x5d1add*/
   *(&this->q0043) = 0; /*0x5d1ae0*/
   *(&this->q0044) = 0; /*0x5d1ae3*/
   this->u8_3C = 1; /*0x5d1ae6*/
   this->u8_3D = 0; /*0x5d1ae9*/
-  *(&this->q0042) = (void*)&DynamicVectorClass_MSSfx___vftable; /*0x5d1aec*/
   *(&this->q0047) = 10; /*0x5d1af2*/
   *(&this->q0046) = 0; /*0x5d1af9*/
-  v3 = *(_DWORD *)v2; /*0x5d1afc*/
-  *(void **)this = (void*)&MSEngine_vftable; /*0x5d1b01*/
+  v3 = *(unsigned int *)v2; /*0x5d1afc*/
   this->q004 = 0; /*0x5d1b07*/
-  (*(void (__thiscall **)(char *, int, _DWORD))(v3 + 8))(v2, 20, 0); /*0x5d1b0a*/
-  (*(void (__thiscall **)(_DWORD *))(this->u32_18 + 12))(this + 6); /*0x5d1b11*/
-  (*(void (__thiscall **)(_DWORD *))(*(&this->q0042) + 12))(&this->q0042); /*0x5d1b18*/
+  (*(void (__thiscall **)(char *, int, unsigned int))(v3 + 8))(v2, 20, 0); /*0x5d1b0a*/
+  (*(void (__thiscall **)(unsigned int *))(this->u32_18 + 12))&this->q018; /*0x5d1b11*/
+  (*(void (__thiscall **)(unsigned int *))(*(&this->q0042) + 12))(&this->q0042); /*0x5d1b18*/
   return this; /*0x5d1b1b*/
 }
 }
@@ -248,12 +241,12 @@ void MSEngine::Destruct()
   int v2; // ebp
   int v3; // eax
   void *v4; // edi
-  _DWORD *v5; // ebp
+  unsigned int *v5; // ebp
   int i; // edi
-  void (__thiscall ***v7)(_DWORD, int); // ecx
-  _DWORD *v8; // edi
+  void (__thiscall ***v7)(unsigned int, int); // ecx
+  unsigned int *v8; // edi
   void * v9;
-  _DWORD *v10; // esi
+  unsigned int *v10; // esi
   void *v11; // eax
   void *v12; // eax
   void *v13; // eax
@@ -265,49 +258,46 @@ void MSEngine::Destruct()
     v4 = *(void **)(v3 + 4 * v2); /*0x5d1b4a*/
     if ( v4 ) /*0x5d1b4f*/
     {
-      MSEngine::DestroyData(*(_DWORD *)(v3 + 4 * v2)); /*0x5d1b53*/
+      MSEngine::DestroyData(*(unsigned int *)(v3 + 4 * v2)); /*0x5d1b53*/
       RA2_OPDEL(v4); /*0x5d1b59*/
     }
   }
   v5 = &this->u32_30; /*0x5d1b6c*/
-  (*(void (__thiscall **)(_DWORD *))(*(&this->q0042) + 12))(&this->q0042); /*0x5d1b71*/
+  (*(void (__thiscall **)(unsigned int *))(*(&this->q0042) + 12))(&this->q0042); /*0x5d1b71*/
   for ( i = 0; i < *(&this->q0040); ++i ) /*0x5d1b7b*/
   {
-    v7 = *(void (__thiscall ****)(_DWORD, int))(this->u32_1C + 4 * i); /*0x5d1b80*/
+    v7 = *(void (__thiscall ****)(unsigned int, int))(this->u32_1C + 4 * i); /*0x5d1b80*/
     if ( v7 ) /*0x5d1b85*/
       (**v7)(v7, 1); /*0x5d1b8b*/
   }
   v8 = &this->u32_18; /*0x5d1b98*/
-  (*(void (__thiscall **)(_DWORD *))(this->u32_18 + 12))(this + 6); /*0x5d1b9d*/
+  (*(void (__thiscall **)(unsigned int *))(this->u32_18 + 12))&this->q018; /*0x5d1b9d*/
   v9 = this->q008; /*0x5d1ba0*/
   v10 = &this->q008; /*0x5d1ba3*/
-  (*(void (__thiscall **)(_DWORD *))(v9 + 12))(v10); /*0x5d1ba8*/
+  (*(void (__thiscall **)(unsigned int *))(v9 + 12))(v10); /*0x5d1ba8*/
   v11 = (void *)v5[1]; /*0x5d1bab*/
-  *(void **)v5 = (void*)&VectorClass_MSSfx___vftable; /*0x5d1bae*/
-  if ( v11 && *((_BYTE *)v5 + 13) ) /*0x5d1bb9*/
+  if ( v11 && *((unsigned char *)v5 + 13) ) /*0x5d1bb9*/
   {
     RA2_OPDEL(v11); /*0x5d1bbf*/
     v5[1] = 0; /*0x5d1bc7*/
   }
-  *((_BYTE *)v5 + 13) = 0; /*0x5d1bca*/
+  *((unsigned char *)v5 + 13) = 0; /*0x5d1bca*/
   v5[2] = 0; /*0x5d1bcd*/
   v12 = (void *)v8[1]; /*0x5d1bd0*/
-  *(void **)v8 = (void*)&VectorClass_MSAnim___vftable; /*0x5d1bd3*/
-  if ( v12 && *((_BYTE *)v8 + 13) ) /*0x5d1bdd*/
+  if ( v12 && *((unsigned char *)v8 + 13) ) /*0x5d1bdd*/
   {
     RA2_OPDEL(v12); /*0x5d1be3*/
     v8[1] = 0; /*0x5d1beb*/
   }
-  *((_BYTE *)v8 + 13) = 0; /*0x5d1bee*/
+  *((unsigned char *)v8 + 13) = 0; /*0x5d1bee*/
   v8[2] = 0; /*0x5d1bf1*/
   v13 = (void *)v10[1]; /*0x5d1bf4*/
-  *(void **)v10 = (void*)&VectorClass_TRect_int_vftable; /*0x5d1bf7*/
-  if ( v13 && *((_BYTE *)v10 + 13) ) /*0x5d1c01*/
+  if ( v13 && *((unsigned char *)v10 + 13) ) /*0x5d1c01*/
   {
     RA2_OPDEL(v13); /*0x5d1c07*/
     v10[1] = 0; /*0x5d1c0f*/
   }
-  *((_BYTE *)v10 + 13) = 0; /*0x5d1c12*/
+  *((unsigned char *)v10 + 13) = 0; /*0x5d1c12*/
   v10[2] = 0; /*0x5d1c15*/
 }
 }
@@ -322,12 +312,12 @@ int MSEngine::ProcessEvents(MSVQAnim * aP1, int a3)
   a3 = a3; /*0x5d1e01*/
   while ( 1 ) /*0x5d1e19*/
   {
-    result = (*(int (__thiscall **)(_DWORD *, char *))(this->u32_18 + 16))(&this->u32_18, &aP1); /*0x5d1e19*/
+    result = (*(int (__thiscall **)(unsigned int *, char *))(this->u32_18 + 16))(&this->u32_18, &aP1); /*0x5d1e19*/
     if ( result == -1 ) /*0x5d1e1f*/
       break; /*0x5d1e1f*/
-    v6 = *(_DWORD *)(this->u32_1C + 4 * result); /*0x5d1e24*/
-    result = (*(int (__thiscall **)(int))(*(_DWORD *)v6 + 28))(v6); /*0x5d1e29*/
-    if ( (_BYTE)result || !a3 ) /*0x5d1e32*/
+    v6 = *(unsigned int *)(this->u32_1C + 4 * result); /*0x5d1e24*/
+    result = (*(int (__thiscall **)(int))(*(unsigned int *)v6 + 28))(v6); /*0x5d1e29*/
+    if ( (unsigned char)result || !a3 ) /*0x5d1e32*/
       break; /*0x5d1e32*/
     GameClass::FrameLoop(1); /*0x5d1e38*/
   }
@@ -367,9 +357,9 @@ unsigned int MSEngine::PointerToIndex(int a2)
 namespace gamemd {
 unsigned int * MSEngine::Shutdown(unsigned int * a2, int a3)
 {
-  _DWORD *v3; // ecx
+  unsigned int *v3; // ecx
 
-  v3 = (_DWORD *)(this->Items + 16 * a3); /*0x5ac57d*/
+  v3 = (unsigned int *)(this->Items + 16 * a3); /*0x5ac57d*/
   *a2 = *v3; /*0x5ac587*/
   a2[1] = v3[1]; /*0x5ac58c*/
   a2[2] = v3[2]; /*0x5ac592*/
@@ -385,21 +375,21 @@ char MSEngine::AddRef(int a2)
   int v2; // edi
   int v3; // esi
   int v4; // edx
-  _DWORD *v5; // eax
-  _DWORD *v6; // ecx
+  unsigned int *v5; // eax
+  unsigned int *v6; // ecx
   int v7; // edx
 
   v2 = this->Capacity; /*0x5acccb*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x5accd0*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x5accd0*/
   {
     v3 = 0; /*0x5accd2*/
     if ( v2 <= 0 ) /*0x5accd6*/
       return 1; /*0x5acd1a*/
-    v4 = *(_DWORD *)(a2 + 4); /*0x5accd8*/
-    v5 = (_DWORD *)this->Items; /*0x5accdb*/
-    v6 = (_DWORD *)(v4 + 8); /*0x5accde*/
-    v7 = v4 - (_DWORD)v5; /*0x5acce1*/
-    while ( *v5 == *(_DWORD *)((char *)v5 + v7) && v5[1] == *(v6 - 1) && v5[2] == *v6 && v5[3] == v6[1] ) /*0x5acd07*/
+    v4 = *(unsigned int *)(a2 + 4); /*0x5accd8*/
+    v5 = (unsigned int *)this->Items; /*0x5accdb*/
+    v6 = (unsigned int *)(v4 + 8); /*0x5accde*/
+    v7 = v4 - (unsigned int)v5; /*0x5acce1*/
+    while ( *v5 == *(unsigned int *)((char *)v5 + v7) && v5[1] == *(v6 - 1) && v5[2] == *v6 && v5[3] == v6[1] ) /*0x5acd07*/
     {
       ++v3; /*0x5acd09*/
       v6 += 4; /*0x5acd0a*/
@@ -432,7 +422,7 @@ int MSEngine::Init(unsigned int * a2)
 {
   int result; // eax
   int v3; // esi
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->IsInitialized ) /*0x5ace50*/
     return 0; /*0x5ace5e*/
@@ -466,13 +456,13 @@ int MSEngine::FindItem(unsigned int * a2)
 {
   void * v2;
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x5acfc3*/
   result = 0; /*0x5acfc6*/
   if ( v2 <= 0 ) /*0x5acfcb*/
     return -1; /*0x5ad000*/
-  for ( i = (_DWORD *)this->Items; *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5acfd1*/
+  for ( i = (unsigned int *)this->Items; *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5acfd1*/
   {
     if ( ++result >= v2 ) /*0x5acffe*/
       return -1; /*0x5acffe*/
@@ -487,7 +477,6 @@ VectorClass_flat * MSEngine::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5ad4d3*/
-  *(void **)this = (void*)&VectorClass_TRect_int_vftable; /*0x5ad4d6*/
   if ( v3 && this->IsAllocated ) /*0x5ad4e0*/
   {
     RA2_OPDEL(v3); /*0x5ad4e8*/
@@ -508,7 +497,6 @@ DynamicVector * MSEngine::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5ad523*/
-  *(void **)this = (void*)&VectorClass_TRect_int_vftable; /*0x5ad526*/
   if ( v3 && this->IsAllocated ) /*0x5ad530*/
   {
     RA2_OPDEL(v3); /*0x5ad538*/

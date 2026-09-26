@@ -19,7 +19,7 @@ void Config::SaveObserverMode()
   RawFileClass::Construct(v0, (int)g_Str_File_RA2MD_INI); /*0x5ee1bc*/
   INIClass::SetInt( /*0x5ee1d8*/
     (char *)&CCINIClass_INI_RA2MD,
-    (unsigned __int8 *)g_INI_Key_MultiPlayer,
+    (uint8_t *)g_INI_Key_MultiPlayer,
     aObservermode,
     g_MenuStateFlags,
     0);

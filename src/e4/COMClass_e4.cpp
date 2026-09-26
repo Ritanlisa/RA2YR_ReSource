@@ -15,7 +15,7 @@ void * COMClass::lockServer(char a2)
 {
   int v3; // eax
   char *v4; // ebp
-  _DWORD *v5; // esi
+  unsigned int *v5; // esi
   int v6; // eax
   int v7; // edi
 
@@ -31,7 +31,6 @@ void * COMClass::lockServer(char a2)
       do /*0x76703f*/
       {
         v5 -= 2; /*0x76702e*/
-        *(void **)v5 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x767033*/
         ComPtr::Release(v5); /*0x767039*/
         --v7; /*0x76703e*/
       }
@@ -43,7 +42,6 @@ void * COMClass::lockServer(char a2)
   }
   else
   {
-    *(void **)this = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76705a*/
     ComPtr::Release(); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
       RA2_OPDEL(); /*0x76706b*/
@@ -55,7 +53,6 @@ void * COMClass::lockServer(char a2)
 namespace gamemd {
 VectorCursor * COMClass::disconnectPoint(char a2)
 {
-  *(void **)this = (void*)&VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7669f9*/
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
     RA2_OPDEL(); /*0x766a02*/
   return this; /*0x766a0c*/

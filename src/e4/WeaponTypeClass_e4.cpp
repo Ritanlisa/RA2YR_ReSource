@@ -28,7 +28,7 @@ namespace gamemd {
 void * WeaponTypeClass::Create()
 {
   int v2; // esi
-  _BYTE *v3; // eax
+  unsigned char *v3; // eax
 
   if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x51269c*/
     return 0; /*0x5126ff*/
@@ -36,17 +36,17 @@ void * WeaponTypeClass::Create()
   if ( g_SuperWeaponTypeArray <= 0 ) /*0x5126b1*/
   {
   LABEL_6:
-    v3 = RA2_OPNEW(0x1B0u); /*0x5126d6*/
+    v3 = operator new(0x1B0u); /*0x5126d6*/
     if ( v3 ) /*0x5126e5*/
       return SuperWeaponTypeClass::Construct(v3, Source); /*0x5126f1*/
     return 0; /*0x5126e5*/
   }
-  while ( _strcmpi((const void *)(*((_DWORD *)g_SuperWeaponTypeCount + v2) + 36), Source) ) /*0x5126ca*/
+  while ( _strcmpi((const void *)(*((unsigned int *)g_SuperWeaponTypeCount + v2) + 36), Source) ) /*0x5126ca*/
   {
     if ( ++v2 >= g_SuperWeaponTypeArray ) /*0x5126d4*/
       goto LABEL_6; /*0x5126d4*/
   }
-  return (_BYTE *)*((_DWORD *)g_SuperWeaponTypeCount + v2); /*0x5126ef*/
+  return (unsigned char *)*((unsigned int *)g_SuperWeaponTypeCount + v2); /*0x5126ef*/
 }
 } // namespace gamemd
 // 0x6CEEF0
@@ -62,17 +62,17 @@ int WeaponTypeClass::Process()
   if ( g_HouseClassInitState <= 0 ) /*0x6cef21*/
   {
   LABEL_6:
-    v3 = RA2_OPNEW(0x100u); /*0x6cef46*/
+    v3 = operator new(0x100u); /*0x6cef46*/
     if ( v3 ) /*0x6cef55*/
       return SuperWeaponTypeClass::SuperWeaponTypeClass((int)v3, Source); /*0x6cef61*/
     return 0; /*0x6cef55*/
   }
-  while ( _strcmpi((const void *)(*((_DWORD *)g_SuperWeaponPool + v2) + 36), Source) ) /*0x6cef3a*/
+  while ( _strcmpi((const void *)(*((unsigned int *)g_SuperWeaponPool + v2) + 36), Source) ) /*0x6cef3a*/
   {
     if ( ++v2 >= g_HouseClassInitState ) /*0x6cef44*/
       goto LABEL_6; /*0x6cef44*/
   }
-  return *((_DWORD *)g_SuperWeaponPool + v2); /*0x6cef5f*/
+  return *((unsigned int *)g_SuperWeaponPool + v2); /*0x6cef5f*/
 }
 } // namespace gamemd
 // 0x771C70
@@ -94,15 +94,12 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
   VectorClass::Construct(&this->Report, 0, 0); /*0x771cc5*/
   *(&this->abstractFlags2) = 10; /*0x771cca*/
   *(&this->abstractFlags1) = 0; /*0x771cd1*/
-  *(&this->uniqueId7) = (void*)&TypeList_int_vftable; /*0x771cd4*/
   VectorClass::Construct(&this->q0D8, 0, 0); /*0x771ce4*/
   *(&this->abstractFlags9) = 10; /*0x771ce9*/
   *(&this->abstractFlags8) = 0; /*0x771cf0*/
-  *(&this->abstractFlags4) = (void*)&TypeList_int_vftable; /*0x771cf3*/
   AnimTypeVector::Constructor(&this->q0F4, 0, 0); /*0x771d03*/
   *(&this->nextArrayIndex6) = 10; /*0x771d08*/
   *(&this->nextArrayIndex5) = 0; /*0x771d0f*/
-  *(&this->nextArrayIndex1) = (void*)&TypeList_AnimTypeClass_const___vftable; /*0x771d12*/
   *(&this->nextArrayIndex8) = 0; /*0x771d18*/
   *(&this->nextArrayIndex9) = 0; /*0x771d1e*/
   *(&this->referenceCount0) = 0; /*0x771d24*/
@@ -160,21 +157,17 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
   this->q155 = 0; /*0x771e65*/
   *(&this->NeedsSaveOrLink6) = 0; /*0x771e6b*/
   this->q15C = 0; /*0x771e71*/
-  *(void **)this = (void*)&WeaponTypeClass_vftable; /*0x771e77*/
-  this->vtable2 = (void*)&WeaponTypeClass_vftable; /*0x771e7d*/
-  this->vtable3 = (void*)&WeaponTypeClass_vftable; /*0x771e83*/
-  this->vtable4 = (void*)&WeaponTypeClass_vftable; /*0x771e8a*/
-  AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x771e91*/
+  AbstractClass::GenerateUniqueID((int)&this->vtable2); /*0x771e91*/
   if ( g_WeaponTypePool < dword_887570 /*0x771eca*/
     || (byte_887575 || !dword_887570)
     && dword_88757C > 0
-    && (*(unsigned __int8 (__thiscall **)(WeaponTypeClass **, int, _DWORD))&WeaponTypeClass_Array->gap0[8])(
+    && (*(uint8_t (__thiscall **)(WeaponTypeClass **, int, unsigned int))&WeaponTypeClass_Array->gap0[8])(
          &WeaponTypeClass_Array,
          dword_887570 + dword_88757C,
          0) )
   {
     v3 = g_WeaponTypePool++; /*0x771ed7*/
-    *((_DWORD *)g_WeaponTypeConfig + v3) = this; /*0x771ee6*/
+    *((unsigned int *)g_WeaponTypeConfig + v3) = this; /*0x771ee6*/
   }
   return this; /*0x771eeb*/
 }
@@ -188,10 +181,6 @@ int WeaponTypeClass::Destructor()
   void *v4; // eax
   void *v5; // eax
 
-  *(void **)this = (void*)&WeaponTypeClass_vftable; /*0x771f57*/
-  this->vtable2 = (void*)&WeaponTypeClass_vftable; /*0x771f5d*/
-  this->vtable3 = (void*)&WeaponTypeClass_vftable; /*0x771f64*/
-  this->vtable4 = (void*)&WeaponTypeClass_vftable; /*0x771f6b*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x771f72*/
   this->Projectile = 0; /*0x771f7d*/
   this->Warhead = 0; /*0x771f83*/
@@ -201,12 +190,11 @@ int WeaponTypeClass::Destructor()
     do /*0x771fcc*/
     {
       ++v2; /*0x771fbc*/
-      *((_DWORD *)g_WeaponTypeConfig + v2 - 1) = *((_DWORD *)g_WeaponTypeConfig + v2); /*0x771fc0*/
+      *((unsigned int *)g_WeaponTypeConfig + v2 - 1) = *((unsigned int *)g_WeaponTypeConfig + v2); /*0x771fc0*/
     }
     while ( v2 < g_WeaponTypePool ); /*0x771fcc*/
   }
   v3 = *(void **)(&this->UIName8); /*0x771fce*/
-  this->q0F4 = (void*)&VectorClass_AnimTypeClass_const___vftable; /*0x771fd4*/
   if ( v3 && this->IsHouseColor ) /*0x771fe2*/
   {
     RA2_OPDEL(v3); /*0x771feb*/
@@ -215,7 +203,6 @@ int WeaponTypeClass::Destructor()
   this->IsHouseColor = 0; /*0x771ff9*/
   this->Charges = 0; /*0x771fff*/
   v4 = *(void **)(&this->q0580); /*0x772005*/
-  this->q0D8 = (void*)&VectorClass_int_vftable; /*0x77200b*/
   if ( v4 && this->Spawner ) /*0x772019*/
   {
     RA2_OPDEL(v4); /*0x772022*/
@@ -224,7 +211,6 @@ int WeaponTypeClass::Destructor()
   this->Spawner = 0; /*0x772030*/
   this->DistributedWeaponFire = 0; /*0x772036*/
   v5 = *(void **)(&this->q04C2); /*0x77203c*/
-  this->Report = (void*)&VectorClass_int_vftable; /*0x772042*/
   if ( v5 && this->u8_C9 ) /*0x772050*/
   {
     RA2_OPDEL(v5); /*0x772059*/
@@ -278,7 +264,7 @@ int WeaponTypeClass::ProcessPower(int * a2)
   v9 = this->Projectile; /*0x772b5e*/
   if ( v9 ) /*0x772b66*/
   {
-    v10 = (*(int (__stdcall **)(int))(*(_DWORD *)(v9 + 4) + 16))(v9 + 4); /*0x772b6f*/
+    v10 = (*(int (__stdcall **)(int))(*(unsigned int *)(v9 + 4) + 16))(v9 + 4); /*0x772b6f*/
     Power::TimerProcess(v10); /*0x772b75*/
   }
   Power::TimerProcess(this->Damage); /*0x772b83*/
@@ -286,7 +272,7 @@ int WeaponTypeClass::ProcessPower(int * a2)
   v11 = this->Warhead; /*0x772b96*/
   if ( v11 ) /*0x772b9e*/
   {
-    v12 = (*(int (__stdcall **)(int))(*(_DWORD *)(v11 + 4) + 16))(v11 + 4); /*0x772ba7*/
+    v12 = (*(int (__stdcall **)(int))(*(unsigned int *)(v11 + 4) + 16))(v11 + 4); /*0x772ba7*/
     Power::TimerProcess(v12); /*0x772bad*/
   }
   Power::TimerProcess(this->ROF); /*0x772bbb*/
@@ -321,7 +307,7 @@ namespace gamemd {
 void WeaponTypeClass_SaveLoad_Prefix()
 {
   int *v4; // edi
-  _DWORD *v5; // ebp
+  unsigned int *v5; // ebp
   int v6; // esi
   int result; // eax
   int i; // ebx
@@ -344,29 +330,28 @@ void WeaponTypeClass_SaveLoad_Prefix()
       DynamicVectorClass::AnimTypeConstructor(v4 + 61, 0, 0); /*0x772d2b*/
       v4[61] = (int, unsigned int a2, unsigned int a1, unsigned int a3, unsigned int a4)(void*)&TypeList_AnimTypeClass_const___vftable; /*0x772d30*/
     }
-    (*(void (__stdcall **)(int, int **, int, _DWORD, int))(*(_DWORD *)v6 + 12))(v6, &a2, 4, 0, a1); /*0x772d42*/
+    (*(void (__stdcall **)(int, int **, int, unsigned int, int))(*(unsigned int *)v6 + 12))(v6, &a2, 4, 0, a1); /*0x772d42*/
     for ( i = 0; i < a3; ++i ) /*0x772d4d*/
     {
-      (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v6 + 12))(v6, &a4, 4, 0); /*0x772d5b*/
+      (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v6 + 12))(v6, &a4, 4, 0); /*0x772d5b*/
       DynamicVector::Add_Alt4(v4 + 61, &a4); /*0x772d69*/
     }
     if ( v5 ) /*0x772d77*/
     {
       DynamicVectorClass::Construct(v5, 0, 0); /*0x772d7f*/
-      *(void **, unsigned int a3, unsigned int a4)v5 = (void*)&TypeList_int_vftable; /*0x772d84*/
     }
-    (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v6 + 12))(v6, &a3, 4, 0); /*0x772d97*/
+    (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v6 + 12))(v6, &a3, 4, 0); /*0x772d97*/
     for ( j = 0; j < a3; ++j ) /*0x772da2*/
     {
-      (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v6 + 12))(v6, &a4, 4, 0); /*0x772db0*/
+      (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v6 + 12))(v6, &a4, 4, 0); /*0x772db0*/
       DynamicVector::Add_Alt(v5, &a4, unsigned int a3, unsigned int a2); /*0x772dba*/
     }
     if ( v4 != (int *)-216 ) /*0x772dce*/
       TypeList::Construct(v4 + 54); /*0x772dd2*/
-    (*(void (__stdcall **)(int, int *, int))(*(_DWORD *)v6 + 12))(v6, &a3, 4); /*0x772de3*/
+    (*(void (__stdcall **)(int, int *, int))(*(unsigned int *)v6 + 12))(v6, &a3, 4); /*0x772de3*/
     for ( k = 0; k < (int)a2; ++k ) /*0x772dee*/
     {
-      (*(void (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)v6 + 12))(v6, &a3, 4, 0); /*0x772dfc*/
+      (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v6 + 12))(v6, &a3, 4, 0); /*0x772dfc*/
       DynamicVector::Add_Alt(v4 + 54, &a3); /*0x772e06*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 43); /*0x772e1e*/
@@ -399,19 +384,19 @@ void WeaponTypeClass_SaveLoad_Prefix_0()
   {
     v6 = *a3; /*0x772ed4*/
     a4 = a2[65]; /*0x772ee1*/
-    (*(void (__stdcall **)(int *, int *, int, _DWORD, int))(v6 + 16))(a3, &a4, 4, 0, a1); /*0x772ee5*/
+    (*(void (__stdcall **)(int *, int *, int, unsigned int, int))(v6 + 16))(a3, &a4, 4, 0, a1); /*0x772ee5*/
     for ( i = 0; i < a5; ++i ) /*0x772ef0*/
-      (*(void (__stdcall **)(int *, int, int, _DWORD))(*a3 + 16))(a3, a2[62] + 4 * i, 4, 0); /*0x772f03*/
+      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a3 + 16))(a3, a2[62] + 4 * i, 4, 0); /*0x772f03*/
     v8 = *a3; /*0x772f13*/
     a5 = a2[51]; /*0x772f1f*/
-    (*(void (__stdcall **)(int *, int *, int, _DWORD))(v8 + 16))(a3, &a5, 4, 0); /*0x772f23*/
+    (*(void (__stdcall **)(int *, int *, int, unsigned int))(v8 + 16))(a3, &a5, 4, 0); /*0x772f23*/
     for ( j = 0; j < a5; ++j ) /*0x772f2e*/
-      (*(void (__stdcall **)(int *, int, int, _DWORD))(*a3 + 16))(a3, a2[48] + 4 * j, 4, 0); /*0x772f41*/
+      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a3 + 16))(a3, a2[48] + 4 * j, 4, 0); /*0x772f41*/
     v10 = *a3; /*0x772f51*/
     a5 = a2[58]; /*0x772f5d*/
     (*(void (__stdcall **)(int *, int *, int))(v10 + 16))(a3, &a5, 4); /*0x772f61*/
     for ( k = 0; k < a4; ++k ) /*0x772f6c*/
-      (*(void (__stdcall **)(int *, int, int, _DWORD))(*a3 + 16))(a3, a2[55] + 4 * k, 4, 0); /*0x772f7f*/
+      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a3 + 16))(a3, a2[55] + 4 * k, 4, 0); /*0x772f7f*/
     return 0; /*0x772f89*/
   }
   return result; /*0x772f8c*/
@@ -425,10 +410,6 @@ WeaponTypeClass * WeaponTypeClass::ddtor(char a2)
   void *v5; // eax
   void *v6; // eax
 
-  *this = (void*)&WeaponTypeClass_vftable; /*0x7730f7*/
-  this->vtable2 = (void*)&WeaponTypeClass_vftable; /*0x7730fd*/
-  this->vtable3 = (void*)&WeaponTypeClass_vftable; /*0x773104*/
-  this->vtable4 = (void*)&WeaponTypeClass_vftable; /*0x77310b*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x773112*/
   *(&this->uniqueId0) = 0; /*0x77311d*/
   *(&this->uniqueId3) = 0; /*0x773123*/
@@ -440,12 +421,11 @@ WeaponTypeClass * WeaponTypeClass::ddtor(char a2)
     do /*0x77316c*/
     {
       ++v3; /*0x77315c*/
-      *((_DWORD *)g_WeaponTypeConfig + v3 - 1) = *((_DWORD *)g_WeaponTypeConfig + v3); /*0x773160*/
+      *((unsigned int *)g_WeaponTypeConfig + v3 - 1) = *((unsigned int *)g_WeaponTypeConfig + v3); /*0x773160*/
     }
     while ( v3 < g_WeaponTypePool ); /*0x77316c*/
   }
   v4 = *(&this->nextArrayIndex2); /*0x77316e*/
-  *(&this->nextArrayIndex1) = (void*)&VectorClass_AnimTypeClass_const___vftable; /*0x773174*/
   if ( v4 && this->IsHouseColor ) /*0x773182*/
   {
     RA2_OPDEL(v4); /*0x77318b*/
@@ -454,7 +434,6 @@ WeaponTypeClass * WeaponTypeClass::ddtor(char a2)
   this->IsHouseColor = 0; /*0x773199*/
   *(&this->nextArrayIndex3) = 0; /*0x77319f*/
   v5 = *(&this->abstractFlags5); /*0x7731a5*/
-  *(&this->abstractFlags4) = (void*)&VectorClass_int_vftable; /*0x7731ab*/
   if ( v5 && this->Spawner ) /*0x7731b9*/
   {
     RA2_OPDEL(v5); /*0x7731c2*/
@@ -463,7 +442,6 @@ WeaponTypeClass * WeaponTypeClass::ddtor(char a2)
   this->Spawner = 0; /*0x7731d0*/
   *(&this->abstractFlags6) = 0; /*0x7731d6*/
   v6 = *(&this->uniqueId8); /*0x7731dc*/
-  *(&this->uniqueId7) = (void*)&VectorClass_int_vftable; /*0x7731e2*/
   if ( v6 && this->u8_C9 ) /*0x7731f0*/
   {
     RA2_OPDEL(v6); /*0x7731f9*/
@@ -482,8 +460,8 @@ char WeaponTypeClass::ReadTrajectoryData(WeaponTypeClass * aP1, char * a2, int a
   int v4; // eax
   int v5; // edx
   char *v6; // ebx
-  _BYTE Source[125]; // [esp+Ch] [ebp-80h] BYREF
-  __int16 v10; // [esp+89h] [ebp-3h]
+  unsigned char Source[125]; // [esp+Ch] [ebp-80h] BYREF
+  int16_t v10; // [esp+89h] [ebp-3h]
   char v11; // [esp+8Bh] [ebp-1h]
 
   Source[0] = g_INI_DefaultBuffer; /*0x475b80*/
@@ -521,8 +499,8 @@ char WeaponTypeClass::ReadVeteranData(unsigned char * a2, char * a3, int a4, int
   int v11; // ebp
   char *SampleNameByIndex; // edi
   char v13; // bl
-  _BYTE Source[125]; // [esp+Ch] [ebp-80h] BYREF
-  __int16 v17; // [esp+89h] [ebp-3h]
+  unsigned char Source[125]; // [esp+Ch] [ebp-80h] BYREF
+  int16_t v17; // [esp+89h] [ebp-3h]
   char v18; // [esp+8Bh] [ebp-1h]
 
   Source[0] = g_INI_DefaultBuffer; /*0x475c81*/
@@ -552,13 +530,6 @@ char WeaponTypeClass::ReadVeteranData(unsigned char * a2, char * a3, int a4, int
 unsigned int * WeaponTypeClass::loadWeaponProperties(AbstractTypeClass * aP1)
 {
   AbstractTypeClass::Init(aP1); /*0x771f08*/
-  *(&this->uniqueId7) = (void*)&TypeList_int_vftable; /*0x771f12*/
-  *(this + 54) = (void*)&TypeList_int_vftable; /*0x771f18*/
-  *(&this->nextArrayIndex1) = (void*)&TypeList_AnimTypeClass_const___vftable; /*0x771f1e*/
-  *this = (void*)&WeaponTypeClass_vftable; /*0x771f28*/
-  this->vtable2 = (void*)&WeaponTypeClass_vftable; /*0x771f2e*/
-  this->vtable3 = (void*)&WeaponTypeClass_vftable; /*0x771f35*/
-  this->vtable4 = (void*)&WeaponTypeClass_vftable; /*0x771f3c*/
   return this; /*0x771f45*/
 }
 // 0x7729F0
@@ -567,14 +538,14 @@ int WeaponTypeClass::CalculateSpeed()
   int result; // eax
   double WeatherConBoltExplosion; // [esp+4h] [ebp-8h]
 
-  result = *(this + 40); /*0x7729f6*/
-  if ( result && !*(_DWORD *)(result + 732) ) /*0x772a00*/
+  result = this->Projectile; /*0x7729f6*/
+  if ( result && !*(unsigned int *)(result + 732) ) /*0x772a00*/
   {
     WeatherConBoltExplosion = (double)g_RulesClass_Instance[1].WeatherConBoltExplosion; /*0x772a1e*/
-    if ( *(_BYTE *)(result + 661) ) /*0x772a16*/
+    if ( *(unsigned char *)(result + 661) ) /*0x772a16*/
       WeatherConBoltExplosion = RulesClass::GetFiringDistance(); /*0x772a29*/
-    result = TechnoClass::ComputeScanRange((void *)*(this + 45), WeatherConBoltExplosion); /*0x772a3d*/
-    *(this + 42) = result; /*0x772a42*/
+    result = TechnoClass::ComputeScanRange((void *)this->Range, WeatherConBoltExplosion); /*0x772a3d*/
+    *(unsigned int *)&this->Speed = result; /*0x772a42*/
   }
   return result; /*0x772a48*/
 }

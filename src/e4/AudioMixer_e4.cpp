@@ -37,7 +37,7 @@ int AudioMixer::PlaySample()
   unsigned int v11; // eax
   int v12; // ecx
   unsigned int v13; // edi
-  unsigned __int64 v14; // kr00_8
+  uint64_t v14; // kr00_8
   unsigned int v15; // edx
   int v16; // eax
   int v17; // eax
@@ -50,12 +50,12 @@ int AudioMixer::PlaySample()
   v4 = v2 - v3; /*0x4071cf*/
   if ( v2 == v3 ) /*0x4071d1*/
     return 0; /*0x40729e*/
-  if ( (*(_BYTE *)this & 1) != 0 ) /*0x4071da*/
+  if ( (*(unsigned char *)this & 1) != 0 ) /*0x4071da*/
   {
     this->AudioMixer_field_04 = v2; /*0x4071dc*/
     v5 = *this; /*0x4071df*/
     IDA_LOBYTE(v5) = *this | 2; /*0x4071e1*/
-    *(_DWORD *)this = v5; /*0x4071e3*/
+    *(unsigned int *)this = v5; /*0x4071e3*/
     return 1; /*0x4071e6*/
   }
   else
@@ -88,7 +88,7 @@ int AudioMixer::PlaySample()
         v19 = *this; /*0x407273*/
         IDA_LOBYTE(v19) = *this | 2; /*0x407275*/
       }
-      *(_DWORD *)this = v19; /*0x407277*/
+      *(unsigned int *)this = v19; /*0x407277*/
       return 1; /*0x40727a*/
     }
     else
@@ -106,7 +106,7 @@ int AudioMixer::PlaySample()
         v17 = *this; /*0x40723d*/
         IDA_LOBYTE(v17) = *this | 2; /*0x40723f*/
       }
-      *(_DWORD *)this = v17; /*0x407241*/
+      *(unsigned int *)this = v17; /*0x407241*/
       return 1; /*0x407244*/
     }
   }
@@ -130,21 +130,21 @@ namespace gamemd {
 int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
 {
   int v2; // eax
-  _DWORD *v4; // esi
+  unsigned int *v4; // esi
 
   v2 = a2; /*0x4061d6*/
   if ( a1[7] == 3 ) /*0x4061d8*/
   {
     if ( a2 > 0x4000 ) /*0x4061e0*/
       v2 = 0x4000; /*0x4061e2*/
-    return RequestBufferMixer(a1 + 46, (unsigned int)(v2 * IDA_HIWORD(*(_DWORD *)(a1[9] + 28))) >> 14); /*0x406204*/
+    return RequestBufferMixer(a1 + 46, (unsigned int)(v2 * IDA_HIWORD(*(unsigned int *)(a1[9] + 28))) >> 14); /*0x406204*/
   }
   else
   {
     if ( a2 > 0x4000 ) /*0x40620f*/
       v2 = 0x4000; /*0x406211*/
     v4 = a1 + 46; /*0x40621f*/
-    EndBufferMixer(a1 + 46, (unsigned int)(v2 * IDA_HIWORD(*(_DWORD *)(a1[9] + 28))) >> 14); /*0x406236*/
+    EndBufferMixer(a1 + 46, (unsigned int)(v2 * IDA_HIWORD(*(unsigned int *)(a1[9] + 28))) >> 14); /*0x406236*/
     return AudioMixer::PlaySample(v4); /*0x40623e*/
   }
 }
@@ -153,7 +153,7 @@ int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
 namespace gamemd {
 int AudioMixer::RequestOrEndBuffer(int a1, unsigned int a2)
 {
-  if ( *(_DWORD *)(a1 + 28) == 3 ) /*0x406276*/
+  if ( *(unsigned int *)(a1 + 28) == 3 ) /*0x406276*/
   {
     if ( a2 > 0x4000 ) /*0x40627e*/
       a2 = 0x4000; /*0x406280*/

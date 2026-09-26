@@ -21,12 +21,12 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
 {
   char *v3; // ebp
   int v5; // esi
-  _BYTE *v6; // ebx
+  unsigned char *v6; // ebx
   int v7; // ecx
   char * v8;
   int v9; // eax
   int v10; // eax
-  unsigned __int8 *v12; // [esp+8h] [ebp-Ch]
+  uint8_t *v12; // [esp+8h] [ebp-Ch]
   int v13; // [esp+Ch] [ebp-8h]
   size_t Size; // [esp+10h] [ebp-4h]
   int Srca; // [esp+18h] [ebp+4h]
@@ -38,14 +38,14 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   if ( this->m_allocated ) /*0x42ddce*/
   {
     v5 = 4; /*0x42ddfb*/
-    v12 = (unsigned __int8 *)(this + 5); /*0x42de00*/
+    v12 = (uint8_t *)&this->Delegate_field_14; /*0x42de00*/
     v6 = &this->m_straw; /*0x42de04*/
     Srca = 3; /*0x42de07*/
   }
   else
   {
     v5 = 3; /*0x42dde2*/
-    v12 = (unsigned __int8 *)(this + 6); /*0x42dde7*/
+    v12 = (uint8_t *)&this->m_straw; /*0x42dde7*/
     v6 = &this->Delegate_field_14; /*0x42ddeb*/
     Srca = 4; /*0x42ddee*/
   }
@@ -73,7 +73,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   for ( ; a3 >= v5; a3 -= v5 ) /*0x42dea5*/
   {
     if ( this->m_allocated ) /*0x42dea7*/
-      v10 = DecodeBitmapRGB((unsigned __int8 *)v3, v5, v6, Srca); /*0x42dec9*/
+      v10 = DecodeBitmapRGB((uint8_t *)v3, v5, v6, Srca); /*0x42dec9*/
     else
       v10 = EncodeBitmapRGB(v3, v5, v6, Srca); /*0x42deb8*/
     v3 += v5; /*0x42ded2*/
@@ -104,7 +104,7 @@ void * Delegate::Dispatch(Pipe * aP1, Pipe * aP2)
 namespace gamemd {
 unsigned int * Delegate::GetField()
 {
-  *(_DWORD *)this = 0; /*0x6c95e6*/
+  *(unsigned int *)this = 0; /*0x6c95e6*/
   this->m_count = 0; /*0x6c95e8*/
   this->Delegate_field_08 = 0; /*0x6c95eb*/
   this->m_allocated = 0; /*0x6c95ee*/
@@ -125,13 +125,13 @@ void Delegate::Set(AbstractTypeClass * aP1)
       v3 = aP1->vtable3; /*0x6c98a1*/
       if ( v3 ) /*0x6c98a6*/
       {
-        (*(void (__thiscall **)(int, _DWORD))(v3->q004)(v3, 0); /*0x6c98ac*/
+        (*(void (__thiscall **)(int, unsigned int))(v3->q004)(v3, 0); /*0x6c98ac*/
         aP1->vtable3 = 0; /*0x6c98af*/
       }
     }
     v4 = this->m_count; /*0x6c98b6*/
     if ( v4 ) /*0x6c98bb*/
-      *(_DWORD *)(v4 + 8) = 0; /*0x6c98bd*/
+      *(unsigned int *)(v4 + 8) = 0; /*0x6c98bd*/
     this->m_count = aP1; /*0x6c98c6*/
     if ( aP1 ) /*0x6c98c9*/
       aP1->vtable3 = this; /*0x6c98cb*/
@@ -167,17 +167,17 @@ int Delegate::ProcessBitmapAndDispatch()
     if ( this->m_allocated ) /*0x42df4d*/
     {
       v4 = &this->__pad_060; /*0x42df64*/
-      v5 = DecodeBitmapRGB((unsigned __int8 *)(&this->Delegate_field_080), v3, (_BYTE *)(&this->Delegate_field_084), 3); /*0x42df6d*/
+      v5 = DecodeBitmapRGB((uint8_t *)(&this->Delegate_field_080), v3, (unsigned char *)(&this->Delegate_field_084), 3); /*0x42df6d*/
     }
     else
     {
       v4 = &this->q050; /*0x42df54*/
-      v5 = EncodeBitmapRGB((char *)(&this->Delegate_field_084), v3, (_BYTE *)(&this->Delegate_field_080), 4); /*0x42df5d*/
+      v5 = EncodeBitmapRGB((char *)(&this->Delegate_field_084), v3, (unsigned char *)(&this->Delegate_field_080), 4); /*0x42df5d*/
     }
-    v2 = Delegate::Dispatch((_DWORD *)this, v4, v5); /*0x42df7b*/
+    v2 = Delegate::Dispatch((unsigned int *)this, v4, v5); /*0x42df7b*/
     this->Delegate_field_10 = 0; /*0x42df7d*/
   }
-  return v2 + GameClass::GetRelatedObject((_DWORD *)this); /*0x42df8d*/
+  return v2 + GameClass::GetRelatedObject((unsigned int *)this); /*0x42df8d*/
 }
 } // namespace gamemd
 // 0x4A2780
@@ -238,7 +238,6 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   int v3; // ecx
   int v4; // eax
 
-  *(void **)this = (void*)&GenericNode_vftable; /*0x52ae27*/
   if ( this ) /*0x52ae2d*/
   {
     v3 = this->Previous; /*0x52ae2f*/
@@ -248,7 +247,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
       if ( v4 ) /*0x52ae3b*/
       {
         v4->Previous = v3; /*0x52ae3d*/
-        *(_DWORD *)(this->Previous + 8) = this->q008; /*0x52ae46*/
+        *(unsigned int *)(this->Previous + 8) = this->q008; /*0x52ae46*/
         this->q008 = 0; /*0x52ae49*/
         this->Previous = 0; /*0x52ae4c*/
       }
@@ -263,7 +262,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
 namespace gamemd {
 int * Delegate::ClearVectorAndStraw(char a2)
 {
-  Vector::Clear((int)(this + 3)); /*0x52ae76*/
+  Vector::Clear((int)&this->m_allocated); /*0x52ae76*/
   Straw::Dtor(); /*0x52ae7d*/
   if ( (a2 & 1) != 0 ) /*0x52ae87*/
     RA2_OPDEL(); /*0x52ae8a*/

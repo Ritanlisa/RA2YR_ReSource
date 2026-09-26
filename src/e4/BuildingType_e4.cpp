@@ -88,7 +88,7 @@ int BuildingType::FindOwnerHouse()
     v1 = BuildingType::Init(7); /*0x510f34*/
   }
   if ( v1 >= 0 && v1 < HouseClass_Count ) /*0x510f43*/
-    return *((_DWORD *)HouseClass_Array + v1); /*0x510f4e*/
+    return *((unsigned int *)HouseClass_Array + v1); /*0x510f4e*/
   return 0; /*0x510f4e*/
 }
 } // namespace gamemd

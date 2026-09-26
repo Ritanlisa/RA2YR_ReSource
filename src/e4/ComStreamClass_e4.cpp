@@ -55,7 +55,7 @@ int ComStreamClass::Write()
   ReadRegistryOptionsWOL(&v26); /*0x7a3dfe*/
   if ( Flag::IsNot2(&v26) ) /*0x7a3e07*/
   {
-    Channel = FindChannelWOL(lParam, (int)a5, 1u, *(_DWORD *)(v24 + 16)); /*0x7a3e2d*/
+    Channel = FindChannelWOL(lParam, (int)a5, 1u, *(unsigned int *)(v24 + 16)); /*0x7a3e2d*/
     SaveConfigWOL((int)g_GameMode_Current); /*0x7a3e31*/
   }
   v21 = 1; /*0x7a3e3b*/
@@ -112,7 +112,6 @@ int ComStreamClass::Write()
         goto LABEL_14; /*0x7a3f97*/
     }
   }
-  v23 = (void*)&rc_ptr_PlayerProfile_vftable; /*0x7a3fd1*/
   ComPtr::Release(&v23); /*0x7a3fdd*/
   LABEL_16:
   if ( a3 ) /*0x7a3fed*/
@@ -147,8 +146,8 @@ int ComStreamClass::Release()
   v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ac834*/
   if ( !v1 && Block ) /*0x7ac83c*/
   {
-    *(_DWORD *)Block = &off_7F766C; /*0x7ac843*/
-    *((_DWORD *)Block + 1) = 1; /*0x7ac849*/
+    *(unsigned int *)Block = &off_7F766C; /*0x7ac843*/
+    *((unsigned int *)Block + 1) = 1; /*0x7ac849*/
     InterlockedDecrement(&Addend); /*0x7ac84f*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ac855*/
     RA2_OPDEL(Block, unsigned int a3, unsigned int a2, unsigned int a1); /*0x7ac85c*/
@@ -160,11 +159,11 @@ int ComStreamClass::Release()
 namespace gamemd {
 int ComStreamClass::QueryInterface()
 {
-  _UNKNOWN **v3; // esi
+  void **v3; // esi
   int result; // eax
-  _DWORD *v5; // eax
+  unsigned int *v5; // eax
   BOOL v6; // ebp
-  int (__stdcall *v7)(char *, _DWORD *, char **, void *); // eax
+  int (__stdcall *v7)(char *, unsigned int *, char **, void *); // eax
   void *v8; // eax
   char *v9; // esi
 
@@ -174,7 +173,7 @@ int ComStreamClass::QueryInterface()
   *a3 = 0; /*0x7ac891*/
   if ( !*a2 && !a2[1] && a2[2] == 192 && a2[3] == 1174405120 ) /*0x7ac8b3*/
   {
-    (*(void (__stdcall **, unsigned int a2)(char *))(*(_DWORD *)a1 + 4))(a1); /*0x7ac8c6*/
+    (*(void (__stdcall **, unsigned int a2)(char *))(*(unsigned int *)a1 + 4))(a1); /*0x7ac8c6*/
     *a3 = a1; /*0x7ac8c9*/
     return 0; /*0x7ac8d1*/
   }
@@ -190,16 +189,16 @@ int ComStreamClass::QueryInterface()
     if (!v8, unsigned int a1, unsigned int a2, unsigned int a3) /*0x7ac93b*/
       return -2147467262; /*0x7ac93d*/
   }
-  v7 = (int (__stdcall *)(char *, _DWORD *, char **, void *))v3[2]; /*0x7ac912*/
-  if ( v7 != (int (__stdcall *)(char *, _DWORD *, char **, void *))1 ) /*0x7ac918*/
+  v7 = (int (__stdcall *)(char *, unsigned int *, char **, void *))v3[2]; /*0x7ac912*/
+  if ( v7 != (int (__stdcall *)(char *, unsigned int *, char **, void *))1 ) /*0x7ac918*/
   {
     result = v7(a1, a2, a3, v3[1]); /*0x7ac925*/
     if (!result || !v6 && result < 0, unsigned int a1, unsigned int a3) /*0x7ac931*/
       return result; /*0x7ac931*/
     goto LABEL_17; /*0x7ac931*/
   }
-  v9 = (char *)v3[1] + (_DWORD)a1; /*0x7ac950*/
-  (*(void (__stdcall **)(char *))(*(_DWORD *)v9 + 4))(v9); /*0x7ac955*/
+  v9 = (char *)v3[1] + (unsigned int)a1; /*0x7ac950*/
+  (*(void (__stdcall **)(char *))(*(unsigned int *)v9 + 4))(v9); /*0x7ac955*/
   *a3 = v9; /*0x7ac958*/
   return 0; /*0x7ac881*/
 }
@@ -209,7 +208,7 @@ namespace gamemd {
 AbstractClass * * ComStreamClass::readData()
 {
   int v2; // esi
-  _DWORD *v3; // ebp
+  unsigned int *v3; // ebp
   int v4; // edi
   void *v5; // edi
   unsigned int v6; // edx
@@ -218,15 +217,15 @@ AbstractClass * * ComStreamClass::readData()
   int v11; // ecx
   int v12; // eax
 
-  if ( *((_BYTE *)v5 + 20) != 1 ) /*0x7ae0e8*/
+  if ( *((unsigned char *)v5 + 20) != 1 ) /*0x7ae0e8*/
   {
     v2 = v5->vtable3; /*0x7ae0f0*/
-    v3 = (_DWORD *)*v5; /*0x7ae0f3*/
+    v3 = (unsigned int *)*v5; /*0x7ae0f3*/
     v4 = v5->vtable4 + 1; /*0x7ae0fc*/
     v5->vtable3 = 2 * v2; /*0x7ae0fd*/
     v3 = v3; /*0x7ae100*/
     v5->vtable4 = v4; /*0x7ae108*/
-    v5 = RA2_OPNEW(8 * v2); /*0x7ae113*/
+    v5 = operator new(8 * v2); /*0x7ae113*/
     v6 = 4 * v5->vtable3; /*0x7ae118*/
     *v5 = v5; /*0x7ae11f*/
     memset(v5, 0, v6); /*0x7ae124*/
@@ -242,10 +241,10 @@ AbstractClass * * ComStreamClass::readData()
           do /*0x7ae161*/
           {
             v10 = ((int (__thiscall *)(int))v5->nextArrayIndex)(v9) & ((1 << v5->vtable4) - 1); /*0x7ae14b*/
-            v11 = *(_DWORD *)(*v5 + 4 * v10); /*0x7ae14f*/
-            *(_DWORD *)(*v5 + 4 * v10) = v9; /*0x7ae155*/
-            v12 = *(_DWORD *)(v9 + 72); /*0x7ae157*/
-            *(_DWORD *)(v9 + 72) = v11; /*0x7ae15a*/
+            v11 = *(unsigned int *)(*v5 + 4 * v10); /*0x7ae14f*/
+            *(unsigned int *)(*v5 + 4 * v10) = v9; /*0x7ae155*/
+            v12 = *(unsigned int *)(v9 + 72); /*0x7ae157*/
+            *(unsigned int *)(v9 + 72) = v11; /*0x7ae15a*/
             v9 = v12; /*0x7ae15d*/
           }
           while ( v12 ); /*0x7ae161*/
@@ -276,14 +275,14 @@ void ComStreamClass::flushStream()
   int *v13; // [esp+8h] [ebp-4h]
 
   v2 = v5->vtable3; /*0x7aef55*/
-  if ( v2 > v5->u32_30 && *((_BYTE *)v5 + 20) != 1 ) /*0x7aef67*/
+  if ( v2 > v5->u32_30 && *((unsigned char *)v5 + 20) != 1 ) /*0x7aef67*/
   {
     v3 = (int *)*v5; /*0x7aef70*/
     v4 = v5->vtable4; /*0x7aef73*/
     v13 = (int *)*v5; /*0x7aef76*/
     v5->vtable3 = v2 >> 1; /*0x7aef7c*/
     v5->vtable4 = v4 - 1; /*0x7aef84*/
-    v5 = RA2_OPNEW(4 * (v2 >> 1)); /*0x7aef8f*/
+    v5 = operator new(4 * (v2 >> 1)); /*0x7aef8f*/
     v6 = 4 * v5->vtable3; /*0x7aef94*/
     *v5 = v5; /*0x7aef9b*/
     memset(v5, 0, v6); /*0x7aefa0*/
@@ -299,10 +298,10 @@ void ComStreamClass::flushStream()
           do /*0x7aefdd*/
           {
             v10 = ((int (__thiscall *)(int))v5->nextArrayIndex)(v9) & ((1 << v5->vtable4) - 1); /*0x7aefc7*/
-            v11 = *(_DWORD *)(*v5 + 4 * v10); /*0x7aefcb*/
-            *(_DWORD *)(*v5 + 4 * v10) = v9; /*0x7aefd1*/
-            v12 = *(_DWORD *)(v9 + 72); /*0x7aefd3*/
-            *(_DWORD *)(v9 + 72) = v11; /*0x7aefd6*/
+            v11 = *(unsigned int *)(*v5 + 4 * v10); /*0x7aefcb*/
+            *(unsigned int *)(*v5 + 4 * v10) = v9; /*0x7aefd1*/
+            v12 = *(unsigned int *)(v9 + 72); /*0x7aefd3*/
+            *(unsigned int *)(v9 + 72) = v11; /*0x7aefd6*/
             v9 = v12; /*0x7aefd9*/
           }
           while ( v12 ); /*0x7aefdd*/
@@ -321,18 +320,16 @@ void ComStreamClass::flushStream()
 namespace gamemd {
 unsigned int * ComStreamClass::seekToPosition()
 {
-  _DWORD *v2; // eax
-  _DWORD *v3; // eax
-  _DWORD v5[2]; // [esp+4h] [ebp-10h] BYREF
-  _DWORD v6[2]; // [esp+Ch] [ebp-8h] BYREF
+  unsigned int *v2; // eax
+  unsigned int *v3; // eax
+  unsigned int v5[2]; // [esp+4h] [ebp-10h] BYREF
+  unsigned int v6[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set(&dword_B77F58, *(this + 1)); /*0x7b022f*/
+  ComPtr::Set(&dword_B77F58, this->q004); /*0x7b022f*/
   v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b023a*/
   v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b0249*/
   ComPtr::Set(&dword_B77F68, v3[1]); /*0x7b0257*/
-  v5[0] = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b0260*/
   ComPtr::Release(v5); /*0x7b0268*/
-  v6[0] = (void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x7b0271*/
   return ComPtr::Release(v6); /*0x7b027e*/
 }
 } // namespace gamemd
@@ -340,18 +337,16 @@ unsigned int * ComStreamClass::seekToPosition()
 namespace gamemd {
 unsigned int * ComStreamClass::getStreamSize()
 {
-  _DWORD *v2; // eax
-  _DWORD *v3; // eax
-  _DWORD v5[2]; // [esp+4h] [ebp-10h] BYREF
-  _DWORD v6[2]; // [esp+Ch] [ebp-8h] BYREF
+  unsigned int *v2; // eax
+  unsigned int *v3; // eax
+  unsigned int v5[2]; // [esp+4h] [ebp-10h] BYREF
+  unsigned int v6[2]; // [esp+Ch] [ebp-8h] BYREF
 
-  ComPtr::Set(&dword_B77F70, *(this + 1)); /*0x7b02af*/
+  ComPtr::Set(&dword_B77F70, this->q004); /*0x7b02af*/
   v2 = Audio_Create_76BE90(v6, (int)this); /*0x7b02ba*/
   v3 = Audio_Create(v5, (const char **)&g_WebBrowser, (int)v2); /*0x7b02c9*/
   ComPtr::Set(&dword_B77F78, v3[1]); /*0x7b02d7*/
-  v5[0] = (void*)&rc_ptr_WorldDominationTour_Campaign_vftable; /*0x7b02e0*/
   ComPtr::Release(v5); /*0x7b02e8*/
-  v6[0] = (void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x7b02f1*/
   return ComPtr::Release(v6, unsigned int a2, unsigned int a3, unsigned int a4); /*0x7b02fe*/
 }
 } // namespace gamemd
@@ -388,11 +383,11 @@ int ComStreamClass::Seek()
 namespace gamemd {
 int ComStreamClass::ddtor()
 {
-  if ( g_NetworkLobby_Init && *(_DWORD *)dword_B77780 ) /*0x7a4100*/
+  if ( g_NetworkLobby_Init && *(unsigned int *)dword_B77780 ) /*0x7a4100*/
   {
     if ( !a2 && a3 < 0x3E8 ) /*0x7a4114*/
     {
-      ++*(_DWORD *)dword_B77CE0; /*0x7a4123*/
+      ++*(unsigned int *)dword_B77CE0; /*0x7a4123*/
       return 0; /*0x7a412a*/
     }
     return 0; /*0x7a4114*/

@@ -56,7 +56,7 @@ int Lobby::InvalidatePlayerSlots()
       v3 = 1901; /*0x4e5d6a*/
     }
     if ( (g_GameMode_Current == 3 || g_GameMode_Current == 4) /*0x4e5df2*/
-      && ((v4 = *(&g_NetworkPlayerName + i), v4 == g_Lobby_MaxPlayers) || *(_DWORD *)(v4 + 107) == -1) )
+      && ((v4 = *(&g_NetworkPlayerName + i), v4 == g_Lobby_MaxPlayers) || *(unsigned int *)(v4 + 107) == -1) )
     {
       result = InitComboBoxNone(hDlg, v3); /*0x4e5dff*/
     }
@@ -114,7 +114,7 @@ void Lobby::UpdatePlayerLabels()
 
   hDlg = this; /*0x5eb063*/
   if ( g_GameStateFlags /*0x5eb07a*/
-    && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 64))(g_GameStateFlags)
+    && !(*(uint8_t (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 64))(g_GameStateFlags)
     || (v33 = 1, Network::IsMultiplayerActive()) )
   {
     v33 = 0; /*0x5eb088*/
@@ -175,7 +175,7 @@ void Lobby::UpdatePlayerLabels()
         PlayerCount = ReadPlayerCountMap(g_GameRulesOptions); /*0x5eb165*/
         if ( g_GameStateFlags ) /*0x5eb169*/
         {
-          v4 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 152))(g_GameStateFlags); /*0x5eb16d*/
+          v4 = (*(int (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 152))(g_GameStateFlags); /*0x5eb16d*/
           if ( v4 != -1 && v4 < PlayerCount ) /*0x5eb17a*/
             PlayerCount = v4; /*0x5eb17c*/
         }
@@ -201,7 +201,7 @@ void Lobby::UpdatePlayerLabels()
         }
       }
       if ( v36 == g_MPCooperativeState && g_GameStateFlags ) /*0x5eb1e9*/
-        (*(void (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 188))(g_GameStateFlags); /*0x5eb1ed*/
+        (*(void (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 188))(g_GameStateFlags); /*0x5eb1ed*/
     }
     if ( v36 )
     {
@@ -314,7 +314,7 @@ void Lobby::UpdatePlayerLabels()
             v17 = ReadPlayerCountMap(g_GameRulesOptions); /*0x5eb46c*/
             if ( g_GameStateFlags ) /*0x5eb470*/
             {
-              v18 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 152))(g_GameStateFlags); /*0x5eb474*/
+              v18 = (*(int (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 152))(g_GameStateFlags); /*0x5eb474*/
               if ( v18 != -1 && v18 < v17 ) /*0x5eb481*/
                 v17 = v18; /*0x5eb483*/
             }
@@ -462,7 +462,7 @@ void Lobby::SetupPlayerWidgets()
          && v6 != g_HouseClass_ObserverFlags
          && v6 != g_Lobby_PlayerCount
          && (wchar_t *)v6 != g_Lobby_PlayerReady
-         && *(_DWORD *)(v6 + 107) == -1;
+         && *(unsigned int *)(v6 + 107) == -1;
       DlgItem = GetDlgItem(hDlg, v3); /*0x5ebb33*/
       v8 = GetDlgItem(hDlg, v4); /*0x5ebb39*/
       hWnd = GetDlgItem(hDlg, nIDDlgItem); /*0x5ebb47*/
@@ -537,6 +537,6 @@ int Lobby::BuildPlayerList()
     ++v0; /*0x77dc65*/
   }
   while ( (int)v0 < (int)&g_PlayerNameListEnd ); /*0x77dc6e*/
-  return (*(int (__stdcall **)(LPVOID, char *))(*(_DWORD *)ppv + 60))(ppv, Destination); /*0x77dc84*/
+  return (*(int (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 60))(ppv, Destination); /*0x77dc84*/
 }
 } // namespace gamemd

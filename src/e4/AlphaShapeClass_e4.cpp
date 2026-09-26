@@ -52,27 +52,23 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2)
   int v3; // eax
   int v4; // eax
 
-  *(void **)this = (void*)&AlphaShapeClass_vftable; /*0x42173d*/
-  this->vtable2 = (void*)&AlphaShapeClass_vftable; /*0x421743*/
-  this->vtable3 = (void*)&AlphaShapeClass_vftable; /*0x42174a*/
-  this->vtable4 = (void*)&AlphaShapeClass_vftable; /*0x421751*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_88A0F0 + 16))(&dword_88A0F0, &this); /*0x421763*/
+  v3 = (*(int (__thiscall **)(int *, unsigned int **))(dword_88A0F0 + 16))(&dword_88A0F0, &this); /*0x421763*/
   if ( v3 != -1 && v3 < g_AlphaShapeLimit && v3 < --g_AlphaShapeLimit ) /*0x42177e*/
   {
     do /*0x421796*/
     {
       ++v3; /*0x421786*/
-      *((_DWORD *)dword_88A0F4 + v3 - 1) = *((_DWORD *)dword_88A0F4 + v3); /*0x42178a*/
+      *((unsigned int *)dword_88A0F4 + v3 - 1) = *((unsigned int *)dword_88A0F4 + v3); /*0x42178a*/
     }
     while ( v3 < g_AlphaShapeLimit ); /*0x421796*/
   }
-  v4 = (*(int (__thiscall **)(int *, _DWORD **))(AbstractClass_Array + 16))(&AbstractClass_Array, &this); /*0x4217ac*/
+  v4 = (*(int (__thiscall **)(int *, unsigned int **))(AbstractClass_Array + 16))(&AbstractClass_Array, &this); /*0x4217ac*/
   if ( v4 != -1 && v4 < g_AlphaShapePool && v4 < --g_AlphaShapePool ) /*0x4217c7*/
   {
     do /*0x4217df*/
     {
       ++v4; /*0x4217cf*/
-      *((_DWORD *)dword_B0F724 + v4 - 1) = *((_DWORD *)dword_B0F724 + v4); /*0x4217d3*/
+      *((unsigned int *)dword_B0F724 + v4 - 1) = *((unsigned int *)dword_B0F724 + v4); /*0x4217d3*/
     }
     while ( v4 < g_AlphaShapePool ); /*0x4217df*/
   }
@@ -94,10 +90,6 @@ int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x420df9*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x420e02*/
-      *(void **)aP0 = (void*)&AlphaShapeClass_vftable; /*0x420e07*/
-      aP0[1] = (void*)&AlphaShapeClass_vftable; /*0x420e0d*/
-      aP0[2] = (void*)&AlphaShapeClass_vftable; /*0x420e14*/
-      aP0[3] = (void*)&AlphaShapeClass_vftable; /*0x420e1b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x420e2b*/
     aP0[14] = 0; /*0x420e30*/

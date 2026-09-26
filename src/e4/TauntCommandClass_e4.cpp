@@ -18,7 +18,6 @@ namespace gamemd {
 unsigned int * TauntCommandClass::Construct(int a2)
 {
   this->TauntCommandClass_field_00 = a2; /*0x536296*/
-  *(void **)this = (void*)&TauntCommandClass_vftable; /*0x536299*/
   return this; /*0x53629f*/
 }
 } // namespace gamemd

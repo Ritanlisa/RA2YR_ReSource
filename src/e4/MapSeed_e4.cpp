@@ -24,7 +24,7 @@ int MapSeed::ValidateName(int a2)
   if ( a2 ) /*0x597736*/
     return (*(int (__stdcall **)(int, char *))(this->q008)(a2, &this->u32_300); /*0x597740*/
   else
-    return (unsigned __int8)ShowSaveLoadDialog(&this->u32_300) != 0; /*0x597752*/
+    return (uint8_t)ShowSaveLoadDialog(&this->u32_300) != 0; /*0x597752*/
 }
 } // namespace gamemd
 // 0x5AC230
@@ -63,7 +63,7 @@ int MapSeed::CheckName()
         DeleteAndZero(&v8),
         DeleteAndZero(&v9),
         v3)
-    || (unsigned __int8)ValidateStringContains(asc_84BA18) )
+    || (uint8_t)ValidateStringContains(asc_84BA18) )
   {
     DeleteAndZero(&v7); /*0x79c5b7*/
     return 0; /*0x79c5bc*/
@@ -209,7 +209,7 @@ AbstractClass * * MapSeed::InsertName()
       g_WOL_ParseState = time(0); /*0x79c864*/
       memset(v12, 0, sizeof(v12)); /*0x79c874*/
       strcpy(&v12[36], String::GetOrEmpty((char **)&g_WOL_AuthObject)); /*0x79c8a1*/
-      (*(void (__stdcall **)(LPVOID, char *))(*(_DWORD *)ppv + 96))(ppv, v12); /*0x79c8b3*/
+      (*(void (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v12); /*0x79c8b3*/
     }
     goto LABEL_33; /*0x79c8b3*/
   }

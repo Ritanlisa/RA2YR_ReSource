@@ -32,7 +32,7 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1)
   v6 = this->q010; /*0x512f55*/
   v7 = this->u32_4; /*0x512f58*/
   this->q010 = v6 + 1; /*0x512f5e*/
-  *(_DWORD *)(v7 + 4 * v6) = *aP1; /*0x512f68*/
+  *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x512f68*/
   return 1; /*0x512f51*/
 }
 } // namespace gamemd
@@ -44,7 +44,6 @@ unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
   this->q008 = a2; /*0x5138fe*/
   this->q00C = 1; /*0x513901*/
   this->u8_D = 0; /*0x513905*/
-  *(void **)this = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x513908*/
   if ( a2 ) /*0x51390e*/
   {
     if ( a3 ) /*0x513916*/
@@ -52,7 +51,7 @@ unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
       this->u32_4 = a3; /*0x513918*/
       return this; /*0x51391e*/
     }
-    this->u32_4 = RA2_OPNEW(4 * a2); /*0x51392d*/
+    this->u32_4 = operator new(4 * a2); /*0x51392d*/
     this->u8_D = 1; /*0x513930*/
   }
   return this; /*0x51391d*/
@@ -66,7 +65,6 @@ unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
   this->q008 = a2; /*0x5d89ae*/
   this->q00C = 1; /*0x5d89b1*/
   this->u8_D = 0; /*0x5d89b5*/
-  *(void **)this = (void*)&VectorClass_InfantryTypeClass___vftable; /*0x5d89b8*/
   if ( a2 ) /*0x5d89be*/
   {
     if ( a3 ) /*0x5d89c6*/
@@ -74,7 +72,7 @@ unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
       this->u32_4 = a3; /*0x5d89c8*/
       return this; /*0x5d89ce*/
     }
-    this->u32_4 = RA2_OPNEW(4 * a2); /*0x5d89dd*/
+    this->u32_4 = operator new(4 * a2); /*0x5d89dd*/
     this->u8_D = 1; /*0x5d89e0*/
   }
   return this; /*0x5d89cd*/

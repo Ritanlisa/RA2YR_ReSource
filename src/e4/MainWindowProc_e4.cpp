@@ -26,7 +26,7 @@ AbstractClass * * sub_777420()
   sub_407040(v0); /*0x77742d*/
   Debug::Log(); /*0x77744b*/
   if ( g_WWMouseClass_Instance && byte_B73560 == 1 && !g_ArmageddonMode ) /*0x77746d*/
-    (*(void (**)(void))(*(_DWORD *)g_WWMouseClass_Instance + 24))(); /*0x777471*/
+    (*(void (**)(void))(*(unsigned int *)g_WWMouseClass_Instance + 24))(); /*0x777471*/
   if ( !g_DDraw_Initialized ) /*0x77747c*/
   {
     if ( DSurface_Alternate ) /*0x77748a*/
@@ -37,13 +37,13 @@ AbstractClass * * sub_777420()
       && DSurface::RestoreIfLost((int *)DSurface_Composite)
       && (!g_BounceClassInit || (int)g_CurrentFrame > 16) )
     {
-      (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Composite + 24))(DSurface_Composite, 0); /*0x7774d3*/
+      (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)DSurface_Composite + 24))(DSurface_Composite, 0); /*0x7774d3*/
     }
     if ( DSurface_Tile /*0x7774f8*/
       && DSurface::RestoreIfLost((int *)DSurface_Tile)
       && (!g_BounceClassInit || (int)g_CurrentFrame > 16) )
     {
-      (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Tile + 24))(DSurface_Tile, 0); /*0x777504*/
+      (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)DSurface_Tile + 24))(DSurface_Tile, 0); /*0x777504*/
     }
     if ( DSurface_Sidebar ) /*0x77750f*/
     {
@@ -51,14 +51,14 @@ AbstractClass * * sub_777420()
       {
         g_CameoRenderFlag = 1; /*0x77751f*/
         if ( !g_BounceClassInit || (int)g_CurrentFrame > 16 ) /*0x777530*/
-          (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)DSurface_Sidebar + 24))(DSurface_Sidebar, 0); /*0x77753c*/
+          (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)DSurface_Sidebar + 24))(DSurface_Sidebar, 0); /*0x77753c*/
       }
     }
     if ( g_DSurface_Primary /*0x777561*/
       && DSurface::RestoreIfLost((int *)g_DSurface_Primary)
       && (!g_BounceClassInit || (int)g_CurrentFrame > 16) )
     {
-      (*(void (__thiscall **)(int, int *, _DWORD))(*(_DWORD *)g_DSurface_Primary + 20))( /*0x777572*/
+      (*(void (__thiscall **)(int, int *, unsigned int))(*(unsigned int *)g_DSurface_Primary + 20))( /*0x777572*/
         g_DSurface_Primary,
         &DSurface_WindowBounds,
         0);
@@ -86,7 +86,7 @@ void sub_5C09A0()
   int result; // eax
 
   if ( dword_ABF3F8 ) /*0x5c09a8*/
-    return (*(int (__thiscall **)(int))(*(_DWORD *)dword_ABF3F8 + 40))(dword_ABF3F8); /*0x5c09ac*/
+    return (*(int (__thiscall **)(int))(*(unsigned int *)dword_ABF3F8 + 40))(dword_ABF3F8); /*0x5c09ac*/
   return result; /*0x5c09af*/
 }
 }
@@ -111,22 +111,20 @@ char * E4Recv_724000::sub_724000(int a2)
   *(&this->M42) = 0; /*0x724016*/
   this->M552 = 1000; /*0x724019*/
   this->M560 = 10000; /*0x724023*/
-  *((_DWORD *)v3 + 1) = 0; /*0x72402d*/
-  *((_DWORD *)v3 + 2) = 0; /*0x724030*/
+  *((unsigned int *)v3 + 1) = 0; /*0x72402d*/
+  *((unsigned int *)v3 + 2) = 0; /*0x724030*/
   v3[12] = 1; /*0x724033*/
   v3[13] = 0; /*0x724037*/
-  *(void **)v3 = (void*)&DynamicVectorClass_ToolTip_const___vftable; /*0x72403a*/
-  *((_DWORD *)v3 + 5) = 10; /*0x724040*/
-  *((_DWORD *)v3 + 4) = 0; /*0x724047*/
+  *((unsigned int *)v3 + 5) = 10; /*0x724040*/
+  *((unsigned int *)v3 + 4) = 0; /*0x724047*/
   this->M588 = 0; /*0x72404a*/
   this->M592 = 0; /*0x724050*/
   this->M596 = 0; /*0x724056*/
   *(&this->u32_F00) = 0; /*0x72405c*/
   this->M604 = 0; /*0x724062*/
-  v4 = *(_DWORD *)v3; /*0x724068*/
-  *(void **)this = (void*)&ToolTipManager_vftable; /*0x72406a*/
+  v4 = *(unsigned int *)v3; /*0x724068*/
   (*(void (__thiscall **)(char *))(v4 + 12))(v3); /*0x724070*/
-  RA2_OPDEL(*((void **)this + 147)); /*0x72407a*/
+  RA2_OPDEL(this->M588); /*0x72407a*/
   this->M588 = 0; /*0x724082*/
   this->M592 = 0; /*0x724088*/
   this->M596 = 0; /*0x72408e*/

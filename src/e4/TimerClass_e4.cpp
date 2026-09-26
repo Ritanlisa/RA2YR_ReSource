@@ -14,7 +14,7 @@ int TimerClass::Active()
   int v1; // edx
   void * v2;
 
-  if ( *(__int16 *)(&this->u32_80) <= 0 ) /*0x4c9485*/
+  if ( *(int16_t *)(&this->u32_80) <= 0 ) /*0x4c9485*/
     return 0; /*0x4c9485*/
   v1 = this->u32_8; /*0x4c9487*/
   v2 = this->q010; /*0x4c948a*/
@@ -31,10 +31,10 @@ int TimerClass::Active()
 namespace gamemd {
 void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int a6, int a7, int a8, char a9, int a10, int a11, int a12, int a13, char a14, char a15, int a16, int a17)
 {
-  _DWORD *v18; // ecx
+  unsigned int *v18; // ecx
   TimerClass * v20;
 
-  *(_DWORD *)this = 0; /*0x54fe6a*/
+  *(unsigned int *)this = 0; /*0x54fe6a*/
   this->q010 = 0; /*0x54fe6c*/
   this->u32_8 = g_CurrentFrame; /*0x54fe75*/
   v18 = &this->u32_90; /*0x54fe78*/
@@ -67,7 +67,7 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
   *(&this->u32_202) = a15; /*0x54fef7*/
   this->q054 = a16; /*0x54fefe*/
   this->u32_58 = a17; /*0x54ff05*/
-  *(_DWORD *)this = 0; /*0x54ff08*/
+  *(unsigned int *)this = 0; /*0x54ff08*/
   g_CurrentFrame = g_CurrentFrame; /*0x54ff0a*/
   this->u32_14 = 1; /*0x54ff10*/
   this->u32_8 = g_CurrentFrame; /*0x54ff13*/
@@ -82,13 +82,13 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
   if ( g_TimerPool < dword_ABC880 /*0x54ff85*/
     || (byte_ABC885 || !dword_ABC880)
     && dword_ABC88C > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_ABC878 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_ABC878 + 8))(
          &dword_ABC878,
          dword_ABC880 + dword_ABC88C,
          0) )
   {
     v20 = g_TimerPool++; /*0x54ff92*/
-    *((_DWORD *)dword_ABC87C + v20) = this; /*0x54ffa1*/
+    *((unsigned int *)dword_ABC87C + v20) = this; /*0x54ffa1*/
   }
   return this; /*0x54ffa6*/
 }
@@ -123,7 +123,7 @@ signed int TimerClass::GetRemaining()
 namespace gamemd {
 void TimerClass::StartIfIdle()
 {
-  if ( *(this + 4) == -1 ) /*0x5ceb27*/
-    *(this + 4) = Timer::GetTicks(); /*0x5ceb31*/
+  if ( this->q010 == -1 ) /*0x5ceb27*/
+    this->q010 = Timer::GetTicks(); /*0x5ceb31*/
 }
 }

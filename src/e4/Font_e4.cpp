@@ -14,16 +14,16 @@
 namespace gamemd {
 int Font::GetGlyphDataForChar(AbstractClass * aP1)
 {
-  _DWORD *v2; // ecx
+  unsigned int *v2; // ecx
   int result; // eax
   int v4; // edx
 
-  v2 = (_DWORD *)this->Font_field_04; /*0x4346c0*/
+  v2 = (unsigned int *)this->Font_field_04; /*0x4346c0*/
   result = 0; /*0x4346c3*/
   if ( v2 ) /*0x4346c7*/
   {
-    v4 = *(unsigned __int16 *)(v2[6] + 2 * aP1); /*0x4346da*/
-    if ( (_WORD)v4 ) /*0x4346e2*/
+    v4 = *(uint16_t *)(v2[6] + 2 * aP1); /*0x4346da*/
+    if ( (unsigned short)v4 ) /*0x4346e2*/
       return v2[7] + (v4 - 1) * v2[5]; /*0x4346eb*/
   }
   return result; /*0x4346ee*/
@@ -34,21 +34,21 @@ namespace gamemd {
 int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, int aP1a, AbstractClass * aP4, AbstractClass * aP5, AbstractClass * aP6, AbstractClass * aP7, AbstractClass * aP8, AbstractClass * aP9)
 {
   int v10; // edi
-  __int16 v12; // ax
+  int16_t v12; // ax
   int v13; // ebx
   int v14; // esi
-  _WORD *v15; // edx
+  unsigned short *v15; // edx
   int v16; // ecx
   AbstractClass * v17;
   AbstractClass * v18;
   AbstractClass * v19;
   char v20; // bl
   int v21; // eax
-  _BYTE *v22; // eax
+  unsigned char *v22; // eax
   int v23; // eax
-  unsigned __int8 *v24; // eax
+  uint8_t *v24; // eax
   int v25; // eax
-  _WORD *v26; // ecx
+  unsigned short *v26; // ecx
   AbstractClass * v27;
   AbstractClass * v28;
   int v29; // ecx
@@ -57,26 +57,26 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   int v32; // ecx
   int v33; // eax
   int v34; // eax
-  _WORD *v35; // ecx
+  unsigned short *v35; // ecx
   AbstractClass * v36;
   AbstractClass * v37;
   AbstractClass * v38;
   char v39; // di
   int v40; // ecx
   int v41; // eax
-  __int16 v43; // [esp+10h] [ebp-30h]
+  int16_t v43; // [esp+10h] [ebp-30h]
   char v44[4]; // [esp+14h] [ebp-2Ch] BYREF
   int v45; // [esp+18h] [ebp-28h]
   AbstractClass * xLeft;
   int v47; // [esp+20h] [ebp-20h]
-  _WORD *v48; // [esp+24h] [ebp-1Ch]
-  _WORD *v49; // [esp+28h] [ebp-18h]
+  unsigned short *v48; // [esp+24h] [ebp-1Ch]
+  unsigned short *v49; // [esp+28h] [ebp-18h]
   int v50; // [esp+2Ch] [ebp-14h]
-  __int16 v51; // [esp+30h] [ebp-10h] BYREF
-  unsigned __int8 v52; // [esp+32h] [ebp-Eh]
-  __int16 v53; // [esp+38h] [ebp-8h] BYREF
-  unsigned __int8 v54; // [esp+3Ah] [ebp-6h]
-  __int16 v55; // [esp+58h] [ebp+18h]
+  int16_t v51; // [esp+30h] [ebp-10h] BYREF
+  uint8_t v52; // [esp+32h] [ebp-Eh]
+  int16_t v53; // [esp+38h] [ebp-8h] BYREF
+  uint8_t v54; // [esp+3Ah] [ebp-6h]
+  int16_t v55; // [esp+58h] [ebp+18h]
 
   v10 = 0; /*0x434cdb*/
   if ( !aP0 ) /*0x434cdf*/
@@ -97,10 +97,10 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   v48 = 0; /*0x434d29*/
   v45 = 0; /*0x434d2d*/
   v49 = v15; /*0x434d31*/
-  if ( (_WORD)v15 ) /*0x434d35*/
+  if ( (unsigned short)v15 ) /*0x434d35*/
   {
   LABEL_4:
-    switch ( (__int16)v49 ) /*0x434d59*/
+    switch ( (int16_t)v49 ) /*0x434d59*/
     {
       case 9: /*0x434d59*/
         v10 = aP0->q028 + v10 - (aP0->q028 + v10) % aP0->q028; /*0x434ef7*/
@@ -141,12 +141,12 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           {
             v22 = Palette::6BitTo16Bit( /*0x434e2e*/
                     v44,
-                    (unsigned __int8)((unsigned __int16)v14 >> g_BitShift_Red) << g_BitShift_Green_0,
-                    (unsigned __int8)((unsigned __int16)v14 >> g_BitMask_Green) << g_BitMask_Blue,
-                    (unsigned __int8)((unsigned __int16)v14 >> g_BitShift_Blue) << g_BitMask_Red);
-            v51 = *(_WORD *)v22; /*0x434e3b*/
+                    (uint8_t)((uint16_t)v14 >> g_BitShift_Red) << g_BitShift_Green_0,
+                    (uint8_t)((uint16_t)v14 >> g_BitMask_Green) << g_BitMask_Blue,
+                    (uint8_t)((uint16_t)v14 >> g_BitShift_Blue) << g_BitMask_Red);
+            v51 = *(unsigned short *)v22; /*0x434e3b*/
             v52 = v22[2]; /*0x434e4c*/
-            Color::Lerp((unsigned __int8 *)&v51, v20 * (255 / aP9), (unsigned __int8 *)&byte_A80220); /*0x434e59*/
+            Color::Lerp((uint8_t *)&v51, v20 * (255 / aP9), (uint8_t *)&byte_A80220); /*0x434e59*/
             v21 = PackRGB565(v52); /*0x434e7c*/
           }
   LABEL_18:
@@ -181,10 +181,10 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         goto LABEL_26; /*0x434f06*/
       default:
   LABEL_26:
-        v24 = (unsigned __int8 *)Font::GetGlyphDataForChar(v49); /*0x434f0a*/
+        v24 = (uint8_t *)Font::GetGlyphDataForChar(v49); /*0x434f0a*/
         if ( !v24 ) /*0x434f1a*/
         {
-          v24 = (unsigned __int8 *)Font::GetGlyphDataForChar(63); /*0x434f22*/
+          v24 = (uint8_t *)Font::GetGlyphDataForChar(63); /*0x434f22*/
           if ( !v24 ) /*0x434f29*/
             goto LABEL_55; /*0x434f29*/
         }
@@ -241,13 +241,13 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           break; /*0x434fef*/
         if ( v30 < aP9 ) /*0x434ff9*/
         {
-          IDA_LOBYTE(v43) = (unsigned __int8)((unsigned __int16)v14 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x435028*/
-          IDA_HIBYTE(v43) = (unsigned __int8)((unsigned __int16)v14 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435035*/
+          IDA_LOBYTE(v43) = (uint8_t)((uint16_t)v14 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x435028*/
+          IDA_HIBYTE(v43) = (uint8_t)((uint16_t)v14 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435035*/
           v53 = v43; /*0x43504b*/
-          v54 = (unsigned __int8)((unsigned __int16)v14 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435054*/
-          Color::Lerp((unsigned __int8 *)&v53, v31 * (255 / aP9), (unsigned __int8 *)&byte_A80220); /*0x435066*/
+          v54 = (uint8_t)((uint16_t)v14 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435054*/
+          Color::Lerp((uint8_t *)&v53, v31 * (255 / aP9), (uint8_t *)&byte_A80220); /*0x435066*/
           IDA_HIWORD(v32) = IDA_HIWORD(g_BitShift_Red); /*0x4350b2*/
-          v33 = ((unsigned __int8)v53 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4350ba*/
+          v33 = ((uint8_t)v53 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4350ba*/
               | (v54 >> g_BitMask_Red << g_BitShift_Blue)
               | (IDA_HIBYTE(v53) >> g_BitMask_Blue << g_BitMask_Green);
         }
@@ -273,12 +273,12 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           break; /*0x435127*/
         aP4 += v34; /*0x435129*/
   LABEL_55:
-        v12 = (__int16)v49; /*0x43512d*/
+        v12 = (int16_t)v49; /*0x43512d*/
         v35 = aP2 + 1; /*0x435135*/
         aP2 = v35; /*0x435138*/
         IDA_LOWORD(v35) = *v35; /*0x43513c*/
         v49 = v35; /*0x435142*/
-        if ( !(_WORD)v35 ) /*0x435146*/
+        if ( !(unsigned short)v35 ) /*0x435146*/
         {
           v16 = v45; /*0x435163*/
           goto LABEL_59; /*0x435163*/
@@ -323,13 +323,13 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
             break; /*0x4351cc*/
           if ( v38 < aP9 ) /*0x4351d6*/
           {
-            IDA_LOBYTE(v55) = (unsigned __int8)((unsigned __int16)v14 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x435205*/
-            IDA_HIBYTE(v55) = (unsigned __int8)((unsigned __int16)v14 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435212*/
+            IDA_LOBYTE(v55) = (uint8_t)((uint16_t)v14 >> g_BitShift_Red) << g_BitShift_Green_0; /*0x435205*/
+            IDA_HIBYTE(v55) = (uint8_t)((uint16_t)v14 >> g_BitMask_Green) << g_BitMask_Blue; /*0x435212*/
             v53 = v55; /*0x435228*/
-            v54 = (unsigned __int8)((unsigned __int16)v14 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435231*/
-            Color::Lerp((unsigned __int8 *)&v53, v39 * (255 / aP9), (unsigned __int8 *)&byte_A80220); /*0x435243*/
+            v54 = (uint8_t)((uint16_t)v14 >> g_BitShift_Blue) << g_BitMask_Red; /*0x435231*/
+            Color::Lerp((uint8_t *)&v53, v39 * (255 / aP9), (uint8_t *)&byte_A80220); /*0x435243*/
             IDA_HIWORD(v40) = IDA_HIWORD(g_BitShift_Red); /*0x43528f*/
-            v41 = ((unsigned __int8)v53 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x435297*/
+            v41 = ((uint8_t)v53 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x435297*/
                 | (v54 >> g_BitMask_Red << g_BitShift_Blue)
                 | (IDA_HIBYTE(v53) >> g_BitMask_Blue << g_BitMask_Green);
           }

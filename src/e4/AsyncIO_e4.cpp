@@ -17,13 +17,13 @@ AbstractClass * * AsyncIO::Shutdown()
 {
   int v0; // esi
   unsigned int i;
-  void (__thiscall ***v2)(_DWORD, int); // ecx
+  void (__thiscall ***v2)(unsigned int, int); // ecx
   char result; // al
 
   v0 = 0; /*0x5bf459*/
   for ( i = AsyncIO_Instance; v0 < g_AsyncIOState; ++v0 ) /*0x5bf462*/
   {
-    v2 = (void (__thiscall ***)(_DWORD, int))i[v0]; /*0x5bf464*/
+    v2 = (void (__thiscall ***)(unsigned int, int))i[v0]; /*0x5bf464*/
     if ( v2 ) /*0x5bf469*/
     {
       (**v2)(v2, 1); /*0x5bf473*/
@@ -101,8 +101,8 @@ int AsyncIO::Read()
 
   result = g_AsyncIOState; /*0x5bf500*/
   if ( g_AsyncIOState > 0 ) /*0x5bf507*/
-    return (*(int (__thiscall **)(_DWORD, void *))(**(_DWORD **)AsyncIO_Instance + 12))( /*0x5bf515*/
-             *(_DWORD *)AsyncIO_Instance,
+    return (*(int (__thiscall **)(unsigned int, void *))(**(unsigned int **)AsyncIO_Instance + 12))( /*0x5bf515*/
+             *(unsigned int *)AsyncIO_Instance,
              this);
   return result; /*0x5bf518*/
 }

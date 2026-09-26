@@ -24,14 +24,14 @@ AbstractClass * * UnholyAlliance_GetResult()
   int v5; // esi
   void *v6; // eax
   int *v7; // esi
-  _WORD *CurrentOption; // eax
-  __int16 v9; // cx
-  __int16 v10; // ax
+  unsigned short *CurrentOption; // eax
+  int16_t v9; // cx
+  int16_t v10; // ax
   int v11; // edx
   int v12; // eax
-  __int16 *v13; // eax
+  int16_t *v13; // eax
   int v15; // [esp+8h] [ebp-10h] BYREF
-  _DWORD v16[3]; // [esp+Ch] [ebp-Ch] BYREF
+  unsigned int v16[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   v2 = 0; /*0x5cb450*/
   v3 = g_RulesClass_Instance->AICaptureLowMoney[1] - 1; /*0x5cb452*/
@@ -40,10 +40,10 @@ AbstractClass * * UnholyAlliance_GetResult()
     v4 = ppv; /*0x5cb45a*/
     do /*0x5cb51b*/
     {
-      v5 = *(_DWORD *)(g_RulesClass_Instance->AICaptureLowPower[2] + 4 * v3); /*0x5cb46b*/
+      v5 = *(unsigned int *)(g_RulesClass_Instance->AICaptureLowPower[2] + 4 * v3); /*0x5cb46b*/
       if ( v5 ) /*0x5cb470*/
       {
-        v6 = RA2_OPNEW(0x8E8u); /*0x5cb47e*/
+        v6 = operator new(0x8E8u); /*0x5cb47e*/
         if ( v6 && (v7 = (int *)UnitClass::Construct((int)v6, v5, v4)) != 0 ) /*0x5cb497*/
         {
           CurrentOption = HouseClass::GetCurrentOption(v4, &ppv); /*0x5cb4a4*/
@@ -55,9 +55,9 @@ AbstractClass * * UnholyAlliance_GetResult()
                 v16[0] = (v9 << 8) + 128,
                 v16[1] = (v11 << 8) + 128,
                 v16[2] = 0,
-                !(*(unsigned __int8 (__thiscall **)(int *, _DWORD *, _DWORD))(v12 + 216))(v7, v16, 0)) )
+                !(*(uint8_t (__thiscall **)(int *, unsigned int *, unsigned int))(v12 + 216))(v7, v16, 0)) )
           {
-            v13 = (__int16 *)HouseClass::GetCurrentOption(v4, &v15); /*0x5cb4fd*/
+            v13 = (int16_t *)HouseClass::GetCurrentOption(v4, &v15); /*0x5cb4fd*/
             if ( !FindInfantryDeployPosition(v7, v13, 3) ) /*0x5cb506*/
             {
               v2 = 1; /*0x5cb515*/
@@ -84,7 +84,6 @@ AbstractClass * * UnholyAlliance_GetResult()
 // 0x5CB540
 UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
 {
-  *this = (void*)&UnholyAlliance_vftable; /*0x5cb543*/
   MultiplayerGameMode::Dtor(); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
     RA2_OPDEL(); /*0x5cb556*/

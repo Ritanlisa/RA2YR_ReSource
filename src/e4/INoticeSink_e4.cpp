@@ -10,6 +10,6 @@
 namespace gamemd {
 int INoticeSink::Dispatch(int a1)
 {
-  return (*(int (__thiscall **)(int))(*(_DWORD *)(a1 - 4) + 44))(a1 - 4); /*0x41021d*/
+  return (*(int (__thiscall **)(int))(*(unsigned int *)(a1 - 4) + 44))(a1 - 4); /*0x41021d*/
 }
 } // namespace gamemd

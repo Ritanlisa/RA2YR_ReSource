@@ -24,12 +24,12 @@ void CheckListClass_OnClick()
   int v15; // [esp-20h] [ebp-114h]
   size_t v16; // [esp-10h] [ebp-104h]
   int v17; // [esp-10h] [ebp-104h]
-  _DWORD v18[4]; // [esp+4h] [ebp-F0h] BYREF
-  _DWORD v19[2]; // [esp+14h] [ebp-E0h] BYREF
-  _BYTE v20[16]; // [esp+1Ch] [ebp-D8h] BYREF
-  _WORD v21[100]; // [esp+2Ch] [ebp-C8h] BYREF
+  unsigned int v18[4]; // [esp+4h] [ebp-F0h] BYREF
+  unsigned int v19[2]; // [esp+14h] [ebp-E0h] BYREF
+  unsigned char v20[16]; // [esp+1Ch] [ebp-D8h] BYREF
+  unsigned short v21[100]; // [esp+2Ch] [ebp-C8h] BYREF
 
-  result = (size_t *)(*(int (__thiscall **)(_DWORD *))(*a1 + 148))(a1); /*0x48852b*/
+  result = (size_t *)(*(int (__thiscall **)(unsigned int *))(*a1 + 148))(a1); /*0x48852b*/
   if ( a3 < (int)result )
   {
     result = (size_t *)Array::GetClamped(a1, a3); /*0x488543*/
@@ -37,7 +37,7 @@ void CheckListClass_OnClick()
     {
       memset(&v21[1], 0, 198); /*0x488560*/
       v16 = *result; /*0x48856b*/
-      v21[0] = *((_BYTE *)result + 4) != 0 ? 3 : 32;
+      v21[0] = *((unsigned char *)result + 4) != 0 ? 3 : 32;
       v21[1] = 32; /*0x48857e*/
       swprintf(&v21[2], v16, a2); /*0x488585*/
       v9 = a1[11]; /*0x48858a*/
@@ -45,16 +45,16 @@ void CheckListClass_OnClick()
       if ( a7 ) /*0x4885a7*/
       {
         v9 |= 0x2000u; /*0x4885b4*/
-        v11 = *(_DWORD *)(*((_DWORD *)BuildingTypeClass_AnimTable + Type) + 796); /*0x4885bd*/
-        if ( *(_DWORD *)(g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x4885c9*/
-          v12 = *(unsigned __int8 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + v11); /*0x4885d6*/
+        v11 = *(unsigned int *)(*((unsigned int *)BuildingTypeClass_AnimTable + Type) + 796); /*0x4885bd*/
+        if ( *(unsigned int *)(g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x4885c9*/
+          v12 = *(uint8_t *)(*(unsigned int *)(g_FileSystem_THEATER_PAL + 372) + v11); /*0x4885d6*/
         else
-          v12 = *(unsigned __int16 *)(*(_DWORD *)(g_FileSystem_THEATER_PAL + 372) + 2 * v11); /*0x4885e2*/
+          v12 = *(uint16_t *)(*(unsigned int *)(g_FileSystem_THEATER_PAL + 372) + 2 * v11); /*0x4885e2*/
         v18[0] = a4; /*0x4885f4*/
         v18[3] = a1[19]; /*0x4885fb*/
         v18[1] = a5; /*0x488606*/
         v18[2] = a6; /*0x48860a*/
-        (*(void (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)g_DSurface_Hidden_2 + 20))( /*0x488615*/
+        (*(void (__thiscall **)(int, unsigned int *, int))(*(unsigned int *)g_DSurface_Hidden_2 + 20))( /*0x488615*/
           g_DSurface_Hidden_2,
           v18,
           v12);
@@ -67,8 +67,8 @@ void CheckListClass_OnClick()
       v19[0] = a4; /*0x488639*/
       v17 = v13; /*0x488643*/
       v19[1] = a5; /*0x488644*/
-      v15 = *((_DWORD *)BuildingTypeClass_AnimTable + Type); /*0x488659*/
-      v14 = (*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)g_DSurface_Hidden_2 + 120))(g_DSurface_Hidden_2, v20); /*0x488662*/
+      v15 = *((unsigned int *)BuildingTypeClass_AnimTable + Type); /*0x488659*/
+      v14 = (*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2 + 120))(g_DSurface_Hidden_2, v20); /*0x488662*/
       return FillRectangle(v18, (int)v21, g_DSurface_Hidden_2, v14, (int)v19, v15, 0, v9, a6, v17); /*0x488675*/
     }
   }

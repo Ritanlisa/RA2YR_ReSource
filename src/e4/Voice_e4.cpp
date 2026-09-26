@@ -32,19 +32,19 @@ int Voice::DetachChannel()
   int result; // eax
 
   v2 = this->q02C; /*0x404146*/
-  if ( v2 && this == *(_DWORD *)(v2 + 192) ) /*0x404156*/
+  if ( v2 && this == *(unsigned int *)(v2 + 192) ) /*0x404156*/
   {
     if ( (this->u32_18 & 2) != 0 ) /*0x40415c*/
       Voice::Stop(v2); /*0x40415e*/
     AudioStream::ReleaseChannel(this->q02C); /*0x404169*/
-    *(_DWORD *)(this->q02C + 192) = 0; /*0x404174*/
-    *(_DWORD *)(this->q02C + 188) = 0; /*0x404180*/
-    *(_DWORD *)(this->q02C + 180) = 0; /*0x40418c*/
-    *(_DWORD *)(this->q02C + 184) = 0; /*0x404198*/
-    *(_DWORD *)(this->q02C + 144) = 0; /*0x4041a4*/
-    *(_DWORD *)(this->q02C + 152) = 0; /*0x4041b0*/
+    *(unsigned int *)(this->q02C + 192) = 0; /*0x404174*/
+    *(unsigned int *)(this->q02C + 188) = 0; /*0x404180*/
+    *(unsigned int *)(this->q02C + 180) = 0; /*0x40418c*/
+    *(unsigned int *)(this->q02C + 184) = 0; /*0x404198*/
+    *(unsigned int *)(this->q02C + 144) = 0; /*0x4041a4*/
+    *(unsigned int *)(this->q02C + 152) = 0; /*0x4041b0*/
     result = this->q02C; /*0x4041b6*/
-    *(_DWORD *)(result + 156) = 0; /*0x4041bc*/
+    *(unsigned int *)(result + 156) = 0; /*0x4041bc*/
     this->q02C = 0; /*0x4041c2*/
   }
   return result; /*0x4041c8*/

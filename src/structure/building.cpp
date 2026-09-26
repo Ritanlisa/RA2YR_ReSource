@@ -263,7 +263,7 @@ AbstractClass * * BuildingClass::Construct()
   {
     IDA_HIBYTE(v6) = *(_BYTE *)(v7 + 5904); /*0x43ba48*/
     IDA_LOWORD(a3) = v6; /*0x43ba52*/
-    FacingClass::Update((char *)(&this->q1600), &a3); /*0x43ba5e*/
+    FacingClass::Update((char *, unsigned int a3)(&this->q1600), &a3); /*0x43ba5e*/
   }
   memset((void *)(&this->cloakState2), 0, 0x54u); /*0x43ba70*/
   memset((void *)(&this->q2500), 0, 0x20u); /*0x43ba7d*/

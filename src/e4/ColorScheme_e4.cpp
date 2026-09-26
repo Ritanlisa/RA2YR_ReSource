@@ -10,12 +10,12 @@
 namespace gamemd {
 int ColorScheme::Destructor()
 {
-  void (__thiscall ***v2)(_DWORD, int); // ecx
+  void (__thiscall ***v2)(unsigned int, int); // ecx
   int result; // eax
 
   if ( this->q304 ) /*0x68c8d4*/
     free(*(void **)(&this->u32_1342)); /*0x68c8df*/
-  v2 = *(void (__thiscall ****)(_DWORD, int))(&this->u32_1380); /*0x68c8e7*/
+  v2 = *(void (__thiscall ****)(unsigned int, int))(&this->u32_1380); /*0x68c8e7*/
   this->q304 = 0; /*0x68c8ed*/
   if ( v2 ) /*0x68c8f9*/
     (**v2)(v2, 1); /*0x68c8ff*/
@@ -26,7 +26,7 @@ int ColorScheme::Destructor()
     do /*0x68c953*/
     {
       ++result; /*0x68c943*/
-      *((_DWORD *)BuildingTypeClass_AnimTable + result - 1) = *((_DWORD *)BuildingTypeClass_AnimTable + result); /*0x68c947*/
+      *((unsigned int *)BuildingTypeClass_AnimTable + result - 1) = *((unsigned int *)BuildingTypeClass_AnimTable + result); /*0x68c947*/
     }
     while ( result < g_AnimClass_SaveState ); /*0x68c953*/
   }

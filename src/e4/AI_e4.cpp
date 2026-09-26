@@ -19,9 +19,9 @@ void AI_CreateMCV()
   int *v6; // eax
   int *v7; // esi
   int v8; // ebx
-  _DWORD *StartCoords; // eax
-  __int16 *CurrentOption; // eax
-  _DWORD v11[3]; // [esp+8h] [ebp-Ch] BYREF
+  unsigned int *StartCoords; // eax
+  int16_t *CurrentOption; // eax
+  unsigned int v11[3]; // [esp+8h] [ebp-Ch] BYREF
 
   if ( !Bases ) /*0x5d703c*/
     return 1; /*0x5d7045*/
@@ -29,7 +29,7 @@ void AI_CreateMCV()
   v4 = BuildingClass::FindBySWType(ppv, (int)g_RulesClass_Instance + 2848); /*0x5d705e*/
   if ( v4 ) /*0x5d7062*/
   {
-    v5 = RA2_OPNEW(0x8E8u); /*0x5d7069*/
+    v5 = operator new(0x8E8u); /*0x5d7069*/
     if ( v5 ) /*0x5d7073*/
     {
       v6 = (int *)UnitClass::Construct((int)v5, v4, v3); /*0x5d7079*/
@@ -38,9 +38,9 @@ void AI_CreateMCV()
       {
         v8 = *v6; /*0x5d7085*/
         StartCoords = HouseClass::GetStartCoords(v3, v11); /*0x5d7090*/
-        if ( (*(unsigned __int8 (__thiscall **)(int *, _DWORD *, _DWORD))(v8 + 216))(v7, StartCoords, 0) ) /*0x5d7098*/
+        if ( (*(uint8_t (__thiscall **)(int *, unsigned int *, unsigned int))(v8 + 216))(v7, StartCoords, 0) ) /*0x5d7098*/
           return 1; /*0x5d70aa*/
-        CurrentOption = (__int16 *)HouseClass::GetCurrentOption(v3, &ppv); /*0x5d70b6*/
+        CurrentOption = (int16_t *)HouseClass::GetCurrentOption(v3, &ppv); /*0x5d70b6*/
         if ( FindInfantryDeployPosition(v7, CurrentOption, 1) ) /*0x5d70bf*/
           return 1; /*0x5d70cf*/
         (*(void (__thiscall **)(int *, int))(*v7 + 32))(v7, 1); /*0x5d70d8*/

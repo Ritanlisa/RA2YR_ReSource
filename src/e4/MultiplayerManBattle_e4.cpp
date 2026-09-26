@@ -12,7 +12,6 @@
 namespace gamemd {
 MultiplayerManBattle * MultiplayerManBattle::QueryInterface(char a2)
 {
-  *(void **)this = (void*)&MultiplayerManBattle_vftable; /*0x5c61a3*/
   MultiplayerGameMode::Dtor(); /*0x5c61a9*/
   if ( (a2 & 1) != 0 ) /*0x5c61b3*/
     RA2_OPDEL(); /*0x5c61b6*/

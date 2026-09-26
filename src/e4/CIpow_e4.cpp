@@ -20,12 +20,12 @@ void CIpow_Helper()
 {
   long double result; // st7
   int v14; // ecx
-  unsigned __int8 v17; // cl
-  unsigned __int8 v18; // ch
+  uint8_t v17; // cl
+  uint8_t v18; // ch
   int v23; // [esp+88h] [ebp-4h]
   ObjectClass *v7 = CW; /*0x7c8fd2*/
   v23 = CW; /*0x7c8fd4*/
-  if ( (_WORD)CW != 639 ) /*0x7c8fdf*/
+  if ( (unsigned short)CW != 639 ) /*0x7c8fdf*/
     CW = _load_CW(v23); /*0x7c8fe1*/
   int v8 = v7 & 0x7FF00000; /*0x7c8fe6*/
   if ( v8 == 2146435072 ) /*0x7c8ff6*/
@@ -46,8 +46,8 @@ LABEL_21:
     {
       if ( !v14 ) /*0x7c90cf*/
       {
-  _BYTE v22[116]; // [esp+14h] [ebp-78h] BYREF
-        _BYTE * v20 = v22; /*0x7c90d6*/
+  unsigned char v22[116]; // [esp+14h] [ebp-78h] BYREF
+        unsigned char * v20 = v22; /*0x7c90d6*/
         __asm { fsave byte ptr [ecx+8] } /*0x7c90e1*/
         int v15 = _powhlp(a2, a3, v22); /*0x7c90e5*/
   long double *v21; // [esp+10h] [ebp-7Ch]

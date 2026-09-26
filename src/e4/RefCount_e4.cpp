@@ -30,14 +30,14 @@ int RefCount::Increment(int a2)
   if ( a2 < v3 ) /*0x49fa0e*/
   {
   LABEL_5:
-    ++*(_DWORD *)(this->RefCount_field_04 + 4 * a2); /*0x49fa3d*/
+    ++*(unsigned int *)(this->RefCount_field_04 + 4 * a2); /*0x49fa3d*/
     v5 = this->RefCount_field_04; /*0x49fa4d*/
     ++this->q010; /*0x49fa51*/
-    return *(_DWORD *)(v5 + 4 * a2); /*0x49fa59*/
+    return *(unsigned int *)(v5 + 4 * a2); /*0x49fa59*/
   }
   if ( this->vt_slot_8(a2 + 10, 0) ) /*0x49fa1a*/
   {
-    for ( v3 = v3; v3 < this->q008; *(_DWORD *)(this->RefCount_field_04 + 4 * v3 - 4) = 0 ) /*0x49fa28*/
+    for ( v3 = v3; v3 < this->q008; *(unsigned int *)(this->RefCount_field_04 + 4 * v3 - 4) = 0 ) /*0x49fa28*/
       ++v3; /*0x49fa2d*/
     goto LABEL_5; /*0x49fa3b*/
   }

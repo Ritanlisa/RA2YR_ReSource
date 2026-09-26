@@ -17,7 +17,7 @@ int COMObject::FindNextActive(unsigned char * a1)
     return 0; /*0x4e1a16*/
   while ( !a1[28] ) /*0x4e1a09*/
   {
-    a1 = (_BYTE *)(*(int (__thiscall **)(_BYTE *))(*(_DWORD *)a1 + 4))(a1); /*0x4e1a10*/
+    a1 = (unsigned char *)(*(int (__thiscall **)(unsigned char *))(*(unsigned int *)a1 + 4))(a1); /*0x4e1a10*/
     if ( !a1 ) /*0x4e1a14*/
       return 0; /*0x4e1a14*/
   }
@@ -40,7 +40,7 @@ int COMObject::QueryInterface(int a1, const void * a2, unsigned int * a3)
   if ( memcmp(a2, &IID_IUnknown, 0x10u) && memcmp(a2, &unk_7EA6E8, 0x10u) ) /*0x4f427a*/
     return -2147467262; /*0x4f427f*/
   *a3 = a1; /*0x4f428c*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x4f4291*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x4f4291*/
   return 0; /*0x4f424a*/
 }
 } // namespace gamemd
@@ -57,7 +57,7 @@ int COMObject::GetStringValue(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x55ab47*/
     return -2147467261; /*0x55ab49*/
-  *a2 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 36))(a1) + 4; /*0x55ab5e*/
+  *a2 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 36))(a1) + 4; /*0x55ab5e*/
   a2[1] = 0; /*0x55ab60*/
   return 0; /*0x55ab4e*/
 }
@@ -75,11 +75,11 @@ unsigned int * COMObject::ReturnZeroPos(int a1, unsigned int * a2)
 namespace gamemd {
 unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
 {
-  _DWORD *v2; // ecx
+  unsigned int *v2; // ecx
   int v3; // edx
   int v4; // esi
 
-  v2 = *(_DWORD **)(a1 + 8); /*0x55aca6*/
+  v2 = *(unsigned int **)(a1 + 8); /*0x55aca6*/
   v3 = v2[40]; /*0x55acb3*/
   v4 = v2[41]; /*0x55acb6*/
   *a2 = v2[39]; /*0x55acbf*/
@@ -92,7 +92,7 @@ unsigned int * COMObject::GetCoord3D(int a1, unsigned int * a2)
 namespace gamemd {
 int COMObject::GetSpecialValue(int a1)
 {
-  return (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 1336))(*(_DWORD *)(a1 + 8)); /*0x55ad1f*/
+  return (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(a1 + 8) + 1336))(*(unsigned int *)(a1 + 8)); /*0x55ad1f*/
 }
 } // namespace gamemd
 // 0x5F9970
@@ -118,7 +118,7 @@ int COMObject::QueryInterface2()
     *a3 = a1; /*0x6c0096*/
   if ( !*a3 ) /*0x6c0098*/
     return -2147467262; /*0x6c00a0*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)a1 + 4))(a1); /*0x6c00ac*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c00ac*/
   return 0; /*0x6c005e*/
 }
 } // namespace gamemd

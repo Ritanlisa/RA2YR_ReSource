@@ -12,7 +12,7 @@ int DialogControl::Hide()
 {
   int v1; // eax
 
-  v1 = *(_DWORD *)this; /*0x4e1450*/
+  v1 = *(unsigned int *)this; /*0x4e1450*/
   *(&this->u32_C0) = 0; /*0x4e1452*/
   *(&this->q0088) = 1; /*0x4e1456*/
   return (*(int (**)(void))(v1 + 84))();
@@ -44,7 +44,7 @@ unsigned int * DialogControl::Constructor()
   memset(0, 0x200u); /*0x62334d*/
   *(&this->q0086) = 11; /*0x62334f*/
   *(&this->q0085) = g_FogOfWarState; /*0x62335d*/
-  v2 = RA2_OPNEW(4u); /*0x623360*/
+  v2 = operator new(4u); /*0x623360*/
   if ( v2 ) /*0x62336c*/
     v3 = unknown_libname_74(v2); /*0x623370*/
   else

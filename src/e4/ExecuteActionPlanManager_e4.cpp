@@ -14,7 +14,7 @@
 namespace gamemd {
 unsigned int * E4Recv_633AC0::sub_633AC0()
 {
-  *(_BYTE *)this = 0; /*0x633ac2*/
+  *(unsigned char *)this = 0; /*0x633ac2*/
   this->M112 = 0; /*0x633ac5*/
   this->M116 = -1; /*0x633acc*/
   return this; /*0x633ad3*/
@@ -29,7 +29,7 @@ int E4Recv_636EB0::sub_636EB0()
 
   v1 = this->M20 - 1; /*0x636eb3*/
   if ( v1 >= 0 ) /*0x636eb4*/
-    return *(_DWORD *)(this->M8 + 4 * v1); /*0x636ebc*/
+    return *(unsigned int *)(this->M8 + 4 * v1); /*0x636ebc*/
   else
     return 0; /*0x636eb6*/
 }

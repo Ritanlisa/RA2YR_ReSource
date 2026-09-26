@@ -14,7 +14,7 @@ int AbstractClassVector::Read(unsigned int * a2)
 {
   int result; // eax
   int v3; // edx
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->q00C ) /*0x4e0440*/
     return 0; /*0x4e0448*/
@@ -48,7 +48,6 @@ unsigned int * AbstractClassVector::Construct(IUnknown * aP1, IUnknown * aP2)
   this->q008 = aP1; /*0x4e0e8e*/
   this->q00C = 1; /*0x4e0e91*/
   this->IsAllocated = 0; /*0x4e0e95*/
-  *(void ** *)this = (void*)&VectorClass_AbstractClass___vftable; /*0x4e0e98*/
   if ( aP1 ) /*0x4e0e9e*/
   {
     if ( aP2 ) /*0x4e0ea6*/
@@ -56,7 +55,7 @@ unsigned int * AbstractClassVector::Construct(IUnknown * aP1, IUnknown * aP2)
       this->q004 = aP2; /*0x4e0ea8*/
       return this; /*0x4e0eae*/
     }
-    this->q004 = RA2_OPNEW(4 * aP1); /*0x4e0ebd*/
+    this->q004 = operator new(4 * aP1); /*0x4e0ebd*/
     this->IsAllocated = 1; /*0x4e0ec0*/
   }
   return this; /*0x4e0ead*/

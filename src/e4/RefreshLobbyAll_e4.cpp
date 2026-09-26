@@ -46,7 +46,7 @@ int sub_5EA8E0(int a1)
   v1 = *(&g_NetworkPlayerName + a1); /*0x5ea8e0*/
   result = 0; /*0x5ea8e7*/
   if ( v1 && (v1 == g_Lobby_PlayerTeam || v1 == g_Lobby_PlayerSide || v1 == g_Lobby_PlayerColor) /*0x5ea909*/
-    || *(_DWORD *)(v1 + 119) == 1 )
+    || *(unsigned int *)(v1 + 119) == 1 )
   {
     return 1; /*0x5ea90b*/
   }

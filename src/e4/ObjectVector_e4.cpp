@@ -15,7 +15,6 @@ unsigned int * ObjectVector::Construct(IUnknown * aP1, IUnknown * aP2)
   this->q008 = aP1; /*0x4d044e*/
   this->q00C = 1; /*0x4d0451*/
   this->IsAllocated = 0; /*0x4d0455*/
-  *(void ** *)this = (void*)&VectorClass_ObjectClass___vftable; /*0x4d0458*/
   if ( aP1 ) /*0x4d045e*/
   {
     if ( aP2 ) /*0x4d0466*/
@@ -23,7 +22,7 @@ unsigned int * ObjectVector::Construct(IUnknown * aP1, IUnknown * aP2)
       this->q004 = aP2; /*0x4d0468*/
       return this; /*0x4d046e*/
     }
-    this->q004 = RA2_OPNEW(4 * aP1); /*0x4d047d*/
+    this->q004 = operator new(4 * aP1); /*0x4d047d*/
     this->IsAllocated = 1; /*0x4d0480*/
   }
   return this; /*0x4d046d*/

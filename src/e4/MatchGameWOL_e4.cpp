@@ -26,7 +26,7 @@ void sub_7A19E0()
   void *v11; // [esp+0h] [ebp-80h]
   void *v12; // [esp+Ch] [ebp-74h] BYREF
   int v13; // [esp+10h] [ebp-70h] BYREF
-  _DWORD v14[27]; // [esp+14h] [ebp-6Ch] BYREF
+  unsigned int v14[27]; // [esp+14h] [ebp-6Ch] BYREF
 
   v10 = dword_B76AC4; /*0x7a19f1*/
   StringCSF = GetStringCSF(aWolMatchfoundw, 0, g_Str_File_wonline_cpp, 28774); /*0x7a19fc*/
@@ -34,7 +34,7 @@ void sub_7A19E0()
   String::ToLowerCopy((const char **)&dword_B76AC4, (char **)&v12); /*0x7a1a19*/
   if ( dword_B77D84 ) /*0x7a1a25*/
   {
-    for ( i = *((_DWORD *)dword_B77D80 + (dword_B77D98(&v12) & ((1 << dword_B77D8C) - 1))); i; i = *(_DWORD *)(i + 112) ) /*0x7a1a4b*/
+    for ( i = *((unsigned int *)dword_B77D80 + (dword_B77D98(&v12) & ((1 << dword_B77D8C) - 1))); i; i = *(unsigned int *)(i + 112) ) /*0x7a1a4b*/
     {
       if ( String::Compare((const char **)i, (const char **)&v12) ) /*0x7a1a54*/
         break; /*0x7a1a5b*/
@@ -80,7 +80,7 @@ void sub_7A19E0()
     if ( v14[6] ) /*0x7a1b15*/
     {
       v13 = -1; /*0x7a1b27*/
-      (*(void (__stdcall **)(LPVOID, _DWORD, int *))(*(_DWORD *)g_UIPointerTable + 32))(g_UIPointerTable, v14[6], &v13); /*0x7a1b34*/
+      (*(void (__stdcall **)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))(g_UIPointerTable, v14[6], &v13); /*0x7a1b34*/
       if ( v13 != -1 ) /*0x7a1b3e*/
       {
         v11 = (void *)v13; /*0x7a1b40*/

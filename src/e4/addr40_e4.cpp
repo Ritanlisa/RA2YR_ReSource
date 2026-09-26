@@ -73,24 +73,24 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   char *v3; // ebp
   char *v4; // eax
   char *v5; // eax
-  _DWORD *v6; // eax
-  _DWORD *v7; // eax
+  unsigned int *v6; // eax
+  unsigned int *v7; // eax
   void *v8; // edi
   void * v9;
   int v10; // edi
   int v11; // esi
   HANDLE FirstFileA; // esi
-  void (__thiscall ***v14)(_DWORD, int); // ecx
-  void (__thiscall ***v15)(_DWORD, int); // ecx
-  _DWORD Buffer[2]; // [esp+14h] [ebp-2BCh] BYREF
+  void (__thiscall ***v14)(unsigned int, int); // ecx
+  void (__thiscall ***v15)(unsigned int, int); // ecx
+  unsigned int Buffer[2]; // [esp+14h] [ebp-2BCh] BYREF
   int v18; // [esp+1Ch] [ebp-2B4h]
   int v19[22]; // [esp+20h] [ebp-2B0h] BYREF
-  _BYTE v20[12]; // [esp+78h] [ebp-258h] BYREF
+  unsigned char v20[12]; // [esp+78h] [ebp-258h] BYREF
   int v21; // [esp+84h] [ebp-24Ch]
   char Str[260]; // [esp+8Ch] [ebp-244h] BYREF
   struct _WIN32_FIND_DATAA FindFileData; // [esp+190h] [ebp-140h] BYREF
 
-  v3 = (char *)RA2_OPNEW(0x124u); /*0x4011da*/
+  v3 = (char *)operator new(0x124u); /*0x4011da*/
   memset(v3, 0, 0x124u); /*0x4011e5*/
   strcpy(Str, a1); /*0x401204*/
   v4 = strrchr(Str, 46); /*0x401215*/
@@ -104,36 +104,36 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   if ( v5 ) /*0x40128d*/
     *v5 = 0; /*0x40128f*/
   strcat(Str, aBag); /*0x4012bc*/
-  v6 = RA2_OPNEW(0x6Cu); /*0x4012c5*/
+  v6 = operator new(0x6Cu); /*0x4012c5*/
   v7 = v6 ? CCFileClass::Construct(v6, Str) : 0;
-  *((_DWORD *)v3 + 67) = v7; /*0x4012e4*/
-  if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*v7 + 20))(v7, 0) ) /*0x4012ef*/
+  *((unsigned int *)v3 + 67) = v7; /*0x4012e4*/
+  if ( !(*(uint8_t (__thiscall **)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0) ) /*0x4012ef*/
     goto LABEL_30; /*0x4012ef*/
   FileClass::Load(v19, 1); /*0x401300*/
-  (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)v3 + 67) + 28))(*((_DWORD *)v3 + 67), 1); /*0x40130f*/
+  (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)v3 + 67) + 28))(*((unsigned int *)v3 + 67), 1); /*0x40130f*/
   if ( CCFileClass::Read(v19, Buffer, 12) != 12 ) /*0x401325*/
     goto LABEL_30; /*0x401325*/
-  *((_DWORD *)v3 + 1) = v18; /*0x40132f*/
+  *((unsigned int *)v3 + 1) = v18; /*0x40132f*/
   if ( v18 <= 0 ) /*0x401338*/
     goto LABEL_17; /*0x401338*/
-  v8 = RA2_OPNEW(36 * v18); /*0x401346*/
-  v9 = *((_DWORD *)v3 + 1); /*0x401348*/
-  *(_DWORD *)v3 = v8; /*0x40134b*/
+  v8 = operator new(36 * v18); /*0x401346*/
+  v9 = *((unsigned int *)v3 + 1); /*0x401348*/
+  *(unsigned int *)v3 = v8; /*0x40134b*/
   memset(v8, 0, 4 * ((unsigned int)(36 * v9) >> 2)); /*0x40135e*/
   if ( Buffer[1] != 1 ) /*0x40136c*/
   {
-    if ( CCFileClass::Read(v19, *(void **)v3, 36 * *((_DWORD *)v3 + 1)) == 36 * *((_DWORD *)v3 + 1) ) /*0x401500*/
+    if ( CCFileClass::Read(v19, *(void **)v3, 36 * *((unsigned int *)v3 + 1)) == 36 * *((unsigned int *)v3 + 1) ) /*0x401500*/
       goto LABEL_17; /*0x401500*/
   LABEL_30:
     if ( v3 ) /*0x401508*/
     {
-      v14 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)v3 + 67); /*0x40150a*/
+      v14 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)v3 + 67); /*0x40150a*/
       if ( v14 ) /*0x401512*/
         (**v14)(v14, 1); /*0x401518*/
-      v15 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)v3 + 68); /*0x40151a*/
+      v15 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)v3 + 68); /*0x40151a*/
       if ( v15 ) /*0x401522*/
         (**v15)(v15, 1); /*0x401528*/
-      if ( *(_DWORD *)v3 ) /*0x40152a*/
+      if ( *(unsigned int *)v3 ) /*0x40152a*/
         RA2_OPDEL(*(void **)v3); /*0x401532*/
       RA2_OPDEL(v3); /*0x40153b*/
     }
@@ -148,19 +148,19 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   if ( *((int *)v3 + 1) > 0 ) /*0x401379*/
   {
     v11 = 0; /*0x40137b*/
-    while ( CCFileClass::Read(v19, (void *)(*(_DWORD *)v3 + v11), 32) == 32 ) /*0x401393*/
+    while ( CCFileClass::Read(v19, (void *)(*(unsigned int *)v3 + v11), 32) == 32 ) /*0x401393*/
     {
       ++v10; /*0x40139c*/
-      *(_DWORD *)(v11 + v3->needsSave = 0; /*0x40139d*/
+      *(unsigned int *)(v11 + v3->needsSave = 0; /*0x40139d*/
       v11 += 36; /*0x4013a4*/
-      if ( v10 >= *((_DWORD *)v3 + 1) ) /*0x4013a9*/
+      if ( v10 >= *((unsigned int *)v3 + 1) ) /*0x4013a9*/
         goto LABEL_17; /*0x4013a9*/
     }
     goto LABEL_30; /*0x401393*/
   }
   LABEL_17:
-  qsort(*(void **)v3, *((_DWORD *)v3 + 1), 0x24u, _strcmpi); /*0x4013ab*/
-  *((_DWORD *)v3 + 69) = 0; /*0x4013c8*/
+  qsort(*(void **)v3, *((unsigned int *)v3 + 1), 0x24u, _strcmpi); /*0x4013ab*/
+  *((unsigned int *)v3 + 69) = 0; /*0x4013c8*/
   if ( a2 ) /*0x4013ce*/
   {
     strcpy(v3 + 8, a2); /*0x4013ed*/
@@ -172,7 +172,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
       if ( (FindFileData.dwFileAttributes & 0x10) != 0 ) /*0x401437*/
       {
   LABEL_24:
-        *((_DWORD *)v3 + 69) = 1; /*0x401458*/
+        *((unsigned int *)v3 + 69) = 1; /*0x401458*/
       }
       else
       {
@@ -199,34 +199,34 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
 namespace gamemd {
 ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
 {
-  _DWORD *v2; // ebx
-  _DWORD *v3; // esi
-  _DWORD *v4; // edi
+  unsigned int *v2; // ebx
+  unsigned int *v3; // esi
+  unsigned int *v4; // edi
   int *v5; // ebp
   int v6; // edi
-  _DWORD **i; // esi
+  unsigned int **i; // esi
   int v9; // eax
   int *v10; // esi
   int v11; // esi
-  _DWORD **j; // edi
+  unsigned int **j; // edi
   int v13; // eax
-  _DWORD **k; // esi
+  unsigned int **k; // esi
   int v16; // [esp+14h] [ebp-8h]
 
   v2 = a1; /*0x401c05*/
-  v3 = (_DWORD *)a1[3]; /*0x401c0d*/
+  v3 = (unsigned int *)a1[3]; /*0x401c0d*/
   v4 = a1 + 3; /*0x401c10*/
   if ( v3 != a1 + 3 ) /*0x401c19*/
   {
     while ( v3[5] != a2 || !v3[6] ) /*0x401c25*/
     {
-      v3 = (_DWORD *)*v3; /*0x401c27*/
+      v3 = (unsigned int *)*v3; /*0x401c27*/
       if ( v3 == v4 ) /*0x401c2b*/
         goto LABEL_5; /*0x401c2b*/
     }
     if ( v3 ) /*0x401c77*/
     {
-      LinkedList::Init((_DWORD **)v3); /*0x401c7b*/
+      LinkedList::Init((unsigned int **)v3); /*0x401c7b*/
       InsertBeforeLinkedList(v4, v3); /*0x401c84*/
       return v3; /*0x401c92*/
     }
@@ -240,22 +240,22 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
       v6 = AudioList::GetNextEntry(v4); /*0x401c55*/
       if ( v6 ) /*0x401c59*/
       {
-        while ( *(_DWORD *)(v6 + 12) ) /*0x401c64*/
+        while ( *(unsigned int *)(v6 + 12) ) /*0x401c64*/
         {
           v6 = AudioList::GetNextEntry(v6); /*0x401c6d*/
           if ( !v6 ) /*0x401c71*/
             goto LABEL_18; /*0x401c71*/
         }
-        if ( *(_DWORD *)(v6 + 4) != v6 ) /*0x401c96*/
-          LinkedList::Init((_DWORD **)v6); /*0x401c9a*/
-        for ( i = (_DWORD **)Queue::GetNext((int *)(v6 + 36)); i; i = (_DWORD **)Queue::GetNext((int *)(v6 + 36)) ) /*0x401cad*/
+        if ( *(unsigned int *)(v6 + 4) != v6 ) /*0x401c96*/
+          LinkedList::Init((unsigned int **)v6); /*0x401c9a*/
+        for ( i = (unsigned int **)Queue::GetNext((int *)(v6 + 36)); i; i = (unsigned int **)Queue::GetNext((int *)(v6 + 36)) ) /*0x401cad*/
         {
           LinkedList::Init(i); /*0x401cb1*/
           AudioNode::Release(i); /*0x401cb8*/
-          PushFrontLinkedListAlt(*(_DWORD **)(*(_DWORD *)(v6 + 60) + 4), (int)i); /*0x401cc5*/
+          PushFrontLinkedListAlt(*(unsigned int **)(*(unsigned int *)(v6 + 60) + 4), (int)i); /*0x401cc5*/
         }
         nullsub_2(v6 + 28); /*0x401cda*/
-        PushFrontLinkedListAlt(*(_DWORD **)(*(_DWORD *)(v6 + 60) + 8), v6); /*0x401ce7*/
+        PushFrontLinkedListAlt(*(unsigned int **)(*(unsigned int *)(v6 + 60) + 8), v6); /*0x401ce7*/
       }
   LABEL_18:
       v5 = LinkedList::Next((int **)v2[2]); /*0x401cf4*/
@@ -272,7 +272,7 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
     AudioStream::InitNodeFields(v5 + 7); /*0x401d26*/
     Struct::ZeroInit32(v5 + 16); /*0x401d30*/
     v5[12] = (int)(v5 + 16); /*0x401d35*/
-    v9 = *(_DWORD *)(*v2 + 284); /*0x401d3a*/
+    v9 = *(unsigned int *)(*v2 + 284); /*0x401d3a*/
     v9 = v9; /*0x401d42*/
     if ( !v9 ) /*0x401d46*/
     {
@@ -314,8 +314,8 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
           goto LABEL_38; /*0x401d97*/
       }
       if ( v11->vtable2 != v11 ) /*0x401da2*/
-        LinkedList::Init((_DWORD **)v11); /*0x401da6*/
-      for ( j = (_DWORD **)Queue::GetNext((int *)(v11 + 36)); j; j = (_DWORD **)Queue::GetNext((int *)(v11 + 36)) ) /*0x401db9*/
+        LinkedList::Init((unsigned int **)v11); /*0x401da6*/
+      for ( j = (unsigned int **)Queue::GetNext((int *)(v11 + 36)); j; j = (unsigned int **)Queue::GetNext((int *)(v11 + 36)) ) /*0x401db9*/
       {
         LinkedList::Init(j); /*0x401dbd*/
         AudioNode::Release(j); /*0x401dc4*/
@@ -330,15 +330,15 @@ ObjectClass * * AudioMixer_LoadSample(unsigned int * a1, int a2)
     }
   LABEL_38:
     if ( (int *)v5[1] != v5 ) /*0x401e82*/
-      LinkedList::Init((_DWORD **)v5); /*0x401e86*/
-    for ( k = (_DWORD **)Queue::GetNext(v5 + 9); k; k = (_DWORD **)Queue::GetNext(v5 + 9) ) /*0x401e99*/
+      LinkedList::Init((unsigned int **)v5); /*0x401e86*/
+    for ( k = (unsigned int **)Queue::GetNext(v5 + 9); k; k = (unsigned int **)Queue::GetNext(v5 + 9) ) /*0x401e99*/
     {
       LinkedList::Init(k); /*0x401e9d*/
       AudioNode::Release(k); /*0x401ea4*/
-      PushFrontLinkedListAlt(*(_DWORD **)(v5[15] + 4), (int)k); /*0x401eb1*/
+      PushFrontLinkedListAlt(*(unsigned int **)(v5[15] + 4), (int)k); /*0x401eb1*/
     }
     nullsub_2(v5 + 7); /*0x401ec6*/
-    PushFrontLinkedListAlt(*(_DWORD **)(v5[15] + 8), (int)v5); /*0x401ed3*/
+    PushFrontLinkedListAlt(*(unsigned int **)(v5[15] + 8), (int)v5); /*0x401ed3*/
   }
   return 0; /*0x401c8b*/
 }
@@ -349,8 +349,8 @@ int E4Recv_401F80::_EnterCriticalRegionHelper_ContextBase_details_Concurrency__U
 {
   int result; // eax
 
-  result = *((_DWORD *)this + 3) + 1; /*0x401f83*/
-  *((_DWORD *)this + 3) = result; /*0x401f84*/
+  result = *(unsigned int *)&this->M12 + 1; /*0x401f83*/
+  *(unsigned int *)&this->M12 = result; /*0x401f84*/
   return result; /*0x401f87*/
 }
 } // namespace gamemd
@@ -374,18 +374,18 @@ ObjectClass * * sub_402990()
 
   if ( dword_87DE2C ) /*0x40299d*/
   {
-    ++*((_DWORD *)off_815E98 + 6); /*0x4029af*/
+    ++*((unsigned int *)off_815E98 + 6); /*0x4029af*/
     Next = (int *)AudioQueue::GetNext((int *)off_815E98 + 3); /*0x4029c0*/
     for ( i = Next; Next; i = Next ) /*0x4029ca*/
     {
       NextAlt = AudioQueue::GetNextAlt(Next); /*0x4029d7*/
       Next = (int *)NextAlt; /*0x4029db*/
-      ++*((_DWORD *)off_815E98 + 6); /*0x4029e6*/
-      LinkedList::Init((_DWORD **)i); /*0x4029eb*/
-      v2 = *((_DWORD *)off_815E98 + 6) - 1; /*0x4029f9*/
-      *((_DWORD *)off_815E98 + 6) = v2; /*0x4029fc*/
+      ++*((unsigned int *)off_815E98 + 6); /*0x4029e6*/
+      LinkedList::Init((unsigned int **)i); /*0x4029eb*/
+      v2 = *((unsigned int *)off_815E98 + 6) - 1; /*0x4029f9*/
+      *((unsigned int *)off_815E98 + 6) = v2; /*0x4029fc*/
       if ( v2 < 0 ) /*0x4029ff*/
-        *((_DWORD *)off_815E98 + 6) = 0; /*0x402a07*/
+        *((unsigned int *)off_815E98 + 6) = 0; /*0x402a07*/
       v11 = (int *)AudioQueue::GetNext(i + 62); /*0x402a17*/
       v3 = v11; /*0x402a1b*/
       if ( v11 ) /*0x402a1d*/
@@ -399,26 +399,26 @@ ObjectClass * * sub_402990()
         while ( v4 ); /*0x402a35*/
         Next = (int *)NextAlt; /*0x402a37*/
       }
-      (*(void (__thiscall **)(int *))(*(_DWORD *)(i[6] + 12) + 32))(i); /*0x402a43*/
-      *(_DWORD *)(i[6] + 4 * i[7] + 28) = 0; /*0x402a4c*/
+      (*(void (__thiscall **)(int *))(*(unsigned int *)(i[6] + 12) + 32))(i); /*0x402a43*/
+      *(unsigned int *)(i[6] + 4 * i[7] + 28) = 0; /*0x402a4c*/
       v5 = i[6]; /*0x402a50*/
-      v6 = *(_DWORD *)(v5 + 16) - 1; /*0x402a56*/
-      *(_DWORD *)(v5 + 16) = v6; /*0x402a59*/
+      v6 = *(unsigned int *)(v5 + 16) - 1; /*0x402a56*/
+      *(unsigned int *)(v5 + 16) = v6; /*0x402a59*/
       if ( v6 < 0 ) /*0x402a5c*/
-        *(_DWORD *)(i[6] + 16) = 0; /*0x402a61*/
+        *(unsigned int *)(i[6] + 16) = 0; /*0x402a61*/
       RA2_OPDEL(i); /*0x402a65*/
     }
-    v7 = *((_DWORD *)off_815E98 + 6) - 1; /*0x402a80*/
-    *((_DWORD *)off_815E98 + 6) = v7; /*0x402a83*/
+    v7 = *((unsigned int *)off_815E98 + 6) - 1; /*0x402a80*/
+    *((unsigned int *)off_815E98 + 6) = v7; /*0x402a83*/
     if ( v7 < 0 ) /*0x402a86*/
-      *((_DWORD *)off_815E98 + 6) = 0; /*0x402a8d*/
+      *((unsigned int *)off_815E98 + 6) = 0; /*0x402a8d*/
     v8 = (int *)AudioQueue::GetNext((int *)off_815E98); /*0x402a9b*/
     for ( j = v8; v8; j = v8 ) /*0x402aa1*/
     {
       v8 = (int *)AudioQueue::GetNextAlt(v8); /*0x402ab1*/
-      LinkedList::Init((_DWORD **)j); /*0x402ab5*/
+      LinkedList::Init((unsigned int **)j); /*0x402ab5*/
       (*(void (__thiscall **)(int *))(j[3] + 24))(j); /*0x402abf*/
-      *(_DWORD *)(j[3] + 12) &= ~1u; /*0x402ac6*/
+      *(unsigned int *)(j[3] + 12) &= ~1u; /*0x402ac6*/
       RA2_OPDEL(j); /*0x402ac9*/
       dword_87DE28 = 0; /*0x402ad3*/
     }
@@ -470,7 +470,7 @@ ObjectClass * * CreateAudioChannel(int a1, const void * a2)
   if ( !v7 ) /*0x402ce1*/
   {
     v12 = v4[3]; /*0x402cef*/
-    v8 = (int *)RA2_OPNEW(0x1E8u); /*0x402cf8*/
+    v8 = (int *)new CoordBounds; /*0x402cf8*/
     memset(v8, 0, 0x1E8u); /*0x402d03*/
     DListNode::InitEmpty(v8); /*0x402d0a*/
     v8[6] = (int)v4; /*0x402d13*/
@@ -478,7 +478,7 @@ ObjectClass * * CreateAudioChannel(int a1, const void * a2)
     v8[4] = 0; /*0x402d19*/
     ++v4[4]; /*0x402d20*/
     v4[v10 + 7] = (int)v8; /*0x402d27*/
-    v8[116] = *(_DWORD *)(v12 + 36); /*0x402d34*/
+    v8[116] = *(unsigned int *)(v12 + 36); /*0x402d34*/
     DListNode::Init(v8 + 62); /*0x402d3a*/
     AudioMixer::Init(v8 + 26); /*0x402d42*/
     v8[65] = 0; /*0x402d47*/
@@ -507,7 +507,7 @@ ObjectClass * * CreateAudioChannel(int a1, const void * a2)
     v8[69] = 0; /*0x402dde*/
     v8[70] = 33; /*0x402de4*/
     v8[71] = 0; /*0x402dea*/
-    *((_QWORD *)v8 + 38) = 10LL * *((_QWORD *)v8 + 34); /*0x402e06*/
+    *((unsigned long long *)v8 + 38) = 10LL * *((unsigned long long *)v8 + 34); /*0x402e06*/
     v8[70] = 165; /*0x402e17*/
     v8[71] = 0; /*0x402e1d*/
     v8[76] = 165; /*0x402e23*/
@@ -531,12 +531,12 @@ ObjectClass * * CreateAudioChannel(int a1, const void * a2)
     if ( !v8 ) /*0x402e8c*/
       return 0; /*0x402e97*/
     v8[59] = v11; /*0x402e9c*/
-    ++*((_DWORD *)off_815E98 + 6); /*0x402eab*/
+    ++*((unsigned int *)off_815E98 + 6); /*0x402eab*/
     InsertAfterDListNode((int)off_815E98 + 12, v8); /*0x402eb8*/
-    v9 = *((_DWORD *)off_815E98 + 6) - 1; /*0x402ec6*/
-    *((_DWORD *)off_815E98 + 6) = v9; /*0x402ec9*/
+    v9 = *((unsigned int *)off_815E98 + 6) - 1; /*0x402ec6*/
+    *((unsigned int *)off_815E98 + 6) = v9; /*0x402ec9*/
     if ( v9 < 0 ) /*0x402ecc*/
-      *((_DWORD *)off_815E98 + 6) = 0; /*0x402ed4*/
+      *((unsigned int *)off_815E98 + 6) = 0; /*0x402ed4*/
   }
   ++v7[4]; /*0x402edb*/
   return v7; /*0x402cc5*/
@@ -556,7 +556,7 @@ ObjectClass * * sub_403210()
   void *result; // eax
   int NextAlt; // [esp+8h] [ebp-8h]
 
-  ++*((_DWORD *)off_815E98 + 6); /*0x40321e*/
+  ++*((unsigned int *)off_815E98 + 6); /*0x40321e*/
   Next = (int *)AudioQueue::GetNext((int *)off_815E98 + 3); /*0x40322a*/
   v1 = Next; /*0x403237*/
   if ( Next ) /*0x403239*/
@@ -564,25 +564,25 @@ ObjectClass * * sub_403210()
     while ( 1 ) /*0x403252*/
     {
       NextAlt = AudioQueue::GetNextAlt(Next); /*0x403252*/
-      ++*((_DWORD *)off_815E98 + 6); /*0x40325f*/
-      LinkedList::Init((_DWORD **)v1); /*0x403264*/
-      v2 = *((_DWORD *)off_815E98 + 6) - 1; /*0x403272*/
-      *((_DWORD *)off_815E98 + 6) = v2; /*0x403275*/
+      ++*((unsigned int *)off_815E98 + 6); /*0x40325f*/
+      LinkedList::Init((unsigned int **)v1); /*0x403264*/
+      v2 = *((unsigned int *)off_815E98 + 6) - 1; /*0x403272*/
+      *((unsigned int *)off_815E98 + 6) = v2; /*0x403275*/
       if ( v2 < 0 ) /*0x403278*/
-        *((_DWORD *)off_815E98 + 6) = 0; /*0x403280*/
+        *((unsigned int *)off_815E98 + 6) = 0; /*0x403280*/
       v3 = (int *)AudioQueue::GetNext(v1 + 62); /*0x40328e*/
       for ( i = v3; v3; i = v3 ) /*0x403294*/
       {
         v3 = (int *)AudioQueue::GetNextAlt(v3); /*0x40329f*/
         AudioStream::Destructor(i); /*0x4032a1*/
       }
-      (*(void (__thiscall **)(int *))(*(_DWORD *)(v1[6] + 12) + 32))(v1); /*0x4032b4*/
-      *(_DWORD *)(v1[6] + 4 * v1[7] + 28) = 0; /*0x4032bd*/
+      (*(void (__thiscall **)(int *))(*(unsigned int *)(v1[6] + 12) + 32))(v1); /*0x4032b4*/
+      *(unsigned int *)(v1[6] + 4 * v1[7] + 28) = 0; /*0x4032bd*/
       v5 = v1[6]; /*0x4032c1*/
-      v6 = *(_DWORD *)(v5 + 16) - 1; /*0x4032c7*/
-      *(_DWORD *)(v5 + 16) = v6; /*0x4032ca*/
+      v6 = *(unsigned int *)(v5 + 16) - 1; /*0x4032c7*/
+      *(unsigned int *)(v5 + 16) = v6; /*0x4032ca*/
       if ( v6 < 0 ) /*0x4032cd*/
-        *(_DWORD *)(v1[6] + 16) = 0; /*0x4032d2*/
+        *(unsigned int *)(v1[6] + 16) = 0; /*0x4032d2*/
       RA2_OPDEL(v1); /*0x4032d6*/
       v1 = (int *)NextAlt; /*0x4032db*/
       if ( !NextAlt ) /*0x4032e4*/
@@ -590,12 +590,12 @@ ObjectClass * * sub_403210()
       Next = (int *)NextAlt; /*0x403243*/
     }
   }
-  result = (void *)(*((_DWORD *)off_815E98 + 6) - 1); /*0x4032f5*/
-  *((_DWORD *)off_815E98 + 6) = result; /*0x4032f8*/
+  result = (void *)(*((unsigned int *)off_815E98 + 6) - 1); /*0x4032f5*/
+  *((unsigned int *)off_815E98 + 6) = result; /*0x4032f8*/
   if ( (int)result < 0 ) /*0x4032fb*/
   {
     result = off_815E98; /*0x4032fd*/
-    *((_DWORD *)off_815E98 + 6) = 0; /*0x403302*/
+    *((unsigned int *)off_815E98 + 6) = 0; /*0x403302*/
   }
   return result; /*0x403305*/
 }
@@ -607,10 +607,10 @@ void sub_403FA0()
   int v0; // ebp
   void **v1; // esi
   void **v2; // ebx
-  _DWORD **v3; // edi
+  unsigned int **v3; // edi
   void *v4; // eax
   void **v5; // edi
-  _DWORD **i; // esi
+  unsigned int **i; // esi
 
   v0 = 0; /*0x403fa6*/
   if ( g_AudioConfigState ) /*0x403fac*/
@@ -621,12 +621,12 @@ void sub_403FA0()
       do /*0x40405f*/
       {
         v2 = (void **)*v1; /*0x403fc5*/
-        if ( ((_BYTE)v1[6] & 1) == 0 ) /*0x403fcc*/
+        if ( ((unsigned char)v1[6] & 1) == 0 ) /*0x403fcc*/
         {
           Voice::DetachChannel((int)v1); /*0x403fd0*/
           if ( (int)v1[42] > 0 ) /*0x403fdb*/
           {
-            v3 = (_DWORD **)(v1 + 10); /*0x403fdd*/
+            v3 = (unsigned int **)(v1 + 10); /*0x403fdd*/
             do /*0x403ff9*/
             {
               RefCount::Decrement(*v3); /*0x403fe2*/
@@ -642,10 +642,10 @@ void sub_403FA0()
           v1[78] = 0; /*0x40400a*/
           v1[158] = 0; /*0x404010*/
           v4 = v1[6]; /*0x404016*/
-          IDA_LOBYTE(v4) = (unsigned __int8)v4 | 1; /*0x404019*/
+          IDA_LOBYTE(v4) = (uint8_t)v4 | 1; /*0x404019*/
           v1[6] = v4; /*0x40401b*/
         }
-        LinkedList::Init((_DWORD **)v1); /*0x404020*/
+        LinkedList::Init((unsigned int **)v1); /*0x404020*/
         v1[78] = 0; /*0x404025*/
         if ( *((char *)v1 + 24) >= 0 ) /*0x404030*/
           PushFrontLinkedListAlt(dword_87E2A8, (int)v1); /*0x404045*/
@@ -662,9 +662,9 @@ void sub_403FA0()
       do /*0x4040c3*/
       {
         v5 = (void **)*v1; /*0x40407c*/
-        if ( ((_BYTE)v1[6] & 1) != 0 ) /*0x404083*/
+        if ( ((unsigned char)v1[6] & 1) != 0 ) /*0x404083*/
         {
-          LinkedList::Init((_DWORD **)v1); /*0x404087*/
+          LinkedList::Init((unsigned int **)v1); /*0x404087*/
           v1[78] = 0; /*0x40408c*/
           if ( *((char *)v1 + 24) >= 0 ) /*0x40409b*/
             PushFrontLinkedListAlt(dword_87E2A8, (int)v1); /*0x4040b0*/
@@ -677,7 +677,7 @@ void sub_403FA0()
       while ( v5 != &g_AudioStreamObject ); /*0x4040c3*/
     }
   }
-  for ( i = (_DWORD **)AudioQueue::GetNext(dword_87E250); i; i = (_DWORD **)AudioQueue::GetNext(dword_87E250) ) /*0x4040d5*/
+  for ( i = (unsigned int **)AudioQueue::GetNext(dword_87E250); i; i = (unsigned int **)AudioQueue::GetNext(dword_87E250) ) /*0x4040d5*/
   {
     LinkedList::Init(i); /*0x4040d9*/
     RA2_OPDEL(i); /*0x4040df*/
@@ -703,32 +703,32 @@ void Audio_Process()
   int result; // eax
   void **v1; // esi
   void **v2; // ebp
-  _DWORD *v3; // eax
-  _DWORD *v4; // edi
+  unsigned int *v3; // eax
+  unsigned int *v4; // edi
   unsigned int v5; // ebx
-  _DWORD *i; // esi
+  unsigned int *i; // esi
   int v7; // eax
   int v8; // eax
   int v9; // eax
   int v10; // esi
-  _DWORD *v11; // esi
+  unsigned int *v11; // esi
   int v12; // eax
   char *v13; // edi
   int v14; // ebp
   int v15; // ebx
   void ***v16; // eax
   int v17; // ebx
-  _DWORD *v18; // edi
+  unsigned int *v18; // edi
   void *v19; // eax
-  _DWORD *v20; // ecx
+  unsigned int *v20; // ecx
   int v21; // edi
   int v22; // ebx
   int v23; // eax
   unsigned int v24; // esi
   int v25; // eax
-  _DWORD *v26; // edi
-  _DWORD *v27; // edi
-  _DWORD *v28; // edx
+  unsigned int *v26; // edi
+  unsigned int *v27; // edi
+  unsigned int *v28; // edx
   unsigned int v29; // ecx
   unsigned int v30; // edx
   void **v31; // esi
@@ -762,20 +762,20 @@ void Audio_Process()
       if ( v3[38] != dword_87E2AC ) /*0x40422b*/
       {
         DListNode::Init(v3 + 35); /*0x404233*/
-        *((_DWORD *)v2[9] + 17) = 0; /*0x40423b*/
-        *((_DWORD *)v2[9] + 38) = dword_87E2AC; /*0x40424b*/
+        *((unsigned int *)v2[9] + 17) = 0; /*0x40423b*/
+        *((unsigned int *)v2[9] + 38) = dword_87E2AC; /*0x40424b*/
       }
       Audio::InitChannels(v2 + 46); /*0x404257*/
       if ( v2[7] != (void *)4 ) /*0x404262*/
       {
         v4 = v2[9]; /*0x404268*/
         v5 = (unsigned int)v2[47] >> 16; /*0x404271*/
-        for ( i = (_DWORD *)v4[35]; i != v4 + 35; i = (_DWORD *)*i ) /*0x404282*/
+        for ( i = (unsigned int *)v4[35]; i != v4 + 35; i = (unsigned int *)*i ) /*0x404282*/
         {
           v7 = IDA_HIWORD(i[44]) - v5; /*0x4042a3*/
           if ( v7 < 0 ) /*0x4042a5*/
             v7 = v5 - IDA_HIWORD(i[44]); /*0x4042a7*/
-          if ( v7 >= (int)((unsigned int)((3435973837u * (unsigned __int64)IDA_HIWORD(v4[7])) >> 32) >> 3) ) /*0x4042ad*/
+          if ( v7 >= (int)((unsigned int)((3435973837u * (uint64_t)IDA_HIWORD(v4[7])) >> 32) >> 3) ) /*0x4042ad*/
           {
             if ( IDA_HIWORD(i[44]) < v5 ) /*0x4042c6*/
               break; /*0x4042c6*/
@@ -801,7 +801,7 @@ void Audio_Process()
         v4[17] = v10; /*0x4042f0*/
         if ( v9 && v10 > v9 ) /*0x4042f9*/
         {
-          v11 = (_DWORD *)(v4[36] - 12); /*0x404301*/
+          v11 = (unsigned int *)(v4[36] - 12); /*0x404301*/
           LinkedList::Init(v4[36]); /*0x404307*/
           if ( (v11[6] & 1) == 0 ) /*0x404310*/
           {
@@ -861,7 +861,7 @@ void Audio_Process()
     v39 = (void **)*v1; /*0x4043c1*/
     if ( !v16 || v1 != v16[48] ) /*0x4043cd*/
     {
-      if ( ((_BYTE)v1[6] & 1) != 0 ) /*0x4043d3*/
+      if ( ((unsigned char)v1[6] & 1) != 0 ) /*0x4043d3*/
         goto LABEL_40; /*0x4043d3*/
       Voice::DetachChannel(v1); /*0x4043d7*/
       v17 = 0; /*0x4043e4*/
@@ -882,10 +882,10 @@ void Audio_Process()
       v1[78] = 0; /*0x404411*/
       v1[158] = 0; /*0x404417*/
       v19 = v1[6]; /*0x40441d*/
-      IDA_LOBYTE(v19) = (unsigned __int8)v19 | 1; /*0x404420*/
+      IDA_LOBYTE(v19) = (uint8_t)v19 | 1; /*0x404420*/
       v1[6] = v19; /*0x404422*/
     }
-    if ( ((_BYTE)v1[6] & 1) != 0 ) /*0x404429*/
+    if ( ((unsigned char)v1[6] & 1) != 0 ) /*0x404429*/
     {
   LABEL_40:
       LinkedList::Init(v1); /*0x40442b*/
@@ -898,14 +898,14 @@ void Audio_Process()
       goto LABEL_55; /*0x404457*/
     }
     if ( !v1[86] ) /*0x404474*/
-      v41 += (unsigned int)(20 * IDA_HIWORD(*((_DWORD *)v1[9] + 7))) >> 14; /*0x404496*/
+      v41 += (unsigned int)(20 * IDA_HIWORD(*((unsigned int *)v1[9] + 7))) >> 14; /*0x404496*/
     v20 = v1[9]; /*0x40449a*/
     v21 = (int)v1[85] + v20[16]; /*0x4044ac*/
     v22 = 120 * v21 + 8904248; /*0x4044ca*/
     v23 = dword_87E2B0; /*0x4044d1*/
-    v24 = (unsigned int)(((1075052865 * (unsigned __int64)((unsigned int)v1[47] >> 16)) >> 32) /*0x4044d6*/
+    v24 = (unsigned int)(((1075052865 * (uint64_t)((unsigned int)v1[47] >> 16)) >> 32) /*0x4044d6*/
                        + ((unsigned int)(((unsigned int)v1[47] >> 16)
-                                       - ((1075052865 * (unsigned __int64)((unsigned int)v1[47] >> 16)) >> 32)) >> 1)) >> 10;
+                                       - ((1075052865 * (uint64_t)((unsigned int)v1[47] >> 16)) >> 32)) >> 1)) >> 10;
     if ( v20[39] != dword_87E2B0 ) /*0x4044db*/
     {
       v20[40] = v21; /*0x404529*/
@@ -972,7 +972,7 @@ void Audio_Process()
             do /*0x40466b*/
             {
               v42 = 0; /*0x4045ed*/
-              v33 = PollNextAudioQueue((char *)v31[85] + *((_DWORD *)v31[9] + 16)); /*0x4045fa*/
+              v33 = PollNextAudioQueue((char *)v31[85] + *((unsigned int *)v31[9] + 16)); /*0x4045fa*/
               v34 = v33; /*0x4045ff*/
               if ( !v33 ) /*0x404603*/
                 break; /*0x404603*/
@@ -1005,7 +1005,7 @@ void Audio_Process()
           v31[82] = (void *)v38; /*0x40467a*/
           if ( !v38 || (result = Audio::UpdatePlaybackPosition(v31)) == 0 ) /*0x40468d*/
           {
-            if ( ((_BYTE)v31[6] & 1) == 0 ) /*0x404693*/
+            if ( ((unsigned char)v31[6] & 1) == 0 ) /*0x404693*/
             {
               Voice::DetachChannel(v31); /*0x404697*/
               Audio::ReleaseChannelRefs(v31); /*0x40469e*/
@@ -1030,7 +1030,7 @@ void Audio_Process()
 namespace gamemd {
 TechnoTypeClass * * E4Recv_404BB0::sub_404BB0()
 {
-  _DWORD *v2; // edi
+  unsigned int *v2; // edi
   int v3; // eax
   int v5; // ebp
   int v6; // eax
@@ -1044,11 +1044,11 @@ TechnoTypeClass * * E4Recv_404BB0::sub_404BB0()
   int v15; // ecx
   int v16; // eax
   int v17; // edi
-  _DWORD *v19; // eax
+  unsigned int *v19; // eax
   int v20; // eax
   int v21; // edi
 
-  v2 = *(_DWORD **)(&this->vtable46); /*0x404bb6*/
+  v2 = *(unsigned int **)(&this->vtable46); /*0x404bb6*/
   v3 = v2[4]; /*0x404bc5*/
   v3 = v3; /*0x404bca*/
   if ( this->q268 == this->q270 ) /*0x404bcc*/
@@ -1107,7 +1107,7 @@ TechnoTypeClass * * E4Recv_404BB0::sub_404BB0()
       {
         v13 = v2[78]; /*0x404ca4*/
       }
-      *(_DWORD *)(&this->uniqueId * v5++ + 488) = v13; /*0x404caa*/
+      *(unsigned int *)(&this->uniqueId * v5++ + 488) = v13; /*0x404caa*/
     }
     v14 = this->q26C; /*0x404cb2*/
     this->q268 = v5; /*0x404cb8*/
@@ -1126,7 +1126,7 @@ TechnoTypeClass * * E4Recv_404BB0::sub_404BB0()
   {
   LABEL_34:
     v20 = this->q270; /*0x404d5d*/
-    v21 = *(_DWORD *)(&this->uniqueId * v20 + 488); /*0x404d63*/
+    v21 = *(unsigned int *)(&this->uniqueId * v20 + 488); /*0x404d63*/
     this->q270 = v20 + 1; /*0x404d6b*/
     return v21; /*0x404d71*/
   }
@@ -1135,11 +1135,11 @@ TechnoTypeClass * * E4Recv_404BB0::sub_404BB0()
   v15 = 1; /*0x404cfc*/
   LABEL_30:
   v16 = Random::Range(Randomizer_Global, v15, this->q268 - 1); /*0x404d05*/
-  v17 = *(_DWORD *)(&this->uniqueId * v16 + 488); /*0x404d1e*/
+  v17 = *(unsigned int *)(&this->uniqueId * v16 + 488); /*0x404d1e*/
   v16 = v16; /*0x404d2f*/
   if ( v16 < this->q268 - 1 ) /*0x404d31*/
   {
-    v19 = (_DWORD *)(&this->uniqueId * v16 + 488); /*0x404d33*/
+    v19 = (unsigned int *)(&this->uniqueId * v16 + 488); /*0x404d33*/
     do /*0x404d47*/
     {
       ++v16; /*0x404d38*/
@@ -1156,20 +1156,20 @@ TechnoTypeClass * * E4Recv_404BB0::sub_404BB0()
 namespace gamemd {
 int E4Recv_405AC0::sub_405AC0()
 {
-  _DWORD *v2; // esi
-  _DWORD *v3; // ebx
+  unsigned int *v2; // esi
+  unsigned int *v3; // ebx
   int v5; // eax
   unsigned int v6; // eax
 
-  v2 = (_DWORD *)*(&this->uniqueId8); /*0x405ac5*/
-  v3 = (_DWORD *)AudioStream::SelectRandom((int)v2); /*0x405ad2*/
-  if ( *(_DWORD *)(v2[9] + 92) < 0x21u ) /*0x405adb*/
+  v2 = (unsigned int *)*(&this->uniqueId8); /*0x405ac5*/
+  v3 = (unsigned int *)AudioStream::SelectRandom((int)v2); /*0x405ad2*/
+  if ( *(unsigned int *)(v2[9] + 92) < 0x21u ) /*0x405adb*/
     goto LABEL_2; /*0x405adb*/
   BindChannelAudioStream(0); /*0x405af0*/
   v5 = v2[9]; /*0x405af5*/
-  if ( (*(_BYTE *)(v5 + 16) & 0x88) == 0 || v3 || v2[154] ) /*0x405b02*/
+  if ( (*(unsigned char *)(v5 + 16) & 0x88) == 0 || v3 || v2[154] ) /*0x405b02*/
   {
-    v6 = Random::Range(Randomizer_Global, *(_DWORD *)(v5 + 88), *(_DWORD *)(v5 + 92)); /*0x405b19*/
+    v6 = Random::Range(Randomizer_Global, *(unsigned int *)(v5 + 88), *(unsigned int *)(v5 + 92)); /*0x405b19*/
     if ( v6 < 0x21 ) /*0x405b21*/
     {
   LABEL_2:
@@ -1186,12 +1186,12 @@ int E4Recv_405AC0::sub_405AC0()
 namespace gamemd {
 unsigned int * E4Recv_405E80::sub_405E80()
 {
-  _DWORD *result; // eax
+  unsigned int *result; // eax
   int v2; // esi
   int v3; // ecx
   int v4; // ecx
   int v5; // ebp
-  _DWORD **v6; // edi
+  unsigned int **v6; // edi
 
   result = this; /*0x405e81*/
   if ( g_AudioConfigState ) /*0x405e94*/
@@ -1201,37 +1201,37 @@ unsigned int * E4Recv_405E80::sub_405E80()
       v2 = *this; /*0x405ea7*/
       if ( *this ) /*0x405ea7*/
       {
-        v3 = *(_DWORD *)(v2 + 36); /*0x405eb1*/
-        if ( result[2] != v3 || result[1] != *(_DWORD *)(v2 + 312) ) /*0x405eca*/
+        v3 = *(unsigned int *)(v2 + 36); /*0x405eb1*/
+        if ( result[2] != v3 || result[1] != *(unsigned int *)(v2 + 312) ) /*0x405eca*/
         {
   LABEL_19:
           *result = 0; /*0x405fc1*/
           goto LABEL_20; /*0x405fc1*/
         }
-        if ( (*(_BYTE *)(v3 + 16) & 1) != 0 && !*(_DWORD *)(v3 + 76) ) /*0x405eda*/
+        if ( (*(unsigned char *)(v3 + 16) & 1) != 0 && !*(unsigned int *)(v3 + 76) ) /*0x405eda*/
         {
-          if ( (*(_BYTE *)(v2 + 24) & 1) == 0 ) /*0x405ee7*/
+          if ( (*(unsigned char *)(v2 + 24) & 1) == 0 ) /*0x405ee7*/
           {
-            v4 = *(_DWORD *)(v2 + 176); /*0x405eed*/
-            if ( v4 && v2 == *(_DWORD *)(v4 + 192) ) /*0x405efd*/
+            v4 = *(unsigned int *)(v2 + 176); /*0x405eed*/
+            if ( v4 && v2 == *(unsigned int *)(v4 + 192) ) /*0x405efd*/
             {
-              if ( (*(_BYTE *)(v2 + 24) & 2) != 0 ) /*0x405f03*/
+              if ( (*(unsigned char *)(v2 + 24) & 2) != 0 ) /*0x405f03*/
                 Voice::Stop(v4); /*0x405f05*/
-              AudioStream::ReleaseChannel(*(_DWORD **)(v2 + 176)); /*0x405f10*/
-              *(_DWORD *)(*(_DWORD *)(v2 + 176) + 192) = 0; /*0x405f1b*/
-              *(_DWORD *)(*(_DWORD *)(v2 + 176) + 188) = 0; /*0x405f27*/
-              *(_DWORD *)(*(_DWORD *)(v2 + 176) + 180) = 0; /*0x405f33*/
-              *(_DWORD *)(*(_DWORD *)(v2 + 176) + 184) = 0; /*0x405f3f*/
-              *(_DWORD *)(*(_DWORD *)(v2 + 176) + 144) = 0; /*0x405f4b*/
-              *(_DWORD *)(*(_DWORD *)(v2 + 176) + 152) = 0; /*0x405f57*/
-              *(_DWORD *)(*(_DWORD *)(v2 + 176) + 156) = 0; /*0x405f63*/
+              AudioStream::ReleaseChannel(*(unsigned int **)(v2 + 176)); /*0x405f10*/
+              *(unsigned int *)(*(unsigned int *)(v2 + 176) + 192) = 0; /*0x405f1b*/
+              *(unsigned int *)(*(unsigned int *)(v2 + 176) + 188) = 0; /*0x405f27*/
+              *(unsigned int *)(*(unsigned int *)(v2 + 176) + 180) = 0; /*0x405f33*/
+              *(unsigned int *)(*(unsigned int *)(v2 + 176) + 184) = 0; /*0x405f3f*/
+              *(unsigned int *)(*(unsigned int *)(v2 + 176) + 144) = 0; /*0x405f4b*/
+              *(unsigned int *)(*(unsigned int *)(v2 + 176) + 152) = 0; /*0x405f57*/
+              *(unsigned int *)(*(unsigned int *)(v2 + 176) + 156) = 0; /*0x405f63*/
               result = this; /*0x405f69*/
-              *(_DWORD *)(v2 + 176) = 0; /*0x405f6d*/
+              *(unsigned int *)(v2 + 176) = 0; /*0x405f6d*/
             }
             v5 = 0; /*0x405f7a*/
             if ( *(int *)(v2 + 168) > 0 ) /*0x405f7e*/
             {
-              v6 = (_DWORD **)(v2 + 40); /*0x405f80*/
+              v6 = (unsigned int **)(v2 + 40); /*0x405f80*/
               do /*0x405f98*/
               {
                 RefCount::Decrement(*v6); /*0x405f85*/
@@ -1239,14 +1239,14 @@ unsigned int * E4Recv_405E80::sub_405E80()
                 ++v5; /*0x405f92*/
                 ++v6; /*0x405f93*/
               }
-              while ( v5 < *(_DWORD *)(v2 + 168) ); /*0x405f98*/
+              while ( v5 < *(unsigned int *)(v2 + 168) ); /*0x405f98*/
               result = this; /*0x405f9a*/
             }
-            *(_DWORD *)(v2 + 168) = 0; /*0x405f9e*/
-            *(_DWORD *)(v2 + 28) = 4; /*0x405fa4*/
-            *(_DWORD *)(v2 + 312) = 0; /*0x405fab*/
-            *(_DWORD *)(v2 + 632) = 0; /*0x405fb1*/
-            *(_DWORD *)(v2 + 24) |= 1u; /*0x405fbd*/
+            *(unsigned int *)(v2 + 168) = 0; /*0x405f9e*/
+            *(unsigned int *)(v2 + 28) = 4; /*0x405fa4*/
+            *(unsigned int *)(v2 + 312) = 0; /*0x405fab*/
+            *(unsigned int *)(v2 + 632) = 0; /*0x405fb1*/
+            *(unsigned int *)(v2 + 24) |= 1u; /*0x405fbd*/
           }
           goto LABEL_19; /*0x405fbd*/
         }
@@ -1288,13 +1288,13 @@ namespace gamemd {
 int E4Recv_406B10::InitializeAudioSubsystem()
 {
   int *v2; // eax
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   char v4; // bl
-  _DWORD *v5; // eax
-  _DWORD *v6; // eax
-  _DWORD v8[8]; // [esp+8h] [ebp-8Ch] BYREF
-  _DWORD v9[22]; // [esp+28h] [ebp-6Ch] BYREF
-  _BYTE v10[12]; // [esp+80h] [ebp-14h] BYREF
+  unsigned int *v5; // eax
+  unsigned int *v6; // eax
+  unsigned int v8[8]; // [esp+8h] [ebp-8Ch] BYREF
+  unsigned int v9[22]; // [esp+28h] [ebp-6Ch] BYREF
+  unsigned char v10[12]; // [esp+80h] [ebp-14h] BYREF
   int v11; // [esp+8Ch] [ebp-8h]
 
   sub_409360(); /*0x406b1a*/
@@ -1335,15 +1335,14 @@ int E4Recv_406B10::InitializeAudioSubsystem()
     }
     g_MixerChannel_SFX = (int)g_Audio_Enabled + 104; /*0x406c4c*/
     v3 = CCFileClass::Construct(v9, aAudiomdMix); /*0x406c51*/
-    v4 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v3 + 20))(v3, 0); /*0x406c65*/
-    v9[0] = (void*)&CCFileClass_vftable; /*0x406c67*/
+    v4 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v3 + 20))(v3, 0); /*0x406c65*/
     v11 = 0; /*0x406c6f*/
     Vector::Clear((int)v10); /*0x406c76*/
     v9[0] = &off_7E1668; /*0x406c7f*/
     BufferIOFileClass::Dtor(v9); /*0x406c87*/
     if ( v4 ) /*0x406c91*/
     {
-      v5 = RA2_OPNEW(0x28u); /*0x406c93*/
+      v5 = operator new(0x28u); /*0x406c93*/
       if ( v5 ) /*0x406c9d*/
       {
         g_MixFile_AUDIO = (int)MixFileClass::FromFile(v5, aAudiomdMix, (int)&dword_886980); /*0x406cb0*/
@@ -1352,7 +1351,7 @@ int E4Recv_406B10::InitializeAudioSubsystem()
     }
     else
     {
-      v6 = RA2_OPNEW(0x28u); /*0x406cb7*/
+      v6 = operator new(0x28u); /*0x406cb7*/
       if ( v6 ) /*0x406cc1*/
       {
         g_MixFile_AUDIO = (int)MixFileClass::FromFile(v6, aAudioMix, (int)&dword_886980); /*0x406cd4*/
@@ -1363,7 +1362,6 @@ int E4Recv_406B10::InitializeAudioSubsystem()
   LABEL_10:
     g_AudioFileData = (void *)LoadAudioFile(aAudio, 0); /*0x406ce1*/
     if ( g_AudioFileData ) /*0x406cf4*/
-      goto LABEL_12; /*0x406cf4*/
     goto LABEL_11; /*0x406cf4*/
   }
   LABEL_12:
@@ -1390,8 +1388,8 @@ int sub_406EC0()
     result = AudioQueue::GetNext((int *)g_Audio_Enabled + 62); /*0x4037ca*/
     for ( i = result; result; i = result ) /*0x4037d3*/
     {
-      if ( (*(_BYTE *)(i + 164) & 4) != 0 && *(_DWORD *)(i + 12) == 1 ) /*0x4037e6*/
-        result = AudioChannel::ActivatePlay((_DWORD *)i); /*0x4037ea*/
+      if ( (*(unsigned char *)(i + 164) & 4) != 0 && *(unsigned int *)(i + 12) == 1 ) /*0x4037e6*/
+        result = AudioChannel::ActivatePlay((unsigned int *)i); /*0x4037ea*/
       if ( !i ) /*0x4037f1*/
         break; /*0x4037f1*/
       result = AudioQueue::GetNextAlt((int *)i); /*0x4037f5*/
@@ -1416,8 +1414,8 @@ int sub_406F40()
     result = AudioQueue::GetNext((int *)g_Audio_Enabled + 62); /*0x4037ca*/
     for ( i = result; result; i = result ) /*0x4037d3*/
     {
-      if ( (*(_BYTE *)(i + 164) & 4) != 0 && *(_DWORD *)(i + 12) == 1 ) /*0x4037e6*/
-        result = AudioChannel::ActivatePlay((_DWORD *)i); /*0x4037ea*/
+      if ( (*(unsigned char *)(i + 164) & 4) != 0 && *(unsigned int *)(i + 12) == 1 ) /*0x4037e6*/
+        result = AudioChannel::ActivatePlay((unsigned int *)i); /*0x4037ea*/
       if ( !i ) /*0x4037f1*/
         break; /*0x4037f1*/
       result = AudioQueue::GetNextAlt((int *)i); /*0x4037f5*/
@@ -1431,7 +1429,7 @@ namespace gamemd {
 void * AudioVideo_Update()
 {
   void *result; // eax
-  __int64 v1; // kr00_8
+  int64_t v1; // kr00_8
 
   result = (void *)dword_87E75C; /*0x406f70*/
   if ( !dword_87E75C ) /*0x406f7a*/
@@ -1442,7 +1440,7 @@ void * AudioVideo_Update()
       dword_87E75C = 1; /*0x406f87*/
       v1 = Audio::Callback(); /*0x406f9e*/
       result = (void *)(v1 - qword_87E760); /*0x406fa6*/
-      if ( (unsigned __int64)(v1 - qword_87E760) > 0x21 ) /*0x406fb5*/
+      if ( (uint64_t)(v1 - qword_87E760) > 0x21 ) /*0x406fb5*/
       {
         ProcessAudioFrame(); /*0x406fb7*/
         UpdateVocClass(); /*0x406fbc*/
@@ -1475,11 +1473,11 @@ int sub_407040(int a1)
       result = dword_87E8A0; /*0x40a951*/
       if ( dword_87E8A0 ) /*0x40a958*/
       {
-        result = (*(int (__stdcall **)(int, int *))(*(_DWORD *)dword_87E8A0 + 36))(dword_87E8A0, &v2); /*0x40a962*/
+        result = (*(int (__stdcall **)(int, int *))(*(unsigned int *)dword_87E8A0 + 36))(dword_87E8A0, &v2); /*0x40a962*/
         if ( (v2 & 2) != 0 ) /*0x40a96a*/
-          result = (*(int (__stdcall **)(int))(*(_DWORD *)dword_87E8A0 + 80))(dword_87E8A0); /*0x40a974*/
+          result = (*(int (__stdcall **)(int))(*(unsigned int *)dword_87E8A0 + 80))(dword_87E8A0); /*0x40a974*/
         if ( (v2 & 1) == 0 ) /*0x40a97c*/
-          return (*(int (__stdcall **)(int, _DWORD, _DWORD, int))(*(_DWORD *)dword_87E8A0 + 48))(dword_87E8A0, 0, 0, 1); /*0x40a98c*/
+          return (*(int (__stdcall **)(int, unsigned int, unsigned int, int))(*(unsigned int *)dword_87E8A0 + 48))(dword_87E8A0, 0, 0, 1); /*0x40a98c*/
       }
     }
   }
@@ -1490,17 +1488,17 @@ int sub_407040(int a1)
 namespace gamemd {
 RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int a3)
 {
-  void (__thiscall ***v5)(_DWORD, int); // ecx
-  _DWORD *v6; // eax
-  _DWORD *v7; // eax
-  void (__thiscall ***v8)(_DWORD, int); // ecx
-  _DWORD *v9; // eax
-  _DWORD *v10; // eax
+  void (__thiscall ***v5)(unsigned int, int); // ecx
+  unsigned int *v6; // eax
+  unsigned int *v7; // eax
+  void (__thiscall ***v8)(unsigned int, int); // ecx
+  unsigned int *v9; // eax
+  unsigned int *v10; // eax
   int v11; // ecx
   int v12; // ecx
   int v13; // eax
-  _DWORD *v14; // ecx
-  _DWORD *v15; // ecx
+  unsigned int *v14; // ecx
+  unsigned int *v15; // ecx
   int v16; // edi
   int v17; // ebp
   int v18; // eax
@@ -1508,7 +1506,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   int v20; // ecx
   int v21; // eax
   int v22; // ecx
-  unsigned __int64 v23; // kr00_8
+  uint64_t v23; // kr00_8
   int v24; // eax
   int v25; // eax
   int v26; // edi
@@ -1521,13 +1519,13 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   int *v33; // ecx
   int v34; // ecx
   int v35; // eax
-  _DWORD *v36; // ecx
-  _DWORD *v37; // ecx
-  _DWORD *v38; // ecx
-  _DWORD *v39; // ecx
+  unsigned int *v36; // ecx
+  unsigned int *v37; // ecx
+  unsigned int *v38; // ecx
+  unsigned int *v39; // ecx
   int v41; // eax
   int v42; // edx
-  void (__thiscall ***v43)(_DWORD, int); // ecx
+  void (__thiscall ***v43)(unsigned int, int); // ecx
 
   if ( a1[34] ) /*0x407b6a*/
     return 0; /*0x407ef8*/
@@ -1537,7 +1535,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
     Voice::Stop(a1[5]); /*0x407b8b*/
     LeaveCriticalSection(&CriticalSection); /*0x407b95*/
   }
-  v5 = (void (__thiscall ***)(_DWORD, int))a1[31]; /*0x407b9b*/
+  v5 = (void (__thiscall ***)(unsigned int, int))a1[31]; /*0x407b9b*/
   if ( v5 ) /*0x407ba0*/
   {
     (**v5)(v5, 1); /*0x407ba6*/
@@ -1545,14 +1543,14 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   }
   if ( !a3 )
   {
-    v6 = RA2_OPNEW(0x24u); /*0x407bb3*/
+    v6 = operator new(0x24u); /*0x407bb3*/
     v7 = v6 ? RawFileClass::Construct(v6, (int)a2) : 0;
     a1[31] = v7; /*0x407bcd*/
     if ( v7 ) /*0x407bd0*/
     {
-      if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *, _DWORD))(*v7 + 20))(v7, 0) ) /*0x407bd7*/
+      if ( !(*(uint8_t (__thiscall **)(unsigned int *, unsigned int))(*v7 + 20))(v7, 0) ) /*0x407bd7*/
       {
-        v8 = (void (__thiscall ***)(_DWORD, int))a1[31]; /*0x407bde*/
+        v8 = (void (__thiscall ***)(unsigned int, int))a1[31]; /*0x407bde*/
         if ( v8 ) /*0x407be3*/
           (**v8)(v8, 1); /*0x407be9*/
         a1[31] = 0; /*0x407beb*/
@@ -1561,7 +1559,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   }
   if ( !a1[31] ) /*0x407bee*/
   {
-    v9 = RA2_OPNEW(0x6Cu); /*0x407bf5*/
+    v9 = operator new(0x6Cu); /*0x407bf5*/
     if ( v9 ) /*0x407bff*/
       v10 = CCFileClass::Construct(v9, a2); /*0x407c04*/
     else
@@ -1571,29 +1569,29 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   v11 = a1[31]; /*0x407c10*/
   if ( !v11 ) /*0x407c15*/
     goto LABEL_51; /*0x407c15*/
-  if ( !(*(unsigned __int8 (__thiscall **)(int, _DWORD))(*(_DWORD *)v11 + 20))(v11, 0) /*0x407c30*/
-    || !(*(int (__thiscall **)(_DWORD, int))(*(_DWORD *)a1[31] + 28))(a1[31], 1) )
+  if ( !(*(uint8_t (__thiscall **)(int, unsigned int))(*(unsigned int *)v11 + 20))(v11, 0) /*0x407c30*/
+    || !(*(int (__thiscall **)(unsigned int, int))(*(unsigned int *)a1[31] + 28))(a1[31], 1) )
   {
-    v43 = (void (__thiscall ***)(_DWORD, int))a1[31]; /*0x407f23*/
+    v43 = (void (__thiscall ***)(unsigned int, int))a1[31]; /*0x407f23*/
     if ( v43 ) /*0x407f28*/
       (**v43)(v43, 1); /*0x407f2e*/
     a1[31] = 0; /*0x407f30*/
     goto LABEL_51; /*0x407f33*/
   }
-  *(_BYTE *)(a1[31] + 4) = 1; /*0x407c48*/
+  *(unsigned char *)(a1[31] + 4) = 1; /*0x407c48*/
   if ( !ParseWaveFileHeader(a1[31], a1 + 23, a1 + 37) ) /*0x407c51*/
     goto LABEL_51; /*0x407c51*/
   v12 = a1[31]; /*0x407c60*/
   a1[39] = a1[37]; /*0x407c63*/
-  v13 = (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v12 + 40))(v12, 0, 1); /*0x407c6e*/
-  v14 = (_DWORD *)a1[13]; /*0x407c71*/
+  v13 = (*(int (__thiscall **)(int, unsigned int, int))(*(unsigned int *)v12 + 40))(v12, 0, 1); /*0x407c6e*/
+  v14 = (unsigned int *)a1[13]; /*0x407c71*/
   a1[38] = v13; /*0x407c74*/
   if ( v14 ) /*0x407c7c*/
   {
     Count::DecrementRefCountsAudio(v14); /*0x407c7e*/
     a1[13] = 0; /*0x407c83*/
   }
-  v15 = (_DWORD *)a1[14]; /*0x407c86*/
+  v15 = (unsigned int *)a1[14]; /*0x407c86*/
   if ( v15 ) /*0x407c8b*/
   {
     Count::DecrementRefCountsAudio(v15); /*0x407c8d*/
@@ -1601,7 +1599,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   }
   v16 = a1[12]; /*0x407c9b*/
   v17 = Audio::CalcRate(a1[6], a1[7]); /*0x407caa*/
-  a1[40] = Audio::CalcRate(2 * *(_DWORD *)(a1[5] + 424), *(_QWORD *)(a1[5] + 424) >> 31); /*0x407cce*/
+  a1[40] = Audio::CalcRate(2 * *(unsigned int *)(a1[5] + 424), *(unsigned long long *)(a1[5] + 424) >> 31); /*0x407cce*/
   if ( AudioStream::GetChannel(v16) != v17 ) /*0x407cdb*/
   {
     sub_408970(v16); /*0x407cdf*/
@@ -1620,7 +1618,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   a1[14] = v21; /*0x407d2e*/
   if ( !v22 || !v21 ) /*0x407d3b*/
     goto LABEL_51; /*0x407d3b*/
-  v23 = 2LL * *(_QWORD *)(a1[5] + 432); /*0x407d5d*/
+  v23 = 2LL * *(unsigned long long *)(a1[5] + 432); /*0x407d5d*/
   if ( v23 <= 4 * qword_87E780 ) /*0x407d7e*/
     v23 = 4 * qword_87E780; /*0x407d98*/
   if ( v23 <= 0xFA0 ) /*0x407da6*/
@@ -1651,13 +1649,13 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   if ( !a3 ) /*0x407e36*/
   {
   LABEL_51:
-    v38 = (_DWORD *)a1[13]; /*0x407ed4*/
+    v38 = (unsigned int *)a1[13]; /*0x407ed4*/
     if ( v38 ) /*0x407ed9*/
     {
       Count::DecrementRefCountsAudio(v38); /*0x407edb*/
       a1[13] = 0; /*0x407ee0*/
     }
-    v39 = (_DWORD *)a1[14]; /*0x407ee3*/
+    v39 = (unsigned int *)a1[14]; /*0x407ee3*/
     if ( v39 ) /*0x407ee8*/
     {
       Count::DecrementRefCountsAudio(v39); /*0x407eea*/
@@ -1667,11 +1665,11 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   }
   AudioStream::ReadStreamAndReturn(a1[14]); /*0x407e3f*/
   v28 = a1[5]; /*0x407e47*/
-  a1[15] = *(_DWORD *)(a1[14] + 4); /*0x407e50*/
-  v29 = Audio::CalcRate(*(_DWORD *)(v28 + 424), *(_DWORD *)(v28 + 428)); /*0x407e62*/
+  a1[15] = *(unsigned int *)(a1[14] + 4); /*0x407e50*/
+  v29 = Audio::CalcRate(*(unsigned int *)(v28 + 424), *(unsigned int *)(v28 + 428)); /*0x407e62*/
   v30 = a1[14]; /*0x407e67*/
   a1[16] = v29; /*0x407e6a*/
-  v31 = *(_DWORD *)(v30 + 8); /*0x407e6d*/
+  v31 = *(unsigned int *)(v30 + 8); /*0x407e6d*/
   if ( v29 > v31 ) /*0x407e72*/
     a1[16] = v31; /*0x407e74*/
   v32 = a1[16]; /*0x407e7a*/
@@ -1685,11 +1683,11 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   if ( Audio::GetChannelStatus(v34) ) /*0x407ea9*/
   {
     v35 = a1[3]; /*0x407eb2*/
-    v36 = (_DWORD *)a1[13]; /*0x407eb5*/
+    v36 = (unsigned int *)a1[13]; /*0x407eb5*/
     IDA_LOBYTE(v35) = v35 & 0xFE; /*0x407eb8*/
     a1[3] = v35; /*0x407eba*/
     Count::DecrementRefCountsAudio(v36); /*0x407ebd*/
-    v37 = (_DWORD *)a1[14]; /*0x407ec2*/
+    v37 = (unsigned int *)a1[14]; /*0x407ec2*/
     a1[13] = 0; /*0x407ec7*/
     Count::DecrementRefCountsAudio(v37); /*0x407eca*/
     a1[14] = 0; /*0x407ecf*/
@@ -1709,17 +1707,17 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
 namespace gamemd {
 AbstractClass * * sub_408610(int a1, unsigned int * a2, size_t * a3)
 {
-  unsigned __int16 *v3; // esi
+  uint16_t *v3; // esi
   int v4; // edi
   int v7; // eax
-  unsigned __int16 v8; // dx
+  uint16_t v8; // dx
   int v9; // eax
   int v10; // ecx
   int v11; // eax
   int v12; // ecx
   int v14; // [esp+1Ch] [ebp-14h] BYREF
   size_t Size; // [esp+20h] [ebp-10h]
-  _DWORD v16[3]; // [esp+24h] [ebp-Ch] BYREF
+  unsigned int v16[3]; // [esp+24h] [ebp-Ch] BYREF
 
   v3 = 0; /*0x40861b*/
   v4 = 0; /*0x40861d*/
@@ -1727,32 +1725,32 @@ AbstractClass * * sub_408610(int a1, unsigned int * a2, size_t * a3)
     *a3 = 0; /*0x40862b*/
   if ( a1 ) /*0x40862f*/
   {
-    (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)a1 + 40))(a1, 0, 0); /*0x40863e*/
-    if ( (*(int (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)a1 + 36))(a1, v16, 12) == 12 /*0x40867a*/
+    (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)a1 + 40))(a1, 0, 0); /*0x40863e*/
+    if ( (*(int (__thiscall **)(int, unsigned int *, int))(*(unsigned int *)a1 + 36))(a1, v16, 12) == 12 /*0x40867a*/
       && v16[0] == 1179011410
       && v16[2] == 1163280727
-      && (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 24))(a1) )
+      && (*(uint8_t (__thiscall **)(int))(*(unsigned int *)a1 + 24))(a1) )
     {
-      while ( (*(int (__thiscall **)(int, int *, int))(*(_DWORD *)a1 + 36))(a1, &v14, 8) == 8 ) /*0x408697*/
+      while ( (*(int (__thiscall **)(int, int *, int))(*(unsigned int *)a1 + 36))(a1, &v14, 8) == 8 ) /*0x408697*/
       {
         if ( v14 == 544501094 ) /*0x4086a6*/
         {
           if ( Size >= 0x12 ) /*0x4086cb*/
           {
-            v3 = (unsigned __int16 *)malloc(Size); /*0x4086f8*/
+            v3 = (uint16_t *)malloc(Size); /*0x4086f8*/
             memset(v3, 0, Size); /*0x408706*/
             v4 = 0; /*0x40870f*/
           }
           else
           {
-            v3 = (unsigned __int16 *)malloc(0x12u); /*0x4086d4*/
-            *(_DWORD *)v3 = 0; /*0x4086dd*/
-            *((_DWORD *)v3 + 1) = 0; /*0x4086df*/
-            *((_DWORD *)v3 + 2) = 0; /*0x4086e2*/
-            *((_DWORD *)v3 + 3) = 0; /*0x4086e5*/
+            v3 = (uint16_t *)malloc(0x12u); /*0x4086d4*/
+            *(unsigned int *)v3 = 0; /*0x4086dd*/
+            *((unsigned int *)v3 + 1) = 0; /*0x4086df*/
+            *((unsigned int *)v3 + 2) = 0; /*0x4086e2*/
+            *((unsigned int *)v3 + 3) = 0; /*0x4086e5*/
             v3[8] = 0; /*0x4086e8*/
           }
-          (*(void (__thiscall **)(int, unsigned __int16 *, size_t))(*(_DWORD *)a1 + 36))(a1, v3, Size); /*0x40871e*/
+          (*(void (__thiscall **)(int, uint16_t *, size_t))(*(unsigned int *)a1 + 36))(a1, v3, Size); /*0x40871e*/
           v3[8] = Size; /*0x408726*/
         }
         else
@@ -1778,9 +1776,9 @@ AbstractClass * * sub_408610(int a1, unsigned int * a2, size_t * a3)
             }
             v8 = v3[1]; /*0x40878e*/
             a2[3] = v8; /*0x408792*/
-            a2[5] = *((_DWORD *)v3 + 2); /*0x408798*/
+            a2[5] = *((unsigned int *)v3 + 2); /*0x408798*/
             v9 = v8 * a2[4]; /*0x40879e*/
-            v10 = *((_DWORD *)v3 + 1); /*0x4087a1*/
+            v10 = *((unsigned int *)v3 + 1); /*0x4087a1*/
             *a2 = 4; /*0x4087a4*/
             v11 = v10 * v9; /*0x4087aa*/
             a2[2] = v10; /*0x4087ad*/
@@ -1791,9 +1789,9 @@ AbstractClass * * sub_408610(int a1, unsigned int * a2, size_t * a3)
             v4 = 1; /*0x4087ce*/
             break; /*0x4087ce*/
           }
-          (*(void (__thiscall **)(int, size_t, int))(*(_DWORD *)a1 + 40))(a1, Size, 1); /*0x4086bf*/
+          (*(void (__thiscall **)(int, size_t, int))(*(unsigned int *)a1 + 40))(a1, Size, 1); /*0x4086bf*/
         }
-        if ( !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)a1 + 24))(a1) ) /*0x40872f*/
+        if ( !(*(uint8_t (__thiscall **)(int))(*(unsigned int *)a1 + 24))(a1) ) /*0x40872f*/
           break; /*0x408734*/
       }
       if ( v3 ) /*0x4087d4*/
@@ -1807,31 +1805,31 @@ AbstractClass * * sub_408610(int a1, unsigned int * a2, size_t * a3)
 namespace gamemd {
 int E4Recv_408970::sub_408970()
 {
-  _DWORD *v1; // edx
+  unsigned int *v1; // edx
   int v2; // ebx
-  _DWORD *v3; // esi
-  _DWORD *v4; // edi
-  _DWORD *v5; // eax
+  unsigned int *v3; // esi
+  unsigned int *v4; // edi
+  unsigned int *v5; // eax
   int v6; // edx
-  _DWORD *v7; // esi
-  _DWORD *v8; // eax
-  _DWORD *v9; // ecx
+  unsigned int *v7; // esi
+  unsigned int *v8; // eax
+  unsigned int *v9; // ecx
   int v10; // edx
   int *v11; // edi
   int v12; // ecx
-  _DWORD *v13; // eax
+  unsigned int *v13; // eax
   int result; // eax
 
   v1 = this; /*0x408973*/
   v2 = 0; /*0x408977*/
-  v3 = (_DWORD *)*(this + 1); /*0x408979*/
-  v4 = this + 1; /*0x40897c*/
-  if ( v3 != this + 1 ) /*0x408985*/
+  v3 = (unsigned int *)*(unsigned int *)&this->M4; /*0x408979*/
+  v4 = ((char *)&this->vfptr + 1); /*0x40897c*/
+  if ( v3 != ((char *)&this->vfptr + 1) ) /*0x408985*/
   {
     do /*0x4089ce*/
     {
-      LinkedList::Init((_DWORD **)v3); /*0x40898e*/
-      v5 = (_DWORD *)v3[12]; /*0x408993*/
+      LinkedList::Init((unsigned int **)v3); /*0x40898e*/
+      v5 = (unsigned int *)v3[12]; /*0x408993*/
       v3[12] = 0; /*0x408996*/
       v6 = v5[5]; /*0x40899b*/
       --*v5; /*0x40899f*/
@@ -1840,19 +1838,19 @@ int E4Recv_408970::sub_408970()
       if ( v3[4] ) /*0x4089b1*/
         RA2_OPDEL((void *)v3[4]); /*0x4089b9*/
       RA2_OPDEL(v3); /*0x4089c2*/
-      v3 = (_DWORD *)*v4; /*0x4089c7*/
+      v3 = (unsigned int *)*v4; /*0x4089c7*/
     }
-    while ( (_DWORD *)*v4 != v4 ); /*0x4089ce*/
+    while ( (unsigned int *)*v4 != v4 ); /*0x4089ce*/
     v1 = this; /*0x4089d0*/
   }
-  v7 = (_DWORD *)*v4; /*0x4089d4*/
-  if ( (_DWORD *)*v4 == v4 ) /*0x4089d8*/
+  v7 = (unsigned int *)*v4; /*0x4089d4*/
+  if ( (unsigned int *)*v4 == v4 ) /*0x4089d8*/
   {
     v7 = 0; /*0x4089da*/
   }
   else if ( v7 ) /*0x4089e0*/
   {
-    v8 = (_DWORD *)*v4; /*0x4089e2*/
+    v8 = (unsigned int *)*v4; /*0x4089e2*/
     do /*0x408a05*/
     {
       v9 = v8 + 9; /*0x4089e4*/
@@ -1866,7 +1864,7 @@ int E4Recv_408970::sub_408970()
       }
       while ( v10 ); /*0x4089fb*/
       v8[13] = v2; /*0x4089fd*/
-      v8 = (_DWORD *)*v8; /*0x408a00*/
+      v8 = (unsigned int *)*v8; /*0x408a00*/
       ++v2; /*0x408a02*/
     }
     while ( v8 != v4 ); /*0x408a05*/
@@ -1904,12 +1902,12 @@ void AudioStream_AcquireBuffer(unsigned int * a1, int a2)
 {
   int result; // eax
   int v3; // ebp
-  _DWORD *v4; // ebx
-  _DWORD *v5; // edx
-  _DWORD *v6; // esi
+  unsigned int *v4; // ebx
+  unsigned int *v5; // edx
+  unsigned int *v6; // esi
   int v7; // edi
   int v8; // esi
-  _DWORD *v9; // edx
+  unsigned int *v9; // edx
 
   result = (int)&a1[16 * a2 + 6]; /*0x408c3b*/
   v3 = 0; /*0x408c3f*/
@@ -1922,14 +1920,14 @@ void AudioStream_AcquireBuffer(unsigned int * a1, int a2)
   {
     if ( !a1[38] ) /*0x408c72*/
     {
-      v4 = (_DWORD *)a1[1]; /*0x408c86*/
+      v4 = (unsigned int *)a1[1]; /*0x408c86*/
       if ( v4 == a1 + 1 ) /*0x408c8a*/
       {
         v4 = 0; /*0x408c8c*/
       }
       else if ( v4 ) /*0x408c92*/
       {
-        v5 = (_DWORD *)a1[1]; /*0x408c94*/
+        v5 = (unsigned int *)a1[1]; /*0x408c94*/
         do /*0x408cb7*/
         {
           v6 = v5 + 9; /*0x408c96*/
@@ -1943,7 +1941,7 @@ void AudioStream_AcquireBuffer(unsigned int * a1, int a2)
           }
           while ( v7 ); /*0x408cad*/
           v5[13] = v3; /*0x408caf*/
-          v5 = (_DWORD *)*v5; /*0x408cb2*/
+          v5 = (unsigned int *)*v5; /*0x408cb2*/
           ++v3; /*0x408cb4*/
         }
         while ( v5 != a1 + 1 ); /*0x408cb7*/
@@ -1970,7 +1968,7 @@ void AudioStream_AcquireBuffer(unsigned int * a1, int a2)
       while ( v8 ); /*0x408d03*/
       a1[19] += a1[5]; /*0x408d0c*/
     }
-    ++*(_DWORD *)(result + 28); /*0x408d19*/
+    ++*(unsigned int *)(result + 28); /*0x408d19*/
     ++a1[38]; /*0x408d23*/
   }
   return result; /*0x408c6d*/
@@ -1990,7 +1988,7 @@ void sub_408F80(AudioStream * a1, int * a2, int a3, char * a4)
   ReadAudioStream(a1, 0); /*0x408f8b*/
   if ( !a4 ) /*0x408f96*/
     a4 = &v13; /*0x408f9c*/
-  *(_DWORD *)a4 = 0; /*0x408fa8*/
+  *(unsigned int *)a4 = 0; /*0x408fa8*/
   do /*0x408fae*/
   {
     v7 = a1[2]; /*0x408fae*/
@@ -2024,7 +2022,7 @@ void sub_408F80(AudioStream * a1, int * a2, int a3, char * a4)
       return 0; /*0x40901e*/
     ReadAudioStream(a1, v9); /*0x408ff3*/
     a3 -= v9; /*0x408ffc*/
-    *(_DWORD *)a4 += v9; /*0x409004*/
+    *(unsigned int *)a4 += v9; /*0x409004*/
   }
   while ( a3 ); /*0x408fae*/
   return 1; /*0x40900a*/
@@ -2042,15 +2040,15 @@ void WriteAudioStreamToFile(MouseClass * aP0, FILE * a1, signed int arg0, char *
   ReadAudioStream((int *)aP0, 0); /*0x40903b*/
   if ( !a3 ) /*0x409046*/
     a3 = &v11; /*0x40904c*/
-  *(_DWORD *)a3 = 0; /*0x409058*/
+  *(unsigned int *)a3 = 0; /*0x409058*/
   do /*0x40905e*/
   {
-    v7 = *(_DWORD *)(aP0 + 8); /*0x40905e*/
+    v7 = *(unsigned int *)(aP0 + 8); /*0x40905e*/
     if ( v7 > arg0 ) /*0x409063*/
       v7 = arg0; /*0x409065*/
     if ( !v7 ) /*0x409069*/
       break; /*0x409069*/
-    if ( *(_DWORD *)(aP0 + 20) ) /*0x40906b*/
+    if ( *(unsigned int *)(aP0 + 20) ) /*0x40906b*/
     {
       v8 = Audio_Write_7C95D3(*(void **)(aP0 + 4), 1u, v7, a1); /*0x40907f*/
       v9 = v8 == 0; /*0x409084*/
@@ -2064,7 +2062,7 @@ void WriteAudioStreamToFile(MouseClass * aP0, FILE * a1, signed int arg0, char *
       if ( v8 < 0 ) /*0x40909a*/
       {
   LABEL_11:
-        *(_DWORD *)(aP0 + 36) = -2147221504; /*0x40909c*/
+        *(unsigned int *)(aP0 + 36) = -2147221504; /*0x40909c*/
         v9 = v8 == 0; /*0x4090a3*/
       }
     }
@@ -2074,7 +2072,7 @@ void WriteAudioStreamToFile(MouseClass * aP0, FILE * a1, signed int arg0, char *
       return 0; /*0x4090db*/
     ReadAudioStream((int *)aP0, v8); /*0x4090b0*/
     arg0 -= v8; /*0x4090b9*/
-    *(_DWORD *)a3 += v8; /*0x4090c1*/
+    *(unsigned int *)a3 += v8; /*0x4090c1*/
   }
   while ( arg0 ); /*0x40905e*/
   return 1; /*0x4090c7*/
@@ -2087,28 +2085,28 @@ int E4Recv_409100::sub_409100()
   int v1; // esi
   int v3; // eax
   int v4; // eax
-  _DWORD *v5; // eax
+  unsigned int *v5; // eax
   int v6; // ebx
   int v7; // edx
   int v8; // edi
-  _DWORD *v9; // edx
+  unsigned int *v9; // edx
   int v10; // edx
-  _DWORD *v11; // edx
+  unsigned int *v11; // edx
 
-  v1 = *(this + 11); /*0x409101*/
+  v1 = *(unsigned int *)&this->M44; /*0x409101*/
   if ( !v1 ) /*0x409106*/
     return 0; /*0x409108*/
-  v3 = *(this + 5) + 1; /*0x40910f*/
-  if ( *(this + 5) == 1 ) /*0x409113*/
+  v3 = this->M20 + 1; /*0x40910f*/
+  if ( this->M20 == 1 ) /*0x409113*/
     v3 = 0; /*0x409115*/
-  v4 = (v3 << 6) + *this + 24; /*0x40911e*/
-  *(this + 14) += v1; /*0x409127*/
-  *(_DWORD *)(v4 + 52) += v1; /*0x40912f*/
-  v5 = (_DWORD *)*(this + 10); /*0x409132*/
+  v4 = (v3 << 6) + *&this->q018; /*0x40911e*/
+  *(unsigned int *)&this->M56 += v1; /*0x409127*/
+  *(unsigned int *)(v4 + 52) += v1; /*0x40912f*/
+  v5 = (unsigned int *)this->M40; /*0x409132*/
   v6 = v1; /*0x409135*/
   while ( 1 ) /*0x409137*/
   {
-    v7 = *(this + 5); /*0x409137*/
+    v7 = this->M20; /*0x409137*/
     v8 = v5[2 * v7 + 9]; /*0x40913a*/
     v9 = &v5[2 * v7 + 8]; /*0x40913e*/
     if ( v8 > v1 ) /*0x409144*/
@@ -2117,11 +2115,11 @@ int E4Recv_409100::sub_409100()
     *v9 = v5[6]; /*0x40914b*/
     v9[1] = v5[7]; /*0x409150*/
     v10 = v5[12]; /*0x409153*/
-    v5 = (_DWORD *)*v5; /*0x409156*/
-    v11 = (_DWORD *)(v10 + 4); /*0x409158*/
+    v5 = (unsigned int *)*v5; /*0x409156*/
+    v11 = (unsigned int *)(v10 + 4); /*0x409158*/
     if ( v5 == v11 ) /*0x40915d*/
     {
-      v5 = (_DWORD *)*v5; /*0x40915f*/
+      v5 = (unsigned int *)*v5; /*0x40915f*/
       if ( v5 == v11 ) /*0x409163*/
         v5 = 0; /*0x409165*/
     }
@@ -2131,15 +2129,15 @@ int E4Recv_409100::sub_409100()
   *v9 += v1; /*0x409171*/
   v9[1] -= v1; /*0x409178*/
   LABEL_13:
-  *(this + 10) = (int)v5; /*0x40917b*/
-  *(this + 11) = 0; /*0x409180*/
-  *(this + 3) = (int)v5; /*0x409187*/
+  this->M40 = (int)v5; /*0x40917b*/
+  *(unsigned int *)&this->M44 = 0; /*0x409180*/
+  this->M12 = (int)v5; /*0x409187*/
   if ( v5 ) /*0x40918a*/
-    *(this + 1) = v5[2 * *(this + 5) + 8]; /*0x409193*/
+    this->M4 = v5[2 * this->M20 + 8]; /*0x409193*/
   else
-    *(this + 1) = 0; /*0x409198*/
-  *(this + 2) = 0; /*0x40919f*/
-  *(this + 4) &= ~1u; /*0x4091ac*/
+    this->M4 = 0; /*0x409198*/
+  this->M8 = 0; /*0x40919f*/
+  this->M16 &= ~1u; /*0x4091ac*/
   ReadAudioStream(0); /*0x4091b1*/
   return v6; /*0x40910a*/
 }
@@ -2155,9 +2153,9 @@ void ReadAudioStream(AudioStream * aP0, int a2)
   int v7; // eax
   int v8; // edi
   int v9; // eax
-  _DWORD *v10; // esi
-  _DWORD *v11; // eax
-  _DWORD *v12; // eax
+  unsigned int *v10; // esi
+  unsigned int *v11; // eax
+  unsigned int *v12; // eax
   int v13; // eax
   int v14; // eax
   int v15; // edx
@@ -2178,7 +2176,7 @@ void ReadAudioStream(AudioStream * aP0, int a2)
     while ( 1 ) /*0x4091f4*/
     {
       v6 = aP0[3]; /*0x4091f4*/
-      if ( (aP0[4] & 1) != 0 || (v7 = *(_DWORD *)(v6 + v5) + *(_DWORD *)(v6 + v5 + 4) - aP0[1], v7 >= v3) ) /*0x40920e*/
+      if ( (aP0[4] & 1) != 0 || (v7 = *(unsigned int *)(v6 + v5) + *(unsigned int *)(v6 + v5 + 4) - aP0[1], v7 >= v3) ) /*0x40920e*/
         aP0[2] = v3; /*0x409215*/
       else
         aP0[2] = v7; /*0x409210*/
@@ -2192,16 +2190,16 @@ void ReadAudioStream(AudioStream * aP0, int a2)
       else
       {
         v8 = aP0[2]; /*0x409225*/
-        v9 = *(_DWORD *)(v6 + 48); /*0x409227*/
-        v10 = *(_DWORD **)v6; /*0x40922a*/
-        v11 = (_DWORD *)(v9 + 4); /*0x40922c*/
+        v9 = *(unsigned int *)(v6 + 48); /*0x409227*/
+        v10 = *(unsigned int **)v6; /*0x40922a*/
+        v11 = (unsigned int *)(v9 + 4); /*0x40922c*/
         if ( v10 == v11 ) /*0x409231*/
         {
-          v10 = (_DWORD *)*v10; /*0x409233*/
+          v10 = (unsigned int *)*v10; /*0x409233*/
           if ( v10 == v11 ) /*0x409237*/
             v10 = 0; /*0x409239*/
         }
-        v12 = (_DWORD *)aP0[10]; /*0x40923b*/
+        v12 = (unsigned int *)aP0[10]; /*0x40923b*/
         aP0[3] = (int)v10; /*0x40923e*/
         if ( v10 == v12 ) /*0x409243*/
         {
@@ -2212,7 +2210,7 @@ void ReadAudioStream(AudioStream * aP0, int a2)
         }
         else
         {
-          v14 = *(_DWORD *)((char *)v10 + v5); /*0x409252*/
+          v14 = *(unsigned int *)((char *)v10 + v5); /*0x409252*/
         }
       }
       a2 -= v8; /*0x409260*/
@@ -2226,7 +2224,7 @@ void ReadAudioStream(AudioStream * aP0, int a2)
     aP0[11] = v16; /*0x40927f*/
     aP0[12] = v17; /*0x409282*/
     v18 = v17; /*0x409285*/
-    v19 = *(_DWORD *)(v15 + 20); /*0x409287*/
+    v19 = *(unsigned int *)(v15 + 20); /*0x409287*/
     if ( v18 >= v19 ) /*0x40928c*/
       aP0[12] = v18 % v19; /*0x409292*/
     if ( v16 && !aP0[6] ) /*0x409299*/
@@ -2270,9 +2268,9 @@ void long sub_4093F0()
 namespace gamemd {
 void AudioStreamThreadProc(unsigned int * lpThreadParameter)
 {
-  _DWORD *v1; // esi
+  unsigned int *v1; // esi
   int v2; // edi
-  __int64 v3; // rax
+  int64_t v3; // rax
   unsigned int v4; // ebx
   int i; // esi
   int v7; // eax
@@ -2287,10 +2285,10 @@ void AudioStreamThreadProc(unsigned int * lpThreadParameter)
   bool v16; // zf
   int v17; // eax
   void (__thiscall *v18)(int); // eax
-  _BYTE v20[4]; // [esp+10h] [ebp-14h] BYREF
+  unsigned char v20[4]; // [esp+10h] [ebp-14h] BYREF
   unsigned int v21; // [esp+14h] [ebp-10h] BYREF
   int v22; // [esp+18h] [ebp-Ch]
-  _BYTE v23[8]; // [esp+1Ch] [ebp-8h] BYREF
+  unsigned char v23[8]; // [esp+1Ch] [ebp-8h] BYREF
 
   v1 = lpThreadParameter; /*0x4095b5*/
   lpThreadParameter[6] = 1; /*0x4095be*/
@@ -2315,55 +2313,55 @@ void AudioStreamThreadProc(unsigned int * lpThreadParameter)
         AudioThread::UpdateStats(v2 + 368, v3); /*0x40960c*/
         for ( i = sub_4035B0(v2, v23); i; i = AudioQueue::IteratorNext(v23) ) /*0x409620*/
         {
-          if ( (*(_BYTE *)(i + 164) & 1) != 0 ) /*0x40962d*/
+          if ( (*(unsigned char *)(i + 164) & 1) != 0 ) /*0x40962d*/
           {
-            v7 = *(_DWORD *)(*(_DWORD *)(i + 344) + 100); /*0x409639*/
-            if ( v7 && !(*(int (__stdcall **)(int, _BYTE *))(*(_DWORD *)v7 + 36))(v7, v20) && (v20[0] & 1) != 0 ) /*0x409660*/
+            v7 = *(unsigned int *)(*(unsigned int *)(i + 344) + 100); /*0x409639*/
+            if ( v7 && !(*(int (__stdcall **)(int, unsigned char *))(*(unsigned int *)v7 + 36))(v7, v20) && (v20[0] & 1) != 0 ) /*0x409660*/
             {
-              *(_QWORD *)(*(_DWORD *)(i + 344) + 24) = IDA___PAIR64__(v4, v3) - *(_QWORD *)(*(_DWORD *)(i + 344) + 16); /*0x40967a*/
-              v8 = *(_DWORD *)(i + 344); /*0x409680*/
-              *(_DWORD *)(v8 + 16) = v3; /*0x409686*/
-              *(_DWORD *)(v8 + 20) = v4; /*0x409689*/
-              v9 = *(_DWORD *)(i + 344); /*0x40968c*/
-              (*(void (__stdcall **)(_DWORD, unsigned int *, int))(**(_DWORD **)(v9 + 100) + 16))( /*0x4096a1*/
-                *(_DWORD *)(v9 + 100),
+              *(unsigned long long *)(*(unsigned int *)(i + 344) + 24) = IDA___PAIR64__(v4, v3) - *(unsigned long long *)(*(unsigned int *)(i + 344) + 16); /*0x40967a*/
+              v8 = *(unsigned int *)(i + 344); /*0x409680*/
+              *(unsigned int *)(v8 + 16) = v3; /*0x409686*/
+              *(unsigned int *)(v8 + 20) = v4; /*0x409689*/
+              v9 = *(unsigned int *)(i + 344); /*0x40968c*/
+              (*(void (__stdcall **)(unsigned int, unsigned int *, int))(**(unsigned int **)(v9 + 100) + 16))( /*0x4096a1*/
+                *(unsigned int *)(v9 + 100),
                 &v21,
                 v9 + 52);
-              v10 = v21 / *(_DWORD *)(v9 + 108) - *(_DWORD *)(v9 + 12); /*0x4096b2*/
+              v10 = v21 / *(unsigned int *)(v9 + 108) - *(unsigned int *)(v9 + 12); /*0x4096b2*/
               if ( v10 ) /*0x4096b4*/
               {
                 v11 = v10 < 0; /*0x4096b6*/
                 if ( v10 < 0 ) /*0x4096b8*/
                 {
-                  v10 = v21 / *(_DWORD *)(v9 + 108) - *(_DWORD *)(v9 + 12) + 4; /*0x4096c2*/
+                  v10 = v21 / *(unsigned int *)(v9 + 108) - *(unsigned int *)(v9 + 12) + 4; /*0x4096c2*/
                   v11 = v10 <= 0; /*0x4096c4*/
                 }
                 if ( !v11 ) /*0x4096c6*/
                 {
-                  v12 = *(_DWORD *)(v9 + 12) + v10; /*0x4096cb*/
-                  *(_DWORD *)(v9 + 12) = v12; /*0x4096d1*/
+                  v12 = *(unsigned int *)(v9 + 12) + v10; /*0x4096cb*/
+                  *(unsigned int *)(v9 + 12) = v12; /*0x4096d1*/
                   if ( v12 >= 4 ) /*0x4096d4*/
-                    *(_DWORD *)(v9 + 12) &= 3u; /*0x4096dc*/
-                  *(_DWORD *)(v9 + 212) += v10; /*0x4096e7*/
-                  v13 = *(_DWORD *)(v9 + 108) * v10; /*0x4096f1*/
+                    *(unsigned int *)(v9 + 12) &= 3u; /*0x4096dc*/
+                  *(unsigned int *)(v9 + 212) += v10; /*0x4096e7*/
+                  v13 = *(unsigned int *)(v9 + 108) * v10; /*0x4096f1*/
                   v14 = ProcessAudioStream((int *)v9, v13); /*0x4096f7*/
-                  if ( *(_DWORD *)(v9 + 64) > v13 ) /*0x4096ff*/
-                    *(_DWORD *)(v9 + 64) = v13; /*0x409701*/
-                  v15 = *(_DWORD *)(v9 + 8) - v13; /*0x409707*/
-                  v16 = *(_DWORD *)(v9 + 8) == v13; /*0x409709*/
-                  *(_DWORD *)(v9 + 8) = v15; /*0x40970b*/
+                  if ( *(unsigned int *)(v9 + 64) > v13 ) /*0x4096ff*/
+                    *(unsigned int *)(v9 + 64) = v13; /*0x409701*/
+                  v15 = *(unsigned int *)(v9 + 8) - v13; /*0x409707*/
+                  v16 = *(unsigned int *)(v9 + 8) == v13; /*0x409709*/
+                  *(unsigned int *)(v9 + 8) = v15; /*0x40970b*/
                   if ( v15 < 0 || v16 || !v14 ) /*0x409712*/
-                    (*(void (__stdcall **)(_DWORD))(**(_DWORD **)(v9 + 100) + 72))(*(_DWORD *)(v9 + 100)); /*0x40971a*/
+                    (*(void (__stdcall **)(unsigned int))(**(unsigned int **)(v9 + 100) + 72))(*(unsigned int *)(v9 + 100)); /*0x40971a*/
                 }
               }
-              ++*(_DWORD *)(v9 + 208); /*0x409724*/
+              ++*(unsigned int *)(v9 + 208); /*0x409724*/
               v2 = v22; /*0x40972a*/
             }
             else
             {
-              v17 = *(_DWORD *)(*(_DWORD *)(i + 344) + 100); /*0x409736*/
+              v17 = *(unsigned int *)(*(unsigned int *)(i + 344) + 100); /*0x409736*/
               if ( v17 ) /*0x40973b*/
-                (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v17 + 72))(*(_DWORD *)(*(_DWORD *)(i + 344) + 100)); /*0x409740*/
+                (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v17 + 72))(*(unsigned int *)(*(unsigned int *)(i + 344) + 100)); /*0x409740*/
               v18 = *(void (__thiscall **)(int))(i + 356); /*0x409743*/
               if ( v18 ) /*0x40974b*/
                 v18(i); /*0x40974f*/
@@ -2381,14 +2379,14 @@ void AudioStreamThreadProc(unsigned int * lpThreadParameter)
           Audio::InitChannels((char *)g_MixerChannel_Ambient); /*0x4097b4*/
           Audio::InitChannels((char *)g_MixerChannel_Misc); /*0x4097bf*/
           sub_403810(v2); /*0x4097c6*/
-          ObjectClass::ClearFlags2((_DWORD *)g_MixerChannel_Score); /*0x4097d1*/
-          ObjectClass::ClearFlags2((_DWORD *)g_MixerChannel_Theme); /*0x4097dc*/
-          ObjectClass::ClearFlags2((_DWORD *)g_MixerChannel_Voice); /*0x4097e7*/
-          ObjectClass::ClearFlags2((_DWORD *)g_MixerChannel_SFX); /*0x4097f2*/
-          ObjectClass::ClearFlags2((_DWORD *)g_MixerChannel_Stream); /*0x4097fd*/
-          ObjectClass::ClearFlags2((_DWORD *)g_MixerState); /*0x409808*/
-          ObjectClass::ClearFlags2((_DWORD *)g_MixerChannel_Ambient); /*0x409813*/
-          ObjectClass::ClearFlags2((_DWORD *)g_MixerChannel_Misc); /*0x40981e*/
+          ObjectClass::ClearFlags2((unsigned int *)g_MixerChannel_Score); /*0x4097d1*/
+          ObjectClass::ClearFlags2((unsigned int *)g_MixerChannel_Theme); /*0x4097dc*/
+          ObjectClass::ClearFlags2((unsigned int *)g_MixerChannel_Voice); /*0x4097e7*/
+          ObjectClass::ClearFlags2((unsigned int *)g_MixerChannel_SFX); /*0x4097f2*/
+          ObjectClass::ClearFlags2((unsigned int *)g_MixerChannel_Stream); /*0x4097fd*/
+          ObjectClass::ClearFlags2((unsigned int *)g_MixerState); /*0x409808*/
+          ObjectClass::ClearFlags2((unsigned int *)g_MixerChannel_Ambient); /*0x409813*/
+          ObjectClass::ClearFlags2((unsigned int *)g_MixerChannel_Misc); /*0x40981e*/
         }
         LeaveCriticalSection(&stru_87E880); /*0x409828*/
         v1 = lpThreadParameter; /*0x409833*/
@@ -2467,12 +2465,12 @@ void ProcessAudioStream(int * a1, int a2)
         v23 = a1[14]; /*0x4098d1*/
       if ( v28 ) /*0x4098d9*/
       {
-        (*(void (__stdcall **)(int, char *, int, int, int))(*(_DWORD *)a1[25] + 76))(a1[25], v27, v26, v25, v24); /*0x4098f5*/
+        (*(void (__stdcall **)(int, char *, int, int, int))(*(unsigned int *)a1[25] + 76))(a1[25], v27, v26, v25, v24); /*0x4098f5*/
         v28 = 0; /*0x4098f8*/
       }
       v3 = a1[12]; /*0x4098fc*/
       v4 = 3; /*0x409918*/
-      if ( (*(int (__stdcall **)(int, int, int, char **, int *, int *, int *, _DWORD))(*(_DWORD *)a1[25] + 44))( /*0x409925*/
+      if ( (*(int (__stdcall **)(int, int, int, char **, int *, int *, int *, unsigned int))(*(unsigned int *)a1[25] + 44))( /*0x409925*/
              a1[25],
              v3,
              v23,
@@ -2507,19 +2505,19 @@ void ProcessAudioStream(int * a1, int a2)
               (*(void (**)(void))(*a1 + 348))(); /*0x409a69*/
               a1[51] = 1; /*0x409a6f*/
             }
-            if ( !*(_DWORD *)(*a1 + 372) && !a1[42] ) /*0x409a83*/
+            if ( !*(unsigned int *)(*a1 + 372) && !a1[42] ) /*0x409a83*/
             {
               (*(void (**)(void))(*a1 + 352))(); /*0x409a8b*/
-              if ( *(_DWORD *)(*a1 + 372) ) /*0x409a93*/
+              if ( *(unsigned int *)(*a1 + 372) ) /*0x409a93*/
                 AudioBuffer::InitializePlayback(a1); /*0x409a9d*/
             }
             v12 = *a1; /*0x409aa2*/
-            if ( *(_DWORD *)(*a1 + 372) ) /*0x409aa4*/
+            if ( *(unsigned int *)(*a1 + 372) ) /*0x409aa4*/
             {
               a1[51] = 0; /*0x409aac*/
-              a1[10] = *(_DWORD *)(v12 + 368); /*0x409ab8*/
-              a1[8] = *(_DWORD *)(v12 + 368); /*0x409ac1*/
-              v13 = *(_DWORD *)(v12 + 372); /*0x409ac4*/
+              a1[10] = *(unsigned int *)(v12 + 368); /*0x409ab8*/
+              a1[8] = *(unsigned int *)(v12 + 368); /*0x409ac1*/
+              v13 = *(unsigned int *)(v12 + 372); /*0x409ac4*/
               a1[9] = v13; /*0x409aca*/
               a1[11] = v13; /*0x409acd*/
             }
@@ -2542,7 +2540,7 @@ void ProcessAudioStream(int * a1, int a2)
             }
             else
             {
-              if ( !((int (__fastcall *)(int *, char *, unsigned int *, _DWORD, _DWORD))a1[28])(a1, v9, &v22, 0, 0) ) /*0x409b46*/
+              if ( !((int (__fastcall *)(int *, char *, unsigned int *, unsigned int, unsigned int))a1[28])(a1, v9, &v22, 0, 0) ) /*0x409b46*/
                 goto LABEL_47; /*0x409b46*/
               v19 = 0; /*0x409b4c*/
               a1[11] = 0; /*0x409b4e*/
@@ -2554,7 +2552,7 @@ void ProcessAudioStream(int * a1, int a2)
           }
           else
           {
-            if ( *(_DWORD *)(*a1 + 396) == 2 ) /*0x409afc*/
+            if ( *(unsigned int *)(*a1 + 396) == 2 ) /*0x409afc*/
               v15 = 0; /*0x409afe*/
             else
               v15 = -2139062144; /*0x409b02*/
@@ -2581,19 +2579,19 @@ void ProcessAudioStream(int * a1, int a2)
         goto LABEL_45; /*0x409bca*/
       a2 = v20; /*0x409bcc*/
     }
-    while ( !(*(int (__stdcall **)(int))(*(_DWORD *)a1[25] + 80))(a1[25]) ) /*0x409934*/
+    while ( !(*(int (__stdcall **)(int))(*(unsigned int *)a1[25] + 80))(a1[25]) ) /*0x409934*/
     {
       a1[11] = 0; /*0x409945*/
       a1[2] = 0; /*0x409948*/
       a1[15] = 4 * a1[27]; /*0x409951*/
-      (*(void (__stdcall **)(int, _DWORD))(*(_DWORD *)a1[25] + 52))(a1[25], 0); /*0x40995b*/
-      (*(void (__stdcall **)(int, unsigned int *, int *))(*(_DWORD *)a1[25] + 16))(a1[25], &v32, a1 + 13); /*0x40996d*/
+      (*(void (__stdcall **)(int, unsigned int))(*(unsigned int *)a1[25] + 52))(a1[25], 0); /*0x40995b*/
+      (*(void (__stdcall **)(int, unsigned int *, int *))(*(unsigned int *)a1[25] + 16))(a1[25], &v32, a1 + 13); /*0x40996d*/
       a1[3] = v32 / a1[27]; /*0x409979*/
       a1[4] = Audio::Callback(); /*0x409981*/
       a1[5] = v5; /*0x409984*/
       v6 = a1[25]; /*0x40998a*/
       a1[16] = a1[26]; /*0x409991*/
-      (*(void (__stdcall **)(int, int *, int *))(*(_DWORD *)v6 + 16))(v6, a1 + 12, a1 + 13); /*0x409998*/
+      (*(void (__stdcall **)(int, int *, int *))(*(unsigned int *)v6 + 16))(v6, a1 + 12, a1 + 13); /*0x409998*/
       a1[14] = a1[26] - a1[12]; /*0x4099a2*/
       a1[52] = 0; /*0x4099a7*/
       a1[54] = a1[3]; /*0x4099b0*/
@@ -2602,7 +2600,7 @@ void ProcessAudioStream(int * a1, int a2)
       Debug::Log(); /*0x4099c9*/
       if ( !v4-- ) /*0x4099d1*/
         break; /*0x4099d6*/
-      if ( !(*(int (__stdcall **)(int, int, int, char **, int *, int *, int *, _DWORD))(*(_DWORD *)a1[25] + 44))( /*0x4099fe*/
+      if ( !(*(int (__stdcall **)(int, int, int, char **, int *, int *, int *, unsigned int))(*(unsigned int *)a1[25] + 44))( /*0x4099fe*/
               a1[25],
               v3,
               v23,
@@ -2617,7 +2615,7 @@ void ProcessAudioStream(int * a1, int a2)
   }
   if ( v28 ) /*0x409c0f*/
   LABEL_47:
-    (*(void (__stdcall **)(int, char *, int, int, int))(*(_DWORD *)a1[25] + 76))(a1[25], v27, v26, v25, v24); /*0x409c11*/
+    (*(void (__stdcall **)(int, char *, int, int, int))(*(unsigned int *)a1[25] + 76))(a1[25], v27, v26, v25, v24); /*0x409c11*/
   return v31; /*0x409c32*/
 }
 }
@@ -2625,20 +2623,20 @@ void ProcessAudioStream(int * a1, int a2)
 namespace gamemd {
 AudioController * * E4Recv_40A090::sub_40A090()
 {
-  _DWORD *v2; // edi
-  __int16 v3; // cx
+  unsigned int *v2; // edi
+  int16_t v3; // cx
   int v4; // edx
   int v6; // [esp+10h] [ebp-88h] BYREF
   int v7; // [esp+14h] [ebp-84h]
   int v8; // [esp+18h] [ebp-80h]
   int v9; // [esp+1Ch] [ebp-7Ch]
   int v10; // [esp+20h] [ebp-78h]
-  _DWORD v11[5]; // [esp+24h] [ebp-74h] BYREF
-  _DWORD v12[24]; // [esp+38h] [ebp-60h] BYREF
+  unsigned int v11[5]; // [esp+24h] [ebp-74h] BYREF
+  unsigned int v12[24]; // [esp+38h] [ebp-60h] BYREF
 
-  v2 = (_DWORD *)(&this->isAliveFlag8); /*0x40a09d*/
+  v2 = (unsigned int *)(&this->isAliveFlag8); /*0x40a09d*/
   this->q0F4 = 100; /*0x40a0a8*/
-  CoordBounds::Constructor((_DWORD *)(&this->isAliveFlag8), 33, 0); /*0x40a0b2*/
+  CoordBounds::Constructor((unsigned int *)(&this->isAliveFlag8), 33, 0); /*0x40a0b2*/
   AudioStream::ResetChannel(v2, 1056, 0); /*0x40a0bf*/
   AudioStream::ResetChannel2(v2, 3168, 0); /*0x40a0cc*/
   v3 = this->q054; /*0x40a0d9*/
@@ -2652,7 +2650,7 @@ AudioController * * E4Recv_40A090::sub_40A090()
   IDA_HIWORD(v6) = this->customSound_controller; /*0x40a102*/
   IDA_LOWORD(v9) = IDA_HIWORD(v6) * v3; /*0x40a107*/
   IDA_LOWORD(v6) = 1; /*0x40a116*/
-  v8 = v4 * (unsigned __int16)(IDA_HIWORD(v6) * v3); /*0x40a122*/
+  v8 = v4 * (uint16_t)(IDA_HIWORD(v6) * v3); /*0x40a122*/
   IDA_LOWORD(v10) = 0; /*0x40a133*/
   v11[0] = 20; /*0x40a13c*/
   v11[1] = 1; /*0x40a148*/
@@ -2669,12 +2667,12 @@ AudioController * * E4Recv_40A090::sub_40A090()
   }
   else
   {
-    if ( (*(int (__stdcall **)(int, int *))(*(_DWORD *)dword_87E8A0 + 56))(dword_87E8A0, &v6) ) /*0x40a196*/
+    if ( (*(int (__stdcall **)(int, int *))(*(unsigned int *)dword_87E8A0 + 56))(dword_87E8A0, &v6) ) /*0x40a196*/
       Debug::Log(); /*0x40a1a2*/
     memset(&v12[1], 0, 0x5Cu); /*0x40a1b9*/
     v12[0] = 96; /*0x40a1c0*/
     g_pDirectSound->lpVtbl->GetCaps(g_pDirectSound, (LPDSCAPS)v12); /*0x40a1cc*/
-    (*(void (__stdcall **)(int, _DWORD, _DWORD, int))(*(_DWORD *)dword_87E8A0 + 48))(dword_87E8A0, 0, 0, 1); /*0x40a1db*/
+    (*(void (__stdcall **)(int, unsigned int, unsigned int, int))(*(unsigned int *)dword_87E8A0 + 48))(dword_87E8A0, 0, 0, 1); /*0x40a1db*/
     this->q1D8 = 4; /*0x40a1de*/
     this->q1DC = 8; /*0x40a1e8*/
     this->q1E0 = 0; /*0x40a1f2*/
@@ -2687,12 +2685,12 @@ namespace gamemd {
 int DirectSound_CreateBuffer(int a1, int a2, short a3)
 {
   int result; // eax
-  _WORD v4[2]; // [esp+8h] [ebp-14h] BYREF
+  unsigned short v4[2]; // [esp+8h] [ebp-14h] BYREF
   int v5; // [esp+Ch] [ebp-10h]
   int v6; // [esp+10h] [ebp-Ch]
-  unsigned __int16 v7; // [esp+14h] [ebp-8h]
-  __int16 v8; // [esp+16h] [ebp-6h]
-  __int16 v9; // [esp+18h] [ebp-4h]
+  uint16_t v7; // [esp+14h] [ebp-8h]
+  int16_t v8; // [esp+16h] [ebp-6h]
+  int16_t v9; // [esp+18h] [ebp-4h]
 
   if ( dword_87E8A0 ) /*0x40a7cf*/
   {
@@ -2703,9 +2701,9 @@ int DirectSound_CreateBuffer(int a1, int a2, short a3)
     v8 = a2; /*0x40a802*/
     v6 = a1 * v7; /*0x40a80a*/
     v9 = 0; /*0x40a80e*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)dword_87E8A0 + 72))(dword_87E8A0); /*0x40a818*/
-    (*(void (__stdcall **)(int, _WORD *))(*(_DWORD *)dword_87E8A0 + 56))(dword_87E8A0, v4); /*0x40a828*/
-    return (*(int (__stdcall **)(int, _DWORD, _DWORD, int))(*(_DWORD *)dword_87E8A0 + 48))(dword_87E8A0, 0, 0, 1); /*0x40a839*/
+    (*(void (__stdcall **)(int))(*(unsigned int *)dword_87E8A0 + 72))(dword_87E8A0); /*0x40a818*/
+    (*(void (__stdcall **)(int, unsigned short *))(*(unsigned int *)dword_87E8A0 + 56))(dword_87E8A0, v4); /*0x40a828*/
+    return (*(int (__stdcall **)(int, unsigned int, unsigned int, int))(*(unsigned int *)dword_87E8A0 + 48))(dword_87E8A0, 0, 0, 1); /*0x40a839*/
   }
   return result; /*0x40a83d*/
 }
@@ -2714,17 +2712,17 @@ int DirectSound_CreateBuffer(int a1, int a2, short a3)
 namespace gamemd {
 void sub_40A850()
 {
-  _WORD *Enabled; // esi
+  unsigned short *Enabled; // esi
   int result; // eax
-  __int16 v2; // ax
+  int16_t v2; // ax
   int v3; // ecx
-  __int16 v4; // si
-  _WORD v5[2]; // [esp+4h] [ebp-14h] BYREF
+  int16_t v4; // si
+  unsigned short v5[2]; // [esp+4h] [ebp-14h] BYREF
   int v6; // [esp+8h] [ebp-10h]
   int v7; // [esp+Ch] [ebp-Ch]
-  __int16 v8; // [esp+10h] [ebp-8h]
-  __int16 v9; // [esp+12h] [ebp-6h]
-  __int16 v10; // [esp+14h] [ebp-4h]
+  int16_t v8; // [esp+10h] [ebp-8h]
+  int16_t v9; // [esp+12h] [ebp-6h]
+  int16_t v10; // [esp+14h] [ebp-4h]
 
   Enabled = Audio::GetEnabled(); /*0x40a859*/
   result = dword_87E8A0; /*0x40a85b*/
@@ -2732,19 +2730,19 @@ void sub_40A850()
   {
     if ( Enabled ) /*0x40a86a*/
     {
-      (*(void (__stdcall **)(int))(*(_DWORD *)dword_87E8A0 + 72))(dword_87E8A0); /*0x40a873*/
+      (*(void (__stdcall **)(int))(*(unsigned int *)dword_87E8A0 + 72))(dword_87E8A0); /*0x40a873*/
       v2 = Enabled[40]; /*0x40a878*/
-      v3 = *((_DWORD *)Enabled + 19); /*0x40a87c*/
+      v3 = *((unsigned int *)Enabled + 19); /*0x40a87c*/
       v4 = Enabled[42]; /*0x40a87f*/
       v5[1] = v2; /*0x40a887*/
       v6 = v3; /*0x40a890*/
       v5[0] = 1; /*0x40a898*/
       v8 = v2 * v4; /*0x40a8ad*/
       v10 = 0; /*0x40a8bb*/
-      v7 = v3 * (unsigned __int16)(v2 * v4); /*0x40a8cc*/
+      v7 = v3 * (uint16_t)(v2 * v4); /*0x40a8cc*/
       v9 = 8 * v4; /*0x40a8d5*/
-      (*(void (__stdcall **)(int, _WORD *))(*(_DWORD *)dword_87E8A0 + 56))(dword_87E8A0, v5); /*0x40a8e2*/
-      return (*(int (__stdcall **)(int, _DWORD, _DWORD, int))(*(_DWORD *)dword_87E8A0 + 48))(dword_87E8A0, 0, 0, 1); /*0x40a8f3*/
+      (*(void (__stdcall **)(int, unsigned short *))(*(unsigned int *)dword_87E8A0 + 56))(dword_87E8A0, v5); /*0x40a8e2*/
+      return (*(int (__stdcall **)(int, unsigned int, unsigned int, int))(*(unsigned int *)dword_87E8A0 + 48))(dword_87E8A0, 0, 0, 1); /*0x40a8f3*/
     }
   }
   return result; /*0x40a8f6*/
@@ -2772,7 +2770,7 @@ void sub_40A940()
 
   result = dword_87E8A0; /*0x40a940*/
   if ( dword_87E8A0 ) /*0x40a947*/
-    return (*(int (__stdcall **)(int))(*(_DWORD *)dword_87E8A0 + 72))(dword_87E8A0); /*0x40a94c*/
+    return (*(int (__stdcall **)(int))(*(unsigned int *)dword_87E8A0 + 72))(dword_87E8A0); /*0x40a94c*/
   return result; /*0x40a94f*/
 }
 }
@@ -2781,7 +2779,7 @@ namespace gamemd {
 void sub_40D220()
 {
   if ( dword_87F7B8 ) /*0x40d227*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)dword_87F7B8 + 8))(dword_87F7B8); /*0x40d22c*/
+    (*(void (__stdcall **)(int))(*(unsigned int *)dword_87F7B8 + 8))(dword_87F7B8); /*0x40d22c*/
 }
 }
 // 0x40D330
@@ -2804,28 +2802,26 @@ void * E4Recv_40E3E0::sub_40E3E0(char a2)
   int v8; // edx
   int v9; // ecx
 
-  *this = (void*)&GenericList_vftable; /*0x40e3e6*/
   while ( 1 ) /*0x40e3ec*/
   {
     v3 = this->q008; /*0x40e3ec*/
     if ( !v3 ) /*0x40e3f1*/
       break; /*0x40e3f1*/
-    if ( !*(_DWORD *)(v3 + 4) ) /*0x40e3f3*/
+    if ( !*(unsigned int *)(v3 + 4) ) /*0x40e3f3*/
       break; /*0x40e3f3*/
-    v4 = *(_DWORD *)(v3 + 8); /*0x40e3f8*/
+    v4 = *(unsigned int *)(v3 + 8); /*0x40e3f8*/
     if ( !v4 ) /*0x40e3fd*/
       break; /*0x40e3fd*/
-    v5 = *(_DWORD *)(v3 + 4); /*0x40e403*/
+    v5 = *(unsigned int *)(v3 + 4); /*0x40e403*/
     if ( v5 ) /*0x40e408*/
     {
-      *(_DWORD *)(v4 + 4) = v5; /*0x40e40e*/
-      *(_DWORD *)(*(_DWORD *)(v3 + 4) + 8) = *(_DWORD *)(v3 + 8); /*0x40e417*/
-      *(_DWORD *)(v3 + 8) = 0; /*0x40e41a*/
-      *(_DWORD *)(v3 + 4) = 0; /*0x40e41d*/
+      *(unsigned int *)(v4 + 4) = v5; /*0x40e40e*/
+      *(unsigned int *)(*(unsigned int *)(v3 + 4) + 8) = *(unsigned int *)(v3 + 8); /*0x40e417*/
+      *(unsigned int *)(v3 + 8) = 0; /*0x40e41a*/
+      *(unsigned int *)(v3 + 4) = 0; /*0x40e41d*/
     }
   }
-  this->u32_10 = (void*)&GenericNode_vftable; /*0x40e427*/
-  if ( this != (_DWORD *)-16 ) /*0x40e42d*/
+  if ( this != (unsigned int *)-16 ) /*0x40e42d*/
   {
     v6 = this->q014; /*0x40e42f*/
     if ( v6 ) /*0x40e434*/
@@ -2833,15 +2829,14 @@ void * E4Recv_40E3E0::sub_40E3E0(char a2)
       v7 = this->q018; /*0x40e436*/
       if ( v7 ) /*0x40e43b*/
       {
-        *(_DWORD *)(v7 + 4) = v6; /*0x40e43d*/
-        *(_DWORD *)(this->q014 + 8) = this->q018; /*0x40e446*/
+        *(unsigned int *)(v7 + 4) = v6; /*0x40e43d*/
+        *(unsigned int *)(this->q014 + 8) = this->q018; /*0x40e446*/
         this->q018 = 0; /*0x40e449*/
         this->q014 = 0; /*0x40e44c*/
       }
     }
   }
-  this->q004 = (void*)&GenericNode_vftable; /*0x40e454*/
-  if ( this != (_DWORD *)-4 ) /*0x40e45a*/
+  if ( this != (unsigned int *)-4 ) /*0x40e45a*/
   {
     v8 = this->q008; /*0x40e45c*/
     if ( v8 ) /*0x40e461*/
@@ -2849,8 +2844,8 @@ void * E4Recv_40E3E0::sub_40E3E0(char a2)
       v9 = this->q00C; /*0x40e463*/
       if ( v9 ) /*0x40e468*/
       {
-        *(_DWORD *)(v9 + 4) = v8; /*0x40e46a*/
-        *(_DWORD *)(this->q008 + 8) = this->q00C; /*0x40e473*/
+        *(unsigned int *)(v9 + 4) = v8; /*0x40e46a*/
+        *(unsigned int *)(this->q008 + 8) = this->q00C; /*0x40e473*/
         this->q00C = 0; /*0x40e476*/
         this->q008 = 0; /*0x40e479*/
       }
@@ -2873,28 +2868,26 @@ void * E4Recv_40E4C0::sub_40E4C0(char a2)
   int v8; // edx
   int v9; // ecx
 
-  *this = (void*)&GenericList_vftable; /*0x40e4c6*/
   while ( 1 ) /*0x40e4cc*/
   {
     v3 = this->q008; /*0x40e4cc*/
     if ( !v3 ) /*0x40e4d1*/
       break; /*0x40e4d1*/
-    if ( !*(_DWORD *)(v3 + 4) ) /*0x40e4d3*/
+    if ( !*(unsigned int *)(v3 + 4) ) /*0x40e4d3*/
       break; /*0x40e4d3*/
-    v4 = *(_DWORD *)(v3 + 8); /*0x40e4d8*/
+    v4 = *(unsigned int *)(v3 + 8); /*0x40e4d8*/
     if ( !v4 ) /*0x40e4dd*/
       break; /*0x40e4dd*/
-    v5 = *(_DWORD *)(v3 + 4); /*0x40e4e3*/
+    v5 = *(unsigned int *)(v3 + 4); /*0x40e4e3*/
     if ( v5 ) /*0x40e4e8*/
     {
-      *(_DWORD *)(v4 + 4) = v5; /*0x40e4ee*/
-      *(_DWORD *)(*(_DWORD *)(v3 + 4) + 8) = *(_DWORD *)(v3 + 8); /*0x40e4f7*/
-      *(_DWORD *)(v3 + 8) = 0; /*0x40e4fa*/
-      *(_DWORD *)(v3 + 4) = 0; /*0x40e4fd*/
+      *(unsigned int *)(v4 + 4) = v5; /*0x40e4ee*/
+      *(unsigned int *)(*(unsigned int *)(v3 + 4) + 8) = *(unsigned int *)(v3 + 8); /*0x40e4f7*/
+      *(unsigned int *)(v3 + 8) = 0; /*0x40e4fa*/
+      *(unsigned int *)(v3 + 4) = 0; /*0x40e4fd*/
     }
   }
-  this->u32_10 = (void*)&GenericNode_vftable; /*0x40e507*/
-  if ( this != (_DWORD *)-16 ) /*0x40e50d*/
+  if ( this != (unsigned int *)-16 ) /*0x40e50d*/
   {
     v6 = this->q014; /*0x40e50f*/
     if ( v6 ) /*0x40e514*/
@@ -2902,15 +2895,14 @@ void * E4Recv_40E4C0::sub_40E4C0(char a2)
       v7 = this->q018; /*0x40e516*/
       if ( v7 ) /*0x40e51b*/
       {
-        *(_DWORD *)(v7 + 4) = v6; /*0x40e51d*/
-        *(_DWORD *)(this->q014 + 8) = this->q018; /*0x40e526*/
+        *(unsigned int *)(v7 + 4) = v6; /*0x40e51d*/
+        *(unsigned int *)(this->q014 + 8) = this->q018; /*0x40e526*/
         this->q018 = 0; /*0x40e529*/
         this->q014 = 0; /*0x40e52c*/
       }
     }
   }
-  this->q004 = (void*)&GenericNode_vftable; /*0x40e534*/
-  if ( this != (_DWORD *)-4 ) /*0x40e53a*/
+  if ( this != (unsigned int *)-4 ) /*0x40e53a*/
   {
     v8 = this->q008; /*0x40e53c*/
     if ( v8 ) /*0x40e541*/
@@ -2918,8 +2910,8 @@ void * E4Recv_40E4C0::sub_40E4C0(char a2)
       v9 = this->q00C; /*0x40e543*/
       if ( v9 ) /*0x40e548*/
       {
-        *(_DWORD *)(v9 + 4) = v8; /*0x40e54a*/
-        *(_DWORD *)(this->q008 + 8) = this->q00C; /*0x40e553*/
+        *(unsigned int *)(v9 + 4) = v8; /*0x40e54a*/
+        *(unsigned int *)(this->q008 + 8) = this->q00C; /*0x40e553*/
         this->q00C = 0; /*0x40e556*/
         this->q008 = 0; /*0x40e559*/
       }
@@ -2970,7 +2962,7 @@ int sub_401190(unsigned int* a1, int a2)
 {
   int v2; // edx
 
-  v2 = (unsigned __int64)(1374389535LL * a2 * IDA_HIWORD(*(_DWORD *)(a1 + 44))) >> 32; /*0x40119e*/
+  v2 = (uint64_t)(1374389535LL * a2 * IDA_HIWORD(*(unsigned int *)(a1 + 44))) >> 32; /*0x40119e*/
   return ((unsigned int)v2 >> 31) + (v2 >> 5); /*0x4011ac*/
 }
 } // namespace gamemd
@@ -2987,13 +2979,13 @@ int sub_4011B0(unsigned int * a1, int a2)
 namespace gamemd {
 void sub_401580(void ** Block)
 {
-  void (__thiscall ***v2)(_DWORD, int); // ecx
-  void (__thiscall ***v3)(_DWORD, int); // ecx
+  void (__thiscall ***v2)(unsigned int, int); // ecx
+  void (__thiscall ***v3)(unsigned int, int); // ecx
 
-  v2 = (void (__thiscall ***)(_DWORD, int))*(Block + 67); /*0x401583*/
+  v2 = (void (__thiscall ***)(unsigned int, int))*(Block + 67); /*0x401583*/
   if ( v2 ) /*0x40158b*/
     (**v2)(v2, 1); /*0x401591*/
-  v3 = (void (__thiscall ***)(_DWORD, int))*(Block + 68); /*0x401593*/
+  v3 = (void (__thiscall ***)(unsigned int, int))*(Block + 68); /*0x401593*/
   if ( v3 ) /*0x40159b*/
     (**v3)(v3, 1); /*0x4015a1*/
   if ( *Block ) /*0x4015a3*/
@@ -3008,9 +3000,9 @@ unsigned int sub_4015C0(int a1, const void * a2)
 {
   void *v3; // eax
 
-  v3 = bsearch(a2, *(const void **)a1, *(_DWORD *)(a1 + 4), 0x24u, _strcmpi); /*0x4015d2*/
+  v3 = bsearch(a2, *(const void **)a1, *(unsigned int *)(a1 + 4), 0x24u, _strcmpi); /*0x4015d2*/
   if ( v3 ) /*0x4015de*/
-    return ((unsigned int)v3 - *(_DWORD *)a1) / 0x24; /*0x4015ee*/
+    return ((unsigned int)v3 - *(unsigned int *)a1) / 0x24; /*0x4015ee*/
   else
     return -1; /*0x4015f2*/
 }
@@ -3024,15 +3016,15 @@ int sub_4018C0(int a1, int a2, int a3)
   int result; // eax
   int v6; // eax
 
-  v4 = *(_DWORD *)(a1 + 280); /*0x4018c3*/
+  v4 = *(unsigned int *)(a1 + 280); /*0x4018c3*/
   if ( !v4 ) /*0x4018cb*/
     return 0; /*0x4018cd*/
   v6 = a3; /*0x4018d3*/
-  if ( a3 > *(_DWORD *)(a1 + 284) ) /*0x4018e0*/
-    v6 = *(_DWORD *)(a1 + 284); /*0x4018e2*/
-  if ( v6 <= 0 || (result = (*(int (__thiscall **)(int, int, int))(*(_DWORD *)v4 + 36))(v4, a2, v6), result < 0) ) /*0x4018f1*/
+  if ( a3 > *(unsigned int *)(a1 + 284) ) /*0x4018e0*/
+    v6 = *(unsigned int *)(a1 + 284); /*0x4018e2*/
+  if ( v6 <= 0 || (result = (*(int (__thiscall **)(int, int, int))(*(unsigned int *)v4 + 36))(v4, a2, v6), result < 0) ) /*0x4018f1*/
     result = 0; /*0x4018f3*/
-  *(_DWORD *)(a1 + 284) -= result; /*0x4018fe*/
+  *(unsigned int *)(a1 + 284) -= result; /*0x4018fe*/
   return result; /*0x4018cf*/
 }
 } // namespace gamemd
@@ -3043,11 +3035,11 @@ int * sub_4019E0(int a1, int a2, int a3, int a4)
 {
   int *v6; // ebx
   int i; // edi
-  _DWORD **j; // esi
+  unsigned int **j; // esi
   void *v9; // ecx
   void *v10; // ecx
 
-  v6 = (int *)RA2_OPNEW(0xE8u); /*0x4019f2*/
+  v6 = (int *)operator new(0xE8u); /*0x4019f2*/
   memset(v6, 0, 0xE8u); /*0x4019fd*/
   *v6 = a1; /*0x401a03*/
   v6[6] = a4; /*0x401a05*/
@@ -3058,16 +3050,16 @@ int * sub_4019E0(int a1, int a2, int a3, int a4)
     return v6; /*0x401aec*/
   for ( i = Queue::GetNext(v6 + 3); i; i = Queue::GetNext(v6 + 3) ) /*0x401a57*/
   {
-    if ( *(_DWORD *)(i + 4) != i ) /*0x401a5c*/
-      LinkedList::Init((_DWORD **)i); /*0x401a60*/
-    for ( j = (_DWORD **)Queue::GetNext((int *)(i + 36)); j; j = (_DWORD **)Queue::GetNext((int *)(i + 36)) ) /*0x401a73*/
+    if ( *(unsigned int *)(i + 4) != i ) /*0x401a5c*/
+      LinkedList::Init((unsigned int **)i); /*0x401a60*/
+    for ( j = (unsigned int **)Queue::GetNext((int *)(i + 36)); j; j = (unsigned int **)Queue::GetNext((int *)(i + 36)) ) /*0x401a73*/
     {
       LinkedList::Init(j); /*0x401a77*/
       AudioNode::Release(j); /*0x401a7e*/
-      PushFrontLinkedListAlt(*(_DWORD **)(*(_DWORD *)(i + 60) + 4), (int)j); /*0x401a8b*/
+      PushFrontLinkedListAlt(*(unsigned int **)(*(unsigned int *)(i + 60) + 4), (int)j); /*0x401a8b*/
     }
     nullsub_2(i + 28); /*0x401aa0*/
-    PushFrontLinkedListAlt(*(_DWORD **)(*(_DWORD *)(i + 60) + 8), i); /*0x401aad*/
+    PushFrontLinkedListAlt(*(unsigned int **)(*(unsigned int *)(i + 60) + 8), i); /*0x401aad*/
   }
   v9 = (void *)v6[1]; /*0x401ac0*/
   if ( v9 ) /*0x401ac5*/
@@ -3087,7 +3079,7 @@ void sub_401B00(int * Block)
   int *v1; // esi
   int *v2; // ebp
   int Next; // edi
-  _DWORD **i; // esi
+  unsigned int **i; // esi
   void *v5; // ecx
   void *v6; // ecx
 
@@ -3098,16 +3090,16 @@ void sub_401B00(int * Block)
   {
     do /*0x401b7f*/
     {
-      if ( *(_DWORD *)(Next + 4) != Next ) /*0x401b1e*/
-        LinkedList::Init((_DWORD **)Next); /*0x401b22*/
-      for ( i = (_DWORD **)Queue::GetNext((int *)(Next + 36)); i; i = (_DWORD **)Queue::GetNext((int *)(Next + 36)) ) /*0x401b35*/
+      if ( *(unsigned int *)(Next + 4) != Next ) /*0x401b1e*/
+        LinkedList::Init((unsigned int **)Next); /*0x401b22*/
+      for ( i = (unsigned int **)Queue::GetNext((int *)(Next + 36)); i; i = (unsigned int **)Queue::GetNext((int *)(Next + 36)) ) /*0x401b35*/
       {
         LinkedList::Init(i); /*0x401b39*/
         AudioNode::Release(i); /*0x401b40*/
-        PushFrontLinkedListAlt(*(_DWORD **)(*(_DWORD *)(Next + 60) + 4), (int)i); /*0x401b4d*/
+        PushFrontLinkedListAlt(*(unsigned int **)(*(unsigned int *)(Next + 60) + 4), (int)i); /*0x401b4d*/
       }
       nullsub_2(Next + 28); /*0x401b62*/
-      PushFrontLinkedListAlt(*(_DWORD **)(*(_DWORD *)(Next + 60) + 8), Next); /*0x401b6f*/
+      PushFrontLinkedListAlt(*(unsigned int **)(*(unsigned int *)(Next + 60) + 8), Next); /*0x401b6f*/
       Next = Queue::GetNext(v2); /*0x401b7b*/
     }
     while ( Next ); /*0x401b7f*/
@@ -3135,18 +3127,18 @@ void sub_401FB0(unsigned int* a1)
 namespace gamemd {
 int sub_401FC0(int * Block)
 {
-  _DWORD **i; // esi
+  unsigned int **i; // esi
 
-  if ( *(_DWORD *)(Block + 4) != Block ) /*0x401fc8*/
-    LinkedList::Init((_DWORD **)Block); /*0x401fca*/
-  for ( i = (_DWORD **)Queue::GetNext((int *)(Block + 36)); i; i = (_DWORD **)Queue::GetNext((int *)(Block + 36)) ) /*0x401fdd*/
+  if ( *(unsigned int *)(Block + 4) != Block ) /*0x401fc8*/
+    LinkedList::Init((unsigned int **)Block); /*0x401fca*/
+  for ( i = (unsigned int **)Queue::GetNext((int *)(Block + 36)); i; i = (unsigned int **)Queue::GetNext((int *)(Block + 36)) ) /*0x401fdd*/
   {
     LinkedList::Init(i); /*0x401fe1*/
     AudioNode::Release(i); /*0x401fe8*/
-    PushFrontLinkedListAlt(*(_DWORD **)(*(_DWORD *)(Block + 60) + 4), (int)i); /*0x401ff5*/
+    PushFrontLinkedListAlt(*(unsigned int **)(*(unsigned int *)(Block + 60) + 4), (int)i); /*0x401ff5*/
   }
   nullsub_2(Block + 28); /*0x40200a*/
-  return PushFrontLinkedListAlt(*(_DWORD **)(*(_DWORD *)(Block + 60) + 8), Block); /*0x402014*/
+  return PushFrontLinkedListAlt(*(unsigned int **)(*(unsigned int *)(Block + 60) + 8), Block); /*0x402014*/
 }
 } // namespace gamemd
 
@@ -3171,17 +3163,17 @@ void * sub_402440(int a1, int a2)
   int v3; // eax
   int (__thiscall *result)(int); // eax
 
-  v3 = *(_DWORD *)(a1 + 212); /*0x402443*/
-  *(_DWORD *)(a1 + 12) = a2; /*0x402449*/
+  v3 = *(unsigned int *)(a1 + 212); /*0x402443*/
+  *(unsigned int *)(a1 + 12) = a2; /*0x402449*/
   (*(void (**)(void))(v3 + 40))(); /*0x40244c*/
-  if ( (*(_BYTE *)(a1 + 164) & 5) != 0 ) /*0x402456*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)(a1 + 212) + 16))(a1); /*0x402460*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)(a1 + 212) + 44))(a1); /*0x40246b*/
+  if ( (*(unsigned char *)(a1 + 164) & 5) != 0 ) /*0x402456*/
+    (*(void (__thiscall **)(int))(*(unsigned int *)(a1 + 212) + 16))(a1); /*0x402460*/
+  (*(void (__thiscall **)(int))(*(unsigned int *)(a1 + 212) + 44))(a1); /*0x40246b*/
   result = *(int (__thiscall **)(int))(a1 + 188); /*0x40246e*/
   if ( result ) /*0x402476*/
     result = (int (__thiscall *)(int))result(a1); /*0x40247a*/
-  *(_DWORD *)(a1 + 360) = 0; /*0x40247c*/
-  *(_DWORD *)(a1 + 164) |= 8u; /*0x40248f*/
+  *(unsigned int *)(a1 + 360) = 0; /*0x40247c*/
+  *(unsigned int *)(a1 + 164) |= 8u; /*0x40248f*/
   return result; /*0x402495*/
 }
 } // namespace gamemd
@@ -3202,7 +3194,7 @@ void AudioStream_BindChannel(unsigned int * a1, unsigned int * a2)
 {
   int v4; // eax
   int v5; // eax
-  _DWORD *v6; // eax
+  unsigned int *v6; // eax
   int v7; // eax
 
   a1[90] = a2; /*0x402798*/
@@ -3212,15 +3204,15 @@ void AudioStream_BindChannel(unsigned int * a1, unsigned int * a2)
     a1[91] = v4; /*0x4027a9*/
     if ( v4 ) /*0x4027af*/
     {
-      a1[92] = *(_DWORD *)(v4 + 12); /*0x4027b4*/
-      v5 = *(_DWORD *)(v4 + 16); /*0x4027ba*/
+      a1[92] = *(unsigned int *)(v4 + 12); /*0x4027b4*/
+      v5 = *(unsigned int *)(v4 + 16); /*0x4027ba*/
       a1[93] = v5; /*0x4027bd*/
       a1[94] = v5; /*0x4027c3*/
       *a2 = 0; /*0x4027c9*/
     }
     else
     {
-      v6 = (_DWORD *)a1[90]; /*0x4027d2*/
+      v6 = (unsigned int *)a1[90]; /*0x4027d2*/
       a1[92] = *v6; /*0x4027da*/
       v7 = v6[1]; /*0x4027e0*/
       a1[93] = v7; /*0x4027e3*/
@@ -3245,8 +3237,8 @@ namespace gamemd {
 int sub_402940()
 {
   DListNode::Init(off_815E98); /*0x402946*/
-  DListNode::Init((_DWORD *)off_815E98 + 3); /*0x402953*/
-  *((_DWORD *)off_815E98 + 6) = 0; /*0x40295e*/
+  DListNode::Init((unsigned int *)off_815E98 + 3); /*0x402953*/
+  *((unsigned int *)off_815E98 + 6) = 0; /*0x40295e*/
   dword_87DE30 = (int)off_815E98 + 32; /*0x40296e*/
   AudioMixer::Init((int *)off_815E98 + 8); /*0x402974*/
   dword_87DE2C = 1; /*0x402979*/
@@ -3269,13 +3261,13 @@ void E4Recv_402EF0::sub_402EF0()
     Next = (int *)AudioQueue::GetNextAlt(Next); /*0x402f11*/
     AudioStream::Destructor(i); /*0x402f13*/
   }
-  (*(void (__thiscall **)(int *))(*(_DWORD *)(*(Block + 6) + 12) + 32))(Block); /*0x402f26*/
-  *(_DWORD *)(*(Block + 6) + 4 * *(Block + 7) + 28) = 0; /*0x402f2f*/
+  (*(void (__thiscall **)(int *))(*(unsigned int *)(*(Block + 6) + 12) + 32))(Block); /*0x402f26*/
+  *(unsigned int *)(*(Block + 6) + 4 * *(Block + 7) + 28) = 0; /*0x402f2f*/
   v4 = *(Block + 6); /*0x402f37*/
-  v5 = *(_DWORD *)(v4 + 16) - 1; /*0x402f3d*/
-  *(_DWORD *)(v4 + 16) = v5; /*0x402f40*/
+  v5 = *(unsigned int *)(v4 + 16) - 1; /*0x402f3d*/
+  *(unsigned int *)(v4 + 16) = v5; /*0x402f40*/
   if ( v5 < 0 ) /*0x402f43*/
-    *(_DWORD *)(*(Block + 6) + 16) = 0; /*0x402f48*/
+    *(unsigned int *)(*(Block + 6) + 16) = 0; /*0x402f48*/
   RA2_OPDEL(Block); /*0x402f50*/
 }
 } // namespace gamemd
@@ -3308,7 +3300,7 @@ int sub_403480(int a1, int a2)
 namespace gamemd {
 struct Concurrency::ISchedulerProxy * E4Recv_403490::_GetSchedulerProxy_SchedulerBase_details_Concurrency__QBEPAUISchedulerProxy_3_XZ()
 {
-  return (struct Concurrency::ISchedulerProxy *)*((_DWORD *)this + 61); /*0x403496*/
+  return (struct Concurrency::ISchedulerProxy *)*(unsigned int *)&this->M244; /*0x403496*/
 }
 } // namespace gamemd
 
@@ -3376,7 +3368,7 @@ void sub_403810(int (**a1)(void))
 namespace gamemd {
 void sub_4038E0(unsigned long long* a1, unsigned long long a2)
 {
-  return (unsigned __int64)(a2 - *(a1 + 5)) >= *a1; /*0x403903*/
+  return (uint64_t)(a2 - *(a1 + 5)) >= *a1; /*0x403903*/
 }
 }
 // 0x4039C0
@@ -3389,31 +3381,31 @@ int sub_4039C0(int a1, char * a2)
   int v6; // ecx
 
   v4 = Audio::Callback(); /*0x4039d0*/
-  if ( *(_DWORD *)(a1 + 72) != *(_DWORD *)(a1 + 80) ) /*0x4039da*/
+  if ( *(unsigned int *)(a1 + 72) != *(unsigned int *)(a1 + 80) ) /*0x4039da*/
   {
-    v5 = *(_DWORD *)(a1 + 84) + 1; /*0x4039e1*/
-    *(_DWORD *)(a1 + 84) = v5; /*0x4039e2*/
+    v5 = *(unsigned int *)(a1 + 84) + 1; /*0x4039e1*/
+    *(unsigned int *)(a1 + 84) = v5; /*0x4039e2*/
     if ( v5 >= strlen(off_815E9C) ) /*0x4039f7*/
-      *(_DWORD *)(a1 + 84) = 0; /*0x4039f9*/
-    *(_DWORD *)(a1 + 80) = *(_DWORD *)(a1 + 72); /*0x4039ff*/
+      *(unsigned int *)(a1 + 84) = 0; /*0x4039f9*/
+    *(unsigned int *)(a1 + 80) = *(unsigned int *)(a1 + 72); /*0x4039ff*/
   }
-  if ( *(_QWORD *)(a1 + 56) + *(_QWORD *)(a1 + 64) < IDA___PAIR64__(v3, v4) ) /*0x403a1a*/
+  if ( *(unsigned long long *)(a1 + 56) + *(unsigned long long *)(a1 + 64) < IDA___PAIR64__(v3, v4) ) /*0x403a1a*/
   {
-    v6 = *(_DWORD *)(a1 + 4); /*0x403a1e*/
-    *(_DWORD *)(a1 + 48) = *(_DWORD *)a1; /*0x403a21*/
-    *(_DWORD *)(a1 + 52) = v6; /*0x403a24*/
-    *(_DWORD *)(a1 + 56) = v4; /*0x403a27*/
-    *(_DWORD *)(a1 + 60) = v3; /*0x403a2a*/
+    v6 = *(unsigned int *)(a1 + 4); /*0x403a1e*/
+    *(unsigned int *)(a1 + 48) = *(unsigned int *)a1; /*0x403a21*/
+    *(unsigned int *)(a1 + 52) = v6; /*0x403a24*/
+    *(unsigned int *)(a1 + 56) = v4; /*0x403a27*/
+    *(unsigned int *)(a1 + 60) = v3; /*0x403a2a*/
   }
   return sprintf( /*0x403a6b*/
            a2,
            "%05dms (%04d,%04d,%04d,~%2d) %c \n",
-           *(_DWORD *)a1,
-           *(_DWORD *)(a1 + 16),
-           *(_DWORD *)(a1 + 48),
-           *(_DWORD *)(a1 + 24),
-           *(_DWORD *)(a1 + 76),
-           off_815E9C[*(_DWORD *)(a1 + 84)]);
+           *(unsigned int *)a1,
+           *(unsigned int *)(a1 + 16),
+           *(unsigned int *)(a1 + 48),
+           *(unsigned int *)(a1 + 24),
+           *(unsigned int *)(a1 + 76),
+           off_815E9C[*(unsigned int *)(a1 + 84)]);
 }
 } // namespace gamemd
 
@@ -3473,7 +3465,7 @@ namespace gamemd {
 long long sub_403DB0()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_87E190 - dbl_87E1A8); /*0x403dc2*/
   result = Math::RoundToInt(v0 * dbl_87E1A0 * 0.5); /*0x403dd6*/
@@ -3502,7 +3494,7 @@ void sub_403E20()
 namespace gamemd {
 long long sub_403E50()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_87E288) + 0.5); /*0x403e6b*/
   dword_87E27C = result; /*0x403e70*/
@@ -3615,7 +3607,7 @@ namespace gamemd {
 int E4Recv_405130::sub_405130()
 {
   if ( g_AudioConfigState ) /*0x405137*/
-    return *(this + 20); /*0x40513c*/
+    return *(unsigned int *)&this->M80; /*0x40513c*/
   else
     return 0; /*0x405139*/
 }
@@ -3626,7 +3618,7 @@ namespace gamemd {
 double E4Recv_405140::sub_405140()
 {
   if ( g_AudioConfigState ) /*0x405147*/
-    return *(this + 21); /*0x405150*/
+    return *(unsigned int *)&this->M84; /*0x405150*/
   else
     return 0.0; /*0x405149*/
 }
@@ -3637,7 +3629,7 @@ namespace gamemd {
 int E4Recv_405160::sub_405160()
 {
   if ( g_AudioConfigState ) /*0x405167*/
-    return *(this + 5); /*0x40516c*/
+    return *(unsigned int *)&this->M20; /*0x40516c*/
   else
     return 0; /*0x405169*/
 }
@@ -3649,9 +3641,9 @@ int E4Recv_4052E0::sub_4052E0()
 {
   int result; // eax
 
-  result = *(this + 6); /*0x4052e0*/
+  result = *(unsigned int *)&this->M24; /*0x4052e0*/
   IDA_LOBYTE(result) = result | 8; /*0x4052e3*/
-  *(this + 6) = result; /*0x4052e5*/
+  *(unsigned int *)&this->M24 = result; /*0x4052e5*/
   return result; /*0x4052e8*/
 }
 } // namespace gamemd
@@ -3660,13 +3652,13 @@ int E4Recv_4052E0::sub_4052E0()
 namespace gamemd {
 int E4Recv_4053E0::sub_4053E0()
 {
-  __int64 v2; // rax
+  int64_t v2; // rax
 
-  IDA_LODWORD(v2) = *(_DWORD *)(this + 344); /*0x4053e3*/
-  if ( !(_DWORD)v2 ) /*0x4053eb*/
+  IDA_LODWORD(v2) = *(unsigned int *)((char *)&this->q344 + 540); /*0x4053e3*/
+  if ( !(unsigned int)v2 ) /*0x4053eb*/
   {
     IDA_LODWORD(v2) = this->referenceCount; /*0x4053ed*/
-    if ( (_DWORD)v2 == 2 ) /*0x4053f3*/
+    if ( (unsigned int)v2 == 2 ) /*0x4053f3*/
     {
       IDA_LODWORD(v2) = Audio::Callback(); /*0x4053f6*/
       this->q140 -= v2; /*0x40540b*/
@@ -3681,22 +3673,22 @@ int E4Recv_4053E0::sub_4053E0()
 namespace gamemd {
 int E4Recv_405430::sub_405430()
 {
-  __int64 v2; // rax
+  int64_t v2; // rax
   int v3; // eax
-  __int64 v4; // rax
+  int64_t v4; // rax
 
   IDA_LODWORD(v2) = this->q158; /*0x405433*/
-  if ( (_DWORD)v2 ) /*0x40543b*/
+  if ( (unsigned int)v2 ) /*0x40543b*/
   {
     v3 = this->q158 - 1; /*0x405443*/
     this->q158 = v3; /*0x405446*/
     if ( v3 < 0 ) /*0x40544c*/
       this->q158 = 0; /*0x40544e*/
     IDA_LODWORD(v2) = this->q158; /*0x405458*/
-    if ( !(_DWORD)v2 ) /*0x405460*/
+    if ( !(unsigned int)v2 ) /*0x405460*/
     {
       IDA_LODWORD(v2) = this->referenceCount; /*0x405462*/
-      if ( (_DWORD)v2 == 2 ) /*0x405468*/
+      if ( (unsigned int)v2 == 2 ) /*0x405468*/
       {
         IDA_LODWORD(v4) = Audio::Callback(); /*0x40546b*/
         v2 = this->q140 + v4; /*0x40547e*/
@@ -3720,7 +3712,7 @@ int sub_405490()
 namespace gamemd {
 int E4Recv_4059F0::sub_4059F0()
 {
-  *(_DWORD *)(*(&this->uniqueId8) + 28) = 4; /*0x4059f6*/
+  *(unsigned int *)(*(&this->uniqueId8) + 28) = 4; /*0x4059f6*/
   return 0; /*0x4059ff*/
 }
 } // namespace gamemd
@@ -3729,13 +3721,13 @@ int E4Recv_4059F0::sub_4059F0()
 namespace gamemd {
 int E4Recv_405A00::sub_405A00()
 {
-  _DWORD *v1; // esi
+  unsigned int *v1; // esi
   int v2; // eax
   int v3; // eax
   unsigned int v5; // edi
-  __int64 v6; // rax
+  int64_t v6; // rax
 
-  v1 = (_DWORD *)*(&this->uniqueId8); /*0x405a01*/
+  v1 = (unsigned int *)*(&this->uniqueId8); /*0x405a01*/
   v2 = v1[6]; /*0x405a07*/
   IDA_LOBYTE(v2) = v2 & 0xFD; /*0x405a0a*/
   v1[6] = v2; /*0x405a0c*/
@@ -3758,7 +3750,7 @@ int E4Recv_405A00::sub_405A00()
     else
     {
       IDA_LODWORD(v6) = Audio::Callback(); /*0x405a88*/
-      *((_QWORD *)v1 + 40) = v5 + v6; /*0x405a91*/
+      *((unsigned long long *)v1 + 40) = v5 + v6; /*0x405a91*/
     }
     v1[7] = 2; /*0x405a75*/
     v1[79] = 0; /*0x405a7c*/
@@ -3776,17 +3768,17 @@ int E4Recv_405A00::sub_405A00()
 namespace gamemd {
 unsigned int * sub_405B50(int a1, char a2)
 {
-  _DWORD *v3; // esi
+  unsigned int *v3; // esi
   int v5; // eax
 
   v3 = 0; /*0x405b5b*/
   if ( dword_87E29C ) /*0x405b61*/
   {
     v5 = AudioQueue::FindBestChannel(dword_87E29C, 1); /*0x405b68*/
-    v3 = (_DWORD *)v5; /*0x405b6d*/
+    v3 = (unsigned int *)v5; /*0x405b6d*/
     if ( v5 ) /*0x405b71*/
     {
-      if ( (*(_BYTE *)(v5 + 164) & 0x15) != 0 && *(_DWORD *)(v5 + 160) > a1 ) /*0x405b82*/
+      if ( (*(unsigned char *)(v5 + 164) & 0x15) != 0 && *(unsigned int *)(v5 + 160) > a1 ) /*0x405b82*/
         return 0; /*0x405b89*/
       Voice::Stop(v5); /*0x405b8c*/
       v3[37] = g_MixerChannel_Score; /*0x405b96*/
@@ -3810,13 +3802,13 @@ void SetAudioSource(AudioMixer * aP0, unsigned int * a1, int a3)
 {
   if ( *(int **)(aP0 + 12) == &dword_87E294 ) /*0x4060f7*/
   {
-    *(_DWORD *)aP0 = a1; /*0x4060fd*/
-    *(_DWORD *)(aP0 + 8) = a3; /*0x406101*/
+    *(unsigned int *)aP0 = a1; /*0x4060fd*/
+    *(unsigned int *)(aP0 + 8) = a3; /*0x406101*/
     if ( a1 ) /*0x406104*/
     {
-      *(_DWORD *)(aP0 + 4) = a1[78]; /*0x40610d*/
+      *(unsigned int *)(aP0 + 4) = a1[78]; /*0x40610d*/
       if ( !a3 ) /*0x406113*/
-        *(_DWORD *)(aP0 + 8) = a1[9]; /*0x406118*/
+        *(unsigned int *)(aP0 + 8) = a1[9]; /*0x406118*/
       a1[158] = aP0; /*0x40611b*/
     }
   }
@@ -3846,7 +3838,7 @@ int AbstractTypeClass::AddSampleVocClass()
 {
   int v5; // eax
 
-  if ( *(_DWORD *)(a1 + 308) == 32 ) /*0x4064ad*/
+  if ( *(unsigned int *)(a1 + 308) == 32 ) /*0x4064ad*/
     return 0; /*0x4064b3*/
   if ( g_AudioConfigState && dword_87E294 ) /*0x4064c5*/
   {
@@ -3855,35 +3847,35 @@ int AbstractTypeClass::AddSampleVocClass()
     v5 = sub_4015C0(); /*0x4064d6*/
     if ( v5 != -1 ) /*0x4064de*/
     {
-      *(_DWORD *)(a1 + 4 * (*(_DWORD *)(a1 + 308))++ + 180) = v5; /*0x4064e6*/
+      *(unsigned int *)(a1 + 4 * (*(unsigned int *)(a1 + 308))++ + 180) = v5; /*0x4064e6*/
       return 1; /*0x406501*/
     }
     Debug::Log(); /*0x406508*/
-    *(_DWORD *)(a1 + 12) = 0; /*0x406510*/
+    *(unsigned int *)(a1 + 12) = 0; /*0x406510*/
   }
   return 1; /*0x4064af*/
 }
 // 0x406520
 void AbstractTypeClass::sub_406520()
 {
-  *(_DWORD *)(a1 + 312) = a2; /*0x406520*/
+  *(unsigned int *)(a1 + 312) = a2; /*0x406520*/
 }
 // 0x406530
 void AbstractTypeClass::sub_406530()
 {
-  *(_DWORD *)(a1 + 316) = a2; /*0x406530*/
+  *(unsigned int *)(a1 + 316) = a2; /*0x406530*/
 }
 // 0x406540
 void AbstractTypeClass::sub_406540()
 {
-  *(_DWORD *)(a1 + 64) = a2; /*0x406540*/
+  *(unsigned int *)(a1 + 64) = a2; /*0x406540*/
 }
 // 0x406550
 int AbstractTypeClass::sub_406550()
 {
-  _DWORD *v2; // esi
+  unsigned int *v2; // esi
 
-  v2 = (_DWORD *)(a1 + 24); /*0x406551*/
+  v2 = (unsigned int *)(a1 + 24); /*0x406551*/
   EndBufferMixer((int *)(a1 + 24), a2); /*0x406556*/
   return AudioMixer::PlaySample(v2); /*0x40655d*/
 }
@@ -3917,17 +3909,17 @@ int AbstractTypeClass::sub_406570()
 // 0x4065C0
 void AbstractTypeClass::sub_4065C0()
 {
-  *(_DWORD *)(a1 + 20) = a2; /*0x4065c0*/
+  *(unsigned int *)(a1 + 20) = a2; /*0x4065c0*/
 }
 // 0x4065D0
 void AbstractTypeClass::sub_4065D0()
 {
-  *(_DWORD *)(a1 + 72) = a2; /*0x4065d0*/
+  *(unsigned int *)(a1 + 72) = a2; /*0x4065d0*/
 }
 // 0x4065E0
 void AbstractTypeClass::sub_4065E0()
 {
-  *(_DWORD *)(a1 + 80) = a2; /*0x4065e0*/
+  *(unsigned int *)(a1 + 80) = a2; /*0x4065e0*/
 }
 // 0x4065F0
 int AbstractTypeClass::sub_4065F0(int a2)
@@ -3938,15 +3930,15 @@ int AbstractTypeClass::sub_4065F0(int a2)
 // 0x406600
 int AbstractTypeClass::sub_406600()
 {
-  *(_DWORD *)(a1 + 88) = a2; /*0x406604*/
-  *(_DWORD *)(a1 + 92) = a3; /*0x406607*/
+  *(unsigned int *)(a1 + 88) = a2; /*0x406604*/
+  *(unsigned int *)(a1 + 92) = a3; /*0x406607*/
   return a3; /*0x40660a*/
 }
 // 0x406610
 int AbstractTypeClass::sub_406610()
 {
-  *(_DWORD *)(a1 + 96) = a2; /*0x406614*/
-  *(_DWORD *)(a1 + 100) = a3; /*0x406617*/
+  *(unsigned int *)(a1 + 96) = a2; /*0x406614*/
+  *(unsigned int *)(a1 + 100) = a3; /*0x406617*/
   return a3; /*0x40661a*/
 }
 // 0x406620
@@ -3958,17 +3950,17 @@ int AbstractTypeClass::sub_406620()
   {
     if ( a2 >= 0 ) /*0x406630*/
     {
-      *(_DWORD *)(a1 + 104) = a2; /*0x406638*/
+      *(unsigned int *)(a1 + 104) = a2; /*0x406638*/
     }
     else
     {
-      *(_DWORD *)(a1 + 104) = 0; /*0x406634*/
+      *(unsigned int *)(a1 + 104) = 0; /*0x406634*/
       return 0; /*0x406632*/
     }
   }
   else
   {
-    *(_DWORD *)(a1 + 104) = 100; /*0x40662a*/
+    *(unsigned int *)(a1 + 104) = 100; /*0x40662a*/
     return 100; /*0x406625*/
   }
   return result; /*0x40662d*/
@@ -3976,7 +3968,7 @@ int AbstractTypeClass::sub_406620()
 // 0x406640
 void AbstractTypeClass::sub_406640()
 {
-  *(_DWORD *)(a1 + 76) = a2; /*0x406640*/
+  *(unsigned int *)(a1 + 76) = a2; /*0x406640*/
 }
 // 0x406670
 namespace gamemd {
@@ -3985,7 +3977,7 @@ int * sub_406670(void * a1, int a2)
   int *result; // eax
   int *v5; // esi
   int v6; // edi
-  __int64 v7; // rax
+  int64_t v7; // rax
 
   result = (int *)g_AudioConfigState; /*0x406670*/
   if ( g_AudioConfigState ) /*0x40667e*/
@@ -4010,11 +4002,11 @@ int * sub_406670(void * a1, int a2)
         v6 = (int)result; /*0x4066c5*/
         if ( result ) /*0x4066c9*/
         {
-          v7 = ((__int64)a2 << 14) / 256; /*0x4066e5*/
+          v7 = ((int64_t)a2 << 14) / 256; /*0x4066e5*/
           if ( (unsigned int)v7 > 0x4000 ) /*0x4066ef*/
             IDA_LODWORD(v7) = 0x4000; /*0x4066f1*/
-          EndBufferMixer((int *)(v6 + 184), (unsigned int)(v7 * IDA_HIWORD(*(_DWORD *)(*(_DWORD *)(v6 + 36) + 28))) >> 14); /*0x406715*/
-          return (int *)AudioMixer::PlaySample((_DWORD *)(v6 + 184)); /*0x40671c*/
+          EndBufferMixer((int *)(v6 + 184), (unsigned int)(v7 * IDA_HIWORD(*(unsigned int *)(*(unsigned int *)(v6 + 36) + 28))) >> 14); /*0x406715*/
+          return (int *)AudioMixer::PlaySample((unsigned int *)(v6 + 184)); /*0x40671c*/
         }
       }
     }
@@ -4069,7 +4061,7 @@ namespace gamemd {
 BOOL sub_406820(unsigned int * a1, char * a2)
 {
   const void **v4; // esi
-  _UNKNOWN **v5; // eax
+  void **v5; // eax
 
   v4 = (const void **)&off_8160C0; /*0x40682e*/
   if ( off_8160C0 ) /*0x406833*/
@@ -4078,7 +4070,7 @@ BOOL sub_406820(unsigned int * a1, char * a2)
     {
       if ( !_strcmpi(a2, *v4) ) /*0x406839*/
         break; /*0x406843*/
-      v5 = (_UNKNOWN **)v4[2]; /*0x406845*/
+      v5 = (void **)v4[2]; /*0x406845*/
       v4 += 2; /*0x406848*/
     }
     while ( v5 ); /*0x40684d*/
@@ -4145,7 +4137,7 @@ namespace gamemd {
 long long sub_4069F0()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_87E2B8 - dbl_87E4D0); /*0x406a02*/
   result = Math::RoundToInt(v0 * dbl_87E448 * 0.5); /*0x406a16*/
@@ -4174,7 +4166,7 @@ void sub_406A60()
 namespace gamemd {
 long long sub_406A90()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_87E720) + 0.5); /*0x406aab*/
   dword_87E694 = result; /*0x406ab0*/
@@ -4219,7 +4211,7 @@ namespace gamemd {
 BOOL sub_406DE0()
 {
   int *AudioChannel; // eax
-  _DWORD v2[8]; // [esp+0h] [ebp-20h] BYREF
+  unsigned int v2[8]; // [esp+0h] [ebp-20h] BYREF
 
   AudioQueue::CreateNode((int)off_816514); /*0x406de9*/
   Struct::ZeroInit32(v2); /*0x406df2*/
@@ -4404,8 +4396,8 @@ namespace gamemd {
 int sub_4072E0(unsigned int * a1, unsigned int * a2)
 {
   int result; // eax
-  _DWORD *v3; // esi
-  _DWORD *v4; // ebx
+  unsigned int *v3; // esi
+  unsigned int *v4; // ebx
   int v5; // ecx
   int v6; // esi
 
@@ -4413,10 +4405,10 @@ int sub_4072E0(unsigned int * a1, unsigned int * a2)
   v3 = a1; /*0x4072e8*/
   while ( 1 ) /*0x4072ea*/
   {
-    v3 = (_DWORD *)*v3; /*0x4072ea*/
+    v3 = (unsigned int *)*v3; /*0x4072ea*/
     if ( !v3 ) /*0x4072ee*/
       break; /*0x4072ee*/
-    v4 = (_DWORD *)v3[2]; /*0x4072f0*/
+    v4 = (unsigned int *)v3[2]; /*0x4072f0*/
     if ( v3 == v4 ) /*0x4072f5*/
       break; /*0x4072f5*/
     if ( a2[2] <= (int)v4 ) /*0x4072fd*/
@@ -4425,7 +4417,7 @@ int sub_4072E0(unsigned int * a1, unsigned int * a2)
       *a2 = v3; /*0x407305*/
       a2[1] = v5; /*0x407307*/
       v3[1] = a2; /*0x40730a*/
-      *(_DWORD *)a2[1] = a2; /*0x407313*/
+      *(unsigned int *)a2[1] = a2; /*0x407313*/
       return result; /*0x407315*/
     }
     ++result; /*0x4072ff*/
@@ -4434,7 +4426,7 @@ int sub_4072E0(unsigned int * a1, unsigned int * a2)
   *a2 = a1; /*0x407319*/
   a2[1] = v6; /*0x40731b*/
   a1[1] = a2; /*0x40731e*/
-  *(_DWORD *)a2[1] = a2; /*0x407327*/
+  *(unsigned int *)a2[1] = a2; /*0x407327*/
   return result; /*0x407310*/
 }
 } // namespace gamemd
@@ -4445,11 +4437,11 @@ int DListNode_InsertAfter(int a1, unsigned int * a2)
 {
   int result; // eax
 
-  result = *(_DWORD *)(a1 + 4); /*0x407420*/
+  result = *(unsigned int *)(a1 + 4); /*0x407420*/
   *a2 = a1; /*0x407423*/
   a2[1] = result; /*0x407425*/
-  *(_DWORD *)(a1 + 4) = a2; /*0x407428*/
-  *(_DWORD *)a2[1] = a2; /*0x40742e*/
+  *(unsigned int *)(a1 + 4) = a2; /*0x407428*/
+  *(unsigned int *)a2[1] = a2; /*0x40742e*/
   return result; /*0x407430*/
 }
 } // namespace gamemd
@@ -4464,7 +4456,7 @@ int LinkedList_InsertBefore(int * a1, int * a2)
   result = *a1; /*0x407443*/
   *a2 = *a1; /*0x407445*/
   *a1 = (int)a2; /*0x407447*/
-  *(_DWORD *)(*a2 + 4) = a2; /*0x40744b*/
+  *(unsigned int *)(*a2 + 4) = a2; /*0x40744b*/
   return result; /*0x40744e*/
 }
 } // namespace gamemd
@@ -4474,12 +4466,12 @@ namespace gamemd {
 unsigned int * Memory_AllocLinkedList(int a1, int a2)
 {
   int v2; // edi
-  _DWORD *result; // eax
-  _DWORD *v5; // ecx
+  unsigned int *result; // eax
+  unsigned int *v5; // ecx
   int v6; // esi
 
   v2 = a2 + 8; /*0x4074d2*/
-  result = RA2_OPNEW(a1 * (a2 + 8) + 8); /*0x4074e0*/
+  result = operator new(a1 * (a2 + 8) + 8); /*0x4074e0*/
   if ( result ) /*0x4074ea*/
   {
     v5 = result + 2; /*0x4074ef*/
@@ -4491,7 +4483,7 @@ unsigned int * Memory_AllocLinkedList(int a1, int a2)
       {
         --v6; /*0x4074fd*/
         *v5 = (char *)v5 + v2; /*0x4074fe*/
-        v5 = (_DWORD *)((char *)v5 + v2); /*0x407500*/
+        v5 = (unsigned int *)((char *)v5 + v2); /*0x407500*/
       }
       while ( v6 ); /*0x407502*/
     }
@@ -4505,7 +4497,7 @@ unsigned int * Memory_AllocLinkedList(int a1, int a2)
 namespace gamemd {
 int LinkedList_PushFront_Alt(unsigned int * a1, int a2)
 {
-  *(_DWORD *)(a2 - 8) = *a1; /*0x407535*/
+  *(unsigned int *)(a2 - 8) = *a1; /*0x407535*/
   *a1 = a2 - 8; /*0x407537*/
   return a2 - 8; /*0x407539*/
 }
@@ -4528,8 +4520,8 @@ int sub_407550()
   dword_87E774 = 0; /*0x407590*/
   AudioStream::Reset(dword_87E790); /*0x40759b*/
   CoordBounds::Constructor(dword_87E790, qword_87E780, IDA_SHIDWORD(qword_87E780)); /*0x4075b2*/
-  AudioStream::ResetChannel(dword_87E790, 4 * qword_87E780, (unsigned __int64)qword_87E780 >> 30); /*0x4075d3*/
-  AudioStream::ResetChannel2(dword_87E790, 4 * qword_87E780, (unsigned __int64)qword_87E780 >> 30); /*0x4075f5*/
+  AudioStream::ResetChannel(dword_87E790, 4 * qword_87E780, (uint64_t)qword_87E780 >> 30); /*0x4075d3*/
+  AudioStream::ResetChannel2(dword_87E790, 4 * qword_87E780, (uint64_t)qword_87E780 >> 30); /*0x4075f5*/
   Thread = CreateThread(0, 0x1000u, (LPTHREAD_START_ROUTINE)StartAddress, &dword_87E770, 0, &ThreadId); /*0x407610*/
   hObject = Thread; /*0x407618*/
   if ( !Thread ) /*0x40761d*/
@@ -4550,8 +4542,8 @@ int sub_407550()
 namespace gamemd {
 DWORD StartAddress(unsigned int * lpThreadParameter)
 {
-  _DWORD *v1; // edi
-  __int64 v2; // rax
+  unsigned int *v1; // edi
+  int64_t v2; // rax
   int i; // esi
   int v4; // eax
   int v5; // eax
@@ -4575,20 +4567,20 @@ DWORD StartAddress(unsigned int * lpThreadParameter)
       EnterCriticalSection(&CriticalSection); /*0x4076b9*/
       for ( i = AudioQueue::GetNext(dword_87E810); i; i = AudioQueue::GetNextAlt((int *)i) ) /*0x4076c9*/
       {
-        if ( (*(_BYTE *)(i + 12) & 4) != 0 ) /*0x4076cf*/
+        if ( (*(unsigned char *)(i + 12) & 4) != 0 ) /*0x4076cf*/
         {
           EnterCriticalSection(&CriticalSection); /*0x4076d6*/
-          v4 = *(_DWORD *)(i + 156); /*0x4076d8*/
+          v4 = *(unsigned int *)(i + 156); /*0x4076d8*/
           byte_B04BEC = 1; /*0x4076e2*/
           v5 = sub_408F80(*(int **)(i + 52), *(int **)(i + 124), v4, (char *)&lpThreadParameter); /*0x4076f1*/
           byte_B04BEC = 0; /*0x4076f6*/
-          v6 = *(_DWORD *)(i + 156) - (_DWORD)lpThreadParameter; /*0x407706*/
-          *(_DWORD *)(i + 156) = v6; /*0x40770a*/
+          v6 = *(unsigned int *)(i + 156) - (unsigned int)lpThreadParameter; /*0x407706*/
+          *(unsigned int *)(i + 156) = v6; /*0x40770a*/
           if ( v6 <= 0 || v5 == 2 || !v5 ) /*0x407719*/
           {
-            v7 = *(_DWORD *)(i + 12); /*0x40771b*/
+            v7 = *(unsigned int *)(i + 12); /*0x40771b*/
             IDA_LOBYTE(v7) = v7 & 0xFB; /*0x40771e*/
-            *(_DWORD *)(i + 12) = v7; /*0x407720*/
+            *(unsigned int *)(i + 12) = v7; /*0x407720*/
           }
           LeaveCriticalSection(&CriticalSection); /*0x407728*/
         }
@@ -4646,8 +4638,8 @@ int E4Recv_407F80::sub_407F80()
 {
   int result; // eax
 
-  result = *(this + 34) + 1; /*0x407f86*/
-  *(this + 34) = result; /*0x407f87*/
+  result = *(unsigned int *)&this->M136 + 1; /*0x407f86*/
+  *(unsigned int *)&this->M136 = result; /*0x407f87*/
   return result; /*0x407f8d*/
 }
 } // namespace gamemd
@@ -4659,7 +4651,7 @@ char * SetAudioFileName(int a1, const char * a2)
   char *result; // eax
 
   result = strncpy((char *)(a1 + 164), a2, 0x50u); /*0x40808d*/
-  *(_BYTE *)(a1 + 243) = 0; /*0x408095*/
+  *(unsigned char *)(a1 + 243) = 0; /*0x408095*/
   return result; /*0x40809c*/
 }
 } // namespace gamemd
@@ -4753,8 +4745,8 @@ int sub_408410()
   Next = AudioQueue::GetNext(dword_87E810); /*0x40841f*/
   if ( !Next ) /*0x408426*/
     return 1; /*0x40844c*/
-  while ( (*(_BYTE *)(Next + 12) & 1) == 0 /*0x408439*/
-       || *(_DWORD *)(*(_DWORD *)(Next + 20) + 20) == *(_DWORD *)(*(_DWORD *)(Next + 20) + 24) )
+  while ( (*(unsigned char *)(Next + 12) & 1) == 0 /*0x408439*/
+       || *(unsigned int *)(*(unsigned int *)(Next + 20) + 20) == *(unsigned int *)(*(unsigned int *)(Next + 20) + 24) )
   {
     Next = AudioQueue::GetNextAlt((int *)Next); /*0x40843d*/
     if ( !Next ) /*0x408444*/
@@ -4768,10 +4760,10 @@ int sub_408410()
 namespace gamemd {
 unsigned int * sub_408460(size_t Size)
 {
-  _DWORD *v2; // esi
+  unsigned int *v2; // esi
   void *v3; // eax
 
-  v2 = RA2_OPNEW(0x20u); /*0x40846c*/
+  v2 = operator new(0x20u); /*0x40846c*/
   memset(v2, 0, 0x20u); /*0x408477*/
   *v2 = 0; /*0x408481*/
   v2[1] = 0; /*0x408483*/
@@ -4779,7 +4771,7 @@ unsigned int * sub_408460(size_t Size)
   v2[6] = 0; /*0x408489*/
   DListNode::Init(v2 + 2); /*0x40848c*/
   v2[1] = Size; /*0x408491*/
-  v3 = RA2_OPNEW(Size); /*0x408495*/
+  v3 = operator new(Size); /*0x408495*/
   *v2 = v3; /*0x40849f*/
   if ( v3 ) /*0x4084a1*/
     return v2; /*0x4084b6*/
@@ -4797,7 +4789,7 @@ int sub_408500(int a1, unsigned int * a2)
 
   InsertAfterDListNode(a1 + 8, a2); /*0x408509*/
   result = a2[4]; /*0x40850e*/
-  *(_DWORD *)(a1 + 4) += result; /*0x408516*/
+  *(unsigned int *)(a1 + 4) += result; /*0x408516*/
   a2[5] = a1; /*0x408519*/
   return result; /*0x40851c*/
 }
@@ -4817,9 +4809,9 @@ unsigned long long sub_408560(int a1, int a2)
 {
   int v2; // esi
 
-  v2 = *(_DWORD *)(a1 + 20); /*0x408561*/
+  v2 = *(unsigned int *)(a1 + 20); /*0x408561*/
   if ( v2 ) /*0x408568*/
-    return 1000LL * a2 / (unsigned __int64)v2; /*0x408585*/
+    return 1000LL * a2 / (uint64_t)v2; /*0x408585*/
   else
     return 0; /*0x40858d*/
 }
@@ -4832,13 +4824,13 @@ int E4Recv_4085B0::sub_4085B0()
   int v1; // edx
   int result; // eax
 
-  v1 = *(this + 1); /*0x4085b3*/
-  result = *(this + 2) * *(this + 3) * *(this + 4); /*0x4085ba*/
-  *(this + 5) = result; /*0x4085c1*/
+  v1 = this->M4; /*0x4085b3*/
+  result = this->M8 * this->M12 * this->M16; /*0x4085ba*/
+  this->M20 = result; /*0x4085c1*/
   if ( v1 == 1 || v1 == 2 ) /*0x4085c9*/
   {
     result >>= 2; /*0x4085cb*/
-    *(this + 5) = result; /*0x4085ce*/
+    this->M20 = result; /*0x4085ce*/
   }
   return result; /*0x4085d1*/
 }
@@ -4859,11 +4851,11 @@ void sub_4085E0(unsigned int * a1, int a2, int a3)
 namespace gamemd {
 unsigned int * sub_4087F0()
 {
-  _DWORD *v0; // esi
+  unsigned int *v0; // esi
   int v1; // ecx
-  _DWORD *v2; // eax
+  unsigned int *v2; // eax
 
-  v0 = RA2_OPNEW(0xA4u); /*0x4087fc*/
+  v0 = operator new(0xA4u); /*0x4087fc*/
   memset(v0, 0, 0xA4u); /*0x408807*/
   DListNode::Init(v0 + 1); /*0x40880f*/
   v0[38] = 0; /*0x408816*/
@@ -4908,7 +4900,7 @@ namespace gamemd {
 int sub_408B40(unsigned int * a1, int a2, int a3, size_t Size)
 {
   int result; // eax
-  _DWORD *v7; // esi
+  unsigned int *v7; // esi
   void *v8; // eax
   int v9; // eax
   int v10; // eax
@@ -4926,10 +4918,10 @@ int sub_408B40(unsigned int * a1, int a2, int a3, size_t Size)
     Sizea = a3 + (1 << Size); /*0x408b75*/
     while ( 1 ) /*0x408b80*/
     {
-      v7 = RA2_OPNEW(0x3Cu); /*0x408b80*/
+      v7 = operator new(0x3Cu); /*0x408b80*/
       memset(v7, 0, 0x3Cu); /*0x408b8b*/
       DListNode::InitEmpty(v7); /*0x408b92*/
-      v8 = RA2_OPNEW(Sizea); /*0x408b9c*/
+      v8 = operator new(Sizea); /*0x408b9c*/
       v7[4] = v8; /*0x408ba4*/
       if ( !v8 ) /*0x408ba9*/
         break; /*0x408ba9*/
@@ -4964,7 +4956,7 @@ int sub_408B40(unsigned int * a1, int a2, int a3, size_t Size)
 namespace gamemd {
 int E4Recv_408D30::sub_408D30()
 {
-  return *(this + 35) - *(this + 36); /*0x408d3e*/
+  return this->M140 - *(unsigned int *)&this->M144; /*0x408d3e*/
 }
 } // namespace gamemd
 
@@ -4972,7 +4964,7 @@ int E4Recv_408D30::sub_408D30()
 namespace gamemd {
 int E4Recv_408D40::sub_408D40()
 {
-  return *(this + 19) - *(this + 20); /*0x408d48*/
+  return this->M76 - *(unsigned int *)&this->M80; /*0x408d48*/
 }
 } // namespace gamemd
 
@@ -4980,13 +4972,13 @@ int E4Recv_408D40::sub_408D40()
 namespace gamemd {
 unsigned int * sub_408D80(int a1, int a2)
 {
-  _DWORD *v4; // esi
+  unsigned int *v4; // esi
   void *v5; // eax
 
-  v4 = RA2_OPNEW(0x3Cu); /*0x408d8f*/
+  v4 = operator new(0x3Cu); /*0x408d8f*/
   memset(v4, 0, 0x3Cu); /*0x408d9a*/
   DListNode::InitEmpty(v4); /*0x408da1*/
-  v5 = RA2_OPNEW((1 << a2) + a1); /*0x408db3*/
+  v5 = operator new((1 << a2) + a1); /*0x408db3*/
   v4[4] = v5; /*0x408dbb*/
   if ( v5 ) /*0x408dc0*/
   {
@@ -5008,7 +5000,7 @@ unsigned int * sub_408D80(int a1, int a2)
 namespace gamemd {
 int sub_408EB0(int a1, int a2)
 {
-  *(_DWORD *)(a1 + 24) = a2; /*0x408eb0*/
+  *(unsigned int *)(a1 + 24) = a2; /*0x408eb0*/
   return 0; /*0x408eb5*/
 }
 } // namespace gamemd
@@ -5017,7 +5009,7 @@ int sub_408EB0(int a1, int a2)
 namespace gamemd {
 int E4Recv_408EC0::sub_408EC0()
 {
-  return *(this + 6); /*0x408ec3*/
+  return *(unsigned int *)&this->M24; /*0x408ec3*/
 }
 } // namespace gamemd
 
@@ -5078,7 +5070,7 @@ int BufferedAudioStreamRead(AudioStream * a1, AudioStream * a2, signed int a3)
 namespace gamemd {
 int E4Recv_4090F0::sub_4090F0()
 {
-  return *(this + 9); /*0x4090f3*/
+  return *(unsigned int *)&this->M36; /*0x4090f3*/
 }
 } // namespace gamemd
 
@@ -5098,7 +5090,7 @@ int sub_409360()
   LARGE_INTEGER Frequency; // [esp+0h] [ebp-8h] BYREF
 
   IDA_LODWORD(v0) = QueryPerformanceFrequency(&Frequency); /*0x409368*/
-  if ( (_DWORD)v0 ) /*0x409370*/
+  if ( (unsigned int)v0 ) /*0x409370*/
   {
     v0 = Frequency.QuadPart / 1000; /*0x409383*/
     qword_87E828 = Frequency.QuadPart / 1000; /*0x409388*/
@@ -5193,26 +5185,26 @@ int E4Recv_40A2D0::sub_40A2D0()
   int v2; // esi
   int v3; // eax
 
-  v2 = *(this + 86); /*0x40a2d5*/
+  v2 = *(unsigned int *)&this->M344; /*0x40a2d5*/
   if ( v2 ) /*0x40a2df*/
   {
-    if ( *(_DWORD *)(v2 + 124) ) /*0x40a2e1*/
+    if ( *(unsigned int *)(v2 + 124) ) /*0x40a2e1*/
     {
       free(*(void **)(v2 + 124)); /*0x40a2e9*/
-      *(_DWORD *)(v2 + 124) = 0; /*0x40a2f1*/
-      *(_DWORD *)(v2 + 136) = 0; /*0x40a2f4*/
+      *(unsigned int *)(v2 + 124) = 0; /*0x40a2f1*/
+      *(unsigned int *)(v2 + 136) = 0; /*0x40a2f4*/
     }
-    if ( *(_DWORD *)(v2 + 144) ) /*0x40a2fa*/
+    if ( *(unsigned int *)(v2 + 144) ) /*0x40a2fa*/
     {
       free(*(void **)(v2 + 144)); /*0x40a305*/
-      *(_DWORD *)(v2 + 144) = 0; /*0x40a30d*/
-      *(_DWORD *)(v2 + 156) = 0; /*0x40a313*/
+      *(unsigned int *)(v2 + 144) = 0; /*0x40a30d*/
+      *(unsigned int *)(v2 + 156) = 0; /*0x40a313*/
     }
-    v3 = *(_DWORD *)(v2 + 100); /*0x40a319*/
+    v3 = *(unsigned int *)(v2 + 100); /*0x40a319*/
     if ( v3 ) /*0x40a31e*/
     {
-      (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v3 + 8))(*(_DWORD *)(v2 + 100)); /*0x40a323*/
-      *(_DWORD *)(v2 + 100) = 0; /*0x40a326*/
+      (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v3 + 8))(*(unsigned int *)(v2 + 100)); /*0x40a323*/
+      *(unsigned int *)(v2 + 100) = 0; /*0x40a326*/
     }
     RA2_OPDEL((void *)v2); /*0x40a32a*/
     *(&this->NeedsSaveOrLink6) = 0; /*0x40a332*/
@@ -5278,13 +5270,13 @@ short Coord_MoveByDirection(unsigned char a1, int * a2)
   if ( v7 ) /*0x40ad41*/
   {
     a2[1] = 0; /*0x40ad43*/
-    return *(_WORD *)a2; /*0x40ad4a*/
+    return *(unsigned short *)a2; /*0x40ad4a*/
   }
   else
   {
     if ( v8 > 88 ) /*0x40ad51*/
       a2[1] = 88; /*0x40ad53*/
-    return *(_WORD *)a2; /*0x40ad5a*/
+    return *(unsigned short *)a2; /*0x40ad5a*/
   }
 }
 } // namespace gamemd
@@ -5362,7 +5354,7 @@ namespace gamemd {
 long long sub_40AE60()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_87E8B0 - dbl_87F558); /*0x40ae72*/
   result = Math::RoundToInt(v0 * dbl_87F550 * 0.5); /*0x40ae86*/
@@ -5391,7 +5383,7 @@ void sub_40AED0()
 namespace gamemd {
 long long sub_40AF00()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_87F5A8) + 0.5); /*0x40af1b*/
   dword_87F59C = result; /*0x40af20*/
@@ -5556,7 +5548,7 @@ namespace gamemd {
 long long sub_40B420()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_87F5B0 - dbl_87F5C8); /*0x40b432*/
   result = Math::RoundToInt(v0 * dbl_87F5C0 * 0.5); /*0x40b446*/
@@ -5585,7 +5577,7 @@ void sub_40B490()
 namespace gamemd {
 long long sub_40B4C0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_87F650) + 0.5); /*0x40b4db*/
   dword_87F644 = result; /*0x40b4e0*/
@@ -5797,7 +5789,7 @@ namespace gamemd {
 long long sub_40C660()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_87F6D8 - dbl_87F700); /*0x40c672*/
   result = Math::RoundToInt(v0 * dbl_87F6F8 * 0.5); /*0x40c686*/
@@ -5826,7 +5818,7 @@ void sub_40C6D0()
 namespace gamemd {
 long long sub_40C700()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_87F768) + 0.5); /*0x40c71b*/
   dword_87F744 = result; /*0x40c720*/
@@ -6006,7 +5998,7 @@ namespace gamemd {
 long long sub_40D070()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_87F790 - dbl_87F7C0); /*0x40d082*/
   result = Math::RoundToInt(v0 * dbl_87F7B0 * 0.5); /*0x40d096*/
@@ -6035,7 +6027,7 @@ void sub_40D0E0()
 namespace gamemd {
 long long sub_40D110()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_884D80) + 0.5); /*0x40d12b*/
   dword_884D74 = result; /*0x40d130*/
@@ -6242,7 +6234,7 @@ void sub_40D500()
 namespace gamemd {
 unsigned char * sub_40D8A0()
 {
-  _BYTE *result; // eax
+  unsigned char *result; // eax
   int v1; // ecx
 
   result = &unk_886082; /*0x40d8a0*/
@@ -6308,7 +6300,7 @@ char * sub_40D8E0()
 namespace gamemd {
 char * sub_40D900(int a1)
 {
-  _BYTE v2[4]; // [esp+0h] [ebp-4h] BYREF
+  unsigned char v2[4]; // [esp+0h] [ebp-4h] BYREF
 
   v2[3] = IDA_HIBYTE(a1); /*0x40d900*/
   v2[0] = 0; /*0x40d908*/
@@ -6322,7 +6314,7 @@ char * sub_40D900(int a1)
 namespace gamemd {
 char * sub_40D920(int a1)
 {
-  _BYTE v2[4]; // [esp+0h] [ebp-4h] BYREF
+  unsigned char v2[4]; // [esp+0h] [ebp-4h] BYREF
 
   v2[3] = IDA_HIBYTE(a1); /*0x40d920*/
   v2[0] = -1; /*0x40d928*/
@@ -6336,7 +6328,7 @@ char * sub_40D920(int a1)
 namespace gamemd {
 unsigned char * sub_40D940()
 {
-  _BYTE *result; // eax
+  unsigned char *result; // eax
   int v1; // ecx
 
   result = &unk_885A82; /*0x40d940*/
@@ -6358,7 +6350,7 @@ unsigned char * sub_40D940()
 namespace gamemd {
 unsigned char * sub_40D960()
 {
-  _BYTE *result; // eax
+  unsigned char *result; // eax
   int v1; // ecx
 
   result = &unk_885482; /*0x40d960*/
@@ -6380,7 +6372,7 @@ unsigned char * sub_40D960()
 namespace gamemd {
 unsigned char * sub_40D980()
 {
-  _BYTE *result; // eax
+  unsigned char *result; // eax
   int v1; // ecx
 
   result = &unk_886682; /*0x40d980*/
@@ -6545,7 +6537,7 @@ namespace gamemd {
 long long sub_40DB70()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_886FC0 - dbl_886FE8); /*0x40db82*/
   result = Math::RoundToInt(v0 * dbl_886FE0 * 0.5); /*0x40db96*/
@@ -6574,7 +6566,7 @@ void sub_40DBE0()
 namespace gamemd {
 long long sub_40DC10()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_887038) + 0.5); /*0x40dc2b*/
   dword_88702C = result; /*0x40dc30*/
@@ -6682,7 +6674,7 @@ namespace gamemd {
 long long sub_40DE90()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_887040 - dbl_8870B0); /*0x40dea2*/
   result = Math::RoundToInt(v0 * dbl_887050 * 0.5); /*0x40deb6*/
@@ -6711,7 +6703,7 @@ void sub_40DF00()
 namespace gamemd {
 long long sub_40DF30()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_887270) + 0.5); /*0x40df4b*/
   dword_887260 = result; /*0x40df50*/
@@ -6922,7 +6914,6 @@ GenericNode * GenericNode::sub_40E390(char a2)
   int v3; // ecx
   int v4; // eax
 
-  *this = (void*)&GenericNode_vftable; /*0x40e397*/
   if ( this ) /*0x40e39d*/
   {
     v3 = this->Previous; /*0x40e39f*/
@@ -6932,7 +6923,7 @@ GenericNode * GenericNode::sub_40E390(char a2)
       if ( v4 ) /*0x40e3ab*/
       {
         v4->Previous = v3; /*0x40e3ad*/
-        *(_DWORD *)(this->Previous + 8) = this->q008; /*0x40e3b6*/
+        *(unsigned int *)(this->Previous + 8) = this->q008; /*0x40e3b6*/
         this->q008 = 0; /*0x40e3b9*/
         this->Previous = 0; /*0x40e3bc*/
       }
@@ -7009,7 +7000,7 @@ namespace gamemd {
 long long sub_40E650()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_887278 - dbl_887290); /*0x40e662*/
   result = Math::RoundToInt(v0 * dbl_887288 * 0.5); /*0x40e676*/
@@ -7038,7 +7029,7 @@ void sub_40E6C0()
 namespace gamemd {
 long long sub_40E6F0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_8872F8) + 0.5); /*0x40e70b*/
   dword_8872EC = result; /*0x40e710*/
@@ -7231,7 +7222,7 @@ namespace gamemd {
 long long sub_40ED00()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_887370 - dbl_8873B0); /*0x40ed12*/
   result = Math::RoundToInt(v0 * dbl_8873A8 * 0.5); /*0x40ed26*/
@@ -7260,7 +7251,7 @@ void sub_40ED70()
 namespace gamemd {
 long long sub_40EDA0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_887400) + 0.5); /*0x40edbb*/
   dword_8873F4 = result; /*0x40edc0*/
@@ -7443,7 +7434,7 @@ namespace gamemd {
 long long sub_40F370()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_887480 - dbl_887498); /*0x40f382*/
   result = Math::RoundToInt(v0 * dbl_887490 * 0.5); /*0x40f396*/
@@ -7472,7 +7463,7 @@ void sub_40F3E0()
 namespace gamemd {
 long long sub_40F410()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_887500) + 0.5); /*0x40f42b*/
   dword_8874F4 = result; /*0x40f430*/
@@ -7520,7 +7511,6 @@ int sub_40F490()
   dword_8874C8 = 0; /*0x40f49c*/
   byte_8874CC = 1; /*0x40f4a1*/
   byte_8874CD = 0; /*0x40f4a8*/
-  WarheadTypeClass_Array = (WarheadTypeClass *)(void*)&DynamicVectorClass_WarheadTypeClass___vftable; /*0x40f4ad*/
   dword_8874D4 = 10; /*0x40f4b7*/
   g_WarheadTypePool = 0; /*0x40f4c1*/
   return atexit(sub_40F4D0); /*0x40f4cc*/
@@ -7531,7 +7521,6 @@ int sub_40F490()
 namespace gamemd {
 void sub_40F4D0()
 {
-  WarheadTypeClass_Array = (WarheadTypeClass *)(void*)&VectorClass_WarheadTypeClass___vftable; /*0x40f4d8*/
   if ( dword_8874C4 && byte_8874CD ) /*0x40f4ec*/
   {
     RA2_OPDEL(dword_8874C4); /*0x40f4ef*/
@@ -7598,7 +7587,7 @@ namespace gamemd {
 long long sub_40FA10()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_887508 - dbl_887520); /*0x40fa22*/
   result = Math::RoundToInt(v0 * dbl_887518 * 0.5); /*0x40fa36*/
@@ -7627,7 +7616,7 @@ void sub_40FA80()
 namespace gamemd {
 long long sub_40FAB0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_887590) + 0.5); /*0x40facb*/
   dword_887580 = result; /*0x40fad0*/
@@ -7675,7 +7664,6 @@ int sub_40FB30()
   dword_887570 = 0; /*0x40fb3c*/
   byte_887574 = 1; /*0x40fb41*/
   byte_887575 = 0; /*0x40fb48*/
-  WeaponTypeClass_Array = (WeaponTypeClass *)(void*)&DynamicVectorClass_WeaponTypeClass___vftable; /*0x40fb4d*/
   dword_88757C = 10; /*0x40fb57*/
   g_WeaponTypePool = 0; /*0x40fb61*/
   return atexit(sub_40FB70); /*0x40fb6c*/
@@ -7686,7 +7674,6 @@ int sub_40FB30()
 namespace gamemd {
 void sub_40FB70()
 {
-  WeaponTypeClass_Array = (WeaponTypeClass *)(void*)&VectorClass_WeaponTypeClass___vftable; /*0x40fb78*/
   if ( g_WeaponTypeConfig && byte_887575 ) /*0x40fb8c*/
   {
     RA2_OPDEL(g_WeaponTypeConfig); /*0x40fb8f*/

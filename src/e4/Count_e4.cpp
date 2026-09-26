@@ -21,12 +21,12 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   if ( v1 < 0 ) /*0x408e79*/
     this->q01C = 0; /*0x408e7b*/
   result = *this; /*0x408e82*/
-  v3 = *(_DWORD *)(*this + 152) - 1; /*0x408e8a*/
-  *(_DWORD *)(*this + 152) = v3; /*0x408e8d*/
+  v3 = *(unsigned int *)(*&this->q098) - 1; /*0x408e8a*/
+  *(unsigned int *)(*&this->q098) = v3; /*0x408e8d*/
   if ( v3 < 0 ) /*0x408e93*/
   {
     result = *this; /*0x408e95*/
-    *(_DWORD *)(*this + 152) = 0; /*0x408e97*/
+    *(unsigned int *)(*&this->q098) = 0; /*0x408e97*/
   }
   return result; /*0x408ea1*/
 }
@@ -60,8 +60,8 @@ int Count::SetupAllCountriesLobby()
       v5 = *v2; /*0x46f718*/
       v6 = -2; /*0x46f71c*/
       if ( g_GameStateFlags && (g_GameMode_Current == 3 || g_GameMode_Current == 4) ) /*0x46f730*/
-        v6 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 40))(g_GameStateFlags); /*0x46f737*/
-      if ( (unsigned __int8)Player::IsObserver(v5) ) /*0x46f73b*/
+        v6 = (*(int (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 40))(g_GameStateFlags); /*0x46f737*/
+      if ( (uint8_t)Player::IsObserver(v5) ) /*0x46f73b*/
       {
         PlayerSide = (int)*(v2 - 2557); /*0x46f744*/
       }
@@ -86,12 +86,12 @@ int Count::SetupAllCountriesLobby()
         PlayerSide = SessionClass::GetPlayerSide((int)v5); /*0x46f786*/
       }
       if ( g_GameStateFlags /*0x46f795*/
-        && !(*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)g_GameStateFlags + 28))(
+        && !(*(uint8_t (__thiscall **)(int, int))(*(unsigned int *)g_GameStateFlags + 28))(
               g_GameStateFlags,
               PlayerSide) )
       {
         PlayerSide = v6; /*0x46f79e*/
-        if ( (unsigned __int8)Player::IsObserver(v5) ) /*0x46f7a0*/
+        if ( (uint8_t)Player::IsObserver(v5) ) /*0x46f7a0*/
         {
           *(v8 - 2557) = v6; /*0x46f7ad*/
         }
@@ -120,7 +120,7 @@ int Count::GetCountQueue()
 
   v1 = *(&this->q0044); /*0x5f1ea0*/
   if ( v1 ) /*0x5f1ea5*/
-    return *(_DWORD *)(*(_DWORD *)(v1 + 4) + 40); /*0x5f1eaa*/
+    return *(unsigned int *)(*(unsigned int *)(v1 + 4) + 40); /*0x5f1eaa*/
   else
     return 0; /*0x5f1eae*/
 }

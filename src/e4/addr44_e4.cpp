@@ -17,14 +17,14 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * v10, int a3)
 {
   int v3; // ebx
   int v4; // edi
-  _DWORD *v5; // eax
+  unsigned int *v5; // eax
   int v6; // esi
   int v7; // ecx
-  _BYTE v9[12]; // [esp+14h] [ebp-Ch] BYREF
+  unsigned char v9[12]; // [esp+14h] [ebp-Ch] BYREF
 
   v3 = 6; /*0x44f6ed*/
   v4 = 5; /*0x44f6f2*/
-  v5 = (_DWORD *)(*(int (__thiscall **)(void *, _BYTE *))(this->u32_48)(this, v9); /*0x44f6f7*/
+  v5 = (unsigned int *)(*(int (__thiscall **)(void *, unsigned char *))(this->u32_48)(this, v9); /*0x44f6f7*/
   v6 = *v5 / 256; /*0x44f71b*/
   v7 = v5[1] / 256; /*0x44f71e*/
   if ( a3 ) /*0x44f72e*/
@@ -36,9 +36,9 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * v10, int a3)
   {
     v3 = 0; /*0x44f739*/
   }
-  if ( (__int16)v6 - dword_87F90C > g_AircraftTrackerPool / 2 ) /*0x44f751*/
+  if ( (int16_t)v6 - dword_87F90C > g_AircraftTrackerPool / 2 ) /*0x44f751*/
     v3 = -v3; /*0x44f753*/
-  if ( (__int16)v7 - dword_87F910 > g_AircraftTrackerState / 2 ) /*0x44f76b*/
+  if ( (int16_t)v7 - dword_87F910 > g_AircraftTrackerState / 2 ) /*0x44f76b*/
     v4 = -v4; /*0x44f76d*/
   IDA_LOWORD(v10) = v6 + v3; /*0x44f77f*/
   IDA_HIWORD(v10) = v7 + v4; /*0x44f784*/
@@ -58,8 +58,8 @@ int INIClass::sub_44FE60()
   result = g_BuildingProductionState; /*0x44fe71*/
   for ( i = 0; i < g_BuildingProductionState; ++i ) /*0x44fe7a*/
   {
-    v4 = *((_DWORD *)g_BuildingClass_InstanceCount + i); /*0x44fe82*/
-    if ( !*(_BYTE *)(v4 + 129) && !*(_BYTE *)(*(_DWORD *)(v4 + 1312) + 5823) ) /*0x44fe95*/
+    v4 = *((unsigned int *)g_BuildingClass_InstanceCount + i); /*0x44fe82*/
+    if ( !*(unsigned char *)(v4 + 129) && !*(unsigned char *)(*(unsigned int *)(v4 + 1312) + 5823) ) /*0x44fe95*/
       BuildingClass::ReadConstructionData(v4, this); /*0x44fea0*/
     result = g_BuildingProductionState; /*0x44fea5*/
   }

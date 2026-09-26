@@ -29,10 +29,6 @@ EMPulseClass * EMPulseClass::CopyTo(AbstractClass * a2, char a3)
   int v3; // eax
   unsigned int v5;
 
-  *(void **)a3 = (void*)&EMPulseClass_vftable; /*0x4c5ac4*/
-  *(a3 + 1) = (void*)&EMPulseClass_vftable; /*0x4c5aca*/
-  *(a3 + 2) = (void*)&EMPulseClass_vftable; /*0x4c5ad1*/
-  *(a3 + 3) = (void*)&EMPulseClass_vftable; /*0x4c5ad8*/
   if ( g_WTFMode ) /*0x4c5ae6*/
     EMPulseClass::IterateCellsInRadius((int)a3); /*0x4c5ae8*/
   AbstractClass::AnnounceExpiredPointer(a3, 1); /*0x4c5af1*/
@@ -43,7 +39,7 @@ EMPulseClass * EMPulseClass::CopyTo(AbstractClass * a2, char a3)
     do /*0x4c5b3d*/
     {
       ++v3; /*0x4c5b2d*/
-      *((_DWORD *)dword_8A3874 + v3 - 1) = *((_DWORD *)dword_8A3874 + v3); /*0x4c5b31*/
+      *((unsigned int *)dword_8A3874 + v3 - 1) = *((unsigned int *)dword_8A3874 + v3); /*0x4c5b31*/
     }
     while ( v3 < dword_8A3880 ); /*0x4c5b3d*/
   }

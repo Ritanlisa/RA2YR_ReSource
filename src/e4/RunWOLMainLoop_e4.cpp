@@ -26,8 +26,8 @@ Coord * * sub_77E110()
 
   if ( ppv ) /*0x77e117*/
   {
-    (*(void (__stdcall **)(LPVOID, int))(*(_DWORD *)ppv + 124))(ppv, dword_B779BC); /*0x77e123*/
-    (*(void (__stdcall **)(LPVOID, int, int))(*(_DWORD *)ppv + 104))(ppv, dword_B779F0, dword_B76234); /*0x77e13c*/
+    (*(void (__stdcall **)(LPVOID, int))(*(unsigned int *)ppv + 124))(ppv, dword_B779BC); /*0x77e123*/
+    (*(void (__stdcall **)(LPVOID, int, int))(*(unsigned int *)ppv + 104))(ppv, dword_B779F0, dword_B76234); /*0x77e13c*/
   }
   Dialog::RefreshDialogsGame(0); /*0x77e141*/
   if ( dword_B7690C ) /*0x77e153*/
@@ -76,7 +76,7 @@ void sub_785EA0()
     v0 = g_WOL_MsgPool; /*0x785ec6*/
     for ( i = 0; i < g_WOL_MsgPool; v0 = g_WOL_MsgPool ) /*0x785ecf*/
     {
-      v2 = *((_DWORD *)g_WOL_MessageQueue + i); /*0x785ed6*/
+      v2 = *((unsigned int *)g_WOL_MessageQueue + i); /*0x785ed6*/
       while ( v2 ) /*0x785edb*/
       {
         v3 = (void **)v2; /*0x785edd*/
@@ -84,7 +84,7 @@ void sub_785EA0()
         DeleteAndZero(v3); /*0x785ee8*/
         RA2_OPDEL(v3); /*0x785eee*/
       }
-      *((_DWORD *)g_WOL_MessageQueue + i++) = 0; /*0x785f01*/
+      *((unsigned int *)g_WOL_MessageQueue + i++) = 0; /*0x785f01*/
     }
     g_WOL_MessageConfig = 0; /*0x785f18*/
     if ( v0 > dword_B766B0 ) /*0x785f24*/
@@ -106,7 +106,7 @@ void sub_785EA0()
       ResetEvent(*v5++); /*0x785f63*/
     while ( (int)v5 < (int)g_WOL_RequestObject ); /*0x785f6e*/
     Game::ProcessIdle(); /*0x785f70*/
-    if ( !(*(int (__stdcall **)(LPVOID))(*(_DWORD *)ppv + 52))(ppv) ) /*0x785f7d*/
+    if ( !(*(int (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 52))(ppv) ) /*0x785f7d*/
     {
       StringCSF = GetStringCSF(aTxtWolLoggingO, 0, g_Str_File_wonline_cpp, 9527); /*0x785f9a*/
       WideString::Assign((wchar_t **)&v12, StringCSF); /*0x785fa4*/
@@ -158,8 +158,8 @@ Coord * * RunWOLMainLoop_Read()
   int v9; // [esp+28h] [ebp-2Ch]
   int v10; // [esp+34h] [ebp-20h] BYREF
   char v11; // [esp+38h] [ebp-1Ch]
-  _DWORD v12[3]; // [esp+3Ch] [ebp-18h] BYREF
-  _DWORD v13[3]; // [esp+48h] [ebp-Ch] BYREF
+  unsigned int v12[3]; // [esp+3Ch] [ebp-18h] BYREF
+  unsigned int v13[3]; // [esp+48h] [ebp-Ch] BYREF
 
   v10 = 0; /*0x798de9*/
   v11 = 0; /*0x798df1*/
@@ -167,10 +167,10 @@ Coord * * RunWOLMainLoop_Read()
   Screen::Capture(1, 0, a1, a2); /*0x798dff*/
   if ( g_UIPointerTable && strlen(g_WOL_ConnectFlag) && String::Length((const char **)&g_WebBrowser) ) /*0x798e27*/
   {
-    v2 = *(_DWORD *)g_UIPointerTable; /*0x798e3f*/
+    v2 = *(unsigned int *)g_UIPointerTable; /*0x798e3f*/
     v8 = g_NetworkRematchState & 0xFFFF00; /*0x798e49*/
     v3 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x798e4f*/
-    (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, _DWORD, _DWORD))(v2 + 20))( /*0x798e67*/
+    (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(v2 + 20))( /*0x798e67*/
       g_UIPointerTable,
       g_WOL_ConnectFlag,
       g_WOL_GameConfig,
@@ -179,7 +179,7 @@ Coord * * RunWOLMainLoop_Read()
       -1,
       0,
       0);
-    v4 = *(_DWORD *)g_UIPointerTable; /*0x798e7c*/
+    v4 = *(unsigned int *)g_UIPointerTable; /*0x798e7c*/
     v9 = g_NetworkRematchState & 0xFFFF00; /*0x798e7e*/
     v5 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x798e84*/
     (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(v4 + 56))( /*0x798e9c*/
@@ -296,7 +296,7 @@ int sub_799D30()
   int v9; // [esp+18h] [ebp-28h]
   int v10; // [esp+24h] [ebp-1Ch]
   void *v11; // [esp+30h] [ebp-10h] BYREF
-  _DWORD v12[3]; // [esp+34h] [ebp-Ch] BYREF
+  unsigned int v12[3]; // [esp+34h] [ebp-Ch] BYREF
 
   result = LoginFlowWOL_Reset(); /*0x799d33*/
   if ( result == 1 ) /*0x799d3b*/
@@ -320,10 +320,10 @@ int sub_799D30()
     {
       if ( g_UIPointerTable && strlen(g_WOL_ConnectFlag) && String::Length((const char **)&g_WebBrowser) ) /*0x799dd2*/
       {
-        v4 = *(_DWORD *)g_UIPointerTable; /*0x799dea*/
+        v4 = *(unsigned int *)g_UIPointerTable; /*0x799dea*/
         v9 = g_NetworkRematchState & 0xFFFF00; /*0x799df4*/
         v5 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x799dfa*/
-        (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, _DWORD, _DWORD))(v4 + 20))( /*0x799e12*/
+        (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(v4 + 20))( /*0x799e12*/
           g_UIPointerTable,
           g_WOL_ConnectFlag,
           g_WOL_GameConfig,
@@ -332,7 +332,7 @@ int sub_799D30()
           -1,
           0,
           0);
-        v6 = *(_DWORD *)g_UIPointerTable; /*0x799e27*/
+        v6 = *(unsigned int *)g_UIPointerTable; /*0x799e27*/
         v10 = g_NetworkRematchState & 0xFFFF00; /*0x799e29*/
         v7 = String::GetOrEmpty((char **)&g_WebBrowser); /*0x799e2f*/
         (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(v6 + 56))( /*0x799e47*/
@@ -361,7 +361,7 @@ int sub_799D30()
 namespace gamemd {
 void sub_7A2970()
 {
-  _DWORD v0[3]; // [esp+0h] [ebp-Ch] BYREF
+  unsigned int v0[3]; // [esp+0h] [ebp-Ch] BYREF
 
   g_NetworkLobby_Init = 0; /*0x7a297a*/
   if ( !byte_B77DC2 && ReadWOLLobbyHouseOption() ) /*0x7a2983*/

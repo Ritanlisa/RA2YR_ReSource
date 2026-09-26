@@ -11,7 +11,6 @@
 namespace gamemd {
 unsigned int * ScreenCaptureCommandClass::Constructor()
 {
-  *(void **)this = (void*)&ScreenCaptureCommandClass_vftable; /*0x537b42*/
   return this; /*0x537b48*/
 }
 } // namespace gamemd

@@ -63,7 +63,7 @@ char sub_5E9580()
         && v2 != g_Lobby_MaxPlayers
         && (wchar_t *)v2 != g_Lobby_PlayerReady
         && v0 == g_MPCooperativeState
-        && *(_DWORD *)(v2 + 107) == -1 )
+        && *(unsigned int *)(v2 + 107) == -1 )
       {
         break; /*0x5e95c2*/
       }

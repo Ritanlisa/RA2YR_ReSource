@@ -20,12 +20,11 @@ int LinkClass::Destroy()
 namespace gamemd {
 int LinkClass::Destruct()
 {
-  _DWORD *Prev; // edi
+  unsigned int *Prev; // edi
   int result; // eax
   LinkClass * v4;
   LinkClass * v5;
 
-  *(void **)this = (void*)&LinkClass_vftable; /*0x5565a5*/
   Prev = LinkedList::FindPrev(this); /*0x5565b1*/
   result = this->FindNext(); /*0x5565b7*/
   v4 = this->m_Prev; /*0x5565ba*/
@@ -36,8 +35,8 @@ int LinkClass::Destruct()
     v5->m_Prev = this->m_Prev; /*0x5565d3*/
   this->m_Prev = 0; /*0x5565d8*/
   this->m_Next = 0; /*0x5565db*/
-  if ( Prev == this && (_DWORD *)result != this ) /*0x5565e2*/
-    return (*(int (__thiscall **)(int))(*(_DWORD *)result + 24))(result); /*0x5565e8*/
+  if ( Prev == this && (unsigned int *)result != this ) /*0x5565e2*/
+    return (*(int (__thiscall **)(int))(*(unsigned int *)result + 24))(result); /*0x5565e8*/
   return result; /*0x5565eb*/
 }
 } // namespace gamemd

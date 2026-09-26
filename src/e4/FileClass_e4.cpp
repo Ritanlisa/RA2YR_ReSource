@@ -363,13 +363,13 @@ char FileClass::Stub(int a1)
 namespace gamemd {
 int FileClass::GetState()
 {
-  return *(this + 1); /*0x76f023*/
+  return this->q004; /*0x76f023*/
 }
 } // namespace gamemd
 // 0x76F070
 namespace gamemd {
 int FileClass::SetState()
 {
-  return *(this + 1); /*0x76f073*/
+  return this->q004; /*0x76f073*/
 }
 } // namespace gamemd

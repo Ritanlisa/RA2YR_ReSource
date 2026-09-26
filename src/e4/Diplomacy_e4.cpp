@@ -43,7 +43,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   int v31; // [esp+14h] [ebp-10h]
   int v32; // [esp+18h] [ebp-Ch]
   int v33; // [esp+1Ch] [ebp-8h]
-  unsigned __int8 IsAlliedWith; // [esp+20h] [ebp-4h]
+  uint8_t IsAlliedWith; // [esp+20h] [ebp-4h]
   void *hDlga; // [esp+28h] [ebp+4h]
   HWND hDlgb; // [esp+28h] [ebp+4h]
   HWND hDlgc; // [esp+28h] [ebp+4h]
@@ -82,14 +82,14 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
         hWnd = GetDlgItem(hDlg, dword_839260[v38]); /*0x657e84*/
         v10 = v32; /*0x657e8b*/
         v31 = v32; /*0x657e8d*/
-        if ( v32 == *((_DWORD *)HouseClass_Player + 12) ) /*0x657e91*/
+        if ( v32 == *((unsigned int *)HouseClass_Player + 12) ) /*0x657e91*/
         {
           v31 = 0; /*0x657e93*/
           v10 = 0; /*0x657e9b*/
         }
         if ( v10 < v33 /*0x657ec1*/
-          && (v11 = *(_DWORD *)&HouseClass_Array->gap0[4 * v10], (hDlga = (void *)v11) != 0)
-          && *(_BYTE *)(*(_DWORD *)(v11 + 52) + 421) )
+          && (v11 = *(unsigned int *)&HouseClass_Array->gap0[4 * v10], (hDlga = (void *)v11) != 0)
+          && *(unsigned char *)(*(unsigned int *)(v11 + 52) + 421) )
         {
           if ( !IDA_BYTE1(g_RulesClass_Instance[1].FlamingInfantry) /*0x657ef9*/
             || (void *)HouseClass_Observer == HouseClass_Player
@@ -105,10 +105,10 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
             HouseClass::IsAlliedWith(hDlga, HouseClass_Player); /*0x657f3c*/
             globalHelper_003DD0(v9); /*0x657f45*/
             v40 = 1; /*0x657f4f*/
-            if ( MuteSWLaunches || !(unsigned __int8)House::IsCurrentPlayer(hDlga) ) /*0x657f5c*/
+            if ( MuteSWLaunches || !(uint8_t)House::IsCurrentPlayer(hDlga) ) /*0x657f5c*/
               EnableWindow(v9, 0); /*0x657f68*/
           }
-          if ( (unsigned __int8)House::IsCurrentPlayer(hDlga) ) /*0x657f79*/
+          if ( (uint8_t)House::IsCurrentPlayer(hDlga) ) /*0x657f79*/
           {
             if ( MuteSWLaunches ) /*0x657f97*/
             {
@@ -117,7 +117,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
             }
             else
             {
-              SendMessageA(hWnd, 0xF1u, *((unsigned __int8 *)&dword_A8D108 + v31), 0); /*0x657fb0*/
+              SendMessageA(hWnd, 0xF1u, *((uint8_t *)&dword_A8D108 + v31), 0); /*0x657fb0*/
             }
             v39 = 1; /*0x657fb6*/
           }
@@ -166,7 +166,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
           ShowWindow(v17, 5); /*0x6580d4*/
           if ( g_GameMode_Current[0] == 3 ) /*0x6580de*/
           {
-            SendMessageA(v17, 0xF1u, (unsigned __int8)dword_A8D110, 0); /*0x6580ef*/
+            SendMessageA(v17, 0xF1u, (uint8_t)dword_A8D110, 0); /*0x6580ef*/
           }
           else if ( g_GameMode_Current[0] == 4 ) /*0x6580f4*/
           {
@@ -198,7 +198,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
     if ( !IDA_HIWORD(a3) ) /*0x6581b4*/
     {
       KillTimer(hDlg, 0); /*0x6581c0*/
-      *(_DWORD *)GetWindowLongA(hDlg, 8) = 1059; /*0x6581d1*/
+      *(unsigned int *)GetWindowLongA(hDlg, 8) = 1059; /*0x6581d1*/
       return 0; /*0x6581de*/
     }
     return 0; /*0x6581b7*/
@@ -244,9 +244,9 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
           break; /*0x6582b2*/
         }
       }
-      if ( v28 == *((_DWORD *)HouseClass_Player + 12) ) /*0x6582bd*/
+      if ( v28 == *((unsigned int *)HouseClass_Player + 12) ) /*0x6582bd*/
         v28 = 0; /*0x6582bf*/
-      *((_BYTE *)&dword_A8D108 + v28) = IDA_HIWORD(a3) == 1; /*0x6582c3*/
+      *((unsigned char *)&dword_A8D108 + v28) = IDA_HIWORD(a3) == 1; /*0x6582c3*/
       return 0; /*0x6582d0*/
     }
   }
@@ -266,7 +266,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   }
   v26 = v24; /*0x65824e*/
   LABEL_60:
-  if ( v26 == *((_DWORD *)HouseClass_Player + 12) ) /*0x658241*/
+  if ( v26 == *((unsigned int *)HouseClass_Player + 12) ) /*0x658241*/
     v26 = 0; /*0x658243*/
   if ( IDA_HIWORD(a3) ) /*0x65820e*/
     SendMessageA(a4, 0xF1u, 0, 0); /*0x658261*/

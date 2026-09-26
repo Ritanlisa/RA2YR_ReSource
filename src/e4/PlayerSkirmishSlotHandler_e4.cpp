@@ -15,8 +15,8 @@ void sub_5DAF30()
 {
   int v0; // edi
   int i; // esi
-  _DWORD v2[113]; // [esp+8h] [ebp-1C8h] BYREF
-  __int16 v3; // [esp+1CCh] [ebp-4h]
+  unsigned int v2[113]; // [esp+8h] [ebp-1C8h] BYREF
+  int16_t v3; // [esp+1CCh] [ebp-4h]
   char v4; // [esp+1CEh] [ebp-2h]
 
   memset(v2, 0, sizeof(v2)); /*0x5daf47*/
@@ -28,7 +28,7 @@ void sub_5DAF30()
   v0 = Game_PlayerCount; /*0x5daf7f*/
   for ( i = 1; i < v0; ++i ) /*0x5daf8c*/
   {
-    Network::SendMessage((int)g_NetworkManager, (int)v2, 455, 1, *(_DWORD *)(Game_PlayerInfoArray + 4 * i) + 40, 0, 0); /*0x5dafb0*/
+    Network::SendMessage((int)g_NetworkManager, (int)v2, 455, 1, *(unsigned int *)(Game_PlayerInfoArray + 4 * i) + 40, 0, 0); /*0x5dafb0*/
     Event::Dispatch(); /*0x5dafb5*/
   }
 }

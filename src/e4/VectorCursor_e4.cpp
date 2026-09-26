@@ -40,7 +40,7 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
   int v4; // edx
   int v5; // eax
 
-  if ( ((unsigned __int8)g_CurrentFrame & 1) == 0 ) /*0x4f4bb7*/
+  if ( ((uint8_t)g_CurrentFrame & 1) == 0 ) /*0x4f4bb7*/
   {
     v3 = this->u32_4; /*0x4f4bb9*/
     if ( v3 >= 0 ) /*0x4f4bbe*/

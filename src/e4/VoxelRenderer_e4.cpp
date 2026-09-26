@@ -14,7 +14,7 @@ int VoxelRenderer::ProjectVertex(float a2, float a3, float a4, char a5)
   int v7; // edx
   int i; // edi
   int v9; // eax
-  unsigned __int8 *v10; // eax
+  uint8_t *v10; // eax
   double v11; // st6
   double v12; // st5
   double v13; // st4
@@ -38,7 +38,7 @@ int VoxelRenderer::ProjectVertex(float a2, float a3, float a4, char a5)
     {
       goto LABEL_13; /*0x758ee7*/
     }
-    v10 = (unsigned __int8 *)(i + this->u32_10); /*0x758eee*/
+    v10 = (uint8_t *)(i + this->u32_10); /*0x758eee*/
     v11 = a3 - (double)v10[1]; /*0x758f14*/
     v12 = a4 - (double)v10[2]; /*0x758f1c*/
     v13 = v12 * v12 + v11 * v11 + (a2 - (double)*v10) * (a2 - (double)*v10); /*0x758f2e*/
@@ -69,30 +69,30 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
     case 2: /*0x759fc6*/
       goto LABEL_13;
     case 3: /*0x759fc6*/
-      v6 = (*(int (__thiscall **)(int, _DWORD *, int))(this->q004 + 32))(&this->u32_10, a3, 1) != 0; /*0x759fdf*/
+      v6 = (*(int (__thiscall **)(int, unsigned int *, int))(this->q004 + 32))(&this->u32_10, a3, 1) != 0; /*0x759fdf*/
       this->q070 = v6; /*0x759fe4*/
       result = !v6; /*0x759fec*/
       break; /*0x759fef*/
     case 4: /*0x759fc6*/
-      (*(void (__thiscall **)(int))(this->q004 + 52))(this + 4); /*0x75a0cf*/
+      (*(void (__thiscall **)(int))(this->q004 + 52))&this->u32_10; /*0x75a0cf*/
       this->q070 = 0; /*0x75a0d4*/
       result = 0; /*0x75a0d2*/
       break; /*0x75a0d2*/
     case 5: /*0x759fc6*/
       a4 = a4; /*0x759ffc*/
-      result = (*(int (__thiscall **)(int, _DWORD *, int))(this->q004 + 36))(&this->u32_10, a3, a4) != a4; /*0x75a00c*/
+      result = (*(int (__thiscall **)(int, unsigned int *, int))(this->q004 + 36))(&this->u32_10, a3, a4) != a4; /*0x75a00c*/
       break; /*0x75a00f*/
     case 6: /*0x759fc6*/
       result = 1; /*0x75a012*/
       break; /*0x75a018*/
     case 7: /*0x759fc6*/
-      result = (*(int (__thiscall **)(int, int, _DWORD *))(this->q004 + 40))(&this->u32_10, a4, a3) == 0; /*0x75a033*/
+      result = (*(int (__thiscall **)(int, int, unsigned int *))(this->q004 + 40))(&this->u32_10, a4, a3) == 0; /*0x75a033*/
       break; /*0x75a034*/
     case 8: /*0x759fc6*/
       if ( a4 <= 0 ) /*0x75a03d*/
       {
         v9 = &this->u32_10; /*0x75a078*/
-        result = (*(int (__thiscall **)(int, int, _DWORD *))(this->q004 + 40))(&this->u32_10, a4, a3) == 0; /*0x75a086*/
+        result = (*(int (__thiscall **)(int, int, unsigned int *))(this->q004 + 40))(&this->u32_10, a4, a3) == 0; /*0x75a086*/
         if ( !result ) /*0x75a087*/
         {
           result = (*(int (__thiscall **)(int, int *, int))(this->q028)(v9, &a4, 1) != 1; /*0x75a09c*/
@@ -103,13 +103,13 @@ int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
       else
       {
         v8 = &this->u32_10; /*0x75a046*/
-        result = (*(int (__thiscall **)(int, int, _DWORD *))(this->q004 + 40))(&this->u32_10, a4 - 1, a3) == 0; /*0x75a055*/
+        result = (*(int (__thiscall **)(int, int, unsigned int *))(this->q004 + 40))(&this->u32_10, a4 - 1, a3) == 0; /*0x75a055*/
         if ( !result ) /*0x75a056*/
           result = (*(int (__thiscall **)(int, int *, int))(this->q028)(v8, &a4, 1) != 1; /*0x75a06c*/
       }
       break; /*0x75a06e*/
     case 9: /*0x759fc6*/
-      *a3 = (*(int (__thiscall **)(int))(this->q004 + 44))(this + 4); /*0x75a0c1*/
+      *a3 = (*(int (__thiscall **)(int))(this->q004 + 44))&this->u32_10; /*0x75a0c1*/
   LABEL_13:
       result = 0; /*0x75a0c3*/
       break; /*0x75a0c3*/

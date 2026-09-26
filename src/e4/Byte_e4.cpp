@@ -10,7 +10,7 @@
 namespace gamemd {
 unsigned char * Byte::Zero()
 {
-  *(_DWORD *)this = 0; /*0x4f4c22*/
+  *(unsigned int *)this = 0; /*0x4f4c22*/
   return this; /*0x4f4c25*/
 }
 } // namespace gamemd

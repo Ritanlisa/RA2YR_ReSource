@@ -21,8 +21,8 @@ unsigned int * WWMouseClass::initSurface()
   int v5; // esi
   void * v6;
   void * v7;
-  _DWORD v8[4]; // [esp+4h] [ebp-20h] BYREF
-  _DWORD v9[4]; // [esp+14h] [ebp-10h] BYREF
+  unsigned int v8[4]; // [esp+4h] [ebp-20h] BYREF
+  unsigned int v9[4]; // [esp+14h] [ebp-10h] BYREF
 
   if ( (int)*(&this->q0080) > 0 && (int)*(&this->q0081) > 0 ) /*0x7b9052*/
   {
@@ -44,7 +44,7 @@ unsigned int * WWMouseClass::initSurface()
         v9[1] = v7 + v5; /*0x7b9097*/
         v8[2] = v6; /*0x7b909b*/
         v8[3] = v4; /*0x7b909f*/
-        return (_DWORD *)(*(int (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(v2->vtable3)( /*0x7b90ab*/
+        return (unsigned int *)(*(int (__thiscall **)(int, unsigned int *, int, unsigned int *, unsigned int, int))(v2->vtable3)( /*0x7b90ab*/
                            v2,
                            v9,
                            v3,
@@ -66,8 +66,8 @@ int WWMouseClass::hideCursor()
   int v5; // edi
   int v6; // ebx
   int v7; // edx
-  _DWORD v9[4]; // [esp+8h] [ebp-20h] BYREF
-  _DWORD v10[4]; // [esp+18h] [ebp-10h] BYREF
+  unsigned int v9[4]; // [esp+8h] [ebp-20h] BYREF
+  unsigned int v10[4]; // [esp+18h] [ebp-10h] BYREF
 
   if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b994f*/
     Debug::Log(); /*0x7b9960*/
@@ -97,7 +97,7 @@ int WWMouseClass::hideCursor()
             v10[1] = v7; /*0x7b99fd*/
             v9[2] = v5; /*0x7b9a01*/
             v9[3] = v6; /*0x7b9a05*/
-            (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)v2 + 8))( /*0x7b9a11*/
+            (*(void (__thiscall **)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)v2 + 8))( /*0x7b9a11*/
               v2,
               v10,
               v3,
@@ -131,23 +131,23 @@ void* WWMouseClass::captureMouse()
   void * v11;
   void * v12;
   void * v13;
-  _DWORD *v14; // eax
+  unsigned int *v14; // eax
   IUnknown * v15;
   int v16; // [esp+4h] [ebp-30h] BYREF
   int v17; // [esp+8h] [ebp-2Ch]
   int v18; // [esp+Ch] [ebp-28h]
   int v19; // [esp+10h] [ebp-24h]
-  _DWORD v20[4]; // [esp+14h] [ebp-20h] BYREF
-  _DWORD v21[4]; // [esp+24h] [ebp-10h] BYREF
+  unsigned int v20[4]; // [esp+14h] [ebp-20h] BYREF
+  unsigned int v21[4]; // [esp+24h] [ebp-10h] BYREF
 
-  if ( this && !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)&this->q0088))(this) ) /*0x7b9a70*/
+  if ( this && !(*(uint8_t (__thiscall **)(int))(((unsigned int)(this->q0088))))(this) ) /*0x7b9a70*/
   {
     Debug::Log(); /*0x7b9a82*/
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9aa3*/
       Debug::Log(); /*0x7b9ab4*/
-    v2 = *(_DWORD *)this; /*0x7b9abc*/
+    v2 = *(unsigned int *)this; /*0x7b9abc*/
     this->q010 = 1; /*0x7b9ac0*/
-    if ( !(*(unsigned __int8 (__thiscall **)(int))(v2 + 8))(this) ) /*0x7b9ac4*/
+    if ( !(*(uint8_t (__thiscall **)(int))(v2 + 8))(this) ) /*0x7b9ac4*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9ae7*/
         Debug::Log(); /*0x7b9af8*/
@@ -187,7 +187,7 @@ void* WWMouseClass::captureMouse()
         v13 = *v12; /*0x7b9bd1*/
         v15 = this->q024; /*0x7b9bdb*/
         v14 = Rect::Set(v21, 0, 0, v18, v19); /*0x7b9be6*/
-        (*(void (__thiscall **)(_DWORD, _DWORD *, int, _DWORD *, _DWORD, int))(v13 + 8))( /*0x7b9bef*/
+        (*(void (__thiscall **)(unsigned int, unsigned int *, int, unsigned int *, unsigned int, int))(v13 + 8))( /*0x7b9bef*/
           this->q044,
           v14,
           v15,
@@ -214,17 +214,17 @@ void WWMouseClass::releaseMouse()
   int v6; // edi
   void * v7;
   void * v8;
-  _DWORD v9[4]; // [esp+4h] [ebp-20h] BYREF
-  _DWORD v10[4]; // [esp+14h] [ebp-10h] BYREF
+  unsigned int v9[4]; // [esp+4h] [ebp-20h] BYREF
+  unsigned int v10[4]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( this && (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)&this->q0088))(this) ) /*0x7b9c40*/
+  if ( this && (*(uint8_t (__thiscall **)(unsigned char *))(((unsigned int)(this->q0088))))(this) ) /*0x7b9c40*/
   {
     Debug::Log(); /*0x7b9c51*/
     if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9c72*/
       Debug::Log(); /*0x7b9c83*/
-    v2 = *(_DWORD *)this; /*0x7b9c8b*/
+    v2 = *(unsigned int *)this; /*0x7b9c8b*/
     *(&this->q0046) = 0; /*0x7b9c8f*/
-    if ( !(*(unsigned __int8 (__thiscall **)(_BYTE *))(v2 + 8))(this) ) /*0x7b9c93*/
+    if ( !(*(uint8_t (__thiscall **)(unsigned char *))(v2 + 8))(this) ) /*0x7b9c93*/
     {
       if ( WaitForSingleObject(hMutex, 0x2710u) == 258 ) /*0x7b9cb0*/
         Debug::Log(); /*0x7b9cc1*/
@@ -248,7 +248,7 @@ void WWMouseClass::releaseMouse()
             v10[1] = v8; /*0x7b9d19*/
             v9[2] = v6; /*0x7b9d1d*/
             v9[3] = v7; /*0x7b9d21*/
-            (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)v3 + 8))( /*0x7b9d2d*/
+            (*(void (__thiscall **)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)v3 + 8))( /*0x7b9d2d*/
               v3,
               v10,
               v4,
@@ -280,8 +280,8 @@ unsigned int * WWMouseClass::updatePosition(unsigned int * a2)
   int v3; // edx
   int v4; // ecx
 
-  v3 = *(this + 7); /*0x7ba364*/
-  v4 = *(this + 8); /*0x7ba367*/
+  v3 = *(unsigned int *)&this->q01C; /*0x7ba364*/
+  v4 = this->q020; /*0x7ba367*/
   *v3 = v3; /*0x7ba36a*/
   v3[1] = v4; /*0x7ba36c*/
 }
@@ -304,7 +304,6 @@ int WWMouseClass::checkVisible()
 namespace gamemd {
 MouseClass * WWMouseClass::updateHotspot(char a2)
 {
-  *(void **)this = (void*)&Mouse_vftable; /*0x7ba309*/
   if ( (a2 & 1) != 0 ) /*0x7ba30f*/
     RA2_OPDEL(); /*0x7ba312*/
   return this; /*0x7ba31c*/
@@ -321,6 +320,6 @@ char WWMouseClass::checkCapture()
 namespace gamemd {
 int WWMouseClass::checkBounds()
 {
-  return *(this + 8); /*0x7ba353*/
+  return this->q020; /*0x7ba353*/
 }
 } // namespace gamemd

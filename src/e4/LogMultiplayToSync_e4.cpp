@@ -45,18 +45,18 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
   int *v34; // ebx
   int v35; // ebp
   const char *v36; // edi
-  __int16 v37; // ax
+  int16_t v37; // ax
   char *v38; // eax
   char *v39; // eax
   char v40; // al
   int v41; // ebp
   const char *v43; // edi
-  __int16 v44; // ax
+  int16_t v44; // ax
   char *v45; // eax
   char *v46; // eax
   char v47; // al
   int v48; // eax
-  unsigned __int8 *v49; // edi
+  uint8_t *v49; // edi
   int v50; // [esp-Ch] [ebp-3BCh]
   int v51; // [esp-Ch] [ebp-3BCh]
   char *v52; // [esp-8h] [ebp-3B8h]
@@ -65,7 +65,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
   int v56; // [esp+14h] [ebp-39Ch]
   int v57; // [esp+18h] [ebp-398h] BYREF
   int v58; // [esp+1Ch] [ebp-394h] BYREF
-  _DWORD *v59; // [esp+24h] [ebp-38Ch]
+  unsigned int *v59; // [esp+24h] [ebp-38Ch]
   int v60; // [esp+28h] [ebp-388h] BYREF
   char v62[128]; // [esp+30h] [ebp-380h] BYREF
   char Destination[128]; // [esp+B0h] [ebp-300h] BYREF
@@ -73,10 +73,10 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
   char Buffer[512]; // [esp+1B0h] [ebp-200h] BYREF
 
   a2 = a2; /*0x651701*/
-  v3 = *((_DWORD *)HouseClass_Player + 12); /*0x651709*/
+  v3 = *((unsigned int *)HouseClass_Player + 12); /*0x651709*/
   v56 = a1; /*0x65170c*/
   v4 = 828 * a1 + 11298400; /*0x65171e*/
-  v59 = (_DWORD *)v4; /*0x65172d*/
+  v59 = (unsigned int *)v4; /*0x65172d*/
   sprintf(Buffer, "SYNC%01d_%03d.TXT", v3, a1); /*0x651731*/
   Debug::Log(); /*0x651743*/
   v5 = fopen(Buffer, Mode); /*0x651755*/
@@ -95,7 +95,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
     fprintf(v5, "Release Build: %s by %s - %s\r\n", v9, v52, v62);
     v60 = 5; /*0x65180f*/
     IDA_HIBYTE(v57) = 0; /*0x65181b*/
-    GetVersionString(&v60, (_BYTE *)&v57 + 3, 0, 0); /*0x651820*/
+    GetVersionString(&v60, (unsigned char *)&v57 + 3, 0, 0); /*0x651820*/
     v10 = (char *)&off_821F08; /*0x65182b*/
     if ( !IDA_HIBYTE(v57) ) /*0x651830*/
       v10 = g_INI_Key_No; /*0x651832*/
@@ -110,15 +110,15 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
     fprintf(v5, "Average FPS: %d\n", v12);
     fprintf(v5, "Max MaxAhead: %d\n", dword_A8B568);
     fprintf(v5, "Latency setting: %d\n", g_NetworkHostState);
-    fprintf(v5, "Game speed setting: %d\n", *(_DWORD *)g_GameModeOptions);
+    fprintf(v5, "Game speed setting: %d\n", *(unsigned int *)g_GameModeOptions);
     fprintf(v5, "FrameSendRate: %d\n", g_ScenarioLoadState);
     fprintf(v5, "\nFrame: %d\n", dword_AC6664[207 * a1 + 1]);
     fprintf(v5, "Slot: %d\n", a1);
     if ( g_NetworkInterface )
     {
-      for ( i = 0; i < (*(int (__thiscall **)(int))(*(_DWORD *)g_NetworkInterface + 72))(g_NetworkInterface); ++i )
+      for ( i = 0; i < (*(int (__thiscall **)(int))(*(unsigned int *)g_NetworkInterface + 72))(g_NetworkInterface); ++i )
       {
-        v14 = (const char **)(*(int (__thiscall **)(int, int))(*(_DWORD *)g_NetworkInterface + 76))( /*0x65190c*/
+        v14 = (const char **)(*(int (__thiscall **)(int, int))(*(unsigned int *)g_NetworkInterface + 76))( /*0x65190c*/
                                g_NetworkInterface,
                                i);
         if ( v14 )
@@ -127,7 +127,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
           fprintf(
             v5,
             "Local address: %d.%d.%d.%d\n",
-            (unsigned __int8)v54,
+            (uint8_t)v54,
             IDA_BYTE1(v54),
             IDA_BYTE2(v54),
             (unsigned int)v54 >> 24);
@@ -139,16 +139,16 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
     {
       if ( *(v15 - 80) )
       {
-        Network::CopyAddress((_DWORD *)v15 + 3, &v54, (int)&v58); /*0x651970*/
+        Network::CopyAddress((unsigned int *)v15 + 3, &v54, (int)&v58); /*0x651970*/
         fprintf(v5, "\nName: %s\n", v15 - 80);
-        fprintf(v5, "Address: %d.%d.%d.%d\n", (unsigned __int8)v58, IDA_BYTE1(v58), IDA_BYTE2(v58), IDA_HIBYTE(v58));
-        fprintf(v5, "Max avg round trip: %d\n", *(_DWORD *)v15);
-        fprintf(v5, "Max round trip: %d\n", *((_DWORD *)v15 - 4));
-        fprintf(v5, "Resends: %d\n", *((_DWORD *)v15 - 3));
-        fprintf(v5, "Frame sync stalls: %d\n", *((_DWORD *)v15 + 1));
-        fprintf(v5, "Command cound stalls: %d\n", *((_DWORD *)v15 + 2));
-        fprintf(v5, "Lost: %d\n", *((_DWORD *)v15 - 2));
-        fprintf(v5, "Percent lost: %d\n", *((_DWORD *)v15 - 1));
+        fprintf(v5, "Address: %d.%d.%d.%d\n", (uint8_t)v58, IDA_BYTE1(v58), IDA_BYTE2(v58), IDA_HIBYTE(v58));
+        fprintf(v5, "Max avg round trip: %d\n", *(unsigned int *)v15);
+        fprintf(v5, "Max round trip: %d\n", *((unsigned int *)v15 - 4));
+        fprintf(v5, "Resends: %d\n", *((unsigned int *)v15 - 3));
+        fprintf(v5, "Frame sync stalls: %d\n", *((unsigned int *)v15 + 1));
+        fprintf(v5, "Command cound stalls: %d\n", *((unsigned int *)v15 + 2));
+        fprintf(v5, "Lost: %d\n", *((unsigned int *)v15 - 2));
+        fprintf(v5, "Percent lost: %d\n", *((unsigned int *)v15 - 1));
       }
       v15 += 104; /*0x651a25*/
     }
@@ -170,15 +170,15 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
     v19 = 8; /*0x651a75*/
     do
     {
-      v20 = *(_DWORD *)v18; /*0x651a7a*/
-      if ( *(_DWORD *)v18 != -1 )
+      v20 = *(unsigned int *)v18; /*0x651a7a*/
+      if ( *(unsigned int *)v18 != -1 )
       {
-        v56 = *(_DWORD *)v18; /*0x651a84*/
+        v56 = *(unsigned int *)v18; /*0x651a84*/
         fprintf(
           v5,
           "%s: IsHuman:%d  Color:%s  ID:%d  HouseType:%s\n",
           (const char *)(v18 - 56),
-          *(unsigned __int8 *)(v18 - 36),
+          *(uint8_t *)(v18 - 36),
           (const char *)(v18 - 35),
           v20,
           (const char *)(v18 + 4));
@@ -194,7 +194,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
       v54 = (const char *)(v4 + 12); /*0x651acd*/
       do /*0x651b6b*/
       {
-        if ( *((_DWORD *)v54 + 14) != -1 ) /*0x651ad9*/
+        if ( *((unsigned int *)v54 + 14) != -1 ) /*0x651ad9*/
         {
           fprintf(v5, "-------------------- %s Infantry -------------------\n", v54); /*0x651ae4*/
           v21 = 0; /*0x651af2*/
@@ -207,16 +207,16 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
                 fprintf( /*0x651b3b*/
                   v5,
                   "COORD:%x   Facing:%d   Mission:%d   Type:%d(%s)   Tgt:%s(%d) Speed:%d NavCom:%s(%d)\n",
-                  *(_DWORD *)(v22 - 64),
-                  *(unsigned __int8 *)(v22 + 36),
-                  *(unsigned __int8 *)(v22 + 38),
-                  *(_DWORD *)(v22 - 60),
+                  *(unsigned int *)(v22 - 64),
+                  *(uint8_t *)(v22 + 36),
+                  *(uint8_t *)(v22 + 38),
+                  *(unsigned int *)(v22 - 60),
                   (const char *)(v22 - 56),
                   (const char *)(v22 - 24),
-                  *(_DWORD *)(v22 - 28),
+                  *(unsigned int *)(v22 - 28),
                   *(char *)(v22 + 39),
                   (const char *)(v22 + 4),
-                  *(_DWORD *)v22);
+                  *(unsigned int *)v22);
               v22 += 104; /*0x651b49*/
               ++v21; /*0x651b4c*/
             }
@@ -236,7 +236,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
       v54 = (const char *)(v4 + 12); /*0x651b9f*/
       do /*0x651c50*/
       {
-        if ( *((_DWORD *)v54 + 14) != -1 ) /*0x651bab*/
+        if ( *((unsigned int *)v54 + 14) != -1 ) /*0x651bab*/
         {
           fprintf(v5, "-------------------- %s Units -------------------\n", v54); /*0x651bba*/
           v25 = 0; /*0x651bc8*/
@@ -250,19 +250,19 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
                   v5,
                   "COORD:%x   Facing:%d   Facing2:%d   Mission:%d   Type:%d(%s)   Tgt:%s(%d)  NavCom:%s(%d)   TrkNum:%d T"
                   "rkInd:%d SpdAc:%d\n",
-                  *(_DWORD *)(v26 - 92),
+                  *(unsigned int *)(v26 - 92),
                   v26->vtable3,
                   v26->q024,
                   v26->q028,
-                  *(_DWORD *)(v26 - 88),
+                  *(unsigned int *)(v26 - 88),
                   (const char *)(v26 - 84),
                   (const char *)(v26 - 52),
-                  *(_DWORD *)(v26 - 56),
+                  *(unsigned int *)(v26 - 56),
                   (const char *)(v26 - 24),
-                  *(_DWORD *)(v26 - 28),
+                  *(unsigned int *)(v26 - 28),
                   v26->vtable2,
                   v26->nextArrayIndex,
-                  *(_DWORD *)v26);
+                  *(unsigned int *)v26);
               v26 += 104; /*0x651c2e*/
               ++v25; /*0x651c31*/
             }
@@ -282,7 +282,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
       v54 = (const char *)(v4 + 12); /*0x651c84*/
       do /*0x651d1d*/
       {
-        if ( *((_DWORD *)v54 + 14) != -1 ) /*0x651c90*/
+        if ( *((unsigned int *)v54 + 14) != -1 ) /*0x651c90*/
         {
           fprintf(v5, "-------------------- %s Aircraft -------------------\n", v54); /*0x651c9b*/
           v28 = 0; /*0x651ca9*/
@@ -295,19 +295,19 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
                 fprintf( /*0x651ced*/
                   v5,
                   "COORD:%x   Facing:%d   Mission:%d   Type:%d(%s)   Tgt:%s(%d)  NavCom:%s(%d)\n",
-                  *(_DWORD *)(v29 - 64),
-                  *(unsigned __int8 *)(v29 + 36),
-                  *(unsigned __int8 *)(v29 + 38),
-                  *(_DWORD *)(v29 - 60),
+                  *(unsigned int *)(v29 - 64),
+                  *(uint8_t *)(v29 + 36),
+                  *(uint8_t *)(v29 + 38),
+                  *(unsigned int *)(v29 - 60),
                   (const char *)(v29 - 56),
                   (const char *)(v29 - 24),
-                  *(_DWORD *)(v29 - 28),
+                  *(unsigned int *)(v29 - 28),
                   (const char *)(v29 + 4),
-                  *(_DWORD *)v29);
+                  *(unsigned int *)v29);
               v29 += 104; /*0x651cfb*/
               ++v28; /*0x651cfe*/
             }
-            while ( v28 < *(_DWORD *)(v4 + 760) ); /*0x651d01*/
+            while ( v28 < *(unsigned int *)(v4 + 760) ); /*0x651d01*/
           }
         }
         v23 = ++v55 < v56; /*0x651d13*/
@@ -315,7 +315,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
       }
       while ( v23 ); /*0x651d1d*/
     }
-    v30 = *(_DWORD *)(v4 + 760); /*0x651d23*/
+    v30 = *(unsigned int *)(v4 + 760); /*0x651d23*/
     v55 = 0; /*0x651d2d*/
     v58 += 104 * v30; /*0x651d44*/
     if ( v56 > 0 ) /*0x651d48*/
@@ -323,7 +323,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
       v54 = (const char *)(v4 + 12); /*0x651d51*/
       do /*0x651de2*/
       {
-        if ( *((_DWORD *)v54 + 14) != -1 ) /*0x651d5d*/
+        if ( *((unsigned int *)v54 + 14) != -1 ) /*0x651d5d*/
         {
           fprintf(v5, "-------------------- %s Buildings -------------------\n", v54); /*0x651d68*/
           v31 = 0; /*0x651d76*/
@@ -336,13 +336,13 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
                 fprintf( /*0x651db2*/
                   v5,
                   "COORD:%x   Facing:%d   Mission:%d   Type:%d(%s)   Tgt:%s(%d)\n",
-                  *(_DWORD *)(v32 - 36),
-                  *(unsigned __int8 *)(v32 + 64),
-                  *(unsigned __int8 *)(v32 + 66),
-                  *(_DWORD *)(v32 - 32),
+                  *(unsigned int *)(v32 - 36),
+                  *(uint8_t *)(v32 + 64),
+                  *(uint8_t *)(v32 + 66),
+                  *(unsigned int *)(v32 - 32),
                   (const char *)(v32 - 28),
                   (const char *)(v32 + 4),
-                  *(_DWORD *)v32);
+                  *(unsigned int *)v32);
               v32 += 104; /*0x651dc0*/
               ++v31; /*0x651dc3*/
             }
@@ -367,8 +367,8 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
         do
         {
           v36 = &v54[v34[5]]; /*0x651e1e*/
-          fprintf(v5, "Object %d: %x ", v35, *(_DWORD *)v36);
-          v37 = *((_WORD *)v36 + 18); /*0x651e2f*/
+          fprintf(v5, "Object %d: %x ", v35, *(unsigned int *)v36);
+          v37 = *((unsigned short *)v36 + 18); /*0x651e2f*/
           if ( v37 == 43 || v37 == 19 ) /*0x651e40*/
           {
             v39 = AbstractType::FindName((void *)v37); /*0x651e68*/
@@ -376,7 +376,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
           }
           else
           {
-            v50 = *((_DWORD *)v36 + 1); /*0x651e49*/
+            v50 = *((unsigned int *)v36 + 1); /*0x651e49*/
             v38 = AbstractType::FindName((void *)v37); /*0x651e4d*/
             fprintf(v5, "%s\t(Type:%d(%s)) ", v38, v50, v36 + 8); /*0x651e59*/
           }
@@ -405,8 +405,8 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
       {
         v59 = v59; /*0x651f04*/
         v43 = &v54[v59[204]]; /*0x651f0c*/
-        fprintf(v5, "Object %d: %x ", v41, *(_DWORD *)v43);
-        v44 = *((_WORD *)v43 + 18); /*0x651f21*/
+        fprintf(v5, "Object %d: %x ", v41, *(unsigned int *)v43);
+        v44 = *((unsigned short *)v43 + 18); /*0x651f21*/
         if ( v44 == 43 || v44 == 19 ) /*0x651f32*/
         {
           v46 = AbstractType::FindName((void *)v44); /*0x651f5a*/
@@ -414,7 +414,7 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
         }
         else
         {
-          v51 = *((_DWORD *)v43 + 1); /*0x651f3b*/
+          v51 = *((unsigned int *)v43 + 1); /*0x651f3b*/
           v45 = AbstractType::FindName((void *)v44); /*0x651f3f*/
           fprintf(v5, "%s\t(Type:%d(%s)) ", v45, v51, v43 + 8); /*0x651f4b*/
         }
@@ -435,10 +435,10 @@ CellStruct * * __usercall LogMultiplayToSync_MPDEBUG(CellStruct *a1@<ecx> a1, un
     {
       fprintf(v5, "Offending event:\n"); /*0x651fe2*/
       fprintf(v5, "Type:         %d\n", *v49);
-      fprintf(v5, "Frame:        %d\n", *(_DWORD *)(v49 + 3));
+      fprintf(v5, "Frame:        %d\n", *(unsigned int *)(v49 + 3));
       fprintf(v5, "ID:           %x\n", (char)v49[2]);
-      fprintf(v5, "CRC:          %x\n", *(_DWORD *)(v49 + 7));
-      fprintf(v5, "CommandCount: %d\n", *(unsigned __int16 *)(v49 + 11));
+      fprintf(v5, "CRC:          %x\n", *(unsigned int *)(v49 + 7));
+      fprintf(v5, "CommandCount: %d\n", *(uint16_t *)(v49 + 11));
       fprintf(v5, "Delay:        %d\n", v49[13]);
     }
     fclose(v5); /*0x65204f*/

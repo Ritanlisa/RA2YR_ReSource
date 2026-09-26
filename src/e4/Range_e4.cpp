@@ -12,9 +12,9 @@ namespace gamemd {
 long long Range_RandomInt(MouseClass * aP0, MapClass * aP1)
 {
   MouseClass * v3;
-  __int64 result; // rax
-  __int64 v5; // [esp+8h] [ebp-18h]
-  __int64 v6; // [esp+8h] [ebp-18h]
+  int64_t result; // rax
+  int64_t v5; // [esp+8h] [ebp-18h]
+  int64_t v6; // [esp+8h] [ebp-18h]
   double v7; // [esp+18h] [ebp-8h]
 
   v5 = aP1 - aP0 + 1; /*0x59803e*/

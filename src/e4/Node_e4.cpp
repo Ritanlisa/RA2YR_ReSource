@@ -10,7 +10,7 @@
 namespace gamemd {
 unsigned int * Node_flat::Init()
 {
-  *(_DWORD *)this = 0; /*0x49ea14*/
+  *(unsigned int *)this = 0; /*0x49ea14*/
   this->u32_4 = 0; /*0x49ea16*/
   this->u32_8 = 0; /*0x49ea19*/
   this->u32_C = 0; /*0x49ea1c*/

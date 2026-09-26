@@ -15,7 +15,7 @@ int ColorListClass::SetColor()
 
   v1 = *(&this->q0241); /*0x557ae0*/
   if ( *(&this->q0047) > v1 ) /*0x557aeb*/
-    return *(_DWORD *)(*(&this->q0044) + 4 * v1); /*0x557af3*/
+    return *(unsigned int *)(*(&this->q0044) + 4 * v1); /*0x557af3*/
   else
     return 0; /*0x557aed*/
 }
@@ -81,18 +81,16 @@ ColorListClass * ColorListClass::QueryInterface(char a2)
 
   v3 = this->q174; /*0x488f05*/
   v4 = &this->u32_5D0; /*0x488f0b*/
-  *(void **)this = (void*)&ColorListClass_vftable; /*0x488f13*/
   (*(void (__thiscall **)(char *))(v3 + 12))(&this->u32_942); /*0x488f19*/
   this->q190 = 0; /*0x488f1e*/
-  v5 = (void *)*((_DWORD *)v4 + 1); /*0x488f24*/
-  *(void **)v4 = (void*)&VectorClass_int_vftable; /*0x488f29*/
+  v5 = (void *)*((unsigned int *)v4 + 1); /*0x488f24*/
   if ( v5 && v4[13] ) /*0x488f31*/
   {
     RA2_OPDEL(v5); /*0x488f37*/
-    *((_DWORD *)v4 + 1) = 0; /*0x488f3f*/
+    *((unsigned int *)v4 + 1) = 0; /*0x488f3f*/
   }
   v4[13] = 0; /*0x488f44*/
-  *((_DWORD *)v4 + 2) = 0; /*0x488f47*/
+  *((unsigned int *)v4 + 2) = 0; /*0x488f47*/
   ListClass::Destruct(); /*0x488f4a*/
   if ( (a2 & 1) != 0 ) /*0x488f54*/
     RA2_OPDEL(); /*0x488f57*/

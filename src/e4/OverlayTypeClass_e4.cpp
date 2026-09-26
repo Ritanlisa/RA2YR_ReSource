@@ -46,11 +46,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   this->q2B6 = 0; /*0x5fe2de*/
   this->q2B7 = 0; /*0x5fe2e4*/
   this->q2B8 = 0; /*0x5fe2ea*/
-  *this = (void*)&OverlayTypeClass_vftable; /*0x5fe2f1*/
-  this->vtable2 = (void*)&OverlayTypeClass_vftable; /*0x5fe2f7*/
-  this->vtable3 = (void*)&OverlayTypeClass_vftable; /*0x5fe2fd*/
-  this->vtable4 = (void*)&OverlayTypeClass_vftable; /*0x5fe304*/
-  AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x5fe30b*/
+  AbstractClass::GenerateUniqueID((int)&this->vtable2); /*0x5fe30b*/
   this->q22F = 1; /*0x5fe310*/
   this->q230 = 0; /*0x5fe317*/
   this->q232 = 1; /*0x5fe31d*/
@@ -59,7 +55,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   if ( g_ObjectTypeConfig < dword_A83D88 /*0x5fe368*/
     || (byte_A83D8D || !dword_A83D88)
     && dword_A83D94 > 0
-    && (v4 = (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_A83D80 + 8))(
+    && (v4 = (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A83D80 + 8))(
                &dword_A83D80,
                dword_A83D88 + dword_A83D94,
                0) == 0,
@@ -67,7 +63,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
         !v4) )
   {
     g_ObjectTypeConfig = v3 + 1; /*0x5fe36d*/
-    *(_DWORD *)&g_BuildingTypeClass_Array->gap0[4 * v3] = this; /*0x5fe377*/
+    *(unsigned int *)&g_BuildingTypeClass_Array->gap0[4 * v3] = this; /*0x5fe377*/
     v3 = g_ObjectTypeConfig; /*0x5fe37a*/
   }
   v5 = 0; /*0x5fe37f*/
@@ -80,7 +76,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   else
   {
     v6 = g_BuildingTypeClass_Array; /*0x5fe385*/
-    while ( *(_DWORD **)v6->gap0 != this ) /*0x5fe38d*/
+    while ( *(unsigned int **)v6->gap0 != this ) /*0x5fe38d*/
     {
       ++v5; /*0x5fe38f*/
       v6 = (BuildingTypeClass *)((char *)v6 + 4); /*0x5fe390*/
@@ -118,7 +114,7 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
   char v25; // [esp-Ch] [ebp-298h]
   char v26; // [esp-Ch] [ebp-298h]
   char v27; // [esp-Ch] [ebp-298h]
-  _BYTE v28[4]; // [esp+8h] [ebp-284h] BYREF
+  unsigned char v28[4]; // [esp+8h] [ebp-284h] BYREF
   char Destination[128]; // [esp+Ch] [ebp-280h] BYREF
   char Buffer[512]; // [esp+8Ch] [ebp-200h] BYREF
 
@@ -147,8 +143,8 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
   this->q2B2 = v11; /*0x5fe884*/
   if ( INIClass::GetString( /*0x5fe88a*/
          aP1,
-         (unsigned __int8 *)(&this->vtable46),
-         (unsigned __int8 *)aCellanim,
+         (uint8_t *)(&this->vtable46),
+         (uint8_t *)aCellanim,
          &g_INI_DefaultBuffer,
          Destination,
          128) )
@@ -176,12 +172,12 @@ AnimTypeClass * * OverlayTypeClass::LoadFromINI(unsigned char *** aP1)
   Coord = INIClass::GetCoord( /*0x5fe947*/
             aP1,
             (int)v28,
-            (unsigned __int8 *)(&this->vtable46),
-            (unsigned __int8 *)aRadarcolor,
-            (unsigned __int8 *)(&this->q1144));
-  this->q2B6 = *(_WORD *)Coord; /*0x5fe94f*/
+            (uint8_t *)(&this->vtable46),
+            (uint8_t *)aRadarcolor,
+            (uint8_t *)(&this->q1144));
+  this->q2B6 = *(unsigned short *)Coord; /*0x5fe94f*/
   v25 = this->Explodes; /*0x5fe95e*/
-  this->q2B8 = *(_BYTE *)(Coord + 2); /*0x5fe965*/
+  this->q2B8 = *(unsigned char *)(Coord + 2); /*0x5fe965*/
   v16 = INIClass::ReadBool_Overwrite(&this->RadarColor, aNousetilelandt, v25); /*0x5fe968*/
   v17 = this->q2AD; /*0x5fe96d*/
   this->Explodes = v16; /*0x5fe973*/
@@ -211,33 +207,29 @@ ScenarioClass * * OverlayTypeClass::SaveLoad_Prefix(int a1, int a2)
   {
     if ( a1 ) /*0x5feb13*/
     {
-      ObjectTypeClass::Construct((_DWORD *)a1, (int)&v3); /*0x5feb1c*/
-      *(_DWORD *)a1 = (void*)&OverlayTypeClass_vftable; /*0x5feb21*/
-      *(_DWORD *)(a1 + 4) = (void*)&OverlayTypeClass_vftable; /*0x5feb27*/
-      *(_DWORD *)(a1 + 8) = (void*)&OverlayTypeClass_vftable; /*0x5feb2e*/
-      *(_DWORD *)(a1 + 12) = (void*)&OverlayTypeClass_vftable; /*0x5feb35*/
+      ObjectTypeClass::Construct((unsigned int *)a1, (int)&v3); /*0x5feb1c*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x5feb3e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x5feb45*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 668)); /*0x5feb56*/
-    if ( !*(_BYTE *)(a1 + 687) ) /*0x5feb5b*/
+    if ( !*(unsigned char *)(a1 + 687) ) /*0x5feb5b*/
     {
-      if ( *(_BYTE *)(a1 + 556) ) /*0x5feb69*/
+      if ( *(unsigned char *)(a1 + 556) ) /*0x5feb69*/
       {
         _makepath( /*0x5feba1*/
           Buffer,
           0,
           0,
           (const char *)(a1 + 504),
-          (const char *)&off_7E1BC6 + 112 * *((_DWORD *)g_ScenarioClass_Instance + 1174));
+          (const char *)&off_7E1BC6 + 112 * *((unsigned int *)g_ScenarioClass_Instance + 1174));
       }
       else
       {
         _makepath(Buffer, 0, 0, (const char *)(a1 + 504), Ext); /*0x5febc0*/
-        TheaterObjectTypeClassSpecificID(Buffer, *((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x5febd7*/
+        TheaterObjectTypeClassSpecificID(Buffer, *((unsigned int *)g_ScenarioClass_Instance + 1174)); /*0x5febd7*/
       }
-      if ( !*(_DWORD *)(a1 + 164) ) /*0x5febdc*/
-        *(_DWORD *)(a1 + 164) = SearchMIXFile(Buffer, 1); /*0x5febf1*/
+      if ( !*(unsigned int *)(a1 + 164) ) /*0x5febdc*/
+        *(unsigned int *)(a1 + 164) = SearchMIXFile(Buffer, 1); /*0x5febf1*/
     }
     return 0; /*0x5febf7*/
   }
@@ -248,8 +240,8 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
 {
   void *result; // eax
   void *EntireFile; // edi
-  _DWORD v4[22]; // [esp+4h] [ebp-26Ch] BYREF
-  _BYTE v5[12]; // [esp+5Ch] [ebp-214h] BYREF
+  unsigned int v4[22]; // [esp+4h] [ebp-26Ch] BYREF
+  unsigned char v5[12]; // [esp+5Ch] [ebp-214h] BYREF
   int v6; // [esp+68h] [ebp-208h]
   char Buffer[512]; // [esp+70h] [ebp-200h] BYREF
 
@@ -264,19 +256,18 @@ AnimTypeClass * * OverlayTypeClass::GetCategory()
         0,
         0,
         (const char *)(&this->u32_C84),
-        (const char *)&off_7E1BC6 + 112 * *((_DWORD *)g_ScenarioClass_Instance + 1174));
+        (const char *)&off_7E1BC6 + 112 * *((unsigned int *)g_ScenarioClass_Instance + 1174));
     }
     else if ( this->q237 ) /*0x5fee59*/
     {
       _makepath(Buffer, 0, 0, (const char *)(&this->u32_C84), Ext); /*0x5fee78*/
-      TheaterObjectTypeClassSpecificID(Buffer, *((_DWORD *)g_ScenarioClass_Instance + 1174)); /*0x5fee90*/
+      TheaterObjectTypeClassSpecificID(Buffer, *((unsigned int *)g_ScenarioClass_Instance + 1174)); /*0x5fee90*/
     }
     CCFileClass::Construct(v4, Buffer); /*0x5fee9f*/
     EntireFile = CCFileClass::ReadEntireFile(v4); /*0x5feead*/
     this->Image = EntireFile; /*0x5feeb1*/
     if ( EntireFile ) /*0x5feeb7*/
       this->ImageAllocated = 1; /*0x5feeb9*/
-    v4[0] = (void*)&CCFileClass_vftable; /*0x5feec4*/
     v6 = 0; /*0x5feecc*/
     Vector::Clear((int)v5); /*0x5feed4*/
     v4[0] = &off_7E1668; /*0x5feedd*/
@@ -325,21 +316,17 @@ unsigned int * OverlayTypeClass::Construct(ObjectClass * aP1)
   this->q30A = 0; /*0x644189*/
   this->u32_30B = 0; /*0x644190*/
   this->q30C = 0; /*0x644196*/
-  *this = (void*)&ParticleSystemTypeClass_vftable; /*0x64419c*/
-  this->vtable2 = (void*)&ParticleSystemTypeClass_vftable; /*0x6441a2*/
-  this->vtable3 = (void*)&ParticleSystemTypeClass_vftable; /*0x6441a8*/
-  this->vtable4 = (void*)&ParticleSystemTypeClass_vftable; /*0x6441af*/
-  AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x6441b6*/
+  AbstractClass::GenerateUniqueID((int)&this->vtable2); /*0x6441b6*/
   if ( g_InfantryTypeInitState < dword_A83D70 /*0x6441ef*/
     || (byte_A83D75 || !dword_A83D70)
     && dword_A83D7C > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_A83D68 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A83D68 + 8))(
          &dword_A83D68,
          dword_A83D70 + dword_A83D7C,
          0) )
   {
     v3 = g_InfantryTypeInitState++; /*0x6441fc*/
-    *((_DWORD *)dword_A83D6C + v3) = this; /*0x64420b*/
+    *((unsigned int *)dword_A83D6C + v3) = this; /*0x64420b*/
   }
   this->q234 = 1; /*0x64420e*/
   return this; /*0x644217*/
@@ -392,7 +379,7 @@ bool OverlayTypeClass::GetType(IUnknown * aP2, int a3)
 {
   void *v4; // eax
 
-  v4 = (void *)RA2_OPNEW(0xB0u); /*0x5fe538*/
+  v4 = (void *)operator new(0xB0u); /*0x5fe538*/
   return v4 && Object::SpawnAtCell(v4, (int)this, aP2, -1); /*0x5fe559*/
 }
 // 0x5FE570
@@ -400,7 +387,7 @@ OverlayClass * OverlayTypeClass::GetDamage(int a2)
 {
   void *v3; // eax
 
-  v3 = (void *)RA2_OPNEW(0xB0u); /*0x5fe578*/
+  v3 = (void *)operator new(0xB0u); /*0x5fe578*/
   if ( v3 ) /*0x5fe582*/
     return Object::SpawnAtCell(v3, (int)this, &word_AC1608, -1); /*0x5fe58e*/
   else
@@ -416,7 +403,7 @@ void OverlayTypeClass::GetLandType(unsigned int * a2, int * a3, unsigned int a4)
   v4 = g_Map_VisibleRect + a2[1] + 15; /*0x5fe5c1*/
   v6[0] = DSurface_ViewBounds + *a2 + 30; /*0x5fe5c4*/
   v6[1] = v4; /*0x5fe5c8*/
-  v5 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->zero_3C6))(this); /*0x5fe5f3*/
+  v5 = (*(int (__thiscall **)(void *))(((unsigned int)(this->zero_3C6))))(this); /*0x5fe5f3*/
   DrawToSurfaceSHP(g_DSurface_Hidden_2, FileSystem_x_PAL, v5, a4, v6, a3, 1536, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x5fe606*/
 }
 // 0x5FEA30
@@ -482,35 +469,35 @@ int OverlayTypeClass::GetRadarColor(int a2, unsigned int a3)
   int v7; // eax
   char v8; // cl
   int PixelData; // ecx
-  __int16 v11; // [esp+4h] [ebp-4h]
+  int16_t v11; // [esp+4h] [ebp-4h]
 
   v4 = (char **)this->GetCategory(); /*0x5fed06*/
-  if ( v4 || (v5 = *(&this->q0407)) != 0 && (v4 = (char **)(*(int (__thiscall **)(int))(*(_DWORD *)v5 + 156))(v5)) != 0 ) /*0x5fed28*/
+  if ( v4 || (v5 = *(&this->q0407)) != 0 && (v4 = (char **)(*(int (__thiscall **)(int))(*(unsigned int *)v5 + 156))(v5)) != 0 ) /*0x5fed28*/
   {
     v6 = *(&this->q0405); /*0x5fed2e*/
     if ( (v6 < 127 || v6 > 138) && (v6 < 147 || v6 > 158) ) /*0x5fed4f*/
     {
       PixelData = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5feda2*/
-      *(_WORD *)a2 = *(_WORD *)PixelData; /*0x5fedad*/
-      *(_BYTE *)(a2 + 2) = *(_BYTE *)(PixelData + 2); /*0x5fedb4*/
+      *(unsigned short *)a2 = *(unsigned short *)PixelData; /*0x5fedad*/
+      *(unsigned char *)(a2 + 2) = *(unsigned char *)(PixelData + 2); /*0x5fedb4*/
       return a2; /*0x5feda4*/
     }
     else
     {
       v7 = MixFileClass::GetPixelData(v4, (int)&a3, a3); /*0x5fed5d*/
-      v11 = *(_WORD *)v7; /*0x5fed67*/
-      v8 = IDA_HIBYTE(*(_WORD *)v7); /*0x5fed6f*/
-      IDA_BYTE1(a3) = *(_BYTE *)(v7 + 2); /*0x5fed73*/
+      v11 = *(unsigned short *)v7; /*0x5fed67*/
+      v8 = IDA_HIBYTE(*(unsigned short *)v7); /*0x5fed6f*/
+      IDA_BYTE1(a3) = *(unsigned char *)(v7 + 2); /*0x5fed73*/
       IDA_LOBYTE(a3) = v11; /*0x5fed7b*/
-      *(_WORD *)a2 = a3; /*0x5fed86*/
-      *(_BYTE *)(a2 + 2) = v8; /*0x5fed8a*/
+      *(unsigned short *)a2 = a3; /*0x5fed86*/
+      *(unsigned char *)(a2 + 2) = v8; /*0x5fed8a*/
       return a2; /*0x5fed77*/
     }
   }
   else
   {
-    *(_WORD *)a2 = 0; /*0x5fedd2*/
-    *(_BYTE *)(a2 + 2) = 0; /*0x5fedd6*/
+    *(unsigned short *)a2 = 0; /*0x5fedd2*/
+    *(unsigned char *)(a2 + 2) = 0; /*0x5fedd6*/
     return a2; /*0x5fedbb*/
   }
 }
@@ -534,10 +521,6 @@ OverlayTypeClass * OverlayTypeClass::ddtor(char a2)
 {
   int v3; // eax
 
-  *this = (void*)&OverlayTypeClass_vftable; /*0x5fef36*/
-  this->vtable2 = (void*)&OverlayTypeClass_vftable; /*0x5fef3c*/
-  this->vtable3 = (void*)&OverlayTypeClass_vftable; /*0x5fef43*/
-  this->vtable4 = (void*)&OverlayTypeClass_vftable; /*0x5fef4a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x5fef51*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_A83D80 + 16))(&dword_A83D80, &this); /*0x5fef6a*/
   if ( v3 != -1 && v3 < g_ObjectTypeConfig && v3 < --g_ObjectTypeConfig ) /*0x5fef85*/
@@ -545,7 +528,7 @@ OverlayTypeClass * OverlayTypeClass::ddtor(char a2)
     do /*0x5fef9d*/
     {
       ++v3; /*0x5fef8d*/
-      *(_DWORD *)&g_BuildingTypeClass_Array->gap0[4 * v3 - 4] = *(_DWORD *)&g_BuildingTypeClass_Array->gap0[4 * v3]; /*0x5fef91*/
+      *(unsigned int *)&g_BuildingTypeClass_Array->gap0[4 * v3 - 4] = *(unsigned int *)&g_BuildingTypeClass_Array->gap0[4 * v3]; /*0x5fef91*/
     }
     while ( v3 < g_ObjectTypeConfig ); /*0x5fef9d*/
   }

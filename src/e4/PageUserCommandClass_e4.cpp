@@ -15,7 +15,6 @@
 // 0x537DD0
 PageUserCommandClass::PageUserCommandClass()
 {
-  *this = (void*)&PageUserCommandClass_vftable; /*0x537dd2*/
   return this; /*0x537dd8*/
 }
 // 0x537DE0

@@ -30,7 +30,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
     v3 = g_Str__none_; /*0x5b3776*/
   else
     v3 = off_816CAC[*this]; /*0x5b377d*/
-  if ( !INIClass::BinarySearchSection((int)a2, (unsigned __int8 *)v3) ) /*0x5b3787*/
+  if ( !INIClass::BinarySearchSection((int)a2, (uint8_t *)v3) ) /*0x5b3787*/
     return 0; /*0x5b3906*/
   if ( *this == -1 ) /*0x5b379e*/
     v4 = g_Str__none_; /*0x5b37a0*/
@@ -38,8 +38,8 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
     v4 = off_816CAC[*this]; /*0x5b37a7*/
   this->vtable2 = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
                            (int)a2,
-                           (unsigned __int8 *)v4,
-                           (unsigned __int8 *)aNothreat,
+                           (uint8_t *)v4,
+                           (uint8_t *)aNothreat,
                            this->vtable2);
   if ( *this == -1 ) /*0x5b37c7*/
     v5 = g_Str__none_; /*0x5b37c9*/
@@ -47,8 +47,8 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
     v5 = off_816CAC[*this]; /*0x5b37d0*/
   this->abstractFlags = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
                            (int)a2,
-                           (unsigned __int8 *)v5,
-                           (unsigned __int8 *)aZombie,
+                           (uint8_t *)v5,
+                           (uint8_t *)aZombie,
                            this->abstractFlags);
   if ( *this == -1 ) /*0x5b37f0*/
     v6 = g_Str__none_; /*0x5b37f2*/
@@ -56,8 +56,8 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
     v6 = off_816CAC[*this]; /*0x5b37f9*/
   this->nextArrayIndex = INIClass::ReadBool_Overwrite( /*0x5b3811*/
                            (int)a2,
-                           (unsigned __int8 *)v6,
-                           (unsigned __int8 *)aRecruitable,
+                           (uint8_t *)v6,
+                           (uint8_t *)aRecruitable,
                            this->nextArrayIndex);
   if ( *this == -1 ) /*0x5b3819*/
     v7 = g_Str__none_; /*0x5b381b*/
@@ -65,8 +65,8 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
     v7 = off_816CAC[*this]; /*0x5b3822*/
   this->referenceCount = INIClass::ReadBool_Overwrite( /*0x5b383a*/
                            (int)a2,
-                           (unsigned __int8 *)v7,
-                           (unsigned __int8 *)aParalyzed,
+                           (uint8_t *)v7,
+                           (uint8_t *)aParalyzed,
                            this->referenceCount);
   if ( *this == -1 ) /*0x5b3842*/
     v8 = g_Str__none_; /*0x5b3844*/
@@ -74,8 +74,8 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
     v8 = off_816CAC[*this]; /*0x5b384b*/
   this->vtable3 = INIClass::ReadBool_Overwrite( /*0x5b3863*/
                            (int)a2,
-                           (unsigned __int8 *)v8,
-                           (unsigned __int8 *)aRetaliate,
+                           (uint8_t *)v8,
+                           (uint8_t *)aRetaliate,
                            this->vtable3);
   if ( *this == -1 ) /*0x5b386b*/
     v9 = g_Str__none_; /*0x5b386d*/
@@ -83,8 +83,8 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
     v9 = off_816CAC[*this]; /*0x5b3874*/
   this->objectTypeFlags = INIClass::ReadBool_Overwrite( /*0x5b388c*/
                            (int)a2,
-                           (unsigned __int8 *)v9,
-                           (unsigned __int8 *)aScatter,
+                           (uint8_t *)v9,
+                           (uint8_t *)aScatter,
                            this->objectTypeFlags);
   if ( *this == -1 ) /*0x5b3894*/
     v10 = g_Str__none_; /*0x5b3896*/
@@ -92,8 +92,8 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
     v10 = off_816CAC[*this]; /*0x5b389d*/
   Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x5b38b4*/
                        (int)a2,
-                       (unsigned __int8 *)v10,
-                       (unsigned __int8 *)g_INI_Key_Rate,
+                       (uint8_t *)v10,
+                       (uint8_t *)g_INI_Key_Rate,
                        this->uniqueId);
   v12 = *this; /*0x5b38b9*/
   this->uniqueId = Double_Overwrite; /*0x5b38bb*/
@@ -101,7 +101,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
     v13 = g_Str__none_; /*0x5b38c3*/
   else
     v13 = off_816CAC[v12]; /*0x5b38ca*/
-  v14 = INIClass::ReadDouble_Overwrite((int)a2, (unsigned __int8 *)v13, (unsigned __int8 *)aAarate, 0.0); /*0x5b38dd*/
+  v14 = INIClass::ReadDouble_Overwrite((int)a2, (uint8_t *)v13, (uint8_t *)aAarate, 0.0); /*0x5b38dd*/
   this->nextArrayIndex = v14; /*0x5b38e2*/
   if ( v14 == 0.0 ) /*0x5b38f0*/
   {

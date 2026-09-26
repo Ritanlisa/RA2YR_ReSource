@@ -44,7 +44,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1)
   int v35; // edi
   int v36; // eax
   char v37; // [esp+31h] [ebp-4Dh]
-  _BYTE v38[12]; // [esp+32h] [ebp-4Ch] BYREF
+  unsigned char v38[12]; // [esp+32h] [ebp-4Ch] BYREF
   int v39; // [esp+3Eh] [ebp-40h]
   int v40; // [esp+42h] [ebp-3Ch]
   int v41; // [esp+46h] [ebp-38h]
@@ -61,7 +61,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1)
 
   if ( !a5 ) /*0x4f4790*/
   {
-    v9 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)a1 + 120))(a1, &v46); /*0x4f479b*/
+    v9 = (int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)a1 + 120))(a1, &v46); /*0x4f479b*/
     v39 = *v9; /*0x4f47a0*/
     v40 = v9[1]; /*0x4f47a7*/
     v41 = v9[2]; /*0x4f47b6*/
@@ -74,8 +74,8 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1)
     result = ClientToScreen(g_hWnd, (LPPOINT)&v38[4]); /*0x4f47f6*/
     if ( result ) /*0x4f47fe*/
     {
-      v11 = (*(int (__thiscall **)(int, int, int, int))(*(_DWORD *)a1 + 128))(a1, a4, a3, a2); /*0x4f4811*/
-      v12 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 124))(a1); /*0x4f4817*/
+      v11 = (*(int (__thiscall **)(int, int, int, int))(*(unsigned int *)a1 + 128))(a1, a4, a3, a2); /*0x4f4811*/
+      v12 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4817*/
       v13 = dword_87F7F0; /*0x4f4828*/
       v45 = v40; /*0x4f4830*/
       v46 = v41; /*0x4f4834*/
@@ -109,10 +109,10 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1)
           if ( !byte_A8EB7C && !g_ArmageddonMode ) /*0x4f4887*/
           {
             v15 = g_CreditsScreenBounds - v12; /*0x4f4895*/
-            if ( (*(int (__thiscall **)(int))(*(_DWORD *)DSurface_Sidebar + 124))(DSurface_Sidebar) >= v15 ) /*0x4f489e*/
+            if ( (*(int (__thiscall **)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar) >= v15 ) /*0x4f489e*/
               v16 = v15; /*0x4f48ad*/
             else
-              v16 = (*(int (__thiscall **)(int))(*(_DWORD *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x4f48a8*/
+              v16 = (*(int (__thiscall **)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x4f48a8*/
             if ( v16 <= 0 ) /*0x4f48b1*/
             {
               v18 = 0; /*0x4f48df*/
@@ -120,10 +120,10 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1)
             else
             {
               v17 = g_CreditsScreenBounds - v47; /*0x4f48c3*/
-              if ( (*(int (__thiscall **)(int))(*(_DWORD *)DSurface_Sidebar + 124))(DSurface_Sidebar) >= v17 ) /*0x4f48cc*/
+              if ( (*(int (__thiscall **)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar) >= v17 ) /*0x4f48cc*/
                 v18 = v17; /*0x4f48db*/
               else
-                v18 = (*(int (__thiscall **, unsigned int a8, unsigned int a1)(int))(*(_DWORD *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x4f48d6*/
+                v18 = (*(int (__thiscall **, unsigned int a8, unsigned int a1)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x4f48d6*/
             }
             v13 = dword_87F7F0; /*0x4f48e5*/
             v19 = v18 + v45; /*0x4f48eb*/
@@ -141,11 +141,11 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1)
             && (g_TacticalClass_Instance[48].lpVtbl
              || g_TacticalClass_Instance[49].lpVtbl != (struct IPersistStreamVtbl *)1072693248) )
           {
-            v51 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 124))(a1); /*0x4f4941*/
-            v23 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 128))(a1); /*0x4f4949*/
+            v51 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4941*/
+            v23 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 128))(a1); /*0x4f4949*/
             v24 = (double)v51; /*0x4f494f*/
             v25 = g_TacticalClass_Instance; /*0x4f4953*/
-            *(_DWORD *)v38 = v23; /*0x4f4959*/
+            *(unsigned int *)v38 = v23; /*0x4f4959*/
             v42 = v24 / *(double *)&g_TacticalClass_Instance[48].lpVtbl; /*0x4f4965*/
             v26 = Math::RoundToInt((v24 - v42) * 0.5); /*0x4f4973*/
             v27 = (double)*(int *)v38; /*0x4f4978*/
@@ -175,20 +175,20 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1)
             goto LABEL_51; /*0x4f49ff*/
           if ( g_TacticalRender ) /*0x4f4a09*/
           {
-            if ( (unsigned __int8)Frame::Init() ) /*0x4f4a0b*/
+            if ( (uint8_t)Frame::Init() ) /*0x4f4a0b*/
             {
               v13 = dword_87F7F0; /*0x4f4a14*/
               v30 = 1; /*0x4f4a1a*/
   LABEL_47:
               if ( !byte_884D2E && !v13 && !v30 ) /*0x4f4a36*/
               {
-                v48 -= *((_DWORD *)dword_B0FC58 + 3); /*0x4f4a4a*/
-                Rect.right -= *((_DWORD *, unsigned int a1)dword_B0FC58 + 3); /*0x4f4a53*/
+                v48 -= *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a4a*/
+                Rect.right -= *((unsigned int *, unsigned int a1)dword_B0FC58 + 3); /*0x4f4a53*/
               }
   LABEL_51:
               if ( dword_87F7EC ) /*0x4f4a5e*/
               {
-                v31 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 128))(a1) - *((_DWORD *)dword_B0FC58 + 3); /*0x4f4a7c*/
+                v31 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 128))(a1) - *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a7c*/
                 IDA_HIDWORD(v42) = v41; /*0x4f4a82*/
                 v44 = v31; /*0x4f4a86*/
                 v43 = abs32(dword_87F7EC); /*0x4f4a91*/
@@ -196,8 +196,8 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1)
                   IDA_LODWORD(v42) = v45 - dword_87F7EC; /*0x4f4aad*/
                 else
                   IDA_LODWORD(v42) = v45 + v47; /*0x4f4aa1*/
-                v32 = *(_DWORD *)g_DSurface_Primary; /*0x4f4ac1*/
-                v33 = (*(int (__thiscall **)(int, _BYTE *, double *, _DWORD))(*(_DWORD *)g_DSurface_Primary + 120))( /*0x4f4ac5*/
+                v32 = *(unsigned int *)g_DSurface_Primary; /*0x4f4ac1*/
+                v33 = (*(int (__thiscall **)(int, unsigned char *, double *, unsigned int))(*(unsigned int *)g_DSurface_Primary + 120))( /*0x4f4ac5*/
                         g_DSurface_Primary,
                         v38,
                         &v42,
@@ -208,15 +208,15 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1)
               if ( v13 ) /*0x4f4ada*/
               {
                 v34 = abs32(v13); /*0x4f4ae7*/
-                v43 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 124))(a1); /*0x4f4af0*/
+                v43 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4af0*/
                 IDA_LODWORD(v42) = v40; /*0x4f4af9*/
                 v44 = v34; /*0x4f4aff*/
                 if ( dword_87F7F0 >= 0 ) /*0x4f4b03*/
                   IDA_HIDWORD(v42) = v46 - dword_87F7F0; /*0x4f4b1b*/
                 else
                   IDA_HIDWORD(v42) = v46 + v48; /*0x4f4b0f*/
-                v35 = *(_DWORD *)g_DSurface_Primary; /*0x4f4b2f*/
-                v36 = (*(int (__thiscall **)(int, _BYTE *, double *, _DWORD))(*(_DWORD *)g_DSurface_Primary + 120))( /*0x4f4b33*/
+                v35 = *(unsigned int *)g_DSurface_Primary; /*0x4f4b2f*/
+                v36 = (*(int (__thiscall **)(int, unsigned char *, double *, unsigned int))(*(unsigned int *)g_DSurface_Primary + 120))( /*0x4f4b33*/
                         g_DSurface_Primary,
                         v38,
                         &v42,
@@ -224,11 +224,11 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1)
                 (*(void (__thiscall **, unsigned int a1)(int, int))(v35 + 16))(g_DSurface_Primary, v36); /*0x4f4b3d*/
               }
               if ( v37 && g_WWMouseClass_Instance ) /*0x4f4b50*/
-                (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)g_WWMouseClass_Instance + 60))( /*0x4f4b57*/
+                (*(void (__thiscall **)(int, int, unsigned int))(*(unsigned int *)g_WWMouseClass_Instance + 60))( /*0x4f4b57*/
                   g_WWMouseClass_Instance,
                   a1,
                   0);
-              result = (*(int (__thiscall **)(int, int *, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x4f4b7b*/
+              result = (*(int (__thiscall **)(int, int *, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x4f4b7b*/
                          g_DSurface_Primary,
                          &v45,
                          a1);
@@ -238,7 +238,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1)
                 if ( g_WWMouseClass_Instance ) /*0x4f4b8c*/
                 {
                   Sleep(0x32u); /*0x4f4b90*/
-                  return (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)g_WWMouseClass_Instance + 64))( /*0x4f4ba1*/
+                  return (*(int (__thiscall **)(int, int, unsigned int))(*(unsigned int *)g_WWMouseClass_Instance + 64))( /*0x4f4ba1*/
                            g_WWMouseClass_Instance,
                            a1,
                            0);

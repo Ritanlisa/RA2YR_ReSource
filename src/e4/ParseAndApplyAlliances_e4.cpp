@@ -14,7 +14,6 @@ unsigned int * E4Recv_69D870::sub_69D870(int a2, int a3)
   this->M8 = a2; /*0x69d87e*/
   this->M12 = 1; /*0x69d881*/
   this->M13 = 0; /*0x69d885*/
-  *(void **)this = (void*)&VectorClass_HouseClass___vftable; /*0x69d888*/
   if ( a2 ) /*0x69d88e*/
   {
     if ( a3 ) /*0x69d896*/
@@ -22,7 +21,7 @@ unsigned int * E4Recv_69D870::sub_69D870(int a2, int a3)
       this->M4 = a3; /*0x69d898*/
       return this; /*0x69d89e*/
     }
-    this->M4 = RA2_OPNEW(4 * a2); /*0x69d8ad*/
+    this->M4 = operator new(4 * a2); /*0x69d8ad*/
     this->M13 = 1; /*0x69d8b0*/
   }
   return this; /*0x69d89d*/

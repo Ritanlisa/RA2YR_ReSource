@@ -88,9 +88,9 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
   Sidebar::Dispatch(v6, aP3, v7, 0); /*0x4fa41c*/
   v9 = TechnoTypeClass::GetByTypeAndIndex(v6, aP2); /*0x4fa42a*/
   v24 = 0; /*0x4fa440*/
-  if ( !(*(int (__thiscall **)(int, _DWORD, int, int, int))(*(_DWORD *)v9 + 148))(v9, 0, 1, 1, this) ) /*0x4fa438*/
+  if ( !(*(int (__thiscall **)(int, unsigned int, int, int, int))(*(unsigned int *)v9 + 148))(v9, 0, 1, 1, this) ) /*0x4fa438*/
   {
-    if ( !a5 || !(*(int (__thiscall **)(int, int, _DWORD, int, int))(*(_DWORD *)v9 + 148))(v9, 1, 0, 1, this) ) /*0x4fa45b*/
+    if ( !a5 || !(*(int (__thiscall **)(int, int, unsigned int, int, int))(*(unsigned int *)v9 + 148))(v9, 1, 0, 1, this) ) /*0x4fa45b*/
     {
   LABEL_40:
       Debug::Log(); /*0x4fa533*/
@@ -128,7 +128,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
   }
   if ( !v10 ) /*0x4fa4e3*/
   {
-    v11 = RA2_OPNEW(0x74u); /*0x4fa4e7*/
+    v11 = operator new(0x74u); /*0x4fa4e7*/
     if ( !v11 ) /*0x4fa4f1*/
       goto LABEL_40; /*0x4fa4f1*/
     v10 = TeamTypeClass::Construct((int)v11); /*0x4fa4fa*/
@@ -170,7 +170,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
     v14 = v10->q058; /*0x4fa5b1*/
     if ( v14 ) /*0x4fa5b6*/
     {
-      if ( (*(int (__thiscall **)(int))(*(_DWORD *)v14 + 132))(v14) == v9 ) /*0x4fa5c2*/
+      if ( (*(int (__thiscall **)(int))(*(unsigned int *)v14 + 132))(v14) == v9 ) /*0x4fa5c2*/
       {
         v13 = 1; /*0x4fa5c4*/
   LABEL_55:
@@ -180,9 +180,9 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
           ProductionClass::StartTimer(v10, v24); /*0x4fa628*/
           if ( !v16 && g_GameMode_Current[0] && this->u8_1EC ) /*0x4fa63a*/
           {
-            v17 = (*(int (__thiscall **)(_DWORD))(*v10->q058 + 132))(v10->q058); /*0x4fa649*/
+            v17 = (*(int (__thiscall **)(unsigned int))(*v10->q058 + 132))(v10->q058); /*0x4fa649*/
             v18 = (int)(54 * ((int)dword_A8B558 * (int)g_ScenarioState / 0x3Cu)) /*0x4fa67b*/
-                / (*(int (__thiscall **)(int))(*(_DWORD *)v17 + 136))(v17);
+                / (*(int (__thiscall **)(int))(*(unsigned int *)v17 + 136))(v17);
             if ( v18 >= 53 ) /*0x4fa680*/
               v18 = 53; /*0x4fa682*/
             if ( v21 ) /*0x4fa68d*/
@@ -201,7 +201,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
       }
     }
   }
-  if ( (unsigned __int8)FactoryClass::DemandProduction(v9, (void *)this, a5) ) /*0x4fa5db*/
+  if ( (uint8_t)FactoryClass::DemandProduction(v9, (void *)this, a5) ) /*0x4fa5db*/
     goto LABEL_55; /*0x4fa5df*/
   Debug::Log(); /*0x4fa6c4*/
   if ( v10->u32_50 || v10->q058 ) /*0x4fa6d9*/
@@ -211,11 +211,11 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
   Debug::Log(); /*0x4fa70a*/
   v19 = v10->q058; /*0x4fa70f*/
   if ( v19 ) /*0x4fa717*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)v19 + 44))(v19); /*0x4fa71b*/
+    (*(void (__thiscall **)(int))(*(unsigned int *)v19 + 44))(v19); /*0x4fa71b*/
   Debug::Log(); /*0x4fa729*/
   v20 = v10->q058; /*0x4fa72e*/
   if ( v20 ) /*0x4fa736*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)v20 + 64))(v20); /*0x4fa73a*/
+    (*(void (__thiscall **)(int))(*(unsigned int *)v20 + 64))(v20); /*0x4fa73a*/
   Debug::Log(); /*0x4fa748*/
   Debug::Log(); /*0x4fa758*/
   (*(void (__thiscall **)(int, int))(v10->NeedsSaveOrLink)(v10, 1); /*0x4fa76a*/
@@ -308,15 +308,15 @@ CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame()
   if ( g_CommandClassVector_State > 0 ) /*0x533f5f*/
   {
     while ( strcmp( /*0x533f9f*/
-              (const char *)(*(int (__thiscall **)(_DWORD))(**((_DWORD **)g_CommandClass_Capacity + v2) + 4))(*((_DWORD *)g_CommandClass_Capacity + v2)),
+              (const char *)(*(int (__thiscall **)(unsigned int))(**((unsigned int **)g_CommandClass_Capacity + v2) + 4))(*((unsigned int *)g_CommandClass_Capacity + v2)),
               this) )
     {
       result = g_CommandClassVector_State; /*0x533fa1*/
       if ( ++v2 >= g_CommandClassVector_State ) /*0x533fa9*/
         return result; /*0x533fa9*/
     }
-    return (*(int (__thiscall **)(_DWORD, _DWORD))(**((_DWORD **)g_CommandClass_Capacity + v2) + 32))( /*0x533fbc*/
-             *((_DWORD *)g_CommandClass_Capacity + v2),
+    return (*(int (__thiscall **)(unsigned int, unsigned int))(**((unsigned int **)g_CommandClass_Capacity + v2) + 32))( /*0x533fbc*/
+             *((unsigned int *)g_CommandClass_Capacity + v2),
              0);
   }
   return result; /*0x533fab*/
@@ -341,7 +341,7 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
   unsigned int LeaderIndexTeamClass; // eax
   void *v15; // eax
   void *Blocka; // [esp+14h] [ebp-8h] BYREF
-  _DWORD *v17; // [esp+18h] [ebp-4h] BYREF
+  unsigned int *v17; // [esp+18h] [ebp-4h] BYREF
 
   v2 = *(Block + 5); /*0x636319*/
   for ( i = 0; i < v2; ++i ) /*0x636327*/
@@ -368,25 +368,25 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
   if ( v2 ) /*0x6363ad*/
   {
     Blocka = (void *)*Block; /*0x6363b1*/
-    v8 = *((_DWORD *)Blocka + 135); /*0x6363b5*/
-    v9 = *(_DWORD *)(v8 + 48); /*0x6363bb*/
-    if ( (unsigned __int8)House::IsHumanPlayer((void *)v8) && HouseClass_Player ) /*0x6363ce*/
-      v9 = *((_DWORD *)HouseClass_Player + 12); /*0x6363d0*/
+    v8 = *((unsigned int *)Blocka + 135); /*0x6363b5*/
+    v9 = *(unsigned int *)(v8 + 48); /*0x6363bb*/
+    if ( (uint8_t)House::IsHumanPlayer((void *)v8) && HouseClass_Player ) /*0x6363ce*/
+      v9 = *((unsigned int *)HouseClass_Player + 12); /*0x6363d0*/
     DecFactoryClassCounter(v9); /*0x6363d5*/
     VectorClass::EraseAt(&dword_AC4C40, (int)&Blocka); /*0x6363e4*/
   }
   v10 = (char *)(Block + 1); /*0x6363ec*/
   (*(void (__thiscall **)(char *))(*(Block + 1) + 12))((char *)Block + 4); /*0x6363f1*/
-  *((_BYTE *)Block + 152) = 0; /*0x6363f7*/
+  *((unsigned char *)Block + 152) = 0; /*0x6363f7*/
   *(Block + 35) = -1; /*0x636400*/
   *(Block + 36) = -1; /*0x636406*/
   *(Block + 37) = -1; /*0x63640c*/
-  *((_BYTE *)Block + 153) = 0; /*0x636412*/
+  *((unsigned char *)Block + 153) = 0; /*0x636412*/
   *Block = 0; /*0x636419*/
   if ( Block ) /*0x63641f*/
   {
     if ( *Block ) /*0x636425*/
-      BuildingClass::SetType((_DWORD *)*Block, 0); /*0x63642d*/
+      BuildingClass::SetType((unsigned int *)*Block, 0); /*0x63642d*/
     Blocka = Block; /*0x636437*/
     if ( !byte_AC4CF5 ) /*0x63643d*/
     {
@@ -399,28 +399,27 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
       TeamClass::DestroyAllMembers(*(void **)(*(Block + 2) + 4 * j), *Block); /*0x63647a*/
     if ( v12 ) /*0x63648a*/
     {
-      v17 = (_DWORD *)*Block; /*0x63648e*/
+      v17 = (unsigned int *)*Block; /*0x63648e*/
       LeaderIndexTeamClass = TeamClass::GetLeaderIndex(v17); /*0x636492*/
       DecFactoryClassCounter(LeaderIndexTeamClass); /*0x636499*/
       VectorClass::EraseAt(&dword_AC4C40, (int)&v17); /*0x6364a8*/
     }
-    (*(void (__thiscall **)(char *))(*(_DWORD *)v10 + 12))((char *)Block + 4); /*0x6364b1*/
-    *((_BYTE *)Block + 152) = 0; /*0x6364b7*/
+    (*(void (__thiscall **)(char *))(*(unsigned int *)v10 + 12))((char *)Block + 4); /*0x6364b1*/
+    *((unsigned char *)Block + 152) = 0; /*0x6364b7*/
     *(Block + 35) = -1; /*0x6364be*/
     *(Block + 36) = -1; /*0x6364c4*/
     *(Block + 37) = -1; /*0x6364ca*/
-    *((_BYTE *)Block + 153) = 0; /*0x6364d0*/
+    *((unsigned char *)Block + 153) = 0; /*0x6364d0*/
     v15 = (void *)*(Block + 2); /*0x6364d7*/
-    *(_DWORD *)v10 = (void*)&VectorClass_PlanningNodeClass___vftable; /*0x6364de*/
     if ( v15 ) /*0x6364e4*/
     {
-      if ( *((_BYTE *)Block + 17) ) /*0x6364e6*/
+      if ( *((unsigned char *)Block + 17) ) /*0x6364e6*/
       {
         RA2_OPDEL(v15); /*0x6364ee*/
         *(Block + 2) = 0; /*0x6364f6*/
       }
     }
-    *((_BYTE *)Block + 17) = 0; /*0x6364fa*/
+    *((unsigned char *)Block + 17) = 0; /*0x6364fa*/
     *(Block + 3) = 0; /*0x6364fe*/
     RA2_OPDEL(Block); /*0x636501*/
   }
@@ -444,7 +443,7 @@ int Sidebar::RemoveItem(int a2)
     do /*0x63f064*/
     {
       ++a2; /*0x63f057*/
-      *(_DWORD *)(this->u32_4 + 4 * a2 - 4) = *(_DWORD *)(this->u32_4 + 4 * a2); /*0x63f05b*/
+      *(unsigned int *)(this->u32_4 + 4 * a2 - 4) = *(unsigned int *)(this->u32_4 + 4 * a2); /*0x63f05b*/
     }
     while ( a2 < this->q010 ); /*0x63f064*/
   }
@@ -475,13 +474,13 @@ ObjectClass * * Sidebar::Render(char a2)
   {
     this->q150C = 0; /*0x63fb49*/
     g_TooltipActive = 1; /*0x63fb55*/
-    if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) ) /*0x63fb5d*/
+    if ( *((unsigned int *)g_ScenarioClass_Instance + 3374) ) /*0x63fb5d*/
       v3 = 0; /*0x63fb70*/
     else
       v3 = 5; /*0x63fb69*/
-    v16 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x63fb78*/
+    v16 = *((unsigned int *)g_ScenarioClass_Instance + 3374); /*0x63fb78*/
     v4 = g_DSurface_SidebarBounds + 69; /*0x63fb80*/
-    v5 = (int *)(*(int (__thiscall **)(int, int *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, &v16); /*0x63fb8c*/
+    v5 = (int *)(*(int (__thiscall **)(int, int *))(*(unsigned int *)DSurface_Sidebar + 120))(DSurface_Sidebar, &v16); /*0x63fb8c*/
     v6 = this->q1530; /*0x63fb91*/
     v18[0] = *v5; /*0x63fb97*/
     v18[1] = v5[1]; /*0x63fb9e*/
@@ -650,10 +649,10 @@ int Sidebar::ActivateTab(IUnknown * aP1)
   int result; // eax
 
   result = aP1; /*0x6a60a0*/
-  if ( aP1 == *(_DWORD *)(this + 21404) ) /*0x6a60ac*/
+  if ( aP1 == *(unsigned int *)((char *)&this->__pad_12934 + 9532) ) /*0x6a60ac*/
   {
-    *(_BYTE *)(this + 21414) = 1; /*0x6a60b8*/
-    *(_BYTE *)(this + 3988 * aP1 + 5504) = 1; /*0x6a60c6*/
+    this->__pad_53A6 = 1; /*0x6a60b8*/
+    *(unsigned char *)(((char *)&this->qCD2 + 706) * aP1 + 5504) = 1; /*0x6a60c6*/
     return MapClass::MarkForRedraw(&MapClass_Instance, 0); /*0x6a60d2*/
   }
   return result; /*0x6a60d8*/
@@ -697,7 +696,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     || dword_880A00 != dword_B07DD4 )
   {
   LABEL_13:
-    (*(void (__thiscall **)(int, int, int))(*(_DWORD *)g_WWMouseClass_Instance + 60))( /*0x6a7241*/
+    (*(void (__thiscall **)(int, int, int))(*(unsigned int *)g_WWMouseClass_Instance + 60))( /*0x6a7241*/
       g_WWMouseClass_Instance,
       DSurface_Sidebar,
       1);
@@ -717,7 +716,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
         v17 = 16; /*0x6a72ff*/
         v12 = dword_886F98; /*0x6a7303*/
         v13 = 16; /*0x6a7307*/
-        (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x6a7312*/
+        (*(void (__thiscall **)(int, int *, int, int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x6a7312*/
           g_DSurface_Primary,
           &v10,
           DSurface_Sidebar,
@@ -733,12 +732,12 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
       v15 = g_DSurface_SidebarBounds; /*0x6a7357*/
       v16 = dword_886F98; /*0x6a735b*/
       v5 = (byte_A8EB7C != 0 ? g_Map_VisibleRectOffset : 0) + Point.x;
-      v6 = (*(int (__thiscall **)(int))(*(_DWORD *)DSurface_Sidebar + 128))(DSurface_Sidebar); /*0x6a7363*/
+      v6 = (*(int (__thiscall **)(int))(*(unsigned int *)DSurface_Sidebar + 128))(DSurface_Sidebar); /*0x6a7363*/
       v10 = v5; /*0x6a7386*/
       y = v4; /*0x6a738a*/
       v12 = dword_886F98; /*0x6a738e*/
       v13 = v6 - g_DSurface_SidebarBounds; /*0x6a7392*/
-      (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x6a739d*/
+      (*(void (__thiscall **)(int, int *, int, int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x6a739d*/
         g_DSurface_Primary,
         &v10,
         DSurface_Sidebar,
@@ -748,17 +747,17 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     }
     else if ( g_TooltipActive )
     {
-      v7 = (*(int (__thiscall **)(int, int *))(*(_DWORD *)DSurface_Sidebar + 120))(DSurface_Sidebar, &v10); /*0x6a73be*/
+      v7 = (*(int (__thiscall **)(int, int *))(*(unsigned int *)DSurface_Sidebar + 120))(DSurface_Sidebar, &v10); /*0x6a73be*/
       v14 = 0; /*0x6a73dd*/
       v15 = 0; /*0x6a73e5*/
-      v16 = *(_DWORD *)(v7 + 8); /*0x6a73ec*/
-      v8 = *(_DWORD *)(v7 + 12); /*0x6a73f0*/
+      v16 = *(unsigned int *)(v7 + 8); /*0x6a73ec*/
+      v8 = *(unsigned int *)(v7 + 12); /*0x6a73f0*/
       y = Point.y; /*0x6a73fd*/
       v10 = Point.x + (byte_A8EB7C != 0 ? g_Map_VisibleRectOffset : 0);
       v17 = v8; /*0x6a741b*/
       v12 = v16; /*0x6a741f*/
       v13 = v8; /*0x6a7423*/
-      (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x6a742e*/
+      (*(void (__thiscall **)(int, int *, int, int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x6a742e*/
         g_DSurface_Primary,
         &v10,
         DSurface_Sidebar,
@@ -772,7 +771,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
       v14 = Point.x + dword_8809F4 + (byte_A8EB7C != 0 ? g_Map_VisibleRectOffset : 0);
       v16 = dword_8809FC; /*0x6a746f*/
       v17 = dword_880A00; /*0x6a7473*/
-      (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x6a747e*/
+      (*(void (__thiscall **)(int, int *, int, int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x6a747e*/
         g_DSurface_Primary,
         &v14,
         DSurface_Sidebar,
@@ -784,7 +783,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
   }
   if ( this->q53A8 )
   {
-    (*(void (__thiscall **)(int, int, int))(*(_DWORD *)g_WWMouseClass_Instance + 60))( /*0x6a71c7*/
+    (*(void (__thiscall **)(int, int, int))(*(unsigned int *)g_WWMouseClass_Instance + 60))( /*0x6a71c7*/
       g_WWMouseClass_Instance,
       DSurface_Sidebar,
       1);
@@ -796,7 +795,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
     v13 = 16; /*0x6a7219*/
     v16 = dword_886F98; /*0x6a721d*/
     v17 = 16; /*0x6a7221*/
-    (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x6a722c*/
+    (*(void (__thiscall **)(int, int *, int, int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x6a722c*/
       g_DSurface_Primary,
       &v14,
       DSurface_Sidebar,
@@ -824,7 +823,7 @@ void Sidebar_UpdateProductionDisplay()
   IUnknown *v34; // eax
   int eax73; // eax
   CampaignScore *v37; // ebx
-  _DWORD *TextBoundingRect; // eax
+  unsigned int *TextBoundingRect; // eax
   wchar_t *StringCSF; // ebp
   int eax100; // eax
   ConvertClass *v51; // eax
@@ -841,7 +840,7 @@ void Sidebar_UpdateProductionDisplay()
   CampaignScore *v70; // [esp-2h] [ebp-48Ch]
   CampaignScore *v71; // [esp-2h] [ebp-48Ch]
   CampaignScore *v72; // [esp-2h] [ebp-48Ch]
-  __int16 v73; // [esp+10h] [ebp-47Ah]
+  int16_t v73; // [esp+10h] [ebp-47Ah]
   bool IsCliffWall; // [esp+12h] [ebp-478h]
   int *BuildLimit; // [esp+16h] [ebp-474h]
   IUnknown *aP1; // [esp+32h] [ebp-458h]
@@ -857,31 +856,31 @@ void Sidebar_UpdateProductionDisplay()
   CampaignScore Buffer[14]; // [esp+28Ah] [ebp-200h] BYREF
 
   int v84 = a1;
-  result = *(_BYTE *)(a1 + 28);
+  result = *(unsigned char *)(a1 + 28);
   if ( result )
   {
-    if ( *(_BYTE *)(a1 + 60) || (result = a3) != 0 )
+    if ( *(unsigned char *)(a1 + 60) || (result = a3) != 0 )
     {
   int v86; // [esp+2Ah] [ebp-460h]
   int v82; // [esp+1Ah] [ebp-470h] BYREF
       v70 = a2;
-      *(_BYTE *)(a1 + 60) = 0;
+      *(unsigned char *)(a1 + 60) = 0;
       stru_B05488[24720] = 1;
-      *(_DWORD *)aP3[0] = 0;
-      *(_DWORD *)&aP3.field_2[2] = 0;
-      *(_DWORD *)&aP3[8] = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[44940] + 124))(*(_DWORD *)&stru_87C374[44940]);
-      int v5 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)&stru_87C374[44940] + 128))(*(_DWORD *)&stru_87C374[44940]);
+      *(unsigned int *)aP3[0] = 0;
+      *(unsigned int *)&aP3.field_2[2] = 0;
+      *(unsigned int *)&aP3[8] = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[44940] + 124))(*(unsigned int *)&stru_87C374[44940]);
+      int v5 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)&stru_87C374[44940] + 128))(*(unsigned int *)&stru_87C374[44940]);
       v6 = (IUnknown *)HouseClass_Player.field_0;
       v7 = (IUnknown *)*(&g_MatrixTransformState + 2274);
-      *(_DWORD *)&aP3[12] = v5;
+      *(unsigned int *)&aP3[12] = v5;
       int v8 = 0;
       char v79 = 0;
       if ( (CoordStruct *)HouseClass_Player.field_0 == *(&g_MatrixTransformState + 2274) )
-        v8 = *(_DWORD *)(a1 + 84);
-      int v9 = *(_DWORD *)(a1 + 84);
+        v8 = *(unsigned int *)(a1 + 84);
+      int v9 = *(unsigned int *)(a1 + 84);
       if ( v8 < v9 )
       {
-        _DWORD * v10 = (_DWORD *)(a1 + 4 * (v8 + 4 * (3 * v8 + 6) + 2));
+        unsigned int * v10 = (unsigned int *)(a1 + 4 * (v8 + 4 * (3 * v8 + 6) + 2));
         while ( *v10 != 1 && *v10 != 2 )
         {
           ++v8;
@@ -893,15 +892,15 @@ void Sidebar_UpdateProductionDisplay()
       }
 LABEL_13:
       int v11 = 26;
-      if ( *(_DWORD *)(*(_DWORD *)&HouseClass_Player[29924] + 13496) )
+      if ( *(unsigned int *)(*(unsigned int *)&HouseClass_Player[29924] + 13496) )
         v11 = 18;
       int v85 = 0;
   int v12; // eax
-      v12 = (*(_BYTE *)(a1 + 63) != 0)
-          + (*(_DWORD *)&stru_87C374[44072]
-           - *(_DWORD *)&stru_B05488[24688]
+      v12 = (*(unsigned char *)(a1 + 63) != 0)
+          + (*(unsigned int *)&stru_87C374[44072]
+           - *(unsigned int *)&stru_B05488[24688]
            - v11
-           + *(_DWORD *)&stru_87C374[44064]
+           + *(unsigned int *)&stru_87C374[44064]
            - 7)
           / 50;
       int v92 = v12;
@@ -914,27 +913,27 @@ LABEL_13:
             for ( i = 0; i < 2; ++i )
             {
               char v78 = a3;
-              int v13 = *(_DWORD *)(v84 + 68);
+              int v13 = *(unsigned int *)(v84 + 68);
               ProductionState = 0;
               aP2 = 0;
               v86 = 0;
               BufferCount = 0;
-              int v14 = *(_DWORD *)(v84 + 32);
+              int v14 = *(unsigned int *)(v84 + 32);
               int v90 = i + 2 * (v13 + v85);
-              int v15 = v14 + i * *(_DWORD *)&stru_B05488[24692] - *(_DWORD *)&stru_87C374[44060];
+              int v15 = v14 + i * *(unsigned int *)&stru_B05488[24692] - *(unsigned int *)&stru_87C374[44060];
               char v16 = 0;
               v73 = 0;
-              int v17 = v85 * *(_DWORD *)&stru_B05488[24696] + *(_DWORD *)(v84 + 36) + 1;
-              int v18 = *(_DWORD *)(v84 + 56);
+              int v17 = v85 * *(unsigned int *)&stru_B05488[24696] + *(unsigned int *)(v84 + 36) + 1;
+              int v18 = *(unsigned int *)(v84 + 56);
               IsCliffWall = 0;
               int v94 = v17;
               int v19 = 56 * (i + 2 * v85 + 60 * v18) + 11566720;
-              if ( *(_BYTE *)(v84 + 63) )
+              if ( *(unsigned char *)(v84 + 63) )
               {
-                v17 += *(_DWORD *)(v84 + 76) - *(_DWORD *)&stru_B05488[24696];
+                v17 += *(unsigned int *)(v84 + 76) - *(unsigned int *)&stru_B05488[24696];
                 v94 = v17;
               }
-              int v20 = *(_DWORD *)(v84 + 84);
+              int v20 = *(unsigned int *)(v84 + 84);
               int * v80 = 0;
               aP1 = 0;
               if ( v90 >= v20 )
@@ -943,26 +942,26 @@ LABEL_13:
               }
               else
               {
-                if ( !*(_BYTE *)(v19 + 52) || (IDA_HIBYTE(v73) = 1, HouseClass_Player[45136]) )
+                if ( !*(unsigned char *)(v19 + 52) || (IDA_HIBYTE(v73) = 1, HouseClass_Player[45136]) )
                   IDA_HIBYTE(v73) = 0;
-                int v21 = *(_DWORD *)(v84 + 52 * v90 + 92);
+                int v21 = *(unsigned int *)(v84 + 52 * v90 + 92);
                 int * v22 = (int *)(v84 + 52 * v90);
                 int * v87 = v22;
                 if ( v21 == 31 )
                 {
                   unsigned int v31 = v22[22];
-                  int v32 = *(_DWORD *)(*(_DWORD *)&HouseClass_Player[42472] + 4 * v31);
+                  int v32 = *(unsigned int *)(*(unsigned int *)&HouseClass_Player[42472] + 4 * v31);
                   v80 = *(int **)(v32 + 96);
-                  if ( v31 >= *(_DWORD *)&HouseClass_Player[42484] )
+                  if ( v31 >= *(unsigned int *)&HouseClass_Player[42484] )
                     aP2 = 0;
                   else
                     aP2 = *(ConvertClass **)(v32 + 184);
                   IDA_LOBYTE(v73) = 1;
-                  IsCliffWall = !SuperClass::ShouldDrawProgress(*(_DWORD *)(*(_DWORD *)(HouseClass_Player.field_0 + 600)
+                  IsCliffWall = !SuperClass::ShouldDrawProgress(*(unsigned int *)(*(unsigned int *)(HouseClass_Player.field_0 + 600)
                                                                           + 4 * v31));
-                  BufferCount = (size_t)SuperClass::NameReadiness(*(_DWORD *)(*(_DWORD *)(HouseClass_Player.field_0 + 600)
+                  BufferCount = (size_t)SuperClass::NameReadiness(*(unsigned int *)(*(unsigned int *)(HouseClass_Player.field_0 + 600)
                                                                             + 4 * v31));
-                  ProductionState = SidebarClass::GetProductionState(*(_DWORD *)(*(_DWORD *)(HouseClass_Player.field_0
+                  ProductionState = SidebarClass::GetProductionState(*(unsigned int *)(*(unsigned int *)(HouseClass_Player.field_0
                                                                                            + 600)
                                                                                + 4 * v31));
                   v16 = 0;
@@ -999,7 +998,7 @@ LABEL_13:
                     {
                       v16 = v77;
                       IDA_LOBYTE(v73) = 0;
-                      _DWORD * v28 = (_DWORD *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2));
+                      unsigned int * v28 = (unsigned int *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2));
                       switch ( *v28 )
                       {
                         case 0:
@@ -1037,16 +1036,16 @@ LABEL_13:
                       }
                     }
                     IDA_LOBYTE(v73) = 1;
-                    IsCliffWall = ObjectClass::IsCliffWall((_DWORD *)v86);
+                    IsCliffWall = ObjectClass::IsCliffWall((unsigned int *)v86);
                     if ( IsCliffWall )
                       BufferCount = (size_t)GetStringCSF(g_Str_TXT_READY, 0, &stru_830620[62628], 3411);
                     else
                       v78 = 1;
                     Member09 = 0;
-                    _DWORD * v26 = (_DWORD *)v87[25];
+                    unsigned int * v26 = (unsigned int *)v87[25];
                     if ( v26 )
                       Member09 = ObjectClass::GetMember09(v26);
-                    if ( *(_DWORD *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2)) == 1 )
+                    if ( *(unsigned int *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2)) == 1 )
                     {
                       v27 = v87[27];
 LABEL_43:
@@ -1060,16 +1059,16 @@ LABEL_45:
                 }
               }
 LABEL_59:
-              *(_DWORD *)&aP3[88] = 0;
-              *(_DWORD *)&aP3[92] = 0;
-              *(_DWORD *)&aP3[96] = v15 + 60;
-              *(_DWORD *)&aP3[100] = v17 + 48;
+              *(unsigned int *)&aP3[88] = 0;
+              *(unsigned int *)&aP3[92] = 0;
+              *(unsigned int *)&aP3[96] = v15 + 60;
+              *(unsigned int *)&aP3[100] = v17 + 48;
               if ( v78 )
               {
                 if ( aP2 )
                 {
-                  *(_DWORD *)&aP3[128] = v15;
-                  *(_DWORD *)&aP3[132] = v17;
+                  *(unsigned int *)&aP3[128] = v15;
+                  *(unsigned int *)&aP3[132] = v17;
                   DrawToSurfaceSHP(
                     *(int *)&stru_87C374[44940],
                     *(int *)&stru_87C374[13116],
@@ -1090,25 +1089,25 @@ LABEL_59:
                 }
                 if ( IDA_HIBYTE(v73) )
                 {
-                  *(_DWORD *)&aP3[152] = v15;
-                  *(_DWORD *)&aP3[156] = v17;
-                  *(_DWORD *)&aP3[160] = 60;
-                  *(_DWORD *)&aP3[164] = 48;
+                  *(unsigned int *)&aP3[152] = v15;
+                  *(unsigned int *)&aP3[156] = v17;
+                  *(unsigned int *)&aP3[160] = 60;
+                  *(unsigned int *)&aP3[164] = 48;
                   IDA_BYTE2(v82) = stru_B05488[42390];
-                  int v33 = **(_DWORD **)&stru_87C374[44940];
-                  IDA_LOWORD(v82) = *(_WORD *)&stru_B05488[42388];
-                  (*(void (__thiscall **)(_DWORD, char *, char *, int))(v33 + 84))(
-                    *(_DWORD *)&stru_87C374[44940],
+                  int v33 = **(unsigned int **)&stru_87C374[44940];
+                  IDA_LOWORD(v82) = *(unsigned short *)&stru_B05488[42388];
+                  (*(void (__thiscall **)(unsigned int, char *, char *, int))(v33 + 84))(
+                    *(unsigned int *)&stru_87C374[44940],
                     &aP3[88],
                     &aP3[152],
-                    ((unsigned __int8)stru_B05488[42388] >> stru_89E138[11420] << stru_89E138[11416])
-                  | ((unsigned __int8)stru_B05488[42389] >> stru_89E138[11436] << stru_89E138[11432])
-                  | ((unsigned __int8)stru_B05488[42390] >> stru_89E138[11428] << stru_89E138[11424]));
+                    ((uint8_t)stru_B05488[42388] >> stru_89E138[11420] << stru_89E138[11416])
+                  | ((uint8_t)stru_B05488[42389] >> stru_89E138[11436] << stru_89E138[11432])
+                  | ((uint8_t)stru_B05488[42390] >> stru_89E138[11428] << stru_89E138[11424]));
                 }
                 if ( v16 )
                 {
-                  *(_DWORD *)&aP3[144] = v15;
-                  *(_DWORD *)&aP3[148] = v17;
+                  *(unsigned int *)&aP3[144] = v15;
+                  *(unsigned int *)&aP3[148] = v17;
                   DrawToSurfaceSHP(
                     *(int *)&stru_87C374[44940],
                     *(int *)&stru_87C374[13144],
@@ -1127,11 +1126,11 @@ LABEL_59:
                     0,
                     0);
                 }
-                if ( *(_DWORD *)(v84 + 52 * v90 + 136) > *(int *)&HouseClass_Player[45112]
-                  && *(_DWORD *)&HouseClass_Player[45112] % 16 > 8 )
+                if ( *(unsigned int *)(v84 + 52 * v90 + 136) > *(int *)&HouseClass_Player[45112]
+                  && *(unsigned int *)&HouseClass_Player[45112] % 16 > 8 )
                 {
-                  *(_DWORD *)&aP3[120] = v15;
-                  *(_DWORD *)&aP3[124] = v17;
+                  *(unsigned int *)&aP3[120] = v15;
+                  *(unsigned int *)&aP3[124] = v17;
                   DrawToSurfaceSHP(
                     *(int *)&stru_87C374[44940],
                     *(int *)&stru_87C374[13144],
@@ -1152,16 +1151,16 @@ LABEL_59:
                 }
                 if ( v80 )
                 {
-                  *(_DWORD *)&aP3[140] = v17 + 36;
-                  *(_DWORD *)&aP3[136] = v15;
+                  *(unsigned int *)&aP3[140] = v17 + 36;
+                  *(unsigned int *)&aP3[136] = v15;
                   UI_Update_6AC480((int)v80, (int *)&aP3[136], &aP3, 60);
                 }
                 char v75 = 0;
                 v34 = aP1;
   int v35; // edi
-                v35 = ((unsigned __int8)stru_B05488[42388] >> stru_89E138[11420] << stru_89E138[11416])
-                    | ((unsigned __int8)stru_B05488[42389] >> stru_89E138[11436] << stru_89E138[11432])
-                    | ((unsigned __int8)stru_B05488[42390] >> stru_89E138[11428] << stru_89E138[11424]);
+                v35 = ((uint8_t)stru_B05488[42388] >> stru_89E138[11420] << stru_89E138[11416])
+                    | ((uint8_t)stru_B05488[42389] >> stru_89E138[11436] << stru_89E138[11432])
+                    | ((uint8_t)stru_B05488[42390] >> stru_89E138[11428] << stru_89E138[11424]);
                 if ( aP1 )
                 {
                   IDA_LOBYTE(v34) = aP1->__pad_BC0[270];
@@ -1176,17 +1175,17 @@ LABEL_59:
                       || eax73 > 0
   int v39; // ecx
                       && ((v39 = BuildLimit[22]) == 0
-                       || (*(int (__thiscall **)(int))(*(_DWORD *)v39 + 132))(v39)
-                       && (IUnknown *)(*(int (__thiscall **)(int))(*(_DWORD *)BuildLimit[22] + 132))(BuildLimit[22]) != aP1) )
+                       || (*(int (__thiscall **)(int))(*(unsigned int *)v39 + 132))(v39)
+                       && (IUnknown *)(*(int (__thiscall **)(int))(*(unsigned int *)BuildLimit[22] + 132))(BuildLimit[22]) != aP1) )
                     {
                       swprintf((wchar_t *const)Buffer, (const size_t)&g_Str_Fmt_PctD, (const wchar_t *const)v37, v70);
-                      *(_DWORD *)&aP3[116] = v17 + 1;
-                      *(_DWORD *)&aP3[112] = v15 + 60;
+                      *(unsigned int *)&aP3[116] = v17 + 1;
+                      *(unsigned int *)&aP3[112] = v15 + 60;
                       TextBoundingRect = GetTextBoundingRect(&aP3[360], Buffer, v15 + 60, v17 + 1, 578, 2, 1);
-                      *(_DWORD *)&aP3[168] = *TextBoundingRect;
-                      *(_DWORD *)&aP3[172] = TextBoundingRect[1];
-                      *(_DWORD *)&aP3[176] = TextBoundingRect[2];
-                      *(_DWORD *)&aP3[180] = TextBoundingRect[3];
+                      *(unsigned int *)&aP3[168] = *TextBoundingRect;
+                      *(unsigned int *)&aP3[172] = TextBoundingRect[1];
+                      *(unsigned int *)&aP3[176] = TextBoundingRect[2];
+                      *(unsigned int *)&aP3[180] = TextBoundingRect[3];
                       DSurface::FillRectWithColor(
                         (int *)&aP3[168],
                         *(ObjectClass **)&stru_87C374[44940],
@@ -1206,13 +1205,13 @@ LABEL_59:
                     }
                   }
                 }
-                if ( (_BYTE)v73 )
+                if ( (unsigned char)v73 )
                 {
                   if ( BufferCount )
                   {
-                    *(_DWORD *)&aP3[108] = v17 + 1;
-                    *(_DWORD *)&aP3[104] = v15 + 30;
-  _DWORD *v41; // eax
+                    *(unsigned int *)&aP3[108] = v17 + 1;
+                    *(unsigned int *)&aP3[104] = v15 + 30;
+  unsigned int *v41; // eax
                     v41 = GetTextBoundingRect(
                             &aP3.field_178,
                             (CampaignScore *)BufferCount,
@@ -1221,10 +1220,10 @@ LABEL_59:
                             322,
                             2,
                             1);
-                    *(_DWORD *)&aP3[56] = *v41;
-                    *(_DWORD *)&aP3[60] = v41[1];
-                    *(_DWORD *)&aP3[64] = v41[2];
-                    *(_DWORD *)&aP3[68] = v41[3];
+                    *(unsigned int *)&aP3[56] = *v41;
+                    *(unsigned int *)&aP3[60] = v41[1];
+                    *(unsigned int *)&aP3[64] = v41[2];
+                    *(unsigned int *)&aP3[68] = v41[3];
                     DSurface::FillRectWithColor(
                       (int *)&aP3[56],
                       *(ObjectClass **)&stru_87C374[44940],
@@ -1243,8 +1242,8 @@ LABEL_59:
                   }
                   if ( !IsCliffWall )
                   {
-                    if ( (*(_DWORD *)&aP3[16] = v15,
-                          *(_DWORD *)&aP3[20] = v17,
+                    if ( (*(unsigned int *)&aP3[16] = v15,
+                          *(unsigned int *)&aP3[20] = v17,
                           DrawToSurfaceSHP(
                             *(int *)&stru_87C374[44940],
                             *(int *)&stru_87C374[13144],
@@ -1263,8 +1262,8 @@ LABEL_59:
                             0,
                             0),
                           v86)
-                      && (!*(_DWORD *)(v86 + 56) || *(_BYTE *)(v86 + 112))
-                      || *(_DWORD *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2)) == 2 )
+                      && (!*(unsigned int *)(v86 + 56) || *(unsigned char *)(v86 + 112))
+                      || *(unsigned int *)(v84 + 4 * (v90 + 4 * (3 * v90 + 6) + 2)) == 2 )
                     {
                       StringCSF = GetStringCSF(
                                     (wchar_t *)&stru_830620[62732],
@@ -1273,14 +1272,14 @@ LABEL_59:
                                     3636);
                       if ( v75 )
                       {
-                        *(_DWORD *)&aP3[24] = v15 + 2;
-                        *(_DWORD *)&aP3[28] = v94 + 1;
+                        *(unsigned int *)&aP3[24] = v15 + 2;
+                        *(unsigned int *)&aP3[28] = v94 + 1;
   int v97[4]; // [esp+1DAh] [ebp-2B0h] BYREF
-                        _DWORD * v43 = GetTextBoundingRect(v97, (CampaignScore *)StringCSF, v15 + 2, v94 + 1, 66, 2, 1);
-                        *(_DWORD *)&aP3[72] = *v43;
-                        *(_DWORD *)&aP3[76] = v43[1];
-                        *(_DWORD *)&aP3[80] = v43[2];
-                        *(_DWORD *)&aP3[84] = v43[3];
+                        unsigned int * v43 = GetTextBoundingRect(v97, (CampaignScore *)StringCSF, v15 + 2, v94 + 1, 66, 2, 1);
+                        *(unsigned int *)&aP3[72] = *v43;
+                        *(unsigned int *)&aP3[76] = v43[1];
+                        *(unsigned int *)&aP3[80] = v43[2];
+                        *(unsigned int *)&aP3[84] = v43[3];
                         DSurface::FillRectWithColor(
                           (int *)&aP3[72],
                           *(ObjectClass **)&stru_87C374[44940],
@@ -1299,9 +1298,9 @@ LABEL_59:
                       }
                       else
                       {
-                        *(_DWORD *)&aP3[32] = v15 + 30;
-                        *(_DWORD *)&aP3[36] = v94 + 1;
-  _DWORD *v44; // eax
+                        *(unsigned int *)&aP3[32] = v15 + 30;
+                        *(unsigned int *)&aP3[36] = v94 + 1;
+  unsigned int *v44; // eax
                         v44 = GetTextBoundingRect(
                                 &aP3[344],
                                 (CampaignScore *)StringCSF,
@@ -1310,10 +1309,10 @@ LABEL_59:
                                 322,
                                 2,
                                 1);
-                        *(_DWORD *)&aP3[40] = *v44;
-                        *(_DWORD *)&aP3[44] = v44[1];
-                        *(_DWORD *)&aP3[48] = v44[2];
-                        *(_DWORD *)&aP3[52] = v44[3];
+                        *(unsigned int *)&aP3[40] = *v44;
+                        *(unsigned int *)&aP3[44] = v44[1];
+                        *(unsigned int *)&aP3[48] = v44[2];
+                        *(unsigned int *)&aP3[52] = v44[3];
                         DSurface::FillRectWithColor(
                           (int *)&aP3[40],
                           *(ObjectClass **)&stru_87C374[44940],
@@ -1345,7 +1344,7 @@ LABEL_59:
         {
 LABEL_135:
           result = v84;
-          *(_DWORD *)(v84 + 80) = *(_DWORD *)(v84 + 76);
+          *(unsigned int *)(v84 + 80) = *(unsigned int *)(v84 + 76);
           return result;
         }
         v12 = v92;
@@ -1356,33 +1355,33 @@ LABEL_135:
       {
         while ( 1 )
         {
-          int v45 = *(_DWORD *)(v84 + 68) + v85;
-          int v46 = *(_DWORD *)(v84 + 36) + 2 * v85 * *(_DWORD *)&stru_B05488[24696] + 1;
-          int v47 = *(_DWORD *)(v84 + 32) - *(_DWORD *)&stru_87C374[44060];
+          int v45 = *(unsigned int *)(v84 + 68) + v85;
+          int v46 = *(unsigned int *)(v84 + 36) + 2 * v85 * *(unsigned int *)&stru_B05488[24696] + 1;
+          int v47 = *(unsigned int *)(v84 + 32) - *(unsigned int *)&stru_87C374[44060];
           if ( v45 >= *(int *)&stru_87C374[35204] )
             goto LABEL_135;
-          v92 = *(_DWORD *)&stru_87C374[22428][4 * v45 + 12420];
+          v92 = *(unsigned int *)&stru_87C374[22428][4 * v45 + 12420];
           int v48 = v92;
           if ( !v92 )
             goto LABEL_135;
-          int v49 = *(_DWORD *)(v92 + 52);
+          int v49 = *(unsigned int *)(v92 + 52);
           if ( v49 )
           {
-            int v50 = *(_DWORD *)(v49 + 188);
+            int v50 = *(unsigned int *)(v49 + 188);
             if ( !v50 )
             {
               v51 = *(ConvertClass **)&stru_B05488[24584];
 LABEL_105:
               if ( v51 )
               {
-                int v53 = v47 + *(__int16 *)v51->field_2;
-                *(_DWORD *)&aP3[40] = 0;
-                *(_DWORD *)&aP3[48] = v53;
-                *(_DWORD *)&aP3[44] = 0;
-                int v54 = v46 + *(__int16 *)&v51->field_2[2];
-                *(_DWORD *)&aP3[32] = v47;
-                *(_DWORD *)&aP3[52] = v54;
-                *(_DWORD *)&aP3[36] = v46;
+                int v53 = v47 + *(int16_t *)v51->field_2;
+                *(unsigned int *)&aP3[40] = 0;
+                *(unsigned int *)&aP3[48] = v53;
+                *(unsigned int *)&aP3[44] = 0;
+                int v54 = v46 + *(int16_t *)&v51->field_2[2];
+                *(unsigned int *)&aP3[32] = v47;
+                *(unsigned int *)&aP3[52] = v54;
+                *(unsigned int *)&aP3[36] = v46;
                 DrawToSurfaceSHP(
                   *(int *)&stru_87C374[44940],
                   *(int *)&stru_87C374[13148],
@@ -1416,10 +1415,10 @@ LABEL_105:
             }
           }
 LABEL_107:
-          int v55 = *(_DWORD *)(v48 + 52);
+          int v55 = *(unsigned int *)(v48 + 52);
           if ( v55 )
           {
-            eax108 = *(_DWORD *)(v55 + 184);
+            eax108 = *(unsigned int *)(v55 + 184);
             switch ( eax108 )
             {
               case -3:
@@ -1463,13 +1462,13 @@ LABEL_121:
                   if ( eax108 == 9 )
                   {
                     updated = UI_Update_72F4D0();
-                    int v59 = *(__int16 *)v56->field_2 + v47 + 70;
-                    *(_DWORD *)&aP3[72] = 0;
-                    *(_DWORD *)&aP3[80] = v59;
-                    *(_DWORD *)&aP3[76] = 0;
-                    *(_DWORD *)&aP3[84] = *(__int16 *)&v56->field_2[2] + v46 + 70;
-                    *(_DWORD *)&aP3[24] = v47 + 70;
-                    *(_DWORD *)&aP3[28] = v46 + 70;
+                    int v59 = *(int16_t *)v56->field_2 + v47 + 70;
+                    *(unsigned int *)&aP3[72] = 0;
+                    *(unsigned int *)&aP3[80] = v59;
+                    *(unsigned int *)&aP3[76] = 0;
+                    *(unsigned int *)&aP3[84] = *(int16_t *)&v56->field_2[2] + v46 + 70;
+                    *(unsigned int *)&aP3[24] = v47 + 70;
+                    *(unsigned int *)&aP3[28] = v46 + 70;
                     DrawToSurfaceSHP(
                       *(int *)&stru_87C374[44940],
                       updated,
@@ -1490,14 +1489,14 @@ LABEL_121:
                   }
                   else
                   {
-                    int v60 = *(__int16 *)v56->field_2 + v47 + 70;
-                    *(_DWORD *)&aP3[56] = 0;
-                    int v61 = *(__int16 *)&v56->field_2[2];
-                    *(_DWORD *)&aP3[64] = v60;
-                    *(_DWORD *)&aP3[60] = 0;
-                    *(_DWORD *)&aP3[68] = v61 + v46 + 70;
-                    *(_DWORD *)&aP3[16] = v47 + 70;
-                    *(_DWORD *)&aP3[20] = v46 + 70;
+                    int v60 = *(int16_t *)v56->field_2 + v47 + 70;
+                    *(unsigned int *)&aP3[56] = 0;
+                    int v61 = *(int16_t *)&v56->field_2[2];
+                    *(unsigned int *)&aP3[64] = v60;
+                    *(unsigned int *)&aP3[60] = 0;
+                    *(unsigned int *)&aP3[68] = v61 + v46 + 70;
+                    *(unsigned int *)&aP3[16] = v47 + 70;
+                    *(unsigned int *)&aP3[20] = v46 + 70;
                     DrawToSurfaceSHP(
                       *(int *)&stru_87C374[44940],
                       *(int *)&stru_87C374[13148],
@@ -1523,14 +1522,14 @@ LABEL_121:
             }
           }
           wcscpy((wchar_t *)&stru_B05488[9256], (const wchar_t *)(v92 + 90154));
-          if ( *(_DWORD *)&HouseClass_Player[29932] == 4 )
-            _itow(*(_DWORD *)&stru_87C374[22428][4 * v45 + 12580], Format, 10);
-          _itow(*(_DWORD *)&stru_87C374[22428][4 * v45 + 12452], v98, 10);
-          _itow(*(_DWORD *)&stru_87C374[22428][4 * v45 + 12484], v101, 10);
-          _itow(*(_DWORD *)&stru_87C374[22428][4 * v45 + 12516], v99, 10);
+          if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
+            _itow(*(unsigned int *)&stru_87C374[22428][4 * v45 + 12580], Format, 10);
+          _itow(*(unsigned int *)&stru_87C374[22428][4 * v45 + 12452], v98, 10);
+          _itow(*(unsigned int *)&stru_87C374[22428][4 * v45 + 12484], v101, 10);
+          _itow(*(unsigned int *)&stru_87C374[22428][4 * v45 + 12516], v99, 10);
           v62 = *(ObjectClass **)&stru_87C374[22428][4 * v45 + 12548];
-          if ( *(_BYTE *)(v84 + 63) )
-            v46 += *(_DWORD *)(v84 + 76) - *(_DWORD *)&stru_B05488[24696];
+          if ( *(unsigned char *)(v84 + 63) )
+            v46 += *(unsigned int *)(v84 + 76) - *(unsigned int *)&stru_B05488[24696];
           v82 = v47 + 8;
           int v83 = v46 + 4;
           TextRenderer::DrawText(
@@ -1542,9 +1541,9 @@ LABEL_121:
             v62,
             0,
             66);
-          if ( *(_DWORD *)&HouseClass_Player[29932] == 4 )
+          if ( *(unsigned int *)&HouseClass_Player[29932] == 4 )
           {
-            int v63 = *(_DWORD *)&stru_87C374[22428][4 * v45 + 12580];
+            int v63 = *(unsigned int *)&stru_87C374[22428][4 * v45 + 12580];
             v83 += 17;
             if ( v63 >= 1 )
             {
@@ -1622,7 +1621,7 @@ char Sidebar::FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4)
   int v7; // eax
   int v8; // ecx
   int v9; // esi
-  _DWORD *i; // edx
+  unsigned int *i; // edx
 
   switch ( aP2 ) /*0x6a6155*/
   {
@@ -1655,14 +1654,14 @@ char Sidebar::FindProductionType(FactoryClass * aP1, MouseClass * aP2, int a4)
   v9 = *(this + v6 + 1382); /*0x6a61c7*/
   if ( v9 <= 0 ) /*0x6a61d0*/
     return 0; /*0x6a61e6*/
-  for ( i = (_DWORD *)(v8 + 88); i[1] != aP2 || *i != a4; i += 13 ) /*0x6a61d2*/
+  for ( i = (unsigned int *)(v8 + 88); i[1] != aP2 || *i != a4; i += 13 ) /*0x6a61d2*/
   {
     if ( ++v7 >= v9 ) /*0x6a61e4*/
       return 0; /*0x6a61e4*/
   }
-  *(_DWORD *)(v8 + 52 * v7 + 100) = aP1; /*0x6a61fa*/
-  *(_BYTE *)(v8 + 61) = 1; /*0x6a61fe*/
-  *(_BYTE *)(v8 + 60) = 1; /*0x6a6202*/
+  *(unsigned int *)(v8 + 52 * v7 + 100) = aP1; /*0x6a61fa*/
+  *(unsigned char *)(v8 + 61) = 1; /*0x6a61fe*/
+  *(unsigned char *)(v8 + 60) = 1; /*0x6a6202*/
   MapClass::MarkForRedraw(&MapClass_Instance, 0); /*0x6a620b*/
   return 1; /*0x6a61e6*/
 }

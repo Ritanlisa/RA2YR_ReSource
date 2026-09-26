@@ -13,8 +13,8 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
 {
   int v3; // edx
   int v4; // ecx
-  __int16 v5; // di
-  __int16 v6; // ax
+  int16_t v5; // di
+  int16_t v6; // ax
   int v7; // ecx
   int result; // eax
   int v9; // edi
@@ -37,7 +37,7 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
   v7 = *(&this->u32_185); /*0x6544dc*/
   *(&this->u32_2101) = 0; /*0x6544e7*/
   *(&this->u32_20C8) = -1; /*0x6544f4*/
-  *(&this->u32_20C7) = (__int16)(v7 - 1 + v5) - (__int16)(1 - v7 + v6); /*0x654533*/
+  *(&this->u32_20C7) = (int16_t)(v7 - 1 + v5) - (int16_t)(1 - v7 + v6); /*0x654533*/
   *(&this->u32_20C6) = v6 - v5; /*0x65453e*/
   LayerClass::CellIteratorReset(&MapClass_Instance); /*0x654544*/
   result = LayerClass::CellIteratorNext(this); /*0x65454b*/
@@ -47,7 +47,7 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
     while ( 1 ) /*0x654567*/
     {
       aP1 = v9->outBuffer; /*0x654567*/
-      if ( LayerClass::IsWithinUsableArea(this, (__int16 *)&aP1, 1) ) /*0x65456b*/
+      if ( LayerClass::IsWithinUsableArea(this, (int16_t *)&aP1, 1) ) /*0x65456b*/
         break; /*0x65456b*/
   LABEL_17:
       result = LayerClass::CellIteratorNext(this); /*0x65462c*/
@@ -60,8 +60,8 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
     v10 = *(&this->u32_20C6); /*0x654594*/
     v11 = *(&this->u32_20C8); /*0x65459a*/
     aP1 = v9->outBuffer; /*0x6545a0*/
-    v12 = (__int16)aP1 + v10 - IDA_SHIWORD(aP1); /*0x6545b0*/
-    v13 = (__int16)aP1 + IDA_SHIWORD(aP1) - v11; /*0x6545b2*/
+    v12 = (int16_t)aP1 + v10 - IDA_SHIWORD(aP1); /*0x6545b0*/
+    v13 = (int16_t)aP1 + IDA_SHIWORD(aP1) - v11; /*0x6545b2*/
     v14 = 2; /*0x6545b7*/
     if ( v12 == -1 ) /*0x6545bc*/
     {

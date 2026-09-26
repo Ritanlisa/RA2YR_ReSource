@@ -31,23 +31,23 @@ int GameClass::initGameMode(int a2, int a3)
 namespace gamemd {
 unsigned int * GameClass::processFrame(int a2, int a3)
 {
-  _DWORD *result; // eax
-  _DWORD *v5; // eax
-  _DWORD *v6; // ecx
+  unsigned int *result; // eax
+  unsigned int *v5; // eax
+  unsigned int *v6; // ecx
 
-  result = (_DWORD *)this->u32_C; /*0x4381d3*/
+  result = (unsigned int *)this->u32_C; /*0x4381d3*/
   if ( !result ) /*0x4381d8*/
   {
-    v5 = RA2_OPNEW(4u); /*0x4381dc*/
+    v5 = operator new(4u); /*0x4381dc*/
     if ( v5 ) /*0x4381e6*/
       result = sub_437F50(v5); /*0x4381ea*/
     else
       result = 0; /*0x4381f1*/
     this->u32_C = result; /*0x4381f3*/
   }
-  v6 = (_DWORD *)this->u32_C; /*0x4381f6*/
+  v6 = (unsigned int *)this->u32_C; /*0x4381f6*/
   if ( v6 ) /*0x4381fc*/
-    return (_DWORD *)GameClass::initGameMode(v6, a2, a3); /*0x438208*/
+    return (unsigned int *)GameClass::initGameMode(v6, a2, a3); /*0x438208*/
   return result; /*0x4381f9*/
 }
 }
@@ -55,23 +55,23 @@ unsigned int * GameClass::processFrame(int a2, int a3)
 namespace gamemd {
 unsigned int * GameClass::updateUI(int a2, int a3)
 {
-  _DWORD *result; // eax
-  _DWORD *v5; // eax
-  _DWORD *v6; // ecx
+  unsigned int *result; // eax
+  unsigned int *v5; // eax
+  unsigned int *v6; // ecx
 
-  result = (_DWORD *)this->u32_C; /*0x438303*/
+  result = (unsigned int *)this->u32_C; /*0x438303*/
   if ( !result ) /*0x438308*/
   {
-    v5 = RA2_OPNEW(4u); /*0x43830c*/
+    v5 = operator new(4u); /*0x43830c*/
     if ( v5 ) /*0x438316*/
       result = sub_437F50(v5); /*0x43831a*/
     else
       result = 0; /*0x438321*/
     this->u32_C = result; /*0x438323*/
   }
-  v6 = (_DWORD *)this->u32_C; /*0x438326*/
+  v6 = (unsigned int *)this->u32_C; /*0x438326*/
   if ( v6 ) /*0x43832c*/
-    return (_DWORD *)GameClass::initGameMode(v6, a2, a3); /*0x438338*/
+    return (unsigned int *)GameClass::initGameMode(v6, a2, a3); /*0x438338*/
   return result; /*0x438329*/
 }
 }
@@ -97,7 +97,7 @@ int GameClass::loadScenarioFiles(ObjectClass * aP1)
     ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x5d228f*/
     v4 = aP1; /*0x5d229b*/
     if ( g_WWMouseClass_Instance ) /*0x5d22a1*/
-      (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)g_WWMouseClass_Instance + 60))( /*0x5d22a8*/
+      (*(void (__thiscall **)(int, int, unsigned int))(*(unsigned int *)g_WWMouseClass_Instance + 60))( /*0x5d22a8*/
         g_WWMouseClass_Instance,
         aP1,
         0);
@@ -117,7 +117,7 @@ int GameClass::loadScenarioFiles(ObjectClass * aP1)
         v4 = aP1; /*0x5d22f3*/
         v8 += Rect.left; /*0x5d22f7*/
         v9 += Rect.top; /*0x5d2301*/
-        (*(void (__thiscall **)(int, int *, int, int *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))( /*0x5d2309*/
+        (*(void (__thiscall **)(int, int *, int, int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x5d2309*/
           g_DSurface_Primary,
           &v8,
           aP1,
@@ -132,7 +132,7 @@ int GameClass::loadScenarioFiles(ObjectClass * aP1)
     }
     this->u32_4 = 0; /*0x5d2320*/
     if ( g_WWMouseClass_Instance ) /*0x5d2330*/
-      return (*(int (__thiscall **)(int, int, _DWORD))(*(_DWORD *)g_WWMouseClass_Instance + 64))( /*0x5d2337*/
+      return (*(int (__thiscall **)(int, int, unsigned int))(*(unsigned int *)g_WWMouseClass_Instance + 64))( /*0x5d2337*/
                g_WWMouseClass_Instance,
                v4,
                0);
@@ -214,10 +214,10 @@ int GameClass::FindOpenSlot()
     return -1; /*0x5d63cc*/
   while ( 1 ) /*0x5d6387*/
   {
-    v4 = *(_DWORD *)(g_MultiplayerGameState + 4 * v2); /*0x5d6387*/
+    v4 = *(unsigned int *)(g_MultiplayerGameState + 4 * v2); /*0x5d6387*/
     if ( IsRandMap::Sed(v4) ) /*0x5d638c*/
     {
-      v5 = (*(int (__thiscall **)(char *))(*(_DWORD *)&this->u32_180))(this); /*0x5d6399*/
+      v5 = (*(int (__thiscall **)(char *))(((unsigned int)(this->u32_180))))(this); /*0x5d6399*/
     }
     else
     {
@@ -276,26 +276,26 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
         aP2 -= v9; /*0x632eb4*/
         this->q050 -= v9; /*0x632ebb*/
         if ( !v10 ) /*0x632ec1*/
-          return v5 + Delegate::Dispatch((_DWORD *)this, (int)v3, aP2); /*0x632ec1*/
+          return v5 + Delegate::Dispatch((unsigned int *)this, (int)v3, aP2); /*0x632ec1*/
         BigInt::RSAOperation(this->q038, (char *)(&this->q0180), this->u32_13C, v12); /*0x632ed6*/
-        GameClass::processFrame((_DWORD *)(&this->q0080), (int)v12, 56); /*0x632ee5*/
+        GameClass::processFrame((unsigned int *)(&this->q0080), (int)v12, 56); /*0x632ee5*/
       }
       else
       {
         memset(v12, 0, sizeof(v12)); /*0x632e17*/
-        (*(void (__thiscall **)(_DWORD, char *, int))(**(_DWORD **)(&this->q0046) + 8))(this->q010, v12, 56); /*0x632e21*/
+        (*(void (__thiscall **)(unsigned int, char *, int))(**(unsigned int **)(&this->q0046) + 8))(this->q010, v12, 56); /*0x632e21*/
         v6 = this->q038; /*0x632e24*/
         if ( v6 ) /*0x632e29*/
-          v7 = (*(_DWORD *)(v6 + 512) - 1) / 8 * (55 / ((*(_DWORD *)(v6 + 512) - 1) / 8) + 1); /*0x632e4a*/
+          v7 = (*(unsigned int *)(v6 + 512) - 1) / 8 * (55 / ((*(unsigned int *)(v6 + 512) - 1) / 8) + 1); /*0x632e4a*/
         else
           v7 = 0; /*0x632e2b*/
         v8 = BigInt::DecryptBlock(v6, v12, v7, (char *)(&this->q0180)); /*0x632e57*/
-        v5 = Delegate::Dispatch((_DWORD *)this, &this->q03C, v8); /*0x632e65*/
-        GameClass::processFrame((_DWORD *)(&this->q0080), (int)v12, 56); /*0x632e6d*/
+        v5 = Delegate::Dispatch((unsigned int *)this, &this->q03C, v8); /*0x632e65*/
+        GameClass::processFrame((unsigned int *)(&this->q0080), (int)v12, 56); /*0x632e6d*/
       }
       this->q00C = 0; /*0x632eea*/
     }
-    return v5 + Delegate::Dispatch((_DWORD *)this, (int)v3, aP2); /*0x632f0a*/
+    return v5 + Delegate::Dispatch((unsigned int *)this, (int)v3, aP2); /*0x632f0a*/
   }
   return Delegate::Dispatch((int)Src, aP2); /*0x632f02*/
 }
@@ -332,33 +332,33 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
     if ( this->q034 == 1 ) /*0x63317d*/
     {
       v7 = Delegate::Invoke( /*0x6331a6*/
-             (_DWORD *)this,
+             (unsigned int *)this,
              (int)Src,
-             ((*(_DWORD *)(v6 + 512) - 1) / 8 + 1) * (55 / ((*(_DWORD *)(v6 + 512) - 1) / 8) + 1));
+             ((*(unsigned int *)(v6 + 512) - 1) / 8 + 1) * (55 / ((*(unsigned int *)(v6 + 512) - 1) / 8) + 1));
       v8 = this->q038; /*0x6331ab*/
       v7 = v7; /*0x6331ae*/
       if ( v8 ) /*0x6331b2*/
-        v10 = ((*(_DWORD *)(v8 + 512) - 1) / 8 + 1) * (55 / ((*(_DWORD *)(v8 + 512) - 1) / 8) + 1); /*0x6331d4*/
+        v10 = ((*(unsigned int *)(v8 + 512) - 1) / 8 + 1) * (55 / ((*(unsigned int *)(v8 + 512) - 1) / 8) + 1); /*0x6331d4*/
       else
         v10 = 0; /*0x6331b4*/
       if ( v7 != v10 ) /*0x6331d9*/
         return 0; /*0x6331e7*/
       BigInt::RSAOperation(v8, Src, v7, (char *)(&this->q0180)); /*0x6331f4*/
-      GameClass::updateUI((_DWORD *)(&this->q0080), &this->q03C, 56); /*0x6331fc*/
+      GameClass::updateUI((unsigned int *)(&this->q0080), &this->q03C, 56); /*0x6331fc*/
     }
     else
     {
       memset(Src, 0, sizeof(Src)); /*0x63320d*/
-      (*(void (__thiscall **)(_DWORD, char *, int))(**(_DWORD **)(&this->q0046) + 8))(this->q010, Src, 56); /*0x633217*/
+      (*(void (__thiscall **)(unsigned int, char *, int))(**(unsigned int **)(&this->q0046) + 8))(this->q010, Src, 56); /*0x633217*/
       v12 = this->q038; /*0x63321a*/
       if ( v12 ) /*0x63321f*/
-        v13 = (*(_DWORD *)(v12 + 512) - 1) / 8 * (55 / ((*(_DWORD *)(v12 + 512) - 1) / 8) + 1); /*0x633240*/
+        v13 = (*(unsigned int *)(v12 + 512) - 1) / 8 * (55 / ((*(unsigned int *)(v12 + 512) - 1) / 8) + 1); /*0x633240*/
       else
         v13 = 0; /*0x633221*/
       v14 = BigInt::DecryptBlock(v12, Src, v13, (char *)(&this->q0180)); /*0x63324d*/
       this->q140 = v14; /*0x633258*/
       this->q13C = v14; /*0x63325e*/
-      GameClass::updateUI((_DWORD *)(&this->q0080), (int)Src, 56); /*0x633268*/
+      GameClass::updateUI((unsigned int *)(&this->q0080), (int)Src, 56); /*0x633268*/
     }
     v4 = Size; /*0x63326d*/
     this->q00C = 0; /*0x633274*/
@@ -374,7 +374,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
     this->q140 -= v4; /*0x6332b6*/
     v4 = Size - v4; /*0x6332c3*/
   }
-  return v16 + Delegate::Invoke((_DWORD *)this, (int)v3, v4); /*0x6331db*/
+  return v16 + Delegate::Invoke((unsigned int *)this, (int)v3, v4); /*0x6331db*/
 }
 }
 // 0x69AE10
@@ -426,7 +426,7 @@ ObjectClass * * GameClass::Shutdown()
   OleUninitialize(); /*0x6becc7*/
   if ( g_WWMouseClass_Instance ) /*0x6becd5*/
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 20))(g_WWMouseClass_Instance); /*0x6becd9*/
+    (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 20))(g_WWMouseClass_Instance); /*0x6becd9*/
     if ( g_WWMouseClass_Instance ) /*0x6bece4*/
       (**(void (__thiscall ***)(int, int))g_WWMouseClass_Instance)(g_WWMouseClass_Instance, 1); /*0x6bece9*/
   }
@@ -435,7 +435,7 @@ ObjectClass * * GameClass::Shutdown()
   {
     if ( dword_B0BCF0 ) /*0x6bed06*/
     {
-      v0 = *(_DWORD *)(dword_B0BCF0 - 4); /*0x6bed08*/
+      v0 = *(unsigned int *)(dword_B0BCF0 - 4); /*0x6bed08*/
       v1 = (void *)(dword_B0BCF0 - 4); /*0x6bed0c*/
       v2 = 9 * v0; /*0x6bed0f*/
       v3 = v0 - 1; /*0x6bed12*/
@@ -475,8 +475,8 @@ int GameClass::ReadVersionFile()
     {
       FileClass::Read(v5, (char *)(&this->q0102), 16); /*0x74f99b*/
       for ( this->q039 = 0; /*0x74f9b5*/
-            *(_BYTE *)(strlen((const char *)(&this->q0102)) + &this->q0101) == 13;
-            *(_BYTE *)(strlen((const char *)(&this->q0102)) + &this->q0101) = 0 )
+            *(unsigned char *)(strlen((const char *)(&this->q0102)) + &this->q0101) == 13;
+            *(unsigned char *)(strlen((const char *)(&this->q0102)) + &this->q0101) = 0 )
       {
         ; /*0x74f9c5*/
       }
@@ -514,8 +514,8 @@ int GameClass::ReadVersionFile2()
     {
       FileClass::Read(v5, (char *)(&this->q0102), 16); /*0x74fa5b*/
       for ( this->q039 = 0; /*0x74fa75*/
-            *(_BYTE *)(strlen((const char *)(&this->q0102)) + &this->q0101) == 13;
-            *(_BYTE *)(strlen((const char *)(&this->q0102)) + &this->q0101) = 0 )
+            *(unsigned char *)(strlen((const char *)(&this->q0102)) + &this->q0101) == 13;
+            *(unsigned char *)(strlen((const char *)(&this->q0102)) + &this->q0101) = 0 )
       {
         ; /*0x74fa85*/
       }
@@ -593,7 +593,7 @@ int GameClass::processNetworkPacket(void * Src, signed int Size)
 namespace gamemd {
 int * GameClass::initDisplay(char a2)
 {
-  Vector::Clear((int)(this + 3)); /*0x4aeca6*/
+  Vector::Clear((int)&this->u32_C); /*0x4aeca6*/
   Pipe::Dtor(); /*0x4aecad*/
   if ( (a2 & 1) != 0 ) /*0x4aecb7*/
     RA2_OPDEL(); /*0x4aecba*/
@@ -648,7 +648,6 @@ wchar_t * GameClass::GetDifficultyString()
 namespace gamemd {
 unsigned int * GameClass::saveGameState(char a2)
 {
-  *this = (void*)&PixelFXClass_vftable; /*0x631f49*/
   if ( (a2 & 1) != 0 ) /*0x631f4f*/
     RA2_OPDEL(); /*0x631f52*/
   return this; /*0x631f5c*/
@@ -672,7 +671,6 @@ PKPipe * GameClass::validateGameFile(char a2)
 
   v3 = (int *)this->q020; /*0x632ff5*/
   v4 = &this->q014; /*0x632ff8*/
-  this->q014 = (void*)&BlowPipe_vftable; /*0x632ffd*/
   if ( v3 ) /*0x633003*/
   {
     COMObject::Release(v3); /*0x633007*/
@@ -704,7 +702,6 @@ PKStrawClass * GameClass::applyGameSettings(char a2)
 
   v3 = (int *)this->q020; /*0x633375*/
   v4 = &this->q014; /*0x633378*/
-  this->q014 = (void*)&BlowStraw_vftable; /*0x63337d*/
   if ( v3 ) /*0x633383*/
   {
     COMObject::Release(v3); /*0x633387*/

@@ -19,13 +19,13 @@ FootClass * * Carryall::MissionStateMachine()
   void *v2; // ecx
   char *MissionControl; // eax
   int v4; // esi
-  _BYTE *v6; // edi
-  _DWORD *v7; // eax
+  unsigned char *v6; // edi
+  unsigned int *v7; // eax
   int v8; // edi
   void *NearbyCell; // eax
   int v10; // ecx
   int v11; // ecx
-  _DWORD *v12; // eax
+  unsigned int *v12; // eax
   int v13; // ecx
   int v14; // ecx
   int v15; // ecx
@@ -36,13 +36,13 @@ FootClass * * Carryall::MissionStateMachine()
   int v20; // ebx
   int v21; // ecx
   int v22; // edx
-  _DWORD *v23; // eax
-  _BYTE *Building; // edi
+  unsigned int *v23; // eax
+  unsigned char *Building; // edi
   int v25; // eax
   char v26; // [esp-4h] [ebp-48h]
-  _DWORD v27[3]; // [esp+14h] [ebp-30h] BYREF
-  _DWORD v28[3]; // [esp+20h] [ebp-24h] BYREF
-  _BYTE v29[20]; // [esp+2Ch] [ebp-18h] BYREF
+  unsigned int v27[3]; // [esp+14h] [ebp-30h] BYREF
+  unsigned int v28[3]; // [esp+20h] [ebp-24h] BYREF
+  unsigned char v29[20]; // [esp+2Ch] [ebp-18h] BYREF
   int v30; // [esp+40h] [ebp-4h]
 
   switch ( this->q0BC ) /*0x416d64*/
@@ -54,7 +54,7 @@ FootClass * * Carryall::MissionStateMachine()
       {
         Debug::Log(); /*0x416d87*/
   LABEL_4:
-        (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)this + 1156))(this, 0, 1); /*0x416d8f*/
+        (*(void (__thiscall **)(int, unsigned int, int))(*(unsigned int *)((char *)&this->q1047 + 457)))(this, 0, 1); /*0x416d8f*/
         goto LABEL_5; /*0x416d97*/
       }
       v6 = AbstractClass::IsTechnoType(v2); /*0x416dd8*/
@@ -66,18 +66,18 @@ FootClass * * Carryall::MissionStateMachine()
         goto LABEL_18; /*0x416df7*/
       if ( (v6[20] & 1) != 0 ) /*0x416e0e*/
       {
-        v7 = (_DWORD *)(*(int (__thiscall **)(_BYTE *))(v6->q03C)(v6); /*0x416e15*/
+        v7 = (unsigned int *)(*(int (__thiscall **)(unsigned char *))(v6->q03C)(v6); /*0x416e15*/
         if ( !Object::IsAlliedWithObjectHouse(v7, this) ) /*0x416e1a*/
           goto LABEL_18; /*0x416e1a*/
       }
-      if ( (*(int (__thiscall **)(_BYTE *))(v6->q02C)(v6) != 1 ) /*0x416e31*/
+      if ( (*(int (__thiscall **)(unsigned char *))(v6->q02C)(v6) != 1 ) /*0x416e31*/
         goto LABEL_18; /*0x416e31*/
       Debug::Log(); /*0x416e3c*/
-      if ( (_BYTE *)Team::GetMember((_DWORD *)this, 0) != v6 ) /*0x416e4f*/
+      if ( (unsigned char *)Team::GetMember((unsigned int *)this, 0) != v6 ) /*0x416e4f*/
         (*(void (__thiscall **)(int, int))(this->q274)(this, 3); /*0x416e57*/
-      if ( (*(int (__thiscall **)(int, int, _BYTE *))(this->q278)(this, 2, v6) != 1 ) /*0x416e6d*/
+      if ( (*(int (__thiscall **)(int, int, unsigned char *))(this->q278)(this, 2, v6) != 1 ) /*0x416e6d*/
       {
-        (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)this + 1152))(this, 0, 1); /*0x416f1e*/
+        (*(void (__thiscall **)(int, unsigned int, int))(*(unsigned int *)((char *)&this->q1047 + 441)))(this, 0, 1); /*0x416f1e*/
         goto LABEL_4; /*0x416f24*/
       }
       Debug::Log(); /*0x416e78*/
@@ -85,8 +85,8 @@ FootClass * * Carryall::MissionStateMachine()
       {
         (*(void (__thiscall **)(int, int))(this->q274)(this, 7); /*0x416ec3*/
   LABEL_18:
-        v8 = *(_DWORD *)this; /*0x416ec9*/
-        NearbyCell = InfantryClass::FindNearbyCell((_DWORD *)this, this->q5A4); /*0x416ed6*/
+        v8 = *(unsigned int *)this; /*0x416ec9*/
+        NearbyCell = InfantryClass::FindNearbyCell((unsigned int *)this, this->q5A4); /*0x416ed6*/
         (*(void (__thiscall **)(int, void *, int))(v8 + 1152))(this, NearbyCell, 1); /*0x416ede*/
         v10 = this->__pad_1750; /*0x416ee4*/
         if ( v10 ) /*0x416eec*/
@@ -98,20 +98,20 @@ FootClass * * Carryall::MissionStateMachine()
       {
         Debug::Log(); /*0x416e96*/
         (*(void (__thiscall **)(int, int))(this->q274)(this, 3); /*0x416ea4*/
-        (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)this + 1156))(this, 0, 1); /*0x416eb2*/
+        (*(void (__thiscall **)(int, unsigned int, int))(*(unsigned int *)((char *)&this->q1047 + 457)))(this, 0, 1); /*0x416eb2*/
       }
   LABEL_5:
-      MissionControl = MissionClass::GetMissionControl((_DWORD *)this); /*0x416d9d*/
+      MissionControl = MissionClass::GetMissionControl((unsigned int *)this); /*0x416d9d*/
       v4 = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x416dc2*/
-      return v4 + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2);
+      return v4 + Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 2);
     case 1: /*0x416d64*/
       v11 = this->q5A4; /*0x416f29*/
       if ( v11 ) /*0x416f31*/
       {
-        v12 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(v11->q048)(v11, v29); /*0x416f54*/
+        v12 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(v11->q048)(v11, v29); /*0x416f54*/
         if ( !this->q19D ) /*0x416f5f*/
           WinAPI::Wrapper(-2147467261); /*0x416f6e*/
-        (*(void (__stdcall **)(_DWORD, _DWORD, _DWORD, _DWORD))(*this->q19D + 68))( /*0x416f89*/
+        (*(void (__stdcall **)(unsigned int, unsigned int, unsigned int, unsigned int))(*this->q19D + 68))( /*0x416f89*/
           this->q19D,
           *v12,
           v12[1],
@@ -121,14 +121,14 @@ FootClass * * Carryall::MissionStateMachine()
       }
       else
       {
-        (*(void (__thiscall **)(int, _DWORD, int))(*(_DWORD *)this + 1156))(this, 0, 1); /*0x416f3a*/
+        (*(void (__thiscall **)(int, unsigned int, int))(*(unsigned int *)((char *)&this->q1047 + 457)))(this, 0, 1); /*0x416f3a*/
         return 1; /*0x416f40*/
       }
     case 2: /*0x416d64*/
       v13 = this->q5A4; /*0x416fa3*/
       if ( v13 /*0x416fc7*/
         && (*(int (__thiscall **)(int))(v13->fallRate)(v13) != 11
-        && Team::GetMember((_DWORD *)this, 0) != this->q5A4 )
+        && Team::GetMember((unsigned int *)this, 0) != this->q5A4 )
       {
         Debug::Log(); /*0x416fce*/
         this->q0BC = 0; /*0x416fd6*/
@@ -137,14 +137,14 @@ FootClass * * Carryall::MissionStateMachine()
       v14 = this->q5A4; /*0x416fe9*/
       if ( v14 /*0x417008*/
         && (*(int (__thiscall **)(int))(v14->fallRate)(v14) == 11
-        && !(*(unsigned __int8 (__thiscall **)(int, _DWORD))(*(_DWORD *)this + 1360))(this, this->q5A4) )
+        && !(*(uint8_t (__thiscall **)(int, unsigned int))(*(unsigned int *)((char *)&this->__pad_1536 + 10)))(this, this->q5A4) )
       {
         this->q0BC = 0; /*0x417012*/
         return 1; /*0x417024*/
       }
       if ( !this->q19D ) /*0x417025*/
         WinAPI::Wrapper(-2147467261); /*0x417032*/
-      if ( (*(int (__stdcall **)(_DWORD))(*this->q19D + 144))(this->q19D) != 1 ) /*0x417049*/
+      if ( (*(int (__stdcall **)(unsigned int))(*this->q19D + 144))(this->q19D) != 1 ) /*0x417049*/
         goto LABEL_44; /*0x417049*/
       Debug::Log(); /*0x417054*/
       v15 = this->q5A4; /*0x417059*/
@@ -157,14 +157,14 @@ FootClass * * Carryall::MissionStateMachine()
             v19 = this->q5A4->location,
             v20 = this->q5A4->q0A0,
             v30 = this->q5A4->q0A4,
-            (unsigned __int16)(v19 / 256) == (_WORD)v18)
-        && (unsigned __int16)(v20 / 256) == (unsigned __int16)(v17 / 256) )
+            (uint16_t)(v19 / 256) == (unsigned short)v18)
+        && (uint16_t)(v20 / 256) == (uint16_t)(v17 / 256) )
       {
         this->u8_6D4 = 0; /*0x41710f*/
   LABEL_44:
         if ( !this->q19D ) /*0x417116*/
           WinAPI::Wrapper(-2147467261); /*0x417125*/
-        if ( !(*(unsigned __int8 (__stdcall **)(_DWORD))(*this->q19D + 16))(this->q19D) ) /*0x417133*/
+        if ( !(*(uint8_t (__stdcall **)(unsigned int))(*this->q19D + 16))(this->q19D) ) /*0x417133*/
         {
           Debug::Log(); /*0x41713f*/
           this->q0BC = 3; /*0x417147*/
@@ -187,9 +187,9 @@ FootClass * * Carryall::MissionStateMachine()
         }
         else
         {
-          (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)&this->q0742))(this, 0); /*0x41719c*/
+          (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)&this->q0742))(this, 0); /*0x41719c*/
           FootClass::MissionMoveCarryallLand(); /*0x4171a4*/
-          (*(void (__thiscall **)(int, int))(*(_DWORD *)&this->q0742))(this, 1); /*0x4171af*/
+          (*(void (__thiscall **)(int, int))(*(unsigned int *)&this->q0742))(this, 1); /*0x4171af*/
           this->q0BC = 0; /*0x4171b5*/
         }
         return 1; /*0x417186*/
@@ -197,7 +197,7 @@ FootClass * * Carryall::MissionStateMachine()
       else
       {
         Debug::Log(); /*0x4171cd*/
-        (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)&this->q0742))(this, 0); /*0x4171da*/
+        (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)&this->q0742))(this, 0); /*0x4171da*/
         v27[0] = this->q027; /*0x4171ea*/
         v27[1] = this->q028; /*0x4171f1*/
         v21 = this->q029; /*0x4171f7*/
@@ -206,28 +206,28 @@ FootClass * * Carryall::MissionStateMachine()
         v27[2] = v21; /*0x417201*/
         v28[1] = this->q028; /*0x41720c*/
         v28[2] = v22; /*0x417216*/
-        v26 = IDA_BYTE1(*((_DWORD *)Coord::To_Cell(&MapClass_Instance, v27) + 80)) & 1; /*0x41722f*/
+        v26 = IDA_BYTE1(*((unsigned int *)Coord::To_Cell(&MapClass_Instance, v27) + 80)) & 1; /*0x41722f*/
         v23 = Coord::To_Cell(&MapClass_Instance, v28); /*0x417236*/
         Building = CellClass::FindBuilding(v23, v26); /*0x417242*/
         if ( Building /*0x417270*/
-          && Building == (_BYTE *)Team::GetMember((_DWORD *)this, 0)
+          && Building == (unsigned char *)Team::GetMember((unsigned int *)this, 0)
           && (Debug::Log(), (*(int (__thiscall **)(int, int))(this->q274)(this, 19) == 1) )
         {
           Debug::Log(); /*0x417277*/
-          (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)Building + 212))(Building); /*0x417283*/
+          (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)Building + 212))(Building); /*0x417283*/
           Building[140] = 0; /*0x417290*/
           Building[1060] = 1; /*0x417297*/
-          CellClass::AddObject((_DWORD *)(this + 276), Building); /*0x41729e*/
+          CellClass::AddObject((unsigned int *)((char *)&this->q417 + 57), Building); /*0x41729e*/
         }
         else
         {
           this->q0BC = 0; /*0x4172a5*/
         }
         (*(void (__thiscall **)(int, int))(this->q274)(this, 3); /*0x4172b1*/
-        (*(void (__thiscall **)(int, int))(*(_DWORD *)&this->q0742))(this, 1); /*0x4172bd*/
-        v25 = *(_DWORD *)this; /*0x4172c3*/
+        (*(void (__thiscall **)(int, int))(*(unsigned int *)&this->q0742))(this, 1); /*0x4172bd*/
+        v25 = *(unsigned int *)this; /*0x4172c3*/
         this->u8_6D4 = 1; /*0x4172ca*/
-        (*(void (__thiscall **)(int, _DWORD, int))(v25 + 1156))(this, 0, 1); /*0x4172d1*/
+        (*(void (__thiscall **)(int, unsigned int, int))(v25 + 1156))(this, 0, 1); /*0x4172d1*/
         return 1; /*0x4172da*/
       }
     default:

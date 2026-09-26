@@ -22,7 +22,7 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
   int v6; // ecx
   int v7; // eax
   int v8; // ecx
-  _DWORD * v9;
+  unsigned int * v9;
   unsigned int v10;
   int v12; // [esp+14h] [ebp+4h]
 
@@ -45,9 +45,9 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
   IDA_HIWORD(v12) = v5; /*0x5862f0*/
   while ( 1 ) /*0x5862fb*/
   {
-    v9 = ((__int16)v5 << 9) + (__int16)v8; /*0x5862fb*/
+    v9 = ((int16_t)v5 << 9) + (int16_t)v8; /*0x5862fb*/
     IDA_LOWORD(v12) = v8; /*0x5862fd*/
-    if ( v9 >= 0x40000 || (v10 = *(_DWORD **)(g_Shroud_CellArray + 4 * v9)) == 0 ) /*0x586311*/
+    if ( v9 >= 0x40000 || (v10 = *(unsigned int **)(g_Shroud_CellArray + 4 * v9)) == 0 ) /*0x586311*/
     {
       g_Map_GlobalCellIndex = v12; /*0x586317*/
       v10 = g_CellClassArray; /*0x58631c*/

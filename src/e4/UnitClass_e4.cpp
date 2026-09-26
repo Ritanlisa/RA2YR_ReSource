@@ -21,13 +21,13 @@ void UnitClass::ProcessIdleOrders()
     if ( v3[1] == 2 ) /*0x6b7bcd*/
     {
       v4 = *v3; /*0x6b7bcf*/
-      if ( *(_BYTE *)(*(_DWORD *)(v4 + 1732) + 3432) ) /*0x6b7bd7*/
+      if ( *(unsigned char *)(*(unsigned int *)(v4 + 1732) + 3432) ) /*0x6b7bd7*/
       {
         UnitClass::GetExitCell(v4, *(&this->vtable36)); /*0x6b7beb*/
         g_MissionQueueFrame = (int)g_CurrentFrame; /*0x6b7bfa*/
         v5 = v5; /*0x6b7bff*/
         g_MissionQueueType = 2; /*0x6b7c05*/
-        UnitClass::ClearTargetRef(**(_DWORD **)(*(&this->vtable25) + 4 * i)); /*0x6b7c16*/
+        UnitClass::ClearTargetRef(**(unsigned int **)(*(&this->vtable25) + 4 * i)); /*0x6b7c16*/
       }
     }
   }

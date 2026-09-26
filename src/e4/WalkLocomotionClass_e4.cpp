@@ -18,12 +18,12 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
   int v5; // esi
   unsigned int *v6; // edi
   int v7; // ecx
-  __int64 v8; // kr00_8
-  _DWORD *v9; // eax
+  int64_t v8; // kr00_8
+  unsigned int *v9; // eax
   int v11; // [esp-4h] [ebp-20h]
 
-  *(_DWORD *)(a1 + 84) = a2; /*0x6a0323*/
-  *(_DWORD *)(a1 + 88) = 0; /*0x6a0326*/
+  *(unsigned int *)(a1 + 84) = a2; /*0x6a0323*/
+  *(unsigned int *)(a1 + 88) = 0; /*0x6a0326*/
   v4 = g_OverlayTypeConfig; /*0x6a032d*/
   if ( a3 != g_OverlayTypeConfig || a4 != qword_B077FC ) /*0x6a0340*/
   {
@@ -31,13 +31,13 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     a4 = a4; /*0x6a035b*/
     v6 = (unsigned int *)(a1 - 4 + 64); /*0x6a0363*/
     a3 = a3; /*0x6a036a*/
-    if ( *v6 != g_OverlayTypeConfig || IDA___PAIR64__(*(_DWORD *)(a1 - 4 + 72), *(_DWORD *)(a1 + 64)) != qword_B077FC ) /*0x6a0375*/
+    if ( *v6 != g_OverlayTypeConfig || IDA___PAIR64__(*(unsigned int *)(a1 - 4 + 72), *(unsigned int *)(a1 + 64)) != qword_B077FC ) /*0x6a0375*/
     {
       *v6 = g_OverlayTypeConfig; /*0x6a0386*/
-      *(_DWORD *)(a1 + 64) = qword_B077FC; /*0x6a038d*/
+      *(unsigned int *)(a1 + 64) = qword_B077FC; /*0x6a038d*/
       v7 = IDA_HIDWORD(qword_B077FC); /*0x6a0390*/
       v5->u8_63 = 0; /*0x6a0396*/
-      *(_DWORD *)(a1 - 4 + 72) = v7; /*0x6a039a*/
+      *(unsigned int *)(a1 - 4 + 72) = v7; /*0x6a039a*/
       v4 = g_OverlayTypeConfig; /*0x6a039d*/
     }
     if ( IDA___PAIR64__(a4, a3) != IDA___PAIR64__(qword_B077FC, v4) /*0x6a03be*/
@@ -46,17 +46,17 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       v8 = a4; /*0x6a03c4*/
       v5->u8_63 = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
-      *(_QWORD *)(a1 + 64) = v8; /*0x6a03d0*/
+      *(unsigned long long *)(a1 + 64) = v8; /*0x6a03d0*/
       v11 = v5->q00C; /*0x6a03dd*/
       v9 = Coord::To_Cell(&MapClass_Instance, &a3); /*0x6a03e4*/
       if ( !CrateClass::ProcessPickup(v9, v11) || v5->q00C->q204 ) /*0x6a03f7*/
       {
         IDA_LOBYTE(v4) = v5->q00C->q090; /*0x6a043d*/
-        if ( (_BYTE)v4 ) /*0x6a0445*/
+        if ( (unsigned char)v4 ) /*0x6a0445*/
         {
           IDA_LOBYTE(v4) = g_OverlayTypeConfig; /*0x6a0447*/
           *v6 = g_OverlayTypeConfig; /*0x6a044c*/
-          *(_QWORD *)(a1 + 64) = qword_B077FC; /*0x6a0454*/
+          *(unsigned long long *)(a1 + 64) = qword_B077FC; /*0x6a0454*/
           v5->u8_63 = 0; /*0x6a0460*/
         }
       }
@@ -64,10 +64,10 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
       {
         WalkLocomotion::MoveTo(a1 - 4, &a3, 1); /*0x6a040a*/
         IDA_LOBYTE(v4) = a1 + 48; /*0x6a040f*/
-        *(_DWORD *)(a1 + 48) = a3; /*0x6a041a*/
-        *(_QWORD *)(a1 + 52) = a4; /*0x6a041c*/
-        *(_DWORD *)(a1 + 76) = 0; /*0x6a0422*/
-        *(_DWORD *)(a1 + 80) = 1072693248; /*0x6a0429*/
+        *(unsigned int *)(a1 + 48) = a3; /*0x6a041a*/
+        *(unsigned long long *)(a1 + 52) = a4; /*0x6a041c*/
+        *(unsigned int *)(a1 + 76) = 0; /*0x6a0422*/
+        *(unsigned int *)(a1 + 80) = 1072693248; /*0x6a0429*/
       }
     }
   }
@@ -92,16 +92,16 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
   int *v15; // eax
   int v16; // ebx
   int v17; // ebp
-  _DWORD *v18; // eax
+  unsigned int *v18; // eax
   int v20[2]; // [esp+Ch] [ebp-20h] BYREF
-  _DWORD v21[2]; // [esp+14h] [ebp-18h] BYREF
+  unsigned int v21[2]; // [esp+14h] [ebp-18h] BYREF
   int v22; // [esp+1Ch] [ebp-10h]
   int v23; // [esp+20h] [ebp-Ch]
   int v24; // [esp+24h] [ebp-8h]
   unsigned int v25; // [esp+28h] [ebp-4h]
 
   v4 = a1; /*0x6a3f55*/
-  v5 = (int *)(*(int (__stdcall **)(int, _DWORD *))(*(_DWORD *)a1 + 24))(a1, v21); /*0x6a3f62*/
+  v5 = (int *)(*(int (__stdcall **)(int, unsigned int *))(*(unsigned int *)a1 + 24))(a1, v21); /*0x6a3f62*/
   v6 = *v5; /*0x6a3f65*/
   v7 = v5[1]; /*0x6a3f67*/
   v8 = v5[2]; /*0x6a3f70*/
@@ -110,9 +110,9 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
   v25 = v8; /*0x6a3f7d*/
   if ( v6 == g_OverlayTypeConfig && IDA___PAIR64__(v8, v7) == qword_B077FC ) /*0x6a3f89*/
     return 0; /*0x6a3f89*/
-  if ( !*(_BYTE *)(v4 + 92) ) /*0x6a3f97*/
+  if ( !*(unsigned char *)(v4 + 92) ) /*0x6a3f97*/
   {
-    v9 = *(_DWORD *)(v4 + 84); /*0x6a3fa2*/
+    v9 = *(unsigned int *)(v4 + 84); /*0x6a3fa2*/
     if ( v9 != -1 ) /*0x6a3fa8*/
     {
       v10 = byte_7F2A40[12 * v9]; /*0x6a3fb1*/
@@ -124,20 +124,20 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
         {
           v13 = (int *)(dword_7F2960[v11] + 12 * v12); /*0x6a3fdc*/
           a1 = v13[2]; /*0x6a3fe2*/
-          if ( *(_DWORD *)(v4 + 88) < v12 ) /*0x6a3feb*/
+          if ( *(unsigned int *)(v4 + 88) < v12 ) /*0x6a3feb*/
           {
             v14 = v13[1]; /*0x6a3ff3*/
             v20[0] = *v13; /*0x6a3ff6*/
             v20[1] = v14; /*0x6a3fff*/
-            v15 = WalkLocomotion::TransformCoords((_DWORD *)(v4 - 4), v21, v20, &a1); /*0x6a4011*/
+            v15 = WalkLocomotion::TransformCoords((unsigned int *)(v4 - 4), v21, v20, &a1); /*0x6a4011*/
             v16 = *v15; /*0x6a4016*/
             v17 = v15[1]; /*0x6a4018*/
-            v18 = (_DWORD *)(*(_DWORD *)(v4 + 8) + 156); /*0x6a401e*/
+            v18 = (unsigned int *)(*(unsigned int *)(v4 + 8) + 156); /*0x6a401e*/
             v21[0] = *v18; /*0x6a4025*/
             v21[1] = v18[1]; /*0x6a402c*/
             v22 = v18[2]; /*0x6a4033*/
-            if ( (unsigned __int16)(v16 / 256) == (unsigned __int16)(a2 / 256) /*0x6a409b*/
-              && (unsigned __int16)(v17 / 256) == (unsigned __int16)(a3 / 256)
+            if ( (uint16_t)(v16 / 256) == (uint16_t)(a2 / 256) /*0x6a409b*/
+              && (uint16_t)(v17 / 256) == (uint16_t)(a3 / 256)
               && (int)abs32(v22 - a4) <= dword_B07838 )
             {
               return 1; /*0x6a40a5*/
@@ -147,8 +147,8 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
       }
     }
   }
-  return (unsigned __int16)(v23 / 256) == (unsigned __int16)(a2 / 256) /*0x6a411e*/
-      && (unsigned __int16)(v24 / 256) == (unsigned __int16)(a3 / 256)
+  return (uint16_t)(v23 / 256) == (uint16_t)(a2 / 256) /*0x6a411e*/
+      && (uint16_t)(v24 / 256) == (uint16_t)(a3 / 256)
       && (int)abs32(v25 - a4) <= dword_B07838;
 }
 } // namespace gamemd
@@ -186,12 +186,12 @@ HRESULT WalkLocomotionClass::BeginMove(int * a1, int * pStm)
     a1[6] = (int)&WalkLocomotionClass_vftable; /*0x75c6b0*/
   }
   v2->lpVtbl->Read(v2, &pStm, 1, 0); /*0x75c6c3*/
-  if ( !(_BYTE)pStm ) /*0x75c6cc*/
+  if ( !(unsigned char)pStm ) /*0x75c6cc*/
     return v3; /*0x75c6f8*/
   v4 = a1[14]; /*0x75c6ce*/
   v5 = (LPVOID *)(a1 + 14); /*0x75c6d1*/
   if ( v4 ) /*0x75c6d6*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x75c6db*/
+    (*(void (__stdcall **)(int))(*(unsigned int *)v4 + 8))(v4); /*0x75c6db*/
   *v5 = 0; /*0x75c6e5*/
   return OleLoadFromStream(v2, &IID_ILocomotion, v5); /*0x75c6f1*/
 }
@@ -204,7 +204,7 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   int *v4; // edi
   int v5; // ebx
   struct IStreamVtbl *lpVtbl; // ecx
-  int (__stdcall ***v7)(_DWORD, void *, int **); // eax
+  int (__stdcall ***v7)(unsigned int, void *, int **); // eax
   int v8; // edi
   IPersistStream *v9; // ebx
   HRESULT v10; // esi
@@ -225,7 +225,7 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   lpVtbl = v3->lpVtbl; /*0x75c72c*/
   IDA_LOBYTE(a3) = 1; /*0x75c738*/
   lpVtbl->Write(v3, &a3, 1, 0); /*0x75c73d*/
-  v7 = (int (__stdcall ***)(_DWORD, void *, int **))v4[14]; /*0x75c740*/
+  v7 = (int (__stdcall ***)(unsigned int, void *, int **))v4[14]; /*0x75c740*/
   pPStm = 0; /*0x75c743*/
   if ( v7 ) /*0x75c74d*/
   {
@@ -264,12 +264,9 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
 {
   int v3; // eax
 
-  *(void **)this = (void*)&WalkLocomotionClass_vftable; /*0x75cbe3*/
-  *(this + 1) = (void*)&WalkLocomotionClass_vftable; /*0x75cbe9*/
-  *(this + 6) = (void*)&WalkLocomotionClass_vftable; /*0x75cbf0*/
-  v3 = *(this + 14); /*0x75cbf7*/
+  v3 = *(unsigned int *)&this->ptr_38; /*0x75cbf7*/
   if ( v3 ) /*0x75cbfc*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 8))(v3); /*0x75cc01*/
+    (*(void (__stdcall **)(int))(*(unsigned int *)v3 + 8))(v3); /*0x75cc01*/
   LocomotionClass::Construct(); /*0x75cc06*/
   if ( (a2 & 1) != 0 ) /*0x75cc10*/
     RA2_OPDEL(); /*0x75cc13*/

@@ -13,8 +13,8 @@
 namespace gamemd {
 void * Timer::Start(DynamicVector * aP1)
 {
-  *(_DWORD *)this = g_CurrentFrame; /*0x46b64c*/
-  *(this + 2) = aP1; /*0x46b64e*/
+  *(unsigned int *)this = g_CurrentFrame; /*0x46b64c*/
+  this->q008 = aP1; /*0x46b64e*/
   return this; /*0x46b651*/
 }
 }
@@ -25,7 +25,7 @@ int Timer::StartDouble(double a2)
   int v3; // eax
   int v6; // [esp+8h] [ebp-Ch]
 
-  if ( *(&this->ptr_84) || (IDA_LOBYTE(v3) = *(&this->ptr_85), (_BYTE)v3) ) /*0x4a5252*/
+  if ( *(&this->ptr_84) || (IDA_LOBYTE(v3) = *(&this->ptr_85), (unsigned char)v3) ) /*0x4a5252*/
   {
     *(&this->ptr_84) = 1; /*0x4a525e*/
     *(double *)this = a2 * 900.0; /*0x4a5262*/
@@ -44,8 +44,8 @@ int Timer::StartDouble(double a2)
 namespace gamemd {
 void * Timer::Init(DWORD a2)
 {
-  *(_DWORD *)this = Timer::GetTicks(); /*0x4f1b0b*/
-  *(this + 2) = a2; /*0x4f1b11*/
+  *(unsigned int *)this = Timer::GetTicks(); /*0x4f1b0b*/
+  this->q008 = a2; /*0x4f1b11*/
   return this; /*0x4f1b16*/
 }
 }
@@ -56,9 +56,9 @@ int Timer::GetRemainingMs()
   signed int v1; // edi
   signed int v2; // ecx
 
-  v1 = *(this + 2); /*0x4f1b26*/
+  v1 = this->q008; /*0x4f1b26*/
   if ( *this == -1 ) /*0x4f1b2c*/
-    return *(this + 2); /*0x4f1b4c*/
+    return this->q008; /*0x4f1b4c*/
   v2 = Timer::GetTicks() - *this; /*0x4f1b3a*/
   if ( v2 >= v1 ) /*0x4f1b3e*/
     return 0; /*0x4f1b48*/
@@ -96,11 +96,11 @@ int Timer::GetHighPrecision()
 {
   unsigned int v2; // eax
   unsigned int v4; // [esp+4h] [ebp-Ch] BYREF
-  __int64 v5; // [esp+8h] [ebp-8h]
+  int64_t v5; // [esp+8h] [ebp-8h]
 
   if ( dword_82C24C == -1 ) /*0x5b1e4e*/
     GetVersionString(&dword_82C24C, byte_ABEED4, 0, 0); /*0x5b1e5e*/
-  if ( !*(_DWORD *)this && *((_DWORD *)this + 1) == 1072693248 || dword_82C24C <= 4 ) /*0x5b1e78*/
+  if ( !*(unsigned int *)this && this->u32_4 == 1072693248 || dword_82C24C <= 4 ) /*0x5b1e78*/
     return (double)timeGetTime(); /*0x5b1ecc*/
   v2 = Timer::ReadTSC(&v4); /*0x5b1e7f*/
   v5 = v4; /*0x5b1e9b*/
@@ -113,7 +113,7 @@ int Timer::GetElapsed()
 {
   int v1; // edi
 
-  v1 = *(this + 2); /*0x5f1396*/
+  v1 = this->q008; /*0x5f1396*/
   if ( *this != -1 ) /*0x5f139c*/
     v1 += Timer::GetTicks() - *this; /*0x5f13a8*/
   return v1; /*0x5f13ac*/
@@ -167,9 +167,9 @@ char Timer::SetFlag(char a2)
 
   result = a2; /*0x7500b0*/
   if ( a2 ) /*0x7500b6*/
-    *(_DWORD *)this = 0x40000000; /*0x7500b8*/
+    *(unsigned int *)this = 0x40000000; /*0x7500b8*/
   else
-    *(_DWORD *)this = 0; /*0x7500c1*/
+    *(unsigned int *)this = 0; /*0x7500c1*/
   return result; /*0x7500be*/
 }
 } // namespace gamemd
@@ -178,7 +178,7 @@ char Timer::SetFlag(char a2)
 namespace gamemd {
 unsigned long long Timer::ReadTSC(unsigned int * a1)
 {
-  unsigned __int64 result; // rax
+  uint64_t result; // rax
 
   result = __rdtsc(); /*0x7c6068*/
   *a1 = IDA_HIDWORD(result); /*0x7c606d*/

@@ -36,20 +36,17 @@ int WaveClass::LoadWaveData(int a2, int a3)
   {
     if ( v4 ) /*0x75f672*/
     {
-      ObjectClass::Init((_DWORD *)v4, (int)&a3); /*0x75f67b*/
+      ObjectClass::Init((unsigned int *)v4, (int)&a3); /*0x75f67b*/
       v4->q14C = 0; /*0x75f680*/
       v4->q6A0 = 0; /*0x75f68c*/
-      FrameSnapshot::Init((_WORD *)(v4 + 472)); /*0x75f692*/
-      WaveClass::Constructor_7632D0((_DWORD *)(v4 + 496), 0, 0); /*0x75f69f*/
-      *(void **)v4 = (void*)&WaveClass_vftable; /*0x75f6a4*/
-      v4->vtable2 = (void*)&WaveClass_vftable; /*0x75f6aa*/
-      v4->vtable3 = (void*)&WaveClass_vftable; /*0x75f6b1*/
+      FrameSnapshot::Init((unsigned short *)(v4 + 472)); /*0x75f692*/
+      WaveClass::Constructor_7632D0((unsigned int *)(v4 + 496), 0, 0); /*0x75f69f*/
       v4->vtable4 = &off_7F6BC8; /*0x75f6b8*/
     }
     v4->q14C = v4->q0B0 == 3 ? v4 + 384 : v4 + 336;
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 172)); /*0x75f6ee*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v4 + 468)); /*0x75f6ff*/
-    Register = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a3 + 12))(a3, &a2, 4, 0); /*0x75f712*/
+    Register = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)a3 + 12))(a3, &a2, 4, 0); /*0x75f712*/
     if ( Register >= 0 ) /*0x75f716*/
     {
       v6 = a2; /*0x75f71c*/
@@ -71,19 +68,19 @@ int WaveClass::LoadWaveData(int a2, int a3)
       {
         while ( 1 ) /*0x75f737*/
         {
-          Register = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a3 + 12))(a3, &v13, 4, 0); /*0x75f737*/
+          Register = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)a3 + 12))(a3, &v13, 4, 0); /*0x75f737*/
           if ( Register < 0 ) /*0x75f73b*/
             break; /*0x75f73b*/
           v7 = v4->u32_1F8; /*0x75f73d*/
           if ( v4->q200 < v7 /*0x75f76e*/
             || (v4->u8_1FD || !v7)
             && (v8 = v4->q204, v8 > 0)
-            && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(v4->q7C0 + 8))(v4 + 496, v7 + v8, 0) )
+            && (*(uint8_t (__thiscall **)(int, int, unsigned int))(v4->q7C0 + 8))(v4 + 496, v7 + v8, 0) )
           {
             v9 = v4->q200; /*0x75f775*/
             v10 = v4->u32_1F4; /*0x75f778*/
             v4->q200 = v9 + 1; /*0x75f77e*/
-            *(_DWORD *)(v10 + 4 * v9) = v13; /*0x75f785*/
+            *(unsigned int *)(v10 + 4 * v9) = v13; /*0x75f785*/
           }
           v6 = a2; /*0x75f78c*/
           if ( ++a3 >= a2 ) /*0x75f797*/
@@ -102,9 +99,6 @@ WaveClass * WaveClass::ddtor(char a2)
   int v3; // eax
   void *v4; // eax
 
-  *(void **)this = (void*)&WaveClass_vftable; /*0x763206*/
-  this->vtable2 = (void*)&WaveClass_vftable; /*0x76320c*/
-  this->vtable3 = (void*)&WaveClass_vftable; /*0x763213*/
   this->vtable4 = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x763221*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_A8EC38 + 16))(&dword_A8EC38, &this); /*0x76323a*/
@@ -113,13 +107,12 @@ WaveClass * WaveClass::ddtor(char a2)
     do /*0x76326d*/
     {
       ++v3; /*0x76325d*/
-      *((_DWORD *)dword_A8EC3C + v3 - 1) = *((_DWORD *)dword_A8EC3C + v3); /*0x763261*/
+      *((unsigned int *)dword_A8EC3C + v3 - 1) = *((unsigned int *)dword_A8EC3C + v3); /*0x763261*/
     }
     while ( v3 < dword_A8EC48 ); /*0x76326d*/
   }
   (*((void (__thiscall **)(char *))*(&this->WaveClass_field_DC4) + 3))((char *)&this->WaveClass_field_1706); /*0x76327e*/
   v4 = *(&this->WaveClass_field_DC5); /*0x763281*/
-  *(&this->WaveClass_field_DC4) = (void*)&VectorClass_CellClass___vftable; /*0x763284*/
   if ( v4 && this->q1FD ) /*0x76328e*/
   {
     RA2_OPDEL(v4); /*0x763296*/
@@ -139,7 +132,7 @@ namespace gamemd {
 char WaveClass::DamageArea(ObjectClass * aP1)
 {
   int v3; // eax
-  _DWORD *v5; // edi
+  unsigned int *v5; // edi
   int v6; // eax
   int v7; // ebx
   int v8; // esi
@@ -157,20 +150,20 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     aP1 = aP1; /*0x75f346*/
     IDA_LOWORD(aP1) = *aP1 / 256; /*0x75f359*/
     IDA_HIWORD(aP1) = aP1[1] / 256; /*0x75f372*/
-    v5 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&aP1); /*0x75f391*/
-    v6 = (*(int (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)*(&this->fallRate7) + 1016))(*(&this->fallRate7), 0); /*0x75f395*/
-    v7 = *(_DWORD *)v6; /*0x75f39b*/
-    v15 = *(_DWORD *)(*(_DWORD *)v6 + 172); /*0x75f3a9*/
-    v16 = *(_DWORD *)(*(_DWORD *)v6 + 152); /*0x75f3ad*/
+    v5 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP1); /*0x75f391*/
+    v6 = (*(int (__thiscall **)(unsigned int, unsigned int))(*(unsigned int *)*(&this->fallRate7) + 1016))(*(&this->fallRate7), 0); /*0x75f395*/
+    v7 = *(unsigned int *)v6; /*0x75f39b*/
+    v15 = *(unsigned int *)(*(unsigned int *)v6 + 172); /*0x75f3a9*/
+    v16 = *(unsigned int *)(*(unsigned int *)v6 + 152); /*0x75f3ad*/
     if ( (v5[80] & 0x100) != 0 && *(&this->uniqueId7) >= dword_B725C8 * (*((char *)v5 + 283) + 4) ) /*0x75f3d5*/
       v8 = v5[58]; /*0x75f3d7*/
     else
       v8 = v5[57]; /*0x75f3df*/
-    for ( ; v8; v8 = *(_DWORD *)(v8 + 48) ) /*0x75f3e7*/
+    for ( ; v8; v8 = *(unsigned int *)(v8 + 48) ) /*0x75f3e7*/
     {
       v9 = *(&this->fallRate7); /*0x75f3e9*/
-      if ( v8 != v9 && *(_BYTE *)(v8 + 144) && *(_BYTE *)(v8 + 116) && !*(_BYTE *)(v8 + 129) && *(int *)(v8 + 108) > 0 ) /*0x75f413*/
-        (*(void (__thiscall **)(int, int *, _DWORD, int, int, _DWORD, _DWORD, _DWORD))(*(_DWORD *)v8 + 364))( /*0x75f42c*/
+      if ( v8 != v9 && *(unsigned char *)(v8 + 144) && *(unsigned char *)(v8 + 116) && !*(unsigned char *)(v8 + 129) && *(int *)(v8 + 108) > 0 ) /*0x75f413*/
+        (*(void (__thiscall **)(int, int *, unsigned int, int, int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v8 + 364))( /*0x75f42c*/
           v8,
           &v16,
           0,
@@ -183,20 +176,20 @@ char WaveClass::DamageArea(ObjectClass * aP1)
     v10 = v5[17]; /*0x75f439*/
     if ( v10 != -1 ) /*0x75f43f*/
     {
-      v11 = *(_DWORD *)&g_BuildingTypeClass_Array->gap0[4 * v10]; /*0x75f447*/
-      if ( *(_BYTE *)(v11 + 689) ) /*0x75f44a*/
+      v11 = *(unsigned int *)&g_BuildingTypeClass_Array->gap0[4 * v10]; /*0x75f447*/
+      if ( *(unsigned char *)(v11 + 689) ) /*0x75f44a*/
       {
-        aP1 = (_DWORD *)v5[9]; /*0x75f45b*/
+        aP1 = (unsigned int *)v5[9]; /*0x75f45b*/
         CellChainReact(&aP1); /*0x75f45f*/
       }
-      if ( *(_BYTE *)(v11 + 680) ) /*0x75f464*/
-        BuildingClass::SellEffects((int)v5, *(_DWORD *)(v7 + 152)); /*0x75f477*/
+      if ( *(unsigned char *)(v11 + 680) ) /*0x75f464*/
+        BuildingClass::SellEffects((int)v5, *(unsigned int *)(v7 + 152)); /*0x75f477*/
     }
     IDA_LOBYTE(v3) = CellClass::IsActiveOrNext(v5); /*0x75f47e*/
-    if ( (_BYTE)v3 ) /*0x75f486*/
+    if ( (unsigned char)v3 ) /*0x75f486*/
     {
       v12 = g_RulesClass_Instance[1].RadarEventVisibilityDurations[0]; /*0x75f497*/
-      v3 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 99); /*0x75f4a3*/
+      v3 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 99); /*0x75f4a3*/
       if ( v3 < v12 ) /*0x75f4aa*/
         IDA_LOBYTE(v3) = LayerClass::DestroyCliff((int *)&MapClass_Instance, v13, (int)v5); /*0x75f4b2*/
     }
@@ -216,12 +209,12 @@ int WaveClass::ProcessWaveTick(int * a1, int * a2, int a3)
   AbstractClass::SaveLoad_Prefix(a1, a2, a3); /*0x75f7e2*/
   v3 = *a2; /*0x75f7ed*/
   a3 = a1[128]; /*0x75f7f9*/
-  result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v3 + 16))(a2, &a3, 4, 0); /*0x75f7fd*/
+  result = (*(int (__stdcall **)(int *, int *, int, unsigned int))(v3 + 16))(a2, &a3, 4, 0); /*0x75f7fd*/
   if ( result >= 0 ) /*0x75f802*/
   {
     for ( i = 0; i < a3; ++i ) /*0x75f80c*/
     {
-      result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*a2 + 16))(a2, a1[125] + 4 * i, 4, 0); /*0x75f81f*/
+      result = (*(int (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1[125] + 4 * i, 4, 0); /*0x75f81f*/
       if ( result < 0 ) /*0x75f824*/
         break; /*0x75f824*/
     }

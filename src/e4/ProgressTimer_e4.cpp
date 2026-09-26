@@ -10,11 +10,11 @@
 namespace gamemd {
 unsigned int * ProgressTimer::GetValue(IUnknown * aP1)
 {
-  __int16 v2; // bx
+  int16_t v2; // bx
   void * v3;
   void * v4;
   int v5; // esi
-  __int64 v6; // rax
+  int64_t v6; // rax
   int v7; // eax
   void * v8;
   void * v9;
@@ -34,14 +34,14 @@ unsigned int * ProgressTimer::GetValue(IUnknown * aP1)
   }
   if ( v4 ) /*0x4c93fa*/
   {
-    v5 = (__int16)(*this - this->q008); /*0x4c9406*/
-    v6 = (__int16)(*this - this->q008); /*0x4c940b*/
+    v5 = (int16_t)(*this - this->q008); /*0x4c9406*/
+    v6 = (int16_t)(*this - this->q008); /*0x4c940b*/
     v7 = (int)((IDA_HIDWORD(v6) ^ v6) - IDA_HIDWORD(v6)) / v2; /*0x4c9411*/
-    v12 = *(_DWORD *)this; /*0x4c9415*/
-    if ( (__int16)v7 <= 0 ) /*0x4c941c*/
+    v12 = *(unsigned int *)this; /*0x4c9415*/
+    if ( (int16_t)v7 <= 0 ) /*0x4c941c*/
     {
   LABEL_12:
-      *(_DWORD *)aP1 = v12; /*0x4c9445*/
+      *(unsigned int *)aP1 = v12; /*0x4c9445*/
       return aP1; /*0x4c9453*/
     }
     v8 = this->q010; /*0x4c941e*/
@@ -53,15 +53,15 @@ unsigned int * ProgressTimer::GetValue(IUnknown * aP1)
         v10 = 0; /*0x4c9456*/
         goto LABEL_11; /*0x4c9458*/
       }
-      IDA_LOWORD(v8) = v8 - ((_WORD)g_CurrentFrame - v9); /*0x4c9431*/
+      IDA_LOWORD(v8) = v8 - ((unsigned short)g_CurrentFrame - v9); /*0x4c9431*/
     }
     v10 = v8; /*0x4c9433*/
   LABEL_11:
-    IDA_LOWORD(v12) = v12 - v10 * (v5 / (__int16)v7); /*0x4c9435*/
+    IDA_LOWORD(v12) = v12 - v10 * (v5 / (int16_t)v7); /*0x4c9435*/
     goto LABEL_12; /*0x4c9440*/
   }
   LABEL_14:
-  *(_DWORD *)aP1 = *(_DWORD *)this; /*0x4c945a*/
+  *(unsigned int *)aP1 = *(unsigned int *)this; /*0x4c945a*/
   return aP1; /*0x4c944d*/
 }
 } // namespace gamemd

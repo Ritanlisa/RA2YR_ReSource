@@ -186,7 +186,7 @@ int sub_786390()
   LoadNetworkShareStrings(); /*0x7863b4*/
   Game::ResetFlags(); /*0x7863b9*/
   Network::InitPlayerSlots(); /*0x7863be*/
-  *(_DWORD *)Data = 0; /*0x7863c8*/
+  *(unsigned int *)Data = 0; /*0x7863c8*/
   if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven ) /*0x7863d2*/
   {
     if ( strlen(g_Str_SOFTWARE_Westwood_Yuri_s_Reven) ) /*0x7863da*/
@@ -200,7 +200,7 @@ int sub_786390()
       }
     }
   }
-  *(_DWORD *)Data = Data[0]; /*0x786467*/
+  *(unsigned int *)Data = Data[0]; /*0x786467*/
   dword_B77E50 = Data[0]; /*0x78646b*/
   g_NetworkRematchState = Data[0] + 10496; /*0x786475*/
   ResetSystemWOL(); /*0x78647a*/

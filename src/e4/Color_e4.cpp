@@ -18,7 +18,7 @@ int Color::ConvertToRGB(int v9)
   unsigned int v5; // eax
   unsigned int v6; // eax
   unsigned int v7; // edx
-  _DWORD v10[5]; // [esp+14h] [ebp-1Ch]
+  unsigned int v10[5]; // [esp+14h] [ebp-1Ch]
   int v11; // [esp+28h] [ebp-8h]
   unsigned int v12; // [esp+2Ch] [ebp-4h]
 
@@ -38,8 +38,8 @@ int Color::ConvertToRGB(int v9)
   v7 = v6 + (v6 > 4 ? -4 : 2);
   IDA_LOBYTE(v6) = v10[v6]; /*0x51752c*/
   IDA_HIBYTE(v9) = v10[v7]; /*0x517535*/
-  *(_WORD *)v9 = v9; /*0x517544*/
-  *(_BYTE *)(v9 + 2) = v6; /*0x51754a*/
+  *(unsigned short *)v9 = v9; /*0x517544*/
+  *(unsigned char *)(v9 + 2) = v6; /*0x51754a*/
 }
 } // namespace gamemd
 // 0x661020
@@ -50,19 +50,19 @@ unsigned char * Color::Lerp2(int a2, int a3, float a4)
   double v6; // st7
 
   v4 = 1.0 - a4; /*0x661028*/
-  *(_DWORD *)this = Math::RoundToInt(v4); /*0x66109d*/
-  *(this + 1) = Math::RoundToInt(v4); /*0x661105*/
-  v6 = v4 * (double)*(unsigned __int8 *)(a2 + 2) + (double)*(unsigned __int8 *)(a3 + 2) * a4; /*0x661124*/
+  *(unsigned int *)this = Math::RoundToInt(v4); /*0x66109d*/
+  this->q004 = Math::RoundToInt(v4); /*0x661105*/
+  v6 = v4 * (double)*(uint8_t *)(a2 + 2) + (double)*(uint8_t *)(a3 + 2) * a4; /*0x661124*/
   if ( v6 > 255.0 || v6 >= 0.0 ) /*0x661142*/
   {
     if ( v6 > 255.0 ) /*0x661169*/
       v6 = 255.0; /*0x66116d*/
-    *(this + 2) = Math::RoundToInt(v6); /*0x661178*/
+    this->q008 = Math::RoundToInt(v6); /*0x661178*/
     return this; /*0x66117b*/
   }
   else
   {
-    *(this + 2) = Math::RoundToInt(0.0); /*0x661151*/
+    this->q008 = Math::RoundToInt(0.0); /*0x661151*/
     return this; /*0x661154*/
   }
 }
@@ -85,7 +85,7 @@ unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
   {
     v4 = 0.0; /*0x6611c8*/
   }
-  *(_DWORD *)this = Math::RoundToInt(v4); /*0x6611ee*/
+  *(unsigned int *)this = Math::RoundToInt(v4); /*0x6611ee*/
   v5 = (double)a2[1] * a3; /*0x6611fb*/
   if ( v5 > 255.0 || v5 >= 0.0 ) /*0x66121b*/
   {
@@ -116,10 +116,10 @@ unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
 namespace gamemd {
 unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2)
 {
-  unsigned __int8 v3; // bl
-  unsigned __int8 v4; // al
-  unsigned __int8 v5; // bl
-  unsigned __int8 result; // al
+  uint8_t v3; // bl
+  uint8_t v4; // al
+  uint8_t v5; // bl
+  uint8_t result; // al
 
   v3 = this->vtable2; /*0x6612f2*/
   *this += aP1 * (*a2 - *this) / 256; /*0x6612f5*/
@@ -144,9 +144,9 @@ unsigned int * Color::RGBFromFloat(IUnknown * aP1, float a3)
   v5 = Math::RoundToInt(v3); /*0x75f56d*/
   v8 = Math::RoundToInt(v3); /*0x75f582*/
   v6 = Math::RoundToInt(v3); /*0x75f591*/
-  *(_DWORD *)this = v5; /*0x75f59e*/
-  *(this + 1) = v8; /*0x75f5a0*/
-  *(this + 2) = v6; /*0x75f5a3*/
+  *(unsigned int *)this = v5; /*0x75f59e*/
+  this->q004 = v8; /*0x75f5a0*/
+  this->q008 = v6; /*0x75f5a3*/
   return this; /*0x75f5ac*/
 }
 } // namespace gamemd

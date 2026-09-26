@@ -16,7 +16,7 @@ namespace gamemd {
 INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   int result; // eax
-  _DWORD *WindowLongA; // eax
+  unsigned int *WindowLongA; // eax
   HWND DlgItem; // esi
   wchar_t *String; // eax
   char *ModuleVersion; // eax
@@ -34,11 +34,11 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   result = BaseDialogProc(hWnd, a2, a3, a4); /*0x531a28*/
   if ( result ) /*0x531a2f*/
     return result; /*0x531a2f*/
-  WindowLongA = (_DWORD *)GetWindowLongA(hWnd, 8); /*0x531a38*/
+  WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x531a38*/
   if ( a2 == 273 ) /*0x531a44*/
   {
-    if ( (_WORD)a3 && (unsigned __int16)a3 <= 2u ) /*0x531c19*/
-      *WindowLongA = (unsigned __int16)a3; /*0x531c1b*/
+    if ( (unsigned short)a3 && (uint16_t)a3 <= 2u ) /*0x531c19*/
+      *WindowLongA = (uint16_t)a3; /*0x531c1b*/
     return 0; /*0x531c1b*/
   }
   if ( a2 != 1175 ) /*0x531a50*/
@@ -80,6 +80,6 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
 namespace gamemd {
 void CreditsScreen::Init()
 {
-  *(_DWORD *)this = 0; /*0x4a3c00*/
+  *(unsigned int *)this = 0; /*0x4a3c00*/
 }
 } // namespace gamemd

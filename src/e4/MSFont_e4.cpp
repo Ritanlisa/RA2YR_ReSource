@@ -17,14 +17,14 @@ namespace gamemd {
 AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
 {
   int v3; // ebp
-  _DWORD *v5; // edi
-  _DWORD *v6; // eax
-  _DWORD *v7; // ecx
-  _DWORD *v9; // eax
+  unsigned int *v5; // edi
+  unsigned int *v6; // eax
+  unsigned int *v7; // ecx
+  unsigned int *v9; // eax
   int v11; // edx
   int v12; // ecx
   int v13; // eax
-  _DWORD *v14; // ebx
+  unsigned int *v14; // ebx
   int v15; // eax
 
   v3 = a2; /*0x5d55a2*/
@@ -50,7 +50,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = RA2_OPNEW(8 * a2); /*0x5d55c7*/
+      v6 = operator new(8 * a2); /*0x5d55c7*/
       if ( v6 ) /*0x5d55d1*/
       {
         v7 = v6; /*0x5d55d6*/
@@ -87,7 +87,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
         do /*0x5d5642*/
         {
           v13 = 2 * v12; /*0x5d5628*/
-          v14 = (_DWORD *)(this->q004 + 8 * v12++); /*0x5d5631*/
+          v14 = (unsigned int *)(this->q004 + 8 * v12++); /*0x5d5631*/
           v5[v13] = *v14; /*0x5d5638*/
           v5[v13 + 1] = v14[1]; /*0x5d563e*/
         }
@@ -96,7 +96,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
       }
       if ( this->IsAllocated ) /*0x5d564a*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5d5653*/
+        RA2_OPDEL(this->q004); /*0x5d5653*/
         this->q004 = 0; /*0x5d565b*/
       }
     }
@@ -106,7 +106,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x5d5678*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5d5678*/
   }
   v15 = this->q008; /*0x5d567b*/
   if ( v15 < this->q010 ) /*0x5d5683*/
@@ -155,7 +155,7 @@ unsigned int MSFont_18::PointerToIndex(int a2)
 namespace gamemd {
 int MSFont_18::GetSize(int a2)
 {
-  return *(_DWORD *)(this->Items + 4 * a2); /*0x5d50da*/
+  return *(unsigned int *)(this->Items + 4 * a2); /*0x5d50da*/
 }
 } // namespace gamemd
 
@@ -194,18 +194,18 @@ char MSFont_18::AddRef(int a2)
 {
   int v2; // esi
   int v3; // edx
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // ecx
 
   v2 = this->Capacity; /*0x5d5152*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x5d515d*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x5d515d*/
   {
     v3 = 0; /*0x5d515f*/
     if ( v2 <= 0 ) /*0x5d5163*/
       return 1; /*0x5d5183*/
-    v4 = (_DWORD *)this->Items; /*0x5d5165*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x5d516b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x5d5174*/
+    v4 = (unsigned int *)this->Items; /*0x5d5165*/
+    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x5d516b*/
+    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x5d5174*/
     {
       ++v3; /*0x5d5176*/
       ++v4; /*0x5d5177*/
@@ -221,7 +221,7 @@ char MSFont_18::AddRef(int a2)
 namespace gamemd {
 char MSFont_18::Release(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v6; // ecx
   int i; // eax
 
@@ -231,7 +231,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d51ac*/
       v4 = a3; /*0x5d51c2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d51be*/
+      v4 = operator new(4 * a2); /*0x5d51be*/
     this->IsInitialized = 1; /*0x5d51c6*/
     if ( v4 ) /*0x5d51ca*/
     {
@@ -240,11 +240,11 @@ char MSFont_18::Release(int a2, unsigned int * a3)
         v6 = this->Capacity; /*0x5d51dc*/
         if ( a2 < v6 ) /*0x5d51e1*/
           v6 = a2; /*0x5d51e3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x5d51e9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x5d51e9*/
           ++i; /*0x5d51ee*/
         if ( this->IsAllocated ) /*0x5d51fb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5d5206*/
+          RA2_OPDEL(this->q004); /*0x5d5206*/
           this->Items = 0; /*0x5d520e*/
         }
       }
@@ -260,7 +260,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x5d5232*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x5d5232*/
     return 1; /*0x5d5238*/
   }
 }
@@ -286,7 +286,7 @@ int MSFont_18::Create(unsigned int * a2)
 {
   int result; // eax
   int v3; // edx
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->IsInitialized ) /*0x5d5270*/
     return 0; /*0x5d5278*/
@@ -318,7 +318,7 @@ unsigned int MSFont_18::Draw(int a2)
 namespace gamemd {
 char MSFont_18::SetCapacity(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
@@ -329,7 +329,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d52e8*/
       v4 = a3; /*0x5d52fe*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d52fa*/
+      v4 = operator new(4 * a2); /*0x5d52fa*/
     this->IsInitialized = 1; /*0x5d5302*/
     if ( !v4 ) /*0x5d5306*/
       return 0; /*0x5d537a*/
@@ -338,11 +338,11 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
       v5 = this->q008; /*0x5d530f*/
       if ( a2 < v5 ) /*0x5d5314*/
         v5 = a2; /*0x5d5316*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x5d531c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x5d531c*/
         ++i; /*0x5d5321*/
       if ( this->IsAllocated ) /*0x5d532e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5d5339*/
+        RA2_OPDEL(this->q004); /*0x5d5339*/
         this->Items = 0; /*0x5d5341*/
       }
     }
@@ -352,7 +352,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x5d535e*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x5d535e*/
   }
   v7 = this->q008; /*0x5d5361*/
   if ( v7 < this->q010 ) /*0x5d5369*/
@@ -367,13 +367,13 @@ int MSFont_18::FindItem(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x5d5380*/
   result = 0; /*0x5d5383*/
   if ( v2 <= 0 ) /*0x5d5388*/
     return -1; /*0x5d539f*/
-  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x5d538e*/
+  for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x5d538e*/
   {
     if ( ++result >= v2 ) /*0x5d539d*/
       return -1; /*0x5d539d*/
@@ -387,13 +387,13 @@ int MSFont_18::FindPair8(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x5d56a0*/
   result = 0; /*0x5d56a5*/
   if ( v2 <= 0 ) /*0x5d56ab*/
     return -1; /*0x5d56cc*/
-  for ( i = (_DWORD *)this->Items; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x5d56b1*/
+  for ( i = (unsigned int *)this->Items; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x5d56b1*/
   {
     if ( ++result >= v2 ) /*0x5d56ca*/
       return -1; /*0x5d56ca*/
@@ -408,7 +408,6 @@ VectorClass_flat * MSFont_18::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5d56e3*/
-  *(void **)this = (void*)&VectorClass_HWND_____vftable; /*0x5d56e6*/
   if ( v3 && this->IsAllocated ) /*0x5d56f0*/
   {
     RA2_OPDEL(v3); /*0x5d56f8*/
@@ -429,7 +428,6 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5d5733*/
-  *(void **)this = (void*)&VectorClass_HWND_____vftable; /*0x5d5736*/
   if ( v3 && this->IsAllocated ) /*0x5d5740*/
   {
     RA2_OPDEL(v3); /*0x5d5748*/
@@ -449,15 +447,14 @@ DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(this + 1); /*0x5d57d3*/
-  *(void **)this = (void*)&VectorClass_AcceleratorTracker_vftable; /*0x5d57d6*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x5d57e0*/
+  v3 = (void *)this->q004; /*0x5d57d3*/
+  if ( v3 && *(unsigned char *)&this->IsAllocated ) /*0x5d57e0*/
   {
     RA2_OPDEL(v3); /*0x5d57e8*/
-    *(this + 1) = 0; /*0x5d57f0*/
+    this->q004 = 0; /*0x5d57f0*/
   }
-  *((_BYTE *)this + 13) = 0; /*0x5d57fb*/
-  *(this + 2) = 0; /*0x5d5801*/
+  *(unsigned char *)&this->IsAllocated = 0; /*0x5d57fb*/
+  this->q008 = 0; /*0x5d5801*/
   if ( (a2 & 1) != 0 ) /*0x5d5808*/
     RA2_OPDEL(); /*0x5d580b*/
   return this; /*0x5d5815*/

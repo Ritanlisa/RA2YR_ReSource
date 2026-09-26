@@ -54,7 +54,6 @@ DynamicVector * ToolTipManager_7::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x724f43*/
-  *(void **)this = (void*)&VectorClass_ToolTip_const___vftable; /*0x724f46*/
   if ( v3 && this->IsAllocated ) /*0x724f50*/
   {
     RA2_OPDEL(v3); /*0x724f58*/

@@ -15,10 +15,9 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)*(&this->u32_42); /*0x6c6883*/
-  *(void **)this = (void*)&StaticButtonClass_vftable; /*0x6c6886*/
   if ( v3 ) /*0x6c688e*/
     RA2_OPDEL(v3); /*0x6c6891*/
-  Vector::Clear((int)(this + 9)); /*0x6c689c*/
+  Vector::Clear((int)&this->q024); /*0x6c689c*/
   GadgetClass::Dtor(); /*0x6c68a3*/
   if ( (a2 & 1) != 0 ) /*0x6c68ad*/
     RA2_OPDEL(); /*0x6c68b0*/

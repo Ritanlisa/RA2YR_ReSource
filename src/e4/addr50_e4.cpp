@@ -23,8 +23,8 @@ int E4Recv_501750::sub_501750(int a2)
   int v7; // [esp+60h] [ebp-24h] BYREF
   int v8; // [esp+64h] [ebp-20h] BYREF
   int v9; // [esp+68h] [ebp-1Ch] BYREF
-  _DWORD v10[2]; // [esp+6Ch] [ebp-18h] BYREF
-  _BYTE v11[16]; // [esp+74h] [ebp-10h] BYREF
+  unsigned int v10[2]; // [esp+6Ch] [ebp-18h] BYREF
+  unsigned char v11[16]; // [esp+74h] [ebp-10h] BYREF
 
   result = g_WTFMode; /*0x501750*/
   if ( g_WTFMode ) /*0x50175f*/
@@ -37,33 +37,33 @@ int E4Recv_501750::sub_501750(int a2)
     result = result; /*0x5017a2*/
     if ( !g_IKnowWhatImDoing && v5 != result ) /*0x5017ae*/
     {
-      (*(void (__stdcall **)(_DWORD *, void *, int *))*this)(this, &unk_7F7CD0, &v9); /*0x5017c1*/
-      (*(void (__stdcall **)(int, int *))(*(_DWORD *)v9 + 12))(v9, &v8); /*0x5017cf*/
-      if ( (*(int (__stdcall **)(int, int, int *, _DWORD))(*(_DWORD *)v8 + 12))(v8, 1, &v6, 0) >= 0 ) /*0x5017e7*/
+      (*(void (__stdcall **)(unsigned int *, void *, int *))*this)(this, &unk_7F7CD0, &v9); /*0x5017c1*/
+      (*(void (__stdcall **)(int, int *))(*(unsigned int *)v9 + 12))(v9, &v8); /*0x5017cf*/
+      if ( (*(int (__stdcall **)(int, int, int *, unsigned int))(*(unsigned int *)v8 + 12))(v8, 1, &v6, 0) >= 0 ) /*0x5017e7*/
       {
         while ( 1 ) /*0x5017f7*/
         {
-          (*(void (__stdcall **)(int, _BYTE *))(*(_DWORD *)v6 + 12))(v6, v11); /*0x5017f9*/
+          (*(void (__stdcall **)(int, unsigned char *))(*(unsigned int *)v6 + 12))(v6, v11); /*0x5017f9*/
           if ( !memcmp(v11, &unk_7E9550, 0x10u) ) /*0x501810*/
             break; /*0x501810*/
-          (*(void (__stdcall **)(int))(*(_DWORD *)v6 + 8))(v6); /*0x501817*/
-          if ( (*(int (__stdcall **)(int, int, int *, _DWORD))(*(_DWORD *)v8 + 12))(v8, 1, &v6, 0) < 0 ) /*0x50182f*/
+          (*(void (__stdcall **)(int))(*(unsigned int *)v6 + 8))(v6); /*0x501817*/
+          if ( (*(int (__stdcall **)(int, int, int *, unsigned int))(*(unsigned int *)v8 + 12))(v8, 1, &v6, 0) < 0 ) /*0x50182f*/
             goto LABEL_14; /*0x50182f*/
         }
-        (*(void (__stdcall **)(int, int *))(*(_DWORD *)v6 + 28))(v6, &v7); /*0x50183b*/
-        while ( (*(int (__stdcall **)(int, int, _DWORD *, _DWORD))(*(_DWORD *)v7 + 12))(v7, 1, v10, 0) >= 0 ) /*0x501853*/
+        (*(void (__stdcall **)(int, int *))(*(unsigned int *)v6 + 28))(v6, &v7); /*0x50183b*/
+        while ( (*(int (__stdcall **)(int, int, unsigned int *, unsigned int))(*(unsigned int *)v7 + 12))(v7, 1, v10, 0) >= 0 ) /*0x501853*/
         {
           if ( result ) /*0x50185f*/
-            (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v10[0] + 16))(v10[0]); /*0x501864*/
+            (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v10[0] + 16))(v10[0]); /*0x501864*/
           else
-            (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v10[0] + 12))(v10[0]); /*0x50186c*/
-          (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v10[0] + 8))(v10[0]); /*0x501876*/
+            (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v10[0] + 12))(v10[0]); /*0x50186c*/
+          (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v10[0] + 8))(v10[0]); /*0x501876*/
         }
-        (*(void (__stdcall **)(int))(*(_DWORD *)v7 + 8))(v7); /*0x501897*/
+        (*(void (__stdcall **)(int))(*(unsigned int *)v7 + 8))(v7); /*0x501897*/
       }
   LABEL_14:
-      (*(void (__stdcall **)(int))(*(_DWORD *)v9 + 8))(v9); /*0x50189a*/
-      return (*(int (__stdcall **)(int))(*(_DWORD *)v8 + 8))(v8); /*0x5018ab*/
+      (*(void (__stdcall **)(int))(*(unsigned int *)v9 + 8))(v9); /*0x50189a*/
+      return (*(int (__stdcall **)(int))(*(unsigned int *)v8 + 8))(v8); /*0x5018ab*/
     }
   }
   return result; /*0x5018ae*/
@@ -78,7 +78,7 @@ void UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
   int v6; // ecx
   int v7; // ebp
   int v8; // ecx
-  _DWORD *v9; // edi
+  unsigned int *v9; // edi
   int v10; // ecx
   int v12; // [esp+14h] [ebp+4h]
   int v13; // [esp+18h] [ebp+8h]
@@ -89,29 +89,29 @@ void UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
   {
     do /*0x5047c8*/
     {
-      v6 = *(_DWORD *)(v5 + 22024); /*0x5047ac*/
-      v7 = *(_DWORD *)(v6 + 8 * IDA_HIDWORD(v5)); /*0x5047b2*/
+      v6 = *(unsigned int *)(v5 + 22024); /*0x5047ac*/
+      v7 = *(unsigned int *)(v6 + 8 * IDA_HIDWORD(v5)); /*0x5047b2*/
       v8 = v6 + 8 * IDA_HIDWORD(v5); /*0x5047b5*/
       if ( v7 == a4 ) /*0x5047ba*/
-        *(_DWORD *)(v8 + 4) += a3; /*0x5047bc*/
+        *(unsigned int *)(v8 + 4) += a3; /*0x5047bc*/
       ++IDA_HIDWORD(v5); /*0x5047c5*/
     }
-    while ( IDA_SHIDWORD(v5) < *(_DWORD *)(v5 + 22036) ); /*0x5047c8*/
+    while ( IDA_SHIDWORD(v5) < *(unsigned int *)(v5 + 22036) ); /*0x5047c8*/
   }
   v12 = 0; /*0x5047d0*/
   if ( *(int *)(v5 + 22036) <= 0 ) /*0x5047d6*/
     goto LABEL_18; /*0x5047d6*/
-  v9 = *(_DWORD **)(v5 + 22024); /*0x5047d8*/
-  v13 = *(_DWORD *)(v5 + 22036); /*0x5047de*/
+  v9 = *(unsigned int **)(v5 + 22024); /*0x5047d8*/
+  v13 = *(unsigned int *)(v5 + 22036); /*0x5047de*/
   do /*0x504832*/
   {
     IDA_HIDWORD(v5) = *v9; /*0x5047e5*/
-    if ( v9[1] > v4 && !*(_BYTE *)(IDA_HIDWORD(v5) + 501) ) /*0x5047eb*/
+    if ( v9[1] > v4 && !*(unsigned char *)(IDA_HIDWORD(v5) + 501) ) /*0x5047eb*/
     {
       if ( !IDA_HIDWORD(v5) /*0x50481e*/
-        || IDA_HIDWORD(v5) != (_DWORD)v5
-        && (v10 = *(_DWORD *)(IDA_HIDWORD(v5) + 48), v10 != *(_DWORD *)(v5 + 48))
-        && (v10 == -1 || ((1 << v10) & *(_DWORD *)(v5 + 22408)) == 0) )
+        || IDA_HIDWORD(v5) != (unsigned int)v5
+        && (v10 = *(unsigned int *)(IDA_HIDWORD(v5) + 48), v10 != *(unsigned int *)(v5 + 48))
+        && (v10 == -1 || ((1 << v10) & *(unsigned int *)(v5 + 22408)) == 0) )
       {
         v4 = v9[1]; /*0x504820*/
         v12 = *v9; /*0x504822*/
@@ -122,10 +122,10 @@ void UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
   }
   while ( v13 ); /*0x504832*/
   if ( v12 ) /*0x50483a*/
-    *(_DWORD *)(v5 + 22016) = *(_DWORD *)(v12 + 48); /*0x504842*/
+    *(unsigned int *)(v5 + 22016) = *(unsigned int *)(v12 + 48); /*0x504842*/
   else
   LABEL_18:
-    *(_DWORD *)(v5 + 22016) = -1; /*0x50484f*/
+    *(unsigned int *)(v5 + 22016) = -1; /*0x50484f*/
   return v5; /*0x50483f*/
 }
 }
@@ -159,12 +159,12 @@ namespace gamemd {
 int globalHelper_005F80(int a1, int * a2, int a3, int a4)
 {
   int v4; // esi
-  __int64 v5; // rax
+  int64_t v5; // rax
   signed int v6; // ecx
   signed int v7; // eax
 
-  v4 = *a2 - *(__int16 *)(a1 + 22352); /*0x505f92*/
-  v5 = a2[1] - *(__int16 *)(a1 + 22354); /*0x505f9a*/
+  v4 = *a2 - *(int16_t *)(a1 + 22352); /*0x505f92*/
+  v5 = a2[1] - *(int16_t *)(a1 + 22354); /*0x505f9a*/
   v6 = (IDA_HIDWORD(v5) ^ v5) - IDA_HIDWORD(v5); /*0x505fa2*/
   v7 = abs32(v4); /*0x505fa7*/
   if ( v7 <= v6 ) /*0x505fab*/
@@ -182,20 +182,20 @@ int globalHelper_005FD0(int a1, int * a2, int a3, int a4)
   int v7; // edi
   int v8; // eax
   double v9; // st7
-  __int64 v10; // rax
+  int64_t v10; // rax
   int v12; // [esp+2Ch] [ebp+8h]
 
   v4 = a2[1]; /*0x505fd5*/
   v5 = *a2; /*0x505ff7*/
-  v7 = *(_DWORD *)(*(_DWORD *)(a1 + 90208) /*0x506002*/
-                 + 4 * (v5 + *(_DWORD *)(a1 + 22364) * (v4 - *(_DWORD *)(a1 + 22360)) - *(_DWORD *)(a1 + 22356)));
+  v7 = *(unsigned int *)(*(unsigned int *)(a1 + 90208) /*0x506002*/
+                 + 4 * (v5 + *(unsigned int *)(a1 + 22364) * (v4 - *(unsigned int *)(a1 + 22360)) - *(unsigned int *)(a1 + 22356)));
   v8 = 0; /*0x506005*/
   if ( a4 != -1 ) /*0x50600a*/
   {
-    v12 = *(__int16 *)(a1 + 22354) - v4; /*0x50602b*/
-    v9 = Math::CalcAngle((double)v12, (double)(v5 - *(__int16 *)(a1 + 22352))); /*0x50603c*/
+    v12 = *(int16_t *)(a1 + 22354) - v4; /*0x50602b*/
+    v9 = Math::CalcAngle((double)v12, (double)(v5 - *(int16_t *)(a1 + 22352))); /*0x50603c*/
     IDA_LOWORD(v12) = Math::RoundToInt((v9 - 1.570796326794897) * -10430.06004058427); /*0x506055*/
-    v10 = 32 * a4 - (unsigned __int8)((((unsigned int)v12 >> 7) + 1) >> 1); /*0x506071*/
+    v10 = 32 * a4 - (uint8_t)((((unsigned int)v12 >> 7) + 1) >> 1); /*0x506071*/
     v8 = (IDA_HIDWORD(v10) ^ v10) - IDA_HIDWORD(v10); /*0x506074*/
     if ( v8 >= 128 ) /*0x50607b*/
       v8 = 255 - v8; /*0x506084*/
@@ -231,20 +231,20 @@ int HouseClass::sub_5092F0(int a2)
   int v8[3]; // [esp+8h] [ebp-Ch] BYREF
 
   a2 = a2; /*0x5092f0*/
-  this->q54E4 |= 1 << *(_DWORD *)(*(_DWORD *)(a2 + 52) + 184); /*0x509313*/
+  this->q54E4 |= 1 << *(unsigned int *)(*(unsigned int *)(a2 + 52) + 184); /*0x509313*/
   if ( (void *)a2 == HouseClass_Player ) /*0x509321*/
   {
     for ( i = 0; i < g_SidebarState; ++i ) /*0x509330*/
     {
-      v5 = (int *)*((_DWORD *)g_TechnoClass_Count + i); /*0x509337*/
-      if ( v5 && !*((_BYTE *)v5 + 129) && v5[135] == this ) /*0x50934e*/
+      v5 = (int *)*((unsigned int *)g_TechnoClass_Count + i); /*0x509337*/
+      if ( v5 && !*((unsigned char *)v5 + 129) && v5[135] == this ) /*0x50934e*/
       {
         v8[0] = v5[39]; /*0x509360*/
         v8[1] = v5[40]; /*0x50936a*/
         v6 = *v5; /*0x50936e*/
         v8[2] = v5[41]; /*0x509373*/
         v7 = (*(int (__thiscall **)(int *))(v6 + 132))(v5); /*0x509377*/
-        MapClass::RevealArea0((int *)&MapClass_Instance, v8, *(_DWORD *)(v7 + 1512), (void *)this, 0, 0, 0, 1, 1); /*0x50938e*/
+        MapClass::RevealArea0((int *)&MapClass_Instance, v8, *(unsigned int *)(v7 + 1512), (void *)this, 0, 0, 0, 1, 1); /*0x50938e*/
       }
     }
     return MapClass::MarkForRedraw(&MapClass_Instance, 2); /*0x5093a4*/
@@ -258,18 +258,18 @@ int E4Recv_5093C0::sub_5093C0(int a2)
 {
   int v2; // esi
   int result; // eax
-  _DWORD *i; // edx
+  unsigned int *i; // edx
 
   v2 = *(&this->q8989); /*0x5093c2*/
   result = 0; /*0x5093c8*/
   if ( v2 > 0 ) /*0x5093cd*/
   {
-    for ( i = (_DWORD *)*(&this->q8986); *i != a2; i += 2 ) /*0x5093d9*/
+    for ( i = (unsigned int *)*(&this->q8986); *i != a2; i += 2 ) /*0x5093d9*/
     {
       if ( ++result >= v2 ) /*0x5093e5*/
         return result; /*0x5093e5*/
     }
-    return UpdateHouseClassAnger((int)i, -*(_DWORD *)(*(&this->q8986) + 8 * result + 4), a2); /*0x5093f5*/
+    return UpdateHouseClassAnger((int)i, -*(unsigned int *)(*(&this->q8986) + 8 * result + 4), a2); /*0x5093f5*/
   }
   return result; /*0x5093e7*/
 }
@@ -295,12 +295,12 @@ void sub_50B920(int a1, int a2, int a3)
   v5 = Math::Sqrt(*(double *)a1 * *(double *)a1 + *(double *)a3 * *(double *)a3 + *(double *)a2 * *(double *)a2); /*0x50b94d*/
   if ( v5 == 0.0 ) /*0x50b960*/
   {
-    *(_DWORD *)a3 = 0; /*0x50b967*/
-    *(_DWORD *)(a3 + 4) = 1081073664; /*0x50b96d*/
-    *(_DWORD *)a2 = 0; /*0x50b970*/
-    *(_DWORD *)(a2 + 4) = 1081073664; /*0x50b976*/
-    *(_DWORD *)a1 = 0; /*0x50b979*/
-    *(_DWORD *)(a1 + 4) = 1081073664; /*0x50b97f*/
+    *(unsigned int *)a3 = 0; /*0x50b967*/
+    *(unsigned int *)(a3 + 4) = 1081073664; /*0x50b96d*/
+    *(unsigned int *)a2 = 0; /*0x50b970*/
+    *(unsigned int *)(a2 + 4) = 1081073664; /*0x50b976*/
+    *(unsigned int *)a1 = 0; /*0x50b979*/
+    *(unsigned int *)(a1 + 4) = 1081073664; /*0x50b97f*/
   }
   else
   {
@@ -308,22 +308,22 @@ void sub_50B920(int a1, int a2, int a3)
     *(double *)a1 = v6; /*0x50b999*/
     if ( v6 > 255.0 ) /*0x50b9a6*/
     {
-      *(_DWORD *)a1 = 0; /*0x50b9a8*/
-      *(_DWORD *)(a1 + 4) = 1081073664; /*0x50b9ae*/
+      *(unsigned int *)a1 = 0; /*0x50b9a8*/
+      *(unsigned int *)(a1 + 4) = 1081073664; /*0x50b9ae*/
     }
     v7 = *(double *)a2 * 240.0 / v5; /*0x50b9b9*/
     *(double *)a2 = v7; /*0x50b9bb*/
     if ( v7 > 255.0 ) /*0x50b9c8*/
     {
-      *(_DWORD *)a2 = 0; /*0x50b9ca*/
-      *(_DWORD *)(a2 + 4) = 1081073664; /*0x50b9d0*/
+      *(unsigned int *)a2 = 0; /*0x50b9ca*/
+      *(unsigned int *)(a2 + 4) = 1081073664; /*0x50b9d0*/
     }
     v8 = *(double *)a3 * 240.0 / v5; /*0x50b9db*/
     *(double *)a3 = v8; /*0x50b9dd*/
     if ( v8 > 255.0 ) /*0x50b9ea*/
     {
-      *(_DWORD *)a3 = 0; /*0x50b9ec*/
-      *(_DWORD *)(a3 + 4) = 1081073664; /*0x50b9f2*/
+      *(unsigned int *)a3 = 0; /*0x50b9ec*/
+      *(unsigned int *)(a3 + 4) = 1081073664; /*0x50b9f2*/
     }
   }
 }
@@ -333,7 +333,7 @@ void sub_50B920(int a1, int a2, int a3)
 namespace gamemd {
 double E4Recv_50C160::sub_50C160()
 {
-  return *(float *)(*(this + 13) + 328); /*0x50c169*/
+  return *(float *)(*(unsigned int *)&this->M52 + 328); /*0x50c169*/
 }
 } // namespace gamemd
 
@@ -341,7 +341,7 @@ double E4Recv_50C160::sub_50C160()
 namespace gamemd {
 int E4Recv_50DA40::sub_50DA40(int a2)
 {
-  *(this + 5438) = a2; /*0x50da44*/
+  this->M21752 = a2; /*0x50da44*/
   return a2; /*0x50da4a*/
 }
 } // namespace gamemd

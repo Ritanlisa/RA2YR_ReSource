@@ -28,20 +28,16 @@ int ParasiteClass::Constructor()
   g_CurrentFrame = g_CurrentFrame; /*0x629225*/
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
   this->u32_38 = g_CurrentFrame; /*0x62922e*/
-  *(void **)this = (void*)&ParasiteClass_vftable; /*0x629231*/
-  this->vtable2 = (void*)&ParasiteClass_vftable; /*0x629237*/
-  this->vtable3 = (void*)&ParasiteClass_vftable; /*0x62923e*/
-  this->vtable4 = (void*)&ParasiteClass_vftable; /*0x629245*/
   if ( dword_AC4920 < dword_AC4918 /*0x62927e*/
     || (byte_AC491D || !dword_AC4918)
     && dword_AC4924 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_AC4910 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_AC4910 + 8))(
          &dword_AC4910,
          dword_AC4918 + dword_AC4924,
          0) )
   {
     v3 = dword_AC4920++; /*0x62928b*/
-    *((_DWORD *)dword_AC4914 + v3) = this; /*0x62929a*/
+    *((unsigned int *)dword_AC4914 + v3) = this; /*0x62929a*/
   }
   return this; /*0x62929f*/
 }
@@ -59,10 +55,6 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
   this->ParasiteClass_field_34 = 0; /*0x6292c9*/
   this->u32_38 = g_CurrentFrame; /*0x6292d2*/
   this->ParasiteClass_field_40 = 0; /*0x6292d5*/
-  *(void **)this = (void*)&ParasiteClass_vftable; /*0x6292d8*/
-  this->vtable2 = (void*)&ParasiteClass_vftable; /*0x6292de*/
-  this->vtable3 = (void*)&ParasiteClass_vftable; /*0x6292e5*/
-  this->vtable4 = (void*)&ParasiteClass_vftable; /*0x6292ec*/
   this->creationFrame = aP1; /*0x6292f3*/
   this->q028 = 0; /*0x6292f6*/
   this->u32_38 = g_CurrentFrame; /*0x629303*/
@@ -80,13 +72,13 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
   if ( dword_AC4920 < dword_AC4918 /*0x629360*/
     || (byte_AC491D || !dword_AC4918)
     && dword_AC4924 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_AC4910 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_AC4910 + 8))(
          &dword_AC4910,
          dword_AC4918 + dword_AC4924,
          0) )
   {
     v4 = dword_AC4920++; /*0x62936d*/
-    *((_DWORD *)dword_AC4914 + v4) = this; /*0x62937c*/
+    *((unsigned int *)dword_AC4914 + v4) = this; /*0x62937c*/
   }
   return this; /*0x629381*/
 }
@@ -119,14 +111,14 @@ int ParasiteClass::Attach(int * a2)
 namespace gamemd {
 void ParasiteClass::DeploySquad()
 {
-  _DWORD *v2; // eax
+  unsigned int *v2; // eax
   int *v3; // ecx
   int v4; // edi
   int *v5; // eax
   int v6; // esi
-  _DWORD *v8; // esi
+  unsigned int *v8; // esi
   int v9; // ecx
-  _DWORD *v10; // edx
+  unsigned int *v10; // edx
   int Index; // eax
   void *v12; // edi
   void **v13; // eax
@@ -143,14 +135,14 @@ void ParasiteClass::DeploySquad()
   int v24; // ebp
   int v25; // eax
   int v26; // eax
-  _BYTE *v27; // edi
+  unsigned char *v27; // edi
   int v28; // eax
   IUnknown * v29;
   int v30; // eax
-  _DWORD *v31; // edx
+  unsigned int *v31; // edx
   int v32; // ecx
   int v33; // eax
-  _DWORD *v34; // edi
+  unsigned int *v34; // edi
   int v35; // ecx
   int v36; // ebp
   void * v37;
@@ -159,7 +151,7 @@ void ParasiteClass::DeploySquad()
   double v40; // [esp+10h] [ebp-58h]
   double v41; // [esp+10h] [ebp-58h]
   int i; // [esp+10h] [ebp-58h]
-  _DWORD v43[3]; // [esp+1Ch] [ebp-4Ch] BYREF
+  unsigned int v43[3]; // [esp+1Ch] [ebp-4Ch] BYREF
   int v44; // [esp+28h] [ebp-40h] BYREF
   int v45; // [esp+2Ch] [ebp-3Ch] BYREF
   double v46; // [esp+30h] [ebp-38h]
@@ -173,10 +165,10 @@ void ParasiteClass::DeploySquad()
   int v54; // [esp+60h] [ebp-8h]
   int savedregs; // [esp+68h] [ebp+0h] BYREF
 
-  v2 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(&this->vtable46) + 1016))(this->creationFrame, 0); /*0x629807*/
+  v2 = (unsigned int *)(*(int (__thiscall **)(unsigned int, unsigned int))(**(unsigned int **)(&this->vtable46) + 1016))(this->creationFrame, 0); /*0x629807*/
   v3 = *(int **)(&this->uniqueId0); /*0x62980d*/
   v43[1] = *v2; /*0x629812*/
-  v4 = *(_DWORD *)(v43[1] + 172); /*0x629816*/
+  v4 = *(unsigned int *)(v43[1] + 172); /*0x629816*/
   v43[0] = v4; /*0x629822*/
   v50 = v3[39]; /*0x629828*/
   v51 = v3[40]; /*0x62982f*/
@@ -185,22 +177,22 @@ void ParasiteClass::DeploySquad()
   v40 = 1.0; /*0x629844*/
   if ( !v5 || Cell::IsValidHeight(v5) ) /*0x629854*/
   {
-    v9 = *(_DWORD *)(v4 + 368); /*0x629898*/
-    v10 = (_DWORD *)(this->q028 + 1696); /*0x62989e*/
+    v9 = *(unsigned int *)(v4 + 368); /*0x629898*/
+    v10 = (unsigned int *)(this->q028 + 1696); /*0x62989e*/
     *v10 = g_CurrentFrame; /*0x6298a4*/
     v10[1] = v54; /*0x6298aa*/
     v10[2] = v9; /*0x6298ad*/
     switch ( this->q048 ) /*0x6298bc*/
     {
       case 0: /*0x6298bc*/
-        *(_DWORD *)(this->q028 + 808) = 0; /*0x6298c6*/
+        *(unsigned int *)(this->q028 + 808) = 0; /*0x6298c6*/
         Index = AnimTypeClass::FindIndex(aSqdg); /*0x6298d1*/
         if ( Index != -1 ) /*0x6298d9*/
         {
-          v12 = (void *)*((_DWORD *)g_AnimTypeCount + Index); /*0x6298e5*/
+          v12 = (void *)*((unsigned int *)g_AnimTypeCount + Index); /*0x6298e5*/
           if ( v12 ) /*0x6298ea*/
           {
-            v13 = (void **)RA2_OPNEW(0x1C8u); /*0x6298f5*/
+            v13 = (void *)operator new(0x1C8u); /*0x6298f5*/
             if ( v13 ) /*0x6298ff*/
             {
               v14 = AnimClass::ctor(v13, v12, &v50, 0, 1, (void *)0x600, 0, 0); /*0x629913*/
@@ -210,13 +202,13 @@ void ParasiteClass::DeploySquad()
                 if ( g_BuildingTypeInstanceCount < dword_B0F5C0 /*0x629953*/
                   || (byte_B0F5C5 || !dword_B0F5C0)
                   && dword_B0F5CC > 0
-                  && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingInstanceCount + 8))(
+                  && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_BuildingInstanceCount + 8))(
                        &g_BuildingInstanceCount,
                        dword_B0F5CC + dword_B0F5C0,
                        0) )
                 {
                   v15 = g_BuildingTypeInstanceCount++; /*0x629960*/
-                  *((_DWORD *)g_BuildingClassPoolManager + v15) = this; /*0x62996f*/
+                  *((unsigned int *)g_BuildingClassPoolManager + v15) = this; /*0x62996f*/
                 }
               }
             }
@@ -230,7 +222,7 @@ void ParasiteClass::DeploySquad()
       case 1: /*0x6298bc*/
         if ( BuildingClass::AnimController((int *)this) ) /*0x62998d*/
         {
-          v16 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 1); /*0x6299a9*/
+          v16 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 1); /*0x6299a9*/
           this->u32_50 = 0; /*0x6299b7*/
           this->q048 = 3 - (v16 != 0); /*0x6299ba*/
           this->q04C = 0; /*0x6299bd*/
@@ -254,9 +246,9 @@ void ParasiteClass::DeploySquad()
         *(float *)(this->q028 + 808) = Math::SinCos(*(double *)&v43[1]) * 0.78539819; /*0x629a46*/
         goto LABEL_47; /*0x629a4c*/
       case 4: /*0x6298bc*/
-        *(_DWORD *)(this->q028 + 808) = 0; /*0x629a59*/
-        v17 = *((_DWORD *)g_RulesClass_Instance + 756); /*0x629a67*/
-        v41 = -((double)(*(__int16 *)ProgressTimer::GetValue((_WORD *)(this->q028 + 904), &v45) - 0x3FFF) /*0x629a91*/
+        *(unsigned int *)(this->q028 + 808) = 0; /*0x629a59*/
+        v17 = *((unsigned int *)g_RulesClass_Instance + 756); /*0x629a67*/
+        v41 = -((double)(*(int16_t *)ProgressTimer::GetValue((unsigned short *)(this->q028 + 904), &v45) - 0x3FFF) /*0x629a91*/
               * -0.00009587672516830327);
         v49 = Math::ArcTan2(v41); /*0x629aa4*/
         v48 = Math::SinCos(v41); /*0x629aaf*/
@@ -264,7 +256,7 @@ void ParasiteClass::DeploySquad()
         {
           v46 = 64.0; /*0x629ac8*/
           v47 = (double)i * 128.0 - 128.0; /*0x629aea*/
-          if ( Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 1) ) /*0x629aee*/
+          if ( Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 1) ) /*0x629aee*/
             v18 = -64.0; /*0x629af7*/
           else
             v18 = v46; /*0x629aff*/
@@ -273,13 +265,13 @@ void ParasiteClass::DeploySquad()
           v53 = v19 + v50; /*0x629b44*/
           v54 = v51 + v20; /*0x629b48*/
           v52 = v52; /*0x629b4c*/
-          v21 = (void **)RA2_OPNEW(0x1C8u); /*0x629b55*/
+          v21 = (void *)operator new(0x1C8u); /*0x629b55*/
           if ( v21 ) /*0x629b5c*/
           {
-            v22 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v17 - 1); /*0x629b6f*/
+            v22 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, v17 - 1); /*0x629b6f*/
             AnimClass::ctor( /*0x629b97*/
               v21,
-              *(void **)(*((_DWORD *)g_RulesClass_Instance + 753) + 4 * v22),
+              *(void **)(*((unsigned int *)g_RulesClass_Instance + 753) + 4 * v22),
               &v53,
               (void *)2,
               1,
@@ -288,29 +280,29 @@ void ParasiteClass::DeploySquad()
               0);
           }
         }
-        if ( *(_BYTE *)(v43[0] + 372) /*0x629be6*/
+        if ( *(unsigned char *)(v43[0] + 372) /*0x629be6*/
           && (!BuildingClass::GetSellPriority(*(int **)(&this->uniqueId0))
            || BuildingClass::GetSellPriority(*(int **)(&this->uniqueId0)) == 1
            && Audio::IsLoud((float *)(this->creationFrame + 336))) )
         {
-          if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->vtable46) + 132))(this->creationFrame) + 3214) ) /*0x629bfe*/
+          if ( *(unsigned char *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable46) + 132))(this->creationFrame) + 3214) ) /*0x629bfe*/
           {
-            v23 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->uniqueId0) + 132))(this->q028); /*0x629c16*/
-            v24 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->vtable46) + 132))(this->creationFrame); /*0x629c23*/
-            v39 = *(_DWORD *)(this->q028 + 540); /*0x629c2f*/
-            v25 = (*(int (__thiscall **)(int))(*(_DWORD *)v23 + 132))(v23); /*0x629c30*/
-            v26 = (*(int (__thiscall **)(int, _DWORD, int))(*(_DWORD *)v24 + 132))( /*0x629c46*/
+            v23 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->uniqueId0) + 132))(this->q028); /*0x629c16*/
+            v24 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable46) + 132))(this->creationFrame); /*0x629c23*/
+            v39 = *(unsigned int *)(this->q028 + 540); /*0x629c2f*/
+            v25 = (*(int (__thiscall **)(int))(*(unsigned int *)v23 + 132))(v23); /*0x629c30*/
+            v26 = (*(int (__thiscall **)(int, unsigned int, int))(*(unsigned int *)v24 + 132))( /*0x629c46*/
                     v24,
-                    *(_DWORD *)(this->creationFrame + 540),
+                    *(unsigned int *)(this->creationFrame + 540),
                     v25);
             HouseClass::AccumulateScore((float *)(this->creationFrame + 336), v26, v39); /*0x629c56*/
           }
-          v27 = *(_BYTE **)(&this->uniqueId0); /*0x629c5d*/
+          v27 = *(unsigned char **)(&this->uniqueId0); /*0x629c5d*/
           BuildingClass::Deploy(0, (int)v27); /*0x629c62*/
-          v28 = *(_DWORD *)v27; /*0x629c67*/
+          v28 = *(unsigned int *)v27; /*0x629c67*/
           v27[973] = 1; /*0x629c69*/
-          (*(void (__thiscall **)(_BYTE *, _DWORD))(v28 + 952))(v27, this->creationFrame); /*0x629c76*/
-          (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)v27 + 928))(v27); /*0x629c80*/
+          (*(void (__thiscall **)(unsigned char *, unsigned int))(v28 + 952))(v27, this->creationFrame); /*0x629c76*/
+          (*(void (__thiscall **)(unsigned char *))(*(unsigned int *)v27 + 928))(v27); /*0x629c80*/
           v29 = this->q044; /*0x629c86*/
           this->q04C = 0; /*0x629c89*/
           this->u32_50 = 0; /*0x629c8e*/
@@ -323,19 +315,19 @@ void ParasiteClass::DeploySquad()
           if ( this->q054 ) /*0x629ca1*/
           {
             v43[0] = this; /*0x629cb8*/
-            v30 = (*(int (__thiscall **)(int *, _DWORD *))(g_BuildingInstanceCount + 16))(&g_BuildingInstanceCount, v43); /*0x629cbc*/
+            v30 = (*(int (__thiscall **)(int *, unsigned int *))(g_BuildingInstanceCount + 16))(&g_BuildingInstanceCount, v43); /*0x629cbc*/
             if ( v30 != -1 && v30 < g_BuildingTypeInstanceCount && v30 < --g_BuildingTypeInstanceCount ) /*0x629cd7*/
             {
               do /*0x629cef*/
               {
                 ++v30; /*0x629cdf*/
-                *((_DWORD *)g_BuildingClassPoolManager + v30 - 1) = *((_DWORD *)g_BuildingClassPoolManager + v30); /*0x629ce3*/
+                *((unsigned int *)g_BuildingClassPoolManager + v30 - 1) = *((unsigned int *)g_BuildingClassPoolManager + v30); /*0x629ce3*/
               }
               while ( v30 < g_BuildingTypeInstanceCount ); /*0x629cef*/
             }
             this->q054 = 0; /*0x629cf1*/
           }
-          v31 = (_DWORD *)(this->creationFrame + 1696); /*0x629cff*/
+          v31 = (unsigned int *)(this->creationFrame + 1696); /*0x629cff*/
           *v31 = g_CurrentFrame; /*0x629d05*/
           v31[1] = v54; /*0x629d0b*/
           v31[2] = 0; /*0x629d0e*/
@@ -343,8 +335,8 @@ void ParasiteClass::DeploySquad()
         else
         {
           v32 = this->q028; /*0x629d27*/
-          v44 = *(_DWORD *)(v43[1] + 164); /*0x629d2a*/
-          (*(void (__thiscall **)(int, int *, _DWORD, _DWORD, _DWORD, _DWORD, int, _DWORD))(*(_DWORD *)v32 + 364))( /*0x629d3b*/
+          v44 = *(unsigned int *)(v43[1] + 164); /*0x629d2a*/
+          (*(void (__thiscall **)(int, int *, unsigned int, unsigned int, unsigned int, unsigned int, int, unsigned int))(*(unsigned int *)v32 + 364))( /*0x629d3b*/
             v32,
             &v44,
             0,
@@ -355,7 +347,7 @@ void ParasiteClass::DeploySquad()
             0);
           if ( this->q028 ) /*0x629d41*/
           {
-            v33 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 1); /*0x629d58*/
+            v33 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 1); /*0x629d58*/
             this->u32_50 = 0; /*0x629d66*/
             this->q048 = 3 - (v33 != 0); /*0x629d69*/
             this->q04C = 0; /*0x629d6c*/
@@ -376,7 +368,7 @@ void ParasiteClass::DeploySquad()
             if ( this->q054 ) /*0x629e0e*/
             {
               v43[1] = this; /*0x629e25*/
-              v38 = (*(int (__thiscall **)(int *, _DWORD *))(g_BuildingInstanceCount + 16))( /*0x629e29*/
+              v38 = (*(int (__thiscall **)(int *, unsigned int *))(g_BuildingInstanceCount + 16))( /*0x629e29*/
                       &g_BuildingInstanceCount,
                       &v43[1]);
               if ( v38 != -1 && v38 < g_BuildingTypeInstanceCount && v38 < --g_BuildingTypeInstanceCount ) /*0x629e44*/
@@ -384,7 +376,7 @@ void ParasiteClass::DeploySquad()
                 do /*0x629e5c*/
                 {
                   ++v38; /*0x629e4c*/
-                  *((_DWORD *)g_BuildingClassPoolManager + v38 - 1) = *((_DWORD *)g_BuildingClassPoolManager + v38); /*0x629e50*/
+                  *((unsigned int *)g_BuildingClassPoolManager + v38 - 1) = *((unsigned int *)g_BuildingClassPoolManager + v38); /*0x629e50*/
                 }
                 while ( v38 < g_BuildingTypeInstanceCount ); /*0x629e5c*/
               }
@@ -392,7 +384,7 @@ void ParasiteClass::DeploySquad()
             }
           }
   LABEL_47:
-          v34 = *(_DWORD **)(&this->nextArrayIndex8); /*0x629d97*/
+          v34 = *(unsigned int **)(&this->nextArrayIndex8); /*0x629d97*/
           if ( v34 ) /*0x629d9c*/
           {
             if ( this->creationFrame ) /*0x629d9e*/
@@ -400,13 +392,13 @@ void ParasiteClass::DeploySquad()
               v35 = this->q028; /*0x629da3*/
               if ( v35 ) /*0x629da8*/
               {
-                v36 = (*(int (__thiscall **)(int))(*(_DWORD *)v35 + 444))(v35); /*0x629db8*/
+                v36 = (*(int (__thiscall **)(int))(*(unsigned int *)v35 + 444))(v35); /*0x629db8*/
                 if ( this->q028 != v34[51] ) /*0x629dbf*/
                 {
-                  BuildingClass::AimTurret(v34, *(_BYTE **)(&this->uniqueId0)); /*0x629dc4*/
-                  v34[53] = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->vtable46) + 484))(this->creationFrame); /*0x629dd6*/
+                  BuildingClass::AimTurret(v34, *(unsigned char **)(&this->uniqueId0)); /*0x629dc4*/
+                  v34[53] = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable46) + 484))(this->creationFrame); /*0x629dd6*/
                   if ( v36 ) /*0x629ddc*/
-                    v34[63] = *(__int16 *)(v36 + 266); /*0x629de5*/
+                    v34[63] = *(int16_t *)(v36 + 266); /*0x629de5*/
                 }
               }
             }
@@ -425,7 +417,7 @@ void ParasiteClass::DeploySquad()
     if ( v6 ) /*0x629869*/
     {
       v54 = v54; /*0x629874*/
-      v8 = (_DWORD *)(v6 + 1696); /*0x62987a*/
+      v8 = (unsigned int *)(v6 + 1696); /*0x62987a*/
       *v8 = g_CurrentFrame; /*0x629880*/
       v8[1] = v54; /*0x629882*/
       v8[2] = 0; /*0x629885*/
@@ -440,14 +432,14 @@ void ParasiteClass::TickDamage()
 {
   int v2; // eax
   int *v3; // ecx
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v5; // ebp
   int v6; // eax
   int v7; // edx
   int v8; // eax
   int v9; // edx
-  _DWORD *v10; // ecx
-  _DWORD *v11; // ecx
+  unsigned int *v10; // ecx
+  unsigned int *v11; // ecx
   void *v12; // eax
   unsigned int v13; // ebx
   void *v14; // ebp
@@ -457,7 +449,7 @@ void ParasiteClass::TickDamage()
   double v19; // st7
   int v20; // ecx
   int v21; // eax
-  _DWORD v22[3]; // [esp+10h] [ebp-3Ch] BYREF
+  unsigned int v22[3]; // [esp+10h] [ebp-3Ch] BYREF
   int v23; // [esp+1Ch] [ebp-30h] BYREF
   double v25; // [esp+24h] [ebp-28h]
   double v26; // [esp+2Ch] [ebp-20h]
@@ -469,16 +461,16 @@ void ParasiteClass::TickDamage()
 
   if ( !this->q028 ) /*0x629fde*/
     return; /*0x629fde*/
-  if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->vtable46) + 132))(this->creationFrame) + 3278) /*0x62a004*/
-    && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->vtable46) + 132))(this->creationFrame) + 3479) )
+  if ( *(unsigned char *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable46) + 132))(this->creationFrame) + 3278) /*0x62a004*/
+    && *(unsigned char *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable46) + 132))(this->creationFrame) + 3479) )
   {
     ParasiteClass::DeploySquad(); /*0x62a010*/
     return; /*0x62a01c*/
   }
-  v2 = (*(int (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(&this->vtable46) + 1016))(this->creationFrame, 0); /*0x62a024*/
+  v2 = (*(int (__thiscall **)(unsigned int, unsigned int))(**(unsigned int **)(&this->vtable46) + 1016))(this->creationFrame, 0); /*0x62a024*/
   v3 = *(int **)(&this->uniqueId0); /*0x62a02a*/
-  v4 = *(_DWORD **)v2; /*0x62a02d*/
-  v5 = *(_DWORD *)(*(_DWORD *)v2 + 172); /*0x62a02f*/
+  v4 = *(unsigned int **)v2; /*0x62a02d*/
+  v5 = *(unsigned int *)(*(unsigned int *)v2 + 172); /*0x62a02f*/
   v5 = v5; /*0x62a03b*/
   v27 = v3[39]; /*0x62a041*/
   v28 = v3[40]; /*0x62a048*/
@@ -498,16 +490,16 @@ void ParasiteClass::TickDamage()
   this->u32_38 = g_CurrentFrame; /*0x62a080*/
   this->ParasiteClass_field_3C = v23; /*0x62a087*/
   this->ParasiteClass_field_40 = v8; /*0x62a08a*/
-  v9 = *(_DWORD *)(v5 + 368); /*0x62a092*/
+  v9 = *(unsigned int *)(v5 + 368); /*0x62a092*/
   v10 = v3 + 424; /*0x62a098*/
   *v10 = g_CurrentFrame; /*0x62a09e*/
   v10[1] = v23; /*0x62a0a4*/
   v10[2] = v9; /*0x62a0a7*/
-  if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->uniqueId0) + 44))(this->q028) == 15 ) /*0x62a0b5*/
+  if ( (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->uniqueId0) + 44))(this->q028) == 15 ) /*0x62a0b5*/
   {
-    v11 = *(_DWORD **)(&this->uniqueId0); /*0x62a0b7*/
+    v11 = *(unsigned int **)(&this->uniqueId0); /*0x62a0b7*/
     v22[0] = v11[27]; /*0x62a0c3*/
-    (*(void (__stdcall **)(_DWORD *, _DWORD, int, _DWORD, int, int, _DWORD))(*v11 + 364))( /*0x62a0ce*/
+    (*(void (__stdcall **)(unsigned int *, unsigned int, int, unsigned int, int, int, unsigned int))(*v11 + 364))( /*0x62a0ce*/
       v22,
       0,
       v5,
@@ -518,22 +510,22 @@ void ParasiteClass::TickDamage()
   }
   else
   {
-    v12 = RA2_OPNEW(0x100u); /*0x62a0d8*/
+    v12 = operator new(0x100u); /*0x62a0d8*/
     if ( v12 ) /*0x62a0e2*/
       ParticleSystemClass::Constructor((int)v12, g_RulesClass_Instance->AIPlayers, &v27, 0, 0, &dword_AC4948, 0); /*0x62a103*/
-    v13 = *ProgressTimer::GetValue((_WORD *)(this->q028 + 904), &v23); /*0x62a11b*/
+    v13 = *ProgressTimer::GetValue((unsigned short *)(this->q028 + 904), &v23); /*0x62a11b*/
     if ( v4[65] ) /*0x62a11d*/
     {
       v14 = *(void **)(v4[62] + 4 * ((((v13 >> 12) + 1) >> 1) & 7)); /*0x62a138*/
       if ( v14 ) /*0x62a13d*/
       {
-        v15 = (void **)RA2_OPNEW(0x1C8u); /*0x62a144*/
+        v15 = (void *)operator new(0x1C8u); /*0x62a144*/
         if ( v15 ) /*0x62a14e*/
           AnimClass::ctor(v15, v14, &v27, 0, 1, (void *)0x600, 0, 0); /*0x62a165*/
       }
     }
-    v16 = -(Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 1) != 0); /*0x62a189*/
-    v22[1] = (__int16)(v13 - 0x3FFF) - 0x3FFF; /*0x62a191*/
+    v16 = -(Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 1) != 0); /*0x62a189*/
+    v22[1] = (int16_t)(v13 - 0x3FFF) - 0x3FFF; /*0x62a191*/
     IDA_LOBYTE(v16) = v16 & 0xFC; /*0x62a195*/
     v29 = v29; /*0x62a19e*/
     v23 = v16 + 2; /*0x62a1a2*/
@@ -547,10 +539,10 @@ void ParasiteClass::TickDamage()
     v23 = v23; /*0x62a203*/
     v20 = this->q028; /*0x62a207*/
     v32 = v29; /*0x62a20a*/
-    (*(void (__thiscall **)(int, int *, int, _DWORD))(*(_DWORD *)v20 + 984))(v20, &v30, 1069547520, 0); /*0x62a21c*/
+    (*(void (__thiscall **)(int, int *, int, unsigned int))(*(unsigned int *)v20 + 984))(v20, &v30, 1069547520, 0); /*0x62a21c*/
     v21 = this->creationFrame; /*0x62a228*/
     v22[0] = v4[41]; /*0x62a22f*/
-    (*(void (__stdcall **)(_DWORD *, _DWORD, int, int, _DWORD, int, _DWORD))(**(_DWORD **)(&this->uniqueId0) + 364))( /*0x62a247*/
+    (*(void (__stdcall **)(unsigned int *, unsigned int, int, int, unsigned int, int, unsigned int))(**(unsigned int **)(&this->uniqueId0) + 364))( /*0x62a247*/
       v22,
       0,
       v5,
@@ -574,74 +566,74 @@ AbstractClass * * ParasiteClass::TryInfect(unsigned int * a2)
   char v8; // al
   int v9; // ecx
   int result; // eax
-  _DWORD *v11; // eax
-  _DWORD *v12; // edi
+  unsigned int *v11; // eax
+  unsigned int *v12; // edi
   int v13; // ebx
   ParasiteClass * v14;
   int v15; // [esp+20h] [ebp-Ch] BYREF
   int v16; // [esp+24h] [ebp-8h]
   int v17; // [esp+28h] [ebp-4h]
 
-  v3 = *(_DWORD *)(this + 68); /*0x62a98b*/
-  *(_DWORD *)(this + 76) = 0; /*0x62a98e*/
-  *(_DWORD *)(this + 80) = 0; /*0x62a993*/
-  *(_DWORD *)(this + 72) = 0; /*0x62a996*/
+  v3 = *(unsigned int *)&this->q110; /*0x62a98b*/
+  this->q130 = 0; /*0x62a98e*/
+  this->q140 = 0; /*0x62a993*/
+  this->q120 = 0; /*0x62a996*/
   if ( v3 ) /*0x62a999*/
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)v3 + 248))(v3); /*0x62a99d*/
-    *(_DWORD *)(this + 68) = 0; /*0x62a9a3*/
+    (*(void (__thiscall **)(int))(*(unsigned int *)v3 + 248))(v3); /*0x62a99d*/
+    *(unsigned int *)&this->q110 = 0; /*0x62a9a3*/
   }
-  if ( *(_BYTE *)(this + 84) ) /*0x62a9a6*/
+  if ( *(unsigned char *)&this->q054 ) /*0x62a9a6*/
   {
     v14 = this; /*0x62a9bd*/
     v4 = (*(int (__thiscall **)(int *, int *))(g_BuildingInstanceCount + 16))(&g_BuildingInstanceCount, &v14); /*0x62a9c1*/
     if ( v4 != -1 ) /*0x62a9c7*/
       DynamicVector::RemoveItem(&g_BuildingInstanceCount, v4); /*0x62a9cf*/
-    *(_BYTE *)(this + 84) = 0; /*0x62a9d4*/
+    *(unsigned char *)&this->q054 = 0; /*0x62a9d4*/
   }
-  *(_DWORD *)(this + 56) = g_CurrentFrame; /*0x62a9e6*/
-  *(_DWORD *)(this + 60) = v16; /*0x62a9ed*/
-  *(_DWORD *)(this + 64) = 0; /*0x62a9f0*/
-  if ( ParasiteClass::CanInfect((_DWORD *)this, a2) ) /*0x62a9f5*/
+  this->q0E0 = g_CurrentFrame; /*0x62a9e6*/
+  this->q0F0 = v16; /*0x62a9ed*/
+  this->q100 = 0; /*0x62a9f0*/
+  if ( ParasiteClass::CanInfect((unsigned int *)this, a2) ) /*0x62a9f5*/
   {
-    v12 = (_DWORD *)(*(_DWORD *)(this + 36) + 1652); /*0x62aae2*/
+    v12 = (unsigned int *)(*(unsigned int *)&this->q090 + 1652); /*0x62aae2*/
     v13 = a2[39]; /*0x62aae8*/
     v16 = a2[40]; /*0x62aaed*/
     v17 = a2[41]; /*0x62aaf4*/
     if ( !*v12 ) /*0x62aaf8*/
       WinAPI::Wrapper(-2147467261); /*0x62ab03*/
-    result = (*(int (__stdcall **)(_DWORD, int, int, int, int))(*(_DWORD *)*v12 + 112))(*v12, -1, v13, v16, v17); /*0x62ab24*/
-    a2[421] = *(_DWORD *)(this + 36); /*0x62ab2b*/
-    *(_DWORD *)(this + 40) = a2; /*0x62ab31*/
+    result = (*(int (__stdcall **)(unsigned int, int, int, int, int))(*(unsigned int *)*v12 + 112))(*v12, -1, v13, v16, v17); /*0x62ab24*/
+    a2[421] = *(unsigned int *)&this->q090; /*0x62ab2b*/
+    *(unsigned int *)((char *)&this->u32_9C + 4) = a2; /*0x62ab31*/
   }
   else
   {
-    v5 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)(*(_DWORD *)(this + 36) + 1372)); /*0x62aa11*/
-    v6 = **(_DWORD **)(this + 36); /*0x62aa1f*/
-    v7 = (*(int (__thiscall **)(void *, int *, _DWORD))(*(_DWORD *)v5 + 72))(v5, &v15, 0); /*0x62aa25*/
-    v8 = (*(int (__thiscall **)(_DWORD, int))(v6 + 216))(*(_DWORD *)(this + 36), v7); /*0x62aa2c*/
-    v9 = *(_DWORD *)(this + 36); /*0x62aa32*/
+    v5 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)(*(unsigned int *)&this->q090 + 1372)); /*0x62aa11*/
+    v6 = **(unsigned int *)&this->q090; /*0x62aa1f*/
+    v7 = (*(int (__thiscall **)(void *, int *, unsigned int))(*(unsigned int *)v5 + 72))(v5, &v15, 0); /*0x62aa25*/
+    v8 = (*(int (__thiscall **)(unsigned int, int))(v6 + 216))(*(unsigned int *)&this->q090, v7); /*0x62aa2c*/
+    v9 = *(unsigned int *)&this->q090; /*0x62aa32*/
     if ( v8 ) /*0x62aa37*/
     {
-      (*(void (__thiscall **)(int, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)v9 + 1164))(v9, 0, 0, 0, 0); /*0x62aa51*/
-      v11 = *(_DWORD **)(this + 36); /*0x62aa57*/
+      (*(void (__thiscall **)(int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v9 + 1164))(v9, 0, 0, 0, 0); /*0x62aa51*/
+      v11 = *(unsigned int *)&this->q090; /*0x62aa57*/
       v15 = v11[39]; /*0x62aa67*/
       v16 = v11[40]; /*0x62aa6e*/
       v17 = v11[41]; /*0x62aa75*/
       MapClass::RevealArea2(&MapClass_Instance, &v15, v11[152] - 3, v11[152] + 2, 0); /*0x62aa91*/
-      if ( !(*(unsigned __int8 (__thiscall **)(_DWORD))(**(_DWORD **)(this + 36) + 1196))(*(_DWORD *)(this + 36)) ) /*0x62aa9b*/
+      if ( !(*(uint8_t (__thiscall **)(unsigned int))(**(unsigned int *)&this->q090 + 1196))(*(unsigned int *)&this->q090) ) /*0x62aa9b*/
       {
-        (*(void (__thiscall **)(_DWORD, _DWORD))(**(_DWORD **)(this + 36) + 968))(*(_DWORD *)(this + 36), 0); /*0x62aaab*/
-        (*(void (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 36) + 1152))(*(_DWORD *)(this + 36), 0, 1); /*0x62aab9*/
+        (*(void (__thiscall **)(unsigned int, unsigned int))(**(unsigned int *)&this->q090 + 968))(*(unsigned int *)&this->q090, 0); /*0x62aaab*/
+        (*(void (__thiscall **)(unsigned int, unsigned int, int))(**(unsigned int *)&this->q090 + 1152))(*(unsigned int *)&this->q090, 0, 1); /*0x62aab9*/
       }
-      return (*(int (__thiscall **)(_DWORD, _DWORD, int))(**(_DWORD **)(this + 36) + 1156))( /*0x62aac9*/
-               *(_DWORD *)(this + 36),
+      return (*(int (__thiscall **)(unsigned int, unsigned int, int))(**(unsigned int *)&this->q090 + 1156))( /*0x62aac9*/
+               *(unsigned int *)&this->q090,
                0,
                1);
     }
     else
     {
-      return (*(int (__thiscall **)(int))(*(_DWORD *)v9 + 248))(v9); /*0x62aa3b*/
+      return (*(int (__thiscall **)(int))(*(unsigned int *)v9 + 248))(v9); /*0x62aa3b*/
     }
   }
   return result; /*0x62aa41*/
@@ -654,42 +646,42 @@ int ParasiteClass::CanExistOnVictimCell()
 {
   int v2; // ecx
   int v4; // ecx
-  _DWORD *v5; // eax
+  unsigned int *v5; // eax
   int v6; // eax
   bool v7; // bl
   int v8; // eax
-  _DWORD *v9; // eax
+  unsigned int *v9; // eax
 
   v2 = this->q028; /*0x62ab44*/
   if ( !v2 ) /*0x62ab49*/
     return 0; /*0x62ab4f*/
-  if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v2 + 84))(v2) ) /*0x62ab52*/
+  if ( (*(uint8_t (__thiscall **)(int))(*(unsigned int *)v2 + 84))(v2) ) /*0x62ab52*/
     return 0; /*0x62ab5d*/
-  if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->vtable46) + 132))(this->creationFrame) + 3278) ) /*0x62ab69*/
+  if ( *(unsigned char *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable46) + 132))(this->creationFrame) + 3278) ) /*0x62ab69*/
     goto LABEL_20; /*0x62ab69*/
   v4 = this->creationFrame; /*0x62ab77*/
   if ( v4 ) /*0x62ab7c*/
   {
-    if ( (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 1 ) /*0x62ab86*/
+    if ( (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) == 1 ) /*0x62ab86*/
     {
-      v5 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->uniqueId0) + 444))(this->q028); /*0x62ab8f*/
+      v5 = (unsigned int *)(*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->uniqueId0) + 444))(this->q028); /*0x62ab8f*/
       if ( CellClass::FindInfantry(v5, 0) ) /*0x62ab97*/
         return 0; /*0x62aba4*/
     }
   }
-  v6 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->uniqueId0) + 444))(this->q028) + 236); /*0x62abb0*/
+  v6 = *(unsigned int *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->uniqueId0) + 444))(this->q028) + 236); /*0x62abb0*/
   if ( v6 == 2 || v6 == 6 || v6 == 3 ) /*0x62abc3*/
   {
-    v7 = (*(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->uniqueId0) + 444))(this->q028) + 320) /*0x62abdc*/
+    v7 = (*(unsigned int *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->uniqueId0) + 444))(this->q028) + 320) /*0x62abdc*/
         & 0x100) == 0;
-    v8 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->uniqueId0) + 444))(this->q028) + 68); /*0x62abe9*/
+    v8 = *(unsigned int *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->uniqueId0) + 444))(this->q028) + 68); /*0x62abe9*/
     if ( v8 >= 74 && v8 <= 99 ) /*0x62abf4*/
       v7 = 0; /*0x62abf6*/
     if ( (v8 < 205 || v8 > 230) && v7 ) /*0x62ac08*/
       return 0; /*0x62ac0b*/
   }
   LABEL_20:
-  v9 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->uniqueId0) + 444))(this->q028); /*0x62ac14*/
+  v9 = (unsigned int *)(*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->uniqueId0) + 444))(this->q028); /*0x62ac14*/
   return Cell::IsBridge(v9) == 0; /*0x62ab4b*/
 }
 } // namespace ra2
@@ -701,13 +693,9 @@ void * ParasiteClass::UpdateParasite(char a2)
   int v3; // ecx
   int v4; // eax
   int v5; // eax
-  _DWORD *v7; // [esp+8h] [ebp-4h] BYREF
+  unsigned int *v7; // [esp+8h] [ebp-4h] BYREF
 
   v3 = *(&this->vtable27); /*0x62af77*/
-  *this = (void*)&ParasiteClass_vftable; /*0x62af7a*/
-  this->vtable2 = (void*)&ParasiteClass_vftable; /*0x62af82*/
-  this->vtable3 = (void*)&ParasiteClass_vftable; /*0x62af89*/
-  this->vtable4 = (void*)&ParasiteClass_vftable; /*0x62af90*/
   *(&this->vtable29) = 0; /*0x62af97*/
   *(&this->vtable30) = 0; /*0x62af9a*/
   *(&this->vtable28) = 0; /*0x62af9d*/
@@ -718,25 +706,25 @@ void * ParasiteClass::UpdateParasite(char a2)
   }
   if ( this->q054 ) /*0x62afad*/
   {
-    v4 = (*(int (__thiscall **)(int *, _DWORD **))(g_BuildingInstanceCount + 16))(&g_BuildingInstanceCount, &this); /*0x62afc6*/
+    v4 = (*(int (__thiscall **)(int *, unsigned int **))(g_BuildingInstanceCount + 16))(&g_BuildingInstanceCount, &this); /*0x62afc6*/
     if ( v4 != -1 && v4 < g_BuildingTypeInstanceCount && v4 < --g_BuildingTypeInstanceCount ) /*0x62afe1*/
     {
       do /*0x62aff9*/
       {
         ++v4; /*0x62afe9*/
-        *((_DWORD *)g_BuildingClassPoolManager + v4 - 1) = *((_DWORD *)g_BuildingClassPoolManager + v4); /*0x62afed*/
+        *((unsigned int *)g_BuildingClassPoolManager + v4 - 1) = *((unsigned int *)g_BuildingClassPoolManager + v4); /*0x62afed*/
       }
       while ( v4 < g_BuildingTypeInstanceCount ); /*0x62aff9*/
     }
     this->q054 = 0; /*0x62affb*/
   }
-  v5 = (*(int (__thiscall **)(int *, _DWORD **))(dword_AC4910 + 16))(&dword_AC4910, &this); /*0x62b012*/
+  v5 = (*(int (__thiscall **)(int *, unsigned int **))(dword_AC4910 + 16))(&dword_AC4910, &this); /*0x62b012*/
   if ( v5 != -1 && v5 < dword_AC4920 && v5 < --dword_AC4920 ) /*0x62b02d*/
   {
     do /*0x62b045*/
     {
       ++v5; /*0x62b035*/
-      *((_DWORD *)dword_AC4914 + v5 - 1) = *((_DWORD *)dword_AC4914 + v5); /*0x62b039*/
+      *((unsigned int *)dword_AC4914 + v5 - 1) = *((unsigned int *)dword_AC4914 + v5); /*0x62b039*/
     }
     while ( v5 < dword_AC4920 ); /*0x62b045*/
   }
@@ -762,9 +750,9 @@ Coord * * ParasiteClass::Update()
   double v10; // st7
   int v11; // eax
   int v12; // eax
-  _DWORD *v13; // esi
+  unsigned int *v13; // esi
   double v14; // st7
-  _DWORD *v15; // edi
+  unsigned int *v15; // edi
   int Byte284; // eax
   float *v17; // eax
   double v18; // st7
@@ -785,7 +773,7 @@ Coord * * ParasiteClass::Update()
   int v34; // edx
   int v35; // eax
   int v36; // ebx
-  __int64 v37; // rax
+  int64_t v37; // rax
   int v38; // edi
   int v39; // ebx
   char result; // al
@@ -805,28 +793,28 @@ Coord * * ParasiteClass::Update()
   int GroundHeight; // [esp+2Ch] [ebp-C8h]
   float v58; // [esp+38h] [ebp-BCh]
   int v59; // [esp+3Ch] [ebp-B8h]
-  _DWORD v60[2]; // [esp+40h] [ebp-B4h] BYREF
+  unsigned int v60[2]; // [esp+40h] [ebp-B4h] BYREF
   int v61; // [esp+48h] [ebp-ACh]
-  _DWORD v62[3]; // [esp+4Ch] [ebp-A8h] BYREF
+  unsigned int v62[3]; // [esp+4Ch] [ebp-A8h] BYREF
   float v63[2]; // [esp+58h] [ebp-9Ch] BYREF
   int v64; // [esp+60h] [ebp-94h]
   float v65[12]; // [esp+64h] [ebp-90h] BYREF
   float v66[12]; // [esp+94h] [ebp-60h] BYREF
   float v67[12]; // [esp+C4h] [ebp-30h] BYREF
 
-  if ( ((unsigned __int8)g_CurrentFrame & 1) != 0 ) /*0x62bd63*/
+  if ( ((uint8_t)g_CurrentFrame & 1) != 0 ) /*0x62bd63*/
     goto LABEL_50; /*0x62bd63*/
   v51 = this->u32_9C; /*0x62bd75*/
   v52 = this->q0A0; /*0x62bd88*/
   v53 = this->q0A4; /*0x62bd8f*/
-  if ( (abs32(Random::State((_DWORD *)g_ScenarioClass_Instance + 134)) & 7) == 0 ) /*0x62bd9f*/
+  if ( (abs32(Random::State((unsigned int *)g_ScenarioClass_Instance + 134)) & 7) == 0 ) /*0x62bd9f*/
   {
     v2 = 0; /*0x62bdab*/
     v3 = 0; /*0x62bdad*/
-    if ( (abs32(Random::State((_DWORD *)g_ScenarioClass_Instance + 134)) & 1) != 0 ) /*0x62bdc1*/
-      v3 = (int)abs32(Random::State((_DWORD *)g_ScenarioClass_Instance + 134)) % 3 - 1; /*0x62be05*/
+    if ( (abs32(Random::State((unsigned int *)g_ScenarioClass_Instance + 134)) & 1) != 0 ) /*0x62bdc1*/
+      v3 = (int)abs32(Random::State((unsigned int *)g_ScenarioClass_Instance + 134)) % 3 - 1; /*0x62be05*/
     else
-      v2 = (int)abs32(Random::State((_DWORD *)g_ScenarioClass_Instance + 134)) % 3 - 1; /*0x62bde2*/
+      v2 = (int)abs32(Random::State((unsigned int *)g_ScenarioClass_Instance + 134)) % 3 - 1; /*0x62bde2*/
     v4 = v2 + this->q0C0; /*0x62be11*/
     v5 = v3 + this->q0C4; /*0x62be1b*/
     this->q0C0 = v4; /*0x62be1f*/
@@ -879,7 +867,7 @@ Coord * * ParasiteClass::Update()
   v13 = Coord::To_Cell(&MapClass_Instance, v62); /*0x62bf46*/
   v50 = 0; /*0x62bf4d*/
   v49 = 0; /*0x62bf52*/
-  if ( (v13[80] & 0x100) != 0 || (*((_DWORD *)Coord::To_Cell(&MapClass_Instance, v60) + 80) & 0x100) != 0 ) /*0x62bf74*/
+  if ( (v13[80] & 0x100) != 0 || (*((unsigned int *)Coord::To_Cell(&MapClass_Instance, v60) + 80) & 0x100) != 0 ) /*0x62bf74*/
   {
     if ( v62[2] < v59 ) /*0x62bf84*/
     {
@@ -903,9 +891,9 @@ Coord * * ParasiteClass::Update()
         v48 = 1; /*0x62c001*/
         if ( v15 ) /*0x62c006*/
         {
-          if ( *(_BYTE *)(v15[328] + 5823) ) /*0x62c00e*/
+          if ( *(unsigned char *)(v15[328] + 5823) ) /*0x62c00e*/
             v48 = v15[390] < 8; /*0x62c021*/
-          if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*v15 + 128))(v15) ) /*0x62c02a*/
+          if ( (*(uint8_t (__thiscall **)(unsigned int *))(*v15 + 128))(v15) ) /*0x62c02a*/
             v48 = 0; /*0x62c034*/
         }
       }
@@ -955,13 +943,13 @@ Coord * * ParasiteClass::Update()
   *(float *)&v44 = -v18; /*0x62c0f9*/
   Triple::Set(&v51, v19, v44, this->q0D4); /*0x62c0fd*/
   v20 = Matrix3x3::TransformPoint(v66, v63, (float *)&v51); /*0x62c113*/
-  v51 = *(_DWORD *)v20; /*0x62c11f*/
+  v51 = *(unsigned int *)v20; /*0x62c11f*/
   v52 = v20[1]; /*0x62c126*/
   v53 = v20[2]; /*0x62c131*/
   Coord::Scale((float *)&v51, 1.0); /*0x62c135*/
   v53 = -v53; /*0x62c14a*/
   v21 = Matrix3x3::TransformPoint(v65, v63, (float *)&v51); /*0x62c152*/
-  v51 = *(_DWORD *)v21; /*0x62c159*/
+  v51 = *(unsigned int *)v21; /*0x62c159*/
   v52 = v21[1]; /*0x62c160*/
   v22 = v21[2]; /*0x62c164*/
   v51 = v51; /*0x62c167*/
@@ -970,7 +958,7 @@ Coord * * ParasiteClass::Update()
   *v8 = v51; /*0x62c17a*/
   this->q0D4 = v22; /*0x62c17c*/
   LABEL_40:
-  if ( (*(int (__thiscall **)(char *))(*(_DWORD *)&this->q0B46))(this) <= 5 || (int)g_CurrentFrame % 2 )
+  if ( (*(int (__thiscall **)(char *))(*(unsigned int *)&this->q0B46))(this) <= 5 || (int)g_CurrentFrame % 2 )
   {
     v24 = this->q0C8 <= 0 ? 0 : this->q0C8;
   }
@@ -985,13 +973,13 @@ Coord * * ParasiteClass::Update()
   if ( !--this->q12A ) /*0x62c207*/
   {
     v25 = this->q0AC; /*0x62c215*/
-    if ( *(_DWORD *)(v25 + 744) ) /*0x62c21b*/
+    if ( *(unsigned int *)(v25 + 744) ) /*0x62c21b*/
     {
-      this->q12A = *(_WORD *)(v25 + 732); /*0x62c236*/
+      this->q12A = *(unsigned short *)(v25 + 732); /*0x62c236*/
       v60[0] = this->u32_9C; /*0x62c23f*/
       v60[1] = this->q0A0; /*0x62c250*/
       v61 = this->q0A4; /*0x62c257*/
-      v26 = (int *)*((_DWORD *)Coord::To_Cell(&MapClass_Instance, v60) + 57); /*0x62c260*/
+      v26 = (int *)*((unsigned int *)Coord::To_Cell(&MapClass_Instance, v60) + 57); /*0x62c260*/
       if ( v26 ) /*0x62c268*/
       {
         do /*0x62c30d*/
@@ -1004,20 +992,20 @@ Coord * * ParasiteClass::Update()
           v31 = (int *)v26[12]; /*0x62c293*/
           v64 = this->q0A4; /*0x62c299*/
           v32 = abs32(v29) + abs32(v30); /*0x62c2af*/
-          if ( *((_BYTE *)v26 + 144) && v26[27] > 0 ) /*0x62c2c0*/
+          if ( *((unsigned char *)v26 + 144) && v26[27] > 0 ) /*0x62c2c0*/
           {
             v33 = this->q124; /*0x62c2c2*/
             if ( v33 ) /*0x62c2ca*/
-              v34 = *(_DWORD *)(v33 + 252); /*0x62c2cc*/
+              v34 = *(unsigned int *)(v33 + 252); /*0x62c2cc*/
             else
               v34 = 0; /*0x62c2d4*/
             v35 = this->q0AC; /*0x62c2d6*/
             v34 = v34; /*0x62c2dc*/
             v54 = *(float *)(v35 + 744); /*0x62c2e9*/
             v36 = *v26; /*0x62c2f3*/
-            v41 = *(_DWORD *)(v35 + 740); /*0x62c2f5*/
+            v41 = *(unsigned int *)(v35 + 740); /*0x62c2f5*/
             v37 = ZCoordToScreenY(v32); /*0x62c2f6*/
-            (*(void (__fastcall **)(int *, _DWORD, float *, _DWORD, int, _DWORD, _DWORD, _DWORD, int))(v36 + 364))( /*0x62c303*/
+            (*(void (__fastcall **)(int *, unsigned int, float *, unsigned int, int, unsigned int, unsigned int, unsigned int, int))(v36 + 364))( /*0x62c303*/
               v26,
               IDA_HIDWORD(v37),
               &v54,
@@ -1035,15 +1023,15 @@ Coord * * ParasiteClass::Update()
     }
   }
   v38 = this->q0AC; /*0x62c316*/
-  v39 = *(_DWORD *)(v38 + 736) /*0x62c33f*/
-      - *((unsigned __int16 *)&this->q0388)
-      + (*(int (__stdcall **)(char *))(this->vtable2 + 16))(this + 4);
-  if ( !(v39 % (*(char *)(v38 + 779) + ((*(int (__stdcall **)(char *))(this->vtable2 + 16))(this + 4) & 1))) ) /*0x62c355*/
+  v39 = *(unsigned int *)(v38 + 736) /*0x62c33f*/
+      - *((uint16_t *)&this->q0388)
+      + (*(int (__stdcall **)(char *))(this->vtable2 + 16))&this->uniqueId;
+  if ( !(v39 % (*(char *)(v38 + 779) + ((*(int (__stdcall **)(char *))(this->vtable2 + 16))&this->uniqueId & 1))) ) /*0x62c355*/
     ++*(&this->spawnStatus2); /*0x62c35b*/
   result = *(&this->spawnStatus2); /*0x62c361*/
-  if ( result == *(_BYTE *)(v38 + 777) ) /*0x62c36f*/
+  if ( result == *(unsigned char *)(v38 + 777) ) /*0x62c36f*/
   {
-    result = *(_BYTE *)(v38 + 776); /*0x62c371*/
+    result = *(unsigned char *)(v38 + 776); /*0x62c371*/
     if ( result ) /*0x62c379*/
       *(&this->spawnStatus5) = 1; /*0x62c37c*/
     else
@@ -1083,13 +1071,13 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
       && (g_BuildingTypeInstanceCount < dword_B0F5C0
        || (byte_B0F5C5 || !dword_B0F5C0)
        && dword_B0F5CC > 0
-       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingInstanceCount + 8))(
+       && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_BuildingInstanceCount + 8))(
             &g_BuildingInstanceCount,
             dword_B0F5C0 + dword_B0F5CC,
             0)) )
     {
       v5 = g_BuildingTypeInstanceCount++; /*0x629664*/
-      *((_DWORD *)g_BuildingClassPoolManager + v5) = a0; /*0x629673*/
+      *((unsigned int *)g_BuildingClassPoolManager + v5) = a0; /*0x629673*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a0 + 9); /*0x62967f*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a0 + 10); /*0x62968d*/
@@ -1133,26 +1121,26 @@ bool ParasiteClass::CanInfect(unsigned int * a2)
   result = 0; /*0x62a977*/
   if ( a2 ) /*0x62a8ea*/
   {
-    if ( !*((_BYTE *)a2 + 129) ) /*0x62a8f0*/
+    if ( !*((unsigned char *)a2 + 129) ) /*0x62a8f0*/
     {
-      if ( *((_BYTE *)a2 + 144) ) /*0x62a8fa*/
+      if ( *((unsigned char *)a2 + 144) ) /*0x62a8fa*/
       {
         if ( a2[27] ) /*0x62a904*/
         {
           if ( !a2[421] ) /*0x62a90b*/
           {
-            if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*a2 + 132))(a2) + 3384) ) /*0x62a91f*/
+            if ( *(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*a2 + 132))(a2) + 3384) ) /*0x62a91f*/
             {
               if ( !a2[185] ) /*0x62a929*/
               {
-                v3 = *(this + 9); /*0x62a933*/
+                v3 = this->creationFrame; /*0x62a933*/
                 if ( !v3 ) /*0x62a938*/
                   return 1; /*0x62a938*/
-                if ( !*(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v3 + 132))(v3) + 3278) ) /*0x62a942*/
+                if ( !*(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)v3 + 132))(v3) + 3278) ) /*0x62a942*/
                   return 1; /*0x62a942*/
-                if ( !(*(int (__thiscall **)(_DWORD *))(*a2 + 444))(a2) ) /*0x62a950*/
+                if ( !(*(int (__thiscall **)(unsigned int *))(*a2 + 444))(a2) ) /*0x62a950*/
                   return 1; /*0x62a950*/
-                v4 = (int *)(*(int (__thiscall **)(_DWORD *))(*a2 + 444))(a2); /*0x62a95e*/
+                v4 = (int *)(*(int (__thiscall **)(unsigned int *))(*a2 + 444))(a2); /*0x62a95e*/
                 if ( Cell::IsValidHeight(v4) ) /*0x62a966*/
                   return 1; /*0x62a8ea*/
               }

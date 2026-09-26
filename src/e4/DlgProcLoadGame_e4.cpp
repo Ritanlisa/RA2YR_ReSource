@@ -28,7 +28,7 @@ HWND E4Recv_696AE0::sub_696AE0()
   {
     if ( result ) /*0x696b15*/
     {
-      v5 = (char *)(this + 8); /*0x696b21*/
+      v5 = (char *)((char *)&this->vfptr + 32); /*0x696b21*/
       SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)v5); /*0x696b30*/
       SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x696b3f*/
       String::Trim(v5); /*0x696b43*/
@@ -39,7 +39,7 @@ HWND E4Recv_696AE0::sub_696AE0()
         v6 = SendMessageA(result, 0x4C4u, 0xFFFFFFFF, (LPARAM)v5); /*0x696b6e*/
         if ( v6 == -1 ) /*0x696b73*/
         {
-          v8 = (char *)RA2_OPNEW(0x29u); /*0x696b8c*/
+          v8 = (char *)operator new(0x29u); /*0x696b8c*/
           strcpy(v8, v5); /*0x696ba2*/
           result = (HWND)SendMessageA(result, 0x4C8u, 0, (LPARAM)v8); /*0x696bb1*/
           v6 = (LRESULT)result; /*0x696bb3*/
@@ -48,13 +48,13 @@ HWND E4Recv_696AE0::sub_696AE0()
           if ( dword_A8DB5C < dword_A8DB54 /*0x696bf1*/
             || (byte_A8DB59 || !dword_A8DB54)
             && dword_A8DB60 > 0
-            && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_A8DB4C + 8))(
+            && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A8DB4C + 8))(
                  &dword_A8DB4C,
                  dword_A8DB54 + dword_A8DB60,
                  0) )
           {
             v7 = dword_A8DB5C++; /*0x696c02*/
-            *(_DWORD *)(dword_A8DB50 + 4 * v7) = v8; /*0x696c11*/
+            *(unsigned int *)(dword_A8DB50 + 4 * v7) = v8; /*0x696c11*/
           }
         }
         SendMessageA(result, 0x186u, v6, 0); /*0x696c1d*/
@@ -97,7 +97,7 @@ HWND E4Recv_696C40::sub_696C40()
             do /*0x696cc0*/
             {
               ++v5; /*0x696cb0*/
-              *(_DWORD *)(dword_A8DB50 + 4 * v5 - 4) = *(_DWORD *)(dword_A8DB50 + 4 * v5); /*0x696cb4*/
+              *(unsigned int *)(dword_A8DB50 + 4 * v5 - 4) = *(unsigned int *)(dword_A8DB50 + 4 * v5); /*0x696cb4*/
             }
             while ( v5 < dword_A8DB5C ); /*0x696cc0*/
           }
@@ -106,7 +106,7 @@ HWND E4Recv_696C40::sub_696C40()
           --v4; /*0x696cd2*/
         SendMessageA(v3, 0x186u, v4, 0); /*0x696cdc*/
         result = (HWND)SendMessageA(v3, 0x197u, v4, 0); /*0x696ce7*/
-        *(_DWORD *)(this + 152) = v4; /*0x696ce9*/
+        *(unsigned int *)((char *)&this->q152 + 270) = v4; /*0x696ce9*/
       }
     }
   }

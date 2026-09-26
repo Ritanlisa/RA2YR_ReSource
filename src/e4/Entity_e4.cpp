@@ -18,14 +18,14 @@ int sub_53AB70()
   NukeFlash_Status = 1; /*0x53ab81*/
   NukeFlash_Duration = 30; /*0x53ab8b*/
   NukeFlash_StartTime = (int)g_CurrentFrame; /*0x53ab95*/
-  *((_DWORD *)g_ScenarioClass_Instance + 1170) = g_CurrentFrame; /*0x53ab9a*/
-  *((_DWORD *)v0 + 1) = v2; /*0x53aba8*/
-  *((_DWORD *)v0 + 2) = 1; /*0x53abad*/
-  *((_DWORD *)g_ScenarioClass_Instance + 3404) = *((_DWORD *)g_ScenarioClass_Instance + 3416); /*0x53abbd*/
+  *((unsigned int *)g_ScenarioClass_Instance + 1170) = g_CurrentFrame; /*0x53ab9a*/
+  *((unsigned int *)v0 + 1) = v2; /*0x53aba8*/
+  *((unsigned int *)v0 + 2) = 1; /*0x53abad*/
+  *((unsigned int *)g_ScenarioClass_Instance + 3404) = *((unsigned int *)g_ScenarioClass_Instance + 3416); /*0x53abbd*/
   UpdateSurfaceAnimations( /*0x53ac39*/
-    1000 * *((_DWORD *)g_ScenarioClass_Instance + 3417) / 100,
-    1000 * *((_DWORD *)g_ScenarioClass_Instance + 3418) / 100,
-    1000 * *((_DWORD *)g_ScenarioClass_Instance + 3419) / 100,
+    1000 * *((unsigned int *)g_ScenarioClass_Instance + 3417) / 100,
+    1000 * *((unsigned int *)g_ScenarioClass_Instance + 3418) / 100,
+    1000 * *((unsigned int *)g_ScenarioClass_Instance + 3419) / 100,
     1);
   return MapClass::MarkForRedraw(&MapClass_Instance, 1); /*0x53ac4a*/
 }

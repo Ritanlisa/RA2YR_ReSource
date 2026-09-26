@@ -15,8 +15,8 @@ void RawFileClass::Dtor()
   DWORD LastError; // eax
   int v4; // [esp-8h] [ebp-Ch]
 
-  *(_DWORD *)this = (int)&RawFileClass_vftable; /*0x65ca03*/
-  if ( (unsigned __int8)RawFileClass::Write() ) /*0x65ca09*/
+  *(unsigned int *)this = (int)&RawFileClass_vftable; /*0x65ca03*/
+  if ( (uint8_t)RawFileClass::Write() ) /*0x65ca09*/
   {
     if ( !CloseHandle((HANDLE)this->FileTimeDateLo) ) /*0x65ca17*/
     {
@@ -33,7 +33,7 @@ void RawFileClass::Dtor()
     this->FileNameAllocated = 0; /*0x65ca54*/
     this->q020 = 0; /*0x65ca5b*/
   }
-  *(_DWORD *)this = (int)&FileClass_vftable; /*0x65ca5f*/
+  *(unsigned int *)this = (int)&FileClass_vftable; /*0x65ca5f*/
 }
 } // namespace gamemd
 // 0x65CB30

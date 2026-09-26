@@ -34,7 +34,7 @@ char ** Commands::Release()
 } // namespace gamemd
 // 0x537A80
 namespace gamemd {
-_UNKNOWN ** Commands::StubReturn8550640()
+void ** Commands::StubReturn8550640()
 {
   return &off_8278F0; /*0x537a85*/
 }

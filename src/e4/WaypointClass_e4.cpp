@@ -21,7 +21,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
   signed int v4; // esi
   void *v5; // eax
   int v6; // eax
-  _DWORD *v7; // ecx
+  unsigned int *v7; // ecx
   int v8; // edi
   int *Element; // eax
   int v10; // kr08_4
@@ -30,7 +30,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
   void *v14; // eax
   int v15; // eax
   signed int v16; // [esp+10h] [ebp-Ch]
-  __int16 v18; // [esp+1Ah] [ebp-2h]
+  int16_t v18; // [esp+1Ah] [ebp-2h]
 
   v2 = (int *)(&this->u32_342); /*0x502171*/
   v3 = *a2 / 256; /*0x50218e*/
@@ -41,14 +41,14 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
   {
     if ( !*v2 ) /*0x50219f*/
     {
-      v5 = RA2_OPNEW(0x40u); /*0x5021a7*/
+      v5 = operator new(0x40u); /*0x5021a7*/
       if ( v5 ) /*0x5021b1*/
         v6 = WaypointPathClass::Construct((int)v5, v4); /*0x5021b6*/
       else
         v6 = 0; /*0x5021bd*/
       *v2 = v6; /*0x5021bf*/
     }
-    v7 = (_DWORD *)*v2; /*0x5021c2*/
+    v7 = (unsigned int *)*v2; /*0x5021c2*/
     v8 = 0; /*0x5021c5*/
     if ( *(int *)(this->u32_BC > 0 ) /*0x5021cc*/
       break; /*0x5021cc*/
@@ -61,14 +61,14 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
       v13 = *(&this->u32_341); /*0x502233*/
       if ( !*(this + v13 + 132) ) /*0x502239*/
       {
-        v14 = RA2_OPNEW(0x40u); /*0x502246*/
+        v14 = operator new(0x40u); /*0x502246*/
         if ( v14 ) /*0x502250*/
           v15 = WaypointPathClass::Construct((int)v14, v13); /*0x502255*/
         else
           v15 = 0; /*0x50225c*/
         *(this + v13 + 132) = v15; /*0x50225e*/
       }
-      return WaypointClass_Find((_DWORD *)*(this + *(&this->u32_341) + 132), a2); /*0x502277*/
+      return WaypointClass_Find((unsigned int *)*(this + *(&this->u32_341) + 132), a2); /*0x502277*/
     }
   }
   while ( 1 ) /*0x5021cf*/
@@ -76,13 +76,13 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
     Element = (int *)Array::GetElement(v7, v8); /*0x5021cf*/
     v10 = *Element; /*0x5021e1*/
     v11 = Element[1] / 256; /*0x5021f2*/
-    if ( (unsigned __int16)(v10 / 256) == (_WORD)v3 && (_WORD)v11 == v18 ) /*0x5021ff*/
+    if ( (uint16_t)(v10 / 256) == (unsigned short)v3 && (unsigned short)v11 == v18 ) /*0x5021ff*/
     {
       v16 = v16; /*0x502205*/
       if ( v16 != *(&this->u32_341) ) /*0x50220f*/
     }
-    v7 = (_DWORD *)*v2; /*0x502211*/
-    if ( ++v8 >= *(_DWORD *)(this->u32_BC ) /*0x502218*/
+    v7 = (unsigned int *)*v2; /*0x502211*/
+    if ( ++v8 >= *(unsigned int *)(this->u32_BC ) /*0x502218*/
     {
       v4 = v16; /*0x50221a*/
       goto LABEL_13; /*0x50221a*/

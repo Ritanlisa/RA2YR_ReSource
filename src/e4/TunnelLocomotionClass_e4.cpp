@@ -13,21 +13,21 @@
 namespace gamemd {
 void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
 {
-  _DWORD *v2; // esi
+  unsigned int *v2; // esi
   int v3; // eax
   int v4; // edx
   double v5; // st7
   int TileIndexMapClass; // eax
   int v7; // eax
   int v8; // [esp+14h] [ebp-20h] BYREF
-  __int16 v9[2]; // [esp+18h] [ebp-1Ch] BYREF
-  __int16 v10[2]; // [esp+1Ch] [ebp-18h] BYREF
-  _BYTE v11[4]; // [esp+20h] [ebp-14h] BYREF
+  int16_t v9[2]; // [esp+18h] [ebp-1Ch] BYREF
+  int16_t v10[2]; // [esp+1Ch] [ebp-18h] BYREF
+  unsigned char v11[4]; // [esp+20h] [ebp-14h] BYREF
   int v12; // [esp+24h] [ebp-10h] BYREF
   int v13; // [esp+28h] [ebp-Ch] BYREF
   int v14; // [esp+2Ch] [ebp-8h]
   int v15; // [esp+30h] [ebp-4h]
-  unsigned __int16 v16; // [esp+3Ah] [ebp+6h]
+  uint16_t v16; // [esp+3Ah] [ebp+6h]
 
   switch ( a1[5] ) /*0x728c17*/
   {
@@ -48,23 +48,23 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
       break; /*0x728df9*/
     case 4: /*0x728c17*/
       v2 = a1 + 6; /*0x728c29*/
-      v3 = *(_DWORD *)(a1[2] + 156); /*0x728c31*/
-      v4 = *(_DWORD *)(a1[2] + 164); /*0x728c38*/
-      v14 = *(_DWORD *)(a1[2] + 160) - a1[7]; /*0x728c3b*/
+      v3 = *(unsigned int *)(a1[2] + 156); /*0x728c31*/
+      v4 = *(unsigned int *)(a1[2] + 164); /*0x728c38*/
+      v14 = *(unsigned int *)(a1[2] + 160) - a1[7]; /*0x728c3b*/
       v15 = v4; /*0x728c43*/
       v13 = v3 - a1[6]; /*0x728c4b*/
       v5 = Math::Sqrt((double)v13 * (double)v13 + (double)v14 * (double)v14); /*0x728c64*/
       if ( (double)(int)Math::RoundToInt(v5) > dbl_B0F8F8 ) /*0x728c84*/
       {
-        v8 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)a1[2] + 440))(a1[2], v11); /*0x728c9e*/
+        v8 = *(unsigned int *)(*(int (__thiscall **)(unsigned int, unsigned char *))(*(unsigned int *)a1[2] + 440))(a1[2], v11); /*0x728c9e*/
         v9[0] = 0; /*0x728cc4*/
         v9[1] = 0; /*0x728cc9*/
-        TileIndexMapClass = MapClass::GetTileIndex(&MapClass_Instance, (__int16 *)&v8, 0, 0); /*0x728cce*/
+        TileIndexMapClass = MapClass::GetTileIndex(&MapClass_Instance, (int16_t *)&v8, 0, 0); /*0x728cce*/
         v7 = *LayerClass::Pathfinding_Find( /*0x728cea*/
                 &MapClass_Instance,
                 (int)&v12,
                 &v12,
-                (__int16 *)&v8,
+                (int16_t *)&v8,
                 1,
                 TileIndexMapClass,
                 0,
@@ -79,7 +79,7 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
                 0,
                 0);
         v16 = IDA_HIWORD(v7); /*0x728cf3*/
-        if ( (_WORD)v7 != (_WORD)dword_B0F8F0 ) /*0x728cf7*/
+        if ( (unsigned short)v7 != (unsigned short)dword_B0F8F0 ) /*0x728cf7*/
           goto LABEL_8; /*0x728cf7*/
         if ( IDA_HIWORD(v7) == IDA_HIWORD(dword_B0F8F0) ) /*0x728d09*/
         {
@@ -89,7 +89,7 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
                   &MapClass_Instance,
                   (int)v10,
                   &v13,
-                  (__int16 *)&v8,
+                  (int16_t *)&v8,
                   1,
                   -1,
                   0,
@@ -107,7 +107,7 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
         }
         if ( IDA___PAIR32__(v16, v7) == dword_B0F8F0 ) /*0x728d4f*/
         {
-          (*(void (__stdcall **)(int, _DWORD, int, _DWORD, int, int, _DWORD))(*(_DWORD *)a1[2] + 364))( /*0x728d7c*/
+          (*(void (__stdcall **)(int, unsigned int, int, unsigned int, int, int, unsigned int))(*(unsigned int *)a1[2] + 364))( /*0x728d7c*/
             a1[2] + 108,
             0,
             g_RulesClass_Instance->SilverCrate[5],
@@ -122,8 +122,8 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
         else
         {
   LABEL_8:
-          *v2 = ((__int16)v7 << 8) + 128; /*0x728dbf*/
-          a1[7] = ((__int16)v16 << 8) + 128; /*0x728dc1*/
+          *v2 = ((int16_t)v7 << 8) + 128; /*0x728dbf*/
+          a1[7] = ((int16_t)v16 << 8) + 128; /*0x728dc1*/
           a1[8] = 0; /*0x728dc4*/
         }
       }

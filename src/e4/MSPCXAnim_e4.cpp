@@ -19,9 +19,9 @@ int MSPCXAnim::Stub()
 namespace gamemd {
 AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // ebx
-  _DWORD *v5; // eax
-  _DWORD *v6; // edi
+  unsigned int *v4; // ebx
+  unsigned int *v5; // eax
+  unsigned int *v6; // edi
   int v7; // ecx
   int v8; // eax
   void * v9;
@@ -37,7 +37,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = RA2_OPNEW(8 * a2); /*0x5d09e6*/
+      v5 = operator new(8 * a2); /*0x5d09e6*/
       if ( v5 ) /*0x5d09f0*/
         v6 = v5; /*0x5d09f5*/
       else
@@ -58,15 +58,15 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
         {
           v9 = this->q004; /*0x5d0a28*/
           ++v8; /*0x5d0a2b*/
-          v6[2 * v8 - 2] = *(_DWORD *)(v9 + 8 * v8 - 8); /*0x5d0a32*/
-          v6[2 * v8 - 1] = *(_DWORD *)(v9 + 8 * v8 - 4); /*0x5d0a3a*/
+          v6[2 * v8 - 2] = *(unsigned int *)(v9 + 8 * v8 - 8); /*0x5d0a32*/
+          v6[2 * v8 - 1] = *(unsigned int *)(v9 + 8 * v8 - 4); /*0x5d0a3a*/
         }
         while ( v8 < v7 ); /*0x5d0a3e*/
         v4 = a3; /*0x5d0a40*/
       }
       if ( this->IsAllocated ) /*0x5d0a44*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5d0a4f*/
+        RA2_OPDEL(this->q004); /*0x5d0a4f*/
         this->q004 = 0; /*0x5d0a57*/
       }
     }
@@ -76,7 +76,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x5d0a74*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5d0a74*/
   }
   v10 = this->q008; /*0x5d0a77*/
   if ( v10 < this->q010 ) /*0x5d0a7f*/
@@ -87,13 +87,11 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
 // 0x5CED70
 MSPCXAnim * MSPCXAnim::QueryInterface(char a2)
 {
-  void (__thiscall ***v3)(_DWORD, int); // ecx
+  void (__thiscall ***v3)(unsigned int, int); // ecx
 
-  v3 = (void (__thiscall ***)(_DWORD, int))this->u32_24; /*0x5ced73*/
-  *this = (void*)&MSPCXAnim_vftable; /*0x5ced76*/
+  v3 = (void (__thiscall ***)(unsigned int, int))this->u32_24; /*0x5ced73*/
   if ( v3 ) /*0x5ced7e*/
     (**v3)(v3, 1); /*0x5ced84*/
-  *this = (void*)&MSAnim_vftable; /*0x5ced8a*/
   if ( (a2 & 1) != 0 ) /*0x5ced92*/
     RA2_OPDEL(); /*0x5ced95*/
   return this; /*0x5ced9f*/
@@ -218,7 +216,7 @@ unsigned int MSPCXAnim_26::Draw(int a2)
 namespace gamemd {
 int MSPCXAnim_26::GetFrame(int a2)
 {
-  return *(_DWORD *)(this->q004 + 4 * a2); /*0x5d072a*/
+  return *(unsigned int *)(this->q004 + 4 * a2); /*0x5d072a*/
 }
 } // namespace gamemd
 
@@ -255,7 +253,7 @@ unsigned int MSPCXAnim_26::GetCount(int a2)
 namespace gamemd {
 int MSPCXAnim_42::GetFrame(int a2)
 {
-  return *(_DWORD *)(this->q004 + 4 * a2); /*0x5d078a*/
+  return *(unsigned int *)(this->q004 + 4 * a2); /*0x5d078a*/
 }
 } // namespace gamemd
 
@@ -294,13 +292,13 @@ int MSPCXAnim_42::FindIndex_Pair(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x5d0aa0*/
   result = 0; /*0x5d0aa5*/
   if ( v2 <= 0 ) /*0x5d0aab*/
     return -1; /*0x5d0acc*/
-  for ( i = (_DWORD *)this->q004; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x5d0ab1*/
+  for ( i = (unsigned int *)this->q004; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x5d0ab1*/
   {
     if ( ++result >= v2 ) /*0x5d0aca*/
       return -1; /*0x5d0aca*/
@@ -312,7 +310,7 @@ int MSPCXAnim_42::FindIndex_Pair(unsigned int * a2)
 namespace gamemd {
 char MSPCXAnim_42::AllocCopyData_4B(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
@@ -323,7 +321,7 @@ char MSPCXAnim_42::AllocCopyData_4B(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d0c78*/
       v4 = a3; /*0x5d0c8e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d0c8a*/
+      v4 = operator new(4 * a2); /*0x5d0c8a*/
     this->q00C = 1; /*0x5d0c92*/
     if ( !v4 ) /*0x5d0c96*/
       return 0; /*0x5d0d0a*/
@@ -332,11 +330,11 @@ char MSPCXAnim_42::AllocCopyData_4B(int a2, unsigned int * a3)
       v5 = this->q008; /*0x5d0c9f*/
       if ( a2 < v5 ) /*0x5d0ca4*/
         v5 = a2; /*0x5d0ca6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x5d0cac*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->q004 + 4 * i - 4) ) /*0x5d0cac*/
         ++i; /*0x5d0cb1*/
       if ( this->IsAllocated ) /*0x5d0cbe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5d0cc9*/
+        RA2_OPDEL(this->q004); /*0x5d0cc9*/
         this->q004 = 0; /*0x5d0cd1*/
       }
     }
@@ -346,7 +344,7 @@ char MSPCXAnim_42::AllocCopyData_4B(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x5d0cee*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5d0cee*/
   }
   v7 = this->q008; /*0x5d0cf1*/
   if ( v7 < this->q010 ) /*0x5d0cf9*/
@@ -361,13 +359,13 @@ int MSPCXAnim_42::FindIndex(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x5d0d10*/
   result = 0; /*0x5d0d13*/
   if ( v2 <= 0 ) /*0x5d0d18*/
     return -1; /*0x5d0d2f*/
-  for ( i = (_DWORD *)this->q004; *i != *a2; ++i ) /*0x5d0d1e*/
+  for ( i = (unsigned int *)this->q004; *i != *a2; ++i ) /*0x5d0d1e*/
   {
     if ( ++result >= v2 ) /*0x5d0d2d*/
       return -1; /*0x5d0d2d*/
@@ -379,7 +377,7 @@ int MSPCXAnim_42::FindIndex(unsigned int * a2)
 namespace gamemd {
 char MSPCXAnim_42::AllocCopyData_4B_0(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
@@ -390,7 +388,7 @@ char MSPCXAnim_42::AllocCopyData_4B_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d0ed8*/
       v4 = a3; /*0x5d0eee*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d0eea*/
+      v4 = operator new(4 * a2); /*0x5d0eea*/
     this->q00C = 1; /*0x5d0ef2*/
     if ( !v4 ) /*0x5d0ef6*/
       return 0; /*0x5d0f6a*/
@@ -399,11 +397,11 @@ char MSPCXAnim_42::AllocCopyData_4B_0(int a2, unsigned int * a3)
       v5 = this->q008; /*0x5d0eff*/
       if ( a2 < v5 ) /*0x5d0f04*/
         v5 = a2; /*0x5d0f06*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x5d0f0c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->q004 + 4 * i - 4) ) /*0x5d0f0c*/
         ++i; /*0x5d0f11*/
       if ( this->IsAllocated ) /*0x5d0f1e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5d0f29*/
+        RA2_OPDEL(this->q004); /*0x5d0f29*/
         this->q004 = 0; /*0x5d0f31*/
       }
     }
@@ -413,7 +411,7 @@ char MSPCXAnim_42::AllocCopyData_4B_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x5d0f4e*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5d0f4e*/
   }
   v7 = this->q008; /*0x5d0f51*/
   if ( v7 < this->q010 ) /*0x5d0f59*/
@@ -428,13 +426,13 @@ int MSPCXAnim_42::FindIndex_0(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x5d0f70*/
   result = 0; /*0x5d0f73*/
   if ( v2 <= 0 ) /*0x5d0f78*/
     return -1; /*0x5d0f8f*/
-  for ( i = (_DWORD *)this->q004; *i != *a2; ++i ) /*0x5d0f7e*/
+  for ( i = (unsigned int *)this->q004; *i != *a2; ++i ) /*0x5d0f7e*/
   {
     if ( ++result >= v2 ) /*0x5d0f8d*/
       return -1; /*0x5d0f8d*/
@@ -449,18 +447,18 @@ char MSPCXAnim_26::AddRef(int a2)
 {
   int v2; // esi
   int v3; // edx
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // ecx
 
   v2 = this->q008; /*0x5d0fa2*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x5d0fad*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x5d0fad*/
   {
     v3 = 0; /*0x5d0faf*/
     if ( v2 <= 0 ) /*0x5d0fb3*/
       return 1; /*0x5d0fd3*/
-    v4 = (_DWORD *)this->q004; /*0x5d0fb5*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x5d0fbb*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x5d0fc4*/
+    v4 = (unsigned int *)this->q004; /*0x5d0fb5*/
+    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x5d0fbb*/
+    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x5d0fc4*/
     {
       ++v3; /*0x5d0fc6*/
       ++v4; /*0x5d0fc7*/
@@ -476,7 +474,7 @@ char MSPCXAnim_26::AddRef(int a2)
 namespace gamemd {
 char MSPCXAnim_26::AllocCopyData_4B(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v6; // ecx
   int i; // eax
 
@@ -486,7 +484,7 @@ char MSPCXAnim_26::AllocCopyData_4B(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d0ffc*/
       v4 = a3; /*0x5d1012*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d100e*/
+      v4 = operator new(4 * a2); /*0x5d100e*/
     this->q00C = 1; /*0x5d1016*/
     if ( v4 ) /*0x5d101a*/
     {
@@ -495,11 +493,11 @@ char MSPCXAnim_26::AllocCopyData_4B(int a2, unsigned int * a3)
         v6 = this->q008; /*0x5d102c*/
         if ( a2 < v6 ) /*0x5d1031*/
           v6 = a2; /*0x5d1033*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x5d1039*/
+        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->q004 + 4 * i - 4) ) /*0x5d1039*/
           ++i; /*0x5d103e*/
         if ( this->IsAllocated ) /*0x5d104b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5d1056*/
+          RA2_OPDEL(this->q004); /*0x5d1056*/
           this->q004 = 0; /*0x5d105e*/
         }
       }
@@ -515,7 +513,7 @@ char MSPCXAnim_26::AllocCopyData_4B(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x5d1082*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5d1082*/
     return 1; /*0x5d1088*/
   }
 }
@@ -541,7 +539,7 @@ int MSPCXAnim_26::FindIndex(unsigned int * a2)
 {
   int result; // eax
   int v3; // edx
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->q00C ) /*0x5d10c0*/
     return 0; /*0x5d10c8*/
@@ -573,7 +571,7 @@ unsigned int MSPCXAnim_26::GetCount_1(int a2)
 namespace gamemd {
 char MSPCXAnim_26::Release(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
@@ -584,7 +582,7 @@ char MSPCXAnim_26::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d1138*/
       v4 = a3; /*0x5d114e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d114a*/
+      v4 = operator new(4 * a2); /*0x5d114a*/
     this->q00C = 1; /*0x5d1152*/
     if ( !v4 ) /*0x5d1156*/
       return 0; /*0x5d11ca*/
@@ -593,11 +591,11 @@ char MSPCXAnim_26::Release(int a2, unsigned int * a3)
       v5 = this->q008; /*0x5d115f*/
       if ( a2 < v5 ) /*0x5d1164*/
         v5 = a2; /*0x5d1166*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x5d116c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->q004 + 4 * i - 4) ) /*0x5d116c*/
         ++i; /*0x5d1171*/
       if ( this->IsAllocated ) /*0x5d117e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5d1189*/
+        RA2_OPDEL(this->q004); /*0x5d1189*/
         this->q004 = 0; /*0x5d1191*/
       }
     }
@@ -607,7 +605,7 @@ char MSPCXAnim_26::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x5d11ae*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5d11ae*/
   }
   v7 = this->q008; /*0x5d11b1*/
   if ( v7 < this->q010 ) /*0x5d11b9*/
@@ -622,13 +620,13 @@ int MSPCXAnim_26::Load(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x5d11d0*/
   result = 0; /*0x5d11d3*/
   if ( v2 <= 0 ) /*0x5d11d8*/
     return -1; /*0x5d11ef*/
-  for ( i = (_DWORD *)this->q004; *i != *a2; ++i ) /*0x5d11de*/
+  for ( i = (unsigned int *)this->q004; *i != *a2; ++i ) /*0x5d11de*/
   {
     if ( ++result >= v2 ) /*0x5d11ed*/
       return -1; /*0x5d11ed*/
@@ -643,18 +641,18 @@ char MSPCXAnim_42::AddRef(int a2)
 {
   int v2; // esi
   int v3; // edx
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // ecx
 
   v2 = this->q008; /*0x5d1202*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x5d120d*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x5d120d*/
   {
     v3 = 0; /*0x5d120f*/
     if ( v2 <= 0 ) /*0x5d1213*/
       return 1; /*0x5d1233*/
-    v4 = (_DWORD *)this->q004; /*0x5d1215*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x5d121b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x5d1224*/
+    v4 = (unsigned int *)this->q004; /*0x5d1215*/
+    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x5d121b*/
+    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x5d1224*/
     {
       ++v3; /*0x5d1226*/
       ++v4; /*0x5d1227*/
@@ -670,7 +668,7 @@ char MSPCXAnim_42::AddRef(int a2)
 namespace gamemd {
 char MSPCXAnim_42::Release(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v6; // ecx
   int i; // eax
 
@@ -680,7 +678,7 @@ char MSPCXAnim_42::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d125c*/
       v4 = a3; /*0x5d1272*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d126e*/
+      v4 = operator new(4 * a2); /*0x5d126e*/
     this->q00C = 1; /*0x5d1276*/
     if ( v4 ) /*0x5d127a*/
     {
@@ -689,11 +687,11 @@ char MSPCXAnim_42::Release(int a2, unsigned int * a3)
         v6 = this->q008; /*0x5d128c*/
         if ( a2 < v6 ) /*0x5d1291*/
           v6 = a2; /*0x5d1293*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x5d1299*/
+        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->q004 + 4 * i - 4) ) /*0x5d1299*/
           ++i; /*0x5d129e*/
         if ( this->IsAllocated ) /*0x5d12ab*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x5d12b6*/
+          RA2_OPDEL(this->q004); /*0x5d12b6*/
           this->q004 = 0; /*0x5d12be*/
         }
       }
@@ -709,7 +707,7 @@ char MSPCXAnim_42::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x5d12e2*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5d12e2*/
     return 1; /*0x5d12e8*/
   }
 }
@@ -735,7 +733,7 @@ int MSPCXAnim_42::Load(unsigned int * a2)
 {
   int result; // eax
   int v3; // edx
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->q00C ) /*0x5d1320*/
     return 0; /*0x5d1328*/
@@ -767,7 +765,7 @@ unsigned int MSPCXAnim_42::Draw(int a2)
 namespace gamemd {
 char MSPCXAnim_26::AllocCopyData_4B_0(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
@@ -778,7 +776,7 @@ char MSPCXAnim_26::AllocCopyData_4B_0(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d1398*/
       v4 = a3; /*0x5d13ae*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d13aa*/
+      v4 = operator new(4 * a2); /*0x5d13aa*/
     this->q00C = 1; /*0x5d13b2*/
     if ( !v4 ) /*0x5d13b6*/
       return 0; /*0x5d142a*/
@@ -787,11 +785,11 @@ char MSPCXAnim_26::AllocCopyData_4B_0(int a2, unsigned int * a3)
       v5 = this->q008; /*0x5d13bf*/
       if ( a2 < v5 ) /*0x5d13c4*/
         v5 = a2; /*0x5d13c6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x5d13cc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->q004 + 4 * i - 4) ) /*0x5d13cc*/
         ++i; /*0x5d13d1*/
       if ( this->IsAllocated ) /*0x5d13de*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5d13e9*/
+        RA2_OPDEL(this->q004); /*0x5d13e9*/
         this->q004 = 0; /*0x5d13f1*/
       }
     }
@@ -801,7 +799,7 @@ char MSPCXAnim_26::AllocCopyData_4B_0(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x5d140e*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5d140e*/
   }
   v7 = this->q008; /*0x5d1411*/
   if ( v7 < this->q010 ) /*0x5d1419*/
@@ -816,13 +814,13 @@ int MSPCXAnim_26::FindIndex_0(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x5d1430*/
   result = 0; /*0x5d1433*/
   if ( v2 <= 0 ) /*0x5d1438*/
     return -1; /*0x5d144f*/
-  for ( i = (_DWORD *)this->q004; *i != *a2; ++i ) /*0x5d143e*/
+  for ( i = (unsigned int *)this->q004; *i != *a2; ++i ) /*0x5d143e*/
   {
     if ( ++result >= v2 ) /*0x5d144d*/
       return -1; /*0x5d144d*/
@@ -835,7 +833,7 @@ int MSPCXAnim_26::FindIndex_0(unsigned int * a2)
 namespace gamemd {
 char MSPCXAnim_26::AllocCopyData_4B_1(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
@@ -846,7 +844,7 @@ char MSPCXAnim_26::AllocCopyData_4B_1(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d15f8*/
       v4 = a3; /*0x5d160e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x5d160a*/
+      v4 = operator new(4 * a2); /*0x5d160a*/
     this->q00C = 1; /*0x5d1612*/
     if ( !v4 ) /*0x5d1616*/
       return 0; /*0x5d168a*/
@@ -855,11 +853,11 @@ char MSPCXAnim_26::AllocCopyData_4B_1(int a2, unsigned int * a3)
       v5 = this->q008; /*0x5d161f*/
       if ( a2 < v5 ) /*0x5d1624*/
         v5 = a2; /*0x5d1626*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x5d162c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->q004 + 4 * i - 4) ) /*0x5d162c*/
         ++i; /*0x5d1631*/
       if ( this->IsAllocated ) /*0x5d163e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x5d1649*/
+        RA2_OPDEL(this->q004); /*0x5d1649*/
         this->q004 = 0; /*0x5d1651*/
       }
     }
@@ -869,7 +867,7 @@ char MSPCXAnim_26::AllocCopyData_4B_1(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x5d166e*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5d166e*/
   }
   v7 = this->q008; /*0x5d1671*/
   if ( v7 < this->q010 ) /*0x5d1679*/
@@ -884,13 +882,13 @@ int MSPCXAnim_26::FindIndex_1(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x5d1690*/
   result = 0; /*0x5d1693*/
   if ( v2 <= 0 ) /*0x5d1698*/
     return -1; /*0x5d16af*/
-  for ( i = (_DWORD *)this->q004; *i != *a2; ++i ) /*0x5d169e*/
+  for ( i = (unsigned int *)this->q004; *i != *a2; ++i ) /*0x5d169e*/
   {
     if ( ++result >= v2 ) /*0x5d16ad*/
       return -1; /*0x5d16ad*/
@@ -906,7 +904,6 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_Point2D_(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d1713*/
-  *(void **)this = (void*)&VectorClass_Point2D_vftable; /*0x5d1716*/
   if ( v3 && this->IsAllocated ) /*0x5d1720*/
   {
     RA2_OPDEL(v3); /*0x5d1728*/
@@ -927,7 +924,6 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MSTextEntry___(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d17b3*/
-  *(void **)this = (void*)&VectorClass_MSTextEntry___vftable; /*0x5d17b6*/
   if ( v3 && this->IsAllocated ) /*0x5d17c0*/
   {
     RA2_OPDEL(v3); /*0x5d17c8*/
@@ -948,7 +944,6 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MapSelection___(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d1853*/
-  *(void **)this = (void*)&VectorClass_MapSelection___vftable; /*0x5d1856*/
   if ( v3 && this->IsAllocated ) /*0x5d1860*/
   {
     RA2_OPDEL(v3); /*0x5d1868*/
@@ -969,7 +964,6 @@ VectorClass_flat * MSPCXAnim_26::Constructor_VectorClass_MapStage___(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d18a3*/
-  *(void **)this = (void*)&VectorClass_MapStage___vftable; /*0x5d18a6*/
   if ( v3 && this->IsAllocated ) /*0x5d18b0*/
   {
     RA2_OPDEL(v3); /*0x5d18b8*/
@@ -990,7 +984,6 @@ DynamicVector * MSPCXAnim_26::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d18f3*/
-  *(void **)this = (void*)&VectorClass_MapStage___vftable; /*0x5d18f6*/
   if ( v3 && this->IsAllocated ) /*0x5d1900*/
   {
     RA2_OPDEL(v3); /*0x5d1908*/
@@ -1011,7 +1004,6 @@ VectorClass_flat * MSPCXAnim_42::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d1943*/
-  *(void **)this = (void*)&VectorClass_MSAnimEntry___vftable; /*0x5d1946*/
   if ( v3 && this->IsAllocated ) /*0x5d1950*/
   {
     RA2_OPDEL(v3); /*0x5d1958*/
@@ -1032,7 +1024,6 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSAnimEntry___(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d1993*/
-  *(void **)this = (void*)&VectorClass_MSAnimEntry___vftable; /*0x5d1996*/
   if ( v3 && this->IsAllocated ) /*0x5d19a0*/
   {
     RA2_OPDEL(v3); /*0x5d19a8*/
@@ -1053,7 +1044,6 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSSfxEntry___(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d1a33*/
-  *(void **)this = (void*)&VectorClass_MSSfxEntry___vftable; /*0x5d1a36*/
   if ( v3 && this->IsAllocated ) /*0x5d1a40*/
   {
     RA2_OPDEL(v3); /*0x5d1a48*/

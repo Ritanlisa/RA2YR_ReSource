@@ -16,7 +16,7 @@ int PlayerClass::SetHouse(int a2)
   result = this->vt_slot_4(a2); /*0x5d8cbb*/
   if ( result ) /*0x5d8cc0*/
   {
-    *(_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * a2) + 107) = this->q008; /*0x5d8cd5*/
+    *(unsigned int *)(*(unsigned int *)(Game_PlayerInfoArray + 4 * a2) + 107) = this->q008; /*0x5d8cd5*/
     return 1; /*0x5d8cd8*/
   }
   return result; /*0x5d8cc2*/
@@ -30,10 +30,10 @@ char PlayerClass::AssignPlayerIndex()
 
   for ( i = 0; i < Game_PlayerCount; ++i ) /*0x5d62ca*/
   {
-    if ( SessionClass::GetPlayerSide(*(_DWORD *)(Game_PlayerInfoArray + 4 * i)) == -3 ) /*0x5d62dc*/
-      *(_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * i) + 107) = -1; /*0x5d62e7*/
+    if ( SessionClass::GetPlayerSide(*(unsigned int *)(Game_PlayerInfoArray + 4 * i)) == -3 ) /*0x5d62dc*/
+      *(unsigned int *)(*(unsigned int *)(Game_PlayerInfoArray + 4 * i) + 107) = -1; /*0x5d62e7*/
     else
-      *(_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * i) + 107) = i; /*0x5d62f8*/
+      *(unsigned int *)(*(unsigned int *)(Game_PlayerInfoArray + 4 * i) + 107) = i; /*0x5d62f8*/
   }
   return 1; /*0x5d6307*/
 }

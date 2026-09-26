@@ -18,11 +18,11 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
   int v3; // ebp
   char *v5; // edi
   char *v6; // eax
-  _DWORD *v7; // ecx
-  _DWORD *v9; // eax
+  unsigned int *v7; // ecx
+  unsigned int *v9; // eax
   int v11; // ecx
   int v12; // eax
-  _DWORD *v13; // edx
+  unsigned int *v13; // edx
   char *v14; // ebx
   int v15; // eax
 
@@ -50,7 +50,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(16 * a2); /*0x658b35*/
+      v6 = (char *)operator new(16 * a2); /*0x658b35*/
       if ( v6 ) /*0x658b3f*/
       {
         if ( a2 - 1 >= 0 ) /*0x658b46*/
@@ -87,21 +87,21 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
         v12 = 0; /*0x658b99*/
         do /*0x658bbf*/
         {
-          v13 = (_DWORD *)(this->q004 + v12); /*0x658ba0*/
+          v13 = (unsigned int *)(this->q004 + v12); /*0x658ba0*/
           v14 = &v5[v12]; /*0x658ba2*/
           v12 += 16; /*0x658ba5*/
           --v11; /*0x658ba8*/
-          *(_DWORD *)v14 = *v13; /*0x658bab*/
-          *((_DWORD *)v14 + 1) = v13[1]; /*0x658bb0*/
-          *((_DWORD *)v14 + 2) = v13[2]; /*0x658bb6*/
-          *((_DWORD *)v14 + 3) = v13[3]; /*0x658bbc*/
+          *(unsigned int *)v14 = *v13; /*0x658bab*/
+          *((unsigned int *)v14 + 1) = v13[1]; /*0x658bb0*/
+          *((unsigned int *)v14 + 2) = v13[2]; /*0x658bb6*/
+          *((unsigned int *)v14 + 3) = v13[3]; /*0x658bbc*/
         }
         while ( v11 ); /*0x658bbf*/
         v3 = a2; /*0x658bc1*/
       }
       if ( this->IsAllocated ) /*0x658bc7*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x658bd0*/
+        RA2_OPDEL(this->q004); /*0x658bd0*/
         this->q004 = 0; /*0x658bd8*/
       }
     }
@@ -111,7 +111,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x658bf5*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x658bf5*/
   }
   v15 = this->q008; /*0x658bf8*/
   if ( v15 < this->q010 ) /*0x658c00*/
@@ -123,22 +123,21 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
 namespace gamemd {
 unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
 {
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   char *v6; // eax
-  _DWORD *v7; // ecx
+  unsigned int *v7; // ecx
 
   this->Items = 0; /*0x658ded*/
   this->Capacity = aP1; /*0x658df0*/
   this->IsInitialized = 1; /*0x658df3*/
   this->IsAllocated = 0; /*0x658df7*/
-  *(void **)this = (void*)&VectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658dfa*/
   if ( aP1 ) /*0x658e00*/
   {
     if ( aP2 ) /*0x658e08*/
     {
       if ( aP1 - 1 >= 0 ) /*0x658e0f*/
       {
-        v4 = (_DWORD *)(aP2 + 4); /*0x658e11*/
+        v4 = (unsigned int *)(aP2 + 4); /*0x658e11*/
         aP1 = aP1; /*0x658e14*/
         do /*0x658e21*/
         {
@@ -154,7 +153,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
     }
     else
     {
-      v6 = (char *)RA2_OPNEW(16 * aP1); /*0x658e2e*/
+      v6 = (char *)operator new(16 * aP1); /*0x658e2e*/
       if ( v6 ) /*0x658e38*/
       {
         if ( aP1 - 1 >= 0 ) /*0x658e3f*/
@@ -180,7 +179,6 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
       this->IsAllocated = 1; /*0x658e5a*/
     }
   }
-  *(void **)this = (void*)&DynamicVectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658e5e*/
   this->u32_14 = 10; /*0x658e64*/
   this->q010 = 0; /*0x658e6b*/
   return this; /*0x658e70*/
@@ -190,7 +188,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
 namespace gamemd {
 void RadarHashVector::ddtor()
 {
-  if ( *(_DWORD *)(this + 4) && *(_BYTE *)(this + 13) ) /*0x658a7d*/
+  if ( this->q010 && *(unsigned char *)&this->IsAllocated ) /*0x658a7d*/
   {
     RA2_OPDEL(this->Items); /*0x658a83*/
     this->Items = 0; /*0x658a8b*/
@@ -205,7 +203,7 @@ int RadarHashVector::Read(unsigned int * a2)
 {
   int result; // eax
   int v3; // edx
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->IsInitialized ) /*0x658aa0*/
     return 0; /*0x658aae*/
@@ -225,8 +223,8 @@ int RadarHashVector::Read(unsigned int * a2)
 namespace gamemd {
 unsigned int RadarHashVector::Write(int a2)
 {
-  if ( *(_BYTE *)(this + 12) ) /*0x658af0*/
-    return (unsigned int)(a2 - *(_DWORD *)(this + 4)) >> 4; /*0x658b05*/
+  if ( this->q00C ) /*0x658af0*/
+    return (unsigned int)(a2 - this->q010) >> 4; /*0x658b05*/
   else
     return 0; /*0x658af7*/
 }
@@ -237,13 +235,13 @@ int RadarHashVector::FindItemIndex(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x658c20*/
   result = 0; /*0x658c25*/
   if ( v2 <= 0 ) /*0x658c2b*/
     return -1; /*0x658c56*/
-  for ( i = (_DWORD *)this->Items; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 4 ) /*0x658c31*/
+  for ( i = (unsigned int *)this->Items; *i != *a2 || i[1] != a2[1] || i[2] != a2[2]; i += 4 ) /*0x658c31*/
   {
     if ( ++result >= v2 ) /*0x658c54*/
       return -1; /*0x658c54*/
@@ -276,17 +274,16 @@ char * RadarHashVector::Destructor(char a2)
       v8 = v6 + 1; /*0x658c7d*/
       do /*0x658caa*/
       {
-        v9 = (void *)*((_DWORD *)v7 - 5); /*0x658c82*/
+        v9 = (void *)*((unsigned int *)v7 - 5); /*0x658c82*/
         v7 -= 24; /*0x658c85*/
-        *(void **)v7 = (void*)&VectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658c8a*/
         if ( v9 && v7[13] ) /*0x658c92*/
         {
           RA2_OPDEL(v9); /*0x658c98*/
-          *((_DWORD *)v7 + 1) = 0; /*0x658ca0*/
+          *((unsigned int *)v7 + 1) = 0; /*0x658ca0*/
         }
         --v8; /*0x658ca3*/
         v7[13] = 0; /*0x658ca4*/
-        *((_DWORD *)v7 + 2) = 0; /*0x658ca7*/
+        *((unsigned int *)v7 + 2) = 0; /*0x658ca7*/
       }
       while ( v8 ); /*0x658caa*/
     }
@@ -297,7 +294,6 @@ char * RadarHashVector::Destructor(char a2)
   else
   {
     v11 = (void *)this->Items; /*0x658cc5*/
-    *(void **)this = (void*)&VectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658ccc*/
     if ( v11 && this->IsAllocated ) /*0x658cd4*/
     {
       RA2_OPDEL(v11); /*0x658cda*/
@@ -317,15 +313,14 @@ VectorClass_flat * RadarHashVector::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(this + 1); /*0x658d13*/
-  *(void **)this = (void*)&VectorClass_HashObject_RadarTrackingStruct_TechnoClass___vftable; /*0x658d16*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x658d20*/
+  v3 = (void *)this->q004; /*0x658d13*/
+  if ( v3 && *(unsigned char *)&this->IsAllocated ) /*0x658d20*/
   {
     RA2_OPDEL(v3); /*0x658d28*/
-    *(this + 1) = 0; /*0x658d30*/
+    this->q004 = 0; /*0x658d30*/
   }
-  *((_BYTE *)this + 13) = 0; /*0x658d3b*/
-  *(this + 2) = 0; /*0x658d41*/
+  *(unsigned char *)&this->IsAllocated = 0; /*0x658d3b*/
+  this->q008 = 0; /*0x658d41*/
   if ( (a2 & 1) != 0 ) /*0x658d48*/
     RA2_OPDEL(); /*0x658d4b*/
   return this; /*0x658d55*/

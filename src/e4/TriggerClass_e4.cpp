@@ -20,15 +20,15 @@
 namespace gamemd {
 char TriggerClass::FindByEventType(char a1)
 {
-  _DWORD *v2; // esi
+  unsigned int *v2; // esi
   int v3; // eax
   int v4; // ecx
   int v5; // ecx
   int v6; // esi
   size_t v7; // eax
   __int128 v8; // [esp+28h] [ebp-20h] BYREF
-  _DWORD v9[2]; // [esp+38h] [ebp-10h] BYREF
-  __int64 v10; // [esp+40h] [ebp-8h]
+  unsigned int v9[2]; // [esp+38h] [ebp-10h] BYREF
+  int64_t v10; // [esp+40h] [ebp-8h]
 
   if ( !dword_AC1DCC ) /*0x61095d*/
     return 0; /*0x61095f*/
@@ -37,7 +37,7 @@ char TriggerClass::FindByEventType(char a1)
     if ( dword_AC1CC8 ) /*0x610978*/
       (**(void (__thiscall ***)(int, int))dword_AC1CC8)(dword_AC1CC8, 1); /*0x61097e*/
     dword_AC1CC8 = 0; /*0x610982*/
-    v2 = RA2_OPNEW(0x20u); /*0x61098d*/
+    v2 = operator new(0x20u); /*0x61098d*/
     if ( v2 ) /*0x610994*/
     {
       v4 = IDA_HIDWORD(xmmword_AC1CB8); /*0x61099b*/
@@ -58,8 +58,8 @@ char TriggerClass::FindByEventType(char a1)
     dword_AC1CC8 = v5; /*0x6109ef*/
     v9[0] = 0; /*0x6109f5*/
     v9[1] = 0; /*0x6109f9*/
-    v10 = *((_QWORD *)&xmmword_AC1CB8 + 1); /*0x6109fd*/
-    (*(void (__thiscall **)(int, _DWORD *, int, __int128 *, _DWORD, int))(*(_DWORD *)v5 + 8))( /*0x610a08*/
+    v10 = *((unsigned long long *)&xmmword_AC1CB8 + 1); /*0x6109fd*/
+    (*(void (__thiscall **)(int, unsigned int *, int, __int128 *, unsigned int, int))(*(unsigned int *)v5 + 8))( /*0x610a08*/
       v5,
       v9,
       g_DSurface_Primary,
@@ -72,12 +72,12 @@ char TriggerClass::FindByEventType(char a1)
   if ( dword_AC48B0 == -1 ) /*0x610a40*/
     v6 = -1; /*0x610a42*/
   else
-    v6 = ((int)(unsigned __int8)dword_AC48B0 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x610a8d*/
+    v6 = ((int)(uint8_t)dword_AC48B0 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x610a8d*/
        | (IDA_BYTE1(dword_AC48B0) >> g_BitMask_Blue << g_BitMask_Green)
        | (IDA_BYTE2(dword_AC48B0) >> g_BitMask_Red << g_BitShift_Blue);
-  (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0); /*0x610a9d*/
-  (*(void (__thiscall **)(int, __int128 *, int))(*(_DWORD *)g_DSurface_Primary + 20))(g_DSurface_Primary, &v8, v6); /*0x610aae*/
-  (*(void (__thiscall **)(int))(*(_DWORD *)g_DSurface_Primary + 96))(g_DSurface_Primary); /*0x610ab9*/
+  (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0); /*0x610a9d*/
+  (*(void (__thiscall **)(int, __int128 *, int))(*(unsigned int *)g_DSurface_Primary + 20))(g_DSurface_Primary, &v8, v6); /*0x610aae*/
+  (*(void (__thiscall **)(int))(*(unsigned int *)g_DSurface_Primary + 96))(g_DSurface_Primary); /*0x610ab9*/
   Team_Find((int *)&v8, g_DSurface_Primary, 8, 4); /*0x610aca*/
   v7 = wcslen(word_AC1CCC); /*0x610ae0*/
   DrawTextRendererTextAligned(yTop, 0, (int *)&v8, word_AC1CCC, v7, 1, 1, g_DSurface_Primary, 0); /*0x610afb*/
@@ -101,7 +101,7 @@ namespace gamemd {
 int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, char a5, int a6)
 {
   char v7; // bl
-  _DWORD *v8; // edi
+  unsigned int *v8; // edi
   int Owner; // eax
   int v11; // [esp-10h] [ebp-18h]
   char v12; // [esp+7h] [ebp-1h]
@@ -131,7 +131,7 @@ int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, 
     {
       v12 = 0; /*0x726549*/
     }
-    v8 = (_DWORD *)v8[10]; /*0x726585*/
+    v8 = (unsigned int *)v8[10]; /*0x726585*/
     ++v7; /*0x726588*/
   }
   while ( v8 ); /*0x72658b*/
@@ -170,7 +170,7 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x726876*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x72687f*/
-      *(_DWORD *)aP0 = (int)&TriggerClass_vftable; /*0x726884*/
+      *(unsigned int *)aP0 = (int)&TriggerClass_vftable; /*0x726884*/
       aP0[1] = (int)&TriggerClass_vftable; /*0x72688a*/
       aP0[2] = (int)&TriggerClass_vftable; /*0x726891*/
       aP0[3] = (int)&TriggerClass_vftable; /*0x726898*/

@@ -20,14 +20,9 @@ unsigned int * RadioClass::Release()
   *(&this->abstractFlags8) = 1; /*0x65a764*/
   this->q0EC = 1; /*0x65a76e*/
   this->q0ED = 0; /*0x65a775*/
-  *(&this->abstractFlags6) = (void*)&VectorClass_TechnoClass___vftable; /*0x65a77c*/
-  *(&this->abstractFlags7) = RA2_OPNEW(4u); /*0x65a78b*/
+  *(&this->abstractFlags7) = operator new(4u); /*0x65a78b*/
   this->q0ED = 1; /*0x65a791*/
-  *(void **)this = (void*)&RadioClass_vftable; /*0x65a798*/
-  this->vtable2 = (void*)&RadioClass_vftable; /*0x65a79e*/
-  this->vtable3 = (void*)&RadioClass_vftable; /*0x65a7a5*/
-  this->vtable4 = (void*)&RadioClass_vftable; /*0x65a7ac*/
-  *(_DWORD *)*(&this->abstractFlags7) = 0; /*0x65a7be*/
+  *(unsigned int *)*(&this->abstractFlags7) = 0; /*0x65a7be*/
   *(&this->abstractFlags3) = 0; /*0x65a7c4*/
   *(&this->abstractFlags4) = 0; /*0x65a7ca*/
   *(&this->abstractFlags5) = 0; /*0x65a7d2*/
@@ -40,7 +35,7 @@ namespace gamemd {
 int RadioClass::ProcessCmd()
 {
   if ( !this->inLimbo ) /*0x65aa83*/
-    (*(void (__thiscall **)(void *, int))(*(_DWORD *)&this->q1000))(this, 3); /*0x65aa91*/
+    (*(void (__thiscall **)(void *, int))(*(unsigned int *)&this->q1000))(this, 3); /*0x65aa91*/
   return ObjectClass::Undeploy(); /*0x65aa9e*/
 }
 } // namespace ra2
@@ -61,13 +56,13 @@ int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
   result = *(&this->abstractFlags8); /*0x65ab2d*/
   for ( i = 0; i < result; ++i ) /*0x65ab37*/
   {
-    v5 = *(_DWORD *)(*(&this->abstractFlags7) + 4 * i); /*0x65ab3f*/
+    v5 = *(unsigned int *)(*(&this->abstractFlags7) + 4 * i); /*0x65ab3f*/
     if ( v5 ) /*0x65ab44*/
     {
-      v6 = (*(int (__stdcall **)(int))(*(_DWORD *)(v5 + 4) + 16))(v5 + 4); /*0x65ab4d*/
+      v6 = (*(int (__stdcall **)(int))(*(unsigned int *)(v5 + 4) + 16))(v5 + 4); /*0x65ab4d*/
       Power::TimerProcess(v6); /*0x65ab53*/
-      v7 = *(_DWORD *)(*(&this->abstractFlags7) + 4 * i); /*0x65ab5e*/
-      v8 = (*(int (__thiscall **)(int))(*(_DWORD *)v7 + 44))(v7); /*0x65ab63*/
+      v7 = *(unsigned int *)(*(&this->abstractFlags7) + 4 * i); /*0x65ab5e*/
+      v8 = (*(int (__thiscall **)(int))(*(unsigned int *)v7 + 44))(v7); /*0x65ab63*/
       Power::TimerProcess(v8); /*0x65ab69*/
     }
     result = *(&this->abstractFlags8); /*0x65ab6e*/
@@ -98,12 +93,11 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
       aP1->q0E8 = 0; /*0x65abab*/
       aP1->q0EC = 1; /*0x65abb2*/
       aP1->q0ED = 0; /*0x65abb6*/
-      *(void **)v6 = (void*)&VectorClass_TechnoClass___vftable; /*0x65abba*/
     }
-    result = (*(int (__stdcall **)(int, int *, int, _DWORD))(aP2->vtable4)(aP2, &aP2, 4, 0); /*0x65abcc*/
+    result = (*(int (__stdcall **)(int, int *, int, unsigned int))(aP2->vtable4)(aP2, &aP2, 4, 0); /*0x65abcc*/
     if ( result >= 0 ) /*0x65abd1*/
     {
-      (*(void (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v6 + 8))(aP1 + 224, aP2, 0); /*0x65abde*/
+      (*(void (__thiscall **)(int, int, unsigned int))(*(unsigned int *)v6 + 8))(aP1 + 224, aP2, 0); /*0x65abde*/
       v7 = 0; /*0x65abe1*/
       v8 = aP2; /*0x65abe3*/
       if ( aP2 <= 0 ) /*0x65abe9*/
@@ -124,10 +118,10 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
       {
         while ( 1 ) /*0x65abf7*/
         {
-          result = (*(int (__stdcall **)(int, int *, int, _DWORD))(aP2->vtable4)(aP2, &aP1, 4, 0); /*0x65abf7*/
+          result = (*(int (__stdcall **)(int, int *, int, unsigned int))(aP2->vtable4)(aP2, &aP1, 4, 0); /*0x65abf7*/
           if ( result < 0 ) /*0x65abfc*/
             break; /*0x65abfc*/
-          *(_DWORD *)(aP1->q0E4 + 4 * v7) = aP1; /*0x65ac08*/
+          *(unsigned int *)(aP1->q0E4 + 4 * v7) = aP1; /*0x65ac08*/
           v8 = aP2; /*0x65ac0b*/
           if ( ++v7 >= aP2 ) /*0x65ac12*/
             goto LABEL_8; /*0x65ac12*/
@@ -145,15 +139,15 @@ int RadioClass::FindLinkIndex(int a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !a2 ) /*0x65ad97*/
     return -1; /*0x65ad97*/
-  v2 = *(this + 58); /*0x65ad99*/
+  v2 = *(unsigned int *)&this->u32_E8; /*0x65ad99*/
   result = 0; /*0x65ad9f*/
   if ( v2 <= 0 ) /*0x65ada3*/
     return -1; /*0x65adb7*/
-  for ( i = (_DWORD *)*(this + 57); *i != a2; ++i ) /*0x65ada5*/
+  for ( i = (unsigned int *)this->q0E4; *i != a2; ++i ) /*0x65ada5*/
   {
     if ( ++result >= v2 ) /*0x65adb5*/
       return -1; /*0x65adb5*/
@@ -168,13 +162,13 @@ int RadioClass::HasFreeLink()
 {
   int v1; // edx
   int v2; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v1 = *(&this->abstractFlags8); /*0x65adc0*/
   v2 = 0; /*0x65adc6*/
   if ( v1 <= 0 ) /*0x65adca*/
     return 0; /*0x65addf*/
-  for ( i = (_DWORD *)*(&this->abstractFlags7); *i; ++i ) /*0x65adcc*/
+  for ( i = (unsigned int *)*(&this->abstractFlags7); *i; ++i ) /*0x65adcc*/
   {
     if ( ++v2 >= v1 ) /*0x65addd*/
       return 0; /*0x65addd*/
@@ -192,12 +186,12 @@ void RadioClass::SetLinkCount(int a2)
   v3 = *(&this->abstractFlags8); /*0x65ae69*/
   if ( a2 > v3 ) /*0x65ae71*/
   {
-    (*(void (__thiscall **)(_DWORD *, int, _DWORD))(*(&this->abstractFlags6) + 8))(&this->q0E0, a2, 0); /*0x65ae82*/
+    (*(void (__thiscall **)(unsigned int *, int, unsigned int))(*(&this->abstractFlags6) + 8))(&this->q0E0, a2, 0); /*0x65ae82*/
     v3 = v3; /*0x65ae87*/
     do /*0x65ae9c*/
     {
       ++v3; /*0x65ae91*/
-      *(_DWORD *)(*(&this->abstractFlags7) + 4 * v3 - 4) = 0; /*0x65ae94*/
+      *(unsigned int *)(*(&this->abstractFlags7) + 4 * v3 - 4) = 0; /*0x65ae94*/
     }
     while ( v3 < a2 ); /*0x65ae9c*/
   }
@@ -212,15 +206,15 @@ int RadioClass::ExecuteAction(TimerStruct * aP1, IUnknown * aP2)
   int i; // ecx
   void * v6;
   int v7; // edx
-  _DWORD *v8; // eax
+  unsigned int *v8; // eax
 
   Object::Unlink(); /*0x65aacf*/
   result = this->u32_E8; /*0x65aad4*/
   for ( i = 0; i < result; ++i ) /*0x65aade*/
   {
     v6 = this->q0E4; /*0x65aae0*/
-    v7 = *(_DWORD *)(v6 + 4 * i); /*0x65aae6*/
-    v8 = (_DWORD *)(v6 + 4 * i); /*0x65aae9*/
+    v7 = *(unsigned int *)(v6 + 4 * i); /*0x65aae6*/
+    v8 = (unsigned int *)(v6 + 4 * i); /*0x65aae9*/
     if ( v7 == aP1 ) /*0x65aaee*/
     {
       if ( aP2 ) /*0x65aaf2*/
@@ -245,7 +239,7 @@ int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
   {
     v4 = *aP1; /*0x65ac61*/
     aP2 = a0[58]; /*0x65ac6d*/
-    result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v4 + 16))(aP1, &aP2, 4, 0); /*0x65ac71*/
+    result = (*(int (__stdcall **)(int *, int *, int, unsigned int))(v4 + 16))(aP1, &aP2, 4, 0); /*0x65ac71*/
     if ( result >= 0 ) /*0x65ac76*/
     {
       v5 = 0; /*0x65ac7c*/
@@ -257,7 +251,7 @@ int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
       {
         while ( 1 ) /*0x65ac93*/
         {
-          result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*aP1 + 16))(aP1, a0[57] + 4 * v5, 4, 0); /*0x65ac93*/
+          result = (*(int (__stdcall **)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, a0[57] + 4 * v5, 4, 0); /*0x65ac93*/
           if ( result < 0 ) /*0x65ac98*/
             break; /*0x65ac98*/
           if ( ++v5 >= aP2 ) /*0x65aca1*/

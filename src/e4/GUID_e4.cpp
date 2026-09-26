@@ -12,22 +12,22 @@
 namespace gamemd {
 bool GUID::Compare(int a2)
 {
-  _WORD *v4; // edi
+  unsigned short *v4; // edi
   int v5; // ecx
-  _WORD *v6; // esi
+  unsigned short *v6; // esi
   bool v7; // zf
   int v8; // ecx
-  _WORD *v9; // edi
-  _WORD *v10; // esi
+  unsigned short *v9; // edi
+  unsigned short *v10; // esi
   bool v11; // zf
 
   if ( dword_828140 == 2 ) /*0x53ee7d*/
-    return this->Data4 == a2->vtable2 && *(_WORD *)this == *(_WORD *)a2; /*0x53ef1b*/
+    return this->Data4 == a2->vtable2 && *(unsigned short *)this == *(unsigned short *)a2; /*0x53ef1b*/
   if ( (*this || this->Data4 || this->q020 || this->u32_C) /*0x53eed8*/
-    && (*(_BYTE *)a2 || a2->vtable2 || a2->vtable3 || a2->vtable4) )
+    && (*(unsigned char *)a2 || a2->vtable2 || a2->vtable3 || a2->vtable4) )
   {
     v8 = 3; /*0x53eef8*/
-    v9 = (_WORD *)(a2 + 4); /*0x53eefd*/
+    v9 = (unsigned short *)(a2 + 4); /*0x53eefd*/
     v10 = &this->u32_10; /*0x53ef00*/
     v11 = 1; /*0x53ef03*/
     do /*0x53ef05*/
@@ -38,9 +38,9 @@ bool GUID::Compare(int a2)
       --v8; /*0x53ef05*/
     }
     while ( v11 ); /*0x53ef05*/
-    return v11 && *(_DWORD *)this == *(_DWORD *)a2; /*0x53ef11*/
+    return v11 && *(unsigned int *)this == *(unsigned int *)a2; /*0x53ef11*/
   }
-  v4 = (_WORD *)(a2 + 4); /*0x53eedf*/
+  v4 = (unsigned short *)(a2 + 4); /*0x53eedf*/
   v5 = 3; /*0x53eee2*/
   v6 = &this->u32_10; /*0x53eee7*/
   v7 = 1; /*0x53eeea*/

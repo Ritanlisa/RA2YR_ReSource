@@ -74,90 +74,83 @@ void unknown_libname_36()
 namespace gamemd {
 HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
 {
-  _DWORD *v4; // edi
-  _DWORD *v5; // ecx
+  unsigned int *v4; // edi
+  unsigned int *v5; // ecx
   int OwnerHouse; // eax
   int v7; // ecx
   unsigned int v8; // ebp
-  _DWORD *v9; // ebp
+  unsigned int *v9; // ebp
   int v12; // ecx
   int v13; // eax
   int v14; // eax
   unsigned int v15; // edx
   int v16; // edi
   int Int; // ebp
-  _DWORD *v18; // ebp
+  unsigned int *v18; // ebp
   char **v19; // eax
   int v20; // eax
   int v22; // [esp-4h] [ebp-D4h]
   char **RegionString; // [esp-4h] [ebp-D4h]
   unsigned int v24; // [esp+10h] [ebp-C0h] BYREF
   void *v25[2]; // [esp+14h] [ebp-BCh] BYREF
-  _DWORD v26[2]; // [esp+1Ch] [ebp-B4h] BYREF
-  _DWORD v27[2]; // [esp+24h] [ebp-ACh] BYREF
-  _DWORD v28[2]; // [esp+2Ch] [ebp-A4h] BYREF
+  unsigned int v26[2]; // [esp+1Ch] [ebp-B4h] BYREF
+  unsigned int v27[2]; // [esp+24h] [ebp-ACh] BYREF
+  unsigned int v28[2]; // [esp+2Ch] [ebp-A4h] BYREF
   void *v29[3]; // [esp+34h] [ebp-9Ch] BYREF
-  _DWORD v30[10]; // [esp+40h] [ebp-90h] BYREF
+  unsigned int v30[10]; // [esp+40h] [ebp-90h] BYREF
   int v31; // [esp+68h] [ebp-68h]
   int v32; // [esp+6Ch] [ebp-64h]
   int v33; // [esp+70h] [ebp-60h]
-  _DWORD v34[22]; // [esp+74h] [ebp-5Ch] BYREF
+  unsigned int v34[22]; // [esp+74h] [ebp-5Ch] BYREF
   void * v35;
 
   v4 = &this->M32; /*0x764b9e*/
   v35 = 0; /*0x764ba1*/
   this->M4 = 0; /*0x764baa*/
-  *(void **)this = (void*)&ReferenceCounted_vftable; /*0x764bad*/
-  ComPtr::Constructor((_DWORD *)this + 2); /*0x764bb3*/
-  *(void **)v4 = (void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x764bbf*/
-  ComPtr::Set(v4, *(_DWORD *)(a3 + 4)); /*0x764bcb*/
-  Team_Create_767B00(&this->M40, *(_DWORD *)(a3 + 4) + 8); /*0x764bdb*/
+  ComPtr::Constructor(unsigned int *)((char *)&this->M4 + 4); /*0x764bb3*/
+  ComPtr::Set(v4, *(unsigned int *)(a3 + 4)); /*0x764bcb*/
+  Team_Create_767B00(&this->M40, *(unsigned int *)(a3 + 4) + 8); /*0x764bdb*/
   Team_Create_765C90(4, 0); /*0x764be9*/
-  this->q018 = (void*)&DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x764bf7*/
   this->M44 = 10; /*0x764bfd*/
   this->q028 = 0; /*0x764c04*/
   this->q044 = 0; /*0x764c0b*/
   String::AssignFromPtr((char **)&this->ptr_48, a2); /*0x764c0e*/
-  *(void **)this = (void*)&WorldDominationTour_Campaign_vftable; /*0x764c18*/
   this->M52 = 0; /*0x764c1e*/
   this->M56 = 0; /*0x764c20*/
   this->M60 = 0; /*0x764c23*/
   this->M40 = 0; /*0x764c26*/
-  v5 = *(_DWORD **)(a3 + 4); /*0x764c29*/
+  v5 = *(unsigned int **)(a3 + 4); /*0x764c29*/
   if ( v5[3] ) /*0x764c2c*/
   {
     OwnerHouse = Conflict::GetOwnerHouse(v5); /*0x764c3a*/
     ActivateScreenWDT((int)v28, OwnerHouse); /*0x764c47*/
-    v7 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(a3 + 4) + 12) + 32); /*0x764c58*/
+    v7 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 12) + 32); /*0x764c58*/
     v8 = v7 - 1; /*0x764c5a*/
     v24 = v7 - 1; /*0x764c5d*/
     if ( v7 ) /*0x764c61*/
     {
       do /*0x764d8a*/
       {
-        if ( WDTClass::GetCellType((_DWORD *)v28[1], v8) == 1 ) /*0x764c74*/
+        if ( WDTClass::GetCellType((unsigned int *)v28[1], v8) == 1 ) /*0x764c74*/
         {
-          if ( v8 >= *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(a3 + 4) + 12) + 60) ) /*0x764c89*/
+          if ( v8 >= *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 12) + 60) ) /*0x764c89*/
           {
             ComPtr::Constructor(v26); /*0x764c97*/
             v35 = v35; /*0x764c9c*/
-            v26[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x764ca3*/
             IDA_LOBYTE(v35) = v35 | 1; /*0x764cab*/
             v9 = v26; /*0x764cad*/
             v35 = v35; /*0x764cb1*/
           }
           else
           {
-            v9 = (_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(a3 + 4) + 12) + 48) + 8 * v8); /*0x764c8e*/
+            v9 = (unsigned int *)(*(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 12) + 48) + 8 * v8); /*0x764c8e*/
           }
           ComPtr::Constructor(v25); /*0x764cbc*/
-          v25[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x764cc1*/
           ComPtr::Set(v25, v9[1]); /*0x764cd1*/
           if ( (v35 & 1) != 0 ) /*0x764cde*/
           {
             v35 = v35; /*0x764ce0*/
             IDA_LOBYTE(v35) = v35 & 0xFE; /*0x764ceb*/
-            v26[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x764ced*/
             v35 = v35; /*0x764cf5*/
             ComPtr::Release(v26); /*0x764cfc*/
           }
@@ -168,7 +161,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
             if ( this->q028 < v12 /*0x764d3b*/
               || (*(&this->u32_C7) || !v12)
               && (v13 = this->M44, v13 > 0)
-              && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(this->q018 + 8))(
+              && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(this->q018 + 8))(
                    &this->u32_60,
                    v12 + v13,
                    0) )
@@ -176,12 +169,10 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
               v14 = this->q028; /*0x764d42*/
               v22 = v27[1]; /*0x764d49*/
               this->q028 = v14 + 1; /*0x764d4d*/
-              ComPtr::Set((_DWORD *)(this->M28 + 8 * v14), v22); /*0x764d56*/
+              ComPtr::Set((unsigned int *)(this->M28 + 8 * v14), v22); /*0x764d56*/
             }
-            v27[0] = (void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x764d5f*/
             ComPtr::Release(v27); /*0x764d67*/
           }
-          v25[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x764d70*/
           ComPtr::Release(v25); /*0x764d78*/
           v8 = v24; /*0x764d7d*/
         }
@@ -190,7 +181,6 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
       }
       while ( v15 ); /*0x764d8a*/
     }
-    v28[0] = (void*)&rc_ptr_WorldDominationTour_State_vftable; /*0x764d94*/
     ComPtr::Release(v28); /*0x764d9c*/
   }
   BufferIOFile::Constructor(v34, aWdthistIni_0); /*0x764daa*/
@@ -200,19 +190,17 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     v29[1] = 0; /*0x764dc7*/
     v29[2] = 0; /*0x764dcb*/
     GenericList::Constructor(v30); /*0x764dcf*/
-    v30[0] = (void*)&List_INIClass_INISection___vftable; /*0x764dde*/
     memset(&v30[7], 0, 12); /*0x764de6*/
     IDA_LOBYTE(v31) = 0; /*0x764df2*/
     v32 = 0; /*0x764df7*/
     v33 = 0; /*0x764dfb*/
-    v29[0] = (void*)&INIClass_vftable; /*0x764dff*/
     FileStraw::Open(v29, (int)v34, 0); /*0x764e07*/
     CCFileClass::Close(v34); /*0x764e10*/
     String::Assign((char **)&v24, g_INI_Key_CampaignID); /*0x764e1e*/
     Int = INIClass::ReadInt((char **)&this->ptr_48, (char **)&v24, -1); /*0x764e3b*/
     DeleteAndZero((void **)&v24); /*0x764e3d*/
     this->M48 = Int < 0 ? 0 : Int;
-    if ( this->M48 == WDTObject::GetSize(*(_DWORD **)(a3 + 4)) )
+    if ( this->M48 == WDTObject::GetSize(*(unsigned int **)(a3 + 4)) )
     {
       v18 = &this->u32_D0; /*0x764e60*/
       do
@@ -255,27 +243,25 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   void *v6; // [esp+10h] [ebp-F8h] BYREF
   void *v7; // [esp+14h] [ebp-F4h] BYREF
   void *v8[4]; // [esp+18h] [ebp-F0h] BYREF
-  _DWORD v9[3]; // [esp+28h] [ebp-E0h] BYREF
-  _DWORD v10[6]; // [esp+34h] [ebp-D4h] BYREF
+  unsigned int v9[3]; // [esp+28h] [ebp-E0h] BYREF
+  unsigned int v10[6]; // [esp+34h] [ebp-D4h] BYREF
   char v11; // [esp+4Ch] [ebp-BCh]
   int v12; // [esp+50h] [ebp-B8h]
   int v13; // [esp+54h] [ebp-B4h]
-  _DWORD v14[22]; // [esp+58h] [ebp-B0h] BYREF
-  _DWORD v15[22]; // [esp+B0h] [ebp-58h] BYREF
+  unsigned int v14[22]; // [esp+58h] [ebp-B0h] BYREF
+  unsigned int v15[22]; // [esp+B0h] [ebp-58h] BYREF
 
-  *(_DWORD *)(this + 48) = WDTObject::GetSize(*(_DWORD **)(this + 12)); /*0x76501b*/
-  *(_DWORD *)(this + 4 * (_DWORD)aP1 + 52) = Conflict::GetOwnerHouse(*(_DWORD **)(this + 12)); /*0x76502c*/
+  *(unsigned int *)((char *)&this->q084 + 60) = WDTObject::GetSize(this->M48); /*0x76501b*/
+  *(unsigned int *)(&this->u32_4 * (unsigned int)aP1 + 52) = Conflict::GetOwnerHouse(this->M48); /*0x76502c*/
   v8[1] = 0; /*0x765030*/
   v8[2] = 0; /*0x765034*/
   GenericNode::Constructor(v9); /*0x765038*/
   GenericNode::Constructor(v10); /*0x765041*/
   LinkedList::Prepend(v9, (int)v10); /*0x765057*/
-  v8[3] = (void*)&List_INIClass_INISection___vftable; /*0x765060*/
   memset(&v10[3], 0, 12); /*0x765068*/
   v11 = 0; /*0x765074*/
   v12 = 0; /*0x765078*/
   v13 = 0; /*0x76507c*/
-  v8[0] = (void*)&INIClass_vftable; /*0x765080*/
   BufferIOFile::Init(v14); /*0x765088*/
   CCFileClass::Reopen(v14, g_Str_File_WDTHist_ini, 1); /*0x765098*/
   if ( !File::IsReady(v14, 0) ) /*0x7650a2*/
@@ -293,9 +279,9 @@ AbstractClass * * E4Recv_765000::sub_765000(ScoreScreen * aP1)
   String::Concat((const char **)v3, (char **)&v7, RegionStringWOL); /*0x765113*/
   DeleteAndZero(&v6); /*0x76511c*/
   String::Assign((char **)&v6, g_INI_Key_CampaignID); /*0x76512a*/
-  INIClass::SetIntFormat((char *)v8, (char **)(this + 72), (char **)&v6, *(_DWORD *)(this + 48), 0); /*0x765141*/
+  INIClass::SetIntFormat((char *)v8, (char **)((char *)&this->q114 + 12), (char **)&v6, *(unsigned int *)((char *)&this->q084 + 60), 0); /*0x765141*/
   DeleteAndZero(&v6); /*0x76514a*/
-  INIClass::SetIntFormat((char *)v8, (char **)(this + 72), (char **)&v7, *(_DWORD *)(this + 4 * (_DWORD)aP1 + 52), 0); /*0x76515f*/
+  INIClass::SetIntFormat((char *)v8, (char **)((char *)&this->q114 + 12), (char **)&v7, *(unsigned int *)(&this->u32_4 * (unsigned int)aP1 + 52), 0); /*0x76515f*/
   BufferIOFile::Init(v15); /*0x76516b*/
   CCFileClass::Reopen(v15, g_Str_File_WDTHist_ini, 2); /*0x76517e*/
   INIClass::SaveToPipe(v8, (int)v15); /*0x76518f*/
@@ -316,25 +302,23 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   void *v7; // [esp+Ch] [ebp-F8h] BYREF
   void *v8; // [esp+10h] [ebp-F4h] BYREF
   void *v9[4]; // [esp+14h] [ebp-F0h] BYREF
-  _DWORD v10[3]; // [esp+24h] [ebp-E0h] BYREF
-  _DWORD v11[6]; // [esp+30h] [ebp-D4h] BYREF
+  unsigned int v10[3]; // [esp+24h] [ebp-E0h] BYREF
+  unsigned int v11[6]; // [esp+30h] [ebp-D4h] BYREF
   char v12; // [esp+48h] [ebp-BCh]
   int v13; // [esp+4Ch] [ebp-B8h]
   int v14; // [esp+50h] [ebp-B4h]
-  _DWORD v15[22]; // [esp+54h] [ebp-B0h] BYREF
-  _DWORD v16[22]; // [esp+ACh] [ebp-58h] BYREF
+  unsigned int v15[22]; // [esp+54h] [ebp-B0h] BYREF
+  unsigned int v16[22]; // [esp+ACh] [ebp-58h] BYREF
 
   v9[1] = 0; /*0x7651e1*/
   v9[2] = 0; /*0x7651e5*/
   GenericNode::Constructor(v10); /*0x7651e9*/
   GenericNode::Constructor(v11); /*0x7651f2*/
   LinkedList::Prepend(v10, (int)v11); /*0x765208*/
-  v9[3] = (void*)&List_INIClass_INISection___vftable; /*0x765211*/
   memset(&v11[3], 0, 12); /*0x765219*/
   v12 = 0; /*0x765225*/
   v13 = 0; /*0x765229*/
   v14 = 0; /*0x76522d*/
-  v9[0] = (void*)&INIClass_vftable; /*0x765231*/
   BufferIOFile::Init(v15); /*0x765239*/
   CCFileClass::Reopen(v15, g_Str_File_WDTHist_ini, 1); /*0x765249*/
   if ( !File::IsReady(v15, 0) ) /*0x765253*/
@@ -377,22 +361,22 @@ int WDT_InitGameOptions()
   int v2; // eax
   char *v3; // ecx
   char *v4; // ecx
-  _DWORD *v5; // esi
+  unsigned int *v5; // esi
   int v6; // eax
   char *v7; // ecx
   char *v8; // ecx
-  _DWORD *v9; // esi
+  unsigned int *v9; // esi
   int v10; // eax
   char *v11; // ecx
   int v12; // esi
   int v13; // eax
   char *v14; // ecx
   char *v15; // ecx
-  _DWORD *v16; // esi
+  unsigned int *v16; // esi
   int v17; // eax
   char *v18; // ecx
   char *v19; // ecx
-  _DWORD *v20; // esi
+  unsigned int *v20; // esi
   int v21; // eax
   char *v23; // [esp+10h] [ebp-28h] BYREF
   int v24; // [esp+14h] [ebp-24h]
@@ -400,7 +384,7 @@ int WDT_InitGameOptions()
   int v26; // [esp+1Ch] [ebp-1Ch]
   void **v27; // [esp+28h] [ebp-10h] BYREF
   int v28; // [esp+2Ch] [ebp-Ch]
-  _DWORD v29[2]; // [esp+30h] [ebp-8h] BYREF
+  unsigned int v29[2]; // [esp+30h] [ebp-8h] BYREF
 
   dword_B72770 = 0; /*0x7660fa*/
   Conflict_WorldDominationTour_12_::ddtor(&dword_B72760); /*0x766104*/
@@ -409,22 +393,19 @@ int WDT_InitGameOptions()
   String::Assign(&v25, aWdtTechlevel); /*0x766113*/
   v1 = System_Init_766880(sub_7667F0, (char)v25, v26); /*0x76612f*/
   ComPtr::Constructor(&v27); /*0x766131*/
-  v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76613f*/
-  ComPtr::Set(&v27, *(_DWORD *)(v1 + 4)); /*0x766147*/
+  ComPtr::Set(&v27, *(unsigned int *)(v1 + 4)); /*0x766147*/
   if ( dword_B72770 < dword_B72768 /*0x766183*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_B72760 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_B72760 + 8))(
          &dword_B72760,
          dword_B72768 + dword_B72774,
          0) )
   {
     v2 = dword_B72770++; /*0x766196*/
-    ComPtr::Set((_DWORD *)(dword_B72764 + 8 * v2), v28); /*0x7661a7*/
+    ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v2), v28); /*0x7661a7*/
   }
-  v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7661b0*/
   ComPtr::Release(&v27); /*0x7661b4*/
-  v29[0] = (void*)&rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char_vftable; /*0x7661bd*/
   ComPtr::Release(v29); /*0x7661c5*/
   v26 = 1; /*0x7661ca*/
   v25 = v3; /*0x7661cc*/
@@ -434,22 +415,19 @@ int WDT_InitGameOptions()
   String::Assign(&v23, aWdtNobases); /*0x7661e3*/
   v5 = ConstructorWDTFlagOption(v29, 16, v23, v24, v25, v26); /*0x7661fa*/
   ComPtr::Constructor(&v27); /*0x7661fc*/
-  v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766201*/
   ComPtr::Set(&v27, v5[1]); /*0x76620d*/
   if ( dword_B72770 < dword_B72768 /*0x766249*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_B72760 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_B72760 + 8))(
          &dword_B72760,
          dword_B72774 + dword_B72768,
          0) )
   {
     v6 = dword_B72770++; /*0x76625c*/
-    ComPtr::Set((_DWORD *)(dword_B72764 + 8 * v6), v28); /*0x76626d*/
+    ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v6), v28); /*0x76626d*/
   }
-  v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766276*/
   ComPtr::Release(&v27); /*0x76627a*/
-  v29[0] = (void*)&rc_ptr_WorldDominationTour_FlagGameOption_vftable; /*0x766283*/
   ComPtr::Release(v29); /*0x76628b*/
   v26 = 0; /*0x766290*/
   v25 = v7; /*0x766292*/
@@ -459,44 +437,38 @@ int WDT_InitGameOptions()
   String::Assign(&v23, aWdtNotshortgam); /*0x7662a9*/
   v9 = ConstructorWDTFlagOption(v29, 1024, v23, v24, v25, v26); /*0x7662c0*/
   ComPtr::Constructor(&v27); /*0x7662c2*/
-  v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7662c7*/
   ComPtr::Set(&v27, v9[1]); /*0x7662d3*/
   if ( dword_B72770 < dword_B72768 /*0x76630f*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_B72760 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_B72760 + 8))(
          &dword_B72760,
          dword_B72774 + dword_B72768,
          0) )
   {
     v10 = dword_B72770++; /*0x766322*/
-    ComPtr::Set((_DWORD *)(dword_B72764 + 8 * v10), v28); /*0x766333*/
+    ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v10), v28); /*0x766333*/
   }
-  v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76633c*/
   ComPtr::Release(&v27); /*0x766340*/
-  v29[0] = (void*)&rc_ptr_WorldDominationTour_FlagGameOption_vftable; /*0x766349*/
   ComPtr::Release(v29); /*0x766351*/
   v26 = 0; /*0x766356*/
   v25 = v11; /*0x766358*/
   String::Assign(&v25, aWdtUnitcount); /*0x766360*/
   v12 = System_Init_766880(sub_7667E0, (char)v25, v26); /*0x76637c*/
   ComPtr::Constructor(&v27); /*0x76637e*/
-  v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766383*/
-  ComPtr::Set(&v27, *(_DWORD *)(v12 + 4)); /*0x76638f*/
+  ComPtr::Set(&v27, *(unsigned int *)(v12 + 4)); /*0x76638f*/
   if ( dword_B72770 < dword_B72768 /*0x7663cb*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_B72760 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_B72760 + 8))(
          &dword_B72760,
          dword_B72774 + dword_B72768,
          0) )
   {
     v13 = dword_B72770++; /*0x7663de*/
-    ComPtr::Set((_DWORD *)(dword_B72764 + 8 * v13), v28); /*0x7663ef*/
+    ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v13), v28); /*0x7663ef*/
   }
-  v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7663f8*/
   ComPtr::Release(&v27); /*0x7663fc*/
-  v29[0] = (void*)&rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char_vftable; /*0x766405*/
   ComPtr::Release(v29); /*0x76640d*/
   v26 = 0; /*0x766412*/
   v25 = v14; /*0x766414*/
@@ -506,22 +478,19 @@ int WDT_InitGameOptions()
   String::Assign(&v23, aWdtNoredeploym); /*0x76642b*/
   v16 = ConstructorWDTFlagOption(v29, 32, v23, v24, v25, v26); /*0x766442*/
   ComPtr::Constructor(&v27); /*0x766444*/
-  v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766449*/
   ComPtr::Set(&v27, v16[1]); /*0x766455*/
   if ( dword_B72770 < dword_B72768 /*0x766491*/
     || (byte_B7276D || !dword_B72768)
     && dword_B72774 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_B72760 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_B72760 + 8))(
          &dword_B72760,
          dword_B72774 + dword_B72768,
          0) )
   {
     v17 = dword_B72770++; /*0x7664a4*/
-    ComPtr::Set((_DWORD *)(dword_B72764 + 8 * v17), v28); /*0x7664b5*/
+    ComPtr::Set((unsigned int *)(dword_B72764 + 8 * v17), v28); /*0x7664b5*/
   }
-  v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7664be*/
   ComPtr::Release(&v27); /*0x7664c2*/
-  v29[0] = (void*)&rc_ptr_WorldDominationTour_FlagGameOption_vftable; /*0x7664cb*/
   ComPtr::Release(v29); /*0x7664d3*/
   v26 = 1; /*0x7664d8*/
   v25 = v18; /*0x7664da*/
@@ -531,10 +500,8 @@ int WDT_InitGameOptions()
   String::Assign(&v23, aWdtNocrates); /*0x7664f1*/
   v20 = ConstructorWDTFlagOption(v29, 256, v23, v24, v25, v26); /*0x766508*/
   ComPtr::Constructor(&v27); /*0x76650a*/
-  v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76650f*/
   ComPtr::Set(&v27, v20[1]); /*0x76651b*/
   System_Init_766EE0(&v27); /*0x76652a*/
-  v27 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766533*/
   ComPtr::Release(&v27); /*0x766537*/
   System_Init_766900(v29); /*0x766540*/
   v21 = System_Init_7676F0(&v27, 201326592); /*0x76654e*/
@@ -562,7 +529,6 @@ int E4Recv_7667F0::sub_7667F0()
 namespace gamemd {
 void E4Recv_767EC0::sub_767EC0()
 {
-  *this = (void*)&MSFrameAnim_vftable; /*0x767ec0*/
   VtableStub::5CB6C0(); /*0x767ec6*/
 }
 }
@@ -580,7 +546,7 @@ void unknown_libname_37()
 namespace gamemd {
 int WDTMap_LoadAsset(const char ** a1, int a2)
 {
-  _DWORD *v3; // ebp
+  unsigned int *v3; // ebp
   void *v4; // eax
   void *v5; // esi
   void *v6; // eax
@@ -594,8 +560,8 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   int v14; // ecx
   int v15; // eax
   char *v16; // ebx
-  _DWORD *v17; // edx
-  _DWORD *v18; // eax
+  unsigned int *v17; // edx
+  unsigned int *v18; // eax
   int v19; // edi
   int v20; // edx
   char *v21; // eax
@@ -603,7 +569,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   int v23; // ecx
   int v24; // eax
   char *v25; // ebx
-  _DWORD *v26; // edx
+  unsigned int *v26; // edx
   void **v27; // eax
   int *v28; // ecx
   int v29; // ebp
@@ -621,7 +587,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   int v41; // edi
   int v42; // esi
   char **v43; // eax
-  _DWORD *v44; // eax
+  unsigned int *v44; // eax
   int v45; // ecx
   char **v46; // eax
   char **v47; // eax
@@ -635,7 +601,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   void *Block; // [esp+2Ch] [ebp-13Ch]
   unsigned int v57; // [esp+30h] [ebp-138h]
   int v58; // [esp+34h] [ebp-134h]
-  _DWORD *v59; // [esp+38h] [ebp-130h] BYREF
+  unsigned int *v59; // [esp+38h] [ebp-130h] BYREF
   void **v60; // [esp+3Ch] [ebp-12Ch] BYREF
   void ***v61; // [esp+40h] [ebp-128h]
   int v62; // [esp+44h] [ebp-124h]
@@ -646,15 +612,15 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   void ***v67; // [esp+58h] [ebp-110h]
   void *v68; // [esp+5Ch] [ebp-10Ch]
   void *v69; // [esp+60h] [ebp-108h] BYREF
-  _DWORD v70[2]; // [esp+64h] [ebp-104h] BYREF
+  unsigned int v70[2]; // [esp+64h] [ebp-104h] BYREF
   int v71; // [esp+6Ch] [ebp-FCh]
   int v72; // [esp+70h] [ebp-F8h]
   const char **v73; // [esp+74h] [ebp-F4h]
   void *v74[3]; // [esp+78h] [ebp-F0h] BYREF
   void **v75; // [esp+84h] [ebp-E4h] BYREF
-  _DWORD v76[6]; // [esp+A0h] [ebp-C8h] BYREF
-  _DWORD v77[22]; // [esp+B8h] [ebp-B0h] BYREF
-  _DWORD v78[22]; // [esp+110h] [ebp-58h] BYREF
+  unsigned int v76[6]; // [esp+A0h] [ebp-C8h] BYREF
+  unsigned int v77[22]; // [esp+B8h] [ebp-B0h] BYREF
+  unsigned int v78[22]; // [esp+110h] [ebp-58h] BYREF
 
   v73 = a1; /*0x769558*/
   BufferIOFile::Init(v77); /*0x769567*/
@@ -662,22 +628,19 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   v74[1] = 0; /*0x769588*/
   v74[2] = 0; /*0x76958c*/
   GenericList::Constructor(&v75); /*0x769593*/
-  v75 = (void*)&List_INIClass_INISection___vftable; /*0x76959f*/
   Node::Init(v76); /*0x7695aa*/
   v76[5] = 0; /*0x7695bc*/
-  v74[0] = (void*)&INIClass_vftable; /*0x7695c3*/
   FileStraw::Open(v74, (int)v77, 0); /*0x7695ce*/
   CCFileClass::Close(v77); /*0x7695da*/
   sub_47AA00(a2); /*0x7695e7*/
   v3 = DecodeFrameSHP((int)v78, 0, 0, 0); /*0x7695fc*/
   v59 = v3; /*0x769600*/
-  v63 = (*(int (__thiscall **)(_DWORD *))(*v3 + 128))(v3); /*0x76960d*/
-  v65 = (*(int (__thiscall **)(_DWORD *))(*v3 + 124))(v3); /*0x76961e*/
+  v63 = (*(int (__thiscall **)(unsigned int *))(*v3 + 128))(v3); /*0x76960d*/
+  v65 = (*(int (__thiscall **)(unsigned int *))(*v3 + 124))(v3); /*0x76961e*/
   v52 = 0; /*0x769627*/
   v53 = 30; /*0x76962b*/
   IDA_LOWORD(v54) = 1; /*0x76962f*/
-  v51 = (void*)&VectorClass_TRect_int_vftable; /*0x769638*/
-  v4 = RA2_OPNEW(0x1E0u); /*0x769640*/
+  v4 = operator new(0x1E0u); /*0x769640*/
   v5 = v4; /*0x769645*/
   if ( v4 ) /*0x76964c*/
     Array::ForEach((int)v4, 16, 30, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_9); /*0x769657*/
@@ -688,8 +651,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   Block = 0; /*0x76966e*/
   v57 = 30; /*0x769672*/
   IDA_LOWORD(v58) = 1; /*0x769676*/
-  v55 = (void*)&VectorClass_WorldDominationTour_Centroid_vftable; /*0x76967f*/
-  v6 = RA2_OPNEW(0x168u); /*0x769687*/
+  v6 = operator new(0x168u); /*0x769687*/
   v7 = v6; /*0x76968c*/
   if ( v6 ) /*0x769693*/
     Array::ForEach((int)v6, 12, 30, (int (__thiscall *)(int))unknown_libname_37); /*0x76969e*/
@@ -699,8 +661,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   v61 = &v51; /*0x7696af*/
   IDA_BYTE1(v58) = 1; /*0x7696b7*/
   v62 = 0; /*0x7696bc*/
-  v60 = (void*)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x7696c0*/
-  if ( (unsigned __int8)Map_WorldDominationTour_38_::AddRef(&v60) ) /*0x7696c8*/
+  if ( (uint8_t)Map_WorldDominationTour_38_::AddRef(&v60) ) /*0x7696c8*/
   {
     do /*0x769700*/
     {
@@ -711,7 +672,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
       v8[3] = 0; /*0x7696ee*/
       ((void (__thiscall *)(void ***))v60[2])(&v60); /*0x7696f5*/
     }
-    while ( ((unsigned __int8 (__thiscall *)(void ***))v60[1])(&v60) ); /*0x769700*/
+    while ( ((uint8_t (__thiscall *)(void ***))v60[1])(&v60) ); /*0x769700*/
   }
   v9 = 0; /*0x76970b*/
   v50 = 0; /*0x76970f*/
@@ -729,7 +690,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
     }
     while ( 1 ) /*0x769736*/
     {
-      v10 = (*(int (__thiscall **)(_DWORD *, int *))(*v3 + 40))(v3, &v49); /*0x769736*/
+      v10 = (*(int (__thiscall **)(unsigned int *, int *))(*v3 + 40))(v3, &v49); /*0x769736*/
       v64 = v10; /*0x76973b*/
       if ( v10 <= 0x1D ) /*0x76973f*/
       {
@@ -737,7 +698,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
         if ( v57 < v10 + 1 ) /*0x76975a*/
         {
           IDA_LOBYTE(v58) = 0; /*0x76976b*/
-          v12 = (char *)RA2_OPNEW(12 * v11); /*0x769773*/
+          v12 = (char *)operator new(12 * v11); /*0x769773*/
           v13 = v12; /*0x769778*/
           if ( v12 ) /*0x76977f*/
             Array::ForEach((int)v12, 12, v10 + 1, (int (__thiscall *)(int))unknown_libname_37); /*0x76978a*/
@@ -760,9 +721,9 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
                   v17 = (char *)Block + v15; /*0x7697b9*/
                   v15 += 12; /*0x7697bb*/
                   --v14; /*0x7697be*/
-                  *(_DWORD *)v16 = *v17; /*0x7697c1*/
-                  *((_DWORD *)v16 + 1) = v17[1]; /*0x7697c6*/
-                  *((_DWORD *)v16 + 2) = v17[2]; /*0x7697cc*/
+                  *(unsigned int *)v16 = *v17; /*0x7697c1*/
+                  *((unsigned int *)v16 + 1) = v17[1]; /*0x7697c6*/
+                  *((unsigned int *)v16 + 2) = v17[2]; /*0x7697cc*/
                 }
                 while ( v14 ); /*0x7697cf*/
                 v10 = v64; /*0x7697d1*/
@@ -787,7 +748,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
           if ( v11 ) /*0x76983e*/
           {
             IDA_LOBYTE(v54) = 0; /*0x769846*/
-            v21 = (char *)RA2_OPNEW(16 * v11); /*0x76984e*/
+            v21 = (char *)operator new(16 * v11); /*0x76984e*/
             v22 = v21; /*0x769853*/
             if ( v21 ) /*0x76985a*/
               Array::ForEach((int)v21, 16, v11, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_9); /*0x769865*/
@@ -810,10 +771,10 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
                     v26 = (char *)v52 + v24; /*0x769894*/
                     v24 += 16; /*0x769896*/
                     --v23; /*0x769899*/
-                    *(_DWORD *)v25 = *v26; /*0x76989c*/
-                    *((_DWORD *)v25 + 1) = v26[1]; /*0x7698a1*/
-                    *((_DWORD *)v25 + 2) = v26[2]; /*0x7698a7*/
-                    *((_DWORD *)v25 + 3) = v26[3]; /*0x7698ad*/
+                    *(unsigned int *)v25 = *v26; /*0x76989c*/
+                    *((unsigned int *)v25 + 1) = v26[1]; /*0x7698a1*/
+                    *((unsigned int *)v25 + 2) = v26[2]; /*0x7698a7*/
+                    *((unsigned int *)v25 + 3) = v26[3]; /*0x7698ad*/
                   }
                   while ( v23 ); /*0x7698b0*/
                   v10 = v64; /*0x7698b2*/
@@ -832,21 +793,19 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
           }
           v68 = v69; /*0x7698ed*/
           v67 = &v51; /*0x7698fa*/
-          v66 = (void*)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x7698fe*/
-          if ( (unsigned __int8)Map_WorldDominationTour_38_::AddRef(&v66) ) /*0x769902*/
+          if ( (uint8_t)Map_WorldDominationTour_38_::AddRef(&v66) ) /*0x769902*/
           {
             do /*0x76993a*/
             {
-              v27 = &v67[1][4 * (_DWORD)v68]; /*0x76991e*/
+              v27 = &v67[1][4 * (unsigned int)v68]; /*0x76991e*/
               *v27 = 0; /*0x769920*/
               v27[1] = 0; /*0x769922*/
               v27[2] = 0; /*0x769925*/
               v27[3] = 0; /*0x769928*/
               ((void (__thiscall *)(void ***))v66[2])(&v66); /*0x76992f*/
             }
-            while ( ((unsigned __int8 (__thiscall *)(void ***))v66[1])(&v66) ); /*0x76993a*/
+            while ( ((uint8_t (__thiscall *)(void ***))v66[1])(&v66) ); /*0x76993a*/
           }
-          v66 = (void*)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x769941*/
         }
         v28 = (int *)((char *)v52 + 16 * v10); /*0x76994e*/
         v29 = v28[2]; /*0x769950*/
@@ -910,7 +869,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   v40 = Map_Load_769D70(&v66, &v51); /*0x769a34*/
   Map_Load_769C20(v40); /*0x769a46*/
   v41 = 0; /*0x769a4f*/
-  if ( ((unsigned __int8 (__thiscall *)(void ***))v60[1])(&v60) ) /*0x769a55*/
+  if ( ((uint8_t (__thiscall *)(void ***))v60[1])(&v60) ) /*0x769a55*/
   {
     v42 = 0; /*0x769a60*/
     do /*0x769b22*/
@@ -919,7 +878,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
       ConcatStringAlloc((char **)&v59, v73, v43); /*0x769a78*/
       DeleteAndZero(&v69); /*0x769a81*/
       FromStringInt((char **)&v63, g_DisplayWidth); /*0x769a90*/
-      v44 = (_DWORD *)Map_Load_7694C0(&v66); /*0x769aa0*/
+      v44 = (unsigned int *)Map_Load_7694C0(&v66); /*0x769aa0*/
       v45 = v44[1]; /*0x769aa9*/
       v70[0] = *v44; /*0x769aac*/
       v70[1] = v45; /*0x769ab0*/
@@ -934,16 +893,13 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
       DeleteAndZero((void **)&v63); /*0x769b0c*/
       DeleteAndZero((void **)&v59); /*0x769b15*/
     }
-    while ( ((unsigned __int8 (__thiscall *)(void ***))v60[1])(&v60) ); /*0x769b22*/
+    while ( ((uint8_t (__thiscall *)(void ***))v60[1])(&v60) ); /*0x769b22*/
   }
   CCFileClass::Reopen(v77, aWdtmapmdIni_0, 2); /*0x769b3b*/
   INIClass::SaveToPipe(v74, (int)v77); /*0x769b4c*/
   CCFileClass::Reopen(v77, aCodeWdtmapmdIn, 2); /*0x769b5f*/
   INIClass::SaveToPipe(v74, (int)v77); /*0x769b70*/
-  v60 = (void*)&VectorCursor_TRect_int_VectorClass_TRect_int_vftable; /*0x769b79*/
-  v55 = (void*)&VectorClass_WorldDominationTour_Centroid_vftable; /*0x769b81*/
   Map_WorldDominationTour_43_::ddtor(&v55); /*0x769b89*/
-  v51 = (void*)&VectorClass_TRect_int_vftable; /*0x769b92*/
   MSEngine::ddtor(&v51); /*0x769b9a*/
   BufferIOFileClass::Destruct(v78); /*0x769ba6*/
   HashTable::DestroyHashTableINIClass(v74); /*0x769baf*/
@@ -954,28 +910,28 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
 namespace gamemd {
 unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
 {
-  _DWORD *v2; // ebx
+  unsigned int *v2; // ebx
   int v4; // ebp
-  _DWORD *v5; // eax
-  _DWORD *v6; // ebx
-  _DWORD *v7; // edi
-  _DWORD *v8; // eax
+  unsigned int *v5; // eax
+  unsigned int *v6; // ebx
+  unsigned int *v7; // edi
+  unsigned int *v8; // eax
   int v9; // eax
   int v10; // edi
 
   v2 = a2; /*0x76b7b1*/
   if ( this == a2 ) /*0x76b7bc*/
     return this; /*0x76b7bc*/
-  (*(void (__thiscall **)(_DWORD *))(*this + 12))(this); /*0x76b7c4*/
+  (*(void (__thiscall **)(unsigned int *))(*((char *)&this->M8 + 4)))(this); /*0x76b7c4*/
   v4 = a2[2]; /*0x76b7c7*/
-  *(this + 2) = v4; /*0x76b7cc*/
+  *(unsigned int *)&this->M8 = v4; /*0x76b7cc*/
   if ( !v4 ) /*0x76b7cf*/
   {
-    *(this + 1) = 0; /*0x76b855*/
-    *((_BYTE *)this + 13) = 0; /*0x76b85c*/
+    this->M4 = 0; /*0x76b855*/
+    *(unsigned char *)&this->M13 = 0; /*0x76b85c*/
     return this; /*0x76b860*/
   }
-  v5 = RA2_OPNEW(8 * v4 + 4); /*0x76b7dd*/
+  v5 = operator new(8 * v4 + 4); /*0x76b7dd*/
   if ( v5 ) /*0x76b7e7*/
   {
     *v5 = v4; /*0x76b7e9*/
@@ -986,7 +942,6 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
       do /*0x76b80b*/
       {
         ComPtr::Constructor(v7); /*0x76b7fc*/
-        *v7 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76b801*/
         v7 += 2; /*0x76b807*/
         --v4; /*0x76b80a*/
       }
@@ -999,20 +954,20 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   {
     v8 = 0; /*0x76b815*/
   }
-  *(this + 1) = v8; /*0x76b819*/
+  this->M4 = v8; /*0x76b819*/
   if ( !v8 ) /*0x76b81c*/
     return this; /*0x76b81c*/
-  v9 = *(this + 2); /*0x76b81e*/
+  v9 = *(unsigned int *)&this->M8; /*0x76b81e*/
   v10 = 0; /*0x76b821*/
-  *((_BYTE *)this + 13) = 1; /*0x76b825*/
+  *(unsigned char *)&this->M13 = 1; /*0x76b825*/
   if ( v9 <= 0 ) /*0x76b829*/
     return this; /*0x76b829*/
   do /*0x76b84a*/
   {
-    ComPtr::Set((_DWORD *)(*(this + 1) + 8 * v10), *(_DWORD *)(v2[1] + 8 * v10 + 4)); /*0x76b83f*/
+    ComPtr::Set((unsigned int *)(this->M4 + 8 * v10), *(unsigned int *)(v2[1] + 8 * v10 + 4)); /*0x76b83f*/
     ++v10; /*0x76b847*/
   }
-  while ( v10 < *(this + 2) ); /*0x76b84a*/
+  while ( v10 < *(unsigned int *)&this->M8 ); /*0x76b84a*/
   return this; /*0x76b84e*/
 }
 }
@@ -1020,8 +975,8 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
 namespace gamemd {
 SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned int * a2, ReferenceCounted * aP3, const char ** a4, ReferenceCounted * aP5)
 {
-  _DWORD *v8; // edi
-  _DWORD *v9; // ebx
+  unsigned int *v8; // edi
+  unsigned int *v9; // ebx
   char **v10; // eax
   char **v11; // eax
   char **v12; // eax
@@ -1049,7 +1004,6 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
 
   aP1 = aP1; /*0x76f975*/
   this->q004 = 0; /*0x76f982*/
-  *(_DWORD *)this = (void*)&ReferenceCounted_vftable; /*0x76f985*/
   this->q008 = aP1; /*0x76f98b*/
   unknown_libname_74(&this->q0042); /*0x76f98e*/
   v8 = &this->q040; /*0x76f993*/
@@ -1062,7 +1016,6 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
   this->q024 = 0; /*0x76f9ba*/
   this->q028 = 0; /*0x76f9bd*/
   this->q02C = 0; /*0x76f9c0*/
-  *(_DWORD *)this = (void*)&WorldDominationTour_Territory_vftable; /*0x76f9d0*/
   v10 = FormatStringInt((char **)v35, aP1, 2); /*0x76f9d6*/
   v11 = ConcatStringAlloc((char **)&v34, a4, v10); /*0x76f9e4*/
   v12 = String::Concat2((const char **)v11, (char **)&v33, aShp_0); /*0x76f9eb*/
@@ -1079,14 +1032,14 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
   FromStringInt((char **)&aP1, g_DisplayWidth); /*0x76fa64*/
   v16 = ProcessStringAndCopy((char **)&a4, aTarget_0, (char **)&aP1); /*0x76fa78*/
   aP3 = aP3; /*0x76fa7d*/
-  CoordPair = INIClass::GetCoordPair(a2, v35, aP3, v16, (_DWORD *)this + 4); /*0x76fa8c*/
+  CoordPair = INIClass::GetCoordPair(a2, v35, aP3, v16, (unsigned int *)&this->ptr_10); /*0x76fa8c*/
   v19 = *CoordPair; /*0x76fa91*/
   v20 = CoordPair[1]; /*0x76fa93*/
   this->q010 = v19; /*0x76fa96*/
   this->q014 = v20; /*0x76fa9c*/
   DeleteAndZero((void **)&a4); /*0x76fa9f*/
   v21 = ProcessStringAndCopy((char **)&a4, aOrigin_0, (char **)&aP1); /*0x76fab3*/
-  v22 = INIClass::GetCoordPair(a2, v35, aP3, v21, (_DWORD *)this + 6); /*0x76fac3*/
+  v22 = INIClass::GetCoordPair(a2, v35, aP3, v21, (unsigned int *)&this->ptr_18); /*0x76fac3*/
   v23 = *v22; /*0x76fac8*/
   v24 = v22[1]; /*0x76faca*/
   this->q018 = v23; /*0x76facd*/
@@ -1097,7 +1050,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
     if ( !*v8 && !this->q014 ) /*0x76faf0*/
     {
       String::Assign((char **)&a4, aTarget800); /*0x76fb00*/
-      v25 = INIClass::GetCoordPair(a2, v35, aP3, (char **)&a4, (_DWORD *)this + 4); /*0x76fb15*/
+      v25 = INIClass::GetCoordPair(a2, v35, aP3, (char **)&a4, (unsigned int *)&this->ptr_10); /*0x76fb15*/
       v26 = *v25; /*0x76fb1a*/
       v27 = v25[1]; /*0x76fb1c*/
       *v8 = v26; /*0x76fb1f*/
@@ -1107,7 +1060,7 @@ SessionClass * * WorldDominationTour__Territory::Constructor(int aP1, unsigned i
     if ( !*v9 && !this->q01C ) /*0x76fb32*/
     {
       String::Assign((char **)&a4, aOrigin800); /*0x76fb42*/
-      v28 = INIClass::GetCoordPair(a2, v35, aP3, (char **)&a4, (_DWORD *)this + 6); /*0x76fb57*/
+      v28 = INIClass::GetCoordPair(a2, v35, aP3, (char **)&a4, (unsigned int *)&this->ptr_18); /*0x76fb57*/
       v29 = *v28; /*0x76fb5c*/
       v30 = v28[1]; /*0x76fb5e*/
       *v9 = v29; /*0x76fb61*/
@@ -1192,7 +1145,7 @@ namespace gamemd {
 long long sub_763450()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_B725D0 - dbl_B725F8); /*0x763462*/
   result = Math::RoundToInt(v0 * dbl_B725F0 * 0.5); /*0x763476*/
@@ -1221,7 +1174,7 @@ void sub_7634C0()
 namespace gamemd {
 long long sub_7634F0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_B72668) + 0.5); /*0x76350b*/
   dword_B72658 = result; /*0x763510*/
@@ -1308,7 +1261,7 @@ namespace gamemd {
 unsigned int * E4Recv_763700::sub_763700(unsigned int * a2)
 {
   *this = *a2; /*0x76370b*/
-  *(this + 1) = a2[1]; /*0x763710*/
+  this->M4 = a2[1]; /*0x763710*/
   this->vtable3 = a2[2]; /*0x763717*/
   return this; /*0x763713*/
 }
@@ -1390,7 +1343,7 @@ namespace gamemd {
 long long sub_764900()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_B72670 - dbl_B72698); /*0x764912*/
   result = Math::RoundToInt(v0 * dbl_B72690 * 0.5); /*0x764926*/
@@ -1419,7 +1372,7 @@ void sub_764970()
 namespace gamemd {
 long long sub_7649A0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_B726E8) + 0.5); /*0x7649bb*/
   dword_B726DC = result; /*0x7649c0*/
@@ -1466,12 +1419,12 @@ AbstractClass * * ObjectClass::sub_764A20()
   int Int; // esi
   void *v4; // [esp+8h] [ebp-9Ch] BYREF
   void *v5[4]; // [esp+Ch] [ebp-98h] BYREF
-  _DWORD v6[3]; // [esp+1Ch] [ebp-88h] BYREF
-  _DWORD v7[6]; // [esp+28h] [ebp-7Ch] BYREF
+  unsigned int v6[3]; // [esp+1Ch] [ebp-88h] BYREF
+  unsigned int v7[6]; // [esp+28h] [ebp-7Ch] BYREF
   char v8; // [esp+40h] [ebp-64h]
   int v9; // [esp+44h] [ebp-60h]
   int v10; // [esp+48h] [ebp-5Ch]
-  _DWORD v11[22]; // [esp+4Ch] [ebp-58h] BYREF
+  unsigned int v11[22]; // [esp+4Ch] [ebp-58h] BYREF
 
   BufferIOFile::Constructor(v11, aWdthistIni_0); /*0x764a33*/
   if ( File::IsReady(v11, 0) ) /*0x764a3f*/
@@ -1481,12 +1434,10 @@ AbstractClass * * ObjectClass::sub_764A20()
     GenericNode::Constructor(v6); /*0x764a58*/
     GenericNode::Constructor(v7); /*0x764a61*/
     LinkedList::Prepend(v6, (int)v7); /*0x764a77*/
-    v5[3] = (void*)&List_INIClass_INISection___vftable; /*0x764a80*/
     memset(&v7[3], 0, 12); /*0x764a8e*/
     v8 = 0; /*0x764a9a*/
     v9 = 0; /*0x764a9e*/
     v10 = 0; /*0x764aa2*/
-    v5[0] = (void*)&INIClass_vftable; /*0x764aa6*/
     FileStraw::Open(v5, (int)v11, 0); /*0x764aae*/
     CCFileClass::Close(v11); /*0x764ab7*/
     String::Assign((char **)&v4, g_INI_Key_CampaignID); /*0x764ac5*/
@@ -1518,7 +1469,7 @@ int E4Recv_764FF0::sub_764FF0(ScoreScreen * aP1)
 namespace gamemd {
 int sub_765580(unsigned int * a1)
 {
-  _DWORD v2[22]; // [esp+0h] [ebp-58h] BYREF
+  unsigned int v2[22]; // [esp+0h] [ebp-58h] BYREF
 
   BufferIOFile::Init(v2); /*0x765587*/
   CCFileClass::Reopen(v2, g_Str_File_WDTHist_ini, 1); /*0x765597*/
@@ -1603,7 +1554,7 @@ namespace gamemd {
 long long sub_765E40()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_B726F0 - dbl_B72718); /*0x765e52*/
   result = Math::RoundToInt(v0 * dbl_B72710 * 0.5); /*0x765e66*/
@@ -1632,7 +1583,7 @@ void sub_765EB0()
 namespace gamemd {
 long long sub_765EE0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_B72788) + 0.5); /*0x765efb*/
   dword_B72778 = result; /*0x765f00*/
@@ -1771,7 +1722,7 @@ namespace gamemd {
 long long sub_7671E0()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_B72790 - dbl_B727B8); /*0x7671f2*/
   result = Math::RoundToInt(v0 * dbl_B727B0 * 0.5); /*0x767206*/
@@ -1800,7 +1751,7 @@ void sub_767250()
 namespace gamemd {
 long long sub_767280()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_B72808) + 0.5); /*0x76729b*/
   dword_B727FC = result; /*0x7672a0*/
@@ -1853,7 +1804,7 @@ wchar_t ** E4Recv_767320::sub_767320(wchar_t ** a2, int a3, const wchar_t ** a4)
   wchar_t *StringCSF; // [esp-8h] [ebp-10h]
   void *v14; // [esp+4h] [ebp-4h] BYREF
 
-  v5 = (*((int (__thiscall **)(const char **, int))*this + 5))(this, a3); /*0x76732d*/
+  v5 = (*((int (__thiscall **)(const char **, int))*((char *)&this->vfptr + 5)))(this, a3); /*0x76732d*/
   v6 = FromStringInt((char **)&v14, v5); /*0x767336*/
   ConcatStringAlloc((char **)&a3, &this->uniqueId, v6); /*0x767343*/
   DeleteAndZero(&v14); /*0x76734c*/
@@ -1891,7 +1842,7 @@ rc_ptr * ConstructorWDTFlagOption(rc_ptr_base * a1, int a2, void * a3, int a4, v
   char *v14; // [esp-8h] [ebp-14h] BYREF
   int v15; // [esp-4h] [ebp-10h]
 
-  if ( RA2_OPNEW(0x1Cu) ) /*0x767469*/
+  if ( operator new(0x1Cu) ) /*0x767469*/
   {
     v15 = aP5; /*0x76747f*/
     v14 = v8; /*0x767480*/
@@ -1906,7 +1857,6 @@ rc_ptr * ConstructorWDTFlagOption(rc_ptr_base * a1, int a2, void * a3, int a4, v
     v10 = 0; /*0x7674a7*/
   }
   ComPtr::Constructor(a1); /*0x7674ab*/
-  *a1 = (void*)&rc_ptr_WorldDominationTour_FlagGameOption_vftable; /*0x7674b2*/
   ComPtr::Set(a1, v10); /*0x7674b9*/
   DeleteAndZero(&a3); /*0x7674c2*/
   DeleteAndZero(&a5); /*0x7674cb*/
@@ -1990,7 +1940,7 @@ namespace gamemd {
 long long sub_7679E0()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_B72810 - dbl_B72838); /*0x7679f2*/
   result = Math::RoundToInt(v0 * dbl_B72830 * 0.5); /*0x767a06*/
@@ -2019,7 +1969,7 @@ void sub_767A50()
 namespace gamemd {
 long long sub_767A80()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_B72888) + 0.5); /*0x767a9b*/
   dword_B7287C = result; /*0x767aa0*/
@@ -2136,7 +2086,7 @@ namespace gamemd {
 long long sub_767D70()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_B72890 - dbl_B728B8); /*0x767d82*/
   result = Math::RoundToInt(v0 * dbl_B728B0 * 0.5); /*0x767d96*/
@@ -2165,7 +2115,7 @@ void sub_767DE0()
 namespace gamemd {
 long long sub_767E10()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_B72908) + 0.5); /*0x767e2b*/
   dword_B728FC = result; /*0x767e30*/
@@ -2209,12 +2159,11 @@ int sub_767E70()
 namespace gamemd {
 unsigned int * E4Recv_767E90::sub_767E90()
 {
-  *(this + 1) = 0; /*0x767e99*/
-  *(this + 2) = 0; /*0x767e9c*/
-  *((_BYTE *)this + 12) = 0; /*0x767e9f*/
+  this->M4 = 0; /*0x767e99*/
+  this->M8 = 0; /*0x767e9c*/
+  *(unsigned char *)&this->M12 = 0; /*0x767e9f*/
   this->u32_10 = Timer::GetTicks(); /*0x767ea7*/
   this->q018 = 0; /*0x767eaa*/
-  *this = (void*)&MSFrameAnim_vftable; /*0x767ead*/
   return this; /*0x767eb5*/
 }
 } // namespace gamemd
@@ -2223,7 +2172,7 @@ unsigned int * E4Recv_767E90::sub_767E90()
 namespace gamemd {
 unsigned int * E4Recv_769490::sub_769490(unsigned int * a2)
 {
-  _DWORD *result; // eax
+  unsigned int *result; // eax
   int v3; // edx
   int v4; // ecx
 
@@ -2299,7 +2248,7 @@ namespace gamemd {
 long long sub_76A970()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_B72910 - dbl_B72938); /*0x76a982*/
   result = Math::RoundToInt(v0 * dbl_B72930 * 0.5); /*0x76a996*/
@@ -2328,7 +2277,7 @@ void sub_76A9E0()
 namespace gamemd {
 long long sub_76AA10()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_B72988) + 0.5); /*0x76aa2b*/
   dword_B7297C = result; /*0x76aa30*/
@@ -2395,10 +2344,10 @@ unsigned int * E4Recv_76ABE0::sub_76ABE0()
 {
   char *v2; // esi
   int v3; // edx
-  void (__thiscall ***v4)(_DWORD, int); // ecx
+  void (__thiscall ***v4)(unsigned int, int); // ecx
   bool v5; // zf
   void **v7; // [esp+Ch] [ebp-18h] BYREF
-  void (__thiscall ***v8)(_DWORD, int); // [esp+10h] [ebp-14h]
+  void (__thiscall ***v8)(unsigned int, int); // [esp+10h] [ebp-14h]
   int v9; // [esp+14h] [ebp-10h]
   char v10; // [esp+18h] [ebp-Ch]
   char v11; // [esp+19h] [ebp-Bh]
@@ -2414,9 +2363,7 @@ unsigned int * E4Recv_76ABE0::sub_76ABE0()
   *(&this->q0042) = 0; /*0x76ac09*/
   *(&this->q0043) = 0; /*0x76ac0c*/
   this->q039 = 0; /*0x76ac0f*/
-  *(&this->q0041) = (void*)&DynamicVectorClass_rc_ptr_WDTTerritory_vftable; /*0x76ac12*/
   *(&this->q0045) = 0; /*0x76ac18*/
-  *this = (void*)&WDTState_vftable; /*0x76ac1e*/
   this->q014 = 0; /*0x76ac24*/
   this->q018 = 0; /*0x76ac27*/
   this->q020 = 0; /*0x76ac2a*/
@@ -2425,15 +2372,13 @@ unsigned int * E4Recv_76ABE0::sub_76ABE0()
   v8 = 0; /*0x76ac37*/
   v9 = 0; /*0x76ac3b*/
   v11 = 0; /*0x76ac3f*/
-  v7 = (void*)&DynamicVectorClass_rc_ptr_WDTTerritory_vftable; /*0x76ac43*/
   v12 = 0; /*0x76ac4b*/
   sub_76B7B0(&this->q02C, &v7); /*0x76ac4f*/
   v13 = v13; /*0x76ac58*/
-  *((_DWORD *)v2 + 4) = v12; /*0x76ac5c*/
+  *((unsigned int *)v2 + 4) = v12; /*0x76ac5c*/
   v8 = v8; /*0x76ac5f*/
   v5 = v8 == 0; /*0x76ac63*/
-  *((_DWORD *)v2 + 5) = v13; /*0x76ac65*/
-  v7 = (void*)&VectorClass_rc_ptr_WDTTerritory_vftable; /*0x76ac68*/
+  *((unsigned int *)v2 + 5) = v13; /*0x76ac65*/
   if ( !v5 && v11 ) /*0x76ac76*/
     (**v8)(v8, 3); /*0x76ac7c*/
   *(&this->q0047) = 0; /*0x76ac7e*/
@@ -2509,7 +2454,7 @@ namespace gamemd {
 long long sub_76BD70()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_B72990 - dbl_B729B8); /*0x76bd82*/
   result = Math::RoundToInt(v0 * dbl_B729B0 * 0.5); /*0x76bd96*/
@@ -2538,7 +2483,7 @@ void sub_76BDE0()
 namespace gamemd {
 long long sub_76BE10()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_B72A08) + 0.5); /*0x76be2b*/
   dword_B729FC = result; /*0x76be30*/
@@ -2646,7 +2591,7 @@ namespace gamemd {
 long long sub_76C170()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_B72A10 - dbl_B72A38); /*0x76c182*/
   result = Math::RoundToInt(v0 * dbl_B72A30 * 0.5); /*0x76c196*/
@@ -2675,7 +2620,7 @@ void sub_76C1E0()
 namespace gamemd {
 long long sub_76C210()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_B72A88) + 0.5); /*0x76c22b*/
   dword_B72A7C = result; /*0x76c230*/
@@ -2722,8 +2667,8 @@ bool E4Recv_76D3A0::sub_76D3A0(unsigned int * a2)
   int v3; // eax
   int v4; // eax
   bool v5; // bl
-  _DWORD v7[2]; // [esp+8h] [ebp-14h] BYREF
-  _DWORD v8[3]; // [esp+10h] [ebp-Ch] BYREF
+  unsigned int v7[2]; // [esp+8h] [ebp-14h] BYREF
+  unsigned int v8[3]; // [esp+10h] [ebp-Ch] BYREF
 
   v8[2] = 0; /*0x76d3ac*/
   v3 = Surface::PixelToIndex(*(&this->health9), a2); /*0x76d3ba*/
@@ -2736,12 +2681,9 @@ bool E4Recv_76D3A0::sub_76D3A0(unsigned int * a2)
   }
   FindTerritoryWOL(v8, *(&this->health9) + 44, *(&this->estimatedHealth0)); /*0x76d403*/
   ComPtr::Constructor(v7); /*0x76d40c*/
-  v7[0] = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76d415*/
   ComPtr::Set(v7, v8[1]); /*0x76d422*/
-  v8[0] = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76d42b*/
   ComPtr::Release(v8); /*0x76d433*/
   v5 = TerritorySelectWDT(this, (int)v7); /*0x76d448*/
-  v7[0] = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76d44a*/
   ComPtr::Release(v7); /*0x76d452*/
   return v5; /*0x76d459*/
 }
@@ -2751,16 +2693,15 @@ bool E4Recv_76D3A0::sub_76D3A0(unsigned int * a2)
 namespace gamemd {
 unsigned int * E4Recv_76D470::sub_76D470(unsigned int * a2)
 {
-  _DWORD *result; // eax
-  _DWORD v4[2]; // [esp+4h] [ebp-8h] BYREF
+  unsigned int *result; // eax
+  unsigned int v4[2]; // [esp+4h] [ebp-8h] BYREF
 
-  result = (_DWORD *)Surface::PixelToIndex(*(this + 279), a2); /*0x76d481*/
-  if ( result != (_DWORD *)*(this + 280) ) /*0x76d48c*/
+  result = (unsigned int *)Surface::PixelToIndex(this->M1116, a2); /*0x76d481*/
+  if ( result != (unsigned int *)*(unsigned int *)&this->M1120 ) /*0x76d48c*/
   {
     *(&this->estimatedHealth0) = (int)result; /*0x76d48e*/
     FindTerritoryWOL(v4, *(&this->health9) + 44, (int)result); /*0x76d4a2*/
     TerritorySelectWDT((int)v4); /*0x76d4ae*/
-    v4[0] = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76d4b7*/
     return ComPtr::Release(v4); /*0x76d4bf*/
   }
   return result; /*0x76d4c4*/
@@ -2773,18 +2714,17 @@ int E4Recv_76DED0::sub_76DED0()
 {
   int v2; // eax
   int result; // eax
-  int (__thiscall ***v4)(_DWORD, int); // eax
+  int (__thiscall ***v4)(unsigned int, int); // eax
   void **v5; // [esp+4h] [ebp-Ch] BYREF
   int v6; // [esp+8h] [ebp-8h]
   int v7; // [esp+Ch] [ebp-4h]
 
   v7 = 0; /*0x76deda*/
   v2 = *(&this->health9); /*0x76dee2*/
-  v5 = (void*)&VectorCursor_rc_ptr_WorldDominationTour_Territory_DynamicVectorClass_rc_ptr_WorldDominationTour_Territory_vftable; /*0x76dee8*/
   v6 = v2 + 44; /*0x76def3*/
-  for ( result = VectorCursor::HasNext(&v5); (_BYTE)result; result = ((int (__thiscall *)(void ***))v5[1])(&v5) ) /*0x76deff*/
+  for ( result = VectorCursor::HasNext(&v5); (unsigned char)result; result = ((int (__thiscall *)(void ***))v5[1])(&v5) ) /*0x76deff*/
   {
-    v4 = (int (__thiscall ***)(_DWORD, int))WDTObject::GetAndClearFlag(*(_DWORD **)(*(_DWORD *)(v6 + 4) + 8 * v7 + 4)); /*0x76df13*/
+    v4 = (int (__thiscall ***)(unsigned int, int))WDTObject::GetAndClearFlag(*(unsigned int **)(*(unsigned int *)(v6 + 4) + 8 * v7 + 4)); /*0x76df13*/
     if ( v4 ) /*0x76df1a*/
       Session::RemoveTeam(v4); /*0x76df1f*/
     ((void (__thiscall *)(void ***))v5[2])(&v5); /*0x76df2c*/
@@ -2799,18 +2739,17 @@ int E4Recv_76DF50::sub_76DF50()
 {
   int v2; // eax
   int result; // eax
-  int (__thiscall ***v4)(_DWORD, int); // eax
+  int (__thiscall ***v4)(unsigned int, int); // eax
   void **v5; // [esp+4h] [ebp-Ch] BYREF
   int v6; // [esp+8h] [ebp-8h]
   int v7; // [esp+Ch] [ebp-4h]
 
   v7 = 0; /*0x76df5a*/
   v2 = *(&this->health9); /*0x76df62*/
-  v5 = (void*)&VectorCursor_rc_ptr_WorldDominationTour_Territory_DynamicVectorClass_rc_ptr_WorldDominationTour_Territory_vftable; /*0x76df68*/
   v6 = v2 + 44; /*0x76df73*/
-  for ( result = VectorCursor::HasNext(&v5); (_BYTE)result; result = ((int (__thiscall *)(void ***))v5[1])(&v5) ) /*0x76df7f*/
+  for ( result = VectorCursor::HasNext(&v5); (unsigned char)result; result = ((int (__thiscall *)(void ***))v5[1])(&v5) ) /*0x76df7f*/
   {
-    v4 = (int (__thiscall ***)(_DWORD, int))WDTObject::GetAndClearFlag(*(_DWORD **)(*(_DWORD *)(v6 + 4) + 8 * v7 + 4)); /*0x76df93*/
+    v4 = (int (__thiscall ***)(unsigned int, int))WDTObject::GetAndClearFlag(*(unsigned int **)(*(unsigned int *)(v6 + 4) + 8 * v7 + 4)); /*0x76df93*/
     if ( v4 ) /*0x76df9a*/
       Session::RemoveTeam(v4); /*0x76df9f*/
     ((void (__thiscall *)(void ***))v5[2])(&v5); /*0x76dfac*/
@@ -2833,19 +2772,18 @@ void E4Recv_76DFD0::sub_76DFD0()
   {
     v4 = this + 1172; /*0x76e001*/
     v5 = 0; /*0x76e005*/
-    v3 = (void*)&VectorCursor_MSSfxEntry___DynamicVectorClass_MSSfxEntry___vftable; /*0x76e00d*/
     if ( Vector::HasCapacity(&v3) ) /*0x76e015*/
     {
       do /*0x76e04e*/
       {
-        if ( !String::Compare((const char **)&v2, *(const char ***)(*((_DWORD *)v4 + 1) + 4 * v5)) ) /*0x76e032*/
+        if ( !String::Compare((const char **)&v2, *(const char ***)(*((unsigned int *)v4 + 1) + 4 * v5)) ) /*0x76e032*/
           break; /*0x76e039*/
         ((void (__thiscall *)(void ***))v3[2])(&v3); /*0x76e043*/
       }
-      while ( ((unsigned __int8 (__thiscall *)(void ***))v3[1])(&v3) ); /*0x76e04e*/
+      while ( ((uint8_t (__thiscall *)(void ***))v3[1])(&v3) ); /*0x76e04e*/
     }
-    if ( ((unsigned __int8 (__thiscall *)(void ***))v3[1])(&v3) ) /*0x76e05d*/
-      nullsub_24(*(_DWORD *)(*((_DWORD *)v4 + 1) + 4 * v5)); /*0x76e072*/
+    if ( ((uint8_t (__thiscall *)(void ***))v3[1])(&v3) ) /*0x76e05d*/
+      nullsub_24(*(unsigned int *)(*((unsigned int *)v4 + 1) + 4 * v5)); /*0x76e072*/
   }
   DeleteAndZero(&v2); /*0x76e07b*/
 }
@@ -2856,7 +2794,7 @@ namespace gamemd {
 unsigned int * E4Recv_76E090::sub_76E090()
 {
   void *v3; // [esp+4h] [ebp-18h] BYREF
-  _DWORD v4[2]; // [esp+8h] [ebp-14h] BYREF
+  unsigned int v4[2]; // [esp+8h] [ebp-14h] BYREF
   void **v5; // [esp+10h] [ebp-Ch] BYREF
   int *v6; // [esp+14h] [ebp-8h]
   int v7; // [esp+18h] [ebp-4h]
@@ -2866,7 +2804,6 @@ unsigned int * E4Recv_76E090::sub_76E090()
   {
     v6 = &this->q494; /*0x76e0c1*/
     v7 = 0; /*0x76e0c5*/
-    v5 = (void*)&VectorCursor_MSSfxEntry___DynamicVectorClass_MSSfxEntry___vftable; /*0x76e0cd*/
     if ( Vector::HasCapacity(&v5) ) /*0x76e0d5*/
     {
       do /*0x76e10e*/
@@ -2875,17 +2812,15 @@ unsigned int * E4Recv_76E090::sub_76E090()
           break; /*0x76e0f9*/
         ((void (__thiscall *)(void ***))v5[2])(&v5); /*0x76e103*/
       }
-      while ( ((unsigned __int8 (__thiscall *)(void ***))v5[1])(&v5) ); /*0x76e10e*/
+      while ( ((uint8_t (__thiscall *)(void ***))v5[1])(&v5) ); /*0x76e10e*/
     }
-    if ( ((unsigned __int8 (__thiscall *)(void ***))v5[1])(&v5) ) /*0x76e11d*/
-      nullsub_24(*(_DWORD *)(v6[1] + 4 * v7)); /*0x76e132*/
+    if ( ((uint8_t (__thiscall *)(void ***))v5[1])(&v5) ) /*0x76e11d*/
+      nullsub_24(*(unsigned int *)(v6[1] + 4 * v7)); /*0x76e132*/
   }
   DeleteAndZero(&v3); /*0x76e13b*/
   *(&this->estimatedHealth0) = -1; /*0x76e144*/
   ComPtr::Constructor(v4); /*0x76e14e*/
-  v4[0] = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76e15a*/
   TerritorySelectWDT((int)v4); /*0x76e162*/
-  v4[0] = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76e16b*/
   return ComPtr::Release(v4); /*0x76e178*/
 }
 } // namespace gamemd
@@ -2958,7 +2893,7 @@ namespace gamemd {
 long long sub_76F350()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_B72A90 - dbl_B72AB8); /*0x76f362*/
   result = Math::RoundToInt(v0 * dbl_B72AB0 * 0.5); /*0x76f376*/
@@ -2987,7 +2922,7 @@ void sub_76F3C0()
 namespace gamemd {
 long long sub_76F3F0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_B72B08) + 0.5); /*0x76f40b*/
   dword_B72AFC = result; /*0x76f410*/
@@ -3095,7 +3030,7 @@ namespace gamemd {
 long long sub_76F7F0()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_B72B10 - dbl_B72B38); /*0x76f802*/
   result = Math::RoundToInt(v0 * dbl_B72B30 * 0.5); /*0x76f816*/
@@ -3124,7 +3059,7 @@ void sub_76F860()
 namespace gamemd {
 long long sub_76F890()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_B72B88) + 0.5); /*0x76f8ab*/
   dword_B72B7C = result; /*0x76f8b0*/
@@ -3169,8 +3104,8 @@ namespace gamemd {
 rc_ptr * FindTerritoryWOL(ObjectClass * aP0, int a2, int a3)
 {
   char v4; // bl
-  _DWORD *v5; // edi
-  _DWORD v7[2]; // [esp+Ch] [ebp-18h] BYREF
+  unsigned int *v5; // edi
+  unsigned int v7[2]; // [esp+Ch] [ebp-18h] BYREF
   void **v8; // [esp+14h] [ebp-10h] BYREF
   int v9; // [esp+18h] [ebp-Ch]
   int v10; // [esp+1Ch] [ebp-8h]
@@ -3180,34 +3115,30 @@ rc_ptr * FindTerritoryWOL(ObjectClass * aP0, int a2, int a3)
   v11 = 0; /*0x76ff4e*/
   a2 = a2; /*0x76ff52*/
   v10 = 0; /*0x76ff56*/
-  v8 = (void*)&VectorCursor_rc_ptr_WorldDominationTour_Territory_DynamicVectorClass_rc_ptr_WorldDominationTour_Territory_vftable; /*0x76ff5a*/
   if ( VectorCursor::HasNext(&v8) ) /*0x76ff62*/
   {
     do /*0x76ff9a*/
     {
-      if ( *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(a2 + 4) + 8 * v10 + 4) + 8) == a3 ) /*0x76ff85*/
+      if ( *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a2 + 4) + 8 * v10 + 4) + 8) == a3 ) /*0x76ff85*/
         break; /*0x76ff85*/
       ((void (__thiscall *)(void ***))v8[2])(&v8); /*0x76ff8f*/
     }
-    while ( ((unsigned __int8 (__thiscall *)(void ***))v8[1])(&v8) ); /*0x76ff9a*/
+    while ( ((uint8_t (__thiscall *)(void ***))v8[1])(&v8) ); /*0x76ff9a*/
   }
-  if ( ((unsigned __int8 (__thiscall *)(void ***))v8[1])(&v8) ) /*0x76ffa9*/
+  if ( ((uint8_t (__thiscall *)(void ***))v8[1])(&v8) ) /*0x76ffa9*/
   {
-    v5 = (_DWORD *)(*(_DWORD *)(a2 + 4) + 8 * v10); /*0x76ffbb*/
+    v5 = (unsigned int *)(*(unsigned int *)(a2 + 4) + 8 * v10); /*0x76ffbb*/
   }
   else
   {
     ComPtr::Constructor(v7); /*0x76ffc4*/
-    v7[0] = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76ffc9*/
     v4 = 1; /*0x76ffd1*/
     v5 = v7; /*0x76ffd6*/
   }
   ComPtr::Constructor(aP0); /*0x76ffdc*/
-  *aP0 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76ffe1*/
   ComPtr::Set(aP0, v5[1]); /*0x76ffed*/
   if ( (v4 & 1) != 0 ) /*0x76fff5*/
   {
-    v7[0] = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76fffb*/
     ComPtr::Release(v7); /*0x770003*/
   }
   return aP0; /*0x77000a*/
@@ -3215,32 +3146,32 @@ rc_ptr * FindTerritoryWOL(ObjectClass * aP0, int a2, int a3)
 } // namespace gamemd
 
 // 0x765b50
-_DWORD* Campaign_WorldDominationTour_24_::ddtor()
+unsigned int* Campaign_WorldDominationTour_24_::ddtor()
 {
   --this->q020; /*0x765b52*/
   return this; /*0x765b55*/
 }
 // 0x76f190
-_DWORD* VectorCursor::ddtor()
+unsigned int* VectorCursor::ddtor()
 {
   --this->q008; /*0x76f192*/
   return this; /*0x76f195*/
 }
 // 0x76f170
-_DWORD* Count::ddtor()
+unsigned int* Count::ddtor()
 {
   --this->q008; /*0x76f172*/
   return this; /*0x76f175*/
 }
 // 0x766fb0
-_DWORD* Conflict_WorldDominationTour_26::ddtor()
+unsigned int* Conflict_WorldDominationTour_26::ddtor()
 {
   --this->q008; /*0x766fb2*/
   return this; /*0x766fb5*/
 }
 // 0x76a5b0
-_DWORD* Map_WorldDominationTour_38::ddtor()
+unsigned int* Map_WorldDominationTour_38::ddtor()
 {
-  --*(this + 2); /*0x76a5b2*/
+  --this->RefCount; /*0x76a5b2*/
   return this; /*0x76a5b5*/
 }

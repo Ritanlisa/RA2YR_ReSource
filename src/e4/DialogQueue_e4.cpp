@@ -16,14 +16,14 @@ int DialogQueue::PushEntry()
   if ( dword_ABFCA0 < dword_ABFC98 /*0x5d4eac*/
     || (byte_ABFC9D || !dword_ABFC98)
     && dword_ABFCA4 > 0
-    && (result = (*(int (__thiscall **)(int *, int, _DWORD))(dword_ABFC90 + 8))(
+    && (result = (*(int (__thiscall **)(int *, int, unsigned int))(dword_ABFC90 + 8))(
                    &dword_ABFC90,
                    dword_ABFC98 + dword_ABFCA4,
                    0),
-        (_BYTE)result) )
+        (unsigned char)result) )
   {
     result = dword_ABFCA0++; /*0x5d4eb4*/
-    *((_DWORD *)dword_ABFC94 + result) = this; /*0x5d4ec3*/
+    *((unsigned int *)dword_ABFC94 + result) = this; /*0x5d4ec3*/
   }
   return result; /*0x5d4ec6*/
 }
@@ -42,7 +42,7 @@ int DialogQueue::RemoveEntry()
     do /*0x5d4f18*/
     {
       ++result; /*0x5d4f08*/
-      *((_DWORD *)dword_ABFC94 + result - 1) = *((_DWORD *)dword_ABFC94 + result); /*0x5d4f0c*/
+      *((unsigned int *)dword_ABFC94 + result - 1) = *((unsigned int *)dword_ABFC94 + result); /*0x5d4f0c*/
     }
     while ( result < dword_ABFCA0 ); /*0x5d4f18*/
   }

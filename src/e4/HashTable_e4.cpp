@@ -17,16 +17,16 @@
 namespace gamemd {
 int HashTable_flat::Get(IUnknown * aP1, IUnknown * aP2)
 {
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
 
   if ( !this->u32_4 ) /*0x624764*/
     return 0; /*0x62476c*/
-  v4 = *(_DWORD **)(*this + 4 * (((int (__thiscall *)(_DWORD *))this->u32_18)(aP1) & ((1 << this->u32_C) - 1))); /*0x62478a*/
+  v4 = *(unsigned int **)(*&this->q004 * (((int (__thiscall *)(unsigned int *))this->u32_18)(aP1) & ((1 << this->u32_C) - 1))); /*0x62478a*/
   if ( !v4 ) /*0x62478f*/
     return 0; /*0x624792*/
   while ( *v4 != *aP1 ) /*0x62479c*/
   {
-    v4 = (_DWORD *)v4[129]; /*0x62479e*/
+    v4 = (unsigned int *)v4[129]; /*0x62479e*/
     if ( !v4 ) /*0x6247a6*/
       return 0; /*0x6247ac*/
   }
@@ -39,7 +39,7 @@ namespace gamemd {
 AbstractClass * * HashTable_flat::Grow2()
 {
   int v2; // esi
-  _DWORD *v3; // ebp
+  unsigned int *v3; // ebp
   int v4; // edi
   void *v5; // edi
   unsigned int v6; // edx
@@ -48,15 +48,15 @@ AbstractClass * * HashTable_flat::Grow2()
   int v11; // ecx
   int v12; // eax
 
-  if ( *((_BYTE *)v5 + 20) != 1 ) /*0x624fc8*/
+  if ( *((unsigned char *)v5 + 20) != 1 ) /*0x624fc8*/
   {
     v2 = v5->vtable3; /*0x624fd0*/
-    v3 = (_DWORD *)*v5; /*0x624fd3*/
+    v3 = (unsigned int *)*v5; /*0x624fd3*/
     v4 = v5->vtable4 + 1; /*0x624fdc*/
     v5->vtable3 = 2 * v2; /*0x624fdd*/
     v3 = v3; /*0x624fe0*/
     v5->vtable4 = v4; /*0x624fe8*/
-    v5 = RA2_OPNEW(8 * v2); /*0x624ff3*/
+    v5 = operator new(8 * v2); /*0x624ff3*/
     v6 = 4 * v5->vtable3; /*0x624ff8*/
     *v5 = v5; /*0x624fff*/
     memset(v5, 0, v6); /*0x625004*/
@@ -72,10 +72,10 @@ AbstractClass * * HashTable_flat::Grow2()
           do /*0x625047*/
           {
             v10 = ((int (__thiscall *)(int))v5->nextArrayIndex)(v9) & ((1 << v5->vtable4) - 1); /*0x62502b*/
-            v11 = *(_DWORD *)(*v5 + 4 * v10); /*0x62502f*/
-            *(_DWORD *)(*v5 + 4 * v10) = v9; /*0x625035*/
-            v12 = *(_DWORD *)(v9 + 516); /*0x625037*/
-            *(_DWORD *)(v9 + 516) = v11; /*0x62503d*/
+            v11 = *(unsigned int *)(*v5 + 4 * v10); /*0x62502f*/
+            *(unsigned int *)(*v5 + 4 * v10) = v9; /*0x625035*/
+            v12 = *(unsigned int *)(v9 + 516); /*0x625037*/
+            *(unsigned int *)(v9 + 516) = v11; /*0x62503d*/
             v9 = v12; /*0x625043*/
           }
           while ( v12 ); /*0x625047*/
@@ -96,7 +96,7 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
 {
   int v4; // eax
   int v7; // edi
-  _DWORD *v8; // ecx
+  unsigned int *v8; // ecx
   int v9; // edx
   int v10; // ebp
   bool v11; // c0
@@ -110,7 +110,7 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
   int v19; // edx
   int v20; // ecx
   int v21; // eax
-  _DWORD *v22; // eax
+  unsigned int *v22; // eax
   unsigned int v23; // ebp
   int v24; // edi
   int *v25; // ebx
@@ -120,7 +120,7 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
   int v29; // edx
   int v30; // ecx
   int v31; // eax
-  _DWORD *v32; // [esp-4h] [ebp-1Ch]
+  unsigned int *v32; // [esp-4h] [ebp-1Ch]
   float v33; // [esp+10h] [ebp-8h]
   char v34; // [esp+1Ch] [ebp+4h]
   int *v35; // [esp+20h] [ebp+8h]
@@ -130,18 +130,18 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
   if ( !v4 ) /*0x6250a0*/
     return 0; /*0x6250a5*/
   v33 = (double)(unsigned int)(v4 - 1) / (double)(int)this->vtable3; /*0x6250d0*/
-  v7 = ((int (__thiscall *)(_DWORD *))this->nextArrayIndex)(a2) & ((1 << this->vtable4) - 1); /*0x6250e4*/
-  v8 = *(_DWORD **)(*this + 4 * v7); /*0x6250e6*/
+  v7 = ((int (__thiscall *)(unsigned int *))this->nextArrayIndex)(a2) & ((1 << this->vtable4) - 1); /*0x6250e4*/
+  v8 = *(unsigned int **)(*&this->q004 * v7); /*0x6250e6*/
   if ( !v8 ) /*0x6250eb*/
     return 0; /*0x6250f0*/
   v9 = a2[1]; /*0x6250f9*/
   if ( v9 == v8[1] && *a2 == *v8 ) /*0x62510e*/
   {
-    *a3 = *((_BYTE *)v8 + 8); /*0x62511b*/
-    v32 = *(_DWORD **)(*this + 4 * v7); /*0x625122*/
+    *a3 = *((unsigned char *)v8 + 8); /*0x62511b*/
+    v32 = *(unsigned int **)(*&this->q004 * v7); /*0x625122*/
     v10 = v32[3]; /*0x625123*/
     RA2_OPDEL(v32); /*0x625126*/
-    *(_DWORD *)(*this + 4 * v7) = v10; /*0x625134*/
+    *(unsigned int *)(*&this->q004 * v7) = v10; /*0x625134*/
     v11 = v33 < this->needsSave; /*0x62513a*/
     v12 = v33 == this->needsSave; /*0x62513a*/
     --this->vtable2; /*0x62513e*/
@@ -155,7 +155,7 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
         v15 = this->vtable4 - 1; /*0x625171*/
         this->vtable3 = v13 >> 1; /*0x625172*/
         this->vtable4 = v15; /*0x62517c*/
-        v16 = RA2_OPNEW(4 * (v13 >> 1)); /*0x625188*/
+        v16 = operator new(4 * (v13 >> 1)); /*0x625188*/
         v17 = 4 * this->vtable3; /*0x62518d*/
         *this = v16; /*0x625194*/
         memset(v16, 0, v17); /*0x625199*/
@@ -169,10 +169,10 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
               do /*0x6251d2*/
               {
                 v19 = ((int (__thiscall *)(int))this->nextArrayIndex)(v18) & ((1 << this->vtable4) - 1); /*0x6251bc*/
-                v20 = *(_DWORD *)(*this + 4 * v19); /*0x6251c0*/
-                *(_DWORD *)(*this + 4 * v19) = v18; /*0x6251c6*/
-                v21 = *(_DWORD *)(v18 + 12); /*0x6251c8*/
-                *(_DWORD *)(v18 + 12) = v20; /*0x6251cb*/
+                v20 = *(unsigned int *)(*&this->q004 * v19); /*0x6251c0*/
+                *(unsigned int *)(*&this->q004 * v19) = v18; /*0x6251c6*/
+                v21 = *(unsigned int *)(v18 + 12); /*0x6251c8*/
+                *(unsigned int *)(v18 + 12) = v20; /*0x6251cb*/
                 v18 = v21; /*0x6251ce*/
               }
               while ( v21 ); /*0x6251d2*/
@@ -190,18 +190,18 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
   }
   else
   {
-    v22 = (_DWORD *)v8[3]; /*0x6251f3*/
+    v22 = (unsigned int *)v8[3]; /*0x6251f3*/
     v34 = 0; /*0x6251f6*/
     if ( v22 ) /*0x6251fd*/
     {
       while ( v9 != v22[1] || *a2 != *v22 ) /*0x62520b*/
       {
         v8 = v22; /*0x62520d*/
-        v22 = (_DWORD *)v22[3]; /*0x62520f*/
+        v22 = (unsigned int *)v22[3]; /*0x62520f*/
         if ( !v22 ) /*0x625214*/
           goto LABEL_23; /*0x625214*/
       }
-      *a3 = *((_BYTE *)v22 + 8); /*0x625220*/
+      *a3 = *((unsigned char *)v22 + 8); /*0x625220*/
       v8[3] = v22[3]; /*0x625225*/
       --this->vtable2; /*0x62522c*/
       RA2_OPDEL(v22); /*0x62522f*/
@@ -218,7 +218,7 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
         v36 = (int *)*this; /*0x625269*/
         this->vtable3 = v23 >> 1; /*0x62526f*/
         this->vtable4 = v24 - 1; /*0x625277*/
-        v26 = RA2_OPNEW(4 * (v23 >> 1)); /*0x625282*/
+        v26 = operator new(4 * (v23 >> 1)); /*0x625282*/
         v27 = 4 * this->vtable3; /*0x625287*/
         *this = v26; /*0x62528e*/
         memset(v26, 0, v27); /*0x625293*/
@@ -232,10 +232,10 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
               do /*0x6252cc*/
               {
                 v29 = ((int (__thiscall *)(int))this->nextArrayIndex)(v28) & ((1 << this->vtable4) - 1); /*0x6252b6*/
-                v30 = *(_DWORD *)(*this + 4 * v29); /*0x6252ba*/
-                *(_DWORD *)(*this + 4 * v29) = v28; /*0x6252c0*/
-                v31 = *(_DWORD *)(v28 + 12); /*0x6252c2*/
-                *(_DWORD *)(v28 + 12) = v30; /*0x6252c5*/
+                v30 = *(unsigned int *)(*&this->q004 * v29); /*0x6252ba*/
+                *(unsigned int *)(*&this->q004 * v29) = v28; /*0x6252c0*/
+                v31 = *(unsigned int *)(v28 + 12); /*0x6252c2*/
+                *(unsigned int *)(v28 + 12) = v30; /*0x6252c5*/
                 v28 = v31; /*0x6252c8*/
               }
               while ( v31 ); /*0x6252cc*/
@@ -269,14 +269,14 @@ void HashTable_flat::Shrink2()
   int *v13; // [esp+8h] [ebp-4h]
 
   v2 = v5->vtable3; /*0x625785*/
-  if ( v2 > v5->u32_30 && *((_BYTE *)v5 + 20) != 1 ) /*0x625797*/
+  if ( v2 > v5->u32_30 && *((unsigned char *)v5 + 20) != 1 ) /*0x625797*/
   {
     v3 = (int *)*v5; /*0x6257a0*/
     v4 = v5->vtable4; /*0x6257a3*/
     v13 = (int *)*v5; /*0x6257a6*/
     v5->vtable3 = v2 >> 1; /*0x6257ac*/
     v5->vtable4 = v4 - 1; /*0x6257b4*/
-    v5 = RA2_OPNEW(4 * (v2 >> 1)); /*0x6257bf*/
+    v5 = operator new(4 * (v2 >> 1)); /*0x6257bf*/
     v6 = 4 * v5->vtable3; /*0x6257c4*/
     *v5 = v5; /*0x6257cb*/
     memset(v5, 0, v6); /*0x6257d0*/
@@ -292,10 +292,10 @@ void HashTable_flat::Shrink2()
           do /*0x62580d*/
           {
             v10 = ((int (__thiscall *)(int))v5->nextArrayIndex)(v9) & ((1 << v5->vtable4) - 1); /*0x6257f7*/
-            v11 = *(_DWORD *)(*v5 + 4 * v10); /*0x6257fb*/
-            *(_DWORD *)(*v5 + 4 * v10) = v9; /*0x625801*/
-            v12 = *(_DWORD *)(v9 + 8); /*0x625803*/
-            *(_DWORD *)(v9 + 8) = v11; /*0x625806*/
+            v11 = *(unsigned int *)(*v5 + 4 * v10); /*0x6257fb*/
+            *(unsigned int *)(*v5 + 4 * v10) = v9; /*0x625801*/
+            v12 = *(unsigned int *)(v9 + 8); /*0x625803*/
+            *(unsigned int *)(v9 + 8) = v11; /*0x625806*/
             v9 = v12; /*0x625809*/
           }
           while ( v12 ); /*0x62580d*/
@@ -326,14 +326,14 @@ void HashTable_flat::Rebuild2()
   int *v13; // [esp+8h] [ebp-4h]
 
   v2 = v5->vtable3; /*0x625835*/
-  if ( v2 > v5->u32_30 && *((_BYTE *)v5 + 20) != 1 ) /*0x625847*/
+  if ( v2 > v5->u32_30 && *((unsigned char *)v5 + 20) != 1 ) /*0x625847*/
   {
     v3 = (int *)*v5; /*0x625850*/
     v4 = v5->vtable4; /*0x625853*/
     v13 = (int *)*v5; /*0x625856*/
     v5->vtable3 = v2 >> 1; /*0x62585c*/
     v5->vtable4 = v4 - 1; /*0x625864*/
-    v5 = RA2_OPNEW(4 * (v2 >> 1)); /*0x62586f*/
+    v5 = operator new(4 * (v2 >> 1)); /*0x62586f*/
     v6 = 4 * v5->vtable3; /*0x625874*/
     *v5 = v5; /*0x62587b*/
     memset(v5, 0, v6); /*0x625880*/
@@ -349,10 +349,10 @@ void HashTable_flat::Rebuild2()
           do /*0x6258c3*/
           {
             v10 = ((int (__thiscall *)(int))v5->nextArrayIndex)(v9) & ((1 << v5->vtable4) - 1); /*0x6258a7*/
-            v11 = *(_DWORD *)(*v5 + 4 * v10); /*0x6258ab*/
-            *(_DWORD *)(*v5 + 4 * v10) = v9; /*0x6258b1*/
-            v12 = *(_DWORD *)(v9 + 516); /*0x6258b3*/
-            *(_DWORD *)(v9 + 516) = v11; /*0x6258b9*/
+            v11 = *(unsigned int *)(*v5 + 4 * v10); /*0x6258ab*/
+            *(unsigned int *)(*v5 + 4 * v10) = v9; /*0x6258b1*/
+            v12 = *(unsigned int *)(v9 + 516); /*0x6258b3*/
+            *(unsigned int *)(v9 + 516) = v11; /*0x6258b9*/
             v9 = v12; /*0x6258bf*/
           }
           while ( v12 ); /*0x6258c3*/
@@ -373,16 +373,16 @@ int HashTable_flat::FindString(char * Str1, IUnknown * aP2)
 {
   int v3; // esi
 
-  v3 = *(this + 1); /*0x625f61*/
+  v3 = this->q004; /*0x625f61*/
   if ( !v3 ) /*0x625f67*/
     return 0; /*0x625f84*/
   while ( strncmp(Str1, (const char *)v3, 4u) ) /*0x625f7b*/
   {
-    v3 = *(_DWORD *)(v3 + 12); /*0x625f7d*/
+    v3 = *(unsigned int *)(v3 + 12); /*0x625f7d*/
     if ( !v3 ) /*0x625f82*/
       return 0; /*0x625f82*/
   }
-  *(_DWORD *)aP2 = **(_DWORD **)(v3 + 8); /*0x625f9f*/
+  *(unsigned int *)aP2 = **(unsigned int **)(v3 + 8); /*0x625f9f*/
   return v3 != 0; /*0x625f86*/
 }
 } // namespace gamemd
@@ -393,20 +393,20 @@ int HashTable_flat::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
   int v4; // ebx
   unsigned int v6; // ecx
 
-  v4 = *(this + 1); /*0x625fb1*/
+  v4 = this->q004; /*0x625fb1*/
   if ( !v4 ) /*0x625fb7*/
     return 0; /*0x625fd4*/
   while ( strncmp(Str1, (const char *)v4, 4u) ) /*0x625fcb*/
   {
-    v4 = *(_DWORD *)(v4 + 12); /*0x625fcd*/
+    v4 = *(unsigned int *)(v4 + 12); /*0x625fcd*/
     if ( !v4 ) /*0x625fd2*/
       return 0; /*0x625fd2*/
   }
   v6 = *aP3; /*0x625fee*/
-  if ( *(unsigned __int16 *)(v4 + 6) < (int)*aP3 ) /*0x625ff2*/
-    v6 = *(unsigned __int16 *)(v4 + 6); /*0x625ff4*/
+  if ( *(uint16_t *)(v4 + 6) < (int)*aP3 ) /*0x625ff2*/
+    v6 = *(uint16_t *)(v4 + 6); /*0x625ff4*/
   qmemcpy(a2, *(const void **)(v4 + 8), v6); /*0x626003*/
-  *(_DWORD *)aP3 = *(unsigned __int16 *)(v4 + 6); /*0x626013*/
+  *(unsigned int *)aP3 = *(uint16_t *)(v4 + 6); /*0x626013*/
   return v4 != 0; /*0x625fd6*/
 }
 } // namespace gamemd
@@ -421,7 +421,7 @@ CampaignClass * * HashTable_flat::Clear()
   int *v6; // ecx
   const char **v7; // esi
   int *v8; // eax
-  _DWORD *v9; // esi
+  unsigned int *v9; // esi
   int v10; // edi
   bool v11; // c0
   bool v12; // c3
@@ -441,9 +441,9 @@ CampaignClass * * HashTable_flat::Clear()
   float v28; // [esp+10h] [ebp-31Ch]
   int *v29; // [esp+10h] [ebp-31Ch]
   void *v30; // [esp+14h] [ebp-318h] BYREF
-  __int64 v31; // [esp+18h] [ebp-314h]
+  int64_t v31; // [esp+18h] [ebp-314h]
   int v33; // [esp+24h] [ebp-308h]
-  _DWORD v34[193]; // [esp+28h] [ebp-304h] BYREF
+  unsigned int v34[193]; // [esp+28h] [ebp-304h] BYREF
 
   unknown_libname_73(&v30); /*0x6b9540*/
   while ( 1 ) /*0x6b9545*/
@@ -470,18 +470,18 @@ CampaignClass * * HashTable_flat::Clear()
     }
     if ( v5 == -1 ) /*0x6b9596*/
       break; /*0x6b9596*/
-    v7 = *(const char ***)(*(_DWORD *)v16 + 4 * v5); /*0x6b959c*/
+    v7 = *(const char ***)(*(unsigned int *)v16 + 4 * v5); /*0x6b959c*/
     String::Reassign((char **)&v30, v7); /*0x6b95a4*/
     v8 = *(int **)v16; /*0x6b95a9*/
     qmemcpy(v34, v7 + 1, sizeof(v34)); /*0x6b95b8*/
-    v9 = (_DWORD *)v8[v5]; /*0x6b95ba*/
+    v9 = (unsigned int *)v8[v5]; /*0x6b95ba*/
     v10 = v9[194]; /*0x6b95bf*/
     if ( v9 ) /*0x6b95c5*/
     {
       DeleteAndZero((void **)v8[v5]); /*0x6b95c9*/
       RA2_OPDEL(v9); /*0x6b95cf*/
     }
-    *(_DWORD *)(*(_DWORD *)v16 + 4 * v5) = v10; /*0x6b95de*/
+    *(unsigned int *)(*(unsigned int *)v16 + 4 * v5) = v10; /*0x6b95de*/
     v11 = v28 < v16->NeedsSaveOrLink; /*0x6b95e4*/
     v12 = v28 == v16->NeedsSaveOrLink; /*0x6b95e4*/
     --v16->vtable2; /*0x6b95e8*/
@@ -495,9 +495,9 @@ CampaignClass * * HashTable_flat::Clear()
         v29 = *(int **)v16; /*0x6b9616*/
         v16->vtable3 = v13 >> 1; /*0x6b961d*/
         v16->vtable4 = v14 - 1; /*0x6b9627*/
-        v16 = RA2_OPNEW(4 * (v13 >> 1)); /*0x6b9633*/
+        v16 = operator new(4 * (v13 >> 1)); /*0x6b9633*/
         v17 = 4 * v16->vtable3; /*0x6b9638*/
-        *(_DWORD *)v16 = v16; /*0x6b963f*/
+        *(unsigned int *)v16 = v16; /*0x6b963f*/
         memset(v16, 0, v17); /*0x6b9645*/
         if ( (int)v13 > 0 ) /*0x6b9650*/
         {
@@ -511,10 +511,10 @@ CampaignClass * * HashTable_flat::Clear()
               do /*0x6b9689*/
               {
                 v21 = (*(int (__thiscall **)(int))(v16 + 24))(v20) & ((1 << v16->vtable4) - 1); /*0x6b966c*/
-                v22 = *(_DWORD *)(*(_DWORD *)v16 + 4 * v21); /*0x6b9671*/
-                *(_DWORD *)(*(_DWORD *)v16 + 4 * v21) = v20; /*0x6b9677*/
-                v23 = *(_DWORD *)(v20 + 776); /*0x6b9679*/
-                *(_DWORD *)(v20 + 776) = v22; /*0x6b967f*/
+                v22 = *(unsigned int *)(*(unsigned int *)v16 + 4 * v21); /*0x6b9671*/
+                *(unsigned int *)(*(unsigned int *)v16 + 4 * v21) = v20; /*0x6b9677*/
+                v23 = *(unsigned int *)(v20 + 776); /*0x6b9679*/
+                *(unsigned int *)(v20 + 776) = v22; /*0x6b967f*/
                 v20 = v23; /*0x6b9685*/
               }
               while ( v23 ); /*0x6b9689*/
@@ -529,7 +529,7 @@ CampaignClass * * HashTable_flat::Clear()
       }
     }
     if ( v34[0] ) /*0x6b96a4*/
-      (**(void (__thiscall ***)(_DWORD, int))v34[0])(v34[0], 1); /*0x6b96ae*/
+      (**(void (__thiscall ***)(unsigned int, int))v34[0])(v34[0], 1); /*0x6b96ae*/
   }
   LABEL_23:
   DeleteAndZero(&v30); /*0x6b96b5*/
@@ -537,16 +537,16 @@ CampaignClass * * HashTable_flat::Clear()
   {
     do /*0x6b96fe*/
     {
-      v24 = *(_DWORD *)(*(_DWORD *)v16 + 4 * v3); /*0x6b96c6*/
+      v24 = *(unsigned int *)(*(unsigned int *)v16 + 4 * v3); /*0x6b96c6*/
       while ( v24 ) /*0x6b96cb*/
       {
         v25 = (void **)v24; /*0x6b96cd*/
-        v24 = *(_DWORD *)(v24 + 776); /*0x6b96cf*/
+        v24 = *(unsigned int *)(v24 + 776); /*0x6b96cf*/
         DeleteAndZero(v25); /*0x6b96db*/
         RA2_OPDEL(v25); /*0x6b96e1*/
       }
       ++v3; /*0x6b96f0*/
-      *(_DWORD *)(*(_DWORD *)v16 + 4 * v3 - 4) = 0; /*0x6b96f1*/
+      *(unsigned int *)(*(unsigned int *)v16 + 4 * v3 - 4) = 0; /*0x6b96f1*/
     }
     while ( v3 < v16->vtable3 ); /*0x6b96fe*/
   }
@@ -582,12 +582,12 @@ int HashTable_flat::Find(const char * a1, ConvertClass * aP2)
     atexit(nullsub_39); /*0x6ba174*/
   }
   dword_B0B948 = 0; /*0x6ba17c*/
-  if ( *(this + 1) /*0x6ba1a8*/
-    && (v4 = *(_DWORD *)(*this + 4 * (((int (__thiscall *)(const char **))*(this + 6))(&a1) & ((1 << *(this + 3)) - 1)))) != 0 )
+  if ( this->q004 /*0x6ba1a8*/
+    && (v4 = *(unsigned int *)(*&this->q004 * (((int (__thiscall *)(const char **))this->q018)(&a1) & ((1 << this->q00C) - 1)))) != 0 )
   {
-    while ( !(unsigned __int8)String::Compare(&a1) ) /*0x6ba1b8*/
+    while ( !(uint8_t)String::Compare(&a1) ) /*0x6ba1b8*/
     {
-      v4 = *(_DWORD *)(v4 + 776); /*0x6ba1ba*/
+      v4 = *(unsigned int *)(v4 + 776); /*0x6ba1ba*/
       if ( !v4 ) /*0x6ba1c2*/
         goto LABEL_7; /*0x6ba1c2*/
     }
@@ -619,28 +619,28 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
   int v7; // edx
   int v8; // esi
   int v9; // edi
-  _DWORD *v10; // edi
+  unsigned int *v10; // edi
   int v11; // ebp
   double v12; // st7
   bool v13; // c0
   bool v14; // c3
   int v15; // esi
   void *v16; // [esp+Ch] [ebp-310h] BYREF
-  __int64 v17; // [esp+10h] [ebp-30Ch]
-  _DWORD v18[193]; // [esp+18h] [ebp-304h] BYREF
+  int64_t v17; // [esp+10h] [ebp-30Ch]
+  unsigned int v18[193]; // [esp+18h] [ebp-304h] BYREF
 
   String::Assign((char **)&v16, a2); /*0x6ba247*/
   v3 = this->q004; /*0x6ba24c*/
   v18[0] = 0; /*0x6ba253*/
   if ( !v3 ) /*0x6ba257*/
     goto LABEL_24; /*0x6ba257*/
-  v4 = *(_DWORD *)(*(_DWORD *)this /*0x6ba273*/
+  v4 = *(unsigned int *)(*(unsigned int *)this /*0x6ba273*/
                  + 4 * ((*(int (__thiscall **)(void **))(&this->u32_84))(&v16) & ((1 << this->q00C) - 1)));
   if ( !v4 ) /*0x6ba278*/
     goto LABEL_24; /*0x6ba278*/
   while ( !String::Compare((const char **)v4, (const char **)&v16) ) /*0x6ba28c*/
   {
-    v4 = *(_DWORD *)(v4 + 776); /*0x6ba28e*/
+    v4 = *(unsigned int *)(v4 + 776); /*0x6ba28e*/
     if ( !v4 ) /*0x6ba296*/
       goto LABEL_24; /*0x6ba296*/
   }
@@ -654,20 +654,20 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
     v17 = (unsigned int)(v6 - 1); /*0x6ba2c7*/
     *(float *)&v17 = (double)v17 / (double)v7; /*0x6ba2e3*/
     v8 = (*(int (__thiscall **)(void **))(&this->u32_84))(&v16) & ((1 << this->q00C) - 1); /*0x6ba2f5*/
-    v9 = *(_DWORD *)(*(_DWORD *)&this->u32_10 * v8); /*0x6ba2f9*/
+    v9 = *(unsigned int *)(((unsigned int)(this->u32_10)) * v8); /*0x6ba2f9*/
     if ( v9 ) /*0x6ba2fe*/
     {
       if ( String::Compare((const char **)v9, (const char **)&v16) ) /*0x6ba30b*/
       {
-        v10 = *(_DWORD **)(*(_DWORD *)&this->u32_10 * v8); /*0x6ba316*/
+        v10 = *(unsigned int **)(((unsigned int)(this->u32_10)) * v8); /*0x6ba316*/
         v11 = v10[194]; /*0x6ba31b*/
         if ( v10 ) /*0x6ba321*/
         {
-          DeleteAndZero(*(void ***)(*(_DWORD *)&this->u32_10 * v8)); /*0x6ba325*/
+          DeleteAndZero(*(void ***)(((unsigned int)(this->u32_10)) * v8)); /*0x6ba325*/
           RA2_OPDEL(v10); /*0x6ba32b*/
         }
         v12 = *(float *)&v17; /*0x6ba335*/
-        *(_DWORD *)(*(_DWORD *)&this->u32_10 * v8) = v11; /*0x6ba339*/
+        *(unsigned int *)(((unsigned int)(this->u32_10)) * v8) = v11; /*0x6ba339*/
         v13 = v12 < *(double *)(&this->q00C2); /*0x6ba33f*/
         v14 = v12 == *(double *)(&this->q00C2); /*0x6ba33f*/
         --this->q004; /*0x6ba343*/
@@ -676,17 +676,17 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
       }
       else
       {
-        v15 = *(_DWORD *)(v9 + 776); /*0x6ba34f*/
+        v15 = *(unsigned int *)(v9 + 776); /*0x6ba34f*/
         if ( v15 ) /*0x6ba357*/
         {
           while ( !String::Compare((const char **)v15, (const char **)&v16) ) /*0x6ba367*/
           {
             v9 = v15; /*0x6ba369*/
-            v15 = *(_DWORD *)(v15 + 776); /*0x6ba36b*/
+            v15 = *(unsigned int *)(v15 + 776); /*0x6ba36b*/
             if ( !v15 ) /*0x6ba373*/
               goto LABEL_20; /*0x6ba373*/
           }
-          *(_DWORD *)(v9 + 776) = *(_DWORD *)(v15 + 776); /*0x6ba37d*/
+          *(unsigned int *)(v9 + 776) = *(unsigned int *)(v15 + 776); /*0x6ba37d*/
           --this->q004; /*0x6ba389*/
           DeleteAndZero((void **)v15); /*0x6ba390*/
           RA2_OPDEL((void *)v15); /*0x6ba396*/
@@ -700,7 +700,7 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
   }
   LABEL_22:
   if ( v18[0] ) /*0x6ba3ba*/
-    (**(void (__thiscall ***)(_DWORD, int))v18[0])(v18[0], 1); /*0x6ba3c0*/
+    (**(void (__thiscall ***)(unsigned int, int))v18[0])(v18[0], 1); /*0x6ba3c0*/
   LABEL_24:
   DeleteAndZero(&v16); /*0x6ba3c2*/
 }
@@ -712,7 +712,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
   int v4; // eax
   int v7; // ebx
   int v8; // esi
-  _DWORD *v9; // esi
+  unsigned int *v9; // esi
   int v10; // edi
   bool v11; // c0
   bool v12; // c3
@@ -746,21 +746,21 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
     return 0; /*0x6bac55*/
   v37 = (double)(unsigned int)(v4 - 1) / (double)(int)this->vtable3; /*0x6bac80*/
   v7 = ((int (__thiscall *)(const char **))this->nextArrayIndex)(aP1) & ((1 << this->vtable4) - 1); /*0x6bac95*/
-  v8 = *(_DWORD *)(*this + 4 * v7); /*0x6bac97*/
+  v8 = *(unsigned int *)(*&this->q004 * v7); /*0x6bac97*/
   v36 = v8; /*0x6bac9c*/
   if ( !v8 ) /*0x6baca0*/
     return 0; /*0x6baca5*/
   if ( String::Compare((const char **)v8, aP1) ) /*0x6bacb1*/
   {
     qmemcpy(a2, (const void *)(v8 + 4), 0x304u); /*0x6bacca*/
-    v9 = *(_DWORD **)(*this + 4 * v7); /*0x6baccf*/
+    v9 = *(unsigned int **)(*&this->q004 * v7); /*0x6baccf*/
     v10 = v9[194]; /*0x6bacd4*/
     if ( v9 ) /*0x6bacda*/
     {
-      DeleteAndZero(*(void ***)(*this + 4 * v7)); /*0x6bacde*/
+      DeleteAndZero(*(void ***)(*&this->q004 * v7)); /*0x6bacde*/
       RA2_OPDEL(v9); /*0x6bace4*/
     }
-    *(_DWORD *)(*this + 4 * v7) = v10; /*0x6bacf3*/
+    *(unsigned int *)(*&this->q004 * v7) = v10; /*0x6bacf3*/
     v11 = v37 < this->needsSave; /*0x6bacf9*/
     v12 = v37 == this->needsSave; /*0x6bacf9*/
     --this->vtable2; /*0x6bacfd*/
@@ -774,7 +774,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
         v15 = this->vtable4 - 1; /*0x6bad31*/
         this->vtable3 = v13 >> 1; /*0x6bad32*/
         this->vtable4 = v15; /*0x6bad3c*/
-        v16 = RA2_OPNEW(4 * (v13 >> 1)); /*0x6bad48*/
+        v16 = operator new(4 * (v13 >> 1)); /*0x6bad48*/
         v17 = 4 * this->vtable3; /*0x6bad4d*/
         *this = v16; /*0x6bad54*/
         memset(v16, 0, v17); /*0x6bad5a*/
@@ -790,10 +790,10 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
               do /*0x6bad9e*/
               {
                 v21 = ((int (__thiscall *)(int))this->nextArrayIndex)(v20) & ((1 << this->vtable4) - 1); /*0x6bad81*/
-                v22 = *(_DWORD *)(*this + 4 * v21); /*0x6bad86*/
-                *(_DWORD *)(*this + 4 * v21) = v20; /*0x6bad8c*/
-                v23 = *(_DWORD *)(v20 + 776); /*0x6bad8e*/
-                *(_DWORD *)(v20 + 776) = v22; /*0x6bad94*/
+                v22 = *(unsigned int *)(*&this->q004 * v21); /*0x6bad86*/
+                *(unsigned int *)(*&this->q004 * v21) = v20; /*0x6bad8c*/
+                v23 = *(unsigned int *)(v20 + 776); /*0x6bad8e*/
+                *(unsigned int *)(v20 + 776) = v22; /*0x6bad94*/
                 v20 = v23; /*0x6bad9a*/
               }
               while ( v23 ); /*0x6bad9e*/
@@ -811,19 +811,19 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
   }
   else
   {
-    v24 = *(_DWORD *)(v8 + 776); /*0x6badbf*/
+    v24 = *(unsigned int *)(v8 + 776); /*0x6badbf*/
     v38 = 0; /*0x6badc5*/
     if ( v24 ) /*0x6badcc*/
     {
       while ( !String::Compare((const char **)v24, aP1) ) /*0x6badd8*/
       {
         v36 = v24; /*0x6badda*/
-        v24 = *(_DWORD *)(v24 + 776); /*0x6badde*/
+        v24 = *(unsigned int *)(v24 + 776); /*0x6badde*/
         if ( !v24 ) /*0x6bade6*/
           goto LABEL_24; /*0x6bade6*/
       }
       qmemcpy(a2, (const void *)(v24 + 4), 0x304u); /*0x6badfa*/
-      *(_DWORD *)(v36 + 776) = *(_DWORD *)(v24 + 776); /*0x6bae02*/
+      *(unsigned int *)(v36 + 776) = *(unsigned int *)(v24 + 776); /*0x6bae02*/
       --this->vtable2; /*0x6bae0e*/
       DeleteAndZero((void **)v24); /*0x6bae15*/
       RA2_OPDEL((void *)v24); /*0x6bae1b*/
@@ -840,7 +840,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
         v40 = (int *)*this; /*0x6bae5a*/
         this->vtable3 = v25 >> 1; /*0x6bae60*/
         this->vtable4 = v26 - 1; /*0x6bae68*/
-        v28 = RA2_OPNEW(4 * (v25 >> 1)); /*0x6bae73*/
+        v28 = operator new(4 * (v25 >> 1)); /*0x6bae73*/
         v29 = 4 * this->vtable3; /*0x6bae78*/
         *this = v28; /*0x6bae7f*/
         memset(v28, 0, v29); /*0x6bae85*/
@@ -856,10 +856,10 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
               do /*0x6baec9*/
               {
                 v33 = ((int (__thiscall *)(int))this->nextArrayIndex)(v32) & ((1 << this->vtable4) - 1); /*0x6baeac*/
-                v34 = *(_DWORD *)(*this + 4 * v33); /*0x6baeb1*/
-                *(_DWORD *)(*this + 4 * v33) = v32; /*0x6baeb7*/
-                v35 = *(_DWORD *)(v32 + 776); /*0x6baeb9*/
-                *(_DWORD *)(v32 + 776) = v34; /*0x6baebf*/
+                v34 = *(unsigned int *)(*&this->q004 * v33); /*0x6baeb1*/
+                *(unsigned int *)(*&this->q004 * v33) = v32; /*0x6baeb7*/
+                v35 = *(unsigned int *)(v32 + 776); /*0x6baeb9*/
+                *(unsigned int *)(v32 + 776) = v34; /*0x6baebf*/
                 v32 = v35; /*0x6baec5*/
               }
               while ( v35 ); /*0x6baec9*/
@@ -895,14 +895,14 @@ AbstractClass * * HashTable_flat::RebuildEx()
   int *v13; // [esp+8h] [ebp-4h]
 
   v2 = v5->vtable3; /*0x6baef5*/
-  if ( v2 > v5->u32_30 && *((_BYTE *)v5 + 20) != 1 ) /*0x6baf07*/
+  if ( v2 > v5->u32_30 && *((unsigned char *)v5 + 20) != 1 ) /*0x6baf07*/
   {
     v3 = (int *)*v5; /*0x6baf10*/
     v4 = v5->vtable4; /*0x6baf13*/
     v13 = (int *)*v5; /*0x6baf16*/
     v5->vtable3 = v2 >> 1; /*0x6baf1c*/
     v5->vtable4 = v4 - 1; /*0x6baf24*/
-    v5 = RA2_OPNEW(4 * (v2 >> 1)); /*0x6baf2f*/
+    v5 = operator new(4 * (v2 >> 1)); /*0x6baf2f*/
     v6 = 4 * v5->vtable3; /*0x6baf34*/
     *v5 = v5; /*0x6baf3b*/
     memset(v5, 0, v6); /*0x6baf40*/
@@ -918,10 +918,10 @@ AbstractClass * * HashTable_flat::RebuildEx()
           do /*0x6baf83*/
           {
             v10 = ((int (__thiscall *)(int))v5->nextArrayIndex)(v9) & ((1 << v5->vtable4) - 1); /*0x6baf67*/
-            v11 = *(_DWORD *)(*v5 + 4 * v10); /*0x6baf6b*/
-            *(_DWORD *)(*v5 + 4 * v10) = v9; /*0x6baf71*/
-            v12 = *(_DWORD *)(v9 + 776); /*0x6baf73*/
-            *(_DWORD *)(v9 + 776) = v11; /*0x6baf79*/
+            v11 = *(unsigned int *)(*v5 + 4 * v10); /*0x6baf6b*/
+            *(unsigned int *)(*v5 + 4 * v10) = v9; /*0x6baf71*/
+            v12 = *(unsigned int *)(v9 + 776); /*0x6baf73*/
+            *(unsigned int *)(v9 + 776) = v11; /*0x6baf79*/
             v9 = v12; /*0x6baf7f*/
           }
           while ( v12 ); /*0x6baf83*/
@@ -940,10 +940,10 @@ AbstractClass * * HashTable_flat::RebuildEx()
 namespace gamemd {
 ObjectClass * * HashTable_flat::Remove(int a2)
 {
-  _DWORD *v3; // esi
-  _DWORD *v4; // eax
+  unsigned int *v3; // esi
+  unsigned int *v4; // eax
   int v5; // eax
-  _DWORD *v6; // eax
+  unsigned int *v6; // eax
   void *v9; // eax
   void *v10; // ecx
   int *v11; // edi
@@ -951,8 +951,8 @@ ObjectClass * * HashTable_flat::Remove(int a2)
   int v13; // eax
   int v14; // eax
   int i; // ecx
-  _DWORD *v16; // eax
-  _DWORD *v17; // edi
+  unsigned int *v16; // eax
+  unsigned int *v17; // edi
   int v18; // eax
   int v19; // eax
   int v20; // ecx
@@ -963,7 +963,7 @@ ObjectClass * * HashTable_flat::Remove(int a2)
   v3 = &this->q24C; /*0x72473d*/
   if ( !this->q250 ) /*0x724745*/
     return; /*0x724745*/
-  v4 = (_DWORD *)this->q25C; /*0x72474b*/
+  v4 = (unsigned int *)this->q25C; /*0x72474b*/
   if ( !v4 || *v4 != a2 ) /*0x72475a*/
   {
     v5 = CommandClass::BinarySearchAction(&a2); /*0x724763*/
@@ -973,7 +973,7 @@ ObjectClass * * HashTable_flat::Remove(int a2)
   }
   if ( v3[1] ) /*0x724773*/
   {
-    v6 = (_DWORD *)v3[4]; /*0x72477a*/
+    v6 = (unsigned int *)v3[4]; /*0x72477a*/
     if ( v6 && *v6 == a2 ) /*0x724789*/
       goto LABEL_11; /*0x724789*/
     v7 = CommandClass::BinarySearchAction(&a2); /*0x724792*/
@@ -992,18 +992,18 @@ ObjectClass * * HashTable_flat::Remove(int a2)
   Block = v9; /*0x7247b2*/
   if ( v10 == v9 && v10 ) /*0x7247ba*/
   {
-    this->release(this + 6); /*0x7247c5*/
+    this->release&this->q018; /*0x7247c5*/
     v9 = Block; /*0x7247c8*/
   }
   v11 = (int *)v9; /*0x7247cd*/
   v12 = v3[1]; /*0x7247cf*/
   if ( v12 ) /*0x7247d4*/
   {
-    if ( !*((_BYTE *)v3 + 12) ) /*0x7247da*/
+    if ( !*((unsigned char *)v3 + 12) ) /*0x7247da*/
     {
       qsort((void *)*v3, v12, 8u, CompareFunc2Int); /*0x7247ec*/
       v3[4] = 0; /*0x7247f4*/
-      *((_BYTE *)v3 + 12) = 1; /*0x7247fb*/
+      *((unsigned char *)v3 + 12) = 1; /*0x7247fb*/
     }
     v23 = *v11; /*0x724807*/
     v13 = UI_Remove(&v23); /*0x72480f*/
@@ -1014,10 +1014,10 @@ ObjectClass * * HashTable_flat::Remove(int a2)
       {
         for ( i = v14 + 1; i < v3[1]; *(v16 - 1) = v16[1] ) /*0x72482a*/
         {
-          v16 = (_DWORD *)(*v3 + 8 * i++); /*0x72482e*/
+          v16 = (unsigned int *)(*v3 + 8 * i++); /*0x72482e*/
           *(v16 - 2) = *v16; /*0x724834*/
         }
-        v17 = (_DWORD *)*v3; /*0x724847*/
+        v17 = (unsigned int *)*v3; /*0x724847*/
         v18 = v3[1] - 1; /*0x724849*/
         v3[1] = v18; /*0x72484c*/
         v17[2 * v18] = 0; /*0x724851*/
@@ -1035,7 +1035,7 @@ ObjectClass * * HashTable_flat::Remove(int a2)
       v21 = v20 - 1; /*0x72487e*/
       for ( this->q091 = v21; /*0x724884*/
             v19 < this->q091;
-            *(_DWORD *)(this->q08E + 4 * v19 - 4) = *(_DWORD *)(this->q08E + 4 * v19) )
+            *(unsigned int *)(this->q08E + 4 * v19 - 4) = *(unsigned int *)(this->q08E + 4 * v19) )
       {
         ++v19; /*0x724889*/
       }
@@ -1066,9 +1066,9 @@ unsigned int HashTable_flat::CleanupAndResize()
   int v16; // eax
   int *v17; // [esp+10h] [ebp-4h]
 
-  for ( i = 0; i < *(v9 + 2); *(_DWORD *)(*v9 + 4 * i - 4) = 0 ) /*0x7ace67*/
+  for ( i = 0; i < *(v9 + 2); *(unsigned int *)(*v9 + 4 * i - 4) = 0 ) /*0x7ace67*/
   {
-    v3 = *(_DWORD *)(*v9 + 4 * i); /*0x7ace72*/
+    v3 = *(unsigned int *)(*v9 + 4 * i); /*0x7ace72*/
     while ( v3 ) /*0x7ace77*/
     {
       v4 = (void **)v3; /*0x7ace79*/
@@ -1082,7 +1082,7 @@ unsigned int HashTable_flat::CleanupAndResize()
   v6 = *(v9 + 2); /*0x7aceab*/
   for ( *(v9 + 1) = 0; v6 > result; v6 = *(v9 + 2) ) /*0x7aceb7*/
   {
-    if ( *((_BYTE *)v9 + 20) ) /*0x7acebd*/
+    if ( *((unsigned char *)v9 + 20) ) /*0x7acebd*/
       break; /*0x7acec2*/
     if ( v6 > result ) /*0x7aceca*/
     {
@@ -1091,7 +1091,7 @@ unsigned int HashTable_flat::CleanupAndResize()
       v17 = (int *)*v9; /*0x7aced7*/
       *(v9 + 2) = v6 >> 1; /*0x7acede*/
       *(v9 + 3) = v7 - 1; /*0x7acee8*/
-      v9 = RA2_OPNEW(4 * (v6 >> 1)); /*0x7acef4*/
+      v9 = operator new(4 * (v6 >> 1)); /*0x7acef4*/
       v10 = 4 * *(v9 + 2); /*0x7acef9*/
       *v9 = v9; /*0x7acf00*/
       memset(v9, 0, v10); /*0x7acf05*/
@@ -1107,10 +1107,10 @@ unsigned int HashTable_flat::CleanupAndResize()
             do /*0x7acf42*/
             {
               v14 = ((int (__thiscall *)(int))*(v9 + 6))(v13) & ((1 << *(v9 + 3)) - 1); /*0x7acf2c*/
-              v15 = *(_DWORD *)(*v9 + 4 * v14); /*0x7acf30*/
-              *(_DWORD *)(*v9 + 4 * v14) = v13; /*0x7acf36*/
-              v16 = *(_DWORD *)(v13 + 8); /*0x7acf38*/
-              *(_DWORD *)(v13 + 8) = v15; /*0x7acf3b*/
+              v15 = *(unsigned int *)(*v9 + 4 * v14); /*0x7acf30*/
+              *(unsigned int *)(*v9 + 4 * v14) = v13; /*0x7acf36*/
+              v16 = *(unsigned int *)(v13 + 8); /*0x7acf38*/
+              *(unsigned int *)(v13 + 8) = v15; /*0x7acf3b*/
               v13 = v16; /*0x7acf3e*/
             }
             while ( v16 ); /*0x7acf42*/
@@ -1147,9 +1147,9 @@ unsigned int HashTable_flat::Rebuild()
   int v16; // eax
   int *v17; // [esp+10h] [ebp-4h]
 
-  for ( i = 0; i < *(v9 + 2); *(_DWORD *)(*v9 + 4 * i - 4) = 0 ) /*0x7acf77*/
+  for ( i = 0; i < *(v9 + 2); *(unsigned int *)(*v9 + 4 * i - 4) = 0 ) /*0x7acf77*/
   {
-    v3 = *(_DWORD *)(*v9 + 4 * i); /*0x7acf82*/
+    v3 = *(unsigned int *)(*v9 + 4 * i); /*0x7acf82*/
     while ( v3 ) /*0x7acf87*/
     {
       v4 = (void **)v3; /*0x7acf89*/
@@ -1163,7 +1163,7 @@ unsigned int HashTable_flat::Rebuild()
   v6 = *(v9 + 2); /*0x7acfbe*/
   for ( *(v9 + 1) = 0; v6 > result; v6 = *(v9 + 2) ) /*0x7acfca*/
   {
-    if ( *((_BYTE *)v9 + 20) ) /*0x7acfd0*/
+    if ( *((unsigned char *)v9 + 20) ) /*0x7acfd0*/
       break; /*0x7acfd5*/
     if ( v6 > result ) /*0x7acfdd*/
     {
@@ -1172,7 +1172,7 @@ unsigned int HashTable_flat::Rebuild()
       v17 = (int *)*v9; /*0x7acfea*/
       *(v9 + 2) = v6 >> 1; /*0x7acff1*/
       *(v9 + 3) = v7 - 1; /*0x7acffb*/
-      v9 = RA2_OPNEW(4 * (v6 >> 1)); /*0x7ad007*/
+      v9 = operator new(4 * (v6 >> 1)); /*0x7ad007*/
       v10 = 4 * *(v9 + 2); /*0x7ad00c*/
       *v9 = v9; /*0x7ad013*/
       memset(v9, 0, v10); /*0x7ad018*/
@@ -1188,10 +1188,10 @@ unsigned int HashTable_flat::Rebuild()
             do /*0x7ad05b*/
             {
               v14 = ((int (__thiscall *)(int))*(v9 + 6))(v13) & ((1 << *(v9 + 3)) - 1); /*0x7ad03f*/
-              v15 = *(_DWORD *)(*v9 + 4 * v14); /*0x7ad043*/
-              *(_DWORD *)(*v9 + 4 * v14) = v13; /*0x7ad049*/
-              v16 = *(_DWORD *)(v13 + 272); /*0x7ad04b*/
-              *(_DWORD *)(v13 + 272) = v15; /*0x7ad051*/
+              v15 = *(unsigned int *)(*v9 + 4 * v14); /*0x7ad043*/
+              *(unsigned int *)(*v9 + 4 * v14) = v13; /*0x7ad049*/
+              v16 = *(unsigned int *)(v13 + 272); /*0x7ad04b*/
+              *(unsigned int *)(v13 + 272) = v15; /*0x7ad051*/
               v13 = v16; /*0x7ad057*/
             }
             while ( v16 ); /*0x7ad05b*/
@@ -1218,7 +1218,7 @@ int HashTable_flat::LookupString(const char ** a2, unsigned int * a3)
 
   if ( !*(v9 + 1) ) /*0x7adc64*/
     return 0; /*0x7adc6c*/
-  v4 = *(_DWORD *)(*v9 + 4 * (((int (__thiscall *)(const char **))*(v9 + 6))(a2) & ((1 << *(v9 + 3)) - 1))); /*0x7adc8a*/
+  v4 = *(unsigned int *)(*v9 + 4 * (((int (__thiscall *)(const char **))*(v9 + 6))(a2) & ((1 << *(v9 + 3)) - 1))); /*0x7adc8a*/
   if ( !v4 ) /*0x7adc8f*/
     return 0; /*0x7adc92*/
   while ( 1 ) /*0x7adc9b*/
@@ -1241,7 +1241,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
   int v4; // eax
   int v7; // ebx
   int v8; // esi
-  _DWORD *v9; // esi
+  unsigned int *v9; // esi
   int v10; // edi
   bool v11; // c0
   bool v12; // c3
@@ -1277,21 +1277,21 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
     return 0; /*0x7adce5*/
   v37 = (double)(unsigned int)(v4 - 1) / (double)(int)this->vtable3; /*0x7add10*/
   v7 = ((int (__thiscall *)(const char **))this->nextArrayIndex)(aP1) & ((1 << this->vtable4) - 1); /*0x7add25*/
-  v8 = *(_DWORD *)(*this + 4 * v7); /*0x7add27*/
+  v8 = *(unsigned int *)(*&this->q004 * v7); /*0x7add27*/
   v36 = v8; /*0x7add2c*/
   if ( !v8 ) /*0x7add30*/
     return 0; /*0x7add35*/
   if ( String::Compare((const char **)v8, aP1) ) /*0x7add41*/
   {
     qmemcpy(a2, (const void *)(v8 + 4), 0x6Cu); /*0x7add5a*/
-    v9 = *(_DWORD **)(*this + 4 * v7); /*0x7add5f*/
+    v9 = *(unsigned int **)(*&this->q004 * v7); /*0x7add5f*/
     v10 = v9[28]; /*0x7add64*/
     if ( v9 ) /*0x7add67*/
     {
-      DeleteAndZero(*(void ***)(*this + 4 * v7)); /*0x7add6b*/
+      DeleteAndZero(*(void ***)(*&this->q004 * v7)); /*0x7add6b*/
       RA2_OPDEL(v9); /*0x7add71*/
     }
-    *(_DWORD *)(*this + 4 * v7) = v10; /*0x7add80*/
+    *(unsigned int *)(*&this->q004 * v7) = v10; /*0x7add80*/
     v11 = v37 < this->needsSave; /*0x7add86*/
     v12 = v37 == this->needsSave; /*0x7add86*/
     --this->vtable2; /*0x7add8a*/
@@ -1305,7 +1305,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
         v15 = this->vtable4 - 1; /*0x7addbe*/
         this->vtable3 = v13 >> 1; /*0x7addbf*/
         this->vtable4 = v15; /*0x7addc9*/
-        v16 = RA2_OPNEW(4 * (v13 >> 1)); /*0x7addd5*/
+        v16 = operator new(4 * (v13 >> 1)); /*0x7addd5*/
         v17 = 4 * this->vtable3; /*0x7addda*/
         *this = v16; /*0x7adde1*/
         memset(v16, 0, v17); /*0x7adde7*/
@@ -1321,10 +1321,10 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
               do /*0x7ade25*/
               {
                 v21 = ((int (__thiscall *)(int))this->nextArrayIndex)(v20) & ((1 << this->vtable4) - 1); /*0x7ade0e*/
-                v22 = *(_DWORD *)(*this + 4 * v21); /*0x7ade13*/
-                *(_DWORD *)(*this + 4 * v21) = v20; /*0x7ade19*/
-                v23 = *(_DWORD *)(v20 + 112); /*0x7ade1b*/
-                *(_DWORD *)(v20 + 112) = v22; /*0x7ade1e*/
+                v22 = *(unsigned int *)(*&this->q004 * v21); /*0x7ade13*/
+                *(unsigned int *)(*&this->q004 * v21) = v20; /*0x7ade19*/
+                v23 = *(unsigned int *)(v20 + 112); /*0x7ade1b*/
+                *(unsigned int *)(v20 + 112) = v22; /*0x7ade1e*/
                 v20 = v23; /*0x7ade21*/
               }
               while ( v23 ); /*0x7ade25*/
@@ -1342,19 +1342,19 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
   }
   else
   {
-    v24 = *(_DWORD *)(v8 + 112); /*0x7ade46*/
+    v24 = *(unsigned int *)(v8 + 112); /*0x7ade46*/
     v38 = 0; /*0x7ade49*/
     if ( v24 ) /*0x7ade50*/
     {
       while ( !String::Compare((const char **)v24, aP1) ) /*0x7ade5c*/
       {
         v36 = v24; /*0x7ade5e*/
-        v24 = *(_DWORD *)(v24 + 112); /*0x7ade62*/
+        v24 = *(unsigned int *)(v24 + 112); /*0x7ade62*/
         if ( !v24 ) /*0x7ade67*/
           goto LABEL_24; /*0x7ade67*/
       }
       qmemcpy(a2, (const void *)(v24 + 4), 0x6Cu); /*0x7ade7b*/
-      *(_DWORD *)(v36 + 112) = *(_DWORD *)(v24 + 112); /*0x7ade80*/
+      *(unsigned int *)(v36 + 112) = *(unsigned int *)(v24 + 112); /*0x7ade80*/
       --this->vtable2; /*0x7ade89*/
       DeleteAndZero((void **)v24); /*0x7ade90*/
       RA2_OPDEL((void *)v24); /*0x7ade96*/
@@ -1371,7 +1371,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
         v40 = (int *)*this; /*0x7aded5*/
         this->vtable3 = v25 >> 1; /*0x7adedb*/
         this->vtable4 = v26 - 1; /*0x7adee3*/
-        v28 = RA2_OPNEW(4 * (v25 >> 1)); /*0x7adeee*/
+        v28 = operator new(4 * (v25 >> 1)); /*0x7adeee*/
         v29 = 4 * this->vtable3; /*0x7adef3*/
         *this = v28; /*0x7adefa*/
         memset(v28, 0, v29); /*0x7adf00*/
@@ -1387,10 +1387,10 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
               do /*0x7adf3e*/
               {
                 v33 = ((int (__thiscall *)(int))this->nextArrayIndex)(v32) & ((1 << this->vtable4) - 1); /*0x7adf27*/
-                v34 = *(_DWORD *)(*this + 4 * v33); /*0x7adf2c*/
-                *(_DWORD *)(*this + 4 * v33) = v32; /*0x7adf32*/
-                v35 = *(_DWORD *)(v32 + 112); /*0x7adf34*/
-                *(_DWORD *)(v32 + 112) = v34; /*0x7adf37*/
+                v34 = *(unsigned int *)(*&this->q004 * v33); /*0x7adf2c*/
+                *(unsigned int *)(*&this->q004 * v33) = v32; /*0x7adf32*/
+                v35 = *(unsigned int *)(v32 + 112); /*0x7adf34*/
+                *(unsigned int *)(v32 + 112) = v34; /*0x7adf37*/
                 v32 = v35; /*0x7adf3a*/
               }
               while ( v35 ); /*0x7adf3e*/
@@ -1415,7 +1415,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
   int v4; // eax
   int v7; // edi
   int v8; // ebp
-  _DWORD *v9; // ebp
+  unsigned int *v9; // ebp
   int v10; // ebx
   bool v11; // c0
   bool v12; // c3
@@ -1447,20 +1447,20 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
     return 0; /*0x7ae205*/
   v32 = (double)(unsigned int)(v4 - 1) / (double)(int)this->vtable3; /*0x7ae230*/
   v7 = ((int (__thiscall *)(const char **))this->nextArrayIndex)(aP1) & ((1 << this->vtable4) - 1); /*0x7ae244*/
-  v8 = *(_DWORD *)(*this + 4 * v7); /*0x7ae246*/
+  v8 = *(unsigned int *)(*&this->q004 * v7); /*0x7ae246*/
   if ( !v8 ) /*0x7ae24b*/
     return 0; /*0x7ae250*/
   if ( String::Compare((const char **)v8, aP1) ) /*0x7ae25c*/
   {
-    *aP2 = *(_DWORD *)(v8 + 4); /*0x7ae270*/
-    v9 = *(_DWORD **)(*this + 4 * v7); /*0x7ae274*/
+    *aP2 = *(unsigned int *)(v8 + 4); /*0x7ae270*/
+    v9 = *(unsigned int **)(*&this->q004 * v7); /*0x7ae274*/
     v10 = v9[2]; /*0x7ae279*/
     if ( v9 ) /*0x7ae27c*/
     {
-      DeleteAndZero(*(void ***)(*this + 4 * v7)); /*0x7ae280*/
+      DeleteAndZero(*(void ***)(*&this->q004 * v7)); /*0x7ae280*/
       RA2_OPDEL(v9); /*0x7ae286*/
     }
-    *(_DWORD *)(*this + 4 * v7) = v10; /*0x7ae294*/
+    *(unsigned int *)(*&this->q004 * v7) = v10; /*0x7ae294*/
     v11 = v32 < this->needsSave; /*0x7ae29a*/
     v12 = v32 == this->needsSave; /*0x7ae29a*/
     --this->vtable2; /*0x7ae29e*/
@@ -1474,7 +1474,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
         v34 = (int *)*this; /*0x7ae2c7*/
         this->vtable3 = v13 >> 1; /*0x7ae2cd*/
         this->vtable4 = v14 - 1; /*0x7ae2d5*/
-        v16 = RA2_OPNEW(4 * (v13 >> 1)); /*0x7ae2e0*/
+        v16 = operator new(4 * (v13 >> 1)); /*0x7ae2e0*/
         v17 = 4 * this->vtable3; /*0x7ae2e5*/
         *this = v16; /*0x7ae2ec*/
         memset(v16, 0, v17); /*0x7ae2f1*/
@@ -1488,10 +1488,10 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
               do /*0x7ae32a*/
               {
                 v19 = ((int (__thiscall *)(int))this->nextArrayIndex)(v18) & ((1 << this->vtable4) - 1); /*0x7ae314*/
-                v20 = *(_DWORD *)(*this + 4 * v19); /*0x7ae318*/
-                *(_DWORD *)(*this + 4 * v19) = v18; /*0x7ae31e*/
-                v21 = *(_DWORD *)(v18 + 8); /*0x7ae320*/
-                *(_DWORD *)(v18 + 8) = v20; /*0x7ae323*/
+                v20 = *(unsigned int *)(*&this->q004 * v19); /*0x7ae318*/
+                *(unsigned int *)(*&this->q004 * v19) = v18; /*0x7ae31e*/
+                v21 = *(unsigned int *)(v18 + 8); /*0x7ae320*/
+                *(unsigned int *)(v18 + 8) = v20; /*0x7ae323*/
                 v18 = v21; /*0x7ae326*/
               }
               while ( v21 ); /*0x7ae32a*/
@@ -1509,19 +1509,19 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
   }
   else
   {
-    v22 = *(_DWORD *)(v8 + 8); /*0x7ae34b*/
+    v22 = *(unsigned int *)(v8 + 8); /*0x7ae34b*/
     v33 = 0; /*0x7ae34e*/
     if ( v22 ) /*0x7ae355*/
     {
       while ( !String::Compare((const char **)v22, aP1) ) /*0x7ae361*/
       {
         v8 = v22; /*0x7ae363*/
-        v22 = *(_DWORD *)(v22 + 8); /*0x7ae365*/
+        v22 = *(unsigned int *)(v22 + 8); /*0x7ae365*/
         if ( !v22 ) /*0x7ae36a*/
           goto LABEL_23; /*0x7ae36a*/
       }
-      *aP2 = *(_DWORD *)(v22 + 4); /*0x7ae375*/
-      *(_DWORD *)(v8 + 8) = *(_DWORD *)(v22 + 8); /*0x7ae37a*/
+      *aP2 = *(unsigned int *)(v22 + 4); /*0x7ae375*/
+      *(unsigned int *)(v8 + 8) = *(unsigned int *)(v22 + 8); /*0x7ae37a*/
       --this->vtable2; /*0x7ae383*/
       DeleteAndZero((void **)v22); /*0x7ae38a*/
       RA2_OPDEL((void *)v22); /*0x7ae390*/
@@ -1538,7 +1538,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
         v25 = this->vtable4 - 1; /*0x7ae3d4*/
         this->vtable3 = v23 >> 1; /*0x7ae3d5*/
         this->vtable4 = v25; /*0x7ae3df*/
-        v26 = RA2_OPNEW(4 * (v23 >> 1)); /*0x7ae3eb*/
+        v26 = operator new(4 * (v23 >> 1)); /*0x7ae3eb*/
         v27 = 4 * this->vtable3; /*0x7ae3f0*/
         *this = v26; /*0x7ae3f7*/
         memset(v26, 0, v27); /*0x7ae3fc*/
@@ -1552,10 +1552,10 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
               do /*0x7ae435*/
               {
                 v29 = ((int (__thiscall *)(int))this->nextArrayIndex)(v28) & ((1 << this->vtable4) - 1); /*0x7ae41f*/
-                v30 = *(_DWORD *)(*this + 4 * v29); /*0x7ae423*/
-                *(_DWORD *)(*this + 4 * v29) = v28; /*0x7ae429*/
-                v31 = *(_DWORD *)(v28 + 8); /*0x7ae42b*/
-                *(_DWORD *)(v28 + 8) = v30; /*0x7ae42e*/
+                v30 = *(unsigned int *)(*&this->q004 * v29); /*0x7ae423*/
+                *(unsigned int *)(*&this->q004 * v29) = v28; /*0x7ae429*/
+                v31 = *(unsigned int *)(v28 + 8); /*0x7ae42b*/
+                *(unsigned int *)(v28 + 8) = v30; /*0x7ae42e*/
                 v28 = v31; /*0x7ae431*/
               }
               while ( v31 ); /*0x7ae435*/
@@ -1578,7 +1578,7 @@ namespace gamemd {
 AbstractClass * * HashTable_flat::Grow()
 {
   int v2; // esi
-  _DWORD *v3; // ebp
+  unsigned int *v3; // ebp
   int v4; // edi
   void *v5; // edi
   unsigned int v6; // edx
@@ -1588,17 +1588,17 @@ AbstractClass * * HashTable_flat::Grow()
   int v10; // edx
   int v11; // ecx
   int v12; // eax
-  _DWORD *v13; // [esp+4h] [ebp-4h]
+  unsigned int *v13; // [esp+4h] [ebp-4h]
 
   if ( this->abstractFlags != 1 ) /*0x7ae518*/
   {
     v2 = this->vtable3; /*0x7ae520*/
-    v3 = (_DWORD *)*this; /*0x7ae523*/
-    v4 = *(this + 3) + 1; /*0x7ae52c*/
-    *(this + 2) = 2 * v2; /*0x7ae52d*/
+    v3 = (unsigned int *)*this; /*0x7ae523*/
+    v4 = this->q00C + 1; /*0x7ae52c*/
+    this->u32_8 = 2 * v2; /*0x7ae52d*/
     v3 = v3; /*0x7ae530*/
     v5->vtable4 = v4; /*0x7ae538*/
-    v5 = RA2_OPNEW(8 * v2); /*0x7ae543*/
+    v5 = operator new(8 * v2); /*0x7ae543*/
     v6 = 4 * v5->vtable3; /*0x7ae548*/
     *v5 = v5; /*0x7ae54f*/
     memset(v5, 0, v6); /*0x7ae554*/
@@ -1614,10 +1614,10 @@ AbstractClass * * HashTable_flat::Grow()
           do /*0x7ae591*/
           {
             v10 = ((int (__thiscall *)(int))v5->nextArrayIndex)(v9) & ((1 << v5->vtable4) - 1); /*0x7ae57b*/
-            v11 = *(_DWORD *)(*v5 + 4 * v10); /*0x7ae57f*/
-            *(_DWORD *)(*v5 + 4 * v10) = v9; /*0x7ae585*/
-            v12 = *(_DWORD *)(v9 + 8); /*0x7ae587*/
-            *(_DWORD *)(v9 + 8) = v11; /*0x7ae58a*/
+            v11 = *(unsigned int *)(*v5 + 4 * v10); /*0x7ae57f*/
+            *(unsigned int *)(*v5 + 4 * v10) = v9; /*0x7ae585*/
+            v12 = *(unsigned int *)(v9 + 8); /*0x7ae587*/
+            *(unsigned int *)(v9 + 8) = v11; /*0x7ae58a*/
             v9 = v12; /*0x7ae58d*/
           }
           while ( v12 ); /*0x7ae591*/
@@ -1637,7 +1637,7 @@ namespace gamemd {
 AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void * a3)
 {
   int v4; // eax
-  _DWORD *v9; // esi
+  unsigned int *v9; // esi
   int v10; // edi
   bool v11; // c0
   bool v12; // c3
@@ -1672,21 +1672,21 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
     return 0; /*0x7ae965*/
   v37 = (double)(unsigned int)(v4 - 1) / (double)(int)this->vtable3; /*0x7ae990*/
   v7 = ((int (__thiscall *)(const char **))this->nextArrayIndex)(a2) & ((1 << this->vtable4) - 1); /*0x7ae9a5*/
-  v8 = *(_DWORD *)(*this + 4 * v7); /*0x7ae9a7*/
+  v8 = *(unsigned int *)(*&this->q004 * v7); /*0x7ae9a7*/
   v36 = v8; /*0x7ae9ac*/
   if ( !v8 ) /*0x7ae9b0*/
     return 0; /*0x7ae9b5*/
   if ( String::Compare((const char **)v8, a2) ) /*0x7ae9c1*/
   {
     qmemcpy(a3, (const void *)(v8 + 4), 0x10Cu); /*0x7ae9da*/
-    v9 = *(_DWORD **)(*this + 4 * v7); /*0x7ae9df*/
+    v9 = *(unsigned int **)(*&this->q004 * v7); /*0x7ae9df*/
     v10 = v9[68]; /*0x7ae9e4*/
     if ( v9 ) /*0x7ae9ea*/
     {
-      DeleteAndZero(*(void ***)(*this + 4 * v7)); /*0x7ae9ee*/
+      DeleteAndZero(*(void ***)(*&this->q004 * v7)); /*0x7ae9ee*/
       RA2_OPDEL(v9); /*0x7ae9f4*/
     }
-    *(_DWORD *)(*this + 4 * v7) = v10; /*0x7aea03*/
+    *(unsigned int *)(*&this->q004 * v7) = v10; /*0x7aea03*/
     v11 = v37 < this->needsSave; /*0x7aea09*/
     v12 = v37 == this->needsSave; /*0x7aea09*/
     --this->vtable2; /*0x7aea0d*/
@@ -1700,7 +1700,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
         v15 = this->vtable4 - 1; /*0x7aea41*/
         this->vtable3 = v13 >> 1; /*0x7aea42*/
         this->vtable4 = v15; /*0x7aea4c*/
-        v16 = RA2_OPNEW(4 * (v13 >> 1)); /*0x7aea58*/
+        v16 = operator new(4 * (v13 >> 1)); /*0x7aea58*/
         v17 = 4 * this->vtable3; /*0x7aea5d*/
         *this = v16; /*0x7aea64*/
         memset(v16, 0, v17); /*0x7aea6a*/
@@ -1716,10 +1716,10 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
               do /*0x7aeaae*/
               {
                 v21 = ((int (__thiscall *)(int))this->nextArrayIndex)(v20) & ((1 << this->vtable4) - 1); /*0x7aea91*/
-                v22 = *(_DWORD *)(*this + 4 * v21); /*0x7aea96*/
-                *(_DWORD *)(*this + 4 * v21) = v20; /*0x7aea9c*/
-                v23 = *(_DWORD *)(v20 + 272); /*0x7aea9e*/
-                *(_DWORD *)(v20 + 272) = v22; /*0x7aeaa4*/
+                v22 = *(unsigned int *)(*&this->q004 * v21); /*0x7aea96*/
+                *(unsigned int *)(*&this->q004 * v21) = v20; /*0x7aea9c*/
+                v23 = *(unsigned int *)(v20 + 272); /*0x7aea9e*/
+                *(unsigned int *)(v20 + 272) = v22; /*0x7aeaa4*/
                 v20 = v23; /*0x7aeaaa*/
               }
               while ( v23 ); /*0x7aeaae*/
@@ -1737,19 +1737,19 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
   }
   else
   {
-    v24 = *(_DWORD *)(v8 + 272); /*0x7aeacf*/
+    v24 = *(unsigned int *)(v8 + 272); /*0x7aeacf*/
     v38 = 0; /*0x7aead5*/
     if ( v24 ) /*0x7aeadc*/
     {
       while ( !String::Compare((const char **)v24, a2) ) /*0x7aeae8*/
       {
         v36 = v24; /*0x7aeaea*/
-        v24 = *(_DWORD *)(v24 + 272); /*0x7aeaee*/
+        v24 = *(unsigned int *)(v24 + 272); /*0x7aeaee*/
         if ( !v24 ) /*0x7aeaf6*/
           goto LABEL_24; /*0x7aeaf6*/
       }
       qmemcpy(a3, (const void *)(v24 + 4), 0x10Cu); /*0x7aeb0a*/
-      *(_DWORD *)(v36 + 272) = *(_DWORD *)(v24 + 272); /*0x7aeb12*/
+      *(unsigned int *)(v36 + 272) = *(unsigned int *)(v24 + 272); /*0x7aeb12*/
       --this->vtable2; /*0x7aeb1e*/
       DeleteAndZero((void **)v24); /*0x7aeb25*/
       RA2_OPDEL((void *)v24); /*0x7aeb2b*/
@@ -1766,7 +1766,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
         v40 = (int *)*this; /*0x7aeb6a*/
         this->vtable3 = v25 >> 1; /*0x7aeb70*/
         this->vtable4 = v26 - 1; /*0x7aeb78*/
-        v28 = RA2_OPNEW(4 * (v25 >> 1)); /*0x7aeb83*/
+        v28 = operator new(4 * (v25 >> 1)); /*0x7aeb83*/
         v29 = 4 * this->vtable3; /*0x7aeb88*/
         *this = v28; /*0x7aeb8f*/
         memset(v28, 0, v29); /*0x7aeb95*/
@@ -1782,10 +1782,10 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
               do /*0x7aebd9*/
               {
                 v33 = ((int (__thiscall *)(int))this->nextArrayIndex)(v32) & ((1 << this->vtable4) - 1); /*0x7aebbc*/
-                v34 = *(_DWORD *)(*this + 4 * v33); /*0x7aebc1*/
-                *(_DWORD *)(*this + 4 * v33) = v32; /*0x7aebc7*/
-                v35 = *(_DWORD *)(v32 + 272); /*0x7aebc9*/
-                *(_DWORD *)(v32 + 272) = v34; /*0x7aebcf*/
+                v34 = *(unsigned int *)(*&this->q004 * v33); /*0x7aebc1*/
+                *(unsigned int *)(*&this->q004 * v33) = v32; /*0x7aebc7*/
+                v35 = *(unsigned int *)(v32 + 272); /*0x7aebc9*/
+                *(unsigned int *)(v32 + 272) = v34; /*0x7aebcf*/
                 v32 = v35; /*0x7aebd5*/
               }
               while ( v35 ); /*0x7aebd9*/
@@ -1827,9 +1827,9 @@ void HashTable_flat::Shrink()
     v4 = this->vtable4; /*0x7aec23*/
     v13 = (int *)*this; /*0x7aec26*/
     this->vtable3 = v2 >> 1; /*0x7aec2c*/
-    *(this + 3) = v4 - 1; /*0x7aec34*/
-    v5 = RA2_OPNEW(4 * (v2 >> 1)); /*0x7aec3f*/
-    v6 = 4 * *(this + 2); /*0x7aec44*/
+    this->q00C = v4 - 1; /*0x7aec34*/
+    v5 = operator new(4 * (v2 >> 1)); /*0x7aec3f*/
+    v6 = 4 * this->u32_8; /*0x7aec44*/
     *this = v5; /*0x7aec4b*/
     memset(v5, 0, v6); /*0x7aec50*/
     if ( (int)v2 > 0 ) /*0x7aec5b*/
@@ -1843,11 +1843,11 @@ void HashTable_flat::Shrink()
         {
           do /*0x7aec93*/
           {
-            v10 = ((int (__thiscall *)(int))*(this + 6))(v9) & ((1 << *(this + 3)) - 1); /*0x7aec77*/
-            v11 = *(_DWORD *)(*this + 4 * v10); /*0x7aec7b*/
-            *(_DWORD *)(*this + 4 * v10) = v9; /*0x7aec81*/
-            v12 = *(_DWORD *)(v9 + 272); /*0x7aec83*/
-            *(_DWORD *)(v9 + 272) = v11; /*0x7aec89*/
+            v10 = ((int (__thiscall *)(int))this->q018)(v9) & ((1 << this->q00C) - 1); /*0x7aec77*/
+            v11 = *(unsigned int *)(*&this->q004 * v10); /*0x7aec7b*/
+            *(unsigned int *)(*&this->q004 * v10) = v9; /*0x7aec81*/
+            v12 = *(unsigned int *)(v9 + 272); /*0x7aec83*/
+            *(unsigned int *)(v9 + 272) = v11; /*0x7aec89*/
             v9 = v12; /*0x7aec8f*/
           }
           while ( v12 ); /*0x7aec93*/
@@ -1866,6 +1866,6 @@ void HashTable_flat::Shrink()
 namespace gamemd {
 int HashTable_flat::ComputeHash(int a2)
 {
-  return (*(int (__thiscall **)(int))(this + 24))(a2) & ((1 << *(_DWORD *)(this + 12)) - 1); /*0x625084*/
+  return (*(int (__thiscall **)(int))&this->q060)(a2) & ((1 << this->q030) - 1); /*0x625084*/
 }
 } // namespace gamemd

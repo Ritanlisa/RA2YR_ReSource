@@ -10,7 +10,6 @@
 namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 {
-  *(void **)this = (void*)&ScoreAnimClass_vftable; /*0x691009*/
   if ( (a2 & 1) != 0 ) /*0x69100f*/
     RA2_OPDEL(); /*0x691012*/
   return this; /*0x69101c*/
@@ -20,7 +19,6 @@ unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
 {
-  *(void **)this = (void*)&ScoreAnimClass_vftable; /*0x691029*/
   if ( (a2 & 1) != 0 ) /*0x69102f*/
     RA2_OPDEL(); /*0x691032*/
   return this; /*0x69103c*/
@@ -34,7 +32,6 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
   char *v4; // eax
 
   v3 = (void *)this->u32_C; /*0x6910a6*/
-  *(void **)this = (void*)&ScoreFontClass_vftable; /*0x6910a9*/
   if ( v3 && this->q010 == 1 ) /*0x6910b7*/
   {
     RA2_OPDEL(v3); /*0x6910ba*/
@@ -46,7 +43,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
     v4 = &byte_B05594; /*0x6910d5*/
     do /*0x6910e7*/
     {
-      *((_DWORD *)v4 - 1) = 0; /*0x6910da*/
+      *((unsigned int *)v4 - 1) = 0; /*0x6910da*/
       *v4 = 0; /*0x6910dd*/
       v4 += 8; /*0x6910df*/
     }

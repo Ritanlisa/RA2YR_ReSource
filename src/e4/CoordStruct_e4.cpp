@@ -16,7 +16,7 @@ unsigned int * CoordStruct::Set2(IUnknown * aP1, AbstractClass * aP2)
   v4 = *aP1 << 8; /*0x642756*/
   this->u32_4 = (aP1[1] << 8) + 128; /*0x642759*/
   this->ptr_8 = aP2; /*0x642766*/
-  *(_DWORD *)this = v4 + 128; /*0x642769*/
+  *(unsigned int *)this = v4 + 128; /*0x642769*/
   return this; /*0x64276b*/
 }
 }

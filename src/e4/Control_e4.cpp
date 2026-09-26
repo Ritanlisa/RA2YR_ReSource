@@ -16,7 +16,7 @@ int Control::DispatchClick(ControlClass * aP1)
 
   v2 = *(&this->q0040); /*0x48e623*/
   if ( v2 ) /*0x48e628*/
-    (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v2 + 108))(v2, 0); /*0x48e62e*/
+    (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)v2 + 108))(v2, 0); /*0x48e62e*/
   return GadgetClass::ClearState(aP1); /*0x48e63d*/
 }
 } // namespace gamemd
@@ -26,12 +26,12 @@ int Control::RepositionControlsDialog()
 {
   HWND Parent; // esi
   int v3; // ebp
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // esi
   int DlgCtrlID; // edi
   char result; // al
   int v8; // ebx
-  _DWORD *v9; // eax
+  unsigned int *v9; // eax
   int v10; // eax
   int X; // [esp+10h] [ebp-3Ch]
   int nWidth; // [esp+14h] [ebp-38h]
@@ -54,12 +54,12 @@ int Control::RepositionControlsDialog()
   v14 = Parent; /*0x60b9b3*/
   if ( !g_DialogHashMap_Count ) /*0x60b9b7*/
     goto LABEL_5; /*0x60b9b7*/
-  v4 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v14) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60b9d8*/
+  v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v14) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60b9d8*/
   if ( !v4 ) /*0x60b9dd*/
     goto LABEL_5; /*0x60b9dd*/
   while ( (HWND)*v4 != v14 ) /*0x60b9e5*/
   {
-    v4 = (_DWORD *)v4[129]; /*0x60b9eb*/
+    v4 = (unsigned int *)v4[129]; /*0x60b9eb*/
     if ( !v4 ) /*0x60b9f3*/
       goto LABEL_5; /*0x60b9f3*/
   }
@@ -307,25 +307,25 @@ int Control::RepositionControlsDialog()
 namespace gamemd {
 int Control::CheckControlTypeDialog()
 {
-  _DWORD *v1; // eax
-  _DWORD *v3; // ecx
+  unsigned int *v1; // eax
+  unsigned int *v3; // ecx
   int v4; // eax
   void *v5; // [esp+4h] [ebp-4h] BYREF
 
   v5 = this; /*0x60c549*/
   if ( !g_DialogHashMap_Count ) /*0x60c54d*/
     return 0; /*0x60c54d*/
-  v1 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v5) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60c570*/
+  v1 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v5) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60c570*/
   if ( !v1 ) /*0x60c575*/
     return 0; /*0x60c575*/
   while ( (void *)*v1 != v5 ) /*0x60c57d*/
   {
-    v1 = (_DWORD *)v1[129]; /*0x60c57f*/
+    v1 = (unsigned int *)v1[129]; /*0x60c57f*/
     if ( !v1 ) /*0x60c587*/
       return 0; /*0x60c58d*/
   }
   v3 = v1 + 1; /*0x60c592*/
-  if ( v1 == (_DWORD *)-4 ) /*0x60c597*/
+  if ( v1 == (unsigned int *)-4 ) /*0x60c597*/
     return 0; /*0x60c599*/
   v4 = v1[28]; /*0x60c59e*/
   if ( v4 != 268 /*0x60c7b0*/
@@ -387,7 +387,7 @@ int Control::CheckControlTypeDialog()
     return 0; /*0x60c7b2*/
   }
   v3[44] = 1; /*0x60c7b9*/
-  *((_BYTE *)v3 + 189) = 1; /*0x60c7bf*/
+  *((unsigned char *)v3 + 189) = 1; /*0x60c7bf*/
   return 1; /*0x60c58b*/
 }
 } // namespace gamemd

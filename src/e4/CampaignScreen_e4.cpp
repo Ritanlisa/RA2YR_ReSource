@@ -20,7 +20,7 @@ namespace gamemd {
 void CampaignScreen_Init()
 {
   int result; // eax
-  _DWORD *WindowLongA; // eax
+  unsigned int *WindowLongA; // eax
   HWND v7; // eax
   wchar_t *String; // eax
   HWND v9; // eax
@@ -81,7 +81,7 @@ void CampaignScreen_Init()
   if ( !result ) /*0x470d5f*/
   {
     v50 = a1; /*0x470d65*/
-    WindowLongA = (_DWORD *)GetWindowLongA(hWnd, 8); /*0x470d69*/
+    WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x470d69*/
     if ( a3 > 0x497 ) /*0x470d75*/
     {
       switch ( a3 ) /*0x47138e*/
@@ -115,7 +115,7 @@ void CampaignScreen_Init()
     }
     if ( a3 != 272 ) /*0x470d90*/
     {
-      if ( a3 == 273 && (_WORD)wParam == 1745 ) /*0x470d9e*/
+      if ( a3 == 273 && (unsigned short)wParam == 1745 ) /*0x470d9e*/
       {
         *WindowLongA = 1; /*0x470da6*/
         return 0; /*0x470db6*/
@@ -178,13 +178,13 @@ void CampaignScreen_Init()
     while ( 1 ) /*0x47102c*/
     {
       v20 = Color::ConvertToRGB( /*0x47102c*/
-              (unsigned __int8 *)(*((_DWORD *)BuildingTypeClass_AnimTable + *(_DWORD *)(dword_89DFE0[v52] + 40)) + 776),
+              (uint8_t *)(*((unsigned int *)BuildingTypeClass_AnimTable + *(unsigned int *)(dword_89DFE0[v52] + 40)) + 776),
               (int)v56);
-      IDA_LOWORD(v55) = *(_WORD *)v20; /*0x471034*/
-      IDA_BYTE2(v55) = *(_BYTE *)(v20 + 2); /*0x47103c*/
+      IDA_LOWORD(v55) = *(unsigned short *)v20; /*0x471034*/
+      IDA_BYTE2(v55) = *(unsigned char *)(v20 + 2); /*0x47103c*/
       v21 = dword_89DFE0[v52]; /*0x471067*/
       v54 = 24 * v52; /*0x471071*/
-      v22 = (unsigned __int8)v55 | (*(unsigned __int16 *)((char *)&v55 + 1) << 8); /*0x471081*/
+      v22 = (uint8_t)v55 | (*(uint16_t *)((char *)&v55 + 1) << 8); /*0x471081*/
       nIDDlgItem = dword_81B1EC[6 * v52]; /*0x471085*/
       lParam = v21; /*0x471089*/
       v23 = GetDlgItem(hWnd, nIDDlgItem); /*0x47108d*/

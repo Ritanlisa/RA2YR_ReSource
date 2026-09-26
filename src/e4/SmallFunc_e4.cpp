@@ -36,20 +36,20 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
   int result; // eax
   int v4; // ebp
   int i; // ebx
-  unsigned __int8 *StringByIndex; // eax
+  uint8_t *StringByIndex; // eax
   int v7; // esi
-  _DWORD *v8; // eax
-  _DWORD *v9; // esi
+  unsigned int *v8; // eax
+  unsigned int *v9; // esi
   char Source[32]; // [esp+10h] [ebp-20h] BYREF
 
-  result = INIClass::GetKeyCount(a1, (unsigned __int8 *)g_INI_Key_TeamTypes); /*0x6f19c1*/
+  result = INIClass::GetKeyCount(a1, (uint8_t *)g_INI_Key_TeamTypes); /*0x6f19c1*/
   v4 = result; /*0x6f19c6*/
   for ( i = 0; i < v4; v9[58] = a2 ) /*0x6f19cc*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1, (unsigned __int8 *)g_INI_Key_TeamTypes, i); /*0x6f19db*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1, (uint8_t *)g_INI_Key_TeamTypes, i); /*0x6f19db*/
     INIClass::GetString( /*0x6f19f4*/
-      (unsigned __int8 ***)a1,
-      (unsigned __int8 *)g_INI_Key_TeamTypes,
+      (uint8_t ***)a1,
+      (uint8_t *)g_INI_Key_TeamTypes,
       StringByIndex,
       &g_INI_DefaultBuffer,
       Source,
@@ -59,23 +59,23 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
     v7 = 0; /*0x6f1a2a*/
     if ( g_MultiplayerLogState > 0 ) /*0x6f1a2e*/
     {
-      while ( _strcmpi((const void *)(*((_DWORD *)g_TeamTypePool + v7) + 36), Source) ) /*0x6f1a4c*/
+      while ( _strcmpi((const void *)(*((unsigned int *)g_TeamTypePool + v7) + 36), Source) ) /*0x6f1a4c*/
       {
         if ( ++v7 >= g_MultiplayerLogState ) /*0x6f1a56*/
           goto LABEL_7; /*0x6f1a56*/
       }
-      v9 = (_DWORD *)*((_DWORD *)g_TeamTypePool + v7); /*0x6f1a7f*/
+      v9 = (unsigned int *)*((unsigned int *)g_TeamTypePool + v7); /*0x6f1a7f*/
       goto LABEL_11; /*0x6f1a82*/
     }
   LABEL_7:
-    v8 = RA2_OPNEW(0xF8u); /*0x6f1a5d*/
+    v8 = operator new(0xF8u); /*0x6f1a5d*/
     if ( v8 ) /*0x6f1a67*/
       v9 = TechnoTypeClass::LoadBase(v8, Source); /*0x6f1a75*/
     else
   LABEL_10:
       v9 = 0; /*0x6f1a84*/
   LABEL_11:
-    result = (*(int (__thiscall **)(_DWORD *, char *))(*v9 + 100))(v9, a1); /*0x6f1a86*/
+    result = (*(int (__thiscall **)(unsigned int *, char *))(*v9 + 100))(v9, a1); /*0x6f1a86*/
     ++i; /*0x6f1a8e*/
   }
   return result; /*0x6f1aa2*/
@@ -88,7 +88,6 @@ void sub_40D1B0()
   int *v0; // esi
   int v1; // edi
 
-  MapClass_Instance.lpVtbl = (struct IUnknownVtbl *)(void*)&MouseClass_vftable; /*0x40d1b2*/
   dword_884D00 = (int)&MouseClass_vftable; /*0x40d1bc*/
   v0 = &dword_884B84; /*0x40d1c6*/
   v1 = 4; /*0x40d1cb*/
@@ -111,7 +110,7 @@ int sub_59B6D0()
   int result; // eax
   int *i; // ebx
   signed int j; // esi
-  _DWORD *NeighbourContent; // edi
+  unsigned int *NeighbourContent; // edi
 
   LayerClass::CellIteratorReset(&MapClass_Instance); /*0x59b6d6*/
   result = LayerClass::CellIteratorNext(&MapClass_Instance); /*0x59b6e0*/
@@ -144,11 +143,11 @@ int sub_59C530()
         result;
         result = LayerClass::CellIteratorNext(&MapClass_Instance) )
   {
-    v1 = *(_DWORD *)(result + 56); /*0x59c54b*/
+    v1 = *(unsigned int *)(result + 56); /*0x59c54b*/
     if ( v1 >= dword_ABAD28 && v1 < dword_ABAD28 + 42 ) /*0x59c55d*/
     {
-      *(_DWORD *)(result + 56) = 0; /*0x59c55f*/
-      *(_BYTE *)(result + 282) = 0; /*0x59c562*/
+      *(unsigned int *)(result + 56) = 0; /*0x59c55f*/
+      *(unsigned char *)(result + 282) = 0; /*0x59c562*/
     }
   }
   return result; /*0x59c576*/
@@ -188,9 +187,7 @@ int E4Recv_5AFEF0::sub_5AFEF0()
   this->q028 = dword_ABEE14; /*0x5aff26*/
   dword_ABEE18 = dword_ABEE18; /*0x5aff29*/
   this->M48 = 0; /*0x5aff2e*/
-  *(void **)this = (void*)&MechLocomotionClass_vftable; /*0x5aff32*/
   this->M44 = dword_ABEE18; /*0x5aff38*/
-  this->M4 = (void*)&MechLocomotionClass_vftable; /*0x5aff3b*/
   return this; /*0x5aff44*/
 }
 } // namespace gamemd
@@ -254,7 +251,7 @@ char sub_6E2660(int a1, int a2, int a3, int a4)
 
 // 0x6E3120
 namespace gamemd {
-char SmallFunc_6E3120(int _8, _UNKNOWN ** a1, unsigned int * a2, IUnknown * aP3, int _18, unsigned int * a5, int a7)
+char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int _18, unsigned int * a5, int a7)
 {
   void *v7; // esi
   int Field11; // eax
@@ -287,16 +284,14 @@ namespace gamemd {
 int E4Recv_728A00::sub_728A00()
 {
   LocomotionClass::Init(); /*0x728a03*/
-  *(_DWORD *)(this + 24) = 0; /*0x728a0d*/
-  *(_DWORD *)(this + 28) = dword_B0F910; /*0x728a16*/
-  *(_DWORD *)(this + 32) = dword_B0F914; /*0x728a1e*/
-  *(_DWORD *)(this + 36) = dword_B0F918; /*0x728a27*/
-  *(_DWORD *)(this + 40) = g_CurrentFrame; /*0x728a30*/
-  *(_DWORD *)(this + 48) = 0; /*0x728a33*/
-  *(_DWORD *)(this + 52) = 0; /*0x728a36*/
-  *(_BYTE *)(this + 56) = 0; /*0x728a39*/
-  *(void **)this = (void*)&TunnelLocomotionClass_vftable; /*0x728a3c*/
-  *(_DWORD *)(this + 4) = (void*)&TunnelLocomotionClass_vftable; /*0x728a42*/
+  *(unsigned int *)((char *)&this->q056 + 10) = 0; /*0x728a0d*/
+  *(unsigned int *)((char *)&this->q064 + 12) = dword_B0F910; /*0x728a16*/
+  this->q080 = dword_B0F914; /*0x728a1e*/
+  *(unsigned int *)((char *)&this->q086 + 10) = dword_B0F918; /*0x728a27*/
+  *(unsigned int *)((char *)&this->q086 + 26) = g_CurrentFrame; /*0x728a30*/
+  *(unsigned int *)((char *)&this->q086 + 58) = 0; /*0x728a33*/
+  *(unsigned int *)((char *)&this->q086 + 74) = 0; /*0x728a36*/
+  *(unsigned char *)&this->M56 = 0; /*0x728a39*/
   return this; /*0x728a4b*/
 }
 } // namespace gamemd

@@ -36,7 +36,7 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
   int v18; // edx
   int v19; // edi
   int v20; // eax
-  _DWORD *v21; // eax
+  unsigned int *v21; // eax
   int v23; // [esp-10h] [ebp-5Ch]
   int v24; // [esp-Ch] [ebp-58h]
   int v25; // [esp-8h] [ebp-54h]
@@ -48,7 +48,7 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
   int v31; // [esp+24h] [ebp-28h]
   int v32; // [esp+28h] [ebp-24h]
   int v33; // [esp+2Ch] [ebp-20h]
-  _DWORD v34[4]; // [esp+30h] [ebp-1Ch] BYREF
+  unsigned int v34[4]; // [esp+30h] [ebp-1Ch] BYREF
   char v35[12]; // [esp+40h] [ebp-Ch] BYREF
 
   TextRenderer::GetInstance(); /*0x4b96c5*/
@@ -83,16 +83,16 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
   v34[2] = 15; /*0x4b97a4*/
   v32 = 15; /*0x4b97a8*/
   v16 = (*(int (__thiscall **)(int *))(v15 + 124))(a3); /*0x4b97b5*/
-  v17 = (*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x4b97b9*/
+  v17 = (*(int (__thiscall **)(int))(*(unsigned int *)g_DSurface_Hidden + 124))(g_DSurface_Hidden); /*0x4b97b9*/
   v18 = *a3; /*0x4b97c5*/
   v30 += (v17 - v16) / -2; /*0x4b97cd*/
   v19 = (*(int (__thiscall **)(int *))(v18 + 128))(a3); /*0x4b97df*/
-  v31 += ((*(int (__thiscall **)(int))(*(_DWORD *)g_DSurface_Hidden + 128))(g_DSurface_Hidden) - v19) / -2; /*0x4b97fc*/
+  v31 += ((*(int (__thiscall **)(int))(*(unsigned int *)g_DSurface_Hidden + 128))(g_DSurface_Hidden) - v19) / -2; /*0x4b97fc*/
   v28 = 0; /*0x4b982a*/
   v29 = 0; /*0x4b982e*/
   BlitterDrawSHP((int *)g_DSurface_Hidden, a8, a3, &v30, &v28, v34, 0, a9, 0, 0, 1000, 0, 0); /*0x4b9832*/
   v20 = FindBuildingAnimByName(aYellow, 1); /*0x4b9847*/
-  v21 = (_DWORD *)(*(int (__thiscall **)(int, char *, wchar_t *, int, _DWORD, int))(*(_DWORD *)g_DSurface_Hidden + 120))( /*0x4b985f*/
+  v21 = (unsigned int *)(*(int (__thiscall **)(int, char *, wchar_t *, int, unsigned int, int))(*(unsigned int *)g_DSurface_Hidden + 120))( /*0x4b985f*/
                     g_DSurface_Hidden,
                     v35,
                     Format,
@@ -106,7 +106,7 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
 namespace gamemd {
 int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScreenClass * aP3, ProgressScreenClass * aP4, char a6)
 {
-  _DWORD *FoundationSize; // eax
+  unsigned int *FoundationSize; // eax
   int v8; // ebx
   int Default; // edi
   int *v10; // ebp
@@ -121,7 +121,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
   int v20; // [esp+Ch] [ebp-34h]
   int v21; // [esp+18h] [ebp-28h]
   int v22[7]; // [esp+20h] [ebp-20h] BYREF
-  __int16 v23; // [esp+3Eh] [ebp-2h]
+  int16_t v23; // [esp+3Eh] [ebp-2h]
   int v24; // [esp+44h] [ebp+4h]
 
   if ( a2 == -1 && aP2 == -1 ) /*0x642c9a*/
@@ -137,8 +137,8 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
       Default = BuildingType::FindDefault(0); /*0x642ceb*/
       if ( Default ) /*0x642cef*/
       {
-        v8 = (*(int (__thiscall **)(int))(*(_DWORD *)Default + 124))(Default); /*0x642cfc*/
-        Default = (*(int (__thiscall **)(int))(*(_DWORD *)Default + 128))(Default); /*0x642d04*/
+        v8 = (*(int (__thiscall **)(int))(*(unsigned int *)Default + 124))(Default); /*0x642cfc*/
+        Default = (*(int (__thiscall **)(int))(*(unsigned int *)Default + 128))(Default); /*0x642d04*/
       }
     }
     Instance = TextRenderer::GetInstance(); /*0x642d10*/
@@ -146,7 +146,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
     v24 = 15; /*0x642d18*/
     do /*0x642d3d*/
     {
-      *(_WORD *)v10 = *(_WORD *)CharToWideString(g_Str_W); /*0x642d2d*/
+      *(unsigned short *)v10 = *(unsigned short *)CharToWideString(g_Str_W); /*0x642d2d*/
       v10 = (int *)((char *)v10 + 2); /*0x642d35*/
       --v24; /*0x642d39*/
     }
@@ -155,8 +155,8 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
     v11 = Text::MeasureWidth((int)v22, 0); /*0x642d53*/
     if ( v19 > Default ) /*0x642d6b*/
       Default = v19; /*0x642d6d*/
-    if ( Default <= *(_DWORD *)(Instance + 28) ) /*0x642d71*/
-      Default = *(_DWORD *)(Instance + 28); /*0x642d73*/
+    if ( Default <= *(unsigned int *)(Instance + 28) ) /*0x642d71*/
+      Default = *(unsigned int *)(Instance + 28); /*0x642d73*/
     v12 = v8 + v11 + v21 + 36; /*0x642d79*/
     v13 = Default + 4; /*0x642d7c*/
     if ( v20 > 1 ) /*0x642d82*/
@@ -182,7 +182,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
 namespace gamemd {
 void * TextRenderer::MeasureBuilding2()
 {
-  _DWORD *FoundationSize; // eax
+  unsigned int *FoundationSize; // eax
   int v5; // ebp
   int v6; // edi
   int Default; // eax
@@ -195,8 +195,8 @@ void * TextRenderer::MeasureBuilding2()
   int v14; // edi
   int v15; // [esp+10h] [ebp-34h]
   int v16; // [esp+1Ch] [ebp-28h]
-  _DWORD v17[7]; // [esp+24h] [ebp-20h] BYREF
-  __int16 v18; // [esp+42h] [ebp-2h]
+  unsigned int v17[7]; // [esp+24h] [ebp-20h] BYREF
+  int16_t v18; // [esp+42h] [ebp-2h]
   int v19; // [esp+54h] [ebp+10h]
 
   FoundationSize = Building::GetFoundationSize(v17, 0); /*0x642f01*/
@@ -210,8 +210,8 @@ void * TextRenderer::MeasureBuilding2()
     v8 = Default; /*0x642f37*/
     if ( Default ) /*0x642f3b*/
     {
-      v5 = (*(int (__thiscall **)(int))(*(_DWORD *)Default + 124))(Default); /*0x642f44*/
-      v6 = (*(int (__thiscall **)(int))(*(_DWORD *)v8 + 128))(v8); /*0x642f50*/
+      v5 = (*(int (__thiscall **)(int))(*(unsigned int *)Default + 124))(Default); /*0x642f44*/
+      v6 = (*(int (__thiscall **)(int))(*(unsigned int *)v8 + 128))(v8); /*0x642f50*/
     }
   }
   Instance = TextRenderer::GetInstance(); /*0x642f5c*/
@@ -219,13 +219,13 @@ void * TextRenderer::MeasureBuilding2()
   v19 = 15; /*0x642f62*/
   do /*0x642f86*/
   {
-    *v10++ = *(_WORD *, unsigned int a1, unsigned int a2, unsigned int a3)CharToWideString(g_Str_W); /*0x642f7b*/
+    *v10++ = *(unsigned short *, unsigned int a1, unsigned int a2, unsigned int a3)CharToWideString(g_Str_W); /*0x642f7b*/
     --v19; /*0x642f82*/
   }
   while ( v19 ); /*0x642f86*/
   v18 = 0; /*0x642f91*/
   v11 = Text::MeasureWidth((int)v17, 0); /*0x642f98*/
-  v12 = *(_DWORD *)(Instance + 28); /*0x642fa1*/
+  v12 = *(unsigned int *)(Instance + 28); /*0x642fa1*/
   *a1 = v5 + v11 + v16 + 26; /*0x642fb4*/
   if ( v15 > v6 ) /*0x642fb6*/
     v6 = v15; /*0x642fb8*/
@@ -246,23 +246,23 @@ void * TextRenderer::MeasureBuilding2()
 namespace gamemd {
 unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, ObjectClass * aP2, ConvertClass * aP3, int a2, int a6, int a7, int a8, CampaignScore * aP8)
 {
-  _DWORD *v9; // ecx
-  _DWORD *v11; // edx
+  unsigned int *v9; // ecx
+  unsigned int *v11; // edx
   va_list v12; // [esp+0h] [ebp-408h]
   wchar_t Buffer[512]; // [esp+8h] [ebp-400h] BYREF
 
   if ( BufferCount ) /*0x4a60ec*/
   {
     vswprintf(Buffer, BufferCount, &aP8, v12); /*0x4a60fc*/
-    v9 = (_DWORD *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a6143*/
-    *(_DWORD *)aP0 = *v9; /*0x4a614e*/
+    v9 = (unsigned int *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a6143*/
+    *(unsigned int *)aP0 = *v9; /*0x4a614e*/
     aP0[1] = v9[1]; /*0x4a6153*/
     return aP0; /*0x4a6145*/
   }
   else
   {
-    v11 = (_DWORD *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a619a*/
-    *(_DWORD *)aP0 = *v11; /*0x4a61a5*/
+    v11 = (unsigned int *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a619a*/
+    *(unsigned int *)aP0 = *v11; /*0x4a61a5*/
     aP0[1] = v11[1]; /*0x4a61aa*/
     return aP0; /*0x4a619c*/
   }

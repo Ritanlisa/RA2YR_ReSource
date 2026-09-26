@@ -25,13 +25,13 @@ int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9
   int result; // eax
   int v26; // [esp+44h] [ebp-44h]
   int v28; // [esp+4Ch] [ebp-3Ch]
-  _DWORD v29[2]; // [esp+50h] [ebp-38h] BYREF
-  _DWORD v30[2]; // [esp+58h] [ebp-30h] BYREF
-  _DWORD v31[2]; // [esp+60h] [ebp-28h] BYREF
-  _DWORD v32[2]; // [esp+68h] [ebp-20h] BYREF
-  _DWORD v33[2]; // [esp+70h] [ebp-18h] BYREF
-  _DWORD v34[2]; // [esp+78h] [ebp-10h] BYREF
-  _DWORD v35[2]; // [esp+80h] [ebp-8h] BYREF
+  unsigned int v29[2]; // [esp+50h] [ebp-38h] BYREF
+  unsigned int v30[2]; // [esp+58h] [ebp-30h] BYREF
+  unsigned int v31[2]; // [esp+60h] [ebp-28h] BYREF
+  unsigned int v32[2]; // [esp+68h] [ebp-20h] BYREF
+  unsigned int v33[2]; // [esp+70h] [ebp-18h] BYREF
+  unsigned int v34[2]; // [esp+78h] [ebp-10h] BYREF
+  unsigned int v35[2]; // [esp+80h] [ebp-8h] BYREF
 
   a3 = a3; /*0x7bb92c*/
   a2 = a2; /*0x7bb933*/

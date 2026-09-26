@@ -18,7 +18,7 @@ int Progress::GetAverage()
   v2 = 0.0; /*0x6433d5*/
   if ( v1 > 0 ) /*0x6433e1*/
   {
-    v3 = (double *)(this + 8); /*0x6433e3*/
+    v3 = (double *)&this->m_Index; /*0x6433e3*/
     do /*0x6433ec*/
     {
       v2 = v2 + *v3++; /*0x6433e6*/

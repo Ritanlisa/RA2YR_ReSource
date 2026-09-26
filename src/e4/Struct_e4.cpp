@@ -13,10 +13,10 @@ int Struct::ClearAllMemberFlags()
   void * v1;
   int v2; // esi
   int v3; // eax
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   void * result;
   int v6; // esi
-  _DWORD *v7; // edi
+  unsigned int *v7; // edi
 
   v1 = this->q004; /*0x48b2a0*/
   v2 = 0; /*0x48b2a7*/
@@ -33,19 +33,19 @@ int Struct::ClearAllMemberFlags()
     v3 = 0; /*0x48b2c6*/
     do /*0x48b327*/
     {
-      *(_DWORD *)(v3 + this->q024) &= ~1u; /*0x48b2d2*/
-      *(_DWORD *)(v3 + this->q024) &= ~2u; /*0x48b2de*/
-      v4 = (_DWORD *)(v3 + this->q024); /*0x48b2e3*/
+      *(unsigned int *)(v3 + this->q024) &= ~1u; /*0x48b2d2*/
+      *(unsigned int *)(v3 + this->q024) &= ~2u; /*0x48b2de*/
+      v4 = (unsigned int *)(v3 + this->q024); /*0x48b2e3*/
       v3 += 36; /*0x48b2e5*/
       ++v2; /*0x48b2ed*/
       *v4 &= ~4u; /*0x48b2ee*/
-      *(_DWORD *)(v3 + this->q024 - 32) = 0; /*0x48b2f3*/
-      *(_DWORD *)(v3 + this->q024 - 28) = 0; /*0x48b2fa*/
-      *(_DWORD *)(v3 + this->q024 - 24) = 0; /*0x48b301*/
-      *(_DWORD *)(v3 + this->q024 - 20) = 0; /*0x48b308*/
-      *(_DWORD *)(v3 + this->q024 - 12) = 0; /*0x48b30f*/
-      *(_WORD *)(v3 + this->q024 - 4) = 0; /*0x48b316*/
-      *(_DWORD *)(*(&this->q0042) + 4 * v2 - 4) = 0; /*0x48b31e*/
+      *(unsigned int *)(v3 + this->q024 - 32) = 0; /*0x48b2f3*/
+      *(unsigned int *)(v3 + this->q024 - 28) = 0; /*0x48b2fa*/
+      *(unsigned int *)(v3 + this->q024 - 24) = 0; /*0x48b301*/
+      *(unsigned int *)(v3 + this->q024 - 20) = 0; /*0x48b308*/
+      *(unsigned int *)(v3 + this->q024 - 12) = 0; /*0x48b30f*/
+      *(unsigned short *)(v3 + this->q024 - 4) = 0; /*0x48b316*/
+      *(unsigned int *)(*(&this->q0042) + 4 * v2 - 4) = 0; /*0x48b31e*/
     }
     while ( v2 < this->q004 ); /*0x48b327*/
   }
@@ -56,16 +56,16 @@ int Struct::ClearAllMemberFlags()
     result = 0; /*0x48b332*/
     do /*0x48b37d*/
     {
-      *(_DWORD *)(result + *(&this->q0043)) &= ~1u; /*0x48b33e*/
-      *(_DWORD *)(result + *(&this->q0043)) &= ~2u; /*0x48b34a*/
-      v7 = (_DWORD *)(result + *(&this->q0043)); /*0x48b34f*/
+      *(unsigned int *)(result + *(&this->q0043)) &= ~1u; /*0x48b33e*/
+      *(unsigned int *)(result + *(&this->q0043)) &= ~2u; /*0x48b34a*/
+      v7 = (unsigned int *)(result + *(&this->q0043)); /*0x48b34f*/
       result += 24; /*0x48b351*/
       ++v6; /*0x48b359*/
       *v7 &= ~4u; /*0x48b35a*/
-      *(_DWORD *)(*(&this->q0043) + result - 20) = 0; /*0x48b35f*/
-      *(_DWORD *)(*(&this->q0043) + result - 16) = 0; /*0x48b366*/
-      *(_DWORD *)(*(&this->q0043) + result - 8) = 0; /*0x48b36d*/
-      *(_DWORD *)(*(&this->q0046) + 4 * v6 - 4) = 0; /*0x48b374*/
+      *(unsigned int *)(*(&this->q0043) + result - 20) = 0; /*0x48b35f*/
+      *(unsigned int *)(*(&this->q0043) + result - 16) = 0; /*0x48b366*/
+      *(unsigned int *)(*(&this->q0043) + result - 8) = 0; /*0x48b36d*/
+      *(unsigned int *)(*(&this->q0046) + 4 * v6 - 4) = 0; /*0x48b374*/
     }
     while ( v6 < this->q008 ); /*0x48b37d*/
   }
@@ -98,7 +98,7 @@ int Struct::ZeroInitAndSetup()
 namespace gamemd {
 unsigned char * Struct::Zero3()
 {
-  *(_DWORD *)this = 0; /*0x4b9bd4*/
+  *(unsigned int *)this = 0; /*0x4b9bd4*/
   this->q004 = 0; /*0x4b9bd6*/
   this->q008 = 0; /*0x4b9bd9*/
   return this; /*0x4b9bdc*/

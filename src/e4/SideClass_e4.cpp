@@ -38,63 +38,63 @@ int SideClass::LoadAllFromINI(CCINIClass * aP0)
   int *v20; // edi
 
   for ( i = 0; i < g_SuperWeaponTypeArray; ++i ) /*0x679a20*/
-    (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)g_SuperWeaponTypeCount + i) + 100))( /*0x679a2d*/
-      *((_DWORD *)g_SuperWeaponTypeCount + i),
+    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_SuperWeaponTypeCount + i) + 100))( /*0x679a2d*/
+      *((unsigned int *)g_SuperWeaponTypeCount + i),
       aP0);
   for ( j = 0; j < g_HouseClassInitState; ++j ) /*0x679a43*/
-    (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)g_SuperWeaponPool + j) + 100))( /*0x679a50*/
-      *((_DWORD *)g_SuperWeaponPool + j),
+    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_SuperWeaponPool + j) + 100))( /*0x679a50*/
+      *((unsigned int *)g_SuperWeaponPool + j),
       aP0);
   for ( k = 0; k < g_BuildingTypeCount2; ++k ) /*0x679a66*/
-    (*(void (__thiscall **)(_DWORD, int *))(**((_DWORD **)g_AnimTypeCount + k) + 100))( /*0x679a77*/
-      *((_DWORD *)g_AnimTypeCount + k),
+    (*(void (__thiscall **)(unsigned int, int *))(**((unsigned int **)g_AnimTypeCount + k) + 100))( /*0x679a77*/
+      *((unsigned int *)g_AnimTypeCount + k),
       &CCINIClass_INI_Art);
   for ( m = 0; m < g_TriggerClassCount; ++m ) /*0x679a8d*/
-    (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)g_TriggerTypeCount + m) + 100))( /*0x679a9a*/
-      *((_DWORD *)g_TriggerTypeCount + m),
+    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_TriggerTypeCount + m) + 100))( /*0x679a9a*/
+      *((unsigned int *)g_TriggerTypeCount + m),
       aP0);
   for ( n = 0; n < g_TypeClass_FindCache; ++n ) /*0x679ab0*/
-    (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)g_AircraftTypeCount + n) + 100))( /*0x679abd*/
-      *((_DWORD *)g_AircraftTypeCount + n),
+    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_AircraftTypeCount + n) + 100))( /*0x679abd*/
+      *((unsigned int *)g_AircraftTypeCount + n),
       aP0);
   for ( ii = 0; ii < g_CrateCount; ++ii ) /*0x679ad3*/
-    (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)g_UnitTypeCount2 + ii) + 100))( /*0x679ae0*/
-      *((_DWORD *)g_UnitTypeCount2 + ii),
+    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_UnitTypeCount2 + ii) + 100))( /*0x679ae0*/
+      *((unsigned int *)g_UnitTypeCount2 + ii),
       aP0);
   for ( jj = 0; jj < g_LoadScreenProgress; ++jj ) /*0x679af6*/
-    (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)Factory_ExitCellTable + jj) + 100))( /*0x679b03*/
-      *((_DWORD *)Factory_ExitCellTable + jj),
+    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)Factory_ExitCellTable + jj) + 100))( /*0x679b03*/
+      *((unsigned int *)Factory_ExitCellTable + jj),
       aP0);
   for ( kk = 0; kk < g_WeaponTypePool; ++kk ) /*0x679b19*/
-    (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)g_WeaponTypeConfig + kk) + 100))( /*0x679b26*/
-      *((_DWORD *)g_WeaponTypeConfig + kk),
+    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_WeaponTypeConfig + kk) + 100))( /*0x679b26*/
+      *((unsigned int *)g_WeaponTypeConfig + kk),
       aP0);
   for ( mm = 0; mm < g_BulletTypeInitState; ++mm ) /*0x679b3c*/
-    (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)dword_A83C84 + mm) + 100))(*((_DWORD *)dword_A83C84 + mm), aP0); /*0x679b49*/
+    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)dword_A83C84 + mm) + 100))(*((unsigned int *)dword_A83C84 + mm), aP0); /*0x679b49*/
   for ( nn = 0; nn < g_WarheadTypePool; ++nn ) /*0x679b5f*/
-    (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)dword_8874C4 + nn) + 100))(*((_DWORD *)dword_8874C4 + nn), aP0); /*0x679b6c*/
+    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)dword_8874C4 + nn) + 100))(*((unsigned int *)dword_8874C4 + nn), aP0); /*0x679b6c*/
   for ( i1 = 0; i1 < g_WeaponTypePool; ++i1 ) /*0x679b82*/
-    WeaponTypeClass::CalculateSpeed(*((_DWORD *)g_WeaponTypeConfig + i1)); /*0x679b8c*/
+    WeaponTypeClass::CalculateSpeed(*((unsigned int *)g_WeaponTypeConfig + i1)); /*0x679b8c*/
   for ( i2 = 0; i2 < g_TriggerClassCount; ++i2 ) /*0x679ba4*/
-    nullsub_7(*((_DWORD *)g_TriggerTypeCount + i2)); /*0x679baf*/
+    nullsub_7(*((unsigned int *)g_TriggerTypeCount + i2)); /*0x679baf*/
   for ( i3 = 0; i3 < g_RulesClassInitState; ++i3 ) /*0x679bc7*/
-    (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)dword_A8E31C + i3) + 100))(*((_DWORD *)dword_A8E31C + i3), aP0); /*0x679bd5*/
+    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)dword_A8E31C + i3) + 100))(*((unsigned int *)dword_A8E31C + i3), aP0); /*0x679bd5*/
   for ( i4 = 0; i4 < FactoryClass_Count; ++i4 ) /*0x679beb*/
-    (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)FactoryClass_Array + i4) + 100))( /*0x679bf9*/
-      *((_DWORD *)FactoryClass_Array + i4),
+    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)FactoryClass_Array + i4) + 100))( /*0x679bf9*/
+      *((unsigned int *)FactoryClass_Array + i4),
       aP0);
   for ( i5 = 0; i5 < g_ObjectTypeConfig; ++i5 ) /*0x679c0f*/
-    (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)&g_BuildingTypeClass_Array->gap0[4 * i5] + 100))( /*0x679c1c*/
-      *(_DWORD *)&g_BuildingTypeClass_Array->gap0[4 * i5],
+    (*(void (__thiscall **)(unsigned int, int))(**(unsigned int **)&g_BuildingTypeClass_Array->gap0[4 * i5] + 100))( /*0x679c1c*/
+      *(unsigned int *)&g_BuildingTypeClass_Array->gap0[4 * i5],
       aP0);
   for ( i6 = 0; i6 < g_BuildingTypeInitState; ++i6 ) /*0x679c32*/
-    (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)g_BuildingProductionQueue + i6) + 100))( /*0x679c3f*/
-      *((_DWORD *)g_BuildingProductionQueue + i6),
+    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)g_BuildingProductionQueue + i6) + 100))( /*0x679c3f*/
+      *((unsigned int *)g_BuildingProductionQueue + i6),
       aP0);
   for ( i7 = 0; i7 < g_InfantryTypeInitState; ++i7 ) /*0x679c55*/
-    (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)dword_A83D6C + i7) + 100))(*((_DWORD *)dword_A83D6C + i7), aP0); /*0x679c62*/
+    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)dword_A83D6C + i7) + 100))(*((unsigned int *)dword_A83D6C + i7), aP0); /*0x679c62*/
   for ( i8 = 0; i8 < g_MultiplayerPool; ++i8 ) /*0x679c78*/
-    (*(void (__thiscall **)(_DWORD, int))(**((_DWORD **)dword_A8EB2C + i8) + 100))(*((_DWORD *)dword_A8EB2C + i8), aP0); /*0x679c85*/
+    (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)dword_A8EB2C + i8) + 100))(*((unsigned int *)dword_A8EB2C + i8), aP0); /*0x679c85*/
   v19 = 0; /*0x679c92*/
   v20 = (int *)&unk_A8E3A8; /*0x679c94*/
   do /*0x679cad*/
@@ -121,22 +121,17 @@ unsigned int * SideClass::Construct(CCINIClass * aP1)
   this->u8_A5 = 0; /*0x6a4576*/
   *(&this->uniqueId3) = 10; /*0x6a457c*/
   *(&this->uniqueId2) = 0; /*0x6a4586*/
-  *(&this->vtable48) = (void*)&TypeList_int_vftable; /*0x6a458c*/
-  *(void **)this = (void*)&SideClass_vftable; /*0x6a4597*/
-  this->vtable2 = (void*)&SideClass_vftable; /*0x6a459d*/
-  this->vtable3 = (void*)&SideClass_vftable; /*0x6a45a3*/
-  this->vtable4 = (void*)&SideClass_vftable; /*0x6a45aa*/
-  AbstractClass::GenerateUniqueID((int)(this + 1)); /*0x6a45b1*/
+  AbstractClass::GenerateUniqueID((int)&this->vtable2); /*0x6a45b1*/
   if ( g_ObjectTypeList < dword_8B4128 /*0x6a45ea*/
     || (byte_8B412D || !dword_8B4128)
     && dword_8B4134 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_8B4120 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_8B4120 + 8))(
          &dword_8B4120,
          dword_8B4128 + dword_8B4134,
          0) )
   {
     v3 = g_ObjectTypeList++; /*0x6a45f7*/
-    *((_DWORD *)dword_8B4124 + v3) = this; /*0x6a4606*/
+    *((unsigned int *)dword_8B4124 + v3) = this; /*0x6a4606*/
   }
   return this; /*0x6a460b*/
 }
@@ -173,43 +168,37 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
       v2->q09C = 0; /*0x6a47b2*/
       v2->q280 = 0; /*0x6a47b8*/
       v2->q0A4 = 1; /*0x6a47be*/
-      *(_BYTE *)(v2 + 165) = 0; /*0x6a47c5*/
+      *(unsigned char *)(v2 + 165) = 0; /*0x6a47c5*/
       v2->q0AC = 10; /*0x6a47cb*/
       v2->q0A8 = 0; /*0x6a47d1*/
-      v2->q098 = (void*)&TypeList_int_vftable; /*0x6a47d7*/
-      *(void **)v2 = (void*)&SideClass_vftable; /*0x6a47e1*/
-      v2->vtable2 = (void*)&SideClass_vftable; /*0x6a47e7*/
-      v2->vtable3 = (void*)&SideClass_vftable; /*0x6a47ee*/
-      v2->vtable4 = (void*)&SideClass_vftable; /*0x6a47f5*/
     }
     v5 = v2 + 152; /*0x6a47fc*/
     if ( v5 ) /*0x6a4804*/
     {
-      *(_DWORD *)(v5 + 4) = 0; /*0x6a4806*/
-      *(_DWORD *)(v5 + 8) = 0; /*0x6a4809*/
-      *(_BYTE *)(v5 + 12) = 1; /*0x6a480c*/
-      *(_BYTE *)(v5 + 13) = 0; /*0x6a4810*/
-      *(_DWORD *)(v5 + 20) = 10; /*0x6a4813*/
-      *(_DWORD *)(v5 + 16) = 0; /*0x6a4816*/
-      *(void **)v5 = (void*)&TypeList_int_vftable; /*0x6a4819*/
+      *(unsigned int *)(v5 + 4) = 0; /*0x6a4806*/
+      *(unsigned int *)(v5 + 8) = 0; /*0x6a4809*/
+      *(unsigned char *)(v5 + 12) = 1; /*0x6a480c*/
+      *(unsigned char *)(v5 + 13) = 0; /*0x6a4810*/
+      *(unsigned int *)(v5 + 20) = 10; /*0x6a4813*/
+      *(unsigned int *)(v5 + 16) = 0; /*0x6a4816*/
     }
-    (*(void (__stdcall **)(int, int *, int, _DWORD))(aP1->vtable4)(aP1, &aP1, 4, 0); /*0x6a482a*/
+    (*(void (__stdcall **)(int, int *, int, unsigned int))(aP1->vtable4)(aP1, &aP1, 4, 0); /*0x6a482a*/
     for ( i = 0; i < aP1; ++i ) /*0x6a4833*/
     {
-      (*(void (__stdcall **)(int, _DWORD **, int, _DWORD))(aP1->vtable4)(aP1, &a0, 4, 0); /*0x6a4840*/
-      v7 = *(_DWORD *)(v5 + 8); /*0x6a4843*/
-      if ( *(_DWORD *)(v5 + 16) >= v7 ) /*0x6a484b*/
+      (*(void (__stdcall **)(int, unsigned int **, int, unsigned int))(aP1->vtable4)(aP1, &a0, 4, 0); /*0x6a4840*/
+      v7 = *(unsigned int *)(v5 + 8); /*0x6a4843*/
+      if ( *(unsigned int *)(v5 + 16) >= v7 ) /*0x6a484b*/
       {
-        if ( !*(_BYTE *)(v5 + 13) && v7 ) /*0x6a4854*/
+        if ( !*(unsigned char *)(v5 + 13) && v7 ) /*0x6a4854*/
           continue; /*0x6a4854*/
-        v8 = *(_DWORD *)(v5 + 20); /*0x6a4856*/
-        if ( v8 <= 0 || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(*(_DWORD *)v5 + 8))(v5, v7 + v8, 0) ) /*0x6a4865*/
+        v8 = *(unsigned int *)(v5 + 20); /*0x6a4856*/
+        if ( v8 <= 0 || !(*(uint8_t (__thiscall **)(int, int, unsigned int))(*(unsigned int *)v5 + 8))(v5, v7 + v8, 0) ) /*0x6a4865*/
           continue; /*0x6a4865*/
       }
-      v9 = *(_DWORD *)(v5 + 16); /*0x6a486c*/
-      v10 = *(_DWORD *)(v5 + 4); /*0x6a486f*/
-      *(_DWORD *)(v5 + 16) = v9 + 1; /*0x6a4875*/
-      *(_DWORD *)(v10 + 4 * v9) = a0; /*0x6a487c*/
+      v9 = *(unsigned int *)(v5 + 16); /*0x6a486c*/
+      v10 = *(unsigned int *)(v5 + 4); /*0x6a486f*/
+      *(unsigned int *)(v5 + 16) = v9 + 1; /*0x6a4875*/
+      *(unsigned int *)(v10 + 4 * v9) = a0; /*0x6a487c*/
     }
     return 0; /*0x6a4888*/
   }
@@ -223,10 +212,6 @@ void * SideClass::Init(char a2)
   int v3; // eax
   void *v4; // eax
 
-  *(void **)this = (void*)&SideClass_vftable; /*0x6a4936*/
-  this->vtable2 = (void*)&SideClass_vftable; /*0x6a493c*/
-  this->vtable3 = (void*)&SideClass_vftable; /*0x6a4943*/
-  this->vtable4 = (void*)&SideClass_vftable; /*0x6a494a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x6a4951*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_8B4120 + 16))(&dword_8B4120, &this); /*0x6a496a*/
   if ( v3 != -1 && v3 < g_ObjectTypeList && v3 < --g_ObjectTypeList ) /*0x6a4985*/
@@ -234,12 +219,11 @@ void * SideClass::Init(char a2)
     do /*0x6a499d*/
     {
       ++v3; /*0x6a498d*/
-      *((_DWORD *)dword_8B4124 + v3 - 1) = *((_DWORD *)dword_8B4124 + v3); /*0x6a4991*/
+      *((unsigned int *)dword_8B4124 + v3 - 1) = *((unsigned int *)dword_8B4124 + v3); /*0x6a4991*/
     }
     while ( v3 < g_ObjectTypeList ); /*0x6a499d*/
   }
   v4 = *(&this->vtable49); /*0x6a499f*/
-  *(&this->vtable48) = (void*)&VectorClass_int_vftable; /*0x6a49a5*/
   if ( v4 && this->u8_A5 ) /*0x6a49b3*/
   {
     RA2_OPDEL(v4); /*0x6a49be*/
@@ -269,7 +253,7 @@ int SideClass::FindByName()
     return -1; /*0x49da53*/
   while ( 1 ) /*0x49da25*/
   {
-    v4 = *((_DWORD *)g_SuperWeaponTypeCount + v3); /*0x49da25*/
+    v4 = *((unsigned int *)g_SuperWeaponTypeCount + v3); /*0x49da25*/
     if ( !_strcmpi((const void *)(v4 + 100), this) || !_strcmpi((const void *)(v4 + 36), this) ) /*0x49da3d*/
       break; /*0x49da3d*/
     if ( ++v3 >= g_SuperWeaponTypeArray ) /*0x49da51*/
@@ -338,9 +322,9 @@ int SideClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   {
     v4 = *a1; /*0x6a48c0*/
     aP2 = aP0[42]; /*0x6a48cd*/
-    (*(void (__stdcall **)(int *, int *, int, _DWORD))(v4 + 16))(a1, &aP2, 4, 0); /*0x6a48d1*/
+    (*(void (__stdcall **)(int *, int *, int, unsigned int))(v4 + 16))(a1, &aP2, 4, 0); /*0x6a48d1*/
     for ( i = 0; i < aP2; ++i ) /*0x6a48dc*/
-      (*(void (__stdcall **)(int *, int, int, _DWORD))(*a1 + 16))(a1, aP0[39] + 4 * i, 4, 0); /*0x6a48ef*/
+      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, aP0[39] + 4 * i, 4, 0); /*0x6a48ef*/
     return 0; /*0x6a48f9*/
   }
   return result; /*0x6a48fc*/

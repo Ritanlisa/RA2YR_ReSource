@@ -29,7 +29,7 @@ int sub_53AE00()
   StringCSF = GetStringCSF(aMsgLightningst, 0, g_Str_File_Ion_cpp, 1123); /*0x53ae11*/
   v1 = 3; /*0x53ae1c*/
   if ( HouseClass_Player ) /*0x53ae23*/
-    v1 = *((_DWORD *)HouseClass_Player + 22549); /*0x53ae25*/
+    v1 = *((unsigned int *)HouseClass_Player + 22549); /*0x53ae25*/
   return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v1, 16454, 150, 0, unsigned int a1); /*0x53ae47*/
 }
 }
@@ -38,7 +38,7 @@ namespace gamemd {
 void Weapon_Update()
 {
   int v3; // eax
-  __int64 v4; // rax
+  int64_t v4; // rax
   int v5; // ebx
   int v6; // esi
   int v7; // eax
@@ -50,58 +50,58 @@ void Weapon_Update()
   int v14[2]; // [esp+10h] [ebp-18h] BYREF
   int v15[4]; // [esp+18h] [ebp-10h] BYREF
 
-  if ( !*(_BYTE *)(a1 + 8) ) /*0x659ca7*/
+  if ( !*(unsigned char *)(a1 + 8) ) /*0x659ca7*/
   {
-    *(_BYTE *)(a1 + 8) = 1; /*0x659cae*/
+    *(unsigned char *)(a1 + 8) = 1; /*0x659cae*/
     Weapon_Update_Update(a1, unsigned int a2); /*0x659cb2*/
   }
-  if ( *(_BYTE *)(a1 + 9) ) /*0x659cb7*/
+  if ( *(unsigned char *)(a1 + 9) ) /*0x659cb7*/
   {
     Weapon_Update_Update_659EE0(a1); /*0x659cc4*/
-    v3 = *(_DWORD *)(a1 + 140); /*0x659cc9*/
-    *(_DWORD *)(a1 + 136) = 0; /*0x659ccf*/
+    v3 = *(unsigned int *)(a1 + 140); /*0x659cc9*/
+    *(unsigned int *)(a1 + 136) = 0; /*0x659ccf*/
     if ( v3 > 0 ) /*0x659cdb*/
     {
       do /*0x659e01*/
       {
         v4 = Weapon_Update_Update_659FF0(a1); /*0x659ceb*/
-        IDA_LOWORD(a2) = (unsigned __int8)(*(_BYTE *)(a1 + 194) >> g_BitMask_Red); /*0x659d13*/
-        IDA_LOWORD(v4) = (unsigned __int8)(*(_BYTE *)(a1 + 193) >> g_BitMask_Blue); /*0x659d28*/
-        IDA_LODWORD(v4) = (_DWORD)v4 << g_BitMask_Green; /*0x659d30*/
+        IDA_LOWORD(a2) = (uint8_t)(*(unsigned char *)(a1 + 194) >> g_BitMask_Red); /*0x659d13*/
+        IDA_LOWORD(v4) = (uint8_t)(*(unsigned char *)(a1 + 193) >> g_BitMask_Blue); /*0x659d28*/
+        IDA_LODWORD(v4) = (unsigned int)v4 << g_BitMask_Green; /*0x659d30*/
         v5 = v4 | (a2 << g_BitShift_Blue); /*0x659d40*/
-        IDA_LOWORD(v4) = (unsigned __int8)(*(_BYTE *)(a1 + 192) >> g_BitShift_Green_0); /*0x659d45*/
-        a2 = ((_DWORD)v4 << g_BitShift_Red) | v5; /*0x659d55*/
-        Coord::To_Screen(g_TacticalClass_Instance, (_DWORD *)(a1 + 156), v14); /*0x659d57*/
-        Coord::To_Screen(g_TacticalClass_Instance, (_DWORD *)(a1 + 168), v13); /*0x659d68*/
+        IDA_LOWORD(v4) = (uint8_t)(*(unsigned char *)(a1 + 192) >> g_BitShift_Green_0); /*0x659d45*/
+        a2 = ((unsigned int)v4 << g_BitShift_Red) | v5; /*0x659d55*/
+        Coord::To_Screen(g_TacticalClass_Instance, (unsigned int *)(a1 + 156), v14); /*0x659d57*/
+        Coord::To_Screen(g_TacticalClass_Instance, (unsigned int *)(a1 + 168), v13); /*0x659d68*/
         v15[1] = g_Map_VisibleRect; /*0x659d7e*/
         v15[0] = DSurface_ViewBounds; /*0x659d86*/
         v15[2] = g_Map_VisibleRectOffset; /*0x659d8f*/
         v15[3] = g_DSurface_WindowOffset; /*0x659d9c*/
         if ( ClipLine(v14, v13, v15) ) /*0x659da0*/
         {
-          v6 = *(_DWORD *)(a1 + 12) - ZCoordToScreenY(*(_DWORD *)(a1 + 164)) - 2; /*0x659db9*/
-          v7 = ZCoordToScreenY(*(_DWORD *)(a1 + 176)); /*0x659dbc*/
-          (*(void (__thiscall **)(int, int *, int *, int *, _DWORD, int, int, _DWORD))(*(_DWORD *)g_DSurface_Hidden_2 /*0x659de7*/
+          v6 = *(unsigned int *)(a1 + 12) - ZCoordToScreenY(*(unsigned int *)(a1 + 164)) - 2; /*0x659db9*/
+          v7 = ZCoordToScreenY(*(unsigned int *)(a1 + 176)); /*0x659dbc*/
+          (*(void (__thiscall **)(int, int *, int *, int *, unsigned int, int, int, unsigned int))(*(unsigned int *)g_DSurface_Hidden_2 /*0x659de7*/
                                                                                      + 52))(
             g_DSurface_Hidden_2,
             &DSurface_ViewBounds,
             v14,
             v13,
-            (__int16, unsigned int a1)a2,
+            (int16_t, unsigned int a1)a2,
             v6,
             -2 - v7,
             0);
         }
-        v8 = *(_DWORD *)(a1 + 140); /*0x659df0*/
-        v9 = *(_DWORD *)(a1 + 136) + 1; /*0x659df7*/
-        *(_DWORD *)(a1 + 136) = v9; /*0x659df9*/
+        v8 = *(unsigned int *)(a1 + 140); /*0x659df0*/
+        v9 = *(unsigned int *)(a1 + 136) + 1; /*0x659df7*/
+        *(unsigned int *)(a1 + 136) = v9; /*0x659df9*/
       }
       while (v9 < v8, unsigned int a1); /*0x659e01*/
     }
   }
-  v10 = *(_DWORD *)(a1 + 60); /*0x659e0c*/
-  v11 = *(_DWORD *)(a1 + 124) + 1; /*0x659e12*/
-  *(_DWORD *)(a1 + 124) = v11; /*0x659e14*/
+  v10 = *(unsigned int *)(a1 + 60); /*0x659e0c*/
+  v11 = *(unsigned int *)(a1 + 124) + 1; /*0x659e12*/
+  *(unsigned int *)(a1 + 124) = v11; /*0x659e14*/
   return v11 >= v10; /*0x659e19*/
 }
 }
@@ -116,7 +116,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   int v10; // edx
   int v11; // eax
   int *v12; // eax
-  _DWORD *v13; // eax
+  unsigned int *v13; // eax
   int *v14; // esi
   int v15; // edx
   int v16; // eax
@@ -135,7 +135,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   int v29; // eax
   int v30; // ecx
   int **v31; // edx
-  _DWORD *v32; // eax
+  unsigned int *v32; // eax
   int v33; // esi
   void *v34; // eax
   int v35; // edx
@@ -206,7 +206,6 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   v56 = v69 - v72; /*0x70c764*/
   v57 = v70 - v73; /*0x70c773*/
   ObjectVector::Construct(&v48, 0, 0); /*0x70c777*/
-  v48 = (void*)&DynamicVectorClass_ObjectClass___vftable; /*0x70c77c*/
   v53 = 10; /*0x70c784*/
   v52 = 0; /*0x70c78c*/
   v47 = 0; /*0x70c790*/
@@ -222,7 +221,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
       IDA_LOWORD(v7) = v59 / 256; /*0x70c7f9*/
       IDA_HIWORD(v7) = v60 / 256; /*0x70c802*/
       v58 = *(float *)&v7; /*0x70c811*/
-      v13 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v58); /*0x70c815*/
+      v13 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v58); /*0x70c815*/
       if ( (v13[80] & 0x100) != 0 && v61 >= dword_B0EB34 * (*((char *)v13 + 283) + 4) ) /*0x70c83c*/
         v14 = (int *)v13[58]; /*0x70c83e*/
       else
@@ -290,14 +289,14 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
         {
           if ( !IDA_BYTE1(v51) && v50 /*0x70ca40*/
             || v53 <= 0
-            || !((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v48[2])(&v48, v53 + v50, 0) )
+            || !((uint8_t (__thiscall *)(void ***, int, unsigned int))v48[2])(&v48, v53 + v50, 0) )
           {
             goto LABEL_31; /*0x70ca45*/
           }
           v25 = v52; /*0x70ca47*/
         }
         v52 = v25 + 1; /*0x70ca4e*/
-        *((_DWORD *)Block + v25) = v14; /*0x70ca56*/
+        *((unsigned int *)Block + v25) = v14; /*0x70ca56*/
   LABEL_31:
         v14 = (int *)v14[12]; /*0x70ca59*/
       }
@@ -330,12 +329,12 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
           goto LABEL_54; /*0x70cb70*/
         if ( (IDA_BYTE1(v51) || !v50) && v53 > 0 ) /*0x70cb84*/
         {
-          if ( ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v48[2])(&v48, v53 + v50, 0) ) /*0x70cb93*/
+          if ( ((uint8_t (__thiscall *)(void ***, int, unsigned int))v48[2])(&v48, v53 + v50, 0) ) /*0x70cb93*/
           {
             v29 = v52; /*0x70cb9a*/
   LABEL_54:
             v52 = v29 + 1; /*0x70cb9e*/
-            *((_DWORD *)Block + v29) = aP3; /*0x70cba9*/
+            *((unsigned int *)Block + v29) = aP3; /*0x70cba9*/
           }
   LABEL_55:
           v29 = v52; /*0x70cbac*/
@@ -347,9 +346,9 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
         do /*0x70cbf5*/
         {
           v62 = aP4->u8_98; /*0x70cbc3*/
-          (*(void (__thiscall **)(_DWORD, float *, _DWORD, _DWORD, int *, _DWORD, _DWORD, _DWORD))(**((_DWORD **)Block + v39) /*0x70cbe8*/
+          (*(void (__thiscall **)(unsigned int, float *, unsigned int, unsigned int, int *, unsigned int, unsigned int, unsigned int))(**((unsigned int **)Block + v39) /*0x70cbe8*/
                                                                                                  + 364))(
-            *((_DWORD *)Block + v39),
+            *((unsigned int *)Block + v39),
             &v62,
             0,
             aP4->q02B,
@@ -363,12 +362,11 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
       }
       if ( (*(int (__thiscall **)(int *))(*aP3 + 44))(aP3) == 11 && CellClass::IsActiveOrNext(aP3) ) /*0x70cc05*/
       {
-        v40 = *((_DWORD *)g_RulesClass_Instance + 1523); /*0x70cc1e*/
-        if ( Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 99) < v40 ) /*0x70cc31*/
+        v40 = *((unsigned int *)g_RulesClass_Instance + 1523); /*0x70cc1e*/
+        if ( Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 99) < v40 ) /*0x70cc31*/
           LayerClass::DestroyCliff((int *)&MapClass_Instance, v41, (int)aP3); /*0x70cc39*/
       }
       v66 = v66; /*0x70cc45*/
-      v48 = (void*)&VectorClass_ObjectClass___vftable; /*0x70cc4b*/
       *a1 = v65; /*0x70cc53*/
       v43 = v6; /*0x70cc55*/
       a1[1] = v66; /*0x70cc59*/
@@ -384,15 +382,14 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
   v32 = Coord::To_Cell(&MapClass_Instance, &v59); /*0x70cae2*/
   if ( CellClass::IsActiveOrNext(v32) ) /*0x70cae9*/
   {
-    v33 = *((_DWORD *)g_RulesClass_Instance + 1523); /*0x70cb01*/
-    if ( Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 99) < v33 ) /*0x70cb14*/
+    v33 = *((unsigned int *)g_RulesClass_Instance + 1523); /*0x70cb01*/
+    if ( Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 99) < v33 ) /*0x70cb14*/
     {
       v34 = Coord::To_Cell(&MapClass_Instance, &v59); /*0x70cb20*/
       LayerClass::DestroyCliff((int *)&MapClass_Instance, v35, (int)v34); /*0x70cb2b*/
     }
   }
   v60 = v60; /*0x70cb37*/
-  v48 = (void*)&VectorClass_ObjectClass___vftable; /*0x70cb3d*/
   *a1 = v59; /*0x70cb45*/
   v61 = v61; /*0x70cb47*/
   a1[1] = v60; /*0x70cb4b*/
@@ -410,7 +407,7 @@ int sub_53B410()
   StringCSF = GetStringCSF(aMsgDominatorac, 0, g_Str_File_Ion_cpp, 1339); /*0x53b421*/
   v1 = 3; /*0x53b42c*/
   if ( HouseClass_Player ) /*0x53b433*/
-    v1 = *((_DWORD *)HouseClass_Player + 22549); /*0x53b435*/
+    v1 = *((unsigned int *)HouseClass_Player + 22549); /*0x53b435*/
   return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53b457*/
 }
 }

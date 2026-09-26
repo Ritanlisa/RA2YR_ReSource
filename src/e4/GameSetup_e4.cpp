@@ -14,19 +14,19 @@
 namespace gamemd {
 int GameSetup::LookupDialogHash()
 {
-  _DWORD *v1; // eax
-  _DWORD *v3; // eax
+  unsigned int *v1; // eax
+  unsigned int *v3; // eax
   void *v4; // [esp+0h] [ebp-4h] BYREF
 
   v4 = this; /*0x60d326*/
   if ( !g_DialogHashMap_Count ) /*0x60d32c*/
     return 0; /*0x60d32c*/
-  v1 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v4) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60d34d*/
+  v1 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v4) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60d34d*/
   if ( !v1 ) /*0x60d352*/
     return 0; /*0x60d352*/
   while ( (void *)*v1 != v4 ) /*0x60d35a*/
   {
-    v1 = (_DWORD *)v1[129]; /*0x60d35c*/
+    v1 = (unsigned int *)v1[129]; /*0x60d35c*/
     if ( !v1 ) /*0x60d364*/
       return 0; /*0x60d364*/
   }
@@ -46,7 +46,7 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   int result; // eax
   char Buffer[16]; // [esp+10h] [ebp-10h] BYREF
 
-  INIClass::SetInt(aP1, Block, g_INI_Key_GameMode, *(_DWORD *)this, 0); /*0x698fae*/
+  INIClass::SetInt(aP1, Block, g_INI_Key_GameMode, *(unsigned int *)this, 0); /*0x698fae*/
   INIClass::SetInt(aP1, Block, aScenindex, this->q004, 0); /*0x698fc1*/
   INIClass::SetInt(aP1, Block, g_INI_Key_GameSpeed, this->ptr_8, 0); /*0x698fd4*/
   INIClass::SetInt(aP1, Block, g_INI_Key_Credits, this->q00C, 0); /*0x698fe7*/

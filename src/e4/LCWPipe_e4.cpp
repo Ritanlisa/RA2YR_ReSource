@@ -14,7 +14,7 @@ int LCWPipe::Dtor()
   void *v3; // ecx
 
   v2 = (void *)this->q014; /*0x552063*/
-  *(_DWORD *)this = (int)&LCWPipe_vftable; /*0x552066*/
+  *(unsigned int *)this = (int)&LCWPipe_vftable; /*0x552066*/
   RA2_OPDEL(v2); /*0x55206d*/
   v3 = (void *)this->q018; /*0x552072*/
   this->q014 = 0; /*0x552075*/

@@ -54,7 +54,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
     strcat((char *)v12, asc_815E74); /*0x7737bc*/
   mbstowcs(Destination, (const char *)v12, 0x104u); /*0x7737d7*/
   wcscat(Destination, aFr); /*0x7737e9*/
-  if ( (*(int (__stdcall **)(_DWORD, wchar_t *, _DWORD, _DWORD))(*this->q008 + 64))( /*0x773808*/
+  if ( (*(int (__stdcall **)(unsigned int, wchar_t *, unsigned int, unsigned int))(*this->q008 + 64))( /*0x773808*/
          this->q008,
          Destination,
          0,
@@ -63,7 +63,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   v6 = this->q008; /*0x77380a*/
   if ( v6 ) /*0x77380f*/
   {
-    (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v6 + 28))(this->q008); /*0x773814*/
+    (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v6 + 28))(this->q008); /*0x773814*/
     this->u8_40C = 1; /*0x773817*/
   }
   return 1; /*0x77381e*/
@@ -77,9 +77,9 @@ int WebBrowser::ShowDialog()
   HWND result; // eax
   HWND v3; // edi
   int v4; // edx
-  _DWORD *v5; // eax
+  unsigned int *v5; // eax
   int v6; // esi
-  _DWORD *v7; // ebp
+  unsigned int *v7; // ebp
   LONG dwNewLong; // [esp+1Ch] [ebp-28h] BYREF
   const char *v9; // [esp+20h] [ebp-24h]
   struct tagRECT Rect; // [esp+24h] [ebp-20h] BYREF
@@ -107,25 +107,24 @@ int WebBrowser::ShowDialog()
     v13 = v11 + 800; /*0x773f39*/
     v12 = Rect.top + (Rect.bottom - Rect.top - 600) / 2; /*0x773f4f*/
     v14 = v12 + 600; /*0x773f58*/
-    v5 = RA2_OPNEW(0x414u); /*0x773f5c*/
+    v5 = operator new(0x414u); /*0x773f5c*/
     v6 = (int)v5; /*0x773f61*/
     if ( v5 ) /*0x773f68*/
     {
       v7 = v5 + 2; /*0x773f6e*/
       v5[1] = 1; /*0x773f71*/
       v5[2] = 0; /*0x773f7d*/
-      *((_BYTE *)v5 + 1036) = 0; /*0x773f84*/
+      *((unsigned char *)v5 + 1036) = 0; /*0x773f84*/
       v5[260] = 0; /*0x773f8b*/
-      *(void **)v5 = (void*)&WebBrowser_vftable; /*0x773f95*/
       Debug::Log(g_Str_Instantiating_embedded_WebBrow); /*0x773f9b*/
-      *(_DWORD *)(v6 + 1040) = v3; /*0x773fa3*/
+      *(unsigned int *)(v6 + 1040) = v3; /*0x773fa3*/
       Debug::Log(g_Str_Creating_WOLBrowser_component_); /*0x773fae*/
       if ( CoCreateInstance(&stru_7F7C60, 0, 1u, &stru_7F7C30, (LPVOID *)(v6 + 8)) >= 0 ) /*0x773fcd*/
       {
         Debug::Log(g_Str_Starting_up_WOLBrowser); /*0x773fd4*/
-        (*(void (__stdcall **)(_DWORD, int))(*(_DWORD *)*v7 + 20))(*v7, v6); /*0x773fe3*/
-        (*(void (__stdcall **)(_DWORD, HWND, int *))(*(_DWORD *)*v7 + 12))(*v7, v3, &v11); /*0x773ff2*/
-        (*(void (__stdcall **)(_DWORD, int))(*(_DWORD *)*v7 + 60))(*v7, 1); /*0x773ffe*/
+        (*(void (__stdcall **)(unsigned int, int))(*(unsigned int *)*v7 + 20))(*v7, v6); /*0x773fe3*/
+        (*(void (__stdcall **)(unsigned int, HWND, int *))(*(unsigned int *)*v7 + 12))(*v7, v3, &v11); /*0x773ff2*/
+        (*(void (__stdcall **)(unsigned int, int))(*(unsigned int *)*v7 + 60))(*v7, 1); /*0x773ffe*/
       }
       v1 = v9; /*0x774001*/
     }
@@ -136,12 +135,12 @@ int WebBrowser::ShowDialog()
     dword_B72D0C = v6; /*0x774007*/
     if ( v6 ) /*0x77400d*/
     {
-      if ( (unsigned __int8)WebBrowser::LoadURLFromRegistry(v1) && !dwNewLong ) /*0x774021*/
+      if ( (uint8_t)WebBrowser::LoadURLFromRegistry(v1) && !dwNewLong ) /*0x774021*/
       {
         while ( !Dialog::PumpMessages() && !dwNewLong ) /*0x774032*/
           ; /*0x774023*/
       }
-      (*(void (__stdcall **)(int))(*(_DWORD *)dword_B72D0C + 8))(dword_B72D0C); /*0x77403c*/
+      (*(void (__stdcall **)(int))(*(unsigned int *)dword_B72D0C + 8))(dword_B72D0C); /*0x77403c*/
       dword_B72D0C = 0; /*0x77403f*/
     }
     return Dialog::Destroy(v3); /*0x77404b*/
@@ -156,17 +155,16 @@ int WebBrowser::GoForward()
   void * v2;
   char v4; // [esp+10h] [ebp+4h]
 
-  *(void **)this = (void*)&WebBrowser_vftable; /*0x7740a8*/
   Debug::Log(); /*0x7740ae*/
   if ( this->q008 ) /*0x7740b3*/
   {
     Debug::Log(); /*0x7740c2*/
-    (*(void (__stdcall **)(_DWORD, WebBrowser *))(**((_DWORD **)this + 2) + 24))(this->q008, this); /*0x7740d1*/
-    (*(void (__stdcall **)(_DWORD))(**((_DWORD **)this + 2) + 16))(this->q008); /*0x7740da*/
+    (*(void (__stdcall **)(unsigned int, WebBrowser *))(*this->q008 + 24))(this->q008, this); /*0x7740d1*/
+    (*(void (__stdcall **)(unsigned int))(*this->q008 + 16))(this->q008); /*0x7740da*/
   }
   v2 = this->q008; /*0x7740dd*/
   if ( v2 ) /*0x7740e2*/
-    (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v2 + 8))(this->q008); /*0x7740e7*/
+    (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v2 + 8))(this->q008); /*0x7740e7*/
   if ( (v4 & 1) != 0 ) /*0x7740ef*/
     RA2_OPDEL(); /*0x7740f2*/
   return (int)this; /*0x7740fc*/
@@ -215,13 +213,13 @@ int WebBrowser::QueryInterface()
 {
   int v2; // [esp+10h] [ebp+4h]
   const void *v3; // [esp+14h] [ebp+8h]
-  _DWORD *v4; // [esp+18h] [ebp+Ch]
+  unsigned int *v4; // [esp+18h] [ebp+Ch]
 
   *v4 = 0; /*0x773a59*/
   if ( memcmp(v3, &IID_IUnknown, 0x10u) && memcmp(v3, &unk_7F7C20, 0x10u) ) /*0x773a71*/
     return -2147467262; /*0x773a77*/
   *v4 = v2; /*0x773a84*/
-  (*(void (__stdcall **)(int))(*(_DWORD *)v2 + 4))(v2); /*0x773a89*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)v2 + 4))(v2); /*0x773a89*/
   return 0; /*0x773a75*/
 }
 } // namespace gamemd
@@ -233,8 +231,8 @@ int WebBrowser::AddRef()
   int v1; // ecx
   int v3; // [esp+4h] [ebp+4h]
 
-  v1 = *(_DWORD *)(v3 + 4) + 1; /*0x773aa7*/
-  *(_DWORD *)(v3 + 4) = v1; /*0x773aa8*/
+  v1 = *(unsigned int *)(v3 + 4) + 1; /*0x773aa7*/
+  *(unsigned int *)(v3 + 4) = v1; /*0x773aa8*/
   return v1; /*0x773aad*/
 }
 } // namespace gamemd
@@ -244,14 +242,14 @@ namespace gamemd {
 int WebBrowser::Release()
 {
   int result; // eax
-  _DWORD *v2; // [esp+4h] [ebp+4h]
+  unsigned int *v2; // [esp+4h] [ebp+4h]
 
   result = v2[1] - 1; /*0x773ab7*/
   v2[1] = result; /*0x773ab8*/
   if ( !result ) /*0x773abb*/
   {
     if ( v2 ) /*0x773abf*/
-      (*(void (__thiscall **)(_DWORD *, int))(*v2 + 68))(v2, 1); /*0x773ac5*/
+      (*(void (__thiscall **)(unsigned int *, int))(*v2 + 68))(v2, 1); /*0x773ac5*/
     return 0; /*0x773ac8*/
   }
   return result; /*0x773aca*/
@@ -274,8 +272,8 @@ int WebBrowser::Write()
   int v3; // [esp+Ch] [ebp+Ch]
 
   if ( v3 ) /*0x773b16*/
-    (*(void (__stdcall **)(_DWORD, int, _DWORD, wchar_t *))(**(_DWORD **)(v2 + 8) + 64))( /*0x773b2d*/
-      *(_DWORD *)(v2 + 8),
+    (*(void (__stdcall **)(unsigned int, int, unsigned int, wchar_t *))(**(unsigned int **)(v2 + 8) + 64))( /*0x773b2d*/
+      *(unsigned int *)(v2 + 8),
       v2 + 12,
       0,
       aMain);
@@ -375,8 +373,8 @@ int WebBrowser::Clone()
   wcscat((wchar_t *)(v9 + 12), L"BadPage.htm"); /*0x773cb5*/
   mbstowcs(Dest, (const char *)Data, 0x104u); /*0x773ccc*/
   wcscat(Dest, aFr); /*0x773cde*/
-  return (*(int (__stdcall **)(_DWORD, wchar_t *, _DWORD, _DWORD))(**(_DWORD **)(v9 + 8) + 64))( /*0x773cfc*/
-           *(_DWORD *)(v9 + 8),
+  return (*(int (__stdcall **)(unsigned int, wchar_t *, unsigned int, unsigned int))(**(unsigned int **)(v9 + 8) + 64))( /*0x773cfc*/
+           *(unsigned int *)(v9 + 8),
            Dest,
            0,
            0);
@@ -397,7 +395,7 @@ namespace gamemd {
 int WebBrowser::GoBack()
 {
   void *v2; // [esp+0h] [ebp-94h] BYREF
-  _DWORD v3[2]; // [esp+4h] [ebp-90h] BYREF
+  unsigned int v3[2]; // [esp+4h] [ebp-90h] BYREF
   int v4; // [esp+Ch] [ebp-88h] BYREF
   char v5; // [esp+10h] [ebp-84h]
   char Dest[64]; // [esp+14h] [ebp-80h] BYREF
@@ -415,12 +413,11 @@ int WebBrowser::GoBack()
   ReadRegistryOptionsWOL(&v4); /*0x773db1*/
   if ( Flag::IsNot2(&v4) ) /*0x773dba*/
   {
-    FindChannelWOL(Dest, (int)v7, 1u, *(_DWORD *)(v3[1] + 16)); /*0x773dd5*/
+    FindChannelWOL(Dest, (int)v7, 1u, *(unsigned int *)(v3[1] + 16)); /*0x773dd5*/
     SaveConfigWOL((int)g_GameMode_Current); /*0x773ddf*/
   }
   String::Assign_Alt((void **)&g_WebBrowser, Dest); /*0x773dee*/
   String::Assign_Alt((void **)&g_WebBrowserConfig, v7); /*0x773dfd*/
-  v3[0] = (void*)&rc_ptr_PlayerProfile_vftable; /*0x773e06*/
   ComPtr::Release(v3); /*0x773e0e*/
   DeleteAndZero(&v2); /*0x773e17*/
   return 0; /*0x773e1e*/

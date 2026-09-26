@@ -10,8 +10,8 @@
 namespace gamemd {
 int IStream::Read(IStream * pstm, void * pv, ULONG cb)
 {
-  _DWORD *v3; // ecx
-  _DWORD *v4; // esi
+  unsigned int *v3; // ecx
+  unsigned int *v4; // esi
   void *v5; // ecx
   HRESULT result; // eax
   void *v7; // [esp+20h] [ebp-4h] BYREF
@@ -25,14 +25,14 @@ int IStream::Read(IStream * pstm, void * pv, ULONG cb)
   v4[9] = v5; /*0x4a3059*/
   if ( !v4[2] ) /*0x4a305b*/
     WinAPI::Wrapper(-2147467261); /*0x4a3067*/
-  result = (*(int (__stdcall **)(_DWORD, _DWORD *, int, void **))(*(_DWORD *)v4[2] + 16))(v4[2], v4 + 9, 8, &pv); /*0x4a307a*/
+  result = (*(int (__stdcall **)(unsigned int, unsigned int *, int, void **))(*(unsigned int *)v4[2] + 16))(v4[2], v4 + 9, 8, &pv); /*0x4a307a*/
   if ( result >= 0 )
   {
     if ( pv == (void *)8 )
     {
       if ( !v4[2] ) /*0x4a3093*/
         WinAPI::Wrapper(-2147467261); /*0x4a309f*/
-      result = (*(int (__stdcall **)(_DWORD, _DWORD, void *, void **))(*(_DWORD *)v4[2] + 16))(v4[2], v4[7], v7, &pv); /*0x4a30b8*/
+      result = (*(int (__stdcall **)(unsigned int, unsigned int, void *, void **))(*(unsigned int *)v4[2] + 16))(v4[2], v4[7], v7, &pv); /*0x4a30b8*/
       if ( result >= 0 )
         return v7 != pv ? 0x80004005 : 0;
     }

@@ -30,31 +30,31 @@ ModemGame * * CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int
     return -2147467261; /*0x4a2ceb*/
   if ( Size < 0 ) /*0x4a2cf0*/
     return -2147024809; /*0x4a2cfb*/
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2d02*/
+  if ( !*(unsigned int *)(a1 + 8) ) /*0x4a2d02*/
     return -2147467259; /*0x4a2d12*/
-  if ( *(_BYTE *)(a1 + 16) ) /*0x4a2d15*/
+  if ( *(unsigned char *)(a1 + 16) ) /*0x4a2d15*/
     return -2147467259; /*0x4a2d25*/
-  *(_BYTE *)(a1 + 17) = 1; /*0x4a2d2a*/
+  *(unsigned char *)(a1 + 17) = 1; /*0x4a2d2a*/
   if ( !Size ) /*0x4a2d2e*/
     return 0; /*0x4a2d2e*/
   if ( a4 ) /*0x4a2d3a*/
     *a4 = 0; /*0x4a2d3c*/
-  v8 = *(_DWORD *)(a1 + 20); /*0x4a2d42*/
+  v8 = *(unsigned int *)(a1 + 20); /*0x4a2d42*/
   if ( v8 > 0 ) /*0x4a2d47*/
   {
     if ( Size >= 0x10000 - v8 ) /*0x4a2d52*/
       v5 = 0x10000 - v8; /*0x4a2d54*/
-    memcpy((void *)(*(_DWORD *)(a1 + 24) + *(_DWORD *)(a1 + 20)), Src, v5); /*0x4a2d61*/
-    v9 = v5 + *(_DWORD *)(a1 + 20); /*0x4a2d72*/
+    memcpy((void *)(*(unsigned int *)(a1 + 24) + *(unsigned int *)(a1 + 20)), Src, v5); /*0x4a2d61*/
+    v9 = v5 + *(unsigned int *)(a1 + 20); /*0x4a2d72*/
     v4 = (IStream *)((char *)Src + v5); /*0x4a2d74*/
     v6 = Size - v5; /*0x4a2d76*/
-    *(_DWORD *)(a1 + 20) = v9; /*0x4a2d7d*/
+    *(unsigned int *)(a1 + 20) = v9; /*0x4a2d7d*/
     if ( v9 == 0x10000 ) /*0x4a2d80*/
     {
       result = IStream::Read(*(IStream **)(a1 + 24), (void *)0x10000, v10); /*0x4a2d8d*/
       if ( result < 0 ) /*0x4a2d94*/
         return result; /*0x4a2d94*/
-      *(_DWORD *)(a1 + 20) = 0; /*0x4a2d96*/
+      *(unsigned int *)(a1 + 20) = 0; /*0x4a2d96*/
     }
     v5 = Size; /*0x4a2d9d*/
   }
@@ -65,7 +65,7 @@ ModemGame * * CStreamClass::CopyStreamToBuffer(int a1, IStream * Src, signed int
     {
       memcpy(*(void **)(a1 + 24), v4, v6); /*0x4a2ddc*/
       v5 = Size; /*0x4a2de1*/
-      *(_DWORD *)(a1 + 20) = v6; /*0x4a2de8*/
+      *(unsigned int *)(a1 + 20) = v6; /*0x4a2de8*/
     }
     if ( a4 ) /*0x4a2df1*/
       *a4 = v5; /*0x4a2df3*/
@@ -95,38 +95,36 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
   void *v6; // edx
   int v7; // eax
 
-  v4 = *((_DWORD *)Block + 2); /*0x4a3116*/
-  *(_DWORD *)Block = (void*)&CStreamClass_vftable; /*0x4a3119*/
-  *((_DWORD *)Block + 1) = (void*)&CStreamClass_vftable; /*0x4a3121*/
+  v4 = *((unsigned int *)Block + 2); /*0x4a3116*/
   if ( v4 ) /*0x4a3128*/
   {
-    if ( *((_BYTE *)Block + 17) /*0x4a314b*/
+    if ( *((unsigned char *)Block + 17) /*0x4a314b*/
       && *((int *)Block + 5) > 0
-      && !CStreamClass::IsEmpty((_DWORD *)Block + 2, 0)
+      && !CStreamClass::IsEmpty((unsigned int *)Block + 2, 0)
       && *((int *)Block + 5) > 0 )
     {
       IStream::Read(*((IStream **)Block + 6), *((void **)Block + 5), a2); /*0x4a3154*/
     }
-    if ( *((_DWORD *)Block + 2) /*0x4a317b*/
-      && (*(int (__stdcall **)(_DWORD, _DWORD))(**((_DWORD **)Block + 2) + 32))(*((_DWORD *)Block + 2), 0) >= 0 )
+    if ( *((unsigned int *)Block + 2) /*0x4a317b*/
+      && (*(int (__stdcall **)(unsigned int, unsigned int))(**((unsigned int **)Block + 2) + 32))(*((unsigned int *)Block + 2), 0) >= 0 )
     {
-      if ( !*((_DWORD *)Block + 2) ) /*0x4a317d*/
+      if ( !*((unsigned int *)Block + 2) ) /*0x4a317d*/
         WinAPI::Wrapper(-2147467261); /*0x4a3187*/
-      (*(void (__stdcall **)(_DWORD))(**((_DWORD **)Block + 2) + 8))(*((_DWORD *)Block + 2)); /*0x4a3192*/
-      *((_DWORD *)Block + 2) = 0; /*0x4a3195*/
+      (*(void (__stdcall **)(unsigned int))(**((unsigned int **)Block + 2) + 8))(*((unsigned int *)Block + 2)); /*0x4a3192*/
+      *((unsigned int *)Block + 2) = 0; /*0x4a3195*/
     }
   }
   RA2_OPDEL(*((void **)Block + 8)); /*0x4a319c*/
-  v5 = (void *)*((_DWORD *)Block + 6); /*0x4a31a1*/
-  *((_DWORD *)Block + 8) = 0; /*0x4a31a4*/
+  v5 = (void *)*((unsigned int *)Block + 6); /*0x4a31a1*/
+  *((unsigned int *)Block + 8) = 0; /*0x4a31a4*/
   RA2_OPDEL(v5); /*0x4a31a8*/
-  v6 = (void *)*((_DWORD *)Block + 7); /*0x4a31ad*/
-  *((_DWORD *)Block + 6) = 0; /*0x4a31b0*/
+  v6 = (void *)*((unsigned int *)Block + 7); /*0x4a31ad*/
+  *((unsigned int *)Block + 6) = 0; /*0x4a31b0*/
   RA2_OPDEL(v6); /*0x4a31b4*/
-  *((_DWORD *)Block + 7) = 0; /*0x4a31b9*/
-  v7 = *((_DWORD *)Block + 2); /*0x4a31bc*/
+  *((unsigned int *)Block + 7) = 0; /*0x4a31b9*/
+  v7 = *((unsigned int *)Block + 2); /*0x4a31bc*/
   if ( v7 ) /*0x4a31c4*/
-    (*(void (__stdcall **)(_DWORD))(*(_DWORD *)v7 + 8))(*((_DWORD *)Block + 2)); /*0x4a31c9*/
+    (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v7 + 8))(*((unsigned int *)Block + 2)); /*0x4a31c9*/
   if ( (a3 & 1) != 0 ) /*0x4a31d1*/
     RA2_OPDEL(Block); /*0x4a31d4*/
   return Block; /*0x4a31de*/
@@ -136,12 +134,12 @@ CStreamClass * CStreamClass::ddtor(int a2, char a3)
 // 0x4A2E00
 int CStreamClass::Read(int a1, int a2, int a3, int a4, int a5)
 {
-  if ( *(_BYTE *)(a1 + 16) || *(_BYTE *)(a1 + 17) ) /*0x4a2e0c*/
+  if ( *(unsigned char *)(a1 + 16) || *(unsigned char *)(a1 + 17) ) /*0x4a2e0c*/
     return -2147467259; /*0x4a2e45*/
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2e13*/
+  if ( !*(unsigned int *)(a1 + 8) ) /*0x4a2e13*/
     WinAPI::Wrapper(-2147467261); /*0x4a2e1f*/
-  return (*(int (__stdcall **)(_DWORD, int, int, int, int))(**(_DWORD **)(a1 + 8) + 20))( /*0x4a2e41*/
-           *(_DWORD *)(a1 + 8),
+  return (*(int (__stdcall **)(unsigned int, int, int, int, int))(**(unsigned int **)(a1 + 8) + 20))( /*0x4a2e41*/
+           *(unsigned int *)(a1 + 8),
            a2,
            a3,
            a4,
@@ -150,19 +148,19 @@ int CStreamClass::Read(int a1, int a2, int a3, int a4, int a5)
 // 0x4A2E50
 int CStreamClass::Write(int a1, int a2, int a3)
 {
-  if ( *(_BYTE *)(a1 + 16) || *(_BYTE *)(a1 + 17) ) /*0x4a2e5c*/
+  if ( *(unsigned char *)(a1 + 16) || *(unsigned char *)(a1 + 17) ) /*0x4a2e5c*/
     return -2147467259; /*0x4a2e8b*/
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2e63*/
+  if ( !*(unsigned int *)(a1 + 8) ) /*0x4a2e63*/
     WinAPI::Wrapper(-2147467261); /*0x4a2e6f*/
-  return (*(int (__stdcall **)(_DWORD, int, int))(**(_DWORD **)(a1 + 8) + 24))(*(_DWORD *)(a1 + 8), a2, a3); /*0x4a2e87*/
+  return (*(int (__stdcall **)(unsigned int, int, int))(**(unsigned int **)(a1 + 8) + 24))(*(unsigned int *)(a1 + 8), a2, a3); /*0x4a2e87*/
 }
 // 0x4A2EA0
 int CStreamClass::Seek(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2ea5*/
+  if ( !*(unsigned int *)(a1 + 8) ) /*0x4a2ea5*/
     WinAPI::Wrapper(-2147467261); /*0x4a2eb1*/
-  return (*(int (__stdcall **)(_DWORD, int, int, int, int, int))(**(_DWORD **)(a1 + 8) + 28))( /*0x4a2ed8*/
-           *(_DWORD *)(a1 + 8),
+  return (*(int (__stdcall **)(unsigned int, int, int, int, int, int))(**(unsigned int **)(a1 + 8) + 28))( /*0x4a2ed8*/
+           *(unsigned int *)(a1 + 8),
            a2,
            a3,
            a4,
@@ -172,24 +170,24 @@ int CStreamClass::Seek(int a1, int a2, int a3, int a4, int a5, int a6)
 // 0x4A2EE0
 int CStreamClass::SetSize(int a1, int a2)
 {
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2ee5*/
+  if ( !*(unsigned int *)(a1 + 8) ) /*0x4a2ee5*/
     WinAPI::Wrapper(-2147467261); /*0x4a2ef1*/
-  return (*(int (__stdcall **)(_DWORD, int))(**(_DWORD **)(a1 + 8) + 32))(*(_DWORD *)(a1 + 8), a2); /*0x4a2f04*/
+  return (*(int (__stdcall **)(unsigned int, int))(**(unsigned int **)(a1 + 8) + 32))(*(unsigned int *)(a1 + 8), a2); /*0x4a2f04*/
 }
 // 0x4A2F10
 int CStreamClass::Commit(int a1)
 {
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2f15*/
+  if ( !*(unsigned int *)(a1 + 8) ) /*0x4a2f15*/
     WinAPI::Wrapper(-2147467261); /*0x4a2f21*/
-  return (*(int (__stdcall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 36))(*(_DWORD *)(a1 + 8)); /*0x4a2f2f*/
+  return (*(int (__stdcall **)(unsigned int))(**(unsigned int **)(a1 + 8) + 36))(*(unsigned int *)(a1 + 8)); /*0x4a2f2f*/
 }
 // 0x4A2F40
 int CStreamClass::Revert(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2f45*/
+  if ( !*(unsigned int *)(a1 + 8) ) /*0x4a2f45*/
     WinAPI::Wrapper(-2147467261); /*0x4a2f51*/
-  return (*(int (__stdcall **)(_DWORD, int, int, int, int, int))(**(_DWORD **)(a1 + 8) + 40))( /*0x4a2f78*/
-           *(_DWORD *)(a1 + 8),
+  return (*(int (__stdcall **)(unsigned int, int, int, int, int, int))(**(unsigned int **)(a1 + 8) + 40))( /*0x4a2f78*/
+           *(unsigned int *)(a1 + 8),
            a2,
            a3,
            a4,
@@ -199,10 +197,10 @@ int CStreamClass::Revert(int a1, int a2, int a3, int a4, int a5, int a6)
 // 0x4A2F80
 int CStreamClass::LockRegion(int a1, int a2, int a3, int a4, int a5, int a6)
 {
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2f85*/
+  if ( !*(unsigned int *)(a1 + 8) ) /*0x4a2f85*/
     WinAPI::Wrapper(-2147467261); /*0x4a2f91*/
-  return (*(int (__stdcall **)(_DWORD, int, int, int, int, int))(**(_DWORD **)(a1 + 8) + 44))( /*0x4a2fb8*/
-           *(_DWORD *)(a1 + 8),
+  return (*(int (__stdcall **)(unsigned int, int, int, int, int, int))(**(unsigned int **)(a1 + 8) + 44))( /*0x4a2fb8*/
+           *(unsigned int *)(a1 + 8),
            a2,
            a3,
            a4,
@@ -212,16 +210,16 @@ int CStreamClass::LockRegion(int a1, int a2, int a3, int a4, int a5, int a6)
 // 0x4A2FC0
 int CStreamClass::UnlockRegion(int a1, int a2, int a3)
 {
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2fc5*/
+  if ( !*(unsigned int *)(a1 + 8) ) /*0x4a2fc5*/
     WinAPI::Wrapper(-2147467261); /*0x4a2fd1*/
-  return (*(int (__stdcall **)(_DWORD, int, int))(**(_DWORD **)(a1 + 8) + 48))(*(_DWORD *)(a1 + 8), a2, a3); /*0x4a2fe9*/
+  return (*(int (__stdcall **)(unsigned int, int, int))(**(unsigned int **)(a1 + 8) + 48))(*(unsigned int *)(a1 + 8), a2, a3); /*0x4a2fe9*/
 }
 // 0x4A2FF0
 int CStreamClass::Stat(int a1, int a2)
 {
-  if ( !*(_DWORD *)(a1 + 8) ) /*0x4a2ff5*/
+  if ( !*(unsigned int *)(a1 + 8) ) /*0x4a2ff5*/
     WinAPI::Wrapper(-2147467261); /*0x4a3001*/
-  return (*(int (__stdcall **)(_DWORD, int))(**(_DWORD **)(a1 + 8) + 52))(*(_DWORD *)(a1 + 8), a2); /*0x4a3014*/
+  return (*(int (__stdcall **)(unsigned int, int))(**(unsigned int **)(a1 + 8) + 52))(*(unsigned int *)(a1 + 8), a2); /*0x4a3014*/
 }
 // 0x4A3220
 int CStreamClass::IStreamQueryInterface(int a1, const void * a2, unsigned int * a3)
@@ -242,7 +240,7 @@ LONG CStreamClass::IStreamRelease(int a1)
 namespace gamemd {
 int CStreamClass_16::Seek(int a2)
 {
-  return *(_DWORD *)(this->q004 + 4 * a2); /*0x4a4b2a*/
+  return *(unsigned int *)(this->q004 + 4 * a2); /*0x4a4b2a*/
 }
 } // namespace gamemd
 
@@ -252,18 +250,18 @@ char CStreamClass_16::AddRef(int a2)
 {
   int v2; // esi
   int v3; // edx
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // ecx
 
   v2 = this->q008; /*0x4a4b32*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x4a4b3d*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x4a4b3d*/
   {
     v3 = 0; /*0x4a4b3f*/
     if ( v2 <= 0 ) /*0x4a4b43*/
       return 1; /*0x4a4b63*/
-    v4 = (_DWORD *)this->q004; /*0x4a4b45*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x4a4b4b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x4a4b54*/
+    v4 = (unsigned int *)this->q004; /*0x4a4b45*/
+    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4a4b4b*/
+    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4a4b54*/
     {
       ++v3; /*0x4a4b56*/
       ++v4; /*0x4a4b57*/
@@ -279,7 +277,7 @@ char CStreamClass_16::AddRef(int a2)
 namespace gamemd {
 char CStreamClass_16::Release(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v6; // ecx
   int i; // eax
 
@@ -289,7 +287,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x4a4b8c*/
       v4 = a3; /*0x4a4ba2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4a4b9e*/
+      v4 = operator new(4 * a2); /*0x4a4b9e*/
     this->q00C = 1; /*0x4a4ba6*/
     if ( v4 ) /*0x4a4baa*/
     {
@@ -298,11 +296,11 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
         v6 = this->q008; /*0x4a4bbc*/
         if ( a2 < v6 ) /*0x4a4bc1*/
           v6 = a2; /*0x4a4bc3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x4a4bc9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->q004 + 4 * i - 4) ) /*0x4a4bc9*/
           ++i; /*0x4a4bce*/
         if ( this->IsAllocated ) /*0x4a4bdb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4a4be6*/
+          RA2_OPDEL(this->q004); /*0x4a4be6*/
           this->q004 = 0; /*0x4a4bee*/
         }
       }
@@ -318,7 +316,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x4a4c12*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x4a4c12*/
     return 1; /*0x4a4c18*/
   }
 }
@@ -344,7 +342,7 @@ int CStreamClass_16::Read(unsigned int * a2)
 {
   int result; // eax
   int v3; // edx
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->q00C ) /*0x4a4c50*/
     return 0; /*0x4a4c58*/
@@ -379,7 +377,6 @@ VectorClass_flat * CStreamClass_16::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x4a4d93*/
-  *(void **)this = (void*)&VectorClass__DDSURFACEDESC___vftable; /*0x4a4d96*/
   if ( v3 && this->IsAllocated ) /*0x4a4da0*/
   {
     RA2_OPDEL(v3); /*0x4a4da8*/

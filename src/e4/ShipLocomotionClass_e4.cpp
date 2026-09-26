@@ -28,12 +28,12 @@ HRESULT ShipLocomotionClass::BeginMove(int * a1, int * pStm)
     a1[6] = (int)&off_7F2D68; /*0x69eec0*/
   }
   v2->lpVtbl->Read(v2, &pStm, 1, 0); /*0x69eed3*/
-  if ( !(_BYTE)pStm ) /*0x69eedc*/
+  if ( !(unsigned char)pStm ) /*0x69eedc*/
     return v3; /*0x69ef08*/
   v4 = a1[26]; /*0x69eede*/
   v5 = (LPVOID *)(a1 + 26); /*0x69eee1*/
   if ( v4 ) /*0x69eee6*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x69eeeb*/
+    (*(void (__stdcall **)(int))(*(unsigned int *)v4 + 8))(v4); /*0x69eeeb*/
   *v5 = 0; /*0x69eef5*/
   return OleLoadFromStream(v2, &IID_ILocomotion, v5); /*0x69ef01*/
 }
@@ -46,7 +46,7 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   int *v4; // edi
   int v5; // ebx
   struct IStreamVtbl *lpVtbl; // ecx
-  int (__stdcall ***v7)(_DWORD, void *, int **); // eax
+  int (__stdcall ***v7)(unsigned int, void *, int **); // eax
   int v8; // edi
   IPersistStream *v9; // ebx
   HRESULT v10; // esi
@@ -67,7 +67,7 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   lpVtbl = v3->lpVtbl; /*0x69ef3c*/
   IDA_LOBYTE(a3) = 1; /*0x69ef48*/
   lpVtbl->Write(v3, &a3, 1, 0); /*0x69ef4d*/
-  v7 = (int (__stdcall ***)(_DWORD, void *, int **))v4[26]; /*0x69ef50*/
+  v7 = (int (__stdcall ***)(unsigned int, void *, int **))v4[26]; /*0x69ef50*/
   pPStm = 0; /*0x69ef53*/
   if ( v7 ) /*0x69ef5d*/
   {
@@ -119,8 +119,6 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
 {
   int v3; // eax
 
-  *(void **)this = (void*)&ShipLocomotionClass_vftable; /*0x6a42b3*/
-  this->vtable2 = (void*)&ShipLocomotionClass_vftable; /*0x6a42b9*/
   this->vtable3 = &off_7F2D68; /*0x6a42c0*/
   v3 = *(&this->u32_86); /*0x6a42c7*/
   if ( v3 ) /*0x6a42cc*/

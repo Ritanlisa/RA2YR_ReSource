@@ -28,7 +28,7 @@ void sub_600750()
 {
   unsigned int v0; // eax
   unsigned int i; // edi
-  _DWORD *v2; // esi
+  unsigned int *v2; // esi
   void *v3; // eax
   unsigned int v4; // ecx
   int *v5; // ebx
@@ -43,14 +43,14 @@ void sub_600750()
   v0 = dword_AC1B50; /*0x600750*/
   for ( i = 0; i < dword_AC1B50; v0 = dword_AC1B50 ) /*0x60075d*/
   {
-    v2 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Entries + i); /*0x600764*/
+    v2 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Entries + i); /*0x600764*/
     while ( v2 ) /*0x600769*/
     {
       v3 = v2; /*0x60076b*/
-      v2 = (_DWORD *)v2[2]; /*0x60076d*/
+      v2 = (unsigned int *)v2[2]; /*0x60076d*/
       RA2_OPDEL(v3); /*0x600771*/
     }
-    *((_DWORD *)g_DialogHashMap_Entries + i++) = 0; /*0x600784*/
+    *((unsigned int *)g_DialogHashMap_Entries + i++) = 0; /*0x600784*/
   }
   v4 = dword_AC1B78; /*0x600795*/
   g_DialogHashMap_Grow = 0; /*0x60079b*/
@@ -64,7 +64,7 @@ void sub_600750()
       v6 = v0; /*0x6007cf*/
       dword_AC1B50 = v0 >> 1; /*0x6007d4*/
       --g_DialogHashMap_Insert; /*0x6007e0*/
-      g_DialogHashMap_Entries = RA2_OPNEW(4 * (v0 >> 1)); /*0x6007f9*/
+      g_DialogHashMap_Entries = operator new(4 * (v0 >> 1)); /*0x6007f9*/
       memset(g_DialogHashMap_Entries, 0, 4 * dword_AC1B50); /*0x600801*/
       if ( v6 > 0 ) /*0x600803*/
       {
@@ -78,10 +78,10 @@ void sub_600750()
             do /*0x60083c*/
             {
               v10 = g_DialogHashMap_Callback(v9) & ((1 << g_DialogHashMap_Insert) - 1); /*0x600825*/
-              v11 = *((_DWORD *)g_DialogHashMap_Entries + v10); /*0x60082c*/
-              *((_DWORD *)g_DialogHashMap_Entries + v10) = v9; /*0x60082f*/
-              v12 = *(_DWORD *)(v9 + 8); /*0x600832*/
-              *(_DWORD *)(v9 + 8) = v11; /*0x600835*/
+              v11 = *((unsigned int *)g_DialogHashMap_Entries + v10); /*0x60082c*/
+              *((unsigned int *)g_DialogHashMap_Entries + v10) = v9; /*0x60082f*/
+              v12 = *(unsigned int *)(v9 + 8); /*0x600832*/
+              *(unsigned int *)(v9 + 8) = v11; /*0x600835*/
               v9 = v12; /*0x60083a*/
             }
             while ( v12 ); /*0x60083c*/
@@ -106,7 +106,7 @@ void sub_600920()
 {
   unsigned int v0; // eax
   unsigned int i; // edi
-  _DWORD *v2; // esi
+  unsigned int *v2; // esi
   void *v3; // eax
   unsigned int v4; // ecx
   int *v5; // ebx
@@ -121,14 +121,14 @@ void sub_600920()
   v0 = g_DialogBuffer; /*0x600920*/
   for ( i = 0; i < g_DialogBuffer; v0 = g_DialogBuffer ) /*0x60092d*/
   {
-    v2 = (_DWORD *)*((_DWORD *)g_DialogPool + i); /*0x600934*/
+    v2 = (unsigned int *)*((unsigned int *)g_DialogPool + i); /*0x600934*/
     while ( v2 ) /*0x600939*/
     {
       v3 = v2; /*0x60093b*/
-      v2 = (_DWORD *)v2[2]; /*0x60093d*/
+      v2 = (unsigned int *)v2[2]; /*0x60093d*/
       RA2_OPDEL(v3); /*0x600941*/
     }
-    *((_DWORD *)g_DialogPool + i++) = 0; /*0x600954*/
+    *((unsigned int *)g_DialogPool + i++) = 0; /*0x600954*/
   }
   v4 = dword_AC18F0; /*0x600965*/
   g_DialogPoolCount = 0; /*0x60096b*/
@@ -142,7 +142,7 @@ void sub_600920()
       v6 = v0; /*0x60099f*/
       g_DialogBuffer = v0 >> 1; /*0x6009a4*/
       --dword_AC18CC; /*0x6009b0*/
-      g_DialogPool = RA2_OPNEW(4 * (v0 >> 1)); /*0x6009c9*/
+      g_DialogPool = operator new(4 * (v0 >> 1)); /*0x6009c9*/
       memset(g_DialogPool, 0, 4 * g_DialogBuffer); /*0x6009d1*/
       if ( v6 > 0 ) /*0x6009d3*/
       {
@@ -156,10 +156,10 @@ void sub_600920()
             do /*0x600a0c*/
             {
               v10 = dword_AC18D8(v9) & ((1 << dword_AC18CC) - 1); /*0x6009f5*/
-              v11 = *((_DWORD *)g_DialogPool + v10); /*0x6009fc*/
-              *((_DWORD *)g_DialogPool + v10) = v9; /*0x6009ff*/
-              v12 = *(_DWORD *)(v9 + 8); /*0x600a02*/
-              *(_DWORD *)(v9 + 8) = v11; /*0x600a05*/
+              v11 = *((unsigned int *)g_DialogPool + v10); /*0x6009fc*/
+              *((unsigned int *)g_DialogPool + v10) = v9; /*0x6009ff*/
+              v12 = *(unsigned int *)(v9 + 8); /*0x600a02*/
+              *(unsigned int *)(v9 + 8) = v11; /*0x600a05*/
               v9 = v12; /*0x600a0a*/
             }
             while ( v12 ); /*0x600a0c*/
@@ -186,7 +186,7 @@ void sub_600AF0()
   unsigned int v1; // ecx
   int j; // ebp
   int v3; // edi
-  _DWORD *k; // eax
+  unsigned int *k; // eax
   void **v5; // ecx
   unsigned int v6; // ecx
   int *v7; // ebp
@@ -203,24 +203,24 @@ void sub_600AF0()
   v1 = 0; /*0x600afa*/
   for ( i = 0; v1 < dword_AC1B08; v0 = dword_AC1B08 ) /*0x600b04*/
   {
-    for ( j = *((_DWORD *)g_DialogHashMap_Base + v1); j; v1 = i ) /*0x600b10*/
+    for ( j = *((unsigned int *)g_DialogHashMap_Base + v1); j; v1 = i ) /*0x600b10*/
     {
       v3 = j; /*0x600b12*/
-      j = *(_DWORD *)(j + 516); /*0x600b14*/
-      if ( *(_DWORD *)(v3 + 44) ) /*0x600b1e*/
+      j = *(unsigned int *)(j + 516); /*0x600b14*/
+      if ( *(unsigned int *)(v3 + 44) ) /*0x600b1e*/
       {
         RA2_OPDEL(*(void **)(v3 + 44)); /*0x600b29*/
-        *(_DWORD *)(v3 + 44) = 0; /*0x600b31*/
+        *(unsigned int *)(v3 + 44) = 0; /*0x600b31*/
       }
-      for ( k = *(_DWORD **)(v3 + 56); k; k = *(_DWORD **)(v3 + 56) ) /*0x600b39*/
-        LinkedList::Remove((_DWORD *)(v3 + 4), k); /*0x600b3e*/
+      for ( k = *(unsigned int **)(v3 + 56); k; k = *(unsigned int **)(v3 + 56) ) /*0x600b39*/
+        LinkedList::Remove((unsigned int *)(v3 + 4), k); /*0x600b3e*/
       v5 = *(void ***)(v3 + 64); /*0x600b4a*/
       if ( v5 ) /*0x600b4f*/
         DeleteAndZero::OrFree(v5, 1); /*0x600b53*/
       RA2_OPDEL((void *)v3); /*0x600b59*/
     }
     i = ++v1; /*0x600b70*/
-    *((_DWORD *)g_DialogHashMap_Base + v1 - 1) = 0; /*0x600b74*/
+    *((unsigned int *)g_DialogHashMap_Base + v1 - 1) = 0; /*0x600b74*/
   }
   v6 = dword_AC1B30; /*0x600b81*/
   g_DialogHashMap_Count = 0; /*0x600b87*/
@@ -234,7 +234,7 @@ void sub_600AF0()
       v8 = v0; /*0x600bb7*/
       dword_AC1B08 = v0 >> 1; /*0x600bbb*/
       --g_DialogHashMap_Buckets; /*0x600bc5*/
-      g_DialogHashMap_Base = RA2_OPNEW(4 * (v0 >> 1)); /*0x600bdd*/
+      g_DialogHashMap_Base = operator new(4 * (v0 >> 1)); /*0x600bdd*/
       memset(g_DialogHashMap_Base, 0, 4 * dword_AC1B08); /*0x600be5*/
       if ( v8 > 0 ) /*0x600be7*/
       {
@@ -248,10 +248,10 @@ void sub_600AF0()
             do /*0x600c26*/
             {
               v12 = g_DialogHashMap_Hasher(v11) & ((1 << g_DialogHashMap_Buckets) - 1); /*0x600c09*/
-              v13 = *((_DWORD *)g_DialogHashMap_Base + v12); /*0x600c10*/
-              *((_DWORD *)g_DialogHashMap_Base + v12) = v11; /*0x600c13*/
-              v14 = *(_DWORD *)(v11 + 516); /*0x600c16*/
-              *(_DWORD *)(v11 + 516) = v13; /*0x600c1c*/
+              v13 = *((unsigned int *)g_DialogHashMap_Base + v12); /*0x600c10*/
+              *((unsigned int *)g_DialogHashMap_Base + v12) = v11; /*0x600c13*/
+              v14 = *(unsigned int *)(v11 + 516); /*0x600c16*/
+              *(unsigned int *)(v11 + 516) = v13; /*0x600c1c*/
               v11 = v14; /*0x600c24*/
             }
             while ( v14 ); /*0x600c26*/
@@ -289,21 +289,21 @@ void NavigateDialogTab(HWND hCtl, bool a2)
 namespace gamemd {
 void ValidateDialogEvent(int a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   void *v4; // edi
   int DlgCtrlID; // eax
-  _DWORD *v7; // eax
+  unsigned int *v7; // eax
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x600cac*/
   if ( !g_DialogHashMap_Count ) /*0x600cb0*/
     goto LABEL_5; /*0x600cb0*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x600cd1*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x600cd1*/
   if ( !v3 ) /*0x600cd6*/
     goto LABEL_5; /*0x600cd6*/
   while ( *v3 != v8 ) /*0x600cde*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x600ce4*/
+    v3 = (unsigned int *)v3[129]; /*0x600ce4*/
     if ( !v3 ) /*0x600cec*/
       goto LABEL_5; /*0x600cec*/
   }
@@ -498,23 +498,23 @@ void ValidateDialogEvent(int a1, HWND a2)
 namespace gamemd {
 void CtlDialogColorHandler(int a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   void *v4; // edi
   int DlgCtrlID; // eax
   int v6; // esi
   int result; // eax
-  _DWORD *v8; // eax
+  unsigned int *v8; // eax
   int v9; // [esp+8h] [ebp-4h] BYREF
 
   v9 = a1; /*0x6015ec*/
   if ( !g_DialogHashMap_Count ) /*0x6015f0*/
     goto LABEL_5; /*0x6015f0*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x601611*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x601611*/
   if ( !v3 ) /*0x601616*/
     goto LABEL_5; /*0x601616*/
   while ( *v3 != v9 ) /*0x60161e*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x601624*/
+    v3 = (unsigned int *)v3[129]; /*0x601624*/
     if ( !v3 ) /*0x60162c*/
       goto LABEL_5; /*0x60162c*/
   }
@@ -701,22 +701,22 @@ void CtlDialogColorHandler(int a1, HWND a2)
 namespace gamemd {
 void ValidateDialogControl(int a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   void *v4; // edi
   int DlgCtrlID; // eax
   int v6; // esi
-  _DWORD *v8; // eax
+  unsigned int *v8; // eax
   int v9; // [esp+8h] [ebp-4h] BYREF
 
   v9 = a1; /*0x601d2c*/
   if ( !g_DialogHashMap_Count ) /*0x601d30*/
     goto LABEL_5; /*0x601d30*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x601d51*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x601d51*/
   if ( !v3 ) /*0x601d56*/
     goto LABEL_5; /*0x601d56*/
   while ( *v3 != v9 ) /*0x601d5e*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x601d64*/
+    v3 = (unsigned int *)v3[129]; /*0x601d64*/
     if ( !v3 ) /*0x601d6c*/
       goto LABEL_5; /*0x601d6c*/
   }
@@ -905,21 +905,21 @@ void ValidateDialogControl(int a1, HWND a2)
 namespace gamemd {
 int sub_6023F0(int a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   int v4; // esi
   int DlgCtrlID; // eax
-  _DWORD *v7; // eax
+  unsigned int *v7; // eax
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x6023fc*/
   if ( !g_DialogHashMap_Count ) /*0x602400*/
     goto LABEL_5; /*0x602400*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x602421*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x602421*/
   if ( !v3 ) /*0x602426*/
     goto LABEL_5; /*0x602426*/
   while ( *v3 != v8 ) /*0x60242e*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x602430*/
+    v3 = (unsigned int *)v3[129]; /*0x602430*/
     if ( !v3 ) /*0x602438*/
       goto LABEL_5; /*0x602438*/
   }
@@ -940,21 +940,21 @@ int sub_6023F0(int a1, HWND a2)
 namespace gamemd {
 void IsValidActionDialog(int a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   void *v4; // edi
   int DlgCtrlID; // esi
-  _DWORD *v7; // eax
+  unsigned int *v7; // eax
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x60249c*/
   if ( !g_DialogHashMap_Count ) /*0x6024a0*/
     goto LABEL_5; /*0x6024a0*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6024c1*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6024c1*/
   if ( !v3 ) /*0x6024c6*/
     goto LABEL_5; /*0x6024c6*/
   while ( *v3 != v8 ) /*0x6024ce*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x6024d4*/
+    v3 = (unsigned int *)v3[129]; /*0x6024d4*/
     if ( !v3 ) /*0x6024dc*/
       goto LABEL_5; /*0x6024dc*/
   }
@@ -1119,21 +1119,21 @@ void IsValidActionDialog(int a1, HWND a2)
 namespace gamemd {
 char IsDialogControlHidden(int a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   int v4; // esi
   int DlgCtrlID; // eax
-  _DWORD *v7; // eax
+  unsigned int *v7; // eax
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x602ddc*/
   if ( !g_DialogHashMap_Count ) /*0x602de0*/
     goto LABEL_5; /*0x602de0*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x602e01*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x602e01*/
   if ( !v3 ) /*0x602e06*/
     goto LABEL_5; /*0x602e06*/
   while ( *v3 != v8 ) /*0x602e0e*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x602e14*/
+    v3 = (unsigned int *)v3[129]; /*0x602e14*/
     if ( !v3 ) /*0x602e1c*/
       goto LABEL_5; /*0x602e1c*/
   }
@@ -1204,21 +1204,21 @@ char IsDialogControlHidden(int a1, HWND a2)
 namespace gamemd {
 int LoadCampaignMissionData(int a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   int v4; // esi
   int DlgCtrlID; // eax
-  _DWORD *v7; // eax
+  unsigned int *v7; // eax
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x60304c*/
   if ( !g_DialogHashMap_Count ) /*0x603050*/
     goto LABEL_5; /*0x603050*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x603071*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x603071*/
   if ( !v3 ) /*0x603076*/
     goto LABEL_5; /*0x603076*/
   while ( *v3 != v8 ) /*0x60307e*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x603084*/
+    v3 = (unsigned int *)v3[129]; /*0x603084*/
     if ( !v3 ) /*0x60308c*/
       goto LABEL_5; /*0x60308c*/
   }
@@ -1275,24 +1275,24 @@ int LoadCampaignMissionData(int a1, HWND a2)
 namespace gamemd {
 AbstractClass * * DispatchDialogControlAction(int a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   int v4; // esi
   int DlgCtrlID; // edi
   int v6; // ecx
   int result; // eax
   int v8; // ecx
-  _DWORD *v9; // eax
+  unsigned int *v9; // eax
   int v10; // [esp+8h] [ebp-4h] BYREF
 
   v10 = a1; /*0x6035fc*/
   if ( !g_DialogHashMap_Count ) /*0x603600*/
     goto LABEL_5; /*0x603600*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v10) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x603621*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v10) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x603621*/
   if ( !v3 ) /*0x603626*/
     goto LABEL_5; /*0x603626*/
   while ( *v3 != v10 ) /*0x60362e*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x603634*/
+    v3 = (unsigned int *)v3[129]; /*0x603634*/
     if ( !v3 ) /*0x60363c*/
       goto LABEL_5; /*0x60363c*/
   }
@@ -1365,21 +1365,21 @@ AbstractClass * * DispatchDialogControlAction(int a1, HWND a2)
 namespace gamemd {
 AbstractClass * * GetDialogControlSHP(int a1, HWND a2, bool * a3)
 {
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // esi
   int DlgCtrlID; // eax
-  _DWORD *v8; // eax
+  unsigned int *v8; // eax
   int v9; // [esp+8h] [ebp-4h] BYREF
 
   v9 = a1; /*0x60387c*/
   if ( !g_DialogHashMap_Count ) /*0x603880*/
     goto LABEL_5; /*0x603880*/
-  v4 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6038a1*/
+  v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6038a1*/
   if ( !v4 ) /*0x6038a6*/
     goto LABEL_5; /*0x6038a6*/
   while ( *v4 != v9 ) /*0x6038ae*/
   {
-    v4 = (_DWORD *)v4[129]; /*0x6038b4*/
+    v4 = (unsigned int *)v4[129]; /*0x6038b4*/
     if ( !v4 ) /*0x6038bc*/
       goto LABEL_5; /*0x6038bc*/
   }
@@ -1459,19 +1459,19 @@ int IsDialogWindowClass(HWND a1, HWND a2)
   hWnd = a1; /*0x603ab2*/
   if ( !g_DialogHashMap_Count ) /*0x603ab6*/
     return 0; /*0x603ab6*/
-  v3 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x603ad7*/
+  v3 = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x603ad7*/
   if ( !v3 ) /*0x603adc*/
     return 0; /*0x603adc*/
   while ( *(HWND *)v3 != hWnd ) /*0x603ae4*/
   {
-    v3 = *(_DWORD *)(v3 + 516); /*0x603ae6*/
+    v3 = *(unsigned int *)(v3 + 516); /*0x603ae6*/
     if ( !v3 ) /*0x603aee*/
       return 0; /*0x603aee*/
   }
   v5 = v3 + 4; /*0x603b00*/
   if ( v3 == -4 ) /*0x603b05*/
     return 0; /*0x603b05*/
-  v6 = *(_DWORD *)(v3 + 112); /*0x603b07*/
+  v6 = *(unsigned int *)(v3 + 112); /*0x603b07*/
   if ( v6 != 269 /*0x603b91*/
     && v6 != 217
     && v6 != 240
@@ -1494,23 +1494,23 @@ int IsDialogWindowClass(HWND a1, HWND a2)
   {
     return 0; /*0x603b91*/
   }
-  *(_DWORD *)(v5 + 176) = 2; /*0x603b97*/
+  *(unsigned int *)(v5 + 176) = 2; /*0x603b97*/
   hWnd = a2; /*0x603bac*/
   GetClassNameA(a2, ClassName, 128); /*0x603bb0*/
   if ( !strcmp(ClassName, g_INI_Key_Edit) || !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x603c05*/
     return 192; /*0x603c2c*/
   if ( !strcmp(ClassName, g_INI_Key_ListBox) /*0x603c99*/
     && g_DialogHashMap_Count
-    && (v7 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
+    && (v7 = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
   {
     v8 = hWnd; /*0x603c9b*/
     while ( *(HWND *)v7 != hWnd ) /*0x603ca1*/
     {
-      v7 = *(_DWORD *)(v7 + 516); /*0x603ca3*/
+      v7 = *(unsigned int *)(v7 + 516); /*0x603ca3*/
       if ( !v7 ) /*0x603cab*/
         goto LABEL_37; /*0x603cab*/
     }
-    v9 = *(_DWORD *)(v7 + 108) == 1; /*0x603cb7*/
+    v9 = *(unsigned int *)(v7 + 108) == 1; /*0x603cb7*/
   }
   else
   {
@@ -1536,7 +1536,7 @@ void * CacheDialogInvalidate(HWND hWnd, HWND a2)
   v5 = hWnd; /*0x603d3e*/
   if ( g_DialogHashMap_Count ) /*0x603d42*/
   {
-    result = (HWND *)*((_DWORD *)g_DialogHashMap_Base /*0x603d63*/
+    result = (HWND *)*((unsigned int *)g_DialogHashMap_Base /*0x603d63*/
                      + (g_DialogHashMap_Hasher(&v5) & ((1 << g_DialogHashMap_Buckets) - 1)));
     if ( result ) /*0x603d68*/
     {
@@ -1561,20 +1561,20 @@ void * CacheDialogInvalidate(HWND hWnd, HWND a2)
 namespace gamemd {
 unsigned int * sub_603E40(int a1, int a2)
 {
-  _DWORD *result; // eax
+  unsigned int *result; // eax
   int v4; // [esp+4h] [ebp-4h] BYREF
 
-  result = (_DWORD *)g_DialogHashMap_Count; /*0x603e41*/
+  result = (unsigned int *)g_DialogHashMap_Count; /*0x603e41*/
   v4 = a1; /*0x603e4b*/
   if ( g_DialogHashMap_Count ) /*0x603e4f*/
   {
-    result = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base /*0x603e70*/
+    result = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base /*0x603e70*/
                        + (g_DialogHashMap_Hasher(&v4) & ((1 << g_DialogHashMap_Buckets) - 1)));
     if ( result ) /*0x603e75*/
     {
       while ( *result != v4 ) /*0x603e7d*/
       {
-        result = (_DWORD *)result[129]; /*0x603e7f*/
+        result = (unsigned int *)result[129]; /*0x603e7f*/
         if ( !result ) /*0x603e87*/
           return result; /*0x603e87*/
       }
@@ -1609,27 +1609,27 @@ wchar_t ** GetSkirmishMenuOwnerName(SkirmishDialog * aP0, HWND a2, HWND a3)
 namespace gamemd {
 AbstractClass * * DlgSkirmishMenuProc(HWND a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   int v4; // esi
   char *result; // eax
-  _DWORD *v6; // eax
-  _DWORD *v7; // eax
-  _DWORD *v8; // eax
+  unsigned int *v6; // eax
+  unsigned int *v7; // eax
+  unsigned int *v8; // eax
   int v9; // eax
-  _DWORD *v10; // eax
-  _DWORD *v11; // eax
+  unsigned int *v10; // eax
+  unsigned int *v11; // eax
   int v12; // eax
   HWND v13; // [esp+8h] [ebp-4h] BYREF
 
   v13 = a1; /*0x6040bc*/
   if ( !g_DialogHashMap_Count ) /*0x6040c0*/
     goto LABEL_5; /*0x6040c0*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v13) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6040e1*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v13) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6040e1*/
   if ( !v3 ) /*0x6040e6*/
     goto LABEL_5; /*0x6040e6*/
   while ( (HWND)*v3 != v13 ) /*0x6040ee*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x6040f0*/
+    v3 = (unsigned int *)v3[129]; /*0x6040f0*/
     if ( !v3 ) /*0x6040f8*/
       goto LABEL_5; /*0x6040f8*/
 }
@@ -1646,18 +1646,18 @@ int Dialog_SetActiveFlag(int a1, char a2)
   v4 = a1; /*0x60674b*/
   if ( g_DialogHashMap_Count ) /*0x60674f*/
   {
-    result = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v4) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x606770*/
+    result = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v4) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x606770*/
     if ( result ) /*0x606775*/
     {
-      while ( *(_DWORD *)result != v4 ) /*0x60677d*/
+      while ( *(unsigned int *)result != v4 ) /*0x60677d*/
       {
-        result = *(_DWORD *)(result + 516); /*0x60677f*/
+        result = *(unsigned int *)(result + 516); /*0x60677f*/
         if ( !result ) /*0x606787*/
           return result; /*0x606787*/
       }
       result += 4; /*0x606790*/
       if ( result ) /*0x606795*/
-        *(_BYTE *)(result + 188) = a2; /*0x606797*/
+        *(unsigned char *)(result + 188) = a2; /*0x606797*/
     }
   }
   return result; /*0x606789*/
@@ -1681,19 +1681,19 @@ AbstractClass * * GadgetClass_RenderAnimation(HWND a1, char a2)
     goto LABEL_6;
   int v3 = HashTable_flat::ComputeHash((int)&g_DialogHashMap_Base, (int)&v62);
   a1 = (HWND)g_DialogHashMap_Base;
-  _DWORD * v4 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + v3);
+  unsigned int * v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + v3);
   if ( !v4 )
     goto LABEL_6;
   a1 = v62;
   while ( (HWND)*v4 != v62 )
   {
-    v4 = (_DWORD *)v4[129];
+    v4 = (unsigned int *)v4[129];
     if ( !v4 )
       goto LABEL_6;
   }
-  _DWORD * v7 = v4 + 1;
+  unsigned int * v7 = v4 + 1;
   if ( v7 )
-    char v63 = *((_BYTE *)v7 + 215);
+    char v63 = *((unsigned char *)v7 + 215);
   else
 LABEL_6:
     v63 = 0;
@@ -1702,19 +1702,19 @@ LABEL_6:
     goto LABEL_17;
   int v5 = HashTable_flat::ComputeHash((int)&g_DialogHashMap_Base, (int)&v62);
   a1 = (HWND)g_DialogHashMap_Base;
-  _DWORD * v6 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + v5);
+  unsigned int * v6 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + v5);
   if ( !v6 )
     goto LABEL_17;
   a1 = v62;
   while ( (HWND)*v6 != v62 )
   {
-    v6 = (_DWORD *)v6[129];
+    v6 = (unsigned int *)v6[129];
     if ( !v6 )
       goto LABEL_17;
   }
-  _DWORD * v8 = v6 + 1;
+  unsigned int * v8 = v6 + 1;
   if ( v8 )
-    char v60 = *((_BYTE *)v8 + 214);
+    char v60 = *((unsigned char *)v8 + 214);
   else
 LABEL_17:
     v60 = 0;
@@ -1723,19 +1723,19 @@ LABEL_17:
     goto LABEL_23;
   int v9 = HashTable_flat::ComputeHash((int)&g_DialogHashMap_Base, (int)&v62);
   a1 = (HWND)g_DialogHashMap_Base;
-  _DWORD * v10 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + v9);
+  unsigned int * v10 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + v9);
   if ( !v10 )
     goto LABEL_23;
   a1 = v62;
   while ( (HWND)*v10 != v62 )
   {
-    v10 = (_DWORD *)v10[129];
+    v10 = (unsigned int *)v10[129];
     if ( !v10 )
       goto LABEL_23;
   }
-  _DWORD * v34 = v10 + 1;
+  unsigned int * v34 = v10 + 1;
   if ( v34 )
-    char v61 = *((_BYTE *)v34 + 213);
+    char v61 = *((unsigned char *)v34 + 213);
   else
 LABEL_23:
     v61 = 0;
@@ -1750,7 +1750,7 @@ LABEL_23:
   int v12 = DataGlobal_B0FA20;
   void * v80 = DataGlobal_B0FB00;
   v62 = (HWND)v11;
-  int v13 = *(_DWORD *)DSurface_Alternate;
+  int v13 = *(unsigned int *)DSurface_Alternate;
   int v70 = DataGlobal_B0FA20;
   int v82; // [esp+9Ch] [ebp-128h] BYREF
   int * v14 = (int *)(*(int (__thiscall **)(int, int *))(v13 + 120))(DSurface_Alternate, &v82);
@@ -1760,30 +1760,30 @@ LABEL_23:
   v72[2] = v14[2];
   v72[3] = v14[3];
   int v109[4]; // [esp+144h] [ebp-80h] BYREF
-  v109[0] = *(_DWORD *)DataGlobal_B0FC20;
-  v109[1] = *((_DWORD *)DataGlobal_B0FC20 + 1);
-  v109[2] = *((_DWORD *)DataGlobal_B0FC20 + 2);
-  v109[3] = *((_DWORD *)DataGlobal_B0FC20 + 3);
+  v109[0] = *(unsigned int *)DataGlobal_B0FC20;
+  v109[1] = *((unsigned int *)DataGlobal_B0FC20 + 1);
+  v109[2] = *((unsigned int *)DataGlobal_B0FC20 + 2);
+  v109[3] = *((unsigned int *)DataGlobal_B0FC20 + 3);
   int v107[4]; // [esp+124h] [ebp-A0h] BYREF
-  v107[0] = *(_DWORD *)DataGlobal_B0FC14;
-  v107[1] = *((_DWORD *)DataGlobal_B0FC14 + 1);
-  v107[2] = *((_DWORD *)DataGlobal_B0FC14 + 2);
-  v107[3] = *((_DWORD *)DataGlobal_B0FC14 + 3);
-  int v97 = *(_DWORD *)DataGlobal_B0FC18;
-  int v98 = *((_DWORD *)DataGlobal_B0FC18 + 1);
-  int v99 = *((_DWORD *)DataGlobal_B0FC18 + 2);
-  int v100 = *((_DWORD *)DataGlobal_B0FC18 + 3);
-  int v15 = *(_DWORD *)DataGlobal_B0FC10;
-  v82 = *(_DWORD *)DataGlobal_B0FC10;
-  int v83 = *((_DWORD *)DataGlobal_B0FC10 + 1);
+  v107[0] = *(unsigned int *)DataGlobal_B0FC14;
+  v107[1] = *((unsigned int *)DataGlobal_B0FC14 + 1);
+  v107[2] = *((unsigned int *)DataGlobal_B0FC14 + 2);
+  v107[3] = *((unsigned int *)DataGlobal_B0FC14 + 3);
+  int v97 = *(unsigned int *)DataGlobal_B0FC18;
+  int v98 = *((unsigned int *)DataGlobal_B0FC18 + 1);
+  int v99 = *((unsigned int *)DataGlobal_B0FC18 + 2);
+  int v100 = *((unsigned int *)DataGlobal_B0FC18 + 3);
+  int v15 = *(unsigned int *)DataGlobal_B0FC10;
+  v82 = *(unsigned int *)DataGlobal_B0FC10;
+  int v83 = *((unsigned int *)DataGlobal_B0FC10 + 1);
   int v16 = v83;
-  int v17 = *((_DWORD *)DataGlobal_B0FC10 + 2);
-  int v18 = *(_DWORD *)g_GadgetAnimState;
-  int v84 = *((_DWORD *)DataGlobal_B0FC10 + 3);
+  int v17 = *((unsigned int *)DataGlobal_B0FC10 + 2);
+  int v18 = *(unsigned int *)g_GadgetAnimState;
+  int v84 = *((unsigned int *)DataGlobal_B0FC10 + 3);
   int v93 = v18;
-  int v94 = *((_DWORD *)g_GadgetAnimState + 1);
-  int v95 = *((_DWORD *)g_GadgetAnimState + 2);
-  int v96 = *((_DWORD *)g_GadgetAnimState + 3);
+  int v94 = *((unsigned int *)g_GadgetAnimState + 1);
+  int v95 = *((unsigned int *)g_GadgetAnimState + 2);
+  int v96 = *((unsigned int *)g_GadgetAnimState + 3);
   ScreenDialogToClient(hWnd, &v112);
   GetWindowRect(hWnd, &Rect);
   int v19 = Rect.left - v112.left;
@@ -1797,14 +1797,14 @@ LABEL_23:
     v21 = v98;
     v22 += v83;
   }
-  _DWORD v110[4]; // [esp+154h] [ebp-70h] BYREF
+  unsigned int v110[4]; // [esp+154h] [ebp-70h] BYREF
   v110[1] = v21;
-  _DWORD v106[4]; // [esp+114h] [ebp-B0h] BYREF
+  unsigned int v106[4]; // [esp+114h] [ebp-B0h] BYREF
   v106[1] = v20 + v21;
   v110[3] = v22;
   v106[3] = v22;
   v110[0] = v15;
-  _DWORD v111[4]; // [esp+164h] [ebp-60h] BYREF
+  unsigned int v111[4]; // [esp+164h] [ebp-60h] BYREF
   v111[0] = v93;
   v111[1] = v94;
   v106[0] = v19 + v15;
@@ -1813,7 +1813,7 @@ LABEL_23:
   v106[2] = v17;
   v111[2] = v95;
   v111[3] = v96;
-  _DWORD v108[4]; // [esp+134h] [ebp-90h] BYREF
+  unsigned int v108[4]; // [esp+134h] [ebp-90h] BYREF
   v108[2] = v95;
   v108[3] = v96;
   v108[0] = v19 + v93;
@@ -1850,7 +1850,7 @@ LABEL_23:
     ++v75;
   int v25 = v24 + 1;
   int v101 = v24 + 1;
-  int * v26 = (int *)RA2_OPNEW(4 * (v24 + 3));
+  int * v26 = (int *)operator new(4 * (v24 + 3));
   Block = v26;
   int v27 = 1;
   if ( v24 + 1 > 0 )
@@ -1894,7 +1894,7 @@ LABEL_23:
   int v102[2]; // [esp+FCh] [ebp-C8h] BYREF
         v102[0] = *v36;
         v102[1] = v36[1];
-        int v37 = v64 - *((_DWORD *)Block + v70);
+        int v37 = v64 - *((unsigned int *)Block + v70);
         if ( v37 < 0 )
         {
           DrawToSurfaceSHP(DSurface_Alternate, v32, v35, a2 != 0 ? 6 : 0, v102, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
@@ -1910,7 +1910,7 @@ LABEL_23:
         int * v38 = Copy8Bytes(&v114, &v97);
         int v76 = *v38;
         int v77 = v38[1];
-        int v39 = v64 - *((_DWORD *)Block + v101);
+        int v39 = v64 - *((unsigned int *)Block + v101);
         if ( v39 < 0 )
         {
           DrawToSurfaceSHP(DSurface_Alternate, v32, (int)v79, a2 == 0, &v76, v72, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0);
@@ -1956,7 +1956,7 @@ LABEL_23:
   int v103[2]; // [esp+104h] [ebp-C0h] BYREF
         v103[0] = *v42;
         v103[1] = v42[1];
-        int v43 = v64 - *((_DWORD *)Block + v70);
+        int v43 = v64 - *((unsigned int *)Block + v70);
         if ( v43 < 0 )
         {
           v43 = -1;
@@ -1988,7 +1988,7 @@ LABEL_68:
 LABEL_69:
       if ( v74 > 0 )
       {
-        _DWORD * v44 = Block;
+        unsigned int * v44 = Block;
         int v45 = v81;
         v65 = (int *)v74;
         do
@@ -2055,10 +2055,10 @@ LABEL_87:
 LABEL_90:
       if ( IDA_HIBYTE(v67) )
       {
-        int v51 = *((_DWORD *)DataGlobal_B0FC28 + 1);
+        int v51 = *((unsigned int *)DataGlobal_B0FC28 + 1);
   int v91[2]; // [esp+C8h] [ebp-FCh] BYREF
         v91[0] = v82;
-        int v52 = *((_DWORD *)Block + v70 - 1);
+        int v52 = *((unsigned int *)Block + v70 - 1);
         v91[1] = v51 - v84;
         int v53 = v64 - v52;
         if ( v64 - v52 < 0 )
@@ -2085,7 +2085,7 @@ LABEL_98:
       int * v55 = Copy8Bytes(&v115, &v93);
       v69[0] = *v55;
       v69[1] = v55[1];
-      int v56 = v64 - *((_DWORD *)Block + v70 + 2);
+      int v56 = v64 - *((unsigned int *)Block + v70 + 2);
       if ( v56 < 0 )
       {
         if ( a2 )
@@ -2136,9 +2136,9 @@ LABEL_106:
         0,
         0);
 LABEL_116:
-      (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0);
-      (*(void (__thiscall **)(int, _DWORD, _DWORD))(*(_DWORD *)DSurface_Alternate + 92))(DSurface_Alternate, 0, 0);
-      (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))(
+      (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)g_DSurface_Primary + 92))(g_DSurface_Primary, 0, 0);
+      (*(void (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)DSurface_Alternate + 92))(DSurface_Alternate, 0, 0);
+      (*(void (__thiscall **)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))(
         g_DSurface_Primary,
         v106,
         DSurface_Alternate,
@@ -2146,15 +2146,15 @@ LABEL_116:
         0,
         1);
       if ( v54 )
-        (*(void (__thiscall **)(int, _DWORD *, int, _DWORD *, _DWORD, int))(*(_DWORD *)g_DSurface_Primary + 8))(
+        (*(void (__thiscall **)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))(
           g_DSurface_Primary,
           v108,
           DSurface_Alternate,
           v111,
           0,
           1);
-      (*(void (__thiscall **)(int))(*(_DWORD *)DSurface_Alternate + 96))(DSurface_Alternate);
-      (*(void (__thiscall **)(int))(*(_DWORD *)g_DSurface_Primary + 96))(g_DSurface_Primary);
+      (*(void (__thiscall **)(int))(*(unsigned int *)DSurface_Alternate + 96))(DSurface_Alternate);
+      (*(void (__thiscall **)(int))(*(unsigned int *)g_DSurface_Primary + 96))(g_DSurface_Primary);
       UpdateAudioVideo();
       Sleep(0x1Eu);
       if ( ++v64 >= v104 )
@@ -2165,9 +2165,9 @@ LABEL_116:
   RA2_OPDEL(Block);
   if ( !a2 )
     return SendMessageA(hWnd, 0x4EDu, 0, 0);
-  PlayVocClass(*((_DWORD *)g_RulesClass_Instance + 468), 0x2000, 1.0, 0);
-  while ( (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) )
-    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance);
+  PlayVocClass(*((unsigned int *)g_RulesClass_Instance + 468), 0x2000, 1.0, 0);
+  while ( (*(int (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) )
+    (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance);
   return SendMessageA(hWnd, 0x4ECu, 0, 0);
 }
 } // namespace gamemd
@@ -2178,7 +2178,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
 {
   int v4; // esi
   int DlgCtrlID; // eax
-  _DWORD *v6; // eax
+  unsigned int *v6; // eax
   int v7; // eax
   int v8; // eax
   int v9; // eax
@@ -2193,7 +2193,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
   v15 = 0; /*0x60851a*/
   HashTable::Get(&g_DialogHashMap_Base, &v16, &v15); /*0x608522*/
   if ( v15 ) /*0x60852d*/
-    v4 = *(_DWORD *)(v15 + 108); /*0x60852f*/
+    v4 = *(unsigned int *)(v15 + 108); /*0x60852f*/
   else
     v4 = 0; /*0x608534*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x608537*/
@@ -2203,13 +2203,13 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     {
       if ( DlgCtrlID != 1835 ) /*0x6086e1*/
         return 0; /*0x6086e1*/
-      v7 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x6086f8*/
+      v7 = *((unsigned int *)g_ScenarioClass_Instance + 3374); /*0x6086f8*/
       if ( g_DisplayWidth >= 800 ) /*0x608700*/
       {
         if ( v7 ) /*0x608704*/
         {
   LABEL_31:
-          v6 = RA2_OPNEW(0x10u); /*0x608706*/
+          v6 = operator new(0x10u); /*0x608706*/
           if ( !v6 ) /*0x608715*/
             return 0; /*0x608715*/
           *v6 = 103; /*0x60871b*/
@@ -2229,13 +2229,13 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     {
       if ( DlgCtrlID != 1835 ) /*0x608741*/
         return 0; /*0x608741*/
-      v8 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x608753*/
+      v8 = *((unsigned int *)g_ScenarioClass_Instance + 3374); /*0x608753*/
       if ( g_DisplayWidth >= 800 ) /*0x608761*/
       {
         if ( v8 ) /*0x608765*/
           goto LABEL_31; /*0x608765*/
   LABEL_39:
-        v6 = RA2_OPNEW(0x10u); /*0x608767*/
+        v6 = operator new(0x10u); /*0x608767*/
         if ( !v6 ) /*0x608773*/
           return 0; /*0x608773*/
         *v6 = 104; /*0x608779*/
@@ -2248,14 +2248,14 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
       if ( !v8 ) /*0x60879b*/
       {
   LABEL_43:
-        v6 = RA2_OPNEW(0x10u); /*0x60879d*/
+        v6 = operator new(0x10u); /*0x60879d*/
         if ( !v6 ) /*0x6087a9*/
           return 0; /*0x6087a9*/
         *v6 = 24; /*0x6087af*/
         goto LABEL_41; /*0x6087b5*/
       }
   LABEL_45:
-      v6 = RA2_OPNEW(0x10u); /*0x6087b7*/
+      v6 = operator new(0x10u); /*0x6087b7*/
       if ( !v6 ) /*0x6087c6*/
         return 0; /*0x6087c6*/
       *v6 = 23; /*0x6087cc*/
@@ -2291,7 +2291,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
               case 1842: /*0x608975*/
                 if ( g_DisplayWidth == 640 ) /*0x608984*/
                 {
-                  v6 = RA2_OPNEW(0x10u); /*0x608988*/
+                  v6 = operator new(0x10u); /*0x608988*/
                   if ( !v6 ) /*0x608992*/
                     return 0; /*0x608992*/
                   *v6 = 110; /*0x608998*/
@@ -2303,7 +2303,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                 }
                 if ( g_DisplayWidth != 800 && g_DisplayWidth != 1024 ) /*0x6089b1*/
                   return 0; /*0x6089b1*/
-                v6 = RA2_OPNEW(0x10u); /*0x6089b9*/
+                v6 = operator new(0x10u); /*0x6089b9*/
                 if ( !v6 ) /*0x6089c3*/
                   return 0; /*0x6089c3*/
                 *v6 = 180; /*0x6089c9*/
@@ -2327,7 +2327,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
               goto LABEL_96; /*0x608a0e*/
             }
   LABEL_135:
-            v6 = RA2_OPNEW(0x10u); /*0x608c42*/
+            v6 = operator new(0x10u); /*0x608c42*/
             if ( !v6 ) /*0x608c4e*/
               return 0; /*0x608c4e*/
             *v6 = 346; /*0x608c50*/
@@ -2363,7 +2363,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                   goto LABEL_123; /*0x608b9c*/
                 }
   LABEL_119:
-                v6 = RA2_OPNEW(0x10u); /*0x608b79*/
+                v6 = operator new(0x10u); /*0x608b79*/
                 if ( !v6 ) /*0x608b85*/
                   return 0; /*0x608b85*/
                 *v6 = 80; /*0x608b8b*/
@@ -2377,7 +2377,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                   goto LABEL_131; /*0x608c00*/
                 }
   LABEL_127:
-                v6 = RA2_OPNEW(0x10u); /*0x608bdd*/
+                v6 = operator new(0x10u); /*0x608bdd*/
                 if ( !v6 ) /*0x608be9*/
                   return 0; /*0x608be9*/
                 *v6 = 228; /*0x608bef*/
@@ -2389,7 +2389,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
             {
               if ( g_DisplayWidth != 800 && g_DisplayWidth != 1024 ) /*0x608c66*/
                 return 0; /*0x608c66*/
-              v6 = RA2_OPNEW(0x10u); /*0x608c6a*/
+              v6 = operator new(0x10u); /*0x608c6a*/
               if ( !v6 ) /*0x608c74*/
                 return 0; /*0x608c74*/
   LABEL_140:
@@ -2409,7 +2409,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
             goto LABEL_105; /*0x608a91*/
           }
         }
-        v6 = RA2_OPNEW(0x10u); /*0x608a5b*/
+        v6 = operator new(0x10u); /*0x608a5b*/
         if ( v6 ) /*0x608a65*/
         {
           *v6 = 52; /*0x608a6b*/
@@ -2427,7 +2427,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
           if ( g_DisplayWidth == 640 ) /*0x608910*/
           {
   LABEL_51:
-            v6 = RA2_OPNEW(0x10u); /*0x608812*/
+            v6 = operator new(0x10u); /*0x608812*/
             if ( v6 ) /*0x60881e*/
             {
               *v6 = 52; /*0x608824*/
@@ -2446,7 +2446,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
               return 0; /*0x608a99*/
           }
   LABEL_105:
-          v6 = RA2_OPNEW(0x10u); /*0x608a9f*/
+          v6 = operator new(0x10u); /*0x608a9f*/
           if ( v6 ) /*0x608aab*/
           {
             *v6 = 60; /*0x608ab1*/
@@ -2468,14 +2468,14 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                 return 0; /*0x608b2b*/
             }
   LABEL_114:
-            v6 = RA2_OPNEW(0x10u); /*0x608b31*/
+            v6 = operator new(0x10u); /*0x608b31*/
             if ( !v6 ) /*0x608b3d*/
               return 0; /*0x608b3d*/
             *v6 = 180; /*0x608b43*/
             goto LABEL_116; /*0x608b43*/
           }
   LABEL_109:
-          v6 = RA2_OPNEW(0x10u); /*0x608aeb*/
+          v6 = operator new(0x10u); /*0x608aeb*/
           if ( !v6 ) /*0x608af7*/
             return 0; /*0x608af7*/
           *v6 = 110; /*0x608afd*/
@@ -2492,7 +2492,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                 return 0; /*0x608ba4*/
             }
   LABEL_123:
-            v6 = RA2_OPNEW(0x10u); /*0x608baa*/
+            v6 = operator new(0x10u); /*0x608baa*/
             if ( !v6 ) /*0x608bb6*/
               return 0; /*0x608bb6*/
             *v6 = 170; /*0x608bbc*/
@@ -2511,7 +2511,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                 return 0; /*0x608c08*/
             }
   LABEL_131:
-            v6 = RA2_OPNEW(0x10u); /*0x608c0e*/
+            v6 = operator new(0x10u); /*0x608c0e*/
             if ( !v6 ) /*0x608c1a*/
               return 0; /*0x608c1a*/
             *v6 = 295; /*0x608c20*/
@@ -2532,7 +2532,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
           return 0; /*0x608a16*/
       }
   LABEL_96:
-      v6 = RA2_OPNEW(0x10u); /*0x608a1c*/
+      v6 = operator new(0x10u); /*0x608a1c*/
       if ( !v6 ) /*0x608a28*/
         return 0; /*0x608a28*/
       goto LABEL_140; /*0x608a28*/
@@ -2543,7 +2543,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     return 0; /*0x608557*/
   if ( DlgCtrlID == 1770 ) /*0x608562*/
   {
-    v6 = RA2_OPNEW(0x10u); /*0x608566*/
+    v6 = operator new(0x10u); /*0x608566*/
     if ( v6 ) /*0x608570*/
     {
       *v6 = 141; /*0x608576*/
@@ -2565,7 +2565,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     switch ( DlgCtrlID ) /*0x6085d4*/
     {
       case 1295: /*0x6085d4*/
-        v6 = RA2_OPNEW(0x10u); /*0x6085d8*/
+        v6 = operator new(0x10u); /*0x6085d8*/
         if ( v6 ) /*0x6085e2*/
         {
           *v6 = 177; /*0x6085e8*/
@@ -2576,7 +2576,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         }
         return 0; /*0x6085e2*/
       case 1822: /*0x6085d4*/
-        v6 = RA2_OPNEW(0x10u); /*0x608611*/
+        v6 = operator new(0x10u); /*0x608611*/
         if ( !v6 ) /*0x60861b*/
           return 0; /*0x60861b*/
         *v6 = 177; /*0x608621*/
@@ -2584,7 +2584,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         v6[2] = 141; /*0x60862e*/
         break;
       case 1648: /*0x6085d4*/
-        v6 = RA2_OPNEW(0x10u); /*0x608643*/
+        v6 = operator new(0x10u); /*0x608643*/
         if ( !v6 ) /*0x60864d*/
           return 0; /*0x60864d*/
         *v6 = 309; /*0x608653*/
@@ -2592,7 +2592,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         v6[2] = 141; /*0x608660*/
         break;
       case 1959: /*0x6085d4*/
-        v6 = RA2_OPNEW(0x10u); /*0x608675*/
+        v6 = operator new(0x10u); /*0x608675*/
         if ( !v6 ) /*0x60867f*/
           return 0; /*0x60867f*/
         *v6 = 10; /*0x608685*/
@@ -2600,7 +2600,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         v6[2] = 610; /*0x608692*/
         break;
       case 1960: /*0x6085d4*/
-        v6 = RA2_OPNEW(0x10u); /*0x6086ab*/
+        v6 = operator new(0x10u); /*0x6086ab*/
         if ( !v6 ) /*0x6086b5*/
           return 0; /*0x6086b5*/
         *v6 = 10; /*0x6086bb*/
@@ -2614,7 +2614,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     v6[3] = 20; /*0x608c8a*/
     goto LABEL_143; /*0x608c8a*/
   }
-  v6 = RA2_OPNEW(0x10u); /*0x60859f*/
+  v6 = operator new(0x10u); /*0x60859f*/
   if ( v6 ) /*0x6085a9*/
   {
     *v6 = 141; /*0x6085af*/
@@ -2630,22 +2630,22 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
 namespace gamemd {
 void IsDialogControlVisible(int a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   int v4; // esi
   int DlgCtrlID; // eax
-  _DWORD *v7; // eax
+  unsigned int *v7; // eax
   bool v9; // zf
   int v10; // [esp+8h] [ebp-4h] BYREF
 
   v10 = a1; /*0x608cdc*/
   if ( !g_DialogHashMap_Count ) /*0x608ce0*/
     goto LABEL_5; /*0x608ce0*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v10) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x608d01*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v10) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x608d01*/
   if ( !v3 ) /*0x608d06*/
     goto LABEL_5; /*0x608d06*/
   while ( *v3 != v10 ) /*0x608d0e*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x608d14*/
+    v3 = (unsigned int *)v3[129]; /*0x608d14*/
     if ( !v3 ) /*0x608d1c*/
       goto LABEL_5; /*0x608d1c*/
   }
@@ -2905,8 +2905,8 @@ void IsDialogControlVisible(int a1, HWND a2)
 namespace gamemd {
 char sub_6096A0(int a1, HWND a2)
 {
-  _DWORD *v4; // eax
-  _DWORD *v6; // eax
+  unsigned int *v4; // eax
+  unsigned int *v6; // eax
   HWND v7; // [esp+8h] [ebp-4h] BYREF
 
   if ( (GetWindowLongA(a2, -16) & 0xB) != 0xB ) /*0x6096b5*/
@@ -2914,12 +2914,12 @@ char sub_6096A0(int a1, HWND a2)
   v7 = a2; /*0x6096bc*/
   if ( !g_DialogHashMap_Count ) /*0x6096c2*/
     return 0; /*0x6096c2*/
-  v4 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6096e3*/
+  v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6096e3*/
   if ( !v4 ) /*0x6096e8*/
     return 0; /*0x6096e8*/
   while ( (HWND)*v4 != v7 ) /*0x6096f0*/
   {
-    v4 = (_DWORD *)v4[129]; /*0x6096f2*/
+    v4 = (unsigned int *)v4[129]; /*0x6096f2*/
     if ( !v4 ) /*0x6096fa*/
       return 0; /*0x6096fa*/
   }
@@ -2934,21 +2934,21 @@ char sub_6096A0(int a1, HWND a2)
 namespace gamemd {
 void GetDialogDefaultButton(int a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   int v4; // esi
   int DlgCtrlID; // eax
-  _DWORD *v7; // eax
+  unsigned int *v7; // eax
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x60973c*/
   if ( !g_DialogHashMap_Count ) /*0x609740*/
     goto LABEL_5; /*0x609740*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609761*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609761*/
   if ( !v3 ) /*0x609766*/
     goto LABEL_5; /*0x609766*/
   while ( *v3 != v8 ) /*0x60976e*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x609770*/
+    v3 = (unsigned int *)v3[129]; /*0x609770*/
     if ( !v3 ) /*0x609778*/
       goto LABEL_5; /*0x609778*/
   }
@@ -3034,8 +3034,8 @@ void GetDialogDefaultButton(int a1, HWND a2)
 namespace gamemd {
 bool sub_609AA0(int a1, HWND a2)
 {
-  _DWORD *v4; // eax
-  _DWORD *v6; // eax
+  unsigned int *v4; // eax
+  unsigned int *v6; // eax
   HWND v7; // [esp+8h] [ebp-4h] BYREF
 
   if ( (GetWindowLongA(a2, -16) & 0xB) != 0xB ) /*0x609ab5*/
@@ -3043,12 +3043,12 @@ bool sub_609AA0(int a1, HWND a2)
   v7 = a2; /*0x609abc*/
   if ( !g_DialogHashMap_Count ) /*0x609ac2*/
     return 0; /*0x609ac2*/
-  v4 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609ae3*/
+  v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609ae3*/
   if ( !v4 ) /*0x609ae8*/
     return 0; /*0x609ae8*/
   while ( (HWND)*v4 != v7 ) /*0x609af0*/
   {
-    v4 = (_DWORD *)v4[129]; /*0x609af2*/
+    v4 = (unsigned int *)v4[129]; /*0x609af2*/
     if ( !v4 ) /*0x609afa*/
       return 0; /*0x609afa*/
   }
@@ -3060,21 +3060,21 @@ bool sub_609AA0(int a1, HWND a2)
 namespace gamemd {
 bool sub_609B30(int a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   void *v4; // esi
   int DlgCtrlID; // edi
-  _DWORD *v7; // eax
+  unsigned int *v7; // eax
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x609b3c*/
   if ( !g_DialogHashMap_Count ) /*0x609b40*/
     goto LABEL_5; /*0x609b40*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609b61*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609b61*/
   if ( !v3 ) /*0x609b66*/
     goto LABEL_5; /*0x609b66*/
   while ( *v3 != v8 ) /*0x609b6e*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x609b70*/
+    v3 = (unsigned int *)v3[129]; /*0x609b70*/
     if ( !v3 ) /*0x609b78*/
       goto LABEL_5; /*0x609b78*/
   }
@@ -3092,10 +3092,10 @@ bool sub_609B30(int a1, HWND a2)
 namespace gamemd {
 bool sub_609BC0(int a1, HWND a2)
 {
-  _DWORD *v4; // eax
-  _DWORD *v5; // eax
-  _DWORD *v7; // eax
-  _DWORD *v8; // eax
+  unsigned int *v4; // eax
+  unsigned int *v5; // eax
+  unsigned int *v7; // eax
+  unsigned int *v8; // eax
   HWND v9; // [esp+Ch] [ebp-4h] BYREF
 
   if ( SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x609bcd*/
@@ -3105,13 +3105,13 @@ bool sub_609BC0(int a1, HWND a2)
     v9 = a2; /*0x609bf1*/
     if ( g_DialogHashMap_Count ) /*0x609bf7*/
     {
-      v4 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base /*0x609c18*/
+      v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base /*0x609c18*/
                      + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1)));
       if ( v4 ) /*0x609c1d*/
       {
         while ( (HWND)*v4 != v9 ) /*0x609c25*/
         {
-          v4 = (_DWORD *)v4[129]; /*0x609c27*/
+          v4 = (unsigned int *)v4[129]; /*0x609c27*/
           if ( !v4 ) /*0x609c2f*/
             goto LABEL_7; /*0x609c2f*/
         }
@@ -3130,12 +3130,12 @@ bool sub_609BC0(int a1, HWND a2)
   v9 = a2; /*0x609c46*/
   if ( !g_DialogHashMap_Count ) /*0x609c4c*/
     return 0; /*0x609c4c*/
-  v5 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609c71*/
+  v5 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609c71*/
   if ( !v5 ) /*0x609c76*/
     return 0; /*0x609c76*/
   while ( (HWND)*v5 != v9 ) /*0x609c7e*/
   {
-    v5 = (_DWORD *)v5[129]; /*0x609c80*/
+    v5 = (unsigned int *)v5[129]; /*0x609c80*/
     if ( !v5 ) /*0x609c88*/
       return 0; /*0x609c90*/
   }
@@ -3147,10 +3147,10 @@ bool sub_609BC0(int a1, HWND a2)
 namespace gamemd {
 bool sub_609CF0(int a1, HWND a2)
 {
-  _DWORD *v4; // eax
-  _DWORD *v5; // eax
-  _DWORD *v7; // eax
-  _DWORD *v8; // eax
+  unsigned int *v4; // eax
+  unsigned int *v5; // eax
+  unsigned int *v7; // eax
+  unsigned int *v8; // eax
   HWND v9; // [esp+Ch] [ebp-4h] BYREF
 
   if ( !SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x609cfd*/
@@ -3160,13 +3160,13 @@ bool sub_609CF0(int a1, HWND a2)
     v9 = a2; /*0x609d21*/
     if ( g_DialogHashMap_Count ) /*0x609d27*/
     {
-      v4 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base /*0x609d48*/
+      v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base /*0x609d48*/
                      + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1)));
       if ( v4 ) /*0x609d4d*/
       {
         while ( (HWND)*v4 != v9 ) /*0x609d55*/
         {
-          v4 = (_DWORD *)v4[129]; /*0x609d57*/
+          v4 = (unsigned int *)v4[129]; /*0x609d57*/
           if ( !v4 ) /*0x609d5f*/
             goto LABEL_7; /*0x609d5f*/
         }
@@ -3185,12 +3185,12 @@ bool sub_609CF0(int a1, HWND a2)
   v9 = a2; /*0x609d76*/
   if ( !g_DialogHashMap_Count ) /*0x609d7c*/
     return 0; /*0x609d7c*/
-  v5 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609da1*/
+  v5 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609da1*/
   if ( !v5 ) /*0x609da6*/
     return 0; /*0x609da6*/
   while ( (HWND)*v5 != v9 ) /*0x609dae*/
   {
-    v5 = (_DWORD *)v5[129]; /*0x609db0*/
+    v5 = (unsigned int *)v5[129]; /*0x609db0*/
     if ( !v5 ) /*0x609db8*/
       return 0; /*0x609dc0*/
   }
@@ -3202,21 +3202,21 @@ bool sub_609CF0(int a1, HWND a2)
 namespace gamemd {
 void FilterDialogButtonAction(int a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   int v4; // esi
   int DlgCtrlID; // eax
-  _DWORD *v7; // eax
+  unsigned int *v7; // eax
   int v9; // [esp+8h] [ebp-4h] BYREF
 
   v9 = a1; /*0x609e2c*/
   if ( !g_DialogHashMap_Count ) /*0x609e30*/
     goto LABEL_5; /*0x609e30*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609e51*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609e51*/
   if ( !v3 ) /*0x609e56*/
     goto LABEL_5; /*0x609e56*/
   while ( *v3 != v9 ) /*0x609e5e*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x609e60*/
+    v3 = (unsigned int *)v3[129]; /*0x609e60*/
     if ( !v3 ) /*0x609e68*/
       goto LABEL_5; /*0x609e68*/
   }
@@ -3322,21 +3322,21 @@ void FilterDialogButtonAction(int a1, HWND a2)
 namespace gamemd {
 bool sub_60A100(int a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   int v4; // esi
   int DlgCtrlID; // eax
-  _DWORD *v7; // eax
+  unsigned int *v7; // eax
   int v8; // [esp+8h] [ebp-4h] BYREF
 
   v8 = a1; /*0x60a10c*/
   if ( !g_DialogHashMap_Count ) /*0x60a110*/
     goto LABEL_5; /*0x60a110*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60a131*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60a131*/
   if ( !v3 ) /*0x60a136*/
     goto LABEL_5; /*0x60a136*/
   while ( *v3 != v8 ) /*0x60a13e*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x60a140*/
+    v3 = (unsigned int *)v3[129]; /*0x60a140*/
     if ( !v3 ) /*0x60a148*/
       goto LABEL_5; /*0x60a148*/
   }
@@ -3366,17 +3366,17 @@ void EnumFunc(HWND hWnd, LPARAM a2)
     hWnd = v2; /*0x60a1a4*/
     if ( g_DialogHashMap_Count ) /*0x60a1aa*/
     {
-      v4 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60a1cb*/
+      v4 = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60a1cb*/
       if ( v4 ) /*0x60a1d0*/
       {
         while ( *(HWND *)v4 != hWnd ) /*0x60a1d8*/
         {
-          v4 = *(_DWORD *)(v4 + 516); /*0x60a1da*/
+          v4 = *(unsigned int *)(v4 + 516); /*0x60a1da*/
           if ( !v4 ) /*0x60a1e2*/
             return 1; /*0x60a1eb*/
         }
         v6 = v4 + 4; /*0x60a1f2*/
-        if ( v6 && !*(_DWORD *)(v6 + 104) && IsDialogControlVisible((int)Parent, v2) ) /*0x60a204*/
+        if ( v6 && !*(unsigned int *)(v6 + 104) && IsDialogControlVisible((int)Parent, v2) ) /*0x60a204*/
         {
           if ( IsWindowVisible(v2) ) /*0x60a20e*/
             ++dword_AC1CAC; /*0x60a218*/
@@ -3403,17 +3403,17 @@ void sub_60A250(HWND hWnd, LPARAM a2)
     hWnd = v2; /*0x60a274*/
     if ( g_DialogHashMap_Count ) /*0x60a27a*/
     {
-      v4 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60a29b*/
+      v4 = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60a29b*/
       if ( v4 ) /*0x60a2a0*/
       {
         while ( *(HWND *)v4 != hWnd ) /*0x60a2a8*/
         {
-          v4 = *(_DWORD *)(v4 + 516); /*0x60a2aa*/
+          v4 = *(unsigned int *)(v4 + 516); /*0x60a2aa*/
           if ( !v4 ) /*0x60a2b2*/
             return 1; /*0x60a2bb*/
         }
         v6 = v4 + 4; /*0x60a2c2*/
-        if ( v6 && !*(_DWORD *)(v6 + 104) && GetDialogDefaultButton((int)Parent, v2) ) /*0x60a2d4*/
+        if ( v6 && !*(unsigned int *)(v6 + 104) && GetDialogDefaultButton((int)Parent, v2) ) /*0x60a2d4*/
         {
           if ( IsWindowVisible(v2) ) /*0x60a2de*/
             ++dword_AC4894; /*0x60a2e8*/
@@ -3436,7 +3436,7 @@ AbstractClass * * RepositionGameSpeedIndicator(HWND hWnd, int a2)
   int v8; // ebx
   int v9; // edi
   HWND v10; // eax
-  _DWORD *v12; // [esp+10h] [ebp-54h]
+  unsigned int *v12; // [esp+10h] [ebp-54h]
   int nWidtha; // [esp+14h] [ebp-50h]
   int v15; // [esp+1Ch] [ebp-48h]
   struct tagRECT Rect; // [esp+24h] [ebp-40h] BYREF
@@ -3450,8 +3450,8 @@ AbstractClass * * RepositionGameSpeedIndicator(HWND hWnd, int a2)
   GetWindowRect(hWnd, &v19); /*0x60b036*/
   if ( GameSpeedSessionClass )
   {
-    v8 = *((__int16 *)dword_B0F9EC + 2); /*0x60b134*/
-    nWidtha = *((__int16 *)dword_B0F9EC + 1); /*0x60b145*/
+    v8 = *((int16_t *)dword_B0F9EC + 2); /*0x60b134*/
+    nWidtha = *((int16_t *)dword_B0F9EC + 1); /*0x60b145*/
     v12 = dword_B0FC48; /*0x60b149*/
     v9 = Rect.right - Rect.left - 147; /*0x60b14d*/
     v10 = GetParent(hWnd); /*0x60b14f*/
@@ -3467,10 +3467,10 @@ AbstractClass * * RepositionGameSpeedIndicator(HWND hWnd, int a2)
   }
   else
   {
-    v5 = *((_DWORD *)dword_B0FC24 + 3); /*0x60b0d8*/
-    v15 = *((_DWORD *)dword_B0FC24 + 1); /*0x60b0db*/
+    v5 = *((unsigned int *)dword_B0FC24 + 3); /*0x60b0d8*/
+    v15 = *((unsigned int *)dword_B0FC24 + 1); /*0x60b0db*/
     v6 = ((Rect.bottom - Rect.top - 600) / 2 < 0 ? 0 : (Rect.bottom - Rect.top - 600) / 2)
-       - ((*(_DWORD *)(a2 + 4) - 600) / 2 < 0 ? 0 : (*(_DWORD *)(a2 + 4) - 600) / 2)
+       - ((*(unsigned int *)(a2 + 4) - 600) / 2 < 0 ? 0 : (*(unsigned int *)(a2 + 4) - 600) / 2)
        + v19.top
        - v15
        - Rect.top;
@@ -3485,8 +3485,8 @@ AbstractClass * * RepositionGameSpeedIndicator(HWND hWnd, int a2)
            - Rect.left
            - 156,
              v15 + v7 * v5,
-             *((__int16 *)dword_B0FAC4 + 1),
-             *((__int16 *)dword_B0FAC4 + 2),
+             *((int16_t *)dword_B0FAC4 + 1),
+             *((int16_t *)dword_B0FAC4 + 2),
              0);
   }
 }
@@ -3495,20 +3495,20 @@ AbstractClass * * RepositionGameSpeedIndicator(HWND hWnd, int a2)
 namespace gamemd {
 bool sub_60B880(int a1, HWND a2)
 {
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   int v4; // esi
-  _DWORD *v6; // eax
+  unsigned int *v6; // eax
   int v7; // [esp+8h] [ebp-4h] BYREF
 
   v7 = a1; /*0x60b88c*/
   if ( !g_DialogHashMap_Count ) /*0x60b890*/
     goto LABEL_5; /*0x60b890*/
-  v3 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60b8b1*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60b8b1*/
   if ( !v3 ) /*0x60b8b6*/
     goto LABEL_5; /*0x60b8b6*/
   while ( *v3 != v7 ) /*0x60b8be*/
   {
-    v3 = (_DWORD *)v3[129]; /*0x60b8c0*/
+    v3 = (unsigned int *)v3[129]; /*0x60b8c0*/
     if ( !v3 ) /*0x60b8c8*/
       goto LABEL_5; /*0x60b8c8*/
   }
@@ -3541,17 +3541,17 @@ void RepositionDialogControls(HWND hWnd, HWND a2)
   HWND Parent; // ebx
   int v5; // eax
   int v6; // eax
-  _DWORD *v7; // eax
+  unsigned int *v7; // eax
   void *v8; // edi
   int DlgCtrlID; // ebp
-  _DWORD *v10; // eax
+  unsigned int *v10; // eax
   int v11; // edi
   int v12; // eax
-  _DWORD *v13; // eax
+  unsigned int *v13; // eax
   int v14; // edi
-  _DWORD *v15; // eax
+  unsigned int *v15; // eax
   HWND v16; // eax
-  _DWORD v17[4]; // [esp+Ch] [ebp-30h] BYREF
+  unsigned int v17[4]; // [esp+Ch] [ebp-30h] BYREF
   struct tagRECT v18; // [esp+1Ch] [ebp-20h] BYREF
   struct tagRECT Rect; // [esp+2Ch] [ebp-10h] BYREF
 
@@ -3573,17 +3573,17 @@ void RepositionDialogControls(HWND hWnd, HWND a2)
     hWnd = v2; /*0x60c141*/
     if ( !g_DialogHashMap_Count ) /*0x60c147*/
       goto LABEL_9; /*0x60c147*/
-    v5 = *((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&hWnd)); /*0x60c15e*/
+    v5 = *((unsigned int *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&hWnd)); /*0x60c15e*/
     if ( !v5 ) /*0x60c163*/
       goto LABEL_9; /*0x60c163*/
     while ( *(HWND *)v5 != hWnd ) /*0x60c16b*/
     {
-      v5 = *(_DWORD *)(v5 + 516); /*0x60c16d*/
+      v5 = *(unsigned int *)(v5 + 516); /*0x60c16d*/
       if ( !v5 ) /*0x60c175*/
         goto LABEL_9; /*0x60c175*/
     }
     v6 = v5 + 4; /*0x60c1a9*/
-    if ( v6 && !*(_DWORD *)(v6 + 104) && IsDialogControlVisible((int)Parent, v2) ) /*0x60c1b9*/
+    if ( v6 && !*(unsigned int *)(v6 + 104) && IsDialogControlVisible((int)Parent, v2) ) /*0x60c1b9*/
     {
       RepositionGameSpeedIndicator(v2); /*0x60c1c8*/
       Control::RepositionControlsDialog(v2); /*0x60c1cf*/
@@ -3600,7 +3600,7 @@ void RepositionDialogControls(HWND hWnd, HWND a2)
       }
       else if ( (GetWindowLongA(v2, -16) & 0xB) == 0xB /*0x60c21c*/
              && (hWnd = v2, a2 = 0, HashTable::Get(&g_DialogHashMap_Base, &hWnd, &a2), a2)
-             && !*((_DWORD *)a2 + 26)
+             && !*((unsigned int *)a2 + 26)
              && GetDialogDefaultButton((int)Parent, v2) )
       {
         UI_Get_60B350(v2); /*0x60c227*/
@@ -3618,12 +3618,12 @@ void RepositionDialogControls(HWND hWnd, HWND a2)
         a2 = Parent; /*0x60c271*/
         if ( !g_DialogHashMap_Count ) /*0x60c277*/
           goto LABEL_26; /*0x60c277*/
-        v7 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&a2)); /*0x60c28e*/
+        v7 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&a2)); /*0x60c28e*/
         if ( !v7 ) /*0x60c293*/
           goto LABEL_26; /*0x60c293*/
         while ( (HWND)*v7 != a2 ) /*0x60c29b*/
         {
-          v7 = (_DWORD *)v7[129]; /*0x60c29d*/
+          v7 = (unsigned int *)v7[129]; /*0x60c29d*/
           if ( !v7 ) /*0x60c2a5*/
             goto LABEL_26; /*0x60c2a5*/
         }
@@ -3647,7 +3647,7 @@ void RepositionDialogControls(HWND hWnd, HWND a2)
           a2 = 0; /*0x60c30d*/
           HashTable::Get(&g_DialogHashMap_Base, &hWnd, &a2); /*0x60c311*/
           if ( a2 ) /*0x60c31c*/
-            v11 = *((_DWORD *)a2 + 27); /*0x60c31e*/
+            v11 = *((unsigned int *)a2 + 27); /*0x60c31e*/
           v12 = GetDlgCtrlID(v2); /*0x60c322*/
           if ( v11 == 226 && v12 == 1821 ) /*0x60c336*/
           {
@@ -3660,13 +3660,13 @@ void RepositionDialogControls(HWND hWnd, HWND a2)
             a2 = Parent; /*0x60c35a*/
             if ( !g_DialogHashMap_Count ) /*0x60c360*/
               goto LABEL_41; /*0x60c360*/
-            v13 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base /*0x60c377*/
+            v13 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base /*0x60c377*/
                             + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&a2));
             if ( !v13 ) /*0x60c37c*/
               goto LABEL_41; /*0x60c37c*/
             while ( (HWND)*v13 != a2 ) /*0x60c384*/
             {
-              v13 = (_DWORD *)v13[129]; /*0x60c38a*/
+              v13 = (unsigned int *)v13[129]; /*0x60c38a*/
               if ( !v13 ) /*0x60c392*/
                 goto LABEL_41; /*0x60c392*/
             }
@@ -3722,17 +3722,17 @@ namespace gamemd {
 AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
 {
   LPARAM v2; // edi
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   void *v5; // eax
   void *v6; // eax
-  _DWORD *v7; // eax
-  _DWORD *v8; // eax
-  _DWORD *v9; // eax
+  unsigned int *v7; // eax
+  unsigned int *v8; // eax
+  unsigned int *v9; // eax
   void *v10; // eax
   void *v11; // eax
-  _DWORD *i; // eax
+  unsigned int *i; // eax
   int v14; // [esp+10h] [ebp-20Ch] BYREF
-  _DWORD *v15; // [esp+14h] [ebp-208h] BYREF
+  unsigned int *v15; // [esp+14h] [ebp-208h] BYREF
   LPARAM v16; // [esp+18h] [ebp-204h]
   void *v17[128]; // [esp+1Ch] [ebp-200h] BYREF
 
@@ -3744,12 +3744,12 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
   v14 = (int)a1; /*0x60f4e6*/
   v15 = 0; /*0x60f4ea*/
   if ( g_DialogHashMap_Count /*0x60f514*/
-    && (v4 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base
+    && (v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base
                        + (g_DialogHashMap_Hasher(&v14) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
   {
     while ( *v4 != v14 ) /*0x60f51c*/
     {
-      v4 = (_DWORD *)v4[129]; /*0x60f51e*/
+      v4 = (unsigned int *)v4[129]; /*0x60f51e*/
       if ( !v4 ) /*0x60f526*/
         goto LABEL_5; /*0x60f526*/
     }
@@ -3761,7 +3761,7 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
     memset(v17, 0, sizeof(v17)); /*0x60f528*/
     v17[26] = (void *)11; /*0x60f53d*/
     v17[25] = (void *)g_FogOfWarState; /*0x60f548*/
-    v5 = RA2_OPNEW(4u); /*0x60f54f*/
+    v5 = operator new(4u); /*0x60f54f*/
     if ( v5 ) /*0x60f559*/
       v6 = (void *)unknown_libname_74(v5); /*0x60f55d*/
     else
@@ -3773,12 +3773,12 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
     SymbolTable::Insert((int)&v14, v17); /*0x60f59b*/
     if ( g_DialogHashMap_Count ) /*0x60f5a6*/
     {
-      v8 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v14)); /*0x60f5bd*/
+      v8 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v14)); /*0x60f5bd*/
       if ( v8 ) /*0x60f5c2*/
       {
         while ( *v8 != v14 ) /*0x60f5ca*/
         {
-          v8 = (_DWORD *)v8[129]; /*0x60f5cc*/
+          v8 = (unsigned int *)v8[129]; /*0x60f5cc*/
           if ( !v8 ) /*0x60f5d4*/
             goto LABEL_15; /*0x60f5d4*/
         }
@@ -3798,12 +3798,12 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
   v14 = (int)a1; /*0x60f625*/
   v15 = 0; /*0x60f629*/
   if ( g_DialogHashMap_Count /*0x60f653*/
-    && (v9 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base
+    && (v9 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base
                        + (g_DialogHashMap_Hasher(&v14) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
   {
     while ( *v9 != v14 ) /*0x60f65b*/
     {
-      v9 = (_DWORD *)v9[129]; /*0x60f65d*/
+      v9 = (unsigned int *)v9[129]; /*0x60f65d*/
       if ( !v9 ) /*0x60f665*/
         goto LABEL_20; /*0x60f665*/
     }
@@ -3816,7 +3816,7 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
     memset(v17, 0, sizeof(v17)); /*0x60f667*/
     v17[26] = (void *)11; /*0x60f67c*/
     v17[25] = (void *)g_FogOfWarState; /*0x60f687*/
-    v10 = RA2_OPNEW(4u); /*0x60f68e*/
+    v10 = operator new(4u); /*0x60f68e*/
     if ( v10 ) /*0x60f698*/
       v11 = (void *)unknown_libname_74(v10); /*0x60f69c*/
     else
@@ -3905,7 +3905,7 @@ namespace gamemd {
 long long sub_600410()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_AC1898 - dbl_AC1B88); /*0x600422*/
   result = Math::RoundToInt(v0 * dbl_AC1B40 * 0.5); /*0x600436*/
@@ -3934,7 +3934,7 @@ void sub_600480()
 namespace gamemd {
 long long sub_6004B0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_AC48AC) + 0.5); /*0x6004cb*/
   dword_AC489C = result; /*0x6004d0*/
@@ -3995,7 +3995,7 @@ int unknown_libname_26()
 namespace gamemd {
 ObjectClass * E4Recv_600660::ReadPointerFromECX()
 {
-  return *(_DWORD *)this; /*0x600662*/
+  return *(unsigned int *)this; /*0x600662*/
 }
 } // namespace gamemd
 
@@ -4022,9 +4022,9 @@ int sub_6006B0()
   g_DialogHashMap_Grow = 0; /*0x6006ff*/
   byte_AC1B5C = 0; /*0x600705*/
   dword_AC1B50 = 1 << (v1 - 1); /*0x60070b*/
-  g_DialogHashMap_Entries = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x600723*/
+  g_DialogHashMap_Entries = operator new(4 * (1 << (v1 - 1))); /*0x600723*/
   memset(g_DialogHashMap_Entries, 0, 4 * dword_AC1B50); /*0x600729*/
-  g_DialogHashMap_Callback = (int (__thiscall *)(_DWORD))ReadPointerFromECX; /*0x600730*/
+  g_DialogHashMap_Callback = (int (__thiscall *)(unsigned int))ReadPointerFromECX; /*0x600730*/
   return atexit(sub_600750); /*0x600742*/
 }
 } // namespace gamemd
@@ -4052,9 +4052,9 @@ int sub_600880()
   g_DialogPoolCount = 0; /*0x6008cf*/
   byte_AC18D4 = 0; /*0x6008d5*/
   g_DialogBuffer = 1 << (v1 - 1); /*0x6008db*/
-  g_DialogPool = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x6008f3*/
+  g_DialogPool = operator new(4 * (1 << (v1 - 1))); /*0x6008f3*/
   memset(g_DialogPool, 0, 4 * g_DialogBuffer); /*0x6008f9*/
-  dword_AC18D8 = (int (__thiscall *)(_DWORD))ReadPointerFromECX; /*0x600900*/
+  dword_AC18D8 = (int (__thiscall *)(unsigned int))ReadPointerFromECX; /*0x600900*/
   return atexit(sub_600920); /*0x600912*/
 }
 } // namespace gamemd
@@ -4082,9 +4082,9 @@ int sub_600A50()
   g_DialogHashMap_Count = 0; /*0x600a9f*/
   byte_AC1B14 = 0; /*0x600aa5*/
   dword_AC1B08 = 1 << (v1 - 1); /*0x600aab*/
-  g_DialogHashMap_Base = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x600ac3*/
+  g_DialogHashMap_Base = operator new(4 * (1 << (v1 - 1))); /*0x600ac3*/
   memset(g_DialogHashMap_Base, 0, 4 * dword_AC1B08); /*0x600ac9*/
-  g_DialogHashMap_Hasher = (int (__thiscall *)(_DWORD))ReadPointerFromECX; /*0x600ad0*/
+  g_DialogHashMap_Hasher = (int (__thiscall *)(unsigned int))ReadPointerFromECX; /*0x600ad0*/
   return atexit(sub_600AF0); /*0x600ae2*/
 }
 } // namespace gamemd
@@ -4105,7 +4105,7 @@ wchar_t ** sub_603FC0(wchar_t ** a1, HWND a2, HWND hWnd, unsigned short a4, void
   void *v9; // [esp+18h] [ebp-4h] BYREF
   LRESULT v10; // [esp+24h] [ebp+8h]
 
-  v10 = SendMessageA(hWnd, 0x4E8u, 0, a4 | ((unsigned __int16)a5 << 16)); /*0x603ffc*/
+  v10 = SendMessageA(hWnd, 0x4E8u, 0, a4 | ((uint16_t)a5 << 16)); /*0x603ffc*/
   unknown_libname_74(&v9); /*0x604000*/
   lParam[0] = (LPARAM)hWnd; /*0x604016*/
   lParam[1] = v10; /*0x60401a*/

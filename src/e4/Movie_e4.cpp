@@ -56,25 +56,25 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
       for ( i = 0; i < this->q040; ++i ) /*0x49cb72*/
       {
         v8 = this->q03C; /*0x49cb74*/
-        if ( *(_DWORD *)(v8 + 4 * i) ) /*0x49cb77*/
+        if ( *(unsigned int *)(v8 + 4 * i) ) /*0x49cb77*/
           RA2_OPDEL(*(void **)(v8 + 4 * i)); /*0x49cb7f*/
       }
       RA2_OPDEL(*(void **)(&this->q0180)); /*0x49cb93*/
     }
     this->q03C = 0; /*0x49cb9b*/
     this->q040 = 0; /*0x49cb9e*/
-    this->q03C = RA2_OPNEW(4 * *(char *)(v5 + 8)); /*0x49cbae*/
+    this->q03C = operator new(4 * *(char *)(v5 + 8)); /*0x49cbae*/
     v9 = 0; /*0x49cbb7*/
     if ( *(char *)(v5 + 8) > 0 ) /*0x49cbbb*/
     {
       v12 = 0; /*0x49cbbd*/
       do /*0x49cc26*/
       {
-        v10 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2); /*0x49cbde*/
-        *(_DWORD *)(this->q03C + 4 * v9) = RA2_OPNEW(0x104u); /*0x49cbf1*/
+        v10 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 2); /*0x49cbde*/
+        *(unsigned int *)(this->q03C + 4 * v9) = operator new(0x104u); /*0x49cbf1*/
         strncpy( /*0x49cc0c*/
           *(char **)(this->q03C + 4 * v9++),
-          (const char *)(*(_DWORD *)(v5 + 12) + 260 * (v12 + v10)),
+          (const char *)(*(unsigned int *)(v5 + 12) + 260 * (v12 + v10)),
           0x103u);
         v12 += 3; /*0x49cc22*/
       }
@@ -96,7 +96,7 @@ CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
     CampaignClass::LoadFromINI(); /*0x49e3ba*/
   if ( aP1 < 0 || aP1 >= this->q05C ) /*0x49e3ca*/
   {
-    *(_DWORD *)aP2 = 0; /*0x49e3e9*/
+    *(unsigned int *)aP2 = 0; /*0x49e3e9*/
     return 0; /*0x49e3ef*/
   }
   else
@@ -114,18 +114,18 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
   int v8; // edi
   int v9; // ebp
   char v10; // al
-  _DWORD *v11; // eax
-  _DWORD *v12; // esi
+  unsigned int *v11; // eax
+  unsigned int *v12; // esi
   bool v13; // al
   double v14; // st7
   int v15; // eax
   int v16; // [esp+0h] [ebp-150h]
   int v17; // [esp+4h] [ebp-14Ch]
   int *v18; // [esp+8h] [ebp-148h]
-  _BYTE v20[52]; // [esp+1Ch] [ebp-134h] BYREF
+  unsigned char v20[52]; // [esp+1Ch] [ebp-134h] BYREF
   char Str[256]; // [esp+50h] [ebp-100h] BYREF
 
-  if ( (unsigned __int8)Render_Play(1) && !g_GameMode_Current ) /*0x5bed6a*/
+  if ( (uint8_t)Render_Play(1) && !g_GameMode_Current ) /*0x5bed6a*/
   {
     Timer::PumpMessages(g_BinkMoviePlayer); /*0x5bed76*/
     v7 = strrchr(Str, 46); /*0x5bed82*/
@@ -135,7 +135,7 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
       v8 = 0; /*0x5bef1e*/
       v9 = 0; /*0x5bef20*/
       v10 = Math::RoundToInt(*(float *)&dword_A8EB9C * 255.0); /*0x5bef24*/
-      v11 = (_DWORD *)LoadVQMovie(Str, 0, 0, 0, 0, 0, 0, 0, 0, v10, 1); /*0x5bef56*/
+      v11 = (unsigned int *)LoadVQMovie(Str, 0, 0, 0, 0, 0, 0, 0, 0, v10, 1); /*0x5bef56*/
       v12 = v11; /*0x5bef5b*/
       if ( v11 ) /*0x5bef61*/
       {
@@ -160,10 +160,10 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
               }
             }
           }
-          (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x5bf03b*/
+          (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x5bf03b*/
           if ( a6 ) /*0x5bf045*/
           {
-            (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x5bf050*/
+            (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x5bf050*/
             Frame::Present(g_DSurface_Hidden, 0, v9, v8, 0, v16, v17, v18); /*0x5bf05c*/
           }
           if ( !byte_ABF35C ) /*0x5bf067*/
@@ -195,10 +195,10 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
           RA2_OPDEL(v12); /*0x5bf11f*/
           if ( a4 == 1 ) /*0x5bf130*/
           {
-            (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x5bf13b*/
+            (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x5bf13b*/
             Frame::Present(g_DSurface_Hidden, 0, v9, v8, 0, v16, v17, v18); /*0x5bf147*/
           }
-          (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x5bf154*/
+          (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x5bf154*/
           MapClass::MarkForRedraw(2); /*0x5bf15e*/
           Timer::PumpMessages(g_BinkMoviePlayer); /*0x5bf169*/
         }
@@ -213,10 +213,10 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
     else
     {
       Debug::Log(aPlayMovieAsBin); /*0x5bedad*/
-      (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x5bedbd*/
+      (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x5bedbd*/
       if ( a6 ) /*0x5bedc7*/
       {
-        (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x5bedd2*/
+        (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x5bedd2*/
         Frame::Present(g_DSurface_Hidden, 0, a2, a3, 0, v16, v17, v18); /*0x5bedde*/
       }
       BinkMovie::Close(Str); /*0x5bedec*/
@@ -248,11 +248,11 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
       }
       if ( a4 == 1 ) /*0x5beeb1*/
       {
-        (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x5beebc*/
+        (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)g_DSurface_Hidden + 24))(g_DSurface_Hidden, 0); /*0x5beebc*/
         Frame::Present(g_DSurface_Hidden, 0, a2, a3, 0, v16, v17, v18); /*0x5beec8*/
       }
       Timer::PumpMessages(g_BinkMoviePlayer); /*0x5beed3*/
-      (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x5beee0*/
+      (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x5beee0*/
       MapClass::MarkForRedraw(2); /*0x5beeea*/
       BinkMovie::Stop(v20, unsigned int a1, unsigned int a2, unsigned int a3, unsigned int a4, unsigned int a5, unsigned int a6); /*0x5beef3*/
     }
@@ -298,7 +298,7 @@ AbstractClass * * Movie::Update()
           if ( this->q044 && !AudioSample::IsBuffering() ) /*0x720a0f*/
             Audio::Release(this->q02C); /*0x720a1b*/
           IDA_LOBYTE(v2) = Audio::IsSoundPlaying(this->q02C) != 0; /*0x720a2a*/
-          if ( !(_BYTE)v2 ) /*0x720a2f*/
+          if ( !(unsigned char)v2 ) /*0x720a2f*/
           {
   LABEL_10:
             v2 = this->q008; /*0x720a31*/
@@ -332,7 +332,7 @@ unsigned int Movie::SelectNextBuildableType(AnimClass * aP1)
   int v9; // edi
 
   v2 = aP1; /*0x720a81*/
-  if ( (aP1 <= -1 || *(_BYTE *)(*(_DWORD *)(this->q018 + 4 * aP1) + 649) || this->q010) && aP1 >= 0 ) /*0x720aa7*/
+  if ( (aP1 <= -1 || *(unsigned char *)(*(unsigned int *)(this->q018 + 4 * aP1) + 649) || this->q010) && aP1 >= 0 ) /*0x720aa7*/
     return v2; /*0x720b18*/
   if ( this->q048 == 1 ) /*0x720aad*/
   {
@@ -345,7 +345,7 @@ unsigned int Movie::SelectNextBuildableType(AnimClass * aP1)
       v7 = v4 == 1000; /*0x720ac6*/
       if ( v4 >= 1000 ) /*0x720acc*/
         break; /*0x720acc*/
-      if ( v5 != aP1 && RulesClass::IsTypeBuildable((_DWORD *)this, v5) ) /*0x720ad5*/
+      if ( v5 != aP1 && RulesClass::IsTypeBuildable((unsigned int *)this, v5) ) /*0x720ad5*/
       {
         v7 = v4 == 1000; /*0x720ade*/
         break; /*0x720ade*/
@@ -363,7 +363,7 @@ unsigned int Movie::SelectNextBuildableType(AnimClass * aP1)
         v2 = 0; /*0x720afd*/
       if ( !--v9 ) /*0x720b00*/
         break; /*0x720b00*/
-      if ( RulesClass::IsTypeBuildable((_DWORD *)this, v2) ) /*0x720b05*/
+      if ( RulesClass::IsTypeBuildable((unsigned int *)this, v2) ) /*0x720b05*/
         return v2; /*0x720b0c*/
     }
     return 0; /*0x720b12*/
@@ -374,9 +374,9 @@ unsigned int Movie::SelectNextBuildableType(AnimClass * aP1)
 namespace gamemd {
 char Movie::GetSectionID(unsigned int * a2)
 {
-  if ( !*(_BYTE *)(this + 108) ) /*0x49bc80*/
+  if ( !*(unsigned char *)&this->q06C ) /*0x49bc80*/
     return 0; /*0x49bc87*/
-  *a2 = *(_DWORD *)(this + 68); /*0x49bc93*/
+  *a2 = *(unsigned int *)((char *)&this->q108 + 8); /*0x49bc93*/
   return 1; /*0x49bc89*/
 }
 } // namespace gamemd
@@ -385,9 +385,9 @@ char Movie::GetSectionID(unsigned int * a2)
 namespace gamemd {
 char Movie::GetState(CCINIClass * aP1)
 {
-  if ( !*(_BYTE *)(this + 108) ) /*0x49bcc0*/
+  if ( !*(unsigned char *)&this->q06C ) /*0x49bcc0*/
     return 0; /*0x49bcc7*/
-  *aP1 = *(_DWORD *)(this + 56); /*0x49bcd3*/
+  *aP1 = *(unsigned int *)((char *)&this->q096 + 74); /*0x49bcd3*/
   return 1; /*0x49bcc9*/
 }
 } // namespace gamemd

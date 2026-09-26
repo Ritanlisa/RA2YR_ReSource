@@ -30,7 +30,7 @@ int IsometricTileTypeClass::ProcessPower(int * a2)
   v3 = this->q2BC; /*0x549bc4*/
   if ( v3 ) /*0x549bcc*/
   {
-    v4 = (*(int (__stdcall **)(int))(*(_DWORD *)(v3 + 4) + 16))(v3 + 4); /*0x549bd5*/
+    v4 = (*(int (__stdcall **)(int))(*(unsigned int *)(v3 + 4) + 16))(v3 + 4); /*0x549bd5*/
     Power::TimerProcess(v4); /*0x549bdb*/
   }
   Power::TimerProcess(this->q2C0); /*0x549be9*/
@@ -53,13 +53,13 @@ namespace gamemd {
 AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
 {
   int i; // esi
-  void (__thiscall ***v3)(_DWORD, int); // ecx
+  void (__thiscall ***v3)(unsigned int, int); // ecx
   int result; // eax
   int j; // eax
 
-  for ( i = 0; i < g_SurfaceAnimState; *((_DWORD *)dword_87F69C + i - 1) = 0 ) /*0x549c8a*/
+  for ( i = 0; i < g_SurfaceAnimState; *((unsigned int *)dword_87F69C + i - 1) = 0 ) /*0x549c8a*/
   {
-    v3 = (void (__thiscall ***)(_DWORD, int))*((_DWORD *)dword_87F69C + i); /*0x549c91*/
+    v3 = (void (__thiscall ***)(unsigned int, int))*((unsigned int *)dword_87F69C + i); /*0x549c91*/
     if ( v3 ) /*0x549c96*/
       (**v3)(v3, 1); /*0x549c9c*/
     ++i; /*0x549ca3*/
@@ -80,7 +80,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
       a1[3] = (int)&IsometricTileTypeClass_vftable; /*0x549d16*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 175); /*0x549d2a*/
-    for ( j = 0; j < g_SurfaceAnimState; *((_DWORD *)dword_87F69C + j - 1) = 0 ) /*0x549d39*/
+    for ( j = 0; j < g_SurfaceAnimState; *((unsigned int *)dword_87F69C + j - 1) = 0 ) /*0x549d39*/
       ++j; /*0x549d41*/
     TerrainClass::InitTheatre(a1); /*0x549d56*/
     return 0; /*0x549d5b*/
@@ -97,7 +97,7 @@ int IsometricTileTypeClass::GetTileIndex(int a2, int a3)
   if ( *(&this->q0445) == a2 ) /*0x549ddc*/
     *(&this->q0445) = 0; /*0x549dde*/
   result = *(&this->q0448); /*0x549de8*/
-  if ( result != -1 && *((_DWORD *)g_AnimTypeCount + result) == a2 ) /*0x549e02*/
+  if ( result != -1 && *((unsigned int *)g_AnimTypeCount + result) == a2 ) /*0x549e02*/
     *(&this->q0448) = -1; /*0x549e04*/
   return result; /*0x549e0e*/
 }
@@ -189,7 +189,7 @@ unsigned int IsometricTileTypeClass::PointerToIndex(int a2)
 namespace gamemd {
 char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   unsigned int v5;
   int i; // eax
   void * v7;
@@ -200,7 +200,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x54a3e8*/
       v4 = a3; /*0x54a3fe*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x54a3fa*/
+      v4 = operator new(4 * a2); /*0x54a3fa*/
     this->vtable4 = 1; /*0x54a402*/
     if ( !v4 ) /*0x54a406*/
       return 0; /*0x54a47a*/
@@ -209,11 +209,11 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
       v5 = this->vtable3; /*0x54a40f*/
       if ( a2 < v5 ) /*0x54a414*/
         v5 = a2; /*0x54a416*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->vtable2 + 4 * i - 4) ) /*0x54a41c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->vtable2 + 4 * i - 4) ) /*0x54a41c*/
         ++i; /*0x54a421*/
       if ( this->q034 ) /*0x54a42e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x54a439*/
+        RA2_OPDEL(this->q004); /*0x54a439*/
         this->vtable2 = 0; /*0x54a441*/
       }
     }
@@ -223,7 +223,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->vtable22))(this); /*0x54a45e*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->vtable22))))(this); /*0x54a45e*/
   }
   v7 = this->vtable3; /*0x54a461*/
   if ( v7 < this->q010 ) /*0x54a469*/
@@ -237,13 +237,13 @@ int IsometricTileTypeClass::FindItem(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x54a480*/
   result = 0; /*0x54a483*/
   if ( v2 <= 0 ) /*0x54a488*/
     return -1; /*0x54a49f*/
-  for ( i = (_DWORD *)this->vtable2; *i != *a2; ++i ) /*0x54a48e*/
+  for ( i = (unsigned int *)this->vtable2; *i != *a2; ++i ) /*0x54a48e*/
   {
     if ( ++result >= v2 ) /*0x54a49d*/
       return -1; /*0x54a49d*/
@@ -258,7 +258,6 @@ DynamicVector * IsometricTileTypeClass::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->vtable2; /*0x54a763*/
-  *(void **)this = (void*)&VectorClass_unsigned_short___vftable; /*0x54a766*/
   if ( v3 && this->q034 ) /*0x54a770*/
   {
     RA2_OPDEL(v3); /*0x54a778*/
@@ -279,7 +278,6 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
   this->vtable3 = a2; /*0x54a85e*/
   this->vtable4 = 1; /*0x54a861*/
   this->q034 = 0; /*0x54a865*/
-  *(void **)this = (void*)&VectorClass_unsigned_short___vftable; /*0x54a868*/
   if ( a2 ) /*0x54a86e*/
   {
     if ( a3 ) /*0x54a876*/
@@ -287,7 +285,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
       this->vtable2 = a3; /*0x54a878*/
       return this; /*0x54a87e*/
     }
-    this->vtable2 = RA2_OPNEW(4 * a2); /*0x54a88d*/
+    this->vtable2 = operator new(4 * a2); /*0x54a88d*/
     this->q034 = 1; /*0x54a890*/
   }
   return this; /*0x54a87d*/

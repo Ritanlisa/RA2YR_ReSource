@@ -12,7 +12,7 @@
 namespace gamemd {
 void Main::CreateDialog()
 {
-  unsigned __int16 v2; // cx
+  uint16_t v2; // cx
   HWND Dialog; // eax
   LONG i; // eax
   int v5; // ecx

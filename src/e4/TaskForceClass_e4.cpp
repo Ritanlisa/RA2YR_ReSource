@@ -29,10 +29,10 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
   int v7; // edx
   int v8; // eax
   const char *v9; // [esp-10h] [ebp-54h]
-  _BYTE v10[64]; // [esp+4h] [ebp-40h] BYREF
+  unsigned char v10[64]; // [esp+4h] [ebp-40h] BYREF
 
   v9 = Buffer; /*0x4c4f09*/
-  *(_DWORD *)this = 0; /*0x4c4f0a*/
+  *(unsigned int *)this = 0; /*0x4c4f0a*/
   this->vtable2 = 0; /*0x4c4f10*/
   sscanf(v9, "%d,%s", &Buffer, v10); /*0x4c4f17*/
   *this = Buffer; /*0x4c4f27*/
@@ -44,19 +44,19 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
     {
       v8 = TypeClass::FindByName(v10); /*0x4c4f6f*/
       if ( v8 != -1 ) /*0x4c4f77*/
-        this->vtable2 = *((_DWORD *)g_AircraftTypeCount + v8); /*0x4c4f82*/
+        this->vtable2 = *((unsigned int *)g_AircraftTypeCount + v8); /*0x4c4f82*/
       return this; /*0x4c4f85*/
     }
     else
     {
-      v7 = *((_DWORD *)g_UnitTypeCount2 + Index); /*0x4c4f5c*/
+      v7 = *((unsigned int *)g_UnitTypeCount2 + Index); /*0x4c4f5c*/
       this->vtable2 = v7; /*0x4c4f61*/
       return this; /*0x4c4f5f*/
     }
   }
   else
   {
-    v4 = *((_DWORD *)Factory_ExitCellTable + ExitCellByName); /*0x4c4f39*/
+    v4 = *((unsigned int *)Factory_ExitCellTable + ExitCellByName); /*0x4c4f39*/
     this->vtable2 = v4; /*0x4c4f3e*/
     return this; /*0x4c4f3c*/
   }
@@ -67,27 +67,23 @@ namespace gamemd {
 unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
 {
   TaskForceClass * v3;
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // ecx
 
   AbstractTypeClass::Constructor(aP1); /*0x6e7e8a*/
   *(&this->vtable48) = -1; /*0x6e7e8f*/
   *(&this->vtable49) = 0; /*0x6e7e99*/
   *(&this->u32_100) = 0; /*0x6e7ea3*/
-  *(void **)this = (void*)&TaskForceClass_vftable; /*0x6e7ead*/
-  this->vtable2 = (void*)&TaskForceClass_vftable; /*0x6e7eb3*/
-  this->vtable3 = (void*)&TaskForceClass_vftable; /*0x6e7eba*/
-  this->vtable4 = (void*)&TaskForceClass_vftable; /*0x6e7ec1*/
   if ( g_MultiplayerLogFlags < dword_A8E8D8 /*0x6e7f05*/
     || (byte_A8E8DD || !dword_A8E8D8)
     && dword_A8E8E4 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_A8E8D0 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A8E8D0 + 8))(
          &dword_A8E8D0,
          dword_A8E8D8 + dword_A8E8E4,
          0) )
   {
     v3 = g_MultiplayerLogFlags++; /*0x6e7f12*/
-    *((_DWORD *)g_MultiplayerLogEntry + v3) = this; /*0x6e7f21*/
+    *((unsigned int *)g_MultiplayerLogEntry + v3) = this; /*0x6e7f21*/
   }
   v4 = &this->q0A4; /*0x6e7f28*/
   v5 = 6; /*0x6e7f2a*/
@@ -109,15 +105,15 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
   int result; // eax
   int v5; // esi
   int v6; // ebx
-  unsigned __int8 *StringByIndex; // eax
+  uint8_t *StringByIndex; // eax
   int v8; // esi
-  _DWORD *v9; // eax
-  _DWORD *v10; // esi
+  unsigned int *v9; // eax
+  unsigned int *v10; // esi
   int v11; // eax
   int v12; // [esp+10h] [ebp-1Ch]
   char Source[24]; // [esp+14h] [ebp-18h] BYREF
 
-  result = INIClass::GetKeyCount(a1, (unsigned __int8 *)g_INI_Key_TaskForces); /*0x6e8230*/
+  result = INIClass::GetKeyCount(a1, (uint8_t *)g_INI_Key_TaskForces); /*0x6e8230*/
   v5 = result; /*0x6e8235*/
   v6 = 0; /*0x6e8237*/
   v12 = result; /*0x6e823b*/
@@ -125,10 +121,10 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
   {
     while ( 1 ) /*0x6e824d*/
     {
-      StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1, (unsigned __int8 *)g_INI_Key_TaskForces, v6); /*0x6e824d*/
+      StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1, (uint8_t *)g_INI_Key_TaskForces, v6); /*0x6e824d*/
       result = INIClass::GetString( /*0x6e8266*/
-                 (unsigned __int8 ***)a1,
-                 (unsigned __int8 *)g_INI_Key_TaskForces,
+                 (uint8_t ***)a1,
+                 (uint8_t *)g_INI_Key_TaskForces,
                  StringByIndex,
                  &g_INI_DefaultBuffer,
                  Source,
@@ -144,16 +140,16 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
     v8 = 0; /*0x6e82a4*/
     if ( g_MultiplayerLogFlags > 0 ) /*0x6e82a8*/
     {
-      while ( _strcmpi((const void *)(*((_DWORD *)g_MultiplayerLogEntry + v8) + 36), Source) ) /*0x6e82c6*/
+      while ( _strcmpi((const void *)(*((unsigned int *)g_MultiplayerLogEntry + v8) + 36), Source) ) /*0x6e82c6*/
       {
         if ( ++v8 >= g_MultiplayerLogFlags ) /*0x6e82d0*/
           goto LABEL_8; /*0x6e82d0*/
       }
-      v10 = (_DWORD *)*((_DWORD *)g_MultiplayerLogEntry + v8); /*0x6e82f9*/
+      v10 = (unsigned int *)*((unsigned int *)g_MultiplayerLogEntry + v8); /*0x6e82f9*/
       goto LABEL_12; /*0x6e82fc*/
     }
   LABEL_8:
-    v9 = RA2_OPNEW(0xD4u); /*0x6e82d7*/
+    v9 = operator new(0xD4u); /*0x6e82d7*/
     if ( v9 ) /*0x6e82e1*/
       v10 = TaskForceClass::Construct(v9, Source); /*0x6e82ef*/
     else
@@ -162,7 +158,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
   LABEL_12:
     v11 = sub_412610(Source); /*0x6e8300*/
     SwizzleManagerClass::Here_I_Am((int)&SwizzleManagerClass_Instance, v11, (int)v10); /*0x6e8310*/
-    result = (*(int (__thiscall **)(_DWORD *, char *))(*v10 + 100))(v10, a1); /*0x6e831a*/
+    result = (*(int (__thiscall **)(unsigned int *, char *))(*v10 + 100))(v10, a1); /*0x6e831a*/
     v10[40] = a2; /*0x6e831d*/
     v5 = v12; /*0x6e8323*/
     goto LABEL_13; /*0x6e8323*/
@@ -176,10 +172,6 @@ void * TaskForceClass::ExecuteAction(char a2)
 {
   int v3; // eax
 
-  *(void **)this = (void*)&TaskForceClass_vftable; /*0x6e87f6*/
-  this->vtable2 = (void*)&TaskForceClass_vftable; /*0x6e87fc*/
-  this->vtable3 = (void*)&TaskForceClass_vftable; /*0x6e8803*/
-  this->vtable4 = (void*)&TaskForceClass_vftable; /*0x6e880a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x6e8811*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_A8E8D0 + 16))(&dword_A8E8D0, &this); /*0x6e882a*/
   if ( v3 != -1 && v3 < g_MultiplayerLogFlags && v3 < --g_MultiplayerLogFlags ) /*0x6e8845*/
@@ -187,7 +179,7 @@ void * TaskForceClass::ExecuteAction(char a2)
     do /*0x6e885d*/
     {
       ++v3; /*0x6e884d*/
-      *((_DWORD *)g_MultiplayerLogEntry + v3 - 1) = *((_DWORD *)g_MultiplayerLogEntry + v3); /*0x6e8851*/
+      *((unsigned int *)g_MultiplayerLogEntry + v3 - 1) = *((unsigned int *)g_MultiplayerLogEntry + v3); /*0x6e8851*/
     }
     while ( v3 < g_MultiplayerLogFlags ); /*0x6e885d*/
   }
@@ -211,7 +203,7 @@ namespace gamemd {
 char TaskForceClass::GetUnitCount(unsigned char *** aP1)
 {
   int v3; // edi
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // ecx
   int v6; // eax
   int v8; // [esp+8h] [ebp-A8h] BYREF
@@ -228,18 +220,18 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
     sprintf(Buffer, "%d", v3); /*0x6e8460*/
     if ( (int)INIClass::GetString( /*0x6e8486*/
                 aP1,
-                (unsigned __int8 *)(&this->vtable46),
-                (unsigned __int8 *)Buffer,
+                (uint8_t *)(&this->vtable46),
+                (uint8_t *)Buffer,
                 &g_INI_DefaultBuffer,
                 Destination,
                 128) > 0 )
     {
       v4 = TaskForceClass::ParseUnitCountAndType(&v8, Destination); /*0x6e8491*/
       v5 = this->u32_9C; /*0x6e8496*/
-      *(_DWORD *)(&this->u32_20 * v5 + 164) = *v4; /*0x6e849e*/
-      *(_DWORD *)(&this->u32_20 * v5 + 168) = v4[1]; /*0x6e84a8*/
+      *(unsigned int *)(&this->u32_20 * v5 + 164) = *v4; /*0x6e849e*/
+      *(unsigned int *)(&this->u32_20 * v5 + 168) = v4[1]; /*0x6e84a8*/
       v6 = this->u32_9C; /*0x6e84af*/
-      if ( *(_DWORD *)(&this->u32_20 * v6 + 168) ) /*0x6e84b5*/
+      if ( *(unsigned int *)(&this->u32_20 * v6 + 168) ) /*0x6e84b5*/
         this->u32_9C = v6 + 1; /*0x6e84c1*/
     }
     ++v3; /*0x6e84c7*/
@@ -247,8 +239,8 @@ char TaskForceClass::GetUnitCount(unsigned char *** aP1)
   while ( v3 < 6 ); /*0x6e84cb*/
   this->ptr_98 = INIClass::ReadInt_Overwrite( /*0x6e84e2*/
                               (int)aP1,
-                              (unsigned __int8 *)(&this->vtable46),
-                              (unsigned __int8 *)g_INI_Key_Group,
+                              (uint8_t *)(&this->vtable46),
+                              (uint8_t *)g_INI_Key_Group,
                               this->ptr_98);
   return 1; /*0x6e84e9*/
 }
@@ -259,31 +251,31 @@ namespace gamemd {
 char TaskForceClass::GetUnitType(char * a2)
 {
   int v3; // esi
-  _DWORD *v4; // ebx
+  unsigned int *v4; // ebx
   char *v5; // eax
   char Buffer[32]; // [esp+8h] [ebp-20h] BYREF
 
   if ( !AbstractTypeClass::WriteINI((char *)this, a2) ) /*0x6e851c*/
     return 0; /*0x6e85a5*/
   v3 = 0; /*0x6e8527*/
-  v4 = (_DWORD *)(&this->u32_404); /*0x6e8529*/
+  v4 = (unsigned int *)(&this->u32_404); /*0x6e8529*/
   do /*0x6e857d*/
   {
     sprintf(Buffer, "%d", v3); /*0x6e853a*/
     if ( v3 >= this->u32_9C ) /*0x6e854a*/
     {
-      INIClass::ClearSection((int)a2, &this->u32_90, (unsigned __int8 *)Buffer); /*0x6e8571*/
+      INIClass::ClearSection((int)a2, &this->u32_90, (uint8_t *)Buffer); /*0x6e8571*/
     }
     else
     {
       v5 = TaskForceClass::Check(v4); /*0x6e854e*/
-      INIClass::SetString(a2, (unsigned __int8 *)(&this->vtable46), Buffer, v5); /*0x6e855f*/
+      INIClass::SetString(a2, (uint8_t *)(&this->vtable46), Buffer, v5); /*0x6e855f*/
     }
     ++v3; /*0x6e8576*/
     v4 += 2; /*0x6e8577*/
   }
   while ( v3 < 6 ); /*0x6e857d*/
-  INIClass::SetInt(a2, (unsigned __int8 *)(&this->vtable46), g_INI_Key_Group, this->ptr_98, 0); /*0x6e8593*/
+  INIClass::SetInt(a2, (uint8_t *)(&this->vtable46), g_INI_Key_Group, this->ptr_98, 0); /*0x6e8593*/
   return 1; /*0x6e859a*/
 }
 } // namespace gamemd
@@ -315,10 +307,6 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6e86b6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e86bf*/
-      *(void ** *)aP0 = (void*)&TaskForceClass_vftable; /*0x6e86c4*/
-      aP0[1] = (void*)&TaskForceClass_vftable; /*0x6e86ca*/
-      aP0[2] = (void*)&TaskForceClass_vftable; /*0x6e86d1*/
-      aP0[3] = (void*)&TaskForceClass_vftable; /*0x6e86d8*/
     }
     v3 = aP0 + 42; /*0x6e86e0*/
     v4 = 6; /*0x6e86e6*/

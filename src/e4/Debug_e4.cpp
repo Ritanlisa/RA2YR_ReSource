@@ -19,8 +19,8 @@ int Debug::ScrollText(CellStruct * aP1)
   int v7; // edi
   const char *v9; // eax
   int v10; // eax
-  _DWORD *v11; // [esp+4h] [ebp-10h]
-  _BYTE *v12; // [esp+8h] [ebp-Ch]
+  unsigned int *v11; // [esp+4h] [ebp-10h]
+  unsigned char *v12; // [esp+8h] [ebp-Ch]
   int v13; // [esp+Ch] [ebp-8h]
   const char *i; // [esp+10h] [ebp-4h]
   char v15; // [esp+18h] [ebp+4h]
@@ -39,9 +39,9 @@ int Debug::ScrollText(CellStruct * aP1)
     v5 = v5; /*0x5bd131*/
     if ( v5 < v7 ) /*0x5bd133*/
     {
-      v12 = (_BYTE *)(this + v13 + 20 * v5 + 5 * v5); /*0x5bd148*/
+      v12 = (unsigned char *)(this + v13 + 20 * v5 + 5 * v5); /*0x5bd148*/
       v9 = &aP1[-v5]; /*0x5bd15c*/
-      v11 = (_DWORD *)(&this->u32_10 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)); /*0x5bd15e*/
+      v11 = (unsigned int *)(&this->u32_10 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)); /*0x5bd15e*/
       for ( i = &aP1[-v5]; ; v9 = i ) /*0x5bd162*/
       {
         v15 = v9[v5]; /*0x5bd16f*/
@@ -80,7 +80,7 @@ int Debug::AccumFlags()
   for ( i = 0; v1; i |= v3 ) /*0x6e61fc*/
   {
     v3 = TriggerTypeClass::GetFlags(v1); /*0x6e6200*/
-    v1 = *(_DWORD *)(v1 + 168); /*0x6e6205*/
+    v1 = *(unsigned int *)(v1 + 168); /*0x6e6205*/
   }
   return i; /*0x6e6213*/
 }

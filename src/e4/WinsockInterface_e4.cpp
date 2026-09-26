@@ -21,13 +21,13 @@ void * WinsockInterface::ProcessPacket(int a2)
   int v3; // ebp
   void **v4; // edi
   int v5; // ebx
-  _DWORD *v6; // edi
+  unsigned int *v6; // edi
   int v7; // ebp
 
   v3 = 6; /*0x77027a*/
-  v4 = (void **)(this + 4); /*0x77027f*/
-  *(_DWORD *)this = a2; /*0x770282*/
-  v5 = (int)(this + 8); /*0x770284*/
+  v4 = (void **)((char *)&this->q004 + 12); /*0x77027f*/
+  *(unsigned int *)this = a2; /*0x770282*/
+  v5 = (int)((char *)&this->q004 + 28); /*0x770284*/
   do /*0x7702b6*/
   {
     unknown_libname_73(v4); /*0x770289*/
@@ -38,45 +38,43 @@ void * WinsockInterface::ProcessPacket(int a2)
     --v3; /*0x7702b5*/
   }
   while ( v3 ); /*0x7702b6*/
-  v6 = this + 892; /*0x7702b8*/
+  v6 = ((char *)&this->q338 + 68); /*0x7702b8*/
   v7 = 2; /*0x7702be*/
   do /*0x7702e2*/
   {
     VectorClassUInt::Constructor(v6, 0, 0); /*0x7702c9*/
-    *(void **)v6 = (void*)&DynamicVectorClass_unsigned_int_vftable; /*0x7702ce*/
     v6[5] = 10; /*0x7702d4*/
     v6[4] = 0; /*0x7702db*/
     v6 += 6; /*0x7702de*/
     --v7; /*0x7702e1*/
   }
   while ( v7 ); /*0x7702e2*/
-  *((_DWORD *)this + 235) = Timer::GetTicks(); /*0x7702f6*/
-  *((_DWORD *)this + 237) = 0; /*0x7702fc*/
-  *(this + 952) = 1; /*0x770305*/
-  *((_DWORD *)this + 239) = 0; /*0x77030c*/
-  VectorClass::WstringConstructor((_DWORD *)this + 240, 0, 0); /*0x770312*/
-  *((_DWORD *)this + 240) = (void*)&DynamicVectorClass_Wstring_vftable; /*0x770317*/
-  *((_DWORD *)this + 245) = 10; /*0x77031d*/
-  *((_DWORD *)this + 244) = 0; /*0x770324*/
-  *((_DWORD *)this + 246) = 0; /*0x770327*/
+  *(unsigned int *)&this->u32_3AC = Timer::GetTicks(); /*0x7702f6*/
+  *(unsigned int *)&this->u32_3B4 = 0; /*0x7702fc*/
+  *(unsigned int *)&this->u32_EE0 = 1; /*0x770305*/
+  this->u32_3BC = 0; /*0x77030c*/
+  VectorClass::WstringConstructor((unsigned int *)&this->u32_3C0, 0, 0); /*0x770312*/
+  this->u32_3D4 = 10; /*0x77031d*/
+  this->u32_3D0 = 0; /*0x770324*/
+  *(unsigned int *)&this->u32_3D8 = 0; /*0x770327*/
   Audio::GetEnabled(); /*0x77032d*/
   String::Assign((char **)&a2, aOldcycle); /*0x77033b*/
   String::Reassign((char **)this + 1, (const char **)&a2); /*0x770348*/
   DeleteAndZero((void **)&a2); /*0x770351*/
   String::Assign((char **)&a2, aHistory); /*0x77035f*/
-  String::Reassign((char **)this + 38, (const char **)&a2); /*0x77036f*/
+  String::Reassign((char *)((char *)&this->q004 + 34), (const char **)&a2); /*0x77036f*/
   DeleteAndZero((void **)&a2); /*0x770378*/
   String::Assign((char **)&a2, aStatus); /*0x770386*/
-  String::Reassign((char **)this + 75, (const char **)&a2); /*0x770396*/
+  String::Reassign((char *)((char *)&this->q004 + 71), (const char **)&a2); /*0x770396*/
   DeleteAndZero((void **)&a2); /*0x77039f*/
   String::Assign((char **)&a2, aTerritory); /*0x7703ad*/
-  String::Reassign((char **)this + 112, (const char **)&a2); /*0x7703bd*/
+  String::Reassign((char *)((char *)&this->u32_60 + 16), (const char **)&a2); /*0x7703bd*/
   DeleteAndZero((void **)&a2); /*0x7703c6*/
   String::Assign((char **)&a2, aGame); /*0x7703d4*/
-  String::Reassign((char **)this + 149, (const char **)&a2); /*0x7703e4*/
+  String::Reassign((char *)((char *)&this->q092 + 3), (const char **)&a2); /*0x7703e4*/
   DeleteAndZero((void **)&a2); /*0x7703ed*/
   String::Assign((char **)&a2, aEvacuate); /*0x7703fb*/
-  String::Reassign((char **)this + 186, (const char **)&a2); /*0x77040b*/
+  String::Reassign((char *)((char *)&this->u32_98 + 34), (const char **)&a2); /*0x77040b*/
   DeleteAndZero((void **)&a2); /*0x770414*/
   return this; /*0x77041b*/
 }
@@ -94,7 +92,7 @@ int WinsockInterface::Init()
   const char **v9; // esi
   int v11; // eax
   DWORD dwBufferLength; // [esp+Ch] [ebp-1004h] BYREF
-  _BYTE ProtocolBuffer[24]; // [esp+10h] [ebp-1000h] BYREF
+  unsigned char ProtocolBuffer[24]; // [esp+10h] [ebp-1000h] BYREF
   char v15; // [esp+28h] [ebp-FE8h] BYREF
 
   Debug::Log(aWinsockinterfa_0); /*0x7b1df3*/
@@ -110,7 +108,7 @@ int WinsockInterface::Init()
       byte_B7809C = 1; /*0x7b1e41*/
       MessageBoxA(g_hWnd, aWarningPacketL, Caption, 0); /*0x7b1e48*/
     }
-    v3 = (struct WSAData *)RA2_OPNEW(0x590u); /*0x7b1e53*/
+    v3 = (struct WSAData *)operator new(0x590u); /*0x7b1e53*/
     v4 = *this; /*0x7b1e58*/
     v5 = v3; /*0x7b1e5a*/
     v3 = v3; /*0x7b1e61*/
@@ -128,7 +126,7 @@ int WinsockInterface::Init()
     else
     {
       Debug::Log(aWinsockInitial); /*0x7b1eb9*/
-      if ( (unsigned __int8)v5->wVersion != 1 || ((v5->wVersion ^ 0x100) & 0xFFFFFF00) != 0 ) /*0x7b1ee2*/
+      if ( (uint8_t)v5->wVersion != 1 || ((v5->wVersion ^ 0x100) & 0xFFFFFF00) != 0 ) /*0x7b1ee2*/
       {
         Debug::Log(aWinsockVersion_0); /*0x7b1fad*/
         RA2_OPDEL(v5); /*0x7b1fb3*/
@@ -136,7 +134,7 @@ int WinsockInterface::Init()
       }
       else
       {
-        Debug::Log("Winsock version is %d.%d\n", (unsigned __int8)v5->wVersion, IDA_HIBYTE(v5->wVersion)); /*0x7b1efa*/
+        Debug::Log("Winsock version is %d.%d\n", (uint8_t)v5->wVersion, IDA_HIBYTE(v5->wVersion)); /*0x7b1efa*/
         this->ptr_4 = 546; /*0x7b1f0a*/
         dwBufferLength = 4096; /*0x7b1f18*/
         v7 = EnumProtocolsA(&iProtocols, ProtocolBuffer, &dwBufferLength); /*0x7b1f20*/

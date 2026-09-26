@@ -63,16 +63,16 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   int v57; // ecx
   int v58; // edi
   int v59; // eax
-  _DWORD *v60; // eax
+  unsigned int *v60; // eax
   double *v61; // eax
   int GroundHeight; // edi
   int v63; // eax
   unsigned int v64; // edx
   int v65; // ecx
   unsigned int v66; // edx
-  _WORD *v67; // eax
+  unsigned short *v67; // eax
   double v68; // [esp+0h] [ebp-A8h]
-  unsigned __int64 v69; // [esp+8h] [ebp-A0h]
+  uint64_t v69; // [esp+8h] [ebp-A0h]
   int v70; // [esp+Ch] [ebp-9Ch]
   double *v71; // [esp+20h] [ebp-88h] BYREF
   double *v72; // [esp+24h] [ebp-84h] BYREF
@@ -98,17 +98,17 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
     IDA_LOWORD(v72) = 0x2000; /*0x5b2182*/
     if ( Math::Abs16Cmp(&v71, &v72, a5) ) /*0x5b2189*/
     {
-      IDA_LOWORD(v71, unsigned int a5) = (_WORD)v72; /*0x5b2197*/
+      IDA_LOWORD(v71, unsigned int a5) = (unsigned short)v72; /*0x5b2197*/
     }
-    else if ( *(__int16 *)Math::Sub16(&v72, &v76, &v71) >= 0 ) /*0x5b21b5*/
+    else if ( *(int16_t *)Math::Sub16(&v72, &v76, &v71) >= 0 ) /*0x5b21b5*/
     {
-      IDA_LOWORD(v71, unsigned int a5) = *a5 + (_WORD)v71; /*0x5b21c4*/
+      IDA_LOWORD(v71, unsigned int a5) = *a5 + (unsigned short)v71; /*0x5b21c4*/
     }
     else
     {
-      IDA_LOWORD(v71) = (_WORD)v71 - *a5; /*0x5b21ba*/
+      IDA_LOWORD(v71) = (unsigned short)v71 - *a5; /*0x5b21ba*/
     }
-    v74 = (double *)((__int16)*Vector::ToFacingMath(a1, &v76) - 0x3FFF); /*0x5b21de*/
+    v74 = (double *)((int16_t)*Vector::ToFacingMath(a1, &v76) - 0x3FFF); /*0x5b21de*/
     v13 = (double)(int)v74 * -0.00009587672516830327; /*0x5b21e8*/
     v76 = v13; /*0x5b21ee*/
     Vector3::Magnitude(a1); /*0x5b21f2*/
@@ -121,22 +121,22 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
       *a1 = *a1 / v15; /*0x5b2223*/
       a1[1] = a1[1] / Math::ArcTan2(v68, unsigned int a2); /*0x5b2230*/
     }
-    v74 = (double *)((__int16)v71 - 0x3FFF); /*0x5b2241*/
+    v74 = (double *)((int16_t)v71 - 0x3FFF); /*0x5b2241*/
     v16 = Math::ArcTan2((double)(int)v74 * -0.00009587672516830327); /*0x5b2252*/
-    v17 = (__int16)v71; /*0x5b2259*/
+    v17 = (int16_t)v71; /*0x5b2259*/
     *a1 = v16 * *a1; /*0x5b225e*/
     v74 = (double *)(v17 - 0x3FFF); /*0x5b2266*/
     v18 = Math::ArcTan2((double)(v17 - 0x3FFF) * -0.00009587672516830327); /*0x5b2277*/
-    v19 = (__int16)v71; /*0x5b227f*/
+    v19 = (int16_t)v71; /*0x5b227f*/
     a1[1] = v18 * a1[1]; /*0x5b2284*/
     v74 = (double *)(v19 - 0x3FFF); /*0x5b228c*/
     v20 = Math::SinCos((double)(v19 - 0x3FFF) * -0.00009587672516830327); /*0x5b229d*/
     v21 = v20 * v75[0]; /*0x5b22a2*/
-    v22 = *(_DWORD *)a1; /*0x5b22ab*/
+    v22 = *(unsigned int *)a1; /*0x5b22ab*/
     a1[2] = v21; /*0x5b22ad*/
-    *(_QWORD *)&v79 = IDA___PAIR64__(*((_DWORD *)a1 + 1), v22); /*0x5b22b3*/
-    v23 = *((_DWORD *)a1 + 3); /*0x5b22c2*/
-    v80 = *((_DWORD *)a1 + 2); /*0x5b22c5*/
+    v79 = (unsigned long long)(IDA___PAIR64__(*((unsigned int *)a1 + 1), v22)); /*0x5b22b3*/
+    v23 = *((unsigned int *)a1 + 3); /*0x5b22c2*/
+    v80 = *((unsigned int *)a1 + 2); /*0x5b22c5*/
     v81 = v23; /*0x5b22c9*/
     v24 = Math::RoundToInt(v21); /*0x5b22d6*/
     IDA_HIDWORD(v79) = Math::RoundToInt(v21); /*0x5b22dd*/
@@ -152,8 +152,8 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   }
   v30 = a1[2]; /*0x5b2352*/
   v79 = *a1; /*0x5b2357*/
-  v31 = *((_DWORD *)a1 + 3); /*0x5b2369*/
-  v80 = *((_DWORD *)a1 + 2); /*0x5b236c*/
+  v31 = *((unsigned int *)a1 + 3); /*0x5b2369*/
+  v80 = *((unsigned int *)a1 + 2); /*0x5b236c*/
   v81 = v31; /*0x5b2370*/
   v32 = Math::RoundToInt(v30); /*0x5b237d*/
   IDA_HIDWORD(v79) = Math::RoundToInt(v30); /*0x5b2384*/
@@ -170,8 +170,8 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   v40 = a4[1]; /*0x5b23d5*/
   IDA_LODWORD(v76) = v38; /*0x5b23d8*/
   v41 = *a2; /*0x5b23dc*/
-  *(_QWORD *)&v75[0] = IDA___PAIR64__(v40, v39); /*0x5b23de*/
-  *(_QWORD *)&v73[0] = IDA___PAIR64__(a2[1], v41); /*0x5b23e9*/
+  *(unsigned long long *)&v75[0] = IDA___PAIR64__(v40, v39); /*0x5b23de*/
+  *(unsigned long long *)&v73[0] = IDA___PAIR64__(a2[1], v41); /*0x5b23e9*/
   v42 = Coord2D::Sub(v73, (int *)&v77, v75); /*0x5b23ff*/
   Vector::2DMagnitudeMath(v42); /*0x5b2406*/
   v43 = a4[2]; /*0x5b240b*/
@@ -180,7 +180,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   IDA_LODWORD(v75[0]) = v46; /*0x5b2414*/
   v47 = (double *)Coord::Subtract(&v77, *a4 - *a2, v45 - a2[1], v43 - v44); /*0x5b242c*/
   v79 = *v47; /*0x5b2433*/
-  v80 = *((_DWORD *)v47 + 2); /*0x5b2449*/
+  v80 = *((unsigned int *)v47 + 2); /*0x5b2449*/
   v77 = (double)IDA_SLODWORD(v79); /*0x5b2454*/
   v73[0] = v77; /*0x5b2464*/
   v78 = (double)IDA_SHIDWORD(v79); /*0x5b246c*/
@@ -197,20 +197,20 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   {
     IDA_LOWORD(v72, unsigned int a5) = IDA_LOWORD(v73[0]); /*0x5b2523*/
   }
-  else if ( *(__int16 *)Math::Sub16(v73, &v74, &v72) >= 0 ) /*0x5b2541*/
+  else if ( *(int16_t *)Math::Sub16(v73, &v74, &v72) >= 0 ) /*0x5b2541*/
   {
-    IDA_LOWORD(v72, unsigned int a5) = *a5 + (_WORD)v72; /*0x5b2550*/
+    IDA_LOWORD(v72, unsigned int a5) = *a5 + (unsigned short)v72; /*0x5b2550*/
   }
   else
   {
-    IDA_LOWORD(v72, unsigned int a6, unsigned int a5) = (_WORD)v72 - *a5; /*0x5b2546*/
+    IDA_LOWORD(v72, unsigned int a6, unsigned int a5) = (unsigned short)v72 - *a5; /*0x5b2546*/
   }
   Vector2::NormalizeNonZero(v48); /*0x5b2557*/
   Function::41C430(v48); /*0x5b255e*/
   v73[0] = v50; /*0x5b2568*/
-  v74 = (double *)((__int16)v72 - 0x3FFF); /*0x5b2575*/
+  v74 = (double *)((int16_t)v72 - 0x3FFF); /*0x5b2575*/
   v51 = Math::ArcTan2((double)(int)v74 * -0.00009587672516830327); /*0x5b2586*/
-  v52 = (__int16)v72; /*0x5b258f*/
+  v52 = (int16_t)v72; /*0x5b258f*/
   *v48 = v51 * v73[0]; /*0x5b2594*/
   v74 = (double *)(v52 - 0x3FFF); /*0x5b259c*/
   v53 = Math::SinCos((double)(v52 - 0x3FFF) * -0.00009587672516830327); /*0x5b25ad*/
@@ -222,7 +222,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   v71 = v74; /*0x5b25fa*/
   if ( a6
     || !a7 && IDA_SLODWORD(v75[0]) <= (a8 != 0 ? 6 : 3) << 8
-    || (unsigned __int8)((unsigned int)((*(_DWORD *)a5 >> 7) + 1) >> 1) <= 1u )
+    || (uint8_t)((unsigned int)((*(unsigned int *)a5 >> 7) + 1) >> 1) <= 1u )
   {
     if ( !a9 ) /*0x5b28a1*/
     {
@@ -236,8 +236,8 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   }
   v56 = v48[2]; /*0x5b2640*/
   v77 = *v48; /*0x5b2645*/
-  v57 = *((_DWORD *)v48 + 3); /*0x5b2657*/
-  IDA_LODWORD(v78) = *((_DWORD *)v48 + 2); /*0x5b265a*/
+  v57 = *((unsigned int *)v48 + 3); /*0x5b2657*/
+  IDA_LODWORD(v78) = *((unsigned int *)v48 + 2); /*0x5b265a*/
   IDA_HIDWORD(v78) = v57; /*0x5b265e*/
   v58 = Math::RoundToInt(v56); /*0x5b266b*/
   IDA_HIDWORD(v77) = Math::RoundToInt(v56); /*0x5b2672*/
@@ -245,9 +245,9 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   v60 = Coord::Subtract(v75, 6 * v58, 6 * IDA_HIDWORD(v77), 6 * v59); /*0x5b2695*/
   v61 = (double *)Coord::Subtract(v73, *a2 + *v60, a2[1] + v60[1], a2[2] + v60[2]); /*0x5b26b9*/
   v77 = *v61; /*0x5b26c0*/
-  IDA_LODWORD(v78) = *((_DWORD *)v61 + 2); /*0x5b26d8*/
+  IDA_LODWORD(v78) = *((unsigned int *)v61 + 2); /*0x5b26d8*/
   GroundHeight = Cell::GetGroundHeight(&v77); /*0x5b26eb*/
-  if ( (*((_DWORD *)Coord::To_Cell(&MapClass_Instance, &v77) + 80) & 0x100) != 0 ) /*0x5b26fb*/
+  if ( (*((unsigned int *)Coord::To_Cell(&MapClass_Instance, &v77) + 80) & 0x100) != 0 ) /*0x5b26fb*/
     GroundHeight += dword_ABEF44; /*0x5b26fd*/
   v63 = IDA_SLODWORD(v76) / 256; /*0x5b2713*/
   if ( a7 || a8 ) /*0x5b271f*/
@@ -287,17 +287,17 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
         IDA_LOWORD(v74) = 18432; /*0x5b27ff*/
         IDA_LOWORD(v76) = *a5 / 2; /*0x5b2812*/
         IDA_LODWORD(v73[0]) = IDA_LODWORD(v76); /*0x5b281f*/
-        if ( Math::Abs16Cmp(&v71, &v74, (__int16 *)v73) ) /*0x5b2829*/
+        if ( Math::Abs16Cmp(&v71, &v74, (int16_t *)v73) ) /*0x5b2829*/
         {
-          IDA_LOWORD(v71) = (_WORD)v74; /*0x5b2837*/
+          IDA_LOWORD(v71) = (unsigned short)v74; /*0x5b2837*/
         }
-        else if ( *(__int16 *)Math::Sub16(&v74, &v76, &v71) >= 0 ) /*0x5b2858*/
+        else if ( *(int16_t *)Math::Sub16(&v74, &v76, &v71) >= 0 ) /*0x5b2858*/
         {
-          IDA_LOWORD(v71) = IDA_LOWORD(v73[0]) + (_WORD)v71; /*0x5b286b*/
+          IDA_LOWORD(v71) = IDA_LOWORD(v73[0]) + (unsigned short)v71; /*0x5b286b*/
         }
         else
         {
-          IDA_LOWORD(v71, unsigned int a5) = (_WORD)v71 - IDA_LOWORD(v73[0]); /*0x5b285f*/
+          IDA_LOWORD(v71, unsigned int a5) = (unsigned short)v71 - IDA_LOWORD(v73[0]); /*0x5b285f*/
         }
       }
     }
@@ -306,17 +306,17 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
       IDA_LOWORD(v73[0]) = 0x2000; /*0x5b2778*/
       IDA_LOWORD(v76) = *a5 / 2; /*0x5b278b*/
       v74 = (double *)IDA_LODWORD(v76); /*0x5b2798*/
-      if ( Math::Abs16Cmp(&v71, v73, (__int16 *)&v74) ) /*0x5b27a2*/
+      if ( Math::Abs16Cmp(&v71, v73, (int16_t *)&v74) ) /*0x5b27a2*/
       {
         IDA_LOWORD(v71) = IDA_LOWORD(v73[0]); /*0x5b27b0*/
       }
-      else if ( *(__int16 *)Math::Sub16(v73, &v76, &v71) >= 0 ) /*0x5b27d1*/
+      else if ( *(int16_t *)Math::Sub16(v73, &v76, &v71) >= 0 ) /*0x5b27d1*/
       {
-        IDA_LOWORD(v71) = (_WORD)v74 + (_WORD)v71; /*0x5b27e7*/
+        IDA_LOWORD(v71) = (unsigned short)v74 + (unsigned short)v71; /*0x5b27e7*/
       }
       else
       {
-        IDA_LOWORD(v71) = (_WORD)v71 - (_WORD)v74; /*0x5b27d8*/
+        IDA_LOWORD(v71) = (unsigned short)v71 - (unsigned short)v74; /*0x5b27d8*/
       }
     }
   }

@@ -18,7 +18,6 @@ void DeleteCommandClass_Undo()
 // 0x537F10
 unsigned int * DeleteCommandClass::Constructor()
 {
-  *this = (void*)&DeleteCommandClass_vftable; /*0x537f12*/
   return this; /*0x537f18*/
 }
 // 0x537F20
@@ -74,7 +73,7 @@ unsigned int DeleteCommandClass_28::PointerToIndex(int a2)
 namespace gamemd {
 int DeleteCommandClass_28::Seek(int a2)
 {
-  return *(_DWORD *)(this->q004 + 4 * a2); /*0x53c51a*/
+  return *(unsigned int *)(this->q004 + 4 * a2); /*0x53c51a*/
 }
 } // namespace gamemd
 
@@ -84,18 +83,18 @@ char DeleteCommandClass_28::AddRef(int a2)
 {
   int v2; // esi
   int v3; // edx
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // ecx
 
   v2 = this->q008; /*0x53c522*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x53c52d*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x53c52d*/
   {
     v3 = 0; /*0x53c52f*/
     if ( v2 <= 0 ) /*0x53c533*/
       return 1; /*0x53c553*/
-    v4 = (_DWORD *)this->q004; /*0x53c535*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x53c53b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x53c544*/
+    v4 = (unsigned int *)this->q004; /*0x53c535*/
+    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x53c53b*/
+    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x53c544*/
     {
       ++v3; /*0x53c546*/
       ++v4; /*0x53c547*/
@@ -111,7 +110,7 @@ char DeleteCommandClass_28::AddRef(int a2)
 namespace gamemd {
 char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v6; // ecx
   int i; // eax
 
@@ -121,7 +120,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x53c57c*/
       v4 = a3; /*0x53c592*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x53c58e*/
+      v4 = operator new(4 * a2); /*0x53c58e*/
     this->q00C = 1; /*0x53c596*/
     if ( v4 ) /*0x53c59a*/
     {
@@ -130,11 +129,11 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
         v6 = this->q008; /*0x53c5ac*/
         if ( a2 < v6 ) /*0x53c5b1*/
           v6 = a2; /*0x53c5b3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x53c5b9*/
+        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->q004 + 4 * i - 4) ) /*0x53c5b9*/
           ++i; /*0x53c5be*/
         if ( this->IsAllocated ) /*0x53c5cb*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x53c5d6*/
+          RA2_OPDEL(this->q004); /*0x53c5d6*/
           this->q004 = 0; /*0x53c5de*/
         }
       }
@@ -150,7 +149,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x53c602*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x53c602*/
     return 1; /*0x53c608*/
   }
 }
@@ -176,7 +175,7 @@ int DeleteCommandClass_28::Read(unsigned int * a2)
 {
   int result; // eax
   int v3; // edx
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->q00C ) /*0x53c640*/
     return 0; /*0x53c648*/
@@ -208,7 +207,7 @@ unsigned int DeleteCommandClass_28::Write(int a2)
 namespace gamemd {
 char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
@@ -219,7 +218,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x53c6b8*/
       v4 = a3; /*0x53c6ce*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x53c6ca*/
+      v4 = operator new(4 * a2); /*0x53c6ca*/
     this->q00C = 1; /*0x53c6d2*/
     if ( !v4 ) /*0x53c6d6*/
       return 0; /*0x53c74a*/
@@ -228,11 +227,11 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
       v5 = this->q008; /*0x53c6df*/
       if ( a2 < v5 ) /*0x53c6e4*/
         v5 = a2; /*0x53c6e6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->q004 + 4 * i - 4) ) /*0x53c6ec*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->q004 + 4 * i - 4) ) /*0x53c6ec*/
         ++i; /*0x53c6f1*/
       if ( this->IsAllocated ) /*0x53c6fe*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x53c709*/
+        RA2_OPDEL(this->q004); /*0x53c709*/
         this->q004 = 0; /*0x53c711*/
       }
     }
@@ -242,7 +241,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0042))(this); /*0x53c72e*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x53c72e*/
   }
   v7 = this->q008; /*0x53c731*/
   if ( v7 < this->q010 ) /*0x53c739*/
@@ -257,13 +256,13 @@ int DeleteCommandClass_28::FindItem(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x53c750*/
   result = 0; /*0x53c753*/
   if ( v2 <= 0 ) /*0x53c758*/
     return -1; /*0x53c76f*/
-  for ( i = (_DWORD *)this->q004; *i != *a2; ++i ) /*0x53c75e*/
+  for ( i = (unsigned int *)this->q004; *i != *a2; ++i ) /*0x53c75e*/
   {
     if ( ++result >= v2 ) /*0x53c76d*/
       return -1; /*0x53c76d*/
@@ -278,7 +277,6 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x53c783*/
-  *(void **)this = (void*)&VectorClass_AnimClass_const___vftable; /*0x53c786*/
   if ( v3 && this->IsAllocated ) /*0x53c790*/
   {
     RA2_OPDEL(v3); /*0x53c798*/
@@ -299,7 +297,6 @@ DynamicVector * DeleteCommandClass_28::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x53c7d3*/
-  *(void **)this = (void*)&VectorClass_AnimClass_const___vftable; /*0x53c7d6*/
   if ( v3 && this->IsAllocated ) /*0x53c7e0*/
   {
     RA2_OPDEL(v3); /*0x53c7e8*/

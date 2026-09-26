@@ -36,10 +36,10 @@ char NullModem_TestConnection()
   char v17; // [esp+Bh] [ebp-205h]
   int v18; // [esp+Ch] [ebp-204h]
   HWND hWnd; // [esp+10h] [ebp-200h]
-  _BYTE v20[4]; // [esp+14h] [ebp-1FCh] BYREF
-  _DWORD v21[62]; // [esp+18h] [ebp-1F8h] BYREF
-  __int16 v22; // [esp+110h] [ebp-100h]
-  _DWORD v23[6]; // [esp+114h] [ebp-FCh] BYREF
+  unsigned char v20[4]; // [esp+14h] [ebp-1FCh] BYREF
+  unsigned int v21[62]; // [esp+18h] [ebp-1F8h] BYREF
+  int16_t v22; // [esp+110h] [ebp-100h]
+  unsigned int v23[6]; // [esp+114h] [ebp-FCh] BYREF
   int v24; // [esp+12Ch] [ebp-E4h]
 
   v0 = 0; /*0x5f03bd*/
@@ -88,7 +88,7 @@ char NullModem_TestConnection()
       v18 = v10; /*0x5f052c*/
       if ( v23[0] == 100 ) /*0x5f0533*/
       {
-        if ( (unsigned __int8)v24 == g_TauntCommandState ) /*0x5f054d*/
+        if ( (uint8_t)v24 == g_TauntCommandState ) /*0x5f054d*/
         {
           v16 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullDlg_CPP, 6530); /*0x5f064a*/
           v14 = GetStringCSF(g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, g_Str_File_NullDlg_CPP, 6530); /*0x5f0655*/

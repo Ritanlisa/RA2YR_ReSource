@@ -50,7 +50,7 @@ unsigned int TypeList_cptr_ParticleSystemTypeClass::LoadTypeData(int a2)
 namespace gamemd {
 int TypeList_Particle::GetIndex(int a2)
 {
-  return *(_DWORD *)(this->Items + 4 * a2); /*0x459fea*/
+  return *(unsigned int *)(this->Items + 4 * a2); /*0x459fea*/
 }
 } // namespace gamemd
 
@@ -60,18 +60,18 @@ char TypeList_Particle::AddRef(int a2)
 {
   void * v2;
   int v3; // edx
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // ecx
 
   v2 = this->Capacity; /*0x45a182*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x45a18d*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x45a18d*/
   {
     v3 = 0; /*0x45a18f*/
     if ( v2 <= 0 ) /*0x45a193*/
       return 1; /*0x45a1b3*/
-    v4 = (_DWORD *)this->Items; /*0x45a195*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x45a19b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x45a1a4*/
+    v4 = (unsigned int *)this->Items; /*0x45a195*/
+    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x45a19b*/
+    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x45a1a4*/
     {
       ++v3; /*0x45a1a6*/
       ++v4; /*0x45a1a7*/
@@ -87,7 +87,7 @@ char TypeList_Particle::AddRef(int a2)
 namespace gamemd {
 char TypeList_Particle::Remove(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   unsigned int v6;
   int i; // eax
 
@@ -97,7 +97,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x45a1dc*/
       v4 = a3; /*0x45a1f2*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x45a1ee*/
+      v4 = operator new(4 * a2); /*0x45a1ee*/
     this->IsInitialized = 1; /*0x45a1f6*/
     if ( v4 ) /*0x45a1fa*/
     {
@@ -106,11 +106,11 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
         v6 = this->Capacity; /*0x45a20c*/
         if ( a2 < v6 ) /*0x45a211*/
           v6 = a2; /*0x45a213*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x45a219*/
+        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x45a219*/
           ++i; /*0x45a21e*/
         if ( this->IsAllocated ) /*0x45a22b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x45a236*/
+          RA2_OPDEL(this->Items); /*0x45a236*/
           this->Items = 0; /*0x45a23e*/
         }
       }
@@ -126,7 +126,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x45a262*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x45a262*/
     return 1; /*0x45a268*/
   }
 }
@@ -138,7 +138,7 @@ int TypeList_Particle::GetSize(unsigned int * a2)
 {
   int result; // eax
   void * v3;
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->IsInitialized ) /*0x45a2a0*/
     return 0; /*0x45a2a8*/
@@ -170,7 +170,7 @@ unsigned int TypeList_Particle::GetCapacity(int a2)
 namespace gamemd {
 char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
@@ -181,7 +181,7 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3)
     if ( a3 ) /*0x45a318*/
       v4 = a3; /*0x45a32e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x45a32a*/
+      v4 = operator new(4 * a2); /*0x45a32a*/
     this->IsInitialized = 1; /*0x45a332*/
     if ( !v4 ) /*0x45a336*/
       return 0; /*0x45a3aa*/
@@ -190,11 +190,11 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3)
       v5 = this->Capacity; /*0x45a33f*/
       if ( a2 < v5 ) /*0x45a344*/
         v5 = a2; /*0x45a346*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x45a34c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x45a34c*/
         ++i; /*0x45a351*/
       if ( this->IsAllocated ) /*0x45a35e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x45a369*/
+        RA2_OPDEL(this->Items); /*0x45a369*/
         this->Items = 0; /*0x45a371*/
       }
     }
@@ -204,7 +204,7 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x45a38e*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x45a38e*/
   }
   v7 = this->Capacity; /*0x45a391*/
   if ( v7 < this->Count ) /*0x45a399*/
@@ -219,13 +219,13 @@ int TypeList_cptr_ParticleSystemTypeClass::Remove(unsigned int * a2)
 {
   void * v2;
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->Count; /*0x45a3b0*/
   result = 0; /*0x45a3b3*/
   if ( v2 <= 0 ) /*0x45a3b8*/
     return -1; /*0x45a3cf*/
-  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x45a3be*/
+  for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x45a3be*/
   {
     if ( ++result >= v2 ) /*0x45a3cd*/
       return -1; /*0x45a3cd*/
@@ -240,7 +240,6 @@ VectorClass_flat * TypeList_Particle::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x45a9c3*/
-  *(void **)this = (void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x45a9c6*/
   if ( v3 && this->IsAllocated ) /*0x45a9d0*/
   {
     RA2_OPDEL(v3); /*0x45a9d8*/
@@ -281,7 +280,7 @@ unsigned int TypeList_flat::GetCapacity(int a2)
 namespace gamemd {
 int TypeList_TechnoType::Clear(int a2)
 {
-  return *(_DWORD *)(this->Items + 4 * a2); /*0x4778fa*/
+  return *(unsigned int *)(this->Items + 4 * a2); /*0x4778fa*/
 }
 } // namespace gamemd
 
@@ -291,7 +290,6 @@ TypeList_flat * TypeList_flat::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->u32_4; /*0x477993*/
-  *this = (void*)&VectorClass_int_vftable; /*0x477996*/
   if ( v3 && this->u32_D ) /*0x4779a0*/
   {
     RA2_OPDEL(v3); /*0x4779a8*/
@@ -308,13 +306,13 @@ int TypeList_flat::GetSize(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->u32_10; /*0x477f10*/
   result = 0; /*0x477f13*/
   if ( v2 <= 0 ) /*0x477f18*/
     return -1; /*0x477f2f*/
-  for ( i = (_DWORD *)this->u32_4; *i != *a2; ++i ) /*0x477f1e*/
+  for ( i = (unsigned int *)this->u32_4; *i != *a2; ++i ) /*0x477f1e*/
   {
     if ( ++result >= v2 ) /*0x477f2d*/
       return -1; /*0x477f2d*/
@@ -327,18 +325,18 @@ char TypeList_TechnoType::AddRef(int a2)
 {
   void * v2;
   int v3; // edx
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // ecx
 
   v2 = this->Capacity; /*0x477fc2*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x477fcd*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x477fcd*/
   {
     v3 = 0; /*0x477fcf*/
     if ( v2 <= 0 ) /*0x477fd3*/
       return 1; /*0x477ff3*/
-    v4 = (_DWORD *)this->Items; /*0x477fd5*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x477fdb*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x477fe4*/
+    v4 = (unsigned int *)this->Items; /*0x477fd5*/
+    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x477fdb*/
+    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x477fe4*/
     {
       ++v3; /*0x477fe6*/
       ++v4; /*0x477fe7*/
@@ -354,7 +352,7 @@ char TypeList_TechnoType::AddRef(int a2)
 namespace gamemd {
 char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   unsigned int v6;
   int i; // eax
 
@@ -364,7 +362,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x47801c*/
       v4 = a3; /*0x478032*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x47802e*/
+      v4 = operator new(4 * a2); /*0x47802e*/
     this->IsInitialized = 1; /*0x478036*/
     if ( v4 ) /*0x47803a*/
     {
@@ -373,11 +371,11 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
         v6 = this->Capacity; /*0x47804c*/
         if ( a2 < v6 ) /*0x478051*/
           v6 = a2; /*0x478053*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x478059*/
+        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x478059*/
           ++i; /*0x47805e*/
         if ( this->IsAllocated ) /*0x47806b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x478076*/
+          RA2_OPDEL(this->Items); /*0x478076*/
           this->Items = 0; /*0x47807e*/
         }
       }
@@ -393,7 +391,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x4780a2*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x4780a2*/
     return 1; /*0x4780a8*/
   }
 }
@@ -419,7 +417,7 @@ int TypeList_TechnoType::GetSize(unsigned int * a2)
 {
   int result; // eax
   void * v3;
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->IsInitialized ) /*0x4780e0*/
     return 0; /*0x4780e8*/
@@ -454,7 +452,6 @@ VectorClass_flat * TypeList_TechnoType::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x478683*/
-  *(void **)this = (void*)&VectorClass_TechnoTypeClass___vftable; /*0x478686*/
   if ( v3 && this->IsAllocated ) /*0x478690*/
   {
     RA2_OPDEL(v3); /*0x478698*/
@@ -487,7 +484,7 @@ unsigned int * TypeList_flat::Copy(unsigned int * a2)
     this->u32_D = 0; /*0x478781*/
     return this; /*0x478785*/
   }
-  v4 = RA2_OPNEW(4 * v3); /*0x478743*/
+  v4 = operator new(4 * v3); /*0x478743*/
   this->u32_4 = v4; /*0x47874b*/
   if ( !v4 ) /*0x478750*/
     return this; /*0x478750*/
@@ -498,7 +495,7 @@ unsigned int * TypeList_flat::Copy(unsigned int * a2)
     return this; /*0x47875d*/
   do /*0x478771*/
   {
-    *(_DWORD *)(this->u32_4 + 4 * v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x478768*/
+    *(unsigned int *)(this->u32_4 + 4 * v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x478768*/
     ++v6; /*0x47876e*/
   }
   while ( v6 < this->u32_8 ); /*0x478771*/
@@ -511,7 +508,6 @@ unsigned int * TypeList_flat::TechnoTypeConstructor(int a2, int a3)
   this->u32_8 = a2; /*0x47879e*/
   this->u32_C = 1; /*0x4787a1*/
   this->u32_D = 0; /*0x4787a5*/
-  *this = (void*)&VectorClass_TechnoTypeClass___vftable; /*0x4787a8*/
   if ( a2 ) /*0x4787ae*/
   {
     if ( a3 ) /*0x4787b6*/
@@ -519,7 +515,7 @@ unsigned int * TypeList_flat::TechnoTypeConstructor(int a2, int a3)
       this->u32_4 = a3; /*0x4787b8*/
       return this; /*0x4787be*/
     }
-    this->u32_4 = RA2_OPNEW(4 * a2); /*0x4787cd*/
+    this->u32_4 = operator new(4 * a2); /*0x4787cd*/
     this->u32_D = 1; /*0x4787d0*/
   }
   return this; /*0x4787bd*/
@@ -557,7 +553,7 @@ unsigned int TypeList_Infantry::GetIndex(int a2)
 namespace gamemd {
 int TypeList_Infantry::Clear(int a2)
 {
-  return *(_DWORD *)(this->Items + 4 * a2); /*0x5128fa*/
+  return *(unsigned int *)(this->Items + 4 * a2); /*0x5128fa*/
 }
 } // namespace gamemd
 
@@ -568,7 +564,6 @@ TypeList_flat * TypeList_Infantry::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5129f3*/
-  *(void **)this = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x5129f6*/
   if ( v3 && this->IsAllocated ) /*0x512a00*/
   {
     RA2_OPDEL(v3); /*0x512a08*/
@@ -588,18 +583,18 @@ char TypeList_Infantry::AddRef(int a2)
 {
   void * v2;
   int v3; // edx
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // ecx
 
   v2 = this->Capacity; /*0x512c42*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x512c4d*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x512c4d*/
   {
     v3 = 0; /*0x512c4f*/
     if ( v2 <= 0 ) /*0x512c53*/
       return 1; /*0x512c73*/
-    v4 = (_DWORD *)this->Items; /*0x512c55*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x512c5b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x512c64*/
+    v4 = (unsigned int *)this->Items; /*0x512c55*/
+    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x512c5b*/
+    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x512c64*/
     {
       ++v3; /*0x512c66*/
       ++v4; /*0x512c67*/
@@ -618,7 +613,6 @@ DynamicVector * TypeList_Infantry::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x512e23*/
-  *(void **)this = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x512e26*/
   if ( v3 && this->IsAllocated ) /*0x512e30*/
   {
     RA2_OPDEL(v3); /*0x512e38*/
@@ -636,7 +630,7 @@ DynamicVector * TypeList_Infantry::Constructor(char a2)
 namespace gamemd {
 char TypeList_Infantry::Remove(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   void * v5;
   int i; // eax
   int v7; // eax
@@ -647,7 +641,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x512e88*/
       v4 = a3; /*0x512e9e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x512e9a*/
+      v4 = operator new(4 * a2); /*0x512e9a*/
     this->IsInitialized = 1; /*0x512ea2*/
     if ( !v4 ) /*0x512ea6*/
       return 0; /*0x512f1a*/
@@ -656,11 +650,11 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
       v5 = this->Capacity; /*0x512eaf*/
       if ( a2 < v5 ) /*0x512eb4*/
         v5 = a2; /*0x512eb6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x512ebc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x512ebc*/
         ++i; /*0x512ec1*/
       if ( this->IsAllocated ) /*0x512ece*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x512ed9*/
+        RA2_OPDEL(*(unsigned int *)&this->Items); /*0x512ed9*/
         this->Items = 0; /*0x512ee1*/
       }
     }
@@ -670,7 +664,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x512efe*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x512efe*/
   }
   v7 = this->Capacity; /*0x512f01*/
   if ( v7 < this->Count ) /*0x512f09*/
@@ -685,13 +679,13 @@ int TypeList_Infantry::GetSize(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->Count; /*0x512f70*/
   result = 0; /*0x512f73*/
   if ( v2 <= 0 ) /*0x512f78*/
     return -1; /*0x512f8f*/
-  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x512f7e*/
+  for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x512f7e*/
   {
     if ( ++result >= v2 ) /*0x512f8d*/
       return -1; /*0x512f8d*/
@@ -707,7 +701,6 @@ DynamicVector * TypeList_Infantry::Constructor_0(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5131f3*/
-  *this = (void*)&VectorClass_UnitTypeClass_const___vftable; /*0x5131f6*/
   if ( v3 && this->IsAllocated ) /*0x513200*/
   {
     RA2_OPDEL(v3); /*0x513208*/
@@ -728,7 +721,6 @@ DynamicVector * TypeList_Infantry::Constructor_1(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5135c3*/
-  *this = (void*)&VectorClass_AircraftTypeClass_const___vftable; /*0x5135c6*/
   if ( v3 && this->IsAllocated ) /*0x5135d0*/
   {
     RA2_OPDEL(v3); /*0x5135d8*/
@@ -754,7 +746,6 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
   this->u32_8 = 0; /*0x513750*/
   this->u32_C = 1; /*0x513753*/
   this->u32_D = 0; /*0x513757*/
-  *this = (void*)&VectorClass_UnitTypeClass_const___vftable; /*0x51375a*/
   if ( this != aP1 ) /*0x513760*/
   {
     Vector::Destructor(); /*0x513762*/
@@ -762,7 +753,7 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
     this->u32_8 = v3; /*0x51376d*/
     if ( v3 ) /*0x513770*/
     {
-      v4 = RA2_OPNEW(4 * v3); /*0x513776*/
+      v4 = operator new(4 * v3); /*0x513776*/
       this->u32_4 = v4; /*0x513780*/
       if ( v4 ) /*0x513783*/
       {
@@ -773,7 +764,7 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
         {
           do /*0x5137a4*/
           {
-            *(_DWORD *)(this->u32_4 + 4 * v6) = *(_DWORD *)(aP1[1] + 4 * v6); /*0x51379b*/
+            *(unsigned int *)(this->u32_4 + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x51379b*/
             ++v6; /*0x5137a1*/
           }
           while ( v6 < this->u32_8 ); /*0x5137a4*/
@@ -788,7 +779,6 @@ unsigned int * TypeList_flat::CopyConstructor(VectorClass_flat * aP1)
   }
   this->u32_10 = aP1[4]; /*0x5137b1*/
   this->u32_14 = aP1[5]; /*0x5137b7*/
-  *this = (void*)&TypeList_UnitTypeClass_const___vftable; /*0x5137ba*/
   return this; /*0x5137c2*/
 }
 // 0x5255F0
@@ -803,7 +793,6 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
   this->u32_8 = 0; /*0x525600*/
   this->u32_C = 1; /*0x525603*/
   this->u32_D = 0; /*0x525607*/
-  *this = (void*)&VectorClass_AnimTypeClass_const___vftable; /*0x52560a*/
   if ( this != aP1 ) /*0x525610*/
   {
     DynamicVectorClass::Destroy_Alt(); /*0x525612*/
@@ -811,7 +800,7 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
     this->u32_8 = v3; /*0x52561d*/
     if ( v3 ) /*0x525620*/
     {
-      v4 = RA2_OPNEW(4 * v3); /*0x525626*/
+      v4 = operator new(4 * v3); /*0x525626*/
       this->u32_4 = v4; /*0x525630*/
       if ( v4 ) /*0x525633*/
       {
@@ -822,7 +811,7 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
         {
           do /*0x525654*/
           {
-            *(_DWORD *)(this->u32_4 + 4 * v6) = *(_DWORD *)(aP1[1] + 4 * v6); /*0x52564b*/
+            *(unsigned int *)(this->u32_4 + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x52564b*/
             ++v6; /*0x525651*/
           }
           while ( v6 < this->u32_8 ); /*0x525654*/
@@ -837,7 +826,6 @@ unsigned int * TypeList_flat::AnimTypeCopy(VectorClass_flat * aP1)
   }
   this->u32_10 = aP1[4]; /*0x525661*/
   this->u32_14 = aP1[5]; /*0x525667*/
-  *this = (void*)&TypeList_AnimTypeClass_const___vftable; /*0x52566a*/
   return this; /*0x525672*/
 }
 // 0x5AC400
@@ -849,7 +837,6 @@ CCINIClass * TypeList_flat::BuildingTypeConstructor()
   this->u32_D = 0; /*0x5ac40e*/
   this->u32_14 = 10; /*0x5ac411*/
   this->u32_10 = 0; /*0x5ac418*/
-  *this = (void*)&TypeList_BuildingTypeClass_const___vftable; /*0x5ac41b*/
   return this; /*0x5ac421*/
 }
 // 0x5AC650
@@ -859,7 +846,6 @@ TypeList_flat * TypeList_BuildingType::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5ac653*/
-  *this = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x5ac656*/
   if ( v3 && this->IsAllocated ) /*0x5ac660*/
   {
     RA2_OPDEL(v3); /*0x5ac668*/
@@ -885,7 +871,6 @@ unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
   this->u32_8 = 0; /*0x5ad670*/
   this->u32_C = 1; /*0x5ad673*/
   this->u32_D = 0; /*0x5ad677*/
-  *this = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x5ad67a*/
   if ( this != aP1 ) /*0x5ad680*/
   {
     DynamicVectorClass::Destroy(); /*0x5ad682*/
@@ -893,7 +878,7 @@ unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
     this->u32_8 = v3; /*0x5ad68d*/
     if ( v3 ) /*0x5ad690*/
     {
-      v4 = RA2_OPNEW(4 * v3); /*0x5ad696*/
+      v4 = operator new(4 * v3); /*0x5ad696*/
       this->u32_4 = v4; /*0x5ad6a0*/
       if ( v4 ) /*0x5ad6a3*/
       {
@@ -904,7 +889,7 @@ unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
         {
           do /*0x5ad6c4*/
           {
-            *(_DWORD *)(this->u32_4 + 4 * v6) = *(_DWORD *)(aP1[1] + 4 * v6); /*0x5ad6bb*/
+            *(unsigned int *)(this->u32_4 + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x5ad6bb*/
             ++v6; /*0x5ad6c1*/
           }
           while ( v6 < this->u32_8 ); /*0x5ad6c4*/
@@ -919,7 +904,6 @@ unsigned int * TypeList_flat::BuildingTypeCopy(VectorClass_flat * aP1)
   }
   this->u32_10 = aP1[4]; /*0x5ad6d1*/
   this->u32_14 = aP1[5]; /*0x5ad6d7*/
-  *this = (void*)&TypeList_BuildingTypeClass_const___vftable; /*0x5ad6da*/
   return this; /*0x5ad6e2*/
 }
 // 0x67A030
@@ -928,7 +912,6 @@ void TypeList_flat::InfantryCleanup()
   void *v2; // eax
 
   v2 = (void *)this->u32_4; /*0x67a036*/
-  *this = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x67a039*/
   if ( v2 && this->u32_D ) /*0x67a043*/
   {
     RA2_OPDEL(v2); /*0x67a049*/
@@ -952,7 +935,7 @@ int * TypeList_flat::CopyFull(VectorClass_flat * aP1)
     this->u32_8 = v3; /*0x67a0a6*/
     if ( v3 ) /*0x67a0a9*/
     {
-      v4 = RA2_OPNEW(4 * v3); /*0x67a0b3*/
+      v4 = operator new(4 * v3); /*0x67a0b3*/
       this->u32_4 = (int)v4; /*0x67a0bb*/
       if ( v4 ) /*0x67a0c0*/
       {
@@ -963,7 +946,7 @@ int * TypeList_flat::CopyFull(VectorClass_flat * aP1)
         {
           do /*0x67a0e1*/
           {
-            *(_DWORD *)(this->u32_4 + 4 * v6) = *(_DWORD *)(aP1[1] + 4 * v6); /*0x67a0d8*/
+            *(unsigned int *)(this->u32_4 + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67a0d8*/
             ++v6; /*0x67a0de*/
           }
           while ( v6 < this->u32_8 ); /*0x67a0e1*/
@@ -996,7 +979,7 @@ int * TypeList_flat::CopyAircraft(VectorClass_flat * aP1)
     this->u32_8 = v3; /*0x67a126*/
     if ( v3 ) /*0x67a129*/
     {
-      v4 = RA2_OPNEW(4 * v3); /*0x67a133*/
+      v4 = operator new(4 * v3); /*0x67a133*/
       this->u32_4 = (int)v4; /*0x67a13b*/
       if ( v4 ) /*0x67a140*/
       {
@@ -1007,7 +990,7 @@ int * TypeList_flat::CopyAircraft(VectorClass_flat * aP1)
         {
           do /*0x67a161*/
           {
-            *(_DWORD *)(this->u32_4 + 4 * v6) = *(_DWORD *)(aP1[1] + 4 * v6); /*0x67a158*/
+            *(unsigned int *)(this->u32_4 + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67a158*/
             ++v6; /*0x67a15e*/
           }
           while ( v6 < this->u32_8 ); /*0x67a161*/
@@ -1040,7 +1023,7 @@ int * TypeList_flat::CopyInfantry(CCINIClass * aP1)
     this->u32_8 = v3; /*0x67a2a6*/
     if ( v3 ) /*0x67a2a9*/
     {
-      v4 = RA2_OPNEW(4 * v3); /*0x67a2b3*/
+      v4 = operator new(4 * v3); /*0x67a2b3*/
       this->u32_4 = (int)v4; /*0x67a2bb*/
       if ( v4 ) /*0x67a2c0*/
       {
@@ -1051,7 +1034,7 @@ int * TypeList_flat::CopyInfantry(CCINIClass * aP1)
         {
           do /*0x67a2e1*/
           {
-            *(_DWORD *)(this->u32_4 + 4 * v6) = *(_DWORD *)(aP1[1] + 4 * v6); /*0x67a2d8*/
+            *(unsigned int *)(this->u32_4 + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67a2d8*/
             ++v6; /*0x67a2de*/
           }
           while ( v6 < this->u32_8 ); /*0x67a2e1*/
@@ -1078,7 +1061,6 @@ CCINIClass * TypeList_flat::VoxelAnimConstructor()
   this->u32_D = 0; /*0x67a39e*/
   this->u32_14 = 10; /*0x67a3a1*/
   this->u32_10 = 0; /*0x67a3a8*/
-  *this = (void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x67a3ab*/
   return this; /*0x67a3b1*/
 }
 // 0x67A410
@@ -1114,7 +1096,7 @@ unsigned int TypeList_VoxelAnim::GetIndex(int a2)
 namespace gamemd {
 int TypeList_VoxelAnim::Clear(int a2)
 {
-  return *(_DWORD *)(this->Items + 4 * a2); /*0x67a46a*/
+  return *(unsigned int *)(this->Items + 4 * a2); /*0x67a46a*/
 }
 } // namespace gamemd
 
@@ -1127,7 +1109,6 @@ DynamicVector * TypeList_flat::Construct()
   this->u32_D = 0; /*0x67a4fe*/
   this->u32_14 = 10; /*0x67a501*/
   this->u32_10 = 0; /*0x67a508*/
-  *this = (void*)&TypeList_int_vftable; /*0x67a50b*/
   return this; /*0x67a511*/
 }
 // 0x67A600
@@ -1139,7 +1120,6 @@ CCINIClass * TypeList_flat::ConstructSmudge()
   this->u32_D = 0; /*0x67a60e*/
   this->u32_14 = 10; /*0x67a611*/
   this->u32_10 = 0; /*0x67a618*/
-  *this = (void*)&TypeList_SmudgeTypeClass_const___vftable; /*0x67a61b*/
   return this; /*0x67a621*/
 }
 // 0x67A680
@@ -1174,7 +1154,7 @@ unsigned int TypeList_VoxelAnim::TypeList_vt05(int a2)
 // 0x67A6D0
 int TypeList_flat::Clear(int a2)
 {
-  return *(_DWORD *)(this->u32_4 + 4 * a2); /*0x67a6da*/
+  return *(unsigned int *)(this->u32_4 + 4 * a2); /*0x67a6da*/
 }
 // 0x67A820
 unsigned int * TypeList_flat::InfantryConstructor()
@@ -1185,7 +1165,6 @@ unsigned int * TypeList_flat::InfantryConstructor()
   this->u32_D = 0; /*0x67a82e*/
   this->u32_14 = 10; /*0x67a831*/
   this->u32_10 = 0; /*0x67a838*/
-  *this = (void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67a83b*/
   return this; /*0x67a841*/
 }
 // 0x67A930
@@ -1221,7 +1200,7 @@ unsigned int TypeList_cptr_TerrainTypeClass::GetIndex(int a2)
 namespace gamemd {
 int TypeList_cptr_TerrainTypeClass::SaveToINI(int a2)
 {
-  return *(_DWORD *)(this->Items + 4 * a2); /*0x67a98a*/
+  return *(unsigned int *)(this->Items + 4 * a2); /*0x67a98a*/
 }
 } // namespace gamemd
 
@@ -1232,7 +1211,6 @@ TypeList_flat * TypeList_VoxelAnim::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67a993*/
-  *this = (void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67a996*/
   if ( v3 && this->IsAllocated ) /*0x67a9a0*/
   {
     RA2_OPDEL(v3); /*0x67a9a8*/
@@ -1253,7 +1231,6 @@ TypeList_flat * TypeList_VoxelAnim::TypeList_vt00(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67a9e3*/
-  *this = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67a9e6*/
   if ( v3 && this->IsAllocated ) /*0x67a9f0*/
   {
     RA2_OPDEL(v3); /*0x67a9f8*/
@@ -1274,7 +1251,6 @@ TypeList_flat * TypeList_cptr_TerrainTypeClass::Add(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67aa33*/
-  *this = (void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67aa36*/
   if ( v3 && this->IsAllocated ) /*0x67aa40*/
   {
     RA2_OPDEL(v3); /*0x67aa48*/
@@ -1294,18 +1270,18 @@ char TypeList_VoxelAnim::AddRef(int a2)
 {
   int v2; // esi
   int v3; // edx
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // ecx
 
   v2 = this->Capacity; /*0x67aaf2*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x67aafd*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x67aafd*/
   {
     v3 = 0; /*0x67aaff*/
     if ( v2 <= 0 ) /*0x67ab03*/
       return 1; /*0x67ab23*/
-    v4 = (_DWORD *)this->Items; /*0x67ab05*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x67ab0b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x67ab14*/
+    v4 = (unsigned int *)this->Items; /*0x67ab05*/
+    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x67ab0b*/
+    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x67ab14*/
     {
       ++v3; /*0x67ab16*/
       ++v4; /*0x67ab17*/
@@ -1321,7 +1297,7 @@ char TypeList_VoxelAnim::AddRef(int a2)
 namespace gamemd {
 char TypeList_VoxelAnim::SetCapacity(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v6; // ecx
   int i; // eax
 
@@ -1331,7 +1307,7 @@ char TypeList_VoxelAnim::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x67ab4c*/
       v4 = a3; /*0x67ab62*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x67ab5e*/
+      v4 = operator new(4 * a2); /*0x67ab5e*/
     this->IsInitialized = 1; /*0x67ab66*/
     if ( v4 ) /*0x67ab6a*/
     {
@@ -1340,11 +1316,11 @@ char TypeList_VoxelAnim::SetCapacity(int a2, unsigned int * a3)
         v6 = this->Capacity; /*0x67ab7c*/
         if ( a2 < v6 ) /*0x67ab81*/
           v6 = a2; /*0x67ab83*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x67ab89*/
+        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x67ab89*/
           ++i; /*0x67ab8e*/
         if ( this->IsAllocated ) /*0x67ab9b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x67aba6*/
+          RA2_OPDEL(this->Items); /*0x67aba6*/
           this->Items = 0; /*0x67abae*/
         }
       }
@@ -1360,7 +1336,7 @@ char TypeList_VoxelAnim::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x67abd2*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x67abd2*/
     return 1; /*0x67abd8*/
   }
 }
@@ -1372,7 +1348,7 @@ int TypeList_VoxelAnim::IndexOf(unsigned int * a2)
 {
   int result; // eax
   int v3; // edx
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->IsInitialized ) /*0x67ac10*/
     return 0; /*0x67ac18*/
@@ -1404,7 +1380,7 @@ unsigned int TypeList_VoxelAnim::PointerToIndex(int a2)
 namespace gamemd {
 char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
@@ -1415,7 +1391,7 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x67ace8*/
       v4 = a3; /*0x67acfe*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x67acfa*/
+      v4 = operator new(4 * a2); /*0x67acfa*/
     this->IsInitialized = 1; /*0x67ad02*/
     if ( !v4 ) /*0x67ad06*/
       return 0; /*0x67ad7a*/
@@ -1424,11 +1400,11 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
       v5 = this->Capacity; /*0x67ad0f*/
       if ( a2 < v5 ) /*0x67ad14*/
         v5 = a2; /*0x67ad16*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x67ad1c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x67ad1c*/
         ++i; /*0x67ad21*/
       if ( this->IsAllocated ) /*0x67ad2e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x67ad39*/
+        RA2_OPDEL(this->Items); /*0x67ad39*/
         this->Items = 0; /*0x67ad41*/
       }
     }
@@ -1438,7 +1414,7 @@ char TypeList_VoxelAnim::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x67ad5e*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x67ad5e*/
   }
   v7 = this->Capacity; /*0x67ad61*/
   if ( v7 < this->Count ) /*0x67ad69*/
@@ -1453,13 +1429,13 @@ int TypeList_VoxelAnim::GetSize(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->Count; /*0x67add0*/
   result = 0; /*0x67add3*/
   if ( v2 <= 0 ) /*0x67add8*/
     return -1; /*0x67adef*/
-  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x67adde*/
+  for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x67adde*/
   {
     if ( ++result >= v2 ) /*0x67aded*/
       return -1; /*0x67aded*/
@@ -1473,18 +1449,18 @@ char TypeList_flat::AddRef(int a2)
 {
   int v2; // esi
   int v3; // edx
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // ecx
 
   v2 = this->u32_8; /*0x67ae72*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x67ae7d*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x67ae7d*/
   {
     v3 = 0; /*0x67ae7f*/
     if ( v2 <= 0 ) /*0x67ae83*/
       return 1; /*0x67aea3*/
-    v4 = (_DWORD *)this->u32_4; /*0x67ae85*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x67ae8b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x67ae94*/
+    v4 = (unsigned int *)this->u32_4; /*0x67ae85*/
+    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x67ae8b*/
+    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x67ae94*/
     {
       ++v3; /*0x67ae96*/
       ++v4; /*0x67ae97*/
@@ -1497,7 +1473,7 @@ char TypeList_flat::AddRef(int a2)
 // 0x67B050
 char TypeList_flat::Release(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
@@ -1508,7 +1484,7 @@ char TypeList_flat::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x67b068*/
       v4 = a3; /*0x67b07e*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x67b07a*/
+      v4 = operator new(4 * a2); /*0x67b07a*/
     this->u32_C = 1; /*0x67b082*/
     if ( !v4 ) /*0x67b086*/
       return 0; /*0x67b0fa*/
@@ -1517,11 +1493,11 @@ char TypeList_flat::Release(int a2, unsigned int * a3)
       v5 = this->u32_8; /*0x67b08f*/
       if ( a2 < v5 ) /*0x67b094*/
         v5 = a2; /*0x67b096*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->u32_4 + 4 * i - 4) ) /*0x67b09c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->u32_4 + 4 * i - 4) ) /*0x67b09c*/
         ++i; /*0x67b0a1*/
       if ( this->u32_D ) /*0x67b0ae*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x67b0b9*/
+        RA2_OPDEL(this->Items); /*0x67b0b9*/
         this->u32_4 = 0; /*0x67b0c1*/
       }
     }
@@ -1544,13 +1520,13 @@ int TypeList_VoxelAnim::TypeList_vt04(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->Count; /*0x67b150*/
   result = 0; /*0x67b153*/
   if ( v2 <= 0 ) /*0x67b158*/
     return -1; /*0x67b16f*/
-  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x67b15e*/
+  for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x67b15e*/
   {
     if ( ++result >= v2 ) /*0x67b16d*/
       return -1; /*0x67b16d*/
@@ -1565,18 +1541,18 @@ char TypeList_cptr_TerrainTypeClass::AddRef(int a2)
 {
   int v2; // esi
   int v3; // edx
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v5; // ecx
 
   v2 = this->Capacity; /*0x67b1f2*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x67b1fd*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x67b1fd*/
   {
     v3 = 0; /*0x67b1ff*/
     if ( v2 <= 0 ) /*0x67b203*/
       return 1; /*0x67b223*/
-    v4 = (_DWORD *)this->Items; /*0x67b205*/
-    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x67b20b*/
-    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x67b214*/
+    v4 = (unsigned int *)this->Items; /*0x67b205*/
+    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x67b20b*/
+    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x67b214*/
     {
       ++v3; /*0x67b216*/
       ++v4; /*0x67b217*/
@@ -1592,7 +1568,7 @@ char TypeList_cptr_TerrainTypeClass::AddRef(int a2)
 namespace gamemd {
 char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v6; // ecx
   int i; // eax
 
@@ -1602,7 +1578,7 @@ char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x67b24c*/
       v4 = a3; /*0x67b262*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x67b25e*/
+      v4 = operator new(4 * a2); /*0x67b25e*/
     this->IsInitialized = 1; /*0x67b266*/
     if ( v4 ) /*0x67b26a*/
     {
@@ -1611,11 +1587,11 @@ char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
         v6 = this->Capacity; /*0x67b27c*/
         if ( a2 < v6 ) /*0x67b281*/
           v6 = a2; /*0x67b283*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x67b289*/
+        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x67b289*/
           ++i; /*0x67b28e*/
         if ( this->IsAllocated ) /*0x67b29b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x67b2a6*/
+          RA2_OPDEL(this->Items); /*0x67b2a6*/
           this->Items = 0; /*0x67b2ae*/
         }
       }
@@ -1631,7 +1607,7 @@ char TypeList_cptr_TerrainTypeClass::SetCapacity(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x67b2d2*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x67b2d2*/
     return 1; /*0x67b2d8*/
   }
 }
@@ -1657,7 +1633,7 @@ int TypeList_cptr_TerrainTypeClass::IndexOf(unsigned int * a2)
 {
   int result; // eax
   int v3; // edx
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->IsInitialized ) /*0x67b310*/
     return 0; /*0x67b318*/
@@ -1689,7 +1665,7 @@ unsigned int TypeList_cptr_TerrainTypeClass::PointerToIndex(int a2)
 namespace gamemd {
 char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v5; // ecx
   int i; // eax
   int v7; // eax
@@ -1700,7 +1676,7 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
     if ( a3 ) /*0x67b3e8*/
       v4 = a3; /*0x67b3fe*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x67b3fa*/
+      v4 = operator new(4 * a2); /*0x67b3fa*/
     this->IsInitialized = 1; /*0x67b402*/
     if ( !v4 ) /*0x67b406*/
       return 0; /*0x67b47a*/
@@ -1709,11 +1685,11 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
       v5 = this->Capacity; /*0x67b40f*/
       if ( a2 < v5 ) /*0x67b414*/
         v5 = a2; /*0x67b416*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x67b41c*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x67b41c*/
         ++i; /*0x67b421*/
       if ( this->IsAllocated ) /*0x67b42e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x67b439*/
+        RA2_OPDEL(this->Items); /*0x67b439*/
         this->Items = 0; /*0x67b441*/
       }
     }
@@ -1723,7 +1699,7 @@ char TypeList_cptr_TerrainTypeClass::Remove(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x67b45e*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x67b45e*/
   }
   v7 = this->Capacity; /*0x67b461*/
   if ( v7 < this->Count ) /*0x67b469*/
@@ -1738,13 +1714,13 @@ int TypeList_cptr_TerrainTypeClass::GetSize(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->Count; /*0x67b4d0*/
   result = 0; /*0x67b4d3*/
   if ( v2 <= 0 ) /*0x67b4d8*/
     return -1; /*0x67b4ef*/
-  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x67b4de*/
+  for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x67b4de*/
   {
     if ( ++result >= v2 ) /*0x67b4ed*/
       return -1; /*0x67b4ed*/
@@ -1760,7 +1736,6 @@ VectorClass_flat * TypeList_VoxelAnim::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67c013*/
-  *this = (void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67c016*/
   if ( v3 && this->IsAllocated ) /*0x67c020*/
   {
     RA2_OPDEL(v3); /*0x67c028*/
@@ -1781,7 +1756,6 @@ DynamicVector * TypeList_VoxelAnim::Constructor_0(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67c103*/
-  *this = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c106*/
   if ( v3 && this->IsAllocated ) /*0x67c110*/
   {
     RA2_OPDEL(v3); /*0x67c118*/
@@ -1802,7 +1776,6 @@ VectorClass_flat * TypeList_cptr_TerrainTypeClass::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67c153*/
-  *this = (void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67c156*/
   if ( v3 && this->IsAllocated ) /*0x67c160*/
   {
     RA2_OPDEL(v3); /*0x67c168*/
@@ -1823,7 +1796,6 @@ DynamicVector * TypeList_VoxelAnim::Constructor_1(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x67c1a3*/
-  *this = (void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67c1a6*/
   if ( v3 && this->IsAllocated ) /*0x67c1b0*/
   {
     RA2_OPDEL(v3); /*0x67c1b8*/
@@ -1849,7 +1821,6 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
   this->u32_8 = 0; /*0x67c200*/
   this->u32_C = 1; /*0x67c203*/
   this->u32_D = 0; /*0x67c207*/
-  *this = (void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67c20a*/
   if ( this != aP1 ) /*0x67c210*/
   {
     Vector::Cleanup2(); /*0x67c212*/
@@ -1857,7 +1828,7 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
     this->u32_8 = v3; /*0x67c21d*/
     if ( v3 ) /*0x67c220*/
     {
-      v4 = RA2_OPNEW(4 * v3); /*0x67c226*/
+      v4 = operator new(4 * v3); /*0x67c226*/
       this->u32_4 = v4; /*0x67c230*/
       if ( v4 ) /*0x67c233*/
       {
@@ -1868,7 +1839,7 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
         {
           do /*0x67c254*/
           {
-            *(_DWORD *)(this->u32_4 + 4 * v6) = *(_DWORD *)(aP1[1] + 4 * v6); /*0x67c24b*/
+            *(unsigned int *)(this->u32_4 + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x67c24b*/
             ++v6; /*0x67c251*/
           }
           while ( v6 < this->u32_8 ); /*0x67c254*/
@@ -1883,7 +1854,6 @@ unsigned int * TypeList_flat::CopyVoxelAnim(VectorClass_flat * aP1)
   }
   this->u32_10 = aP1[4]; /*0x67c261*/
   this->u32_14 = aP1[5]; /*0x67c267*/
-  *this = (void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x67c26a*/
   return this; /*0x67c272*/
 }
 // 0x717B70
@@ -1893,7 +1863,6 @@ TypeList_flat * TypeList_cptr_ParticleSystemTypeClass::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x717b73*/
-  *this = (void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x717b76*/
   if ( v3 && this->IsAllocated ) /*0x717b80*/
   {
     RA2_OPDEL(v3); /*0x717b88*/
@@ -1914,7 +1883,6 @@ unsigned int * TypeList_flat::ParticleConstructor(int a2, int a3)
   this->u32_8 = a2; /*0x717c80*/
   this->u32_C = 1; /*0x717c83*/
   this->u32_D = 0; /*0x717c87*/
-  *this = (void*)&VectorClass_ParticleSystemTypeClass_const___vftable; /*0x717c8b*/
   if ( a2 ) /*0x717c91*/
   {
     if ( a3 ) /*0x717c99*/
@@ -1923,11 +1891,10 @@ unsigned int * TypeList_flat::ParticleConstructor(int a2, int a3)
     }
     else
     {
-      this->u32_4 = RA2_OPNEW(4 * a2); /*0x717cac*/
+      this->u32_4 = operator new(4 * a2); /*0x717cac*/
       this->u32_D = 1; /*0x717caf*/
     }
   }
-  *this = (void*)&DynamicVectorClass_ParticleSystemTypeClass_const___vftable; /*0x717cb3*/
   this->u32_14 = 10; /*0x717cb9*/
   this->u32_10 = 0; /*0x717cc0*/
   return this; /*0x717cc9*/
@@ -1952,6 +1919,6 @@ char TypeList_flat::PushBack(VectorClass_flat * aP1)
   v6 = this->u32_10; /*0x717d05*/
   v7 = this->u32_4; /*0x717d08*/
   this->u32_10 = v6 + 1; /*0x717d0e*/
-  *(_DWORD *)(v7 + 4 * v6) = *aP1; /*0x717d18*/
+  *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x717d18*/
   return 1; /*0x717d01*/
 }

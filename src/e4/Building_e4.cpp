@@ -30,26 +30,26 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
   int v10; // edx
   int v11; // eax
   int v12; // ebx
-  _DWORD *v13; // eax
+  unsigned int *v13; // eax
   double v15; // st7
   int v16; // eax
   int v17; // eax
   int v18; // ecx
-  __int16 v19; // dx
-  __int16 v20; // di
-  __int16 v21; // di
-  __int16 v22; // bx
+  int16_t v19; // dx
+  int16_t v20; // di
+  int16_t v21; // di
+  int16_t v22; // bx
   int v23; // ecx
   int v24; // edx
   int v26; // edi
   int v27; // esi
   int v28; // edx
-  __int16 v29; // cx
+  int16_t v29; // cx
   int v30; // [esp+14h] [ebp-34h]
   int v31; // [esp+18h] [ebp-30h]
   int v32; // [esp+20h] [ebp-28h] BYREF
-  _WORD v33[2]; // [esp+24h] [ebp-24h] BYREF
-  __int16 v34[2]; // [esp+28h] [ebp-20h] BYREF
+  unsigned short v33[2]; // [esp+24h] [ebp-24h] BYREF
+  int16_t v34[2]; // [esp+28h] [ebp-20h] BYREF
   int v35; // [esp+2Ch] [ebp-1Ch]
   int v36; // [esp+30h] [ebp-18h] BYREF
   int v37; // [esp+34h] [ebp-14h]
@@ -59,24 +59,24 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
 
   v2 = &this->u32_9C; /*0x425d1d*/
   v3 = v2[1]; /*0x425d29*/
-  v4 = (unsigned __int8)(*v2 >> 31) + *v2; /*0x425d32*/
+  v4 = (uint8_t)(*v2 >> 31) + *v2; /*0x425d32*/
   v35 = 10000; /*0x425d34*/
   v40 = v2[2]; /*0x425d3f*/
   v4 = v4; /*0x425d43*/
   v3 = v3; /*0x425d45*/
   v4 >>= 8; /*0x425d47*/
-  v7 = (__int16)v4; /*0x425d4b*/
+  v7 = (int16_t)v4; /*0x425d4b*/
   IDA_LOWORD(v37) = v4; /*0x425d54*/
-  v8 = (__int16)v4 - 5; /*0x425d61*/
+  v8 = (int16_t)v4 - 5; /*0x425d61*/
   v9 = v3 / 256; /*0x425d67*/
   IDA_HIWORD(v37) = v9; /*0x425d6c*/
   v32 = dword_89A150; /*0x425d71*/
-  v31 = (__int16)v4; /*0x425d75*/
-  if ( v8 < (__int16)v4 + 5 ) /*0x425d79*/
+  v31 = (int16_t)v4; /*0x425d75*/
+  if ( v8 < (int16_t)v4 + 5 ) /*0x425d79*/
   {
-    v10 = (__int16)v9; /*0x425d7f*/
-    v30 = (__int16)v9; /*0x425d82*/
-    v11 = (__int16)v9 + 5; /*0x425d86*/
+    v10 = (int16_t)v9; /*0x425d7f*/
+    v30 = (int16_t)v9; /*0x425d82*/
+    v11 = (int16_t)v9 + 5; /*0x425d86*/
     do /*0x425ec0*/
     {
       v12 = v10 - 5; /*0x425d89*/
@@ -86,7 +86,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
         {
           v33[0] = v8; /*0x425da0*/
           v33[1] = v12; /*0x425da5*/
-          if ( (unsigned __int8)LayerClass::IsWithinUsableArea(v33, 1) ) /*0x425daa*/
+          if ( (uint8_t)LayerClass::IsWithinUsableArea(v33, 1) ) /*0x425daa*/
           {
             v34[0] = v8; /*0x425dbb*/
             v34[1] = v12; /*0x425dc6*/
@@ -94,8 +94,8 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
             v13 = v13; /*0x425dd0*/
             if ( v13[59] == 2 /*0x425e18*/
               && (v13[80] & 0x100) == 0
-              && (*(_DWORD *)(Cell::GetNeighbourContent(6) + 320) & 0x100) == 0
-              && (*(_DWORD *)(Cell::GetNeighbourContent(0) + 320) & 0x100) == 0 )
+              && (*(unsigned int *)(Cell::GetNeighbourContent(6) + 320) & 0x100) == 0
+              && (*(unsigned int *)(Cell::GetNeighbourContent(0) + 320) & 0x100) == 0 )
             {
               if ( v13[9] == v37 ) /*0x425e27*/
               {
@@ -131,7 +131,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
     while ( v8 < v7 + 5 ); /*0x425ec0*/
     if ( v32 != dword_89A150 ) /*0x425ed6*/
     {
-      v17 = (__int16)v32 - v7; /*0x425eeb*/
+      v17 = (int16_t)v32 - v7; /*0x425eeb*/
       v18 = IDA_SHIWORD(v32) - v10; /*0x425eed*/
       v19 = 0; /*0x425ef1*/
       if ( v17 >= 0 ) /*0x425ef5*/
@@ -151,7 +151,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       v22 = v19 + IDA_HIWORD(v37); /*0x425f21*/
       IDA_LOWORD(v36) = v21; /*0x425f28*/
       IDA_HIWORD(v36) = v19 + IDA_HIWORD(v37); /*0x425f2d*/
-      if ( (unsigned __int8)BuildingClass::IsCellPlaceable(&v36) ) /*0x425f3b*/
+      if ( (uint8_t)BuildingClass::IsCellPlaceable(&v36) ) /*0x425f3b*/
       {
         v23 = (v21 << 8) + 128; /*0x425f4a*/
         v24 = v22; /*0x425f50*/
@@ -159,18 +159,18 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       }
       IDA_LOWORD(v36) = v21; /*0x425f5d*/
       IDA_HIWORD(v36) = IDA_HIWORD(v37); /*0x425f62*/
-      if ( (unsigned __int8)BuildingClass::IsCellPlaceable(&v36) ) /*0x425f78*/
+      if ( (uint8_t)BuildingClass::IsCellPlaceable(&v36) ) /*0x425f78*/
       {
-        *(_DWORD *)aP1 = (v21 << 8) + 128; /*0x425f99*/
+        *(unsigned int *)aP1 = (v21 << 8) + 128; /*0x425f99*/
         aP1[1] = (v30 << 8) + 128; /*0x425fa2*/
         aP1[2] = 0; /*0x425fa7*/
         return aP1; /*0x425fb0*/
       }
       IDA_HIWORD(v36) = v22; /*0x425fb8*/
       IDA_LOWORD(v36) = v37; /*0x425fbd*/
-      if ( (unsigned __int8)BuildingClass::IsCellPlaceable(&v36) ) /*0x425fd3*/
+      if ( (uint8_t)BuildingClass::IsCellPlaceable(&v36) ) /*0x425fd3*/
       {
-        *(_DWORD *)aP1 = (v7 << 8) + 128; /*0x425ff0*/
+        *(unsigned int *)aP1 = (v7 << 8) + 128; /*0x425ff0*/
         aP1[1] = (v22 << 8) + 128; /*0x425ffa*/
         aP1[2] = 0; /*0x425ffd*/
         return aP1; /*0x426006*/
@@ -180,12 +180,12 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
   if ( dword_89A150 ) /*0x426011*/
   {
   LABEL_39:
-    *(_DWORD *)aP1 = Map_InvalidCoord_X; /*0x426090*/
+    *(unsigned int *)aP1 = Map_InvalidCoord_X; /*0x426090*/
     aP1[1] = Map_InvalidCoord_Y; /*0x4260a3*/
     aP1[2] = Map_InvalidCoord_Z; /*0x4260ac*/
     return aP1; /*0x4260b5*/
   }
-  v26 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x426032*/
+  v26 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 7); /*0x426032*/
   v27 = 0; /*0x426034*/
   while ( 1 ) /*0x426046*/
   {
@@ -195,15 +195,15 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
     IDA_LOWORD(v36) = v29; /*0x426066*/
     IDA_HIWORD(v36) = v28; /*0x42606f*/
     v32 = v36; /*0x42607d*/
-    if ( (unsigned __int8)BuildingClass::IsCellPlaceable(&v32) ) /*0x426081*/
+    if ( (uint8_t)BuildingClass::IsCellPlaceable(&v32) ) /*0x426081*/
       break; /*0x426081*/
     if ( ++v27 >= 8 ) /*0x42608e*/
       goto LABEL_39; /*0x42608e*/
   }
   v24 = IDA_SHIWORD(v32); /*0x4260bd*/
-  v23 = ((__int16)v32 << 8) + 128; /*0x4260c5*/
+  v23 = ((int16_t)v32 << 8) + 128; /*0x4260c5*/
   LABEL_41:
-  *(_DWORD *)aP1 = v23; /*0x4260cb*/
+  *(unsigned int *)aP1 = v23; /*0x4260cb*/
   aP1[1] = (v24 << 8) + 128; /*0x4260dd*/
   aP1[2] = 0; /*0x4260e0*/
   return aP1; /*0x425faa*/
@@ -219,7 +219,7 @@ int Building::GetNthOfType()
   if ( v2 == -1 ) /*0x48502e*/
     return 0; /*0x485030*/
   else
-    return (*(unsigned __int8 *)(&this->u32_706) + 1) * *(_DWORD *)(*((_DWORD *)BuildingClass_InstanceArray + v2) + 184); /*0x48504f*/
+    return (*(uint8_t *)(&this->u32_706) + 1) * *(unsigned int *)(*((unsigned int *)BuildingClass_InstanceArray + v2) + 184); /*0x48504f*/
 }
 }
 // 0x772A90
@@ -243,14 +243,14 @@ namespace gamemd {
 unsigned int * Building::GetFoundationSize(unsigned int * a1, unsigned int a2)
 {
   int v2; // eax
-  __int16 *v3; // eax
+  int16_t *v3; // eax
   int v4; // ecx
   int v5; // edx
   int v6; // esi
   int v7; // edi
 
   v2 = MixFileClass::LoadSubFile(); /*0x69e7e0*/
-  if ( v2 && a2 < *(__int16 *)(v2 + 6) && (v3 = (__int16 *)(v2 + 24 * a2 + 8)) != 0 ) /*0x69e7fe*/
+  if ( v2 && a2 < *(int16_t *)(v2 + 6) && (v3 = (int16_t *)(v2 + 24 * a2 + 8)) != 0 ) /*0x69e7fe*/
   {
     v4 = *v3; /*0x69e800*/
     v5 = v3[1]; /*0x69e803*/

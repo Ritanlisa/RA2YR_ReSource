@@ -16,7 +16,6 @@ namespace gamemd {
 unsigned int * CenterTeamCommand::Construct(int a2)
 {
   this->CenterTeamCommand_field_00 = a2; /*0x5361a6*/
-  *(void **)this = (void*)&CenterTeamCommandClass_vftable; /*0x5361a9*/
   return this; /*0x5361af*/
 }
 } // namespace gamemd

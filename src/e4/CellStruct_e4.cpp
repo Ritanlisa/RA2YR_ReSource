@@ -10,7 +10,7 @@
 namespace gamemd {
 IUnknown * CellStruct::Add(IUnknown * v5, IUnknown * aP2)
 {
-  __int16 v3; // dx
+  int16_t v3; // dx
 
   v3 = *this + *aP2; /*0x42d51f*/
   IDA_HIWORD(v5) = this->q004 + aP2[1]; /*0x42d522*/
@@ -35,19 +35,19 @@ unsigned int * CellStruct::Copy(IUnknown * aP1)
 namespace gamemd {
 BOOL CellStruct::Equals(unsigned short * a2)
 {
-  return *this == *a2 && *(this + 1) == a2[1]; /*0x50e48b*/
+  return *this == *a2 && *(unsigned int *)&this->q004 == a2[1]; /*0x50e48b*/
 }
 }
 // 0x588C60
 namespace gamemd {
 IUnknown * CellStruct::Sub(IUnknown * v6, IUnknown * aP2)
 {
-  __int16 v3; // dx
-  __int16 v4; // cx
+  int16_t v3; // dx
+  int16_t v4; // cx
   int v6; // [esp+8h] [ebp+8h]
 
   v3 = *this; /*0x588c60*/
-  v4 = *(this + 1) - aP2[1]; /*0x588c6e*/
+  v4 = *(unsigned int *)&this->q004 - aP2[1]; /*0x588c6e*/
   IDA_LOWORD(v6) = v3 - *aP2; /*0x588c76*/
   IDA_HIWORD(v6) = v4; /*0x588c7b*/
   *v6 = v6; /*0x588c84*/
@@ -58,8 +58,8 @@ IUnknown * CellStruct::Sub(IUnknown * v6, IUnknown * aP2)
 namespace gamemd {
 unsigned short * CellStruct::Set(short a2, short a3)
 {
-  *(_DWORD *)this = a2; /*0x42d47c*/
-  *(this + 1) = a3; /*0x42d47f*/
+  *(unsigned int *)this = a2; /*0x42d47c*/
+  *(unsigned int *)&this->q004 = a3; /*0x42d47f*/
   return this; /*0x42d483*/
 }
 } // namespace gamemd

@@ -26,7 +26,7 @@ int ArrayClass::GetAt_Wrap(int a2)
     v3 = v4 + (a2 - v4) % *(&this->u32_C6); /*0x636e88*/
   }
   if ( v3 >= 0 && v3 < v2 ) /*0x636e90*/
-    return *(_DWORD *)(this->q008 + 4 * v3); /*0x636e9a*/
+    return *(unsigned int *)(this->q008 + 4 * v3); /*0x636e9a*/
   return 0; /*0x636e95*/
 }
 }

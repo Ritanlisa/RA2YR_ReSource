@@ -27,7 +27,6 @@ void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass 
   this->q01E = 0; /*0x4e1322*/
   this->q01D = aP6; /*0x4e1327*/
   this->u32_20 = aP5; /*0x4e132a*/
-  *(void ** *)this = (void*)&GadgetClass_vftable; /*0x4e132d*/
   if ( aP6 ) /*0x4e1334*/
     this->u32_20 = aP5 | 5; /*0x4e1339*/
 }
@@ -39,9 +38,8 @@ GadgetClass * * GadgetClass::Dtor()
   int v1; // eax
   int v2; // eax
 
-  *(void **)this = (void*)&GadgetClass_vftable; /*0x4e1390*/
   v1 = dword_8B3E90; /*0x4e1396*/
-  if ( this == (_DWORD *)dword_8B3E90 ) /*0x4e139f*/
+  if ( this == (unsigned int *)dword_8B3E90 ) /*0x4e139f*/
   {
     v2 = this->u32_20; /*0x4e13a1*/
     IDA_BYTE1(v2) &= ~1u; /*0x4e13a4*/
@@ -49,11 +47,11 @@ GadgetClass * * GadgetClass::Dtor()
     v1 = 0; /*0x4e13aa*/
     dword_8B3E90 = 0; /*0x4e13ac*/
   }
-  if ( this == (_DWORD *)dword_8B3E88 ) /*0x4e13ba*/
+  if ( this == (unsigned int *)dword_8B3E88 ) /*0x4e13ba*/
     dword_8B3E88 = 0; /*0x4e13bc*/
-  if ( this == (_DWORD *)dword_8B3E8C ) /*0x4e13cb*/
+  if ( this == (unsigned int *)dword_8B3E8C ) /*0x4e13cb*/
     dword_8B3E8C = 0; /*0x4e13cd*/
-  if ( this == (_DWORD *)v1 ) /*0x4e13d5*/
+  if ( this == (unsigned int *)v1 ) /*0x4e13d5*/
     dword_8B3E90 = 0; /*0x4e13d7*/
   return LinkClass::Destruct();
 }
@@ -69,9 +67,9 @@ int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
   int v7; // eax
   int v9[4]; // [esp+10h] [ebp-10h] BYREF
 
-  if ( !GadgetClass::ClearState((_BYTE *)this, aP1) ) /*0x55792e*/
+  if ( !GadgetClass::ClearState((unsigned char *)this, aP1) ) /*0x55792e*/
     return 0; /*0x557a0b*/
-  (*(void (__thiscall **)(int, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)g_WWMouseClass_Instance + 32))( /*0x557965*/
+  (*(void (__thiscall **)(int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)g_WWMouseClass_Instance + 32))( /*0x557965*/
     g_WWMouseClass_Instance,
     this->q00C,
     this->u32_10,
@@ -91,7 +89,7 @@ int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
     {
       v7 = i + this->q170; /*0x5579ad*/
       if ( this->q044 > v7 ) /*0x5579b1*/
-        (*(void (__thiscall **)(int, int, int, int, int, bool))(*(_DWORD *)&this->q0500))( /*0x5579e0*/
+        (*(void (__thiscall **)(int, int, int, int, int, bool))(*(unsigned int *)&this->q0500))( /*0x5579e0*/
           this,
           v7,
           this->q00C + 1,
@@ -100,7 +98,7 @@ int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
           v7 == this->__pad_16C);
     }
   }
-  (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 36))(g_WWMouseClass_Instance); /*0x5579f6*/
+  (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 36))(g_WWMouseClass_Instance); /*0x5579f6*/
   return 1; /*0x5579fe*/
 }
 }
@@ -109,18 +107,18 @@ namespace gamemd {
 AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
 {
   HWND Parent; // edi
-  _DWORD *v3; // esi
+  unsigned int *v3; // esi
   HWND *v4; // eax
   HWND *v5; // eax
   int v6; // esi
   int DlgCtrlID; // eax
   int v8; // eax
-  _DWORD *v9; // eax
+  unsigned int *v9; // eax
   int v10; // eax
   bool v11; // al
   int v12; // eax
   HWND v14; // [esp+Ch] [ebp-94h] BYREF
-  _DWORD *v15; // [esp+10h] [ebp-90h]
+  unsigned int *v15; // [esp+10h] [ebp-90h]
   int v16; // [esp+14h] [ebp-8Ch] BYREF
   HWND v17; // [esp+18h] [ebp-88h] BYREF
   HWND v18; // [esp+1Ch] [ebp-84h] BYREF
@@ -132,7 +130,7 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
   v15 = 0; /*0x60aad6*/
   if ( g_DialogHashMap_Count ) /*0x60aada*/
   {
-    v4 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v14) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60aafb*/
+    v4 = (HWND *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v14) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60aafb*/
     if ( v4 ) /*0x60ab00*/
     {
       while ( *v4 != v14 ) /*0x60ab08*/
@@ -151,7 +149,7 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
     v14 = Parent; /*0x60ab2e*/
     if ( !g_DialogHashMap_Count ) /*0x60ab34*/
       goto LABEL_12; /*0x60ab34*/
-    v5 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v14)); /*0x60ab4b*/
+    v5 = (HWND *)*((unsigned int *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v14)); /*0x60ab4b*/
     if ( !v5 ) /*0x60ab50*/
       goto LABEL_12; /*0x60ab50*/
     while ( *v5 != v14 ) /*0x60ab58*/
@@ -216,7 +214,7 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
     HashTable::Get(&g_DialogHashMap_Base, &v18, &v14); /*0x60ad2e*/
     if ( !v14 ) /*0x60ad39*/
       goto LABEL_86; /*0x60ad39*/
-    v10 = *((_DWORD *)v14 + 27); /*0x60ad3f*/
+    v10 = *((unsigned int *)v14 + 27); /*0x60ad3f*/
     if ( v10 != 269 /*0x60adc9*/
       && v10 != 217
       && v10 != 240
@@ -239,14 +237,14 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
     {
       goto LABEL_86; /*0x60adc9*/
     }
-    *((_DWORD *)v14 + 44) = 2; /*0x60adcf*/
+    *((unsigned int *)v14 + 44) = 2; /*0x60adcf*/
     v17 = hWnd; /*0x60ade4*/
     GetClassNameA(hWnd, ClassName, 128); /*0x60ade8*/
     if ( !strcmp(ClassName, g_INI_Key_Edit) || !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x60ae37*/
       goto LABEL_85; /*0x60ae5c*/
     if ( !strcmp(ClassName, g_INI_Key_ListBox) && (v16 = 0, HashTable::Get(&g_DialogHashMap_Base, &v17, &v16)) ) /*0x60aeab*/
     {
-      v11 = *(_DWORD *)(v16 + 104) == 1; /*0x60aebc*/
+      v11 = *(unsigned int *)(v16 + 104) == 1; /*0x60aebc*/
     }
     else
     {
@@ -286,7 +284,7 @@ AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
     if ( *aP1 ) /*0x623583*/
     {
       v3 = wcslen(aP1); /*0x62358a*/
-      v4 = (wchar_t *)RA2_OPNEW(2 * v3 + 2); /*0x623594*/
+      v4 = (wchar_t *)new wchar_t; /*0x623594*/
       *(&this->vtable20) = v4; /*0x62359b*/
       wcscpy(v4, aP1); /*0x62359e*/
     }
@@ -299,8 +297,8 @@ int GadgetClass::Show()
 {
   int v1; // eax
 
-  v1 = *(_DWORD *)this; /*0x723ea0*/
-  *(this + 45) = 1; /*0x723ea2*/
+  v1 = *(unsigned int *)this; /*0x723ea0*/
+  this->q0B4 = 1; /*0x723ea2*/
   return (*(int (**)(void))(v1 + 72))();
 }
 }

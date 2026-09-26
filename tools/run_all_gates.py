@@ -18,6 +18,7 @@ def run_gate(name, args):
 gates = [
     ("code-standards", ["tools/check_translated_functions.py"]),
     ("ida-artifact",   ["tools/check_pointer_arithmetic.py", "src/", "app/"]),
+    ("oo-translation", ["tools/check_oo_translation.py"]),
     # exec-flow worker count: measured per-worker steady RSS is ~2.5GB
     # (signals.json + member_lookup.json parsed per spawn worker), so 4
     # workers = ~10GB, inside the 12GB memory discipline on the 32GB box.

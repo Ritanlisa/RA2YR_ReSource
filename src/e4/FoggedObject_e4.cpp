@@ -23,12 +23,11 @@ unsigned int * FoggedObject::DrawVector_Constructor(IUnknown * aP1, IUnknown * a
   this->q008 = aP1; /*0x4d2dc0*/
   this->u8_C = 1; /*0x4d2dc3*/
   this->u8_D = 0; /*0x4d2dc7*/
-  *(void ** *)this = (void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2dca*/
   if ( !aP1 ) /*0x4d2dd0*/
     return this; /*0x4d2e38*/
   if ( !aP2 ) /*0x4d2dd8*/
   {
-    v8 = (char *)RA2_OPNEW(16 * aP1); /*0x4d2e07*/
+    v8 = (char *)operator new(16 * aP1); /*0x4d2e07*/
     if ( v8 ) /*0x4d2e11*/
     {
       if ( aP1 - 1 >= 0 ) /*0x4d2e18*/
@@ -37,10 +36,10 @@ unsigned int * FoggedObject::DrawVector_Constructor(IUnknown * aP1, IUnknown * a
         aP1 = aP1; /*0x4d2e1d*/
         do /*0x4d2e2d*/
         {
-          *((_DWORD *)v9 - 2) = 0; /*0x4d2e1e*/
-          *((_DWORD *)v9 - 1) = 0; /*0x4d2e21*/
+          *((unsigned int *)v9 - 2) = 0; /*0x4d2e1e*/
+          *((unsigned int *)v9 - 1) = 0; /*0x4d2e21*/
           *v9 = 0; /*0x4d2e24*/
-          *((_DWORD *)v9 + 1) = 0; /*0x4d2e26*/
+          *((unsigned int *)v9 + 1) = 0; /*0x4d2e26*/
           v9 += 16; /*0x4d2e29*/
           --aP1; /*0x4d2e2c*/
         }
@@ -58,10 +57,10 @@ unsigned int * FoggedObject::DrawVector_Constructor(IUnknown * aP1, IUnknown * a
     aP1 = aP1; /*0x4d2de4*/
     do /*0x4d2df4*/
     {
-      *(_DWORD *)(v5 - 8) = 0; /*0x4d2de5*/
-      *(_DWORD *)(v5 - 4) = 0; /*0x4d2de8*/
-      *(_BYTE *)v5 = 0; /*0x4d2deb*/
-      *(_DWORD *)(v5 + 4) = 0; /*0x4d2ded*/
+      *(unsigned int *)(v5 - 8) = 0; /*0x4d2de5*/
+      *(unsigned int *)(v5 - 4) = 0; /*0x4d2de8*/
+      *(unsigned char *)v5 = 0; /*0x4d2deb*/
+      *(unsigned int *)(v5 + 4) = 0; /*0x4d2ded*/
       v5 += 16; /*0x4d2df0*/
       --aP1; /*0x4d2df3*/
     }
@@ -76,15 +75,14 @@ VectorClass_flat * FoggedObject_DrawVector::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(this + 1); /*0x4d2d13*/
-  *this = (void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2d16*/
-  if ( v3 && *((_BYTE *)this + 13) ) /*0x4d2d20*/
+  v3 = (void *)this->q004; /*0x4d2d13*/
+  if ( v3 && *(unsigned char *)&this->IsAllocated ) /*0x4d2d20*/
   {
     RA2_OPDEL(v3); /*0x4d2d28*/
-    *(this + 1) = 0; /*0x4d2d30*/
+    this->q004 = 0; /*0x4d2d30*/
   }
-  *((_BYTE *)this + 13) = 0; /*0x4d2d3b*/
-  *(this + 2) = 0; /*0x4d2d41*/
+  *(unsigned char *)&this->IsAllocated = 0; /*0x4d2d3b*/
+  this->q008 = 0; /*0x4d2d41*/
   if ( (a2 & 1) != 0 ) /*0x4d2d48*/
     RA2_OPDEL(); /*0x4d2d4b*/
   return this; /*0x4d2d55*/

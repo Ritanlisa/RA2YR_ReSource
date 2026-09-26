@@ -13,12 +13,12 @@ namespace gamemd {
 AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
 {
   int v3; // ebp
-  _DWORD *v5; // eax
-  _DWORD *v6; // ebx
-  _DWORD *v7; // esi
-  _DWORD *v8; // esi
+  unsigned int *v5; // eax
+  unsigned int *v6; // ebx
+  unsigned int *v7; // esi
+  unsigned int *v8; // esi
   int i; // esi
-  void (__thiscall ***v11)(_DWORD, int); // ecx
+  void (__thiscall ***v11)(unsigned int, int); // ecx
   int v12; // eax
 
   v3 = a2; /*0x76ba73*/
@@ -35,7 +35,6 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
         do /*0x76baf5*/
         {
           ComPtr::Constructor(v8); /*0x76bae6*/
-          *(void **)v8 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76baeb*/
           v8 += 2; /*0x76baf1*/
           --a2; /*0x76baf4*/
         }
@@ -46,7 +45,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = RA2_OPNEW(8 * a2 + 4); /*0x76ba97*/
+      v5 = operator new(8 * a2 + 4); /*0x76ba97*/
       if ( v5 ) /*0x76baa1*/
       {
         *v5 = a2; /*0x76baa3*/
@@ -77,10 +76,10 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
       if ( a2 >= this->Capacity ) /*0x76bb11*/
         v3 = this->Capacity; /*0x76bb13*/
       for ( i = 0; i < v3; ++i ) /*0x76bb19*/
-        ComPtr::Set(&v6[2 * i], *(_DWORD *)(this->q004 + 8 * i + 4)); /*0x76bb26*/
+        ComPtr::Set(&v6[2 * i], *(unsigned int *)(this->q004 + 8 * i + 4)); /*0x76bb26*/
       if ( *(&this->q0043) ) /*0x76bb30*/
       {
-        v11 = (void (__thiscall ***)(_DWORD, int))this->q004; /*0x76bb37*/
+        v11 = (void (__thiscall ***)(unsigned int, int))this->q004; /*0x76bb37*/
         if ( v11 ) /*0x76bb3c*/
           (**v11)(v11, 3); /*0x76bb42*/
         this->q004 = 0; /*0x76bb44*/
@@ -93,7 +92,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)&this->q0042))(this); /*0x76bb69*/
+    (*(void (__thiscall **)(unsigned char *))(((unsigned int)(this->q0042))))(this); /*0x76bb69*/
   }
   v12 = this->Capacity; /*0x76bb6c*/
   if ( v12 < this->q010 ) /*0x76bb74*/
@@ -105,10 +104,10 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
 namespace gamemd {
 int WDTState_4::ddtor()
 {
-  int (__thiscall ***v2)(_DWORD, int); // ecx
+  int (__thiscall ***v2)(unsigned int, int); // ecx
   int result; // eax
 
-  v2 = *(int (__thiscall ****)(_DWORD, int))(this + 4); /*0x76b716*/
+  v2 = *(int (__thiscall ****)(unsigned int, int))&this->q010; /*0x76b716*/
   this->q010 = 0; /*0x76b719*/
   if ( v2 && this->IsAllocated ) /*0x76b720*/
   {
@@ -138,13 +137,13 @@ int WDTState_4::Read(int a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x76bb90*/
   result = 0; /*0x76bb93*/
   if ( v2 <= 0 ) /*0x76bb98*/
     return -1; /*0x76bbb3*/
-  for ( i = (_DWORD *)(this->Items + 4); *i != *(_DWORD *)(a2 + 4); i += 2 ) /*0x76bba1*/
+  for ( i = (unsigned int *)(this->Items + 4); *i != *(unsigned int *)(a2 + 4); i += 2 ) /*0x76bba1*/
   {
     if ( ++result >= v2 ) /*0x76bbb1*/
       return -1; /*0x76bbb1*/
@@ -156,10 +155,9 @@ int WDTState_4::Read(int a2)
 namespace gamemd {
 DynamicVector * WDTState_4::QueryInterface(char a2)
 {
-  void (__thiscall ***v3)(_DWORD, int); // ecx
+  void (__thiscall ***v3)(unsigned int, int); // ecx
 
-  v3 = (void (__thiscall ***)(_DWORD, int))this->Items; /*0x76bc13*/
-  *(void **)this = (void*)&VectorClass_rc_ptr_WDTTerritory_vftable; /*0x76bc16*/
+  v3 = (void (__thiscall ***)(unsigned int, int))this->Items; /*0x76bc13*/
   if ( v3 && this->IsAllocated ) /*0x76bc20*/
   {
     (**v3)(v3, 3); /*0x76bc2f*/
@@ -178,7 +176,6 @@ namespace gamemd {
 unsigned int * WDTState_4::Constructor()
 {
   ComPtr::Constructor(); /*0x76bc63*/
-  *(void **)this = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76bc68*/
   return this; /*0x76bc70*/
 }
 } // namespace gamemd

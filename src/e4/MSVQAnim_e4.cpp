@@ -45,26 +45,24 @@ int MSVQAnim::Stub()
 namespace gamemd {
 MSVQAnim * MSVQAnim::QueryInterface(char a2)
 {
-  void (__thiscall ***v3)(_DWORD, int); // ecx
-  _DWORD **v4; // ecx
+  void (__thiscall ***v3)(unsigned int, int); // ecx
+  unsigned int **v4; // ecx
   void *v5; // edi
 
-  v3 = (void (__thiscall ***)(_DWORD, int))*(&this->q0040); /*0x5cecb3*/
-  *(void **)this = (void*)&MSVQAnim_vftable; /*0x5cecb6*/
+  v3 = (void (__thiscall ***)(unsigned int, int))*(&this->q0040); /*0x5cecb3*/
   if ( v3 ) /*0x5cecbe*/
     (**v3)(v3, 1); /*0x5cecc4*/
-  v4 = (_DWORD **)this->q01C; /*0x5cecc6*/
+  v4 = (unsigned int **)this->q01C; /*0x5cecc6*/
   if ( v4 ) /*0x5ceccc*/
   {
     MovieContext::Cleanup(v4); /*0x5cecce*/
     v5 = (void *)this->q01C; /*0x5cecd3*/
     if ( v5 ) /*0x5cecd8*/
     {
-      BinkMovie::Cleanup((_DWORD *)this->q01C); /*0x5cecdc*/
+      BinkMovie::Cleanup((unsigned int *)this->q01C); /*0x5cecdc*/
       RA2_OPDEL(v5); /*0x5cece2*/
     }
   }
-  *(void **)this = (void*)&MSAnim_vftable; /*0x5cecee*/
   if ( (a2 & 1) != 0 ) /*0x5cecf7*/
     RA2_OPDEL(); /*0x5cecfa*/
   return this; /*0x5ced04*/

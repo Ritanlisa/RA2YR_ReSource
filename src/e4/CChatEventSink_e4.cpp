@@ -40,7 +40,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
   int v22; // esi
   int v23; // esi
   char **v24; // ecx
-  _DWORD *v25; // esi
+  unsigned int *v25; // esi
   int v26; // esi
   HWND v27; // eax
   HWND v28; // eax
@@ -53,7 +53,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
   void *Block; // [esp+7Ch] [ebp-31Ch]
   void *v37; // [esp+80h] [ebp-318h] BYREF
   void *v38; // [esp+84h] [ebp-314h] BYREF
-  _DWORD v39[67]; // [esp+88h] [ebp-310h] BYREF
+  unsigned int v39[67]; // [esp+88h] [ebp-310h] BYREF
   char v40[516]; // [esp+194h] [ebp-204h] BYREF
 
   unknown_libname_73(&v32); /*0x7aa87e*/
@@ -71,7 +71,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
     }
     else
     {
-      if ( (unsigned __int8)CChatEventSink::Check(&v34, 0) ) /*0x7aa8e4*/
+      if ( (uint8_t)CChatEventSink::Check(&v34, 0) ) /*0x7aa8e4*/
         CChatEventSink::EnsureCapacity(0); /*0x7aa8f3*/
       if ( a2 < 0 ) /*0x7aa8fa*/
       {
@@ -115,11 +115,11 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
     {
       do /*0x7aae72*/
       {
-        if ( *(_DWORD *)v6 ) /*0x7aa99c*/
+        if ( *(unsigned int *)v6 ) /*0x7aa99c*/
         {
           if ( a2 == 262459 ) /*0x7aa9c3*/
           {
-            if ( *((_DWORD *)v6 + 10) != -1 ) /*0x7aa9cd*/
+            if ( *((unsigned int *)v6 + 10) != -1 ) /*0x7aa9cd*/
             {
               v7 = g_WOL_ChatState; /*0x7aa9d3*/
               v8 = 0; /*0x7aa9d8*/
@@ -145,7 +145,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
                     goto LABEL_88; /*0x7aaa40*/
                 }
                 Debug::Log(); /*0x7aaa54*/
-                *((_DWORD *)v8 + 10) = *((_DWORD *)a3 + 10); /*0x7aaa5f*/
+                *((unsigned int *)v8 + 10) = *((unsigned int *)a3 + 10); /*0x7aaa5f*/
               }
             }
           }
@@ -173,7 +173,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
               v6 = a3; /*0x7aaaec*/
               v15 = v39[10]; /*0x7aaaf3*/
               Debug::Log(); /*0x7aab01*/
-              *((_DWORD *)a3 + 10) = v15; /*0x7aab09*/
+              *((unsigned int *)a3 + 10) = v15; /*0x7aab09*/
             }
   LABEL_43:
             String::Assign_Bool(&v32, v6 + 52); /*0x7aab0c*/
@@ -231,12 +231,12 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
               }
               DeleteAndZero(&v37); /*0x7aac1e*/
             }
-            v20 = *((_DWORD *)g_WOL_ConnectionPool + (dword_B76548(&v32) & ((1 << dword_B7653C) - 1))); /*0x7aac42*/
+            v20 = *((unsigned int *)g_WOL_ConnectionPool + (dword_B76548(&v32) & ((1 << dword_B7653C) - 1))); /*0x7aac42*/
             if ( v20 ) /*0x7aac47*/
             {
               while ( !String::Compare((const char **)v20, (const char **)&v32) ) /*0x7aac57*/
               {
-                v20 = *(_DWORD *)(v20 + 8); /*0x7aac5d*/
+                v20 = *(unsigned int *)(v20 + 8); /*0x7aac5d*/
                 if ( !v20 ) /*0x7aac62*/
                   goto LABEL_66; /*0x7aac62*/
               }
@@ -294,14 +294,14 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
               }
               DeleteAndZero(&v38); /*0x7aad3b*/
             }
-            v25 = (_DWORD *)g_WOL_HashTable; /*0x7aad40*/
-            v26 = *(_DWORD *)(*v25 /*0x7aad5c*/
+            v25 = (unsigned int *)g_WOL_HashTable; /*0x7aad40*/
+            v26 = *(unsigned int *)(*v25 /*0x7aad5c*/
                             + 4 * ((*(int (__thiscall **)(void **))(g_WOL_HashTable + 24))(&v32) & ((1 << v25[3]) - 1)));
             if ( v26 ) /*0x7aad61*/
             {
               while ( !String::Compare((const char **)v26, (const char **)&v32) ) /*0x7aad71*/
               {
-                v26 = *(_DWORD *)(v26 + 112); /*0x7aad73*/
+                v26 = *(unsigned int *)(v26 + 112); /*0x7aad73*/
                 if ( !v26 ) /*0x7aad78*/
                   goto LABEL_87; /*0x7aad78*/
               }
@@ -322,7 +322,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
   LABEL_88:
         if ( v33 > 20 ) /*0x7aadee*/
         {
-          (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, _DWORD, _DWORD))(*(_DWORD *)g_UIPointerTable + 20))( /*0x7aae1f*/
+          (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(*(unsigned int *)g_UIPointerTable + 20))( /*0x7aae1f*/
             g_UIPointerTable,
             g_WOL_ConnectFlag,
             g_WOL_GameConfig,
@@ -331,7 +331,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
             -1,
             0,
             0);
-          (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(*(_DWORD *)g_UIPointerTable + 56))( /*0x7aae4b*/
+          (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(*(unsigned int *)g_UIPointerTable + 56))( /*0x7aae4b*/
             g_UIPointerTable,
             g_WOL_ConnectFlag,
             g_WOL_GameConfig,
@@ -340,13 +340,13 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
           v33 = 0; /*0x7aae5c*/
           memset(v40, 0, 0x200u); /*0x7aae64*/
         }
-        v6 = (const char *)*((_DWORD *)v6 + 12); /*0x7aae66*/
+        v6 = (const char *)*((unsigned int *)v6 + 12); /*0x7aae66*/
         a3 = v6; /*0x7aae6b*/
       }
       while ( v6 ); /*0x7aae72*/
       if ( v33 ) /*0x7aae7e*/
       {
-        (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, _DWORD, _DWORD))(*(_DWORD *)g_UIPointerTable + 20))( /*0x7aaead*/
+        (*(void (__stdcall **)(LPVOID, char *, int, char *, int, int, unsigned int, unsigned int))(*(unsigned int *)g_UIPointerTable + 20))( /*0x7aaead*/
           g_UIPointerTable,
           g_WOL_ConnectFlag,
           g_WOL_GameConfig,
@@ -355,7 +355,7 @@ Coord * * CChatEventSink::HandleChatChannelList(int a1, int a2, const char * a3)
           -1,
           0,
           0);
-        (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(*(_DWORD *)g_UIPointerTable + 56))( /*0x7aaed9*/
+        (*(void (__stdcall **)(LPVOID, char *, int, char *, int))(*(unsigned int *)g_UIPointerTable + 56))( /*0x7aaed9*/
           g_UIPointerTable,
           g_WOL_ConnectFlag,
           g_WOL_GameConfig,
@@ -420,7 +420,7 @@ int CChatEventSink::GrowBuffer()
     v5 = 10; /*0x7ad956*/
   if ( v5 >= v3 ) /*0x7ad95d*/
     return 0; /*0x7ad960*/
-  v6 = RA2_OPNEW(268 * v5); /*0x7ad974*/
+  v6 = operator new(268 * v5); /*0x7ad974*/
   v7 = (const void *)this->u32_8; /*0x7ad979*/
   v8 = (int)v6; /*0x7ad981*/
   if ( v7 ) /*0x7ad985*/
@@ -447,7 +447,7 @@ int CChatEventSink::ProcessChatEvent()
   v4 = 2 * v2; /*0x7aed53*/
   if ( 2 * v2 < 10 ) /*0x7aed5b*/
     v4 = 10; /*0x7aed5d*/
-  v5 = RA2_OPNEW(248 * v4); /*0x7aed72*/
+  v5 = operator new(248 * v4); /*0x7aed72*/
   memset(v5, 0, 4 * ((unsigned int)(248 * v4) >> 2)); /*0x7aed7d*/
   v7 = (int)v5; /*0x7aed87*/
   v6 = (const void *)this->u32_8; /*0x7aed8d*/
@@ -465,7 +465,7 @@ int CChatEventSink::Check(unsigned int * a2, int a3)
 {
   if ( a3 < 0 || a3 >= *this ) /*0x7aee9a*/
     return 0; /*0x7aeead*/
-  *a2 = *(_DWORD *)(this->u32_8 + 4 * a3); /*0x7aeea6*/
+  *a2 = *(unsigned int *)(this->u32_8 + 4 * a3); /*0x7aeea6*/
   return 1; /*0x7aeeaa*/
 }
 } // namespace gamemd
@@ -499,8 +499,8 @@ char CChatEventSink::EnsureCapacity(int a2)
   const void *v10; // esi
   void *v11; // [esp+Ch] [ebp+4h]
 
-  v3 = *(_DWORD *)this; /*0x7aedd4*/
-  if ( !*(_DWORD *)this ) /*0x7aedd4*/
+  v3 = *(unsigned int *)this; /*0x7aedd4*/
+  if ( !*(unsigned int *)this ) /*0x7aedd4*/
     return 0; /*0x7aeddb*/
   v5 = a2; /*0x7aede1*/
   if ( a2 < 0 ) /*0x7aede7*/
@@ -508,12 +508,12 @@ char CChatEventSink::EnsureCapacity(int a2)
   if ( v5 >= v3 ) /*0x7aeded*/
     v5 = v3 - 1; /*0x7aedef*/
   memcpy( /*0x7aee0f*/
-    (void *)(*((_DWORD *)this + 2) + 4 * v5),
-    (const void *)(*((_DWORD *)this + 2) + 4 * (v5 + 1)),
+    (void *)(this->u32_8 + 4 * v5),
+    (const void *)(this->u32_8 + 4 * (v5 + 1)),
     4 * (v3 + 0x3FFFFFFF * (v5 + 1)));
-  v6 = *(_DWORD *)this - 1; /*0x7aee1a*/
-  *(_DWORD *)this = v6; /*0x7aee1c*/
-  v7 = *((_DWORD *)this + 1); /*0x7aee1e*/
+  v6 = *(unsigned int *)this - 1; /*0x7aee1a*/
+  *(unsigned int *)this = v6; /*0x7aee1c*/
+  v7 = this->q004; /*0x7aee1e*/
   if ( 3 * v6 <= v7 ) /*0x7aee26*/
   {
     v8 = v7 / 2; /*0x7aee2f*/
@@ -521,14 +521,14 @@ char CChatEventSink::EnsureCapacity(int a2)
       v8 = 10; /*0x7aee36*/
     if ( v8 < v7 ) /*0x7aee3d*/
     {
-      v9 = RA2_OPNEW(4 * v8); /*0x7aee47*/
-      v10 = (const void *)*((_DWORD *)this + 2); /*0x7aee4c*/
+      v9 = operator new(4 * v8); /*0x7aee47*/
+      v10 = (const void *)this->u32_8; /*0x7aee4c*/
       v11 = v9; /*0x7aee54*/
       if ( v10 ) /*0x7aee58*/
-        qmemcpy(v9, v10, 4 * *(_DWORD *)this); /*0x7aee66*/
-      RA2_OPDEL(*((void **)this + 2)); /*0x7aee73*/
-      *((_DWORD *)this + 2) = v11; /*0x7aee7f*/
-      *((_DWORD *)this + 1) = v8; /*0x7aee82*/
+        qmemcpy(v9, v10, 4 * *(unsigned int *)this); /*0x7aee66*/
+      RA2_OPDEL(this->u32_8); /*0x7aee73*/
+      this->u32_8 = v11; /*0x7aee7f*/
+      this->q004 = v8; /*0x7aee82*/
     }
   }
   return 1; /*0x7aedda*/
@@ -558,7 +558,7 @@ char CChatEventSink::EncodeString(char a2)
   v7 = &g_INI_DefaultBuffer; /*0x7b5e63*/
   if ( *this ) /*0x7b5e58*/
     v7 = (char *)*this; /*0x7b5e6a*/
-  v8 = (char *)RA2_OPNEW(v5 + 1); /*0x7b5e70*/
+  v8 = (char *)operator new(v5 + 1); /*0x7b5e70*/
   v9 = v8; /*0x7b5e75*/
   *v8 = 0; /*0x7b5e7c*/
   if ( v7 ) /*0x7b5e80*/
@@ -569,12 +569,12 @@ char CChatEventSink::EncodeString(char a2)
     v10 = v9; /*0x7b5e9a*/
   if ( *this ) /*0x7b5e9c*/
     RA2_OPDEL(); /*0x7b5ea3*/
-  *(_DWORD *)this = 0; /*0x7b5ead*/
+  *(unsigned int *)this = 0; /*0x7b5ead*/
   if ( v10 ) /*0x7b5eb3*/
     v11 = strlen(v10) + 1; /*0x7b5ebc*/
   else
     v11 = 1; /*0x7b5ec2*/
-  v12 = (const char *)RA2_OPNEW(v11); /*0x7b5ec8*/
+  v12 = (const char *)operator new(v11); /*0x7b5ec8*/
   *this = v12; /*0x7b5ed0*/
   *v12 = 0; /*0x7b5ed4*/
   if ( v10 ) /*0x7b5ed7*/

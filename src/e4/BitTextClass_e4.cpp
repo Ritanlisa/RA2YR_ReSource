@@ -13,10 +13,9 @@ namespace gamemd {
 int BitTextClass::ParseFontData(char * Source)
 {
   struct tagRECT *v3; // ebp
-  _DWORD *Font; // eax
+  unsigned int *Font; // eax
 
   v3 = (struct tagRECT *)(&this->u32_108); /*0x43388a*/
-  *(void **)this = (void*)&BitFont_vftable; /*0x433895*/
   this->m_CharWidth = 0; /*0x43389b*/
   this->u16_24 = 0x7FFF; /*0x43389e*/
   this->u16_26 = 13653; /*0x4338a4*/
@@ -61,8 +60,7 @@ int BitTextClass::ParseFontData(char * Source)
 namespace gamemd {
 unsigned int * BitTextClass::LoadFont()
 {
-  *(void **)this = (void*)&BitText_vftable; /*0x434ad5*/
-  if ( RA2_OPNEW(0x44u) ) /*0x434adb*/
+  if ( operator new(0x44u) ) /*0x434adb*/
   {
     g_FogOfWarState = BitTextClass::ParseFontData(aGameFnt); /*0x434af3*/
     return this; /*0x434af8*/

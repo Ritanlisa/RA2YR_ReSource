@@ -37,8 +37,6 @@ int FlyLocomotionClass::LocomotionClass()
   this->FlyLocomotionClass_field_54 = 0; /*0x4cca03*/
   this->FlyLocomotionClass_field_58 = 0; /*0x4cca06*/
   this->IsElevating = 0; /*0x4cca09*/
-  *(void **)this = (void*)&FlyLocomotionClass_vftable; /*0x4cca0c*/
-  this->vtable2 = (void*)&FlyLocomotionClass_vftable; /*0x4cca12*/
   this->ptr_30 = dword_8B3C80; /*0x4cca1b*/
   return this; /*0x4cca1e*/
 }
@@ -51,9 +49,9 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   int i; // edi
   int v4; // esi
   int v5; // eax
-  _DWORD *v6; // ecx
+  unsigned int *v6; // ecx
   int v7; // eax
-  _DWORD *v8; // esi
+  unsigned int *v8; // esi
   int v9; // edx
   void* v10;
   void *Block; // [esp+10h] [ebp-2Ch]
@@ -69,57 +67,55 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   int v21; // [esp+38h] [ebp-4h]
   char v22; // [esp+40h] [ebp+4h]
 
-  if ( *(_DWORD *)(*(_DWORD *)(a1 + 8) + 692) ) /*0x4cfe8e*/
+  if ( *(unsigned int *)(*(unsigned int *)(a1 + 8) + 692) ) /*0x4cfe8e*/
     return; /*0x4cfe94*/
   ObjectVector::Construct(&v16, 0, 0); /*0x4cfea2*/
-  v16 = (void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4cfeb7*/
   v21 = 10; /*0x4cfebb*/
   v20 = 0; /*0x4cfebf*/
   ObjectVector::Construct(&v10, 0, 0); /*0x4cfec3*/
-  v10 = (void*)&DynamicVectorClass_ObjectClass___vftable; /*0x4cfecd*/
   v15 = 10; /*0x4cfed3*/
   v14 = 0; /*0x4cfed7*/
   if ( !g_GameMode_Current[0] /*0x4cfeef*/
-    || (v2 = *(_DWORD *)(*(_DWORD *)(a1 + 8) + 540), *(_DWORD *)(v2 + 22016) == -1)
-    || (v22 = 1, (unsigned __int8)House::IsCurrentPlayer((void *)v2)) )
+    || (v2 = *(unsigned int *)(*(unsigned int *)(a1 + 8) + 540), *(unsigned int *)(v2 + 22016) == -1)
+    || (v22 = 1, (uint8_t)House::IsCurrentPlayer((void *)v2)) )
   {
     v22 = 0; /*0x4cfefd*/
   }
   for ( i = g_SidebarState - 1; i >= 0; --i ) /*0x4cff0c*/
   {
-    v4 = *((_DWORD *)g_TechnoClass_Count + i); /*0x4cff17*/
+    v4 = *((unsigned int *)g_TechnoClass_Count + i); /*0x4cff17*/
     if ( v22 ) /*0x4cff20*/
     {
-      if ( *(_DWORD *)(v4 + 540) != *(_DWORD *)&HouseClass_Array->gap0[4 /*0x4cff5e*/
-                                                                     * *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(a1 + 8) + 540)
+      if ( *(unsigned int *)(v4 + 540) != *(unsigned int *)&HouseClass_Array->gap0[4 /*0x4cff5e*/
+                                                                     * *(unsigned int *)(*(unsigned int *)(*(unsigned int *)(a1 + 8) + 540)
                                                                                  + 22016)] )
         continue; /*0x4cff5e*/
     }
-    else if ( (unsigned __int8)HouseClass::IsAlliedWith(*(void **)(*(_DWORD *)(a1 + 8) + 540), *(void **)(v4 + 540)) ) /*0x4cff32*/
+    else if ( (uint8_t)HouseClass::IsAlliedWith(*(void **)(*(unsigned int *)(a1 + 8) + 540), *(void **)(v4 + 540)) ) /*0x4cff32*/
     {
       continue; /*0x4cff39*/
     }
     if ( *(int *)(v4 + 108) > 0 /*0x4cffd0*/
-      && !*(_BYTE *)(v4 + 129)
-      && *(_BYTE *)(v4 + 144)
-      && !*(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v4 + 132))(v4) + 3226)
-      && *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)v4 + 132))(v4) + 561)
-      && ((*(_DWORD *)g_ScenarioClass_Instance & 0x800) == 0
-       || (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) != 1
-       || !*(_BYTE *)(*(_DWORD *)(v4 + 1732) + 3598)) )
+      && !*(unsigned char *)(v4 + 129)
+      && *(unsigned char *)(v4 + 144)
+      && !*(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)v4 + 132))(v4) + 3226)
+      && *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)v4 + 132))(v4) + 561)
+      && ((*(unsigned int *)g_ScenarioClass_Instance & 0x800) == 0
+       || (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) != 1
+       || !*(unsigned char *)(*(unsigned int *)(v4 + 1732) + 3598)) )
     {
       if ( g_GameMode_Current[0] /*0x4d003d*/
-        && (unsigned __int8)House::IsCurrentPlayer(*(void **)(*(_DWORD *)(a1 + 8) + 540))
-        && !*(_BYTE *)(*(_DWORD *)(*(_DWORD *)(v4 + 540) + 52) + 422)
-        && ((*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 1
-         || (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 6
-         || (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 15
-         || (*(int (__thiscall **)(int))(*(_DWORD *)v4 + 44))(v4) == 2) )
+        && (uint8_t)House::IsCurrentPlayer(*(void **)(*(unsigned int *)(a1 + 8) + 540))
+        && !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)(v4 + 540) + 52) + 422)
+        && ((*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) == 1
+         || (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) == 6
+         || (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) == 15
+         || (*(int (__thiscall **)(int))(*(unsigned int *)v4 + 44))(v4) == 2) )
       {
         if ( v14 >= v12 /*0x4d0069*/
           && (!v13 && v12
            || v15 <= 0
-           || !((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v10[2])(&v10, v15 + v12, 0)) )
+           || !((uint8_t (__thiscall *)(void ***, int, unsigned int))v10[2])(&v10, v15 + v12, 0)) )
         {
           continue; /*0x4d006e*/
         }
@@ -131,7 +127,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
         if ( v20 >= v18 /*0x4d00ab*/
           && (!v19 && v18
            || v21 <= 0
-           || !((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v16[2])(&v16, v21 + v18, 0)) )
+           || !((uint8_t (__thiscall *)(void ***, int, unsigned int))v16[2])(&v16, v21 + v18, 0)) )
         {
           continue; /*0x4d00b0*/
         }
@@ -145,25 +141,23 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   {
     if ( v20 <= 0 ) /*0x4d00f8*/
       goto LABEL_45; /*0x4d00f8*/
-    v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v20 - 1); /*0x4d0109*/
+    v7 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, v20 - 1); /*0x4d0109*/
     v8 = v17; /*0x4d0111*/
-    v9 = **(_DWORD **)(a1 + 8); /*0x4d0115*/
+    v9 = **(unsigned int **)(a1 + 8); /*0x4d0115*/
   }
   else
   {
-    v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, v14 - 1); /*0x4d00e2*/
+    v7 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, v14 - 1); /*0x4d00e2*/
     v8 = Block; /*0x4d00ea*/
-    v9 = **(_DWORD **)(a1 + 8); /*0x4d00ee*/
+    v9 = **(unsigned int **)(a1 + 8); /*0x4d00ee*/
   }
-  (*(void (__stdcall **)(_DWORD))(v9 + 968))(v8[v7]); /*0x4d011b*/
+  (*(void (__stdcall **)(unsigned int))(v9 + 968))(v8[v7]); /*0x4d011b*/
   LABEL_45:
-  v10 = (void*)&VectorClass_ObjectClass___vftable; /*0x4d0121*/
   if ( Block && v13 ) /*0x4d0136*/
   {
     RA2_OPDEL(Block); /*0x4d0139*/
     Block = 0; /*0x4d0141*/
   }
-  v16 = (void*)&VectorClass_ObjectClass___vftable; /*0x4d0149*/
   v13 = 0; /*0x4d0150*/
   v12 = 0; /*0x4d0154*/
   if ( v17 ) /*0x4d0159*/
@@ -215,8 +209,6 @@ int FlyLocomotionClass::StubReturn96()
 namespace gamemd {
 FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 {
-  *(void **)this = (void*)&FlyLocomotionClass_vftable; /*0x4d03a3*/
-  *(this + 1) = (void*)&FlyLocomotionClass_vftable; /*0x4d03a9*/
   LocomotionClass::Construct(); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
     RA2_OPDEL(); /*0x4d03bd*/

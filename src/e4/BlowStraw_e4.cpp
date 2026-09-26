@@ -59,8 +59,8 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
     this->vt_slot_56(0); /*0x6d06ba*/
   }
   LABEL_6:
-  v7 = *((_DWORD *)dword_B0FC58 + 1); /*0x6d06bd*/
-  if ( *a2 >= *(_DWORD *)dword_B0FC58 && *a2 < *(_DWORD *)dword_B0FC58 + g_Map_VisibleRectOffset ) /*0x6d06dd*/
+  v7 = *((unsigned int *)dword_B0FC58 + 1); /*0x6d06bd*/
+  if ( *a2 >= *(unsigned int *)dword_B0FC58 && *a2 < *(unsigned int *)dword_B0FC58 + g_Map_VisibleRectOffset ) /*0x6d06dd*/
   {
     v8 = a2[1]; /*0x6d06df*/
     if ( v8 >= v7 && v8 < v7 + 30 ) /*0x6d06f2*/
@@ -80,7 +80,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
         {
           FontClassEntry = GetFontClassEntry(i); /*0x6d088a*/
           if ( FontClassEntry ) /*0x6d0891*/
-            HashTable::Remove((int *)g_TacticalRender, *((_DWORD *)FontClassEntry + 9)); /*0x6d089d*/
+            HashTable::Remove((int *)g_TacticalRender, *((unsigned int *)FontClassEntry + 9)); /*0x6d089d*/
         }
         HashTable::Remove((int *)g_TacticalRender, 240); /*0x6d08b3*/
         v16 = *this; /*0x6d08b8*/
@@ -191,7 +191,7 @@ CellStruct * * sub_731AF0()
   int v2; // ecx
   unsigned int v3;
   int v4; // esi
-  _BYTE *v5; // ecx
+  unsigned char *v5; // ecx
   wchar_t *v6; // eax
   int v7; // ecx
 
@@ -201,7 +201,7 @@ CellStruct * * sub_731AF0()
     StringCSF = GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 856); /*0x731b0d*/
     v2 = 3; /*0x731b18*/
     if ( HouseClass_Player ) /*0x731b1f*/
-      v2 = *((_DWORD *)HouseClass_Player + 22549); /*0x731b21*/
+      v2 = *((unsigned int *)HouseClass_Player + 22549); /*0x731b21*/
     result = (wchar_t *)MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v2, 16454, 240, 1); /*0x731b3e*/
     goto LABEL_5; /*0x731b3e*/
   }
@@ -216,13 +216,13 @@ CellStruct * * sub_731AF0()
   while ( 1 ) /*0x731b56*/
   {
     result = (wchar_t *)g_ObjectClass_CurrentCount; /*0x731b56*/
-    v5 = (_BYTE *)*((_DWORD *)g_ObjectClass_CurrentCount + v4); /*0x731b5b*/
+    v5 = (unsigned char *)*((unsigned int *)g_ObjectClass_CurrentCount + v4); /*0x731b5b*/
     if ( v5 ) /*0x731b60*/
     {
       if ( (v5[20] & 1) != 0 ) /*0x731b6c*/
       {
-        result = (wchar_t *)(*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v5 + 1216))(v5); /*0x731b70*/
-        if ( !(_BYTE)result ) /*0x731b78*/
+        result = (wchar_t *)(*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v5 + 1216))(v5); /*0x731b70*/
+        if ( !(unsigned char)result ) /*0x731b78*/
           break; /*0x731b78*/
       }
     }
@@ -235,7 +235,7 @@ CellStruct * * sub_731AF0()
   v6 = GetStringCSF(aMsgAttackmoveu, 0, g_Str_File_UICmnds_cpp, 862); /*0x731b9b*/
   v7 = 3; /*0x731ba6*/
   if ( HouseClass_Player ) /*0x731bad*/
-    v7 = *((_DWORD *)HouseClass_Player + 22549); /*0x731baf*/
+    v7 = *((unsigned int *)HouseClass_Player + 22549); /*0x731baf*/
   return (wchar_t *)MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, v6, v7, 16454, 240, 1); /*0x731b43*/
 }
 }

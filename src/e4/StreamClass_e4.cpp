@@ -13,7 +13,7 @@
 namespace gamemd {
 int StreamClass::WriteBytes(unsigned short a2, char a3, int a4, int a5, int a6)
 {
-  return (*(int (__thiscall **)(_DWORD, char *, _DWORD))(*this->q014 + 20))(this->q014, &a3, a2); /*0x411328*/
+  return (*(int (__thiscall **)(unsigned int, char *, unsigned int))(*this->q014 + 20))(this->q014, &a3, a2); /*0x411328*/
 }
 } // namespace gamemd
 // 0x4114B0
@@ -23,8 +23,8 @@ unsigned int StreamClass::ReadAndSeek(MouseClass * aP1, MouseClass * aP2)
   int v4; // edi
   char * result;
 
-  v4 = (*(int (__thiscall **)(_DWORD, int, int))(**(_DWORD **)(&this->u32_80) + 92))(this->q014, aP1, aP2); /*0x4114c9*/
-  (*(void (__thiscall **)(_DWORD))(**(_DWORD **)(&this->u32_80) + 96))(this->q014); /*0x4114cd*/
+  v4 = (*(int (__thiscall **)(unsigned int, int, int))(**(unsigned int **)(&this->u32_80) + 92))(this->q014, aP1, aP2); /*0x4114c9*/
+  (*(void (__thiscall **)(unsigned int))(**(unsigned int **)(&this->u32_80) + 96))(this->q014); /*0x4114cd*/
   result = v4 + this->StreamClass_field_0C; /*0x4114d6*/
   if ( result >= this->u32_1C ) /*0x4114da*/
     result -= this->q020; /*0x4114dc*/
@@ -36,25 +36,25 @@ namespace gamemd {
 int StreamClass::Set2(unsigned int * a2)
 {
   int v3; // edi
-  _DWORD *v5; // ebx
+  unsigned int *v5; // ebx
   int v6; // eax
 
   if ( *a2 ) /*0x45aea8*/
   {
-    v3 = (**(int (__stdcall ***)(_DWORD, void *, _DWORD **))*a2)(*a2, &unk_818858, &a2); /*0x45aebd*/
+    v3 = (**(int (__stdcall ***)(unsigned int, void *, unsigned int **))*a2)(*a2, &unk_818858, &a2); /*0x45aebd*/
     if ( v3 >= 0 ) /*0x45aec1*/
     {
       v5 = a2; /*0x45aedf*/
       if ( *this ) /*0x45aedc*/
-        (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*this + 8))(*this); /*0x45aeea*/
+        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*&this->u32_8))(*this); /*0x45aeea*/
       *this = v5; /*0x45aeed*/
       return v3; /*0x45aef0*/
     }
     else
     {
       if ( *this ) /*0x45aec3*/
-        (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*this + 8))(*this); /*0x45aecc*/
-      *(_DWORD *)this = 0; /*0x45aed1*/
+        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*&this->u32_8))(*this); /*0x45aecc*/
+      *(unsigned int *)this = 0; /*0x45aed1*/
       return v3; /*0x45aecf*/
     }
   }
@@ -63,8 +63,8 @@ int StreamClass::Set2(unsigned int * a2)
     v6 = *this; /*0x45aef7*/
     if ( *this ) /*0x45aef7*/
     {
-      *(_DWORD *)this = 0; /*0x45aefd*/
-      (*(void (__stdcall **)(int))(*(_DWORD *)v6 + 8))(v6); /*0x45af06*/
+      *(unsigned int *)this = 0; /*0x45aefd*/
+      (*(void (__stdcall **)(int))(*(unsigned int *)v6 + 8))(v6); /*0x45af06*/
     }
     return -2147467262; /*0x45af0e*/
   }
@@ -75,25 +75,25 @@ namespace gamemd {
 int StreamClass::Set(IUnknown * aP1)
 {
   int v3; // edi
-  _DWORD *v5; // ebx
+  unsigned int *v5; // ebx
   int v6; // eax
 
   if ( *aP1 ) /*0x45af28*/
   {
-    v3 = (**(int (__stdcall ***)(_DWORD, void *, _DWORD **))*aP1)(*aP1, &unk_819088, &aP1); /*0x45af3d*/
+    v3 = (**(int (__stdcall ***)(unsigned int, void *, unsigned int **))*aP1)(*aP1, &unk_819088, &aP1); /*0x45af3d*/
     if ( v3 >= 0 ) /*0x45af41*/
     {
       v5 = aP1; /*0x45af5f*/
       if ( *this ) /*0x45af5c*/
-        (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*this + 8))(*this); /*0x45af6a*/
+        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*&this->u32_8))(*this); /*0x45af6a*/
       *this = v5; /*0x45af6d*/
       return v3; /*0x45af70*/
     }
     else
     {
       if ( *this ) /*0x45af43*/
-        (*(void (__stdcall **)(_DWORD))(*(_DWORD *)*this + 8))(*this); /*0x45af4c*/
-      *(_DWORD *)this = 0; /*0x45af51*/
+        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*&this->u32_8))(*this); /*0x45af4c*/
+      *(unsigned int *)this = 0; /*0x45af51*/
       return v3; /*0x45af4f*/
     }
   }
@@ -102,8 +102,8 @@ int StreamClass::Set(IUnknown * aP1)
     v6 = *this; /*0x45af77*/
     if ( *this ) /*0x45af77*/
     {
-      *(_DWORD *)this = 0; /*0x45af7d*/
-      (*(void (__stdcall **)(int))(*(_DWORD *)v6 + 8))(v6); /*0x45af86*/
+      *(unsigned int *)this = 0; /*0x45af7d*/
+      (*(void (__stdcall **)(int))(*(unsigned int *)v6 + 8))(v6); /*0x45af86*/
     }
     return -2147467262; /*0x45af8e*/
   }
@@ -120,7 +120,7 @@ BOOL StreamClass::IsInactive(IUnknown * aP0)
 namespace gamemd {
 int StreamClass::Vt32Thunk(int a1)
 {
-  return (*(int (__stdcall **)(int))(*(_DWORD *)a1 + 128))(a1); /*0x4b4c5d*/
+  return (*(int (__stdcall **)(int))(*(unsigned int *)a1 + 128))(a1); /*0x4b4c5d*/
 }
 } // namespace gamemd
 // 0x55A710
@@ -137,7 +137,7 @@ namespace gamemd {
 int StreamClass::SetDirty(unsigned char * a1)
 {
   a1[12] = 1; /*0x55a8f5*/
-  return (*(int (__stdcall **)(_BYTE *))(*(_DWORD *)a1 + 96))(a1); /*0x55a8fe*/
+  return (*(int (__stdcall **)(unsigned char *))(*(unsigned int *)a1 + 96))(a1); /*0x55a8fe*/
 }
 } // namespace gamemd
 // 0x55A910
@@ -145,13 +145,13 @@ namespace gamemd {
 int StreamClass::ClearDirty(unsigned char * a1)
 {
   a1[12] = 0; /*0x55a915*/
-  return (*(int (__stdcall **)(_BYTE *))(*(_DWORD *)a1 + 96))(a1); /*0x55a91e*/
+  return (*(int (__stdcall **)(unsigned char *))(*(unsigned int *)a1 + 96))(a1); /*0x55a91e*/
 }
 } // namespace gamemd
 // 0x55A930
 namespace gamemd {
 char StreamClass::GetDirty(int a1)
 {
-  return *(_BYTE *)(a1 + 12); /*0x55a937*/
+  return *(unsigned char *)(a1 + 12); /*0x55a937*/
 }
 } // namespace gamemd

@@ -10,6 +10,6 @@
 namespace gamemd {
 int SuperWeapon::GetField10()
 {
-  return *(_BYTE *)(*(&this->q0040) + 230); /*0x6cc2a9*/
+  return *(unsigned char *)(*(&this->q0040) + 230); /*0x6cc2a9*/
 }
 }

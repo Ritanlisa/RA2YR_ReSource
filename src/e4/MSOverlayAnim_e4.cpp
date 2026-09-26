@@ -20,14 +20,12 @@ MSShapeAnim * MSOverlayAnim::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->u32_1C; /*0x5ceb83*/
-  *(void **)this = (void*)&MSShapeAnim_vftable; /*0x5ceb86*/
   if ( v3 && this->q03C ) /*0x5ceb90*/
   {
     RA2_OPDEL(v3); /*0x5ceb98*/
     this->u32_1C = 0; /*0x5ceba0*/
     this->q03C = 0; /*0x5ceba7*/
   }
-  *(void **)this = (void*)&MSAnim_vftable; /*0x5cebaf*/
   if ( (a2 & 1) != 0 ) /*0x5cebb7*/
     RA2_OPDEL(); /*0x5cebba*/
   return this; /*0x5cebc4*/

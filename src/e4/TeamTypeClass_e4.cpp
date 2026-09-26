@@ -44,7 +44,6 @@ int TeamTypeClass::Construct()
   this->taskForceCapacity = 0; /*0x4c98dd*/
   this->q04C = 1; /*0x4c98e0*/
   this->u8_4D = 0; /*0x4c98e3*/
-  this->taskForce = (void*)&DynamicVectorClass_TechnoTypeClass_const___vftable; /*0x4c98e6*/
   this->q054 = 10; /*0x4c98ed*/
   this->q050 = 0; /*0x4c98f4*/
   this->TeamTypeClass_field_71 = 1; /*0x4c98f7*/
@@ -56,21 +55,17 @@ int TeamTypeClass::Construct()
   this->TeamTypeClass_field_68 = -1; /*0x4c990d*/
   this->TeamTypeClass_field_6C = 0; /*0x4c9914*/
   this->TeamTypeClass_field_70 = 0; /*0x4c9917*/
-  *(void **)this = (void*)&FactoryClass_vftable; /*0x4c991a*/
-  this->vtable2 = (void*)&FactoryClass_vftable; /*0x4c9920*/
-  this->vtable3 = (void*)&FactoryClass_vftable; /*0x4c9926*/
-  this->vtable4 = (void*)&FactoryClass_vftable; /*0x4c992d*/
   this->vtable2.GenerateUniqueID(); /*0x4c9934*/
   if ( g_TeamTypeCapacity < dword_A83E38 /*0x4c996d*/
     || (byte_A83E3D || !dword_A83E38)
     && dword_A83E44 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_A83E30 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A83E30 + 8))(
          &dword_A83E30,
          dword_A83E38 + dword_A83E44,
          0) )
   {
     v3 = g_TeamTypeCapacity++; /*0x4c997a*/
-    *((_DWORD *)g_TeamTypeCount + v3) = this; /*0x4c9989*/
+    *((unsigned int *)g_TeamTypeCount + v3) = this; /*0x4c9989*/
   }
   g_CurrentFrame = g_CurrentFrame; /*0x4c998c*/
   this->TeamTypeClass_field_38 = 0; /*0x4c9996*/
@@ -81,13 +76,13 @@ int TeamTypeClass::Construct()
   if ( g_AlphaShapePool < dword_B0F728 /*0x4c99dc*/
     || (byte_B0F72D || !dword_B0F728)
     && dword_B0F734 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(AbstractClass_Array + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(AbstractClass_Array + 8))(
          &AbstractClass_Array,
          dword_B0F728 + dword_B0F734,
          0) )
   {
     v5 = g_AlphaShapePool++; /*0x4c99e9*/
-    *((_DWORD *)dword_B0F724 + v5) = this; /*0x4c99f8*/
+    *((unsigned int *)dword_B0F724 + v5) = this; /*0x4c99f8*/
   }
   return this; /*0x4c99fd*/
 }
@@ -97,7 +92,7 @@ namespace gamemd {
 void * TeamTypeClass::CreateScriptType()
 {
   int v2; // esi
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   void** v4;
   int v5; // ecx
   char v6; // al
@@ -110,22 +105,18 @@ void * TeamTypeClass::CreateScriptType()
   if ( g_MultiplayerDebugState <= 0 ) /*0x691c39*/
   {
   LABEL_6:
-    v3 = RA2_OPNEW(0x234u); /*0x691c62*/
+    v3 = operator new(0x234u); /*0x691c62*/
     v4 = v3; /*0x691c6c*/
     if ( v3 ) /*0x691c73*/
     {
       AbstractTypeClass::Constructor((int)v3, Source); /*0x691c7c*/
       v4[39] = 0; /*0x691c81*/
       v4[40] = 0; /*0x691c8b*/
-      *(void **)v4 = (void*)&ScriptTypeClass_vftable; /*0x691c95*/
-      v4[1] = (void*)&ScriptTypeClass_vftable; /*0x691c9b*/
-      v4[2] = (void*)&ScriptTypeClass_vftable; /*0x691ca2*/
-      v4[3] = (void*)&ScriptTypeClass_vftable; /*0x691ca9*/
       v5 = g_MultiplayerDebugState; /*0x691cb0*/
       if ( g_MultiplayerDebugState < dword_8B41D0 /*0x691cf1*/
         || (byte_8B41D5 || !dword_8B41D0)
         && dword_8B41DC > 0
-        && (v6 = (*(int (__thiscall **)(int *, int, _DWORD))(dword_8B41C8 + 8))(
+        && (v6 = (*(int (__thiscall **)(int *, int, unsigned int))(dword_8B41C8 + 8))(
                    &dword_8B41C8,
                    dword_8B41D0 + dword_8B41DC,
                    0),
@@ -133,7 +124,7 @@ void * TeamTypeClass::CreateScriptType()
             v6) )
       {
         g_MultiplayerDebugState = v5 + 1; /*0x691cf6*/
-        *((_DWORD *)g_MultiplayerSyncState + v5) = v4; /*0x691d02*/
+        *((unsigned int *)g_MultiplayerSyncState + v5) = v4; /*0x691d02*/
         v5 = g_MultiplayerDebugState; /*0x691d05*/
       }
       v7 = 0; /*0x691d0b*/
@@ -145,7 +136,7 @@ void * TeamTypeClass::CreateScriptType()
       else
       {
         v8 = g_MultiplayerSyncState; /*0x691d11*/
-        while ( (_DWORD *)*v8 != v4 ) /*0x691d19*/
+        while ( (unsigned int *)*v8 != v4 ) /*0x691d19*/
         {
           ++v7; /*0x691d1b*/
           ++v8; /*0x691d1c*/
@@ -158,12 +149,12 @@ void * TeamTypeClass::CreateScriptType()
     }
     return 0; /*0x691d3e*/
   }
-  while ( _strcmpi((const void *)(*((_DWORD *)g_MultiplayerSyncState + v2) + 36), Source) ) /*0x691c52*/
+  while ( _strcmpi((const void *)(*((unsigned int *)g_MultiplayerSyncState + v2) + 36), Source) ) /*0x691c52*/
   {
     if ( ++v2 >= g_MultiplayerDebugState ) /*0x691c60*/
       goto LABEL_6; /*0x691c60*/
   }
-  return (_DWORD *)*((_DWORD *)g_MultiplayerSyncState + v2); /*0x691d2e*/
+  return (unsigned int *)*((unsigned int *)g_MultiplayerSyncState + v2); /*0x691d2e*/
 }
 }
 // 0x6E85F0
@@ -171,7 +162,7 @@ namespace gamemd {
 AbstractClass * * TeamTypeClass::FindOrCreateTaskForce()
 {
   int v2; // esi
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
 
   if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6e860c*/
     return 0; /*0x6e866f*/
@@ -179,17 +170,17 @@ AbstractClass * * TeamTypeClass::FindOrCreateTaskForce()
   if ( g_MultiplayerLogFlags <= 0 ) /*0x6e8621*/
   {
   LABEL_6:
-    v3 = RA2_OPNEW(0xD4u); /*0x6e8646*/
+    v3 = operator new(0xD4u); /*0x6e8646*/
     if ( v3 ) /*0x6e8655*/
       return TaskForceClass::Construct(v3, Source); /*0x6e8661*/
     return 0; /*0x6e8655*/
   }
-  while ( _strcmpi((const void *)(*((_DWORD *)g_MultiplayerLogEntry + v2) + 36), Source) ) /*0x6e863a*/
+  while ( _strcmpi((const void *)(*((unsigned int *)g_MultiplayerLogEntry + v2) + 36), Source) ) /*0x6e863a*/
   {
     if ( ++v2 >= g_MultiplayerLogFlags ) /*0x6e8644*/
       goto LABEL_6; /*0x6e8644*/
   }
-  return (_DWORD *)*((_DWORD *)g_MultiplayerLogEntry + v2); /*0x6e865f*/
+  return (unsigned int *)*((unsigned int *)g_MultiplayerLogEntry + v2); /*0x6e865f*/
 }
 }
 // 0x6EF5F0
@@ -198,8 +189,8 @@ int TeamTypeClass::Check(int a2)
 {
   int result; // eax
 
-  for ( result = *(this + 21); result; result = *(_DWORD *)(result + 1496) ) /*0x6ef5f5*/
-    *(_DWORD *)(result + 240) = a2; /*0x6ef5fb*/
+  for ( result = this->q054; result; result = *(unsigned int *)(result + 1496) ) /*0x6ef5f5*/
+    *(unsigned int *)(result + 240) = a2; /*0x6ef5fb*/
   return result; /*0x6ef60b*/
 }
 }
@@ -209,16 +200,16 @@ int TeamTypeClass::DestroyAllInstances()
 {
   int result; // eax
   int i; // esi
-  _DWORD *v4; // ecx
+  unsigned int *v4; // ecx
 
   result = g_HouseClass_AIProductionState; /*0x6f0a70*/
   for ( i = 0; i < g_HouseClass_AIProductionState; ++i ) /*0x6f0a7d*/
   {
-    v4 = (_DWORD *)*((_DWORD *)g_TeamClassPool + i); /*0x6f0a84*/
+    v4 = (unsigned int *)*((unsigned int *)g_TeamClassPool + i); /*0x6f0a84*/
     if ( this == (void *)v4[9] ) /*0x6f0a8a*/
     {
       if ( v4 ) /*0x6f0a8e*/
-        (*(void (__thiscall **)(_DWORD *, int))(*v4 + 32))(v4, 1); /*0x6f0a94*/
+        (*(void (__thiscall **)(unsigned int *, int))(*v4 + 32))(v4, 1); /*0x6f0a94*/
       --i; /*0x6f0a97*/
     }
     result = g_HouseClass_AIProductionState; /*0x6f0a98*/
@@ -243,7 +234,7 @@ int TeamTypeClass::GetTeam(int a2, int a3)
     *(&this->abstractFlags6) = 0; /*0x6f106b*/
   v4 = *(&this->abstractFlags6); /*0x6f1071*/
   if ( v4 ) /*0x6f1079*/
-    return (*(int (__thiscall **)(int, int, int))(*(_DWORD *)v4 + 40))(v4, a2, a3); /*0x6f1083*/
+    return (*(int (__thiscall **)(int, int, int))(*(unsigned int *)v4 + 40))(v4, a2, a3); /*0x6f1083*/
 }
 }
 // 0x6F1090
@@ -308,8 +299,8 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   v3 = this->q0C4; /*0x6f10b8*/
   v4 = -1; /*0x6f10be*/
   if ( v3 ) /*0x6f10c3*/
-    v4 = *(_DWORD *)(v3->q034 + 184); /*0x6f10c8*/
-  v5 = (void *)SuperWeaponTypeClass::FindOrCreate(aP1, (unsigned __int8 *)(&this->vtable46), (unsigned __int8 *)aHouse, v4); /*0x6f10e1*/
+    v4 = *(unsigned int *)(v3->q034 + 184); /*0x6f10c8*/
+  v5 = (void *)SuperWeaponTypeClass::FindOrCreate(aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aHouse, v4); /*0x6f10e1*/
   if ( BuildingType::IsSpecialType(v5) ) /*0x6f10e5*/
   {
     this->q0C8 = v5; /*0x6f10ee*/
@@ -370,8 +361,8 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   this->q0CC = v25; /*0x6f1324*/
   if ( INIClass::GetString( /*0x6f1341*/
          aP1,
-         (unsigned __int8 *)(&this->vtable46),
-         (unsigned __int8 *)off_81728C,
+         (uint8_t *)(&this->vtable46),
+         (uint8_t *)off_81728C,
          &g_INI_DefaultBuffer,
          Destination,
          128) )
@@ -402,16 +393,16 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   v36 = this->q0D4; /*0x6f140d*/
   this->u8_F5 = v35; /*0x6f141a*/
   v37 = (char *)Waypoint::To_String(v36); /*0x6f1420*/
-  if ( (int)INIClass::GetString(aP1, (unsigned __int8 *)(&this->vtable46), (unsigned __int8 *)aWaypoint, v37, v53, 64) > 0 ) /*0x6f1435*/
+  if ( (int)INIClass::GetString(aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aWaypoint, v37, v53, 64) > 0 ) /*0x6f1435*/
     this->q0D4 = String::To_Waypoint(v53); /*0x6f1440*/
   v38 = (char *)Waypoint::To_String(this->q0D8); /*0x6f1453*/
-  if ( (int)INIClass::GetString(aP1, (unsigned __int8 *)(&this->vtable46), (unsigned __int8 *)aTransportwaypo, v38, v53, 64) > 0 ) /*0x6f1468*/
+  if ( (int)INIClass::GetString(aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aTransportwaypo, v38, v53, 64) > 0 ) /*0x6f1468*/
     this->q0D8 = String::To_Waypoint(v53); /*0x6f1473*/
   v39 = this->q0E0; /*0x6f1479*/
   if ( INIClass::GetString( /*0x6f1496*/
          aP1,
-         (unsigned __int8 *)(&this->vtable46),
-         (unsigned __int8 *)aScript,
+         (uint8_t *)(&this->vtable46),
+         (uint8_t *)aScript,
          &g_INI_DefaultBuffer,
          Destination,
          128) )
@@ -426,8 +417,8 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   this->q0E0 = v40; /*0x6f14c9*/
   if ( INIClass::GetString( /*0x6f14cf*/
          aP1,
-         (unsigned __int8 *)(&this->vtable46),
-         (unsigned __int8 *)aTaskforce,
+         (uint8_t *)(&this->vtable46),
+         (uint8_t *)aTaskforce,
          &g_INI_DefaultBuffer,
          Destination,
          128) )
@@ -443,13 +434,13 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   {
     if ( g_MultiplayerLogFlags <= 0 ) /*0x6f14f8*/
       return 0; /*0x6f14f8*/
-    this->q0E4 = *(_DWORD *)g_MultiplayerLogEntry; /*0x6f1501*/
+    this->q0E4 = *(unsigned int *)g_MultiplayerLogEntry; /*0x6f1501*/
   }
   if ( this->q0E0 ) /*0x6f1507*/
     return 1; /*0x6f1532*/
   if ( g_MultiplayerDebugState > 0 ) /*0x6f1518*/
   {
-    this->q0E0 = *(_DWORD *)g_MultiplayerSyncState; /*0x6f1522*/
+    this->q0E0 = *(unsigned int *)g_MultiplayerSyncState; /*0x6f1522*/
     return 1; /*0x6f1522*/
   }
   return 0; /*0x6f1528*/
@@ -461,7 +452,7 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
 {
   int v3; // eax
   int v4; // ebp
-  unsigned __int8 *v5; // edi
+  uint8_t *v5; // edi
   int v6; // eax
   char *v7; // eax
   char *v8; // eax
@@ -474,51 +465,51 @@ AbstractClass * * TeamTypeClass::GetMaxCount(CCINIClass * aP1)
   v4 = -1; /*0x6f156d*/
   if ( v3 ) /*0x6f1573*/
   {
-    v4 = *(_DWORD *)(*(_DWORD *)(v3 + 52) + 184); /*0x6f1578*/
+    v4 = *(unsigned int *)(*(unsigned int *)(v3 + 52) + 184); /*0x6f1578*/
   }
   else if ( BuildingType::IsSpecialType(*(void **)(&this->q0500)) ) /*0x6f1586*/
   {
     v4 = this->q0C8; /*0x6f158f*/
   }
-  v5 = (unsigned __int8 *)(&this->vtable46); /*0x6f159d*/
-  INIClass::SetInt(aP1, (unsigned __int8 *)(&this->vtable46), aVeteranlevel, this->q0A0, 0); /*0x6f15a9*/
-  INIClass::SetInt(aP1, (unsigned __int8 *)(&this->vtable46), aMindcontroldec, this->q0C0, 0); /*0x6f15bf*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aLoadable, this->q0A4); /*0x6f15d3*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aFull, this->u8_A5); /*0x6f15e7*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aAnnoyance, this->u8_A6); /*0x6f15fb*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aGuardslower, this->u8_A7); /*0x6f160f*/
-  INIClass::SetHouseName(aP1, (unsigned __int8 *)(&this->vtable46), aHouse, (void *)v4); /*0x6f161d*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aRecruiter, this->q0A8); /*0x6f1631*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aAutocreate, this->q0A9); /*0x6f1645*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aPrebuild, this->q0AA); /*0x6f1659*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aReinforce, this->q0AB); /*0x6f166d*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aDroppod_0, this->q0B0); /*0x6f1681*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aUsetransportor, this->u8_B1); /*0x6f1695*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aWhiner, this->q0AC); /*0x6f16a9*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aLooserecruit, this->u8_AE); /*0x6f16bd*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aAggressive, this->u8_AD); /*0x6f16d1*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), g_INI_Key_Suicide, this->q0AF); /*0x6f16e5*/
-  INIClass::SetInt(aP1, (unsigned __int8 *)(&this->vtable46), g_INI_Key_Priority, this->q0B4, 0); /*0x6f16fb*/
-  INIClass::SetInt(aP1, (unsigned __int8 *)(&this->vtable46), aMax, this->q0B8, 0); /*0x6f1711*/
-  INIClass::SetInt(aP1, (unsigned __int8 *)(&this->vtable46), g_INI_Key_TechLevel, this->q0CC, 0); /*0x6f1727*/
-  INIClass::SetInt(aP1, (unsigned __int8 *)(&this->vtable46), g_INI_Key_Group, this->q09C, 0); /*0x6f173d*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aOntransonly, this->u8_B3); /*0x6f1751*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aAvoidthreats, this->u8_F2); /*0x6f1765*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aIonimmune, this->u8_F3); /*0x6f1779*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aTransportsretu, this->q0F4); /*0x6f178d*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aAreteammembers, this->u8_F5); /*0x6f17a1*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), g_INI_Key_IsBaseDefense, this->u8_F6); /*0x6f17b5*/
-  INIClass::SetBool(aP1, (unsigned __int8 *)(&this->vtable46), aOnlytargethous, this->q0F7); /*0x6f17c9*/
+  v5 = (uint8_t *)(&this->vtable46); /*0x6f159d*/
+  INIClass::SetInt(aP1, (uint8_t *)(&this->vtable46), aVeteranlevel, this->q0A0, 0); /*0x6f15a9*/
+  INIClass::SetInt(aP1, (uint8_t *)(&this->vtable46), aMindcontroldec, this->q0C0, 0); /*0x6f15bf*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aLoadable, this->q0A4); /*0x6f15d3*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aFull, this->u8_A5); /*0x6f15e7*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aAnnoyance, this->u8_A6); /*0x6f15fb*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aGuardslower, this->u8_A7); /*0x6f160f*/
+  INIClass::SetHouseName(aP1, (uint8_t *)(&this->vtable46), aHouse, (void *)v4); /*0x6f161d*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aRecruiter, this->q0A8); /*0x6f1631*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aAutocreate, this->q0A9); /*0x6f1645*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aPrebuild, this->q0AA); /*0x6f1659*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aReinforce, this->q0AB); /*0x6f166d*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aDroppod_0, this->q0B0); /*0x6f1681*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aUsetransportor, this->u8_B1); /*0x6f1695*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aWhiner, this->q0AC); /*0x6f16a9*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aLooserecruit, this->u8_AE); /*0x6f16bd*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aAggressive, this->u8_AD); /*0x6f16d1*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), g_INI_Key_Suicide, this->q0AF); /*0x6f16e5*/
+  INIClass::SetInt(aP1, (uint8_t *)(&this->vtable46), g_INI_Key_Priority, this->q0B4, 0); /*0x6f16fb*/
+  INIClass::SetInt(aP1, (uint8_t *)(&this->vtable46), aMax, this->q0B8, 0); /*0x6f1711*/
+  INIClass::SetInt(aP1, (uint8_t *)(&this->vtable46), g_INI_Key_TechLevel, this->q0CC, 0); /*0x6f1727*/
+  INIClass::SetInt(aP1, (uint8_t *)(&this->vtable46), g_INI_Key_Group, this->q09C, 0); /*0x6f173d*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aOntransonly, this->u8_B3); /*0x6f1751*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aAvoidthreats, this->u8_F2); /*0x6f1765*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aIonimmune, this->u8_F3); /*0x6f1779*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aTransportsretu, this->q0F4); /*0x6f178d*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aAreteammembers, this->u8_F5); /*0x6f17a1*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), g_INI_Key_IsBaseDefense, this->u8_F6); /*0x6f17b5*/
+  INIClass::SetBool(aP1, (uint8_t *)(&this->vtable46), aOnlytargethous, this->q0F7); /*0x6f17c9*/
   v6 = this->q0D0; /*0x6f17ce*/
   if ( v6 ) /*0x6f17d6*/
-    INIClass::SetString(aP1, (unsigned __int8 *)(&this->vtable46), off_81728C, (char *)(v6 + 36)); /*0x6f17e4*/
+    INIClass::SetString(aP1, (uint8_t *)(&this->vtable46), off_81728C, (char *)(v6 + 36)); /*0x6f17e4*/
   v7 = Waypoint::To_String(this->q0D4); /*0x6f17ef*/
-  INIClass::SetString(aP1, (unsigned __int8 *)(&this->vtable46), aWaypoint, v7); /*0x6f17fd*/
+  INIClass::SetString(aP1, (uint8_t *)(&this->vtable46), aWaypoint, v7); /*0x6f17fd*/
   v8 = Waypoint::To_String(this->q0D8); /*0x6f1808*/
-  INIClass::SetString(aP1, (unsigned __int8 *)(&this->vtable46), aTransportwaypo, v8); /*0x6f1816*/
+  INIClass::SetString(aP1, (uint8_t *)(&this->vtable46), aTransportwaypo, v8); /*0x6f1816*/
   v9 = this->q0E0; /*0x6f181b*/
   if ( v9 ) /*0x6f1823*/
-    INIClass::SetString(aP1, (unsigned __int8 *)(&this->vtable46), aScript, (char *)(v9 + 36)); /*0x6f1831*/
+    INIClass::SetString(aP1, (uint8_t *)(&this->vtable46), aScript, (char *)(v9 + 36)); /*0x6f1831*/
   v10 = this->q0E4; /*0x6f1836*/
   if ( v10 ) /*0x6f183e*/
     INIClass::SetString(aP1, v5, aTaskforce, (char *)(v10 + 36)); /*0x6f184c*/
@@ -537,7 +528,7 @@ int TeamTypeClass::GetGroup()
   {
     v2 = *(&this->abstractFlags7); /*0x6f1880*/
     if ( v2 ) /*0x6f1888*/
-      return *(_DWORD *)(v2 + 152); /*0x6f188a*/
+      return *(unsigned int *)(v2 + 152); /*0x6f188a*/
   }
   return result; /*0x6f1890*/
 }
@@ -551,7 +542,7 @@ unsigned int * TeamTypeClass::GetTransportWaypoint(unsigned int * a2)
   int *v5; // [esp+0h] [ebp-4h] BYREF
 
   v5 = this; /*0x6f18e0*/
-  v2 = *(this + 54); /*0x6f18e1*/
+  v2 = this->q0D8; /*0x6f18e1*/
   if ( v2 == -1 ) /*0x6f18ea*/
   {
     *a2 = dword_B0E9C8; /*0x6f18f6*/
@@ -618,20 +609,20 @@ int TeamTypeClass::PowerDrainUpdate(int * a2)
   v13 = this->q0C4; /*0x6f1d52*/
   if ( v13 ) /*0x6f1d5a*/
   {
-    v14 = (*(int (__thiscall **)(int))(*(_DWORD *)v13 + 44))(v13); /*0x6f1d5e*/
+    v14 = (*(int (__thiscall **)(int))(*(unsigned int *)v13 + 44))(v13); /*0x6f1d5e*/
     Power::TimerProcess(v14); /*0x6f1d64*/
   }
   v15 = this->q0C4; /*0x6f1d69*/
   if ( v15 ) /*0x6f1d71*/
   {
-    v16 = (*(int (__stdcall **)(int))(*(_DWORD *)(v15 + 4) + 16))(v15 + 4); /*0x6f1d7a*/
+    v16 = (*(int (__stdcall **)(int))(*(unsigned int *)(v15 + 4) + 16))(v15 + 4); /*0x6f1d7a*/
     Power::TimerProcess(v16); /*0x6f1d80*/
   }
   Power::TimerProcess(this->q0CC); /*0x6f1d8e*/
   v17 = this->q0D0; /*0x6f1d93*/
   if ( v17 ) /*0x6f1d9b*/
   {
-    v18 = (*(int (__stdcall **)(int))(*(_DWORD *)(v17 + 4) + 16))(v17 + 4); /*0x6f1da4*/
+    v18 = (*(int (__stdcall **)(int))(*(unsigned int *)(v17 + 4) + 16))(v17 + 4); /*0x6f1da4*/
     Power::TimerProcess(v18); /*0x6f1daa*/
   }
   Power::TimerProcess(this->q0D4); /*0x6f1db8*/
@@ -646,7 +637,7 @@ int TeamTypeClass::PowerDrainUpdate(int * a2)
   v21 = this->q0E4; /*0x6f1df5*/
   if ( v21 ) /*0x6f1dfd*/
   {
-    v22 = (*(int (__stdcall **)(int))(*(_DWORD *)(v21 + 4) + 16))(v21 + 4); /*0x6f1e06*/
+    v22 = (*(int (__stdcall **)(int))(*(unsigned int *)(v21 + 4) + 16))(v21 + 4); /*0x6f1e06*/
     return Power::TimerProcess(v22); /*0x6f1e0c*/
   }
   return result; /*0x6f1e11*/
@@ -671,20 +662,20 @@ int TeamTypeClass::ProcessTaskForce()
     v4 = 168; /*0x6f1fcf*/
     do /*0x6f201d*/
     {
-      v5 = *(_DWORD *)(result + v4); /*0x6f1fd4*/
-      if ( *(_BYTE *)(v5 + 3278) ) /*0x6f1fd7*/
+      v5 = *(unsigned int *)(result + v4); /*0x6f1fd4*/
+      if ( *(unsigned char *)(v5 + 3278) ) /*0x6f1fd7*/
       {
-        if ( *(_DWORD *)(v5 + 1504) ) /*0x6f1fdf*/
+        if ( *(unsigned int *)(v5 + 1504) ) /*0x6f1fdf*/
           this->u8_F1 = 1; /*0x6f1fef*/
         else
           this->q0F0 = 0; /*0x6f1fe7*/
       }
-      this->q0EC = globalHelper_0889F0(*(_DWORD *)(v5 + 1460), this->q0EC); /*0x6f2007*/
+      this->q0EC = globalHelper_0889F0(*(unsigned int *)(v5 + 1460), this->q0EC); /*0x6f2007*/
       result = this->q0E4; /*0x6f200d*/
       ++v2; /*0x6f2013*/
       v4 += 8; /*0x6f2014*/
     }
-    while ( v2 < *(_DWORD *)(result + 156) ); /*0x6f201d*/
+    while ( v2 < *(unsigned int *)(result + 156) ); /*0x6f201d*/
   }
   if ( this->u8_F6 ) /*0x6f2020*/
     this->q0F0 = 0; /*0x6f2028*/
@@ -695,7 +686,7 @@ int TeamTypeClass::ProcessTaskForce()
 namespace gamemd {
 int TeamTypeClass::GetAuxField()
 {
-  return *(this + 38); /*0x6f20c6*/
+  return this->q098; /*0x6f20c6*/
 }
 }
 // 0x6F20D0
@@ -705,10 +696,6 @@ TeamTypeClass * TeamTypeClass::ddtor(char a2)
   int v3; // eax
   int v4; // eax
 
-  *this = (void*)&TeamTypeClass_vftable; /*0x6f20d6*/
-  this->vtable2 = (void*)&TeamTypeClass_vftable; /*0x6f20dc*/
-  this->vtable3 = (void*)&TeamTypeClass_vftable; /*0x6f20e3*/
-  this->vtable4 = (void*)&TeamTypeClass_vftable; /*0x6f20ea*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x6f20f1*/
   v3 = (*(int (__thiscall **)(int *, void ***))(TeamTypeClass_Array + 16))(&TeamTypeClass_Array, &this); /*0x6f210a*/
   if ( v3 != -1 && v3 < g_MultiplayerLogState && v3 < --g_MultiplayerLogState ) /*0x6f2125*/
@@ -716,7 +703,7 @@ TeamTypeClass * TeamTypeClass::ddtor(char a2)
     do /*0x6f213d*/
     {
       ++v3; /*0x6f212d*/
-      *((_DWORD *)g_TeamTypePool + v3 - 1) = *((_DWORD *)g_TeamTypePool + v3); /*0x6f2131*/
+      *((unsigned int *)g_TeamTypePool + v3 - 1) = *((unsigned int *)g_TeamTypePool + v3); /*0x6f2131*/
     }
     while ( v3 < g_MultiplayerLogState ); /*0x6f213d*/
   }
@@ -726,7 +713,7 @@ TeamTypeClass * TeamTypeClass::ddtor(char a2)
     do /*0x6f2186*/
     {
       ++v4; /*0x6f2176*/
-      *((_DWORD *)g_AnimPoolCount + v4 - 1) = *((_DWORD *)g_AnimPoolCount + v4); /*0x6f217a*/
+      *((unsigned int *)g_AnimPoolCount + v4 - 1) = *((unsigned int *)g_AnimPoolCount + v4); /*0x6f217a*/
     }
     while ( v4 < g_AnimManager ); /*0x6f2186*/
   }
@@ -743,10 +730,10 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
 {
   int *v4; // ebx
   int *v5; // eax
-  _DWORD *v6; // edi
-  _DWORD *v7; // eax
+  unsigned int *v6; // edi
+  unsigned int *v7; // eax
   int v8; // ecx
-  _DWORD *v9; // eax
+  unsigned int *v9; // eax
   int v12; // ecx
   int v13; // eax
   int v14; // edx
@@ -775,7 +762,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
     }
     else
     {
-      v5 = (int *)RA2_OPNEW(8 * a2 + 4); /*0x6f2316*/
+      v5 = (int *)operator new(8 * a2 + 4); /*0x6f2316*/
       if ( v5 ) /*0x6f2320*/
       {
         *v5 = a2; /*0x6f2325*/
@@ -813,8 +800,8 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
           {
             v14 = this->Items; /*0x6f2387*/
             ++v13; /*0x6f238a*/
-            v6[2 * v13 - 2] = *(_DWORD *)(v14 + 8 * v13 - 8); /*0x6f2391*/
-            v6[2 * v13 - 1] = *(_DWORD *)(v14 + 8 * v13 - 4); /*0x6f2399*/
+            v6[2 * v13 - 2] = *(unsigned int *)(v14 + 8 * v13 - 8); /*0x6f2391*/
+            v6[2 * v13 - 1] = *(unsigned int *)(v14 + 8 * v13 - 4); /*0x6f2399*/
           }
           while ( v13 < v12 ); /*0x6f239d*/
           v4 = a2; /*0x6f239f*/
@@ -839,7 +826,7 @@ AbstractClass * * TeamTypeClass_28::Release(int a2, int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x6f23e5*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x6f23e5*/
     return 1; /*0x6f23eb*/
   }
 }
@@ -850,10 +837,10 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a2)
 {
   int *v4; // ebp
   int *v5; // eax
-  _DWORD *v6; // edi
-  _DWORD *v7; // eax
+  unsigned int *v6; // edi
+  unsigned int *v7; // eax
   int v8; // ecx
-  _DWORD *v9; // eax
+  unsigned int *v9; // eax
   int v11; // ecx
   int v12; // eax
   int v13; // edx
@@ -884,7 +871,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a2)
     }
     else
     {
-      v5 = (int *)RA2_OPNEW(8 * a2 + 4); /*0x6f24d6*/
+      v5 = (int *)operator new(8 * a2 + 4); /*0x6f24d6*/
       if ( v5 ) /*0x6f24e0*/
       {
         *v5 = a2; /*0x6f24e5*/
@@ -922,8 +909,8 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a2)
         {
           v13 = this->Items; /*0x6f2543*/
           ++v12; /*0x6f2546*/
-          v6[2 * v12 - 2] = *(_DWORD *)(v13 + 8 * v12 - 8); /*0x6f254d*/
-          v6[2 * v12 - 1] = *(_DWORD *)(v13 + 8 * v12 - 4); /*0x6f2555*/
+          v6[2 * v12 - 2] = *(unsigned int *)(v13 + 8 * v12 - 8); /*0x6f254d*/
+          v6[2 * v12 - 1] = *(unsigned int *)(v13 + 8 * v12 - 4); /*0x6f2555*/
         }
         while ( v12 < v11 ); /*0x6f2559*/
         v4 = a2; /*0x6f255b*/
@@ -934,7 +921,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a2)
         if ( v14 ) /*0x6f256b*/
         {
           v15 = (void *)(v14 - 4); /*0x6f2570*/
-          Array::ForEachReverse(v14, 8, *(_DWORD *)(v14 - 4), (int (__thiscall *)(int))nullsub_240); /*0x6f257c*/
+          Array::ForEachReverse(v14, 8, *(unsigned int *)(v14 - 4), (int (__thiscall *)(int))nullsub_240); /*0x6f257c*/
           RA2_OPDEL(v15); /*0x6f2582*/
           v4 = a2; /*0x6f2587*/
         }
@@ -947,7 +934,7 @@ AbstractClass * * TeamTypeClass_28::SetCapacity(int a2, int * a2)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x6f25ab*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x6f25ab*/
   }
   v16 = this->q008; /*0x6f25ae*/
   if ( v16 < this->q010 ) /*0x6f25b6*/
@@ -966,13 +953,13 @@ int TeamTypeClass::FindByName()
   v2 = 0; /*0x6f0fcd*/
   if ( g_MultiplayerLogState <= 0 ) /*0x6f0fd1*/
     return 0; /*0x6f1010*/
-  while ( _strcmpi(this, (const void *)(*((_DWORD *)g_TeamTypePool + v2) + 36)) /*0x6f1004*/
-       && _strcmpi(this, (const void *)(*((_DWORD *)g_TeamTypePool + v2) + 100)) )
+  while ( _strcmpi(this, (const void *)(*((unsigned int *)g_TeamTypePool + v2) + 36)) /*0x6f1004*/
+       && _strcmpi(this, (const void *)(*((unsigned int *)g_TeamTypePool + v2) + 100)) )
   {
     if ( ++v2 >= g_MultiplayerLogState ) /*0x6f100e*/
       return 0; /*0x6f100e*/
   }
-  return *((_DWORD *)g_TeamTypePool + v2); /*0x6f1010*/
+  return *((unsigned int *)g_TeamTypePool + v2); /*0x6f1010*/
 }
 } // namespace gamemd
 
@@ -982,20 +969,20 @@ TeamTypeClass * TeamTypeClass::ReadScriptData(char * a1, int a2)
 {
   int KeyCount; // ebx
   int i; // edi
-  unsigned __int8 *StringByIndex; // eax
+  uint8_t *StringByIndex; // eax
   int result; // eax
   int v8; // ebx
   int j; // edi
   int v10; // [esp-4h] [ebp-34h]
   char Buffer[32]; // [esp+10h] [ebp-20h] BYREF
 
-  KeyCount = INIClass::GetKeyCount(a1, (unsigned __int8 *)g_INI_Key_TeamTypes); /*0x6f1ac5*/
+  KeyCount = INIClass::GetKeyCount(a1, (uint8_t *)g_INI_Key_TeamTypes); /*0x6f1ac5*/
   for ( i = 0; i < KeyCount; ++i ) /*0x6f1acb*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1, (unsigned __int8 *)g_INI_Key_TeamTypes, i); /*0x6f1ad5*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1, (uint8_t *)g_INI_Key_TeamTypes, i); /*0x6f1ad5*/
     INIClass::GetString( /*0x6f1aee*/
-      (unsigned __int8 ***)a1,
-      (unsigned __int8 *)g_INI_Key_TeamTypes,
+      (uint8_t ***)a1,
+      (uint8_t *)g_INI_Key_TeamTypes,
       StringByIndex,
       &g_INI_DefaultBuffer,
       Buffer,
@@ -1007,17 +994,17 @@ TeamTypeClass * TeamTypeClass::ReadScriptData(char * a1, int a2)
   v8 = 0; /*0x6f1b19*/
   for ( j = 0; j < g_MultiplayerLogState; ++j ) /*0x6f1b1f*/
   {
-    if ( *(_DWORD *)(*((_DWORD *)g_TeamTypePool + j) + 232) == a2 ) /*0x6f1b2f*/
+    if ( *(unsigned int *)(*((unsigned int *)g_TeamTypePool + j) + 232) == a2 ) /*0x6f1b2f*/
     {
       v10 = v8++; /*0x6f1b37*/
       sprintf(Buffer, "%d", v10); /*0x6f1b3f*/
       INIClass::SetString( /*0x6f1b5f*/
         a1,
-        (unsigned __int8 *)g_INI_Key_TeamTypes,
+        (uint8_t *)g_INI_Key_TeamTypes,
         Buffer,
-        (char *)(*((_DWORD *)g_TeamTypePool + j) + 36));
-      (*(void (__thiscall **)(_DWORD, char *))(**((_DWORD **)g_TeamTypePool + j) + 104))( /*0x6f1b6f*/
-        *((_DWORD *)g_TeamTypePool + j),
+        (char *)(*((unsigned int *)g_TeamTypePool + j) + 36));
+      (*(void (__thiscall **)(unsigned int, char *))(**((unsigned int **)g_TeamTypePool + j) + 104))( /*0x6f1b6f*/
+        *((unsigned int *)g_TeamTypePool + j),
         a1);
     }
     result = g_MultiplayerLogState; /*0x6f1b72*/
@@ -1086,12 +1073,12 @@ int TeamTypeClass::FlashAllInstances(AnimClass * aP1)
 {
   int result; // eax
   int i; // esi
-  _DWORD *v5; // ecx
+  unsigned int *v5; // ecx
 
   result = g_HouseClass_AIProductionState; /*0x6f1f30*/
   for ( i = 0; i < g_HouseClass_AIProductionState; ++i ) /*0x6f1f3d*/
   {
-    v5 = (_DWORD *)*((_DWORD *)g_TeamClassPool + i); /*0x6f1f49*/
+    v5 = (unsigned int *)*((unsigned int *)g_TeamClassPool + i); /*0x6f1f49*/
     if ( (void *)v5[9] == this ) /*0x6f1f4f*/
       TeamTypeClass::Check(v5, aP1); /*0x6f1f52*/
     result = g_HouseClass_AIProductionState; /*0x6f1f57*/
@@ -1113,7 +1100,7 @@ int TeamTypeClass::FindFirstInstance()
     return 0; /*0x6f1f93*/
   for ( i = (char *)g_TeamClassPool; ; i += 4 ) /*0x6f1f7e*/
   {
-    result = *(_DWORD *)i; /*0x6f1f84*/
+    result = *(unsigned int *)i; /*0x6f1f84*/
     if ( *(void **)(i->q024 == this ) /*0x6f1f89*/
       break; /*0x6f1f89*/
     if ( ++v1 >= g_HouseClass_AIProductionState ) /*0x6f1f91*/
@@ -1177,10 +1164,10 @@ unsigned int * TeamTypeClass_28::Seek(unsigned int * a2, int a3)
   int v5; // ecx
 
   v3 = this->Items; /*0x6f2210*/
-  v4 = *(_DWORD *)(v3 + 8 * a3); /*0x6f2217*/
+  v4 = *(unsigned int *)(v3 + 8 * a3); /*0x6f2217*/
   v5 = v3 + 8 * a3; /*0x6f221a*/
   *a2 = v4; /*0x6f2221*/
-  a2[1] = *(_DWORD *)(v5 + 4); /*0x6f2226*/
+  a2[1] = *(unsigned int *)(v5 + 4); /*0x6f2226*/
   return a2; /*0x6f2229*/
 }
 } // namespace gamemd
@@ -1192,21 +1179,21 @@ char TeamTypeClass_28::AddRef(int a2)
   int v2; // edi
   int v3; // esi
   int v4; // edx
-  _DWORD *v5; // eax
-  _DWORD *v6; // ecx
+  unsigned int *v5; // eax
+  unsigned int *v6; // ecx
   int v7; // edx
 
   v2 = this->Capacity; /*0x6f229b*/
-  if ( v2 == *(_DWORD *)(a2 + 8) ) /*0x6f22a0*/
+  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x6f22a0*/
   {
     v3 = 0; /*0x6f22a2*/
     if ( v2 <= 0 ) /*0x6f22a6*/
       return 1; /*0x6f22d6*/
-    v4 = *(_DWORD *)(a2 + 4); /*0x6f22a8*/
-    v5 = (_DWORD *)this->Items; /*0x6f22ab*/
-    v6 = (_DWORD *)(v4 + 4); /*0x6f22ae*/
-    v7 = v4 - (_DWORD)v5; /*0x6f22b1*/
-    while ( *v5 == *(_DWORD *)((char *)v5 + v7) && v5[1] == *v6 ) /*0x6f22c3*/
+    v4 = *(unsigned int *)(a2 + 4); /*0x6f22a8*/
+    v5 = (unsigned int *)this->Items; /*0x6f22ab*/
+    v6 = (unsigned int *)(v4 + 4); /*0x6f22ae*/
+    v7 = v4 - (unsigned int)v5; /*0x6f22b1*/
+    while ( *v5 == *(unsigned int *)((char *)v5 + v7) && v5[1] == *v6 ) /*0x6f22c3*/
     {
       ++v3; /*0x6f22c5*/
       v6 += 2; /*0x6f22c6*/
@@ -1229,7 +1216,7 @@ void TeamTypeClass_28::ddtor()
   if ( v2 && this->IsAllocated ) /*0x6f240d*/
   {
     RA2_OPDEL((void *)(v2 - 4)); /*0x6f241e*/
-    *(_DWORD *)(this + 4) = 0; /*0x6f2426*/
+    this->q010 = 0; /*0x6f2426*/
   }
   this->IsAllocated = 0; /*0x6f2429*/
   this->Capacity = 0; /*0x6f242c*/
@@ -1242,11 +1229,11 @@ int TeamTypeClass_28::Read(unsigned int * a2)
 {
   int result; // eax
   int v3; // edx
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->IsInitialized ) /*0x6f2440*/
     return 0; /*0x6f244e*/
-  v3 = *(_DWORD *)(this + 8); /*0x6f2454*/
+  v3 = *(unsigned int *)((char *)&this->__pad_01D + 3); /*0x6f2454*/
   result = 0; /*0x6f2457*/
   if ( v3 <= 0 ) /*0x6f245b*/
     return -1; /*0x6f247c*/
@@ -1276,13 +1263,13 @@ int TeamTypeClass_28::FindItem(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x6f2640*/
   result = 0; /*0x6f2645*/
   if ( v2 <= 0 ) /*0x6f264b*/
     return -1; /*0x6f266c*/
-  for ( i = (_DWORD *)this->Items; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x6f2651*/
+  for ( i = (unsigned int *)this->Items; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x6f2651*/
   {
     if ( ++result >= v2 ) /*0x6f266a*/
       return -1; /*0x6f266a*/
@@ -1297,7 +1284,6 @@ VectorClass_flat * TeamTypeClass_28::QueryInterface(char a2)
   int v3; // eax
 
   v3 = this->Items; /*0x6f2683*/
-  *this = (void*)&VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f2686*/
   if ( v3 && this->IsAllocated ) /*0x6f2690*/
   {
     RA2_OPDEL((void *)(v3 - 4)); /*0x6f26a3*/
@@ -1318,14 +1304,13 @@ DynamicVector * TeamTypeClass_28::Constructor(char a2)
   int v3; // eax
 
   v3 = this->Items; /*0x6f2723*/
-  *this = (void*)&VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f2726*/
   if ( v3 && this->IsAllocated ) /*0x6f2730*/
   {
     RA2_OPDEL((void *)(v3 - 4)); /*0x6f2743*/
-    *(this + 1) = 0; /*0x6f274b*/
+    this->q004 = 0; /*0x6f274b*/
   }
-  *((_BYTE *)this + 13) = 0; /*0x6f2756*/
-  *(this + 2) = 0; /*0x6f275c*/
+  *(unsigned char *)&this->IsAllocated = 0; /*0x6f2756*/
+  this->q008 = 0; /*0x6f275c*/
   if ( (a2 & 1) != 0 ) /*0x6f2763*/
     RA2_OPDEL(); /*0x6f2766*/
   return this; /*0x6f2770*/

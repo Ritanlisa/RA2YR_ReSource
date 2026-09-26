@@ -28,12 +28,12 @@ HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
     a1[6] = (int)&off_7E7E8C; /*0x4af7b0*/
   }
   v2->lpVtbl->Read(v2, &pStm, 1, 0); /*0x4af7c3*/
-  if ( !(_BYTE)pStm ) /*0x4af7cc*/
+  if ( !(unsigned char)pStm ) /*0x4af7cc*/
     return v3; /*0x4af7f8*/
   v4 = a1[26]; /*0x4af7ce*/
   v5 = (LPVOID *)(a1 + 26); /*0x4af7d1*/
   if ( v4 ) /*0x4af7d6*/
-    (*(void (__stdcall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x4af7db*/
+    (*(void (__stdcall **)(int))(*(unsigned int *)v4 + 8))(v4); /*0x4af7db*/
   *v5 = 0; /*0x4af7e5*/
   return OleLoadFromStream(v2, &IID_ILocomotion, v5); /*0x4af7f1*/
 }
@@ -46,7 +46,7 @@ HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   int *v4; // edi
   int v5; // ebx
   struct IStreamVtbl *lpVtbl; // ecx
-  int (__stdcall ***v7)(_DWORD, void *, int **); // eax
+  int (__stdcall ***v7)(unsigned int, void *, int **); // eax
   int v8; // edi
   IPersistStream *v9; // ebx
   HRESULT v10; // esi
@@ -67,7 +67,7 @@ HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   lpVtbl = v3->lpVtbl; /*0x4af82c*/
   IDA_LOBYTE(a3) = 1; /*0x4af838*/
   lpVtbl->Write(v3, &a3, 1, 0); /*0x4af83d*/
-  v7 = (int (__stdcall ***)(_DWORD, void *, int **))v4[26]; /*0x4af840*/
+  v7 = (int (__stdcall ***)(unsigned int, void *, int **))v4[26]; /*0x4af840*/
   pPStm = 0; /*0x4af843*/
   if ( v7 ) /*0x4af84d*/
   {
@@ -119,8 +119,6 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(char a2)
 {
   int v3; // eax
 
-  *(void **)this = (void*)&DriveLocomotionClass_vftable; /*0x4b4d03*/
-  this->vtable2 = (void*)&DriveLocomotionClass_vftable; /*0x4b4d09*/
   this->vtable3 = &off_7E7E8C; /*0x4b4d10*/
   v3 = *(&this->u32_86); /*0x4b4d17*/
   if ( v3 ) /*0x4b4d1c*/

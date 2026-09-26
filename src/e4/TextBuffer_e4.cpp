@@ -13,9 +13,9 @@ namespace gamemd {
 int TextBuffer::Init()
 {
   int v1; // edi
-  _DWORD *v2; // ebx
-  _BYTE *v3; // edx
-  _DWORD *v4; // eax
+  unsigned int *v2; // ebx
+  unsigned char *v3; // edx
+  unsigned int *v4; // eax
   int v5; // esi
 
   v1 = 0; /*0x5bcc93*/

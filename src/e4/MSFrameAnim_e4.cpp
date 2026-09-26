@@ -16,7 +16,6 @@
 namespace gamemd {
 void * MSFrameAnim::QueryInterface(char a2)
 {
-  *(void **)this = (void*)&MSFrameAnim_vftable; /*0x769bd3*/
   VtableStub::5CB6C0(); /*0x769bd9*/
   if ( (a2 & 1) != 0 ) /*0x769be3*/
     RA2_OPDEL(); /*0x769be6*/
@@ -28,12 +27,12 @@ namespace gamemd {
 AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
 {
   unsigned int v3;
-  _DWORD *v5; // eax
-  _DWORD *v6; // ebx
-  _DWORD *v7; // esi
-  _DWORD *v8; // esi
+  unsigned int *v5; // eax
+  unsigned int *v6; // ebx
+  unsigned int *v7; // esi
+  unsigned int *v8; // esi
   int i; // esi
-  void (__thiscall ***v11)(_DWORD, int); // ecx
+  void (__thiscall ***v11)(unsigned int, int); // ecx
   void * v12;
 
   v3 = a2; /*0x769fe3*/
@@ -50,7 +49,6 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
         do /*0x76a065*/
         {
           ComPtr::Constructor(v8); /*0x76a056*/
-          *(void **)v8 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a05b*/
           v8 += 2; /*0x76a061*/
           --a2; /*0x76a064*/
         }
@@ -61,7 +59,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = RA2_OPNEW(8 * a2 + 4); /*0x76a007*/
+      v5 = operator new(8 * a2 + 4); /*0x76a007*/
       if ( v5 ) /*0x76a011*/
       {
         *v5 = a2; /*0x76a013*/
@@ -92,10 +90,10 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
       if ( a2 >= this->q008 ) /*0x76a081*/
         v3 = this->q008; /*0x76a083*/
       for ( i = 0; i < v3; ++i ) /*0x76a089*/
-        ComPtr::Set(&v6[2 * i], *(_DWORD *)(this->q004 + 8 * i + 4)); /*0x76a096*/
+        ComPtr::Set(&v6[2 * i], *(unsigned int *)(this->q004 + 8 * i + 4)); /*0x76a096*/
       if ( *(&this->q0043) ) /*0x76a0a0*/
       {
-        v11 = (void (__thiscall ***)(_DWORD, int))this->q004; /*0x76a0a7*/
+        v11 = (void (__thiscall ***)(unsigned int, int))this->q004; /*0x76a0a7*/
         if ( v11 ) /*0x76a0ac*/
           (**v11)(v11, 3); /*0x76a0b2*/
         this->q004 = 0; /*0x76a0b4*/
@@ -108,7 +106,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_BYTE *))(*(_DWORD *)&this->q0042))(this); /*0x76a0d9*/
+    (*(void (__thiscall **)(unsigned char *))(((unsigned int)(this->q0042))))(this); /*0x76a0d9*/
   }
   v12 = this->q008; /*0x76a0dc*/
   if ( v12 < this->q010 ) /*0x76a0e4*/
@@ -142,8 +140,8 @@ void MSFrameAnim::Draw(int a1, int * a2)
 
   if ( byte_8487BD ) /*0x767efc*/
   {
-    v2 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 124))(a1); /*0x767f0d*/
-    v3 = (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 128))(a1); /*0x767f0f*/
+    v2 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1); /*0x767f0d*/
+    v3 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 128))(a1); /*0x767f0f*/
     if ( a2 ) /*0x767f1b*/
     {
       v4 = a2[1]; /*0x767f1f*/
@@ -182,10 +180,10 @@ unsigned int * MSFrameAnim::UpdateFrame(unsigned int * a1)
 namespace gamemd {
 int MSFrameAnim::initAnimation()
 {
-  int (__thiscall ***v2)(_DWORD, int); // ecx
+  int (__thiscall ***v2)(unsigned int, int); // ecx
   int result; // eax
 
-  v2 = *(int (__thiscall ****)(_DWORD, int))(this + 4); /*0x769c56*/
+  v2 = *(int (__thiscall ****)(unsigned int, int))&this->q010; /*0x769c56*/
   this->q010 = 0; /*0x769c59*/
   if ( v2 && this->IsAllocated ) /*0x769c60*/
   {
@@ -242,7 +240,6 @@ unsigned int MSFrameAnim::pauseAnimation(int a2)
 namespace gamemd {
 rc_ptr * MSFrameAnim::resumeAnimation(char a2)
 {
-  *(void ** *)this = (void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x769d93*/
   ComPtr::Release(); /*0x769d99*/
   if ( (a2 & 1) != 0 ) /*0x769da3*/
     RA2_OPDEL(); /*0x769da6*/
@@ -256,13 +253,13 @@ int MSFrameAnim::getCurrentFrame(int a2)
 {
   void * v2;
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x76a100*/
   result = 0; /*0x76a103*/
   if ( v2 <= 0 ) /*0x76a108*/
     return -1; /*0x76a123*/
-  for ( i = (_DWORD *)(this->Items + 4); *i != *(_DWORD *)(a2 + 4); i += 2 ) /*0x76a111*/
+  for ( i = (unsigned int *)(this->Items + 4); *i != *(unsigned int *)(a2 + 4); i += 2 ) /*0x76a111*/
   {
     if ( ++result >= v2 ) /*0x76a121*/
       return -1; /*0x76a121*/
@@ -274,7 +271,7 @@ int MSFrameAnim::getCurrentFrame(int a2)
 namespace gamemd {
 char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   unsigned int v5;
   int i; // eax
   void * v7;
@@ -285,7 +282,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
     if ( a3 ) /*0x76a2c8*/
       v4 = a3; /*0x76a2de*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x76a2da*/
+      v4 = operator new(4 * a2); /*0x76a2da*/
     this->IsInitialized = 1; /*0x76a2e2*/
     if ( !v4 ) /*0x76a2e6*/
       return 0; /*0x76a35a*/
@@ -294,11 +291,11 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
       v5 = this->q008; /*0x76a2ef*/
       if ( a2 < v5 ) /*0x76a2f4*/
         v5 = a2; /*0x76a2f6*/
-      for ( i = 0; i < v5; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x76a2fc*/
+      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x76a2fc*/
         ++i; /*0x76a301*/
       if ( this->IsAllocated ) /*0x76a30e*/
       {
-        RA2_OPDEL(*((void **)this + 1)); /*0x76a319*/
+        RA2_OPDEL(this->q004); /*0x76a319*/
         this->Items = 0; /*0x76a321*/
       }
     }
@@ -308,7 +305,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x76a33e*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x76a33e*/
   }
   v7 = this->q008; /*0x76a341*/
   if ( v7 < this->q010 ) /*0x76a349*/
@@ -323,13 +320,13 @@ int MSFrameAnim::resetAnimation(unsigned int * a2)
 {
   void * v2;
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x76a360*/
   result = 0; /*0x76a363*/
   if ( v2 <= 0 ) /*0x76a368*/
     return -1; /*0x76a37f*/
-  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x76a36e*/
+  for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x76a36e*/
   {
     if ( ++result >= v2 ) /*0x76a37d*/
       return -1; /*0x76a37d*/
@@ -341,10 +338,9 @@ int MSFrameAnim::resetAnimation(unsigned int * a2)
 namespace gamemd {
 DynamicVector * MSFrameAnim::setPosition(char a2)
 {
-  void (__thiscall ***v3)(_DWORD, int); // ecx
+  void (__thiscall ***v3)(unsigned int, int); // ecx
 
-  v3 = (void (__thiscall ***)(_DWORD, int))this->Items; /*0x76a683*/
-  *(void **)this = (void*)&VectorClass_rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a686*/
+  v3 = (void (__thiscall ***)(unsigned int, int))this->Items; /*0x76a683*/
   if ( v3 && this->IsAllocated ) /*0x76a690*/
   {
     (**v3)(v3, 3); /*0x76a69f*/
@@ -365,7 +361,6 @@ DynamicVector * MSFrameAnim::setScale(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x76a723*/
-  *(void **)this = (void*)&VectorClass_WorldDominationTour_Map_AnimationPalette___vftable; /*0x76a726*/
   if ( v3 && this->IsAllocated ) /*0x76a730*/
   {
     RA2_OPDEL(v3); /*0x76a738*/
@@ -384,7 +379,6 @@ namespace gamemd {
 unsigned int * MSFrameAnim::drawFrame()
 {
   ComPtr::Constructor(); /*0x76a7c3*/
-  *(void **)this = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a7c8*/
   return this; /*0x76a7d0*/
 }
 } // namespace gamemd

@@ -22,7 +22,7 @@ int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, Techn
   this->q0AC = aP1; /*0x4664fb*/
   this->q0B0 = aP3; /*0x466501*/
   this->q12C = 0; /*0x466507*/
-  this->u8_12D = *(_BYTE *)(aP1 + 758); /*0x466513*/
+  this->u8_12D = *(unsigned char *)(aP1 + 758); /*0x466513*/
   if ( aP1->qAA4 && aP3 ) /*0x466525*/
   {
     result = aP3->q21C->u32_16054; /*0x46652d*/

@@ -13,7 +13,7 @@
 namespace gamemd {
 AbstractClass * * WinMainSetup_Setup_6BB8E0()
 {
-  unsigned __int8 result; // al
+  uint8_t result; // al
 
   result = g_DDraw_Force3D; /*0x6bb8e0*/
   if ( g_DDraw_Force3D ) /*0x6bb8ea*/
@@ -50,7 +50,7 @@ AbstractClass * * WinMainSetup_Setup_6BB8E0()
       (**(void (__thiscall ***, unsigned int a1)(int, int))g_DSurface_Primary)(g_DSurface_Primary, 1); /*0x6bb979*/
       g_DSurface_Primary = 0; /*0x6bb97b*/
     }
-    result = (unsigned __int8)sub_4A44F0(a1); /*0x6bb981*/
+    result = (uint8_t)sub_4A44F0(a1); /*0x6bb981*/
     byte_B0BCF5 = 1; /*0x6bb986*/
   }
   return result; /*0x6bb98d*/
@@ -147,14 +147,14 @@ namespace gamemd {
 void sub_5B4310()
 {
   unsigned int v0;
-  _DWORD *v1; // ecx
+  unsigned int *v1; // ecx
 
   v0 = g_FileCacheHashRoot; /*0x5b4318*/
   if ( g_FileCacheHashRoot ) /*0x5b431a*/
   {
-    if ( *(_DWORD *)g_FileCacheHashRoot ) /*0x5b431c*/
-      Tree::Destructor(*(_DWORD **)g_FileCacheHashRoot); /*0x5b4324*/
-    v1 = (_DWORD *)v0[1]; /*0x5b4329*/
+    if ( *(unsigned int *)g_FileCacheHashRoot ) /*0x5b431c*/
+      Tree::Destructor(*(unsigned int **)g_FileCacheHashRoot); /*0x5b4324*/
+    v1 = (unsigned int *)v0[1]; /*0x5b4329*/
     if ( v1 ) /*0x5b432e*/
       Tree::Destructor(v1); /*0x5b4330*/
     RA2_OPDEL(v0); /*0x5b4336*/
@@ -287,17 +287,17 @@ void sub_65FD50()
 
   for ( i = g_TriggerEventState - 1; i >= 0; --i ) /*0x65fd5c*/
   {
-    v1 = (void *)*((_DWORD *)g_TriggerPool + i); /*0x65fd65*/
+    v1 = (void *)*((unsigned int *)g_TriggerPool + i); /*0x65fd65*/
     if ( v1 ) /*0x65fd6a*/
     {
-      v3 = *((_DWORD *)g_TriggerPool + i); /*0x65fd7b*/
+      v3 = *((unsigned int *)g_TriggerPool + i); /*0x65fd7b*/
       v2 = (*(int (__thiscall **)(int *, int *))(dword_B04DA8 + 16))(&dword_B04DA8, &v3); /*0x65fd7f*/
       if ( v2 != -1 && v2 < g_TriggerEventState && v2 < --g_TriggerEventState ) /*0x65fd9a*/
       {
         do /*0x65fdb2*/
         {
           ++v2; /*0x65fda2*/
-          *((_DWORD *)g_TriggerPool + v2 - 1) = *((_DWORD *)g_TriggerPool + v2); /*0x65fda6*/
+          *((unsigned int *)g_TriggerPool + v2 - 1) = *((unsigned int *)g_TriggerPool + v2); /*0x65fda6*/
         }
         while ( v2 < g_TriggerEventState ); /*0x65fdb2*/
       }

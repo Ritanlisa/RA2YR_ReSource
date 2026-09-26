@@ -14,7 +14,6 @@ CounterClass * CounterClass::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->count; /*0x49fce3*/
-  *(void **)this = (void*)&VectorClass_int_vftable; /*0x49fce6*/
   if ( v3 && this->q00D ) /*0x49fcf0*/
   {
     RA2_OPDEL(v3); /*0x49fcf8*/

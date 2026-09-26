@@ -19,7 +19,6 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
   this->u32_8 = a2; /*0x5d89fe*/
   this->q00C = 1; /*0x5d8a01*/
   this->u8_D = 0; /*0x5d8a05*/
-  *(void **)this = (void*)&VectorClass_MultiplayerGameMode___vftable; /*0x5d8a08*/
   if ( a2 ) /*0x5d8a0e*/
   {
     if ( a3 ) /*0x5d8a16*/
@@ -27,7 +26,7 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
       this->q004 = a3; /*0x5d8a18*/
       return this; /*0x5d8a1e*/
     }
-    this->q004 = RA2_OPNEW(4 * a2); /*0x5d8a2d*/
+    this->q004 = operator new(4 * a2); /*0x5d8a2d*/
     this->u8_D = 1; /*0x5d8a30*/
   }
   return this; /*0x5d8a1d*/
@@ -38,27 +37,26 @@ namespace gamemd {
 MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
 {
   void * v3;
-  void (__thiscall ***v4)(_DWORD, int); // ecx
-  void (__thiscall ***v5)(_DWORD, int); // ecx
+  void (__thiscall ***v4)(unsigned int, int); // ecx
+  void (__thiscall ***v5)(unsigned int, int); // ecx
   void *v6; // eax
 
   v3 = 0; /*0x5d7f24*/
-  for ( *(_DWORD *)this = (void*)&MultiplayerGameMode_vftable; v3 < this->q018; ++v3 ) /*0x5d7f31*/
+  for ( *(unsigned int *)this = (void*)&MultiplayerGameMode_vftable; v3 < this->q018; ++v3 ) /*0x5d7f31*/
   {
-    v4 = *(void (__thiscall ****)(_DWORD, int))(this->q00C + 4 * v3); /*0x5d7f36*/
+    v4 = *(void (__thiscall ****)(unsigned int, int))(this->q00C + 4 * v3); /*0x5d7f36*/
     if ( v4 ) /*0x5d7f3b*/
       (**v4)(v4, 1); /*0x5d7f41*/
   }
-  (*(void (__thiscall **)(char *))(this->u32_8 + 12))(this + 8); /*0x5d7f53*/
-  v5 = (void (__thiscall ***)(_DWORD, int))this->q038; /*0x5d7f56*/
+  (*(void (__thiscall **)(char *))(this->u32_8 + 12))&this->q020; /*0x5d7f53*/
+  v5 = (void (__thiscall ***)(unsigned int, int))this->q038; /*0x5d7f56*/
   if ( v5 ) /*0x5d7f5b*/
     (**v5)(v5, 1); /*0x5d7f61*/
   DeleteAndZero((void **)&this->q0042); /*0x5d7f66*/
   DeleteAndZero((void **)&this->q0041); /*0x5d7f6e*/
-  DeleteAndZero::Alt((void **)this + 9); /*0x5d7f76*/
-  DeleteAndZero::Alt((void **)this + 8); /*0x5d7f7e*/
+  DeleteAndZero::Alt(void *)&this->q024; /*0x5d7f76*/
+  DeleteAndZero::Alt(void *)&this->q020; /*0x5d7f7e*/
   v6 = (void *)this->q00C; /*0x5d7f83*/
-  this->u32_8 = (void*)&VectorClass_MultiplayerTeam___vftable; /*0x5d7f86*/
   if ( v6 && *(&this->u32_81) ) /*0x5d7f90*/
   {
     RA2_OPDEL(v6); /*0x5d7f98*/

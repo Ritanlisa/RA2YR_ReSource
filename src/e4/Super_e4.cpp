@@ -14,7 +14,7 @@ int Super::GetDefaultTimer()
 
   result = this->q024; /*0x6cc260*/
   if ( result == -1 ) /*0x6cc266*/
-    return *(_DWORD *)(this->q028 + 176); /*0x6cc26b*/
+    return *(unsigned int *)(this->q028 + 176); /*0x6cc26b*/
   return result; /*0x6cc271*/
 }
 }

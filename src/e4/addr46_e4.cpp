@@ -20,7 +20,6 @@
 namespace gamemd {
 void E4Recv_46D350::sub_46D350()
 {
-  *(void **)this = (void*)&CampaignScoreClass_vftable; /*0x46d350*/
 }
 } // namespace gamemd
 
@@ -135,30 +134,30 @@ void sub_46D8B0()
   }
   if ( v1 == -1 ) /*0x46d8eb*/
     return 0; /*0x46d8f2*/
-  if ( SessionClass::GetPlayerSide(*(&g_NetworkPlayerName + v1)) != *((_DWORD *)&qword_A8D667 + 1) ) /*0x46d907*/
+  if ( SessionClass::GetPlayerSide(*(&g_NetworkPlayerName + v1)) != *((unsigned int *)&qword_A8D667 + 1) ) /*0x46d907*/
     v0 = 1; /*0x46d909*/
   if ( g_GameStateFlags ) /*0x46d913*/
   {
-    if ( (*(unsigned __int8 (__thiscall **)(int, _DWORD))(*(_DWORD *)g_GameStateFlags + 28))( /*0x46d918*/
+    if ( (*(uint8_t (__thiscall **)(int, unsigned int))(*(unsigned int *)g_GameStateFlags + 28))( /*0x46d918*/
            g_GameStateFlags,
-           *((_DWORD *)&qword_A8D667 + 1)) )
+           *((unsigned int *)&qword_A8D667 + 1)) )
     {
       SessionClass::SetPlayerOption(*(&g_NetworkPlayerName + v1), *((int *)&qword_A8D667 + 1)); /*0x46d926*/
     }
     else if ( g_GameStateFlags ) /*0x46d92f*/
     {
-      v5 = *(_DWORD *)g_GameStateFlags; /*0x46d938*/
+      v5 = *(unsigned int *)g_GameStateFlags; /*0x46d938*/
       PlayerSide = SessionClass::GetPlayerSide(*(&g_NetworkPlayerName + v1)); /*0x46d93a*/
-      if ( !(*(unsigned __int8 (__thiscall **)(int, int))(v5 + 28))(g_GameStateFlags, PlayerSide) ) /*0x46d946*/
+      if ( !(*(uint8_t (__thiscall **)(int, int))(v5 + 28))(g_GameStateFlags, PlayerSide) ) /*0x46d946*/
       {
-        v7 = (*(int (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 40))(g_GameStateFlags); /*0x46d958*/
+        v7 = (*(int (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 40))(g_GameStateFlags); /*0x46d958*/
         SessionClass::SetPlayerOption(*(&g_NetworkPlayerName + v1), v7); /*0x46d960*/
       }
     }
   }
   if ( SessionClass::GetPlayerColor(*(&g_NetworkPlayerName + v1)) != dword_A8D66F ) /*0x46d979*/
     v0 = 1; /*0x46d97b*/
-  if ( (unsigned __int8)IsAvailableColorhWnd() ) /*0x46d97d*/
+  if ( (uint8_t)IsAvailableColorhWnd() ) /*0x46d97d*/
   {
     if ( SessionClass::GetPlayerColor(*(&g_NetworkPlayerName + v1)) != dword_A8D66F ) /*0x46d998*/
     {
@@ -170,11 +169,11 @@ void sub_46D8B0()
   {
     SessionClass::SetPlayerColor(*(&g_NetworkPlayerName + v1), dword_A8D66F); /*0x46d9b9*/
   }
-  if ( SessionClass::GetPlayerColor(*(&g_NetworkPlayerName + v1)) != *(_DWORD *)&qword_A8D667 ) /*0x46d9d2*/
+  if ( SessionClass::GetPlayerColor(*(&g_NetworkPlayerName + v1)) != *(unsigned int *)&qword_A8D667 ) /*0x46d9d2*/
     v0 = 1; /*0x46d9d4*/
-  if ( (unsigned __int8)sub_4E50A0() ) /*0x46d9d6*/
+  if ( (uint8_t)sub_4E50A0() ) /*0x46d9d6*/
   {
-    if ( SessionClass::GetOption(*(&g_NetworkPlayerName + v1)) != *(_DWORD *)&qword_A8D667 ) /*0x46d9f1*/
+    if ( SessionClass::GetOption(*(&g_NetworkPlayerName + v1)) != *(unsigned int *)&qword_A8D667 ) /*0x46d9f1*/
     {
       SessionClass::SetOption(*(&g_NetworkPlayerName + v1), -2); /*0x46d9fc*/
       return v0; /*0x46da06*/
@@ -216,10 +215,10 @@ void sub_46DA70()
   v17 = HouseClass_Count; /*0x46da85*/
   for ( i = 0; v1 < v0; i = v1 ) /*0x46da8d*/
   {
-    v2 = *(_DWORD *)&HouseClass_Array->gap0[4 * v1]; /*0x46da9a*/
+    v2 = *(unsigned int *)&HouseClass_Array->gap0[4 * v1]; /*0x46da9a*/
     if ( v2 /*0x46dab7*/
       && v2->attachedTag->q698 != 1
-      && (unsigned __int8)House::IsCurrentPlayer(*(void **)&HouseClass_Array->gap0[4 * v1]) )
+      && (uint8_t)House::IsCurrentPlayer(*(void **)&HouseClass_Array->gap0[4 * v1]) )
     {
       v3 = g_CampaignScoreFlags++; /*0x46dacf*/
       v4 = 28 * v3; /*0x46dae1*/
@@ -256,11 +255,11 @@ void sub_46DA70()
       while ( v10 ); /*0x46db68*/
       dword_A8D23C[v4] = v5; /*0x46db6a*/
       dword_A8D22C[v4] = v2->u32_5488 + v2->u32_5434; /*0x46db84*/
-      Count = VectorClass::GetCount((_DWORD *)(v2 + 21840)); /*0x46db95*/
-      v13 = VectorClass::GetCount((_DWORD *)(v2 + 21860)) + Count; /*0x46dba2*/
-      v14 = VectorClass::GetCount((_DWORD *)(v2 + 21880)) + v13; /*0x46dbaf*/
+      Count = VectorClass::GetCount((unsigned int *)(v2 + 21840)); /*0x46db95*/
+      v13 = VectorClass::GetCount((unsigned int *)(v2 + 21860)) + Count; /*0x46dba2*/
+      v14 = VectorClass::GetCount((unsigned int *)(v2 + 21880)) + v13; /*0x46dbaf*/
       dword_A8D24C[v4] = v2->u32_5488 /*0x46dbc8*/
-                       + VectorClass::GetCount((_DWORD *)(v2 + 21900))
+                       + VectorClass::GetCount((unsigned int *)(v2 + 21900))
                        + v14
                        + v2->u32_5434;
       v15 = v2->u32_54E8; /*0x46dbce*/
@@ -345,7 +344,7 @@ void EnableGameModeControls(HWND hDlg, bool a2)
   v11 = GetDlgItem(hDlg, ResourceID3); /*0x46dde4*/
   EnableWindow(v11, a2); /*0x46dde8*/
   result = (HWND)Settings::CheckString(); /*0x46ddea*/
-  if ( (_BYTE)result ) /*0x46ddf1*/
+  if ( (unsigned char)result ) /*0x46ddf1*/
   {
     result = GetDlgItem(hDlg, 1842); /*0x46ddf9*/
     v13 = result; /*0x46ddfb*/
@@ -535,7 +534,7 @@ namespace gamemd {
 long long sub_4661A0()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_89DDD8 - dbl_89DE00); /*0x4661b2*/
   result = Math::RoundToInt(v0 * dbl_89DDF8 * 0.5); /*0x4661c6*/
@@ -564,7 +563,7 @@ void sub_466210()
 namespace gamemd {
 long long sub_466240()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_89DE70) + 0.5); /*0x46625b*/
   dword_89DE64 = result; /*0x466260*/
@@ -743,7 +742,7 @@ namespace gamemd {
 long long sub_46BAA0()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_89DE78 - dbl_89DEA0); /*0x46bab2*/
   result = Math::RoundToInt(v0 * dbl_89DE98 * 0.5); /*0x46bac6*/
@@ -772,7 +771,7 @@ void sub_46BB10()
 namespace gamemd {
 long long sub_46BB40()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_89DEF0) + 0.5); /*0x46bb5b*/
   dword_89DEE4 = result; /*0x46bb60*/
@@ -868,7 +867,7 @@ namespace gamemd {
 long long sub_46CA40()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_89DEF8 - dbl_89DF10); /*0x46ca52*/
   result = Math::RoundToInt(v0 * dbl_89DF08 * 0.5); /*0x46ca66*/
@@ -897,7 +896,7 @@ void sub_46CAB0()
 namespace gamemd {
 long long sub_46CAE0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_89DF60) + 0.5); /*0x46cafb*/
   dword_89DF54 = result; /*0x46cb00*/
@@ -993,7 +992,7 @@ namespace gamemd {
 long long sub_46D1F0()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_89DF68 - dbl_89DFB0); /*0x46d202*/
   result = Math::RoundToInt(v0 * dbl_89DFA8 * 0.5); /*0x46d216*/
@@ -1022,7 +1021,7 @@ void sub_46D260()
 namespace gamemd {
 long long sub_46D290()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_89E048) + 0.5); /*0x46d2ab*/
   dword_89E034 = result; /*0x46d2b0*/
@@ -1078,7 +1077,7 @@ int sub_46D310()
 namespace gamemd {
 void sub_46D480()
 {
-  *((_BYTE *)&g_GameModeOptionState + a2) = IDA_BYTE4(result); /*0x46d480*/
+  *((unsigned char *)&g_GameModeOptionState + a2) = IDA_BYTE4(result); /*0x46d480*/
   return result; /*0x46d486*/
 }
 }
@@ -1086,7 +1085,7 @@ void sub_46D480()
 namespace gamemd {
 char E4Recv_46D490::sub_46D490()
 {
-  return *((_BYTE *)&g_GameModeOptionState + (_DWORD)this); /*0x46d496*/
+  return *((unsigned char *)&g_GameModeOptionState + (unsigned int)this); /*0x46d496*/
 }
 } // namespace gamemd
 
@@ -1103,9 +1102,9 @@ int sub_46D810()
 
   v1 = 51; /*0x46d82c*/
   strcpy(v2, g_GameSetupBuffer); /*0x46d83d*/
-  Option = SessionClass::GetOption(*(_DWORD *)Game_PlayerInfoArray); /*0x46d859*/
-  PlayerSide = SessionClass::GetPlayerSide(*(_DWORD *)Game_PlayerInfoArray); /*0x46d864*/
-  PlayerColor = SessionClass::GetPlayerColor(*(_DWORD *)Game_PlayerInfoArray); /*0x46d874*/
+  Option = SessionClass::GetOption(*(unsigned int *)Game_PlayerInfoArray); /*0x46d859*/
+  PlayerSide = SessionClass::GetPlayerSide(*(unsigned int *)Game_PlayerInfoArray); /*0x46d864*/
+  PlayerColor = SessionClass::GetPlayerColor(*(unsigned int *)Game_PlayerInfoArray); /*0x46d874*/
   result = g_NetworkPlayerName; /*0x46d878*/
   if ( g_NetworkPlayerName ) /*0x46d881*/
   {

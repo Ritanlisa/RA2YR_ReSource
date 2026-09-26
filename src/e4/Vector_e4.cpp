@@ -87,7 +87,7 @@ void Vector::Clear()
 {
   if ( this->q008 ) /*0x43ae53*/
     RA2_OPDEL(); /*0x43ae5d*/
-  *(_DWORD *)this = 0; /*0x43ae65*/
+  *(unsigned int *)this = 0; /*0x43ae65*/
   this->q004 = 0; /*0x43ae6b*/
   this->q008 = 0; /*0x43ae72*/
 }
@@ -111,7 +111,7 @@ char Vector::RemoveAt(AbstractClass * aP1)
     do /*0x45ae34*/
     {
       ++aP1; /*0x45ae27*/
-      *(_DWORD *)(this->q004 + 4 * aP1 - 4) = *(_DWORD *)(this->q004 + 4 * aP1); /*0x45ae2b*/
+      *(unsigned int *)(this->q004 + 4 * aP1 - 4) = *(unsigned int *)(this->q004 + 4 * aP1); /*0x45ae2b*/
     }
     while ( aP1 < this->q010 ); /*0x45ae34*/
   }
@@ -126,23 +126,23 @@ char Vector::ReallocDynamic(int a2)
   char *v3; // edi
   int i; // ecx
   int v5; // eax
-  _DWORD *v6; // edx
+  unsigned int *v6; // edx
   char * v7;
 
   if ( a2 < 0 ) /*0x4d2e4c*/
     return 0; /*0x4d2e4c*/
-  v3 = (char *)RA2_OPNEW(8 * (a2 + v3->vtable3)); /*0x4d2e60*/
+  v3 = (char *)operator new(8 * (a2 + v3->vtable3)); /*0x4d2e60*/
   if ( !v3 ) /*0x4d2e67*/
     return 0; /*0x4d2ec0*/
-  for ( i = 0; i < v3->vtable2; *(_DWORD *)&v3[v5 + 4] = v6[1] ) /*0x4d2e75*/
+  for ( i = 0; i < v3->vtable2; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x4d2e75*/
   {
     v5 = 8 * i; /*0x4d2e79*/
-    v6 = (_DWORD *)(*(_DWORD *)v3 + 8 * i++); /*0x4d2e82*/
-    *(_DWORD *)&v3[v5] = *v6; /*0x4d2e87*/
+    v6 = (unsigned int *)(*(unsigned int *)v3 + 8 * i++); /*0x4d2e82*/
+    *(unsigned int *)&v3[v5] = *v6; /*0x4d2e87*/
   }
   RA2_OPDEL(); /*0x4d2e9b*/
   v7 = a2 + v3->vtable3; /*0x4d2ea6*/
-  *(_DWORD *)v3 = v3; /*0x4d2ea8*/
+  *(unsigned int *)v3 = v3; /*0x4d2ea8*/
   v3->vtable3 = v7; /*0x4d2eaa*/
   v3->uniqueId = 0; /*0x4d2ead*/
   return 1; /*0x4d2eb4*/
@@ -155,13 +155,13 @@ int Vector::Find(unsigned int * a2)
 {
   void * v2;
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   v2 = this->q010; /*0x4e0550*/
   result = 0; /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
-  for ( i = (_DWORD *)this->Items; *i != *a2; ++i ) /*0x4e055e*/
+  for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x4e055e*/
   {
     if ( ++result >= v2 ) /*0x4e056d*/
       return -1; /*0x4e056d*/
@@ -173,7 +173,7 @@ int Vector::Find(unsigned int * a2)
 namespace gamemd {
 BOOL Vector::HasCapacity()
 {
-  return this->q008 < *(_DWORD *)(this->q004 + 16); /*0x76f0bd*/
+  return this->q008 < *(unsigned int *)(this->q004 + 16); /*0x76f0bd*/
 }
 } // namespace gamemd
 
@@ -187,7 +187,7 @@ char Vector::Grow()
   int v6; // [esp+4h] [ebp-4h]
 
   v2 = *this; /*0x7aeec4*/
-  if ( *this < *(this + 1) ) /*0x7aeecb*/
+  if ( *this < this->q004 ) /*0x7aeecb*/
     return 0; /*0x7aeecd*/
   v4 = 2 * v2; /*0x7aeed4*/
   v6 = 2 * v2; /*0x7aeedb*/
@@ -196,16 +196,16 @@ char Vector::Grow()
     v6 = 10; /*0x7aeee1*/
     v4 = 10; /*0x7aeee9*/
   }
-  v5 = RA2_OPNEW(4 * v4); /*0x7aeefc*/
+  v5 = operator new(4 * v4); /*0x7aeefc*/
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
-  if ( *(this + 2) ) /*0x7aef13*/
+  if ( *(unsigned int *)&this->q008 ) /*0x7aef13*/
   {
-    qmemcpy(v5, (const void *)*(this + 2), 4 * *this); /*0x7aef28*/
+    qmemcpy(v5, (const void *)*(unsigned int *)&this->q008, 4 * *this); /*0x7aef28*/
     v4 = v6; /*0x7aef31*/
   }
-  RA2_OPDEL((void *)*(this + 2)); /*0x7aef39*/
-  *(this + 1) = v4; /*0x7aef41*/
-  *(this + 2) = (int)v5; /*0x7aef44*/
+  RA2_OPDEL((void *)*(unsigned int *)&this->q008); /*0x7aef39*/
+  this->q004 = v4; /*0x7aef41*/
+  *(unsigned int *)&this->q008 = (int)v5; /*0x7aef44*/
   return 1; /*0x7aeecf*/
 }
 } // namespace gamemd

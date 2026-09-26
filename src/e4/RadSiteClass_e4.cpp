@@ -34,20 +34,16 @@ RadSiteClass::RadSiteClass()
   *(&this->vtable36) = 0; /*0x65b21f*/
   *(&this->vtable37) = 0; /*0x65b222*/
   *(&this->vtable38) = 0; /*0x65b225*/
-  *(void **)this = (void*)&RadSiteClass_vftable; /*0x65b228*/
-  this->vtable2 = (void*)&RadSiteClass_vftable; /*0x65b22e*/
-  this->vtable3 = (void*)&RadSiteClass_vftable; /*0x65b235*/
-  this->vtable4 = (void*)&RadSiteClass_vftable; /*0x65b23c*/
   if ( dword_B04BE0 < dword_B04BD8 /*0x65b277*/
     || (byte_B04BDD || !dword_B04BD8)
     && dword_B04BE4 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(RadSiteClass_Array + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(RadSiteClass_Array + 8))(
          &RadSiteClass_Array,
          dword_B04BD8 + dword_B04BE4,
          0) )
   {
     v3 = dword_B04BE0++; /*0x65b284*/
-    *((_DWORD *)dword_B04BD4 + v3) = this; /*0x65b293*/
+    *((unsigned int *)dword_B04BD4 + v3) = this; /*0x65b293*/
   }
   return this; /*0x65b298*/
 }
@@ -86,10 +82,6 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
       aP0[10] = v3; /*0x65b404*/
       aP0[13] = g_CurrentFrame; /*0x65b40c*/
       aP0[15] = 0; /*0x65b40f*/
-      *(void **)aP0 = (void*)&RadSiteClass_vftable; /*0x65b416*/
-      aP0[1] = (void*)&RadSiteClass_vftable; /*0x65b41c*/
-      aP0[2] = (void*)&RadSiteClass_vftable; /*0x65b423*/
-      aP0[3] = (void*)&RadSiteClass_vftable; /*0x65b42a*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x65b43a*/
   }

@@ -52,26 +52,26 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
   int v5; // ebx
   int v7; // eax
   int i; // edx
-  _DWORD *v10; // ecx
+  unsigned int *v10; // ecx
   char v11; // al
   int v12; // edi
   int v13; // edi
   int v14; // [esp+0h] [ebp-1Ch] BYREF
-  _DWORD v15[3]; // [esp+10h] [ebp-Ch] BYREF
+  unsigned int v15[3]; // [esp+10h] [ebp-Ch] BYREF
 
   IDA_HIWORD(v5) = IDA_HIWORD(a5); /*0x541174*/
-  if ( Game_PlayerCount && *(_DWORD *)(*(_DWORD *)Game_PlayerInfoArray + 111) == a5 ) /*0x541192*/
+  if ( Game_PlayerCount && *(unsigned int *)(*(unsigned int *)Game_PlayerInfoArray + 111) == a5 ) /*0x541192*/
     return 0; /*0x541192*/
   v7 = 1; /*0x541194*/
   if ( Game_PlayerCount <= 1 ) /*0x54119b*/
     return 0; /*0x54119b*/
-  for ( i = Game_PlayerInfoArray + 4; *(_DWORD *)(*(_DWORD *)i + 111) != a5; i += 4 ) /*0x54119d*/
+  for ( i = Game_PlayerInfoArray + 4; *(unsigned int *)(*(unsigned int *)i + 111) != a5; i += 4 ) /*0x54119d*/
   {
     if ( ++v7 >= Game_PlayerCount ) /*0x5411ad*/
       return 0; /*0x5411ad*/
   }
-  IDA_LOWORD(v5) = *((_WORD *)&Network_PlayerPorts + v7); /*0x5411be*/
-  v10 = (_DWORD *)(*(_DWORD *)(Game_PlayerInfoArray + 4 * v7) + 40); /*0x5411c6*/
+  IDA_LOWORD(v5) = *((unsigned short *)&Network_PlayerPorts + v7); /*0x5411be*/
+  v10 = (unsigned int *)(*(unsigned int *)(Game_PlayerInfoArray + 4 * v7) + 40); /*0x5411c6*/
   v11 = this->M4; /*0x5411c9*/
   v12 = a4; /*0x5411cc*/
   v15[0] = *v10; /*0x5411d2*/
@@ -81,7 +81,7 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
     return 0; /*0x5411af*/
   if ( a4 && (&v14 == (int *)-16 || Network::IsBroadcastAddr(v15)) ) /*0x5411ff*/
     v12 = 0; /*0x541208*/
-  v13 = (*(int (__thiscall **)(_DWORD, int, int, _DWORD *, int, int, _DWORD))(**(_DWORD **)(&this->u32_1C2) + 44))( /*0x541225*/
+  v13 = (*(int (__thiscall **)(unsigned int, int, int, unsigned int *, int, int, unsigned int))(**(unsigned int **)(&this->u32_1C2) + 44))( /*0x541225*/
           this->M72,
           a2,
           a3,
@@ -104,9 +104,9 @@ int E4Recv_542F30::sub_542F30()
   unsigned int v1; // ebx
   int result; // eax
   int v3; // ebp
-  _DWORD *i; // edi
+  unsigned int *i; // edi
   int v5; // esi
-  _DWORD *v6; // ecx
+  unsigned int *v6; // ecx
   int TileIndex; // eax
   int v8; // [esp+8h] [ebp-8h]
 
@@ -119,7 +119,7 @@ int E4Recv_542F30::sub_542F30()
     for ( i = &this->u32_28; ; ++i ) /*0x542f4d*/
     {
       v5 = 0; /*0x542f52*/
-      v6 = *(_DWORD **)(*i + 4); /*0x542f54*/
+      v6 = *(unsigned int **)(*i + 4); /*0x542f54*/
       if ( (int)v6[10] <= 0 ) /*0x542f5c*/
         goto LABEL_12; /*0x542f5c*/
       while ( 1 ) /*0x542f5f*/
@@ -129,19 +129,19 @@ int E4Recv_542F30::sub_542F30()
           break; /*0x542f66*/
   LABEL_8:
         ++v5; /*0x542f79*/
-        v6 = *(_DWORD **)(*i + 4); /*0x542f7c*/
+        v6 = *(unsigned int **)(*i + 4); /*0x542f7c*/
         if ( v5 >= v6[10] ) /*0x542f82*/
           goto LABEL_9; /*0x542f82*/
       }
-      if ( *(_BYTE *)(*(_DWORD *)(TileIndex + 20) + 2) || (*(_BYTE *)TileIndex & 2) != 0 ) /*0x542f75*/
+      if ( *(unsigned char *)(*(unsigned int *)(TileIndex + 20) + 2) || (*(unsigned char *)TileIndex & 2) != 0 ) /*0x542f75*/
         break; /*0x542f75*/
   LABEL_9:
       if ( TileIndex ) /*0x542f86*/
       {
-        if ( *(_DWORD *)(TileIndex + 4) < v1 ) /*0x542f8d*/
+        if ( *(unsigned int *)(TileIndex + 4) < v1 ) /*0x542f8d*/
         {
-          v1 = *(_DWORD *)(TileIndex + 4); /*0x542f92*/
-          v8 = *(_DWORD *)(TileIndex + 20); /*0x542f94*/
+          v1 = *(unsigned int *)(TileIndex + 4); /*0x542f92*/
+          v8 = *(unsigned int *)(TileIndex + 20); /*0x542f94*/
         }
       }
   LABEL_12:
@@ -168,7 +168,7 @@ AbstractClass * * SurfaceClass_CreatePrimary(int a1, int a2, int a3)
   if ( !g_DSurface_Primary ) /*0x544e86*/
     return 0; /*0x544e8b*/
   if ( a1 == 1000 && a2 == 1000 && a3 == 1000 && g_SurfaceAnimState ) /*0x544ead*/
-    return *(_DWORD *)dword_87F69C; /*0x544eb7*/
+    return *(unsigned int *)dword_87F69C; /*0x544eb7*/
   QuantizeColorRGB(&a3); /*0x544ecd*/
   v4 = 1; /*0x544ee4*/
   if ( g_SurfaceAnimState <= 1 ) /*0x544eeb*/
@@ -177,7 +177,7 @@ AbstractClass * * SurfaceClass_CreatePrimary(int a1, int a2, int a3)
     v6 = 53; /*0x544f1c*/
     if ( a3 + a2 + a1 < 2000 ) /*0x544f2b*/
       v6 = 27; /*0x544f2d*/
-    if ( RA2_OPNEW(0x1B4u) ) /*0x544f37*/
+    if ( operator new(0x1B4u) ) /*0x544f37*/
       v7 = LightConvertClass::Constructor( /*0x544f79*/
              &unk_ABBED0,
              &FileSystem_TEMPERAT_PAL,
@@ -193,13 +193,13 @@ AbstractClass * * SurfaceClass_CreatePrimary(int a1, int a2, int a3)
     if ( g_SurfaceAnimState < dword_87F6A0 /*0x544fb6*/
       || (byte_87F6A5 || !dword_87F6A0)
       && dword_87F6AC > 0
-      && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_87F698 + 8))(
+      && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_87F698 + 8))(
            &dword_87F698,
            dword_87F6A0 + dword_87F6AC,
            0) )
     {
       v8 = g_SurfaceAnimState++; /*0x544fc3*/
-      *((_DWORD *)dword_87F69C + v8) = v7; /*0x544fd2*/
+      *((unsigned int *)dword_87F69C + v8) = v7; /*0x544fd2*/
     }
     return v7; /*0x544fd5*/
   }
@@ -208,8 +208,8 @@ AbstractClass * * SurfaceClass_CreatePrimary(int a1, int a2, int a3)
     v5 = (char *)dword_87F69C + 4; /*0x544ef3*/
     while ( 1 ) /*0x544ef6*/
     {
-      result = *(_DWORD *)v5; /*0x544ef6*/
-      if ( *(_DWORD *)(*(_DWORD *)v5 + 408) == a1 && result->q19C == a2 && result->u32_1A0 == a3 ) /*0x544f0e*/
+      result = *(unsigned int *)v5; /*0x544ef6*/
+      if ( *(unsigned int *)(*(unsigned int *)v5 + 408) == a1 && result->q19C == a2 && result->u32_1A0 == a3 ) /*0x544f0e*/
         break; /*0x544f0e*/
       ++v4; /*0x544f14*/
       v5 += 4; /*0x544f15*/
@@ -246,8 +246,8 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   AbstractClass *ecx147a; // ecx
   INIClass *v39; // edx
   AnimTypeClass *v42; // eax
-  unsigned __int8 *v44; // ebx
-  _DWORD *eax193; // eax
+  uint8_t *v44; // ebx
+  unsigned int *eax193; // eax
   CCINIClass *v46; // edx
   MapClass *v45; // ecx
   unsigned int *ecx209; // ecx
@@ -257,14 +257,14 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   MapClass *v65; // [esp+18h] [ebp-9F8h]
   char Bool_Overwrite; // [esp+1Ch] [ebp-9F4h]
   bool var9F4_1; // [esp+1Dh] [ebp-9F3h]
-  __int16 var9F4_2; // [esp+1Eh] [ebp-9F2h] BYREF
+  int16_t var9F4_2; // [esp+1Eh] [ebp-9F2h] BYREF
   MapClass *v69; // [esp+20h] [ebp-9F0h]
   MapClass *v70; // [esp+24h] [ebp-9ECh]
   ObjectClass *v71; // [esp+28h] [ebp-9E8h]
   CCINIClass *v72; // [esp+2Ch] [ebp-9E4h]
   CCINIClass *v75; // [esp+30h] [ebp-9E0h]
   MapClass *v76; // [esp+34h] [ebp-9DCh]
-  unsigned __int8 **v77[4]; // [esp+38h] [ebp-9D8h] BYREF
+  uint8_t **v77[4]; // [esp+38h] [ebp-9D8h] BYREF
   char var9A4; // [esp+6Ch] [ebp-9A4h]
   AbstractClass *v80; // [esp+74h] [ebp-99Ch]
   char var998; // [esp+78h] [ebp-998h]
@@ -338,30 +338,30 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   char Source[128]; // [esp+6D0h] [ebp-340h] BYREF
   INIClass v183; // [esp+950h] [ebp-C0h] BYREF
   INIClass v184; // [esp+990h] [ebp-80h] BYREF
-  _DWORD * v3 = 0;
+  unsigned int * v3 = 0;
   v91 = a1;
   v77[1] = 0;
   v77[2] = 0;
-  _DWORD v78[3]; // [esp+48h] [ebp-9C8h] BYREF
+  unsigned int v78[3]; // [esp+48h] [ebp-9C8h] BYREF
   GenericNode::Constructor(v78);
-  _DWORD v79[6]; // [esp+54h] [ebp-9BCh] BYREF
+  unsigned int v79[6]; // [esp+54h] [ebp-9BCh] BYREF
   GenericNode::Constructor(v79);
   LinkedList_flat::Prepend(v78, (int)v79);
-  v77[3] = (unsigned __int8 **)&vt_List_INIClass_INISection;
+  v77[3] = (uint8_t **)&vt_List_INIClass_INISection;
   memset(&v79[3], 0, 12);
   var9A4 = 0;
   int v81 = 0;
   v80 = 0;
   var998 = 0;
-  v77[0] = (unsigned __int8 **)&CCINIClass_Vtable;
+  v77[0] = (uint8_t **)&CCINIClass_Vtable;
   Ticks = (INIClass *)Timer::GetTicks();
-  *(_DWORD *)&g_NetworkPlayerBuffer[80368] = 0;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80372] = 0;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80368] = 0;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80372] = 0;
   var978 = 0;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80376] = 0;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80376] = 0;
   v89 = 0;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80380] = 0;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80384] = 0;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80380] = 0;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80384] = 0;
   int v158[22]; // [esp+33Ch] [ebp-6D4h] BYREF
   CCFileClass::Construct(v158, DataGlobal_0082960C);
   if ( lpBuffer )
@@ -370,24 +370,24 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
     lpBuffer = 0;
   }
   Size = CCFileClass::GetSize(v158);
-  lpBuffer = (MapClass *)RA2_OPNEW(Size);
+  lpBuffer = (MapClass *)new MapClass;
   signed int v5 = CCFileClass::GetSize(v158);
   CCFileClass::Read(v158, (CampaignScore *)lpBuffer, v5);
-  if ( *(_DWORD *)&g_NetworkPlayerBuffer[80460] )
+  if ( *(unsigned int *)&g_NetworkPlayerBuffer[80460] )
   {
-    for ( i = *(_DWORD *)&g_NetworkPlayerBuffer[80460] - 1; i >= 0; --i )
+    for ( i = *(unsigned int *)&g_NetworkPlayerBuffer[80460] - 1; i >= 0; --i )
     {
-      RA2_OPDEL(*(void **)(*(_DWORD *)&g_NetworkPlayerBuffer[80448] + 4 * i));
+      RA2_OPDEL(*(void **)(*(unsigned int *)&g_NetworkPlayerBuffer[80448] + 4 * i));
       if ( i < *(int *)&g_NetworkPlayerBuffer[80460] )
       {
         int v7 = i;
-        --*(_DWORD *)&g_NetworkPlayerBuffer[80460];
+        --*(unsigned int *)&g_NetworkPlayerBuffer[80460];
         if ( i < *(int *)&g_NetworkPlayerBuffer[80460] )
         {
           do
           {
             ++v7;
-            *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[80448] + 4 * v7 - 4) = *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[80448]
+            *(unsigned int *)(*(unsigned int *)&g_NetworkPlayerBuffer[80448] + 4 * v7 - 4) = *(unsigned int *)(*(unsigned int *)&g_NetworkPlayerBuffer[80448]
                                                                                                  + 4 * v7);
           }
           while ( v7 < *(int *)&g_NetworkPlayerBuffer[80460] );
@@ -406,43 +406,43 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
     ++v8;
   }
   while ( (int)v8 < (int)&g_NetworkPlayerBuffer[80436] );
-  int v9 = 112 * (_DWORD)a1;
-  var904 = 112 * (_DWORD)a1;
-  sprintf(Buffer, DataGlobal_00829600, (const char *)&off_7E1BC6 + 112 * (_DWORD)a1);
+  int v9 = 112 * (unsigned int)a1;
+  var904 = 112 * (unsigned int)a1;
+  sprintf(Buffer, DataGlobal_00829600, (const char *)&off_7E1BC6 + 112 * (unsigned int)a1);
   int v149[22]; // [esp+214h] [ebp-7FCh] BYREF
   CCFileClass::Construct(v149, Buffer);
   v10 = CCFileClass::GetSize(v149);
-  *(_DWORD *)&g_NetworkPlayerBuffer[80420] = RA2_OPNEW(v10);
+  *(unsigned int *)&g_NetworkPlayerBuffer[80420] = operator new(v10);
   signed int v11 = CCFileClass::GetSize(v149);
   CCFileClass::Read(v149, *(CampaignScore **)&g_NetworkPlayerBuffer[80420], v11);
   char v148 = 50;
   FileClass::SetFileName(v149, (IUnknown *)Buffer);
   v12 = CCFileClass::GetSize(v149);
-  *(_DWORD *)&g_NetworkPlayerBuffer[80424] = RA2_OPNEW(v12);
+  *(unsigned int *)&g_NetworkPlayerBuffer[80424] = operator new(v12);
   signed int v13 = CCFileClass::GetSize(v149);
   CCFileClass::Read(v149, *(CampaignScore **)&g_NetworkPlayerBuffer[80424], v13);
   v148 = 51;
   FileClass::SetFileName(v149, (IUnknown *)Buffer);
   v14 = CCFileClass::GetSize(v149);
-  *(_DWORD *)&g_NetworkPlayerBuffer[80428] = RA2_OPNEW(v14);
+  *(unsigned int *)&g_NetworkPlayerBuffer[80428] = operator new(v14);
   signed int v15 = CCFileClass::GetSize(v149);
   CCFileClass::Read(v149, *(CampaignScore **)&g_NetworkPlayerBuffer[80428], v15);
   v148 = 52;
   FileClass::SetFileName(v149, (IUnknown *)Buffer);
   v16 = CCFileClass::GetSize(v149);
-  *(_DWORD *)&g_NetworkPlayerBuffer[80432] = RA2_OPNEW(v16);
+  *(unsigned int *)&g_NetworkPlayerBuffer[80432] = operator new(v16);
   signed int v17 = CCFileClass::GetSize(v149);
   CCFileClass::Read(v149, *(CampaignScore **)&g_NetworkPlayerBuffer[80432], v17);
-  while ( *(_DWORD *)&g_NetworkPlayerBuffer[5884] )
+  while ( *(unsigned int *)&g_NetworkPlayerBuffer[5884] )
   {
-    if ( **(_DWORD **)&g_NetworkPlayerBuffer[5872] )
-      (*(void (__thiscall **)(_DWORD, int))(***(_DWORD ***)&g_NetworkPlayerBuffer[5872] + 32))(
-        **(_DWORD **)&g_NetworkPlayerBuffer[5872],
+    if ( **(unsigned int **)&g_NetworkPlayerBuffer[5872] )
+      (*(void (__thiscall **)(unsigned int, int))(***(unsigned int ***)&g_NetworkPlayerBuffer[5872] + 32))(
+        **(unsigned int **)&g_NetworkPlayerBuffer[5872],
         1);
   }
   char v180[32]; // [esp+6B0h] [ebp-360h] BYREF
   sprintf(v180, DataGlobal_008295F4, (const char *)&off_7E1BC6 + v9);
-  _DWORD v161[22]; // [esp+3A8h] [ebp-668h] BYREF
+  unsigned int v161[22]; // [esp+3A8h] [ebp-668h] BYREF
   CCFileClass::Construct(v161, v180);
   if ( CCFileClass::Open(v161, 0) )
   {
@@ -469,329 +469,329 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   v72 = 0;
   Int_Overwrite = (AbstractClass *)INIClass::ReadInt_Overwrite(
                                      (int)v77,
-                                     (unsigned __int8 *)&g_INI_Key_General,
+                                     (uint8_t *)&g_INI_Key_General,
                                      &unk_8295DC,
                                      (INIClass *)0xFFFFFFFF);
   var8A0 = (INIClass *)INIClass::ReadInt_Overwrite(
                          (int)v77,
-                         (unsigned __int8 *)&g_INI_Key_General,
+                         (uint8_t *)&g_INI_Key_General,
                          &unk_8295D0,
                          (INIClass *)0xFFFFFFFF);
   v129 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_8295C4,
                             (INIClass *)0xFFFFFFFF);
   v94 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                            (int)v77,
-                           (unsigned __int8 *)&g_INI_Key_General,
+                           (uint8_t *)&g_INI_Key_General,
                            &unk_8295B8,
                            (INIClass *)0xFFFFFFFF);
   v115 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_8295AC,
                             (INIClass *)0xFFFFFFFF);
   v96 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                            (int)v77,
-                           (unsigned __int8 *)&g_INI_Key_General,
+                           (uint8_t *)&g_INI_Key_General,
                            &unk_8295A0,
                            (INIClass *)0xFFFFFFFF);
   v116 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829594,
                             (INIClass *)0xFFFFFFFF);
   v98 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                            (int)v77,
-                           (unsigned __int8 *)&g_INI_Key_General,
+                           (uint8_t *)&g_INI_Key_General,
                            &unk_829588,
                            (INIClass *)0xFFFFFFFF);
   v118 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829578,
                             (INIClass *)0xFFFFFFFF);
   v100 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829568,
                             (INIClass *)0xFFFFFFFF);
   v120 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829558,
                             (INIClass *)0xFFFFFFFF);
   var930 = (INIClass *)INIClass::ReadInt_Overwrite(
                          (int)v77,
-                         (unsigned __int8 *)&g_INI_Key_General,
+                         (uint8_t *)&g_INI_Key_General,
                          &unk_829548,
                          (INIClass *)0xFFFFFFFF);
   v122 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829538,
                             (INIClass *)0xFFFFFFFF);
   v104 = (INIClass *)INIClass::ReadInt_Overwrite(
                        (int)v77,
-                       (unsigned __int8 *)&g_INI_Key_General,
+                       (uint8_t *)&g_INI_Key_General,
                        &unk_82952C,
                        (INIClass *)0xFFFFFFFF);
   v124 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829520,
                             (INIClass *)0xFFFFFFFF);
   v108 = (INIClass *)INIClass::ReadInt_Overwrite(
                        (int)v77,
-                       (unsigned __int8 *)&g_INI_Key_General,
+                       (uint8_t *)&g_INI_Key_General,
                        &unk_829514,
                        (INIClass *)0xFFFFFFFF);
   v126 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829504,
                             (INIClass *)0xFFFFFFFF);
   var918 = (INIClass *)INIClass::ReadInt_Overwrite(
                          (int)v77,
-                         (unsigned __int8 *)&g_INI_Key_General,
+                         (uint8_t *)&g_INI_Key_General,
                          &unk_8294F8,
                          (INIClass *)0xFFFFFFFF);
   v128 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_8294EC,
                             (INIClass *)0xFFFFFFFF);
   v110 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_8294E0,
                             (INIClass *)0xFFFFFFFF);
   v130 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_8294D0,
                             (INIClass *)0xFFFFFFFF);
   v112 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_8294C0,
                             (INIClass *)0xFFFFFFFF);
   v132 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_8294B0,
                             (INIClass *)0xFFFFFFFF);
   v138 = (INIClass *)INIClass::ReadInt_Overwrite(
                        (int)v77,
-                       (unsigned __int8 *)&g_INI_Key_General,
+                       (uint8_t *)&g_INI_Key_General,
                        &unk_8294A8,
                        (INIClass *)0xFFFFFFFF);
   v117 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829498,
                             (INIClass *)0xFFFFFFFF);
   v114 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_82948C,
                             (INIClass *)0xFFFFFFFF);
   v92 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                            (int)v77,
-                           (unsigned __int8 *)&g_INI_Key_General,
+                           (uint8_t *)&g_INI_Key_General,
                            &unk_829478,
                            (INIClass *)0xFFFFFFFF);
   v141 = (INIClass *)INIClass::ReadInt_Overwrite(
                        (int)v77,
-                       (unsigned __int8 *)&g_INI_Key_General,
+                       (uint8_t *)&g_INI_Key_General,
                        &unk_829468,
                        (INIClass *)0xFFFFFFFF);
   v119 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829458,
                             (INIClass *)0xFFFFFFFF);
   v131 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829448,
                             (INIClass *)0xFFFFFFFF);
   v121 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829438,
                             (INIClass *)0xFFFFFFFF);
   v139 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_82942C,
                             (INIClass *)0xFFFFFFFF);
   v123 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829420,
                             (INIClass *)0xFFFFFFFF);
   v133 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829410,
                             (INIClass *)0xFFFFFFFF);
   v125 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829408,
                             (INIClass *)0xFFFFFFFF);
   v145 = (INIClass *)INIClass::ReadInt_Overwrite(
                        (int)v77,
-                       (unsigned __int8 *)&g_INI_Key_General,
+                       (uint8_t *)&g_INI_Key_General,
                        &unk_8293FC,
                        (INIClass *)0xFFFFFFFF);
   var8CC = (INIClass *)INIClass::ReadInt_Overwrite(
                          (int)v77,
-                         (unsigned __int8 *)&g_INI_Key_General,
+                         (uint8_t *)&g_INI_Key_General,
                          &unk_8293E8,
                          (INIClass *)0xFFFFFFFF);
   v137 = (INIClass *)INIClass::ReadInt_Overwrite(
                        (int)v77,
-                       (unsigned __int8 *)&g_INI_Key_General,
+                       (uint8_t *)&g_INI_Key_General,
                        &unk_8293D8,
                        (INIClass *)0xFFFFFFFF);
   v93 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                            (int)v77,
-                           (unsigned __int8 *)&g_INI_Key_General,
+                           (uint8_t *)&g_INI_Key_General,
                            &unk_8293C4,
                            (INIClass *)0xFFFFFFFF);
   v95 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                            (int)v77,
-                           (unsigned __int8 *)&g_INI_Key_General,
+                           (uint8_t *)&g_INI_Key_General,
                            &unk_8293B0,
                            (INIClass *)0xFFFFFFFE);
   v99 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                            (int)v77,
-                           (unsigned __int8 *)&g_INI_Key_General,
+                           (uint8_t *)&g_INI_Key_General,
                            &unk_8293A4,
                            (INIClass *)0xFFFFFFFF);
   v97 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                            (int)v77,
-                           (unsigned __int8 *)&g_INI_Key_General,
+                           (uint8_t *)&g_INI_Key_General,
                            &unk_829398,
                            (INIClass *)0xFFFFFFFF);
   v101 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829388,
                             (INIClass *)0xFFFFFFFF);
   v103 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829378,
                             (INIClass *)0xFFFFFFFF);
   v105 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                             (int)v77,
-                            (unsigned __int8 *)&g_INI_Key_General,
+                            (uint8_t *)&g_INI_Key_General,
                             &unk_829370,
                             (INIClass *)0xFFFFFFFF);
   v22 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                            (int)v77,
-                           (unsigned __int8 *)&g_INI_Key_General,
+                           (uint8_t *)&g_INI_Key_General,
                            &unk_829364,
                            (INIClass *)0xFFFFFFFF);
   g_CellTileLookup = (CCINIClass *)-1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80412] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80412] = -1;
   v107 = v22;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80480] = -1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80500] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80480] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80500] = -1;
   dword_ABC2B8 = -1;
   dword_ABB104 = (CCINIClass *)-1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[79836] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[79836] = -1;
   dword_ABC2B0 = (CCINIClass *)-1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80488] = -1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80632] = -1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[79848] = -1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[78092] = -1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80492] = -1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[78088] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80488] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80632] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[79848] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[78092] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80492] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[78088] = -1;
   dword_ABC2CC = (CCINIClass *)-1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[79852] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[79852] = -1;
   g_TerrainBridgeIndex = -1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80356] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80356] = -1;
   dword_ABAD28 = -1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[78076] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[78076] = -1;
   g_TerrainTypeTable2 = (CCINIClass *)-1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80476] = -1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80360] = -1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80408] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80476] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80360] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80408] = -1;
   dword_ABB108 = (CCINIClass *)-1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80504] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80504] = -1;
   dword_ABAD2C = (CCINIClass *)-1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[78080] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[78080] = -1;
   dword_ABB110 = (CCINIClass *)-1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80484] = -1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80404] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80484] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80404] = -1;
   dword_ABBEBC = (CCINIClass *)-1;
   g_CellTileTypeCache = (CCINIClass *)-1;
   dword_ABBEC4 = (CCINIClass *)-1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[79844] = -1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[79840] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[79844] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[79840] = -1;
   dword_ABAD20 = (CCINIClass *)-1;
   dword_ABC1D4 = (CCINIClass *)-1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80496] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80496] = -1;
   dword_ABC2C8 = -2;
   dword_ABAD24 = (CCINIClass *)-1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80352] = -1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80472] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80352] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80472] = -1;
   dword_ABBEC0 = (CCINIClass *)-1;
   dword_ABB10C = (CCINIClass *)-1;
-  *(_DWORD *)&g_NetworkPlayerBuffer[80468] = -1;
+  *(unsigned int *)&g_NetworkPlayerBuffer[80468] = -1;
   dword_ABC2B4 = INIClass::ReadInt_Overwrite(
                    (int)v77,
-                   (unsigned __int8 *)&g_INI_Key_General,
+                   (uint8_t *)&g_INI_Key_General,
                    &unk_829354,
                    (INIClass *)0xFFFFFFFF);
-  *(_DWORD *)&g_NetworkPlayerBuffer[80628] = INIClass::ReadInt_Overwrite(
+  *(unsigned int *)&g_NetworkPlayerBuffer[80628] = INIClass::ReadInt_Overwrite(
                                                      (int)v77,
-                                                     (unsigned __int8 *)&g_INI_Key_General,
+                                                     (uint8_t *)&g_INI_Key_General,
                                                      &DataGlobal_00829344,
                                                      (INIClass *)0xFFFFFFFF);
   dword_ABC1E8 = INIClass::ReadInt_Overwrite(
                    (int)v77,
-                   (unsigned __int8 *)&g_INI_Key_General,
+                   (uint8_t *)&g_INI_Key_General,
                    &DataGlobal_00829330,
                    (INIClass *)0xFFFFFFFF);
-  *(_DWORD *)&g_NetworkPlayerBuffer[79868] = INIClass::ReadInt_Overwrite(
+  *(unsigned int *)&g_NetworkPlayerBuffer[79868] = INIClass::ReadInt_Overwrite(
                                                      (int)v77,
-                                                     (unsigned __int8 *)&g_INI_Key_General,
+                                                     (uint8_t *)&g_INI_Key_General,
                                                      &DataGlobal_0082931C,
                                                      (INIClass *)0xFFFFFFFF);
-  *(_DWORD *)&g_NetworkPlayerBuffer[81676] = INIClass::ReadInt_Overwrite(
+  *(unsigned int *)&g_NetworkPlayerBuffer[81676] = INIClass::ReadInt_Overwrite(
                                                      (int)v77,
-                                                     (unsigned __int8 *)&g_INI_Key_General,
+                                                     (uint8_t *)&g_INI_Key_General,
                                                      &DataGlobal_0082930C,
                                                      (INIClass *)0xFFFFFFFF);
-  *(_DWORD *)&g_NetworkPlayerBuffer[78084] = INIClass::ReadInt_Overwrite(
+  *(unsigned int *)&g_NetworkPlayerBuffer[78084] = INIClass::ReadInt_Overwrite(
                                                      (int)v77,
-                                                     (unsigned __int8 *)&g_INI_Key_General,
+                                                     (uint8_t *)&g_INI_Key_General,
                                                      &DataGlobal_008292FC,
                                                      (INIClass *)0xFFFFFFFF);
   dword_ABC1D0 = INIClass::ReadInt_Overwrite(
                    (int)v77,
-                   (unsigned __int8 *)&g_INI_Key_General,
+                   (uint8_t *)&g_INI_Key_General,
                    &DataGlobal_008292E8,
                    (INIClass *)0xFFFFFFFF);
-  *(_DWORD *)&g_NetworkPlayerBuffer[81668] = INIClass::ReadInt_Overwrite(
+  *(unsigned int *)&g_NetworkPlayerBuffer[81668] = INIClass::ReadInt_Overwrite(
                                                      (int)v77,
-                                                     (unsigned __int8 *)&g_INI_Key_General,
+                                                     (uint8_t *)&g_INI_Key_General,
                                                      &DataGlobal_008292D4,
                                                      (INIClass *)0xFFFFFFFF);
   g_TerrainSoundTable2 = INIClass::ReadInt_Overwrite(
                            (int)v77,
-                           (unsigned __int8 *)&g_INI_Key_General,
+                           (uint8_t *)&g_INI_Key_General,
                            &DataGlobal_008292C4,
                            (INIClass *)0xFFFFFFFF);
-  *(_DWORD *)&g_NetworkPlayerBuffer[80364] = INIClass::ReadInt_Overwrite(
+  *(unsigned int *)&g_NetworkPlayerBuffer[80364] = INIClass::ReadInt_Overwrite(
                                                      (int)v77,
-                                                     (unsigned __int8 *)&g_INI_Key_General,
+                                                     (uint8_t *)&g_INI_Key_General,
                                                      &DataGlobal_008292B4,
                                                      (INIClass *)0xFFFFFFFF);
   dword_ABC558 = 0;
@@ -804,7 +804,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
     v69 = (MapClass *)v23;
     if ( Ticks == (INIClass *)-1 )
       goto LABEL_24;
-    signed int v24 = Timer::GetTicks() - (_DWORD)Ticks;
+    signed int v24 = Timer::GetTicks() - (unsigned int)Ticks;
     if ( v24 < (int)v69 )
     {
       v23 = (int)v69 - v24;
@@ -820,70 +820,70 @@ LABEL_24:
     var978 = 4;
 LABEL_26:
     int v25 = dword_ABC558;
-    *(_DWORD *)&g_NetworkPlayerBuffer[22428][4 * dword_ABC558 + 58216] = v21;
+    *(unsigned int *)&g_NetworkPlayerBuffer[22428][4 * dword_ABC558 + 58216] = v21;
     dword_ABC558 = v25 + 1;
     if ( v20 == (INIClass *)Int_Overwrite )
       g_CellTileLookup = v21;
     if ( v20 == var8A0 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80412] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80412] = v21;
     if ( v20 == (INIClass *)v129 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80480] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80480] = v21;
     if ( v20 == (INIClass *)v94 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80500] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80500] = v21;
     if ( v20 == (INIClass *)v115 )
       dword_ABC2B8 = (int)v21;
     if ( v20 == (INIClass *)v96 )
       dword_ABB104 = v21;
     if ( v20 == (INIClass *)v116 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[79836] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[79836] = v21;
     if ( v20 == (INIClass *)v98 )
       dword_ABC2B0 = v21;
     if ( v20 == (INIClass *)v118 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80488] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80488] = v21;
     if ( v20 == (INIClass *)v100 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80632] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80632] = v21;
     if ( v20 == (INIClass *)v120 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[79848] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[79848] = v21;
     if ( v20 == var930 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[78092] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[78092] = v21;
     if ( v20 == (INIClass *)v122 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80492] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80492] = v21;
     if ( v20 == v104 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[78088] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[78088] = v21;
     if ( v20 == (INIClass *)v124 )
       dword_ABC2CC = v21;
     if ( v20 == v108 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[79852] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[79852] = v21;
     if ( v20 == (INIClass *)v126 )
       g_TerrainBridgeIndex = (int)v21;
     if ( v20 == var918 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80356] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80356] = v21;
     if ( v20 == (INIClass *)v128 )
       dword_ABAD28 = (int)v21;
     if ( v20 == (INIClass *)v110 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[78076] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[78076] = v21;
     if ( v20 == (INIClass *)v130 )
       g_TerrainTypeTable2 = v21;
     if ( v20 == (INIClass *)v112 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80476] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80476] = v21;
     if ( v20 == (INIClass *)v132 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80360] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80360] = v21;
     if ( v20 == (INIClass *)v114 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80504] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80504] = v21;
     if ( v20 == (INIClass *)v92 )
       dword_ABAD2C = v21;
     if ( v20 == v138 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80408] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80408] = v21;
     if ( v20 == (INIClass *)v117 )
       dword_ABB108 = v21;
     if ( v20 == v141 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[78080] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[78080] = v21;
     if ( v20 == (INIClass *)v119 )
       dword_ABB110 = v21;
     if ( v20 == (INIClass *)v131 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80484] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80484] = v21;
     if ( v20 == (INIClass *)v121 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80404] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80404] = v21;
     if ( v20 == (INIClass *)v139 )
       dword_ABBEBC = v21;
     if ( v20 == (INIClass *)v123 )
@@ -891,66 +891,66 @@ LABEL_26:
     if ( v20 == (INIClass *)v133 )
       dword_ABBEC4 = v21;
     if ( v20 == (INIClass *)v125 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[79844] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[79844] = v21;
     if ( v20 == v145 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[79840] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[79840] = v21;
     if ( v20 == var8CC )
       dword_ABAD20 = v21;
     if ( v20 == v137 )
       dword_ABC1D4 = v21;
     if ( v20 == (INIClass *)v93 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80496] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80496] = v21;
     if ( v20 == (INIClass *)v95 )
       dword_ABC2C8 = (int)v21;
     if ( v20 == (INIClass *)v97 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80352] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80352] = v21;
     if ( v20 == (INIClass *)v99 )
       dword_ABAD24 = v21;
     if ( v20 == (INIClass *)v101 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80472] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80472] = v21;
     if ( v20 == (INIClass *)v103 )
       dword_ABBEC0 = v21;
     if ( v20 == (INIClass *)v105 )
       dword_ABB10C = v21;
     if ( v20 == (INIClass *)v107 )
-      *(_DWORD *)&g_NetworkPlayerBuffer[80468] = v21;
+      *(unsigned int *)&g_NetworkPlayerBuffer[80468] = v21;
     sprintf((char *const)&aP2.INIClass_field_2C, stru_8292A8, v20);
     INIClass::ResetSection(v77);
     v71 = (ObjectClass *)INIClass::ReadInt_Overwrite(
                            (int)v77,
-                           (unsigned __int8 *)&aP2.INIClass_field_2C,
+                           (uint8_t *)&aP2.INIClass_field_2C,
                            &unk_82929C,
                            (INIClass *)0xFFFFFFFF);
     if ( v71 == (ObjectClass *)-1 )
       break;
     v26 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                              (int)v77,
-                             (unsigned __int8 *)&aP2.INIClass_field_2C,
+                             (uint8_t *)&aP2.INIClass_field_2C,
                              &unk_82928C,
                              (INIClass *)0xFFFFFFFF);
     v27 = v26;
     if ( v26 == (AbstractClass *)-1 || v26 == (AbstractClass *)v71 )
     {
-      v31 = (CCINIClass *)((char *)v72 + (_DWORD)v71);
+      v31 = (CCINIClass *)((char *)v72 + (unsigned int)v71);
     }
     else
     {
-      v28 = (MapClass *)RA2_OPNEW(8u);
+      v28 = (MapClass *)new MapClass;
       int v29 = (char *)v71 - (char *)v27;
       v76 = v28;
-      v75 = (CCINIClass *)((char *)v72 + (_DWORD)v27);
-      v28->field_0 = (int)&v72->__pad_0[(_DWORD)v27];
+      v75 = (CCINIClass *)((char *)v72 + (unsigned int)v27);
+      v28->field_0 = (int)&v72->__pad_0[(unsigned int)v27];
       v28->field_4 = (void *)v29;
       if ( *(int *)&g_NetworkPlayerBuffer[80460] < *(int *)&g_NetworkPlayerBuffer[80452]
-        || (g_NetworkPlayerBuffer[80457] || !*(_DWORD *)&g_NetworkPlayerBuffer[80452])
+        || (g_NetworkPlayerBuffer[80457] || !*(unsigned int *)&g_NetworkPlayerBuffer[80452])
         && *(int *)&g_NetworkPlayerBuffer[80464] > 0
-        && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*(_DWORD *)&g_NetworkPlayerBuffer[80444] + 8))(
+        && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(*(unsigned int *)&g_NetworkPlayerBuffer[80444] + 8))(
              &g_NetworkPlayerBuffer[80444],
-             *(_DWORD *)&g_NetworkPlayerBuffer[80464] + *(_DWORD *)&g_NetworkPlayerBuffer[80452],
+             *(unsigned int *)&g_NetworkPlayerBuffer[80464] + *(unsigned int *)&g_NetworkPlayerBuffer[80452],
              0) )
       {
-        int v30 = (*(_DWORD *)&g_NetworkPlayerBuffer[80460])++;
-        *(_DWORD *)(*(_DWORD *)&g_NetworkPlayerBuffer[80448] + 4 * v30) = v76;
+        int v30 = (*(unsigned int *)&g_NetworkPlayerBuffer[80460])++;
+        *(unsigned int *)(*(unsigned int *)&g_NetworkPlayerBuffer[80448] + 4 * v30) = v76;
       }
       v31 = v75;
     }
@@ -959,56 +959,56 @@ LABEL_26:
     INIClass::GetString(v77, (INIClass *)&aP2.INIClass_field_2C, &unk_829268, &unk_829274, &v183, 64);
     v75 = (CCINIClass *)INIClass::ReadInt_Overwrite(
                           (int)v77,
-                          (unsigned __int8 *)&aP2.INIClass_field_2C,
+                          (uint8_t *)&aP2.INIClass_field_2C,
                           &unk_829258,
                           (INIClass *)0xFFFF);
     v86 = (INIClass *)INIClass::ReadInt_Overwrite(
                         (int)v77,
-                        (unsigned __int8 *)&aP2.INIClass_field_2C,
+                        (uint8_t *)&aP2.INIClass_field_2C,
                         &unk_829244,
                         (INIClass *)0xFFFF);
-    Bool_Overwrite = INIClass::ReadBool_Overwrite((int)v77, (unsigned __int8 *)&aP2.INIClass_field_2C, &unk_829238, 0);
-    char v64 = INIClass::ReadBool_Overwrite((int)v77, (unsigned __int8 *)&aP2.INIClass_field_2C, &unk_829228, 1);
-    char v66 = INIClass::ReadBool_Overwrite((int)v77, (unsigned __int8 *)&aP2.INIClass_field_2C, &unk_829218, 1);
+    Bool_Overwrite = INIClass::ReadBool_Overwrite((int)v77, (uint8_t *)&aP2.INIClass_field_2C, &unk_829238, 0);
+    char v64 = INIClass::ReadBool_Overwrite((int)v77, (uint8_t *)&aP2.INIClass_field_2C, &unk_829228, 1);
+    char v66 = INIClass::ReadBool_Overwrite((int)v77, (uint8_t *)&aP2.INIClass_field_2C, &unk_829218, 1);
   char v62; // [esp+13h] [ebp-9FDh]
     v62 = INIClass::ReadBool_Overwrite(
             (int)v77,
-            (unsigned __int8 *)&aP2.INIClass_field_2C,
+            (uint8_t *)&aP2.INIClass_field_2C,
             (CCINIClass *)&DataGlobal_008291B8.unknown50,
             0);
     var9FC_2 = INIClass::ReadBool_Overwrite(
                  (int)v77,
-                 (unsigned __int8 *)&aP2.INIClass_field_2C,
+                 (uint8_t *)&aP2.INIClass_field_2C,
                  (CCINIClass *)&DataGlobal_008291B8.ownsFile,
                  0);
     v109 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                               (int)v77,
-                              (unsigned __int8 *)&aP2.INIClass_field_2C,
+                              (uint8_t *)&aP2.INIClass_field_2C,
                               (CCINIClass *)&DataGlobal_008291B8.unknown30,
                               (INIClass *)0xFFFFFFFF);
     v111 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                               (int)v77,
-                              (unsigned __int8 *)&aP2.INIClass_field_2C,
+                              (uint8_t *)&aP2.INIClass_field_2C,
                               (CCINIClass *)&DataGlobal_008291B8.sectionCount,
                               (INIClass *)0xFFFFFFFF);
   char v32; // al
     v32 = INIClass::ReadBool_Overwrite(
             (int)v77,
-            (unsigned __int8 *)&aP2.INIClass_field_2C,
+            (uint8_t *)&aP2.INIClass_field_2C,
             (CCINIClass *)&DataGlobal_008291B8.headNode[2],
             0);
     char v63 = v32;
     if ( v32 )
     {
       v33 = (INIClass *)v89;
-      *(_DWORD *)&g_NetworkPlayerBuffer[22428][4 * (_DWORD)v89 + 57940] = v70;
+      *(unsigned int *)&g_NetworkPlayerBuffer[22428][4 * (unsigned int)v89 + 57940] = v70;
       v89 = (AbstractClass *)&v33->__pad_0[1];
     }
     v88 = 0;
     if ( v32 )
       v88 = (AbstractClass *)INIClass::ReadInt_Overwrite(
                                (int)v77,
-                               (unsigned __int8 *)&aP2.INIClass_field_2C,
+                               (uint8_t *)&aP2.INIClass_field_2C,
                                &DataGlobal_008291B8,
                                0);
     int v34 = INIClass::BinarySearchSection((int)v77, &aP4);
@@ -1028,7 +1028,7 @@ LABEL_26:
   char v156; // [esp+324h] [ebp-6ECh]
   char v155[48]; // [esp+2F4h] [ebp-71Ch] BYREF
           if ( v65 )
-            var9F4_2 = (unsigned __int8)((_BYTE)v65 + 96);
+            var9F4_2 = (uint8_t)((unsigned char)v65 + 96);
           else
             IDA_LOBYTE(var9F4_2) = 0;
           v35 = (INIClass *)((char *)&v69->field_0 + 1);
@@ -1040,7 +1040,7 @@ LABEL_26:
           if ( !v65 )
           {
   char v154; // [esp+2F0h] [ebp-720h]
-            _DWORD * v36 = (_DWORD *)RA2_OPNEW(0x30Cu);
+            unsigned int * v36 = (unsigned int *)operator new(0x30Cu);
             if ( v36 )
             {
               v37 = v70;
@@ -1059,41 +1059,41 @@ LABEL_26:
             }
             else
             {
-              Destination[0] = (unsigned __int8)Source;
+              Destination[0] = (uint8_t)Source;
             }
             if ( Destination != (char *)(v3 + 25) )
             {
               qmemcpy(v3 + 25, Destination, 0x30u);
-              *((_BYTE *)v3 + 148) = v154;
+              *((unsigned char *)v3 + 148) = v154;
             }
             v38 = v86;
             v3[166] = v75;
             v3[167] = v38;
-            *((_BYTE *)v3 + 738) = v64;
-            *((_BYTE *)v3 + 736) = Bool_Overwrite;
-            *((_BYTE *)v3 + 739) = var9FC_2;
-            *((_BYTE *)v3 + 773) = v66;
+            *((unsigned char *)v3 + 738) = v64;
+            *((unsigned char *)v3 + 736) = Bool_Overwrite;
+            *((unsigned char *)v3 + 739) = var9FC_2;
+            *((unsigned char *)v3 + 773) = v66;
             ecx147a = v109;
-            *((_BYTE *)v3 + 774) = v62;
+            *((unsigned char *)v3 + 774) = v62;
             v39 = (INIClass *)v111;
             v3[41] = 0;
-            *((_BYTE *)v3 + 168) = 0;
+            *((unsigned char *)v3 + 168) = 0;
             v3[176] = ecx147a;
             v3[177] = v39;
             if ( v63 && v88 )
-              *((_BYTE *)v3 + 737) = v63;
+              *((unsigned char *)v3 + 737) = v63;
             if ( a2 )
-              *((_BYTE *)v3 + 756) = 1;
+              *((unsigned char *)v3 + 756) = 1;
             int v41 = v3[169];
-            v3[168] = *(_DWORD *)&g_NetworkPlayerBuffer[22428][4 * dword_ABC558 + 58212];
-            (*(void (__thiscall **)(_DWORD *))(v41 + 12))(v3 + 169);
+            v3[168] = *(unsigned int *)&g_NetworkPlayerBuffer[22428][4 * dword_ABC558 + 58212];
+            (*(void (__thiscall **)(unsigned int *))(v41 + 12))(v3 + 169);
             if ( var9F4_1 )
             {
               sprintf(aP2[0], DataGlobal_00829194, v35);
               if ( INIClass::GetString(
                      v77,
                      &aP4,
-                     (unsigned __int8 *)&aP2,
+                     (uint8_t *)&aP2,
                      (INIClass *)&DataGlobal_87F8E4[42624],
                      &v184,
                      128) )
@@ -1101,15 +1101,15 @@ LABEL_26:
                 v42 = AnimTypeClass::FindOrCreate((AbstractClass *)&v184);
                 if ( v42 )
                 {
-                  v3[178] = (*(int (__thiscall **)(AnimTypeClass *))(*(_DWORD *)v42->__pad_0 + 64))(v42);
+                  v3[178] = (*(int (__thiscall **)(AnimTypeClass *))(*(unsigned int *)v42->__pad_0 + 64))(v42);
                   sprintf(aP2[0], DataGlobal_00829184, v35);
-                  v3[179] = INIClass::ReadInt_Overwrite((int)v77, (unsigned __int8 *)&aP4, &aP2, (INIClass *)v3[179]);
+                  v3[179] = INIClass::ReadInt_Overwrite((int)v77, (uint8_t *)&aP4, &aP2, (INIClass *)v3[179]);
                   sprintf(aP2[0], DataGlobal_00829174, v35);
-                  v3[180] = INIClass::ReadInt_Overwrite((int)v77, (unsigned __int8 *)&aP4, &aP2, (INIClass *)v3[180]);
+                  v3[180] = INIClass::ReadInt_Overwrite((int)v77, (uint8_t *)&aP4, &aP2, (INIClass *)v3[180]);
                   sprintf(aP2[0], DataGlobal_00829160, v35);
-                  v3[181] = INIClass::ReadInt_Overwrite((int)v77, (unsigned __int8 *)&aP4, &aP2, (INIClass *)v3[181]);
+                  v3[181] = INIClass::ReadInt_Overwrite((int)v77, (uint8_t *)&aP4, &aP2, (INIClass *)v3[181]);
                   sprintf(aP2[0], stru_829150, v35);
-                  v3[182] = INIClass::ReadInt_Overwrite((int)v77, (unsigned __int8 *)&aP4, &aP2, (INIClass *)v3[182]);
+                  v3[182] = INIClass::ReadInt_Overwrite((int)v77, (uint8_t *)&aP4, &aP2, (INIClass *)v3[182]);
                 }
               }
             }
@@ -1123,7 +1123,7 @@ LABEL_26:
           v60 = 0;
           if ( a2 )
           {
-  _DWORD v171[22]; // [esp+56Ch] [ebp-4A4h] BYREF
+  unsigned int v171[22]; // [esp+56Ch] [ebp-4A4h] BYREF
             CCFileClass::Construct(v171, v182);
             v60 = CCFileClass::Open(v171, 0);
             if ( v60 && !v65 )
@@ -1139,7 +1139,7 @@ LABEL_26:
           }
           else
           {
-            v44 = (unsigned __int8 *)SearchMIXFile(v182, 0);
+            v44 = (uint8_t *)SearchMIXFile(v182, 0);
             if ( v44 )
               goto LABEL_189;
           }
@@ -1151,7 +1151,7 @@ LABEL_26:
             _makepath(v182, 0, 0, Filename, (const char *)&off_7E1BCA + v43);
           if ( a2 )
           {
-  _DWORD v174[22]; // [esp+5D8h] [ebp-438h] BYREF
+  unsigned int v174[22]; // [esp+5D8h] [ebp-438h] BYREF
             CCFileClass::Construct(v174, v182);
             v60 = CCFileClass::Open(v174, 0);
             if ( v60 && !v65 )
@@ -1167,14 +1167,14 @@ LABEL_26:
           }
           else
           {
-            v44 = (unsigned __int8 *)SearchMIXFile(v182, 0);
+            v44 = (uint8_t *)SearchMIXFile(v182, 0);
             if ( v44 )
               goto LABEL_189;
           }
           _makepath(v182, 0, 0, Filename, aTem);
           if ( a2 )
           {
-  _DWORD v165[22]; // [esp+494h] [ebp-57Ch] BYREF
+  unsigned int v165[22]; // [esp+494h] [ebp-57Ch] BYREF
             CCFileClass::Construct(v165, v182);
             v60 = CCFileClass::Open(v165, 0);
             if ( v60 && !v65 )
@@ -1190,21 +1190,21 @@ LABEL_26:
           }
           else
           {
-            v44 = (unsigned __int8 *)SearchMIXFile(v182, 0);
+            v44 = (uint8_t *)SearchMIXFile(v182, 0);
             if ( v44 )
               goto LABEL_189;
           }
           _makepath(v182, 0, 0, Filename, aUrb);
           if ( !a2 )
           {
-            v44 = (unsigned __int8 *)SearchMIXFile(v182, 0);
+            v44 = (uint8_t *)SearchMIXFile(v182, 0);
             if ( !v44 )
               goto LABEL_190;
 LABEL_189:
             v60 = 1;
             goto LABEL_190;
           }
-  _DWORD v177[22]; // [esp+644h] [ebp-3CCh] BYREF
+  unsigned int v177[22]; // [esp+644h] [ebp-3CCh] BYREF
           CCFileClass::Construct(v177, v182);
           v60 = CCFileClass::Open(v177, 0);
           if ( v60 && !v65 )
@@ -1220,7 +1220,7 @@ LABEL_190:
             goto LABEL_207;
           if ( !v44 && !v60 )
             break;
-          eax193 = (_DWORD *)RA2_OPNEW(0x30Cu);
+          eax193 = (unsigned int *)operator new(0x30Cu);
           if ( eax193 )
             v3 = TerrainTypeClass::Construct(eax193, (int)v87, 0xBFu, 0, (MapClass *)Filename, 1);
           else
@@ -1232,32 +1232,32 @@ LABEL_190:
           }
           else
           {
-            v155[0] = (unsigned __int8)Source;
+            v155[0] = (uint8_t)Source;
           }
           if ( v155 != (char *)(v3 + 25) )
           {
             qmemcpy(v3 + 25, v155, 0x30u);
-            *((_BYTE *)v3 + 148) = v156;
+            *((unsigned char *)v3 + 148) = v156;
           }
           v46 = v75;
           v3[167] = v86;
           v3[166] = v46;
-          *((_BYTE *)v3 + 773) = v66;
-          *((_BYTE *)v3 + 736) = Bool_Overwrite;
-          *((_BYTE *)v3 + 738) = v64;
-          *((_BYTE *)v3 + 774) = v62;
-          *((_BYTE *)v3 + 739) = var9FC_2;
+          *((unsigned char *)v3 + 773) = v66;
+          *((unsigned char *)v3 + 736) = Bool_Overwrite;
+          *((unsigned char *)v3 + 738) = v64;
+          *((unsigned char *)v3 + 774) = v62;
+          *((unsigned char *)v3 + 739) = var9FC_2;
           if ( a2 )
           {
-            *((_BYTE *)v3 + 756) = 1;
+            *((unsigned char *)v3 + 756) = 1;
             strncpy((char *)v3 + 757, v182, 0xEu);
           }
           if ( v63 && v88 )
-            *((_BYTE *)v3 + 737) = v63;
+            *((unsigned char *)v3 + 737) = v63;
           v45 = var974;
-          v3[168] = *(_DWORD *)&g_NetworkPlayerBuffer[22428][4 * dword_ABC558 + 58212];
-          *(_DWORD *)&v45->__pad_298[36] = v3;
-          (*(void (__thiscall **)(_DWORD *))(v3[169] + 12))(v3 + 169);
+          v3[168] = *(unsigned int *)&g_NetworkPlayerBuffer[22428][4 * dword_ABC558 + 58212];
+          *(unsigned int *)&v45->__pad_298[36] = v3;
+          (*(void (__thiscall **)(unsigned int *))(v3[169] + 12))(v3 + 169);
           var974 = (MapClass *)v3;
           if ( !v44 )
           {
@@ -1276,7 +1276,7 @@ LABEL_207:
           int v48 = 0;
           v3[185] = *v44;
           v3[186] = v44[4];
-          if ( *((_DWORD *)v44 + 1) * *(_DWORD *)v44 > 0 )
+          if ( *((unsigned int *)v44 + 1) * *(unsigned int *)v44 > 0 )
           {
             ecx209 = (unsigned int *)(v44 + 16);
             do
@@ -1287,7 +1287,7 @@ LABEL_207:
               ++v48;
               ++ecx209;
             }
-            while ( v48 < *((_DWORD *)v44 + 1) * *(_DWORD *)v44 );
+            while ( v48 < *((unsigned int *)v44 + 1) * *(unsigned int *)v44 );
           }
           TerrainClass::InitTheatre(v3);
 LABEL_217:
@@ -1303,7 +1303,7 @@ LABEL_217:
             int v53 = (char)v65 - 1;
             do
             {
-              *(_DWORD *)&v49->__pad_298[88] = v52;
+              *(unsigned int *)&v49->__pad_298[88] = v52;
               v49 = *(MapClass **)&v49->__pad_298[36];
               --v52;
               --v53;
@@ -1326,30 +1326,30 @@ LABEL_217:
   }
   for ( j = 0; j < *(int *)&g_NetworkPlayerBuffer[5884]; ++j )
   {
-    _DWORD * v55 = *(_DWORD **)(*(_DWORD *)&g_NetworkPlayerBuffer[5872] + 4 * j);
+    unsigned int * v55 = *(unsigned int **)(*(unsigned int *)&g_NetworkPlayerBuffer[5872] + 4 * j);
     int v56 = v55[165] - v55[168];
     int v57 = v55[166];
     if ( v57 != 0xFFFF )
-      v55[166] = v56 + *(_DWORD *)&g_NetworkPlayerBuffer[22428][4 * v57 + 58216];
+      v55[166] = v56 + *(unsigned int *)&g_NetworkPlayerBuffer[22428][4 * v57 + 58216];
     int v58 = v55[167];
     if ( v58 != 0xFFFF )
-      v55[167] = v56 + *(_DWORD *)&g_NetworkPlayerBuffer[22428][4 * v58 + 58216];
+      v55[167] = v56 + *(unsigned int *)&g_NetworkPlayerBuffer[22428][4 * v58 + 58216];
   }
   if ( v91 == (AbstractClass *)5 )
   {
     dword_ABAD28 = -1;
-    *(_DWORD *)&g_NetworkPlayerBuffer[78076] = -1;
-    *(_DWORD *)&g_NetworkPlayerBuffer[80356] = -1;
-    *(_DWORD *)&g_NetworkPlayerBuffer[80352] = -1;
-    *(_DWORD *)&g_NetworkPlayerBuffer[80468] = -1;
-    *(_DWORD *)&g_NetworkPlayerBuffer[79852] = -1;
+    *(unsigned int *)&g_NetworkPlayerBuffer[78076] = -1;
+    *(unsigned int *)&g_NetworkPlayerBuffer[80356] = -1;
+    *(unsigned int *)&g_NetworkPlayerBuffer[80352] = -1;
+    *(unsigned int *)&g_NetworkPlayerBuffer[80468] = -1;
+    *(unsigned int *)&g_NetworkPlayerBuffer[79852] = -1;
     g_TerrainBridgeIndex = -1;
   }
-  *(_DWORD *)aP1[0] = &vt_CCFileClass;
+  *(unsigned int *)aP1[0] = &vt_CCFileClass;
   int v170 = 0;
   char v169[12]; // [esp+558h] [ebp-4B8h] BYREF
   Vector::Clear((int)v169);
-  *(_DWORD *)aP1[0] = &off_7E1668;
+  *(unsigned int *)aP1[0] = &off_7E1668;
   BufferIOFileClass::Dtor(&aP1);
   v161[0] = &vt_CCFileClass;
   int v163 = 0;
@@ -1381,8 +1381,8 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
   int i; // edi
   int v4; // ecx
   int inited; // eax
-  _DWORD *v6; // esi
-  _DWORD *v8; // eax
+  unsigned int *v6; // esi
+  unsigned int *v8; // eax
   int v9; // ecx
   int v10; // ecx
   int v11; // edx
@@ -1402,25 +1402,25 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
     LayerClass::CellIteratorReset(&MapClass_Instance); /*0x546dd3*/
     for ( i = LayerClass::CellIteratorNext(&MapClass_Instance); i; i = LayerClass::CellIteratorNext(&MapClass_Instance) ) /*0x546de6*/
     {
-      v4 = *(_DWORD *)(i + 56); /*0x546dec*/
+      v4 = *(unsigned int *)(i + 56); /*0x546dec*/
       inited = 0; /*0x546def*/
       if ( v4 == 0xFFFF || v4 >= g_TechnoClassCount ) /*0x546dff*/
       {
-        v6 = (_DWORD *)*((_DWORD *)g_FrameCounter + dword_AA10B0); /*0x546e6f*/
+        v6 = (unsigned int *)*((unsigned int *)g_FrameCounter + dword_AA10B0); /*0x546e6f*/
         inited = CellClass::InitRandomOffsets(i, dword_AA10B0, v6[188]); /*0x546e7c*/
       }
       else
       {
-        v6 = (_DWORD *)*((_DWORD *)g_FrameCounter + v4); /*0x546e07*/
+        v6 = (unsigned int *)*((unsigned int *)g_FrameCounter + v4); /*0x546e07*/
         if ( (int)v6[188] > 1 ) /*0x546e11*/
         {
-          IDA_LOBYTE(inited) = *(_BYTE *)(i + 282); /*0x546e13*/
+          IDA_LOBYTE(inited) = *(unsigned char *)(i + 282); /*0x546e13*/
           inited = inited; /*0x546e1d*/
-          v8 = (_DWORD *)(*(int (__thiscall **)(_DWORD))(*v6 + 156))(*((_DWORD *)g_FrameCounter + v4)); /*0x546e1f*/
-          if ( v8 && (v9 = v8[inited % (*v8 * v8[1]) + 4]) != 0 && (*(_DWORD *)(v9 + 36) & 4) != 0 ) /*0x546e48*/
-            inited = (*(_DWORD *)(i + 320) >> 13) & 1; /*0x546e53*/
+          v8 = (unsigned int *)(*(int (__thiscall **)(unsigned int))(*v6 + 156))(*((unsigned int *)g_FrameCounter + v4)); /*0x546e1f*/
+          if ( v8 && (v9 = v8[inited % (*v8 * v8[1]) + 4]) != 0 && (*(unsigned int *)(v9 + 36) & 4) != 0 ) /*0x546e48*/
+            inited = (*(unsigned int *)(i + 320) >> 13) & 1; /*0x546e53*/
           else
-            inited = CellClass::InitRandomOffsets(i, *(_DWORD *)(i + 56), v6[188]); /*0x546e62*/
+            inited = CellClass::InitRandomOffsets(i, *(unsigned int *)(i + 56), v6[188]); /*0x546e62*/
         }
       }
       v10 = v6[188]; /*0x546e81*/
@@ -1428,7 +1428,7 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
       if ( inited > v10 - 1 ) /*0x546e8e*/
         v11 = inited % v10; /*0x546e91*/
       for ( ; v11; --v11 ) /*0x546e95*/
-        v6 = (_DWORD *)v6[175]; /*0x546e97*/
+        v6 = (unsigned int *)v6[175]; /*0x546e97*/
       ++v6[194]; /*0x546ea7*/
     }
   }
@@ -1453,7 +1453,7 @@ void MapClass_LoadIsometricTiles(char a1, char a2)
       Ticks = Timer::GetTicks(); /*0x546f2e*/
       v22 = 4; /*0x546f43*/
   LABEL_25:
-      v17 = *((_DWORD *)g_FrameCounter + v15); /*0x546f47*/
+      v17 = *((unsigned int *)g_FrameCounter + v15); /*0x546f47*/
       if ( v17 ) /*0x546f52*/
       {
         do /*0x546fdc*/
@@ -1506,8 +1506,8 @@ int ResetAllTechnoField776()
   result = g_TechnoClassCount; /*0x547110*/
   for ( i = 0; i < g_TechnoClassCount; ++i ) /*0x54711b*/
   {
-    for ( j = *((_DWORD *)g_FrameCounter + i); j; j = *(_DWORD *)(j + 700) ) /*0x547127*/
-      *(_DWORD *)(j + 776) = 0; /*0x547129*/
+    for ( j = *((unsigned int *)g_FrameCounter + i); j; j = *(unsigned int *)(j + 700) ) /*0x547127*/
+      *(unsigned int *)(j + 776) = 0; /*0x547129*/
     result = g_TechnoClassCount; /*0x547139*/
   }
   return result; /*0x547143*/
@@ -1523,7 +1523,7 @@ int Map_InitCoordinateOffsets(int a1)
   int v5; // [esp+Ch] [ebp-4h]
 
   v5 = a1; /*0x54737f*/
-  if ( !*(_BYTE *)(a1 + 737) ) /*0x547373*/
+  if ( !*(unsigned char *)(a1 + 737) ) /*0x547373*/
     return 0; /*0x547cbb*/
   if ( (byte_ABBEB8 & 1) == 0 ) /*0x547390*/
   {
@@ -1771,7 +1771,7 @@ int Map_InitCoordinateOffsets(int a1)
     atexit(nullsub_20); /*0x547c8a*/
     a1 = v5; /*0x547c8f*/
   }
-  v1 = *(_DWORD *)(a1 + 660); /*0x547c98*/
+  v1 = *(unsigned int *)(a1 + 660); /*0x547c98*/
   v2 = dword_AA102C; /*0x547c9e*/
   while ( 1 ) /*0x547ca7*/
   {
@@ -1788,22 +1788,22 @@ int Map_InitCoordinateOffsets(int a1)
 namespace gamemd {
 int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
 {
-  _DWORD *v6; // eax
+  unsigned int *v6; // eax
   int v8; // edi
-  _DWORD *v9; // eax
+  unsigned int *v9; // eax
   int v11; // ebx
   int v12; // eax
   int v13; // edx
   int v14; // ecx
   int v15; // ebx
-  _BYTE *v16; // eax
+  unsigned char *v16; // eax
   unsigned int v17; // ebp
   char *v19; // edx
   int v20; // ecx
   char v21; // bl
   char v22; // bl
-  _BYTE *v23; // eax
-  _BYTE *v24; // edx
+  unsigned char *v23; // eax
+  unsigned char *v24; // edx
   int v25; // ebx
   int v26; // esi
   int v27; // [esp+1Ch] [ebp+4h]
@@ -1811,7 +1811,7 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
   int v29; // [esp+28h] [ebp+10h]
 
   memset(*a3, 0, a5 * a4); /*0x549859*/
-  v6 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)&this->ambientSoundController6))(this); /*0x549866*/
+  v6 = (unsigned int *)(*(int (__thiscall **)(void *))(((unsigned int)(this->ambientSoundController6))))(this); /*0x549866*/
   v6 = v6; /*0x54986c*/
   if ( v6 ) /*0x549870*/
   {
@@ -1819,7 +1819,7 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
     v8 = v6[v27 + 4]; /*0x549887*/
     if ( !v8 ) /*0x54988d*/
       return 0; /*0x54988d*/
-    v9 = (_DWORD *)(*(int (__thiscall **)(void *))(*(_DWORD *)&this->ambientSoundController6))(this); /*0x549897*/
+    v9 = (unsigned int *)(*(int (__thiscall **)(void *))(((unsigned int)(this->ambientSoundController6))))(this); /*0x549897*/
     v9 = v9; /*0x54989d*/
     if ( v9 ) /*0x5498a1*/
     {
@@ -1827,8 +1827,8 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
       v12 = v9[2]; /*0x5498b0*/
       v13 = v9[v27 % v11 + 4]; /*0x5498b3*/
       v14 = v9[3]; /*0x5498b7*/
-      if ( v13 && (*(_BYTE *)(v13 + 36) & 1) != 0 ) /*0x5498c2*/
-        v14 += *(_DWORD *)(v13 + 4) - *(_DWORD *)(v13 + 24); /*0x5498ca*/
+      if ( v13 && (*(unsigned char *)(v13 + 36) & 1) != 0 ) /*0x5498c2*/
+        v14 += *(unsigned int *)(v13 + 4) - *(unsigned int *)(v13 + 24); /*0x5498ca*/
     }
     else
     {
@@ -1840,9 +1840,9 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
       return 0; /*0x5498e6*/
     v16 = *a3; /*0x5498f3*/
     v17 = (unsigned int)*a3 + a5 * a4; /*0x5498f5*/
-    if ( (*(_BYTE *)(v8 + 36) & 1) != 0 ) /*0x5498fa*/
+    if ( (*(unsigned char *)(v8 + 36) & 1) != 0 ) /*0x5498fa*/
     {
-      v16 += a4 * (*(_DWORD *)(v8 + 4) - *(_DWORD *)(v8 + 24)); /*0x549907*/
+      v16 += a4 * (*(unsigned int *)(v8 + 4) - *(unsigned int *)(v8 + 24)); /*0x549907*/
       if ( (unsigned int)v16 >= v17 ) /*0x54990b*/
         return 0; /*0x549916*/
     }
@@ -1881,12 +1881,12 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
       }
     }
   LABEL_22:
-    if ( (*(_BYTE *)(v8 + 36) & 1) != 0 ) /*0x549986*/
+    if ( (*(unsigned char *)(v8 + 36) & 1) != 0 ) /*0x549986*/
     {
-      v23 = (char *)*a3 + *(_DWORD *)(v8 + 20) - *(_DWORD *)v8; /*0x549995*/
+      v23 = (char *)*a3 + *(unsigned int *)(v8 + 20) - *(unsigned int *)v8; /*0x549995*/
       if ( (unsigned int)v23 >= v17 ) /*0x549999*/
         return 0; /*0x5499a4*/
-      v24 = (_BYTE *)(v8 + *(_DWORD *)(v8 + 8)); /*0x5499ad*/
+      v24 = (unsigned char *)(v8 + *(unsigned int *)(v8 + 8)); /*0x5499ad*/
       v25 = 0; /*0x5499af*/
       if ( *(int *)(v8 + 32) > 0 ) /*0x5499b3*/
       {
@@ -1896,10 +1896,10 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
           if ( *(int *)(v8 + 28) > 0 ) /*0x5499bc*/
             break; /*0x5499bc*/
   LABEL_31:
-          v23 += a4 - *(_DWORD *)(v8 + 28); /*0x5499d4*/
+          v23 += a4 - *(unsigned int *)(v8 + 28); /*0x5499d4*/
           if ( (unsigned int)v23 >= v17 ) /*0x5499e1*/
             return 0; /*0x5499e1*/
-          if ( ++v25 >= *(_DWORD *)(v8 + 32) ) /*0x5499e9*/
+          if ( ++v25 >= *(unsigned int *)(v8 + 32) ) /*0x5499e9*/
             return 1; /*0x5499e9*/
         }
         while ( 1 ) /*0x5499be*/
@@ -1910,7 +1910,7 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
           ++v24; /*0x5499c7*/
           if ( (unsigned int)v23 >= v17 ) /*0x5499ca*/
             return 0; /*0x5499ca*/
-          if ( ++v26 >= *(_DWORD *)(v8 + 28) ) /*0x5499d2*/
+          if ( ++v26 >= *(unsigned int *)(v8 + 28) ) /*0x5499d2*/
             goto LABEL_31; /*0x5499d2*/
         }
       }
@@ -1941,22 +1941,22 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
   int v5; // eax
   int v6; // ecx
   unsigned int v7; // edi
-  _DWORD *v8; // eax
+  unsigned int *v8; // eax
   int v9; // ebx
   void *NeighbourContentCell; // eax
-  _BYTE *v11; // ecx
+  unsigned char *v11; // ecx
   int result; // eax
-  _DWORD *v13; // eax
-  _BYTE *v14; // ecx
+  unsigned int *v13; // eax
+  unsigned char *v14; // ecx
   char v15; // bl
   int *v16; // ecx
   int v17; // edx
   double v18; // st7
   int MemberTeam; // eax
   int v20; // edi
-  _BYTE *v21; // eax
+  unsigned char *v21; // eax
   int v22; // eax
-  _BYTE *v23; // ecx
+  unsigned char *v23; // ecx
   char v24; // bl
   int v25; // [esp+14h] [ebp-24h]
   int v26; // [esp+20h] [ebp-18h] BYREF
@@ -1965,7 +1965,7 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
   int v30; // [esp+30h] [ebp-8h]
   int v31; // [esp+34h] [ebp-4h]
 
-  v2 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->vtable22) + 456))(this->vtable4); /*0x54ba43*/
+  v2 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable22) + 456))(this->vtable4); /*0x54ba43*/
   v3 = this->vtable4; /*0x54ba45*/
   if ( !v3->q08C ) /*0x54ba48*/
   {
@@ -1973,18 +1973,18 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
     v29 = *v4; /*0x54ba59*/
     v30 = v4[1]; /*0x54ba65*/
     v31 = v4[2]; /*0x54ba71*/
-    if ( (*((_DWORD *)Coord::To_Cell(&MapClass_Instance, &v29) + 80) & 0x100) != 0 && v2 >= dword_ABC5DC ) /*0x54ba8c*/
+    if ( (*((unsigned int *)Coord::To_Cell(&MapClass_Instance, &v29) + 80) & 0x100) != 0 && v2 >= dword_ABC5DC ) /*0x54ba8c*/
       v2 -= dword_ABC5DC; /*0x54ba8e*/
   }
-  v5 = *(_DWORD *)(*(int (__thiscall **)(_DWORD, int *))(**(_DWORD **)(&this->vtable22) + 440))(this->vtable4, &v28); /*0x54baa0*/
+  v5 = *(unsigned int *)(*(int (__thiscall **)(unsigned int, int *))(**(unsigned int **)(&this->vtable22) + 440))(this->vtable4, &v28); /*0x54baa0*/
   v6 = this->vtable4; /*0x54baa2*/
   v26 = v5; /*0x54baa5*/
   if ( v5 != v6->q560 ) /*0x54bab0*/
     Coord::ToGridIndex((char *)g_CellClassManager, v6, v6->q560, v5); /*0x54bace*/
   if ( v2 < this->needsRedraw ) /*0x54bade*/
   {
-    if ( (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->vtable22) + 44))(this->vtable4) == 1 /*0x54bba2*/
-      && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->vtable22) + 132))(this->vtable4) + 3434) )
+    if ( (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable22) + 44))(this->vtable4) == 1 /*0x54bba2*/
+      && *(unsigned char *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable22) + 132))(this->vtable4) + 3434) )
     {
       result = this->needsRedraw / 2; /*0x54bbb5*/
     }
@@ -2007,15 +2007,15 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
       IDA_LOWORD(v28) = Math::RoundToInt((v18 - 1.570796326794897) * -10430.06004058427); /*0x54bc3f*/
       v28 = v28; /*0x54bc50*/
       FacingClass::Update((char *)(&this->NeedsSaveOrLink4), &v28); /*0x54bc54*/
-      MemberTeam = Team::GetMember(*(_DWORD **)(&this->vtable22), 0); /*0x54bc5e*/
+      MemberTeam = Team::GetMember(*(unsigned int **)(&this->vtable22), 0); /*0x54bc5e*/
       v20 = MemberTeam; /*0x54bc63*/
       if ( MemberTeam ) /*0x54bc67*/
       {
-        if ( (*(int (__thiscall **)(int))(*(_DWORD *)MemberTeam + 44))(MemberTeam) == 6 ) /*0x54bc73*/
+        if ( (*(int (__thiscall **)(int))(*(unsigned int *)MemberTeam + 44))(MemberTeam) == 6 ) /*0x54bc73*/
         {
-          v21 = *(_BYTE **)(v20 + 1312); /*0x54bc75*/
+          v21 = *(unsigned char **)(v20 + 1312); /*0x54bc75*/
           if ( v21[5821] || v21[5860] || v21[5861] || v21[5862] ) /*0x54bc99*/
-            (**(void (__thiscall ***)(int, int, _DWORD))(this->vtable4 + 8))( /*0x54bcb3*/
+            (**(void (__thiscall ***)(int, int, unsigned int))(this->vtable4 + 8))( /*0x54bcb3*/
               this->vtable4 + 8,
               4475,
               0);
@@ -2024,14 +2024,14 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
       result = this->q044 / 256; /*0x54bcd2*/
       if ( v26 == IDA___PAIR32__(result, this->q040 / 256) ) /*0x54bcda*/
       {
-        result = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->vtable22) + 132))(this->vtable4); /*0x54bce8*/
+        result = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable22) + 132))(this->vtable4); /*0x54bce8*/
         if ( !result->u8_D6A ) /*0x54bcee*/
         {
-          v22 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(&this->vtable22) + 456))(this->vtable4); /*0x54bcfd*/
-          v23 = *(_BYTE **)(&this->vtable22); /*0x54bd03*/
+          v22 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable22) + 456))(this->vtable4); /*0x54bcfd*/
+          v23 = *(unsigned char **)(&this->vtable22); /*0x54bd03*/
           this->needsRedraw = v22; /*0x54bd06*/
           v24 = v23[116]; /*0x54bd10*/
-          (*(void (__thiscall **)(_BYTE *, _DWORD))(v23->q124)(v23, 0); /*0x54bd13*/
+          (*(void (__thiscall **)(unsigned char *, unsigned int))(v23->q124)(v23, 0); /*0x54bd13*/
           result = this->vtable4; /*0x54bd19*/
           this->customSound_controller = 3; /*0x54bd1c*/
           result->q074 = v24; /*0x54bd23*/
@@ -2041,26 +2041,26 @@ AbstractClass * * E4Recv_54BA30::UpdateFootMovement()
   }
   else if ( ObjectClass::HasLinkedObject(this->vtable4) ) /*0x54baea*/
   {
-    v7 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 7); /*0x54bb08*/
-    v8 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v26); /*0x54bb14*/
-    v9 = **(_DWORD **)(&this->vtable22); /*0x54bb1f*/
+    v7 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 7); /*0x54bb08*/
+    v8 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v26); /*0x54bb14*/
+    v9 = **(unsigned int **)(&this->vtable22); /*0x54bb1f*/
     NeighbourContentCell = Cell::GetNeighbourContent(v8, v7); /*0x54bb23*/
-    (*(void (__thiscall **)(_DWORD, void *, int))(v9 + 1152))(this->vtable4, NeighbourContentCell, 1); /*0x54bb2c*/
-    v11 = *(_BYTE **)(&this->vtable22); /*0x54bb32*/
+    (*(void (__thiscall **)(unsigned int, void *, int))(v9 + 1152))(this->vtable4, NeighbourContentCell, 1); /*0x54bb2c*/
+    v11 = *(unsigned char **)(&this->vtable22); /*0x54bb32*/
     IDA_LOBYTE(v9) = v11[116]; /*0x54bb39*/
-    (*(void (__thiscall **)(_BYTE *, _DWORD))(v11->q124)(v11, 0); /*0x54bb3c*/
+    (*(void (__thiscall **)(unsigned char *, unsigned int))(v11->q124)(v11, 0); /*0x54bb3c*/
     result = this->vtable4; /*0x54bb42*/
     result->q074 = v9; /*0x54bb46*/
     this->customSound_controller = 3; /*0x54bb49*/
   }
   else
   {
-    v13 = (_DWORD *)(*(int (__stdcall **)(_DWORD))(**(_DWORD **)(&this->vtable22) + 444))(this->vtable4); /*0x54bb5c*/
+    v13 = (unsigned int *)(*(int (__stdcall **)(unsigned int))(**(unsigned int **)(&this->vtable22) + 444))(this->vtable4); /*0x54bb5c*/
     CellClass::AttachObject(v13, v25); /*0x54bb64*/
-    v14 = *(_BYTE **)(&this->vtable22); /*0x54bb69*/
+    v14 = *(unsigned char **)(&this->vtable22); /*0x54bb69*/
     v15 = v14[116]; /*0x54bb70*/
-    result = (*(int (__thiscall **)(_BYTE *, _DWORD))(v14->q124)(v14, 0); /*0x54bb73*/
-    *(_BYTE *)(this->vtable4 + 116) = v15; /*0x54bb7d*/
+    result = (*(int (__thiscall **)(unsigned char *, unsigned int))(v14->q124)(v14, 0); /*0x54bb73*/
+    *(unsigned char *)(this->vtable4 + 116) = v15; /*0x54bb7d*/
     this->customSound_controller = 2; /*0x54bb80*/
   }
   return result; /*0x54bb45*/
@@ -2122,7 +2122,7 @@ namespace gamemd {
 long long sub_5407B0()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_AA0630 - dbl_AA0658); /*0x5407c2*/
   result = Math::RoundToInt(v0 * dbl_AA0650 * 0.5); /*0x5407d6*/
@@ -2151,7 +2151,7 @@ void sub_540820()
 namespace gamemd {
 long long sub_540850()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_AA06A8) + 0.5); /*0x54086b*/
   dword_AA069C = result; /*0x540870*/
@@ -2207,17 +2207,16 @@ int sub_5408D0()
 namespace gamemd {
 char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short a7)
 {
-  _DWORD *v8; // eax
-  _DWORD *v9; // eax
-  __int16 v10; // cx
+  unsigned int *v8; // eax
+  unsigned int *v9; // eax
+  int16_t v10; // cx
 
-  *(_DWORD *)this = (void*)&IPXManagerClass_vftable; /*0x5408f7*/
   if ( g_NetworkInterface ) /*0x540905*/
   {
     (**(void (__thiscall ***)(int, int))g_NetworkInterface)(g_NetworkInterface, 1); /*0x54090b*/
     g_NetworkInterface = 0; /*0x54090d*/
   }
-  v8 = RA2_OPNEW(0x3F310u); /*0x540918*/
+  v8 = operator new(0x3F310u); /*0x540918*/
   if ( v8 ) /*0x540922*/
     v9 = IPXInterfaceClass::Construct(v8); /*0x540926*/
   else
@@ -2262,7 +2261,7 @@ char * E4Recv_5408F0::sub_5408F0(int a2, int a3, int a4, int a5, short a6, short
 namespace gamemd {
 unsigned int E4Recv_5422C0::_GetNumBorrowedCores_SchedulerProxy_details_Concurrency__QBEIXZ()
 {
-  return *((_DWORD *)this + 42); /*0x5422c6*/
+  return *(unsigned int *)&this->M168; /*0x5422c6*/
 }
 } // namespace gamemd
 
@@ -2322,7 +2321,7 @@ namespace gamemd {
 long long sub_5431F0()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_AA06B8 - dbl_AA06E0); /*0x543202*/
   result = Math::RoundToInt(v0 * dbl_AA06D8 * 0.5); /*0x543216*/
@@ -2351,7 +2350,7 @@ void sub_543260()
 namespace gamemd {
 long long sub_543290()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_AA0730) + 0.5); /*0x5432ab*/
   dword_AA0724 = result; /*0x5432b0*/
@@ -2421,7 +2420,7 @@ int nullsub_0(int a1, unsigned int * a2)
 namespace gamemd {
 int E4Recv_543AF0::nullsub_0_0()
 {
-  return *(this + 43); /*0x543af6*/
+  return *(unsigned int *)&this->M172; /*0x543af6*/
 }
 } // namespace gamemd
 
@@ -2501,7 +2500,7 @@ namespace gamemd {
 long long sub_543D30()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_AA0E30 - dbl_AA1128); /*0x543d42*/
   result = Math::RoundToInt(v0 * dbl_AA1070 * 0.5); /*0x543d56*/
@@ -2530,7 +2529,7 @@ void sub_543DA0()
 namespace gamemd {
 long long sub_543DD0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_ABC550) + 0.5); /*0x543deb*/
   dword_ABC2BC = result; /*0x543df0*/
@@ -2573,7 +2572,7 @@ int sub_543E30()
 namespace gamemd {
 unsigned char * sub_543E50()
 {
-  _BYTE *result; // eax
+  unsigned char *result; // eax
   int v1; // ecx
 
   result = &unk_ABBED2; /*0x543e50*/
@@ -2690,8 +2689,8 @@ int MIXFile_AccumulateIndex(int a1)
 {
   int result; // eax
   int v2; // esi
-  _DWORD *v3; // edi
-  _DWORD *v4; // edx
+  unsigned int *v3; // edi
+  unsigned int *v4; // edx
 
   result = a1; /*0x544e36*/
   if ( a1 != 0xFFFF ) /*0x544e38*/
@@ -2702,8 +2701,8 @@ int MIXFile_AccumulateIndex(int a1)
       v3 = dword_AA107C; /*0x544e4b*/
       do /*0x544e62*/
       {
-        v4 = (_DWORD *)*v3; /*0x544e51*/
-        if ( *(_DWORD *)*v3 > a1 ) /*0x544e55*/
+        v4 = (unsigned int *)*v3; /*0x544e51*/
+        if ( *(unsigned int *)*v3 > a1 ) /*0x544e55*/
           break; /*0x544e55*/
         ++v3; /*0x544e5a*/
         result += v4[1]; /*0x544e5d*/
@@ -2764,11 +2763,11 @@ namespace gamemd {
 unsigned char * Bitfield_SetBit(int a1, int a2, int a3)
 {
   char v3; // bl
-  _BYTE *result; // eax
+  unsigned char *result; // eax
   char v5; // cl
 
   v3 = 1 << (a2 % 8); /*0x54a917*/
-  result = (_BYTE *)(a1 + a2 / 8); /*0x54a92a*/
+  result = (unsigned char *)(a1 + a2 / 8); /*0x54a92a*/
   if ( a3 ) /*0x54a920*/
     v5 = v3 | *result; /*0x54a92f*/
   else
@@ -2782,7 +2781,7 @@ unsigned char * Bitfield_SetBit(int a1, int a2, int a3)
 namespace gamemd {
 int E4Recv_54A990::sub_54A990()
 {
-  _BYTE *v1; // edi
+  unsigned char *v1; // edi
   int v2; // ebp
   char v3; // al
   int i; // esi
@@ -2801,7 +2800,7 @@ int E4Recv_54A990::sub_54A990()
   }
   for ( i = 0; i < 8; ++i ) /*0x54a9a6*/
   {
-    if ( ((unsigned __int8)(1 << (i % 8)) & v1[i / 8]) != 0 ) /*0x54a9c9*/
+    if ( ((uint8_t)(1 << (i % 8)) & v1[i / 8]) != 0 ) /*0x54a9c9*/
       break; /*0x54a9c9*/
   }
   return i + 8 * v2; /*0x54a9d4*/
@@ -2812,7 +2811,7 @@ int E4Recv_54A990::sub_54A990()
 namespace gamemd {
 int E4Recv_54A9E0::sub_54A9E0()
 {
-  _BYTE *v1; // edi
+  unsigned char *v1; // edi
   int v2; // ebp
   char v3; // al
   int i; // esi
@@ -2831,7 +2830,7 @@ int E4Recv_54A9E0::sub_54A9E0()
   }
   for ( i = 0; i < 8; ++i ) /*0x54a9f6*/
   {
-    if ( ((unsigned __int8)(1 << (i % 8)) & v1[i / 8]) == 0 ) /*0x54aa19*/
+    if ( ((uint8_t)(1 << (i % 8)) & v1[i / 8]) == 0 ) /*0x54aa19*/
       break; /*0x54aa19*/
   }
   return i + 8 * v2; /*0x54aa24*/
@@ -2894,7 +2893,7 @@ namespace gamemd {
 long long sub_54AB00()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_ABC570 - dbl_ABC598); /*0x54ab12*/
   result = Math::RoundToInt(v0 * dbl_ABC590 * 0.5); /*0x54ab26*/
@@ -2923,7 +2922,7 @@ void sub_54AB70()
 namespace gamemd {
 long long sub_54ABA0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_ABC5E8) + 0.5); /*0x54abbb*/
   dword_ABC5DC = result; /*0x54abc0*/
@@ -3039,7 +3038,7 @@ namespace gamemd {
 long long sub_54E120()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_ABC5F0 - dbl_ABC640); /*0x54e132*/
   result = Math::RoundToInt(v0 * dbl_ABC638 * 0.5); /*0x54e146*/
@@ -3068,7 +3067,7 @@ void sub_54E190()
 namespace gamemd {
 long long sub_54E1C0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_ABC690) + 0.5); /*0x54e1db*/
   dword_ABC684 = result; /*0x54e1e0*/
@@ -3151,7 +3150,6 @@ unsigned int * E4Recv_54E360::sub_54E360()
   this->abstractFlags = 0; /*0x54e37b*/
   this->nextArrayIndex = 1; /*0x54e37e*/
   this->customSound = 0; /*0x54e382*/
-  this->vtable4 = (void*)&DynamicVectorClass_KamikazeControl___vftable; /*0x54e385*/
   this->NeedsSaveOrLink = 10; /*0x54e38c*/
   this->referenceCount = 0; /*0x54e393*/
   *this = g_CurrentFrame; /*0x54e39e*/
@@ -3167,8 +3165,8 @@ void E4Recv_54E690::sub_54E690()
 {
   int i; // esi
   int v3; // edx
-  _DWORD *v4; // esi
-  _DWORD *v5; // ecx
+  unsigned int *v4; // esi
+  unsigned int *v5; // ecx
   int v6; // edi
   void *v7; // eax
 
@@ -3178,16 +3176,15 @@ void E4Recv_54E690::sub_54E690()
   v4 = &this->vtable4; /*0x54e6b0*/
   v5 = &this->vtable4; /*0x54e6b3*/
   v6 = this->abstractFlags; /*0x54e6b5*/
-  (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v5); /*0x54e6b8*/
-  (*(void (__thiscall **)(_DWORD *, int, _DWORD))(this->fallRate)(v4, v6, 0); /*0x54e6c3*/
+  (*(void (__thiscall **)(unsigned int *))(v3 + 12))(v5); /*0x54e6b8*/
+  (*(void (__thiscall **)(unsigned int *, int, unsigned int))(this->fallRate)(v4, v6, 0); /*0x54e6c3*/
   v7 = (void *)v4[1]; /*0x54e6c6*/
-  *v4 = (void*)&VectorClass_KamikazeControl___vftable; /*0x54e6c9*/
-  if ( v7 && *((_BYTE *)v4 + 13) ) /*0x54e6d3*/
+  if ( v7 && *((unsigned char *)v4 + 13) ) /*0x54e6d3*/
   {
     RA2_OPDEL(v7); /*0x54e6d9*/
     v4[1] = 0; /*0x54e6e1*/
   }
-  *((_BYTE *)v4 + 13) = 0; /*0x54e6e4*/
+  *((unsigned char *)v4 + 13) = 0; /*0x54e6e4*/
   v4[2] = 0; /*0x54e6e7*/
 }
 } // namespace gamemd
@@ -3196,11 +3193,10 @@ void E4Recv_54E690::sub_54E690()
 namespace gamemd {
 unsigned int * E4Recv_54EBF0::sub_54EBF0(int a2, int a3)
 {
-  *(this + 1) = 0; /*0x54ebfb*/
-  *(this + 2) = a2; /*0x54ebfe*/
+  this->M4 = 0; /*0x54ebfb*/
+  this->M8 = a2; /*0x54ebfe*/
   this->IsInitialized = 1; /*0x54ec01*/
   this->IsAllocated = 0; /*0x54ec05*/
-  *this = (void*)&VectorClass_KamikazeControl___vftable; /*0x54ec08*/
   if ( a2 ) /*0x54ec0e*/
   {
     if ( a3 ) /*0x54ec16*/
@@ -3208,7 +3204,7 @@ unsigned int * E4Recv_54EBF0::sub_54EBF0(int a2, int a3)
       this->Items = a3; /*0x54ec18*/
       return this; /*0x54ec1e*/
     }
-    this->Items = RA2_OPNEW(4 * a2); /*0x54ec2d*/
+    this->Items = operator new(4 * a2); /*0x54ec2d*/
     this->IsAllocated = 1; /*0x54ec30*/
   }
   return this; /*0x54ec1d*/
@@ -3283,7 +3279,7 @@ namespace gamemd {
 long long sub_54ED30()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_ABC698 - dbl_ABC6C0); /*0x54ed42*/
   result = Math::RoundToInt(v0 * dbl_ABC6B8 * 0.5); /*0x54ed56*/
@@ -3312,7 +3308,7 @@ void sub_54EDA0()
 namespace gamemd {
 long long sub_54EDD0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_ABC710) + 0.5); /*0x54edeb*/
   dword_ABC704 = result; /*0x54edf0*/
@@ -3364,7 +3360,7 @@ void nullsub_157()
 namespace gamemd {
 bool E4Recv_54F6D0::sub_54F6D0()
 {
-  return *(this + 197) == *(this + 198); /*0x54f6e1*/
+  return this->M788 == *(unsigned int *)&this->M792; /*0x54f6e1*/
 }
 } // namespace gamemd
 
@@ -3424,7 +3420,7 @@ namespace gamemd {
 long long sub_54FC80()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_ABC720 - dbl_ABC7D0); /*0x54fc92*/
   result = Math::RoundToInt(v0 * dbl_ABC7C0 * 0.5); /*0x54fca6*/
@@ -3453,7 +3449,7 @@ void sub_54FCF0()
 namespace gamemd {
 long long sub_54FD20()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_ABC8BC) + 0.5); /*0x54fd3b*/
   dword_ABC8AC = result; /*0x54fd40*/

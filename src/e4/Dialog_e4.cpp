@@ -75,7 +75,7 @@ int Dialog::InitializeGameSettings()
     SendMessageA(v7, 0x405u, 1u, dword_A8B278); /*0x5b5c9d*/
   v8 = GetDlgItem(*this, 1643); /*0x5b5ca7*/
   if ( v8 ) /*0x5b5cab*/
-    SendMessageA(v8, 0xF1u, (_BYTE)MCVRedeploy == 1, 0); /*0x5b5cc3*/
+    SendMessageA(v8, 0xF1u, (unsigned char)MCVRedeploy == 1, 0); /*0x5b5cc3*/
   v9 = GetDlgItem(*this, 1642); /*0x5b5ccd*/
   if ( v9 ) /*0x5b5cd1*/
     SendMessageA(v9, 0xF1u, Bases == 1, 0); /*0x5b5ce9*/
@@ -90,7 +90,7 @@ int Dialog::InitializeGameSettings()
     SendMessageA(v12, 0xF1u, SWAllowed == 1, 0); /*0x5b5d5b*/
   v13 = GetDlgItem(*this, 1693); /*0x5b5d65*/
   if ( v13 ) /*0x5b5d69*/
-    SendMessageA(v13, 0xF1u, (_BYTE)g_Rules_ShortGame == 1, 0); /*0x5b5d81*/
+    SendMessageA(v13, 0xF1u, (unsigned char)g_Rules_ShortGame == 1, 0); /*0x5b5d81*/
   v14 = GetDlgItem(*this, 1356); /*0x5b5d8b*/
   if ( v14 ) /*0x5b5d8f*/
     SendMessageA(v14, 0xF1u, Crates == 1, 0); /*0x5b5da7*/
@@ -106,7 +106,7 @@ int Dialog::InitializeGameSettings()
   v18 = GetDlgItem(*this, 1448); /*0x5b5e23*/
   if ( v18 ) /*0x5b5e27*/
     SendMessageA(v18, 0x4B2u, 0, (LPARAM)&MCVRedeploy + 2); /*0x5b5e36*/
-  if ( !g_UIControlState || !*(_DWORD *)g_UIControlState ) /*0x5b5e41*/
+  if ( !g_UIControlState || !*(unsigned int *)g_UIControlState ) /*0x5b5e41*/
     Session::PrepareGame(); /*0x5b5e48*/
   v19 = GetDlgItem(*this, 1); /*0x5b5e51*/
   if ( v19 ) /*0x5b5e55*/
@@ -120,7 +120,7 @@ int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknow
 {
   int v6; // ebx
   int v7; // edi
-  unsigned __int16 v8; // cx
+  uint16_t v8; // cx
   HWND v9; // eax
   HWND v10; // esi
   HWND DlgItem; // eax
@@ -137,7 +137,7 @@ int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknow
 
   dwNewLong = -1; /*0x5d349a*/
   v6 = 0; /*0x5d34a6*/
-  v7 = (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance); /*0x5d34ab*/
+  v7 = (*(int (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance); /*0x5d34ab*/
   v22 = v7; /*0x5d34b3*/
   if ( !lParam || (v19 = 1, !*lParam) ) /*0x5d34b9*/
     v19 = 0; /*0x5d34c3*/
@@ -192,8 +192,8 @@ int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknow
     }
     else
     {
-      while ( (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) ) /*0x5d3607*/
-        (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x5d3616*/
+      while ( (*(int (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) ) /*0x5d3607*/
+        (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 16))(g_WWMouseClass_Instance); /*0x5d3616*/
       while ( dwNewLong < 0 ) /*0x5d362e*/
       {
         if ( Dialog::PumpMessages() ) /*0x5d3630*/
@@ -208,8 +208,8 @@ int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknow
     Dialog::Destroy(v10); /*0x5d365d*/
     v7 = v22; /*0x5d3662*/
   }
-  while ( v7 < (*(int (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) ) /*0x5d3673*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x5d367d*/
+  while ( v7 < (*(int (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance) ) /*0x5d3673*/
+    (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x5d367d*/
   return dwNewLong; /*0x5d3693*/
 }
 }
@@ -262,7 +262,7 @@ int Dialog::RunModemDialing(ObjectClass * aP1, int a3, char a4)
   int v11; // ebp
   int v12; // ecx
   HWND v13; // ecx
-  __int16 Buffer; // [esp+2Ch] [ebp-F8h] BYREF
+  int16_t Buffer; // [esp+2Ch] [ebp-F8h] BYREF
   char v16; // [esp+2Eh] [ebp-F6h]
   HWND hWnd; // [esp+30h] [ebp-F4h]
   char Source[240]; // [esp+34h] [ebp-F0h] BYREF
@@ -283,17 +283,17 @@ int Dialog::RunModemDialing(ObjectClass * aP1, int a3, char a4)
     return v6; /*0x5f29d7*/
   Dialog::Show(MessageBox); /*0x5f29df*/
   Debug::Log(); /*0x5f29e9*/
-  (*(void (__thiscall **)(HWND, int))(*(_DWORD *)g_ClipboardBuffer + 8))(g_ClipboardBuffer, a3); /*0x5f2a01*/
+  (*(void (__thiscall **)(HWND, int))(*(unsigned int *)g_ClipboardBuffer + 8))(g_ClipboardBuffer, a3); /*0x5f2a01*/
   Debug::Log(); /*0x5f2a09*/
-  (*(void (__thiscall **)(HWND, int, char *, int, int))(*(_DWORD *)g_ClipboardBuffer + 20))( /*0x5f2a24*/
+  (*(void (__thiscall **)(HWND, int, char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))( /*0x5f2a24*/
     g_ClipboardBuffer,
     60,
     Source,
     81,
     -1);
   Debug::Log(); /*0x5f2a2c*/
-  (*(void (__thiscall **)(HWND, int))(*(_DWORD *)g_ClipboardBuffer + 24))(g_ClipboardBuffer, aP1); /*0x5f2a44*/
-  (*(void (__thiscall **)(HWND, int (*)()))(*(_DWORD *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, PumpEventLoop); /*0x5f2a54*/
+  (*(void (__thiscall **)(HWND, int))(*(unsigned int *)g_ClipboardBuffer + 24))(g_ClipboardBuffer, aP1); /*0x5f2a44*/
+  (*(void (__thiscall **)(HWND, int (*)()))(*(unsigned int *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, PumpEventLoop); /*0x5f2a54*/
   g_NetworkTestFlag = 0; /*0x5f2a57*/
   v11 = this->q024; /*0x5f2a5e*/
   Debug::Log(); /*0x5f2a66*/
@@ -317,7 +317,7 @@ int Dialog::RunModemDialing(ObjectClass * aP1, int a3, char a4)
     IDA_LOBYTE(v12) = 0; /*0x5f2a88*/
     ScreenSaver::Process(v12); /*0x5f2a8a*/
     memset(Source, 0, sizeof(Source)); /*0x5f2a9c*/
-    v11 = (*(int (__thiscall **)(HWND, int, char *, int, int))(*(_DWORD *)g_ClipboardBuffer + 20))( /*0x5f2ab1*/
+    v11 = (*(int (__thiscall **)(HWND, int, char *, int, int))(*(unsigned int *)g_ClipboardBuffer + 20))( /*0x5f2ab1*/
             g_ClipboardBuffer,
             v11,
             Source,
@@ -381,7 +381,7 @@ int Dialog::RunModemDialing(ObjectClass * aP1, int a3, char a4)
   }
   v6 = 5; /*0x5f2c6b*/
   LABEL_36:
-  (*(void (__thiscall **)(HWND, _DWORD))(*(_DWORD *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, 0); /*0x5f2cab*/
+  (*(void (__thiscall **)(HWND, unsigned int))(*(unsigned int *)g_ClipboardBuffer + 36))(g_ClipboardBuffer, 0); /*0x5f2cab*/
   g_NetworkTestFlag = 0; /*0x5f2cbc*/
   Dialog::Destroy(hWnd); /*0x5f2cc3*/
   return v6; /*0x5f2cca*/
@@ -410,12 +410,12 @@ AbstractClass * * Dialog::MapControlToAction(HWND hWnd, LPARAM a2)
   hWnd = Parent; /*0x606814*/
   if ( !g_DialogHashMap_Count ) /*0x60681f*/
     goto LABEL_5; /*0x60681f*/
-  v3 = *((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&hWnd)); /*0x606836*/
+  v3 = *((unsigned int *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&hWnd)); /*0x606836*/
   if ( !v3 ) /*0x60683b*/
     goto LABEL_5; /*0x60683b*/
   while ( *(HWND *)v3 != hWnd ) /*0x606843*/
   {
-    v3 = *(_DWORD *)(v3 + 516); /*0x606849*/
+    v3 = *(unsigned int *)(v3 + 516); /*0x606849*/
     if ( !v3 ) /*0x606851*/
       goto LABEL_5; /*0x606851*/
   }
@@ -458,7 +458,7 @@ AbstractClass * * Dialog::MapControlToAction(HWND hWnd, LPARAM a2)
      || v4 == (void *)184
      || v4 == (void *)214
      || v4 == (void *)259
-     || (unsigned __int8)Dialog::IsSpecialTemplate(v4))
+     || (uint8_t)Dialog::IsSpecialTemplate(v4))
     && DlgCtrlID == 1684
     || Event::IsValidActionType(v4) && DlgCtrlID == 1685
     || (v4 == (void *)148
@@ -613,19 +613,19 @@ AbstractClass * * Dialog::MapControlToAction(HWND hWnd, LPARAM a2)
     hWnd = v2; /*0x60703f*/
     if ( g_DialogHashMap_Count ) /*0x607045*/
     {
-      v7 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x607066*/
+      v7 = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x607066*/
       if ( v7 ) /*0x60706b*/
       {
         while ( *(HWND *)v7 != hWnd ) /*0x607073*/
         {
-          v7 = *(_DWORD *)(v7 + 516); /*0x607075*/
+          v7 = *(unsigned int *)(v7 + 516); /*0x607075*/
           if ( !v7 ) /*0x60707d*/
             goto LABEL_199; /*0x60707d*/
         }
         v9 = v7 + 4; /*0x6070a0*/
         if ( v9 ) /*0x6070a5*/
         {
-          if ( !*(_DWORD *)(v9 + 104) && IsDialogControlVisible((int)Parent, v2) ) /*0x6070b4*/
+          if ( !*(unsigned int *)(v9 + 104) && IsDialogControlVisible((int)Parent, v2) ) /*0x6070b4*/
             goto LABEL_208; /*0x6070bb*/
         }
       }
@@ -637,37 +637,37 @@ AbstractClass * * Dialog::MapControlToAction(HWND hWnd, LPARAM a2)
     hWnd = v2; /*0x6070d6*/
     if ( g_DialogHashMap_Count ) /*0x6070dc*/
     {
-      v10 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x607101*/
+      v10 = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x607101*/
       if ( v10 ) /*0x607106*/
       {
         while ( *(HWND *)v10 != hWnd ) /*0x607112*/
         {
-          v10 = *(_DWORD *)(v10 + 516); /*0x607114*/
+          v10 = *(unsigned int *)(v10 + 516); /*0x607114*/
           if ( !v10 ) /*0x60711c*/
             return 1; /*0x607128*/
         }
         v12 = v10 + 4; /*0x607133*/
         if ( v12 ) /*0x607138*/
         {
-          if ( !*(_DWORD *)(v12 + 104) && GetDialogDefaultButton((int)Parent, v2) ) /*0x607147*/
+          if ( !*(unsigned int *)(v12 + 104) && GetDialogDefaultButton((int)Parent, v2) ) /*0x607147*/
           {
   LABEL_208:
             hWnd = v2; /*0x607150*/
             if ( g_DialogHashMap_Count ) /*0x60715b*/
             {
-              v13 = *((_DWORD *)g_DialogHashMap_Base /*0x60717c*/
+              v13 = *((unsigned int *)g_DialogHashMap_Base /*0x60717c*/
                     + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1)));
               if ( v13 ) /*0x607181*/
               {
                 while ( *(HWND *)v13 != hWnd ) /*0x607189*/
                 {
-                  v13 = *(_DWORD *)(v13 + 516); /*0x60718b*/
+                  v13 = *(unsigned int *)(v13 + 516); /*0x60718b*/
                   if ( !v13 ) /*0x607193*/
                     return 1; /*0x60719f*/
                 }
                 v14 = v13 + 4; /*0x6071a6*/
                 if ( v14 ) /*0x6071ab*/
-                  *(_BYTE *)(v14 + 188) = v6; /*0x6071ad*/
+                  *(unsigned char *)(v14 + 188) = v6; /*0x6071ad*/
               }
             }
           }
@@ -692,27 +692,27 @@ int Dialog::StopBink()
   v7 = hDlg; /*0x607fdc*/
   if ( g_DialogHashMap_Count ) /*0x607fe0*/
   {
-    v1 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x608005*/
+    v1 = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x608005*/
     if ( v1 ) /*0x60800a*/
     {
       while ( *(HWND *)v1 != v7 ) /*0x608012*/
       {
-        v1 = *(_DWORD *)(v1 + 516); /*0x608014*/
+        v1 = *(unsigned int *)(v1 + 516); /*0x608014*/
         if ( !v1 ) /*0x60801c*/
           return v1; /*0x60801c*/
       }
       v3 = v1 + 4; /*0x608026*/
       if ( v1 != -4 ) /*0x60802b*/
       {
-        IDA_LOBYTE(v1) = *(_BYTE *)(v1 + 194); /*0x60802d*/
-        if ( (_BYTE)v1 ) /*0x608035*/
+        IDA_LOBYTE(v1) = *(unsigned char *)(v1 + 194); /*0x60802d*/
+        if ( (unsigned char)v1 ) /*0x608035*/
         {
           DlgItem = GetDlgItem(hDlg, 1818); /*0x60803d*/
           if ( DlgItem ) /*0x608045*/
             SendMessageA(DlgItem, 0x4E2u, 0, 0); /*0x608051*/
           IDA_LOBYTE(v5) = 0; /*0x608057*/
           IDA_LOBYTE(v1) = RenderGadgetClassAnimation(hDlg, v5); /*0x60805b*/
-          *(_BYTE *)(v3 + 190) = 0; /*0x608060*/
+          *(unsigned char *)(v3 + 190) = 0; /*0x608060*/
         }
       }
     }
@@ -725,7 +725,7 @@ namespace gamemd {
 AbstractClass * * Dialog::IdleProcess()
 {
   HWND *v2; // eax
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   bool v5; // bl
   bool v6; // al
   int v7; // eax
@@ -740,7 +740,7 @@ AbstractClass * * Dialog::IdleProcess()
   v10 = hWnd; /*0x60808b*/
   if ( !g_DialogHashMap_Count ) /*0x608091*/
     return 0; /*0x608091*/
-  v2 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v10) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6080b2*/
+  v2 = (HWND *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v10) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6080b2*/
   if ( !v2 ) /*0x6080b7*/
     return 0; /*0x6080b7*/
   while ( *v2 != v10 ) /*0x6080bf*/
@@ -752,32 +752,32 @@ AbstractClass * * Dialog::IdleProcess()
   v4 = v2 + 1; /*0x6080d8*/
   if ( !v4 ) /*0x6080dd*/
     return 0; /*0x6080dd*/
-  v5 = *((_BYTE *)v4 + 189) && v4[44] == 1; /*0x6080e7*/
+  v5 = *((unsigned char *)v4 + 189) && v4[44] == 1; /*0x6080e7*/
   v6 = IsWindowVisible(hWnd); /*0x608101*/
   if ( !v5 ) /*0x608106*/
     return 0; /*0x608106*/
   if ( !v6 ) /*0x60810a*/
     return 0; /*0x60810a*/
-  PlayVocClass(*((_DWORD *)g_RulesClass_Instance + 103), 0x2000, 1.0, 0); /*0x608124*/
+  PlayVocClass(*((unsigned int *)g_RulesClass_Instance + 103), 0x2000, 1.0, 0); /*0x608124*/
   IDA_LOBYTE(v12) = IsWindowEnabled(hWnd); /*0x608138*/
   EnableWindow(hWnd, 0); /*0x60813c*/
   EnumChildWindows(hWnd, Dialog::MapControlToAction, 1); /*0x60814a*/
   v10 = hWnd; /*0x608157*/
   if ( !g_DialogHashMap_Count ) /*0x60815b*/
     return 0; /*0x60815b*/
-  v7 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v10) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x608180*/
+  v7 = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v10) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x608180*/
   if ( !v7 ) /*0x608185*/
     return 0; /*0x608185*/
   while ( *(HWND *)v7 != v10 ) /*0x608191*/
   {
-    v7 = *(_DWORD *)(v7 + 516); /*0x608193*/
+    v7 = *(unsigned int *)(v7 + 516); /*0x608193*/
     if ( !v7 ) /*0x60819b*/
       return 0; /*0x6081a5*/
   }
   v8 = v7 + 4; /*0x6081ae*/
   if ( v7 == -4 ) /*0x6081b3*/
     return 0; /*0x6080d3*/
-  *(_BYTE *)(v7 + 194) = 1; /*0x6081bf*/
+  *(unsigned char *)(v7 + 194) = 1; /*0x6081bf*/
   InvalidateRect(hWnd, 0, 0); /*0x6081c6*/
   TickCount = GetTickCount(); /*0x6081d4*/
   while ( 1 ) /*0x6081d8*/
@@ -790,15 +790,15 @@ AbstractClass * * Dialog::IdleProcess()
     }
     Event::Dispatch(); /*0x608211*/
   LABEL_29:
-    v9 = *(_BYTE *)(v8 + 190) == 0; /*0x608216*/
+    v9 = *(unsigned char *)(v8 + 190) == 0; /*0x608216*/
     if ( (int)(GetTickCount() - TickCount) > 5000 || v9 ) /*0x608234*/
       goto LABEL_31; /*0x608234*/
   }
-  if ( (unsigned __int8)VtableStub::55CBF0() || !GameFrameLoop() ) /*0x608206*/
+  if ( (uint8_t)VtableStub::55CBF0() || !GameFrameLoop() ) /*0x608206*/
     goto LABEL_29; /*0x60820d*/
   LABEL_31:
   EnumChildWindows(hWnd, Dialog::MapControlToAction, 0); /*0x608236*/
-  EnableWindow(hWnd, (unsigned __int8)v12); /*0x608250*/
+  EnableWindow(hWnd, (uint8_t)v12); /*0x608250*/
   return 1; /*0x6080cb*/
 }
 }
@@ -809,9 +809,9 @@ int Dialog::HandleTabKey(HWND hWnd, LPARAM a2)
   HWND *v3; // eax
   HWND Parent; // ebp
   HWND *v5; // eax
-  _DWORD *v6; // eax
+  unsigned int *v6; // eax
   HWND *v8; // eax
-  _DWORD *v9; // eax
+  unsigned int *v9; // eax
   HWND v10; // [esp+Ch] [ebp-Ch] BYREF
   int v11; // [esp+10h] [ebp-8h] BYREF
   HWND v12; // [esp+14h] [ebp-4h] BYREF
@@ -821,7 +821,7 @@ int Dialog::HandleTabKey(HWND hWnd, LPARAM a2)
   hWnda = 0; /*0x60a345*/
   if ( g_DialogHashMap_Count ) /*0x60a34d*/
   {
-    v3 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v10) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60a36e*/
+    v3 = (HWND *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v10) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60a36e*/
     if ( v3 ) /*0x60a373*/
     {
       while ( *v3 != v10 ) /*0x60a37b*/
@@ -844,7 +844,7 @@ int Dialog::HandleTabKey(HWND hWnd, LPARAM a2)
       v10 = hWnd; /*0x60a3d2*/
       if ( g_DialogHashMap_Count ) /*0x60a3d8*/
       {
-        v5 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v10)); /*0x60a3ef*/
+        v5 = (HWND *)*((unsigned int *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v10)); /*0x60a3ef*/
         if ( v5 ) /*0x60a3f4*/
         {
           while ( *v5 != v10 ) /*0x60a3fc*/
@@ -870,10 +870,10 @@ int Dialog::HandleTabKey(HWND hWnd, LPARAM a2)
       HashTable::Get(&g_DialogHashMap_Base, &v12, &v11); /*0x60a450*/
       if ( v11 ) /*0x60a45b*/
       {
-        if ( !*(_DWORD *)(v11 + 104) && GetDialogDefaultButton((int)Parent, hWnd) ) /*0x60a468*/
+        if ( !*(unsigned int *)(v11 + 104) && GetDialogDefaultButton((int)Parent, hWnd) ) /*0x60a468*/
         {
   LABEL_22:
-          *((_DWORD *)hWnda + 44) = 1; /*0x60a471*/
+          *((unsigned int *)hWnda + 44) = 1; /*0x60a471*/
           return 1; /*0x60a486*/
         }
       }
@@ -883,7 +883,7 @@ int Dialog::HandleTabKey(HWND hWnd, LPARAM a2)
     goto LABEL_33; /*0x60a48e*/
   if ( (GetWindowLongA(hWnd, -16) & 0xB) != 0xB /*0x60a4da*/
     || (v12 = hWnd, v11 = 0, HashTable::Get(&g_DialogHashMap_Base, &v12, &v11), !v11)
-    || *(_DWORD *)(v11 + 104)
+    || *(unsigned int *)(v11 + 104)
     || !IsDialogControlVisible((int)Parent, hWnd) )
   {
     if ( (GetWindowLongA(hWnd, -16) & 0xB) != 0xB ) /*0x60a4f1*/
@@ -891,7 +891,7 @@ int Dialog::HandleTabKey(HWND hWnd, LPARAM a2)
     v10 = hWnd; /*0x60a4f8*/
     if ( !g_DialogHashMap_Count ) /*0x60a4fe*/
       goto LABEL_33; /*0x60a4fe*/
-    v8 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v10)); /*0x60a515*/
+    v8 = (HWND *)*((unsigned int *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v10)); /*0x60a515*/
     if ( !v8 ) /*0x60a51a*/
       goto LABEL_33; /*0x60a51a*/
     while ( *v8 != v10 ) /*0x60a522*/
@@ -904,12 +904,12 @@ int Dialog::HandleTabKey(HWND hWnd, LPARAM a2)
     if ( !v9 || v9[26] || !GetDialogDefaultButton((int)Parent, hWnd) ) /*0x60a56d*/
     {
   LABEL_33:
-      if ( (unsigned __int8)FilterDialogButtonAction(Parent, hWnd) ) /*0x60a532*/
-        *((_DWORD *)hWnda + 44) = 3; /*0x60a53f*/
+      if ( (uint8_t)FilterDialogButtonAction(Parent, hWnd) ) /*0x60a532*/
+        *((unsigned int *)hWnda + 44) = 3; /*0x60a53f*/
       return 1; /*0x60a554*/
     }
   }
-  *((_DWORD *)hWnda + 44) = 2; /*0x60a581*/
+  *((unsigned int *)hWnda + 44) = 2; /*0x60a581*/
   return 1; /*0x60a47a*/
 }
 }
@@ -919,8 +919,8 @@ AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
 {
   HWND v2; // ebp
   HWND Parent; // edi
-  _DWORD *v4; // esi
-  _DWORD *v5; // eax
+  unsigned int *v4; // esi
+  unsigned int *v5; // eax
   int v6; // edi
   int v7; // eax
   int v9; // eax
@@ -944,12 +944,12 @@ AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
   v19 = v2; /*0x60a5d1*/
   if ( g_DialogHashMap_Count ) /*0x60a5d5*/
   {
-    v5 = (_DWORD *)*((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v19)); /*0x60a5ec*/
+    v5 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v19)); /*0x60a5ec*/
     if ( v5 ) /*0x60a5f1*/
     {
       while ( (HWND)*v5 != v19 ) /*0x60a5f9*/
       {
-        v5 = (_DWORD *)v5[129]; /*0x60a5fb*/
+        v5 = (unsigned int *)v5[129]; /*0x60a5fb*/
         if ( !v5 ) /*0x60a603*/
           goto LABEL_7; /*0x60a603*/
       }
@@ -959,10 +959,10 @@ AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
   LABEL_7:
   if ( !v4 ) /*0x60a610*/
     return 1; /*0x60aa44*/
-  if ( !(unsigned __int8)IsValidActionDialog(Parent, v2) ) /*0x60a621*/
+  if ( !(uint8_t)IsValidActionDialog(Parent, v2) ) /*0x60a621*/
   {
     IDA_LOBYTE(hWnd) = 0; /*0x60a6e7*/
-    if ( (unsigned __int8)UI_Helper_602B90(Parent, v2) ) /*0x60a6ec*/
+    if ( (uint8_t)UI_Helper_602B90(Parent, v2) ) /*0x60a6ec*/
     {
       v9 = v4[5]; /*0x60a6f5*/
       v4[28] = 2; /*0x60a6f8*/
@@ -971,7 +971,7 @@ AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
         v20 = Parent; /*0x60a70c*/
         if ( g_DialogHashMap_Count ) /*0x60a712*/
         {
-          for ( i = (HWND *)*((_DWORD *)g_DialogHashMap_Base /*0x60a72e*/
+          for ( i = (HWND *)*((unsigned int *)g_DialogHashMap_Base /*0x60a72e*/
                             + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&v20)); i; i = (HWND *)i[129] )
           {
             if ( *i == v20 ) /*0x60a736*/
@@ -990,7 +990,7 @@ AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
     v20 = Parent; /*0x60a75a*/
     if ( g_DialogHashMap_Count ) /*0x60a760*/
     {
-      for ( j = (HWND *)*((_DWORD *)g_DialogHashMap_Base /*0x60a786*/
+      for ( j = (HWND *)*((unsigned int *)g_DialogHashMap_Base /*0x60a786*/
                         + (g_DialogHashMap_Hasher(&v20) & ((1 << g_DialogHashMap_Buckets) - 1))); j; j = (HWND *)j[129] )
       {
         if ( *j == v20 ) /*0x60a78e*/
@@ -1003,7 +1003,7 @@ AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
     v20 = 0; /*0x60a7b8*/
     HashTable::Get(&g_DialogHashMap_Base, &v21, &v20); /*0x60a7bc*/
     if ( v20 ) /*0x60a7c7*/
-      v12 = *((_DWORD *)v20 + 27); /*0x60a7c9*/
+      v12 = *((unsigned int *)v20 + 27); /*0x60a7c9*/
     DlgCtrlID = GetDlgCtrlID(v2); /*0x60a7cd*/
     if ( v12 != 148 /*0x60a8fc*/
       && v12 != 216
@@ -1068,22 +1068,22 @@ AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
             v15 = v4[40]; /*0x60a9ed*/
             if ( v15 <= 0 ) /*0x60a9f5*/
             {
-              if ( (_BYTE)hWnd ) /*0x60aa27*/
+              if ( (unsigned char)hWnd ) /*0x60aa27*/
               {
                 v16 = v4[30]; /*0x60aa29*/
                 if ( v16 ) /*0x60aa2e*/
                 {
-                  v4[37] = *(__int16 *)(v16 + 6); /*0x60aa34*/
-                  *((_BYTE *)v4 + 168) = 0; /*0x60aa3a*/
+                  v4[37] = *(int16_t *)(v16 + 6); /*0x60aa34*/
+                  *((unsigned char *)v4 + 168) = 0; /*0x60aa3a*/
                 }
               }
             }
             else
             {
               SetTimer(v2, 0, v15, 0); /*0x60a9fd*/
-              if ( (_BYTE)hWnd ) /*0x60aa09*/
+              if ( (unsigned char)hWnd ) /*0x60aa09*/
               {
-                *((_BYTE *)v4 + 168) = 1; /*0x60aa0b*/
+                *((unsigned char *)v4 + 168) = 1; /*0x60aa0b*/
                 return 1; /*0x60aa1e*/
               }
             }
@@ -1101,13 +1101,13 @@ AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
       v14 = DispatchDialogControlAction(v18, v2); /*0x60a9b0*/
       v4[30] = GetDialogControlSHP(v18, v2, &v17); /*0x60a9b7*/
       v4[29] = v14; /*0x60a9ba*/
-      *((_BYTE *)v4 + 124) = v17; /*0x60a9c1*/
+      *((unsigned char *)v4 + 124) = v17; /*0x60a9c1*/
     }
     Parent = v18; /*0x60a9c4*/
     goto LABEL_77; /*0x60a9c4*/
   }
   v4[28] = 1; /*0x60a630*/
-  *((_BYTE *)v4 + 168) = 0; /*0x60a633*/
+  *((unsigned char *)v4 + 168) = 0; /*0x60a633*/
   v4[32] = 1; /*0x60a63a*/
   v4[33] = ValidateDialogEvent(Parent, v2); /*0x60a649*/
   v4[34] = CtlDialogColorHandler(Parent, v2); /*0x60a658*/
@@ -1117,11 +1117,11 @@ AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
   hWnd = 0; /*0x60a67e*/
   HashTable::Get(&g_DialogHashMap_Base, &v20, &hWnd); /*0x60a682*/
   if ( hWnd ) /*0x60a68d*/
-    v6 = *((_DWORD *)hWnd + 27); /*0x60a68f*/
+    v6 = *((unsigned int *)hWnd + 27); /*0x60a68f*/
   v7 = GetDlgCtrlID(v2); /*0x60a693*/
   if ( (v6 == 259 || v6 == 3015) && v7 == 1780 ) /*0x60a6ae*/
   {
-    v4[36] = *((_DWORD *)g_RulesClass_Instance + 433); /*0x60a6bd*/
+    v4[36] = *((unsigned int *)g_RulesClass_Instance + 433); /*0x60a6bd*/
     return 1; /*0x60a6c4*/
   }
   else
@@ -1139,8 +1139,8 @@ AbstractClass * * Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
   int v3; // eax
   void *v4; // eax
   void *v5; // eax
-  _DWORD *v7; // eax
-  _DWORD *v8; // esi
+  unsigned int *v7; // eax
+  unsigned int *v8; // esi
   int v9; // edx
   int v10; // eax
   int v11; // eax
@@ -1149,15 +1149,15 @@ AbstractClass * * Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
 
   v2 = 0; /*0x60f76f*/
   if ( g_DialogHashMap_Count /*0x60f79c*/
-    && (v3 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&aP0) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
+    && (v3 = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&aP0) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
   {
     while ( *(HWND *)v3 != aP0 ) /*0x60f7a7*/
     {
-      v3 = *(_DWORD *)(v3 + 516); /*0x60f7a9*/
+      v3 = *(unsigned int *)(v3 + 516); /*0x60f7a9*/
       if ( !v3 ) /*0x60f7b1*/
         goto LABEL_5; /*0x60f7b1*/
     }
-    *(_DWORD *)(v3 + 36) = a2; /*0x60f7fa*/
+    *(unsigned int *)(v3 + 36) = a2; /*0x60f7fa*/
     return 1; /*0x60f7fd*/
   }
   else
@@ -1166,7 +1166,7 @@ AbstractClass * * Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
     memset(v13, 0, sizeof(v13)); /*0x60f7b3*/
     v13[26] = (void *)11; /*0x60f7c9*/
     v13[25] = (void *)g_FogOfWarState; /*0x60f7d4*/
-    v4 = RA2_OPNEW(4u); /*0x60f7d8*/
+    v4 = operator new(4u); /*0x60f7d8*/
     if ( v4 ) /*0x60f7e3*/
       v5 = (void *)unknown_libname_74(v4); /*0x60f7e7*/
     else
@@ -1175,7 +1175,7 @@ AbstractClass * * Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
     v13[16] = 0; /*0x60f818*/
     v13[23] = 0; /*0x60f81c*/
     v13[36] = (void *)-1; /*0x60f820*/
-    v7 = RA2_OPNEW(0x208u); /*0x60f82b*/
+    v7 = new DialogControl; /*0x60f82b*/
     v8 = v7; /*0x60f830*/
     if ( v7 ) /*0x60f837*/
       DialogControl::Constructor(v7 + 1); /*0x60f83c*/
@@ -1185,20 +1185,20 @@ AbstractClass * * Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
     DialogClass::CopyTemplateStruct(v13); /*0x60f856*/
     v8[129] = 0; /*0x60f862*/
     v9 = g_DialogHashMap_Hasher(&aP0) & ((1 << g_DialogHashMap_Buckets) - 1); /*0x60f882*/
-    v10 = *((_DWORD *)g_DialogHashMap_Base + v9); /*0x60f884*/
-    *((_DWORD *)g_DialogHashMap_Base + v9) = v8; /*0x60f887*/
+    v10 = *((unsigned int *)g_DialogHashMap_Base + v9); /*0x60f884*/
+    *((unsigned int *)g_DialogHashMap_Base + v9) = v8; /*0x60f887*/
     if ( v10 ) /*0x60f88c*/
       v8[129] = v10; /*0x60f88e*/
     if ( (double)(unsigned int)++g_DialogHashMap_Count / (double)dword_AC1B08 >= dbl_AC1B28 ) /*0x60f8c9*/
       HashTable::Grow2(&g_DialogHashMap_Base); /*0x60f8d0*/
     if ( g_DialogHashMap_Count ) /*0x60f8db*/
     {
-      v11 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&aP0) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60f8ff*/
+      v11 = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&aP0) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60f8ff*/
       if ( v11 ) /*0x60f904*/
       {
         while ( *(HWND *)v11 != aP0 ) /*0x60f90f*/
         {
-          v11 = *(_DWORD *)(v11 + 516); /*0x60f911*/
+          v11 = *(unsigned int *)(v11 + 516); /*0x60f911*/
           if ( !v11 ) /*0x60f919*/
             goto LABEL_22; /*0x60f919*/
         }
@@ -1215,7 +1215,7 @@ AbstractClass * * Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
       LinkedList::Remove(i); /*0x60f946*/
     if ( v13[15] ) /*0x60f959*/
       DeleteAndZero::OrFree(v13[15], 1); /*0x60f95d*/
-    *(_DWORD *)(v2 + 32) = a2; /*0x60f96e*/
+    *(unsigned int *)(v2 + 32) = a2; /*0x60f96e*/
     return 1; /*0x60f962*/
   }
 }
@@ -1230,30 +1230,30 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
   const char **WindowLongA; // eax
   LONG v6; // edi
   int v7; // eax
-  _DWORD *v8; // esi
+  unsigned int *v8; // esi
   int v9; // edx
   int v10; // eax
   int v11; // eax
-  _DWORD *v12; // esi
+  unsigned int *v12; // esi
   int v13; // edx
   int v14; // eax
   int v15; // ebp
   int v16; // eax
   void *v17; // eax
   void *v18; // eax
-  _DWORD *v19; // eax
-  _DWORD *v20; // esi
+  unsigned int *v19; // eax
+  unsigned int *v20; // esi
   int v21; // eax
   int v22; // ecx
   int v23; // eax
-  _DWORD *i; // eax
+  unsigned int *i; // eax
   LPARAM v25; // edx
   const char **v26; // eax
   bool v27; // zf
   LRESULT (__stdcall *v28)(HWND, UINT, WPARAM, LPARAM); // esi
   wchar_t *String; // [esp-4h] [ebp-AC4h]
   int v31; // [esp+10h] [ebp-AB0h] BYREF
-  __int64 v32; // [esp+14h] [ebp-AACh]
+  int64_t v32; // [esp+14h] [ebp-AACh]
   const char **v33; // [esp+1Ch] [ebp-AA4h]
   CHAR ClassName[128]; // [esp+20h] [ebp-AA0h] BYREF
   struct tagRECT v35; // [esp+A0h] [ebp-A20h] BYREF
@@ -1293,13 +1293,13 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
     IDA_LOWORD(g_ScreenSaverState) = 0xFFu >> GetBitShift_Green(); /*0x60faf2*/
     v2 = GetBitShift_Red(); /*0x60faf9*/
     IDA_HIWORD(g_ScreenSaverState) = 255; /*0x60fb01*/
-    IDA_LOWORD(g_ScreenSaverState) = (_WORD)g_ScreenSaverState << v2; /*0x60fb08*/
+    IDA_LOWORD(g_ScreenSaverState) = (unsigned short)g_ScreenSaverState << v2; /*0x60fb08*/
     IDA_HIWORD(g_ScreenSaverState) = 0xFFu >> GetBitMask_Blue(); /*0x60fb17*/
     v3 = GetBitMask_Green(); /*0x60fb1e*/
     IDA_LOWORD(g_CreditsScreenState) = 255; /*0x60fb26*/
     IDA_HIWORD(g_ScreenSaverState) <<= v3; /*0x60fb2d*/
     IDA_LOWORD(g_CreditsScreenState) = 0xFFu >> GetBitMask_Red(); /*0x60fb3c*/
-    IDA_LOWORD(g_CreditsScreenState) = (_WORD)g_CreditsScreenState << GetBitShift_Blue(); /*0x60fb4b*/
+    IDA_LOWORD(g_CreditsScreenState) = (unsigned short)g_CreditsScreenState << GetBitShift_Blue(); /*0x60fb4b*/
     InitDialogCountryIcons(); /*0x60fb52*/
     dword_AC48D4 = 1; /*0x60fb57*/
   }
@@ -1388,12 +1388,12 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
     v4 = (int (__stdcall *)(int, int, int, int))sub_612A60; /*0x60fef9*/
   }
   v6 = SetWindowLongA(hWnd, -4, (LONG)ComboBoxOwnerDraw::DlgProc); /*0x60ff1a*/
-  v7 = *((_DWORD *)g_DialogPool + (dword_AC18D8(&hWnd) & ((1 << dword_AC18CC) - 1))); /*0x60ff37*/
+  v7 = *((unsigned int *)g_DialogPool + (dword_AC18D8(&hWnd) & ((1 << dword_AC18CC) - 1))); /*0x60ff37*/
   if ( v7 ) /*0x60ff3c*/
   {
     while ( *(HWND *)v7 != hWnd ) /*0x60ff47*/
     {
-      v7 = *(_DWORD *)(v7 + 8); /*0x60ff4d*/
+      v7 = *(unsigned int *)(v7 + 8); /*0x60ff4d*/
       if ( !v7 ) /*0x60ff52*/
         goto LABEL_39; /*0x60ff52*/
     }
@@ -1401,13 +1401,13 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
   else
   {
   LABEL_39:
-    v8 = RA2_OPNEW(0xCu); /*0x60ff54*/
+    v8 = operator new(0xCu); /*0x60ff54*/
     *v8 = hWnd; /*0x60ff67*/
     v8[1] = v4; /*0x60ff70*/
     v8[2] = 0; /*0x60ff73*/
     v9 = dword_AC18D8(&hWnd) & ((1 << dword_AC18CC) - 1); /*0x60ff90*/
-    v10 = *((_DWORD *)g_DialogPool + v9); /*0x60ff92*/
-    *((_DWORD *)g_DialogPool + v9) = v8; /*0x60ff95*/
+    v10 = *((unsigned int *)g_DialogPool + v9); /*0x60ff92*/
+    *((unsigned int *)g_DialogPool + v9) = v8; /*0x60ff95*/
     if ( v10 ) /*0x60ff9a*/
       v8[2] = v10; /*0x60ff9c*/
     v32 = (unsigned int)++g_DialogPoolCount; /*0x60ffaf*/
@@ -1415,12 +1415,12 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
     if ( (double)(unsigned int)g_DialogPoolCount / (double)g_DialogBuffer >= dbl_AC18E8 ) /*0x60ffd3*/
       Dialog::GrowBuffer(&g_DialogPool); /*0x60ffda*/
   }
-  v11 = *((_DWORD *)g_DialogHashMap_Entries + (g_DialogHashMap_Callback(&hWnd) & ((1 << g_DialogHashMap_Insert) - 1))); /*0x610001*/
+  v11 = *((unsigned int *)g_DialogHashMap_Entries + (g_DialogHashMap_Callback(&hWnd) & ((1 << g_DialogHashMap_Insert) - 1))); /*0x610001*/
   if ( v11 ) /*0x610006*/
   {
     while ( *(HWND *)v11 != hWnd ) /*0x610011*/
     {
-      v11 = *(_DWORD *)(v11 + 8); /*0x610017*/
+      v11 = *(unsigned int *)(v11 + 8); /*0x610017*/
       if ( !v11 ) /*0x61001c*/
         goto LABEL_46; /*0x61001c*/
     }
@@ -1428,13 +1428,13 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
   else
   {
   LABEL_46:
-    v12 = RA2_OPNEW(0xCu); /*0x61001e*/
+    v12 = operator new(0xCu); /*0x61001e*/
     *v12 = hWnd; /*0x610031*/
     v12[1] = v6; /*0x61003a*/
     v12[2] = 0; /*0x61003d*/
     v13 = g_DialogHashMap_Callback(&hWnd) & ((1 << g_DialogHashMap_Insert) - 1); /*0x61005a*/
-    v14 = *((_DWORD *)g_DialogHashMap_Entries + v13); /*0x61005c*/
-    *((_DWORD *)g_DialogHashMap_Entries + v13) = v12; /*0x61005f*/
+    v14 = *((unsigned int *)g_DialogHashMap_Entries + v13); /*0x61005c*/
+    *((unsigned int *)g_DialogHashMap_Entries + v13) = v12; /*0x61005f*/
     if ( v14 ) /*0x610064*/
       v12[2] = v14; /*0x610066*/
     v32 = (unsigned int)++g_DialogHashMap_Grow; /*0x610079*/
@@ -1444,11 +1444,11 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
   }
   v15 = 0; /*0x6100ae*/
   if ( g_DialogHashMap_Count /*0x6100db*/
-    && (v16 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
+    && (v16 = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
   {
     while ( *(HWND *)v16 != hWnd ) /*0x6100e6*/
     {
-      v16 = *(_DWORD *)(v16 + 516); /*0x6100e8*/
+      v16 = *(unsigned int *)(v16 + 516); /*0x6100e8*/
       if ( !v16 ) /*0x6100f0*/
         goto LABEL_54; /*0x6100f0*/
     }
@@ -1460,7 +1460,7 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
     memset(v37, 0, sizeof(v37)); /*0x6100f2*/
     v37[26] = (void *)11; /*0x61010a*/
     v37[25] = (void *)g_FogOfWarState; /*0x610115*/
-    v17 = RA2_OPNEW(4u); /*0x61011c*/
+    v17 = operator new(4u); /*0x61011c*/
     if ( v17 ) /*0x610126*/
       v18 = (void *)unknown_libname_74(v17); /*0x61012a*/
     else
@@ -1469,7 +1469,7 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
     v37[16] = 0; /*0x61014b*/
     v37[23] = 0; /*0x610152*/
     v37[36] = (void *)-1; /*0x610159*/
-    v19 = RA2_OPNEW(0x208u); /*0x610164*/
+    v19 = new DialogControl; /*0x610164*/
     v20 = v19; /*0x610169*/
     if ( v19 ) /*0x610170*/
       DialogControl::Constructor(v19 + 1); /*0x610175*/
@@ -1479,8 +1479,8 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
     DialogClass::CopyTemplateStruct(v37); /*0x610192*/
     v20[129] = 0; /*0x61019e*/
     v21 = HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&hWnd); /*0x6101aa*/
-    v22 = *((_DWORD *)g_DialogHashMap_Base + v21); /*0x6101b5*/
-    *((_DWORD *)g_DialogHashMap_Base + v21) = v20; /*0x6101b8*/
+    v22 = *((unsigned int *)g_DialogHashMap_Base + v21); /*0x6101b5*/
+    *((unsigned int *)g_DialogHashMap_Base + v21) = v20; /*0x6101b8*/
     if ( v22 ) /*0x6101bd*/
       v20[129] = v22; /*0x6101bf*/
     v32 = (unsigned int)++g_DialogHashMap_Count; /*0x6101d5*/
@@ -1489,12 +1489,12 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
       HashTable::Grow2(&g_DialogHashMap_Base); /*0x610200*/
     if ( g_DialogHashMap_Count ) /*0x61020b*/
     {
-      v23 = *((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&hWnd)); /*0x610225*/
+      v23 = *((unsigned int *)g_DialogHashMap_Base + HashTable::ComputeHash((int)&g_DialogHashMap_Base, (int)&hWnd)); /*0x610225*/
       if ( v23 ) /*0x61022a*/
       {
         while ( *(HWND *)v23 != hWnd ) /*0x610235*/
         {
-          v23 = *(_DWORD *)(v23 + 516); /*0x610237*/
+          v23 = *(unsigned int *)(v23 + 516); /*0x610237*/
           if ( !v23 ) /*0x61023f*/
             goto LABEL_71; /*0x61023f*/
         }
@@ -1509,15 +1509,15 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
       DeleteAndZero::OrFree((void **)v37[15], 1); /*0x610287*/
   }
   v25 = a2; /*0x610290*/
-  *(_DWORD *)(v15 + 104) = v31; /*0x610297*/
+  *(unsigned int *)(v15 + 104) = v31; /*0x610297*/
   v26 = v33; /*0x61029a*/
   v27 = v33 == 0; /*0x61029e*/
-  *(_DWORD *)v15 = v25; /*0x6102a0*/
+  *(unsigned int *)v15 = v25; /*0x6102a0*/
   if ( !v27 ) /*0x6102a3*/
-    *(_DWORD *)(v15 + 84) = v26[1]; /*0x6102a8*/
+    *(unsigned int *)(v15 + 84) = v26[1]; /*0x6102a8*/
   v28 = 0; /*0x6102bd*/
   v31 = 0; /*0x6102bf*/
-  if ( (unsigned __int8)Dialog::UpdateControlState(&hWnd, &v31) && v31 ) /*0x6102d2*/
+  if ( (uint8_t)Dialog::UpdateControlState(&hWnd, &v31) && v31 ) /*0x6102d2*/
     v28 = *(LRESULT (__stdcall **)(HWND, UINT, WPARAM, LPARAM))v31; /*0x6102d4*/
   IDA_LOBYTE(lParam[0]) = 0; /*0x6102ee*/
   CallWindowProcA(v28, hWnd, 0xDu, 0x800u, (LPARAM)lParam); /*0x6102f5*/
@@ -1530,7 +1530,7 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
   {
     GadgetClass::SetTooltip((void **)v15, 0); /*0x610322*/
   }
-  *(_DWORD *)(v15 + 44) = 0; /*0x610327*/
+  *(unsigned int *)(v15 + 44) = 0; /*0x610327*/
   SendMessageA(hWnd, 0x497u, 0, 0); /*0x610339*/
   return 1; /*0x61033f*/
 }
@@ -1541,7 +1541,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
 {
   void *v2; // eax
   void *v3; // eax
-  _DWORD *i; // eax
+  unsigned int *i; // eax
   void *v5; // esi
   int v6; // esi
   HWND *v7; // ecx
@@ -1550,7 +1550,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
   HWND *v10; // eax
   void *WindowLongA; // eax
   HWND hWnd; // [esp+Ch] [ebp-20Ch] BYREF
-  __int64 v14; // [esp+10h] [ebp-208h] BYREF
+  int64_t v14; // [esp+10h] [ebp-208h] BYREF
   void *v15[128]; // [esp+18h] [ebp-200h] BYREF
 
   EnumChildWindows(hWndParent, DestroyDialogChildWindow, 0); /*0x610374*/
@@ -1559,7 +1559,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
   memset(v15, 0, sizeof(v15)); /*0x6103a3*/
   v15[26] = (void *)11; /*0x6103a7*/
   v15[25] = (void *)g_FogOfWarState; /*0x6103b2*/
-  v2 = RA2_OPNEW(4u); /*0x6103b9*/
+  v2 = operator new(4u); /*0x6103b9*/
   if ( v2 ) /*0x6103c3*/
     v3 = (void *)unknown_libname_74(v2); /*0x6103c7*/
   else
@@ -1587,7 +1587,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
     v14 = (unsigned int)(g_DialogPoolCount - 1); /*0x610456*/
     *(float *)&v14 = (double)v14 / (double)g_DialogBuffer; /*0x610472*/
     v6 = dword_AC18D8(&hWnd) & ((1 << dword_AC18CC) - 1); /*0x61048a*/
-    v7 = (HWND *)*((_DWORD *)g_DialogPool + v6); /*0x610491*/
+    v7 = (HWND *)*((unsigned int *)g_DialogPool + v6); /*0x610491*/
     if ( v7 ) /*0x610496*/
     {
       if ( *v7 == hWnd ) /*0x6104a4*/
@@ -1595,7 +1595,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
         v8 = v7[2]; /*0x6104a6*/
         RA2_OPDEL(*((void **)g_DialogPool + v6)); /*0x6104aa*/
         v9 = *(float *)&v14; /*0x6104b8*/
-        *((_DWORD *)g_DialogPool + v6) = v8; /*0x6104bc*/
+        *((unsigned int *)g_DialogPool + v6) = v8; /*0x6104bc*/
         --g_DialogPoolCount; /*0x6104cb*/
         if ( v9 > dbl_AC18E0 ) /*0x6104d5*/
           goto LABEL_22; /*0x6104d5*/
@@ -1713,12 +1713,12 @@ AbstractClass * * Dialog_TabControlPaint()
   v80 = 0; /*0x6137e4*/
   v78 = 0; /*0x6137e8*/
   if ( g_DialogHashMap_Count /*0x613815*/
-    && (v5 = *((_DWORD *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
+    && (v5 = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
   {
     v6 = hWnd; /*0x613817*/
     while ( *(HWND *)v5 != hWnd ) /*0x613820*/
     {
-      v5 = *(_DWORD *)(v5 + 516); /*0x613822*/
+      v5 = *(unsigned int *)(v5 + 516); /*0x613822*/
       if ( !v5 ) /*0x61382a*/
         goto LABEL_9; /*0x61382a*/
     }
@@ -1733,12 +1733,12 @@ AbstractClass * * Dialog_TabControlPaint()
   {
     v7 = HashMap::ComputeIndex((int)&g_DialogHashMap_Entries, (int)&hWnd); /*0x613857*/
     v6 = hWnd; /*0x613862*/
-    v8 = *((_DWORD *)g_DialogHashMap_Entries + v7); /*0x613869*/
+    v8 = *((unsigned int *)g_DialogHashMap_Entries + v7); /*0x613869*/
     if ( v8 ) /*0x61386e*/
     {
       while ( *(HWND *)v8 != hWnd ) /*0x613872*/
       {
-        v8 = *(_DWORD *)(v8 + 8); /*0x613874*/
+        v8 = *(unsigned int *)(v8 + 8); /*0x613874*/
         if ( !v8 ) /*0x613879*/
           goto LABEL_16; /*0x613879*/
       }
@@ -1758,7 +1758,7 @@ AbstractClass * * Dialog_TabControlPaint()
     case 0x497u: /*0x613894*/
       ScreenDialogToClient(v6, &v85); /*0x6138cc*/
       v12 = HashTable::Find(g_DialogHashTable, g_Str_File_tab_tlu_pcx, 0); /*0x6138dc*/
-      v13 = (unsigned __int16)((*(int (__thiscall **)(int))(*(_DWORD *)v12 + 128))(v12) - 1) << 16; /*0x6138f1*/
+      v13 = (uint16_t)((*(int (__thiscall **)(int))(*(unsigned int *)v12 + 128))(v12) - 1) << 16; /*0x6138f1*/
       IDA_LOBYTE(v13) = v13 | 0x59; /*0x6138f4*/
       SendMessageA(hWnd, 0x1329u, 0, v13); /*0x613905*/
       v6 = hWnd; /*0x61390b*/
@@ -1790,8 +1790,8 @@ AbstractClass * * Dialog_TabControlPaint()
   v16 = v16; /*0x613a29*/
   if ( v16 ) /*0x613a2d*/
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)v16 + 128))(v16); /*0x613a33*/
-    v18 = (*(int (__thiscall **)(int))(*(_DWORD *)v16 + 124))(v16); /*0x613a3d*/
+    (*(void (__thiscall **)(int))(*(unsigned int *)v16 + 128))(v16); /*0x613a33*/
+    v18 = (*(int (__thiscall **)(int))(*(unsigned int *)v16 + 124))(v16); /*0x613a3d*/
     v64 = Rect.left; /*0x613a48*/
     v66 = v18; /*0x613a50*/
     v65 = Rect.top; /*0x613a5a*/
@@ -1802,8 +1802,8 @@ AbstractClass * * Dialog_TabControlPaint()
   v19 = v19; /*0x613a86*/
   if ( v19 ) /*0x613a8a*/
   {
-    (*(void (__thiscall **)(int))(*(_DWORD *)v19 + 128))(v19); /*0x613a90*/
-    v66 = (*(int (__thiscall **)(int))(*(_DWORD *)v19 + 124))(v19); /*0x613aa7*/
+    (*(void (__thiscall **)(int))(*(unsigned int *)v19 + 128))(v19); /*0x613a90*/
+    v66 = (*(int (__thiscall **)(int))(*(unsigned int *)v19 + 124))(v19); /*0x613aa7*/
     v64 = Rect.right - v66; /*0x613ab0*/
     v65 = Rect.top; /*0x613ab9*/
     v67 = Rect.bottom - Rect.top; /*0x613acc*/
@@ -1813,8 +1813,8 @@ AbstractClass * * Dialog_TabControlPaint()
   v21 = v21; /*0x613ae5*/
   if ( v21 ) /*0x613ae9*/
   {
-    v23 = (*(int (__thiscall **)(int))(*(_DWORD *)v21 + 128))(v21); /*0x613af5*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)v21 + 124))(v21); /*0x613afb*/
+    v23 = (*(int (__thiscall **)(int))(*(unsigned int *)v21 + 128))(v21); /*0x613af5*/
+    (*(void (__thiscall **)(int))(*(unsigned int *)v21 + 124))(v21); /*0x613afb*/
     v64 = Rect.left; /*0x613b0a*/
     v65 = Rect.top; /*0x613b16*/
     v66 = Rect.right - Rect.left; /*0x613b27*/
@@ -1825,8 +1825,8 @@ AbstractClass * * Dialog_TabControlPaint()
   v24 = v24; /*0x613b44*/
   if ( v24 ) /*0x613b48*/
   {
-    v26 = (*(int (__thiscall **)(int))(*(_DWORD *)v24 + 128))(v24); /*0x613b54*/
-    (*(void (__thiscall **)(int))(*(_DWORD *)v24 + 124))(v24); /*0x613b5a*/
+    v26 = (*(int (__thiscall **)(int))(*(unsigned int *)v24 + 128))(v24); /*0x613b54*/
+    (*(void (__thiscall **)(int))(*(unsigned int *)v24 + 124))(v24); /*0x613b5a*/
     v64 = Rect.left; /*0x613b6b*/
     v65 = Rect.bottom - v26; /*0x613b77*/
     v66 = Rect.right - Rect.left; /*0x613b88*/
@@ -1837,8 +1837,8 @@ AbstractClass * * Dialog_TabControlPaint()
   v27 = v27; /*0x613ba5*/
   if ( v27 ) /*0x613ba9*/
   {
-    v29 = (*(int (__thiscall **)(int))(*(_DWORD *)v27 + 128))(v27); /*0x613bb5*/
-    v30 = (*(int (__thiscall **)(int))(*(_DWORD *)v27 + 124))(v27); /*0x613bbb*/
+    v29 = (*(int (__thiscall **)(int))(*(unsigned int *)v27 + 128))(v27); /*0x613bb5*/
+    v30 = (*(int (__thiscall **)(int))(*(unsigned int *)v27 + 124))(v27); /*0x613bbb*/
     v74 = Rect.top; /*0x613bc6*/
     v73 = Rect.left; /*0x613bca*/
     v64 = 0; /*0x613bdc*/
@@ -1847,7 +1847,7 @@ AbstractClass * * Dialog_TabControlPaint()
     v67 = v29; /*0x613be8*/
     v75 = v30; /*0x613bec*/
     v76 = v29; /*0x613bf0*/
-    (*(void (__thiscall **)(int, LONG *, int, LONG *, _DWORD, int))(*(_DWORD *)DSurface_Alternate + 8))( /*0x613bfc*/
+    (*(void (__thiscall **)(int, LONG *, int, LONG *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x613bfc*/
       DSurface_Alternate,
       &v73,
       v27,
@@ -1858,8 +1858,8 @@ AbstractClass * * Dialog_TabControlPaint()
   v31 = HashTable::Find(g_DialogHashTable, aTabFtrPcx, 0); /*0x613c0f*/
   if ( v31 ) /*0x613c13*/
   {
-    v32 = (*(int (__thiscall **)(int))(*(_DWORD *)v31 + 128))(v31); /*0x613c23*/
-    v33 = (*(int (__thiscall **)(int))(*(_DWORD *)v31 + 124))(v31); /*0x613c25*/
+    v32 = (*(int (__thiscall **)(int))(*(unsigned int *)v31 + 128))(v31); /*0x613c23*/
+    v33 = (*(int (__thiscall **)(int))(*(unsigned int *)v31 + 124))(v31); /*0x613c25*/
     v65 = Rect.top; /*0x613c32*/
     v64 = Rect.right - v33; /*0x613c36*/
     v73 = 0; /*0x613c48*/
@@ -1868,7 +1868,7 @@ AbstractClass * * Dialog_TabControlPaint()
     v76 = v32; /*0x613c54*/
     v66 = v33; /*0x613c58*/
     v67 = v32; /*0x613c5c*/
-    (*(void (__thiscall **)(int, LONG *, int, LONG *, _DWORD, int))(*(_DWORD *)DSurface_Alternate + 8))( /*0x613c68*/
+    (*(void (__thiscall **)(int, LONG *, int, LONG *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x613c68*/
       DSurface_Alternate,
       &v64,
       v31,
@@ -1879,8 +1879,8 @@ AbstractClass * * Dialog_TabControlPaint()
   v34 = HashTable::Find(g_DialogHashTable, aTabFblPcx, 0); /*0x613c7b*/
   if ( v34 ) /*0x613c7f*/
   {
-    v35 = (*(int (__thiscall **)(int))(*(_DWORD *)v34 + 128))(v34); /*0x613c8f*/
-    v36 = (*(int (__thiscall **)(int))(*(_DWORD *)v34 + 124))(v34); /*0x613c91*/
+    v35 = (*(int (__thiscall **)(int))(*(unsigned int *)v34 + 128))(v34); /*0x613c8f*/
+    v36 = (*(int (__thiscall **)(int))(*(unsigned int *)v34 + 124))(v34); /*0x613c91*/
     v64 = Rect.left; /*0x613c9e*/
     v65 = Rect.bottom - v35; /*0x613ca8*/
     v73 = 0; /*0x613cb4*/
@@ -1889,7 +1889,7 @@ AbstractClass * * Dialog_TabControlPaint()
     v76 = v35; /*0x613cc0*/
     v66 = v36; /*0x613cc4*/
     v67 = v35; /*0x613cc8*/
-    (*(void (__thiscall **)(int, LONG *, int, LONG *, _DWORD, int))(*(_DWORD *)DSurface_Alternate + 8))( /*0x613cd4*/
+    (*(void (__thiscall **)(int, LONG *, int, LONG *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x613cd4*/
       DSurface_Alternate,
       &v64,
       v34,
@@ -1900,8 +1900,8 @@ AbstractClass * * Dialog_TabControlPaint()
   v37 = HashTable::Find(g_DialogHashTable, aTabFbrPcx, 0); /*0x613ce7*/
   if ( v37 ) /*0x613ceb*/
   {
-    v38 = (*(int (__thiscall **)(int))(*(_DWORD *)v37 + 128))(v37); /*0x613cfb*/
-    v39 = (*(int (__thiscall **)(int))(*(_DWORD *)v37 + 124))(v37); /*0x613cfd*/
+    v38 = (*(int (__thiscall **)(int))(*(unsigned int *)v37 + 128))(v37); /*0x613cfb*/
+    v39 = (*(int (__thiscall **)(int))(*(unsigned int *)v37 + 124))(v37); /*0x613cfd*/
     v65 = Rect.bottom - v38; /*0x613d0c*/
     v64 = Rect.right - v39; /*0x613d10*/
     v73 = 0; /*0x613d22*/
@@ -1910,7 +1910,7 @@ AbstractClass * * Dialog_TabControlPaint()
     v76 = v38; /*0x613d2e*/
     v66 = v39; /*0x613d32*/
     v67 = v38; /*0x613d36*/
-    (*(void (__thiscall **)(int, LONG *, int, LONG *, _DWORD, int))(*(_DWORD *)DSurface_Alternate + 8))( /*0x613d42*/
+    (*(void (__thiscall **)(int, LONG *, int, LONG *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x613d42*/
       DSurface_Alternate,
       &v64,
       v37,
@@ -1959,10 +1959,10 @@ AbstractClass * * Dialog_TabControlPaint()
     v49 = v49; /*0x613e92*/
     if ( v49 ) /*0x613e96*/
     {
-      v81 = (*(int (__thiscall **)(int))(*(_DWORD *)v49 + 128))(v49); /*0x613ea2*/
-      (*(void (__thiscall **)(int))(*(_DWORD *)v49 + 124))(v49); /*0x613eaa*/
-      v51 = (*(int (__thiscall **)(int))(*(_DWORD *)v48 + 124))(v48); /*0x613eb1*/
-      v52 = *(_DWORD *)v48; /*0x613eb8*/
+      v81 = (*(int (__thiscall **)(int))(*(unsigned int *)v49 + 128))(v49); /*0x613ea2*/
+      (*(void (__thiscall **)(int))(*(unsigned int *)v49 + 124))(v49); /*0x613eaa*/
+      v51 = (*(int (__thiscall **)(int))(*(unsigned int *)v48 + 124))(v48); /*0x613eb1*/
+      v52 = *(unsigned int *)v48; /*0x613eb8*/
       v53 = v71 - 2 * v51; /*0x613ebc*/
       top = top; /*0x613ec4*/
       v54 = (*(int (__thiscall **)(int))(v52 + 124))(v48); /*0x613ec8*/
@@ -1993,8 +1993,8 @@ AbstractClass * * Dialog_TabControlPaint()
     v58 = v58; /*0x613fe4*/
     if ( v58 ) /*0x613fe8*/
     {
-      v60 = (*(int (__thiscall **)(int))(*(_DWORD *)v58 + 128))(v58); /*0x613ff8*/
-      v87 = (*(int (__thiscall **)(int))(*(_DWORD *)v58 + 124))(v58); /*0x61400b*/
+      v60 = (*(int (__thiscall **)(int))(*(unsigned int *)v58 + 128))(v58); /*0x613ff8*/
+      v87 = (*(int (__thiscall **)(int))(*(unsigned int *)v58 + 124))(v58); /*0x61400b*/
       v86[0] = left + v71 - v87; /*0x614018*/
       v86[1] = top; /*0x61402a*/
       v60 = v60; /*0x61403b*/
@@ -2016,7 +2016,7 @@ AbstractClass * * Dialog_TabControlPaint()
     if ( v77 == v40 ) /*0x6140ef*/
       v63 = yTop; /*0x6140f1*/
     swprintf(word_AC462C, (const size_t)g_Str_Trace__hs, word_AC1BA0); /*0x614106*/
-    PrintFontLayout(DSurface_Alternate, word_AC462C, v84, *(_DWORD **)(v78 + 100), v63, 5, 12, 0, 0, 0); /*0x614131*/
+    PrintFontLayout(DSurface_Alternate, word_AC462C, v84, *(unsigned int **)(v78 + 100), v63, 5, 12, 0, 0, 0); /*0x614131*/
     ValidateRect(hWnd, &v83); /*0x614149*/
     if ( v61 == v62 ) /*0x61414d*/
       break; /*0x61414d*/
@@ -2045,9 +2045,9 @@ AbstractClass * * Dialog::Resize()
     result = DSurface_Alternate; /*0x6213b4*/
     if ( DSurface_Alternate ) /*0x6213bb*/
     {
-      ScreenDialogToClient(*((HWND *)this + 5), &v6); /*0x6213c8*/
-      GetClientRect(*((HWND *)this + 5), &Rect); /*0x6213d6*/
-      result = GetWindowLongA(*((HWND *)this + 5), -16); /*0x6213e2*/
+      ScreenDialogToClient(this->u32_14, &v6); /*0x6213c8*/
+      GetClientRect(this->u32_14, &Rect); /*0x6213d6*/
+      result = GetWindowLongA(this->u32_14, -16); /*0x6213e2*/
       if ( ((unsigned int)&ToggleClass::`RTTI Class Hierarchy Descriptor' & result) != 0 ) /*0x6213ed*/
       {
         SystemMetrics = GetSystemMetrics(5); /*0x6213fa*/
@@ -2057,14 +2057,14 @@ AbstractClass * * Dialog::Resize()
         v6.top += result; /*0x621420*/
         v6.bottom -= result; /*0x621424*/
       }
-      if ( *(_DWORD *)this == 4 ) /*0x62142c*/
+      if ( *(unsigned int *)this == 4 ) /*0x62142c*/
       {
         result = g_DialogHashMap_Count; /*0x62142e*/
-        v4 = (HWND)*((_DWORD *)this + 5); /*0x621433*/
+        v4 = (HWND)this->u32_14; /*0x621433*/
         v4 = v4; /*0x621438*/
         if ( g_DialogHashMap_Count ) /*0x62143c*/
         {
-          result = *((_DWORD *)g_DialogHashMap_Base /*0x62145d*/
+          result = *((unsigned int *)g_DialogHashMap_Base /*0x62145d*/
                    + (g_DialogHashMap_Hasher(&v4) & ((1 << g_DialogHashMap_Buckets) - 1)));
           if ( result ) /*0x621462*/
           {
@@ -2077,8 +2077,8 @@ AbstractClass * * Dialog::Resize()
             result += 4; /*0x621480*/
             if ( result ) /*0x621485*/
             {
-              result->q0E8 = *((_DWORD *)this + 4); /*0x621491*/
-              InvalidateRect(v4, (const RECT *)(this + 28), 0); /*0x621497*/
+              result->q0E8 = this->q010; /*0x621491*/
+              InvalidateRect(v4, (const RECT *)((char *)&this->q068 + 8), 0); /*0x621497*/
               return UpdateWindow(v4); /*0x62149e*/
             }
           }
@@ -2094,24 +2094,24 @@ namespace gamemd {
 AbstractClass * * Dialog::DrawBackground()
 {
   int v1; // ebp
-  _DWORD *v3; // ebx
+  unsigned int *v3; // ebx
   HWND *v4; // eax
   LONG right; // eax
   LONG bottom; // ecx
-  _DWORD *v7; // esi
+  unsigned int *v7; // esi
   LONG v8; // eax
   LONG v9; // ecx
   int v10; // edx
   HWND *v11; // eax
-  _DWORD *v12; // eax
+  unsigned int *v12; // eax
   HWND *v13; // eax
   int v14; // edi
   HWND *v15; // eax
-  _DWORD *v16; // eax
-  _DWORD *v17; // eax
+  unsigned int *v16; // eax
+  unsigned int *v17; // eax
   int v18; // eax
   HWND *v19; // eax
-  _DWORD *v20; // eax
+  unsigned int *v20; // eax
   int v21; // eax
   int v22; // eax
   void *v23; // edi
@@ -2139,7 +2139,7 @@ AbstractClass * * Dialog::DrawBackground()
   hWnd = hWnd; /*0x621ea8*/
   if ( g_DialogHashMap_Count ) /*0x621eac*/
   {
-    v4 = (HWND *)*((_DWORD *)g_DialogHashMap_Base + HashTable::ComputeHash(&hWnd)); /*0x621ec3*/
+    v4 = (HWND *)*((unsigned int *)g_DialogHashMap_Base + HashTable::ComputeHash(&hWnd)); /*0x621ec3*/
     if ( v4 ) /*0x621ec8*/
     {
       while ( *v4 != hWnd ) /*0x621ed0*/
@@ -2174,10 +2174,10 @@ AbstractClass * * Dialog::DrawBackground()
     }
     if ( !v3[8] ) /*0x621f44*/
     {
-      v7 = (_DWORD *)v3[4]; /*0x621f4d*/
+      v7 = (unsigned int *)v3[4]; /*0x621f4d*/
       if ( !v7 ) /*0x621f52*/
       {
-        v7 = RA2_OPNEW(0x20u); /*0x621f5b*/
+        v7 = operator new(0x20u); /*0x621f5b*/
         if ( v7 ) /*0x621f62*/
         {
           v8 = Rect.right; /*0x621f64*/
@@ -2206,13 +2206,13 @@ AbstractClass * * Dialog::DrawBackground()
         {
           RenderCreditsScreen(0); /*0x621fd5*/
         }
-        else if ( (unsigned __int8)UI_Draw_72E260() ) /*0x621fdf*/
+        else if ( (uint8_t)UI_Draw_72E260() ) /*0x621fdf*/
         {
-          RenderScoreScreen(*((_BYTE *)v3 + 212) == 0); /*0x621ffe*/
+          RenderScoreScreen(*((unsigned char *)v3 + 212) == 0); /*0x621ffe*/
           v29 = hWnd; /*0x62200a*/
           if ( g_DialogHashMap_Count ) /*0x62200e*/
           {
-            v11 = (HWND *)*((_DWORD *)g_DialogHashMap_Base /*0x62202f*/
+            v11 = (HWND *)*((unsigned int *)g_DialogHashMap_Base /*0x62202f*/
                           + (g_DialogHashMap_Hasher(&v29) & ((1 << g_DialogHashMap_Buckets) - 1)));
             if ( v11 ) /*0x622034*/
             {
@@ -2231,7 +2231,7 @@ AbstractClass * * Dialog::DrawBackground()
           v29 = hWnd; /*0x622058*/
           if ( !g_DialogHashMap_Count ) /*0x622063*/
             goto LABEL_33; /*0x622063*/
-          v13 = (HWND *)*((_DWORD *)g_DialogHashMap_Base /*0x622084*/
+          v13 = (HWND *)*((unsigned int *)g_DialogHashMap_Base /*0x622084*/
                         + (g_DialogHashMap_Hasher(&v29) & ((1 << g_DialogHashMap_Buckets) - 1)));
           if ( !v13 ) /*0x622089*/
             goto LABEL_33; /*0x622089*/
@@ -2250,7 +2250,7 @@ AbstractClass * * Dialog::DrawBackground()
           v29 = v30; /*0x6220aa*/
           if ( !g_DialogHashMap_Count ) /*0x6220ae*/
             goto LABEL_43; /*0x6220ae*/
-          v15 = (HWND *)*((_DWORD *)g_DialogHashMap_Base /*0x6220cf*/
+          v15 = (HWND *)*((unsigned int *)g_DialogHashMap_Base /*0x6220cf*/
                         + (g_DialogHashMap_Hasher(&v29) & ((1 << g_DialogHashMap_Buckets) - 1)));
           if ( !v15 ) /*0x6220d4*/
             goto LABEL_43; /*0x6220d4*/
@@ -2267,13 +2267,13 @@ AbstractClass * * Dialog::DrawBackground()
   LABEL_43:
             v18 = 0; /*0x622110*/
           UI_Draw_72E730(v1, v14, v18); /*0x62211b*/
-          if ( *((_BYTE *)v3 + 213) ) /*0x622120*/
+          if ( *((unsigned char *)v3 + 213) ) /*0x622120*/
             UI_Draw_72E8C0(v7, &left); /*0x622130*/
-          if ( *((_BYTE *)v3 + 214) ) /*0x622135*/
+          if ( *((unsigned char *)v3 + 214) ) /*0x622135*/
             UI_Draw_72E860(v7, &left); /*0x622145*/
           if ( g_DialogHashMap_Count ) /*0x622159*/
           {
-            v19 = (HWND *)*((_DWORD *)g_DialogHashMap_Base /*0x62217e*/
+            v19 = (HWND *)*((unsigned int *)g_DialogHashMap_Base /*0x62217e*/
                           + (g_DialogHashMap_Hasher(&v30) & ((1 << g_DialogHashMap_Buckets) - 1)));
             if ( v19 ) /*0x622183*/
             {
@@ -2284,7 +2284,7 @@ AbstractClass * * Dialog::DrawBackground()
                   goto LABEL_72; /*0x622199*/
               }
               v20 = v19 + 1; /*0x6221a8*/
-              if ( v20 && *((_BYTE *)v20 + 215) ) /*0x6221b3*/
+              if ( v20 && *((unsigned char *)v20 + 215) ) /*0x6221b3*/
                 UI_Draw_72E920(v7, &left); /*0x6221c7*/
             }
           }
@@ -2299,7 +2299,7 @@ AbstractClass * * Dialog::DrawBackground()
         v21 = *v7; /*0x622204*/
         v39 = 0; /*0x62220a*/
         v40 = 0; /*0x62220e*/
-        (*(void (__thiscall **)(_DWORD *, LONG *, int, LONG *, _DWORD, int))(v21 + 8))( /*0x622212*/
+        (*(void (__thiscall **)(unsigned int *, LONG *, int, LONG *, unsigned int, int))(v21 + 8))( /*0x622212*/
           v7,
           &v39,
           DSurface_Alternate,
@@ -2308,7 +2308,7 @@ AbstractClass * * Dialog::DrawBackground()
           1);
         if ( SessionClass::GetGameSpeed(&g_GameMode_Current) ) /*0x62221a*/
         {
-          v22 = *((_DWORD *)g_ScenarioClass_Instance + 3374); /*0x622229*/
+          v22 = *((unsigned int *)g_ScenarioClass_Instance + 3374); /*0x622229*/
           if ( v22 ) /*0x622231*/
           {
             if ( v22 == 1 ) /*0x622243*/
@@ -2349,13 +2349,13 @@ AbstractClass * * Dialog::DrawBackground()
         v36 = v36; /*0x6222f9*/
         v39 = left - v38.left; /*0x6222fd*/
         v40 = top - v38.top; /*0x622301*/
-        v26 = (*(int (__thiscall **)(int))(*(_DWORD *)v25 + 124))(v25); /*0x62230c*/
-        v27 = (*(int (__thiscall **)(int))(*(_DWORD *)v25 + 128))(v25); /*0x622318*/
+        v26 = (*(int (__thiscall **)(int))(*(unsigned int *)v25 + 124))(v25); /*0x62230c*/
+        v27 = (*(int (__thiscall **)(int))(*(unsigned int *)v25 + 128))(v25); /*0x622318*/
         if ( g_DisplayWidth > v26 ) /*0x622321*/
           v30 = (HWND)((char *)v30 + (g_DisplayWidth - v26) / -2); /*0x622332*/
         if ( DataGlobal_8A00A8 > v27 ) /*0x62233d*/
           v31 += (DataGlobal_8A00A8 - v27) / -2; /*0x62234e*/
-        (*(void (__thiscall **)(_DWORD *, LONG *, int, HWND *, _DWORD, int))(*v7 + 8))(v7, &v39, v25, &v30, 0, 1); /*0x622365*/
+        (*(void (__thiscall **)(unsigned int *, LONG *, int, HWND *, unsigned int, int))(*v7 + 8))(v7, &v39, v25, &v30, 0, 1); /*0x622365*/
       }
   LABEL_72:
       if ( v7 ) /*0x62236a*/
@@ -2364,7 +2364,7 @@ AbstractClass * * Dialog::DrawBackground()
         v42 = v37; /*0x62238a*/
         v40 = top - v38.top; /*0x622392*/
         v39 = left - v38.left; /*0x6223a7*/
-        (*(void (__thiscall **)(int, LONG *, _DWORD *, LONG *, _DWORD, int))(*(_DWORD *)DSurface_Alternate + 8))( /*0x6223b3*/
+        (*(void (__thiscall **)(int, LONG *, unsigned int *, LONG *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x6223b3*/
           DSurface_Alternate,
           &left,
           v7,
@@ -2400,9 +2400,9 @@ int Dialog::Destroy()
         return result; /*0x62275e*/
     }
     memcpy( /*0x622783*/
-      (void *)(8 * (_DWORD)result + 12004648),
-      (const void *)(8 * (_DWORD)result + 12004656),
-      8 * (v5 + 0x1FFFFFFF * ((_DWORD)result + 1)));
+      (void *)(8 * (unsigned int)result + 12004648),
+      (const void *)(8 * (unsigned int)result + 12004656),
+      8 * (v5 + 0x1FFFFFFF * ((unsigned int)result + 1)));
     v5 = v5; /*0x622788*/
     *(&g_ClipboardBuffer + 2 * v5) = 0; /*0x622790*/
     dword_B72D24[2 * v5] = 0; /*0x622797*/
@@ -2432,8 +2432,8 @@ int Dialog::Destroy()
 namespace gamemd {
 CampaignClass * * Dialog::CleanupTree()
 {
-  _DWORD *i; // ecx
-  _DWORD *v3; // eax
+  unsigned int *i; // ecx
+  unsigned int *v3; // eax
   void **v5; // esi
 
   if ( this->u32_28 ) /*0x6233a3*/
@@ -2441,14 +2441,14 @@ CampaignClass * * Dialog::CleanupTree()
     RA2_OPDEL(*(void **)(&this->q0100)); /*0x6233ab*/
     this->u32_28 = 0; /*0x6233b3*/
   }
-  for ( i = *(_DWORD **)(&this->u32_142); i; i = *(_DWORD **)(&this->u32_142) ) /*0x6233bf*/
+  for ( i = *(unsigned int **)(&this->u32_142); i; i = *(unsigned int **)(&this->u32_142) ) /*0x6233bf*/
   {
     v3 = i; /*0x6233c1*/
     v4 = 0; /*0x6233c3*/
     while ( i != v3 ) /*0x6233cb*/
     {
       v4 = v3; /*0x6233cd*/
-      v3 = (_DWORD *)*v3; /*0x6233cf*/
+      v3 = (unsigned int *)*v3; /*0x6233cf*/
       if ( !v3 ) /*0x6233d3*/
         goto LABEL_12; /*0x6233d3*/
     }
@@ -2472,16 +2472,16 @@ CampaignClass * * Dialog::CleanupTree()
 namespace gamemd {
 int Dialog::UpdateControlState(unsigned int * a2, unsigned int * a3)
 {
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
 
   if ( !this->q004 ) /*0x624934*/
     return 0; /*0x62493c*/
-  v4 = *(_DWORD **)(*this + 4 * (((int (__thiscall *)(_DWORD *))this->u32_18)(a2) & ((1 << this->q00C) - 1))); /*0x62495a*/
+  v4 = *(unsigned int **)(*&this->q004 * (((int (__thiscall *)(unsigned int *))this->u32_18)(a2) & ((1 << this->q00C) - 1))); /*0x62495a*/
   if ( !v4 ) /*0x62495f*/
     return 0; /*0x624962*/
   while ( *v4 != *a2 ) /*0x62496c*/
   {
-    v4 = (_DWORD *)v4[2]; /*0x62496e*/
+    v4 = (unsigned int *)v4[2]; /*0x62496e*/
     if ( !v4 ) /*0x624973*/
       return 0; /*0x624979*/
   }
@@ -2494,7 +2494,7 @@ namespace gamemd {
 AbstractClass * * Dialog::GrowBuffer()
 {
   int v2; // esi
-  _DWORD *v3; // ebp
+  unsigned int *v3; // ebp
   int v4; // edi
   void *v5; // edi
   unsigned int v6; // edx
@@ -2504,17 +2504,17 @@ AbstractClass * * Dialog::GrowBuffer()
   int v10; // edx
   int v11; // ecx
   int v12; // eax
-  _DWORD *v13; // [esp+4h] [ebp-4h]
+  unsigned int *v13; // [esp+4h] [ebp-4h]
 
-  if ( *((_BYTE *)this + 20) != 1 ) /*0x624be8*/
+  if ( *(unsigned char *)&this->u32_14 != 1 ) /*0x624be8*/
   {
     v2 = v5->vtable3; /*0x624bf0*/
-    v3 = (_DWORD *)*v5; /*0x624bf3*/
+    v3 = (unsigned int *)*v5; /*0x624bf3*/
     v4 = v5->vtable4 + 1; /*0x624bfc*/
     v5->vtable3 = 2 * v2; /*0x624bfd*/
     v3 = v3; /*0x624c00*/
     v5->vtable4 = v4; /*0x624c08*/
-    v5 = RA2_OPNEW(8 * v2); /*0x624c13*/
+    v5 = operator new(8 * v2); /*0x624c13*/
     v6 = 4 * v5->vtable3; /*0x624c18*/
     *v5 = v5; /*0x624c1f*/
     memset(v5, 0, v6); /*0x624c24*/
@@ -2530,10 +2530,10 @@ AbstractClass * * Dialog::GrowBuffer()
           do /*0x624c61*/
           {
             v10 = ((int (__thiscall *)(int))v5->nextArrayIndex)(v9) & ((1 << v5->vtable4) - 1); /*0x624c4b*/
-            v11 = *(_DWORD *)(*v5 + 4 * v10); /*0x624c4f*/
-            *(_DWORD *)(*v5 + 4 * v10) = v9; /*0x624c55*/
-            v12 = *(_DWORD *)(v9 + 8); /*0x624c57*/
-            *(_DWORD *)(v9 + 8) = v11; /*0x624c5a*/
+            v11 = *(unsigned int *)(*v5 + 4 * v10); /*0x624c4f*/
+            *(unsigned int *)(*v5 + 4 * v10) = v9; /*0x624c55*/
+            v12 = *(unsigned int *)(v9 + 8); /*0x624c57*/
+            *(unsigned int *)(v9 + 8) = v11; /*0x624c5a*/
             v9 = v12; /*0x624c5d*/
           }
           while ( v12 ); /*0x624c61*/
@@ -2560,7 +2560,7 @@ AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
   wchar_t *v14; // eax
   int v15; // edi
   int v16; // ebx
-  _DWORD *i; // eax
+  unsigned int *i; // eax
   void **v18; // esi
   bool v19; // c0
   bool v20; // c3
@@ -2576,7 +2576,7 @@ AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
   char *v32; // esi
   char v33; // bl
   int v35; // edx
-  _DWORD *v36; // [esp+10h] [ebp-14h]
+  unsigned int *v36; // [esp+10h] [ebp-14h]
   int v37; // [esp+10h] [ebp-14h]
   float v39; // [esp+18h] [ebp-Ch]
   int v40; // [esp+1Ch] [ebp-8h]
@@ -2593,7 +2593,7 @@ AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
   v39 = (double)(unsigned int)(v4 - 1) / (double)(int)*(v24 + 2); /*0x624ce0*/
   v6 = ((int (__thiscall *)(int *))*(v24 + 6))(aP1) & ((1 << *(v24 + 3)) - 1); /*0x624cf5*/
   v6 = v6; /*0x624cf7*/
-  v7 = *(_DWORD **)(*v24 + 4 * v6); /*0x624cfb*/
+  v7 = *(unsigned int **)(*v24 + 4 * v6); /*0x624cfb*/
   v36 = v7; /*0x624d00*/
   if ( !v7 ) /*0x624d04*/
     return 0; /*0x624d09*/
@@ -2603,61 +2603,61 @@ AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
     v10 = (int ***)(v7 + 1); /*0x624d22*/
     v11 = aP2 == (char *)(v7 + 1); /*0x624d25*/
     v42 = (int)(v7 + 1); /*0x624d27*/
-    v40 = *((_DWORD *)aP2 + 13); /*0x624d2e*/
-    Blocka = (void *)*((_DWORD *)aP2 + 10); /*0x624d35*/
-    v37 = *((_DWORD *)aP2 + 15); /*0x624d3c*/
+    v40 = *((unsigned int *)aP2 + 13); /*0x624d2e*/
+    Blocka = (void *)*((unsigned int *)aP2 + 10); /*0x624d35*/
+    v37 = *((unsigned int *)aP2 + 15); /*0x624d3c*/
     if ( !v11 ) /*0x624d40*/
     {
       qmemcpy(aP2, v10, 0x200u); /*0x624d4f*/
-      *((_DWORD *)aP2 + 15) = v37; /*0x624d55*/
-      *((_DWORD *)aP2 + 10) = Blocka; /*0x624d5c*/
-      *((_DWORD *)aP2 + 13) = v40; /*0x624d5f*/
+      *((unsigned int *)aP2 + 15) = v37; /*0x624d55*/
+      *((unsigned int *)aP2 + 10) = Blocka; /*0x624d5c*/
+      *((unsigned int *)aP2 + 13) = v40; /*0x624d5f*/
       v12 = (const wchar_t *)v7[11]; /*0x624d62*/
       if ( Blocka ) /*0x624d67*/
       {
         RA2_OPDEL(Blocka); /*0x624d6a*/
         v10 = (int ***)v42; /*0x624d6f*/
-        *((_DWORD *)aP2 + 10) = 0; /*0x624d76*/
+        *((unsigned int *)aP2 + 10) = 0; /*0x624d76*/
       }
       if ( v12 && *v12 ) /*0x624d81*/
       {
         v13 = wcslen(v12); /*0x624d88*/
-        v14 = (wchar_t *)RA2_OPNEW(2 * v13 + 2); /*0x624d92*/
-        *((_DWORD *)aP2 + 10) = v14; /*0x624d99*/
+        v14 = (wchar_t *)new wchar_t; /*0x624d92*/
+        *((unsigned int *)aP2 + 10) = v14; /*0x624d99*/
         wcscpy(v14, v12); /*0x624d9c*/
         v10 = (int ***)v42; /*0x624da1*/
       }
       SymbolTable::Rebuild(aP2, v10[13]); /*0x624dae*/
       v6 = v6; /*0x624db3*/
     }
-    v15 = *(_DWORD *)(*v24 + 4 * v6); /*0x624dba*/
+    v15 = *(unsigned int *)(*v24 + 4 * v6); /*0x624dba*/
     v16 = v15->q204; /*0x624dbf*/
     if ( v15 ) /*0x624dc5*/
     {
       GadgetClass::SetTooltip((void **)(v15 + 4), 0); /*0x624dce*/
       for ( i = v15->q038; i; i = v15->q038 ) /*0x624dd8*/
-        LinkedList::Remove((_DWORD *)(v15 + 4), i); /*0x624ddd*/
+        LinkedList::Remove((unsigned int *)(v15 + 4), i); /*0x624ddd*/
       v18 = v15->q040; /*0x624de9*/
       if ( v18 ) /*0x624dee*/
         DeleteAndZero::OrFree(v18, 1); /*0x624df4*/
       RA2_OPDEL((void *)v15); /*0x624dfa*/
       v6 = v6; /*0x624dff*/
     }
-    *(_DWORD *)(*v24 + 4 * v6) = v16; /*0x624e0d*/
+    *(unsigned int *)(*v24 + 4 * v6) = v16; /*0x624e0d*/
     v19 = v39 < *((double *)v24 + 4); /*0x624e13*/
     v20 = v39 == *((double *)v24 + 4); /*0x624e13*/
     --*(v24 + 1); /*0x624e17*/
     if ( v19 || v20 ) /*0x624e1c*/
     {
       v21 = *(v24 + 2); /*0x624e25*/
-      if ( v21 > *(v24 + 12) && *((_BYTE *)v24 + 20) != 1 ) /*0x624e37*/
+      if ( v21 > *(v24 + 12) && *((unsigned char *)v24 + 20) != 1 ) /*0x624e37*/
       {
         v22 = (int *)*v24; /*0x624e40*/
         Blockb = (int *)*v24; /*0x624e45*/
         v23 = *(v24 + 3) - 1; /*0x624e4b*/
         *(v24 + 2) = v21 >> 1; /*0x624e4c*/
         *(v24 + 3) = v23; /*0x624e56*/
-        v24 = RA2_OPNEW(4 * (v21 >> 1)); /*0x624e62*/
+        v24 = operator new(4 * (v21 >> 1)); /*0x624e62*/
         v25 = 4 * *(v24 + 2); /*0x624e67*/
         *v24 = v24; /*0x624e6e*/
         memset(v24, 0, v25); /*0x624e74*/
@@ -2673,10 +2673,10 @@ AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
               do /*0x624eb8*/
               {
                 v29 = ((int (__thiscall *)(int))*(v24 + 6))(v28) & ((1 << *(v24 + 3)) - 1); /*0x624e9b*/
-                v30 = *(_DWORD *)(*v24 + 4 * v29); /*0x624ea0*/
-                *(_DWORD *)(*v24 + 4 * v29) = v28; /*0x624ea6*/
-                v31 = *(_DWORD *)(v28 + 516); /*0x624ea8*/
-                *(_DWORD *)(v28 + 516) = v30; /*0x624eae*/
+                v30 = *(unsigned int *)(*v24 + 4 * v29); /*0x624ea0*/
+                *(unsigned int *)(*v24 + 4 * v29) = v28; /*0x624ea6*/
+                v31 = *(unsigned int *)(v28 + 516); /*0x624ea8*/
+                *(unsigned int *)(v28 + 516) = v30; /*0x624eae*/
                 v28 = v31; /*0x624eb4*/
               }
               while ( v31 ); /*0x624eb8*/
@@ -2699,31 +2699,31 @@ AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
     v43 = (int)v32; /*0x624ee3*/
     if ( v32 ) /*0x624ee7*/
     {
-      while ( *(_DWORD *)v32 != v8 ) /*0x624ef9*/
+      while ( *(unsigned int *)v32 != v8 ) /*0x624ef9*/
       {
         v36 = v32; /*0x624efb*/
-        v43 = *((_DWORD *)v32 + 129); /*0x624f07*/
+        v43 = *((unsigned int *)v32 + 129); /*0x624f07*/
         if ( !v43 ) /*0x624f0b*/
           goto LABEL_41; /*0x624f0b*/
         v7 = v32; /*0x624eef*/
-        v32 = (char *)*((_DWORD *)v32 + 129); /*0x624ef3*/
+        v32 = (char *)*((unsigned int *)v32 + 129); /*0x624ef3*/
       }
       v11 = aP2 == v32 + 4; /*0x624f19*/
-      v35 = *((_DWORD *)aP2 + 13); /*0x624f1e*/
-      Blockc = (void *)*((_DWORD *)aP2 + 10); /*0x624f21*/
-      v41 = *((_DWORD *)aP2 + 15); /*0x624f28*/
+      v35 = *((unsigned int *)aP2 + 13); /*0x624f1e*/
+      Blockc = (void *)*((unsigned int *)aP2 + 10); /*0x624f21*/
+      v41 = *((unsigned int *)aP2 + 15); /*0x624f28*/
       if ( !v11 ) /*0x624f2c*/
       {
         qmemcpy(aP2, v32 + 4, 0x200u); /*0x624f37*/
-        *((_DWORD *)aP2 + 13) = v35; /*0x624f3d*/
-        *((_DWORD *)aP2 + 10) = Blockc; /*0x624f40*/
-        *((_DWORD *)aP2 + 15) = v41; /*0x624f47*/
+        *((unsigned int *)aP2 + 13) = v35; /*0x624f3d*/
+        *((unsigned int *)aP2 + 10) = Blockc; /*0x624f40*/
+        *((unsigned int *)aP2 + 15) = v41; /*0x624f47*/
         GadgetClass::SetTooltip((void **)aP2, *((wchar_t **)v32 + 11)); /*0x624f50*/
         SymbolTable::Rebuild(aP2, v43->q038); /*0x624f62*/
         v7 = v36; /*0x624f67*/
         v32 = (char *)v43; /*0x624f6b*/
       }
-      v7[129] = *((_DWORD *)v32 + 129); /*0x624f75*/
+      v7[129] = *((unsigned int *)v32 + 129); /*0x624f75*/
       --*(v24 + 1); /*0x624f81*/
       if ( v32 ) /*0x624f84*/
       {
@@ -2780,7 +2780,7 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
   char v36; // dl
   int v37; // [esp+Ch] [ebp+4h]
 
-  result = INIClass::BinarySearchSection(v37, (unsigned __int8 *)aMultiplayerdia); /*0x671eb0*/
+  result = INIClass::BinarySearchSection(v37, (uint8_t *)aMultiplayerdia); /*0x671eb0*/
   if ( result ) /*0x671ebc*/
   {
     this->q1480 = INIClass::ReadInt_Overwrite(aMultiplayerdia, aMinmoney, this->q1480); /*0x671edc*/
@@ -3083,10 +3083,10 @@ namespace gamemd {
 unsigned int Dialog::CheckButtonState()
 {
   int v0; // esi
-  _BYTE v2[84]; // [esp+4h] [ebp-54h] BYREF
+  unsigned char v2[84]; // [esp+4h] [ebp-54h] BYREF
 
-  v0 = (*(int (__thiscall **)(HWND))(*(_DWORD *)g_ClipboardBuffer + 12))(g_ClipboardBuffer); /*0x5f3467*/
-  if ( (*(int (__thiscall **)(HWND, char *, int, _BYTE *, int, int, int, int))(*(_DWORD *)g_ClipboardBuffer + 28))( /*0x5f3483*/
+  v0 = (*(int (__thiscall **)(HWND))(*(unsigned int *)g_ClipboardBuffer + 12))(g_ClipboardBuffer); /*0x5f3467*/
+  if ( (*(int (__thiscall **)(HWND, char *, int, unsigned char *, int, int, int, int))(*(unsigned int *)g_ClipboardBuffer + 28))( /*0x5f3483*/
          g_ClipboardBuffer,
          word_832678,
          13,
@@ -3141,7 +3141,7 @@ BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM a2)
   HWND Parent; // esi
   DWORD v4; // edx
   HWND Window; // esi
-  _DWORD *v6; // ebx
+  unsigned int *v6; // ebx
   LONG v7; // eax
   LONG dwNewLong; // [esp+10h] [ebp-A4h]
   struct tagRECT Rect; // [esp+14h] [ebp-A0h] BYREF
@@ -3174,7 +3174,7 @@ BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM a2)
                  0,
                  g_hInstance,
                  0);
-      v6 = RA2_OPNEW(8u); /*0x60f431*/
+      v6 = operator new(8u); /*0x60f431*/
       *v6 = g_INI_Key_NewEdit; /*0x60f436*/
       v6[1] = GetWindowLongA(hWnd, -16); /*0x60f43f*/
       SetWindowLongA(Window, -21, (LONG)v6); /*0x60f44b*/
@@ -3211,7 +3211,7 @@ char Dialog::PumpMessages()
   {
     Event::Dispatch(); /*0x62315a*/
   }
-  else if ( !(unsigned __int8)VtableStub::55CBF0() && GameFrameLoop() ) /*0x62314e*/
+  else if ( !(uint8_t)VtableStub::55CBF0() && GameFrameLoop() ) /*0x62314e*/
   {
     return 1; /*0x623159*/
   }

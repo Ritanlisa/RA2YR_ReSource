@@ -11,7 +11,6 @@
 namespace gamemd {
 CCToolTip * CCToolTip::QueryInterface(char a2)
 {
-  *(void **)this = (void*)&CCToolTip_vftable; /*0x7784a3*/
   ToolTipClass::updateString(); /*0x7784a9*/
   if ( (a2 & 1) != 0 ) /*0x7784b3*/
     RA2_OPDEL(); /*0x7784b6*/

@@ -57,17 +57,17 @@ int NetworkClass::ExecutePlanningModeCmd()
 namespace gamemd {
 AbstractClass * * NetworkClass::RecordEvent()
 {
-  _BYTE *WaypointCoords; // eax
+  unsigned char *WaypointCoords; // eax
   int result; // eax
   char *v3; // edi
-  _BYTE v4[8]; // [esp+8h] [ebp-78h] BYREF
+  unsigned char v4[8]; // [esp+8h] [ebp-78h] BYREF
   char v5[108]; // [esp+10h] [ebp-70h] BYREF
-  __int16 v6; // [esp+7Ch] [ebp-4h]
+  int16_t v6; // [esp+7Ch] [ebp-4h]
   char v7; // [esp+7Eh] [ebp-2h]
-  unsigned __int8 v8; // [esp+84h] [ebp+4h]
+  uint8_t v8; // [esp+84h] [ebp+4h]
 
   WaypointCoords = ScriptAction::GetWaypointCoords(v4, this); /*0x6ffe0a*/
-  EventClass::Add(v5, *((_DWORD *)HouseClass_Player + 12), v8, *(_DWORD *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
+  EventClass::Add(v5, *((unsigned int *)HouseClass_Player + 12), v8, *(unsigned int *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
   if ( FactoryClass::GetFlag() ) /*0x6ffe39*/
   {
     result = NetworkClass::ExecutePlanningModeCmd(v5); /*0x6ffe46*/
@@ -80,10 +80,10 @@ AbstractClass * * NetworkClass::RecordEvent()
       v3 = &g_NetworkPacketIndex[111 * Networking_NextPacketIndex]; /*0x6ffe75*/
       qmemcpy(v3, v5, 0x6Cu); /*0x6ffe7c*/
       v3 += 108; /*0x6ffe7c*/
-      *(_WORD *)v3 = v6; /*0x6ffe7e*/
+      *(unsigned short *)v3 = v6; /*0x6ffe7e*/
       v3[2] = v7; /*0x6ffe80*/
       g_CrateSystemState[Networking_NextPacketIndex] = timeGetTime(); /*0x6ffe8d*/
-      Networking_NextPacketIndex = ((_BYTE)Networking_NextPacketIndex + 1) & 0x7F; /*0x6ffe9d*/
+      Networking_NextPacketIndex = ((unsigned char)Networking_NextPacketIndex + 1) & 0x7F; /*0x6ffe9d*/
       result = ++Networking_LastEventIndex; /*0x6ffea7*/
     }
     IDA_LOBYTE(result) = 1; /*0x6ffeae*/

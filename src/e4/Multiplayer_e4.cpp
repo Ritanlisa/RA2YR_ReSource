@@ -28,11 +28,11 @@ namespace gamemd {
 void * Multiplayer::FindStartPositions()
 {
   int v1; // esi
-  _DWORD *v2; // edi
+  unsigned int *v2; // edi
   char *v3; // edx
   int v4; // ebx
   int v5; // eax
-  _DWORD *v6; // ecx
+  unsigned int *v6; // ecx
   int v7; // ebp
   int v8; // ecx
   int v9; // edi
@@ -40,13 +40,13 @@ void * Multiplayer::FindStartPositions()
   unsigned int i; // esi
   int v12; // edi
   int v13; // eax
-  __int16 v14; // si
+  int16_t v14; // si
   int v15; // eax
   void *v16; // eax
   int v17; // edx
   int v19; // [esp+10h] [ebp-30h] BYREF
   int v20; // [esp+14h] [ebp-2Ch]
-  _DWORD *v21; // [esp+18h] [ebp-28h]
+  unsigned int *v21; // [esp+18h] [ebp-28h]
   int v22; // [esp+1Ch] [ebp-24h]
   int v23; // [esp+20h] [ebp-20h] BYREF
   int v24; // [esp+24h] [ebp-1Ch] BYREF
@@ -63,7 +63,6 @@ void * Multiplayer::FindStartPositions()
   VectorClass::CellConstructor(&v25, 0, 0); /*0x688395*/
   v3 = (char *)g_ScenarioClass_Instance; /*0x68839a*/
   v4 = 10; /*0x6883a0*/
-  v25 = (void*)&DynamicVectorClass_Cell_vftable; /*0x6883a5*/
   v30 = 10; /*0x6883ad*/
   v29 = 0; /*0x6883b1*/
   v5 = 0; /*0x6883b5*/
@@ -86,7 +85,7 @@ void * Multiplayer::FindStartPositions()
     v9 = Game_PlayerCount; /*0x6883fc*/
     do /*0x68840b*/
     {
-      if ( *(_DWORD *)(*(_DWORD *)v8 + 107) == -1 ) /*0x688404*/
+      if ( *(unsigned int *)(*(unsigned int *)v8 + 107) == -1 ) /*0x688404*/
         ++v7; /*0x688406*/
       v8 += 4; /*0x688407*/
       --v9; /*0x68840a*/
@@ -107,23 +106,23 @@ void * Multiplayer::FindStartPositions()
   }
   for ( i = 0; (int)i < v10; ++i ) /*0x688435*/
   {
-    if ( i > 0x2BD || *(_DWORD *)&v3[4 * i + 1586] == dword_B05458 ) /*0x68845d*/
+    if ( i > 0x2BD || *(unsigned int *)&v3[4 * i + 1586] == dword_B05458 ) /*0x68845d*/
       continue; /*0x68845d*/
-    v12 = *(_DWORD *)&v3[4 * i + 1586]; /*0x688478*/
+    v12 = *(unsigned int *)&v3[4 * i + 1586]; /*0x688478*/
     if ( v29 < v27 ) /*0x688481*/
       goto LABEL_22; /*0x688481*/
     if ( !v28 && v27 || v4 <= 0 ) /*0x688491*/
       goto LABEL_24; /*0x688491*/
-    if ( ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v25[2])(&v25, v4 + v27, 0) ) /*0x6884a0*/
+    if ( ((uint8_t (__thiscall *)(void ***, int, unsigned int))v25[2])(&v25, v4 + v27, 0) ) /*0x6884a0*/
     {
   LABEL_22:
       v13 = v29++; /*0x6884ab*/
-      *((_DWORD *)Block + v13) = v12; /*0x6884b6*/
+      *((unsigned int *)Block + v13) = v12; /*0x6884b6*/
     }
     v3 = (char *)g_ScenarioClass_Instance; /*0x6884b9*/
   LABEL_24:
-    v23 = *(_DWORD *)&v3[4 * i + 1586]; /*0x6884bf*/
-    Debug::Log("Multiplayer start waypoint found at cell %d,%d\n", (__int16)v23, IDA_SHIWORD(v23)); /*0x6884d9*/
+    v23 = *(unsigned int *)&v3[4 * i + 1586]; /*0x6884bf*/
+    Debug::Log("Multiplayer start waypoint found at cell %d,%d\n", (int16_t)v23, IDA_SHIWORD(v23)); /*0x6884d9*/
     v4 = v30; /*0x6884de*/
     v3 = (char *)g_ScenarioClass_Instance; /*0x6884e2*/
     v2 = v21; /*0x6884e8*/
@@ -135,9 +134,9 @@ void * Multiplayer::FindStartPositions()
     {
       do /*0x688643*/
       {
-        v14 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, g_AircraftTrackerState - 10); /*0x688551*/
+        v14 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, g_AircraftTrackerState - 10); /*0x688551*/
         IDA_LOWORD(v22) = dword_87F90C /*0x688573*/
-                    + Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 10, g_AircraftTrackerPool - 10);
+                    + Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 10, g_AircraftTrackerPool - 10);
         IDA_HIWORD(v22) = v14 + dword_87F910 + 10; /*0x688588*/
         v19 = v22; /*0x688594*/
         v23 = 0; /*0x6885ab*/
@@ -145,7 +144,7 @@ void * Multiplayer::FindStartPositions()
                  &MapClass_Instance,
                  (int)&v23,
                  &v24,
-                 (__int16 *)&v19,
+                 (int16_t *)&v19,
                  1,
                  -1,
                  0,
@@ -156,7 +155,7 @@ void * Multiplayer::FindStartPositions()
                  0,
                  0,
                  1,
-                 (__int16 *)&v23,
+                 (int16_t *)&v23,
                  0,
                  0);
         if ( v19 != dword_B05458 ) /*0x6885c7*/
@@ -164,12 +163,12 @@ void * Multiplayer::FindStartPositions()
           if ( v29 < v27 /*0x688603*/
             || (v28 || !v27)
             && v30 > 0
-            && ((unsigned __int8 (__thiscall *)(void ***, int, _DWORD))v25[2])(&v25, v30 + v27, 0) )
+            && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v25[2])(&v25, v30 + v27, 0) )
           {
             v15 = v29++; /*0x688612*/
-            *((_DWORD *)Block + v15) = v19; /*0x68861d*/
+            *((unsigned int *)Block + v15) = v19; /*0x68861d*/
           }
-          Debug::Log("Random multiplayer start waypoint added at cell %d,%d\n", (__int16)v19, IDA_SHIWORD(v19)); /*0x688631*/
+          Debug::Log("Random multiplayer start waypoint added at cell %d,%d\n", (int16_t)v19, IDA_SHIWORD(v19)); /*0x688631*/
         }
       }
       while ( v29 < v20 ); /*0x688643*/
@@ -178,12 +177,9 @@ void * Multiplayer::FindStartPositions()
   }
   v2[1] = 0; /*0x688651*/
   v2[2] = 0; /*0x688654*/
-  *((_BYTE *)v2 + 13) = 0; /*0x688657*/
-  *((_BYTE *)v2 + 12) = 1; /*0x68865f*/
-  *(void **)v2 = (void*)&VectorClass_Cell_vftable; /*0x688663*/
+  *((unsigned char *)v2 + 13) = 0; /*0x688657*/
+  *((unsigned char *)v2 + 12) = 1; /*0x68865f*/
   Multiplayer::CopyDataArray(&v25); /*0x688669*/
-  *(void **)v2 = (void*)&DynamicVectorClass_Cell_vftable; /*0x68866e*/
-  v25 = (void*)&VectorClass_Cell_vftable; /*0x688674*/
   v16 = Block; /*0x68867c*/
   v17 = v30; /*0x688684*/
   v2[4] = v29; /*0x688688*/
@@ -213,7 +209,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
     this->u8_D = 0; /*0x68c320*/
     return this; /*0x68c324*/
   }
-  v4 = RA2_OPNEW(4 * v3); /*0x68c2d4*/
+  v4 = operator new(4 * v3); /*0x68c2d4*/
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
   this->u32_4 = v4; /*0x68c2eb*/
@@ -226,7 +222,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
     return this; /*0x68c2fb*/
   do /*0x68c30f*/
   {
-    *(_DWORD *)(this->u32_4 + 4 * v6) = *(_DWORD *)(aP1[1] + 4 * v6); /*0x68c306*/
+    *(unsigned int *)(this->u32_4 + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x68c306*/
     ++v6; /*0x68c30c*/
   }
   while ( v6 < this->u32_8 ); /*0x68c30f*/
@@ -248,13 +244,13 @@ void Multiplayer::ShowProgress(int a2)
   int v11; // [esp+14h] [ebp-1D0h]
   double v12; // [esp+14h] [ebp-1D0h]
   int v13[113]; // [esp+1Ch] [ebp-1C8h] BYREF
-  __int16 v14; // [esp+1E0h] [ebp-4h]
+  int16_t v14; // [esp+1E0h] [ebp-4h]
   char v15; // [esp+1E2h] [ebp-2h]
 
   if ( !g_ArmageddonMode ) /*0x69aea1*/
   {
     v11 = a2; /*0x69aeb4*/
-    if ( *((_BYTE *)g_ScenarioClass_Instance + 13501) ) /*0x69aeb8*/
+    if ( *((unsigned char *)g_ScenarioClass_Instance + 13501) ) /*0x69aeb8*/
       v11 = a2 / 2; /*0x69aec7*/
     v12 = (double)v11; /*0x69aed6*/
     if ( Progress::GetWeighted(0) * 100.0 < v12 ) /*0x69aef1*/

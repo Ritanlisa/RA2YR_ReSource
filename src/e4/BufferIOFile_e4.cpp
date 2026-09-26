@@ -15,7 +15,7 @@ void * BufferIOFile::Constructor(char * Source)
 {
   BufferIOFileClass::Constructor(); /*0x47a9d3*/
   *(&this->u32_204) = 0; /*0x47a9df*/
-  *(_DWORD *)this = &off_7E1668; /*0x47a9e3*/
+  *(unsigned int *)this = &off_7E1668; /*0x47a9e3*/
   FileClass::OpenWithCDSearch(Source); /*0x47a9e9*/
   return this; /*0x47a9f0*/
 }
@@ -26,7 +26,7 @@ unsigned char * BufferIOFile::Init()
 {
   BufferIOFileClass::Constructor(); /*0x47aa33*/
   *(&this->u32_204) = 0; /*0x47aa38*/
-  *(_DWORD *)this = &off_7E1668; /*0x47aa3c*/
+  *(unsigned int *)this = &off_7E1668; /*0x47aa3c*/
   return this; /*0x47aa44*/
 }
 }

@@ -19,25 +19,21 @@ int BombClass::AbstractClass()
 
   AbstractClass::Constructor(); /*0x4385d4*/
   this->BombClass_field_54 = 0; /*0x4385de*/
-  *(void **)this = (void*)&BombClass_vftable; /*0x4385e1*/
-  this->vtable2 = (void*)&BombClass_vftable; /*0x4385e7*/
-  this->vtable3 = (void*)&BombClass_vftable; /*0x4385ee*/
-  this->vtable4 = (void*)&BombClass_vftable; /*0x4385f5*/
   this->BombClass_field_28 = 0; /*0x4385fc*/
   this->BombClass_field_2C = 0; /*0x4385ff*/
   this->BombClass_field_58 = 0; /*0x438602*/
-  AudioController::Init((_DWORD *)(&this->nextArrayIndex0)); /*0x438605*/
+  AudioController::Init((unsigned int *)(&this->nextArrayIndex0)); /*0x438605*/
   this->q050 = g_RulesClass_Instance->BunkerWallsDownSound; /*0x438615*/
   if ( dword_89C678 < dword_89C670 /*0x43864a*/
     || (byte_89C675 || !dword_89C670)
     && dword_89C67C > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_89C668 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_89C668 + 8))(
          &dword_89C668,
          dword_89C670 + dword_89C67C,
          0) )
   {
     v2 = dword_89C678++; /*0x438657*/
-    *((_DWORD *)dword_89C66C + v2) = this; /*0x438666*/
+    *((unsigned int *)dword_89C66C + v2) = this; /*0x438666*/
   }
   return this; /*0x43866b*/
 }
@@ -85,19 +81,19 @@ int BombClass::Stat(int * a2)
   v4 = this->BombClass_field_28; /*0x438a9e*/
   if ( v4 ) /*0x438aa3*/
   {
-    v5 = (*(int (__stdcall **)(int))(*(_DWORD *)(v4 + 4) + 16))(v4 + 4); /*0x438aac*/
+    v5 = (*(int (__stdcall **)(int))(*(unsigned int *)(v4 + 4) + 16))(v4 + 4); /*0x438aac*/
     Power::TimerProcess(v5); /*0x438ab2*/
   }
   v6 = this->q024; /*0x438ab7*/
   if ( v6 ) /*0x438abc*/
   {
-    v7 = (*(int (__stdcall **)(int))(*(_DWORD *)(v6 + 4) + 16))(v6 + 4); /*0x438ac5*/
+    v7 = (*(int (__stdcall **)(int))(*(unsigned int *)(v6 + 4) + 16))(v6 + 4); /*0x438ac5*/
     Power::TimerProcess(v7); /*0x438acb*/
   }
   v8 = this->BombClass_field_2C; /*0x438ad0*/
   if ( v8 ) /*0x438ad5*/
   {
-    v9 = (*(int (__stdcall **)(int))(*(_DWORD *)(v8 + 4) + 16))(v8 + 4); /*0x438ade*/
+    v9 = (*(int (__stdcall **)(int))(*(unsigned int *)(v8 + 4) + 16))(v8 + 4); /*0x438ade*/
     Power::TimerProcess(v9); /*0x438ae4*/
   }
   IDA_LOBYTE(v3) = this->BombClass_field_58; /*0x438ae9*/
@@ -183,18 +179,14 @@ BombClass * BombClass::CopyTo(char a2)
 {
   int v3; // eax
 
-  *(void **)this = (void*)&BombClass_vftable; /*0x4393f7*/
-  this->vtable2 = (void*)&BombClass_vftable; /*0x4393fd*/
-  this->vtable3 = (void*)&BombClass_vftable; /*0x439404*/
-  this->vtable4 = (void*)&BombClass_vftable; /*0x43940b*/
   AudioFileClass::Release(&this->vtable25); /*0x439412*/
-  v3 = (*(int (__thiscall **)(int *, _DWORD **))(dword_89C668 + 16))(&dword_89C668, &this); /*0x43942b*/
+  v3 = (*(int (__thiscall **)(int *, unsigned int **))(dword_89C668 + 16))(&dword_89C668, &this); /*0x43942b*/
   if ( v3 != -1 && v3 < dword_89C678 && v3 < --dword_89C678 ) /*0x439446*/
   {
     do /*0x43945e*/
     {
       ++v3; /*0x43944e*/
-      *((_DWORD *)dword_89C66C + v3 - 1) = *((_DWORD *)dword_89C66C + v3); /*0x439452*/
+      *((unsigned int *)dword_89C66C + v3 - 1) = *((unsigned int *)dword_89C66C + v3); /*0x439452*/
     }
     while ( v3 < dword_89C678 ); /*0x43945e*/
   }

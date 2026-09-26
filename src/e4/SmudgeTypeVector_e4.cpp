@@ -13,7 +13,6 @@ VectorClass_flat * SmudgeTypeVector::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x67c0b3*/
-  *(void **)this = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c0b6*/
   if ( v3 && this->IsAllocated ) /*0x67c0c0*/
   {
     RA2_OPDEL(v3); /*0x67c0c8*/

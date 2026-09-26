@@ -30,17 +30,17 @@ void* VoxelClass_RenderObject()
   char v23; // cl
   int v24; // esi
   int v25; // eax
-  _DWORD *v26; // eax
+  unsigned int *v26; // eax
   int v27; // edx
   int v28; // eax
   const void *v29; // eax
   int v30; // eax
   int v31; // eax
-  __int16 v32; // dx
+  int16_t v32; // dx
   int v34; // ebx
   float *inited; // eax
   float *v36; // eax
-  _DWORD *Value; // eax
+  unsigned int *Value; // eax
   int v38; // edi
   float *v39; // eax
   float *v40; // eax
@@ -64,67 +64,67 @@ void* VoxelClass_RenderObject()
   float v59; // [esp+F0h] [ebp-F4h]
   int v60; // [esp+F4h] [ebp-F0h] BYREF
   int v61; // [esp+F8h] [ebp-ECh]
-  _DWORD v62[2]; // [esp+FCh] [ebp-E8h] BYREF
+  unsigned int v62[2]; // [esp+FCh] [ebp-E8h] BYREF
   int v63; // [esp+104h] [ebp-E0h]
   int v64; // [esp+108h] [ebp-DCh] BYREF
-  _DWORD v65[4]; // [esp+10Ch] [ebp-D8h] BYREF
+  unsigned int v65[4]; // [esp+10Ch] [ebp-D8h] BYREF
   int v66; // [esp+11Ch] [ebp-C8h] BYREF
   float v67[3]; // [esp+120h] [ebp-C4h] BYREF
   float v68; // [esp+12Ch] [ebp-B8h] BYREF
-  _DWORD v69[3]; // [esp+130h] [ebp-B4h] BYREF
+  unsigned int v69[3]; // [esp+130h] [ebp-B4h] BYREF
   float v70[12]; // [esp+13Ch] [ebp-A8h] BYREF
   float v71[12]; // [esp+16Ch] [ebp-78h] BYREF
-  _WORD v72[12]; // [esp+19Ch] [ebp-48h] BYREF
-  _BYTE v73[48]; // [esp+1B4h] [ebp-30h] BYREF
+  unsigned short v72[12]; // [esp+19Ch] [ebp-48h] BYREF
+  unsigned char v73[48]; // [esp+1B4h] [ebp-30h] BYREF
 
-  v13 = (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)a1 + 108))(a1); /*0x73c5ff*/
-  v14 = *((_DWORD *)a1 + 433); /*0x73c602*/
+  v13 = (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)a1 + 108))(a1); /*0x73c5ff*/
+  v14 = *((unsigned int *)a1 + 433); /*0x73c602*/
   v15 = v13; /*0x73c608*/
   v61 = v13; /*0x73c60a*/
   v52 = 1; /*0x73c60e*/
-  if ( *(_DWORD *)(v14 + 3644) != 8 || (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)a1 + 196))(a1) ) /*0x73c621*/
+  if ( *(unsigned int *)(v14 + 3644) != 8 || (*(uint8_t (__thiscall **)(unsigned char *))(*(unsigned int *)a1 + 196))(a1) ) /*0x73c621*/
     v16 = 0; /*0x73c649*/
   else
-    v16 = ((unsigned __int8)((unsigned int)((*ProgressTimer::GetValue((_WORD *)a1 + 452, &v60) >> 12) + 1) >> 1) + 1) /*0x73c644*/
+    v16 = ((uint8_t)((unsigned int)((*ProgressTimer::GetValue((unsigned short *)a1 + 452, &v60) >> 12) + 1) >> 1) + 1) /*0x73c644*/
         & 7;
-  v17 = *((_DWORD *)a1 + 432); /*0x73c64b*/
+  v17 = *((unsigned int *)a1 + 432); /*0x73c64b*/
   if ( v17 >= 0 ) /*0x73c653*/
   {
-    v18 = *((_DWORD *)a1 + 433); /*0x73c655*/
-    v16 = v17 / 2 + *(_DWORD *, unsigned int a1)(v18 + 3632) + v16 * *(char *)(v18 + 3677); /*0x73c672*/
+    v18 = *((unsigned int *)a1 + 433); /*0x73c655*/
+    v16 = v17 / 2 + *(unsigned int *, unsigned int a1)(v18 + 3632) + v16 * *(char *)(v18 + 3677); /*0x73c672*/
     goto LABEL_21; /*0x73c674*/
   }
-  if ( !*((_DWORD *)a1 + 413) ) /*0x73c679*/
+  if ( !*((unsigned int *)a1 + 413) ) /*0x73c679*/
     WinAPI::Wrapper(-2147467261); /*0x73c688*/
-  if ( (*(unsigned __int8 (__stdcall **)(_DWORD))(**((_DWORD **)a1 + 413) + 16))(*((_DWORD *)a1 + 413)) /*0x73c6a3*/
-    || (v18 = *((_DWORD *)a1 + 433), *(_DWORD *)(v18 + 664)) )
+  if ( (*(uint8_t (__stdcall **)(unsigned int))(**((unsigned int **)a1 + 413) + 16))(*((unsigned int *)a1 + 413)) /*0x73c6a3*/
+    || (v18 = *((unsigned int *)a1 + 433), *(unsigned int *)(v18 + 664)) )
   {
-    v18 = *((_DWORD *)a1 + 433); /*0x73c702*/
-    v22 = v16 * *(char *)(v18 + 3676) + *((_DWORD *)a1 + 334) % *(char *)(v18 + 3676); /*0x73c71b*/
+    v18 = *((unsigned int *)a1 + 433); /*0x73c702*/
+    v22 = v16 * *(char *)(v18 + 3676) + *((unsigned int *)a1 + 334) % *(char *)(v18 + 3676); /*0x73c71b*/
   LABEL_20:
-    v16 = *(_DWORD *, unsigned int a1)(v18 + 3628) + v22; /*0x73c71d*/
+    v16 = *(unsigned int *, unsigned int a1)(v18 + 3628) + v22; /*0x73c71d*/
     goto LABEL_21; /*0x73c723*/
   }
-  v19 = *((_DWORD *)a1 + 438); /*0x73c6ad*/
+  v19 = *((unsigned int *)a1 + 438); /*0x73c6ad*/
   if ( v19 < 0 ) /*0x73c6b5*/
   {
     if ( !a1[1718] ) /*0x73c6dd*/
       goto LABEL_21; /*0x73c6dd*/
-    v21 = *(_DWORD *)(v18 + 3612); /*0x73c6df*/
+    v21 = *(unsigned int *)(v18 + 3612); /*0x73c6df*/
     if ( v21 ) /*0x73c6e7*/
     {
-      v16 = *(_DWORD *)(v18 + 3624) + v16 * v21; /*0x73c6fe*/
+      v16 = *(unsigned int *)(v18 + 3624) + v16 * v21; /*0x73c6fe*/
       goto LABEL_21; /*0x73c700*/
     }
     v22 = v16 * *(char *, unsigned int a1, unsigned int a2, unsigned int a3, unsigned int a5)(v18 + 3676); /*0x73c6f0*/
     goto LABEL_20; /*0x73c6f3*/
   }
-  v20 = v19 / *(_DWORD *)(v18 + 3620); /*0x73c6b8*/
-  if ( v20 >= *(_DWORD *)(v18 + 3616) - 1 ) /*0x73c6cd*/
-    v20 = *(_DWORD *)(v18 + 3616) - 1; /*0x73c6cf*/
-  v16 = v20 + *(_DWORD *)(v18 + 3636); /*0x73c6d1*/
+  v20 = v19 / *(unsigned int *)(v18 + 3620); /*0x73c6b8*/
+  if ( v20 >= *(unsigned int *)(v18 + 3616) - 1 ) /*0x73c6cd*/
+    v20 = *(unsigned int *)(v18 + 3616) - 1; /*0x73c6cf*/
+  v16 = v20 + *(unsigned int *)(v18 + 3636); /*0x73c6d1*/
   LABEL_21:
-  if ( *(_BYTE *)(v18 + 3233) ) /*0x73c725*/
+  if ( *(unsigned char *)(v18 + 3233) ) /*0x73c725*/
   {
     v23 = a1[1060]; /*0x73c73a*/
     v63 = a2; /*0x73c740*/
@@ -132,7 +132,7 @@ void* VoxelClass_RenderObject()
     if ( v23 ) /*0x73c751*/
       v64 = a3 - 14; /*0x73c756*/
     v24 = v15->nextArrayIndex; /*0x73c762*/
-    v25 = (*(int (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)a1 + 748))(a1, 0); /*0x73c772*/
+    v25 = (*(int (__thiscall **)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 748))(a1, 0); /*0x73c772*/
     DrawToSurfaceSHP( /*0x73c7a7*/
       g_DSurface_Hidden_2,
       g_FileSystem_THEATER_PAL,
@@ -154,7 +154,7 @@ void* VoxelClass_RenderObject()
     g_DSurface_Hidden_2 = dword_B1D13C; /*0x73c7c3*/
     v63 = 128; /*0x73c7c9*/
     v62[1] = 128; /*0x73c7cd*/
-    v26 = (_DWORD *)(*(int (__thiscall **)(int, _DWORD *))(*(_DWORD *)dword_B1D13C + 120))(dword_B1D13C, v69); /*0x73c7d8*/
+    v26 = (unsigned int *)(*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)dword_B1D13C + 120))(dword_B1D13C, v69); /*0x73c7d8*/
     v65[0] = *v26; /*0x73c7dd*/
     v65[1] = v26[1]; /*0x73c7e4*/
     v65[2] = v26[2]; /*0x73c7eb*/
@@ -165,24 +165,24 @@ void* VoxelClass_RenderObject()
     dword_B1CFAC = dword_B1CFAC; /*0x73c818*/
     dword_B1CFB0 = dword_B1CFB0; /*0x73c81e*/
     dword_B1CFB4 = dword_B1CFB4; /*0x73c824*/
-    if ( *(_DWORD *)(*((_DWORD *)a1 + 433) + 192) && *(_DWORD *)(*((_DWORD *)a1 + 433) + 196) ) /*0x73c83d*/
+    if ( *(unsigned int *)(*((unsigned int *)a1 + 433) + 192) && *(unsigned int *)(*((unsigned int *)a1 + 433) + 196) ) /*0x73c83d*/
     {
-      v28 = *((_DWORD *)a1 + 413); /*0x73c848*/
+      v28 = *((unsigned int *)a1 + 413); /*0x73c848*/
       v66 = -1; /*0x73c84e*/
       if ( !v28 ) /*0x73c858*/
         WinAPI::Wrapper(-2147467261); /*0x73c85f*/
-      v29 = (const void *)(*(int (__stdcall **)(_DWORD, _BYTE *, int *))(**((_DWORD **)a1 + 413) + 36))( /*0x73c87a*/
-                            *((_DWORD *)a1 + 413),
+      v29 = (const void *)(*(int (__stdcall **)(unsigned int, unsigned char *, int *))(**((unsigned int **)a1 + 413) + 36))( /*0x73c87a*/
+                            *((unsigned int *)a1 + 413),
                             v73,
                             &v66);
       Transform::Copy(v70, v29); /*0x73c885*/
-      v46 = (float)(*(_DWORD *)(*((_DWORD *)a1 + 433) + 1824) / 8); /*0x73c8af*/
+      v46 = (float)(*(unsigned int *)(*((unsigned int *)a1 + 433) + 1824) / 8); /*0x73c8af*/
       Matrix3x4::Translate(v70, v46); /*0x73c8b2*/
-      v54 = (double)(int)((((unsigned int)((*ProgressTimer::GetValue((_WORD *)a1 + 464, &v56) >> 10) + 1) >> 1) & 0x1F) /*0x73c8ee*/
+      v54 = (double)(int)((((unsigned int)((*ProgressTimer::GetValue((unsigned short *)a1 + 464, &v56) >> 10) + 1) >> 1) & 0x1F) /*0x73c8ee*/
                         - 8)
           * -0.1963495408493621;
       v47 = v54 /*0x73c91f*/
-          - (double)(int)((((unsigned int)((*ProgressTimer::GetValue((_WORD *)a1 + 452, &v57) >> 10) + 1) >> 1) & 0x1F)
+          - (double)(int)((((unsigned int)((*ProgressTimer::GetValue((unsigned short *)a1 + 452, &v57) >> 10) + 1) >> 1) & 0x1F)
                         - 8)
           * -0.1963495408493621;
       Matrix2D::Rotate(v70, v47); /*0x73c922*/
@@ -196,13 +196,13 @@ void* VoxelClass_RenderObject()
       v59 = -v70[11]; /*0x73c99b*/
       v55 = v59; /*0x73c9b3*/
       Matrix3x3::Multiply(v71, (float *)&v54); /*0x73c9b7*/
-      if ( *((_DWORD *)a1 + 252) ) /*0x73c9bc*/
+      if ( *((unsigned int *)a1 + 252) ) /*0x73c9bc*/
       {
         v48 = -*((float *)a1 + 251); /*0x73c9d6*/
         Matrix3x4::Translate(v70, v48, unsigned int a1); /*0x73c9d9*/
       }
-      v53 = (float)(*(_DWORD *)((*(int (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)a1 + 1016))(a1, 0) + 12) / -8); /*0x73ca08*/
-      v56 = *(_DWORD *)((*(int (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)a1 + 1016))(a1, 0) + 4) / -8; /*0x73ca30*/
+      v53 = (float)(*(unsigned int *)((*(int (__thiscall **)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 12) / -8); /*0x73ca08*/
+      v56 = *(unsigned int *)((*(int (__thiscall **)(unsigned char *, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 4) / -8; /*0x73ca30*/
       v67[2] = v53; /*0x73ca3c*/
       v67[1] = 0.0; /*0x73ca40*/
       IDA_HIDWORD(v58) = 0; /*0x73ca44*/
@@ -210,14 +210,14 @@ void* VoxelClass_RenderObject()
       *(float *)&v58 = -*(float *)&v54; /*0x73ca62*/
       v67[0] = *(float *)&v54; /*0x73ca6c*/
       v59 = -v53; /*0x73ca74*/
-      *(_QWORD *)&v54 = IDA_LODWORD(v58); /*0x73ca7c*/
+      v54 = (unsigned long long)(IDA_LODWORD(v58)); /*0x73ca7c*/
       v55 = v59; /*0x73ca84*/
       Matrix3x3::Multiply(v71, (float *)&v54); /*0x73ca90*/
-      v30 = *(_DWORD *)a1; /*0x73ca95*/
+      v30 = *(unsigned int *)a1; /*0x73ca95*/
       qmemcpy(v72, a1 + 880, sizeof(v72)); /*0x73caaa*/
-      if ( *(_BYTE *)(*(_DWORD *)(*(_DWORD *)(*(int (__thiscall **)(_BYTE *, _DWORD))(v30 + 1016))(a1, 0) + 160) + 670) ) /*0x73cabe*/
+      if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*(int (__thiscall **)(unsigned char *, unsigned int))(v30 + 1016))(a1, 0) + 160) + 670) ) /*0x73cabe*/
       {
-        v31 = (unsigned __int8)((unsigned int)((*ProgressTimer::GetValue(v72, &v57) >> 7) + 1) >> 1); /*0x73cae1*/
+        v31 = (uint8_t)((unsigned int)((*ProgressTimer::GetValue(v72, &v57) >> 7) + 1) >> 1); /*0x73cae1*/
         if ( v31 <= 64 || v31 > 128 ) /*0x73caf0*/
           v31 = (64 - v31) / 3 + 64; /*0x73cb1a*/
         else
@@ -227,7 +227,7 @@ void* VoxelClass_RenderObject()
         IDA_LOWORD(v56) = v32; /*0x73cb2e*/
         FacingClass::Set_SyncLog(&v56, unsigned int a1); /*0x73cb33*/
       }
-      if ( *((_DWORD *)a1 + 260) ) /*0x73cb38*/
+      if ( *((unsigned int *)a1 + 260) ) /*0x73cb38*/
       {
         v49 = -*((float *)a1 + 259); /*0x73cb52*/
         Matrix3x4::Translate(v71, v49, unsigned int a1); /*0x73cb55*/
@@ -237,15 +237,15 @@ void* VoxelClass_RenderObject()
       Matrix3D::RotateZ(v71, v50); /*0x73cb94*/
       Matrix3x3::Multiply(v71, v67); /*0x73cba5*/
       Matrix3x3::Multiply(v71, &v68); /*0x73cbb6*/
-      if ( (((unsigned int)((*ProgressTimer::GetValue((_WORD *)a1 + 464, &v57) >> 13) + 1) >> 1) & 3) == 0 /*0x73cbf8*/
-        || (v52 = 1, (((unsigned int)((*ProgressTimer::GetValue((_WORD *)a1 + 464, &v56) >> 13) + 1) >> 1) & 3) == 3) )
+      if ( (((unsigned int)((*ProgressTimer::GetValue((unsigned short *)a1 + 464, &v57) >> 13) + 1) >> 1) & 3) == 0 /*0x73cbf8*/
+        || (v52 = 1, (((unsigned int)((*ProgressTimer::GetValue((unsigned short *)a1 + 464, &v56) >> 13) + 1) >> 1) & 3) == 3) )
       {
         v52 = 0; /*0x73cbfa*/
       }
       v15 = v61; /*0x73cbff*/
     }
     a8 = a8; /*0x73cc03*/
-    (*(void (__thiscall **)(_BYTE *, int, int, _DWORD *, _DWORD *, _DWORD, int, _DWORD, _DWORD, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, int))(*(_DWORD *)a1 + 1292))( /*0x73cc36*/
+    (*(void (__thiscall **)(unsigned char *, int, int, unsigned int *, unsigned int *, unsigned int, int, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)a1 + 1292))( /*0x73cc36*/
       a1,
       v15,
       v16,
@@ -263,14 +263,14 @@ void* VoxelClass_RenderObject()
       0,
       0,
       10240);
-    if ( *(_DWORD *)(*((_DWORD *)a1 + 433) + 192) && *(_DWORD *)(*((_DWORD *)a1 + 433) + 196) && !v52 ) /*0x73cc59*/
+    if ( *(unsigned int *)(*((unsigned int *)a1 + 433) + 192) && *(unsigned int *)(*((unsigned int *)a1 + 433) + 196) && !v52 ) /*0x73cc59*/
     {
-      v34 = *(_DWORD *)a1; /*0x73cc5b*/
+      v34 = *(unsigned int *)a1; /*0x73cc5b*/
       inited = (float *)AudioConfig::InitDefault(v73); /*0x73cc75*/
       v36 = MultiplyMatrix3x4(v70, inited, v71); /*0x73cc83*/
-      (*(void (__thiscall **)(_BYTE *, int, _DWORD, int, _DWORD, _DWORD *, _DWORD *, float *, int, int, _DWORD))(v34 + 1296))( /*0x73cca8*/
+      (*(void (__thiscall **)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v34 + 1296))( /*0x73cca8*/
         a1,
-        *((_DWORD *, unsigned int a1, unsigned int a8)a1 + 433) + 192,
+        *((unsigned int *, unsigned int a1, unsigned int a8)a1 + 433) + 192,
         0,
         -1,
         0,
@@ -281,11 +281,11 @@ void* VoxelClass_RenderObject()
         10240,
         0);
     }
-    Value = ProgressTimer::GetValue((_WORD *)a1 + 464, &v57); /*0x73ccb9*/
-    (*(void (__thiscall **)(_BYTE *, int, unsigned int, _DWORD *, _DWORD *, _DWORD, int, _DWORD, _DWORD, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, int))(*(_DWORD *)a1 + 1292))( /*0x73cd08*/
+    Value = ProgressTimer::GetValue((unsigned short *)a1 + 464, &v57); /*0x73ccb9*/
+    (*(void (__thiscall **)(unsigned char *, int, unsigned int, unsigned int *, unsigned int *, unsigned int, int, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)a1 + 1292))( /*0x73cd08*/
       a1,
       v15,
-      (((((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F) + 4) & 0x1F) + 8 * *(char *)(*((_DWORD *)a1 + 433) + 3676),
+      (((((unsigned int)((*Value >> 10) + 1) >> 1) & 0x1F) + 4) & 0x1F) + 8 * *(char *)(*((unsigned int *)a1 + 433) + 3676),
       v62,
       v65,
       0,
@@ -300,16 +300,16 @@ void* VoxelClass_RenderObject()
       0,
       0,
       10272);
-    if ( *(_DWORD *)(*((_DWORD *)a1 + 433) + 192) && *(_DWORD *)(*((_DWORD *)a1 + 433) + 196) ) /*0x73cd1e*/
+    if ( *(unsigned int *)(*((unsigned int *)a1 + 433) + 192) && *(unsigned int *)(*((unsigned int *)a1 + 433) + 196) ) /*0x73cd1e*/
     {
       if ( v52 ) /*0x73cd2b*/
       {
-        v38 = *(_DWORD *)a1; /*0x73cd2d*/
+        v38 = *(unsigned int *)a1; /*0x73cd2d*/
         v39 = (float *)AudioConfig::InitDefault(v73); /*0x73cd47*/
         v40 = MultiplyMatrix3x4(v70, v39, v71); /*0x73cd55*/
-        (*(void (__thiscall **)(_BYTE *, int, _DWORD, int, _DWORD, _DWORD *, _DWORD *, float *, int, int, _DWORD))(v38 + 1296))( /*0x73cd7a*/
+        (*(void (__thiscall **)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v38 + 1296))( /*0x73cd7a*/
           a1,
-          *((_DWORD *)a1 + 433) + 192,
+          *((unsigned int *)a1 + 433) + 192,
           0,
           -1,
           0,
@@ -321,9 +321,9 @@ void* VoxelClass_RenderObject()
           0);
       }
     }
-    v41 = (*(int (__thiscall **)(_BYTE *, int))(*(_DWORD *)a1 + 1124))(a1, a8); /*0x73cd86*/
+    v41 = (*(int (__thiscall **)(unsigned char *, int))(*(unsigned int *)a1 + 1124))(a1, a8); /*0x73cd86*/
     v60 = v60; /*0x73cd93*/
-    (*(void (__thiscall **)(_BYTE *, int, int, int, int, int, int, int, int, int))(*(_DWORD *)a1 + 1372))( /*0x73cddb*/
+    (*(void (__thiscall **)(unsigned char *, int, int, int, int, int, int, int, int, int))(*(unsigned int *)a1 + 1372))( /*0x73cddb*/
       a1,
       v60,
       a2,
@@ -334,16 +334,16 @@ void* VoxelClass_RenderObject()
       a7,
       v41,
       a9);
-    result = (*(int (__thiscall **)(int, int *, _DWORD))(g_DSurface_Hidden_2->abstractFlags)( /*0x73cdf0*/
+    result = (*(int (__thiscall **)(int, int *, unsigned int))(g_DSurface_Hidden_2->abstractFlags)( /*0x73cdf0*/
                g_DSurface_Hidden_2,
                &dword_B1CFA8,
                0);
     g_DSurface_Hidden_2 = v60; /*0x73cdf3*/
     a1[1747] = 0; /*0x73cdf9*/
   }
-  else if ( *(_BYTE *)(v18 + 3606) && TechnoClass::CheckTargetCell(a1) && !TechnoClass::ScanNeighborCells(a1) ) /*0x73ce24*/
+  else if ( *(unsigned char *)(v18 + 3606) && TechnoClass::CheckTargetCell(a1) && !TechnoClass::ScanNeighborCells(a1) ) /*0x73ce24*/
   {
-    return (*(int (__thiscall **)(_BYTE *, int, int, int *, int *, _DWORD, int, int, _DWORD, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)a1 + 1292))( /*0x73ce5e*/
+    return (*(int (__thiscall **)(unsigned char *, int, int, int *, int *, unsigned int, int, int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 1292))( /*0x73ce5e*/
              a1,
              v15,
              v16,
@@ -364,8 +364,8 @@ void* VoxelClass_RenderObject()
   }
   else
   {
-    v44 = *(_DWORD *)a1; /*0x73ce75*/
-    v45 = (*(int (__thiscall **)(_BYTE *, _DWORD, int, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD))(*(_DWORD *)a1 + 752))( /*0x73ce89*/
+    v44 = *(unsigned int *)a1; /*0x73ce75*/
+    v45 = (*(int (__thiscall **)(unsigned char *, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 752))( /*0x73ce89*/
             a1,
             0,
             a8,
@@ -375,7 +375,7 @@ void* VoxelClass_RenderObject()
             0,
             0,
             0);
-    return (*(int (__thiscall **)(_BYTE *, int, int, char *, char *, _DWORD, int, _DWORD, int))(v44 + 1292))( /*0x73cead*/
+    return (*(int (__thiscall **)(unsigned char *, int, int, char *, char *, unsigned int, int, unsigned int, int))(v44 + 1292))( /*0x73cead*/
              a1,
              v15,
              v16,

@@ -14,7 +14,7 @@
 namespace gamemd {
 int LoadingScreen::GetColorScheme()
 {
-  if ( (g_GameMode_Current == 3 || g_GameMode_Current == 4) && *(_DWORD *)(*(_DWORD *)Game_PlayerInfoArray + 107) == -1 ) /*0x642b7a*/
+  if ( (g_GameMode_Current == 3 || g_GameMode_Current == 4) && *(unsigned int *)(*(unsigned int *)Game_PlayerInfoArray + 107) == -1 ) /*0x642b7a*/
     return FindBuildingAnimByName(g_INI_Key_LightGrey, 1); /*0x642b86*/
   if ( *(&this->q00C2) ) /*0x642b8b*/
     return FindBuildingAnimByName(g_INI_Key_SovietLoad, 1); /*0x642ba9*/
@@ -156,7 +156,7 @@ void * * LoadingScreen::LoadSHPs()
   char *v1; // ecx
   void *result; // eax
 
-  if ( *((_DWORD *)g_ScenarioClass_Instance + 3374) == 2 ) /*0x72fa21*/
+  if ( *((unsigned int *)g_ScenarioClass_Instance + 3374) == 2 ) /*0x72fa21*/
   {
     dword_B0FA68 = LoadFileSHP(off_844D48, (bool *)&byte_B0FCA5); /*0x72fa39*/
     dword_B0FAC8 = LoadFileSHP(off_844D3C, (bool *)&byte_B0FCA1); /*0x72fa4e*/

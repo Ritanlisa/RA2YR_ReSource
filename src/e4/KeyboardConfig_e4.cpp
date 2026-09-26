@@ -33,8 +33,8 @@ int KeyboardConfig::LoadINI()
   int Int_Overwrite; // [esp+8h] [ebp-C8h]
   void *v8[16]; // [esp+Ch] [ebp-C4h] BYREF
   char v9; // [esp+4Ch] [ebp-84h]
-  _DWORD v10[22]; // [esp+64h] [ebp-6Ch] BYREF
-  _BYTE v11[12]; // [esp+BCh] [ebp-14h] BYREF
+  unsigned int v10[22]; // [esp+64h] [ebp-6Ch] BYREF
+  unsigned char v11[12]; // [esp+BCh] [ebp-14h] BYREF
   int v12; // [esp+C8h] [ebp-8h]
 
   INIClass::INIClass(v8); /*0x533d2b*/
@@ -50,21 +50,21 @@ int KeyboardConfig::LoadINI()
     dword_87F688 = 0; /*0x533d8b*/
     g_FileSystemInitFlag = 0; /*0x533d91*/
     g_FileSystemPool = 0; /*0x533d97*/
-    for ( i = 0; i < INIClass::GetKeyCount((char *)v8, (unsigned __int8 *)g_INI_Key_Hotkey); v0 = i ) /*0x533da8*/
+    for ( i = 0; i < INIClass::GetKeyCount((char *)v8, (uint8_t *)g_INI_Key_Hotkey); v0 = i ) /*0x533da8*/
     {
-      StringByIndex = (const char *)INIClass::GetStringByIndex((char *)v8, (unsigned __int8 *)g_INI_Key_Hotkey, v0); /*0x533dbf*/
+      StringByIndex = (const char *)INIClass::GetStringByIndex((char *)v8, (uint8_t *)g_INI_Key_Hotkey, v0); /*0x533dbf*/
       v2 = 0; /*0x533dd1*/
       Int_Overwrite = INIClass::ReadInt_Overwrite(g_INI_Key_Hotkey, StringByIndex, 0); /*0x533dd3*/
       if ( g_CommandClassVector_State > 0 ) /*0x533dde*/
       {
         while ( strcmp( /*0x533e1f*/
-                  (const char *)(*(int (__thiscall **)(_DWORD))(**((_DWORD **)g_CommandClass_Capacity + v2) + 4))(*((_DWORD *)g_CommandClass_Capacity + v2)),
+                  (const char *)(*(int (__thiscall **)(unsigned int))(**((unsigned int **)g_CommandClass_Capacity + v2) + 4))(*((unsigned int *)g_CommandClass_Capacity + v2)),
                   StringByIndex) )
         {
           if ( ++v2 >= g_CommandClassVector_State ) /*0x533e29*/
             goto LABEL_14; /*0x533e29*/
         }
-        v3 = *((_DWORD *)g_CommandClass_Capacity + v2); /*0x533e32*/
+        v3 = *((unsigned int *)g_CommandClass_Capacity + v2); /*0x533e32*/
         if ( v3 && Int_Overwrite ) /*0x533e3f*/
         {
           v4 = dword_87F688; /*0x533e47*/
@@ -72,11 +72,11 @@ int KeyboardConfig::LoadINI()
             goto LABEL_13; /*0x533e4f*/
           if ( !dword_87F688 ) /*0x533e53*/
             v4 = 10; /*0x533e55*/
-          if ( (unsigned __int8)KeyboardConfig::ReleaseBuffer(v4) ) /*0x533e60*/
+          if ( (uint8_t)KeyboardConfig::ReleaseBuffer(v4) ) /*0x533e60*/
           {
   LABEL_13:
-            *((_DWORD *)Base + 2 * NumOfElements) = Int_Overwrite; /*0x533e74*/
-            *((_DWORD *)Base + 2 * NumOfElements + 1) = v3; /*0x533e83*/
+            *((unsigned int *)Base + 2 * NumOfElements) = Int_Overwrite; /*0x533e74*/
+            *((unsigned int *)Base + 2 * NumOfElements + 1) = v3; /*0x533e83*/
             g_FileSystemInitFlag = 0; /*0x533e8d*/
             ++NumOfElements; /*0x533e93*/
           }
@@ -85,7 +85,6 @@ int KeyboardConfig::LoadINI()
   LABEL_14:
       ++i; /*0x533e98*/
     }
-    v10[0] = (void*)&CCFileClass_vftable; /*0x533ec0*/
     v12 = 0; /*0x533ec8*/
     Vector::Clear((int)v11); /*0x533ecf*/
     v10[0] = &off_7E1668; /*0x533ed8*/
@@ -96,7 +95,6 @@ int KeyboardConfig::LoadINI()
   else
   {
     Debug::Log(); /*0x533efe*/
-    v10[0] = (void*)&CCFileClass_vftable; /*0x533f0d*/
     v12 = 0; /*0x533f15*/
     Vector::Clear((int)v11); /*0x533f1c*/
     v10[0] = &off_7E1668; /*0x533f25*/
@@ -113,23 +111,23 @@ AbstractClass * * KeyboardConfig::ReleaseBuffer(int a2)
   char *v3; // edi
   int i; // ecx
   int v5; // eax
-  _DWORD *v6; // edx
+  unsigned int *v6; // edx
   char * v7;
 
   if ( a2 < 0 ) /*0x538b8c*/
     return 0; /*0x538b8c*/
-  v3 = (char *)RA2_OPNEW(8 * (a2 + v3->vtable3)); /*0x538ba0*/
+  v3 = (char *)operator new(8 * (a2 + v3->vtable3)); /*0x538ba0*/
   if ( !v3 ) /*0x538ba7*/
     return 0; /*0x538c00*/
-  for ( i = 0; i < v3->vtable2; *(_DWORD *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
+  for ( i = 0; i < v3->vtable2; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x538bb5*/
   {
     v5 = 8 * i; /*0x538bb9*/
-    v6 = (_DWORD *)(*(_DWORD *)v3 + 8 * i++); /*0x538bc2*/
-    *(_DWORD *)&v3[v5] = *v6; /*0x538bc7*/
+    v6 = (unsigned int *)(*(unsigned int *)v3 + 8 * i++); /*0x538bc2*/
+    *(unsigned int *)&v3[v5] = *v6; /*0x538bc7*/
   }
   RA2_OPDEL(); /*0x538bdb*/
   v7 = a2 + v3->vtable3; /*0x538be6*/
-  *(_DWORD *)v3 = v3; /*0x538be8*/
+  *(unsigned int *)v3 = v3; /*0x538be8*/
   v3->vtable3 = v7; /*0x538bea*/
   v3->uniqueId = 0; /*0x538bed*/
   return 1; /*0x538bf4*/

@@ -42,10 +42,6 @@ BulletClass::BulletClass()
   this->u16_14E = -1; /*0x46640e*/
   this->q154 = 0; /*0x466419*/
   this->q158 = 0; /*0x46641f*/
-  *(void **)this = (void*)&BulletClass_vftable; /*0x466425*/
-  this->vtable2 = (void*)&BulletClass_vftable; /*0x46642b*/
-  this->vtable3 = (void*)&BulletClass_vftable; /*0x466431*/
-  this->vtable4 = (void*)&BulletClass_vftable; /*0x466438*/
   this->vtable2.GenerateUniqueID(); /*0x46643f*/
   this->q134 = 0; /*0x466444*/
   this->TargetCoords = 0; /*0x46644a*/
@@ -56,13 +52,13 @@ BulletClass::BulletClass()
   if ( dword_A8ED50 < dword_A8ED48 /*0x46649b*/
     || (byte_A8ED4D || !dword_A8ED48)
     && dword_A8ED54 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(BulletClass_Array + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(BulletClass_Array + 8))(
          &BulletClass_Array,
          dword_A8ED48 + dword_A8ED54,
          0) )
   {
     v2 = dword_A8ED50++; /*0x4664a8*/
-    *((_DWORD *)dword_A8ED44 + v2) = this; /*0x4664b7*/
+    *((unsigned int *)dword_A8ED44 + v2) = this; /*0x4664b7*/
   }
   return this; /*0x4664bc*/
 }
@@ -75,10 +71,6 @@ BulletClass * * BulletClass::Dtor()
   int v3; // eax
   void *this; // [esp+4h] [ebp-4h] BYREF
 
-  *(void **)this = (void*)&BulletClass_vftable; /*0x466566*/
-  this->vtable2 = (void*)&BulletClass_vftable; /*0x46656c*/
-  this->vtable3 = (void*)&BulletClass_vftable; /*0x466573*/
-  this->vtable4 = (void*)&BulletClass_vftable; /*0x46657a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x466581*/
   if ( this->q158 ) /*0x466586*/
   {
@@ -88,7 +80,7 @@ BulletClass * * BulletClass::Dtor()
       do /*0x4665d7*/
       {
         ++v2; /*0x4665c7*/
-        *((_DWORD *)g_BuildingClassPoolManager + v2 - 1) = *((_DWORD *)g_BuildingClassPoolManager + v2); /*0x4665cb*/
+        *((unsigned int *)g_BuildingClassPoolManager + v2 - 1) = *((unsigned int *)g_BuildingClassPoolManager + v2); /*0x4665cb*/
       }
       while ( v2 < g_BuildingTypeInstanceCount ); /*0x4665d7*/
     }
@@ -104,7 +96,7 @@ BulletClass * * BulletClass::Dtor()
     do /*0x46664e*/
     {
       ++v3; /*0x46663e*/
-      *((_DWORD *)dword_A8ED44 + v3 - 1) = *((_DWORD *)dword_A8ED44 + v3); /*0x466642*/
+      *((unsigned int *)dword_A8ED44 + v3 - 1) = *((unsigned int *)dword_A8ED44 + v3); /*0x466642*/
     }
     while ( v3 < dword_A8ED50 ); /*0x46664e*/
   }

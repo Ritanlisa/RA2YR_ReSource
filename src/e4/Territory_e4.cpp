@@ -14,7 +14,7 @@ namespace gamemd {
 int Territory_WorldDominationTour_8::AddRef(char a2)
 {
   DWORD Ticks; // eax
-  _DWORD *v3; // esi
+  unsigned int *v3; // esi
   DWORD *v4; // esi
   DWORD v6; // [esp+4h] [ebp-8h]
 
@@ -22,11 +22,11 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
   this->q00C = a2; /*0x7718a9*/
   if ( !a2 ) /*0x7718ac*/
   {
-    v3 = *(_DWORD **)(&this->q0088); /*0x7718af*/
+    v3 = *(unsigned int **)(&this->q0088); /*0x7718af*/
     if ( (int)v3[244] > 0 ) /*0x7718ba*/
     {
       StopThemeClass(1); /*0x7718be*/
-      (*(void (__thiscall **)(_DWORD *))(v3[240] + 12))(v3 + 240); /*0x7718cf*/
+      (*(void (__thiscall **)(unsigned int *))(v3[240] + 12))(v3 + 240); /*0x7718cf*/
     }
     Ticks = Timer::GetTicks(); /*0x7718d6*/
     v4 = v3 + 235; /*0x7718e1*/
@@ -98,7 +98,6 @@ void Territory_WorldDominationTour_8::Close(int a2)
 namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::QueryInterface(char a2)
 {
-  *(void **)this = (void*)&WorldDominationTour_Voices_Anim_vftable; /*0x771a33*/
   VtableStub::5CB6C0(); /*0x771a39*/
   if ( (a2 & 1) != 0 ) /*0x771a43*/
     RA2_OPDEL(); /*0x771a46*/
@@ -126,6 +125,6 @@ unsigned int * Territory_WorldDominationTour_8::Seek(unsigned int * a1)
 namespace gamemd {
 BOOL Territory_WorldDominationTour_8::Open()
 {
-  return (unsigned __int8)Audio::IsPlaying() == 0; /*0x7719ca*/
+  return (uint8_t)Audio::IsPlaying() == 0; /*0x7719ca*/
 }
 } // namespace gamemd

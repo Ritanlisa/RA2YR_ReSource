@@ -16,30 +16,30 @@ int VocClass::Release()
   void * v2;
   int result; // eax
   int v4; // ebx
-  _DWORD **v5; // edi
+  unsigned int **v5; // edi
 
   if ( (this->Volume & 1) == 0 ) /*0x4052f7*/
   {
     v2 = this->pVoiceChannel; /*0x4052fd*/
-    if ( v2 && this == *(_DWORD *)(v2 + 192) ) /*0x405311*/
+    if ( v2 && this == *(unsigned int *)(v2 + 192) ) /*0x405311*/
     {
       if ( (this->Volume & 2) != 0 ) /*0x405317*/
         Voice::Stop(v2); /*0x405319*/
-      AudioStream::ReleaseChannel(*(_DWORD **)(&this->VocClass_field_446)); /*0x405324*/
-      *(_DWORD *)(this->pVoiceChannel + 192) = 0; /*0x40532f*/
-      *(_DWORD *)(this->pVoiceChannel + 188) = 0; /*0x40533b*/
-      *(_DWORD *)(this->pVoiceChannel + 180) = 0; /*0x405347*/
-      *(_DWORD *)(this->pVoiceChannel + 184) = 0; /*0x405353*/
-      *(_DWORD *)(this->pVoiceChannel + 144) = 0; /*0x40535f*/
-      *(_DWORD *)(this->pVoiceChannel + 152) = 0; /*0x40536b*/
-      *(_DWORD *)(this->pVoiceChannel + 156) = 0; /*0x405377*/
+      AudioStream::ReleaseChannel(*(unsigned int **)(&this->VocClass_field_446)); /*0x405324*/
+      *(unsigned int *)(this->pVoiceChannel + 192) = 0; /*0x40532f*/
+      *(unsigned int *)(this->pVoiceChannel + 188) = 0; /*0x40533b*/
+      *(unsigned int *)(this->pVoiceChannel + 180) = 0; /*0x405347*/
+      *(unsigned int *)(this->pVoiceChannel + 184) = 0; /*0x405353*/
+      *(unsigned int *)(this->pVoiceChannel + 144) = 0; /*0x40535f*/
+      *(unsigned int *)(this->pVoiceChannel + 152) = 0; /*0x40536b*/
+      *(unsigned int *)(this->pVoiceChannel + 156) = 0; /*0x405377*/
       this->pVoiceChannel = 0; /*0x40537d*/
     }
     result = this->ActiveBufferCount; /*0x405383*/
     v4 = 0; /*0x405389*/
     if ( result > 0 ) /*0x40538d*/
     {
-      v5 = (_DWORD **)(&this->u32_100); /*0x405390*/
+      v5 = (unsigned int **)(&this->u32_100); /*0x405390*/
       do /*0x4053a8*/
       {
         RefCount::Decrement(*v5); /*0x405395*/
@@ -67,7 +67,7 @@ char * VocClass::GetSampleNameByIndex(int a1)
 
   if ( a1 < 0 || a1 >= g_VocPlayState ) /*0x75159a*/
     return g_Str__none_; /*0x7515b5*/
-  v1 = (char *)**((_DWORD **)g_VocAudioConfig + a1); /*0x7515a4*/
+  v1 = (char *)**((unsigned int **)g_VocAudioConfig + a1); /*0x7515a4*/
   if ( v1 ) /*0x7515a8*/
     return VocClass::GetSampleName(v1); /*0x7515aa*/
   else

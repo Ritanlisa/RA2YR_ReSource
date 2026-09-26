@@ -26,7 +26,7 @@ int sub_6F2040()
   result = g_MultiplayerLogState; /*0x6f2040*/
   for ( i = 0; i < g_MultiplayerLogState; ++i ) /*0x6f204a*/
   {
-    TeamTypeClass::ProcessTaskForce(*((_DWORD *)g_TeamTypePool + i)); /*0x6f2054*/
+    TeamTypeClass::ProcessTaskForce(*((unsigned int *)g_TeamTypePool + i)); /*0x6f2054*/
     result = g_MultiplayerLogState; /*0x6f2059*/
   }
   return result; /*0x6f2063*/
@@ -45,14 +45,14 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
   int v13; // [esp+20h] [ebp-18h]
   int v14; // [esp+24h] [ebp-14h]
   int v15; // [esp+28h] [ebp-10h]
-  _DWORD v16[3]; // [esp+2Ch] [ebp-Ch] BYREF
+  unsigned int v16[3]; // [esp+2Ch] [ebp-Ch] BYREF
 
   if ( *(int *)(a2 + 8) <= 0 || *(int *)(a2 + 12) <= 0 ) /*0x4371e5*/
     return 0; /*0x4371e8*/
   v6 = *a3; /*0x4371fa*/
   v7 = (*((int (__thiscall **)(void **))*a1 + 28))(a1); /*0x4371fc*/
-  v8 = *(_DWORD *)(a2 + 12); /*0x437202*/
-  v12 = *(_DWORD *)(a2 + 8); /*0x437205*/
+  v8 = *(unsigned int *)(a2 + 12); /*0x437202*/
+  v12 = *(unsigned int *)(a2 + 8); /*0x437205*/
   v13 = v8; /*0x437215*/
   v14 = 0; /*0x437219*/
   v11 = &XSurface_Vtable; /*0x437221*/
@@ -77,7 +77,7 @@ char sub_550240()
 
   result = g_TimerPool; /*0x550240*/
   for ( i = g_TimerPool - 1; i >= 0; --i ) /*0x55024b*/
-    result = TacticalClass::RenderCells(*((_DWORD *)dword_ABC87C + i)); /*0x550256*/
+    result = TacticalClass::RenderCells(*((unsigned int *)dword_ABC87C + i)); /*0x550256*/
   return result; /*0x55025e*/
 }
 } // namespace gamemd
@@ -86,9 +86,9 @@ char sub_550240()
 namespace gamemd {
 unsigned int * sub_5D81B0(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
-  _DWORD *v6; // eax
+  unsigned int *v6; // eax
 
-  v6 = RA2_OPNEW(0x40u); /*0x5d81b2*/
+  v6 = operator new(0x40u); /*0x5d81b2*/
   if ( v6 ) /*0x5d81bc*/
     return MPBattleClass::MPManBattleClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d81de*/
   else

@@ -23,23 +23,19 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, LightSourceClass * aP
   *(&this->vtable23) = 2; /*0x55478f*/
   *(&this->vtable24) = a2; /*0x554796*/
   this->Activated = 0; /*0x55479c*/
-  *(void ** *)this = (void*)&LightSourceClass_vftable; /*0x5547a0*/
   *(&this->vtable25) = a3; /*0x5547a6*/
   *(&this->vtable27) = a5; /*0x5547ad*/
-  this->vtable2 = (void*)&LightSourceClass_vftable; /*0x5547b0*/
   *(&this->vtable26) = aP3; /*0x5547b7*/
-  this->vtable3 = (void*)&LightSourceClass_vftable; /*0x5547ba*/
-  this->vtable4 = (void*)&LightSourceClass_vftable; /*0x5547c1*/
   if ( g_BridgeCellPool < dword_ABCA18 /*0x5547fd*/
     || (byte_ABCA1D || !dword_ABCA18)
     && dword_ABCA24 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_ABCA10 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_ABCA10 + 8))(
          &dword_ABCA10,
          dword_ABCA18 + dword_ABCA24,
          0) )
   {
     v10 = g_BridgeCellPool++; /*0x55480a*/
-    *((_DWORD *)dword_ABCA14 + v10) = this; /*0x554819*/
+    *((unsigned int *)dword_ABCA14 + v10) = this; /*0x554819*/
   }
   return this; /*0x55481e*/
 }
@@ -61,20 +57,16 @@ int LightSourceClass::Constructor()
   this->LightVisibility = 0; /*0x554860*/
   this->Activated = 0; /*0x554863*/
   this->q040 = dword_ABCA08; /*0x554866*/
-  *(void **)this = (void*)&LightSourceClass_vftable; /*0x554869*/
-  this->vtable2 = (void*)&LightSourceClass_vftable; /*0x55486f*/
-  this->vtable3 = (void*)&LightSourceClass_vftable; /*0x554876*/
-  this->vtable4 = (void*)&LightSourceClass_vftable; /*0x55487d*/
   if ( g_BridgeCellPool < dword_ABCA18 /*0x5548b6*/
     || (byte_ABCA1D || !dword_ABCA18)
     && dword_ABCA24 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_ABCA10 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_ABCA10 + 8))(
          &dword_ABCA10,
          dword_ABCA18 + dword_ABCA24,
          0) )
   {
     v3 = g_BridgeCellPool++; /*0x5548c3*/
-    *((_DWORD *)dword_ABCA14 + v3) = this; /*0x5548d2*/
+    *((unsigned int *)dword_ABCA14 + v3) = this; /*0x5548d2*/
   }
   return this; /*0x5548d7*/
 }
@@ -111,10 +103,6 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x5550d6*/
     {
       AbstractClass::InitVtables(aP0, (int)&aP1); /*0x5550df*/
-      *(void **)aP0 = (void*)&LightSourceClass_vftable; /*0x5550e4*/
-      aP0[1] = (void*)&LightSourceClass_vftable; /*0x5550ea*/
-      aP0[2] = (void*)&LightSourceClass_vftable; /*0x5550f1*/
-      aP0[3] = (void*)&LightSourceClass_vftable; /*0x5550f8*/
     }
     return 0; /*0x5550ff*/
   }
@@ -154,10 +142,6 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   int v3; // eax
   void **v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(void **)this = (void*)&LightSourceClass_vftable; /*0x555156*/
-  *(this + 1) = (void*)&LightSourceClass_vftable; /*0x55515c*/
-  *(this + 2) = (void*)&LightSourceClass_vftable; /*0x555163*/
-  *(this + 3) = (void*)&LightSourceClass_vftable; /*0x55516a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x555171*/
   v5 = this; /*0x555186*/
   v3 = (*(int (__thiscall **)(int *, void ***))(dword_ABCA10 + 16))(&dword_ABCA10, &v5); /*0x55518a*/
@@ -166,13 +150,13 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
     do /*0x5551bd*/
     {
       ++v3; /*0x5551ad*/
-      *((_DWORD *)dword_ABCA14 + v3 - 1) = *((_DWORD *)dword_ABCA14 + v3); /*0x5551b1*/
+      *((unsigned int *)dword_ABCA14 + v3 - 1) = *((unsigned int *)dword_ABCA14 + v3); /*0x5551b1*/
     }
     while ( v3 < g_BridgeCellPool ); /*0x5551bd*/
   }
-  if ( *((_BYTE *)this + 72) ) /*0x5551bf*/
+  if ( this->Activated ) /*0x5551bf*/
   {
-    *((_BYTE *)this + 72) = 0; /*0x5551ca*/
+    this->Activated = 0; /*0x5551ca*/
     TacticalClass::ScrollView(0); /*0x5551ce*/
   }
   AbstractClass::DTOR(); /*0x5551d5*/

@@ -11,7 +11,7 @@
 namespace gamemd {
 int CampaignProperties_WorldDominationTour_22::Seek(int a2)
 {
-  return *(_DWORD *)(this->q004 + 4 * a2); /*0x5d277a*/
+  return *(unsigned int *)(this->q004 + 4 * a2); /*0x5d277a*/
 }
 } // namespace gamemd
 
@@ -21,7 +21,7 @@ int CampaignProperties_WorldDominationTour_22::Read(unsigned int * a2)
 {
   int result; // eax
   int v3; // edx
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->q00C ) /*0x5d2900*/
     return 0; /*0x5d2908*/
@@ -56,7 +56,6 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(cha
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d2ca3*/
-  *(void **)this = (void*)&VectorClass_MSAnim___vftable; /*0x5d2ca6*/
   if ( v3 && this->IsAllocated ) /*0x5d2cb0*/
   {
     RA2_OPDEL(v3); /*0x5d2cb8*/
@@ -74,7 +73,7 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(cha
 namespace gamemd {
 BOOL CampaignProperties_WorldDominationTour_22::AddRef()
 {
-  return this->q008 < *(_DWORD *)(this->q004 + 16); /*0x76f0fd*/
+  return this->q008 < *(unsigned int *)(this->q004 + 16); /*0x76f0fd*/
 }
 } // namespace gamemd
 

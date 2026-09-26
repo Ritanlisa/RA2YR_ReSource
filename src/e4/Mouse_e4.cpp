@@ -19,12 +19,12 @@ namespace gamemd {
 Tactical * * Mouse::SetBounds(IUnknown * aP1)
 {
   int result; // eax
-  __int16 v4; // cx
+  int16_t v4; // cx
   bool v6; // zf
   int v7; // eax
-  __int16 v8; // cx
-  __int16 v9; // [esp+8h] [ebp-8h] BYREF
-  __int16 v10; // [esp+Ah] [ebp-6h]
+  int16_t v8; // cx
+  int16_t v9; // [esp+8h] [ebp-8h] BYREF
+  int16_t v10; // [esp+Ah] [ebp-6h]
 
   result = this->u32_117C; /*0x4a8bf7*/
   if ( result ) /*0x4a8bff*/
@@ -50,12 +50,12 @@ Tactical * * Mouse::SetBounds(IUnknown * aP1)
     }
     qmemcpy(&unk_8A041C, aP1, 0x1E0u); /*0x4a8c85*/
     this->u32_117C = &unk_8A041C; /*0x4a8c8f*/
-    v7 = *(_DWORD *)CoordList::GetBounds(&aP1, &unk_8A041C); /*0x4a8c9e*/
+    v7 = *(unsigned int *)CoordList::GetBounds(&aP1, &unk_8A041C); /*0x4a8c9e*/
     v9 = v7 - 1; /*0x4a8ca6*/
     v10 = IDA_HIWORD(v7) - 1; /*0x4a8cab*/
-    IDA_LOWORD(aP1) = (__int16)(1 - v7) / 2; /*0x4a8cc4*/
-    IDA_HIWORD(aP1) = (__int16)(1 - IDA_HIWORD(v7)) / 2; /*0x4a8cd1*/
-    v8 = (__int16)aP1; /*0x4a8cd6*/
+    IDA_LOWORD(aP1) = (int16_t)(1 - v7) / 2; /*0x4a8cc4*/
+    IDA_HIWORD(aP1) = (int16_t)(1 - IDA_HIWORD(v7)) / 2; /*0x4a8cd1*/
+    v8 = (int16_t)aP1; /*0x4a8cd6*/
     this->u32_1178 = aP1; /*0x4a8cda*/
     IDA_LOWORD(v7) = this->u32_117A + this->u32_1176; /*0x4a8cee*/
     IDA_LOWORD(aP1) = v8 + this->u32_1174; /*0x4a8cf8*/
@@ -102,17 +102,17 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
   v10 = dword_82D03C[7 * aP1]; /*0x5bdd22*/
   v11 = 0; /*0x5bdd25*/
   if ( v10 == 12345 ) /*0x5bdd31*/
-    v11 = *((__int16 *)dword_ABF294 + 1) / 2; /*0x5bdd42*/
+    v11 = *((int16_t *)dword_ABF294 + 1) / 2; /*0x5bdd42*/
   if ( v10 == 54321 ) /*0x5bdd50*/
-    v11 = *((__int16 *)dword_ABF294 + 1); /*0x5bdd52*/
+    v11 = *((int16_t *)dword_ABF294 + 1); /*0x5bdd52*/
   v12 = dword_82D040[7 * aP1]; /*0x5bdd56*/
   if ( v12 == 12345 ) /*0x5bdd5f*/
-    v8 = *((__int16 *)dword_ABF294 + 2) / 2; /*0x5bdd6a*/
+    v8 = *((int16_t *)dword_ABF294 + 2) / 2; /*0x5bdd6a*/
   if ( v12 == 54321 ) /*0x5bdd72*/
-    v8 = *((__int16 *)dword_ABF294 + 2); /*0x5bdd74*/
+    v8 = *((int16_t *)dword_ABF294 + 2); /*0x5bdd74*/
   v8 = v8; /*0x5bdd7c*/
   v11 = v11; /*0x5bdd87*/
-  (*(void (__thiscall **)(int, int *, void *, int))(*(_DWORD *)g_WWMouseClass_Instance + 4))( /*0x5bdd93*/
+  (*(void (__thiscall **)(int, int *, void *, int))(*(unsigned int *)g_WWMouseClass_Instance + 4))( /*0x5bdd93*/
     g_WWMouseClass_Instance,
     &v11,
     dword_ABF294,
@@ -147,16 +147,16 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
   int v9; // edi
   int SubFile; // eax
   int v11; // eax
-  _DWORD *v12; // [esp-2Ch] [ebp-78h]
-  _DWORD *v13; // [esp+4h] [ebp-48h] BYREF
+  unsigned int *v12; // [esp-2Ch] [ebp-78h]
+  unsigned int *v13; // [esp+4h] [ebp-48h] BYREF
   int v14; // [esp+8h] [ebp-44h]
   int v15; // [esp+Ch] [ebp-40h] BYREF
   int v16; // [esp+10h] [ebp-3Ch]
   int v17; // [esp+14h] [ebp-38h]
   int v18; // [esp+18h] [ebp-34h]
-  _BYTE v19[16]; // [esp+1Ch] [ebp-30h] BYREF
+  unsigned char v19[16]; // [esp+1Ch] [ebp-30h] BYREF
   int v20[5]; // [esp+2Ch] [ebp-20h] BYREF
-  _DWORD v21[3]; // [esp+40h] [ebp-Ch] BYREF
+  unsigned int v21[3]; // [esp+40h] [ebp-Ch] BYREF
 
   v13 = this; /*0x7b93f5*/
   v5 = (char **)this->u32_4; /*0x7b93f9*/
@@ -178,7 +178,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
       v15 = 0; /*0x7b9499*/
       v16 = 0; /*0x7b949d*/
       v12 = v13 + 11; /*0x7b94a6*/
-      v13 = (_DWORD *)v8; /*0x7b94b8*/
+      v13 = (unsigned int *)v8; /*0x7b94b8*/
       v14 = v9; /*0x7b94bc*/
       v17 = v6; /*0x7b94c0*/
       v18 = v7; /*0x7b94c4*/
@@ -188,11 +188,11 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
       v15 = 0; /*0x7b94da*/
       v16 = 0; /*0x7b94de*/
       v11 = *aP1; /*0x7b94e3*/
-      v13 = (_DWORD *)v8; /*0x7b94e6*/
+      v13 = (unsigned int *)v8; /*0x7b94e6*/
       v14 = v9; /*0x7b94ea*/
       v17 = v6; /*0x7b94ee*/
       v18 = v7; /*0x7b94f2*/
-      v12 = (_DWORD *)(*(int (__thiscall **)(int *, _BYTE *))(v11 + 120))(aP1, v19); /*0x7b94f9*/
+      v12 = (unsigned int *)(*(int (__thiscall **)(int *, unsigned char *))(v11 + 120))(aP1, v19); /*0x7b94f9*/
     }
     BlitterDrawSHP(aP1, FileSystem_MOUSE_PAL, v20, &v15, (int *)&v13, v12, 0, 0, 0, 0, 1000, 0, 0); /*0x7b94c8*/
     Vector::Clear((int)v21); /*0x7b951f*/
@@ -214,12 +214,12 @@ SHORT Mouse::GetKeyState()
 namespace gamemd {
 BOOL Mouse::IsButtonDown(unsigned char a1)
 {
-  unsigned __int16 v1; // si
+  uint16_t v1; // si
 
   v1 = a1; /*0x54f5c5*/
   if ( (a1 == 1 || a1 == 2) && GetSystemMetrics(23) == 1 ) /*0x54f5e2*/
     v1 = 2 - (a1 != 1); /*0x54f5eb*/
-  return (unsigned __int16)Mouse::GetKeyState(v1) != 0; /*0x54f600*/
+  return (uint16_t)Mouse::GetKeyState(v1) != 0; /*0x54f600*/
 }
 } // namespace gamemd
 

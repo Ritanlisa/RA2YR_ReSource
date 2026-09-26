@@ -12,7 +12,7 @@
 namespace gamemd {
 int Matrix3x4::Identity()
 {
-  *(_DWORD *)this = 1065353216; /*0x5ae867*/
+  *(unsigned int *)this = 1065353216; /*0x5ae867*/
   this->q004 = 0; /*0x5ae869*/
   this->q008 = 0; /*0x5ae86c*/
   this->q00C = 0; /*0x5ae86f*/
@@ -66,7 +66,7 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
     v4 = TransformMatrix3x4Point(v12, &this->u32_DE4, &v9); /*0x6d23b0*/
     v9 = *v4; /*0x6d23b7*/
     v10 = v4[1]; /*0x6d23c2*/
-    v11 = *((_DWORD *)v4 + 2); /*0x6d23c9*/
+    v11 = *((unsigned int *)v4 + 2); /*0x6d23c9*/
     v5 = Math::RoundToInt(v9); /*0x6d23d6*/
     v6 = Math::RoundToInt(v10); /*0x6d23d8*/
     *aP1 = v5; /*0x6d23e5*/

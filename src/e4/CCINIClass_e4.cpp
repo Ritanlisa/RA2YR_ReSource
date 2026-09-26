@@ -20,9 +20,9 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   int result; // eax
   int v5; // ebp
   void *StringByIndex; // esi
-  _DWORD *v7; // esi
+  unsigned int *v7; // esi
   int v8; // edi
-  _DWORD *v9; // eax
+  unsigned int *v9; // eax
   int v10; // ebp
   void *v11; // edi
   int v12; // esi
@@ -31,12 +31,12 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   int i; // [esp+10h] [ebp-8h]
 
   v2 = a2; /*0x41f2ec*/
-  result = INIClass::GetKeyCount(a1, (unsigned __int8 *)aAitriggertypes); /*0x41f2f5*/
+  result = INIClass::GetKeyCount(a1, (uint8_t *)aAitriggertypes); /*0x41f2f5*/
   v5 = 0; /*0x41f2fa*/
   v14 = result; /*0x41f2fe*/
   while ( v5 < v14 ) /*0x41f302*/
   {
-    StringByIndex = (void *)INIClass::GetStringByIndex(a1, (unsigned __int8 *)aAitriggertypes, v5); /*0x41f317*/
+    StringByIndex = (void *)INIClass::GetStringByIndex(a1, (uint8_t *)aAitriggertypes, v5); /*0x41f317*/
     if ( _strcmpi(g_Str__none_, StringByIndex) ) /*0x41f31f*/
     {
       if ( _strcmpi(g_Str_none, StringByIndex) ) /*0x41f335*/
@@ -44,23 +44,23 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
         v8 = 0; /*0x41f34a*/
         if ( g_AnimTypeInitQueue > 0 ) /*0x41f34e*/
         {
-          while ( _strcmpi((const void *)(*((_DWORD *)dword_A8B204 + v8) + 36), StringByIndex) ) /*0x41f368*/
+          while ( _strcmpi((const void *)(*((unsigned int *)dword_A8B204 + v8) + 36), StringByIndex) ) /*0x41f368*/
           {
             if ( ++v8 >= g_AnimTypeInitQueue ) /*0x41f376*/
               goto LABEL_9; /*0x41f376*/
           }
-          v7 = (_DWORD *)*((_DWORD *)dword_A8B204 + v8); /*0x41f431*/
+          v7 = (unsigned int *)*((unsigned int *)dword_A8B204 + v8); /*0x41f431*/
           goto LABEL_11; /*0x41f434*/
         }
   LABEL_9:
-        v9 = RA2_OPNEW(0x110u); /*0x41f378*/
+        v9 = operator new(0x110u); /*0x41f378*/
         if ( v9 ) /*0x41f387*/
         {
           v7 = AnimTypeClass::Construct2(v9, (char *)StringByIndex); /*0x41f391*/
   LABEL_11:
           if ( v7 ) /*0x41f395*/
           {
-            (*(void (__thiscall **)(_DWORD *, char *))(*v7 + 100))(v7, a1); /*0x41f39c*/
+            (*(void (__thiscall **)(unsigned int *, char *))(*v7 + 100))(v7, a1); /*0x41f39c*/
             v7[39] = a2; /*0x41f3a3*/
           }
           goto LABEL_13; /*0x41f3a3*/
@@ -75,31 +75,31 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   LABEL_13:
     v2 = a2; /*0x41f3a9*/
     if ( a2 == 1 ) /*0x41f3b0*/
-      *((_BYTE *)v7 + 164) = 1; /*0x41f3b2*/
+      *((unsigned char *)v7 + 164) = 1; /*0x41f3b2*/
     result = v14; /*0x41f3b9*/
     ++v5; /*0x41f3bd*/
   }
   if ( !v2 ) /*0x41f3c8*/
   {
-    result = INIClass::GetKeyCount(a1, (unsigned __int8 *)aAitriggertypes_0); /*0x41f3d7*/
+    result = INIClass::GetKeyCount(a1, (uint8_t *)aAitriggertypes_0); /*0x41f3d7*/
     v10 = 0; /*0x41f3dc*/
     for ( i = result; v10 < i; ++v10 ) /*0x41f3e4*/
     {
-      v11 = (void *)INIClass::GetStringByIndex(a1, (unsigned __int8 *)aAitriggertypes_0, v10); /*0x41f3f9*/
+      v11 = (void *)INIClass::GetStringByIndex(a1, (uint8_t *)aAitriggertypes_0, v10); /*0x41f3f9*/
       v12 = 0; /*0x41f400*/
       if ( g_AnimTypeInitQueue > 0 ) /*0x41f404*/
       {
-        while ( _strcmpi((const void *)(*((_DWORD *)dword_A8B204 + v12) + 36), v11) ) /*0x41f41d*/
+        while ( _strcmpi((const void *)(*((unsigned int *)dword_A8B204 + v12) + 36), v11) ) /*0x41f41d*/
         {
           if ( ++v12 >= g_AnimTypeInitQueue ) /*0x41f427*/
             goto LABEL_28; /*0x41f427*/
         }
-        v13 = *((_DWORD *)dword_A8B204 + v12); /*0x41f43f*/
+        v13 = *((unsigned int *)dword_A8B204 + v12); /*0x41f43f*/
         if ( v13 ) /*0x41f444*/
-          *(_BYTE *)(v13 + 164) = INIClass::ReadBool_Overwrite( /*0x41f46c*/
+          *(unsigned char *)(v13 + 164) = INIClass::ReadBool_Overwrite( /*0x41f46c*/
                                     (int)a1,
-                                    (unsigned __int8 *)aAitriggertypes_0,
-                                    (unsigned __int8 *)v11,
+                                    (uint8_t *)aAitriggertypes_0,
+                                    (uint8_t *)v11,
                                     0)
                                || g_GameMode_Current[0];
       }
@@ -125,9 +125,9 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   int v6; // eax
   int v7; // esi
   bool v8; // zf
-  _DWORD v10[4]; // [esp+Ch] [ebp-A8h] BYREF
+  unsigned int v10[4]; // [esp+Ch] [ebp-A8h] BYREF
   void * v11;
-  _DWORD v12[3]; // [esp+20h] [ebp-94h] BYREF
+  unsigned int v12[3]; // [esp+20h] [ebp-94h] BYREF
   char v13; // [esp+2Ch] [ebp-88h]
   int v14; // [esp+44h] [ebp-70h]
   int v15; // [esp+48h] [ebp-6Ch]
@@ -142,7 +142,6 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   v10[2] = 0; /*0x474217*/
   v10[3] = aP1; /*0x47421b*/
   v11 = 0; /*0x47421f*/
-  v10[0] = (void*)&FileStraw_vftable; /*0x474223*/
   v5 = INIClass::LoadFile(v10, aP2); /*0x474230*/
   *(&this->u32_184) = 0; /*0x474232*/
   if ( !v5 || !a3 ) /*0x474244*/
@@ -166,7 +165,6 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   v16 = -1732584194; /*0x4742ad*/
   v17 = 271733878; /*0x4742b5*/
   v18 = -1009589776; /*0x4742bd*/
-  v12[0] = (void*)&SHAPipe_vftable; /*0x4742c5*/
   INIClass::WriteToString(v12); /*0x4742cd*/
   SHA1::ComputeThunk(&this->u32_185); /*0x4742da*/
   *(&this->u32_184) = 1; /*0x4742e3*/
@@ -186,11 +184,11 @@ namespace gamemd {
 CCINIClass::CCINIClass()
 {
   void** result;
-  _DWORD *v2; // esi
-  _DWORD *v3; // ecx
+  unsigned int *v2; // esi
+  unsigned int *v3; // ecx
   int v4; // ebx
   int v5; // edi
-  _DWORD * v6;
+  unsigned int * v6;
   int v7; // edi
 
   result = this; /*0x535b30*/
@@ -200,11 +198,8 @@ CCINIClass::CCINIClass()
   result[2] = 0; /*0x535b3f*/
   v2[1] = 0; /*0x535b42*/
   v2[2] = 0; /*0x535b45*/
-  *(void **)v2 = (void*)&GenericNode_vftable; /*0x535b48*/
   v3[1] = 0; /*0x535b4e*/
   v3[2] = 0; /*0x535b51*/
-  *(void **)v3 = (void*)&GenericNode_vftable; /*0x535b54*/
-  result[3] = (void*)&GenericList_vftable; /*0x535b5d*/
   if ( v3 ) /*0x535b64*/
   {
     v4 = v3[1]; /*0x535b66*/
@@ -214,7 +209,7 @@ CCINIClass::CCINIClass()
       if ( v5 ) /*0x535b72*/
       {
         this->v4 = v4; /*0x535b74*/
-        *(_DWORD *)(v3[1] + 8) = v3[2]; /*0x535b7d*/
+        *(unsigned int *)(v3[1] + 8) = v3[2]; /*0x535b7d*/
         v3[2] = 0; /*0x535b80*/
         v3[1] = 0; /*0x535b83*/
       }
@@ -227,14 +222,13 @@ CCINIClass::CCINIClass()
   if ( v7 ) /*0x535b94*/
     this->v3 = v3; /*0x535b96*/
   v2[1] = v3; /*0x535b99*/
-  result[3] = (void*)&List_INIClass_INISection___vftable; /*0x535b9c*/
   result[10] = 0; /*0x535ba4*/
   result[11] = 0; /*0x535ba7*/
   result[12] = 0; /*0x535baa*/
-  *((_BYTE *)result + 52) = 0; /*0x535bad*/
+  *((unsigned char *)result + 52) = 0; /*0x535bad*/
   result[14] = 0; /*0x535bb0*/
   result[15] = 0; /*0x535bb4*/
-  *((_BYTE *)result + 64) = 0; /*0x535bb7*/
+  *((unsigned char *)result + 64) = 0; /*0x535bb7*/
   *result = &CCINIClass_Vtable; /*0x535bba*/
   return result; /*0x535ba3*/
 }
@@ -245,20 +239,20 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
 {
   int KeyCount; // ebx
   int i; // edi
-  unsigned __int8 *StringByIndex; // eax
+  uint8_t *StringByIndex; // eax
   int result; // eax
   int j; // edi
-  _DWORD *v9; // ecx
+  unsigned int *v9; // ecx
   int k; // edi
   char Destination[32]; // [esp+10h] [ebp-20h] BYREF
 
-  KeyCount = INIClass::GetKeyCount(a1, (unsigned __int8 *)aAitriggertypes); /*0x41f4a6*/
+  KeyCount = INIClass::GetKeyCount(a1, (uint8_t *)aAitriggertypes); /*0x41f4a6*/
   for ( i = 0; i < KeyCount; ++i ) /*0x41f4ac*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1, (unsigned __int8 *)aAitriggertypes, i); /*0x41f4b8*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1, (uint8_t *)aAitriggertypes, i); /*0x41f4b8*/
     INIClass::GetString( /*0x41f4d2*/
-      (unsigned __int8 ***)a1,
-      (unsigned __int8 *)aAitriggertypes,
+      (uint8_t ***)a1,
+      (uint8_t *)aAitriggertypes,
       StringByIndex,
       &g_INI_DefaultBuffer,
       Destination,
@@ -269,9 +263,9 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   result = g_AnimTypeInitQueue; /*0x41f4fa*/
   for ( j = 0; j < g_AnimTypeInitQueue; ++j ) /*0x41f503*/
   {
-    v9 = (_DWORD *)*((_DWORD *)dword_A8B204 + j); /*0x41f50a*/
+    v9 = (unsigned int *)*((unsigned int *)dword_A8B204 + j); /*0x41f50a*/
     if ( v9[39] == a2 ) /*0x41f513*/
-      (*(void (__thiscall **)(_DWORD *, char *))(*v9 + 104))(v9, a1); /*0x41f518*/
+      (*(void (__thiscall **)(unsigned int *, char *))(*v9 + 104))(v9, a1); /*0x41f518*/
     result = g_AnimTypeInitQueue; /*0x41f51b*/
   }
   if ( !a2 ) /*0x41f527*/
@@ -282,9 +276,9 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
     {
       INIClass::SetBool( /*0x41f55e*/
         a1,
-        (unsigned __int8 *)aAitriggertypes_0,
-        (char *)(*((_DWORD *)dword_A8B204 + k) + 36),
-        *(_BYTE *)(*((_DWORD *)dword_A8B204 + k) + 164));
+        (uint8_t *)aAitriggertypes_0,
+        (char *)(*((unsigned int *)dword_A8B204 + k) + 36),
+        *(unsigned char *)(*((unsigned int *)dword_A8B204 + k) + 164));
       result = g_AnimTypeInitQueue; /*0x41f563*/
     }
   }
@@ -306,9 +300,9 @@ IUnknown * CCINIClass::WriteHouses()
   result = HouseClass_Count; /*0x501174*/
   for ( i = 0; i < HouseClass_Count; ++i ) /*0x50117d*/
   {
-    strcpy(Source, (const char *)(*(_DWORD *)&HouseClass_Array->gap0[4 * i] + 90100)); /*0x5011ac*/
+    strcpy(Source, (const char *)(*(unsigned int *)&HouseClass_Array->gap0[4 * i] + 90100)); /*0x5011ac*/
     sprintf(Buffer, g_Str_Trace, i); /*0x5011ba*/
-    INIClass::SetString((unsigned __int8 *)g_INI_Key_Houses, Buffer, Source); /*0x5011d3*/
+    INIClass::SetString((uint8_t *)g_INI_Key_Houses, Buffer, Source); /*0x5011d3*/
     result = HouseClass_Count; /*0x5011d8*/
   }
   v4 = 0; /*0x5011e3*/

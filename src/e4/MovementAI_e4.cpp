@@ -11,16 +11,16 @@
 namespace gamemd {
 int MovementAI::IsPathMovementAllowed()
 {
-  _DWORD *v2; // esi
+  unsigned int *v2; // esi
 
   if ( !g_WTFMode ) /*0x487e0b*/
     return *(&this->MovementAI_field_184) != 0; /*0x487e0b*/
-  v2 = (_DWORD *)*(&this->MovementAI_field_147); /*0x487e0d*/
+  v2 = (unsigned int *)*(&this->MovementAI_field_147); /*0x487e0d*/
   if ( !v2 ) /*0x487e15*/
     return *(&this->MovementAI_field_184) != 0; /*0x487e15*/
-  while ( (*(int (__thiscall **)(_DWORD *))(*v2 + 44))(v2) != 6 ) /*0x487e21*/
+  while ( (*(int (__thiscall **)(unsigned int *))(*v2 + 44))(v2) != 6 ) /*0x487e21*/
   {
-    v2 = (_DWORD *)v2[12]; /*0x487e23*/
+    v2 = (unsigned int *)v2[12]; /*0x487e23*/
     if ( !v2 ) /*0x487e28*/
       return *(&this->MovementAI_field_184) != 0; /*0x487e28*/
   }

@@ -19,7 +19,7 @@ int E4Recv_7AF540::sub_7AF540(HWND hWnd, int * a3)
   int v10; // ecx
 
   result = this->vt_slot_8(); /*0x7af546*/
-  if ( !(_BYTE)result ) /*0x7af54b*/
+  if ( !(unsigned char)result ) /*0x7af54b*/
   {
     v5 = 0; /*0x7af554*/
     this->M28 = this->M16; /*0x7af556*/

@@ -17,16 +17,16 @@ namespace gamemd {
 int ThemeManager::ProcessCallback()
 {
   int v2; // ebp
-  unsigned __int64 v3; // rax
-  unsigned __int64 v4; // kr00_8
+  uint64_t v3; // rax
+  uint64_t v4; // kr00_8
 
   v2 = Audio::Callback(); /*0x4080fa*/
   IDA_LODWORD(v3) = this->u32_14; /*0x4080fc*/
-  v4 = *(_QWORD *)(v3 + 32) + IDA___PAIR64__(IDA_HIDWORD(v3), v2); /*0x408104*/
+  v4 = *(unsigned long long *)(v3 + 32) + IDA___PAIR64__(IDA_HIDWORD(v3), v2); /*0x408104*/
   while ( (this->u8_C & 1) != 0 ) /*0x408107*/
   {
     IDA_LODWORD(v3) = this->u32_14; /*0x40810d*/
-    if ( *(_DWORD *)(v3 + 20) == *(_DWORD *)(v3 + 24) ) /*0x408118*/
+    if ( *(unsigned int *)(v3 + 20) == *(unsigned int *)(v3 + 24) ) /*0x408118*/
       break; /*0x408118*/
     IDA_LODWORD(v3) = Audio::Callback(); /*0x40811a*/
     if ( v3 >= v4 ) /*0x408127*/
@@ -43,7 +43,7 @@ void ThemeManager::Cleanup()
   int v2; // eax
   int v3; // ecx
   int v4; // eax
-  _DWORD *v5; // ecx
+  unsigned int *v5; // ecx
 
   while ( this->q024 > 0 ) /*0x720778*/
   {
@@ -55,18 +55,18 @@ void ThemeManager::Cleanup()
       v4 = 0; /*0x720792*/
       for ( this->q024 = v3; /*0x720799*/
             v4 < this->q024;
-            *(_DWORD *)(this->u32_18 + 4 * v4 - 4) = *(_DWORD *)(this->u32_18 + 4 * v4) )
+            *(unsigned int *)(this->u32_18 + 4 * v4 - 4) = *(unsigned int *)(this->u32_18 + 4 * v4) )
       {
         ++v4; /*0x72079e*/
       }
     }
   }
-  v5 = *(_DWORD **)(&this->u32_104); /*0x7207b4*/
+  v5 = *(unsigned int **)(&this->u32_104); /*0x7207b4*/
   if ( v5 ) /*0x7207b9*/
   {
     ThemeClass::RequestBuffer(v5); /*0x7207bb*/
     ThemeManager::ProcessCallback(this->u32_2C); /*0x7207c3*/
-    Audio::Release(*(_DWORD **)(&this->u32_104)); /*0x7207cb*/
+    Audio::Release(*(unsigned int **)(&this->u32_104)); /*0x7207cb*/
     AudioSample::Destructor(*(void **)(&this->u32_104)); /*0x7207d3*/
     this->u32_2C = 0; /*0x7207d8*/
   }

@@ -222,7 +222,6 @@ int E4Recv_490400::sub_490400()
   void *v2; // ecx
   int result; // eax
 
-  *(void **)this = (void*)&ConvertClass_vftable; /*0x490404*/
   COMClass::RegisterAll(); /*0x49040a*/
   RA2_OPDEL(*(void **)(&this->u32_908)); /*0x490416*/
   v2 = *(void **)(&this->u32_946); /*0x49041b*/
@@ -235,7 +234,7 @@ int E4Recv_490400::sub_490400()
     do /*0x490485*/
     {
       ++result; /*0x490475*/
-      *((_DWORD *)dword_89ECFC + result - 1) = *((_DWORD *)dword_89ECFC + result); /*0x490479*/
+      *((unsigned int *)dword_89ECFC + result - 1) = *((unsigned int *)dword_89ECFC + result); /*0x490479*/
     }
     while ( result < dword_89ED08 ); /*0x490485*/
   }
@@ -247,12 +246,12 @@ namespace gamemd {
 int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int a10, char * a11)
 {
   int result; // eax
-  _BYTE *v14; // esi
+  unsigned char *v14; // esi
   unsigned int v15; // edx
   int v17; // eax
   int v18; // edi
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // ebp
 
   result = a5; /*0x491b41*/
@@ -276,8 +275,8 @@ int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, in
     v14 = &a2[v17]; /*0x491b84*/
     v18 = a4 - v17; /*0x491b86*/
     result = a7 + 2 * v17; /*0x491b88*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x491b91*/
-      result -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x491b93*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x491b91*/
+      result -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x491b93*/
     v15 = result; /*0x491b96*/
   }
   while ( v18 > 0 ) /*0x491ba0*/
@@ -287,8 +286,8 @@ int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, in
     {
       v15 += 2; /*0x491bcf*/
       v21 = a6 - *a11++; /*0x491bd2*/
-      if ( v21 < *(unsigned __int16 *)(v15 - 2) ) /*0x491bdd*/
-        *v14 = *(_BYTE *)(v19 + this->q004); /*0x491bf2*/
+      if ( v21 < *(uint16_t *)(v15 - 2) ) /*0x491bdd*/
+        *v14 = *(unsigned char *)(v19 + this->q004); /*0x491bf2*/
       ++v14; /*0x491bf4*/
       --v18; /*0x491bf5*/
     }
@@ -301,8 +300,8 @@ int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, in
       a11 += v20; /*0x491bc4*/
     }
     result = (int)g_ZBufferDescriptor; /*0x491bf6*/
-    if ( v15 >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x491bfe*/
-      v15 -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x491c00*/
+    if ( v15 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x491bfe*/
+      v15 -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x491c00*/
   }
   return result; /*0x491c07*/
 }
@@ -314,17 +313,17 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
   int v12; // edx
   int result; // eax
   unsigned int v14;
-  _BYTE *v15; // esi
+  unsigned char *v15; // esi
   unsigned int v16; // edx
   int v18; // eax
   int v19; // edi
-  unsigned __int8 v20; // al
+  uint8_t v20; // al
   int v21; // ebp
-  unsigned __int8 v24; // [esp+20h] [ebp+Ch]
-  unsigned __int8 v25; // [esp+20h] [ebp+Ch]
+  uint8_t v24; // [esp+20h] [ebp+Ch]
+  uint8_t v25; // [esp+20h] [ebp+Ch]
   int v26; // [esp+3Ch] [ebp+28h]
 
-  v12 = **(_DWORD **)(this + 4); /*0x491c65*/
+  v12 = **(unsigned int *)((char *)&this->M8 + 8); /*0x491c65*/
   result = a5; /*0x491c67*/
   v14 = g_ZBufferDescriptor; /*0x491c6b*/
   v15 = a1; /*0x491c77*/
@@ -348,8 +347,8 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
     v15 = &a1[v18]; /*0x491ca4*/
     v19 = a4 - v18; /*0x491ca6*/
     result = a7 + 2 * v18; /*0x491ca8*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x491cae*/
-      result -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x491cb0*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x491cae*/
+      result -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x491cb0*/
     v16 = result; /*0x491cb3*/
   }
   while ( v19 > 0 ) /*0x491cbd*/
@@ -361,10 +360,10 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
       v16 += 2; /*0x491cf5*/
       v21 = a6 - *a10; /*0x491cfb*/
       result = (int)++a10; /*0x491d03*/
-      if ( v21 < *(unsigned __int16 *)(v16 - 2) ) /*0x491d0a*/
+      if ( v21 < *(uint16_t *)(v16 - 2) ) /*0x491d0a*/
       {
-        result = *(_DWORD *)(this + 8); /*0x491d22*/
-        *v15 = *(_BYTE *)(*(unsigned __int8 *)(v24 + v26) + result); /*0x491d28*/
+        result = *(unsigned int *)((char *)&this->M8 + 24); /*0x491d22*/
+        *v15 = *(unsigned char *)(*(uint8_t *)(v24 + v26) + result); /*0x491d28*/
       }
       v14 = g_ZBufferDescriptor; /*0x491d2a*/
       ++v15; /*0x491d30*/
@@ -391,7 +390,7 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
 {
   int v11; // eax
   unsigned int v12; // edx
-  unsigned __int8 *v14; // esi
+  uint8_t *v14; // esi
   unsigned int v15;
   int v18; // eax
   RLEBlitTransRemapDestZRead_E * v19;
@@ -418,8 +417,8 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
     v14 = &a1[v18]; /*0x491dd2*/
     v19 = aP3 - v18; /*0x491dd4*/
     v11 = a7 + 2 * v18; /*0x491dd6*/
-    if ( (unsigned int)v11 >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x491dde*/
-      v11 -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x491de0*/
+    if ( (unsigned int)v11 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x491dde*/
+      v11 -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x491de0*/
     v12 = v11; /*0x491de3*/
   }
   while ( v19 > 0 ) /*0x491ded*/
@@ -428,7 +427,7 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
     {
       v12 += 2; /*0x491e19*/
       v11 = a6 - *a10++; /*0x491e1c*/
-      if ( v11 >= *(unsigned __int16 *)(v12 - 2) ) /*0x491e27*/
+      if ( v11 >= *(uint16_t *)(v12 - 2) ) /*0x491e27*/
       {
         ++v14; /*0x491e3e*/
         --v19; /*0x491e3f*/
@@ -438,7 +437,7 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
         v11 = *v14; /*0x491e2f*/
         --v19; /*0x491e31*/
         ++v14; /*0x491e35*/
-        IDA_LOBYTE(v11) = *(_BYTE *)(*(this + 1) + v11); /*0x491e36*/
+        IDA_LOBYTE(v11) = *(unsigned char *)(this->M4 + v11); /*0x491e36*/
         *(v14 - 1) = v11; /*0x491e39*/
       }
       v15 = g_ZBufferDescriptor; /*0x491e40*/
@@ -446,10 +445,10 @@ int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTra
     else
     {
       IDA_LOBYTE(v11) = *a2++; /*0x491df6*/
-      v19 -= (unsigned __int8)v11; /*0x491e06*/
-      v14 += (unsigned __int8)v11; /*0x491e08*/
-      a10 += (unsigned __int8)v11; /*0x491e0a*/
-      v12 += 2 * (unsigned __int8)v11; /*0x491e0c*/
+      v19 -= (uint8_t)v11; /*0x491e06*/
+      v14 += (uint8_t)v11; /*0x491e08*/
+      a10 += (uint8_t)v11; /*0x491e0a*/
+      v12 += 2 * (uint8_t)v11; /*0x491e0c*/
     }
     if ( v12 >= v15[7] ) /*0x491e49*/
       v12 -= v15[8]; /*0x491e4b*/
@@ -466,8 +465,8 @@ int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int 
   unsigned int v15; // edx
   int v17; // eax
   int v18; // edi
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // ebp
 
   result = a5; /*0x491ea1*/
@@ -491,8 +490,8 @@ int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int 
     v14 = v17 + arg0; /*0x491ee4*/
     v18 = a4 - v17; /*0x491ee6*/
     result = a7 + 2 * v17; /*0x491ee8*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x491ef1*/
-      result -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x491ef3*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x491ef1*/
+      result -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x491ef3*/
     v15 = result; /*0x491ef6*/
   }
   while ( v18 > 0 ) /*0x491f00*/
@@ -504,8 +503,8 @@ int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int 
       v21 = a6 - *a10++; /*0x491f32*/
       ++v14; /*0x491f56*/
       --v18; /*0x491f57*/
-      if ( v21 < *(unsigned __int16 *)(v15 - 2) ) /*0x491f41*/
-        *(_BYTE *)(v14 - 1) = *(_BYTE *)(*(unsigned __int8 *)(v19 + *(this + 1)) + *(this + 2)); /*0x491f69*/
+      if ( v21 < *(uint16_t *)(v15 - 2) ) /*0x491f41*/
+        *(unsigned char *)(v14 - 1) = *(unsigned char *)(*(uint8_t *)(v19 + this->M4) + this->M8); /*0x491f69*/
     }
     else
     {
@@ -516,8 +515,8 @@ int E4Recv_491EA0::sub_491EA0(int arg0, unsigned char * a2, int a4, int a5, int 
       v15 += 2 * v20; /*0x491f23*/
     }
     result = (int)g_ZBufferDescriptor; /*0x491f70*/
-    if ( v15 >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x491f78*/
-      v15 -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x491f7a*/
+    if ( v15 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x491f78*/
+      v15 -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x491f7a*/
   }
   return result; /*0x491f81*/
 }
@@ -527,13 +526,13 @@ namespace gamemd {
 unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlitTransXlatZReadWrite_E * aP3, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
   int v11; // edx
-  _WORD *result; // eax
+  unsigned short *result; // eax
   int v14; // esi
   unsigned int v15;
   int v18; // edx
   RLEBlitTransXlatZReadWrite_E * v19;
-  unsigned __int8 v20; // dl
-  unsigned __int8 v21; // dl
+  uint8_t v20; // dl
+  uint8_t v21; // dl
 
   v11 = a5; /*0x491fd1*/
   result = a6; /*0x491fd5*/
@@ -557,8 +556,8 @@ unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlit
     v14 = v18 + arg0; /*0x492014*/
     v19 = aP3 - v18; /*0x492016*/
     result = &a6[v18]; /*0x492018*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x492020*/
-      result = (_WORD *)((char *)result - *((_DWORD *)g_ZBufferDescriptor + 8)); /*0x492022*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x492020*/
+      result = (unsigned short *)((char *)result - *((unsigned int *)g_ZBufferDescriptor + 8)); /*0x492022*/
   }
   while ( v19 > 0 ) /*0x49202d*/
   {
@@ -566,9 +565,9 @@ unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlit
     if ( v20 ) /*0x492039*/
     {
       ++v14; /*0x492078*/
-      if ( arg10 - *a10 < (unsigned __int16)*result ) /*0x492068*/
+      if ( arg10 - *a10 < (uint16_t)*result ) /*0x492068*/
       {
-        *(_BYTE *)(v14 - 1) = *(_BYTE *)(*(this + 1) + v20); /*0x49207f*/
+        *(unsigned char *)(v14 - 1) = *(unsigned char *)(this->M4 + v20); /*0x49207f*/
         *result = arg10 - *a10; /*0x49208c*/
       }
       v15 = g_ZBufferDescriptor; /*0x492092*/
@@ -585,7 +584,7 @@ unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlit
       result += v21; /*0x492053*/
     }
     if ( (unsigned int)result >= v15[7] ) /*0x4920a0*/
-      result = (_WORD *)((char *)result - v15[8]); /*0x4920a2*/
+      result = (unsigned short *)((char *)result - v15[8]); /*0x4920a2*/
   }
   return result; /*0x4920a9*/
 }
@@ -594,21 +593,21 @@ unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlit
 namespace gamemd {
 unsigned short * E4Recv_492100::sub_492100(int arg0, unsigned char * a2, int a4, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
-  unsigned __int16 *result; // eax
+  uint16_t *result; // eax
   int v13; // ecx
   int v14; // esi
   int v17; // ecx
   int v18; // ebx
-  unsigned __int8 v19; // cl
-  unsigned __int8 v20; // cl
+  uint8_t v19; // cl
+  uint8_t v20; // cl
   int v21; // ecx
   char *v22; // edi
-  __int16 v23; // cx
+  int16_t v23; // cx
   int v25; // [esp+1Ch] [ebp+8h]
-  unsigned __int8 v26; // [esp+20h] [ebp+Ch]
+  uint8_t v26; // [esp+20h] [ebp+Ch]
 
   result = a6; /*0x492110*/
-  v25 = **(_DWORD **)(this + 4); /*0x492114*/
+  v25 = **(unsigned int *)((char *)&this->M8 + 8); /*0x492114*/
   v13 = a5; /*0x492118*/
   v14 = arg0; /*0x49211d*/
   if ( a5 <= 0 ) /*0x492128*/
@@ -629,8 +628,8 @@ unsigned short * E4Recv_492100::sub_492100(int arg0, unsigned char * a2, int a4,
     v14 = v17 + arg0; /*0x492147*/
     v18 = a4 - v17; /*0x492149*/
     result = &a6[v17]; /*0x49214b*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x492157*/
-      result = (unsigned __int16 *)((char *)result - *((_DWORD *)g_ZBufferDescriptor + 8)); /*0x492159*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x492157*/
+      result = (uint16_t *)((char *)result - *((unsigned int *)g_ZBufferDescriptor + 8)); /*0x492159*/
   }
   while ( v18 > 0 ) /*0x492164*/
   {
@@ -650,7 +649,7 @@ unsigned short * E4Recv_492100::sub_492100(int arg0, unsigned char * a2, int a4,
       {
         ++v14; /*0x4921ba*/
         ++result; /*0x4921bb*/
-        *(_BYTE *)(v14 - 1) = *(_BYTE *)(*(unsigned __int8 *)(v26 + v25) + *(_DWORD *)(this + 8)); /*0x4921cf*/
+        *(unsigned char *)(v14 - 1) = *(unsigned char *)(*(uint8_t *)(v26 + v25) + *(unsigned int *)((char *)&this->M8 + 24)); /*0x4921cf*/
         v23 = *v22; /*0x4921d6*/
         a10 = v22 + 1; /*0x4921dc*/
         *(result - 1) = arg10 - v23; /*0x4921dd*/
@@ -665,8 +664,8 @@ unsigned short * E4Recv_492100::sub_492100(int arg0, unsigned char * a2, int a4,
       a10 += v20; /*0x492190*/
       result += v20; /*0x492192*/
     }
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x4921f3*/
-      result = (unsigned __int16 *)((char *)result - *((_DWORD *)g_ZBufferDescriptor + 8)); /*0x4921f5*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x4921f3*/
+      result = (uint16_t *)((char *)result - *((unsigned int *)g_ZBufferDescriptor + 8)); /*0x4921f5*/
   }
   return result; /*0x492200*/
 }
@@ -676,15 +675,15 @@ namespace gamemd {
 unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a2, RLEBlitTransRemapDestZReadWrite_E * aP3, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
   int v11; // edx
-  unsigned __int16 *result; // eax
-  _BYTE *v14; // esi
+  uint16_t *result; // eax
+  unsigned char *v14; // esi
   unsigned int v15;
   int v18; // edx
   RLEBlitTransRemapDestZReadWrite_E * v19;
-  unsigned __int8 v21; // dl
+  uint8_t v21; // dl
   int v22; // edx
   char *v23; // edi
-  __int16 v24; // cx
+  int16_t v24; // cx
 
   v11 = a5; /*0x492251*/
   result = a6; /*0x492255*/
@@ -708,8 +707,8 @@ unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a
     v14 = &a1[v18]; /*0x492294*/
     v19 = aP3 - v18; /*0x492296*/
     result = &a6[v18]; /*0x492298*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x4922a0*/
-      result = (unsigned __int16 *)((char *)result - *((_DWORD *)g_ZBufferDescriptor + 8)); /*0x4922a2*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x4922a0*/
+      result = (uint16_t *)((char *)result - *((unsigned int *)g_ZBufferDescriptor + 8)); /*0x4922a2*/
   }
   while ( v19 > 0 ) /*0x4922ad*/
   {
@@ -727,7 +726,7 @@ unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a
       else
       {
         ++result; /*0x4922ef*/
-        *v14 = *(_BYTE *)(*(this + 1) + (unsigned __int8)*v14); /*0x4922f8*/
+        *v14 = *(unsigned char *)(this->M4 + (uint8_t)*v14); /*0x4922f8*/
         v24 = *v23; /*0x4922fe*/
         a10 = v23 + 1; /*0x492304*/
         *(result - 1) = arg10 - v24; /*0x492305*/
@@ -745,7 +744,7 @@ unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a
       result += v21; /*0x4922cf*/
     }
     if ( (unsigned int)result >= v15[7] ) /*0x49231c*/
-      result = (unsigned __int16 *)((char *)result - v15[8]); /*0x49231e*/
+      result = (uint16_t *)((char *)result - v15[8]); /*0x49231e*/
   }
   return result; /*0x492325*/
 }
@@ -755,14 +754,14 @@ namespace gamemd {
 unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a2, RLEBlitTransRemapXlatZReadWrite_E * aP3, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
   int v11; // edx
-  unsigned __int16 *result; // eax
-  _BYTE *v14; // esi
+  uint16_t *result; // eax
+  unsigned char *v14; // esi
   unsigned int v15;
   int v18; // edx
   RLEBlitTransRemapXlatZReadWrite_E * v19;
-  unsigned __int8 v20; // dl
-  unsigned __int8 v21; // dl
-  __int16 v22; // dx
+  uint8_t v20; // dl
+  uint8_t v21; // dl
+  int16_t v22; // dx
 
   v11 = a5; /*0x492371*/
   result = a6; /*0x492375*/
@@ -786,8 +785,8 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
     v14 = &a1[v18]; /*0x4923b4*/
     v19 = aP3 - v18; /*0x4923b6*/
     result = &a6[v18]; /*0x4923b8*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x4923c0*/
-      result = (unsigned __int16 *)((char *)result - *((_DWORD *)g_ZBufferDescriptor + 8)); /*0x4923c2*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x4923c0*/
+      result = (uint16_t *)((char *)result - *((unsigned int *)g_ZBufferDescriptor + 8)); /*0x4923c2*/
   }
   while ( v19 > 0 ) /*0x4923cd*/
   {
@@ -804,7 +803,7 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
       else
       {
         ++result; /*0x492420*/
-        *v14++ = *(_BYTE *)(*(unsigned __int8 *)(v20 + *(this + 1)) + *(this + 2)); /*0x49243a*/
+        *v14++ = *(unsigned char *)(*(uint8_t *)(v20 + this->M4) + this->M8); /*0x49243a*/
         v22 = *a10++; /*0x492441*/
         *(result - 1) = arg10 - v22; /*0x492448*/
         v15 = g_ZBufferDescriptor; /*0x49244c*/
@@ -820,7 +819,7 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
       result += v21; /*0x4923fb*/
     }
     if ( (unsigned int)result >= v15[7] ) /*0x492464*/
-      result = (unsigned __int16 *, unsigned int a6, unsigned int a3, unsigned int a5)((char *)result - v15[8]); /*0x492466*/
+      result = (uint16_t *, unsigned int a6, unsigned int a3, unsigned int a5)((char *)result - v15[8]); /*0x492466*/
   }
   return result; /*0x492471*/
 }
@@ -832,10 +831,10 @@ int E4Recv_496310::sub_496310()
   int result; // eax
   int v13; // edx
   int v17; // ebx
-  unsigned __int8 v18; // al
+  uint8_t v18; // al
   int v19; // eax
-  unsigned __int16 v20; // cx
-  unsigned __int8 v21; // [esp+18h] [ebp+Ch]
+  uint16_t v20; // cx
+  uint8_t v21; // [esp+18h] [ebp+Ch]
 
   result = a6; /*0x496310*/
   v13 = a3; /*0x496314*/
@@ -863,21 +862,21 @@ int E4Recv_496310::sub_496310()
     v21 = v18; /*0x496355*/
     if ( v18 ) /*0x496359*/
     {
-      v19 = *(_DWORD *)(a1 + 4); /*0x496376*/
-      IDA_LOWORD(a2) = *(_WORD *)(a1 + 8); /*0x496379*/
+      v19 = *(unsigned int *)(a1 + 4); /*0x496376*/
+      IDA_LOWORD(a2) = *(unsigned short *)(a1 + 8); /*0x496379*/
       v13 += 2; /*0x496383*/
-      v20 = *(_WORD *)(v19 + 2 * v21); /*0x496386*/
-      IDA_LOWORD(v19) = *(_WORD *)(v13 - 2) >> 2; /*0x49638e*/
+      v20 = *(unsigned short *)(v19 + 2 * v21); /*0x496386*/
+      IDA_LOWORD(v19) = *(unsigned short *)(v13 - 2) >> 2; /*0x49638e*/
       result = 3 * (a2 & v19); /*0x49639a*/
       --v17; /*0x49639f*/
-      *(_WORD *, unsigned int a4)(v13 - 2) = result + (a2 & (v20 >> 2)); /*0x4963a0*/
+      *(unsigned short *, unsigned int a4)(v13 - 2) = result + (a2 & (v20 >> 2)); /*0x4963a0*/
     }
     else
     {
       IDA_LOBYTE(result) = *a4++; /*0x49635b*/
-      result = (unsigned __int8)result; /*0x496366*/
-      v17 -= (unsigned __int8)result; /*0x49636b*/
-      v13 += 2 * (unsigned __int8, unsigned int a6, unsigned int a3, unsigned int a5)result; /*0x49636d*/
+      result = (uint8_t)result; /*0x496366*/
+      v17 -= (uint8_t)result; /*0x49636b*/
+      v13 += 2 * (uint8_t, unsigned int a6, unsigned int a3, unsigned int a5)result; /*0x49636d*/
     }
   }
   return result; /*0x4963a9*/
@@ -890,11 +889,11 @@ int E4Recv_4964D0::sub_4964D0()
   int result; // eax
   int v13; // edx
   int v17; // ebx
-  unsigned __int8 v18; // al
+  uint8_t v18; // al
   int v19; // eax
   int v20; // eax
-  __int16 v21; // cx
-  unsigned __int8 v22; // [esp+18h] [ebp+Ch]
+  int16_t v21; // cx
+  uint8_t v22; // [esp+18h] [ebp+Ch]
 
   result = a6; /*0x4964d0*/
   v13 = a3; /*0x4964d4*/
@@ -922,23 +921,23 @@ int E4Recv_4964D0::sub_4964D0()
     v22 = v18; /*0x496515*/
     if ( v18 ) /*0x496519*/
     {
-      v19 = *(_DWORD *)(a1 + 4); /*0x496536*/
-      IDA_LOWORD(a2) = *(_WORD *)(a1 + 8); /*0x496539*/
+      v19 = *(unsigned int *)(a1 + 4); /*0x496536*/
+      IDA_LOWORD(a2) = *(unsigned short *)(a1 + 8); /*0x496539*/
       v13 += 2; /*0x496543*/
-      IDA_LOWORD(v19) = *(_WORD *)(v19 + 2 * v22) >> 2; /*0x49654a*/
+      IDA_LOWORD(v19) = *(unsigned short *)(v19 + 2 * v22) >> 2; /*0x49654a*/
       v20 = a2 & v19; /*0x49654e*/
       v21 = 3 * v20; /*0x496550*/
-      IDA_LOWORD(v20) = *(_WORD *)(v13 - 2) >> 2; /*0x496557*/
+      IDA_LOWORD(v20) = *(unsigned short *)(v13 - 2) >> 2; /*0x496557*/
       result = a2 & v20; /*0x49655b*/
       --v17; /*0x49655f*/
-      *(_WORD *, unsigned int a4)(v13 - 2) = result + v21; /*0x496560*/
+      *(unsigned short *, unsigned int a4)(v13 - 2) = result + v21; /*0x496560*/
     }
     else
     {
       IDA_LOBYTE(result) = *a4++; /*0x49651b*/
-      result = (unsigned __int8)result; /*0x496526*/
-      v17 -= (unsigned __int8)result; /*0x49652b*/
-      v13 += 2 * (unsigned __int8, unsigned int a5, unsigned int a7, unsigned int a4)result; /*0x49652d*/
+      result = (uint8_t)result; /*0x496526*/
+      v17 -= (uint8_t)result; /*0x49652b*/
+      v13 += 2 * (uint8_t, unsigned int a5, unsigned int a7, unsigned int a4)result; /*0x49652d*/
     }
   }
   return result; /*0x496569*/
@@ -950,11 +949,11 @@ int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, 
 {
   int result; // eax
   unsigned int v12; // edx
-  _WORD *v15; // edi
+  unsigned short *v15; // edi
   int v17; // eax
   int v18; // ebx
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // esi
 
   result = a5; /*0x4965b1*/
@@ -978,8 +977,8 @@ int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, 
     v18 = a4 - v17; /*0x4965ee*/
     v15 = &a1[v17]; /*0x4965f0*/
     result = a7 + 2 * v17; /*0x4965f3*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x4965ff*/
-      result -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x496601*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x4965ff*/
+      result -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x496601*/
     v12 = result; /*0x496604*/
   }
   while ( v18 > 0 ) /*0x49660e*/
@@ -989,8 +988,8 @@ int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, 
     {
       v12 += 2; /*0x496641*/
       v21 = a6 - *a10++; /*0x496644*/
-      if ( v21 < *(unsigned __int16 *)(v12 - 2) ) /*0x49664f*/
-        *v15 = *(_WORD *)(this->q004 + 2 * v19); /*0x496665*/
+      if ( v21 < *(uint16_t *)(v12 - 2) ) /*0x49664f*/
+        *v15 = *(unsigned short *)(this->q004 + 2 * v19); /*0x496665*/
       ++v15; /*0x496668*/
       --v18; /*0x49666b*/
     }
@@ -1003,8 +1002,8 @@ int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, 
       a10 += v20; /*0x496636*/
     }
     result = (int)g_ZBufferDescriptor; /*0x49666c*/
-    if ( v12 >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x496674*/
-      v12 -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x496676*/
+    if ( v12 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x496674*/
+      v12 -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x496676*/
   }
   return result; /*0x49667d*/
 }
@@ -1018,14 +1017,14 @@ int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int 
   unsigned int v15; // edx
   int v17; // eax
   int v18; // ebx
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // esi
   int v23; // [esp+1Ch] [ebp+8h]
 
   result = a5; /*0x4966e7*/
   v14 = arg0; /*0x4966f2*/
-  v23 = **(_DWORD **)(this + 4); /*0x4966f6*/
+  v23 = **(unsigned int *)((char *)&this->M8 + 8); /*0x4966f6*/
   v15 = a7; /*0x4966fa*/
   if ( a5 <= 0 ) /*0x496700*/
   {
@@ -1045,8 +1044,8 @@ int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int 
     v18 = a4 - v17; /*0x49671f*/
     v14 = arg0 + 2 * v17; /*0x496721*/
     result = a7 + 2 * v17; /*0x496724*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x49672a*/
-      result -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x49672c*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x49672a*/
+      result -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x49672c*/
     v15 = result; /*0x49672f*/
   }
   while ( v18 > 0 ) /*0x496739*/
@@ -1058,8 +1057,8 @@ int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int 
       v21 = a6 - *a10++; /*0x496773*/
       v14 += 2; /*0x496794*/
       --v18; /*0x496797*/
-      if ( v21 < *(unsigned __int16 *)(v15 - 2) ) /*0x496782*/
-        *(_WORD *)(v14 - 2) = *(_WORD *)(*(_DWORD *)(this + 8) + 2 * *(unsigned __int8 *)(v19 + v23)); /*0x4967aa*/
+      if ( v21 < *(uint16_t *)(v15 - 2) ) /*0x496782*/
+        *(unsigned short *)(v14 - 2) = *(unsigned short *)(*(unsigned int *)((char *)&this->M8 + 24) + 2 * *(uint8_t *)(v19 + v23)); /*0x4967aa*/
     }
     else
     {
@@ -1070,8 +1069,8 @@ int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int 
       v15 += 2 * v20; /*0x496765*/
     }
     result = (int)g_ZBufferDescriptor; /*0x4967b4*/
-    if ( v15 >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x4967bc*/
-      v15 -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x4967be*/
+    if ( v15 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x4967bc*/
+      v15 -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x4967be*/
   }
   return result; /*0x4967c9*/
 }
@@ -1085,8 +1084,8 @@ int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75
   unsigned int v14; // esi
   int v17; // eax
   RLEBlitTransLucent75ZRead_G * v18;
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // edi
 
   result = a5; /*0x496931*/
@@ -1110,8 +1109,8 @@ int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75
     v18 = aP3 - v17; /*0x496974*/
     v12 = arg0 + 2 * v17; /*0x496976*/
     result = a7 + 2 * v17; /*0x496979*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x49697f*/
-      result -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x496981*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x49697f*/
+      result -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x496981*/
     v14 = result; /*0x496984*/
   }
   while ( v18 > 0 ) /*0x49698e*/
@@ -1123,9 +1122,9 @@ int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75
       v21 = a6 - *a10++; /*0x4969c8*/
       v12 += 2; /*0x4969e7*/
       --v18; /*0x496a0a*/
-      if ( v21 < *(unsigned __int16 *)(v14 - 2) ) /*0x4969d7*/
-        *(_WORD *)(v12 - 2) = 3 * (*(_WORD *)(this + 8) & (*(_WORD *)(v12 - 2) >> 2)) /*0x496a0b*/
-                            + (*(_WORD *)(this + 8) & (*(_WORD *)(*(_DWORD *)(this + 4) + 2 * v19) >> 2));
+      if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x4969d7*/
+        *(unsigned short *)(v12 - 2) = 3 * (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(v12 - 2) >> 2)) /*0x496a0b*/
+                            + (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(*(unsigned int *)((char *)&this->u16_8 + 8) + 2 * v19) >> 2));
     }
     else
     {
@@ -1136,8 +1135,8 @@ int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75
       v14 += 2 * v20; /*0x4969ba*/
     }
     result = (int)g_ZBufferDescriptor; /*0x496a19*/
-    if ( v14 >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x496a21*/
-      v14 -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x496a23*/
+    if ( v14 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x496a21*/
+      v14 -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x496a23*/
   }
   return result; /*0x496a2e*/
 }
@@ -1148,11 +1147,11 @@ int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTr
 {
   int result; // eax
   unsigned int v12; // edx
-  _WORD *v14; // esi
+  unsigned short *v14; // esi
   int v17; // eax
   RLEBlitTransLucent50ZRead_G * v18;
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // edi
 
   result = a5; /*0x496a81*/
@@ -1176,8 +1175,8 @@ int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTr
     v18 = aP3 - v17; /*0x496ac4*/
     v14 = &a1[v17]; /*0x496ac6*/
     result = a7 + 2 * v17; /*0x496ac9*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x496acf*/
-      result -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x496ad1*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x496acf*/
+      result -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x496ad1*/
     v12 = result; /*0x496ad4*/
   }
   while ( v18 > 0 ) /*0x496ade*/
@@ -1188,9 +1187,9 @@ int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTr
       v12 += 2; /*0x496b15*/
       v21 = a6 - *a10++; /*0x496b18*/
       --v18; /*0x496b51*/
-      if ( v21 < *(unsigned __int16 *)(v12 - 2) ) /*0x496b27*/
-        *v14 = (*(_WORD *)(this + 8) & (*v14 >> 1)) /*0x496b52*/
-             + (*(_WORD *)(this + 8) & (*(_WORD *)(*(_DWORD *)(this + 4) + 2 * v19) >> 1));
+      if ( v21 < *(uint16_t *)(v12 - 2) ) /*0x496b27*/
+        *v14 = (*(unsigned short *)((char *)&this->u16_8 + 8) & (*v14 >> 1)) /*0x496b52*/
+             + (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(*(unsigned int *)((char *)&this->u16_8 + 8) + 2 * v19) >> 1));
       ++v14; /*0x496b59*/
     }
     else
@@ -1202,8 +1201,8 @@ int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTr
       v12 += 2 * v20; /*0x496b0a*/
     }
     result = (int)g_ZBufferDescriptor; /*0x496b62*/
-    if ( v12 >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x496b6a*/
-      v12 -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x496b6c*/
+    if ( v12 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x496b6a*/
+      v12 -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x496b6c*/
   }
   return result; /*0x496b77*/
 }
@@ -1217,8 +1216,8 @@ int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25
   unsigned int v14; // esi
   int v17; // eax
   int v18; // ebx
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // edi
 
   result = a5; /*0x496bc1*/
@@ -1242,8 +1241,8 @@ int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25
     v18 = aP3 - v17; /*0x496c04*/
     v12 = arg0 + 2 * v17; /*0x496c06*/
     result = a7 + 2 * v17; /*0x496c09*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x496c0f*/
-      result -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x496c11*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x496c0f*/
+      result -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x496c11*/
     v14 = result; /*0x496c14*/
   }
   while ( v18 > 0 ) /*0x496c1e*/
@@ -1255,9 +1254,9 @@ int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25
       v21 = a6 - *a10++; /*0x496c58*/
       v12 += 2; /*0x496c77*/
       --v18; /*0x496c9a*/
-      if ( v21 < *(unsigned __int16 *)(v14 - 2) ) /*0x496c67*/
-        *(_WORD *)(v12 - 2) = (*(_WORD *)(this + 8) & (*(_WORD *)(v12 - 2) >> 2)) /*0x496c9b*/
-                            + 3 * (*(_WORD *)(this + 8) & (*(_WORD *)(*(_DWORD *)(this + 4) + 2 * v19) >> 2));
+      if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x496c67*/
+        *(unsigned short *)(v12 - 2) = (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(v12 - 2) >> 2)) /*0x496c9b*/
+                            + 3 * (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(*(unsigned int *)((char *)&this->u16_8 + 8) + 2 * v19) >> 2));
     }
     else
     {
@@ -1268,8 +1267,8 @@ int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25
       v14 += 2 * v20; /*0x496c4a*/
     }
     result = (int)g_ZBufferDescriptor; /*0x496ca9*/
-    if ( v14 >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x496cb1*/
-      v14 -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x496cb3*/
+    if ( v14 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x496cb1*/
+      v14 -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x496cb3*/
   }
   return result; /*0x496cbe*/
 }
@@ -1283,8 +1282,8 @@ int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75
   unsigned int v14; // esi
   int v17; // eax
   int v18; // ebx
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // edi
 
   result = a5; /*0x496d11*/
@@ -1308,8 +1307,8 @@ int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75
     v18 = aP3 - v17; /*0x496d54*/
     v12 = arg0 + 2 * v17; /*0x496d56*/
     result = a7 + 2 * v17; /*0x496d59*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x496d5f*/
-      result -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x496d61*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x496d5f*/
+      result -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x496d61*/
     v14 = result; /*0x496d64*/
   }
   while ( v18 > 0 ) /*0x496d6e*/
@@ -1321,9 +1320,9 @@ int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75
       v21 = a6 - *a10++; /*0x496da8*/
       v12 += 2; /*0x496dc7*/
       --v18; /*0x496def*/
-      if ( v21 < *(unsigned __int16 *)(v14 - 2) ) /*0x496db7*/
-        *(_WORD *)(v12 - 2) = 3 * (*(_WORD *)(this + 8) & (*(_WORD *)(v12 + 2 * arg20 - 2) >> 2)) /*0x496df0*/
-                            + (*(_WORD *)(this + 8) & (*(_WORD *)(*(_DWORD *)(this + 4) + 2 * v19) >> 2));
+      if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x496db7*/
+        *(unsigned short *)(v12 - 2) = 3 * (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(v12 + 2 * arg20 - 2) >> 2)) /*0x496df0*/
+                            + (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(*(unsigned int *)((char *)&this->u16_8 + 8) + 2 * v19) >> 2));
     }
     else
     {
@@ -1334,8 +1333,8 @@ int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75
       v14 += 2 * v20; /*0x496d9a*/
     }
     result = (int)g_ZBufferDescriptor; /*0x496dfe*/
-    if ( v14 >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x496e06*/
-      v14 -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x496e08*/
+    if ( v14 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x496e06*/
+      v14 -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x496e08*/
   }
   return result; /*0x496e13*/
 }
@@ -1345,12 +1344,12 @@ namespace gamemd {
 int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTransLucent50ZReadWarp_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int arg20, char * a10)
 {
   int result; // eax
-  _WORD *v12; // edx
+  unsigned short *v12; // edx
   unsigned int v14; // esi
   int v17; // eax
   int v18; // ebx
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // edi
 
   result = a5; /*0x496e61*/
@@ -1374,8 +1373,8 @@ int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTr
     v18 = aP3 - v17; /*0x496ea4*/
     v12 = &a1[v17]; /*0x496ea6*/
     result = a7 + 2 * v17; /*0x496ea9*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x496eaf*/
-      result -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x496eb1*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x496eaf*/
+      result -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x496eb1*/
     v14 = result; /*0x496eb4*/
   }
   while ( v18 > 0 ) /*0x496ebe*/
@@ -1386,9 +1385,9 @@ int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTr
       v14 += 2; /*0x496ef5*/
       v21 = a6 - *a10++; /*0x496ef8*/
       --v18; /*0x496f36*/
-      if ( v21 < *(unsigned __int16 *)(v14 - 2) ) /*0x496f07*/
-        *v12 = (*(_WORD *)(this + 8) & (v12[arg20] >> 1)) /*0x496f37*/
-             + (*(_WORD *)(this + 8) & (*(_WORD *)(*(_DWORD *)(this + 4) + 2 * v19) >> 1));
+      if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x496f07*/
+        *v12 = (*(unsigned short *)((char *)&this->u16_8 + 8) & (v12[arg20] >> 1)) /*0x496f37*/
+             + (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(*(unsigned int *)((char *)&this->u16_8 + 8) + 2 * v19) >> 1));
       ++v12; /*0x496f3e*/
     }
     else
@@ -1400,8 +1399,8 @@ int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTr
       v14 += 2 * v20; /*0x496eea*/
     }
     result = (int)g_ZBufferDescriptor; /*0x496f47*/
-    if ( v14 >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x496f4f*/
-      v14 -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x496f51*/
+    if ( v14 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x496f4f*/
+      v14 -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x496f51*/
   }
   return result; /*0x496f5c*/
 }
@@ -1415,8 +1414,8 @@ int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25
   unsigned int v14; // esi
   int v17; // eax
   int v18; // ebx
-  unsigned __int8 v19; // al
-  unsigned __int8 v20; // al
+  uint8_t v19; // al
+  uint8_t v20; // al
   int v21; // edi
 
   result = a5; /*0x496fb1*/
@@ -1440,8 +1439,8 @@ int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25
     v18 = aP3 - v17; /*0x496ff4*/
     v12 = arg0 + 2 * v17; /*0x496ff6*/
     result = a7 + 2 * v17; /*0x496ff9*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x496fff*/
-      result -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x497001*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x496fff*/
+      result -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x497001*/
     v14 = result; /*0x497004*/
   }
   while ( v18 > 0 ) /*0x49700e*/
@@ -1453,9 +1452,9 @@ int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25
       v21 = a6 - *a10++; /*0x497048*/
       v12 += 2; /*0x497067*/
       --v18; /*0x49708f*/
-      if ( v21 < *(unsigned __int16 *)(v14 - 2) ) /*0x497057*/
-        *(_WORD *)(v12 - 2) = (*(_WORD *)(this + 8) & (*(_WORD *)(v12 + 2 * arg20 - 2) >> 2)) /*0x497090*/
-                            + 3 * (*(_WORD *)(this + 8) & (*(_WORD *)(*(_DWORD *)(this + 4) + 2 * v19) >> 2));
+      if ( v21 < *(uint16_t *)(v14 - 2) ) /*0x497057*/
+        *(unsigned short *)(v12 - 2) = (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(v12 + 2 * arg20 - 2) >> 2)) /*0x497090*/
+                            + 3 * (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(*(unsigned int *)((char *)&this->u16_8 + 8) + 2 * v19) >> 2));
     }
     else
     {
@@ -1466,8 +1465,8 @@ int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25
       v14 += 2 * v20; /*0x49703a*/
     }
     result = (int)g_ZBufferDescriptor; /*0x49709e*/
-    if ( v14 >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x4970a6*/
-      v14 -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x4970a8*/
+    if ( v14 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x4970a6*/
+      v14 -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x4970a8*/
   }
   return result; /*0x4970b3*/
 }
@@ -1477,12 +1476,12 @@ namespace gamemd {
 unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlitTransXlatZReadWrite_G * aP3, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
   int v11; // edx
-  _WORD *result; // eax
+  unsigned short *result; // eax
   int v13; // esi
   int v17; // edx
   int v18; // ebp
-  unsigned __int8 v19; // dl
-  unsigned __int8 v20; // dl
+  uint8_t v19; // dl
+  uint8_t v20; // dl
 
   v11 = a5; /*0x497101*/
   result = a6; /*0x497105*/
@@ -1505,8 +1504,8 @@ unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlit
     v18 = aP3 - v17; /*0x49713c*/
     v13 = arg0 + 2 * v17; /*0x49713e*/
     result = &a6[v17]; /*0x497141*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x49714d*/
-      result = (_WORD *)((char *)result - *((_DWORD *)g_ZBufferDescriptor + 8)); /*0x49714f*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x49714d*/
+      result = (unsigned short *)((char *)result - *((unsigned int *)g_ZBufferDescriptor + 8)); /*0x49714f*/
   }
   while ( v18 > 0 ) /*0x49715a*/
   {
@@ -1514,9 +1513,9 @@ unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlit
     if ( v19 ) /*0x497169*/
     {
       v13 += 2; /*0x4971a9*/
-      if ( arg10 - *a10 < (unsigned __int16)*result ) /*0x497199*/
+      if ( arg10 - *a10 < (uint16_t)*result ) /*0x497199*/
       {
-        *(_WORD *)(v13 - 2) = *(_WORD *)(*(this + 1) + 2 * v19); /*0x4971b7*/
+        *(unsigned short *)(v13 - 2) = *(unsigned short *)(this->M4 + 2 * v19); /*0x4971b7*/
         *result = arg10 - *a10; /*0x4971c1*/
       }
       ++result; /*0x4971c9*/
@@ -1531,8 +1530,8 @@ unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlit
       v13 += 2 * v20; /*0x497183*/
       result += v20; /*0x497185*/
     }
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x4971d7*/
-      result = (_WORD *)((char *)result - *((_DWORD *)g_ZBufferDescriptor + 8)); /*0x4971d9*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x4971d7*/
+      result = (unsigned short *)((char *)result - *((unsigned int *)g_ZBufferDescriptor + 8)); /*0x4971d9*/
   }
   return result; /*0x4971e0*/
 }
@@ -1541,22 +1540,22 @@ unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlit
 namespace gamemd {
 unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
-  unsigned __int16 *result; // eax
+  uint16_t *result; // eax
   int v13; // ecx
   int v14; // esi
   int v17; // ecx
   int v18; // ebx
-  unsigned __int8 v19; // cl
-  unsigned __int8 v20; // cl
+  uint8_t v19; // cl
+  uint8_t v20; // cl
   int v21; // ecx
   int v22; // ecx
   char *v23; // edi
-  __int16 v24; // cx
+  int16_t v24; // cx
   int v26; // [esp+1Ch] [ebp+8h]
-  unsigned __int8 v27; // [esp+20h] [ebp+Ch]
+  uint8_t v27; // [esp+20h] [ebp+Ch]
 
   result = a6; /*0x497240*/
-  v26 = **(_DWORD **)(this + 4); /*0x497244*/
+  v26 = **(unsigned int *)((char *)&this->M8 + 8); /*0x497244*/
   v13 = a5; /*0x497248*/
   v14 = arg0; /*0x49724d*/
   if ( a5 <= 0 ) /*0x497258*/
@@ -1577,8 +1576,8 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
     v18 = a4 - v17; /*0x497277*/
     v14 = arg0 + 2 * v17; /*0x497279*/
     result = &a6[v17]; /*0x49727c*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x497288*/
-      result = (unsigned __int16 *)((char *)result - *((_DWORD *)g_ZBufferDescriptor + 8)); /*0x49728a*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x497288*/
+      result = (uint16_t *)((char *)result - *((unsigned int *)g_ZBufferDescriptor + 8)); /*0x49728a*/
   }
   while ( v18 > 0 ) /*0x497295*/
   {
@@ -1598,7 +1597,7 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
       {
         v14 += 2; /*0x4972ed*/
         ++result; /*0x4972f0*/
-        *(_WORD *)(v14 - 2) = *(_WORD *)(*(_DWORD *)(this + 8) + 2 * *(unsigned __int8 *)(v27 + v26)); /*0x497305*/
+        *(unsigned short *)(v14 - 2) = *(unsigned short *)(*(unsigned int *)((char *)&this->M8 + 24) + 2 * *(uint8_t *)(v27 + v26)); /*0x497305*/
         v24 = *v23; /*0x49730d*/
         a10 = v23 + 1; /*0x497313*/
         *(result - 1) = arg10 - v24; /*0x497314*/
@@ -1612,10 +1611,10 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
       a10 += v20; /*0x4972bf*/
       v21 = 2 * v20; /*0x4972c1*/
       v14 += v21; /*0x4972c4*/
-      result = (unsigned __int16 *)((char *)result + v21); /*0x4972c6*/
+      result = (uint16_t *)((char *)result + v21); /*0x4972c6*/
     }
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x49732c*/
-      result = (unsigned __int16 *)((char *)result - *((_DWORD *)g_ZBufferDescriptor + 8)); /*0x49732e*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x49732c*/
+      result = (uint16_t *)((char *)result - *((unsigned int *)g_ZBufferDescriptor + 8)); /*0x49732e*/
   }
   return result; /*0x497339*/
 }
@@ -1625,12 +1624,12 @@ namespace gamemd {
 unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * a2, int a4, RLEBlitTransDarkenZReadWrite_G * aP4, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
   int v11; // edx
-  _WORD *v13; // esi
-  unsigned __int16 *result; // eax
+  unsigned short *v13; // esi
+  uint16_t *result; // eax
   int v17; // edx
   int v18; // ebp
-  unsigned __int8 v20; // dl
-  __int16 v21; // dx
+  uint8_t v20; // dl
+  int16_t v21; // dx
 
   v11 = aP4; /*0x497391*/
   v13 = a1; /*0x49739c*/
@@ -1653,8 +1652,8 @@ unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * 
     v18 = a4 - v17; /*0x4973ce*/
     v13 = &a1[v17]; /*0x4973d0*/
     result = &a6[v17]; /*0x4973d3*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x4973df*/
-      result = (unsigned __int16 *)((char *)result - *((_DWORD *)g_ZBufferDescriptor + 8)); /*0x4973e1*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x4973df*/
+      result = (uint16_t *)((char *)result - *((unsigned int *)g_ZBufferDescriptor + 8)); /*0x4973e1*/
   }
   while ( v18 > 0 ) /*0x4973ec*/
   {
@@ -1669,7 +1668,7 @@ unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * 
       else
       {
         ++result; /*0x497437*/
-        *v13 = *(this + 2) & (*v13 >> 1); /*0x49743a*/
+        *v13 = this->u32_8 & (*v13 >> 1); /*0x49743a*/
         v21 = *a10++; /*0x49743d*/
         *(result - 1) = arg10 - v21; /*0x497444*/
         --v18; /*0x497448*/
@@ -1684,8 +1683,8 @@ unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * 
       v13 += v20; /*0x49740d*/
       result += v20; /*0x49740f*/
     }
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x49745c*/
-      result = (unsigned __int16 *)((char *)result - *((_DWORD *)g_ZBufferDescriptor + 8)); /*0x49745e*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x49745c*/
+      result = (uint16_t *)((char *)result - *((unsigned int *)g_ZBufferDescriptor + 8)); /*0x49745e*/
   }
   return result; /*0x497465*/
 }
@@ -1699,7 +1698,7 @@ void FillScoreScreenStats(IUnknown * Destination, char a2)
   int *i; // ecx
   int v6; // esi
   int v7; // eax
-  _DWORD *v8; // ecx
+  unsigned int *v8; // ecx
   int v9; // edx
   int *v10; // ecx
   int v11; // edx
@@ -1716,7 +1715,7 @@ void FillScoreScreenStats(IUnknown * Destination, char a2)
   for ( i = (int *)HouseClass_Array; ; ++i ) /*0x49b7f6*/
   {
     v6 = *i; /*0x49b7fc*/
-    if ( !*i || *(_BYTE *)(*(_DWORD *)(v6 + 52) + 422) == 1 || !*(_BYTE *)(v6 + 492) ) /*0x49b810*/
+    if ( !*i || *(unsigned char *)(*(unsigned int *)(v6 + 52) + 422) == 1 || !*(unsigned char *)(v6 + 492) ) /*0x49b810*/
       goto LABEL_8; /*0x49b816*/
     if ( !a2 ) /*0x49b81a*/
       break; /*0x49b81a*/
@@ -1725,17 +1724,17 @@ void FillScoreScreenStats(IUnknown * Destination, char a2)
     if ( ++v3 >= HouseClass_Count ) /*0x49b824*/
       return; /*0x49b824*/
   }
-  *((_DWORD *)Destination + 11) = 0; /*0x49b831*/
+  *((unsigned int *)Destination + 11) = 0; /*0x49b831*/
   wcscpy(Destination, (const wchar_t *)(v6 + 90154)); /*0x49b836*/
-  *((_DWORD *)Destination + 12) = 0; /*0x49b83b*/
-  *((_DWORD *)Destination + 16) = 0; /*0x49b83e*/
-  *((_DWORD *)Destination + 20) = 0; /*0x49b841*/
-  *((_DWORD *)Destination + 24) = 0; /*0x49b844*/
-  *((_DWORD *)Destination + 10) = *(_DWORD *)(v6 + 90196); /*0x49b850*/
-  if ( !*(_BYTE *)(v6 + 501) ) /*0x49b853*/
-    ++*((_DWORD *)Destination + 11); /*0x49b85d*/
+  *((unsigned int *)Destination + 12) = 0; /*0x49b83b*/
+  *((unsigned int *)Destination + 16) = 0; /*0x49b83e*/
+  *((unsigned int *)Destination + 20) = 0; /*0x49b841*/
+  *((unsigned int *)Destination + 24) = 0; /*0x49b844*/
+  *((unsigned int *)Destination + 10) = *(unsigned int *)(v6 + 90196); /*0x49b850*/
+  if ( !*(unsigned char *)(v6 + 501) ) /*0x49b853*/
+    ++*((unsigned int *)Destination + 11); /*0x49b85d*/
   v7 = 0; /*0x49b860*/
-  v8 = (_DWORD *)(v6 + 21476); /*0x49b862*/
+  v8 = (unsigned int *)(v6 + 21476); /*0x49b862*/
   v9 = 20; /*0x49b868*/
   do /*0x49b873*/
   {
@@ -1752,18 +1751,18 @@ void FillScoreScreenStats(IUnknown * Destination, char a2)
     --v11; /*0x49b884*/
   }
   while ( v11 ); /*0x49b885*/
-  *((_DWORD *)Destination + 16) = v7; /*0x49b887*/
-  *((_DWORD *)Destination + 12) = *(_DWORD *)(v6 + 21640) + *(_DWORD *)(v6 + 21556); /*0x49b89e*/
-  Count = VectorClass::GetCount((_DWORD *)(v6 + 21840)); /*0x49b8ac*/
-  v14 = VectorClass::GetCount((_DWORD *)(v6 + 21860)) + Count; /*0x49b8b9*/
-  v15 = VectorClass::GetCount((_DWORD *)(v6 + 21880)) + v14; /*0x49b8c6*/
-  *((_DWORD *)Destination + 20) = VectorClass::GetCount((_DWORD *)(v6 + 21900)) /*0x49b8df*/
+  *((unsigned int *)Destination + 16) = v7; /*0x49b887*/
+  *((unsigned int *)Destination + 12) = *(unsigned int *)(v6 + 21640) + *(unsigned int *)(v6 + 21556); /*0x49b89e*/
+  Count = VectorClass::GetCount((unsigned int *)(v6 + 21840)); /*0x49b8ac*/
+  v14 = VectorClass::GetCount((unsigned int *)(v6 + 21860)) + Count; /*0x49b8b9*/
+  v15 = VectorClass::GetCount((unsigned int *)(v6 + 21880)) + v14; /*0x49b8c6*/
+  *((unsigned int *)Destination + 20) = VectorClass::GetCount((unsigned int *)(v6 + 21900)) /*0x49b8df*/
                                 + v15
-                                + *(_DWORD *)(v6 + 21640)
-                                + *(_DWORD *)(v6 + 21556);
-  v16 = *(_DWORD *)(v6 + 21736); /*0x49b8e2*/
+                                + *(unsigned int *)(v6 + 21640)
+                                + *(unsigned int *)(v6 + 21556);
+  v16 = *(unsigned int *)(v6 + 21736); /*0x49b8e2*/
   if ( v16 > 0 ) /*0x49b8ea*/
-    *((_DWORD *)Destination + 24) += v16; /*0x49b8ec*/
+    *((unsigned int *)Destination + 24) += v16; /*0x49b8ec*/
   ToWideStringChar((char *)Destination); /*0x49b902*/
   Debug::Log(); /*0x49b922*/
 }
@@ -1778,7 +1777,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
   int v5; // esi
   int v6; // eax
   char v7; // al
-  unsigned __int8 v8; // al
+  uint8_t v8; // al
   char v9; // al
   char v10; // al
   char *v11; // edi
@@ -1787,7 +1786,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
   int v14; // esi
   int v15; // eax
   char v16; // al
-  unsigned __int8 v17; // al
+  uint8_t v17; // al
   char v18; // al
   int Int_Overwrite; // eax
   int v20; // esi
@@ -1795,18 +1794,18 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
   int j; // esi
   void *v24[3]; // [esp+10h] [ebp-148h] BYREF
   int v25[7]; // [esp+1Ch] [ebp-13Ch] BYREF
-  _DWORD v26[6]; // [esp+38h] [ebp-120h] BYREF
+  unsigned int v26[6]; // [esp+38h] [ebp-120h] BYREF
   char v27; // [esp+50h] [ebp-108h]
   char v28[100]; // [esp+68h] [ebp-F0h] BYREF
-  _DWORD v29[22]; // [esp+CCh] [ebp-8Ch] BYREF
-  _BYTE v30[12]; // [esp+124h] [ebp-34h] BYREF
+  unsigned int v29[22]; // [esp+CCh] [ebp-8Ch] BYREF
+  unsigned char v30[12]; // [esp+124h] [ebp-34h] BYREF
   int v31; // [esp+130h] [ebp-28h]
   char Buffer[32]; // [esp+138h] [ebp-20h] BYREF
 
   if ( !*this ) /*0x49c0dc*/
     return 0; /*0x49c0dc*/
-  v2 = this + 28; /*0x49c0e9*/
-  if ( !*(this + 28) ) /*0x49c0e6*/
+  v2 = &this->M28; /*0x49c0e9*/
+  if ( !*(unsigned int *)&this->u32_70 ) /*0x49c0e6*/
     return 0; /*0x49c0ee*/
   v3 = 0; /*0x49c0f7*/
   v4 = this; /*0x49c0fb*/
@@ -1850,7 +1849,7 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
   }
   g_IsWindowed[v3] = 0; /*0x49c194*/
   strcpy(v28, g_IsWindowed); /*0x49c1ae*/
-  v11 = this + 28; /*0x49c1b7*/
+  v11 = &this->M28; /*0x49c1b7*/
   v12 = 0; /*0x49c1b9*/
   for ( i = *v2; i; ++v11 )
   {
@@ -1899,64 +1898,62 @@ AbstractClass * * E4Recv_49C0D0::CampaignClass_LoadCoopSave()
   {
   LABEL_44:
     HashTable::DestroyHashTableINIClass(v24); /*0x49c553*/
-    v29[0] = (void*)&CCFileClass_vftable; /*0x49c563*/
     v31 = 0; /*0x49c56e*/
     Vector::Clear((int)v30); /*0x49c575*/
     v29[0] = &off_7E1668; /*0x49c581*/
     BufferIOFileClass::Dtor(v29); /*0x49c58c*/
     return 0; /*0x49c594*/
   }
-  *((_DWORD *)this + 14) = INIClass::ReadInt_Overwrite(v28, g_INI_Key_CurrentMap, 0); /*0x49c2fc*/
+  this->M56 = INIClass::ReadInt_Overwrite(v28, g_INI_Key_CurrentMap, 0); /*0x49c2fc*/
   INIClass::ReadInt_Overwrite(v28, aScore_0, 0); /*0x49c2ff*/
-  *((_DWORD *)this + 17) = INIClass::ReadInt_Overwrite(v28, aCampaigntype, -1); /*0x49c329*/
-  *((_DWORD *)this + 5) = SuperWeaponTypeClass::FindOrCreate( /*0x49c341*/
-                            (unsigned __int8 ***)v24,
-                            (unsigned __int8 *)v28,
-                            (unsigned __int8 *)aHouse1,
+  this->M68 = INIClass::ReadInt_Overwrite(v28, aCampaigntype, -1); /*0x49c329*/
+  this->M20 = SuperWeaponTypeClass::FindOrCreate( /*0x49c341*/
+                            (uint8_t ***)v24,
+                            (uint8_t *)v28,
+                            (uint8_t *)aHouse1,
                             -2);
-  *((_DWORD *)this + 6) = INIClass::ReadInt_Overwrite(v28, aColor1, -2); /*0x49c349*/
-  *((_DWORD *)this + 12) = SuperWeaponTypeClass::FindOrCreate( /*0x49c371*/
-                             (unsigned __int8 ***)v24,
-                             (unsigned __int8 *)v28,
-                             (unsigned __int8 *)aHouse2,
+  this->M24 = INIClass::ReadInt_Overwrite(v28, aColor1, -2); /*0x49c349*/
+  this->M48 = SuperWeaponTypeClass::FindOrCreate( /*0x49c371*/
+                             (uint8_t ***)v24,
+                             (uint8_t *)v28,
+                             (uint8_t *)aHouse2,
                              -2);
-  *((_DWORD *)this + 13) = INIClass::ReadInt_Overwrite(v28, aColor2, -2); /*0x49c388*/
-  *((_DWORD *)this + 18) = INIClass::ReadInt_Overwrite(v28, aKills1, 0); /*0x49c390*/
-  *((_DWORD *)this + 19) = INIClass::ReadInt_Overwrite(v28, aKills2, 0); /*0x49c3b6*/
-  *((_DWORD *)this + 20) = INIClass::ReadInt_Overwrite(v28, aBuilt1, 0); /*0x49c3cd*/
-  *((_DWORD *)this + 21) = INIClass::ReadInt_Overwrite(v28, aBuilt2, 0); /*0x49c3d5*/
-  *((_DWORD *)this + 22) = INIClass::ReadInt_Overwrite(v28, aLost1, 0); /*0x49c3fb*/
-  *((_DWORD *)this + 23) = INIClass::ReadInt_Overwrite(v28, aLost2, 0); /*0x49c412*/
-  *((_DWORD *)this + 24) = INIClass::ReadInt_Overwrite(v28, aScore1, 0); /*0x49c41a*/
-  *((_DWORD *)this + 25) = INIClass::ReadInt_Overwrite(v28, aScore2, 0); /*0x49c440*/
+  this->M52 = INIClass::ReadInt_Overwrite(v28, aColor2, -2); /*0x49c388*/
+  this->q048 = INIClass::ReadInt_Overwrite(v28, aKills1, 0); /*0x49c390*/
+  this->M76 = INIClass::ReadInt_Overwrite(v28, aKills2, 0); /*0x49c3b6*/
+  this->q050 = INIClass::ReadInt_Overwrite(v28, aBuilt1, 0); /*0x49c3cd*/
+  this->q054 = INIClass::ReadInt_Overwrite(v28, aBuilt2, 0); /*0x49c3d5*/
+  this->M88 = INIClass::ReadInt_Overwrite(v28, aLost1, 0); /*0x49c3fb*/
+  this->M92 = INIClass::ReadInt_Overwrite(v28, aLost2, 0); /*0x49c412*/
+  this->q060 = INIClass::ReadInt_Overwrite(v28, aScore1, 0); /*0x49c41a*/
+  this->M64 = INIClass::ReadInt_Overwrite(v28, aScore2, 0); /*0x49c440*/
   Int_Overwrite = INIClass::ReadInt_Overwrite(v28, g_INI_Key_Time, 0); /*0x49c443*/
-  v20 = *((_DWORD *)this + 17); /*0x49c448*/
-  *((_DWORD *)this + 26) = Int_Overwrite; /*0x49c44b*/
+  v20 = this->M68; /*0x49c448*/
+  this->q068 = Int_Overwrite; /*0x49c44b*/
   if ( !byte_89F578 ) /*0x49c455*/
     CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49c45c*/
   if ( v20 < 0 || v20 >= dword_89F574 ) /*0x49c46f*/
   {
-    *((_DWORD *)this + 16) = 0; /*0x49c550*/
+    this->q040 = 0; /*0x49c550*/
     goto LABEL_44; /*0x49c550*/
   }
   v21 = dword_89F570 + 76 * v20; /*0x49c486*/
-  *((_DWORD *)this + 16) = *(char *)(v21 + 8); /*0x49c489*/
-  *((_DWORD *)this + 15) = RA2_OPNEW(4 * *(char *)(v21 + 8)); /*0x49c499*/
-  for ( j = 0; j < *((_DWORD *)this + 16); ++j ) /*0x49c4a6*/
+  this->q040 = *(char *)(v21 + 8); /*0x49c489*/
+  this->M60 = operator new(4 * *(char *)(v21 + 8)); /*0x49c499*/
+  for ( j = 0; j < this->q040; ++j ) /*0x49c4a6*/
   {
     sprintf(Buffer, "Map%d", j + 1); /*0x49c4b9*/
-    *(_DWORD *)(*((_DWORD *)this + 15) + 4 * j) = RA2_OPNEW(0x104u); /*0x49c4ce*/
+    *(unsigned int *)(this->M60 + 4 * j) = operator new(0x104u); /*0x49c4ce*/
     INIClass::GetString( /*0x49c4f3*/
-      (unsigned __int8 ***)v24,
-      (unsigned __int8 *)v28,
-      (unsigned __int8 *)Buffer,
+      (uint8_t ***)v24,
+      (uint8_t *)v28,
+      (uint8_t *)Buffer,
       g_Str_undefined,
-      *(char **)(*((_DWORD *)this + 15) + 4 * j),
+      *(char **)(this->M60 + 4 * j),
       260);
   }
-  *(this + 108) = 1; /*0x49c505*/
+  *(unsigned int *)&this->u32_1B0 = 1; /*0x49c505*/
   HashTable::DestroyHashTableINIClass(v24); /*0x49c509*/
-  v29[0] = (void*)&CCFileClass_vftable; /*0x49c515*/
   v31 = 0; /*0x49c520*/
   Vector::Clear((int)v30); /*0x49c527*/
   v29[0] = &off_7E1668; /*0x49c533*/
@@ -1995,17 +1992,17 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
   if ( a2 >= 0 && a2 < dword_89F574 ) /*0x49cd1d*/
   {
     v12 = dword_89F570; /*0x49cd23*/
-    *(_DWORD *)(this + 56) = -1; /*0x49cd30*/
-    *(_DWORD *)(this + 72) = 0; /*0x49cd3a*/
-    *(_DWORD *)(this + 76) = 0; /*0x49cd3d*/
-    *(_DWORD *)(this + 80) = 0; /*0x49cd40*/
-    *(_DWORD *)(this + 84) = 0; /*0x49cd46*/
+    *(unsigned int *)((char *)&this->M96 + 74) = -1; /*0x49cd30*/
+    *(unsigned int *)((char *)&this->q118 + 8) = 0; /*0x49cd3a*/
+    *(unsigned int *)((char *)&this->q128 + 8) = 0; /*0x49cd3d*/
+    *(unsigned int *)((char *)&this->q136 + 10) = 0; /*0x49cd40*/
+    *(unsigned int *)&this->q150 = 0; /*0x49cd46*/
     v33 = v12 + 76 * a2; /*0x49cd49*/
-    *(_DWORD *)(this + 88) = 0; /*0x49cd4d*/
-    *(_DWORD *)(this + 92) = 0; /*0x49cd50*/
-    *(_DWORD *)(this + 96) = 0; /*0x49cd53*/
-    *(_DWORD *)(this + 100) = 0; /*0x49cd56*/
-    *(_DWORD *)(this + 104) = 0; /*0x49cd59*/
+    *(unsigned int *)((char *)&this->q150 + 16) = 0; /*0x49cd4d*/
+    *(unsigned int *)((char *)&this->q150 + 32) = 0; /*0x49cd50*/
+    *(unsigned int *)((char *)&this->q150 + 48) = 0; /*0x49cd53*/
+    *(unsigned int *)((char *)&this->q150 + 64) = 0; /*0x49cd56*/
+    *(unsigned int *)((char *)&this->q150 + 80) = 0; /*0x49cd59*/
     if ( *(char *)(v12 + 76 * a2 + 8) != a7 ) /*0x49cd62*/
     {
       if ( Block ) /*0x49cd6a*/
@@ -2015,31 +2012,31 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
       }
       return 0; /*0x49cd83*/
     }
-    *(_DWORD *)(this + 68) = a2; /*0x49cd86*/
-    v14 = *(_DWORD *)(this + 60); /*0x49cd89*/
-    *(_BYTE *)(this + 108) = 1; /*0x49cd8e*/
+    *(unsigned int *)((char *)&this->q108 + 8) = a2; /*0x49cd86*/
+    v14 = *(unsigned int *)((char *)&this->M96 + 90); /*0x49cd89*/
+    *(unsigned char *)&this->M108 = 1; /*0x49cd8e*/
     if ( v14 ) /*0x49cd92*/
     {
-      for ( i = 0; i < *(_DWORD *)(this + 64); ++i ) /*0x49cd9b*/
+      for ( i = 0; i < this->M100; ++i ) /*0x49cd9b*/
       {
-        if ( *(_DWORD *)(*(_DWORD *)(this + 60) + 4 * i) ) /*0x49cda0*/
-          RA2_OPDEL(*(void **)(*(_DWORD *)(this + 60) + 4 * i)); /*0x49cda8*/
+        if ( *(unsigned int *)(*(unsigned int *)((char *)&this->M96 + 90) + 4 * i) ) /*0x49cda0*/
+          RA2_OPDEL(*(void **)(*(unsigned int *)((char *)&this->M96 + 90) + 4 * i)); /*0x49cda8*/
       }
-      RA2_OPDEL(*(void **)(this + 60)); /*0x49cdbe*/
+      RA2_OPDEL(*(unsigned int *)((char *)&this->M96 + 90)); /*0x49cdbe*/
     }
-    *(_DWORD *)(this + 60) = 0; /*0x49cdc8*/
-    *(_DWORD *)(this + 64) = 0; /*0x49cdcb*/
+    *(unsigned int *)((char *)&this->M96 + 90) = 0; /*0x49cdc8*/
+    this->M100 = 0; /*0x49cdcb*/
     v16 = 0; /*0x49cdde*/
-    *(_DWORD *)(this + 60) = RA2_OPNEW(4 * a7); /*0x49cde2*/
+    *(unsigned int *)((char *)&this->M96 + 90) = operator new(4 * a7); /*0x49cde2*/
     if ( a7 > 0 ) /*0x49cde5*/
     {
       v17 = 0; /*0x49cde7*/
       do /*0x49ce2e*/
       {
-        *(_DWORD *)(*(_DWORD *)(this + 60) + 4 * v16) = RA2_OPNEW(0x104u); /*0x49cdff*/
+        *(unsigned int *)(*(unsigned int *)((char *)&this->M96 + 90) + 4 * v16) = operator new(0x104u); /*0x49cdff*/
         strncpy( /*0x49ce20*/
-          *(char **)(*(_DWORD *)(this + 60) + 4 * v16),
-          (const char *)(*(_DWORD *)(v33 + 12) + 260 * (v17 + *((_DWORD *)Block + v16))),
+          *(char **)(*(unsigned int *)((char *)&this->M96 + 90) + 4 * v16),
+          (const char *)(*(unsigned int *)(v33 + 12) + 260 * (v17 + *((unsigned int *)Block + v16))),
           0x103u);
         ++v16; /*0x49ce28*/
         v17 += 3; /*0x49ce29*/
@@ -2047,8 +2044,8 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
       while ( v16 < a7 ); /*0x49ce2e*/
     }
     v18 = a10; /*0x49ce30*/
-    *(_DWORD *)(this + 64) = a7; /*0x49ce34*/
-    *(_DWORD *)(this + 56) = 0; /*0x49ce39*/
+    this->M100 = a7; /*0x49ce34*/
+    *(unsigned int *)((char *)&this->M96 + 74) = 0; /*0x49ce39*/
     if ( a10 ) /*0x49ce40*/
     {
       v19 = byte_89F118; /*0x49ce48*/
@@ -2128,7 +2125,7 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
     }
     else
     {
-      *(_BYTE *)this = 0; /*0x49cf32*/
+      *(unsigned char *)this = 0; /*0x49cf32*/
     }
     v25 = a9; /*0x49cf36*/
     if ( a9 ) /*0x49cf3c*/
@@ -2206,15 +2203,15 @@ AbstractClass * * E4Recv_49CCF0::sub_49CCF0(int a2, int a3, void * Block, int a5
         while ( v31 ); /*0x49d001*/
       }
       *v26 = 0; /*0x49d007*/
-      strcpy((char *)(this + 28), byte_89F118); /*0x49d026*/
+      strcpy((char *)((char *)&this->M108 + 4), byte_89F118); /*0x49d026*/
     }
     else
     {
-      *(_BYTE *)(this + 28) = 0; /*0x49d031*/
+      *(unsigned char *)&this->M28 = 0; /*0x49d031*/
     }
     Debug::Log(); /*0x49d03e*/
   }
-  v32 = *(_BYTE *)(this + 108); /*0x49d04c*/
+  v32 = *(unsigned char *)&this->M108; /*0x49d04c*/
   if ( Block && IDA_HIBYTE(a6) ) /*0x49d059*/
     RA2_OPDEL(Block); /*0x49d05c*/
   return v32; /*0x49cd7d*/
@@ -2238,12 +2235,12 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   int v14; // eax
   char v15; // al
   int IntOverwriteINIClass; // eax
-  _DWORD v17[22]; // [esp+Ch] [ebp-148h] BYREF
-  _BYTE v18[12]; // [esp+64h] [ebp-F0h] BYREF
+  unsigned int v17[22]; // [esp+Ch] [ebp-148h] BYREF
+  unsigned char v18[12]; // [esp+64h] [ebp-F0h] BYREF
   int v19; // [esp+70h] [ebp-E4h]
   void *v20[3]; // [esp+78h] [ebp-DCh] BYREF
-  _DWORD v21[7]; // [esp+84h] [ebp-D0h] BYREF
-  _DWORD v22[6]; // [esp+A0h] [ebp-B4h] BYREF
+  unsigned int v21[7]; // [esp+84h] [ebp-D0h] BYREF
+  unsigned int v22[6]; // [esp+A0h] [ebp-B4h] BYREF
   char v23; // [esp+B8h] [ebp-9Ch]
   char Buffer[32]; // [esp+D0h] [ebp-84h] BYREF
   char v25[100]; // [esp+F0h] [ebp-64h] BYREF
@@ -2251,8 +2248,8 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   v2 = this; /*0x49d399*/
   if ( !*this ) /*0x49d39d*/
     return 0; /*0x49d39d*/
-  v3 = this + 28; /*0x49d3a8*/
-  if ( !*(this + 28) ) /*0x49d3a5*/
+  v3 = &this->M28; /*0x49d3a8*/
+  if ( !*(unsigned int *)&this->u32_70 ) /*0x49d3a5*/
     return 0; /*0x49d3ad*/
   CCFileClass::Construct(v17, g_Str_File_coopsave_ini); /*0x49d3bc*/
   v20[1] = 0; /*0x49d3c8*/
@@ -2267,7 +2264,6 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
     CCFileClass::Reset(v17); /*0x49d418*/
   LABEL_5:
     HashTable::DestroyHashTableINIClass(v20); /*0x49d41d*/
-    v17[0] = (void*)&CCFileClass_vftable; /*0x49d42a*/
     v19 = 0; /*0x49d432*/
     Vector::Clear((int)v18); /*0x49d436*/
     v17[0] = &off_7E1668; /*0x49d43f*/
@@ -2338,16 +2334,15 @@ int E4Recv_49D390::LoadCoopCampaignSave(IUnknown * aP1)
   IntOverwriteINIClass = INIClass::ReadInt_Overwrite(v25, g_INI_Key_CurrentMap, 0); /*0x49d5bd*/
   sprintf(Buffer, "Map%d", IntOverwriteINIClass + 1); /*0x49d5d1*/
   INIClass::GetString( /*0x49d602*/
-    (unsigned __int8 ***)v20,
-    (unsigned __int8 *)v25,
-    (unsigned __int8 *)Buffer,
+    (uint8_t ***)v20,
+    (uint8_t *)v25,
+    (uint8_t *)Buffer,
     g_Str_undefined,
     aP1,
     260);
   if ( strcmp(aP1, g_Str_undefined) ) /*0x49d614*/
     goto LABEL_5; /*0x49d63a*/
   HashTable::DestroyHashTableINIClass(v20); /*0x49d644*/
-  v17[0] = (void*)&CCFileClass_vftable; /*0x49d64d*/
   v19 = 0; /*0x49d655*/
   Vector::Clear((int)v18); /*0x49d659*/
   v17[0] = &off_7E1668; /*0x49d662*/
@@ -2366,7 +2361,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
   int v9; // esi
   int v10; // eax
   char v11; // al
-  unsigned __int8 v12; // al
+  uint8_t v12; // al
   char v13; // al
   char v14; // al
   char *v15; // ebp
@@ -2375,16 +2370,16 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
   int v18; // esi
   int v19; // eax
   char v20; // al
-  unsigned __int8 v21; // al
+  uint8_t v21; // al
   char v22; // al
   int v23; // [esp+Ch] [ebp-1ACh]
   int v24; // [esp+14h] [ebp-1A4h]
   char v25[16]; // [esp+18h] [ebp-1A0h] BYREF
   char Buffer[400]; // [esp+28h] [ebp-190h] BYREF
 
-  if ( !*(this + 108) ) /*0x49d68b*/
+  if ( !*(unsigned int *)&this->u32_1B0 ) /*0x49d68b*/
     return 0; /*0x49d68b*/
-  v3 = *((_DWORD *)this + 17); /*0x49d6a3*/
+  v3 = this->M68; /*0x49d6a3*/
   if ( !byte_89F578 ) /*0x49d6a8*/
     CampaignClass::LoadFromINI((int)&g_DDrawSurfaceManager); /*0x49d6af*/
   v4 = 0; /*0x49d6b4*/
@@ -2394,25 +2389,25 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
   sprintf( /*0x49d70c*/
     Buffer,
     "C0,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d",
-    *((_DWORD *)this + 17),
-    *((_DWORD *)this + 14),
-    *((_DWORD *)this + 26),
-    *((_DWORD *)this + 18),
-    *((_DWORD *)this + 20),
-    *((_DWORD *)this + 22),
-    *((_DWORD *)this + 24),
-    *((_DWORD *)this + 19),
-    *((_DWORD *)this + 21),
-    *((_DWORD *)this + 23),
-    *((_DWORD *)this + 25));
-  if ( *((int *)this + 16) > 0 ) /*0x49d719*/
+    this->M68,
+    this->M56,
+    this->q068,
+    this->M72,
+    this->M80,
+    this->M88,
+    this->q060,
+    this->M76,
+    this->M84,
+    this->M92,
+    this->M64);
+  if ( this->q040 > 0 ) /*0x49d719*/
   {
     v23 = 0; /*0x49d71f*/
     do /*0x49d7ae*/
     {
       v23 = v23; /*0x49d723*/
       v6 = 0; /*0x49d727*/
-      while ( _strcmpi((const void *)(v23 + v24->q00C), *(const void **)(*((_DWORD *)this + 15) + 4 * v4)) ) /*0x49d748*/
+      while ( _strcmpi((const void *)(v23 + v24->q00C), *(const void **)(this->M60 + 4 * v4)) ) /*0x49d748*/
       {
         ++v6; /*0x49d74a*/
         v23 += 260; /*0x49d74b*/
@@ -2427,7 +2422,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
       ++v4; /*0x49d79b*/
       v23 += 780; /*0x49d7aa*/
     }
-    while ( v4 < *((_DWORD *)this + 16) ); /*0x49d7ae*/
+    while ( v4 < this->q040 ); /*0x49d7ae*/
   }
   strcat(Buffer, a1_0); /*0x49d7d9*/
   v7 = 0; /*0x49d7e7*/
@@ -2471,7 +2466,7 @@ AbstractClass * * E4Recv_49D680::SerializeCampaignOptions()
   }
   g_IsWindowed[v7] = 0; /*0x49d883*/
   strcat(Buffer, g_IsWindowed); /*0x49d8a5*/
-  v15 = this + 28; /*0x49d8b0*/
+  v15 = ((char *)&this->u32_8 + 20); /*0x49d8b0*/
   strcat(Buffer, Delimiter); /*0x49d8d4*/
   v16 = *v15; /*0x49d8d6*/
   for ( i = 0; v16; ++v15 )
@@ -2533,7 +2528,7 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
 
   if ( (a2 & 2) != 0 ) /*0x49e7cc*/
   {
-    v3 = *((_DWORD *)this - 1); /*0x49e7d2*/
+    v3 = *((unsigned int *)this - 1); /*0x49e7d2*/
     v4 = this - 4; /*0x49e7d5*/
     v14 = this - 4; /*0x49e7d8*/
     v5 = 19 * v3; /*0x49e7df*/
@@ -2548,23 +2543,21 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
         DeleteAndZero(v7 + 7); /*0x49e7fc*/
         DeleteAndZero(v7 + 6); /*0x49e804*/
         v9 = *v7; /*0x49e809*/
-        *(v7 - 1) = (void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49e80b*/
-        if ( v9 && *((_BYTE *)v7 + 9) ) /*0x49e812*/
+        if ( v9 && *((unsigned char *)v7 + 9) ) /*0x49e812*/
         {
           RA2_OPDEL(v9); /*0x49e818*/
           *v7 = 0; /*0x49e820*/
         }
-        *((_BYTE *)v7 + 9) = 0; /*0x49e822*/
+        *((unsigned char *)v7 + 9) = 0; /*0x49e822*/
         v7[1] = 0; /*0x49e825*/
         v10 = *(v7 - 6); /*0x49e828*/
-        *(v7 - 7) = (void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49e82b*/
-        if ( v10 && *((_BYTE *)v7 - 15) ) /*0x49e832*/
+        if ( v10 && *((unsigned char *)v7 - 15) ) /*0x49e832*/
         {
           RA2_OPDEL(v10); /*0x49e838*/
           *(v7 - 6) = 0; /*0x49e840*/
         }
         --v8; /*0x49e843*/
-        *((_BYTE *)v7 - 15) = 0; /*0x49e844*/
+        *((unsigned char *)v7 - 15) = 0; /*0x49e844*/
         *(v7 - 5) = 0; /*0x49e847*/
       }
       while ( v8 ); /*0x49e84a*/
@@ -2579,7 +2572,6 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
     DeleteAndZero((void **)&this->vtable28); /*0x49e86d*/
     DeleteAndZero((void **)&this->vtable27); /*0x49e875*/
     v12 = (void *)this->fallRate; /*0x49e87a*/
-    this->owningHouseIndex = (void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49e886*/
     if ( v12 && *(&this->abstractFlags3) ) /*0x49e88b*/
     {
       RA2_OPDEL(v12); /*0x49e891*/
@@ -2588,7 +2580,6 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
     *(&this->abstractFlags3) = 0; /*0x49e89c*/
     this->nextObject = 0; /*0x49e89f*/
     v13 = (void *)this->abstractFlags; /*0x49e8a2*/
-    this->uniqueId = (void*)&VectorClass_DynamicVectorClass_char_____vftable; /*0x49e8a5*/
     if ( v13 && *(&this->vtable39) ) /*0x49e8ac*/
     {
       RA2_OPDEL(v13); /*0x49e8b2*/
@@ -2607,24 +2598,24 @@ namespace gamemd {
 int sub_491100(ObjectClass * aP0, char a2, int a3, ObjectClass * aP3, short a5, char a6, short a7)
 {
   int result; // eax
-  _DWORD *v9; // ecx
-  _WORD *v10; // esi
+  unsigned int *v9; // ecx
+  unsigned short *v10; // esi
   int v11; // edi
   int v12; // eax
   int v13; // edx
-  __int16 v14; // ax
-  unsigned __int8 v15; // dl
+  int16_t v14; // ax
+  uint8_t v15; // dl
   int i; // [esp+4h] [ebp-Ch]
   int v18; // [esp+Ch] [ebp-4h]
 
   result = 0; /*0x491107*/
   for ( i = 0; result < dword_89ED08; i = result ) /*0x491118*/
   {
-    v9 = (_DWORD *)*((_DWORD *)dword_89ECFC + result); /*0x491127*/
+    v9 = (unsigned int *)*((unsigned int *)dword_89ECFC + result); /*0x491127*/
     v18 = (int)v9; /*0x49112a*/
     if ( v9[1] == 2 ) /*0x491132*/
     {
-      v10 = (_WORD *)v9[92]; /*0x491138*/
+      v10 = (unsigned short *)v9[92]; /*0x491138*/
       v11 = 256; /*0x49113e*/
       do /*0x4911ba*/
       {
@@ -2632,16 +2623,16 @@ int sub_491100(ObjectClass * aP0, char a2, int a3, ObjectClass * aP3, short a5, 
         IDA_HIWORD(v12) = IDA_HIWORD(a3); /*0x491149*/
         IDA_HIWORD(v13) = IDA_HIWORD(a3); /*0x49114b*/
         v14 = *v10++ >> a1; /*0x49114d*/
-        v15 = (unsigned __int8)((unsigned __int16)a3 >> a5) << a4; /*0x491165*/
-        IDA_LOWORD(a3) = (unsigned __int8)((unsigned __int8)((unsigned __int8)((unsigned __int16)a3 >> a7) << a6) >> g_BitMask_Red); /*0x491183*/
-        IDA_LOWORD(v12) = (unsigned __int8)((unsigned __int8)((_BYTE)v14 << a2) >> g_BitShift_Green_0); /*0x491197*/
-        IDA_LOWORD(v13) = (unsigned __int8)(v15 >> g_BitMask_Blue); /*0x4911ad*/
+        v15 = (uint8_t)((uint16_t)a3 >> a5) << a4; /*0x491165*/
+        IDA_LOWORD(a3) = (uint8_t)((uint8_t)((uint8_t)((uint16_t)a3 >> a7) << a6) >> g_BitMask_Red); /*0x491183*/
+        IDA_LOWORD(v12) = (uint8_t)((uint8_t)((unsigned char)v14 << a2) >> g_BitShift_Green_0); /*0x491197*/
+        IDA_LOWORD(v13) = (uint8_t)(v15 >> g_BitMask_Blue); /*0x4911ad*/
         a3 = (v13 << g_BitMask_Green) | (v12 << g_BitShift_Red) | (a3 << g_BitShift_Blue); /*0x4911b3*/
         --v11; /*0x4911b5*/
         *(v10 - 1) = a3; /*0x4911b6*/
       }
       while ( v11 ); /*0x4911ba*/
-      v9[96] = (unsigned __int16)g_DDraw_Gray127; /*0x4911ca*/
+      v9[96] = (uint16_t)g_DDraw_Gray127; /*0x4911ca*/
       v9[97] = IDA_HIWORD(g_DDraw_Gray127); /*0x4911d7*/
       COMClass::RegisterAll(v9); /*0x4911df*/
       ConvertClass::InitTables(v18); /*0x4911e6*/
@@ -2659,19 +2650,19 @@ char E4Recv_4912B0::sub_4912B0(int a2, unsigned char * a3, int a4, int a5, int a
 {
   int v9; // ebx
   int v10; // ecx
-  _WORD *v11; // edi
+  unsigned short *v11; // edi
   int v13; // eax
 
   v9 = this->q004; /*0x4912c5*/
   v10 = a4 + 1; /*0x4912cb*/
-  v11 = (_WORD *)(a2 - 2); /*0x4912cf*/
+  v11 = (unsigned short *)(a2 - 2); /*0x4912cf*/
   v13 = 0; /*0x4912d5*/
   while ( --v10 ) /*0x4912d7*/
   {
     ++v11; /*0x4912da*/
     IDA_LOBYTE(v13) = *a3++; /*0x4912dd*/
-    if ( (_BYTE)v13 ) /*0x4912e2*/
-      *v11 = *(_WORD *)(v9 + 2 * v13); /*0x4912e8*/
+    if ( (unsigned char)v13 ) /*0x4912e2*/
+      *v11 = *(unsigned short *)(v9 + 2 * v13); /*0x4912e8*/
   }
   return v13; /*0x4912ed*/
 }
@@ -2681,7 +2672,7 @@ char E4Recv_4912B0::sub_4912B0(int a2, unsigned char * a3, int a4, int a5, int a
 namespace gamemd {
 int E4Recv_491300::sub_491300(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49132a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x49132a*/
            this,
            a2,
            a3,
@@ -2698,7 +2689,7 @@ int E4Recv_491300::sub_491300(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_491330::sub_491330(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49135a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x49135a*/
            this,
            a2,
            a3,
@@ -2715,7 +2706,7 @@ int E4Recv_491330::sub_491330(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_491360::sub_491360(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49138a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x49138a*/
            this,
            a2,
            a3,
@@ -2744,7 +2735,7 @@ char E4Recv_491670::sub_491670(unsigned char * a1, char * a2, int a4, int a5, in
       result = *a2++; /*0x491685*/
       if ( result ) /*0x49168a*/
       {
-        result = *(_BYTE *)(*(this + 1) + (unsigned __int8)*a1); /*0x491693*/
+        result = *(unsigned char *)(this->M4 + (uint8_t)*a1); /*0x491693*/
         *a1 = result; /*0x491696*/
       }
       ++a1; /*0x491698*/
@@ -2760,7 +2751,7 @@ char E4Recv_491670::sub_491670(unsigned char * a1, char * a2, int a4, int a5, in
 namespace gamemd {
 int E4Recv_4916B0::sub_4916B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4916da*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4916da*/
            this,
            a2,
            a3,
@@ -2777,7 +2768,7 @@ int E4Recv_4916B0::sub_4916B0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4916E0::sub_4916E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49170a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49170a*/
            this,
            a2,
            a3,
@@ -2794,7 +2785,7 @@ int E4Recv_4916E0::sub_4916E0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_491710::sub_491710(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49173a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49173a*/
            this,
            a2,
            a3,
@@ -2811,7 +2802,7 @@ int E4Recv_491710::sub_491710(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 unsigned char E4Recv_491740::sub_491740(unsigned char * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  unsigned __int8 result; // al
+  uint8_t result; // al
   int v12; // edi
 
   result = a4; /*0x491740*/
@@ -2823,7 +2814,7 @@ unsigned char E4Recv_491740::sub_491740(unsigned char * a1, unsigned char * a2, 
       result = *a2++; /*0x491756*/
       if ( result ) /*0x49175f*/
       {
-        result = *(_BYTE *)(*(unsigned __int8 *)(*(this + 1) + result) + *(this + 2)); /*0x491776*/
+        result = *(unsigned char *)(*(uint8_t *)(this->M4 + result) + this->M8); /*0x491776*/
         *a1 = result; /*0x491779*/
       }
       ++a1; /*0x49177b*/
@@ -2839,7 +2830,7 @@ unsigned char E4Recv_491740::sub_491740(unsigned char * a1, unsigned char * a2, 
 namespace gamemd {
 int E4Recv_491790::sub_491790(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4917ba*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4917ba*/
            this,
            a2,
            a3,
@@ -2856,7 +2847,7 @@ int E4Recv_491790::sub_491790(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4917C0::sub_4917C0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4917ea*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4917ea*/
            this,
            a2,
            a3,
@@ -2873,7 +2864,7 @@ int E4Recv_4917C0::sub_4917C0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4917F0::sub_4917F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49181a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49181a*/
            this,
            a2,
            a3,
@@ -2893,7 +2884,7 @@ int E4Recv_491820::sub_491820(int a2, unsigned char * a3, int a4, int a5, int a6
   int result; // eax
   int v13; // esi
   int v16; // edi
-  unsigned __int8 v17; // al
+  uint8_t v17; // al
 
   result = a5; /*0x491820*/
   v13 = a2; /*0x49182a*/
@@ -2924,14 +2915,14 @@ int E4Recv_491820::sub_491820(int a2, unsigned char * a3, int a4, int a5, int a6
       result = this->q004; /*0x491883*/
       ++v13; /*0x49188c*/
       --v16; /*0x49188d*/
-      *(_BYTE *)(v13 - 1) = *(_BYTE *)(result + v17); /*0x491891*/
+      *(unsigned char *)(v13 - 1) = *(unsigned char *)(result + v17); /*0x491891*/
     }
     else
     {
       IDA_LOBYTE(result) = *a3++; /*0x491869*/
-      result = (unsigned __int8)result; /*0x491874*/
-      v16 -= (unsigned __int8)result; /*0x491879*/
-      v13 += (unsigned __int8)result; /*0x49187b*/
+      result = (uint8_t)result; /*0x491874*/
+      v16 -= (uint8_t)result; /*0x491879*/
+      v13 += (uint8_t)result; /*0x49187b*/
     }
   }
   return result; /*0x491898*/
@@ -2965,10 +2956,10 @@ char E4Recv_4918E0::sub_4918E0(int arg0, unsigned char * a2, int a4, int a5, int
   int v14; // ecx
   int v15; // eax
   int v17; // edi
-  unsigned __int8 v18; // al
+  uint8_t v18; // al
 
   v13 = arg0; /*0x4918e9*/
-  v14 = **(_DWORD **)(this + 4); /*0x4918f1*/
+  v14 = **(unsigned int *)((char *)&this->M8 + 8); /*0x4918f1*/
   v15 = a5; /*0x4918f3*/
   if ( a5 <= 0 ) /*0x4918f9*/
   {
@@ -2995,14 +2986,14 @@ char E4Recv_4918E0::sub_4918E0(int arg0, unsigned char * a2, int a4, int a5, int
     {
       ++v13; /*0x491950*/
       --v17; /*0x491951*/
-      IDA_LOBYTE(v15) = *(_BYTE *)(*(unsigned __int8 *)(v18 + v14) + *(_DWORD *)(this + 8)); /*0x491958*/
-      *(_BYTE *)(v13 - 1) = v15; /*0x49195b*/
+      IDA_LOBYTE(v15) = *(unsigned char *)(*(uint8_t *)(v18 + v14) + *(unsigned int *)((char *)&this->M8 + 24)); /*0x491958*/
+      *(unsigned char *)(v13 - 1) = v15; /*0x49195b*/
     }
     else
     {
       IDA_LOBYTE(v15) = *a2++; /*0x49192f*/
-      v17 -= (unsigned __int8)v15; /*0x49193f*/
-      v13 += (unsigned __int8)v15; /*0x491941*/
+      v17 -= (uint8_t)v15; /*0x49193f*/
+      v13 += (uint8_t)v15; /*0x491941*/
     }
   }
   return v15; /*0x491962*/
@@ -3013,7 +3004,7 @@ char E4Recv_4918E0::sub_4918E0(int arg0, unsigned char * a2, int a4, int a5, int
 namespace gamemd {
 int E4Recv_491970::sub_491970(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x4919a7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4919a7*/
            this,
            a2,
            a3,
@@ -3033,7 +3024,7 @@ namespace gamemd {
 int E4Recv_4919B0::sub_4919B0(unsigned char * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
   int result; // eax
-  unsigned __int8 *v13; // esi
+  uint8_t *v13; // esi
   int v16; // edi
   int v18; // ecx
 
@@ -3061,17 +3052,17 @@ int E4Recv_4919B0::sub_4919B0(unsigned char * a1, unsigned char * a2, int a4, in
   {
     if ( *a2++ ) /*0x4919ee*/
     {
-      result = *(this + 1); /*0x491a0b*/
+      result = this->M4; /*0x491a0b*/
       v18 = *v13; /*0x491a10*/
       --v16; /*0x491a12*/
-      *v13++ = *(_BYTE *)(result + v18); /*0x491a17*/
+      *v13++ = *(unsigned char *)(result + v18); /*0x491a17*/
     }
     else
     {
       IDA_LOBYTE(result) = *a2++; /*0x4919f5*/
-      result = (unsigned __int8)result; /*0x491a00*/
-      v16 -= (unsigned __int8)result; /*0x491a05*/
-      v13 += (unsigned __int8)result; /*0x491a07*/
+      result = (uint8_t)result; /*0x491a00*/
+      v16 -= (uint8_t)result; /*0x491a05*/
+      v13 += (uint8_t)result; /*0x491a07*/
     }
   }
   return result; /*0x491a1e*/
@@ -3082,7 +3073,7 @@ int E4Recv_4919B0::sub_4919B0(unsigned char * a1, unsigned char * a2, int a4, in
 namespace gamemd {
 int E4Recv_491A30::sub_491A30(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x491a67*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x491a67*/
            this,
            a2,
            a3,
@@ -3104,7 +3095,7 @@ char E4Recv_491A70::sub_491A70(int arg0, unsigned char * a2, int a4, int a5, int
   int v11; // eax
   int v13; // esi
   int v16; // edi
-  unsigned __int8 v17; // al
+  uint8_t v17; // al
 
   v11 = a5; /*0x491a70*/
   v13 = arg0; /*0x491a7a*/
@@ -3133,14 +3124,14 @@ char E4Recv_491A70::sub_491A70(int arg0, unsigned char * a2, int a4, int a5, int
     {
       ++v13; /*0x491adf*/
       --v16; /*0x491ae0*/
-      IDA_LOBYTE(v11) = *(_BYTE *)(*(unsigned __int8 *)(*(this + 1) + v17) + *(this + 2)); /*0x491ae7*/
-      *(_BYTE *)(v13 - 1) = v11; /*0x491aea*/
+      IDA_LOBYTE(v11) = *(unsigned char *)(*(uint8_t *)(this->M4 + v17) + this->M8); /*0x491ae7*/
+      *(unsigned char *)(v13 - 1) = v11; /*0x491aea*/
     }
     else
     {
       IDA_LOBYTE(v11) = *a2++; /*0x491aba*/
-      v16 -= (unsigned __int8)v11; /*0x491aca*/
-      v13 += (unsigned __int8)v11; /*0x491acc*/
+      v16 -= (uint8_t)v11; /*0x491aca*/
+      v13 += (uint8_t)v11; /*0x491acc*/
     }
   }
   return v11; /*0x491af2*/
@@ -3151,7 +3142,7 @@ char E4Recv_491A70::sub_491A70(int arg0, unsigned char * a2, int a4, int a5, int
 namespace gamemd {
 int E4Recv_491B00::sub_491B00(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x491b37*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x491b37*/
            this,
            a2,
            a3,
@@ -3170,7 +3161,7 @@ int E4Recv_491B00::sub_491B00(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_491C10::sub_491C10(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x491c47*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x491c47*/
            this,
            a2,
            a3,
@@ -3208,7 +3199,7 @@ int E4Recv_491D50::sub_491D50(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_491E60::sub_491E60(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x491e97*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x491e97*/
            this,
            a2,
            a3,
@@ -3227,7 +3218,7 @@ int E4Recv_491E60::sub_491E60(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_491F90::sub_491F90(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x491fc7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x491fc7*/
            this,
            a2,
            a3,
@@ -3246,7 +3237,7 @@ int E4Recv_491F90::sub_491F90(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4920C0::sub_4920C0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x4920f7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4920f7*/
            this,
            a2,
            a3,
@@ -3265,7 +3256,7 @@ int E4Recv_4920C0::sub_4920C0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492210::sub_492210(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x492247*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492247*/
            this,
            a2,
            a3,
@@ -3284,7 +3275,7 @@ int E4Recv_492210::sub_492210(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492330::sub_492330(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x492367*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492367*/
            this,
            a2,
            a3,
@@ -3303,7 +3294,7 @@ int E4Recv_492330::sub_492330(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492480::sub_492480(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x4924b7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4924b7*/
            this,
            a2,
            a3,
@@ -3323,7 +3314,7 @@ namespace gamemd {
 void E4Recv_4924C0::sub_4924C0(int a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   int v9; // esi
-  unsigned __int8 v12; // [esp+14h] [ebp+Ch]
+  uint8_t v12; // [esp+14h] [ebp+Ch]
 
   v9 = a4; /*0x4924c1*/
   if ( a4 > 0 ) /*0x4924ca*/
@@ -3333,7 +3324,7 @@ void E4Recv_4924C0::sub_4924C0(int a2, unsigned char * a3, int a4, int a5, int a
       v12 = *a3++; /*0x4924da*/
       a2 += 2; /*0x4924e3*/
       --v9; /*0x4924ec*/
-      *(_WORD *)(a2 - 2) = *(_WORD *)(this->q004 + 2 * v12); /*0x4924f1*/
+      *(unsigned short *)(a2 - 2) = *(unsigned short *)(this->q004 + 2 * v12); /*0x4924f1*/
     }
     while ( v9 ); /*0x4924f5*/
   }
@@ -3344,7 +3335,7 @@ void E4Recv_4924C0::sub_4924C0(int a2, unsigned char * a3, int a4, int a5, int a
 namespace gamemd {
 int E4Recv_492500::sub_492500(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49252a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x49252a*/
            this,
            a2,
            a3,
@@ -3361,7 +3352,7 @@ int E4Recv_492500::sub_492500(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492530::sub_492530(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49255a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x49255a*/
            this,
            a2,
            a3,
@@ -3378,7 +3369,7 @@ int E4Recv_492530::sub_492530(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492560::sub_492560(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49258a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x49258a*/
            this,
            a2,
            a3,
@@ -3396,10 +3387,10 @@ namespace gamemd {
 char E4Recv_492590::sub_492590(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9)
 {
   int v9; // edi
-  __int16 v10; // ax
+  int16_t v10; // ax
   int v13; // ebp
 
-  v9 = **(_DWORD **)(this + 4); /*0x492594*/
+  v9 = **(unsigned int *)((char *)&this->M8 + 8); /*0x492594*/
   IDA_LOBYTE(v10) = a4; /*0x492596*/
   if ( a4 > 0 ) /*0x49259c*/
   {
@@ -3407,9 +3398,9 @@ char E4Recv_492590::sub_492590(unsigned short * a1, unsigned char * a2, int a4, 
     do /*0x4925d2*/
     {
       IDA_LOBYTE(v10) = *a2++; /*0x4925ab*/
-      if ( (_BYTE)v10 ) /*0x4925b4*/
+      if ( (unsigned char)v10 ) /*0x4925b4*/
       {
-        v10 = *(_WORD *)(*(_DWORD *)(this + 8) + 2 * *(unsigned __int8 *)((unsigned __int8)v10 + v9)); /*0x4925c7*/
+        v10 = *(unsigned short *)(*(unsigned int *)((char *)&this->M8 + 24) + 2 * *(uint8_t *)((uint8_t)v10 + v9)); /*0x4925c7*/
         *a1 = v10; /*0x4925cb*/
       }
       ++a1; /*0x4925ce*/
@@ -3425,7 +3416,7 @@ char E4Recv_492590::sub_492590(unsigned short * a1, unsigned char * a2, int a4, 
 namespace gamemd {
 int E4Recv_4925E0::sub_4925E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49260a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49260a*/
            this,
            a2,
            a3,
@@ -3442,7 +3433,7 @@ int E4Recv_4925E0::sub_4925E0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492610::sub_492610(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49263a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49263a*/
            this,
            a2,
            a3,
@@ -3459,7 +3450,7 @@ int E4Recv_492610::sub_492610(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492640::sub_492640(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49266a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49266a*/
            this,
            a2,
            a3,
@@ -3476,7 +3467,7 @@ int E4Recv_492640::sub_492640(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 char E4Recv_492670::sub_492670(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  __int16 v9; // ax
+  int16_t v9; // ax
   int v12; // edi
 
   IDA_LOBYTE(v9) = a4; /*0x492670*/
@@ -3486,7 +3477,7 @@ char E4Recv_492670::sub_492670(unsigned short * a2, unsigned char * a3, int a4, 
     do /*0x49269c*/
     {
       IDA_LOBYTE(v9) = *a3++; /*0x492684*/
-      if ( (_BYTE)v9 ) /*0x492689*/
+      if ( (unsigned char)v9 ) /*0x492689*/
       {
         v9 = this->u32_8 & (*v9 >> 1); /*0x492691*/
         *v9 = v9; /*0x492695*/
@@ -3504,7 +3495,7 @@ char E4Recv_492670::sub_492670(unsigned short * a2, unsigned char * a3, int a4, 
 namespace gamemd {
 int E4Recv_4926B0::sub_4926B0(int v9, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4926da*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x4926da*/
            this,
            v9,
            a3,
@@ -3521,7 +3512,7 @@ int E4Recv_4926B0::sub_4926B0(int v9, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4926E0::sub_4926E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49270a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x49270a*/
            this,
            a2,
            a3,
@@ -3538,7 +3529,7 @@ int E4Recv_4926E0::sub_4926E0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492710::sub_492710(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49273a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x49273a*/
            this,
            a2,
            a3,
@@ -3558,7 +3549,7 @@ char sub_492740(int a1, int a2, unsigned short * a3, unsigned char * a4, int a5,
   int v10; // eax
   int v13; // ebx
   int v14; // eax
-  __int16 v15; // bp
+  int16_t v15; // bp
 
   IDA_LOBYTE(v10) = a5; /*0x492740*/
   if ( a5 > 0 ) /*0x492746*/
@@ -3568,13 +3559,13 @@ char sub_492740(int a1, int a2, unsigned short * a3, unsigned char * a4, int a5,
     {
       IDA_LOBYTE(v10) = *a4++; /*0x492756*/
       v10 = v10; /*0x49275b*/
-      if ( (_BYTE)v10 ) /*0x49275f*/
+      if ( (unsigned char)v10 ) /*0x49275f*/
       {
-        IDA_LOWORD(a2) = *(_WORD *)(a1 + 8); /*0x492768*/
-        v14 = (unsigned __int16)*a3; /*0x492776*/
-        IDA_LOWORD(v14) = (unsigned __int16)v14 >> 2; /*0x492779*/
+        IDA_LOWORD(a2) = *(unsigned short *)(a1 + 8); /*0x492768*/
+        v14 = (uint16_t)*a3; /*0x492776*/
+        IDA_LOWORD(v14) = (uint16_t)v14 >> 2; /*0x492779*/
         v10 = a2 & v14; /*0x492781*/
-        v15 = a2 & (*(_WORD *)(*(_DWORD *)(a1 + 4) + 2 * v10) >> 2); /*0x492783*/
+        v15 = a2 & (*(unsigned short *)(*(unsigned int *)(a1 + 4) + 2 * v10) >> 2); /*0x492783*/
         a2 = 3 * v10; /*0x492785*/
         *a3 = 3 * v10 + v15; /*0x49278a*/
       }
@@ -3591,7 +3582,7 @@ char sub_492740(int a1, int a2, unsigned short * a3, unsigned char * a4, int a5,
 namespace gamemd {
 int E4Recv_4927A0::sub_4927A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4927ca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x4927ca*/
            this,
            a2,
            a3,
@@ -3608,7 +3599,7 @@ int E4Recv_4927A0::sub_4927A0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4927D0::sub_4927D0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4927fa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x4927fa*/
            this,
            a2,
            a3,
@@ -3625,7 +3616,7 @@ int E4Recv_4927D0::sub_4927D0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492800::sub_492800(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49282a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x49282a*/
            this,
            a2,
            a3,
@@ -3646,15 +3637,15 @@ unsigned int E4Recv_492830::sub_492830(unsigned short * a2, unsigned char * a3, 
   unsigned int result; // eax
   int v14; // [esp+10h] [ebp-4h]
 
-  v14 = *(_DWORD *)(this + 4); /*0x49284b*/
-  v11 = *(unsigned __int16 *)(this + 8); /*0x492854*/
+  v14 = *(unsigned int *)((char *)&this->u32_8 + 8); /*0x49284b*/
+  v11 = *(unsigned int *)((char *)&this->u32_8 + 24); /*0x492854*/
   do /*0x49287f*/
   {
-    result = (unsigned __int8)*a3; /*0x49285c*/
+    result = (uint8_t)*a3; /*0x49285c*/
     if ( *a3 ) /*0x49285c*/
     {
-      IDA_LOWORD(result) = *(_WORD *)(v14 + 2 * result); /*0x492862*/
-      result = (v11 & ((unsigned __int16)*result >> 1)) + (v11 & (result >> 1)); /*0x492873*/
+      IDA_LOWORD(result) = *(unsigned short *)(v14 + 2 * result); /*0x492862*/
+      result = (v11 & ((uint16_t)*result >> 1)) + (v11 & (result >> 1)); /*0x492873*/
       *result = result; /*0x492875*/
     }
     ++a3; /*0x492878*/
@@ -3669,7 +3660,7 @@ unsigned int E4Recv_492830::sub_492830(unsigned short * a2, unsigned char * a3, 
 namespace gamemd {
 int E4Recv_492890::sub_492890(int result, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4928ba*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x4928ba*/
            this,
            result,
            a3,
@@ -3686,7 +3677,7 @@ int E4Recv_492890::sub_492890(int result, int a3, int a4, int a5, int a6, int a7
 namespace gamemd {
 int E4Recv_4928C0::sub_4928C0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4928ea*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x4928ea*/
            this,
            a2,
            a3,
@@ -3703,7 +3694,7 @@ int E4Recv_4928C0::sub_4928C0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4928F0::sub_4928F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49291a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x49291a*/
            this,
            a2,
            a3,
@@ -3720,7 +3711,7 @@ int E4Recv_4928F0::sub_4928F0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 char E4Recv_492920::sub_492920(unsigned short * a2, unsigned char * a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  __int16 v9; // ax
+  int16_t v9; // ax
   int v12; // ebx
 
   IDA_LOBYTE(v9) = a4; /*0x492920*/
@@ -3730,10 +3721,10 @@ char E4Recv_492920::sub_492920(unsigned short * a2, unsigned char * a3, int a4, 
     do /*0x492971*/
     {
       IDA_LOBYTE(v9) = *a3++; /*0x492936*/
-      if ( (_BYTE)v9 ) /*0x49293f*/
+      if ( (unsigned char)v9 ) /*0x49293f*/
       {
         v9 = (this->u32_8 & (*v9 >> 2)) /*0x492968*/
-           + 3 * (this->u32_8 & (*(_WORD *)(this->q004 + 2 * (unsigned __int8)v9) >> 2));
+           + 3 * (this->u32_8 & (*(unsigned short *)(this->q004 + 2 * (uint8_t)v9) >> 2));
         *v9 = v9; /*0x49296a*/
       }
       ++v9; /*0x49296d*/
@@ -3749,7 +3740,7 @@ char E4Recv_492920::sub_492920(unsigned short * a2, unsigned char * a3, int a4, 
 namespace gamemd {
 int E4Recv_492980::sub_492980(int v9, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4929aa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x4929aa*/
            this,
            v9,
            a3,
@@ -3766,7 +3757,7 @@ int E4Recv_492980::sub_492980(int v9, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4929B0::sub_4929B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4929da*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x4929da*/
            this,
            a2,
            a3,
@@ -3783,7 +3774,7 @@ int E4Recv_4929B0::sub_4929B0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4929E0::sub_4929E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x492a0a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x492a0a*/
            this,
            a2,
            a3,
@@ -3800,10 +3791,10 @@ int E4Recv_4929E0::sub_4929E0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 unsigned short * E4Recv_492A10::sub_492A10(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-  unsigned __int16 *result; // eax
+  uint16_t *result; // eax
   int v12; // ebp
-  _DWORD *v13; // edx
-  unsigned __int16 v14; // bx
+  unsigned int *v13; // edx
+  uint16_t v14; // bx
 
   result = a5; /*0x492a14*/
   if ( a4 > 0 ) /*0x492a1a*/
@@ -3815,13 +3806,13 @@ unsigned short * E4Recv_492A10::sub_492A10(unsigned short * a1, unsigned char * 
       v14 = *result++; /*0x492a32*/
       if ( argC < v14 ) /*0x492a3c*/
       {
-        *a1 = *(_WORD *)(*(this + 1) + 2 * *a2); /*0x492a49*/
+        *a1 = *(unsigned short *)(this->M4 + 2 * *a2); /*0x492a49*/
         v13 = g_ZBufferDescriptor; /*0x492a4c*/
       }
       ++a2; /*0x492a55*/
       ++a1; /*0x492a56*/
       if ( (unsigned int)result >= v13[7] ) /*0x492a5b*/
-        result = (unsigned __int16 *)((char *)result - v13[8]); /*0x492a5d*/
+        result = (uint16_t *)((char *)result - v13[8]); /*0x492a5d*/
       --v12; /*0x492a60*/
     }
     while ( v12 ); /*0x492a61*/
@@ -3834,7 +3825,7 @@ unsigned short * E4Recv_492A10::sub_492A10(unsigned short * a1, unsigned char * 
 namespace gamemd {
 int E4Recv_492A70::sub_492A70(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492a9a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492a9a*/
            this,
            a2,
            a3,
@@ -3851,7 +3842,7 @@ int E4Recv_492A70::sub_492A70(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492AA0::sub_492AA0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492aca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492aca*/
            this,
            a2,
            a3,
@@ -3868,7 +3859,7 @@ int E4Recv_492AA0::sub_492AA0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492AD0::sub_492AD0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492afa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492afa*/
            this,
            a2,
            a3,
@@ -3885,10 +3876,10 @@ int E4Recv_492AD0::sub_492AD0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 unsigned short * E4Recv_492B00::sub_492B00(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, int a7, int a8, int a9)
 {
-  unsigned __int16 *result; // eax
-  _DWORD *v11; // esi
+  uint16_t *result; // eax
+  unsigned int *v11; // esi
   int v13; // ebp
-  unsigned __int16 v14; // dx
+  uint16_t v14; // dx
 
   result = a6; /*0x492b04*/
   if ( a4 > 0 ) /*0x492b0a*/
@@ -3900,13 +3891,13 @@ unsigned short * E4Recv_492B00::sub_492B00(unsigned short * a2, unsigned char * 
       v14 = *result++; /*0x492b22*/
       if ( a5 < v14 && *a3 ) /*0x492b32*/
       {
-        *a2 = *(_WORD *)(this->q004 + 2 * (unsigned __int8)*a3); /*0x492b49*/
+        *a2 = *(unsigned short *)(this->q004 + 2 * (uint8_t)*a3); /*0x492b49*/
         v11 = g_ZBufferDescriptor; /*0x492b4c*/
       }
       ++a3; /*0x492b55*/
       ++a2; /*0x492b56*/
       if ( (unsigned int)result >= v11[7] ) /*0x492b5b*/
-        result = (unsigned __int16 *)((char *)result - v11[8]); /*0x492b5d*/
+        result = (uint16_t *)((char *)result - v11[8]); /*0x492b5d*/
       --a4; /*0x492b60*/
     }
     while ( a4 ); /*0x492b61*/
@@ -3919,7 +3910,7 @@ unsigned short * E4Recv_492B00::sub_492B00(unsigned short * a2, unsigned char * 
 namespace gamemd {
 int E4Recv_492B70::sub_492B70(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x492b9a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x492b9a*/
            this,
            a2,
            a3,
@@ -3936,7 +3927,7 @@ int E4Recv_492B70::sub_492B70(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492BA0::sub_492BA0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x492bca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x492bca*/
            this,
            a2,
            a3,
@@ -3953,7 +3944,7 @@ int E4Recv_492BA0::sub_492BA0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492BD0::sub_492BD0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x492bfa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x492bfa*/
            this,
            a2,
            a3,
@@ -3970,14 +3961,14 @@ int E4Recv_492BD0::sub_492BD0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 unsigned short * E4Recv_492C00::sub_492C00(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-  unsigned __int16 *result; // eax
-  _DWORD *v13; // edi
-  unsigned __int16 v14; // cx
+  uint16_t *result; // eax
+  unsigned int *v13; // edi
+  uint16_t v14; // cx
   int v15; // [esp+4h] [ebp-4h]
   int v16; // [esp+1Ch] [ebp+14h]
 
   result = a5; /*0x492c04*/
-  v15 = **(_DWORD **)(this + 4); /*0x492c0d*/
+  v15 = **(unsigned int *)((char *)&this->M8 + 8); /*0x492c0d*/
   if ( a4 > 0 ) /*0x492c17*/
   {
     v13 = g_ZBufferDescriptor; /*0x492c24*/
@@ -3987,13 +3978,13 @@ unsigned short * E4Recv_492C00::sub_492C00(unsigned short * a1, unsigned char * 
       v14 = *result++; /*0x492c34*/
       if ( argC < v14 && *a2 ) /*0x492c42*/
       {
-        *a1 = *(_WORD *)(*(_DWORD *)(this + 8) + 2 * *(unsigned __int8 *)((unsigned __int8)*a2 + v15)); /*0x492c62*/
+        *a1 = *(unsigned short *)(*(unsigned int *)((char *)&this->M8 + 24) + 2 * *(uint8_t *)((uint8_t)*a2 + v15)); /*0x492c62*/
         v13 = g_ZBufferDescriptor; /*0x492c65*/
       }
       ++a2; /*0x492c6e*/
       ++a1; /*0x492c6f*/
       if ( (unsigned int)result >= v13[7] ) /*0x492c74*/
-        result = (unsigned __int16 *)((char *)result - v13[8]); /*0x492c76*/
+        result = (uint16_t *)((char *)result - v13[8]); /*0x492c76*/
       --v16; /*0x492c7e*/
     }
     while ( v16 ); /*0x492c82*/
@@ -4006,7 +3997,7 @@ unsigned short * E4Recv_492C00::sub_492C00(unsigned short * a1, unsigned char * 
 namespace gamemd {
 int E4Recv_492C90::sub_492C90(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492cba*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492cba*/
            this,
            a2,
            a3,
@@ -4023,7 +4014,7 @@ int E4Recv_492C90::sub_492C90(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492CC0::sub_492CC0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492cea*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492cea*/
            this,
            a2,
            a3,
@@ -4040,7 +4031,7 @@ int E4Recv_492CC0::sub_492CC0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492CF0::sub_492CF0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492d1a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492d1a*/
            this,
            a2,
            a3,
@@ -4057,10 +4048,10 @@ int E4Recv_492CF0::sub_492CF0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 unsigned short * E4Recv_492D20::sub_492D20(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-  unsigned __int16 *result; // eax
-  _DWORD *v10; // esi
+  uint16_t *result; // eax
+  unsigned int *v10; // esi
   int v12; // ebx
-  unsigned __int16 v14; // bp
+  uint16_t v14; // bp
 
   result = a5; /*0x492d24*/
   if ( a4 > 0 ) /*0x492d2a*/
@@ -4072,13 +4063,13 @@ unsigned short * E4Recv_492D20::sub_492D20(unsigned short * a1, unsigned char * 
       v14 = *result++; /*0x492d42*/
       if ( argC < v14 && *a2 ) /*0x492d4e*/
       {
-        *a1 = *(this + 2) & (*a1 >> 1); /*0x492d5d*/
+        *a1 = this->u32_8 & (*a1 >> 1); /*0x492d5d*/
         v10 = g_ZBufferDescriptor; /*0x492d60*/
       }
       ++a2; /*0x492d69*/
       ++a1; /*0x492d6a*/
       if ( (unsigned int)result >= v10[7] ) /*0x492d6f*/
-        result = (unsigned __int16 *)((char *)result - v10[8]); /*0x492d71*/
+        result = (uint16_t *)((char *)result - v10[8]); /*0x492d71*/
       --v12; /*0x492d74*/
     }
     while ( v12 ); /*0x492d75*/
@@ -4091,7 +4082,7 @@ unsigned short * E4Recv_492D20::sub_492D20(unsigned short * a1, unsigned char * 
 namespace gamemd {
 int E4Recv_492D80::sub_492D80(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492daa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492daa*/
            this,
            a2,
            a3,
@@ -4108,7 +4099,7 @@ int E4Recv_492D80::sub_492D80(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492DB0::sub_492DB0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492dda*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492dda*/
            this,
            a2,
            a3,
@@ -4125,7 +4116,7 @@ int E4Recv_492DB0::sub_492DB0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492DE0::sub_492DE0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492e0a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492e0a*/
            this,
            a2,
            a3,
@@ -4143,8 +4134,8 @@ namespace gamemd {
 int E4Recv_492E10::sub_492E10(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
   int result; // eax
-  _DWORD *v12; // esi
-  unsigned __int16 v14; // ax
+  unsigned int *v12; // esi
+  uint16_t v14; // ax
   int v15; // [esp+14h] [ebp+14h]
 
   result = a4; /*0x492e10*/
@@ -4157,14 +4148,14 @@ int E4Recv_492E10::sub_492E10(unsigned short * a1, unsigned char * a2, int a4, i
       v14 = *a5++; /*0x492e38*/
       if ( argC < v14 && *a2 ) /*0x492e46*/
       {
-        *a1 = 3 * (*(_WORD *)(this + 8) & (*a1 >> 2)) /*0x492e75*/
-            + (*(_WORD *)(this + 8) & (*(_WORD *)(*(_DWORD *)(this + 4) + 2 * (unsigned __int8)*a2) >> 2));
+        *a1 = 3 * (*(unsigned short *)((char *)&this->u16_8 + 8) & (*a1 >> 2)) /*0x492e75*/
+            + (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(*(unsigned int *)((char *)&this->u16_8 + 8) + 2 * (uint8_t)*a2) >> 2));
         v12 = g_ZBufferDescriptor; /*0x492e78*/
       }
       ++a2; /*0x492e81*/
       ++a1; /*0x492e82*/
       if ( (unsigned int)a5 >= v12[7] ) /*0x492e87*/
-        a5 = (unsigned __int16 *)((char *)a5 - v12[8]); /*0x492e89*/
+        a5 = (uint16_t *)((char *)a5 - v12[8]); /*0x492e89*/
       result = --v15; /*0x492e90*/
     }
     while ( v15 ); /*0x492e95*/
@@ -4177,7 +4168,7 @@ int E4Recv_492E10::sub_492E10(unsigned short * a1, unsigned char * a2, int a4, i
 namespace gamemd {
 int E4Recv_492EA0::sub_492EA0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492eca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492eca*/
            this,
            a2,
            a3,
@@ -4194,7 +4185,7 @@ int E4Recv_492EA0::sub_492EA0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492ED0::sub_492ED0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492efa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492efa*/
            this,
            a2,
            a3,
@@ -4211,7 +4202,7 @@ int E4Recv_492ED0::sub_492ED0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492F00::sub_492F00(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492f2a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492f2a*/
            this,
            a2,
            a3,
@@ -4228,9 +4219,9 @@ int E4Recv_492F00::sub_492F00(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 unsigned short * E4Recv_492F30::sub_492F30(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-  unsigned __int16 *result; // eax
-  _DWORD *v12; // edi
-  unsigned __int16 v13; // dx
+  uint16_t *result; // eax
+  unsigned int *v12; // edi
+  uint16_t v13; // dx
   int v14; // [esp+14h] [ebp+14h]
 
   result = a5; /*0x492f34*/
@@ -4243,14 +4234,14 @@ unsigned short * E4Recv_492F30::sub_492F30(unsigned short * a1, unsigned char * 
       v13 = *result++; /*0x492f58*/
       if ( argC < v13 && *a2 ) /*0x492f66*/
       {
-        *a1 = (*(_WORD *)(this + 8) & (*a1 >> 1)) /*0x492f91*/
-            + (*(_WORD *)(this + 8) & (*(_WORD *)(*(_DWORD *)(this + 4) + 2 * (unsigned __int8)*a2) >> 1));
+        *a1 = (*(unsigned short *)((char *)&this->u16_8 + 8) & (*a1 >> 1)) /*0x492f91*/
+            + (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(*(unsigned int *)((char *)&this->u16_8 + 8) + 2 * (uint8_t)*a2) >> 1));
         v12 = g_ZBufferDescriptor; /*0x492f94*/
       }
       ++a2; /*0x492f9d*/
       ++a1; /*0x492f9e*/
       if ( (unsigned int)result >= v12[7] ) /*0x492fa3*/
-        result = (unsigned __int16 *)((char *)result - v12[8]); /*0x492fa5*/
+        result = (uint16_t *)((char *)result - v12[8]); /*0x492fa5*/
       --v14; /*0x492fad*/
     }
     while ( v14 ); /*0x492fb1*/
@@ -4263,7 +4254,7 @@ unsigned short * E4Recv_492F30::sub_492F30(unsigned short * a1, unsigned char * 
 namespace gamemd {
 int E4Recv_492FC0::sub_492FC0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x492fea*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x492fea*/
            this,
            a2,
            a3,
@@ -4280,7 +4271,7 @@ int E4Recv_492FC0::sub_492FC0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_492FF0::sub_492FF0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49301a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49301a*/
            this,
            a2,
            a3,
@@ -4297,7 +4288,7 @@ int E4Recv_492FF0::sub_492FF0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_493020::sub_493020(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49304a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49304a*/
            this,
            a2,
            a3,
@@ -4315,8 +4306,8 @@ namespace gamemd {
 int E4Recv_493050::sub_493050(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
   int result; // eax
-  _DWORD *v12; // esi
-  unsigned __int16 v14; // ax
+  unsigned int *v12; // esi
+  uint16_t v14; // ax
   int v15; // [esp+14h] [ebp+14h]
 
   result = a4; /*0x493050*/
@@ -4329,14 +4320,14 @@ int E4Recv_493050::sub_493050(unsigned short * a1, unsigned char * a2, int a4, i
       v14 = *a5++; /*0x493078*/
       if ( argC < v14 && *a2 ) /*0x493086*/
       {
-        *a1 = (*(_WORD *)(this + 8) & (*a1 >> 2)) /*0x4930b5*/
-            + 3 * (*(_WORD *)(this + 8) & (*(_WORD *)(*(_DWORD *)(this + 4) + 2 * (unsigned __int8)*a2) >> 2));
+        *a1 = (*(unsigned short *)((char *)&this->u16_8 + 8) & (*a1 >> 2)) /*0x4930b5*/
+            + 3 * (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(*(unsigned int *)((char *)&this->u16_8 + 8) + 2 * (uint8_t)*a2) >> 2));
         v12 = g_ZBufferDescriptor; /*0x4930b8*/
       }
       ++a2; /*0x4930c1*/
       ++a1; /*0x4930c2*/
       if ( (unsigned int)a5 >= v12[7] ) /*0x4930c7*/
-        a5 = (unsigned __int16 *)((char *)a5 - v12[8]); /*0x4930c9*/
+        a5 = (uint16_t *)((char *)a5 - v12[8]); /*0x4930c9*/
       result = --v15; /*0x4930d0*/
     }
     while ( v15 ); /*0x4930d5*/
@@ -4349,7 +4340,7 @@ int E4Recv_493050::sub_493050(unsigned short * a1, unsigned char * a2, int a4, i
 namespace gamemd {
 int E4Recv_4930E0::sub_4930E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49310a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49310a*/
            this,
            a2,
            a3,
@@ -4366,7 +4357,7 @@ int E4Recv_4930E0::sub_4930E0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_493110::sub_493110(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49313a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49313a*/
            this,
            a2,
            a3,
@@ -4383,7 +4374,7 @@ int E4Recv_493110::sub_493110(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_493140::sub_493140(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49316a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49316a*/
            this,
            a2,
            a3,
@@ -4401,8 +4392,8 @@ namespace gamemd {
 int E4Recv_493170::sub_493170(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
   int result; // eax
-  _DWORD *v12; // esi
-  unsigned __int16 v14; // ax
+  unsigned int *v12; // esi
+  uint16_t v14; // ax
   int v15; // [esp+14h] [ebp+14h]
 
   result = a4; /*0x493170*/
@@ -4415,14 +4406,14 @@ int E4Recv_493170::sub_493170(unsigned short * a1, unsigned char * a2, int a4, i
       v14 = *a5++; /*0x49319c*/
       if ( argC < v14 && *a2 ) /*0x4931aa*/
       {
-        *a1 = 3 * (*(_WORD *)(this + 8) & (a1[a9] >> 2)) /*0x4931de*/
-            + (*(_WORD *)(this + 8) & (*(_WORD *)(*(_DWORD *)(this + 4) + 2 * (unsigned __int8)*a2) >> 2));
+        *a1 = 3 * (*(unsigned short *)((char *)&this->u16_8 + 8) & (a1[a9] >> 2)) /*0x4931de*/
+            + (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(*(unsigned int *)((char *)&this->u16_8 + 8) + 2 * (uint8_t)*a2) >> 2));
         v12 = g_ZBufferDescriptor; /*0x4931e1*/
       }
       ++a2; /*0x4931ea*/
       ++a1; /*0x4931eb*/
       if ( (unsigned int)a5 >= v12[7] ) /*0x4931f0*/
-        a5 = (unsigned __int16 *)((char *)a5 - v12[8]); /*0x4931f2*/
+        a5 = (uint16_t *)((char *)a5 - v12[8]); /*0x4931f2*/
       result = --v15; /*0x4931f9*/
     }
     while ( v15 ); /*0x4931fe*/
@@ -4435,7 +4426,7 @@ int E4Recv_493170::sub_493170(unsigned short * a1, unsigned char * a2, int a4, i
 namespace gamemd {
 int E4Recv_493210::sub_493210(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49323a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49323a*/
            this,
            a2,
            a3,
@@ -4452,7 +4443,7 @@ int E4Recv_493210::sub_493210(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_493240::sub_493240(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49326a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49326a*/
            this,
            a2,
            a3,
@@ -4469,7 +4460,7 @@ int E4Recv_493240::sub_493240(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_493270::sub_493270(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49329a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49329a*/
            this,
            a2,
            a3,
@@ -4486,9 +4477,9 @@ int E4Recv_493270::sub_493270(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 unsigned short * E4Recv_4932A0::sub_4932A0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-  unsigned __int16 *result; // eax
-  _DWORD *v12; // edi
-  unsigned __int16 v13; // dx
+  uint16_t *result; // eax
+  unsigned int *v12; // edi
+  uint16_t v13; // dx
   int v14; // [esp+14h] [ebp+14h]
 
   result = a5; /*0x4932a4*/
@@ -4501,14 +4492,14 @@ unsigned short * E4Recv_4932A0::sub_4932A0(unsigned short * a1, unsigned char * 
       v13 = *result++; /*0x4932cc*/
       if ( argC < v13 && *a2 ) /*0x4932da*/
       {
-        *a1 = (*(_WORD *)(this + 8) & (a1[a9] >> 1)) /*0x49330a*/
-            + (*(_WORD *)(this + 8) & (*(_WORD *)(*(_DWORD *)(this + 4) + 2 * (unsigned __int8)*a2) >> 1));
+        *a1 = (*(unsigned short *)((char *)&this->u16_8 + 8) & (a1[a9] >> 1)) /*0x49330a*/
+            + (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(*(unsigned int *)((char *)&this->u16_8 + 8) + 2 * (uint8_t)*a2) >> 1));
         v12 = g_ZBufferDescriptor; /*0x49330d*/
       }
       ++a2; /*0x493316*/
       ++a1; /*0x493317*/
       if ( (unsigned int)result >= v12[7] ) /*0x49331c*/
-        result = (unsigned __int16 *)((char *)result - v12[8]); /*0x49331e*/
+        result = (uint16_t *)((char *)result - v12[8]); /*0x49331e*/
       --v14; /*0x493326*/
     }
     while ( v14 ); /*0x49332a*/
@@ -4521,7 +4512,7 @@ unsigned short * E4Recv_4932A0::sub_4932A0(unsigned short * a1, unsigned char * 
 namespace gamemd {
 int E4Recv_493340::sub_493340(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49336a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49336a*/
            this,
            a2,
            a3,
@@ -4538,7 +4529,7 @@ int E4Recv_493340::sub_493340(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_493370::sub_493370(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49339a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49339a*/
            this,
            a2,
            a3,
@@ -4555,7 +4546,7 @@ int E4Recv_493370::sub_493370(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4933A0::sub_4933A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4933ca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4933ca*/
            this,
            a2,
            a3,
@@ -4573,8 +4564,8 @@ namespace gamemd {
 int E4Recv_4933D0::sub_4933D0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
   int result; // eax
-  _DWORD *v12; // esi
-  unsigned __int16 v14; // ax
+  unsigned int *v12; // esi
+  uint16_t v14; // ax
   int v15; // [esp+14h] [ebp+14h]
 
   result = a4; /*0x4933d0*/
@@ -4587,14 +4578,14 @@ int E4Recv_4933D0::sub_4933D0(unsigned short * a1, unsigned char * a2, int a4, i
       v14 = *a5++; /*0x4933fc*/
       if ( argC < v14 && *a2 ) /*0x49340a*/
       {
-        *a1 = (*(_WORD *)(this + 8) & (a1[a9] >> 2)) /*0x49343e*/
-            + 3 * (*(_WORD *)(this + 8) & (*(_WORD *)(*(_DWORD *)(this + 4) + 2 * (unsigned __int8)*a2) >> 2));
+        *a1 = (*(unsigned short *)((char *)&this->u16_8 + 8) & (a1[a9] >> 2)) /*0x49343e*/
+            + 3 * (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(*(unsigned int *)((char *)&this->u16_8 + 8) + 2 * (uint8_t)*a2) >> 2));
         v12 = g_ZBufferDescriptor; /*0x493441*/
       }
       ++a2; /*0x49344a*/
       ++a1; /*0x49344b*/
       if ( (unsigned int)a5 >= v12[7] ) /*0x493450*/
-        a5 = (unsigned __int16 *)((char *)a5 - v12[8]); /*0x493452*/
+        a5 = (uint16_t *)((char *)a5 - v12[8]); /*0x493452*/
       result = --v15; /*0x493459*/
     }
     while ( v15 ); /*0x49345e*/
@@ -4607,7 +4598,7 @@ int E4Recv_4933D0::sub_4933D0(unsigned short * a1, unsigned char * a2, int a4, i
 namespace gamemd {
 int E4Recv_493470::sub_493470(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49349a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49349a*/
            this,
            a2,
            a3,
@@ -4624,7 +4615,7 @@ int E4Recv_493470::sub_493470(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4934A0::sub_4934A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4934ca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4934ca*/
            this,
            a2,
            a3,
@@ -4641,7 +4632,7 @@ int E4Recv_4934A0::sub_4934A0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4934D0::sub_4934D0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4934fa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4934fa*/
            this,
            a2,
            a3,
@@ -4658,8 +4649,8 @@ int E4Recv_4934D0::sub_4934D0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 unsigned short * E4Recv_493500::sub_493500(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-  _WORD *result; // eax
-  _DWORD *v12; // edi
+  unsigned short *result; // eax
+  unsigned int *v12; // edi
   int v13; // [esp+18h] [ebp+14h]
 
   result = a5; /*0x493500*/
@@ -4669,17 +4660,17 @@ unsigned short * E4Recv_493500::sub_493500(unsigned short * a1, unsigned char * 
     v13 = a4; /*0x493520*/
     do /*0x493566*/
     {
-      if ( argC < (unsigned __int16)*result ) /*0x49352f*/
+      if ( argC < (uint16_t)*result ) /*0x49352f*/
       {
-        *a1 = *(_WORD *)(*(this + 1) + 2 * *a2); /*0x49353c*/
-        *result = (unsigned __int8)argC; /*0x493543*/
+        *a1 = *(unsigned short *)(this->M4 + 2 * *a2); /*0x49353c*/
+        *result = (uint8_t)argC; /*0x493543*/
         v12 = g_ZBufferDescriptor; /*0x493546*/
       }
       ++result; /*0x49354f*/
       ++a2; /*0x493552*/
       ++a1; /*0x493553*/
       if ( (unsigned int)result >= v12[7] ) /*0x493558*/
-        result = (_WORD *)((char *)result - v12[8]); /*0x49355a*/
+        result = (unsigned short *)((char *)result - v12[8]); /*0x49355a*/
       --v13; /*0x493562*/
     }
     while ( v13 ); /*0x493566*/
@@ -4692,7 +4683,7 @@ unsigned short * E4Recv_493500::sub_493500(unsigned short * a1, unsigned char * 
 namespace gamemd {
 int E4Recv_493570::sub_493570(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49359a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49359a*/
            this,
            a2,
            a3,
@@ -4709,7 +4700,7 @@ int E4Recv_493570::sub_493570(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4935A0::sub_4935A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4935ca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4935ca*/
            this,
            a2,
            a3,
@@ -4726,7 +4717,7 @@ int E4Recv_4935A0::sub_4935A0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4935D0::sub_4935D0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4935fa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4935fa*/
            this,
            a2,
            a3,
@@ -4743,8 +4734,8 @@ int E4Recv_4935D0::sub_4935D0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 unsigned short * E4Recv_493600::sub_493600(unsigned short * a2, unsigned char * a3, int a4, int a5, unsigned short * a6, int a7, int a8, int a9)
 {
-  _WORD *result; // eax
-  _DWORD *v10; // esi
+  unsigned short *result; // eax
+  unsigned int *v10; // esi
   int v13; // [esp+14h] [ebp+14h]
 
   result = a6; /*0x493604*/
@@ -4754,9 +4745,9 @@ unsigned short * E4Recv_493600::sub_493600(unsigned short * a2, unsigned char * 
     a4 = a4; /*0x49361e*/
     do /*0x493670*/
     {
-      if ( a5 < (unsigned __int16)*result && *a3 ) /*0x493633*/
+      if ( a5 < (uint16_t)*result && *a3 ) /*0x493633*/
       {
-        *a2 = *(_WORD *)(this->q004 + 2 * (unsigned __int8)*a3); /*0x49364a*/
+        *a2 = *(unsigned short *)(this->q004 + 2 * (uint8_t)*a3); /*0x49364a*/
         *result = a5; /*0x49364d*/
         v10 = g_ZBufferDescriptor; /*0x493650*/
       }
@@ -4764,7 +4755,7 @@ unsigned short * E4Recv_493600::sub_493600(unsigned short * a2, unsigned char * 
       ++a3; /*0x49365c*/
       ++a2; /*0x49365d*/
       if ( (unsigned int)result >= v10[7] ) /*0x493662*/
-        result = (_WORD *)((char *)result - v10[8]); /*0x493664*/
+        result = (unsigned short *)((char *)result - v10[8]); /*0x493664*/
       --a4; /*0x49366c*/
     }
     while ( a4 ); /*0x493670*/
@@ -4777,7 +4768,7 @@ unsigned short * E4Recv_493600::sub_493600(unsigned short * a2, unsigned char * 
 namespace gamemd {
 int E4Recv_493680::sub_493680(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4936aa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x4936aa*/
            this,
            a2,
            a3,
@@ -4794,7 +4785,7 @@ int E4Recv_493680::sub_493680(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4936B0::sub_4936B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x4936da*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x4936da*/
            this,
            a2,
            a3,
@@ -4811,7 +4802,7 @@ int E4Recv_4936B0::sub_4936B0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4936E0::sub_4936E0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(this->q004)( /*0x49370a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(this->q004)( /*0x49370a*/
            this,
            a2,
            a3,
@@ -4828,22 +4819,22 @@ int E4Recv_4936E0::sub_4936E0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 unsigned short * E4Recv_493710::sub_493710(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-  _WORD *result; // eax
+  unsigned short *result; // eax
   int v10; // ecx
-  _DWORD *v11; // esi
+  unsigned int *v11; // esi
   int v15; // [esp+18h] [ebp+14h]
 
   result = a5; /*0x493715*/
-  v10 = **(_DWORD **)(this + 4); /*0x493722*/
+  v10 = **(unsigned int *)((char *)&this->M8 + 8); /*0x493722*/
   if ( a4 > 0 ) /*0x493724*/
   {
     v11 = g_ZBufferDescriptor; /*0x49372d*/
     v15 = a4; /*0x493738*/
     do /*0x493793*/
     {
-      if ( argC < (unsigned __int16)*result && *a2 ) /*0x49374d*/
+      if ( argC < (uint16_t)*result && *a2 ) /*0x49374d*/
       {
-        *a1 = *(_WORD *)(*(_DWORD *)(this + 8) + 2 * *(unsigned __int8 *)((unsigned __int8)*a2 + v10)); /*0x49376d*/
+        *a1 = *(unsigned short *)(*(unsigned int *)((char *)&this->M8 + 24) + 2 * *(uint8_t *)((uint8_t)*a2 + v10)); /*0x49376d*/
         *result = argC; /*0x493770*/
         v11 = g_ZBufferDescriptor; /*0x493773*/
       }
@@ -4851,7 +4842,7 @@ unsigned short * E4Recv_493710::sub_493710(unsigned short * a1, unsigned char * 
       ++a2; /*0x49377f*/
       ++a1; /*0x493780*/
       if ( (unsigned int)result >= v11[7] ) /*0x493785*/
-        result = (_WORD *)((char *)result - v11[8]); /*0x493787*/
+        result = (unsigned short *)((char *)result - v11[8]); /*0x493787*/
       --v15; /*0x49378f*/
     }
     while ( v15 ); /*0x493793*/
@@ -4864,7 +4855,7 @@ unsigned short * E4Recv_493710::sub_493710(unsigned short * a1, unsigned char * 
 namespace gamemd {
 int E4Recv_4937A0::sub_4937A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4937ca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4937ca*/
            this,
            a2,
            a3,
@@ -4881,7 +4872,7 @@ int E4Recv_4937A0::sub_4937A0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4937D0::sub_4937D0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4937fa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4937fa*/
            this,
            a2,
            a3,
@@ -4898,7 +4889,7 @@ int E4Recv_4937D0::sub_4937D0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_493800::sub_493800(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49382a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49382a*/
            this,
            a2,
            a3,
@@ -4915,8 +4906,8 @@ int E4Recv_493800::sub_493800(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 unsigned short * E4Recv_493830::sub_493830(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
 {
-  _WORD *result; // eax
-  _DWORD *v10; // esi
+  unsigned short *result; // eax
+  unsigned int *v10; // esi
   int v13; // [esp+14h] [ebp+14h]
 
   result = a5; /*0x493834*/
@@ -4926,9 +4917,9 @@ unsigned short * E4Recv_493830::sub_493830(unsigned short * a1, unsigned char * 
     v13 = a4; /*0x49384e*/
     do /*0x493894*/
     {
-      if ( argC < (unsigned __int16)*result && *a2 ) /*0x49385f*/
+      if ( argC < (uint16_t)*result && *a2 ) /*0x49385f*/
       {
-        *a1 = *(this + 2) & (*a1 >> 1); /*0x49386e*/
+        *a1 = this->u32_8 & (*a1 >> 1); /*0x49386e*/
         *result = argC; /*0x493871*/
         v10 = g_ZBufferDescriptor; /*0x493874*/
       }
@@ -4936,7 +4927,7 @@ unsigned short * E4Recv_493830::sub_493830(unsigned short * a1, unsigned char * 
       ++a2; /*0x493880*/
       ++a1; /*0x493881*/
       if ( (unsigned int)result >= v10[7] ) /*0x493886*/
-        result = (_WORD *)((char *)result - v10[8]); /*0x493888*/
+        result = (unsigned short *)((char *)result - v10[8]); /*0x493888*/
       --v13; /*0x493890*/
     }
     while ( v13 ); /*0x493894*/
@@ -4949,7 +4940,7 @@ unsigned short * E4Recv_493830::sub_493830(unsigned short * a1, unsigned char * 
 namespace gamemd {
 int E4Recv_4938A0::sub_4938A0(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4938ca*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4938ca*/
            this,
            a2,
            a3,
@@ -4966,7 +4957,7 @@ int E4Recv_4938A0::sub_4938A0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4938D0::sub_4938D0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x4938fa*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4938fa*/
            this,
            a2,
            a3,
@@ -4983,7 +4974,7 @@ int E4Recv_4938D0::sub_4938D0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_493900::sub_493900(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49392a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x49392a*/
            this,
            a2,
            a3,
@@ -5000,7 +4991,7 @@ int E4Recv_493900::sub_493900(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4963B0::sub_4963B0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x4963e7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4963e7*/
            this,
            a2,
            a3,
@@ -5020,11 +5011,11 @@ namespace gamemd {
 unsigned short * E4Recv_4963F0::sub_4963F0(unsigned short * a1, unsigned char * a2, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
 {
   int v11; // edx
-  _WORD *result; // eax
+  unsigned short *result; // eax
   int v15; // edx
   int v16; // edi
-  unsigned __int8 v17; // dl
-  unsigned __int8 v18; // dl
+  uint8_t v17; // dl
+  uint8_t v18; // dl
 
   v11 = a5; /*0x4963f0*/
   result = a1; /*0x496400*/
@@ -5052,8 +5043,8 @@ unsigned short * E4Recv_4963F0::sub_4963F0(unsigned short * a1, unsigned char * 
     if ( v17 ) /*0x496439*/
     {
       --v16; /*0x496478*/
-      *result = (*(_WORD *)(this + 8) & (*result >> 1)) /*0x496479*/
-              + (*(_WORD *)(this + 8) & (*(_WORD *)(*(_DWORD *)(this + 4) + 2 * v17) >> 1));
+      *result = (*(unsigned short *)((char *)&this->u16_8 + 8) & (*result >> 1)) /*0x496479*/
+              + (*(unsigned short *)((char *)&this->u16_8 + 8) & (*(unsigned short *)(*(unsigned int *)((char *)&this->u16_8 + 8) + 2 * v17) >> 1));
       ++result; /*0x49647c*/
     }
     else
@@ -5071,7 +5062,7 @@ unsigned short * E4Recv_4963F0::sub_4963F0(unsigned short * a1, unsigned char * 
 namespace gamemd {
 int E4Recv_496490::sub_496490(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x4964c7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4964c7*/
            this,
            a2,
            a3,
@@ -5090,7 +5081,7 @@ int E4Recv_496490::sub_496490(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_496570::sub_496570(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x4965a7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4965a7*/
            this,
            a2,
            a3,
@@ -5109,7 +5100,7 @@ int E4Recv_496570::sub_496570(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_496690::sub_496690(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x4966c7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4966c7*/
            this,
            a2,
            a3,
@@ -5149,10 +5140,10 @@ int E4Recv_496820::sub_496820(unsigned short * a1, unsigned char * a2, RLEBlitTr
 {
   int result; // eax
   unsigned int v12; // edx
-  _WORD *v14; // esi
+  unsigned short *v14; // esi
   int v17; // eax
   int v18; // ebx
-  unsigned __int8 v20; // al
+  uint8_t v20; // al
   int v21; // edi
 
   result = a5; /*0x496821*/
@@ -5176,8 +5167,8 @@ int E4Recv_496820::sub_496820(unsigned short * a1, unsigned char * a2, RLEBlitTr
     v18 = aP3 - v17; /*0x496864*/
     v14 = &a1[v17]; /*0x496866*/
     result = a7 + 2 * v17; /*0x496869*/
-    if ( (unsigned int)result >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x49686f*/
-      result -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x496871*/
+    if ( (unsigned int)result >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x49686f*/
+      result -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x496871*/
     v12 = result; /*0x496874*/
   }
   while ( v18 > 0 ) /*0x49687e*/
@@ -5186,8 +5177,8 @@ int E4Recv_496820::sub_496820(unsigned short * a1, unsigned char * a2, RLEBlitTr
     {
       v12 += 2; /*0x4968ad*/
       v21 = a6 - *a10++; /*0x4968b0*/
-      if ( v21 < *(unsigned __int16 *)(v12 - 2) ) /*0x4968bb*/
-        *v14 = *(this + 2) & (*v14 >> 1); /*0x4968cb*/
+      if ( v21 < *(uint16_t *)(v12 - 2) ) /*0x4968bb*/
+        *v14 = this->u32_8 & (*v14 >> 1); /*0x4968cb*/
       --v18; /*0x4968ce*/
       ++v14; /*0x4968cf*/
     }
@@ -5200,8 +5191,8 @@ int E4Recv_496820::sub_496820(unsigned short * a1, unsigned char * a2, RLEBlitTr
       v12 += 2 * v20; /*0x4968a2*/
     }
     result = (int)g_ZBufferDescriptor; /*0x4968d2*/
-    if ( v12 >= *((_DWORD *)g_ZBufferDescriptor + 7) ) /*0x4968da*/
-      v12 -= *((_DWORD *)g_ZBufferDescriptor + 8); /*0x4968dc*/
+    if ( v12 >= *((unsigned int *)g_ZBufferDescriptor + 7) ) /*0x4968da*/
+      v12 -= *((unsigned int *)g_ZBufferDescriptor + 8); /*0x4968dc*/
   }
   return result; /*0x4968e3*/
 }
@@ -5211,7 +5202,7 @@ int E4Recv_496820::sub_496820(unsigned short * a1, unsigned char * a2, RLEBlitTr
 namespace gamemd {
 int E4Recv_4968F0::sub_4968F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x496927*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x496927*/
            this,
            a2,
            a3,
@@ -5230,7 +5221,7 @@ int E4Recv_4968F0::sub_4968F0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_496A40::sub_496A40(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x496a77*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x496a77*/
            this,
            a2,
            a3,
@@ -5249,7 +5240,7 @@ int E4Recv_496A40::sub_496A40(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_496B80::sub_496B80(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x496bb7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x496bb7*/
            this,
            a2,
            a3,
@@ -5268,7 +5259,7 @@ int E4Recv_496B80::sub_496B80(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_496CD0::sub_496CD0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x496d07*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x496d07*/
            this,
            a2,
            a3,
@@ -5287,7 +5278,7 @@ int E4Recv_496CD0::sub_496CD0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_496E20::sub_496E20(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x496e57*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x496e57*/
            this,
            a2,
            a3,
@@ -5306,7 +5297,7 @@ int E4Recv_496E20::sub_496E20(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_496F70::sub_496F70(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x496fa7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x496fa7*/
            this,
            a2,
            a3,
@@ -5325,7 +5316,7 @@ int E4Recv_496F70::sub_496F70(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4970C0::sub_4970C0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x4970f7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4970f7*/
            this,
            a2,
            a3,
@@ -5344,7 +5335,7 @@ int E4Recv_4970C0::sub_4970C0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_4971F0::sub_4971F0(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x497227*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x497227*/
            this,
            a2,
            a3,
@@ -5363,7 +5354,7 @@ int E4Recv_4971F0::sub_4971F0(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_497350::sub_497350(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x497387*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x497387*/
            this,
            a2,
            a3,
@@ -5382,7 +5373,7 @@ int E4Recv_497350::sub_497350(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 int E4Recv_497470::sub_497470(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(_DWORD *)this + 4))( /*0x4974a7*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, int, int, int))(*(unsigned int *)((char *)&this->u32_4 + 12)))( /*0x4974a7*/
            this,
            a2,
            a3,
@@ -5401,7 +5392,6 @@ int E4Recv_497470::sub_497470(int a2, int a3, int a4, int a5, int a6, int a7, in
 namespace gamemd {
 BlitTransXlat * E4Recv_499CA0::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499ca9*/
   if ( (a2 & 1) != 0 ) /*0x499caf*/
     RA2_OPDEL(); /*0x499cb2*/
   return this; /*0x499cbc*/
@@ -5412,7 +5402,6 @@ BlitTransXlat * E4Recv_499CA0::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499D40::___Gfacet_locale_std__UAEPAXI_Z_9(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499d49*/
   if ( (a2 & 1) != 0 ) /*0x499d4f*/
     RA2_OPDEL(); /*0x499d52*/
   return this; /*0x499d5c*/
@@ -5423,7 +5412,6 @@ std::locale::facet * E4Recv_499D40::___Gfacet_locale_std__UAEPAXI_Z_9(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499D60::___Gfacet_locale_std__UAEPAXI_Z_10(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499d69*/
   if ( (a2 & 1) != 0 ) /*0x499d6f*/
     RA2_OPDEL(); /*0x499d72*/
   return this; /*0x499d7c*/
@@ -5434,7 +5422,6 @@ std::locale::facet * E4Recv_499D60::___Gfacet_locale_std__UAEPAXI_Z_10(char a2)
 namespace gamemd {
 RLEBlitTransXlat * E4Recv_499D80::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499d89*/
   if ( (a2 & 1) != 0 ) /*0x499d8f*/
     RA2_OPDEL(); /*0x499d92*/
   return this; /*0x499d9c*/
@@ -5445,7 +5432,6 @@ RLEBlitTransXlat * E4Recv_499D80::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499DC0::___Gfacet_locale_std__UAEPAXI_Z_13(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499dc9*/
   if ( (a2 & 1) != 0 ) /*0x499dcf*/
     RA2_OPDEL(); /*0x499dd2*/
   return this; /*0x499ddc*/
@@ -5456,7 +5442,6 @@ std::locale::facet * E4Recv_499DC0::___Gfacet_locale_std__UAEPAXI_Z_13(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499DE0::___Gfacet_locale_std__UAEPAXI_Z_14(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499de9*/
   if ( (a2 & 1) != 0 ) /*0x499def*/
     RA2_OPDEL(); /*0x499df2*/
   return this; /*0x499dfc*/
@@ -5467,7 +5452,6 @@ std::locale::facet * E4Recv_499DE0::___Gfacet_locale_std__UAEPAXI_Z_14(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499E00::___Gfacet_locale_std__UAEPAXI_Z_15(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499e09*/
   if ( (a2 & 1) != 0 ) /*0x499e0f*/
     RA2_OPDEL(); /*0x499e12*/
   return this; /*0x499e1c*/
@@ -5478,7 +5462,6 @@ std::locale::facet * E4Recv_499E00::___Gfacet_locale_std__UAEPAXI_Z_15(char a2)
 namespace gamemd {
 RLEBlitTransXlatZRead * E4Recv_499E20::___Gfacet_locale_std__UAEPAXI_Z_16(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499e29*/
   if ( (a2 & 1) != 0 ) /*0x499e2f*/
     RA2_OPDEL(); /*0x499e32*/
   return this; /*0x499e3c*/
@@ -5489,7 +5472,6 @@ RLEBlitTransXlatZRead * E4Recv_499E20::___Gfacet_locale_std__UAEPAXI_Z_16(char a
 namespace gamemd {
 std::locale::facet * E4Recv_499E40::___Gfacet_locale_std__UAEPAXI_Z_17(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499e49*/
   if ( (a2 & 1) != 0 ) /*0x499e4f*/
     RA2_OPDEL(); /*0x499e52*/
   return this; /*0x499e5c*/
@@ -5500,7 +5482,6 @@ std::locale::facet * E4Recv_499E40::___Gfacet_locale_std__UAEPAXI_Z_17(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499E60::___Gfacet_locale_std__UAEPAXI_Z_18(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499e69*/
   if ( (a2 & 1) != 0 ) /*0x499e6f*/
     RA2_OPDEL(); /*0x499e72*/
   return this; /*0x499e7c*/
@@ -5511,7 +5492,6 @@ std::locale::facet * E4Recv_499E60::___Gfacet_locale_std__UAEPAXI_Z_18(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499E80::___Gfacet_locale_std__UAEPAXI_Z_19(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499e89*/
   if ( (a2 & 1) != 0 ) /*0x499e8f*/
     RA2_OPDEL(); /*0x499e92*/
   return this; /*0x499e9c*/
@@ -5522,7 +5502,6 @@ std::locale::facet * E4Recv_499E80::___Gfacet_locale_std__UAEPAXI_Z_19(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499EA0::___Gfacet_locale_std__UAEPAXI_Z_20(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499ea9*/
   if ( (a2 & 1) != 0 ) /*0x499eaf*/
     RA2_OPDEL(); /*0x499eb2*/
   return this; /*0x499ebc*/
@@ -5533,7 +5512,6 @@ std::locale::facet * E4Recv_499EA0::___Gfacet_locale_std__UAEPAXI_Z_20(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499EC0::___Gfacet_locale_std__UAEPAXI_Z_21(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499ec9*/
   if ( (a2 & 1) != 0 ) /*0x499ecf*/
     RA2_OPDEL(); /*0x499ed2*/
   return this; /*0x499edc*/
@@ -5544,7 +5522,6 @@ std::locale::facet * E4Recv_499EC0::___Gfacet_locale_std__UAEPAXI_Z_21(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499EE0::___Gfacet_locale_std__UAEPAXI_Z_22(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499ee9*/
   if ( (a2 & 1) != 0 ) /*0x499eef*/
     RA2_OPDEL(); /*0x499ef2*/
   return this; /*0x499efc*/
@@ -5555,7 +5532,6 @@ std::locale::facet * E4Recv_499EE0::___Gfacet_locale_std__UAEPAXI_Z_22(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499F00::___Gfacet_locale_std__UAEPAXI_Z_23(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x499f09*/
   if ( (a2 & 1) != 0 ) /*0x499f0f*/
     RA2_OPDEL(); /*0x499f12*/
   return this; /*0x499f1c*/
@@ -5566,7 +5542,6 @@ std::locale::facet * E4Recv_499F00::___Gfacet_locale_std__UAEPAXI_Z_23(char a2)
 namespace gamemd {
 BlitPlainXlat * E4Recv_499F20::___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499f29*/
   if ( (a2 & 1) != 0 ) /*0x499f2f*/
     RA2_OPDEL(); /*0x499f32*/
   return this; /*0x499f3c*/
@@ -5577,7 +5552,6 @@ BlitPlainXlat * E4Recv_499F20::___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499F40::___Gfacet_locale_std__UAEPAXI_Z_25(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499f49*/
   if ( (a2 & 1) != 0 ) /*0x499f4f*/
     RA2_OPDEL(); /*0x499f52*/
   return this; /*0x499f5c*/
@@ -5588,7 +5562,6 @@ std::locale::facet * E4Recv_499F40::___Gfacet_locale_std__UAEPAXI_Z_25(char a2)
 namespace gamemd {
 BlitTransDarken * E4Recv_499F60::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499f69*/
   if ( (a2 & 1) != 0 ) /*0x499f6f*/
     RA2_OPDEL(); /*0x499f72*/
   return this; /*0x499f7c*/
@@ -5599,7 +5572,6 @@ BlitTransDarken * E4Recv_499F60::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
 namespace gamemd {
 BlitTransLucent75 * E4Recv_499F80::___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499f89*/
   if ( (a2 & 1) != 0 ) /*0x499f8f*/
     RA2_OPDEL(); /*0x499f92*/
   return this; /*0x499f9c*/
@@ -5610,7 +5582,6 @@ BlitTransLucent75 * E4Recv_499F80::___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
 namespace gamemd {
 BlitTransLucent50 * E4Recv_499FA0::___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499fa9*/
   if ( (a2 & 1) != 0 ) /*0x499faf*/
     RA2_OPDEL(); /*0x499fb2*/
   return this; /*0x499fbc*/
@@ -5621,7 +5592,6 @@ BlitTransLucent50 * E4Recv_499FA0::___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
 namespace gamemd {
 BlitTransLucent25 * E4Recv_499FC0::___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499fc9*/
   if ( (a2 & 1) != 0 ) /*0x499fcf*/
     RA2_OPDEL(); /*0x499fd2*/
   return this; /*0x499fdc*/
@@ -5632,7 +5602,6 @@ BlitTransLucent25 * E4Recv_499FC0::___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_499FE0::___Gfacet_locale_std__UAEPAXI_Z_30(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x499fe9*/
   if ( (a2 & 1) != 0 ) /*0x499fef*/
     RA2_OPDEL(); /*0x499ff2*/
   return this; /*0x499ffc*/
@@ -5643,7 +5612,6 @@ std::locale::facet * E4Recv_499FE0::___Gfacet_locale_std__UAEPAXI_Z_30(char a2)
 namespace gamemd {
 BlitTransXlatZRead * E4Recv_49A000::___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a009*/
   if ( (a2 & 1) != 0 ) /*0x49a00f*/
     RA2_OPDEL(); /*0x49a012*/
   return this; /*0x49a01c*/
@@ -5654,7 +5622,6 @@ BlitTransXlatZRead * E4Recv_49A000::___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A020::___Gfacet_locale_std__UAEPAXI_Z_32(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a029*/
   if ( (a2 & 1) != 0 ) /*0x49a02f*/
     RA2_OPDEL(); /*0x49a032*/
   return this; /*0x49a03c*/
@@ -5665,7 +5632,6 @@ std::locale::facet * E4Recv_49A020::___Gfacet_locale_std__UAEPAXI_Z_32(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A040::___Gfacet_locale_std__UAEPAXI_Z_33(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a049*/
   if ( (a2 & 1) != 0 ) /*0x49a04f*/
     RA2_OPDEL(); /*0x49a052*/
   return this; /*0x49a05c*/
@@ -5676,7 +5642,6 @@ std::locale::facet * E4Recv_49A040::___Gfacet_locale_std__UAEPAXI_Z_33(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A060::___Gfacet_locale_std__UAEPAXI_Z_34(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a069*/
   if ( (a2 & 1) != 0 ) /*0x49a06f*/
     RA2_OPDEL(); /*0x49a072*/
   return this; /*0x49a07c*/
@@ -5687,7 +5652,6 @@ std::locale::facet * E4Recv_49A060::___Gfacet_locale_std__UAEPAXI_Z_34(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A080::___Gfacet_locale_std__UAEPAXI_Z_35(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a089*/
   if ( (a2 & 1) != 0 ) /*0x49a08f*/
     RA2_OPDEL(); /*0x49a092*/
   return this; /*0x49a09c*/
@@ -5698,7 +5662,6 @@ std::locale::facet * E4Recv_49A080::___Gfacet_locale_std__UAEPAXI_Z_35(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A0A0::___Gfacet_locale_std__UAEPAXI_Z_36(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a0a9*/
   if ( (a2 & 1) != 0 ) /*0x49a0af*/
     RA2_OPDEL(); /*0x49a0b2*/
   return this; /*0x49a0bc*/
@@ -5709,7 +5672,6 @@ std::locale::facet * E4Recv_49A0A0::___Gfacet_locale_std__UAEPAXI_Z_36(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A0C0::___Gfacet_locale_std__UAEPAXI_Z_37(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a0c9*/
   if ( (a2 & 1) != 0 ) /*0x49a0cf*/
     RA2_OPDEL(); /*0x49a0d2*/
   return this; /*0x49a0dc*/
@@ -5720,7 +5682,6 @@ std::locale::facet * E4Recv_49A0C0::___Gfacet_locale_std__UAEPAXI_Z_37(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A0E0::___Gfacet_locale_std__UAEPAXI_Z_38(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a0e9*/
   if ( (a2 & 1) != 0 ) /*0x49a0ef*/
     RA2_OPDEL(); /*0x49a0f2*/
   return this; /*0x49a0fc*/
@@ -5731,7 +5692,6 @@ std::locale::facet * E4Recv_49A0E0::___Gfacet_locale_std__UAEPAXI_Z_38(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A100::___Gfacet_locale_std__UAEPAXI_Z_39(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a109*/
   if ( (a2 & 1) != 0 ) /*0x49a10f*/
     RA2_OPDEL(); /*0x49a112*/
   return this; /*0x49a11c*/
@@ -5742,7 +5702,6 @@ std::locale::facet * E4Recv_49A100::___Gfacet_locale_std__UAEPAXI_Z_39(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A120::___Gfacet_locale_std__UAEPAXI_Z_40(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a129*/
   if ( (a2 & 1) != 0 ) /*0x49a12f*/
     RA2_OPDEL(); /*0x49a132*/
   return this; /*0x49a13c*/
@@ -5753,7 +5712,6 @@ std::locale::facet * E4Recv_49A120::___Gfacet_locale_std__UAEPAXI_Z_40(char a2)
 namespace gamemd {
 BlitTransXlatZReadWrite * E4Recv_49A140::___Gfacet_locale_std__UAEPAXI_Z_41(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a149*/
   if ( (a2 & 1) != 0 ) /*0x49a14f*/
     RA2_OPDEL(); /*0x49a152*/
   return this; /*0x49a15c*/
@@ -5764,7 +5722,6 @@ BlitTransXlatZReadWrite * E4Recv_49A140::___Gfacet_locale_std__UAEPAXI_Z_41(char
 namespace gamemd {
 std::locale::facet * E4Recv_49A160::___Gfacet_locale_std__UAEPAXI_Z_42(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a169*/
   if ( (a2 & 1) != 0 ) /*0x49a16f*/
     RA2_OPDEL(); /*0x49a172*/
   return this; /*0x49a17c*/
@@ -5775,7 +5732,6 @@ std::locale::facet * E4Recv_49A160::___Gfacet_locale_std__UAEPAXI_Z_42(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A180::___Gfacet_locale_std__UAEPAXI_Z_43(char a2)
 {
-  *(_DWORD *)this = (void*)&Blitter_vftable; /*0x49a189*/
   if ( (a2 & 1) != 0 ) /*0x49a18f*/
     RA2_OPDEL(); /*0x49a192*/
   return this; /*0x49a19c*/
@@ -5786,7 +5742,6 @@ std::locale::facet * E4Recv_49A180::___Gfacet_locale_std__UAEPAXI_Z_43(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A7C0::___Gfacet_locale_std__UAEPAXI_Z_55(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a7c9*/
   if ( (a2 & 1) != 0 ) /*0x49a7cf*/
     RA2_OPDEL(); /*0x49a7d2*/
   return this; /*0x49a7dc*/
@@ -5797,7 +5752,6 @@ std::locale::facet * E4Recv_49A7C0::___Gfacet_locale_std__UAEPAXI_Z_55(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A7E0::___Gfacet_locale_std__UAEPAXI_Z_56(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a7e9*/
   if ( (a2 & 1) != 0 ) /*0x49a7ef*/
     RA2_OPDEL(); /*0x49a7f2*/
   return this; /*0x49a7fc*/
@@ -5808,7 +5762,6 @@ std::locale::facet * E4Recv_49A7E0::___Gfacet_locale_std__UAEPAXI_Z_56(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A800::___Gfacet_locale_std__UAEPAXI_Z_57(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a809*/
   if ( (a2 & 1) != 0 ) /*0x49a80f*/
     RA2_OPDEL(); /*0x49a812*/
   return this; /*0x49a81c*/
@@ -5819,7 +5772,6 @@ std::locale::facet * E4Recv_49A800::___Gfacet_locale_std__UAEPAXI_Z_57(char a2)
 namespace gamemd {
 RLEBlitTransXlatZRead * E4Recv_49A820::___Gfacet_locale_std__UAEPAXI_Z_58(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a829*/
   if ( (a2 & 1) != 0 ) /*0x49a82f*/
     RA2_OPDEL(); /*0x49a832*/
   return this; /*0x49a83c*/
@@ -5830,7 +5782,6 @@ RLEBlitTransXlatZRead * E4Recv_49A820::___Gfacet_locale_std__UAEPAXI_Z_58(char a
 namespace gamemd {
 std::locale::facet * E4Recv_49A840::___Gfacet_locale_std__UAEPAXI_Z_59(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a849*/
   if ( (a2 & 1) != 0 ) /*0x49a84f*/
     RA2_OPDEL(); /*0x49a852*/
   return this; /*0x49a85c*/
@@ -5841,7 +5792,6 @@ std::locale::facet * E4Recv_49A840::___Gfacet_locale_std__UAEPAXI_Z_59(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A860::___Gfacet_locale_std__UAEPAXI_Z_60(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a869*/
   if ( (a2 & 1) != 0 ) /*0x49a86f*/
     RA2_OPDEL(); /*0x49a872*/
   return this; /*0x49a87c*/
@@ -5852,7 +5802,6 @@ std::locale::facet * E4Recv_49A860::___Gfacet_locale_std__UAEPAXI_Z_60(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A880::___Gfacet_locale_std__UAEPAXI_Z_61(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a889*/
   if ( (a2 & 1) != 0 ) /*0x49a88f*/
     RA2_OPDEL(); /*0x49a892*/
   return this; /*0x49a89c*/
@@ -5863,7 +5812,6 @@ std::locale::facet * E4Recv_49A880::___Gfacet_locale_std__UAEPAXI_Z_61(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A8A0::___Gfacet_locale_std__UAEPAXI_Z_62(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a8a9*/
   if ( (a2 & 1) != 0 ) /*0x49a8af*/
     RA2_OPDEL(); /*0x49a8b2*/
   return this; /*0x49a8bc*/
@@ -5874,7 +5822,6 @@ std::locale::facet * E4Recv_49A8A0::___Gfacet_locale_std__UAEPAXI_Z_62(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A8C0::___Gfacet_locale_std__UAEPAXI_Z_63(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a8c9*/
   if ( (a2 & 1) != 0 ) /*0x49a8cf*/
     RA2_OPDEL(); /*0x49a8d2*/
   return this; /*0x49a8dc*/
@@ -5885,7 +5832,6 @@ std::locale::facet * E4Recv_49A8C0::___Gfacet_locale_std__UAEPAXI_Z_63(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A8E0::___Gfacet_locale_std__UAEPAXI_Z_64(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a8e9*/
   if ( (a2 & 1) != 0 ) /*0x49a8ef*/
     RA2_OPDEL(); /*0x49a8f2*/
   return this; /*0x49a8fc*/
@@ -5896,7 +5842,6 @@ std::locale::facet * E4Recv_49A8E0::___Gfacet_locale_std__UAEPAXI_Z_64(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A900::___Gfacet_locale_std__UAEPAXI_Z_65(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a909*/
   if ( (a2 & 1) != 0 ) /*0x49a90f*/
     RA2_OPDEL(); /*0x49a912*/
   return this; /*0x49a91c*/
@@ -5907,7 +5852,6 @@ std::locale::facet * E4Recv_49A900::___Gfacet_locale_std__UAEPAXI_Z_65(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A920::___Gfacet_locale_std__UAEPAXI_Z_66(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a929*/
   if ( (a2 & 1) != 0 ) /*0x49a92f*/
     RA2_OPDEL(); /*0x49a932*/
   return this; /*0x49a93c*/
@@ -5918,7 +5862,6 @@ std::locale::facet * E4Recv_49A920::___Gfacet_locale_std__UAEPAXI_Z_66(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A940::___Gfacet_locale_std__UAEPAXI_Z_67(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a949*/
   if ( (a2 & 1) != 0 ) /*0x49a94f*/
     RA2_OPDEL(); /*0x49a952*/
   return this; /*0x49a95c*/
@@ -5929,7 +5872,6 @@ std::locale::facet * E4Recv_49A940::___Gfacet_locale_std__UAEPAXI_Z_67(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A960::___Gfacet_locale_std__UAEPAXI_Z_68(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a969*/
   if ( (a2 & 1) != 0 ) /*0x49a96f*/
     RA2_OPDEL(); /*0x49a972*/
   return this; /*0x49a97c*/
@@ -5940,7 +5882,6 @@ std::locale::facet * E4Recv_49A960::___Gfacet_locale_std__UAEPAXI_Z_68(char a2)
 namespace gamemd {
 std::locale::facet * E4Recv_49A980::___Gfacet_locale_std__UAEPAXI_Z_69(char a2)
 {
-  *(_DWORD *)this = (void*)&RLEBlitter_vftable; /*0x49a989*/
   if ( (a2 & 1) != 0 ) /*0x49a98f*/
     RA2_OPDEL(); /*0x49a992*/
   return this; /*0x49a99c*/
@@ -6003,11 +5944,11 @@ namespace gamemd {
 long long sub_49B250()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_89F580 - dbl_89F5A8); /*0x49b262*/
   result = Math::RoundToInt(v0 * dbl_89F5A0 * 0.5); /*0x49b276*/
-  *((_DWORD *)&byte_89F5D8 + 40) = result; /*0x49b27b*/
+  *((unsigned int *)&byte_89F5D8 + 40) = result; /*0x49b27b*/
   return result; /*0x49b280*/
 }
 } // namespace gamemd
@@ -6024,7 +5965,7 @@ void sub_49B290()
 namespace gamemd {
 void sub_49B2C0()
 {
-  dbl_89F5C8 = Math::ArcTan((double)(2 * *((_DWORD *)&byte_89F5D8 + 40)) / dbl_89F5A0); /*0x49b2e2*/
+  dbl_89F5C8 = Math::ArcTan((double)(2 * *((unsigned int *)&byte_89F5D8 + 40)) / dbl_89F5A0); /*0x49b2e2*/
 }
 } // namespace gamemd
 
@@ -6032,10 +5973,10 @@ void sub_49B2C0()
 namespace gamemd {
 long long sub_49B2F0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
-  result = Math::RoundToInt((double)(4 * *((_DWORD *)&byte_89F5D8 + 40)) + 0.5); /*0x49b30b*/
-  *((_DWORD *)&byte_89F5D8 + 37) = result; /*0x49b310*/
+  result = Math::RoundToInt((double)(4 * *((unsigned int *)&byte_89F5D8 + 40)) + 0.5); /*0x49b30b*/
+  *((unsigned int *)&byte_89F5D8 + 37) = result; /*0x49b310*/
   return result; /*0x49b316*/
 }
 } // namespace gamemd
@@ -6065,8 +6006,8 @@ int sub_49B330()
 namespace gamemd {
 int sub_49B350()
 {
-  *((_DWORD *)&byte_89F5D8 + 34) = 128; /*0x49b35f*/
-  *(_QWORD *)(&byte_89F5D8 + 70) = 128; /*0x49b364*/
+  *((unsigned int *)&byte_89F5D8 + 34) = 128; /*0x49b35f*/
+  *(unsigned long long *)(&byte_89F5D8 + 70) = 128; /*0x49b364*/
   return 128; /*0x49b369*/
 }
 } // namespace gamemd
@@ -6131,9 +6072,9 @@ char Hex_EncodeDigit(int a1)
 namespace gamemd {
 unsigned int * E4Recv_49DA60::sub_49DA60()
 {
-  _DWORD *result; // eax
-  _DWORD *v2; // esi
-  _DWORD *v3; // ecx
+  unsigned int *result; // eax
+  unsigned int *v2; // esi
+  unsigned int *v3; // ecx
   int v4; // ebx
   int v5; // edi
   int v6; // edi
@@ -6146,11 +6087,8 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   result[2] = 0; /*0x49da6f*/
   v2[1] = 0; /*0x49da72*/
   v2[2] = 0; /*0x49da75*/
-  *v2 = (void*)&GenericNode_vftable; /*0x49da78*/
   v3[1] = 0; /*0x49da7e*/
   v3[2] = 0; /*0x49da81*/
-  *v3 = (void*)&GenericNode_vftable; /*0x49da84*/
-  result[3] = (void*)&GenericList_vftable; /*0x49da8d*/
   if ( v3 ) /*0x49da94*/
   {
     v4 = v3[1]; /*0x49da96*/
@@ -6160,7 +6098,7 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
       if ( v5 ) /*0x49daa2*/
       {
         this->v4 = v4; /*0x49daa4*/
-        *(_DWORD *)(v3[1] + 8) = v3[2]; /*0x49daad*/
+        *(unsigned int *)(v3[1] + 8) = v3[2]; /*0x49daad*/
         v3[2] = 0; /*0x49dab0*/
         v3[1] = 0; /*0x49dab3*/
       }
@@ -6173,16 +6111,15 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   if ( v7 ) /*0x49dac4*/
     this->v3 = v3; /*0x49dac6*/
   v2[1] = v3; /*0x49dac9*/
-  result[3] = (void*)&List_INIClass_INISection___vftable; /*0x49dacc*/
   result[10] = 0; /*0x49dad4*/
   result[11] = 0; /*0x49dad7*/
   result[12] = 0; /*0x49dada*/
-  *((_BYTE *)result + 52) = 0; /*0x49dadd*/
+  *((unsigned char *)result + 52) = 0; /*0x49dadd*/
   result[14] = 0; /*0x49dae0*/
   result[15] = 0; /*0x49dae4*/
-  *((_BYTE *)result + 64) = 0; /*0x49dae7*/
+  *((unsigned char *)result + 64) = 0; /*0x49dae7*/
   *result = &CCINIClass_Vtable; /*0x49daea*/
-  *((_BYTE *)result + 96) = 0; /*0x49daf0*/
+  *((unsigned char *)result + 96) = 0; /*0x49daf0*/
   return result; /*0x49dad3*/
 }
 } // namespace gamemd
@@ -6243,7 +6180,7 @@ namespace gamemd {
 long long sub_49F1B0()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(*((double *)&byte_89F5D8 + 21) - dbl_89F6C8); /*0x49f1c2*/
   result = Math::RoundToInt(v0 * dbl_89F6C0 * 0.5); /*0x49f1d6*/
@@ -6272,7 +6209,7 @@ void sub_49F220()
 namespace gamemd {
 long long sub_49F250()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_89F758) + 0.5); /*0x49f26b*/
   dword_89F74C = result; /*0x49f270*/
@@ -6369,7 +6306,7 @@ namespace gamemd {
 int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
 {
   char v5; // al
-  __int16 v6; // cx
+  int16_t v6; // cx
   int v7; // edi
   double v8; // st7
   double v9; // st7
@@ -6388,7 +6325,7 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
 
   v18 = a0; /*0x49f42a*/
   IDA_LOWORD(v16) = 0; /*0x49f438*/
-  v5 = Random::State((_DWORD *)g_ScenarioClass_Instance + 134); /*0x49f43f*/
+  v5 = Random::State((unsigned int *)g_ScenarioClass_Instance + 134); /*0x49f43f*/
   IDA_LOBYTE(v6) = 0; /*0x49f448*/
   IDA_HIBYTE(v6) = v5; /*0x49f44a*/
   v7 = aP1[2]; /*0x49f451*/
@@ -6411,8 +6348,8 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
   }
   if ( aP3 ) /*0x49f508*/
   {
-    v13 = v13 - (unsigned __int8)v13 + 128; /*0x49f51d*/
-    v11 = v11 - (unsigned __int8)v11 + 128; /*0x49f523*/
+    v13 = v13 - (uint8_t)v13 + 128; /*0x49f51d*/
+    v11 = v11 - (uint8_t)v11 + 128; /*0x49f523*/
   }
   result = v18; /*0x49f529*/
   v15 = v18; /*0x49f52d*/
@@ -6468,7 +6405,7 @@ bool sub_49F920()
   if ( v0 || Type != 4 ) /*0x49f984*/
     return 0; /*0x49f9a1*/
   v1 = VersionInfo::Read((int)&g_CoordScatterManager); /*0x49f98b*/
-  return *(_DWORD *)Data == v1; /*0x49f99d*/
+  return *(unsigned int *)Data == v1; /*0x49f99d*/
 }
 } // namespace gamemd
 
@@ -6540,7 +6477,7 @@ namespace gamemd {
 long long sub_49FE20()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_89F760 - dbl_89F788); /*0x49fe32*/
   result = Math::RoundToInt(v0 * dbl_89F780 * 0.5); /*0x49fe46*/
@@ -6569,7 +6506,7 @@ void sub_49FE90()
 namespace gamemd {
 long long sub_49FEC0()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_89F7D8) + 0.5); /*0x49fedb*/
   dword_89F7CC = result; /*0x49fee0*/

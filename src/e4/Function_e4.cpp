@@ -18,6 +18,6 @@ void Function_643E80()
 namespace gamemd {
 int Function::645D00(int a2)
 {
-  return this + 4 * a2; /*0x645d07*/
+  return &this->q004 * a2; /*0x645d07*/
 }
 } // namespace gamemd

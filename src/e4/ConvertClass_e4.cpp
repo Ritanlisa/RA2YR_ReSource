@@ -14,25 +14,25 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
 {
   int v8; // edi
   bool v9; // cc
-  _BYTE *v10; // eax
-  __int16 *v11; // eax
-  __int16 v12; // cx
+  unsigned char *v10; // eax
+  int16_t *v11; // eax
+  int16_t v12; // cx
   int v13; // eax
-  _BYTE *v14; // eax
-  _BYTE *v15; // edi
+  unsigned char *v14; // eax
+  unsigned char *v15; // edi
   int v16; // eax
-  _BYTE *v17; // edi
+  unsigned char *v17; // edi
   int i; // ebp
   int j; // ebp
-  __int16 *v20; // eax
-  unsigned __int8 v21; // cl
+  int16_t *v20; // eax
+  uint8_t v21; // cl
   int v22; // eax
   int v23; // ecx
   char *v24; // eax
   int v25; // edi
   int v26; // eax
-  _BYTE v28[4]; // [esp+Ch] [ebp-14h] BYREF
-  __int16 v29; // [esp+10h] [ebp-10h] BYREF
+  unsigned char v28[4]; // [esp+Ch] [ebp-14h] BYREF
+  int16_t v29; // [esp+10h] [ebp-10h] BYREF
   char v30; // [esp+12h] [ebp-Eh]
   int v31; // [esp+14h] [ebp-Ch]
   int v32; // [esp+1Ah] [ebp-6h]
@@ -135,29 +135,28 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   *(&this->q0243) = 0; /*0x48e929*/
   *(&this->q0244) = 0; /*0x48e92f*/
   *(&this->q0245) = 0; /*0x48e935*/
-  *(void **)this = (void*)&ConvertClass_vftable; /*0x48e93b*/
   if ( v9 ) /*0x48e941*/
     *(&this->q0241) = 1; /*0x48e943*/
   if ( this->q004 == 1 ) /*0x48e94f*/
   {
-    v10 = RA2_OPNEW(0x100u); /*0x48e95a*/
+    v10 = operator new(0x100u); /*0x48e95a*/
     *(&this->q0244) = v10; /*0x48e95f*/
     *v10 = 0; /*0x48e968*/
     do /*0x48e9df*/
     {
-      v11 = (__int16 *)ComputeColorSaturation(&aP4); /*0x48e98b*/
+      v11 = (int16_t *)ComputeColorSaturation(&aP4); /*0x48e98b*/
       v12 = *v11; /*0x48e990*/
-      IDA_LOBYTE(v11) = *((_BYTE *)v11 + 2); /*0x48e993*/
+      IDA_LOBYTE(v11) = *((unsigned char *)v11 + 2); /*0x48e993*/
       v29 = v12; /*0x48e996*/
-      v30 = (unsigned __int8)v11 >> 1; /*0x48e9a5*/
-      v13 = Color::ConvertToRGB((unsigned __int8 *)&v29, (int)v28); /*0x48e9ae*/
-      IDA_LOWORD(aP3) = *(_WORD *)v13; /*0x48e9b6*/
-      IDA_BYTE2(aP3) = *(_BYTE *)(v13 + 2); /*0x48e9c5*/
+      v30 = (uint8_t)v11 >> 1; /*0x48e9a5*/
+      v13 = Color::ConvertToRGB((uint8_t *)&v29, (int)v28); /*0x48e9ae*/
+      IDA_LOWORD(aP3) = *(unsigned short *)v13; /*0x48e9b6*/
+      IDA_BYTE2(aP3) = *(unsigned char *)(v13 + 2); /*0x48e9c5*/
       ++v8; /*0x48e9d4*/
-      *(_BYTE *)(*(&this->q0244) + v8 - 1) = Palette::FindClosestColor(&aP3); /*0x48e9db*/
+      *(unsigned char *)(*(&this->q0244) + v8 - 1) = Palette::FindClosestColor(&aP3); /*0x48e9db*/
     }
     while ( v8 < 256 ); /*0x48e9df*/
-    v14 = RA2_OPNEW(*(&this->q0241) << 8); /*0x48e9eb*/
+    v14 = operator new(*(&this->q0241) << 8); /*0x48e9eb*/
     *(&this->q0242) = v14; /*0x48e9f0*/
     v15 = v14; /*0x48e9f6*/
     v16 = *(&this->q0241); /*0x48e9f8*/
@@ -179,15 +178,15 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
           *v15++ = 0; /*0x48ea5d*/
           for ( j = 1; j < 256; ++j ) /*0x48ea60*/
           {
-            v20 = (__int16 *)ComputeColorSaturation(&aP4); /*0x48ea85*/
-            v21 = *((_BYTE *)v20 + 2); /*0x48ea8f*/
+            v20 = (int16_t *)ComputeColorSaturation(&aP4); /*0x48ea85*/
+            v21 = *((unsigned char *)v20 + 2); /*0x48ea8f*/
             v29 = *v20; /*0x48ea92*/
             IDA_LOBYTE(v32) = v21; /*0x48ea97*/
             v30 = v21; /*0x48eaa4*/
             v30 = 2 * v31 * v21 / (*(&this->q0241) - 1); /*0x48eac2*/
-            v22 = Color::ConvertToRGB((unsigned __int8 *)&v29, (int)v28); /*0x48eac6*/
-            IDA_LOWORD(aP3) = *(_WORD *)v22; /*0x48eace*/
-            IDA_BYTE2(aP3) = *(_BYTE *)(v22 + 2); /*0x48eadf*/
+            v22 = Color::ConvertToRGB((uint8_t *)&v29, (int)v28); /*0x48eac6*/
+            IDA_LOWORD(aP3) = *(unsigned short *)v22; /*0x48eace*/
+            IDA_BYTE2(aP3) = *(unsigned char *)(v22 + 2); /*0x48eadf*/
             *v15++ = Palette::FindClosestColor(&aP3); /*0x48eae8*/
           }
           v23 = *(&this->q0241) - 1; /*0x48eb03*/
@@ -199,13 +198,13 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   }
   else
   {
-    v24 = (char *)RA2_OPNEW(*(&this->q0241) << 9); /*0x48eb1c*/
+    v24 = (char *)operator new(*(&this->q0241) << 9); /*0x48eb1c*/
     v25 = *(&this->q0241); /*0x48eb21*/
     *(&this->q0242) = v24; /*0x48eb2a*/
     *(&this->q0243) = &v24[512 * ((v25 - 1) >> 1)]; /*0x48eb3a*/
     if ( !aP5 ) /*0x48eb46*/
       DSurface::BlitStretch(aP1); /*0x48eb51*/
-    *(&this->q0246) = (unsigned __int16)g_DDraw_Gray127; /*0x48eb60*/
+    *(&this->q0246) = (uint16_t)g_DDraw_Gray127; /*0x48eb60*/
     *(&this->q0247) = IDA_HIWORD(g_DDraw_Gray127); /*0x48eb6d*/
   }
   if ( !aP5 ) /*0x48eb7a*/
@@ -213,13 +212,13 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   if ( dword_89ED08 < dword_89ED00 /*0x48ebb7*/
     || (byte_89ED05 || !dword_89ED00)
     && dword_89ED0C > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_89ECF8 + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_89ECF8 + 8))(
          &dword_89ECF8,
          dword_89ED0C + dword_89ED00,
          0) )
   {
     v26 = dword_89ED08++; /*0x48ebc4*/
-    *((_DWORD *)dword_89ECFC + v26) = this; /*0x48ebd3*/
+    *((unsigned int *)dword_89ECFC + v26) = this; /*0x48ebd3*/
   }
   return this; /*0x48ebd8*/
 }
@@ -228,7 +227,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
 namespace gamemd {
 int ConvertClass::ddtor(int a2, int a3, int a4, int a5, int a6, int a7, int a8)
 {
-  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))( /*0x49145a*/
+  return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)&this->q010))( /*0x49145a*/
            this,
            a2,
            a3,

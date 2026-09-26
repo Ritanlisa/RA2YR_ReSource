@@ -37,7 +37,7 @@ char * GameConfig::ComputeCRC()
   int v7; // ebp
   char *v8; // ebp
   int *v10; // [esp+10h] [ebp-104h]
-  _BYTE v11[256]; // [esp+14h] [ebp-100h] BYREF
+  unsigned char v11[256]; // [esp+14h] [ebp-100h] BYREF
 
   v0 = 0; /*0x5e84e8*/
   qmemcpy(v11, &word_ABE050, sizeof(v11)); /*0x5e84ea*/
@@ -56,7 +56,7 @@ char * GameConfig::ComputeCRC()
       v2 = 0; /*0x5e8530*/
       do /*0x5e853d*/
       {
-        v5 = *(unsigned __int8 *)v6 | (v5 << 8); /*0x5e8539*/
+        v5 = *(uint8_t *)v6 | (v5 << 8); /*0x5e8539*/
         v6 = (int *)((char *)v6 + 1); /*0x5e853b*/
         --v7; /*0x5e853c*/
       }
@@ -73,7 +73,7 @@ char * GameConfig::ComputeCRC()
     }
   }
   while ( v2 > 0 ); /*0x5e854a*/
-  v8 = (char *)RA2_OPNEW(0xCu); /*0x5e8553*/
+  v8 = (char *)operator new(0xCu); /*0x5e8553*/
   sprintf(v8, "%08X", v0); /*0x5e855c*/
   qmemcpy(&word_ABE050, v11, 0x100u); /*0x5e8572*/
   return v8; /*0x5e8574*/
@@ -90,13 +90,13 @@ int GameConfig::ComputeHash()
   int v3; // eax
   int v4; // eax
   void *v6[3]; // [esp+10h] [ebp-C4h] BYREF
-  _DWORD v7[10]; // [esp+1Ch] [ebp-B8h] BYREF
+  unsigned int v7[10]; // [esp+1Ch] [ebp-B8h] BYREF
   char v8; // [esp+44h] [ebp-90h]
   int v9; // [esp+48h] [ebp-8Ch]
   int v10; // [esp+4Ch] [ebp-88h]
   char v11; // [esp+50h] [ebp-84h]
-  _DWORD v12[22]; // [esp+68h] [ebp-6Ch] BYREF
-  _BYTE v13[12]; // [esp+C0h] [ebp-14h] BYREF
+  unsigned int v12[22]; // [esp+68h] [ebp-6Ch] BYREF
+  unsigned char v13[12]; // [esp+C0h] [ebp-14h] BYREF
   void ** v14;
 
   v0 = Hash::ComputeHashSHA1(CCINIClass_INI_Rules); /*0x679da5*/
@@ -115,7 +115,6 @@ int GameConfig::ComputeHash()
   v6[1] = 0; /*0x679de9*/
   v6[2] = 0; /*0x679ded*/
   GenericList::Constructor(v7); /*0x679df1*/
-  v7[0] = (void*)&List_INIClass_INISection___vftable; /*0x679dfa*/
   memset(&v7[7], 0, 12); /*0x679e07*/
   v8 = 0; /*0x679e13*/
   v9 = 0; /*0x679e17*/
@@ -126,7 +125,6 @@ int GameConfig::ComputeHash()
   if ( CCINIClass::Load(v6, (int)v12, 0, 0) ) /*0x679e3b*/
     dword_B053B4 = Hash::ComputeHashSHA1((int)v6); /*0x679e4d*/
   byte_B053B8 = 1; /*0x679e59*/
-  v12[0] = (void*)&CCFileClass_vftable; /*0x679e60*/
   v14 = 0; /*0x679e68*/
   Vector::Clear((int)v13); /*0x679e6f*/
   v12[0] = &off_7E1668; /*0x679e78*/

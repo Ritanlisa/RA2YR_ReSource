@@ -11,7 +11,6 @@ namespace gamemd {
 unsigned int * AddTeamCommand::Construct(int a2)
 {
   this->AddTeamCommand_field_00 = a2; /*0x5360b6*/
-  *(void **)this = (void*)&AddTeamCommandClass_vftable; /*0x5360b9*/
   return this; /*0x5360bf*/
 }
 } // namespace gamemd

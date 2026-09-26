@@ -40,8 +40,8 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
   HWND DlgItem; // esi
   int (__usercall *v6)@<eax>(char@<cf>, char@<zf>); // edi
   wchar_t *Format; // [esp+10h] [ebp-300h]
-  _DWORD v8[62]; // [esp+14h] [ebp-2FCh] BYREF
-  __int16 v9; // [esp+10Ch] [ebp-204h]
+  unsigned int v8[62]; // [esp+14h] [ebp-2FCh] BYREF
+  int16_t v9; // [esp+10Ch] [ebp-204h]
   wchar_t Buffer[256]; // [esp+110h] [ebp-200h] BYREF
 
   if ( Source ) /*0x5ba985*/

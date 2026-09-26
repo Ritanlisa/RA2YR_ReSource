@@ -40,13 +40,13 @@ int ThemeClass::ReadThemeEntry(unsigned char *** a2)
   char v8; // [esp-Ch] [ebp-14h]
 
   INIClass::ResetSection(a2); /*0x72048a*/
-  if ( !INIClass::BinarySearchSection((int)a2, (unsigned __int8 *)this) ) /*0x720492*/
+  if ( !INIClass::BinarySearchSection((int)a2, (uint8_t *)this) ) /*0x720492*/
     return 0; /*0x720584*/
   v3 = (const char *)(&this->q0646); /*0x7204a6*/
   INIClass::GetString( /*0x7204bf*/
     a2,
-    (unsigned __int8 *)this,
-    (unsigned __int8 *)aSound,
+    (uint8_t *)this,
+    (uint8_t *)aSound,
     &g_INI_DefaultBuffer,
     (char *)(&this->q0646),
     256);
@@ -55,33 +55,33 @@ int ThemeClass::ReadThemeEntry(unsigned char *** a2)
   strcpy((char *)(&this->q0646), v3); /*0x7204e9*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x720501*/
                     (int)a2,
-                    (unsigned __int8 *)this,
-                    (unsigned __int8 *)g_INI_Key_Scenario,
+                    (uint8_t *)this,
+                    (uint8_t *)g_INI_Key_Scenario,
                     this->u32_280);
   v8 = this->u8_288; /*0x72050e*/
   this->u32_280 = Int_Overwrite; /*0x720515*/
   this->u8_288 = INIClass::ReadBool_Overwrite( /*0x720520*/
                              (int)a2,
-                             (unsigned __int8 *)this,
-                             (unsigned __int8 *)g_INI_Key_Normal,
+                             (uint8_t *)this,
+                             (uint8_t *)g_INI_Key_Normal,
                              v8);
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x720535*/
                      (int)a2,
-                     (unsigned __int8 *)this,
-                     (unsigned __int8 *)aRepeat,
+                     (uint8_t *)this,
+                     (uint8_t *)aRepeat,
                      this->u8_289);
   v6 = this->u32_28C; /*0x72053a*/
   this->u8_289 = Bool_Overwrite; /*0x720540*/
   this->u32_28C = HouseTypeClass::loadCountryData( /*0x720554*/
                               a2,
-                              (unsigned __int8 *)this,
-                              (unsigned __int8 *)g_INI_Key_Side,
+                              (uint8_t *)this,
+                              (uint8_t *)g_INI_Key_Side,
                               v6);
   if ( this->u8_288 ) /*0x72055a*/
     INIClass::GetStringEx( /*0x720577*/
       (int)a2,
-      (unsigned __int8 *)this,
-      (unsigned __int8 *)g_INI_Key_Name,
+      (uint8_t *)this,
+      (uint8_t *)g_INI_Key_Name,
       (wchar_t *)(&this->u32_CC2),
       0x40u);
   return 1; /*0x72057c*/
@@ -94,9 +94,9 @@ void * ThemeClass::InitializeThemes(char * a2)
   char *v2; // edi
   int KeyCount; // ebp
   int v5; // esi
-  unsigned __int8 *StringByIndex; // eax
+  uint8_t *StringByIndex; // eax
   int v7; // esi
-  _DWORD *v8; // eax
+  unsigned int *v8; // eax
   char *v9; // ebp
   int v10; // eax
   int v11; // ecx
@@ -110,15 +110,15 @@ void * ThemeClass::InitializeThemes(char * a2)
   char Destination[32]; // [esp+18h] [ebp-20h] BYREF
 
   v2 = a2; /*0x720597*/
-  KeyCount = INIClass::GetKeyCount(a2, (unsigned __int8 *)g_INI_Key_Themes); /*0x7205a9*/
+  KeyCount = INIClass::GetKeyCount(a2, (uint8_t *)g_INI_Key_Themes); /*0x7205a9*/
   v5 = 0; /*0x7205ab*/
   v18 = KeyCount; /*0x7205af*/
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(v2, (unsigned __int8 *)g_INI_Key_Themes, v5); /*0x7205d1*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(v2, (uint8_t *)g_INI_Key_Themes, v5); /*0x7205d1*/
     if ( INIClass::GetString( /*0x7205de*/
-           (unsigned __int8 ***)v2,
-           (unsigned __int8 *)g_INI_Key_Themes,
+           (uint8_t ***)v2,
+           (uint8_t *)g_INI_Key_Themes,
            StringByIndex,
            &g_INI_DefaultBuffer,
            Destination,
@@ -139,19 +139,19 @@ void * ThemeClass::InitializeThemes(char * a2)
       if ( v7 == -1 ) /*0x720631*/
       {
   LABEL_10:
-        v8 = RA2_OPNEW(0x290u); /*0x720637*/
+        v8 = operator new(0x290u); /*0x720637*/
         v9 = 0; /*0x720641*/
         if ( v8 ) /*0x720648*/
         {
           v8[160] = 0; /*0x72064a*/
           v8[161] = 0; /*0x720650*/
-          *((_WORD *)v8 + 256) = 0; /*0x720656*/
-          *((_BYTE *)v8 + 648) = 1; /*0x72065d*/
-          *((_BYTE *)v8 + 649) = 0; /*0x720664*/
-          *((_BYTE *)v8 + 650) = 0; /*0x72066b*/
+          *((unsigned short *)v8 + 256) = 0; /*0x720656*/
+          *((unsigned char *)v8 + 648) = 1; /*0x72065d*/
+          *((unsigned char *)v8 + 649) = 0; /*0x720664*/
+          *((unsigned char *)v8 + 650) = 0; /*0x72066b*/
           v8[163] = -1; /*0x720672*/
-          *(_BYTE *)v8 = 0; /*0x72067c*/
-          *((_BYTE *)v8 + 256) = 0; /*0x72067f*/
+          *(unsigned char *)v8 = 0; /*0x72067c*/
+          *((unsigned char *)v8 + 256) = 0; /*0x72067f*/
           v9 = (char *)v8; /*0x720686*/
         }
         strcpy(v9, Destination); /*0x7206a0*/
@@ -159,19 +159,19 @@ void * ThemeClass::InitializeThemes(char * a2)
         if ( this->q024 < v10 /*0x7206d1*/
           || (this->u8_21 || !v10)
           && (v11 = this->ThemeClass_field_28, v11 > 0)
-          && (*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(this->q014 + 8))(&this->q050, v10 + v11, 0) )
+          && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->q014 + 8))(&this->q050, v10 + v11, 0) )
         {
           v12 = this->q024; /*0x7206d8*/
           v13 = this->u32_18; /*0x7206db*/
           this->q024 = v12 + 1; /*0x7206e1*/
-          *(_DWORD *)(v13 + 4 * v12) = v9; /*0x7206e4*/
+          *(unsigned int *)(v13 + 4 * v12) = v9; /*0x7206e4*/
         }
       }
       else
       {
         v9 = *(char **)(this->u32_18 + 4 * v7); /*0x7206ec*/
       }
-      ThemeClass::ReadThemeEntry((int)v9, (unsigned __int8 ***)a2); /*0x7206f6*/
+      ThemeClass::ReadThemeEntry((int)v9, (uint8_t ***)a2); /*0x7206f6*/
       v5 = i; /*0x7206fb*/
       KeyCount = v18; /*0x7206ff*/
       v2 = a2; /*0x720703*/
@@ -209,20 +209,20 @@ int ThemeClass::ClearQueues()
   {
     if ( dword_B1D4B8 ) /*0x75238c*/
     {
-      *(_DWORD *)(*((_DWORD *)dword_B1D4B8 + 3) + 80) = 2; /*0x752391*/
+      *(unsigned int *)(*((unsigned int *)dword_B1D4B8 + 3) + 80) = 2; /*0x752391*/
       RA2_OPDEL(dword_B1D4B8); /*0x75239b*/
       dword_B1D4B8 = 0; /*0x7523a3*/
     }
     for ( i = AudioQueue::GetNext(&dword_B1D3F0); i; i = AudioQueue::GetNext(&dword_B1D3F0) ) /*0x7523bb*/
     {
-      LinkedList::Init((_DWORD **)i); /*0x7523bf*/
-      *(_DWORD *)(*(_DWORD *)(i + 12) + 80) = 2; /*0x7523c8*/
+      LinkedList::Init((unsigned int **)i); /*0x7523bf*/
+      *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = 2; /*0x7523c8*/
       RA2_OPDEL((void *)i); /*0x7523cb*/
     }
     for ( j = AudioQueue::GetNext(&dword_B1D3C8); j; j = AudioQueue::GetNext(&dword_B1D3C8) ) /*0x7523f1*/
     {
-      LinkedList::Init((_DWORD **)j); /*0x7523f5*/
-      *(_DWORD *)(*(_DWORD *)(j + 12) + 80) = 2; /*0x7523fe*/
+      LinkedList::Init((unsigned int **)j); /*0x7523f5*/
+      *(unsigned int *)(*(unsigned int *)(j + 12) + 80) = 2; /*0x7523fe*/
       RA2_OPDEL((void *)j); /*0x752401*/
     }
     v3 = (int *)byte_B1D450; /*0x752419*/
@@ -231,8 +231,8 @@ int ThemeClass::ClearQueues()
       result = AudioQueue::GetNext(v3); /*0x752420*/
       for ( k = result; result; k = result ) /*0x752429*/
       {
-        LinkedList::Init((_DWORD **)k); /*0x75242d*/
-        *(_DWORD *)(*(_DWORD *)(k + 12) + 80) = 2; /*0x752436*/
+        LinkedList::Init((unsigned int **)k); /*0x75242d*/
+        *(unsigned int *)(*(unsigned int *)(k + 12) + 80) = 2; /*0x752436*/
         RA2_OPDEL((void *)k); /*0x752439*/
         result = AudioQueue::GetNext(v3); /*0x752443*/
       }

@@ -47,8 +47,8 @@ int WinModemClass::ReadSerial()
         v5 = 0; /*0x7749bd*/
         do /*0x7749e4*/
         {
-          *(_BYTE *)(this->q024 + this->u32_58) = *(_BYTE *)(this + v5++ + 108); /*0x7749cd*/
-          this->u32_58 = ((unsigned __int16)this->u32_58 + 1) & 0x1FFF; /*0x7749db*/
+          *(unsigned char *)(this->q024 + this->u32_58) = *(unsigned char *)(this + v5++ + 108); /*0x7749cd*/
+          this->u32_58 = ((uint16_t)this->u32_58 + 1) & 0x1FFF; /*0x7749db*/
         }
         while ( v5 < NumberOfBytesTransferred ); /*0x7749e4*/
         v16 = NumberOfBytesTransferred; /*0x7749e6*/
@@ -73,7 +73,7 @@ int WinModemClass::ReadSerial()
     this->u32_20 = cbOutQue; /*0x774a49*/
     if ( !v10 ) /*0x774a4c*/
     {
-      WinModemClass::LogCommErrors(v8, *(_BYTE *)&Stat, cbInQue, cbOutQue); /*0x774a62*/
+      WinModemClass::LogCommErrors(v8, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774a62*/
       cbInQue = Stat.cbInQue; /*0x774a67*/
     }
     if ( cbInQue < 0x2000 ) /*0x774a71*/
@@ -98,8 +98,8 @@ int WinModemClass::ReadSerial()
     {
       for ( i = 0; i < NumberOfBytesTransferred; ++i ) /*0x774ab0*/
       {
-        *(_BYTE *)(this->q024 + this->u32_58) = *(_BYTE *)(i + &this->u32_288); /*0x774abf*/
-        this->u32_58 = ((unsigned __int16)this->u32_58 + 1) & 0x1FFF; /*0x774acd*/
+        *(unsigned char *)(this->q024 + this->u32_58) = *(unsigned char *)(i + &this->u32_288); /*0x774abf*/
+        this->u32_58 = ((uint16_t)this->u32_58 + 1) & 0x1FFF; /*0x774acd*/
       }
       v16 += NumberOfBytesTransferred; /*0x774ada*/
     }
@@ -139,12 +139,12 @@ int WinModemClass::ReadBytes(void (**this)() a1, WinModemClass * aP1, WinModemCl
     v8 = *(&this->q0085); /*0x774b65*/
     if ( v8 ) /*0x774b6a*/
     {
-      if ( *((_BYTE *)this->q024 + (_DWORD)*(&this->q0081)) != 13 ) /*0x774b78*/
+      if ( *((unsigned char *)this->q024 + (unsigned int)*(&this->q0081)) != 13 ) /*0x774b78*/
         v8(); /*0x774b7a*/
     }
-    *a2++ = *((_BYTE *)this->q024 + (_DWORD)*(&this->q0081)); /*0x774b86*/
+    *a2++ = *((unsigned char *)this->q024 + (unsigned int)*(&this->q0081)); /*0x774b86*/
     --v5; /*0x774b92*/
-    *(&this->q0081) = (void (*)(void))(((unsigned __int16)*(&this->q0081) + 1) & 0x1FFF); /*0x774b93*/
+    *(&this->q0081) = (void (*)(void))(((uint16_t)*(&this->q0081) + 1) & 0x1FFF); /*0x774b93*/
   }
   while ( v5 ); /*0x774b96*/
   return v5; /*0x774b99*/
@@ -356,7 +356,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
   DWORD NumberOfBytesWritten; // [esp+24h] [ebp-F4h] BYREF
   char Str[80]; // [esp+28h] [ebp-F0h] BYREF
   char Buffer[80]; // [esp+78h] [ebp-A0h] BYREF
-  _BYTE v32[80]; // [esp+C8h] [ebp-50h] BYREF
+  unsigned char v32[80]; // [esp+C8h] [ebp-50h] BYREF
 
   IDA_LOWORD(i) = a3; /*0x77512a*/
   strcpy(Buffer, a2); /*0x77514b*/
@@ -429,7 +429,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
     }
   LABEL_21:
     memset(Str, 0, sizeof(Str)); /*0x7752cf*/
-    (*(void (__thiscall **)(int, int, char *, int, int))(*(_DWORD *)&this->q0080))(this, v11, Str, 80, a8); /*0x7752e6*/
+    (*(void (__thiscall **)(int, int, char *, int, int))(((unsigned int)(this->q0080))))(this, v11, Str, 80, a8); /*0x7752e6*/
     if ( !strcmp(Str, a0) ) /*0x77531d*/
       return 3; /*0x775437*/
     if ( strstr(Str, g_INI_Key_OK) ) /*0x77532d*/
@@ -556,15 +556,14 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
   void * v3;
 
   v3 = this->q05C; /*0x775613*/
-  *(void **)this = (void*)&WinModemClass_vftable; /*0x775616*/
   if ( v3 != -1 ) /*0x77561f*/
   {
     Debug::Log(); /*0x775626*/
-    CloseHandle(*((HANDLE *)this + 23)); /*0x775632*/
-    *((_DWORD *)this + 23) = -1; /*0x775638*/
+    CloseHandle(this->q05C); /*0x775632*/
+    this->q05C = -1; /*0x775638*/
   }
-  if ( *((_DWORD *)this + 9) ) /*0x77563f*/
-    RA2_OPDEL(*((void **)this + 9)); /*0x775647*/
+  if ( this->q024 ) /*0x77563f*/
+    RA2_OPDEL(this->q024); /*0x775647*/
   if ( (a2 & 1) != 0 ) /*0x775654*/
     RA2_OPDEL(); /*0x775657*/
   return this; /*0x775661*/
