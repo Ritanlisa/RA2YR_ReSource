@@ -84,7 +84,7 @@ unsigned int * Surface::CopyRect(ObjectClass * aP1)
   if ( v5 <= 0 ) /*0x5d200e*/
   {
   LABEL_18:
-    if ( v5 >= result[4] ) /*0x5d207c*/
+    if ( v5 >= result->u32_10 ) /*0x5d207c*/
     {
       v22 = 0; /*0x5d2165*/
       v50 = -1; /*0x5d2169*/
@@ -132,7 +132,7 @@ unsigned int * Surface::CopyRect(ObjectClass * aP1)
         }
         result = this; /*0x5d2229*/
       }
-      v30 = result[3]; /*0x5d222d*/
+      v30 = result->q00C; /*0x5d222d*/
       v45 = v45; /*0x5d2230*/
       v32 = (unsigned int *)(v30 + 16 * v22); /*0x5d2237*/
       *v32 = v44; /*0x5d223d*/
@@ -144,18 +144,18 @@ unsigned int * Surface::CopyRect(ObjectClass * aP1)
     }
     else
     {
-      v11 = (int *)(result[3] + 16 * v5); /*0x5d208a*/
+      v11 = (int *)(result->q00C + 16 * v5); /*0x5d208a*/
       *v11 = *aP1; /*0x5d208d*/
       v11[1] = aP1[1]; /*0x5d2093*/
       v11[2] = aP1[2]; /*0x5d2099*/
       v11[3] = aP1[3]; /*0x5d20a0*/
-      ++result[1]; /*0x5d20a8*/
+      ++result->Width; /*0x5d20a8*/
     }
     return result; /*0x5d20af*/
   }
   v6 = *aP1; /*0x5d2010*/
   v7 = aP1[1]; /*0x5d2012*/
-  v8 = (int *)result[3]; /*0x5d2015*/
+  v8 = (int *)result->q00C; /*0x5d2015*/
   while ( 1 ) /*0x5d2020*/
   {
     v48 = 0; /*0x5d2020*/

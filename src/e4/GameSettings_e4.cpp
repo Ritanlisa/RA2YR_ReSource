@@ -177,7 +177,7 @@ AbstractClass * * GameSettings::Read()
   this->u32_38 = v28; /*0x5fa9e2*/
   v29 = Math::RoundToInt(v28 * 16384.0); /*0x5fa9eb*/
   EndBufferMixer(g_MixerChannel_Score, v29); /*0x5fa9f8*/
-  Debug::Log("SoundVolume = %f\n", *((float *)this + 14)); /*0x5faa0b*/
+  Debug::Log("SoundVolume = %f\n", *((float *)this->u32_38)); /*0x5faa0b*/
   v30 = this->u32_3C; /*0x5faa10*/
   INIClass::ReadDouble_Overwrite((int)g_INI_Key_Audio, (int)aVoicevolume, v30); /*0x5faa28*/
   if ( v30 >= 1.0 ) /*0x5faa38*/
@@ -187,7 +187,7 @@ AbstractClass * * GameSettings::Read()
   ThemeClass::GetField(v31, IDA_HIDWORD(v31)); /*0x5faa52*/
   v32 = Math::RoundToInt(this->u32_3C * 16384.0); /*0x5faa60*/
   EndBufferMixer(g_MixerChannel_Voice, v32); /*0x5faa6d*/
-  Debug::Log("VoiceVolume = %f\n", *((float *)this + 15)); /*0x5faa80*/
+  Debug::Log("VoiceVolume = %f\n", *((float *)this->u32_3C)); /*0x5faa80*/
   v33 = this->q040; /*0x5faa85*/
   INIClass::ReadDouble_Overwrite((int)g_INI_Key_Audio, (int)aScorevolume, v33); /*0x5faa9d*/
   if ( v33 >= 1.0 ) /*0x5faaad*/
@@ -197,7 +197,7 @@ AbstractClass * * GameSettings::Read()
   EndBufferMixer(g_MixerChannel_Theme, v34); /*0x5faacd*/
   v35 = Math::RoundToInt(this->q040 * 255.0); /*0x5faadb*/
   TechnoTypeClass::CheckFlag(v35); /*0x5faae6*/
-  Debug::Log("ScoreVolume = %f\n", *((float *)this + 16)); /*0x5faaf9*/
+  Debug::Log("ScoreVolume = %f\n", *((float *)this->q040)); /*0x5faaf9*/
   v36 = INIClass::ReadBool_Overwrite(g_INI_Key_Audio, aIsscorerepeat, this->u8_44); /*0x5fab14*/
   this->u8_44 = v36; /*0x5fab19*/
   byte_A83D20 = v36; /*0x5fab1c*/

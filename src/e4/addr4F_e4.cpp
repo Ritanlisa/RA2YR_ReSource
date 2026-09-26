@@ -1437,7 +1437,7 @@ int E4Recv_4F2280::sub_4F2280(int a2, int a3)
   int v6; // [esp+8h] [ebp-4h]
 
   v6 = 0; /*0x4f2286*/
-  v5 = this + 88; /*0x4f228e*/
+  v5 = this->u32_160; /*0x4f228e*/
   for ( result = Map::CanScroll(&v4); (unsigned char)result; result = ((int (__thiscall *)(void ***))v4[1])(&v4) ) /*0x4f22a6*/
   {
     if ( *(unsigned int *)(*(unsigned int *)(*((unsigned int *)v5 + 1) + 4 * v6) + 4) == a2 ) /*0x4f22c3*/

@@ -2062,7 +2062,7 @@ const char * E4Recv_6810C0::_raw_name_type_info__QBEPBDXZ()
 namespace gamemd {
 char * E4Recv_681180::sub_681180()
 {
-  return this + 400; /*0x681186*/
+  return this->u32_640; /*0x681186*/
 }
 } // namespace gamemd
 
@@ -2419,7 +2419,7 @@ int E4Recv_689820::sub_689820(const char * a2)
   const char *i; // edi
 
   v2 = 0; /*0x689828*/
-  for ( i = this + 7304; strcmp(a2, i); i += 41 ) /*0x68982a*/
+  for ( i = this->u32_7220; strcmp(a2, i); i += 41 ) /*0x68982a*/
   {
     if ( ++v2 >= 50 ) /*0x689868*/
       return -1; /*0x689871*/

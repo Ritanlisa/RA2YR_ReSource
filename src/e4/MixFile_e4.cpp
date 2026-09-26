@@ -721,7 +721,7 @@ unsigned int * MIXFile::Load(ObjectClass * aP1)
     v30 = 0; /*0x627777*/
     while ( 1 ) /*0x62779b*/
     {
-      v15 = *(char **)(*(unsigned int *)(v2[1] + 4) + 4 * v8); /*0x62779b*/
+      v15 = *(char **)(*(unsigned int *)(v2->q004 + 4) + 4 * v8); /*0x62779b*/
       v16 = (int16_t *)(v30 + *(unsigned int *)(v34[2] + 4)); /*0x6277a1*/
       v31 = *v16; /*0x6277a6*/
       v32 = *((unsigned char *)v16 + 2); /*0x6277ae*/

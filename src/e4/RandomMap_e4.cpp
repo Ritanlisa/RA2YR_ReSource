@@ -692,7 +692,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2)
           if ( v11 > v6 && (int16_t)v28 - v10 < v6 && v10 - (int16_t)v28 < v6 && v11 <= g_MapCellCount ) /*0x58e828*/
           {
             v12 = (char *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v24); /*0x58e838*/
-            if ( v12[283] == v26[4] ) /*0x58e84b*/
+            if ( v12[283] == v26->q010 ) /*0x58e84b*/
             {
               v13 = (char *)g_MapTileArray + 80 * (int16_t)v24 + 80 * g_MapCellWidth * IDA_SHIWORD(v24); /*0x58e870*/
               v14 = *((unsigned int *)v13 + 14); /*0x58e872*/
@@ -712,10 +712,10 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2)
                   *(unsigned int *)(v20 + 4 * v19) = v24; /*0x58e8ef*/
                 }
                 v21 = v26; /*0x58e8f2*/
-                *((unsigned int *)v13 + 14) = v26[2]; /*0x58e903*/
+                *((unsigned int *)v13 + 14) = v26->q008; /*0x58e903*/
                 *((unsigned char *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v24) + 283) = *((unsigned char *)v21 + 16); /*0x58e90e*/
               }
-              else if ( v14 != v26[2] ) /*0x58e91d*/
+              else if ( v14 != v26->q008 ) /*0x58e91d*/
               {
                 if ( v25 ) /*0x58e98c*/
                   (*(void (__thiscall **)(unsigned int *, int))*v25)(v25, 1); /*0x58e992*/
@@ -899,7 +899,7 @@ void* RandomMap::CollectBorderCells()
   {
     v3 = 0; /*0x58f0fe*/
   }
-  v1[1] = v3; /*0x58f100*/
+  v1->Items = v3; /*0x58f100*/
   v4 = operator new(g_MapTileArrayEnd); /*0x58f114*/
   v5 = 0; /*0x58f119*/
   for ( Block = v4; v5 < (int)g_MapTileArrayEnd; ++v5 ) /*0x58f121*/
@@ -946,9 +946,9 @@ void* RandomMap::CollectBorderCells()
   }
   for ( i = 0; i < (int)g_MapTileArrayEnd; ++i ) /*0x58f201*/
   {
-    if ( Block[i] && i != v1[2] ) /*0x58f210*/
+    if ( Block[i] && i != v1->q008 ) /*0x58f210*/
     {
-      v18 = v1[1]; /*0x58f212*/
+      v18 = v1->Items; /*0x58f212*/
       v19 = *(unsigned int *)(v18 + 8); /*0x58f215*/
       if ( *(unsigned int *)(v18 + 16) < v19 /*0x58f23a*/
         || (*(unsigned char *)(v18 + 13) || !v19)
@@ -963,17 +963,17 @@ void* RandomMap::CollectBorderCells()
     }
   }
   v23 = 0; /*0x58f25a*/
-  v1[3] = 0; /*0x58f25c*/
+  v1->q00C = 0; /*0x58f25c*/
   v24 = g_MapCellWidth * g_MapCellWidth; /*0x58f265*/
   if ( g_MapCellWidth * g_MapCellWidth > 0 ) /*0x58f26a*/
   {
-    v25 = v1[2]; /*0x58f26c*/
+    v25 = v1->q008; /*0x58f26c*/
     v26 = (char *)g_MapTileArray; /*0x58f26f*/
     do /*0x58f29b*/
     {
       if ( *(unsigned int *)&v26[v23 + 56] == v25 && (*(unsigned short *)&v26[v23] || *(unsigned short *)&v26[v23 + 2]) ) /*0x58f282*/
       {
-        ++v1[3]; /*0x58f28e*/
+        ++v1->q00C; /*0x58f28e*/
         v26 = (char *)g_MapTileArray; /*0x58f291*/
       }
       v23 += 80; /*0x58f297*/
@@ -3678,7 +3678,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
   if ( off_82AF14 ) /*0x599211*/
     off_82AF14(); /*0x599213*/
   Debug::Log(); /*0x59921a*/
-  if ( v26[14] ) /*0x59921f*/
+  if ( v26->u32_38 ) /*0x59921f*/
   {
     LayerClass::CellIteratorReset(&MapClass_Instance); /*0x59923e*/
     for ( jj = LayerClass::CellIteratorNext(&MapClass_Instance); jj; jj = LayerClass::CellIteratorNext(&MapClass_Instance) ) /*0x59924f*/
@@ -3724,8 +3724,8 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
   BuildingClass::ClearOccupancyData(); /*0x59939b*/
   BuildingClass::ClearFactoryData(); /*0x5993a0*/
   Debug::Log(); /*0x5993aa*/
-  v26[193] = 0; /*0x5993af*/
-  v26[194] = 0; /*0x5993b5*/
+  v26->q304 = 0; /*0x5993af*/
+  v26->q308 = 0; /*0x5993b5*/
   if ( g_MapTileArray ) /*0x5993c5*/
   {
     RA2_OPDEL(g_MapTileArray); /*0x5993c8*/
@@ -4618,7 +4618,7 @@ void RandomMap::FillTerrainProgressively()
   v1 = this; /*0x59afad*/
   *(&this->q04C4) = 1; /*0x59afb3*/
   v2 = Object::ComputeAllocationSize(); /*0x59afbd*/
-  v3 = (double)v1[19]; /*0x59afc2*/
+  v3 = (double)v1->u32_4C; /*0x59afc2*/
   v14 = v2; /*0x59afc5*/
   v12 = 0; /*0x59afcb*/
   v13 = 0; /*0x59afcf*/
@@ -5969,7 +5969,7 @@ int RandomMap::SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, sh
               v59 = v89; /*0x5a0f73*/
               ++v85; /*0x5a0f75*/
               v60 = *v10 + 1; /*0x5a0f81*/
-              IDA_LODWORD(v92) = v89[1]; /*0x5a0f82*/
+              IDA_LODWORD(v92) = v89->Items; /*0x5a0f82*/
               v61 = v10[1]; /*0x5a0f86*/
               v62 = v60 >> 1; /*0x5a0f8b*/
               IDA_LODWORD(v91) = v89; /*0x5a0f8f*/
@@ -6267,7 +6267,7 @@ int RandomMap::PlaceRandomMapTiberium()
           }
           v1 = v1; /*0x5a2548*/
         }
-        Math::RoundToInt((double)v1[21] * 0.01 * (double)(v1[176] - v1[175]) + (double)v1[175]); /*0x5a2575*/
+        Math::RoundToInt((double)v1->q054 * 0.01 * (double)(v1[176] - v1->u32_2BC) + (double)v1->u32_2BC); /*0x5a2575*/
         v18 = (double)v6[8]; /*0x5a257a*/
         if ( v18 < 0.5 ) /*0x5a258e*/
           v18 = 0.5; /*0x5a2592*/
@@ -6360,9 +6360,9 @@ int RandomMap::PlaceRandomMapTiberium()
             while ( v34 ); /*0x5a27bc*/
           }
           v52 = 0; /*0x5a27da*/
-          if ( v1[16] == 3 ) /*0x5a27c6*/
+          if ( v1->u32_40 == 3 ) /*0x5a27c6*/
           {
-            v39 = v1[15]; /*0x5a27c8*/
+            v39 = v1->u32_3C; /*0x5a27c8*/
             if ( v39 == 1 || v39 == 3 || v39 == 4 ) /*0x5a27d8*/
               v52 = 1; /*0x5a27c6*/
           }
@@ -6570,7 +6570,7 @@ VectorClass_flat * * RandomMap::PlaceResources()
   LayerClass::CellIteratorReset(&MapClass_Instance); /*0x5a3f19*/
   for ( j = LayerClass::CellIteratorNext(&MapClass_Instance); j; j = LayerClass::CellIteratorNext(&MapClass_Instance) ) /*0x5a3f2a*/
     CellClass::DetermineTileType(j); /*0x5a3f2e*/
-  IDA_LODWORD(v39) = Math::RoundToInt(((double)v1[25] * 0.1 + 0.7) * ((double)v1[23] * 0.01) * (double)v1[191]); /*0x5a3f68*/
+  IDA_LODWORD(v39) = Math::RoundToInt(((double)v1->q064 * 0.1 + 0.7) * ((double)v1[23] * 0.01) * (double)v1->u32_2FC); /*0x5a3f68*/
   v34 = 0; /*0x5a3f6c*/
   if ( IDA_SLODWORD(v39) > 0 ) /*0x5a3f70*/
   {
@@ -6771,7 +6771,7 @@ int RandomMap::GenerateRandomMapTerrain()
   LayerClass::CellIteratorReset(&MapClass_Instance); /*0x5a43f5*/
   for ( j = LayerClass::CellIteratorNext(&MapClass_Instance); j; j = LayerClass::CellIteratorNext(&MapClass_Instance) ) /*0x5a4406*/
     CellClass::DetermineTileType(j); /*0x5a440a*/
-  result = Math::RoundToInt(((double)v1[25] * 0.1 + 0.7) * ((double)v1[23] * 0.01) * (double)v1[191]); /*0x5a443d*/
+  result = Math::RoundToInt(((double)v1->q064 * 0.1 + 0.7) * ((double)v1[23] * 0.01) * (double)v1->u32_2FC); /*0x5a443d*/
   v21 = result; /*0x5a4444*/
   v19 = 0; /*0x5a4448*/
   if ( result > 0 ) /*0x5a444c*/
@@ -7136,11 +7136,11 @@ unsigned int * RandomMap::PlaceTileSet()
       }
       while ( (int)result < v3[2] ); /*0x655972*/
     }
-    v1[1174] = v3; /*0x655974*/
+    v1->q1258 = v3; /*0x655974*/
   }
   else
   {
-    v1[1174] = 0; /*0x655980*/
+    v1->q1258 = 0; /*0x655980*/
   }
   return result; /*0x65597b*/
 }

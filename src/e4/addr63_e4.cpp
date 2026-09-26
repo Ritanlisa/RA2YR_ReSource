@@ -3316,7 +3316,7 @@ namespace gamemd {
 int E4Recv_631FE0::sub_631FE0(unsigned char * a2)
 {
   if ( a2 ) /*0x631fe6*/
-    return EncodeVarInt((int)this + 256, a2, 64); /*0x631ff5*/
+    return EncodeVarInt((int)this->u32_400, a2, 64); /*0x631ff5*/
   else
     return 0; /*0x631fe8*/
 }

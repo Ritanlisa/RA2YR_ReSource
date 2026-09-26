@@ -48,7 +48,7 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
   v6 = *(unsigned int **)&HouseClass_Array->gap0[4 * v4]; /*0x41ece5*/
   if ( !v6 ) /*0x41ecea*/
     return v11; /*0x41ee23*/
-  v7 = v3[54]; /*0x41ecf0*/
+  v7 = v3->q0D8; /*0x41ecf0*/
   if ( v7 ) /*0x41ecf8*/
   {
     v8 = (*(int (__thiscall **)(int))(*(unsigned int *)v7 + 64))(v7); /*0x41ed0a*/
@@ -81,25 +81,25 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
   {
     v10 = 0; /*0x41ed7e*/
   }
-  switch ( v3[58] ) /*0x41ed8f*/
+  switch ( v3->q0E8 ) /*0x41ed8f*/
   {
     case 0: /*0x41ed8f*/
-      result = v10 < v3[57]; /*0x41eda5*/
+      result = v10 < v3->q0E4; /*0x41eda5*/
       break; /*0x41edad*/
     case 1: /*0x41ed8f*/
-      result = v10 <= v3[57]; /*0x41edbf*/
+      result = v10 <= v3->q0E4; /*0x41edbf*/
       break; /*0x41edc7*/
     case 2: /*0x41ed8f*/
-      result = v10 == v3[57]; /*0x41edd9*/
+      result = v10 == v3->q0E4; /*0x41edd9*/
       break; /*0x41ede1*/
     case 3: /*0x41ed8f*/
-      result = v10 >= v3[57]; /*0x41edf3*/
+      result = v10 >= v3->q0E4; /*0x41edf3*/
       break; /*0x41edfb*/
     case 4: /*0x41ed8f*/
-      result = v10 > v3[57]; /*0x41ee0d*/
+      result = v10 > v3->q0E4; /*0x41ee0d*/
       break; /*0x41ee15*/
     case 5: /*0x41ed8f*/
-      return v10 != v3[57]; /*0x41ee1e*/
+      return v10 != v3->q0E4; /*0x41ee1e*/
     default:
       return v11;
   }

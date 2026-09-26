@@ -114,7 +114,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
     v15 = *aP4; /*0x540442*/
     NetworkID::Assign(&v18, &v15, (int)v17, 0); /*0x54044c*/
   }
-  if ( g_GameMode_Current[0] == 4 && !(unsigned char)a6 && g_Network_IsHosting && v7[200] ) /*0x540477*/
+  if ( g_GameMode_Current[0] == 4 && !(unsigned char)a6 && g_Network_IsHosting && v7->q320 ) /*0x540477*/
   {
     v8 = a2; /*0x540485*/
     if ( !*(unsigned char *)(a2 + 3) ) /*0x540489*/
@@ -170,7 +170,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   }
   if ( g_NetworkInterface ) /*0x5405cf*/
   {
-    IDA_LOBYTE(v13) = v7[200] == 0; /*0x5405da*/
+    IDA_LOBYTE(v13) = v7->q320 == 0; /*0x5405da*/
     (*(void (__thiscall **)(int, int, int, int *, int, int, int, int))(*(unsigned int *)g_NetworkInterface + 12))( /*0x5405f2*/
       g_NetworkInterface,
       v8,

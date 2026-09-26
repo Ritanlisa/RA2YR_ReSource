@@ -2575,7 +2575,7 @@ char * E4Recv_626020::sub_626020(int a2)
     this += 3; /*0x62604d*/
     --v6; /*0x626050*/
     *(unsigned short *)v7 = *(unsigned short *)a2; /*0x626054*/
-    v7[2] = *(unsigned char *)(a2 + 2); /*0x62605a*/
+    v7->u32_8 = *(unsigned char *)(a2 + 2); /*0x62605a*/
   }
   while ( v6 ); /*0x62605d*/
 }
@@ -2589,7 +2589,7 @@ void * E4Recv_626070::sub_626070(const void * a2)
   int v4; // edx
 
   result = this; /*0x626070*/
-  v3 = this + 2; /*0x626075*/
+  v3 = this->u32_8; /*0x626075*/
   v4 = 256; /*0x626078*/
   do /*0x62608b*/
   {

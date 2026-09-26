@@ -686,7 +686,7 @@ int TeamClass::UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoCl
     {
       while ( 1 ) /*0x6367fa*/
       {
-        v6 = v4[2]; /*0x6367fa*/
+        v6 = v4->vtable3; /*0x6367fa*/
         v7 = *v4; /*0x636801*/
         v8 = *(unsigned int *)(v6 + 4 * v27); /*0x636803*/
         v9 = 0; /*0x636806*/

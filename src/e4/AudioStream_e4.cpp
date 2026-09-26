@@ -518,9 +518,9 @@ int AudioStream::ReadSamples(const void * a2)
       }
       else if ( a2 ) /*0x4a3551*/
       {
-        qmemcpy((void *)v16[9], a2, v16[4] * v2[3]); /*0x4a3564*/
+        qmemcpy((void *)v16[9], a2, v16[4] * v2->q00C); /*0x4a3564*/
       }
-      return (*(int (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)v2[28] + 128))(v2[28], 0) != 0 ? 2 : 0;
+      return (*(int (__stdcall **)(unsigned int, unsigned int))(*(unsigned int *)v2->q070 + 128))(v2->q070, 0) != 0 ? 2 : 0;
     }
   }
 }

@@ -5294,8 +5294,8 @@ char * Network::FormatAddress(IUnknown * aP1)
       IDA_BYTE1(v3),
       IDA_BYTE2(v3),
       IDA_HIBYTE(v3),
-      (uint8_t)v2[4],
-      IDA_HIBYTE(v2[4]));
+      (uint8_t)v2->q010,
+      IDA_HIBYTE(v2->q010));
   else
     sprintf(byte_AA047C, "%d.%d.%d.%d ; %d", (uint8_t)v3, IDA_BYTE1(v3), IDA_BYTE2(v3), IDA_HIBYTE(v3), *this); /*0x53f1cf*/
   return byte_AA047C; /*0x53f192*/

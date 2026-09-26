@@ -4739,7 +4739,7 @@ char E4Recv_5AE500::sub_5AE500(const char ** a2)
   IDA_LOBYTE(v3) = String::NotEquals(a2, 0); /*0x5ae50c*/
   if ( (unsigned char)v3 ) /*0x5ae513*/
   {
-    v3 = sub_5CF840(this + 20, a2); /*0x5ae519*/
+    v3 = sub_5CF840(this->ptr_50, a2); /*0x5ae519*/
     if ( v3 ) /*0x5ae520*/
       IDA_LOBYTE(v3) = nullsub_24(v3); /*0x5ae524*/
   }

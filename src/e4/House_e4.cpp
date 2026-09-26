@@ -858,7 +858,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
   }
   while ( 1 ) /*0x50dba1*/
   {
-    v10 = *(unsigned int *)(v4[27] + 4 * v9); /*0x50dba1*/
+    v10 = *(unsigned int *)(v4->u32_6C + 4 * v9); /*0x50dba1*/
     if ( !v10 || *(unsigned char *)(v10 + 129) ) /*0x50dba8*/
       goto LABEL_18; /*0x50dbb0*/
     if ( *(unsigned char *)(*(unsigned int *)(v10 + 1312) + 5817) ) /*0x50dbb8*/
@@ -899,7 +899,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
   LABEL_24:
     if ( v8 == g_ControlGroupPool && v37 == g_ControlGroupConfig && v38 == v2 ) /*0x50dc84*/
     {
-      result = v4[5599]; /*0x50dc86*/
+      result = v4->q577C; /*0x50dc86*/
       if ( result >= 0 ) /*0x50dc8e*/
       {
         if ( result > 3 ) /*0x50dc97*/

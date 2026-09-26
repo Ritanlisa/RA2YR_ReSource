@@ -2770,7 +2770,7 @@ void E4Recv_76DFD0::sub_76DFD0()
   String::Assign((char **)&v2, aMapenter); /*0x76dfdf*/
   if ( String::NotEquals((const char **)&v2, 0) ) /*0x76dfea*/
   {
-    v4 = this + 1172; /*0x76e001*/
+    v4 = this->u32_1250; /*0x76e001*/
     v5 = 0; /*0x76e005*/
     if ( Vector::HasCapacity(&v3) ) /*0x76e015*/
     {

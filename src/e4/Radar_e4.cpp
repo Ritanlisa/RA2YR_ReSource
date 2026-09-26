@@ -871,7 +871,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
             *(unsigned short *)(v13 + 2 * i) = 0; /*0x5846f7*/
             v121[1] = v89; /*0x5846fd*/
             ++v12; /*0x58470a*/
-            *(unsigned short *)(v13 + 6) = *(unsigned short *)(v2[26] + 4 * CellToTileIndexMap(v121) + 2); /*0x584712*/
+            *(unsigned short *)(v13 + 6) = *(unsigned short *)(v2->q068 + 4 * CellToTileIndexMap(v121) + 2); /*0x584712*/
             v9 = v106; /*0x584716*/
             v11 = v104; /*0x58471a*/
           }
@@ -949,15 +949,15 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
         break; /*0x584838*/
   LABEL_73:
       v2[i + 29] = v86; /*0x584ab8*/
-      v43 = v2[24] - 1; /*0x584ac7*/
+      v43 = v2->q060 - 1; /*0x584ac7*/
       if ( v43 >= 0 ) /*0x584ac8*/
       {
         v44 = 16 * v43; /*0x584ad0*/
         v100 = 16 * v43; /*0x584ad4*/
-        v95 = v2[24]; /*0x584ad8*/
+        v95 = v2->q060; /*0x584ad8*/
         do /*0x584b53*/
         {
-          v45 = (int16_t *)(v2[21] + v44); /*0x584adc*/
+          v45 = (int16_t *)(v2->q054 + v44); /*0x584adc*/
           v46 = *v45; /*0x584adf*/
           if ( v46 >= v11 && v46 < v9 + v11 && (v47 = v45[1], v47 >= v10) && v47 < v10 + v107 /*0x584b1e*/
             || (v48 = v45[2], v48 >= v11) && v48 < v9 + v11 && (v49 = v45[3], v49 >= v10) && v49 < v10 + v107 )
@@ -1066,10 +1066,10 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
                 v109 = v71; /*0x584d31*/
                 if ( (uint8_t)LayerClass::IsWithinUsableArea(&v108, 1) ) /*0x584d36*/
                 {
-                  v75 = (int16_t)v74 + (int16_t)v71 * (v2[62] + v2[61] + 1); /*0x584d5c*/
+                  v75 = (int16_t)v74 + (int16_t)v71 * (v2->u32_F8 + v2->u32_F4 + 1); /*0x584d5c*/
                   if ( v75 >= 0 ) /*0x584d5e*/
                   {
-                    v78 = v2[27]; /*0x584dc6*/
+                    v78 = v2->q06C; /*0x584dc6*/
                     if ( v75 >= v78 ) /*0x584dcb*/
                       v75 = v78 - 1; /*0x584dcd*/
                   }
@@ -1131,7 +1131,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
         v30 = Cell::CoordToIndex(v117); /*0x58488a*/
         if ( v30 >= 0 ) /*0x584891*/
         {
-          v31 = v2[27]; /*0x584897*/
+          v31 = v2->q06C; /*0x584897*/
           if ( v30 >= v31 ) /*0x58489c*/
             v30 = v31 - 1; /*0x58489e*/
         }
@@ -1146,7 +1146,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
         v33 = Cell::CoordToIndex(v120); /*0x5848bf*/
         if ( v33 >= 0 ) /*0x5848c6*/
         {
-          v34 = v2[27]; /*0x5848cc*/
+          v34 = v2->q06C; /*0x5848cc*/
           if ( v33 >= v34 ) /*0x5848d1*/
             v33 = v34 - 1; /*0x5848d3*/
         }
@@ -1154,7 +1154,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
         {
           v33 = 0; /*0x5848c8*/
         }
-        v99 = *(uint8_t *)(v2[26] + 4 * v33); /*0x5848e3*/
+        v99 = *(uint8_t *)(v2->q068 + 4 * v33); /*0x5848e3*/
         if ( v99 != 7 && !*(unsigned short *)(v91 + 2 * i) )
         {
           v108 = v29; /*0x58491b*/

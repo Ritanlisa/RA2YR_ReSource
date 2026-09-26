@@ -1184,7 +1184,7 @@ void MapClass::FillRevealBuffer(MouseClass * aP1, IUnknown * aP2)
     IDA_LOWORD(v35) = *aP1 + *v4; /*0x56845b*/
     IDA_HIWORD(v35) = aP1[1] + v4[1]; /*0x568463*/
     v6 = (IDA_SHIWORD(v35) << 9) + (int16_t)v35; /*0x56846e*/
-    if ( v6 >= 0 && v6 < v38 && *(unsigned int *)(v3[79] + 4 * v6) ) /*0x568489*/
+    if ( v6 >= 0 && v6 < v38 && *(unsigned int *)(v3->q13C + 4 * v6) ) /*0x568489*/
     {
       if ( v6 >= 0x40000 ) /*0x56849e*/
         g_Map_GlobalCellIndex = v35; /*0x5684a6*/
@@ -1401,7 +1401,7 @@ void MapClass::ApplyOverlayReveal(MouseClass * aP1, BuildingClass * aP2)
     IDA_LOWORD(v32) = *aP1 + *v4; /*0x56888b*/
     IDA_HIWORD(v32) = aP1[1] + v4[1]; /*0x568893*/
     v5 = (IDA_SHIWORD(v32) << 9) + (int16_t)v32; /*0x56889e*/
-    if ( v5 >= 0 && v5 < v35 && *(unsigned int *)(v3[79] + 4 * v5) ) /*0x5688b9*/
+    if ( v5 >= 0 && v5 < v35 && *(unsigned int *)(v3->q13C + 4 * v5) ) /*0x5688b9*/
     {
       if ( v5 >= 0x40000 ) /*0x5688ce*/
         g_Map_GlobalCellIndex = v32; /*0x5688d6*/
@@ -1749,10 +1749,10 @@ int MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
       v8 = GetRegionMap(aP1, 1, 0); /*0x56d28f*/
       if ( v8 == -1 ) /*0x56d297*/
         return -1; /*0x56d36d*/
-      v9 = 16 * v8 + v5[21]; /*0x56d2a3*/
+      v9 = 16 * v8 + v5->q054; /*0x56d2a3*/
       if ( *(unsigned char *)(v9 + 8) )
       {
-        v4 = (int16_t *)(16 * v8 + v5[21]); /*0x56d2ac*/
+        v4 = (int16_t *)(16 * v8 + v5->q054); /*0x56d2ac*/
       }
       else
       {
@@ -1785,10 +1785,10 @@ int MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
       }
     }
   }
-  v14 = *v4 + v4[1] * (v5[62] + v5[61] + 1); /*0x56d359*/
+  v14 = *v4 + v4[1] * (v5->q0F8 + v5->q0F4 + 1); /*0x56d359*/
   if ( v14 >= 0 ) /*0x56d35b*/
   {
-    v16 = v5[27]; /*0x56d370*/
+    v16 = v5->ZoneConnections; /*0x56d370*/
     if ( v14 >= v16 ) /*0x56d375*/
       v14 = v16 - 1; /*0x56d377*/
   }
@@ -1796,7 +1796,7 @@ int MapClass::GetTileIndex(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
   {
     v14 = 0; /*0x56d35d*/
   }
-  return *(uint16_t *)(v5[aP2 + 6] + 2 * *(uint16_t *)(v5[26] + 4 * v14 + 2)); /*0x56d365*/
+  return *(uint16_t *)(v5[aP2 + 6] + 2 * *(uint16_t *)(v5->somecount_4C + 4 * v14 + 2)); /*0x56d365*/
 }
 } // namespace gamemd
 // 0x56D6E0

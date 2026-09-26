@@ -6111,7 +6111,7 @@ unsigned int * E4Recv_49DA60::sub_49DA60()
   if ( v7 ) /*0x49dac4*/
     this->v3 = v3; /*0x49dac6*/
   v2[1] = v3; /*0x49dac9*/
-  result[10] = 0; /*0x49dad4*/
+  result->q028 = 0; /*0x49dad4*/
   result[11] = 0; /*0x49dad7*/
   result[12] = 0; /*0x49dada*/
   *((unsigned char *)result + 52) = 0; /*0x49dadd*/

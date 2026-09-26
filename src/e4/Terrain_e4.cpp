@@ -580,7 +580,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
     --v8; /*0x56c59e*/
   }
   while ( v8 ); /*0x56c59f*/
-  for ( i = v1[26]; i < (unsigned int)v87; i += 4 ) /*0x56c5aa*/
+  for ( i = v1->q068; i < (unsigned int)v87; i += 4 ) /*0x56c5aa*/
     *(unsigned short *)(i + 2) = 0; /*0x56c5ac*/
   v10 = 1; /*0x56c5c3*/
   if ( v103 < v101 /*0x56c5eb*/
@@ -591,7 +591,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
     v11 = v103++; /*0x56c5f6*/
     *((unsigned int *)v100 + v11) = 7; /*0x56c601*/
   }
-  v12 = (uint8_t *)v1[26]; /*0x56c608*/
+  v12 = (uint8_t *)v1->q068; /*0x56c608*/
   v92 = 0; /*0x56c60b*/
   if ( v12 < v87 ) /*0x56c615*/
   {
@@ -627,23 +627,23 @@ AbstractClass * * Terrain::ConnectivityGraph()
     }
     while ( v12 < v87 ); /*0x56c6bc*/
   }
-  v1[19] = (uint16_t)v10; /*0x56c6c8*/
-  v17 = v1[24] - 1; /*0x56c6ce*/
+  v1->q04C = (uint16_t)v10; /*0x56c6c8*/
+  v17 = v1->u32_60 - 1; /*0x56c6ce*/
   if ( v17 >= 0 ) /*0x56c6cf*/
   {
     v18 = 16 * v17; /*0x56c6d7*/
     v88 = (char *)(16 * v17); /*0x56c6db*/
-    v84 = v1[24]; /*0x56c6df*/
+    v84 = v1->u32_60; /*0x56c6df*/
     do /*0x56c7e0*/
     {
-      v19 = (int16_t *)(v1[21] + v18); /*0x56c6ea*/
+      v19 = (int16_t *)(v1->q054 + v18); /*0x56c6ea*/
       if ( *((unsigned char *)v19 + 8) ) /*0x56c6e6*/
       {
-        v20 = v1[62] + v1[61] + 1; /*0x56c704*/
+        v20 = v1->u32_F8 + v1->u32_F4 + 1; /*0x56c704*/
         v21 = *v19 + v20 * v19[1]; /*0x56c70f*/
         if ( v21 >= 0 ) /*0x56c711*/
         {
-          v22 = v1[27]; /*0x56c717*/
+          v22 = v1->u32_6C; /*0x56c717*/
           if ( v21 >= v22 ) /*0x56c71c*/
             v21 = v22 - 1; /*0x56c71e*/
         }
@@ -651,12 +651,12 @@ AbstractClass * * Terrain::ConnectivityGraph()
         {
           v21 = 0; /*0x56c713*/
         }
-        v23 = v1[26]; /*0x56c725*/
+        v23 = v1->q068; /*0x56c725*/
         v24 = *(uint16_t *)(v23 + 4 * v21 + 2); /*0x56c72d*/
         v25 = v19[2] + v20 * v19[3]; /*0x56c736*/
         if ( v25 >= 0 ) /*0x56c738*/
         {
-          v26 = v1[27]; /*0x56c73e*/
+          v26 = v1->u32_6C; /*0x56c73e*/
           if ( v25 >= v26 ) /*0x56c743*/
             v25 = v26 - 1; /*0x56c745*/
         }
@@ -673,7 +673,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
             v24 = *(uint16_t *)(v23 + 4 * v25 + 2); /*0x56c759*/
           }
           v28 = v27 | (v24 << 16); /*0x56c763*/
-          v29 = *(unsigned int *)v1[5] + 24 * (v27 & 0xF | (16 * (v24 & 0xF))); /*0x56c775*/
+          v29 = *(unsigned int *)v1->q014 + 24 * (v27 & 0xF | (16 * (v24 & 0xF))); /*0x56c775*/
           v30 = *(unsigned int *)(v29 + 16); /*0x56c778*/
           v31 = *(unsigned int **)(v29 + 4); /*0x56c77c*/
           v32 = v30 - 1; /*0x56c77f*/
@@ -711,8 +711,8 @@ AbstractClass * * Terrain::ConnectivityGraph()
     }
     while ( !v37 ); /*0x56c7e0*/
   }
-  v38 = operator new(2 * v1[19]); /*0x56c7ec*/
-  v39 = v1[19]; /*0x56c7f1*/
+  v38 = operator new(2 * v1->q04C); /*0x56c7ec*/
+  v39 = v1->q04C; /*0x56c7f1*/
   v40 = v38; /*0x56c7f4*/
   v41 = 0; /*0x56c7f9*/
   v40 = v40; /*0x56c7fd*/
@@ -725,11 +725,11 @@ AbstractClass * * Terrain::ConnectivityGraph()
       ++v41; /*0x56c80d*/
       ++v42; /*0x56c80e*/
     }
-    while ( v41 < v1[19] ); /*0x56c813*/
+    while ( v41 < v1->q04C ); /*0x56c813*/
   }
   for ( j = 0; j < 6144; j += 24 ) /*0x56c815*/
   {
-    v44 = j + *(unsigned int *)v1[5]; /*0x56c81c*/
+    v44 = j + *(unsigned int *)v1->q014; /*0x56c81c*/
     v45 = *(unsigned int *)(v44 + 16); /*0x56c81e*/
     if ( v45 > 0 ) /*0x56c823*/
     {
@@ -745,9 +745,9 @@ AbstractClass * * Terrain::ConnectivityGraph()
       while ( v45 ); /*0x56c84f*/
     }
   }
-  v77 = operator new(4 * v1[19]); /*0x56c868*/
+  v77 = operator new(4 * v1->q04C); /*0x56c868*/
   v89 = 0; /*0x56c872*/
-  if ( (int)v1[19] > 0 ) /*0x56c87c*/
+  if ( (int)v1->q04C > 0 ) /*0x56c87c*/
   {
     v77 = v77; /*0x56c87e*/
     v40 = v40; /*0x56c882*/
@@ -756,10 +756,10 @@ AbstractClass * * Terrain::ConnectivityGraph()
       *v77++ = operator new(2 * *v40++); /*0x56c891*/
       ++v89; /*0x56c8a6*/
     }
-    while ( (int)v89 < v1[19] ); /*0x56c8aa*/
+    while ( (int)v89 < v1->q04C ); /*0x56c8aa*/
   }
   v50 = 0; /*0x56c8af*/
-  if ( (int)v1[19] > 0 ) /*0x56c8b3*/
+  if ( (int)v1->q04C > 0 ) /*0x56c8b3*/
   {
     v51 = v40; /*0x56c8b5*/
     do /*0x56c8c5*/
@@ -768,13 +768,13 @@ AbstractClass * * Terrain::ConnectivityGraph()
       ++v50; /*0x56c8bf*/
       ++v51; /*0x56c8c0*/
     }
-    while ( v50 < v1[19] ); /*0x56c8c5*/
+    while ( v50 < v1->q04C ); /*0x56c8c5*/
   }
   v52 = 0; /*0x56c8c7*/
   v85 = 0; /*0x56c8c9*/
   do /*0x56c953*/
   {
-    v53 = *(unsigned int *)v1[5]; /*0x56c8d0*/
+    v53 = *(unsigned int *)v1->q014; /*0x56c8d0*/
     v54 = *(unsigned int *)(v53 + v52 + 16); /*0x56c8d2*/
     v55 = v52 + v53; /*0x56c8d6*/
     if ( v54 > 0 ) /*0x56c8da*/
@@ -801,29 +801,29 @@ AbstractClass * * Terrain::ConnectivityGraph()
     v85 = v52; /*0x56c94f*/
   }
   while ( v52 < 6144 ); /*0x56c953*/
-  v59 = (char *)operator new(v1[19]); /*0x56c962*/
+  v59 = (char *)operator new(v1->q04C); /*0x56c962*/
   v60 = 0; /*0x56c96a*/
-  for ( Blocka = (uint8_t *)v59; v60 < v1[19]; v59[v60 - 1] = *((char *)v100 + 4 * v60 - 4) ) /*0x56c972*/
+  for ( Blocka = (uint8_t *)v59; v60 < v1->q04C; v59[v60 - 1] = *((char *)v100 + 4 * v60 - 4) ) /*0x56c972*/
     ++v60; /*0x56c978*/
-  v91 = operator new(2 * v1[19]); /*0x56c993*/
+  v91 = operator new(2 * v1->q04C); /*0x56c993*/
   v61 = &dword_82A594; /*0x56c997*/
   v86 = &dword_82A594; /*0x56c9a2*/
   v83 = (int16_t **)(v1 + 6); /*0x56c9a6*/
   do /*0x56cb01*/
   {
     v78 = 2; /*0x56c9ad*/
-    v62 = (int16_t *)operator new(2 * v1[19]); /*0x56c9b8*/
+    v62 = (int16_t *)operator new(2 * v1->q04C); /*0x56c9b8*/
     v82 = v62; /*0x56c9c4*/
     *v83 = v62; /*0x56c9c8*/
     v63 = 0; /*0x56c9cd*/
-    if ( (int)v1[19] > 0 ) /*0x56c9d1*/
+    if ( (int)v1->q04C > 0 ) /*0x56c9d1*/
     {
       v62 = v62; /*0x56c9d3*/
       do /*0x56c9f3*/
         *v62++ = v61[Blocka[v63++]] != 1; /*0x56c9e7*/
-      while ( v63 < v1[19] ); /*0x56c9f3*/
+      while ( v63 < v1->q04C ); /*0x56c9f3*/
     }
-    v65 = v1[19]; /*0x56c9f5*/
+    v65 = v1->q04C; /*0x56c9f5*/
     v66 = 0; /*0x56c9f8*/
     v94 = 0; /*0x56c9fc*/
     if ( v65 > 0 ) /*0x56ca00*/
@@ -870,7 +870,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
           ++v78; /*0x56cac1*/
           v66 = v94; /*0x56cac5*/
         }
-        v73 = v1[19]; /*0x56cac9*/
+        v73 = v1->q04C; /*0x56cac9*/
         ++v66; /*0x56cacc*/
         ++v67; /*0x56cacd*/
         v94 = v66; /*0x56cad2*/
@@ -885,7 +885,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
   }
   while ( (int)v61 < (int)&dword_82A734 ); /*0x56cb01*/
   v74 = 0; /*0x56cb0a*/
-  if ( (int)v1[19] > 0 ) /*0x56cb0e*/
+  if ( (int)v1->q04C > 0 ) /*0x56cb0e*/
   {
     v75 = (void **)v77; /*0x56cb10*/
     do /*0x56cb28*/
@@ -894,7 +894,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
       ++v74; /*0x56cb22*/
       ++v75; /*0x56cb23*/
     }
-    while ( v74 < v1[19] ); /*0x56cb28*/
+    while ( v74 < v1->q04C ); /*0x56cb28*/
   }
   RA2_OPDEL(Blocka); /*0x56cb2f*/
   RA2_OPDEL(v77); /*0x56cb39*/

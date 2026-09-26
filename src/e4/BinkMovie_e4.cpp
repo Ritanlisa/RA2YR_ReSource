@@ -1586,10 +1586,10 @@ AbstractClass * * BinkMovie::ProcessKeyframe(ObjectClass * aP1)
         Font::Print(g_FogOfWarState, this->uniqueId, v17, v14, v8, v6, v16, 0, 0, 0); /*0x6c9e78*/
         v10 += 9; /*0x6c9e7f*/
         *v10 = *v4; /*0x6c9e85*/
-        v10[1] = v4[1]; /*0x6c9e8a*/
-        v10[2] = v4[2]; /*0x6c9e90*/
+        v10->u32_4 = v4[1]; /*0x6c9e8a*/
+        v10->q008 = v4[2]; /*0x6c9e90*/
         v15 = v15; /*0x6c9e93*/
-        v10[3] = v4[3]; /*0x6c9e9e*/
+        v10->q00C = v4[3]; /*0x6c9e9e*/
         v19 = v19; /*0x6c9ea1*/
         *v4 = v14; /*0x6c9ea5*/
         v4[1] = v8; /*0x6c9ea8*/

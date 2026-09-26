@@ -1708,7 +1708,7 @@ int E4Recv_486D90::sub_486D90(char a2)
     {
       v8 = this; /*0x486dbe*/
     }
-    if ( (v3 & v8[55]) != 0 ) /*0x486e11*/
+    if ( (v3 & v8->M220) != 0 ) /*0x486e11*/
       v6 |= 1 << v5; /*0x486e1c*/
     v7 = (unsigned int)++v5 < 8; /*0x486e1f*/
   }

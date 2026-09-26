@@ -284,11 +284,11 @@ LABEL_50:
         else
 LABEL_42:
           v38 = -1;
-        if ( v38 == v81[194] )
+        if ( v38 == v81->q308 )
         {
 LABEL_45:
           if ( v30 )
-            v30[20 * SLOWORD(v85) + 14 + 20 * unk_89C2DC * IDA_SWORD1(v85)] = v81[194];
+            v30[20 * SLOWORD(v85) + 14 + 20 * unk_89C2DC * IDA_SWORD1(v85)] = v81->q308;
           v99[0] = v31;
           v99[1] = v34;
           unsigned char * v39 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v99);
@@ -862,16 +862,16 @@ LABEL_6:
     }
     while ( *(int *)v117 < (int)v120 );
   }
-  v40 = RandomMap::SpreadArea(v124, (MouseClass *)v124[194], 0.003, &aP3, a4, 0);
+  v40 = RandomMap::SpreadArea(v124, (MouseClass *)v124->q308, 0.003, &aP3, a4, 0);
   if ( v40 )
   {
-    inited = MapClass::InitTileData(v124[194], 0);
+    inited = MapClass::InitTileData(v124->q308, 0);
     if ( inited )
     {
-      inited = TiberiumClass::Spread(v124[194], 2, *(unsigned int *)&aP3, v136, v137, v138, 0, 0);
+      inited = TiberiumClass::Spread(v124->q308, 2, *(unsigned int *)&aP3, v136, v137, v138, 0, 0);
       if ( inited )
       {
-        v41 = (MouseClass *)v124[194];
+        v41 = (MouseClass *)v124->q308;
         LayerClass::CellIteratorReset(&DataGlobal_87F7E8);
         for ( j = LayerClass::CellIteratorNext(&DataGlobal_87F7E8); j; j = LayerClass::CellIteratorNext(&DataGlobal_87F7E8) )
         {
@@ -944,7 +944,7 @@ LABEL_6:
   int v164; // [esp+F4h] [ebp-34h] BYREF
             Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v164, (MouseClass *)v117);
             v98 = v124;
-            GenerateTerrainMap(0, 0x10000, v97, (MapClass *)v124[194], &v116, 0);
+            GenerateTerrainMap(0, 0x10000, v97, (MapClass *)v124->q308, &v116, 0);
             int v99 = v129;
             v100 = v129 + 2;
             v101 = *(IUnknown **)(*(unsigned int *)&g_NetworkPlayerBuffer[5872]
@@ -1051,7 +1051,7 @@ LABEL_6:
                                                                            * *(unsigned int *)&g_NetworkPlayerBuffer[80484]
                                                                            + 8);
                 }
-                GenerateTerrainMap(0, 0x10000, v97, (MapClass *)v124[194], &v116, 0);
+                GenerateTerrainMap(0, 0x10000, v97, (MapClass *)v124->q308, &v116, 0);
               }
               while ( v111 < v113 );
             }
@@ -1070,7 +1070,7 @@ LABEL_6:
   int v168; // [esp+104h] [ebp-24h] BYREF
             Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v168, (MouseClass *)v119);
             v54 = v124;
-            GenerateTerrainMap(0, 0x10000, v53, (MapClass *)v124[194], &v116, 0);
+            GenerateTerrainMap(0, 0x10000, v53, (MapClass *)v124->q308, &v116, 0);
             *(unsigned int *)&DataGlobal_87F8E4[4268] = *(unsigned int *)(*(unsigned int *)&g_NetworkPlayerBuffer[5872]
                                                                      + 4
                                                                      * *(unsigned int *)&g_NetworkPlayerBuffer[78080]
@@ -1101,7 +1101,7 @@ LABEL_6:
               v59[283] += 4;
               *((unsigned char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v118) + 282) = 0;
               if ( g_MapTileArray )
-                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v118 + 20 * unk_89C2DC * IDA_SHIWORD(v118) + 14) = v124[194];
+                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v118 + 20 * unk_89C2DC * IDA_SHIWORD(v118) + 14) = v124->q308;
               v56 = g_MapCellHeight_Value;
               v55 = v119[1];
             }
@@ -1113,7 +1113,7 @@ LABEL_6:
               v61[283] += 4;
               *((unsigned char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v117) + 282) = 0;
               if ( g_MapTileArray )
-                *((unsigned int *)g_MapTileArray + 20 * v117[0] + 20 * unk_89C2DC * v117[1] + 14) = v124[194];
+                *((unsigned int *)g_MapTileArray + 20 * v117[0] + 20 * unk_89C2DC * v117[1] + 14) = v124->q308;
               v55 = v119[1];
             }
             int v62 = 0;
@@ -1153,7 +1153,7 @@ LABEL_6:
                                                                            * *(unsigned int *)&g_NetworkPlayerBuffer[78080]
                                                                            + 8);
                 }
-                GenerateTerrainMap(0, 0x10000, v53, (MapClass *)v124[194], &v116, 0);
+                GenerateTerrainMap(0, 0x10000, v53, (MapClass *)v124->q308, &v116, 0);
                 if ( v62 >= v64 )
                   break;
                 v55 = v119[1];
@@ -1172,7 +1172,7 @@ LABEL_6:
                                                                      * *(unsigned int *)&g_NetworkPlayerBuffer[80404]);
             Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v167, (MouseClass *)v117);
             v85 = v124;
-            GenerateTerrainMap(0, 0x10000, v84, (MapClass *)v124[194], &v116, 0);
+            GenerateTerrainMap(0, 0x10000, v84, (MapClass *)v124->q308, &v116, 0);
             v86 = v129;
             *(unsigned int *)&DataGlobal_87F8E4[4268] = *(unsigned int *)(*(unsigned int *)&g_NetworkPlayerBuffer[5872]
                                                                      + 4
@@ -1258,7 +1258,7 @@ LABEL_6:
                                                                            * *(unsigned int *)&g_NetworkPlayerBuffer[80404]
                                                                            + 8);
                 }
-                GenerateTerrainMap(0, 0x10000, v84, (MapClass *)v124[194], &v116, 0);
+                GenerateTerrainMap(0, 0x10000, v84, (MapClass *)v124->q308, &v116, 0);
               }
               while ( v94 < v96 );
             }
@@ -1277,7 +1277,7 @@ LABEL_6:
   int v174; // [esp+11Ch] [ebp-Ch] BYREF
             Tactical::MouseMove((int)&DataGlobal_87F7E8, (MouseClass *)&v174, (MouseClass *)v119);
             v68 = v124;
-            GenerateTerrainMap(0, 0x10000, (char)v66, (MapClass *)v124[194], &v116, 0);
+            GenerateTerrainMap(0, 0x10000, (char)v66, (MapClass *)v124->q308, &v116, 0);
             *(unsigned int *)&DataGlobal_87F8E4[4268] = *(unsigned int *)(*(unsigned int *)&g_NetworkPlayerBuffer[5872]
                                                                      + 4 * (unsigned int)dword_ABB110
                                                                      + 12);
@@ -1328,7 +1328,7 @@ LABEL_6:
               v77[283] += 4;
               *((unsigned char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v118) + 282) = 0;
               if ( g_MapTileArray )
-                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v118 + 20 * unk_89C2DC * IDA_SHIWORD(v118) + 14) = v124[194];
+                *((unsigned int *)g_MapTileArray + 20 * (int16_t)v118 + 20 * unk_89C2DC * IDA_SHIWORD(v118) + 14) = v124->q308;
               v76 = g_MapCellHeight_Value;
               v73 = v119[1];
             }
@@ -1340,7 +1340,7 @@ LABEL_6:
               v79[283] += 4;
               *((unsigned char *)CellCoord::To_CellObj(&DataGlobal_87F7E8, v117) + 282) = 0;
               if ( g_MapTileArray )
-                *((unsigned int *)g_MapTileArray + 20 * v117[0] + 20 * unk_89C2DC * v117[1] + 14) = v124[194];
+                *((unsigned int *)g_MapTileArray + 20 * v117[0] + 20 * unk_89C2DC * v117[1] + 14) = v124->q308;
               v73 = v119[1];
             }
             int v80 = 0;

@@ -3821,7 +3821,7 @@ int E4Recv_4062C0::sub_4062C0(unsigned int a2, int a3)
 {
   SetRateMixerSample(&this->q0B8, 0x4000, a2, a3); /*0x4062da*/
   SetRateMixerSample(&this->q038, 0x4000, a2, a3); /*0x4062ec*/
-  return SetRateMixerSample(this + 66, 0x4000, a2, a3); /*0x406303*/
+  return SetRateMixerSample(this->ptr_108, 0x4000, a2, a3); /*0x406303*/
 }
 } // namespace gamemd
 
@@ -4660,7 +4660,7 @@ char * SetAudioFileName(int a1, const char * a2)
 namespace gamemd {
 char * E4Recv_4080A0::sub_4080A0()
 {
-  return this + 164; /*0x4080a6*/
+  return this->u32_290; /*0x4080a6*/
 }
 } // namespace gamemd
 

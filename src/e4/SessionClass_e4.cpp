@@ -324,15 +324,15 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
     v8 = MSChoiceClass::LoadFromINI(v7, v49, (const char **)&v44); /*0x5cf00c*/
     if ( !v8 ) /*0x5cf010*/
       goto LABEL_17; /*0x5cf010*/
-    v9 = v2[2]; /*0x5cf012*/
-    if ( v2[4] < v9 /*0x5cf038*/
+    v9 = v2->SessionClass_field_08; /*0x5cf012*/
+    if ( v2->SessionClass_field_10 < v9 /*0x5cf038*/
       || (*((unsigned char *)v2 + 13) || !v9)
-      && (v10 = v2[5], v10 > 0)
+      && (v10 = v2->SessionClass_field_14, v10 > 0)
       && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(*v2 + 8))(v2, v9 + v10, 0) )
     {
-      v11 = v2[4]; /*0x5cf03f*/
-      v12 = v2[1]; /*0x5cf042*/
-      v2[4] = v11 + 1; /*0x5cf048*/
+      v11 = v2->SessionClass_field_10; /*0x5cf03f*/
+      v12 = v2->MPGameMode; /*0x5cf042*/
+      v2->SessionClass_field_10 = v11 + 1; /*0x5cf048*/
       *(unsigned int *)(v12 + 4 * v11) = v8; /*0x5cf04b*/
     }
     if ( ++v4 > 100 ) /*0x5cf052*/
@@ -342,7 +342,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
     }
     v3 = 0; /*0x5cf054*/
   }
-  if ( v2[4] ) /*0x5cf073*/
+  if ( v2->SessionClass_field_10 ) /*0x5cf073*/
   {
     String::Assign(&v45, 0); /*0x5cf0e0*/
     String::Assign((char **)&v43, aAnims); /*0x5cf0ee*/
@@ -363,25 +363,25 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
         if ( String::Length((const char **)&v43) ) /*0x5cf1a9*/
         {
           __1_Timevec_std__QAE_XZ((std::_Timevec *)&v43); /*0x5cf1b6*/
-          v2[6] = v17; /*0x5cf1bb*/
+          v2->Config = v17; /*0x5cf1bb*/
         }
         v18 = String::Tokenize((const char **)&v44, v16, Delimiter, (void **)&v43); /*0x5cf1d6*/
         if ( String::Length((const char **)&v43) ) /*0x5cf1d8*/
         {
           __1_Timevec_std__QAE_XZ((std::_Timevec *)&v43); /*0x5cf1e5*/
-          v2[7] = v19; /*0x5cf1ea*/
+          v2->u32_1C = v19; /*0x5cf1ea*/
         }
         v20 = String::Tokenize((const char **)&v44, v18, Delimiter, (void **)&v43); /*0x5cf205*/
         if ( String::Length((const char **)&v43) ) /*0x5cf207*/
         {
           __1_Timevec_std__QAE_XZ((std::_Timevec *)&v43); /*0x5cf214*/
-          v2[8] = v21; /*0x5cf219*/
+          v2->u32_20 = v21; /*0x5cf219*/
         }
         String::Tokenize((const char **)&v44, v20, Delimiter, (void **)&v43); /*0x5cf22b*/
         if ( String::Length((const char **)&v43) ) /*0x5cf234*/
         {
           __1_Timevec_std__QAE_XZ((std::_Timevec *)&v43); /*0x5cf241*/
-          v2[9] = v22; /*0x5cf246*/
+          v2->q024 = v22; /*0x5cf246*/
         }
         DeleteAndZero((void **)&v43); /*0x5cf24d*/
       }
@@ -471,15 +471,15 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
                 }
                 else if ( v38 ) /*0x5cf52c*/
                 {
-                  v39 = v2[19]; /*0x5cf52e*/
-                  if ( v2[21] < v39 /*0x5cf556*/
+                  v39 = v2->PlayerColor; /*0x5cf52e*/
+                  if ( v2->u32_54 < v39 /*0x5cf556*/
                     || (*((unsigned char *)v2 + 81) || !v39)
-                    && (v40 = v2[22], v40 > 0)
-                    && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(v2[17] + 8))(v2 + 17, v39 + v40, 0) )
+                    && (v40 = v2->q058, v40 > 0)
+                    && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(v2->ptr_44 + 8))(v2 + 17, v39 + v40, 0) )
                   {
-                    v41 = v2[21]; /*0x5cf55d*/
-                    v42 = v2[18]; /*0x5cf560*/
-                    v2[21] = v41 + 1; /*0x5cf566*/
+                    v41 = v2->u32_54; /*0x5cf55d*/
+                    v42 = v2->u32_48; /*0x5cf560*/
+                    v2->u32_54 = v41 + 1; /*0x5cf566*/
                     *(unsigned int *)(v42 + 4 * v41) = v38; /*0x5cf569*/
                   }
                 }

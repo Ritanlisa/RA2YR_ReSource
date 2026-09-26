@@ -23812,7 +23812,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
       }
     }
     v8 = v20; /*0x58982c*/
-    v4[12] = 1; /*0x589830*/
+    v4->q030 = 1; /*0x589830*/
     if ( v20 ) /*0x589836*/
     {
       if ( *((unsigned int *)v4 + 1) ) /*0x589844*/
@@ -23840,7 +23840,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
           v3 = a2; /*0x5898ab*/
           v4 = this; /*0x5898af*/
         }
-        if ( v4[13] ) /*0x5898b3*/
+        if ( v4->q034 ) /*0x5898b3*/
         {
           v13 = *((unsigned int *)v4 + 1); /*0x5898b8*/
           if ( v13 ) /*0x5898bd*/
@@ -23881,7 +23881,7 @@ char VectorClass_USubzoneTrackingStruct::Release(int a2, int * a3)
       }
       *((unsigned int *)v4 + 1) = v8; /*0x58991d*/
       *((unsigned int *)v4 + 2) = v3; /*0x589928*/
-      v4[13] = a3 == 0; /*0x58992f*/
+      v4->q034 = a3 == 0; /*0x58992f*/
       return 1; /*0x589934*/
     }
     else

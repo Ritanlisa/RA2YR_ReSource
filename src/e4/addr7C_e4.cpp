@@ -12162,7 +12162,7 @@ BOOL E4Recv_7C8B0A::_before_type_info__QBEHABV1__Z(const struct type_info * a2)
 namespace gamemd {
 char * E4Recv_7C8B29::sub_7C8B29()
 {
-  return this + 8; /*0x7c8b2c*/
+  return this->u32_20; /*0x7c8b2c*/
 }
 } // namespace gamemd
 

@@ -59,7 +59,7 @@ void * WinsockInterface::ProcessPacket(int a2)
   *(unsigned int *)&this->u32_3D8 = 0; /*0x770327*/
   Audio::GetEnabled(); /*0x77032d*/
   String::Assign((char **)&a2, aOldcycle); /*0x77033b*/
-  String::Reassign((char **)this + 1, (const char **)&a2); /*0x770348*/
+  String::Reassign((char **)this->ptr_4, (const char **)&a2); /*0x770348*/
   DeleteAndZero((void **)&a2); /*0x770351*/
   String::Assign((char **)&a2, aHistory); /*0x77035f*/
   String::Reassign((char *)((char *)&this->q004 + 34), (const char **)&a2); /*0x77036f*/
