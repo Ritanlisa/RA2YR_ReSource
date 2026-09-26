@@ -193,6 +193,7 @@ struct DynamicVector {
     unsigned int checkCondition;
     unsigned int initEvent;
     unsigned int u32_14;
+    unsigned int Release;
 // --- flat members (END) ---
     unsigned int * Copy(VectorClass_flat * aP1);  // 0x5AC430
     char AddItem(VectorClass_flat * aP1);  // 0x413A70

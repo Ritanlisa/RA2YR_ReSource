@@ -35,7 +35,7 @@ struct LightSourceClass {
     unsigned int q03D;  // 0x3D
     unsigned int q040;  // 0x40
     bool q042;  // 0x42
-    char LightVisibility[4];  // 0x44
+    unsigned int LightVisibility;  // 0x44
     bool Activated;  // 0x48
     bool tail_49;  // 0x49
     bool q04A;  // 0x4A

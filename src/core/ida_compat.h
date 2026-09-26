@@ -14,6 +14,10 @@
 
 #include <cstdint>
 #include <cstring>
+#include <string.h>
+#include <stdlib.h>
+#include <windows.h>
+#include <commctrl.h>
 #include <cstddef>
 
 #include "ida_vtables.h"   // GENERATED vtable externs (gen_vtable_symbols.py)

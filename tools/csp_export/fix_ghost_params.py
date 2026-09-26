@@ -34,6 +34,22 @@ for (f, ln_no), names in sorted(need.items()):
     if not p.exists():
         p = SRC / f
     if not p.exists():
+        p = SRC / 'core' / f
+    if not p.exists():
+        p = SRC / 'entity' / f
+    if not p.exists():
+        p = SRC / 'house' / f
+    if not p.exists():
+        p = SRC / 'misc' / f
+    if not p.exists():
+        p = SRC / 'object' / f
+    if not p.exists():
+        p = SRC / 'structure' / f
+    if not p.exists():
+        p = SRC / 'system' / f
+    if not p.exists():
+        p = SRC / 'ui' / f
+    if not p.exists():
         continue
     try:
         lines = p.read_text(encoding='latin-1', errors='replace').split('\n')

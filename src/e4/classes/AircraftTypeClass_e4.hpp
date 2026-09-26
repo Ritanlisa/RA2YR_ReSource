@@ -203,7 +203,7 @@ struct AircraftTypeClass {
     bool q238;  // 0x238
     bool q239;  // 0x239
     bool q23A;  // 0x23A
-    char q23B[3];  // 0x23B
+    unsigned int q23B;  // 0x23B
     bool q23D;  // 0x23D
     unsigned char q23E;  // 0x23E
     int LineTrailColorDecrement;  // 0x240
@@ -780,10 +780,10 @@ struct AircraftTypeClass {
     bool DamageSelf;  // 0xCA0
     bool Turret;  // 0xCA1
     bool TurretRecoil;  // 0xCA2
-    char TurretAnimData[4];  // 0xCA4
+    unsigned int TurretAnimData;  // 0xCA4
     unsigned char qCA8;  // 0xCA8
     bool unknown_bool_CB4;  // 0xCB4
-    char BarrelAnimData[4];  // 0xCB8
+    unsigned int BarrelAnimData;  // 0xCB8
     unsigned char qCBC;  // 0xCBC
     bool unknown_bool_CC8;  // 0xCC8
     unsigned int qCCB;  // 0xCCB

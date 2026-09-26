@@ -1821,6 +1821,11 @@ struct HouseClass {
     unsigned int occupiables8;
     unsigned int productionFactory_plants5;
     unsigned int q54E4;
+    unsigned int AIBuildBase;
+    unsigned int CheckWinCondition;
+    unsigned int FindOwner;
+    unsigned int GetPowerRatio;
+    unsigned int gap0;
 // --- flat members (END) ---
     AbstractClass * * AIDecision(ObjectClass * aP0, int * a1);
     AbstractClass * * AutoBuildScanAndSort(int a2, unsigned int * a3);

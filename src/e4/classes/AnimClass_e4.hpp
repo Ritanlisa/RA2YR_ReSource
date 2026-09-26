@@ -1785,6 +1785,7 @@ struct AnimClass {
     unsigned int q0184;
     unsigned int q0280;
     unsigned int UpdateZAdjust;
+    unsigned int ctor;
 // --- flat members (END) ---
     BuildingTypeClass * * drawFrame();
     char * sub_4C68E0(int a2, int a3, void* aP3, void* aP4, int a6, char a7, int a8, char a9, int a10, int a11);

@@ -1517,6 +1517,9 @@ struct AbstractClass {
     unsigned int u32_24;
     unsigned int u32_2C;
     unsigned int vtable22;
+    unsigned int COMStub_AddRef;
+    unsigned int ProcessPower;
+    unsigned int QueryInterface;
 // --- flat members (END) ---
     void Initialize(TechnoClass * aP1,  TechnoClass * aP2);    // 0x438E70
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0

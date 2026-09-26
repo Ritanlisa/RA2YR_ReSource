@@ -2390,6 +2390,15 @@ struct TechnoTypeClass {
     unsigned int q5084;
     unsigned int q5085;
     unsigned int q5086;
+    unsigned int q5087;
+    unsigned int q5088;
+    unsigned int q5089;
+    unsigned int q50C0;
+    unsigned int q50C1;
+    unsigned int q50C2;
+    unsigned int q50C3;
+    unsigned int q50C4;
+    unsigned int q5142;
 // --- flat members (END) ---
     AbstractClass * * Construct(ObjectTypeClass * aP1);
     AbstractClass * * GetByTypeAndIndex(int a1, int a2);

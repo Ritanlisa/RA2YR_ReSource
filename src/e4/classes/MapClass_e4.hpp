@@ -720,6 +720,7 @@ struct MapClass {
     void* ptr_50;
     unsigned int q150;
     unsigned int ValidMapCellCount4;
+    unsigned int RevealArea2;
 // --- flat members (END) ---
     AbstractClass * * AllocateMapDataBuffer(int a2, int * a3);
     BombClass * * DecompressCellData(MouseClass * aP1);

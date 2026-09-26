@@ -2165,6 +2165,12 @@ struct BuildingClass {
     unsigned int vtable28;
     unsigned int vtable29;
     unsigned int vtable30;
+    unsigned int Items;
+    unsigned int UpdateFloatPosition;
+    unsigned int ctor;
+    unsigned int q010;
+    unsigned int q0DC0;
+    unsigned int q0DC7;
 // --- flat members (END) ---
     TechnoClass * ClearLimpetCheck();
     int AllocAndCtor(BuildingClass * aP0, int aP2);

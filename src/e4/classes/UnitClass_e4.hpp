@@ -2151,6 +2151,7 @@ struct UnitClass {
     unsigned int vtable36;
     unsigned int vtable37;
     unsigned int vtable38;
+    unsigned int Construct;
 // --- flat members (END) ---
     void ProcessIdleOrders();
 };

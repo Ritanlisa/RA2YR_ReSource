@@ -36,6 +36,7 @@ struct Rect {
     unsigned char q074;  // 0x74
     unsigned char q078;  // 0x78
     void* q080;  // 0x80
+    unsigned int SetRedraw;
 // --- flat members (END) ---
     AbstractClass * Construct(void* aP1, AbstractClass * aP2, AbstractClass * aP3);
     BOOL Inflate(LPRECT lprc, int dx, int dy);

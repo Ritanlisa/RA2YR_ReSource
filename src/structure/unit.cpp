@@ -289,7 +289,7 @@ int __thiscall UnitClass::GetExitCell(int this, _DWORD *a2, _DWORD *a3)
     result = this->referenceCount; /*0x54e4b8*/
     v14 = this->uniqueId; /*0x54e4bb*/
     this->referenceCount = result + 1; /*0x54e4c1*/
-    *(_DWORD *)(v14 + 4 * result) = v6; /*0x54e4c4*/
+    *(_DWORD *, unsigned int a1)(v14 + 4 * result) = v6; /*0x54e4c4*/
   }
   return result; /*0x54e3d8*/
 }
@@ -502,7 +502,7 @@ void* UnitClass::Deploy()
   {
     if ( !v3 ) /*0x7197ce*/
     {
-      *(_BYTE *)(v2 + 624) = 1; /*0x7197d0*/
+      *(_BYTE *, unsigned int a1)(v2 + 624) = 1; /*0x7197d0*/
       v1[14] = g_CurrentFrame; /*0x7197e4*/
       v1[15] = v59; /*0x7197ea*/
       v1[16] = 60; /*0x7197ed*/
@@ -538,7 +538,7 @@ void* UnitClass::Deploy()
           v55 = *v10; /*0x71941c*/
           v56 = v10[1]; /*0x719423*/
           v57 = v10[2]; /*0x71942f*/
-          AnimClass::ctor(v9, *((void **)g_RulesClass_Instance + 207), &v55, 0, 1, (void *)0x600, 0, 0); /*0x719442*/
+          AnimClass::ctor(v9, *((void **, unsigned int a1)g_RulesClass_Instance + 207), &v55, 0, 1, (void *)0x600, 0, 0); /*0x719442*/
         }
         v11 = (_DWORD *)(*(int (__thiscall **)(_DWORD, char *))(*(_DWORD *)v1[2] + 72))(v1[2], v58); /*0x719451*/
         v12 = v1[11]; /*0x719459*/
@@ -618,7 +618,7 @@ void* UnitClass::Deploy()
           v55 = *v31; /*0x719614*/
           v56 = v31[1]; /*0x71961b*/
           v57 = v31[2]; /*0x719624*/
-          StartAudioControllerAt(v30, (int)&v55, 0); /*0x71962c*/
+          StartAudioControllerAt(v30, (int, unsigned int a1)&v55, 0); /*0x71962c*/
         }
         (*(void (__thiscall **)(_DWORD, _DWORD *))(*(_DWORD *)v1[2] + 436))(v1[2], v1 + 9); /*0x719637*/
         IDA_LOWORD(a1) = *v7 / 256; /*0x71964c*/
@@ -652,7 +652,7 @@ void* UnitClass::Deploy()
           v57 = v37[2]; /*0x71977e*/
           AnimClass::ctor(v36, *((void **)g_RulesClass_Instance + 207), &v55, 0, 1, (void *)0x600, 0, 0); /*0x719791*/
         }
-        *(_DWORD *)(v1[2] + 640) = 0; /*0x719799*/
+        *(_DWORD *, unsigned int a1)(v1[2] + 640) = 0; /*0x719799*/
         return 0; /*0x7197a3*/
       }
     }
@@ -733,7 +733,7 @@ void* UnitClass::Deploy()
         TechnoClass::SetFocus((_DWORD *)v1[2], 0); /*0x719bbf*/
         (*(void (__thiscall **)(_DWORD, _DWORD, int))(*(_DWORD *)v1[2] + 1152))(v1[2], 0, 1); /*0x719bcc*/
         *((_BYTE *)v1 + 48) = 0; /*0x719bd2*/
-        *(_DWORD *)(v1[2] + 640) = 0; /*0x719bd9*/
+        *(_DWORD *, unsigned int a1)(v1[2] + 640) = 0; /*0x719bd9*/
         v1[13] = 0; /*0x719bdf*/
       }
       return 0; /*0x719bdf*/
@@ -752,7 +752,7 @@ void* UnitClass::Deploy()
     v55 = *v48; /*0x719a58*/
     v56 = v48[1]; /*0x719a5f*/
     v57 = v48[2]; /*0x719a68*/
-    StartAudioControllerAt(v47, (int)&v55, 0); /*0x719a70*/
+    StartAudioControllerAt(v47, (int, unsigned int a1)&v55, 0); /*0x719a70*/
   }
   v49 = (__int16 *)(*(int (__thiscall **)(_DWORD, _DWORD **))(*(_DWORD *)v1[2] + 440))(v1[2], &a1); /*0x719a81*/
   if ( !LayerClass::IsWithinUsableArea(&MapClass_Instance, v49, 1) ) /*0x719a8d*/

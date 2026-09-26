@@ -63,7 +63,7 @@ EditClass * * SHA1::Process(const void* data, uint32_t size)
       while ( v6 ); /*0x69d9bb*/
     }
     data = data; /*0x69d9cb*/
-    return SHA1::ProcessBlock(&data, &size); /*0x69d9cf*/
+    return SHA1::ProcessBlock(&data, &size, unsigned int a2); /*0x69d9cf*/
   }
 }
 // 0x69d9e0
@@ -111,11 +111,11 @@ int SHA1::Compute(uint8_t digest[20])
   {
     v10 = *v8++; /*0x69dadf*/
     --v9; /*0x69db07*/
-    *(v8 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((IDA_HIWORD(v10) | v10 & 0xFF0000) >> 8); /*0x69db08*/
+    *(v8 - 1, unsigned int a2) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((IDA_HIWORD(v10) | v10 & 0xFF0000) >> 8); /*0x69db08*/
   }
   while ( v9 ); /*0x69db0b*/
   *(_BYTE *)this = 1; /*0x69db18*/
-  qmemcpy(a2, this + 1, 0x14u); /*0x69db1c*/
+  qmemcpy(a2, this + 1, 0x14u, unsigned int a1); /*0x69db1c*/
   return 20; /*0x69db1e*/
 }
 // 0x69db30
@@ -176,7 +176,7 @@ void SHA1::Transform()
     v10 = v6[6] ^ v6[11]; /*0x69db8c*/
     ++v6; /*0x69db8e*/
     --v7; /*0x69db9e*/
-    v6[13] = (2 * (v9 ^ v8 ^ v10)) | ((v9 ^ v8 ^ (unsigned int)v10) >> 31); /*0x69db9f*/
+    v6[13] = (2 * (v9 ^ v8 ^ v10, unsigned int a2)) | ((v9 ^ v8 ^ (unsigned int)v10) >> 31); /*0x69db9f*/
   }
   while ( v7 ); /*0x69dba2*/
   v11 = 0; /*0x69dbb4*/
@@ -223,7 +223,7 @@ void SHA1::Transform()
     v13 = (v12 >> 2) | (v12 << 30); /*0x69dc68*/
     v11 = v31 + 1; /*0x69dc6e*/
     v12 = v15; /*0x69dc72*/
-    v21 = (unsigned int)(v31 + 1) < 0x50; /*0x69dc74*/
+    v21 = (unsigned int, unsigned int a2)(v31 + 1) < 0x50; /*0x69dc74*/
     v15 = v20; /*0x69dc77*/
     ++v31; /*0x69dc79*/
     ++v29; /*0x69dc7d*/

@@ -155,6 +155,7 @@ struct CCFileClass {
     unsigned int Handle8;
     unsigned int Load_1;
     unsigned int Reset_8;
+    unsigned int Construct;
 // --- flat members (END) ---
     AudioController * * Close();
     int Destruct();

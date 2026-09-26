@@ -6,7 +6,7 @@ namespace gamemd
 // 0x41e500
 void AITriggerTypeClass::GetClassIdentifier()
 {
-  if ( !a2 ) /*0x41e506*/
+  if (!a2, unsigned int a1) /*0x41e506*/
     return -2147467261; /*0x41e508*/
   *a2 = -1173801692; /*0x41e516*/
   a2[1] = 298994932; /*0x41e51e*/
@@ -28,11 +28,11 @@ void AITriggerTypeClass::LoadTypeData()
       *a1 = (int)&(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e564*/
       a1[1] = (int)&(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e56a*/
       a1[2] = (int)&(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e571*/
-      a1[3] = (int)&(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e578*/
+      a1[3] = (int, unsigned int a1)&(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e578*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 54); /*0x41e58b*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 55); /*0x41e59c*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, a1 + 56); /*0x41e5ad*/
+    ObjectPtr::RegisterForTracking((int, unsigned int a1, unsigned int a2, unsigned int a3)&SwizzleManagerClass_Instance, a1 + 56); /*0x41e5ad*/
     return 0; /*0x41e5b2*/
   }
   return result; /*0x41e5b4*/
@@ -43,7 +43,7 @@ void AITriggerTypeClass::SaveToINI()
   int result; // eax
 
   result = AbstractClass::SaveLoad_Prefix(a1, a2, a3); /*0x41e5cf*/
-  if ( result >= 0 ) /*0x41e5d6*/
+  if (result >= 0, unsigned int a2) /*0x41e5d6*/
     return 0; /*0x41e5d8*/
   return result; /*0x41e5da*/
 }
@@ -69,7 +69,7 @@ void AITriggerTypeClass::ProcessPower()
     case 4: /*0x41e63f*/
     case 7: /*0x41e63f*/
       Power::TimerProcess(this->q0E4); /*0x41e64f*/
-      Power::TimerProcess(this->q0E8); /*0x41e65d*/
+      Power::TimerProcess(this->q0E8, unsigned int a2); /*0x41e65d*/
       break; /*0x41e65d*/
     default:
       break;

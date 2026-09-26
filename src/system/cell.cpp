@@ -178,7 +178,7 @@ ObjectClass* CellClass::FindObjectOfType(AbstractType type, bool alt) const
 
     while (content)
     {
-        if (content->whatAmI() == type)
+        if (content->whatAmI(unsigned int a2, unsigned int a3) == type)
             return content;
         content = content->nextObject;
     }
@@ -207,7 +207,7 @@ int CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds) co
       *a3 = v5; /*0x48e5be*/
       if ( (a2 & 0x40) != 0 && (this->overlayTypeIndex & 0x10) != 0 ) /*0x48e5c6*/
       {
-        IDA_BYTE1(v5) |= 0x40u; /*0x48e5c8*/
+        IDA_BYTE1(v5, unsigned int a3) |= 0x40u; /*0x48e5c8*/
         *a3 = v5; /*0x48e5cb*/
       }
     }
@@ -533,7 +533,7 @@ void CellClass::SetWallOwner()
           if ( v6 < i ) /*0x47d282*/
           {
             i = v6; /*0x47d284*/
-            v2 = (*(int (__thiscall **)(int))(v5->q038)(v5); /*0x47d28d*/
+            v2 = (*(int (__thiscall **, unsigned int a1)(int))(v5->q038)(v5); /*0x47d28d*/
           }
         }
         result = g_BuildingProductionState; /*0x47d28f*/

@@ -2217,6 +2217,7 @@ struct TechnoClass {
     unsigned int vtable31;
     unsigned int vtable32;
     unsigned int CreatePlanningNode;
+    unsigned int CalcFlashAlpha;
 // --- flat members (END) ---
     BOOL processDamageAnimation(int a1);
     BOOL updateWeaponCooldown(int a1);

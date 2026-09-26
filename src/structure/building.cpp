@@ -127,7 +127,7 @@ BuildingClass::BuildingClass() noexcept
     std::memset(Anims, 0, sizeof(Anims));
     std::memset(AnimStates, 0, sizeof(AnimStates));
     std::memset(DamageFireAnims, 0, sizeof(DamageFireAnims));
-    std::memset(Upgrades, 0, sizeof(Upgrades));
+    std::memset(Upgrades, 0, sizeof(Upgrades, unsigned int a3, unsigned int a2));
 }
 
 // IDA 0x43b740

@@ -370,7 +370,7 @@ extern int GetResourceID2CSF(int rtti);
 extern int GetResourceID3CSF(int rtti);
 extern int GetResourceID4CSF(int rtti);
 extern int GetResourceIDCSF(int rtti);
-extern int GetWarheadVersusMultiplier(CoordStruct * aP0, BuildingTypeClass * aP1, CoordStruct * aP2, BulletClass * aP3);
+extern int GetWarheadVersusMultiplier(void** aP0, BuildingTypeClass * aP1, void** aP2, BulletClass * aP3);
 extern int HitDialogTest(void);
 extern int ImageList_DragShowNolock();
 extern int LoadSHPFile(int lpBuffer, char* Source);
@@ -446,7 +446,7 @@ extern void * SetupLobbyCountryCombo(SkirmishDialog * aP0, int nIDDlgItem, int a
 extern void * SetupSkirmishDialogPlayerSlot(HWND hDlg, int a2);
 extern void * globalHelper_04BB20(ObjectClass * Source, int a2);
 extern void * sub_4E3690(HWND hDlg, int a2);
-extern void AddMessageListPlayerMessage(CellStruct * a1, int a2);
+extern void AddMessageListPlayerMessage(void** a1, int a2);
 extern void Audio_Process_7C19F0(int a1, DSurface * aP1, unsigned int * a2, unsigned int * a3);
 extern void BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2);
 extern void CellChainReact();
@@ -555,6 +555,6 @@ extern void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, 
 extern wchar_t * sub_4E4F30();
 extern wchar_t ** CharStringToWide(ObjectClass * aP0, const char ** a1);
 extern wchar_t ** FormatWideStringPrefix(CampaignScore * aP0, const wchar_t * a1, wchar_t ** a2);
-extern long long ZCoordToScreenY(IUnknown * aP0);
+extern int ZCoordToScreenY(int z_world);
 
 } // namespace gamemd
