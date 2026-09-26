@@ -30715,7 +30715,7 @@ void VeinholeMonsterClass::UpdateGrowth()
           else if ( this->q0D0 == dword_846024[this->q0C8] ) /*0x74cf57*/
           {
             IDA_LODWORD(v41) = (int)abs32(Random::State((_DWORD *)g_ScenarioClass_Instance + 134)) % 10000; /*0x74cf7b*/
-            if ( (double)SLODWORD(v41) * 0.0001 < 0.004 ) /*0x74cf94*/
+            if ( (double)IDA_SLODWORD(v41) * 0.0001 < 0.004 ) /*0x74cf94*/
             {
               this->q0D0 = dword_846034[this->q0C8] - 1; /*0x74cfa8*/
               this->q0E8 = -1; /*0x74cfae*/
@@ -30890,7 +30890,7 @@ void VeinholeMonsterClass::UpdateGrowth()
         if ( this->q0D0 == dword_846024[this->q0C8] ) /*0x74d1e9*/
         {
           IDA_LODWORD(v41) = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2147483646); /*0x74d201*/
-          if ( (double)SLODWORD(v41) * 4.656612877414201e-10 < 0.1 ) /*0x74d21a*/
+          if ( (double)IDA_SLODWORD(v41) * 4.656612877414201e-10 < 0.1 ) /*0x74d21a*/
           {
             this->q0D0 = dword_846034[this->q0C8] - 1; /*0x74d22a*/
             this->q0E8 = -1; /*0x74d230*/

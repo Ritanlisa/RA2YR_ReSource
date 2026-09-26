@@ -216,7 +216,7 @@ AbstractClass * * Voxel::RenderFrame()
   }
   IDA_LODWORD(v17) = Math::RoundToInt(*(float *)&dword_B2D948 - *(float *)&dword_B2D5E0); /*0x754666*/
   v18 = Math::RoundToInt(*(float *)&dword_B2D94C - *(float *)&dword_B2D5E4); /*0x754668*/
-  v19 = 128 - SLODWORD(v17) / 2; /*0x75467f*/
+  v19 = 128 - IDA_SLODWORD(v17) / 2; /*0x75467f*/
   IDA_LODWORD(v17) += 8; /*0x754686*/
   IDA_LODWORD(v20) = v18 + 8; /*0x754694*/
   v19 -= 4; /*0x75469a*/
@@ -225,10 +225,10 @@ AbstractClass * * Voxel::RenderFrame()
   dword_B2FB60 = v19; /*0x7546a8*/
   dword_B2FB68 = IDA_LODWORD(v17); /*0x7546b1*/
   dword_B2FB6C = v18 + 8; /*0x7546b9*/
-  IDA_LODWORD(v24) = Math::RoundToInt(v25[0]) - SLODWORD(v17) / 2; /*0x7546c8*/
+  IDA_LODWORD(v24) = Math::RoundToInt(v25[0]) - IDA_SLODWORD(v17) / 2; /*0x7546c8*/
   v21 = Math::RoundToInt(v25[1]); /*0x7546d9*/
   v25[0] = v24; /*0x7546e8*/
-  IDA_LODWORD(v25[1]) = v21 - SLODWORD(v20) / 2; /*0x7546ec*/
+  IDA_LODWORD(v25[1]) = v21 - IDA_SLODWORD(v20) / 2; /*0x7546ec*/
   v25[4] = v17; /*0x7546f4*/
   v25[5] = v20; /*0x7546f8*/
   IDA_LODWORD(v25[2]) = v19; /*0x754707*/
@@ -452,7 +452,7 @@ int Voxel::Projection_Setup()
   do /*0x755459*/
   {
     Matrix3x4::Identity(v85); /*0x755378*/
-    v49 = (double)SLODWORD(v59) * 0.024542969; /*0x75538f*/
+    v49 = (double)IDA_SLODWORD(v59) * 0.024542969; /*0x75538f*/
     Matrix2D::Rotate(v49); /*0x755392*/
     v56 = 1065353216; /*0x7553a7*/
     v57 = 0; /*0x7553af*/

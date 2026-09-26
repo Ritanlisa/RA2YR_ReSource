@@ -7493,7 +7493,7 @@ int __thiscall TechnoClass::DrawPips(void *this)
   if ( !v86 || (result = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->attachedTag2))(this), *(_DWORD *)(result + 980) != 2) )
   {
     v89 = *(float *)((*(int (__thiscall **)(void *))(*(_DWORD *)&this->attachedTag2))(this) + 3420);
-    if ( SLODWORD(v89) > 0 )
+    if ( IDA_SLODWORD(v89) > 0 )
     {
       v12 = 0;
       *(float *)&v91 = COERCE_FLOAT(SpawnManagerClass::CountDockedSpawns(*((int **)&this->u32_480)));
@@ -7524,7 +7524,7 @@ int __thiscall TechnoClass::DrawPips(void *this)
         v13 += v101;
         v90 += v2;
       }
-      while ( v12 < SLODWORD(v89) );
+      while ( v12 < IDA_SLODWORD(v89) );
     }
     if ( v86 )
     {
@@ -7541,7 +7541,7 @@ int __thiscall TechnoClass::DrawPips(void *this)
           *(float *)&v90 = 0.0;
           do
           {
-            if ( v16 < SLODWORD(v89) && (v18 = *(_DWORD *)(this->q688 + 4 * v16)) != 0 )
+            if ( v16 < IDA_SLODWORD(v89) && (v18 = *(_DWORD *)(this->q688 + 4 * v16)) != 0 )
               v91 = *(signed int *)(*(_DWORD *)(v18 + 1728) + 3584);
             else
               v91 = 6;
@@ -7588,7 +7588,7 @@ int __thiscall TechnoClass::DrawPips(void *this)
           *(float *)&v91 = 0.0;
           do
           {
-            v90 = v45 < SLODWORD(v89);
+            v90 = v45 < IDA_SLODWORD(v89);
             IDA_LODWORD(v96) = v46 + v99;
             IDA_HIDWORD(v96) = v100 + v91;
             DrawToSurfaceSHP(
@@ -7709,10 +7709,10 @@ int __thiscall TechnoClass::DrawPips(void *this)
         if ( IDA_LODWORD(v96) )
         {
           v60 = 0;
-          if ( SLODWORD(v96) > 0 )
+          if ( IDA_SLODWORD(v96) > 0 )
           {
             v61 = 0;
-            IDA_LODWORD(v89) = (int)Block[0] / SLODWORD(v96) - 1;
+            IDA_LODWORD(v89) = (int)Block[0] / IDA_SLODWORD(v96) - 1;
             *(float *)&v90 = 0.0;
             do
             {
@@ -7737,7 +7737,7 @@ LABEL_87:
               DrawToSurfaceSHP(
                 (int *)DataGlobal_87F7E8[7883],
                 (_DWORD *)DataGlobal_87F6C0[1],
-                SLODWORD(v92),
+                IDA_SLODWORD(v92),
                 v91,
                 (int *)Block,
                 v105,
@@ -7756,7 +7756,7 @@ LABEL_87:
               v61 = v101 + v90;
               v90 += v101;
             }
-            while ( v60 < SLODWORD(v96) );
+            while ( v60 < IDA_SLODWORD(v96) );
           }
         }
         else
@@ -7778,7 +7778,7 @@ LABEL_87:
                 DrawToSurfaceSHP(
                   (int *)DataGlobal_87F7E8[7883],
                   (_DWORD *)DataGlobal_87F6C0[1],
-                  SLODWORD(v92),
+                  IDA_SLODWORD(v92),
                   0xDu,
                   (int *)&v96,
                   v105,
@@ -7849,7 +7849,7 @@ LABEL_87:
             ++v27;
             ++IDA_LODWORD(v89);
           }
-          while ( SLODWORD(v89) < v90 );
+          while ( IDA_SLODWORD(v89) < v90 );
         }
       }
       else
@@ -7909,7 +7909,7 @@ LABEL_87:
             --v24;
             ++IDA_LODWORD(v89);
           }
-          while ( SLODWORD(v89) < v90 );
+          while ( IDA_SLODWORD(v89) < v90 );
         }
       }
       v36 = *(_DWORD *)this;
@@ -9006,7 +9006,7 @@ int TechnoClass::Draw(void* a1, void* a2) {
     v19 = (int *)this->GetCoordsThunk2(v44); /*0x73d157*/
     IDA_LODWORD(v37) = (__int16)v18 - 0x3FFF; /*0x73d159*/
     v20 = v19[2]; /*0x73d161*/
-    v40 = (double)SLODWORD(v37) * -0.00009587672516830327; /*0x73d16a*/
+    v40 = (double)IDA_SLODWORD(v37) * -0.00009587672516830327; /*0x73d16a*/
     v37 = (double)v19[1]; /*0x73d17b*/
     v21 = Math::SinCos(v40); /*0x73d17f*/
     IDA_LODWORD(v37) = Math::RoundToInt(v37 - v21 * 30.0); /*0x73d197*/

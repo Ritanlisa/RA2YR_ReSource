@@ -33322,7 +33322,7 @@ LABEL_45:
 LABEL_42:
     IDA_LODWORD(v20) = IDA_LODWORD(v32) + 1;
     v94 = v20;
-    if ( SLODWORD(v20) >= 8 )
+    if ( IDA_SLODWORD(v20) >= 8 )
       goto LABEL_63;
     IDA_LOBYTE(v21) = IDA_LOBYTE(v101);
   }

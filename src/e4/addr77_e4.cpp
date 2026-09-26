@@ -51,6 +51,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ScoreScreen_e4.hpp"
+#include "e4/classes/E4Recv_765000_e4.hpp"
 
 // 0x770E70
 namespace gamemd {
@@ -128,7 +129,7 @@ int E4Recv_7741C0::FindRegistrySubKey()
     if ( a3 ) /*0x7742a7*/
       RegCloseKey(hKey); /*0x7742aa*/
     RA2_OPDEL(v5); /*0x7742b1*/
-    RA2_OPDEL(lpClass); /*0x7742bb*/
+    RA2_OPDEL(lpClass, unsigned int a3); /*0x7742bb*/
     return 0; /*0x7742bb*/
   }
   while ( 1 ) /*0x77425e*/
@@ -230,7 +231,7 @@ const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * aP0, HWND a2, HWND hWndPa
 namespace gamemd {
 void Dialog_Close(HWND a1, int a2)
 {
-  int v3; // eax
+  unsigned int v3;
   int *i; // esi
   int v5; // edi
   HWND *v6; // esi
@@ -369,9 +370,9 @@ int sub_775B30()
 namespace gamemd {
 int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
 {
-  char * v5;
+  unsigned int v5;
   int v6; // ebp
-  const unsigned int v8;
+  const char * v8;
   int result; // eax
   int v10; // edx
   int v11; // eax

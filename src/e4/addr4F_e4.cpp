@@ -37,6 +37,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Skirmish_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x4F10E0
 namespace gamemd {
@@ -225,9 +227,9 @@ void LoadFromINIGraphicMenu()
   _DWORD *v8; // edi
   bool v9; // bl
   int v10; // esi
-  _DWORD *v11; // eax
+  void * v11;
   void * v12;
-  _DWORD *v13; // eax
+  void * v13;
   void * v14;
   char *v15; // eax
   char v16; // bl
@@ -258,7 +260,7 @@ void LoadFromINIGraphicMenu()
   int v45; // [esp+50h] [ebp-70h] BYREF
   _DWORD v46[22]; // [esp+54h] [ebp-6Ch] BYREF
   _DWORD v47[3]; // [esp+ACh] [ebp-14h] BYREF
-  int v48; // [esp+B8h] [ebp-8h]
+  void ** v48;
   int v49; // [esp+BCh] [ebp-4h]
   _UNKNOWN *retaddr; // [esp+C0h] [ebp+0h]
 

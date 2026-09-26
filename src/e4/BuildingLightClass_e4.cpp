@@ -228,17 +228,17 @@ signed int BuildingLightClass::UpdateOscillation()
   result = this->vtable4; /*0x513e85*/
   *(_BYTE *)(result + 116) = v20; /*0x513e8c*/
   v22 = g_RulesClass_Instance; /*0x513e8f*/
-  if ( v26 < SHIDWORD(g_RulesClass_Instance->VeteranROF) ) /*0x513e9b*/
+  if ( v26 < IDA_SHIDWORD(g_RulesClass_Instance->VeteranROF) ) /*0x513e9b*/
   {
     if ( this->vtable2.GetDirty() ) /*0x513ea1*/
-      *(double *)(&this->objectTypeFlags6) = ((double)SHIDWORD(g_RulesClass_Instance->VeteranROF) /*0x513ec8*/
-                              + (double)SHIDWORD(g_RulesClass_Instance->VeteranROF)
+      *(double *)(&this->objectTypeFlags6) = ((double)IDA_SHIDWORD(g_RulesClass_Instance->VeteranROF) /*0x513ec8*/
+                              + (double)IDA_SHIDWORD(g_RulesClass_Instance->VeteranROF)
                               - (double)v26)
-                             / (double)SHIDWORD(g_RulesClass_Instance->VeteranROF)
+                             / (double)IDA_SHIDWORD(g_RulesClass_Instance->VeteranROF)
                              * (double)g_RulesClass_Instance[1].WeatherConBoltExplosion
                              + *(double *)(&this->objectTypeFlags6);
     v22 = g_RulesClass_Instance; /*0x513ecd*/
-    result = SHIDWORD(g_RulesClass_Instance->VeteranROF) / 4; /*0x513edf*/
+    result = IDA_SHIDWORD(g_RulesClass_Instance->VeteranROF) / 4; /*0x513edf*/
     if ( v26 < result ) /*0x513ee4*/
     {
       result = (unsigned int)((unsigned __int64)(1431655766LL * g_RulesClass_Instance[1].WeatherConBoltExplosion) >> 32) >> 31; /*0x513ef5*/

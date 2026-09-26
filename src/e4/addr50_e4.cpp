@@ -96,7 +96,7 @@ void UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
         *(_DWORD *)(v8 + 4) += a3; /*0x5047bc*/
       ++IDA_HIDWORD(v5); /*0x5047c5*/
     }
-    while ( SHIDWORD(v5) < *(_DWORD *)(v5 + 22036) ); /*0x5047c8*/
+    while ( IDA_SHIDWORD(v5) < *(_DWORD *)(v5 + 22036) ); /*0x5047c8*/
   }
   v12 = 0; /*0x5047d0*/
   if ( *(int *)(v5 + 22036) <= 0 ) /*0x5047d6*/

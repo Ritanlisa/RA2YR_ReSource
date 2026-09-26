@@ -26,6 +26,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/E4Recv_4880F0_e4.hpp"
 
 // 0x472A80
 namespace gamemd {

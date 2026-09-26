@@ -7311,8 +7311,8 @@ namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
                               (int)v89[2],
                               v90,
                               v91,
-                              SLODWORD(v92),
-                              SHIDWORD(v92));
+                              IDA_SLODWORD(v92),
+                              IDA_SHIDWORD(v92));
         Rules::CopyDataArray(&this->?[3], IntList);
         v14 = (int)IntList[6];
         v94[0] = (int)&vt_VectorClass_int;

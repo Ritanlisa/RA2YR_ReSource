@@ -15,6 +15,7 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/TypeList_Particle_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/TypeList_flat_e4.hpp"
 
 // 0x5F8CE0
 namespace gamemd {

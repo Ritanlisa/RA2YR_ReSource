@@ -17,7 +17,7 @@ struct WarheadTypeClass {
     bool IsAllocated;  // 0x13
     void* q014;  // 0x14
     int DeformTreshold;  // 0x16
-    char InfDeath[4];  // 0x18
+    unsigned int InfDeath;  // 0x18
     float CellSpread;  // 0x1C
     bool q01D;  // 0x1D
     void* q020;  // 0x20

@@ -1601,6 +1601,7 @@ struct FactoryClass {
     unsigned int q02A;
     unsigned int q02D;
     unsigned int vtable28;
+    unsigned int u32_14;
 // --- flat members (END) ---
     AbstractClass * * Stat(int * a2);
     char GetFlag();

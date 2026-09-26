@@ -13,6 +13,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AudioSettings_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x402AF0
 namespace gamemd {
@@ -417,7 +418,7 @@ namespace gamemd {
 int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * v9, unsigned short * a6)
 {
   int v8; // eax
-  unsigned int v9;
+  unsigned int * v9;
   int v10; // ecx
   int v11; // edx
   int v12; // ecx

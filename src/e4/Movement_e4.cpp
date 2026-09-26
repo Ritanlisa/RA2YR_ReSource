@@ -141,7 +141,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
     v24 = Math::RoundToInt(v21); /*0x5b22d6*/
     IDA_HIDWORD(v79) = Math::RoundToInt(v21); /*0x5b22dd*/
     v69 = IDA___PAIR64__((unsigned int)Math::RoundToInt(v21) + a2[2], IDA_HIDWORD(v79) + a2[1]); /*0x5b22f9*/
-    v25 = Coord::Subtract(&v79, *a2 + v24, v69, SHIDWORD(v69)); /*0x5b22ff*/
+    v25 = Coord::Subtract(&v79, *a2 + v24, v69, IDA_SHIDWORD(v69)); /*0x5b22ff*/
     v26 = v25[1]; /*0x5b2308*/
     v27 = v25[2]; /*0x5b230b*/
     *a2 = *v25; /*0x5b230e*/
@@ -181,9 +181,9 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   v47 = (double *)Coord::Subtract(&v77, *a4 - *a2, v45 - a2[1], v43 - v44); /*0x5b242c*/
   v79 = *v47; /*0x5b2433*/
   v80 = *((_DWORD *)v47 + 2); /*0x5b2449*/
-  v77 = (double)SLODWORD(v79); /*0x5b2454*/
+  v77 = (double)IDA_SLODWORD(v79); /*0x5b2454*/
   v73[0] = v77; /*0x5b2464*/
-  v78 = (double)SHIDWORD(v79); /*0x5b246c*/
+  v78 = (double)IDA_SHIDWORD(v79); /*0x5b246c*/
   v73[2] = (double)v80; /*0x5b247c*/
   v73[1] = v78; /*0x5b2489*/
   qmemcpy(v82, v73, sizeof(v82)); /*0x5b248d*/
@@ -221,7 +221,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   IDA_LOWORD(v74) = Math::RoundToInt((v55 - 1.570796326794897) * -10430.06004058427); /*0x5b25ec*/
   v71 = v74; /*0x5b25fa*/
   if ( a6
-    || !a7 && SLODWORD(v75[0]) <= (a8 != 0 ? 6 : 3) << 8
+    || !a7 && IDA_SLODWORD(v75[0]) <= (a8 != 0 ? 6 : 3) << 8
     || (unsigned __int8)((unsigned int)((*(_DWORD *)a5 >> 7) + 1) >> 1) <= 1u )
   {
     if ( !a9 ) /*0x5b28a1*/
@@ -249,7 +249,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   GroundHeight = Cell::GetGroundHeight(&v77); /*0x5b26eb*/
   if ( (*((_DWORD *)Coord::To_Cell(&MapClass_Instance, &v77) + 80) & 0x100) != 0 ) /*0x5b26fb*/
     GroundHeight += dword_ABEF44; /*0x5b26fd*/
-  v63 = SLODWORD(v76) / 256; /*0x5b2713*/
+  v63 = IDA_SLODWORD(v76) / 256; /*0x5b2713*/
   if ( a7 || a8 ) /*0x5b271f*/
   {
     v63 = 10; /*0x5b272d*/

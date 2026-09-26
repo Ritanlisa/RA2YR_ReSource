@@ -17,6 +17,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x484680
 namespace gamemd {
@@ -819,7 +820,7 @@ int TacticalMap::RenderAllObjects(int a2)
                 v96 = v65[1]; /*0x6d9689*/
                 v89 = v65[2]; /*0x6d9697*/
                 IDA_LODWORD(v79) = -60 * v96 / 2 + 60 * v66 / 2; /*0x6d96d0*/
-                v67 = SLODWORD(v79) / 256; /*0x6d96f7*/
+                v67 = IDA_SLODWORD(v79) / 256; /*0x6d96f7*/
                 v68 = (30 * v96 / 2 + 30 * v66 / 2) / 256; /*0x6d96fa*/
                 v69 = Math::RoundToInt((double)v89 * dbl_B0CD48 + (double)(v89 >= 728) + 0.5); /*0x6d9721*/
                 v77 = v67; /*0x6d972d*/

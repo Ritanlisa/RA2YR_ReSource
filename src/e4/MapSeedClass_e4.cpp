@@ -188,7 +188,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
         v14 = 1; /*0x5a5eb4*/
         v21 = 0; /*0x5a5eb6*/
         v26 = 0; /*0x5a5ebb*/
-        if ( SWORD1(v20) < IDA_SHIWORD(v5) ) /*0x5a5ec0*/
+        if ( IDA_SWORD1(v20) < IDA_SHIWORD(v5) ) /*0x5a5ec0*/
         {
           while ( 1 ) /*0x5a5ec6*/
           {
@@ -223,7 +223,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
               else
               {
                 v52[0] = (__int16)v20; /*0x5a615f*/
-                v52[1] = SWORD1(v20); /*0x5a6168*/
+                v52[1] = IDA_SWORD1(v20); /*0x5a6168*/
                 v52[2] = 3; /*0x5a616f*/
                 v52[3] = 4; /*0x5a6176*/
                 if ( v21 ) /*0x5a6181*/
@@ -237,23 +237,23 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
                 if ( (unsigned __int8)MapSeedClass::ValidateRectBounds(v52) ) /*0x5a61c0*/
                 {
                   v16 = IDA_SHIWORD(v28); /*0x5a61cd*/
-                  if ( IDA_SHIWORD(v28) - SWORD1(v20) < 4 ) /*0x5a61de*/
+                  if ( IDA_SHIWORD(v28) - IDA_SWORD1(v20) < 4 ) /*0x5a61de*/
                   {
                     IDA_LOWORD(v5) = PlaceMapSeedClassBuildings(g_CellTileTypeCache + 7, &v20, -1, -1); /*0x5a63e7*/
                     goto LABEL_73; /*0x5a63ec*/
                   }
                   v53[0] = (__int16)v20; /*0x5a61e9*/
-                  v53[1] = SWORD1(v20) + 3; /*0x5a61fd*/
+                  v53[1] = IDA_SWORD1(v20) + 3; /*0x5a61fd*/
                   v53[2] = 3; /*0x5a6204*/
                   v53[3] = 2; /*0x5a620b*/
-                  if ( IsAreaClearMap(v53, 0, 0) && v16 - SWORD1(v20) > 5 ) /*0x5a6229*/
+                  if ( IsAreaClearMap(v53, 0, 0) && v16 - IDA_SWORD1(v20) > 5 ) /*0x5a6229*/
                   {
                     v21 = 1; /*0x5a622b*/
                     v26 = 1; /*0x5a6230*/
                   }
                   PlaceMapSeedClassBuildings(g_CellTileTypeCache + 3, &v20, -1, -1); /*0x5a6246*/
                   v56[0] = (__int16)v20 - 1; /*0x5a6257*/
-                  v56[1] = SWORD1(v20); /*0x5a6267*/
+                  v56[1] = IDA_SWORD1(v20); /*0x5a6267*/
                   v56[2] = 1; /*0x5a626e*/
                   v56[3] = 3; /*0x5a6275*/
                   if ( IsAreaClearMap(v56, 1, 0) ) /*0x5a627c*/
@@ -264,7 +264,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
                     PlaceMapSeedClassBuildings(dword_AA0E20 + 12, &v23, -1, -1); /*0x5a62b2*/
                   }
                   v58[0] = (__int16)v20 + 3; /*0x5a62c4*/
-                  v58[1] = SWORD1(v20); /*0x5a62d4*/
+                  v58[1] = IDA_SWORD1(v20); /*0x5a62d4*/
                   v58[2] = 1; /*0x5a62db*/
                   v58[3] = 3; /*0x5a62e2*/
                   if ( IsAreaClearMap(v58, 1, 0) ) /*0x5a62e9*/
@@ -351,7 +351,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
   LABEL_38:
             v14 = 0; /*0x5a5fda*/
             IDA_LOWORD(v5) = ++IDA_WORD1(v20); /*0x5a5fe1*/
-            if ( SWORD1(v20) >= IDA_SHIWORD(v28) ) /*0x5a5fed*/
+            if ( IDA_SWORD1(v20) >= IDA_SHIWORD(v28) ) /*0x5a5fed*/
             {
               if ( v21 ) /*0x5a63f7*/
               {
@@ -365,7 +365,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
           }
         }
         v50[0] = (__int16)v20; /*0x5a642b*/
-        v50[1] = SWORD1(v20); /*0x5a6446*/
+        v50[1] = IDA_SWORD1(v20); /*0x5a6446*/
         v50[2] = 3; /*0x5a644d*/
         v50[3] = 4; /*0x5a6454*/
         if ( !IsAreaClearMap(v50, 0, 0) ) /*0x5a645f*/

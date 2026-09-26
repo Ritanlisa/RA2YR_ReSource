@@ -213,7 +213,7 @@ struct ScenarioClass {
     bool teamsPresent;  // 0x11E0
     unsigned char q11E1;  // 0x11E1
     char numCoopHumanStartSpots[4];  // 0x11E4
-    char missionTimer[12];  // 0x11E8
+    unsigned int missionTimer;  // 0x11E8
     unsigned int q11EC;  // 0x11EC
     unsigned int q11F0;  // 0x11F0
     unsigned int missionTimer_text_csf;  // 0x11F4
@@ -425,13 +425,13 @@ struct ScenarioClass {
     unsigned int blue;  // 0x3500
     unsigned int ground;  // 0x3504
     char level[4];  // 0x3508
-    char ionAmbient[4];  // 0x350C
+    unsigned int ionAmbient;  // 0x350C
     char ionRed[4];  // 0x3510
     char ionGreen[4];  // 0x3514
     char ionBlue[4];  // 0x3518
     unsigned char u8_3519;  // 0x3519
     char ionGround[4];  // 0x351C
-    char ionLevel[4];  // 0x3520
+    unsigned int ionLevel;  // 0x3520
     char nukeAmbient[4];  // 0x3524
     char nukeRed[4];  // 0x3528
     char nukeGreen[4];  // 0x352C

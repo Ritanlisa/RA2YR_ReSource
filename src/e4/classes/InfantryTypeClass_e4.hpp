@@ -226,17 +226,17 @@ struct InfantryTypeClass {
     unsigned char q258;  // 0x258
     void* q25C;  // 0x25C
     char q260[4];  // 0x260
-    char q264[4];  // 0x264
+    unsigned int q264;  // 0x264
     unsigned int q268;  // 0x268
     void* q26C;  // 0x26C
     void* q270;  // 0x270
     void* q274;  // 0x274
-    char q278[4];  // 0x278
+    unsigned int q278;  // 0x278
     void* q27C;  // 0x27C
     unsigned int q280;  // 0x280
     unsigned int q284;  // 0x284
     unsigned int q288;  // 0x288
-    char q28C[4];  // 0x28C
+    unsigned int q28C;  // 0x28C
     unsigned char q290;  // 0x290
     int armed;  // 0x294
     unsigned char hasTurretFlag;  // 0x295

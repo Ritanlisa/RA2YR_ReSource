@@ -604,7 +604,7 @@ int House::UpdateHouseAI()
           }
           while ( v34 < HouseClass_Count );
           if ( v2 ) /*0x4fd717*/
-            UpdateHouseClassAnger(SHIDWORD(v8), 1, v2); /*0x4fd71e*/
+            UpdateHouseClassAnger(IDA_SHIDWORD(v8), 1, v2); /*0x4fd71e*/
         }
       }
     }

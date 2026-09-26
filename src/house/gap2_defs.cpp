@@ -5632,7 +5632,7 @@ int HouseClass::ReadFromINI(void* a1) {
   IDA_LODWORD(v35) = *(unsigned __int8 *)(this + 22266); /*0x500ee0*/
   v20 = this->u32_56FB; /*0x500ee6*/
   v36 = v19; /*0x500eec*/
-  v37 = (double)SLODWORD(v35); /*0x500ef8*/
+  v37 = (double)IDA_SLODWORD(v35); /*0x500ef8*/
   v35 = (double)v20; /*0x500f00*/
   v21 = Math::Sqrt(v35 * v35 + v37 * v37 + v19 * v19); /*0x500f1d*/
   if ( v21 == 0.0 ) /*0x500f30*/

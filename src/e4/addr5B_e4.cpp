@@ -55,6 +55,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/RandomMap_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x5B3B10
 namespace gamemd {
@@ -133,13 +134,13 @@ namespace gamemd {
 AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
 {
   int v3; // edi
-  unsigned int v4;
+  _DWORD * v4;
   int v5; // ecx
   bool v6; // cc
   _DWORD *v8; // eax
   _DWORD *v9; // esi
   void * v10;
-  int v11;
+  void * v11;
   _DWORD v13[22]; // [esp+20h] [ebp-170h] BYREF
   _BYTE v14[12]; // [esp+78h] [ebp-118h] BYREF
   int v15; // [esp+84h] [ebp-10Ch]

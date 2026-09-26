@@ -833,7 +833,7 @@ AbstractClass * * UpdateProjectileTrails()
       / (double)(int)dword_A8B558
       * ((double)(unsigned int)dword_ABCD44
        / (double)(int)dword_A8B558));
-  v6 = (double)SLODWORD(v19); /*0x65921f*/
+  v6 = (double)IDA_SLODWORD(v19); /*0x65921f*/
   v20 = (double)(int)Block; /*0x659227*/
   v19 = v6 / v20 - v5; /*0x659233*/
   v7 = 0.0; /*0x659237*/
@@ -878,7 +878,7 @@ AbstractClass * * UpdateProjectileTrails()
     {
       IDA_LODWORD(v19) = 10; /*0x6592a9*/
     }
-    *((double *)v9 + 3) = (double)SLODWORD(v19); /*0x6592bf*/
+    *((double *)v9 + 3) = (double)IDA_SLODWORD(v19); /*0x6592bf*/
     v12 = RenderProjectileTrail((int)Block); /*0x6592c6*/
   LABEL_23:
     if ( v12 )

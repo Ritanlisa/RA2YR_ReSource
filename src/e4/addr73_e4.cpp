@@ -25,6 +25,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x730A90
 namespace gamemd {

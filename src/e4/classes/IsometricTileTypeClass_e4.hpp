@@ -63,7 +63,7 @@ struct IsometricTileTypeClass {
     unsigned int tail_95;  // 0x95
     Color* q098;  // 0x98
     unsigned char unused_9B;  // 0x9B
-    char Armor[4];  // 0x9C
+    unsigned int Armor;  // 0x9C
     int Strength;  // 0xA0
     IsometricTileClass* q0A4;  // 0xA4
     unsigned int q0A8;  // 0xA8
@@ -220,7 +220,7 @@ struct IsometricTileTypeClass {
     AbstractClass* q280;  // 0x280
     unsigned char q284;  // 0x284
     unsigned char q288;  // 0x288
-    char q28C[4];  // 0x28C
+    unsigned int q28C;  // 0x28C
     unsigned char q290;  // 0x290
     void* q294;  // 0x294
     unsigned char q298;  // 0x298

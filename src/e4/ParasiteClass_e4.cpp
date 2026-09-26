@@ -855,11 +855,11 @@ Coord * * ParasiteClass::Update()
   v8 = (int *)(&this->u32_504); /*0x62be64*/
   v51 = 0; /*0x62be6a*/
   v7 = v7; /*0x62be78*/
-  v9 = (double)SLODWORD(v52); /*0x62be7c*/
+  v9 = (double)IDA_SLODWORD(v52); /*0x62be7c*/
   v52 = 0.0; /*0x62be80*/
   this->q0CC = 0; /*0x62be8c*/
   v9 = v9; /*0x62be8e*/
-  v10 = (double)SLODWORD(v53); /*0x62be92*/
+  v10 = (double)IDA_SLODWORD(v53); /*0x62be92*/
   v53 = -2.0; /*0x62be96*/
   this->q0D0 = 0; /*0x62bea2*/
   v58 = v10; /*0x62bea5*/

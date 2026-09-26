@@ -26,6 +26,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
 
 // 0x5F0070
 namespace gamemd {

@@ -12,7 +12,7 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     unsigned int ;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
-    void* Count;  // 0x10
+    unsigned int ;  // 0x10
     unsigned int CapacityIncrement;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char u8_19;  // 0x19
@@ -118,6 +118,7 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
     unsigned int Items2;
     unsigned int Capacity;
     unsigned int IsInitialized;
+    unsigned int Count;
 // --- flat members (END) ---
     unsigned int * Constructor(EnumConnectionPointsClass * aP1);  // 0x4A0C20
     int SetCapacity(int a1,  int a2);    // 0x4F6A20

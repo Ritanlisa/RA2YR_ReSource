@@ -374,7 +374,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
       v36 = 0; /*0x456bfe*/
       v16 = (double *)&dword_818CC8; /*0x456c06*/
       v43 = v15; /*0x456c0b*/
-      v42 = (double)SLODWORD(v37); /*0x456c13*/
+      v42 = (double)IDA_SLODWORD(v37); /*0x456c13*/
       do /*0x456c23*/
       {
         IDA_LODWORD(v37) = (char *)g_CurrentFrame + v36; /*0x456c23*/

@@ -36,6 +36,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/E4Recv_635560_e4.hpp"
 #include "e4/classes/E4Recv_631640_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x6406E0
 namespace gamemd {
@@ -428,7 +429,7 @@ void RunNetworkGameLoop()
 {
   int v0; // eax
   void *v1; // ebx
-  int * v2;
+  unsigned int v2;
   int v3; // edi
   signed int v4; // eax
   int v5; // edi

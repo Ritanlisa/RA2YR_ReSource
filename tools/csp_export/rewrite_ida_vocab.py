@@ -15,7 +15,7 @@ SRC = ROOT / 'src'
 APPLY = '--apply' in sys.argv
 
 IDA_VOCAB_RE = re.compile(
-    r'\b(BYTE[0-8]|WORD[0-7]|LOWORD|HIWORD|LOBYTE|HIBYTE|LODWORD|HIDWORD|SHIWORD|SLOBYTE|SHLOBYTE'
+    r'\b(BYTE[0-8]|WORD[0-7]|LOWORD|HIWORD|LOBYTE|HIBYTE|LODWORD|HIDWORD|SHIWORD|SLOBYTE|SHLOBYTE|SLODWORD|SHIDWORD|SWORD0|SWORD1|SWORD2|SWORD3|SWWORD'
     r'|__PAIR16__|__PAIR32__|__PAIR64__)\(')
 # earlier rewrite passes ate the callee of some tail calls -> `return ();`
 TYPE_ID = re.compile(r'([ \s(\*&<>,]|^)#(\d+)')

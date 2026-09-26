@@ -451,7 +451,7 @@ int TacticalClass::DrawMap(const RectangleStruct& viewRect, RectangleStruct* bou
           v19 = v16 / 60 + 4; /*0x6d79bc*/
           IDA_LOWORD(v40) = v13 / 256 - 2; /*0x6d79c0*/
           v19 = v19; /*0x6d79c5*/
-          while ( v18 < SLODWORD(v17) ) /*0x6d79c9*/
+          while ( v18 < IDA_SLODWORD(v17) ) /*0x6d79c9*/
           {
             v20 = v18 / 2; /*0x6d79d4*/
             ++v18; /*0x6d79d6*/
@@ -1819,7 +1819,7 @@ BuildingTypeClass * * TacticalClass::CalcViewportCells()
   this->q0B4 = v3; /*0x6d8b51*/
   this->visibleArea = v2 - dword_B0CE30 / 2; /*0x6d8b63*/
   IDA_LODWORD(v10[0]) = this->visibleArea - 60; /*0x6d8b80*/
-  v4 = (double)SLODWORD(v10[0]); /*0x6d8b84*/
+  v4 = (double)IDA_SLODWORD(v10[0]); /*0x6d8b84*/
   v5 = v3 - dword_B0CE34 / 2; /*0x6d8b88*/
   this->q0B4 = v5; /*0x6d8b90*/
   v11 = v4; /*0x6d8b99*/

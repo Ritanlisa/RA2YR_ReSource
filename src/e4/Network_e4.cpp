@@ -35,6 +35,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Compare_e4.hpp"
+#include "e4/classes/CoordStruct_e4.hpp"
 
 // 0x4311C0
 namespace gamemd {

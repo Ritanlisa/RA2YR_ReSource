@@ -359,11 +359,11 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
         do /*0x5a5910*/
         {
           IDA_LODWORD(v81[0]) = *CellStruct::Add(&a1, &v82, (_WORD *)(4 * (v56 & 7) + 9041544)); /*0x5a5897*/
-          v80 = SLODWORD(v81[0]); /*0x5a589b*/
-          v58 = SWORD1(v81[0]) + SLOWORD(v81[0]); /*0x5a58a7*/
+          v80 = IDA_SLODWORD(v81[0]); /*0x5a589b*/
+          v58 = IDA_SWORD1(v81[0]) + SLOWORD(v81[0]); /*0x5a58a7*/
           if ( v58 > g_MapCellHeight_Value /*0x5a58dd*/
-            && SLOWORD(v81[0]) - SWORD1(v81[0]) < g_MapCellHeight_Value
-            && SWORD1(v81[0]) - SLOWORD(v81[0]) < g_MapCellHeight_Value
+            && SLOWORD(v81[0]) - IDA_SWORD1(v81[0]) < g_MapCellHeight_Value
+            && IDA_SWORD1(v81[0]) - SLOWORD(v81[0]) < g_MapCellHeight_Value
             && v58 <= g_MapCellCount
             && *((_DWORD *)CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v80) + 14) != dword_ABC2B0 )
           {

@@ -1028,7 +1028,7 @@ int Warhead::ApplyPostDamageEffects()
                   if ( CoCreateInstance(&rclsid, 0, 7u, &IID_IUnknown, &ppv) >= 0 ) /*0x46a56c*/
                   {
                     v82 = ppv; /*0x46a59d*/
-                    Particle::Init((int)ppv, v99, (int)v23, SLODWORD(v77), SLODWORD(v88), v102, v27, v101); /*0x46a5a1*/
+                    Particle::Init((int)ppv, v99, (int)v23, IDA_SLODWORD(v77), IDA_SLODWORD(v88), v102, v27, v101); /*0x46a5a1*/
                     if ( v82 ) /*0x46a5ac*/
                     {
                       v29 = &this->u64_9C; /*0x46a5b2*/
@@ -1042,7 +1042,7 @@ int Warhead::ApplyPostDamageEffects()
                       v95 = *(&this->u32_101); /*0x46a605*/
                       v32 = (_DWORD *)(*(int (__thiscall **)(_BYTE *, _BYTE *))(v31 + 72))(v23, v103); /*0x46a614*/
                       IDA_LODWORD(v77) = *v32; /*0x46a61c*/
-                      v33 = Math::CalcAngle((double)v94 - (double)(int)v32[1], (double)SLODWORD(v77) - (double)v93); /*0x46a63f*/
+                      v33 = Math::CalcAngle((double)v94 - (double)(int)v32[1], (double)IDA_SLODWORD(v77) - (double)v93); /*0x46a63f*/
                       v34 = Math::RoundToInt((v33 - 1.570796326794897) * -10430.06004058427); /*0x46a653*/
                       v35 = v73; /*0x46a658*/
                       IDA_LOWORD(v87) = v34; /*0x46a662*/
@@ -1055,7 +1055,7 @@ int Warhead::ApplyPostDamageEffects()
                       Function::41C430(&v73); /*0x46a693*/
                       v88 = v35; /*0x46a69d*/
                       IDA_LODWORD(v77) = SLOWORD(v87) - 0x3FFF; /*0x46a6a7*/
-                      v77 = (double)SLODWORD(v77) * -0.00009587672516830327; /*0x46a6b5*/
+                      v77 = (double)IDA_SLODWORD(v77) * -0.00009587672516830327; /*0x46a6b5*/
                       v73 = Math::ArcTan2(v77) * v35; /*0x46a6d6*/
                       v36 = -(Math::SinCos(v77) * v88); /*0x46a6ea*/
                       v74 = v36; /*0x46a6ec*/
@@ -1122,7 +1122,7 @@ int Warhead::ApplyPostDamageEffects()
                 }
               }
               v21 += 2; /*0x46a8f6*/
-              v20 = ++v19 < SLODWORD(v78); /*0x46a8f9*/
+              v20 = ++v19 < IDA_SLODWORD(v78); /*0x46a8f9*/
               v81 = v21; /*0x46a902*/
             }
             while ( v20 ); /*0x46a906*/
@@ -1159,7 +1159,7 @@ int Warhead::ApplyPostDamageEffects()
           if ( CoCreateInstance(&rclsid, 0, 7u, &IID_IUnknown, &v79) >= 0 ) /*0x46a9ea*/
           {
             v80 = (int)v79; /*0x46aa12*/
-            Particle::Init((int)v79, v99, SLODWORD(v77), SLODWORD(v87), SLODWORD(v78), v52, v51, v17); /*0x46aa16*/
+            Particle::Init((int)v79, v99, IDA_SLODWORD(v77), IDA_SLODWORD(v87), IDA_SLODWORD(v78), v52, v51, v17); /*0x46aa16*/
             if ( v80 ) /*0x46aa21*/
             {
               v73 = 0.0; /*0x46aa31*/
@@ -1173,13 +1173,13 @@ int Warhead::ApplyPostDamageEffects()
               v86 = *(&this->u32_101); /*0x46aa80*/
               v56 = (_DWORD *)(*(int (__thiscall **)(int *, _BYTE *))(v55 + 72))(v53, v103); /*0x46aa8e*/
               IDA_LODWORD(v78) = *v56; /*0x46aa96*/
-              v57 = Math::CalcAngle((double)v85 - (double)(int)v56[1], (double)SLODWORD(v78) - (double)v84); /*0x46aab3*/
+              v57 = Math::CalcAngle((double)v85 - (double)(int)v56[1], (double)IDA_SLODWORD(v78) - (double)v84); /*0x46aab3*/
               v58 = Math::RoundToInt((v57 - 1.570796326794897) * -10430.06004058427); /*0x46aad6*/
               if ( v73 == 0.0 && v74 == 0.0 ) /*0x46aaef*/
                 v73 = 100.0; /*0x46aaf1*/
               v87 = Math::Sqrt(v74 * v74 + v73 * v73); /*0x46ab26*/
               IDA_LODWORD(v78) = v58 - 0x3FFF; /*0x46ab2a*/
-              v78 = (double)SLODWORD(v78) * -0.00009587672516830327; /*0x46ab38*/
+              v78 = (double)IDA_SLODWORD(v78) * -0.00009587672516830327; /*0x46ab38*/
               v59 = IDA_HIDWORD(v78); /*0x46ab3c*/
               v73 = Math::ArcTan2(v78) * v87; /*0x46ab55*/
               v60 = -(Math::SinCos(COERCE_DOUBLE(IDA___PAIR64__(v59, IDA_LODWORD(v78)))) * v87); /*0x46ab65*/
@@ -1195,7 +1195,7 @@ int Warhead::ApplyPostDamageEffects()
               Math::Hypotenuse2D(&v73); /*0x46ac06*/
               v63 = Math::CalcAngle(v75, v62); /*0x46ac1b*/
               IDA_LODWORD(v78) = (__int16)Math::RoundToInt((v63 - 1.570796326794897) * -10430.06004058427) - 0x3FFF; /*0x46ac3d*/
-              v78 = (double)SLODWORD(v78) * -0.00009587672516830327; /*0x46ac4b*/
+              v78 = (double)IDA_SLODWORD(v78) * -0.00009587672516830327; /*0x46ac4b*/
               v87 = Math::Sqrt(v74 * v74 + v75 * v75 + v73 * v73); /*0x46ac73*/
               if ( v78 != 0.0 ) /*0x46ac89*/
               {

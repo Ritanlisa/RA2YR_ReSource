@@ -843,7 +843,7 @@ AbstractClass * * UnitClass::DeployToBuilding()
       v12 = ((__int64 (__thiscall *)(_DWORD *, int *))*(_DWORD *)(*this + 440))(this, &v27); /*0x738eb7*/
       v26 = *LayerClass::Pathfinding_Find( /*0x738ee0*/
                &MapClass_Instance,
-               SHIDWORD(v12),
+               IDA_SHIDWORD(v12),
                &v28,
                (__int16 *)v12,
                5,
@@ -2575,7 +2575,7 @@ void UnitClass::CalcMoveTarget()
       v84 = *(&this->uniqueId0); /*0x735d4f*/
       v38 = *(&this->uniqueId1); /*0x735d53*/
       IDA_LODWORD(v72[0]) = SLOWORD(v72[0]) - 0x3FFF; /*0x735d61*/
-      v73 = (double)SLODWORD(v72[0]) * -0.00009587672516830327; /*0x735d6f*/
+      v73 = (double)IDA_SLODWORD(v72[0]) * -0.00009587672516830327; /*0x735d6f*/
       v39 = IDA_HIDWORD(v73); /*0x735d77*/
       v71 = (double)v63; /*0x735d81*/
       v72[0] = (double)v84; /*0x735d8c*/
@@ -2583,7 +2583,7 @@ void UnitClass::CalcMoveTarget()
       IDA_LODWORD(v72[0]) = Math::RoundToInt(v72[0] - v40 * v71); /*0x735da8*/
       v41 = Math::ArcTan2(COERCE_DOUBLE(IDA___PAIR64__(v39, IDA_LODWORD(v73)))); /*0x735dac*/
       v42 = Math::RoundToInt(v41 * v71 + (double)v83); /*0x735dbc*/
-      Coord::Subtract(&v77, v42, SLODWORD(v72[0]), v38); /*0x735dcc*/
+      Coord::Subtract(&v77, v42, IDA_SLODWORD(v72[0]), v38); /*0x735dcc*/
       v44 = v37 & 0x80000001; /*0x735ddd*/
       v43 = v44 == 0; /*0x735ddd*/
       v74 = (int)v77; /*0x735de3*/
@@ -2640,7 +2640,7 @@ void UnitClass::CalcMoveTarget()
       IDA_LODWORD(v70) = Math::RoundToInt(v70 - v29 * v64); /*0x735ca7*/
       v30 = Math::ArcTan2(COERCE_DOUBLE(IDA___PAIR64__(v28, IDA_LODWORD(v73)))); /*0x735cab*/
       v31 = Math::RoundToInt(v30 * v64 + (double)v83); /*0x735cbb*/
-      Coord::Subtract(&v74, v31, SLODWORD(v70), v27); /*0x735ccb*/
+      Coord::Subtract(&v74, v31, IDA_SLODWORD(v70), v27); /*0x735ccb*/
       v33 = v16 & 0x80000001; /*0x735cdc*/
       v32 = v33 == 0; /*0x735cdc*/
       v77 = (void **)v74; /*0x735ce2*/
@@ -2720,7 +2720,7 @@ void UnitClass::CalcMoveTarget()
   v55 = *(&this->parachute8); /*0x735fb4*/
   IDA_LODWORD(v72[0]) = *(_DWORD *)(*((_DWORD *)g_PathClass_State + this->FootClass_field_684) + 40); /*0x735fba*/
   v85 = v55; /*0x735fbe*/
-  v84 = (SWORD1(v72[0]) << 8) + 128; /*0x735fdb*/
+  v84 = (IDA_SWORD1(v72[0]) << 8) + 128; /*0x735fdb*/
   v83 = (SLOWORD(v72[0]) << 8) + 128; /*0x735fe3*/
   this->SetPositionAnimated(&v83); /*0x735fec*/
   v56 = *this; /*0x735ff2*/
@@ -3493,7 +3493,7 @@ LABEL_251:
               {
                 if ( this->ThunkTo159x4(14) == 1 )
                 {
-                  FootClass::AssignDestination((int)this, a2, SHIDWORD(a2));
+                  FootClass::AssignDestination((int)this, a2, IDA_SHIDWORD(a2));
 LABEL_315:
                   *(&this->lastLayer6) = -1;
                   return;
@@ -3512,7 +3512,7 @@ LABEL_309:
             {
               if ( this->ThunkTo159x4(14) == 1 )
               {
-                FootClass::AssignDestination((int)this, (int)v100, SHIDWORD(a2));
+                FootClass::AssignDestination((int)this, (int)v100, IDA_SHIDWORD(a2));
                 goto LABEL_315;
               }
               this->ThunkTo159x4(3);
@@ -3666,7 +3666,7 @@ LABEL_345:
               }
             }
 LABEL_365:
-            FootClass::AssignDestination((int)this, a2, SHIDWORD(a2));
+            FootClass::AssignDestination((int)this, a2, IDA_SHIDWORD(a2));
             return;
           }
 LABEL_182:
@@ -9738,7 +9738,7 @@ int UnitClass::CanCrushTarget(TechnoClass* aP1)
          || this->type->qD2D)
         && (v6 = this->owner, *(_DWORD *)(v6 + 388) != 2)
         && ((unsigned __int8)House::IsCurrentPlayer((void *)v6)
-         || this->owner->iqLevel2 >= SLODWORD(g_RulesClass_Instance[1].TiberiumHeal))
+         || this->owner->iqLevel2 >= IDA_SLODWORD(g_RulesClass_Instance[1].TiberiumHeal))
         && (*(unsigned __int8 (__thiscall **)(_BYTE *, _DWORD))(*(_DWORD *)aP1 + 200))(aP1, this->owner) == 0;
   return result; /*0x743a2e*/
 }

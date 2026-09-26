@@ -148,7 +148,7 @@ void* BulletClass::FlightUpdate(int a1, int a2) {
         v22 = v20[2]; /*0x416118*/
         IDA_HIDWORD(v54) = v21; /*0x41611b*/
         v55 = v22; /*0x41611f*/
-        *(double *)&v57[1] = (double)SLODWORD(v54); /*0x416123*/
+        *(double *)&v57[1] = (double)IDA_SLODWORD(v54); /*0x416123*/
         v59[1] = (double)v21; /*0x416148*/
         v58 = (double)v21; /*0x416135*/
         v60 = (double)v22; /*0x41614c*/
@@ -3867,7 +3867,7 @@ int TerrainClass::InitTheatre() {
         v40 = 0.0; /*0x549fa7*/
         do /*0x54a09f*/
         {
-          v40 = (double)SLODWORD(v40) * 0.08333333333333333; /*0x549fbd*/
+          v40 = (double)IDA_SLODWORD(v40) * 0.08333333333333333; /*0x549fbd*/
           v40 = v40; /*0x549fc1*/
           v23 = Color::Lerp2(&v34, (int)&v37, (int)&v43, v40); /*0x549fcc*/
           IDA_BYTE1(v24) = 0; /*0x549fd4*/
@@ -3889,7 +3889,7 @@ int TerrainClass::InitTheatre() {
                      | (v28 << g_BitShift_Blue);
           v40 = v20; /*0x54a09b*/
         }
-        while ( SLODWORD(v20) <= 12 ); /*0x54a09f*/
+        while ( IDA_SLODWORD(v20) <= 12 ); /*0x54a09f*/
         v4 = v4; /*0x54a0a5*/
         v9 = v42; /*0x54a0a9*/
       }
@@ -4334,7 +4334,7 @@ int TiberiumClass::Grow(void* a1) {
   v75 = 1; /*0x59c937*/
   IDA_LODWORD(v86) = v3; /*0x59c93c*/
   if ( v3 ) /*0x59c940*/
-    v3 = Math::RoundToInt((double)(int)*(&this->q0247) * (double)(int)*(&this->q0246) * (double)SLODWORD(v86) * 0.008 + 100.0); /*0x59c95e*/
+    v3 = Math::RoundToInt((double)(int)*(&this->q0247) * (double)(int)*(&this->q0246) * (double)IDA_SLODWORD(v86) * 0.008 + 100.0); /*0x59c95e*/
   v4 = v3 - *(&this->q04C3); /*0x59c963*/
   IDA_LODWORD(v85) = v4; /*0x59c96c*/
   if ( v4 <= 75 ) /*0x59c970*/
@@ -4385,7 +4385,7 @@ int TiberiumClass::Grow(void* a1) {
   for ( i = LayerClass::CellIteratorNext(&MapClass_Instance); i; i = LayerClass::CellIteratorNext(&MapClass_Instance) ) /*0x59ca21*/
   {
     IDA_LODWORD(v86) = *(_DWORD *)(i + 36); /*0x59ca26*/
-    *((_DWORD *)g_MapTileArray + 20 * SLOWORD(v86) + 20 * g_MapCellWidth * SWORD1(v86) + 15) = 0; /*0x59ca4b*/
+    *((_DWORD *)g_MapTileArray + 20 * SLOWORD(v86) + 20 * g_MapCellWidth * IDA_SWORD1(v86) + 15) = 0; /*0x59ca4b*/
   }
   v14 = a1; /*0x59ca5e*/
   v15 = g_MapCellWidth * g_MapCellWidth; /*0x59ca61*/
@@ -4499,7 +4499,7 @@ int TiberiumClass::Grow(void* a1) {
   v32 = IDA_LODWORD(v85); /*0x59cca7*/
   IDA_LODWORD(v78) = 0; /*0x59ccb0*/
   v84 = 76; /*0x59ccb4*/
-  if ( SLODWORD(v85) >= 76 ) /*0x59ccbc*/
+  if ( IDA_SLODWORD(v85) >= 76 ) /*0x59ccbc*/
     v84 = IDA_LODWORD(v85); /*0x59ccbe*/
   v85 = (double)v84; /*0x59cccd*/
   v88 = (double)(v32 / 6); /*0x59cce7*/
@@ -4592,13 +4592,13 @@ int TiberiumClass::Grow(void* a1) {
         IDA_LOWORD(v85) = v50; /*0x59cf13*/
         IDA_WORD1(v85) = *(_WORD *)(v79 + 2) + v49; /*0x59cf1c*/
         IDA_LODWORD(v81) = IDA_LODWORD(v85); /*0x59cf25*/
-        v51 = SWORD1(v85) + v50; /*0x59cf2f*/
+        v51 = IDA_SWORD1(v85) + v50; /*0x59cf2f*/
         if ( v51 > g_MapCellHeight_Value /*0x59cf60*/
-          && v50 - SWORD1(v85) < g_MapCellHeight_Value
-          && SWORD1(v85) - v50 < g_MapCellHeight_Value
+          && v50 - IDA_SWORD1(v85) < g_MapCellHeight_Value
+          && IDA_SWORD1(v85) - v50 < g_MapCellHeight_Value
           && v51 <= g_MapCellCount )
         {
-          v52 = (char *)g_MapTileArray + 80 * v50 + 80 * g_MapCellWidth * SWORD1(v85); /*0x59cf7b*/
+          v52 = (char *)g_MapTileArray + 80 * v50 + 80 * g_MapCellWidth * IDA_SWORD1(v85); /*0x59cf7b*/
           if ( *((_DWORD *)v52 + 14) /*0x59cfb9*/
             || *((_DWORD *)v52 + 15) == *(&this->q04C4)
             || (v53 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v81), !Cell::IsEmpty(v53))
@@ -4611,10 +4611,10 @@ int TiberiumClass::Grow(void* a1) {
           else
           {
             v81 = v81; /*0x59cfc4*/
-            v55 = SWORD1(v81); /*0x59cfcb*/
+            v55 = IDA_SWORD1(v81); /*0x59cfcb*/
             *(_DWORD *)v48 = v81; /*0x59cfd0*/
             IDA_LODWORD(v86) = ((__int16)v77 - v81) * ((__int16)v77 - v81) + (IDA_SHIWORD(v77) - v55) * (IDA_SHIWORD(v77) - v55); /*0x59cfef*/
-            *(float *)&v86 = Math::Sqrt((double)SLODWORD(v86)); /*0x59cfff*/
+            *(float *)&v86 = Math::Sqrt((double)IDA_SLODWORD(v86)); /*0x59cfff*/
             *(_QWORD *)&v89 = (unsigned int)Random::State(&g_Randomizer); /*0x59d010*/
             IDA_LODWORD(v82) = v82 + 1; /*0x59d035*/
             v48[1] = 10.0 * ((double)*(__int64 *)&v89 * 2.328306437080797e-10) /*0x59d053*/
@@ -4776,7 +4776,7 @@ int TiberiumClass::Grow(void* a1) {
   for ( k = LayerClass::CellIteratorNext(&MapClass_Instance); k; k = LayerClass::CellIteratorNext(&MapClass_Instance) ) /*0x59d3d4*/
   {
     IDA_LODWORD(v88) = *(_DWORD *)(k + 36); /*0x59d3d9*/
-    v74 = (char *)g_MapTileArray + 80 * SLOWORD(v88) + 80 * g_MapCellWidth * SWORD1(v88); /*0x59d3fa*/
+    v74 = (char *)g_MapTileArray + 80 * SLOWORD(v88) + 80 * g_MapCellWidth * IDA_SWORD1(v88); /*0x59d3fa*/
     if ( *((_DWORD *)v74 + 14) == v72 ) /*0x59d3ff*/
     {
       *((_DWORD *)v74 + 14) = 0; /*0x59d401*/
@@ -5920,7 +5920,7 @@ int ParticleSystemClass::SpawnParticle() {
     v9 = v2 - v8; /*0x62f28f*/
     v71 = *(float *)&v9; /*0x62f291*/
     v64 = (double)v7; /*0x62f29d*/
-    v72 = (double)SLODWORD(v69); /*0x62f2a5*/
+    v72 = (double)IDA_SLODWORD(v69); /*0x62f2a5*/
     v10 = Math::Sqrt(v72 * v72 + v64 * v64 + (double)v9 * (double)v9); /*0x62f2c2*/
     IDA_LODWORD(v61) = Math::RoundToInt(v10); /*0x62f2dc*/
     v11 = Math::Sqrt(v64 * v64 + v72 * v72); /*0x62f2e9*/
@@ -5928,26 +5928,26 @@ int ParticleSystemClass::SpawnParticle() {
     *(float *)&v65 = v12; /*0x62f2fa*/
     v63 = v9; /*0x62f300*/
     v62 = v12; /*0x62f304*/
-    if ( v9 >= SLODWORD(v61) ) /*0x62f308*/
+    if ( v9 >= IDA_SLODWORD(v61) ) /*0x62f308*/
     {
       *(float *)&v9 = v61; /*0x62f30a*/
       v63 = IDA_LODWORD(v61); /*0x62f30c*/
     }
     if ( v9 <= -IDA_LODWORD(v61) ) /*0x62f314*/
       v63 = -IDA_LODWORD(v61); /*0x62f316*/
-    if ( SLODWORD(v12) >= SLODWORD(v12) ) /*0x62f31c*/
+    if ( IDA_SLODWORD(v12) >= IDA_SLODWORD(v12) ) /*0x62f31c*/
     {
       v12 = v12; /*0x62f31e*/
       v62 = v12; /*0x62f320*/
     }
     v13 = -IDA_LODWORD(v12); /*0x62f324*/
-    if ( SLODWORD(v12) <= v13 ) /*0x62f328*/
+    if ( IDA_SLODWORD(v12) <= v13 ) /*0x62f328*/
       v62 = *(float *)&v13; /*0x62f32a*/
-    v14 = Math::RoundToInt((double)SLODWORD(v61) * this->Type->Beam); /*0x62f34a*/
+    v14 = Math::RoundToInt((double)IDA_SLODWORD(v61) * this->Type->Beam); /*0x62f34a*/
     v14 = v14; /*0x62f34c*/
-    v74 = (float)SLODWORD(v61); /*0x62f350*/
+    v74 = (float)IDA_SLODWORD(v61); /*0x62f350*/
     v61 = BuildingLight::CalcIntensity((double)v63 / v74); /*0x62f364*/
-    v62 = Math::ArcTan2_Table((double)SLODWORD(v62) / (double)v65); /*0x62f378*/
+    v62 = Math::ArcTan2_Table((double)IDA_SLODWORD(v62) / (double)v65); /*0x62f378*/
     if ( v7 < 0 ) /*0x62f381*/
       v62 = -v62; /*0x62f389*/
     Matrix3x4::Identity(v90); /*0x62f394*/
@@ -5988,8 +5988,8 @@ int ParticleSystemClass::SpawnParticle() {
         v73 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2147483646); /*0x62f4ef*/
         v22 = this->Type; /*0x62f4f3*/
         v23 = ((double)v73 * 4.656612877414201e-10 - 0.5) * v22->q2E0; /*0x62f509*/
-        v84 = ((double)SLODWORD(v72) * 4.656612877414201e-10 - 0.5) * v22->q2E0; /*0x62f525*/
-        v85 = ((double)SLODWORD(v64) * 4.656612877414201e-10 - 0.5) * v22->q2E0; /*0x62f548*/
+        v84 = ((double)IDA_SLODWORD(v72) * 4.656612877414201e-10 - 0.5) * v22->q2E0; /*0x62f525*/
+        v85 = ((double)IDA_SLODWORD(v64) * 4.656612877414201e-10 - 0.5) * v22->q2E0; /*0x62f548*/
         v24 = this->q0A0; /*0x62f560*/
         v83[3] = this->location; /*0x62f563*/
         v83[4] = v24; /*0x62f56a*/
@@ -6041,12 +6041,12 @@ int ParticleSystemClass::SpawnParticle() {
         *(float *)(IDA_LODWORD(v34) + 268) = v66; /*0x62f66b*/
         *(float *)(IDA_LODWORD(v34) + 272) = v67; /*0x62f671*/
         *(float *)(IDA_LODWORD(v34) + 276) = v68; /*0x62f678*/
-        v73 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, v60, SHIDWORD(v60)); /*0x62f69e*/
+        v73 = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, v60, IDA_SHIDWORD(v60)); /*0x62f69e*/
         IDA_LODWORD(v72) = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2147483646); /*0x62f6b4*/
         IDA_LODWORD(v64) = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2147483646); /*0x62f6c3*/
         v37 = this->Type; /*0x62f6c7*/
-        v38 = ((double)SLODWORD(v64) * 4.656612877414201e-10 - 0.5) * v37->q2E8; /*0x62f6e0*/
-        v86 = ((double)SLODWORD(v72) * 4.656612877414201e-10 - 0.5) * v37->q2E8; /*0x62f6fc*/
+        v38 = ((double)IDA_SLODWORD(v64) * 4.656612877414201e-10 - 0.5) * v37->q2E8; /*0x62f6e0*/
+        v86 = ((double)IDA_SLODWORD(v72) * 4.656612877414201e-10 - 0.5) * v37->q2E8; /*0x62f6fc*/
         v87 = ((double)v73 * 4.656612877414201e-10 - 0.5) * v37->q2E8; /*0x62f719*/
         *(float *)(IDA_LODWORD(v34) + 268) = v38 + *(float *)(IDA_LODWORD(v34) + 268); /*0x62f722*/
         *(float *)(IDA_LODWORD(v34) + 272) = v86 + *(float *)(IDA_LODWORD(v34) + 272); /*0x62f72e*/
@@ -6075,7 +6075,7 @@ int ParticleSystemClass::SpawnParticle() {
         *(float *)(IDA_LODWORD(v34) + 276) = v42; /*0x62f7b4*/
         IDA_LODWORD(v64) = Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2147483646); /*0x62f7ce*/
         v43 = this->Type; /*0x62f7d2*/
-        v44 = ((double)SLODWORD(v64) * 4.656612877414201e-10 + v61 - 0.5) * (v43->q2F0 * 0.5); /*0x62f7f8*/
+        v44 = ((double)IDA_SLODWORD(v64) * 4.656612877414201e-10 + v61 - 0.5) * (v43->q2F0 * 0.5); /*0x62f7f8*/
         if ( v43->q2F0 <= v44 ) /*0x62f809*/
           v45 = v43->q2F0; /*0x62f80f*/
         else

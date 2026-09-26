@@ -22,6 +22,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x7586F0
 namespace gamemd {
@@ -134,7 +135,7 @@ int VoxelAnim::Draw(unsigned int * a2)
   int v145; // [esp+1Ch] [ebp-54h]
   int v148; // [esp+20h] [ebp-50h]
   int v151; // [esp+24h] [ebp-4Ch]
-  unsigned int v152;
+  _DWORD * v152;
   double v153; // [esp+3Ch] [ebp-34h] BYREF
   double v154; // [esp+44h] [ebp-2Ch] BYREF
   double v155; // [esp+4Ch] [ebp-24h] BYREF
@@ -158,8 +159,8 @@ int VoxelAnim::Draw(unsigned int * a2)
     IDA_HIDWORD(v155) = v110[1] - v109;
     IDA_LODWORD(v155) = v111 - (_DWORD)v108;
   double v112; // st7
-    v112 = Math::Sqrt((double)(v111 - (int)v108) * (double)(v111 - (int)v108) + (double)SHIDWORD(v155)
-                                                                              * (double)SHIDWORD(v155));
+    v112 = Math::Sqrt((double)(v111 - (int)v108) * (double)(v111 - (int)v108) + (double)IDA_SHIDWORD(v155)
+                                                                              * (double)IDA_SHIDWORD(v155));
     int v113 = Math::RoundToInt(v112);
     int v114 = this->q00C;
     if ( v113 < 17 )
@@ -252,7 +253,7 @@ int VoxelAnim::Draw(unsigned int * a2)
     int v125 = *v124;
     IDA_LODWORD(v155) = *v3;
     IDA_LODWORD(v154) = v125;
-    double v126 = Math::CalcAngle((double)v124[1] - (double)this->u32_2C, (double)SLODWORD(v155) - (double)v125);
+    double v126 = Math::CalcAngle((double)v124[1] - (double)this->u32_2C, (double)IDA_SLODWORD(v155) - (double)v125);
     v127 = Math::RoundToInt((v126 - 1.570796326794897) * -10430.06004058427);
     v128 = this->num_sections;
     v129 = v127;
@@ -267,9 +268,9 @@ int VoxelAnim::Draw(unsigned int * a2)
     v161 = v131[1];
     int v132 = v131[2];
     IDA_LODWORD(v155) = v129 - 0x3FFF;
-    v155 = (double)SLODWORD(v155) * -0.00009587672516830327;
+    v155 = (double)IDA_SLODWORD(v155) * -0.00009587672516830327;
     unsigned int v133 = IDA_HIDWORD(v155);
-    v154 = (double)SLODWORD(v153);
+    v154 = (double)IDA_SLODWORD(v153);
     v153 = (double)v161;
     double v134 = Math::SinCos(v155);
     int v135 = Math::RoundToInt(v153 - v134 * v154);
@@ -499,7 +500,7 @@ LABEL_32:
       _DWORD * v38 = (_DWORD *)*((_DWORD *)g_PathClass_State + (_DWORD)a2);
       IDA_LODWORD(v154) = v38;
       IDA_LODWORD(v155) = v38[10];
-      int v39 = SWORD1(v155) << 8;
+      int v39 = IDA_SWORD1(v155) << 8;
       *v3 = (SLOWORD(v155) << 8) + 128;
       int v40 = this->q00C;
       this->u32_2C = v39 + 128;

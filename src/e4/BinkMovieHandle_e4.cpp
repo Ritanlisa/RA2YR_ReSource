@@ -10,6 +10,7 @@
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x432AB0
 namespace gamemd {

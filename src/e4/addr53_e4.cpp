@@ -38,6 +38,7 @@
 #include "e4/classes/E4Recv_541170_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/E4Recv_52A110_e4.hpp"
 
 // 0x530000
 namespace gamemd {
@@ -2609,7 +2610,7 @@ void SuperWeapon_Update()
               v27 = IDA_SHIWORD(v34) - (__int16)(v24[1] / 256); /*0x53aa26*/
               if ( v27 < 0 ) /*0x53aa28*/
                 v27 = (__int16)(v24[1] / 256) - IDA_SHIWORD(v34); /*0x53aa2a*/
-              if ( v26 + v27 < SHIDWORD(g_RulesClass_Instance[1].Acceleration) ) /*0x53aa3a*/
+              if ( v26 + v27 < IDA_SHIDWORD(g_RulesClass_Instance[1].Acceleration) ) /*0x53aa3a*/
                 break; /*0x53aa3a*/
               if ( ++v23 >= dword_A9F9E0 ) /*0x53aa44*/
                 goto LABEL_52; /*0x53aa44*/
@@ -3195,7 +3196,7 @@ int InitializeAudioStreaming(int a1, int a2)
   qword_AA0388 = 100; /*0x53de9a*/
   dword_AA037C = 0; /*0x53deaa*/
   AudioStream::Reset(dword_AA0398); /*0x53deb5*/
-  CoordBounds::Constructor(dword_AA0398, qword_AA0388, SHIDWORD(qword_AA0388)); /*0x53decc*/
+  CoordBounds::Constructor(dword_AA0398, qword_AA0388, IDA_SHIDWORD(qword_AA0388)); /*0x53decc*/
   AudioStream::ResetChannel(4 * qword_AA0388, (unsigned __int64)qword_AA0388 >> 30); /*0x53deed*/
   AudioStream::ResetChannel2(4 * qword_AA0388, (unsigned __int64)qword_AA0388 >> 30); /*0x53df0f*/
   Thread = CreateThread(0, 0x1000u, sub_53E070, &dword_AA0378, 0, &dword_AA03FC); /*0x53df2a*/

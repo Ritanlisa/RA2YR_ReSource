@@ -975,7 +975,7 @@ void SuperClass::Launch(int ecx0, int a2, short * aP3, char a4)
             {
               GroundHeight = 0;
               IDA_LODWORD(v183) = *(_DWORD *)aP3;
-              v175 = (SWORD1(v183) << 8) + 128;
+              v175 = (IDA_SWORD1(v183) << 8) + 128;
               a1 = (IUnknown *)((SLOWORD(v183) << 8) + 128);
               GroundHeight = (IUnknown *)Cell::GetGroundHeight((IUnknown *)&a1);
               v189 = GroundHeight;

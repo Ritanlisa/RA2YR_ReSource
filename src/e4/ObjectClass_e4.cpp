@@ -799,10 +799,10 @@ AbstractClass * * ObjectClass::BuildTransform(unsigned int * a1, float * a2, uns
     v14 = Math::SinCos(*(float *)(v13 + 808)); /*0x514135*/
     v30 = Math::RoundToInt(fabs(v14) * v25 + fabs(*(float *)&v30) * v27); /*0x51415c*/
     IDA_LODWORD(v31) = Math::RoundToInt(v31 * v27); /*0x514165*/
-    v15 = Math::RoundToInt(v27 - (double)SLODWORD(v31)); /*0x51417e*/
+    v15 = Math::RoundToInt(v27 - (double)IDA_SLODWORD(v31)); /*0x51417e*/
     v28 = v15; /*0x514180*/
     IDA_LODWORD(v29) = Math::RoundToInt(v29 * v25); /*0x514189*/
-    v16 = Math::RoundToInt(v25 - (double)SLODWORD(v29)); /*0x514195*/
+    v16 = Math::RoundToInt(v25 - (double)IDA_SLODWORD(v29)); /*0x514195*/
     v17 = a1[2]; /*0x51419a*/
     v26 = v16; /*0x51419f*/
     if ( *(float *)(v17 + 812) < 0.0 ) /*0x5141b4*/

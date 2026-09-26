@@ -19,6 +19,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x47F510
 namespace gamemd {
@@ -332,12 +333,12 @@ void TacticalClass::InterpolateView()
 {
   unsigned int v0;
   int v1; // edi
-  unsigned int v2;
-  wchar_t * v3;
+  wchar_t * v2;
+  unsigned int v3;
   unsigned int v4;
   _DWORD *v5; // edx
   int v6; // ebx
-  bool v7; // zf
+  wchar_t * v7;
   int v8; // ebx
   int *v9; // eax
   int v10; // eax
@@ -346,17 +347,17 @@ void TacticalClass::InterpolateView()
   int v13; // esi
   int v14; // edi
   int v15; // eax
-  wchar_t * v16;
+  unsigned int v16;
   int v17; // [esp+8h] [ebp-40h]
-  int v18; // [esp+Ch] [ebp-3Ch] BYREF
-  wchar_t * v19;
-  unsigned int v20;
+  unsigned int v18;
+  unsigned int v19;
+  wchar_t * v20;
   int v21; // [esp+18h] [ebp-30h]
   int v22; // [esp+1Ch] [ebp-2Ch]
   int v23; // [esp+20h] [ebp-28h]
-  int v24; // [esp+24h] [ebp-24h]
-  wchar_t * v25;
-  unsigned int v26;
+  wchar_t * v24;
+  unsigned int v25;
+  wchar_t * v26;
   int v27[3]; // [esp+30h] [ebp-18h] BYREF
   int v28[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
@@ -1341,7 +1342,7 @@ void* TacticalClass::DrawPlacementCircles()
         v50 = *(_BYTE *)(v9 + 2); /*0x6dbf67*/
         Color::Lerp((unsigned __int8 *)&v49, dword_B0E648, (unsigned __int8 *)&byte_B0CE14); /*0x6dbf6f*/
         v52 = COERCE_FLOAT(BuildingClass::GetPowerFrame(v3)); /*0x6dbf7b*/
-        v46 = (float)SLODWORD(v52); /*0x6dbf91*/
+        v46 = (float)IDA_SLODWORD(v52); /*0x6dbf91*/
         IDA_HIBYTE(v43) = v10; /*0x6dbf94*/
         IDA_LOWORD(v43) = v49; /*0x6dbf9a*/
         IDA_BYTE2(v43) = v50; /*0x6dbfa1*/
@@ -1369,9 +1370,9 @@ void* TacticalClass::DrawPlacementCircles()
                   IDA_LOWORD(v54) = *v18 / 256; /*0x6dc03c*/
                   IDA_HIWORD(v54) = v18[1] / 256; /*0x6dc050*/
                   IDA_LODWORD(v52) = (__int16)(IDA_HIWORD(v55) - IDA_HIWORD(v54)); /*0x6dc06b*/
-                  v19 = (double)SLODWORD(v52); /*0x6dc06f*/
+                  v19 = (double)IDA_SLODWORD(v52); /*0x6dc06f*/
                   IDA_LODWORD(v52) = (__int16)(v16 - v54); /*0x6dc073*/
-                  v20 = Math::Sqrt((double)SLODWORD(v52) * (double)SLODWORD(v52) + v19 * v19); /*0x6dc08c*/
+                  v20 = Math::Sqrt((double)IDA_SLODWORD(v52) * (double)IDA_SLODWORD(v52) + v19 * v19); /*0x6dc08c*/
                   v21 = Math::RoundToInt(v20); /*0x6dc094*/
                   if ( v21 <= 2 * IDA_LODWORD(v14) && v21 < v12 ) /*0x6dc0a5*/
                     v12 = v21; /*0x6dc0a7*/
@@ -1398,9 +1399,9 @@ void* TacticalClass::DrawPlacementCircles()
               IDA_LOWORD(v54) = *v26 / 256; /*0x6dc12a*/
               IDA_HIWORD(v54) = v26[1] / 256; /*0x6dc13e*/
               IDA_LODWORD(v52) = (__int16)(IDA_HIWORD(v55) - IDA_HIWORD(v54)); /*0x6dc159*/
-              v27 = (double)SLODWORD(v52); /*0x6dc15d*/
+              v27 = (double)IDA_SLODWORD(v52); /*0x6dc15d*/
               IDA_LODWORD(v52) = (__int16)(v24 - v54); /*0x6dc161*/
-              v28 = Math::Sqrt((double)SLODWORD(v52) * (double)SLODWORD(v52) + v27 * v27); /*0x6dc17a*/
+              v28 = Math::Sqrt((double)IDA_SLODWORD(v52) * (double)IDA_SLODWORD(v52) + v27 * v27); /*0x6dc17a*/
               if ( (__int16)Math::RoundToInt(v28) == v12 ) /*0x6dc18c*/
                 (*(void (__thiscall **)(int *, _DWORD))(*v23 + 304))(v23, 0); /*0x6dc194*/
             }
@@ -1468,7 +1469,7 @@ void* TacticalClass::DrawPlacementCircles()
     else
     {
       v51 = 0; /*0x6dc2d8*/
-      if ( (double)SLODWORD(v53) * v52 >= 0.0 ) /*0x6dc2ef*/
+      if ( (double)IDA_SLODWORD(v53) * v52 >= 0.0 ) /*0x6dc2ef*/
       {
         v53 = 0.0; /*0x6dc2f5*/
         do /*0x6dc39d*/

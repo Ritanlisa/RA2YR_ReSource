@@ -20,7 +20,7 @@ struct TemporalClass {
     int referenceCount;  // 0x1C
     bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
-    char creationFrame[4];  // 0x24
+    _DWORD ;  // 0x24
     int q028;  // 0x28
     bool q02B;  // 0x2B
     unsigned int q02C;  // 0x2C
@@ -1569,6 +1569,7 @@ struct TemporalClass {
     unsigned int vtable28;
     unsigned int vtable29;
     unsigned int objectTypeFlags;
+    unsigned int creationFrame;
 // --- flat members (END) ---
     char CanWarpTarget(unsigned int * a1);
     int Constructor();

@@ -322,7 +322,7 @@ struct UnitTypeClass {
     unsigned char q3B4;  // 0x3B4
     unsigned int q3B7;  // 0x3B7
     int BuildLimit;  // 0x3B8
-    char Category[4];  // 0x3BC
+    unsigned int Category;  // 0x3BC
     unsigned int TechnoTypeClass_field_3C0;  // 0x3C0
     unsigned int q3C4;  // 0x3C4
     double DeployTime;  // 0x3C8

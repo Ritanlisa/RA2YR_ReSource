@@ -3974,8 +3974,8 @@ void BuildingClass::ProcessSuperWeaponEffects() {}
             IDA_LODWORD(v77) = (*v33 << 8) + 128; /*0x44d023*/
             IDA_HIDWORD(v77) = (v33[1] << 8) + 128; /*0x44d03c*/
             v34 = Math::CalcAngle( /*0x44d04f*/
-                    (double)SHIDWORD(v73) - (double)SHIDWORD(v77),
-                    (double)SLODWORD(v77) - (double)SLODWORD(v73));
+                    (double)IDA_SHIDWORD(v73) - (double)IDA_SHIDWORD(v77),
+                    (double)IDA_SLODWORD(v77) - (double)IDA_SLODWORD(v73));
             IDA_LOWORD(v77) = Math::RoundToInt((v34 - 1.570796326794897) * -10430.06004058427); /*0x44d065*/
             v65 = (double)g_RulesClass_Instance[1].WeatherConBoltExplosion; /*0x44d07a*/
             v35 = (void *)ObjectClass::DistanceTo(this, (int)v29); /*0x44d07e*/
@@ -4013,7 +4013,7 @@ void BuildingClass::ProcessSuperWeaponEffects() {}
             v44 = (_DWORD *)(*(int (__thiscall **)(_DWORD, _BYTE *))(*(_DWORD *)IDA_LODWORD(v71) + 72))(IDA_LODWORD(v71), v89); /*0x44d221*/
             v45 = v44[2] - v76; /*0x44d23c*/
             IDA_LODWORD(v71) = (*v44 - v75[0]) * (*v44 - v75[0]) + (v44[1] - v75[1]) * (v44[1] - v75[1]); /*0x44d250*/
-            v71 = (double)SLODWORD(v71); /*0x44d260*/
+            v71 = (double)IDA_SLODWORD(v71); /*0x44d260*/
             v62 = (double)g_RulesClass_Instance[1].WeatherConBoltExplosion; /*0x44d272*/
             v46 = Math::Sqrt(v71); /*0x44d278*/
             v60 = Math::RoundToInt(v46); /*0x44d285*/
@@ -4033,7 +4033,7 @@ void BuildingClass::ProcessSuperWeaponEffects() {}
             v73 = Math::Sqrt(v69 * v69 + v68 * v68); /*0x44d32f*/
             v50 = Math::CalcAngle(v70, v73); /*0x44d343*/
             IDA_LODWORD(v71) = (__int16)Math::RoundToInt((v50 - 1.570796326794897) * -10430.06004058427) - 0x3FFF; /*0x44d365*/
-            v71 = (double)SLODWORD(v71) * -0.00009587672516830327; /*0x44d373*/
+            v71 = (double)IDA_SLODWORD(v71) * -0.00009587672516830327; /*0x44d373*/
             v73 = Math::Sqrt(v69 * v69 + v70 * v70 + v68 * v68); /*0x44d39b*/
             if ( v71 != 0.0 ) /*0x44d3b1*/
             {
@@ -4043,13 +4043,13 @@ void BuildingClass::ProcessSuperWeaponEffects() {}
               v69 = v69 / Math::ArcTan2(COERCE_DOUBLE(IDA___PAIR64__(v51, v52))); /*0x44d3d8*/
             }
             IDA_LODWORD(v71) = (__int16)v67 - 0x3FFF; /*0x44d3ea*/
-            v53 = Math::ArcTan2((double)SLODWORD(v71) * -0.00009587672516830327); /*0x44d3fb*/
+            v53 = Math::ArcTan2((double)IDA_SLODWORD(v71) * -0.00009587672516830327); /*0x44d3fb*/
             v68 = v53 * v68; /*0x44d409*/
             IDA_LODWORD(v71) = (__int16)v67 - 0x3FFF; /*0x44d412*/
-            v54 = Math::ArcTan2((double)SLODWORD(v71) * -0.00009587672516830327); /*0x44d423*/
+            v54 = Math::ArcTan2((double)IDA_SLODWORD(v71) * -0.00009587672516830327); /*0x44d423*/
             v69 = v54 * v69; /*0x44d431*/
             IDA_LODWORD(v71) = (__int16)v67 - 0x3FFF; /*0x44d43b*/
-            v55 = Math::SinCos((double)SLODWORD(v71) * -0.00009587672516830327); /*0x44d44c*/
+            v55 = Math::SinCos((double)IDA_SLODWORD(v71) * -0.00009587672516830327); /*0x44d44c*/
             v72 = v72; /*0x44d459*/
             v70 = v55 * v73; /*0x44d462*/
             if ( !(*((unsigned __int8 (__thiscall **)(void **, int *, double *))*v72 + 124))(v72, v75, &v68) ) /*0x44d482*/
@@ -7145,7 +7145,7 @@ void BuildingClass::ProcessStructureAbandoned() {}
         {
           PlayVocClass(g_RulesClass_Instance->CrateUnitSound, 0x2000, 1.0, 0); /*0x4582a9*/
           v9 = ((__int64 (__thiscall *)(int, _BYTE *))*(_DWORD *)(*(_DWORD *)&this->suspendedMission0))(this, v10); /*0x4582b7*/
-          if ( CreateTriggerClassIfFarEnough(15, SHIDWORD(v9), *(_DWORD *)v9) ) /*0x4582c5*/
+          if ( CreateTriggerClassIfFarEnough(15, IDA_SHIDWORD(v9), *(_DWORD *)v9) ) /*0x4582c5*/
             VoxClass::FindAndPlay(aEvaStructureab, -1); /*0x4582d8*/
         }
         PlayHealthDependentBuildingAnim((int *)this); /*0x4582df*/
@@ -8169,7 +8169,7 @@ void BuildingClass::ProcessActiveAnimation() {}
   int ProductionFrame; // [esp+14h] [ebp-10h]
   int v26; // [esp+1Ch] [ebp-8h]
 
-  if ( *(_DWORD *)(*(&this->ptr_345) + 588) < SHIDWORD(g_RulesClass_Instance[1].TunnelSpeed) /*0x450683*/
+  if ( *(_DWORD *)(*(&this->ptr_345) + 588) < IDA_SHIDWORD(g_RulesClass_Instance[1].TunnelSpeed) /*0x450683*/
     || this->vt_slot_388() == 18
     || this->vt_slot_388() == 19
     || !this->Stub3() )

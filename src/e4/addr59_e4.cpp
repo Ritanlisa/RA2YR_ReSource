@@ -487,7 +487,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
     if ( v23 == v16 - 1 ) /*0x594e1b*/
       v25 = m - v22; /*0x594e21*/
     else
-      v25 = Math::RoundToInt((double)v21 / (double)v30 * (double)(int)m + 0.5 - (double)SHIDWORD(m)); /*0x594e3b*/
+      v25 = Math::RoundToInt((double)v21 / (double)v30 * (double)(int)m + 0.5 - (double)IDA_SHIDWORD(m)); /*0x594e3b*/
     *(_DWORD *)(v24 + 32) = v25; /*0x594e40*/
     v22 += v25; /*0x594e43*/
     v16 = v40; /*0x594e45*/
@@ -980,7 +980,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
     v17 = *((_DWORD *)v44 + v16); /*0x59ab85*/
     if ( v17 < v5 ) /*0x59ab8a*/
     {
-      if ( SHIDWORD(v25) <= 0 ) /*0x59ab92*/
+      if ( IDA_SHIDWORD(v25) <= 0 ) /*0x59ab92*/
         v34 += (int)v25 / 2; /*0x59abb8*/
       else
         v33 += v24 / 2; /*0x59aba3*/
@@ -1016,7 +1016,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
     }
     v33 += v29; /*0x59ac7a*/
     v34 += v30; /*0x59ac86*/
-    if ( SHIDWORD(v25) <= 0 ) /*0x59ac8a*/
+    if ( IDA_SHIDWORD(v25) <= 0 ) /*0x59ac8a*/
       v34 = v7[1]; /*0x59ac98*/
     else
       v33 = *v7; /*0x59ac8f*/

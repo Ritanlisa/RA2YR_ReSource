@@ -89,7 +89,7 @@ void FootClass::Destroyed(int a2)
     && !*(_BYTE *)((*((int (__thiscall **)(void **))*this + 33))(this) + 3412) )
   {
     v3 = ((__int64 (__thiscall *)(void **, _BYTE *))*((_DWORD *)*this + 110))(this, v4); /*0x4d98f0*/
-    if ( CreateTriggerClassIfFarEnough(7, SHIDWORD(v3), *(_DWORD *)v3) ) /*0x4d98fe*/
+    if ( CreateTriggerClassIfFarEnough(7, IDA_SHIDWORD(v3), *(_DWORD *)v3) ) /*0x4d98fe*/
       VoxClass::FindAndPlay(aEvaUnitlost, -1); /*0x4d9911*/
   }
 }

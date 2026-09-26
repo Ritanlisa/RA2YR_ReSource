@@ -27,6 +27,12 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/TeamClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/E4Recv_583AD0_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x560BF0
 namespace gamemd {
@@ -248,7 +254,7 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
 {
   int result; // eax
   _DWORD *WindowLongA; // esi
-  HWND v6; // ebx
+  _DWORD * v6;
   _DWORD *v7; // eax
   _DWORD * v8;
   int *v9; // ebp

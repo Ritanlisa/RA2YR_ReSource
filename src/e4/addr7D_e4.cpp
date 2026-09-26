@@ -6735,8 +6735,8 @@ double _nextafter(double X, double Y)
       _except2( /*0x7d90c7*/
         8u,
         38,
-        SLODWORD(X),
-        SHIDWORD(X),
+        IDA_SLODWORD(X),
+        IDA_SHIDWORD(X),
         Y,
         COERCE_UNSIGNED_INT64(X + Y),
         IDA_HIDWORD(COERCE_UNSIGNED_INT64(X + Y)),
@@ -6795,7 +6795,7 @@ double _nextafter(double X, double Y)
   {
     v8 = _decomp(v5, &v10); /*0x7d91e8*/
     v6 = _set_exp(v8, (unsigned __int16)v10 + 1536); /*0x7d91fe*/
-    _except2(0x12u, 38, SLODWORD(X), SHIDWORD(X), Y, SLODWORD(v6), SHIDWORD(v6), v11); /*0x7d9223*/
+    _except2(0x12u, 38, IDA_SLODWORD(X), IDA_SHIDWORD(X), Y, IDA_SLODWORD(v6), IDA_SHIDWORD(v6), v11); /*0x7d9223*/
     return X; /*0x7d9217*/
   }
   else if ( (IDA_HIDWORD(v5) != 2146435072 || v3) && (IDA_HIDWORD(v5) != -1048576 || v3) ) /*0x7d923d*/
@@ -6808,7 +6808,7 @@ double _nextafter(double X, double Y)
     v9 = _decomp(v5, &v10); /*0x7d9256*/
     v7 = _set_exp(v9, (unsigned __int16)v10 - 1536); /*0x7d926c*/
     result = X; /*0x7d9285*/
-    _except2(0x11u, 38, SLODWORD(X), SHIDWORD(X), Y, SLODWORD(v7), SHIDWORD(v7), v11); /*0x7d9291*/
+    _except2(0x11u, 38, IDA_SLODWORD(X), IDA_SHIDWORD(X), Y, IDA_SLODWORD(v7), IDA_SHIDWORD(v7), v11); /*0x7d9291*/
   }
   return result; /*0x7d92c8*/
 }
@@ -8773,7 +8773,7 @@ void ldexp(double X, int Y)
   v4 = -1; /*0x7dbd19*/
   if ( (IDA_HIWORD(X) & 0x7FF0) == 0x7FF0 ) /*0x7dbd1a*/
   {
-    v5 = _sptype(SLODWORD(X), SHIDWORD(X)); /*0x7dbd21*/
+    v5 = _sptype(IDA_SLODWORD(X), IDA_SHIDWORD(X)); /*0x7dbd21*/
     v4 = v16; /*0x7dbd29*/
     if ( v5 <= 0 ) /*0x7dbd2a*/
       return _except2(8u, 25, X, (double)Y, X + 1.0, v3); /*0x7dbd85*/
@@ -12103,7 +12103,7 @@ char * _i64toa(long long Value, char * Buffer, int Radix)
   BOOL v3; // eax
 
   v3 = 0; /*0x7d475d*/
-  if ( Radix == 10 && SHIDWORD(Value) <= 0 ) /*0x7d4768*/
+  if ( Radix == 10 && IDA_SHIDWORD(Value) <= 0 ) /*0x7d4768*/
     v3 = Value < 0; /*0x7d4773*/
   x64toa_20(Value, IDA_HIDWORD(Value), Buffer, Radix, v3); /*0x7d4781*/
   return Buffer; /*0x7d4789*/
@@ -13965,7 +13965,7 @@ double _logb(double X)
   v1 = _ctrlfp(4927, 0xFFFF); /*0x7d8f6a*/
   if ( (IDA_HIWORD(X) & 0x7FF0) == 0x7FF0 ) /*0x7d8f79*/
   {
-    v2 = _sptype(SLODWORD(X), SHIDWORD(X)); /*0x7d8f80*/
+    v2 = _sptype(IDA_SLODWORD(X), IDA_SHIDWORD(X)); /*0x7d8f80*/
     if ( v2 > 0 ) /*0x7d8f89*/
     {
       if ( v2 <= 2 ) /*0x7d8f8e*/
@@ -13982,8 +13982,8 @@ double _logb(double X)
     _except1( /*0x7d8fd6*/
       8u,
       37,
-      SLODWORD(X),
-      SHIDWORD(X),
+      IDA_SLODWORD(X),
+      IDA_SHIDWORD(X),
       COERCE_UNSIGNED_INT64(X + 1.0),
       IDA_HIDWORD(COERCE_UNSIGNED_INT64(X + 1.0)),
       v1);
@@ -13995,8 +13995,8 @@ double _logb(double X)
     _except1( /*0x7d8ffd*/
       4u,
       37,
-      SLODWORD(X),
-      SHIDWORD(X),
+      IDA_SLODWORD(X),
+      IDA_SHIDWORD(X),
       COERCE_UNSIGNED_INT64(-dbl_87D550),
       IDA_HIDWORD(COERCE_UNSIGNED_INT64(-dbl_87D550)),
       v1);
@@ -14039,7 +14039,7 @@ int _fpclass(double X)
 
   if ( (IDA_HIWORD(X) & 0x7FF0) == 0x7FF0 ) /*0x7d9321*/
   {
-    v1 = _sptype(SLODWORD(X), SHIDWORD(X)) - 1; /*0x7d9331*/
+    v1 = _sptype(IDA_SLODWORD(X), IDA_SHIDWORD(X)) - 1; /*0x7d9331*/
     if ( v1 ) /*0x7d9333*/
     {
       v2 = v1 - 1; /*0x7d9335*/
@@ -14753,8 +14753,8 @@ double _handle_qnan1(int a1, double a2, int a3)
     _umatherr( /*0x7db4c5*/
       1,
       a1,
-      SLODWORD(a2),
-      SHIDWORD(a2),
+      IDA_SLODWORD(a2),
+      IDA_SHIDWORD(a2),
       COERCE_UNSIGNED_INT64(0.0),
       IDA_HIDWORD(COERCE_UNSIGNED_INT64(0.0)),
       a2,
@@ -14779,7 +14779,7 @@ double _handle_qnan2(int a1, double a2, double a3, int a4)
   }
   else
   {
-    _umatherr(1, a1, SLODWORD(a2), SHIDWORD(a2), SLODWORD(a3), SHIDWORD(a3), v6, a4); /*0x7db525*/
+    _umatherr(1, a1, IDA_SLODWORD(a2), IDA_SHIDWORD(a2), IDA_SLODWORD(a3), IDA_SHIDWORD(a3), v6, a4); /*0x7db525*/
     return a2; /*0x7db518*/
   }
 }
@@ -14812,8 +14812,8 @@ double _except1(DWORD dwExceptionCode, int a2, double a3, double a4, int a5)
     _umatherr( /*0x7db5c0*/
       v5,
       a2,
-      SLODWORD(a3),
-      SHIDWORD(a3),
+      IDA_SLODWORD(a3),
+      IDA_SHIDWORD(a3),
       COERCE_UNSIGNED_INT64(0.0),
       IDA_HIDWORD(COERCE_UNSIGNED_INT64(0.0)),
       a4,
@@ -14852,7 +14852,7 @@ double _except2(DWORD dwExceptionCode, int a2, double a3, double a4, double a5, 
   else
   {
     result = a3; /*0x7db659*/
-    _umatherr(v7, a2, SLODWORD(a3), SHIDWORD(a3), SLODWORD(a4), SHIDWORD(a4), a5, a6); /*0x7db665*/
+    _umatherr(v7, a2, IDA_SLODWORD(a3), IDA_SHIDWORD(a3), IDA_SLODWORD(a4), IDA_SHIDWORD(a4), a5, a6); /*0x7db665*/
   }
   return result; /*0x7db66d*/
 }

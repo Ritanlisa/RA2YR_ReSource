@@ -22,6 +22,10 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Scenario_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/MPCooperative_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x6691E0
 namespace gamemd {

@@ -107,7 +107,7 @@ struct RadioClass {
     unsigned int missionData;  // 0xC4
     unsigned char q0C5;  // 0xC5
     unsigned char q0C6;  // 0xC6
-    char missionTimer[12];  // 0xC8
+    unsigned int missionTimer;  // 0xC8
     unsigned int q0CC;  // 0xCC
     unsigned int q0D0;  // 0xD0
     char lastCommands[12];  // 0xD4

@@ -75,26 +75,26 @@ LABEL_34:
     v109 = *(_DWORD *)(v24 + 164);
     int v25 = *ProgressTimer::GetValue((_WORD *)(v24 + 904), &v106);
     IDA_LODWORD(v101) = (*(int (__stdcall **)(int))(this->q250)(this + 4);
-    if ( SLODWORD(v101) > 0 )
+    if ( IDA_SLODWORD(v101) > 0 )
     {
       int v26 = v109;
       v104 = (double)((__int16)v25 - 0x3FFF) * -0.00009587672516830327;
       unsigned int v27 = IDA_HIDWORD(v104);
       unsigned int v28 = IDA_LODWORD(v104);
-      v102 = (double)SHIDWORD(v108);
-      v101 = (double)SLODWORD(v101);
+      v102 = (double)IDA_SHIDWORD(v108);
+      v101 = (double)IDA_SLODWORD(v101);
       double v29 = Math::SinCos(v104);
       IDA_LODWORD(v102) = Math::RoundToInt(v102 - v29 * v101);
       double v30 = Math::ArcTan2(COERCE_DOUBLE(IDA___PAIR64__(v27, v28)));
-      int v31 = Math::RoundToInt(v30 * v101 + (double)SLODWORD(v108));
-      Coord::Subtract(&v104, v31, SLODWORD(v102), v26);
+      int v31 = Math::RoundToInt(v30 * v101 + (double)IDA_SLODWORD(v108));
+      Coord::Subtract(&v104, v31, IDA_SLODWORD(v102), v26);
       v109 = v105;
       v108 = v104;
-      IDA_LODWORD(v102) = *(_DWORD *)CellStruct::Set(&v104, SLODWORD(v104) / 256, SHIDWORD(v104) / 256);
+      IDA_LODWORD(v102) = *(_DWORD *)CellStruct::Set(&v104, IDA_SLODWORD(v104) / 256, IDA_SHIDWORD(v104) / 256);
       LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&v102);
     }
-    IDA_LOWORD(v102) = SLODWORD(v108) / 256;
-    IDA_WORD1(v102) = SHIDWORD(v108) / 256;
+    IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
+    IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
     if ( LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&v102)
       || !(*(unsigned __int8 (__thiscall **)(_DWORD))(*this->q00C + 1244))(this->q00C) )
     {
@@ -108,8 +108,8 @@ LABEL_34:
       if ( *(_BYTE *)(*(_DWORD *)(v34 + 1732) + 3595) )
         goto LABEL_50;
     }
-    IDA_LOWORD(v102) = SLODWORD(v108) / 256;
-    IDA_WORD1(v102) = SHIDWORD(v108) / 256;
+    IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
+    IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
     IDA_LODWORD(v101) = IDA_LODWORD(v102);
   int v35; // eax
     v35 = (__int16)*(_DWORD *)DamageArea::CalcScatterOffset(&v106, &v101) >= g_AircraftTrackerPool / 2
@@ -117,15 +117,15 @@ LABEL_34:
         : IDA_LODWORD(v108) + 128;
     IDA_LODWORD(v108) = v35;
     IDA_LOWORD(v102) = v35 / 256;
-    IDA_WORD1(v102) = SHIDWORD(v108) / 256;
+    IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
     if ( LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&v102)
   int *v36; // eax
   int v110; // [esp+94h] [ebp-Ch] BYREF
       || (v36 = RandomCoordScatter(&v110, (int *)&v108, 64, 0),
           v108 = *(double *)v36,
           v109 = v36[2],
-          IDA_LOWORD(v102) = SLODWORD(v108) / 256,
-          IDA_WORD1(v102) = SHIDWORD(v108) / 256,
+          IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256,
+          IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256,
           LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&v102)) )
     {
 LABEL_50:
@@ -155,7 +155,7 @@ LABEL_50:
     int v45 = v43[2];
     IDA_HIDWORD(v106) = v42 - v44;
     v112 = v45;
-    double v46 = Math::Sqrt((double)(v42 - v44) * (double)(v42 - v44) + (double)SLODWORD(v106) * (double)SLODWORD(v106));
+    double v46 = Math::Sqrt((double)(v42 - v44) * (double)(v42 - v44) + (double)IDA_SLODWORD(v106) * (double)IDA_SLODWORD(v106));
     IDA_LODWORD(v102) = Math::RoundToInt(v46);
   int v47; // eax
     if ( v38 >= this->u32_38 || (v47 = this->q00C, *(int *)(v47 + 108) <= 0) )
@@ -247,14 +247,14 @@ LABEL_114:
           }
           else
           {
-            double v77 = (double)SLODWORD(v102);
+            double v77 = (double)IDA_SLODWORD(v102);
             double v78 = v77 / (double)*(int *)(v103 + 760);
             if ( v78 > 1.0 )
               v78 = 1.0;
             this->q100 = v78;
             if ( v78 < 0.1 )
             {
-              if ( SLODWORD(v102) <= 85 )
+              if ( IDA_SLODWORD(v102) <= 85 )
               {
                 double v79 = *(double *)(&this->u32_1C2) * 0.5;
                 this->q100 = 0;
@@ -269,7 +269,7 @@ LABEL_114:
             }
             if ( v77 < *(double *)(&this->u32_1C2) )
               *(double *)(&this->u32_1C2) = v77;
-            if ( this->q100 == 0.0 && *(double *)(&this->u32_1C2) == 0.0 && SLODWORD(v102) > 0 )
+            if ( this->q100 == 0.0 && *(double *)(&this->u32_1C2) == 0.0 && IDA_SLODWORD(v102) > 0 )
             {
               this->u64_48 = -1717986918;
               this->u32_4C = 1068079513;
@@ -289,12 +289,12 @@ LABEL_114:
         if ( *(int *)(this->q00C + 108) > 0 && *(double *)(&this->u32_1C2) > 0.0 && !this->q050 )
         {
           IDA_LODWORD(v106) = *(_DWORD *)(v103 + 760);
-          if ( SLODWORD(v102) < SLODWORD(v106) )
+          if ( IDA_SLODWORD(v102) < IDA_SLODWORD(v106) )
           {
   double v86; // st7
             unsigned int v80 =
             int v81 = *v80;
-            v106 = 1.0 - ((double)SLODWORD(v102) - (double)SLODWORD(v106) * 0.6) / ((double)SLODWORD(v106) * 0.4);
+            v106 = 1.0 - ((double)IDA_SLODWORD(v102) - (double)IDA_SLODWORD(v106) * 0.6) / ((double)IDA_SLODWORD(v106) * 0.4);
             double v82 = *(double *)((*(int (__thiscall **)(int *))(v81 + 132))(v80) + 944);
             int v83 = *v80;
             v104 = v82;
@@ -431,9 +431,9 @@ LABEL_105:
           IDA_LODWORD(v106) = *v65;
           int v111 = ((__int16)(v64 / 256) << 8) + 128;
           IDA_HIDWORD(v106) = v65[1];
-          v101 = (double)SLODWORD(v106);
+          v101 = (double)IDA_SLODWORD(v106);
           int v66 = v65[2];
-          v104 = (double)SHIDWORD(v106);
+          v104 = (double)IDA_SHIDWORD(v106);
           double v67 = Math::CalcAngle(v104 - (double)v111, (double)v110 - v101);
           v106 = (double)((__int16)Math::RoundToInt((v67 - 1.570796326794897) * -10430.06004058427) - 0x3FFF)
                * -0.00009587672516830327;
@@ -477,8 +477,8 @@ LABEL_105:
   v109 = v105 - v9;
   Cell::GetGroundHeight(&v108);
   Coord::To_Cell(&DataGlobal_87F7E8, &v108);
-  IDA_LOWORD(v102) = SLODWORD(v108) / 256;
-  IDA_WORD1(v102) = SHIDWORD(v108) / 256;
+  IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
+  IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
   v103 = IDA_LODWORD(v102);
   if ( LayerClass::CoordinatesLegal(&DataGlobal_87F7E8, (__int16 *)&v103) )
   {
@@ -497,8 +497,8 @@ LABEL_105:
   if ( !v11 )
   {
   int v14; // eax
-    IDA_LOWORD(v102) = SLODWORD(v108) / 256;
-    IDA_WORD1(v102) = SHIDWORD(v108) / 256;
+    IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
+    IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
     v103 = IDA_LODWORD(v102);
     TechnoClass::ComputeCombatDamage(v10, 0);
     _DWORD * v12 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v103);
@@ -534,19 +534,19 @@ LABEL_23:
     1,
     1,
     0);
-  IDA_LOWORD(v102) = SLODWORD(v108) / 256;
-  IDA_WORD1(v102) = SHIDWORD(v108) / 256;
+  IDA_LOWORD(v102) = IDA_SLODWORD(v108) / 256;
+  IDA_WORD1(v102) = IDA_SHIDWORD(v108) / 256;
   IDA_LODWORD(v101) = IDA_LODWORD(v102);
   v17 = (void **)RA2_OPNEW(0x1C8u);
   if ( v17 )
   {
     int v18 = *((_DWORD *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (__int16 *)&v101) + 59);
     __int64 v98 = v109;
-    IDA_LODWORD(v98) = Return::HRESULT_Fail(SLODWORD(v108), SHIDWORD(v108), v109);
+    IDA_LODWORD(v98) = Return::HRESULT_Fail(IDA_SLODWORD(v108), IDA_SHIDWORD(v108), v109);
     VersusMultiplier = (void *)GetWarheadVersusMultiplier(v11, *((_DWORD *)g_RulesClass_Instance + 1002), v18, &v104);
     AnimClass::ctor(v17, VersusMultiplier, (int *)&v108, 0, 1, (void *)0x2600, (void *)v98, SBYTE4(v98));
   }
-  CreateSmokeEffectAt(v11, *((_DWORD *)g_RulesClass_Instance + 1002), SLODWORD(v108), SHIDWORD(v108), v109, 0, 0);
+  CreateSmokeEffectAt(v11, *((_DWORD *)g_RulesClass_Instance + 1002), IDA_SLODWORD(v108), IDA_SHIDWORD(v108), v109, 0, 0);
   return PlaySoundEffectAt(&v108, v11, 0, *((_DWORD *)g_RulesClass_Instance + 1002), 1, 0);
 }
 } // namespace gamemd

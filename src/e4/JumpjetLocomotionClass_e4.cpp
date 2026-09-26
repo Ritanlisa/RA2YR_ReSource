@@ -224,7 +224,7 @@ void* JumpjetLocomotionClass::Update2()
   v21 = *(float *)v4; /*0x439de3*/
   qmemcpy(v74, v19, sizeof(v74)); /*0x439de5*/
   *(float *)&v43 = -v20; /*0x439df2*/
-  Triple::Set(&v58, SLODWORD(v21), v43, *((_DWORD *)v4 + 2)); /*0x439df6*/
+  Triple::Set(&v58, IDA_SLODWORD(v21), v43, *((_DWORD *)v4 + 2)); /*0x439df6*/
   v22 = Matrix3x3::TransformPoint(v74, v73, (float *)&v58); /*0x439e0c*/
   v58 = *(double *)v22; /*0x439e17*/
   v72 = v72; /*0x439e2a*/
@@ -875,7 +875,7 @@ void ** JumpjetLocomotionClass::UpdateMovementPosition(unsigned int * a1, double
         v17[1] = v5[1]; /*0x4b60ad*/
         v17[2] = IDA_LODWORD(g_RulesClass_Instance->VeteranCombat) + v5[2]; /*0x4b60c3*/
         VeteranSpeed = g_RulesClass_Instance->VeteranSpeed; /*0x4b60da*/
-        VeteranCombat_low = (double)SLODWORD(g_RulesClass_Instance->VeteranCombat); /*0x4b60db*/
+        VeteranCombat_low = (double)IDA_SLODWORD(g_RulesClass_Instance->VeteranCombat); /*0x4b60db*/
         v8 = Math::Sin(*(double *)&VeteranSpeed); /*0x4b60df*/
         v17[0] = Math::RoundToInt(VeteranCombat_low / v8 + (double)v17[0]); /*0x4b60f4*/
         if ( !IsCoordVisibleMap(&MapClass_Instance, v17) ) /*0x4b6102*/
@@ -883,7 +883,7 @@ void ** JumpjetLocomotionClass::UpdateMovementPosition(unsigned int * a1, double
           *(_BYTE *)(v3 + 24) = 1; /*0x4b610c*/
           v15 = g_RulesClass_Instance->VeteranSpeed; /*0x4b6124*/
           v16 = (double)*v5; /*0x4b6125*/
-          VeteranCombat_low = (double)SLODWORD(g_RulesClass_Instance->VeteranCombat); /*0x4b612f*/
+          VeteranCombat_low = (double)IDA_SLODWORD(g_RulesClass_Instance->VeteranCombat); /*0x4b612f*/
           v9 = Math::Sin(*(double *)&v15); /*0x4b6133*/
           v17[0] = Math::RoundToInt(v16 - VeteranCombat_low / v9); /*0x4b6148*/
         }
@@ -2631,7 +2631,7 @@ void* * JumpjetLocomotionClass::ComputeTurretTransform(unsigned int * a1, void *
               v12 -= (int)g_CurrentFrame - v11; /*0x729cd3*/
           }
           v24 = IDA_LODWORD(v22) - v12; /*0x729cdb*/
-          v22 = (double)(IDA_LODWORD(v22) - v12) / (double)SLODWORD(v22) * 1.570796326794897; /*0x729ced*/
+          v22 = (double)(IDA_LODWORD(v22) - v12) / (double)IDA_SLODWORD(v22) * 1.570796326794897; /*0x729ced*/
         }
         else
         {

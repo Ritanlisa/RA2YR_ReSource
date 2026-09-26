@@ -775,7 +775,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
   _WORD v120[2]; // [esp+74h] [ebp-40h] BYREF
   _WORD v121[2]; // [esp+78h] [ebp-3Ch] BYREF
   _DWORD *v122; // [esp+7Ch] [ebp-38h]
-  void **v123; // [esp+80h] [ebp-34h] BYREF
+  void* v123;
   void *Block; // [esp+84h] [ebp-30h]
   int v125; // [esp+88h] [ebp-2Ch]
   int v126; // [esp+8Ch] [ebp-28h]
@@ -1430,7 +1430,7 @@ MapClass * * Radar::RenderMinimap()
   v91 = this->q149C; /*0x656f83*/
   v88 = v10; /*0x656f87*/
   v96 = v8; /*0x656f8b*/
-  v11 = Math::RoundToInt((double)v10 * this->q1488 + (double)SLODWORD(v91)); /*0x656f9d*/
+  v11 = Math::RoundToInt((double)v10 * this->q1488 + (double)IDA_SLODWORD(v91)); /*0x656f9d*/
   v12 = v7 - this->q1498; /*0x656fac*/
   v88 = v11; /*0x656fae*/
   v96 += v12; /*0x656fb4*/
@@ -1572,7 +1572,7 @@ MapClass * * Radar::RenderMinimap()
         v39 = v2[2]; /*0x6573ae*/
         v93 = v39; /*0x6573b1*/
         v94 = v2[3]; /*0x6573b8*/
-        if ( SLODWORD(v91) > v33 ) /*0x6573c2*/
+        if ( IDA_SLODWORD(v91) > v33 ) /*0x6573c2*/
         {
           v40 = IDA_LODWORD(v91) - v33; /*0x6573c4*/
           v91 = *(float *)&v33; /*0x6573c6*/

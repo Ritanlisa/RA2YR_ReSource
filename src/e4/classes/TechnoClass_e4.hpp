@@ -2172,7 +2172,6 @@ struct TechnoClass {
     unsigned int vtable33;
     unsigned int vtable34;
     unsigned int Deploy;
-    unsigned int EjectPassengers;
     unsigned int NeedsSaveOrLink3;
     unsigned int bombVisible0;
     unsigned int bombVisible6;
@@ -2245,6 +2244,7 @@ struct TechnoClass {
     static double InvulnerabilityIntensity_SetContext(...);  // C2597 interim stub
     static double MutateAll(...);  // C2597 interim stub
     static double SetFocus(...);  // C2597 interim stub
+    static double EjectPassengers(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

@@ -940,7 +940,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   v11 = IDA_LODWORD(a4); /*0x4cf06c*/
   v62 = a6; /*0x4cf06e*/
   v12 = a5; /*0x4cf072*/
-  IDA_LOWORD(v56) = SLODWORD(a4) / 256; /*0x4cf08c*/
+  IDA_LOWORD(v56) = IDA_SLODWORD(a4) / 256; /*0x4cf08c*/
   IDA_HIWORD(v56) = a5 / 256; /*0x4cf09f*/
   v13 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v56); /*0x4cf0ac*/
   v14 = Cell::IsBridge(v13); /*0x4cf0b8*/
@@ -1029,7 +1029,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
     {
       v38 = (*(int (__thiscall **)(int *, _DWORD *))(**v6 + 72))(*v6, v64); /*0x4cf373*/
       v58 = *(float *)v38; /*0x4cf37f*/
-      v39 = Math::CalcAngle((double)*(int *)(v38 + 4) - (double)a5, (double)SLODWORD(a4) - (double)SLODWORD(v58)); /*0x4cf398*/
+      v39 = Math::CalcAngle((double)*(int *)(v38 + 4) - (double)a5, (double)IDA_SLODWORD(a4) - (double)IDA_SLODWORD(v58)); /*0x4cf398*/
       IDA_LOWORD(a4) = Math::RoundToInt((v39 - 1.570796326794897) * -10430.06004058427); /*0x4cf3b1*/
       v57 = a4; /*0x4cf3ba*/
       v37 = (int *)&v57; /*0x4cf3be*/

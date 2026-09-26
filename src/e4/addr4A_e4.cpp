@@ -3253,9 +3253,9 @@ int sub_4A3A10(int * a1, void ** a2, void ** a3, int a4)
     v11 = *a1; /*0x4a3a89*/
     v12 = v10 - *(_DWORD *)((char *)&Src + 6); /*0x4a3a8b*/
     if ( a4 ) /*0x4a3a95*/
-      (*(void (__thiscall **)(int *, int, _DWORD))(v11 + 36))(a1, a4, SWORD3(Src)); /*0x4a3a9e*/
+      (*(void (__thiscall **)(int *, int, _DWORD))(v11 + 36))(a1, a4, IDA_SWORD3(Src)); /*0x4a3a9e*/
     else
-      (*(void (__thiscall **)(int *, _DWORD, int))(v11 + 40))(a1, SWORD3(Src), 1); /*0x4a3aab*/
+      (*(void (__thiscall **)(int *, _DWORD, int))(v11 + 40))(a1, IDA_SWORD3(Src), 1); /*0x4a3aab*/
     IDA_LOWORD(v10) = v12; /*0x4a3aae*/
     IDA_WORD3(Src) = 0; /*0x4a3ab2*/
   }

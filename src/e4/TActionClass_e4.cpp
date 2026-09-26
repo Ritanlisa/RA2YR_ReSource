@@ -20,6 +20,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x4FCDC0
 namespace gamemd {
@@ -253,7 +254,7 @@ int TActionClass::executeSellAction()
 namespace gamemd {
 unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
 {
-  _DWORD * result;
+  unsigned int result;
   int v5; // esi
   unsigned int v6;
   int v7; // eax

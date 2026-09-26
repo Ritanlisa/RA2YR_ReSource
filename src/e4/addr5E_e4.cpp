@@ -27,6 +27,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/WinModemClass_e4.hpp"
+#include "e4/classes/Process_e4.hpp"
 
 // 0x5E2820
 namespace gamemd {

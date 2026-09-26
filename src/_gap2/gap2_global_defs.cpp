@@ -768,7 +768,7 @@ int Gap2Recv_415C60::ProcessTechnoMovementAction() {
     IDA_LOWORD(v20) = *(_WORD *)ProgressTimer::GetValue((_WORD *)&this->u32_710, &v20) + 0x3FFF; /*0x415cee*/
   v25 = v25; /*0x415d00*/
   IDA_LODWORD(v20) = SLOWORD(v20) - 0x3FFF; /*0x415d04*/
-  v21 = (double)SLODWORD(v20) * -0.00009587672516830327; /*0x415d13*/
+  v21 = (double)IDA_SLODWORD(v20) * -0.00009587672516830327; /*0x415d13*/
   v7 = IDA_HIDWORD(v21); /*0x415d1b*/
   v20 = (double)v24; /*0x415d25*/
   v8 = Math::SinCos(v21); /*0x415d29*/
@@ -884,8 +884,8 @@ void* Gap2Recv_4197C0::FindSpiralMoveTarget(int a2) {
   v29 = v4 - 256; /*0x419899*/
   if ( v4 - 256 <= 256 ) /*0x41989d*/
     goto LABEL_27; /*0x41989d*/
-  v39[0] = (double)SHIDWORD(v40); /*0x4198a7*/
-  v40 = (double)SLODWORD(v40); /*0x4198af*/
+  v39[0] = (double)IDA_SHIDWORD(v40); /*0x4198a7*/
+  v40 = (double)IDA_SLODWORD(v40); /*0x4198af*/
   do /*0x419a87*/
   {
     v28 = 0; /*0x4198b7*/
@@ -895,7 +895,7 @@ void* Gap2Recv_4197C0::FindSpiralMoveTarget(int a2) {
       IDA_LOBYTE(v9) = 0; /*0x4198c3*/
       IDA_HIBYTE(v9) = v28; /*0x4198c5*/
       IDA_LODWORD(v34) = v9 - 0x3FFF; /*0x4198d2*/
-      v34 = (double)SLODWORD(v34) * -0.00009587672516830327; /*0x4198e0*/
+      v34 = (double)IDA_SLODWORD(v34) * -0.00009587672516830327; /*0x4198e0*/
       v10 = IDA_HIDWORD(v34); /*0x4198e4*/
       v11 = IDA_LODWORD(v34); /*0x4198e8*/
       v12 = Math::SinCos(v34); /*0x4198ee*/
@@ -928,8 +928,8 @@ void* Gap2Recv_4197C0::FindSpiralMoveTarget(int a2) {
               IDA_LODWORD(v17) = v15 - v42; /*0x4199d7*/
               IDA_HIDWORD(v17) = v13 - v43; /*0x4199d9*/
               v17 = v17; /*0x4199db*/
-              v18 = (double)SHIDWORD(v17); /*0x4199e3*/
-              v19 = (double)SLODWORD(v17); /*0x4199e7*/
+              v18 = (double)IDA_SHIDWORD(v17); /*0x4199e3*/
+              v19 = (double)IDA_SLODWORD(v17); /*0x4199e7*/
             }
             v22 = Math::Sqrt(v19 * v19 + v18 * v18); /*0x419a26*/
             v23 = Math::RoundToInt(v22); /*0x419a2e*/
@@ -5230,7 +5230,7 @@ int Gap2Recv_504860::Team_Helper(int a2) {
       IDA_LODWORD(v2) = *(&this->q89C5); /*0x504886*/
       ++IDA_HIDWORD(v2); /*0x50488c*/
     }
-    while ( SHIDWORD(v2) < (int)v2 ); /*0x50488f*/
+    while ( IDA_SHIDWORD(v2) < (int)v2 ); /*0x50488f*/
   }
   return v2; /*0x504893*/
 }
@@ -12943,7 +12943,7 @@ void Gap2Recv_5A82E0::ScatterMapSeedBuildings(void* a2) {
           IDA_LODWORD(v41) = 0; /*0x5a84cd*/
         }
         v28 = 0; /*0x5a84c0*/
-        while ( SLODWORD(v41) < 60 ) /*0x5a84e3*/
+        while ( IDA_SLODWORD(v41) < 60 ) /*0x5a84e3*/
         {
           do /*0x5a8518*/
           {
@@ -15501,8 +15501,8 @@ void ParticleClass::Update() {
   v37 = *((float *)this + 68); /*0x62c732*/
   v38 = *((int *)this + 69); /*0x62c73c*/
   v32 = (float)v28; /*0x62c74a*/
-  v33 = (float)SLODWORD(v29); /*0x62c752*/
-  v34 = (float)SLODWORD(v30); /*0x62c75a*/
+  v33 = (float)IDA_SLODWORD(v29); /*0x62c752*/
+  v34 = (float)IDA_SLODWORD(v30); /*0x62c75a*/
   *(float *)&v38 = *(float *)&v38 - (double)g_RulesClass_Instance[1].WeatherConBoltExplosion; /*0x62c76a*/
   v23 = Math::RoundToInt(v34); /*0x62c77b*/
   v19 = Math::RoundToInt(v33); /*0x62c785*/
@@ -15610,7 +15610,7 @@ void ParticleClass::Update() {
   (*(void (__thiscall **)(void *, _DWORD *))(*(_DWORD *)&this->u32_AC6))(this, v40); /*0x62ca6c*/
   v31 = COERCE_FLOAT(Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2147483646)); /*0x62ca8b*/
   v16 = this->u32_AC; /*0x62ca8f*/
-  v17 = (double)SLODWORD(v31) * 4.656612877414201e-10 * 0.05 + *(double *)(v16 + 688) + this->q0B8; /*0x62caab*/
+  v17 = (double)IDA_SLODWORD(v31) * 4.656612877414201e-10 * 0.05 + *(double *)(v16 + 688) + this->q0B8; /*0x62caab*/
   this->q0B8 = v17; /*0x62cab1*/
   if ( v17 > 1.0 ) /*0x62cac2*/
   {
@@ -16022,7 +16022,7 @@ char Gap2Recv_62E840::UpdateProductionParticleSystem() {
     if ( v35 <= 0 ) /*0x62ec71*/
       this->q0F8 = 1; /*0x62ec73*/
     v46 = COERCE_FLOAT(Random::Range((_DWORD *)g_ScenarioClass_Instance + 134, 0, 2147483646)); /*0x62ec91*/
-    v36 = (double)SLODWORD(v46) * 4.656612877414201e-10; /*0x62ec99*/
+    v36 = (double)IDA_SLODWORD(v46) * 4.656612877414201e-10; /*0x62ec99*/
     if ( v36 >= 0.3 ) /*0x62ecaa*/
     {
       if ( v36 >= 0.6 ) /*0x62ecce*/
@@ -16383,7 +16383,7 @@ char Gap2Recv_62F9A0::UpdateBuildingDamageParticles() {
       IDA_LODWORD(v41) = Math::RoundToInt(v41 - v15 * v45); /*0x62fb37*/
       v16 = Math::ArcTan2(v38); /*0x62fb41*/
       v17 = Math::RoundToInt(v16 * v45 + (double)v47); /*0x62fb51*/
-      Coord::Subtract(&v50, v17, SLODWORD(v41), v14); /*0x62fb61*/
+      Coord::Subtract(&v50, v17, IDA_SLODWORD(v41), v14); /*0x62fb61*/
       v51 = v51; /*0x62fb6a*/
       v19 = *(_DWORD *)this; /*0x62fb77*/
       *((_DWORD *)this + 53) = v50; /*0x62fb79*/
@@ -20667,11 +20667,11 @@ namespace gamemd { int Gap2Recv_678850::InitInterfaceStubsCOM() {
       if ( v12 != -1 )
       {
         BunkerROFMultiplier = this->?;
-        if ( v12 < SLODWORD(BunkerROFMultiplier) )
+        if ( v12 < IDA_SLODWORD(BunkerROFMultiplier) )
         {
           IDA_LODWORD(v14) = IDA_LODWORD(BunkerROFMultiplier) - 1;
           for ( this->? = v14;
-                v12 < SLODWORD(this->?);
+                v12 < IDA_SLODWORD(this->?);
                 *(_DWORD *)(IDA_LODWORD(this->?) + 4 * v12 - 4) = *(_DWORD *)(IDA_LODWORD(this->?) + 4 * v12) )
           {
             ++v12;
@@ -20835,7 +20835,7 @@ namespace gamemd { int Gap2Recv_678850::InitInterfaceStubsCOM() {
         {
           v54 = HelipadRatio - 1;
           for ( IDA_LODWORD(this->?) = v54;
-                v52 < SLODWORD(this->?);
+                v52 < IDA_SLODWORD(this->?);
                 *(_DWORD *)(IDA_HIDWORD(this->?) + 4 * v52 - 4) = *(_DWORD *)(IDA_HIDWORD(this->?) + 4 * v52) )
           {
             ++v52;
@@ -20937,7 +20937,7 @@ namespace gamemd { int Gap2Recv_678850::InitInterfaceStubsCOM() {
         {
           v78 = NodBaseDefenseCoefficient - 1;
           for ( IDA_LODWORD(this->?) = v78;
-                v76 < SLODWORD(this->?);
+                v76 < IDA_SLODWORD(this->?);
                 *(_DWORD *)(IDA_HIDWORD(this->CHRONOSK_SHP) + 4 * v76 - 4) = *(_DWORD *)(IDA_HIDWORD(this->CHRONOSK_SHP) + 4 * v76) )
           {
             ++v76;
@@ -21134,11 +21134,11 @@ namespace gamemd { int Gap2Recv_678850::InitInterfaceStubsCOM() {
       if ( v128 != -1 )
       {
         SpyMoneyStealPercent = this->?;
-        if ( v128 < SLODWORD(SpyMoneyStealPercent) )
+        if ( v128 < IDA_SLODWORD(SpyMoneyStealPercent) )
         {
           IDA_LODWORD(v130) = IDA_LODWORD(SpyMoneyStealPercent) - 1;
           for ( this->? = v130;
-                v128 < SLODWORD(this->?);
+                v128 < IDA_SLODWORD(this->?);
                 *(_DWORD *)(this->BaseBias + 4 * v128 - 4) = *(_DWORD *)(this->BaseBias + 4 * v128) )
           {
             ++v128;
@@ -21361,7 +21361,7 @@ namespace gamemd { int Gap2Recv_678850::InitInterfaceStubsCOM() {
         {
           v188 = AttackDelay_high - 1;
           for ( IDA_HIDWORD(this->?) = v188;
-                v186 < SHIDWORD(this->?);
+                v186 < IDA_SHIDWORD(this->?);
                 *(_DWORD *)(IDA_LODWORD(this->?) + 4 * v186 - 4) = *(_DWORD *)(IDA_LODWORD(this->?) + 4 * v186) )
           {
             ++v186;
@@ -26772,7 +26772,7 @@ void Gap2Recv_6EF700::DeployTeamMembersAtStart(int a2, char a3) {
         v5 = *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*v3 + 132))(v3) + 1532); /*0x6ef736*/
         if ( TechnoClass::IsDeployed((int)v3) /*0x6ef761*/
           && (*((_BYTE *)v3 + 1673) || (*(int (__thiscall **)(_DWORD *))(*v3 + 44))(v3) == 2)
-          && v5 > SLODWORD(v28) )
+          && v5 > IDA_SLODWORD(v28) )
         {
           v4 = v3; /*0x6ef763*/
           IDA_LODWORD(v28) = v5; /*0x6ef765*/
@@ -26822,14 +26822,14 @@ void Gap2Recv_6EF700::DeployTeamMembersAtStart(int a2, char a3) {
     v18 = Math::CalcAngle((double)(v11 - v15), (double)(v14 - v9)); /*0x6ef875*/
     IDA_LODWORD(v28) = (__int16)Math::RoundToInt((v18 - 1.570796326794897) * -10430.06004058427) - 0x3FFF; /*0x6ef899*/
     v19 = IDA_HIDWORD(g_RulesClass_Instance->RefineryRatio) << 8; /*0x6ef8a7*/
-    v28 = (double)SLODWORD(v28) * -0.00009587672516830327; /*0x6ef8b4*/
+    v28 = (double)IDA_SLODWORD(v28) * -0.00009587672516830327; /*0x6ef8b4*/
     v30 = (double)v19; /*0x6ef8c6*/
     v29 = (double)v32; /*0x6ef8ce*/
     v20 = Math::SinCos(v28); /*0x6ef8d2*/
     IDA_LODWORD(v29) = Math::RoundToInt(v29 - v20 * v30); /*0x6ef8e6*/
     v21 = Math::ArcTan2(v28); /*0x6ef8ea*/
     v22 = Math::RoundToInt(v21 * v30 + (double)v31); /*0x6ef8fa*/
-    Coord::Subtract(v34, v22, SLODWORD(v29), v33); /*0x6ef90e*/
+    Coord::Subtract(v34, v22, IDA_SLODWORD(v29), v33); /*0x6ef90e*/
     IDA_LOWORD(v28) = v34[0] / 256; /*0x6ef927*/
     IDA_WORD1(v28) = v34[1] / 256; /*0x6ef93e*/
     v26 = IDA_LODWORD(v28); /*0x6ef949*/
@@ -28612,7 +28612,7 @@ int Gap2Recv_729580::FindUnitPlacementTarget() {
   if ( v5 >= 20 ) /*0x7295c8*/
   {
     IDA_LODWORD(v27) = *(_DWORD *)(this + 28) - v29; /*0x72981c*/
-    v18 = Math::CalcAngle((double)(v30 - *(_DWORD *)(this + 32)), (double)SLODWORD(v27)); /*0x72983f*/
+    v18 = Math::CalcAngle((double)(v30 - *(_DWORD *)(this + 32)), (double)IDA_SLODWORD(v27)); /*0x72983f*/
     v19 = Math::RoundToInt((v18 - 1.570796326794897) * -10430.06004058427); /*0x729850*/
     v20 = v31; /*0x729866*/
     *(_DWORD *)v24 = v29; /*0x72986e*/
@@ -28682,7 +28682,7 @@ int Gap2Recv_729580::FindUnitPlacementTarget() {
           v14 = ((__int64 (__thiscall *)(int, double *))*(_DWORD *)(*(_DWORD *)v13 + 440))(v13, &v26); /*0x729715*/
           v12 = *LayerClass::Pathfinding_Find( /*0x72972b*/
                    &MapClass_Instance,
-                   SHIDWORD(v14),
+                   IDA_SHIDWORD(v14),
                    &v27,
                    (__int16 *)v14,
                    1,

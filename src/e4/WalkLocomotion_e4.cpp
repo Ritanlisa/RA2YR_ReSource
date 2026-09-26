@@ -1189,7 +1189,7 @@ LABEL_31:
   int v23 = this->q00C;
   IDA_LOWORD(v216) = this->ptr_34 / 256;
   IDA_WORD1(v216) = this->u32_38 / 256;
-  char v24 = FootClass::MovementStep(v23, (int)v16, SLODWORD(v216), 0, 0, v213);
+  char v24 = FootClass::MovementStep(v23, (int)v16, IDA_SLODWORD(v216), 0, 0, v213);
   _DWORD * v25 = this->q00C;
   if ( !v24 )
   {
@@ -1609,7 +1609,7 @@ LABEL_125:
   v92 = this->q00C;
   IDA_LODWORD(v216) = v91;
   (*(void (__thiscall **)(int, int))(*(_DWORD *)v92 + 292))(v92, 1);
-  if ( SLODWORD(v216) < 7
+  if ( IDA_SLODWORD(v216) < 7
     && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3220)
     || (IDA_LODWORD(v216) == 5 || IDA_LODWORD(v216) == 4)
     && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3368)
@@ -2010,7 +2010,7 @@ LABEL_242:
     v161 = Math::Sqrt(
              (double)(v159 - v160) * (double)(v159 - v160)
            + (double)(v158 - v156) * (double)(v158 - v156)
-           + (double)SLODWORD(v216) * (double)SLODWORD(v216));
+           + (double)IDA_SLODWORD(v216) * (double)IDA_SLODWORD(v216));
     if ( (int)Math::RoundToInt(v161) <= 512 )
     {
 LABEL_262:
@@ -2021,7 +2021,7 @@ LABEL_262:
     int v163 = this->q00C;
     IDA_LOWORD(v216) = this->ptr_34 / 256;
     IDA_WORD1(v216) = this->u32_38 / 256;
-    result = FootClass::MovementStep(v163, v156, SLODWORD(v216), v162 != 0, 0, v213);
+    result = FootClass::MovementStep(v163, v156, IDA_SLODWORD(v216), v162 != 0, 0, v213);
     if ( !result )
     {
       int v164 = this->q00C;

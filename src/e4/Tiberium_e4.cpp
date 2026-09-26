@@ -129,7 +129,7 @@ int Tiberium::ProcessGrowth(int a2, MapResourceClass * aP2, char _140)
     while ( v9 > v8 );
     IDA_HIWORD(v84) = -v7;
     IDA_LOWORD(v76) = v7 + 1;
-    double v10 = 5.497787143782138 - (double)SLODWORD(v85) * 1.570796326794897;
+    double v10 = 5.497787143782138 - (double)IDA_SLODWORD(v85) * 1.570796326794897;
     v93 = 0.5235987755982988;
     IDA_HIWORD(v76) = *(_WORD *)&v94.__tail_0[2] - v7;
     aP3[0] = (MapResourceClass)v76;
@@ -280,7 +280,7 @@ LABEL_50:
             goto LABEL_45;
         }
         if ( v30 )
-          int v38 = v30[20 * SLOWORD(v85) + 14 + 20 * unk_89C2DC * SWORD1(v85)];
+          int v38 = v30[20 * SLOWORD(v85) + 14 + 20 * unk_89C2DC * IDA_SWORD1(v85)];
         else
 LABEL_42:
           v38 = -1;
@@ -288,7 +288,7 @@ LABEL_42:
         {
 LABEL_45:
           if ( v30 )
-            v30[20 * SLOWORD(v85) + 14 + 20 * unk_89C2DC * SWORD1(v85)] = v81[194];
+            v30[20 * SLOWORD(v85) + 14 + 20 * unk_89C2DC * IDA_SWORD1(v85)] = v81[194];
           v99[0] = v31;
           v99[1] = v34;
           _BYTE * v39 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v99);

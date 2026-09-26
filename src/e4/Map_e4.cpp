@@ -58,6 +58,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x539760
 namespace gamemd {
@@ -399,7 +400,7 @@ AbstractClass * * sub_68C050()
       v18 = 10; /*0x68c09e*/
       v17 = 0; /*0x68c0a2*/
       v3 = 0; /*0x68c0ac*/
-      if ( SHIDWORD(g_RulesClass_Instance->WarRatio) > 0 ) /*0x68c0b0*/
+      if ( IDA_SHIDWORD(g_RulesClass_Instance->WarRatio) > 0 ) /*0x68c0b0*/
       {
         v4 = v15; /*0x68c0b2*/
         while ( 1 ) /*0x68c0bc*/
@@ -409,7 +410,7 @@ AbstractClass * * sub_68C050()
           if ( (v16 || !v4) && v2 > 0 ) /*0x68c0d0*/
             break; /*0x68c0d0*/
   LABEL_14:
-          if ( ++v3 >= SHIDWORD(g_RulesClass_Instance->WarRatio) ) /*0x68c109*/
+          if ( ++v3 >= IDA_SHIDWORD(g_RulesClass_Instance->WarRatio) ) /*0x68c109*/
             goto LABEL_15; /*0x68c109*/
           v2 = v18; /*0x68c0b8*/
         }

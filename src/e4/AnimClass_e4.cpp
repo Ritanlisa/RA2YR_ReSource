@@ -318,11 +318,11 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v100 = v100; /*0x422ef3*/
     Tactical::SetCellTransform((char *)v110, 0, v100, v88, v104, 0, 0); /*0x422efa*/
     *(float *)&v100 = (float)v107; /*0x422f0f*/
-    Tactical::SetCellTransform((char *)v110, 1, v100, v100, SLODWORD(v103), 0, 1065353216); /*0x422f1f*/
+    Tactical::SetCellTransform((char *)v110, 1, v100, v100, IDA_SLODWORD(v103), 0, 1065353216); /*0x422f1f*/
     *(float *)&v89 = (float)v106; /*0x422f37*/
-    Tactical::SetCellTransform((char *)v110, 2, v89, v100, SLODWORD(v103), 1065353216, 1065353216); /*0x422f47*/
+    Tactical::SetCellTransform((char *)v110, 2, v89, v100, IDA_SLODWORD(v103), 1065353216, 1065353216); /*0x422f47*/
     Tactical::SetCellTransform((char *)v111, 0, v100, v88, v104, 0, 0); /*0x422f5c*/
-    Tactical::SetCellTransform((char *)v111, 1, v89, v100, SLODWORD(v103), 1065353216, 1065353216); /*0x422f7f*/
+    Tactical::SetCellTransform((char *)v111, 1, v89, v100, IDA_SLODWORD(v103), 1065353216, 1065353216); /*0x422f7f*/
     Tactical::SetCellTransform((char *)v111, 2, v89, v88, v104, 1065353216, 0); /*0x422f97*/
     StructTable::Append(dword_8A0E10, v110); /*0x422fa7*/
     StructTable::Append(dword_8A0E10, v111); /*0x422fba*/
@@ -475,7 +475,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     DrawToSurfaceSHP( /*0x4233e9*/
       g_DSurface_Hidden_2,
       v105[0],
-      SLODWORD(v103),
+      IDA_SLODWORD(v103),
       v104,
       &v101,
       aP5,
@@ -619,7 +619,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
       DrawToSurfaceSHP( /*0x4236f7*/
         g_DSurface_Hidden_2,
         FileSystem_ANIM_PAL,
-        SLODWORD(v103),
+        IDA_SLODWORD(v103),
         v104,
         v105,
         &DSurface_ViewBounds,
@@ -654,7 +654,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     DrawToSurfaceSHP( /*0x4237a9*/
       g_DSurface_Hidden_2,
       v105[0],
-      SLODWORD(v103),
+      IDA_SLODWORD(v103),
       v104,
       &v101,
       aP5,
@@ -682,7 +682,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     DrawToSurfaceSHP( /*0x423827*/
       g_DSurface_Hidden_2,
       v105[0],
-      SLODWORD(v103),
+      IDA_SLODWORD(v103),
       v104,
       &v101,
       aP5,
@@ -704,7 +704,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
       DrawToSurfaceSHP( /*0x42389e*/
         g_DSurface_Hidden_2,
         v105[0],
-        SLODWORD(v103),
+        IDA_SLODWORD(v103),
         v104 + v78 / 2,
         a2,
         aP5,
@@ -935,7 +935,7 @@ BuildingTypeClass * * AnimClass::drawFrame()
         else
         {
           __int64 v19 = ((__int64 (__thiscall *)(void *, AbstractClass **))*(_DWORD *)(this->q6E0)(this, &aP1);
-          if ( CreateTriggerClassIfFarEnough((IUnknown *)0xA, SHIDWORD(v19), *(IUnknown **)v19) )
+          if ( CreateTriggerClassIfFarEnough((IUnknown *)0xA, IDA_SHIDWORD(v19), *(IUnknown **)v19) )
             VoxClass::FindAndPlay(aEvaBuildingcap, -1, -1);
         }
       }

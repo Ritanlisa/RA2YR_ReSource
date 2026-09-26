@@ -6403,7 +6403,7 @@ int * RandomCoordScatter(int * a0, IUnknown * aP1, int aP2, ScenarioClass * aP3)
   v11 = IDA_HIDWORD(v16); /*0x49f4c4*/
   v12 = v17; /*0x49f4c8*/
   v13 = IDA_LODWORD(v16); /*0x49f4d0*/
-  if ( (unsigned int)(SLODWORD(v16) / 256) >= 0x200 || (unsigned int)(SHIDWORD(v16) / 256) >= 0x200 ) /*0x49f4f8*/
+  if ( (unsigned int)(IDA_SLODWORD(v16) / 256) >= 0x200 || (unsigned int)(IDA_SHIDWORD(v16) / 256) >= 0x200 ) /*0x49f4f8*/
   {
     v13 = *aP1; /*0x49f4fa*/
     v11 = aP1[1]; /*0x49f4fc*/

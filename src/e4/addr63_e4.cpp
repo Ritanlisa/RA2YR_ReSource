@@ -103,6 +103,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x630310
 namespace gamemd {
@@ -121,7 +122,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   _BYTE *v16; // ebp
   size_t v17; // esi
   unsigned __int8 v18; // bl
-  unsigned int v19;
+  char * v19;
   char v20; // al
   char v21; // bl
   unsigned int v22; // edi
@@ -130,7 +131,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   int v25; // esi
   int v26; // edx
   int v27; // eax
-  int v28; // edi
+  unsigned int v28;
   unsigned int v29; // edx
   int v30; // eax
   unsigned int v31; // esi
@@ -138,9 +139,9 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   _BYTE *v34; // eax
   bool v35; // cf
   unsigned __int8 *v36; // eax
-  char v37; // bl
+  unsigned char * v37;
   unsigned int i; // eax
-  unsigned int v39;
+  unsigned char * v39;
   unsigned int v40; // edi
   unsigned int v41; // ebp
   unsigned __int8 v42; // cl
@@ -149,13 +150,13 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   char *v45; // edi
   int v46; // eax
   unsigned int v47; // ecx
-  unsigned char * v48;
+  unsigned int v48;
   unsigned __int8 v51; // [esp+38h] [ebp-8ACh]
   unsigned __int8 v52; // [esp+38h] [ebp-8ACh]
   unsigned __int8 v53; // [esp+38h] [ebp-8ACh]
   _DWORD *v55; // [esp+40h] [ebp-8A4h]
-  char v59; // [esp+48h] [ebp-89Ch]
-  char v60; // [esp+48h] [ebp-89Ch]
+  unsigned char * v59;
+  unsigned char * v60;
   int v65[3]; // [esp+58h] [ebp-88Ch] BYREF
   _BYTE v66[4]; // [esp+64h] [ebp-880h] BYREF
   unsigned __int16 v67; // [esp+68h] [ebp-87Ch]

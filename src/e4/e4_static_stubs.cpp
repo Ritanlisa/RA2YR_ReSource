@@ -1,263 +1,232 @@
-// GENERATED static-varargs stubs for C2597 no-def methods
-// (fix_member_static_calls.py). INTERIM: return 0 — same
-// fidelity as the tree-era return-0 stubs these replace.
-#include <cstdint>
-#include "e4/e4_globals.hpp"
-#include "e4/e4_protos.h"
-
-namespace gamemd {
-
-double AbstractClass::Constructor(...) { return 0; }
-double AbstractClass::InitVtables(...) { return 0; }
-double AbstractClass::IsTechnoType(...) { return 0; }
-double AbstractClassVector::ddtor(...) { return 0; }
-double Array::Contains(...) { return 0; }
-double Audio::SetScoreVolume(...) { return 0; }
-double Audio::SetSoundVolume(...) { return 0; }
-double Audio::SetVoiceVolume(...) { return 0; }
-double AudioController::Init(...) { return 0; }
-double BufferIOFileClass::Constructor(...) { return 0; }
-double BuildingClass::AbandonProduction(...) { return 0; }
-double BuildingClass::AddUpgrade(...) { return 0; }
-double BuildingClass::AimTurret(...) { return 0; }
-double BuildingClass::CalcDrawPos(...) { return 0; }
-double BuildingClass::ClearAnims(...) { return 0; }
-double BuildingClass::Construct(...) { return 0; }
-double BuildingClass::DemolishBridge(...) { return 0; }
-double BuildingClass::DetermineVisualState(...) { return 0; }
-double BuildingClass::FindByCellHash(...) { return 0; }
-double BuildingClass::FindBySWType(...) { return 0; }
-double BuildingClass::GetHealthRatio(...) { return 0; }
-double BuildingClass::GetPlacementCoords(...) { return 0; }
-double BuildingClass::GetPlacementRect(...) { return 0; }
-double BuildingClass::GetType_Thunk(...) { return 0; }
-double BuildingClass::IsCellPlaceable(...) { return 0; }
-double BuildingClass::IsTiberiumSiloEligible(...) { return 0; }
-double BuildingClass::PlayAnim(...) { return 0; }
-double BuildingClass::PowerUpdate(...) { return 0; }
-double BuildingClass::ReadConstructionData(...) { return 0; }
-double BuildingClass::RepairPlacement(...) { return 0; }
-double BuildingClass::SellEffects(...) { return 0; }
-double BuildingClass::SetField95(...) { return 0; }
-double BuildingPlacement::ValidateType(...) { return 0; }
-double CCFileClass::Construct3(...) { return 0; }
-double CCFileClass::Open(...) { return 0; }
-double CCFileClass::Read(...) { return 0; }
-double CCFileClass::ReadEntireFile(...) { return 0; }
-double CCFileClass::Reset(...) { return 0; }
-double COMClass::RegisterAll(...) { return 0; }
-double CampaignClass::LoadFromINI(...) { return 0; }
-double Campaign_WorldDominationTour_24_::AddRef(...) { return 0; }
-double CellClass::DetermineTileType(...) { return 0; }
-double CellClass::GetCoords(...) { return 0; }
-double CellClass::GetTerrainFlag(...) { return 0; }
-double CellClass::IsBuildable(...) { return 0; }
-double CellClass::IsTerrainType(...) { return 0; }
-double CellClass::SetTerrainType(...) { return 0; }
-double ComPtr::Constructor(...) { return 0; }
-double ComPtr::Dtor(...) { return 0; }
-double ComPtr::Release_Alt(...) { return 0; }
-double ComPtr::Set(...) { return 0; }
-double Conflict_WorldDominationTour_12_::Constructor_3(...) { return 0; }
-double ConvertClass::InitTables(...) { return 0; }
-double DSurface::Lock(...) { return 0; }
-double FileClass::Load(...) { return 0; }
-double FileSystem::FlushTempFiles(...) { return 0; }
-double FootClass::GetField(...) { return 0; }
-double FootClass::SetField(...) { return 0; }
-double GadgetClass::Hide(...) { return 0; }
-double HouseClass::CalcProductionSpeed(...) { return 0; }
-double HouseClass::FindByName(...) { return 0; }
-double HouseClass::FindType15(...) { return 0; }
-double HouseClass::FirstBuildableFromArray(...) { return 0; }
-double HouseClass::GetCurrentOption(...) { return 0; }
-double HouseClass::GetMaxBuildLevel(...) { return 0; }
-double HouseClass::GetStartCoords(...) { return 0; }
-double HouseClass::IsAllied(...) { return 0; }
-double HouseClass::ProcessPowerDrain(...) { return 0; }
-double HouseClass::ShouldDisableCameo(...) { return 0; }
-double HouseClass::UpdateProduction(...) { return 0; }
-double INIClass::ClearSection(...) { return 0; }
-double INIClass::GetBase64Data(...) { return 0; }
-double INIClass::GetPipIdx(...) { return 0; }
-double INIClass::GetStringEx(...) { return 0; }
-double INIClass::LoadFile(...) { return 0; }
-double INIClass::ReadBase64Data(...) { return 0; }
-double INIClass::ReadBool_Overwrite(...) { return 0; }
-double INIClass::ReadDouble_Overwrite(...) { return 0; }
-double INIClass::ReadRGBColorList(...) { return 0; }
-double INIClass::ResetSection(...) { return 0; }
-double INIClass::SetBool(...) { return 0; }
-double INIClass::SetRect(...) { return 0; }
-double INIClass::WriteDigest(...) { return 0; }
-double InfantryClass::IsInBounds(...) { return 0; }
-double LayerClass::Save(...) { return 0; }
-double LightConvertClass::Constructor(...) { return 0; }
-double LoadOptions::Cleanup(...) { return 0; }
-double LoadOptions::Run(...) { return 0; }
-double Lobby::InvalidateFactionCombos(...) { return 0; }
-double Math::ArcTan2(...) { return 0; }
-double Math::CalcAngle(...) { return 0; }
-double Math::InitDegToRad(...) { return 0; }
-double Math::SinCos(...) { return 0; }
-double MissionClass::GetMissionControl(...) { return 0; }
-double MixFileClass::CacheNode_Dtor(...) { return 0; }
-double MixFileClass::FromFile(...) { return 0; }
-double MixFileClass::GetSubFile(...) { return 0; }
-double MixFileClass::LoadSubFile(...) { return 0; }
-double MouseClass::DrawCursor(...) { return 0; }
-double MovieClass::GetHeight(...) { return 0; }
-double MovieClass::GetWidth(...) { return 0; }
-double MultiplayerGameMode::Construct(...) { return 0; }
-double MultiplayerGameMode::Find(...) { return 0; }
-double MultiplayerGameMode::ListGet(...) { return 0; }
-double ObjectClass::CalcTargetFacing(...) { return 0; }
-double ObjectClass::Cleanup(...) { return 0; }
-double ObjectClass::FreeResources(...) { return 0; }
-double ObjectClass::GetSizeMax(...) { return 0; }
-double ObjectClass::Init(...) { return 0; }
-double ObjectClass::SetReference(...) { return 0; }
-double ObjectClass::ctor(...) { return 0; }
-double PowerClass::checkBlackout(...) { return 0; }
-double RawFileClass::Construct(...) { return 0; }
-double RulesClass::SaveLoad_Prefix(...) { return 0; }
-double RulesClass::SaveLoad_Prefix_0(...) { return 0; }
-double ScenarioClass::GetGlobalStateByID(...) { return 0; }
-double ScenarioClass::GetLocalStateByID(...) { return 0; }
-double ScenarioClass::Get_Waypoint_Location(...) { return 0; }
-double ScenarioClass::Load(...) { return 0; }
-double ScenarioClass::SaveLoad_Prefix(...) { return 0; }
-double ScenarioClass::SaveLoad_Prefix_0(...) { return 0; }
-double ScenarioClass::ShowMissionBriefing(...) { return 0; }
-double ScenarioClass::UpdateLighting(...) { return 0; }
-double ScoreScreen::DrawSHPBackground(...) { return 0; }
-double Sidebar::UpdateProductionDisplay(...) { return 0; }
-double SkirmishDialog::Show(...) { return 0; }
-double SortedArray::CheckCache(...) { return 0; }
-double SortedArray::FindValue(...) { return 0; }
-double Struct::Zero25(...) { return 0; }
-double SwizzleManagerClass::Here_I_Am(...) { return 0; }
-double TEventClass::GetStateA(...) { return 0; }
-double TEventClass::GetStateB_SpyEvent(...) { return 0; }
-double TacticalClass::FreeResources(...) { return 0; }
-double TacticalClass::ProcessView(...) { return 0; }
-double TacticalClass::RenderCells(...) { return 0; }
-double TacticalClass::ResetView(...) { return 0; }
-double TacticalClass::SetViewDimensions(...) { return 0; }
-double TeamClass::AddToBuildQueue(...) { return 0; }
-double TeamClass::CreateOneOf(...) { return 0; }
-double TechnoClass::GetTileAnimationData(...) { return 0; }
-double TechnoClass::InvulnerabilityIntensity_SetContext(...) { return 0; }
-double TechnoClass::MutateAll(...) { return 0; }
-double TriggerClass::NotifyLocalChanged(...) { return 0; }
-double TriggerTypeClass::GetFlags(...) { return 0; }
-double TubeClass::Construct(...) { return 0; }
-double VocClass::Check(...) { return 0; }
-double VocClass::FindIndex(...) { return 0; }
-double WaveClass::Destroy(...) { return 0; }
-double XSurface::Fill(...) { return 0; }
-double XSurface::GetPixel(...) { return 0; }
-double XSurface::SetPixel(...) { return 0; }
-
-void* CellCoord::To_CellObj(void* a1, void* a2) { return nullptr; }
-
-double Math::RoundToInt(...) { return 0; }
-double Math::Sqrt(...) { return 0; }
-double Math::ArcTan(...) { return 0; }
-double Math::Sin(...) { return 0; }
-double Math::Cos(...) { return 0; }
-double Math::Hypotenuse2D(...) { return 0; }
-
-double Math::DistSq2D(...) { return 0; }
-double Math::Dist2D(...) { return 0; }
-
-} // namespace gamemd
-
-// GENERATED static-varargs stubs for C2597 no-def methods
-// (fix_member_static_calls.py). INTERIM: return 0 — same
-// fidelity as the tree-era return-0 stubs these replace.
+// GENERATED C2039/C3861 stubs (fix_c2039_c3861.py)
 #include <cstdint>
 #include "e4/e4_globals.hpp"
 #include "e4/classes/_tree_full_e4.hpp"
-#include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 
 namespace gamemd {
 
-double BuildingClass::CreateIdleAnim(...) { return 0; }
-double CellClass::ClearCellContents(...) { return 0; }
-double CellClass::GetScreenRect(...) { return 0; }
-double INIClass::GetCoord(...) { return 0; }
-double INIClass::ReadPoint3D_Overwrite(...) { return 0; }
-double INIClass::SetHouseName(...) { return 0; }
-double MouseClass::CalcConfiningRect(...) { return 0; }
-double Network::ShutdownInterface(...) { return 0; }
-double PowerClass::getDrain(...) { return 0; }
-double TacticalClass::BuildCommandBar(...) { return 0; }
-
-void* CellCoord::To_CellObj(void* a1, void* a2) { return nullptr; }
-
-double Math::RoundToInt(...) { return 0; }
-double Math::Sqrt(...) { return 0; }
-double Math::ArcTan(...) { return 0; }
-double Math::Sin(...) { return 0; }
-double Math::Cos(...) { return 0; }
-double Math::Hypotenuse2D(...) { return 0; }
-
-double Math::DistSq2D(...) { return 0; }
-double Math::Dist2D(...) { return 0; }
+double ActionQueue::PushEntry(...) { return 0; }
+double AircraftTrackerClass::FillCurrentVector(...) { return 0; }
+double AircraftTypeVector::Constructor(...) { return 0; }
+double AllocCallback::Dispatch(...) { return 0; }
+double AnimTypeVector::Constructor(...) { return 0; }
+double AssetClass::ReleaseAndReload(...) { return 0; }
+double AudioChannel::DeactivatePlay(...) { return 0; }
+double AudioChannel::IsActive(...) { return 0; }
+double AudioConfig::InitDefault(...) { return 0; }
+double AudioFile::GetCallback(...) { return 0; }
+double AudioFileClass::Release(...) { return 0; }
+double AudioFrame::CounterInc(...) { return 0; }
+double AudioIndex::GetSampleInformation(...) { return 0; }
+double AudioList::GetNextEntry(...) { return 0; }
+double AudioNode::Release(...) { return 0; }
+double AudioPool::ProcessQueue(...) { return 0; }
+double AudioSample::Destructor(...) { return 0; }
+double AudioSample::InitLinkedList(...) { return 0; }
+double AudioSample::IsBuffering(...) { return 0; }
+double AudioSource::Get(...) { return 0; }
+double AudioTimer::DecrementAll(...) { return 0; }
+double BTree::DeleteSubtree(...) { return 0; }
+double BaseNodeClass::Vector_Constructor(...) { return 0; }
+double BigInt::DecryptBlock(...) { return 0; }
+double BigInt::RSAOperation(...) { return 0; }
+double BitArray::TestBit(...) { return 0; }
+double BufferIO::Cleanup(...) { return 0; }
+double BufferIO::Flush(...) { return 0; }
+double BuildingLightQueue::RemoveEntry(...) { return 0; }
+double BuildingLoadQueue::Find(...) { return 0; }
+double BuildingLoadQueue::FindBuilding(...) { return 0; }
+double ButtonClass::SetState(...) { return 0; }
+double CampaignScore::__pad_08C(...) { return 0; }
+double CaptureManager::FreeAll(...) { return 0; }
+double Char::Swap(...) { return 0; }
+double ChatEvent::ProcessStrings(...) { return 0; }
+double Checksum::AddString(...) { return 0; }
+double Checksummer::Add_Buffer(...) { return 0; }
+double Checksummer::Add_double(...) { return 0; }
+double Checksummer::Add_float(...) { return 0; }
+double Cliff::ProcessTransitions(...) { return 0; }
+double Conditions::CheckResult(...) { return 0; }
+double Conflict::GetOwnerHouse(...) { return 0; }
+double Coord2D::Add(...) { return 0; }
+double Coord2D::Sub(...) { return 0; }
+double Coord3D::Set(...) { return 0; }
+double CoordList::GetBounds(...) { return 0; }
+double CountryCombo::IDToIndex(...) { return 0; }
+double CrateClass::ProcessPickup(...) { return 0; }
+double DListNode::InitEmpty(...) { return 0; }
+double DeleteAndZero::Alt(...) { return 0; }
+double DeleteAndZero::Alt2(...) { return 0; }
+double DeleteAndZero::OrFree(...) { return 0; }
+double DiskSpace::CheckAvailable(...) { return 0; }
+double DynamicArray::Remove(...) { return 0; }
+double DynamicArray::Resize(...) { return 0; }
+double DynamicVectorArray::Constructor(...) { return 0; }
+double FacingClass::Set_SyncLog(...) { return 0; }
+double FacingClass::Update(...) { return 0; }
+double Field::Int_Set(...) { return 0; }
+double FileExtension::Constructor(...) { return 0; }
+double FileExtension::MapHandler(...) { return 0; }
+double FileFind::Close(...) { return 0; }
+double FileFind::CloseHandle(...) { return 0; }
+double FileFind::Next(...) { return 0; }
+double FileStraw::Destructor(...) { return 0; }
+double FileStraw::Open(...) { return 0; }
+double FileTree::CleanupAll(...) { return 0; }
+double FileTreeNode::Destroy(...) { return 0; }
+double Flag::IsNot2(...) { return 0; }
+double Flag::IsZero(...) { return 0; }
+double Float4::Copy(...) { return 0; }
+double FontClass::InitMetrics(...) { return 0; }
+double FontClass::RenderGlyph(...) { return 0; }
+double FontRenderer::DrawTextA(...) { return 0; }
+double FontRenderer::InitContext(...) { return 0; }
+double FractalNoise::Dtor(...) { return 0; }
+double FrameSnapshot::Init(...) { return 0; }
+double FrameSnapshot::InitMax(...) { return 0; }
+double GameOptions::SaveLoad(...) { return 0; }
+double GameResult::CalcScore(...) { return 0; }
+double GameScreen::DlgProc(...) { return 0; }
+double GameState::Reset(...) { return 0; }
+double GenericList::Constructor(...) { return 0; }
+double Hash::ComputeHashSHA1(...) { return 0; }
+double Hash::InsertOrdered(...) { return 0; }
+double Hash::Reset(...) { return 0; }
+double HashMap::Shrink(...) { return 0; }
+double HashMap::Shrink2(...) { return 0; }
+double HashTree::MarkEntry(...) { return 0; }
+double HashVector_UInt::Construct(...) { return 0; }
+double Heap::SiftDown(...) { return 0; }
+double IDXContainer::LoadSample(...) { return 0; }
+double INISectionList::Constructor(...) { return 0; }
+double InputManager_ProcessEvents::Vtable(...) { return 0; }
+double Int4::Set(...) { return 0; }
+double IntVector::Copy(...) { return 0; }
+double IsRandMap::Sed(...) { return 0; }
+double IsRandMap::Sed2(...) { return 0; }
+double KeyValuePair::Init(...) { return 0; }
+double KeywordClass::FindOrCreate(...) { return 0; }
+double KeywordType::FindOrCreate2(...) { return 0; }
+double Lightning::Draw(...) { return 0; }
+double ListClass::Construct(...) { return 0; }
+double ListClass::Destruct(...) { return 0; }
+double Locomotor::GetSpeed(...) { return 0; }
+double MPCombatTeam::Constructor(...) { return 0; }
+double MPCombatTeam::Constructor2(...) { return 0; }
+double MPCombatTeam::MPTeam(...) { return 0; }
+double MSChoiceClass::LoadFromINI(...) { return 0; }
+double MapResourceClass::__tail_0(...) { return 0; }
+double Matrix::Copy12Float(...) { return 0; }
+double Matrix::Scale(...) { return 0; }
+double Matrix2D::Rotate(...) { return 0; }
+double Matrix3D::Constructor(...) { return 0; }
+double Matrix3D::RotateZ(...) { return 0; }
+double Matrix3x3::Multiply(...) { return 0; }
+double Matrix3x3::RotateX(...) { return 0; }
+double Matrix3x3::TransformPoint(...) { return 0; }
+double MessageListClass::AddMessage(...) { return 0; }
+double MessageListClass::clearMessages(...) { return 0; }
+double Miles::DriverGet(...) { return 0; }
+double ModemGame::AdvanceTauntCommand(...) { return 0; }
+double MovieContext::Cleanup(...) { return 0; }
+double Multiplay::LogToSYNC_NOMPDEBUG(...) { return 0; }
+double MultiplayerConfig::Cleanup(...) { return 0; }
+double NetMessage::Pack4(...) { return 0; }
+double NetworkEventQueueClass::WaitForResponse(...) { return 0; }
+double NetworkID::Assign(...) { return 0; }
+double NetworkID::Compare(...) { return 0; }
+double NetworkSettings::DlgProc(...) { return 0; }
+double ObjectPlacement::CalcPosition(...) { return 0; }
+double ObjectPtr::RegisterForTracking(...) { return 0; }
+double OptionQueue::PushEntry(...) { return 0; }
+double OwnerDrawControl::InitVtable(...) { return 0; }
+double PacketQueue::ExtractEntry(...) { return 0; }
+double PacketQueue::ReleaseEntry(...) { return 0; }
+double PaletteManager::Load(...) { return 0; }
+double Performance::Profile(...) { return 0; }
+double PhoneEditor::PopulateList(...) { return 0; }
+double PingPongBuffer::GetWriteOffset(...) { return 0; }
+double Pipe::Dtor(...) { return 0; }
+double PreviewClass::ReadPreview(...) { return 0; }
+double PriorityQueue::Add(...) { return 0; }
+double ProductionClass::StartTimer(...) { return 0; }
+double ProgressAnim::Init(...) { return 0; }
+double Property::GetField11(...) { return 0; }
+double Property::Set(...) { return 0; }
+double PtrVector::Destroy(...) { return 0; }
+double PushCommandClass::Execute(...) { return 0; }
+double Queue::GetNext(...) { return 0; }
+double Random::AdvanceRandomBytes(...) { return 0; }
+double Random::Gaussian(...) { return 0; }
+double Random::Range(...) { return 0; }
+double Random::State(...) { return 0; }
+double Rect_Point::Set(...) { return 0; }
+double ResultNode::CleanupList(...) { return 0; }
+double SHPClass::Load(...) { return 0; }
+double SafeDelete::Ptr(...) { return 0; }
+double SaveLoadDialog::DlgProc(...) { return 0; }
+double ScoreText::Show(...) { return 0; }
+double ScoreText::ShowAlt(...) { return 0; }
+double ScreenSaver::Process(...) { return 0; }
+double ScriptQueue::PushEntry(...) { return 0; }
+double SerialPort::Close(...) { return 0; }
+double SettingsClass::ClampValues(...) { return 0; }
+double ShapeButton::Draw(...) { return 0; }
+double ShapeButton::SetShape(...) { return 0; }
+double ShapeButtonClass::Constructor(...) { return 0; }
+double ShroudClass::UpdateVisibility(...) { return 0; }
+double SimpleDialogControl::Constructor(...) { return 0; }
+double SlaveControlVector::Constructor(...) { return 0; }
+double SpawnControlVector::Constructor(...) { return 0; }
+double SquadClass::ProcessMove(...) { return 0; }
+double StartCombo::IDToIndex(...) { return 0; }
+double StaticString::Factory(...) { return 0; }
+double Straw::Dtor(...) { return 0; }
+double StringList::Find(...) { return 0; }
+double StringTable::Find(...) { return 0; }
+double StringVector::Construct(...) { return 0; }
+double StructTable::Append(...) { return 0; }
+double SubzoneConnectionVector::Destruct(...) { return 0; }
+double SubzoneHashVector::Construct(...) { return 0; }
+double SwizzleManager::SaveLoad(...) { return 0; }
+double SyncDelayClass::ProcessNetworkSync(...) { return 0; }
+double TabCameoListClass::AddCameo_ReplaceItAll(...) { return 0; }
+double Targeting::Readd(...) { return 0; }
+double TaskManager::Update(...) { return 0; }
+double TechnoTypeVector::Constructor(...) { return 0; }
+double Text::DrawRepeated(...) { return 0; }
+double Text::Layout(...) { return 0; }
+double Text::MeasureWidth(...) { return 0; }
+double TextGroup::SetRect(...) { return 0; }
+double TileData::Constructor(...) { return 0; }
+double TileNode::Cleanup(...) { return 0; }
+double TileSystem::Constructor(...) { return 0; }
+double Timeout::GetRemaining(...) { return 0; }
+double TimerPool::AllocSlot(...) { return 0; }
+double ToggleClass::RTTI(...) { return 0; }
+double ToolTipClass::initString(...) { return 0; }
+double ToolTipClass::updateString(...) { return 0; }
+double Tooltip::Enable(...) { return 0; }
+double Tree::Destructor(...) { return 0; }
+double Triple::Set(...) { return 0; }
+double TypeClass::FindByName(...) { return 0; }
+double VQAClass::AdvanceFrame(...) { return 0; }
+double Vector2::NormalizeNonZero(...) { return 0; }
+double Vector3::AddAssign(...) { return 0; }
+double Vector3::Magnitude(...) { return 0; }
+double Vector3::Subtract(...) { return 0; }
+double Vector4::EraseAt_Copy(...) { return 0; }
+double VectorClassUInt::Constructor(...) { return 0; }
+double Viewport::Clear(...) { return 0; }
+double VoxelAnimTypeVector::Constructor(...) { return 0; }
+double VoxelPalette::Init(...) { return 0; }
+double VoxelPalette::Reset(...) { return 0; }
+double VoxelSection::GetInfo(...) { return 0; }
+double WDTClass::GetCellType(...) { return 0; }
+double WDTObject::GetSize(...) { return 0; }
+double WTFMode::Shutdown(...) { return 0; }
+double WinAPI::Wrapper(...) { return 0; }
+double WordVector::Constructor(...) { return 0; }
 
 } // namespace gamemd
-
-// GENERATED static-varargs stubs for C2597 no-def methods
-// (fix_member_static_calls.py). INTERIM: return 0 — same
-// fidelity as the tree-era return-0 stubs these replace.
-#include <cstdint>
-#include "e4/e4_globals.hpp"
-#include "e4/e4_protos.h"
-
-namespace gamemd {
-
-double BuildingClass::Deactivate(...) { return 0; }
-double BuildingClass::IsBeingRepairedOrCaptured(...) { return 0; }
-double BuildingClass::PowerOff(...) { return 0; }
-double CellClass::UpdateAnimations(...) { return 0; }
-double MouseClass::Construct(...) { return 0; }
-double Movement::CompareAbsCoords(...) { return 0; }
-double ObjectClass::StepCleanup(...) { return 0; }
-double ScoreScreen::LoadAudio(...) { return 0; }
-double TechnoClass::SetFocus(...) { return 0; }
-double TechnoTypeClass::HasVoiceResponse(...) { return 0; }
-
-} // namespace gamemd
-
-// GENERATED static-varargs stubs for C2597 no-def methods
-// (fix_member_static_calls.py). INTERIM: return 0 — same
-// fidelity as the tree-era return-0 stubs these replace.
-#include <cstdint>
-#include "e4/e4_globals.hpp"
-#include "e4/e4_protos.h"
-
-namespace gamemd {
-
-double BuildingClass::GetProductionFrame(...) { return 0; }
-double BuildingClass::GetType(...) { return 0; }
-double CellClass::InBounds(...) { return 0; }
-double CellClass::InMapDataRange(...) { return 0; }
-double TiberiumClass::Grow(...) { return 0; }
-
-} // namespace gamemd
-
-// GENERATED static-varargs stubs for C2597 no-def methods
-// (fix_member_static_calls.py). INTERIM: return 0 — same
-// fidelity as the tree-era return-0 stubs these replace.
-#include <cstdint>
-#include "e4/e4_globals.hpp"
-#include "e4/e4_protos.h"
-
-namespace gamemd {
-
-double CCFileClass::GetSize(...) { return 0; }
-
-} // namespace gamemd
-

@@ -75,7 +75,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   v38[1] = v36; /*0x4b5b9e*/
   v38[2] = v3; /*0x4b5ba2*/
   VeteranCombat_high = (*(int (__thiscall **)(int *))(*v2 + 456))(v2) / 10 + 2; /*0x4b5bc9*/
-  if ( SHIDWORD(g_RulesClass_Instance->VeteranCombat) > VeteranCombat_high ) /*0x4b5bd5*/
+  if ( IDA_SHIDWORD(g_RulesClass_Instance->VeteranCombat) > VeteranCombat_high ) /*0x4b5bd5*/
     VeteranCombat_high = IDA_HIDWORD(g_RulesClass_Instance->VeteranCombat); /*0x4b5bd7*/
   VeteranSpeed = g_RulesClass_Instance->VeteranSpeed; /*0x4b5bf3*/
   if ( *(_BYTE *)(a1 + 24) ) /*0x4b5bdb*/

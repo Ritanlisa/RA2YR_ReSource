@@ -13,6 +13,8 @@
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/Draw_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x4FA350
 namespace gamemd {
@@ -33,7 +35,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
   int v18; // eax
   int v19; // ecx
   int v20; // ecx
-  void * v21;
+  FactoryClass * v21;
   int v22; // [esp+24h] [ebp-10h]
   int v23; // [esp+28h] [ebp-Ch]
   char v24; // [esp+2Ch] [ebp-8h]
@@ -254,7 +256,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
 namespace gamemd {
 int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
 {
-  IUnknown * result;
+  unsigned int result;
 
   result = aP1 - 1; /*0x5007a5*/
   switch ( aP1 ) /*0x5007b7*/

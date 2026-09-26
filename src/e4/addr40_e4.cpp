@@ -4527,7 +4527,7 @@ int sub_407550()
   qword_87E780 = 1000; /*0x407580*/
   dword_87E774 = 0; /*0x407590*/
   AudioStream::Reset(dword_87E790); /*0x40759b*/
-  CoordBounds::Constructor(dword_87E790, qword_87E780, SHIDWORD(qword_87E780)); /*0x4075b2*/
+  CoordBounds::Constructor(dword_87E790, qword_87E780, IDA_SHIDWORD(qword_87E780)); /*0x4075b2*/
   AudioStream::ResetChannel(dword_87E790, 4 * qword_87E780, (unsigned __int64)qword_87E780 >> 30); /*0x4075d3*/
   AudioStream::ResetChannel2(dword_87E790, 4 * qword_87E780, (unsigned __int64)qword_87E780 >> 30); /*0x4075f5*/
   Thread = CreateThread(0, 0x1000u, (LPTHREAD_START_ROUTINE)StartAddress, &dword_87E770, 0, &ThreadId); /*0x407610*/

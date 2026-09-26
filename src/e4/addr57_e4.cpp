@@ -19,6 +19,9 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Display_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x574600
 namespace gamemd {
@@ -301,7 +304,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
   MapClass * v7;
   char *CellData; // esi
   int TerrainMask; // eax
-  IUnknown * v10;
+  unsigned int v10;
   int * v11;
   unsigned int v12;
   int * v13;
@@ -312,13 +315,13 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
   char v18; // bl
   int * v19;
   unsigned int v20;
-  char v21; // al
+  IUnknown * v21;
   int * v22;
   unsigned int v23;
   char v24; // bl
   int * v25;
   unsigned int v26;
-  char v27; // al
+  IUnknown * v27;
   int * v28;
   unsigned int v29;
   char v30; // bl

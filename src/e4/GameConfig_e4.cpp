@@ -21,6 +21,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x5E84D0
 namespace gamemd {

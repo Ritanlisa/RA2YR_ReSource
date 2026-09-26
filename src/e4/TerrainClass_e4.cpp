@@ -29,6 +29,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/TerrainTypeClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x6DD8B0
 namespace gamemd {

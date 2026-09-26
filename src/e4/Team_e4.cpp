@@ -49,6 +49,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x561180
 namespace gamemd {

@@ -21,6 +21,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
 
 // 0x41C8B0
 AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)

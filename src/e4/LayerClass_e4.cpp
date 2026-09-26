@@ -15,6 +15,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/LightSourceClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x568300
 namespace gamemd {
@@ -92,7 +94,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
   int v73; // eax
   double v74; // st7
   int v75; // [esp+18h] [ebp-1DCh] BYREF
-  char v76; // [esp+1Fh] [ebp-1D5h]
+  unsigned int v76;
   int v77; // [esp+20h] [ebp-1D4h]
   int v78; // [esp+24h] [ebp-1D0h]
   int v79; // [esp+28h] [ebp-1CCh]
@@ -492,12 +494,12 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
 namespace gamemd {
 void * LayerClass::Reveal(int a2)
 {
-  unsigned int result;
+  void * result;
   int v4; // eax
   int v5; // edx
   int v6; // ecx
   int v7; // esi
-  char v8; // [esp+10h] [ebp+4h]
+  unsigned int v8;
 
   result = (void *)a2; /*0x577d90*/
   if ( a2 ) /*0x577da2*/

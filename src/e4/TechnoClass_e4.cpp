@@ -416,7 +416,7 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1)
       {
         v11 = 0; /*0x6f40f0*/
       }
-      *(_DWORD *)(a1 + 700) = v11; /*0x6f40f2*/
+      *(_DWORD *, unsigned int a1)(a1 + 700) = v11; /*0x6f40f2*/
     }
     if ( (*(int (__thiscall **)(int))(*(_DWORD *)a1 + 44))(a1) != 6 /*0x6f412a*/
       && *(_DWORD *)(*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)a1 + 1016))(a1, 0)

@@ -219,12 +219,12 @@ struct OverlayTypeClass {
     unsigned char q258;  // 0x258
     void* q25C;  // 0x25C
     unsigned int q260;  // 0x260
-    char q264[4];  // 0x264
+    unsigned int q264;  // 0x264
     unsigned int q268;  // 0x268
     void* q26C;  // 0x26C
     void* q270;  // 0x270
     void* q274;  // 0x274
-    char q278[4];  // 0x278
+    unsigned int q278;  // 0x278
     void* q27C;  // 0x27C
     unsigned int q280;  // 0x280
     unsigned int q284;  // 0x284

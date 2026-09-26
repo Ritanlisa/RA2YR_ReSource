@@ -134,7 +134,7 @@ struct WeaponTypeClass {
     AnimTypeClass* q114;  // 0x114
     AnimTypeClass* q118;  // 0x118
     ParticleSystemTypeClass* q11C;  // 0x11C
-    char q120[3];  // 0x120
+    unsigned int q120;  // 0x120
     Color * ptr_122;  // 0x122
     unsigned int q123;  // 0x123
     unsigned int q124;  // 0x124

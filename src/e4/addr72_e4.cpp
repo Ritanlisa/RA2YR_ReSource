@@ -32,6 +32,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/House_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x7221B0
 namespace gamemd {
@@ -285,7 +287,7 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
   __int16 v14; // [esp+8h] [ebp-78h]
   _DWORD v16[22]; // [esp+14h] [ebp-6Ch] BYREF
   _BYTE v17[12]; // [esp+6Ch] [ebp-14h] BYREF
-  int v18; // [esp+78h] [ebp-8h]
+  void ** v18;
 
   v3 = a2; /*0x72ade5*/
   CCFileClass::Construct(v16, Source); /*0x72adf0*/

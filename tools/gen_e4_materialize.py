@@ -862,23 +862,15 @@ def main_apply(bodyless, fns, src_classes, refresh=False, preserved=None):
                 stats["name_dedup"] += 1
             used_names["member"].add(qname)
             params = ", ".join("%s %s" % (t, n) for t, n in sig["params"])
-            if cls in src_classes:
-                ns = src_classes[cls]["namespace"]
-                decl = "%s %s(%s);" % (sig["ret"], method, params)
-                hpp_inserts[src_classes[cls]["path"]].append((cls, decl, fn.addr))
-                lines = ["// 0x%X" % fn.addr]
-                for n in qualify_ns(ns):
-                    lines.append("namespace %s {" % n)
-                lines.append("%s %s(%s)" % (sig["ret"], qname, params))
-                lines.append("{")
-                lines.append(MARKER)
-                lines.append(pseudo)
-                lines.append("}")
-                for n in reversed(qualify_ns(ns)):
-                    lines.append("} // namespace %s" % n)
-                lines.append("")
-                bucket_defs[out_name].extend(lines)
-                stats["member_def"] += 1
+            if False and cls in src_classes:
+                # E3 tree-header injection RETIRED (2026-09-24): the redo
+                # universe is the isolated namespace-gamemd e4 world; decls
+                # injected into ra2::game / template tree headers were
+                # unreachable from e4 TUs and poisoned every TU including
+                # the tree header (vector.hpp 4,277 errors). ALL member
+                # bodies route to E2 flat classes below; the tree header
+                # copy is left untouched.
+                pass
             else:
                 # E2 minimal class in namespace gamemd
                 safe_cls = re.sub(r"[^A-Za-z0-9_]", "_", cls)

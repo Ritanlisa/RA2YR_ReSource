@@ -14735,7 +14735,7 @@ unsigned char * _cftoe(double * a1, unsigned char * a2, int a3, int a4)
   int v8[4]; // [esp+2Ch] [ebp-10h] BYREF
 
   v6 = *a1; /*0x7cec3c*/
-  _fltout2(IDA_SLOBYTE(v6), SHIDWORD(v6), (int)v8, Destination); /*0x7cec3f*/
+  _fltout2(IDA_SLOBYTE(v6), IDA_SHIDWORD(v6), (int)v8, Destination); /*0x7cec3f*/
   _fptostr((void *)((v8[0] == 45) + a2 + (a3 > 0)), a3 + 1, (int)v8); /*0x7cec67*/
   _cftoe2(a2, a3, a4, v8, 0); /*0x7cec79*/
   return a2; /*0x7cec84*/
@@ -14799,7 +14799,7 @@ char * _cftof(double * a1, char * Src, size_t Size)
   int v7[4]; // [esp+2Ch] [ebp-10h] BYREF
 
   v5 = *a1; /*0x7ced5f*/
-  _fltout2(IDA_SLOBYTE(v5), SHIDWORD(v5), (int)v7, Destination); /*0x7ced62*/
+  _fltout2(IDA_SLOBYTE(v5), IDA_SHIDWORD(v5), (int)v7, Destination); /*0x7ced62*/
   _fptostr(&Src[v7[0] == 45], Size + v7[1], (int)v7); /*0x7ced81*/
   _cftof2(Src, Size, (int)v7, 0); /*0x7ced90*/
   return Src; /*0x7ced9b*/
@@ -14818,7 +14818,7 @@ char * _cftog(double * a1, char * Src, char * Size, int a4)
   int v11; // [esp+38h] [ebp-Ch]
 
   v8 = *a1; /*0x7cee5d*/
-  _fltout2(IDA_SLOBYTE(v8), SHIDWORD(v8), (int)&v10, Destination); /*0x7cee60*/
+  _fltout2(IDA_SLOBYTE(v8), IDA_SHIDWORD(v8), (int)&v10, Destination); /*0x7cee60*/
   v5 = v11 - 1; /*0x7cee6b*/
   v6 = &Src[v10 == 45]; /*0x7cee7a*/
   _fptostr(v6, Size, (int)&v10); /*0x7cee82*/

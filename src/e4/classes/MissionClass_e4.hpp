@@ -107,7 +107,7 @@ struct MissionClass {
     unsigned int missionData;  // 0xC4
     unsigned char q0C5;  // 0xC5
     unsigned char q0C6;  // 0xC6
-    char missionTimer[12];  // 0xC8
+    unsigned int missionTimer;  // 0xC8
     unsigned int q0CC;  // 0xCC
     unsigned int q0D0;  // 0xD0
     unsigned int q0D4;  // 0xD4
@@ -128,7 +128,7 @@ struct MissionClass {
     unsigned int q0F9;  // 0xF9
     unsigned char q0FB;  // 0xFB
     unsigned int q0FC;  // 0xFC
-    char q100[4];  // 0x100
+    unsigned int q100;  // 0x100
     bool q104;  // 0x104
     char q108[4];  // 0x108
     unsigned int q10C;  // 0x10C

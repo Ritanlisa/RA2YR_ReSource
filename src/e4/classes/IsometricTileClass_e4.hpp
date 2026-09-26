@@ -53,7 +53,7 @@ struct IsometricTileClass {
     unsigned int q068;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     unsigned int q06A;  // 0x6A
-    char health[4];  // 0x6C
+    unsigned int health;  // 0x6C
     char estimatedHealth[4];  // 0x70
     bool q074;  // 0x74
     unsigned char alignmentPadding75;  // 0x75

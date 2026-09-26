@@ -676,7 +676,7 @@ AnimClass * InfantryClass::DeployAnimation()
       v5 = *(_DWORD *)(a1 + 8); /*0x514369*/
       v4 = v4; /*0x51436c*/
       IDA_LODWORD(v55) = (*(int (__thiscall **)(int))(v5->u32_538)(v5); /*0x514378*/
-      v6 = Math::RoundToInt((double)SLODWORD(v55) * *(double *)(a1 + 76)); /*0x514383*/
+      v6 = Math::RoundToInt((double)IDA_SLODWORD(v55) * *(double *)(a1 + 76)); /*0x514383*/
       v7 = *(_DWORD *)(a1 + 8); /*0x514388*/
       IDA_LODWORD(v54) = v6; /*0x51438b*/
       v8 = (int *)(*(int (__thiscall **)(int, int *))(v7->q048)(v7, &v63); /*0x514399*/
@@ -702,7 +702,7 @@ AnimClass * InfantryClass::DeployAnimation()
         if ( v13 ) /*0x514493*/
           MovementAI::MainFootClass((int *)(a1 - 4), 1); /*0x514499*/
         IDA_LODWORD(v55) = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(a1 + 8) + 1336))(*(_DWORD *)(a1 + 8)); /*0x5144a9*/
-        IDA_LODWORD(v54) = Math::RoundToInt((double)SLODWORD(v55) * *(double *)(a1 + 76)); /*0x5144b9*/
+        IDA_LODWORD(v54) = Math::RoundToInt((double)IDA_SLODWORD(v55) * *(double *)(a1 + 76)); /*0x5144b9*/
       }
       v15 = *(_DWORD *)(*(_DWORD *)(a1 + 8) + 156); /*0x5144ce*/
       v16 = *(_DWORD *)(*(_DWORD *)(a1 + 8) + 164); /*0x5144d5*/
@@ -710,7 +710,7 @@ AnimClass * InfantryClass::DeployAnimation()
       v65 = v16; /*0x5144e0*/
       v57 = v15 - *(_DWORD *)(a1 + 32); /*0x5144e9*/
       v17 = Math::Sqrt((double)v57 * (double)v57 + (double)v58 * (double)v58); /*0x514502*/
-      if ( SLODWORD(v54) >= (int)Math::RoundToInt(v17) ) /*0x514513*/
+      if ( IDA_SLODWORD(v54) >= (int)Math::RoundToInt(v17) ) /*0x514513*/
       {
         *(_BYTE *)(*(_DWORD *)(a1 + 8) + 1718) = 1; /*0x51451e*/
         *(_BYTE *)(*(_DWORD *)(a1 + 8) + 1719) = 0; /*0x514528*/
@@ -795,7 +795,7 @@ AnimClass * InfantryClass::DeployAnimation()
           }
         }
       }
-      if ( SLODWORD(v54) > 0 ) /*0x51474c*/
+      if ( IDA_SLODWORD(v54) > 0 ) /*0x51474c*/
       {
         v26 = *(int **)(a1 + 8); /*0x514752*/
         v63 = v26[39]; /*0x514761*/
@@ -818,7 +818,7 @@ AnimClass * InfantryClass::DeployAnimation()
         v55 = (double)(*(__int16 *)ProgressTimer::GetValue((_WORD *)(a1 + 44), &v57) - 0x3FFF) * -0.00009587672516830327; /*0x51481a*/
         v28 = IDA_HIDWORD(v55); /*0x514822*/
         v29 = IDA_LODWORD(v55); /*0x514826*/
-        v54 = (double)SLODWORD(v54); /*0x51482c*/
+        v54 = (double)IDA_SLODWORD(v54); /*0x51482c*/
         v61 = (double)v64; /*0x514834*/
         v30 = Math::SinCos(v55); /*0x514838*/
         IDA_LODWORD(v55) = Math::RoundToInt(v61 - v30 * v54); /*0x51484c*/
@@ -830,9 +830,9 @@ AnimClass * InfantryClass::DeployAnimation()
         v34 = v33->q09C; /*0x51487c*/
         IDA_HIDWORD(v61) = v33->q280; /*0x514881*/
         v62 = v33->q0A4; /*0x514888*/
-        IDA_WORD1(v54) = SHIDWORD(v61) / 256; /*0x5148a7*/
+        IDA_WORD1(v54) = IDA_SHIDWORD(v61) / 256; /*0x5148a7*/
         if ( (unsigned __int16)(v63 / 256) == (unsigned __int16)(v34 / 256) /*0x5148d9*/
-          && (unsigned __int16)(SLODWORD(v55) / 256) == IDA_WORD1(v54) )
+          && (unsigned __int16)(IDA_SLODWORD(v55) / 256) == IDA_WORD1(v54) )
         {
           v41 = v33->q074; /*0x5149f7*/
           v33->q074 = 0; /*0x5149fa*/
@@ -2031,15 +2031,15 @@ int InfantryClass::CalcMoveTarget()
       v82 = *(this + 39); /*0x51b6ae*/
       v83 = *(this + 40); /*0x51b6b5*/
       v35 = *(this + 41); /*0x51b6b9*/
-      IDA_HIDWORD(v73) = SWORD2(v73) - 0x3FFF; /*0x51b6c6*/
-      v72 = (double)SHIDWORD(v73) * -0.00009587672516830327; /*0x51b6d4*/
+      IDA_HIDWORD(v73) = IDA_SWORD2(v73) - 0x3FFF; /*0x51b6c6*/
+      v72 = (double)IDA_SHIDWORD(v73) * -0.00009587672516830327; /*0x51b6d4*/
       v67 = (double)v63; /*0x51b6e6*/
       v74 = (double)v83; /*0x51b6ee*/
       v36 = Math::SinCos(v72); /*0x51b6f2*/
       IDA_HIDWORD(v73) = Math::RoundToInt(v74 - v36 * v67); /*0x51b70a*/
       v37 = Math::ArcTan2(v72); /*0x51b70e*/
       v38 = Math::RoundToInt(v37 * v67 + (double)v82); /*0x51b71e*/
-      Coord::Subtract(&v79, v38, SHIDWORD(v73), v35); /*0x51b72e*/
+      Coord::Subtract(&v79, v38, IDA_SHIDWORD(v73), v35); /*0x51b72e*/
       v40 = v34 & 0x80000001; /*0x51b73f*/
       v39 = v40 == 0; /*0x51b73f*/
       v76 = v79; /*0x51b745*/
@@ -2092,14 +2092,14 @@ int InfantryClass::CalcMoveTarget()
       v83 = *(this + 40); /*0x51b5c1*/
       IDA_HIDWORD(v73) = v63 - v65; /*0x51b5c9*/
       v66 = (double)((__int16)v27 - 0x3FFF) * -0.00009587672516830327; /*0x51b5d7*/
-      v64 = (double)SHIDWORD(v73); /*0x51b5e9*/
+      v64 = (double)IDA_SHIDWORD(v73); /*0x51b5e9*/
       v74 = (double)v83; /*0x51b5f1*/
       v29 = Math::SinCos(v66); /*0x51b5f5*/
       v62 = v66; /*0x51b608*/
       IDA_LODWORD(v66) = Math::RoundToInt(v74 - v29 * v64); /*0x51b609*/
       v30 = Math::ArcTan2(v62); /*0x51b60d*/
       v31 = Math::RoundToInt(v30 * v64 + (double)v82); /*0x51b61d*/
-      Coord::Subtract(&v76, v31, SLODWORD(v66), v28); /*0x51b62d*/
+      Coord::Subtract(&v76, v31, IDA_SLODWORD(v66), v28); /*0x51b62d*/
       v79 = v76; /*0x51b63e*/
       v80 = v77; /*0x51b646*/
       v81 = v78; /*0x51b650*/
@@ -2553,7 +2553,7 @@ int InfantryClass::FindNearbyCell()
               }
               ++IDA_HIDWORD(v17); /*0x41905f*/
             }
-            while ( SHIDWORD(v17) < 8 ); /*0x419063*/
+            while ( IDA_SHIDWORD(v17) < 8 ); /*0x419063*/
             v14 = *((_DWORD *)g_RulesClass_Instance + 1310); /*0x419074*/
             if ( ++v18 < v14 / 256 ) /*0x41908c*/
               continue; /*0x41908c*/
@@ -4937,7 +4937,7 @@ int InfantryClass::ValidatePlacement()
     }
     goto LABEL_36; /*0x51cd6c*/
   }
-  if ( *(_DWORD *)(*(_DWORD *)(a1 + 540) + 588) >= SLODWORD(g_RulesClass_Instance[1].TunnelSpeed) /*0x51ccf5*/
+  if ( *(_DWORD *)(*(_DWORD *)(a1 + 540) + 588) >= IDA_SLODWORD(g_RulesClass_Instance[1].TunnelSpeed) /*0x51ccf5*/
     || *(_DWORD *)(a1 + 172) == 11 )
   {
     if ( *(_DWORD *)(a1 + 732) ) /*0x51ccfe*/

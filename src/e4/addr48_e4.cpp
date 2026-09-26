@@ -410,7 +410,7 @@ LABEL_58:
   double v35; // st7
         v35 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64(
                                             (double)(int)v34 * (double)(int)v34
-                                          + (double)SHIDWORD(v132) * (double)SHIDWORD(v132)
+                                          + (double)IDA_SHIDWORD(v132) * (double)IDA_SHIDWORD(v132)
                                           + (double)(int)v132 * (double)(int)v132));
         v36 = Math::RoundToInt(v35) - 2 * *(_DWORD *)&stru_89E138[1848];
 LABEL_66:
@@ -452,7 +452,7 @@ LABEL_67:
       st7_63 = (double)(int)v139;
       v39 = (BuildingTypeClass *)v37->field_8;
       IDA_HIDWORD(v139) = v37->field_4;
-      v41 = (double)SHIDWORD(v139);
+      v41 = (double)IDA_SHIDWORD(v139);
       v140 = v39;
       v42 = (double)(int)v39;
     }

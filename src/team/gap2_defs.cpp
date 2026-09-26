@@ -2512,7 +2512,7 @@ void TeamClass::SelectDeploymentTarget(int a1, int a2) {
       v5 = *(_DWORD *)((*(int (__thiscall **)(int))(v3->hasParachute)(v3) + 1532); /*0x6efa46*/
       if ( TechnoClass::IsDeployed(v3) /*0x6efa71*/
         && (v3->u8_689 || (*(int (__thiscall **)(int))(v3->fallRate)(v3) == 2)
-        && v5 > SLODWORD(v24) )
+        && v5 > IDA_SLODWORD(v24) )
       {
         i = (_DWORD *)v3; /*0x6efa73*/
         IDA_LODWORD(v24) = v5; /*0x6efa75*/
@@ -2539,7 +2539,7 @@ void TeamClass::SelectDeploymentTarget(int a1, int a2) {
       IDA_LODWORD(v27) = *v14 - v9; /*0x6efb14*/
       IDA_LODWORD(v24) = -v15; /*0x6efb1e*/
       v16 = v16; /*0x6efb22*/
-      v17 = Math::CalcAngle((double)-v15, (double)SLODWORD(v27)); /*0x6efb31*/
+      v17 = Math::CalcAngle((double)-v15, (double)IDA_SLODWORD(v27)); /*0x6efb31*/
       v13 = Math::RoundToInt((v17 - 1.570796326794897) * -10430.06004058427); /*0x6efb45*/
       IDA_LOWORD(v24) = v13; /*0x6efb4a*/
     }
@@ -2552,14 +2552,14 @@ void TeamClass::SelectDeploymentTarget(int a1, int a2) {
     }
     IDA_LODWORD(v24) = v13 - 0x3FFF; /*0x6efb61*/
     v18 = IDA_HIDWORD(g_RulesClass_Instance->RefineryRatio) << 8; /*0x6efb6f*/
-    v24 = (double)SLODWORD(v24) * -0.00009587672516830327; /*0x6efb7c*/
+    v24 = (double)IDA_SLODWORD(v24) * -0.00009587672516830327; /*0x6efb7c*/
     v27 = (double)v18; /*0x6efb8e*/
     v26 = (double)v10; /*0x6efb96*/
     v19 = Math::SinCos(v24); /*0x6efb9a*/
     IDA_LODWORD(v26) = Math::RoundToInt(v26 - v19 * v27); /*0x6efbae*/
     v20 = Math::ArcTan2(v24); /*0x6efbb2*/
     IDA_LOWORD(v24) = (int)Math::RoundToInt(v20 * v27 + (double)v29) / 256; /*0x6efbd7*/
-    IDA_WORD1(v24) = SLODWORD(v26) / 256; /*0x6efbef*/
+    IDA_WORD1(v24) = IDA_SLODWORD(v26) / 256; /*0x6efbef*/
     v23 = IDA_LODWORD(v24); /*0x6efc01*/
     IDA_LODWORD(v24) = 0; /*0x6efc0d*/
     v21 = (*(int (__thiscall **)(_DWORD *))(*i + 132))(i); /*0x6efc1e*/

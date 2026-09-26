@@ -325,7 +325,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
       IDA_WORD1(v34) = start[1] / 256; /*0x58811a*/
       v6 = IDA_WORD1(v34); /*0x588138*/
       v7 = end[1] / 256; /*0x588141*/
-      v39 = SWORD1(v34) >= (unsigned __int16)v7 ? -1 : 1;
+      v39 = IDA_SWORD1(v34) >= (unsigned __int16)v7 ? -1 : 1;
       while ( (_WORD)v34 != IDA_WORD2(v34) || v6 != (_WORD)v7 ) /*0x58815d*/
       {
         v8 = (__int16)v34 + (v6 << 9); /*0x58816c*/
@@ -368,10 +368,10 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
       {
         IDA_WORD1(v34) = v14 / 256; /*0x588223*/
         v6 = IDA_WORD1(v34); /*0x588234*/
-        v17 = (__int16)v34 >= SWORD2(v34) ? -1 : 1;
+        v17 = (__int16)v34 >= IDA_SWORD2(v34) ? -1 : 1;
         for ( i = v34; IDA___PAIR32__(i, v16) != *(_DWORD *)((char *)&v34 + 2); IDA_LOWORD(v34) = i ) /*0x58823d*/
         {
-          v19 = (__int16)i + (SWORD1(v34) << 9); /*0x588259*/
+          v19 = (__int16)i + (IDA_SWORD1(v34) << 9); /*0x588259*/
           if ( v19 < 0x40000 && (v20 = *(_DWORD **)(g_Shroud_CellArray + 4 * v19)) != 0 ) /*0x58826f*/
           {
             v21 = v20; /*0x588271*/

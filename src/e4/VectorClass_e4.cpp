@@ -157,6 +157,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Count_e4.hpp"
 
 // 0x4137A0
 namespace gamemd {
@@ -1089,7 +1090,7 @@ AbstractClass * * VectorClass_ptr_BuildChoiceClass_int_ouseClass::SetCapacity_6(
 namespace gamemd {
 AbstractClass * * VectorClass_ptr_ColorScheme::SetCapacity_0(CCINIClass * aP1, unsigned char * a2)
 {
-  int v3; // edi
+  CCINIClass * v3;
   _BYTE *v5; // esi
   _BYTE *v6; // ebx
   int v10; // eax

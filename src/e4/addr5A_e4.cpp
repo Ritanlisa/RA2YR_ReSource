@@ -960,7 +960,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
               v43 = *(_DWORD *)(aP0 + 36); /*0x5a4e3b*/
               IDA_LODWORD(v46) = ((__int16)v43 - IDA_LODWORD(v46)) * ((__int16)v43 - IDA_LODWORD(v46)) /*0x5a4e57*/
                            + (IDA_SHIWORD(v43) - v28) * (IDA_SHIWORD(v43) - v28);
-              v46 = Math::Sqrt((double)SLODWORD(v46)); /*0x5a4e67*/
+              v46 = Math::Sqrt((double)IDA_SLODWORD(v46)); /*0x5a4e67*/
               v49 = (unsigned int)Random::State(&g_Randomizer); /*0x5a4e78*/
               v29 = IDA_SHIWORD(v39); /*0x5a4e88*/
               v30 = (__int16)v39; /*0x5a4e93*/
@@ -1000,7 +1000,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
         v25 = IDA_LOBYTE(v44) + 1; /*0x5a4f3a*/
         ++IDA_LODWORD(v44); /*0x5a4f3e*/
       }
-      while ( SLODWORD(v44) < 8 ); /*0x5a4f42*/
+      while ( IDA_SLODWORD(v44) < 8 ); /*0x5a4f42*/
       v37 = ++v45; /*0x5a4f4e*/
       v38 = (__int16 *)PriorityQueue::Pop(v9); /*0x5a4f53*/
       v7 = v41; /*0x5a4f58*/

@@ -17,6 +17,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/TriggerTypeClass_e4.hpp"
 
 // 0x4C4EF0
 namespace gamemd {
@@ -314,7 +315,7 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6e86b6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e86bf*/
-      *(void **)aP0 = (void*)&TaskForceClass_vftable; /*0x6e86c4*/
+      *(void ** *)aP0 = (void*)&TaskForceClass_vftable; /*0x6e86c4*/
       aP0[1] = (void*)&TaskForceClass_vftable; /*0x6e86ca*/
       aP0[2] = (void*)&TaskForceClass_vftable; /*0x6e86d1*/
       aP0[3] = (void*)&TaskForceClass_vftable; /*0x6e86d8*/

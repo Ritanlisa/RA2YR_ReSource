@@ -81,9 +81,9 @@ struct TechnoTypeClass {
     unsigned char u8_B2;  // 0xB2
     unsigned char u8_B3;  // 0xB3
     char TurretVoxel[4];  // 0xB4
-    char q0B8[4];  // 0xB8
+    unsigned int q0B8;  // 0xB8
     unsigned char q0B9;  // 0xB9
-    char ChargerTurrets[72];  // 0xBC
+    unsigned int ChargerTurrets;  // 0xBC
     AbstractClass* q0C0;  // 0xC0
     unsigned int q0C3;  // 0xC3
     unsigned int u32_C4;  // 0xC4
@@ -627,7 +627,7 @@ struct TechnoTypeClass {
     unsigned int q7A4;  // 0x7A4
     unsigned int ;  // 0x7A8
     unsigned char q7AC;  // 0x7AC
-    char DamageSmokeOffset[12];  // 0x7B0
+    unsigned int DamageSmokeOffset;  // 0x7B0
     unsigned int u32_7B4;  // 0x7B4
     unsigned int u32_7B8;  // 0x7B8
     bool DamSmkOffScrnRel;  // 0x7BC
@@ -638,9 +638,9 @@ struct TechnoTypeClass {
     unsigned int RefinerySmokeOffsetOne;  // 0x7CC
     unsigned int u32_7D0;  // 0x7D0
     unsigned int u32_7D4;  // 0x7D4
-    char RefinerySmokeOffsetTwo[12];  // 0x7D8
+    unsigned int RefinerySmokeOffsetTwo;  // 0x7D8
     unsigned int u32_7DC;  // 0x7DC
-    char RefinerySmokeOffsetThree[12];  // 0x7E4
+    unsigned int RefinerySmokeOffsetThree;  // 0x7E4
     unsigned int u32_7E8;  // 0x7E8
     unsigned int u32_7EC;  // 0x7EC
     char RefinerySmokeOffsetFour[12];  // 0x7F0
@@ -2373,6 +2373,23 @@ struct TechnoTypeClass {
     unsigned int IntList_A_Items2;
     unsigned int q75C;
     unsigned int q7A8;
+    unsigned int IntList_A_Capacity4;
+    unsigned int IntList_A_Items3;
+    unsigned int IntList_A_Items4;
+    unsigned int IntList_C_Capacity4;
+    unsigned int q5042;
+    unsigned int q5043;
+    unsigned int q5045;
+    unsigned int q5046;
+    unsigned int q5047;
+    unsigned int q5049;
+    unsigned int q5080;
+    unsigned int q5081;
+    unsigned int q5082;
+    unsigned int q5083;
+    unsigned int q5084;
+    unsigned int q5085;
+    unsigned int q5086;
 // --- flat members (END) ---
     AbstractClass * * Construct(ObjectTypeClass * aP1);
     AbstractClass * * GetByTypeAndIndex(int a1, int a2);

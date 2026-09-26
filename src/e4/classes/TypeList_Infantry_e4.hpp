@@ -29,6 +29,7 @@ struct TypeList_Infantry {
     unsigned char q050;  // 0x50
     unsigned int q054;  // 0x54
     unsigned int IsInitialized;
+    unsigned int Capacity;
 // --- flat members (END) ---
     void ddtor();  // 0x5128A0
     unsigned int GetIndex(int a2);  // 0x5128D0

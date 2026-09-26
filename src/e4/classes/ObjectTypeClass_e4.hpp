@@ -65,7 +65,7 @@ struct ObjectTypeClass {
     unsigned int tail_95;  // 0x95
     Color* q098;  // 0x98
     unsigned char unused_9B;  // 0x9B
-    char Armor[4];  // 0x9C
+    unsigned int Armor;  // 0x9C
     int q0A0;  // 0xA0
     unsigned int ;  // 0xA4
     bool ImageAllocated;  // 0xA8
@@ -215,17 +215,17 @@ struct ObjectTypeClass {
     void* q258;  // 0x258
     void* q25C;  // 0x25C
     void* q260;  // 0x260
-    char q264[4];  // 0x264
+    unsigned int q264;  // 0x264
     void* q268;  // 0x268
     void* q26C;  // 0x26C
     void* q270;  // 0x270
     void* q274;  // 0x274
-    char q278[4];  // 0x278
+    unsigned int q278;  // 0x278
     void* q27C;  // 0x27C
     void* q280;  // 0x280
     void* q284;  // 0x284
     void* q288;  // 0x288
-    char q28C[4];  // 0x28C
+    unsigned int q28C;  // 0x28C
     void* q290;  // 0x290
     unsigned char q294;  // 0x294
     void* q298;  // 0x298
@@ -1696,6 +1696,8 @@ struct ObjectTypeClass {
     unsigned int u32_DC8;
     unsigned int q0A4;
     unsigned int u32_DC9;
+    unsigned int q0E00;
+    unsigned int q0E01;
 // --- flat members (END) ---
     AbstractClass * * Load2DArt();
     BOOL loadTypeMember_5717AE0();

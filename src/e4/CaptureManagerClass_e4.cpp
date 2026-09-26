@@ -16,6 +16,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
 
 // 0x4717D0
 namespace gamemd {
@@ -366,7 +367,7 @@ namespace gamemd {
 AnimClass * * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5)
 {
   int i; // ebx
-  _DWORD *v9; // ebp
+  unsigned int v9;
   int v10; // ecx
   int v11; // edx
   int v12; // eax

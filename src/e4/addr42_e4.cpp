@@ -894,7 +894,7 @@ int E4Recv_425670::ConstructionPositionTracker()
       v43 = *v42; /*0x425c45*/
       IDA_LODWORD(v48) = *(_DWORD *)v3; /*0x425c47*/
       IDA_LODWORD(v49) = v43; /*0x425c4b*/
-      v44 = Math::CalcAngle((double)v42[1] - (double)*(int *)&this->_pad_D8[56], (double)SLODWORD(v48) - (double)v43); /*0x425c6a*/
+      v44 = Math::CalcAngle((double)v42[1] - (double)*(int *)&this->_pad_D8[56], (double)IDA_SLODWORD(v48) - (double)v43); /*0x425c6a*/
       IDA_LOWORD(v49) = Math::RoundToInt((v44 - 1.570796326794897) * -10430.06004058427); /*0x425c83*/
       v41 = *(_DWORD *)(this->MissionTimer_StartTime + 848) /*0x425ca3*/
           * ((-1 - (((unsigned int)((IDA_LODWORD(v49) >> 12) + 1) >> 1) & 7)) & 7);

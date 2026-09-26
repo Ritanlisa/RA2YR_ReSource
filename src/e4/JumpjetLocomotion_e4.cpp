@@ -14,12 +14,14 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x4B0AD0
 namespace gamemd {
 AbstractClass * * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
 {
-  IUnknown * v3;
+  unsigned int v3;
   void * v5;
   int v6; // ebp
   int v7; // eax
@@ -1245,7 +1247,7 @@ LABEL_31:
   int v23 = this->q00C;
   IDA_LOWORD(v216) = this->ptr_34 / 256;
   IDA_WORD1(v216) = this->u32_38 / 256;
-  char v24 = FootClass::MovementStep(v23, (int)v16, SLODWORD(v216), 0, 0, v213);
+  char v24 = FootClass::MovementStep(v23, (int)v16, IDA_SLODWORD(v216), 0, 0, v213);
   _DWORD * v25 = this->q00C;
   if ( !v24 )
   {
@@ -1664,7 +1666,7 @@ LABEL_125:
   v91 = this->q00C;
   IDA_LODWORD(v216) = v90;
   (*(void (__thiscall **)(int, int))(*(_DWORD *)v91 + 292))(v91, 1);
-  if ( SLODWORD(v216) < 7
+  if ( IDA_SLODWORD(v216) < 7
     && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3220)
     || (IDA_LODWORD(v216) == 5 || IDA_LODWORD(v216) == 4)
     && *(_BYTE *)((*(int (__thiscall **)(_DWORD))(*this->q00C + 132))(this->q00C) + 3368)
@@ -2065,7 +2067,7 @@ LABEL_242:
     v160 = Math::Sqrt(
              (double)(v158 - v159) * (double)(v158 - v159)
            + (double)(v157 - v155) * (double)(v157 - v155)
-           + (double)SLODWORD(v216) * (double)SLODWORD(v216));
+           + (double)IDA_SLODWORD(v216) * (double)IDA_SLODWORD(v216));
     if ( (int)Math::RoundToInt(v160) <= 512 )
     {
 LABEL_262:
@@ -2076,7 +2078,7 @@ LABEL_262:
     int v162 = this->q00C;
     IDA_LOWORD(v216) = this->ptr_34 / 256;
     IDA_WORD1(v216) = this->u32_38 / 256;
-    result = FootClass::MovementStep(v162, v155, SLODWORD(v216), v161 != 0, 0, v213);
+    result = FootClass::MovementStep(v162, v155, IDA_SLODWORD(v216), v161 != 0, 0, v213);
     if ( !result )
     {
       int v163 = this->q00C;
@@ -2872,7 +2874,7 @@ void* JumpjetLocomotion::UpdateFacing()
     v21 = *(_DWORD *)(v20 + 8); /*0x54d2f5*/
     IDA_LODWORD(v58) = GroundHeight + 4 * dword_ABC5E8; /*0x54d2f8*/
     v60 = v21; /*0x54d2fc*/
-    if ( (double)SLODWORD(v58) - *(float *)(this + 40) <= (double)v21 ) /*0x54d312*/
+    if ( (double)IDA_SLODWORD(v58) - *(float *)(this + 40) <= (double)v21 ) /*0x54d312*/
       GroundHeight += dword_ABC5DC; /*0x54d314*/
   }
   v22 = *(_DWORD *)(this + 80); /*0x54d31a*/
@@ -2889,7 +2891,7 @@ void* JumpjetLocomotion::UpdateFacing()
   }
   IDA_LODWORD(v58) = v23; /*0x54d358*/
   v54 = 0; /*0x54d35e*/
-  if ( v23 < SLODWORD(v57) ) /*0x54d363*/
+  if ( v23 < IDA_SLODWORD(v57) ) /*0x54d363*/
   {
     v24 = (*(int (__thiscall **)(_DWORD))(**(_DWORD **)(this + 12) + 456))(*(_DWORD *)(this + 12)); /*0x54d377*/
     v25 = *(_DWORD *)(this + 12) + 156; /*0x54d379*/
@@ -2918,7 +2920,7 @@ void* JumpjetLocomotion::UpdateFacing()
       (*(void (__thiscall **)(int, double *))(*(_DWORD *)v29 + 244))(v29, &v59); /*0x54d42f*/
       *(_BYTE *)(*(_DWORD *)(this + 12) + 140) = 0; /*0x54d438*/
     }
-    if ( (double)SLODWORD(v57) >= (double)SLODWORD(v58) + *(float *)(this + 36) ) /*0x54d451*/
+    if ( (double)IDA_SLODWORD(v57) >= (double)IDA_SLODWORD(v58) + *(float *)(this + 36) ) /*0x54d451*/
       v56 = Math::RoundToInt((double)v56 + *(float *)(this + 36)); /*0x54d471*/
     else
       v56 += IDA_LODWORD(v57) - v23; /*0x54d45f*/
@@ -2926,9 +2928,9 @@ void* JumpjetLocomotion::UpdateFacing()
     v54 = 1; /*0x54d4bb*/
     goto LABEL_50; /*0x54d4bb*/
   }
-  if ( v23 > SLODWORD(v57) )
+  if ( v23 > IDA_SLODWORD(v57) )
   {
-    if ( (double)SLODWORD(v57) <= (double)SLODWORD(v58) - *(float *)(this + 36) ) /*0x54d48b*/
+    if ( (double)IDA_SLODWORD(v57) <= (double)IDA_SLODWORD(v58) - *(float *)(this + 36) ) /*0x54d48b*/
     {
       v56 = Math::RoundToInt((double)v56 - *(float *)(this + 36)); /*0x54d4a3*/
       v30 = v56; /*0x54d4a7*/
@@ -2952,7 +2954,7 @@ void* JumpjetLocomotion::UpdateFacing()
   if ( *v33 != (_WORD)v31 || v33[1] != (_WORD)v32 ) /*0x54d4fb*/
   {
     v34 = IDA_LODWORD(v57); /*0x54d4fd*/
-    if ( v23 < SLODWORD(v57) / 2 ) /*0x54d50a*/
+    if ( v23 < IDA_SLODWORD(v57) / 2 ) /*0x54d50a*/
     {
       *(_DWORD *)(this + 112) = 0; /*0x54d50e*/
       *(_DWORD *)(this + 116) = 0; /*0x54d511*/
@@ -2978,7 +2980,7 @@ void* JumpjetLocomotion::UpdateFacing()
   v58 = (double)(*(__int16 *)ProgressTimer::GetValue((_WORD *)(this + 84), &v56) - 0x3FFF) * -0.00009587672516830327; /*0x54d5a2*/
   v38 = IDA_HIDWORD(v58); /*0x54d5aa*/
   v39 = IDA_LODWORD(v58); /*0x54d5ae*/
-  v57 = (double)SLODWORD(v57); /*0x54d5b4*/
+  v57 = (double)IDA_SLODWORD(v57); /*0x54d5b4*/
   v59 = (double)v62; /*0x54d5bc*/
   v40 = Math::SinCos(v58); /*0x54d5c0*/
   IDA_LODWORD(v58) = Math::RoundToInt(v59 - v40 * v57); /*0x54d5d4*/

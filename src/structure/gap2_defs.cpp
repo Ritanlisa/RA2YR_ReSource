@@ -270,7 +270,7 @@ void* BuildingLightClass::CTOR(int a1) {
     IDA_LODWORD(v31) = -v15; /*0x435a34*/
     v33 = (double)(*(__int16 *)ProgressTimer::GetValue((_WORD *)(a1 + 904), (_DWORD *)&v34 + 1) - 0x3FFF) /*0x435a54*/
         * -0.00009587672516830327;
-    v32 = (double)SLODWORD(v31); /*0x435a65*/
+    v32 = (double)IDA_SLODWORD(v31); /*0x435a65*/
     v35 = (double)v37; /*0x435a6f*/
     v16 = Math::SinCos(v33); /*0x435a73*/
     v28 = Math::RoundToInt(v35 - v16 * v32); /*0x435a8c*/
@@ -809,7 +809,7 @@ int BuildingLightClass::SD_vt23() {
     v74 = v11; /*0x436277*/
     v12 = Math::Sqrt( /*0x4362a3*/
             (double)v8 * (double)v8
-          + (double)SLODWORD(v11) * (double)SLODWORD(v11)
+          + (double)IDA_SLODWORD(v11) * (double)IDA_SLODWORD(v11)
           + (double)(v9 - v7) * (double)(v9 - v7));
     if ( (int)Math::RoundToInt(v12) >= g_RulesClass_Instance->BuildPower[0] ) /*0x4362bc*/
     {
@@ -1266,7 +1266,7 @@ namespace gamemd { int SuperWeapon::CreateUnits() {
       if ( result >= 0 )
       {
         ppv = ppv;
-        result = Particle::Init((int)ppv, SLODWORD(v23), v2, v8, v7, v6, v19, 1);
+        result = Particle::Init((int)ppv, IDA_SLODWORD(v23), v2, v8, v7, v6, v19, 1);
         if ( ppv )
         {
           (*(void (__thiscall **)(_DWORD *))(*ppv + 212))(ppv);
@@ -1400,7 +1400,7 @@ int SuperWeapon::CreateNukePayload() {
   if ( result >= 0 ) /*0x46b3e0*/
   {
     ppv = ppv; /*0x46b406*/
-    result = Particle::Init((int)ppv, SLODWORD(v23), v2, v8, v7, v6, v19, 1); /*0x46b408*/
+    result = Particle::Init((int)ppv, IDA_SLODWORD(v23), v2, v8, v7, v6, v19, 1); /*0x46b408*/
     if ( ppv ) /*0x46b40f*/
     {
       (*(void (__thiscall **)(_DWORD *))(*ppv + 212))(ppv); /*0x46b419*/

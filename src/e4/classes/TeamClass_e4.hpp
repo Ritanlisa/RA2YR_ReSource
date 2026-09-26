@@ -1603,6 +1603,7 @@ struct TeamClass {
     unsigned int objectTypeFlags;
     unsigned int q0103;
     unsigned int uniqueId3;
+    unsigned int GetSize;
 // --- flat members (END) ---
     AbstractClass * * DestroyAllMembers(TechnoClass * aP1);
     AbstractClass * * FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2);

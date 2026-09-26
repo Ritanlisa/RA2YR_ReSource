@@ -15,6 +15,12 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Sidebar_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/TeamTypeClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x5D6130
 namespace gamemd {

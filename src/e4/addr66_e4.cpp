@@ -314,7 +314,7 @@ LABEL_23:
           else
             eax24 -= v14;
         }
-        if ( (double)(IDA_LODWORD(var84_4) - eax24) / (double)SLODWORD(var84_4) == 1.0 )
+        if ( (double)(IDA_LODWORD(var84_4) - eax24) / (double)IDA_SLODWORD(var84_4) == 1.0 )
         {
 LABEL_29:
           int v15 = v126;
@@ -387,7 +387,7 @@ LABEL_17:
           v39 -= *(_DWORD *)&HouseClass_Player[45112] - (_DWORD)v40;
       }
       IDA_LODWORD(desiredFacing_4) = IDA_LODWORD(var84_4) - v39;
-      if ( (double)(IDA_LODWORD(var84_4) - v39) / (double)SLODWORD(var84_4) != 1.0 )
+      if ( (double)(IDA_LODWORD(var84_4) - v39) / (double)IDA_SLODWORD(var84_4) != 1.0 )
       {
   double v47; // st5
         st7_69 = *(float *)&v113->__pad_0[8] * 1.570796326794897;
@@ -405,7 +405,7 @@ LABEL_17:
               v49 -= *(_DWORD *)&HouseClass_Player[45112] - (_DWORD)v51;
           }
           IDA_LODWORD(var64_4) = IDA_LODWORD(desiredFacing_4) - v49;
-          v47 = (double)(IDA_LODWORD(desiredFacing_4) - v49) / (double)SLODWORD(desiredFacing_4);
+          v47 = (double)(IDA_LODWORD(desiredFacing_4) - v49) / (double)IDA_SLODWORD(desiredFacing_4);
         }
         else
         {
@@ -501,7 +501,7 @@ LABEL_63:
                                           + (double)(v62 - IDA_LODWORD(desiredFacing_4))
                                           * (double)(v62 - IDA_LODWORD(desiredFacing_4))));
         IDA_LODWORD(desiredFacing_4) = Math::RoundToInt(v64);
-        double v65 = (double)SLODWORD(desiredFacing_4) / (double)*(int *)(a1 + 84);
+        double v65 = (double)IDA_SLODWORD(desiredFacing_4) / (double)*(int *)(a1 + 84);
         int v66 = *(_DWORD *)(ebx90[3] + 156);
         int v67 = *(_DWORD *)(ebx90[3] + 160);
         v119 = *(ObjectClass **)(ebx90[3] + 164);
@@ -511,7 +511,7 @@ LABEL_63:
         var84_4 = v65;
         var74_4 = 1.0 - v65;
         IDA_LODWORD(desiredFacing_4) = v69 * v69 + v68 * v68;
-        double v70 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)SLODWORD(desiredFacing_4)));
+        double v70 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)IDA_SLODWORD(desiredFacing_4)));
         if ( v70 <= 0.0 )
           double v71 = -1.570796326794897;
         else
@@ -558,7 +558,7 @@ LABEL_63:
       int v83 = *eax100;
       IDA_LODWORD(desiredFacing_4) = *v60;
       IDA_LODWORD(var84_4) = v83;
-      *((double *)&_8 + 1) = (double)SLODWORD(desiredFacing_4) - (double)v83;
+      *((double *)&_8 + 1) = (double)IDA_SLODWORD(desiredFacing_4) - (double)v83;
       *(double *)&_8 = (double)eax100[1] - (double)(int)v60[1];
       double v84 = Math::CalcAngle((AbstractClass *)_8, *(double *)((char *)&_8 + 4));
       IDA_LOWORD(desiredFacing_4) = Math::RoundToInt((v84 - 1.570796326794897) * -10430.06004058427);
@@ -618,12 +618,12 @@ LABEL_119:
                                                       (IUnknown *)v128)
                                       - 0x3FFF);
         *(double *)&v128[1] = (double)(int)desiredFacing * -0.00009587672516830327;
-        var64_4 = (double)SLODWORD(var64_4);
-        var74_4 = (double)SHIDWORD(var84_4);
+        var64_4 = (double)IDA_SLODWORD(var64_4);
+        var74_4 = (double)IDA_SHIDWORD(var84_4);
         double v104 = Math::SinCos(v128[1]);
         desiredFacing = (ObjectClass *)Math::RoundToInt(var74_4 - v104 * var64_4);
         double v105 = Math::ArcTan2(v128[1]);
-        int v106 = Math::RoundToInt(v105 * var64_4 + (double)SLODWORD(var84_4));
+        int v106 = Math::RoundToInt(v105 * var64_4 + (double)IDA_SLODWORD(var84_4));
         aP0_4 = *(float *)(a1 - 4 + 84);
         v129.Y = (int)desiredFacing;
         v129.Z = (int)v121;
@@ -663,7 +663,7 @@ LABEL_119:
       ecx102 = v86[7] - *(_DWORD *)(v86[3] + 160);
       v127 = v86[8] - *(_DWORD *)(v86[3] + 164);
       IDA_LODWORD(desiredFacing_4) = (_DWORD)v88 * (_DWORD)v88 + ecx102 * ecx102;
-      double v89 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)SLODWORD(desiredFacing_4)));
+      double v89 = Math::Sqrt((AbstractClass *)COERCE_UNSIGNED_INT64((double)IDA_SLODWORD(desiredFacing_4)));
       if ( v89 <= 0.0 )
         double v90 = -1.570796326794897;
       else
@@ -742,11 +742,11 @@ LABEL_38:
           v30 -= edi43;
       }
       IDA_LODWORD(var84_4) = edx41 - v30;
-      if ( (double)(edx41 - v30) / (double)SLODWORD(desiredFacing_4) != 1.0 )
+      if ( (double)(edx41 - v30) / (double)IDA_SLODWORD(desiredFacing_4) != 1.0 )
       {
         v123 = (ObjectClass *)((char *)v123 + v113->abstractFlags);
-        IDA_LOWORD(v115) = SLODWORD(var74_4) / 256;
-        IDA_HIWORD(v115) = SHIDWORD(var74_4) / 256;
+        IDA_LOWORD(v115) = IDA_SLODWORD(var74_4) / 256;
+        IDA_HIWORD(v115) = IDA_SHIDWORD(var74_4) / 256;
         IDA_LODWORD(var64_4) = v115;
         if ( LayerClass::CoordinatesLegal(&stru_87C374[13428], (IUnknown *)&var64_4) )
           (*(void (__thiscall **)(_DWORD, double *))(**(_DWORD **)(a1 + 8) + 436))(*(_DWORD *)(a1 + 8), &var74_4);

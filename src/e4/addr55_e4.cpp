@@ -304,7 +304,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
     v8 = *((float *)v1 + 21) - *((float *)v1 + 22); /*0x550c01*/
     v65 = *((float *)v1 + 19); /*0x550c04*/
     v58 = IDA_LODWORD(v65) - v7; /*0x550c0a*/
-    v65 = v8 * (double)(IDA_LODWORD(v65) - v7) / (double)SLODWORD(v65) + *((float *)v1 + 22); /*0x550c19*/
+    v65 = v8 * (double)(IDA_LODWORD(v65) - v7) / (double)IDA_SLODWORD(v65) + *((float *)v1 + 22); /*0x550c19*/
   }
   v58 = Math::RoundToInt(v65 * 255.0); /*0x550c2c*/
   v9 = *((_BYTE *)v1 + 33); /*0x550c30*/
@@ -504,16 +504,16 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
     *(float *)&v42 = (float)v63; /*0x5510f4*/
     Tactical::SetCellTransform((char *)v77, 1, v42, v48, v38, 0, 1065353216); /*0x5510f9*/
     v39 = v72; /*0x5510fe*/
-    *(float *)&v49 = (float)SHIDWORD(v62); /*0x55110f*/
+    *(float *)&v49 = (float)IDA_SHIDWORD(v62); /*0x55110f*/
     *(float *)&v43 = (float)(int)v62; /*0x55111e*/
     Tactical::SetCellTransform((char *)v77, 2, v43, v49, v72, 1065353216, 0); /*0x551123*/
     *(float *)&v50 = (float)v64; /*0x551135*/
     *(float *)&v44 = (float)v63; /*0x551144*/
     Tactical::SetCellTransform((char *)v78, 0, v44, v50, v38, 0, 1065353216); /*0x551149*/
-    *(float *)&v51 = (float)SHIDWORD(v67); /*0x55115e*/
+    *(float *)&v51 = (float)IDA_SHIDWORD(v67); /*0x55115e*/
     *(float *)&v45 = (float)(int)v67; /*0x55116d*/
     Tactical::SetCellTransform((char *)v78, 1, v45, v51, v39, 1065353216, 1065353216); /*0x551172*/
-    *(float *)&v52 = (float)SHIDWORD(v62); /*0x551184*/
+    *(float *)&v52 = (float)IDA_SHIDWORD(v62); /*0x551184*/
     *(float *)&v46 = (float)(int)v62; /*0x551193*/
     Tactical::SetCellTransform((char *)v78, 2, v46, v52, v39, 1065353216, 0); /*0x551198*/
     StructTable::Append(dword_8A0E10, v77); /*0x5511ab*/

@@ -115,7 +115,7 @@ void ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
   v21 = (double)g_DSurface_WindowOffset * 0.5; /*0x750afc*/
   v18 = v19 + v19; /*0x750b06*/
   IDA_LODWORD(a3) = 60 * sub_405130(IDA_LODWORD(v4)); /*0x750b1a*/
-  v16 = (float)SLODWORD(a3); /*0x750b22*/
+  v16 = (float)IDA_SLODWORD(a3); /*0x750b22*/
   v6 = sub_405160(IDA_LODWORD(v4)); /*0x750b2b*/
   if ( (v6 & 0x800) == 0 ) /*0x750b30*/
     goto LABEL_7; /*0x750b30*/
