@@ -162,11 +162,12 @@ struct CCFileClass {
     int GetFileSize();
     void ProcessStream(unsigned int a1);
     static double Construct3(...);  // C2597 interim stub
-    static double Open(...);  // C2597 interim stub
+    bool Open(int mode);  // open file with mode
     static double Read(...);  // C2597 interim stub
     static double ReadEntireFile(...);  // C2597 interim stub
     static double Reset(...);  // C2597 interim stub
     static double GetSize(...);  // C2597 interim stub
+    void Construct2(void* filename);  // init file object with name
 };
 
 } // namespace gamemd

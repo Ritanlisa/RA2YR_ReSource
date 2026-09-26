@@ -229,4 +229,9 @@ double WTFMode::Shutdown(...) { return 0; }
 double WinAPI::Wrapper(...) { return 0; }
 double WordVector::Constructor(...) { return 0; }
 
+void CCFileClass::Construct2(void* filename) { }
+bool CCFileClass::Open(int mode) { return false; }
+int CCINIClass::Load(CCINIClass* self, void* file, int a3, int a4) { return 0; }
+void BufferIOFileClass::Dtor(void* obj) { }
+
 } // namespace gamemd

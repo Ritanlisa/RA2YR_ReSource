@@ -202,6 +202,7 @@ struct CCINIClass {
     int InitFromINIEVA();
     int ReadTypeList(char * a1, CCINIClass * a2);
     CCINIClass();
+    static int Load(CCINIClass* self, void* file, int a3, int a4);  // load INI from file
 };
 
 } // namespace gamemd
