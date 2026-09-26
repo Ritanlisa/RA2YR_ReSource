@@ -143,7 +143,7 @@ void Radar::UpdateReveal(char a1, IUnknown * aP1)
 namespace gamemd {
 int Radar::IsRadarTargetEligible()
 {
-  unsigned int v1; // eax
+  void * v1;
   int v2; // eax
 
   v1 = this->q20C; /*0x5090f0*/

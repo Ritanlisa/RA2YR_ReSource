@@ -122,7 +122,7 @@ struct HouseTypeClass {
     float q144;  // 0x144
     float q148;  // 0x148
     void* q14C;  // 0x14C
-    char q150[4];  // 0x150
+    unsigned int q150;  // 0x150
     UnitTypeClass** q154;  // 0x154
     char q158[4];  // 0x158
     unsigned char u8_159;  // 0x159

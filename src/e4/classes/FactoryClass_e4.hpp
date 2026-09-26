@@ -47,7 +47,7 @@ struct FactoryClass {
     unsigned char q04F;  // 0x4F
     int u32_50;  // 0x50
     unsigned int q054;  // 0x54
-    void* q058;  // 0x58
+    unsigned int q058;  // 0x58
     unsigned int q05C;  // 0x5C
     unsigned char u8_5D;  // 0x5D
     unsigned char m_align_5E;  // 0x5E

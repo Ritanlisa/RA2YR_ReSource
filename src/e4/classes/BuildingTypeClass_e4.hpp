@@ -203,7 +203,7 @@ struct BuildingTypeClass {
     bool q238;  // 0x238
     bool q239;  // 0x239
     bool q23A;  // 0x23A
-    char q23B[3];  // 0x23B
+    unsigned int q23B;  // 0x23B
     unsigned char q23E;  // 0x23E
     int LineTrailColorDecrement;  // 0x240
     char VoxelCaches[80];  // 0x244
@@ -526,7 +526,7 @@ struct BuildingTypeClass {
     AbstractClass* q65C;  // 0x65C
     int WalkRate;  // 0x660
     int IdleRate;  // 0x664
-    char VeteranAbilities[4];  // 0x668
+    unsigned int VeteranAbilities;  // 0x668
     unsigned char q66C;  // 0x66C
     int q670;  // 0x670
     int q674;  // 0x674

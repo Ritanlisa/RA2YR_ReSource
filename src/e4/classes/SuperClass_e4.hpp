@@ -33,7 +33,7 @@ struct SuperClass {
     void* ;  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int q03B;  // 0x3B
-    unsigned int ;  // 0x3C
+    void* ;  // 0x3C
     unsigned int q03D;  // 0x3D
     bool BlinkState;  // 0x40
     bool q042;  // 0x42
@@ -54,7 +54,7 @@ struct SuperClass {
     void* Granted;  // 0x6D
     void* OneTime;  // 0x6E
     void* IsCharged;  // 0x6F
-    unsigned int ;  // 0x70
+    unsigned int q070;  // 0x70
     unsigned int q074;  // 0x74
     int q078;  // 0x78
     unsigned int q07C;  // 0x7C

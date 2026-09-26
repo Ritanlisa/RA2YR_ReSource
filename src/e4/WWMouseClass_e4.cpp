@@ -278,7 +278,7 @@ namespace gamemd {
 unsigned int * WWMouseClass::updatePosition(unsigned int * a2)
 {
   int v3; // edx
-  int v4; // ecx
+  void * v4;
 
   v3 = *(unsigned int *)&this->q01C; /*0x7ba364*/
   v4 = this->q020; /*0x7ba367*/

@@ -1579,6 +1579,7 @@ struct Tactical {
     unsigned int u32_49;
     unsigned int vtable2;
     unsigned int vtable4;
+    unsigned int q4696;
 // --- flat members (END) ---
     char * ConstructTacticalSurface();  // 0x42A6D0
     int * CreateTacticalLightSurface(int * a2,  int * a1,  IUnknown * aP2,  int * a3,  int * a4,  IUnknown * aP5);    // 0x484050

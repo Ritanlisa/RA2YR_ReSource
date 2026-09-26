@@ -418,7 +418,7 @@ namespace gamemd {
 int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * v9, unsigned short * a6)
 {
   int v8; // eax
-  unsigned int * v9;
+  unsigned int v9;
   int v10; // ecx
   int v11; // edx
   int v12; // ecx

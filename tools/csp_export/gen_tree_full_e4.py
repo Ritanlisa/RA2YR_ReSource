@@ -43,6 +43,25 @@ ALIAS_DEFS = {
     'Point2D': [('int', 'x'), ('int', 'y')],
 }
 
+# math.hpp-defined names: e4 TUs get these from core/math.hpp include,
+# _tree_full must NOT redefine them (C2989 template clash / C2011 redef)
+MATH_HPP_NAMES = set()
+try:
+    _mhp = ROOT / 'src' / 'core' / 'math.hpp'
+    for _ln in _mhp.read_text(encoding='utf-8', errors='replace').splitlines():
+        _mm = re.match(
+            r'^\s*(?:struct|class|using|enum(?:\s+class)?)\s+([A-Za-z_]\w*)',
+            _ln)
+        if _mm:
+            MATH_HPP_NAMES.add(_mm.group(1))
+        _mm = re.match(
+            r'^template[^\n]*\n[ \t]*(?:class|struct)\s+([A-Za-z_]\w*)',
+            _ln + '\n')
+        if _mm:
+            MATH_HPP_NAMES.add(_mm.group(1))
+except OSError:
+    pass
+
 PRIM = {'unsigned int', 'int', 'unsigned short', 'short', 'unsigned char',
         'signed char', 'char', 'bool', 'float', 'double', 'unsigned long',
         'long', 'unsigned long long', 'long long', 'void',
@@ -57,6 +76,27 @@ WINDOWS = {'DWORD', 'WORD', 'BYTE', 'HWND', 'HDC', 'HINSTANCE', 'HANDLE',
 
 RESERVED = PRIM | WINDOWS | {'void', 'wchar_t', 'va_list', 'FILE'}
 
+
+
+# tree templates/enums/aliases: not visible in e4 TUs, degrade ptr to void*
+ENUM_RE = re.compile(r'^[ 	]*enum(?:\s+class)?\s+([A-Za-z_]\w*)', re.M)
+ALIAS_RE = re.compile(r'^[ 	]*using\s+([A-Za-z_]\w*)\s*=', re.M)
+TMPL_RE = re.compile(
+    r'^template[^\n]*\n[ \t]*(?:class|struct)\s+([A-Za-z_]\w*)',
+    re.M)
+FTMPL_RE = re.compile(
+    r'^template[^\n]*\n[ \t]*[A-Za-z_][\w\s\*<>,:&]*?'
+    r'\b([A-Za-z_]\w*)\s*\(',
+    re.M)
+tree_special = set()
+for p in sorted(SRC.rglob('*.hpp')):
+    s = str(p)
+    if 'e4' in s or 'csp_canon' in s or '_generated' in s: continue
+    try: t2 = p.read_text(encoding='latin-1', errors='replace')
+    except OSError: continue
+    if 'namespace ra2' in t2 or 'namespace gamemd' not in t2: continue
+    tree_special |= set(ENUM_RE.findall(t2)) | set(ALIAS_RE.findall(t2)) | set(TMPL_RE.findall(t2))
+    tree_special |= {n for n in FTMPL_RE.findall(t2) if not n.isupper()}
 
 def cpptype(t, size):
     """Map a mtab type string to compilable C++ for the e4 universe.
@@ -79,11 +119,36 @@ def cpptype(t, size):
 
 
 # ---- collect targets: every mtab class not already defined in e4 ----
+# tree classes defined in tree headers must be EXCLUDED: TUs that include
+# both e4 headers and tree headers would see double definitions (C2011)
+ENUM_RE_TF = re.compile(r'^[ \t]*enum(?:\s+class)?\s+([A-Za-z_]\w*)', re.M)
+ALIAS_RE_TF = re.compile(r'^[ \t]*using\s+([A-Za-z_]\w*)\s*=', re.M)
+TMPL_RE_TF = re.compile(
+    r'^template[^\n]*\n[ \t]*(?:class|struct)\s+([A-Za-z_]\w*)', re.M)
+CLS_RE_TF = re.compile(r'^[ \t]*(?:class|struct)\s+([A-Za-z_]\w*)', re.M)
+tree_defined = set()
+for p in sorted(SRC.rglob('*.hpp')):
+    s = str(p)
+    if 'e4' in s or 'csp_canon' in s or '_generated' in s:
+        continue
+    try:
+        t2 = p.read_text(encoding='latin-1', errors='replace')
+    except OSError:
+        continue
+    if 'namespace ra2' in t2 or 'namespace gamemd' not in t2:
+        continue
+    tree_defined |= set(CLS_RE_TF.findall(t2))
+    tree_defined |= set(ENUM_RE_TF.findall(t2))
+    tree_defined |= set(ALIAS_RE_TF.findall(t2))
+    tree_defined |= set(TMPL_RE_TF.findall(t2))
+
 targets = sorted(n for n in mtab
                  if re.match(r'^[A-Za-z_]\w*$', n)
                  and not n.startswith('__')
                  and not n.isupper()
                  and n not in RESERVED
+                 and n not in MATH_HPP_NAMES
+                 and n not in tree_defined
                  and n not in have
                  and n not in ALIAS_DEFS)
 

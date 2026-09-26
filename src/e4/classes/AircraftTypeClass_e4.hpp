@@ -507,7 +507,7 @@ struct AircraftTypeClass {
     AbstractClass* q65C;  // 0x65C
     int WalkRate;  // 0x660
     int IdleRate;  // 0x664
-    char VeteranAbilities[4];  // 0x668
+    unsigned int VeteranAbilities;  // 0x668
     unsigned char q66C;  // 0x66C
     int ThreatPosed;  // 0x670
     int Points;  // 0x674
@@ -619,7 +619,7 @@ struct AircraftTypeClass {
     unsigned char q7DC;  // 0x7DC
     unsigned int RefinerySmokeOffsetThree;  // 0x7E4
     unsigned char q7E8;  // 0x7E8
-    char RefinerySmokeOffsetFour[4];  // 0x7F0
+    unsigned int RefinerySmokeOffsetFour;  // 0x7F0
     unsigned char q7F4;  // 0x7F4
     int ShadowIndex;  // 0x7FC
     int Storage;  // 0x800

@@ -1897,6 +1897,10 @@ struct HouseClass {
     static double ProcessPowerDrain(...);  // C2597 interim stub
     static double ShouldDisableCameo(...);  // C2597 interim stub
     static double UpdateProduction(...);  // C2597 interim stub
+    LABEL_20: AIBuildBase((void *)v3);  // def-aligned
+    return CheckWinCondition(0);  // def-aligned
+    return FindOwner(aP1);  // def-aligned
+    return GetPowerRatio((int *)Owner);  // def-aligned
 };
 
 } // namespace gamemd

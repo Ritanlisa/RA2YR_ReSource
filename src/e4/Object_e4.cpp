@@ -410,7 +410,7 @@ void* Object::HandleAction(int * a2, int * a3)
   int v5; // ebp
   int GroundHeight; // eax
   int v7; // eax
-  unsigned int v8;
+  BuildingTypeClass * v8;
   int v9; // ebx
   int v10; // edx
   int v11; // eax

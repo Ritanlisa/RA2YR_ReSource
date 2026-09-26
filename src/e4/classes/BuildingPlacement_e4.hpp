@@ -41,7 +41,7 @@ struct BuildingPlacement {
     unsigned int q084;  // 0x84
     unsigned char q085;  // 0x85
     void* q08C;  // 0x8C
-    unsigned int ;  // 0x90
+    unsigned int q090;  // 0x90
     unsigned char q094;  // 0x94
     unsigned char q098;  // 0x98
     unsigned char q09C;  // 0x9C

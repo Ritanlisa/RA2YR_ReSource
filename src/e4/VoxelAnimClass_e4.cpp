@@ -13,6 +13,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/VoxelAnimTypeClass_e4.hpp"
 
 // 0x4CAF20
 namespace gamemd {
@@ -90,7 +91,7 @@ namespace gamemd {
 int VoxelAnimClass::CleanupMembers()
 {
   int v2; // eax
-  AbstractClass * v3;
+  int v3;
   int v4; // eax
   void *this; // [esp+4h] [ebp-4h] BYREF
 

@@ -51,7 +51,7 @@
 namespace gamemd {
 int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
 {
-  void** v3;
+  unsigned int * v3;
   int v4; // eax
   void *v5; // eax
   void * v6;

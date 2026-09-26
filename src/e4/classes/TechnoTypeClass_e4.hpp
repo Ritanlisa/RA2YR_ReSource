@@ -606,7 +606,7 @@ struct TechnoTypeClass {
     unsigned char q750;  // 0x750
     double ThreatAvoidanceCoefficient;  // 0x752
     TechnoTypeClass * ptr_758;  // 0x758
-    unsigned int ;  // 0x75C
+unsigned int q75C;  // 0x75C
     int q760;  // 0x760
     unsigned int NaturalParticleSystem;  // 0x764
     unsigned int NaturalParticleSystemLocation;  // 0x768
@@ -625,7 +625,7 @@ struct TechnoTypeClass {
     void* q79C;  // 0x79C
     unsigned int q7A0;  // 0x7A0
     unsigned int q7A4;  // 0x7A4
-    unsigned int ;  // 0x7A8
+unsigned int q7A8;  // 0x7A8
     unsigned char q7AC;  // 0x7AC
     unsigned int DamageSmokeOffset;  // 0x7B0
     unsigned int u32_7B4;  // 0x7B4
@@ -643,7 +643,7 @@ struct TechnoTypeClass {
     unsigned int RefinerySmokeOffsetThree;  // 0x7E4
     unsigned int u32_7E8;  // 0x7E8
     unsigned int u32_7EC;  // 0x7EC
-    char RefinerySmokeOffsetFour[12];  // 0x7F0
+    unsigned int RefinerySmokeOffsetFour;  // 0x7F0
     unsigned int u32_7F4;  // 0x7F4
     unsigned int u32_7F8;  // 0x7F8
     int ShadowIndex;  // 0x7FC
@@ -803,7 +803,7 @@ struct TechnoTypeClass {
     bool Turret;  // 0xCA1
     bool TurretRecoil;  // 0xCA2
     unsigned char qCA3;  // 0xCA3
-    char TurretAnimData[16];  // 0xCA4
+    unsigned int TurretAnimData;  // 0xCA4
     unsigned int u32_CA8;  // 0xCA8
     unsigned int u32_CAC;  // 0xCAC
     unsigned int u32_CB0;  // 0xCB0
@@ -2371,8 +2371,6 @@ struct TechnoTypeClass {
     unsigned int threatPosed2;
     unsigned int VoxelAnimList_Items0;
     unsigned int IntList_A_Items2;
-    unsigned int q75C;
-    unsigned int q7A8;
     unsigned int IntList_A_Capacity4;
     unsigned int IntList_A_Items3;
     unsigned int IntList_A_Items4;
@@ -2399,6 +2397,33 @@ struct TechnoTypeClass {
     unsigned int q50C3;
     unsigned int q50C4;
     unsigned int q5142;
+    unsigned int DamageSound8;
+    unsigned int DamageSound9;
+    unsigned int ImpactLandSound0;
+    unsigned int q51C2;
+    unsigned int q51C6;
+    unsigned int q51C7;
+    unsigned int q51C8;
+    unsigned int q51C9;
+    unsigned int q5200;
+    unsigned int q5201;
+    unsigned int q5202;
+    unsigned int q5203;
+    unsigned int q5205;
+    unsigned int CrashingSound0;
+    unsigned int CrashingSound1;
+    unsigned int CrashingSound2;
+    unsigned int CrashingSound3;
+    unsigned int CrashingSound5;
+    unsigned int ImpactLandSound1;
+    unsigned int ImpactLandSound2;
+    unsigned int ImpactLandSound3;
+    unsigned int ImpactLandSound4;
+    unsigned int ImpactLandSound5;
+    unsigned int ImpactLandSound6;
+    unsigned int ImpactLandSound7;
+    unsigned int ImpactLandSound8;
+    unsigned int ImpactLandSound9;
 // --- flat members (END) ---
     AbstractClass * * Construct(ObjectTypeClass * aP1);
     AbstractClass * * GetByTypeAndIndex(int a1, int a2);

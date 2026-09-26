@@ -12,9 +12,6 @@ double AircraftTypeVector::Constructor(...) { return 0; }
 double AllocCallback::Dispatch(...) { return 0; }
 double AnimTypeVector::Constructor(...) { return 0; }
 double AssetClass::ReleaseAndReload(...) { return 0; }
-double AudioChannel::DeactivatePlay(...) { return 0; }
-double AudioChannel::IsActive(...) { return 0; }
-double AudioConfig::InitDefault(...) { return 0; }
 double AudioFile::GetCallback(...) { return 0; }
 double AudioFileClass::Release(...) { return 0; }
 double AudioFrame::CounterInc(...) { return 0; }
@@ -31,11 +28,9 @@ double BTree::DeleteSubtree(...) { return 0; }
 double BaseNodeClass::Vector_Constructor(...) { return 0; }
 double BigInt::DecryptBlock(...) { return 0; }
 double BigInt::RSAOperation(...) { return 0; }
-double BitArray::TestBit(...) { return 0; }
 double BufferIO::Cleanup(...) { return 0; }
 double BufferIO::Flush(...) { return 0; }
 double BuildingLightQueue::RemoveEntry(...) { return 0; }
-double BuildingLoadQueue::Find(...) { return 0; }
 double BuildingLoadQueue::FindBuilding(...) { return 0; }
 double ButtonClass::SetState(...) { return 0; }
 double CampaignScore::__pad_08C(...) { return 0; }
@@ -47,7 +42,6 @@ double Checksummer::Add_Buffer(...) { return 0; }
 double Checksummer::Add_double(...) { return 0; }
 double Checksummer::Add_float(...) { return 0; }
 double Cliff::ProcessTransitions(...) { return 0; }
-double Conditions::CheckResult(...) { return 0; }
 double Conflict::GetOwnerHouse(...) { return 0; }
 double Coord2D::Add(...) { return 0; }
 double Coord2D::Sub(...) { return 0; }
@@ -95,8 +89,6 @@ double Hash::InsertOrdered(...) { return 0; }
 double Hash::Reset(...) { return 0; }
 double HashMap::Shrink(...) { return 0; }
 double HashMap::Shrink2(...) { return 0; }
-double HashTree::MarkEntry(...) { return 0; }
-double HashVector_UInt::Construct(...) { return 0; }
 double Heap::SiftDown(...) { return 0; }
 double IDXContainer::LoadSample(...) { return 0; }
 double INISectionList::Constructor(...) { return 0; }
@@ -109,19 +101,15 @@ double KeyValuePair::Init(...) { return 0; }
 double KeywordClass::FindOrCreate(...) { return 0; }
 double KeywordType::FindOrCreate2(...) { return 0; }
 double Lightning::Draw(...) { return 0; }
-double ListClass::Construct(...) { return 0; }
 double ListClass::Destruct(...) { return 0; }
 double Locomotor::GetSpeed(...) { return 0; }
 double MPCombatTeam::Constructor(...) { return 0; }
 double MPCombatTeam::Constructor2(...) { return 0; }
 double MPCombatTeam::MPTeam(...) { return 0; }
-double MSChoiceClass::LoadFromINI(...) { return 0; }
 double MapResourceClass::__tail_0(...) { return 0; }
 double Matrix::Copy12Float(...) { return 0; }
 double Matrix::Scale(...) { return 0; }
 double Matrix2D::Rotate(...) { return 0; }
-double Matrix3D::Constructor(...) { return 0; }
-double Matrix3D::RotateZ(...) { return 0; }
 double Matrix3x3::Multiply(...) { return 0; }
 double Matrix3x3::RotateX(...) { return 0; }
 double Matrix3x3::TransformPoint(...) { return 0; }
@@ -157,38 +145,29 @@ double Property::Set(...) { return 0; }
 double PtrVector::Destroy(...) { return 0; }
 double PushCommandClass::Execute(...) { return 0; }
 double Queue::GetNext(...) { return 0; }
-double Random::AdvanceRandomBytes(...) { return 0; }
 double Random::Gaussian(...) { return 0; }
 double Random::Range(...) { return 0; }
 double Random::State(...) { return 0; }
 double Rect_Point::Set(...) { return 0; }
 double ResultNode::CleanupList(...) { return 0; }
 double SHPClass::Load(...) { return 0; }
-double SafeDelete::Ptr(...) { return 0; }
 double SaveLoadDialog::DlgProc(...) { return 0; }
-double ScoreText::Show(...) { return 0; }
-double ScoreText::ShowAlt(...) { return 0; }
 double ScreenSaver::Process(...) { return 0; }
 double ScriptQueue::PushEntry(...) { return 0; }
 double SerialPort::Close(...) { return 0; }
 double SettingsClass::ClampValues(...) { return 0; }
 double ShapeButton::Draw(...) { return 0; }
 double ShapeButton::SetShape(...) { return 0; }
-double ShapeButtonClass::Constructor(...) { return 0; }
 double ShroudClass::UpdateVisibility(...) { return 0; }
-double SimpleDialogControl::Constructor(...) { return 0; }
 double SlaveControlVector::Constructor(...) { return 0; }
 double SpawnControlVector::Constructor(...) { return 0; }
 double SquadClass::ProcessMove(...) { return 0; }
-double StartCombo::IDToIndex(...) { return 0; }
 double StaticString::Factory(...) { return 0; }
 double Straw::Dtor(...) { return 0; }
-double StringList::Find(...) { return 0; }
 double StringTable::Find(...) { return 0; }
 double StringVector::Construct(...) { return 0; }
 double StructTable::Append(...) { return 0; }
 double SubzoneConnectionVector::Destruct(...) { return 0; }
-double SubzoneHashVector::Construct(...) { return 0; }
 double SwizzleManager::SaveLoad(...) { return 0; }
 double SyncDelayClass::ProcessNetworkSync(...) { return 0; }
 double TabCameoListClass::AddCameo_ReplaceItAll(...) { return 0; }
@@ -202,8 +181,6 @@ double TextGroup::SetRect(...) { return 0; }
 double TileData::Constructor(...) { return 0; }
 double TileNode::Cleanup(...) { return 0; }
 double TileSystem::Constructor(...) { return 0; }
-double Timeout::GetRemaining(...) { return 0; }
-double TimerPool::AllocSlot(...) { return 0; }
 double ToggleClass::RTTI(...) { return 0; }
 double ToolTipClass::initString(...) { return 0; }
 double ToolTipClass::updateString(...) { return 0; }
@@ -228,10 +205,5 @@ double WDTObject::GetSize(...) { return 0; }
 double WTFMode::Shutdown(...) { return 0; }
 double WinAPI::Wrapper(...) { return 0; }
 double WordVector::Constructor(...) { return 0; }
-
-void CCFileClass::Construct2(void* filename) { }
-bool CCFileClass::Open(int mode) { return false; }
-int CCINIClass::Load(CCINIClass* self, void* file, int a3, int a4) { return 0; }
-void BufferIOFileClass::Dtor(void* obj) { }
 
 } // namespace gamemd

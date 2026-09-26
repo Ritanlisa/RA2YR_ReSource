@@ -197,6 +197,10 @@ struct INIClass {
     static double GetCoord(...);  // C2597 interim stub
     static double ReadPoint3D_Overwrite(...);  // C2597 interim stub
     static double SetHouseName(...);  // C2597 interim stub
+    return ReadInt_Overwrite(v3, v5, aP3);  // def-aligned
+    LABEL_47: SetInt((char *)v28, (uint8_t *)Block, g_INI_Key_Time, this->q068, 0);  // def-aligned
+    return SetString(Block, a3, Source);  // def-aligned
+    return WriteToString(aP1);  // def-aligned
 };
 
 } // namespace gamemd

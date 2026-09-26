@@ -39,6 +39,7 @@
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/Terrain_e4.hpp"
 #include "e4/classes/E4Recv_52A110_e4.hpp"
+#include "e4/classes/Map_e4.hpp"
 
 // 0x530000
 namespace gamemd {

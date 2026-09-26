@@ -7,7 +7,7 @@ namespace gamemd {
 struct Vector {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
-    void* q004;  // 0x4
+    unsigned int q004;  // 0x4
     void* q008;  // 0x8
     bool q00A;  // 0xA
     bool q00B;  // 0xB

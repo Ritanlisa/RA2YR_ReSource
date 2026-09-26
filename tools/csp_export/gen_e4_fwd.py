@@ -86,8 +86,28 @@ try:
                       .read_text(encoding='utf-8'))
 except OSError:
     mtab = {}
+# math.hpp defines aliases (CellStruct etc.) and templates (Vector2D etc.)
+# in namespace gamemd — fwd-declaring them as structs would clash
+MATH_HPP_NAMES = set()
+try:
+    for _mln in (ROOT / 'src' / 'core' / 'math.hpp').read_text(
+            encoding='utf-8', errors='replace').splitlines():
+        _mm = re.match(
+            r'^\s*(?:struct|class|using|enum(?:\s+class)?)\s+([A-Za-z_]\w*)',
+            _mln)
+        if _mm:
+            MATH_HPP_NAMES.add(_mm.group(1))
+        _mm = re.match(
+            r'^template[^\n]*\n[ \t]*(?:class|struct)\s+([A-Za-z_]\w*)',
+            _mln + '\n')
+        if _mm:
+            MATH_HPP_NAMES.add(_mm.group(1))
+except OSError:
+    pass
+
 names |= {n for n in mtab
-          if re.match(r'^[A-Za-z_]\w*$', n) and _decl_ok(n)}
+          if re.match(r'^[A-Za-z_]\w*$', n) and _decl_ok(n)
+          and n not in MATH_HPP_NAMES}
 
 # final filter: all-caps = Windows typedefs; tree enum/using-alias/template/
 # function-template names cannot be struct-fwd-declared even in e4 TUs —

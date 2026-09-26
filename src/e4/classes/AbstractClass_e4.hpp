@@ -1520,6 +1520,7 @@ struct AbstractClass {
     unsigned int COMStub_AddRef;
     unsigned int ProcessPower;
     unsigned int QueryInterface;
+    unsigned int u32_16054;
 // --- flat members (END) ---
     void Initialize(TechnoClass * aP1,  TechnoClass * aP2);    // 0x438E70
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0
@@ -1630,7 +1631,7 @@ struct AbstractClass {
     int initVtableBase();  // 0x410100
     int GetVtable3(AbstractClass * aP0);  // 0x410220
     int GenerateUniqueID(int a1);  // 0x410230
-    int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0, ObjectTypeClass * aP2);      // 0x410320
+    int SaveLoad_Prefix(ObjectTypeClass * aP0, ObjectTypeClass * aP0, ObjectTypeClass * aP2);        // 0x410320
     int computeDistance();  // 0x410440
     int StubReturnFalse();  // 0x410470
     int COMStub_Return0_10();  // 0x410480
@@ -1732,5 +1733,8 @@ struct AbstractClass {
     static double Constructor(...);  // C2597 interim stub
     static double InitVtables(...);  // C2597 interim stub
     static double IsTechnoType(...);  // C2597 interim stub
+    return COMStub_AddRef(a1 - 4);  // def-aligned
+    return ProcessPower();  // def-aligned
+    return QueryInterface(a1 - 4, a2, a3);  // def-aligned
 };
 } // namespace gamemd

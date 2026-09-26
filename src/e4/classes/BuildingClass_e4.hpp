@@ -2212,6 +2212,7 @@ struct BuildingClass {
     static double PowerOff(...);  // C2597 interim stub
     static double GetProductionFrame(...);  // C2597 interim stub
     static double GetType(...);  // C2597 interim stub
+    return UpdateFloatPosition();  // def-aligned
 };
 
 } // namespace gamemd

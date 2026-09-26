@@ -424,8 +424,8 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
 namespace gamemd {
 int Power::FinalizeDrain(int a2)
 {
-  int v2; // eax
-  int result; // eax
+  void * v2;
+  void * result;
   unsigned int i; // eax
   uint8_t *v5; // esi
   unsigned int v6; // eax
@@ -464,8 +464,8 @@ int Power::FinalizeDrain(int a2)
 namespace gamemd {
 int Power::FlagProcess(int a2)
 {
-  int v2; // eax
-  int result; // eax
+  void * v2;
+  void * result;
   unsigned int i; // eax
   uint8_t *v5; // esi
   unsigned int v6; // eax

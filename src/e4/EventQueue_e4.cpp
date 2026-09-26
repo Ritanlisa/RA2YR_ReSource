@@ -27,15 +27,15 @@ int EventQueue::Process()
 namespace gamemd {
 int EventQueue::Read()
 {
-  int v2; // eax
-  int v3; // ecx
+  void * v2;
+  void * v3;
   int v4; // edi
   int16_t result; // ax
-  int v6; // edx
+  void * v6;
   uint16_t v7; // cx
-  int v8; // ebx
+  void * v8;
   uint16_t v9; // dx
-  int v10; // ecx
+  void * v10;
   int16_t v11; // dx
 
   do /*0x54f086*/

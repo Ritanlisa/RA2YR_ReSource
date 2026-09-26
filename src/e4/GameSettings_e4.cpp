@@ -12,20 +12,21 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x5FA620
 namespace gamemd {
 AbstractClass * * GameSettings::Read()
 {
   int v2; // eax
-  int v3; // eax
-  int v4; // eax
+  unsigned int v3;
+  unsigned int v4;
   int v5; // eax
   int v6; // eax
   char v7; // al
   bool v8; // zf
   const char *v9; // eax
-  int v10; // eax
+  unsigned int v10;
   char v11; // al
   const char *v12; // eax
   char v13; // al

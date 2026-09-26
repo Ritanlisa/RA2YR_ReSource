@@ -216,7 +216,7 @@ struct InfantryTypeClass {
     bool q238;  // 0x238
     bool q239;  // 0x239
     bool q23A;  // 0x23A
-    char q23B[3];  // 0x23B
+    unsigned int q23B;  // 0x23B
     bool q23D;  // 0x23D
     unsigned char q23E;  // 0x23E
     int LineTrailColorDecrement;  // 0x240

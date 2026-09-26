@@ -2145,6 +2145,7 @@ struct FootClass {
     unsigned int inAirFlag0;
     void* ptr_246;
     void* ptr_248;
+    unsigned int q021;
 // --- flat members (END) ---
     AbstractClass * * Destruct();
     int updateThreat();

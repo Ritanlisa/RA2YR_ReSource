@@ -41,6 +41,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x750920
 namespace gamemd {
@@ -326,14 +327,14 @@ void ThemeClass_Update()
   uint64_t v0; // rdi
   uint64_t v1; // rax
   unsigned int * v2;
-  unsigned int * v3;
+  unsigned int v3;
   unsigned int * v4;
   char *v5; // edi
   unsigned int * v6;
   int v7; // ebp
   const char *v8; // edi
   unsigned char v9[16]; // [esp+0h] [ebp-118h] BYREF
-  int v10; // [esp+10h] [ebp-108h]
+  unsigned int v10;
   int v11; // [esp+14h] [ebp-104h]
   char v12[5]; // [esp+18h] [ebp-100h] BYREF
 

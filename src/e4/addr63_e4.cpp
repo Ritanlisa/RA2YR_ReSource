@@ -123,7 +123,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   size_t v17; // esi
   uint8_t v18; // bl
   char * v19;
-  char v20; // al
+  unsigned char * v20;
   char v21; // bl
   unsigned int v22; // edi
   uint8_t *v23; // ebp
@@ -141,7 +141,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   uint8_t *v36; // eax
   unsigned char * v37;
   unsigned int i; // eax
-  unsigned char * v39;
+  uint8_t * v39;
   unsigned int v40; // edi
   unsigned int v41; // ebp
   uint8_t v42; // cl
@@ -150,7 +150,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   char *v45; // edi
   int v46; // eax
   unsigned int v47; // ecx
-  unsigned int v48;
+  uint8_t * v48;
   uint8_t v51; // [esp+38h] [ebp-8ACh]
   uint8_t v52; // [esp+38h] [ebp-8ACh]
   uint8_t v53; // [esp+38h] [ebp-8ACh]

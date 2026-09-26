@@ -78,7 +78,7 @@ struct SuperWeaponTypeClass {
     unsigned int q0AB;  // 0xAB
     char SuspendVoice[4];  // 0xAC
     char RechargeTime[4];  // 0xB0
-    unsigned int ;  // 0xB4
+    unsigned int q0B4;  // 0xB4
     SHPStruct* q0B8;  // 0xB8
     unsigned char q0B9;  // 0xB9
     char q0BC[4];  // 0xBC

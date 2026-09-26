@@ -10,7 +10,7 @@ struct BinkMovie {
     unsigned int u32_4;  // 0x4
     void* q008;  // 0x8
     bool q00A;  // 0xA
-    void* q00C;  // 0xC
+    unsigned int q00C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
     unsigned char q018;  // 0x18

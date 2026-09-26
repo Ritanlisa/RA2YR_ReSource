@@ -85,8 +85,8 @@ struct TeamTypeClass {
     unsigned int q0B0;  // 0xB0
     unsigned char u8_B1;  // 0xB1
     unsigned char u8_B3;  // 0xB3
-    unsigned int ;  // 0xB4
-    unsigned int ;  // 0xB8
+    unsigned int q0B4;  // 0xB4
+    unsigned int q0B8;  // 0xB8
     unsigned char q0B9;  // 0xB9
     unsigned char q0BD;  // 0xBD
     AbstractClass* q0C0;  // 0xC0

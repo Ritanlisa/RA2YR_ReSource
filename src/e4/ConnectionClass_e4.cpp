@@ -75,12 +75,12 @@ int ConnectionClass::allocPacketSlot(const void * a2, signed int a3, const void 
 namespace gamemd {
 unsigned int ConnectionClass::initQueue(unsigned int a2)
 {
-  int v2; // eax
+  void * v2;
   unsigned int v3; // esi
   int v4; // eax
-  unsigned int v5; // esi
+  void * v5;
   unsigned int v6; // eax
-  unsigned int result; // eax
+  void * result;
 
   v2 = this->q018; /*0x48ba10*/
   if ( v2 == 256 ) /*0x48ba1c*/

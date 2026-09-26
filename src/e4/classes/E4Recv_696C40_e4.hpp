@@ -13,6 +13,7 @@ struct E4Recv_696C40 {
     unsigned int q338;  // 0x338
     unsigned int q824;  // 0x824
     unsigned int q2084;  // 0x2084
+    unsigned int q152;
 // --- flat members (END) ---
     HWND sub_696C40();  // 0x696C40
 };

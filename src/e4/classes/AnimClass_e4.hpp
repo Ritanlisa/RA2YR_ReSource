@@ -1800,6 +1800,7 @@ struct AnimClass {
     void Destruct(AbstractClass * a2);
     void FreeRenderBuffer();
     void* Render(ConvertClass * a2, ConvertClass * aP5);
+    return ctor(/*0x4b61d1*/ result, (void *)g_RulesClass_Instance->PrerequisiteProc[2], v17, 0, 1, (void *)0x600, 0, 0);  // def-aligned
 };
 
 } // namespace gamemd

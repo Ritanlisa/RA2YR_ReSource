@@ -87,6 +87,7 @@ struct Carryall {
     unsigned char q69D8;  // 0x69D8
     unsigned char q69DC;  // 0x69DC
     unsigned int __pad_087;
+    unsigned int q1047;
 // --- flat members (END) ---
     FootClass * * MissionStateMachine();
 };

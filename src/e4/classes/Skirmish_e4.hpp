@@ -62,6 +62,7 @@ struct Skirmish {
     unsigned int q0089;
     unsigned int u32_64;
     unsigned int u32_68;
+    unsigned int q076;
 // --- flat members (END) ---
     AbstractClass * * SetupGame(int a2);
     CampaignClass * * SetupAllSpawnLocations();

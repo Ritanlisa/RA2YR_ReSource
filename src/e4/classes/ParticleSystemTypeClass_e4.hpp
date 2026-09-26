@@ -227,7 +227,7 @@ struct ParticleSystemTypeClass {
     unsigned int q288;  // 0x288
     char q28C[4];  // 0x28C
     unsigned char q290;  // 0x290
-    unsigned int ;  // 0x294
+    unsigned int q294;  // 0x294
     unsigned char q298;  // 0x298
     void* q29C;  // 0x29C
     ParticleSystemClass* q2A0;  // 0x2A0
@@ -262,7 +262,7 @@ struct ParticleSystemTypeClass {
     unsigned int q308;  // 0x308
     unsigned int q30A;  // 0x30A
     unsigned char u8_30B;  // 0x30B
-    unsigned int ;  // 0x30C
+    unsigned int q30C;  // 0x30C
     unsigned char q30E;  // 0x30E
     unsigned int q310;  // 0x310
     unsigned char q314;  // 0x314

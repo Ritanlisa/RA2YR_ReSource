@@ -1021,6 +1021,8 @@ struct SidebarClass {
     int select();
     void * LoadAssets();
     void CreateScrollButtons();
+    return InitButtons();  // def-aligned
+    return UpdateStrips(aP1, a2);  // def-aligned
 };
 
 } // namespace gamemd

@@ -7,12 +7,12 @@ namespace gamemd {
 
 struct GameSettings {
 // --- flat members (BEGIN) ---
-    AbstractClass * ptr_4;  // 0x4
-    AbstractClass * ptr_8;  // 0x8
+    unsigned int ;  // 0x4
+    unsigned int ;  // 0x8
     unsigned int u32_C;  // 0xC
-    AbstractClass * ptr_10;  // 0x10
+    unsigned int ;  // 0x10
     unsigned char u8_14;  // 0x14
-    AbstractClass * ptr_18;  // 0x18
+    unsigned int ;  // 0x18
     unsigned char u8_1C;  // 0x1C
     unsigned char u8_1D;  // 0x1D
     unsigned char u8_1E;  // 0x1E
@@ -55,6 +55,8 @@ struct GameSettings {
     unsigned int q808;  // 0x808
     unsigned int q850;  // 0x850
     unsigned int q2128;  // 0x2128
+    unsigned int q036;
+    unsigned char u8_34;
 // --- flat members (END) ---
     AbstractClass * * Read();
     char * FindFlagged();

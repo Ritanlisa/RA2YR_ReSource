@@ -338,7 +338,7 @@ void WeaponTypeClass_SaveLoad_Prefix()
     }
     if ( v5 ) /*0x772d77*/
     {
-      DynamicVectorClass::Construct(v5, 0, 0); /*0x772d7f*/
+      DynamicVectorClass::Construct(v5, 0, 0, unsigned int a3, unsigned int a4); /*0x772d7f*/
     }
     (*(void (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v6 + 12))(v6, &a3, 4, 0); /*0x772d97*/
     for ( j = 0; j < a3; ++j ) /*0x772da2*/

@@ -1556,6 +1556,7 @@ struct WaypointPathClass {
     unsigned char q652C;  // 0x652C
     unsigned int q024;
     unsigned int u32_28;
+    unsigned int q035;
 // --- flat members (END) ---
     WaypointPathClass * ProcessEvent(char a2);
     int Construct(WaypointClass * aP1);

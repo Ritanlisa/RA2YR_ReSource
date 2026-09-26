@@ -86,7 +86,7 @@ struct TeamClass {
     unsigned int q0AB;  // 0xAB
     void* q0AC;  // 0xAC
     unsigned char q0B0;  // 0xB0
-    void* q0B4;  // 0xB4
+    unsigned int q0B4;  // 0xB4
     unsigned int q0B8;  // 0xB8
     unsigned char q0B9;  // 0xB9
     unsigned char q0BD;  // 0xBD

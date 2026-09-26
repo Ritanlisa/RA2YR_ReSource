@@ -242,6 +242,8 @@ struct Coord {
     unsigned int u32_8;
     unsigned int uniqueId4;
     unsigned int uniqueId5;
+    unsigned int __pad_51DA;
+    unsigned int q5296;
 // --- flat members (END) ---
     int ToGridIndex(VectorClass_flat * aP1,  VectorClass_flat * aP2,  VectorClass_flat * aP3);    // 0x4138C0
     unsigned int * ToCell(void* aP1);  // 0x413A30

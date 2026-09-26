@@ -185,7 +185,7 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
 {
   ObjectClass * v4;
   int v5; // ecx
-  int v6; // eax
+  void * v6;
   int v7; // ebp
   void *v8; // edx
   const void *v9; // esi

@@ -14,6 +14,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/BinkMovieHandle_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x432690
 namespace gamemd {
@@ -279,10 +280,10 @@ AbstractClass * * BinkMovie::Play()
   void (__stdcall *v4)(HWND, LPPOINT); // ebp
   int v5; // eax
   unsigned int v6; // ecx
-  int v7; // eax
+  void * v7;
   int v8; // eax
   int v9; // ecx
-  int v10; // edx
+  void * v10;
   unsigned int v11[4]; // [esp+4h] [ebp-4Ch] BYREF
   struct tagRECT Rect; // [esp+14h] [ebp-3Ch] BYREF
   struct tagRECT v13; // [esp+24h] [ebp-2Ch] BYREF

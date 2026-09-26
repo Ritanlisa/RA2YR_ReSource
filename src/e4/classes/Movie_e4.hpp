@@ -172,5 +172,6 @@ struct Movie {
     unsigned int SelectNextBuildableType(AnimClass * aP1);  // 0x720A80
     char GetSectionID(unsigned int * a2);  // 0x49BC80
     char GetState(CCINIClass * aP1);  // 0x49BCC0
+    LABEL_40: PlayWrapper(*((unsigned int *)g_ScenarioClass_Instance + 1295), -1, 3, 1, 1, 1);  // def-aligned
 };
 } // namespace gamemd

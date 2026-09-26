@@ -1,29 +1,12 @@
-// GENERATED supplement for tree ALIAS types (fixed semantics, hand-maintained).
-// math.hpp defines these as template aliases (`using CellStruct =
-// Vector2D<short>`); e4 TUs never see math.hpp, so the e4 universe carries
-// equivalent plain structs. Member layout matches the alias semantics.
-// Hooked via explicit includes in e4 cpps (see gen_tree_full_e4.py).
+// GENERATED supplement for tree ALIAS types.
+// CellStruct/CoordStruct/Point2D are already defined in core/math.hpp as
+// `using CellStruct = Vector2D<short>` etc. Include math.hpp to use them.
+// This header only adds types that math.hpp does NOT define.
 #pragma once
 
-#include "e4/classes/_fwd_e4.hpp"
+#include "core/math.hpp"
 
 namespace gamemd {
-
-struct CellStruct {
-    short x;
-    short y;
-};
-
-struct CoordStruct {
-    int x;
-    int y;
-    int z;
-};
-
-struct Point2D {
-    int x;
-    int y;
-};
 
 // CellCoord: tree class (misc_ext.hpp) with a virtual To_CellObj; e4 bodies
 // call it static-style with (MapClass_Instance*, coord*) — interim stub.

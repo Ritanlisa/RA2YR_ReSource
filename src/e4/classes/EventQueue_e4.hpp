@@ -20,6 +20,7 @@ struct EventQueue {
     void* q1938;  // 0x1938
     void* q6440;  // 0x6440
     unsigned int CheckPosition;
+    unsigned int u32_4;
 // --- flat members (END) ---
     int Check();
     int Process();

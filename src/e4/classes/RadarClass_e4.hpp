@@ -936,6 +936,8 @@ struct RadarClass {
     int GetBlip(int a1, int a2, int a3, ObjectClass * aP3);
     unsigned int * initRadarSurface();
     void Destru_vt50();
+    return Destru_vt05();  // def-aligned
+    return UpdateFoundationShapesCustom(a1);  // def-aligned
 };
 
 } // namespace gamemd

@@ -8,11 +8,11 @@ struct VectorClass_ptr_BuildChoiceClass_int_ouseClass {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
-    unsigned int ;  // 0x8
-    unsigned int ;  // 0xC
+    unsigned int q008;  // 0x8
+    unsigned int q00C;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
-    unsigned int ;  // 0x10
+    unsigned int q010;  // 0x10
     unsigned int CapacityIncrement;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char u8_19;  // 0x19

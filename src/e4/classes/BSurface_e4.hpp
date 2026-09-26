@@ -904,6 +904,7 @@ struct BSurface {
     unsigned int Width1;
     unsigned int q0188;
     unsigned int u32_4;
+    unsigned int __pad_07A;
 // --- flat members (END) ---
     unsigned int * Construct(int a2,  int a3,  int a4,  int a5);    // 0x410CE0
     bool CreateTripleBuffer();  // 0x7B8C60

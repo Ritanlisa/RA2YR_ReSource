@@ -2154,6 +2154,7 @@ struct UnitClass {
     unsigned int Construct;
 // --- flat members (END) ---
     void ProcessIdleOrders();
+    return Construct((int, unsigned int a3, unsigned int a1, unsigned int a2)v3, (int)this, ppv);  // def-aligned
 };
 
 } // namespace gamemd

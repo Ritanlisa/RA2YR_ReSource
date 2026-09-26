@@ -54,10 +54,10 @@ int DisplayClass::UpdateDisplayTimer()
 namespace gamemd {
 int DisplayClass::AdvanceFrameCounter()
 {
-  int v1; // esi
-  int v2; // eax
-  int v3; // edx
-  int result; // eax
+  void * v1;
+  void * v2;
+  void * v3;
+  void * result;
 
   v1 = this->q130; /*0x487691*/
   if ( v1 == -1 ) /*0x48769a*/

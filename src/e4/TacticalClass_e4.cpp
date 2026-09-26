@@ -20,6 +20,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/ColorStruct_e4.hpp"
 
 // 0x47F510
 namespace gamemd {
@@ -333,13 +334,13 @@ void TacticalClass::InterpolateView()
 {
   unsigned int v0;
   int v1; // edi
-  wchar_t * v2;
-  unsigned int v3;
+  unsigned int v2;
+  wchar_t * v3;
   unsigned int v4;
   unsigned int *v5; // edx
   int v6; // ebx
   wchar_t * v7;
-  int v8; // ebx
+  unsigned int v8;
   int *v9; // eax
   int v10; // eax
   int *v11; // edx
@@ -347,17 +348,17 @@ void TacticalClass::InterpolateView()
   int v13; // esi
   int v14; // edi
   int v15; // eax
-  unsigned int v16;
+  wchar_t * v16;
   int v17; // [esp+8h] [ebp-40h]
   unsigned int v18;
-  unsigned int v19;
-  wchar_t * v20;
+  wchar_t * v19;
+  unsigned int v20;
   int v21; // [esp+18h] [ebp-30h]
   int v22; // [esp+1Ch] [ebp-2Ch]
   int v23; // [esp+20h] [ebp-28h]
-  wchar_t * v24;
-  unsigned int v25;
-  wchar_t * v26;
+  unsigned int v24;
+  wchar_t * v25;
+  unsigned int v26;
   int v27[3]; // [esp+30h] [ebp-18h] BYREF
   int v28[3]; // [esp+3Ch] [ebp-Ch] BYREF
 

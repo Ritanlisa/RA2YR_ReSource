@@ -8,7 +8,7 @@ namespace gamemd {
 struct CounterClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    char count[4];  // 0x4
+    unsigned int count;  // 0x4
     void* Capacity;  // 0x8
     unsigned int q00C;  // 0xC
     unsigned int q00D;  // 0xD

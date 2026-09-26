@@ -8,7 +8,7 @@ struct TypeList_Infantry {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
-    unsigned int ;  // 0x8
+    unsigned int q008;  // 0x8
     unsigned int q00C;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE

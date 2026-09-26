@@ -18,7 +18,7 @@
 namespace gamemd {
 AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
 {
-  unsigned int v3;
+  IUnknown * v3;
   void * v5;
   int v6; // ebp
   int v7; // eax

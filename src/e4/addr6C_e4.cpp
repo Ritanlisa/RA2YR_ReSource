@@ -36,6 +36,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/House_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x6C6F50
 namespace gamemd {

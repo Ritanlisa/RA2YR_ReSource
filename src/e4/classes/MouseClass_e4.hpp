@@ -1136,6 +1136,7 @@ struct MouseClass {
     static double DrawCursor(...);  // C2597 interim stub
     static double CalcConfiningRect(...);  // C2597 interim stub
     static double Construct(...);  // C2597 interim stub
+    LABEL_6: LoadGameAssets(&DataGlobal_87F7E8.field_0, this);  // def-aligned
 };
 
 } // namespace gamemd

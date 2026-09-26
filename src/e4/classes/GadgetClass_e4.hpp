@@ -131,6 +131,7 @@ struct GadgetClass {
     int Show();
     void * Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass * aP3, void* aP4, GadgetClass * aP5, GadgetClass * aP6);
     static double Hide(...);  // C2597 interim stub
+    return ClearState(aP1);  // def-aligned
 };
 
 } // namespace gamemd

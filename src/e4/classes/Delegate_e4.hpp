@@ -12,7 +12,7 @@ struct Delegate {
     char Delegate_field_08[4];  // 0x8
     bool m_allocated;  // 0xC
     unsigned char q00D;  // 0xD
-    char Delegate_field_10[4];  // 0x10
+    unsigned int Delegate_field_10;  // 0x10
     char Delegate_field_14[4];  // 0x14
     void* m_straw;  // 0x18
     unsigned int q01C;  // 0x1C

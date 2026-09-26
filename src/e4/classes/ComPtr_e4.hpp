@@ -59,6 +59,8 @@ struct ComPtr {
     static double Dtor(...);  // C2597 interim stub
     static double Release_Alt(...);  // C2597 interim stub
     static double Set(...);  // C2597 interim stub
+    return Release(v15);  // def-aligned
+    LABEL_6: ReleaseSimple(p_ppstgOpen);  // def-aligned
 };
 
 } // namespace gamemd

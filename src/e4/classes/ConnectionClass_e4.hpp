@@ -14,9 +14,9 @@ struct ConnectionClass {
     unsigned int PacketsSent;  // 0x10
     unsigned int q011;  // 0x11
     unsigned int PacketsReceived;  // 0x14
-    void* q018;  // 0x18
-    void* q01C;  // 0x1C
-    void* q020;  // 0x20
+    unsigned int q018;  // 0x18
+    unsigned int q01C;  // 0x1C
+    unsigned int q020;  // 0x20
     void* q024;  // 0x24
     void* q028;  // 0x28
     TechnoTypeClass* q02C;  // 0x2C

@@ -798,7 +798,7 @@ int DynamicVectorClass_PAD_16::Get(int a2)
 namespace gamemd {
 char DynamicVectorClass_PAD::AddRef(int a2)
 {
-  int v2; // esi
+  void * v2;
   int v3; // edx
   unsigned int *v4; // eax
   int v5; // ecx

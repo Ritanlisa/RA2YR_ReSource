@@ -21,7 +21,7 @@ struct SlaveManagerClass {
     bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     _DWORD q024;  // 0x24
-    HouseClass* house;  // 0x28
+    unsigned int q028;  // 0x28
     bool q02B;  // 0x2B
     unsigned int q02C;  // 0x2C
     unsigned int slaveType;  // 0x30
@@ -1571,6 +1571,7 @@ struct SlaveManagerClass {
     unsigned int vtable31;
     unsigned int vtable32;
     unsigned int vtable46;
+    unsigned int house;
 // --- flat members (END) ---
     AbstractClass * * LoadManager(unsigned int * a1, int a2);
     SlaveManagerClass * ProcessOrders(char a2);

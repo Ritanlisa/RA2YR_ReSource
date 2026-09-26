@@ -2171,6 +2171,7 @@ struct InfantryClass {
     int ScanTarget(int * a1);
     void* Destruct(void* a1, AbstractClass * edx0);
     static double IsInBounds(...);  // C2597 interim stub
+    return Construct((int)v3, (int)this, ppv);  // def-aligned
 };
 
 } // namespace gamemd

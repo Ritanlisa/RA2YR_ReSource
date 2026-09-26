@@ -53,7 +53,7 @@ struct Stream {
     unsigned int u32_184;  // 0x184
     unsigned int u32_188;  // 0x188
     unsigned int u32_190;  // 0x190
-    unsigned int u32_194;  // 0x194
+    void* ;  // 0x194
     unsigned int u32_198;  // 0x198
     unsigned int u32_19C;  // 0x19C
     unsigned int u32_1A4;  // 0x1A4
@@ -260,12 +260,16 @@ struct Stream {
     unsigned int vt_slot_8;
     unsigned int ReadPacket;
     unsigned int WriteBlock;
+    unsigned int q1365;
+    unsigned int u32_194;
 // --- flat members (END) ---
     int FlushAndReset();
     int GetChecked();
     int ReadIntArray(int a2);
     int WriteIntArray(TechnoTypeClass * aP1);
     void * InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8);
+    LABEL_11: ReadPacket(&g_EventManager);  // def-aligned
+    return WriteBlock((int)&g_EventManager, (int)v3, 250, 1);  // def-aligned
 };
 
 } // namespace gamemd

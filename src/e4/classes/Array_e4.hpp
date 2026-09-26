@@ -7,7 +7,7 @@ namespace gamemd {
 struct Array {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
-    void* q004;  // 0x4
+    unsigned int q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned int q010;  // 0x10

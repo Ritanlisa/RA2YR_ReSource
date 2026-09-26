@@ -18,6 +18,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
 
 // 0x484680
 namespace gamemd {

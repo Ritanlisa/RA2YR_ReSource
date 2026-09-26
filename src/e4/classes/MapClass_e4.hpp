@@ -122,7 +122,7 @@ struct MapClass {
     unsigned int q145;  // 0x145
     unsigned int Crates;  // 0x148
     unsigned char q14C;  // 0x14C
-    unsigned int ;  // 0x150
+    unsigned int q150;  // 0x150
     unsigned int q154;  // 0x154
     unsigned char q158;  // 0x158
     Coord* q15C;  // 0x15C
@@ -721,6 +721,7 @@ struct MapClass {
     unsigned int q150;
     unsigned int ValidMapCellCount4;
     unsigned int RevealArea2;
+    unsigned int q4536;
 // --- flat members (END) ---
     AbstractClass * * AllocateMapDataBuffer(int a2, int * a3);
     BombClass * * DecompressCellData(MouseClass * aP1);
@@ -800,6 +801,7 @@ struct MapClass {
     void* ApplyTerrainDamage(void*this@<ecx> a1, IUnknown aP1);
     void* Destruct();
     void* InitTileData(MouseClass * aP0, int aP3);
+    return RevealArea2(&v48, 0, aP2 + 3, 0);  // def-aligned
 };
 
 } // namespace gamemd
