@@ -43,11 +43,11 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
     v3[3] = v4; /*0x4a07ba*/
     if ( v4 ) /*0x4a07bd*/
     {
-      v5 = operator new(8 * v4); /*0x4a07c7*/
+      v5 = (unsigned int)(operator new(8 * v4));
       v3[2] = v5; /*0x4a07d1*/
       if ( v5 ) /*0x4a07d4*/
       {
-        v6 = v3[3]; /*0x4a07d6*/
+        v6 = (void *)(v3[3]);
         v7 = 0; /*0x4a07d9*/
         *((unsigned char *)v3 + 17) = 1; /*0x4a07dd*/
         if ( v6 > 0 ) /*0x4a07e1*/
@@ -85,7 +85,7 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
 namespace gamemd {
 unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPointClass * aP2)
 {
-  this->q004 = *a1; /*0x4a087c*/
+  this->q004 = (unsigned int *)(*a1);
   this->q008 = a1[1]; /*0x4a0881*/
   this->q00C = a1[2]; /*0x4a0887*/
   this->u32_10 = a1[3]; /*0x4a088d*/
@@ -111,7 +111,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4a128c*/
   {
-    this->q00C = 0; /*0x4a1296*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x4a129c*/
       v4 = a3; /*0x4a12b2*/
     else
@@ -299,7 +299,7 @@ VectorClass_flat * ConnectionPointClass_9::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x4a1508*/
     this->q004 = 0; /*0x4a1510*/
   }
-  this->IsAllocated = 0; /*0x4a151b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->q008 = 0; /*0x4a1521*/
   if ( (a2 & 1) != 0 ) /*0x4a1528*/
     RA2_OPDEL(); /*0x4a152b*/

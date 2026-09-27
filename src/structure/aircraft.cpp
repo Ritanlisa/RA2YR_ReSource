@@ -75,7 +75,7 @@ AbstractClass * * AircraftClass::Mission_Attack()
       int v7 = this->q2B4;
       if ( v7 && this->q0BF )
       {
-        int v8 = *this;
+        int v8 = (int)(*this);
         int v9 = FindSpiralMoveTarget(v7);
         this->AssignDestination(v9, 1);
         this->missionStatus = this->q169 != 0 ? 3 : 10;
@@ -138,7 +138,7 @@ LABEL_14:
         else
         {
   int v113; // [esp+A4h] [ebp-68h] BYREF
-          int * v15 = ObjectClass::CalcTargetFacing(this, &v113, this->q2B4);
+          int * v15 = (int *)(ObjectClass::CalcTargetFacing(this, &v113, this->q2B4));
           this->secondaryFacing.Update(v15);
           if ( v14 >= 16 )
           {
@@ -146,7 +146,7 @@ LABEL_14:
           }
           else
           {
-            int v16 = *this;
+            int v16 = (int)(*this);
             this->missionStatus = 4;
             this->AssignDestination(0, 1);
             return 1;
@@ -165,13 +165,13 @@ LABEL_14:
       if ( !this->q1B0->vt_slot_24() )
       {
   int v109; // [esp+94h] [ebp-78h] BYREF
-        int * v21 = ObjectClass::CalcTargetFacing(this, &v109, this->q2B4);
+        int * v21 = (int *)(ObjectClass::CalcTargetFacing(this, &v109, this->q2B4));
         this->primaryFacing.Update(v21);
   int v112; // [esp+A0h] [ebp-6Ch] BYREF
-        int * v22 = ObjectClass::CalcTargetFacing(this, &v112, this->q2B4);
+        int * v22 = (int *)(ObjectClass::CalcTargetFacing(this, &v112, this->q2B4));
         this->secondaryFacing.Update(v22);
       }
-      int v23 = *this;
+      int v23 = (int)(*this);
       int v24 = this->SelectWeapon(this->q2B4, 1);
       switch ( this->ReadINI_3(this->q2B4, v24) )
       {
@@ -186,10 +186,10 @@ LABEL_14:
   int v31; // eax
             do
             {
-              int v28 = *this;
+              int v28 = (int)(*this);
               int v29 = this->SelectWeapon(this->q2B4);
               this->FireWeapon(this->q2B4, v29);
-              int v30 = *this;
+              int v30 = (int)(*this);
               ++v26;
               v31 = this->SelectWeapon(this->q2B4);
             }
@@ -207,7 +207,7 @@ LABEL_14:
           Cell::ApplyDamage(v33, 1, 0, 0, v98);
           if ( v20->vt_slot_24() )
           {
-            int v34 = *this;
+            int v34 = (int)(*this);
             this->missionStatus = 6;
             this->AircraftClass_field_bool_6D2 = 1;
             return *(_DWORD *)(*(_DWORD *)this->SelectVocOrSfx(0) + 176);
@@ -217,7 +217,7 @@ LABEL_14:
           bool v35 = this->q0BF;
           bool v36 = v35 == 0;
           bool v37 = v35 < 0;
-          int v38 = *this;
+          int v38 = (int)(*this);
           this->AircraftClass_field_bool_6D2 = 1;
           this->missionStatus = !v37 && !v36 ? 1 : 10;
           return *(_DWORD *)(*(_DWORD *)this->SelectVocOrSfx(0) + 176);

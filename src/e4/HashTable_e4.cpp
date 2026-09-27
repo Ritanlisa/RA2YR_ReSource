@@ -186,7 +186,7 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
         RA2_OPDEL(v14); /*0x6251df*/
       }
     }
-    return 1; /*0x6251ea*/
+    return (gamemd::AbstractClass **)(1);
   }
   else
   {
@@ -249,7 +249,7 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
         RA2_OPDEL(v25); /*0x6252d9*/
       }
     }
-    return v34; /*0x6252e1*/
+    return (gamemd::AbstractClass **)(v34);
   }
 }
 } // namespace gamemd
@@ -402,7 +402,7 @@ int HashTable_flat::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
     if ( !v4 ) /*0x625fd2*/
       return 0; /*0x625fd2*/
   }
-  v6 = *aP3; /*0x625fee*/
+  v6 = (unsigned int)(*aP3);
   if ( *(uint16_t *)(v4 + 6) < (int)*aP3 ) /*0x625ff2*/
     v6 = *(uint16_t *)(v4 + 6); /*0x625ff4*/
   qmemcpy(a2, *(const void **)(v4 + 8), v6); /*0x626003*/
@@ -490,7 +490,7 @@ CampaignClass * * HashTable_flat::Clear()
       v13 = v16->vtable3; /*0x6b95f6*/
       if ( v13 > v16->u32_30 && v16->abstractFlags != 1 ) /*0x6b9608*/
       {
-        v14 = v16->vtable4; /*0x6b960e*/
+        v14 = (unsigned int)(v16->vtable4);
         v15 = *(int **)v16; /*0x6b9611*/
         v29 = *(int **)v16; /*0x6b9616*/
         v16->vtable3 = v13 >> 1; /*0x6b961d*/
@@ -807,7 +807,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
         RA2_OPDEL(v14); /*0x6badab*/
       }
     }
-    return 1; /*0x6badb6*/
+    return (gamemd::AbstractClass **)(1);
   }
   else
   {
@@ -873,7 +873,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
         RA2_OPDEL(v27); /*0x6baed6*/
       }
     }
-    return v38; /*0x6baede*/
+    return (gamemd::AbstractClass **)(v38);
   }
 }
 } // namespace gamemd

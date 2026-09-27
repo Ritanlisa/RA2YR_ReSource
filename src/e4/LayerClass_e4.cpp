@@ -26,7 +26,7 @@ int LayerClass::CoordinatesLegal(IUnknown * aP1)
   int v3; // esi
   int v4; // eax
 
-  v2 = *(&this->q0181); /*0x568304*/
+  v2 = (int)(*(&this->q0181));
   v3 = *aP1; /*0x56830c*/
   v4 = aP1[1]; /*0x56830f*/
   return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * *(&this->q0182); /*0x568337*/
@@ -125,7 +125,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
   unsigned int v104[24]; // [esp+134h] [ebp-C0h] BYREF
   unsigned int v105[24]; // [esp+194h] [ebp-60h] BYREF
 
-  v17 = aP0; /*0x56dc27*/
+  v17 = (IUnknown *)(aP0);
   v18 = *aP3; /*0x56dc33*/
   v19 = aP3[1]; /*0x56dc36*/
   v80 = (int)aP0; /*0x56dc49*/
@@ -147,7 +147,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
     v22 = *aP3 + (aP3[1] << 9); /*0x56dcb2*/
     if ( v22 >= 0x40000 || (v23 = *(unsigned int **)(g_Shroud_CellArray + 4 * v22)) == 0 ) /*0x56dcc2*/
     {
-      v23 = &g_CellClassArray; /*0x56dcc6*/
+      v23 = (unsigned int *)(&g_CellClassArray);
       g_Map_GlobalCellIndex = *(unsigned int *)aP3; /*0x56dccb*/
     }
     if ( (v23[80] & 0x100) != 0 ) /*0x56dcda*/
@@ -166,7 +166,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
     v26 = -v78; /*0x56dd0f*/
     if ( -v78 <= v78 ) /*0x56dd13*/
     {
-      v86 = &v103[v77]; /*0x56dd24*/
+      v86 = (int *)(&v103[v77]);
       do /*0x56dd28*/
       {
         if ( aP15 ) /*0x56dd31*/
@@ -187,7 +187,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
           }
           v25 = v78; /*0x56dd82*/
         }
-        g_Map_GlobalCellIndex = v87; /*0x56dd86*/
+        g_Map_GlobalCellIndex = (unsigned int)(v87);
         v30 = &g_CellClassArray; /*0x56dd8c*/
   LABEL_23:
         v98[1] = v27; /*0x56dd91*/
@@ -246,7 +246,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
           }
           v25 = v78; /*0x56df98*/
         }
-        g_Map_GlobalCellIndex = v89; /*0x56df9c*/
+        g_Map_GlobalCellIndex = (unsigned int)(v89);
         v39 = &g_CellClassArray; /*0x56dfa2*/
   LABEL_44:
         v97[1] = v36; /*0x56dfa7*/
@@ -294,7 +294,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
     v45 = 1 - v25; /*0x56e160*/
     if ( 1 - v25 <= v25 - 1 ) /*0x56e16c*/
     {
-      v46 = &v103[v77]; /*0x56e176*/
+      v46 = (int *)(&v103[v77]);
       do /*0x56e17d*/
       {
         if ( aP15 ) /*0x56e186*/
@@ -314,7 +314,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
           }
           v17 = (unsigned int *)v80; /*0x56e1d9*/
         }
-        g_Map_GlobalCellIndex = v84; /*0x56e1dd*/
+        g_Map_GlobalCellIndex = (unsigned int)(v84);
         v49 = &g_CellClassArray; /*0x56e1e3*/
   LABEL_67:
         v99[0] = (int16_t)(v85 - v78); /*0x56e1e8*/
@@ -368,7 +368,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
           }
           v17 = (unsigned int *)v80; /*0x56e3db*/
         }
-        g_Map_GlobalCellIndex = v79; /*0x56e3df*/
+        g_Map_GlobalCellIndex = (unsigned int)(v79);
         v56 = &g_CellClassArray; /*0x56e3e5*/
   LABEL_86:
         v96[0] = (int16_t)(v78 + v85); /*0x56e3ea*/
@@ -494,14 +494,14 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
 namespace gamemd {
 void * LayerClass::Reveal(int a2)
 {
-  void * result;
+  unsigned int result;
   int v4; // eax
   int v5; // edx
   int v6; // ecx
   int v7; // esi
   unsigned int v8;
 
-  result = (void *)a2; /*0x577d90*/
+  result = (unsigned int)((void *)a2);
   if ( a2 ) /*0x577da2*/
     *(unsigned char *)(*(unsigned int *)&HouseClass_Array->gap0[4 * *(unsigned int *)(a2 + 48)] + 577) = 1; /*0x577db0*/
   if ( (void *)a2 == HouseClass_Player ) /*0x577dbc*/
@@ -511,7 +511,7 @@ void * LayerClass::Reveal(int a2)
   }
   else if ( a2 ) /*0x577dc0*/
   {
-    return result; /*0x577dc0*/
+    return (void *)(result);
   }
   Debug::Log(); /*0x577dd1*/
   LABEL_8:
@@ -566,7 +566,7 @@ void * LayerClass::Reveal(int a2)
     FogOfWar::Render((int **)&MapClass_Instance); /*0x577f0d*/
     return (void *)MapClass::MarkForRedraw(&MapClass_Instance, 2); /*0x577f19*/
   }
-  return result; /*0x577f1e*/
+  return (void *)(result);
 }
 }
 // 0x578290
@@ -648,7 +648,7 @@ int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
   int v9; // esi
   bool result; // al
 
-  v3 = 0; /*0x57846b*/
+  v3 = (int)(0);
   v4 = aP1[1]; /*0x57846d*/
   v5 = *aP1; /*0x578472*/
   if ( aP2 ) /*0x578477*/

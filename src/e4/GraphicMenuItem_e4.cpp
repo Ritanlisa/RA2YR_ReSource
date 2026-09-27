@@ -13,7 +13,7 @@ void GraphicMenuItem::Dtor()
 {
   void **v1; // esi
 
-  v1 = this->q00C; /*0x4f3a71*/
+  v1 = (void **)(this->q00C);
   if ( v1 ) /*0x4f3a7c*/
   {
     j_DeleteAndZero(v1); /*0x4f3a80*/

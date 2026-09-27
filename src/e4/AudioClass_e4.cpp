@@ -31,7 +31,7 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   float v16; // [esp+8h] [ebp-Ch]
   int16_t *v17; // [esp+Ch] [ebp-8h]
 
-  v2 = 0; /*0x7228b6*/
+  v2 = (int *)(0);
   v3 = *(&this->u32_181); /*0x7228b9*/
   *(&this->u32_180) = 0; /*0x7228bf*/
   if ( *v3 >= 0 ) /*0x7228cc*/
@@ -53,7 +53,7 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
     if ( (int *)BuildingClass::FindByCellHash(j) == *(&this->u32_C8) /*0x722931*/
       && (uint8_t)BuildingClass::IsTiberiumSiloEligible(j) )
     {
-      v7 = (int16_t *)(j + 9); /*0x72294a*/
+      v7 = (unsigned int)((int16_t *)(j + 9));
       v17 = (int16_t *)(j + 9); /*0x72294d*/
       (*(&this->u32_183))[2 * (unsigned int)*(&this->u32_180)] = j[9]; /*0x722953*/
       (*(&this->u32_183))[2 * (unsigned int)*(&this->u32_180) + 1] = 0; /*0x722962*/

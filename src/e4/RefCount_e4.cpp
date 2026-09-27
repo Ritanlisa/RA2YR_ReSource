@@ -12,7 +12,7 @@ int RefCount::Decrement()
 {
   void * result;
 
-  result = this->q00C - 1; /*0x401f93*/
+  result = (int)(this->q00C - 1);
   this->q00C = result; /*0x401f96*/
   if ( result < 0 ) /*0x401f99*/
     this->q00C = 0; /*0x401f9b*/

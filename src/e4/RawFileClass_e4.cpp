@@ -20,7 +20,7 @@ void RawFileClass::Dtor()
   {
     if ( !CloseHandle((HANDLE)this->FileTimeDateLo) ) /*0x65ca17*/
     {
-      v2 = *this; /*0x65ca25*/
+      v2 = (int)(*this);
       v4 = this->FileNameAllocated; /*0x65ca27*/
       LastError = GetLastError(); /*0x65ca29*/
       this->StubReturnFalse(LastError, 0, v4); /*0x65ca32*/

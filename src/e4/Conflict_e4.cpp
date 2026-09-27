@@ -47,7 +47,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
   }
   else
   {
-    v5 = operator new(8 * a2 + 4); /*0x766c37*/
+    v5 = (unsigned int *)(operator new(8 * a2 + 4));
     if ( !v5 ) /*0x766c41*/
     {
       v8 = 0; /*0x766c6f*/
@@ -132,7 +132,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
     }
     else
     {
-      v5 = operator new(8 * a2 + 4); /*0x766de7*/
+      v5 = (unsigned int *)(operator new(8 * a2 + 4));
       if ( v5 ) /*0x766df1*/
       {
         *v5 = a2; /*0x766df3*/
@@ -173,7 +173,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
       }
       v3 = a2; /*0x766e9b*/
     }
-    this->Items = v6; /*0x766eaa*/
+    this->Items = (unsigned int)(v6);
     this->q008 = v3; /*0x766ead*/
     *(&this->Items3) = a3 == 0; /*0x766eb0*/
   }
@@ -387,7 +387,7 @@ VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(char a2)
     (**v3)(v3, 3); /*0x766fdf*/
     this->Items = 0; /*0x766fe1*/
   }
-  this->IsAllocated = 0; /*0x766fec*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->Capacity = 0; /*0x766ff2*/
   if ( (a2 & 1) != 0 ) /*0x766ff9*/
     RA2_OPDEL(); /*0x766ffc*/
@@ -407,7 +407,7 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(char a2)
     (**v3)(v3, 3); /*0x76709f*/
     this->Items = 0; /*0x7670a1*/
   }
-  this->IsAllocated = 0; /*0x7670ac*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x7670b2*/
   if ( (a2 & 1) != 0 ) /*0x7670b9*/
     RA2_OPDEL(); /*0x7670bc*/

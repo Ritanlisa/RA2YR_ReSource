@@ -23,8 +23,8 @@ int LocomotionClass::Initialize()
   this->q020 = 0; /*0x4af550*/
   g_CurrentFrame = g_CurrentFrame; /*0x4af553*/
   this->u32_2C = 0; /*0x4af559*/
-  this->q024 = g_CurrentFrame; /*0x4af55c*/
-  this->u32_30 = 0; /*0x4af55f*/
+  this->q024 = (gamemd::Coord *)(g_CurrentFrame);
+  this->u32_30 = (int)(0);
   this->q034 = g_DDraw_ClipRect; /*0x4af568*/
   this->q038 = qword_8A0794; /*0x4af570*/
   this->q040 = g_DDraw_ClipRect; /*0x4af585*/
@@ -51,11 +51,11 @@ int LocomotionClass::Initialize()
 namespace gamemd {
 void * LocomotionClass::UpdateAll()
 {
-  wchar_t * result;
+  unsigned int result;
   int i; // esi
   unsigned int *v2; // ecx
 
-  result = (wchar_t *)dword_8A3880; /*0x4c54a0*/
+  result = (unsigned int)((wchar_t *)dword_8A3880);
   for ( i = dword_8A3880 - 1; i >= 0; --i ) /*0x4c54ab*/
   {
     v2 = (unsigned int *)*((unsigned int *)dword_8A3874 + i); /*0x4c54b3*/
@@ -66,7 +66,7 @@ void * LocomotionClass::UpdateAll()
         result = (wchar_t *)(*(int (__thiscall **)(unsigned int *, int))(*v2 + 32))(v2, 1); /*0x4c54cf*/
     }
   }
-  return result; /*0x4c54d5*/
+  return (void *)(result);
 }
 } // namespace gamemd
 // 0x4CFA70
@@ -149,7 +149,7 @@ int LocomotionClass::Update()
 
   LocomotionClass::Init(); /*0x54ac46*/
   this->DestinationCoords = dword_ABC5A8; /*0x54ac59*/
-  this->q044 = dword_ABC5AC; /*0x54ac61*/
+  this->q044 = (int)(dword_ABC5AC);
   dword_ABC5B0 = dword_ABC5B0; /*0x54ac64*/
   this->IsMoving = 0; /*0x54ac6a*/
   this->CurrentState = 0; /*0x54ac6d*/
@@ -176,7 +176,7 @@ int LocomotionClass::Update()
 namespace gamemd {
 unsigned int * LocomotionClass::Init()
 {
-  this->u32_8 = 0; /*0x55a6c6*/
+  this->u32_8 = (unsigned int *)(0);
   this->LinkedTo = 0; /*0x55a6c9*/
   this->u32_10 = 1; /*0x55a6cc*/
   this->Dirty = 1; /*0x55a6cf*/

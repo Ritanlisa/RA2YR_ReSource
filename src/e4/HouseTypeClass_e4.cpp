@@ -74,7 +74,7 @@ AbstractClass * * HouseTypeClass::Dtor()
 }
 // 0x511850
 namespace gamemd {
-void* HouseTypeClass::LoadFromINI(unsigned char *** aP1)
+void* HouseTypeClass::LoadFromINI(unsigned char *** aP1, void * a1, void * a2)
 {
   uint8_t ***v3; // esi
   unsigned int v5; // ecx

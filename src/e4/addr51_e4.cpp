@@ -37,7 +37,7 @@ unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
   uint8_t v5; // bl
   uint8_t result; // al
 
-  v3 = this->u32_4; /*0x517394*/
+  v3 = (uint8_t)(this->u32_4);
   this->u32_8 += a2 * (a3[2] - this->u32_8) / 256; /*0x517397*/
   v4 = v3 + a2 * (a3[1] - v3) / 256; /*0x5173b8*/
   v5 = *this; /*0x5173ba*/
@@ -69,7 +69,7 @@ int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
 }
 // 0x51FEF0
 namespace gamemd {
-void SaveInfantryToINI()
+void SaveInfantryToINI(void * a1)
 {
   int result; // eax
   int v4; // esi
@@ -306,7 +306,7 @@ namespace gamemd {
 unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
 {
   unsigned int result; // eax
-  const unsigned int v4;
+  const int * v4;
 
   result = a3; /*0x510e10*/
   if ( a3 < 16 ) /*0x510e19*/

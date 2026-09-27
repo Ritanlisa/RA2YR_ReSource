@@ -40,7 +40,7 @@ char TriggerClass::FindByEventType(char a1)
     v2 = operator new(0x20u); /*0x61098d*/
     if ( v2 ) /*0x610994*/
     {
-      v4 = IDA_HIDWORD(xmmword_AC1CB8); /*0x61099b*/
+      v4 = (unsigned int)(IDA_HIDWORD(xmmword_AC1CB8));
       v3 = DWORD2(xmmword_AC1CB8); /*0x61099b*/
       v2[1] = DWORD2(xmmword_AC1CB8); /*0x6109a1*/
       v2[2] = v4; /*0x6109a9*/

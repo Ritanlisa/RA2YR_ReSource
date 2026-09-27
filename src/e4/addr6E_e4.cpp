@@ -80,7 +80,7 @@ int E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
 }
 // 0x6E2050
 namespace gamemd {
-void globalHelper_0E2050()
+void globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
 {
   int v4; // ebp
   char v5; // bl
@@ -190,7 +190,7 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
 }
 // 0x6E30C0
 namespace gamemd {
-void CreateHouseClass()
+void CreateHouseClass(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
   void *v7; // esi
   int Field11; // eax
@@ -227,7 +227,7 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   int v9; // [esp+8h] [ebp-8h]
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v7 = *ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->M68); /*0x6e339b*/
+  v7 = (unsigned int *)(*ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->M68));
   GroundHeight = 0; /*0x6e339f*/
   v9 = (IDA_SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
   v8 = ((int16_t)v7 << 8) + 128; /*0x6e33ca*/
@@ -558,7 +558,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   int DefaultTimer; // [esp+18h] [ebp-10h]
   char v20[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
-  v3 = *(unsigned int *)&this->M84; /*0x6efc76*/
+  v3 = (int *)(*(unsigned int *)&this->M84);
   v4 = -1; /*0x6efc79*/
   v17 = this; /*0x6efc7f*/
   for ( i = v3; v3; v3 = v3->q5D8 ) /*0x6efc85*/

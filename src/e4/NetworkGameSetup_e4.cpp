@@ -28,7 +28,7 @@ int NetworkGameSetup::ReadRulesUnknown()
     dword_A8B278 = (LPARAM)result; /*0x5b9775*/
     this->q024 = 1; /*0x5b977a*/
   }
-  return result; /*0x5b977e*/
+  return (int)(result);
 }
 } // namespace gamemd
 // 0x5BA970

@@ -30,7 +30,7 @@ unsigned int * E4Recv_76AAF0::sub_76AAF0()
   this->M20 = 100; /*0x76ab35*/
   this->M35 = 100; /*0x76ab38*/
   this->M38 = 100; /*0x76ab3b*/
-  this->u32_29 = 100; /*0x76ab3e*/
+  this->u32_29 = (unsigned int *)(100);
   this->M44 = 100; /*0x76ab41*/
   this->M47 = 100; /*0x76ab44*/
   this->M32 = 100; /*0x76ab47*/

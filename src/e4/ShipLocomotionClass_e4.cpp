@@ -64,7 +64,7 @@ HRESULT ShipLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     v12.lpVtbl->Write(v3, &a3, 1, 0); /*0x69efe4*/
     return v5; /*0x69efe8*/
   }
-  lpVtbl = v3->lpVtbl; /*0x69ef3c*/
+  lpVtbl = (gamemd::ShipLocomotionClass::LoadFromStream::IStreamVtbl *)(v3->lpVtbl);
   IDA_LOBYTE(a3) = 1; /*0x69ef48*/
   lpVtbl->Write(v3, &a3, 1, 0); /*0x69ef4d*/
   v7 = (int (__stdcall ***)(unsigned int, void *, int **))v4[26]; /*0x69ef50*/

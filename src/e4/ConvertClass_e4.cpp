@@ -110,7 +110,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   *(&this->q01C1) = 0; /*0x48e89a*/
   *(&this->q01C2) = 0; /*0x48e8a0*/
   aP4 = aP4; /*0x48e8a6*/
-  v8 = 1; /*0x48e8aa*/
+  v8 = (unsigned int)(1);
   v9 = aP4 < 1; /*0x48e8af*/
   *(&this->q01C3) = 0; /*0x48e8b1*/
   *(&this->q01C4) = 0; /*0x48e8b7*/
@@ -139,7 +139,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
     *(&this->q0241) = 1; /*0x48e943*/
   if ( this->q004 == 1 ) /*0x48e94f*/
   {
-    v10 = operator new(0x100u); /*0x48e95a*/
+    v10 = (unsigned int)(operator new(0x100u));
     *(&this->q0244) = v10; /*0x48e95f*/
     *v10 = 0; /*0x48e968*/
     do /*0x48e9df*/
@@ -198,7 +198,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   }
   else
   {
-    v24 = (char *)operator new(*(&this->q0241) << 9); /*0x48eb1c*/
+    v24 = (unsigned int)((char *)operator new(*(&this->q0241) << 9));
     v25 = *(&this->q0241); /*0x48eb21*/
     *(&this->q0242) = v24; /*0x48eb2a*/
     *(&this->q0243) = &v24[512 * ((v25 - 1) >> 1)]; /*0x48eb3a*/
@@ -217,10 +217,10 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
          dword_89ED0C + dword_89ED00,
          0) )
   {
-    v26 = dword_89ED08++; /*0x48ebc4*/
+    v26 = (unsigned int)(dword_89ED08++);
     *((unsigned int *)dword_89ECFC + v26) = this; /*0x48ebd3*/
   }
-  return this; /*0x48ebd8*/
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 // 0x491430

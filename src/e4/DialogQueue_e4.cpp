@@ -22,7 +22,7 @@ int DialogQueue::PushEntry()
                    0),
         (unsigned char)result) )
   {
-    result = dword_ABFCA0++; /*0x5d4eb4*/
+    result = (unsigned int)(dword_ABFCA0++);
     *((unsigned int *)dword_ABFC94 + result) = this; /*0x5d4ec3*/
   }
   return result; /*0x5d4ec6*/

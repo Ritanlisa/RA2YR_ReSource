@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/BinkMovie_e4.hpp"
 
 // 0x433880
 namespace gamemd {
@@ -15,7 +16,7 @@ int BitTextClass::ParseFontData(char * Source)
   struct tagRECT *v3; // ebp
   unsigned int *Font; // eax
 
-  v3 = (struct tagRECT *)(&this->u32_108); /*0x43388a*/
+  v3 = (unsigned int)((struct tagRECT *)(&this->u32_108));
   this->m_CharWidth = 0; /*0x43389b*/
   this->u16_24 = 0x7FFF; /*0x43389e*/
   this->u16_26 = 13653; /*0x4338a4*/
@@ -53,7 +54,7 @@ int BitTextClass::ParseFontData(char * Source)
     SetRect(v3, 0, 0, 0, 0); /*0x43392b*/
     this->u32_2C = 1; /*0x433931*/
   }
-  return this; /*0x4338f4*/
+  return (int)(this);
 }
 } // namespace gamemd
 // 0x434AD0
@@ -62,12 +63,12 @@ unsigned int * BitTextClass::LoadFont()
 {
   if ( operator new(0x44u) ) /*0x434adb*/
   {
-    g_FogOfWarState = BitTextClass::ParseFontData(aGameFnt); /*0x434af3*/
+    g_FogOfWarState = (unsigned int *)(BitTextClass::ParseFontData(aGameFnt));
     return this; /*0x434af8*/
   }
   else
   {
-    g_FogOfWarState = 0; /*0x434afe*/
+    g_FogOfWarState = (unsigned int *)(0);
     return this; /*0x434afc*/
   }
 }

@@ -13,7 +13,7 @@
 
 // 0x40FFFF
 namespace gamemd {
-int Math_InitDegToRad()
+int Math_InitDegToRad(void * a1, void * a2)
 {
   int result; // eax
 
@@ -32,7 +32,7 @@ void Math::Hypotenuse2D()
 }
 // 0x4CAC40
 namespace gamemd {
-void Math_Sqrt()
+void Math_Sqrt(void * a1)
 {
   double v1; // st7
   unsigned int v3; // ecx
@@ -54,7 +54,7 @@ void Math_Sqrt()
 }
 // 0x4CACB0
 namespace gamemd {
-void Math_SinCos()
+void Math_SinCos(void * a1)
 {
   int v1; // eax
   char v2; // cl
@@ -72,7 +72,7 @@ void Math_SinCos()
 }
 // 0x4CAD00
 namespace gamemd {
-void Math_ArcTan2()
+void Math_ArcTan2(void * a1)
 {
   int v1; // eax
   char v2; // cl
@@ -105,7 +105,7 @@ int Math::Sin(double a1)
 }
 // 0x4CAE30
 namespace gamemd {
-void Math_CalcAngle()
+void Math_CalcAngle(void * a1, void * a2)
 {
   double v3; // st7
   char v4; // c3
@@ -162,7 +162,7 @@ void * Math::BuildRotationMatrix(float * a2, float a3)
   double v14; // st7
   float v16; // [esp+10h] [ebp+8h]
 
-  a3 = a3; /*0x5ae762*/
+  a3 = (void *)(a3);
   v16 = Math::ArcTan2(a3); /*0x5ae76f*/
   v5 = Math::SinCos(a3); /*0x5ae775*/
   v7 = *a2 * *a2; /*0x5ae787*/
@@ -293,7 +293,7 @@ unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, 
 }
 // 0x7C5F00
 namespace gamemd {
-void Math_RoundToInt()
+void Math_RoundToInt(void * a1)
 {
   return (int64_t)a1; /*0x7c5f22*/
 }

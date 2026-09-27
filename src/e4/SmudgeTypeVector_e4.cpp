@@ -18,7 +18,7 @@ VectorClass_flat * SmudgeTypeVector::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x67c0c8*/
     this->q004 = 0; /*0x67c0d0*/
   }
-  this->IsAllocated = 0; /*0x67c0db*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->q008 = 0; /*0x67c0e1*/
   if ( (a2 & 1) != 0 ) /*0x67c0e8*/
     RA2_OPDEL(); /*0x67c0eb*/

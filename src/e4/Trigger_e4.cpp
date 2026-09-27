@@ -36,7 +36,7 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
   int FileClassToBuffer; // eax
   MSShapeAnim * v10;
 
-  this->u32_8 = a4; /*0x5cbd2c*/
+  this->u32_8 = (unsigned char)(a4);
   this->ptr_4 = aP2; /*0x5cbd32*/
   this->q00C = 1; /*0x5cbd35*/
   this->q010 = Timer::GetTicks(); /*0x5cbd48*/
@@ -270,7 +270,7 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
 namespace gamemd {
 unsigned int * Trigger::processTrigger(int a2, int a3)
 {
-  this->ptr_4 = a2; /*0x76f09a*/
+  this->ptr_4 = (unsigned int *)(a2);
   this->u32_8 = a3; /*0x76f09d*/
   return this; /*0x76f0a6*/
 }
@@ -279,7 +279,7 @@ unsigned int * Trigger::processTrigger(int a2, int a3)
 namespace gamemd {
 unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
 {
-  this->ptr_4 = 0; /*0x76f1cb*/
+  this->ptr_4 = (unsigned int)(0);
   this->u32_8 = aP1; /*0x76f1ce*/
   this->q00C = 1; /*0x76f1d1*/
   this->u8_D = 0; /*0x76f1d5*/
@@ -287,13 +287,13 @@ unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
   {
     if ( aP2 ) /*0x76f1e6*/
     {
-      this->ptr_4 = aP2; /*0x76f1e8*/
+      this->ptr_4 = (unsigned int *)(aP2);
       return this; /*0x76f1ee*/
     }
     this->ptr_4 = operator new(4 * aP1); /*0x76f1fd*/
     this->u8_D = 1; /*0x76f200*/
   }
-  return this; /*0x76f1ed*/
+  return (unsigned int *)(this);
 }
 }
 // 0x76FF20

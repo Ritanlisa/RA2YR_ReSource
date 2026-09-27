@@ -17,7 +17,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
   char *v6; // [esp+8h] [ebp-8h]
   char * v7;
 
-  v6 = &this->u32_60; /*0x765387*/
+  v6 = (char *)(&this->u32_60);
   v7 = 0; /*0x76538f*/
   if ( Campaign_WorldDominationTour_24_::AddRef(&v5) ) /*0x76539f*/
   {
@@ -29,7 +29,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
     }
     while ( ((uint8_t (__thiscall *)(void ***))v5[1])(&v5) ); /*0x7653db*/
   }
-  v7 = v7; /*0x7653ea*/
+  v7 = (unsigned int)(v7);
   a2[1] = v6; /*0x7653ef*/
   a2[2] = v7; /*0x7653f2*/
   return a2; /*0x7653ee*/

@@ -35,7 +35,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
     {
       if ( a2 - 1 >= 0 ) /*0x658b67*/
       {
-        v9 = a3 + 4; /*0x658b69*/
+        v9 = (unsigned int *)(a3 + 4);
         a2 = a2; /*0x658b6c*/
         do /*0x658b79*/
         {
@@ -55,7 +55,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
       {
         if ( a2 - 1 >= 0 ) /*0x658b46*/
         {
-          v7 = v6 + 4; /*0x658b48*/
+          v7 = (unsigned int *)(v6 + 4);
           a2 = a2; /*0x658b4b*/
           do /*0x658b58*/
           {
@@ -105,7 +105,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
         this->q004 = 0; /*0x658bd8*/
       }
     }
-    this->q004 = v5; /*0x658be3*/
+    this->q004 = (unsigned char)(v5);
     this->q008 = v3; /*0x658be9*/
     this->IsAllocated = a3 == 0; /*0x658bec*/
   }
@@ -113,7 +113,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
   {
     (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x658bf5*/
   }
-  v15 = this->q008; /*0x658bf8*/
+  v15 = (gamemd::AbstractClass **)(this->q008);
   if ( v15 < this->q010 ) /*0x658c00*/
     this->q010 = v15; /*0x658c02*/
   return 1; /*0x658c05*/
@@ -127,7 +127,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
   char *v6; // eax
   unsigned int *v7; // ecx
 
-  this->Items = 0; /*0x658ded*/
+  this->Items = (unsigned int)(0);
   this->Capacity = aP1; /*0x658df0*/
   this->IsInitialized = 1; /*0x658df3*/
   this->IsAllocated = 0; /*0x658df7*/
@@ -149,7 +149,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
         }
         while ( aP1 ); /*0x658e21*/
       }
-      this->Items = aP2; /*0x658e23*/
+      this->Items = (unsigned int)(aP2);
     }
     else
     {
@@ -158,7 +158,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
       {
         if ( aP1 - 1 >= 0 ) /*0x658e3f*/
         {
-          v7 = v6 + 4; /*0x658e41*/
+          v7 = (unsigned int *)(v6 + 4);
           aP1 = aP1; /*0x658e44*/
           do /*0x658e51*/
           {
@@ -175,11 +175,11 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
       {
         v6 = 0; /*0x658e55*/
       }
-      this->Items = v6; /*0x658e57*/
+      this->Items = (unsigned int)(v6);
       this->IsAllocated = 1; /*0x658e5a*/
     }
   }
-  this->u32_14 = 10; /*0x658e64*/
+  this->u32_14 = (unsigned int *)(10);
   this->q010 = 0; /*0x658e6b*/
   return this; /*0x658e70*/
 }
@@ -264,7 +264,7 @@ char * RadarHashVector::Destructor(char a2)
 
   if ( (a2 & 2) != 0 ) /*0x658c6a*/
   {
-    v3 = *(this - 1); /*0x658c6c*/
+    v3 = (int)(*(this - 1));
     v4 = (char *)(this - 1); /*0x658c70*/
     v5 = 3 * v3; /*0x658c73*/
     v6 = v3 - 1; /*0x658c76*/

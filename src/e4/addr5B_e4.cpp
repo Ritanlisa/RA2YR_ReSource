@@ -123,7 +123,7 @@ unsigned int * sub_5B3FF0(unsigned int * a1, unsigned int * a2)
     if ( result[2] >= a1[2] ) /*0x5b4002*/
       a2 = result; /*0x5b4004*/
   }
-  *a2 = a1; /*0x5b400d*/
+  *a2 = (unsigned int)(a1);
   *a1 = 0; /*0x5b400f*/
   a1[1] = 0; /*0x5b4015*/
   return result; /*0x5b401c*/
@@ -134,7 +134,7 @@ namespace gamemd {
 AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
 {
   int v3; // edi
-  unsigned int v4;
+  unsigned int * v4;
   int v5; // ecx
   bool v6; // cc
   unsigned int *v8; // eax
@@ -177,7 +177,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
   CCFileClass::Construct(v13, Source); /*0x5b414d*/
   if ( (uint8_t)CCFileClass::Open(0) ) /*0x5b415c*/
   {
-    v8 = operator new(0x10u); /*0x5b41af*/
+    v8 = (unsigned int *)(operator new(0x10u));
     v9 = v8; /*0x5b41b4*/
     v8[2] = v3; /*0x5b41b9*/
     if ( g_FileCacheHashRoot ) /*0x5b41c4*/
@@ -186,13 +186,13 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
     }
     else
     {
-      g_FileCacheHashRoot = v8; /*0x5b41c6*/
+      g_FileCacheHashRoot = (int)(v8);
       *v8 = 0; /*0x5b41cc*/
       v8[1] = 0; /*0x5b41ce*/
     }
     if ( aP1 || strstr(Str, Ext) ) /*0x5b41f5*/
     {
-      v11 = operator new(0x24u); /*0x5b4210*/
+      v11 = (void *)(operator new(0x24u));
       if ( v11 ) /*0x5b421a*/
         v10 = LoadSHPFile(v11, Source); /*0x5b4224*/
       else
@@ -200,9 +200,9 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
     }
     else
     {
-      v10 = CCFileClass::ReadEntireFile(v13); /*0x5b420a*/
+      v10 = (void *)(CCFileClass::ReadEntireFile(v13));
     }
-    v9[3] = v10; /*0x5b422a*/
+    v9[3] = (gamemd::AbstractClass **)(v10);
     v15 = 0; /*0x5b4239*/
     Vector::Clear(v14); /*0x5b4240*/
     v13[0] = &off_7E1668; /*0x5b4249*/
@@ -211,7 +211,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
   }
   else
   {
-    v15 = 0; /*0x5b4171*/
+    v15 = (unsigned int)(0);
     Vector::Clear(v14); /*0x5b4178*/
     v13[0] = &off_7E1668; /*0x5b4181*/
     BufferIOFileClass::Dtor(v13); /*0x5b4189*/
@@ -296,7 +296,7 @@ ObjectClass * * FileInfoCache_Lookup(const char * a1, unsigned int * a2, unsigne
     if ( a4 ) /*0x5b4563*/
       *a4 += v6[7]; /*0x5b456c*/
   }
-  return 1; /*0x5b456e*/
+  return (gamemd::ObjectClass **)(1);
 }
 }
 // 0x5B4B10
@@ -321,7 +321,7 @@ void GameSetupDialogProc(HWND hWnd, unsigned int a2, unsigned int a3, unsigned i
   int16_t v19; // [esp+130h] [ebp-204h]
   wchar_t lParam[256]; // [esp+134h] [ebp-200h] BYREF
 
-  result = BaseDialogProc(hWnd, a2, a3, a4); /*0x5b4b38*/
+  result = (int)(BaseDialogProc(hWnd, a2, a3, a4));
   if ( result ) /*0x5b4b3f*/
     return result; /*0x5b4b3f*/
   WindowLongA = GetWindowLongA(hWnd, 8); /*0x5b4b4f*/
@@ -568,7 +568,7 @@ AbstractClass * * ApplyGameOptions(CampaignScore * aP0)
       g_UIControlState = 0; /*0x5b6cb1*/
     }
   }
-  return 1; /*0x5b69dc*/
+  return (gamemd::AbstractClass **)(1);
 }
 }
 // 0x5BB290

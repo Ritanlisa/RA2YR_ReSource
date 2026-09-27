@@ -43,13 +43,13 @@ void PlaceCabhutMap(FootClass * aP0)
   int v13; // edx
   unsigned int v14[3]; // [esp+10h] [ebp-Ch] BYREF
 
-  aP0 = aP0; /*0x5904b5*/
+  aP0 = (int)(aP0);
   v2 = aP0[1]; /*0x5904bb*/
   if ( v2 >= aP0[3] + v2 + 1 ) /*0x5904c7*/
     return 0; /*0x59052b*/
   while ( 1 ) /*0x5904c9*/
   {
-    v3 = *aP0; /*0x5904c9*/
+    v3 = (int)(*aP0);
     if ( *aP0 < aP0[2] + *aP0 + 1 ) /*0x5904d5*/
       break; /*0x5904d5*/
   LABEL_7:
@@ -434,7 +434,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   {
     v11 = *(unsigned int *)(*((unsigned int *)g_RandomMap_TerrainState + j) + 8) /*0x594ce8*/
         + g_RandomMap_TileData * (500000 - *(unsigned int *)(*((unsigned int *)g_RandomMap_TerrainState + j) + 12));
-    v12 = (char *)g_RandomMap_TerrainState + 4 * j; /*0x594cea*/
+    v12 = (unsigned int *)((char *)g_RandomMap_TerrainState + 4 * j);
     if ( NumOfElements + 1 <= 0 || (uint8_t)Map_Helper_5AD930(10) ) /*0x594d06*/
     {
       *(unsigned int *)(8 * NumOfElements) = v11; /*0x594d17*/
@@ -549,7 +549,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
   {
     if ( j < v16 || (v17 || !v16) && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v14[2])(&v14, v19 + v16, 0) ) /*0x595d5f*/
     {
-      v2 = j++; /*0x595d6a*/
+      v2 = (_WIN32_FIND_DATAA *)(j++);
       *((unsigned int *)Block + v2) = i; /*0x595d75*/
     }
     for ( i = (struct _WIN32_FIND_DATAA *)operator new(0x140u); /*0x595d8f*/
@@ -561,7 +561,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
         && v19 > 0
         && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v14[2])(&v14, v19 + v16, 0) )
       {
-        v3 = j++; /*0x595dcd*/
+        v3 = (_WIN32_FIND_DATAA *)(j++);
         *((unsigned int *)Block + v3) = i; /*0x595dd8*/
       }
     }

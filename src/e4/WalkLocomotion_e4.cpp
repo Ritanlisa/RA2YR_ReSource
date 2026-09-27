@@ -39,7 +39,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
   int v20; // [esp+1Ch] [ebp-8h]
   int v21; // [esp+20h] [ebp-4h]
 
-  v3 = aP1; /*0x6a01a0*/
+  v3 = (void *)(aP1);
   if ( *aP1 != g_OverlayTypeConfig || aP1[1] != qword_B077FC || (v5 = aP1[2], v5 != MEMORY[0xB07800]) ) /*0x6a01ce*/
   {
     IDA_LOBYTE(v5) = this->ptr_60; /*0x6a01d4*/
@@ -180,7 +180,7 @@ int WalkLocomotion::ProcessCollision(char a2)
   AbstractClass *v176; // [esp+2Ch] [ebp-F8h]
   ObjectClass *aP4; // [esp+44h] [ebp-E0h] BYREF
   unsigned char v182[12]; // [esp+48h] [ebp-DCh] BYREF
-  unsigned int varD0;
+  void * varD0;
   IUnknown *v183; // [esp+5Ch] [ebp-C8h]
   ObjectClass aP3; // [esp+60h] [ebp-C4h] BYREF
   if ( (!this->u8_63 || this->WalkLocomotion_field_0x58 == -1) && *(unsigned int *)(this->q00C + 1504) != 8
@@ -218,7 +218,7 @@ int WalkLocomotion::ProcessCollision(char a2)
             + (double)(v9 - *(unsigned int *)&v182[4]) * (double)(v9 - *(unsigned int *)&v182[4])
             + (double)aP3.lastLayer * (double)aP3.lastLayer);
       int v12 = Math::RoundToInt(v11);
-      v13 = this->q00C;
+      v13 = (gamemd::MouseClass *)(this->q00C);
       int v14 = v12;
       char v15 = 0;
       int v16 = *(unsigned int *)&v13->__pad_1D4[936];
@@ -232,7 +232,7 @@ int WalkLocomotion::ProcessCollision(char a2)
         {
           double v20 = varD0 - (double)*(int *)(v18 + 1656) * 0.001500000013038516;
           if ( v20 >= 0.1000000014901161 )
-            varD0 = v20;
+            varD0 = (void *)(v20);
           else
             varD0 = 0.1000000014901161;
           v15 = 1;
@@ -243,11 +243,11 @@ int WalkLocomotion::ProcessCollision(char a2)
         v15 = 1;
         double v19 = varD0 - (double)*(int *)(v18 + 1656) * *(double *)(v18 + 768);
         if ( v19 >= 0.300000011920929 )
-          varD0 = v19;
+          varD0 = (void *)(v19);
         else
           varD0 = 0.300000011920929;
       }
-      v21 = this->q00C;
+      v21 = (gamemd::MouseClass *)(this->q00C);
       if ( v21->__pad_1D4[1249] )
       {
         if ( this->q140 >= 0.2 )
@@ -270,13 +270,13 @@ int WalkLocomotion::ProcessCollision(char a2)
               goto LABEL_37;
             v24 = *(double *)&v21->__pad_1D4[932] - (double)*(int *)(v18 + 1656) * *(double *)(v18 + 768);
             if ( this->q140 > v24 )
-              v24 = this->q140;
+              v24 = (void *)(this->q140);
           }
           else
           {
             v24 = *(double *)(v18 + 776) + *(double *)&v21->__pad_1D4[932];
             if ( this->q140 < v24 )
-              v24 = this->q140;
+              v24 = (void *)(this->q140);
           }
           varD0 = v24;
           (*(void (__stdcall **)(unsigned int, unsigned int))(v21->field_0 + 1348))(
@@ -310,12 +310,12 @@ LABEL_37:
     (*(void (__stdcall **)(unsigned int, unsigned int))(v4 + 1348))(this->q140, this->u32_54);
   }
   int v26 = (*(int (__thiscall **)(unsigned int))(*this->q00C + 1336))(this->q00C);
-  v27 = this->q00C;
+  v27 = (gamemd::MouseClass *)(this->q00C);
   int v28 = a2 == 0 ? v26 : 0;
   int v29 = *(unsigned int *)&v27->__pad_1D4[1036];
   int v30 = this->u32_4C + v28;
   *(unsigned int *)&aP3[4] = v30;
-  aP3.uniqueId = v29;
+  aP3.uniqueId = (void *)(v29);
   if ( v29 == 8 && this->WalkLocomotion_field_0x58 == -1 )
   {
     (*(void (__thiscall **)(MouseClass *, unsigned int))(v27->field_0 + 292))(v27, 0);
@@ -328,7 +328,7 @@ LABEL_37:
       this->WalkLocomotion_field_0x44 = g_OverlayTypeConfig.field_4;
       v32 = (TechnoClass *)g_OverlayTypeConfig.field_8;
       this->u8_63 = 0;
-      this->q048 = v32;
+      this->q048 = (unsigned char)(v32);
     }
     int v33 = *(int16_t *)((*(int (__thiscall **)(unsigned int))(*this->q00C + 444))(this->q00C) + 278);
     if ( v33 >= 0 && v33 < *(int *)&g_CellDirectionOffsets[84664] )
@@ -337,7 +337,7 @@ LABEL_37:
       aP4 = *(ObjectClass **)(v34 + 40);
       int v35 = IDA_SHIWORD(aP4) << 8;
       *v31 = ((int16_t)aP4 << 8) + 128;
-      v36 = this->q00C;
+      v36 = (gamemd::MouseClass *)(this->q00C);
       this->WalkLocomotion_field_0x44 = v35 + 128;
       this->q048 = 0;
       qmemcpy(&v36->__pad_1D4[1036], &v36->__pad_1D4[1040], 0x5Cu);
@@ -349,21 +349,21 @@ LABEL_37:
       *(unsigned short *)&aP3[8] = *((unsigned short *)&Direction_X_Offsets.field_0 + 2 * v37) + (unsigned short)aP4;
       *(unsigned short *)&aP3[10] = IDA_HIWORD(aP4) + *((unsigned short *)&DataGlobal_89F68A + 2 * v37);
       aP4 = *(ObjectClass **)&aP3[8];
-      unsigned int * v38 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&aP4);
+      unsigned int * v38 = (unsigned int *)(CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&aP4));
       Coords = (ObjectClass *)CellClass::GetCoords(v38, (int *)&aP3.attachedBomb);
       unsigned int * v40 = (unsigned int *)(this->q00C + 1384);
       *v40 = *(unsigned int *)Coords->__pad_0;
       v40[1] = *(unsigned int *)&Coords->__pad_0[4];
       v40[2] = *(unsigned int *)&Coords->__pad_0[8];
       int v41 = this->q00C + 156;
-      aP3.nextArrayIndex = *(unsigned int *)v41;
-      aP3.referenceCount = *(unsigned int *)(v41 + 4);
+      aP3.nextArrayIndex = (void *)(*(unsigned int *)v41);
+      aP3.referenceCount = (void *)(*(unsigned int *)(v41 + 4));
       aP3.NeedsSaveOrLink = *(void **)(v41 + 8);
       GroundHeight = Cell::GetGroundHeight(&aP3.nextArrayIndex);
       aP4 = *(ObjectClass **)(v34 + 40);
       int v43 = *(unsigned int *)(v34 + 448);
-      aP3.referenceCount = (IDA_SHIWORD(aP4) << 8) + 128;
-      aP3.nextArrayIndex = ((int16_t)aP4 << 8) + 128;
+      aP3.referenceCount = (void *)((IDA_SHIWORD(aP4) << 8) + 128);
+      aP3.nextArrayIndex = (void *)(((int16_t)aP4 << 8) + 128);
       aP3.NeedsSaveOrLink = 0;
       *(unsigned int *)(this->q00C + 1392) = GroundHeight
                                                  + (Cell::GetGroundHeight(&aP3.nextArrayIndex) - GroundHeight) / v43;
@@ -391,8 +391,7 @@ LABEL_37:
   if ( v30 <= 7 )
     goto LABEL_141;
   char * v45 = (char *)(12 * this->WalkLocomotion_field_0x58 + 8333888);
-  ObjectClass * v46 =
-  *(unsigned int *)&aP3.bombVisible = v45;
+  ObjectClass * v46 = (unsigned int)(*(unsigned int *)&aP3.bombVisible = v45);
   if ( v46 )
     int v47 = v45[1];
   else

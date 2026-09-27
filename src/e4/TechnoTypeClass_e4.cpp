@@ -43,7 +43,7 @@ AbstractClass * * TechnoTypeClass::GetByTypeAndIndex(int a1, int a2)
       result = 0; /*0x48dd0d*/
       break; /*0x48dd0d*/
   }
-  return result; /*0x48dcef*/
+  return (gamemd::AbstractClass **)(result);
 }
 } // namespace gamemd
 // 0x50BDF0
@@ -170,7 +170,7 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
         v3 = g_MultiplayerLogState,
         v4) )
   {
-    g_MultiplayerLogState = v3 + 1; /*0x6f085c*/
+    g_MultiplayerLogState = (unsigned int)(v3 + 1);
     *((unsigned int *)g_TeamTypePool + v3) = this; /*0x6f0868*/
     v3 = g_MultiplayerLogState; /*0x6f086b*/
   }
@@ -200,10 +200,10 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
          g_AnimTypePool + g_AnimManagerConfig,
          0) )
   {
-    v7 = g_AnimManager++; /*0x6f08d2*/
+    v7 = (gamemd::TechnoTypeClass *)(g_AnimManager++);
     *((unsigned int *)g_AnimPoolCount + v7) = this; /*0x6f08e1*/
   }
-  return this; /*0x6f08e6*/
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 // 0x710AF0
@@ -706,7 +706,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
          g_AnimManagerConfig + g_AnimTypePool,
          0) )
   {
-    v15 = g_AnimManager++; /*0x7117d0*/
+    v15 = (gamemd::TechnoTypeClass *)(g_AnimManager++);
     *((unsigned int *)g_AnimPoolCount + v15) = this; /*0x7117df*/
   }
   if ( dword_A8EB10 < dword_A8EB08 /*0x711816*/
@@ -717,7 +717,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
          dword_A8EB14 + dword_A8EB08,
          0) )
   {
-    v16 = dword_A8EB10++; /*0x711823*/
+    v16 = (gamemd::TechnoTypeClass *)(dword_A8EB10++);
     *((unsigned int *)dword_A8EB04 + v16) = this; /*0x711832*/
   }
   return this; /*0x711837*/

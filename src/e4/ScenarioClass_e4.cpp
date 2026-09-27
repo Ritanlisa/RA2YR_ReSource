@@ -34,7 +34,7 @@
 namespace gamemd {
 ScenarioClass * * ScenarioClass::CopyStartPositions()
 {
-  void * result;
+  unsigned int result;
   unsigned int v1;
   int v2; // edi
   int v3; // eax
@@ -51,7 +51,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
     v2 = 0; /*0x58bb52*/
     if ( *((int *)g_ScenarioClass_Instance + 1103) > 0 ) /*0x58bb5c*/
     {
-      v3 = 1104; /*0x58bb60*/
+      v3 = (int *)(1104);
       v4 = &dword_ABE328 - 1104; /*0x58bb6a*/
       v5 = 1136; /*0x58bb71*/
       while ( 1 ) /*0x58bb8b*/
@@ -66,7 +66,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
           v6 = v4[v3]; /*0x58bb95*/
           v7 = v4[v3 + 1]; /*0x58bb98*/
         }
-        v1[v3] = v6; /*0x58bba2*/
+        v1[v3] = (int *)(v6);
         ++v2; /*0x58bbab*/
         ++v5; /*0x58bbac*/
         *(unsigned int *)((char *)g_ScenarioClass_Instance + v3 * 4 + 4) = v7; /*0x58bbaf*/
@@ -78,18 +78,18 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
         v4 = &dword_ABE328 - 1104; /*0x58bb82*/
       }
     }
-    v1[1099] = dword_ABDFD4; /*0x58bbda*/
+    v1[1099] = (unsigned int)(dword_ABDFD4);
     *((unsigned int *)g_ScenarioClass_Instance + 1100) = dword_ABDFD0; /*0x58bbed*/
     *((unsigned int *)g_ScenarioClass_Instance + 1101) = dword_ABEC90; /*0x58bbfe*/
     result = (void *)dword_ABECD0; /*0x58bc0a*/
     *((unsigned int *, unsigned int a1)g_ScenarioClass_Instance + 1102) = dword_ABECD0; /*0x58bc0f*/
   }
-  return result; /*0x58bc16*/
+  return (gamemd::ScenarioClass **)(result);
 }
 }
 // 0x5CC330
 namespace gamemd {
-CampaignClass * * ScenarioClass_AnimateConstructionStage()
+CampaignClass * * ScenarioClass_AnimateConstructionStage(void * a1, void * a2, void * a3, void * a4)
 {
   signed int v5; // edi
   signed int v6; // eax

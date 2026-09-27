@@ -175,7 +175,7 @@ char HandlePlayerDisconnection(int a1, int a2)
 }
 // 0x5F2CE0
 namespace gamemd {
-AbstractClass * * WaitModemConnection()
+AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
 {
   unsigned int v3;
   wchar_t *String; // eax
@@ -197,7 +197,7 @@ AbstractClass * * WaitModemConnection()
   HWND hWnd; // [esp+22h] [ebp-F0h]
   unsigned char Source[236]; // [esp+26h] [ebp-ECh] BYREF
 
-  v18 = IDA_HIBYTE(a1); /*0x5f2cf2*/
+  v18 = (wchar_t *)(IDA_HIBYTE(a1));
   v3 = 3; /*0x5f2cfb*/
   if ( a3 == 1 ) /*0x5f2d00*/
     String = GetStringCSF((wchar_t *)aTxtModemConner_0, 0, g_Str_File_NullMgr_CPP, 1580); /*0x5f2d13*/
@@ -223,7 +223,7 @@ AbstractClass * * WaitModemConnection()
   {
     if ( Dialog::PumpMessages() == 1 || g_NetworkTestFlag ) /*0x5f2dab*/
     {
-      v3 = 6; /*0x5f30f5*/
+      v3 = (HWND)(6);
       Debug::Log(); /*0x5f30fa*/
       v14 = g_ClipboardBuffer; /*0x5f30ff*/
       if ( !g_ClipboardBuffer ) /*0x5f310a*/
@@ -242,7 +242,7 @@ AbstractClass * * WaitModemConnection()
     Debug::Log(); /*0x5f2ded*/
     if ( v9 == -1000 ) /*0x5f2dfb*/
     {
-      v3 = 6; /*0x5f30c0*/
+      v3 = (HWND)(6);
       Debug::Log(); /*0x5f30c5*/
       v14 = g_ClipboardBuffer; /*0x5f30ca*/
       if ( !g_ClipboardBuffer ) /*0x5f30d5*/

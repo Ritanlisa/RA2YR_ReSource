@@ -10,7 +10,7 @@
 namespace gamemd {
 unsigned int * AddTeamCommand::Construct(int a2)
 {
-  this->AddTeamCommand_field_00 = a2; /*0x5360b6*/
+  this->AddTeamCommand_field_00 = (unsigned int *)(a2);
   return this; /*0x5360bf*/
 }
 } // namespace gamemd
@@ -29,7 +29,7 @@ void * AddTeamCommand::Release()
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = this->AddTeamCommand_field_00; /*0x5360f5*/
+  v3 = (const wchar_t *)(this->AddTeamCommand_field_00);
   StringCSF = GetStringCSF(aTxtAddSelectTe, 0, g_Str_File_Init_CPP, 6326); /*0x536105*/
   swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3); /*0x536110*/
   return &g_TeamCommandBuffer; /*0x53611d*/

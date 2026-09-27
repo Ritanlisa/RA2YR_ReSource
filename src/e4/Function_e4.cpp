@@ -8,7 +8,7 @@
 
 // 0x643E80
 namespace gamemd {
-void Function_643E80()
+void Function_643E80(void * a1, void * a2)
 {
   *(this + 1) = a2; /*0x643e84*/
   return a2; /*0x643e87*/

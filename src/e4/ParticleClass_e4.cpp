@@ -90,7 +90,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                     - 50;
                 if ( v17 < *(uint16_t *)Audio::GetSamplePosition((int)g_ZBufferDescriptor, v26[0], v15) ) /*0x62d11e*/
                 {
-                  v18 = this->q0B4; /*0x62d124*/
+                  v18 = (IUnknown *)(this->q0B4);
                   if ( v18 ) /*0x62d12c*/
                     v19 = *(unsigned int *)(this->q0AC + 700) + 3 * v18; /*0x62d13f*/
                   else
@@ -235,7 +235,7 @@ int * ParticleClass::CheckDrawFlags(int a1)
     dword_AC49D0 = 2147450879; /*0x62d73f*/
     atexit(nullsub_214); /*0x62d744*/
   }
-  return &dword_AC49D0; /*0x62d752*/
+  return (int *)(&dword_AC49D0);
 }
 } // namespace gamemd
 

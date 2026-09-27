@@ -45,7 +45,7 @@ CaptureManagerClass::CaptureManagerClass(TechnoClass * aP1, int a3, char a4)
          dword_89E0F8 + dword_89E104,
          0) )
   {
-    v5 = dword_89E100++; /*0x471875*/
+    v5 = (gamemd::CaptureManagerClass *)(dword_89E100++);
     *((unsigned int *)dword_89E0F4 + v5) = this; /*0x471884*/
   }
   return this; /*0x471889*/
@@ -118,7 +118,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
       }
       else
       {
-        v9 = this->overloadCount; /*0x471adc*/
+        v9 = (int)(this->overloadCount);
         this->overloadLimit = 10; /*0x471adf*/
         (*(void (__thiscall **)(int, int *, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)v9 + 364))( /*0x471b04*/
           v9,
@@ -183,7 +183,7 @@ ScenarioClass * * CaptureManagerClass::HandleOverload()
       this->linkCount = v2; /*0x471a78*/
     }
   }
-  return v2; /*0x471a77*/
+  return (gamemd::ScenarioClass **)(v2);
 }
 } // namespace ra2
 
@@ -223,7 +223,7 @@ int CaptureManagerClass::CanCapture(unsigned int * a2)
 
 // 0x471D40
 namespace gamemd {
-void* CaptureManagerClass::CaptureUnit(int a2)
+void* CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3, void * a4)
 {
   char result; // al
   unsigned int *v5; // esi
@@ -275,7 +275,7 @@ void* CaptureManagerClass::CaptureUnit(int a2)
     result = (*(int (__thiscall **)(unsigned int *, int))(v8 + 980))(v5, v10); /*0x471db8*/
     if ( result )
     {
-      v11 = operator new(0x14u); /*0x471dce*/
+      v11 = (unsigned int *)(operator new(0x14u));
       v12 = 0; /*0x471dd3*/
       if ( v11 ) /*0x471dda*/
       {
@@ -284,13 +284,13 @@ void* CaptureManagerClass::CaptureUnit(int a2)
         v11[2] = v13; /*0x471de5*/
         v12 = v11; /*0x471de8*/
       }
-      v12[1] = v9; /*0x471dea*/
+      v12[1] = (unsigned int)(v9);
       *v12 = v5; /*0x471df0*/
       v14 = *(unsigned int *)(a1 + 44); /*0x471df3*/
       if ( *(unsigned int *)(a1 + 52) < v14 /*0x471e18*/
-        || (*(unsigned char *)(a1 + 49) || !v14)
-        && (v15 = *(unsigned int *)(a1 + 56), v15 > 0)
-        && (*(uint8_t (__thiscall **)(int, int, unsigned int))(*(unsigned int *)(a1 + 36) + 8))(a1 + 36, v14 + v15, 0) )
+        || (*(unsigned char *, void * a1)(a1 + 49) || !v14)
+        && (v15 = *(unsigned int *, void * a1)(a1 + 56), v15 > 0)
+        && (*(uint8_t (__thiscall **, void * a1)(int, int, unsigned int))(*(unsigned int *)(a1 + 36) + 8))(a1 + 36, v14 + v15, 0) )
       {
         v16 = *(unsigned int *)(a1 + 52); /*0x471e1f*/
         v17 = *(unsigned int *)(a1 + 40); /*0x471e22*/
@@ -323,7 +323,7 @@ void* CaptureManagerClass::CaptureUnit(int a2)
         v21 = 0; /*0x471eea*/
         v22 = *(unsigned int *)((*(int (__thiscall **)(unsigned int *))(*v5 + 132))(v5) + 1548); /*0x471ef2*/
       }
-      v23 = (int *)(*(int (__thiscall **)(unsigned int *, int *))(*v5 + 72))(v5, v34); /*0x471ee1*/
+      v23 = (void **)((int *)(*(int (__thiscall **)(unsigned int *, int *))(*v5 + 72))(v5, v34));
       v24 = *v23; /*0x471f04*/
       v25 = v23[1]; /*0x471f06*/
       v26 = v22 + v23[2]; /*0x471f11*/
@@ -350,16 +350,16 @@ void* CaptureManagerClass::CaptureUnit(int a2)
         if ( v21 ) /*0x471f69*/
           *(unsigned int *, unsigned int a4, unsigned int a1, unsigned int a3)(v5[178] + 256) = -1024; /*0x471f71*/
       }
-      return 1; /*0x471f7e*/
+      return (void *)(1);
     }
   }
-  return result; /*0x471d51*/
+  return (void *)(result);
 }
 } // namespace ra2
 
 // 0x471FF0
 namespace gamemd {
-AnimClass * * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5)
+AnimClass * * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5, void * a1, void * a3, void * a4, void * a6)
 {
   int i; // ebx
   unsigned int v9;
@@ -406,7 +406,7 @@ AnimClass * * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * 
         StartAudioControllerAt(*(unsigned int *, unsigned int a3, unsigned int a4, unsigned int a1)(v12 + 1456), (int)v19, 0); /*0x47208d*/
         v9 = a6; /*0x472092*/
       }
-      a2 = 1; /*0x4720d5*/
+      a2 = (IUnknown *)(1);
       a3 = v9[1]; /*0x4720d7*/
       (*(void (__thiscall **)(unsigned int *))(*a4 + 980))(a4); /*0x4720da*/
       CaptureManagerClass::DecideUnitFate(a1, (int)a4); /*0x4720e3*/

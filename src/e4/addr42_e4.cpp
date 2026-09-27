@@ -62,19 +62,18 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
   v1 = 0; /*0x420149*/
   if ( dword_88A090 <= 0 ) /*0x420152*/
   {
-  LABEL_5:
-    v3 = operator new(0x20008u); /*0x42016e*/
+  LABEL_5: v3 = (unsigned int *)(operator new(0x20008u));
     v4 = v3; /*0x420178*/
     if ( v3 ) /*0x42017f*/
     {
-      v3[0x8000] = aP0; /*0x420181*/
+      v3[0x8000] = (unsigned short *)(aP0);
       v5 = 0; /*0x420187*/
       v3[32769] = 0; /*0x420189*/
       v6 = aP0 - 1; /*0x420193*/
       v7 = v3; /*0x420194*/
       do /*0x4201d3*/
       {
-        v8 = v6 * (v5 >> 8) * (uint8_t)v5 / 32258; /*0x4201ba*/
+        v8 = (unsigned char)(v6 * (v5 >> 8) * (uint8_t)v5 / 32258);
         if ( v8 > v6 ) /*0x4201be*/
           IDA_LOBYTE(v8) = aP0 - 1; /*0x4201c0*/
         IDA_LOBYTE(v9) = 0; /*0x4201c2*/
@@ -96,7 +95,7 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
            dword_88A088 + dword_88A094,
            0) )
     {
-      v11 = dword_88A090++; /*0x42023d*/
+      v11 = (unsigned int *)(dword_88A090++);
       *((unsigned int *)dword_88A084 + v11) = v4; /*0x42024c*/
     }
     ++v4[32769]; /*0x420258*/
@@ -206,7 +205,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
       v5 = *((unsigned int *)dword_88A0F4 + v4); /*0x420f72*/
       if ( !*(unsigned char *)(v5 + 60) ) /*0x420f75*/
       {
-        v50 = *(unsigned int *)(v5 + 40); /*0x420f8b*/
+        v50 = (int *)(*(unsigned int *)(v5 + 40));
         v51 = *(unsigned int *)(v5 + 44); /*0x420f92*/
         v52 = *(unsigned int *)(v5 + 48); /*0x420f99*/
         v53 = *(unsigned int *)(v5 + 52); /*0x420fa0*/
@@ -235,7 +234,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v57 = v15; /*0x421064*/
         if ( v14 > 0 && v15 > 0 ) /*0x421070*/
         {
-          v16 = v13 - v63; /*0x421082*/
+          v16 = (int *)(v13 - v63);
           v17 = v50; /*0x42108a*/
           v69 = v12 - v62; /*0x42108e*/
           v18 = *((unsigned int *)dword_88A0F4 + v4); /*0x421099*/
@@ -355,7 +354,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
       v3 = v59; /*0x420f69*/
     }
   }
-  return result; /*0x42133e*/
+  return (gamemd::AbstractClass **)(result);
 }
 }
 // 0x421B60
@@ -376,7 +375,7 @@ unsigned int * ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown * a
   int v16; // [esp+20h] [ebp-8h]
   int v17; // [esp+24h] [ebp-4h]
 
-  result = aP0; /*0x421b63*/
+  result = (int)(aP0);
   v6 = *aP2; /*0x421b6f*/
   v7 = aP2[1]; /*0x421b71*/
   v16 = aP2[2]; /*0x421b77*/
@@ -390,7 +389,7 @@ unsigned int * ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown * a
   v9 = *aP1; /*0x421bb2*/
   if ( v6 < *aP1 ) /*0x421bb6*/
   {
-    v10 = v6 - v9 + v16; /*0x421bbe*/
+    v10 = (int)(v6 - v9 + v16);
     v6 = *aP1; /*0x421bc0*/
     v16 = v10; /*0x421bc2*/
   }
@@ -527,7 +526,7 @@ void* ProductionCompletionCallback()
       }
     }
   }
-  return v3; /*0x424ef9*/
+  return (void *)(v3);
 }
 }
 // 0x424F00

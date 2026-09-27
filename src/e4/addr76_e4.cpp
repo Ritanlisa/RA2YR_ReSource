@@ -230,7 +230,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     }
     HashTable::DestroyHashTableINIClass(v29); /*0x764f05*/
   }
-  v34[0] = &off_7E1668; /*0x764f0e*/
+  v34[0] = (unsigned int)(&off_7E1668);
   BufferIOFileClass::Dtor(v34); /*0x764f16*/
   return this; /*0x764f1d*/
 }

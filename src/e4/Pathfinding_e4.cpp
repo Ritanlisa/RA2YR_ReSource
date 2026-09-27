@@ -100,7 +100,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   int64_t v82; // [esp+48h] [ebp-18h] BYREF
   int64_t v83; // [esp+50h] [ebp-10h]
 
-  v2 = 10 * a2; /*0x5a536e*/
+  v2 = (unsigned int *)(10 * a2);
   v3 = operator new(80 * a2); /*0x5a5378*/
   if ( v3 ) /*0x5a5384*/
   {
@@ -198,7 +198,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   {
     v20 = 0; /*0x5a54e0*/
   }
-  v74 = v20; /*0x5a550e*/
+  v74 = (unsigned int *)(v20);
   v23 = operator new(0x18u); /*0x5a5512*/
   v24 = v23; /*0x5a5517*/
   if ( v23 ) /*0x5a551e*/
@@ -234,7 +234,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
       IDA_LODWORD(v30) = &v4[2 * v76]; /*0x5a55c7*/
       do /*0x5a5789*/
       {
-        v80 = *CellStruct::Add(v74, &v82, (unsigned short *)(4 * (v77 & 7) + 9041544)); /*0x5a55ef*/
+        v80 = (int)(*CellStruct::Add(v74, &v82, (unsigned short *)(4 * (v77 & 7) + 9041544)));
         v73 = v80; /*0x5a55f3*/
         v31 = IDA_SHIWORD(v80) + (int16_t)v80; /*0x5a55ff*/
         if ( v31 > g_MapCellHeight_Value /*0x5a5626*/
@@ -332,7 +332,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
     RA2_OPDEL((void *)v6[2]); /*0x5a57f7*/
     RA2_OPDEL(v6); /*0x5a57fd*/
   }
-  v51 = globalHelper_0A7640(v81, v24); /*0x5a580b*/
+  v51 = (int)(globalHelper_0A7640(v81, v24));
   v83 = *(unsigned long long *)v51; /*0x5a5812*/
   v52 = *(unsigned int *)(v51 + 8); /*0x5a5821*/
   v53 = *(unsigned int *)(v51 + 12); /*0x5a5827*/

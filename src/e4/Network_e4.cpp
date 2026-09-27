@@ -60,7 +60,7 @@ int Network::SendBeaconDelete(int a2, int a3)
   {
     if ( a2 == -1 && a3 == -1 ) /*0x4311ed*/
     {
-      v14 = 1; /*0x4311ef*/
+      v14 = (int *)(1);
       v5 = 0; /*0x4311f4*/
   LABEL_5:
       v7 = 0; /*0x4311fa*/
@@ -88,7 +88,7 @@ int Network::SendBeaconDelete(int a2, int a3)
     }
     else
     {
-      v14 = 0; /*0x431224*/
+      v14 = (int)(0);
       v4 = a3 + 2 * a2 + a2; /*0x431229*/
       v9 = *(this + v4); /*0x43122b*/
     }
@@ -246,7 +246,7 @@ int Network::SendBeacon(CellStruct * aP1, int a3, int a4, char a5)
         }
         else
         {
-          v11 = CharToWideString(&g_INI_DefaultBuffer); /*0x431596*/
+          v11 = (char *)(CharToWideString(&g_INI_DefaultBuffer));
           wcscpy(Destination, (const wchar_t *)v11); /*0x4315a1*/
         }
         v12 = -1; /*0x4315b2*/
@@ -426,7 +426,7 @@ int Network::Dispatch()
               v48 = v4; /*0x48d31e*/
               if ( !v6 ) /*0x48d322*/
               {
-                v7 = (const char *)ToWideStringChar(*(unsigned int *)(Game_PlayerInfoArray + 4 * v5)); /*0x48d331*/
+                v7 = (LPARAM *)((const char *)ToWideStringChar(*(unsigned int *)(Game_PlayerInfoArray + 4 * v5)));
                 Debug::Log("Sending to %s\n", v7); /*0x48d33c*/
                 Network::SendMessage(v54, 91, 0, *(unsigned int *)(Game_PlayerInfoArray + 4 * v5) + 40, v48, 0); /*0x48d366*/
                 MessageLoop(); /*0x48d36b*/

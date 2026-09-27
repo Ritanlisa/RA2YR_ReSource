@@ -33,7 +33,7 @@
 
 // 0x6DD8B0
 namespace gamemd {
-AbstractClass * * TerrainClass_ProcessUpdate()
+AbstractClass * * TerrainClass_ProcessUpdate(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   char result; // al
   void **v9; // ecx
@@ -167,7 +167,7 @@ LABEL_162:
       if ( !v44 )
         return 1;
       int v121 = Math::RoundToInt(*(double *)(*(unsigned int *)&stru_87C374[44652] + 5312) * 900.0);
-      StringCSF = GetStringCSF(v44, 0, &stru_830620[75224], 1766);
+      StringCSF = (wchar_t *)(GetStringCSF(v44, 0, &stru_830620[75224], 1766));
       MessageListClass::AddMessage(
         &HouseClass_Player[32532],
         0,

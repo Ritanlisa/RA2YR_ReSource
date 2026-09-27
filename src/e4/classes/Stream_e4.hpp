@@ -260,6 +260,8 @@ struct Stream {
     unsigned int vt_slot_8;
     unsigned int q1365;
     unsigned int u32_194;
+    unsigned int ReadPacket;
+    unsigned int WriteBlock;
 // --- flat members (END) ---
     int FlushAndReset();
     int GetChecked();

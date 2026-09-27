@@ -53,7 +53,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
   char v31[112]; // [esp+1B4h] [ebp-470h] BYREF
   wchar_t Buffer[512]; // [esp+224h] [ebp-400h] BYREF
 
-  result = BaseDialogProc(hDlg, a2, a3, (unsigned int)a4); /*0x4f11dc*/
+  result = (int)(BaseDialogProc(hDlg, a2, a3, (unsigned int)a4));
   if ( !result ) /*0x4f11e3*/
   {
     if ( a2 != 273 ) /*0x4f11ef*/
@@ -72,7 +72,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
         v5 = IDA_HIWORD(a3); /*0x4f1232*/
         if ( a4 == GetDlgItem(hDlg, 1321) ) /*0x4f1239*/
         {
-          v6 = (&off_822730)[v5]; /*0x4f123b*/
+          v6 = (wchar_t *)((&off_822730)[v5]);
           DlgItem = GetDlgItem(hDlg, 1649); /*0x4f1247*/
           goto LABEL_11; /*0x4f1247*/
         }
@@ -84,7 +84,7 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
           v8 = DlgItem; /*0x4f1268*/
           if ( DlgItem ) /*0x4f126c*/
           {
-            String = GetStringCSF(v6, 0, g_Str_File_GOptions_CPP, 196); /*0x4f1280*/
+            String = (wchar_t *)(GetStringCSF(v6, 0, g_Str_File_GOptions_CPP, 196));
             SendMessageA(v8, 0x4B2u, 0, (LPARAM)String); /*0x4f128e*/
             return 0; /*0x4f12a0*/
           }
@@ -428,7 +428,7 @@ int Options::DeleteAndZero()
       v3 += 24; /*0x624509*/
     }
     while (); /*0x62450e*/
-    *this = 0; /*0x624511*/
+    *(_DWORD *)this = 0; /*0x624511*/
   }
   return result; /*0x624518*/
 }

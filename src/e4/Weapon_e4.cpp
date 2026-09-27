@@ -28,7 +28,7 @@ int sub_53AE00()
   wchar_t *StringCSF; // eax
   int v1; // ecx
 
-  StringCSF = GetStringCSF(aMsgLightningst, 0, g_Str_File_Ion_cpp, 1123); /*0x53ae11*/
+  StringCSF = (wchar_t *)(GetStringCSF(aMsgLightningst, 0, g_Str_File_Ion_cpp, 1123));
   v1 = 3; /*0x53ae1c*/
   if ( HouseClass_Player ) /*0x53ae23*/
     v1 = *((unsigned int *)HouseClass_Player + 22549); /*0x53ae25*/
@@ -37,7 +37,7 @@ int sub_53AE00()
 }
 // 0x659CA0
 namespace gamemd {
-void Weapon_Update()
+void Weapon_Update(void * a1, void * a2)
 {
   int v3; // eax
   int64_t v4; // rax
@@ -406,7 +406,7 @@ int sub_53B410()
   wchar_t *StringCSF; // eax
   int v1; // ecx
 
-  StringCSF = GetStringCSF(aMsgDominatorac, 0, g_Str_File_Ion_cpp, 1339); /*0x53b421*/
+  StringCSF = (wchar_t *)(GetStringCSF(aMsgDominatorac, 0, g_Str_File_Ion_cpp, 1339));
   v1 = 3; /*0x53b42c*/
   if ( HouseClass_Player ) /*0x53b433*/
     v1 = *((unsigned int *)HouseClass_Player + 22549); /*0x53b435*/

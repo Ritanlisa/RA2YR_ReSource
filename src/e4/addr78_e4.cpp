@@ -203,7 +203,7 @@ void WOL_ResetSystem()
   memset(&dword_B73BE8, 0, 0x10Cu); /*0x78048a*/
   memset(&unk_B75E58, 0, 0xF8u); /*0x780496*/
   memset(&unk_B769C8, 0, 0xF8u); /*0x7804a6*/
-  word_B77AD0 = 0; /*0x7804a8*/
+  word_B77AD0 = (unsigned int)(0);
   g_WOL_GameListState = 0; /*0x7804af*/
   g_WOL_IdleHandler = 1; /*0x7804b5*/
   g_WOL_GameProcessState = -1; /*0x7804bb*/
@@ -421,7 +421,7 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
       if ( !v6 ) /*0x780b2f*/
         goto LABEL_6; /*0x780b2f*/
     }
-    v11 = (const void *)(v6 + 4); /*0x780c0f*/
+    v11 = (wchar_t *)((const void *)(v6 + 4));
     if ( v11 ) /*0x780c14*/
       qmemcpy(v31, v11, sizeof(v31)); /*0x780c1f*/
     v22 = FormatWideString((wchar_t **)&v26, v31[7]); /*0x780c36*/
@@ -439,8 +439,7 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
   }
   else
   {
-  LABEL_6:
-    v7 = GetStringCSF(g_Str_TXT_UNRANKED, 0, g_Str_File_wonline_cpp, 2939); /*0x780b31*/
+  LABEL_6: v7 = (wchar_t *)(GetStringCSF(g_Str_TXT_UNRANKED, 0, g_Str_File_wonline_cpp, 2939));
     WideString::Append2((wchar_t **)&v24, v7); /*0x780b4c*/
   }
   String::Assign((char **)&v25, a2 + 46); /*0x780b59*/

@@ -35,8 +35,7 @@ void * WeaponTypeClass::Create()
   v2 = 0; /*0x5126ad*/
   if ( g_SuperWeaponTypeArray <= 0 ) /*0x5126b1*/
   {
-  LABEL_6:
-    v3 = operator new(0x1B0u); /*0x5126d6*/
+  LABEL_6: v3 = (unsigned char *)(operator new(0x1B0u));
     if ( v3 ) /*0x5126e5*/
       return SuperWeaponTypeClass::Construct(v3, Source); /*0x5126f1*/
     return 0; /*0x5126e5*/
@@ -166,10 +165,10 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
          dword_887570 + dword_88757C,
          0) )
   {
-    v3 = g_WeaponTypePool++; /*0x771ed7*/
+    v3 = (gamemd::WeaponTypeClass *)(g_WeaponTypePool++);
     *((unsigned int *)g_WeaponTypeConfig + v3) = this; /*0x771ee6*/
   }
-  return this; /*0x771eeb*/
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 // 0x771F50
@@ -304,7 +303,7 @@ int WeaponTypeClass::ProcessPower(int * a2)
 } // namespace gamemd
 // 0x772CD0
 namespace gamemd {
-void WeaponTypeClass_SaveLoad_Prefix()
+void WeaponTypeClass_SaveLoad_Prefix(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   int *v4; // edi
   unsigned int *v5; // ebp
@@ -361,7 +360,7 @@ void WeaponTypeClass_SaveLoad_Prefix()
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 68); /*0x772e62*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 70); /*0x772e73*/
     for ( m = 0; m < v4[65]; ++m ) /*0x772e83*/
-      ObjectPtr::RegisterForTracking((int, unsigned int a2, unsigned int a3, unsigned int a4)&SwizzleManagerClass_Instance, (int *)(v4[62] + 4 * m)); /*0x772e94*/
+      ObjectPtr::RegisterForTracking((int, unsigned int a2, unsigned int a3, unsigned int a4, unsigned int a1, unsigned int a5)&SwizzleManagerClass_Instance, (int *)(v4[62] + 4 * m)); /*0x772e94*/
     return 0; /*0x772ea4*/
   }
   return result; /*0x772ea6*/

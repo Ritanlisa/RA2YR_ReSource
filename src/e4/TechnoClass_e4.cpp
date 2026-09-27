@@ -303,7 +303,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
          dword_A8EC8C + dword_A8EC80,
          0) )
   {
-    v10 = g_SidebarState++; /*0x6f31c3*/
+    v10 = (unsigned int)(g_SidebarState++);
     *((unsigned int *)g_TechnoClass_Count + v10) = this; /*0x6f31d2*/
   }
   if ( dword_B0F6D8 < dword_B0F6D0 /*0x6f3209*/
@@ -327,7 +327,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
 
 // 0x6F3F40
 namespace gamemd {
-unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1)
+unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * a1, void * a2)
 {
   int v3; // eax
   unsigned int *result; // eax
@@ -397,7 +397,7 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1)
       *(unsigned int *, unsigned int a1)(a1 + 728) = v8; /*0x6f4077*/
     }
     if ( *(unsigned int *)(*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) /*0x6f40a2*/
-      && *(unsigned char *)(*(unsigned int *)(*(unsigned int *)(*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 172)
+      && *(unsigned char *, void * a1)(*(unsigned int *)(*(unsigned int *)(*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)a1 + 1016))(a1, 0) + 172)
                   + 341) )
     {
       if ( operator new(0x50u) ) /*0x6f40ae*/

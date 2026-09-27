@@ -78,7 +78,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   uint8_t v54; // [esp+3Ah] [ebp-6h]
   int16_t v55; // [esp+58h] [ebp+18h]
 
-  v10 = 0; /*0x434cdb*/
+  v10 = (unsigned short)(0);
   if ( !aP0 ) /*0x434cdf*/
     return 0; /*0x434cdf*/
   aP2 = aP2; /*0x434ce5*/
@@ -198,7 +198,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         {
           if ( v13 > 1 ) /*0x434f5e*/
           {
-            v10 = v50; /*0x434f60*/
+            v10 = (gamemd::AbstractClass *)(v50);
             aP2 = v48; /*0x434f64*/
           }
         }
@@ -265,7 +265,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
           v48 = 0; /*0x4350fb*/
           ++aP2; /*0x435103*/
         }
-        v10 = 0; /*0x43510e*/
+        v10 = (gamemd::AbstractClass *)(0);
         v13 = 0; /*0x435110*/
         v34 = aP0->u32_1C; /*0x435112*/
         v47 += v34; /*0x435117*/

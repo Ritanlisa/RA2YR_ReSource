@@ -70,7 +70,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             WaveClass::Destroy(this->u32_B8); /*0x5f8d89*/
             RA2_OPDEL(v3); /*0x5f8d8f*/
           }
-          v4 = operator new(0x1Cu); /*0x5f8d99*/
+          v4 = (unsigned int)(operator new(0x1Cu));
           if ( v4 ) /*0x5f8da3*/
             File = File::LoadFileVXL(v4, (int)v26, 0); /*0x5f8db0*/
           else
@@ -87,7 +87,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
               String::Release(*((void ***)&this->u32_107)); /*0x5f8e1e*/
               RA2_OPDEL(v6); /*0x5f8e24*/
             }
-            v7 = operator new(0x10u); /*0x5f8e2e*/
+            v7 = (unsigned int)(operator new(0x10u));
             if ( v7 ) /*0x5f8e38*/
               v8 = File::LoadFileHVA(v7, (int)v20); /*0x5f8e41*/
             else
@@ -113,7 +113,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             WaveClass::Destroy(this->u32_C0); /*0x5f8ef6*/
             RA2_OPDEL(v11); /*0x5f8efc*/
           }
-          v12 = operator new(0x1Cu); /*0x5f8f06*/
+          v12 = (unsigned int)(operator new(0x1Cu));
           if ( v12 ) /*0x5f8f10*/
             v13 = File::LoadFileVXL(v12, (int)v23, 0); /*0x5f8f1a*/
           else
@@ -130,7 +130,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
               String::Release(*((void ***)&this->u32_109)); /*0x5f8f88*/
               RA2_OPDEL(v14); /*0x5f8f8e*/
             }
-            v15 = operator new(0x10u); /*0x5f8f98*/
+            v15 = (unsigned int)(operator new(0x10u));
             if ( v15 ) /*0x5f8fa2*/
               v16 = File::LoadFileHVA(v15, (int)v20); /*0x5f8fab*/
             else
@@ -145,7 +145,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             BufferIOFileClass::Dtor(v20); /*0x5f8ff7*/
           }
         }
-        v25 = 0; /*0x5f900c*/
+        v25 = (unsigned int)(0);
         Vector::Clear((int)v24); /*0x5f9013*/
         v23[0] = &off_7E1668; /*0x5f9021*/
         BufferIOFileClass::Dtor(v23); /*0x5f9025*/
@@ -156,7 +156,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
       }
     }
   }
-  return v2; /*0x5f9059*/
+  return (gamemd::AbstractClass **)(v2);
 }
 } // namespace gamemd
 // 0x55A730

@@ -43,7 +43,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
   unsigned int *v9; // esi
   char Source[32]; // [esp+10h] [ebp-20h] BYREF
 
-  result = INIClass::GetKeyCount(a1, (uint8_t *)g_INI_Key_TeamTypes); /*0x6f19c1*/
+  result = (int)(INIClass::GetKeyCount(a1, (uint8_t *)g_INI_Key_TeamTypes));
   v4 = result; /*0x6f19c6*/
   for ( i = 0; i < v4; v9[58] = a2 ) /*0x6f19cc*/
   {
@@ -68,8 +68,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
       v9 = (unsigned int *)*((unsigned int *)g_TeamTypePool + v7); /*0x6f1a7f*/
       goto LABEL_11; /*0x6f1a82*/
     }
-  LABEL_7:
-    v8 = operator new(0xF8u); /*0x6f1a5d*/
+  LABEL_7: v8 = (unsigned int *)(operator new(0xF8u));
     if ( v8 ) /*0x6f1a67*/
       v9 = TechnoTypeClass::LoadBase(v8, Source); /*0x6f1a75*/
     else
@@ -79,7 +78,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
     result = (*(int (__thiscall **)(unsigned int *, char *))(*v9 + 100))(v9, a1); /*0x6f1a86*/
     ++i; /*0x6f1a8e*/
   }
-  return result; /*0x6f1aa2*/
+  return (gamemd::TeamTypeClass **)(result);
 }
 }
 // 0x40D1B0
@@ -121,7 +120,7 @@ int sub_59B6D0()
     {
       for ( j = 0; j < 8; j += 2 ) /*0x59b6f8*/
       {
-        NeighbourContent = Cell::GetNeighbourContent(i, j); /*0x59b702*/
+        NeighbourContent = (unsigned int *)(Cell::GetNeighbourContent(i, j));
         if ( Cell::IsEmpty(NeighbourContent) ) /*0x59b706*/
           NeighbourContent[14] = dword_AA0E18; /*0x59b714*/
       }
@@ -252,7 +251,7 @@ char sub_6E2660(int a1, int a2, int a3, int a4)
 
 // 0x6E3120
 namespace gamemd {
-char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int _18, unsigned int * a5, int a7)
+char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int _18, unsigned int * a5, int a7, void * a3, void * a4, void * a6)
 {
   void *v7; // esi
   int Field11; // eax

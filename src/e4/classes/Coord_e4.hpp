@@ -252,7 +252,7 @@ struct Coord {
     unsigned int * GetCoords(int * outCoords);  // 0x4399A0
     float * Scale(void* aP1);  // 0x43A0D0
     void * To_Cell(void* aP1);  // 0x565730
-    BOOL Compare2D(unsigned short * a2);  // 0x5AC370
+    int Compare2D(unsigned short * a2);  // 0x5AC370
     int * WorldToScreen(MouseClass * aP1,  MouseClass * aP2,  char a4);    // 0x6557F0
     AbstractClass * * To_Screen(unsigned int * a1,  IUnknown * aP2);    // 0x6D2140
     int * Divide(int * a2,  int a3);    // 0x710700

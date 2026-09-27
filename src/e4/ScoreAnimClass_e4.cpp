@@ -40,7 +40,7 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
   }
   if ( !--dword_B0558C ) /*0x6910d3*/
   {
-    v4 = &byte_B05594; /*0x6910d5*/
+    v4 = (char *)(&byte_B05594);
     do /*0x6910e7*/
     {
       *((unsigned int *)v4 - 1) = 0; /*0x6910da*/

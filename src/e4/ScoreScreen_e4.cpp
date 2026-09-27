@@ -26,7 +26,7 @@ unsigned int * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
   unsigned char v6[12]; // [esp+60h] [ebp-14h] BYREF
   int v7; // [esp+6Ch] [ebp-8h]
 
-  this->q004 = 0; /*0x690a19*/
+  this->q004 = (int)(0);
   this->q008 = 0; /*0x690a1c*/
   this->q00C = 0; /*0x690a1f*/
   this->q014 = 0; /*0x690a22*/
@@ -83,7 +83,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     v5[0] = &off_7E1668; /*0x690b76*/
     BufferIOFileClass::Dtor(v5); /*0x690b7e*/
   }
-  this->q004 = 20; /*0x690b87*/
+  this->q004 = (unsigned int *)(20);
   this->q014 = a2; /*0x690b8e*/
   this->q008 = 35; /*0x690b91*/
   return this; /*0x690b9a*/
@@ -93,7 +93,7 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
 namespace gamemd {
 unsigned int * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
 {
-  this->q008 = a3; /*0x690f3b*/
+  this->q008 = (unsigned int *)(a3);
   this->q004 = aP1; /*0x690f41*/
   this->q00C = Timer::GetTicks(); /*0x690f4d*/
   this->q014 = 0; /*0x690f50*/

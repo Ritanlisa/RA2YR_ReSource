@@ -506,8 +506,7 @@ int Cell::SearchEnemies(IUnknown * aP1)
       if ( !v3 || (*(int (__thiscall **)(unsigned int *))(*v3 + 44))(v3) != 2 ) /*0x487a76*/
         goto LABEL_11; /*0x487a76*/
     }
-  LABEL_10:
-    v6 = *v3; /*0x487a78*/
+  LABEL_10: v6 = (IUnknown *)(*v3);
     aP1 = v3[27]; /*0x487a84*/
     (*(void (__thiscall **)(unsigned int *, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v6 + 364))( /*0x487a9e*/
       v3,

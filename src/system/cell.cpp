@@ -193,7 +193,7 @@ ObjectClass* CellClass::FindObjectOfType(AbstractType type, bool alt) const
 // Draws the cell at a given screen position.
 // 55 bytes: thin wrapper around DrawDispatch.
 // 0x48e5a0
-int CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds) const
+int CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds, void * a1, void * a2, void * a3) const
 {
   int v5; // eax
   int v6; // ecx
@@ -222,7 +222,7 @@ int CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds) co
   return COMObject::ActivateThunk(a2, a3, 0); /*0x48e5ef*/
 }
 // 0x7235a0
-int CellClass::RegisterForRedraw()
+int CellClass::RegisterForRedraw(void * a1, void * a2)
 {
   _BYTE *result; // eax
   int v4; // eax
@@ -361,7 +361,7 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
       {
         if ( (*(int (__thiscall **)(_DWORD *))(*content + 44))(content) == 6 ) /*0x47ea0e*/
         {
-          v9 = *(__int16 *)(&this->vtable46); /*0x47ea10*/
+          v9 = (int)(*(__int16 *)(&this->vtable46));
           v10 = *(__int16 *)(&this->vtable48); /*0x47ea14*/
           v11 = *content; /*0x47ea18*/
           v17 = 0; /*0x47ea1b*/
@@ -370,7 +370,7 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
         }
         else
         {
-          v15 = content[39]; /*0x47ea5e*/
+          v15 = (int)(content[39]);
           v11 = *content; /*0x47ea62*/
           v16 = content[40]; /*0x47ea68*/
           v17 = content[41]; /*0x47ea74*/
@@ -420,7 +420,7 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
       if ( !v5 ) /*0x47eae6*/
         goto LABEL_15; /*0x47eae6*/
     }
-    v4[12] = content[12]; /*0x47eaed*/
+    v4[12] = (_DWORD)(content[12]);
     goto LABEL_14; /*0x47eaed*/
   }
   LABEL_15:
@@ -429,7 +429,7 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
   {
     if ( (*(int (__thiscall **)(_DWORD *))(*content + 44))(content) == 6 ) /*0x47eb1f*/
     {
-      v6 = *(__int16 *)(this + 36); /*0x47eb21*/
+      v6 = (int)(*(__int16 *)(this + 36));
       v7 = *(__int16 *)(this + 38); /*0x47eb25*/
       v8 = *content; /*0x47eb29*/
       v11 = 0; /*0x47eb2b*/
@@ -438,7 +438,7 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
     }
     else
     {
-      v9 = content[39]; /*0x47eb6e*/
+      v9 = (int)(content[39]);
       v8 = *content; /*0x47eb72*/
       v10 = content[40]; /*0x47eb77*/
       v11 = content[41]; /*0x47eb85*/
@@ -505,7 +505,7 @@ void CellClass::ReplaceTag(TagClass* tag)
 }
 
 // 0x47d210
-void CellClass::SetWallOwner()
+void CellClass::SetWallOwner(void * a1)
 {
   int result; // eax
   int v2; // ebp
@@ -555,13 +555,13 @@ void CellClass::Unshroud()
   int v1; // eax
   int result; // eax
 
-  v1 = *(this + 75); /*0x4876f0*/
+  v1 = (int)(*(this + 75));
   IDA_LOBYTE(v1) = v1 | 0x18; /*0x4876f6*/
   *(this + 75) = v1; /*0x4876f8*/
   result = *(this + 76); /*0x4876fe*/
   if ( result > 0 ) /*0x487706*/
   {
-    result = *(this + 80); /*0x487708*/
+    result = (int)(*(this + 80));
     IDA_LOBYTE(result) = result | 0x20; /*0x48770e*/
     *(this + 80) = result; /*0x487710*/
   }

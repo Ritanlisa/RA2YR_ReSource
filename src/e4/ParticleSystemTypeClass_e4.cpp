@@ -17,6 +17,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ParticleSystemClass_32_e4.hpp"
 
 // 0x6442D0
 namespace gamemd {
@@ -72,7 +73,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     &g_INI_DefaultBuffer,
     Destination,
     64);
-  v3 = BuildingTypeClass::FindOrCreateEx(Destination); /*0x644318*/
+  v3 = (int)(BuildingTypeClass::FindOrCreateEx(Destination));
   v4 = this->q298; /*0x64431d*/
   this->q294 = v3; /*0x644323*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x644332*/
@@ -92,7 +93,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
                     (uint8_t *)(&this->vtable46),
                     (uint8_t *)aParticlecap,
                     this->q2A4);
-  v7 = this->q2A8; /*0x64436b*/
+  v7 = (int)(this->q2A8);
   this->q2A4 = Int_Overwrite; /*0x644371*/
   v8 = INIClass::ReadInt_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aSpawnradius, v7); /*0x644380*/
   v9 = this->q2A0; /*0x644385*/
@@ -148,7 +149,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
           (uint8_t *)(&this->vtable46),
           (uint8_t *)aSpawndirection,
           (float *)(&this->q1180));
-  this->ParticleSystemTypeClass_field_2C0 = *v14; /*0x644482*/
+  this->ParticleSystemTypeClass_field_2C0 = (double)(*v14);
   this->StartScale = v14[1]; /*0x64448b*/
   v35 = *(double *)(&this->q11C2); /*0x6444a1*/
   this->ParticleSystemTypeClass_field_2C8 = v14[2]; /*0x6444aa*/
@@ -219,7 +220,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
                               (uint8_t *)(&this->vtable46),
                               (uint8_t *)aSpawnsparkperc,
                               v36);
-  return 1; /*0x644617*/
+  return (void *)(1);
 }
 }
 // 0x644700

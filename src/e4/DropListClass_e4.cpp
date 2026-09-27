@@ -9,7 +9,7 @@
 
 // 0x4B5030
 namespace gamemd {
-void DropListClass_OnKeyUp()
+void DropListClass_OnKeyUp(void * a1, void * a2, void * a3)
 {
   int *v4; // esi
   wchar_t *result; // eax

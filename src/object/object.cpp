@@ -74,7 +74,7 @@ AbstractClass * * ObjectClass::Destroy()
   int v2; // ecx
   int result; // eax
 
-  v2 = this->attachedBomb; /*0x5f65f3*/
+  v2 = (int)(this->attachedBomb);
   if ( v2 ) /*0x5f65f8*/
     ObjectClass::CleanupAudioAndRefs(v2); /*0x5f65fa*/
   if ( this && (this->abstractFlags & 1) != 0 ) /*0x5f6607*/

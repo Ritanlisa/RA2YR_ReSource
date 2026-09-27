@@ -26,13 +26,13 @@ unsigned int * WWMouseClass::initSurface()
 
   if ( (int)*(&this->q0080) > 0 && (int)*(&this->q0081) > 0 ) /*0x7b9052*/
   {
-    v2 = this->q024; /*0x7b9054*/
+    v2 = (IUnknown *)(this->q024);
     if ( v2 ) /*0x7b9059*/
     {
       v3 = this->q044; /*0x7b905b*/
       if ( v3 ) /*0x7b9060*/
       {
-        v4 = this->q054; /*0x7b9069*/
+        v4 = (unsigned int)(this->q054);
         v5 = this->q04C; /*0x7b906d*/
         v6 = this->q050; /*0x7b9071*/
         v9[0] = this->q02C + this->Rect0; /*0x7b9074*/
@@ -79,7 +79,7 @@ int WWMouseClass::hideCursor()
         Debug::Log(); /*0x7b99a5*/
       if ( (int)*(&this->q0080) > 0 && (int)*(&this->q0081) > 0 ) /*0x7b99ba*/
       {
-        v2 = this->q024; /*0x7b99bc*/
+        v2 = (IUnknown *)(this->q024);
         if ( v2 ) /*0x7b99c1*/
         {
           v3 = *(&this->q0047); /*0x7b99c3*/
@@ -169,7 +169,7 @@ void* WWMouseClass::captureMouse()
           v17 += this->q018 - v6; /*0x7b9b7d*/
           ReleaseMutex(hMutex); /*0x7b9b88*/
         }
-        v16 = v16; /*0x7b9b8a*/
+        v16 = (IUnknown *)(v16);
         v17 = v17; /*0x7b9b8e*/
         v18 = v18; /*0x7b9b98*/
         v19 = v19; /*0x7b9b9c*/
@@ -230,13 +230,13 @@ void WWMouseClass::releaseMouse()
         Debug::Log(); /*0x7b9cc1*/
       if ( this->q050 > 0 && this->q054 > 0 ) /*0x7b9cd6*/
       {
-        v3 = this->q024; /*0x7b9cd8*/
+        v3 = (IUnknown *)(this->q024);
         if ( v3 ) /*0x7b9cdd*/
         {
           v4 = this->q044; /*0x7b9cdf*/
           if ( v4 ) /*0x7b9ce4*/
           {
-            v5 = this->q04C; /*0x7b9ce9*/
+            v5 = (unsigned int)(this->q04C);
             v6 = this->q050; /*0x7b9cef*/
             v7 = this->q054; /*0x7b9cf3*/
             v10[0] = this->q02C + this->Rect0; /*0x7b9cf6*/
@@ -270,7 +270,7 @@ void WWMouseClass::releaseMouse()
 namespace gamemd {
 int WWMouseClass::checkRegion()
 {
-  return this->q01C; /*0x7ba343*/
+  return (int)(this->q01C);
 }
 } // namespace gamemd
 // 0x7BA360
@@ -290,7 +290,7 @@ unsigned int * WWMouseClass::updatePosition(unsigned int * a2)
 namespace gamemd {
 int WWMouseClass::COMStub()
 {
-  return this->q00C; /*0x7b89f3*/
+  return (int)(this->q00C);
 }
 } // namespace gamemd
 // 0x7B9D80
@@ -320,6 +320,6 @@ char WWMouseClass::checkCapture()
 namespace gamemd {
 int WWMouseClass::checkBounds()
 {
-  return this->q020; /*0x7ba353*/
+  return (int)(this->q020);
 }
 } // namespace gamemd

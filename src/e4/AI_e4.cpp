@@ -36,7 +36,7 @@ void AI_CreateMCV()
       v7 = v6; /*0x5d707e*/
       if ( v6 ) /*0x5d7082*/
       {
-        v8 = *v6; /*0x5d7085*/
+        v8 = (unsigned int *)(*v6);
         StartCoords = HouseClass::GetStartCoords(v3, v11); /*0x5d7090*/
         if ( (*(uint8_t (__thiscall **)(int *, unsigned int *, unsigned int))(v8 + 216))(v7, StartCoords, 0) ) /*0x5d7098*/
           return 1; /*0x5d70aa*/

@@ -65,10 +65,10 @@ int LightSourceClass::Constructor()
          dword_ABCA18 + dword_ABCA24,
          0) )
   {
-    v3 = g_BridgeCellPool++; /*0x5548c3*/
+    v3 = (gamemd::LightSourceClass *)(g_BridgeCellPool++);
     *((unsigned int *)dword_ABCA14 + v3) = this; /*0x5548d2*/
   }
-  return this; /*0x5548d7*/
+  return (int)(this);
 }
 } // namespace gamemd
 // 0x555070

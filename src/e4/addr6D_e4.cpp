@@ -559,7 +559,7 @@ char ClampCoordMap(AbstractClass * aP0)
   char v5; // bl
   int v6; // eax
 
-  v1 = g_Map_VisibleRectOffset / 2 + 30 * (2 * dword_87F8E4 - g_Cell_PositionLUT); /*0x6d8670*/
+  v1 = (int)(g_Map_VisibleRectOffset / 2 + 30 * (2 * dword_87F8E4 - g_Cell_PositionLUT));
   v2 = v1 + 60 * dword_87F8EC - g_Map_VisibleRectOffset; /*0x6d8690*/
   v3 = g_DSurface_WindowOffset / 2 + 15 * (g_Cell_PositionLUT + 2 * dword_87F8E8 - 5); /*0x6d869c*/
   v4 = aP0[1]; /*0x6d86b3*/

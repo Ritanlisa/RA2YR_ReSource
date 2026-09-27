@@ -54,7 +54,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
   }
   if ( v5 == 1 ) /*0x6d06ac*/
   {
-    v6 = *this; /*0x6d06ae*/
+    v6 = (int)(*this);
     this->u8_5545 = 1; /*0x6d06b4*/
     this->vt_slot_56(0); /*0x6d06ba*/
   }
@@ -66,7 +66,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
     if ( v8 >= v7 && v8 < v7 + 30 ) /*0x6d06f2*/
       Mouse::SetCursor((int)&MapClass_Instance, 0, 0); /*0x6d06fd*/
   }
-  v9 = *aP1; /*0x6d0706*/
+  v9 = (int)(*aP1);
   if ( *aP1 < 32982 || v9 >= 33007 ) /*0x6d0718*/
   {
     if ( v9 == 33008 ) /*0x6d0842*/
@@ -186,7 +186,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
 namespace gamemd {
 CellStruct * * sub_731AF0()
 {
-  wchar_t * result;
+  unsigned int result;
   wchar_t *StringCSF; // eax
   int v2; // ecx
   unsigned int v3;
@@ -198,7 +198,7 @@ CellStruct * * sub_731AF0()
   result = g_SelectionManager; /*0x731af1*/
   if ( !g_SelectionManager ) /*0x731afa*/
   {
-    StringCSF = GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 856); /*0x731b0d*/
+    StringCSF = (wchar_t *)(GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 856));
     v2 = 3; /*0x731b18*/
     if ( HouseClass_Player ) /*0x731b1f*/
       v2 = *((unsigned int *)HouseClass_Player + 22549); /*0x731b21*/
@@ -209,26 +209,25 @@ CellStruct * * sub_731AF0()
   v4 = 0; /*0x731b50*/
   if ( (int)g_SelectionManager <= 0 ) /*0x731b54*/
   {
-  LABEL_5:
-    byte_B0FE58 = 1; /*0x731b43*/
+  LABEL_5: byte_B0FE58 = (gamemd::CellStruct **)(1);
     return result; /*0x731b4d*/
   }
   while ( 1 ) /*0x731b56*/
   {
-    result = (wchar_t *)g_ObjectClass_CurrentCount; /*0x731b56*/
+    result = (unsigned int)((wchar_t *)g_ObjectClass_CurrentCount);
     v5 = (unsigned char *)*((unsigned int *)g_ObjectClass_CurrentCount + v4); /*0x731b5b*/
     if ( v5 ) /*0x731b60*/
     {
       if ( (v5[20] & 1) != 0 ) /*0x731b6c*/
       {
-        result = (wchar_t *)(*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v5 + 1216))(v5); /*0x731b70*/
+        result = (unsigned int)((wchar_t *)(*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v5 + 1216))(v5));
         if ( !(unsigned char)result ) /*0x731b78*/
           break; /*0x731b78*/
       }
     }
     if ( ++v4 >= (int)v3 ) /*0x731b7d*/
     {
-      byte_B0FE58 = 1; /*0x731b80*/
+      byte_B0FE58 = (gamemd::CellStruct **)(1);
       return result; /*0x731b89*/
     }
   }
@@ -246,7 +245,7 @@ TabClass * BlowStraw_29::Read(char a2)
   char *v3; // esi
   int v4; // edi
 
-  v3 = &this->u32_14FB0; /*0x5be9e5*/
+  v3 = (char *)(&this->u32_14FB0);
   v4 = 4; /*0x5be9eb*/
   do /*0x5bea06*/
   {

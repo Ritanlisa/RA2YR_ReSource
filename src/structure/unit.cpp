@@ -220,7 +220,7 @@ int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
   int v7; // [esp+4h] [ebp-8h]
   int v9; // [esp+10h] [ebp+4h]
 
-  v7 = 0; /*0x6b6086*/
+  v7 = (int)(0);
   result = this->chronoDestCoords; /*0x6b608e*/
   if ( result > 0 ) /*0x6b6096*/
   {
@@ -421,7 +421,7 @@ retn    8
 
 // IDA: 0x7192F0 (Deploy, 2302B)
 // 0x7192f0
-void* UnitClass::Deploy()
+void* UnitClass::Deploy(void * a1)
 {
   _DWORD *v1; // esi
   int v2; // ecx
@@ -550,7 +550,7 @@ void* UnitClass::Deploy()
         v57 = v15 - v12; /*0x719473*/
         v16 = Math::Sqrt((double)v13 * (double)v13 + (double)(v15 - v12) * (double)(v15 - v12) + (double)v56 /*0x71949f*/
                                                                                                * (double)v56);
-        v17 = v1 + 14; /*0x7194ac*/
+        v17 = (_DWORD *)(v1 + 14);
         v18 = Math::RoundToInt(v16); /*0x7194af*/
         a1 = (_DWORD *)v18; /*0x7194ba*/
         v1[14] = g_CurrentFrame; /*0x7194be*/
@@ -559,7 +559,7 @@ void* UnitClass::Deploy()
         v19 = g_RulesClass_Instance; /*0x7194ca*/
         if ( *((_BYTE *)g_RulesClass_Instance + 3064) ) /*0x7194d0*/
         {
-          v20 = v18 / *((_DWORD *)g_RulesClass_Instance + 765); /*0x7194e3*/
+          v20 = (_DWORD *)(v18 / *((_DWORD *)g_RulesClass_Instance + 765));
           *v17 = (int)g_CurrentFrame; /*0x7194eb*/
           v1[15] = v59; /*0x7194f1*/
           v1[16] = v20; /*0x7194f4*/
@@ -583,7 +583,7 @@ void* UnitClass::Deploy()
         }
         else
         {
-          v24 = v1 + 14; /*0x719523*/
+          v24 = (int *)(v1 + 14);
         }
         *v17 = *v24; /*0x71953d*/
         v1[15] = v24[1]; /*0x719542*/
@@ -598,7 +598,7 @@ void* UnitClass::Deploy()
         }
         *(_BYTE *)(v1[2] + 625) = 1; /*0x719579*/
         if ( (*(int (__thiscall **)(_DWORD))(*(_DWORD *)v1[2] + 44))(v1[2]) == 1 /*0x719596*/
-          && *(_BYTE *)(*(_DWORD *)(v1[2] + 1732) + 3598) )
+          && *(_BYTE *, void * a1)(*(_DWORD *)(v1[2] + 1732) + 3598) )
         {
           v27 = v59; /*0x7195a5*/
           *v17 = (int)g_CurrentFrame; /*0x7195ab*/

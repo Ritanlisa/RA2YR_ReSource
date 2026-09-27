@@ -16,7 +16,7 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   int result; // eax
   int v3; // edx
 
-  v1 = this->q01C - 1; /*0x408e73*/
+  v1 = (int)(this->q01C - 1);
   this->q01C = v1; /*0x408e76*/
   if ( v1 < 0 ) /*0x408e79*/
     this->q01C = 0; /*0x408e7b*/
@@ -25,10 +25,10 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   *(unsigned int *)(*&this->q098) = v3; /*0x408e8d*/
   if ( v3 < 0 ) /*0x408e93*/
   {
-    result = *this; /*0x408e95*/
+    result = (int)(*this);
     *(unsigned int *)(*&this->q098) = 0; /*0x408e97*/
   }
-  return result; /*0x408ea1*/
+  return (gamemd::AbstractClass **)(result);
 }
 } // namespace gamemd
 // 0x46F6D0
@@ -129,7 +129,7 @@ int Count::GetCountQueue()
 namespace gamemd {
 int Count::Get()
 {
-  return this->q004; /*0x76f083*/
+  return (int)(this->q004);
 }
 } // namespace gamemd
 // 0x76F160

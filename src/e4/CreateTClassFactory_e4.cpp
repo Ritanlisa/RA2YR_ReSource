@@ -81,7 +81,7 @@
 
 // 0x6BF8D0
 namespace gamemd {
-int E4Recv_6BF8D0::CreateTClassFactory_CellClass()
+int E4Recv_6BF8D0::CreateTClassFactory_CellClass(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6bf8d7*/
     return -2147467261; /*0x6bf8d9*/
@@ -97,7 +97,7 @@ int E4Recv_6BF8D0::CreateTClassFactory_CellClass()
 
 // 0x6BFA50
 namespace gamemd {
-int E4Recv_6BFA50::CreateTClassFactory_EMPulseClass()
+int E4Recv_6BFA50::CreateTClassFactory_EMPulseClass(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6bfa57*/
     return -2147467261; /*0x6bfa59*/
@@ -113,7 +113,7 @@ int E4Recv_6BFA50::CreateTClassFactory_EMPulseClass()
 
 // 0x6BFBD0
 namespace gamemd {
-int E4Recv_6BFBD0::CreateTClassFactory_LightSourceClass()
+int E4Recv_6BFBD0::CreateTClassFactory_LightSourceClass(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6bfbd7*/
     return -2147467261; /*0x6bfbd9*/
@@ -129,7 +129,7 @@ int E4Recv_6BFBD0::CreateTClassFactory_LightSourceClass()
 
 // 0x6BFD50
 namespace gamemd {
-int E4Recv_6BFD50::CreateTClassFactory_SideClass()
+int E4Recv_6BFD50::CreateTClassFactory_SideClass(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6bfd57*/
     return -2147467261; /*0x6bfd59*/
@@ -145,7 +145,7 @@ int E4Recv_6BFD50::CreateTClassFactory_SideClass()
 
 // 0x6BFED0
 namespace gamemd {
-int E4Recv_6BFED0::CreateTClassFactory_TiberiumClass()
+int E4Recv_6BFED0::CreateTClassFactory_TiberiumClass(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6bfed7*/
     return -2147467261; /*0x6bfed9*/
@@ -161,7 +161,7 @@ int E4Recv_6BFED0::CreateTClassFactory_TiberiumClass()
 
 // 0x6C01D0
 namespace gamemd {
-int E4Recv_6C01D0::CreateTClassFactory_CampaignClass()
+int E4Recv_6C01D0::CreateTClassFactory_CampaignClass(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6c01d7*/
     return -2147467261; /*0x6c01d9*/
@@ -177,7 +177,7 @@ int E4Recv_6C01D0::CreateTClassFactory_CampaignClass()
 
 // 0x6C0350
 namespace gamemd {
-int E4Recv_6C0350::CreateTClassFactory_BuildingLightClass()
+int E4Recv_6C0350::CreateTClassFactory_BuildingLightClass(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6c0357*/
     return -2147467261; /*0x6c0359*/
@@ -193,7 +193,7 @@ int E4Recv_6C0350::CreateTClassFactory_BuildingLightClass()
 
 // 0x6C04D0
 namespace gamemd {
-int E4Recv_6C04D0::CreateTClassFactory_WaypointPathClass()
+int E4Recv_6C04D0::CreateTClassFactory_WaypointPathClass(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6c04d7*/
     return -2147467261; /*0x6c04d9*/
@@ -209,7 +209,7 @@ int E4Recv_6C04D0::CreateTClassFactory_WaypointPathClass()
 
 // 0x6C0650
 namespace gamemd {
-int E4Recv_6C0650::CreateTClassFactory_TemporalClass()
+int E4Recv_6C0650::CreateTClassFactory_TemporalClass(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6c0657*/
     return -2147467261; /*0x6c0659*/
@@ -225,7 +225,7 @@ int E4Recv_6C0650::CreateTClassFactory_TemporalClass()
 
 // 0x6C07D0
 namespace gamemd {
-int E4Recv_6C07D0::CreateTClassFactory_AirstrikeClass()
+int E4Recv_6C07D0::CreateTClassFactory_AirstrikeClass(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6c07d7*/
     return -2147467261; /*0x6c07d9*/

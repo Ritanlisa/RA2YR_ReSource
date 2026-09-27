@@ -89,7 +89,7 @@ AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
 }
 // 0x41CC20
 namespace gamemd {
-AnimTypeClass * * AircraftTypeClass_LoadTypeData()
+AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3)
 {
   char Bool_Overwrite; // al
   char v5; // cl
@@ -132,13 +132,13 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData()
          Destination,
          128) )
   {
-    v9 = AnimTypeClass::FindOrCreate(Destination); /*0x41cd26*/
+    v9 = (int)(AnimTypeClass::FindOrCreate(Destination));
   }
   else
   {
     v9 = v17; /*0x41cd2d*/
   }
-  v16 = *(unsigned int *)(a1 + 3588); /*0x41cd3c*/
+  v16 = (gamemd::AnimTypeClass **)(*(unsigned int *)(a1 + 3588));
   *(unsigned int *)(a1 + 3584) = v9; /*0x41cd43*/
   *(unsigned int *)(a1 + 3588) = INIClass::ReadInt_Overwrite(a1 + 504, aSpawndelay, v16); /*0x41cd4e*/
   v10 = INIClass::ReadBool_Overwrite(a1 + 36, aFlyby, *(unsigned char *)(a1 + 3595)); /*0x41cd63*/

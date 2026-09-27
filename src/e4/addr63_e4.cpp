@@ -104,6 +104,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/E4Recv_645B60_e4.hpp"
 
 // 0x630310
 namespace gamemd {
@@ -147,10 +148,10 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   uint8_t v42; // cl
   unsigned char *v43; // eax
   uint8_t *v44; // eax
-  char *v45; // edi
+  unsigned char * v45;
   int v46; // eax
   unsigned int v47; // ecx
-  uint8_t * v48;
+  unsigned int v48;
   uint8_t v51; // [esp+38h] [ebp-8ACh]
   uint8_t v52; // [esp+38h] [ebp-8ACh]
   uint8_t v53; // [esp+38h] [ebp-8ACh]
@@ -189,7 +190,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
     v11 = v10; /*0x630414*/
     if ( v10 ) /*0x63041d*/
     {
-      v10[4] = v9; /*0x63041f*/
+      v10[4] = (unsigned int)(v9);
       v10[3] = 0; /*0x630429*/
       v10[1] = v7; /*0x630438*/
       v10[2] = v8; /*0x63043b*/
@@ -208,7 +209,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   }
   else
   {
-    v13 = operator new(0x20u); /*0x630473*/
+    v13 = (unsigned int)(operator new(0x20u));
     v14 = v13; /*0x630478*/
     if ( !v13 ) /*0x63047f*/
       return 0; /*0x6304c8*/
@@ -228,12 +229,12 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   v15 = v15; /*0x6304dc*/
   if ( v15 ) /*0x6304e0*/
   {
-    v48 = v73; /*0x6304f1*/
+    v48 = (unsigned int)(v73);
     (*(void (__thiscall **)(int, unsigned char *, int))(a1->q024)(a1, v73, 2048); /*0x630504*/
     v15 = v15; /*0x63050e*/
     if ( v71 == 3 ) /*0x630514*/
     {
-      v16 = operator new(v6); /*0x630520*/
+      v16 = (unsigned char *)(operator new(v6));
       v16 = v16; /*0x630527*/
       if ( !v16 ) /*0x63052b*/
       {
@@ -259,7 +260,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
             }
             if ( (v18 & 0xC0) == 0xC0 ) /*0x63059a*/
             {
-              v20 = *v19; /*0x63059c*/
+              v20 = (unsigned int)(*v19);
               v21 = v18 & 0x3F; /*0x63059e*/
               v59 = *v19; /*0x6305ab*/
               v48 = (uint8_t *)(v19 + 1); /*0x6305af*/
@@ -323,7 +324,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
         v40 = v40; /*0x63083b*/
         while ( v41 < v40 ) /*0x630841*/
         {
-          v42 = *v48; /*0x630856*/
+          v42 = (unsigned char *)(*v48);
           v43 = v48 + 1; /*0x630858*/
           v35 = v48 + 1 < (uint8_t *)&retaddr; /*0x630859*/
           v52 = *v48++; /*0x63085b*/
@@ -336,7 +337,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
           }
           if ( (v42 & 0xC0) == 0xC0 ) /*0x630892*/
           {
-            v44 = v43 + 1; /*0x630897*/
+            v44 = (unsigned int)(v43 + 1);
             v53 = v42 & 0x3F; /*0x630898*/
             v60 = *(v44 - 1); /*0x6308a6*/
             v48 = v44; /*0x6308ac*/
@@ -345,7 +346,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
               (*(void (__thiscall **)(int, unsigned char *, int))(a1->q024)(a1, v73, 2048); /*0x6308c3*/
               v48 = v73; /*0x6308cd*/
             }
-            v45 = (char *)(v15 + v41); /*0x6308de*/
+            v45 = (unsigned char)((char *)(v15 + v41));
             IDA_LOBYTE(v15) = v60; /*0x6308e1*/
             IDA_BYTE1(v15) = v60; /*0x6308e9*/
             v46 = v15 << 16; /*0x6308f1*/
@@ -381,7 +382,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
             {
               do /*0x63079c*/
               {
-                v33 = *v48; /*0x6306e7*/
+                v33 = (unsigned char *)(*v48);
                 v34 = v48 + 1; /*0x6306e9*/
                 v35 = v48 + 1 < (uint8_t *)&retaddr; /*0x6306ea*/
                 v51 = *v48++; /*0x6306ec*/
@@ -394,7 +395,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
                 }
                 if ( (v33 & 0xC0) == 0xC0 ) /*0x630723*/
                 {
-                  v36 = v34 + 1; /*0x630728*/
+                  v36 = (unsigned int)(v34 + 1);
                   v51 = v33 & 0x3F; /*0x630729*/
                   v37 = *(v36 - 1); /*0x63072d*/
                   v48 = v36; /*0x630737*/
@@ -425,10 +426,10 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
           }
           while ( v8 ); /*0x6307ad*/
         }
-        v39 = v48; /*0x6307b3*/
+        v39 = (uint8_t *)(v48);
         if ( v31 == v29 ) /*0x6307b9*/
         {
-          v28 = a1; /*0x6307bd*/
+          v28 = (uint8_t *)(a1);
           v39 = v48 + 1; /*0x6307c1*/
           v51 = *v48; /*0x6307cb*/
           if ( v48 + 1 >= (uint8_t *)&retaddr ) /*0x6307cf*/
@@ -477,7 +478,7 @@ ObjectClass * * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a
   HWND v10; // esi
   HWND v11; // esi
 
-  result = BaseDialogProc(hWnd, a2, a3, a4); /*0x630c29*/
+  result = (int)(BaseDialogProc(hWnd, a2, a3, a4));
   if ( !result ) /*0x630c30*/
   {
     WindowLongA = GetWindowLongA(hWnd, 8); /*0x630c46*/
@@ -582,7 +583,7 @@ ObjectClass * * PhoneEditorDialogProc(HWND hWnd, unsigned int a2, unsigned int a
     }
     return 0; /*0x630e8e*/
   }
-  return result; /*0x630caa*/
+  return (gamemd::ObjectClass **)(result);
 }
 }
 // 0x631300

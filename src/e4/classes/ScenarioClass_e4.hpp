@@ -583,6 +583,8 @@ struct ScenarioClass {
     unsigned int u32_7580;
     unsigned int u32_7C00;
     unsigned int u32_7F02;
+    unsigned int u32_7E40;
+    unsigned int u32_B508;
 // --- flat members (END) ---
     void* checkWinningConditions(char a2);
     ScenarioClass * * CopyStartPositions();

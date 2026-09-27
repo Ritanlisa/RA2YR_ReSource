@@ -283,7 +283,7 @@ char CStreamClass_16::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4a4b7c*/
   {
-    this->q00C = 0; /*0x4a4b86*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x4a4b8c*/
       v4 = a3; /*0x4a4ba2*/
     else
@@ -382,7 +382,7 @@ VectorClass_flat * CStreamClass_16::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x4a4da8*/
     this->q004 = 0; /*0x4a4db0*/
   }
-  this->IsAllocated = 0; /*0x4a4dbb*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->q008 = 0; /*0x4a4dc1*/
   if ( (a2 & 1) != 0 ) /*0x4a4dc8*/
     RA2_OPDEL(); /*0x4a4dcb*/

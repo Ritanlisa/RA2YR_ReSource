@@ -29,7 +29,7 @@ void * RadBeam::Create()
     *((unsigned int *)dword_B04A64 + v3) = v2; /*0x659186*/
   }
   *(double *)(v2 + 24) = (double)(this != (void *)1 ? 20 : 10);
-  return v2; /*0x6591a1*/
+  return (void *)(v2);
 }
 } // namespace ra2
 
@@ -37,7 +37,7 @@ void * RadBeam::Create()
 namespace gamemd {
 unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
 {
-  this->nextArrayIndex = 0; /*0x6593fe*/
+  this->nextArrayIndex = (unsigned int)(0);
   *(unsigned int *)this = 0; /*0x659401*/
   this->q004 = 0; /*0x659403*/
   this->u32_8 = 0; /*0x659406*/
@@ -46,7 +46,7 @@ unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
   this->uniqueId = aP1; /*0x65940f*/
   this->referenceCount = 0; /*0x659412*/
   this->NeedsSaveOrLink = 0; /*0x659415*/
-  this->u8_21 = 0; /*0x659418*/
+  this->u8_21 = (unsigned int *)(0);
   this->u8_22 = 0; /*0x65941b*/
   this->range = 0; /*0x65941e*/
   *(&this->q0040) = 0; /*0x659421*/

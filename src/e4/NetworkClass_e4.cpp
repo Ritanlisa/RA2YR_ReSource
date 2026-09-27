@@ -22,12 +22,12 @@ int NetworkClass::ExecutePlanningModeCmd()
   wchar_t *StringCSF; // eax
   wchar_t *v3; // eax
 
-  v1 = *this; /*0x639fd0*/
+  v1 = (char)(*this);
   if ( *this == 9 ) /*0x639fd4*/
   {
     if ( !g_PlanningModeActive ) /*0x639fdd*/
     {
-      g_PlanningModeActive = 1; /*0x639fe8*/
+      g_PlanningModeActive = (wchar_t *)(1);
       StringCSF = GetStringCSF((wchar_t *)g_Str_MSG_PlanningModeNoDeploy, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x639ffb*/
   LABEL_10:
       AddMessageListPlayerMessage(StringCSF, 480); /*0x63a07b*/
@@ -38,7 +38,7 @@ int NetworkClass::ExecutePlanningModeCmd()
   {
     if ( !g_PlanningModeActive ) /*0x63a008*/
     {
-      g_PlanningModeActive = 1; /*0x63a01f*/
+      g_PlanningModeActive = (wchar_t *)(1);
       v3 = GetStringCSF(g_Str_MSG_PlanningModeNoStop, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a026*/
       AddMessageListPlayerMessage(v3, 480); /*0x63a032*/
       PlayVocClass(g_RulesClass_Instance->Scorches1[3], 0x2000, 1.0, 0); /*0x63a04f*/
@@ -46,7 +46,7 @@ int NetworkClass::ExecutePlanningModeCmd()
   }
   else if ( v1 == 7 && !g_PlanningModeActive ) /*0x63a05c*/
   {
-    g_PlanningModeActive = 1; /*0x63a063*/
+    g_PlanningModeActive = (wchar_t *)(1);
     StringCSF = GetStringCSF(g_Str_MSG_PlanningModeNoScatter, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a076*/
     goto LABEL_10; /*0x63a076*/
   }
@@ -99,7 +99,7 @@ AnimClass * * NetworkClass::UnregisterAsync()
   SOCKET v3; // eax
   SOCKET result; // eax
 
-  v2 = g_hWnd; /*0x7b1c53*/
+  v2 = (HWND)(g_hWnd);
   v3 = *(&this->u32_64D49); /*0x7b1c59*/
   if ( v3 != -1 && g_hWnd ) /*0x7b1c66*/
   {

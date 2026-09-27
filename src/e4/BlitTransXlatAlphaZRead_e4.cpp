@@ -109,7 +109,7 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
     }
     while ( a4 ); /*0x494c31*/
   }
-  return result; /*0x494c34*/
+  return (int)(result);
 }
 } // namespace gamemd
 // 0x494C40
@@ -148,7 +148,7 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
     }
     while ( a4 ); /*0x494d16*/
   }
-  return result; /*0x494d19*/
+  return (int)(result);
 }
 } // namespace gamemd
 // 0x494D20

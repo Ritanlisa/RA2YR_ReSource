@@ -65,7 +65,7 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
     v19 = 0; /*0x793803*/
     if ( v4 - 1 > 0 ) /*0x79380d*/
     {
-      v5 = &v26[1]; /*0x79380f*/
+      v5 = (int *)(&v26[1]);
       do /*0x793865*/
       {
         v6 = *v5; /*0x793813*/
@@ -99,7 +99,7 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
     {
       if ( v11 < v10 ) /*0x7938cb*/
       {
-        v13 = *v12; /*0x7938d1*/
+        v13 = (int *)(*v12);
         v14 = v12 + 1; /*0x7938d3*/
         v15 = &this->q020 * v9; /*0x7938d6*/
         do /*0x793906*/
@@ -356,8 +356,7 @@ Coord * * CComObject_CChatEventSink___ATL::GetTypeInfo(int a1, int a2, const cha
   }
   if ( a2 ) /*0x7a53ff*/
   {
-  LABEL_19:
-    StringCSF = GetStringCSF(g_Str_TXT_CANT_CONNECT, 0, g_Str_File_wonline_cpp, 5779); /*0x7a5401*/
+  LABEL_19: StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_CANT_CONNECT, 0, g_Str_File_wonline_cpp, 5779));
   LABEL_20:
     wcscpy(&word_B77AD0, StringCSF); /*0x7a5417*/
     SetEvent(Handles, unsigned int a1018); /*0x7a542c*/
@@ -431,7 +430,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
     }
     else
     {
-      v14 = CharToWideString(a3 + 52); /*0x7a573a*/
+      v14 = (wchar_t *)(CharToWideString(a3 + 52));
       String = GetStringCSF(aTxtCreatedChan, 0, g_Str_File_wonline_cpp, 5835); /*0x7a574c*/
       Dialog::ShowMessage(-1, (size_t)String, v14); /*0x7a5759*/
     }
@@ -460,7 +459,7 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
   }
   else
   {
-    v3 = GetStringCSF(aTxtChancreateF, 0, g_Str_File_wonline_cpp, 5825); /*0x7a56b0*/
+    v3 = (wchar_t *)(GetStringCSF(aTxtChancreateF, 0, g_Str_File_wonline_cpp, 5825));
     Dialog::ShowMessage(-1, (size_t)v3); /*0x7a56bc*/
     dword_B77E4C = 0; /*0x7a56c9*/
     g_WOL_IdleFlag[0] = 0; /*0x7a56d3*/

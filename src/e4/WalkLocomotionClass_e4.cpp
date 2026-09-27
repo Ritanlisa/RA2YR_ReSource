@@ -43,7 +43,7 @@ int WalkLocomotionClass::SetWaypointTarget(int a1, int a2, unsigned int a3, long
     if ( IDA___PAIR64__(a4, a3) != IDA___PAIR64__(qword_B077FC, v4) /*0x6a03be*/
       || (IDA_LOBYTE(v4) = IDA_BYTE4(qword_B077FC), IDA_HIDWORD(a4) != IDA_HIDWORD(qword_B077FC)) )
     {
-      v8 = a4; /*0x6a03c4*/
+      v8 = (unsigned int *)(a4);
       v5->u8_63 = 1; /*0x6a03ca*/
       *v6 = a3; /*0x6a03ce*/
       *(unsigned long long *)(a1 + 64) = v8; /*0x6a03d0*/
@@ -126,7 +126,7 @@ int WalkLocomotionClass::IsAtDestination(int a1, int a2, int a3, int a4)
           a1 = v13[2]; /*0x6a3fe2*/
           if ( *(unsigned int *)(v4 + 88) < v12 ) /*0x6a3feb*/
           {
-            v14 = v13[1]; /*0x6a3ff3*/
+            v14 = (int *)(v13[1]);
             v20[0] = *v13; /*0x6a3ff6*/
             v20[1] = v14; /*0x6a3fff*/
             v15 = WalkLocomotion::TransformCoords((unsigned int *)(v4 - 4), v21, v20, &a1); /*0x6a4011*/
@@ -222,7 +222,7 @@ HRESULT WalkLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     v12.lpVtbl->Write(v3, &a3, 1, 0); /*0x75c7d4*/
     return v5; /*0x75c7d8*/
   }
-  lpVtbl = v3->lpVtbl; /*0x75c72c*/
+  lpVtbl = (gamemd::WalkLocomotionClass::LoadFromStream::IStreamVtbl *)(v3->lpVtbl);
   IDA_LOBYTE(a3) = 1; /*0x75c738*/
   lpVtbl->Write(v3, &a3, 1, 0); /*0x75c73d*/
   v7 = (int (__stdcall ***)(unsigned int, void *, int **))v4[14]; /*0x75c740*/

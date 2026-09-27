@@ -503,6 +503,7 @@ struct FlyLocomotionClass {
     unsigned char q640C;  // 0x640C
     unsigned char q6410;  // 0x6410
     void* ptr_30;
+    unsigned int LocomotionClass;
 // --- flat members (END) ---
     FlyLocomotionClass * ProcessMove(char a2);
     int BeginMove(int * a1, int * a2);

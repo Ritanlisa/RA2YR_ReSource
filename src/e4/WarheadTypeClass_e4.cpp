@@ -45,7 +45,7 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x52530c*/
   {
-    this->vtable4 = 0; /*0x525312*/
+    this->vtable4 = (unsigned int *)(0);
     if ( a3 ) /*0x525318*/
       v4 = a3; /*0x52532e*/
     else
@@ -74,7 +74,7 @@ AbstractClass * * WarheadTypeClass::Release(int a2, unsigned int * a3)
   {
     (*(void (__thiscall **)(void *))(((unsigned int)(this->vtable22))))(this); /*0x52538e*/
   }
-  v7 = this->vtable3; /*0x525391*/
+  v7 = (gamemd::AbstractClass **)(this->vtable3);
   if ( v7 < this->q010 ) /*0x525399*/
     this->q010 = v7; /*0x52539b*/
   return 1; /*0x52539e*/
@@ -196,7 +196,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
       }
     }
   }
-  return result; /*0x52acdb*/
+  return (gamemd::AbstractClass **)(result);
 }
 } // namespace gamemd
 // 0x52AFC0
@@ -213,7 +213,7 @@ void * WarheadTypeClass::ReadParticleSystems(char a2)
 
   while ( 1 ) /*0x52afcc*/
   {
-    v3 = this->vtable3; /*0x52afcc*/
+    v3 = (void *)(this->vtable3);
     if ( !v3 ) /*0x52afd1*/
       break; /*0x52afd1*/
     if ( !*(unsigned int *)(v3 + 4) ) /*0x52afd3*/
@@ -247,10 +247,10 @@ void * WarheadTypeClass::ReadParticleSystems(char a2)
   }
   if ( this != (unsigned int *)-4 ) /*0x52b03a*/
   {
-    v8 = this->vtable3; /*0x52b03c*/
+    v8 = (void *)(this->vtable3);
     if ( v8 ) /*0x52b041*/
     {
-      v9 = this->vtable4; /*0x52b043*/
+      v9 = (void *)(this->vtable4);
       if ( v9 ) /*0x52b048*/
       {
         *(unsigned int *)(v9 + 4) = v8; /*0x52b04a*/
@@ -280,8 +280,7 @@ ParticleSystemTypeClass * * WarheadTypeClass::applyDamage()
   v2 = 0; /*0x64465a*/
   if ( g_InfantryTypeInitState <= 0 ) /*0x64465e*/
   {
-  LABEL_6:
-    v3 = operator new(0x310u); /*0x644683*/
+  LABEL_6: v3 = (unsigned int *)(operator new(0x310u));
     if ( v3 ) /*0x644692*/
       v4 = OverlayTypeClass::Construct(v3, Source); /*0x644697*/
     else
@@ -294,16 +293,16 @@ ParticleSystemTypeClass * * WarheadTypeClass::applyDamage()
         if ( ++v6 >= g_InfantryTypeInitState ) /*0x6446c2*/
           return -1; /*0x6446c2*/
       }
-      return v6; /*0x6446cd*/
+      return (gamemd::ParticleSystemTypeClass **)(v6);
     }
-    return -1; /*0x6446ca*/
+    return (gamemd::ParticleSystemTypeClass **)(-1);
   }
   while ( _strcmpi(Source, (const void *)(*((unsigned int *)dword_A83D6C + v2) + 36)) ) /*0x644677*/
   {
     if ( ++v2 >= g_InfantryTypeInitState ) /*0x644681*/
       goto LABEL_6; /*0x644681*/
   }
-  return v2; /*0x6446a0*/
+  return (gamemd::ParticleSystemTypeClass **)(v2);
 }
 } // namespace gamemd
 // 0x75CEC0
@@ -400,7 +399,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1)
          dword_8874C8 + dword_8874D4,
          0) )
   {
-    v3 = g_WarheadTypePool++; /*0x75d129*/
+    v3 = (gamemd::WarheadTypeClass *)(g_WarheadTypePool++);
     *((unsigned int *)dword_8874C4 + v3) = this; /*0x75d138*/
   }
   if ( g_AnimManager < g_AnimTypePool /*0x75d16f*/
@@ -411,10 +410,10 @@ int WarheadTypeClass::Construct(ObjectClass * aP1)
          g_AnimTypePool + g_AnimManagerConfig,
          0) )
   {
-    v4 = g_AnimManager++; /*0x75d17c*/
+    v4 = (gamemd::WarheadTypeClass *)(g_AnimManager++);
     *((unsigned int *)g_AnimPoolCount + v4) = this; /*0x75d18b*/
   }
-  this->q0A0 = 0; /*0x75d19b*/
+  this->q0A0 = (int)(0);
   this->q0A4 = 1072693248; /*0x75d1a0*/
   qmemcpy((void *)(&this->Tiberium8), (const void *)(&this->Tiberium0), 0x50u); /*0x75d1a7*/
   return this; /*0x75d1a9*/
@@ -553,7 +552,7 @@ int WarheadTypeClass::SaveLoad_Prefix(unsigned int * a1, int a2)
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2[66] + 4 * m)); /*0x75e260*/
     for ( n = 0; n < v2[103]; ++n ) /*0x75e27a*/
       ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2[100] + 4 * n)); /*0x75e28b*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 80); /*0x75e2a7*/
+    ObjectPtr::RegisterForTracking((int, unsigned int a2, unsigned int a3)&SwizzleManagerClass_Instance, v2 + 80); /*0x75e2a7*/
     return 0; /*0x75e2ac*/
   }
   return result; /*0x75e2ae*/

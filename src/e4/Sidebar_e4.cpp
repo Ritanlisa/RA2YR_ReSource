@@ -15,6 +15,7 @@
 #include "e4/classes/Draw_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/VectorClass_ptr_ConvertClass_e4.hpp"
 
 // 0x4FA350
 namespace gamemd {
@@ -258,7 +259,7 @@ int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
 {
   unsigned int result;
 
-  result = aP1 - 1; /*0x5007a5*/
+  result = (unsigned int)(aP1 - 1);
   switch ( aP1 ) /*0x5007b7*/
   {
     case 1: /*0x5007b7*/

@@ -28,7 +28,7 @@
 
 // 0x5D1D80
 namespace gamemd {
-int Session::RemoveTeam(MSShapeAnim * aP1)
+int Session::RemoveTeam(MSShapeAnim * aP1, void * a1, void * a2)
 {
   int result; // eax
   aP1 *v3; // esi
@@ -110,7 +110,7 @@ int Session::PrepareGame()
       {
         if ( v16 != -1 ) /*0x5e7793*/
         {
-          result = Timer::GetTicks() - v16; /*0x5e779e*/
+          result = (int)(Timer::GetTicks() - v16);
           if ( result >= 1800 ) /*0x5e77a4*/
             return result; /*0x5e77a4*/
           v9 = 1800 - result; /*0x5e77aa*/
@@ -205,13 +205,13 @@ int Session::PrepareGame()
       result = BufferIOFileClass::Dtor(Str); /*0x5e7887*/
       if ( !v15 ) /*0x5e788e*/
       {
-        result = (int)operator new(4u); /*0x5e7892*/
+        result = (void *)((int)operator new(4u));
         if ( !result ) /*0x5e789c*/
         {
-          g_UIControlState = 0; /*0x5e78e4*/
+          g_UIControlState = (int)(0);
           return result; /*0x5e78f4*/
         }
-        result = unknown_libname_27(result); /*0x5e78a0*/
+        result = (int)(unknown_libname_27(result));
         g_UIControlState = (void *)result; /*0x5e78a5*/
       }
       if ( g_UIControlState ) /*0x5e78b0*/
@@ -227,7 +227,7 @@ int Session::PrepareGame()
           return InvalidateRect(hWnd, 0, 0); /*0x5e78d3*/
         }
       }
-      return result;
+      return (int)(result);
   }
   while ( 1 ) /*0x5e757e*/
   {
@@ -237,7 +237,7 @@ int Session::PrepareGame()
     }
     else
     {
-      v4 = GameSettings::FindFlagged(); /*0x5e75a4*/
+      v4 = (char *)(GameSettings::FindFlagged());
       if ( !v4 ) /*0x5e75ab*/
         goto LABEL_12; /*0x5e75ab*/
       v5 = CharToWideString((unsigned char *)(v4 + 36)); /*0x5e75b0*/
@@ -247,11 +247,9 @@ int Session::PrepareGame()
     {
       for ( result = Network::GetQueueCount((int)&g_NetworkManager); /*0x5e75e0*/
             result;
-            result = Network::GetQueueCount((int)&g_NetworkManager) )
-      {
-        Event::Dispatch(); /*0x5e75e6*/
+            result = (void *)(Network::GetQueueCount((int)&g_NetworkManager) ) { Event::Dispatch());
       }
-      return result; /*0x5e75f7*/
+      return (int)(result);
     }
   LABEL_12:
     Event::Dispatch(); /*0x5e75cd*/
@@ -276,7 +274,7 @@ int Session::GetPlayerColor()
 {
   int result; // eax
 
-  result = -2; /*0x69b726*/
+  result = (int)(-2);
   if ( this->q160 != -2 ) /*0x69b72d*/
     return this->q15C; /*0x69b72f*/
   return result; /*0x69b735*/

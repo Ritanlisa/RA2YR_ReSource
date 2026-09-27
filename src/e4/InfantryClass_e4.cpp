@@ -43,7 +43,7 @@ int InfantryClass::ScanTarget(int * a1)
   if ( *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 132))(a1) + 912) /*0x4d4dde*/
     && !(*(int (__thiscall **)(int))(*(unsigned int *)a1 + 456))(a1) )
   {
-    v2 = *(unsigned int *)a1; /*0x4d4de8*/
+    v2 = (short *)(*(unsigned int *)a1);
     PlacementCells_Alt = (int16_t *)MapClass::FindPlacementCellsAlt((char *)a1, &v17, a1); /*0x4d4df4*/
     v4 = CellCoord::To_CellObj(&MapClass_Instance, PlacementCells_Alt); /*0x4d4dff*/
     (*(void (__thiscall **)(int, void *, int))(v2 + 1152))(a1, v4, 1); /*0x4d4e07*/
@@ -247,7 +247,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       g_BuildingLoadQueue_Active = 0; /*0x517efc*/
       g_BuildingLoadQueue_Dirty = 1; /*0x517f02*/
     }
-    v15[0] = v8; /*0x517f0d*/
+    v15[0] = (int)(v8);
     v9 = BinaryArraySearch((int)g_BuildingLoadQueue_Array, v7, v15); /*0x517f18*/
     if ( v9 ) /*0x517f1f*/
     {
@@ -274,7 +274,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
 }
 // 0x7447A0
 namespace gamemd {
-int InfantryClass_ScanTarget_0()
+int InfantryClass_ScanTarget_0(void * a1)
 {
   return InfantryClass::ScanTarget(a1);
 }

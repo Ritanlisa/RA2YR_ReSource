@@ -21,9 +21,7 @@
 namespace gamemd {
 int Terrain::GetTileIndex(int a2)
 {
-  return (*(unsigned int *)(this->q024 + 36 * *(unsigned int *)(*(&this->q0042) + 4 * a2)) & 1) != 0
-       ? this->q024 + 36 * *(unsigned int *)(*(&this->q0042) + 4 * a2)
-       : 0;
+  return (int)((*(unsigned int *)(this->q024 + 36 * *(unsigned int *)(*(&this->q0042) + 4 * a2)) & 1) != 0 ? this->q024 + 36 * *(unsigned int *)(*(&this->q0042) + 4 * a2) : 0);
 }
 }
 // 0x48B9E0
@@ -151,7 +149,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
     *(unsigned int *)v77 = v67; /*0x568f1f*/
     if ( v10 || v11 >= 0x40000 || (v12 = *(unsigned int **)(g_Shroud_CellArray + 4 * v11)) == 0 ) /*0x568f37*/
     {
-      g_Map_GlobalCellIndex = v67; /*0x568f3f*/
+      g_Map_GlobalCellIndex = (unsigned int *)(v67);
       v64 = &g_CellClassArray; /*0x568f45*/
     }
     else
@@ -188,7 +186,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
           v18 = (int16_t)v17 + (IDA_SHIWORD(v17) << 9); /*0x56906e*/
           if ( v18 >= 0x40000 || (v19 = *(unsigned char **)(g_Shroud_CellArray + 4 * v18)) == 0 ) /*0x569084*/
           {
-            g_Map_GlobalCellIndex = v17; /*0x569086*/
+            g_Map_GlobalCellIndex = (unsigned char *)(v17);
             v19 = &g_CellClassArray; /*0x56908c*/
           }
           v19[283] += 4; /*0x56909f*/
@@ -197,7 +195,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
           v21 = (int16_t)v20 + (IDA_SHIWORD(v20) << 9); /*0x5690c4*/
           if ( v21 >= 0x40000 || (v22 = *(unsigned char **)(g_Shroud_CellArray + 4 * v21)) == 0 ) /*0x5690da*/
           {
-            g_Map_GlobalCellIndex = v20; /*0x5690dc*/
+            g_Map_GlobalCellIndex = (unsigned char *)(v20);
             v22 = &g_CellClassArray; /*0x5690e2*/
           }
           v23 = 0; /*0x5690f0*/
@@ -280,7 +278,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
     v31 = (int16_t)v30 + (IDA_SHIWORD(v30) << 9); /*0x569291*/
     if ( v31 >= 0x40000 || (v32 = *(unsigned char **)(g_Shroud_CellArray + 4 * v31)) == 0 ) /*0x5692a7*/
     {
-      g_Map_GlobalCellIndex = v30; /*0x5692a9*/
+      g_Map_GlobalCellIndex = (unsigned char *)(v30);
       v32 = &g_CellClassArray; /*0x5692af*/
     }
     v32[283] += 4; /*0x5692c2*/
@@ -289,7 +287,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
     v34 = (int16_t)v33 + (IDA_SHIWORD(v33) << 9); /*0x5692e7*/
     if ( v34 >= 0x40000 || (v35 = *(unsigned char **)(g_Shroud_CellArray + 4 * v34)) == 0 ) /*0x5692fd*/
     {
-      g_Map_GlobalCellIndex = v33; /*0x5692ff*/
+      g_Map_GlobalCellIndex = (unsigned char *)(v33);
       v35 = &g_CellClassArray; /*0x569305*/
     }
     v36 = 0; /*0x569313*/
@@ -341,7 +339,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
       g_Map_GlobalCellIndex = *(unsigned int *)(a2 + 36); /*0x5694c2*/
       v44 = &g_CellClassArray; /*0x5694c8*/
     }
-    v45 = aP3; /*0x5694cd*/
+    v45 = (int *)(aP3);
     if ( aP3 ) /*0x5694d6*/
     {
       v87 = *(unsigned int *)(a2 + 36); /*0x5694e7*/
@@ -365,16 +363,16 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
         {
           if ( a3 == 2 ) /*0x56957e*/
           {
-            v50 = operator new(0xB0u); /*0x569580*/
+            v50 = (unsigned int *)(operator new(0xB0u));
             if ( v50 ) /*0x56958a*/
             {
-              aP3 = (int *)v44[9]; /*0x569596*/
+              aP3 = (IUnknown *)((int *)v44[9]);
               Object::SpawnAtCell(v50, *((unsigned int *)g_BuildingTypeClass_Array + 24), (int16_t *)&aP3, -1); /*0x5695a9*/
             }
           }
           else
           {
-            v51 = operator new(0xB0u); /*0x5695ab*/
+            v51 = (unsigned int *)(operator new(0xB0u));
             if ( v51 ) /*0x5695b5*/
             {
               v71 = v44[9]; /*0x5695be*/
@@ -391,7 +389,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
         *(unsigned int *)v77 = v88; /*0x569609*/
         if ( v10 || v53 >= 0x40000 || (v54 = *(unsigned int **)(g_Shroud_CellArray + 4 * v53)) == 0 ) /*0x569621*/
         {
-          g_Map_GlobalCellIndex = v88; /*0x569627*/
+          g_Map_GlobalCellIndex = (unsigned int *)(v88);
           v44 = &g_CellClassArray; /*0x56962d*/
         }
         else
@@ -543,7 +541,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
   int v103; // [esp+5Ch] [ebp-8h]
   int v104; // [esp+60h] [ebp-4h]
 
-  v1 = this; /*0x56c515*/
+  v1 = (unsigned int *)(this);
   v81 = -1; /*0x56c51a*/
   v95 = -1; /*0x56c51e*/
   v2 = (unsigned int *)this->q014; /*0x56c529*/
@@ -998,7 +996,7 @@ int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractC
   v5 = v5; /*0x56cbb6*/
   do /*0x56cbe7*/
   {
-    v9 = a1[1] - v7; /*0x56cbc5*/
+    v9 = (unsigned short)(a1[1] - v7);
     if ( (int)((IDA_HIDWORD(v9) ^ v9) - IDA_HIDWORD(v9)) >= 2 ) /*0x56cbcd*/
       break; /*0x56cbcd*/
     *((unsigned short *)a1 + 1) = aP2; /*0x56cbd6*/
@@ -1055,7 +1053,7 @@ int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractC
     v23 = v76; /*0x56ccd0*/
     do /*0x56ccfd*/
     {
-      v24 = v8[1] - v23; /*0x56ccdd*/
+      v24 = (unsigned short)(v8[1] - v23);
       if ( (int)((IDA_HIDWORD(v24) ^ v24) - IDA_HIDWORD(v24)) >= 4 ) /*0x56cce5*/
         break; /*0x56cce5*/
       *((unsigned short *)v8 + 1) = aP2; /*0x56cce9*/

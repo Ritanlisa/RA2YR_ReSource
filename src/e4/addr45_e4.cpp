@@ -438,7 +438,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
       while ( (int)v16 < (int)aStructures ); /*0x456c23*/
     }
   }
-  return v14; /*0x456df5*/
+  return (void *)(v14);
 }
 }
 // 0x456FB0
@@ -459,7 +459,7 @@ BuildingTypeClass * * sub_456FB0(unsigned int * a1, int a2, int a3)
   }
   else
   {
-    return v4; /*0x45700f*/
+    return (gamemd::BuildingTypeClass **)(v4);
   }
 }
 }
@@ -822,7 +822,7 @@ void * E4Recv_45DD20::sub_45DD20()
   int v1; // edx
   int *v2; // eax
 
-  v1 = 0; /*0x45dd20*/
+  v1 = (int *)(0);
   v2 = &dword_81928C; /*0x45dd22*/
   while ( (void *)*v2 != this ) /*0x45dd29*/
   {

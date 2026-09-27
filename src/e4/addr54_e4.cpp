@@ -37,6 +37,8 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/File_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/TextRenderer_e4.hpp"
 
 // 0x540C50
 namespace gamemd {
@@ -201,7 +203,7 @@ AbstractClass * * SurfaceClass_CreatePrimary(int a1, int a2, int a3)
       v8 = g_SurfaceAnimState++; /*0x544fc3*/
       *((unsigned int *)dword_87F69C + v8) = v7; /*0x544fd2*/
     }
-    return v7; /*0x544fd5*/
+    return (gamemd::AbstractClass **)(v7);
   }
   else
   {
@@ -217,7 +219,7 @@ AbstractClass * * SurfaceClass_CreatePrimary(int a1, int a2, int a3)
         goto LABEL_14; /*0x544f1a*/
     }
   }
-  return result; /*0x544e88*/
+  return (gamemd::AbstractClass **)(result);
 }
 }
 // 0x545150
@@ -369,8 +371,8 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
     RA2_OPDEL(lpBuffer);
     lpBuffer = 0;
   }
-  Size = CCFileClass::GetSize(v158);
-  lpBuffer = (MapClass *)new MapClass;
+  Size = (gamemd::MapClass *)(CCFileClass::GetSize(v158));
+  lpBuffer = (int)((MapClass *)new MapClass);
   signed int v5 = CCFileClass::GetSize(v158);
   CCFileClass::Read(v158, (CampaignScore *)lpBuffer, v5);
   if ( *(unsigned int *)&g_NetworkPlayerBuffer[80460] )
@@ -447,7 +449,7 @@ char * * LoadTerrainTypeClassTheatre(AbstractClass * a1, char a2)
   if ( CCFileClass::Open(v161, 0) )
   {
     CCFileClass::Read(v161, &stru_ABBED0, 768);
-    v18 = &stru_ABBED0;
+    v18 = (gamemd::CampaignScore *)(&stru_ABBED0);
     int v19 = 768;
     do
     {

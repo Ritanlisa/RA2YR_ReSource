@@ -37,14 +37,14 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   v13 = 0; /*0x42ddd5*/
   if ( this->m_allocated ) /*0x42ddce*/
   {
-    v5 = 4; /*0x42ddfb*/
+    v5 = (unsigned char *)(4);
     v12 = (uint8_t *)&this->Delegate_field_14; /*0x42de00*/
     v6 = &this->m_straw; /*0x42de04*/
     Srca = 3; /*0x42de07*/
   }
   else
   {
-    v5 = 3; /*0x42dde2*/
+    v5 = (unsigned char *)(3);
     v12 = (uint8_t *)&this->m_straw; /*0x42dde7*/
     v6 = &this->Delegate_field_14; /*0x42ddeb*/
     Srca = 4; /*0x42ddee*/
@@ -52,7 +52,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   v7 = this->Delegate_field_10; /*0x42de0f*/
   if ( v7 > 0 ) /*0x42de14*/
   {
-    Size = a3; /*0x42de24*/
+    Size = (unsigned int)(a3);
     if ( a3 >= v5 - v7 ) /*0x42de28*/
       Size = v5 - v7; /*0x42de2a*/
     memcpy(&v12[this->Delegate_field_10], v3, Size); /*0x42de3e*/
@@ -129,7 +129,7 @@ void Delegate::Set(AbstractTypeClass * aP1)
         aP1->vtable3 = 0; /*0x6c98af*/
       }
     }
-    v4 = this->m_count; /*0x6c98b6*/
+    v4 = (unsigned int)(this->m_count);
     if ( v4 ) /*0x6c98bb*/
       *(unsigned int *)(v4 + 8) = 0; /*0x6c98bd*/
     this->m_count = aP1; /*0x6c98c6*/
@@ -166,15 +166,15 @@ int Delegate::ProcessBitmapAndDispatch()
   {
     if ( this->m_allocated ) /*0x42df4d*/
     {
-      v4 = &this->__pad_060; /*0x42df64*/
+      v4 = (int)(&this->__pad_060);
       v5 = DecodeBitmapRGB((uint8_t *)(&this->Delegate_field_080), v3, (unsigned char *)(&this->Delegate_field_084), 3); /*0x42df6d*/
     }
     else
     {
-      v4 = &this->q050; /*0x42df54*/
+      v4 = (int)(&this->q050);
       v5 = EncodeBitmapRGB((char *)(&this->Delegate_field_084), v3, (unsigned char *)(&this->Delegate_field_080), 4); /*0x42df5d*/
     }
-    v2 = Delegate::Dispatch((unsigned int *)this, v4, v5); /*0x42df7b*/
+    v2 = (int)(Delegate::Dispatch((unsigned int *)this, v4, v5));
     this->Delegate_field_10 = 0; /*0x42df7d*/
   }
   return v2 + GameClass::GetRelatedObject((unsigned int *)this); /*0x42df8d*/

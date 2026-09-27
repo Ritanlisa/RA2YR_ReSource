@@ -45,8 +45,8 @@ int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9
   v14 = v14; /*0x7bb959*/
   while ( 1 ) /*0x7bb970*/
   {
-    a3 = v12 + a3; /*0x7bb970*/
-    a2 = a2 + a4; /*0x7bb974*/
+    a3 = (int)(v12 + a3);
+    a2 = (int)(a2 + a4);
     v15 = v13 + a2; /*0x7bb978*/
     v16 = *this; /*0x7bb97b*/
     v29[1] = v12 + a3; /*0x7bb97d*/

@@ -52,7 +52,7 @@ AbstractTypeClass * * TagTypeClass::Construct(ObjectClass * aP1)
          dword_B0E788 + dword_B0E794,
          0) )
   {
-    v3 = g_MultiplayerCleanup++; /*0x6e5c2b*/
+    v3 = (gamemd::TagTypeClass *)(g_MultiplayerCleanup++);
     *((unsigned int *)dword_B0E784 + v3) = this; /*0x6e5c3a*/
   }
   if ( g_AnimManager < g_AnimTypePool /*0x6e5c71*/
@@ -63,10 +63,10 @@ AbstractTypeClass * * TagTypeClass::Construct(ObjectClass * aP1)
          g_AnimTypePool + g_AnimManagerConfig,
          0) )
   {
-    v4 = g_AnimManager++; /*0x6e5c7e*/
+    v4 = (gamemd::TagTypeClass *)(g_AnimManager++);
     *((unsigned int *)g_AnimPoolCount + v4) = this; /*0x6e5c8d*/
   }
-  return this; /*0x6e5c92*/
+  return (gamemd::AbstractTypeClass **)(this);
 }
 }
 // 0x6E5CA0
@@ -190,7 +190,7 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
     qmemcpy((void *)(&this->persistence0), Destination, 0x30u); /*0x6e6123*/
     this->q094 = v7; /*0x6e6125*/
   }
-  v4 = strtok(0, Delimiter); /*0x6e612d*/
+  v4 = (void *)(strtok(0, Delimiter));
   this->q0A0 = TagTypeClass::FindOrCreateTriggerType(v4); /*0x6e613d*/
   return 1; /*0x6e6143*/
 }
@@ -234,7 +234,7 @@ AbstractTypeClass * * TagTypeClass::FindOrCreate()
     if ( ++v2 >= g_MultiplayerCleanup ) /*0x6e6364*/
       goto LABEL_6; /*0x6e6364*/
   }
-  return (char *)*((unsigned int *)dword_B0E784 + v2); /*0x6e637f*/
+  return (gamemd::AbstractTypeClass **)((char *)*((unsigned int *)dword_B0E784 + v2));
 }
 }
 // 0x6E63E0
@@ -264,8 +264,7 @@ TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType()
   v2 = 0; /*0x727acd*/
   if ( g_MultiplayerLogBuffer <= 0 ) /*0x727ad1*/
   {
-  LABEL_6:
-    v3 = operator new(0xB4u); /*0x727af6*/
+  LABEL_6: v3 = (unsigned int *)(operator new(0xB4u));
     if ( v3 ) /*0x727b05*/
       return TriggerTypeClass::Construct(v3, Source); /*0x727b11*/
     return 0; /*0x727b05*/
@@ -275,7 +274,7 @@ TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType()
     if ( ++v2 >= g_MultiplayerLogBuffer ) /*0x727af4*/
       goto LABEL_6; /*0x727af4*/
   }
-  return (unsigned int *)*((unsigned int *)dword_8B417C + v2); /*0x727b0f*/
+  return (gamemd::TriggerTypeClass **)((unsigned int *)*((unsigned int *)dword_8B417C + v2));
 }
 }
 // 0x6E63A0

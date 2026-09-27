@@ -30,6 +30,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x402720
 namespace gamemd {
@@ -154,8 +155,7 @@ void * Audio::ProcessMixerOutput()
     if ( Next ) /*0x406487*/
       return Next; /*0x40648d*/
   }
-  LABEL_6:
-  v4 = operator new(0x148u); /*0x4063f4*/
+  LABEL_6: v4 = (unsigned int *)(operator new(0x148u));
   memset(v4, 0, 0x148u); /*0x40640a*/
   memset(v4, 0, 0x148u); /*0x406413*/
   DListNode::InitEmpty(v4); /*0x40641a*/
@@ -182,7 +182,7 @@ int Audio::ApplyFormatFlags(int * a1, char * a2)
   char *v6; // eax
   int v7; // eax
 
-  v4 = &off_816048; /*0x40687e*/
+  v4 = (char **)(&off_816048);
   if ( off_816048 ) /*0x406883*/
   {
     do /*0x40689d*/

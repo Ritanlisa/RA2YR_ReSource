@@ -78,6 +78,7 @@ struct ResizeDialogAndEnum;
 struct Resize;
 struct RequestBufferMixer;
 struct Render_Render_7760B0;
+struct Render_Format;
 struct Render_Draw;
 struct RenderTextLabel;
 struct RenderScoreScreen;
@@ -103,6 +104,7 @@ struct PlayVocClass;
 struct PlaySoundEffectAt;
 struct PlaceMapSeedClassBuildings;
 struct PlaceAircraftOnMap;
+struct ParseStringCommaInts;
 struct PackRGB565;
 struct OpenURLWOL;
 struct OleSaveToStream;
@@ -143,6 +145,8 @@ struct InitComboBoxNone;
 struct ImageList_DragShowNolock;
 struct IDTechnoClassMatches;
 struct HitDialogTest;
+struct Hash_Check_5E9580;
+struct Hash_Check_5E94D0;
 struct HandleNetworkPlayerDisconnect;
 struct HandleMultiplayerMapSelection;
 struct GetWarheadVersusMultiplier;
@@ -168,6 +172,7 @@ struct GetBitMask_Blue;
 struct GenerateTerrainMap;
 struct GenerateRangeRingTextures;
 struct GenerateLightningStormGlow;
+struct GameOptions_GetEntry;
 struct GameLoopMessagePump;
 struct GameFrameLoop;
 struct FromStringInt;
@@ -251,15 +256,6 @@ struct AssignWOLPlayerSide;
 struct AllocateSurfaceScreenSurfaces;
 struct AddMessageListPlayerMessage;
 namespace gamemd {
-
-// supplied for GameConfig::BuildChecksum (0x77E7A0) body dependencies
-// (GameOptions struct itself is defined in _tree_full_e4.hpp; GetEntry is
-// declared as a free alias to avoid redefining the generated struct)
-extern int GameOptions_GetEntry();
-extern int Hash_Check_5E9580(int a1);
-extern int Hash_Check_5E94D0(int a1);
-// real definition: src/core/init_game.cpp (0x5256F0, free fn in gamemd)
-extern void DestroyHashTableINIClass(void * ini);
 
 extern AbstractClass * * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short a5);
 extern AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char a6, int a7);
@@ -373,6 +369,7 @@ extern int FindBuddyList(int a1, char a2);
 extern int FindBuildingAnimByName(AbstractClass * aP0, int a2);
 extern int FindExecutableA();
 extern int GameLoopMessagePump(MSG* msg, UINT wMsgFilterMin, UINT wMsgFilterMax, HWND hWnd, UINT flags);
+extern int GameOptions_GetEntry();
 extern int GetBitMask_Blue();
 extern int GetBitMask_Green();
 extern int GetBitMask_Red();
@@ -385,6 +382,8 @@ extern int GetResourceID4CSF(int rtti);
 extern int GetResourceIDCSF(int rtti);
 extern int GetWarheadVersusMultiplier(CoordStruct * aP0, BuildingTypeClass * aP1, CoordStruct * aP2, BulletClass * aP3);
 extern int HandleMultiplayerMapSelection(void);
+extern int Hash_Check_5E94D0(int a1);
+extern int Hash_Check_5E9580(int a1);
 extern int HitDialogTest(void);
 extern int ImageList_DragShowNolock();
 extern int LoadSHPFile(int lpBuffer, char* Source);
@@ -460,6 +459,7 @@ extern void * SetupLobbyCountryCombo(SkirmishDialog * aP0, int nIDDlgItem, int a
 extern void * SetupSkirmishDialogPlayerSlot(HWND hDlg, int a2);
 extern void * globalHelper_04BB20(ObjectClass * Source, int a2);
 extern void * sub_4E3690(HWND hDlg, int a2);
+extern void ** ParseStringCommaInts(char * String, int * a2, int * a3, int * a4, int * a5, int * a6, void ** a7);
 extern void AddMessageListPlayerMessage(CellStruct * a1, int a2);
 extern void Audio_Process_7C19F0(int a1, DSurface * aP1, unsigned int * a2, unsigned int * a3);
 extern void BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2);
@@ -473,7 +473,7 @@ extern void DSP_AudioProcess(AudioStream * aP0, int a2, char a3);
 extern void DecodeBitmapRGB(Pipe * aP0, BombClass * aP1, unsigned char * a2, int a4);
 extern void DecodeBlockLCW(AbstractClass * aP0, Pipe * aP1, unsigned char * a2, unsigned int * a3, int a5);
 extern void Destroy(HWND hWnd);
-extern void DestroyHashTableINIClass(void* ini);
+extern void DestroyHashTableINIClass(void * ini);
 extern void DisableCampaignSlots(HWND hDlg, int a2);
 extern void DivideBigInteger(unsigned int * a1, char * a2, int a3);
 extern void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd);
@@ -570,6 +570,7 @@ extern void* CalcSurfaceBlitRects(int ecx0, int * a1, IUnknown * aP2, int arg4, 
 extern wchar_t * sub_4E4F30();
 extern wchar_t ** CharStringToWide(ObjectClass * aP0, const char ** a1);
 extern wchar_t ** FormatWideStringPrefix(CampaignScore * aP0, const wchar_t * a1, wchar_t ** a2);
+extern wchar_t ** Render_Format(wchar_t ** a1, char ** a2);
 extern long long ZCoordToScreenY(IUnknown * aP0);
 
 } // namespace gamemd

@@ -79,7 +79,7 @@ ColorListClass * ColorListClass::QueryInterface(char a2)
   char *v4; // esi
   void *v5; // eax
 
-  v3 = this->q174; /*0x488f05*/
+  v3 = (char *)(this->q174);
   v4 = &this->u32_5D0; /*0x488f0b*/
   (*(void (__thiscall **)(char *))(v3 + 12))(&this->u32_942); /*0x488f19*/
   this->q190 = 0; /*0x488f1e*/

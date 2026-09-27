@@ -69,7 +69,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
     v13 = (a6 + v11) % 16; /*0x7ba927*/
     v41 = -1; /*0x7ba92c*/
   }
-  v42 = (*(int (__thiscall **)(void *))(((unsigned int)(this->q02C2))))(this); /*0x7ba947*/
+  v42 = (unsigned char *)((*(int (__thiscall **)(void *))(((unsigned int)(this->q02C2))))(this));
   v14 = (unsigned short *)(*(int (__thiscall **)(void *, int, int))(((unsigned int)(this->q0242))))(this, v7, v40); /*0x7ba94f*/
   v43 = v14; /*0x7ba954*/
   if ( v14 )
@@ -369,7 +369,7 @@ void* XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__t
     (*(void (__thiscall **)(unsigned int *))(*v28 + 96))(v28); /*0x7bad80*/
     return 1; /*0x7bad86*/
   }
-  return result; /*0x7bac0f*/
+  return (void *)(result);
 }
 } // namespace gamemd
 // 0x7BB050
@@ -415,7 +415,7 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
   int v54; // [esp+88h] [ebp+10h]
   int v55; // [esp+88h] [ebp+10h]
 
-  v4 = this; /*0x7bb05c*/
+  v4 = (int)(this);
   v5 = a2[2]; /*0x7bb05e*/
   if ( v5 <= 0 ) /*0x7bb066*/
     return 0; /*0x7bb066*/

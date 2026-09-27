@@ -11,6 +11,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x4E3560
 namespace gamemd {

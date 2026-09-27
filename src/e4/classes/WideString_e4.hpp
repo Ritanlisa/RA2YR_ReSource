@@ -25,5 +25,6 @@ struct WideString {
     const wchar_t * Length();  // 0x7B71B0
     short Reassign(wchar_t * String);  // 0x7B7600
     char IsASCII();  // 0x7B7D90
+    int Hash();  // def-aligned
 };
 } // namespace gamemd

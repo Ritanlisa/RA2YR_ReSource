@@ -29,7 +29,7 @@ int * Display::GetViewport()
   int v3; // edx
   int v4; // esi
 
-  result = this; /*0x72ad29*/
+  result = (int *)(this);
   v2 = 0; /*0x72ad44*/
   if ( !byte_A8EB7C && !g_ArmageddonMode ) /*0x72ad5e*/
     v2 = 168; /*0x72ad60*/

@@ -25,6 +25,7 @@
 #include "e4/classes/StreamClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/House_e4.hpp"
 
 // 0x4116A0
 namespace gamemd {
@@ -274,7 +275,7 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   LPDIRECTSOUND DirectSound; // [esp+8h] [ebp-64h]
   unsigned int v11[24]; // [esp+Ch] [ebp-60h] BYREF
 
-  DirectSound = Audio::GetDirectSound(); /*0x411b2f*/
+  DirectSound = (gamemd::AbstractClass **)(Audio::GetDirectSound());
   Debug::Log(); /*0x411b33*/
   GetCurrentThreadId(); /*0x411b3b*/
   Debug::Log(); /*0x411b47*/
@@ -518,7 +519,7 @@ void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
     LeaveCriticalSection(lpCriticalSection); /*0x4120c1*/
     return -13; /*0x4120d3*/
   }
-  v12 = a3; /*0x4120d4*/
+  v12 = (unsigned int)(a3);
   *(unsigned int *)(v5 + 4 * v10 + 80) = v4; /*0x4120d8*/
   *(unsigned int *)(v5 + 4 * v10 + 88) = v12; /*0x4120dc*/
   *(unsigned int *)(v5 + 4 * v10 + 72) = 1; /*0x4120e0*/
@@ -697,7 +698,7 @@ bool sub_413CD0(int a1)
 }
 // 0x41B110
 namespace gamemd {
-INIClass * * PlaceAircraftFromINI()
+INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
 {
   int result; // eax
   int v4; // ecx

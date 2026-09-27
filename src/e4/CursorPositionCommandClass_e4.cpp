@@ -10,6 +10,6 @@
 namespace gamemd {
 unsigned int * CursorPositionCommandClass::Constructor()
 {
-  return this; /*0x537e78*/
+  return (unsigned int *)(this);
 }
 } // namespace gamemd

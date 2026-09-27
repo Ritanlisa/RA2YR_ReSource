@@ -147,7 +147,7 @@ Coord * * int CollectWOLConnectionTokens()
 }
 // 0x7A0690
 namespace gamemd {
-void WOL_RequestMatch()
+void WOL_RequestMatch(void * a1)
 {
   HWND v0; // eax
   int i; // esi

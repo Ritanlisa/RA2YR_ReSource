@@ -1701,6 +1701,10 @@ struct ObjectTypeClass {
     unsigned int q0E03;
     unsigned int q0E08;
     unsigned int q0E09;
+    unsigned int q0E06;
+    unsigned int u32_E40;
+    unsigned int u32_E41;
+    unsigned int u32_E43;
 // --- flat members (END) ---
     AbstractClass * * Load2DArt();
     BOOL loadTypeMember_5717AE0();

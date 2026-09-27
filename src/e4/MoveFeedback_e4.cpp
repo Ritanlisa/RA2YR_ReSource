@@ -81,7 +81,7 @@ int MoveFeedback::ProcessCommand()
   }
   else
   {
-    v9 = operator new(0x18u); /*0x73288f*/
+    v9 = (unsigned int *)(operator new(0x18u));
     v3 = v9; /*0x732894*/
     v10 = 0; /*0x732896*/
     if ( v9 ) /*0x73289d*/
@@ -188,7 +188,7 @@ DynamicVector * MoveFeedback::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x40bcc8*/
     this->q004 = 0; /*0x40bcd0*/
   }
-  this->IsAllocated = 0; /*0x40bcdb*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x40bce1*/
   if ( (a2 & 1) != 0 ) /*0x40bce8*/
     RA2_OPDEL(); /*0x40bceb*/
@@ -201,7 +201,7 @@ void MoveFeedback::Destroy()
 {
   void *v2; // eax
 
-  v2 = this->q004; /*0x40be56*/
+  v2 = (void *)(this->q004);
   this->q010 = 0; /*0x40be59*/
   if ( v2 && this->IsAllocated ) /*0x40be60*/
   {
@@ -233,7 +233,7 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x40c03c*/
   {
-    this->q00C = 0; /*0x40c042*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x40c048*/
       v4 = a3; /*0x40c05e*/
     else
@@ -254,7 +254,7 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
         this->q004 = 0; /*0x40c0a1*/
       }
     }
-    this->q004 = v4; /*0x40c0aa*/
+    this->q004 = (unsigned char)(v4);
     this->q008 = a2; /*0x40c0b2*/
     this->IsAllocated = a3 == 0; /*0x40c0b5*/
   }
@@ -300,7 +300,7 @@ DynamicVector * MoveFeedback::Constructor(char a2)
     RA2_OPDEL(v3); /*0x40c178*/
     this->q004 = 0; /*0x40c180*/
   }
-  this->IsAllocated = 0; /*0x40c18b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x40c191*/
   if ( (a2 & 1) != 0 ) /*0x40c198*/
     RA2_OPDEL(); /*0x40c19b*/

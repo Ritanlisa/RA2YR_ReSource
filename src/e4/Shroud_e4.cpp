@@ -46,7 +46,7 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
   {
     while ( 1 ) /*0x654567*/
     {
-      aP1 = v9->outBuffer; /*0x654567*/
+      aP1 = (gamemd::RadarClass **)(v9->outBuffer);
       if ( LayerClass::IsWithinUsableArea(this, (int16_t *)&aP1, 1) ) /*0x65456b*/
         break; /*0x65456b*/
   LABEL_17:
@@ -95,6 +95,6 @@ RadarClass * * Shroud::ProcessCellVisibility(MouseClass * aP1)
     v14 = 1; /*0x6545d0*/
     goto LABEL_9; /*0x6545d0*/
   }
-  return result; /*0x65463e*/
+  return (gamemd::RadarClass **)(result);
 }
 } // namespace gamemd

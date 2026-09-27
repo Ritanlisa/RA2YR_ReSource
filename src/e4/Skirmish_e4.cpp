@@ -180,7 +180,7 @@ int Skirmish::ReadSettings(HWND hDlg)
   HWND hDlge; // [esp+18h] [ebp+4h]
   HWND hDlgf; // [esp+18h] [ebp+4h]
 
-  v18 = (int)this->q03C; /*0x596c8a*/
+  v18 = (unsigned int)((int)this->q03C);
   hDlga = GetDlgItem(hDlg, 1029); /*0x596ca2*/
   v4 = SendMessageA(hDlga, 0x147u, 0, 0); /*0x596ca6*/
   v5 = SendMessageA(hDlga, 0x150u, v4, 0); /*0x596cb3*/
@@ -193,10 +193,10 @@ int Skirmish::ReadSettings(HWND hDlg)
   v7 = SendMessageA(hDlgb, 0x150u, v6, 0); /*0x596cf3*/
   this->u32_38 = (HWND)v7; /*0x596cf9*/
   if ( v19 != v7 ) /*0x596cfe*/
-    byte_ABE2D8 = 1; /*0x596d00*/
+    byte_ABE2D8 = (unsigned int)(1);
   v20 = (int)this->u32_40; /*0x596d10*/
   hDlgc = GetDlgItem(hDlg, 1032); /*0x596d22*/
-  v8 = SendMessageA(hDlgc, 0x147u, 0, 0); /*0x596d26*/
+  v8 = (HWND)(SendMessageA(hDlgc, 0x147u, 0, 0));
   v9 = SendMessageA(hDlgc, 0x150u, v8, 0); /*0x596d33*/
   this->u32_40 = (HWND)v9; /*0x596d39*/
   if ( v20 != v9 ) /*0x596d3e*/
@@ -328,7 +328,7 @@ int Skirmish::RenderPreview(SkirmishDialog * aP1)
   result = ValidateRect(aP1, 0); /*0x640726*/
   if ( *this ) /*0x64072c*/
   {
-    DlgItem = GetDlgItem(aP1, 1128); /*0x64073f*/
+    DlgItem = (int)(GetDlgItem(aP1, 1128));
     ScreenDialogToClient(DlgItem, &Rect); /*0x640749*/
     left = Rect.left; /*0x64075a*/
     top = Rect.top; /*0x640764*/
@@ -419,7 +419,7 @@ int Skirmish::EnableSpawnButtons()
   LRESULT v6; // esi
   char v7; // [esp+7h] [ebp-1h]
 
-  v1 = hDlg; /*0x6acd62*/
+  v1 = (HWND)(hDlg);
   if ( !hDlg ) /*0x6acd66*/
     v1 = (HWND)Dialog::FindByHandle((void *)0x102); /*0x6acd72*/
   v7 = 0; /*0x6acd79*/
@@ -481,7 +481,7 @@ int Skirmish::EnableSpawnButtons()
     }
     while ( (int)(v3 + 1) < 8 );
   }
-  return result; /*0x6ace79*/
+  return (int)(result);
 }
 } // namespace gamemd
 // 0x6AE3F0
@@ -505,7 +505,7 @@ ReferenceCounted * * Skirmish::Setup_DlgProc(HWND hDlg, unsigned int a2, unsigne
   wchar_t *v18; // eax
   wchar_t *v19; // eax
 
-  result = BaseDialogProc(hDlg, a2, a3, a4); /*0x6ae40a*/
+  result = (int)(BaseDialogProc(hDlg, a2, a3, a4));
   if ( !result ) /*0x6ae411*/
   {
     if ( a2 > 0x497 ) /*0x6ae41d*/

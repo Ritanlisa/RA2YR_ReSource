@@ -151,7 +151,7 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
     }
     while ( a4 ); /*0x493e8e*/
   }
-  return result; /*0x493e92*/
+  return (int)(result);
 }
 }
 // 0x493EA0

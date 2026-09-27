@@ -277,7 +277,6 @@ struct Cell {
     unsigned int Items4;
     unsigned int u32_901;
     unsigned int u32_AC3;
-    unsigned int IsBridge;
 // --- flat members (END) ---
     char IsOccupied(short * a2,  char a3);    // 0x419B00
     int PosToIndex();  // 0x42B1C0

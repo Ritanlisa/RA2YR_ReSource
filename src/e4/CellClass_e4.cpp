@@ -59,7 +59,7 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
   void *v30; // eax
   int16_t v32[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = aP1; /*0x56ef56*/
+  v2 = (IUnknown *)(aP1);
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56ef77*/
   aP1 = v3; /*0x56ef79*/
   *(unsigned int *)v32 = v3; /*0x56ef7d*/
@@ -70,7 +70,7 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
   }
   else
   {
-    g_Map_GlobalCellIndex = v3; /*0x56efa8*/
+    g_Map_GlobalCellIndex = (unsigned char *)(v3);
     v6 = &g_CellClassArray; /*0x56efae*/
   }
   if ( (char)v6[320] < 0 ) /*0x56efba*/
@@ -112,7 +112,7 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v12 = &g_CellClassArray; /*0x56f0ab*/
+        v12 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56f0b0*/
       }
       CellClass::UpdateAnimations((int)v12); /*0x56f0b5*/
@@ -125,7 +125,7 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v15 = &g_CellClassArray; /*0x56f0f9*/
+        v15 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56f0fe*/
       }
       CellClass::UpdateAnimations((int)v15); /*0x56f103*/
@@ -138,7 +138,7 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v18 = &g_CellClassArray; /*0x56f147*/
+        v18 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56f14c*/
       }
       CellClass::UpdateAnimations((int)v18); /*0x56f151*/
@@ -150,13 +150,13 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
       IDA_LOWORD(aP1) = v32[0] - 1; /*0x56f16f*/
       if ( v21 || v22 >= 0x40000 || (v23 = *(char **)(g_Shroud_CellArray + 4 * v22)) == 0 ) /*0x56f188*/
       {
-        v23 = (char *)&g_CellClassArray; /*0x56f18e*/
+        v23 = (int)((char *)&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56f193*/
       }
     }
     else
     {
-      aP1 = *(unsigned int *)v32; /*0x56f1db*/
+      aP1 = (IUnknown *)(*(unsigned int *)v32);
       v24 = v32[0] + (v32[1] << 9); /*0x56f1e9*/
       if ( v24 < 0x40000 && (v25 = *(void **)(g_Shroud_CellArray + 4 * v24)) != 0 ) /*0x56f1ff*/
       {
@@ -164,7 +164,7 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v26 = &g_CellClassArray; /*0x56f209*/
+        v26 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56f20e*/
       }
       CellClass::UpdateAnimations((int)v26); /*0x56f214*/
@@ -176,7 +176,7 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v29 = &g_CellClassArray; /*0x56f255*/
+        v29 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56f25a*/
       }
       CellClass::UpdateAnimations((int)v29); /*0x56f25f*/
@@ -225,7 +225,7 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
   void *v30; // eax
   int16_t v32[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = aP1; /*0x56f2f6*/
+  v2 = (IUnknown *)(aP1);
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56f317*/
   aP1 = v3; /*0x56f319*/
   *(unsigned int *)v32 = v3; /*0x56f31d*/
@@ -236,7 +236,7 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
   }
   else
   {
-    g_Map_GlobalCellIndex = v3; /*0x56f348*/
+    g_Map_GlobalCellIndex = (unsigned char *)(v3);
     v6 = &g_CellClassArray; /*0x56f34e*/
   }
   if ( (char)v6[320] < 0 ) /*0x56f35a*/
@@ -278,7 +278,7 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v12 = &g_CellClassArray; /*0x56f44b*/
+        v12 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56f450*/
       }
       CellClass::UpdateAnimations((int)v12); /*0x56f455*/
@@ -291,7 +291,7 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v15 = &g_CellClassArray; /*0x56f499*/
+        v15 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56f49e*/
       }
       CellClass::UpdateAnimations((int)v15); /*0x56f4a3*/
@@ -304,7 +304,7 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v18 = &g_CellClassArray; /*0x56f4e7*/
+        v18 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56f4ec*/
       }
       CellClass::UpdateAnimations((int)v18); /*0x56f4f1*/
@@ -316,13 +316,13 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       IDA_LOWORD(aP1) = v32[0] - 1; /*0x56f50f*/
       if ( v21 || v22 >= 0x40000 || (v23 = *(char **)(g_Shroud_CellArray + 4 * v22)) == 0 ) /*0x56f528*/
       {
-        v23 = (char *)&g_CellClassArray; /*0x56f52e*/
+        v23 = (int)((char *)&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56f533*/
       }
     }
     else
     {
-      aP1 = *(unsigned int *)v32; /*0x56f57b*/
+      aP1 = (IUnknown *)(*(unsigned int *)v32);
       v24 = v32[0] + (v32[1] << 9); /*0x56f589*/
       if ( v24 < 0x40000 && (v25 = *(void **)(g_Shroud_CellArray + 4 * v24)) != 0 ) /*0x56f59f*/
       {
@@ -330,7 +330,7 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v26 = &g_CellClassArray; /*0x56f5a9*/
+        v26 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56f5ae*/
       }
       CellClass::UpdateAnimations((int)v26); /*0x56f5b4*/
@@ -342,7 +342,7 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v29 = &g_CellClassArray; /*0x56f5f5*/
+        v29 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56f5fa*/
       }
       CellClass::UpdateAnimations((int)v29); /*0x56f5ff*/
@@ -390,7 +390,7 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
   char *v29; // eax
   int16_t v31[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = aP1; /*0x56f8b6*/
+  v2 = (IUnknown *)(aP1);
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56f8d7*/
   aP1 = v3; /*0x56f8d9*/
   *(unsigned int *)v31 = v3; /*0x56f8dd*/
@@ -401,7 +401,7 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
   }
   else
   {
-    g_Map_GlobalCellIndex = v3; /*0x56f908*/
+    g_Map_GlobalCellIndex = (unsigned char *)(v3);
     v6 = &g_CellClassArray; /*0x56f90e*/
   }
   if ( (char)v6[320] < 0 ) /*0x56f91a*/
@@ -447,7 +447,7 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v24 = &g_CellClassArray; /*0x56fb6c*/
+        v24 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56fb71*/
       }
       CellClass::UpdateAnimations((int)v24); /*0x56fb76*/
@@ -459,7 +459,7 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v27 = &g_CellClassArray; /*0x56fbb6*/
+        v27 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56fbbb*/
       }
       CellClass::UpdateAnimations((int)v27); /*0x56fbc0*/
@@ -481,7 +481,7 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v13 = &g_CellClassArray; /*0x56fa13*/
+        v13 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56fa18*/
       }
       CellClass::UpdateAnimations((int)v13); /*0x56fa1d*/
@@ -493,7 +493,7 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v16 = &g_CellClassArray; /*0x56fa60*/
+        v16 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56fa65*/
       }
       CellClass::UpdateAnimations((int)v16); /*0x56fa6a*/
@@ -506,7 +506,7 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v19 = &g_CellClassArray; /*0x56faae*/
+        v19 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56fab3*/
       }
       CellClass::UpdateAnimations((int)v19); /*0x56fab8*/

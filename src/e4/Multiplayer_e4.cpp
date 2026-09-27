@@ -22,6 +22,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/Screen_e4.hpp"
 
 // 0x688380
 namespace gamemd {
@@ -209,7 +210,7 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
     this->u8_D = 0; /*0x68c320*/
     return this; /*0x68c324*/
   }
-  v4 = operator new(4 * v3); /*0x68c2d4*/
+  v4 = (unsigned int)(operator new(4 * v3));
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
   this->u32_4 = v4; /*0x68c2eb*/

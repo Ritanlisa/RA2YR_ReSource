@@ -33,7 +33,7 @@ void Game::initScenario()
 
   if ( *(&this->ptr_84) ) /*0x430983*/
   {
-    v2 = this; /*0x43098d*/
+    v2 = (void **)(this);
     v3 = 8; /*0x43098f*/
     do /*0x4309b5*/
     {
@@ -110,7 +110,7 @@ int Game::SendCampaignOptions()
         *(unsigned int *)&v14[4 * i + 44],
         *(unsigned int *)&v14[4 * i + 76],
         *(unsigned int *)&v14[4 * i + 108]);
-      v8 = g_CampaignConfig[i]; /*0x46d588*/
+      v8 = (int)(g_CampaignConfig[i]);
       v9 = dword_A8B27C[i]; /*0x46d58f*/
       *(unsigned int *)&v14[4 * i + 140] = g_CampaignPlayerArray[i]; /*0x46d596*/
       v10 = g_CampaignSideIndex[i]; /*0x46d59d*/
@@ -493,7 +493,7 @@ HashTable_flat * * Game::StartModemMultiplayer(char a2)
            dword_A8DA7C + dword_A8DA88,
            0) )
     {
-      v6 = Game_PlayerCount++; /*0x5b713d*/
+      v6 = (unsigned int)(Game_PlayerCount++);
       *(unsigned int *)(Game_PlayerInfoArray + 4 * v6) = v4; /*0x5b714c*/
     }
     ++g_ScenarioLoadFlags; /*0x5b714f*/
@@ -515,7 +515,7 @@ HashTable_flat * * Game::StartModemMultiplayer(char a2)
            dword_A8DA7C + dword_A8DA88,
            0) )
     {
-      v9 = Game_PlayerCount++; /*0x5b71d4*/
+      v9 = (unsigned int)(Game_PlayerCount++);
       *(unsigned int *)(Game_PlayerInfoArray + 4 * v9) = v7; /*0x5b71e3*/
     }
     ++g_ScenarioLoadFlags; /*0x5b71e6*/

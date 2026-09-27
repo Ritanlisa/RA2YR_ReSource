@@ -180,7 +180,7 @@ char WaveClass::DamageArea(ObjectClass * aP1)
       v11 = *(unsigned int *)&g_BuildingTypeClass_Array->gap0[4 * v10]; /*0x75f447*/
       if ( *(unsigned char *)(v11 + 689) ) /*0x75f44a*/
       {
-        aP1 = (unsigned int *)v5[9]; /*0x75f45b*/
+        aP1 = (gamemd::ObjectClass *)((unsigned int *)v5[9]);
         CellChainReact(&aP1); /*0x75f45f*/
       }
       if ( *(unsigned char *)(v11 + 680) ) /*0x75f464*/

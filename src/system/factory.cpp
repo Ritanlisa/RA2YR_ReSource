@@ -34,7 +34,7 @@ HouseClass * * FactoryClass::AbandonProduction() {
   int v9; // ecx
   int v11; // [esp+Ch] [ebp-8h]
 
-  v2 = this->q058; /*0x4c9ff9*/
+  v2 = (gamemd::TechnoTypeClass **)(this->q058);
   if ( !v2 ) /*0x4c9ffe*/
     return 0; /*0x4ca116*/
   v3 = (*(int (__thiscall **)(int))(*(_DWORD *)v2 + 136))(v2); /*0x4ca007*/

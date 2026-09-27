@@ -39,7 +39,7 @@ int Voxel::BuildIndexTable()
     RA2_OPDEL(dword_B1D14C); /*0x748233*/
     dword_B1D14C = 0; /*0x74823b*/
   }
-  dword_B1D14C = operator new(0x1FFFCu); /*0x748250*/
+  dword_B1D14C = (unsigned int)(operator new(0x1FFFCu));
   if ( !dword_B1D14C ) /*0x748255*/
     return 0; /*0x748348*/
   switch ( (unsigned int)this ) /*0x748264*/
@@ -141,12 +141,12 @@ AbstractClass * * Voxel::RenderFrame()
   v3 = dword_B2D820; /*0x754587*/
   if ( dword_B2D820 > 0 ) /*0x75458f*/
   {
-    v4 = &unk_B2D824; /*0x754591*/
+    v4 = (unsigned int *)(&unk_B2D824);
     v5 = (char *)&unk_B2D958; /*0x754596*/
     v6 = dword_B2D820; /*0x75459b*/
     do /*0x7545a8*/
     {
-      *v4 = v5; /*0x75459d*/
+      *v4 = (unsigned int)(v5);
       v5 += 136; /*0x75459f*/
       ++v4; /*0x7545a4*/
       --v6; /*0x7545a7*/

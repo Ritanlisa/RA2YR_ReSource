@@ -16,6 +16,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Draw_e4.hpp"
 
 // 0x487630
 namespace gamemd {
@@ -59,7 +60,7 @@ int DisplayClass::AdvanceFrameCounter()
   void * v3;
   void * result;
 
-  v1 = this->q130; /*0x487691*/
+  v1 = (unsigned int)(this->q130);
   if ( v1 == -1 ) /*0x48769a*/
     this->q130 = 0; /*0x48769c*/
   v2 = this->q130 + 1; /*0x4876ac*/
@@ -70,15 +71,15 @@ int DisplayClass::AdvanceFrameCounter()
     this->q130 = result; /*0x4876bf*/
   if ( v1 <= 0 ) /*0x4876c8*/
   {
-    result = this->q130; /*0x4876ca*/
+    result = (void *)(this->q130);
     if ( result > 0 ) /*0x4876d2*/
     {
-      result = this->q140; /*0x4876d4*/
+      result = (unsigned int)(this->q140);
       IDA_LOBYTE(result) = result | 0x20; /*0x4876da*/
       this->q140 = result; /*0x4876dc*/
     }
   }
-  return result; /*0x4876c7*/
+  return (int)(result);
 }
 } // namespace gamemd
 // 0x4A8850

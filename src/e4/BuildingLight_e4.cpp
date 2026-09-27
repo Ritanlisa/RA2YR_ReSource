@@ -80,7 +80,7 @@ Coord * * BuildingLight::CalculateShading()
         v4 = this->u32_C; /*0x5ff8ed*/
         v51[3] = g_DSurface_WindowOffset; /*0x5ff8f0*/
         v5 = byte_83358C[v4]; /*0x5ff8ff*/
-        v50[1] = v45[1] - 64; /*0x5ff906*/
+        v50[1] = (unsigned char)(v45[1] - 64);
         g_DSurface_Hidden_2 = g_DSurface_Hidden_2; /*0x5ff912*/
         v50[2] = 255; /*0x5ff916*/
         v50[3] = 127; /*0x5ff91e*/

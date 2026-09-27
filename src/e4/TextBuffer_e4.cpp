@@ -22,7 +22,7 @@ int TextBuffer::Init()
   v2 = &this->u32_1F40; /*0x5bcc95*/
   do /*0x5bccbe*/
   {
-    v3 = this + v1; /*0x5bcc9b*/
+    v3 = (unsigned char *)(this + v1);
     v4 = v2; /*0x5bcc9e*/
     v5 = 80; /*0x5bcca0*/
     do /*0x5bccb5*/

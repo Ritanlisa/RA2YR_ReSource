@@ -79,7 +79,7 @@ int SessionClass::initInternet()
   v3 = operator new(0xB8u); /*0x540e89*/
   if ( v3 ) /*0x540e90*/
   {
-    v4 = Game_PlayerInfoArray; /*0x540e93*/
+    v4 = (char *)(Game_PlayerInfoArray);
     v5 = this->SessionClass_field_14; /*0x540e9a*/
     v6 = CharToWideString(aMulticast); /*0x540ea4*/
     result = (int)IPXConnClass::constructor( /*0x540ebf*/
@@ -146,7 +146,7 @@ unsigned int * SessionClass::Load()
         {
           if ( v6 ) /*0x72b40c*/
           {
-            v7 = off_844BB4[0]; /*0x72b420*/
+            v7 = (char *)(off_844BB4[0]);
             if ( v6 != 1 ) /*0x72b433*/
               v7 = off_844BB8; /*0x72b435*/
             LoadPaletteSimple(v7, &dword_B0FB84, &dword_B0FB88); /*0x72b43b*/
@@ -291,7 +291,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
   unsigned char v55[12]; // [esp+C8h] [ebp-14h] BYREF
   int v56; // [esp+D4h] [ebp-8h]
 
-  v2 = this; /*0x5ceef8*/
+  v2 = (unsigned int *)(this);
   CCFileClass::Construct3((int)v54); /*0x5cef04*/
   v3 = 0; /*0x5cef09*/
   v49[1] = 0; /*0x5cef0f*/
@@ -330,7 +330,7 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
       && (v10 = v2->SessionClass_field_14, v10 > 0)
       && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(*v2 + 8))(v2, v9 + v10, 0) )
     {
-      v11 = v2->SessionClass_field_10; /*0x5cf03f*/
+      v11 = (unsigned int)(v2->SessionClass_field_10);
       v12 = v2->MPGameMode; /*0x5cf042*/
       v2->SessionClass_field_10 = v11 + 1; /*0x5cf048*/
       *(unsigned int *)(v12 + 4 * v11) = v8; /*0x5cf04b*/

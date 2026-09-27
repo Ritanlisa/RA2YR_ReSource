@@ -119,7 +119,7 @@ int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
       if ( v13 <= 0 || !(*(uint8_t (__thiscall **)(int, int, unsigned int))(a2->u32_8)(a2, v12 + v13, 0) ) /*0x49be03*/
         continue; /*0x49be03*/
     }
-    v14 = a2->q010; /*0x49be0a*/
+    v14 = (unsigned int)(a2->q010);
     v15 = a2->q004; /*0x49be0d*/
     a2->q010 = v14 + 1; /*0x49be13*/
     *(unsigned int *)(v15 + 4 * v14) = v11; /*0x49be16*/
@@ -228,7 +228,7 @@ int MPCooperative::WriteCoopSaveINI()
     i = v2[1]; /*0x49bfc2*/
     ++v9; /*0x49bfc5*/
   }
-  g_IsWindowed[v9] = 0; /*0x49bfd5*/
+  g_IsWindowed[v9] = (unsigned int)(0);
   strcat(v25, g_IsWindowed); /*0x49bff9*/
   CCFileClass::Construct3((int)v19); /*0x49c006*/
   (*(void (__thiscall **)(unsigned int *, char *))(v19[0] + 8))(v19, g_Str_File_coopsave_ini); /*0x49c018*/
@@ -250,7 +250,7 @@ int MPCooperative::WriteCoopSaveINI()
 }
 // 0x49CC50
 namespace gamemd {
-void MPCooperative_validateMove()
+void MPCooperative_validateMove(void * a1, void * a2, void * a3)
 {
   int v59; // esi
 
@@ -297,7 +297,7 @@ int MPCooperative::ReadCoopSaveINI()
   char v22; // [esp+B8h] [ebp-7Ch]
   char v23[100]; // [esp+D0h] [ebp-64h] BYREF
 
-  v1 = this; /*0x49d129*/
+  v1 = (char *)(this);
   if ( !*this ) /*0x49d12b*/
     return 0; /*0x49d12b*/
   v2 = &this->u32_1C; /*0x49d137*/

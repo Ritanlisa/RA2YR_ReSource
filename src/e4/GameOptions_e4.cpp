@@ -18,7 +18,7 @@ void sub_682780(int a1, int a2, wchar_t * String)
   size_t v7; // eax
   int v9; // [esp+30h] [ebp-4h] BYREF
 
-  v9 = 0; /*0x682786*/
+  v9 = (unsigned int *)(0);
   v3 = 0; /*0x68278e*/
   v4 = &unk_83D658; /*0x682790*/
   while ( *v4 != a2 ) /*0x682797*/
@@ -31,7 +31,7 @@ void sub_682780(int a1, int a2, wchar_t * String)
       goto LABEL_5; /*0x6827a4*/
     }
   }
-  v5 = (&off_83D65C)[2 * v3]; /*0x6827db*/
+  v5 = (void **)((&off_83D65C)[2 * v3]);
   LABEL_5:
   v6 = (*(int (__stdcall **)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v9); /*0x6827a6*/
   if ( v6 >= 0 ) /*0x6827c4*/

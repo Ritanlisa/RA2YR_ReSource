@@ -721,7 +721,10 @@ struct MapClass {
     unsigned int q150;
     unsigned int ValidMapCellCount4;
     unsigned int q4536;
-    unsigned int RevealArea2;
+    unsigned int CapacityIncrement0;
+    unsigned int CapacityIncrement5;
+    unsigned int __pad_04E;
+    unsigned int q01C7;
 // --- flat members (END) ---
     AbstractClass * * AllocateMapDataBuffer(int a2, int * a3);
     BombClass * * DecompressCellData(MouseClass * aP1);

@@ -202,7 +202,7 @@ int Scenario::ReadTeams()
                   v30 = (void *)ObjectTypeClass::FindByName(v16); /*0x44fb33*/
                   if ( v30 ) /*0x44fb3a*/
                   {
-                    v31 = TeamClass::FindOrCreate(v30); /*0x44fb3e*/
+                    v31 = (int)(TeamClass::FindOrCreate(v30));
                     if ( v31 ) /*0x44fb45*/
                       ObjectClass::SetReference((unsigned int *)v29, v31); /*0x44fb4a*/
                   }

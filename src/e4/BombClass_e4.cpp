@@ -33,7 +33,7 @@ int BombClass::AbstractClass()
          dword_89C670 + dword_89C67C,
          0) )
   {
-    v2 = dword_89C678++; /*0x438657*/
+    v2 = (gamemd::BombClass *)(dword_89C678++);
     *((unsigned int *)dword_89C66C + v2) = this; /*0x438666*/
   }
   return this; /*0x43866b*/

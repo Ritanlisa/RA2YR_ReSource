@@ -66,8 +66,7 @@ int MultiplayerSiege::Write(void ** a1)
     v4 = 0; /*0x5ca6f3*/
     if ( Game_PlayerCount <= 0 ) /*0x5ca6f7*/
     {
-  LABEL_12:
-      StringCSF = GetStringCSF(aMpNodefender, 0, g_Str_File_MPSiege_cpp, 65); /*0x5ca724*/
+  LABEL_12: StringCSF = (wchar_t *)(GetStringCSF(aMpNodefender, 0, g_Str_File_MPSiege_cpp, 65));
       WideString::Assign_Alt(a1, StringCSF); /*0x5ca73a*/
       return 0; /*0x5ca742*/
     }
@@ -84,7 +83,7 @@ int MultiplayerSiege::Write(void ** a1)
           {
             if ( v7 != 1 ) /*0x5ca70d*/
             {
-              v9 = GetStringCSF(aMpIllegalteam, 0, g_Str_File_MPSiege_cpp, 60); /*0x5ca756*/
+              v9 = (wchar_t *)(GetStringCSF(aMpIllegalteam, 0, g_Str_File_MPSiege_cpp, 60));
               WideString::Assign_Alt(a1, v9); /*0x5ca75e*/
               return 0; /*0x5ca769*/
             }
@@ -94,7 +93,7 @@ int MultiplayerSiege::Write(void ** a1)
           {
             if ( v2 ) /*0x5ca714*/
             {
-              v10 = GetStringCSF(aMpOnlyonebesei, 0, g_Str_File_MPSiege_cpp, 51); /*0x5ca77a*/
+              v10 = (wchar_t *)(GetStringCSF(aMpOnlyonebesei, 0, g_Str_File_MPSiege_cpp, 51));
               WideString::Assign_Alt(a1, v10); /*0x5ca782*/
               return 0; /*0x5ca78d*/
             }
@@ -113,7 +112,7 @@ int MultiplayerSiege::Write(void ** a1)
       }
       else
       {
-        v11 = GetStringCSF(aMpNoattackers, 0, g_Str_File_MPSiege_cpp, 70); /*0x5ca7a3*/
+        v11 = (wchar_t *)(GetStringCSF(aMpNoattackers, 0, g_Str_File_MPSiege_cpp, 70));
         WideString::Assign_Alt(a1, v11); /*0x5ca7ab*/
         return 0; /*0x5ca7b3*/
       }

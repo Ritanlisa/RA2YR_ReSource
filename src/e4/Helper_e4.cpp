@@ -88,7 +88,7 @@ unsigned int * sub_5D81B0(const wchar_t ** a1, const wchar_t ** a2, const char *
 {
   unsigned int *v6; // eax
 
-  v6 = operator new(0x40u); /*0x5d81b2*/
+  v6 = (unsigned int *)(operator new(0x40u));
   if ( v6 ) /*0x5d81bc*/
     return MPBattleClass::MPManBattleClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d81de*/
   else

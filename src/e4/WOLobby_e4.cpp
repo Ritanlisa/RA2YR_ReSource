@@ -24,7 +24,7 @@
 
 // 0x5E3850
 namespace gamemd {
-int INIClass::WOLobby_Play()
+int INIClass::WOLobby_Play(void * a1, void * a2)
 {
   LPVOID v2; // ebx
   int result; // eax
@@ -35,7 +35,7 @@ int INIClass::WOLobby_Play()
   int16_t v9; // [esp+244h] [ebp-4h]
   char v10; // [esp+246h] [ebp-2h]
 
-  v2 = ppv; /*0x5e3857*/
+  v2 = (LPVOID)(ppv);
   if ( ppv ) /*0x5e3864*/
   {
     memset(v7, 0, sizeof(v7)); /*0x5e3875*/

@@ -57,7 +57,7 @@ BulletClass::BulletClass()
          dword_A8ED48 + dword_A8ED54,
          0) )
   {
-    v2 = dword_A8ED50++; /*0x4664a8*/
+    v2 = (gamemd::BulletClass *)(dword_A8ED50++);
     *((unsigned int *)dword_A8ED44 + v2) = this; /*0x4664b7*/
   }
   return this; /*0x4664bc*/
@@ -113,7 +113,7 @@ int * BulletClass::CalculateSpreadAngle(int a1)
     dword_89DDF4 = 2147450879; /*0x46668f*/
     atexit(nullsub_108); /*0x466694*/
   }
-  return &dword_89DDF4; /*0x4666a2*/
+  return (int *)(&dword_89DDF4);
 }
 } // namespace gamemd
 

@@ -136,7 +136,7 @@ void* SlaveManagerClass::ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6)
          dword_B0B5F8 + dword_B0B604,
          0) )
   {
-    v17 = dword_B0B600++; /*0x6af33b*/
+    v17 = (gamemd::SlaveManagerClass *)(dword_B0B600++);
     *((unsigned int *)dword_B0B5F4 + v17) = this; /*0x6af34a*/
   }
   return this; /*0x6af34f*/
@@ -177,10 +177,10 @@ int SlaveManagerClass::Constructor()
          dword_B0B5F8 + dword_B0B604,
          0) )
   {
-    v2 = dword_B0B600++; /*0x6af419*/
+    v2 = (gamemd::SlaveManagerClass *)(dword_B0B600++);
     *((unsigned int *)dword_B0B5F4 + v2) = this; /*0x6af428*/
   }
-  return this; /*0x6af42d*/
+  return (int)(this);
 }
 } // namespace ra2
 
@@ -232,7 +232,7 @@ int SlaveManagerClass::SetOwner(TechnoClass * aP1)
   int v5; // ecx
   int i; // ecx
 
-  v3 = this->q024; /*0x6af588*/
+  v3 = (_DWORD)(this->q024);
   *(unsigned int *)(v3 + 728) = 0; /*0x6af58b*/
   this->q024 = aP1; /*0x6af595*/
   v4 = *(unsigned int **)(aP1 + 728); /*0x6af598*/
@@ -256,14 +256,14 @@ int SlaveManagerClass::SetOwner(TechnoClass * aP1)
 
 // 0x6AF5F0
 namespace gamemd {
-int SlaveManagerClass::UpdateSlaves()
+int SlaveManagerClass::UpdateSlaves(void * a1)
 {
   int *v2; // edi
   int v3; // edx
   TechnoClass * v4;
   int v6; // [esp+Ch] [ebp-8h]
 
-  v2 = (int *)g_CurrentFrame; /*0x6af5f7*/
+  v2 = (gamemd::TechnoClass *)((int *)g_CurrentFrame);
   v3 = *(&this->vtable30); /*0x6af5fd*/
   v4 = *(&this->vtable32); /*0x6af600*/
   if ( v3 == -1 ) /*0x6af606*/
@@ -288,13 +288,13 @@ int SlaveManagerClass::UpdateSlaves()
     SlaveManagerClass::ProcessSlaves(v2, (int)this); /*0x6af631*/
     IDA_LOBYTE(unsigned int a1); /*0x6af638*/
   }
-  return v4; /*0x6af63d*/
+  return (int)(v4);
 }
 } // namespace ra2
 
 // 0x6AF6C0
 namespace gamemd {
-TechnoClass * * SlaveManagerClass_ProcessSlaves()
+TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
 {
   int v4; // ebx
   int result; // eax

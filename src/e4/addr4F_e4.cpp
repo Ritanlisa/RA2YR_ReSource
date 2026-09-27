@@ -130,12 +130,12 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
   HWND v7; // esi
   int v8; // edi
   wchar_t *v9; // eax
-  unsigned int v10;
+  HouseClass * v10;
   int v11; // edx
   wchar_t *v12; // eax
   unsigned int *WindowLongA; // eax
 
-  result = BaseDialogProc(hDlg, a2, a3, a4); /*0x4f18c9*/
+  result = (int)(BaseDialogProc(hDlg, a2, a3, a4));
   if ( !result ) /*0x4f18d0*/
   {
     if ( a2 == 273 ) /*0x4f18dc*/
@@ -165,7 +165,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
     }
     else if ( a2 == 1175 ) /*0x4f18e8*/
     {
-      DlgItem = GetDlgItem(hDlg, 1737); /*0x4f190e*/
+      DlgItem = (wchar_t *)(GetDlgItem(hDlg, 1737));
       StringCSF = GetStringCSF(aGuiLeave, 0, g_Str_File_GOptions_CPP, 547); /*0x4f1910*/
       SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)StringCSF); /*0x4f1924*/
       dword_A8EE7C = 2; /*0x4f192c*/
@@ -197,7 +197,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
         }
         else
         {
-          dword_A8EE7C = 3; /*0x4f19e5*/
+          dword_A8EE7C = (wchar_t *)(3);
           v12 = GetStringCSF(g_Str_GUI_Observe, 0, g_Str_File_GOptions_CPP, 586); /*0x4f19ef*/
           SendMessageA(v7, 0x4B2u, 0, (LPARAM)v12); /*0x4f19fd*/
           dword_A8EE80 = 4; /*0x4f19ff*/
@@ -205,7 +205,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
       }
       else
       {
-        v9 = GetStringCSF(aGuiRestart, 0, g_Str_File_GOptions_CPP, 558); /*0x4f195c*/
+        v9 = (wchar_t *)(GetStringCSF(aGuiRestart, 0, g_Str_File_GOptions_CPP, 558));
         SendMessageA(v7, 0x4B2u, 0, (LPARAM)v9); /*0x4f1969*/
         dword_A8EE80 = 5; /*0x4f196b*/
       }
@@ -221,7 +221,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 }
 // 0x4F1CA0
 namespace gamemd {
-void LoadFromINIGraphicMenu()
+void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
 {
   uint8_t *v4; // eax
   char **v6; // eax
@@ -266,7 +266,7 @@ void LoadFromINIGraphicMenu()
   int v49; // [esp+BCh] [ebp-4h]
   void *retaddr; // [esp+C0h] [ebp+0h]
 
-  a1 = a1; /*0x4f1caf*/
+  a1 = (unsigned int *)(a1);
   a2 = a2; /*0x4f1cb3*/
   v49 = 0; /*0x4f1cb7*/
   v4 = (uint8_t *)String::GetOrEmpty_Alt(a1); /*0x4f1cbe*/

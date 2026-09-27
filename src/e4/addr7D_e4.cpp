@@ -68,7 +68,7 @@ void __sbh_heap_check()
     v2 = (unsigned int *)v1[4]; /*0x7d03dd*/
     if ( !IsBadWritePtr(v2, 0x41C4u) ) /*0x7d03e6*/
     {
-      v3 = (void *)v1[3]; /*0x7d03f4*/
+      v3 = (int *)((void *)v1[3]);
       v25 = 0; /*0x7d03f7*/
       lp = v3; /*0x7d03fa*/
       v26 = v2 + 81; /*0x7d0403*/
@@ -91,7 +91,7 @@ void __sbh_heap_check()
           v6 = (char *)lp + 4092; /*0x7d0459*/
           while ( 2 ) /*0x7d045f*/
           {
-            v7 = v6 - 1020; /*0x7d045f*/
+            v7 = (int *)(v6 - 1020);
             if ( *(v6 - 1021) != -1 || *v6 != -1 ) /*0x7d0475*/
               return -5; /*0x7d0695*/
             do /*0x7d04e1*/
@@ -286,7 +286,7 @@ void _filbuf(MouseClass * aP0)
     if ( (v5 & 8) != 0 && (v5 & 0x400) == 0 ) /*0x7d07b2*/
       aP0->_bufsiz = 4096; /*0x7d07b4*/
   }
-  ptr = aP0->_ptr; /*0x7d07bb*/
+  ptr = (unsigned int)(aP0->_ptr);
   aP0->_cnt = v2 - 1; /*0x7d07be*/
   result = (uint8_t)*ptr; /*0x7d07c1*/
   aP0->_ptr = ptr + 1; /*0x7d07c5*/
@@ -626,7 +626,7 @@ exception * * memcpy_0(void * a0, CCINIClass * aP1, AbstractClass * aP2)
         break; /*0x7d0bb6*/
     }
   }
-  return result; /*0x7d0b7b*/
+  return (gamemd::exception **)(result);
 }
 }
 // 0x7D0DBA
@@ -670,7 +670,7 @@ void _write_lk(int FileHandle, unsigned char * lpBuffer, DWORD nNumberOfBytesToW
   }
   else
   {
-    v15 = lpBuffer; /*0x7d0e1e*/
+    v15 = (char *)(lpBuffer);
     FileHandlea = 0; /*0x7d0e21*/
     while ( 1 ) /*0x7d0e2a*/
     {

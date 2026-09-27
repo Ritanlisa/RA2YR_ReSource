@@ -81,7 +81,7 @@ struct ParasiteClass {
     unsigned int u32_D4;  // 0xD4
     void* q0D8;  // 0xD8
     void* q0DC;  // 0xDC
-    void* q0E0;  // 0xE0
+    unsigned int ;  // 0xE0
     ObjectClass* q0E4;  // 0xE4
     AbstractClass* q0E8;  // 0xE8
     unsigned int q0EC;  // 0xEC

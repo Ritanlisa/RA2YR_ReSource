@@ -163,6 +163,7 @@ struct Movie {
     unsigned int q058;
     unsigned int q05C;
     unsigned int q060;
+    unsigned int PlayWrapper;
 // --- flat members (END) ---
     char SetupScreen(CCINIClass * aP1);  // 0x49CAF0
     char GetSection(CCINIClass * aP1,  CCINIClass * aP2);    // 0x49E3B0

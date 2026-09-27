@@ -64,7 +64,7 @@ CampaignClass * * RadarClass::Destruct()
 }
 // 0x654650
 namespace gamemd {
-void RadarClass_RecreateSurface()
+void RadarClass_RecreateSurface(void * a1, void * a2)
 {
   int result; // eax
   unsigned int *v4; // edi
@@ -344,7 +344,7 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
 namespace gamemd {
 unsigned int * RadarClass::initRadarSurface()
 {
-  this->q004 = 0; /*0x4f4224*/
+  this->q004 = (unsigned int *)(0);
   this->q008 = 0; /*0x4f4227*/
   this->q00C = 2; /*0x4f422a*/
   *this = &off_7EA6FC; /*0x4f4231*/

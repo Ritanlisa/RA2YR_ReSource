@@ -13,6 +13,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/EventClass_e4.hpp"
 
 // 0x4A8BF0
 namespace gamemd {
@@ -117,7 +118,7 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
     &v11,
     dword_ABF294,
     v9);
-  this->u32_5560 = aP1; /*0x5bdd9f*/
+  this->u32_5560 = (unsigned int)(aP1);
   this->u32_555C = aP2; /*0x5bdda5*/
   return 1; /*0x5bdcd8*/
 }
@@ -158,7 +159,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
   int v20[5]; // [esp+2Ch] [ebp-20h] BYREF
   unsigned int v21[3]; // [esp+40h] [ebp-Ch] BYREF
 
-  v13 = this; /*0x7b93f5*/
+  v13 = (unsigned int *)(this);
   v5 = (char **)this->u32_4; /*0x7b93f9*/
   if ( v5 && aP1 && FileSystem_MOUSE_PAL ) /*0x7b9418*/
   {
@@ -185,7 +186,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
     }
     else
     {
-      v15 = 0; /*0x7b94da*/
+      v15 = (int)(0);
       v16 = 0; /*0x7b94de*/
       v11 = *aP1; /*0x7b94e3*/
       v13 = (unsigned int *)v8; /*0x7b94e6*/
@@ -229,7 +230,7 @@ HWND Mouse::HideWindow()
 {
   HWND result; // eax
 
-  result = dword_ABF240; /*0x5bc400*/
+  result = (HWND)(dword_ABF240);
   byte_ABF239 = 0; /*0x5bc409*/
   if ( dword_ABF240 ) /*0x5bc40f*/
   {

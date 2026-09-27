@@ -40,7 +40,7 @@ int IPXManagerClass::send(int a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = *(&this->Initialized7); /*0x541040*/
+  v2 = (unsigned int *)(*(&this->Initialized7));
   result = 0; /*0x541043*/
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
@@ -80,7 +80,7 @@ int IPXManagerClass::receivePacket(int a2)
   }
   else
   {
-    v4 = &this->q028; /*0x54107f*/
+    v4 = (unsigned int *)(&this->q028);
     while ( *v4 != a2 ) /*0x541084*/
     {
       ++result; /*0x541086*/
@@ -133,7 +133,7 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)
     if ( ++v13 >= v11 ) /*0x54165f*/
       return 0; /*0x54165f*/
   }
-  *v10 = v10; /*0x54166f*/
+  *v10 = (unsigned int)(v10);
   return 1; /*0x541661*/
 }
 } // namespace gamemd

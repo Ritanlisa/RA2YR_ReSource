@@ -84,7 +84,7 @@ void RocketLocomotionClass_17::ddtor()
 {
   void *v2; // eax
 
-  v2 = this->Items; /*0x6647b6*/
+  v2 = (void *)(this->Items);
   this->q010 = 0; /*0x6647b9*/
   if ( v2 && this->IsAllocated ) /*0x6647c0*/
   {
@@ -154,7 +154,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x66485c*/
   {
-    this->IsInitialized = 0; /*0x664866*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x66486c*/
       v4 = a3; /*0x664882*/
     else
@@ -175,7 +175,7 @@ char RocketLocomotionClass_17::SetCapacity(int a2, unsigned int * a3)
           this->Items = 0; /*0x6648ce*/
         }
       }
-      this->Items = v4; /*0x6648d7*/
+      this->Items = (unsigned int)(v4);
       this->Capacity = a2; /*0x6648df*/
       this->IsAllocated = a3 == 0; /*0x6648e2*/
       return 1; /*0x6648e8*/
@@ -252,7 +252,7 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x66499c*/
   {
-    this->IsInitialized = 0; /*0x6649a2*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x6649a8*/
       v4 = a3; /*0x6649be*/
     else
@@ -273,7 +273,7 @@ char RocketLocomotionClass_17::Release(int a2, unsigned int * a3)
         this->Items = 0; /*0x664a01*/
       }
     }
-    this->Items = v4; /*0x664a0a*/
+    this->Items = (unsigned int)(v4);
     this->q008 = a2; /*0x664a12*/
     this->IsAllocated = a3 == 0; /*0x664a15*/
   }
@@ -320,7 +320,7 @@ VectorClass_flat * RocketLocomotionClass_17::Constructor(char a2)
     RA2_OPDEL(v3); /*0x664a88*/
     this->Items = 0; /*0x664a90*/
   }
-  this->IsAllocated = 0; /*0x664a9b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->Capacity = 0; /*0x664aa1*/
   if ( (a2 & 1) != 0 ) /*0x664aa8*/
     RA2_OPDEL(); /*0x664aab*/

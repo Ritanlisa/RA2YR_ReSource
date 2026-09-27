@@ -36,6 +36,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/E4Recv_731130_e4.hpp"
 
 // 0x7221B0
 namespace gamemd {
@@ -50,7 +51,7 @@ void * sub_7221B0()
   int v6; // edx
   int v7; // [esp+8h] [ebp-8h]
 
-  result = g_ScenarioClass_Instance; /*0x7221b0*/
+  result = (void *)(g_ScenarioClass_Instance);
   if ( *((unsigned char *)g_ScenarioClass_Instance + 13478) ) /*0x7221b8*/
   {
     result = (void *)g_CrateProcessState; /*0x7221c3*/
@@ -97,7 +98,7 @@ void * sub_722C40()
   wchar_t **v9; // ecx
   wchar_t *v10; // [esp+8h] [ebp-8h]
 
-  result = g_ScenarioClass_Instance; /*0x722c40*/
+  result = (void *)(g_ScenarioClass_Instance);
   if ( *((unsigned char *)g_ScenarioClass_Instance + 13478) ) /*0x722c48*/
   {
     result = (void *)g_CrateProcessState; /*0x722c57*/
@@ -183,7 +184,7 @@ AbstractClass * * sub_725C70()
       result = (*(int (__stdcall **)(unsigned char *))(*(unsigned int *)v7 + 8))(v7); /*0x725ce8*/
       if ( result ) /*0x725ced*/
       {
-        v3 = __RTtypeid(v7); /*0x725cf8*/
+        v3 = (int)(__RTtypeid(v7));
         if ( __8type_info_QBEHABV0__Z(v3) /*0x725d61*/
           || (v4 = __RTtypeid(v7), __8type_info_QBEHABV0__Z(v4))
           || (v5 = __RTtypeid(v7), __8type_info_QBEHABV0__Z(v5))
@@ -201,7 +202,7 @@ AbstractClass * * sub_725C70()
       ++v1; /*0x725d7f*/
     }
   }
-  return result; /*0x725d8c*/
+  return (gamemd::AbstractClass **)(result);
 }
 }
 // 0x728200
@@ -240,7 +241,7 @@ unsigned char char LoadMouseClassResources()
 {
   uint8_t result; // al
 
-  dword_B0FC80 = LoadFileSHP(off_844C44, (bool *)&byte_B0FC90); /*0x72aa5b*/
+  dword_B0FC80 = (unsigned int)(LoadFileSHP(off_844C44, (bool *)&byte_B0FC90));
   dword_B0FC84 = LoadFileSHP(off_844C48, (bool *)&byte_B0FC91); /*0x72aa70*/
   dword_B0FC88 = LoadFileSHP(off_844C4C, (bool *)&byte_B0FC92); /*0x72aa85*/
   dword_B0FC8C = LoadFileSHP(off_844C50, (bool *)&byte_B0FC93); /*0x72aa9a*/
@@ -299,7 +300,7 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
     v5 = (char *)operator new(0x300u); /*0x72ae11*/
     if ( v5 ) /*0x72ae1b*/
     {
-      v6 = v5 + 2; /*0x72ae1d*/
+      v6 = (unsigned char *)(v5 + 2);
       v7 = 256; /*0x72ae20*/
       do /*0x72ae34*/
       {
@@ -315,7 +316,7 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
     {
       v5 = 0; /*0x72ae38*/
     }
-    *v3 = v5; /*0x72ae3b*/
+    *v3 = (unsigned char *)(v5);
     v8 = v4 + 1; /*0x72ae3e*/
     v9 = 0; /*0x72ae45*/
     while ( 1 ) /*0x72ae5d*/
@@ -339,7 +340,7 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
       v12 = 0; /*0x72aed2*/
     *a3 = v12; /*0x72aedb*/
   }
-  v18 = 0; /*0x72aee9*/
+  v18 = (unsigned int)(0);
   Vector::Clear((int)v17); /*0x72aef1*/
   v16[0] = &off_7E1668; /*0x72aefa*/
   return BufferIOFileClass::Dtor(v16); /*0x72af07*/

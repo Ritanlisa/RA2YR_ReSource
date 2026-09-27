@@ -23,7 +23,7 @@
 
 // 0x413F80
 namespace gamemd {
-unsigned int * AircraftClass::Update()
+unsigned int * AircraftClass::Update(void * a1, void * a2)
 {
   unsigned int *result; // eax
   int v4; // edi
@@ -150,7 +150,7 @@ int AircraftClass::FindLandingCell(int * a2, int a3)
 }
 // 0x4165C0
 namespace gamemd {
-void AircraftClass_DeployWithAnim()
+void AircraftClass_DeployWithAnim(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
   int v11; // ebp
   void **v13; // ebx
@@ -169,7 +169,7 @@ void AircraftClass_DeployWithAnim()
       {
         v14 = *(void **)(*(unsigned int *)(a1[433] + 1840) /*0x416671*/
                        + 4
-                       * ((unsigned int)Random::State((unsigned int *)g_ScenarioClass_Instance + 134)
+                       * ((unsigned int, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8)Random::State((unsigned int *)g_ScenarioClass_Instance + 134)
                         % *(unsigned int *)(a1[433] + 1852)));
         v15 = (int *)(*(int (__thiscall **)(unsigned int *, unsigned char *))(*a1 + 164))(a1, v16); /*0x41667b*/
         AnimClass::ctor(v13, v14, v15, 0, 1, (void *, unsigned int a1, unsigned int a8)0x600, 0, 0); /*0x416685*/
@@ -204,7 +204,7 @@ AircraftTypeClass * * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknow
   int v17; // eax
   char v18[12]; // [esp+10h] [ebp-Ch] BYREF
 
-  a3 = a3; /*0x417cc5*/
+  a3 = (int)(a3);
   v4 = (int *)a3; /*0x417ccb*/
   result = InfantryClass::GetCursorOverObject((void *)this, a3, a3); /*0x417cd3*/
   v7 = result; /*0x417cd8*/

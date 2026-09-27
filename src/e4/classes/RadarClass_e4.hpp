@@ -929,7 +929,7 @@ struct RadarClass {
     unsigned int u32_1D46;
     unsigned int u32_1D47;
     unsigned int u32_20C4;
-    unsigned int Destru_vt05;
+    unsigned int UpdateFoundationShapesCustom;
 // --- flat members (END) ---
     CampaignClass * * Destruct();
     int GetBlip(int a1, int a2, int a3, ObjectClass * aP3);

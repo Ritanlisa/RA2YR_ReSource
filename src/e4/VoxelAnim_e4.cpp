@@ -135,7 +135,7 @@ int VoxelAnim::Draw(unsigned int * a2)
   int v145; // [esp+1Ch] [ebp-54h]
   int v148; // [esp+20h] [ebp-50h]
   int v151; // [esp+24h] [ebp-4Ch]
-  unsigned int * v152;
+  unsigned int v152;
   double v153; // [esp+3Ch] [ebp-34h] BYREF
   double v154; // [esp+44h] [ebp-2Ch] BYREF
   double v155; // [esp+4Ch] [ebp-24h] BYREF
@@ -221,7 +221,7 @@ int VoxelAnim::Draw(unsigned int * a2)
                 0);
               *v3 = g_AsyncMovieState;
               this->u32_2C = g_MovieFrameState1;
-              v121 = this->num_sections;
+              v121 = (gamemd::BuildingClass *)(this->num_sections);
               this->q00C = g_MovieFrameState2;
               v121->GetExitCoords&this->u32_10;
               this->u8_36 = 0;
@@ -255,7 +255,7 @@ int VoxelAnim::Draw(unsigned int * a2)
     IDA_LODWORD(v154) = v125;
     double v126 = Math::CalcAngle((double)v124[1] - (double)this->u32_2C, (double)IDA_SLODWORD(v155) - (double)v125);
     v127 = Math::RoundToInt((v126 - 1.570796326794897) * -10430.06004058427);
-    v128 = this->num_sections;
+    v128 = (gamemd::BuildingClass *)(this->num_sections);
     v129 = v127;
     IDA_LOWORD(v155) = v127;
     v128->TogglePrimaryFactory(&this->u32_10, IDA_LODWORD(v155));
@@ -295,8 +295,8 @@ int VoxelAnim::Draw(unsigned int * a2)
     }
     (*(void (__thiscall **)(unsigned int, unsigned int))(*this->q00C + 292))(this->q00C, 0);
     (*(void (__thiscall **)(unsigned int, int *))(*this->q00C + 436))(this->q00C, &v157);
-    unsigned int * v137 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&a2);
-    unsigned int * v138 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v152);
+    unsigned int * v137 = (unsigned int *)(CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&a2));
+    unsigned int * v138 = (unsigned int *)(CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v152));
     if ( *((char *)v138 + 283) == *((char *)v137 + 283) - 4 )
     {
       if ( (v138[80] & 0x100) == 0 )
@@ -406,8 +406,7 @@ LABEL_11:
             IDA_LOWORD(a2) = *v19 / 256;
             unsigned int v20 =
             IDA_HIWORD(a2) = v19[1] / 256;
-            unsigned int v21 =
-            IDA_LODWORD(v154) = a2;
+            unsigned int v21 = (unsigned int)(IDA_LODWORD(v154) = a2);
             v152 = v20;
             char v149 = (*(int (__thiscall **)(unsigned int *))(*v20 + 800))(v20);
             int v22 = *((unsigned int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v153) + 80) >> 8;
@@ -442,11 +441,11 @@ LABEL_11:
                                   &v160,
                                   this->q00C);
                 IDA_LOWORD(a2) = *v28 / 256;
-                unsigned int * v29 = this->q00C;
+                unsigned int * v29 = (unsigned int *)(this->q00C);
                 IDA_HIWORD(a2) = v28[1] / 256;
                 unsigned int * v30 = v29;
                 IDA_LODWORD(v155) = a2;
-                v152 = v29;
+                v152 = (unsigned int)(v29);
                 char v150 = (*(int (__thiscall **)(unsigned int *))(*v29 + 800))(v29);
                 int v31 = *((unsigned int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v154) + 80) >> 8;
                 IDA_LOBYTE(v31) = v31 & 1;

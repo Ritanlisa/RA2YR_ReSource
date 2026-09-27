@@ -250,7 +250,7 @@ int ProcessRandomMapCellAdjacency()
   result = LayerClass::CellIteratorNext(&MapClass_Instance); /*0x5a19f3*/
   for ( i = result; result; i = result )
   {
-    NeighbourContent = Cell::GetNeighbourContent((unsigned int *)i, 5u); /*0x5a1a12*/
+    NeighbourContent = (int)(Cell::GetNeighbourContent((unsigned int *)i, 5u));
     v14 = Cell::GetNeighbourContent((unsigned int *)i, 1u); /*0x5a1a1f*/
     v2 = Cell::GetNeighbourContent((unsigned int *)i, 3u); /*0x5a1a2c*/
     v3 = (int16_t *)Cell::GetNeighbourContent((unsigned int *)i, 2u); /*0x5a1a37*/

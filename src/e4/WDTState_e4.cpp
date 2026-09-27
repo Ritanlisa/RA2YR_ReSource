@@ -45,7 +45,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = operator new(8 * a2 + 4); /*0x76ba97*/
+      v5 = (unsigned int *)(operator new(8 * a2 + 4));
       if ( v5 ) /*0x76baa1*/
       {
         *v5 = a2; /*0x76baa3*/
@@ -163,7 +163,7 @@ DynamicVector * WDTState_4::QueryInterface(char a2)
     (**v3)(v3, 3); /*0x76bc2f*/
     this->Items = 0; /*0x76bc31*/
   }
-  this->IsAllocated = 0; /*0x76bc3c*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x76bc42*/
   if ( (a2 & 1) != 0 ) /*0x76bc49*/
     RA2_OPDEL(); /*0x76bc4c*/

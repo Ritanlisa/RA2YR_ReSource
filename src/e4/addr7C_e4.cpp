@@ -29,7 +29,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
 {
   int v8; // eax
   int v9; // ebp
-  unsigned int v10;
+  DSurface * v10;
   int v11; // eax
   DSurface * v12;
   int v13; // eax
@@ -45,7 +45,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   int v23; // eax
   uint16_t *v24; // edx
   int v25; // ecx
-  unsigned int v26;
+  DSurface * v26;
   unsigned int result;
   int v28; // edi
   DSurface * v29;
@@ -57,10 +57,10 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   int v35; // ecx
   bool v36; // zf
   char v37; // [esp+13h] [ebp-15h]
-  DSurface * v38;
+  unsigned int v38;
   int v39; // [esp+18h] [ebp-10h]
-  DSurface * v40;
-  DSurface * v41;
+  unsigned int v40;
+  unsigned int v41;
   DSurface * v42;
   DSurface * v43;
   int v44; // [esp+30h] [ebp+8h]
@@ -75,7 +75,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   v38 = aP1; /*0x7c0771*/
   if ( *(int *)(a1 + 140) <= 1 ) /*0x7c0778*/
   {
-    v37 = 1; /*0x7c0898*/
+    v37 = (unsigned int)(1);
     v41 = aP1; /*0x7c089d*/
     v40 = aP1; /*0x7c08a1*/
     goto LABEL_23; /*0x7c08a1*/
@@ -83,13 +83,13 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   v37 = 0; /*0x7c0782*/
   if ( arg0 <= 0 ) /*0x7c0789*/
   {
-    v39 = Audio_Process_7C19F0(&v41, &v40); /*0x7c07f4*/
+    v39 = (gamemd::DSurface *)(Audio_Process_7C19F0(&v41, &v40));
     v12 = Audio_Process_7C19F0(0, 0); /*0x7c07f8*/
     v10 = v41; /*0x7c07fd*/
   }
   else
   {
-    v39 = aP1 / arg0; /*0x7c0792*/
+    v39 = (unsigned int)(aP1 / arg0);
     v10 = arg0 * (aP1 / arg0); /*0x7c0796*/
     v41 = v10; /*0x7c079b*/
     if ( v10 >= arg0 ) /*0x7c079f*/
@@ -99,17 +99,17 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
     }
     if ( v39 ) /*0x7c07ad*/
     {
-      v40 = v10 + arg0 - 1; /*0x7c07c6*/
+      v40 = (gamemd::DSurface *)(v10 + arg0 - 1);
       v12 = *(unsigned int *)(a1 + 388) / arg0; /*0x7c07d1*/
     }
     else
     {
-      v11 = *(unsigned int *)(a1 + 388); /*0x7c07af*/
+      v11 = (gamemd::DSurface *)(*(unsigned int *)(a1 + 388));
       v40 = -1; /*0x7c07b5*/
       v12 = v11 / arg0; /*0x7c07be*/
     }
   }
-  v38 = v10; /*0x7c0801*/
+  v38 = (unsigned int)(v10);
   if ( arg8 ) /*0x7c080b*/
   {
     *(unsigned int *)(a1 + 360) = *(unsigned int *)(a1 + 1772); /*0x7c0876*/
@@ -221,7 +221,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
             0,
             2 * (*(unsigned int *)(*(unsigned int *)(a1 + 1892) + 4 * v38) & 0xFFFFFFF)) )
     {
-      v26 = v38; /*0x7c0a67*/
+      v26 = (gamemd::DSurface *)(v38);
       result = -1; /*0x7c0a6b*/
       *(unsigned int *)(a1 + 384) = v38; /*0x7c0a6e*/
       v28 = 5; /*0x7c0a76*/
@@ -293,7 +293,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
     v44 = 0; /*0x7c0b0c*/
     *(unsigned int *)(a1 + 360) = *(unsigned int *)(a1 + 356); /*0x7c0b10*/
   }
-  v31 = *(unsigned int *)(a1 + 1892); /*0x7c0b1c*/
+  v31 = (gamemd::DSurface *)(*(unsigned int *)(a1 + 1892));
   v32 = v42; /*0x7c0b22*/
   v33 = -1; /*0x7c0b26*/
   v34 = 0; /*0x7c0b29*/
@@ -380,7 +380,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
     }
     return -8; /*0x7c2b4c*/
   }
-  v6 = AllocCallback::Dispatch(0, 2, 0, 0x7DCu); /*0x7c25f8*/
+  v6 = (unsigned int *)(AllocCallback::Dispatch(0, 2, 0, 0x7DCu));
   v7 = v6; /*0x7c25fd*/
   if ( !v6 ) /*0x7c2604*/
     return -8; /*0x7c2604*/

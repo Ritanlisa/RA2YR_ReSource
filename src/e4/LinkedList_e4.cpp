@@ -19,7 +19,7 @@
 
 // 0x4791F0
 namespace gamemd {
-AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4)
+AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4, void * a1, void * a2)
 {
   int v5; // eax
   unsigned int *v7; // eax
@@ -130,7 +130,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
     Debug::Log(); /*0x479664*/
     return 0; /*0x47967c*/
   }
-  g_MixFile_MAPSFirst = (int)MixFileClass::FromFile(v11, Buffer, (int)&dword_886980); /*0x479467*/
+  g_MixFile_MAPSFirst = (unsigned int *)((int)MixFileClass::FromFile(v11, Buffer, (int)&dword_886980));
   if ( !g_MixFile_MAPSFirst ) /*0x47946c*/
     goto LABEL_61; /*0x47946c*/
   Debug::Log(); /*0x479496*/
@@ -146,7 +146,7 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
     MixFileClass_MULTI = 0; /*0x479514*/
     goto LABEL_61; /*0x47951a*/
   }
-  MixFileClass_MULTI = (int)MixFileClass::FromFile(v13, aMultiMix, (int)&dword_886980); /*0x4794f2*/
+  MixFileClass_MULTI = (unsigned int)((int)MixFileClass::FromFile(v13, aMultiMix, (int)&dword_886980));
   if ( !MixFileClass_MULTI ) /*0x4794f7*/
     goto LABEL_61; /*0x4794f7*/
   v14 = CCFileClass::Construct(&v23, g_Str_File_THEMEMD_MIX); /*0x479526*/
@@ -226,7 +226,7 @@ unsigned int * LinkedList_flat::FindPrev()
   unsigned int *v1; // edx
   unsigned int *result; // eax
 
-  v1 = ((char *)&this->q000 + 2); /*0x556643*/
+  v1 = (unsigned int *)(((char *)&this->q000 + 2));
   if ( !this->u32_8 ) /*0x556640*/
     return this; /*0x55665d*/
   do /*0x556651*/
@@ -356,7 +356,7 @@ void LinkedList_flat::RelinkNode(int a2)
         *(unsigned int *)(a2 + 8) = 0; /*0x632d2f*/
       }
     }
-    v4 = this->u32_18; /*0x632d36*/
+    v4 = (unsigned int)(this->u32_18);
     if ( v4 ) /*0x632d3b*/
       *(unsigned int *)(v4 + 8) = 0; /*0x632d3d*/
     this->u32_18 = a2; /*0x632d46*/
@@ -391,7 +391,7 @@ int LinkedList_flat::Init()
 {
   int result; // eax
 
-  *this->u32_4 = *this; /*0x407455*/
+  *this->u32_4 = (unsigned int)(*this);
   result = (int)*this; /*0x407457*/
   (*this)[1] = this->u32_4; /*0x40745c*/
   *this = this; /*0x40745f*/
@@ -406,7 +406,7 @@ int * LinkedList_flat::Next()
   int *result; // eax
   int *v2; // edx
 
-  result = *this; /*0x407520*/
+  result = (int *)(*this);
   if ( *this ) /*0x407520*/
   {
     v2 = (int *)*result; /*0x407527*/

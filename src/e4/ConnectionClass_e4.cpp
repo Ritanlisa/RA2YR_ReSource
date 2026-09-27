@@ -82,7 +82,7 @@ unsigned int ConnectionClass::initQueue(unsigned int a2)
   unsigned int v6; // eax
   void * result;
 
-  v2 = this->q018; /*0x48ba10*/
+  v2 = (void *)(this->q018);
   if ( v2 == 256 ) /*0x48ba1c*/
   {
     v3 = a2 - this->q01C + this->PacketsReceived; /*0x48ba2c*/
@@ -91,13 +91,13 @@ unsigned int ConnectionClass::initQueue(unsigned int a2)
   }
   else
   {
-    v5 = v2 + 1; /*0x48ba4e*/
+    v5 = (unsigned int)(v2 + 1);
     v6 = a2 + this->PacketsReceived; /*0x48ba56*/
     this->q018 = v5; /*0x48ba58*/
     this->PacketsReceived = v6; /*0x48ba5b*/
     v4 = v6 / v5; /*0x48ba5e*/
   }
-  this->q01C = v4; /*0x48ba60*/
+  this->q01C = (unsigned int)(v4);
   result = this->q020; /*0x48ba63*/
   if ( a2 > result ) /*0x48ba68*/
     this->q020 = a2; /*0x48ba6a*/

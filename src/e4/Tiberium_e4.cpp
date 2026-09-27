@@ -236,8 +236,7 @@ int Tiberium::ProcessGrowth(int a2, MapResourceClass * aP2, char _140)
     if ( (int)v28 > 0 )
     {
   int v33; // edx
-      unsigned int v30 =
-      v89[0] = v28;
+      unsigned int v30 = (unsigned int)(v89[0] = v28);
       while ( 1 )
       {
         v31 = Math::RoundToInt(v87);
@@ -274,7 +273,7 @@ LABEL_50:
           goto LABEL_42;
         if ( !v30[20 * v31 + 14 + 20 * unk_89C2DC * v35] )
         {
-          unsigned int * v36 = CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v85);
+          unsigned int * v36 = (unsigned int *)(CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v85));
           IsEmpty = Cell::IsEmpty(v36);
           v30 = g_MapTileArray;
           if ( IsEmpty )
@@ -292,7 +291,7 @@ LABEL_45:
             v30[20 * SLOWORD(v85) + 14 + 20 * unk_89C2DC * IDA_SWORD1(v85)] = v81->q308;
           v99[0] = v31;
           v99[1] = v34;
-          unsigned char * v39 = CellCoord::To_CellObj(&DataGlobal_87F7E8, v99);
+          unsigned char * v39 = (unsigned char *)(CellCoord::To_CellObj(&DataGlobal_87F7E8, v99));
           v40 = *(Random **)&g_NetworkPlayerBuffer[78076];
           v39[282] = 0;
           *((unsigned int *)v39 + 14) = v40;
@@ -443,7 +442,7 @@ LABEL_100:
       inited = MapClass::InitTileData(*(unsigned int *)&v20[194], 0);
       if ( inited )
       {
-        char v54 = TiberiumClass::Spread(*(unsigned int *)&v20[194], 1, 0, 0, 512, 512, 0, 0);
+        char v54 = (char)(TiberiumClass::Spread(*(unsigned int *)&v20[194], 1, 0, 0, 512, 512, 0, 0));
         v55 = (MouseClass *)v20[194];
         inited = v54;
         LayerClass::CellIteratorReset(&DataGlobal_87F7E8);

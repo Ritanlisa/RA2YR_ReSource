@@ -45,6 +45,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/AircraftTypeClass_e4.hpp"
 
 // 0x682640
 namespace gamemd {
@@ -72,7 +73,7 @@ void COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
       goto LABEL_5; /*0x68268a*/
     }
   }
-  v5 = (&off_83D65C)[2 * v3]; /*0x6826c9*/
+  v5 = (void **)((&off_83D65C)[2 * v3]);
   LABEL_5:
   v6 = (*(int (__stdcall **)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v9); /*0x68268c*/
   if ( v6 >= 0 ) /*0x6826ad*/
@@ -172,7 +173,7 @@ void COM_Property_ReadBool(int a1, int a2, char a3)
   int v6; // esi
   int v8; // [esp+30h] [ebp-4h] BYREF
 
-  v8 = 0; /*0x682a96*/
+  v8 = (unsigned int *)(0);
   v3 = 0; /*0x682a9e*/
   v4 = &unk_83D658; /*0x682aa0*/
   while ( *v4 != a2 ) /*0x682aa7*/
@@ -185,7 +186,7 @@ void COM_Property_ReadBool(int a1, int a2, char a3)
       goto LABEL_5; /*0x682ab4*/
     }
   }
-  v5 = (&off_83D65C)[2 * v3]; /*0x682aeb*/
+  v5 = (void **)((&off_83D65C)[2 * v3]);
   LABEL_5:
   v6 = (*(int (__stdcall **)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v8); /*0x682ab6*/
   if ( v6 >= 0 ) /*0x682ad4*/
@@ -280,7 +281,7 @@ void sub_682C70(int a1, int a2, unsigned int * a3)
   void **v6; // ecx
   int v7; // esi
 
-  v3 = a3; /*0x682c76*/
+  v3 = (unsigned int *)(a3);
   a3 = 0; /*0x682c7a*/
   v4 = 0; /*0x682c82*/
   *v3 = 0; /*0x682c84*/
@@ -296,7 +297,7 @@ void sub_682C70(int a1, int a2, unsigned int * a3)
       goto LABEL_5; /*0x682ca5*/
     }
   }
-  v6 = (&off_83D65C)[2 * v4]; /*0x682cd8*/
+  v6 = (void **)((&off_83D65C)[2 * v4]);
   LABEL_5:
   v7 = (*(int (__stdcall **)(int, void **, unsigned int, int, unsigned int, unsigned int **))(*(unsigned int *)a1 + 16))( /*0x682ca7*/
          a1,
@@ -339,7 +340,7 @@ void COM_WriteInt(int a1, int a2, int a3)
   int v6; // esi
   int v8; // [esp+30h] [ebp-4h] BYREF
 
-  v8 = 0; /*0x682e16*/
+  v8 = (unsigned int *)(0);
   v3 = 0; /*0x682e1e*/
   v4 = &unk_83D658; /*0x682e20*/
   while ( *v4 != a2 ) /*0x682e27*/
@@ -352,7 +353,7 @@ void COM_WriteInt(int a1, int a2, int a3)
       goto LABEL_5; /*0x682e34*/
     }
   }
-  v5 = (&off_83D65C)[2 * v3]; /*0x682e6b*/
+  v5 = (void **)((&off_83D65C)[2 * v3]);
   LABEL_5:
   v6 = (*(int (__stdcall **)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v8); /*0x682e36*/
   if ( v6 >= 0 ) /*0x682e54*/
@@ -481,7 +482,7 @@ void * * ScenarioClass_SetTimer(int a1)
 
   if ( a1 ) /*0x684068*/
   {
-    Ticks = Timer::GetTicks(); /*0x68406e*/
+    Ticks = (void **)(Timer::GetTicks());
     v3 = (char *)g_ScenarioClass_Instance + 1568; /*0x68407c*/
     *((unsigned int *)g_ScenarioClass_Instance + 392) = Ticks; /*0x68408c*/
     *((unsigned int *)v3 + 1) = v9; /*0x684092*/
@@ -496,7 +497,7 @@ void * * ScenarioClass_SetTimer(int a1)
     sub_406F00(); /*0x6840ca*/
     if ( !g_GameMode_Current[0] || g_GameMode_Current[0] == 5 ) /*0x6840db*/
     {
-      v5 = (char *)g_ScenarioClass_Instance + 1556; /*0x6840e2*/
+      v5 = (unsigned int *)((char *)g_ScenarioClass_Instance + 1556);
       if ( *((unsigned int *)g_ScenarioClass_Instance + 389) != -1 ) /*0x6840f1*/
       {
         v6 = Timer::GetTicks(); /*0x6840f6*/
@@ -518,7 +519,7 @@ void * * ScenarioClass_SetTimer(int a1)
       dword_B07784 = 0; /*0x684165*/
     }
   }
-  result = g_ScenarioClass_Instance; /*0x68416f*/
+  result = (void **)(g_ScenarioClass_Instance);
   ++*((unsigned int *)g_ScenarioClass_Instance + 395); /*0x684174*/
   return result; /*0x68417a*/
 }
@@ -634,7 +635,7 @@ void WaitForMultiplayerLoadSync()
       if ( SessionClass::IsValidHouse((int)g_GameMode_Current, *(void **)&HouseClass_Array->gap0[4 * v11]) ) /*0x6845aa*/
       {
         dword_A8E2AC = -1; /*0x6845bf*/
-        memset(word_A8E258, 0, 0x28u); /*0x6845c9*/
+        memset(word_A8E258, 0, 0x28u, unsigned int a1); /*0x6845c9*/
         unk_A8E280 = 0; /*0x6845cb*/
       }
       --i; /*0x6845cd*/

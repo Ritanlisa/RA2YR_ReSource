@@ -73,7 +73,7 @@ int LoadGame::LoadTriggerEvents()
   {
     while ( 1 ) /*0x6608f5*/
     {
-      v10 = operator new(0x40u); /*0x6608f5*/
+      v10 = (unsigned int *)(operator new(0x40u));
       if ( v10 ) /*0x6608ff*/
       {
         v12 = 0; /*0x660901*/

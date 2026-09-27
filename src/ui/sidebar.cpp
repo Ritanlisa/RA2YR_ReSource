@@ -122,7 +122,7 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
   this->ToggleSidebarDisplay(1); /*0x6a649f*/
   if ( v23 == -1 ) /*0x6a64aa*/
   {
-    v14 = this + 1382; /*0x6a64b0*/
+    v14 = (int *)(this + 1382);
     while ( *v14 <= 0 ) /*0x6a64b9*/
     {
       ++v10; /*0x6a64bb*/
@@ -162,7 +162,7 @@ bool SidebarClass::AddCameo(AbstractType absType, int32_t idxType)
       this->q53A7 = 1; /*0x6a65cf*/
     }
   }
-  v21 = *this; /*0x6a65d6*/
+  v21 = (int)(*this);
   this->q53A6 = 1; /*0x6a65dc*/
   this->MarkForRedraw(0); /*0x6a65e3*/
   if ( v13 == *(&this->u32_85C1) ) /*0x6a65ec*/

@@ -88,7 +88,7 @@ LoadOptions::LoadOptions() {
   _DWORD *v2; // ecx
   int v3; // eax
 
-  v2 = &this->is_active; /*0x558745*/
+  v2 = (_DWORD)(&this->is_active);
   v2[1] = 0; /*0x558748*/
   v2[2] = 0; /*0x55874b*/
   *((_BYTE *)v2 + 12) = 1; /*0x55874e*/
@@ -118,7 +118,7 @@ void LoadOptions::Cleanup() {
   _DWORD *v4; // esi
   void *v5; // eax
 
-  v2 = 0; /*0x558797*/
+  v2 = (_DWORD)(0);
   for ( *this = &(void*)(void*)&LoadOptionsClass_vftable; v2 < *(&this->Items2); ++v2 ) /*0x5587a4*/
     RA2_OPDEL(*(void **)(this->q024 + 4 * v2)); /*0x5587ad*/
   v3 = this->is_active; /*0x5587bd*/

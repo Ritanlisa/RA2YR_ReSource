@@ -252,6 +252,7 @@ struct IPXInterfaceClass {
     unsigned int qFC15;
     unsigned int qFC18;
     unsigned int qFC19;
+    unsigned int Destru_vt14;
 // --- flat members (END) ---
     AbstractClass * * Receive();
     AbstractClass * * SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen);

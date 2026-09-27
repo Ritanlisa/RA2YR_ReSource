@@ -45,7 +45,7 @@ int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, 
   }
   while ( 1 ) /*0x7ad6fd*/
   {
-    v5 = *v3; /*0x7ad6fd*/
+    v5 = (unsigned int *)(*v3);
     v6 = *v3 == 0; /*0x7ad706*/
     if ( !*v3 || *v5 == *a2 && v5[1] == a2[1] && v5[2] == a2[2] && v5[3] == a2[3] ) /*0x7ad730*/
       break; /*0x7ad730*/
@@ -145,7 +145,7 @@ char WonlineStringDialogControl_12::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x7ad0dc*/
   {
-    this->q00C = 0; /*0x7ad0e6*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x7ad0ec*/
       v4 = a3; /*0x7ad102*/
     else
@@ -243,7 +243,7 @@ char WonlineStringDialogControl_12::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x7ad21c*/
   {
-    this->q00C = 0; /*0x7ad222*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x7ad228*/
       v4 = a3; /*0x7ad23e*/
     else
@@ -311,7 +311,7 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x7ad388*/
     this->q004 = 0; /*0x7ad390*/
   }
-  this->IsAllocated = 0; /*0x7ad39b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->q008 = 0; /*0x7ad3a1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3a8*/
     RA2_OPDEL(); /*0x7ad3ab*/
@@ -331,7 +331,7 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
     RA2_OPDEL(v3); /*0x7ad3d8*/
     this->q004 = 0; /*0x7ad3e0*/
   }
-  this->IsAllocated = 0; /*0x7ad3eb*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x7ad3f1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3f8*/
     RA2_OPDEL(); /*0x7ad3fb*/
@@ -384,7 +384,7 @@ int WonlineStringDialogControl_28::Write(int a1, wchar_t * Format, unsigned int 
   }
   else
   {
-    v6 = GetStringCSF(aTxtBytesWTime, 0, g_Str_File_wonline_cpp, 5167); /*0x7ad4e2*/
+    v6 = (wchar_t *)(GetStringCSF(aTxtBytesWTime, 0, g_Str_File_wonline_cpp, 5167));
     swprintf(Buffer, (const size_t)v6, Format, a3, a5); /*0x7ad4ed*/
   }
   if ( time(0) != dword_B77EA8 ) /*0x7ad52d*/
@@ -411,12 +411,12 @@ int WonlineStringDialogControl_28::Draw(int a1, int a2)
   Buffer[0] = 0; /*0x7ad58d*/
   if ( a2 == 2 ) /*0x7ad597*/
   {
-    StringCSF = GetStringCSF(aTxtConnecting, 0, g_Str_File_wonline_cpp, 5191); /*0x7ad5d6*/
+    StringCSF = (wchar_t *)(GetStringCSF(aTxtConnecting, 0, g_Str_File_wonline_cpp, 5191));
     swprintf(Buffer, (const size_t)StringCSF, *(const wchar_t *const *)Buffer); /*0x7ad5d8*/
   }
   else if ( a2 == 4 ) /*0x7ad59c*/
   {
-    v5 = GetStringCSF(aTxtFindingPatc, 0, g_Str_File_wonline_cpp, 5195); /*0x7ad5b4*/
+    v5 = (wchar_t *)(GetStringCSF(aTxtFindingPatc, 0, g_Str_File_wonline_cpp, 5195));
     swprintf(Buffer, (const size_t)v5, *(const wchar_t *const *)Buffer); /*0x7ad5ba*/
   }
   Current = Dialog::GetCurrent(); /*0x7ad5e5*/

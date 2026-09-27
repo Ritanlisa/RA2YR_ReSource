@@ -2165,7 +2165,6 @@ struct InfantryClass {
     unsigned int vtable37;
     unsigned int vtable49;
     unsigned int uniqueId3;
-    unsigned int Construct;
 // --- flat members (END) ---
     AbstractClass * * ProcessDeploy(void ** a1);
     int ScanTarget(int * a1);

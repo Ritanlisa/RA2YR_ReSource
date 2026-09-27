@@ -13,7 +13,7 @@
 
 // 0x5B20F0
 namespace gamemd {
-long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, char a7, char a8, char a9)
+long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, char a7, char a8, char a9, void * a2, void * a4, void * a5, void * a6)
 {
   bool v11; // zf
   double v12; // st7
@@ -87,7 +87,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   unsigned int v81; // [esp+84h] [ebp-24h]
   double v82[3]; // [esp+90h] [ebp-18h] BYREF
 
-  v11 = *a4 == dword_ABEF10; /*0x5b210e*/
+  v11 = (double *)(*a4 == dword_ABEF10);
   v74 = a1; /*0x5b2110*/
   if ( v11 && a4[1] == dword_ABEF14 && a4[2] == dword_ABEF18 ) /*0x5b2134*/
   {
@@ -121,7 +121,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
       *a1 = *a1 / v15; /*0x5b2223*/
       a1[1] = a1[1] / Math::ArcTan2(v68, unsigned int a2); /*0x5b2230*/
     }
-    v74 = (double *)((int16_t)v71 - 0x3FFF); /*0x5b2241*/
+    v74 = (unsigned int *)((double *)((int16_t)v71 - 0x3FFF));
     v16 = Math::ArcTan2((double)(int)v74 * -0.00009587672516830327); /*0x5b2252*/
     v17 = (int16_t)v71; /*0x5b2259*/
     *a1 = v16 * *a1; /*0x5b225e*/
@@ -150,7 +150,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
     v28 = Math::Sqrt(a1[1] * a1[1] + *a1 * *a1 + a1[2] * a1[2]); /*0x5b233a*/
     return Math::RoundToInt(v28, unsigned int a2, unsigned int a4, unsigned int a5); /*0x5b234d*/
   }
-  v30 = a1[2]; /*0x5b2352*/
+  v30 = (unsigned int *)(a1[2]);
   v79 = *a1; /*0x5b2357*/
   v31 = *((unsigned int *)a1 + 3); /*0x5b2369*/
   v80 = *((unsigned int *)a1 + 2); /*0x5b236c*/
@@ -222,7 +222,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   v71 = v74; /*0x5b25fa*/
   if ( a6
     || !a7 && IDA_SLODWORD(v75[0]) <= (a8 != 0 ? 6 : 3) << 8
-    || (uint8_t)((unsigned int)((*(unsigned int *)a5 >> 7) + 1) >> 1) <= 1u )
+    || (uint8_t, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)((unsigned int)((*(unsigned int *)a5 >> 7) + 1) >> 1) <= 1u )
   {
     if ( !a9 ) /*0x5b28a1*/
     {
@@ -234,7 +234,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
     }
     goto LABEL_49; /*0x5b28e0*/
   }
-  v56 = v48[2]; /*0x5b2640*/
+  v56 = (unsigned int *)(v48[2]);
   v77 = *v48; /*0x5b2645*/
   v57 = *((unsigned int *)v48 + 3); /*0x5b2657*/
   IDA_LODWORD(v78) = *((unsigned int *)v48 + 2); /*0x5b265a*/

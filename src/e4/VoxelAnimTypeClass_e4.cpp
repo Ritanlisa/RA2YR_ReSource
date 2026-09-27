@@ -77,7 +77,7 @@ unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
          g_AnimTypePool + g_AnimManagerConfig,
          0) )
   {
-    v3 = g_AnimManager++; /*0x74aef7*/
+    v3 = (gamemd::VoxelAnimTypeClass *)(g_AnimManager++);
     *((unsigned int *)g_AnimPoolCount + v3) = this; /*0x74af06*/
   }
   if ( g_MultiplayerPool < dword_A8EB30 /*0x74af3d*/
@@ -91,12 +91,12 @@ unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
     v4 = g_MultiplayerPool++; /*0x74af4a*/
     *((unsigned int *, unsigned int a1, unsigned int a2)dword_A8EB2C + v4) = this; /*0x74af59*/
   }
-  return this; /*0x74af5e*/
+  return (unsigned int *)(this);
 }
 }
 // 0x74B050
 namespace gamemd {
-AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1)
+AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1, void * a1, void * a2)
 {
   char Bool_Overwrite; // al
   char v5; // cl

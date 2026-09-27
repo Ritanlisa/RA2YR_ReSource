@@ -1,6 +1,8 @@
 #include "wdt/wdt.hpp"
 
 #include <cstring>
+#include "structure/globals_structure.hpp"
+#include "core/ddraw_init.hpp"
 
 namespace gamemd {
 namespace wdt {
@@ -84,11 +86,11 @@ void Map::Release() noexcept
 // 0x552c90
 WDTError Map::Load()
 {
-  int result; // eax
+  WDTError result; // eax (retyped G34: fn returns WDTError)
 
-  result = -1; /*0x552c96*/
-  if ( g_GameMode_Current[0] )
-    return g_DisplayWidth != 640 ? 406 : 326;
+  result = WDTError{-1, ""}; /*0x552c96*/
+  if ( g_GameMode_Current )  // IDA array-notation: scalar at 0xA8B238
+    return g_DisplayWidth != 640 ? WDTError{406, ""} : WDTError{326, ""};
   return result; /*0x552cb6*/
 }
 WDTError Map::Draw()
@@ -234,6 +236,7 @@ void History::Record(const char* event)
     entry.Frame = 0;
     std::strncpy(entry.Text, event ? event : "", sizeof(entry.Text) - 1);
     entries.push_back(entry);
+}
 
 void History::Clear()
 {
@@ -243,5 +246,4 @@ void History::Clear()
 
 } // namespace wdt
 } // namespace gamemd
-}
 }

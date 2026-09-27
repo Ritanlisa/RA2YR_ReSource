@@ -49,7 +49,7 @@ int DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
   }
   else
   {
-    DialogParamA = CreateDialogParamA(g_hInstance, (LPCSTR)0xC6, 0, sub_775B40, 0); /*0x775cac*/
+    DialogParamA = (int)(CreateDialogParamA(g_hInstance, (LPCSTR)0xC6, 0, sub_775B40, 0));
     GetClientRect(DialogParamA, &v10); /*0x775cb4*/
     DestroyWindow(DialogParamA); /*0x775cbb*/
     right = v10.right; /*0x775cc1*/
@@ -77,7 +77,7 @@ ATOM DialogClass::RegisterWinClasses()
   result = 1; /*0x60d456*/
   if ( dword_AC48CC != 1 ) /*0x60d460*/
   {
-    dword_AC48CC = 1; /*0x60d469*/
+    dword_AC48CC = (LPCSTR)(1);
     WndClass.hInstance = g_hInstance; /*0x60d48a*/
     WndClass.style = 3; /*0x60d496*/
     WndClass.lpfnWndProc = GameScreen::DlgProc; /*0x60d49e*/

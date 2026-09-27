@@ -64,7 +64,7 @@ HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     v12.lpVtbl->Write(v3, &a3, 1, 0); /*0x4af8d4*/
     return v5; /*0x4af8d8*/
   }
-  lpVtbl = v3->lpVtbl; /*0x4af82c*/
+  lpVtbl = (gamemd::DriveLocomotionClass::LoadFromStream::IStreamVtbl *)(v3->lpVtbl);
   IDA_LOBYTE(a3) = 1; /*0x4af838*/
   lpVtbl->Write(v3, &a3, 1, 0); /*0x4af83d*/
   v7 = (int (__stdcall ***)(unsigned int, void *, int **))v4[26]; /*0x4af840*/

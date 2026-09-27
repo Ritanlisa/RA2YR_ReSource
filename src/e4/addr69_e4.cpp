@@ -180,7 +180,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       Flagged = GameSettings::FindFlagged(); /*0x693c49*/
       if ( Flagged ) /*0x693c50*/
       {
-        v5 = CharToWideString(Flagged + 36); /*0x693c55*/
+        v5 = (char *)(CharToWideString(Flagged + 36));
         Network::SendToPlayer((int)g_NetworkManager, (int)v43, 455, 1, (wchar_t *)v5); /*0x693c6f*/
       }
     }
@@ -319,7 +319,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v22 = GameSettings::FindFlagged(); /*0x694009*/
       if ( v22 ) /*0x694010*/
       {
-        v23 = CharToWideString(v22 + 36); /*0x694015*/
+        v23 = (char *)(CharToWideString(v22 + 36));
         Network::SendToPlayer((int)g_NetworkManager, (int)v43, 455, 1, (wchar_t *)v23); /*0x69402f*/
       }
     }

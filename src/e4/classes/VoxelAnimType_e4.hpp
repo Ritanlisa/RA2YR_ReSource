@@ -142,6 +142,12 @@ struct VoxelAnimType {
     unsigned int q5520;  // 0x5520
     SomeVoxelCache * q5640;  // 0x5640
     unsigned int u32_105;
+    unsigned int u32_104;
+    unsigned int u32_106;
+    unsigned int u32_107;
+    unsigned int u32_50C3;
+    unsigned int u32_5205;
+    unsigned int u32_C84;
 // --- flat members (END) ---
     char LoadSection(const char * a2,  int a3);    // 0x5F7A90
     char LoadBarrel(const char * a2,  int a3);    // 0x5F7DB0

@@ -87,7 +87,7 @@ void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int 
          dword_ABC880 + dword_ABC88C,
          0) )
   {
-    v20 = g_TimerPool++; /*0x54ff92*/
+    v20 = (gamemd::TimerClass *)(g_TimerPool++);
     *((unsigned int *)dword_ABC87C + v20) = this; /*0x54ffa1*/
   }
   return this; /*0x54ffa6*/

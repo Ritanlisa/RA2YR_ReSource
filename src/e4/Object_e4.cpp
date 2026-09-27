@@ -211,7 +211,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
     dword_ABD454 = -1; /*0x56c326*/
     atexit(nullsub_167); /*0x56c32b*/
   }
-  v5 = &dword_ABD434; /*0x56c333*/
+  v5 = (int *)(&dword_ABD434);
   v24 = &dword_ABD434; /*0x56c338*/
   while ( 1 ) /*0x56c343*/
   {
@@ -225,7 +225,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
     v11 = v8 + v7; /*0x56c36a*/
     if ( v11 > v9 && v8 - v7 < v9 && v7 - v8 < v9 && v11 <= v9 + 2 * *(&this->q0182) ) /*0x56c39c*/
     {
-      v12 = v8 + (v7 << 9); /*0x56c3a7*/
+      v12 = (unsigned int *)(v8 + (v7 << 9));
       if ( v12 >= 0x40000 || (v13 = *(unsigned int **)(this->q13C + 4 * v12)) == 0 ) /*0x56c3c1*/
       {
         v23 = v23; /*0x56c3c7*/
@@ -237,7 +237,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
         {
           if ( (*(int (__thiscall **)(unsigned int *))(*i + 44))(i) != 6 ) /*0x56c406*/
           {
-            v17 = (unsigned int *)(*(int (__thiscall **)(unsigned int *, char *))(*i + 72))(i, v28); /*0x56c457*/
+            v17 = (int *)((unsigned int *)(*(int (__thiscall **)(unsigned int *, char *))(*i + 72))(i, v28));
             v18 = Coord::Subtract(v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]); /*0x56c477*/
             v26[0] = *v18; /*0x56c47e*/
             v26[1] = v18[1]; /*0x56c485*/
@@ -390,7 +390,7 @@ void * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * a
   }
   if ( *aP2 != word_AC1528 || aP2[1] != word_AC152A ) /*0x5fc429*/
   {
-    dword_8333BC = aP3; /*0x5fc43b*/
+    dword_8333BC = (int)(aP3);
     v7 = aP2[1]; /*0x5fc444*/
     IDA_LOWORD(aP1) = ((*aP2 << 8) + 128) / 256; /*0x5fc469*/
     IDA_HIWORD(aP1) = ((v7 << 8) + 128) / 256; /*0x5fc485*/
@@ -410,13 +410,13 @@ void* Object::HandleAction(int * a2, int * a3)
   int v5; // ebp
   int GroundHeight; // eax
   int v7; // eax
-  BuildingTypeClass * v8;
+  unsigned int v8;
   int v9; // ebx
   int v10; // edx
   int v11; // eax
   int v12; // eax
   int v13; // edx
-  unsigned int v14;
+  BuildingTypeClass * v14;
   int v15; // eax
   int v16; // esi
   int v17; // ecx
@@ -484,7 +484,7 @@ void* Object::HandleAction(int * a2, int * a3)
     }
     else
     {
-      v14 = g_BuildingTypeClass_Array; /*0x5fda60*/
+      v14 = (gamemd::BuildingTypeClass *)(g_BuildingTypeClass_Array);
       while ( *(unsigned int *)v14->gap0 != v12 ) /*0x5fda68*/
       {
         ++v13; /*0x5fda6a*/
@@ -557,7 +557,7 @@ void* Object::HandleAction(int * a2, int * a3)
     IDA_HIWORD(a2) = v22 / 256; /*0x5fdbd1*/
     if ( LayerClass::CoordinatesLegal(&MapClass_Instance, (int16_t *)&a2) ) /*0x5fdbe3*/
     {
-      v23 = this->q0A4; /*0x5fdbee*/
+      v23 = (unsigned int *)(this->q0A4);
       v24 = this->q0A0; /*0x5fdbf1*/
       v32 = *v4; /*0x5fdbf4*/
       v34 = v23; /*0x5fdbfc*/

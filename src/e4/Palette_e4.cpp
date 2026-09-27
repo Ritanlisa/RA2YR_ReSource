@@ -23,7 +23,7 @@ unsigned char * Palette_6BitTo16Bit(char a2, char a3, char a4)
 }
 // 0x642130
 namespace gamemd {
-AbstractClass * * Palette_Preview_Generate()
+AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void * a4)
 {
   int v6; // esi
   int v7; // eax
@@ -124,7 +124,7 @@ AbstractClass * * Palette_Preview_Generate()
             &v60,
             v53,
             (v17 >> g_BitMask_Red << g_BitShift_Blue)
-          | (v16 >> g_BitMask_Blue << g_BitMask_Green)
+          | (v16 >> g_BitMask_Blue << g_BitMask_Green, void * a1, void * a2, void * a3)
           | (v15 >> g_BitShift_Green_0 << g_BitShift_Red));
           v18 = v16 | (16 * v15) | (v17 >> 4); /*0x6422c6*/
           v19 = v48[v18]; /*0x6422c8*/
@@ -175,7 +175,7 @@ AbstractClass * * Palette_Preview_Generate()
     }
     while ( v44 < a3 ); /*0x642370*/
   }
-  v52 = operator new(v62 * v61); /*0x642384*/
+  v52 = (unsigned char *)(operator new(v62 * v61));
   v50 = v52; /*0x642388*/
   DSurface::Lock(&v60, 0, 0); /*0x642396*/
   v43 = 0; /*0x64239f*/

@@ -20,6 +20,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x45DD90
 namespace gamemd {
@@ -250,7 +251,7 @@ int BuildingTypeClass::ConstructFull(char * Source)
         v4 = g_TriggerClassCount,
         !v5) )
   {
-    g_TriggerClassCount = v4 + 1; /*0x45e330*/
+    g_TriggerClassCount = (unsigned int)(v4 + 1);
     *((unsigned int *)g_TriggerTypeCount + v4) = this; /*0x45e33a*/
     v4 = g_TriggerClassCount; /*0x45e33d*/
   }
@@ -450,7 +451,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
     }
     while ( v3 < g_TriggerClassCount ); /*0x45e705*/
   }
-  v4 = *(&this->q2586); /*0x45e707*/
+  v4 = (void *)(*(&this->q2586));
   if ( v4 && this->q1791 ) /*0x45e71b*/
   {
     RA2_OPDEL(v4); /*0x45e724*/
@@ -476,7 +477,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
   int v9; // [esp+10h] [ebp-204h]
   char Buffer[512]; // [esp+14h] [ebp-200h] BYREF
 
-  v1 = v1; /*0x45e97a*/
+  v1 = (int)(v1);
   ProcessDataCCFileClass(); /*0x45e97c*/
   FileSystem_POWEROFF_SHP = SearchMIXFile(aPoweroffShp, 0); /*0x45e994*/
   FileSystem_WRENCH_SHP = SearchMIXFile(aWrenchShp, 0); /*0x45e99e*/
@@ -557,7 +558,7 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
       v8 = operator new(0x20u); /*0x45eb65*/
       if ( v8 ) /*0x45eb6c*/
       {
-        v8[3] = 0; /*0x45eb72*/
+        v8[3] = (unsigned int)(0);
         *v8 = &XSurface_Vtable; /*0x45eb78*/
         v8[1] = v9 + 16; /*0x45eb80*/
         v8[2] = v9 + 16; /*0x45eb8b*/
@@ -612,7 +613,7 @@ void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
       ObjectTypeClass::SetRTTI71(Source); /*0x45f29a*/
       v3 = SearchMIXFile(Source, 0); /*0x45f2a5*/
     }
-    this->qE00 = v3; /*0x45f2ac*/
+    this->qE00 = (unsigned int)(v3);
     if ( v3 ) /*0x45f2b2*/
     {
       v4 = 1; /*0x45f2bb*/
@@ -680,7 +681,7 @@ void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
       this->q14FC = 0; /*0x45f46a*/
       *v8 = 0; /*0x45f470*/
     }
-    v9 = LoadFileSHP(Source, (bool *)(&this->q8646)); /*0x45f478*/
+    v9 = (unsigned int)(LoadFileSHP(Source, (bool *)(&this->q8646)));
     this->q14FC = v9; /*0x45f47f*/
     if ( !v9 ) /*0x45f485*/
     {
@@ -691,7 +692,7 @@ void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
         this->q14FC = 0; /*0x45f4a7*/
         *v8 = 0; /*0x45f4ad*/
       }
-      this->q14FC = LoadFileSHP(Source, (bool *)(&this->q85C2)); /*0x45f4be*/
+      this->q14FC = (unsigned int)(LoadFileSHP(Source, (bool *)(&this->q85C2)));
     }
   }
   INIClass::GetString( /*0x45f4e1*/
@@ -795,7 +796,7 @@ void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
       this->q1504 = 0; /*0x45f776*/
       *v15 = 0; /*0x45f77c*/
     }
-    v16 = LoadFileSHP(Source, (bool *)(&this->q8684)); /*0x45f784*/
+    v16 = (unsigned int)(LoadFileSHP(Source, (bool *)(&this->q8684)));
     this->q1504 = v16; /*0x45f78b*/
     if ( !v16 ) /*0x45f791*/
     {

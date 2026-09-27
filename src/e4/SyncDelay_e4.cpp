@@ -175,8 +175,7 @@ signed int SyncDelay::Start()
     v19 -= result; /*0x55e395*/
     goto LABEL_43; /*0x55e395*/
   }
-  LABEL_44:
-  v20 = dword_ABCD40 + g_FrameCounter_Total; /*0x55e39b*/
+  LABEL_44: v20 = (unsigned int)(dword_ABCD40 + g_FrameCounter_Total);
   v21 = (unsigned int)(dword_ABCD40 + g_FrameCounter_Total) <= 0x7FFFFFFF; /*0x55e3af*/
   dword_ABCD44 = (wchar_t *)dword_ABCD40; /*0x55e3b5*/
   dword_ABCD40 = 0; /*0x55e3ba*/

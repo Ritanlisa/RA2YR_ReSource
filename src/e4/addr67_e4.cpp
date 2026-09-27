@@ -38,7 +38,7 @@ int sub_679CC0()
 
   if ( !byte_B053B8 ) /*0x679cd0*/
   {
-    v1[1] = 0; /*0x679cda*/
+    v1[1] = (unsigned int)(0);
     v1[2] = 0; /*0x679cde*/
     GenericList::Constructor(v2); /*0x679ce2*/
     memset(&v2[7], 0, 12); /*0x679cf8*/
@@ -101,7 +101,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
         *((unsigned int *)Block + v8) = v7; /*0x67b611*/
       }
     }
-    aP0->u32_4 = 0; /*0x67b62d*/
+    aP0->u32_4 = (void *)(0);
     aP0->q008 = 0; /*0x67b630*/
     aP0->q00C = 1; /*0x67b633*/
     aP0->u8_D = 0; /*0x67b637*/
@@ -119,7 +119,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
   }
   else
   {
-    aP0->u32_4 = 0; /*0x67b699*/
+    aP0->u32_4 = (void *)(0);
     aP0->q008 = 0; /*0x67b69c*/
     aP0->q00C = 1; /*0x67b69f*/
     aP0->u8_D = 0; /*0x67b6a3*/
@@ -130,7 +130,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
       aP0->q008 = v13; /*0x67b6bb*/
       if ( v13 ) /*0x67b6be*/
       {
-        v14 = operator new(4 * v13); /*0x67b6c8*/
+        v14 = (unsigned int)(operator new(4 * v13));
         aP0->u32_4 = v14; /*0x67b6d2*/
         if ( v14 ) /*0x67b6d5*/
         {
@@ -231,7 +231,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
       *(unsigned int *)(aP0 + 8) = v13; /*0x67bc7b*/
       if ( v13 ) /*0x67bc7e*/
       {
-        v14 = operator new(4 * v13); /*0x67bc88*/
+        v14 = (unsigned int)(operator new(4 * v13));
         *(unsigned int *)(aP0 + 4) = v14; /*0x67bc92*/
         if ( v14 ) /*0x67bc95*/
         {

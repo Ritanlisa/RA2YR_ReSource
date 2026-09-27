@@ -43,7 +43,7 @@ void TacticalClass::DrawBuildingPlacement(IUnknown * aP1, int * a2)
   int v18; // [esp+1Ch] [ebp-Ch]
   int v19; // [esp+20h] [ebp-8h] BYREF
 
-  v4 = *(unsigned char **)&g_BuildingTypeClass_Array->gap0[4 * this->field44]; /*0x47f52c*/
+  v4 = (int *)(*(unsigned char **)&g_BuildingTypeClass_Array->gap0[4 * this->field44]);
   v15 = 15 * this->u32_11B; /*0x47f534*/
   v16 = (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v4 + 156))(v4); /*0x47f544*/
   v5 = BuildingClass::CalcDrawPos(this, &v19); /*0x47f54b*/
@@ -252,7 +252,7 @@ void* TacticalClass::ProcessScroll(int * a2)
       IDA_LOBYTE(v3) = TacticalClass::UpdateScrollMaxBounds(&v10); /*0x4ac429*/
     }
   }
-  return v3; /*0x4ac42e*/
+  return (void *)(v3);
 }
 }
 // 0x4AC700
@@ -335,8 +335,8 @@ void TacticalClass::InterpolateView()
 {
   unsigned int v0;
   int v1; // edi
-  wchar_t * v2;
-  unsigned int v3;
+  unsigned int v2;
+  wchar_t * v3;
   unsigned int v4;
   unsigned int *v5; // edx
   int v6; // ebx
@@ -349,24 +349,24 @@ void TacticalClass::InterpolateView()
   int v13; // esi
   int v14; // edi
   int v15; // eax
-  unsigned int v16;
+  wchar_t * v16;
   int v17; // [esp+8h] [ebp-40h]
   unsigned int v18;
-  unsigned int v19;
-  wchar_t * v20;
+  wchar_t * v19;
+  unsigned int v20;
   int v21; // [esp+18h] [ebp-30h]
   int v22; // [esp+1Ch] [ebp-2Ch]
   int v23; // [esp+20h] [ebp-28h]
   unsigned int v24;
-  unsigned int v25;
-  wchar_t * v26;
+  wchar_t * v25;
+  unsigned int v26;
   int v27[3]; // [esp+30h] [ebp-18h] BYREF
   int v28[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
   v0 = g_SelectionManager; /*0x4ae295*/
   if ( (int)g_SelectionManager > 0 ) /*0x4ae29f*/
   {
-    v1 = 0; /*0x4ae2a7*/
+    v1 = (wchar_t *)(0);
     v2 = 0; /*0x4ae2a9*/
     v3 = 0; /*0x4ae2ab*/
     v18 = 0; /*0x4ae2af*/
@@ -376,7 +376,7 @@ void TacticalClass::InterpolateView()
     v16 = g_SelectionManager; /*0x4ae2c2*/
     do /*0x4ae2fc*/
     {
-      v5 = (unsigned int *)*v4++; /*0x4ae2c6*/
+      v5 = (wchar_t *)((unsigned int *)*v4++);
       v27[0] = v5[39]; /*0x4ae2d5*/
       v1 += v27[0]; /*0x4ae2d9*/
       v2 += v5[40]; /*0x4ae2e0*/
@@ -412,11 +412,7 @@ void TacticalClass::InterpolateView()
       {
         while ( 1 ) /*0x4ae384*/
         {
-          v9 = Coord::Subtract( /*0x4ae384*/
-                 v28,
-                 v1 - *(unsigned int *)(*((unsigned int *)g_ObjectClass_CurrentCount + v8) + 156),
-                 v2 - *(unsigned int *)(*((unsigned int *)g_ObjectClass_CurrentCount + v8) + 160),
-                 v3 - *(unsigned int *)(*((unsigned int *)g_ObjectClass_CurrentCount + v8) + 164));
+          v9 = (int *)(Coord::Subtract( /*0x4ae384*/ v28, v1 - *(unsigned int *)(*((unsigned int *)g_ObjectClass_CurrentCount + v8) + 156), v2 - *(unsigned int *)(*((unsigned int *)g_ObjectClass_CurrentCount + v8) + 160), v3 - *(unsigned int *)(*((unsigned int *)g_ObjectClass_CurrentCount + v8) + 164)));
           v27[0] = *v9; /*0x4ae38b*/
           v27[1] = v9[1]; /*0x4ae396*/
           v27[2] = v9[2]; /*0x4ae39d*/
@@ -429,7 +425,7 @@ void TacticalClass::InterpolateView()
             v22 = v11[1]; /*0x4ae3c8*/
             v23 = v11[2]; /*0x4ae3cf*/
           }
-          v0 = g_SelectionManager; /*0x4ae3d3*/
+          v0 = (wchar_t *)(g_SelectionManager);
           if ( ++v8 >= (int)g_SelectionManager ) /*0x4ae3dc*/
             break; /*0x4ae3dc*/
           v2 = v19; /*0x4ae354*/
@@ -450,7 +446,7 @@ void TacticalClass::InterpolateView()
         v14 = (v25 - v22) / v12; /*0x4ae419*/
         v15 = (v26 - v23) / v12; /*0x4ae41e*/
       }
-      v18 = v13; /*0x4ae420*/
+      v18 = (wchar_t *)(v13);
       v19 = v14; /*0x4ae424*/
       v20 = v15; /*0x4ae428*/
     }
@@ -460,7 +456,7 @@ void TacticalClass::InterpolateView()
 }
 // 0x4F45B0
 namespace gamemd {
-AbstractClass * * TacticalClass_RenderFrame()
+AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
 {
   unsigned int v3;
   char result; // al
@@ -505,7 +501,7 @@ AbstractClass * * TacticalClass_RenderFrame()
     result = Frame::Present(DSurface_Composite, a1, a2, a3, 0, v5[0], v5[1], (int *)v5[2]); /*0x4f4761*/
     byte_A9FA94 = 0; /*0x4f4766*/
   }
-  return result; /*0x4f476d*/
+  return (gamemd::AbstractClass **)(result);
 }
 }
 // 0x547230
@@ -591,7 +587,7 @@ void TacticalClass::DrawCellOverlay(int a2, IUnknown * aP2, int a4, int a5, IUnk
 }
 // 0x6D04F0
 namespace gamemd {
-void TacticalClass_BuildCommandBar()
+void TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
 {
   char v4; // bl
   char v5; // al

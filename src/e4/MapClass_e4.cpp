@@ -37,7 +37,7 @@ namespace gamemd {
 int MapClass::isLocationShrouded(unsigned short a2)
 {
   int v2; // eax
-  int v3;
+  void * v3;
   unsigned int v5[4]; // [esp+0h] [ebp-10h] BYREF
 
   v5[3] = *(&this->q0041); /*0x4112d8*/
@@ -201,7 +201,7 @@ int MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2)
   IDA_LOWORD(v5) = *a2; /*0x4a95aa*/
   if ( *(unsigned int *)a2 != dword_8A03F8 ) /*0x4a95b5*/
   {
-    v6 = this->q117C; /*0x4a95c4*/
+    v6 = (int16_t *)(this->q117C);
     v7 = (char)a2; /*0x4a95ca*/
     while ( *v6 != 0x7FFF || v6[1] != 0x7FFF ) /*0x4a95db*/
     {
@@ -215,7 +215,7 @@ int MapClass::SetCellFlagsAlongPath(IUnknown * aP1, unsigned short * a2)
       IDA_LOBYTE((int16_t *)&a2); /*0x4a960a*/
       if ( (unsigned char)v5 ) /*0x4a9611*/
       {
-        v5 = CellCoord::To_CellObj(this, (int16_t *)&a2); /*0x4a961a*/
+        v5 = (unsigned int *)(CellCoord::To_CellObj(this, (int16_t *)&a2));
         v10 = v5[75]; /*0x4a961f*/
         if ( v7 ) /*0x4a9627*/
           v5[75] = v10 | 2; /*0x4a962c*/
@@ -262,7 +262,7 @@ int MapClass::ToggleZoom(int a2)
       {
         v4 = 0; /*0x4ac9b6*/
       }
-      v5 = *this; /*0x4ac9b8*/
+      v5 = (int)(*this);
       this->q11B1 = 0; /*0x4ac9c0*/
       this->q11B2 = 0; /*0x4ac9c7*/
       this->q11B3 = 0; /*0x4ac9ce*/
@@ -275,7 +275,7 @@ int MapClass::ToggleZoom(int a2)
       }
       else
       {
-        v6 = *this; /*0x4ac9f4*/
+        v6 = (int)(*this);
         *(unsigned char *)&this->q11B4 = 0; /*0x4ac9f8*/
         return 0; /*0x4ac9ff*/
       }
@@ -306,7 +306,7 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
   unsigned int v19[4]; // [esp+3Ch] [ebp-10h] BYREF
   int i; // [esp+50h] [ebp+4h]
 
-  v3 = 0; /*0x4ad7ef*/
+  v3 = (unsigned int *)(0);
   v4 = this; /*0x4ad7f2*/
   v16 = this; /*0x4ad7f8*/
   INIClass::ClearSection((int)a2, (int)&off_81FFF0, 0); /*0x4ad7fc*/
@@ -493,7 +493,7 @@ ObjectClass * * MapClass::LoadFileData()
       v9 = *v8; /*0x5470a4*/
       if ( *v8 ) /*0x5470a4*/
       {
-        v10 = this->q0A4; /*0x5470aa*/
+        v10 = (unsigned int)(this->q0A4);
         if ( v9 < v10 ) /*0x5470b2*/
           *v8 = v10 + v9; /*0x5470b6*/
       }
@@ -674,7 +674,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
   v4 = v3; /*0x565847*/
   if ( v3 ) /*0x56584e*/
   {
-    v3[1] = Cell::DecodeFlags; /*0x56585e*/
+    v3[1] = (unsigned int *)(Cell::DecodeFlags);
     v3[2] = 256; /*0x565865*/
     v3[3] = 20; /*0x56586c*/
     v5 = operator new(0x1804u); /*0x56586f*/
@@ -699,7 +699,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
     {
       v9 = 0; /*0x5658bd*/
     }
-    v10 = v4[2]; /*0x5658bf*/
+    v10 = (unsigned int)(v4[2]);
     *v4 = v9; /*0x5658c2*/
     v11 = 0; /*0x5658c4*/
     if ( v10 > 0 ) /*0x5658c8*/
@@ -720,7 +720,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
   {
     v4 = 0; /*0x5658e2*/
   }
-  this->q014 = (int)v4; /*0x5658e9*/
+  this->q014 = (unsigned int *)((int)v4);
   LABEL_14:
   v13 = &this->LevelAndPassabilityStruct2pointer_70; /*0x5658f3*/
   v26 = &this->q080; /*0x5658ff*/
@@ -733,7 +733,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
     v15 = v14; /*0x56591d*/
     if ( v14 ) /*0x565924*/
     {
-      v14[1] = Cell::DecodeFlags; /*0x56592f*/
+      v14[1] = (unsigned int *)(Cell::DecodeFlags);
       v14[2] = 256; /*0x565936*/
       v14[3] = 20; /*0x56593d*/
       v16 = operator new(0x1804u); /*0x565940*/
@@ -759,7 +759,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
       {
         v20 = 0; /*0x565992*/
       }
-      v21 = v15[2]; /*0x565994*/
+      v21 = (unsigned int)(v15[2]);
       *v15 = v20; /*0x565997*/
       v22 = 0; /*0x565999*/
       if ( v21 > 0 ) /*0x56599d*/

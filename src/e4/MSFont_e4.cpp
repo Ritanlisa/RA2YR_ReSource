@@ -50,7 +50,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = operator new(8 * a2); /*0x5d55c7*/
+      v6 = (unsigned int *)(operator new(8 * a2));
       if ( v6 ) /*0x5d55d1*/
       {
         v7 = v6; /*0x5d55d6*/
@@ -128,7 +128,7 @@ void MSFont_18::ClearBuffer()
 {
   void *v2; // eax
 
-  v2 = this->Items; /*0x5d5086*/
+  v2 = (void *)(this->Items);
   this->q010 = 0; /*0x5d5089*/
   if ( v2 && this->IsAllocated ) /*0x5d5090*/
   {
@@ -165,7 +165,7 @@ void MSFont_18::Destroy()
 {
   void *v2; // eax
 
-  v2 = this->Items; /*0x5d50e6*/
+  v2 = (void *)(this->Items);
   this->q010 = 0; /*0x5d50e9*/
   if ( v2 && this->IsAllocated ) /*0x5d50f0*/
   {
@@ -227,7 +227,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d519c*/
   {
-    this->IsInitialized = 0; /*0x5d51a6*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x5d51ac*/
       v4 = a3; /*0x5d51c2*/
     else
@@ -248,7 +248,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
           this->Items = 0; /*0x5d520e*/
         }
       }
-      this->Items = v4; /*0x5d5217*/
+      this->Items = (unsigned int)(v4);
       this->Capacity = a2; /*0x5d521f*/
       this->IsAllocated = a3 == 0; /*0x5d5222*/
       return 1; /*0x5d5228*/
@@ -325,7 +325,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d52dc*/
   {
-    this->IsInitialized = 0; /*0x5d52e2*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x5d52e8*/
       v4 = a3; /*0x5d52fe*/
     else
@@ -346,7 +346,7 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
         this->Items = 0; /*0x5d5341*/
       }
     }
-    this->Items = v4; /*0x5d534a*/
+    this->Items = (unsigned int)(v4);
     this->q008 = a2; /*0x5d5352*/
     this->IsAllocated = a3 == 0; /*0x5d5355*/
   }
@@ -413,7 +413,7 @@ VectorClass_flat * MSFont_18::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x5d56f8*/
     this->Items = 0; /*0x5d5700*/
   }
-  this->IsAllocated = 0; /*0x5d570b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->Capacity = 0; /*0x5d5711*/
   if ( (a2 & 1) != 0 ) /*0x5d5718*/
     RA2_OPDEL(); /*0x5d571b*/
@@ -433,7 +433,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(char a2)
     RA2_OPDEL(v3); /*0x5d5748*/
     this->Items = 0; /*0x5d5750*/
   }
-  this->IsAllocated = 0; /*0x5d575b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x5d5761*/
   if ( (a2 & 1) != 0 ) /*0x5d5768*/
     RA2_OPDEL(); /*0x5d576b*/

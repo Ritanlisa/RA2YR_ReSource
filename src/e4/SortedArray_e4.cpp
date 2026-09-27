@@ -28,7 +28,7 @@ int SortedArray::BinarySearch(CCINIClass * aP1)
       this->q010 = 0; /*0x52b648*/
       this->q00C = 1; /*0x52b64f*/
     }
-    v4 = *this; /*0x52b659*/
+    v4 = (int)(*this);
     v5 = *aP1; /*0x52b65b*/
     v6 = (int)this->q004; /*0x52b65d*/
     if ( v6 <= 0 ) /*0x52b662*/
@@ -133,7 +133,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     this->q010 = 0; /*0x5388ca*/
     this->q00C = 1; /*0x5388d1*/
   }
-  v4 = this->q004; /*0x5388d9*/
+  v4 = (int)(this->q004);
   v5 = *(unsigned int **)this; /*0x5388e0*/
   v15 = *aP1; /*0x5388e4*/
   if ( v4 <= 0 ) /*0x5388e8*/
@@ -151,7 +151,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   }
   if ( v6 != v15 ) /*0x538907*/
   {
-    v5 = v7 + 8; /*0x538909*/
+    v5 = (unsigned int *)(v7 + 8);
     v4 += -1 - v4 / 2; /*0x538911*/
     goto LABEL_9; /*0x538911*/
   }
@@ -166,7 +166,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     v12 = ((unsigned int)(this->u32_20)) * i++; /*0x538940*/
     *(unsigned int *)(v12 - 8) = v11; /*0x538944*/
   }
-  v13 = *(unsigned int **)this; /*0x538957*/
+  v13 = (gamemd::ObjectClass **)(*(unsigned int **)this);
   v14 = this->q004 - 1; /*0x538959*/
   this->q004 = v14; /*0x53895c*/
   v13[2 * v14] = 0; /*0x53895f*/
@@ -217,7 +217,7 @@ int SortedArray::FindPair(int * a2)
   }
   if ( v9 != v7 ) /*0x5389ee*/
   {
-    v8 = v10 + 8; /*0x5389f0*/
+    v8 = (unsigned int *)(v10 + 8);
     v6 += -1 - v6 / 2; /*0x5389f8*/
     goto LABEL_12; /*0x5389f8*/
   }

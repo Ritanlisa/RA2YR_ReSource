@@ -85,16 +85,16 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
         if ( v27 ) /*0x71ec51*/
           return 0; /*0x71ec51*/
       }
-      return 1; /*0x71ec60*/
+      return (gamemd::DynamicVector **)(1);
     case 14: /*0x71e964*/
       if ( *((unsigned int *)g_ScenarioClass_Instance + 1146) == -1 ) /*0x71ebf6*/
-        return 0; /*0x71ebf6*/
+        return (gamemd::DynamicVector **)(0);
       v24 = *((unsigned int *)g_ScenarioClass_Instance + 1146); /*0x71ebfc*/
-      v25 = *((unsigned int *)g_ScenarioClass_Instance + 1148); /*0x71ec02*/
+      v25 = (gamemd::DynamicVector **)(*((unsigned int *)g_ScenarioClass_Instance + 1148));
       if ( v24 == -1 ) /*0x71ec0b*/
-        return !v25; /*0x71ec0b*/
+        return (gamemd::DynamicVector **)(!v25);
       if ( (int)g_CurrentFrame - v24 >= v25 ) /*0x71ec17*/
-        return 1; /*0x71ec17*/
+        return (gamemd::DynamicVector **)(1);
       v25 -= (int)g_CurrentFrame - v24; /*0x71ec1d*/
       return !v25; /*0x71ec21*/
     case 27: /*0x71e964*/
@@ -155,7 +155,7 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
         if ( --v16 < 0 ) /*0x71ea22*/
           return 0; /*0x71ea2d*/
       }
-      return 1; /*0x71ea1b*/
+      return (gamemd::DynamicVector **)(1);
     case 61: /*0x71e964*/
       v18 = -1; /*0x71ea36*/
       v19 = dword_A8EB10 - 1; /*0x71ea39*/
@@ -174,7 +174,7 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
           goto LABEL_22; /*0x71ea8e*/
         }
       }
-      v18 = v19; /*0x71ea90*/
+      v18 = (gamemd::DynamicVector **)(v19);
   LABEL_22:
       if ( v18 >= dword_A8EB10 || v18 < 0 ) /*0x71eaa0*/
         return 0; /*0x71eaa0*/
@@ -306,7 +306,7 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
         case 34: /*0x71ecd6*/
           if ( a2 == 34 ) /*0x71edc6*/
           {
-            WorldCoords = Cell::GetWorldCoords((int16_t *)g_ScenarioClass_Instance, v55, *(&this->vtable23)); /*0x71eddb*/
+            WorldCoords = (int *)(Cell::GetWorldCoords((int16_t *)g_ScenarioClass_Instance, v55, *(&this->vtable23)));
             v32 = *WorldCoords; /*0x71ede0*/
             v33 = WorldCoords[1]; /*0x71ede6*/
             v34 = WorldCoords[2]; /*0x71edeb*/
@@ -321,7 +321,7 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
                     (double)(v37 - v32) * (double)(v37 - v32)
                   + (double)(v38 - v34) * (double)(v38 - v34)
                   + (double)(v36 - v33) * (double)(v36 - v33));
-            return (int)Math::RoundToInt(v39) <= 1280; /*0x71ee54*/
+            return (gamemd::DynamicVector **)((int)Math::RoundToInt(v39) <= 1280);
           }
           return 0; /*0x71edc6*/
       }
@@ -464,7 +464,7 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
             return 1;
         }
       }
-      return 1;
+      return (gamemd::DynamicVector **)(1);
   }
 }
 }

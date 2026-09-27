@@ -97,7 +97,7 @@ int DSurface::Destroy()
   int v3; // eax
   unsigned char (*)[4] result;
 
-  v2 = this->q018; /*0x4ba6b6*/
+  v2 = (unsigned int)(this->q018);
   *(unsigned int *)this = &DSurface_Vtable; /*0x4ba6b9*/
   if ( v2 ) /*0x4ba6c1*/
   {
@@ -174,14 +174,14 @@ unsigned int * DSurface::CreatePrimary()
   {
     g_DDraw_UseHWBlit = 0; /*0x4ba7c1*/
   }
-  v3 = g_Str_false; /*0x4ba7d8*/
+  v3 = (unsigned int *)(g_Str_false);
   LABEL_8:
   Debug::Log("DSurface::AllowHWFill = %s\n", v3); /*0x4ba7dd*/
   v4 = operator new(0x24u); /*0x4ba7ea*/
   v4 = v4; /*0x4ba7ef*/
   if ( v4 ) /*0x4ba7f8*/
   {
-    v4[1] = 0; /*0x4ba7fc*/
+    v4[1] = (unsigned int)(0);
     v4[2] = 0; /*0x4ba7ff*/
     v4[3] = 0; /*0x4ba802*/
     v4[4] = 0; /*0x4ba805*/

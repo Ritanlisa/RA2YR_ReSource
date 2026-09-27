@@ -20,7 +20,7 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
 
   if ( *(&this->q0082) ) /*0x473ae3*/
   {
-    v4 = *this; /*0x473aeb*/
+    v4 = (int)(*this);
     v5 = this->vt_slot_4(); /*0x473aed*/
     this->vt_slot_64(13, 0, v5); /*0x473af7*/
   }
@@ -50,7 +50,7 @@ int FileClass::Open(int a2)
     return 1; /*0x65cc0b*/
   if ( !a2 ) /*0x65cc17*/
   {
-    FileA = CreateFileA((LPCSTR)this->q018, 0x80000000, 1u, 0, 3u, 0x80u, 0); /*0x65cc59*/
+    FileA = (int)(CreateFileA((LPCSTR)this->q018, 0x80000000, 1u, 0, 3u, 0x80u, 0));
     this->q014 = (int)FileA; /*0x65cc62*/
     if ( FileA == (HANDLE)-1 ) /*0x65cc65*/
       return 0; /*0x65cc6b*/
@@ -69,7 +69,7 @@ int FileClass::Open(int a2)
       this->q014 = -1; /*0x65cc8d*/
       return 1; /*0x65cc8d*/
     }
-    v4 = *this; /*0x65cc3e*/
+    v4 = (int)(*this);
     v7 = this->q018; /*0x65cc40*/
   LABEL_12:
     LastError = GetLastError(); /*0x65cc7f*/
@@ -110,7 +110,7 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
   }
   else
   {
-    v6 = this->vt_slot_40(0, 1); /*0x65cd27*/
+    v6 = (gamemd::AbstractClass *)(this->vt_slot_40(0, 1));
     v7 = aP2; /*0x65cd2d*/
     if ( aP2 >= this->q010 - v6 ) /*0x65cd35*/
       v7 = this->q010 - v6; /*0x65cd37*/
@@ -244,7 +244,7 @@ int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
                 v18 = SetFilePointer((HANDLE)this->FileTimeDateLo, v17, 0, 0); /*0x65d030*/
                 if ( v18 == -1 ) /*0x65d035*/
                 {
-                  v19 = *this; /*0x65d03a*/
+                  v19 = (int)(*this);
                   v26 = this->FileNameAllocated; /*0x65d03c*/
                   LastError = GetLastError(); /*0x65d03f*/
                   this->StubReturnFalse(LastError, 0, v26); /*0x65d048*/
@@ -260,7 +260,7 @@ int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
             }
             return result; /*0x65d024*/
           }
-          v14 = *this; /*0x65cfde*/
+          v14 = (int)(*this);
           v25 = this->FileNameAllocated; /*0x65cfe0*/
           v15 = GetLastError(); /*0x65cfe3*/
           this->StubReturnFalse(v15, 0, v25); /*0x65cfec*/
@@ -272,7 +272,7 @@ int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
         v13 = 0; /*0x65cfef*/
         goto LABEL_26; /*0x65cfef*/
       }
-      v9 = *this; /*0x65cf95*/
+      v9 = (int)(*this);
       v24 = this->FileNameAllocated; /*0x65cf97*/
       v10 = GetLastError(); /*0x65cf9a*/
       this->StubReturnFalse(v10, 0, v24); /*0x65cfa3*/
@@ -305,7 +305,7 @@ int FileClass::Seek(LONG lDistanceToMove, DWORD dwMoveMethod)
     result = SetFilePointer((HANDLE)this->FileTimeDateLo, lDistanceToMove, 0, v21); /*0x65d0a5*/
     if ( result == -1 ) /*0x65d0ae*/
     {
-      v22 = *this; /*0x65d0b3*/
+      v22 = (int)(*this);
       v27 = this->FileNameAllocated; /*0x65d0b5*/
       v23 = GetLastError(); /*0x65d0b8*/
       this->StubReturnFalse(v23, 0, v27); /*0x65d0c1*/
@@ -341,7 +341,7 @@ unsigned int * FileClass::loc_401950(char a2)
     BufferIOFileClass::Dtor();
     if ( (a2 & 1) != 0 )
     RA2_OPDEL();
-    return this;
+    return (unsigned int *)(this);
 }
 } // namespace gamemd
 
@@ -363,13 +363,13 @@ char FileClass::Stub(int a1)
 namespace gamemd {
 int FileClass::GetState()
 {
-  return this->q004; /*0x76f023*/
+  return (int)(this->q004);
 }
 } // namespace gamemd
 // 0x76F070
 namespace gamemd {
 int FileClass::SetState()
 {
-  return this->q004; /*0x76f073*/
+  return (int)(this->q004);
 }
 } // namespace gamemd

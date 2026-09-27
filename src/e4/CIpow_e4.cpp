@@ -14,7 +14,7 @@
 
 // 0x7C8FD2
 namespace gamemd {
-void CIpow_Helper()
+void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
 {
 // local variable allocation has failed, the output may be wrong!
 {

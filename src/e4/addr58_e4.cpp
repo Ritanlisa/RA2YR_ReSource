@@ -31,6 +31,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Tactical_e4.hpp"
 
 // 0x5835D0
 namespace gamemd {
@@ -60,7 +61,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
   v3 = *aP1 + (aP1[1] << 9); /*0x5835e1*/
   if ( v3 < 0x40000 && (v4 = *(int **)(g_Shroud_CellArray + 4 * v3)) != 0 ) /*0x5835f7*/
   {
-    v5 = v4; /*0x5835f9*/
+    v5 = (unsigned int)(v4);
   }
   else
   {
@@ -69,7 +70,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
   }
   if ( (v5[80] & 0x100) != 0 ) /*0x583618*/
   {
-    v7 = -((v5[80] & 0x800) != 0); /*0x583631*/
+    v7 = (IUnknown *)(-((v5[80] & 0x800) != 0));
     IDA_LOBYTE(v7) = v7 & 0xFE; /*0x583634*/
     v8 = v7 + 4; /*0x583637*/
     NeighbourContent = v5; /*0x58363b*/
@@ -84,13 +85,13 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
     {
       if ( (*v10 & 0x100) != 0 ) /*0x58366b*/
       {
-        NeighbourContent = (int *)Cell::GetNeighbourContent(NeighbourContent, v8); /*0x583675*/
+        NeighbourContent = (unsigned int *)((int *)Cell::GetNeighbourContent(NeighbourContent, v8));
         v10 = NeighbourContent + 80; /*0x583680*/
         if ( (NeighbourContent[80] & 0x100) == 0 /*0x5836a5*/
           && (Cell::IsInRange(NeighbourContent) || Cell::IsInRange2(NeighbourContent))
           && NeighbourContent[59] != 3 )
         {
-          aP1 = (int16_t *)NeighbourContent[9]; /*0x5836aa*/
+          aP1 = (IUnknown *)((int16_t *)NeighbourContent[9]);
         }
       }
       if ( (*v11 & 0x100) == 0 ) /*0x5836b3*/
@@ -135,12 +136,12 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
   LABEL_28:
         v13 = v21; /*0x583801*/
     }
-    *a0 = v13; /*0x58380c*/
+    *a0 = (gamemd::VectorClass_flat **)(v13);
     return a0; /*0x583805*/
   }
   else
   {
-    *a0 = v5[9]; /*0x583621*/
+    *a0 = (gamemd::VectorClass_flat **)(v5[9]);
     return a0; /*0x58361a*/
   }
 }
@@ -414,7 +415,7 @@ int MarkCliffEdgePassability(int a1)
           v5 = (unsigned short *)(4 * (*(unsigned short *)(v3 + 2) >= *(unsigned short *)(v3 + 6) ? 0 : 4) + 9041544);
           for ( i = *CellStruct::Add((unsigned short *)v3, &v29, v5); i != *(unsigned int *)(v3 + 4); i = v23 ) /*0x586c71*/
           {
-            v7 = IDA_SHIWORD(i) << 9; /*0x586c92*/
+            v7 = (unsigned int *)(IDA_SHIWORD(i) << 9);
             v8 = v7 + (int16_t)i; /*0x586c95*/
             if ( v8 >= 0x40000 || (v9 = *(unsigned int **)(g_Shroud_CellArray + 4 * v8)) == 0 ) /*0x586cab*/
             {
@@ -427,7 +428,7 @@ int MarkCliffEdgePassability(int a1)
               IDA_HIWORD(v22) = IDA_HIWORD(i); /*0x586cc8*/
               do /*0x586d1b*/
               {
-                v11 = v7 + (int16_t)(v10 + i); /*0x586cd8*/
+                v11 = (unsigned int *)(v7 + (int16_t)(v10 + i));
                 if ( v11 >= 0x40000 || (v12 = *(unsigned int **)(g_Shroud_CellArray + 4 * v11)) == 0 ) /*0x586cef*/
                 {
                   IDA_LOWORD(v22) = v10 + i; /*0x586cd0*/

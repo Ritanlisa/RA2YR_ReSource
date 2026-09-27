@@ -46,7 +46,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   int16_t v15; // dx
   int v16; // ecx
   int v17; // ecx
-  unsigned int v18;
+  IUnknown * v18;
   char v19; // al
   int16_t v20; // cx
   int16_t v21; // ax
@@ -82,7 +82,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   int v51; // eax
   unsigned char *v52; // eax
   int v53; // [esp-8h] [ebp-50h]
-  IUnknown * v54;
+  unsigned int v54;
   int v57; // [esp+1Ch] [ebp-2Ch] BYREF
   char v58[4]; // [esp+20h] [ebp-28h] BYREF
   int v59[5]; // [esp+24h] [ebp-24h] BYREF
@@ -161,7 +161,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   v17 = this->q038; /*0x47d590*/
   if ( v17 != 0xFFFF ) /*0x47d595*/
   {
-    v18 = *((unsigned int *)g_FrameCounter + v17); /*0x47d5ab*/
+    v18 = (IUnknown *)(*((unsigned int *)g_FrameCounter + v17));
     v53 = *(uint8_t *)(&this->u32_702); /*0x47d5ae*/
     v54 = v18; /*0x47d5b1*/
     v19 = House::LoadMapFileData(v53, 0); /*0x47d5b5*/
@@ -222,7 +222,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
           && v18->qB20 != -1
           && *(unsigned int *)(v18 + 724) == *(uint8_t *)(&this->u32_702) )
         {
-          v33 = *v3; /*0x47d9d0*/
+          v33 = (void **)(*v3);
           v34 = *(int16_t *)(&this->u32_C8); /*0x47d9d3*/
           v60 = dword_89E7C0 * this->u32_11B; /*0x47d9e1*/
           v35 = (unsigned int *)Matrix3x4::TransformCell(v61, v54 + 716); /*0x47da03*/

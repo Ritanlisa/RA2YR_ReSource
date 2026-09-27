@@ -18,12 +18,12 @@ unsigned int * E4Recv_7AECD0::sub_7AECD0(int a2, int a3)
   {
     if ( a3 ) /*0x7aecf6*/
     {
-      this->M4 = a3; /*0x7aecf8*/
+      this->M4 = (unsigned int *)(a3);
       return this; /*0x7aecfe*/
     }
-    this->M4 = operator new(4 * a2); /*0x7aed0d*/
+    this->M4 = (unsigned int)(operator new(4 * a2));
     this->M13 = 1; /*0x7aed10*/
   }
-  return this; /*0x7aecfd*/
+  return (unsigned int *)(this);
 }
 } // namespace gamemd

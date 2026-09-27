@@ -610,7 +610,7 @@ int ComputeHashModPrime(int * a1, int * a2, int a3)
 }
 // 0x621040
 namespace gamemd {
-void PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3)
+void PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
   unsigned int *v10; // esi
   int v11; // ebp
@@ -626,7 +626,7 @@ void PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3
   v12 = a3[2] - *a3; /*0x6210ab*/
   v18 = *a3; /*0x6210ad*/
   v13 = ((uint8_t)yTop >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6210b1*/
-      | (IDA_BYTE2(yTop) >> g_BitMask_Red << g_BitShift_Blue)
+      | (IDA_BYTE2(yTop, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9) >> g_BitMask_Red << g_BitShift_Blue)
       | (IDA_BYTE1(yTop) >> g_BitMask_Blue << g_BitMask_Green);
   yTop = a3[1]; /*0x6210b6*/
   v14 = v11 - yTop; /*0x6210ba*/
@@ -654,7 +654,7 @@ double sub_621150(int a1)
   double v5; // st7
   unsigned int v6[3]; // [esp+Ch] [ebp-Ch] BYREF
 
-  result = 1.0; /*0x621153*/
+  result = (unsigned int)(1.0);
   v6[0] = 43; /*0x62115b*/
   v6[1] = 128; /*0x621163*/
   v6[2] = 213; /*0x62116b*/
@@ -705,7 +705,7 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
   unsigned int v22[4]; // [esp+14h] [ebp-10h] BYREF
   int yTopa; // [esp+28h] [ebp+4h]
 
-  v9 = a1; /*0x6211dc*/
+  v9 = (int)(a1);
   if ( !g_DDraw_Active ) /*0x6211e0*/
     return 0; /*0x6211e8*/
   if ( !a7 ) /*0x6211f1*/
@@ -715,7 +715,7 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
   v13 = ((uint8_t)ecx0 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x621259*/
       | (IDA_BYTE1(ecx0) >> g_BitMask_Blue << g_BitMask_Green)
       | (IDA_BYTE2(ecx0) >> g_BitMask_Red << g_BitShift_Blue);
-  yTopa = aP2[1]; /*0x62125e*/
+  yTopa = (int)(aP2[1]);
   v14 = aP2[2]; /*0x621262*/
   v20 = v14; /*0x621267*/
   if ( !a1 ) /*0x62126b*/
@@ -750,7 +750,7 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
       v15 = -1 - v19; /*0x62131f*/
       goto LABEL_21; /*0x62131f*/
   }
-  v16 = *aP2; /*0x621325*/
+  v16 = (int)(*aP2);
   v17 = aP2[1]; /*0x621327*/
   v22[0] = v16; /*0x621332*/
   v22[1] = v17; /*0x621336*/
@@ -826,10 +826,10 @@ AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
   v7 = *(unsigned int **)(v4 + 16); /*0x621528*/
   if ( !v7 ) /*0x62152d*/
   {
-    v7 = operator new(0x20u); /*0x62153a*/
+    v7 = (unsigned int *)(operator new(0x20u));
     if ( v7 ) /*0x621543*/
     {
-      v8 = Rect.bottom + 1; /*0x62154d*/
+      v8 = (unsigned int)(Rect.bottom + 1);
       v9 = Rect.right + 1; /*0x62154e*/
       v7[2] = Rect.bottom + 1; /*0x62154f*/
       v7[1] = v9; /*0x621557*/
@@ -925,7 +925,7 @@ AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
       (*(void (__thiscall **)(unsigned int *))(*v7 + 96))(v7); /*0x62178c*/
     }
   }
-  v20 = v3[1]; /*0x621792*/
+  v20 = (gamemd::AbstractClass **)(v3[1]);
   v21 = *v3; /*0x621799*/
   v35[2] = v3[2]; /*0x62179b*/
   v35[3] = v3[3]; /*0x6217a2*/
@@ -1053,7 +1053,7 @@ void AddDynamicVector(HWND a1, int * a2)
 }
 // 0x622650
 namespace gamemd {
-void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM a3)
+void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2, void * a3)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM a3)
 {
   int v4; // ebp
   int result; // eax

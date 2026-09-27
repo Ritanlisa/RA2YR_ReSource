@@ -672,7 +672,7 @@ struct UnitClass {
     bool q730;  // 0x730
     bool q734;  // 0x734
     unsigned char q738;  // 0x738
-    char q740[4];  // 0x740
+    unsigned int q740;  // 0x740
     float q744;  // 0x744
     char q748[4];  // 0x748
     void* q75C;  // 0x75C
@@ -2151,7 +2151,6 @@ struct UnitClass {
     unsigned int vtable36;
     unsigned int vtable37;
     unsigned int vtable38;
-    unsigned int Construct;
 // --- flat members (END) ---
     void ProcessIdleOrders();
 };

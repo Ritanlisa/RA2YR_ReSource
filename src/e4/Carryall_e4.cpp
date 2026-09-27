@@ -57,7 +57,7 @@ FootClass * * Carryall::MissionStateMachine()
         (*(void (__thiscall **)(int, unsigned int, int))(*(unsigned int *)((char *)&this->q1047 + 457)))(this, 0, 1); /*0x416d8f*/
         goto LABEL_5; /*0x416d97*/
       }
-      v6 = AbstractClass::IsTechnoType(v2); /*0x416dd8*/
+      v6 = (unsigned char *)(AbstractClass::IsTechnoType(v2));
       if ( !v6 ) /*0x416ddc*/
         goto LABEL_18; /*0x416ddc*/
       if ( this->q046 ) /*0x416de2*/

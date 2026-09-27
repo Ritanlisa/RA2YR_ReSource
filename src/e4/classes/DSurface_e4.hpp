@@ -1014,6 +1014,7 @@ struct DSurface {
     unsigned char q6994;  // 0x6994
     unsigned char q7000;  // 0x7000
     unsigned char q7004;  // 0x7004
+    unsigned int Unlock;
 // --- flat members (END) ---
     AbstractClass * * Construct(void* aP1, DSurface * aP2, ObjectClass * aP3, char a5);
     AbstractClass * * Process(void* aP1, int * a2);

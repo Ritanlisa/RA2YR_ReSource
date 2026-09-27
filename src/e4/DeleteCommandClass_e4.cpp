@@ -23,7 +23,7 @@ unsigned int * DeleteCommandClass::Constructor()
 // 0x537F20
 char * DeleteCommandClass::AddRef()
 {
-  return aDelete; /*0x537f25*/
+  return (char *)(aDelete);
 }
 // 0x537F30
 wchar_t * DeleteCommandClass::Release()
@@ -116,7 +116,7 @@ char DeleteCommandClass_28::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x53c56c*/
   {
-    this->q00C = 0; /*0x53c576*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x53c57c*/
       v4 = a3; /*0x53c592*/
     else
@@ -214,7 +214,7 @@ char DeleteCommandClass_28::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x53c6ac*/
   {
-    this->q00C = 0; /*0x53c6b2*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x53c6b8*/
       v4 = a3; /*0x53c6ce*/
     else
@@ -282,7 +282,7 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x53c798*/
     this->q004 = 0; /*0x53c7a0*/
   }
-  this->IsAllocated = 0; /*0x53c7ab*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->q008 = 0; /*0x53c7b1*/
   if ( (a2 & 1) != 0 ) /*0x53c7b8*/
     RA2_OPDEL(); /*0x53c7bb*/
@@ -302,7 +302,7 @@ DynamicVector * DeleteCommandClass_28::Constructor(char a2)
     RA2_OPDEL(v3); /*0x53c7e8*/
     this->q004 = 0; /*0x53c7f0*/
   }
-  this->IsAllocated = 0; /*0x53c7fb*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x53c801*/
   if ( (a2 & 1) != 0 ) /*0x53c808*/
     RA2_OPDEL(); /*0x53c80b*/

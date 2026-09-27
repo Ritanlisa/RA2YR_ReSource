@@ -48,7 +48,7 @@ int AirstrikeClass::SpawnAircraft(int * a2)
   {
     v5 = this->AirstrikeClass_field_24; /*0x41d8b9*/
   }
-  v7 = (unsigned int *)(*(int (__thiscall **)(int *, unsigned int *))(*a2 + 72))(a2, v18); /*0x41d8c9*/
+  v7 = (int)((unsigned int *)(*(int (__thiscall **)(int *, unsigned int *))(*a2 + 72))(a2, v18));
   IDA_LOWORD(v19) = *v7 / 256; /*0x41d8dc*/
   IDA_HIWORD(v19) = v7[1] / 256; /*0x41d8f5*/
   v19 = v19; /*0x41d902*/
@@ -70,13 +70,13 @@ int AirstrikeClass::SpawnAircraft(int * a2)
       v18[2] = v11[2]; /*0x41d961*/
       result = StartAudioControllerAt(g_RulesClass_Instance->IonBlast, (int)v18, 0); /*0x41d96b*/
     }
-    this->u32_50 = a2; /*0x41d972*/
+    this->u32_50 = (unsigned int)(a2);
     if ( a2 ) /*0x41d975*/
     {
       result = (*(int (__thiscall **)(int *))(*a2 + 44))(a2); /*0x41d97f*/
       if ( result == 6 ) /*0x41d985*/
       {
-        v12 = *a2; /*0x41d98b*/
+        v12 = (int)(*a2);
         a2[165] = this; /*0x41d994*/
         (*(void (__thiscall **)(int *, int))(v12 + 348))(a2, 100000); /*0x41d99a*/
         *((unsigned char *)a2 + 1784) = *((unsigned char *)&g_RulesClass_Instance[1].DMisl[12] /*0x41d9b8*/
@@ -150,7 +150,7 @@ int AirstrikeClass::ReassignTarget(int a2)
     this->q050 = 0; /*0x41dac2*/
     if ( v9 ) /*0x41dac9*/
     {
-      v11 = *v9; /*0x41dacb*/
+      v11 = (unsigned int)(*v9);
       v9[165] = this; /*0x41dad4*/
       (*(void (__thiscall **)(unsigned int *, int))(v11 + 348))(v9, 100000); /*0x41dada*/
       (*(void (__thiscall **)(unsigned int *, int))(*v9 + 292))(v9, 2); /*0x41dae6*/
@@ -266,7 +266,7 @@ AbstractClass * * AirstrikeClass::UpdateAll()
     v1 = 0; /*0x420ea1*/
     while ( 1 ) /*0x420ec6*/
     {
-      v2 = v1 % 256 * (v1 / 256); /*0x420ec6*/
+      v2 = (unsigned int *)(v1 % 256 * (v1 / 256));
       v0 = (unsigned int *)((unsigned int)((uint64_t)(2164392969LL * v2) >> 32) >> 31); /*0x420ed6*/
       v3 = v2 / 127; /*0x420ed9*/
       if ( v2 / 127 > 255 ) /*0x420ee1*/
@@ -305,7 +305,7 @@ AbstractClass * * AirstrikeClass::UpdateAll()
     }
     while ( v4 >= 0 ); /*0x420f36*/
   }
-  return (char)v0; /*0x420f38*/
+  return (gamemd::AbstractClass **)((char)v0);
 }
 } // namespace ra2
 
@@ -335,10 +335,10 @@ AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
          dword_889FC0 + dword_889FCC,
          0) )
   {
-    v3 = dword_889FC8++; /*0x41d3e6*/
+    v3 = (gamemd::AirstrikeClass *)(dword_889FC8++);
     *((unsigned int *)dword_889FBC + v3) = this; /*0x41d3f5*/
   }
-  this->AirstrikeClass_field_3C = 0; /*0x41d3fc*/
+  this->AirstrikeClass_field_3C = (gamemd::TechnoClass *)(0);
   this->owner = aP1; /*0x41d3ff*/
   this->AirstrikeClass_field_3D = 0; /*0x41d402*/
   v4 = (*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 132))(aP1); /*0x41d407*/

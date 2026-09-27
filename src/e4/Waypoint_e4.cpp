@@ -23,7 +23,7 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
   unsigned int *Element; // esi
   signed int v10; // [esp+10h] [ebp-4h]
 
-  v2 = 0; /*0x5023b8*/
+  v2 = (char *)(0);
   v10 = 0; /*0x5023bb*/
   for ( i = &this->u32_840; ; i += 4 ) /*0x5023bf*/
   {
@@ -106,7 +106,7 @@ CHAR * Waypoint::To_String(CCINIClass * aP0)
 {
   if ( aP0 == -1 ) /*0x763613*/
   {
-    byte_B72654 = 0; /*0x763615*/
+    byte_B72654 = (CHAR *)(0);
     return &byte_B72654; /*0x76361c*/
   }
   else

@@ -18,7 +18,7 @@ bool Crypto_Helper(unsigned int * a0, unsigned int * a1, unsigned int * a2, Cryp
   result = aP3; /*0x5c6a47*/
   do /*0x5c6a89*/
   {
-    v7 = *a1 + *a2; /*0x5c6a55*/
+    v7 = (unsigned int)(*a1 + *a2);
     v8 = v7 + aP3; /*0x5c6a5d*/
     result = v7 < *a1 || result && !v8; /*0x5c6a6f*/
     *a0 = v8; /*0x5c6a75*/

@@ -45,14 +45,14 @@ int AudioMixer::PlaySample()
   int v19; // eax
   int v20; // ecx
 
-  v2 = this->ptr_8; /*0x4071c7*/
+  v2 = (gamemd::AudioMixer *)(this->ptr_8);
   v3 = this->AudioMixer_field_04; /*0x4071ca*/
   v4 = v2 - v3; /*0x4071cf*/
   if ( v2 == v3 ) /*0x4071d1*/
     return 0; /*0x40729e*/
   if ( (*(unsigned char *)this & 1) != 0 ) /*0x4071da*/
   {
-    this->AudioMixer_field_04 = v2; /*0x4071dc*/
+    this->AudioMixer_field_04 = (int)(v2);
     v5 = *this; /*0x4071df*/
     IDA_LOBYTE(v5) = *this | 2; /*0x4071e1*/
     *(unsigned int *)this = v5; /*0x4071e3*/
@@ -60,7 +60,7 @@ int AudioMixer::PlaySample()
   }
   else
   {
-    v7 = Audio::Callback(); /*0x4071f2*/
+    v7 = (void *)(Audio::Callback());
     v8 = this->q018; /*0x4071f7*/
     v9 = this->q01C; /*0x4071fa*/
     v7 = v7; /*0x4071fd*/
@@ -77,7 +77,7 @@ int AudioMixer::PlaySample()
     {
       if ( v16 <= v4 ) /*0x407269*/
       {
-        v20 = v16 + this->AudioMixer_field_04; /*0x407287*/
+        v20 = (int)(v16 + this->AudioMixer_field_04);
         v19 = *this; /*0x407289*/
         IDA_LOBYTE(v19) = *this | 2; /*0x40728b*/
         this->AudioMixer_field_04 = v20; /*0x40728d*/
@@ -95,7 +95,7 @@ int AudioMixer::PlaySample()
     {
       if ( v16 <= -v4 ) /*0x407233*/
       {
-        v18 = this->AudioMixer_field_04 - v16; /*0x407251*/
+        v18 = (int)(this->AudioMixer_field_04 - v16);
         v17 = *this; /*0x407253*/
         IDA_LOBYTE(v17) = *this | 2; /*0x407255*/
         this->AudioMixer_field_04 = v18; /*0x407257*/

@@ -68,7 +68,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
        || (*(uint8_t (__thiscall **)(LPARAM))(*(unsigned int *)v5 + 188))(v5))
       && (!v8 || (*(uint8_t (__thiscall **)(LPARAM))(*(unsigned int *)v5 + 64))(v5)) )
     {
-      v6 = WideString::GetOrEmpty_Alt((wchar_t **)(v5 + 32)); /*0x5d6271*/
+      v6 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)(v5 + 32)));
       v7 = SendMessageA(hWnd, 0x4CDu, 0, (LPARAM)v6); /*0x5d6280*/
       if ( *(unsigned int *)(v5 + 40) == a2 ) /*0x5d628b*/
         SendMessageA(hWnd, 0x186u, v7, 0); /*0x5d6296*/
@@ -423,7 +423,7 @@ int SkirmishSetup::PlayButtonClickAnim()
     if ( !v2 ) /*0x6082b6*/
       return 0; /*0x6082b6*/
   }
-  v4 = v2 + 1; /*0x6082c2*/
+  v4 = (unsigned int *)(v2 + 1);
   if ( !v4 ) /*0x6082c7*/
     return 0; /*0x6082c7*/
   v5 = *((unsigned char *)v4 + 189) && v4[44] == 1; /*0x6082d1*/
@@ -478,7 +478,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
     ComPtr::Dtor(g_UIControlState); /*0x5e85f3*/
     RA2_OPDEL(v2); /*0x5e85f9*/
   }
-  v3 = operator new(4u); /*0x5e8603*/
+  v3 = (int)(operator new(4u));
   if ( v3 ) /*0x5e860d*/
     v4 = (void *)unknown_libname_27(v3); /*0x5e8611*/
   else
@@ -503,7 +503,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
            dword_A8B8D0 + dword_A8B8DC,
            0) )
     {
-      v9 = g_MultiplayerOptions++; /*0x5e86d2*/
+      v9 = (wchar_t *)(g_MultiplayerOptions++);
       *(unsigned int *)(g_MultiplayerGameState + 4 * v9) = v8; /*0x5e86e1*/
     }
     RA2_OPDEL(v6); /*0x5e86e5*/

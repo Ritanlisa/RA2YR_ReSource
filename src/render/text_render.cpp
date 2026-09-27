@@ -59,7 +59,7 @@ bool TextRenderer::Init(int max_width, int max_height)
     return true;
 }
 
-void TextRenderer::Shutdown()
+void TextRenderer::Shutdown(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8)
 {
     if (m_old_bmp) { SelectObject(m_hdc, m_old_bmp); m_old_bmp = nullptr; }
     if (m_bmp)     { DeleteObject(m_bmp); m_bmp = nullptr; }
@@ -118,7 +118,7 @@ void TextRenderer::DrawText(DSurface* target, int x, int y,
            a8,
            1);
   }
-  *a1 = *v9; /*0x4a6351*/
+  *a1 = (int *)(*v9);
   a1[1] = v9[1]; /*0x4a6356*/
   return a1; /*0x4a634e*/
 }

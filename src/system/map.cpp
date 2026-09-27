@@ -313,7 +313,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
   double v45; // [esp+30h] [ebp-18h]
   double v46; // [esp+40h] [ebp-8h]
 
-  v4 = *end; /*0x5880b1*/
+  v4 = (int)(*end);
   v5 = *start; /*0x5880b4*/
   if ( *start != *end || start[1] != end[1] || start[2] != end[2] )
   {
@@ -360,7 +360,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
     }
     else
     {
-      v14 = start[1]; /*0x5881d8*/
+      v14 = (int)(start[1]);
       v15 = end[1]; /*0x5881ec*/
       v16 = v15 / 256; /*0x588202*/
       v41 = v15 / 256; /*0x588208*/
@@ -520,7 +520,7 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
   char v53; // [esp+54h] [ebp+4h]
   int v54; // [esp+60h] [ebp+10h]
 
-  v46 = coords[2] / g_MapRenderState; /*0x5678f9*/
+  v46 = (int)(coords[2] / g_MapRenderState);
   v9 = *coords; /*0x5678ff*/
   v10 = coords[1]; /*0x567901*/
   v11 = coords[2]; /*0x567904*/
@@ -567,7 +567,7 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
     result = 10; /*0x567a54*/
     radius = 10; /*0x567a59*/
   }
-  v21 = dword_7ED3D0[result]; /*0x567a63*/
+  v21 = (int *)(dword_7ED3D0[result]);
   v43 = dword_ABD490; /*0x567a6a*/
   v22 = &dword_ABCF60; /*0x567a72*/
   if ( !IDA_BYTE2(g_RulesClass_Instance[1].IonCannonDamage) && arg4 && result > 2 ) /*0x567a8c*/
@@ -615,7 +615,7 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
     v45 = v27 + 1; /*0x567b24*/
     while ( 1 ) /*0x567b37*/
     {
-      v28 = v43++; /*0x567b37*/
+      v28 = (_DWORD)(v43++);
       v29 = *(_WORD *)v28 + v16; /*0x567b43*/
       v30 = v17 + *((_WORD *)v28 + 1); /*0x567b4a*/
       v31 = *(&this->q0181); /*0x567b4f*/

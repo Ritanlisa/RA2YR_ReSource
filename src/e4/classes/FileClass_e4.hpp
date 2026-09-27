@@ -106,7 +106,6 @@ struct FileClass {
     unsigned int vt_slot_40;
     unsigned int vt_slot_52;
     unsigned int vt_slot_64;
-    unsigned int OpenWithCDSearch;
 // --- flat members (END) ---
     char Stub(int a1);
     int Close();

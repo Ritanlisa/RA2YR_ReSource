@@ -83,7 +83,7 @@ void E4Recv_771890::sub_771890()
 }
 // 0x7741C0
 namespace gamemd {
-int E4Recv_7741C0::FindRegistrySubKey()
+int E4Recv_7741C0::FindRegistrySubKey(void * a1, void * a2, void * a3)
 {
   DWORD v4; // ebx
   unsigned char *v5; // esi
@@ -120,7 +120,7 @@ int E4Recv_7741C0::FindRegistrySubKey()
   {
     return 0; /*0x7742cf*/
   }
-  v4 = cbMaxSubKeyLen + 16; /*0x77421f*/
+  v4 = (unsigned char *)(cbMaxSubKeyLen + 16);
   v5 = operator new(cbMaxSubKeyLen + 16); /*0x77422c*/
   lpClass = (LPSTR)operator new(cbMaxClassLen + 1); /*0x774235*/
   v6 = 0; /*0x774240*/
@@ -163,7 +163,7 @@ void ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
   LONG v9; // ecx
   struct tagRECT Rect; // [esp+8h] [ebp-10h] BYREF
 
-  result = GetWindowRect(hWnd, lpRect); /*0x775699*/
+  result = (BOOL)(GetWindowRect(hWnd, lpRect));
   v4 = result; /*0x77569f*/
   if ( result ) /*0x7756a3*/
   {
@@ -185,7 +185,7 @@ void ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
 }
 // 0x775700
 namespace gamemd {
-const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * aP0, HWND a2, HWND hWndParent, DLGPROC lpDialogFunc, int a5)
+const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * aP0, HWND a2, HWND hWndParent, DLGPROC lpDialogFunc, int a5, void * a1, void * a3, void * a4)
 {
   int v5; // eax
   HWND *v6; // edi
@@ -248,7 +248,7 @@ void Dialog_Close(HWND a1, int a2)
     if ( !a1 ) /*0x7757fe*/
       return 0; /*0x775801*/
   }
-  v3 = 0; /*0x775806*/
+  v3 = (int *)(0);
   if ( g_DialogTrackingList <= 0 ) /*0x77580a*/
     return 0; /*0x77580a*/
   for ( i = dword_B72D28; (HWND)*i != a1; i += 2 ) /*0x77580c*/
@@ -277,7 +277,7 @@ void Dialog_Close(HWND a1, int a2)
   g_DialogTrackingList = v5; /*0x775875*/
   if ( v5 ) /*0x77587d*/
   {
-    v8 = *(&g_ClipboardBuffer + 2 * v5); /*0x77587f*/
+    v8 = (unsigned int)(*(&g_ClipboardBuffer + 2 * v5));
     v9 = dword_B72D24[2 * v5]; /*0x775886*/
     SetForegroundWindow(v8); /*0x77588e*/
     InvalidateRect(v8, 0, 0); /*0x775897*/
@@ -373,7 +373,7 @@ int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
 {
   unsigned int v5;
   int v6; // ebp
-  const unsigned int v8;
+  const char * v8;
   int result; // eax
   int v10; // edx
   int v11; // eax
@@ -404,7 +404,7 @@ int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
   LABEL_11:
     if ( a1 ) /*0x775e77*/
     {
-      result = Render_Render_7760B0(a1, a3, a4, a5); /*0x775eb6*/
+      result = (int)(Render_Render_7760B0(a1, a3, a4, a5));
       v10 = result; /*0x775ebb*/
       v29 = result; /*0x775ebf*/
       if ( result ) /*0x775ec3*/
@@ -485,7 +485,7 @@ int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
   }
   else
   {
-    v8 = dword_B72F40; /*0x775dcf*/
+    v8 = (const char *)(dword_B72F40);
     v28 = (char *)dword_B72F40; /*0x775dd5*/
     while ( 1 ) /*0x775dd9*/
     {

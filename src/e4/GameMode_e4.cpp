@@ -86,7 +86,7 @@ unsigned int GameMode::ReadFlagsFromINI(CCINIClass * aP1)
     v16 = INIClass::ReadBool_Overwrite(off_8401CC, aTiberiumspread, (v15 & 0x80) != 0); /*0x6b8dfd*/
     v17 = *this; /*0x6b8e02*/
     IDA_LOBYTE(v17) = *this & 0x7F; /*0x6b8e0a*/
-    v18 = v17 | ((v16 & 1) << 7); /*0x6b8e0d*/
+    v18 = (int)(v17 | ((v16 & 1) << 7));
     *(unsigned int *)this = v18; /*0x6b8e11*/
     v19 = INIClass::ReadBool_Overwrite(off_8401CC, aDestroyablebri, (v18 & 0x8000) != 0); /*0x6b8e25*/
     v20 = *this; /*0x6b8e2a*/

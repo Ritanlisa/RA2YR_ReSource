@@ -19,12 +19,12 @@
 namespace gamemd {
 void * TextRenderer::GetInstance()
 {
-  return g_FogOfWarState; /*0x4a60d5*/
+  return (void *)(g_FogOfWarState);
 }
 }
 // 0x4B96A0
 namespace gamemd {
-void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8)
+void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8, void * a4, void * a5, void * a9)
 {
   int v11; // esi
   int v12; // eax
@@ -169,10 +169,10 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
   }
   else
   {
-    this->u32_68 = a2; /*0x642dc4*/
+    this->u32_68 = (unsigned int)(a2);
     this->u32_6C = aP2; /*0x642dc7*/
   }
-  this->u32_50 = aP3; /*0x642dd6*/
+  this->u32_50 = (unsigned char)(aP3);
   this->u8_70 = aP4; /*0x642dd9*/
   this->u8_71 = a6; /*0x642ddc*/
   return a6; /*0x642ddf*/
@@ -180,7 +180,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
 }
 // 0x642EF0
 namespace gamemd {
-void * TextRenderer::MeasureBuilding2()
+void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4)
 {
   unsigned int *FoundationSize; // eax
   int v5; // ebp
@@ -214,7 +214,7 @@ void * TextRenderer::MeasureBuilding2()
       v6 = (*(int (__thiscall **)(int))(*(unsigned int *)v8 + 128))(v8); /*0x642f50*/
     }
   }
-  Instance = TextRenderer::GetInstance(); /*0x642f5c*/
+  Instance = (unsigned int)(TextRenderer::GetInstance());
   v10 = v17; /*0x642f5e*/
   v19 = 15; /*0x642f62*/
   do /*0x642f86*/

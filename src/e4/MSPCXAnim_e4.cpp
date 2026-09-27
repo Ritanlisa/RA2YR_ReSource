@@ -37,7 +37,7 @@ AbstractClass * * MSPCXAnim_42::AllocCopyData_8B(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = operator new(8 * a2); /*0x5d09e6*/
+      v5 = (unsigned int *)(operator new(8 * a2));
       if ( v5 ) /*0x5d09f0*/
         v6 = v5; /*0x5d09f5*/
       else
@@ -317,7 +317,7 @@ char MSPCXAnim_42::AllocCopyData_4B(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d0c6c*/
   {
-    this->q00C = 0; /*0x5d0c72*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x5d0c78*/
       v4 = a3; /*0x5d0c8e*/
     else
@@ -384,7 +384,7 @@ char MSPCXAnim_42::AllocCopyData_4B_0(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d0ecc*/
   {
-    this->q00C = 0; /*0x5d0ed2*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x5d0ed8*/
       v4 = a3; /*0x5d0eee*/
     else
@@ -480,7 +480,7 @@ char MSPCXAnim_26::AllocCopyData_4B(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d0fec*/
   {
-    this->q00C = 0; /*0x5d0ff6*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x5d0ffc*/
       v4 = a3; /*0x5d1012*/
     else
@@ -578,7 +578,7 @@ char MSPCXAnim_26::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d112c*/
   {
-    this->q00C = 0; /*0x5d1132*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x5d1138*/
       v4 = a3; /*0x5d114e*/
     else
@@ -674,7 +674,7 @@ char MSPCXAnim_42::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d124c*/
   {
-    this->q00C = 0; /*0x5d1256*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x5d125c*/
       v4 = a3; /*0x5d1272*/
     else
@@ -772,7 +772,7 @@ char MSPCXAnim_26::AllocCopyData_4B_0(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d138c*/
   {
-    this->q00C = 0; /*0x5d1392*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x5d1398*/
       v4 = a3; /*0x5d13ae*/
     else
@@ -840,7 +840,7 @@ char MSPCXAnim_26::AllocCopyData_4B_1(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5d15ec*/
   {
-    this->q00C = 0; /*0x5d15f2*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x5d15f8*/
       v4 = a3; /*0x5d160e*/
     else
@@ -909,7 +909,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_Point2D_(char a2)
     RA2_OPDEL(v3); /*0x5d1728*/
     this->q004 = 0; /*0x5d1730*/
   }
-  this->IsAllocated = 0; /*0x5d173b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x5d1741*/
   if ( (a2 & 1) != 0 ) /*0x5d1748*/
     RA2_OPDEL(); /*0x5d174b*/
@@ -929,7 +929,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MSTextEntry___(char a2)
     RA2_OPDEL(v3); /*0x5d17c8*/
     this->q004 = 0; /*0x5d17d0*/
   }
-  this->IsAllocated = 0; /*0x5d17db*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x5d17e1*/
   if ( (a2 & 1) != 0 ) /*0x5d17e8*/
     RA2_OPDEL(); /*0x5d17eb*/
@@ -949,7 +949,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MapSelection___(char a2)
     RA2_OPDEL(v3); /*0x5d1868*/
     this->q004 = 0; /*0x5d1870*/
   }
-  this->IsAllocated = 0; /*0x5d187b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x5d1881*/
   if ( (a2 & 1) != 0 ) /*0x5d1888*/
     RA2_OPDEL(); /*0x5d188b*/
@@ -969,7 +969,7 @@ VectorClass_flat * MSPCXAnim_26::Constructor_VectorClass_MapStage___(char a2)
     RA2_OPDEL(v3); /*0x5d18b8*/
     this->q004 = 0; /*0x5d18c0*/
   }
-  this->IsAllocated = 0; /*0x5d18cb*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->q008 = 0; /*0x5d18d1*/
   if ( (a2 & 1) != 0 ) /*0x5d18d8*/
     RA2_OPDEL(); /*0x5d18db*/
@@ -989,7 +989,7 @@ DynamicVector * MSPCXAnim_26::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x5d1908*/
     this->q004 = 0; /*0x5d1910*/
   }
-  this->IsAllocated = 0; /*0x5d191b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x5d1921*/
   if ( (a2 & 1) != 0 ) /*0x5d1928*/
     RA2_OPDEL(); /*0x5d192b*/
@@ -1009,7 +1009,7 @@ VectorClass_flat * MSPCXAnim_42::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x5d1958*/
     this->q004 = 0; /*0x5d1960*/
   }
-  this->IsAllocated = 0; /*0x5d196b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->q008 = 0; /*0x5d1971*/
   if ( (a2 & 1) != 0 ) /*0x5d1978*/
     RA2_OPDEL(); /*0x5d197b*/
@@ -1029,7 +1029,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSAnimEntry___(char a2)
     RA2_OPDEL(v3); /*0x5d19a8*/
     this->q004 = 0; /*0x5d19b0*/
   }
-  this->IsAllocated = 0; /*0x5d19bb*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x5d19c1*/
   if ( (a2 & 1) != 0 ) /*0x5d19c8*/
     RA2_OPDEL(); /*0x5d19cb*/
@@ -1049,7 +1049,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSSfxEntry___(char a2)
     RA2_OPDEL(v3); /*0x5d1a48*/
     this->q004 = 0; /*0x5d1a50*/
   }
-  this->IsAllocated = 0; /*0x5d1a5b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x5d1a61*/
   if ( (a2 & 1) != 0 ) /*0x5d1a68*/
     RA2_OPDEL(); /*0x5d1a6b*/

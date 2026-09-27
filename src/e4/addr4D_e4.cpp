@@ -45,7 +45,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
     }
     while ( v2 < g_FootClassConfig ); /*0x4d16bb*/
   }
-  v3 = aP0->q038; /*0x4d16d7*/
+  v3 = (void *)(aP0->q038);
   v16[0] = aP0->q034 / 256; /*0x4d16df*/
   v16[1] = v3 / 256; /*0x4d16e4*/
   v17 = *(unsigned int *)v16; /*0x4d16f3*/
@@ -68,7 +68,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
         v7 = v6 + 1; /*0x4d177a*/
         for ( i = g_MissionState; v7 < (int)g_MissionState; i = g_MissionState ) /*0x4d1784*/
         {
-          v9 = (char *)g_MissionPool + 8 * v7++; /*0x4d178c*/
+          v9 = (unsigned int *)((char *)g_MissionPool + 8 * v7++);
           *(v9 - 2) = *v9; /*0x4d1792*/
           *(v9 - 1) = v9[1]; /*0x4d1798*/
         }
@@ -105,7 +105,7 @@ void* DestructFoggedObjectClass(FoggedObjectClass * aP0)
       aP0->q048,
       aP0->q04C,
       0);
-  v14 = aP0->q060; /*0x4d1852*/
+  v14 = (void *)(aP0->q060);
   if ( v14 && aP0->u8_69 ) /*0x4d1860*/
   {
     RA2_OPDEL(v14); /*0x4d1866*/
@@ -688,7 +688,7 @@ unsigned int * E4Recv_4D4FC0::sub_4D4FC0()
 namespace gamemd {
 unsigned int * globalHelper_0DA020(unsigned int * a0, AbstractClass * aP1)
 {
-  *a0 = *aP1; /*0x4da02a*/
+  *a0 = (unsigned int)(*aP1);
   return a0; /*0x4da02c*/
 }
 } // namespace gamemd

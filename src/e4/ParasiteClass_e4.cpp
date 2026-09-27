@@ -36,10 +36,10 @@ int ParasiteClass::Constructor()
          dword_AC4918 + dword_AC4924,
          0) )
   {
-    v3 = dword_AC4920++; /*0x62928b*/
+    v3 = (gamemd::ParasiteClass *)(dword_AC4920++);
     *((unsigned int *)dword_AC4914 + v3) = this; /*0x62929a*/
   }
-  return this; /*0x62929f*/
+  return (int)(this);
 }
 } // namespace ra2
 
@@ -77,7 +77,7 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
          dword_AC4918 + dword_AC4924,
          0) )
   {
-    v4 = dword_AC4920++; /*0x62936d*/
+    v4 = (gamemd::ParasiteClass *)(dword_AC4920++);
     *((unsigned int *)dword_AC4914 + v4) = this; /*0x62937c*/
   }
   return this; /*0x629381*/
@@ -207,7 +207,7 @@ void ParasiteClass::DeploySquad()
                        dword_B0F5CC + dword_B0F5C0,
                        0) )
                 {
-                  v15 = g_BuildingTypeInstanceCount++; /*0x629960*/
+                  v15 = (gamemd::ParasiteClass *)(g_BuildingTypeInstanceCount++);
                   *((unsigned int *)g_BuildingClassPoolManager + v15) = this; /*0x62996f*/
                 }
               }
@@ -254,7 +254,7 @@ void ParasiteClass::DeploySquad()
         v48 = Math::SinCos(v41); /*0x629aaf*/
         for ( i = 0; i < 3; ++i ) /*0x629ab8*/
         {
-          v46 = 64.0; /*0x629ac8*/
+          v46 = (void **)(64.0);
           v47 = (double)i * 128.0 - 128.0; /*0x629aea*/
           if ( Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 1) ) /*0x629aee*/
             v18 = -64.0; /*0x629af7*/
@@ -297,7 +297,7 @@ void ParasiteClass::DeploySquad()
                     v25);
             HouseClass::AccumulateScore((float *)(this->creationFrame + 336), v26, v39); /*0x629c56*/
           }
-          v27 = *(unsigned char **)(&this->uniqueId0); /*0x629c5d*/
+          v27 = (IUnknown *)(*(unsigned char **)(&this->uniqueId0));
           BuildingClass::Deploy(0, (int)v27); /*0x629c62*/
           v28 = *(unsigned int *)v27; /*0x629c67*/
           v27[973] = 1; /*0x629c69*/
@@ -314,7 +314,7 @@ void ParasiteClass::DeploySquad()
           }
           if ( this->q054 ) /*0x629ca1*/
           {
-            v43[0] = this; /*0x629cb8*/
+            v43[0] = (unsigned int)(this);
             v30 = (*(int (__thiscall **)(int *, unsigned int *))(g_BuildingInstanceCount + 16))(&g_BuildingInstanceCount, v43); /*0x629cbc*/
             if ( v30 != -1 && v30 < g_BuildingTypeInstanceCount && v30 < --g_BuildingTypeInstanceCount ) /*0x629cd7*/
             {
@@ -367,7 +367,7 @@ void ParasiteClass::DeploySquad()
             }
             if ( this->q054 ) /*0x629e0e*/
             {
-              v43[1] = this; /*0x629e25*/
+              v43[1] = (unsigned int)(this);
               v38 = (*(int (__thiscall **)(int *, unsigned int *))(g_BuildingInstanceCount + 16))( /*0x629e29*/
                       &g_BuildingInstanceCount,
                       &v43[1]);
@@ -486,7 +486,7 @@ void ParasiteClass::TickDamage()
     if ( v6 ) /*0x62a06e*/
       return; /*0x62a06e*/
   }
-  v8 = v4[44]; /*0x62a074*/
+  v8 = (unsigned int *)(v4[44]);
   this->u32_38 = g_CurrentFrame; /*0x62a080*/
   this->ParasiteClass_field_3C = v23; /*0x62a087*/
   this->ParasiteClass_field_40 = v8; /*0x62a08a*/

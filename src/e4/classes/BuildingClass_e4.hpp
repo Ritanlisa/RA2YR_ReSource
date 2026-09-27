@@ -2169,8 +2169,6 @@ struct BuildingClass {
     unsigned int q010;
     unsigned int q0DC0;
     unsigned int q0DC7;
-    unsigned int UpdateFloatPosition;
-    unsigned int ctor;
 // --- flat members (END) ---
     TechnoClass * ClearLimpetCheck();
     int AllocAndCtor(BuildingClass * aP0, int aP2);

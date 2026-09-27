@@ -23,7 +23,7 @@ void * MSVQAnim::GetFrameRect(int * a2)
     dword_ABFBAC = 0; /*0x5cd2c3*/
     atexit(nullsub_190); /*0x5cd2c9*/
   }
-  v3 = this->q01C; /*0x5cd2d1*/
+  v3 = (int *)(this->q01C);
   v4 = (int *)(v3 + 52); /*0x5cd2d6*/
   if ( !v3 ) /*0x5cd2d9*/
     v4 = &dword_ABFBA0; /*0x5cd2db*/

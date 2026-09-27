@@ -55,10 +55,10 @@ unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
          dword_A8B208 + dword_A8B214,
          0) )
   {
-    v3 = g_AnimTypeInitQueue++; /*0x41e45f*/
+    v3 = (gamemd::AnimTypeClass *)(g_AnimTypeInitQueue++);
     *((unsigned int *)dword_A8B204 + v3) = this; /*0x41e46e*/
   }
-  return this; /*0x41e473*/
+  return (unsigned int *)(this);
 }
 }
 // 0x427530
@@ -175,7 +175,7 @@ unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
          g_AnimTypePool + g_AnimManagerConfig,
          0) )
   {
-    v4 = g_AnimManager++; /*0x427810*/
+    v4 = (gamemd::AnimTypeClass *)(g_AnimManager++);
     *((unsigned int *)g_AnimPoolCount + v4) = this; /*0x42781f*/
   }
   v5 = 0; /*0x427828*/
@@ -226,7 +226,7 @@ void* AnimTypeClass::GetWarhead(int a2)
         RA2_OPDEL(*(void **)(&this->DetailLevel4)); /*0x427b90*/
         this->ImageAllocated = 0; /*0x427b98*/
       }
-      v4 = this->ImageFile; /*0x427b9f*/
+      v4 = (int)(this->ImageFile);
       v5 = (const char *)(&this->u32_C84); /*0x427ba5*/
       this->Image = 0; /*0x427bad*/
       if ( !v4 ) /*0x427bb7*/
@@ -243,7 +243,7 @@ void* AnimTypeClass::GetWarhead(int a2)
       }
     }
   }
-  v6 = this->Image; /*0x427c12*/
+  v6 = (void *)(this->Image);
   if ( v6 ) /*0x427c1a*/
   {
     v7 = this->q2C0; /*0x427c1c*/
@@ -263,12 +263,12 @@ void* AnimTypeClass::GetWarhead(int a2)
     this->q2A0 = -1; /*0x427c7a*/
     IDA_LOBYTE(v3, unsigned int a1) = -1; /*0x427c71*/
   }
-  return v3; /*0x427c80*/
+  return (void *)(v3);
 }
 }
 // 0x427D00
 namespace gamemd {
-int AnimTypeClass::LoadFromINI(unsigned char *** a2)
+int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
 {
   char Bool_Overwrite; // al
   int v5; // eax

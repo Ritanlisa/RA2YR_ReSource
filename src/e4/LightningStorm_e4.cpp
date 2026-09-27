@@ -34,7 +34,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
     }
     result = a3; /*0x539f3e*/
   }
-  LightningStorm_Coords = result; /*0x539f46*/
+  LightningStorm_Coords = (int)(result);
   LightningStorm_Owner = a4; /*0x539f4b*/
   if ( !LightningStorm_Active ) /*0x539f59*/
   {
@@ -66,7 +66,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
       ScenarioClass::UpdateLighting(); /*0x53a009*/
       if ( IDA_LOBYTE(g_RulesClass_Instance[1].WobblesPerSecond) ) /*0x53a014*/
       {
-        v10 = 3; /*0x53a023*/
+        v10 = (wchar_t *)(3);
         if ( HouseClass_Player ) /*0x53a02a*/
           v10 = *((unsigned int *)HouseClass_Player + 22549); /*0x53a02c*/
         PlayVocClass(g_RulesClass_Instance->Scorches4[3], 0x2000, 1.0, 0); /*0x53a044*/
@@ -128,7 +128,7 @@ AnimClass * * LightningStorm::Strike(IUnknown * aP0)
            dword_A9FA68 + dword_A9FA74,
            0) )
     {
-      v8 = dword_A9FA70++; /*0x53a285*/
+      v8 = (unsigned int)(dword_A9FA70++);
       *((unsigned int *)dword_A9FA64 + v8) = v7; /*0x53a294*/
     }
     result = dword_A9F9D8; /*0x53a297*/
@@ -141,7 +141,7 @@ AnimClass * * LightningStorm::Strike(IUnknown * aP0)
                      0),
           (unsigned char)result) )
     {
-      result = dword_A9F9E0++; /*0x53a2db*/
+      result = (unsigned int)(dword_A9F9E0++);
       *((unsigned int *)dword_A9F9D4 + result) = v7; /*0x53a2ea*/
     }
   }
@@ -184,7 +184,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   void **v33; // [esp+30h] [ebp-10h]
   int v34[3]; // [esp+34h] [ebp-Ch] BYREF
 
-  v3 = Coord::To_Cell(&MapClass_Instance, &a1); /*0x53a31a*/
+  v3 = (unsigned int *)(Coord::To_Cell(&MapClass_Instance, &a1));
   Coords = CellClass::GetCoords(v3, &v29); /*0x53a31f*/
   v5 = Coords[1]; /*0x53a328*/
   v6 = Coords[2]; /*0x53a32b*/
@@ -208,7 +208,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
          dword_A9FA2C + dword_A9FA20,
          0) )
   {
-    v10 = dword_A9FA28++; /*0x53a3d5*/
+    v10 = (unsigned int)(dword_A9FA28++);
     *((unsigned int *)dword_A9FA1C + v10) = v9; /*0x53a3e4*/
   }
   v27 = v3[9]; /*0x53a40f*/
@@ -229,7 +229,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
         0);
       v12 = g_RulesClass_Instance; /*0x53a4a3*/
     }
-    Climb = v12[1].Climb; /*0x53a4ae*/
+    Climb = (void **)(v12[1].Climb);
     WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(Climb, IDA_HIDWORD(v12[1].WobblesPerSecond), v3[59], &v31); /*0x53a4c7*/
     v16 = (void *)operator new(0x1C8u); /*0x53a4d3*/
     if ( v16 ) /*0x53a4da*/

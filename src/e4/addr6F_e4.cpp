@@ -75,7 +75,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   int v66; // [esp+58h] [ebp-8h]
   int v67; // [esp+5Ch] [ebp-4h]
 
-  v3 = 0; /*0x6f0ab6*/
+  v3 = (void ***)(0);
   v55 = aP0; /*0x6f0ab9*/
   Team_Helper_6F2230(0, 0); /*0x6f0ac9*/
   v5 = *(unsigned int *)(a2 + 22016); /*0x6f0ace*/

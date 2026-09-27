@@ -22,7 +22,7 @@ int Color::ConvertToRGB(int v9)
   int v11; // [esp+28h] [ebp-8h]
   unsigned int v12; // [esp+2Ch] [ebp-4h]
 
-  v2 = this->q008; /*0x51744b*/
+  v2 = (unsigned int)(this->q008);
   v3 = this->q004; /*0x517453*/
   v4 = 3 * *this; /*0x51745c*/
   v10[2] = v2; /*0x51745f*/
@@ -49,7 +49,7 @@ unsigned char * Color::Lerp2(int a2, int a3, float a4)
   double v4; // st7
   double v6; // st7
 
-  v4 = 1.0 - a4; /*0x661028*/
+  v4 = (void *)(1.0 - a4);
   *(unsigned int *)this = Math::RoundToInt(v4); /*0x66109d*/
   this->q004 = Math::RoundToInt(v4); /*0x661105*/
   v6 = v4 * (double)*(uint8_t *)(a2 + 2) + (double)*(uint8_t *)(a3 + 2) * a4; /*0x661124*/
@@ -62,7 +62,7 @@ unsigned char * Color::Lerp2(int a2, int a3, float a4)
   }
   else
   {
-    this->q008 = Math::RoundToInt(0.0); /*0x661151*/
+    this->q008 = (unsigned char *)(Math::RoundToInt(0.0));
     return this; /*0x661154*/
   }
 }
@@ -107,7 +107,7 @@ unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
   }
   else
   {
-    this->Capacity = Math::RoundToInt(0.0); /*0x661282*/
+    this->Capacity = (unsigned char *)(Math::RoundToInt(0.0));
     return this; /*0x661285*/
   }
 }

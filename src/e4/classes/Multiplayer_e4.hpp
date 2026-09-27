@@ -19,6 +19,7 @@ struct Multiplayer {
     unsigned int u32_4049;
     unsigned int u32_8;
     unsigned int vt_slot_12;
+    unsigned int Screen;
 // --- flat members (END) ---
     unsigned int * CopyDataArray(ObjectClass * aP1);
     void * FindStartPositions();

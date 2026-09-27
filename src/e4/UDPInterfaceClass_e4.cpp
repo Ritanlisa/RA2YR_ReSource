@@ -21,7 +21,7 @@ int UDPInterfaceClass::connect()
 {
   void * result;
 
-  result = this->q3F068; /*0x7b1b53*/
+  result = (void *)(this->q3F068);
   if ( result ) /*0x7b1b5b*/
   {
     (*(void (__thiscall **)(unsigned char *))(((unsigned int)(this->q00C2))))(this); /*0x7b1b5f*/
@@ -29,7 +29,7 @@ int UDPInterfaceClass::connect()
     result = WSACleanup(); /*0x7b1b69*/
     this->q3F068 = 0; /*0x7b1b6e*/
   }
-  return result; /*0x7b1b75*/
+  return (int)(result);
 }
 } // namespace gamemd
 // 0x7B3310
@@ -94,7 +94,7 @@ void UDPInterfaceClass::GetStatistics(unsigned short a2)
   }
   else
   {
-    v4 = &this->u32_3F320; /*0x7b33f8*/
+    v4 = (unsigned short *)(&this->u32_3F320);
     while ( *v4 != a2 ) /*0x7b3401*/
     {
       ++v3; /*0x7b3403*/
@@ -102,7 +102,7 @@ void UDPInterfaceClass::GetStatistics(unsigned short a2)
       if ( v3 >= v2 ) /*0x7b3409*/
         goto LABEL_7; /*0x7b3409*/
     }
-    this->q3F334 = *(this + v3 + 64704); /*0x7b3422*/
+    this->q3F334 = (unsigned int)(*(this + v3 + 64704));
   }
 }
 } // namespace gamemd
@@ -137,12 +137,12 @@ AbstractClass * * UDPInterfaceClass::Flush()
     this->q3F330 = 0; /*0x7b3a70*/
     this->q3F334 = -1; /*0x7b3a7a*/
   }
-  return result; /*0x7b3a85*/
+  return (gamemd::AbstractClass **)(result);
 }
 } // namespace gamemd
 // 0x7B3AA0
 namespace gamemd {
-AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5)
+AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5, void * a1, void * a3)
 {
   SOCKET v6; // ebx
   int v7; // edx
@@ -295,7 +295,7 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
         *((unsigned short *)v13 + 13) = ntohs(*(u_short *)netshort.sa_data); /*0x7b4084*/
         v13[1] = *(unsigned int *)&netshort.sa_data[2]; /*0x7b408c*/
       }
-      v33 = this->q010; /*0x7b408f*/
+      v33 = (char *)(this->q010);
       v34 = this->q018; /*0x7b4092*/
       v35 = &this->q020; /*0x7b4095*/
       if ( v34 < v33 /*0x7b40b8*/

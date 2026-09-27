@@ -87,7 +87,7 @@
 namespace gamemd {
 void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
-  ObjectClass * v3;
+  unsigned int v3;
   unsigned int *v4; // eax
   unsigned char *v5; // esi
   int v6; // edi
@@ -103,10 +103,10 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   unsigned int *v16; // eax
   int v17; // esi
   uint8_t result; // al
-  unsigned int v19;
+  ObjectClass * v19;
   int v20; // [esp+18h] [ebp+4h]
 
-  v3 = dword_ABF168; /*0x5bc18b*/
+  v3 = (gamemd::ObjectClass *)(dword_ABF168);
   dword_ABF230 = aP0; /*0x5bc190*/
   hWndParent = a2; /*0x5bc196*/
   byte_ABF238 = a3; /*0x5bc19c*/
@@ -114,7 +114,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   v19 = dword_ABF168; /*0x5bc1a5*/
   do /*0x5bc24f*/
   {
-    v4 = operator new(0x2738u); /*0x5bc1ae*/
+    v4 = (unsigned char *)(operator new(0x2738u));
     v5 = v4; /*0x5bc1b3*/
     if ( v4 ) /*0x5bc1ba*/
     {
@@ -358,17 +358,17 @@ void* sub_7B84F0()
   DWORD LastError; // eax
   CHAR Buffer[1024]; // [esp+4h] [ebp-400h] BYREF
 
-  result = hMutex; /*0x7b84f0*/
+  result = (HANDLE)(hMutex);
   if ( !hMutex ) /*0x7b8500*/
   {
-    result = CreateMutexA(0, 0, 0); /*0x7b8505*/
+    result = (int)(CreateMutexA(0, 0, 0));
     hMutex = result; /*0x7b850b*/
   }
   if ( !dword_B7816C ) /*0x7b8516*/
   {
     if ( result ) /*0x7b851e*/
     {
-      dword_B78138 = 0; /*0x7b8524*/
+      dword_B78138 = (unsigned int)(0);
       dword_B78140 = 0; /*0x7b852a*/
       dword_B78150 = 0; /*0x7b8530*/
       dword_B78148 = 16; /*0x7b8536*/

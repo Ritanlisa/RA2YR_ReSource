@@ -53,7 +53,7 @@
 
 // 0x5C00E0
 namespace gamemd {
-ObjectClass * * sub_5C00E0()
+ObjectClass * * sub_5C00E0(void * a1, void * a2, void * a3)
 {
   char result; // al
   int v4; // edx
@@ -91,7 +91,7 @@ ObjectClass * * sub_5C00E0()
                1);
     }
   }
-  return result; /*0x5c018d*/
+  return (gamemd::ObjectClass **)(result);
 }
 }
 // 0x5C07D0
@@ -180,7 +180,7 @@ CampaignClass * * MPCooperative___vt07(int a2)
   int v11; // [esp+Ch] [ebp-8h] BYREF
   int v12; // [esp+10h] [ebp-4h] BYREF
 
-  v3 = 0; /*0x5c17c3*/
+  v3 = (gamemd::CampaignClass **)(0);
   v10 = *(&this->ptr_507); /*0x5c17c5*/
   v11 = 0; /*0x5c17cb*/
   Movie::GetSection((int)&g_DDrawSurfaceManager, v10, &v12); /*0x5c17cf*/
@@ -215,7 +215,7 @@ CampaignClass * * MPCooperative___vt07(int a2)
   }
   else if ( a2 == -3 ) /*0x5c1847*/
   {
-    return 1; /*0x5c1851*/
+    return (gamemd::CampaignClass **)(1);
   }
   v8 = 0; /*0x5c1857*/
   v9 = *(unsigned int *)(*(unsigned int *)(v4 + 20) + 4 * v7); /*0x5c1859*/
@@ -228,19 +228,19 @@ CampaignClass * * MPCooperative___vt07(int a2)
       if ( v8 >= *(unsigned int *, unsigned int a2)(v9 + 16) ) /*0x5c1882*/
         return 0; /*0x5c188c*/
     }
-    return 1; /*0x5c188f*/
+    return (gamemd::CampaignClass **)(1);
   }
-  return v3; /*0x5c17dc*/
+  return (gamemd::CampaignClass **)(v3);
 }
 }
 // 0x5C60D0
 namespace gamemd {
-int E4Recv_5C60D0::ShowConfirmDialog()
+int E4Recv_5C60D0::ShowConfirmDialog(void * a1, void * a2)
 {
   wchar_t *v3; // eax
   wchar_t *StringCSF; // [esp-Ch] [ebp-14h]
 
-  StringCSF = GetStringCSF(g_Str_TXT_CANCEL, 0, aDRa2mdpostMpla, 108); /*0x5c60fa*/
+  StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_CANCEL, 0, aDRa2mdpostMpla, 108));
   v3 = GetStringCSF(g_Str_TXT_OK, 0, aDRa2mdpostMpla, 108); /*0x5c6102*/
   return Dialog::ShowMessageBox(a2, lParam, v3, StringCSF, 0, 0) == 0; /*0x5c6116*/
 }
@@ -289,7 +289,7 @@ void LCW_DecodeLength(int a1, unsigned char * a2, int a3)
   v9 = 4 * a3; /*0x5c63ab*/
   if ( v6 <= (unsigned int)(4 * a3) ) /*0x5c63b8*/
   {
-    v10 = v4; /*0x5c63bc*/
+    v10 = (char *)(v4);
     v11 = *v4 & 0x80; /*0x5c63be*/
     v12 = v9 - v6; /*0x5c63c6*/
     IDA_LOBYTE(v3) = -(v11 != 0); /*0x5c63c8*/
@@ -322,7 +322,7 @@ void LCW_DecodeLength(int a1, unsigned char * a2, int a3)
 }
 // 0x5C63F0
 namespace gamemd {
-void sub_5C63F0()
+void sub_5C63F0(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   unsigned char *v5; // edi
   unsigned int v6; // esi
@@ -448,7 +448,7 @@ void BitBuffer_RotateRight(unsigned int * a1, int a2, int a3)
     }
     else
     {
-      v27 = 0; /*0x5c66a4*/
+      v27 = (int *)(0);
       v9 = &a1[a3]; /*0x5c66b6*/
       v10 = 32 - a2; /*0x5c66b9*/
       v11 = a3; /*0x5c66bb*/
@@ -493,7 +493,7 @@ void RotateBitBufferLeft(int * a0, int a2, Buffer * aP2)
   bool v17; // zf
   int v18; // esi
   int i; // esi
-  Buffer * v20;
+  unsigned int v20;
   char v21; // [esp+10h] [ebp-4h]
   Buffer * v22;
 
@@ -545,7 +545,7 @@ void RotateBitBufferLeft(int * a0, int a2, Buffer * aP2)
       }
       for ( i = 0; ; ++i ) /*0x5c68b4*/
       {
-        v20 = v11; /*0x5c68b8*/
+        v20 = (unsigned int)(v11);
         if ( v11 >= v13 ) /*0x5c68ba*/
           v20 = v13; /*0x5c68bc*/
         if ( i >= v20 ) /*0x5c68c0*/

@@ -30,6 +30,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x6B2430
 namespace gamemd {
@@ -52,7 +53,7 @@ unsigned int * sub_6B2430(int * a1, int a2)
                              0),
         (unsigned char)result) )
   {
-    v6 = g_SlaveMgrPool++; /*0x6b2483*/
+    v6 = (unsigned int *)(g_SlaveMgrPool++);
     result = (char *)dword_B0B654 + 12 * v6; /*0x6b248f*/
     *result = v4; /*0x6b2492*/
     result[1] = v3; /*0x6b2495*/
@@ -103,7 +104,7 @@ CellClass * * InitializeBuildabilityGrid(int a1)
   {
     if ( v1 - 1 >= 0 ) /*0x6b2750*/
     {
-      v3 = v2 + 5; /*0x6b2752*/
+      v3 = (unsigned char *)(v2 + 5);
       v4 = v1; /*0x6b2755*/
       do /*0x6b2764*/
       {
@@ -115,7 +116,7 @@ CellClass * * InitializeBuildabilityGrid(int a1)
       }
       while ( v4 ); /*0x6b2764*/
     }
-    g_SlaveManagerPool = v2; /*0x6b2766*/
+    g_SlaveManagerPool = (int)(v2);
   }
   else
   {
@@ -206,7 +207,7 @@ CellClass * * InitializeBuildabilityGrid(int a1)
     }
     while ( v9 <= v8 ); /*0x6b2a52*/
   }
-  return result; /*0x6b2a58*/
+  return (gamemd::CellClass **)(result);
 }
 }
 // 0x6B2A70
@@ -272,7 +273,7 @@ AbstractClass * * SlaveManager_InitGrid()
   {
     if ( v0 - 1 >= 0 ) /*0x6b2aba*/
     {
-      v2 = v1 + 5; /*0x6b2abc*/
+      v2 = (unsigned char *)(v1 + 5);
       v3 = v0; /*0x6b2abf*/
       do /*0x6b2ace*/
       {
@@ -284,7 +285,7 @@ AbstractClass * * SlaveManager_InitGrid()
       }
       while ( v3 ); /*0x6b2ace*/
     }
-    g_SlaveManagerPool = v1; /*0x6b2ad0*/
+    g_SlaveManagerPool = (int)(v1);
   }
   else
   {
@@ -308,7 +309,7 @@ AbstractClass * * SlaveManager_InitGrid()
     {
       while ( 1 ) /*0x6b2b77*/
       {
-        v39 = 0; /*0x6b2b77*/
+        v39 = (unsigned short *)(0);
         v33 = 0; /*0x6b2b7b*/
         v31 = (char *)g_SlaveManagerPool + 8 * v7 + 8 * v6 * result; /*0x6b2b82*/
         v31[4] = 0; /*0x6b2b86*/
@@ -400,7 +401,7 @@ AbstractClass * * SlaveManager_InitGrid()
           v26 = v45[1] + v25; /*0x6b2e45*/
           if ( v26 > v16 && v25 - v45[1] < v16 && v45[1] - v25 < v16 && v26 <= g_MapCellCount ) /*0x6b2e60*/
           {
-            v38[0] = -1; /*0x6b2e70*/
+            v38[0] = (int)(-1);
             v38[1] = 0; /*0x6b2e77*/
             v43 = *CellStruct::Add(v45, &v44, v38); /*0x6b2e89*/
             v27 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v43); /*0x6b2e93*/
@@ -428,7 +429,7 @@ AbstractClass * * SlaveManager_InitGrid()
     }
     ++v6; /*0x6b2f14*/
   }
-  return result; /*0x6b2f23*/
+  return (gamemd::AbstractClass **)(result);
 }
 }
 // 0x6B2F30
@@ -905,7 +906,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
           v67 = v64[3]; /*0x6b36fe*/
           if ( CellClass::DetermineTileType((int)v63) ) /*0x6b3701*/
           {
-            v68 = CellClass::GetScreenRect((int)v63, v114); /*0x6b3718*/
+            v68 = (int *)(CellClass::GetScreenRect((int)v63, v114));
             if ( v66 <= 0 || v67 <= 0 ) /*0x6b3727*/
             {
               v71 = *v68; /*0x6b37ad*/

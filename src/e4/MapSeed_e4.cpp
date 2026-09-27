@@ -34,7 +34,7 @@ int MapSeed::IsCellInBounds()
   int v1; // edx
   int v2; // eax
 
-  v1 = *this; /*0x5ac230*/
+  v1 = (int)(*this);
   v2 = this->q004; /*0x5ac233*/
   return v2 + v1 > g_MapCellHeight_Value /*0x5ac25f*/
       && v1 - v2 < g_MapCellHeight_Value

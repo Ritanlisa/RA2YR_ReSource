@@ -165,7 +165,6 @@ struct Audio {
     unsigned int u32_44;
     unsigned int u32_46;
     unsigned int u32_C4;
-    unsigned int IsLoud;
 // --- flat members (END) ---
     int GetChannelStatus();  // 0x402720
     int ReleaseChannelRefs();  // 0x404D80

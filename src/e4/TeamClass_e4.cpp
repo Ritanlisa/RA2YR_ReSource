@@ -20,6 +20,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x4D9E70
 namespace gamemd {
@@ -634,7 +635,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
       while ( v13 < dword_AC4C50 ); /*0x6362d6*/
     }
   }
-  result = (*(int (__thiscall **)(int))(this->vtable2 + 12))&this->uniqueId; /*0x6362e3*/
+  result = (gamemd::TechnoClass **)((*(int (__thiscall **)(int))(this->vtable2 + 12))&this->uniqueId);
   this->q08C = -1; /*0x6362e6*/
   this->q090 = -1; /*0x6362ec*/
   this->ptr_94 = -1; /*0x6362f2*/
@@ -648,7 +649,7 @@ namespace gamemd {
 int TeamClass::UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoClass * aP3)
 {
   int *v4; // esi
-  int result; // eax
+  TechnoClass * result;
   int v6; // edx
   int v7; // esi
   int v8; // ebp
@@ -676,7 +677,7 @@ int TeamClass::UpdateBuildQueue(AbstractClass * aP1, TechnoClass * aP2, TechnoCl
   int16_t v31; // [esp+90h] [ebp-4h]
   char v32; // [esp+92h] [ebp-2h]
 
-  v4 = this; /*0x6367b7*/
+  v4 = (int *)(this);
   result = BuildingClass::GetType(aP1); /*0x6367c4*/
   if ( result ) /*0x6367cb*/
   {

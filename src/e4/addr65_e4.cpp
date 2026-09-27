@@ -103,7 +103,7 @@ int Trigger_AllocateLog(int a1)
       v5 += 92;
     }
     while ( v4 < 8 );
-    int v10 = DataGlobal_87F788;
+    int v10 = (int)(DataGlobal_87F788);
     int v11 = g_BuildingProductionState + g_AircraftClassCount + g_BuildingClass_Count + g_HouseClass_BuildState;
     unsigned int v12 =
     do
@@ -477,7 +477,7 @@ int Trigger_AllocateLog(int a1)
         v15 += 40;
         ++v70;
       }
-      result = DataGlobal_87F788;
+      result = (int)(DataGlobal_87F788);
     }
     v83[203] = v70;
   }
@@ -502,7 +502,7 @@ int sub_652630(unsigned int * a1, unsigned int * a2)
 }
 // 0x653FA0
 namespace gamemd {
-void RenderScoreboardSidebar()
+void RenderScoreboardSidebar(void * a1, void * a2)
 {
   int v2; // eax
   int v4; // esi
@@ -591,7 +591,7 @@ void RenderScoreboardSidebar()
     TextRenderer::DrawText(&v45, (size_t)v11, v27, v30, (int)&i, v35, 0, 537); /*0x6540e4*/
     v12 = v6 + 7; /*0x6540f1*/
     v13 = *(unsigned int *)(g_SidebarConfig + 4) == 1
-        ? *(uint8_t *)(*(unsigned int *)(g_SidebarConfig + 372) + 14)
+        ? *(uint8_t *, void * a1, void * a2)(*(unsigned int *)(g_SidebarConfig + 372) + 14)
         : *(uint16_t *)(*(unsigned int *)(g_SidebarConfig + 372) + 28);
     v14 = a1[1148]; /*0x654113*/
     i = v14 + a1[1150] - 1; /*0x654129*/
@@ -673,7 +673,7 @@ unsigned int * E4Recv_655050::sub_655050(unsigned int * v5, short * a3)
   int v6; // edi
   int v7; // esi
 
-  v3 = *a3; /*0x655063*/
+  v3 = (unsigned int *)(*a3);
   v4 = a3[1]; /*0x655066*/
   v5 = v3 + *(&this->u32_20C6) - v4; /*0x65506e*/
   v6 = v3 + v4 - *(&this->u32_20C8); /*0x655075*/

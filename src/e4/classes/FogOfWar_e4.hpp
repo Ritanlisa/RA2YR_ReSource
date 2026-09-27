@@ -66,6 +66,7 @@ struct FogOfWar {
     unsigned int u32_7546;
     unsigned int u32_7604;
     void* ptr_1220;
+    unsigned int Render;
 // --- flat members (END) ---
     AbstractClass * * RevealCell(void* aP1);
     MapClass * * RevealArea(RadarClass * aP1);

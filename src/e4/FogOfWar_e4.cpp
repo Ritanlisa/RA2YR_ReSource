@@ -11,6 +11,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Render_e4.hpp"
 
 // 0x655C50
 namespace gamemd {
@@ -56,7 +57,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   char v42; // [esp+44h] [ebp+4h]
   int v43; // [esp+44h] [ebp+4h]
 
-  result = (int)HouseClass_Player; /*0x655c50*/
+  result = (gamemd::MapClass **)((int)HouseClass_Player);
   if ( !HouseClass_Player ) /*0x655c62*/
     return result; /*0x655c62*/
   result = (*(int (__thiscall **)(unsigned int, char *))(**(unsigned int **)(&this->u32_73C6) + 120))(this->u32_121C, v40); /*0x655c75*/
@@ -218,7 +219,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
     result = GroundHeight; /*0x65611d*/
     v33 = v32; /*0x656121*/
   }
-  *v24 = v27; /*0x65612d*/
+  *v24 = (gamemd::MapClass **)(v27);
   v24[1] = v29; /*0x65612f*/
   v24[2] = result; /*0x656132*/
   v24[3] = v33; /*0x656135*/
@@ -344,7 +345,7 @@ AbstractClass * * FogOfWar::RevealCell(IUnknown * aP1)
         && (v7 = this->u32_1270, v7 > 0)
         && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->u32_125C + 8))(&this->u32_125C, v6 + v7, 0) )
       {
-        v8 = this->u32_126C; /*0x65637d*/
+        v8 = (unsigned int)(this->u32_126C);
         v9 = this->u32_1260; /*0x656380*/
         this->u32_126C = v8 + 1; /*0x656386*/
         *(unsigned int *)(v9 + 8 * v8) = *aP1; /*0x65638b*/
@@ -423,7 +424,7 @@ bool FogOfWar_Get(IUnknown * aP0)
   v1 = aP0[2] / g_MapRenderState; /*0x5864ac*/
   if ( (v1 & 1) != 0 ) /*0x5864b5*/
   {
-    v8 = *aP0 / 256; /*0x5864cd*/
+    v8 = (unsigned int *)(*aP0 / 256);
     v10 = aP0[1] / 256; /*0x5864e3*/
     v2 = v1 / 2 + 1; /*0x5864f0*/
     v3 = (int16_t)(v8 - v2) + ((int16_t)(v10 - v2) << 9); /*0x586508*/
@@ -440,7 +441,7 @@ bool FogOfWar_Get(IUnknown * aP0)
   }
   else
   {
-    v9 = *aP0 / 256; /*0x586559*/
+    v9 = (unsigned int *)(*aP0 / 256);
     IDA_HIWORD(v12) = aP0[1] / 256 - v1 / 2; /*0x586580*/
     IDA_LOWORD(v12) = v9 - v1 / 2; /*0x586585*/
     v6 = (int16_t)v12 + (IDA_SHIWORD(v12) << 9); /*0x586593*/

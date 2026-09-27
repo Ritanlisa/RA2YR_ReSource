@@ -79,7 +79,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
   int v58[4]; // [esp+114h] [ebp-14h] BYREF
   char v59[4]; // [esp+124h] [ebp-4h] BYREF
 
-  v33[1] = this; /*0x5a5b6a*/
+  v33[1] = (unsigned int)(this);
   v2 = (int *)globalHelper_0A7640(v50, aP1); /*0x5a5b6e*/
   v3 = *v2; /*0x5a5b73*/
   v38 = *v2; /*0x5a5b75*/
@@ -146,7 +146,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
             goto LABEL_18; /*0x5a5d6a*/
           do /*0x5a5da0*/
           {
-            v49 = (unsigned int)Random::State(&g_Randomizer); /*0x5a5d7d*/
+            v49 = (gamemd::ObjectClass *)((unsigned int)Random::State(&g_Randomizer));
             v12 = Math::RoundToInt((double)v49 * 4.656612874161595e-10); /*0x5a5d98*/
           }
           while ( v12 > 1 ); /*0x5a5da0*/
@@ -289,7 +289,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
                   {
                     do /*0x5a63c4*/
                     {
-                      NeighbourContent[14] = g_CellTileTypeCache + 1; /*0x5a63b1*/
+                      NeighbourContent[14] = (unsigned int *)(g_CellTileTypeCache + 1);
                       *((unsigned char *)NeighbourContent + 282) = 1; /*0x5a63b4*/
                       NeighbourContent = Cell::GetNeighbourContent(NeighbourContent, 0); /*0x5a63c0*/
                     }
@@ -394,7 +394,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
       }
     }
   }
-  return v5; /*0x5a64f5*/
+  return (gamemd::MapSeedClass **)(v5);
 }
 } // namespace gamemd
 // 0x5A76E0
@@ -413,7 +413,7 @@ int MapSeedClass::ValidateRectBounds()
   int v13; // [esp+14h] [ebp-8h]
   int v14; // [esp+18h] [ebp-4h]
 
-  v2 = *this; /*0x5a76ee*/
+  v2 = (int)(*this);
   v3 = this->u32_4; /*0x5a76f0*/
   v12 = (int16_t)v3 + (int16_t)v2; /*0x5a76fe*/
   if ( v12 > g_MapCellHeight_Value /*0x5a772a*/
@@ -444,8 +444,7 @@ int MapSeedClass::ValidateRectBounds()
         {
           if ( __OFSUB__(v3, v3 + 3) ) /*0x5a7805*/
           {
-  LABEL_24:
-            v8 = *this; /*0x5a785b*/
+  LABEL_24: v8 = (int)(*this);
             if ( *this >= *((char *)&this->vtable1 + 3) ) /*0x5a7862*/
               return 1; /*0x5a78b9*/
             while ( 1 ) /*0x5a786b*/

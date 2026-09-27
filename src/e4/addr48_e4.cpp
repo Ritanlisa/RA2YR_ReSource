@@ -251,11 +251,7 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
               int v13 = *(unsigned int *)(v12 + 156);
               int v14 = *(unsigned int *)(v12 + 160);
               v140 = *(BuildingTypeClass **)(v12 + 164);
-              v15 = Coord::Subtract(
-                      &v135,
-                      (IUnknown *)(*(unsigned int *)aP0->__pad_0 - v13),
-                      (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - v14),
-                      (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - (unsigned int)v140));
+              v15 = (IUnknown *)(Coord::Subtract( &v135, (IUnknown *)(*(unsigned int *)aP0->__pad_0 - v13), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - v14), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - (unsigned int)v140)));
               v143 = *(unsigned long long *)&v15->field_0;
               v144 = *(float *)&v15->field_8;
               Coord::Length((int *)&v143);
@@ -271,11 +267,7 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
                 }
                 int * v109 = (int *)operator new(8u);
                 *v109 = v12;
-                v17 = Coord::Subtract(
-                        &v130,
-                        (IUnknown *)(*(unsigned int *)aP0->__pad_0 - *(unsigned int *)(v12 + 156)),
-                        (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - *(unsigned int *)(v12 + 160)),
-                        (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - *(unsigned int *)(v12 + 164)));
+                v17 = (IUnknown *)(Coord::Subtract( &v130, (IUnknown *)(*(unsigned int *)aP0->__pad_0 - *(unsigned int *)(v12 + 156)), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - *(unsigned int *)(v12 + 160)), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - *(unsigned int *)(v12 + 164))));
                 v132 = *(unsigned long long *)&v17->field_0;
                 v133 = *(float *)&v17->field_8;
                 Coord::Length((int *)&v132);
@@ -285,8 +277,8 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
                   && var94 > 0
                   && ((uint8_t (__thiscall *)(IUnknown **, int, unsigned int))v117->field_8)(&v117, var94 + v126, 0) )
                 {
-                  v19 = v121;
-                  v121 = (IUnknown *)((char *)v121 + 1);
+                  v19 = (IUnknown *)(v121);
+                  v121 = (int *)((IUnknown *)((char *)v121 + 1));
                   *((unsigned int *)Block + (unsigned int)v19) = v109;
                 }
               }
@@ -396,12 +388,7 @@ LABEL_58:
           goto LABEL_67;
         }
         eax61a = (unsigned int *)(*((int (__thiscall **)(VectorClass_flat *, int64_t *))aP1a->vtable0 + 18))(aP1a, &v130);
-        v32 = Coord::Subtract(
-  int v148[3]; // [esp+108h] [ebp-18h] BYREF
-                v148,
-                (IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax61a),
-                (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax61a[1]),
-                (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax61a[2]));
+        v32 = (IUnknown *)(Coord::Subtract( int v148[3]; v148, (IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax61a), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax61a[1]), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax61a[2])));
         IDA_LODWORD(v132) = v32->field_0;
         v34 = (BuildingTypeClass *)v32->field_8;
         IDA_HIDWORD(v132) = v32->field_4;
@@ -433,20 +420,15 @@ LABEL_67:
           && var94 > 0
           && ((uint8_t (__thiscall *)(IUnknown **, int, unsigned int))v117->field_8)(&v117, var94 + v126, 0) )
         {
-          v48 = v121;
-          v121 = (IUnknown *)((char *)v121 + 1);
+          v48 = (IUnknown *)(v121);
+          v121 = (int *)((IUnknown *)((char *)v121 + 1));
           *((unsigned int *)Block + (unsigned int)v48) = v31;
         }
         goto LABEL_80;
       }
   char v149[12]; // [esp+114h] [ebp-Ch] BYREF
       eax63 = (unsigned int *)(*((int (__thiscall **)(VectorClass_flat *, char *))aP1a->vtable0 + 18))(aP1a, v149);
-      v37 = Coord::Subtract(
-  int v145[3]; // [esp+E4h] [ebp-3Ch] BYREF
-              v145,
-              (IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax63),
-              (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax63[1]),
-              (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax63[2]));
+      v37 = (IUnknown *)(Coord::Subtract( int v145[3]; v145, (IUnknown *)(*(unsigned int *)aP0->__pad_0 - *eax63), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[4] - eax63[1]), (IUnknown *)(*(unsigned int *)&aP0->__pad_0[8] - eax63[2])));
       IDA_LODWORD(v139) = v37->field_0;
       st7_63 = (double)(int)v139;
       v39 = (BuildingTypeClass *)v37->field_8;

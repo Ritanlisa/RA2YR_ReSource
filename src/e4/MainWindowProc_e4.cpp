@@ -71,12 +71,12 @@ AbstractClass * * sub_777420()
   result = Dialog::GetCurrent(); /*0x777599*/
   if ( result ) /*0x7775a1*/
   {
-    Current = Dialog::GetCurrent(); /*0x7775a3*/
+    Current = (gamemd::AbstractClass **)(Dialog::GetCurrent());
     SetActiveWindow(Current); /*0x7775a9*/
     v4 = Dialog::GetCurrent(); /*0x7775af*/
     return SetFocus(v4); /*0x7775b5*/
   }
-  return result; /*0x7775bb*/
+  return (gamemd::AbstractClass **)(result);
 }
 }
 // 0x5C09A0
@@ -105,12 +105,12 @@ char * E4Recv_724000::sub_724000(int a2)
   char *v3; // ecx
   int v4; // edx
 
-  v3 = &this->u32_8D0; /*0x72400a*/
+  v3 = (char *)(&this->u32_8D0);
   this->M4 = 0; /*0x724010*/
   this->M8 = a2; /*0x724013*/
   *(&this->M42) = 0; /*0x724016*/
   this->M552 = 1000; /*0x724019*/
-  this->M560 = 10000; /*0x724023*/
+  this->M560 = (char *)(10000);
   *((unsigned int *)v3 + 1) = 0; /*0x72402d*/
   *((unsigned int *)v3 + 2) = 0; /*0x724030*/
   v3[12] = 1; /*0x724033*/

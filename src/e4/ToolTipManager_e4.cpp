@@ -59,7 +59,7 @@ DynamicVector * ToolTipManager_7::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x724f58*/
     this->Items = 0; /*0x724f60*/
   }
-  this->IsAllocated = 0; /*0x724f6b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->Capacity = 0; /*0x724f71*/
   if ( (a2 & 1) != 0 ) /*0x724f78*/
     RA2_OPDEL(); /*0x724f7b*/

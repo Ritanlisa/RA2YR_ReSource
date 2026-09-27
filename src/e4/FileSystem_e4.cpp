@@ -15,7 +15,7 @@
 namespace gamemd {
 int FileSystem::ProcessNextFileExtension()
 {
-  unsigned int v0;
+  unsigned int * v0;
   unsigned int *v1; // eax
   unsigned int *v2; // eax
   unsigned int *v3; // esi
@@ -45,14 +45,14 @@ int FileSystem::ProcessNextFileExtension()
   unsigned int *v29; // [esp+18h] [ebp-10h]
   int v30; // [esp+1Ch] [ebp-Ch]
 
-  v0 = g_FileExtensionState; /*0x626da7*/
+  v0 = (unsigned int *)(g_FileExtensionState);
   if ( !g_FileExtensionState ) /*0x626db1*/
   {
-    v1 = operator new(0x10u); /*0x626db9*/
+    v1 = (unsigned int *)(operator new(0x10u));
     v0 = v1; /*0x626dbe*/
     if ( v1 ) /*0x626dc5*/
     {
-      *v1 = -1; /*0x626dc9*/
+      *v1 = (unsigned int *)(-1);
       v2 = operator new(0x18u); /*0x626dcf*/
       v3 = v2; /*0x626dd4*/
       if ( v2 ) /*0x626ddb*/
@@ -65,7 +65,7 @@ int FileSystem::ProcessNextFileExtension()
       {
         v3 = 0; /*0x626df8*/
       }
-      v0[1] = v3; /*0x626dfc*/
+      v0[1] = (unsigned int)(v3);
       if ( operator new(0x18u) ) /*0x626dff*/
         v4 = FileExtension::Constructor(0, 0); /*0x626e0f*/
       else
@@ -81,7 +81,7 @@ int FileSystem::ProcessNextFileExtension()
     {
       v0 = 0; /*0x626e45*/
     }
-    g_FileExtensionState = v0; /*0x626e47*/
+    g_FileExtensionState = (int)(v0);
   }
   v6 = (unsigned int *)v0[3]; /*0x626e4d*/
   v7 = 0; /*0x626e50*/

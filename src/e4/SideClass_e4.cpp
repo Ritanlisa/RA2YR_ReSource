@@ -130,10 +130,10 @@ unsigned int * SideClass::Construct(CCINIClass * aP1)
          dword_8B4128 + dword_8B4134,
          0) )
   {
-    v3 = g_ObjectTypeList++; /*0x6a45f7*/
+    v3 = (gamemd::SideClass *)(g_ObjectTypeList++);
     *((unsigned int *)dword_8B4124 + v3) = this; /*0x6a4606*/
   }
-  return this; /*0x6a460b*/
+  return (unsigned int *)(this);
 }
 }
 // 0x6A4710
@@ -223,7 +223,7 @@ void * SideClass::Init(char a2)
     }
     while ( v3 < g_ObjectTypeList ); /*0x6a499d*/
   }
-  v4 = *(&this->vtable49); /*0x6a499f*/
+  v4 = (void *)(*(&this->vtable49));
   if ( v4 && this->u8_A5 ) /*0x6a49b3*/
   {
     RA2_OPDEL(v4); /*0x6a49be*/

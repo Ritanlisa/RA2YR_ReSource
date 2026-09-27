@@ -36,7 +36,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   int *v17; // [esp+38h] [ebp-8h]
   int v18; // [esp+3Ch] [ebp-4h]
 
-  v2 = 0; /*0x7665db*/
+  v2 = (int *)(0);
   v12 = this; /*0x7665e0*/
   if ( !dword_B72770 ) /*0x7665e4*/
     InitWDTGameOptions(); /*0x7665e6*/

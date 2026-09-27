@@ -46,7 +46,7 @@ AbstractClass * * UnholyAlliance_GetResult()
         v6 = operator new(0x8E8u); /*0x5cb47e*/
         if ( v6 && (v7 = (int *)UnitClass::Construct((int)v6, v5, v4)) != 0 ) /*0x5cb497*/
         {
-          CurrentOption = HouseClass::GetCurrentOption(v4, &ppv); /*0x5cb4a4*/
+          CurrentOption = (unsigned short *)(HouseClass::GetCurrentOption(v4, &ppv));
           v9 = *CurrentOption + 3; /*0x5cb4b0*/
           v10 = CurrentOption[1] + 3; /*0x5cb4b4*/
           if ( v3 /*0x5cb4ea*/
@@ -78,7 +78,7 @@ AbstractClass * * UnholyAlliance_GetResult()
     }
     while ( v3 >= 0 ); /*0x5cb51b*/
   }
-  return v2 == 0; /*0x5cb525*/
+  return (gamemd::AbstractClass **)(v2 == 0);
 }
 }
 // 0x5CB540

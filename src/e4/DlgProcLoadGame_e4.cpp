@@ -53,7 +53,7 @@ HWND E4Recv_696AE0::sub_696AE0()
                  dword_A8DB54 + dword_A8DB60,
                  0) )
           {
-            v7 = dword_A8DB5C++; /*0x696c02*/
+            v7 = (char *)(dword_A8DB5C++);
             *(unsigned int *)(dword_A8DB50 + 4 * v7) = v8; /*0x696c11*/
           }
         }

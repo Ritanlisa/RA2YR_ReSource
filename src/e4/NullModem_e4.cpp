@@ -42,7 +42,7 @@ char NullModem_TestConnection()
   unsigned int v23[6]; // [esp+114h] [ebp-FCh] BYREF
   int v24; // [esp+12Ch] [ebp-E4h]
 
-  v0 = 0; /*0x5f03bd*/
+  v0 = (wchar_t *)(0);
   v17 = 1; /*0x5f03d0*/
   g_NetworkTestFlag = 0; /*0x5f03d5*/
   String = GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullDlg_CPP, 6489); /*0x5f03f1*/
@@ -90,7 +90,7 @@ char NullModem_TestConnection()
       {
         if ( (uint8_t)v24 == g_TauntCommandState ) /*0x5f054d*/
         {
-          v16 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullDlg_CPP, 6530); /*0x5f064a*/
+          v16 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullDlg_CPP, 6530));
           v14 = GetStringCSF(g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, g_Str_File_NullDlg_CPP, 6530); /*0x5f0655*/
           Dialog::ShowMessageBox(v5, v14, v16, 0, 0, 0); /*0x5f065f*/
           break; /*0x5f065f*/

@@ -13,7 +13,7 @@
 
 // 0x4F4780
 namespace gamemd {
-TechnoTypeClass * * Frame::Present(IUnknown * aP1)
+TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8)
 {
   int *v9; // eax
   int result; // eax
@@ -139,9 +139,9 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1)
           Rect.top = v22; /*0x4f4918*/
           if ( g_TacticalClass_Instance /*0x4f4934*/
             && (g_TacticalClass_Instance[48].lpVtbl
-             || g_TacticalClass_Instance[49].lpVtbl != (struct IPersistStreamVtbl *)1072693248) )
+             || g_TacticalClass_Instance[49].lpVtbl != (struct IPersistStreamVtbl *, void * a1)1072693248) )
           {
-            v51 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4941*/
+            v51 = (LPPERSISTSTREAM)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1));
             v23 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 128))(a1); /*0x4f4949*/
             v24 = (double)v51; /*0x4f494f*/
             v25 = g_TacticalClass_Instance; /*0x4f4953*/

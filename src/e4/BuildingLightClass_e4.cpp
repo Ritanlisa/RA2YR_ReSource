@@ -47,7 +47,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
   int v29; // [esp+58h] [ebp-10h]
   char v30[12]; // [esp+5Ch] [ebp-Ch] BYREF
 
-  result = aP1; /*0x436be9*/
+  result = (unsigned int)(aP1);
   *(&this->uniqueId4) = 0; /*0x436bfa*/
   *(&this->abstractFlags5) = aP1; /*0x436c00*/
   *(&this->uniqueId5) = 0; /*0x436c06*/
@@ -78,7 +78,7 @@ unsigned int * BuildingLightClass::FindTarget(CCINIClass * aP1)
                || (*(int (__thiscall **)(unsigned int *))(*v7 + 44))(v7) == 1)
               && !Object::IsAlliedWithObjectHouse(v24, (int)v7) )
             {
-              v8 = *v7; /*0x436ccc*/
+              v8 = (unsigned int *)(*v7);
               v9 = &this->location; /*0x436cce*/
               v10 = this->location; /*0x436cd0*/
               v11 = v9[1]; /*0x436cd2*/
@@ -176,12 +176,12 @@ signed int BuildingLightClass::UpdateOscillation()
   int v29; // [esp+2Ch] [ebp-8h]
   int v30; // [esp+30h] [ebp-4h]
 
-  v24 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable22) + 456))(this->vtable4); /*0x513d3a*/
+  v24 = (void *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable22) + 456))(this->vtable4));
   v26 = v24; /*0x513d3e*/
   v2 = this->vtable4; /*0x513d42*/
   if ( *(unsigned int *)(v2 + 1504) != -1 ) /*0x513d4c*/
   {
-    v3 = (int *)(v2 + 156); /*0x513d52*/
+    v3 = (void *)((int *)(v2 + 156));
     v28 = *v3; /*0x513d59*/
     v29 = v3[1]; /*0x513d65*/
     v30 = v3[2]; /*0x513d71*/
@@ -217,7 +217,7 @@ signed int BuildingLightClass::UpdateOscillation()
     this->customSound = 0; /*0x513e6b*/
     v18 = 0; /*0x513e6e*/
   }
-  v19 = this->vtable4; /*0x513e70*/
+  v19 = (void *)(this->vtable4);
   v20 = *(unsigned char *)(v19 + 116); /*0x513e74*/
   *(unsigned char *)(v19 + 116) = 0; /*0x513e77*/
   (*(void (__thiscall **)(unsigned int, int))(**(unsigned int **)(&this->vtable22) + 460))(this->vtable4, v18); /*0x513e7f*/
@@ -242,7 +242,7 @@ signed int BuildingLightClass::UpdateOscillation()
       v22 = g_RulesClass_Instance; /*0x513f08*/
     }
   }
-  v23 = *(double *)(&this->objectTypeFlags6) - (double)v22[1].WeatherConBoltExplosion; /*0x513f15*/
+  v23 = (int)(*(double *)(&this->objectTypeFlags6) - (double)v22[1].WeatherConBoltExplosion);
   *(double *)(&this->objectTypeFlags6) = v23; /*0x513f18*/
   *(double *)(&this->objectTypeFlags6) = v23 * *(double *)&g_RulesClass_Instance->GameForming; /*0x513f27*/
   return result; /*0x513f2a*/

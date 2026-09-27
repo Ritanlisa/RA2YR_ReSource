@@ -35,7 +35,7 @@ int FactoryClass::UpdateProduction()
   IDA_LOBYTE(Speed) = this->isSuspended; /*0x4c9b28*/
   if ( !(unsigned char)Speed ) /*0x4c9b2d*/
   {
-    Speed = this->q058; /*0x4c9b33*/
+    Speed = (void *)(this->q058);
     if ( Speed ) /*0x4c9b38*/
     {
       if ( this->production == 54 ) /*0x4c9b4d*/
@@ -43,11 +43,11 @@ int FactoryClass::UpdateProduction()
     }
     else if ( !this->specialItem ) /*0x4c9b3f*/
     {
-      return Speed; /*0x4c9b3f*/
+      return (int)(Speed);
     }
     if ( this->specialItem == -1 || this->production != 54 ) /*0x4c9b5d*/
     {
-      v3 = (unsigned int *)(&this->uniqueId4); /*0x4c9b63*/
+      v3 = (void *)((unsigned int *)(&this->uniqueId4));
       Speed = Locomotor::GetSpeed((int *)(&this->uniqueId4)); /*0x4c9b68*/
       if ( Speed || (Speed = this->queuedCapacity) == 0 ) /*0x4c9b76*/
       {
@@ -86,7 +86,7 @@ int FactoryClass::UpdateProduction()
         }
         else
         {
-          v7 = this->production; /*0x4c9be5*/
+          v7 = (unsigned int)(this->production);
           this->q05C = 1; /*0x4c9be8*/
           Speed = v7 - 1; /*0x4c9beb*/
           this->production = Speed; /*0x4c9bec*/
@@ -105,7 +105,7 @@ int FactoryClass::UpdateProduction()
       }
     }
   }
-  return Speed; /*0x4c9bbe*/
+  return (int)(Speed);
 }
 }
 // 0x4C9C60
@@ -114,7 +114,7 @@ int FactoryClass::HasProgressChanged()
 {
   void * result;
 
-  result = *(&this->ptr_243); /*0x4c9c60*/
+  result = (int)(*(&this->ptr_243));
   *(&this->ptr_243) = 0; /*0x4c9c63*/
   return result; /*0x4c9c67*/
 }
@@ -125,7 +125,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
 {
   int v5; // ecx
   void * v6;
-  int v7;
+  bool * v7;
   int v8; // eax
   int v9; // eax
   int v10; // edx
@@ -328,7 +328,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
             && (v9 = v3->ptr_24, v9 > 0)
             && (*(uint8_t (__thiscall **)(int, int, unsigned int))(v3->q040 + 8))(v3 + 64, v8 + v9, 0) )
           {
-            v10 = v3->q050; /*0x4ca350*/
+            v10 = (unsigned int)(v3->q050);
             v11 = v3->q044; /*0x4ca353*/
             v3->q050 = v10 + 1; /*0x4ca359*/
             *(unsigned int *)(v11 + 4 * v10) = a2; /*0x4ca360*/
@@ -409,10 +409,10 @@ int FactoryClass::StartProduction_2()
   void *v7; // eax
   char v10; // [esp-8h] [ebp-10h]
 
-  v2 = this->u32_50; /*0x4ca5a4*/
+  v2 = (void *)(this->u32_50);
   if ( v2 ) /*0x4ca5a9*/
   {
-    v2 = this->q058; /*0x4ca5ab*/
+    v2 = (void *)(this->q058);
     if ( !v2 ) /*0x4ca5b0*/
     {
       if ( !this->queuedCapacity || (IDA_LOBYTE(v2) = this->isSuspended, (unsigned char)v2) ) /*0x4ca5be*/
@@ -430,7 +430,7 @@ int FactoryClass::StartProduction_2()
             ++v6; /*0x4ca5db*/
           }
         }
-        v2 = (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v3 + 64))(v3); /*0x4ca5ee*/
+        v2 = (void *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v3 + 64))(v3));
         if ( v2 >= 0 ) /*0x4ca5f3*/
         {
           v10 = v3[3278]; /*0x4ca5ff*/
@@ -441,7 +441,7 @@ int FactoryClass::StartProduction_2()
       }
     }
   }
-  return v2; /*0x4ca60f*/
+  return (int)(v2);
 }
 }
 // 0x4CA670
@@ -524,7 +524,7 @@ void * FactoryClass::CopyTo(char a2)
     }
     while ( v4 < g_AlphaShapePool ); /*0x4ca836*/
   }
-  v5 = *(&this->vtable27); /*0x4ca838*/
+  v5 = (void *)(*(&this->vtable27));
   if ( v5 && this->u8_4D ) /*0x4ca846*/
   {
     RA2_OPDEL(v5); /*0x4ca84e*/
@@ -580,7 +580,7 @@ int FactoryClass::FinishProduction(int a2)
                                0),
                 (unsigned char)v4) )
           {
-            v4 = dword_AC4CA8++; /*0x6350fc*/
+            v4 = (unsigned int)(dword_AC4CA8++);
             *((unsigned int *)dword_AC4C9C + v4) = this; /*0x63510b*/
           }
         }
@@ -642,7 +642,7 @@ char FactoryClass::RemoveOneFromQueue(char a2)
   int v4; // ecx
   int v5; // ecx
 
-  v2 = &this->uniqueId; /*0x4ca624*/
+  v2 = (unsigned int *)(&this->uniqueId);
   v3 = (*(int (__thiscall **)(unsigned int *, char *))(*(&this->vtable26) + 16))(&this->onHold, &a2); /*0x4ca62e*/
   if ( v3 == -1 ) /*0x4ca634*/
     return 0; /*0x4ca634*/

@@ -54,7 +54,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
     {
       if ( a2 - 1 >= 0 ) /*0x478546*/
       {
-        v9 = a3 + 2; /*0x478548*/
+        v9 = (unsigned char *)(a3 + 2);
         a2 = a2; /*0x47854b*/
         do /*0x478558*/
         {
@@ -74,7 +74,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
       {
         if ( a2 - 1 >= 0 ) /*0x478525*/
         {
-          v7 = v6 + 2; /*0x478527*/
+          v7 = (unsigned char *)(v6 + 2);
           a2 = a2; /*0x47852a*/
           do /*0x478537*/
           {
@@ -130,7 +130,7 @@ AbstractClass * * ParticleTypeClass::Release(int a2, char * a3)
   {
     (*(void (__thiscall **)(void *))(((unsigned int)(this->vtable22))))(this); /*0x4785c6*/
   }
-  v15 = this->vtable3; /*0x4785c9*/
+  v15 = (gamemd::AbstractClass **)(this->vtable3);
   if ( v15 < this->q010 ) /*0x4785d1*/
     this->q010 = v15; /*0x4785d3*/
   return 1; /*0x4785d6*/
@@ -156,7 +156,7 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
   this->Capacity = v3; /*0x4788fe*/
   if ( !v3 ) /*0x478901*/
   {
-    this->Items = 0; /*0x478974*/
+    this->Items = (unsigned int *)(0);
     this->IsAllocated = 0; /*0x478977*/
     return this; /*0x47897a*/
   }
@@ -165,7 +165,7 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
   {
     if ( v3 - 1 >= 0 ) /*0x478918*/
     {
-      v5 = v4 + 2; /*0x47891a*/
+      v5 = (unsigned char *)(v4 + 2);
       v3 = v3; /*0x47891d*/
       do /*0x47892a*/
       {
@@ -182,7 +182,7 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
   {
     v4 = 0; /*0x47892e*/
   }
-  this->Items = v4; /*0x478932*/
+  this->Items = (unsigned int *)(v4);
   if ( !v4 ) /*0x478935*/
     return this; /*0x478935*/
   v7 = this->Capacity; /*0x478937*/
@@ -206,7 +206,7 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
 }
 // 0x644F50
 namespace gamemd {
-void ParticleTypeClass_LoadFromINI()
+void ParticleTypeClass_LoadFromINI(void * a1, void * a2)
 {
   uint8_t *inited; // eax
   unsigned int *RGBColorList; // ebp

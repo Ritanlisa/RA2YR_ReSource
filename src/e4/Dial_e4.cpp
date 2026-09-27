@@ -84,7 +84,7 @@ char Dial8Class_48::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4a7dcc*/
   {
-    this->q00C = 0; /*0x4a7dd6*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x4a7ddc*/
       v4 = a3; /*0x4a7df2*/
     else
@@ -182,7 +182,7 @@ char Dial8Class_48::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4a7f0c*/
   {
-    this->q00C = 0; /*0x4a7f12*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x4a7f18*/
       v4 = a3; /*0x4a7f2e*/
     else
@@ -250,7 +250,7 @@ VectorClass_flat * Dial8Class_48::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x4a8048*/
     this->q004 = 0; /*0x4a8050*/
   }
-  this->IsAllocated = 0; /*0x4a805b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->q008 = 0; /*0x4a8061*/
   if ( (a2 & 1) != 0 ) /*0x4a8068*/
     RA2_OPDEL(); /*0x4a806b*/
@@ -270,7 +270,7 @@ DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(char a2
     RA2_OPDEL(v3); /*0x4a8098*/
     this->q004 = 0; /*0x4a80a0*/
   }
-  this->IsAllocated = 0; /*0x4a80ab*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x4a80b1*/
   if ( (a2 & 1) != 0 ) /*0x4a80b8*/
     RA2_OPDEL(); /*0x4a80bb*/

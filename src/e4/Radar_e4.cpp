@@ -214,7 +214,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v64; // edx
   int v65; // eax
   int *v66; // ecx
-  unsigned int v68;
+  IUnknown * v68;
   int v69; // ecx
   int v70; // edx
   IUnknown * v71;
@@ -253,10 +253,10 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v111; // [esp+64h] [ebp-10h]
   int v112; // [esp+6Ch] [ebp-8h]
   int v113; // [esp+70h] [ebp-4h]
-  IUnknown * v114;
+  unsigned int v114;
   int v115; // [esp+88h] [ebp+14h]
 
-  v6 = aP1; /*0x5824a5*/
+  v6 = (int)(aP1);
   v98 = *(int16_t *)(aP1 + 6); /*0x5824b3*/
   aP1 = aP1; /*0x5824be*/
   aP1 = aP1; /*0x5824c0*/
@@ -422,7 +422,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
       }
     }
   }
-  v46 = *(&this->q0182); /*0x58284b*/
+  v46 = (void *)(*(&this->q0182));
   v110 = (aP1 - v6) / 10 - 1; /*0x582851*/
   v109 = v46 + *(&this->q0181) + 1; /*0x58285f*/
   v101 = 10 * v109; /*0x582868*/
@@ -539,7 +539,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   while ( v49 <= v9 ); /*0x582aca*/
   if ( v96 <= v9 ) /*0x582ad2*/
   {
-    v68 = v114; /*0x582ad8*/
+    v68 = (IUnknown *)(v114);
     do /*0x582ae6*/
     {
       v69 = *(int16_t *)(v68 + 2 * aP2); /*0x582ae6*/
@@ -647,7 +647,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
     }
     while ( v9 <= v9 ); /*0x582ae6*/
   }
-  return v110; /*0x582d1e*/
+  return (void *)(v110);
 }
 }
 // 0x584550
@@ -793,7 +793,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
   {
     for ( i = 2; ; --i ) /*0x584577*/
     {
-      v3 = i; /*0x58457f*/
+      v3 = (int)(i);
       v4 = *aP1; /*0x584594*/
       v106 = 1 << (i + 1); /*0x584599*/
       v5 = aP1[1]; /*0x5845a0*/
@@ -842,7 +842,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
               v16 = v114 - 1; /*0x58467f*/
               if ( v114 - 1 >= 0 ) /*0x584684*/
               {
-                v17 = (char *)v111 + 2 * v16; /*0x58468a*/
+                v17 = (unsigned short *)((char *)v111 + 2 * v16);
                 do /*0x584698*/
                 {
                   if ( *v17 == v14 ) /*0x584690*/
@@ -1044,7 +1044,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
       v112 = 0; /*0x584cbc*/
       if ( v68 ) /*0x584cc4*/
       {
-        v69 = aP1[1]; /*0x584ce3*/
+        v69 = (int)(aP1[1]);
         v70 = *aP1 - *aP1 % 8; /*0x584ce9*/
         v104 = v70; /*0x584cf2*/
         v71 = v69 - v69 % 8; /*0x584cfd*/
@@ -1077,7 +1077,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
                   {
                     v75 = 0; /*0x584d60*/
                   }
-                  v79 = v2 + 36; /*0x584dd6*/
+                  v79 = (int *)(v2 + 36);
                   v80 = 2; /*0x584ddc*/
                   v81 = (int16_t *)(v2[28] + 10 * v75); /*0x584de1*/
                   do /*0x584dfc*/

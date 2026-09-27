@@ -208,7 +208,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
   LABEL_20:
       RA2_OPDEL(v19); /*0x5255d0*/
   }
-  return a1; /*0x5255db*/
+  return (void *)(a1);
 }
 }
 // 0x528220
@@ -319,7 +319,7 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
         v7 = *v19; /*0x52835e*/
         if ( v7 ) /*0x528362*/
         {
-          v6 = a3; /*0x528364*/
+          v6 = (unsigned int)(a3);
           this->vtable3 = v7; /*0x528368*/
           this->vtable2 = a2; /*0x52836b*/
           goto LABEL_5; /*0x528370*/
@@ -360,7 +360,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   int v27[3]; // [esp+24h] [ebp-4Ch] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
-  v6 = String::GetOrEmpty_Alt(a4); /*0x529e85*/
+  v6 = (char *)(String::GetOrEmpty_Alt(a4));
   a4 = (char **)v6; /*0x529e87*/
   v7 = String::GetOrEmpty_Alt((char **)Source); /*0x529e90*/
   Source = &g_INI_DefaultBuffer; /*0x529e98*/
@@ -383,7 +383,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
       this->vtable3 = 0; /*0x52a009*/
       goto LABEL_11; /*0x52a00c*/
     }
-    v6 = (char *)a4; /*0x529ff2*/
+    v6 = (unsigned int)((char *)a4);
     this->vtable3 = v8; /*0x529ff9*/
     this->vtable2 = v7; /*0x529ffc*/
   }
@@ -449,7 +449,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
   unsigned int v24[3]; // [esp+24h] [ebp-4Ch] BYREF
   char Destination[64]; // [esp+30h] [ebp-40h] BYREF
 
-  Source = &g_INI_DefaultBuffer; /*0x52a11f*/
+  Source = (char *)(&g_INI_DefaultBuffer);
   if ( !Destination ) /*0x52a127*/
     goto LABEL_18; /*0x52a127*/
   a3 = a3; /*0x52a12d*/
@@ -476,7 +476,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
       this->vtable3 = 0; /*0x52a2bc*/
       goto LABEL_11; /*0x52a2bf*/
     }
-    v7 = (const char *)IDA_LODWORD(a4); /*0x52a2a8*/
+    v7 = (unsigned int)((const char *)IDA_LODWORD(a4));
     this->vtable3 = v8; /*0x52a2ac*/
     this->vtable2 = a3; /*0x52a2af*/
   }

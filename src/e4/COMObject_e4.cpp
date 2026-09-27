@@ -109,7 +109,7 @@ int COMObject::GetSizeMaxWrapper(AbstractClass * aP0, AbstractClass * aP1)
 } // namespace gamemd
 // 0x6C0050
 namespace gamemd {
-int COMObject::QueryInterface2()
+int COMObject::QueryInterface2(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6c0057*/
     return -2147467261; /*0x6c0059*/

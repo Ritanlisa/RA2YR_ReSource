@@ -458,7 +458,6 @@ struct TacticalClass {
     unsigned int u32_7204;
     unsigned int updateVisibility;
     unsigned int q4696;
-    unsigned int ScrollView;
 // --- flat members (END) ---
     char StubReturnFalse();
     char StubReturnFalse11();

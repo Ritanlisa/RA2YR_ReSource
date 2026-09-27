@@ -39,7 +39,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
     (*(void (__thiscall **)(void *, unsigned int))(v9->q004)(v9, 0); /*0x76fcc8*/
     PriorityQueue::Add(aP1, this->ptr_28); /*0x76fcd6*/
   }
-  v13 = 0; /*0x76fce7*/
+  v13 = (unsigned int)(0);
   Vector::Clear((int)v12); /*0x76fcef*/
   v11[0] = &off_7E1668; /*0x76fcf8*/
   return BufferIOFileClass::Dtor(v11); /*0x76fd05*/

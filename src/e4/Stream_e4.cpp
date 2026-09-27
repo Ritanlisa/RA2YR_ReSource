@@ -17,7 +17,7 @@ int Stream::FlushAndReset()
   int v4; // eax
   void * v5;
 
-  v2 = *this; /*0x439114*/
+  v2 = (int)(*this);
   v3 = this->Stream_field_08; /*0x439116*/
   *(&this->Stream_field_042) = 45; /*0x439119*/
   this->vt_slot_12(); /*0x439120*/
@@ -41,7 +41,7 @@ int Stream::ReadIntArray(int a2)
   result = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, &this->u32_10, 4, 0); /*0x49fb84*/
   if ( result >= 0 ) /*0x49fb89*/
   {
-    v5 = *(unsigned int *)a2; /*0x49fb8e*/
+    v5 = (int)(*(unsigned int *)a2);
     a2 = this->Stream_field_08; /*0x49fb9a*/
     result = (*(int (__stdcall **)(int, int *, int, unsigned int))(v5 + 16))(a2, &a2, 4, 0); /*0x49fb9e*/
     if ( result >= 0 ) /*0x49fba3*/
@@ -76,7 +76,7 @@ int Stream::WriteIntArray(TechnoTypeClass * aP1)
   int i; // esi
   int v6; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *aP1; /*0x67a4ac*/
+  v3 = (int)(*aP1);
   v6 = this->u32_10; /*0x67a4b9*/
   (*(void (__stdcall **)(int *, int *, int, unsigned int))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a4bd*/
   result = v6; /*0x67a4c0*/
@@ -189,7 +189,7 @@ void * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int 
     *(unsigned int *)((char *)&this->u32_1AC + 4) = 60; /*0x75943f*/
     *(unsigned int *)&this->u32_1FC = (uint16_t)dword_A8EBA8; /*0x759455*/
   }
-  this->u32_190 = ManageMultimediaTimer; /*0x759463*/
+  this->u32_190 = (unsigned int)(ManageMultimediaTimer);
   *(unsigned int *)&this->u32_1D4 = 0x2000; /*0x75946d*/
   this->u32_504 = 0; /*0x759477*/
   this->u32_54C = 0; /*0x75947d*/

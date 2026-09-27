@@ -262,6 +262,7 @@ struct TacticalMap {
     unsigned int qE10;
     unsigned int uniqueId4;
     unsigned int uniqueId5;
+    unsigned int Render;
 // --- flat members (END) ---
     ScenarioClass * * ComputeScreenTint();
     int Construct();

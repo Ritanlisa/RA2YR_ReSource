@@ -108,7 +108,7 @@ int WinsockInterface::Init()
       byte_B7809C = 1; /*0x7b1e41*/
       MessageBoxA(g_hWnd, aWarningPacketL, Caption, 0); /*0x7b1e48*/
     }
-    v3 = (struct WSAData *)operator new(0x590u); /*0x7b1e53*/
+    v3 = (int)((struct WSAData *)operator new(0x590u));
     v4 = *this; /*0x7b1e58*/
     v5 = v3; /*0x7b1e5a*/
     v3 = v3; /*0x7b1e61*/

@@ -63,7 +63,7 @@ int AbstractTypeClass::Constructor(AbstractClass * aP1)
     qmemcpy((void *)(&this->u32_280), Destination, 0x30u); /*0x4108eb*/
     this->q094 = v8; /*0x4108ed*/
   }
-  this->UIName = &g_TypeClass_DefaultString; /*0x4108ee*/
+  this->UIName = (unsigned int)(&g_TypeClass_DefaultString);
   if ( g_AbstractTypePool < dword_A8E970 /*0x410929*/
     || (byte_A8E975 || !dword_A8E970)
     && dword_A8E97C > 0
@@ -72,10 +72,10 @@ int AbstractTypeClass::Constructor(AbstractClass * aP1)
          dword_A8E970 + dword_A8E97C,
          0) )
   {
-    v4 = g_AbstractTypePool++; /*0x410936*/
+    v4 = (gamemd::AbstractTypeClass *)(g_AbstractTypePool++);
     *((unsigned int *)dword_A8E96C + v4) = this; /*0x410945*/
   }
-  return this; /*0x410948*/
+  return (int)(this);
 }
 } // namespace gamemd
 // 0x4109C0

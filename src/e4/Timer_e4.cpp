@@ -79,12 +79,12 @@ int Timer::PumpMessages()
   *(&this->q04C7) = v2; /*0x54f74b*/
   if ( (HWND)(((int)v2 + 1) % 256) == v2 ) /*0x54f766*/
   {
-    result = *(&this->q04C8); /*0x54f77b*/
+    result = (unsigned int)(*(&this->q04C8));
     *(&this->q04C7) = result; /*0x54f781*/
   }
   else
   {
-    result = MessageLoop(); /*0x54f768*/
+    result = (HWND)(MessageLoop());
     *(&this->q04C7) = *(&this->q04C8); /*0x54f773*/
   }
   return result; /*0x54f779*/

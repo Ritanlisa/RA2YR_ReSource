@@ -195,7 +195,7 @@ int CommandClass::AddAction(ToolTipManager * aP1)
   ToolTipManager * v19;
   int v20; // eax
 
-  aP1 = aP1; /*0x724584*/
+  aP1 = (gamemd::ToolTipManager *)(aP1);
   v4 = (int *)(&this->u32_E88); /*0x72458c*/
   aP1 = *(unsigned int *)aP1; /*0x724592*/
   if ( this->u32_250 ) /*0x724596*/
@@ -209,7 +209,7 @@ int CommandClass::AddAction(ToolTipManager * aP1)
       return 0; /*0x7245ca*/
     }
   }
-  v7 = operator new(0x1Cu); /*0x7245cf*/
+  v7 = (unsigned int *)(operator new(0x1Cu));
   v7 = v7; /*0x7245d4*/
   if ( v7 ) /*0x7245db*/
   {
@@ -226,7 +226,7 @@ int CommandClass::AddAction(ToolTipManager * aP1)
       && (v10 = this->u32_248, v10 > 0)
       && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->u32_234 + 8))(&this->u32_8D0, v9 + v10, 0) )
     {
-      v11 = this->q244; /*0x72464c*/
+      v11 = (unsigned int)(this->q244);
       v12 = this->u32_238; /*0x72464f*/
       this->q244 = v11 + 1; /*0x724655*/
       *(unsigned int *)(v12 + 4 * v11) = v7; /*0x724658*/
@@ -243,13 +243,13 @@ int CommandClass::AddAction(ToolTipManager * aP1)
       }
       if ( v13 ) /*0x72466c*/
       {
-        aP1 = v4[2]; /*0x72467c*/
+        aP1 = (gamemd::ToolTipManager *)(v4[2]);
         if ( v13 < 0 ) /*0x724680*/
           return 1; /*0x724680*/
       }
       else
       {
-        aP1 = 10; /*0x72466e*/
+        aP1 = (gamemd::ToolTipManager *)(10);
       }
       v14 = v13 + aP1; /*0x72468a*/
       v15 = operator new(8 * (v13 + aP1)); /*0x724695*/

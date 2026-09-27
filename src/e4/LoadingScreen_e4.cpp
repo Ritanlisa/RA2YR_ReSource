@@ -158,19 +158,19 @@ void * * LoadingScreen::LoadSHPs()
 
   if ( *((unsigned int *)g_ScenarioClass_Instance + 3374) == 2 ) /*0x72fa21*/
   {
-    dword_B0FA68 = LoadFileSHP(off_844D48, (bool *)&byte_B0FCA5); /*0x72fa39*/
+    dword_B0FA68 = (char *)(LoadFileSHP(off_844D48, (bool *)&byte_B0FCA5));
     dword_B0FAC8 = LoadFileSHP(off_844D3C, (bool *)&byte_B0FCA1); /*0x72fa4e*/
     SHP = LoadFileSHP(off_844D40, (bool *)&byte_B0FCA0); /*0x72fa53*/
     v1 = off_844D44[0]; /*0x72fa58*/
   }
   else
   {
-    dword_B0FA68 = LoadFileSHP(off_844D14, (bool *)&byte_B0FCA5); /*0x72fa80*/
+    dword_B0FA68 = (char *)(LoadFileSHP(off_844D14, (bool *)&byte_B0FCA5));
     dword_B0FAC8 = LoadFileSHP(off_844D04, (bool *)&byte_B0FCA1); /*0x72fa95*/
     SHP = LoadFileSHP(off_844D00, (bool *)&byte_B0FCA0); /*0x72fa9a*/
     v1 = off_844D08; /*0x72fa9f*/
   }
-  dword_B0FAD4 = SHP; /*0x72fa5e*/
+  dword_B0FAD4 = (void **)(SHP);
   dword_B0FA50 = LoadFileSHP(v1, (bool *)&byte_B0FCA2); /*0x72fabf*/
   dword_B0F9EC = LoadFileSHP(off_844CFC, (bool *)&byte_B0FC9F); /*0x72fad4*/
   dword_B0FB08 = LoadFileSHP(off_844D0C, (bool *)&byte_B0FCA3); /*0x72fae9*/
@@ -194,7 +194,7 @@ char * LoadingScreen::GetBackgroundImage(ScenarioClass * aP1)
 {
   char *result; // eax
 
-  result = off_844C34[0]; /*0x72b2f0*/
+  result = (char *)(off_844C34[0]);
   if ( this != (void *)640 ) /*0x72b2fb*/
     return off_844C38[0]; /*0x72b2fd*/
   return result; /*0x72b302*/
@@ -206,7 +206,7 @@ char * LoadingScreen::GetOverlayImage(ScenarioClass * aP1)
 {
   char *result; // eax
 
-  result = off_844C3C[0]; /*0x72b310*/
+  result = (char *)(off_844C3C[0]);
   if ( this != (void *)640 ) /*0x72b31b*/
     return off_844C40[0]; /*0x72b31d*/
   return result; /*0x72b322*/

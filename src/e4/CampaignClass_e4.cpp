@@ -34,7 +34,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
          dword_A83D00 + dword_A83D0C,
          0) )
   {
-    v3 = g_UnitTypeInitState++; /*0x46cbd9*/
+    v3 = (gamemd::CampaignClass *)(g_UnitTypeInitState++);
     *((unsigned int *)g_CampaignTypeArray + v3) = this; /*0x46cbe8*/
   }
   this->u32_9C = 0; /*0x46cbf7*/
@@ -55,7 +55,7 @@ int CampaignClass::LoadFromINIList()
   int i; // [esp+8h] [ebp-24h]
   char Source[32]; // [esp+Ch] [ebp-20h] BYREF
 
-  result = INIClass::GetKeyCount(this, (uint8_t *)g_INI_Key_Battles); /*0x46ce1c*/
+  result = (int)(INIClass::GetKeyCount(this, (uint8_t *)g_INI_Key_Battles));
   v3 = 0; /*0x46ce21*/
   for ( i = result; v3 < i; ++v3 ) /*0x46ce29*/
   {
@@ -92,7 +92,7 @@ int CampaignClass::LoadFromINIList()
                dword_A83D00 + dword_A83D0C,
                0) )
         {
-          v7 = g_UnitTypeInitState++; /*0x46cf25*/
+          v7 = (void *)(g_UnitTypeInitState++);
           *((unsigned int *)g_CampaignTypeArray + v7) = v6; /*0x46cf34*/
         }
         *((unsigned char *)v6 + 156) = 0; /*0x46cf43*/
@@ -217,7 +217,7 @@ AbstractClass * * CampaignClass::SaveProgress()
     }
     while ( v12 );
   }
-  g_IsWindowed[v5] = 0; /*0x49c720*/
+  g_IsWindowed[v5] = (char *)(0);
   strcpy(Block, g_IsWindowed); /*0x49c73a*/
   v13 = &this->q070; /*0x49c743*/
   v14 = 0; /*0x49c745*/
@@ -271,7 +271,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   v23 = 1; /*0x49c900*/
   if ( v20 > 1 ) /*0x49c907*/
   {
-    v24 = &unk_A8B2A0; /*0x49c909*/
+    v24 = (unsigned int *)(&unk_A8B2A0);
     while ( *v24 != -1 ) /*0x49c911*/
     {
       ++v23; /*0x49c913*/

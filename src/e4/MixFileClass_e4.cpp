@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/AudioController_e4.hpp"
 
 // 0x69E210
 namespace gamemd {
@@ -64,10 +65,10 @@ void MixFileClass::CleanupCache()
   {
     if ( *(unsigned short *)dword_B077B4 == 0xFFFF ) /*0x69e299*/
     {
-      v5 = (char *)dword_B077B4 + 16; /*0x69e29f*/
+      v5 = (unsigned char *)((char *)dword_B077B4 + 16);
       if ( *((unsigned char *)dword_B077B4 + 16) ) /*0x69e29b*/
       {
-        v6 = (void *)*((unsigned int *)dword_B077B4 + 3); /*0x69e2a6*/
+        v6 = (unsigned int *)((void *)*((unsigned int *)dword_B077B4 + 3));
         v7 = (char *)dword_B077B4 + 12; /*0x69e2a9*/
         if ( v6 ) /*0x69e2ae*/
           MixFileClass::CacheNode_Dtor(v6, 1); /*0x69e2b2*/
@@ -99,7 +100,7 @@ void MixFileClass::CleanupCache()
 namespace gamemd {
 void MixFileClass::DestroyCache()
 {
-  unsigned int v0;
+  void * v0;
   void *v1; // edi
   void *v2; // ecx
   int v3; // eax

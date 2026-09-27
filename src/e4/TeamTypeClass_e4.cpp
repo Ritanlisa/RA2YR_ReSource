@@ -65,7 +65,7 @@ int TeamTypeClass::Construct()
          dword_A83E38 + dword_A83E44,
          0) )
   {
-    v3 = g_TeamTypeCapacity++; /*0x4c997a*/
+    v3 = (gamemd::TeamTypeClass *)(g_TeamTypeCapacity++);
     *((unsigned int *)g_TeamTypeCount + v3) = this; /*0x4c9989*/
   }
   g_CurrentFrame = g_CurrentFrame; /*0x4c998c*/
@@ -82,10 +82,10 @@ int TeamTypeClass::Construct()
          dword_B0F728 + dword_B0F734,
          0) )
   {
-    v5 = g_AlphaShapePool++; /*0x4c99e9*/
+    v5 = (gamemd::TeamTypeClass *)(g_AlphaShapePool++);
     *((unsigned int *)dword_B0F724 + v5) = this; /*0x4c99f8*/
   }
-  return this; /*0x4c99fd*/
+  return (int)(this);
 }
 }
 // 0x691C00
@@ -105,8 +105,7 @@ void * TeamTypeClass::CreateScriptType()
   v2 = 0; /*0x691c35*/
   if ( g_MultiplayerDebugState <= 0 ) /*0x691c39*/
   {
-  LABEL_6:
-    v3 = operator new(0x234u); /*0x691c62*/
+  LABEL_6: v3 = (void **)(operator new(0x234u));
     v4 = v3; /*0x691c6c*/
     if ( v3 ) /*0x691c73*/
     {
@@ -124,7 +123,7 @@ void * TeamTypeClass::CreateScriptType()
             v5 = g_MultiplayerDebugState,
             v6) )
       {
-        g_MultiplayerDebugState = v5 + 1; /*0x691cf6*/
+        g_MultiplayerDebugState = (unsigned int)(v5 + 1);
         *((unsigned int *)g_MultiplayerSyncState + v5) = v4; /*0x691d02*/
         v5 = g_MultiplayerDebugState; /*0x691d05*/
       }
@@ -145,7 +144,7 @@ void * TeamTypeClass::CreateScriptType()
             goto LABEL_17; /*0x691d21*/
         }
       }
-      v4[38] = v7; /*0x691d26*/
+      v4[38] = (void *)(v7);
       return v4; /*0x691d30*/
     }
     return 0; /*0x691d3e*/
@@ -170,8 +169,7 @@ AbstractClass * * TeamTypeClass::FindOrCreateTaskForce()
   v2 = 0; /*0x6e861d*/
   if ( g_MultiplayerLogFlags <= 0 ) /*0x6e8621*/
   {
-  LABEL_6:
-    v3 = operator new(0xD4u); /*0x6e8646*/
+  LABEL_6: v3 = (unsigned int *)(operator new(0xD4u));
     if ( v3 ) /*0x6e8655*/
       return TaskForceClass::Construct(v3, Source); /*0x6e8661*/
     return 0; /*0x6e8655*/
@@ -181,7 +179,7 @@ AbstractClass * * TeamTypeClass::FindOrCreateTaskForce()
     if ( ++v2 >= g_MultiplayerLogFlags ) /*0x6e8644*/
       goto LABEL_6; /*0x6e8644*/
   }
-  return (unsigned int *)*((unsigned int *)g_MultiplayerLogEntry + v2); /*0x6e865f*/
+  return (gamemd::AbstractClass **)((unsigned int *)*((unsigned int *)g_MultiplayerLogEntry + v2));
 }
 }
 // 0x6EF5F0
@@ -304,7 +302,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   v5 = (void *)SuperWeaponTypeClass::FindOrCreate(aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aHouse, v4); /*0x6f10e1*/
   if ( BuildingType::IsSpecialType(v5) ) /*0x6f10e5*/
   {
-    this->q0C8 = v5; /*0x6f10ee*/
+    this->q0C8 = (unsigned int)(v5);
     this->q0C4 = 0; /*0x6f10f4*/
   }
   else if ( v5 != (void *)-1 ) /*0x6f1103*/
@@ -312,13 +310,13 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
     this->q0C4 = HouseClass::FindOwner(v5); /*0x6f110c*/
     this->q0C8 = -1; /*0x6f1112*/
   }
-  Int_Overwrite = INIClass::ReadInt_Overwrite(&this->q090, aVeteranlevel, this->q0A0); /*0x6f112b*/
+  Int_Overwrite = (void *)(INIClass::ReadInt_Overwrite(&this->q090, aVeteranlevel, this->q0A0));
   v44 = this->q0C0; /*0x6f1138*/
   this->q0A0 = Int_Overwrite; /*0x6f113f*/
   this->q0C0 = INIClass::ReadInt_Overwrite(&this->q090, aMindcontroldec, v44); /*0x6f114a*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite(&this->q090, aLoadable, this->q0A4); /*0x6f115f*/
   v8 = this->u8_A5; /*0x6f1164*/
-  this->q0A4 = Bool_Overwrite; /*0x6f116a*/
+  this->q0A4 = (void *)(Bool_Overwrite);
   v9 = INIClass::ReadBool_Overwrite(&this->q090, aFull, v8); /*0x6f1179*/
   v45 = this->u8_A6; /*0x6f1186*/
   this->u8_A5 = v9; /*0x6f118d*/

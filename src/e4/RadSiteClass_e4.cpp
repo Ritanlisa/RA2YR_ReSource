@@ -43,7 +43,7 @@ RadSiteClass::RadSiteClass()
          dword_B04BD8 + dword_B04BE4,
          0) )
   {
-    v3 = dword_B04BE0++; /*0x65b284*/
+    v3 = (gamemd::RadSiteClass *)(dword_B04BE0++);
     *((unsigned int *)dword_B04BD4 + v3) = this; /*0x65b293*/
   }
   return this; /*0x65b298*/

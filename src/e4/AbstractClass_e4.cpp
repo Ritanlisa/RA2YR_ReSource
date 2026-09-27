@@ -53,7 +53,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
              dword_89C670 + dword_89C67C,
              0) )
       {
-        v6 = dword_89C678++; /*0x438f44*/
+        v6 = (unsigned int)(dword_89C678++);
         *((unsigned int *)dword_89C66C + v6) = v5; /*0x438f53*/
       }
     }
@@ -75,7 +75,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
       && (v9 = this->abstractFlags, v9 > 0)
       && this->COMStub_Release(v8 + v9, 0) )
     {
-      v10 = this->uniqueId; /*0x438fbb*/
+      v10 = (unsigned int)(this->uniqueId);
       v11 = this->vtable2; /*0x438fbe*/
       this->uniqueId = v10 + 1; /*0x438fc4*/
       *(unsigned int *)(v11 + 4 * v10) = v5; /*0x438fc7*/
@@ -120,7 +120,7 @@ bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
 
 // 0x4FB9B0
 namespace gamemd {
-VectorClass_flat * * AbstractClass_RemoveObjectFromHouse()
+VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   void **v5; // ebp
   int v7; // eax

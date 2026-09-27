@@ -134,7 +134,7 @@ int AudioStream::SetupPlayback()
   void * v4;
   int *v6; // edx
 
-  v1 = this->u32_A8; /*0x404700*/
+  v1 = (int)(this->u32_A8);
   v2 = 0; /*0x404707*/
   v3 = 0; /*0x404709*/
   this->q1E0 = v1; /*0x40470e*/
@@ -189,7 +189,7 @@ int AudioStream::SelectRandom()
   int v10; // ecx
   int v12; // eax
 
-  v2 = *(unsigned int **)(&this->q00C6); /*0x4047b3*/
+  v2 = (void *)(*(unsigned int **)(&this->q00C6));
   v3 = v2[4]; /*0x4047b9*/
   if ( v2[22] >= 0x21u && (this->u32_18 & 0x20) == 0 ) /*0x4047c5*/
     return 0; /*0x4047c5*/
@@ -198,7 +198,7 @@ int AudioStream::SelectRandom()
   {
     if ( (v3 & 2) != 0 ) /*0x4047de*/
     {
-      v5 = Random::Range(Randomizer_Global, 0, v4 - 1); /*0x4047ea*/
+      v5 = (void *)(Random::Range(Randomizer_Global, 0, v4 - 1));
       v6 = this->q1E0 - 1; /*0x404803*/
       this->q0AC = *(unsigned int *)(&this->u32_10 * v5 + 352); /*0x404804*/
       v5 = v5; /*0x40480c*/
@@ -426,7 +426,7 @@ int AudioStream::ReadSamples(const void * a2)
   unsigned int v16[27]; // [esp+30h] [ebp-D0h] BYREF
   unsigned int v17[25]; // [esp+9Ch] [ebp-64h] BYREF
 
-  v2 = this; /*0x4a33a7*/
+  v2 = (unsigned int *)(this);
   v3 = *(&this->vtable38); /*0x4a33ac*/
   if ( !v3 ) /*0x4a33b7*/
     return -1; /*0x4a33b7*/
@@ -512,7 +512,7 @@ int AudioStream::ReadSamples(const void * a2)
                 }
                 while ( v7 < v13 ); /*0x4a353c*/
               }
-              v2 = this; /*0x4a356f*/
+              v2 = (unsigned int *)(this);
             }
           }
         }

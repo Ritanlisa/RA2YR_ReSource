@@ -17,7 +17,7 @@ int Mixer::ReleaseChannel()
   int *v3; // edi
   int v4; // eax
 
-  result = g_AudioConfigState; /*0x406060*/
+  result = (int *)(g_AudioConfigState);
   if ( !g_AudioConfigState ) /*0x40606e*/
     goto LABEL_14; /*0x40606e*/
   if ( this->u32_C != &dword_87E294 ) /*0x406077*/

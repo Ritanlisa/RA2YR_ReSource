@@ -105,7 +105,7 @@ LABEL_23:
               goto LABEL_27;
           }
         }
-        result = ProcessAudioStreamPlayback(a1, v11, *(uint8_t *)(a1 + 245), 0, 0, &a5);
+        result = (int)(ProcessAudioStreamPlayback(a1, v11, *(uint8_t *)(a1 + 245), 0, 0, &a5));
 LABEL_27:
         *(unsigned int *)(a1 + 384) = v11;
         if ( result != -1 )

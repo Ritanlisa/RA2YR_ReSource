@@ -38,6 +38,9 @@
 #include "e4/classes/E4Recv_631640_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/Display_e4.hpp"
 
 // 0x6406E0
 namespace gamemd {
@@ -97,7 +100,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
   float v31[4]; // [esp+58h] [ebp-20h] BYREF
   float v32[4]; // [esp+68h] [ebp-10h] BYREF
 
-  v21 = *this; /*0x645d6f*/
+  v21 = (float)(*this);
   v22 = this->M4; /*0x645d76*/
   v23 = this->M8; /*0x645d7d*/
   v24 = this->M12; /*0x645d88*/
@@ -428,9 +431,9 @@ AbstractClass * * ProcessNetworkEvents()
 namespace gamemd {
 void RunNetworkGameLoop()
 {
-  int v0; // eax
+  unsigned int v0;
   void *v1; // ebx
-  int * v2;
+  AbstractClass ** v2;
   int v3; // edi
   signed int v4; // eax
   int v5; // edi
@@ -466,14 +469,14 @@ void RunNetworkGameLoop()
   Debug::Log(); /*0x64835c*/
   if ( g_GameMode_Current[0] < 3 || g_GameMode_Current[0] > 4 ) /*0x648371*/
   {
-    v12 = (void *)dword_A8EA74; /*0x648393*/
+    v12 = (gamemd::AbstractClass **)((void *)dword_A8EA74);
     v2 = &g_EventManager; /*0x648397*/
     v1 = (void *)dword_A8EA74; /*0x64839c*/
     v0 = dword_A8EA78 - 14; /*0x6483a0*/
   }
   else
   {
-    v0 = dword_A8DA40; /*0x648373*/
+    v0 = (gamemd::AbstractClass **)(dword_A8DA40);
     v1 = &unk_A8D812; /*0x648378*/
     v12 = &unk_A8D812; /*0x64837d*/
     v2 = g_NetworkManager; /*0x648381*/

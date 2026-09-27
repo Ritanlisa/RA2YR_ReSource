@@ -82,10 +82,10 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2)
          dword_ABDF98 + dword_ABDFA4,
          0) )
   {
-    v6 = g_RandomMap_TileData++; /*0x58c04e*/
+    v6 = (unsigned int)(g_RandomMap_TileData++);
     *((unsigned int *)g_RandomMap_TerrainState + v6) = this; /*0x58c05d*/
   }
-  return this; /*0x58c062*/
+  return (unsigned int *)(this);
 }
 }
 // 0x58C800
@@ -203,7 +203,7 @@ int RandomMap::GenerateTerrain()
                && v58 > 0
                && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v53[2])(&v53, v58 + v55, 0)) )
             {
-              v14 = v57++; /*0x58ca6f*/
+              v14 = (unsigned int)(v57++);
               *(unsigned int *)(v54 + 4 * v14) = v45; /*0x58ca7a*/
             }
           }

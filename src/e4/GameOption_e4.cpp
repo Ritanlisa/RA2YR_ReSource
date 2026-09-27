@@ -28,7 +28,7 @@ void * GameOption::SetDescriptionWStr(CampaignScore * aP1)
   }
   else
   {
-    StringCSF = GetStringCSF(g_Str_MSG_NoDescription, 0, g_Str_File_Session_CPP, 2845); /*0x69ad02*/
+    StringCSF = (wchar_t *)(GetStringCSF(g_Str_MSG_NoDescription, 0, g_Str_File_Session_CPP, 2845));
     return wcscpy(StringCSF); /*0x69ad09*/
   }
   return result; /*0x69aced*/
@@ -59,7 +59,7 @@ char GameOption::CheckDuplicate()
 {
   LPARAM *v0; // eax
 
-  v0 = &g_NetworkPlayerName; /*0x5e9566*/
+  v0 = (LPARAM *)(&g_NetworkPlayerName);
   while ( *v0 != g_Lobby_MaxPlayers ) /*0x5e956d*/
   {
     if ( (int)++v0 >= (int)&g_PlayerNameListEnd ) /*0x5e9577*/

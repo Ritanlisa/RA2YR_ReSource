@@ -431,7 +431,7 @@ int Power::FinalizeDrain(int a2)
   unsigned int v6; // eax
   int v7; // edi
 
-  v2 = this->q004; /*0x4a1c10*/
+  v2 = (unsigned int)(this->q004);
   if ( !v2 ) /*0x4a1c15*/
     this->q008 = 0; /*0x4a1c17*/
   *((unsigned char *)this + v2 + 8) = a2; /*0x4a1c1f*/
@@ -456,7 +456,7 @@ int Power::FinalizeDrain(int a2)
     *(unsigned int *)this = result; /*0x4a1c83*/
     this->q004 = 0; /*0x4a1c85*/
   }
-  return result; /*0x4a1c8e*/
+  return (int)(result);
 }
 } // namespace gamemd
 
@@ -471,7 +471,7 @@ int Power::FlagProcess(int a2)
   unsigned int v6; // eax
   int v7; // edi
 
-  v2 = this->q004; /*0x4a1ca0*/
+  v2 = (unsigned int)(this->q004);
   if ( !v2 ) /*0x4a1ca7*/
     this->q008 = 0; /*0x4a1ca9*/
   *((unsigned char *)this + v2 + 8) = (unsigned char)a2 != 0; /*0x4a1cb7*/
@@ -496,13 +496,13 @@ int Power::FlagProcess(int a2)
     *(unsigned int *)this = result; /*0x4a1d1b*/
     *(((char *, unsigned int a1)&this->q000 + 1), unsigned int a1) = 0; /*0x4a1d1d*/
   }
-  return result; /*0x4a1d23*/
+  return (int)(result);
 }
 } // namespace gamemd
 
 // 0x4A1D50
 namespace gamemd {
-int Power::TimerProcess()
+int Power::TimerProcess(void * a1)
 {
   return Checksummer::Add_Buffer(&a1, 4); /*0x4a1d64*/
 }

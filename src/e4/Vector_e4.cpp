@@ -100,7 +100,7 @@ char Vector::RemoveAt(AbstractClass * aP1)
   void * v2;
   void * v4;
 
-  v2 = this->q010; /*0x45ae10*/
+  v2 = (unsigned int)(this->q010);
   aP1 = aP1; /*0x45ae13*/
   if ( aP1 >= v2 ) /*0x45ae19*/
     return 0; /*0x45ae3c*/
@@ -157,7 +157,7 @@ int Vector::Find(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = this->q010; /*0x4e0550*/
+  v2 = (void *)(this->q010);
   result = 0; /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
@@ -186,7 +186,7 @@ char Vector::Grow()
   void *v5; // ebp
   int v6; // [esp+4h] [ebp-4h]
 
-  v2 = *this; /*0x7aeec4*/
+  v2 = (int)(*this);
   if ( *this < this->q004 ) /*0x7aeecb*/
     return 0; /*0x7aeecd*/
   v4 = 2 * v2; /*0x7aeed4*/

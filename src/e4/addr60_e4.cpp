@@ -1358,7 +1358,7 @@ AbstractClass * * DispatchDialogControlAction(int a1, HWND a2)
   {
     return UI_Helper_72CC80(); /*0x6037f9*/
   }
-  return result; /*0x603798*/
+  return (gamemd::AbstractClass **)(result);
 }
 }
 // 0x603870
@@ -1438,7 +1438,7 @@ AbstractClass * * GetDialogControlSHP(int a1, HWND a2, bool * a3)
   }
   else if ( v5 == 196 && DlgCtrlID == 1961 ) /*0x603a81*/
   {
-    return (void *)dword_B0FAD0; /*0x603a8b*/
+    return (gamemd::AbstractClass **)((void *)dword_B0FAD0);
   }
   return 0; /*0x603a05*/
 }

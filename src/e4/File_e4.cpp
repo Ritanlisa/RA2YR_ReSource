@@ -61,12 +61,12 @@ unsigned int * File::LoadFont()
   int v33; // [esp+6Ch] [ebp-8h]
   int v34; // [esp+70h] [ebp-4h]
 
-  v2 = 0; /*0x43399b*/
+  v2 = (unsigned int *)(0);
   v3 = 0; /*0x43399d*/
   v4 = operator new(0x6Cu); /*0x43399f*/
   if ( v4 ) /*0x4339a9*/
   {
-    v5 = CCFileClass::Construct(v4, Source); /*0x4339b2*/
+    v5 = (unsigned int *)(CCFileClass::Construct(v4, Source));
     v6 = v5; /*0x4339b7*/
     if ( v5 ) /*0x4339bb*/
     {
@@ -311,7 +311,7 @@ AbstractClass * * File::ParseFileHVA(int a2)
       return 0; /*0x5bd65f*/
     }
   }
-  return result; /*0x5bd5f2*/
+  return (gamemd::AbstractClass **)(result);
 }
 }
 // 0x625AF0
@@ -346,7 +346,7 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
     return this; /*0x625bf4*/
   while ( 1 ) /*0x625b50*/
   {
-    v7 = operator new(0x10u); /*0x625b50*/
+    v7 = (int *)(operator new(0x10u));
     v8 = *v5; /*0x625b55*/
     v9 = (int)v7; /*0x625b57*/
     v10 = v5 + 2; /*0x625b5c*/

@@ -39,7 +39,7 @@ int Factory::GetLinkedIndex(DynamicVector * aP1)
 }
 // 0x718B70
 namespace gamemd {
-void* Factory_CalculateExitCell()
+void* Factory_CalculateExitCell(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
   int *v7; // edi
   unsigned int *v8; // ecx
@@ -142,7 +142,7 @@ void* Factory_CalculateExitCell()
           v76 = v11[1],
           v12 = v11[2],
           IDA_LOBYTE(v65) = 1,
-          v12 <= 3 * dword_B0EC38 + Cell::GetGroundHeight(v73)) )
+          v12 <= 3 * dword_B0EC38 + Cell::GetGroundHeight(v73, void * a1, void * a2, void * a3, void * a4)) )
     {
       IDA_LOBYTE(v65, unsigned int a1, unsigned int a4, unsigned int a2, unsigned int a3) = 0; /*0x718c70*/
     }
@@ -155,7 +155,7 @@ void* Factory_CalculateExitCell()
       if ( (*(int (__thiscall **)(unsigned int))(*(unsigned int *)a1[3] + 388))(a1[3]) == 8 /*0x718ce3*/
         || (*(int (__thiscall **)(unsigned int))(*(unsigned int *)a1[3] + 388))(a1[3]) == 9
         || (*(int (__thiscall **)(unsigned int))(*(unsigned int *)a1[3] + 388))(a1[3]) == 7
-        || (*(int (__thiscall **)(unsigned int))(*(unsigned int *)a1[3] + 388))(a1[3]) == 25 )
+        || (*(int (__thiscall **, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)(unsigned int))(*(unsigned int *)a1[3] + 388))(a1[3]) == 25 )
       {
         v71 = *(int16_t **)(a1[3] + 1444); /*0x718cf4*/
         if ( v71 ) /*0x718cf8*/

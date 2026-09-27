@@ -109,7 +109,7 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
   }
   else
   {
-    this->u16_10E = v14; /*0x484893*/
+    this->u16_10E = (gamemd::ScenarioClass **)(v14);
     return v14; /*0x484890*/
   }
 }
@@ -129,7 +129,7 @@ int TacticalMap::Redraw()
     g_WWMouseClass_Instance,
     DSurface_Composite,
     0);
-  v3 = this->TacticalMap_field_0C; /*0x4f44a5*/
+  v3 = (int)(this->TacticalMap_field_0C);
   this->TacticalMap_field_0C = 0; /*0x4f44a8*/
   IDA_LOBYTE(v6) = v3 != 0; /*0x4f44b7*/
   v7 = v3 == 2; /*0x4f44be*/
@@ -276,7 +276,7 @@ int TacticalMap::Construct()
   this->qDB0 = 0; /*0x6d1d4e*/
   memset((void *)(&this->q0588), 0, 0xC80u); /*0x6d1d6f*/
   this->q024 = 0; /*0x6d1d77*/
-  this->q0A4 = -1; /*0x6d1d7d*/
+  this->q0A4 = (int)(-1);
   this->qDB4.Identity(); /*0x6d1d87*/
   dbl_B0CD88 = dbl_B0CD88; /*0x6d1d95*/
   Matrix3x3::RotateX(dbl_B0CD88); /*0x6d1d98*/
@@ -344,7 +344,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
         v7 = 20 * v6; /*0x6d2b93*/
         do /*0x6d2cfd*/
         {
-          v31 = *(unsigned int *)((char *)g_CraterPool + v7); /*0x6d2ba2*/
+          v31 = (int *)(*(unsigned int *)((char *)g_CraterPool + v7));
           v32 = *(unsigned int *)((char *)g_CraterPool + v7 + 4); /*0x6d2ba9*/
           v33 = *(unsigned int *)((char *)g_CraterPool + v7 + 8); /*0x6d2bb0*/
           v34 = *(unsigned int *)((char *)g_CraterPool + v7 + 12); /*0x6d2bbd*/
@@ -425,7 +425,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
     }
     while ( v17 < result ); /*0x6d2dc2*/
   }
-  return result; /*0x6d2dc8*/
+  return (void *)(result);
 }
 } // namespace gamemd
 // 0x6D3D10

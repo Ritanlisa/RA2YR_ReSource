@@ -48,7 +48,7 @@ int Mission::ExecuteTechnoMissionAction()
           break; /*0x520bdf*/
         if ( *(int *)(v3 + 3680) > 0 ) /*0x520bed*/
         {
-          v4 = (void *)operator new(0x1C8u); /*0x520bf9*/
+          v4 = (int)((void *)operator new(0x1C8u));
           if ( !v4 ) /*0x520c00*/
             goto LABEL_20; /*0x520c00*/
           v5 = (unsigned int)Random::State((unsigned int *)g_ScenarioClass_Instance + 134) % *(unsigned int *)(*(&this->u32_AC2) + 3680); /*0x520c2d*/
@@ -66,7 +66,7 @@ int Mission::ExecuteTechnoMissionAction()
                           + 4
                           * ((unsigned int)Random::State((unsigned int *)g_ScenarioClass_Instance + 134)
                            % g_RulesClass_Instance->BridgeExplosions[1]));
-            v8 = *this; /*0x520c94*/
+            v8 = (int)(*this);
             v6 = &v20; /*0x520c96*/
   LABEL_19:
             v9 = (int *)this->vt_slot_72(v6); /*0x520c9a*/
@@ -224,7 +224,7 @@ char Mission::ProcessUnitMissionAI()
       WinAPI::Wrapper(-2147467261); /*0x520f64*/
     if ( !(*(uint8_t (__stdcall **)(unsigned int))(*(unsigned int *)*(&this->u32_A43) + 16))(*(&this->u32_A43)) ) /*0x520f72*/
     {
-      v2 = *(&this->u32_901); /*0x520f79*/
+      v2 = (int)(*(&this->u32_901));
       v3 = *this; /*0x520f7f*/
       if ( v2 ) /*0x520f86*/
       {
@@ -240,7 +240,7 @@ char Mission::ProcessUnitMissionAI()
   v4 = *(&this->u32_901); /*0x520faf*/
   if ( v4 ) /*0x520fb7*/
   {
-    v5 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *, unsigned int *))(*(unsigned int *)v4 + 76))(v4, v25, this); /*0x520fc5*/
+    v5 = (int)((unsigned int *)(*(int (__thiscall **)(int, unsigned char *, unsigned int *))(*(unsigned int *)v4 + 76))(v4, v25, this));
     IDA_LOWORD(v22) = *v5 / 256; /*0x520fd8*/
     IDA_HIWORD(v22) = v5[1] / 256; /*0x520fec*/
     IDA_LOBYTE(v5) = this->u8_6DC; /*0x520ff1*/
@@ -259,7 +259,7 @@ char Mission::ProcessUnitMissionAI()
         {
           if ( this->u8_3D5 ) /*0x52106c*/
           {
-            v8 = (unsigned int *)this->vt_slot_76(); /*0x521086*/
+            v8 = (int)((unsigned int *)this->vt_slot_76());
             IDA_LOWORD(v20) = *v8 / 256; /*0x521099*/
             IDA_HIWORD(v20) = v8[1] / 256; /*0x5210af*/
             v9 = *this; /*0x5210b8*/
@@ -489,7 +489,7 @@ namespace gamemd {
 int Mission::GetMissionDelay()
 {
   void * v1;
-  void * result;
+  unsigned int result;
   unsigned int *v3; // esi
   int v4; // [esp+8h] [ebp-8h]
 

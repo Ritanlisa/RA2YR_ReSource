@@ -52,7 +52,7 @@ int EventClass::serializeEvent()
     }
     while ( v2 < this->q004 ); /*0x48b402*/
   }
-  return result; /*0x48b405*/
+  return (int)(result);
 }
 }
 // 0x48BAD0
@@ -81,7 +81,7 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
   }
   else
   {
-    this->q008 = aP1; /*0x4c6610*/
+    this->q008 = (unsigned int)(aP1);
     *(unsigned int *)this = a3; /*0x4c661a*/
     this->q01C = a4; /*0x4c661c*/
     *(&this->q0041) = a5; /*0x4c6620*/

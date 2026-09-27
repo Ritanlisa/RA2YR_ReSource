@@ -826,7 +826,7 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
 }
 // 0x496310
 namespace gamemd {
-int E4Recv_496310::sub_496310()
+int E4Recv_496310::sub_496310(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
   int result; // eax
   int v13; // edx
@@ -884,7 +884,7 @@ int E4Recv_496310::sub_496310()
 }
 // 0x4964D0
 namespace gamemd {
-int E4Recv_4964D0::sub_4964D0()
+int E4Recv_4964D0::sub_4964D0(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
 {
   int result; // eax
   int v13; // edx
@@ -945,7 +945,7 @@ int E4Recv_4964D0::sub_4964D0()
 }
 // 0x4965B0
 namespace gamemd {
-int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
+int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10, void * a2, void * a3)
 {
   int result; // eax
   unsigned int v12; // edx

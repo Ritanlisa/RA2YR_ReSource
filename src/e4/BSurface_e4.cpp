@@ -27,7 +27,7 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
   int v18; // edx
   int v19;
 
-  a2 = a2; /*0x410ce5*/
+  a2 = (unsigned int *)(a2);
   v14 = v14; /*0x410ce9*/
   a5 = a5; /*0x410cef*/
   *(&this->Width1) = a5; /*0x410cf3*/
@@ -41,7 +41,7 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
   v10 = operator new(0x20u); /*0x410d17*/
   if ( v10 ) /*0x410d20*/
   {
-    v11 = *(&this->Width0); /*0x410d22*/
+    v11 = (unsigned int)(*(&this->Width0));
     v12 = *(&this->Width1); /*0x410d25*/
     v10[1] = v11; /*0x410d28*/
     v10[2] = v12; /*0x410d30*/
@@ -56,7 +56,7 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
   {
     v13 = 0; /*0x410d57*/
   }
-  v14 = *(&this->Width0); /*0x410d5c*/
+  v14 = (unsigned int *)(*(&this->Width0));
   a5 = *(&this->Width1); /*0x410d5f*/
   this->Buffer = v13; /*0x410d63*/
   a2 = 0; /*0x410d66*/

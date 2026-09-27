@@ -12,7 +12,7 @@ extern LPDIRECTDRAW7 g_lpDirectDraw7;  // data: 0x8a0094
 // data: 0x89F978: g_DDraw_Initialized -- window mode flag (-WIN)
 extern int  g_DDraw_Initialized;
 // data: 0xA8ED80: g_DDraw_Active -- DDraw activity flag
-extern bool g_DDraw_Active;  // data: 0xa8ed80
+extern int g_DDraw_Active;  // data: 0xa8ed80 (type unified with e4_globals G34)
 // data: 0x8A00A4/A8/AC: g_DisplayWidth/Height/BPP
 extern int  g_DisplayWidth;  // data: 0x8a00a4
 extern int  g_DisplayHeight;

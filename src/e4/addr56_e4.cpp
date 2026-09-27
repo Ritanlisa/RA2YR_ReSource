@@ -74,7 +74,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
   DDraw::WaitForIdle(); /*0x560c5a*/
   if ( g_DDraw_Initialized == 1 )
   {
-    DSurface_WindowBounds = 0; /*0x560c73*/
+    DSurface_WindowBounds = (int)(0);
     dword_886FB4 = 0; /*0x560c78*/
     g_CreditsScreenBounds = xRight; /*0x560c7e*/
     g_CreditsScreenConfig = yBottom; /*0x560c84*/
@@ -271,7 +271,7 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
   int wParama; // [esp+58h] [ebp+Ch]
   int v21; // [esp+5Ch] [ebp+10h]
 
-  result = BaseDialogProc(aP0, a2, wParam, a4); /*0x56141c*/
+  result = (int)(BaseDialogProc(aP0, a2, wParam, a4));
   if ( result ) /*0x561423*/
     return result; /*0x561423*/
   WindowLongA = (unsigned int *)GetWindowLongA(aP0, 8); /*0x561439*/

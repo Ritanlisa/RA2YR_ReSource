@@ -51,7 +51,7 @@ int SwizzleManagerClass_19::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = operator new(8 * a2); /*0x6cf5c7*/
+      v6 = (unsigned int *)(operator new(8 * a2));
       if ( v6 ) /*0x6cf5d1*/
       {
         v7 = v6; /*0x6cf5d6*/
@@ -156,7 +156,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = operator new(8 * a2); /*0x6cf747*/
+      v6 = (unsigned int *)(operator new(8 * a2));
       if ( v6 ) /*0x6cf751*/
       {
         v7 = v6; /*0x6cf756*/
@@ -206,7 +206,7 @@ AbstractClass * * SwizzleManagerClass_19::SetCapacity(int a2, unsigned int * a3)
         this->Items = 0; /*0x6cf7db*/
       }
     }
-    this->Items = v5; /*0x6cf7e6*/
+    this->Items = (unsigned int)(v5);
     this->q008 = v3; /*0x6cf7ec*/
     this->IsAllocated = a3 == 0; /*0x6cf7ef*/
   }
@@ -254,7 +254,7 @@ void SwizzleManagerClass_19::ClearBuffer()
 {
   void *v2; // eax
 
-  v2 = this->Items; /*0x6cf4f6*/
+  v2 = (void *)(this->Items);
   this->q010 = 0; /*0x6cf4f9*/
   if ( v2 && this->IsAllocated ) /*0x6cf500*/
   {
@@ -399,7 +399,7 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x6cf868*/
     this->Items = 0; /*0x6cf870*/
   }
-  this->IsAllocated = 0; /*0x6cf87b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->Capacity = 0; /*0x6cf881*/
   if ( (a2 & 1) != 0 ) /*0x6cf888*/
     RA2_OPDEL(); /*0x6cf88b*/

@@ -51,7 +51,7 @@ AbstractClass * * AsyncIO::Shutdown()
     result = AudioMixer::Pump(); /*0x5bf4ea*/
     byte_ABF35C = 0; /*0x5bf4ef*/
   }
-  return result; /*0x5bf4f5*/
+  return (gamemd::AbstractClass **)(result);
 }
 } // namespace gamemd
 // 0x774BC0

@@ -17,7 +17,6 @@ struct Movement {
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
     void* q024;  // 0x24
-    unsigned int UpdateLocomotion;
 // --- flat members (END) ---
     int * DivideAndStoreScaled(int * a2, int a3);
     long long CalcVelocity(void* aP0, unsigned int * a1, double a3, void* aP3, void* aP4, void* aP5, char a7, char a8, char a9);

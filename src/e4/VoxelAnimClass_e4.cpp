@@ -37,7 +37,7 @@ unsigned int VoxelAnimClass::ProcessFrame()
   float v14; // [esp+8h] [ebp-4h]
   float v15; // [esp+8h] [ebp-4h]
 
-  v0 = 0; /*0x4caf23*/
+  v0 = (unsigned int *)(0);
   v1 = &unk_86D0BC; /*0x4caf25*/
   v2 = 0x2000; /*0x4caf2a*/
   do /*0x4cb050*/
@@ -92,7 +92,7 @@ namespace gamemd {
 int VoxelAnimClass::CleanupMembers()
 {
   int v2; // eax
-  AbstractClass * v3;
+  int v3;
   int v4; // eax
   void *this; // [esp+4h] [ebp-4h] BYREF
 
@@ -107,7 +107,7 @@ int VoxelAnimClass::CleanupMembers()
     }
     while ( v2 < dword_887398 ); /*0x749a5d*/
   }
-  v3 = this->q108; /*0x749a5f*/
+  v3 = (int)(this->q108);
   if ( v3 ) /*0x749a67*/
   {
     (*(void (__thiscall **)(int))(*(unsigned int *)v3 + 248))(v3); /*0x749a6b*/
@@ -259,7 +259,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
           v15 = (unsigned int *)FileSystem_UNITx_PAL; /*0x749e72*/
           v14 = 1000; /*0x749e78*/
         }
-        v25 = v29 + v34; /*0x749e8b*/
+        v25 = (int)(v29 + v34);
         v14 = v14; /*0x749e97*/
         v16 = *this; /*0x749e98*/
         v26 = v28 + v5; /*0x749ea0*/
@@ -271,7 +271,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
       }
     }
   }
-  return v4; /*0x749eea*/
+  return (gamemd::Coord **)(v4);
 }
 }
 // 0x749F30
@@ -393,7 +393,7 @@ void VoxelAnimClass_Update()
     v1[80] = v5 - 1; /*0x749f90*/
   if ( (int)v1[80] <= 0 ) /*0x749f9c*/
   {
-    v7 = v1 + 39; /*0x749fa2*/
+    v7 = (int *)(v1 + 39);
     v93 = v1[39]; /*0x749fac*/
     v94 = v1[40]; /*0x749fbd*/
     v95 = v1[41]; /*0x749fc4*/

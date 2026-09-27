@@ -94,7 +94,7 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
 
   if ( a2 ) /*0x5386ac*/
   {
-    this->q00C = 0; /*0x5386b2*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x5386b8*/
       v4 = a3; /*0x5386ce*/
     else
@@ -115,7 +115,7 @@ AbstractClass * * CreateTeamCommand::performAction_241(int a2, unsigned int * a3
         this->q004 = 0; /*0x538711*/
       }
     }
-    this->q004 = v4; /*0x53871a*/
+    this->q004 = (unsigned int)(v4);
     this->Capacity = a2; /*0x538722*/
     this->IsAllocated = a3 == 0; /*0x538725*/
   }
@@ -141,7 +141,7 @@ void * CreateTeamCommand::performAction_243(char a2)
 
   if ( (a2 & 2) != 0 ) /*0x538a2b*/
   {
-    v3 = *(this - 1); /*0x538a2d*/
+    v3 = (int)(*(this - 1));
     v4 = (char *)(this - 1); /*0x538a31*/
     v5 = &this->Capacity * v3; /*0x538a34*/
     v6 = v3 - 1; /*0x538a37*/
@@ -173,14 +173,14 @@ void * CreateTeamCommand::performAction_243(char a2)
 namespace gamemd {
 int CreateTeamCommand::performAction_245(char a2, int a3)
 {
-  unsigned int v3;
+  void * v3;
   unsigned int *v4; // esi
   int v6; // eax
   int v7; // eax
 
   if ( !dword_A8ED8C ) /*0x6a6a09*/
   {
-    v3 = a3; /*0x6a6a0f*/
+    v3 = (void *)(a3);
     if ( a3 == -1 ) /*0x6a6a16*/
       v3 = this->q539C; /*0x6a6a18*/
     v4 = &this->u32_F94 * v3 + 1361; /*0x6a6a2b*/
@@ -261,7 +261,7 @@ char CreateTeamCommand::Do(int a1)
 namespace gamemd {
 unsigned int * CreateTeamCommand::Construct(int a2)
 {
-  this->q004 = a2; /*0x535c06*/
+  this->q004 = (unsigned int *)(a2);
   return this; /*0x535c0f*/
 }
 } // namespace gamemd
@@ -282,7 +282,7 @@ wchar_t * CreateTeamCommand::Release()
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = this->q004; /*0x535c45*/
+  v3 = (wchar_t *)(this->q004);
   StringCSF = GetStringCSF(aTxtCreateTeam, 0, g_Str_File_Init_CPP, 6165); /*0x535c55*/
   swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3); /*0x535c60*/
   return &g_TeamCommandBuffer; /*0x535c6d*/
@@ -304,7 +304,7 @@ wchar_t * CreateTeamCommand::Read()
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = this->q004; /*0x535c95*/
+  v3 = (wchar_t *)(this->q004);
   StringCSF = GetStringCSF(aTxtCreateTeamD, 0, g_Str_File_Init_CPP, 6169); /*0x535ca5*/
   swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3); /*0x535cb0*/
   return &g_TeamCommandBuffer; /*0x535cbd*/
@@ -455,7 +455,7 @@ char CreateTeamCommand::performAction_11()
 namespace gamemd {
 char * CreateTeamCommand::performAction_12()
 {
-  return aInfantrytab; /*0x535ea5*/
+  return (char *)(aInfantrytab);
 }
 } // namespace gamemd
 
@@ -500,7 +500,7 @@ int CreateTeamCommand::performAction_16()
 namespace gamemd {
 char * CreateTeamCommand::performAction_17()
 {
-  return aUnittab; /*0x535f35*/
+  return (char *)(aUnittab);
 }
 } // namespace gamemd
 

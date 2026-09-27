@@ -78,7 +78,7 @@ void IPXGlobalConnClass::ReceivePacket(int a2)
         PacketQueue::ReleaseEntry(this->q004, 0, 0, i--, 0, 0); /*0x540226*/
       }
     }
-    v3 = this->q004; /*0x54027b*/
+    v3 = (unsigned int *)(this->q004);
   }
   Debug::Log(); /*0x540296*/
 }
@@ -102,7 +102,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   int v20; // [esp+24h] [ebp-10h]
   unsigned int v21[3]; // [esp+28h] [ebp-Ch] BYREF
 
-  v7 = this; /*0x5403f4*/
+  v7 = (unsigned char *)(this);
   v16 = this; /*0x5403fc*/
   Waypoint::InitInvalid(&v18); /*0x540400*/
   v18 = *a3; /*0x540413*/
@@ -181,7 +181,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
       v13,
       v12);
   }
-  return 1; /*0x5405f5*/
+  return (gamemd::HashTable_flat **)(1);
 }
 } // namespace gamemd
 // 0x5400D0

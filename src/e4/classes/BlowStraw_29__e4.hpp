@@ -4,6 +4,7 @@
 namespace gamemd {
 
 struct BlowStraw_29_ {
+    unsigned int Seek;
     void* vfptr;
     int Stub();
 };

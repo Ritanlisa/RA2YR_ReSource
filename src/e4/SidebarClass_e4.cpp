@@ -175,7 +175,7 @@ void * SidebarClass::LoadAssets()
     (**(void (__thiscall ***)(int, int))g_SidebarConfig)(g_SidebarConfig, 1); /*0x6a5873*/
     g_SidebarConfig = 0; /*0x6a5875*/
   }
-  v0 = operator new(0x188u); /*0x6a5880*/
+  v0 = (unsigned int *)(operator new(0x188u));
   if ( v0 ) /*0x6a588a*/
     g_SidebarConfig = (int)ConvertClass::Construct(v0, (int)v12, (int)v12, g_DSurface_Primary, 1, 0); /*0x6a58ad*/
   else
@@ -221,7 +221,7 @@ void * SidebarClass::LoadAssets()
     (**(void (__thiscall ***)(int, int))dword_87F6D0)(dword_87F6D0, 1); /*0x6a5a6b*/
     dword_87F6D0 = 0; /*0x6a5a6d*/
   }
-  v8 = operator new(0x188u); /*0x6a5a78*/
+  v8 = (unsigned int)(operator new(0x188u));
   if ( v8 ) /*0x6a5a82*/
     dword_87F6D0 = (int)ConvertClass::Construct(v8, (int)v13, (int)v13, g_DSurface_Primary, 1, 0); /*0x6a5aa5*/
   else
@@ -578,7 +578,7 @@ GadgetClass * * SidebarClass::LoadResources()
   int v27; // [esp+20h] [ebp-14h]
   int v28; // [esp+24h] [ebp-10h]
   int v29; // [esp+28h] [ebp-Ch]
-  wchar_t *v30; // [esp+2Ch] [ebp-8h]
+  unsigned int v30;
   char v31; // [esp+30h] [ebp-4h]
 
   PowerClass::getDrain(); /*0x6abd39*/

@@ -584,7 +584,7 @@ struct BuildingTypeClass {
     unsigned int q70C;  // 0x70C
     bool q70D;  // 0x70D
     unsigned char q70E;  // 0x70E
-    char AltCameo[4];  // 0x710
+    unsigned int AltCameo;  // 0x710
     double MyEffectivenessCoefficient;  // 0x712
     bool AltCameoAllocated;  // 0x714
     int RotCount;  // 0x718
@@ -2725,6 +2725,9 @@ struct BuildingTypeClass {
     unsigned int q8600;
     unsigned int q8608;
     unsigned int q8604;
+    unsigned int q1504;
+    unsigned int q1508;
+    unsigned int q8684;
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers(AbstractClass * a1, AbstractClass * a2);
     AbstractClass * * FindOrCreateAlt();

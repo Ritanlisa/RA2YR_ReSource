@@ -244,7 +244,7 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
   int result; // eax
   int v2; // [esp+0h] [ebp-4h]
 
-  result = *this; /*0x70ece1*/
+  result = (int)(*this);
   v2 = *this; /*0x70ece5*/
   if ( *this ) /*0x70ece5*/
   {
@@ -255,7 +255,7 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
       this->referenceCount = 1; /*0x70ecfd*/
     this->uniqueId = (double)v2 / (double)this->referenceCount; /*0x70ed07*/
   }
-  return result; /*0x70ed0b*/
+  return (ra2::game::BulletClass *)(result);
 }
 bool TechnoClass::IsCloseEnoughToAttack(AbstractClass* target) const
 {

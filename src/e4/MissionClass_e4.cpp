@@ -96,7 +96,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
                        (uint8_t *)v10,
                        (uint8_t *)g_INI_Key_Rate,
                        this->uniqueId);
-  v12 = *this; /*0x5b38b9*/
+  v12 = (unsigned int)(*this);
   this->uniqueId = Double_Overwrite; /*0x5b38bb*/
   if ( v12 == -1 ) /*0x5b38c1*/
     v13 = g_Str__none_; /*0x5b38c3*/
@@ -110,7 +110,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
     this->nextArrayIndex = this->uniqueId; /*0x5b38f8*/
     this->referenceCount = v15; /*0x5b38fb*/
   }
-  return 1; /*0x5b38fe*/
+  return (gamemd::AbstractClass **)(1);
 }
 } // namespace ra2
 

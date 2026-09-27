@@ -10,7 +10,7 @@
 namespace gamemd {
 char * AnimFile::Stub()
 {
-  return &this->u32_1430; /*0x427296*/
+  return (char *)(&this->u32_1430);
 }
 } // namespace gamemd
 // 0x4272A0

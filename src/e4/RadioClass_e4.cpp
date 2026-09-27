@@ -89,7 +89,7 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
     v6 = aP1 + 224; /*0x65ab9a*/
     if ( aP1 != -224 ) /*0x65aba2*/
     {
-      aP1->q0E4 = 0; /*0x65aba4*/
+      aP1->q0E4 = (void *)(0);
       aP1->q0E8 = 0; /*0x65abab*/
       aP1->q0EC = 1; /*0x65abb2*/
       aP1->q0ED = 0; /*0x65abb6*/
@@ -118,18 +118,7 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
       {
         while ( 1 ) /*0x65abf7*/
         {
-          result = (*(int (__stdcall **)(int, int *, int, unsigned int))(aP2->vtable4)(aP2, &aP1, 4, 0); /*0x65abf7*/
-          if ( result < 0 ) /*0x65abfc*/
-            break; /*0x65abfc*/
-          *(unsigned int *)(aP1->q0E4 + 4 * v7) = aP1; /*0x65ac08*/
-          v8 = aP2; /*0x65ac0b*/
-          if ( ++v7 >= aP2 ) /*0x65ac12*/
-            goto LABEL_8; /*0x65ac12*/
-        }
-      }
-    }
-  }
-  return result; /*0x65ac37*/
+          result = (unsigned int)((*(int (__stdcall **)(int, int *, int, unsigned int))(aP2->vtable4)(aP2, &aP1, 4, 0); /*0x65abf7*/ if ( result < 0 ) /*0x65abfc*/ break; /*0x65abfc*/ *(unsigned int *)(aP1->q0E4 + 4 * v7) = aP1; /*0x65ac08*/ v8 = aP2; /*0x65ac0b*/ if ( ++v7 >= aP2 ) /*0x65ac12*/ goto LABEL_8; /*0x65ac12*/ } } } } return result);
 }
 } // namespace ra2
 
@@ -237,7 +226,7 @@ int RadioClass::SaveState(int * a0, RadioClass * aP1, int aP2)
   result = AbstractClass::SaveLoad_Prefix(a0, aP1, aP2); /*0x65ac52*/
   if ( result >= 0 ) /*0x65ac59*/
   {
-    v4 = *aP1; /*0x65ac61*/
+    v4 = (int)(*aP1);
     aP2 = a0[58]; /*0x65ac6d*/
     result = (*(int (__stdcall **)(int *, int *, int, unsigned int))(v4 + 16))(aP1, &aP2, 4, 0); /*0x65ac71*/
     if ( result >= 0 ) /*0x65ac76*/

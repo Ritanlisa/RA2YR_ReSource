@@ -300,7 +300,7 @@ AbstractClass * * HandleWOLForwardingError()
       }
     }
   }
-  return result; /*0x7934d6*/
+  return (gamemd::AbstractClass **)(result);
 }
 }
 // 0x793B30
@@ -464,7 +464,7 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
     if ( (int)v9 >= (int)&byte_A8E180 ) /*0x793e71*/
       break; /*0x793e71*/
   }
-  v11 = dword_A8DC2C[v3]; /*0x793e87*/
+  v11 = (int)(dword_A8DC2C[v3]);
   if ( v52 && (!v11 || (v11 & 1) != 0) && (!(unsigned short)dword_ABFEC8 || (dword_ABFEC8 & 1) != 0) ) /*0x793eac*/
   {
     Debug::Log(); /*0x793eb3*/

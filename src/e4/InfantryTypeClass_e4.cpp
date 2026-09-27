@@ -86,7 +86,7 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
         v3 = g_LoadScreenProgress,
         !v4) )
   {
-    g_LoadScreenProgress = v3 + 1; /*0x52384a*/
+    g_LoadScreenProgress = (unsigned int)(v3 + 1);
     *((unsigned int *)Factory_ExitCellTable + v3) = this; /*0x523854*/
     v3 = g_LoadScreenProgress; /*0x523857*/
   }
@@ -143,7 +143,7 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
     *(unsigned int *)(i + this->qE3C - 28) = 0; /*0x523956*/
     *(unsigned int *)(i + this->qE3C - 24) = -1; /*0x523960*/
   }
-  return this; /*0x523972*/
+  return (gamemd::InfantryTypeClass **)(this);
 }
 } // namespace gamemd
 // 0x523980
@@ -175,7 +175,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
     v5 = InfantryClass::Construct((int)v4, (int)this, ppv); /*0x523b68*/
     if ( v5 ) /*0x523b6c*/
     {
-      v6 = a2[1] << 8; /*0x523b85*/
+      v6 = (unsigned int *)(a2[1] << 8);
       v12[0] = (*a2 << 8) + 128; /*0x523b93*/
       v12[1] = v6 + 128; /*0x523b9b*/
       v12[2] = 0; /*0x523bb1*/
@@ -196,7 +196,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 } // namespace gamemd
 // 0x5240A0
 namespace gamemd {
-int InfantryTypeClass::LoadFromINI(unsigned char *** a2)
+int InfantryTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
 {
   int PipIdx; // eax
   int v5; // ebx
@@ -276,7 +276,7 @@ int InfantryTypeClass::LoadFromINI(unsigned char *** a2)
          String,
          128) )
   {
-    v8 = InfantryTypeClass::Find(String); /*0x52416b*/
+    v8 = (int)(InfantryTypeClass::Find(String));
   }
   else
   {

@@ -28,7 +28,7 @@ int VoxelRenderer::ProjectVertex(float a2, float a3, float a4, char a5)
   v7 = 1; /*0x758ec1*/
   for ( i = 3; i < 768; i += 3 ) /*0x758ec6*/
   {
-    v9 = *this; /*0x758ed1*/
+    v9 = (int)(*this);
     if ( a5 ) /*0x758ed3*/
     {
       if ( v7 < v9 || v7 > this->q004 ) /*0x758edc*/

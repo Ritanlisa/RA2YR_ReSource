@@ -92,7 +92,7 @@ int SaveGame::SaveTriggerEvents()
   int v2; // ecx
   int v4; // edi
 
-  v2 = *this; /*0x6607e0*/
+  v2 = (int)(*this);
   g_TriggerEventState = g_TriggerEventState; /*0x6607e6*/
   if ( this->vt_slot_16(&g_TriggerEventState, 4, 0) < 0 ) /*0x6607ef*/
     return 0; /*0x6607f6*/

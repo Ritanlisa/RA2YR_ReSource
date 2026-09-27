@@ -59,7 +59,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = operator new(8 * a2 + 4); /*0x76a007*/
+      v5 = (unsigned int *)(operator new(8 * a2 + 4));
       if ( v5 ) /*0x76a011*/
       {
         *v5 = a2; /*0x76a013*/
@@ -108,7 +108,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   {
     (*(void (__thiscall **)(unsigned char *))(((unsigned int)(this->q0042))))(this); /*0x76a0d9*/
   }
-  v12 = this->q008; /*0x76a0dc*/
+  v12 = (unsigned int)(this->q008);
   if ( v12 < this->q010 ) /*0x76a0e4*/
     this->q010 = v12; /*0x76a0e6*/
   return 1; /*0x76a0e9*/
@@ -213,7 +213,7 @@ void MSFrameAnim::stopAnimation()
 {
   void *v2; // eax
 
-  v2 = this->Items; /*0x769cd6*/
+  v2 = (void *)(this->Items);
   this->q010 = 0; /*0x769cd9*/
   if ( v2 && this->IsAllocated ) /*0x769ce0*/
   {
@@ -255,7 +255,7 @@ int MSFrameAnim::getCurrentFrame(int a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = this->q010; /*0x76a100*/
+  v2 = (void *)(this->q010);
   result = 0; /*0x76a103*/
   if ( v2 <= 0 ) /*0x76a108*/
     return -1; /*0x76a123*/
@@ -278,7 +278,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x76a2bc*/
   {
-    this->IsInitialized = 0; /*0x76a2c2*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x76a2c8*/
       v4 = a3; /*0x76a2de*/
     else
@@ -299,7 +299,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
         this->Items = 0; /*0x76a321*/
       }
     }
-    this->Items = v4; /*0x76a32a*/
+    this->Items = (unsigned int)(v4);
     this->q008 = a2; /*0x76a332*/
     this->IsAllocated = a3 == 0; /*0x76a335*/
   }
@@ -307,7 +307,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
   {
     (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x76a33e*/
   }
-  v7 = this->q008; /*0x76a341*/
+  v7 = (unsigned int)(this->q008);
   if ( v7 < this->q010 ) /*0x76a349*/
     this->q010 = v7; /*0x76a34b*/
   return 1; /*0x76a34e*/
@@ -322,7 +322,7 @@ int MSFrameAnim::resetAnimation(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = this->q010; /*0x76a360*/
+  v2 = (void *)(this->q010);
   result = 0; /*0x76a363*/
   if ( v2 <= 0 ) /*0x76a368*/
     return -1; /*0x76a37f*/
@@ -346,7 +346,7 @@ DynamicVector * MSFrameAnim::setPosition(char a2)
     (**v3)(v3, 3); /*0x76a69f*/
     this->Items = 0; /*0x76a6a1*/
   }
-  this->IsAllocated = 0; /*0x76a6ac*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x76a6b2*/
   if ( (a2 & 1) != 0 ) /*0x76a6b9*/
     RA2_OPDEL(); /*0x76a6bc*/
@@ -366,7 +366,7 @@ DynamicVector * MSFrameAnim::setScale(char a2)
     RA2_OPDEL(v3); /*0x76a738*/
     this->Items = 0; /*0x76a740*/
   }
-  this->IsAllocated = 0; /*0x76a74b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x76a751*/
   if ( (a2 & 1) != 0 ) /*0x76a758*/
     RA2_OPDEL(); /*0x76a75b*/

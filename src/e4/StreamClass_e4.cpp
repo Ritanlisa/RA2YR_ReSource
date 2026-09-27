@@ -23,7 +23,7 @@ unsigned int StreamClass::ReadAndSeek(MouseClass * aP1, MouseClass * aP2)
   int v4; // edi
   char * result;
 
-  v4 = (*(int (__thiscall **)(unsigned int, int, int))(**(unsigned int **)(&this->u32_80) + 92))(this->q014, aP1, aP2); /*0x4114c9*/
+  v4 = (unsigned int)((*(int (__thiscall **)(unsigned int, int, int))(**(unsigned int **)(&this->u32_80) + 92))(this->q014, aP1, aP2));
   (*(void (__thiscall **)(unsigned int))(**(unsigned int **)(&this->u32_80) + 96))(this->q014); /*0x4114cd*/
   result = v4 + this->StreamClass_field_0C; /*0x4114d6*/
   if ( result >= this->u32_1C ) /*0x4114da*/
@@ -60,7 +60,7 @@ int StreamClass::Set2(unsigned int * a2)
   }
   else
   {
-    v6 = *this; /*0x45aef7*/
+    v6 = (int)(*this);
     if ( *this ) /*0x45aef7*/
     {
       *(unsigned int *)this = 0; /*0x45aefd*/
@@ -83,7 +83,7 @@ int StreamClass::Set(IUnknown * aP1)
     v3 = (**(int (__stdcall ***)(unsigned int, void *, unsigned int **))*aP1)(*aP1, &unk_819088, &aP1); /*0x45af3d*/
     if ( v3 >= 0 ) /*0x45af41*/
     {
-      v5 = aP1; /*0x45af5f*/
+      v5 = (unsigned int *)(aP1);
       if ( *this ) /*0x45af5c*/
         (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*&this->u32_8))(*this); /*0x45af6a*/
       *this = v5; /*0x45af6d*/
@@ -99,7 +99,7 @@ int StreamClass::Set(IUnknown * aP1)
   }
   else
   {
-    v6 = *this; /*0x45af77*/
+    v6 = (int)(*this);
     if ( *this ) /*0x45af77*/
     {
       *(unsigned int *)this = 0; /*0x45af7d*/
@@ -127,7 +127,7 @@ int StreamClass::Vt32Thunk(int a1)
 namespace gamemd {
 int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 {
-  aP0->u32_8 = a2; /*0x55a718*/
+  aP0->u32_8 = (void *)(a2);
   aP0->vtable2 = a2; /*0x55a71b*/
   return 0; /*0x55a720*/
 }

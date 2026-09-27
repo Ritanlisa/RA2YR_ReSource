@@ -18,7 +18,7 @@ char LoadOptions::AddRef(LPCCH lpMultiByteStr)
   HWND MessageBox; // edi
   char Saved; // bl
 
-  v1 = (*(int (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance); /*0x559d81*/
+  v1 = (wchar_t *)((*(int (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance));
   StringCSF = GetStringCSF(aTxtLoading, 0, g_Str_File_LoadDlg_CPP, 1052); /*0x559d83*/
   MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559d97*/
   (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x559d9b*/
@@ -46,7 +46,7 @@ char LoadOptions::Release(LPCCH lpMultiByteStr, wchar_t * Source)
   HWND MessageBox; // esi
   char v4; // bl
 
-  StringCSF = GetStringCSF(aTxtSavingGame, 0, g_Str_File_LoadDlg_CPP, 1107); /*0x559e55*/
+  StringCSF = (wchar_t *)(GetStringCSF(aTxtSavingGame, 0, g_Str_File_LoadDlg_CPP, 1107));
   MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559e69*/
   (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x559e6d*/
   if ( MessageBox ) /*0x559e72*/
@@ -182,7 +182,7 @@ LoadOptions * LoadOptions::QueryInterface(char a2)
   void * v3;
   void * v4;
 
-  v3 = 0; /*0x55a0d4*/
+  v3 = (unsigned int)(0);
   for ( *(unsigned int *)this = (void*)&LoadOptionsClass_vftable; v3 < this->capacity; ++v3 ) /*0x55a0e1*/
     RA2_OPDEL(*(void **)(this->q024 + 4 * v3)); /*0x55a0ea*/
   (*(void (__thiscall **)(char *))(this->is_active + 12))(&this->q00C2); /*0x55a102*/
@@ -259,7 +259,7 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x55a33c*/
   {
-    this->q00C = 0; /*0x55a342*/
+    this->q00C = (unsigned int *)(0);
     if ( a3 ) /*0x55a348*/
       v4 = a3; /*0x55a35e*/
     else
@@ -280,7 +280,7 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
         this->Items = 0; /*0x55a3a1*/
       }
     }
-    this->Items = v4; /*0x55a3aa*/
+    this->Items = (void *)(v4);
     this->Capacity = a2; /*0x55a3b2*/
     this->IsAllocated = a3 == 0; /*0x55a3b5*/
   }
@@ -327,7 +327,7 @@ VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a
     RA2_OPDEL(v3); /*0x55a428*/
     this->Items = 0; /*0x55a430*/
   }
-  this->IsAllocated = 0; /*0x55a43b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->Capacity = 0; /*0x55a441*/
   if ( (a2 & 1) != 0 ) /*0x55a448*/
     RA2_OPDEL(); /*0x55a44b*/
@@ -347,7 +347,7 @@ DynamicVector * LoadOptions::vt00(char a2)
     RA2_OPDEL(v3); /*0x55a478*/
     this->Items = 0; /*0x55a480*/
   }
-  this->IsAllocated = 0; /*0x55a48b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->Capacity = 0; /*0x55a491*/
   if ( (a2 & 1) != 0 ) /*0x55a498*/
     RA2_OPDEL(); /*0x55a49b*/
@@ -359,6 +359,6 @@ DynamicVector * LoadOptions::vt00(char a2)
 namespace gamemd {
 char * LoadOptions::GetData()
 {
-  return &this->u32_420; /*0x681106*/
+  return (char *)(&this->u32_420);
 }
 } // namespace gamemd

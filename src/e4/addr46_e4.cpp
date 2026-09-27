@@ -54,7 +54,7 @@ bool sub_46D650()
     if ( DlgItem ) /*0x46d6a2*/
       PostMessageA(DlgItem, 0x405u, 1u, dword_A8EB68); /*0x46d6b3*/
   }
-  v3 = 0; /*0x46d6bc*/
+  v3 = (LPARAM *)(0);
   v4 = &g_NetworkPlayerName; /*0x46d6be*/
   do /*0x46d7fd*/
   {
@@ -124,7 +124,7 @@ void sub_46D8B0()
   v2 = (const wchar_t **)&g_NetworkPlayerName; /*0x46d8b7*/
   while ( 1 ) /*0x46d8c1*/
   {
-    v3 = CharToWideString(g_NetworkPlayerBuffer); /*0x46d8c1*/
+    v3 = (char *)(CharToWideString(g_NetworkPlayerBuffer));
     if ( !wcscmp((const wchar_t *)v3, *v2) ) /*0x46d8ca*/
       break; /*0x46d8ca*/
     ++v2; /*0x46d8d6*/
@@ -474,7 +474,7 @@ void nullsub_7()
 namespace gamemd {
 Iostream_init * E4Recv_465D80::__0Iostream_init_QAE_XZ_2()
 {
-  return this; /*0x465d82*/
+  return (gamemd::Iostream_init *)(this);
 }
 } // namespace gamemd
 
@@ -1075,7 +1075,7 @@ int sub_46D310()
 
 // 0x46D480
 namespace gamemd {
-void sub_46D480()
+void sub_46D480(void * a1, void * a2)
 {
   *((unsigned char *)&g_GameModeOptionState + a2) = IDA_BYTE4(result); /*0x46d480*/
   return result; /*0x46d486*/

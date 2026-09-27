@@ -29,7 +29,7 @@ INIClass * * UnitTypeClass::ReadINIEntry()
   char Buffer[12]; // [esp+1Ch] [ebp-8Ch] BYREF
   char Source[128]; // [esp+28h] [ebp-80h] BYREF
 
-  v1 = 0; /*0x6b4dde*/
+  v1 = (char *)(0);
   v9 = this; /*0x6b4de3*/
   INIClass::ClearSection((int)aSmudge, 0); /*0x6b4de7*/
   v7 = 0; /*0x6b4dec*/
@@ -150,7 +150,7 @@ UnitTypeClass::UnitTypeClass(INIClass * aP1)
 }
 // 0x7474B0
 namespace gamemd {
-void UnitTypeClass_CreateUnit()
+void UnitTypeClass_CreateUnit(void * a1, void * a2)
 {
   void *v4; // eax
   int *v5; // esi
@@ -198,7 +198,7 @@ void UnitTypeClass_ConstructUnit()
 }
 // 0x747620
 namespace gamemd {
-void* UnitTypeClass_LoadFromINI()
+void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
 {
   uint8_t *v4; // ebp
   char Bool_Overwrite; // al

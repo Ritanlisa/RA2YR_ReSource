@@ -186,7 +186,7 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
       return 0; /*0x5d264a*/
     }
   }
-  v8 = this->q040; /*0x5d2631*/
+  v8 = (unsigned int)(this->q040);
   v9 = this->attachedTag; /*0x5d2634*/
   this->q040 = v8 + 1; /*0x5d263a*/
   *(unsigned int *)(v9 + 4 * v8) = v5; /*0x5d263d*/
@@ -264,7 +264,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
   v5 = aP0; /*0x5d451f*/
   if ( !a4 ) /*0x5d4521*/
   {
-    aP0 = *a2; /*0x5d452b*/
+    aP0 = (gamemd::CellStruct *)(*a2);
     if ( !*a2 ) /*0x5d452b*/
       return 0; /*0x5d4537*/
     v7 = *a2; /*0x5d453a*/
@@ -302,7 +302,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
             ++*(unsigned int *)(v5 + 12); /*0x5d45b3*/
           }
         }
-        return 2; /*0x5d45bf*/
+        return (gamemd::CampaignScore **)(2);
       }
       return 0; /*0x5d4643*/
     }
@@ -346,7 +346,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
         *(unsigned short *)(v5 + 2 * v40 + 40) = 0; /*0x5d497b*/
       }
     }
-    *a2 = 0; /*0x5d4984*/
+    *a2 = (gamemd::CampaignScore **)(0);
     (*(void (__thiscall **)(unsigned int))(**(unsigned int **)(v5 + 36) + 80))(*(unsigned int *)(v5 + 36)); /*0x5d498d*/
     return v4; /*0x5d498d*/
   }
@@ -404,7 +404,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
           v4 = 0; /*0x5d4790*/
         }
       }
-      *a2 = 0; /*0x5d4792*/
+      *a2 = (gamemd::CampaignScore **)(0);
       return v4; /*0x5d479e*/
     }
     DisableIME(); /*0x5d47a1*/
@@ -417,8 +417,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     nullsub_48(); /*0x5d47c2*/
     if ( !*(unsigned char *)(v5 + 26) ) /*0x5d47c7*/
     {
-  LABEL_77:
-      *a2 = 0; /*0x5d48b0*/
+  LABEL_77: *a2 = (gamemd::CampaignScore **)(0);
       return 2; /*0x5d48c1*/
     }
     if ( *(unsigned char *)(v5 + 25) ) /*0x5d47d2*/
@@ -523,7 +522,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
       ++*(unsigned int *)(v5 + 12); /*0x5d493f*/
     }
   }
-  *a2 = 0; /*0x5d494b*/
+  *a2 = (gamemd::CampaignScore **)(0);
   return 3; /*0x5d4531*/
 }
 }
@@ -536,7 +535,7 @@ void* Dialog_MessageLoop()
   int v2; // esi
   struct tagMSG Msg; // [esp+10h] [ebp-1Ch] BYREF
 
-  result = g_hWnd; /*0x5d4d50*/
+  result = (HWND)(g_hWnd);
   if ( g_hWnd ) /*0x5d4d5e*/
   {
     ++dword_AA0430; /*0x5d4d77*/
@@ -650,7 +649,7 @@ char sub_5D6000(HWND hWnd, int a2)
     v5 = *((unsigned int *)Src + v3); /*0x5d60cc*/
     if ( !v8 || (*(uint8_t (__thiscall **)(LPARAM))(*(unsigned int *)v5 + 64))(v5) ) /*0x5d60db*/
     {
-      v6 = WideString::GetOrEmpty_Alt((wchar_t **)(v5 + 32)); /*0x5d60e5*/
+      v6 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)(v5 + 32)));
       v7 = SendMessageA(hWnd, 0x143u, 0, (LPARAM)v6); /*0x5d60f7*/
       if ( *(unsigned int *)(v5 + 40) == a2 ) /*0x5d60ff*/
         SendMessageA(hWnd, 0x14Eu, v7, 0); /*0x5d610a*/
@@ -716,7 +715,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
   unsigned char v51[12]; // [esp+120h] [ebp-14h] BYREF
   int v52; // [esp+12Ch] [ebp-8h]
 
-  v2 = a1; /*0x5d7598*/
+  v2 = (char **)(a1);
   v44 = edx0; /*0x5d759a*/
   v42 = a1; /*0x5d75aa*/
   CCFileClass::Construct(v50, aMpmodesmdIni); /*0x5d75ae*/

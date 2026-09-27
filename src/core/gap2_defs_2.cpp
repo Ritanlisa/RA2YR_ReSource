@@ -91,7 +91,7 @@ int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) {
 
   if ( a2 ) /*0x4a13cc*/
   {
-    this->q00C = 0; /*0x4a13d2*/
+    this->q00C = (_DWORD *)(0);
     if ( a3 ) /*0x4a13d8*/
       v4 = a3; /*0x4a13ee*/
     else
@@ -270,7 +270,7 @@ namespace gamemd {
 void* COMObject::SwapReference(int a2) {
   int v3; // edi
 
-  v3 = *this; /*0x5233a8*/
+  v3 = (int)(*this);
   if ( *this != a2 ) /*0x5233ac*/
   {
     *this = a2; /*0x5233b0*/

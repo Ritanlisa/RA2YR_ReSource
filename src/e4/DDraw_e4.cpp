@@ -218,7 +218,7 @@ int DDraw::HandleSuspend()
 } // namespace gamemd
 // 0x4A3DD0
 namespace gamemd {
-int DDraw::LogError()
+int DDraw::LogError(void * a1, void * a2)
 {
   int result; // eax
   CHAR Text[80]; // [esp+0h] [ebp-50h] BYREF

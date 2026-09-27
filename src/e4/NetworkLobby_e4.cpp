@@ -79,7 +79,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, 
           (**(void (__thiscall ***)(int, int))v10)(v10, 1); /*0x5d4299*/
       }
     }
-    v14 = aP3; /*0x5d429b*/
+    v14 = (const wchar_t *)(aP3);
     if ( !aP3 ) /*0x5d42a1*/
       v14 = &g_TypeClass_DefaultString; /*0x5d42a3*/
     this->u16_2B8 = a5; /*0x5d42b1*/

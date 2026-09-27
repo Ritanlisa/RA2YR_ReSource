@@ -26,7 +26,7 @@ ScrollClass * ScrollClass::Read(char a2)
   char *v3; // esi
   int v4; // edi
 
-  v3 = &this->u32_14FB0; /*0x6938f5*/
+  v3 = (char *)(&this->u32_14FB0);
   v4 = 4; /*0x6938fb*/
   do /*0x693916*/
   {

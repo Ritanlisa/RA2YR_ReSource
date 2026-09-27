@@ -31,7 +31,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
     {
       if ( a2 - 1 >= 0 ) /*0x478396*/
       {
-        v9 = a3 + 2; /*0x478398*/
+        v9 = (unsigned char *)(a3 + 2);
         a2 = a2; /*0x47839b*/
         do /*0x4783a8*/
         {
@@ -51,7 +51,7 @@ AbstractClass * * FilePipe_38::Release(int a2, char * a3)
       {
         if ( a2 - 1 >= 0 ) /*0x478375*/
         {
-          v7 = v6 + 2; /*0x478377*/
+          v7 = (unsigned char *)(v6 + 2);
           a2 = a2; /*0x47837a*/
           do /*0x478387*/
           {
@@ -122,7 +122,7 @@ void FilePipe_30::ddtor()
 {
   void *v2; // eax
 
-  v2 = this->Items; /*0x4778a6*/
+  v2 = (void *)(this->Items);
   this->q010 = 0; /*0x4778a9*/
   if ( v2 && this->IsAllocated ) /*0x4778b0*/
   {
@@ -170,7 +170,7 @@ TypeList_flat * FilePipe_30::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x477a88*/
     this->Items = 0; /*0x477a90*/
   }
-  this->IsAllocated = 0; /*0x477a9b*/
+  this->IsAllocated = (gamemd::TypeList_flat *)(0);
   this->Capacity = 0; /*0x477aa1*/
   if ( (a2 & 1) != 0 ) /*0x477aa8*/
     RA2_OPDEL(); /*0x477aab*/
@@ -189,7 +189,7 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x47814c*/
   {
-    this->IsInitialized = 0; /*0x478152*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x478158*/
       v4 = a3; /*0x47816e*/
     else
@@ -210,7 +210,7 @@ char FilePipe_30::Release(int a2, unsigned int * a3)
         this->Items = 0; /*0x4781b1*/
       }
     }
-    this->Items = v4; /*0x4781ba*/
+    this->Items = (unsigned int)(v4);
     this->q008 = a2; /*0x4781c2*/
     this->IsAllocated = a3 == 0; /*0x4781c5*/
   }
@@ -339,7 +339,7 @@ VectorClass_flat * FilePipe_38::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x4786e8*/
     this->Items = 0; /*0x4786f0*/
   }
-  this->IsAllocated = 0; /*0x4786fb*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->Capacity = 0; /*0x478701*/
   if ( (a2 & 1) != 0 ) /*0x478708*/
     RA2_OPDEL(); /*0x47870b*/
@@ -353,7 +353,7 @@ void FilePipe_30::Clear()
 {
   void *v2; // eax
 
-  v2 = this->Items; /*0x4b9be6*/
+  v2 = (void *)(this->Items);
   this->q010 = 0; /*0x4b9be9*/
   if ( v2 && this->IsAllocated ) /*0x4b9bf0*/
   {
@@ -382,7 +382,7 @@ void FilePipe_30::Clear_0()
 {
   void *v2; // eax
 
-  v2 = this->Items; /*0x4b9c46*/
+  v2 = (void *)(this->Items);
   this->q010 = 0; /*0x4b9c49*/
   if ( v2 && this->IsAllocated ) /*0x4b9c50*/
   {
@@ -416,7 +416,7 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4b9e2c*/
   {
-    this->IsInitialized = 0; /*0x4b9e32*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x4b9e38*/
       v4 = a3; /*0x4b9e4e*/
     else
@@ -437,7 +437,7 @@ char FilePipe_30::SetCapacity(int a2, unsigned int * a3)
         this->Items = 0; /*0x4b9e91*/
       }
     }
-    this->Items = v4; /*0x4b9e9a*/
+    this->Items = (unsigned int)(v4);
     this->q008 = a2; /*0x4b9ea2*/
     this->IsAllocated = a3 == 0; /*0x4b9ea5*/
   }
@@ -483,7 +483,7 @@ char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4ba08c*/
   {
-    this->IsInitialized = 0; /*0x4ba092*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x4ba098*/
       v4 = a3; /*0x4ba0ae*/
     else
@@ -504,7 +504,7 @@ char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
         this->Items = 0; /*0x4ba0f1*/
       }
     }
-    this->Items = v4; /*0x4ba0fa*/
+    this->Items = (unsigned int)(v4);
     this->q008 = a2; /*0x4ba102*/
     this->IsAllocated = a3 == 0; /*0x4ba105*/
   }
@@ -552,7 +552,7 @@ DynamicVector * FilePipe_30::Destructor(char a2)
     RA2_OPDEL(v3); /*0x4ba178*/
     this->Items = 0; /*0x4ba180*/
   }
-  this->IsAllocated = 0; /*0x4ba18b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x4ba191*/
   if ( (a2 & 1) != 0 ) /*0x4ba198*/
     RA2_OPDEL(); /*0x4ba19b*/
@@ -573,7 +573,7 @@ DynamicVector * FilePipe_30::Destructor_0(char a2)
     RA2_OPDEL(v3); /*0x4ba218*/
     this->Items = 0; /*0x4ba220*/
   }
-  this->IsAllocated = 0; /*0x4ba22b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x4ba231*/
   if ( (a2 & 1) != 0 ) /*0x4ba238*/
     RA2_OPDEL(); /*0x4ba23b*/

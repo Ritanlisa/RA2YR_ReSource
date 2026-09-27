@@ -35,7 +35,7 @@ void BulkData::InitMissionHashing()
       while ( v5 < strlen(v3) ); /*0x697b35*/
     }
   }
-  this->ptr_144 = Time; /*0x697b41*/
+  this->ptr_144 = (void *)(Time);
   Debug::Log(); /*0x697b47*/
 }
 } // namespace gamemd

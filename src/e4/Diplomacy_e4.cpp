@@ -51,7 +51,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   char v39; // [esp+30h] [ebp+Ch]
   char v40; // [esp+34h] [ebp+10h]
 
-  result = BaseDialogProc(hDlg, a2, a3, (unsigned int)a4); /*0x657dbd*/
+  result = (int)(BaseDialogProc(hDlg, a2, a3, (unsigned int)a4));
   if ( result ) /*0x657dc4*/
     return result; /*0x657dc4*/
   if ( a2 != 273 ) /*0x657dd1*/
@@ -181,7 +181,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
       DrawPowerBarForPlayers(hDlg); /*0x658112*/
       if ( g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4 ) /*0x658124*/
       {
-        v18 = GetDlgItem(hDlg, 1062); /*0x658134*/
+        v18 = (wchar_t *)(GetDlgItem(hDlg, 1062));
         v19 = WideString::GetOrEmpty_Alt((wchar_t **)(g_GameStateFlags + 32)); /*0x658139*/
         SendMessageA(v18, 0x4B2u, 0, (LPARAM)v19); /*0x658147*/
       }
@@ -203,12 +203,12 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
     }
     return 0; /*0x6581b7*/
   }
-  v22 = &dword_83923C; /*0x6581e1*/
+  v22 = (int *)(&dword_83923C);
   while ( *v22 != DlgCtrlID ) /*0x6581e8*/
   {
     if ( (int)++v22 >= (int)&dword_83925C ) /*0x6581f3*/
     {
-      v23 = &dword_83925C; /*0x6581f5*/
+      v23 = (int *)(&dword_83925C);
       while ( *v23 != DlgCtrlID ) /*0x6581fc*/
       {
         if ( (int)++v23 >= (int)g_Str_File_OPTBTN_SHP ) /*0x658207*/

@@ -24,13 +24,13 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
   {
     if ( a3 ) /*0x5d8a16*/
     {
-      this->q004 = a3; /*0x5d8a18*/
+      this->q004 = (unsigned int *)(a3);
       return this; /*0x5d8a1e*/
     }
-    this->q004 = operator new(4 * a2); /*0x5d8a2d*/
+    this->q004 = (unsigned char)(operator new(4 * a2));
     this->u8_D = 1; /*0x5d8a30*/
   }
-  return this; /*0x5d8a1d*/
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 // 0x5D7F20
@@ -42,7 +42,7 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
   void (__thiscall ***v5)(unsigned int, int); // ecx
   void *v6; // eax
 
-  v3 = 0; /*0x5d7f24*/
+  v3 = (unsigned int)(0);
   for ( *(unsigned int *)this = (void*)&MultiplayerGameMode_vftable; v3 < this->q018; ++v3 ) /*0x5d7f31*/
   {
     v4 = *(void (__thiscall ****)(unsigned int, int))(this->q00C + 4 * v3); /*0x5d7f36*/

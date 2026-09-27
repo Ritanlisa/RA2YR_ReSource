@@ -46,7 +46,7 @@ BulletTypeClass * * ObjectTypeClass::FindOrCreate()
     if ( ++v2 >= g_BulletTypeInitState ) /*0x46c7e4*/
       goto LABEL_6; /*0x46c7e4*/
   }
-  return *((unsigned int *)dword_A83C84 + v2); /*0x46c7ff*/
+  return (gamemd::BulletTypeClass **)(*((unsigned int *)dword_A83C84 + v2));
 }
 } // namespace gamemd
 // 0x473980
@@ -231,10 +231,10 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
          dword_AC142C + dword_AC1420,
          0) )
   {
-    v7 = dword_AC1428++; /*0x5f72fb*/
+    v7 = (gamemd::ObjectTypeClass *)(dword_AC1428++);
     *((unsigned int *)dword_AC141C + v7) = this; /*0x5f730a*/
   }
-  return this; /*0x5f730f*/
+  return (int)(this);
 }
 } // namespace gamemd
 // 0x5F7320
@@ -517,7 +517,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
   {
     if ( !*(&this->u32_D40) ) /*0x5f90a0*/
     {
-      v2 = &this->u32_7E0; /*0x5f90ab*/
+      v2 = (char *)(&this->u32_7E0);
       sprintf(Buffer, off_832AE8, &this->u32_C84); /*0x5f90bf*/
       if ( Buffer ) /*0x5f90d0*/
       {
@@ -568,7 +568,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
   if ( (*(int (__thiscall **)(char *))(v6 + 44))(this) == 21 /*0x5f9227*/
     || (*(int (__thiscall **)(char *))(((unsigned int)(this->uniqueId4))))(this) == 5 )
   {
-    v9 = SearchMIXFile(&Source, 1); /*0x5f9267*/
+    v9 = (int)(SearchMIXFile(&Source, 1));
     this->q0A4 = v9; /*0x5f926e*/
     if ( v9 ) /*0x5f9274*/
       goto LABEL_41; /*0x5f9274*/
@@ -579,11 +579,11 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
   if ( (*(int (__thiscall **)(char *))(((unsigned int)(this->uniqueId4))))(this) != 30 /*0x5f9241*/
     && (*(int (__thiscall **)(char *))(((unsigned int)(this->uniqueId4))))(this) != 37 )
   {
-    v7 = SearchMIXFile(&Source, 0); /*0x5f9249*/
+    v7 = (unsigned int)(SearchMIXFile(&Source, 0));
     this->q0A4 = v7; /*0x5f9250*/
     if ( !v7 ) /*0x5f9256*/
     {
-      v15 = 71; /*0x5f9258*/
+      v15 = (unsigned int)(71);
       v8 = 0; /*0x5f925d*/
   LABEL_40:
       this->q0A4 = SearchMIXFile(&Source, v8); /*0x5f927d*/
@@ -603,7 +603,7 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
       result = 8; /*0x5f92b0*/
     this->MaxDimension = result; /*0x5f92b5*/
   }
-  return result; /*0x5f92bb*/
+  return (gamemd::AbstractClass **)(result);
 }
 } // namespace gamemd
 // 0x5F92D0
@@ -712,7 +712,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
             (uint8_t *)&this->u32_90,
             (uint8_t *)aRadialcolor,
             (uint8_t *)&this->zero_3C2);
-  v19 = *(&this->q0E09); /*0x5f9557*/
+  v19 = (gamemd::Color *)(*(&this->q0E09));
   this->q098 = *(unsigned short *)Coord; /*0x5f955d*/
   *(&this->zero_3C4) = *(unsigned char *)(Coord + 2); /*0x5f956c*/
   v20 = INIClass::ReadBool_Overwrite(&this->u32_90, aIgnoresfiresto, v19); /*0x5f956f*/

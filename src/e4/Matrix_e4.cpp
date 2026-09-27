@@ -53,14 +53,14 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
   v13 = *aP2; /*0x6d2372*/
   if ( v13 >= dword_B0CE30 || (v8 = aP2[1], v8 >= dword_B0CE34) ) /*0x6d2386*/
   {
-    *aP1 = dword_B0CE08; /*0x6d2404*/
+    *aP1 = (unsigned int *)(dword_B0CE08);
     aP1[1] = dword_B0CE0C; /*0x6d240c*/
     aP1[2] = dword_B0CE10; /*0x6d2415*/
     return aP1; /*0x6d23f7*/
   }
   else
   {
-    v9 = (float)v13; /*0x6d2398*/
+    v9 = (unsigned int *)((float)v13);
     v11 = 0; /*0x6d23a4*/
     v10 = (float)v8; /*0x6d23ac*/
     v4 = TransformMatrix3x4Point(v12, &this->u32_DE4, &v9); /*0x6d23b0*/

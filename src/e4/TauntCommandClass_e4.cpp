@@ -18,7 +18,7 @@
 namespace gamemd {
 unsigned int * TauntCommandClass::Construct(int a2)
 {
-  this->TauntCommandClass_field_00 = a2; /*0x536296*/
+  this->TauntCommandClass_field_00 = (unsigned int *)(a2);
   return this; /*0x53629f*/
 }
 } // namespace gamemd
@@ -37,7 +37,7 @@ void * TauntCommandClass::Release()
   wchar_t *StringCSF; // eax
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
-  v3 = this->TauntCommandClass_field_00; /*0x5362d5*/
+  v3 = (const wchar_t *)(this->TauntCommandClass_field_00);
   StringCSF = GetStringCSF(aTxtTauntNumber, 0, g_Str_File_Init_CPP, 6400); /*0x5362e5*/
   swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3); /*0x5362f0*/
   return &g_TeamCommandBuffer; /*0x5362fd*/

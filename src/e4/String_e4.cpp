@@ -209,7 +209,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
   char *v27; // [esp+18h] [ebp-4h]
   char * v28;
 
-  v3 = (void **)this; /*0x7b57a6*/
+  v3 = (const char *)((void **)this);
   v4 = 0; /*0x7b57a8*/
   v5 = *this; /*0x7b57ae*/
   if ( !*this ) /*0x7b57ae*/
@@ -218,7 +218,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
     goto LABEL_33; /*0x7b57bc*/
   while ( *v5 ) /*0x7b57c6*/
   {
-    v6 = strstr(v5, SubStr); /*0x7b57d2*/
+    v6 = (char *)(strstr(v5, SubStr));
     v27 = v6; /*0x7b57da*/
     if ( !v6 ) /*0x7b57e0*/
     {
@@ -292,12 +292,12 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
   }
   if ( !v4 ) /*0x7b59af*/
   {
-    v3 = (void **)this; /*0x7b59b1*/
+    v3 = (const unsigned int)((void **)this);
   LABEL_33:
     v20 = &g_INI_DefaultBuffer; /*0x7b59b5*/
     goto LABEL_35; /*0x7b59ba*/
   }
-  v3 = (void **)this; /*0x7b59bc*/
+  v3 = (const unsigned int)((void **)this);
   v20 = v4; /*0x7b59c0*/
   LABEL_35:
   if ( *v3 ) /*0x7b59c2*/
@@ -363,7 +363,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
       break; /*0x7b5fa1*/
     ++v4; /*0x7b5fad*/
   }
-  v10 = (char *)(v4 - 1); /*0x7b5fb4*/
+  v10 = (unsigned char *)((char *)(v4 - 1));
   v11 = &(*this)[v21]; /*0x7b5fbd*/
   Stra = v10; /*0x7b5fbf*/
   if ( *aP3 ) /*0x7b5fc3*/
@@ -378,7 +378,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   *v13 = 0; /*0x7b5ffb*/
   if ( v11 ) /*0x7b5ffe*/
     strcpy((char *)*aP3, v11); /*0x7b6016*/
-  v14 = &g_INI_DefaultBuffer; /*0x7b6029*/
+  v14 = (unsigned char *)(&g_INI_DefaultBuffer);
   v15 = (size_t)&v10[-v21 + 1]; /*0x7b602e*/
   if ( *aP3 ) /*0x7b6023*/
     v14 = (const char *)*aP3; /*0x7b6033*/
@@ -436,14 +436,14 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
     return -1; /*0x7b7a6f*/
   while ( 1 ) /*0x7b7a7a*/
   {
-    v7 = *this; /*0x7b7a7a*/
+    v7 = (const wchar_t *)(*this);
     if ( *this ) /*0x7b7a7a*/
       v7 = (const wchar_t *)wcslen(*this); /*0x7b7a81*/
     if ( v4 >= (int)v7 || !wcschr(Str, (*this)[v4]) ) /*0x7b7a95*/
       break; /*0x7b7a95*/
     ++v4; /*0x7b7aa1*/
   }
-  v8 = *this; /*0x7b7aa4*/
+  v8 = (const wchar_t *)(*this);
   if ( *this ) /*0x7b7aa4*/
     v8 = (const wchar_t *)wcslen(*this); /*0x7b7aab*/
   if ( v4 >= (int)v8 ) /*0x7b7ab5*/
@@ -451,14 +451,14 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
   v9 = v4; /*0x7b7ac1*/
   while ( 1 ) /*0x7b7ac3*/
   {
-    v10 = *this; /*0x7b7ac3*/
+    v10 = (const wchar_t *)(*this);
     if ( *this ) /*0x7b7ac3*/
       v10 = (const wchar_t *)wcslen(*this); /*0x7b7aca*/
     if ( v4 >= (int)v10 || wcschr(Str, (*this)[v4]) ) /*0x7b7ade*/
       break; /*0x7b7ade*/
     ++v4; /*0x7b7aea*/
   }
-  v11 = v4 - 1; /*0x7b7af3*/
+  v11 = (unsigned short *)(v4 - 1);
   v23 = v4 - 1; /*0x7b7af8*/
   v12 = &(*this)[v9]; /*0x7b7afe*/
   if ( *a4 ) /*0x7b7af6*/

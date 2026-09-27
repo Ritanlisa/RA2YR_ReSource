@@ -65,7 +65,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
          g_AnimTypePool + g_AnimManagerConfig,
          0) )
   {
-    v7 = g_AnimManager++; /*0x544924*/
+    v7 = (gamemd::TerrainTypeClass *)(g_AnimManager++);
     *((unsigned int *)g_AnimPoolCount + v7) = this; /*0x544933*/
   }
   if ( !a6 /*0x544970*/
@@ -77,7 +77,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
           dword_A8ED30 + dword_A8ED3C,
           0)) )
   {
-    v8 = g_TechnoClassCount++; /*0x54497d*/
+    v8 = (gamemd::TerrainTypeClass *)(g_TechnoClassCount++);
     *((unsigned int *)g_FrameCounter + v8) = this; /*0x54498c*/
   }
   if ( aP4 ) /*0x544991*/
@@ -94,7 +94,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
     qmemcpy(&this->Name, Destination, 0x30u); /*0x5449c1*/
     this->q094 = v11; /*0x5449c3*/
   }
-  this->u8_2F5 = 0; /*0x5449c5*/
+  this->u8_2F5 = (unsigned int *)(0);
   this->q22F = 1; /*0x5449cb*/
   this->Selectable = 0; /*0x5449d2*/
   this->LegalTarget = 0; /*0x5449d8*/

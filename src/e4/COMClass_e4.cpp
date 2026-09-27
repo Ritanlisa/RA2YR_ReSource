@@ -21,7 +21,7 @@ void * COMClass::lockServer(char a2)
 
   if ( (a2 & 2) != 0 ) /*0x76701b*/
   {
-    v3 = *(this - 1); /*0x76701d*/
+    v3 = (int)(*(this - 1));
     v4 = (char *)(this - 1); /*0x767021*/
     v5 = &this->q008 * v3; /*0x767024*/
     v6 = v3 - 1; /*0x767027*/

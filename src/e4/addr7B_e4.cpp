@@ -60,14 +60,14 @@
 namespace gamemd {
 void * * sub_7B0310()
 {
-  return dword_B77F54; /*0x7b0315*/
+  return (void **)(dword_B77F54);
 }
 }
 // 0x7B0340
 namespace gamemd {
 void * * sub_7B0340()
 {
-  return dword_B77F60; /*0x7b0345*/
+  return (void **)(dword_B77F60);
 }
 }
 // 0x7B05C0
@@ -367,14 +367,14 @@ AbstractClass * * Screenshot_Compress(int * a1, int * a2, void * Src)
   }
   while ( 1 ) /*0x7b0807*/
   {
-    v52 = (uint16_t *)(*(int (__thiscall **)(int *, unsigned int, int))(*a2 + 92))(a2, 0, v50); /*0x7b0807*/
+    v52 = (gamemd::AbstractClass **)((uint16_t *)(*(int (__thiscall **)(int *, unsigned int, int))(*a2 + 92))(a2, 0, v50));
     if ( !v52 ) /*0x7b080b*/
       return 1; /*0x7b0960*/
     v26 = *a2; /*0x7b0811*/
     v48 = 0; /*0x7b0815*/
     if ( (*(int (__thiscall **)(int *))(v26 + 124))(a2) > 0 ) /*0x7b0822*/
     {
-      v27 = v49; /*0x7b0828*/
+      v27 = (unsigned char *)(v49);
       v114 = (unsigned char *)Block - (unsigned char *)v49; /*0x7b0834*/
       v115 = (unsigned char *)v22 - (unsigned char *)v49; /*0x7b0841*/
       do /*0x7b08b9*/
@@ -534,7 +534,7 @@ CampaignClass * * E4Recv_7B2E50::sub_7B2E50()
     RA2_OPDEL(v8); /*0x7b2f26*/
     this->q3F554 = 0; /*0x7b2f2e*/
   }
-  this->u8_3F55D = 0; /*0x7b2f34*/
+  this->u8_3F55D = (void *)(0);
   this->q3F558 = 0; /*0x7b2f3a*/
   v9 = this->q3F33C; /*0x7b2f40*/
   if ( v9 && this->u8_3F345 ) /*0x7b2f54*/
@@ -589,14 +589,14 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
       break; /*0x7b6132*/
     ++v5; /*0x7b613e*/
   }
-  v9 = *this; /*0x7b6141*/
+  v9 = (unsigned char *)(*this);
   v20 = v5; /*0x7b6143*/
   if ( (*this)[v5] == 13 && v9[v5 + 1] == 10 ) /*0x7b6152*/
     v20 = v5 + 1; /*0x7b6155*/
   v10 = &v9[a2]; /*0x7b615d*/
   if ( *a3 ) /*0x7b6160*/
     RA2_OPDEL(*a3); /*0x7b6167*/
-  *a3 = 0; /*0x7b6171*/
+  *a3 = (const char *)(0);
   if ( v10 ) /*0x7b6177*/
     v11 = strlen(v10) + 1; /*0x7b6180*/
   else
@@ -606,7 +606,7 @@ AbstractClass * * E4Recv_7B60E0::sub_7B60E0(signed int a2, void ** a3)
   *v12 = 0; /*0x7b6198*/
   if ( v10 ) /*0x7b619b*/
     strcpy((char *)*a3, v10); /*0x7b61b3*/
-  v13 = &g_INI_DefaultBuffer; /*0x7b61c4*/
+  v13 = (unsigned char *)(&g_INI_DefaultBuffer);
   v14 = v20 - a2 + 1; /*0x7b61c9*/
   if ( *a3 ) /*0x7b61c0*/
     v13 = (const char *)*a3; /*0x7b61ce*/
@@ -660,7 +660,7 @@ char ** ProcessStringAndCopy(AbstractClass * aP0, CCINIClass * aP1, char ** a2)
     Block = (char *)operator new(strlen(v6) + 1); /*0x7b6439*/
     strcpy(Block, v6); /*0x7b644c*/
   }
-  v7 = *a2; /*0x7b6459*/
+  v7 = (char *)(*a2);
   if ( !*a2 ) /*0x7b6459*/
     v7 = &g_INI_DefaultBuffer; /*0x7b645f*/
   String_Process_7B4A10(v7); /*0x7b6469*/
@@ -692,7 +692,7 @@ char ** ConcatStringAlloc(ObjectClass * aP0, const char ** a1, char ** a2)
   char *v12; // edx
   char *v15; // [esp+18h] [ebp+4h]
 
-  v4 = aP0; /*0x7b64e7*/
+  v4 = (char **)(aP0);
   v5 = 0; /*0x7b64eb*/
   if ( *a1 ) /*0x7b64e9*/
   {
@@ -707,7 +707,7 @@ char ** ConcatStringAlloc(ObjectClass * aP0, const char ** a1, char ** a2)
   }
   else
   {
-    v7 = &g_INI_DefaultBuffer; /*0x7b6532*/
+    v7 = (char *)(&g_INI_DefaultBuffer);
     v15 = &g_INI_DefaultBuffer; /*0x7b6537*/
   }
   if ( v7 ) /*0x7b6545*/
@@ -773,7 +773,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   unsigned short *v20; // eax
   int v21; // [esp+10h] [ebp+4h]
 
-  v5 = a2; /*0x7b7c09*/
+  v5 = (const wchar_t *)(a2);
   v6 = *this; /*0x7b7c0b*/
   if ( *this ) /*0x7b7c0b*/
     v6 = (const wchar_t *)wcslen(*this); /*0x7b7c12*/
@@ -781,14 +781,14 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
     return -1; /*0x7b7c20*/
   while ( 1 ) /*0x7b7c27*/
   {
-    v8 = *this; /*0x7b7c27*/
+    v8 = (const wchar_t *)(*this);
     if ( *this ) /*0x7b7c27*/
       v8 = (const wchar_t *)wcslen(*this); /*0x7b7c2e*/
     if ( v5 >= (int)v8 || strchr(String2, (*this)[v5]) ) /*0x7b7c48*/
       break; /*0x7b7c48*/
     ++v5; /*0x7b7c54*/
   }
-  v9 = *this; /*0x7b7c57*/
+  v9 = (const wchar_t *)(*this);
   v21 = v5; /*0x7b7c59*/
   if ( (*this)[v5] == 13 ) /*0x7b7c62*/
   {
@@ -796,10 +796,10 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
     if ( v9[v10] == 10 ) /*0x7b7c6a*/
       v21 = v10; /*0x7b7c6c*/
   }
-  v11 = &v9[a2]; /*0x7b7c74*/
+  v11 = (const wchar_t *)(&v9[a2]);
   if ( *a3 ) /*0x7b7c77*/
     RA2_OPDEL(*a3); /*0x7b7c7e*/
-  *a3 = 0; /*0x7b7c88*/
+  *a3 = (const wchar_t *)(0);
   if ( v11 ) /*0x7b7c8e*/
     v12 = wcslen(v11) + 1; /*0x7b7c99*/
   else
@@ -809,7 +809,7 @@ AbstractClass * * E4Recv_7B7C00::sub_7B7C00(int a2, void ** a3)
   *v13 = 0; /*0x7b7cb1*/
   if ( v11 ) /*0x7b7cb6*/
     wcscpy((wchar_t *)*a3, v11); /*0x7b7cbc*/
-  v14 = v21 - a2 + 1; /*0x7b7ccd*/
+  v14 = (unsigned short *)(v21 - a2 + 1);
   v15 = &g_TypeClass_DefaultString; /*0x7b7cce*/
   if ( *a3 ) /*0x7b7cc8*/
     v15 = (const wchar_t *)*a3; /*0x7b7cd7*/
@@ -945,10 +945,10 @@ void IntersectSurfaceRects(IUnknown * aP0, int a2, XSurface * aP2, int a4)
       *(unsigned int *)aP0 = 0; /*0x7bbe5e*/
       aP0[2] = v6 + v7; /*0x7bbe66*/
     }
-    v8 = aP0[1]; /*0x7bbe69*/
+    v8 = (int)(aP0[1]);
     if ( v8 < 0 ) /*0x7bbe6e*/
     {
-      v9 = aP2[3]; /*0x7bbe73*/
+      v9 = (int)(aP2[3]);
       aP2[1] -= v8; /*0x7bbe78*/
       aP2[3] = aP0[1] + v9; /*0x7bbe80*/
       v10 = aP0[1]; /*0x7bbe83*/

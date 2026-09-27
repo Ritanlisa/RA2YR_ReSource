@@ -16,7 +16,7 @@
 
 // 0x7A3D90
 namespace gamemd {
-int ComStreamClass::Write()
+int ComStreamClass::Write(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   HWND v5; // esi
   HWND DlgItem; // ebx
@@ -63,7 +63,7 @@ int ComStreamClass::Write()
   v5 = (HWND)Dialog::FindByHandle((void *)0x10F); /*0x7a3e4a*/
   if ( v5 /*0x7a3e7a*/
     || (v5 = (HWND)Dialog::FindByHandle((void *)0x11D), v20 = v5 != 0, v5)
-    || (v21 = 0, (v5 = (HWND)Dialog::FindByHandle((void *)0x114)) != 0) )
+    || (v21 = 0, (v5 = (HWND, void * a1, void * a2, void * a3, void * a4, void * a5)Dialog::FindByHandle((void *)0x114)) != 0) )
   {
     DlgItem = GetDlgItem(v5, 1576); /*0x7a3e88*/
     if ( v20 ) /*0x7a3e93*/
@@ -157,7 +157,7 @@ int ComStreamClass::Release()
 } // namespace gamemd
 // 0x7AC870
 namespace gamemd {
-int ComStreamClass::QueryInterface()
+int ComStreamClass::QueryInterface(void * a1, void * a2, void * a3)
 {
   void **v3; // esi
   int result; // eax
@@ -179,7 +179,7 @@ int ComStreamClass::QueryInterface()
   }
   while ( 1 ) /*0x7ac8dd*/
   {
-    v5 = *v3; /*0x7ac8dd*/
+    v5 = (unsigned int *)(*v3);
     v6 = *v3 == 0; /*0x7ac8e6*/
     if ( !*v3 || *v5 == *a2 && v5[1] == a2[1] && v5[2] == a2[2] && v5[3] == a2[3] ) /*0x7ac910*/
       break; /*0x7ac910*/
@@ -352,7 +352,7 @@ unsigned int * ComStreamClass::getStreamSize()
 } // namespace gamemd
 // 0x7A4070
 namespace gamemd {
-int ComStreamClass::Seek()
+int ComStreamClass::Seek(void * a1, void * a2, void * a3, void * a4)
 {
   HWND v4; // eax
   HWND Current; // eax

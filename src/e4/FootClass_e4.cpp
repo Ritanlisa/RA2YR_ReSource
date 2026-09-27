@@ -26,7 +26,7 @@ AbstractClass * * FootClass::Destruct()
   void *v8; // eax
   void *v9; // eax
 
-  v2 = this->FootClass_field_5D4; /*0x4d3597*/
+  v2 = (int)(this->FootClass_field_5D4);
   if ( v2 && g_WTFMode ) /*0x4d35c2*/
     TeamClass::LiberateMember_Start(-1, 0); /*0x4d35c8*/
   v3 = (*(int (__thiscall **)(int *, void **))(FootClass_Array + 16))(&FootClass_Array, &this); /*0x4d35e1*/
@@ -110,9 +110,9 @@ int FootClass::updateThreat()
 
 // 0x710000
 namespace gamemd {
-void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int a3@<edi> a3, unsigned int * ppv, IID rclsid, int a6)
+void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int a3@<edi> a3, unsigned int * ppv, IID rclsid, int a6, void * a4, void * a5)
 {
-  unsigned int * v5;
+  unsigned int v5;
   unsigned int *v6; // ecx
   unsigned int *v7; // ecx
   int v8; // eax

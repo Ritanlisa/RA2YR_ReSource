@@ -49,7 +49,7 @@
 
 // 0x52FF90
 namespace gamemd {
-void Render_Load()
+void Render_Load(void * a1, void * a2, void * a3)
 {
   int result; // eax
   Frame *v6; // ecx
@@ -114,7 +114,7 @@ void sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, 
         v22 = v7; /*0x53c115*/
         do /*0x53c24a*/
         {
-          v19 = v29 * v29; /*0x53c11e*/
+          v19 = (float)(v29 * v29);
           v10 = (1.0 - (v30 * v30 + v19) / v18) * 5.0; /*0x53c133*/
           v23 = flt_A9FAA0 * v10 * v10; /*0x53c143*/
           v25 = ComputeChronosphereDistortion(v23); /*0x53c151*/
@@ -167,7 +167,7 @@ void sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, 
 }
 // 0x652230
 namespace gamemd {
-AbstractClass * * Render_Show(CCINIClass * aP0, int a2)
+AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
 {
   unsigned int v2; // eax
   int v3; // eax
@@ -219,7 +219,7 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2)
     dword_A70204[g_MenuInitFlags] = timeGetTime(); /*0x6522a3*/
     return ++g_GameInitState; /*0x6522af*/
   }
-  return result; /*0x6522a2*/
+  return (gamemd::AbstractClass **)(result);
 }
 }
 // 0x705270
@@ -443,7 +443,7 @@ wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
   }
   else
   {
-    StringCSF = GetStringCSF(g_Str_TXT_RANDOM_MAP_DESCRIPTION, 0, g_Str_File_wonline_cpp, 2970); /*0x780dc2*/
+    StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_RANDOM_MAP_DESCRIPTION, 0, g_Str_File_wonline_cpp, 2970));
     WideString::Assign(a1, StringCSF); /*0x780dca*/
     return a1; /*0x780dcf*/
   }

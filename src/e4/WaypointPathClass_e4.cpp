@@ -34,10 +34,10 @@ int WaypointPathClass::Init()
          dword_B72610 + dword_B7261C,
          0) )
   {
-    v2 = dword_B72618++; /*0x7637b9*/
+    v2 = (gamemd::WaypointPathClass *)(dword_B72618++);
     *((unsigned int *)dword_B7260C + v2) = this; /*0x7637c8*/
   }
-  return this; /*0x7637cd*/
+  return (int)(this);
 }
 }
 // 0x763810
@@ -63,10 +63,10 @@ int WaypointPathClass::Construct(WaypointClass * aP1)
           dword_B72610 + dword_B7261C,
           0)) )
   {
-    v3 = dword_B72618++; /*0x7638a7*/
+    v3 = (gamemd::WaypointPathClass *)(dword_B72618++);
     *((unsigned int *)dword_B7260C + v3) = this; /*0x7638b6*/
   }
-  return this; /*0x7638bb*/
+  return (int)(this);
 }
 }
 // 0x763C70
@@ -90,7 +90,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
   int v16; // [esp+2Ch] [ebp-8h]
   int v17; // [esp+30h] [ebp-4h]
 
-  v2 = a1; /*0x763c76*/
+  v2 = (void **)(a1);
   v3 = a2; /*0x763c7b*/
   result = AbstractClass::SaveLoad_Prefix_0(a1, a2); /*0x763c81*/
   if ( result >= 0 ) /*0x763c8a*/
@@ -102,7 +102,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
     result = (*(int (__stdcall **)(int, unsigned int **, int, unsigned int))(*(unsigned int *)v3 + 12))(v3, &a1, 4, 0); /*0x763ccd*/
     if ( result >= 0 ) /*0x763cd2*/
     {
-      v5 = v2 + 10; /*0x763cd8*/
+      v5 = (unsigned int *)(v2 + 10);
       if ( v5 ) /*0x763cdd*/
       {
         WaypointPathClass::computePath(v5, 0, 0); /*0x763ce3*/
@@ -167,7 +167,7 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int * a2)
     return this; /*0x764780*/
   if ( !a2 ) /*0x764788*/
   {
-    v7 = operator new(12 * a2 + 4); /*0x7647bd*/
+    v7 = (unsigned int *)(operator new(12 * a2 + 4));
     if ( v7 ) /*0x7647c7*/
     {
       v8 = v7 + 1; /*0x7647cc*/
@@ -198,7 +198,7 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int * a2)
     this->q034 = 1; /*0x7647fa*/
     return this; /*0x7647fe*/
   }
-  *a2 = a2; /*0x764790*/
+  *a2 = (unsigned int *)(a2);
   v4 = a2 + 1; /*0x764794*/
   if ( a2 - 1 >= 0 ) /*0x764796*/
   {

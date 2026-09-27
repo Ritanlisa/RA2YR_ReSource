@@ -12,7 +12,7 @@
 
 // 0x6BB8E0
 namespace gamemd {
-AbstractClass * * WinMainSetup_Setup_6BB8E0()
+AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
 {
   uint8_t result; // al
 
@@ -54,7 +54,7 @@ AbstractClass * * WinMainSetup_Setup_6BB8E0()
     result = (uint8_t)sub_4A44F0(a1); /*0x6bb981*/
     byte_B0BCF5 = 1; /*0x6bb986*/
   }
-  return result; /*0x6bb98d*/
+  return (gamemd::AbstractClass **)(result);
 }
 }
 // 0x72B130

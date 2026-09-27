@@ -35,7 +35,7 @@ int AITriggerTypeClass::CivilianHouseOwns(int a2, int a3)
   int v10; // eax
   char v11; // [esp+Fh] [ebp-5h]
 
-  v3 = this; /*0x41ec9b*/
+  v3 = (unsigned int *)(this);
   v4 = 0; /*0x41ec9d*/
   v11 = 0; /*0x41eca5*/
   if ( HouseClass_Count <= 0 ) /*0x41ecaa*/
@@ -117,7 +117,7 @@ DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
   bool result; // al
   char v9; // [esp+7h] [ebp-1h]
 
-  v9 = 0; /*0x41ee9a*/
+  v9 = (gamemd::DynamicVector **)(0);
   if ( !a2 ) /*0x41ee9f*/
     return v9; /*0x41efcb*/
   v4 = *(&this->q0144); /*0x41eea6*/
@@ -171,7 +171,7 @@ DynamicVector * * AITriggerTypeClass::OwnerHouseOwns(unsigned int * a2, int a3)
     default:
       return v9;
   }
-  return result; /*0x41ef58*/
+  return (gamemd::DynamicVector **)(result);
 }
 } // namespace gamemd
 // 0x41F0D0
@@ -495,7 +495,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
     v41 = (unsigned int)Math::RoundToInt(v26); /*0x41f904*/
     *(double *)(&this->u32_500) = (double)v41; /*0x41f910*/
   }
-  v27 = strtok(0, Delimiter); /*0x41f91c*/
+  v27 = (void *)(strtok(0, Delimiter));
   if ( v27 ) /*0x41f926*/
     this->q0D0 = atoi(v27) != 0; /*0x41f936*/
   strtok(0, Delimiter); /*0x41f942*/
@@ -527,7 +527,7 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
   v34 = this->q0DC; /*0x41fa5c*/
   if ( v34 ) /*0x41fa64*/
   {
-    v35 = this->q0B0; /*0x41fa6c*/
+    v35 = (unsigned int)(this->q0B0);
     if ( v35 <= HouseClass::GetMaxBuildLevel(v34->q0E4) ) /*0x41fa79*/
       MaxBuildLevel = HouseClass::GetMaxBuildLevel(this->q0DC->q0E4); /*0x41fa8b*/
     else
@@ -537,15 +537,15 @@ ObjectClass * * AITriggerTypeClass::LoadFromINI(unsigned char *** a2)
   v37 = this->q0E0; /*0x41fa96*/
   if ( v37 ) /*0x41fa9e*/
   {
-    v38 = this->q0B0; /*0x41faa6*/
+    v38 = (gamemd::ObjectClass *)(this->q0B0);
     if ( v38 > HouseClass::GetMaxBuildLevel(v37->q0E4) ) /*0x41fab3*/
     {
-      this->q0B0 = v38; /*0x41fab8*/
+      this->q0B0 = (gamemd::ObjectClass **)(v38);
       return 1; /*0x41fac9*/
     }
     this->q0B0 = HouseClass::GetMaxBuildLevel(this->q0E0->q0E4); /*0x41fadd*/
   }
-  return 1; /*0x41fab7*/
+  return (gamemd::ObjectClass **)(1);
 }
 } // namespace gamemd
 // 0x41FD60
@@ -577,7 +577,7 @@ int AITriggerTypeClass::RegisterSuccess()
     this->q0B8 = this->q0C8; /*0x41fdf7*/
     this->q0BC = this->q0CC; /*0x41fe03*/
   }
-  result = this->q104 + 1; /*0x41fe0f*/
+  result = (int)(this->q104 + 1);
   this->q104 = result; /*0x41fe11*/
   this->q108 = v1 + 1; /*0x41fe17*/
   return result; /*0x41fe1e*/
@@ -626,7 +626,7 @@ int AITriggerTypeClass::RegisterFailure()
     result = this->q0CC; /*0x41fec6*/
     this->q0BC = result; /*0x41fecc*/
   }
-  this->q108 = v1 + 1; /*0x41fed3*/
+  this->q108 = (int)(v1 + 1);
   return result; /*0x41fed9*/
 }
 } // namespace gamemd
@@ -672,7 +672,7 @@ void AITriggerTypeClass_40::ClearBuffer()
 {
   void *v2; // eax
 
-  v2 = this->Items; /*0x420376*/
+  v2 = (void *)(this->Items);
   this->q010 = 0; /*0x420379*/
   if ( v2 && this->IsAllocated ) /*0x420380*/
   {
@@ -742,7 +742,7 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x42041c*/
   {
-    this->IsInitialized = 0; /*0x420426*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x42042c*/
       v4 = a3; /*0x420442*/
     else
@@ -763,7 +763,7 @@ char AITriggerTypeClass_40::Release(int a2, unsigned int * a3)
           this->Items = 0; /*0x42048e*/
         }
       }
-      this->Items = v4; /*0x420497*/
+      this->Items = (unsigned int)(v4);
       this->Capacity = a2; /*0x42049f*/
       this->IsAllocated = a3 == 0; /*0x4204a2*/
       return 1; /*0x4204a8*/

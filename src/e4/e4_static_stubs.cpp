@@ -11,7 +11,11 @@ double AircraftTrackerClass::FillCurrentVector(...) { return 0; }
 double AircraftTypeVector::Constructor(...) { return 0; }
 double AllocCallback::Dispatch(...) { return 0; }
 double AnimTypeVector::Constructor(...) { return 0; }
+double ArmorType::FindIndex(...) { return 0; }
 double AssetClass::ReleaseAndReload(...) { return 0; }
+double AudioChannel::DeactivatePlay(...) { return 0; }
+double AudioChannel::IsActive(...) { return 0; }
+double AudioConfig::InitDefault(...) { return 0; }
 double AudioFile::GetCallback(...) { return 0; }
 double AudioFileClass::Release(...) { return 0; }
 double AudioFrame::CounterInc(...) { return 0; }
@@ -28,11 +32,14 @@ double BTree::DeleteSubtree(...) { return 0; }
 double BaseNodeClass::Vector_Constructor(...) { return 0; }
 double BigInt::DecryptBlock(...) { return 0; }
 double BigInt::RSAOperation(...) { return 0; }
+double BitArray::TestBit(...) { return 0; }
 double BufferIO::Cleanup(...) { return 0; }
 double BufferIO::Flush(...) { return 0; }
 double BuildingLightQueue::RemoveEntry(...) { return 0; }
 double BuildingLoadQueue::FindBuilding(...) { return 0; }
+double BuildingLoadQueue::GetNext(...) { return 0; }
 double ButtonClass::SetState(...) { return 0; }
+double CampaignScore::__pad_0(...) { return 0; }
 double CampaignScore::__pad_08C(...) { return 0; }
 double CaptureManager::FreeAll(...) { return 0; }
 double Char::Swap(...) { return 0; }
@@ -42,6 +49,7 @@ double Checksummer::Add_Buffer(...) { return 0; }
 double Checksummer::Add_double(...) { return 0; }
 double Checksummer::Add_float(...) { return 0; }
 double Cliff::ProcessTransitions(...) { return 0; }
+double Conditions::CheckResult(...) { return 0; }
 double Conflict::GetOwnerHouse(...) { return 0; }
 double Coord2D::Add(...) { return 0; }
 double Coord2D::Sub(...) { return 0; }
@@ -49,10 +57,6 @@ double Coord3D::Set(...) { return 0; }
 double CoordList::GetBounds(...) { return 0; }
 double CountryCombo::IDToIndex(...) { return 0; }
 double CrateClass::ProcessPickup(...) { return 0; }
-double DListNode::InitEmpty(...) { return 0; }
-double DeleteAndZero::Alt(...) { return 0; }
-double DeleteAndZero::Alt2(...) { return 0; }
-double DeleteAndZero::OrFree(...) { return 0; }
 double DiskSpace::CheckAvailable(...) { return 0; }
 double DynamicArray::Remove(...) { return 0; }
 double DynamicArray::Resize(...) { return 0; }
@@ -84,16 +88,16 @@ double GameResult::CalcScore(...) { return 0; }
 double GameScreen::DlgProc(...) { return 0; }
 double GameState::Reset(...) { return 0; }
 double GenericList::Constructor(...) { return 0; }
-double Hash::ComputeHashSHA1(...) { return 0; }
-double Hash::InsertOrdered(...) { return 0; }
-double Hash::Reset(...) { return 0; }
 double HashMap::Shrink(...) { return 0; }
 double HashMap::Shrink2(...) { return 0; }
+double HashTree::MarkEntry(...) { return 0; }
+double HashVector_UInt::Construct(...) { return 0; }
 double Heap::SiftDown(...) { return 0; }
 double IDXContainer::LoadSample(...) { return 0; }
+double ILocomotion::q008(...) { return 0; }
 double INISectionList::Constructor(...) { return 0; }
 double InputManager_ProcessEvents::Vtable(...) { return 0; }
-double Int4::Set(...) { return 0; }
+double IntDynamicVector::Construct(...) { return 0; }
 double IntVector::Copy(...) { return 0; }
 double IsRandMap::Sed(...) { return 0; }
 double IsRandMap::Sed2(...) { return 0; }
@@ -101,11 +105,13 @@ double KeyValuePair::Init(...) { return 0; }
 double KeywordClass::FindOrCreate(...) { return 0; }
 double KeywordType::FindOrCreate2(...) { return 0; }
 double Lightning::Draw(...) { return 0; }
+double ListClass::Construct(...) { return 0; }
 double ListClass::Destruct(...) { return 0; }
 double Locomotor::GetSpeed(...) { return 0; }
 double MPCombatTeam::Constructor(...) { return 0; }
 double MPCombatTeam::Constructor2(...) { return 0; }
 double MPCombatTeam::MPTeam(...) { return 0; }
+double MSChoiceClass::LoadFromINI(...) { return 0; }
 double MapResourceClass::__tail_0(...) { return 0; }
 double Matrix::Copy12Float(...) { return 0; }
 double Matrix::Scale(...) { return 0; }
@@ -120,7 +126,6 @@ double ModemGame::AdvanceTauntCommand(...) { return 0; }
 double MovieContext::Cleanup(...) { return 0; }
 double Multiplay::LogToSYNC_NOMPDEBUG(...) { return 0; }
 double MultiplayerConfig::Cleanup(...) { return 0; }
-double NetMessage::Pack4(...) { return 0; }
 double NetworkEventQueueClass::WaitForResponse(...) { return 0; }
 double NetworkID::Assign(...) { return 0; }
 double NetworkID::Compare(...) { return 0; }
@@ -145,9 +150,6 @@ double Property::Set(...) { return 0; }
 double PtrVector::Destroy(...) { return 0; }
 double PushCommandClass::Execute(...) { return 0; }
 double Queue::GetNext(...) { return 0; }
-double Random::Gaussian(...) { return 0; }
-double Random::Range(...) { return 0; }
-double Random::State(...) { return 0; }
 double Rect_Point::Set(...) { return 0; }
 double ResultNode::CleanupList(...) { return 0; }
 double SHPClass::Load(...) { return 0; }
@@ -158,6 +160,7 @@ double SerialPort::Close(...) { return 0; }
 double SettingsClass::ClampValues(...) { return 0; }
 double ShapeButton::Draw(...) { return 0; }
 double ShapeButton::SetShape(...) { return 0; }
+double ShapeButtonClass::Constructor(...) { return 0; }
 double ShroudClass::UpdateVisibility(...) { return 0; }
 double SlaveControlVector::Constructor(...) { return 0; }
 double SpawnControlVector::Constructor(...) { return 0; }
@@ -168,6 +171,7 @@ double StringTable::Find(...) { return 0; }
 double StringVector::Construct(...) { return 0; }
 double StructTable::Append(...) { return 0; }
 double SubzoneConnectionVector::Destruct(...) { return 0; }
+double SubzoneHashVector::Construct(...) { return 0; }
 double SwizzleManager::SaveLoad(...) { return 0; }
 double SyncDelayClass::ProcessNetworkSync(...) { return 0; }
 double TabCameoListClass::AddCameo_ReplaceItAll(...) { return 0; }
@@ -178,9 +182,12 @@ double Text::DrawRepeated(...) { return 0; }
 double Text::Layout(...) { return 0; }
 double Text::MeasureWidth(...) { return 0; }
 double TextGroup::SetRect(...) { return 0; }
+double TheatreClass::InitView(...) { return 0; }
 double TileData::Constructor(...) { return 0; }
 double TileNode::Cleanup(...) { return 0; }
 double TileSystem::Constructor(...) { return 0; }
+double Timeout::GetRemaining(...) { return 0; }
+double TimerPool::AllocSlot(...) { return 0; }
 double ToggleClass::RTTI(...) { return 0; }
 double ToolTipClass::initString(...) { return 0; }
 double ToolTipClass::updateString(...) { return 0; }
@@ -203,13 +210,6 @@ double VoxelSection::GetInfo(...) { return 0; }
 double WDTClass::GetCellType(...) { return 0; }
 double WDTObject::GetSize(...) { return 0; }
 double WTFMode::Shutdown(...) { return 0; }
-double WinAPI::Wrapper(...) { return 0; }
 double WordVector::Constructor(...) { return 0; }
 
-} // namespace gamemd
-
-// G34 supplies (GameConfig TU residual)
-namespace gamemd {
-void CCFileClass::Construct(void * self, void * aP2) { (void)self; (void)aP2; }
-void BufferIOFileClass::Dtor(void * self) { (void)self; }
 } // namespace gamemd

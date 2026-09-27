@@ -29,7 +29,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   wchar_t Destination[260]; // [esp+360h] [ebp-208h] BYREF
 
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_WOL_URL_RegKey, 0, 0x20019u, &phkResult) ) /*0x773628*/
-    return 0; /*0x773628*/
+    return (char *)(0);
   strcpy(ValueName, a2); /*0x77364f*/
   if ( !this->q008 ) /*0x773653*/
     strcat(ValueName, asc_84968C); /*0x773684*/
@@ -40,7 +40,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
     return 0; /*0x7736ca*/
   Debug::Log(); /*0x7736e5*/
   if ( !this->q008 ) /*0x7736f2*/
-    return WebBrowser::OpenURL(Data); /*0x773843*/
+    return (void *)(WebBrowser::OpenURL(Data));
   mbstowcs((wchar_t *)(&this->u32_42), (const char *)Data, 0x200u); /*0x773709*/
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_Software_Westwood_Yuri_s_Reven, 0, 0x20019u, &phkResult) ) /*0x773726*/
     return 0; /*0x773726*/
@@ -88,7 +88,7 @@ int WebBrowser::ShowDialog()
   int v13; // [esp+3Ch] [ebp-8h]
   int v14; // [esp+40h] [ebp-4h]
 
-  v1 = this; /*0x773e94*/
+  v1 = (const char *)(this);
   v9 = this; /*0x773e99*/
   if ( !this || !strlen(this) ) /*0x773eaa*/
     return (HWND)Debug::Log(aDowebpagedialo); /*0x774060*/
@@ -97,7 +97,7 @@ int WebBrowser::ShowDialog()
   v3 = result; /*0x773ed4*/
   if ( result ) /*0x773ed8*/
   {
-    dwNewLong = 0; /*0x773ee7*/
+    dwNewLong = (unsigned int *)(0);
     SetWindowLongA(result, 8, (LONG)&dwNewLong); /*0x773eef*/
     IDA_LOBYTE(v4) = 1; /*0x773ef5*/
     SetDialogActiveFlag(v3, v4); /*0x773ef9*/
@@ -111,7 +111,7 @@ int WebBrowser::ShowDialog()
     v6 = (int)v5; /*0x773f61*/
     if ( v5 ) /*0x773f68*/
     {
-      v7 = v5 + 2; /*0x773f6e*/
+      v7 = (unsigned int)(v5 + 2);
       v5[1] = 1; /*0x773f71*/
       v5[2] = 0; /*0x773f7d*/
       *((unsigned char *)v5 + 1036) = 0; /*0x773f84*/
@@ -162,7 +162,7 @@ int WebBrowser::GoForward()
     (*(void (__stdcall **)(unsigned int, WebBrowser *))(*this->q008 + 24))(this->q008, this); /*0x7740d1*/
     (*(void (__stdcall **)(unsigned int))(*this->q008 + 16))(this->q008); /*0x7740da*/
   }
-  v2 = this->q008; /*0x7740dd*/
+  v2 = (void *)(this->q008);
   if ( v2 ) /*0x7740e2*/
     (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v2 + 8))(this->q008); /*0x7740e7*/
   if ( (v4 & 1) != 0 ) /*0x7740ef*/

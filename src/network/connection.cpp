@@ -19,7 +19,7 @@ ConnectionClass::ConnectionClass() noexcept
 
 // IDA 0x48B410 — queueSendPacket: store outgoing packet for sequential delivery
 // 0x48b410
-void ConnectionClass::queueSendPacket(const uint8_t* data, int32_t length, int32_t flags)
+void ConnectionClass::queueSendPacket(const uint8_t* data, int32_t length, int32_t flags, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
   int v7; // eax
   int v8; // esi
@@ -104,11 +104,11 @@ int ConnectionClass::connect()
   return 1; /*0x48c5e9*/
 }
 // 0x48be60
-bool IPXConnClass::initConnection()
+bool IPXConnClass::initConnection(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
   _DWORD *v10; // eax
 
-  this->q024 = a5; /*0x48be73*/
+  this->q024 = (_DWORD *)(a5);
   this->RemoteSocket = a6; /*0x48be7b*/
   *(_DWORD *)this = &(void*)(void*)&ConnectionClass_vftable; /*0x48be83*/
   this->RemoteAddress = a4 + 14; /*0x48be89*/
@@ -123,7 +123,7 @@ bool IPXConnClass::initConnection()
   return this; /*0x48bec7*/
 }
 // 0x69bc20
-bool IPXConnClass::closeConnection()
+bool IPXConnClass::closeConnection(void * a1, void * a2)
 {
   int v2; // eax
   int i; // esi
@@ -136,10 +136,10 @@ bool IPXConnClass::closeConnection()
     if ( ++v2 >= Game_PlayerCount ) /*0x69bc46*/
       return 0; /*0x69bc46*/
   }
-  return *(this + v2 + 6205); /*0x69bc48*/
+  return (bool)(*(this + v2 + 6205));
 }
 // 0x53f5d0
-bool IPXConnClass::send(const uint8_t* data, int32_t length)
+bool IPXConnClass::send(const uint8_t* data, int32_t length, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
   return (*(int (__stdcall **)(int, int, int, _DWORD, int, _DWORD))(*(_DWORD *)&this->PacketsSent0))( /*0x53f5ec*/
            a2,
@@ -150,7 +150,7 @@ bool IPXConnClass::send(const uint8_t* data, int32_t length)
            0);
 }
 // 0x53f650
-int32_t IPXConnClass::receive(uint8_t* buffer, int32_t maxLen)
+int32_t IPXConnClass::receive(uint8_t* buffer, int32_t maxLen, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
   int v9; // edi
   int v10; // ebp

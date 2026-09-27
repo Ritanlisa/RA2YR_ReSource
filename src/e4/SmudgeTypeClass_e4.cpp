@@ -20,6 +20,7 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/Scenario_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
 
 // 0x6B5260
 SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
@@ -151,7 +152,7 @@ int SmudgeTypeClass::GetSize(unsigned char *** aP1)
   return 1; /*0x6b57cd*/
 }
 // 0x6B6160
-SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass *a2, char a3)
+SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass *a2, char a3, void * a1)
 {
   void *v3; // eax
   int v4; // eax

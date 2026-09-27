@@ -119,7 +119,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
         {
           continue; /*0x4d006e*/
         }
-        v5 = v14++; /*0x4d0074*/
+        v5 = (unsigned int *)(v14++);
         v6 = Block; /*0x4d007b*/
       }
       else
@@ -131,7 +131,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
         {
           continue; /*0x4d00b0*/
         }
-        v5 = v20++; /*0x4d00b6*/
+        v5 = (unsigned int *)(v20++);
         v6 = v17; /*0x4d00bd*/
       }
       v6[v5] = v4; /*0x4d00c1*/
@@ -147,7 +147,7 @@ void FlyLocomotionClass::ILocomotion_AcquireHunterSeekerTarget(int a1)
   }
   else
   {
-    v7 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, v14 - 1); /*0x4d00e2*/
+    v7 = (unsigned int *)(Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, v14 - 1));
     v8 = Block; /*0x4d00ea*/
     v9 = **(unsigned int **)(a1 + 8); /*0x4d00ee*/
   }

@@ -204,7 +204,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
   int v40[4]; // [esp+88h] [ebp-20h] BYREF
   int v41[4]; // [esp+98h] [ebp-10h] BYREF
 
-  v3 = *viewRect; /*0x6d7575*/
+  v3 = (int)(*viewRect);
   v23 = 0; /*0x6d7581*/
   v5 = this->visibleArea + v3; /*0x6d7595*/
   v6 = viewRect[1] + this->q0B4; /*0x6d759c*/
@@ -249,7 +249,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
       {
         if ( LayerClass::CoordinatesLegal(&MapClass_Instance, (__int16 *)&v27) ) /*0x6d76e0*/
         {
-          v16 = CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v27); /*0x6d76f7*/
+          v16 = (int *)(CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v27));
           ScreenRect = CellClass::GetScreenRect((int)v16, v40); /*0x6d7708*/
           v33[0] = *ScreenRect; /*0x6d7711*/
           v33[1] = ScreenRect[1]; /*0x6d771a*/

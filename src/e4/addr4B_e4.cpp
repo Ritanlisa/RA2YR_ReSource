@@ -360,7 +360,7 @@ int E4Recv_4B6AB0::sub_4B6AB0(int a2)
   a2 = a2; /*0x4b6b42*/
   if ( a2 < v7 ) /*0x4b6b44*/
   {
-    v9 = this + a2 + 5; /*0x4b6b46*/
+    v9 = (int *)(this + a2 + 5);
     do /*0x4b6b57*/
     {
       ++a2; /*0x4b6b4b*/
@@ -412,7 +412,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   char result; // al
   const wchar_t *v15; // eax
   int AudioEntryTechnoClass; // eax
-  void * v17;
+  unsigned int v17;
   int v18; // esi
   unsigned int *v19; // eax
   unsigned int *v20; // eax
@@ -555,9 +555,9 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
                       v18,
                       0,
                       70);
-    return (uint8_t)TextRenderer::DrawText(&v42, (size_t)v52, g_DSurface_Hidden, v22, v23, v25, v28, v31); /*0x4b9bb7*/
+    return (gamemd::CampaignScore **)((uint8_t)TextRenderer::DrawText(&v42, (size_t)v52, g_DSurface_Hidden, v22, v23, v25, v28, v31));
   }
-  return result; /*0x4b9bbf*/
+  return (gamemd::CampaignScore **)(result);
 }
 }
 // 0x4BE9D0
@@ -641,7 +641,7 @@ char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
   }
   if ( *aP1 != v2 || *(unsigned long long *)(aP1 + 1) != qword_8A0794 ) /*0x4b0e50*/
   {
-    *v4 = *aP1; /*0x4b0e65*/
+    *v4 = (unsigned int *)(*aP1);
     this->q044 = aP1[1]; /*0x4b0e6a*/
     v6 = aP1[2]; /*0x4b0e6d*/
     this->q18C = 1; /*0x4b0e70*/

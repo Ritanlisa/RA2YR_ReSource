@@ -85,7 +85,7 @@ extern uint32_t g_TriggerClassCount; // data: 0xA83C78
 
 extern uint32_t g_IntroMovieObject; // data: 0xA8E960
 
-extern uint32_t g_DDraw_Active; // data: 0xA8ED80
+extern int g_DDraw_Active; // data: 0xA8ED80 (type unified G34)
 
 extern uint32_t g_GameActive; // data: 0xA8ED9C
 

@@ -43,6 +43,7 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x530000
 namespace gamemd {
@@ -65,10 +66,10 @@ MixFileClass * * sub_530000()
     {
       if ( (FindFileData.dwFileAttributes & 0x116) == 0 ) /*0x530035*/
       {
-        v1 = operator new(0x28u); /*0x53003d*/
+        v1 = (unsigned int *)(operator new(0x28u));
         if ( v1 ) /*0x530047*/
         {
-          v2 = MixFileClass::FromFile(v1, FindFileData.cFileName, (int)dword_886980); /*0x53005a*/
+          v2 = (unsigned int *)(MixFileClass::FromFile(v1, FindFileData.cFileName, (int)dword_886980));
           if ( v2 ) /*0x53005e*/
           {
             if ( g_MixFilePool_Count < g_MixFilePool_Capacity /*0x530097*/
@@ -79,7 +80,7 @@ MixFileClass * * sub_530000()
                    g_MixFilePool_Capacity + g_MixFilePool_GrowSize,
                    0) )
             {
-              v3 = g_MixFilePool_Count++; /*0x5300a4*/
+              v3 = (unsigned int *)(g_MixFilePool_Count++);
               *((unsigned int *)g_MixFilePool + v3) = v2; /*0x5300b3*/
             }
             ReturnTrue(0); /*0x5300ba*/
@@ -97,10 +98,10 @@ MixFileClass * * sub_530000()
     {
       if ( (FindFileData.dwFileAttributes & 0x116) == 0 ) /*0x5300f5*/
       {
-        v5 = operator new(0x28u); /*0x5300f9*/
+        v5 = (unsigned int *)(operator new(0x28u));
         if ( v5 ) /*0x530103*/
         {
-          v6 = MixFileClass::FromFile(v5, FindFileData.cFileName, (int)dword_886980); /*0x530116*/
+          v6 = (unsigned int *)(MixFileClass::FromFile(v5, FindFileData.cFileName, (int)dword_886980));
           if ( v6 ) /*0x53011a*/
           {
             if ( g_MixFilePool_Count < g_MixFilePool_Capacity /*0x530153*/
@@ -111,7 +112,7 @@ MixFileClass * * sub_530000()
                    g_MixFilePool_Capacity + g_MixFilePool_GrowSize,
                    0) )
             {
-              v7 = g_MixFilePool_Count++; /*0x530160*/
+              v7 = (unsigned int *)(g_MixFilePool_Count++);
               *((unsigned int *)g_MixFilePool + v7) = v6; /*0x53016f*/
             }
           }
@@ -121,12 +122,12 @@ MixFileClass * * sub_530000()
     while ( FindNextFileA(v4, &FindFileData) ); /*0x530178*/
     FindClose(v4); /*0x530183*/
   }
-  return 1; /*0x530189*/
+  return (gamemd::MixFileClass **)(1);
 }
 }
 // 0x5312A0
 namespace gamemd {
-void ShowLoadingScreen()
+void ShowLoadingScreen(void * a1, void * a2, void * a3)
 {
   int16_t *v3; // esi
   char *v4; // ebp
@@ -193,7 +194,7 @@ void ShowLoadingScreen()
                                                     0);
         if ( v31 ) /*0x531367*/
         {
-          v8 = aGlssmdShp; /*0x53136e*/
+          v8 = (unsigned int)(aGlssmdShp);
           if ( g_DisplayWidth != 640 ) /*0x531378*/
             v8 = aGlslmdShp; /*0x53137a*/
           Block = (void *)SearchMIXFile(v8, 0); /*0x531386*/
@@ -218,7 +219,7 @@ void ShowLoadingScreen()
     v32[1] = (Rect.bottom - Rect.top - v9) / 2; /*0x5313e5*/
     DrawToSurfaceSHP(g_DSurface_Hidden, (int)v31, (int)v3, 0, v32, v35, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x53140e*/
   }
-  v10 = GetStringCSF(aTxtCopyright, (int)g_Str_File_Init_CPP, 4930); /*0x53142e*/
+  v10 = (int)(GetStringCSF(aTxtCopyright, (int)g_Str_File_Init_CPP, 4930));
   v11 = TextRenderer::GetInstance(22); /*0x531439*/
   v29 = 0; /*0x53143e*/
   v30 = v37 - 40; /*0x531444*/

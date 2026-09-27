@@ -84,12 +84,12 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     else
       v11 = **(uint16_t **)(g_FileSystem_THEATER_PAL + 372); /*0x704a69*/
     v36 = -2; /*0x704a77*/
-    v35 = -2; /*0x704a89*/
+    v35 = (int *)(-2);
     v12 = Coord2D::Add(&v35, v37, v34); /*0x704a8d*/
     v13 = Rect::Construct(v47, v12, 3, 3); /*0x704a97*/
     v39 = *v13; /*0x704aa0*/
     v40 = v13[1]; /*0x704aa9*/
-    v41 = v13[2]; /*0x704ab0*/
+    v41 = (int *)(v13[2]);
     v42 = v13[3]; /*0x704ac2*/
     v14 = ClipRectIntersection(v48, &DSurface_ViewBounds, &v39, 0, 0); /*0x704acc*/
     v43 = *v14; /*0x704ad4*/
@@ -136,9 +136,9 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v20 = ((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/
       | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue)
       | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green);
-  v35 = -2; /*0x704c92*/
+  v35 = (int *)(-2);
   v36 = -2; /*0x704c96*/
-  v21 = Coord2D::Add(&v35, v37, &v31); /*0x704ca4*/
+  v21 = (int *)(Coord2D::Add(&v35, v37, &v31));
   v22 = Rect::Construct(v48, v21, 3, 3); /*0x704cb1*/
   v43 = *v22; /*0x704cba*/
   v44 = v22[1]; /*0x704cc3*/
@@ -193,7 +193,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
 }
 // 0x704E40
 namespace gamemd {
-void* DrawTacticalLaserLine()
+void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
 {
   int v7; // esi
   int *v8; // eax
@@ -247,9 +247,9 @@ void* DrawTacticalLaserLine()
   v29 = v25 - 2; /*0x704eeb*/
   v28 = v24 - 2; /*0x704f13*/
   v7 = ((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704f1e*/
-     | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green)
+     | (IDA_BYTE1(a7, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6) >> g_BitMask_Blue << g_BitMask_Green)
      | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue);
-  v8 = Rect::Construct(v45, &v28, 3, 3); /*0x704f25*/
+  v8 = (int *)(Rect::Construct(v45, &v28, 3, 3));
   v34 = *v8; /*0x704f2e*/
   v35 = v8[1]; /*0x704f37*/
   v36 = v8[2]; /*0x704f3e*/
@@ -309,7 +309,7 @@ void* DrawTacticalLaserLine()
         &v24,
         &v21,
         ((uint8_t)v19 >> g_BitShift_Green_0 << g_BitShift_Red)
-      | (IDA_HIBYTE(v19) >> g_BitMask_Blue << g_BitMask_Green)
+      | (IDA_HIBYTE(v19, void * a1) >> g_BitMask_Blue << g_BitMask_Green)
       | (v20 >> g_BitMask_Red << g_BitShift_Blue, unsigned int a1));
     }
     result = v38; /*0x705229*/
@@ -324,7 +324,7 @@ void* DrawTacticalLaserLine()
       break; /*0x705250*/
     v13 = a1; /*0x705083*/
   }
-  return result; /*0x705256*/
+  return (void *)(result);
 }
 }
 // 0x706ED0
@@ -443,7 +443,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
     }
     else
     {
-      lpVtbl = g_TacticalClass_Instance[45].lpVtbl; /*0x7070f2*/
+      lpVtbl = (int *)(g_TacticalClass_Instance[45].lpVtbl);
       v37 = 0; /*0x707100*/
       v40 = v21 - (unsigned int)lpVtbl; /*0x707104*/
       v38 = 0; /*0x70710c*/

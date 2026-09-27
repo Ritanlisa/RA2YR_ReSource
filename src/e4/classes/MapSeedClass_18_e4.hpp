@@ -25,6 +25,7 @@ struct MapSeedClass_18 {
     bool q054;  // 0x54
     unsigned int Capacity;
     unsigned int Items;
+    unsigned int Items2;
 // --- flat members (END) ---
     void ClearBuffer();  // 0x5AC4C0
     int GetCell(int a2);  // 0x5AC510

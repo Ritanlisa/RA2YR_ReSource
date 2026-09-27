@@ -209,7 +209,7 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
     v8 = (int (*)(void))this->q068; /*0x774d63*/
     if ( v8 ) /*0x774d68*/
     {
-      result = v8(); /*0x774d6a*/
+      result = (gamemd::WinModemClass **)(v8());
       if ( result ) /*0x774d6e*/
         return result; /*0x774f2f*/
     }
@@ -246,8 +246,7 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
       }
       if ( !v13 ) /*0x774e2b*/
       {
-  LABEL_20:
-        Str[a4 - 1] = 0; /*0x774e31*/
+  LABEL_20: Str[a4 - 1] = (char *)(0);
         v15 = strstr(Str, word_832678); /*0x774e45*/
         if ( v15 ) /*0x774e4c*/
         {
@@ -284,12 +283,12 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
         result = a2; /*0x774f11*/
         if ( v19 != -1 ) /*0x774f1a*/
         {
-          v17 = Timer::GetTicks() - v19; /*0x774f25*/
+          v17 = (gamemd::WinModemClass **)(Timer::GetTicks() - v19);
           if ( v17 < a2 ) /*0x774f2b*/
             return a2 - v17; /*0x774f38*/
           return 0; /*0x774f3b*/
         }
-        return result; /*0x774f1a*/
+        return (gamemd::WinModemClass **)(result);
       }
     }
   }
@@ -444,7 +443,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
       && Str[2] >= 48
       && Str[2] <= 57 )
     {
-      v24 = Count; /*0x77544c*/
+      v24 = (gamemd::AbstractClass **)(Count);
       if ( Count >= 80 ) /*0x775456*/
         v24 = 80; /*0x775458*/
       strncpy(Destination, Str, v24); /*0x77546b*/
@@ -555,7 +554,7 @@ WinModemClass * WinModemClass::QueryInterface(char a2)
 {
   void * v3;
 
-  v3 = this->q05C; /*0x775613*/
+  v3 = (void *)(this->q05C);
   if ( v3 != -1 ) /*0x77561f*/
   {
     Debug::Log(); /*0x775626*/

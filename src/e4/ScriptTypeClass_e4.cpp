@@ -112,7 +112,7 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2)
   int v10; // [esp-4h] [ebp-38h]
   char Buffer[32]; // [esp+14h] [ebp-20h] BYREF
 
-  KeyCount = INIClass::GetKeyCount(a1, (uint8_t *)g_INI_Key_TaskForces); /*0x6e8357*/
+  KeyCount = (int)(INIClass::GetKeyCount(a1, (uint8_t *)g_INI_Key_TaskForces));
   for ( i = 0; i < KeyCount; ++i ) /*0x6e835d*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1, (uint8_t *)g_INI_Key_TaskForces, i); /*0x6e8367*/
@@ -141,6 +141,6 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2)
     }
     result = g_MultiplayerLogFlags; /*0x6e8403*/
   }
-  return result; /*0x6e840d*/
+  return (gamemd::TaskForceClass *)(result);
 }
 } // namespace gamemd

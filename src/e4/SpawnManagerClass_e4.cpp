@@ -95,7 +95,7 @@ SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5, 
          dword_B0B888 + dword_B0B894,
          0) )
   {
-    v18 = dword_B0B890++; /*0x6b6e76*/
+    v18 = (gamemd::SpawnManagerClass *)(dword_B0B890++);
     *((unsigned int *)dword_B0B884 + v18) = this; /*0x6b6e85*/
   }
   return this; /*0x6b6e8a*/
@@ -137,7 +137,7 @@ void* SpawnManagerClass::Constructor()
          dword_B0B888 + dword_B0B894,
          0) )
   {
-    v2 = dword_B0B890++; /*0x6b6f76*/
+    v2 = (gamemd::SpawnManagerClass *)(dword_B0B890++);
     *((unsigned int *)dword_B0B884 + v2) = this; /*0x6b6f85*/
   }
   return this; /*0x6b6f8a*/
@@ -160,7 +160,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
     if ( *(unsigned int *)(this->spawnVectorCount + 4 * i) ) /*0x6b7047*/
       RA2_OPDEL(*(void **)(this->spawnVectorCount + 4 * i)); /*0x6b704f*/
   }
-  v3 = this->spawnVectorCapacity; /*0x6b7063*/
+  v3 = (int)(this->spawnVectorCapacity);
   (*(void (__thiscall **)(int))(this->spawns + 12))(&this->abstractFlags6); /*0x6b7066*/
   (*(void (__thiscall **)(int, int, unsigned int))(this->spawns + 8))(&this->u32_E0, v3, 0); /*0x6b7070*/
   v4 = (*(int (__thiscall **)(int *, int *))(SpawnManagerClass_Array + 16))(&SpawnManagerClass_Array, &this); /*0x6b7087*/
@@ -307,7 +307,7 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
   result = this->spawnOwner; /*0x6b7e8b*/
   if ( result ) /*0x6b7e90*/
   {
-    v12 = (*(int (__stdcall **)(int))(result->vtable2 + 16))(result + 4); /*0x6b7e99*/
+    v12 = (gamemd::HouseClass *)((*(int (__stdcall **)(int))(result->vtable2 + 16))(result + 4));
     result = Power::TimerProcess(v12); /*0x6b7e9f*/
   }
   v13 = this->owner; /*0x6b7ea4*/
@@ -316,7 +316,7 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
     v14 = (*(int (__stdcall **)(int))(v13->vtable2 + 16))(v13 + 4); /*0x6b7eb2*/
     return Power::TimerProcess(v14); /*0x6b7eb8*/
   }
-  return result; /*0x6b7ebd*/
+  return (int)(result);
 }
 } // namespace ra2
 
@@ -385,7 +385,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       {
         while ( 1 ) /*0x6b7fc8*/
         {
-          v8 = operator new(0x18u); /*0x6b7fc8*/
+          v8 = (unsigned int *)(operator new(0x18u));
           if ( v8 ) /*0x6b7fd2*/
           {
             g_CurrentFrame = g_CurrentFrame; /*0x6b7fd4*/
@@ -402,7 +402,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
             && (v11 = v2->q04C, v11 > 0)
             && (*(uint8_t (__thiscall **)(int, int, unsigned int))(v6->Capacity)(v2 + 56, v10 + v11, 0) )
           {
-            v12 = v2->q048; /*0x6b8027*/
+            v12 = (unsigned int)(v2->q048);
             v13 = v2->q03C; /*0x6b802a*/
             v2->q048 = v12 + 1; /*0x6b8030*/
             *(unsigned int *)(v13 + 4 * v12) = v5; /*0x6b8033*/
@@ -494,7 +494,7 @@ void SpawnManagerClass_25::ddtor()
 {
   void *v2; // eax
 
-  v2 = *(unsigned int *)&this->q010; /*0x6b8166*/
+  v2 = (void *)(*(unsigned int *)&this->q010);
   *(unsigned int *)((char *)&this->__pad_03B + 5) = 0; /*0x6b8169*/
   if ( v2 && this->IsAllocated ) /*0x6b8170*/
   {
@@ -558,7 +558,7 @@ char SpawnManagerClass_25::AddRef(int a2)
 namespace gamemd {
 unsigned int * SpawnManagerClass::Constructor_6B83A0(DynamicVector * aP1, DynamicVector * aP2)
 {
-  this->Items = 0; /*0x6b83a9*/
+  this->Items = (unsigned int)(0);
   this->Capacity = aP1; /*0x6b83b0*/
   *(unsigned char *)&this->vtable4 = 1; /*0x6b83b3*/
   this->u8_D = 0; /*0x6b83b7*/
@@ -566,7 +566,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(DynamicVector * aP1, Dynami
   {
     if ( aP2 ) /*0x6b83c9*/
     {
-      this->Items = aP2; /*0x6b83cb*/
+      this->Items = (unsigned int)(aP2);
     }
     else
     {
@@ -574,7 +574,7 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(DynamicVector * aP1, Dynami
       this->IsAllocated = 1; /*0x6b83df*/
     }
   }
-  this->u32_14 = 10; /*0x6b83e9*/
+  this->u32_14 = (unsigned int *)(10);
   this->q010 = 0; /*0x6b83f0*/
   return this; /*0x6b83f9*/
 }
@@ -591,7 +591,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x6b840c*/
   {
-    this->IsInitialized = 0; /*0x6b8412*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x6b8418*/
       v4 = a3; /*0x6b842e*/
     else
@@ -612,7 +612,7 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
         this->Items = 0; /*0x6b8471*/
       }
     }
-    this->Items = v4; /*0x6b847a*/
+    this->Items = (unsigned int)(v4);
     this->q008 = a2; /*0x6b8482*/
     this->IsAllocated = a3 == 0; /*0x6b8485*/
   }

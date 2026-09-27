@@ -128,7 +128,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
          dword_8B3D24 + dword_8B3D18,
          0) )
   {
-    v19 = g_FootClassConfig++; /*0x4d0b7c*/
+    v19 = (gamemd::FoggedObjectClass *)(g_FootClassConfig++);
     *((unsigned int *)dword_8B3D14 + v19) = this; /*0x4d0b8b*/
   }
   v20 = (int16_t)(this->q034 / 256); /*0x4d0bb4*/
@@ -148,7 +148,7 @@ int FoggedObjectClass::InitBuildingFog(unsigned int * a2, int a3, int a4)
     byte_8B3CCC = 0; /*0x4d0c1c*/
     ++g_MissionState; /*0x4d0c23*/
   }
-  return this; /*0x4d0c2a*/
+  return (int)(this);
 }
 } // namespace gamemd
 // 0x4D0C40
@@ -240,12 +240,12 @@ AbstractClass * * FoggedObjectClass::InitTerrainFog(IUnknown * aP1, int a3, int 
   {
     v16 = 10; /*0x4d0e24*/
   }
-  v17 = operator new(8 * (v16 + dword_8B3CC8)); /*0x4d0e44*/
+  v17 = (unsigned int *)(operator new(8 * (v16 + dword_8B3CC8)));
   if ( v17 ) /*0x4d0e4b*/
   {
     for ( i = 0; i < (int)g_MissionState; v17[2 * i - 1] = v19[1] ) /*0x4d0e64*/
     {
-      v19 = (char *)v17 + 8 * i++; /*0x4d0e6c*/
+      v19 = (unsigned int *)((char *)v17 + 8 * i++);
       v17[2 * i - 2] = *v19; /*0x4d0e72*/
     }
     RA2_OPDEL(v17); /*0x4d0e8e*/
@@ -351,7 +351,7 @@ int FoggedObjectClass::Constructor(BuildingClass * aP1, FoggedObjectClass * aP2)
          dword_8B3D18 + dword_8B3D24,
          0) )
   {
-    v9 = g_FootClassConfig++; /*0x4d1027*/
+    v9 = (gamemd::FoggedObjectClass *)(g_FootClassConfig++);
     *((unsigned int *)dword_8B3D14 + v9) = this; /*0x4d1036*/
   }
   v10 = dword_8B3CC8; /*0x4d107c*/

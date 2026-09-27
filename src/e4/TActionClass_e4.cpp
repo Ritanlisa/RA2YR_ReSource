@@ -32,16 +32,16 @@ int TActionClass::executeBuildAction()
   result = this->q1F8; /*0x4fcdc0*/
   if ( !result ) /*0x4fcdc8*/
   {
-    result = this->__pad_1F7; /*0x4fcdca*/
+    result = (void *)(this->__pad_1F7);
     if ( !result ) /*0x4fcdd2*/
       return HouseClass::CheckWinCondition(0); /*0x4fcdd6*/
   }
   if ( this->q298 == -1 ) /*0x4fcde3*/
   {
-    result = (char)g_CurrentFrame; /*0x4fcde5*/
+    result = (void *)((char)g_CurrentFrame);
     this->q298 = g_CurrentFrame; /*0x4fcdea*/
   }
-  return result; /*0x4fcddb*/
+  return (int)(result);
 }
 }
 // 0x50D2D0
@@ -255,7 +255,7 @@ int TActionClass::executeSellAction()
 namespace gamemd {
 unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
 {
-  unsigned int result;
+  unsigned int * result;
   int v5; // esi
   unsigned int v6;
   int v7; // eax
@@ -276,8 +276,7 @@ unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
       v5 = 0; /*0x6ac632*/
       if ( g_TypeClass_FindCache <= 0 ) /*0x6ac63c*/
       {
-  LABEL_13:
-        v5 = 0; /*0x6ac64f*/
+  LABEL_13: v5 = (unsigned int *)(0);
         if ( g_TriggerClassCount <= 0 ) /*0x6ac659*/
           return result; /*0x6ac659*/
         result = g_TriggerTypeCount; /*0x6ac65f*/
@@ -291,7 +290,7 @@ unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
       }
       else
       {
-        result = g_AircraftTypeCount; /*0x6ac63e*/
+        result = (unsigned int *)(g_AircraftTypeCount);
         while ( a2 != *result ) /*0x6ac645*/
         {
           ++v5; /*0x6ac647*/
@@ -303,7 +302,7 @@ unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
     }
     else
     {
-      result = g_UnitTypeCount2; /*0x6ac621*/
+      result = (unsigned int *)(g_UnitTypeCount2);
       while ( a2 != *result ) /*0x6ac628*/
       {
         ++v5; /*0x6ac62a*/
@@ -447,7 +446,7 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
     }
     while ( v14 < g_SidebarState ); /*0x6e0c89*/
   }
-  return v6; /*0x6e0ba6*/
+  return (gamemd::AbstractClass **)(v6);
 }
 }
 // 0x6E1CC0
@@ -470,7 +469,7 @@ AnimClass * * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, in
   {
     GroundHeight += dword_B0E6D4; /*0x6e1d57*/
   }
-  v5 = (void *)operator new(0x1C8u); /*0x6e1d60*/
+  v5 = (gamemd::AnimClass **)((void *)operator new(0x1C8u));
   if ( v5 ) /*0x6e1d6a*/
     *((unsigned char *)AnimClass::ctor(v5, (void *)g_RulesClass_Instance[1].BarrelDebris[1], v9, 0, 1, (void *)0x600, 0, 0) + 408) = 1; /*0x6e1d92*/
   else
@@ -498,7 +497,7 @@ AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown
   {
     GroundHeight += dword_B0E6D4; /*0x6e232a*/
   }
-  v6 = (void *)operator new(0x1C8u); /*0x6e2333*/
+  v6 = (gamemd::AnimClass **)((void *)operator new(0x1C8u));
   if ( v6 ) /*0x6e233d*/
     *((unsigned char *)AnimClass::ctor(v6, *((void **)g_AnimTypeCount + *(unsigned int *)&this->Value), v10, 0, 1, (void *)0x600, 0, 0) + 408) = 1; /*0x6e2368*/
   else

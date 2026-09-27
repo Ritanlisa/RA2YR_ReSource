@@ -170,7 +170,7 @@ int MPBattleClass::isAIAllowed()
   return 0; /*0x5cb396*/
 }
 // 0x5CB3A0
-unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6)
+unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6, void * a2)
 {
   MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5cb3c3*/
   return this; /*0x5cb3d0*/

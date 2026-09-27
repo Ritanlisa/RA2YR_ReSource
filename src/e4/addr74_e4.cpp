@@ -38,7 +38,7 @@
 
 // 0x743270
 namespace gamemd {
-Coord * * PlaceScenarioUnits()
+Coord * * PlaceScenarioUnits(void * a1, void * a2)
 {
   char *v2; // esi
   int KeyCount; // eax
@@ -165,7 +165,7 @@ Coord * * PlaceScenarioUnits()
               v24 = (void *)ObjectTypeClass::FindByName(v23); /*0x74346a*/
               if ( v24 ) /*0x743471*/
               {
-                v25 = TeamClass::FindOrCreate(v24); /*0x743475*/
+                v25 = (int)(TeamClass::FindOrCreate(v24));
                 if ( v25 ) /*0x74347c*/
                   ObjectClass::SetReference((unsigned int *)v12, v25); /*0x743481*/
               }
@@ -518,7 +518,7 @@ int CopySHPFrameToSurface(int a1, unsigned short * a2, int * a3, int a4, int a5,
                 }
                 while ( v19 ); /*0x74847a*/
               }
-              v20 = *v17; /*0x74848a*/
+              v20 = (unsigned int *)(*v17);
               v15 = v17 + 1; /*0x74848c*/
               v21 = v9 + 1; /*0x748491*/
               if ( v14 ) /*0x748494*/
@@ -715,7 +715,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
   int v6; // ecx
   int v7; // eax
 
-  v3 = &this->M12; /*0x74bbff*/
+  v3 = (char *)(&this->M12);
   this->M16 = 0; /*0x74bc04*/
   this->M20 = 0; /*0x74bc07*/
   this->q018 = 1; /*0x74bc0a*/
@@ -736,7 +736,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
     *(unsigned int *)this = *(unsigned int *)a2; /*0x74bc85*/
     return this; /*0x74bc8d*/
   }
-  v5 = operator new(v4); /*0x74bc3e*/
+  v5 = (unsigned int)(operator new(v4));
   *((unsigned int *)v3 + 1) = v5; /*0x74bc48*/
   if ( !v5 ) /*0x74bc4b*/
     goto LABEL_8; /*0x74bc4b*/
@@ -780,13 +780,13 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
   this->M20 = v4; /*0x74bce9*/
   if ( !v4 ) /*0x74bcec*/
   {
-    this->M16 = 0; /*0x74bd2c*/
+    this->M16 = (unsigned int *)(0);
     this->M25 = 0; /*0x74bd33*/
   LABEL_10:
     *(unsigned int *)this = *(unsigned int *)a2; /*0x74bd37*/
     return this; /*0x74bd39*/
   }
-  v5 = operator new(v4); /*0x74bcef*/
+  v5 = (unsigned int)(operator new(v4));
   this->M16 = v5; /*0x74bcf7*/
   if ( !v5 ) /*0x74bcfc*/
     goto LABEL_10; /*0x74bcfc*/
@@ -825,7 +825,7 @@ int E4Recv_74BDC0::sub_74BDC0(unsigned int a2)
   }
   if ( a2 ) /*0x74bde6*/
   {
-    v5 = *this; /*0x74bdeb*/
+    v5 = (unsigned int)(*this);
     v6 = (*(int (__thiscall **)(unsigned int *, unsigned int, unsigned int))(this->M12 + 8))(&this->M12, (a2 + 7) >> 3, 0); /*0x74bdf9*/
     *(unsigned int *)this = a2; /*0x74be01*/
     v6 = v6; /*0x74be03*/
@@ -937,14 +937,14 @@ int InitializeVeinholeSystem(char a1)
   {
     do /*0x74dff7*/
     {
-      v6 = operator new(8 * g_RulesClass_Instance->VeinholeShrinkRate); /*0x74df08*/
+      v6 = (unsigned int *)(operator new(8 * g_RulesClass_Instance->VeinholeShrinkRate));
       if ( !v6 ) /*0x74df12*/
         v6 = 0; /*0x74df1b*/
       *(unsigned int *)(*((unsigned int *)g_VoxelDrawState + v5) + 180) = v6; /*0x74df28*/
       v7 = operator new(0x14u); /*0x74df33*/
       if ( v7 ) /*0x74df3a*/
       {
-        VeinholeShrinkRate = g_RulesClass_Instance->VeinholeShrinkRate; /*0x74df42*/
+        VeinholeShrinkRate = (unsigned int)(g_RulesClass_Instance->VeinholeShrinkRate);
         v7[3] = 0; /*0x74df48*/
         v7[1] = VeinholeShrinkRate; /*0x74df4b*/
         v7[4] = -1; /*0x74df4e*/

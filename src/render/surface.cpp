@@ -323,7 +323,7 @@ DSurface::~DSurface()
 // Rect::Set(0,0,0,0) → Blit(zero, zero, src, zero, zero, option1, option2)
 REVERSE(0x4C1A90, "DSurface::BlitWhole: Thin wrapper around Blit", "None")
 // 0x4c1a90
-int DSurface::BlitWhole(class Surface* src, bool option1, bool option2)
+int DSurface::BlitWhole(class Surface* src, bool option1, bool option2, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
   return XSurface::BlitWhole(src, option1, option2); /*0x4c1aa4*/
 }
@@ -516,7 +516,7 @@ char DSurface::BlitCore(
      && dst->Surface->IsLost() == DDERR_SURFACELOST)
     {
         if (FAILED(dst->Surface->Restore())
-         || dst->Surface->IsLost() == DDERR_SURFACELOST)
+         || dst->Surface->IsLost(void * a1, void * a2) == DDERR_SURFACELOST)
             return 0;
 
         int saved_locks = dst->LockCount;

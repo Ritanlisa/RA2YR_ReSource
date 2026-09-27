@@ -132,7 +132,7 @@ BuildingClass::BuildingClass() noexcept
 
 // IDA 0x43b740
 // 0x43b740
-AbstractClass * * BuildingClass::Construct()
+AbstractClass * * BuildingClass::Construct(void * a1, void * a2, void * a3)
 {
   __int16 v6; // cx
   int v7; // eax
@@ -223,10 +223,10 @@ AbstractClass * * BuildingClass::Construct()
   this->NoCrew = 0; /*0x43b95a*/
   this->BuildingClass_field_bool_6E1 = 0; /*0x43b960*/
   this->BuildingClass_field_bool_6E2 = 0; /*0x43b966*/
-  this->HasBeenCaptured = 0; /*0x43b96c*/
+  this->HasBeenCaptured = (gamemd::PrismChargeState)(0);
   this->ActuallyPlacedOnMap = 0; /*0x43b972*/
   this->BuildingClass_field_bool_6E5 = 0; /*0x43b978*/
-  this->IsDamaged = 0; /*0x43b97e*/
+  this->IsDamaged = (_DWORD)(0);
   this->IsFogged = 0; /*0x43b984*/
   this->IsBeingRepaired = 0; /*0x43b98a*/
   this->BuildingClass_field_bool_6E9 = 0; /*0x43b990*/
@@ -236,7 +236,7 @@ AbstractClass * * BuildingClass::Construct()
   this->Translucency = 0; /*0x43b9a9*/
   this->StorageFilledSlots = 0; /*0x43b9af*/
   this->SecretProduction = 0; /*0x43b9b5*/
-  this->ColorAdd = 0; /*0x43b9bb*/
+  this->ColorAdd = (int)(0);
   this->u8_6F9 = 0; /*0x43b9c1*/
   this->u8_6FA = 0; /*0x43b9c7*/
   this->BuildingClass_field_int_6FC = 0; /*0x43b9cd*/

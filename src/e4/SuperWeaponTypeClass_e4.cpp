@@ -184,7 +184,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   }
   else if ( v32 && v11 > v31 ) /*0x4f6811*/
   {
-    return 1; /*0x4f6811*/
+    return (gamemd::AbstractClass **)(1);
   }
   return 0; /*0x4f65ea*/
 }
@@ -267,7 +267,7 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
         v4 = g_SuperWeaponTypeArray,
         !v5) )
   {
-    g_SuperWeaponTypeArray = v4 + 1; /*0x5115db*/
+    g_SuperWeaponTypeArray = (unsigned int)(v4 + 1);
     *((unsigned int *)g_SuperWeaponTypeCount + v4) = this; /*0x5115e5*/
     v4 = g_SuperWeaponTypeArray; /*0x5115e8*/
   }
@@ -291,8 +291,7 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
   this->veteranAircraftCount = v6; /*0x511608*/
   if ( g_SuperWeaponTypeArray <= 0 ) /*0x511615*/
   {
-  LABEL_16:
-    this->veteranAircraft = -1; /*0x511629*/
+  LABEL_16: this->veteranAircraft = (unsigned char *)(-1);
     return this; /*0x511633*/
   }
   else
@@ -305,7 +304,7 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
       if ( v3 >= g_SuperWeaponTypeArray ) /*0x511627*/
         goto LABEL_16; /*0x511627*/
     }
-    this->veteranAircraft = v3; /*0x51163a*/
+    this->veteranAircraft = (unsigned char *)(v3);
     return this; /*0x511640*/
   }
 }
@@ -373,7 +372,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   {
     v4 = v3; /*0x6cea84*/
   }
-  v5 = this->q0BC; /*0x6cea86*/
+  v5 = (unsigned int)(this->q0BC);
   this->WeaponType = v4; /*0x6cea8c*/
   v6 = SuperWeaponTypeClass::loadSWProperties( /*0x6cea9b*/
          aP1,
@@ -392,7 +391,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
                      (uint8_t *)(&this->vtable46),
                      (uint8_t *)aDisableablefro,
                      this->q0E7);
-  v8 = this->FlashSidebarTabFrames; /*0x6cead4*/
+  v8 = (int)(this->FlashSidebarTabFrames);
   this->q0E7 = Bool_Overwrite; /*0x6ceada*/
   Int_Overwrite = INIClass::ReadInt_Overwrite( /*0x6ceae9*/
                     (int)aP1,
@@ -411,7 +410,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
           (uint8_t *)(&this->vtable46),
           (uint8_t *)aPreclick,
           this->q0ED);
-  v11 = this->q0EE; /*0x6ceb22*/
+  v11 = (int)(this->q0EE);
   this->q0ED = v10; /*0x6ceb28*/
   v12 = INIClass::ReadBool_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aPostclick, v11); /*0x6ceb37*/
   v33 = this->q0F4; /*0x6ceb44*/
@@ -430,7 +429,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   {
     Index = v14; /*0x6ceb96*/
   }
-  v16 = this->q0C4; /*0x6ceb98*/
+  v16 = (int)(this->q0C4);
   this->q0C0 = Index; /*0x6cebb8*/
   if ( !INIClass::GetString( /*0x6cebd6*/
           aP1,

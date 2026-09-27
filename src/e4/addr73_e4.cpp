@@ -117,7 +117,7 @@ AbstractClass * * ProcessSelectionExperience()
         if ( v13 ) /*0x730d37*/
           goto LABEL_47; /*0x730d37*/
       }
-      return v0; /*0x730d37*/
+      return (gamemd::AbstractClass **)(v0);
     }
     while ( 1 ) /*0x730b95*/
     {
@@ -176,7 +176,7 @@ AbstractClass * * ProcessSelectionExperience()
         IDA_LOBYTE(v0) = PlayVocClass(g_RulesClass_Instance->Scorches4[2], 0x2000, 1.0, 0); /*0x730d39*/
     }
   }
-  return v0; /*0x730d55*/
+  return (gamemd::AbstractClass **)(v0);
 }
 }
 // 0x730D60
@@ -211,7 +211,7 @@ CellStruct * * sub_730D60()
           && (*(uint8_t (__thiscall **)(unsigned char *))(*(unsigned int *)v3 + 156))(v3)
           && (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v3 + 44))(v3) != 6 )
         {
-          v4 = *(unsigned int *)v3; /*0x730dd8*/
+          v4 = (gamemd::CellStruct **)(*(unsigned int *)v3);
           v5 = (*(int (__thiscall **)(unsigned char *, unsigned int, unsigned int))(*(unsigned int *)v3 + 452))(v3, 0, 0); /*0x730de0*/
           result = (*(int (__thiscall **)(unsigned char *, int, int))(v4 + 888))(v3, 11, v5); /*0x730deb*/
           v2 = result; /*0x730df1*/
@@ -227,7 +227,7 @@ CellStruct * * sub_730D60()
                               : (unsigned int *)1732)
                             + 3598)) )
         {
-          v6 = *(unsigned int *)v3; /*0x730e43*/
+          v6 = (gamemd::CellStruct **)(*(unsigned int *)v3);
           v7 = (*(int (__thiscall **)(unsigned char *, unsigned int, unsigned int))(*(unsigned int *)v3 + 452))(v3, 0, 0); /*0x730e4b*/
           result = (*(int (__thiscall **)(unsigned char *, int, int))(v6 + 888))(v3, 11, v7); /*0x730e56*/
           v2 = result; /*0x730e5c*/
@@ -242,7 +242,7 @@ CellStruct * * sub_730D60()
     if ( v2 ) /*0x730e71*/
       return PlayVocClass(g_RulesClass_Instance->Scorches4[0], 0x2000, 1.0, 0); /*0x730e8a*/
   }
-  return result; /*0x730d73*/
+  return (gamemd::CellStruct **)(result);
 }
 }
 // 0x731130
@@ -289,7 +289,7 @@ AbstractClass * * sub_731AA0()
   int v1; // esi
   unsigned char *v2; // ecx
 
-  v0 = g_SelectionManager; /*0x731aa3*/
+  v0 = (gamemd::AbstractClass **)(g_SelectionManager);
   v1 = 0; /*0x731aa9*/
   if ( (int)g_SelectionManager <= 0 ) /*0x731aad*/
     return 1; /*0x731ad8*/
@@ -476,7 +476,7 @@ void SelectAllOfType()
   v23 = (int (__thiscall ***)(unsigned int, int))TacticalClass::CollectSelectedIDs(); /*0x732989*/
   if ( byte_B0FE64 ) /*0x732996*/
   {
-    v2 = operator new(0x18u); /*0x732998*/
+    v2 = (unsigned int *)(operator new(0x18u));
     v3 = v2; /*0x73299d*/
     if ( v2 ) /*0x7329a4*/
     {
@@ -504,7 +504,7 @@ void SelectAllOfType()
   }
   else
   {
-    v6 = operator new(0x18u); /*0x7329fc*/
+    v6 = (unsigned int *)(operator new(0x18u));
     v7 = v6; /*0x732a01*/
     if ( v6 ) /*0x732a08*/
     {
@@ -584,7 +584,7 @@ void SelectAllOfType()
   }
   else
   {
-    v20 = GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 1009); /*0x732b71*/
+    v20 = (wchar_t *)(GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 1009));
     wcscpy(Destination, v20); /*0x732b73*/
   }
   v19 = 3; /*0x732bc8*/
@@ -727,7 +727,7 @@ void sub_7331B0()
     (**(void (__thiscall ***)(int, int))g_UnitTooltipState)(g_UnitTooltipState, 1); /*0x7331c5*/
     g_UnitTooltipState = 0; /*0x7331c7*/
   }
-  v1 = operator new(0x18u); /*0x7331cf*/
+  v1 = (unsigned int *)(operator new(0x18u));
   v2 = (int)v1; /*0x7331d4*/
   if ( v1 ) /*0x7331db*/
   {

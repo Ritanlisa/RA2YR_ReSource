@@ -32,10 +32,10 @@ int TemporalClass::Constructor()
          dword_B0EC68 + dword_B0EC74,
          0) )
   {
-    v3 = dword_B0EC70++; /*0x71a4c4*/
+    v3 = (gamemd::TemporalClass *)(dword_B0EC70++);
     *((unsigned int *)dword_B0EC64 + v3) = this; /*0x71a4d3*/
   }
-  return this; /*0x71a4d8*/
+  return (int)(this);
 }
 } // namespace ra2
 
@@ -64,7 +64,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
          dword_B0EC68 + dword_B0EC74,
          0) )
   {
-    v3 = dword_B0EC70++; /*0x71a576*/
+    v3 = (gamemd::TemporalClass *)(dword_B0EC70++);
     *((unsigned int *)dword_B0EC64 + v3) = this; /*0x71a585*/
   }
   *(&this->vtable28) = 0; /*0x71a588*/
@@ -303,7 +303,7 @@ int TemporalClass::GetWarpPerStep(int a2)
   int v6; // eax
   int *v7; // eax
 
-  WarpPerStep = 0; /*0x71ab14*/
+  WarpPerStep = (unsigned int)(0);
   if ( *(&this->vtable27) && a2 <= 50 ) /*0x71ab25*/
     WarpPerStep = TemporalClass::GetWarpPerStep(a2 + 1); /*0x71ab2e*/
   v4 = this->objectTypeFlags; /*0x71ab30*/
@@ -421,7 +421,7 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
       {
         if ( *(unsigned char *)(v3[328] + 5821) ) /*0x71aeca*/
         {
-          v5[0] = a1[39]; /*0x71aedc*/
+          v5[0] = (unsigned int *)(a1[39]);
           v5[1] = a1[40]; /*0x71aeed*/
           v5[2] = a1[41]; /*0x71aef4*/
           v4 = Coord::To_Cell(&MapClass_Instance, v5); /*0x71aef8*/

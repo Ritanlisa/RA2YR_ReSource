@@ -144,7 +144,7 @@ void sub_550150()
         *((unsigned char *)v2 + 81) = *((unsigned char *)v2 + 81) == 0; /*0x5501c7*/
       if ( *v2 >= v2[19] && v2 ) /*0x5501d5*/
       {
-        v8[0] = v2; /*0x5501e6*/
+        v8[0] = (unsigned int)(v2);
         v7 = (*(int (__thiscall **)(int *, unsigned int *))(dword_ABC878 + 16))(&dword_ABC878, v8); /*0x5501ea*/
         if ( v7 != -1 && v7 < g_TimerPool && v7 < --g_TimerPool ) /*0x550205*/
         {
@@ -245,7 +245,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   unsigned int v77[24]; // [esp+D0h] [ebp-C0h] BYREF
   unsigned int v78[24]; // [esp+130h] [ebp-60h] BYREF
 
-  v1 = a1; /*0x5509fd*/
+  v1 = (unsigned int)(a1);
   IDA_LODWORD(v72) = a1; /*0x550a03*/
   if ( (byte_ABC7C8 & 1) == 0 ) /*0x550a07*/
   {
@@ -284,7 +284,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
     dword_ABC874 = 0; /*0x550b19*/
     atexit(nullsub_22); /*0x550b1f*/
   }
-  v2 = v1[9]; /*0x550b2a*/
+  v2 = (unsigned int)(v1[9]);
   v59 = v1[12]; /*0x550b33*/
   v58 = v2; /*0x550b37*/
   v3 = Math::CalcAngle((double)v1[10] - (double)v1[13], (double)(int)v59 - (double)v2); /*0x550b56*/
@@ -301,7 +301,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   v65 = 1.0; /*0x550bed*/
   if ( v6 ) /*0x550bf7*/
   {
-    v7 = *v1; /*0x550bfc*/
+    v7 = (int)(*v1);
     v8 = *((float *)v1 + 21) - *((float *)v1 + 22); /*0x550c01*/
     v65 = *((float *)v1 + 19); /*0x550c04*/
     v58 = IDA_LODWORD(v65) - v7; /*0x550c0a*/
@@ -341,7 +341,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
     IDA_HIBYTE(v54) = v13 >> 1; /*0x550cce*/
     IDA_LOBYTE(v11) = v14 >> 1; /*0x550cd2*/
   }
-  v63 = v75; /*0x550cdf*/
+  v63 = (int)(v75);
   v64 = v76; /*0x550ce3*/
   v68 = v75; /*0x550ce7*/
   v69 = v76; /*0x550cef*/
@@ -359,7 +359,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
     {
       if ( v17 ) /*0x550d33*/
       {
-        v18 = 4 * v16; /*0x550d3f*/
+        v18 = (gamemd::BuildingTypeClass *)(4 * v16);
         v19 = dword_ABC7F8[4 * v16]; /*0x550d42*/
         v20 = dword_ABC7FC[4 * v16]; /*0x550d48*/
         v68 += v19; /*0x550d52*/
@@ -466,14 +466,14 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
             v5 = v66; /*0x550fd1*/
             break; /*0x550fd1*/
           }
-          v1 = (int *)v72; /*0x550fa9*/
+          v1 = (gamemd::BuildingTypeClass *)((int *)v72);
           v16 = v59; /*0x550fad*/
           IDA_LOBYTE(v54) = (uint8_t)v54 >> 1; /*0x550fb1*/
           IDA_HIBYTE(v54) >>= 1; /*0x550fb5*/
           v55 >>= 1; /*0x550fb9*/
         }
       }
-      v32 = v1[7]; /*0x550fc1*/
+      v32 = (int)(v1[7]);
       if ( ++v70 > v32 ) /*0x550fcb*/
         goto LABEL_37; /*0x550fcb*/
       v17 = v73; /*0x550d2d*/

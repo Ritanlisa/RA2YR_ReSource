@@ -7,7 +7,7 @@ namespace gamemd {
 struct Options {
 // --- flat members (BEGIN) ---
     unsigned int u32_4;  // 0x4
-    void* q008;  // 0x8
+    unsigned int ;  // 0x8
     void* q00C;  // 0xC
     void* q010;  // 0x10
     void* q018;  // 0x18
@@ -64,6 +64,7 @@ struct Options {
     void* q5508;  // 0x5508
     void* q6148;  // 0x6148
     void* q6408;  // 0x6408
+    unsigned int q008;
 // --- flat members (END) ---
     int DlgProc(HWND hDlg,  unsigned int a2,  unsigned int a3,  HWND a4);    // 0x4F11B0
     bool PrepareSaveLoadDlg();  // 0x558840

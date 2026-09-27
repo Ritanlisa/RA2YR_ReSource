@@ -222,7 +222,7 @@ void* BuildingClass::LoadFromStream()
       }
     }
   }
-  return result; /*0x45417e*/
+  return (void *)(result);
 }
 }
 // 0x455D50

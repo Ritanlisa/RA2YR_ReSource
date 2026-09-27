@@ -85,7 +85,7 @@ int KeyboardConfig::LoadINI()
   LABEL_14:
       ++i; /*0x533e98*/
     }
-    v12 = 0; /*0x533ec8*/
+    v12 = (unsigned int)(0);
     Vector::Clear((int)v11); /*0x533ecf*/
     v10[0] = &off_7E1668; /*0x533ed8*/
     BufferIOFileClass::Dtor(v10); /*0x533ee0*/

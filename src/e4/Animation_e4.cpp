@@ -29,7 +29,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   int v8; // ebp
   int i; // edi
   double HealthRatioBuildingClass; // st7
-  RulesClass * v11;
+  unsigned int v11;
   int v12; // ecx
   unsigned char *v13; // eax
   unsigned int *v14; // ecx
@@ -87,7 +87,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
           v11 = g_RulesClass_Instance; /*0x454ab9*/
           if ( HealthRatioBuildingClass > *(double *)&g_RulesClass_Instance[1].WarpOut ) /*0x454aca*/
           {
-            v11 = *(RulesClass **)(&this->u32_20C2); /*0x454ae0*/
+            v11 = (unsigned int)(*(RulesClass **)(&this->u32_20C2));
             v12 = 0; /*0x454ae6*/
             v13 = (char *)&v11->GameSpeedBias + i + 4; /*0x454ae8*/
           }
@@ -239,7 +239,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   v24 = 6; /*0x770566*/
   while ( 1 ) /*0x770574*/
   {
-    v6 = *this; /*0x770574*/
+    v6 = (void *)(*this);
     String::Assign((char **)&aP2, off_83E188); /*0x77057f*/
     INIClass::ReadTokenizedPair(v5, a1, v3, v6, 0, (char **)&aP2); /*0x770590*/
     DeleteAndZero((void **)&aP2); /*0x770599*/
@@ -281,7 +281,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
         continue; /*0x7706c9*/
       }
     }
-    v12 = this->u32_38C; /*0x7706d0*/
+    v12 = (unsigned int)(this->u32_38C);
     v13 = this->u32_380; /*0x7706d3*/
     this->u32_38C = (char *)v12 + 1; /*0x7706d9*/
     v13[(unsigned int)v12] = v10; /*0x7706e0*/
@@ -317,7 +317,7 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
         continue; /*0x7707e6*/
       }
     }
-    v20 = this->u32_3A4; /*0x7707ed*/
+    v20 = (unsigned int)(this->u32_3A4);
     v21 = this->u32_398; /*0x7707f0*/
     this->u32_3A4 = (char *)v20 + 1; /*0x7707f6*/
     v21[(unsigned int)v20] = v17; /*0x7707f9*/

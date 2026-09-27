@@ -120,7 +120,7 @@ void sub_5E95E0()
   uint8_t v4; // [esp+0h] [ebp-Ch]
   int v5; // [esp+4h] [ebp-8h]
 
-  v5 = dword_A8B548; /*0x5e95f0*/
+  v5 = (LPARAM *)(dword_A8B548);
   if ( dword_A8B548 >= dword_A8BB0C ) /*0x5e95f4*/
     v5 = dword_A8BB0C; /*0x5e95f6*/
   v0 = 0; /*0x5e9618*/
@@ -228,7 +228,7 @@ void sub_796960()
         }
         if ( &g_IsMultiplayerSession ) /*0x796ae4*/
         {
-          v5 = CharToWideString(byte_B777D4); /*0x796aeb*/
+          v5 = (char *)(CharToWideString(byte_B777D4));
           Network::SendToPlayer((int)g_NetworkManager, (int)v9, 455, 1, (wchar_t *)v5); /*0x796b04*/
         }
       }

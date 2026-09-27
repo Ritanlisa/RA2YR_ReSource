@@ -168,6 +168,7 @@ struct GameClass {
     unsigned int __pad_02A;
     unsigned int q0101;
     unsigned int q0102;
+    void* ptr_147;
 // --- flat members (END) ---
     int initGameMode(int a2,  int a3);    // 0x437FD0
     unsigned int * processFrame(int a2,  int a3);    // 0x4381D0

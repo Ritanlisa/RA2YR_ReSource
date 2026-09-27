@@ -94,7 +94,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
     || (*((unsigned int *)Coord::To_Cell(&MapClass_Instance, &a2) + 80) & 0x100) != 0
     || *((unsigned int *)Coord::To_Cell(&MapClass_Instance, &a2) + 59) == 1 )
   {
-    v13 = this->M12; /*0x718a01*/
+    v13 = (int *)(this->M12);
     IDA_LOWORD(v23) = a2 / 256; /*0x718a14*/
     IDA_HIWORD(v23) = a3 / 256; /*0x718a2f*/
     v14 = *v13; /*0x718a3c*/
@@ -152,7 +152,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
         (*(void (__thiscall **)(int, int))(*(unsigned int *)v10 + 32))(v10, 1); /*0x7189ae*/
       (this->M12)[182] = 0; /*0x7189b4*/
     }
-    v11 = this->M12; /*0x7189be*/
+    v11 = (unsigned int *)(this->M12);
     if ( v11[266] ) /*0x7189c1*/
     {
       IDA_LOBYTE(v12) = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v11 + 224))(v11, v11[266]); /*0x7189ce*/

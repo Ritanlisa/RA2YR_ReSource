@@ -184,7 +184,7 @@ int * StartAudioController(AudioMixer * ecx0, int ** a2)
   unsigned int v9; // eax
   float v10; // [esp+8h] [ebp-8h]
 
-  result = 0; /*0x750d43*/
+  result = (double)(0);
   if ( !a2 ) /*0x750d4d*/
     return result; /*0x750d4d*/
   v4 = AudioSource::Get(a2); /*0x750d5e*/
@@ -217,7 +217,7 @@ int * StartAudioController(AudioMixer * ecx0, int ** a2)
     SetAudioSource(v6); /*0x750e0c*/
     return v4; /*0x750e16*/
   }
-  v10 = v7; /*0x750dbc*/
+  v10 = (int *)(v7);
   v9 = Math::RoundToInt(v10 * 16384.0); /*0x750dc6*/
   if ( v9 >= 0x4000 ) /*0x750dd0*/
     v9 = 0x4000; /*0x750dd2*/
@@ -311,7 +311,7 @@ void ThemeManager_Update(int a1, int a2, int a3)
           ThemeClass::ClearQueues(); /*0x75254b*/
           qword_B1D4D0 = 0; /*0x752552*/
         }
-        v6 = AudioQueue::FindByData(v4); /*0x75255e*/
+        v6 = (int)(AudioQueue::FindByData(v4));
         if ( !v6 || *(unsigned int *)(v6 + 24) != v3 ) /*0x75256a*/
           Audio_Load(a3); /*0x752575*/
         UpdateThemes(); /*0x75257a*/
@@ -327,7 +327,7 @@ void ThemeClass_Update()
   uint64_t v0; // rdi
   uint64_t v1; // rax
   unsigned int * v2;
-  unsigned int * v3;
+  unsigned int v3;
   unsigned int * v4;
   char *v5; // edi
   unsigned int * v6;
@@ -355,7 +355,7 @@ void ThemeClass_Update()
     *(unsigned int *)(dword_B1D4C4 + 80) = 2; /*0x7527eb*/
     dword_B1D4C4 = 0; /*0x7527f2*/
   }
-  v11 = 0; /*0x7527fd*/
+  v11 = (unsigned int)(0);
   v10 = 0; /*0x752801*/
   v2 = AudioQueue::GetNext(&dword_B1D3C8); /*0x752805*/
   v3 = (unsigned int *)v2; /*0x75280a*/
@@ -366,7 +366,7 @@ void ThemeClass_Update()
       goto LABEL_22; /*0x75281e*/
     goto LABEL_11; /*0x75281e*/
   }
-  v4 = AudioQueue::GetNext(&dword_B1D3F0); /*0x75283a*/
+  v4 = (unsigned int)(AudioQueue::GetNext(&dword_B1D3F0));
   v3 = (unsigned int *)v4; /*0x75283f*/
   if ( !v4 ) /*0x752843*/
   {
@@ -380,7 +380,7 @@ void ThemeClass_Update()
       v5 = (char *)&unk_B1D474; /*0x752878*/
       while ( 1 ) /*0x75287f*/
       {
-        v6 = AudioQueue::GetNext(v5); /*0x75287f*/
+        v6 = (unsigned int)(AudioQueue::GetNext(v5));
         v3 = (unsigned int *)v6; /*0x752884*/
         if ( v6 ) /*0x752888*/
           break; /*0x752888*/
@@ -445,10 +445,7 @@ void ThemeQueue_ClearPlaylist(int a1)
   {
     for ( i = AudioQueue::FindByData(*((unsigned int *)g_InfantryRenderPool + a1)); /*0x752a61*/
           i;
-          i = AudioQueue::FindByData(*((unsigned int *)g_InfantryRenderPool + a1)) )
-    {
-      if ( *(unsigned int *)(i + 4) != i ) /*0x752a66*/
-        LinkedList::Init((unsigned int **)i); /*0x752a6a*/
+          i = (int)(AudioQueue::FindByData(*((unsigned int *)g_InfantryRenderPool + a1)) ) { if ( *(unsigned int *)(i + 4) != i ) /*0x752a66*/ LinkedList::Init((unsigned int **)i));
       if ( (void *)i == dword_B1D4B8 ) /*0x752a75*/
         dword_B1D4B8 = 0; /*0x752a77*/
       *(unsigned int *)(*(unsigned int *)(i + 12) + 80) = 2; /*0x752a85*/

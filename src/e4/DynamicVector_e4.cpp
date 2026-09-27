@@ -26,14 +26,14 @@ unsigned int * DynamicVector::Copy(VectorClass_flat * aP1)
   this->q008 = v3; /*0x5ac446*/
   if ( !v3 ) /*0x5ac449*/
   {
-    this->Items = 0; /*0x5ac496*/
+    this->Items = (unsigned int *)(0);
     this->IsAllocated = 0; /*0x5ac49d*/
   LABEL_8:
     this->q010 = aP1[4]; /*0x5ac4a1*/
     this->CapacityIncrement = aP1[5]; /*0x5ac4aa*/
     return this; /*0x5ac4ad*/
   }
-  v4 = operator new(4 * v3); /*0x5ac453*/
+  v4 = (gamemd::AbstractClass *)(operator new(4 * v3));
   this->Items = v4; /*0x5ac45b*/
   if ( !v4 ) /*0x5ac460*/
     goto LABEL_8; /*0x5ac460*/
@@ -62,7 +62,7 @@ char DynamicVector::AddItem(VectorClass_flat * aP1)
   void * v6;
   void * v7;
 
-  v3 = this->q008; /*0x413a73*/
+  v3 = (gamemd::AbstractClass *)(this->q008);
   if ( this->q010 >= v3 ) /*0x413a7b*/
   {
     if ( !this->IsAllocated && v3 ) /*0x413a86*/
@@ -71,7 +71,7 @@ char DynamicVector::AddItem(VectorClass_flat * aP1)
     if ( v4 <= 0 || !this->checkCondition(v3 + v4, 0) ) /*0x413a98*/
       return 0; /*0x413a9f*/
   }
-  v6 = this->q010; /*0x413aa5*/
+  v6 = (unsigned int)(this->q010);
   v7 = this->Items; /*0x413aa8*/
   this->q010 = v6 + 1; /*0x413aae*/
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x413ab8*/
@@ -85,7 +85,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
 {
   void *v4; // eax
 
-  this->Items = 0; /*0x42f67a*/
+  this->Items = (unsigned int)(0);
   this->q008 = aP1; /*0x42f681*/
   this->IsInitialized = 1; /*0x42f684*/
   this->IsAllocated = 0; /*0x42f688*/
@@ -93,18 +93,18 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
   {
     if ( aP2 ) /*0x42f69a*/
     {
-      this->Items = aP2; /*0x42f69d*/
+      this->Items = (unsigned int)(aP2);
     }
     else
     {
-      v4 = operator new(4 * aP1); /*0x42f6ae*/
+      v4 = (unsigned int)(operator new(4 * aP1));
       if ( !v4 ) /*0x42f6b8*/
         v4 = 0; /*0x42f6c1*/
       this->Items = v4; /*0x42f6c3*/
       this->IsAllocated = 1; /*0x42f6c6*/
     }
   }
-  this->CapacityIncrement = 10; /*0x42f6d0*/
+  this->CapacityIncrement = (unsigned int *)(10);
   this->q010 = 0; /*0x42f6d7*/
   return this; /*0x42f6e0*/
 }
@@ -154,7 +154,7 @@ char DynamicVector::Add_Alt(VectorClass_flat * aP1)
     if ( v4 <= 0 || !this->Release(v3 + v4, 0) ) /*0x477ee8*/
       return 0; /*0x477eef*/
   }
-  v6 = this->q010; /*0x477ef5*/
+  v6 = (unsigned int)(this->q010);
   v7 = this->Items; /*0x477ef8*/
   this->q010 = v6 + 1; /*0x477efe*/
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x477f08*/
@@ -168,7 +168,7 @@ int DynamicVector::GetOrGrow(DynamicVector * aP1)
 {
   AbstractClass * v3;
 
-  v3 = this->q008; /*0x49fae9*/
+  v3 = (gamemd::AbstractClass *)(this->q008);
   if ( aP1 < v3 ) /*0x49faee*/
     return *(unsigned int *)(this->Items + 4 * aP1); /*0x49fb26*/
   if ( this->checkCondition(aP1 + 10, 0) ) /*0x49fafa*/
@@ -199,7 +199,7 @@ char DynamicVector::Add_Alt4(VectorClass_flat * aP1)
     if ( v4 <= 0 || !this->Release(v3 + v4, 0) ) /*0x5253d8*/
       return 0; /*0x5253df*/
   }
-  v6 = this->q010; /*0x5253e5*/
+  v6 = (unsigned int)(this->q010);
   v7 = this->Items; /*0x5253e8*/
   this->q010 = v6 + 1; /*0x5253ee*/
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x5253f8*/
@@ -225,7 +225,7 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
     if ( v4 <= 0 || !(*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(*&this->q008))(this, v3 + v4, 0) ) /*0x5387a8*/
       return 0; /*0x5387af*/
   }
-  v6 = this->q010; /*0x5387b5*/
+  v6 = (unsigned int)(this->q010);
   v7 = this->q004; /*0x5387b8*/
   this->q010 = v6 + 1; /*0x5387be*/
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x5387c8*/
@@ -251,7 +251,7 @@ char DynamicVector::Add_Alt3(VectorClass_flat * aP1)
     if ( v4 <= 0 || !this->Resize(v3 + v4, 0) ) /*0x5ad7f8*/
       return 0; /*0x5ad7ff*/
   }
-  v6 = this->Count; /*0x5ad805*/
+  v6 = (unsigned int)(this->Count);
   v7 = this->Items; /*0x5ad808*/
   this->Count = v6 + 1; /*0x5ad80e*/
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x5ad818*/
@@ -269,7 +269,7 @@ char DynamicVector::GrowCapacity()
   const void *v6; // esi
   int v7; // [esp+4h] [ebp-4h]
 
-  v2 = *this; /*0x624814*/
+  v2 = (int)(*this);
   if ( *this < this->q004 ) /*0x62481b*/
     return 0; /*0x62481d*/
   v4 = 2 * v2; /*0x624823*/
@@ -348,11 +348,11 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
     }
     else
     {
-      this->Items = operator new(4 * a2); /*0x67acac*/
+      this->Items = (unsigned int)(operator new(4 * a2));
       this->IsAllocated = 1; /*0x67acaf*/
     }
   }
-  this->u32_14 = 10; /*0x67acb9*/
+  this->u32_14 = (unsigned int *)(10);
   this->q010 = 0; /*0x67acc0*/
   return this; /*0x67acc9*/
 }
@@ -376,7 +376,7 @@ char DynamicVector::Add2(VectorClass_flat * aP1)
     if ( v4 <= 0 || !this->Resize(v3 + v4, 0) ) /*0x67ada8*/
       return 0; /*0x67adaf*/
   }
-  v6 = this->Count; /*0x67adb5*/
+  v6 = (unsigned int)(this->Count);
   v7 = this->Items; /*0x67adb8*/
   this->Count = v6 + 1; /*0x67adbe*/
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x67adc8*/
@@ -456,7 +456,7 @@ char DynamicVector::Add(DynamicVector * aP1)
     if ( v4 <= 0 || !(*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(*&this->q008))(this, v3 + v4, 0) ) /*0x6c6428*/
       return 0; /*0x6c642f*/
   }
-  v6 = this->q010; /*0x6c6435*/
+  v6 = (unsigned int)(this->q010);
   v7 = this->q004; /*0x6c6438*/
   this->q010 = v6 + 1; /*0x6c643e*/
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x6c6448*/
@@ -480,11 +480,11 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
     }
     else
     {
-      this->Items = operator new(4 * a2); /*0x73430c*/
+      this->Items = (unsigned int)(operator new(4 * a2));
       this->IsAllocated = 1; /*0x73430f*/
     }
   }
-  this->u32_14 = 10; /*0x734319*/
+  this->u32_14 = (unsigned int *)(10);
   this->q010 = 0; /*0x734320*/
   return this; /*0x734329*/
 }
@@ -499,7 +499,7 @@ char DynamicVector::EnsureCapacity()
   void *v5; // ebp
   int v6; // [esp+4h] [ebp-4h]
 
-  v2 = *this; /*0x7af004*/
+  v2 = (int)(*this);
   if ( *this < this->q004 ) /*0x7af00b*/
     return 0; /*0x7af00d*/
   v4 = 2 * v2; /*0x7af014*/

@@ -42,7 +42,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
     Index = BuildingTypeClass::FindIndex(v10); /*0x4c4f4c*/
     if ( Index == -1 ) /*0x4c4f54*/
     {
-      v8 = TypeClass::FindByName(v10); /*0x4c4f6f*/
+      v8 = (unsigned int *)(TypeClass::FindByName(v10));
       if ( v8 != -1 ) /*0x4c4f77*/
         this->vtable2 = *((unsigned int *)g_AircraftTypeCount + v8); /*0x4c4f82*/
       return this; /*0x4c4f85*/
@@ -82,10 +82,10 @@ unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
          dword_A8E8D8 + dword_A8E8E4,
          0) )
   {
-    v3 = g_MultiplayerLogFlags++; /*0x6e7f12*/
+    v3 = (gamemd::TaskForceClass *)(g_MultiplayerLogFlags++);
     *((unsigned int *)g_MultiplayerLogEntry + v3) = this; /*0x6e7f21*/
   }
-  v4 = &this->q0A4; /*0x6e7f28*/
+  v4 = (unsigned int *)(&this->q0A4);
   v5 = 6; /*0x6e7f2a*/
   do /*0x6e7f38*/
   {
@@ -113,7 +113,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
   int v12; // [esp+10h] [ebp-1Ch]
   char Source[24]; // [esp+14h] [ebp-18h] BYREF
 
-  result = INIClass::GetKeyCount(a1, (uint8_t *)g_INI_Key_TaskForces); /*0x6e8230*/
+  result = (int)(INIClass::GetKeyCount(a1, (uint8_t *)g_INI_Key_TaskForces));
   v5 = result; /*0x6e8235*/
   v6 = 0; /*0x6e8237*/
   v12 = result; /*0x6e823b*/
@@ -148,8 +148,7 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
       v10 = (unsigned int *)*((unsigned int *)g_MultiplayerLogEntry + v8); /*0x6e82f9*/
       goto LABEL_12; /*0x6e82fc*/
     }
-  LABEL_8:
-    v9 = operator new(0xD4u); /*0x6e82d7*/
+  LABEL_8: v9 = (unsigned int *)(operator new(0xD4u));
     if ( v9 ) /*0x6e82e1*/
       v10 = TaskForceClass::Construct(v9, Source); /*0x6e82ef*/
     else
@@ -268,7 +267,7 @@ char TaskForceClass::GetUnitType(char * a2)
     }
     else
     {
-      v5 = TaskForceClass::Check(v4); /*0x6e854e*/
+      v5 = (char *)(TaskForceClass::Check(v4));
       INIClass::SetString(a2, (uint8_t *)(&this->vtable46), Buffer, v5); /*0x6e855f*/
     }
     ++v3; /*0x6e8576*/
@@ -308,7 +307,7 @@ int TaskForceClass::LoadTaskForce(AbstractTypeClass * aP0, int aP1)
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x6e86bf*/
     }
-    v3 = aP0 + 42; /*0x6e86e0*/
+    v3 = (int *)(aP0 + 42);
     v4 = 6; /*0x6e86e6*/
     do /*0x6e86fa*/
     {

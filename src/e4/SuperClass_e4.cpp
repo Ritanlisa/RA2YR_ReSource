@@ -36,7 +36,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
   result = g_RulesClass_Instance; /*0x53ae50*/
   if ( g_RulesClass_Instance->PrerequisitePower[0] && g_RulesClass_Instance->PrerequisitePower[1] ) /*0x53ae66*/
   {
-    PsyDom_Owner = this; /*0x53ae79*/
+    PsyDom_Owner = (void **)(this);
     PsyDom_Coords = a2; /*0x53ae7f*/
     v3 = (void *)g_RulesClass_Instance->PrerequisitePower[0]; /*0x53ae85*/
     v4 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&PsyDom_Coords); /*0x53ae95*/
@@ -56,7 +56,7 @@ void * SuperClass::LaunchPsychicDominator(int a2)
     *((unsigned int *)v7 + 2) = 1; /*0x53af24*/
     return (RulesClass *)ScenarioClass::UpdateLighting(); /*0x53af27*/
   }
-  return result; /*0x53af2d*/
+  return (void *)(result);
 }
 }
 // 0x6CAEC0
@@ -93,10 +93,10 @@ int SuperClass::Constructor()
          dword_A83CC0 + dword_A83CCC,
          0) )
   {
-    v2 = dword_A83CC8++; /*0x6caf71*/
+    v2 = (gamemd::SuperClass *)(dword_A83CC8++);
     *((unsigned int *)dword_A83CBC + v2) = this; /*0x6caf80*/
   }
-  return this; /*0x6caf85*/
+  return (int)(this);
 }
 }
 // 0x6CAF90
@@ -138,7 +138,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
          dword_A83CC0 + dword_A83CCC,
          0) )
   {
-    v5 = dword_A83CC8++; /*0x6cb056*/
+    v5 = (gamemd::SuperClass *)(dword_A83CC8++);
     *((unsigned int *)dword_A83CBC + v5) = this; /*0x6cb065*/
   }
   if ( g_AnimManager < g_AnimTypePool /*0x6cb09c*/
@@ -149,7 +149,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
          g_AnimTypePool + g_AnimManagerConfig,
          0) )
   {
-    v6 = g_AnimManager++; /*0x6cb0a9*/
+    v6 = (gamemd::SuperClass *)(g_AnimManager++);
     *((unsigned int *)g_AnimPoolCount + v6) = this; /*0x6cb0b8*/
   }
   if ( dword_B0F6D8 < dword_B0F6D0 /*0x6cb0ef*/
@@ -163,7 +163,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
     v7 = dword_B0F6D8++; /*0x6cb0fc*/
     *((unsigned int *)dword_B0F6CC + v7) = this; /*0x6cb10b*/
   }
-  return this; /*0x6cb110*/
+  return (int)(this);
 }
 }
 // 0x6CB120
@@ -260,7 +260,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
 
   if ( !this->u32_6D ) /*0x6cb569*/
   {
-    v5 = this; /*0x6cb572*/
+    v5 = (unsigned int)(this);
     v6 = this->q028; /*0x6cb576*/
     this->u32_6D = 1; /*0x6cb579*/
     this->u32_6E = v5; /*0x6cb57d*/
@@ -294,13 +294,13 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
             dword_A83D58 + dword_A83D64,
             0)) )
     {
-      v8 = dword_A83D60++; /*0x6cb62c*/
+      v8 = (gamemd::SuperClass *)(dword_A83D60++);
       *((unsigned int *)dword_A83D54 + v8) = this; /*0x6cb63b*/
     }
-    v9 = this->q028; /*0x6cb63e*/
+    v9 = (void *)(this->q028);
     if ( *(unsigned char *)(v9 + 245) ) /*0x6cb641*/
     {
-      v10 = this->q024; /*0x6cb649*/
+      v10 = (unsigned int)(this->q024);
       this->q078 = -1; /*0x6cb64c*/
       if ( v10 == -1 ) /*0x6cb656*/
         v10 = *(unsigned int *)(v9 + 176); /*0x6cb658*/
@@ -311,7 +311,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
       v12 = this->u32_30; /*0x6cb675*/
       if ( v12 != -1 ) /*0x6cb67a*/
       {
-        v13 = this->q038; /*0x6cb680*/
+        v13 = (void *)(this->q038);
         v14 = (char *)g_CurrentFrame - v12; /*0x6cb68e*/
         if ( (int)g_CurrentFrame - v12 >= v13 ) /*0x6cb692*/
         {
@@ -320,7 +320,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
         }
         else
         {
-          *v11 = -1; /*0x6cb696*/
+          *v11 = (unsigned int)(-1);
           this->q038 = v13 - (unsigned int)v14; /*0x6cb69c*/
         }
       }

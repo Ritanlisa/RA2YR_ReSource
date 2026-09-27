@@ -210,7 +210,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
   v28 = *(unsigned short *)&to.sa_data[8]; /*0x7b15e6*/
   if ( *(unsigned int *)to.sa_data == this->q3F2FC ) /*0x7b15ef*/
   {
-    v13 = 3; /*0x7b15f1*/
+    v13 = (unsigned short *)(3);
     v14 = &this->u32_7E60C; /*0x7b15f6*/
     v15 = &v27; /*0x7b15fc*/
     v16 = 1; /*0x7b1600*/
@@ -245,7 +245,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
       && (v22 = v21[5], v22 > 0)
       && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(this->LocalNode)(v21, v19 + v22, 0) )
     {
-      v23 = v21[4]; /*0x7b1705*/
+      v23 = (unsigned int)(v21[4]);
       v24 = v21[1]; /*0x7b1708*/
       v21[4] = v23 + 1; /*0x7b170e*/
       *(unsigned int *)(v24 + 4 * v23) = v18; /*0x7b1711*/
@@ -283,7 +283,7 @@ void * IPXInterfaceClass::bindSocket()
   int v3; // edx
 
   this->u32_C = 0; /*0x7b19d2*/
-  this->u32_10 = 0; /*0x7b19d5*/
+  this->u32_10 = (unsigned char *)(0);
   *(&this->u32_80) = 1; /*0x7b19d8*/
   *(&this->u32_81) = 0; /*0x7b19db*/
   this->__pad_070 = 10; /*0x7b19e1*/
@@ -345,10 +345,10 @@ AnimClass * * IPXInterfaceClass::AddRef()
   result = this->q3F070; /*0x7b1b9e*/
   if ( result != -1 ) /*0x7b1ba7*/
   {
-    result = closesocket(this->q3F070); /*0x7b1baa*/
+    result = (int)(closesocket(this->q3F070));
     this->q3F070 = -1; /*0x7b1baf*/
   }
-  return result; /*0x7b1bb9*/
+  return (gamemd::AnimClass **)(result);
 }
 } // namespace gamemd
 // 0x7B1BC0

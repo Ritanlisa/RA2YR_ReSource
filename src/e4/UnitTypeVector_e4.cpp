@@ -19,13 +19,13 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
   {
     if ( a3 ) /*0x513966*/
     {
-      this->ptr_4 = a3; /*0x513968*/
+      this->ptr_4 = (unsigned int *)(a3);
       return this; /*0x51396e*/
     }
     this->ptr_4 = operator new(4 * a2); /*0x51397d*/
     this->u8_D = 1; /*0x513980*/
   }
-  return this; /*0x51396d*/
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 // 0x5D8950
@@ -40,12 +40,12 @@ unsigned int * UnitTypeVector::Construct2(int a2, int a3)
   {
     if ( a3 ) /*0x5d8976*/
     {
-      this->ptr_4 = a3; /*0x5d8978*/
+      this->ptr_4 = (unsigned int *)(a3);
       return this; /*0x5d897e*/
     }
     this->ptr_4 = operator new(4 * a2); /*0x5d898d*/
     this->u8_D = 1; /*0x5d8990*/
   }
-  return this; /*0x5d897d*/
+  return (unsigned int *)(this);
 }
 } // namespace gamemd

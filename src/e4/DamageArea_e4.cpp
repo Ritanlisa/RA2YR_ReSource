@@ -336,16 +336,15 @@ LABEL_114:
   char v96; // c0
       if ( v96 )
       {
-        v97 = v95 + 0.1;
+        v97 = (void *)(v95 + 0.1);
         if ( v97 >= this->q100 )
-LABEL_171:
-          v97 = this->q100;
+LABEL_171: v97 = (void *)(this->q100);
       }
       else
       {
         if ( v95 <= this->q100 )
           return (*(int (__thiscall **)(int *, int))(*v93 + 292))(v93, 1);
-        v97 = *(double *)(&this->u32_1C2) - 0.1;
+        v97 = (void *)(*(double *)(&this->u32_1C2) - 0.1);
         if ( v97 <= this->q100 )
           goto LABEL_171;
       }

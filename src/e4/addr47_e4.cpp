@@ -30,6 +30,7 @@
 #include "e4/classes/E4Recv_4880F0_e4.hpp"
 #include "e4/classes/Control_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x472A80
 namespace gamemd {
@@ -57,7 +58,7 @@ void CaptureManagerClass__vt_06_(int a2)
 }
 // 0x4770E0
 namespace gamemd {
-VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsigned char *** edx0, INIClass * a3, unsigned char * a2, VectorClass a5, int a6, int a7, int a8)
+VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsigned char *** edx0, INIClass * a3, unsigned char * a2, VectorClass a5, int a6, int a7, int a8, void * a4)
 {
   char *i; // esi
   char v13; // bl
@@ -156,7 +157,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
       else if ( v25 < v23 /*0x47736a*/
              || (v24 || !v23)
              && v26 > 0
-             && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v21[2])(&v21, v23 + v26, 0) )
+             && ((uint8_t (__thiscall *, void * a1, void * a2, void * a3, void * a4, void * a5)(void ***, int, unsigned int))v21[2])(&v21, v23 + v26, 0) )
       {
         v19 = v25++; /*0x477375*/
         *(unsigned int *, unsigned int a5)(v22 + 4 * v19) = -6; /*0x477380*/
@@ -610,7 +611,7 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
     *(unsigned char *)(a1 + 286) = 0; /*0x47e10d*/
     CellClass::UpdateAnimations(a1); /*0x47e114*/
   }
-  v46 = v4 + 9; /*0x47e122*/
+  v46 = (int *)(v4 + 9);
   BuildingClass::AddUpgrade((int)&MapClass_Instance, (int)(v4 + 9)); /*0x47e126*/
   if ( a3 < 8 ) /*0x47e132*/
   {

@@ -61,7 +61,7 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
       }
       RA2_OPDEL(*(void **)(&this->q0180)); /*0x49cb93*/
     }
-    this->q03C = 0; /*0x49cb9b*/
+    this->q03C = (unsigned char)(0);
     this->q040 = 0; /*0x49cb9e*/
     this->q03C = operator new(4 * *(char *)(v5 + 8)); /*0x49cbae*/
     v9 = 0; /*0x49cbb7*/
@@ -70,7 +70,7 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
       v12 = 0; /*0x49cbbd*/
       do /*0x49cc26*/
       {
-        v10 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 2); /*0x49cbde*/
+        v10 = (unsigned int)(Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 2));
         *(unsigned int *)(this->q03C + 4 * v9) = operator new(0x104u); /*0x49cbf1*/
         strncpy( /*0x49cc0c*/
           *(char **)(this->q03C + 4 * v9++),
@@ -84,7 +84,7 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
     this->q040 = *(char *)(v5 + 8); /*0x49cc32*/
     this->q038 = 0; /*0x49cc35*/
   }
-  this->q044 = v3; /*0x49cc39*/
+  this->q044 = (unsigned int)(v3);
   return 1; /*0x49cc3d*/
 }
 }
@@ -108,7 +108,7 @@ CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
 }
 // 0x5BED40
 namespace gamemd {
-void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char a5, char a6, char a7)
+void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, char a5, char a6, char a7, void * a1, void * a3, void * a4)
 {
   char *v7; // eax
   int v8; // edi
@@ -261,7 +261,7 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
 }
 // 0x5BF260
 namespace gamemd {
-void Movie_PlayWrapper()
+void Movie_PlayWrapper(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
   char v6; // bl
 

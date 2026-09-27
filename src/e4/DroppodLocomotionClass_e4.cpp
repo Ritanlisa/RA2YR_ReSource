@@ -115,12 +115,12 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
       }
       if ( !((int)g_CurrentFrame % 3) ) /*0x4b5f1f*/
       {
-        v32 = 0.0; /*0x4b5f39*/
+        v32 = (unsigned int *)(0.0);
         v22 = Coord::To_Cell(&MapClass_Instance, (unsigned int *)(a1 + 28)); /*0x4b5f41*/
         ClosestObjectCell = Object::FindClosestObjectCell(v22, &v32, 0, 0); /*0x4b5f48*/
         if ( !Object::IsAlliedWithObjectHouse(*(unsigned int **)(*(unsigned int *)(a1 + 8) + 540), ClosestObjectCell) ) /*0x4b5f57*/
         {
-          v24 = RandomCoordScatter((int *)&v32, (int *)(a1 + 28), 85, 0); /*0x4b5f6d*/
+          v24 = (void **)(RandomCoordScatter((int *)&v32, (int *)(a1 + 28), 85, 0));
           v25 = VeteranRatio_high[51]; /*0x4b5f74*/
           v33[0] = *v24; /*0x4b5f7a*/
           v33[1] = v24[1]; /*0x4b5f86*/

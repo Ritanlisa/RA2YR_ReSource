@@ -416,7 +416,7 @@ unsigned int * Buffer::Init(int a2, AbstractClass * aP2)
     *this = operator new(aP2); /*0x43ad25*/
     this->vtable3 = 1; /*0x43ad27*/
   }
-  return this; /*0x43ad2d*/
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 // 0x488030
@@ -431,7 +431,7 @@ DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2)
     RA2_OPDEL(v3); /*0x488048*/
     this->Items = 0; /*0x488050*/
   }
-  this->IsAllocated = 0; /*0x48805b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x488061*/
   if ( (a2 & 1) != 0 ) /*0x488068*/
     RA2_OPDEL(); /*0x48806b*/
@@ -466,7 +466,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   int v15; // [esp+18h] [ebp-8h]
   int v16; // [esp+28h] [ebp+8h]
 
-  v4 = this->Buffer_field_08; /*0x6c89e9*/
+  v4 = (int *)(this->Buffer_field_08);
   if ( v4 + 12 > (unsigned int)(this->Buffer_field_04 + *this) ) /*0x6c89f9*/
     return 0; /*0x6c89f9*/
   v15 = this->Buffer_field_08; /*0x6c89fd*/
@@ -487,7 +487,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
   {
     while ( 1 ) /*0x6c8a8a*/
     {
-      v10 = Map_Append(v16, &unk_B0BDD0, *(unsigned int *)(a3 + 16)); /*0x6c8a8a*/
+      v10 = (unsigned int)(Map_Append(v16, &unk_B0BDD0, *(unsigned int *)(a3 + 16)));
       v11 = (char *)this->Buffer_field_08; /*0x6c8a8f*/
       if ( (unsigned int)&v11[v10] > this->Buffer_field_04 + *this || (this->Buffer_field_08 = &v11[v10], !v11) ) /*0x6c8aa4*/
       {
@@ -502,7 +502,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
         break; /*0x6c8ada*/
       v8 = aP1; /*0x6c8adc*/
     }
-    v4 = v15; /*0x6c8af5*/
+    v4 = (int *)(v15);
     v8 = aP1; /*0x6c8af9*/
   }
   (*(void (__thiscall **)(int *))(*v8 + 96))(v8); /*0x6c8b01*/

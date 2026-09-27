@@ -131,7 +131,7 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x43ab7c*/
   {
-    this->IsInitialized = 0; /*0x43ab86*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x43ab8c*/
       v4 = a3; /*0x43aba2*/
     else
@@ -152,7 +152,7 @@ char NeuronClass_25::Release(int a2, unsigned int * a3)
           this->Items = 0; /*0x43abee*/
         }
       }
-      this->Items = v4; /*0x43abf7*/
+      this->Items = (unsigned int)(v4);
       this->Capacity = a2; /*0x43abff*/
       this->IsAllocated = a3 == 0; /*0x43ac02*/
       return 1; /*0x43ac08*/

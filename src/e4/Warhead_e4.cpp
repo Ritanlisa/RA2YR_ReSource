@@ -955,7 +955,7 @@ int Warhead::ApplyPostDamageEffects()
     v4 = (int *)*(&this->u32_104); /*0x46a336*/
     if ( v4 ) /*0x46a33e*/
     {
-      v5 = *(&this->u32_C9); /*0x46a353*/
+      v5 = (int *)(*(&this->u32_C9));
       v6 = *(&this->u32_100); /*0x46a359*/
       v7 = *v4; /*0x46a35f*/
       v92 = *(&this->u32_101); /*0x46a361*/
@@ -981,7 +981,7 @@ int Warhead::ApplyPostDamageEffects()
     result = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(v11 + 228) + 44))(*(unsigned int *)(v11 + 228)); /*0x46a400*/
     if ( result != 6 ) /*0x46a406*/
     {
-      v12 = *this; /*0x46a412*/
+      v12 = (int)(*this);
       v13 = *(unsigned int *)(*(&this->u32_103) + 692); /*0x46a414*/
       v99 = v13->q280; /*0x46a425*/
       v14 = *(unsigned int *)this->vt_slot_440(&v17); /*0x46a434*/
@@ -994,7 +994,7 @@ int Warhead::ApplyPostDamageEffects()
       v80 = 1; /*0x46a45c*/
       if ( v17 >= 1 ) /*0x46a464*/
       {
-        v18 = &dword_7ED3D4; /*0x46a46a*/
+        v18 = (int *)(&dword_7ED3D4);
         v79 = &dword_7ED3D4; /*0x46a46f*/
         do /*0x46a926*/
         {
@@ -1033,7 +1033,7 @@ int Warhead::ApplyPostDamageEffects()
                     Particle::Init((int)ppv, v99, (int)v23, IDA_SLODWORD(v77), IDA_SLODWORD(v88), v102, v27, v101); /*0x46a5a1*/
                     if ( v82 ) /*0x46a5ac*/
                     {
-                      v29 = &this->u64_9C; /*0x46a5b2*/
+                      v29 = (int *)(&this->u64_9C);
                       v73 = 0.0; /*0x46a5b8*/
                       v74 = 0.0; /*0x46a5ca*/
                       v30 = *(&this->u32_C9); /*0x46a5da*/
@@ -1164,7 +1164,7 @@ int Warhead::ApplyPostDamageEffects()
             Particle::Init((int)v79, v99, IDA_SLODWORD(v77), IDA_SLODWORD(v87), IDA_SLODWORD(v78), v52, v51, v17); /*0x46aa16*/
             if ( v80 ) /*0x46aa21*/
             {
-              v73 = 0.0; /*0x46aa31*/
+              v73 = (int *)(0.0);
               v74 = 0.0; /*0x46aa41*/
               v75 = 0.0; /*0x46aa51*/
               v53 = (int *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v76); /*0x46aa61*/
@@ -1338,7 +1338,7 @@ int Warhead::ProcessDamageArea()
   }
   else
   {
-    v18 = operator new(0x4Cu); /*0x65b77e*/
+    v18 = (unsigned int)(operator new(0x4Cu));
     if ( v18 ) /*0x65b788*/
       v19 = LightSourceClass::Construct(v18, v27, v29, v30, v26, v7, v22, v10, v14); /*0x65b7b2*/
     else

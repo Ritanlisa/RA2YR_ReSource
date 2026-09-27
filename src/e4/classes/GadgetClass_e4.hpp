@@ -122,7 +122,6 @@ struct GadgetClass {
     unsigned char q6218;  // 0x6218
     unsigned char q621C;  // 0x621C
     unsigned int vtable20;
-    unsigned int ClearState;
 // --- flat members (END) ---
     AbstractClass * * FindByWindow(HWND hWnd, LPARAM a2);
     AbstractClass * * SetTooltip(CCINIClass * aP1);

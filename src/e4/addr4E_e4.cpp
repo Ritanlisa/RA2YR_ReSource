@@ -46,7 +46,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a2)
       *a2 = a2; /*0x4e0a2f*/
       if ( a2 - 1 >= 0 ) /*0x4e0a36*/
       {
-        v4 = a2 + 2; /*0x4e0a38*/
+        v4 = (unsigned int *)(a2 + 2);
         v5 = a2; /*0x4e0a3b*/
         do /*0x4e0a46*/
         {
@@ -60,7 +60,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a2)
     }
     else
     {
-      v6 = operator new(8 * a2 + 4); /*0x4e0a55*/
+      v6 = (unsigned int *)(operator new(8 * a2 + 4));
       if ( v6 ) /*0x4e0a5f*/
       {
         *v6 = a2; /*0x4e0a64*/
@@ -126,7 +126,7 @@ void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   unsigned int *WindowLongA; // eax
   HWND hWnda; // [esp+20h] [ebp+10h]
 
-  result = BaseDialogProc(hDlg, a2, a3, (unsigned int)hWnd); /*0x4e1ffa*/
+  result = (int)(BaseDialogProc(hDlg, a2, a3, (unsigned int)hWnd));
   if ( !result ) /*0x4e2001*/
   {
     if ( a2 == 273 ) /*0x4e200d*/
@@ -252,7 +252,7 @@ void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
       v25 = IDA_HIWORD(a3); /*0x4e228e*/
       if ( hWnd == GetDlgItem(hDlg, 1321) ) /*0x4e2295*/
       {
-        v26 = (&off_822730)[v25]; /*0x4e2297*/
+        v26 = (wchar_t *)((&off_822730)[v25]);
         v27 = GetDlgItem(hDlg, 1649); /*0x4e22a3*/
         goto LABEL_38; /*0x4e22a3*/
       }
@@ -270,13 +270,13 @@ void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
       }
       if ( !g_WTFMode && hWnd == GetDlgItem(hDlg, 1295) ) /*0x4e22f0*/
       {
-        v26 = (&off_822774)[v25]; /*0x4e22f6*/
+        v26 = (wchar_t *)((&off_822774)[v25]);
         v27 = GetDlgItem(hDlg, 1648); /*0x4e2303*/
   LABEL_38:
         v28 = v27; /*0x4e2305*/
         if ( v27 ) /*0x4e2309*/
         {
-          String = GetStringCSF(v26, 0, aDRa2mdpostGame, 434); /*0x4e231d*/
+          String = (wchar_t *)(GetStringCSF(v26, 0, aDRa2mdpostGame, 434));
           SendMessageA(v28, 0x4B2u, 0, (LPARAM)String); /*0x4e232b*/
           return 0; /*0x4e2337*/
         }
@@ -731,7 +731,7 @@ void FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
   LPARAM lParam; // [esp+18h] [ebp-8h]
   WPARAM wParam; // [esp+1Ch] [ebp-4h]
 
-  DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e45b1*/
+  DlgItem = (wchar_t *)(GetDlgItem(hDlg, nIDDlgItem));
   v10 = !ShowWindow(DlgItem, 0); /*0x4e45ce*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e45d3*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e45df*/
@@ -998,7 +998,7 @@ void SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
     }
     else
     {
-      result = FillComboBoxFactions(v4, v13); /*0x4e4bfb*/
+      result = (int)(FillComboBoxFactions(v4, v13));
     }
   }
   return result; /*0x4e4c13*/
@@ -1132,7 +1132,7 @@ void FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
     }
     else
     {
-      result = FillComboBoxFactions(hDlg, v12); /*0x4e4e00*/
+      result = (char)(FillComboBoxFactions(hDlg, v12));
     }
   }
   return result; /*0x4e4e18*/
@@ -1154,7 +1154,7 @@ void FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
   LPARAM lParam; // [esp+18h] [ebp-8h]
   WPARAM wParam; // [esp+1Ch] [ebp-4h]
 
-  DlgItem = GetDlgItem(hDlg, nIDDlgItem); /*0x4e50d3*/
+  DlgItem = (wchar_t *)(GetDlgItem(hDlg, nIDDlgItem));
   v10 = !ShowWindow(DlgItem, 0); /*0x4e50ed*/
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e50f2*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e50fd*/

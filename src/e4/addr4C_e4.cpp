@@ -274,7 +274,7 @@ void InitializeRadialGradientTexture()
                 dword_8A0E04 = (void *)sub_4A3270(256, 256, 0); /*0x4c17ec*/
                 if ( dword_8A0E04 ) /*0x4c17f1*/
                 {
-                  v3 = malloc(0x20000u); /*0x4c17f8*/
+                  v3 = (unsigned short *)(malloc(0x20000u));
                   v12 = v3; /*0x4c1802*/
                   if ( !v3 ) /*0x4c1806*/
                     return 2; /*0x4c19a2*/
@@ -454,7 +454,7 @@ void sub_4C2830()
       v6 = v3[2]; /*0x4c2891*/
       if ( v4 != dword_8A0E50 || v5 != dword_8A0E54 || v6 != dword_8A0E58 ) /*0x4c28a4*/
       {
-        v7 = Block; /*0x4c28a6*/
+        v7 = (unsigned int *)(Block);
         *(unsigned int *)Block = v4; /*0x4c28aa*/
         v7[1] = v5; /*0x4c28ac*/
         v7[2] = v6; /*0x4c28af*/
@@ -556,7 +556,7 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
   int v17; // [esp+18h] [ebp-8h]
   int v18; // [esp+1Ch] [ebp-4h]
 
-  v16 = a2; /*0x4c38ed*/
+  v16 = (unsigned char *)(a2);
   if ( !a3 || !a2 ) /*0x4c38fb*/
     return a4; /*0x4c38fb*/
   v5 = a4; /*0x4c3901*/
@@ -600,9 +600,9 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
         break; /*0x4c3a00*/
       v5 = a4; /*0x4c3951*/
     }
-    return a4; /*0x4c3a00*/
+    return (char **)(a4);
   }
-  return v5; /*0x4c3a0a*/
+  return (char **)(v5);
 }
 }
 // 0x4C3DD0

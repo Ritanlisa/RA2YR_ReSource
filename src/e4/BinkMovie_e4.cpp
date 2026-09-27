@@ -39,7 +39,7 @@ unsigned int * BinkMovie::Close(char * FullPath)
 namespace gamemd {
 unsigned int * BinkMovie::Open(char * FullPath, int a3)
 {
-  this->q00C = a3; /*0x4326ce*/
+  this->q00C = (unsigned int *)(a3);
   *(unsigned char *)this = 0; /*0x4326d3*/
   this->u32_4 = 0; /*0x4326d5*/
   this->q020 = 0; /*0x4326d8*/
@@ -149,7 +149,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
   FullPath = 0; /*0x4327fc*/
   if ( (uint8_t)LookupFileInfoCache(&FullPath, lDistanceToMove, 0) == 1 ) /*0x43280a*/
   {
-    FileA = CreateFileA(FullPath[3], 0x80000000, 3u, 0, 3u, 0x8000080u, 0); /*0x432824*/
+    FileA = (unsigned char)(CreateFileA(FullPath[3], 0x80000000, 3u, 0, 3u, 0x8000080u, 0));
     this->q028 = FileA; /*0x43282d*/
     if ( FileA != (HANDLE)-1 ) /*0x432830*/
     {
@@ -167,7 +167,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
     this->u32_24 = 0x3C /*0x4328b5*/
                            / (unsigned int)(*(unsigned int *)(this->u32_4 + 20)
                                           / *(unsigned int *)(this->u32_4 + 24));
-    v14 = (unsigned int *)BinkMovie::CreateSurfaceTracker(v6); /*0x4328b8*/
+    v14 = (void *)((unsigned int *)BinkMovie::CreateSurfaceTracker(v6));
     v15 = this->u32_4; /*0x4328bd*/
     this->q020 = v14; /*0x4328c0*/
     v16 = 0; /*0x4328c3*/
@@ -242,7 +242,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
       left = Rect.left; /*0x432a0e*/
       v27 = v17; /*0x432a12*/
     }
-    this->u32_10 = left; /*0x432a29*/
+    this->u32_10 = (gamemd::AbstractClass **)(left);
     this->u32_14 = v22; /*0x432a2c*/
     this->q018 = v27; /*0x432a2f*/
     this->q01C = bottom; /*0x432a32*/
@@ -439,7 +439,7 @@ int BinkMovie::RenderLoop(DSurface * aP1, int a3, int a4)
       v19 = (*(int (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92))(aP1, 0, 0); /*0x432fa0*/
       if ( v19 ) /*0x432fa4*/
       {
-        v14 = (*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 116))(aP1); /*0x432fb1*/
+        v14 = (void *)((*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 116))(aP1));
         v15 = (*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 128))(aP1); /*0x432fb3*/
         v16 = this->q020; /*0x432fb9*/
         if ( v13 ) /*0x432fbe*/

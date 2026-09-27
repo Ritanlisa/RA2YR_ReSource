@@ -26,6 +26,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/LinkedList_flat_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x439B00
 namespace gamemd {
@@ -102,7 +103,7 @@ void* JumpjetLocomotionClass::Update2()
   float v76[12]; // [esp+E8h] [ebp-60h] BYREF
   char v77[48]; // [esp+118h] [ebp-30h] BYREF
 
-  v1 = (float *)this; /*0x439b09*/
+  v1 = (unsigned int)((float *)this);
   v2 = this->Powered; /*0x439b17*/
   v3 = (float *)(&this->Owner4); /*0x439b1a*/
   v58 = v2; /*0x439b22*/
@@ -124,14 +125,14 @@ void* JumpjetLocomotionClass::Update2()
   v10 = v10; /*0x439b62*/
   if ( v2 > 0.0 ) /*0x439b71*/
   {
-    v11 = JumpjetLocomotionClass::ComputeVectorLengthMetric_0(v4); /*0x439b75*/
+    v11 = (double)(JumpjetLocomotionClass::ComputeVectorLengthMetric_0(v4));
     if ( v11 > v58 ) /*0x439b83*/
     {
       v51 = v11 / v11; /*0x439b8c*/
       Coord::Scale((float *)v4, v51); /*0x439b8f*/
     }
   }
-  v46 = Math::RoundToInt(v3[2]); /*0x439ba4*/
+  v46 = (unsigned int *)(Math::RoundToInt(v3[2]));
   v41 = Math::RoundToInt(v3[1]); /*0x439bad*/
   v12 = Math::RoundToInt(*v3); /*0x439bae*/
   Coord3D::Set(v70, v12, v41, v46); /*0x439bb8*/
@@ -163,7 +164,7 @@ void* JumpjetLocomotionClass::Update2()
     v15 = (double)GroundHeight; /*0x439c89*/
     if ( v15 <= v3[2] && v3[2] - 150.0 < v15 ) /*0x439ca9*/
     {
-      v16 = Cell::IsBridge(v14); /*0x439cad*/
+      v16 = (unsigned int)(Cell::IsBridge(v14));
       IDA_LODWORD(v58) = v16; /*0x439cb4*/
       if ( !v16 ) /*0x439cb8*/
       {
@@ -214,8 +215,7 @@ void* JumpjetLocomotionClass::Update2()
     }
     goto LABEL_33; /*0x439d3d*/
   }
-  LABEL_32:
-  v3[2] = (float)(v61 - 20); /*0x439d5d*/
+  LABEL_32: v3[2] = (void *)((float)(v61 - 20));
   LABEL_35:
   Byte284 = CellClass::GetByte284(v69); /*0x439d91*/
   qmemcpy(v75, CopyAudioData(v77, Byte284), sizeof(v75)); /*0x439dc4*/
@@ -258,7 +258,7 @@ void* JumpjetLocomotionClass::Update2()
   if ( *((char *)Coord::To_Cell(&MapClass_Instance, v69) + 283) - v29 >= 2 /*0x439fb1*/
     && (v10 < -0.0002 && v24[8] > (double)v8 || v10 >= -0.0003 && v10 + v8 + 1.0 < v24[8]) )
   {
-    v30 = v6; /*0x439fbb*/
+    v30 = (float)(v6);
     v31 = v8; /*0x439fbf*/
     *v3 = v63; /*0x439fc3*/
     v3[1] = v30; /*0x439fc6*/
@@ -284,7 +284,7 @@ void* JumpjetLocomotionClass::Update2()
       *((float *)v4 + 2) = v37 * *((float *)v4 + 2); /*0x43a05a*/
     }
   }
-  v1 = (float *)this; /*0x43a05d*/
+  v1 = (void *)((float *)this);
   v17 = 1; /*0x43a061*/
   LABEL_43:
   v38 = QuaternionMathMultiply(v73, v1 + 12, v1 + 16); /*0x43a066*/

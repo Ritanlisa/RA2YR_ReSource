@@ -39,7 +39,7 @@ int Debug::ScrollText(CellStruct * aP1)
     v5 = v5; /*0x5bd131*/
     if ( v5 < v7 ) /*0x5bd133*/
     {
-      v12 = (unsigned char *)(this + v13 + 20 * v5 + 5 * v5); /*0x5bd148*/
+      v12 = (const char *)((unsigned char *)(this + v13 + 20 * v5 + 5 * v5));
       v9 = &aP1[-v5]; /*0x5bd15c*/
       v11 = (unsigned int *)(&this->u32_10 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)); /*0x5bd15e*/
       for ( i = &aP1[-v5]; ; v9 = i ) /*0x5bd162*/
@@ -154,6 +154,6 @@ char Debug_Helper(ObjectClass * aP0)
     case -76: /*0x5bd366*/
       return 43; /*0x5bd3c0*/
   }
-  return result; /*0x5bd36a*/
+  return (char)(result);
 }
 } // namespace gamemd

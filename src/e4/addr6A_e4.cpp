@@ -466,7 +466,7 @@ void HideSkirmishSpawnLocations(HWND hDlg, int a2)
 }
 // 0x6AE2C0
 namespace gamemd {
-void ShowSkirmishSetupScreen()
+void ShowSkirmishSetupScreen(void * a1, void * a2)
 {
   int i; // esi
   HWND v3; // esi
@@ -486,7 +486,7 @@ void ShowSkirmishSetupScreen()
   v3 = (HWND)CreateDialog(0x102u, (INT_PTR (__stdcall *)(HWND, UINT, WPARAM, LPARAM))Skirmish::Setup_DlgProc, 0); /*0x6ae32d*/
   if ( v3 ) /*0x6ae331*/
   {
-    dword_B0B59C = v3; /*0x6ae337*/
+    dword_B0B59C = (unsigned int)(v3);
     SetWindowLongA(v3, 8, (LONG)&dwNewLong); /*0x6ae341*/
     Dialog::Show(v3); /*0x6ae349*/
     for ( j = dwNewLong; dwNewLong != 1559; j = dwNewLong ) /*0x6ae357*/

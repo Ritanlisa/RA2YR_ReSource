@@ -247,7 +247,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
       else
         v6 -= (int)g_CurrentFrame - v4; /*0x422d01*/
     }
-    v7 = v5 + *(&this->q0103) * v5 - v6; /*0x422d12*/
+    v7 = (int)(v5 + *(&this->q0103) * v5 - v6);
     v8 = v5 * this->CheckEndOfSequence(); /*0x422d23*/
     v9 = v7 + 8; /*0x422d28*/
     v10 = *a2 + 2 * (v7 + 8); /*0x422d30*/
@@ -461,7 +461,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   LABEL_78:
   if ( this->q194 ) /*0x423358*/
   {
-    v34 = ZCoordToScreenY(v101); /*0x423373*/
+    v34 = (int)(ZCoordToScreenY(v101));
     v35 = *a2; /*0x423384*/
     v36 = *(unsigned int *)(*(&this->q0140) + 836) + v34 + a2[1]; /*0x42338b*/
     v37 = *this; /*0x42339a*/
@@ -487,7 +487,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
       0,
       0);
   }
-  v40 = this->q118; /*0x4233ee*/
+  v40 = (unsigned int *)(this->q118);
   v41 = 0; /*0x4233f4*/
   *(float *)&v100 = 0.0; /*0x4233f8*/
   if ( !v40 ) /*0x4233fc*/

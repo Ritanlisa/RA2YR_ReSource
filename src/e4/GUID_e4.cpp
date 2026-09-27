@@ -26,7 +26,7 @@ bool GUID::Compare(int a2)
   if ( (*this || this->Data4 || this->q020 || this->u32_C) /*0x53eed8*/
     && (*(unsigned char *)a2 || a2->vtable2 || a2->vtable3 || a2->vtable4) )
   {
-    v8 = 3; /*0x53eef8*/
+    v8 = (unsigned short *)(3);
     v9 = (unsigned short *)(a2 + 4); /*0x53eefd*/
     v10 = &this->u32_10; /*0x53ef00*/
     v11 = 1; /*0x53ef03*/

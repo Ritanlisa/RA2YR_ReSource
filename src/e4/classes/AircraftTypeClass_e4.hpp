@@ -554,7 +554,7 @@ struct AircraftTypeClass {
     unsigned int q6EC;  // 0x6EC
     bool q6EE;  // 0x6EE
     unsigned char q6EF;  // 0x6EF
-    char Cameo[4];  // 0x6F0
+    unsigned int Cameo;  // 0x6F0
     bool CameoAllocated;  // 0x6F4
     char AltCameoFile;  // 0x6F5
     unsigned int q6F8;  // 0x6F8

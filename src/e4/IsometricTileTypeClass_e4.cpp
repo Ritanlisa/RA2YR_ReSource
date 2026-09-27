@@ -86,7 +86,7 @@ AbstractClass * * IsometricTileTypeClass::LoadTypeData(int * a1, int a2)
     TerrainClass::InitTheatre(a1); /*0x549d56*/
     return 0; /*0x549d5b*/
   }
-  return result; /*0x549d5d*/
+  return (gamemd::AbstractClass **)(result);
 }
 } // namespace gamemd
 // 0x549DD0
@@ -165,7 +165,7 @@ void IsometricTileTypeClass::ClearBuffer()
 {
   void *v2; // eax
 
-  v2 = this->vtable2; /*0x54a196*/
+  v2 = (void *)(this->vtable2);
   this->q010 = 0; /*0x54a199*/
   if ( v2 && this->q034 ) /*0x54a1a0*/
   {
@@ -197,7 +197,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x54a3dc*/
   {
-    this->vtable4 = 0; /*0x54a3e2*/
+    this->vtable4 = (unsigned int *)(0);
     if ( a3 ) /*0x54a3e8*/
       v4 = a3; /*0x54a3fe*/
     else
@@ -218,7 +218,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
         this->vtable2 = 0; /*0x54a441*/
       }
     }
-    this->vtable2 = v4; /*0x54a44a*/
+    this->vtable2 = (unsigned int)(v4);
     this->vtable3 = a2; /*0x54a452*/
     this->q034 = a3 == 0; /*0x54a455*/
   }
@@ -226,7 +226,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (__thiscall **)(void *))(((unsigned int)(this->vtable22))))(this); /*0x54a45e*/
   }
-  v7 = this->vtable3; /*0x54a461*/
+  v7 = (unsigned char)(this->vtable3);
   if ( v7 < this->q010 ) /*0x54a469*/
     this->q010 = v7; /*0x54a46b*/
   return 1; /*0x54a46e*/
@@ -264,7 +264,7 @@ DynamicVector * IsometricTileTypeClass::Constructor(char a2)
     RA2_OPDEL(v3); /*0x54a778*/
     this->vtable2 = 0; /*0x54a780*/
   }
-  this->q034 = 0; /*0x54a78b*/
+  this->q034 = (gamemd::DynamicVector *)(0);
   this->vtable3 = 0; /*0x54a791*/
   if ( (a2 & 1) != 0 ) /*0x54a798*/
     RA2_OPDEL(); /*0x54a79b*/
@@ -283,12 +283,12 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
   {
     if ( a3 ) /*0x54a876*/
     {
-      this->vtable2 = a3; /*0x54a878*/
+      this->vtable2 = (unsigned int *)(a3);
       return this; /*0x54a87e*/
     }
-    this->vtable2 = operator new(4 * a2); /*0x54a88d*/
+    this->vtable2 = (unsigned int)(operator new(4 * a2));
     this->q034 = 1; /*0x54a890*/
   }
-  return this; /*0x54a87d*/
+  return (unsigned int *)(this);
 }
 } // namespace gamemd

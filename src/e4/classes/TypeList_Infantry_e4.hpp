@@ -31,6 +31,7 @@ struct TypeList_Infantry {
     unsigned int IsInitialized;
     unsigned int Capacity;
     unsigned int Items2;
+    unsigned int Count;
 // --- flat members (END) ---
     void ddtor();  // 0x5128A0
     unsigned int GetIndex(int a2);  // 0x5128D0

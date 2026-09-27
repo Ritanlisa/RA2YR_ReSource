@@ -79,11 +79,11 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
     v3[3] = v4; /*0x4a01ea*/
     if ( v4 ) /*0x4a01ed*/
     {
-      v5 = operator new(8 * v4); /*0x4a01f7*/
+      v5 = (unsigned int)(operator new(8 * v4));
       v3[2] = v5; /*0x4a0201*/
       if ( v5 ) /*0x4a0204*/
       {
-        v6 = v3[3]; /*0x4a0206*/
+        v6 = (void *)(v3[3]);
         v7 = 0; /*0x4a0209*/
         *((unsigned char *)v3 + 17) = 1; /*0x4a020d*/
         if ( v6 > 0 ) /*0x4a0211*/
@@ -115,7 +115,7 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
     v13 = *(unsigned int *)(v3[2] + 8 * i); /*0x4a0276*/
     (*(void (__stdcall **)(int))(*(unsigned int *)v13 + 4))(v13); /*0x4a0279*/
   }
-  v12 = *v3; /*0x4a0284*/
+  v12 = (unsigned int)(*v3);
   v3[8] = 0; /*0x4a0287*/
   (*(void (__stdcall **)(unsigned int *))(v12 + 4))(v3); /*0x4a028a*/
   *a2 = v3; /*0x4a0295*/
@@ -136,7 +136,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
   int i; // esi
   int v12; // [esp-4h] [ebp-14h]
 
-  v3 = &this->M4; /*0x4a02bc*/
+  v3 = (char *)(&this->M4);
   this->M8 = 0; /*0x4a02c1*/
   this->M12 = 0; /*0x4a02c4*/
   this->M16 = 1; /*0x4a02c7*/
@@ -148,7 +148,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
     *((unsigned int *)v3 + 2) = v4; /*0x4a02e3*/
     if ( v4 ) /*0x4a02e6*/
     {
-      v5 = operator new(8 * v4); /*0x4a02ec*/
+      v5 = (unsigned int)(operator new(8 * v4));
       *((unsigned int *)v3 + 1) = v5; /*0x4a02f6*/
       if ( v5 ) /*0x4a02f9*/
       {
@@ -184,7 +184,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
     v12 = *(unsigned int *)(this->M8 + 8 * i); /*0x4a035b*/
     (*(void (__stdcall **)(int))(*(unsigned int *)v12 + 4))(v12); /*0x4a035e*/
   }
-  return this; /*0x4a036b*/
+  return (unsigned int *)(this);
 }
 }
 // 0x4A0380
@@ -202,7 +202,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
   int i; // esi
   int v13; // [esp-4h] [ebp-14h]
 
-  v3 = &this->M4; /*0x4a038f*/
+  v3 = (char *)(&this->M4);
   this->M8 = 0; /*0x4a0394*/
   this->M12 = 0; /*0x4a0397*/
   this->M16 = 1; /*0x4a039a*/
@@ -214,7 +214,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
     *((unsigned int *)v3 + 2) = v4; /*0x4a03b6*/
     if ( v4 ) /*0x4a03b9*/
     {
-      v5 = operator new(8 * v4); /*0x4a03c3*/
+      v5 = (unsigned int)(operator new(8 * v4));
       *((unsigned int *)v3 + 1) = v5; /*0x4a03cd*/
       if ( v5 ) /*0x4a03d0*/
       {
@@ -251,7 +251,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
     v13 = *(unsigned int *)(this->M8 + 8 * i); /*0x4a0439*/
     (*(void (__stdcall **)(int))(*(unsigned int *)v13 + 4))(v13); /*0x4a043c*/
   }
-  return this; /*0x4a0449*/
+  return (unsigned int *)(this);
 }
 }
 // 0x4A0B20
@@ -283,7 +283,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
     v3[5] = v4; /*0x4a0b83*/
     if ( v4 ) /*0x4a0b86*/
     {
-      v5 = operator new(4 * v4); /*0x4a0b90*/
+      v5 = (unsigned int)(operator new(4 * v4));
       v3[4] = v5; /*0x4a0b9a*/
       if ( v5 ) /*0x4a0b9d*/
       {
@@ -320,7 +320,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
 }
 // 0x4A2370
 namespace gamemd {
-AbstractClass * * DrawSidebarCreditsTimer()
+AbstractClass * * DrawSidebarCreditsTimer(void * a1, void * a2, void * a3)
 {
   uint8_t result; // al
   int v5; // kr00_4
@@ -349,7 +349,7 @@ AbstractClass * * DrawSidebarCreditsTimer()
       v18[0] = 2; /*0x4a23c6*/
       v6 = *(unsigned int *)(a1 + 4); /*0x4a241f*/
       v7 = ((uint8_t)dword_B0FA1C >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4a2422*/
-         | (IDA_BYTE1(dword_B0FA1C) >> g_BitMask_Blue << g_BitMask_Green)
+         | (IDA_BYTE1(dword_B0FA1C, void * a1) >> g_BitMask_Blue << g_BitMask_Green)
          | (IDA_BYTE2(dword_B0FA1C) >> g_BitMask_Red << g_BitShift_Blue);
       if ( v6 / 3600 > 99 ) /*0x4a243a*/
         v6 = 359999; /*0x4a243c*/
@@ -387,7 +387,7 @@ AbstractClass * * DrawSidebarCreditsTimer()
       v17 = v5 / 2; /*0x4a254e*/
       v18[0] = 2; /*0x4a2552*/
       v14 = ((uint8_t)dword_B0FA1C >> g_BitShift_Green_0 << g_BitShift_Red) /*0x4a25be*/
-          | (IDA_BYTE1(dword_B0FA1C) >> g_BitMask_Blue << g_BitMask_Green)
+          | (IDA_BYTE1(dword_B0FA1C, void * a1) >> g_BitMask_Blue << g_BitMask_Green)
           | (IDA_BYTE2(dword_B0FA1C) >> g_BitMask_Red << g_BitShift_Blue);
       v13 = (*(int (__thiscall **)(int))(*(unsigned int *)DSurface_Sidebar + 120))(DSurface_Sidebar); /*0x4a25c7*/
       result = (uint8_t)TextRenderer::Printf( /*0x4a25db*/
@@ -404,7 +404,7 @@ AbstractClass * * DrawSidebarCreditsTimer()
       *(unsigned char *)(a1 + 10) = 0; /*0x4a25e7*/
     }
   }
-  return result; /*0x4a24ed*/
+  return (gamemd::AbstractClass **)(result);
 }
 }
 // 0x4A2B60
@@ -491,7 +491,7 @@ void * E4Recv_4A3270::sub_4A3270(int a2, int a3, int a4)
   int v6; // ebx
   unsigned int v8[25]; // [esp+10h] [ebp-64h] BYREF
 
-  v5 = &this->M28; /*0x4a3287*/
+  v5 = (int *)(&this->M28);
   *(unsigned int *)this = a4; /*0x4a328f*/
   this->M112 = 0; /*0x4a3291*/
   *(unsigned int *)&this->M116 = 0; /*0x4a3297*/
@@ -565,8 +565,7 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
       v7 = v5 == 0; /*0x4a391c*/
       if ( !v5 ) /*0x4a391e*/
       {
-  LABEL_6:
-        *aP1 = !v7; /*0x4a392f*/
+  LABEL_6: *aP1 = (gamemd::AbstractClass **)(!v7);
         v9[3] = 0; /*0x4a3940*/
         Vector::Clear(v9); /*0x4a3948*/
         v8[0] = &off_7E1668; /*0x4a3951*/
@@ -578,7 +577,7 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
     v7 = v5 == 0; /*0x4a392d*/
     goto LABEL_6; /*0x4a392d*/
   }
-  return result; /*0x4a3961*/
+  return (gamemd::AbstractClass **)(result);
 }
 }
 // 0x4A3970
@@ -607,8 +606,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
       v7 = v5 == 0; /*0x4a39c3*/
       if ( !v5 ) /*0x4a39c5*/
       {
-  LABEL_6:
-        *a2 = !v7; /*0x4a39d6*/
+  LABEL_6: *a2 = (gamemd::AbstractClass **)(!v7);
         v9[3] = 0; /*0x4a39e7*/
         Vector::Clear((int)v9); /*0x4a39ef*/
         v8[0] = &off_7E1668; /*0x4a39f8*/

@@ -72,7 +72,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
           this->q004 = 0; /*0x5acde0*/
         }
       }
-      this->q004 = v7; /*0x5acde9*/
+      this->q004 = (void *)(v7);
       this->q008 = v3; /*0x5acdf1*/
       this->IsAllocated = v5 == 0; /*0x5acdf4*/
       return 1; /*0x5acdfa*/
@@ -152,7 +152,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
         this->q004 = 0; /*0x5acf7a*/
       }
     }
-    this->q004 = v7; /*0x5acf83*/
+    this->q004 = (void *)(v7);
     this->q008 = v3; /*0x5acf8b*/
     this->IsAllocated = v5 == 0; /*0x5acf8e*/
   }
@@ -160,7 +160,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
   {
     (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5acf97*/
   }
-  v12 = this->q008; /*0x5acf9a*/
+  v12 = (unsigned int)(this->q008);
   if ( v12 < this->q010 ) /*0x5acfa2*/
     this->q010 = v12; /*0x5acfa4*/
   return 1; /*0x5acfa7*/
@@ -209,7 +209,7 @@ unsigned int * MSEngine::Construct()
   char *v2; // ecx
   int v3; // edx
 
-  v2 = &this->q008; /*0x5d1aa5*/
+  v2 = (char *)(&this->q008);
   *((unsigned int *)v2 + 1) = 0; /*0x5d1ab2*/
   *((unsigned int *)v2 + 2) = 0; /*0x5d1ab5*/
   v2[12] = 1; /*0x5d1ab8*/
@@ -270,7 +270,7 @@ void MSEngine::Destruct()
     if ( v7 ) /*0x5d1b85*/
       (**v7)(v7, 1); /*0x5d1b8b*/
   }
-  v8 = &this->u32_18; /*0x5d1b98*/
+  v8 = (void *)(&this->u32_18);
   (*(void (__thiscall **)(unsigned int *))(this->u32_18 + 12))&this->q018; /*0x5d1b9d*/
   v9 = this->q008; /*0x5d1ba0*/
   v10 = &this->q008; /*0x5d1ba3*/
@@ -330,7 +330,7 @@ void MSEngine::ClearBuffer()
 {
   void *v2; // eax
 
-  v2 = this->Items; /*0x5ac526*/
+  v2 = (void *)(this->Items);
   this->q010 = 0; /*0x5ac529*/
   if ( v2 && this->IsAllocated ) /*0x5ac530*/
   {
@@ -458,7 +458,7 @@ int MSEngine::FindItem(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = this->q010; /*0x5acfc3*/
+  v2 = (void *)(this->q010);
   result = 0; /*0x5acfc6*/
   if ( v2 <= 0 ) /*0x5acfcb*/
     return -1; /*0x5ad000*/
@@ -482,7 +482,7 @@ VectorClass_flat * MSEngine::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x5ad4e8*/
     this->Items = 0; /*0x5ad4f0*/
   }
-  this->IsAllocated = 0; /*0x5ad4fb*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->Capacity = 0; /*0x5ad501*/
   if ( (a2 & 1) != 0 ) /*0x5ad508*/
     RA2_OPDEL(); /*0x5ad50b*/
@@ -502,7 +502,7 @@ DynamicVector * MSEngine::Constructor(char a2)
     RA2_OPDEL(v3); /*0x5ad538*/
     this->Items = 0; /*0x5ad540*/
   }
-  this->IsAllocated = 0; /*0x5ad54b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->q008 = 0; /*0x5ad551*/
   if ( (a2 & 1) != 0 ) /*0x5ad558*/
     RA2_OPDEL(); /*0x5ad55b*/

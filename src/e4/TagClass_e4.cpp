@@ -17,6 +17,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/TagTypeClass_e4.hpp"
 
 // 0x6E4F60
 namespace gamemd {
@@ -46,7 +47,7 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
   {
     if ( g_BounceClassInit ) /*0x6e4f9d*/
     {
-      v2 = this->buildingType; /*0x6e4f9f*/
+      v2 = (unsigned int *)(this->buildingType);
       if ( v2 ) /*0x6e4fa4*/
       {
         if ( (Debug::AccumFlags(v2) & 0x10) != 0 ) /*0x6e4fad*/
@@ -82,7 +83,7 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
     {
       if ( g_BounceClassInit ) /*0x6e5002*/
       {
-        v6 = this->buildingType; /*0x6e5004*/
+        v6 = (unsigned int *)(this->buildingType);
         if ( v6 ) /*0x6e5009*/
         {
           if ( (Debug::AccumFlags(v6) & 4) != 0 ) /*0x6e5012*/
@@ -166,7 +167,7 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
     }
     while ( v15 ); /*0x6e50d9*/
   }
-  v22[0] = this; /*0x6e5134*/
+  v22[0] = (unsigned int)(this);
   v18 = (*(int (__thiscall **)(int *, unsigned int *))(g_AnimPoolManager + 16))(&g_AnimPoolManager, v22); /*0x6e5147*/
   if ( v18 != -1 && v18 < g_AnimManager && v18 < --g_AnimManager ) /*0x6e5162*/
   {
@@ -177,7 +178,7 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
     }
     while ( v18 < g_AnimManager ); /*0x6e517a*/
   }
-  v22[0] = this; /*0x6e518c*/
+  v22[0] = (unsigned int)(this);
   v19 = (*(int (__thiscall **)(int *, unsigned int *))(dword_B0F708 + 16))(&dword_B0F708, v22); /*0x6e5190*/
   if ( v19 != -1 && v19 < dword_B0F718 && v19 < --dword_B0F718 ) /*0x6e51ab*/
   {
@@ -188,7 +189,7 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
     }
     while ( v19 < dword_B0F718 ); /*0x6e51c3*/
   }
-  v22[0] = this; /*0x6e51d5*/
+  v22[0] = (unsigned int)(this);
   v20 = (*(int (__thiscall **)(int *, unsigned int *))(TagClass_Array + 16))(&TagClass_Array, v22); /*0x6e51d9*/
   if ( v20 != -1 && v20 < g_GameObjectCleanup && v20 < --g_GameObjectCleanup ) /*0x6e51f4*/
   {
@@ -246,7 +247,7 @@ Coord * * TagClass::Unlink()
       result->q044 = 0; /*0x71ae1e*/
     result = TagClass::Unlink(*(&this->vtable26)); /*0x71ae24*/
   }
-  v4 = this->creationFrame; /*0x71ae29*/
+  v4 = (gamemd::Coord **)(this->creationFrame);
   *(&this->vtable27) = 0; /*0x71ae2c*/
   *(&this->vtable26) = 0; /*0x71ae31*/
   *(&this->vtable25) = 0; /*0x71ae34*/
@@ -261,7 +262,7 @@ namespace gamemd {
 int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
 {
   TriggerClass * v4;
-  unsigned int result;
+  TagTypeClass * result;
 
   if ( this->buildingType == a2 ) /*0x6e561a*/
     this->buildingType = 0; /*0x6e561c*/
@@ -286,7 +287,7 @@ int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
       *((unsigned int *)dword_B0F69C + result) = this; /*0x6e568c*/
     }
   }
-  return result; /*0x6e568f*/
+  return (int)(result);
 }
 } // namespace gamemd
 
@@ -318,7 +319,7 @@ int TagClass::ProcessTag(int * a2)
   v4 = this->firstTrigger; /*0x6e5702*/
   if ( v4 ) /*0x6e5707*/
   {
-    v5 = (*(int (__stdcall **)(int))(v4->vtable2 + 16))(v4 + 4); /*0x6e5710*/
+    v5 = (gamemd::TriggerClass *)((*(int (__stdcall **)(int))(v4->vtable2 + 16))(v4 + 4));
     v4 = Power::TimerProcess(v5); /*0x6e5716*/
   }
   IDA_LOBYTE(v4) = this->destroyed; /*0x6e571b*/

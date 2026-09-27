@@ -13,6 +13,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/Process_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x63F7B0
 namespace gamemd {

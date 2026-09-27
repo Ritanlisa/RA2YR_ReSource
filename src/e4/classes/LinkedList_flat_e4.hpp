@@ -4,6 +4,7 @@
 namespace gamemd {
 
 struct LinkedList_flat {
+    unsigned int PushFront;
     unsigned int m_Prev;
     unsigned int u32_28;
     unsigned int u32_18;

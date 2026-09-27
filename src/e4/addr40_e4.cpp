@@ -66,6 +66,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/StreamClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x4011C0
 namespace gamemd {
@@ -91,7 +92,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   char Str[260]; // [esp+8Ch] [ebp-244h] BYREF
   struct _WIN32_FIND_DATAA FindFileData; // [esp+190h] [ebp-140h] BYREF
 
-  v3 = (char *)operator new(0x124u); /*0x4011da*/
+  v3 = (unsigned int *)((char *)operator new(0x124u));
   memset(v3, 0, 0x124u); /*0x4011e5*/
   strcpy(Str, a1); /*0x401204*/
   v4 = strrchr(Str, 46); /*0x401215*/
@@ -188,7 +189,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
     if ( v3[strlen(v3 + 8) + 8] != 92 ) /*0x40147a*/
       strcat(v3 + 8, asc_815E74); /*0x40149d*/
   }
-  v19[0] = (int)&CCFileClass_vftable; /*0x4014ac*/
+  v19[0] = (gamemd::AbstractClass **)((int)&CCFileClass_vftable);
   v21 = 0; /*0x4014b4*/
   Vector::Clear((int)v20); /*0x4014bb*/
   v19[0] = (int)&off_7E1668; /*0x4014c4*/

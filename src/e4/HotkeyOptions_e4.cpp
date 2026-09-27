@@ -32,7 +32,7 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
   int64_t v78; // [esp+14h] [ebp-118h] BYREF
   unsigned char lParam[128]; // [esp+ACh] [ebp-80h] BYREF
 
-  result = BaseDialogProc(hWnd, a2, a3, a4); /*0x5fb34c*/
+  result = (int)(BaseDialogProc(hWnd, a2, a3, a4));
   if ( result ) /*0x5fb353*/
     return result; /*0x5fb353*/
   v73 = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x5fb368*/
@@ -40,7 +40,7 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
   {
     if ( a2 == 1127 ) /*0x5fbe06*/
     {
-      int v68 = GetDlgItem(hWnd, 1223); /*0x5fbe4f*/
+      int v68 = (int)(GetDlgItem(hWnd, 1223));
       SendMessageA(v68, 331, 0, 0); /*0x5fbe59*/
       for ( i = 0; i < dword_87F5D8[36]; ++i ) /*0x5fbe6a*/
       {
@@ -67,7 +67,7 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
   if ( a2 == 1126 ) /*0x5fb372*/
   {
   int v51; // edi
-    int v46 = GetDlgItem(hWnd, 1224); /*0x5fbacc*/
+    int v46 = (int)(GetDlgItem(hWnd, 1224));
     int v47 = SendMessageA(v46, 392, 0, 0); /*0x5fbad6*/
     if ( v47 == -1 ) /*0x5fbadb*/
       return 1; /*0x5fbadb*/
@@ -193,12 +193,12 @@ LABEL_127:
         }
         return 1; /*0x5fbcc9*/
       }
-      v51 = GetDlgItem(hWnd, 1597); /*0x5fbb7c*/
+      v51 = (int)(GetDlgItem(hWnd, 1597));
       StringCSF = GetStringCSF((void *)aErrorCannotrem, 0, g_Str_File_Options_CPP, 1012); /*0x5fbb8a*/
     }
     else
     {
-      v51 = GetDlgItem(hWnd, 1597); /*0x5fbb54*/
+      v51 = (int)(GetDlgItem(hWnd, 1597));
       StringCSF = GetStringCSF((void *)aErrorCannotmap, 0, g_Str_File_Options_CPP, 1004); /*0x5fbb62*/
     }
     SendMessageA(v51, 1202, 0, StringCSF); /*0x5fbb98*/
@@ -208,11 +208,11 @@ LABEL_127:
   {
     if ( a2 == 1124 ) /*0x5fb38a*/
     {
-      v18 = GetDlgItem; /*0x5fb4ec*/
+      v18 = (int)(GetDlgItem);
       int v19 = GetDlgItem(hWnd, 1223); /*0x5fb502*/
       if ( SendMessageA(v19, 327, 0, 0) != dword_832D8C ) /*0x5fb514*/
       {
-        dword_832D8C = SendMessageA(v19, 327, 0, 0); /*0x5fb52d*/
+        dword_832D8C = (int)(SendMessageA(v19, 327, 0, 0));
         SendMessageA(v19, 1203, 64, lParam); /*0x5fb53b*/
         int v20 = GetDlgItem(hWnd, 1224); /*0x5fb547*/
         SendMessageA(v20, 388, 0, 0); /*0x5fb551*/

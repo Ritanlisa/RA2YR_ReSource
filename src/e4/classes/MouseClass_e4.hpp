@@ -1129,6 +1129,7 @@ struct MouseClass {
     unsigned int _file;
     unsigned int _flag;
     unsigned int _ptr;
+    unsigned int LoadGameAssets;
 // --- flat members (END) ---
     char LoadCursors();
     char ToggleContextGadget(int a1, int a2);

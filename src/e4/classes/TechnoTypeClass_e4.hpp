@@ -808,7 +808,7 @@ unsigned int q7A8;  // 0x7A8
     unsigned int u32_CB0;  // 0xCB0
     bool unknown_bool_CB4;  // 0xCB4
     unsigned char qCB5;  // 0xCB5
-    char BarrelAnimData[16];  // 0xCB8
+    unsigned int BarrelAnimData;  // 0xCB8
     unsigned int u32_CBC;  // 0xCBC
     unsigned int u32_CC0;  // 0xCC0
     unsigned int u32_CC4;  // 0xCC4
@@ -2470,6 +2470,11 @@ unsigned int q7A8;  // 0x7A8
     unsigned int u32_1D84;
     unsigned int u32_1E42;
     unsigned int CrushSound0;
+    unsigned int ImageFile8;
+    unsigned int IsLogic6;
+    unsigned int speedType8;
+    unsigned int techLevel6;
+    unsigned int u32_27C2;
 // --- flat members (END) ---
     AbstractClass * * Construct(ObjectTypeClass * aP1);
     AbstractClass * * GetByTypeAndIndex(int a1, int a2);

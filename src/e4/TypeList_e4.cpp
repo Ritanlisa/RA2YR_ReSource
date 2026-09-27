@@ -63,7 +63,7 @@ char TypeList_Particle::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  v2 = this->Capacity; /*0x45a182*/
+  v2 = (void *)(this->Capacity);
   if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x45a18d*/
   {
     v3 = 0; /*0x45a18f*/
@@ -93,7 +93,7 @@ char TypeList_Particle::Remove(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x45a1cc*/
   {
-    this->IsInitialized = 0; /*0x45a1d6*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x45a1dc*/
       v4 = a3; /*0x45a1f2*/
     else
@@ -177,7 +177,7 @@ char TypeList_cptr_ParticleSystemTypeClass::Add(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x45a30c*/
   {
-    this->IsInitialized = 0; /*0x45a312*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x45a318*/
       v4 = a3; /*0x45a32e*/
     else
@@ -221,7 +221,7 @@ int TypeList_cptr_ParticleSystemTypeClass::Remove(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = this->Count; /*0x45a3b0*/
+  v2 = (void *)(this->Count);
   result = 0; /*0x45a3b3*/
   if ( v2 <= 0 ) /*0x45a3b8*/
     return -1; /*0x45a3cf*/
@@ -245,7 +245,7 @@ VectorClass_flat * TypeList_Particle::Add(char a2)
     RA2_OPDEL(v3); /*0x45a9d8*/
     this->Items = 0; /*0x45a9e0*/
   }
-  this->IsAllocated = 0; /*0x45a9eb*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->Capacity = 0; /*0x45a9f1*/
   if ( (a2 & 1) != 0 ) /*0x45a9f8*/
     RA2_OPDEL(); /*0x45a9fb*/
@@ -328,7 +328,7 @@ char TypeList_TechnoType::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  v2 = this->Capacity; /*0x477fc2*/
+  v2 = (void *)(this->Capacity);
   if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x477fcd*/
   {
     v3 = 0; /*0x477fcf*/
@@ -358,7 +358,7 @@ char TypeList_TechnoType::Remove(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x47800c*/
   {
-    this->IsInitialized = 0; /*0x478016*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x47801c*/
       v4 = a3; /*0x478032*/
     else
@@ -457,7 +457,7 @@ VectorClass_flat * TypeList_TechnoType::Add(char a2)
     RA2_OPDEL(v3); /*0x478698*/
     this->Items = 0; /*0x4786a0*/
   }
-  this->IsAllocated = 0; /*0x4786ab*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->Capacity = 0; /*0x4786b1*/
   if ( (a2 & 1) != 0 ) /*0x4786b8*/
     RA2_OPDEL(); /*0x4786bb*/
@@ -569,7 +569,7 @@ TypeList_flat * TypeList_Infantry::Add(char a2)
     RA2_OPDEL(v3); /*0x512a08*/
     this->Items = 0; /*0x512a10*/
   }
-  this->IsAllocated = 0; /*0x512a1b*/
+  this->IsAllocated = (gamemd::TypeList_flat *)(0);
   this->Capacity = 0; /*0x512a21*/
   if ( (a2 & 1) != 0 ) /*0x512a28*/
     RA2_OPDEL(); /*0x512a2b*/
@@ -586,7 +586,7 @@ char TypeList_Infantry::AddRef(int a2)
   unsigned int *v4; // eax
   int v5; // ecx
 
-  v2 = this->Capacity; /*0x512c42*/
+  v2 = (void *)(this->Capacity);
   if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x512c4d*/
   {
     v3 = 0; /*0x512c4f*/
@@ -618,7 +618,7 @@ DynamicVector * TypeList_Infantry::Constructor(char a2)
     RA2_OPDEL(v3); /*0x512e38*/
     this->Items = 0; /*0x512e40*/
   }
-  this->IsAllocated = 0; /*0x512e4b*/
+  this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->Capacity = 0; /*0x512e51*/
   if ( (a2 & 1) != 0 ) /*0x512e58*/
     RA2_OPDEL(); /*0x512e5b*/
@@ -637,7 +637,7 @@ char TypeList_Infantry::Remove(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x512e7c*/
   {
-    this->IsInitialized = 0; /*0x512e82*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x512e88*/
       v4 = a3; /*0x512e9e*/
     else

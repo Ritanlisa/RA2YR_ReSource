@@ -24,7 +24,7 @@ AudioController * * CCFileClass::Close()
   {
     if ( this->MixFileIndex ) /*0x4325d6*/
     {
-      v3 = *(unsigned int *)this; /*0x4325dd*/
+      v3 = (gamemd::AudioController **)(*(unsigned int *)this);
       *(&this->FileName1) = 0; /*0x4325e1*/
       result = (*(int (__thiscall **)(unsigned char *))(v3 + 52))(this); /*0x4325e5*/
       *(&this->FileName1) = 1; /*0x4325e8*/
@@ -59,7 +59,7 @@ int CCFileClass::GetFileSize()
   DWORD LastError; // eax
   int v6; // [esp-8h] [ebp-10h]
 
-  FileSize = 0; /*0x65d0d4*/
+  FileSize = (void *)(0);
   result = this->FileName; /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
   {
@@ -68,7 +68,7 @@ int CCFileClass::GetFileSize()
       FileSize = GetFileSize((HANDLE)this->FileTimeDateLo, 0); /*0x65d0f2*/
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
-        v4 = *this; /*0x65d0fd*/
+        v4 = (int)(*this);
         v6 = this->FileNameAllocated; /*0x65d0ff*/
         LastError = GetLastError(); /*0x65d102*/
         this->Destru_vt16(LastError, 0, v6); /*0x65d10b*/
@@ -82,10 +82,10 @@ int CCFileClass::GetFileSize()
       FileSize = this->GetSize(); /*0x65d130*/
       this->Reset_8(); /*0x65d136*/
     }
-    result = FileSize - this->Handle; /*0x65d13e*/
+    result = (unsigned int)(FileSize - this->Handle);
     this->FileName = result; /*0x65d140*/
   }
-  return result; /*0x65d119*/
+  return (int)(result);
 }
 } // namespace gamemd
 // 0x69E320
@@ -144,10 +144,10 @@ void CCFileClass::ProcessStream(unsigned int a1)
   {
     if ( *(unsigned short *)dword_B077B4 == 0xFFFF ) /*0x69e3b1*/
     {
-      v7 = (char *)dword_B077B4 + 16; /*0x69e3b6*/
+      v7 = (unsigned char *)((char *)dword_B077B4 + 16);
       if ( *((unsigned char *)dword_B077B4 + 16) ) /*0x69e3b3*/
       {
-        v8 = (void *)*((unsigned int *)dword_B077B4 + 3); /*0x69e3bd*/
+        v8 = (unsigned int *)((void *)*((unsigned int *)dword_B077B4 + 3));
         v9 = (char *)dword_B077B4 + 12; /*0x69e3c0*/
         if ( v8 ) /*0x69e3c5*/
           MixFileClass::CacheNode_Dtor(v8, 1); /*0x69e3c9*/

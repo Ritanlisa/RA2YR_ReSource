@@ -13,7 +13,7 @@ namespace gamemd {
 void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5)
 {
 
-  aP5 = aP5; /*0x767824*/
+  aP5 = (unsigned char)(aP5);
   arg8 = arg8; /*0x76782b*/
   this->q008 = arg0; /*0x76782f*/
   this->u32_C = arg8; /*0x767836*/

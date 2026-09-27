@@ -186,7 +186,7 @@ int ProcessGameResults(char a1)
     v5 = g_GameDifficulty;
     char * v6 = (char *)operator new(0x10u);
     if ( v6 )
-      char * v7 = NetMessage::Pack4(v6, (RandomStruct *)&stru_830620[72444], (int)v5);
+      unsigned int v7 =
     else
       v7 = 0;
     LinkedList_flat::PushFront(v262, (IUnknown *)v7);

@@ -164,7 +164,9 @@ struct INIClass {
     unsigned int u32_44;
     unsigned char u8_D;
     unsigned int v3;
-    unsigned int SetString;
+    unsigned int ReadInt_Overwrite;
+    unsigned int SetInt;
+    unsigned int WriteToString;
 // --- flat members (END) ---
     INIClass * ReadCoord(double aP1, int a2, INIClass * aP2, int a4);
     ObjectClass * * BinarySearchSection(INIClass * aP1);

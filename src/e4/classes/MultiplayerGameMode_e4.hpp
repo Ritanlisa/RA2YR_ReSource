@@ -61,6 +61,7 @@ struct MultiplayerGameMode {
     unsigned int q0042;
     unsigned int u32_8;
     unsigned int u32_81;
+    unsigned int GetFirst;
 // --- flat members (END) ---
     MultiplayerGameMode * QueryInterface(char a2);
     unsigned int * ConstructMultiplayerGameModeVectorClass(int a2, int a3);

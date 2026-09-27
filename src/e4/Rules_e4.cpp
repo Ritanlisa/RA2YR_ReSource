@@ -134,7 +134,7 @@ int Rules::ReadMiscINI()
   void **v267; // [esp+B8h] [ebp-1Ch] BYREF
   uint8_t ***v273; // [esp+D8h] [ebp+4h]
 
-  result = INIClass::BinarySearchSection((int)v273, (INIClass *)&stru_830620[39048]);
+  result = (int)(INIClass::BinarySearchSection((int)v273, (INIClass *)&stru_830620[39048]));
   if ( result )
   {
     this->DetailMinFrameRateNormal = INIClass::ReadInt_Overwrite(
@@ -174,7 +174,7 @@ int Rules::ReadMiscINI()
            (INIClass *)aP1.headNode,
            *(int *)&v260[8]) )
     {
-      v5 = AnimTypeClass::FindOrCreate((AbstractClass *)aP1.headNode);
+      v5 = (gamemd::AnimTypeClass *)(AnimTypeClass::FindOrCreate((AbstractClass *)aP1.headNode));
     }
     else
     {
@@ -195,7 +195,7 @@ int Rules::ReadMiscINI()
            (INIClass *)aP1.headNode,
            128) )
     {
-      v7 = AnimTypeClass::FindOrCreate((AbstractClass *)aP1.headNode);
+      v7 = (gamemd::AnimTypeClass *)(AnimTypeClass::FindOrCreate((AbstractClass *)aP1.headNode));
     }
     else
     {

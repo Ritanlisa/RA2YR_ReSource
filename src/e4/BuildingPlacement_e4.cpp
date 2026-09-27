@@ -29,7 +29,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
     return 0; /*0x4fb859*/
   a2 = a2; /*0x4fb85f*/
   if ( !a2 ) /*0x4fb865*/
-    return 0; /*0x4fb865*/
+    return (void *)(0);
   a3 = a3; /*0x4fb86b*/
   if ( !a3 ) /*0x4fb871*/
     return 0; /*0x4fb919*/
@@ -139,7 +139,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
         this->q050 = 2; /*0x54c64b*/
         this->q080 = v16; /*0x54c652*/
       }
-      return (char)v12; /*0x54c61d*/
+      return (gamemd::VectorClass_flat **)((char)v12);
     }
     v48 = (*(int (__thiscall **)(unsigned int, unsigned int *, int, int, unsigned int, int))(**(unsigned int **)(&this->q0042) + 428))( /*0x54c675*/
             this->q00C,
@@ -317,7 +317,7 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
       }
     }
   }
-  return (char)v12; /*0x54c60c*/
+  return (gamemd::VectorClass_flat **)((char)v12);
 }
 } // namespace gamemd
 // 0x594F40
@@ -390,7 +390,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
       return 0; /*0x594fc3*/
     v36 = *(unsigned int *)(a2 + 16); /*0x594fc6*/
   }
-  v6 = operator new(0x18u); /*0x594fcc*/
+  v6 = (unsigned int *)(operator new(0x18u));
   v7 = v6; /*0x594fd1*/
   if ( v6 ) /*0x594fd8*/
   {
@@ -575,7 +575,7 @@ unsigned int * BuildingPlacement::SelectBuildingPlacementCells(int a2)
 } // namespace gamemd
 // 0x500200
 namespace gamemd {
-unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknown a3)
+unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknown a3, void * a1, void * a2)
 {
   unsigned int *v2; // esi
   int v3; // ebx

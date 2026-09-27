@@ -30,7 +30,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   int v14; // [esp+10h] [ebp-8h]
   int i; // [esp+10h] [ebp-8h]
 
-  v2 = a2; /*0x41f2ec*/
+  v2 = (int)(a2);
   result = INIClass::GetKeyCount(a1, (uint8_t *)aAitriggertypes); /*0x41f2f5*/
   v5 = 0; /*0x41f2fa*/
   v14 = result; /*0x41f2fe*/
@@ -52,8 +52,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
           v7 = (unsigned int *)*((unsigned int *)dword_A8B204 + v8); /*0x41f431*/
           goto LABEL_11; /*0x41f434*/
         }
-  LABEL_9:
-        v9 = operator new(0x110u); /*0x41f378*/
+  LABEL_9: v9 = (unsigned int *)(operator new(0x110u));
         if ( v9 ) /*0x41f387*/
         {
           v7 = AnimTypeClass::Construct2(v9, (char *)StringByIndex); /*0x41f391*/
@@ -81,7 +80,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   }
   if ( !v2 ) /*0x41f3c8*/
   {
-    result = INIClass::GetKeyCount(a1, (uint8_t *)aAitriggertypes_0); /*0x41f3d7*/
+    result = (int)(INIClass::GetKeyCount(a1, (uint8_t *)aAitriggertypes_0));
     v10 = 0; /*0x41f3dc*/
     for ( i = result; v10 < i; ++v10 ) /*0x41f3e4*/
     {
@@ -114,7 +113,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 namespace gamemd {
 int CCINIClass::GetDB()
 {
-  return this->q004; /*0x473453*/
+  return (int)(this->q004);
 }
 }
 // 0x4741F0
@@ -138,7 +137,7 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   int v20; // [esp+5Ch] [ebp-58h]
   int v21[5]; // [esp+A0h] [ebp-14h] BYREF
 
-  v10[1] = 0; /*0x474213*/
+  v10[1] = (unsigned int)(0);
   v10[2] = 0; /*0x474217*/
   v10[3] = aP1; /*0x47421b*/
   v11 = 0; /*0x47421f*/
@@ -156,7 +155,7 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
     goto LABEL_7; /*0x47426e*/
   INIClass::ClearSection(g_INI_Key_Digest, 0); /*0x47427d*/
   v12[1] = 0; /*0x474286*/
-  v12[2] = 0; /*0x47428d*/
+  v12[2] = (gamemd::MultiplayerGameMode **)(0);
   v13 = 0; /*0x474291*/
   v19 = 0; /*0x474295*/
   v20 = 0; /*0x474299*/
@@ -191,7 +190,7 @@ CCINIClass::CCINIClass()
   unsigned int * v6;
   int v7; // edi
 
-  result = this; /*0x535b30*/
+  result = (void **)(this);
   v2 = &this->u32_10; /*0x535b36*/
   v3 = &this->u32_1C; /*0x535b39*/
   result[1] = 0; /*0x535b3c*/
@@ -215,7 +214,7 @@ CCINIClass::CCINIClass()
       }
     }
   }
-  v6 = v2[1]; /*0x535b86*/
+  v6 = (unsigned int)(v2[1]);
   v3[2] = v2; /*0x535b89*/
   v3[1] = v6; /*0x535b8c*/
   v7 = v2[1]; /*0x535b8f*/
@@ -246,7 +245,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
   int k; // edi
   char Destination[32]; // [esp+10h] [ebp-20h] BYREF
 
-  KeyCount = INIClass::GetKeyCount(a1, (uint8_t *)aAitriggertypes); /*0x41f4a6*/
+  KeyCount = (int)(INIClass::GetKeyCount(a1, (uint8_t *)aAitriggertypes));
   for ( i = 0; i < KeyCount; ++i ) /*0x41f4ac*/
   {
     StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1, (uint8_t *)aAitriggertypes, i); /*0x41f4b8*/
@@ -282,7 +281,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
       result = g_AnimTypeInitQueue; /*0x41f563*/
     }
   }
-  return result; /*0x41f56d*/
+  return (gamemd::AITriggerTypeClass *)(result);
 }
 } // namespace gamemd
 

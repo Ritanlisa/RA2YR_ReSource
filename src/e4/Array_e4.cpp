@@ -15,13 +15,13 @@ namespace gamemd {
 int Array::GetClamped(CheckListClass * aP1)
 {
   int result; // eax
-  unsigned int v3;
+  CheckListClass * v3;
   int v4; // eax
 
   result = *(&this->q0047); /*0x557ac0*/
   if ( result ) /*0x557ac5*/
   {
-    v3 = aP1; /*0x557aca*/
+    v3 = (gamemd::CheckListClass *)(aP1);
     v4 = result - 1; /*0x557ace*/
     if ( aP1 >= v4 ) /*0x557ad1*/
       v3 = v4; /*0x557ad3*/
@@ -39,7 +39,7 @@ int Array::FindValue(IUnknown * aP1)
   int v4; // edx
   unsigned int **i; // ecx
 
-  v2 = this->q010; /*0x634292*/
+  v2 = (void *)(this->q010);
   result = -1; /*0x634295*/
   v4 = 0; /*0x634298*/
   if ( v2 > 0 ) /*0x63429d*/
@@ -61,7 +61,7 @@ int Array::RemoveAt(int a2)
   void * v2;
   void * v4;
 
-  v2 = this->q010; /*0x63e590*/
+  v2 = (unsigned int)(this->q010);
   a2 = a2; /*0x63e593*/
   if ( a2 >= v2 ) /*0x63e599*/
     return 0; /*0x63e5bc*/
@@ -116,7 +116,7 @@ int Array::Zero()
   result = 0; /*0x7490d6*/
   if ( (int)this->q800 > 0 ) /*0x7490da*/
   {
-    v2 = this; /*0x7490dd*/
+    v2 = (unsigned int *)(this);
     do /*0x7490f1*/
     {
       *v2 = 0; /*0x7490df*/
@@ -197,14 +197,14 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
   int v16; // [esp+Ch] [ebp-4h]
   int v17; // [esp+Ch] [ebp-4h]
 
-  v4 = v5; /*0x7ad795*/
+  v4 = (gamemd::ObjectClass *)(v5);
   v5 = *this; /*0x7ad799*/
   if ( v5 > v5 ) /*0x7ad79e*/
   {
     v5 = v5; /*0x7ad7a0*/
     v4 = v5; /*0x7ad7a4*/
   }
-  v6 = this->q004; /*0x7ad7a6*/
+  v6 = (void *)(this->q004);
   if ( v4 >= v6 && v5 >= v6 ) /*0x7ad7b4*/
   {
     v7 = 2 * v5; /*0x7ad7b6*/
@@ -221,7 +221,7 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
     this->q008 = v16; /*0x7ad82c*/
     this->q004 = v7; /*0x7ad82f*/
   }
-  v10 = *this; /*0x7ad832*/
+  v10 = (int)(*this);
   if ( *this >= this->q004 ) /*0x7ad839*/
   {
     v11 = 2 * v10; /*0x7ad83b*/
@@ -249,7 +249,7 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
 }
 // 0x4068F0
 namespace gamemd {
-int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall *a4)(int) a4)
+int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall *a4, void * a1, void * a3)(int) a4)
 {
   int result; // eax
   int v6; // edi
@@ -272,7 +272,7 @@ int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall 
 
 // 0x40AFD0
 namespace gamemd {
-int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (__thiscall *a4)(int) a4)
+int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (__thiscall *a4, void * a1)(int) a4)
 {
   int v4; // esi
   int result; // eax
