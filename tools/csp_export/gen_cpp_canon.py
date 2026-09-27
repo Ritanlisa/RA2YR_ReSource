@@ -260,8 +260,26 @@ def _is_placeholder(n):
     return bool(PLACEHOLDER_RE.match(n or ''))
 
 
+# math.hpp-owned alias types: their CSP-merged "layouts" are call-site
+# pollution (CellStruct once carried 59 members and a size of 21,576; the
+# true definition is `using CellStruct = Vector2D<short>`). Emit the real
+# math.hpp layout (uppercase X/Y/Z match the templates) instead of the junk.
+ALIAS_LAYOUT = {
+    'CellStruct': (4, [('X', 'short', 2), ('Y', 'short', 2)]),
+    'Point2D': (8, [('X', 'int', 4), ('Y', 'int', 4)]),
+    'CoordStruct': (12, [('X', 'int', 4), ('Y', 'int', 4), ('Z', 'int', 4)]),
+}
+
+
 def build_members(cc):
     src_cls = canon_of.get(cc, cc)
+    if cc in ALIAS_LAYOUT:
+        total, fields = ALIAS_LAYOUT[cc]
+        out, o = [], 0
+        for (n, t, sz) in fields:
+            out.append((o, t, n, sz, ''))
+            o += sz
+        return out, total
     e = db.get(src_cls, {})
     lay = layouts.get(src_cls, {})
     vptr_offs = sorted({int(v.get('col_offset', 0)) for v in (e.get('vtables') or {}).values()})
@@ -315,6 +333,12 @@ def build_members(cc):
             members[o] = {'name': m.get('name') or '', 'type': m.get('type') or '',
                           'size': 4, 'obs': []}
     total = lay.get('size') or e.get('size') or 0
+    # data-quality bound: an offset at/beyond the class layout size is CSP
+    # call-site pollution, never a member (audit: 204K junk entries, e.g.
+    # TActionClass size=188 carrying 2,067). Bounded out before padding so
+    # no __pad gap is inflated to cover garbage either.
+    if total:
+        members = {o: m for o, m in members.items() if o < total}
     out = []
     out_names = set()
     used = set()
@@ -711,7 +735,9 @@ for cc in sorted(canon_of):
     src_cls = canon_of.get(cc, cc)
     lay = layouts.get(src_cls, {})
     total = lay.get('size') or db.get(src_cls, {}).get('size') or 0
-    mem, _tot = build_members(cc)
+    mem, tot_m = build_members(cc)
+    # alias classes carry their true math.hpp size (layouts/db have none)
+    total = tot_m or total
     mtab[cc] = {'size': total,
                 'members': {str(o): {'name': n, 'type': t, 'size': sz}
                             for (o, t, n, sz, _orig) in mem}}
