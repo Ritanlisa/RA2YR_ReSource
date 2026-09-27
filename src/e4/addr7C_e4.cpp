@@ -29,7 +29,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
 {
   int v8; // eax
   int v9; // ebp
-  DSurface * v10;
+  unsigned int v10;
   int v11; // eax
   DSurface * v12;
   int v13; // eax
@@ -45,7 +45,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   int v23; // eax
   uint16_t *v24; // edx
   int v25; // ecx
-  DSurface * v26;
+  unsigned int v26;
   unsigned int result;
   int v28; // edi
   DSurface * v29;
@@ -57,10 +57,10 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   int v35; // ecx
   bool v36; // zf
   char v37; // [esp+13h] [ebp-15h]
-  unsigned int v38;
+  DSurface * v38;
   int v39; // [esp+18h] [ebp-10h]
-  unsigned int v40;
-  unsigned int v41;
+  DSurface * v40;
+  DSurface * v41;
   DSurface * v42;
   DSurface * v43;
   int v44; // [esp+30h] [ebp+8h]

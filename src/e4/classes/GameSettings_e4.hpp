@@ -57,6 +57,10 @@ struct GameSettings {
     unsigned int q2128;  // 0x2128
     unsigned int q036;
     unsigned char u8_34;
+    void* ptr_10;
+    void* ptr_18;
+    void* ptr_4;
+    void* ptr_8;
 // --- flat members (END) ---
     AbstractClass * * Read();
     char * FindFlagged();

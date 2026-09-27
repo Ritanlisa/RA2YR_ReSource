@@ -125,7 +125,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
 {
   int v5; // ecx
   void * v6;
-  bool * v7;
+  int v7;
   int v8; // eax
   int v9; // eax
   int v10; // edx

@@ -23,6 +23,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/StreamClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x4116A0
 namespace gamemd {

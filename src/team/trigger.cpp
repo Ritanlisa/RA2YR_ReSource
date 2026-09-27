@@ -382,3 +382,4 @@ int TriggerTypeClass::objectSize() const { return 0; }
 void TriggerTypeClass::calculateChecksum(void* checksum) const {
 
 } // namespace gamemd
+}

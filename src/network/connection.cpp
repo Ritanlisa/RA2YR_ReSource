@@ -463,3 +463,4 @@ void IPXManagerClass::release()
 }
 // 0x542330
 int32_t IPXManagerClass::GetConnectionCount() { return 0; }
+}

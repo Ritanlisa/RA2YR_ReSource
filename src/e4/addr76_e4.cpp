@@ -59,6 +59,7 @@
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/DialogQueue_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/E4Recv_7741C0_e4.hpp"
 
 // 0x7636F0
 namespace gamemd {

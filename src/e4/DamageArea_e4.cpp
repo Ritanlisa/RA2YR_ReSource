@@ -425,7 +425,7 @@ LABEL_105:
            || (*(int (__thiscall **)(int))(*(unsigned int *)v63 + 44))(v63) != 6
            || !*(unsigned char *)(*(unsigned int *)(*(unsigned int *)(this->q00C + 1444) + 1312) + 5835)) )
         {
-          int v64 = this->q008;
+          void * v64 =
           unsigned int * v65 = (unsigned int *)(this->q00C + 156);
           v110 = ((int16_t)(this->q070 / 256) << 8) + 128;
           IDA_LODWORD(v106) = *v65;

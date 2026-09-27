@@ -247,3 +247,5 @@ ObjectClass::ObjectClass() noexcept
 // IDA: AudioController
 // 0x405d40
 void AudioController::Stop() { }
+}
+}

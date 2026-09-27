@@ -79,9 +79,11 @@ struct HashTree;
 struct HashVector_UInt;
 struct Heap;
 struct IDXContainer;
+struct ILocomotion;
 struct INISectionList;
 struct InputManager_ProcessEvents;
 struct Int4;
+struct IntDynamicVector;
 struct IntVector;
 struct IsRandMap;
 struct KeyValuePair;
@@ -95,7 +97,6 @@ struct MSChoiceClass;
 struct MapResourceClass;
 struct Matrix;
 struct Matrix2D;
-struct Matrix3D;
 struct Matrix3x3;
 struct MessageListClass;
 struct Miles;
@@ -129,9 +130,8 @@ struct Random;
 struct Rect_Point;
 struct ResultNode;
 struct SHPClass;
-struct SafeDelete;
+struct SaveLoad;
 struct SaveLoadDialog;
-struct ScoreText;
 struct ScreenSaver;
 struct ScriptQueue;
 struct SerialPort;
@@ -139,14 +139,12 @@ struct SettingsClass;
 struct ShapeButton;
 struct ShapeButtonClass;
 struct ShroudClass;
-struct SimpleDialogControl;
 struct SlaveControlVector;
 struct SpawnControlVector;
 struct SquadClass;
-struct StartCombo;
+struct State;
 struct StaticString;
 struct Straw;
-struct StringList;
 struct StringTable;
 struct StringVector;
 struct StructTable;
@@ -190,59 +188,26 @@ struct WordVector;
 struct ActionQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_C;  // 0xC
-    unsigned int u32_10;  // 0x10
-    static double PushEntry(...);  // C2039/C3861 interim stub
 };
 
 struct AircraftTrackerClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_20;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned int u32_30;  // 0x30
-    static double FillCurrentVector(...);  // C2039/C3861 interim stub
 };
 
 struct AircraftTypeVector {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_C;  // 0xC
-    unsigned int u32_D;  // 0xD
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct AllocCallback {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q1B4;  // 0x1B4
-    unsigned char q1B8;  // 0x1B8
-    unsigned char q1BC;  // 0x1BC
-    unsigned char q1C0;  // 0x1C0
-    unsigned char q1C4;  // 0x1C4
-    unsigned char q440;  // 0x440
-    unsigned char q444;  // 0x444
-    unsigned char q448;  // 0x448
-    unsigned char q1078;  // 0x1078
-    unsigned char q107C;  // 0x107C
-    unsigned char q1080;  // 0x1080
-    unsigned char q1088;  // 0x1088
-    unsigned char q108C;  // 0x108C
-    unsigned char q20E0;  // 0x20E0
-    static double Dispatch(...);  // C2039/C3861 interim stub
 };
 
 struct AnimTypeVector {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_C;  // 0xC
-    unsigned int u32_D;  // 0xD
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct ArmorType {
@@ -254,15 +219,6 @@ struct ArmorType {
 struct AssetClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    void* q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    void* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    void* q024;  // 0x24
-    static double ReleaseAndReload(...);  // C2039/C3861 interim stub
 };
 
 struct AudioChannel {
@@ -270,174 +226,48 @@ struct AudioChannel {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q018;  // 0x18
-    unsigned char q024;  // 0x24
-    unsigned int q029;  // 0x29
-    unsigned char q02D;  // 0x2D
-    unsigned char q035;  // 0x35
-    static double DeactivatePlay(...);  // C2039/C3861 interim stub
-    static double IsActive(...);  // C2039/C3861 interim stub
 };
 
 struct AudioConfig {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double InitDefault(...);  // C2039/C3861 interim stub
 };
 
 struct AudioFile {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned int q029;  // 0x29
-    unsigned char q02D;  // 0x2D
-    void* q0D4;  // 0xD4
-    unsigned char q0D8;  // 0xD8
-    unsigned char q0EC;  // 0xEC
-    unsigned char q0F0;  // 0xF0
-    unsigned char q110;  // 0x110
-    unsigned char q114;  // 0x114
-    unsigned char q1AC;  // 0x1AC
-    unsigned char q1B0;  // 0x1B0
-    unsigned char q35C;  // 0x35C
-    unsigned char q360;  // 0x360
-    unsigned char q374;  // 0x374
-    unsigned char q378;  // 0x378
-    void* q530;  // 0x530
-    unsigned char q534;  // 0x534
-    unsigned char q538;  // 0x538
-    unsigned char q554;  // 0x554
-    unsigned char q558;  // 0x558
-    unsigned char q68C;  // 0x68C
-    unsigned char q690;  // 0x690
-    unsigned char q860;  // 0x860
-    unsigned char q864;  // 0x864
-    unsigned char qA34;  // 0xA34
-    unsigned char qA38;  // 0xA38
-    void* q1328;  // 0x1328
-    static double GetCallback(...);  // C2039/C3861 interim stub
 };
 
 struct AudioFileClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    void* q090;  // 0x90
-    unsigned char q094;  // 0x94
-    void* q0BC;  // 0xBC
-    unsigned char q0C0;  // 0xC0
-    unsigned char q0C4;  // 0xC4
-    unsigned char q0C8;  // 0xC8
-    unsigned char q0CC;  // 0xCC
-    void* q144;  // 0x144
-    unsigned char q148;  // 0x148
-    unsigned char q14C;  // 0x14C
-    unsigned char q170;  // 0x170
-    unsigned char q174;  // 0x174
-    unsigned char q178;  // 0x178
-    unsigned char q17C;  // 0x17C
-    void* q188;  // 0x188
-    unsigned char q18C;  // 0x18C
-    unsigned char q190;  // 0x190
-    unsigned char q194;  // 0x194
-    void* q324;  // 0x324
-    unsigned char q328;  // 0x328
-    unsigned char q32C;  // 0x32C
-    unsigned char q350;  // 0x350
-    unsigned char q354;  // 0x354
-    unsigned char q358;  // 0x358
-    unsigned char q368;  // 0x368
-    unsigned char q36C;  // 0x36C
-    unsigned char q380;  // 0x380
-    unsigned char q384;  // 0x384
-    unsigned char q39C;  // 0x39C
-    unsigned char q3A0;  // 0x3A0
-    unsigned char q534;  // 0x534
-    unsigned char q538;  // 0x538
-    void* q804;  // 0x804
-    unsigned char q808;  // 0x808
-    unsigned char q80C;  // 0x80C
-    unsigned char q830;  // 0x830
-    unsigned char q834;  // 0x834
-    unsigned char q848;  // 0x848
-    unsigned char q84C;  // 0x84C
-    unsigned char q860;  // 0x860
-    unsigned char q864;  // 0x864
-    unsigned char q8A8;  // 0x8A8
-    unsigned char q8AC;  // 0x8AC
-    void* q914;  // 0x914
-    static double Release(...);  // C2039/C3861 interim stub
 };
 
 struct AudioFrame {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    static double CounterInc(...);  // C2039/C3861 interim stub
 };
 
 struct AudioIndex {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    void* q018;  // 0x18
-    void* q01C;  // 0x1C
-    void* q020;  // 0x20
-    void* q024;  // 0x24
-    void* q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
-    void* q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    void* q050;  // 0x50
-    void* q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q05C;  // 0x5C
-    void* q064;  // 0x64
-    unsigned char q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q074;  // 0x74
-    unsigned char q078;  // 0x78
-    void* q080;  // 0x80
-    static double GetSampleInformation(...);  // C2039/C3861 interim stub
 };
 
 struct AudioList {
     void* vfptr;
     unsigned char q000;  // 0x0
-    void* q004;  // 0x4
-    static double GetNextEntry(...);  // C2039/C3861 interim stub
 };
 
 struct AudioNode {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    void* q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    void* q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    void* q050;  // 0x50
-    static double Release(...);  // C2039/C3861 interim stub
 };
 
 struct AudioPool {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double ProcessQueue(...);  // C2039/C3861 interim stub
 };
 
 struct AudioSample {
@@ -447,88 +277,21 @@ struct AudioSample {
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char q010;  // 0x10
-    void* q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    void* q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned int q025;  // 0x25
-    unsigned int q026;  // 0x26
-    unsigned int q027;  // 0x27
-    void* q028;  // 0x28
-    unsigned int q029;  // 0x29
-    BufferIOFileClass* q02A;  // 0x2A
-    void* q02C;  // 0x2C
-    bool q02D;  // 0x2D
-    unsigned char q02E;  // 0x2E
-    unsigned int q02F;  // 0x2F
-    unsigned char q033;  // 0x33
-    unsigned char q034;  // 0x34
-    unsigned char q035;  // 0x35
-    unsigned int q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    void* q040;  // 0x40
-    void* q044;  // 0x44
-    unsigned char q048;  // 0x48
-    void* q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q059;  // 0x59
-    unsigned int q05A;  // 0x5A
-    void* q064;  // 0x64
-    void* q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    unsigned char q074;  // 0x74
-    unsigned char q088;  // 0x88
-    unsigned char q08C;  // 0x8C
-    unsigned int q090;  // 0x90
-    unsigned char q094;  // 0x94
-    void* q100;  // 0x100
-    void* q104;  // 0x104
-    unsigned char q108;  // 0x108
-    unsigned char q118;  // 0x118
-    unsigned char q11C;  // 0x11C
-    unsigned int q144;  // 0x144
-    unsigned char q148;  // 0x148
-    unsigned char q154;  // 0x154
-    unsigned char q158;  // 0x158
-    unsigned char q1D8;  // 0x1D8
-    unsigned char q1DC;  // 0x1DC
-    unsigned char q280;  // 0x280
-    unsigned char q284;  // 0x284
-    unsigned char q298;  // 0x298
-    unsigned char q29C;  // 0x29C
-    unsigned char q2A4;  // 0x2A4
-    unsigned char q2A8;  // 0x2A8
-    unsigned char q310;  // 0x310
-    unsigned char q314;  // 0x314
-    unsigned int q324;  // 0x324
-    static double Destructor(...);  // C2039/C3861 interim stub
-    static double InitLinkedList(...);  // C2039/C3861 interim stub
-    static double IsBuffering(...);  // C2039/C3861 interim stub
 };
 
 struct AudioSource {
     void* vfptr;
     unsigned char q000;  // 0x0
-    void* q004;  // 0x4
-    void* q008;  // 0x8
-    static double Get(...);  // C2039/C3861 interim stub
 };
 
 struct AudioTimer {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double DecrementAll(...);  // C2039/C3861 interim stub
 };
 
 struct BTree {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_10;  // 0x10
-    static double DeleteSubtree(...);  // C2039/C3861 interim stub
 };
 
 struct BaseNodeClass {
@@ -538,10 +301,6 @@ struct BaseNodeClass {
     bool placed;  // 0x8
     char attempts[4];  // 0xC
     unsigned int q00D;  // 0xD
-    unsigned int q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned int q024;  // 0x24
-    static double Vector_Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct BigInt {
@@ -550,25 +309,11 @@ struct BigInt {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned int u32_200;  // 0x200
-    static double DecryptBlock(...);  // C2039/C3861 interim stub
-    static double RSAOperation(...);  // C2039/C3861 interim stub
 };
 
 struct BitArray {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double TestBit(...);  // C2039/C3861 interim stub
 };
 
 struct BufferIO {
@@ -576,35 +321,11 @@ struct BufferIO {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q018;  // 0x18
-    unsigned char q024;  // 0x24
-    void* q060;  // 0x60
-    unsigned char q064;  // 0x64
-    unsigned char q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    unsigned char q078;  // 0x78
-    unsigned char q07C;  // 0x7C
-    unsigned char q108;  // 0x108
-    unsigned char q10C;  // 0x10C
-    void* q150;  // 0x150
-    unsigned char q154;  // 0x154
-    unsigned char q158;  // 0x158
-    unsigned char q1BC;  // 0x1BC
-    unsigned char q1C0;  // 0x1C0
-    unsigned char q258;  // 0x258
-    unsigned char q25C;  // 0x25C
-    unsigned char q288;  // 0x288
-    unsigned char q28C;  // 0x28C
-    unsigned char q324;  // 0x324
-    static double Cleanup(...);  // C2039/C3861 interim stub
-    static double Flush(...);  // C2039/C3861 interim stub
 };
 
 struct BuildingLightQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double RemoveEntry(...);  // C2039/C3861 interim stub
 };
 
 struct BuildingLoadQueue {
@@ -613,37 +334,11 @@ struct BuildingLoadQueue {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q034;  // 0x34
-    static double Find(...);  // C2039/C3861 interim stub
-    static double FindBuilding(...);  // C2039/C3861 interim stub
 };
 
 struct ButtonClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    void* q05C;  // 0x5C
-    unsigned char q060;  // 0x60
-    unsigned char q064;  // 0x64
-    unsigned char q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q0C8;  // 0xC8
-    unsigned char q0CC;  // 0xCC
-    unsigned char q0D0;  // 0xD0
-    unsigned char q100;  // 0x100
-    unsigned char q104;  // 0x104
-    unsigned char q150;  // 0x150
-    unsigned char q154;  // 0x154
-    unsigned char q200;  // 0x200
-    static double SetState(...);  // C2039/C3861 interim stub
 };
 
 struct CampaignScore {
@@ -657,62 +352,6 @@ struct CampaignScore {
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q060;  // 0x60
-    unsigned char q064;  // 0x64
-    unsigned char q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q074;  // 0x74
-    unsigned char q078;  // 0x78
-    unsigned char q080;  // 0x80
-    unsigned char q084;  // 0x84
-    unsigned char q088;  // 0x88
-    unsigned char q100;  // 0x100
-    unsigned char q104;  // 0x104
-    unsigned char q108;  // 0x108
-    unsigned char q128;  // 0x128
-    unsigned char q12C;  // 0x12C
-    unsigned char q130;  // 0x130
-    unsigned char q134;  // 0x134
-    unsigned char q138;  // 0x138
-    void* q34B8;  // 0x34B8
-    unsigned char q34BC;  // 0x34BC
-    unsigned char q13500;  // 0x13500
-    void* q78998;  // 0x78998
-    unsigned char q79104;  // 0x79104
-    void* q89E000;  // 0x89E000
-    unsigned char q89E004;  // 0x89E004
-    unsigned char q8AE044;  // 0x8AE044
-    unsigned char q8AE048;  // 0x8AE048
-    unsigned char q913C48;  // 0x913C48
-    unsigned char q913C4C;  // 0x913C4C
-    unsigned char q9101380;  // 0x9101380
-    unsigned char q9101384;  // 0x9101384
-    unsigned char q11C39C80;  // 0x11C39C80
-    unsigned char q11C39C84;  // 0x11C39C84
-    unsigned char q1512DF54C;  // 0x1512DF54C
-    unsigned char q1512DF550;  // 0x1512DF550
-    unsigned char q15A7CFC44;  // 0x15A7CFC44
-    unsigned char q15A7CFC48;  // 0x15A7CFC48
-    unsigned char q294161074;  // 0x294161074
-    unsigned char q294161078;  // 0x294161078
-    unsigned char q3D3AEBF04;  // 0x3D3AEBF04
-    unsigned char q3D3AEBF08;  // 0x3D3AEBF08
-    void* q5656099138;  // 0x5656099138
-    static double __pad_08C(...);  // C2039/C3861 interim stub
 };
 
 struct CaptureManager {
@@ -722,36 +361,21 @@ struct CaptureManager {
     unsigned int q064;  // 0x64
     unsigned int q100;  // 0x100
     unsigned int q130;  // 0x130
-    static double FreeAll(...);  // C2039/C3861 interim stub
 };
 
 struct Char {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_104;  // 0x104
-    static double Swap(...);  // C2039/C3861 interim stub
 };
 
 struct ChatEvent {
     void* vfptr;
     unsigned char q000;  // 0x0
-    void* q004;  // 0x4
-    void* q008;  // 0x8
-    void* q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    void* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    void* q024;  // 0x24
-    static double ProcessStrings(...);  // C2039/C3861 interim stub
 };
 
 struct Checksum {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double AddString(...);  // C2039/C3861 interim stub
 };
 
 struct Checksummer {
@@ -760,31 +384,17 @@ struct Checksummer {
     unsigned int bytePos;  // 0x4
     unsigned int state;  // 0x8
     unsigned char buffer;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q034;  // 0x34
-    static double Add_Buffer(...);  // C2039/C3861 interim stub
-    static double Add_double(...);  // C2039/C3861 interim stub
-    static double Add_float(...);  // C2039/C3861 interim stub
 };
 
 struct Cliff {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double ProcessTransitions(...);  // C2039/C3861 interim stub
 };
 
 struct Conditions {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    static double CheckResult(...);  // C2039/C3861 interim stub
 };
 
 struct Conflict {
@@ -795,38 +405,12 @@ struct Conflict {
     int Outcome;  // 0xC
     unsigned int referenceCount;  // 0x10
     unsigned int q014;  // 0x14
-    unsigned int q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned int q020;  // 0x20
-    unsigned int q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned int q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    unsigned int q050;  // 0x50
-    unsigned int q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q05C;  // 0x5C
-    unsigned char q064;  // 0x64
-    unsigned char q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q074;  // 0x74
-    unsigned char q078;  // 0x78
-    unsigned int q080;  // 0x80
-    static double GetOwnerHouse(...);  // C2039/C3861 interim stub
 };
 
 struct Coord2D {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    static double Add(...);  // C2039/C3861 interim stub
-    static double Sub(...);  // C2039/C3861 interim stub
 };
 
 struct Coord3D {
@@ -834,19 +418,16 @@ struct Coord3D {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
-    static double Set(...);  // C2039/C3861 interim stub
 };
 
 struct CoordList {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double GetBounds(...);  // C2039/C3861 interim stub
 };
 
 struct CountryCombo {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double IDToIndex(...);  // C2039/C3861 interim stub
 };
 
 struct CrateClass {
@@ -854,150 +435,12 @@ struct CrateClass {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q018;  // 0x18
-    unsigned char q024;  // 0x24
-    void* q074;  // 0x74
-    unsigned char q078;  // 0x78
-    unsigned char q120;  // 0x120
-    void* q158;  // 0x158
-    unsigned char q15C;  // 0x15C
-    void* q160;  // 0x160
-    unsigned char q164;  // 0x164
-    void* q21C;  // 0x21C
-    unsigned char q220;  // 0x220
-    void* q278;  // 0x278
-    unsigned char q288;  // 0x288
-    void* q344;  // 0x344
-    unsigned char q348;  // 0x348
-    void* q540;  // 0x540
-    unsigned char q544;  // 0x544
-    unsigned char q648;  // 0x648
-    unsigned char q840;  // 0x840
-    void* q850;  // 0x850
-    unsigned char q854;  // 0x854
-    void* q8E8;  // 0x8E8
-    unsigned char q8EC;  // 0x8EC
-    void* qB40;  // 0xB40
-    unsigned char qB44;  // 0xB44
-    void* qDF8;  // 0xDF8
-    unsigned char qDFC;  // 0xDFC
-    void* qF84;  // 0xF84
-    unsigned char qF88;  // 0xF88
-    void* qFA8;  // 0xFA8
-    unsigned char qFAC;  // 0xFAC
-    void* q1344;  // 0x1344
-    unsigned char q1348;  // 0x1348
-    void* q2128;  // 0x2128
-    void* q2280;  // 0x2280
-    unsigned char q2284;  // 0x2284
-    void* q2880;  // 0x2880
-    unsigned char q2884;  // 0x2884
-    unsigned char q3580;  // 0x3580
-    unsigned char q3584;  // 0x3584
-    unsigned char q3708;  // 0x3708
-    unsigned char q370C;  // 0x370C
-    unsigned char q3710;  // 0x3710
-    unsigned char q3714;  // 0x3714
-    void* q4008;  // 0x4008
-    unsigned char q400C;  // 0x400C
-    unsigned char q4010;  // 0x4010
-    unsigned char q4014;  // 0x4014
-    unsigned char q6524;  // 0x6524
-    unsigned char q6528;  // 0x6528
-    unsigned char q652C;  // 0x652C
-    void* q10368;  // 0x10368
-    unsigned char q1036C;  // 0x1036C
-    unsigned char q10370;  // 0x10370
-    unsigned char q10374;  // 0x10374
-    unsigned char q13690;  // 0x13690
-    unsigned char q13694;  // 0x13694
-    unsigned char q14088;  // 0x14088
-    unsigned char q1408C;  // 0x1408C
-    unsigned char q142F8;  // 0x142F8
-    unsigned char q142FC;  // 0x142FC
-    unsigned char q14710;  // 0x14710
-    unsigned char q14714;  // 0x14714
-    unsigned char q14730;  // 0x14730
-    unsigned char q14734;  // 0x14734
-    unsigned char q14738;  // 0x14738
-    unsigned char q14DB4;  // 0x14DB4
-    unsigned char q14DB8;  // 0x14DB8
-    unsigned char q14DBC;  // 0x14DBC
-    unsigned char q1639C;  // 0x1639C
-    unsigned char q163A0;  // 0x163A0
-    unsigned char q163A4;  // 0x163A4
-    unsigned char q16400;  // 0x16400
-    unsigned char q16404;  // 0x16404
-    unsigned char q18914;  // 0x18914
-    unsigned char q18918;  // 0x18918
-    unsigned char q27BA0;  // 0x27BA0
-    unsigned char q27BA4;  // 0x27BA4
-    unsigned char q34870;  // 0x34870
-    unsigned char q34874;  // 0x34874
-    unsigned char q34AC4;  // 0x34AC4
-    unsigned char q34AC8;  // 0x34AC8
-    unsigned char q3CD44;  // 0x3CD44
-    unsigned char q3CD48;  // 0x3CD48
-    void* q66408;  // 0x66408
-    unsigned char q6640C;  // 0x6640C
-    unsigned char q66410;  // 0x66410
-    unsigned char q66418;  // 0x66418
-    unsigned char q6641C;  // 0x6641C
-    unsigned char q666CC;  // 0x666CC
-    unsigned char q666D0;  // 0x666D0
-    unsigned char q67110;  // 0x67110
-    unsigned char q67114;  // 0x67114
-    unsigned char q69FEC;  // 0x69FEC
-    unsigned char q69FF0;  // 0x69FF0
-    unsigned char q79290;  // 0x79290
-    unsigned char q79294;  // 0x79294
-    unsigned char q7935C;  // 0x7935C
-    unsigned char q79360;  // 0x79360
-    void* q79494;  // 0x79494
-    unsigned char q79498;  // 0x79498
-    unsigned char q7949C;  // 0x7949C
-    unsigned char q79504;  // 0x79504
-    unsigned char q79508;  // 0x79508
-    unsigned char q79510;  // 0x79510
-    unsigned char q79514;  // 0x79514
-    unsigned char q79698;  // 0x79698
-    unsigned char q7969C;  // 0x7969C
-    unsigned char q7A16C;  // 0x7A16C
-    unsigned char q7A170;  // 0x7A170
-    unsigned char q822C0;  // 0x822C0
-    unsigned char q822C4;  // 0x822C4
-    unsigned char q82674;  // 0x82674
-    unsigned char q82678;  // 0x82678
-    unsigned char q82A88;  // 0x82A88
-    unsigned char q82A8C;  // 0x82A8C
-    void* q83718;  // 0x83718
-    unsigned char q8371C;  // 0x8371C
-    unsigned char q83720;  // 0x83720
-    unsigned char q83728;  // 0x83728
-    unsigned char q8372C;  // 0x8372C
-    unsigned char q83748;  // 0x83748
-    unsigned char q8374C;  // 0x8374C
-    unsigned char q83760;  // 0x83760
-    unsigned char q83764;  // 0x83764
-    unsigned char q83778;  // 0x83778
-    unsigned char q8377C;  // 0x8377C
-    unsigned char q85428;  // 0x85428
-    unsigned char q8542C;  // 0x8542C
-    unsigned char q91030;  // 0x91030
-    unsigned char q91034;  // 0x91034
-    unsigned char q9109C;  // 0x9109C
-    unsigned char q910A0;  // 0x910A0
-    unsigned char q91138;  // 0x91138
-    static double ProcessPickup(...);  // C2039/C3861 interim stub
 };
 
 struct DListNode {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    void* q008;  // 0x8
-    static double InitEmpty(...);  // C2039/C3861 interim stub
 };
 
 struct DeleteAndZero {
@@ -1005,15 +448,11 @@ struct DeleteAndZero {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
-    static double Alt(...);  // C2039/C3861 interim stub
-    static double Alt2(...);  // C2039/C3861 interim stub
-    static double OrFree(...);  // C2039/C3861 interim stub
 };
 
 struct DiskSpace {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double CheckAvailable(...);  // C2039/C3861 interim stub
 };
 
 struct DynamicArray {
@@ -1023,30 +462,11 @@ struct DynamicArray {
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned int u32_2588;  // 0x2588
-    static double Remove(...);  // C2039/C3861 interim stub
-    static double Resize(...);  // C2039/C3861 interim stub
 };
 
 struct DynamicVectorArray {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct FacingClass {
@@ -1056,51 +476,11 @@ struct FacingClass {
     char RotationTimer[12];  // 0x8
     void* q010;  // 0x10
     unsigned int ROT;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned int q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    void* q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    unsigned int q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q05C;  // 0x5C
-    unsigned char q060;  // 0x60
-    unsigned char q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q074;  // 0x74
-    unsigned char q078;  // 0x78
-    unsigned int q080;  // 0x80
-    static double Set_SyncLog(...);  // C2039/C3861 interim stub
-    static double Update(...);  // C2039/C3861 interim stub
 };
 
 struct Field {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    void* q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    void* q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q074;  // 0x74
-    unsigned char q078;  // 0x78
-    void* q080;  // 0x80
-    static double Int_Set(...);  // C2039/C3861 interim stub
 };
 
 struct FileExtension {
@@ -1110,17 +490,6 @@ struct FileExtension {
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char u8_D;  // 0xD
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q034;  // 0x34
-    static double Constructor(...);  // C2039/C3861 interim stub
-    static double MapHandler(...);  // C2039/C3861 interim stub
 };
 
 struct FileFind {
@@ -1129,68 +498,22 @@ struct FileFind {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
-    CampaignClass* q010;  // 0x10
-    CampaignClass* q014;  // 0x14
-    CampaignClass* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    CampaignClass* q020;  // 0x20
-    CampaignClass* q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    CampaignClass* q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    CampaignClass* q050;  // 0x50
-    CampaignClass* q054;  // 0x54
-    static double Close(...);  // C2039/C3861 interim stub
-    static double CloseHandle(...);  // C2039/C3861 interim stub
-    static double Next(...);  // C2039/C3861 interim stub
 };
 
 struct FileStraw {
     void* vfptr;
     void* vtable1;  // 0x0
     unsigned char q004;  // 0x4
-    void* q008;  // 0x8
-    void* q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    BlowStraw* q014;  // 0x14
-    void* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    BlowStraw* q020;  // 0x20
-    void* q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    BlowStraw* q050;  // 0x50
-    static double Destructor(...);  // C2039/C3861 interim stub
-    static double Open(...);  // C2039/C3861 interim stub
 };
 
 struct FileTree {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double CleanupAll(...);  // C2039/C3861 interim stub
 };
 
 struct FileTreeNode {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_C;  // 0xC
-    unsigned int u32_10;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned int u32_18;  // 0x18
-    unsigned int u32_1C;  // 0x1C
-    static double Destroy(...);  // C2039/C3861 interim stub
 };
 
 struct Flag {
@@ -1198,36 +521,12 @@ struct Flag {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    void* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    void* q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    void* q054;  // 0x54
-    static double IsNot2(...);  // C2039/C3861 interim stub
-    static double IsZero(...);  // C2039/C3861 interim stub
 };
 
 struct Float4 {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    void* q008;  // 0x8
-    void* q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    void* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    void* q024;  // 0x24
-    static double Copy(...);  // C2039/C3861 interim stub
 };
 
 struct FontClass {
@@ -1238,153 +537,23 @@ struct FontClass {
     unsigned char q00C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned char q014;  // 0x14
-    void* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    void* q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned int q034;  // 0x34
-    unsigned char q040;  // 0x40
-    unsigned char q050;  // 0x50
-    void* q054;  // 0x54
-    unsigned char q064;  // 0x64
-    unsigned char q080;  // 0x80
-    unsigned char q304;  // 0x304
-    unsigned int q308;  // 0x308
-    unsigned int q30A;  // 0x30A
-    unsigned int q30C;  // 0x30C
-    unsigned int q310;  // 0x310
-    unsigned int q314;  // 0x314
-    unsigned int q318;  // 0x318
-    unsigned int q31C;  // 0x31C
-    unsigned int q320;  // 0x320
-    unsigned int q324;  // 0x324
-    unsigned int q328;  // 0x328
-    unsigned int q32C;  // 0x32C
-    unsigned int q330;  // 0x330
-    unsigned int q334;  // 0x334
-    unsigned int q338;  // 0x338
-    unsigned char q33C;  // 0x33C
-    unsigned char q340;  // 0x340
-    unsigned char q344;  // 0x344
-    unsigned char q34C;  // 0x34C
-    unsigned char q350;  // 0x350
-    unsigned int q778;  // 0x778
-    unsigned char q77C;  // 0x77C
-    unsigned int q780;  // 0x780
-    unsigned int q784;  // 0x784
-    unsigned int q788;  // 0x788
-    unsigned char q78C;  // 0x78C
-    unsigned char q790;  // 0x790
-    unsigned char q794;  // 0x794
-    unsigned int q800;  // 0x800
-    unsigned int q804;  // 0x804
-    unsigned int q808;  // 0x808
-    unsigned char q80C;  // 0x80C
-    unsigned char q810;  // 0x810
-    unsigned char q814;  // 0x814
-    unsigned int q820;  // 0x820
-    unsigned int q824;  // 0x824
-    unsigned char q828;  // 0x828
-    unsigned char q82C;  // 0x82C
-    unsigned char qC64;  // 0xC64
-    unsigned char qC68;  // 0xC68
-    unsigned int q1910;  // 0x1910
-    unsigned char q1914;  // 0x1914
-    unsigned int q1920;  // 0x1920
-    unsigned int q1924;  // 0x1924
-    unsigned int q1928;  // 0x1928
-    unsigned char q192C;  // 0x192C
-    unsigned char q1930;  // 0x1930
-    unsigned char q1934;  // 0x1934
-    unsigned int q1938;  // 0x1938
-    unsigned char q193C;  // 0x193C
-    unsigned char q1940;  // 0x1940
-    unsigned char q1944;  // 0x1944
-    unsigned char q19AC;  // 0x19AC
-    unsigned char q19B0;  // 0x19B0
-    unsigned char q19B4;  // 0x19B4
-    unsigned int q2048;  // 0x2048
-    unsigned char q204C;  // 0x204C
-    unsigned char q2050;  // 0x2050
-    unsigned char q2054;  // 0x2054
-    unsigned char q2060;  // 0x2060
-    unsigned char q2064;  // 0x2064
-    unsigned char q2068;  // 0x2068
-    unsigned int q2070;  // 0x2070
-    unsigned char q2074;  // 0x2074
-    unsigned char q2078;  // 0x2078
-    unsigned int q2080;  // 0x2080
-    unsigned int q2084;  // 0x2084
-    unsigned char q2088;  // 0x2088
-    unsigned char q208C;  // 0x208C
-    unsigned char q6410;  // 0x6410
-    unsigned char q6414;  // 0x6414
-    unsigned int q6418;  // 0x6418
-    unsigned char q641C;  // 0x641C
-    unsigned char q6420;  // 0x6420
-    unsigned char q642C;  // 0x642C
-    unsigned char q6430;  // 0x6430
-    unsigned int q6440;  // 0x6440
-    unsigned char q6444;  // 0x6444
-    unsigned char q6448;  // 0x6448
-    unsigned char q6450;  // 0x6450
-    unsigned char q6454;  // 0x6454
-    unsigned char q6460;  // 0x6460
-    unsigned char q6464;  // 0x6464
-    unsigned char q6470;  // 0x6470
-    unsigned char q6474;  // 0x6474
-    unsigned int q8264;  // 0x8264
-    unsigned char q8268;  // 0x8268
-    unsigned char q826C;  // 0x826C
-    unsigned int q8274;  // 0x8274
-    unsigned int q8278;  // 0x8278
-    unsigned char q827C;  // 0x827C
-    unsigned char q8280;  // 0x8280
-    unsigned char q8288;  // 0x8288
-    unsigned char q828C;  // 0x828C
-    unsigned int q8294;  // 0x8294
-    unsigned char q8298;  // 0x8298
-    unsigned char q829C;  // 0x829C
-    unsigned int q8304;  // 0x8304
-    unsigned char q8308;  // 0x8308
-    unsigned char q830C;  // 0x830C
-    unsigned char q8314;  // 0x8314
-    unsigned char q8318;  // 0x8318
-    unsigned int q8320;  // 0x8320
-    unsigned int q8324;  // 0x8324
-    static double InitMetrics(...);  // C2039/C3861 interim stub
-    static double RenderGlyph(...);  // C2039/C3861 interim stub
 };
 
 struct FontRenderer {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    static double DrawTextA(...);  // C2039/C3861 interim stub
-    static double InitContext(...);  // C2039/C3861 interim stub
 };
 
 struct FractalNoise {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int q8001;  // 0x8001
-    static double Dtor(...);  // C2039/C3861 interim stub
 };
 
 struct FrameSnapshot {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    bool q00A;  // 0xA
-    bool q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q020;  // 0x20
-    static double Init(...);  // C2039/C3861 interim stub
-    static double InitMax(...);  // C2039/C3861 interim stub
 };
 
 struct GameOptions {
@@ -1393,148 +562,21 @@ struct GameOptions {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q018;  // 0x18
-    unsigned char q024;  // 0x24
-    void* q030;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    void* q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    unsigned char q084;  // 0x84
-    unsigned char q088;  // 0x88
-    void* q114;  // 0x114
-    static double SaveLoad(...);  // C2039/C3861 interim stub
 };
 
 struct GameResult {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double CalcScore(...);  // C2039/C3861 interim stub
 };
 
 struct GameScreen {
     void* vfptr;
     CampaignClass* q000;  // 0x0
-    unsigned char q004;  // 0x4
-    void* q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q018;  // 0x18
-    unsigned char q024;  // 0x24
-    void* q064;  // 0x64
-    unsigned char q068;  // 0x68
-    unsigned char q0D1;  // 0xD1
-    void* q0F0;  // 0xF0
-    unsigned char q0F4;  // 0xF4
-    void* q100;  // 0x100
-    unsigned char q104;  // 0x104
-    void* q204;  // 0x204
-    unsigned char q208;  // 0x208
-    unsigned char q228;  // 0x228
-    unsigned char q22C;  // 0x22C
-    unsigned char q230;  // 0x230
-    unsigned char q234;  // 0x234
-    void* q240;  // 0x240
-    unsigned char q244;  // 0x244
-    unsigned char q248;  // 0x248
-    unsigned char q260;  // 0x260
-    unsigned char q264;  // 0x264
-    unsigned char q354;  // 0x354
-    unsigned char q358;  // 0x358
-    unsigned char q35C;  // 0x35C
-    unsigned char q360;  // 0x360
-    unsigned char q540;  // 0x540
-    unsigned char q544;  // 0x544
-    unsigned char q548;  // 0x548
-    unsigned char q580;  // 0x580
-    unsigned char q584;  // 0x584
-    void* q598;  // 0x598
-    unsigned char q59C;  // 0x59C
-    unsigned char q608;  // 0x608
-    unsigned char q60C;  // 0x60C
-    unsigned char q690;  // 0x690
-    unsigned char q694;  // 0x694
-    unsigned char q698;  // 0x698
-    unsigned char qA14;  // 0xA14
-    unsigned char qA18;  // 0xA18
-    unsigned char qA1C;  // 0xA1C
-    unsigned char q1344;  // 0x1344
-    unsigned char q1348;  // 0x1348
-    void* q1398;  // 0x1398
-    unsigned char q139C;  // 0x139C
-    unsigned char q13A0;  // 0x13A0
-    unsigned char q1408;  // 0x1408
-    unsigned char q140C;  // 0x140C
-    unsigned char q1518;  // 0x1518
-    unsigned char q151C;  // 0x151C
-    unsigned char q1680;  // 0x1680
-    unsigned char q1684;  // 0x1684
-    unsigned char q2130;  // 0x2130
-    unsigned char q2134;  // 0x2134
-    unsigned char q2580;  // 0x2580
-    static double DlgProc(...);  // C2039/C3861 interim stub
 };
 
 struct GameState {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    bool q062;  // 0x62
-    bool q063;  // 0x63
-    unsigned char q067;  // 0x67
-    bool q098;  // 0x98
-    unsigned int q0C3;  // 0xC3
-    unsigned char q0C7;  // 0xC7
-    unsigned char q0F6;  // 0xF6
-    void* q0F7;  // 0xF7
-    void* q0F8;  // 0xF8
-    unsigned int q0F9;  // 0xF9
-    void* q0FA;  // 0xFA
-    unsigned char q0FB;  // 0xFB
-    unsigned char q0FC;  // 0xFC
-    unsigned char q100;  // 0x100
-    unsigned char q104;  // 0x104
-    unsigned char q1C8;  // 0x1C8
-    unsigned char q1CC;  // 0x1CC
-    unsigned char q1D0;  // 0x1D0
-    unsigned char q1D4;  // 0x1D4
-    void* q248;  // 0x248
-    unsigned char q24C;  // 0x24C
-    void* q250;  // 0x250
-    unsigned char q254;  // 0x254
-    bool q338;  // 0x338
-    unsigned char q33C;  // 0x33C
-    unsigned char q438;  // 0x438
-    unsigned char q43C;  // 0x43C
-    unsigned char q440;  // 0x440
-    unsigned char q460;  // 0x460
-    unsigned char q464;  // 0x464
-    unsigned char q4D4;  // 0x4D4
-    unsigned char q4D8;  // 0x4D8
-    void* q584;  // 0x584
-    unsigned char q588;  // 0x588
-    unsigned char q58C;  // 0x58C
-    unsigned char q590;  // 0x590
-    unsigned char q594;  // 0x594
-    unsigned char q598;  // 0x598
-    unsigned char q59C;  // 0x59C
-    unsigned char q1080;  // 0x1080
-    unsigned char q1084;  // 0x1084
-    unsigned char q1110;  // 0x1110
-    unsigned char q1114;  // 0x1114
-    unsigned char q12E4;  // 0x12E4
-    unsigned char q12E8;  // 0x12E8
-    unsigned char q1410;  // 0x1410
-    unsigned char q1414;  // 0x1414
-    unsigned char q1420;  // 0x1420
-    unsigned char q1424;  // 0x1424
-    unsigned char q1428;  // 0x1428
-    static double Reset(...);  // C2039/C3861 interim stub
 };
 
 struct Gap2Recv_402F60 {
@@ -1815,24 +857,6 @@ struct Gap2Recv_4048B0 {
 struct GenericList {
     void* vfptr;
     void* vtable1;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned int q00C;  // 0xC
-    unsigned int u32_10;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned int q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q050;  // 0x50
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct Hash {
@@ -1840,9 +864,6 @@ struct Hash {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
-    static double ComputeHashSHA1(...);  // C2039/C3861 interim stub
-    static double InsertOrdered(...);  // C2039/C3861 interim stub
-    static double Reset(...);  // C2039/C3861 interim stub
 };
 
 struct HashMap {
@@ -1851,63 +872,36 @@ struct HashMap {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q034;  // 0x34
-    static double Shrink(...);  // C2039/C3861 interim stub
-    static double Shrink2(...);  // C2039/C3861 interim stub
 };
 
 struct HashTree {
     void* vfptr;
     unsigned char q000;  // 0x0
-    void* q004;  // 0x4
-    void* q008;  // 0x8
-    void* q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    void* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    void* q024;  // 0x24
-    static double MarkEntry(...);  // C2039/C3861 interim stub
 };
 
 struct HashVector_UInt {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Construct(...);  // C2039/C3861 interim stub
 };
 
 struct Heap {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    void* q008;  // 0x8
-    static double SiftDown(...);  // C2039/C3861 interim stub
 };
 
 struct IDXContainer {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double LoadSample(...);  // C2039/C3861 interim stub
+};
+
+struct ILocomotion {
+    void* vfptr;
+    unsigned char q000;  // 0x0
 };
 
 struct INISectionList {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_C;  // 0xC
-    unsigned int u32_10;  // 0x10
-    unsigned int u32_14;  // 0x14
-    unsigned int u32_18;  // 0x18
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct InputManager_ProcessEvents {
@@ -1917,96 +911,50 @@ struct InputManager_ProcessEvents {
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    unsigned char q054;  // 0x54
-    static double Vtable(...);  // C2039/C3861 interim stub
 };
 
 struct Int4 {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    void* q008;  // 0x8
-    void* q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    void* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    void* q024;  // 0x24
-    static double Set(...);  // C2039/C3861 interim stub
+};
+
+struct IntDynamicVector {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
 };
 
 struct IntVector {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    static double Copy(...);  // C2039/C3861 interim stub
 };
 
 struct IsRandMap {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned int q06A;  // 0x6A
-    unsigned int q06D;  // 0x6D
-    unsigned char q071;  // 0x71
-    unsigned int q610;  // 0x610
-    unsigned int qA13;  // 0xA13
-    static double Sed(...);  // C2039/C3861 interim stub
-    static double Sed2(...);  // C2039/C3861 interim stub
 };
 
 struct KeyValuePair {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Init(...);  // C2039/C3861 interim stub
 };
 
 struct KeywordClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double FindOrCreate(...);  // C2039/C3861 interim stub
 };
 
 struct KeywordType {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double FindOrCreate2(...);  // C2039/C3861 interim stub
 };
 
 struct Lightning {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q013;  // 0x13
-    void* q018;  // 0x18
-    unsigned int u32_1C;  // 0x1C
-    unsigned char q020;  // 0x20
-    void* q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned char q03C;  // 0x3C
-    unsigned char q040;  // 0x40
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    void* q054;  // 0x54
-    static double Draw(...);  // C2039/C3861 interim stub
 };
 
 struct ListClass {
@@ -2025,242 +973,11 @@ struct ListClass {
     unsigned int u32_1C;  // 0x1C
     bool q01D;  // 0x1D
     unsigned int q01E;  // 0x1E
-    unsigned int u32_20;  // 0x20
-    unsigned int q024;  // 0x24
-    unsigned int q028;  // 0x28
-    unsigned int q02C;  // 0x2C
-    unsigned int q02D;  // 0x2D
-    unsigned int q030;  // 0x30
-    unsigned char q031;  // 0x31
-    unsigned int q034;  // 0x34
-    CampaignClass* q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned int q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned int q048;  // 0x48
-    bool q04A;  // 0x4A
-    unsigned int q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    unsigned char q054;  // 0x54
-    ControlClass* q058;  // 0x58
-    void* q05B;  // 0x5B
-    unsigned char q05C;  // 0x5C
-    unsigned char q05F;  // 0x5F
-    unsigned char q060;  // 0x60
-    unsigned int q064;  // 0x64
-    unsigned char q068;  // 0x68
-    void* q06C;  // 0x6C
-    unsigned int u32_70;  // 0x70
-    bool q074;  // 0x74
-    unsigned char q078;  // 0x78
-    unsigned char q080;  // 0x80
-    unsigned char q084;  // 0x84
-    ControlClass* q088;  // 0x88
-    unsigned char q08C;  // 0x8C
-    unsigned char q094;  // 0x94
-    unsigned char q098;  // 0x98
-    void* q0B0;  // 0xB0
-    unsigned char q0B4;  // 0xB4
-    ControlClass* q0B8;  // 0xB8
-    unsigned char q0BC;  // 0xBC
-    void* q0C8;  // 0xC8
-    unsigned char q0CC;  // 0xCC
-    void* q0DC;  // 0xDC
-    unsigned char q0E0;  // 0xE0
-    unsigned int q100;  // 0x100
-    unsigned char q104;  // 0x104
-    void* q108;  // 0x108
-    unsigned int q114;  // 0x114
-    GaugeClass* q118;  // 0x118
-    unsigned char q11C;  // 0x11C
-    unsigned char q128;  // 0x128
-    unsigned int q12C;  // 0x12C
-    unsigned char q130;  // 0x130
-    unsigned char q134;  // 0x134
-    unsigned char q138;  // 0x138
-    unsigned char q13C;  // 0x13C
-    unsigned char q140;  // 0x140
-    unsigned int q144;  // 0x144
-    unsigned char q148;  // 0x148
-    unsigned char q14C;  // 0x14C
-    unsigned char q150;  // 0x150
-    unsigned char q154;  // 0x154
-    unsigned char q164;  // 0x164
-    unsigned char q168;  // 0x168
-    unsigned int q170;  // 0x170
-    unsigned char q174;  // 0x174
-    unsigned char q180;  // 0x180
-    ControlClass* q184;  // 0x184
-    unsigned char q188;  // 0x188
-    void* q200;  // 0x200
-    unsigned char q204;  // 0x204
-    void* q220;  // 0x220
-    unsigned char q224;  // 0x224
-    unsigned char q260;  // 0x260
-    void* q264;  // 0x264
-    unsigned int q274;  // 0x274
-    bool q278;  // 0x278
-    GaugeClass* q280;  // 0x280
-    unsigned char q284;  // 0x284
-    unsigned char q290;  // 0x290
-    unsigned int q300;  // 0x300
-    unsigned char q304;  // 0x304
-    unsigned char q308;  // 0x308
-    ControlClass* q310;  // 0x310
-    unsigned char q314;  // 0x314
-    void* q31C;  // 0x31C
-    unsigned char q320;  // 0x320
-    unsigned int q324;  // 0x324
-    unsigned char q328;  // 0x328
-    unsigned char q32C;  // 0x32C
-    unsigned char q344;  // 0x344
-    unsigned char q348;  // 0x348
-    unsigned char q354;  // 0x354
-    unsigned char q358;  // 0x358
-    unsigned int q364;  // 0x364
-    unsigned char q368;  // 0x368
-    unsigned char q36C;  // 0x36C
-    unsigned char q370;  // 0x370
-    void* q374;  // 0x374
-    unsigned char q378;  // 0x378
-    unsigned char q384;  // 0x384
-    ControlClass* q388;  // 0x388
-    unsigned char q38C;  // 0x38C
-    void* q544;  // 0x544
-    unsigned char q548;  // 0x548
-    unsigned char q54C;  // 0x54C
-    unsigned char q550;  // 0x550
-    unsigned int q628;  // 0x628
-    unsigned char q62C;  // 0x62C
-    unsigned char q630;  // 0x630
-    unsigned char q634;  // 0x634
-    GaugeClass* q640;  // 0x640
-    unsigned char q644;  // 0x644
-    unsigned char q648;  // 0x648
-    unsigned char q654;  // 0x654
-    unsigned char q658;  // 0x658
-    unsigned char q65C;  // 0x65C
-    unsigned int q768;  // 0x768
-    unsigned char q76C;  // 0x76C
-    unsigned char q770;  // 0x770
-    unsigned char q774;  // 0x774
-    unsigned char q800;  // 0x800
-    unsigned int q804;  // 0x804
-    unsigned char q808;  // 0x808
-    unsigned char q80C;  // 0x80C
-    unsigned char q818;  // 0x818
-    unsigned char q81C;  // 0x81C
-    unsigned char q844;  // 0x844
-    unsigned char q848;  // 0x848
-    unsigned char q854;  // 0x854
-    unsigned char q858;  // 0x858
-    unsigned int q868;  // 0x868
-    unsigned char q86C;  // 0x86C
-    unsigned char q870;  // 0x870
-    unsigned char q874;  // 0x874
-    unsigned char q880;  // 0x880
-    void* q884;  // 0x884
-    unsigned char q888;  // 0x888
-    unsigned char q900;  // 0x900
-    ControlClass* q904;  // 0x904
-    unsigned char q908;  // 0x908
-    unsigned char q914;  // 0x914
-    unsigned char q918;  // 0x918
-    unsigned char qC40;  // 0xC40
-    unsigned char qC44;  // 0xC44
-    unsigned char qC48;  // 0xC48
-    unsigned char qC4C;  // 0xC4C
-    unsigned char q1124;  // 0x1124
-    unsigned char q1128;  // 0x1128
-    unsigned char q112C;  // 0x112C
-    unsigned char q1130;  // 0x1130
-    unsigned char q1134;  // 0x1134
-    void* q1298;  // 0x1298
-    unsigned char q129C;  // 0x129C
-    void* q1348;  // 0x1348
-    unsigned char q134C;  // 0x134C
-    unsigned char q1580;  // 0x1580
-    unsigned char q1584;  // 0x1584
-    unsigned char q1594;  // 0x1594
-    unsigned char q1598;  // 0x1598
-    GaugeClass* q1600;  // 0x1600
-    unsigned char q1604;  // 0x1604
-    unsigned char q1608;  // 0x1608
-    unsigned char q1614;  // 0x1614
-    unsigned char q1618;  // 0x1618
-    unsigned char q1620;  // 0x1620
-    unsigned char q1624;  // 0x1624
-    unsigned char q1850;  // 0x1850
-    unsigned char q1854;  // 0x1854
-    unsigned char q1900;  // 0x1900
-    unsigned char q1904;  // 0x1904
-    unsigned char q1970;  // 0x1970
-    unsigned char q1974;  // 0x1974
-    unsigned char q2048;  // 0x2048
-    unsigned char q204C;  // 0x204C
-    unsigned char q2134;  // 0x2134
-    unsigned char q2138;  // 0x2138
-    unsigned char q2178;  // 0x2178
-    unsigned char q217C;  // 0x217C
-    unsigned char q2530;  // 0x2530
-    unsigned char q2534;  // 0x2534
-    unsigned char q2538;  // 0x2538
-    unsigned char q3140;  // 0x3140
-    unsigned char q3144;  // 0x3144
-    unsigned char q361C;  // 0x361C
-    unsigned char q3620;  // 0x3620
-    unsigned char q4388;  // 0x4388
-    unsigned char q438C;  // 0x438C
-    unsigned char q4870;  // 0x4870
-    unsigned char q4874;  // 0x4874
-    unsigned char q5410;  // 0x5410
-    unsigned char q5414;  // 0x5414
-    unsigned int q5545;  // 0x5545
-    unsigned int q6214;  // 0x6214
-    unsigned char q6218;  // 0x6218
-    unsigned char q621C;  // 0x621C
-    unsigned char q6224;  // 0x6224
-    unsigned char q6228;  // 0x6228
-    unsigned char q6470;  // 0x6470
-    unsigned char q6474;  // 0x6474
-    unsigned char q8264;  // 0x8264
-    unsigned char q8268;  // 0x8268
-    unsigned char q8470;  // 0x8470
-    unsigned char q8474;  // 0x8474
-    unsigned int q8530;  // 0x8530
-    unsigned char q8534;  // 0x8534
-    unsigned char q8538;  // 0x8538
-    unsigned char q8758;  // 0x8758
-    unsigned char q875C;  // 0x875C
-    unsigned char q9520;  // 0x9520
-    unsigned char q9524;  // 0x9524
-    unsigned char q12598;  // 0x12598
-    unsigned char q1259C;  // 0x1259C
-    unsigned char q12A78;  // 0x12A78
-    unsigned char q12A7C;  // 0x12A7C
-    unsigned char q145B8;  // 0x145B8
-    unsigned char q145BC;  // 0x145BC
-    unsigned char q17288;  // 0x17288
-    unsigned char q1728C;  // 0x1728C
-    unsigned char q17298;  // 0x17298
-    unsigned char q1729C;  // 0x1729C
-    unsigned int q25108;  // 0x25108
-    unsigned char q2510C;  // 0x2510C
-    unsigned char q25124;  // 0x25124
-    unsigned char q25128;  // 0x25128
-    unsigned char q34648;  // 0x34648
-    unsigned char q3464C;  // 0x3464C
-    unsigned char q43178;  // 0x43178
-    static double Construct(...);  // C2039/C3861 interim stub
-    static double Destruct(...);  // C2039/C3861 interim stub
 };
 
 struct Locomotor {
     void* vfptr;
     char Locomotor_field_00[4];  // 0x0
-    unsigned char q004;  // 0x4
-    void* q008;  // 0x8
-    static double GetSpeed(...);  // C2039/C3861 interim stub
 };
 
 struct MPCombatTeam {
@@ -2269,625 +986,28 @@ struct MPCombatTeam {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q034;  // 0x34
-    static double Constructor(...);  // C2039/C3861 interim stub
-    static double Constructor2(...);  // C2039/C3861 interim stub
-    static double MPTeam(...);  // C2039/C3861 interim stub
 };
 
 struct MSChoiceClass {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    static double LoadFromINI(...);  // C2039/C3861 interim stub
 };
 
 struct MapResourceClass {
     void* vfptr;
     IUnknown* q000;  // 0x0
-    MapResourceClass* q004;  // 0x4
-    INIClass* q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    MapClass* q014;  // 0x14
-    unsigned char q015;  // 0x15
-    unsigned int q016;  // 0x16
-    unsigned char q018;  // 0x18
-    char q019[4];  // 0x19
-    unsigned int q01A;  // 0x1A
-    unsigned char q01E;  // 0x1E
-    MapClass* q020;  // 0x20
-    unsigned char q024;  // 0x24
-    ObjectClass* q028;  // 0x28
-    CampaignClass* q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned int q034;  // 0x34
-    RandomMap* q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    ObjectClass* q040;  // 0x40
-    TechnoTypeClass* q044;  // 0x44
-    unsigned char q048;  // 0x48
-    TechnoTypeClass* q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q058;  // 0x58
-    IUnknown* q05C;  // 0x5C
-    TechnoTypeClass* q060;  // 0x60
-    unsigned char q061;  // 0x61
-    ObjectClass* q064;  // 0x64
-    unsigned char q065;  // 0x65
-    unsigned int q066;  // 0x66
-    char q067[4];  // 0x67
-    TechnoTypeClass* q068;  // 0x68
-    unsigned char q06B;  // 0x6B
-    TechnoTypeClass* q06C;  // 0x6C
-    char q06D[4];  // 0x6D
-    unsigned int q06E;  // 0x6E
-    char q06F[4];  // 0x6F
-    TechnoTypeClass* q070;  // 0x70
-    AnimClass* q074;  // 0x74
-    unsigned int q075;  // 0x75
-    CampaignScore* q078;  // 0x78
-    bool q07B;  // 0x7B
-    unsigned int q07D;  // 0x7D
-    unsigned char q080;  // 0x80
-    unsigned int q083;  // 0x83
-    unsigned char q084;  // 0x84
-    unsigned char q088;  // 0x88
-    unsigned int q089;  // 0x89
-    unsigned int q08A;  // 0x8A
-    unsigned int q08B;  // 0x8B
-    unsigned char q08F;  // 0x8F
-    unsigned char q090;  // 0x90
-    unsigned int q091;  // 0x91
-    char q098[4];  // 0x98
-    unsigned int q099;  // 0x99
-    unsigned char q09D;  // 0x9D
-    unsigned int q09E;  // 0x9E
-    unsigned int q09F;  // 0x9F
-    unsigned char q0A3;  // 0xA3
-    unsigned int q0A5;  // 0xA5
-    unsigned int q0A6;  // 0xA6
-    unsigned int q0A7;  // 0xA7
-    unsigned char q0AB;  // 0xAB
-    char q0AC[4];  // 0xAC
-    unsigned int q0AD;  // 0xAD
-    bool q0AE;  // 0xAE
-    unsigned int q0AF;  // 0xAF
-    unsigned char q0B3;  // 0xB3
-    unsigned int q0BF;  // 0xBF
-    bool q0C1;  // 0xC1
-    unsigned int q0C3;  // 0xC3
-    unsigned char q0C7;  // 0xC7
-    ObjectClass* q100;  // 0x100
-    TechnoTypeClass* q104;  // 0x104
-    TechnoTypeClass* q108;  // 0x108
-    unsigned int q110;  // 0x110
-    unsigned char q114;  // 0x114
-    TechnoTypeClass* q118;  // 0x118
-    CampaignScore* q120;  // 0x120
-    unsigned char q128;  // 0x128
-    RandomMap* q134;  // 0x134
-    unsigned int q138;  // 0x138
-    unsigned char q144;  // 0x144
-    TechnoTypeClass* q150;  // 0x150
-    unsigned int q158;  // 0x158
-    bool q174;  // 0x174
-    void* q188;  // 0x188
-    unsigned char q18C;  // 0x18C
-    void* q1A4;  // 0x1A4
-    unsigned char q1A8;  // 0x1A8
-    void* q1C0;  // 0x1C0
-    unsigned char q1C4;  // 0x1C4
-    void* q1DC;  // 0x1DC
-    unsigned char q1E0;  // 0x1E0
-    unsigned int q1F0;  // 0x1F0
-    unsigned char q1F4;  // 0x1F4
-    void* q1F8;  // 0x1F8
-    unsigned char q1FC;  // 0x1FC
-    void* q214;  // 0x214
-    unsigned char q218;  // 0x218
-    void* q230;  // 0x230
-    unsigned char q234;  // 0x234
-    void* q24C;  // 0x24C
-    unsigned char q250;  // 0x250
-    unsigned int q258;  // 0x258
-    TechnoTypeClass* q260;  // 0x260
-    TechnoTypeClass* q264;  // 0x264
-    void* q268;  // 0x268
-    unsigned char q26C;  // 0x26C
-    TechnoTypeClass* q274;  // 0x274
-    AnimClass* q278;  // 0x278
-    TechnoTypeClass* q280;  // 0x280
-    void* q284;  // 0x284
-    unsigned char q288;  // 0x288
-    unsigned char q28C;  // 0x28C
-    unsigned char q290;  // 0x290
-    unsigned char q294;  // 0x294
-    void* q2A0;  // 0x2A0
-    unsigned char q2A4;  // 0x2A4
-    void* q2C4;  // 0x2C4
-    unsigned char q2C8;  // 0x2C8
-    void* q2E0;  // 0x2E0
-    unsigned char q2E4;  // 0x2E4
-    unsigned int u32_2F0;  // 0x2F0
-    unsigned int u32_2F4;  // 0x2F4
-    RandomMap* q308;  // 0x308
-    unsigned char q30C;  // 0x30C
-    unsigned char q310;  // 0x310
-    unsigned char q314;  // 0x314
-    unsigned char q324;  // 0x324
-    unsigned char q328;  // 0x328
-    unsigned char q32C;  // 0x32C
-    unsigned char q330;  // 0x330
-    unsigned char q334;  // 0x334
-    char q338[4];  // 0x338
-    unsigned char q33C;  // 0x33C
-    unsigned int q344;  // 0x344
-    unsigned char q348;  // 0x348
-    unsigned int q358;  // 0x358
-    unsigned char q35C;  // 0x35C
-    char q370[4];  // 0x370
-    unsigned char q374;  // 0x374
-    void* q420;  // 0x420
-    unsigned char q424;  // 0x424
-    unsigned char q428;  // 0x428
-    unsigned char q43C;  // 0x43C
-    unsigned char q440;  // 0x440
-    void* q448;  // 0x448
-    unsigned char q44C;  // 0x44C
-    unsigned char q450;  // 0x450
-    unsigned char q480;  // 0x480
-    unsigned char q484;  // 0x484
-    unsigned char q490;  // 0x490
-    unsigned char q494;  // 0x494
-    unsigned char q500;  // 0x500
-    void* q504;  // 0x504
-    unsigned char q508;  // 0x508
-    unsigned char q50C;  // 0x50C
-    unsigned char q520;  // 0x520
-    unsigned char q524;  // 0x524
-    unsigned char q528;  // 0x528
-    unsigned char q52C;  // 0x52C
-    void* q560;  // 0x560
-    unsigned char q564;  // 0x564
-    unsigned char q568;  // 0x568
-    unsigned char q57C;  // 0x57C
-    unsigned char q580;  // 0x580
-    unsigned char q584;  // 0x584
-    void* q588;  // 0x588
-    unsigned char q58C;  // 0x58C
-    unsigned char q590;  // 0x590
-    unsigned char q594;  // 0x594
-    unsigned int q600;  // 0x600
-    unsigned char q604;  // 0x604
-    unsigned char q620;  // 0x620
-    unsigned char q624;  // 0x624
-    TechnoTypeClass* q628;  // 0x628
-    unsigned char q62C;  // 0x62C
-    unsigned char q638;  // 0x638
-    unsigned char q63C;  // 0x63C
-    unsigned char q640;  // 0x640
-    void* q644;  // 0x644
-    unsigned char q648;  // 0x648
-    unsigned char q64C;  // 0x64C
-    unsigned char q660;  // 0x660
-    unsigned char q664;  // 0x664
-    unsigned char q66C;  // 0x66C
-    unsigned char q670;  // 0x670
-    void* q708;  // 0x708
-    unsigned char q70C;  // 0x70C
-    unsigned char q710;  // 0x710
-    unsigned char q714;  // 0x714
-    unsigned char q740;  // 0x740
-    unsigned char q744;  // 0x744
-    unsigned char q764;  // 0x764
-    unsigned char q768;  // 0x768
-    unsigned char q76C;  // 0x76C
-    unsigned char q770;  // 0x770
-    unsigned char q780;  // 0x780
-    unsigned char q784;  // 0x784
-    unsigned char q788;  // 0x788
-    unsigned char q804;  // 0x804
-    unsigned char q808;  // 0x808
-    unsigned char q80C;  // 0x80C
-    unsigned char q810;  // 0x810
-    char q824[4];  // 0x824
-    unsigned char q828;  // 0x828
-    unsigned char q874;  // 0x874
-    unsigned char q878;  // 0x878
-    char q880[4];  // 0x880
-    unsigned char q884;  // 0x884
-    unsigned char q8A8;  // 0x8A8
-    unsigned char q8AC;  // 0x8AC
-    void* q914;  // 0x914
-    unsigned char q918;  // 0x918
-    unsigned char q91C;  // 0x91C
-    unsigned char q930;  // 0x930
-    unsigned char q934;  // 0x934
-    unsigned char q938;  // 0x938
-    unsigned char q9B4;  // 0x9B4
-    unsigned char q9B8;  // 0x9B8
-    unsigned char q9BC;  // 0x9BC
-    unsigned char q1060;  // 0x1060
-    unsigned char q1064;  // 0x1064
-    unsigned char q1078;  // 0x1078
-    unsigned char q107C;  // 0x107C
-    unsigned char q1084;  // 0x1084
-    unsigned char q1088;  // 0x1088
-    unsigned char q1090;  // 0x1090
-    unsigned char q1094;  // 0x1094
-    unsigned char q10F4;  // 0x10F4
-    unsigned char q10F8;  // 0x10F8
-    unsigned char q1100;  // 0x1100
-    unsigned char q1104;  // 0x1104
-    unsigned char q1130;  // 0x1130
-    unsigned char q1134;  // 0x1134
-    unsigned char q113C;  // 0x113C
-    unsigned char q1140;  // 0x1140
-    unsigned char q1144;  // 0x1144
-    unsigned char q114C;  // 0x114C
-    unsigned char q1150;  // 0x1150
-    unsigned char q1154;  // 0x1154
-    unsigned char q1168;  // 0x1168
-    unsigned char q116C;  // 0x116C
-    unsigned int q1174;  // 0x1174
-    unsigned char q1178;  // 0x1178
-    unsigned char q117C;  // 0x117C
-    unsigned char q125C;  // 0x125C
-    unsigned char q1260;  // 0x1260
-    unsigned char q1280;  // 0x1280
-    void* q1284;  // 0x1284
-    unsigned char q1288;  // 0x1288
-    unsigned char q128C;  // 0x128C
-    unsigned char q12A0;  // 0x12A0
-    unsigned char q12A4;  // 0x12A4
-    unsigned char q12A8;  // 0x12A8
-    unsigned char q1324;  // 0x1324
-    unsigned char q1328;  // 0x1328
-    unsigned char q132C;  // 0x132C
-    void* q1330;  // 0x1330
-    unsigned char q1334;  // 0x1334
-    unsigned char q1338;  // 0x1338
-    unsigned char q134C;  // 0x134C
-    unsigned char q1350;  // 0x1350
-    unsigned char q1354;  // 0x1354
-    unsigned char q1358;  // 0x1358
-    unsigned char q135C;  // 0x135C
-    unsigned char q1380;  // 0x1380
-    unsigned char q1384;  // 0x1384
-    unsigned char q1398;  // 0x1398
-    unsigned char q139C;  // 0x139C
-    unsigned char q13A0;  // 0x13A0
-    unsigned char q1404;  // 0x1404
-    unsigned char q1408;  // 0x1408
-    unsigned char q140C;  // 0x140C
-    unsigned char q1410;  // 0x1410
-    unsigned char q1414;  // 0x1414
-    unsigned char q1418;  // 0x1418
-    unsigned char q1420;  // 0x1420
-    unsigned char q1424;  // 0x1424
-    unsigned char q1428;  // 0x1428
-    unsigned char q1450;  // 0x1450
-    unsigned char q1454;  // 0x1454
-    unsigned char q14BC;  // 0x14BC
-    unsigned char q14C0;  // 0x14C0
-    unsigned char q14C4;  // 0x14C4
-    void* q1558;  // 0x1558
-    unsigned char q155C;  // 0x155C
-    unsigned char q1560;  // 0x1560
-    unsigned char q1564;  // 0x1564
-    unsigned char q1568;  // 0x1568
-    unsigned char q156C;  // 0x156C
-    unsigned char q1580;  // 0x1580
-    unsigned char q1584;  // 0x1584
-    unsigned char q1588;  // 0x1588
-    void* q1604;  // 0x1604
-    unsigned char q1608;  // 0x1608
-    unsigned char q160C;  // 0x160C
-    unsigned char q1618;  // 0x1618
-    unsigned char q161C;  // 0x161C
-    unsigned char q1620;  // 0x1620
-    unsigned char q1624;  // 0x1624
-    unsigned char q162C;  // 0x162C
-    unsigned char q1630;  // 0x1630
-    unsigned char q1638;  // 0x1638
-    unsigned char q163C;  // 0x163C
-    unsigned char q1644;  // 0x1644
-    unsigned char q1648;  // 0x1648
-    unsigned char q164C;  // 0x164C
-    void* q1650;  // 0x1650
-    unsigned char q1654;  // 0x1654
-    unsigned char q1658;  // 0x1658
-    unsigned char q1674;  // 0x1674
-    unsigned char q1678;  // 0x1678
-    unsigned char q167C;  // 0x167C
-    unsigned char q16F8;  // 0x16F8
-    unsigned char q16FC;  // 0x16FC
-    unsigned char q1700;  // 0x1700
-    void* q1800;  // 0x1800
-    unsigned char q1804;  // 0x1804
-    unsigned char q1808;  // 0x1808
-    unsigned char q180C;  // 0x180C
-    unsigned char q1810;  // 0x1810
-    unsigned char q1814;  // 0x1814
-    unsigned char q1828;  // 0x1828
-    unsigned char q182C;  // 0x182C
-    unsigned char q1830;  // 0x1830
-    unsigned char q1834;  // 0x1834
-    unsigned char q1838;  // 0x1838
-    unsigned char q1840;  // 0x1840
-    unsigned char q1844;  // 0x1844
-    unsigned char q1848;  // 0x1848
-    unsigned char q1850;  // 0x1850
-    unsigned char q1854;  // 0x1854
-    unsigned char q18A4;  // 0x18A4
-    unsigned char q18A8;  // 0x18A8
-    unsigned char q18AC;  // 0x18AC
-    RandomMap* q1910;  // 0x1910
-    unsigned char q1914;  // 0x1914
-    unsigned char q1918;  // 0x1918
-    unsigned char q1920;  // 0x1920
-    unsigned char q1924;  // 0x1924
-    unsigned char q2054;  // 0x2054
-    unsigned char q2058;  // 0x2058
-    void* q2324;  // 0x2324
-    unsigned char q2328;  // 0x2328
-    unsigned char q232C;  // 0x232C
-    unsigned char q2340;  // 0x2340
-    unsigned char q2344;  // 0x2344
-    unsigned char q2364;  // 0x2364
-    unsigned char q2368;  // 0x2368
-    unsigned char q2370;  // 0x2370
-    unsigned char q2374;  // 0x2374
-    unsigned char q2484;  // 0x2484
-    unsigned char q2488;  // 0x2488
-    unsigned char q418C;  // 0x418C
-    unsigned char q4190;  // 0x4190
-    unsigned char q4228;  // 0x4228
-    unsigned char q422C;  // 0x422C
-    unsigned char q4234;  // 0x4234
-    unsigned char q4238;  // 0x4238
-    unsigned char q4240;  // 0x4240
-    unsigned char q4244;  // 0x4244
-    unsigned char q4250;  // 0x4250
-    unsigned char q4254;  // 0x4254
-    unsigned char q4358;  // 0x4358
-    unsigned char q435C;  // 0x435C
-    unsigned char q4370;  // 0x4370
-    unsigned char q4374;  // 0x4374
-    unsigned char q4394;  // 0x4394
-    unsigned char q4398;  // 0x4398
-    unsigned char q4400;  // 0x4400
-    unsigned char q4404;  // 0x4404
-    unsigned char q440C;  // 0x440C
-    unsigned char q4410;  // 0x4410
-    void* q4418;  // 0x4418
-    unsigned char q441C;  // 0x441C
-    unsigned char q4420;  // 0x4420
-    unsigned char q4428;  // 0x4428
-    unsigned char q442C;  // 0x442C
-    unsigned char q4434;  // 0x4434
-    unsigned char q4438;  // 0x4438
-    unsigned char q4444;  // 0x4444
-    unsigned char q4448;  // 0x4448
-    unsigned char q4450;  // 0x4450
-    unsigned char q4454;  // 0x4454
-    unsigned char q445C;  // 0x445C
-    unsigned char q4460;  // 0x4460
-    unsigned int q4468;  // 0x4468
-    unsigned char q446C;  // 0x446C
-    unsigned char q4470;  // 0x4470
-    unsigned char q44D8;  // 0x44D8
-    unsigned char q44DC;  // 0x44DC
-    unsigned char q4574;  // 0x4574
-    unsigned char q4578;  // 0x4578
-    void* q4740;  // 0x4740
-    unsigned char q4744;  // 0x4744
-    unsigned char q4748;  // 0x4748
-    unsigned char q475C;  // 0x475C
-    unsigned char q4760;  // 0x4760
-    unsigned char q4768;  // 0x4768
-    unsigned char q476C;  // 0x476C
-    unsigned char q4894;  // 0x4894
-    unsigned char q4898;  // 0x4898
-    unsigned char q4900;  // 0x4900
-    unsigned char q4904;  // 0x4904
-    unsigned char q490C;  // 0x490C
-    unsigned char q4910;  // 0x4910
-    unsigned char q4940;  // 0x4940
-    unsigned char q4944;  // 0x4944
-    unsigned char q494C;  // 0x494C
-    unsigned char q4950;  // 0x4950
-    unsigned char q4964;  // 0x4964
-    unsigned char q4968;  // 0x4968
-    unsigned char q4970;  // 0x4970
-    unsigned char q4974;  // 0x4974
-    unsigned char q497C;  // 0x497C
-    unsigned char q4980;  // 0x4980
-    unsigned char q498C;  // 0x498C
-    unsigned char q4990;  // 0x4990
-    unsigned char q5124;  // 0x5124
-    unsigned char q5128;  // 0x5128
-    unsigned char q5130;  // 0x5130
-    unsigned char q5134;  // 0x5134
-    unsigned char q513C;  // 0x513C
-    unsigned char q5140;  // 0x5140
-    unsigned char q514C;  // 0x514C
-    unsigned char q5150;  // 0x5150
-    unsigned char q5158;  // 0x5158
-    unsigned char q515C;  // 0x515C
-    unsigned char q5170;  // 0x5170
-    unsigned char q5174;  // 0x5174
-    unsigned char q5194;  // 0x5194
-    unsigned char q5198;  // 0x5198
-    unsigned char q5200;  // 0x5200
-    unsigned char q5204;  // 0x5204
-    unsigned char q526C;  // 0x526C
-    unsigned char q5270;  // 0x5270
-    unsigned char q5308;  // 0x5308
-    unsigned char q530C;  // 0x530C
-    unsigned char q53A4;  // 0x53A4
-    unsigned char q53A8;  // 0x53A8
-    void* q5464;  // 0x5464
-    unsigned char q5468;  // 0x5468
-    unsigned char q546C;  // 0x546C
-    unsigned char q5474;  // 0x5474
-    unsigned char q5478;  // 0x5478
-    unsigned char q5480;  // 0x5480
-    unsigned char q5484;  // 0x5484
-    unsigned char q5498;  // 0x5498
-    unsigned char q549C;  // 0x549C
-    unsigned char q5504;  // 0x5504
-    unsigned char q5508;  // 0x5508
-    unsigned char q5534;  // 0x5534
-    unsigned char q5538;  // 0x5538
-    unsigned char q5640;  // 0x5640
-    unsigned char q5644;  // 0x5644
-    unsigned char q5658;  // 0x5658
-    unsigned char q565C;  // 0x565C
-    unsigned char q5664;  // 0x5664
-    unsigned char q5668;  // 0x5668
-    unsigned char q5694;  // 0x5694
-    unsigned char q5698;  // 0x5698
-    unsigned char q5700;  // 0x5700
-    unsigned char q5704;  // 0x5704
-    unsigned char q570C;  // 0x570C
-    unsigned char q5710;  // 0x5710
-    unsigned char q5748;  // 0x5748
-    unsigned char q574C;  // 0x574C
-    unsigned char q57D8;  // 0x57D8
-    unsigned char q57DC;  // 0x57DC
-    unsigned char q5880;  // 0x5880
-    unsigned char q5884;  // 0x5884
-    unsigned char q5988;  // 0x5988
-    unsigned char q598C;  // 0x598C
-    void* q6144;  // 0x6144
-    unsigned char q6148;  // 0x6148
-    unsigned char q614C;  // 0x614C
-    unsigned char q6154;  // 0x6154
-    unsigned char q6158;  // 0x6158
-    unsigned char q6160;  // 0x6160
-    unsigned char q6164;  // 0x6164
-    unsigned char q6178;  // 0x6178
-    unsigned char q617C;  // 0x617C
-    unsigned char q6184;  // 0x6184
-    unsigned char q6188;  // 0x6188
-    unsigned char q6190;  // 0x6190
-    unsigned char q6194;  // 0x6194
-    unsigned char q6208;  // 0x6208
-    unsigned char q620C;  // 0x620C
-    void* q6214;  // 0x6214
-    unsigned char q6218;  // 0x6218
-    unsigned char q621C;  // 0x621C
-    unsigned char q6224;  // 0x6224
-    unsigned char q6228;  // 0x6228
-    unsigned char q6230;  // 0x6230
-    unsigned char q6234;  // 0x6234
-    unsigned char q6254;  // 0x6254
-    unsigned char q6258;  // 0x6258
-    unsigned char q6290;  // 0x6290
-    unsigned char q6294;  // 0x6294
-    unsigned char q6308;  // 0x6308
-    unsigned char q630C;  // 0x630C
-    unsigned char q6374;  // 0x6374
-    static double __tail_0(...);  // C2039/C3861 interim stub
 };
 
 struct Matrix {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    void* q008;  // 0x8
-    bool q00A;  // 0xA
-    bool q00B;  // 0xB
-    void* q00C;  // 0xC
-    bool q010;  // 0x10
-    unsigned char q014;  // 0x14
-    void* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    void* q024;  // 0x24
-    static double Copy12Float(...);  // C2039/C3861 interim stub
-    static double Scale(...);  // C2039/C3861 interim stub
 };
 
 struct Matrix2D {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_10;  // 0x10
-    unsigned int u32_14;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned int u32_24;  // 0x24
-    static double Rotate(...);  // C2039/C3861 interim stub
-};
-
-struct Matrix3D {
-    void* vfptr;
-    unsigned int q004;  // 0x4
-    unsigned int q008;  // 0x8
-    unsigned int q00C;  // 0xC
-    unsigned int q010;  // 0x10
-    unsigned int q014;  // 0x14
-    unsigned int q018;  // 0x18
-    void * q01C;  // 0x1C
-    void * q020;  // 0x20
-    unsigned int q024;  // 0x24
-    unsigned int q028;  // 0x28
-    unsigned int q02C;  // 0x2C
-    unsigned int q034;  // 0x34
-    unsigned int q040;  // 0x40
-    unsigned int q044;  // 0x44
-    void * q050;  // 0x50
-    unsigned int q054;  // 0x54
-    unsigned int q064;  // 0x64
-    unsigned int q068;  // 0x68
-    void * q080;  // 0x80
-    unsigned int q084;  // 0x84
-    unsigned int q100;  // 0x100
-    unsigned int q104;  // 0x104
-    void * q128;  // 0x128
-    unsigned int q130;  // 0x130
-    unsigned int q260;  // 0x260
-    unsigned int q304;  // 0x304
-    unsigned int q598;  // 0x598
-    unsigned int q608;  // 0x608
-    unsigned int q774;  // 0x774
-    unsigned int q1544;  // 0x1544
-    void * q1634;  // 0x1634
-    unsigned int q1908;  // 0x1908
-    unsigned int q5170;  // 0x5170
-    unsigned int q5444;  // 0x5444
-    void * q5684;  // 0x5684
-    unsigned int q6408;  // 0x6408
-    unsigned int q20848;  // 0x20848
-    void * q22148;  // 0x22148
-    unsigned int q25608;  // 0x25608
-    unsigned int q153094;  // 0x153094
-    unsigned int q1257874;  // 0x1257874
-    unsigned int q1271138;  // 0x1271138
-    void * q1283474;  // 0x1283474
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q19232884;  // 0x19232884
-    unsigned int q19337528;  // 0x19337528
-    void * q19412084;  // 0x19412084
-    unsigned int q20481684;  // 0x20481684
-    unsigned int q422802728;  // 0x422802728
-    void * q423698564;  // 0x423698564
-    unsigned int q541595268;  // 0x541595268
-    unsigned int q17758693160;  // 0x17758693160
-    unsigned int q22571209320;  // 0x22571209320
-    unsigned int q1612096024928;  // 0x1612096024928
-    static double Constructor(...);  // C2039/C3861 interim stub
-    static double RotateZ(...);  // C2039/C3861 interim stub
 };
 
 struct Matrix3x3 {
@@ -2899,23 +1019,6 @@ struct Matrix3x3 {
     bool q00B;  // 0xB
     unsigned char q00C;  // 0xC
     unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    bool q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    unsigned char q054;  // 0x54
-    static double Multiply(...);  // C2039/C3861 interim stub
-    static double RotateX(...);  // C2039/C3861 interim stub
-    static double TransformPoint(...);  // C2039/C3861 interim stub
 };
 
 struct MessageListClass {
@@ -2936,157 +1039,11 @@ struct MessageListClass {
     unsigned int q02C;  // 0x2C
     bool IsScrolling;  // 0x30
     unsigned char padding_after_scroll;  // 0x31
-    unsigned int q034;  // 0x34
-    unsigned int q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned int q040;  // 0x40
-    unsigned int q044;  // 0x44
-    bool q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    unsigned int q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q060;  // 0x60
-    unsigned int q064;  // 0x64
-    unsigned int q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    unsigned char q074;  // 0x74
-    unsigned int q080;  // 0x80
-    unsigned char q084;  // 0x84
-    unsigned char q088;  // 0x88
-    unsigned char q090;  // 0x90
-    unsigned char q094;  // 0x94
-    unsigned int q100;  // 0x100
-    unsigned int q104;  // 0x104
-    unsigned char q108;  // 0x108
-    unsigned char q10C;  // 0x10C
-    bool q114;  // 0x114
-    unsigned char q118;  // 0x118
-    unsigned char q11C;  // 0x11C
-    unsigned int q128;  // 0x128
-    unsigned char q12C;  // 0x12C
-    unsigned int q130;  // 0x130
-    unsigned int q134;  // 0x134
-    unsigned char q138;  // 0x138
-    unsigned char q144;  // 0x144
-    unsigned char q148;  // 0x148
-    unsigned char q150;  // 0x150
-    unsigned char q154;  // 0x154
-    unsigned int q16C;  // 0x16C
-    unsigned char q170;  // 0x170
-    unsigned int q260;  // 0x260
-    unsigned char q264;  // 0x264
-    unsigned char q280;  // 0x280
-    unsigned char q290;  // 0x290
-    unsigned int q2B0;  // 0x2B0
-    unsigned int q2B4;  // 0x2B4
-    unsigned int q2B8;  // 0x2B8
-    unsigned int q2BC;  // 0x2BC
-    unsigned int q2C0;  // 0x2C0
-    unsigned int q2C4;  // 0x2C4
-    unsigned char q2C8;  // 0x2C8
-    unsigned char q2CC;  // 0x2CC
-    unsigned char q2D0;  // 0x2D0
-    unsigned char q2D4;  // 0x2D4
-    unsigned char q2D8;  // 0x2D8
-    unsigned int q364;  // 0x364
-    unsigned char q368;  // 0x368
-    unsigned char q36C;  // 0x36C
-    unsigned char q4A8;  // 0x4A8
-    unsigned char q4AC;  // 0x4AC
-    unsigned char q4B0;  // 0x4B0
-    unsigned char q4B4;  // 0x4B4
-    unsigned int q688;  // 0x688
-    unsigned char q68C;  // 0x68C
-    unsigned char q690;  // 0x690
-    unsigned char q694;  // 0x694
-    unsigned int q700;  // 0x700
-    unsigned int q704;  // 0x704
-    unsigned int q708;  // 0x708
-    unsigned char q70C;  // 0x70C
-    unsigned char q710;  // 0x710
-    unsigned char q714;  // 0x714
-    unsigned char q720;  // 0x720
-    unsigned char q724;  // 0x724
-    unsigned int q868;  // 0x868
-    unsigned char q86C;  // 0x86C
-    unsigned int u32_1480;  // 0x1480
-    unsigned char q1484;  // 0x1484
-    unsigned char q1488;  // 0x1488
-    unsigned char q1680;  // 0x1680
-    unsigned char q1684;  // 0x1684
-    unsigned char q1690;  // 0x1690
-    unsigned char q1694;  // 0x1694
-    unsigned int q1800;  // 0x1800
-    unsigned char q1804;  // 0x1804
-    unsigned char q1808;  // 0x1808
-    unsigned char q180C;  // 0x180C
-    unsigned char q1810;  // 0x1810
-    unsigned char q1814;  // 0x1814
-    unsigned char q1818;  // 0x1818
-    unsigned char q29C8;  // 0x29C8
-    unsigned char q29CC;  // 0x29CC
-    unsigned char q29D0;  // 0x29D0
-    unsigned char q4498;  // 0x4498
-    unsigned char q449C;  // 0x449C
-    unsigned char q4678;  // 0x4678
-    unsigned char q467C;  // 0x467C
-    unsigned int q5248;  // 0x5248
-    unsigned char q524C;  // 0x524C
-    unsigned char q5250;  // 0x5250
-    unsigned char q5254;  // 0x5254
-    unsigned char q5750;  // 0x5750
-    unsigned char q5754;  // 0x5754
-    unsigned int q6034;  // 0x6034
-    unsigned int q6038;  // 0x6038
-    unsigned char q603C;  // 0x603C
-    unsigned int q6144;  // 0x6144
-    unsigned char q6148;  // 0x6148
-    unsigned char q614C;  // 0x614C
-    unsigned char q6160;  // 0x6160
-    unsigned char q6164;  // 0x6164
-    unsigned char q9CC4;  // 0x9CC4
-    unsigned char q9CC8;  // 0x9CC8
-    unsigned char q9CCC;  // 0x9CCC
-    unsigned int q21064;  // 0x21064
-    unsigned char q21068;  // 0x21068
-    unsigned char q2106C;  // 0x2106C
-    unsigned char q21074;  // 0x21074
-    unsigned char q21078;  // 0x21078
-    unsigned char q24E38;  // 0x24E38
-    unsigned char q24E3C;  // 0x24E3C
-    unsigned char q24E40;  // 0x24E40
-    unsigned char q25414;  // 0x25414
-    unsigned char q25418;  // 0x25418
-    unsigned char q4E8D4;  // 0x4E8D4
-    unsigned char q4E8D8;  // 0x4E8D8
-    unsigned int q135268;  // 0x135268
-    unsigned char q13526C;  // 0x13526C
-    unsigned char q135270;  // 0x135270
-    unsigned char q135278;  // 0x135278
-    unsigned char q13527C;  // 0x13527C
-    unsigned char q135284;  // 0x135284
-    unsigned char q135288;  // 0x135288
-    unsigned char q139048;  // 0x139048
-    unsigned char q13904C;  // 0x13904C
-    unsigned char q162AE4;  // 0x162AE4
-    unsigned char q162AE8;  // 0x162AE8
-    unsigned char q23B3B4;  // 0x23B3B4
-    unsigned char q23B3B8;  // 0x23B3B8
-    unsigned char q321748;  // 0x321748
-    unsigned char q32174C;  // 0x32174C
-    unsigned char q4080DC;  // 0x4080DC
-    unsigned char q4080E0;  // 0x4080E0
-    unsigned int q1266280;  // 0x1266280
-    static double AddMessage(...);  // C2039/C3861 interim stub
-    static double clearMessages(...);  // C2039/C3861 interim stub
 };
 
 struct Miles {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double DriverGet(...);  // C2039/C3861 interim stub
 };
 
 struct ModemGame {
@@ -3096,199 +1053,91 @@ struct ModemGame {
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    wchar_t* q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    wchar_t* q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    wchar_t* q080;  // 0x80
-    unsigned char q084;  // 0x84
-    unsigned char q088;  // 0x88
-    void* q6AC;  // 0x6AC
-    unsigned char q6B0;  // 0x6B0
-    unsigned char q6DC;  // 0x6DC
-    unsigned char q6E0;  // 0x6E0
-    unsigned char q70C;  // 0x70C
-    unsigned char q710;  // 0x710
-    void* q1708;  // 0x1708
-    unsigned char q170C;  // 0x170C
-    unsigned char q1710;  // 0x1710
-    unsigned char q1714;  // 0x1714
-    unsigned char q2770;  // 0x2770
-    unsigned char q2774;  // 0x2774
-    unsigned char q5900;  // 0x5900
-    unsigned char q5904;  // 0x5904
-    unsigned char q6970;  // 0x6970
-    unsigned char q6974;  // 0x6974
-    unsigned char q131BC;  // 0x131BC
-    unsigned char q131C0;  // 0x131C0
-    void* q22678;  // 0x22678
-    static double AdvanceTauntCommand(...);  // C2039/C3861 interim stub
 };
 
 struct MovieContext {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_45;  // 0x45
-    unsigned int u32_48;  // 0x48
-    static double Cleanup(...);  // C2039/C3861 interim stub
 };
 
 struct Multiplay {
     void* vfptr;
     unsigned char q000;  // 0x0
-    void* q004;  // 0x4
-    void* q008;  // 0x8
-    static double LogToSYNC_NOMPDEBUG(...);  // C2039/C3861 interim stub
 };
 
 struct MultiplayerConfig {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Cleanup(...);  // C2039/C3861 interim stub
 };
 
 struct NetMessage {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    static double Pack4(...);  // C2039/C3861 interim stub
 };
 
 struct NetworkEventQueueClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double WaitForResponse(...);  // C2039/C3861 interim stub
 };
 
 struct NetworkID {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    static double Assign(...);  // C2039/C3861 interim stub
-    static double Compare(...);  // C2039/C3861 interim stub
 };
 
 struct NetworkSettings {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double DlgProc(...);  // C2039/C3861 interim stub
 };
 
 struct ObjectPlacement {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    void* q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q018;  // 0x18
-    unsigned char q024;  // 0x24
-    unsigned int u32_49;  // 0x49
-    unsigned int u32_4A;  // 0x4A
-    unsigned int u32_124;  // 0x124
-    unsigned int u32_128;  // 0x128
-    static double CalcPosition(...);  // C2039/C3861 interim stub
 };
 
 struct ObjectPtr {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double RegisterForTracking(...);  // C2039/C3861 interim stub
 };
 
 struct OptionQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double PushEntry(...);  // C2039/C3861 interim stub
 };
 
 struct OwnerDrawControl {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned int u32_10;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned int q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q050;  // 0x50
-    static double InitVtable(...);  // C2039/C3861 interim stub
 };
 
 struct PacketQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    bool q00A;  // 0xA
-    unsigned char q00C;  // 0xC
-    bool q00D;  // 0xD
-    bool q00E;  // 0xE
-    bool q010;  // 0x10
-    bool q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    bool q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    static double ExtractEntry(...);  // C2039/C3861 interim stub
-    static double ReleaseEntry(...);  // C2039/C3861 interim stub
 };
 
 struct PaletteManager {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Load(...);  // C2039/C3861 interim stub
 };
 
 struct Performance {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    void* q008;  // 0x8
-    void* q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    void* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    void* q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q034;  // 0x34
-    static double Profile(...);  // C2039/C3861 interim stub
 };
 
 struct PhoneEditor {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double PopulateList(...);  // C2039/C3861 interim stub
 };
 
 struct PingPongBuffer {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double GetWriteOffset(...);  // C2039/C3861 interim stub
 };
 
 struct Pipe {
@@ -3301,179 +1150,48 @@ struct Pipe {
     unsigned char q00C;  // 0xC
     bool q00D;  // 0xD
     bool q00E;  // 0xE
-    bool q010;  // 0x10
-    bool q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    bool q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    bool q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    bool q050;  // 0x50
-    static double Dtor(...);  // C2039/C3861 interim stub
 };
 
 struct PreviewClass {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned int u32_112C;  // 0x112C
-    unsigned int u32_1130;  // 0x1130
-    unsigned int u32_1134;  // 0x1134
-    unsigned int u32_1138;  // 0x1138
-    unsigned int u32_113C;  // 0x113C
-    unsigned char q1140;  // 0x1140
-    unsigned int u32_11E4;  // 0x11E4
-    static double ReadPreview(...);  // C2039/C3861 interim stub
 };
 
 struct PriorityQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    void* q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned char q018;  // 0x18
-    void* q020;  // 0x20
-    unsigned char q024;  // 0x24
-    void* q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
-    void* q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    void* q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q05C;  // 0x5C
-    void* q064;  // 0x64
-    unsigned char q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q074;  // 0x74
-    unsigned char q078;  // 0x78
-    void* q080;  // 0x80
-    unsigned char q084;  // 0x84
-    unsigned char q088;  // 0x88
-    unsigned char q08C;  // 0x8C
-    unsigned char q094;  // 0x94
-    unsigned char q098;  // 0x98
-    void* q100;  // 0x100
-    static double Add(...);  // C2039/C3861 interim stub
 };
 
 struct ProductionClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    void* q004;  // 0x4
-    void* q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    unsigned int u32_24;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned int u32_34;  // 0x34
-    unsigned int u32_38;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned int u32_60;  // 0x60
-    unsigned char q064;  // 0x64
-    unsigned int u32_68;  // 0x68
-    unsigned int u32_6C;  // 0x6C
-    unsigned int u32_70;  // 0x70
-    unsigned int u32_71;  // 0x71
-    static double StartTimer(...);  // C2039/C3861 interim stub
 };
 
 struct ProgressAnim {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Init(...);  // C2039/C3861 interim stub
 };
 
 struct Property {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    void* q024;  // 0x24
-    unsigned char q028;  // 0x28
-    void* q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q040;  // 0x40
-    void* q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    void* q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q05C;  // 0x5C
-    unsigned char q064;  // 0x64
-    void* q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    unsigned char q078;  // 0x78
-    unsigned char q07C;  // 0x7C
-    void* q084;  // 0x84
-    unsigned char q088;  // 0x88
-    unsigned char q08C;  // 0x8C
-    unsigned char q094;  // 0x94
-    unsigned char q098;  // 0x98
-    unsigned char q100;  // 0x100
-    void* q104;  // 0x104
-    static double GetField11(...);  // C2039/C3861 interim stub
-    static double Set(...);  // C2039/C3861 interim stub
 };
 
 struct PtrVector {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Destroy(...);  // C2039/C3861 interim stub
 };
 
 struct PushCommandClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    void* q00C;  // 0xC
-    void* q010;  // 0x10
-    void* q014;  // 0x14
-    void* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    void* q020;  // 0x20
-    void* q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    void* q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    void* q050;  // 0x50
-    void* q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q05C;  // 0x5C
-    unsigned char q064;  // 0x64
-    unsigned char q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    unsigned char q078;  // 0x78
-    unsigned char q07C;  // 0x7C
-    void* q084;  // 0x84
-    static double Execute(...);  // C2039/C3861 interim stub
 };
 
 struct Queue {
     void* vfptr;
-    static double GetNext(...);  // C2039/C3861 interim stub
 };
 
 struct Random {
@@ -3482,62 +1200,27 @@ struct Random {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q034;  // 0x34
-    static double AdvanceRandomBytes(...);  // C2039/C3861 interim stub
-    static double Gaussian(...);  // C2039/C3861 interim stub
-    static double Range(...);  // C2039/C3861 interim stub
-    static double State(...);  // C2039/C3861 interim stub
 };
 
 struct Rect_Point {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    void* q00C;  // 0xC
-    void* q010;  // 0x10
-    unsigned char q014;  // 0x14
-    void* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    void* q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    void* q034;  // 0x34
-    static double Set(...);  // C2039/C3861 interim stub
 };
 
 struct ResultNode {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    static double CleanupList(...);  // C2039/C3861 interim stub
 };
 
 struct SHPClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_54;  // 0x54
-    unsigned int u32_58;  // 0x58
-    unsigned int u32_5C;  // 0x5C
-    unsigned char q060;  // 0x60
-    unsigned int u32_74;  // 0x74
-    static double Load(...);  // C2039/C3861 interim stub
 };
 
-struct SafeDelete {
+struct SaveLoad {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    static double Ptr(...);  // C2039/C3861 interim stub
 };
 
 struct SaveLoadDialog {
@@ -3545,147 +1228,31 @@ struct SaveLoadDialog {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
-    static double DlgProc(...);  // C2039/C3861 interim stub
-};
-
-struct ScoreText {
-    void* vfptr;
-    unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned int u32_45C;  // 0x45C
-    unsigned char q460;  // 0x460
-    unsigned int u32_47C;  // 0x47C
-    unsigned int u32_480;  // 0x480
-    static double Show(...);  // C2039/C3861 interim stub
-    static double ShowAlt(...);  // C2039/C3861 interim stub
 };
 
 struct ScreenSaver {
     void* vfptr;
-    static double Process(...);  // C2039/C3861 interim stub
 };
 
 struct ScriptQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_70;  // 0x70
-    static double PushEntry(...);  // C2039/C3861 interim stub
 };
 
 struct SerialPort {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_5C;  // 0x5C
-    static double Close(...);  // C2039/C3861 interim stub
 };
 
 struct SettingsClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    void* q03C;  // 0x3C
-    void* q040;  // 0x40
-    void* q044;  // 0x44
-    void* q048;  // 0x48
-    void* q04C;  // 0x4C
-    void* q050;  // 0x50
-    void* q054;  // 0x54
-    void* q058;  // 0x58
-    void* q05C;  // 0x5C
-    void* q060;  // 0x60
-    void* q064;  // 0x64
-    void* q068;  // 0x68
-    void* q06C;  // 0x6C
-    void* q070;  // 0x70
-    void* q074;  // 0x74
-    unsigned char q078;  // 0x78
-    void* q080;  // 0x80
-    void* q084;  // 0x84
-    void* q088;  // 0x88
-    unsigned char q08C;  // 0x8C
-    unsigned char q090;  // 0x90
-    unsigned char q094;  // 0x94
-    void* q100;  // 0x100
-    void* q104;  // 0x104
-    void* q108;  // 0x108
-    unsigned char q10C;  // 0x10C
-    unsigned char q110;  // 0x110
-    void* q114;  // 0x114
-    void* q118;  // 0x118
-    unsigned char q11C;  // 0x11C
-    unsigned char q120;  // 0x120
-    unsigned char q124;  // 0x124
-    void* q128;  // 0x128
-    unsigned char q12C;  // 0x12C
-    unsigned char q130;  // 0x130
-    unsigned char q134;  // 0x134
-    unsigned char q140;  // 0x140
-    unsigned char q144;  // 0x144
-    unsigned char q148;  // 0x148
-    void* q150;  // 0x150
-    unsigned char q154;  // 0x154
-    unsigned char q158;  // 0x158
-    void* q260;  // 0x260
-    void* q264;  // 0x264
-    unsigned char q268;  // 0x268
-    unsigned char q26C;  // 0x26C
-    void* q274;  // 0x274
-    void* q278;  // 0x278
-    unsigned char q27C;  // 0x27C
-    void* q280;  // 0x280
-    unsigned char q284;  // 0x284
-    unsigned char q288;  // 0x288
-    unsigned char q290;  // 0x290
-    unsigned char q294;  // 0x294
-    unsigned char q300;  // 0x300
-    unsigned char q304;  // 0x304
-    void* q310;  // 0x310
-    unsigned char q314;  // 0x314
-    unsigned char q318;  // 0x318
-    unsigned char q320;  // 0x320
-    unsigned char q324;  // 0x324
-    unsigned char q330;  // 0x330
-    unsigned char q334;  // 0x334
-    unsigned char q340;  // 0x340
-    unsigned char q344;  // 0x344
-    void* q598;  // 0x598
-    unsigned char q59C;  // 0x59C
-    unsigned char q5A0;  // 0x5A0
-    void* q608;  // 0x608
-    unsigned char q60C;  // 0x60C
-    unsigned char q610;  // 0x610
-    unsigned char q61C;  // 0x61C
-    unsigned char q620;  // 0x620
-    void* q628;  // 0x628
-    unsigned char q62C;  // 0x62C
-    static double ClampValues(...);  // C2039/C3861 interim stub
 };
 
 struct ShapeButton {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned int u32_14;  // 0x14
-    unsigned int u32_18;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned int u32_1E;  // 0x1E
-    unsigned int u32_34;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned int u32_40;  // 0x40
-    unsigned int u32_44;  // 0x44
-    unsigned int u32_48;  // 0x48
-    unsigned int u32_4C;  // 0x4C
-    unsigned int u32_50;  // 0x50
-    unsigned int u32_54;  // 0x54
-    unsigned int u32_55;  // 0x55
-    unsigned int u32_58;  // 0x58
-    unsigned int u32_5C;  // 0x5C
-    static double Draw(...);  // C2039/C3861 interim stub
-    static double SetShape(...);  // C2039/C3861 interim stub
 };
 
 struct ShapeButtonClass {
@@ -3693,253 +1260,69 @@ struct ShapeButtonClass {
     void* vtable1;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
-    int Width;  // 0xC
-    int Height;  // 0x10
-    char Visible;  // 0x14
-    char Enabled;  // 0x15
-    int q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    bool q01D;  // 0x1D
-    unsigned int q01E;  // 0x1E
-    char q020;  // 0x20
-    int ID;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned int q02C;  // 0x2C
-    unsigned int q02D;  // 0x2D
-    unsigned int q030;  // 0x30
-    unsigned char q034;  // 0x34
-    ControlClass* q038;  // 0x38
-    ControlClass* q03C;  // 0x3C
-    unsigned char q040;  // 0x40
-    ControlClass* q044;  // 0x44
-    ControlClass* q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    ConvertClass* q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned int q055;  // 0x55
-    CampaignClass* q058;  // 0x58
-    unsigned char q05C;  // 0x5C
-    ControlClass* q060;  // 0x60
-    unsigned char q064;  // 0x64
-    ControlClass* q068;  // 0x68
-    void* q06C;  // 0x6C
-    unsigned char q074;  // 0x74
-    unsigned char q078;  // 0x78
-    ConvertClass* q080;  // 0x80
-    unsigned char q084;  // 0x84
-    CampaignClass* q088;  // 0x88
-    unsigned char q08C;  // 0x8C
-    unsigned char q094;  // 0x94
-    unsigned char q098;  // 0x98
-    void* q0B0;  // 0xB0
-    unsigned char q0B4;  // 0xB4
-    unsigned int q0B8;  // 0xB8
-    unsigned char q0BC;  // 0xBC
-    void* q0C8;  // 0xC8
-    unsigned char q0CC;  // 0xCC
-    void* q0DC;  // 0xDC
-    unsigned char q0E0;  // 0xE0
-    unsigned char q100;  // 0x100
-    ControlClass* q104;  // 0x104
-    void* q108;  // 0x108
-    ControlClass* q114;  // 0x114
-    unsigned char q118;  // 0x118
-    unsigned char q11C;  // 0x11C
-    ConvertClass* q128;  // 0x128
-    unsigned int q12C;  // 0x12C
-    unsigned char q130;  // 0x130
-    unsigned char q134;  // 0x134
-    unsigned char q138;  // 0x138
-    unsigned char q13C;  // 0x13C
-    unsigned char q140;  // 0x140
-    unsigned int q144;  // 0x144
-    unsigned char q148;  // 0x148
-    unsigned char q14C;  // 0x14C
-    ControlClass* q150;  // 0x150
-    unsigned char q154;  // 0x154
-    unsigned char q164;  // 0x164
-    unsigned char q168;  // 0x168
-    unsigned int q170;  // 0x170
-    unsigned char q174;  // 0x174
-    unsigned char q180;  // 0x180
-    unsigned int q184;  // 0x184
-    unsigned char q188;  // 0x188
-    void* q200;  // 0x200
-    unsigned char q204;  // 0x204
-    void* q220;  // 0x220
-    unsigned char q224;  // 0x224
-    ControlClass* q260;  // 0x260
-    void* q264;  // 0x264
-    unsigned int q274;  // 0x274
-    unsigned char q280;  // 0x280
-    unsigned char q284;  // 0x284
-    unsigned char q290;  // 0x290
-    unsigned int q300;  // 0x300
-    unsigned char q304;  // 0x304
-    unsigned char q308;  // 0x308
-    CampaignClass* q310;  // 0x310
-    unsigned char q314;  // 0x314
-    unsigned int q324;  // 0x324
-    unsigned char q328;  // 0x328
-    unsigned char q354;  // 0x354
-    unsigned int q364;  // 0x364
-    unsigned int q368;  // 0x368
-    void* q374;  // 0x374
-    unsigned char q384;  // 0x384
-    unsigned int q388;  // 0x388
-    void* q544;  // 0x544
-    unsigned char q548;  // 0x548
-    unsigned int q628;  // 0x628
-    unsigned char q640;  // 0x640
-    unsigned char q644;  // 0x644
-    unsigned int q768;  // 0x768
-    unsigned int q804;  // 0x804
-    unsigned char q808;  // 0x808
-    unsigned char q818;  // 0x818
-    unsigned char q854;  // 0x854
-    unsigned int q868;  // 0x868
-    void* q884;  // 0x884
-    unsigned char q900;  // 0x900
-    unsigned int q904;  // 0x904
-    unsigned char q914;  // 0x914
-    void* q1298;  // 0x1298
-    void* q1348;  // 0x1348
-    unsigned char q1600;  // 0x1600
-    unsigned char q1604;  // 0x1604
-    unsigned char q2178;  // 0x2178
-    unsigned int q5545;  // 0x5545
-    unsigned int q6214;  // 0x6214
-    unsigned char q6218;  // 0x6218
-    unsigned char q621C;  // 0x621C
-    unsigned int q8530;  // 0x8530
-    unsigned char q8534;  // 0x8534
-    unsigned char q8538;  // 0x8538
-    unsigned int q25108;  // 0x25108
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct ShroudClass {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    void* q008;  // 0x8
-    void* q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    void* q018;  // 0x18
-    void* q024;  // 0x24
-    unsigned char q034;  // 0x34
-    unsigned int q03D;  // 0x3D
-    unsigned char q041;  // 0x41
-    bool q043;  // 0x43
-    unsigned int q044;  // 0x44
-    unsigned char q045;  // 0x45
-    void* q046;  // 0x46
-    unsigned char q04A;  // 0x4A
-    unsigned char q04F;  // 0x4F
-    unsigned char q053;  // 0x53
-    unsigned int q068;  // 0x68
-    void* q070;  // 0x70
-    unsigned char q074;  // 0x74
-    unsigned int q104;  // 0x104
-    unsigned int q260;  // 0x260
-    unsigned char q264;  // 0x264
-    void* q274;  // 0x274
-    unsigned char q278;  // 0x278
-    static double UpdateVisibility(...);  // C2039/C3861 interim stub
-};
-
-struct SimpleDialogControl {
-    void* vfptr;
-    unsigned char q000;  // 0x0
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct SlaveControlVector {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_C;  // 0xC
-    unsigned int u32_D;  // 0xD
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct SpawnControlVector {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_C;  // 0xC
-    unsigned int u32_D;  // 0xD
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct SquadClass {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    void* q030;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned char q040;  // 0x40
-    void* q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q07C;  // 0x7C
-    unsigned char q080;  // 0x80
-    void* q114;  // 0x114
-    static double ProcessMove(...);  // C2039/C3861 interim stub
 };
 
-struct StartCombo {
+struct State {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double IDToIndex(...);  // C2039/C3861 interim stub
+    int Players;  // 0x4
+    int AIPlayers;  // 0x8
+    int GameSpeed;  // 0xC
+    int StartingCredits;  // 0x10
+    bool SuperWeapons;  // 0x14
+    bool BuildOffAlly;  // 0x15
+    bool FogOfWar;  // 0x16
+    bool MCVRedeploys;  // 0x17
+    bool AlliesAllowed;  // 0x18
+    bool ShortGame;  // 0x19
+    bool Crates;  // 0x1A
+    bool MultiEngineer;  // 0x1B
+    bool Bridies;  // 0x1C
+    unsigned char q01D;  // 0x1D
+    int ScenIndex;  // 0x20
+    int MapIndex;  // 0x24
+    int LastSave;  // 0x28
+    unsigned char q02C;  // 0x2C
+    unsigned int q034;  // 0x34
 };
 
 struct StaticString {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Factory(...);  // C2039/C3861 interim stub
 };
 
 struct Straw {
     void* vfptr;
     void* vtable1;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    void* q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    BlowStraw* q014;  // 0x14
-    void* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    BlowStraw* q020;  // 0x20
-    void* q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    BlowStraw* q050;  // 0x50
-    static double Dtor(...);  // C2039/C3861 interim stub
-};
-
-struct StringList {
-    void* vfptr;
-    unsigned char q000;  // 0x0
-    static double Find(...);  // C2039/C3861 interim stub
 };
 
 struct StringTable {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    static double Find(...);  // C2039/C3861 interim stub
 };
 
 struct StringVector {
@@ -3952,33 +1335,11 @@ struct StringVector {
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q074;  // 0x74
-    unsigned char q078;  // 0x78
-    unsigned char q080;  // 0x80
-    unsigned char q084;  // 0x84
-    static double Construct(...);  // C2039/C3861 interim stub
 };
 
 struct StructTable {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Append(...);  // C2039/C3861 interim stub
 };
 
 struct SubzoneConnectionVector {
@@ -3986,149 +1347,53 @@ struct SubzoneConnectionVector {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    void* q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    void* q034;  // 0x34
-    static double Destruct(...);  // C2039/C3861 interim stub
 };
 
 struct SubzoneHashVector {
     void* vfptr;
     unsigned char q000;  // 0x0
-    void* q004;  // 0x4
-    static double Construct(...);  // C2039/C3861 interim stub
 };
 
 struct SwizzleManager {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    static double SaveLoad(...);  // C2039/C3861 interim stub
 };
 
 struct SyncDelayClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double ProcessNetworkSync(...);  // C2039/C3861 interim stub
 };
 
 struct TabCameoListClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double AddCameo_ReplaceItAll(...);  // C2039/C3861 interim stub
 };
 
 struct Targeting {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Readd(...);  // C2039/C3861 interim stub
 };
 
 struct TaskManager {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_24;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned int u32_30;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned int u32_3C;  // 0x3C
-    unsigned char q040;  // 0x40
-    unsigned int u32_68;  // 0x68
-    static double Update(...);  // C2039/C3861 interim stub
 };
 
 struct TechnoTypeVector {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned int u32_14;  // 0x14
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct Text {
     void* vfptr;
     char Text_field_00[4];  // 0x0
-    void* q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    void* q014;  // 0x14
-    void* q018;  // 0x18
-    void* q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    void* q024;  // 0x24
-    void* q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
-    void* q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    void* q054;  // 0x54
-    unsigned char q058;  // 0x58
-    void* q064;  // 0x64
-    unsigned char q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q080;  // 0x80
-    unsigned char q084;  // 0x84
-    unsigned int q9C5;  // 0x9C5
-    static double DrawRepeated(...);  // C2039/C3861 interim stub
-    static double Layout(...);  // C2039/C3861 interim stub
-    static double MeasureWidth(...);  // C2039/C3861 interim stub
 };
 
 struct TextGroup {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    void* q030;  // 0x30
-    void* q034;  // 0x34
-    void* q038;  // 0x38
-    void* q03C;  // 0x3C
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    void* q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    unsigned char q054;  // 0x54
-    void* q060;  // 0x60
-    unsigned char q064;  // 0x64
-    unsigned char q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    unsigned char q074;  // 0x74
-    unsigned char q07C;  // 0x7C
-    unsigned char q080;  // 0x80
-    unsigned char q084;  // 0x84
-    unsigned char q090;  // 0x90
-    unsigned char q094;  // 0x94
-    unsigned char q100;  // 0x100
-    unsigned char q104;  // 0x104
-    unsigned char q108;  // 0x108
-    unsigned char q10C;  // 0x10C
-    void* q114;  // 0x114
-    unsigned char q118;  // 0x118
-    unsigned char q11C;  // 0x11C
-    unsigned char q124;  // 0x124
-    unsigned char q128;  // 0x128
-    void* q130;  // 0x130
-    void* q134;  // 0x134
-    unsigned char q138;  // 0x138
-    unsigned char q13C;  // 0x13C
-    unsigned char q144;  // 0x144
-    unsigned char q148;  // 0x148
-    void* q150;  // 0x150
-    static double SetRect(...);  // C2039/C3861 interim stub
 };
 
 struct TheatreClass {
@@ -4140,38 +1405,11 @@ struct TileData {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned int u16_2;  // 0x2
-    unsigned char q004;  // 0x4
-    unsigned int u32_C;  // 0xC
-    unsigned int u32_10;  // 0x10
-    unsigned int u32_14;  // 0x14
-    unsigned int u32_18;  // 0x18
-    unsigned int u32_1C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned int u32_2C;  // 0x2C
-    unsigned int u32_30;  // 0x30
-    unsigned int u32_34;  // 0x34
-    unsigned int u32_38;  // 0x38
-    unsigned int u32_3C;  // 0x3C
-    unsigned char q040;  // 0x40
-    unsigned int u32_45;  // 0x45
-    unsigned int u32_46;  // 0x46
-    unsigned int u32_47;  // 0x47
-    unsigned int u32_49;  // 0x49
-    unsigned int u32_4A;  // 0x4A
-    unsigned int u32_4B;  // 0x4B
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct TileNode {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_28;  // 0x28
-    unsigned int u32_2C;  // 0x2C
-    unsigned int u32_30;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned int u32_35;  // 0x35
-    static double Cleanup(...);  // C2039/C3861 interim stub
 };
 
 struct TileSystem {
@@ -4181,156 +1419,22 @@ struct TileSystem {
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char u8_D;  // 0xD
-    void* q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    void* q034;  // 0x34
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct Timeout {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    void* q008;  // 0x8
-    static double GetRemaining(...);  // C2039/C3861 interim stub
 };
 
 struct TimerPool {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double AllocSlot(...);  // C2039/C3861 interim stub
 };
 
 struct ToggleClass {
     void* vfptr;
     void* vtable1;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    int Width;  // 0xC
-    int Height;  // 0x10
-    char Visible;  // 0x14
-    char Enabled;  // 0x15
-    int q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    bool q01D;  // 0x1D
-    unsigned int q01E;  // 0x1E
-    char q020;  // 0x20
-    int ID;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned int q02C;  // 0x2C
-    unsigned int q02D;  // 0x2D
-    unsigned int q030;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q040;  // 0x40
-    unsigned int q044;  // 0x44
-    unsigned int q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    unsigned int q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned int q058;  // 0x58
-    unsigned char q05C;  // 0x5C
-    unsigned char q060;  // 0x60
-    unsigned char q064;  // 0x64
-    unsigned int q068;  // 0x68
-    void* q06C;  // 0x6C
-    unsigned char q074;  // 0x74
-    unsigned char q078;  // 0x78
-    unsigned int q080;  // 0x80
-    unsigned char q084;  // 0x84
-    unsigned int q088;  // 0x88
-    unsigned char q08C;  // 0x8C
-    unsigned char q094;  // 0x94
-    unsigned char q098;  // 0x98
-    void* q0B0;  // 0xB0
-    unsigned char q0B4;  // 0xB4
-    unsigned int q0B8;  // 0xB8
-    unsigned char q0BC;  // 0xBC
-    void* q0C8;  // 0xC8
-    unsigned char q0CC;  // 0xCC
-    void* q0DC;  // 0xDC
-    unsigned char q0E0;  // 0xE0
-    unsigned char q100;  // 0x100
-    unsigned int q104;  // 0x104
-    void* q108;  // 0x108
-    unsigned int q114;  // 0x114
-    unsigned char q118;  // 0x118
-    unsigned char q11C;  // 0x11C
-    unsigned int q128;  // 0x128
-    unsigned int q12C;  // 0x12C
-    unsigned char q130;  // 0x130
-    unsigned char q134;  // 0x134
-    unsigned char q138;  // 0x138
-    unsigned char q13C;  // 0x13C
-    unsigned char q140;  // 0x140
-    unsigned int q144;  // 0x144
-    unsigned char q148;  // 0x148
-    unsigned char q14C;  // 0x14C
-    unsigned char q150;  // 0x150
-    unsigned char q164;  // 0x164
-    unsigned char q168;  // 0x168
-    unsigned int q170;  // 0x170
-    unsigned char q174;  // 0x174
-    unsigned char q180;  // 0x180
-    unsigned int q184;  // 0x184
-    unsigned char q188;  // 0x188
-    void* q200;  // 0x200
-    unsigned char q204;  // 0x204
-    void* q220;  // 0x220
-    unsigned char q224;  // 0x224
-    void* q264;  // 0x264
-    unsigned int q274;  // 0x274
-    unsigned char q280;  // 0x280
-    unsigned char q284;  // 0x284
-    unsigned char q290;  // 0x290
-    unsigned int q300;  // 0x300
-    unsigned char q304;  // 0x304
-    unsigned char q308;  // 0x308
-    unsigned int q310;  // 0x310
-    unsigned char q314;  // 0x314
-    unsigned int q324;  // 0x324
-    unsigned char q328;  // 0x328
-    unsigned char q354;  // 0x354
-    unsigned int q364;  // 0x364
-    unsigned int q368;  // 0x368
-    void* q374;  // 0x374
-    unsigned char q384;  // 0x384
-    unsigned int q388;  // 0x388
-    void* q544;  // 0x544
-    unsigned char q548;  // 0x548
-    unsigned int q628;  // 0x628
-    unsigned char q640;  // 0x640
-    unsigned char q644;  // 0x644
-    unsigned int q768;  // 0x768
-    unsigned int q804;  // 0x804
-    unsigned char q808;  // 0x808
-    unsigned char q818;  // 0x818
-    unsigned char q854;  // 0x854
-    unsigned int q868;  // 0x868
-    void* q884;  // 0x884
-    unsigned char q900;  // 0x900
-    unsigned int q904;  // 0x904
-    unsigned char q914;  // 0x914
-    void* q1298;  // 0x1298
-    void* q1348;  // 0x1348
-    unsigned char q1600;  // 0x1600
-    unsigned char q1604;  // 0x1604
-    unsigned char q2178;  // 0x2178
-    unsigned int q5545;  // 0x5545
-    unsigned int q6214;  // 0x6214
-    unsigned char q6218;  // 0x6218
-    unsigned char q621C;  // 0x621C
-    unsigned int q8530;  // 0x8530
-    unsigned char q8534;  // 0x8534
-    unsigned char q8538;  // 0x8538
-    unsigned int q25108;  // 0x25108
-    static double RTTI(...);  // C2039/C3861 interim stub
 };
 
 struct ToolTipClass {
@@ -4352,110 +1456,37 @@ struct ToolTipClass {
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q064;  // 0x64
-    unsigned char q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    unsigned char q074;  // 0x74
-    unsigned char q080;  // 0x80
-    unsigned char q084;  // 0x84
-    unsigned char q088;  // 0x88
-    unsigned char q094;  // 0x94
-    unsigned char q098;  // 0x98
-    unsigned char q100;  // 0x100
-    unsigned char q104;  // 0x104
-    unsigned char q108;  // 0x108
-    unsigned char q10C;  // 0x10C
-    unsigned char q114;  // 0x114
-    unsigned char q118;  // 0x118
-    unsigned char q11C;  // 0x11C
-    unsigned char q120;  // 0x120
-    unsigned char q124;  // 0x124
-    unsigned char q128;  // 0x128
-    unsigned char q12C;  // 0x12C
-    unsigned char q130;  // 0x130
-    unsigned char q134;  // 0x134
-    unsigned char q13C;  // 0x13C
-    unsigned char q140;  // 0x140
-    unsigned char q148;  // 0x148
-    unsigned char q14C;  // 0x14C
-    unsigned char q154;  // 0x154
-    unsigned char q158;  // 0x158
-    unsigned char q260;  // 0x260
-    unsigned char q264;  // 0x264
-    unsigned char q268;  // 0x268
-    unsigned char q270;  // 0x270
-    unsigned char q274;  // 0x274
-    unsigned char q280;  // 0x280
-    unsigned char q284;  // 0x284
-    unsigned char q288;  // 0x288
-    unsigned char q290;  // 0x290
-    unsigned char q294;  // 0x294
-    unsigned char q300;  // 0x300
-    unsigned char q304;  // 0x304
-    static double initString(...);  // C2039/C3861 interim stub
-    static double updateString(...);  // C2039/C3861 interim stub
 };
 
 struct Tooltip {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Enable(...);  // C2039/C3861 interim stub
 };
 
 struct Tree {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Destructor(...);  // C2039/C3861 interim stub
 };
 
 struct Triple {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Set(...);  // C2039/C3861 interim stub
 };
 
 struct TypeClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double FindByName(...);  // C2039/C3861 interim stub
 };
 
 struct VQAClass {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_200;  // 0x200
-    unsigned char q204;  // 0x204
-    unsigned int u32_504;  // 0x504
-    unsigned int u32_508;  // 0x508
-    unsigned char q50C;  // 0x50C
-    unsigned int u32_510;  // 0x510
-    unsigned char q514;  // 0x514
-    unsigned int u32_548;  // 0x548
-    unsigned char q54C;  // 0x54C
-    unsigned int u32_1450;  // 0x1450
-    unsigned char q1454;  // 0x1454
-    unsigned int u32_14A0;  // 0x14A0
-    unsigned char q14A4;  // 0x14A4
-    unsigned int u32_1540;  // 0x1540
-    unsigned int u32_1544;  // 0x1544
-    static double AdvanceFrame(...);  // C2039/C3861 interim stub
 };
 
 struct Vector2 {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    static double NormalizeNonZero(...);  // C2039/C3861 interim stub
 };
 
 struct Vector3 {
@@ -4463,143 +1494,59 @@ struct Vector3 {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
-    static double AddAssign(...);  // C2039/C3861 interim stub
-    static double Magnitude(...);  // C2039/C3861 interim stub
-    static double Subtract(...);  // C2039/C3861 interim stub
 };
 
 struct Vector4 {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned char q00C;  // 0xC
-    void* q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned char q018;  // 0x18
-    unsigned char q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    void* q034;  // 0x34
-    static double EraseAt_Copy(...);  // C2039/C3861 interim stub
 };
 
 struct VectorClassUInt {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct Viewport {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    unsigned int u32_5548;  // 0x5548
-    unsigned char q554C;  // 0x554C
-    unsigned int u32_15568;  // 0x15568
-    static double Clear(...);  // C2039/C3861 interim stub
 };
 
 struct VoxelAnimTypeVector {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct VoxelPalette {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    static double Init(...);  // C2039/C3861 interim stub
-    static double Reset(...);  // C2039/C3861 interim stub
 };
 
 struct VoxelSection {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    void* q010;  // 0x10
-    void* q014;  // 0x14
-    unsigned char q018;  // 0x18
-    void* q020;  // 0x20
-    unsigned char q024;  // 0x24
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    void* q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    void* q050;  // 0x50
-    static double GetInfo(...);  // C2039/C3861 interim stub
 };
 
 struct WDTClass {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    void* q00C;  // 0xC
-    void* q010;  // 0x10
-    unsigned char q014;  // 0x14
-    void* q018;  // 0x18
-    void* q020;  // 0x20
-    void* q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    void* q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    void* q050;  // 0x50
-    unsigned char q054;  // 0x54
-    unsigned char q058;  // 0x58
-    unsigned char q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q074;  // 0x74
-    unsigned char q078;  // 0x78
-    void* q080;  // 0x80
-    static double GetCellType(...);  // C2039/C3861 interim stub
 };
 
 struct WDTObject {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned char q008;  // 0x8
-    void* q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    void* q018;  // 0x18
-    void* q024;  // 0x24
-    void* q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    void* q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    unsigned char q054;  // 0x54
-    void* q068;  // 0x68
-    unsigned char q06C;  // 0x6C
-    unsigned char q070;  // 0x70
-    unsigned char q080;  // 0x80
-    unsigned char q084;  // 0x84
-    unsigned char q098;  // 0x98
-    unsigned char q09C;  // 0x9C
-    void* q104;  // 0x104
-    static double GetSize(...);  // C2039/C3861 interim stub
 };
 
 struct WTFMode {
     void* vfptr;
     unsigned int u32_18;  // 0x18
     unsigned int q024;  // 0x24
+    unsigned int u32_30;  // 0x30
+    unsigned int u32_3C;  // 0x3C
     unsigned char u8_3D;  // 0x3D
     IUnknown* q040;  // 0x40
     AudioController* q050;  // 0x50
@@ -4619,22 +1566,16 @@ struct WTFMode {
     void* q12504;  // 0x12504
     unsigned int q21104;  // 0x21104
     void* q479250;  // 0x479250
-    static double Shutdown(...);  // C2039/C3861 interim stub
 };
 
 struct WinAPI {
     void* vfptr;
     unsigned char q000;  // 0x0
-    static double Wrapper(...);  // C2039/C3861 interim stub
 };
 
 struct WordVector {
     void* vfptr;
     unsigned char q000;  // 0x0
-    unsigned char q004;  // 0x4
-    unsigned int u32_C;  // 0xC
-    unsigned int u32_D;  // 0xD
-    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 

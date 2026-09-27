@@ -114,7 +114,7 @@ struct HouseClass {
     double buildDelay;  // 0x120
     unsigned int q124;  // 0x124
     char iqLevel[4];  // 0x128
-    char techLevel[4];  // 0x12C
+    unsigned int techLevel;  // 0x12C
     unsigned int altAllies;  // 0x130
     char startingCredits[4];  // 0x134
     unsigned int q135;  // 0x135
@@ -1821,10 +1821,6 @@ struct HouseClass {
     unsigned int occupiables8;
     unsigned int productionFactory_plants5;
     unsigned int q54E4;
-    unsigned int AIBuildBase;
-    unsigned int CheckWinCondition;
-    unsigned int FindOwner;
-    unsigned int GetPowerRatio;
     unsigned int gap0;
 // --- flat members (END) ---
     AbstractClass * * AIDecision(ObjectClass * aP0, int * a1);
@@ -1897,10 +1893,6 @@ struct HouseClass {
     static double ProcessPowerDrain(...);  // C2597 interim stub
     static double ShouldDisableCameo(...);  // C2597 interim stub
     static double UpdateProduction(...);  // C2597 interim stub
-    LABEL_20: AIBuildBase((void *)v3);  // def-aligned
-    return CheckWinCondition(0);  // def-aligned
-    return FindOwner(aP1);  // def-aligned
-    return GetPowerRatio((int *)Owner);  // def-aligned
 };
 
 } // namespace gamemd

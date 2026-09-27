@@ -1006,7 +1006,6 @@ struct SidebarClass {
     unsigned int u32_85C0;
     unsigned int u32_85C1;
     unsigned int u32_FCC;
-    unsigned int InitButtons;
     unsigned int UpdateStrips;
 // --- flat members (END) ---
     GadgetClass * * LoadResources();
@@ -1021,8 +1020,6 @@ struct SidebarClass {
     int select();
     void * LoadAssets();
     void CreateScrollButtons();
-    return InitButtons();  // def-aligned
-    return UpdateStrips(aP1, a2);  // def-aligned
 };
 
 } // namespace gamemd

@@ -346,3 +346,4 @@ int CRC32::Compute(const void* data, uint32_t size)
   }
   return ~v5; /*0x4a1fe3*/
 }
+}

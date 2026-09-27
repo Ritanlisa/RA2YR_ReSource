@@ -495,7 +495,7 @@ struct BulletTypeClass {
     AnimTypeClass* q728;  // 0x728
     void* q734;  // 0x734
     unsigned char q738;  // 0x738
-    char q740[4];  // 0x740
+    unsigned int q740;  // 0x740
     char q744[4];  // 0x744
     bool q748;  // 0x748
     unsigned char q754;  // 0x754

@@ -34,12 +34,14 @@
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
 
 // 0x7221B0
 namespace gamemd {
 void * sub_7221B0()
 {
-  unsigned int result;
+  void * result;
   int i; // esi
   int v2; // ecx
   int v3; // edi
@@ -83,7 +85,7 @@ void * sub_7221B0()
 namespace gamemd {
 void * sub_722C40()
 {
-  unsigned int result;
+  void * result;
   int i; // esi
   int v2; // ecx
   int v3; // edi

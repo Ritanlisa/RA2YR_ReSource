@@ -5,3 +5,4 @@
 #include <cstdint>
 
 namespace gamemd {
+}

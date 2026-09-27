@@ -688,3 +688,4 @@ uint32_t LoadOptions::GetCapacity() const { return capacity; }
 uint32_t LoadOptions::GetMaxEntries() const { return max_entries; }
 
 } // namespace gamemd
+}

@@ -25,6 +25,8 @@ struct SpawnManagerClass_25 {
     bool q054;  // 0x54
     unsigned int Capacity;
     unsigned int Items;
+    unsigned int Items2;
+    unsigned int __pad_03B;
 // --- flat members (END) ---
     void ddtor();  // 0x6B8160
     int SaveState(int a2);  // 0x6B81B0

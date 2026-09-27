@@ -967,7 +967,7 @@ int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, 
   {
     do /*0x4965e6*/
     {
-      if (*aP2++, unsigned int a4) /*0x4965d1*/
+      if (*aP2++, unsigned int a4, unsigned int a7) /*0x4965d1*/
         --result; /*0x4965e3*/
       else
         result -= *aP2++; /*0x4965de*/

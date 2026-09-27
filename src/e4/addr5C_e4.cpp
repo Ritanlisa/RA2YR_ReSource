@@ -48,6 +48,8 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/RandomMap_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
 
 // 0x5C00E0
 namespace gamemd {

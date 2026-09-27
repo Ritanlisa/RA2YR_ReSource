@@ -52,6 +52,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ScoreScreen_e4.hpp"
 #include "e4/classes/E4Recv_765000_e4.hpp"
+#include "e4/classes/E4Recv_764B90_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
 
 // 0x770E70
 namespace gamemd {
@@ -371,7 +373,7 @@ int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
 {
   unsigned int v5;
   int v6; // ebp
-  const char * v8;
+  const unsigned int v8;
   int result; // eax
   int v10; // edx
   int v11; // eax

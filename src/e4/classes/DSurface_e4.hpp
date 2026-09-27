@@ -1014,7 +1014,6 @@ struct DSurface {
     unsigned char q6994;  // 0x6994
     unsigned char q7000;  // 0x7000
     unsigned char q7004;  // 0x7004
-    unsigned int Unlock;
 // --- flat members (END) ---
     AbstractClass * * Construct(void* aP1, DSurface * aP2, ObjectClass * aP3, char a5);
     AbstractClass * * Process(void* aP1, int * a2);
@@ -1046,7 +1045,6 @@ struct DSurface {
     void* DrawLineZBufColored(int a2, unsigned int * a3, unsigned int * a4, unsigned char * a5, float a6, int a7, int a8);
     void* FillRectEx(XSurface * aP1, int * a2, XSurface * aP3);
     static double Lock(...);  // C2597 interim stub
-    LABEL_38: Unlock(&v60);  // def-aligned
 };
 
 } // namespace gamemd

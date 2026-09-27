@@ -4,7 +4,6 @@
 namespace gamemd {
 
 struct LinkedList_flat {
-    unsigned int PushFront;
     unsigned int m_Prev;
     unsigned int u32_28;
     unsigned int u32_18;
@@ -73,7 +72,6 @@ unsigned int * FindPrev();
 void * MoveNode(void * a2);
 void RelinkNode(int a2);
 void Remove(unsigned int * a2);
-    LABEL_135: PushFront(v262, (IUnknown *)v87);  // def-aligned
 };
 
 } // namespace gamemd

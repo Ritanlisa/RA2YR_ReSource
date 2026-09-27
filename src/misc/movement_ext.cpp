@@ -9,3 +9,4 @@ namespace gamemd {
 
 // 0x40b640
 void MoveFeedback::ClearBuffer() {}
+}

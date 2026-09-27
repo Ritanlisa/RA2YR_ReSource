@@ -34,7 +34,7 @@ struct WinModemClass {
     unsigned int u32_53;  // 0x53
     unsigned int q054;  // 0x54
     unsigned int u32_57;  // 0x57
-    void* q05C;  // 0x5C
+    unsigned int ;  // 0x5C
     void* q060;  // 0x60
     void* q064;  // 0x64
     void* q068;  // 0x68
@@ -96,6 +96,7 @@ struct WinModemClass {
     unsigned int q0085;
     unsigned int q0086;
     unsigned int q018;
+    unsigned int q05C;
 // --- flat members (END) ---
     AbstractClass * * Dial(const char * a2, unsigned char a3, char * Destination, signed int Count, int a6, int a7, int a8);
     WinModemClass * * LoadTypeData(int a2, char * Str, int a4, WinModemClass * aP4);

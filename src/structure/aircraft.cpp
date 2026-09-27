@@ -3199,3 +3199,4 @@ int AircraftClass::CheckStateFlag2()
 
 // 0x41be70
 bool AircraftClass::StubReturnFalse2() { return false; }
+}

@@ -13,6 +13,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/Palette_e4.hpp"
 
 // 0x48DCD0
 namespace gamemd {
@@ -220,8 +221,8 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   unsigned int *v12; // edi
   unsigned int *v13; // eax
   int v14; // ecx
-  int v15; // eax
-  int v16; // eax
+  TechnoTypeClass * v15;
+  TechnoTypeClass * v16;
 
   ObjectTypeClass::ConstructFull(Source); /*0x710afb*/
   this->armed = 1; /*0x710b02*/

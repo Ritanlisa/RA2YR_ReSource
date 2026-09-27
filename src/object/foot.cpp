@@ -510,3 +510,5 @@ void FootClass::onMovementDone() {}
 }
 // 0x709290
 bool FootClass::CanEnterCell(uint32_t a) { return false; }
+}
+}

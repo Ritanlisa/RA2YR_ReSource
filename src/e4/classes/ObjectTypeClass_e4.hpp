@@ -204,7 +204,7 @@ struct ObjectTypeClass {
     bool q238;  // 0x238
     bool q239;  // 0x239
     bool q23A;  // 0x23A
-    char q23B[3];  // 0x23B
+    unsigned int q23B;  // 0x23B
     unsigned char u8_23C;  // 0x23C
     bool q23D;  // 0x23D
     int LineTrailColorDecrement;  // 0x240
@@ -1698,6 +1698,10 @@ struct ObjectTypeClass {
     unsigned int u32_DC9;
     unsigned int q0E00;
     unsigned int q0E01;
+    unsigned int q0E02;
+    unsigned int q0E03;
+    unsigned int q0E08;
+    unsigned int q0E09;
 // --- flat members (END) ---
     AbstractClass * * Load2DArt();
     BOOL loadTypeMember_5717AE0();

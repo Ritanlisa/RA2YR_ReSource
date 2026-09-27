@@ -13,6 +13,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x59D510
 namespace gamemd {
@@ -653,8 +654,8 @@ VectorClass_flat * * Tiberium::CalculateSpread(MouseClass * aP1, MapResourceClas
   MouseClass *v167; // [esp+100h] [ebp-28h] BYREF
   v124 = this;
   IDA_LOBYTE(aP5->field_0) = 0;
-  int v8 = 0;
-  int v9 = 0;
+  char * v8 = 0;
+  char * v9 = 0;
   int v10 = 0;
   IDA_LODWORD(v140) = 0;
   v131 = 0;

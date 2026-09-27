@@ -136,3 +136,4 @@ void SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(HouseClass* ownerHouse) {
   }
   return v1; /*0x50b1c6*/
 }
+}

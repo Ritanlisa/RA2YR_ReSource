@@ -327,3 +327,4 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
     }
   }
 }
+}

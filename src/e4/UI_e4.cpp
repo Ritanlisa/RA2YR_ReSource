@@ -227,7 +227,7 @@ void sub_6AC430()
 namespace gamemd {
 wchar_t * * sub_730EA0()
 {
-  unsigned int result;
+  wchar_t * result;
   unsigned int v1;
   int v2; // edi
   char v3; // bl
@@ -273,7 +273,7 @@ wchar_t * * sub_730EA0()
 namespace gamemd {
 void * sub_730F30()
 {
-  unsigned int result;
+  wchar_t * result;
   char *v1; // eax
   char v2[112]; // [esp+0h] [ebp-70h] BYREF
 
@@ -302,7 +302,7 @@ void * sub_730F30()
 namespace gamemd {
 void * sub_730FE0()
 {
-  unsigned int result;
+  wchar_t * result;
   unsigned int v1;
   int v2; // edi
   char v3; // bl

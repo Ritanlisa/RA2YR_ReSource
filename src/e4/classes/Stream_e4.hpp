@@ -258,8 +258,6 @@ struct Stream {
     unsigned int Stream_field_042;
     unsigned int vt_slot_12;
     unsigned int vt_slot_8;
-    unsigned int ReadPacket;
-    unsigned int WriteBlock;
     unsigned int q1365;
     unsigned int u32_194;
 // --- flat members (END) ---
@@ -268,8 +266,6 @@ struct Stream {
     int ReadIntArray(int a2);
     int WriteIntArray(TechnoTypeClass * aP1);
     void * InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int a5, IUnknown * aP5, int a7, int a8);
-    LABEL_11: ReadPacket(&g_EventManager);  // def-aligned
-    return WriteBlock((int)&g_EventManager, (int)v3, 250, 1);  // def-aligned
 };
 
 } // namespace gamemd

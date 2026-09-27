@@ -5859,3 +5859,7 @@ short WOL_ChatMessage(char a1, wchar_t * a2)
   return WideString::Reassign(&dword_B76230, a2); /*0x78ac01*/
 }
 } // namespace gamemd
+}
+}
+}
+}

@@ -24,6 +24,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Draw_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x4B0500
 namespace gamemd {
@@ -411,7 +412,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   char result; // al
   const wchar_t *v15; // eax
   int AudioEntryTechnoClass; // eax
-  unsigned int v17;
+  void * v17;
   int v18; // esi
   unsigned int *v19; // eax
   unsigned int *v20; // eax

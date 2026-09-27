@@ -23,6 +23,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/File_e4.hpp"
 
 // 0x4C98B0
 namespace gamemd {

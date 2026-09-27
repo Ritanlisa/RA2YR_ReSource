@@ -412,3 +412,4 @@ bool UDPInterfaceClass::SetBroadcast(bool enable)
                       (const char*)&opt, sizeof(opt)) == 0;
 
 } // namespace gamemd
+}

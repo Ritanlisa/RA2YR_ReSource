@@ -580,6 +580,8 @@ struct AudioStream {
     unsigned int vtable3;
     unsigned int vtable38;
     unsigned int q3042;
+    unsigned int __pad_666;
+    unsigned int q1992;
 // --- flat members (END) ---
     int ReleaseSubsystem();  // 0x401910
     int Stop();  // 0x4026B0

@@ -488,8 +488,8 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
 namespace gamemd {
 int Mission::GetMissionDelay()
 {
-  int v1; // edx
-  int result; // eax
+  void * v1;
+  void * result;
   unsigned int *v3; // esi
   int v4; // [esp+8h] [ebp-8h]
 

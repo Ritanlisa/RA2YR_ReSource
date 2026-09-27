@@ -82,7 +82,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   int v51; // eax
   unsigned char *v52; // eax
   int v53; // [esp-8h] [ebp-50h]
-  unsigned int v54;
+  IUnknown * v54;
   int v57; // [esp+1Ch] [ebp-2Ch] BYREF
   char v58[4]; // [esp+20h] [ebp-28h] BYREF
   int v59[5]; // [esp+24h] [ebp-24h] BYREF

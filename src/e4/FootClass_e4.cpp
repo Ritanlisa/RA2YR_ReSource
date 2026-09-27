@@ -292,7 +292,7 @@ void FootClass::Stub(int a1)
 namespace gamemd {
 unsigned int FootClass::checkTurning()
 {
-  unsigned int result; // eax
+  void * result;
 
   result = this->infantryBlinkTimer; /*0x50daa0*/
   if ( result >= 4 ) /*0x50daa8*/

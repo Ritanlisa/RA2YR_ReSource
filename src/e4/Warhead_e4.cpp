@@ -23,6 +23,7 @@
 #include "e4/classes/WaveClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Waypoint_e4.hpp"
+#include "e4/classes/WaypointPathClass_e4.hpp"
 
 // 0x41D7E0
 namespace gamemd {

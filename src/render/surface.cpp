@@ -4358,3 +4358,4 @@ REVERSE(0x4BC750, "DSurface::DrawLineFaded: Complex gradient line with stipple/Z
 bool DSurface::DrawLineFaded(
 // 0x7ba610
         return XSurface::DrawLineEx(
+}

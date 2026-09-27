@@ -478,7 +478,7 @@ struct TechnoTypeClass {
     int ActivateSound;  // 0x5A8
     int DeactivateSound;  // 0x5AC
     int MindClearedSound;  // 0x5B0
-    char MovementZone[4];  // 0x5B4
+    unsigned int MovementZone;  // 0x5B4
     int GuardRange;  // 0x5B8
     int MinDebris;  // 0x5BC
     int MaxDebris;  // 0x5C0
@@ -525,7 +525,7 @@ struct TechnoTypeClass {
     AbstractClass* q65C;  // 0x65C
     int WalkRate;  // 0x660
     int IdleRate;  // 0x664
-    char VeteranAbilities[4];  // 0x668
+    unsigned int VeteranAbilities;  // 0x668
     int ThreatPosed;  // 0x670
     int Points;  // 0x674
     int Speed;  // 0x678
@@ -876,7 +876,7 @@ unsigned int q7A8;  // 0x7A8
     unsigned int RequiredHouses;  // 0xD74
     unsigned int ForbiddenHouses;  // 0xD78
     unsigned int SecretHouses;  // 0xD7C
-    WeaponTypeClass* qD80;  // 0xD80
+    unsigned int ;  // 0xD80
     char SecondSpawnOffset[12];  // 0xD84
     unsigned int u32_D88;  // 0xD88
     unsigned int qD8C;  // 0xD8C
@@ -900,9 +900,9 @@ unsigned int q7A8;  // 0x7A8
     unsigned int qDBD;  // 0xDBD
     unsigned int qDBE;  // 0xDBE
     bool qDBF;  // 0xDBF
-    WeaponTypeClass* qDC0;  // 0xDC0
-    void* Palette;  // 0xDC4
-    WeaponTypeClass* qDC8;  // 0xDC8
+    unsigned int ;  // 0xDC0
+    unsigned int ;  // 0xDC4
+    unsigned int ;  // 0xDC8
     WeaponTypeClass* qDCC;  // 0xDCC
     unsigned char qDD0;  // 0xDD0
     void* qDD4;  // 0xDD4
@@ -2424,6 +2424,53 @@ unsigned int q7A8;  // 0x7A8
     unsigned int ImpactLandSound7;
     unsigned int ImpactLandSound8;
     unsigned int ImpactLandSound9;
+    unsigned int ChronoOutSound0;
+    unsigned int CrashingSound6;
+    unsigned int CrashingSound7;
+    unsigned int CrashingSound8;
+    unsigned int CrashingSound9;
+    unsigned int DeploySound6;
+    unsigned int DeploySound7;
+    unsigned int LeaveTransportSound8;
+    unsigned int SinkingSound0;
+    unsigned int SinkingSound3;
+    unsigned int SinkingSound5;
+    unsigned int SinkingSound6;
+    unsigned int SinkingSound8;
+    unsigned int SinkingSound9;
+    unsigned int UndeploySound0;
+    unsigned int UndeploySound1;
+    unsigned int UndeploySound2;
+    unsigned int UndeploySound3;
+    unsigned int UndeploySound4;
+    unsigned int UndeploySound5;
+    unsigned int VoiceCapture2;
+    unsigned int VoiceCapture3;
+    unsigned int VoiceCapture4;
+    unsigned int VoiceFalling0;
+    unsigned int VoiceHarvest6;
+    unsigned int VoiceHarvest7;
+    unsigned int VoiceHarvest8;
+    unsigned int VoiceHarvest9;
+    unsigned int VoiceSinking2;
+    unsigned int VoicePrimaryEliteWeaponAttack6;
+    unsigned int q0E04;
+    unsigned int q1446;
+    unsigned int qD80;
+    unsigned int u32_1388;
+    unsigned int u32_1900;
+    unsigned int u32_1A04;
+    unsigned int u32_1AC2;
+    unsigned int u32_1B80;
+    unsigned int u32_1C08;
+    unsigned int u32_1CC6;
+    unsigned int u32_24C6;
+    unsigned int Palette;
+    unsigned int qDC0;
+    unsigned int qDC8;
+    unsigned int u32_1D84;
+    unsigned int u32_1E42;
+    unsigned int CrushSound0;
 // --- flat members (END) ---
     AbstractClass * * Construct(ObjectTypeClass * aP1);
     AbstractClass * * GetByTypeAndIndex(int a1, int a2);

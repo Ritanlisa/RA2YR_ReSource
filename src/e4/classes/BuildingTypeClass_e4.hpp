@@ -846,7 +846,7 @@ struct BuildingTypeClass {
     char qCA4[4];  // 0xCA4
     unsigned char qCA8;  // 0xCA8
     bool TechnoTypeClass_field_bool_CB4;  // 0xCB4
-    char BarrelAnimData[4];  // 0xCB8
+    unsigned int BarrelAnimData;  // 0xCB8
     unsigned char qCBC;  // 0xCBC
     bool TechnoTypeClass_field_bool_CC8;  // 0xCC8
     unsigned int qCC9;  // 0xCC9

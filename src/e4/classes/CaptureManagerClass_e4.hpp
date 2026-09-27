@@ -24,7 +24,7 @@ struct CaptureManagerClass {
     unsigned int controlNodes;  // 0x24
     unsigned int controlNodeCount;  // 0x28
     bool q02B;  // 0x2B
-    char controlNodeCapacity[4];  // 0x2C
+    unsigned int controlNodeCapacity;  // 0x2C
     TechnoClass* owner;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
@@ -38,7 +38,7 @@ struct CaptureManagerClass {
     bool CaptureManagerClass_field_40;  // 0x40
     bool CaptureManagerClass_field_41;  // 0x41
     unsigned char pad_42;  // 0x42
-    char overloadLimit[4];  // 0x44
+    unsigned int overloadLimit;  // 0x44
     char overloadCount[4];  // 0x48
     bool q04A;  // 0x4A
     unsigned int linkCount;  // 0x4C

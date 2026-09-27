@@ -34,7 +34,7 @@
 namespace gamemd {
 ScenarioClass * * ScenarioClass::CopyStartPositions()
 {
-  unsigned int result;
+  void * result;
   unsigned int v1;
   int v2; // edi
   int v3; // eax

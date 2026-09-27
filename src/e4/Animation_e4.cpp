@@ -14,6 +14,7 @@
 #include "e4/classes/AsyncIO_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Factory_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
 
 // 0x4549B0
 namespace gamemd {
@@ -28,7 +29,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   int v8; // ebp
   int i; // edi
   double HealthRatioBuildingClass; // st7
-  unsigned int v11;
+  RulesClass * v11;
   int v12; // ecx
   unsigned char *v13; // eax
   unsigned int *v14; // ecx
@@ -221,14 +222,14 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
   int v10; // eax
   int v11; // eax
   void *v12; // eax
-  unsigned int *v13; // edx
+  char * v13;
   char **v14; // eax
   int j; // edi
   void *v16; // ecx
   int v17; // eax
   int v19; // eax
   void *v20; // eax
-  unsigned int *v21; // edx
+  char * v21;
   void *v23; // [esp+14h] [ebp-Ch] BYREF
   int v24; // [esp+18h] [ebp-8h] BYREF
 

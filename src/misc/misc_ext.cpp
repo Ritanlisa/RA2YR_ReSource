@@ -32327,3 +32327,4 @@ DiskLaserClass::DiskLaserClass() {}
 NeuronClass::NeuronClass() {}
 
 WorldDominationTour::WorldDominationTour() {}
+}

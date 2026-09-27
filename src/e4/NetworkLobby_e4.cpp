@@ -23,6 +23,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Process_e4.hpp"
+#include "e4/classes/BuildingPlacement_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x5D4210
 namespace gamemd {

@@ -287,7 +287,7 @@ struct AircraftTypeClass {
     unsigned char q340;  // 0x340
     unsigned int q344;  // 0x344
     unsigned int q348;  // 0x348
-    char Locomotor[4];  // 0x34C
+    unsigned int Locomotor;  // 0x34C
     unsigned char q350;  // 0x350
     unsigned int q354;  // 0x354
     unsigned char q358;  // 0x358
@@ -460,7 +460,7 @@ struct AircraftTypeClass {
     int ActivateSound;  // 0x5A8
     int DeactivateSound;  // 0x5AC
     int MindClearedSound;  // 0x5B0
-    char MovementZone[4];  // 0x5B4
+    unsigned int MovementZone;  // 0x5B4
     int GuardRange;  // 0x5B8
     int MinDebris;  // 0x5BC
     int MaxDebris;  // 0x5C0
@@ -850,7 +850,7 @@ struct AircraftTypeClass {
     unsigned int ForbiddenHouses;  // 0xD78
     unsigned int SecretHouses;  // 0xD7C
     unsigned char qD80;  // 0xD80
-    char SecondSpawnOffset[4];  // 0xD84
+    unsigned int SecondSpawnOffset;  // 0xD84
     unsigned char qD88;  // 0xD88
     unsigned int qD8C;  // 0xD8C
     unsigned char qD90;  // 0xD90

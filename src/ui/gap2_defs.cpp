@@ -7992,3 +7992,4 @@ int WWMouseClass::checkHotspot(int a1, int a2) {
 }
 // 0x7BA3A0
 namespace gamemd { void* WWMouseClass::QueryInterface(int a1) { return nullptr; } }
+}

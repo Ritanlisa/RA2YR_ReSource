@@ -15,3 +15,5 @@ void TemporalClass::calculateChecksum(void* checksum) const {}
 int TemporalClass::StubReturn70() const { return 70; }
 // 0x71b190
 int TemporalClass::StubReturn80() const { return 80; }
+}
+}

@@ -327,7 +327,7 @@ void ThemeClass_Update()
   uint64_t v0; // rdi
   uint64_t v1; // rax
   unsigned int * v2;
-  unsigned int v3;
+  unsigned int * v3;
   unsigned int * v4;
   char *v5; // edi
   unsigned int * v6;

@@ -361,7 +361,7 @@ void WeaponTypeClass_SaveLoad_Prefix()
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 68); /*0x772e62*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v4 + 70); /*0x772e73*/
     for ( m = 0; m < v4[65]; ++m ) /*0x772e83*/
-      ObjectPtr::RegisterForTracking((int, unsigned int a2)&SwizzleManagerClass_Instance, (int *)(v4[62] + 4 * m)); /*0x772e94*/
+      ObjectPtr::RegisterForTracking((int, unsigned int a2, unsigned int a3, unsigned int a4)&SwizzleManagerClass_Instance, (int *)(v4[62] + 4 * m)); /*0x772e94*/
     return 0; /*0x772ea4*/
   }
   return result; /*0x772ea6*/

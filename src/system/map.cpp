@@ -858,3 +858,4 @@ bool MapClass::MakeTraversable(const ObjectClass* visitor, const CellStruct& cel
     return false;
 
 } // namespace gamemd
+}

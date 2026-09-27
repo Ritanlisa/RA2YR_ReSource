@@ -631,7 +631,7 @@ namespace gamemd {
 char TypeList_Infantry::Remove(int a2, unsigned int * a3)
 {
   unsigned int *v4; // edi
-  void * v5;
+  unsigned int v5;
   int i; // eax
   int v7; // eax
 

@@ -261,7 +261,7 @@ namespace gamemd {
 int TagClass::CheckEvent(int a2, TagTypeClass * aP2)
 {
   TriggerClass * v4;
-  TagTypeClass * result;
+  unsigned int result;
 
   if ( this->buildingType == a2 ) /*0x6e561a*/
     this->buildingType = 0; /*0x6e561c*/

@@ -173,7 +173,7 @@ void * CreateTeamCommand::performAction_243(char a2)
 namespace gamemd {
 int CreateTeamCommand::performAction_245(char a2, int a3)
 {
-  void * v3;
+  unsigned int v3;
   unsigned int *v4; // esi
   int v6; // eax
   int v7; // eax

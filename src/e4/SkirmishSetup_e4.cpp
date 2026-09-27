@@ -72,7 +72,7 @@ void SkirmishSetup_Setup(HWND hWnd, int a2)
       v7 = SendMessageA(hWnd, 0x4CDu, 0, (LPARAM)v6); /*0x5d6280*/
       if ( *(unsigned int *)(v5 + 40) == a2 ) /*0x5d628b*/
         SendMessageA(hWnd, 0x186u, v7, 0); /*0x5d6296*/
-      SendMessageA(hWnd, 0x19Au, v7, v5); /*0x5d62a0*/
+      SendMessageA(hWnd, 0x19Au, v7, v5, unsigned int a6); /*0x5d62a0*/
     }
     ++i; /*0x5d62a9*/
   }
@@ -85,7 +85,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
   int result; // eax
   HWND v7; // esi
   HWND v8; // esi
-  int v9; // ebx
+  AbstractClass ** v9;
   LRESULT v10; // eax
   LRESULT v11; // edi
   int v12; // ebx
@@ -146,7 +146,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
           result = 1; /*0x5e695c*/
           break; /*0x5e6968*/
         case 130: /*0x5e694c*/
-          DestroyDialog(hWnd); /*0x5e69a6*/
+          DestroyDialog(hWnd, unsigned int a6); /*0x5e69a6*/
           result = 0; /*0x5e69ae*/
           break; /*0x5e69b4*/
         default:
@@ -183,7 +183,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
               {
                 hWnd = *(HWND *)(g_MultiplayerGameState + 4 * v12); /*0x5e6a9c*/
                 if ( (uint8_t)MapPreview::Check(hWnd) ) /*0x5e6aa0*/
-                  SkirmishVector::PushBack(&hWnd); /*0x5e6ab2*/
+                  SkirmishVector::PushBack(&hWnd, unsigned int a6); /*0x5e6ab2*/
               }
               DlgItem = GetDlgItem(v8, 1363); /*0x5e6ac2*/
               (*(void (__thiscall **)(LRESULT, HWND, unsigned int *, unsigned int))(*(unsigned int *)v11 + 76))(v11, DlgItem, v44, 0); /*0x5e6ad4*/
@@ -209,7 +209,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
           }
           break;
         case 0x5C0u: /*0x5e69cd*/
-          CloseDialog(hWnd, 2); /*0x5e69ec*/
+          CloseDialog(hWnd, 2, unsigned int a6); /*0x5e69ec*/
           return 0; /*0x5e69fa*/
       }
       return 0; /*0x5e69dd*/
@@ -245,7 +245,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
                     SkirmishVector::PushBack(&a6); /*0x5e6c73*/
                   ++v15; /*0x5e6c7c*/
                 }
-                while ( v15 < a4 ); /*0x5e6c7f*/
+                while (v15 < a4, unsigned int a6); /*0x5e6c7f*/
               }
               v19 = GetDlgItem(v14, 1363); /*0x5e6c8d*/
               (*(void (__thiscall **)(LRESULT, HWND, unsigned int *, unsigned int))(*(unsigned int *)v18 + 76))(v18, v19, v44, 0); /*0x5e6c9b*/
@@ -263,7 +263,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
                   do /*0x5e6d23*/
                   {
                     v23 = (const wchar_t *)SendDlgItemMessageA(v14, 1363, 0x199u, v22, 0); /*0x5e6d06*/
-                    if ( !wcscmp(v23, &word_AC0EC8) ) /*0x5e6d0e*/
+                    if ( !wcscmp(v23, &word_AC0EC8, unsigned int a6) ) /*0x5e6d0e*/
                       v21 = v22; /*0x5e6d1a*/
                     ++v22; /*0x5e6d20*/
                   }
@@ -298,7 +298,7 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
                 byte_AC11C9 = 1; /*0x5e6de2*/
               }
               SendDlgItemMessageA(v14, 1771, 0x186u, 0, 0); /*0x5e6df6*/
-              DeleteAndZero::Alt((void **)&hWnd); /*0x5e6dfc*/
+              DeleteAndZero::Alt((void **, unsigned int a6)&hWnd); /*0x5e6dfc*/
               return 0; /*0x5e6e04*/
             }
           }
@@ -329,14 +329,14 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
         {
           hWnd = *(HWND *)(g_MultiplayerGameState + 4 * (unsigned int)v35); /*0x5e6f23*/
           if ( (uint8_t)MapPreview::Check(hWnd) ) /*0x5e6f27*/
-            SkirmishVector::PushBack(&hWnd); /*0x5e6f39*/
+            SkirmishVector::PushBack(&hWnd, unsigned int a6); /*0x5e6f39*/
           ++v35; /*0x5e6f42*/
         }
         while ( (int)v35 < (int)a6 ); /*0x5e6f45*/
       }
       v38 = GetDlgItem(v36, 1363); /*0x5e6f4d*/
       (*(void (__thiscall **)(int, HWND, unsigned int *, unsigned int))(*(unsigned int *)First + 76))(First, v38, v44, 0); /*0x5e6f5b*/
-      VectorClass::Cleanup3(v44); /*0x5e6f6a*/
+      VectorClass::Cleanup3(v44, unsigned int a6); /*0x5e6f6a*/
     }
     IDA_LOBYTE(hWnd) = (*(int (__thiscall **)(int))(*(unsigned int *)First + 60))(First); /*0x5e6f7c*/
     v39 = GetDlgItem(v36, 1411); /*0x5e6f80*/
@@ -355,14 +355,14 @@ int SkirmishSetup::DlgProc(SkirmishDialog * aP0, int a2, HWND hWnd, signed int a
           do /*0x5e6ffb*/
           {
             v43 = (HWND)SendDlgItemMessageA(v36, 1363, 0x199u, v42, 0); /*0x5e6fea*/
-            if ( v43 == hWnd ) /*0x5e6ff0*/
+            if (v43 == hWnd, unsigned int a6) /*0x5e6ff0*/
               v41 = v42; /*0x5e6ff2*/
             ++v42; /*0x5e6ff8*/
           }
           while ( v42 < (int)a6 ); /*0x5e6ffb*/
         }
         SendDlgItemMessageA(v36, 1363, 0x186u, v41, 0); /*0x5e700b*/
-        SendDlgItemMessageA(v36, 1363, 0x197u, v41, 0); /*0x5e701b*/
+        SendDlgItemMessageA(v36, 1363, 0x197u, v41, 0, unsigned int a1); /*0x5e701b*/
         v40 = g_GameRulesOptions; /*0x5e701d*/
       }
     }

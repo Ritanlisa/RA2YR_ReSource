@@ -9,6 +9,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
 
 // 0x626DA0
 namespace gamemd {

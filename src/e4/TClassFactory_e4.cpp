@@ -14,6 +14,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Radar_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x6C0260
 namespace gamemd {

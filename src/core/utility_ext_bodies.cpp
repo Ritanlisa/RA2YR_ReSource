@@ -9,3 +9,4 @@ void AllocCallback::Dispatch() {}
 void GraphicMenuImageItem::QueryInterface() {}
 // 0x49ef40
 void StringVector::Add() {}
+}

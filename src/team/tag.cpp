@@ -388,3 +388,4 @@ int TagTypeClass::objectSize() const { return 0; }
 void TagTypeClass::calculateChecksum(void* checksum) const {
 
 } // namespace gamemd
+}

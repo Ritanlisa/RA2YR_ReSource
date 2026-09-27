@@ -457,8 +457,8 @@ struct TacticalClass {
     unsigned int u32_58C6;
     unsigned int u32_7204;
     unsigned int updateVisibility;
-    unsigned int ScrollView;
     unsigned int q4696;
+    unsigned int ScrollView;
 // --- flat members (END) ---
     char StubReturnFalse();
     char StubReturnFalse11();
@@ -501,7 +501,6 @@ struct TacticalClass {
     static double SetViewDimensions(...);  // C2597 interim stub
     static double BuildCommandBar(...);  // C2597 interim stub
     static double PixelToCellCheck(...);  // C2597 interim stub
-    return ScrollView(aP1);  // def-aligned
 };
 
 } // namespace gamemd

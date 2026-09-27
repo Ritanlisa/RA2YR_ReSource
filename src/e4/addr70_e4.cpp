@@ -882,7 +882,7 @@ unsigned long long TechnoClass_RevealRadarEvent(int a1, int a2)
   DWORD Ticks; // eax
   int v5; // eax
   DWORD result; // eax
-  void *v7; // [esp-1Ch] [ebp-2Ch]
+  unsigned int v7;
   unsigned char v8[4]; // [esp+4h] [ebp-Ch] BYREF
   int v9; // [esp+8h] [ebp-8h]
 

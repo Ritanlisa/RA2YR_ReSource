@@ -1484,3 +1484,4 @@ BuildingTypeClass** BuildingTypeClass_Array = nullptr;
 int32_t Map_VisibleRect = 0;
 
 } // namespace gamemd
+}

@@ -500,7 +500,7 @@ struct AnimTypeClass {
     int q728;  // 0x728
     void* q734;  // 0x734
     unsigned char q738;  // 0x738
-    char q740[4];  // 0x740
+    unsigned int q740;  // 0x740
     AbstractTypeClass* q744;  // 0x744
     int q748;  // 0x748
     void* q75C;  // 0x75C

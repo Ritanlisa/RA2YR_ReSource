@@ -13,6 +13,9 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/WarheadTypeClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/ParticleSystemTypeClass_e4.hpp"
 
 // 0x6A01A0
 namespace gamemd {
@@ -177,7 +180,7 @@ int WalkLocomotion::ProcessCollision(char a2)
   AbstractClass *v176; // [esp+2Ch] [ebp-F8h]
   ObjectClass *aP4; // [esp+44h] [ebp-E0h] BYREF
   unsigned char v182[12]; // [esp+48h] [ebp-DCh] BYREF
-  void * varD0;
+  unsigned int varD0;
   IUnknown *v183; // [esp+5Ch] [ebp-C8h]
   ObjectClass aP3; // [esp+60h] [ebp-C4h] BYREF
   if ( (!this->u8_63 || this->WalkLocomotion_field_0x58 == -1) && *(unsigned int *)(this->q00C + 1504) != 8

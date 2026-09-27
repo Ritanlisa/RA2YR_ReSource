@@ -38,13 +38,13 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
 {
   unsigned int v3; // eax
   int *v4; // eax
-  int * v5;
+  unsigned int v5;
   int v7; // eax
   unsigned int v8; // eax
-  unsigned int NeighbourContent;
+  int * NeighbourContent;
   unsigned int *v10; // ebp
   unsigned int *v11; // ebx
-  unsigned int v12;
+  int * v12;
   int v13; // ebx
   unsigned short *v14; // esi
   double v15; // st7

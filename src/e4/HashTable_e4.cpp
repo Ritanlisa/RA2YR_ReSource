@@ -1052,8 +1052,8 @@ unsigned int HashTable_flat::CleanupAndResize()
   unsigned int i; // ebp
   int v3; // esi
   void **v4; // edi
-  unsigned int result; // eax
-  unsigned int v6; // esi
+  void * result;
+  void * v6;
   int v7; // ecx
   int *v8; // ebp
   void *v9; // edi

@@ -586,7 +586,7 @@ namespace gamemd {
 AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
 {
   char *v3; // esi
-  int result; // eax
+  AbstractClass ** result;
   void *v5; // esi
   size_t v6; // ebx
   bool v7; // zf

@@ -4,6 +4,9 @@
 namespace gamemd {
 
 struct HashTable_flat {
+    unsigned int q08D;
+    unsigned int q08E;
+    unsigned int q091;
     unsigned int release;
     unsigned int Position;
     unsigned int q25C;

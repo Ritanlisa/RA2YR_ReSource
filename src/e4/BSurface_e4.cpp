@@ -9,6 +9,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x410CE0
 namespace gamemd {
@@ -18,7 +20,7 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
   int v11; // eax
   int v12; // ecx
   unsigned int *v13; // ecx
-  int v14; // eax
+  unsigned int * v14;
   int v15; // eax
   int v16; // ecx
   int v17; // ecx

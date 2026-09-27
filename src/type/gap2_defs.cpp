@@ -30,3 +30,5 @@ namespace gamemd { short BuildingTypeClass::GetFoundationHeight(IUnknown * aP1) 
 namespace gamemd { bool BuildingTypeClass::IsCellClearOfTerrainObstacles(gamemd::Vector2D<short> const &) const { return false; } }
 // 0x0 (lnk)
 namespace gamemd { gamemd::Vector3D<int> * TechnoTypeClass::GetParticleSysOffset(gamemd::Vector3D<int> *) const { return nullptr; } }
+}
+}

@@ -17,3 +17,5 @@ bool AirstrikeClass::StubReturnFalse() const { return false; }
 int AirstrikeClass::StubReturn71() const { return 71; }
 // 0x41dd30
 int AirstrikeClass::StubReturn96() const { return 96; }
+}
+}

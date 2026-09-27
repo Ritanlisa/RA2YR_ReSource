@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Multiplayer_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x53ECE0
 namespace gamemd {

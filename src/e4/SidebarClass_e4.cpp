@@ -21,6 +21,9 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/CreateTeamCommand_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x4C9C50
 namespace gamemd {
@@ -570,7 +573,7 @@ GadgetClass * * SidebarClass::LoadResources()
   int v22; // [esp-4h] [ebp-38h]
   int *v23; // [esp+10h] [ebp-24h]
   int v24; // [esp+14h] [ebp-20h]
-  int v25; // [esp+18h] [ebp-1Ch] BYREF
+  unsigned int v25;
   int v26; // [esp+1Ch] [ebp-18h]
   int v27; // [esp+20h] [ebp-14h]
   int v28; // [esp+24h] [ebp-10h]

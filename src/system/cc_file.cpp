@@ -83,3 +83,4 @@ int CCFileClass::Reset()
   *(&this->FileSize5) = 0; /*0x473cf5*/
   return CCFileClass::Close(this); /*0x473d01*/
 }
+}

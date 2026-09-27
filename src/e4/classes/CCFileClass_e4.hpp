@@ -168,7 +168,6 @@ struct CCFileClass {
     static double Reset(...);  // C2597 interim stub
     static double GetSize(...);  // C2597 interim stub
     void Construct2(void* filename);  // init file object with name
-    LABEL_27: Construct(v22, aRulesmdIni);  // def-aligned
 };
 
 } // namespace gamemd

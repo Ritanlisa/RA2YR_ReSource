@@ -494,7 +494,7 @@ int Power::FlagProcess(int a2)
     while ( v7 ); /*0x4a1d16*/
     result = ~v6; /*0x4a1d18*/
     *(unsigned int *)this = result; /*0x4a1d1b*/
-    *(((char *)&this->q000 + 1), unsigned int a1) = 0; /*0x4a1d1d*/
+    *(((char *, unsigned int a1)&this->q000 + 1), unsigned int a1) = 0; /*0x4a1d1d*/
   }
   return result; /*0x4a1d23*/
 }

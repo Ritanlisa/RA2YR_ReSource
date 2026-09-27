@@ -15,3 +15,4 @@ void BulletTypeClass::SetScaledSpawnDelay(int delay) { this->delay = delay;
   *(&this->CourseLockDuration6) = delay; /*0x46c844*/
   return delay; /*0x46c84a*/
 }
+}

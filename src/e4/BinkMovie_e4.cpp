@@ -15,6 +15,10 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/BinkMovieHandle_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/BitTextClass_e4.hpp"
+#include "e4/classes/Block_e4.hpp"
+#include "e4/classes/File_e4.hpp"
+#include "e4/classes/DSurface_e4.hpp"
 
 // 0x432690
 namespace gamemd {
@@ -90,7 +94,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
   int v13; // eax
   unsigned int *v14; // eax
   int *v15; // ecx
-  LONG v16; // edi
+  unsigned int v16;
   int v17; // ebx
   LONG v18; // edx
   void * v19;
@@ -100,7 +104,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
   LPCSTR v24; // eax
   LONG bottom; // edi
   LONG left; // eax
-  LONG v27; // edx
+  unsigned int v27;
   LONG lDistanceToMove[5]; // [esp+10h] [ebp-68h] BYREF
   struct tagRECT Rect; // [esp+24h] [ebp-54h] BYREF
   unsigned char v31[16]; // [esp+44h] [ebp-34h] BYREF
@@ -370,11 +374,11 @@ int BinkMovie::RenderLoop(DSurface * aP1, int a3, int a4)
   int v8; // eax
   int v9; // eax
   bool result; // al
-  int v12; // ecx
+  void * v12;
   char v13; // bl
   int v14; // ebp
-  int v15; // eax
-  int v16; // ecx
+  void * v15;
+  void * v16;
   int v17; // [esp-Ch] [ebp-24h]
   struct tagRECT Rect; // [esp+8h] [ebp-10h] BYREF
   int v19; // [esp+1Ch] [ebp+4h]

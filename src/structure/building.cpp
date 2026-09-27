@@ -10599,3 +10599,4 @@ uint32_t BuildingClass::GetField184() const { return BuildingClass_field_544; }
 void BuildingClass::GetActionOnObject() {}
 // 0x41c060
 bool BuildingClass::vt_entry_4E4()  { return false; }
+}

@@ -1566,6 +1566,7 @@ struct SpawnManagerClass {
     unsigned int Items;
     unsigned int q010;
     unsigned int u32_14;
+    unsigned char u8_D;
 // --- flat members (END) ---
     AbstractClass * * LoadFromStream(int aP1, AbstractClass * aP1_4);
     SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5, int a6);

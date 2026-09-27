@@ -23,6 +23,9 @@ struct CoordStruct {
     unsigned int q630;  // 0x630
     unsigned int q1544;  // 0x1544
     unsigned int q5444;  // 0x5444
+    unsigned int X;
+    unsigned int Y;
+    unsigned int Z;
 // --- flat members (END) ---
     unsigned int * Set2(void* aP1,  AbstractClass * aP2);    // 0x642740
 };

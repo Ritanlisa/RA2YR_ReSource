@@ -124,12 +124,10 @@ struct BufferIOFileClass {
     unsigned char q634;  // 0x634
     unsigned char q638;  // 0x638
     unsigned int q640;  // 0x640
-    unsigned int Dtor;
 // --- flat members (END) ---
     int Destruct();
     void StubReturnFalse(int a1, int a2, int a3);
     static double Constructor(...);  // C2597 interim stub
-    return Dtor(v39);  // def-aligned
 };
 
 } // namespace gamemd

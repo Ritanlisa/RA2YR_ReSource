@@ -233,7 +233,7 @@ struct ScenarioClass {
     unsigned int ambientTimer;  // 0x1248
     unsigned int q124C;  // 0x124C
     unsigned int q1250;  // 0x1250
-    char techLevel[4];  // 0x1254
+    unsigned int techLevel;  // 0x1254
     char theater[4];  // 0x1258
     char fileName;  // 0x125C
     void* q1308;  // 0x1308
@@ -430,7 +430,7 @@ struct ScenarioClass {
     char ionGreen[4];  // 0x3514
     char ionBlue[4];  // 0x3518
     unsigned char u8_3519;  // 0x3519
-    char ionGround[4];  // 0x351C
+    unsigned int ionGround;  // 0x351C
     unsigned int ionLevel;  // 0x3520
     char nukeAmbient[4];  // 0x3524
     char nukeRed[4];  // 0x3528
@@ -578,6 +578,11 @@ struct ScenarioClass {
     unsigned int allowableUnits;
     unsigned int u32_152C2;
     unsigned int u32_15380;
+    unsigned int InitTimer;
+    unsigned int q2786;
+    unsigned int u32_7580;
+    unsigned int u32_7C00;
+    unsigned int u32_7F02;
 // --- flat members (END) ---
     void* checkWinningConditions(char a2);
     ScenarioClass * * CopyStartPositions();

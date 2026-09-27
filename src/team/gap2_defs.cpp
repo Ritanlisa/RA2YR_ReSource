@@ -3746,3 +3746,5 @@ int TriggerTypeClass::GetAuxField() {
   return *(this + 38); /*0x727cc6*/
 }
 }
+}
+}

@@ -264,3 +264,4 @@ void ScenarioClass::RecalcLighting(int r, int g, int b, uint32_t unk)
     (void)unk;
 
 } // namespace gamemd
+}

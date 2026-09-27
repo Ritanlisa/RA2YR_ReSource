@@ -14,6 +14,7 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/WinsockInterfaceClass_e4.hpp"
 #include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/VocClass_e4.hpp"
 
 // 0x5FA440
 namespace gamemd {

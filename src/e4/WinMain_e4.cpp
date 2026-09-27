@@ -81,12 +81,13 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/NullModemClass_e4.hpp"
 
 // 0x5BC180
 namespace gamemd {
 void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
-  unsigned int v3;
+  ObjectClass * v3;
   unsigned int *v4; // eax
   unsigned char *v5; // esi
   int v6; // edi
@@ -102,7 +103,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   unsigned int *v16; // eax
   int v17; // esi
   uint8_t result; // al
-  ObjectClass * v19;
+  unsigned int v19;
   int v20; // [esp+18h] [ebp+4h]
 
   v3 = dword_ABF168; /*0x5bc18b*/

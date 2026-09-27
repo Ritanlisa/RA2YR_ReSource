@@ -234,3 +234,4 @@ void DisplayClass::vt_entry_8C() {}
 bool DisplayClass::vt_entry_90(const CellStruct& cell, HouseClass* house) { return false; }
 // 0x4a9ca0
 bool DisplayClass::vt_entry_94(const CellStruct& cell, HouseClass* house, bool unk) { return false; }
+}

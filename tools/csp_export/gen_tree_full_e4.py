@@ -107,7 +107,10 @@ for _h in ('src/core/math.hpp', 'src/core/enums.hpp'):
                 MATHNAMES.add(_m.group(1))
     except OSError:
         pass
-EXCLUDE = tree_special | {'CellCoord'}  # CellCoord owned by _tree_alias_e4.hpp
+EXCLUDE = tree_special | MATHNAMES | {'CellCoord'}  # CellCoord owned by
+# _tree_alias_e4.hpp; MATHNAMES (math/enums plain structs like Matrix3D)
+# were computed but NOT excluded at r57 -- every TU seeing both math.hpp and
+# _tree_full got C2011 redefinitions (607 hits in r73).
 def cpptype(t, size, own):
     t = (t or '').strip()
     if not t:

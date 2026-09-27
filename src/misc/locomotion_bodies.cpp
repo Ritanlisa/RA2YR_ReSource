@@ -142,3 +142,4 @@ bool __stdcall LocomotionClass::Process() { return true; }
   this->vtable2 = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd8*/
   this->ptr_18 = &off_7F2D68; /*0x69ecdf*/
   return this; /*0x69ece8*/
+}

@@ -120,7 +120,6 @@ struct FileClass {
     int Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite);
     unsigned int * loc_401950(char a2);
     static double Load(...);  // C2597 interim stub
-    return OpenWithCDSearch(aP1);  // def-aligned
 };
 
 } // namespace gamemd

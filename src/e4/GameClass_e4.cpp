@@ -255,7 +255,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
   int v6; // ecx
   int v7; // eax
   int v8; // eax
-  CampaignClass * v9;
+  unsigned int v9;
   bool v10; // zf
   char v12[256]; // [esp+8h] [ebp-100h] BYREF
 

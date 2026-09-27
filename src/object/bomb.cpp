@@ -15,3 +15,5 @@ void BombClass::calculateChecksum(void* checksum) const {}
 int BombClass::StubReturn68() const { return 68; }
 // 0x4393d0
 int BombClass::StubReturn92() const { return 92; }
+}
+}

@@ -13,6 +13,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/Settings_e4.hpp"
 
 // 0x5FA620
 namespace gamemd {
@@ -49,7 +50,7 @@ AbstractClass * * GameSettings::Read()
   double v30; // st7
   int64_t v31; // rax
   int v32; // eax
-  double v33; // st7
+  Game * v33;
   int v34; // eax
   int v35; // eax
   char v36; // al

@@ -195,6 +195,5 @@ struct Audio {
     static double SetScoreVolume(...);  // C2597 interim stub
     static double SetSoundVolume(...);  // C2597 interim stub
     static double SetVoiceVolume(...);  // C2597 interim stub
-    return IsLoud(v3) && (*(unsigned char *)(v4 + weaponIndex + 668) || *(unsigned char *)(v4 + weaponIndex + 686));  // def-aligned
 };
 } // namespace gamemd

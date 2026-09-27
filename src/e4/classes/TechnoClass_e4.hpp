@@ -2246,7 +2246,6 @@ struct TechnoClass {
     static double MutateAll(...);  // C2597 interim stub
     static double SetFocus(...);  // C2597 interim stub
     static double EjectPassengers(...);  // C2597 interim stub
-    return CalcFlashAlpha(v1);  // def-aligned
 };
 
 } // namespace gamemd

@@ -18,6 +18,8 @@
 #include "e4/classes/WebBrowser_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x53AE00
 namespace gamemd {

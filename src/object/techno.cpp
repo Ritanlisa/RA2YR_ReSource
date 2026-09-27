@@ -4338,3 +4338,5 @@ int TechnoClass::sub_744100() { return 0;
 int TechnoClass::SelectAutoTargetWithGarrison() { return 0; }
 // 0x732050
 int TechnoClass::GatherAllBuildings() { return 0; }
+}
+}

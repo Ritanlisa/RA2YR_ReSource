@@ -856,3 +856,4 @@ int CellClass::IsTunnelEntrance()
   v1 = *(_WORD *)(this + 278); /*0x484ab0*/
   return v1 >= 0 && v1 < g_UnitTypeCount && *(_DWORD *)(this + 236) == 10; /*0x484ad7*/
 }
+}
