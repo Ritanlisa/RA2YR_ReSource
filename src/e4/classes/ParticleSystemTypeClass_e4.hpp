@@ -1694,6 +1694,7 @@ struct ParticleSystemTypeClass {
     unsigned int vtable46;
     unsigned int q294;
     unsigned int q30C;
+    unsigned int q2A8;
 // --- flat members (END) ---
     ParticleSystemTypeClass * ddtor(char a2);
     char Stub(int a1, int a2);

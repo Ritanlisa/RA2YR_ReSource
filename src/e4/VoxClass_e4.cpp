@@ -8,6 +8,8 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/VocClass_e4.hpp"
+#include "e4/classes/Mixer_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x752700
 namespace gamemd {

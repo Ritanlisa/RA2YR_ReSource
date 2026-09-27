@@ -563,7 +563,7 @@ void* UnitClass::Deploy(void * a1)
           *v17 = (int)((_DWORD *)((int)g_CurrentFrame));
           v1[15] = (_DWORD *)(v59);
           v1[16] = (_DWORD *)(v20);
-          v19 = g_RulesClass_Instance; /*0x7194f7*/
+          v19 = (_DWORD *)(g_RulesClass_Instance);
         }
         v21 = *v17; /*0x7194fd*/
         v22 = v1[16]; /*0x7194ff*/

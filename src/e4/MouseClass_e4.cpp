@@ -10,6 +10,9 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
 
 // 0x6D1770
 namespace gamemd {
@@ -60,7 +63,7 @@ char MouseClass::LoadCursors()
 {
   char result; // al
 
-  result = byte_B0FBE0; /*0x72ddb0*/
+  result = (unsigned int)(byte_B0FBE0);
   if ( !byte_B0FBE0 ) /*0x72ddb7*/
   {
     AssetClass::ReleaseAndReload(); /*0x72ddbd*/

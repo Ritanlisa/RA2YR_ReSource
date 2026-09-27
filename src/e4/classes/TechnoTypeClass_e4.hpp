@@ -76,7 +76,7 @@ struct TechnoTypeClass {
     unsigned char u8_AD;  // 0xAD
     unsigned char u8_AE;  // 0xAE
     unsigned char u8_AF;  // 0xAF
-    char MainVoxel[4];  // 0xB0
+    unsigned int MainVoxel;  // 0xB0
     unsigned char u8_B1;  // 0xB1
     unsigned char u8_B2;  // 0xB2
     unsigned char u8_B3;  // 0xB3
@@ -876,7 +876,7 @@ unsigned int q7A8;  // 0x7A8
     unsigned int ForbiddenHouses;  // 0xD78
     unsigned int SecretHouses;  // 0xD7C
     unsigned int ;  // 0xD80
-    char SecondSpawnOffset[12];  // 0xD84
+    unsigned int SecondSpawnOffset;  // 0xD84
     unsigned int u32_D88;  // 0xD88
     unsigned int qD8C;  // 0xD8C
     unsigned char qD90;  // 0xD90
@@ -2475,6 +2475,7 @@ unsigned int q7A8;  // 0x7A8
     unsigned int speedType8;
     unsigned int techLevel6;
     unsigned int u32_27C2;
+    unsigned int AccelerationFactor0;
 // --- flat members (END) ---
     AbstractClass * * Construct(ObjectTypeClass * aP1);
     AbstractClass * * GetByTypeAndIndex(int a1, int a2);

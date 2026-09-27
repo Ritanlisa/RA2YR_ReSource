@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Display_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/DisplayClass_e4.hpp"
 
 // 0x72B8E0
 namespace gamemd {

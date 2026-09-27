@@ -23,6 +23,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/Building_e4.hpp"
+#include "e4/classes/BulletTypeClass_e4.hpp"
 
 // 0x45DD90
 namespace gamemd {

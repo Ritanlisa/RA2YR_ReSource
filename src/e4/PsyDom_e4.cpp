@@ -12,6 +12,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/RadBeam_e4.hpp"
 
 // 0x53B080
 namespace gamemd {
@@ -62,7 +63,7 @@ void PsyDom::Fire()
   v0 = (unsigned int *)(operator new(0x14u));
   if ( v0 ) /*0x53b097*/
   {
-    v1 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&PsyDom_Coords); /*0x53b0a3*/
+    v1 = (unsigned int *)(CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&PsyDom_Coords));
     v2 = (int *)(*(int (__thiscall **)(void *, int *))(*(unsigned int *)v1 + 72))(v1, v33); /*0x53b0b1*/
     v3 = ActionQueue::PushEntry(v0, *v2, v2[1], v2[2]); /*0x53b0cb*/
   }

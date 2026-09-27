@@ -43,6 +43,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x420140
 namespace gamemd {
@@ -63,14 +64,14 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
   if ( dword_88A090 <= 0 ) /*0x420152*/
   {
   LABEL_5: v3 = (unsigned int *)(operator new(0x20008u));
-    v4 = v3; /*0x420178*/
+    v4 = (unsigned int)(v3);
     if ( v3 ) /*0x42017f*/
     {
       v3[0x8000] = (unsigned short *)(aP0);
       v5 = (int)((unsigned short *)(0));
       v3[32769] = (unsigned short *)(0);
-      v6 = (unsigned short *)(aP0 - 1);
-      v7 = v3; /*0x420194*/
+      v6 = (gamemd::CCINIClass *)((unsigned short *)(aP0 - 1));
+      v7 = (unsigned short *)(v3);
       do /*0x4201d3*/
       {
         v8 = (unsigned char)(v6 * (v5 >> 8) * (uint8_t)v5 / 32258);
@@ -141,37 +142,37 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int v20; // eax
   int v21; // edi
   int v22; // ebx
-  int v23; // ecx
+  int * v23;
   int SubFile; // esi
   unsigned short *v25; // eax
   unsigned int v26;
   uint8_t *v27; // esi
   char *v28; // ebp
-  int v29; // ecx
-  int v30; // edi
+  int * v29;
+  int * v30;
   uint8_t v31; // cl
   char v32; // cl
   char *v33; // edx
-  int v34; // edi
+  int * v34;
   uint8_t v35; // cl
   char v36; // cl
-  int v37; // [esp+8h] [ebp-C8h]
-  int v38; // [esp+8h] [ebp-C8h]
-  int v39; // [esp+8h] [ebp-C8h]
-  int * v40;
-  int v41; // [esp+10h] [ebp-C0h]
+  int * v37;
+  int * v38;
+  int * v39;
+  unsigned int v40;
+  int * v41;
   int * v42;
   int v43; // [esp+18h] [ebp-B8h]
   int v44; // [esp+1Ch] [ebp-B4h]
   uint8_t v45; // [esp+20h] [ebp-B0h]
   uint8_t v46; // [esp+20h] [ebp-B0h]
-  int v47; // [esp+24h] [ebp-ACh]
-  int v48; // [esp+28h] [ebp-A8h]
+  int * v47;
+  int * v48;
   char *v49; // [esp+2Ch] [ebp-A4h]
   int * v50;
   int * v51;
   int * v52;
-  int v53; // [esp+3Ch] [ebp-94h]
+  int * v53;
   int *v54; // [esp+40h] [ebp-90h]
   int v55; // [esp+44h] [ebp-8Ch]
   int v56; // [esp+4Ch] [ebp-84h]
@@ -209,11 +210,11 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v51 = (int *)(*(unsigned int *)(v5 + 44));
         v52 = (int *)(*(unsigned int *)(v5 + 48));
         v53 = (int *)(*(unsigned int *)(v5 + 52));
-        v6 = v51 - (unsigned int)g_TacticalClass_Instance[45].lpVtbl; /*0x420fb6*/
-        v50 = DSurface_ViewBounds + v50 - (unsigned int)g_TacticalClass_Instance[44].lpVtbl; /*0x420fca*/
-        v51 = g_Map_VisibleRect + v6; /*0x420fd2*/
-        v7 = ClipRectIntersection(v70, (int *)&v50, v54, 0, 0); /*0x420fe2*/
-        v68[0] = *v7; /*0x420fe9*/
+        v6 = (int *)(v51 - (unsigned int)g_TacticalClass_Instance[45].lpVtbl);
+        v50 = (int *)(DSurface_ViewBounds + v50 - (unsigned int)g_TacticalClass_Instance[44].lpVtbl);
+        v51 = (int *)(g_Map_VisibleRect + v6);
+        v7 = (int *)(ClipRectIntersection(v70, (int *)&v50, v54, 0, 0));
+        v68[0] = (int *)(*v7);
         v68[1] = v7[1]; /*0x420ff7*/
         v68[2] = v7[2]; /*0x421001*/
         v8 = v3[1]; /*0x421008*/
@@ -238,11 +239,11 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           v17 = (int *)((unsigned int)((int *)(v50)));
           v69 = (int *)(v12 - v62);
           v18 = (int)(*((unsigned int *)dword_88A0F4 + v4));
-          v58 = v51; /*0x42109c*/
-          v61 = *(char ***)(v18 + 56); /*0x4210ad*/
-          FoundationSize = Building::GetFoundationSize(v72, 0); /*0x4210b6*/
-          v41 = v13; /*0x4210b8*/
-          v20 = *FoundationSize; /*0x4210bc*/
+          v58 = (int *)(v51);
+          v61 = (char **)((int *)(*(char ***)(v18 + 56)));
+          FoundationSize = (int *)(Building::GetFoundationSize(v72, 0));
+          v41 = (unsigned int)((int *)(v13));
+          v20 = (int *)(*FoundationSize);
           v66 = FoundationSize[1]; /*0x4210c1*/
           v21 = FoundationSize[2]; /*0x4210c8*/
           v67 = FoundationSize[3]; /*0x4210ce*/
@@ -260,14 +261,14 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           if ( v55 + v56 >= (int)(v20 + v17 + v21) ) /*0x421156*/
           {
             v42 = (int)(v20 + v17 + v21);
-            v23 = v42; /*0x421162*/
+            v23 = (int)(v42);
           }
           else
           {
-            v42 = v55 + v56; /*0x421158*/
+            v42 = (int *)(v55 + v56);
           }
-          v47 = v40 + *((unsigned int *)g_VisibleSurfaceDescriptor + 10) - v23; /*0x421187*/
-          v43 = 60 - v56; /*0x421199*/
+          v47 = (int)(v40 + *((unsigned int *)g_VisibleSurfaceDescriptor + 10) - v23);
+          v43 = (int *)(60 - v56);
           v48 = v40 + v21 - v23; /*0x4211a1*/
           v49 = (char *)&unk_7E2B20 + 60 * v16 + v69; /*0x4211b0*/
           SubFile = MixFileClass::GetSubFile(v61, 0); /*0x4211c9*/
@@ -281,13 +282,13 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           {
             if ( v41 < v37 ) /*0x4212bb*/
             {
-              v33 = v49; /*0x4212c1*/
+              v33 = (int)(v49);
               v39 = v37 - v41; /*0x4212c5*/
               do /*0x421324*/
               {
                 if ( v40 < v42 ) /*0x4212cf*/
                 {
-                  v34 = v42 - v40; /*0x4212d3*/
+                  v34 = (int)(v42 - v40);
                   do /*0x421306*/
                   {
                     v35 = *v27++; /*0x4212d5*/
@@ -310,14 +311,14 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           }
           else if ( v41 < v37 ) /*0x421221*/
           {
-            v28 = v49; /*0x42122b*/
-            v38 = v37 - v41; /*0x42122f*/
-            v29 = v40; /*0x421233*/
+            v28 = (char *)((int)(v49));
+            v38 = (int *)(v37 - v41);
+            v29 = (unsigned int)((int *)(v40));
             do /*0x4212ad*/
             {
               if ( v29 < v42 ) /*0x421239*/
               {
-                v30 = v42 - v29; /*0x42123d*/
+                v30 = (int)(v42 - v29);
                 do /*0x421281*/
                 {
                   v31 = *v27++; /*0x42123f*/
@@ -379,8 +380,8 @@ unsigned int * ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown * a
   v6 = (int)(*aP2);
   v7 = (int)(aP2[1]);
   v16 = (int)(aP2[2]);
-  v17 = aP2[3]; /*0x421b7e*/
-  v8 = aP1[2]; /*0x421b82*/
+  v17 = (int)(aP2[3]);
+  v8 = (int)(aP1[2]);
   if ( v8 <= 0 ) /*0x421b87*/
     goto LABEL_23; /*0x421b87*/
   v15 = aP1[3]; /*0x421b92*/

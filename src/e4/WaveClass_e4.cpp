@@ -15,6 +15,11 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Particle_e4.hpp"
 #include "e4/classes/Warhead_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/ParticleSystemTypeClass_e4.hpp"
 
 // 0x75F650
 namespace gamemd {

@@ -200,7 +200,7 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
   v26 = (uint8_t **)((unsigned int)((uint8_t **)(0)));
   v27 = (uint8_t **)((int)((uint8_t **)(0)));
   v28 = (uint8_t **)((int)((uint8_t **)(0)));
-  v19 = (gamemd::INIClass *)((uint8_t *)Checksummer::Add_Buffer(&v26, aP1, strlen((const char *)aP1)));
+  v19 = (uint8_t *)((gamemd::INIClass *)((uint8_t *)Checksummer::Add_Buffer(&v26, aP1, strlen((const char *)aP1))));
   aP1 = (gamemd::INIClass *)((uint8_t **)(v19));
   if ( !*(&this->u32_41) ) /*0x528b1f*/
     goto LABEL_29; /*0x528b1f*/

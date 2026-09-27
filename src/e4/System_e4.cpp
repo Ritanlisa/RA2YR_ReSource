@@ -35,6 +35,7 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
 
 // 0x52A9E0
 namespace gamemd {
@@ -123,7 +124,7 @@ void System_Search(ObjectClass * aP0, int edx0, int * a2)
 namespace gamemd {
 void sub_6269A0()
 {
-  unsigned int v0;
+  unsigned int * v0;
   unsigned int *v1; // eax
   unsigned int *v2; // edi
   unsigned int *v3; // eax
@@ -352,7 +353,7 @@ AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectCl
 
   while ( 1 ) /*0x68c9d8*/
   {
-    v6 = (int)((gamemd::AbstractClass **)(0));
+    v6 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(0)));
     if ( g_AnimClass_SaveState > 0 ) /*0x68c9dc*/
       break; /*0x68c9dc*/
   LABEL_6:

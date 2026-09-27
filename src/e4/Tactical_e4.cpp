@@ -23,6 +23,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/TagTypeClass_e4.hpp"
 #include "e4/classes/TriggerClass_e4.hpp"
+#include "e4/classes/Techno_e4.hpp"
 
 // 0x42A6D0
 namespace gamemd {
@@ -90,9 +91,9 @@ void * Tactical::ConstructTacticalSurface()
     v4[4] = (unsigned int)(-1);
     *v4 = (unsigned int)(0);
     v4[1] = (unsigned int)(0x10000);
-    v6 = (unsigned int)(operator new(0x40004u));
-    v7 = (unsigned int)(v5[1]);
-    v5[2] = v6; /*0x42a76f*/
+    v6 = (void *)((unsigned int)(operator new(0x40004u)));
+    v7 = (void *)((unsigned int)(v5[1]));
+    v5[2] = (unsigned int)(v6);
     v8 = 0; /*0x42a775*/
     if ( v7 >= 0 ) /*0x42a779*/
     {
@@ -117,9 +118,9 @@ void * Tactical::ConstructTacticalSurface()
     v9[4] = (unsigned int)(-1);
     *v9 = (unsigned int)(0);
     v9[1] = (unsigned int)(10000);
-    v11 = (unsigned int)(operator new(0x9C44u));
-    v12 = (unsigned int)(v10[1]);
-    v10[2] = v11; /*0x42a7c1*/
+    v11 = (void *)((unsigned int)(operator new(0x9C44u)));
+    v12 = (void *)((unsigned int)(v10[1]));
+    v10[2] = (unsigned int)(v11);
     v13 = 0; /*0x42a7c7*/
     if ( v12 >= 0 ) /*0x42a7cb*/
     {

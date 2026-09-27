@@ -19,9 +19,9 @@
 namespace gamemd {
 void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
-  int v13; // eax
-  int v14; // ecx
-  int v15; // edi
+  void * v13;
+  void * v14;
+  void * v15;
   int v16; // ebx
   int v17; // eax
   int v18; // ecx
@@ -79,9 +79,9 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   unsigned short v72[12]; // [esp+19Ch] [ebp-48h] BYREF
   unsigned char v73[48]; // [esp+1B4h] [ebp-30h] BYREF
 
-  v13 = (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)a1 + 108))(a1); /*0x73c5ff*/
-  v14 = *((unsigned int *)a1 + 433); /*0x73c602*/
-  v15 = v13; /*0x73c608*/
+  v13 = (void *)((int)((void *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)a1 + 108))(a1))));
+  v14 = (void *)((int)((void *)(*((unsigned int *)a1 + 433))));
+  v15 = (void *)((unsigned int)(v13));
   v61 = v13; /*0x73c60a*/
   v52 = 1; /*0x73c60e*/
   if ( *(unsigned int *)(v14 + 3644) != 8 || (*(uint8_t (__thiscall **)(unsigned char *))(*(unsigned int *)a1 + 196))(a1) ) /*0x73c621*/
@@ -129,7 +129,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   if ( *(unsigned char *)(v18 + 3233) ) /*0x73c725*/
   {
     v23 = (int)(a1[1060]);
-    v63 = (unsigned int)(a2);
+    v63 = (void *)((unsigned int)((void *)((unsigned int)(a2))));
     v64 = a3; /*0x73c74d*/
     if ( v23 ) /*0x73c751*/
       v64 = a3 - 14; /*0x73c756*/
@@ -152,9 +152,9 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       0,
       0,
       v51);
-    v61 = (int)((void *)(g_DSurface_Hidden_2));
-    g_DSurface_Hidden_2 = dword_B1D13C; /*0x73c7c3*/
-    v63 = 128; /*0x73c7c9*/
+    v61 = (void *)((unsigned int)((void *)((int)((void *)(g_DSurface_Hidden_2)))));
+    g_DSurface_Hidden_2 = (int)((void *)(dword_B1D13C));
+    v63 = (void *)(128);
     v62[1] = 128; /*0x73c7cd*/
     v26 = (unsigned int *)(*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)dword_B1D13C + 120))(dword_B1D13C, v69); /*0x73c7d8*/
     v65[0] = *v26; /*0x73c7dd*/
@@ -244,7 +244,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       {
         v52 = 0; /*0x73cbfa*/
       }
-      v15 = v61; /*0x73cbff*/
+      v15 = (void *)((unsigned int)((void *)((int)(v61))));
     }
     a8 = a8; /*0x73cc03*/
     (*(void (__thiscall **)(unsigned char *, int, int, unsigned int *, unsigned int *, unsigned int, int, unsigned int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int))(*(unsigned int *)a1 + 1292))( /*0x73cc36*/
@@ -345,7 +345,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   }
   else if ( *(unsigned char *)(v18 + 3606) && TechnoClass::CheckTargetCell(a1) && !TechnoClass::ScanNeighborCells(a1) ) /*0x73ce24*/
   {
-    return (*(int (__thiscall **)(unsigned char *, int, int, int *, int *, unsigned int, int, int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 1292))( /*0x73ce5e*/
+    return (*(int (__thiscall **, unsigned int a10, unsigned int a12)(unsigned char *, int, int, int *, int *, unsigned int, int, int, unsigned int, unsigned int, int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)a1 + 1292))( /*0x73ce5e*/
              a1,
              v15,
              v16,

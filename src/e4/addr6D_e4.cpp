@@ -23,6 +23,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/LinkedList_flat_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
 
 // 0x6D1130
 namespace gamemd {

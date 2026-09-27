@@ -8,6 +8,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Radar_e4.hpp"
+#include "e4/classes/LightConvertClass_e4.hpp"
 
 // 0x554760
 namespace gamemd {

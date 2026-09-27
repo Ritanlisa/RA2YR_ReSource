@@ -180,7 +180,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
       v12[1] = (unsigned int *)(v6 + 128);
       v12[2] = (unsigned int *)(0);
       v7 = (unsigned int *)(Coord::To_Cell(&MapClass_Instance, v12));
-      v8 = ObjectPlacement::CalcPosition(v7, v14, v12, 0, 0, 0); /*0x523bc0*/
+      v8 = (int *)(ObjectPlacement::CalcPosition(v7, v14, v12, 0, 0, 0));
       v13[0] = *v8; /*0x523bcf*/
       v9 = v8[1]; /*0x523bd5*/
       v13[1] = v9; /*0x523bd9*/

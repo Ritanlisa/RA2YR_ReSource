@@ -15,6 +15,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/EventClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Movement_e4.hpp"
 
 // 0x4A8BF0
 namespace gamemd {

@@ -11,6 +11,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/NullModemClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/WinsockInterface_e4.hpp"
 
 // 0x774980
 namespace gamemd {
@@ -182,7 +184,7 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
   int v6; // ebx
   WinModemClass * v7;
   int (*v8)(void); // eax
-  WinModemClass ** result;
+  unsigned int result;
   int Bytes; // eax
   int v11; // esi
   int v12; // eax
@@ -206,10 +208,10 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
   v19 = Timer::GetTicks(); /*0x774d38*/
   while ( 1 )
   {
-    v8 = (int (*)(void))this->q068; /*0x774d63*/
+    v8 = (gamemd::WinModemClass **)((int (*)(void))this->q068);
     if ( v8 ) /*0x774d68*/
     {
-      result = (unsigned int)((gamemd::WinModemClass **)((int)((gamemd::WinModemClass **)(v8()))));
+      result = (gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((int)((gamemd::WinModemClass **)(v8())))))));
       if ( result ) /*0x774d6e*/
         return result; /*0x774f2f*/
     }
@@ -348,7 +350,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
   int v19; // esi
   signed int v21; // eax
   size_t v22; // eax
-  AbstractClass ** v24;
+  unsigned int v24;
   int i; // [esp+10h] [ebp-108h] BYREF
   DWORD Ticks; // [esp+14h] [ebp-104h]
   DWORD v28; // [esp+20h] [ebp-F8h] BYREF
@@ -443,7 +445,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
       && Str[2] >= 48
       && Str[2] <= 57 )
     {
-      v24 = (unsigned int)((gamemd::AbstractClass **)((size_t)((gamemd::AbstractClass **)(Count))));
+      v24 = (gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((size_t)((gamemd::AbstractClass **)(Count)))))));
       if ( Count >= 80 ) /*0x775456*/
         v24 = 80; /*0x775458*/
       strncpy(Destination, Str, v24); /*0x77546b*/

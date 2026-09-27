@@ -37,6 +37,11 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/BombClass_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/E4Recv_6A87F0_e4.hpp"
+#include "e4/classes/E4Recv_6A93F0_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
 
 // 0x6C6F50
 namespace gamemd {

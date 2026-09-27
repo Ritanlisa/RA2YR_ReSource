@@ -16,6 +16,11 @@
 #include "e4/classes/LoadingScreen_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
 
 // 0x5447C0
 namespace gamemd {
@@ -95,14 +100,14 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
     qmemcpy(&this->Name, Destination, 0x30u); /*0x5449c1*/
     this->q094 = v11; /*0x5449c3*/
   }
-  this->u8_2F5 = (unsigned int *)(0);
+  this->u8_2F5 = (char)((unsigned int *)(0));
   this->q22F = (char)((unsigned int *)(1));
   this->Selectable = (char)((unsigned int *)(0));
   this->LegalTarget = (char)((unsigned int *)(0));
-  this->Insignificant = (unsigned int *)(1);
-  this->q233 = (unsigned int *)(1);
-  this->q235 = 0; /*0x5449ec*/
-  return this; /*0x5449c4*/
+  this->Insignificant = (char)((unsigned int *)(1));
+  this->q233 = (char)((unsigned int *)(1));
+  this->q235 = (char)((unsigned int *)(0));
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 // 0x71DA80

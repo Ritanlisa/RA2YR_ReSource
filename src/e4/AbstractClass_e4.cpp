@@ -13,6 +13,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/RefCount_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x438E70
 namespace gamemd {
@@ -20,7 +21,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
 {
   AbstractClass *v4; // eax
   AbstractClass *v5; // esi
-  int v6; // eax
+  AbstractClass * v6;
   int v7; // ecx
   void * v8;
   int v9; // ecx
@@ -53,7 +54,7 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
              dword_89C670 + dword_89C67C,
              0) )
       {
-        v6 = (unsigned int)(dword_89C678++);
+        v6 = (gamemd::AbstractClass *)((unsigned int)(dword_89C678++));
         *((unsigned int *)dword_89C66C + v6) = v5; /*0x438f53*/
       }
     }

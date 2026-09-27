@@ -16,6 +16,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x5CA680
 namespace gamemd {
@@ -218,13 +219,13 @@ char MultiplayerSiege::CheckStatus(int a1)
   wchar_t **v2; // edi
   int v3; // ecx
   int v4; // eax
-  int v5; // eax
+  wchar_t ** v5;
   int v6; // edx
   wchar_t **v7; // eax
   wchar_t **v8; // edi
   int v9; // ecx
   int v10; // eax
-  int v11; // eax
+  wchar_t ** v11;
   int v12; // edx
   wchar_t **v13; // eax
   wchar_t **v14; // edi
@@ -243,7 +244,7 @@ char MultiplayerSiege::CheckStatus(int a1)
     && (v4 = *(unsigned int *)(a1 + 20), v4 > 0)
     && (*(uint8_t (__thiscall **)(int, int, unsigned int))(*(unsigned int *)a1 + 8))(a1, v3 + v4, 0) )
   {
-    v5 = *(unsigned int *)(a1 + 16); /*0x5ca9fd*/
+    v5 = (wchar_t **)((int)((wchar_t **)(*(unsigned int *)(a1 + 16))));
     v6 = *(unsigned int *)(a1 + 4); /*0x5caa00*/
     *(unsigned int *)(a1 + 16) = v5 + 1; /*0x5caa06*/
     *(unsigned int *)(v6 + 4 * v5) = v2; /*0x5caa09*/
@@ -259,7 +260,7 @@ char MultiplayerSiege::CheckStatus(int a1)
     && (v10 = *(unsigned int *)(a1 + 20), v10 > 0)
     && (*(uint8_t (__thiscall **)(int, int, unsigned int))(*(unsigned int *)a1 + 8))(a1, v9 + v10, 0) )
   {
-    v11 = *(unsigned int *)(a1 + 16); /*0x5caa53*/
+    v11 = (wchar_t **)((int)((wchar_t **)(*(unsigned int *)(a1 + 16))));
     v12 = *(unsigned int *)(a1 + 4); /*0x5caa56*/
     *(unsigned int *)(a1 + 16) = v11 + 1; /*0x5caa5c*/
     *(unsigned int *)(v12 + 4 * v11) = v8; /*0x5caa5f*/

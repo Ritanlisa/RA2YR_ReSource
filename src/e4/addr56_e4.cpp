@@ -33,6 +33,9 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/E4Recv_583AD0_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x560BF0
 namespace gamemd {

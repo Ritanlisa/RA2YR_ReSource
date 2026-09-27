@@ -12,6 +12,9 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/HouseTypeClass_e4.hpp"
 
 // 0x624760
 namespace gamemd {
@@ -495,8 +498,8 @@ CampaignClass * * HashTable_flat::Clear()
         v29 = (int *)((unsigned int)(*(int **)v16));
         v16->vtable3 = (unsigned int)(v13 >> 1);
         v16->vtable4 = (unsigned int)(v14 - 1);
-        v16 = (unsigned int)(operator new(4 * (v13 >> 1)));
-        v17 = 4 * v16->vtable3; /*0x6b9638*/
+        v16 = (void *)((unsigned int)((void *)((unsigned int)(operator new(4 * (v13 >> 1))))));
+        v17 = (unsigned int)(4 * v16->vtable3);
         *(unsigned int *)v16 = v16; /*0x6b963f*/
         memset(v16, 0, v17); /*0x6b9645*/
         if ( (int)v13 > 0 ) /*0x6b9650*/

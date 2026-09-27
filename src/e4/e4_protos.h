@@ -4,6 +4,7 @@
 #include "e4/classes/_fwd_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 
+struct ZCoordToScreenY;
 struct WriteCompressionBlock;
 struct WriteAudioStreamToFile;
 struct WSAStartup;
@@ -126,6 +127,7 @@ struct LoadVQMovie;
 struct LoadToSurfaceSHP;
 struct LoadScenarioClassByIndex;
 struct LoadSHPFile;
+struct LoadPaletteFromFile;
 struct LoadNetworkShareStrings;
 struct LoadFileSHP;
 struct IsMessageDialog;
@@ -200,6 +202,7 @@ struct DriveControlCD;
 struct DrawToSurfaceSHP;
 struct DrawTextRendererTextAligned;
 struct DrawTextRendererMultiline;
+struct DrawTacticalLaserLine;
 struct DrawPowerBarForPlayers;
 struct DrawHUD;
 struct DrawDialogText;
@@ -321,6 +324,7 @@ extern bool GameFrameLoop();
 extern bool GetField(HWND hWnd);
 extern bool IsAvailableColorhWnd(int a1);
 extern bool IsMessageDialog(void);
+extern bool LoadPaletteFromFile(const char* filename, uint8_t* out_palette, int max_entries);
 extern bool RenderFogOfWar(const void* vsd, int vpx, int vpy, int cx, int cy, int bw, int bh, int fx, int fy);
 extern bool RenderFogOfWarOverlay(const void* vsd, int vpx, int vpy, int cx, int cy, int bw, int bh, int fx, int fy);
 extern bool ResizeDialogAndEnum(void);
@@ -572,5 +576,7 @@ extern wchar_t * sub_4E4F30();
 extern wchar_t ** CharStringToWide(ObjectClass * aP0, const char ** a1);
 extern wchar_t ** FormatWideStringPrefix(CampaignScore * aP0, const wchar_t * a1, wchar_t ** a2);
 extern wchar_t ** Render_Format(wchar_t ** a1, char ** a2);
+extern void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7);
+extern long long ZCoordToScreenY(IUnknown * aP0);
 
 } // namespace gamemd

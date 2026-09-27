@@ -10,6 +10,9 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/ParasiteClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x4355B0
 namespace gamemd {
@@ -76,7 +79,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   int v55[3]; // [esp+38h] [ebp-40h] BYREF
   int v56; // [esp+44h] [ebp-34h] BYREF
   int v57; // [esp+48h] [ebp-30h]
-  int v58; // [esp+4Ch] [ebp-2Ch]
+  void * v58;
   int v59; // [esp+50h] [ebp-28h]
   int v60; // [esp+54h] [ebp-24h] BYREF
   int v61; // [esp+58h] [ebp-20h] BYREF

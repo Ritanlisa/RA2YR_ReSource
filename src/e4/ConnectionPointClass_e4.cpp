@@ -12,6 +12,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x4A0760
 namespace gamemd {
@@ -91,10 +92,10 @@ unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPoin
   this->u32_10 = (unsigned int *)(a1[3]);
   this->q018 = (unsigned int *)(aP2);
   this->q014 = (unsigned int *)(0);
-  this->q020 = 0; /*0x4a089c*/
-  this->q024 = 0; /*0x4a089f*/
-  this->u8_28 = 1; /*0x4a08a2*/
-  this->u8_29 = 0; /*0x4a08a6*/
+  this->q020 = (unsigned int *)(0);
+  this->q024 = (unsigned int *)(0);
+  this->u8_28 = (unsigned int *)(1);
+  this->u8_29 = (unsigned int *)(0);
   *(&this->q0042) = 10; /*0x4a08b0*/
   *(&this->q0041) = 0; /*0x4a08b7*/
   (*(void (__stdcall **)(int))(aP2->q004)(aP2); /*0x4a08c3*/

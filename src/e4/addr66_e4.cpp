@@ -34,6 +34,11 @@
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
 
 // 0x6613A0
 namespace gamemd {

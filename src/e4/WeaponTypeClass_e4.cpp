@@ -371,7 +371,7 @@ namespace gamemd {
 void WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   int result; // eax
-  int v6; // edx
+  void * v6;
   int i; // ebx
   int v8; // edx
   int j; // ebx
@@ -381,7 +381,7 @@ void WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a
   result = AbstractClass::SaveLoad_Prefix(a2, a3, a4); /*0x772ec1*/
   if ( result >= 0 ) /*0x772ec8*/
   {
-    v6 = *a3; /*0x772ed4*/
+    v6 = (void *)(*a3);
     a4 = a2[65]; /*0x772ee1*/
     (*(void (__stdcall **)(int *, int *, int, unsigned int, int))(v6 + 16))(a3, &a4, 4, 0, a1); /*0x772ee5*/
     for ( i = 0; i < a5; ++i ) /*0x772ef0*/

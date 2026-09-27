@@ -15,6 +15,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Mixer_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x530460
 namespace gamemd {
@@ -100,7 +102,7 @@ MixFileClass * * MixFile::LoadAll()
   if ( g_MixFile_GENERIC ) /*0x530547*/
     (**(void (__thiscall ***)(int, int))g_MixFile_GENERIC)(g_MixFile_GENERIC, 1); /*0x53054d*/
   if ( operator new(0x28u) ) /*0x530551*/
-    v4 = MixFileClass::FromFile(aGenericMix, (int)&dword_886980); /*0x530569*/
+    v4 = (unsigned int)(MixFileClass::FromFile(aGenericMix, (int)&dword_886980));
   else
     v4 = 0; /*0x530570*/
   g_MixFile_GENERIC = v4; /*0x530575*/

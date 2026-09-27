@@ -31,6 +31,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/RocketLocomotionClass_17_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Value_e4.hpp"
+#include "e4/classes/MapSeedClass_e4.hpp"
 
 // 0x4112D0
 namespace gamemd {
@@ -43,7 +45,7 @@ int MapClass::isLocationShrouded(unsigned short a2)
   v5[3] = (int)(*(&this->q0041));
   v5[0] = (int)(0);
   v5[1] = (int)(0);
-  v2 = *(&this->q0040); /*0x4112e8*/
+  v2 = (int)(*(&this->q0040));
   v3 = this->q014; /*0x4112eb*/
   v5[2] = v2; /*0x4112f4*/
   return (*(int (__thiscall **)(int, unsigned int *, unsigned int))(*(unsigned int *)v3 + 20))(v3, v5, a2); /*0x411303*/

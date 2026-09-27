@@ -18,7 +18,7 @@ struct Trigger {
     unsigned int q020;  // 0x20
     unsigned int q024;  // 0x24
     unsigned int u32_28;  // 0x28
-    void* q02C;  // 0x2C
+    unsigned int ;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char u8_34;  // 0x34
     MSShapeAnim * ptr_24;  // 0x36

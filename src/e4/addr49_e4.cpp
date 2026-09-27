@@ -918,7 +918,7 @@ int E4Recv_4964D0::sub_4964D0(void * a1, void * a2, void * a3, void * a4, void *
   while ( v17 > 0 ) /*0x49650d*/
   {
     v18 = (void *)((uint8_t)(*a4++));
-    v22 = (uint8_t)(v18);
+    v22 = (void *)((uint8_t)(v18));
     if ( v18 ) /*0x496519*/
     {
       v19 = *(unsigned int *)(a1 + 4); /*0x496536*/

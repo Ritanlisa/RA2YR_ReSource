@@ -9,6 +9,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x7BF740
 namespace gamemd {
@@ -696,7 +697,7 @@ LABEL_73:
             *(unsigned int *)(a1 + 372) = 0;
             v31[4] = 0;
             v31[5] = v32;
-            v31[3] = 8;
+            v31[3] = (unsigned int)(8);
             *(unsigned int *)(a1 + 360) = v31;
             *(unsigned int *)(a1 + 356) = v31[1];
             break;

@@ -16,6 +16,7 @@
 #include "e4/classes/Radar_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x6C0260
 namespace gamemd {

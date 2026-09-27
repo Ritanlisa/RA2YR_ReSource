@@ -10,6 +10,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/EventClass_e4.hpp"
 
 // 0x5B20F0
 namespace gamemd {
@@ -23,10 +24,10 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   double v16; // st7
   int v17; // edx
   double v18; // st7
-  int v19; // eax
+  void * v19;
   double v20; // st7
   double v21; // st7
-  unsigned int v22; // edx
+  void * v22;
   unsigned int v23; // eax
   int v24; // edi
   unsigned int *v25; // eax
@@ -108,8 +109,8 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
     {
       IDA_LOWORD(v71) = (unsigned short)v71 - *a5; /*0x5b21ba*/
     }
-    v74 = (double *)((int16_t)*Vector::ToFacingMath(a1, &v76) - 0x3FFF); /*0x5b21de*/
-    v13 = (double)(int)v74 * -0.00009587672516830327; /*0x5b21e8*/
+    v74 = (double *)((unsigned int *)((double *)((int16_t)*Vector::ToFacingMath(a1, &v76) - 0x3FFF)));
+    v13 = (unsigned int *)((double)(int)v74 * -0.00009587672516830327);
     v76 = v13; /*0x5b21ee*/
     Vector3::Magnitude(a1); /*0x5b21f2*/
     v75[0] = v13; /*0x5b21f7*/
@@ -127,13 +128,13 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
     *a1 = (void *)(v16 * *a1);
     v74 = (double *)((void *)((double *)(v17 - 0x3FFF)));
     v18 = (void *)(Math::ArcTan2((double)(v17 - 0x3FFF) * -0.00009587672516830327));
-    v19 = (void *)((int16_t)v71);
-    a1[1] = (void *)(v18 * a1[1]);
-    v74 = (double *)(v19 - 0x3FFF); /*0x5b228c*/
-    v20 = Math::SinCos((double)(v19 - 0x3FFF) * -0.00009587672516830327); /*0x5b229d*/
-    v21 = v20 * v75[0]; /*0x5b22a2*/
-    v22 = *(unsigned int *)a1; /*0x5b22ab*/
-    a1[2] = v21; /*0x5b22ad*/
+    v19 = (void *)((int)((void *)((int16_t)v71)));
+    a1[1] = (double *)((void *)(v18 * a1[1]));
+    v74 = (double *)((void *)((double *)(v19 - 0x3FFF)));
+    v20 = (void *)(Math::SinCos((double)(v19 - 0x3FFF) * -0.00009587672516830327));
+    v21 = (void *)(v20 * v75[0]);
+    v22 = (unsigned int)((void *)(*(unsigned int *)a1));
+    a1[2] = (void *)(v21);
     v79 = (unsigned long long)(IDA___PAIR64__(*((unsigned int *)a1 + 1), v22)); /*0x5b22b3*/
     v23 = *((unsigned int *)a1 + 3); /*0x5b22c2*/
     v80 = *((unsigned int *)a1 + 2); /*0x5b22c5*/

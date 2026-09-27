@@ -743,14 +743,14 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
     _makepath(Buffer, 0, 0, &this->u32_84C, Ext); /*0x5f9674*/
     this->AlphaImage = SearchMIXFile(Buffer, 0); /*0x5f968a*/
   }
-  return 1; /*0x5f9690*/
+  return (void *)(1);
 }
 } // namespace gamemd
 // 0x5F9710
 namespace gamemd {
 void ObjectTypeClass::SetRTTI71()
 {
-  this->vtable2 = 71; /*0x5f9710*/
+  this->vtable2 = (void *)(71);
 }
 } // namespace gamemd
 // 0x5F9720

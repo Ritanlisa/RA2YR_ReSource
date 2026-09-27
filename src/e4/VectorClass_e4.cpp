@@ -158,6 +158,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Count_e4.hpp"
+#include "e4/classes/VeinholeMonsterClass_e4.hpp"
 
 // 0x4137A0
 namespace gamemd {
@@ -579,11 +580,11 @@ unsigned int * VectorClass_K_8::Constructor()
   this->u32_C = (unsigned int *)(0);
   this->q010 = (unsigned int *)(0);
   this->q044 = (unsigned int *)(0);
-  this->q014 = 0; /*0x4a2836*/
-  this->q018 = operator new(0x10000u); /*0x4a2843*/
-  this->q01C = operator new(0x10000u); /*0x4a2850*/
-  this->q020 = operator new(0x10000u); /*0x4a285b*/
-  this->q024 = 0xFFFF; /*0x4a286b*/
+  this->q014 = (unsigned int *)(0);
+  this->q018 = (unsigned int *)(operator new(0x10000u));
+  this->q01C = (unsigned int *)(operator new(0x10000u));
+  this->q020 = (unsigned int *)(operator new(0x10000u));
+  this->q024 = (unsigned int *)(0xFFFF);
   return this; /*0x4a2874*/
 }
 }
@@ -659,7 +660,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
     *((unsigned int *)v3 + 2) = v4; /*0x4a0c59*/
     if ( v4 ) /*0x4a0c5c*/
     {
-      v5 = (void *)((unsigned int)(operator new(4 * v4)));
+      v5 = (void *)((unsigned int)((void *)((unsigned int)(operator new(4 * v4)))));
       *((unsigned int *)v3 + 1) = v5; /*0x4a0c6c*/
       if ( v5 ) /*0x4a0c6f*/
       {

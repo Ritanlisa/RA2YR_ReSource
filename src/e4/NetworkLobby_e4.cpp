@@ -25,6 +25,8 @@
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/BuildingPlacement_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x5D4210
 namespace gamemd {

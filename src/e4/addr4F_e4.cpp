@@ -41,6 +41,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/E4Recv_501750_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
 
 // 0x4F10E0
 namespace gamemd {
@@ -130,7 +131,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
   HWND v7; // esi
   int v8; // edi
   wchar_t *v9; // eax
-  unsigned int v10;
+  HouseClass * v10;
   int v11; // edx
   wchar_t *v12; // eax
   unsigned int *WindowLongA; // eax
@@ -268,8 +269,8 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
 
   a1 = (unsigned int *)(a1);
   a2 = (unsigned int *)(a2);
-  v49 = (int)((unsigned int *)(0));
-  v4 = (unsigned int *)((uint8_t *)String::GetOrEmpty_Alt(a1));
+  v49 = (unsigned int *)((uint8_t *)((int)((unsigned int *)(0))));
+  v4 = (uint8_t *)((unsigned int *)((uint8_t *)String::GetOrEmpty_Alt(a1)));
   if ( !INIClass::BinarySearchSection((int)a2, v4) ) /*0x4f1cc6*/
     return 0; /*0x4f1cc6*/
   v6 = (char *)operator new(0x70u); /*0x4f1cdd*/
@@ -345,8 +346,8 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
     {
       v10 = (unsigned int)(0);
       v43[0] = (unsigned int)(0);
-      v43[1] = 0; /*0x4f1ecb*/
-      v43[2] = g_DisplayWidth; /*0x4f1ecf*/
+      v43[1] = (unsigned int)(0);
+      v43[2] = (unsigned int)(g_DisplayWidth);
       *(unsigned int *)Buffer = DataGlobal_8A00A8; /*0x4f1ed3*/
       if ( operator new(0x3Cu) ) /*0x4f1ed7*/
         v10 = ArtConfig::loadConfig(&a2, DSurface_Alternate, v7 + 7, v43, 1); /*0x4f1f01*/

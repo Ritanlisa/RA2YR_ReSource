@@ -46,6 +46,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
 
 // 0x4A0190
 namespace gamemd {
@@ -148,7 +149,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
     *((unsigned int *)v3 + 2) = v4; /*0x4a02e3*/
     if ( v4 ) /*0x4a02e6*/
     {
-      v5 = (void *)((unsigned int)(operator new(8 * v4)));
+      v5 = (unsigned int)((void *)((unsigned int)(operator new(8 * v4))));
       *((unsigned int *)v3 + 1) = v5; /*0x4a02f6*/
       if ( v5 ) /*0x4a02f9*/
       {
@@ -214,7 +215,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
     *((unsigned int *)v3 + 2) = v4; /*0x4a03b6*/
     if ( v4 ) /*0x4a03b9*/
     {
-      v5 = (void *)((unsigned int)(operator new(8 * v4)));
+      v5 = (unsigned int)((void *)((unsigned int)(operator new(8 * v4))));
       *((unsigned int *)v3 + 1) = v5; /*0x4a03cd*/
       if ( v5 ) /*0x4a03d0*/
       {

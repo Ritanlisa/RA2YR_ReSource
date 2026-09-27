@@ -9,6 +9,9 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x642B60
 namespace gamemd {
@@ -175,12 +178,12 @@ void * * LoadingScreen::LoadSHPs()
   dword_B0F9EC = (unsigned int)((void **)(LoadFileSHP(off_844CFC, (bool *)&byte_B0FC9F)));
   dword_B0FB08 = (unsigned int)((void **)(LoadFileSHP(off_844D0C, (bool *)&byte_B0FCA3)));
   dword_B0F9E0 = (unsigned int)((void **)(LoadFileSHP(off_844D10, (bool *)&byte_B0FCA4)));
-  dword_B0FA70 = (void **)(LoadFileSHP(off_844D18, (bool *)&byte_B0FCA6));
-  dword_B0FAFC = LoadFileSHP(off_844D1C, (bool *)&byte_B0FCA7); /*0x72fb28*/
-  dword_B0FA00 = LoadFileSHP(off_844D20, (bool *)&byte_B0FCA8); /*0x72fb3d*/
-  dword_B0FA8C = LoadFileSHP(off_844D24, (bool *)&byte_B0FCA9); /*0x72fb52*/
-  dword_B0FA48 = LoadFileSHP(off_844D28, (bool *)&byte_B0FCAA); /*0x72fb67*/
-  dword_B0FA3C = LoadFileSHP(off_844D2C, (bool *)&byte_B0FCAB); /*0x72fb7c*/
+  dword_B0FA70 = (unsigned int)((void **)(LoadFileSHP(off_844D18, (bool *)&byte_B0FCA6)));
+  dword_B0FAFC = (unsigned int)((void **)(LoadFileSHP(off_844D1C, (bool *)&byte_B0FCA7)));
+  dword_B0FA00 = (unsigned int)((void **)(LoadFileSHP(off_844D20, (bool *)&byte_B0FCA8)));
+  dword_B0FA8C = (unsigned int)((void **)(LoadFileSHP(off_844D24, (bool *)&byte_B0FCA9)));
+  dword_B0FA48 = (unsigned int)((void **)(LoadFileSHP(off_844D28, (bool *)&byte_B0FCAA)));
+  dword_B0FA3C = (void **)(LoadFileSHP(off_844D2C, (bool *)&byte_B0FCAB));
   dword_B0FA90 = LoadFileSHP(off_844D30, (bool *)&byte_B0FCAC); /*0x72fb91*/
   dword_B0FAA8 = LoadFileSHP(off_844D34, (bool *)&byte_B0FCAD); /*0x72fba6*/
   result = LoadFileSHP(off_844D38, (bool *)&byte_B0FCAE); /*0x72fbab*/
@@ -235,7 +238,7 @@ char LoadingScreen::Init()
 {
   char result; // al
 
-  result = byte_B0FCD9; /*0x72cf40*/
+  result = (unsigned int)(byte_B0FCD9);
   if ( !byte_B0FCD9 ) /*0x72cf47*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72cf53*/

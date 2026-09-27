@@ -22,6 +22,10 @@
 #include "e4/classes/Scenario_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
 
 // 0x6B5260
 SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)

@@ -20,6 +20,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/UnitClass_e4.hpp"
+#include "e4/classes/AbstractClassVector_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
 
 // 0x41EC90
 namespace gamemd {
@@ -861,7 +863,7 @@ char AITriggerTypeClass_40::SetCapacity(int a2, unsigned int * a3)
         this->Items = 0; /*0x4205c1*/
       }
     }
-    this->Items = v4; /*0x4205ca*/
+    this->Items = (unsigned int)(v4);
     this->q008 = a2; /*0x4205d2*/
     this->IsAllocated = a3 == 0; /*0x4205d5*/
   }
@@ -908,7 +910,7 @@ VectorClass_flat * AITriggerTypeClass_40::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x420648*/
     this->Items = 0; /*0x420650*/
   }
-  this->IsAllocated = 0; /*0x42065b*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->Capacity = 0; /*0x420661*/
   if ( (a2 & 1) != 0 ) /*0x420668*/
     RA2_OPDEL(); /*0x42066b*/

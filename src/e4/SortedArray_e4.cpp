@@ -64,7 +64,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   int v5; // ebx
   char *v6; // edi
   int i; // ecx
-  int v8; // eax
+  char * v8;
   unsigned int *v9; // edx
   char * v10;
   int v11; // eax
@@ -95,8 +95,8 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   {
     for ( i = 0; i < this->q010; *(unsigned int *)&v6[v8 + 4] = v9[1] ) /*0x53881c*/
     {
-      v8 = (char *)(8 * i);
-      v9 = (char *)((unsigned int *)(*(unsigned int *)&this->u32_20 * i++));
+      v8 = (char *)((int)((char *)(8 * i)));
+      v9 = (unsigned int *)((char *)((unsigned int *)(*(unsigned int *)&this->u32_20 * i++)));
       *(unsigned int *)&v6[v8] = *v9; /*0x53882e*/
     }
     RA2_OPDEL(); /*0x538842*/
@@ -169,9 +169,9 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     *(unsigned int *)(v12 - 8) = v11; /*0x538944*/
   }
   v13 = (unsigned int *)((gamemd::ObjectClass **)(*(unsigned int **)this));
-  v14 = (unsigned int)((gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(this->q004 - 1))));
+  v14 = (gamemd::ObjectClass **)((unsigned int)((gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(this->q004 - 1)))));
   this->q004 = (unsigned char)((gamemd::ObjectClass **)(v14));
-  v13[2 * v14] = (gamemd::ObjectClass **)(0);
+  v13[2 * v14] = (unsigned int)((gamemd::ObjectClass **)(0));
   v13[2 * v14 + 1] = 0; /*0x538962*/
   this->q010 = 0; /*0x538966*/
   return 1; /*0x538917*/

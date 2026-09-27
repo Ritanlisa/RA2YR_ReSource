@@ -17,6 +17,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/WaypointPathClass_e4.hpp"
 
 // 0x474810
 namespace gamemd {
@@ -187,7 +188,7 @@ AbstractClass * * WarheadTypeClass::parseVerses()
     v13 = (void *)(this->vtable2);
     if ( v13 ) /*0x52acc0*/
     {
-      result = (unsigned int)((char *)this->vtable3);
+      result = (void *)((unsigned int)((char *)this->vtable3));
       if ( result ) /*0x52acc7*/
       {
         *((unsigned int *)result + 1) = v13; /*0x52acc9*/

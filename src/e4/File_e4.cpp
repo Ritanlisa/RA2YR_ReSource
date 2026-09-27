@@ -14,6 +14,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/FilePipe_30_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
 
 // 0x431F10
 namespace gamemd {
@@ -348,9 +350,9 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   while ( 1 ) /*0x625b50*/
   {
     v7 = (int *)(operator new(0x10u));
-    v8 = (unsigned int *)((int *)(*v5));
+    v8 = (int *)((unsigned int *)((int *)(*v5)));
     v9 = (int)((unsigned int *)((int)v7));
-    v10 = (unsigned int)((int *)(v5 + 2));
+    v10 = (unsigned int)((int *)((unsigned int)((int *)(v5 + 2))));
     *(unsigned int *)v7 = v8; /*0x625b5f*/
     *((unsigned int *)v7 + 1) = *(v10 - 1); /*0x625b64*/
     v11 = ntohs(*((unsigned short *)v7 + 3)); /*0x625b78*/

@@ -82,6 +82,11 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/NullModemClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/WinsockInterface_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
 
 // 0x5BC180
 namespace gamemd {
@@ -103,22 +108,21 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   unsigned int *v16; // eax
   int v17; // esi
   uint8_t result; // al
-  unsigned int v19;
-  int v20; // [esp+18h] [ebp+4h]
-
-  v3 = (unsigned int)((gamemd::ObjectClass *)((unsigned int)((gamemd::ObjectClass *)(dword_ABF168))));
+  unsigned int * v19;
+  unsigned int * v20;
+v3 = (unsigned int)((gamemd::ObjectClass *)((unsigned int)((gamemd::ObjectClass *)((unsigned int)((gamemd::ObjectClass *)(dword_ABF168))))));
   dword_ABF230 = (unsigned int)((gamemd::ObjectClass *)(aP0));
-  hWndParent = (int)(a2);
-  byte_ABF238 = (gamemd::ObjectClass *)(a3);
-  v20 = 0; /*0x5bc1a1*/
-  v19 = dword_ABF168; /*0x5bc1a5*/
+  hWndParent = (unsigned char)((int)(a2));
+  byte_ABF238 = (unsigned char)((int)((gamemd::ObjectClass *)(a3)));
+  v20 = (int)((unsigned int *)(0));
+  v19 = (unsigned int *)(dword_ABF168);
   do /*0x5bc24f*/
   {
     v4 = (unsigned char *)(operator new(0x2738u));
     v5 = (unsigned char *)(v4);
     if ( v4 ) /*0x5bc1ba*/
     {
-      v4[2503] = 0; /*0x5bc1c0*/
+      v4[2503] = (unsigned int)(0);
       v4[2502] = v20; /*0x5bc1c6*/
       v4[2504] = 0; /*0x5bc1cc*/
       v4[2505] = 0; /*0x5bc1d2*/
@@ -372,10 +376,10 @@ void* sub_7B84F0()
       dword_B78140 = (unsigned int)(0);
       dword_B78150 = (unsigned int)(0);
       dword_B78148 = (unsigned int)(16);
-      dword_B7814C = 0; /*0x7b8540*/
-      dword_B7813C = 0; /*0x7b8546*/
-      result = CreateThread(0, 0x1000u, (LPTHREAD_START_ROUTINE)sub_7B8610, &dword_B78138, 0, &dword_B78158); /*0x7b8562*/
-      dword_B78154 = result; /*0x7b856a*/
+      dword_B7814C = (unsigned int)(0);
+      dword_B7813C = (unsigned int)(0);
+      result = (unsigned int)(CreateThread(0, 0x1000u, (LPTHREAD_START_ROUTINE)sub_7B8610, &dword_B78138, 0, &dword_B78158));
+      dword_B78154 = (unsigned int)(result);
       if ( result ) /*0x7b856f*/
       {
         dword_B7816C = 1; /*0x7b8578*/

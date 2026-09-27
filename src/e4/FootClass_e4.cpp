@@ -13,6 +13,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Frame_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/FoggedObjectClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x4D3590
 namespace gamemd {
@@ -295,7 +297,7 @@ unsigned int FootClass::checkTurning()
 {
   void * result;
 
-  result = this->infantryBlinkTimer; /*0x50daa0*/
+  result = (unsigned int)(this->infantryBlinkTimer);
   if ( result >= 4 ) /*0x50daa8*/
     return 0; /*0x50daaf*/
   return result; /*0x50dab1*/

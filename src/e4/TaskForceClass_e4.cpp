@@ -27,7 +27,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
   int v4; // edx
   int Index; // eax
   int v7; // edx
-  int v8; // eax
+  unsigned int * v8;
   const char *v9; // [esp-10h] [ebp-54h]
   unsigned char v10[64]; // [esp+4h] [ebp-40h] BYREF
 
@@ -42,7 +42,7 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
     Index = BuildingTypeClass::FindIndex(v10); /*0x4c4f4c*/
     if ( Index == -1 ) /*0x4c4f54*/
     {
-      v8 = (unsigned int *)(TypeClass::FindByName(v10));
+      v8 = (int)((unsigned int *)(TypeClass::FindByName(v10)));
       if ( v8 != -1 ) /*0x4c4f77*/
         this->vtable2 = *((unsigned int *)g_AircraftTypeCount + v8); /*0x4c4f82*/
       return this; /*0x4c4f85*/

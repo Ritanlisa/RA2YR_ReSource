@@ -15,6 +15,9 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
+#include "e4/classes/RadioClass_e4.hpp"
 
 // 0x431090
 namespace gamemd {
@@ -214,7 +217,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v64; // edx
   int v65; // eax
   int *v66; // ecx
-  IUnknown * v68;
+  unsigned int v68;
   int v69; // ecx
   int v70; // edx
   IUnknown * v71;
@@ -253,7 +256,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v111; // [esp+64h] [ebp-10h]
   int v112; // [esp+6Ch] [ebp-8h]
   int v113; // [esp+70h] [ebp-4h]
-  unsigned int v114;
+  IUnknown * v114;
   int v115; // [esp+88h] [ebp+14h]
 
   v6 = (IUnknown *)((int)(aP1));
@@ -426,9 +429,9 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   v110 = (void *)((int)((void *)((aP1 - v6) / 10 - 1)));
   v109 = (void *)(v46 + *(&this->q0181) + 1);
   v101 = (unsigned int)(10 * v109);
-  v47 = aP1 - 10 * v109; /*0x58286c*/
-  v48 = aP1 + 10 * v109; /*0x58286e*/
-  v49 = v9; /*0x582870*/
+  v47 = (unsigned int)(aP1 - 10 * v109);
+  v48 = (unsigned int)(aP1 + 10 * v109);
+  v49 = (unsigned int)(v9);
   v114 = v48; /*0x582872*/
   v95 = 0; /*0x582878*/
   if ( v9 > v9 ) /*0x582886*/
@@ -539,7 +542,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   while ( v49 <= v9 ); /*0x582aca*/
   if ( v96 <= v9 ) /*0x582ad2*/
   {
-    v68 = (unsigned int)((IUnknown *)((unsigned int)((IUnknown *)(v114))));
+    v68 = (IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)(v114)))))));
     do /*0x582ae6*/
     {
       v69 = *(int16_t *)(v68 + 2 * aP2); /*0x582ae6*/
@@ -576,7 +579,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
         {
           if ( v69 ) /*0x582c02*/
           {
-            v74 = *(uint8_t *)(v114 + 8) - *(uint8_t *)(v71 + 8); /*0x582c18*/
+            v74 = (unsigned short)(*(uint8_t *)(v114 + 8) - *(uint8_t *)(v71 + 8));
             if ( (int)((IDA_HIDWORD(v74) ^ v74) - IDA_HIDWORD(v74)) < 2 /*0x582c33*/
               && LayerClass::IsWithinUsableArea(this, (int16_t *)&v95, 1) )
             {

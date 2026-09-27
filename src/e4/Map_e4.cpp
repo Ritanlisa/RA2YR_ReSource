@@ -59,6 +59,7 @@
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ParticleSystemClass_e4.hpp"
 
 // 0x539760
 namespace gamemd {

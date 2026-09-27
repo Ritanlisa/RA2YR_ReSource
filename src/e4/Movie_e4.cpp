@@ -17,6 +17,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Bink_e4.hpp"
 
 // 0x49CAF0
 namespace gamemd {
@@ -71,7 +72,7 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
       v12 = 0; /*0x49cbbd*/
       do /*0x49cc26*/
       {
-        v10 = (unsigned int)(Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 2));
+        v10 = (void *)((unsigned int)(Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 2)));
         *(unsigned int *)(this->q03C + 4 * v9) = operator new(0x104u); /*0x49cbf1*/
         strncpy( /*0x49cc0c*/
           *(char **)(this->q03C + 4 * v9++),
@@ -279,7 +280,7 @@ void Movie_PlayWrapper(void * a1, void * a2, void * a3, void * a4, void * a5, vo
 namespace gamemd {
 AbstractClass * * Movie::Update()
 {
-  int v2; // eax
+  void * v2;
   int v3; // eax
 
   v2 = Audio::IsSoundEnabled(); /*0x7209d3*/
@@ -291,7 +292,7 @@ AbstractClass * * Movie::Update()
       IDA_LOBYTE(v2) = g_ThemeMIXLoaded; /*0x7209ed*/
       if ( g_ThemeMIXLoaded ) /*0x7209f4*/
       {
-        v2 = this->q00C; /*0x7209fa*/
+        v2 = (int)(this->q00C);
         if ( v2 > 0 ) /*0x7209ff*/
         {
           if ( !this->q02C ) /*0x720a01*/

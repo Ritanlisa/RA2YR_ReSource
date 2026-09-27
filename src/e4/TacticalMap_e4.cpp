@@ -20,6 +20,8 @@
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x484680
 namespace gamemd {
@@ -353,11 +355,11 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
           v32 += a4; /*0x6d2bd0*/
           v26 = (int)(g_Map_VisibleRect);
           v29 = (int)(g_Map_VisibleRect);
-          v25 = DSurface_ViewBounds; /*0x6d2be7*/
-          v28 = DSurface_ViewBounds; /*0x6d2beb*/
-          g_DSurface_WindowOffset = g_DSurface_WindowOffset; /*0x6d2bf5*/
-          g_Map_VisibleRectOffset = g_Map_VisibleRectOffset; /*0x6d2bfa*/
-          v8 = Coord2D::Sub(&v28, v30, &v25); /*0x6d2c05*/
+          v25 = (int)(DSurface_ViewBounds);
+          v28 = (int)(DSurface_ViewBounds);
+          g_DSurface_WindowOffset = (int)(g_DSurface_WindowOffset);
+          g_Map_VisibleRectOffset = (int)(g_Map_VisibleRectOffset);
+          v8 = (int)(Coord2D::Sub(&v28, v30, &v25));
           v9 = Rect::Construct(v36, v8, g_Map_VisibleRectOffset, g_DSurface_WindowOffset); /*0x6d2c0f*/
           v35[0] = *v9; /*0x6d2c18*/
           v35[1] = v9[1]; /*0x6d2c21*/

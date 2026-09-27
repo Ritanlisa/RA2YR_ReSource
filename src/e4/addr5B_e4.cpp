@@ -59,6 +59,7 @@
 #include "e4/classes/E4Recv_5C60D0_e4.hpp"
 #include "e4/classes/Frame_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/VectorClass_ptr_MapRegionClass_e4.hpp"
 
 // 0x5B3B10
 namespace gamemd {
@@ -137,13 +138,13 @@ namespace gamemd {
 AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
 {
   int v3; // edi
-  unsigned int * v4;
+  unsigned int v4;
   int v5; // ecx
   bool v6; // cc
   unsigned int *v8; // eax
   unsigned int *v9; // esi
   void * v10;
-  int v11;
+  void * v11;
   unsigned int v13[22]; // [esp+20h] [ebp-170h] BYREF
   unsigned char v14[12]; // [esp+78h] [ebp-118h] BYREF
   void ** v15;
@@ -195,7 +196,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
     }
     if ( aP1 || strstr(Str, Ext) ) /*0x5b41f5*/
     {
-      v11 = (void *)(operator new(0x24u));
+      v11 = (int)((void *)((int)((void *)(operator new(0x24u)))));
       if ( v11 ) /*0x5b421a*/
         v10 = LoadSHPFile(v11, Source); /*0x5b4224*/
       else
@@ -206,7 +207,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
       v10 = (void *)(CCFileClass::ReadEntireFile(v13));
     }
     v9[3] = (int)((unsigned int)((gamemd::AbstractClass **)(v10)));
-    v15 = (unsigned int)((gamemd::AbstractClass **)(0));
+    v15 = (void **)((unsigned int)((gamemd::AbstractClass **)(0)));
     Vector::Clear(v14); /*0x5b4240*/
     v13[0] = &off_7E1668; /*0x5b4249*/
     BufferIOFileClass::Dtor(v13); /*0x5b4251*/
@@ -214,7 +215,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
   }
   else
   {
-    v15 = (unsigned int)(0);
+    v15 = (void **)((unsigned int)(0));
     Vector::Clear(v14); /*0x5b4178*/
     v13[0] = &off_7E1668; /*0x5b4181*/
     BufferIOFileClass::Dtor(v13); /*0x5b4189*/

@@ -42,6 +42,10 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/E4Recv_764B90_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x750920
 namespace gamemd {
@@ -184,7 +188,7 @@ int * StartAudioController(AudioMixer * ecx0, int ** a2)
   unsigned int v9; // eax
   float v10; // [esp+8h] [ebp-8h]
 
-  result = (double)(0);
+  result = (int *)((double)(0));
   if ( !a2 ) /*0x750d4d*/
     return result; /*0x750d4d*/
   v4 = AudioSource::Get(a2); /*0x750d5e*/
@@ -377,7 +381,7 @@ void ThemeClass_Update()
     }
     else
     {
-      v5 = (char *)&unk_B1D474; /*0x752878*/
+      v5 = (char *)((unsigned int *)((char *)&unk_B1D474));
       while ( 1 ) /*0x75287f*/
       {
         v6 = (unsigned int)(AudioQueue::GetNext(v5));
@@ -523,7 +527,7 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
 {
   int v3; // eax
 
-  this->q028 = 1065353216; /*0x752cbe*/
+  this->q028 = (unsigned int)(1065353216);
   strcpy(a2); /*0x752cd4*/
   this->M44 = 0; /*0x752cdf*/
   this->M53 = 0; /*0x752ce2*/

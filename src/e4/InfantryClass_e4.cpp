@@ -14,6 +14,8 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/AnimTypeClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/InfantryTypeClass_e4.hpp"
 
 // 0x4D4DC0
 namespace gamemd {

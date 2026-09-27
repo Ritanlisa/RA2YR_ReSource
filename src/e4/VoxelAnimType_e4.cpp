@@ -398,7 +398,7 @@ int VoxelAnimType::LoadAnim()
           v32 = VoxelSection::GetInfo(*((unsigned int **)&this->u32_106), 0, 0); /*0x5f87ce*/
           Matrix::Scale(*((unsigned int **)&this->u32_107), *(float *)(v32 + 12)); /*0x5f87dd*/
         }
-        v56 = 0; /*0x5f87fb*/
+        v56 = (unsigned int)(0);
         Vector::Clear((int)v55); /*0x5f8802*/
         v54[0] = &off_7E1668; /*0x5f880e*/
         BufferIOFileClass::Dtor(v54); /*0x5f8819*/
@@ -432,7 +432,7 @@ int VoxelAnimType::LoadAnim()
           WaveClass::Destroy(this->u32_B8); /*0x5f8333*/
           RA2_OPDEL(v10); /*0x5f8339*/
         }
-        v11 = operator new(0x1Cu); /*0x5f8343*/
+        v11 = (unsigned int *)(operator new(0x1Cu));
         if ( v11 ) /*0x5f834d*/
           v12 = File::LoadFileVXL(v11, (int)v51, 0); /*0x5f8357*/
         else

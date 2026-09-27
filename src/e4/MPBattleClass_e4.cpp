@@ -17,6 +17,8 @@
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x5C0DD0
 namespace gamemd {

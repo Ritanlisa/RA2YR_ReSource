@@ -31,6 +31,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ColorStruct_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x550080
 namespace gamemd {
@@ -245,7 +246,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   unsigned int v77[24]; // [esp+D0h] [ebp-C0h] BYREF
   unsigned int v78[24]; // [esp+130h] [ebp-60h] BYREF
 
-  v1 = (gamemd::BuildingTypeClass *)((unsigned int)(a1));
+  v1 = (gamemd::BuildingTypeClass *)((unsigned int)((gamemd::BuildingTypeClass *)((unsigned int)(a1))));
   IDA_LODWORD(v72) = a1; /*0x550a03*/
   if ( (byte_ABC7C8 & 1) == 0 ) /*0x550a07*/
   {
@@ -345,9 +346,9 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   v64 = (int)(v76);
   v68 = (int)(v75);
   v69 = (int)(v76);
-  v67 = v74; /*0x550cf7*/
-  v62 = v74; /*0x550cff*/
-  v15 = v1[7]; /*0x550d03*/
+  v67 = (int)(v74);
+  v62 = (int)(v74);
+  v15 = (int)(v1[7]);
   v55 = v11; /*0x550d11*/
   v70 = 1; /*0x550d15*/
   if ( v15 >= 1 )

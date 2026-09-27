@@ -16,6 +16,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/WeaponTypeClass_e4.hpp"
 #include "e4/classes/Type_e4.hpp"
+#include "e4/classes/Super_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x4F6540
 namespace gamemd {
@@ -152,8 +154,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   {
     v27 = 0x7FFFFFFF; /*0x4f6706*/
   }
-  LABEL_28:
-  v28 = HouseClass::FirstBuildableFromArray((char *)g_RulesClass_Instance + 2360); /*0x4f670b*/
+  LABEL_28: v28 = (gamemd::AbstractClass **)(HouseClass::FirstBuildableFromArray((char *)g_RulesClass_Instance + 2360));
   v29 = (*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)v28 + 132))(v28, this); /*0x4f6728*/
   if ( !v34 && v35 ) /*0x4f6738*/
   {
@@ -163,7 +164,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
       return 1; /*0x4f6761*/
     return v32 && v11 >= v27 + v29; /*0x4f6772*/
   }
-  v30 = HouseClass::FirstBuildableFromArray((char *)g_RulesClass_Instance + 2276); /*0x4f678f*/
+  v30 = (gamemd::AbstractClass **)(HouseClass::FirstBuildableFromArray((char *)g_RulesClass_Instance + 2276));
   v31 = (*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)v30 + 132))(v30, this); /*0x4f6799*/
   if ( v34 && !v35 ) /*0x4f67ad*/
   {
@@ -288,7 +289,7 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
         goto LABEL_11; /*0x511603*/
     }
   }
-  this->veteranAircraftCount = v6; /*0x511608*/
+  this->veteranAircraftCount = (unsigned int)(v6);
   if ( g_SuperWeaponTypeArray <= 0 ) /*0x511615*/
   {
   LABEL_16: this->veteranAircraft = (unsigned char *)(-1);
@@ -416,7 +417,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   v33 = (int)(this->q0F4);
   this->q0EE = (int)(v12);
   v13 = (int)(INIClass::ReadBool_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aShowtimer, v33));
-  v14 = this->q0C0; /*0x6ceb56*/
+  v14 = (int)(this->q0C0);
   this->q0F4 = v13; /*0x6ceb5c*/
   if ( !INIClass::GetString( /*0x6ceb94*/
           aP1,

@@ -37,6 +37,14 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Buffer_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/DropListClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
 
 // 0x5D0190
 namespace gamemd {
@@ -167,7 +175,7 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
   char **v5; // edi
   int v6; // ecx
   int v7; // eax
-  int v8; // eax
+  char ** v8;
   int v9; // edx
 
   if ( !Source || !a3 ) /*0x5d25e3*/
@@ -183,7 +191,7 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
     if ( v7 <= 0 /*0x5d262a*/
       || !(*(uint8_t (__thiscall **)(int, int, unsigned int))(this->nextObject + 8))(&this->q0C0, v6 + v7, 0) )
     {
-      return 0; /*0x5d264a*/
+      return (char **)(0);
     }
   }
   v8 = (unsigned int)(this->q040);
@@ -304,7 +312,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
         }
         return (gamemd::CampaignScore **)(2);
       }
-      return 0; /*0x5d4643*/
+      return (gamemd::CampaignScore **)(0);
     }
   }
   if ( !*(unsigned char *)(v5 + 25) ) /*0x5d45c7*/
@@ -340,13 +348,13 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
       v39 = *(unsigned int *)(v5 + 688); /*0x5d495f*/
       if ( v39 > *(unsigned int *)(v5 + 692) ) /*0x5d496d*/
       {
-        v40 = v39 - 1; /*0x5d496f*/
+        v40 = (int)(v39 - 1);
         v4 = 2; /*0x5d4970*/
         *(unsigned int *)(v5 + 688) = v40; /*0x5d4975*/
         *(unsigned short *)(v5 + 2 * v40 + 40) = 0; /*0x5d497b*/
       }
     }
-    *a2 = (int)((gamemd::CampaignScore **)(0));
+    *a2 = (gamemd::CampaignScore **)((int)((gamemd::CampaignScore **)(0)));
     (*(void (__thiscall **)(unsigned int))(**(unsigned int **)(v5 + 36) + 80))(*(unsigned int *)(v5 + 36)); /*0x5d498d*/
     return v4; /*0x5d498d*/
   }

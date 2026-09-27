@@ -15,6 +15,10 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/Techno_e4.hpp"
+#include "e4/classes/Control_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x46D350
 namespace gamemd {

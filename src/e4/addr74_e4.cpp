@@ -35,6 +35,9 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
 
 // 0x743270
 namespace gamemd {
@@ -736,7 +739,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
     *(unsigned int *)this = *(unsigned int *)a2; /*0x74bc85*/
     return this; /*0x74bc8d*/
   }
-  v5 = (void *)((unsigned int)(operator new(v4)));
+  v5 = (void *)((unsigned int)((void *)((unsigned int)(operator new(v4)))));
   *((unsigned int *)v3 + 1) = v5; /*0x74bc48*/
   if ( !v5 ) /*0x74bc4b*/
     goto LABEL_8; /*0x74bc4b*/
@@ -904,7 +907,7 @@ int InitializeVeinholeSystem(char a1)
   unsigned int *v7; // esi
   int VeinholeShrinkRate; // eax
   void *v9; // eax
-  int v10; // ecx
+  void * v10;
   int v11; // eax
   unsigned int *v12; // eax
   int j; // ecx
@@ -946,7 +949,7 @@ int InitializeVeinholeSystem(char a1)
       {
         VeinholeShrinkRate = (unsigned int)(g_RulesClass_Instance->VeinholeShrinkRate);
         v7[3] = (unsigned int)(0);
-        v7[1] = VeinholeShrinkRate; /*0x74df4b*/
+        v7[1] = (unsigned int)(VeinholeShrinkRate);
         v7[4] = -1; /*0x74df4e*/
         *v7 = 0; /*0x74df5c*/
         v9 = operator new(4 * VeinholeShrinkRate + 4); /*0x74df5f*/

@@ -223,16 +223,16 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
 {
   unsigned int *v5; // eax
   int v7; // [esp+0h] [ebp-10h] BYREF
-  int v8; // [esp+4h] [ebp-Ch] BYREF
+  unsigned int * v8;
   unsigned int * v9;
   unsigned int * GroundHeight;
 
   v7 = (unsigned int *)(*ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->M68));
   GroundHeight = (int)((unsigned int *)(0));
   v9 = (int)((unsigned int *)((IDA_SHIWORD(v7) << 8) + 128));
-  v8 = (unsigned int *)(((int16_t)v7 << 8) + 128);
-  GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e33d5*/
-  v5 = operator new(0x14u); /*0x6e33d9*/
+  v8 = (int)((unsigned int *)(((int16_t)v7 << 8) + 128));
+  GroundHeight = (unsigned int *)(Cell::GetGroundHeight(&v8));
+  v5 = (unsigned int *)(operator new(0x14u));
   if ( v5 ) /*0x6e33e3*/
     ActionQueue::PushEntry(v5, v8, v9, GroundHeight); /*0x6e3400*/
   return 1; /*0x6e3407*/

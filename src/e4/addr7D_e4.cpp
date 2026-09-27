@@ -16,6 +16,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/WarheadTypeClass_e4.hpp"
 
 // 0x7D038F
 namespace gamemd {

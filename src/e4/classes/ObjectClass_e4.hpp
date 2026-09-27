@@ -54,7 +54,7 @@ struct ObjectClass {
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     unsigned int q06A;  // 0x6A
-    char health[4];  // 0x6C
+    unsigned int health;  // 0x6C
     AbstractClass* q06F;  // 0x6F
     char estimatedHealth[4];  // 0x70
     bool isOnMap;  // 0x74

@@ -21,6 +21,7 @@
 #include "e4/classes/WalkLocomotion_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/WWMouseClass_e4.hpp"
 
 // 0x5E3850
 namespace gamemd {

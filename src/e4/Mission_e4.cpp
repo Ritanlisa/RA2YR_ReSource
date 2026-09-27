@@ -489,11 +489,11 @@ namespace gamemd {
 int Mission::GetMissionDelay()
 {
   void * v1;
-  unsigned int result;
+  void * result;
   unsigned int *v3; // esi
   int v4; // [esp+8h] [ebp-8h]
 
-  v1 = this->q180; /*0x70f770*/
+  v1 = (unsigned int *)(this->q180);
   result = this->q188; /*0x70f779*/
   v3 = &this->q060; /*0x70f783*/
   if ( v1 != -1 ) /*0x70f789*/

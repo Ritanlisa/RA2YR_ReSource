@@ -26,7 +26,7 @@ struct TiberiumClass {
     unsigned int owningHouseIndex;  // 0x28
     bool q02B;  // 0x2B
     OverlayTypeClass* fallRate;  // 0x2C
-    char q030[4];  // 0x30
+    unsigned int q030;  // 0x30
     unsigned char q031;  // 0x31
     char Power[4];  // 0x32
     char attachedTag[4];  // 0x34

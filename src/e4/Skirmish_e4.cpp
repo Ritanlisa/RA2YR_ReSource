@@ -14,6 +14,14 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/SlaveManagerClass_e4.hpp"
+#include "e4/classes/SmudgeTypeVector_e4.hpp"
+#include "e4/classes/TeamTypeClass_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/RadarClass_e4.hpp"
+#include "e4/classes/SmudgeTypeClass_e4.hpp"
 
 // 0x46F600
 namespace gamemd {
@@ -156,7 +164,7 @@ CampaignClass * * Skirmish::SetupAllSpawnLocations()
 namespace gamemd {
 int Skirmish::ReadSettings(HWND hDlg)
 {
-  LRESULT v4; // eax
+  void * v4;
   LRESULT v5; // eax
   LRESULT v6; // eax
   LRESULT v7; // eax
@@ -168,22 +176,21 @@ int Skirmish::ReadSettings(HWND hDlg)
   LRESULT v13; // eax
   HWND DlgItem; // eax
   LRESULT v15; // eax
-  int v18; // [esp+10h] [ebp-4h]
+  void * v18;
   int v19; // [esp+10h] [ebp-4h]
   int v20; // [esp+10h] [ebp-4h]
   int v21; // [esp+10h] [ebp-4h]
   int v22; // [esp+10h] [ebp-4h]
-  HWND hDlga; // [esp+18h] [ebp+4h]
+  void * hDlga;
   HWND hDlgb; // [esp+18h] [ebp+4h]
   HWND hDlgc; // [esp+18h] [ebp+4h]
   HWND hDlgd; // [esp+18h] [ebp+4h]
   HWND hDlge; // [esp+18h] [ebp+4h]
   HWND hDlgf; // [esp+18h] [ebp+4h]
-
-  v18 = (unsigned int)((int)this->q03C);
-  hDlga = (HWND)((unsigned int)(GetDlgItem(hDlg, 1029)));
-  v4 = (unsigned int)(SendMessageA(hDlga, 0x147u, 0, 0));
-  v5 = (unsigned int)(SendMessageA(hDlga, 0x150u, v4, 0));
+v18 = (void *)((int)((void *)((unsigned int)((int)this->q03C))));
+  hDlga = (LRESULT)((HWND)((unsigned int)(GetDlgItem(hDlg, 1029))));
+  v4 = (LRESULT)((void *)((unsigned int)(SendMessageA(hDlga, 0x147u, 0, 0))));
+  v5 = (void *)((unsigned int)(SendMessageA(hDlga, 0x150u, v4, 0)));
   this->q03C = (unsigned int)((HWND)v5);
   if ( v18 != v5 ) /*0x596cbe*/
     byte_ABE2D8 = 1; /*0x596cc0*/
@@ -324,11 +331,10 @@ int Skirmish::RenderPreview(SkirmishDialog * aP1)
   struct tagRECT Rect; // [esp+74h] [ebp-30h] BYREF
   char v37[16]; // [esp+84h] [ebp-20h] BYREF
   char v38[16]; // [esp+94h] [ebp-10h] BYREF
-
-  result = ValidateRect(aP1, 0); /*0x640726*/
+result = (int)((HWND)(ValidateRect(aP1, 0)));
   if ( *this ) /*0x64072c*/
   {
-    DlgItem = (HWND)((int)(GetDlgItem(aP1, 1128)));
+    DlgItem = (int)((HWND)((int)(GetDlgItem(aP1, 1128))));
     ScreenDialogToClient(DlgItem, &Rect); /*0x640749*/
     left = Rect.left; /*0x64075a*/
     top = Rect.top; /*0x640764*/

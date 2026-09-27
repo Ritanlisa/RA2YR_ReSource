@@ -10,6 +10,9 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/LinkClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x539EB0
 namespace gamemd {
@@ -93,11 +96,11 @@ AnimClass * * LightningStorm::Strike(IUnknown * aP0)
   unsigned int *v1; // esi
   int v2; // eax
   int v3; // ecx
-  int result; // eax
+  void ** result;
   void *v5; // esi
   void **v6; // eax
   void **v7; // esi
-  int v8; // eax
+  void ** v8;
   int v9[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v1 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP0); /*0x53a159*/
@@ -105,7 +108,7 @@ AnimClass * * LightningStorm::Strike(IUnknown * aP0)
   v3 = ((v1[80] & 0x100) != 0 ? dword_A9FA84 : 0)
      + Coord::ScaleToScreenY((void *)(*(int16_t *)(v2 + 4) / 2))
      + dword_A9FA90 * *((char *)v1 + 283);
-  result = ((int16_t)aP0 << 8) + 128; /*0x53a1bb*/
+  result = (void **)(((int16_t)aP0 << 8) + 128);
   v9[0] = result; /*0x53a1c8*/
   v9[1] = (IDA_SHIWORD(aP0) << 8) + 128; /*0x53a1cc*/
   v9[2] = v3; /*0x53a1d0*/
@@ -115,7 +118,7 @@ AnimClass * * LightningStorm::Strike(IUnknown * aP0)
                   + 4
                   * ((unsigned int)Random::State((unsigned int *)g_ScenarioClass_Instance + 134)
                    % g_RulesClass_Instance->ChronoBlast));
-    v6 = (void *)operator new(0x1C8u); /*0x53a216*/
+    v6 = (void **)((unsigned int)((void *)operator new(0x1C8u)));
     if ( v6 ) /*0x53a220*/
       v7 = AnimClass::ctor(v6, v5, v9, 0, 1, (void *)0x600, 0, 0); /*0x53a23c*/
     else
@@ -128,10 +131,10 @@ AnimClass * * LightningStorm::Strike(IUnknown * aP0)
            dword_A9FA68 + dword_A9FA74,
            0) )
     {
-      v8 = (unsigned int)(dword_A9FA70++);
+      v8 = (void **)((unsigned int)(dword_A9FA70++));
       *((unsigned int *)dword_A9FA64 + v8) = v7; /*0x53a294*/
     }
-    result = dword_A9F9D8; /*0x53a297*/
+    result = (void **)((unsigned int)(dword_A9F9D8));
     if ( dword_A9F9E0 < dword_A9F9D8 /*0x53a2d3*/
       || (byte_A9F9DD || !dword_A9F9D8)
       && dword_A9F9E4 > 0
@@ -141,7 +144,7 @@ AnimClass * * LightningStorm::Strike(IUnknown * aP0)
                      0),
           (unsigned char)result) )
     {
-      result = (unsigned int)(dword_A9F9E0++);
+      result = (void **)((unsigned int)(dword_A9F9E0++));
       *((unsigned int *)dword_A9F9D4 + result) = v7; /*0x53a2ea*/
     }
   }
@@ -159,7 +162,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   void *v7; // edi
   void **v8; // eax
   void **v9; // edi
-  int v10; // eax
+  void ** v10;
   void **v11; // eax
   unsigned int v12;
   unsigned int v13; // eax
@@ -185,7 +188,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
   int v34[3]; // [esp+34h] [ebp-Ch] BYREF
 
   v3 = (unsigned int *)(Coord::To_Cell(&MapClass_Instance, &a1));
-  Coords = CellClass::GetCoords(v3, &v29); /*0x53a31f*/
+  Coords = (void **)(CellClass::GetCoords(v3, &v29));
   v5 = Coords[1]; /*0x53a328*/
   v6 = Coords[2]; /*0x53a32b*/
   v34[0] = *Coords; /*0x53a32e*/
@@ -195,7 +198,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
                 + 4
                 * ((unsigned int)Random::State((unsigned int *)g_ScenarioClass_Instance + 134)
                  % g_RulesClass_Instance->ChronoSparkle1));
-  v8 = (void *)operator new(0x1C8u); /*0x53a366*/
+  v8 = (void **)((unsigned int)((void *)operator new(0x1C8u)));
   if ( v8 ) /*0x53a370*/
     v9 = AnimClass::ctor(v8, v7, v34, 0, 1, (void *)0x600, 0, 0); /*0x53a38c*/
   else
@@ -208,7 +211,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
          dword_A9FA2C + dword_A9FA20,
          0) )
   {
-    v10 = (unsigned int)(dword_A9FA28++);
+    v10 = (void **)((unsigned int)(dword_A9FA28++));
     *((unsigned int *)dword_A9FA1C + v10) = v9; /*0x53a3e4*/
   }
   v27 = v3[9]; /*0x53a40f*/
@@ -281,7 +284,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
         v11 = (void **)Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 2, 4); /*0x53a62c*/
         if ( (int)v11 > 0 ) /*0x53a633*/
         {
-          v21 = v11; /*0x53a635*/
+          v21 = (void **)(v11);
           do /*0x53a691*/
           {
             v11 = (void *)operator new(0x1C8u); /*0x53a63c*/

@@ -16,6 +16,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/TerrainTypeClass_e4.hpp"
 
 // 0x48B720
 namespace gamemd {
@@ -743,12 +745,12 @@ AbstractClass * * Terrain::ConnectivityGraph()
       while ( v45 ); /*0x56c84f*/
     }
   }
-  v77 = operator new(4 * v1->q04C); /*0x56c868*/
+  v77 = (unsigned int *)(operator new(4 * v1->q04C));
   v89 = 0; /*0x56c872*/
   if ( (int)v1->q04C > 0 ) /*0x56c87c*/
   {
-    v77 = v77; /*0x56c87e*/
-    v40 = v40; /*0x56c882*/
+    v77 = (unsigned int)(v77);
+    v40 = (unsigned int)(v40);
     do /*0x56c8aa*/
     {
       *v77++ = operator new(2 * *v40++); /*0x56c891*/

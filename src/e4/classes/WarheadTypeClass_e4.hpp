@@ -137,7 +137,7 @@ struct WarheadTypeClass {
     bool Parasite;  // 0x159
     bool Temporal;  // 0x15A
     bool IsLocomotor;  // 0x15B
-    char Locomotor[4];  // 0x15C
+    unsigned int Locomotor;  // 0x15C
     unsigned char q160;  // 0x160
     unsigned int q162;  // 0x162
     unsigned int q164;  // 0x164

@@ -14,6 +14,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/Palette_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x48DCD0
 namespace gamemd {
@@ -778,11 +779,11 @@ AbstractClass * * TechnoTypeClass::Construct(ObjectTypeClass * aP1)
               dword_A8EB14 + dword_A8EB08,
               0) )
       {
-        return this; /*0x711ab6*/
+        return (gamemd::AbstractClass **)(this);
       }
       v3 = dword_A8EB10; /*0x711ab8*/
     }
-    dword_A8EB10 = v3 + 1; /*0x711ac6*/
+    dword_A8EB10 = (gamemd::AbstractClass **)(v3 + 1);
     *((unsigned int *)dword_A8EB04 + v3) = this; /*0x711acb*/
     return this; /*0x711acb*/
   }
@@ -794,7 +795,7 @@ AbstractClass * * TechnoTypeClass::Construct(ObjectTypeClass * aP1)
     if ( v4 >= dword_A8EB10 ) /*0x711a82*/
       goto LABEL_5; /*0x711a82*/
   }
-  return this; /*0x711ad0*/
+  return (gamemd::AbstractClass **)(this);
 }
 } // namespace gamemd
 // 0x711AE0

@@ -14,6 +14,11 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/TubeClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/TimerClass_e4.hpp"
 
 // 0x59D510
 namespace gamemd {
@@ -292,8 +297,8 @@ LABEL_45:
           v99[0] = v31;
           v99[1] = v34;
           unsigned char * v39 = (unsigned char *)(CellCoord::To_CellObj(&DataGlobal_87F7E8, v99));
-          v40 = *(Random **)&g_NetworkPlayerBuffer[78076];
-          v39[282] = 0;
+          v40 = (unsigned int)(*(Random **)&g_NetworkPlayerBuffer[78076]);
+          v39[282] = (unsigned int)(0);
           *((unsigned int *)v39 + 14) = v40;
           v30 = g_MapTileArray;
           goto LABEL_49;

@@ -17,6 +17,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x5108F0
 namespace gamemd {
@@ -306,7 +307,7 @@ namespace gamemd {
 unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
 {
   unsigned int result; // eax
-  const unsigned int v4;
+  const int * v4;
 
   result = a3; /*0x510e10*/
   if ( a3 < 16 ) /*0x510e19*/

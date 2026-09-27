@@ -521,7 +521,7 @@ void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
     LeaveCriticalSection(lpCriticalSection); /*0x4120c1*/
     return -13; /*0x4120d3*/
   }
-  v12 = (unsigned int)((char *)((unsigned int)(a3)));
+  v12 = (char *)((unsigned int)((char *)((unsigned int)(a3))));
   *(unsigned int *)(v5 + 4 * v10 + 80) = v4; /*0x4120d8*/
   *(unsigned int *)(v5 + 4 * v10 + 88) = v12; /*0x4120dc*/
   *(unsigned int *)(v5 + 4 * v10 + 72) = 1; /*0x4120e0*/

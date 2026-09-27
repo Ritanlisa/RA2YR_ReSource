@@ -64,9 +64,9 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   void ** v33;
   int v34; // ebx
   unsigned int *v35; // eax
-  int v36; // edx
+  void ** v36;
   int v37; // ecx
-  int v38; // eax
+  void ** v38;
   void **v39; // eax
   IUnknown * v40;
   void *v41; // ecx
@@ -226,12 +226,12 @@ void House::AnnounceUpgrade(IUnknown * aP1)
           v34 = (void **)(*(int16_t *)(&this->u32_C8));
           v60 = (void **)(dword_89E7C0 * this->u32_11B);
           v35 = (void **)((unsigned int *)Matrix3x4::TransformCell(v61, v54 + 716));
-          v36 = (void **)(v35[1]);
+          v36 = (void **)((int)((void **)(v35[1])));
           v37 = (void **)((v33 << 8) + 128 + *v35);
-          v38 = v60 + v35[2]; /*0x47da18*/
-          v59[0] = v37; /*0x47da1f*/
-          v59[1] = (v34 << 8) + 128 + v36; /*0x47da23*/
-          v59[2] = v38; /*0x47da27*/
+          v38 = (void **)((int)((void **)(v60 + v35[2])));
+          v59[0] = (int)((void **)(v37));
+          v59[1] = (int)((void **)((v34 << 8) + 128 + v36));
+          v59[2] = (int)((void **)(v38));
           v39 = (void *)operator new(0x1C8u); /*0x47da2b*/
           if ( v39 ) /*0x47da35*/
             v40 = AnimClass::ctor( /*0x47da5f*/

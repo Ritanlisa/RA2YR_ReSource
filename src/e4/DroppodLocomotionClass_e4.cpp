@@ -59,7 +59,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   void *v31; // [esp-8h] [ebp-48h]
   double v32; // [esp+10h] [ebp-30h] BYREF
   int v33[2]; // [esp+1Ch] [ebp-24h] BYREF
-  int v34; // [esp+24h] [ebp-1Ch]
+  void ** v34;
   int v35; // [esp+28h] [ebp-18h] BYREF
   int v36; // [esp+2Ch] [ebp-14h]
   int v37; // [esp+30h] [ebp-10h]
@@ -124,7 +124,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
           v25 = (void **)((unsigned int)((void **)(VeteranRatio_high[51])));
           v33[0] = (int)((void **)(*v24));
           v33[1] = (int)((void **)(v24[1]));
-          v34 = (void **)(v24[2]);
+          v34 = (void **)((int)((void **)(v24[2])));
           v26 = (void **)(Random::State(Randomizer_Global));
           StartAudioControllerAt(*(unsigned int *)(VeteranRatio_high[48] + 4 * (v26 % v25)), (int)&v35, 0); /*0x4b5fa8*/
           PlaySoundEffectAt(v33, 2 * VeteranRatio_high[41], *(unsigned int **)(a1 + 8), VeteranRatio_high[43], 1, 0); /*0x4b5fc7*/

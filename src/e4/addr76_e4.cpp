@@ -60,6 +60,9 @@
 #include "e4/classes/DialogQueue_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/E4Recv_7741C0_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/AudioMixer_e4.hpp"
 
 // 0x7636F0
 namespace gamemd {

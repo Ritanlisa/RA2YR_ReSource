@@ -21,6 +21,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x7049C0
 namespace gamemd {
@@ -28,7 +30,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
 {
   int v9; // edx
   char v10; // bl
-  int v11; // esi
+  int * v11;
   unsigned int *v12; // eax
   int *v13; // eax
   int *v14; // eax
@@ -53,17 +55,17 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   int v33[2]; // [esp+3Ch] [ebp-70h] BYREF
   int v34[2]; // [esp+44h] [ebp-68h] BYREF
   int * v35;
-  int v36; // [esp+50h] [ebp-5Ch]
+  unsigned int v36;
   unsigned int v37[2]; // [esp+54h] [ebp-58h] BYREF
   int v38[4]; // [esp+5Ch] [ebp-50h] BYREF
-  int v39; // [esp+6Ch] [ebp-40h] BYREF
-  int v40; // [esp+70h] [ebp-3Ch]
+  int * v39;
+  int * v40;
   int * v41;
   int * v42;
   int * v43;
   int * v44;
-  int v45; // [esp+84h] [ebp-28h]
-  int v46; // [esp+88h] [ebp-24h]
+  int * v45;
+  int * v46;
   unsigned int v47[4]; // [esp+8Ch] [ebp-20h] BYREF
   unsigned int v48[4]; // [esp+9Ch] [ebp-10h] BYREF
 
@@ -85,7 +87,7 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
       v11 = **(uint16_t **)(g_FileSystem_THEATER_PAL + 372); /*0x704a69*/
     v36 = -2; /*0x704a77*/
     v35 = (int *)(-2);
-    v12 = (int)(Coord2D::Add(&v35, v37, v34));
+    v12 = (unsigned int *)((int)(Coord2D::Add(&v35, v37, v34)));
     v13 = (int *)(Rect::Construct(v47, v12, 3, 3));
     v39 = *v13; /*0x704aa0*/
     v40 = v13[1]; /*0x704aa9*/
@@ -94,8 +96,8 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
     v14 = (int *)(ClipRectIntersection(v48, &DSurface_ViewBounds, &v39, 0, 0));
     v43 = (int *)(*v14);
     v44 = (int *)(v14[1]);
-    v45 = v14[2]; /*0x704ae2*/
-    v46 = v14[3]; /*0x704aef*/
+    v45 = (int *)(v14[2]);
+    v46 = (int *)(v14[3]);
     (*(void (__thiscall **)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v43, v11); /*0x704afa*/
     if ( *(unsigned int *)(g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x704b05*/
       v15 = **(uint8_t **)(g_FileSystem_THEATER_PAL + 372); /*0x704b11*/
@@ -133,21 +135,19 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
       v33,
       v19);
   }
-  v20 = ((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/
-      | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue)
-      | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green);
-  v35 = (unsigned int)((int *)(-2));
-  v36 = -2; /*0x704c96*/
+  v20 = (unsigned int)(((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/ | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue) | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green));
+  v35 = (unsigned int)((int *)((unsigned int)((int *)(-2))));
+  v36 = (unsigned int *)(-2);
   v21 = (int *)(Coord2D::Add(&v35, v37, &v31));
   v22 = (int *)(Rect::Construct(v48, v21, 3, 3));
   v43 = (int *)(*v22);
   v44 = (int *)(v22[1]);
   v45 = (int *)(v22[2]);
-  v46 = v22[3]; /*0x704cd9*/
-  v23 = ClipRectIntersection(v47, &DSurface_ViewBounds, &v43, 0, 0); /*0x704ce3*/
-  v39 = *v23; /*0x704ceb*/
-  v40 = v23[1]; /*0x704cf2*/
-  v41 = v23[2]; /*0x704cf9*/
+  v46 = (int *)(v22[3]);
+  v23 = (int *)(ClipRectIntersection(v47, &DSurface_ViewBounds, &v43, 0, 0));
+  v39 = (int *)(*v23);
+  v40 = (int *)(v23[1]);
+  v41 = (int *)(v23[2]);
   v42 = v23[3]; /*0x704d06*/
   (*(void (__thiscall **)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v39, v20); /*0x704d11*/
   v35 = -2; /*0x704d1d*/
@@ -218,14 +218,14 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   char v27; // [esp+2Eh] [ebp-72h]
   int v28; // [esp+30h] [ebp-70h] BYREF
   int v29; // [esp+34h] [ebp-6Ch]
-  int v30; // [esp+38h] [ebp-68h] BYREF
-  int v31; // [esp+3Ch] [ebp-64h]
+  int * v30;
+  int * v31;
   int * v32;
-  int v33; // [esp+44h] [ebp-5Ch]
+  int * v33;
   int * v34;
   int * v35;
-  int v36; // [esp+50h] [ebp-50h]
-  int v37; // [esp+54h] [ebp-4Ch]
+  int * v36;
+  int * v37;
   int v38; // [esp+58h] [ebp-48h] BYREF
   int v39; // [esp+5Ch] [ebp-44h]
   int v40; // [esp+60h] [ebp-40h]
@@ -253,11 +253,11 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v34 = (int *)(*v8);
   v35 = (int *)(v8[1]);
   v36 = (int *)(v8[2]);
-  v37 = v8[3]; /*0x704f50*/
-  v9 = ClipRectIntersection(v46, &DSurface_ViewBounds, &v34, 0, 0); /*0x704f5a*/
-  v30 = *v9; /*0x704f61*/
-  v31 = v9[1]; /*0x704f68*/
-  v32 = v9[2]; /*0x704f6f*/
+  v37 = (int *)(v8[3]);
+  v9 = (int *)(ClipRectIntersection(v46, &DSurface_ViewBounds, &v34, 0, 0));
+  v30 = (int *)(*v9);
+  v31 = (int *)(v9[1]);
+  v32 = (int *)(v9[2]);
   v33 = (int)(v9[3]);
   (*(void (__thiscall **)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v30, v7); /*0x704f88*/
   v29 = v22 - 2; /*0x704f9f*/
@@ -266,12 +266,12 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   v30 = (int)(*v10);
   v31 = (int)(v10[1]);
   v32 = (int *)(v10[2]);
-  v33 = (unsigned int)(v10[3]);
-  v11 = ClipRectIntersection(v45, &DSurface_ViewBounds, &v30, 0, 0); /*0x704fe6*/
-  v34 = *v11; /*0x704fee*/
-  v35 = v11[1]; /*0x704ff5*/
-  v36 = v11[2]; /*0x704ffc*/
-  v37 = v11[3]; /*0x705009*/
+  v33 = (int *)((unsigned int)(v10[3]));
+  v11 = (int *)(ClipRectIntersection(v45, &DSurface_ViewBounds, &v30, 0, 0));
+  v34 = (int *)((unsigned int)(*v11));
+  v35 = (int *)(v11[1]);
+  v36 = (int *)(v11[2]);
+  v37 = (unsigned int)(v11[3]);
   (*(void (__thiscall **)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v34, v7); /*0x705014*/
   v44[0] = DSurface_ViewBounds; /*0x705028*/
   v44[1] = g_Map_VisibleRect; /*0x705031*/
@@ -348,16 +348,16 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   int v26; // edx
   int v27; // edi
   int v28; // eax
-  int v29; // ecx
+  int * v29;
   int v30; // edx
   int *v31; // eax
   int *SHPFrame; // [esp-18h] [ebp-154h]
   int v34; // [esp-14h] [ebp-150h]
   int v35; // [esp-10h] [ebp-14Ch]
-  int v36; // [esp-4h] [ebp-140h]
+  int * v36;
   unsigned int *v37; // [esp+10h] [ebp-12Ch] BYREF
-  int v38; // [esp+14h] [ebp-128h]
-  unsigned int v39;
+  int * v38;
+  int * v39;
   int * v40;
   int v41; // [esp+20h] [ebp-11Ch] BYREF
   int v42; // [esp+24h] [ebp-118h]
@@ -445,10 +445,10 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
     {
       lpVtbl = (int *)(g_TacticalClass_Instance[45].lpVtbl);
       v37 = (unsigned int *)((int *)(0));
-      v40 = (int *)(v21 - (unsigned int)lpVtbl);
+      v40 = (int *)((unsigned int)((int *)(v21 - (unsigned int)lpVtbl)));
       v38 = (int *)(0);
-      v39 = g_Map_VisibleRectOffset; /*0x707110*/
-      v23 = ClipRectIntersection(v47, &v41, (int *)&v37, 0, 0); /*0x70711e*/
+      v39 = (int *)(g_Map_VisibleRectOffset);
+      v23 = (int *)(ClipRectIntersection(v47, &v41, (int *)&v37, 0, 0));
       v41 = *v23; /*0x707125*/
       v42 = v23[1]; /*0x70712c*/
       v43 = v23[2]; /*0x707133*/
@@ -468,10 +468,10 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
     v20 = (unsigned int *)a6; /*0x7071bc*/
     v26 = v28 % 400; /*0x7071c9*/
   }
-  v29 = v20[1]; /*0x7071d3*/
-  v36 = v26; /*0x7071da*/
-  v37 = (unsigned int *)(v46[0] + *v20); /*0x7071e4*/
-  v30 = *a1; /*0x7071f0*/
+  v29 = (int *)(v20[1]);
+  v36 = (int *)(v26);
+  v37 = (int *)((unsigned int *)(v46[0] + *v20));
+  v30 = (int *)(*a1);
   v38 = v46[1] + v29; /*0x7071f3*/
   v35 = (*(int (__thiscall **)(int *))(v30 + 752))(a1); /*0x707200*/
   v34 = (*(int (__thiscall **)(int *))(*a1 + 748))(a1); /*0x70720c*/

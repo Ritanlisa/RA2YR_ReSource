@@ -50,6 +50,7 @@
 #include "e4/classes/RandomMap_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x5C00E0
 namespace gamemd {
@@ -173,7 +174,7 @@ CampaignClass * * MPCooperative___vt07(int a2)
   CampaignClass ** v3;
   int v4; // edx
   int v6; // ecx
-  int v7; // eax
+  CampaignClass ** v7;
   int v8; // esi
   int v9; // eax
   int v10; // [esp-8h] [ebp-1Ch]
@@ -182,7 +183,7 @@ CampaignClass * * MPCooperative___vt07(int a2)
 
   v3 = (gamemd::CampaignClass **)((char)((gamemd::CampaignClass **)(0)));
   v10 = (gamemd::CampaignClass **)(*(&this->ptr_507));
-  v11 = (int)((gamemd::CampaignClass **)(0));
+  v11 = (gamemd::CampaignClass **)((int)((gamemd::CampaignClass **)(0)));
   Movie::GetSection((int)&g_DDrawSurfaceManager, v10, &v12); /*0x5c17cf*/
   v4 = v12; /*0x5c17d4*/
   if ( !v12 ) /*0x5c17da*/
@@ -192,7 +193,7 @@ CampaignClass * * MPCooperative___vt07(int a2)
   {
     if ( Movie::GetState(v6, &v11) ) /*0x5c17f3*/
     {
-      v7 = v11; /*0x5c180c*/
+      v7 = (gamemd::CampaignClass **)((int)(v11));
     }
     else
     {
@@ -327,7 +328,7 @@ void sub_5C63F0(void * a1, void * a2, void * a3, void * a4, void * a5)
   unsigned char *v5; // edi
   unsigned int v6; // esi
   unsigned int v7; // ebp
-  int v8; // eax
+  void * v8;
   void * v9;
   void * v10;
   unsigned int i; // ebp
@@ -377,7 +378,7 @@ void BitBuffer_RotateRight(unsigned int * a1, int a2, int a3)
   int v11; // ecx
   int v12; // eax
   int * v13;
-  char v14; // cl
+  int * v14;
   int * v15;
   int v16; // eax
   int v17; // edi
@@ -458,8 +459,8 @@ void BitBuffer_RotateRight(unsigned int * a1, int a2, int a3)
         v25 = v12 + 1; /*0x5c66c8*/
         while ( 1 ) /*0x5c66d2*/
         {
-          v13 = (unsigned int)((int *)(*--v9));
-          v14 = (int *)(v10);
+          v13 = (int *)((unsigned int)((int *)(*--v9)));
+          v14 = (int *)((char)((int *)(v10)));
           v15 = v27; /*0x5c66ea*/
           v27 = ((1 << a2) - 1) & v13; /*0x5c66ee*/
           *v9 = (v15 << v14) | (v13 >> a2); /*0x5c66f6*/

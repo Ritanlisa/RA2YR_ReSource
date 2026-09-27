@@ -11,6 +11,12 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Delegate_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/DSurface_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/BombClass_e4.hpp"
 
 // 0x4CD600
 namespace gamemd {
@@ -152,7 +158,7 @@ LABEL_50:
     unsigned int * v43 = (unsigned int *)(this->q00C + 156);
     int v44 = *(unsigned int *)(this->q00C + 160);
     IDA_LODWORD(v106) = v41 - *v43;
-    int v45 = v43[2];
+    int v45 = (unsigned int)(v43[2]);
     IDA_HIDWORD(v106) = v42 - v44;
     v112 = v45;
     double v46 = Math::Sqrt((double)(v42 - v44) * (double)(v42 - v44) + (double)IDA_SLODWORD(v106) * (double)IDA_SLODWORD(v106));
@@ -338,13 +344,13 @@ LABEL_114:
       {
         v97 = (void *)(v95 + 0.1);
         if ( v97 >= this->q100 )
-LABEL_171: v97 = (void *)(this->q100);
+void * v97 = (void *)(this->q100);
       }
       else
       {
         if ( v95 <= this->q100 )
           return (*(int (__thiscall **)(int *, int))(*v93 + 292))(v93, 1);
-        v97 = (void *)(*(double *)(&this->u32_1C2) - 0.1);
+        v97 = (double)((void *)(*(double *)(&this->u32_1C2) - 0.1));
         if ( v97 <= this->q100 )
           goto LABEL_171;
       }

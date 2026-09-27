@@ -15,6 +15,10 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Building_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/BuildingLight_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/BulletTypeClass_e4.hpp"
 
 // 0x4FB840
 namespace gamemd {

@@ -18,6 +18,7 @@
 #include "e4/classes/ParticleSystemTypeClass_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ParticleSystemClass_32_e4.hpp"
+#include "e4/classes/ParticleSystemClass_16_e4.hpp"
 
 // 0x62CEC0
 namespace gamemd {

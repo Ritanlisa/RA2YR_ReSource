@@ -120,7 +120,7 @@ void sub_5E95E0()
   uint8_t v4; // [esp+0h] [ebp-Ch]
   unsigned int v5;
 
-  v5 = (LPARAM *)((unsigned int)((LPARAM *)((int)((LPARAM *)(dword_A8B548)))));
+  v5 = (LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((int)((LPARAM *)(dword_A8B548)))))))));
   if ( dword_A8B548 >= dword_A8BB0C ) /*0x5e95f4*/
     v5 = dword_A8BB0C; /*0x5e95f6*/
   v0 = 0; /*0x5e9618*/

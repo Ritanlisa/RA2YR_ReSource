@@ -13,6 +13,12 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/BombClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Delegate_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x480180
 namespace gamemd {
@@ -93,11 +99,11 @@ AbstractClass * * DSurface::Construct(IUnknown * aP1, DSurface * aP2, ObjectClas
 namespace gamemd {
 int DSurface::Destroy()
 {
-  void * v2;
+  unsigned char (*)[4] v2;
   int v3; // eax
   unsigned char (*)[4] result;
 
-  v2 = (void *)((unsigned int)(this->q018));
+  v2 = (unsigned int)((void *)((unsigned int)(this->q018)));
   *(unsigned int *)this = &DSurface_Vtable; /*0x4ba6b9*/
   if ( v2 ) /*0x4ba6c1*/
   {
@@ -174,7 +180,7 @@ unsigned int * DSurface::CreatePrimary()
   {
     g_DDraw_UseHWBlit = 0; /*0x4ba7c1*/
   }
-  v3 = (const unsigned int)((unsigned int *)(g_Str_false));
+  v3 = (unsigned int *)((const unsigned int)((unsigned int *)(g_Str_false)));
   LABEL_8:
   Debug::Log("DSurface::AllowHWFill = %s\n", v3); /*0x4ba7dd*/
   v4 = operator new(0x24u); /*0x4ba7ea*/

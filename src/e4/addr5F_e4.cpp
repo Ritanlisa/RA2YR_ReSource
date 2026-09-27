@@ -28,6 +28,9 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
 
 // 0x5F0070
 namespace gamemd {
@@ -178,7 +181,7 @@ char HandlePlayerDisconnection(int a1, int a2)
 namespace gamemd {
 AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
 {
-  wchar_t * v3;
+  unsigned int v3;
   wchar_t *String; // eax
   LPARAM v5; // esi
   unsigned int v6;
@@ -197,8 +200,7 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   HWND v20; // [esp+1Eh] [ebp-F4h]
   HWND hWnd; // [esp+22h] [ebp-F0h]
   unsigned char Source[236]; // [esp+26h] [ebp-ECh] BYREF
-
-  v18 = (wchar_t *)((unsigned int)((char)((wchar_t *)(IDA_HIBYTE(a1)))));
+v18 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((char)((wchar_t *)(IDA_HIBYTE(a1)))))));
   v3 = (unsigned int)((wchar_t *)(3));
   if ( a3 == 1 ) /*0x5f2d00*/
     String = GetStringCSF((wchar_t *)aTxtModemConner_0, 0, g_Str_File_NullMgr_CPP, 1580); /*0x5f2d13*/

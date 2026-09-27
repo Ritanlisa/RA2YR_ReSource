@@ -29,16 +29,17 @@
 #include "e4/classes/WinModemClass_e4.hpp"
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/CoordStruct_e4.hpp"
 
 // 0x5E2820
 namespace gamemd {
 void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
 {
   wchar_t *v3; // esi
-  HWND v4; // ebx
-  unsigned int v5;
+  unsigned int v4;
+  wint_t * v5;
   wchar_t *v6; // eax
-  int v7; // eax
+  wint_t * v7;
   uint16_t *v8; // ebx
   int v9; // ecx
   wint_t * v10;
@@ -50,9 +51,9 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
   int v18; // [esp+24h] [ebp-14h] BYREF
   struct tagRECT Rect; // [esp+28h] [ebp-10h] BYREF
 
-  v3 = (wint_t *)((wchar_t *)a1);
-  v4 = hWnd; /*0x5e2833*/
-  v5 = wcslen(a1); /*0x5e2840*/
+  v3 = (wchar_t *)((wint_t *)((wchar_t *)a1));
+  v4 = (wint_t *)((HWND)((wint_t *)(hWnd)));
+  v5 = (wint_t *)(wcslen(a1));
   v13 = 18; /*0x5e2842*/
   ScreenDialogToClient(hWnd, &Rect); /*0x5e284a*/
   if ( SendMessageA(hWnd, 0x4A0u, 0, 0) ) /*0x5e285f*/
@@ -65,10 +66,10 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
     {
       if ( v3 ) /*0x5e288d*/
       {
-        v6 = wcschr(v3, 0xAu); /*0x5e2892*/
+        v6 = (wchar_t *)((wint_t *)(wcschr(v3, 0xAu)));
         if ( v6 ) /*0x5e289c*/
         {
-          v7 = (wint_t *)(v6 - v3 + 1);
+          v7 = (wint_t *)((int)((wint_t *)(v6 - v3 + 1)));
           if ( v5 >= v7 ) /*0x5e28a5*/
             v5 = v7; /*0x5e28a7*/
         }
@@ -443,8 +444,7 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
   wchar_t *String; // eax
   wchar_t * v10;
   int v11; // [esp-8h] [ebp-14h]
-
-  v2 = (unsigned int)((char *)((unsigned int)((char *)(a1))));
+v2 = (unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)((unsigned int)((char *)(a1))))))));
   if ( !a1 ) /*0x5e39c9*/
     v2 = g_GameSetupBuffer; /*0x5e39cb*/
   v4 = CharToWideString(v2); /*0x5e39d7*/

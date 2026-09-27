@@ -11,6 +11,7 @@
 #include "e4/classes/EnumConnectionPointsClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_BuildChoiceClass_int_ouseClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_ColorScheme_e4.hpp"
+#include "e4/classes/VectorClass_Ptr_e4.hpp"
 
 // 0x5862C0
 namespace gamemd {

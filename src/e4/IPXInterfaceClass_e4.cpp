@@ -16,6 +16,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/IPXManagerClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x7B0D90
 namespace gamemd {

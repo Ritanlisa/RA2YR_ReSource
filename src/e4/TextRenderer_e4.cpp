@@ -14,6 +14,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ThemeClass_e4.hpp"
+#include "e4/classes/HouseTypeClass_e4.hpp"
 
 // 0x4A60D0
 namespace gamemd {
@@ -184,14 +185,14 @@ void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4
 {
   unsigned int *FoundationSize; // eax
   int v5; // ebp
-  int v6; // edi
+  unsigned int v6;
   int Default; // eax
   int v8; // esi
   void * Instance;
   unsigned int v10;
   int v11; // eax
   int v12; // ebx
-  int *result; // eax
+  void * result;
   void * v14;
   int v15; // [esp+10h] [ebp-34h]
   int v16; // [esp+1Ch] [ebp-28h]

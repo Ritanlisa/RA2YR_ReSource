@@ -94,9 +94,9 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
   int v13; // eax
   unsigned int *v14; // eax
   int *v15; // ecx
-  unsigned int v16;
-  int v17; // ebx
-  LONG v18; // edx
+  void * v16;
+  void * v17;
+  void * v18;
   void * v19;
   int v21; // eax
   LPCSTR *v22; // ecx
@@ -104,7 +104,7 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
   LPCSTR v24; // eax
   LONG bottom; // edi
   LONG left; // eax
-  unsigned int v27;
+  void * v27;
   LONG lDistanceToMove[5]; // [esp+10h] [ebp-68h] BYREF
   struct tagRECT Rect; // [esp+24h] [ebp-54h] BYREF
   unsigned char v31[16]; // [esp+44h] [ebp-34h] BYREF
@@ -170,10 +170,10 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
     v14 = (unsigned int *)((void *)((unsigned int *)BinkMovie::CreateSurfaceTracker(v6)));
     v15 = (int *)((void *)(this->u32_4));
     this->q020 = (void *)(v14);
-    v16 = (void *)(0);
-    v17 = (void *)(*v15);
-    v18 = v15[1]; /*0x4328c7*/
-    v19 = this->q00C; /*0x4328ca*/
+    v16 = (void *)((unsigned int)((void *)(0)));
+    v17 = (void *)((int)((void *)(*v15)));
+    v18 = (void *)((LONG)((void *)(v15[1])));
+    v19 = (void *)(this->q00C);
     v18 = v18; /*0x4328cd*/
     if ( !v19 ) /*0x4328d3*/
     {
@@ -231,15 +231,14 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
       bottom = (char *)FullPath + lDistanceToMove[0] - (char *)v22; /*0x432a07*/
     if ( bottom < 1 ) /*0x432a0c*/
     {
-  LABEL_40:
-      left = lDistanceToMove[1]; /*0x432a16*/
-      v22 = (LPCSTR *)lDistanceToMove[2]; /*0x432a1a*/
-      v27 = lDistanceToMove[3]; /*0x432a1e*/
+  LABEL_40: left = (LONG)((void *)(lDistanceToMove[1]));
+      v22 = (LPCSTR *)((void *)((LPCSTR *)lDistanceToMove[2]));
+      v27 = (void *)(lDistanceToMove[3]);
       bottom = lDistanceToMove[4]; /*0x432a22*/
     }
     else
     {
-      left = Rect.left; /*0x432a0e*/
+      left = (unsigned int)(Rect.left);
       v27 = v17; /*0x432a12*/
     }
     this->u32_10 = (unsigned int)((gamemd::AbstractClass **)(left));

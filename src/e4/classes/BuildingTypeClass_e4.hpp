@@ -572,7 +572,7 @@ struct BuildingTypeClass {
     unsigned int q6EC;  // 0x6EC
     bool q6EE;  // 0x6EE
     unsigned char q6EF;  // 0x6EF
-    char Cameo[4];  // 0x6F0
+    unsigned int Cameo;  // 0x6F0
     bool CameoAllocated;  // 0x6F4
     char AltCameoFile_0x19;  // 0x6F5
     unsigned int q6F8;  // 0x6F8
@@ -1381,7 +1381,7 @@ struct BuildingTypeClass {
     unsigned int q1600;  // 0x1600
     unsigned int q1604;  // 0x1604
     unsigned int q1608;  // 0x1608
-    char QueueingCell[8];  // 0x1618
+    unsigned int QueueingCell;  // 0x1618
     void* q161C;  // 0x161C
     int NumberImpassableRows;  // 0x1620
     char RemoveOccupy[4];  // 0x1624

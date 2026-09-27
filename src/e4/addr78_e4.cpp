@@ -24,6 +24,12 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/File_e4.hpp"
+#include "e4/classes/BufferIOFile_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x780110
 namespace gamemd {
@@ -207,11 +213,11 @@ void WOL_ResetSystem()
   g_WOL_GameListState = (unsigned int)(0);
   g_WOL_IdleHandler = (unsigned int)(1);
   g_WOL_GameProcessState = (unsigned int)(-1);
-  g_WOL_GameListPool = time(0); /*0x7804ce*/
-  dword_B76468 = 0; /*0x7804d3*/
-  dword_B779CC = 0; /*0x7804d9*/
-  dword_B77E4C = 0; /*0x7804df*/
-  g_WOL_ChannelList = 0; /*0x7804e5*/
+  g_WOL_GameListPool = (unsigned int)(time(0));
+  dword_B76468 = (unsigned int)(0);
+  dword_B779CC = (unsigned int)(0);
+  dword_B77E4C = (unsigned int)(0);
+  g_WOL_ChannelList = (unsigned int)(0);
   byte_B77DEC = 0; /*0x7804eb*/
   byte_B77DC0 = 0; /*0x7804f1*/
   byte_84A1B8 = 1; /*0x7804f7*/
@@ -550,7 +556,7 @@ void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
   DeleteAndZero::Alt(&v13); /*0x780f11*/
   if ( v22[10] == (wchar_t *)-1 ) /*0x780f20*/
   {
-    v11 = GetStringCSF(g_Str_TXT_UNKNOWN_PING, 0, g_Str_File_wonline_cpp, 3024); /*0x780f6a*/
+    v11 = (wchar_t *)(GetStringCSF(g_Str_TXT_UNKNOWN_PING, 0, g_Str_File_wonline_cpp, 3024));
     WideString::Append2((wchar_t **)&v12, v11); /*0x780f6f*/
   }
   else

@@ -18,6 +18,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/FilePipe_30_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x4C9B20
 namespace gamemd {
@@ -123,9 +124,9 @@ int FactoryClass::HasProgressChanged()
 namespace gamemd {
 int FactoryClass::DemandProduction(int a2, void * a3, char a4)
 {
-  int v5; // ecx
+  void * v5;
   void * v6;
-  bool * v7;
+  int v7;
   int v8; // eax
   int v9; // eax
   int v10; // edx
@@ -182,9 +183,9 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
   }
   else
   {
-    v5 = (int)(this->q120);
-    v6 = (int)(this->q140);
-    v7 = (int)(&this->onHold);
+    v5 = (void *)((int)((void *)((int)(this->q120))));
+    v6 = (bool *)((int)(this->q140));
+    v7 = (bool *)((int)((bool *)((int)(&this->onHold))));
     if ( v6 < v5 /*0x4c9d1b*/
       || (*(unsigned char *)(v7 + 13) || !v5)
       && (v8 = *(unsigned int *)(v7 + 20), v8 > 0)
@@ -543,7 +544,7 @@ namespace gamemd {
 int FactoryClass::FinishProduction(int a2)
 {
   int v3; // eax
-  int v4; // eax
+  FactoryClass * v4;
   int v5; // ecx
 
   if ( *(unsigned char *)(a2 + 12) ) /*0x63506c*/
@@ -554,7 +555,7 @@ int FactoryClass::FinishProduction(int a2)
     if ( !v3 ) /*0x635084*/
       this->q02C = -1; /*0x635086*/
   }
-  v4 = *(unsigned int *)(a2 + 8); /*0x63508c*/
+  v4 = (gamemd::FactoryClass *)(*(unsigned int *)(a2 + 8));
   if ( v4 != -1 ) /*0x635091*/
   {
     v4 = *(unsigned int *)(this->q024 + 4 * v4); /*0x635096*/
@@ -580,7 +581,7 @@ int FactoryClass::FinishProduction(int a2)
                                0),
                 (unsigned char)v4) )
           {
-            v4 = (unsigned int)(dword_AC4CA8++);
+            v4 = (gamemd::FactoryClass *)((unsigned int)(dword_AC4CA8++));
             *((unsigned int *)dword_AC4C9C + v4) = this; /*0x63510b*/
           }
         }

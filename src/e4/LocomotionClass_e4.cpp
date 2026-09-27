@@ -32,11 +32,11 @@ int LocomotionClass::Initialize()
   this->q040 = (int)(g_DDraw_ClipRect);
   this->q044 = (int)(qword_8A0794);
   v3 = (int)(IDA_HIDWORD(qword_8A0794));
-  this->q050 = 0; /*0x4af597*/
-  this->u32_4C = 0; /*0x4af59a*/
-  this->q048 = v3; /*0x4af59d*/
-  this->ptr_24 = 0; /*0x4af5a3*/
-  this->q058 = -1; /*0x4af5a6*/
+  this->q050 = (int)(0);
+  this->u32_4C = (int)(0);
+  this->q048 = (int)(v3);
+  this->ptr_24 = (gamemd::Coord *)((int)(0));
+  this->q058 = (int)(-1);
   this->q05C = -1; /*0x4af5a9*/
   this->u8_60 = 0; /*0x4af5ac*/
   this->__pad_061 = 0; /*0x4af5af*/
@@ -57,11 +57,11 @@ void * LocomotionClass::UpdateAll()
   int i; // esi
   unsigned int *v2; // ecx
 
-  result = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)dword_8A3880)));
+  result = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)dword_8A3880))));
   for ( i = dword_8A3880 - 1; i >= 0; --i ) /*0x4c54ab*/
   {
     v2 = (unsigned int *)((wchar_t *)((unsigned int *)*((unsigned int *)dword_8A3874 + i)));
-    result = g_CurrentFrame; /*0x4c54be*/
+    result = (wchar_t *)(g_CurrentFrame);
     if ( (int)g_CurrentFrame >= v2[11] + v2[12] ) /*0x4c54c5*/
     {
       if ( v2 ) /*0x4c54c9*/

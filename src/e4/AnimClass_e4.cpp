@@ -253,7 +253,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v10 = (int)(*a2 + 2 * (v7 + 8));
     v101 = (int)(*a2 - 2 * (v7 + 8));
     v106 = (int)(v10);
-    v11 = a2[1]; /*0x422d47*/
+    v11 = (int)(a2[1]);
     v107 = v7 + 8 + v11; /*0x422d4d*/
     v102 = v11 - (v7 + 8); /*0x422d51*/
     v104 = (v8 - v7) << 8; /*0x422d5e*/

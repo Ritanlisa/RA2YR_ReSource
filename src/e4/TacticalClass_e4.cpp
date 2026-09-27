@@ -367,11 +367,11 @@ void TacticalClass::InterpolateView()
   if ( (int)g_SelectionManager > 0 ) /*0x4ae29f*/
   {
     v1 = (wchar_t *)((int)((wchar_t *)(0)));
-    v2 = (wchar_t *)((unsigned int)((wchar_t *)(0)));
-    v3 = (unsigned int)((wchar_t *)(0));
-    v18 = 0; /*0x4ae2af*/
-    v19 = 0; /*0x4ae2b3*/
-    v20 = 0; /*0x4ae2b7*/
+    v2 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)(0)))))));
+    v3 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)(0))))));
+    v18 = (wchar_t *)(0);
+    v19 = (unsigned int)((wchar_t *)(0));
+    v20 = (wchar_t *)(0);
     v4 = g_ObjectClass_CurrentCount; /*0x4ae2bd*/
     v16 = g_SelectionManager; /*0x4ae2c2*/
     do /*0x4ae2fc*/
@@ -447,8 +447,8 @@ void TacticalClass::InterpolateView()
         v15 = (v26 - v23) / v12; /*0x4ae41e*/
       }
       v18 = (wchar_t *)((unsigned int)((wchar_t *)(v13)));
-      v19 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)(v14))));
-      v20 = (wchar_t *)((unsigned int)((wchar_t *)(v15)));
+      v19 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)(v14))))))));
+      v20 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)(v15)))))));
     }
     Tactical::SetTacticalPosition(&v18); /*0x4ae437*/
   }

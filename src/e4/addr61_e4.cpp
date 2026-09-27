@@ -10,6 +10,16 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/WinModemClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
+#include "e4/classes/Event_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x610570
 namespace gamemd {
@@ -375,7 +385,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   }
   else
   {
-    v9 = hWnd; /*0x612b15*/
+    v9 = (gamemd::AbstractClass **)(hWnd);
   }
   if ( Msg != 307 ) /*0x612b22*/
     return (HGDIOBJ)CallWindowProcA(v4, v9, Msg, (WPARAM)hdc, lParam); /*0x612b5b*/
@@ -396,7 +406,7 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
   int v8; // eax
   unsigned int *v9; // edi
   int v10; // ecx
-  int v11; // eax
+  unsigned char (*)[4] v11;
   unsigned int *v12; // ecx
   int v13; // eax
   struct tagRECT Rect; // [esp+18h] [ebp-30h] BYREF
@@ -512,7 +522,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
   AbstractClass ** result;
   AbstractClass ** v10;
   unsigned int *v11; // esi
-  int v12; // eax
+  unsigned char (*)[4] v12;
   int v13; // ecx
   unsigned int *v14; // ecx
   LRESULT v15; // eax
@@ -562,16 +572,16 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
                 v13 = (unsigned int)(v20);
                 v11[2] = (unsigned int)(v21);
                 v11[1] = (unsigned int)(v13);
-                v11[3] = 0; /*0x61ee4e*/
-                *v11 = &XSurface_Vtable; /*0x61ee55*/
-                v11[4] = 2; /*0x61ee5b*/
+                v11[3] = (unsigned int)(0);
+                *v11 = (unsigned int)(&XSurface_Vtable);
+                v11[4] = (unsigned int)(2);
                 Buffer::Init(v11 + 5, 0, 2 * v13 * v12); /*0x61ee62*/
                 *v11 = &BSurface_Vtable; /*0x61ee67*/
                 v14 = v11; /*0x61ee6d*/
               }
               else
               {
-                v14 = 0; /*0x61ee71*/
+                v14 = (unsigned int)(0);
               }
               *(unsigned int *)(v10 + 16) = v14; /*0x61ee73*/
               ++g_GameScreenState; /*0x61ee7e*/
@@ -618,7 +628,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
     && (v6 = *((unsigned int *)g_DialogHashMap_Entries
              + (g_DialogHashMap_Callback(&hWnd) & ((1 << g_DialogHashMap_Insert) - 1)))) != 0 )
   {
-    v7 = hWnd; /*0x61ed00*/
+    v7 = (gamemd::AbstractClass **)(hWnd);
     while ( *(HWND *)v6 != hWnd ) /*0x61ed09*/
     {
       v6 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*(unsigned int *)(v6 + 8))));
@@ -642,8 +652,8 @@ void FormatHotkeyDisplayString(void * a1, void * a2)
 {
   int result; // eax
   void * v3;
-  UINT v4; // eax
-  UINT v5; // eax
+  void * v4;
+  void * v5;
   UINT v6; // eax
   UINT v7; // eax
   CHAR String[32]; // [esp+Ch] [ebp-214h] BYREF

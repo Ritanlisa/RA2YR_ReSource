@@ -18,6 +18,7 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/TClassFactory_MechLocomotionClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x71E940
 namespace gamemd {
@@ -32,7 +33,7 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
   int v14; // ebx
   int v15; // ebp
   int v16; // esi
-  unsigned int v18;
+  DynamicVector ** v18;
   int v19; // edi
   const char *v20; // edx
   char *v21; // ebp
@@ -172,11 +173,11 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
         v21 -= 4; /*0x71ea83*/
         if ( v19 < 0 ) /*0x71ea88*/
         {
-          v18 = (gamemd::DynamicVector **)(a6);
+          v18 = (unsigned int)((gamemd::DynamicVector **)((unsigned int)((gamemd::DynamicVector **)(a6))));
           goto LABEL_22; /*0x71ea8e*/
         }
       }
-      v18 = (gamemd::DynamicVector **)((int)((gamemd::DynamicVector **)(v19)));
+      v18 = (unsigned int)((gamemd::DynamicVector **)((unsigned int)((gamemd::DynamicVector **)((int)((gamemd::DynamicVector **)(v19))))));
   LABEL_22:
       if ( v18 >= dword_A8EB10 || v18 < 0 ) /*0x71eaa0*/
         return 0; /*0x71eaa0*/

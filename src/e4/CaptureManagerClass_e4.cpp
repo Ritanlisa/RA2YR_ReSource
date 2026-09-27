@@ -254,7 +254,7 @@ void* CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3, void * a4)
   unsigned int *v30; // [esp+8h] [ebp-24h]
   void ** v31;
   void ** v32;
-  int v33; // [esp+1Ch] [ebp-10h]
+  void ** v33;
   int v34[3]; // [esp+20h] [ebp-Ch] BYREF
 
   if ( !a2 ) /*0x471d4f*/
@@ -297,7 +297,7 @@ void* CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3, void * a4)
         *(unsigned int *)(a1 + 52) = v16 + 1; /*0x471e28*/
         *(unsigned int *, unsigned int a1)(v17 + 4 * v16) = v12; /*0x471e2b*/
       }
-      v18 = v12 + 2; /*0x471e31*/
+      v18 = (unsigned int)(v12 + 2);
       v5[176] = *(unsigned int *)(a1 + 72); /*0x471e34*/
       v19 = g_RulesClass_Instance->PrerequisiteFactory[1]; /*0x471e45*/
       *v18 = g_CurrentFrame; /*0x471e4b*/
@@ -326,10 +326,10 @@ void* CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3, void * a4)
       v23 = (int *)((void **)((int *)(*(int (__thiscall **)(unsigned int *, int *))(*v5 + 72))(v5, v34)));
       v24 = (void **)((int)((void **)(*v23)));
       v25 = (void **)((int)((void **)(v23[1])));
-      v26 = (int)((void **)(v22 + v23[2]));
+      v26 = (void **)((int)((void **)(v22 + v23[2])));
       v31 = (void **)(v24);
       v32 = (void **)(v25);
-      v33 = v26; /*0x471f1b*/
+      v33 = (void **)(v26);
       v27 = (void *)operator new(0x1C8u); /*0x471f1f*/
       if ( v27 ) /*0x471f29*/
         v28 = AnimClass::ctor( /*0x471f4c*/

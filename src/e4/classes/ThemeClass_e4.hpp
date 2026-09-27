@@ -20,7 +20,7 @@ struct ThemeClass {
     unsigned char u8_21;  // 0x21
     void* q024;  // 0x24
     char ThemeClass_field_28[4];  // 0x28
-    char ThemeClass_field_2C[4];  // 0x2C
+    unsigned int ThemeClass_field_2C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
     char q040[4];  // 0x40

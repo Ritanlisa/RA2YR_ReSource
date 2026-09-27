@@ -16,6 +16,12 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Carryall_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x46CB60
 namespace gamemd {

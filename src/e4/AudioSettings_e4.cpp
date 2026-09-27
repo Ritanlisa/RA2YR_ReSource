@@ -17,6 +17,8 @@
 #include "e4/classes/VocClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/AudioMixer_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x5FA440
 namespace gamemd {

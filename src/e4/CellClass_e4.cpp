@@ -14,6 +14,8 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/CaptureManagerClass_e4.hpp"
 
 // 0x544C80
 namespace gamemd {
@@ -515,7 +517,7 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
       if ( v20 >= 0x40000 || (v21 = *(char **)(g_Shroud_CellArray + 4 * v20)) == 0 ) /*0x56faf1*/
       {
         g_Map_GlobalCellIndex = (int)(aP1);
-        v21 = (char *)&g_CellClassArray; /*0x56fafc*/
+        v21 = (char *)((unsigned char)((char *)&g_CellClassArray));
       }
       IDA_LOBYTE(v9) = Cell::SetTileType(v31, g_TerrainSoundConfig + g_TerrainBridgeIndex + 3, -1, v21[283] - 4, 0); /*0x56fb27*/
     }
@@ -648,7 +650,7 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v13 = &g_CellClassArray; /*0x56fde3*/
+        v13 = (void *)((int)(&g_CellClassArray));
         g_Map_GlobalCellIndex = aP1; /*0x56fde8*/
       }
       CellClass::UpdateAnimations((int)v13); /*0x56fded*/
@@ -660,7 +662,7 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v16 = &g_CellClassArray; /*0x56fe30*/
+        v16 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56fe35*/
       }
       CellClass::UpdateAnimations((int)v16); /*0x56fe3a*/

@@ -12,6 +12,8 @@
 #include "e4/classes/GameSettings_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
+#include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
 
 // 0x60D320
 namespace gamemd {

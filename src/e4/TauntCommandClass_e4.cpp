@@ -13,6 +13,8 @@
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/TagTypeClass_e4.hpp"
 
 // 0x536290
 namespace gamemd {

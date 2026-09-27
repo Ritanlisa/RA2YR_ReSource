@@ -23,6 +23,7 @@
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x7586F0
 namespace gamemd {
@@ -403,9 +404,8 @@ LABEL_11:
           {
             unsigned int * v19 = (unsigned int *)(*(int (__thiscall **)(unsigned char *, int *, unsigned int))(*(unsigned int *)v18 + 76))(v18, &v160, 0);
             IDA_LOWORD(a2) = *v19 / 256;
-            unsigned int v20 =
-            IDA_HIWORD(a2) = v19[1] / 256;
-            unsigned int * v21 = (unsigned int)((unsigned int)((unsigned int)((unsigned int)(IDA_LODWORD(v154) = a2))));
+            unsigned int v20 = (unsigned int)(IDA_HIWORD(a2) = v19[1] / 256);
+            unsigned int * v21 = (unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)(IDA_LODWORD(v154) = a2))))))));
             v152 = (unsigned int *)(v20);
             char v149 = (*(int (__thiscall **)(unsigned int *))(*v20 + 800))(v20);
             int v22 = *((unsigned int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v153) + 80) >> 8;
@@ -442,7 +442,7 @@ LABEL_11:
                 IDA_LOWORD(a2) = *v28 / 256;
                 unsigned int * v29 = (unsigned int *)(this->q00C);
                 IDA_HIWORD(a2) = v28[1] / 256;
-                unsigned int * v30 = v29;
+                unsigned int * v30 = (unsigned int)(v29);
                 IDA_LODWORD(v155) = a2;
                 v152 = (unsigned int)(v29);
                 char v150 = (*(int (__thiscall **)(unsigned int *))(*v29 + 800))(v29);
@@ -477,12 +477,11 @@ LABEL_37:
   IDA_LOBYTE(v9) = (*(int (__thiscall **)(unsigned int))(*this->q00C + 1272))(this->q00C);
   if ( (unsigned char)v9 )
     return v9;
-LABEL_32:
-  v34 = this->q00C;
+LABEL_32: v34 = (unsigned int *)(this->q00C);
   IDA_LODWORD(v153) = v34[376];
   if ( IDA_LODWORD(v153) == 8 )
   {
-    int * v35 = v34 + 39;
+    int * v35 = (int *)(v34 + 39);
     v157 = *v35;
     v158 = v35[1];
     v159 = v35[2];

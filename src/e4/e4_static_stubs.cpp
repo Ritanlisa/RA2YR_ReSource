@@ -6,15 +6,6 @@
 
 namespace gamemd {
 
-double DListNode::InitEmpty(...) { return 0; }
-double DeleteAndZero::Alt(...) { return 0; }
-double DeleteAndZero::Alt2(...) { return 0; }
-double Hash::ComputeHashSHA1(...) { return 0; }
-double Hash::Reset(...) { return 0; }
-double Random::Gaussian(...) { return 0; }
-double Random::Range(...) { return 0; }
-double Random::State(...) { return 0; }
-double StartCombo::IDToIndex(...) { return 0; }
-double WinAPI::Wrapper(...) { return 0; }
+double Int4::Set2(...) { return 0; }
 
 } // namespace gamemd

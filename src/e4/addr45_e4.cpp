@@ -23,6 +23,7 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x451400
 namespace gamemd {
@@ -371,7 +372,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
     IDA_LOBYTE(v14) = aP0; /*0x456bee*/
     if ( aP0 ) /*0x456bf4*/
     {
-      v15 = (double)v36; /*0x456bfa*/
+      v15 = (unsigned int)((double)v36);
       v36 = 0; /*0x456bfe*/
       v16 = (double *)&dword_818CC8; /*0x456c06*/
       v43 = v15; /*0x456c0b*/

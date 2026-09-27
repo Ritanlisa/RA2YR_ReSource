@@ -377,7 +377,7 @@ int unknown::Release(int a1, void* a2) {
         }
         while ( a1 ); /*0x5895d4*/
       }
-      v5 = a2; /*0x5895d6*/
+      v5 = (_WORD *)(a2);
     }
     else
     {

@@ -19,6 +19,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/TagTypeClass_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/DisplayClass_e4.hpp"
 
 // 0x6E4F60
 namespace gamemd {
@@ -229,7 +230,7 @@ Coord * * TagClass::Unlink()
 {
   int v2; // eax
   int result; // eax
-  Coord ** v4;
+  int v4;
 
   *(unsigned char *)(*(&this->vtable20) + 624) = 0; /*0x71ade9*/
   *(unsigned int *)(*(&this->vtable20) + 632) = 0; /*0x71adf2*/
@@ -248,7 +249,7 @@ Coord * * TagClass::Unlink()
       result->q044 = 0; /*0x71ae1e*/
     result = TagClass::Unlink(*(&this->vtable26)); /*0x71ae24*/
   }
-  v4 = (int)((gamemd::Coord **)((int)((gamemd::Coord **)(this->creationFrame))));
+  v4 = (gamemd::Coord **)((int)((gamemd::Coord **)((int)((gamemd::Coord **)((int)((gamemd::Coord **)(this->creationFrame)))))));
   *(&this->vtable27) = 0; /*0x71ae2c*/
   *(&this->vtable26) = 0; /*0x71ae31*/
   *(&this->vtable25) = 0; /*0x71ae34*/

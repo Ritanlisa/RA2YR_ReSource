@@ -11,6 +11,11 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/CChatEventSink_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
 
 // 0x41F2E0
 namespace gamemd {
@@ -55,7 +60,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   LABEL_9: v9 = (unsigned int *)(operator new(0x110u));
         if ( v9 ) /*0x41f387*/
         {
-          v7 = AnimTypeClass::Construct2(v9, (char *)StringByIndex); /*0x41f391*/
+          v7 = (unsigned int)(AnimTypeClass::Construct2(v9, (char *)StringByIndex));
   LABEL_11:
           if ( v7 ) /*0x41f395*/
           {
@@ -128,10 +133,10 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   void * v11;
   unsigned int v12[3]; // [esp+20h] [ebp-94h] BYREF
   MultiplayerGameMode ** v13;
-  int v14; // [esp+44h] [ebp-70h]
-  int v15; // [esp+48h] [ebp-6Ch]
-  int v16; // [esp+4Ch] [ebp-68h]
-  int v17; // [esp+50h] [ebp-64h]
+  MultiplayerGameMode ** v14;
+  MultiplayerGameMode ** v15;
+  MultiplayerGameMode ** v16;
+  MultiplayerGameMode ** v17;
   unsigned int v18;
   MultiplayerGameMode ** v19;
   MultiplayerGameMode ** v20;
@@ -158,12 +163,12 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   v12[2] = (gamemd::MultiplayerGameMode **)(0);
   v13 = (gamemd::MultiplayerGameMode **)((char)((gamemd::MultiplayerGameMode **)(0)));
   v19 = (gamemd::MultiplayerGameMode **)((int)((gamemd::MultiplayerGameMode **)(0)));
-  v20 = (int)((gamemd::MultiplayerGameMode **)(0));
-  v14 = (gamemd::MultiplayerGameMode **)(1732584193);
-  v15 = (gamemd::MultiplayerGameMode **)(-271733879);
-  v16 = -1732584194; /*0x4742ad*/
-  v17 = 271733878; /*0x4742b5*/
-  v18 = -1009589776; /*0x4742bd*/
+  v20 = (gamemd::MultiplayerGameMode **)((int)((gamemd::MultiplayerGameMode **)(0)));
+  v14 = (gamemd::MultiplayerGameMode **)((int)((gamemd::MultiplayerGameMode **)(1732584193)));
+  v15 = (gamemd::MultiplayerGameMode **)((int)((gamemd::MultiplayerGameMode **)(-271733879)));
+  v16 = (int)((gamemd::MultiplayerGameMode **)(-1732584194));
+  v17 = (unsigned int)((gamemd::MultiplayerGameMode **)(271733878));
+  v18 = (gamemd::MultiplayerGameMode **)(-1009589776);
   INIClass::WriteToString(v12); /*0x4742cd*/
   SHA1::ComputeThunk(&this->u32_185); /*0x4742da*/
   *(&this->u32_184) = 1; /*0x4742e3*/
@@ -188,7 +193,7 @@ CCINIClass::CCINIClass()
   int v4; // ebx
   int v5; // edi
   unsigned int * v6;
-  int v7; // edi
+  unsigned int * v7;
 
   result = (void **)(this);
   v2 = &this->u32_10; /*0x535b36*/

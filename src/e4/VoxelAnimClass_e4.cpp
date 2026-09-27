@@ -15,6 +15,10 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/VoxelAnimTypeClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/File_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/VoxelAnimType_e4.hpp"
 
 // 0x4CAF20
 namespace gamemd {
@@ -262,7 +266,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
         v25 = (int)(v29 + v34);
         v14 = (int)(v14);
         v16 = (int)(*this);
-        v26 = v28 + v5; /*0x749ea0*/
+        v26 = (int *)(v28 + v5);
         v17 = this->GetMember41(); /*0x749ea4*/
         v23 = -2 - ZCoordToScreenY(v17); /*0x749eb8*/
         v21 = (int *)BuildingClass::GetSHPFrame(v15, v9); /*0x749ec8*/
@@ -425,7 +429,7 @@ void VoxelAnimClass_Update()
           v95 = v25; /*0x74a19a*/
           AnimClass::ctor(v20, v26->q2E8, &v93, 0, 1, (void *)0x2600, (void *)0xFFFFFFE2, 0); /*0x74a1af*/
         }
-        v27 = v1[65]; /*0x74a1b4*/
+        v27 = (int *)(v1[65]);
         v28 = v27->u32_2F0; /*0x74a1c9*/
         v82 = v27->q2F8; /*0x74a1cf*/
         Coords = Coord::GetCoords((float *)v1 + 44, &v97); /*0x74a1d8*/

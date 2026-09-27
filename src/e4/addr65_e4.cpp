@@ -33,6 +33,9 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/EventQueue_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x650A90
 namespace gamemd {
@@ -441,8 +444,8 @@ int Trigger_AllocateLog(int a1)
     }
     while ( (int)v61 < (int)&DataGlobal_8A03E8 );
     int v70 = 0;
-    int v71 = 0;
-    v83[204] = v15;
+    int v71 = (int)(0);
+    v83[204] = (int)(v15);
     for ( result = DataGlobal_87F788; v71 < DataGlobal_87F788; ++v71 )
     {
       unsigned int * v72 = (unsigned int *)*((unsigned int *)DataGlobal_87F77C + v71);

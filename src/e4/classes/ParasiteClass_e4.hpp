@@ -1563,6 +1563,9 @@ struct ParasiteClass {
     unsigned int vtable46;
     unsigned int nextArrayIndex8;
     unsigned int u32_38;
+    unsigned int ParasiteClass_field_3C;
+    unsigned int ParasiteClass_field_40;
+    unsigned int q0E0;
 // --- flat members (END) ---
     AbstractClass * * TryInfect(unsigned int * a2);
     Coord * * Update();

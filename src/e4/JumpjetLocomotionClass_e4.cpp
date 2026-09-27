@@ -109,11 +109,11 @@ void* JumpjetLocomotionClass::Update2()
   v58 = (void *)((unsigned int)(v2));
   v5 = (double)((unsigned int)(this->Accel));
   v6 = (unsigned int)(this->Speed);
-  v63 = this->vtable3; /*0x439b2e*/
-  v7 = v5 - this->Owner; /*0x439b32*/
-  v8 = this->Climb; /*0x439b35*/
-  v4 = &this->u32_90; /*0x439b1d*/
-  v6 = v6; /*0x439b3a*/
+  v63 = (void *)((unsigned int)(this->vtable3));
+  v7 = (unsigned int)(v5 - this->Owner);
+  v8 = (float)((unsigned int)(this->Climb));
+  v4 = (char *)((unsigned int)(&this->u32_90));
+  v6 = (unsigned int)(v6);
   v8 = v8; /*0x439b3e*/
   v66 = this->Crash; /*0x439b44*/
   v9 = this->Height; /*0x439b4a*/
@@ -263,7 +263,7 @@ void* JumpjetLocomotionClass::Update2()
     v3[1] = (float)(v30);
     v66 = (float)(v66);
     v3[2] = (float)(v31);
-    v33 = v9; /*0x439fd2*/
+    v33 = (float)(v9);
     *(unsigned int *)v4 = v66; /*0x439fd6*/
     v34 = v10; /*0x439fd8*/
     *((unsigned int *)v4 + 1) = v33; /*0x439fdc*/

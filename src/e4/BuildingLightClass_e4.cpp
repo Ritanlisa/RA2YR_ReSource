@@ -148,12 +148,12 @@ signed int BuildingLightClass::UpdateOscillation()
 {
   void * v2;
   int *v3; // eax
-  int GroundHeight; // edi
+  void * GroundHeight;
   void * v5;
   int *v6; // ecx
-  int v7; // eax
-  int v8; // edx
-  int v9; // ebx
+  void * v7;
+  void * v8;
+  void * v9;
   int v10; // ebp
   int v11; // ecx
   int v12; // eax
@@ -182,16 +182,16 @@ signed int BuildingLightClass::UpdateOscillation()
   if ( *(unsigned int *)(v2 + 1504) != -1 ) /*0x513d4c*/
   {
     v3 = (int *)((void *)((int *)(v2 + 156)));
-    v28 = (unsigned int)((void *)((int)((void *)(*v3))));
+    v28 = (unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((int)((void *)(*v3))))))));
     v29 = (void *)((int)((void *)(v3[1])));
-    v30 = (int)((void *)(v3[2]));
-    GroundHeight = (void *)(Cell::GetGroundHeight(&v28));
+    v30 = (unsigned int)((void *)((unsigned int)((void *)((int)((void *)(v3[2]))))));
+    GroundHeight = (void *)((int)((void *)(Cell::GetGroundHeight(&v28))));
     v5 = (void *)(this->vtable4);
-    v6 = (int *)(v5 + 156); /*0x513d8b*/
-    v7 = *(unsigned int *)(v5 + 1504) & 7; /*0x513d8d*/
-    v8 = *v6; /*0x513d90*/
-    v9 = v6[1]; /*0x513d92*/
-    v10 = v6[2]; /*0x513d95*/
+    v6 = (int *)((void *)((int *)(v5 + 156)));
+    v7 = (void *)((int)((void *)(*(unsigned int *)(v5 + 1504) & 7)));
+    v8 = (int)((void *)(*v6));
+    v9 = (int)((void *)(v6[1]));
+    v10 = (void *)(v6[2]);
     v11 = 8 * v7 + 9041624; /*0x513d98*/
     v12 = v8 + dword_89F6D8[2 * v7]; /*0x513dab*/
     v29 = v9 + *(unsigned int *)(v11 + 4); /*0x513dad*/

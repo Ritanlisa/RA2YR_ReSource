@@ -10,6 +10,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Radar_e4.hpp"
 
 // 0x65A750
 namespace gamemd {
@@ -118,7 +119,7 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
       {
         while ( 1 ) /*0x65abf7*/
         {
-          result = (unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((*(int (__stdcall **)(int, int *, int, unsigned int))(aP2->vtable4)(aP2, &aP1, 4, 0); /*0x65abf7*/ if ( result < 0 ) /*0x65abfc*/ break; /*0x65abfc*/ *(unsigned int *)(aP1->q0E4 + 4 * v7) = aP1; /*0x65ac08*/ v8 = aP2; /*0x65ac0b*/ if ( ++v7 >= aP2 ) /*0x65ac12*/ goto LABEL_8; /*0x65ac12*/ } } } } return result))))));
+          result = (unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((*(int (__stdcall **)(int, int *, int, unsigned int))(aP2->vtable4)(aP2, &aP1, 4, 0); /*0x65abf7*/ if ( result < 0 ) /*0x65abfc*/ break; /*0x65abfc*/ *(unsigned int *)(aP1->q0E4 + 4 * v7) = aP1; /*0x65ac08*/ v8 = aP2; /*0x65ac0b*/ if ( ++v7 >= aP2 ) /*0x65ac12*/ goto LABEL_8; /*0x65ac12*/ } } } } return result))))))))));
 }
 } // namespace ra2
 

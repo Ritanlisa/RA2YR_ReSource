@@ -11,6 +11,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Stream_e4.hpp"
 
 // 0x49B760
 namespace gamemd {
@@ -293,7 +294,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
   if ( !v4 ) /*0x7b59af*/
   {
     v3 = (void **)((const unsigned int)((void **)this));
-  LABEL_33: v20 = (const unsigned int)(&g_INI_DefaultBuffer);
+  const char * v20 = (const unsigned int)(&g_INI_DefaultBuffer);
     goto LABEL_35; /*0x7b59ba*/
   }
   v3 = (void **)((const unsigned int)((void **)this));

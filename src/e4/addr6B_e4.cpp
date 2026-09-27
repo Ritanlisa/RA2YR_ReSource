@@ -222,7 +222,7 @@ AbstractClass * * SlaveManager_InitGrid()
   int v5; // ecx
   int v6; // esi
   int v7; // edx
-  int16_t v8; // dx
+  unsigned short * v8;
   unsigned short *j; // esi
   int v10; // ebp
   int16_t v11; // ax
@@ -312,11 +312,11 @@ AbstractClass * * SlaveManager_InitGrid()
         v39 = (int)((unsigned short *)(0));
         v33 = (int)((unsigned short *)(0));
         v31 = (char *)((unsigned short *)((char *)g_SlaveManagerPool + 8 * v7 + 8 * v6 * result));
-        v31[4] = (unsigned short *)(0);
-        v31[5] = 0; /*0x6b2b8a*/
-        v45[1] = dword_8759AC + v6; /*0x6b2ba8*/
-        v8 = dword_8759A8 + v7; /*0x6b2bad*/
-        v45[0] = v8; /*0x6b2ba3*/
+        v31[4] = (char)((unsigned short *)(0));
+        v31[5] = (char)((unsigned short *)(0));
+        v45[1] = (int16_t)((unsigned short *)(dword_8759AC + v6));
+        v8 = (int16_t)((unsigned short *)(dword_8759A8 + v7));
+        v45[0] = (int16_t)((unsigned short *)(v8));
         v32 = *(unsigned int *)v45; /*0x6b2bb1*/
         for ( j = v46; ; j += 2 ) /*0x6b2bb5*/
         {
@@ -374,7 +374,7 @@ AbstractClass * * SlaveManager_InitGrid()
             {
               v31[4] = 1; /*0x6b2d5c*/
             }
-            v16 = g_MapCellHeight_Value; /*0x6b2d60*/
+            v16 = (unsigned short *)(g_MapCellHeight_Value);
           }
           v21 = (int16_t)(v45[0] - 1); /*0x6b2d73*/
           v22 = (int16_t)(v45[1] - 1); /*0x6b2d76*/
@@ -395,7 +395,7 @@ AbstractClass * * SlaveManager_InitGrid()
             {
               v31[4] = 1; /*0x6b2e2f*/
             }
-            v16 = g_MapCellHeight_Value; /*0x6b2e33*/
+            v16 = (unsigned short *)(g_MapCellHeight_Value);
           }
           v25 = (int16_t)(v45[0] - 1); /*0x6b2e3d*/
           v26 = v45[1] + v25; /*0x6b2e45*/

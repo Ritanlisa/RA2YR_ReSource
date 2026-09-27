@@ -14,6 +14,9 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x7B1B50
 namespace gamemd {
@@ -36,8 +39,8 @@ int UDPInterfaceClass::connect()
 namespace gamemd {
 void UDPInterfaceClass::CheckStatus(short a2)
 {
-  int v3; // ecx
-  int v4; // edi
+  unsigned short * v3;
+  unsigned short * v4;
   unsigned short *i; // eax
   SOCKET *v6; // ebx
   unsigned short *v8; // ecx
@@ -45,8 +48,8 @@ void UDPInterfaceClass::CheckStatus(short a2)
 
   if ( a2 ) /*0x7b331c*/
   {
-    v3 = this->q3F330; /*0x7b3322*/
-    v4 = 0; /*0x7b3328*/
+    v3 = (int)((unsigned short *)(this->q3F330));
+    v4 = (int)((unsigned short *)(0));
     if ( v3 > 0 ) /*0x7b332c*/
     {
       for ( i = &this->u32_3F320; *i != a2; ++i ) /*0x7b3332*/

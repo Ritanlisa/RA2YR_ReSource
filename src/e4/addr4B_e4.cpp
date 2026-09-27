@@ -25,6 +25,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Draw_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
 
 // 0x4B0500
 namespace gamemd {
@@ -412,7 +413,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   char result; // al
   const wchar_t *v15; // eax
   int AudioEntryTechnoClass; // eax
-  void * v17;
+  unsigned int v17;
   int v18; // esi
   unsigned int *v19; // eax
   unsigned int *v20; // eax
@@ -455,7 +456,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   wchar_t Buffer[6]; // [esp+114h] [ebp-50h] BYREF
   char v58[68]; // [esp+120h] [ebp-44h] BYREF
 
-  v46[0] = 450; /*0x4b98a8*/
+  v46[0] = (unsigned int *)(450);
   v6 = *a1; /*0x4b98ac*/
   v46[1] = 300; /*0x4b98b8*/
   v46[2] = 190; /*0x4b98be*/
@@ -645,9 +646,9 @@ char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
     this->q044 = (unsigned int *)(aP1[1]);
     v6 = (unsigned int *)(aP1[2]);
     this->q18C = (unsigned int *)(1);
-    this->q048 = v6; /*0x4b0e74*/
-    v9 = this->vtable4; /*0x4b0e7a*/
-    v7 = Coord::To_Cell(&MapClass_Instance, aP1); /*0x4b0e81*/
+    this->q048 = (unsigned int *)(v6);
+    v9 = (unsigned int *)(this->vtable4);
+    v7 = (unsigned int *)(Coord::To_Cell(&MapClass_Instance, aP1));
     if ( CrateClass::ProcessPickup(v7, v9) && !*(unsigned char *)(this->vtable4 + 129) ) /*0x4b0e94*/
     {
       JumpjetLocomotion::MoveTo(aP1, 1); /*0x4b0ea3*/

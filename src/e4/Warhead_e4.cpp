@@ -935,7 +935,7 @@ int Warhead::ApplyPostDamageEffects()
   int v89; // [esp+9Ch] [ebp-44h]
   int v90; // [esp+A0h] [ebp-40h] BYREF
   int v91; // [esp+A4h] [ebp-3Ch]
-  int v92; // [esp+A8h] [ebp-38h]
+  unsigned int v92;
   int v93; // [esp+ACh] [ebp-34h] BYREF
   int v94; // [esp+B0h] [ebp-30h]
   int v95; // [esp+B4h] [ebp-2Ch]
@@ -960,9 +960,9 @@ int Warhead::ApplyPostDamageEffects()
       v5 = (int *)(*(&this->u32_C9));
       v6 = (int *)(*(&this->u32_100));
       v7 = (int *)(*v4);
-      v92 = (int *)(*(&this->u32_101));
-      v8 = (unsigned int *)v4->GetCoords_0(&v93); /*0x46a370*/
-      v9 = Coord::Subtract(&v90, *v8 - v5, v8[1] - v6, v8[2] - v92); /*0x46a392*/
+      v92 = (int *)((unsigned int)((int *)(*(&this->u32_101))));
+      v8 = (int *)((unsigned int *)v4->GetCoords_0(&v93));
+      v9 = (int *)(Coord::Subtract(&v90, *v8 - v5, v8[1] - v6, v8[2] - v92));
       v84 = *v9; /*0x46a399*/
       v85 = v9[1]; /*0x46a3a4*/
       v86 = v9[2]; /*0x46a3ab*/
@@ -1207,8 +1207,8 @@ int Warhead::ApplyPostDamageEffects()
                 v73 = v73 / Math::ArcTan2(v78); /*0x46aca4*/
                 v74 = v74 / Math::ArcTan2(COERCE_DOUBLE(IDA___PAIR64__(v64, IDA_LODWORD(v78)))); /*0x46acb4*/
               }
-              v73 = Math::ArcTan2(0.7853262558535721) * v73; /*0x46acd5*/
-              v74 = Math::ArcTan2(0.7853262558535721) * v74; /*0x46acec*/
+              v73 = (int *)(Math::ArcTan2(0.7853262558535721) * v73);
+              v74 = (int *)(Math::ArcTan2(0.7853262558535721) * v74);
               v65 = Math::SinCos(0.7853262558535721); /*0x46acf0*/
               v90 = *v54; /*0x46ad00*/
               v66 = *(&this->u32_100); /*0x46ad04*/

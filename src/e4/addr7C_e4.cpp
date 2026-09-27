@@ -22,12 +22,14 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Building_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x7C0740
 namespace gamemd {
 void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char arg8, char * a5)
 {
-  int v8; // eax
+  DSurface * v8;
   int v9; // ebp
   DSurface * v10;
   DSurface * v11;
@@ -46,7 +48,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   uint16_t *v24; // edx
   int v25; // ecx
   DSurface * v26;
-  DSurface * result;
+  unsigned int result;
   int v28; // edi
   DSurface * v29;
   bool v30; // cc
@@ -66,7 +68,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   int v44; // [esp+30h] [ebp+8h]
   int v45; // [esp+38h] [ebp+10h]
 
-  v8 = *(unsigned int *)(a1 + 1892); /*0x7c074b*/
+  v8 = (gamemd::DSurface *)((int)((gamemd::DSurface *)(*(unsigned int *)(a1 + 1892))));
   v9 = *(unsigned int *)(a1 + 416); /*0x7c0751*/
   v42 = aP1; /*0x7c0759*/
   v39 = 0; /*0x7c075d*/
@@ -76,7 +78,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   if ( *(int *)(a1 + 140) <= 1 ) /*0x7c0778*/
   {
     v37 = (unsigned int)(1);
-    v41 = (unsigned int)((gamemd::DSurface *)((unsigned int)(aP1)));
+    v41 = (gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)(aP1))));
     v40 = aP1; /*0x7c08a1*/
     goto LABEL_23; /*0x7c08a1*/
   }
@@ -89,9 +91,9 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
   }
   else
   {
-    v39 = (unsigned int)(aP1 / arg0);
+    v39 = (gamemd::DSurface *)((unsigned int)(aP1 / arg0));
     v10 = (unsigned int)(arg0 * (aP1 / arg0));
-    v41 = (unsigned int)((gamemd::DSurface *)(v10));
+    v41 = (gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)(v10)));
     if ( v10 >= arg0 ) /*0x7c079f*/
     {
       v10 -= arg0; /*0x7c07a1*/
@@ -221,8 +223,8 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
             0,
             2 * (*(unsigned int *)(*(unsigned int *)(a1 + 1892) + 4 * v38) & 0xFFFFFFF)) )
     {
-      v26 = (gamemd::DSurface *)(v38);
-      result = (unsigned int)((gamemd::DSurface *)(-1));
+      v26 = (gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)(v38)));
+      result = (gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)(-1)))));
       *(unsigned int *)(a1 + 384) = v38; /*0x7c0a6e*/
       v28 = 5; /*0x7c0a76*/
       if ( v39 ) /*0x7c0a7b*/
@@ -302,7 +304,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
     v35 = *(unsigned int *)(a1 + 1792); /*0x7c0b40*/
     if ( v35 ) /*0x7c0b48*/
     {
-      v34 = v35 + *(unsigned int *)(a1 + 1788) <= 2 * (*(unsigned int *)(v31 + 4 * *(unsigned int *)(a1 + 300)) & 0xFFFFFFF); /*0x7c0b6a*/
+      v34 = (gamemd::DSurface *)(v35 + *(unsigned int *)(a1 + 1788) <= 2 * (*(unsigned int *)(v31 + 4 * *(unsigned int *)(a1 + 300)) & 0xFFFFFFF));
       *(unsigned int *)(a1 + 1796) = 0; /*0x7c0b6c*/
   LABEL_75:
       if ( v32 > 0 /*0x7c0bc2*/
@@ -317,7 +319,7 @@ void ProcessAudioStreamPlayback(int a1, DSurface * aP1, int arg0, char a4, char 
             result = -6,
             v36) )
       {
-        result = v33; /*0x7c0bc4*/
+        result = (gamemd::DSurface *)((unsigned int)((gamemd::DSurface *)(v33)));
       }
       goto LABEL_82; /*0x7c0bc4*/
     }
@@ -378,7 +380,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
       ((void (__cdecl *)(int, int, int, int))a1[1])(v8, 4, v8, 2012); /*0x7c2632*/
       goto LABEL_12; /*0x7c2632*/
     }
-    return -8; /*0x7c2b4c*/
+    return (unsigned short *)(-8);
   }
   v6 = (unsigned int *)(AllocCallback::Dispatch(0, 2, 0, 0x7DCu));
   v7 = (unsigned int *)(v6);
@@ -587,7 +589,7 @@ void RenderAudioVideoFrame(const char * a0, unsigned int * a1, ObjectClass * aP2
     if ( v26 < 0 )
     {
       v21 = (int)v25 <= 0 ? 0 : v25;
-      v26 = (int)v21; /*0x7c2b07*/
+      v26 = (unsigned int)((int)v21);
     }
     if ( *((unsigned int *)v7 + 446) > (int)v21 ) /*0x7c2b11*/
       *((unsigned int *)v7 + 446) = v21; /*0x7c2b13*/

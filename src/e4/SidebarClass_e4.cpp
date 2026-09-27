@@ -25,6 +25,7 @@
 #include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/SideClass_e4.hpp"
 
 // 0x4C9C50
 namespace gamemd {

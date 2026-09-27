@@ -16,6 +16,8 @@
 #include "e4/classes/Theme_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x5D5DE0
 namespace gamemd {

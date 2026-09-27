@@ -16,6 +16,9 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x511650
 namespace gamemd {
@@ -77,17 +80,17 @@ namespace gamemd {
 void* HouseTypeClass::LoadFromINI(unsigned char *** aP1, void * a1, void * a2)
 {
   uint8_t ***v3; // esi
-  unsigned int v5; // ecx
-  unsigned int v6; // edx
-  unsigned int v7; // eax
-  unsigned int v8; // ecx
-  double v9; // rax
-  unsigned int v10; // ecx
-  unsigned int v11; // edx
-  unsigned int v12; // eax
-  unsigned int v13; // ecx
-  double v14; // rax
-  char v15; // cl
+  void * v5;
+  void * v6;
+  void * v7;
+  void * v8;
+  void * v9;
+  void * v10;
+  void * v11;
+  void * v12;
+  void * v13;
+  void * v14;
+  void * v15;
   char Bool_Overwrite; // al
   char v17; // al
   char v18; // cl
@@ -194,12 +197,12 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1, void * a1, void * a2)
                             (uint8_t *)g_INI_Key_Color,
                             *(unsigned int *)(a1 + 192));
   Source[0] = (double)(*(unsigned char *)(a1 + 420));
-  Source[1] = 0; /*0x511966*/
+  Source[1] = (double)(0);
   INIClass::GetString(v3, (uint8_t *)(a1 + 36), (uint8_t *)aPrefix, Source, v74, 2); /*0x51196b*/
   *(unsigned char *)(a1 + 420) = v74[0]; /*0x511974*/
   INIClass::ReadDouble_Overwrite(a1 + 36, (int)aFirepower, *(double *)(a1 + 200)); /*0x511990*/
   v5 = (double)(*(unsigned int *)(a1 + 212));
-  v6 = (double)(*(unsigned int *)(a1 + 208));
+  v6 = (void *)((double)(*(unsigned int *)(a1 + 208)));
   *(double *)(a1 + 200) = a2; /*0x5119a1*/
   INIClass::ReadDouble_Overwrite(a1 + 36, (int)aGroundspeed, COERCE_DOUBLE(IDA___PAIR64__(v5, v6))); /*0x5119b1*/
   v7 = *(unsigned int *)(a1 + 220); /*0x5119b6*/

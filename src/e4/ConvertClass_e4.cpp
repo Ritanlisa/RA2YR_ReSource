@@ -8,6 +8,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x48E740
 namespace gamemd {
@@ -20,7 +21,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   int16_t v12; // cx
   int v13; // eax
   unsigned char *v14; // eax
-  unsigned char *v15; // edi
+  unsigned char * v15;
   unsigned char * v16;
   unsigned char *v17; // edi
   int i; // ebp
@@ -164,7 +165,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
     *(&this->q0243) = &v15[256 * ((v16 - 1) >> 1)]; /*0x48ea10*/
     if ( v16 == 1 ) /*0x48ea16*/
     {
-      *v15 = 0; /*0x48ea18*/
+      *v15 = (unsigned char *)(0);
       v17 = v15 + 1; /*0x48ea1a*/
       for ( i = 1; i < 256; ++i ) /*0x48ea1b*/
         *v17++ = Palette::FindClosestColor(aP1 + 2 * (i % 256) + i % 256); /*0x48ea40*/
@@ -200,7 +201,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   else
   {
     v24 = (char *)((unsigned int)((char *)operator new(*(&this->q0241) << 9)));
-    v25 = (unsigned int)(*(&this->q0241));
+    v25 = (char *)((unsigned int)((char *)((unsigned int)(*(&this->q0241)))));
     *(&this->q0242) = v24; /*0x48eb2a*/
     *(&this->q0243) = &v24[512 * ((v25 - 1) >> 1)]; /*0x48eb3a*/
     if ( !aP5 ) /*0x48eb46*/
@@ -218,7 +219,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
          dword_89ED0C + dword_89ED00,
          0) )
   {
-    v26 = (unsigned int)(dword_89ED08++);
+    v26 = (gamemd::ConvertClass *)((unsigned int)(dword_89ED08++));
     *((unsigned int *)dword_89ECFC + v26) = this; /*0x48ebd3*/
   }
   return (unsigned int *)(this);

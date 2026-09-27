@@ -67,7 +67,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
   int64_t v46; // [esp+7Ch] [ebp-ACh] BYREF
   int v47; // [esp+84h] [ebp-A4h]
   int v48; // [esp+88h] [ebp-A0h]
-  int64_t v49; // [esp+8Ch] [ebp-9Ch] BYREF
+  ObjectClass * v49;
   int v50[4]; // [esp+94h] [ebp-94h] BYREF
   int v51[4]; // [esp+A4h] [ebp-84h] BYREF
   unsigned int v52[4]; // [esp+B4h] [ebp-74h] BYREF
@@ -146,7 +146,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
             goto LABEL_18; /*0x5a5d6a*/
           do /*0x5a5da0*/
           {
-            v49 = (gamemd::ObjectClass *)((unsigned int)Random::State(&g_Randomizer));
+            v49 = (int64_t)((gamemd::ObjectClass *)((unsigned int)Random::State(&g_Randomizer)));
             v12 = (gamemd::ObjectClass *)(Math::RoundToInt((double)v49 * 4.656612874161595e-10));
           }
           while ( v12 > 1 ); /*0x5a5da0*/
@@ -527,7 +527,7 @@ void MapSeedClass_18::ClearBuffer()
 {
   void *v2; // eax
 
-  v2 = this->Items; /*0x5ac4c6*/
+  v2 = (void *)(this->Items);
   this->q010 = 0; /*0x5ac4c9*/
   if ( v2 && this->IsAllocated ) /*0x5ac4d0*/
   {
@@ -597,7 +597,7 @@ char MapSeedClass_18::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x5acaac*/
   {
-    this->IsInitialized = 0; /*0x5acab6*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x5acabc*/
       v4 = a3; /*0x5acad2*/
     else
@@ -618,7 +618,7 @@ char MapSeedClass_18::Release(int a2, unsigned int * a3)
           this->Items = 0; /*0x5acb1e*/
         }
       }
-      this->Items = v4; /*0x5acb27*/
+      this->Items = (unsigned int)(v4);
       this->Capacity = a2; /*0x5acb2f*/
       this->IsAllocated = a3 == 0; /*0x5acb32*/
       return 1; /*0x5acb38*/

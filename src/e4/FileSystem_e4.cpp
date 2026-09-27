@@ -10,6 +10,11 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/FileClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/BufferIOFileClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x626DA0
 namespace gamemd {
@@ -49,7 +54,7 @@ int FileSystem::ProcessNextFileExtension()
   if ( !g_FileExtensionState ) /*0x626db1*/
   {
     v1 = (unsigned int *)(operator new(0x10u));
-    v0 = v1; /*0x626dbe*/
+    v0 = (unsigned int)(v1);
     if ( v1 ) /*0x626dc5*/
     {
       *v1 = (unsigned int *)(-1);

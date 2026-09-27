@@ -22,6 +22,7 @@
 #include "e4/classes/TeamTypeClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/Draw_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
 
 // 0x5D6130
 namespace gamemd {

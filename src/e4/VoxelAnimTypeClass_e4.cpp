@@ -23,6 +23,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/VoxelAnimClass_e4.hpp"
 
 // 0x74AD80
 namespace gamemd {
@@ -108,7 +109,7 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1, voi
   void * v10;
   void * v11;
   void * v12;
-  int v13; // eax
+  void * v13;
   int v14; // eax
   int v15; // edx
   int Index; // eax
@@ -200,7 +201,7 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1, voi
   }
   else
   {
-    v13 = v37; /*0x74b220*/
+    v13 = (void *)((int)(v37));
   }
   *(unsigned int *)(a1 + 724) = v13; /*0x74b224*/
   *(unsigned int *)(a1 + 728) = INIClass::ReadInt_Overwrite(a1 + 36, aSpawncount, *(unsigned int *)(a1 + 728)); /*0x74b248*/

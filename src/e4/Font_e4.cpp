@@ -12,6 +12,7 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/FoggedObject_e4.hpp"
 #include "e4/classes/FoggedObjectClass_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
 
 // 0x4346C0
 namespace gamemd {
@@ -261,16 +262,16 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
       xLeft = FontClass::RenderGlyph(v32, xLeft, aP4, v33); /*0x4350e1*/
       if ( aP2 >= aP2 ) /*0x4350eb*/
       {
-        v26 = v48; /*0x4350f1*/
+        v26 = (unsigned short *)(v48);
   LABEL_50:
         if ( aP2 == v26 ) /*0x4350f9*/
         {
-          v48 = (gamemd::AbstractClass *)(0);
+          v48 = (unsigned short *)((gamemd::AbstractClass *)(0));
           ++aP2; /*0x435103*/
         }
         v10 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)(0)));
         v13 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)(0)));
-        v34 = (int)((gamemd::AbstractClass *)(aP0->u32_1C));
+        v34 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)(aP0->u32_1C)));
         v47 += v34; /*0x435117*/
         if ( aP6 && v47 >= aP6 ) /*0x435127*/
           break; /*0x435127*/

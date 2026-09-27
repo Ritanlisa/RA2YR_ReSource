@@ -14,6 +14,8 @@
 #include "e4/classes/GameLoop_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/ComStreamClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x6D1200
 namespace gamemd {

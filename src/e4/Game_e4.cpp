@@ -22,6 +22,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x430980
 namespace gamemd {
@@ -464,9 +465,9 @@ namespace gamemd {
 HashTable_flat * * Game::StartModemMultiplayer(char a2)
 {
   unsigned char *v4; // eax
-  int v6; // eax
+  unsigned char * v6;
   char *v7; // eax
-  int v9; // eax
+  char * v9;
   wchar_t *StringCSF; // eax
   HWND MessageBox; // eax
   HWND v12; // ebp

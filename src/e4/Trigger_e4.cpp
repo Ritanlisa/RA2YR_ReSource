@@ -13,6 +13,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x554A60
 namespace gamemd {
@@ -40,11 +41,11 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
   this->ptr_4 = (void *)((unsigned char)(aP2));
   this->q00C = (unsigned char)(1);
   this->q010 = (unsigned char)(Timer::GetTicks());
-  this->ptr_18 = 0; /*0x5cbd4f*/
-  this->q020 = a5; /*0x5cbd52*/
-  this->u32_38 = a7; /*0x5cbd58*/
-  this->q024 = a6; /*0x5cbd5f*/
-  this->u32_28 = 0; /*0x5cbd62*/
+  this->ptr_18 = (gamemd::CampaignClass *)((unsigned char)(0));
+  this->q020 = (unsigned char)(a5);
+  this->u32_38 = (unsigned char)(a7);
+  this->q024 = (unsigned char)(a6);
+  this->u32_28 = (unsigned char)(0);
   this->u8_34 = 0; /*0x5cbd65*/
   this->u8_3C = 0; /*0x5cbd68*/
   FileClassToBuffer = LoadFileClassToBuffer(aP1, (bool *)&this->ptr_180); /*0x5cbd70*/

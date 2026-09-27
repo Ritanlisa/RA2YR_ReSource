@@ -41,6 +41,9 @@
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/Display_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/AbstractType_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
 
 // 0x6406E0
 namespace gamemd {
@@ -470,7 +473,7 @@ void RunNetworkGameLoop()
   if ( g_GameMode_Current[0] < 3 || g_GameMode_Current[0] > 4 ) /*0x648371*/
   {
     v12 = (int *)((gamemd::AbstractClass **)((void *)dword_A8EA74));
-    v2 = (gamemd::AbstractClass **)(&g_EventManager);
+    v2 = (int *)((gamemd::AbstractClass **)(&g_EventManager));
     v1 = (gamemd::AbstractClass **)((void *)dword_A8EA74);
     v0 = (gamemd::AbstractClass **)(dword_A8EA78 - 14);
   }
@@ -479,7 +482,7 @@ void RunNetworkGameLoop()
     v0 = (gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)(dword_A8DA40)));
     v1 = (gamemd::AbstractClass **)(&unk_A8D812);
     v12 = (int *)((gamemd::AbstractClass **)(&unk_A8D812));
-    v2 = (gamemd::AbstractClass **)(g_NetworkManager);
+    v2 = (int *)((gamemd::AbstractClass **)(g_NetworkManager));
   }
   IDA_LOWORD(dword_AFA400) = BuildNetworkEventPacket((int)v2, (int)v1, v0, (int)g_ScenarioState, dword_AFA400) /*0x6483c1*/
                        + dword_AFA400;
@@ -575,11 +578,11 @@ void RunNetworkGameLoop()
       ((void (__thiscall *)(LPPERSISTSTREAM))g_TacticalClass_Instance->lpVtbl[2].GetSizeMax)(g_TacticalClass_Instance); /*0x6485cd*/
       TacticalMap::Redraw(&MapClass_Instance); /*0x6485d5*/
     }
-    v9 = g_CurrentFrame + 500; /*0x6485e7*/
+    v9 = (wchar_t *)(g_CurrentFrame + 500);
     v10 = 0; /*0x6485ed*/
     if ( (*(int (__thiscall **)(int *))(*v2 + 16))(v2) > 0 ) /*0x6485f4*/
     {
-      v11 = &dword_AFA358; /*0x6485f6*/
+      v11 = (int *)(&dword_AFA358);
       do /*0x648615*/
       {
         if ( *v11 < (int)v9 ) /*0x648600*/

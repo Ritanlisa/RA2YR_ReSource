@@ -134,7 +134,7 @@ unsigned int * SessionClass::Load()
     {
       if ( g_GameMode_Current[0] ) /*0x552d36*/
       {
-        PlayerSide = (void *)SessionClass::GetPlayerSide(*(unsigned int *)Game_PlayerInfoArray); /*0x552d51*/
+        PlayerSide = (unsigned int *)((void *)SessionClass::GetPlayerSide(*(unsigned int *)Game_PlayerInfoArray));
         return PaletteManager::Load(PlayerSide); /*0x552d58*/
       }
       else

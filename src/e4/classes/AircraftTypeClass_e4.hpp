@@ -535,7 +535,7 @@ struct AircraftTypeClass {
     bool DamageReducesReadiness;  // 0x6B1
     int ReadinessReductionMultiplier;  // 0x6B4
     unsigned int UnloadingClass;  // 0x6B8
-    char DeployingAnim[4];  // 0x6BC
+    unsigned int DeployingAnim;  // 0x6BC
     bool AttackFriendlies;  // 0x6C0
     bool AttackCursorOnFriendlies;  // 0x6C1
     int UndeployDelay;  // 0x6C4

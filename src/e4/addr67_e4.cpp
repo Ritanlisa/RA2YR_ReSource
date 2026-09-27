@@ -21,6 +21,11 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Compare_e4.hpp"
+#include "e4/classes/E4Recv_690400_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x679CC0
 namespace gamemd {
@@ -120,9 +125,9 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
   else
   {
     aP0->u32_4 = (unsigned int)((void *)(0));
-    aP0->q008 = (void *)(0);
+    aP0->q008 = (void *)((unsigned char)((void *)(0)));
     aP0->q00C = (void *)(1);
-    aP0->u8_D = 0; /*0x67b6a3*/
+    aP0->u8_D = (unsigned char)((void *)(0));
     if ( (unsigned int *)aP0 != a4 ) /*0x67b6ac*/
     {
       DynamicVectorClass::Destroy(aP0); /*0x67b6b0*/

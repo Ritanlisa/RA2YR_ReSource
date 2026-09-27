@@ -21,6 +21,13 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Process_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/LinkedList_flat_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x6A6AF0
 namespace gamemd {
@@ -704,7 +711,7 @@ int TechnoClass::ProcessDeployAction()
                              &v29,
                              g_RulesClass_Instance[1].TurnRate / 256,
                              1);
-          v28 = *BuildingClass::FindPlacementCells2(this, &v31, v27); /*0x6b0100*/
+          v28 = (unsigned int *)(*BuildingClass::FindPlacementCells2(this, &v31, v27));
           v15 = CellStruct::Sub((int16_t *)&v28, &v32, &v27); /*0x6b0104*/
           v16 = *((int16_t *)v15 + 1); /*0x6b0109*/
           v29 = *(int16_t *)v15; /*0x6b011b*/

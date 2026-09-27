@@ -618,7 +618,7 @@ void PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3
   int v13; // ebx
   unsigned short * v14;
   unsigned short *v15; // ebx
-  int16_t v17; // [esp+10h] [ebp-10h]
+  unsigned short * v17;
   void * v18;
 
   v10 = (unsigned int *)((int)(a3));
@@ -630,8 +630,8 @@ void PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3
       | (IDA_BYTE1(yTop) >> g_BitMask_Blue << g_BitMask_Green);
   yTop = (unsigned short *)(a3[1]);
   v14 = (int)((unsigned short *)(v11 - yTop));
-  v17 = (unsigned short *)(v13);
-  v15 = a4; /*0x6210c4*/
+  v17 = (int16_t)((unsigned short *)(v13));
+  v15 = (unsigned short *)(a4);
   if ( (a6 & 4) != 0 ) /*0x6210ca*/
   {
     Text::Layout(a4, a2, (int *)&a4, &a3, v12); /*0x6210da*/
@@ -658,7 +658,7 @@ double sub_621150(int a1)
   v6[0] = (unsigned int)(43);
   v6[1] = (unsigned int)(128);
   v6[2] = (unsigned int)(213);
-  v2 = v6; /*0x621173*/
+  v2 = (unsigned int)(v6);
   v3 = 3; /*0x621177*/
   do /*0x6211c6*/
   {
@@ -833,9 +833,9 @@ AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
       v9 = (unsigned int)(Rect.right + 1);
       v7[2] = (unsigned int)(Rect.bottom + 1);
       v7[1] = (unsigned int)(v9);
-      v7[3] = 0; /*0x62155f*/
-      *v7 = &XSurface_Vtable; /*0x621562*/
-      v7[4] = 2; /*0x621568*/
+      v7[3] = (unsigned int)(0);
+      *v7 = (unsigned int)(&XSurface_Vtable);
+      v7[4] = (unsigned int)(2);
       Buffer::Init(v7 + 5, 0, 2 * v9 * v8); /*0x62156f*/
       *v7 = &BSurface_Vtable; /*0x621574*/
     }
@@ -928,16 +928,10 @@ AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
   v20 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(v3[1])));
   v21 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*v3)));
   v35[2] = (unsigned int)((gamemd::AbstractClass **)(v3[2]));
-  v35[3] = (gamemd::AbstractClass **)(v3[3]);
-  v35[1] = v20 - v28.top; /*0x6217ae*/
-  v35[0] = v21 - v28.left; /*0x6217c0*/
-  return (*(int (__thiscall **)(int, int *, unsigned int *, unsigned int *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x6217cc*/
-           DSurface_Alternate,
-           v3,
-           v7,
-           v35,
-           0,
-           1);
+  v35[3] = (unsigned int)((gamemd::AbstractClass **)(v3[3]));
+  v35[1] = (unsigned int)((gamemd::AbstractClass **)(v20 - v28.top));
+  v35[0] = (unsigned int)((gamemd::AbstractClass **)(v21 - v28.left));
+  return (gamemd::AbstractClass **)((gamemd::AbstractClass **)((*(int (__thiscall **)(int, int *, unsigned int *, unsigned int *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x6217cc*/ DSurface_Alternate, v3, v7, v35, 0, 1)));
 }
 }
 // 0x6223C0

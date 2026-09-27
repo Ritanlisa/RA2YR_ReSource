@@ -485,6 +485,7 @@ struct ConnectionPointClass {
     unsigned char q6410;  // 0x6410
     unsigned int q0041;
     unsigned int q0042;
+    unsigned int u32_10;
 // --- flat members (END) ---
     int EnumConnections(int a1, int a2);
     int GetConnectionInterface(unsigned int * a1, int a2);

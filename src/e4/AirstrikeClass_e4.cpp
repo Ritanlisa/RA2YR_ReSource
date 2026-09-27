@@ -14,6 +14,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Power_e4.hpp"
+#include "e4/classes/AircraftClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x41D860
 namespace gamemd {
@@ -24,7 +26,7 @@ int AirstrikeClass::SpawnAircraft(int * a2)
   unsigned int * v5;
   unsigned int *v7; // eax
   void *v8; // eax
-  unsigned int *v9; // eax
+  AirstrikeClass * v9;
   AirstrikeClass * result;
   unsigned int *v11; // eax
   AirstrikeClass * v12;
@@ -316,10 +318,10 @@ AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
 {
   AirstrikeClass * v3;
   TechnoClass * v4;
-  int v5;
-  int v6; // eax
-  int v7;
-  int v8; // eax
+  TechnoClass * v5;
+  TechnoClass * v6;
+  TechnoClass * v7;
+  TechnoClass * v8;
   int v9;
   int v10; // eax
   int v11;
@@ -341,15 +343,15 @@ AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
   }
   this->AirstrikeClass_field_3C = (unsigned int)((gamemd::TechnoClass *)(0));
   this->owner = (unsigned int)((gamemd::TechnoClass *)(aP1));
-  this->AirstrikeClass_field_3D = (unsigned char)((gamemd::TechnoClass *)(0));
-  v4 = (int)((gamemd::TechnoClass *)((*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 132))(aP1)));
-  v5 = (gamemd::TechnoClass *)(this->owner);
-  this->AirstrikeClass_field_24 = (gamemd::TechnoClass *)(*(unsigned int *)(v4 + 1564));
-  v6 = (*(int (__thiscall **)(int))(*(unsigned int *)v5 + 132))(v5); /*0x41d41b*/
-  v7 = this->owner; /*0x41d427*/
-  this->AirstrikeClass_field_28 = *(unsigned int *)(v6 + 1568); /*0x41d42a*/
-  v8 = (*(int (__thiscall **)(int))(*(unsigned int *)v7 + 132))(v7); /*0x41d42f*/
-  v9 = this->owner; /*0x41d43b*/
+  this->AirstrikeClass_field_3D = (unsigned char)((gamemd::TechnoClass *)((unsigned char)((gamemd::TechnoClass *)(0))));
+  v4 = (gamemd::TechnoClass *)((int)((gamemd::TechnoClass *)((*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 132))(aP1))));
+  v5 = (gamemd::TechnoClass *)((int)((gamemd::TechnoClass *)(this->owner)));
+  this->AirstrikeClass_field_24 = (unsigned int)((gamemd::TechnoClass *)(*(unsigned int *)(v4 + 1564)));
+  v6 = (gamemd::TechnoClass *)((int)((gamemd::TechnoClass *)((*(int (__thiscall **)(int))(*(unsigned int *)v5 + 132))(v5))));
+  v7 = (gamemd::TechnoClass *)((int)((gamemd::TechnoClass *)(this->owner)));
+  this->AirstrikeClass_field_28 = (unsigned int)((gamemd::TechnoClass *)(*(unsigned int *)(v6 + 1568)));
+  v8 = (int)((gamemd::TechnoClass *)((*(int (__thiscall **)(int))(*(unsigned int *)v7 + 132))(v7)));
+  v9 = (gamemd::TechnoClass *)(this->owner);
   this->AirstrikeClass_field_44 = *(unsigned int *)(v8 + 1580); /*0x41d43e*/
   v10 = (*(int (__thiscall **)(int))(*(unsigned int *)v9 + 132))(v9); /*0x41d443*/
   v11 = this->owner; /*0x41d44f*/

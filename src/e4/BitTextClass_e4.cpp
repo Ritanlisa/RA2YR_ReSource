@@ -8,6 +8,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/BinkMovie_e4.hpp"
+#include "e4/classes/DSurface_e4.hpp"
 
 // 0x433880
 namespace gamemd {
@@ -22,11 +23,11 @@ int BitTextClass::ParseFontData(char * Source)
   this->u16_26 = (unsigned int)(13653);
   this->u32_28 = (unsigned int)(64);
   this->q040 = (unsigned int)(1);
-  this->u8_41 = 1; /*0x4338b4*/
-  this->q018 = 1; /*0x4338b7*/
-  this->u32_1C = 1; /*0x4338ba*/
-  this->q020 = 0; /*0x4338bd*/
-  this->u32_C = 0; /*0x4338c0*/
+  this->u8_41 = (unsigned int)(1);
+  this->q018 = (unsigned int)(1);
+  this->u32_1C = (unsigned int)(1);
+  this->q020 = (unsigned int)(0);
+  this->u32_C = (unsigned int)(0);
   this->ptr_8 = 0; /*0x4338c3*/
   SetRect((LPRECT)(&this->u32_108), 0, 0, 0, 0); /*0x4338c6*/
   this->u32_2C = 1; /*0x4338d0*/

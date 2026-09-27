@@ -251,7 +251,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
             }
             continue; /*0x56c4af*/
           }
-          v25[0] = (v8 << 8) + 128; /*0x56c41b*/
+          v25[0] = (int *)((v8 << 8) + 128);
           v25[1] = (v7 << 8) + 128; /*0x56c429*/
           v25[2] = 0; /*0x56c431*/
           v15 = Vector3::Subtract(a2, v27, v25); /*0x56c439*/
@@ -407,7 +407,7 @@ namespace gamemd {
 void* Object::HandleAction(int * a2, int * a3)
 {
   int *v4; // esi
-  int v5; // ebp
+  unsigned int * v5;
   int GroundHeight; // eax
   int v7; // eax
   BuildingTypeClass * v8;
@@ -424,7 +424,7 @@ void* Object::HandleAction(int * a2, int * a3)
   int v19; // ecx
   char *v20; // esi
   unsigned int * v21;
-  int v22; // ecx
+  unsigned int * v22;
   unsigned int * v23;
   unsigned int * v24;
   unsigned int *v25; // eax
@@ -439,10 +439,10 @@ void* Object::HandleAction(int * a2, int * a3)
   unsigned int * v34;
 
   v4 = (int *)((unsigned int *)((int *)(&this->q03C6)));
-  v5 = (unsigned int *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->q0442) + 156))(this->Type));
+  v5 = (int)((unsigned int *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->q0442) + 156))(this->Type)));
   v32 = (unsigned int *)(*v4);
-  v33 = this->q0A0; /*0x5fd99f*/
-  v34 = this->q0A4; /*0x5fd9a6*/
+  v33 = (unsigned int *)(this->q0A0);
+  v34 = (unsigned int *)(this->q0A4);
   GroundHeight = Cell::GetGroundHeight(&v32); /*0x5fd9af*/
   v29 = ZCoordToScreenY(GroundHeight); /*0x5fd9c1*/
   v7 = 0; /*0x5fd9c5*/
@@ -551,7 +551,7 @@ void* Object::HandleAction(int * a2, int * a3)
   else
   {
     v21 = (int)((unsigned int *)(*v4));
-    v22 = (unsigned int *)(this->q0A0);
+    v22 = (int)((unsigned int *)(this->q0A0));
     v34 = (unsigned int *)(this->q0A4);
     IDA_LOWORD(a2) = v21 / 256; /*0x5fdbb9*/
     IDA_HIWORD(a2) = v22 / 256; /*0x5fdbd1*/

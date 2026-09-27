@@ -9,6 +9,15 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/E4Recv_6BFA50_e4.hpp"
+#include "e4/classes/E4Recv_6BFED0_e4.hpp"
+#include "e4/classes/E4Recv_6C01D0_e4.hpp"
+#include "e4/classes/E4Recv_6C04D0_e4.hpp"
+#include "e4/classes/E4Recv_6C0650_e4.hpp"
+#include "e4/classes/E4Recv_6C07D0_e4.hpp"
+#include "e4/classes/E4Recv_6C0AD0_e4.hpp"
+#include "e4/classes/E4Recv_6C0C50_e4.hpp"
 
 // 0x535CF0
 namespace gamemd {

@@ -14,6 +14,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ScriptAction_e4.hpp"
 #include "e4/classes/NetworkLobby_e4.hpp"
+#include "e4/classes/CoordStruct_e4.hpp"
+#include "e4/classes/BuildingPlacement_e4.hpp"
 
 // 0x5B9750
 namespace gamemd {

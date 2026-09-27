@@ -51,7 +51,7 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
   void **v18; // eax
   int v19; // eax
   FootClass * v20;
-  int v21; // edi
+  FootClass * v21;
   void *v22; // eax
   int v23; // eax
   int v24; // ebp
@@ -66,8 +66,8 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
   int Type; // edi
   int16_t *v34; // eax
   char v35; // dl
-  int v36; // edx
-  int16_t v37; // cx
+  FootClass * v36;
+  FootClass * v37;
   void *v38; // [esp+0h] [ebp-28h]
   int v40; // [esp+14h] [ebp-14h] BYREF
   int v41; // [esp+18h] [ebp-10h] BYREF
@@ -203,10 +203,10 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
       v34 = (gamemd::FootClass *)((int16_t *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP2));
       v35 = (gamemd::FootClass *)(*(unsigned int *)(InfantryClass::GetType(v34) + 44) - 4);
       aP3 = (gamemd::FootClass *)(*(int16_t **)(Type + 40));
-      v36 = (gamemd::FootClass *)(v35 & 7);
-      v38 = 0; /*0x4d81ea*/
-      v37 = (unsigned short)aP3 + IDA_LOWORD(Direction_X_Offsets[v36]); /*0x4d81fb*/
-      v21 = *(unsigned int *)this; /*0x4d81fe*/
+      v36 = (gamemd::FootClass *)((int)((gamemd::FootClass *)(v35 & 7)));
+      v38 = (gamemd::FootClass *)(0);
+      v37 = (gamemd::FootClass *)((int16_t)((gamemd::FootClass *)((unsigned short)aP3 + IDA_LOWORD(Direction_X_Offsets[v36]))));
+      v21 = (int)((gamemd::FootClass *)(*(unsigned int *)this));
       IDA_LOWORD(v36) = IDA_HIWORD(Direction_X_Offsets[v36]); /*0x4d8200*/
       IDA_LOWORD(aP4) = v37; /*0x4d8204*/
       IDA_HIWORD(aP4) = IDA_HIWORD(aP3) + v36; /*0x4d8213*/

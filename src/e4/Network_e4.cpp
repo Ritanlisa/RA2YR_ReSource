@@ -36,6 +36,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Compare_e4.hpp"
 #include "e4/classes/CoordStruct_e4.hpp"
+#include "e4/classes/Node_flat_e4.hpp"
 
 // 0x4311C0
 namespace gamemd {
@@ -48,7 +49,7 @@ int Network::SendBeaconDelete(int a2, int a3)
   int v9; // esi
   unsigned int *v10; // eax
   int v11; // ebx
-  int v12; // esi
+  unsigned int v12;
   int * v14;
   IUnknown * v15;
   unsigned char v16[16]; // [esp+18h] [ebp-1D8h] BYREF

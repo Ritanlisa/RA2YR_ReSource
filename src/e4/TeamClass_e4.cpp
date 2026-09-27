@@ -638,8 +638,8 @@ TechnoClass * * TeamClass::RemoveAllMembers()
   result = (gamemd::TechnoClass **)((*(int (__thiscall **)(int))(this->vtable2 + 12))&this->uniqueId);
   this->q08C = (unsigned int)((gamemd::TechnoClass **)(-1));
   this->q090 = (unsigned char)((void *)(-1));
-  this->ptr_94 = -1; /*0x6362f2*/
-  this->u8_98 = 0; /*0x6362f8*/
+  this->ptr_94 = (void *)(-1);
+  this->u8_98 = (gamemd::TechnoClass **)(0);
   this->u8_99 = 0; /*0x6362ff*/
   return result; /*0x636306*/
 }

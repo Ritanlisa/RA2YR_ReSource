@@ -45,7 +45,7 @@ struct CounterClass {
     unsigned int q096;  // 0x96
     unsigned char q09A;  // 0x9A
     ObjectClass* q100;  // 0x100
-    char q104[4];  // 0x104
+    unsigned int q104;  // 0x104
     CampaignClass* q114;  // 0x114
     unsigned char q118;  // 0x118
     unsigned char q128;  // 0x128

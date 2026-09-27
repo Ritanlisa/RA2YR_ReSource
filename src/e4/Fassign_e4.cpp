@@ -11,6 +11,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x7D7C31
 namespace gamemd {

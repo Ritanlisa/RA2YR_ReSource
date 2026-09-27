@@ -80,9 +80,9 @@ ATOM DialogClass::RegisterWinClasses()
     dword_AC48CC = (unsigned int)((LPCSTR)(1));
     WndClass.hInstance = (HINSTANCE)((LPCSTR)(g_hInstance));
     WndClass.style = (UINT)((LPCSTR)(3));
-    WndClass.lpfnWndProc = (LPCSTR)(GameScreen::DlgProc);
-    WndClass.cbClsExtra = (LPCSTR)(0);
-    WndClass.cbWndExtra = (LPCSTR)(0);
+    WndClass.lpfnWndProc = (WNDPROC)((LPCSTR)(GameScreen::DlgProc));
+    WndClass.cbClsExtra = (int)((LPCSTR)(0));
+    WndClass.cbWndExtra = (int)((LPCSTR)(0));
     memset(&WndClass.hIcon, 0, 12); /*0x60d4ae*/
     WndClass.lpszMenuName = aCombodropwin; /*0x60d4ba*/
     WndClass.lpszClassName = aCombodropwin; /*0x60d4be*/

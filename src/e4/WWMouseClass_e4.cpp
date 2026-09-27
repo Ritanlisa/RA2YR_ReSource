@@ -36,11 +36,11 @@ unsigned int * WWMouseClass::initSurface()
         v5 = (unsigned int)(this->q04C);
         v6 = (void *)((unsigned int)(this->q050));
         v9[0] = (unsigned int)(this->q02C + this->Rect0);
-        v7 = this->q030; /*0x7b9078*/
-        v8[0] = 0; /*0x7b907f*/
-        v8[1] = 0; /*0x7b9083*/
-        v9[2] = v6; /*0x7b908f*/
-        v9[3] = v4; /*0x7b9093*/
+        v7 = (void *)((unsigned int)(this->q030));
+        v8[0] = (unsigned int)(0);
+        v8[1] = (unsigned int)(0);
+        v9[2] = (unsigned int)(v6);
+        v9[3] = (unsigned int)(v4);
         v9[1] = v7 + v5; /*0x7b9097*/
         v8[2] = v6; /*0x7b909b*/
         v8[3] = v4; /*0x7b909f*/
@@ -136,7 +136,7 @@ void* WWMouseClass::captureMouse()
   IUnknown * v16;
   IUnknown * v17;
   IUnknown * v18;
-  int v19; // [esp+10h] [ebp-24h]
+  IUnknown * v19;
   unsigned int v20[4]; // [esp+14h] [ebp-20h] BYREF
   unsigned int v21[4]; // [esp+24h] [ebp-10h] BYREF
 
@@ -171,13 +171,13 @@ void* WWMouseClass::captureMouse()
         }
         v16 = (IUnknown *)((int)((IUnknown *)(v16)));
         v17 = (IUnknown *)((int)((IUnknown *)(v17)));
-        v18 = (int)((IUnknown *)(v18));
-        v19 = (IUnknown *)(v19);
-        v20[0] = v16; /*0x7b9ba0*/
-        this->Rect0 = v16; /*0x7b9ba4*/
-        v20[2] = v18; /*0x7b9ba7*/
-        v20[3] = v19; /*0x7b9bab*/
-        this->q04C = v17; /*0x7b9bb1*/
+        v18 = (IUnknown *)((int)((IUnknown *)(v18)));
+        v19 = (IUnknown *)((int)((IUnknown *)(v19)));
+        v20[0] = (unsigned int)((IUnknown *)(v16));
+        this->Rect0 = (unsigned int)((IUnknown *)(v16));
+        v20[2] = (unsigned int)((IUnknown *)(v18));
+        v20[3] = (unsigned int)((IUnknown *)(v19));
+        this->q04C = (IUnknown *)(v17);
         this->q050 = v18; /*0x7b9bb6*/
         this->q054 = v19; /*0x7b9bb9*/
         v11 = v16 + this->q02C; /*0x7b9bbf*/
@@ -240,11 +240,11 @@ void WWMouseClass::releaseMouse()
             v6 = (unsigned int)(this->q050);
             v7 = (void *)((unsigned int)(this->q054));
             v10[0] = (unsigned int)(this->q02C + this->Rect0);
-            v8 = this->q030 + v5; /*0x7b9cfd*/
-            v9[0] = 0; /*0x7b9d03*/
-            v9[1] = 0; /*0x7b9d07*/
-            v10[2] = v6; /*0x7b9d10*/
-            v10[3] = v7; /*0x7b9d15*/
+            v8 = (void *)((unsigned int)(this->q030 + v5));
+            v9[0] = (unsigned int)(0);
+            v9[1] = (unsigned int)(0);
+            v10[2] = (unsigned int)(v6);
+            v10[3] = (unsigned int)(v7);
             v10[1] = v8; /*0x7b9d19*/
             v9[2] = v6; /*0x7b9d1d*/
             v9[3] = v7; /*0x7b9d21*/

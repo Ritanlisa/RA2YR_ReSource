@@ -11,6 +11,10 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/VectorCursor_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x7C8FD2
 namespace gamemd {

@@ -10,6 +10,9 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x40FFFF
 namespace gamemd {

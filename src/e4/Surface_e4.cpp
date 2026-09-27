@@ -15,6 +15,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/TagClass_e4.hpp"
+#include "e4/classes/TaskForceClass_e4.hpp"
 
 // 0x411580
 namespace gamemd {
@@ -269,7 +271,7 @@ void sub_626C60()
     }
     else
     {
-      v3 = 0; /*0x626cbc*/
+      v3 = (unsigned int)(0);
     }
     v1[1] = (unsigned int *)(v3);
     v4 = (unsigned int *)(operator new(0x18u));
@@ -282,7 +284,7 @@ void sub_626C60()
     }
     else
     {
-      v5 = 0; /*0x626cf3*/
+      v5 = (unsigned int)(0);
     }
     v1[2] = (unsigned int *)(v5);
     v6 = (unsigned int *)(operator new(0x10u));

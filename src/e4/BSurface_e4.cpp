@@ -11,6 +11,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
 
 // 0x410CE0
 namespace gamemd {
@@ -47,7 +48,7 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
     v10[2] = (unsigned int)(v12);
     v10[3] = (unsigned int)(0);
     *v10 = (unsigned int)(&XSurface_Vtable);
-    v10[4] = 2; /*0x410d41*/
+    v10[4] = (unsigned int)(2);
     Buffer::Init(v10 + 5, 0, 2 * v12 * v11); /*0x410d48*/
     *v10 = &BSurface_Vtable; /*0x410d4d*/
     v13 = v10; /*0x410d53*/
@@ -60,8 +61,8 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
   a5 = (int)((unsigned int *)(*(&this->Width1)));
   this->Buffer = (unsigned int *)(v13);
   a2 = (int)((unsigned int *)(0));
-  a3 = (unsigned int *)(0);
-  v14 = (unsigned int *)(v14);
+  a3 = (int)((unsigned int *)(0));
+  v14 = (int)((unsigned int *)(v14));
   (*(void (__thiscall **)(unsigned int *, int *, int))(*v13 + 20))(v13, &a2, 127); /*0x410d7b*/
   v15 = (*(int (__thiscall **)(unsigned int, unsigned int, unsigned int))(*(unsigned int *)this->Buffer + 92))(this->Buffer, 0, 0); /*0x410d89*/
   v16 = *(&this->Width1); /*0x410d8c*/

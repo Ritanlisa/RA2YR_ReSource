@@ -194,7 +194,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
       v10[3] = (unsigned int)(0);
       v10[1] = (unsigned int)(v7);
       v10[2] = (unsigned int)(v8);
-      *v10 = &XSurface_Vtable; /*0x63043e*/
+      *v10 = (unsigned int)(&XSurface_Vtable);
       Buffer::Init(v10 + 5, (int)v65, v7 * v8 * v9); /*0x630444*/
       v12 = v11; /*0x630449*/
       *v11 = &BSurface_Vtable; /*0x63044f*/
@@ -251,7 +251,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
           do /*0x6305ea*/
           {
             v18 = (unsigned int)(*v48);
-            v19 = (char *)++v48; /*0x63056a*/
+            v19 = (char *)((unsigned int)((char *)((unsigned int)((char *)++v48))));
             if ( v48 >= (uint8_t *)&retaddr ) /*0x630571*/
             {
               (*(void (__thiscall **)(int, unsigned char *, int))(a1->q024)(a1, v73, 2048); /*0x630584*/
@@ -364,7 +364,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
           }
         }
         v12 = (uint8_t *)(v55);
-        v28 = a1; /*0x63091f*/
+        v28 = (unsigned int)((uint8_t *)((unsigned int)((uint8_t *)(a1))));
         (*(void (__thiscall **)(unsigned int *))(*v55 + 96))(v55); /*0x630927*/
       }
       else
@@ -429,7 +429,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
         v39 = (uint8_t *)(v48);
         if ( v31 == v29 ) /*0x6307b9*/
         {
-          v28 = (unsigned int)((uint8_t *)((unsigned int)((uint8_t *)(a1))));
+          v28 = (unsigned int)((uint8_t *)((unsigned int)((uint8_t *)((unsigned int)((uint8_t *)((unsigned int)((uint8_t *)(a1))))))));
           v39 = (uint8_t *)(v48 + 1);
           v51 = *v48; /*0x6307cb*/
           if ( v48 + 1 >= (uint8_t *)&retaddr ) /*0x6307cf*/
@@ -440,7 +440,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
         }
         else
         {
-          v28 = (unsigned int)((uint8_t *)(a1));
+          v28 = (unsigned int)((uint8_t *)((unsigned int)((uint8_t *)((unsigned int)((uint8_t *)(a1))))));
         }
         if ( (v51 & 0xC0) == 0xC0 && v39 + 1 >= (uint8_t *)&retaddr ) /*0x63080e*/
           (*(void (__thiscall **)(int, unsigned char *, int))(v28->q024)(v28, v73, 2048); /*0x630821*/
@@ -451,7 +451,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   }
   else
   {
-    v28 = (unsigned int)((uint8_t *)(a1));
+    v28 = (unsigned int)((uint8_t *)((unsigned int)((uint8_t *)((unsigned int)((uint8_t *)(a1))))));
   }
   if ( a2 ) /*0x630936*/
   {

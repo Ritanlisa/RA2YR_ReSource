@@ -13,6 +13,15 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/BuildingPlacement_e4.hpp"
+#include "e4/classes/BuildingLight_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/BuildingLightClass_e4.hpp"
+#include "e4/classes/BulletTypeClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x453E20
 namespace gamemd {
@@ -581,7 +590,7 @@ TechnoClass * BuildingClass::ClearLimpetCheck()
 {
   unsigned int *v2; // [esp+4h] [ebp+4h]
 
-  *v2 = g_TerrainTypeTable; /*0x459dba*/
+  *v2 = (gamemd::TechnoClass *)(g_TerrainTypeTable);
   return (int)v2; /*0x459dbc*/
 }
 } // namespace gamemd

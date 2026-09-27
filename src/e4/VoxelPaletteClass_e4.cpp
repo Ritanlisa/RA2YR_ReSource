@@ -11,6 +11,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Voxel_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x758A30
 namespace gamemd {

@@ -41,6 +41,10 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/BinkMovie_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/SideClass_e4.hpp"
 
 // 0x5A1350
 namespace gamemd {
@@ -252,7 +256,7 @@ int ProcessRandomMapCellAdjacency()
   {
     NeighbourContent = (void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 5u)));
     v14 = (void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 1u)));
-    v2 = (void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 3u)));
+    v2 = (int)((void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 3u))));
     v3 = (int16_t *)Cell::GetNeighbourContent((unsigned int *)i, 2u); /*0x5a1a37*/
     v4 = (int16_t *)Cell::GetNeighbourContent((unsigned int *)i, 6u); /*0x5a1a44*/
     AdjacencyFlags = Cell::GetAdjacencyFlags(i); /*0x5a1a46*/
@@ -679,7 +683,7 @@ void ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
         {
           do /*0x5a4848*/
           {
-            v51 = (unsigned int)Random::State(&g_Randomizer); /*0x5a4826*/
+            v51 = (void **)((unsigned int)Random::State(&g_Randomizer));
             v21 = Math::RoundToInt((double)v51 * 0.000000005820766092701993 + 1.0); /*0x5a483e*/
           }
           while ( (unsigned int)v21 > 0x19 ); /*0x5a4848*/

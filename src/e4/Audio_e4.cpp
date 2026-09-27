@@ -31,6 +31,10 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Buffer_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/BaseClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x402720
 namespace gamemd {

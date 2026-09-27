@@ -172,10 +172,10 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   int v33; // esi
   int v34; // eax
   int v35; // edx
-  int v37; // ecx
+  XSurface * v37;
   int v38; // edx
   int v39; // eax
-  int v40; // edx
+  XSurface * v40;
   int v41; // eax
   int v42; // esi
   int v43; // edx
@@ -198,8 +198,8 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   int v62; // [esp+24h] [ebp-48h] BYREF
   void * v63;
   void * v64;
-  int v65; // [esp+30h] [ebp-3Ch]
-  int v66; // [esp+34h] [ebp-38h]
+  XSurface * v65;
+  XSurface * v66;
   void * v67;
   int v68; // [esp+3Ch] [ebp-30h]
   int v70; // [esp+44h] [ebp-28h]
@@ -220,12 +220,12 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   v15 = (char)(v15);
   aP2 = (gamemd::XSurface *)((char)(aP2));
   v17 = (char)(aP5[3]);
-  aP2 = (char)(0);
-  v17 = v17; /*0x4373ef*/
-  v72 = *aP2; /*0x4373f5*/
-  v61 = 0; /*0x4373f9*/
-  v18 = 0; /*0x437400*/
-  v73 = aP2[1]; /*0x437402*/
+  aP2 = (gamemd::XSurface *)((char)(0));
+  v17 = (char)(v17);
+  v72 = (char)(*aP2);
+  v61 = (char)(0);
+  v18 = (char)(0);
+  v73 = (char)(aP2[1]);
   v65 = 0; /*0x437406*/
   v19 = aP2[2]; /*0x43740a*/
   v66 = 0; /*0x43740d*/
@@ -316,10 +316,10 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
     }
     else
     {
-      aP3 = aP3; /*0x43763e*/
-      aP7 = (*(int (__thiscall **)(int *))(*aP3 + 116))(aP3); /*0x437649*/
-      v37 = (*(int (__thiscall **)(int *))(*v30 + 116))(v30); /*0x437654*/
-      a4 = v37; /*0x43765d*/
+      aP3 = (gamemd::XSurface *)(aP3);
+      aP7 = (gamemd::XSurface *)((*(int (__thiscall **)(int *))(*aP3 + 116))(aP3));
+      v37 = (int)((gamemd::XSurface *)((*(int (__thiscall **)(int *))(*v30 + 116))(v30)));
+      a4 = (gamemd::XSurface *)(v37);
       if ( g_ZBufferDescriptor ) /*0x437661*/
         v65 = *((unsigned int *)g_ZBufferDescriptor + 10); /*0x437666*/
       if ( g_VisibleSurfaceDescriptor ) /*0x437671*/
@@ -329,11 +329,11 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
         a4 = (int)((gamemd::XSurface *)(-v37));
         aP7 = (gamemd::XSurface *)(-aP7);
         v38 = (gamemd::XSurface *)(*aP3);
-        v66 = (gamemd::XSurface *)(-v66);
-        v65 = -v65; /*0x4376aa*/
-        v39 = aP3->vt_slot_116(); /*0x4376ae*/
-        v40 = *v30; /*0x4376b5*/
-        aP2 = (int *)((char *)aP2 + (v17 - 1) * v39); /*0x4376c1*/
+        v66 = (gamemd::XSurface *)((int)((gamemd::XSurface *)(-v66)));
+        v65 = (gamemd::XSurface *)((int)((gamemd::XSurface *)(-v65)));
+        v39 = (gamemd::XSurface *)(aP3->vt_slot_116());
+        v40 = (int)((gamemd::XSurface *)(*v30));
+        aP2 = (gamemd::XSurface *)((int *)((char *)aP2 + (v17 - 1) * v39));
         v41 = v30->vt_slot_116(); /*0x4376c7*/
         v42 = v17; /*0x4376d3*/
         v43 = (v20 - 1) * v41 + v62; /*0x4376da*/
@@ -575,11 +575,11 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   v17 = (bool)(0);
   v42 = (bool)(0);
   v63 = (bool)(a5[2]);
-  v43 = 0; /*0x437a3b*/
-  v64 = a5[3]; /*0x437a49*/
-  v41 = 0; /*0x437a4d*/
-  v48 = 0; /*0x437a53*/
-  v57 = *aP2; /*0x437a57*/
+  v43 = (bool)(0);
+  v64 = (bool)(a5[3]);
+  v41 = (char *)((bool)(0));
+  v48 = (bool)(0);
+  v57 = (bool)(*aP2);
   v50 = 0; /*0x437a5b*/
   v68 = 0; /*0x437a62*/
   v58 = aP2[1]; /*0x437a69*/

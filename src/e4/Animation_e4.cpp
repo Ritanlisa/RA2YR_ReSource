@@ -15,6 +15,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Factory_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
 
 // 0x4549B0
 namespace gamemd {

@@ -20,6 +20,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
 
 // 0x413F80
 namespace gamemd {

@@ -18,6 +18,10 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x710860
 namespace gamemd {

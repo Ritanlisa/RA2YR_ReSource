@@ -221,7 +221,7 @@ Coord * * sub_575EE0(void * a1, int a2)
 namespace gamemd {
 void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
 {
-  char v2; // bl
+  unsigned int * v2;
   unsigned int * v3;
   unsigned int *v4; // ebp
   unsigned int *v5; // edi
@@ -232,7 +232,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   int k; // esi
   char v12; // [esp+13h] [ebp-5h]
 
-  v2 = (unsigned int *)(1);
+  v2 = (char)((unsigned int *)(1));
   v12 = 0; /*0x578e74*/
   if ( !g_MapTileArray ) /*0x578e79*/
   {
@@ -310,7 +310,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
   unsigned int v12;
   int * v13;
   unsigned int v14;
-  char v15; // al
+  IUnknown * v15;
   int * v16;
   unsigned int v17;
   int * v18;
@@ -346,10 +346,10 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
 
   aP2 = (IUnknown *)(aP2);
   v7 = (unsigned int)((IUnknown *)(aP2->outBuffer));
-  v52[2] = (IUnknown *)(aP0);
-  v45 = (IUnknown *)(0);
-  aP2 = v7; /*0x57a44d*/
-  CellData = Tactical::GetCellData((int16_t *)&aP2); /*0x57a45b*/
+  v52[2] = (unsigned int)((IUnknown *)(aP0));
+  v45 = (IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)(0)))));
+  aP2 = (IUnknown *)(v7);
+  CellData = (char *)((IUnknown *)(Tactical::GetCellData((int16_t *)&aP2)));
   *((unsigned int *)CellData + 16) = Cell::GetTerrainMask(aP0, (int *)aP2, 2); /*0x57a467*/
   TerrainMask = Cell::GetTerrainMask(aP0, (int *)aP2, 0); /*0x57a46a*/
   v10 = TerrainMask; /*0x57a46f*/
@@ -363,7 +363,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       || (TerrainMask & 0xA) == 0xA && (TerrainMask & 0x11) == 0
       || (TerrainMask & 0x28) == 0x28 && (TerrainMask & 0x44) == 0 )
     {
-      v45 = 1; /*0x57a4cd*/
+      v45 = (IUnknown *)((unsigned int)((IUnknown *)(1)));
     }
     if ( (TerrainMask & 0x20) != 0 ) /*0x57a4d5*/
     {
@@ -386,7 +386,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
         g_Map_GlobalCellIndex = v47; /*0x57a570*/
         v14 = g_CellClassArray; /*0x57a575*/
       }
-      v15 = Cell::GetTerrainMask(aP0, v14, 0); /*0x57a57f*/
+      v15 = (IUnknown *)((char)((IUnknown *)(Cell::GetTerrainMask(aP0, v14, 0))));
       if ( (v52[0] & 2) != 0 || (v15 & 2) != 0 ) /*0x57a58d*/
         v45 = 1; /*0x57a58f*/
     }

@@ -10,6 +10,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x4F4780
 namespace gamemd {
@@ -19,14 +20,14 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
   int result; // eax
   int v11; // edi
   LONG v12; // eax
-  int v13; // edx
+  void * v13;
   LONG v14; // edi
   int v15; // edi
   int v16; // eax
   int v17; // edi
   int v18; // eax
   int v19; // ecx
-  unsigned int v20;
+  void * v20;
   LONG v21; // edi
   LONG v22; // ebx
   int v23; // eax
@@ -55,7 +56,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
   int v46; // [esp+5Eh] [ebp-20h] BYREF
   LONG v47; // [esp+62h] [ebp-1Ch]
   LONG v48; // [esp+66h] [ebp-18h]
-  void * v49;
+  unsigned int v49;
   struct tagRECT Rect; // [esp+6Eh] [ebp-10h] BYREF
   int v51; // [esp+8Eh] [ebp+10h]
 
@@ -125,16 +126,16 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
               else
                 v18 = (*(int (__thiscall **, unsigned int a8, unsigned int a1)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x4f48d6*/
             }
-            v13 = dword_87F7F0; /*0x4f48e5*/
+            v13 = (void *)(dword_87F7F0);
             v19 = v18 + v45; /*0x4f48eb*/
             v12 = v47; /*0x4f48ed*/
             v45 = v19; /*0x4f48f1*/
           }
-          v20 = (void *)((unsigned int)((void *)((LONG)(*a8))));
+          v20 = (unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((LONG)(*a8)))))));
           v21 = (int)(a8[1]);
           v22 = (void *)(a8[2]);
-          Rect.right = (LONG)((unsigned int)(a8[3]));
-          v49 = (unsigned int)(v20);
+          Rect.right = (unsigned int)((LONG)((unsigned int)(a8[3])));
+          v49 = (void *)((unsigned int)((void *)((unsigned int)(v20))));
           Rect.left = v21; /*0x4f4914*/
           Rect.top = v22; /*0x4f4918*/
           if ( g_TacticalClass_Instance /*0x4f4934*/

@@ -37,6 +37,7 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/EventClass_e4.hpp"
 #include "e4/classes/E4Recv_731130_e4.hpp"
+#include "e4/classes/Voxel_e4.hpp"
 
 // 0x7221B0
 namespace gamemd {
@@ -245,7 +246,7 @@ unsigned char char LoadMouseClassResources()
   dword_B0FC84 = (unsigned int)(LoadFileSHP(off_844C48, (bool *)&byte_B0FC91));
   dword_B0FC88 = (unsigned int)(LoadFileSHP(off_844C4C, (bool *)&byte_B0FC92));
   dword_B0FC8C = (unsigned int)(LoadFileSHP(off_844C50, (bool *)&byte_B0FC93));
-  dword_B0FACC = LoadFileSHP(off_844C54, (bool *)&byte_B0FC94); /*0x72aab4*/
+  dword_B0FACC = (unsigned int)(LoadFileSHP(off_844C54, (bool *)&byte_B0FC94));
   LoadPaletteSimple(off_844BA4, &dword_B0FB64, &dword_B0FB68); /*0x72aab9*/
   LoadPaletteSimple(off_844BA0, &dword_B0FB6C, &dword_B0FB70); /*0x72aace*/
   LoadPaletteSimple(off_844B9C, &dword_B0FB5C, &dword_B0FB60); /*0x72aae3*/
@@ -314,7 +315,7 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
     }
     else
     {
-      v5 = 0; /*0x72ae38*/
+      v5 = (unsigned int)(0);
     }
     *v3 = (unsigned char *)(v5);
     v8 = (unsigned char *)(v4 + 1);

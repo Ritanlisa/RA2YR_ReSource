@@ -10,7 +10,7 @@ struct AbstractClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    unsigned int uniqueId;  // 0x10
+    void* ;  // 0x10
     unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14
@@ -1518,6 +1518,7 @@ struct AbstractClass {
     unsigned int u32_2C;
     unsigned int vtable22;
     unsigned int u32_16054;
+    unsigned int uniqueId;
 // --- flat members (END) ---
     void Initialize(TechnoClass * aP1,  TechnoClass * aP2);    // 0x438E70
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0

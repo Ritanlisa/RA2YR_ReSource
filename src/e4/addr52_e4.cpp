@@ -56,6 +56,8 @@
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
 
 // 0x522100
 namespace gamemd {
@@ -372,7 +374,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   }
   else
   {
-    v17 = strlen(v7) + 1; /*0x529fab*/
+    v17 = (unsigned int *)(strlen(v7) + 1);
     v18 = KeyValuePair::Init(v26, 0); /*0x529fb7*/
     v19 = Checksummer::Add_Buffer(v18, (uint8_t *)v7, v17 - 1); /*0x529fca*/
     v19 = v19; /*0x529fcf*/
@@ -389,7 +391,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   }
   if ( v8 ) /*0x529ec7*/
   {
-    v9 = strlen(v6) + 1; /*0x529ece*/
+    v9 = (unsigned int *)(strlen(v6) + 1);
     v21 = (uint8_t *)a4; /*0x529edb*/
     v10 = KeyValuePair::Init(v27, 0); /*0x529ee2*/
     v11 = v8 + 44; /*0x529ef5*/
@@ -482,7 +484,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
   }
   if ( v8 ) /*0x52a155*/
   {
-    v9 = strlen(v7) + 1; /*0x52a15e*/
+    v9 = (unsigned int *)(strlen(v7) + 1);
     v18 = (uint8_t *)v7; /*0x52a164*/
     v10 = KeyValuePair::Init(v24, 0); /*0x52a16a*/
     a4 = COERCE_FLOAT(Checksummer::Add_Buffer(v10, v18, v9 - 1)); /*0x52a176*/
@@ -563,7 +565,7 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
   }
   else
   {
-    v17 = strlen(v7) + 1; /*0x52a443*/
+    v17 = (unsigned int *)(strlen(v7) + 1);
     v18 = KeyValuePair::Init(v26, 0); /*0x52a44f*/
     v19 = Checksummer::Add_Buffer(v18, (uint8_t *)v7, v17 - 1); /*0x52a462*/
     v19 = v19; /*0x52a467*/

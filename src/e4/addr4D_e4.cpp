@@ -13,6 +13,9 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Options_e4.hpp"
+#include "e4/classes/BuildingType_e4.hpp"
+#include "e4/classes/Draw_e4.hpp"
 
 // 0x4D1650
 namespace gamemd {
@@ -228,12 +231,11 @@ int E4Recv_4DB8A0::sub_4DB8A0()
   LPVOID result; // eax
   LPVOID ppv; // [esp+20h] [ebp-8h] BYREF
   int v8; // [esp+24h] [ebp-4h] BYREF
-
-  v2 = *(&this->u32_A43); /*0x4db8a7*/
+v2 = (int)((LPVOID)(*(&this->u32_A43)));
   if ( v2 ) /*0x4db8af*/
     (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v2 + 4))(*(&this->u32_A43)); /*0x4db8b4*/
-  ppv = 0; /*0x4db8c4*/
-  v3 = CreateInstanceCOM(&ppv, (IID *)&g_CLSID_DriveLocomotion, 0, 7u); /*0x4db8cc*/
+  ppv = (unsigned int)(0);
+  v3 = (unsigned int)(CreateInstanceCOM(&ppv, (IID *)&g_CLSID_DriveLocomotion, 0, 7u));
   if ( v3 < 0 && v3 != -2147467262 ) /*0x4db8da*/
     WinAPI::Wrapper(v3); /*0x4db8dd*/
   if ( !ppv ) /*0x4db8e8*/

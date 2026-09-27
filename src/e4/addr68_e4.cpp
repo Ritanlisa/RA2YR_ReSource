@@ -46,6 +46,10 @@
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/AircraftTypeClass_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Waypoint_e4.hpp"
+#include "e4/classes/GameSettings_e4.hpp"
 
 // 0x682640
 namespace gamemd {
@@ -285,8 +289,8 @@ void sub_682C70(int a1, int a2, unsigned int * a3)
   a3 = (unsigned int *)(0);
   v4 = (int)((unsigned int *)(0));
   *v3 = (unsigned int *)(0);
-  v3[1] = 0; /*0x682c8a*/
-  v5 = &unk_83D658; /*0x682c91*/
+  v3[1] = (unsigned int *)(0);
+  v5 = (unsigned int *)(&unk_83D658);
   while ( *v5 != a2 ) /*0x682c98*/
   {
     v5 += 2; /*0x682c9a*/
@@ -473,7 +477,7 @@ void * * ScenarioClass_SetTimer(int a1)
 {
   DWORD Ticks; // eax
   char *v3; // edx
-  void ** result;
+  unsigned int result;
   unsigned int *v5; // esi
   DWORD v6; // eax
   int v7; // ecx
@@ -519,7 +523,7 @@ void * * ScenarioClass_SetTimer(int a1)
       dword_B07784 = 0; /*0x684165*/
     }
   }
-  result = (unsigned int)((void **)((unsigned int)((void **)(g_ScenarioClass_Instance))));
+  result = (void **)((unsigned int)((void **)((unsigned int)((void **)(g_ScenarioClass_Instance)))));
   ++*((unsigned int *)g_ScenarioClass_Instance + 395); /*0x684174*/
   return result; /*0x68417a*/
 }

@@ -11,6 +11,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/Bounds_e4.hpp"
+#include "e4/classes/CreateTeamCommand_e4.hpp"
+#include "e4/classes/SidebarClass_e4.hpp"
 
 // 0x4385D0
 namespace gamemd {

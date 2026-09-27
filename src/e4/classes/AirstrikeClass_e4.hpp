@@ -37,7 +37,7 @@ struct AirstrikeClass {
     unsigned int q040;  // 0x40
     bool q042;  // 0x42
     unsigned int AirstrikeClass_field_44;  // 0x44
-    char AirstrikeClass_field_48[4];  // 0x48
+    unsigned int AirstrikeClass_field_48;  // 0x48
     bool q04A;  // 0x4A
     _DWORD q04C;  // 0x4C
     unsigned char q04F;  // 0x4F

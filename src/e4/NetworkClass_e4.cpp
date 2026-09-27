@@ -13,6 +13,9 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Multiplayer_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/NetworkLobby_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
 
 // 0x639FD0
 namespace gamemd {
@@ -100,7 +103,7 @@ AnimClass * * NetworkClass::UnregisterAsync()
   SOCKET result; // eax
 
   v2 = (HWND)(g_hWnd);
-  v3 = *(&this->u32_64D49); /*0x7b1c59*/
+  v3 = (HWND)(*(&this->u32_64D49));
   if ( v3 != -1 && g_hWnd ) /*0x7b1c66*/
   {
     WSAAsyncSelect(v3, g_hWnd, 0, 0); /*0x7b1c6e*/

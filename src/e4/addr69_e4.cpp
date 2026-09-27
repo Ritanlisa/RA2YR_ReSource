@@ -42,6 +42,8 @@
 #include "e4/classes/Compare_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/E4Recv_6A89E0_e4.hpp"
 
 // 0x690400
 namespace gamemd {

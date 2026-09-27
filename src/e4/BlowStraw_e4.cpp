@@ -22,6 +22,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Bounds_e4.hpp"
 
 // 0x6D0680
 namespace gamemd {
@@ -186,7 +187,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
 namespace gamemd {
 CellStruct * * sub_731AF0()
 {
-  unsigned int result;
+  wchar_t * result;
   wchar_t *StringCSF; // eax
   int v2; // ecx
   unsigned int v3;
@@ -199,7 +200,7 @@ CellStruct * * sub_731AF0()
   if ( !g_SelectionManager ) /*0x731afa*/
   {
     StringCSF = (wchar_t *)(GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 856));
-    v2 = 3; /*0x731b18*/
+    v2 = (unsigned int)(3);
     if ( HouseClass_Player ) /*0x731b1f*/
       v2 = *((unsigned int *)HouseClass_Player + 22549); /*0x731b21*/
     result = (wchar_t *)MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v2, 16454, 240, 1); /*0x731b3e*/
@@ -231,7 +232,7 @@ CellStruct * * sub_731AF0()
       return (gamemd::CellStruct **)(result);
     }
   }
-  v6 = GetStringCSF(aMsgAttackmoveu, 0, g_Str_File_UICmnds_cpp, 862); /*0x731b9b*/
+  v6 = (gamemd::CellStruct **)(GetStringCSF(aMsgAttackmoveu, 0, g_Str_File_UICmnds_cpp, 862));
   v7 = 3; /*0x731ba6*/
   if ( HouseClass_Player ) /*0x731bad*/
     v7 = *((unsigned int *)HouseClass_Player + 22549); /*0x731baf*/
