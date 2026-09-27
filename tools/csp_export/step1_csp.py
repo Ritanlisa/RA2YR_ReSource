@@ -21,6 +21,9 @@ ROOT = Path(__file__).resolve().parents[2]
 def main():
     ap = sys.argv[1:]
     engine = '--engine' in ap
+    print('[step1] 类参与注册 (register_class_participation)')
+    subprocess.run([sys.executable,
+                    str(ROOT / 'tools/csp_export/register_class_participation.py'), '--apply'])
     print('[step1] 成员证据供给 (register_offset_members)')
     subprocess.run([sys.executable,
                     str(ROOT / 'tools/csp_export/register_offset_members.py'),
