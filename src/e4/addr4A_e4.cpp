@@ -79,8 +79,8 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
     v3[3] = v4; /*0x4a01ea*/
     if ( v4 ) /*0x4a01ed*/
     {
-      v5 = (unsigned int)(operator new(8 * v4));
-      v3[2] = v5; /*0x4a0201*/
+      v5 = (void *)((unsigned int)(operator new(8 * v4)));
+      v3[2] = (unsigned int)(v5);
       if ( v5 ) /*0x4a0204*/
       {
         v6 = (void *)(v3[3]);
@@ -115,8 +115,8 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
     v13 = *(unsigned int *)(v3[2] + 8 * i); /*0x4a0276*/
     (*(void (__stdcall **)(int))(*(unsigned int *)v13 + 4))(v13); /*0x4a0279*/
   }
-  v12 = (unsigned int)(*v3);
-  v3[8] = 0; /*0x4a0287*/
+  v12 = (void *)((unsigned int)(*v3));
+  v3[8] = (unsigned int)(0);
   (*(void (__stdcall **)(unsigned int *))(v12 + 4))(v3); /*0x4a028a*/
   *a2 = v3; /*0x4a0295*/
   return 0; /*0x4a019c*/
@@ -148,7 +148,7 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
     *((unsigned int *)v3 + 2) = v4; /*0x4a02e3*/
     if ( v4 ) /*0x4a02e6*/
     {
-      v5 = (unsigned int)(operator new(8 * v4));
+      v5 = (void *)((unsigned int)(operator new(8 * v4)));
       *((unsigned int *)v3 + 1) = v5; /*0x4a02f6*/
       if ( v5 ) /*0x4a02f9*/
       {
@@ -214,7 +214,7 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
     *((unsigned int *)v3 + 2) = v4; /*0x4a03b6*/
     if ( v4 ) /*0x4a03b9*/
     {
-      v5 = (unsigned int)(operator new(8 * v4));
+      v5 = (void *)((unsigned int)(operator new(8 * v4)));
       *((unsigned int *)v3 + 1) = v5; /*0x4a03cd*/
       if ( v5 ) /*0x4a03d0*/
       {
@@ -283,8 +283,8 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
     v3[5] = v4; /*0x4a0b83*/
     if ( v4 ) /*0x4a0b86*/
     {
-      v5 = (unsigned int)(operator new(4 * v4));
-      v3[4] = v5; /*0x4a0b9a*/
+      v5 = (void *)((unsigned int)(operator new(4 * v4)));
+      v3[4] = (unsigned int)(v5);
       if ( v5 ) /*0x4a0b9d*/
       {
         v6 = v3[5]; /*0x4a0b9f*/
@@ -566,7 +566,7 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
       if ( !v5 ) /*0x4a391e*/
       {
   LABEL_6: *aP1 = (gamemd::AbstractClass **)(!v7);
-        v9[3] = 0; /*0x4a3940*/
+        v9[3] = (unsigned int)((gamemd::AbstractClass **)(0));
         Vector::Clear(v9); /*0x4a3948*/
         v8[0] = &off_7E1668; /*0x4a3951*/
         BufferIOFileClass::Dtor(v8); /*0x4a3959*/
@@ -607,7 +607,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
       if ( !v5 ) /*0x4a39c5*/
       {
   LABEL_6: *a2 = (gamemd::AbstractClass **)(!v7);
-        v9[3] = 0; /*0x4a39e7*/
+        v9[3] = (unsigned int)((gamemd::AbstractClass **)(0));
         Vector::Clear((int)v9); /*0x4a39ef*/
         v8[0] = &off_7E1668; /*0x4a39f8*/
         BufferIOFileClass::Dtor(v8); /*0x4a3a00*/

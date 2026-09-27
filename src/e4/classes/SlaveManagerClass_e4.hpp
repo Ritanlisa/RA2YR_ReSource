@@ -1557,7 +1557,6 @@ struct SlaveManagerClass {
     unsigned char q651C;  // 0x651C
     unsigned int q6528;  // 0x6528
     unsigned char q652C;  // 0x652C
-    unsigned int ProcessSlaves;
     unsigned int abstractFlags6;
     unsigned int master;
     unsigned int nextArrayIndex0;
@@ -1593,6 +1592,7 @@ struct SlaveManagerClass {
     void Constructor_SlaveManagerClass();
     void* ctor(TechnoClass * aP1, int a3, int a4, int a5, int a6);
     wchar_t * CreateSlave(wchar_t ** a2);
+    static double ProcessSlaves(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

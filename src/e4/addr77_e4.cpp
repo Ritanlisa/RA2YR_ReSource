@@ -54,6 +54,7 @@
 #include "e4/classes/E4Recv_765000_e4.hpp"
 #include "e4/classes/E4Recv_764B90_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
 
 // 0x770E70
 namespace gamemd {
@@ -85,11 +86,11 @@ void E4Recv_771890::sub_771890()
 namespace gamemd {
 int E4Recv_7741C0::FindRegistrySubKey(void * a1, void * a2, void * a3)
 {
-  DWORD v4; // ebx
+  unsigned char * v4;
   unsigned char *v5; // esi
   DWORD v6; // ebp
   LPSTR lpClass; // [esp+10h] [ebp-434h]
-  DWORD cbMaxSubKeyLen; // [esp+14h] [ebp-430h] BYREF
+  unsigned char * cbMaxSubKeyLen;
   DWORD cbMaxClassLen; // [esp+18h] [ebp-42Ch] BYREF
   DWORD cSubKeys; // [esp+1Ch] [ebp-428h] BYREF
   HKEY phkResult; // [esp+20h] [ebp-424h] BYREF
@@ -118,10 +119,10 @@ int E4Recv_7741C0::FindRegistrySubKey(void * a1, void * a2, void * a3)
          &cbSecurityDescriptor,
          &ftLastWriteTime) )
   {
-    return 0; /*0x7742cf*/
+    return (DWORD)(0);
   }
-  v4 = (unsigned char *)(cbMaxSubKeyLen + 16);
-  v5 = operator new(cbMaxSubKeyLen + 16); /*0x77422c*/
+  v4 = (DWORD)((unsigned char *)(cbMaxSubKeyLen + 16));
+  v5 = (unsigned char *)(operator new(cbMaxSubKeyLen + 16));
   lpClass = (LPSTR)operator new(cbMaxClassLen + 1); /*0x774235*/
   v6 = 0; /*0x774240*/
   if ( !cSubKeys ) /*0x774244*/
@@ -135,7 +136,7 @@ int E4Recv_7741C0::FindRegistrySubKey(void * a1, void * a2, void * a3)
   }
   while ( 1 ) /*0x77425e*/
   {
-    *v5 = 0; /*0x77425e*/
+    *v5 = (DWORD)(0);
     cbMaxSubKeyLen = v4; /*0x774262*/
     RegEnumKeyExA(hKey, v6, v5, &cbMaxSubKeyLen, 0, lpClass, &cbMaxClassLen, &ftLastWriteTime); /*0x774266*/
     if ( !_strcmpi(v13, v5) && !RegOpenKeyExA(hKey, v5, 0, 0x20019u, &phkResult) ) /*0x77428b*/
@@ -162,9 +163,8 @@ void ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
   LONG v8; // edx
   LONG v9; // ecx
   struct tagRECT Rect; // [esp+8h] [ebp-10h] BYREF
-
-  result = (BOOL)(GetWindowRect(hWnd, lpRect));
-  v4 = result; /*0x77569f*/
+result = (HWND)((BOOL)(GetWindowRect(hWnd, lpRect)));
+  v4 = (BOOL)(result);
   if ( result ) /*0x7756a3*/
   {
     GetClientRect(g_hWnd, &Rect); /*0x7756b7*/
@@ -232,9 +232,9 @@ const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * aP0, HWND a2, HWND hWndPa
 namespace gamemd {
 void Dialog_Close(HWND a1, int a2)
 {
-  unsigned int v3;
+  int * v3;
   int *i; // esi
-  int v5; // edi
+  int * v5;
   HWND *v6; // esi
   int v7; // ebx
   HWND v8; // esi
@@ -256,7 +256,7 @@ void Dialog_Close(HWND a1, int a2)
     if ( ++v3 >= g_DialogTrackingList ) /*0x77581b*/
       return 0; /*0x775822*/
   }
-  v5 = v3; /*0x775826*/
+  v5 = (int)(v3);
   if ( v3 == -1 ) /*0x775828*/
     return 0; /*0x77582b*/
   Dialog::IdleProcess(a1); /*0x775831*/
@@ -274,11 +274,11 @@ void Dialog_Close(HWND a1, int a2)
     }
     while ( v7 ); /*0x775870*/
   }
-  g_DialogTrackingList = v5; /*0x775875*/
+  g_DialogTrackingList = (int)((HWND)(v5));
   if ( v5 ) /*0x77587d*/
   {
-    v8 = (unsigned int)(*(&g_ClipboardBuffer + 2 * v5));
-    v9 = dword_B72D24[2 * v5]; /*0x775886*/
+    v8 = (HWND)((unsigned int)(*(&g_ClipboardBuffer + 2 * v5)));
+    v9 = (unsigned int)(dword_B72D24[2 * v5]);
     SetForegroundWindow(v8); /*0x77588e*/
     InvalidateRect(v8, 0, 0); /*0x775897*/
     UpdateWindow(v8); /*0x77589e*/

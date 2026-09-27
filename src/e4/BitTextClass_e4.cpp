@@ -16,12 +16,12 @@ int BitTextClass::ParseFontData(char * Source)
   struct tagRECT *v3; // ebp
   unsigned int *Font; // eax
 
-  v3 = (unsigned int)((struct tagRECT *)(&this->u32_108));
-  this->m_CharWidth = 0; /*0x43389b*/
-  this->u16_24 = 0x7FFF; /*0x43389e*/
-  this->u16_26 = 13653; /*0x4338a4*/
-  this->u32_28 = 64; /*0x4338aa*/
-  this->q040 = 1; /*0x4338b1*/
+  v3 = (tagRECT *)((unsigned int)((struct tagRECT *)(&this->u32_108)));
+  this->m_CharWidth = (unsigned int)(0);
+  this->u16_24 = (unsigned int)(0x7FFF);
+  this->u16_26 = (unsigned int)(13653);
+  this->u32_28 = (unsigned int)(64);
+  this->q040 = (unsigned int)(1);
   this->u8_41 = 1; /*0x4338b4*/
   this->q018 = 1; /*0x4338b7*/
   this->u32_1C = 1; /*0x4338ba*/
@@ -63,13 +63,13 @@ unsigned int * BitTextClass::LoadFont()
 {
   if ( operator new(0x44u) ) /*0x434adb*/
   {
-    g_FogOfWarState = (unsigned int *)(BitTextClass::ParseFontData(aGameFnt));
-    return this; /*0x434af8*/
+    g_FogOfWarState = (int)((unsigned int *)(BitTextClass::ParseFontData(aGameFnt)));
+    return (unsigned int *)(this);
   }
   else
   {
-    g_FogOfWarState = (unsigned int *)(0);
-    return this; /*0x434afc*/
+    g_FogOfWarState = (int)((unsigned int *)(0));
+    return (unsigned int *)(this);
   }
 }
 } // namespace gamemd

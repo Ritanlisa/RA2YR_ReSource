@@ -149,8 +149,8 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
     *(unsigned int *)v77 = v67; /*0x568f1f*/
     if ( v10 || v11 >= 0x40000 || (v12 = *(unsigned int **)(g_Shroud_CellArray + 4 * v11)) == 0 ) /*0x568f37*/
     {
-      g_Map_GlobalCellIndex = (unsigned int *)(v67);
-      v64 = &g_CellClassArray; /*0x568f45*/
+      g_Map_GlobalCellIndex = (int)((unsigned int *)(v67));
+      v64 = (unsigned int *)(&g_CellClassArray);
     }
     else
     {
@@ -186,8 +186,8 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
           v18 = (int16_t)v17 + (IDA_SHIWORD(v17) << 9); /*0x56906e*/
           if ( v18 >= 0x40000 || (v19 = *(unsigned char **)(g_Shroud_CellArray + 4 * v18)) == 0 ) /*0x569084*/
           {
-            g_Map_GlobalCellIndex = (unsigned char *)(v17);
-            v19 = &g_CellClassArray; /*0x56908c*/
+            g_Map_GlobalCellIndex = (int)((unsigned char *)(v17));
+            v19 = (unsigned char *)(&g_CellClassArray);
           }
           v19[283] += 4; /*0x56909f*/
           v20 = *CellStruct::Add(v77, &v73, &g_DirectionOffsetPool); /*0x5690b3*/
@@ -195,8 +195,8 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
           v21 = (int16_t)v20 + (IDA_SHIWORD(v20) << 9); /*0x5690c4*/
           if ( v21 >= 0x40000 || (v22 = *(unsigned char **)(g_Shroud_CellArray + 4 * v21)) == 0 ) /*0x5690da*/
           {
-            g_Map_GlobalCellIndex = (unsigned char *)(v20);
-            v22 = &g_CellClassArray; /*0x5690e2*/
+            g_Map_GlobalCellIndex = (int)((unsigned char *)(v20));
+            v22 = (unsigned char *)(&g_CellClassArray);
           }
           v23 = 0; /*0x5690f0*/
           v22[283] += 4; /*0x5690f2*/
@@ -278,8 +278,8 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
     v31 = (int16_t)v30 + (IDA_SHIWORD(v30) << 9); /*0x569291*/
     if ( v31 >= 0x40000 || (v32 = *(unsigned char **)(g_Shroud_CellArray + 4 * v31)) == 0 ) /*0x5692a7*/
     {
-      g_Map_GlobalCellIndex = (unsigned char *)(v30);
-      v32 = &g_CellClassArray; /*0x5692af*/
+      g_Map_GlobalCellIndex = (int)((unsigned char *)(v30));
+      v32 = (unsigned char *)(&g_CellClassArray);
     }
     v32[283] += 4; /*0x5692c2*/
     v33 = *CellStruct::Add(v77, &v75, &Direction_Y_Offsets); /*0x5692d6*/
@@ -287,8 +287,8 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
     v34 = (int16_t)v33 + (IDA_SHIWORD(v33) << 9); /*0x5692e7*/
     if ( v34 >= 0x40000 || (v35 = *(unsigned char **)(g_Shroud_CellArray + 4 * v34)) == 0 ) /*0x5692fd*/
     {
-      g_Map_GlobalCellIndex = (unsigned char *)(v33);
-      v35 = &g_CellClassArray; /*0x569305*/
+      g_Map_GlobalCellIndex = (int)((unsigned char *)(v33));
+      v35 = (unsigned char *)(&g_CellClassArray);
     }
     v36 = 0; /*0x569313*/
     v35[283] += 4; /*0x569315*/
@@ -389,8 +389,8 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
         *(unsigned int *)v77 = v88; /*0x569609*/
         if ( v10 || v53 >= 0x40000 || (v54 = *(unsigned int **)(g_Shroud_CellArray + 4 * v53)) == 0 ) /*0x569621*/
         {
-          g_Map_GlobalCellIndex = (unsigned int *)(v88);
-          v44 = &g_CellClassArray; /*0x56962d*/
+          g_Map_GlobalCellIndex = (int)((unsigned int *)(v88));
+          v44 = (unsigned int *)(&g_CellClassArray);
         }
         else
         {

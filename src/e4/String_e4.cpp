@@ -209,9 +209,9 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
   char *v27; // [esp+18h] [ebp-4h]
   char * v28;
 
-  v3 = (const char *)((void **)this);
-  v4 = 0; /*0x7b57a8*/
-  v5 = *this; /*0x7b57ae*/
+  v3 = (void **)((const char *)((void **)this));
+  v4 = (char *)((const char *)(0));
+  v5 = (const char *)(*this);
   if ( !*this ) /*0x7b57ae*/
     v5 = &g_INI_DefaultBuffer; /*0x7b57b4*/
   if ( !v5 ) /*0x7b57bc*/
@@ -292,13 +292,12 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
   }
   if ( !v4 ) /*0x7b59af*/
   {
-    v3 = (const unsigned int)((void **)this);
-  LABEL_33:
-    v20 = &g_INI_DefaultBuffer; /*0x7b59b5*/
+    v3 = (void **)((const unsigned int)((void **)this));
+  LABEL_33: v20 = (const unsigned int)(&g_INI_DefaultBuffer);
     goto LABEL_35; /*0x7b59ba*/
   }
-  v3 = (const unsigned int)((void **)this);
-  v20 = v4; /*0x7b59c0*/
+  v3 = (void **)((const unsigned int)((void **)this));
+  v20 = (const unsigned int)(v4);
   LABEL_35:
   if ( *v3 ) /*0x7b59c2*/
     RA2_OPDEL(*v3); /*0x7b59c9*/
@@ -330,7 +329,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   size_t v12; // ecx
   unsigned char *v13; // eax
   const char *v14; // edi
-  size_t v15; // esi
+  unsigned char * v15;
   char *v16; // eax
   char *v17; // ebp
   const char *v18; // esi
@@ -363,9 +362,9 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
       break; /*0x7b5fa1*/
     ++v4; /*0x7b5fad*/
   }
-  v10 = (unsigned char *)((char *)(v4 - 1));
-  v11 = &(*this)[v21]; /*0x7b5fbd*/
-  Stra = v10; /*0x7b5fbf*/
+  v10 = (char *)((unsigned char *)((char *)(v4 - 1)));
+  v11 = (const char *)(&(*this)[v21]);
+  Stra = (char *)((const char *)(v10));
   if ( *aP3 ) /*0x7b5fc3*/
     RA2_OPDEL(*aP3); /*0x7b5fca*/
   *(unsigned int *)aP3 = 0; /*0x7b5fd4*/
@@ -379,7 +378,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   if ( v11 ) /*0x7b5ffe*/
     strcpy((char *)*aP3, v11); /*0x7b6016*/
   v14 = (unsigned char *)(&g_INI_DefaultBuffer);
-  v15 = (size_t)&v10[-v21 + 1]; /*0x7b602e*/
+  v15 = (size_t)((unsigned char *)((size_t)&v10[-v21 + 1]));
   if ( *aP3 ) /*0x7b6023*/
     v14 = (const char *)*aP3; /*0x7b6033*/
   v16 = (char *)operator new((size_t)&v10[-v21 + 2]); /*0x7b6039*/
@@ -417,7 +416,7 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
   const wchar_t *v8; // eax
   int v9; // ebp
   const wchar_t *v10; // eax
-  int v11; // ebx
+  unsigned short * v11;
   const wchar_t *v12; // esi
   size_t v13; // eax
   unsigned short *v14; // eax
@@ -458,7 +457,7 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
       break; /*0x7b7ade*/
     ++v4; /*0x7b7aea*/
   }
-  v11 = (unsigned short *)(v4 - 1);
+  v11 = (int)((unsigned short *)(v4 - 1));
   v23 = v4 - 1; /*0x7b7af8*/
   v12 = &(*this)[v9]; /*0x7b7afe*/
   if ( *a4 ) /*0x7b7af6*/

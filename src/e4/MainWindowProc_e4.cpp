@@ -11,6 +11,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/Main_e4.hpp"
 
 // 0x777420
 namespace gamemd {
@@ -106,8 +107,8 @@ char * E4Recv_724000::sub_724000(int a2)
   int v4; // edx
 
   v3 = (char *)(&this->u32_8D0);
-  this->M4 = 0; /*0x724010*/
-  this->M8 = a2; /*0x724013*/
+  this->M4 = (unsigned int)(0);
+  this->M8 = (unsigned int)(a2);
   *(&this->M42) = 0; /*0x724016*/
   this->M552 = 1000; /*0x724019*/
   this->M560 = (char *)(10000);

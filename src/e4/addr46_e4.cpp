@@ -30,7 +30,7 @@ bool sub_46D650()
   bool v0; // bl
   HWND v1; // eax
   HWND DlgItem; // eax
-  int v3; // ebp
+  LPARAM * v3;
   LPARAM *v4; // esi
   int v5; // ecx
   int v6; // edi
@@ -54,8 +54,8 @@ bool sub_46D650()
     if ( DlgItem ) /*0x46d6a2*/
       PostMessageA(DlgItem, 0x405u, 1u, dword_A8EB68); /*0x46d6b3*/
   }
-  v3 = (LPARAM *)(0);
-  v4 = &g_NetworkPlayerName; /*0x46d6be*/
+  v3 = (LPARAM *)((int)((LPARAM *)(0)));
+  v4 = (LPARAM *)(&g_NetworkPlayerName);
   do /*0x46d7fd*/
   {
     v5 = *v4; /*0x46d6c3*/

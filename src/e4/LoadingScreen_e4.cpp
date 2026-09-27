@@ -158,24 +158,24 @@ void * * LoadingScreen::LoadSHPs()
 
   if ( *((unsigned int *)g_ScenarioClass_Instance + 3374) == 2 ) /*0x72fa21*/
   {
-    dword_B0FA68 = (char *)(LoadFileSHP(off_844D48, (bool *)&byte_B0FCA5));
-    dword_B0FAC8 = LoadFileSHP(off_844D3C, (bool *)&byte_B0FCA1); /*0x72fa4e*/
-    SHP = LoadFileSHP(off_844D40, (bool *)&byte_B0FCA0); /*0x72fa53*/
-    v1 = off_844D44[0]; /*0x72fa58*/
+    dword_B0FA68 = (unsigned int)((char *)(LoadFileSHP(off_844D48, (bool *)&byte_B0FCA5)));
+    dword_B0FAC8 = (unsigned int)((char *)(LoadFileSHP(off_844D3C, (bool *)&byte_B0FCA1)));
+    SHP = (char *)(LoadFileSHP(off_844D40, (bool *)&byte_B0FCA0));
+    v1 = (char *)(off_844D44[0]);
   }
   else
   {
-    dword_B0FA68 = (char *)(LoadFileSHP(off_844D14, (bool *)&byte_B0FCA5));
-    dword_B0FAC8 = LoadFileSHP(off_844D04, (bool *)&byte_B0FCA1); /*0x72fa95*/
-    SHP = LoadFileSHP(off_844D00, (bool *)&byte_B0FCA0); /*0x72fa9a*/
-    v1 = off_844D08; /*0x72fa9f*/
+    dword_B0FA68 = (unsigned int)((char *)(LoadFileSHP(off_844D14, (bool *)&byte_B0FCA5)));
+    dword_B0FAC8 = (unsigned int)((char *)(LoadFileSHP(off_844D04, (bool *)&byte_B0FCA1)));
+    SHP = (char *)(LoadFileSHP(off_844D00, (bool *)&byte_B0FCA0));
+    v1 = (char *)(off_844D08);
   }
-  dword_B0FAD4 = (void **)(SHP);
-  dword_B0FA50 = LoadFileSHP(v1, (bool *)&byte_B0FCA2); /*0x72fabf*/
-  dword_B0F9EC = LoadFileSHP(off_844CFC, (bool *)&byte_B0FC9F); /*0x72fad4*/
-  dword_B0FB08 = LoadFileSHP(off_844D0C, (bool *)&byte_B0FCA3); /*0x72fae9*/
-  dword_B0F9E0 = LoadFileSHP(off_844D10, (bool *)&byte_B0FCA4); /*0x72fafe*/
-  dword_B0FA70 = LoadFileSHP(off_844D18, (bool *)&byte_B0FCA6); /*0x72fb13*/
+  dword_B0FAD4 = (unsigned int)((void **)(SHP));
+  dword_B0FA50 = (unsigned int)((void **)(LoadFileSHP(v1, (bool *)&byte_B0FCA2)));
+  dword_B0F9EC = (unsigned int)((void **)(LoadFileSHP(off_844CFC, (bool *)&byte_B0FC9F)));
+  dword_B0FB08 = (unsigned int)((void **)(LoadFileSHP(off_844D0C, (bool *)&byte_B0FCA3)));
+  dword_B0F9E0 = (unsigned int)((void **)(LoadFileSHP(off_844D10, (bool *)&byte_B0FCA4)));
+  dword_B0FA70 = (void **)(LoadFileSHP(off_844D18, (bool *)&byte_B0FCA6));
   dword_B0FAFC = LoadFileSHP(off_844D1C, (bool *)&byte_B0FCA7); /*0x72fb28*/
   dword_B0FA00 = LoadFileSHP(off_844D20, (bool *)&byte_B0FCA8); /*0x72fb3d*/
   dword_B0FA8C = LoadFileSHP(off_844D24, (bool *)&byte_B0FCA9); /*0x72fb52*/

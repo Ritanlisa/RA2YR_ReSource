@@ -220,7 +220,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
     DrawToSurfaceSHP(g_DSurface_Hidden, (int)v31, (int)v3, 0, v32, v35, 0, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x53140e*/
   }
   v10 = (int)(GetStringCSF(aTxtCopyright, (int)g_Str_File_Init_CPP, 4930));
-  v11 = TextRenderer::GetInstance(22); /*0x531439*/
+  v11 = (int)(TextRenderer::GetInstance(22));
   v29 = 0; /*0x53143e*/
   v30 = v37 - 40; /*0x531444*/
   if ( v11 ) /*0x53144d*/
@@ -346,7 +346,7 @@ char BulkData_Initialize()
     BufferIOFileClass::Dtor(v6); /*0x531839*/
     goto LABEL_12; /*0x53183e*/
   }
-  v8 = 0; /*0x53185a*/
+  v8 = (unsigned int)(0);
   Vector::Clear(v7); /*0x531861*/
   v6[0] = &off_7E1668; /*0x53186a*/
   BufferIOFileClass::Dtor(v6); /*0x531872*/

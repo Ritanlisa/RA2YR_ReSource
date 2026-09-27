@@ -101,8 +101,8 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2)
   int v61; // [esp+50h] [ebp-84h]
   char String[128]; // [esp+54h] [ebp-80h] BYREF
 
-  v2 = a1; /*0x743278*/
-  v57 = a1; /*0x74327b*/
+  v2 = (char *)(a1);
+  v57 = (char *)(a1);
   INIClass::ResetSection(a1); /*0x74327f*/
   Block = 0; /*0x74328e*/
   v49 = 1; /*0x743292*/
@@ -228,7 +228,7 @@ Coord * * PlaceScenarioUnits(void * a1, void * a2)
               }
               else
               {
-                a2 = 1; /*0x743645*/
+                a2 = (void *)(1);
                 (*(void (__thiscall **)(int))(*(unsigned int *)v12 + 32))(v12); /*0x743649*/
               }
             }
@@ -293,7 +293,7 @@ int CopySHPFrameToSurface(int a1, unsigned short * a2, int * a3, int a4, int a5,
   int *v17; // eax
   int *v18; // edx
   unsigned int v19; // edi
-  int v20; // ecx
+  unsigned int * v20;
   unsigned int *v21; // edx
   unsigned int v22; // edi
   uint16_t v23; // ax
@@ -518,15 +518,15 @@ int CopySHPFrameToSurface(int a1, unsigned short * a2, int * a3, int a4, int a5,
                 }
                 while ( v19 ); /*0x74847a*/
               }
-              v20 = (unsigned int *)(*v17);
-              v15 = v17 + 1; /*0x74848c*/
-              v21 = v9 + 1; /*0x748491*/
+              v20 = (int)((unsigned int *)(*v17));
+              v15 = (int *)((unsigned int *)(v17 + 1));
+              v21 = (unsigned int *)(v9 + 1);
               if ( v14 ) /*0x748494*/
               {
                 v22 = v14; /*0x748496*/
                 do /*0x74849e*/
                 {
-                  *v21 = v20; /*0x748498*/
+                  *v21 = (unsigned int)(v20);
                   v21 += 2; /*0x74849a*/
                   --v22; /*0x74849d*/
                 }
@@ -736,7 +736,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
     *(unsigned int *)this = *(unsigned int *)a2; /*0x74bc85*/
     return this; /*0x74bc8d*/
   }
-  v5 = (unsigned int)(operator new(v4));
+  v5 = (void *)((unsigned int)(operator new(v4)));
   *((unsigned int *)v3 + 1) = v5; /*0x74bc48*/
   if ( !v5 ) /*0x74bc4b*/
     goto LABEL_8; /*0x74bc4b*/
@@ -781,13 +781,13 @@ unsigned int * E4Recv_74BCA0::sub_74BCA0(int a2)
   if ( !v4 ) /*0x74bcec*/
   {
     this->M16 = (unsigned int *)(0);
-    this->M25 = 0; /*0x74bd33*/
+    this->M25 = (unsigned int *)(0);
   LABEL_10:
     *(unsigned int *)this = *(unsigned int *)a2; /*0x74bd37*/
     return this; /*0x74bd39*/
   }
-  v5 = (unsigned int)(operator new(v4));
-  this->M16 = v5; /*0x74bcf7*/
+  v5 = (void *)((unsigned int)(operator new(v4)));
+  this->M16 = (unsigned int)(v5);
   if ( !v5 ) /*0x74bcfc*/
     goto LABEL_10; /*0x74bcfc*/
   v6 = this->M20; /*0x74bcfe*/
@@ -945,7 +945,7 @@ int InitializeVeinholeSystem(char a1)
       if ( v7 ) /*0x74df3a*/
       {
         VeinholeShrinkRate = (unsigned int)(g_RulesClass_Instance->VeinholeShrinkRate);
-        v7[3] = 0; /*0x74df48*/
+        v7[3] = (unsigned int)(0);
         v7[1] = VeinholeShrinkRate; /*0x74df4b*/
         v7[4] = -1; /*0x74df4e*/
         *v7 = 0; /*0x74df5c*/

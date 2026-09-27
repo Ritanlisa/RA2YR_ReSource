@@ -486,6 +486,7 @@ struct WalkLocomotionClass {
     Coord* q6408;  // 0x6408
     unsigned char q640C;  // 0x640C
     unsigned char q6410;  // 0x6410
+    unsigned int IStreamVtbl;
 // --- flat members (END) ---
     HRESULT BeginMove(int * a1, int * pStm);
     HRESULT LoadFromStream(int * a1, int * pPStm, int a3);

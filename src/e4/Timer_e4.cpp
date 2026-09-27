@@ -79,7 +79,7 @@ int Timer::PumpMessages()
   *(&this->q04C7) = v2; /*0x54f74b*/
   if ( (HWND)(((int)v2 + 1) % 256) == v2 ) /*0x54f766*/
   {
-    result = (unsigned int)(*(&this->q04C8));
+    result = (HWND)((unsigned int)(*(&this->q04C8)));
     *(&this->q04C7) = result; /*0x54f781*/
   }
   else

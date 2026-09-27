@@ -105,8 +105,8 @@ void * TeamTypeClass::CreateScriptType()
   v2 = 0; /*0x691c35*/
   if ( g_MultiplayerDebugState <= 0 ) /*0x691c39*/
   {
-  LABEL_6: v3 = (void **)(operator new(0x234u));
-    v4 = v3; /*0x691c6c*/
+  LABEL_6: v3 = (unsigned int *)((void **)(operator new(0x234u)));
+    v4 = (void **)(v3);
     if ( v3 ) /*0x691c73*/
     {
       AbstractTypeClass::Constructor((int)v3, Source); /*0x691c7c*/
@@ -283,7 +283,7 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   AbstractClass * v44;
   char v45; // [esp-Ch] [ebp-D4h]
   char v46; // [esp-Ch] [ebp-D4h]
-  char v47; // [esp-Ch] [ebp-D4h]
+  void * v47;
   char v48; // [esp-Ch] [ebp-D4h]
   char v49; // [esp-Ch] [ebp-D4h]
   int v50; // [esp-Ch] [ebp-D4h]
@@ -311,17 +311,17 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
     this->q0C8 = -1; /*0x6f1112*/
   }
   Int_Overwrite = (void *)(INIClass::ReadInt_Overwrite(&this->q090, aVeteranlevel, this->q0A0));
-  v44 = this->q0C0; /*0x6f1138*/
-  this->q0A0 = Int_Overwrite; /*0x6f113f*/
-  this->q0C0 = INIClass::ReadInt_Overwrite(&this->q090, aMindcontroldec, v44); /*0x6f114a*/
-  Bool_Overwrite = INIClass::ReadBool_Overwrite(&this->q090, aLoadable, this->q0A4); /*0x6f115f*/
+  v44 = (gamemd::AbstractClass *)((unsigned int)(this->q0C0));
+  this->q0A0 = (unsigned int)(Int_Overwrite);
+  this->q0C0 = (unsigned int)(INIClass::ReadInt_Overwrite(&this->q090, aMindcontroldec, v44));
+  Bool_Overwrite = (unsigned int)(INIClass::ReadBool_Overwrite(&this->q090, aLoadable, this->q0A4));
   v8 = this->u8_A5; /*0x6f1164*/
   this->q0A4 = (void *)(Bool_Overwrite);
-  v9 = INIClass::ReadBool_Overwrite(&this->q090, aFull, v8); /*0x6f1179*/
-  v45 = this->u8_A6; /*0x6f1186*/
-  this->u8_A5 = v9; /*0x6f118d*/
-  this->u8_A6 = INIClass::ReadBool_Overwrite(&this->q090, aAnnoyance, v45); /*0x6f1198*/
-  v10 = INIClass::ReadBool_Overwrite(&this->q090, aGuardslower, this->u8_A7); /*0x6f11ad*/
+  v9 = (void *)(INIClass::ReadBool_Overwrite(&this->q090, aFull, v8));
+  v45 = (unsigned int)(this->u8_A6);
+  this->u8_A5 = (unsigned char)((void *)(v9));
+  this->u8_A6 = (unsigned int)(INIClass::ReadBool_Overwrite(&this->q090, aAnnoyance, v45));
+  v10 = (unsigned int)(INIClass::ReadBool_Overwrite(&this->q090, aGuardslower, this->u8_A7));
   v11 = this->q0A9; /*0x6f11b2*/
   this->u8_A7 = v10; /*0x6f11b8*/
   v12 = INIClass::ReadBool_Overwrite(&this->q090, aAutocreate, v11); /*0x6f11c7*/
@@ -330,11 +330,11 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   this->q0AA = INIClass::ReadBool_Overwrite(&this->q090, aPrebuild, v46); /*0x6f11e6*/
   v13 = INIClass::ReadBool_Overwrite(&this->q090, aReinforce, this->q0AB); /*0x6f11fb*/
   v14 = this->q0B0; /*0x6f1200*/
-  this->q0AB = v13; /*0x6f1206*/
-  v15 = INIClass::ReadBool_Overwrite(&this->q090, aDroppod_0, v14); /*0x6f1215*/
-  v47 = this->u8_B1; /*0x6f1222*/
-  this->q0B0 = v15; /*0x6f1229*/
-  this->u8_B1 = INIClass::ReadBool_Overwrite(&this->q090, aUsetransportor, v47); /*0x6f1234*/
+  this->q0AB = (gamemd::AbstractClass *)(v13);
+  v15 = (void *)(INIClass::ReadBool_Overwrite(&this->q090, aDroppod_0, v14));
+  v47 = (char)((void *)(this->u8_B1));
+  this->q0B0 = (void *)(v15);
+  this->u8_B1 = (void *)(INIClass::ReadBool_Overwrite(&this->q090, aUsetransportor, v47));
   v16 = INIClass::ReadBool_Overwrite(&this->q090, aRecruiter, this->q0A8); /*0x6f1249*/
   v17 = this->q0AC; /*0x6f124e*/
   this->q0A8 = v16; /*0x6f1254*/

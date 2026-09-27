@@ -12,7 +12,7 @@ int Super::GetDefaultTimer()
 {
   void * result;
 
-  result = (int)(this->q024);
+  result = (void *)((int)(this->q024));
   if ( result == -1 ) /*0x6cc266*/
     return *(unsigned int *)(this->q028 + 176); /*0x6cc26b*/
   return result; /*0x6cc271*/

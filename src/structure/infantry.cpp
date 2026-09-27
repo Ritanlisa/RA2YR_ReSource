@@ -187,8 +187,8 @@ InfantryTypeClass * * InfantryClass::ProcessDeployAction(int deploy_type, bool a
     if ( *(_DWORD *)(this->Vt34Thunk() + 1388) != -1 ) /*0x51d949*/
     {
       v24 = (int)(*(&this->vtable49));
-      v25 = *(&this->uniqueId0); /*0x51d966*/
-      v13 = *this; /*0x51d96a*/
+      v25 = (int)(*(&this->uniqueId0));
+      v13 = (int)(*this);
       v26 = *(&this->uniqueId1); /*0x51d96f*/
       v14 = *(_DWORD *)(this->Vt34Thunk() + 1388); /*0x51d979*/
       StartAudioControllerAt(v14, (int)&v24, 0); /*0x51d97f*/
@@ -197,7 +197,7 @@ InfantryTypeClass * * InfantryClass::ProcessDeployAction(int deploy_type, bool a
   else if ( v4 == 31 && *(_DWORD *)(this->Vt34Thunk() + 1392) != -1 ) /*0x51d996*/
   {
     v24 = (int)(*(&this->vtable49));
-    v15 = *this; /*0x51d9aa*/
+    v15 = (int)(*this);
     v25 = *(&this->uniqueId0); /*0x51d9af*/
     v26 = *(&this->uniqueId1); /*0x51d9b6*/
     v16 = *(_DWORD *)(this->Vt34Thunk() + 1392); /*0x51d9c2*/

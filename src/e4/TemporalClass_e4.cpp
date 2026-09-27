@@ -422,9 +422,9 @@ char TemporalClass::CanWarpTarget(unsigned int * a1)
         if ( *(unsigned char *)(v3[328] + 5821) ) /*0x71aeca*/
         {
           v5[0] = (unsigned int *)(a1[39]);
-          v5[1] = a1[40]; /*0x71aeed*/
-          v5[2] = a1[41]; /*0x71aef4*/
-          v4 = Coord::To_Cell(&MapClass_Instance, v5); /*0x71aef8*/
+          v5[1] = (unsigned int *)(a1[40]);
+          v5[2] = (unsigned int *)(a1[41]);
+          v4 = (unsigned int *)(Coord::To_Cell(&MapClass_Instance, v5));
           if ( Cell::IsBridge(v4) == v3 ) /*0x71af06*/
             return 0; /*0x71af09*/
         }

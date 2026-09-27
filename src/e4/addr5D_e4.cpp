@@ -187,8 +187,8 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
     }
   }
   v8 = (unsigned int)(this->q040);
-  v9 = this->attachedTag; /*0x5d2634*/
-  this->q040 = v8 + 1; /*0x5d263a*/
+  v9 = (unsigned int)(this->attachedTag);
+  this->q040 = (unsigned int)(v8 + 1);
   *(unsigned int *)(v9 + 4 * v8) = v5; /*0x5d263d*/
   return 1; /*0x5d2640*/
 }
@@ -346,7 +346,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
         *(unsigned short *)(v5 + 2 * v40 + 40) = 0; /*0x5d497b*/
       }
     }
-    *a2 = (gamemd::CampaignScore **)(0);
+    *a2 = (int)((gamemd::CampaignScore **)(0));
     (*(void (__thiscall **)(unsigned int))(**(unsigned int **)(v5 + 36) + 80))(*(unsigned int *)(v5 + 36)); /*0x5d498d*/
     return v4; /*0x5d498d*/
   }
@@ -404,8 +404,8 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
           v4 = 0; /*0x5d4790*/
         }
       }
-      *a2 = (gamemd::CampaignScore **)(0);
-      return v4; /*0x5d479e*/
+      *a2 = (int)((gamemd::CampaignScore **)(0));
+      return (gamemd::CampaignScore **)(v4);
     }
     DisableIME(); /*0x5d47a1*/
     if ( !*(unsigned char *)(v5 + 25) ) /*0x5d47a6*/
@@ -417,8 +417,8 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
     nullsub_48(); /*0x5d47c2*/
     if ( !*(unsigned char *)(v5 + 26) ) /*0x5d47c7*/
     {
-  LABEL_77: *a2 = (gamemd::CampaignScore **)(0);
-      return 2; /*0x5d48c1*/
+  LABEL_77: *a2 = (int)((gamemd::CampaignScore **)(0));
+      return (gamemd::CampaignScore **)(2);
     }
     if ( *(unsigned char *)(v5 + 25) ) /*0x5d47d2*/
       v23 = *(unsigned int *)(v5 + 8) + *(unsigned int *)(v5 + 20); /*0x5d47df*/
@@ -522,8 +522,8 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
       ++*(unsigned int *)(v5 + 12); /*0x5d493f*/
     }
   }
-  *a2 = (gamemd::CampaignScore **)(0);
-  return 3; /*0x5d4531*/
+  *a2 = (int)((gamemd::CampaignScore **)(0));
+  return (gamemd::CampaignScore **)(3);
 }
 }
 // 0x5D4D50
@@ -705,7 +705,7 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
   void *v41; // [esp+78h] [ebp-BCh] BYREF
   char **v42; // [esp+7Ch] [ebp-B8h]
   int v43; // [esp+80h] [ebp-B4h]
-  int v44; // [esp+84h] [ebp-B0h]
+  char ** v44;
   void *v45[3]; // [esp+88h] [ebp-ACh] BYREF
   unsigned int v46[10]; // [esp+94h] [ebp-A0h] BYREF
   char v47; // [esp+BCh] [ebp-78h]
@@ -716,8 +716,8 @@ Coord * * LoadMultiplayerModesList(AbstractClass * a1, int edx0)
   int v52; // [esp+12Ch] [ebp-8h]
 
   v2 = (char **)(a1);
-  v44 = edx0; /*0x5d759a*/
-  v42 = a1; /*0x5d75aa*/
+  v44 = (char **)((int)((char **)(edx0)));
+  v42 = (char **)(a1);
   CCFileClass::Construct(v50, aMpmodesmdIni); /*0x5d75ae*/
   if ( CCFileClass::Open(v50, 0) ) /*0x5d75bd*/
   {

@@ -56,6 +56,9 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/RandomMap_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/E4Recv_5C60D0_e4.hpp"
+#include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x5B3B10
 namespace gamemd {
@@ -140,10 +143,10 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
   unsigned int *v8; // eax
   unsigned int *v9; // esi
   void * v10;
-  void * v11;
+  int v11;
   unsigned int v13[22]; // [esp+20h] [ebp-170h] BYREF
   unsigned char v14[12]; // [esp+78h] [ebp-118h] BYREF
-  int v15; // [esp+84h] [ebp-10Ch]
+  void ** v15;
   char Str[260]; // [esp+8Ch] [ebp-104h] BYREF
 
   strcpy(Str, Source); /*0x5b40dd*/
@@ -154,8 +157,8 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
     goto LABEL_9; /*0x5b4130*/
   while ( 1 ) /*0x5b4132*/
   {
-    v5 = v4[2]; /*0x5b4132*/
-    v6 = v5 < v3; /*0x5b4135*/
+    v5 = (unsigned int)(v4[2]);
+    v6 = (unsigned int)(v5 < v3);
     if ( v5 == v3 ) /*0x5b4137*/
       break; /*0x5b4137*/
   LABEL_5:
@@ -202,8 +205,8 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
     {
       v10 = (void *)(CCFileClass::ReadEntireFile(v13));
     }
-    v9[3] = (gamemd::AbstractClass **)(v10);
-    v15 = 0; /*0x5b4239*/
+    v9[3] = (int)((unsigned int)((gamemd::AbstractClass **)(v10)));
+    v15 = (unsigned int)((gamemd::AbstractClass **)(0));
     Vector::Clear(v14); /*0x5b4240*/
     v13[0] = &off_7E1668; /*0x5b4249*/
     BufferIOFileClass::Dtor(v13); /*0x5b4251*/

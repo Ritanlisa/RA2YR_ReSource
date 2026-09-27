@@ -10,7 +10,7 @@ struct TacticalMap {
     char TacticalMap_field_00[4];  // 0x0
     char TacticalMap_field_04[4];  // 0x4
     unsigned int u32_8;  // 0x8
-    char TacticalMap_field_0C[4];  // 0xC
+    unsigned int TacticalMap_field_0C;  // 0xC
     char TacticalMap_field_10[4];  // 0x10
     unsigned int u32_14;  // 0x14
     float m_TintFactor;  // 0x18
@@ -54,7 +54,7 @@ struct TacticalMap {
     unsigned int q108;  // 0x108
     unsigned int u16_10A;  // 0x10A
     unsigned int u16_10C;  // 0x10C
-    unsigned int u16_10E;  // 0x10E
+    void* ;  // 0x10E
     unsigned int q118;  // 0x118
     char u32_11B;  // 0x11B
     char q130[4];  // 0x130
@@ -263,6 +263,7 @@ struct TacticalMap {
     unsigned int uniqueId4;
     unsigned int uniqueId5;
     unsigned int Render;
+    unsigned short u16_10E;
 // --- flat members (END) ---
     ScenarioClass * * ComputeScreenTint();
     int Construct();

@@ -40,9 +40,9 @@ int MapClass::isLocationShrouded(unsigned short a2)
   void * v3;
   unsigned int v5[4]; // [esp+0h] [ebp-10h] BYREF
 
-  v5[3] = *(&this->q0041); /*0x4112d8*/
-  v5[0] = 0; /*0x4112e0*/
-  v5[1] = 0; /*0x4112e4*/
+  v5[3] = (int)(*(&this->q0041));
+  v5[0] = (int)(0);
+  v5[1] = (int)(0);
   v2 = *(&this->q0040); /*0x4112e8*/
   v3 = this->q014; /*0x4112eb*/
   v5[2] = v2; /*0x4112f4*/
@@ -288,7 +288,7 @@ int MapClass::ToggleZoom(int a2)
 namespace gamemd {
 INIClass * * MapClass::SaveCellTagsToINI(char * a2)
 {
-  int16_t v3; // bp
+  unsigned int * v3;
   unsigned int *v4; // ebx
   int j; // edi
   int v6; // ebx
@@ -306,9 +306,9 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
   unsigned int v19[4]; // [esp+3Ch] [ebp-10h] BYREF
   int i; // [esp+50h] [ebp+4h]
 
-  v3 = (unsigned int *)(0);
-  v4 = this; /*0x4ad7f2*/
-  v16 = this; /*0x4ad7f8*/
+  v3 = (unsigned int *)((int16_t)((unsigned int *)(0)));
+  v4 = (unsigned int *)(this);
+  v16 = (unsigned int *)(this);
   INIClass::ClearSection((int)a2, (int)&off_81FFF0, 0); /*0x4ad7fc*/
   MapClass::loadTheaterINI(&off_81FFF0, g_INI_Key_Theater, *((unsigned int *)g_ScenarioClass_Instance + 1174)); /*0x4ad81b*/
   INIClass::SetRect(a2, (uint8_t *)&off_81FFF0, g_INI_Key_Size, v4 + 59); /*0x4ad835*/
@@ -319,12 +319,12 @@ INIClass * * MapClass::SaveCellTagsToINI(char * a2)
   {
     for ( j = 0; j < 512; ++j ) /*0x4ad873*/
     {
-      v14[0] = j; /*0x4ad87c*/
-      v14[1] = v3; /*0x4ad881*/
+      v14[0] = (int16_t)(j);
+      v14[1] = (int16_t)(v3);
       if ( *((unsigned int *)CellCoord::To_CellObj(v4, v14) + 15) ) /*0x4ad88b*/
       {
-        v15[0] = j; /*0x4ad896*/
-        v15[1] = v3; /*0x4ad89e*/
+        v15[0] = (int16_t)(j);
+        v15[1] = (int16_t)(v3);
         v6 = *((unsigned int *)CellCoord::To_CellObj(v4, v15) + 15); /*0x4ad8a8*/
         if ( v6 && *(unsigned int *)(v6 + 36) ) /*0x4ad8af*/
         {
@@ -493,7 +493,7 @@ ObjectClass * * MapClass::LoadFileData()
       v9 = *v8; /*0x5470a4*/
       if ( *v8 ) /*0x5470a4*/
       {
-        v10 = (unsigned int)(this->q0A4);
+        v10 = (gamemd::CampaignClass *)((unsigned int)(this->q0A4));
         if ( v9 < v10 ) /*0x5470b2*/
           *v8 = v10 + v9; /*0x5470b6*/
       }
@@ -656,7 +656,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
   int v19; // ebx
   unsigned int *v20; // eax
   int v21; // ecx
-  int v22; // eax
+  unsigned int * v22;
   int v23; // ecx
   unsigned int *v26; // [esp+14h] [ebp-Ch]
   unsigned int *v27; // [esp+18h] [ebp-8h]
@@ -675,9 +675,9 @@ VectorClass_flat * * MapClass::Destru_vt05()
   if ( v3 ) /*0x56584e*/
   {
     v3[1] = (unsigned int *)(Cell::DecodeFlags);
-    v3[2] = 256; /*0x565865*/
-    v3[3] = 20; /*0x56586c*/
-    v5 = operator new(0x1804u); /*0x56586f*/
+    v3[2] = (unsigned int *)(256);
+    v3[3] = (unsigned int *)(20);
+    v5 = (unsigned int *)(operator new(0x1804u));
     if ( v5 ) /*0x565879*/
     {
       v6 = v5 + 1; /*0x56587b*/
@@ -700,7 +700,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
       v9 = 0; /*0x5658bd*/
     }
     v10 = (unsigned int)(v4[2]);
-    *v4 = v9; /*0x5658c2*/
+    *v4 = (unsigned int)(v9);
     v11 = 0; /*0x5658c4*/
     if ( v10 > 0 ) /*0x5658c8*/
     {
@@ -721,9 +721,8 @@ VectorClass_flat * * MapClass::Destru_vt05()
     v4 = 0; /*0x5658e2*/
   }
   this->q014 = (unsigned int *)((int)v4);
-  LABEL_14:
-  v13 = &this->LevelAndPassabilityStruct2pointer_70; /*0x5658f3*/
-  v26 = &this->q080; /*0x5658ff*/
+  LABEL_14: v13 = (unsigned int *)(&this->LevelAndPassabilityStruct2pointer_70);
+  v26 = (unsigned int *)(&this->q080);
   v27 = &this->LevelAndPassabilityStruct2pointer_70; /*0x565903*/
   v28 = 3; /*0x565907*/
   do /*0x5659d3*/
@@ -734,9 +733,9 @@ VectorClass_flat * * MapClass::Destru_vt05()
     if ( v14 ) /*0x565924*/
     {
       v14[1] = (unsigned int *)(Cell::DecodeFlags);
-      v14[2] = 256; /*0x565936*/
-      v14[3] = 20; /*0x56593d*/
-      v16 = operator new(0x1804u); /*0x565940*/
+      v14[2] = (unsigned int *)(256);
+      v14[3] = (unsigned int *)(20);
+      v16 = (unsigned int *)(operator new(0x1804u));
       if ( v16 ) /*0x56594a*/
       {
         v17 = v16 + 1; /*0x56594c*/
@@ -760,7 +759,7 @@ VectorClass_flat * * MapClass::Destru_vt05()
         v20 = 0; /*0x565992*/
       }
       v21 = (unsigned int)(v15[2]);
-      *v15 = v20; /*0x565997*/
+      *v15 = (unsigned int)(v20);
       v22 = 0; /*0x565999*/
       if ( v21 > 0 ) /*0x56599d*/
       {

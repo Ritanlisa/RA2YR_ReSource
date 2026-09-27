@@ -18,7 +18,7 @@ void AI_CreateMCV()
   void *v5; // eax
   int *v6; // eax
   int *v7; // esi
-  int v8; // ebx
+  unsigned int * v8;
   unsigned int *StartCoords; // eax
   int16_t *CurrentOption; // eax
   unsigned int v11[3]; // [esp+8h] [ebp-Ch] BYREF
@@ -36,8 +36,8 @@ void AI_CreateMCV()
       v7 = v6; /*0x5d707e*/
       if ( v6 ) /*0x5d7082*/
       {
-        v8 = (unsigned int *)(*v6);
-        StartCoords = HouseClass::GetStartCoords(v3, v11); /*0x5d7090*/
+        v8 = (int)((unsigned int *)(*v6));
+        StartCoords = (unsigned int *)(HouseClass::GetStartCoords(v3, v11));
         if ( (*(uint8_t (__thiscall **)(int *, unsigned int *, unsigned int))(v8 + 216))(v7, StartCoords, 0) ) /*0x5d7098*/
           return 1; /*0x5d70aa*/
         CurrentOption = (int16_t *)HouseClass::GetCurrentOption(v3, &ppv); /*0x5d70b6*/

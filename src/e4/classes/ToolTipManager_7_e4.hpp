@@ -7,8 +7,9 @@ namespace gamemd {
 struct ToolTipManager_7 {
 // --- flat members (BEGIN) ---
     void* Items;  // 0x4
-    int Capacity;  // 0x8
+    void* ;  // 0x8
     bool IsAllocated;  // 0xD
+    unsigned int Capacity;
 // --- flat members (END) ---
     DynamicVector * QueryInterface(char a2);  // 0x724F40
 };

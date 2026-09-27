@@ -41,8 +41,8 @@ int sub_6863E0()
     Debug::Log(); /*0x68640b*/
     ChangeVideoMode(xRight, yBottom); /*0x68641f*/
   }
-  g_BounceClassInit = (unsigned int *)(0);
-  g_FramePresent_State = 0; /*0x686433*/
+  g_BounceClassInit = (int)((unsigned int *)(0));
+  g_FramePresent_State = (unsigned int *)(0);
   if ( g_TacticalRender ) /*0x68643a*/
     Tooltip::Enable((void *)g_TacticalRender, 0); /*0x68643e*/
   v0 = (char *)g_ScenarioClass_Instance + 1556; /*0x686450*/
@@ -154,7 +154,7 @@ AbstractClass * * sub_686570()
       result = ChangeVideoMode(xRight, yBottom); /*0x6866ea*/
     }
   }
-  g_WTFMode = (gamemd::AbstractClass **)(0);
-  return result; /*0x6866f5*/
+  g_WTFMode = (int)((gamemd::AbstractClass **)(0));
+  return (gamemd::AbstractClass **)(result);
 }
 }

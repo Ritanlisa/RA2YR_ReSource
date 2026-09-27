@@ -20,7 +20,7 @@
 namespace gamemd {
 unsigned int VoxelAnimClass::ProcessFrame()
 {
-  int v0; // esi
+  unsigned int * v0;
   unsigned int *v1; // edx
   int v2; // edi
   double v3; // st7
@@ -37,8 +37,8 @@ unsigned int VoxelAnimClass::ProcessFrame()
   float v14; // [esp+8h] [ebp-4h]
   float v15; // [esp+8h] [ebp-4h]
 
-  v0 = (unsigned int *)(0);
-  v1 = &unk_86D0BC; /*0x4caf25*/
+  v0 = (int)((unsigned int *)(0));
+  v1 = (unsigned int *)(&unk_86D0BC);
   v2 = 0x2000; /*0x4caf2a*/
   do /*0x4cb050*/
   {
@@ -260,8 +260,8 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
           v14 = 1000; /*0x749e78*/
         }
         v25 = (int)(v29 + v34);
-        v14 = v14; /*0x749e97*/
-        v16 = *this; /*0x749e98*/
+        v14 = (int)(v14);
+        v16 = (int)(*this);
         v26 = v28 + v5; /*0x749ea0*/
         v17 = this->GetMember41(); /*0x749ea4*/
         v23 = -2 - ZCoordToScreenY(v17); /*0x749eb8*/

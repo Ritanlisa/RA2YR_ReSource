@@ -75,7 +75,7 @@ int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
 namespace gamemd {
 int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
 {
-  int result; // eax
+  ObjectClass * result;
   ObjectClass * v6;
   int v7; // esi
   ObjectClass * v8;
@@ -90,8 +90,8 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
     if ( aP1 != -224 ) /*0x65aba2*/
     {
       aP1->q0E4 = (void *)(0);
-      aP1->q0E8 = 0; /*0x65abab*/
-      aP1->q0EC = 1; /*0x65abb2*/
+      aP1->q0E8 = (gamemd::Audio *)((void *)(0));
+      aP1->q0EC = (void *)(1);
       aP1->q0ED = 0; /*0x65abb6*/
     }
     result = (*(int (__stdcall **)(int, int *, int, unsigned int))(aP2->vtable4)(aP2, &aP2, 4, 0); /*0x65abcc*/
@@ -118,7 +118,7 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
       {
         while ( 1 ) /*0x65abf7*/
         {
-          result = (unsigned int)((*(int (__stdcall **)(int, int *, int, unsigned int))(aP2->vtable4)(aP2, &aP1, 4, 0); /*0x65abf7*/ if ( result < 0 ) /*0x65abfc*/ break; /*0x65abfc*/ *(unsigned int *)(aP1->q0E4 + 4 * v7) = aP1; /*0x65ac08*/ v8 = aP2; /*0x65ac0b*/ if ( ++v7 >= aP2 ) /*0x65ac12*/ goto LABEL_8; /*0x65ac12*/ } } } } return result);
+          result = (unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((*(int (__stdcall **)(int, int *, int, unsigned int))(aP2->vtable4)(aP2, &aP1, 4, 0); /*0x65abf7*/ if ( result < 0 ) /*0x65abfc*/ break; /*0x65abfc*/ *(unsigned int *)(aP1->q0E4 + 4 * v7) = aP1; /*0x65ac08*/ v8 = aP2; /*0x65ac0b*/ if ( ++v7 >= aP2 ) /*0x65ac12*/ goto LABEL_8; /*0x65ac12*/ } } } } return result))))));
 }
 } // namespace ra2
 

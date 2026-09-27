@@ -314,18 +314,18 @@ int E4Recv_5ADD10::Map_Delete(void * a1, void * a2)
 namespace gamemd {
 void sub_682150(int a1, int a2, LPSTR lpMultiByteStr)
 {
-  int v3; // ecx
+  unsigned int * v3;
   unsigned int *v4; // eax
   void **v5; // ecx
   int v6; // esi
   WCHAR *i; // edi
-  int v9; // [esp+28h] [ebp-104h] BYREF
+  int v9;
   WCHAR WideCharStr[128]; // [esp+2Ch] [ebp-100h] BYREF
 
-  v9 = (unsigned int *)(0);
-  *lpMultiByteStr = 0; /*0x68216f*/
-  v3 = 0; /*0x682172*/
-  v4 = &unk_83D658; /*0x682174*/
+  v9 = (int)((unsigned int *)(0));
+  *lpMultiByteStr = (CHAR)((unsigned int *)(0));
+  v3 = (int)((unsigned int *)(0));
+  v4 = (unsigned int *)(&unk_83D658);
   while ( *v4 != a2 ) /*0x68217b*/
   {
     v4 += 2; /*0x68217d*/
@@ -629,7 +629,7 @@ SkirmishDialog * * Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
   LRESULT v7; // eax
   LRESULT v8; // eax
   wchar_t *v9; // esi
-  char v10; // bl
+  SkirmishDialog ** v10;
   int v12; // [esp+10h] [ebp-8h]
 
   v4 = hDlg; /*0x5ec88a*/
@@ -700,7 +700,7 @@ SkirmishDialog * * Map_Handle_5EC880(HWND hDlg, int a2, char a3, char a4)
   }
   else
   {
-    v10 = (gamemd::SkirmishDialog **)(1);
+    v10 = (gamemd::SkirmishDialog **)((char)((gamemd::SkirmishDialog **)(1)));
     if ( SessionClass::GetPlayerSide((int)v9) != -3 ) /*0x5ec998*/
       return 1; /*0x5ec998*/
   }
@@ -776,7 +776,7 @@ void Map_Helper_584030(IUnknown * aP0)
   int v11; // [esp+18h] [ebp+4h]
 
   v2 = (int)(aP0[3]);
-  v3 = aP0[2]; /*0x58403b*/
+  v3 = (int)(aP0[2]);
   v4 = 0; /*0x58403f*/
   v10 = v2; /*0x584043*/
   if ( v2 <= 0 ) /*0x584047*/
@@ -813,7 +813,7 @@ void Map_Helper_584030(IUnknown * aP0)
 }
 // 0x59BAB0
 namespace gamemd {
-void Map_Helper_59BAB0()
+void Map_Helper_59BAB0(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   int v5; // esi
   int v7; // edx

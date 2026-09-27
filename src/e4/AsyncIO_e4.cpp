@@ -12,6 +12,7 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/AudioClass_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x5BF450
 namespace gamemd {

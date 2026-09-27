@@ -392,7 +392,7 @@ int LinkedList_flat::Init()
   int result; // eax
 
   *this->u32_4 = (unsigned int)(*this);
-  result = (int)*this; /*0x407457*/
+  result = (unsigned int)((int)*this);
   (*this)[1] = this->u32_4; /*0x40745c*/
   *this = this; /*0x40745f*/
   this->u32_4 = this; /*0x407461*/

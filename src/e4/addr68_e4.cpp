@@ -167,15 +167,15 @@ void COM_ReadString(int * a1, int a2, LPCCH lpMultiByteStr)
 namespace gamemd {
 void COM_Property_ReadBool(int a1, int a2, char a3)
 {
-  int v3; // ecx
+  unsigned int * v3;
   unsigned int *v4; // eax
   void **v5; // ecx
   int v6; // esi
-  int v8; // [esp+30h] [ebp-4h] BYREF
+  int v8;
 
-  v8 = (unsigned int *)(0);
-  v3 = 0; /*0x682a9e*/
-  v4 = &unk_83D658; /*0x682aa0*/
+  v8 = (int)((unsigned int *)(0));
+  v3 = (int)((unsigned int *)(0));
+  v4 = (unsigned int *)(&unk_83D658);
   while ( *v4 != a2 ) /*0x682aa7*/
   {
     v4 += 2; /*0x682aa9*/
@@ -276,15 +276,15 @@ namespace gamemd {
 void sub_682C70(int a1, int a2, unsigned int * a3)
 {
   unsigned int *v3; // edi
-  int v4; // ecx
+  unsigned int * v4;
   unsigned int *v5; // eax
   void **v6; // ecx
   int v7; // esi
 
   v3 = (unsigned int *)(a3);
-  a3 = 0; /*0x682c7a*/
-  v4 = 0; /*0x682c82*/
-  *v3 = 0; /*0x682c84*/
+  a3 = (unsigned int *)(0);
+  v4 = (int)((unsigned int *)(0));
+  *v3 = (unsigned int *)(0);
   v3[1] = 0; /*0x682c8a*/
   v5 = &unk_83D658; /*0x682c91*/
   while ( *v5 != a2 ) /*0x682c98*/
@@ -334,15 +334,15 @@ void sub_682C70(int a1, int a2, unsigned int * a3)
 namespace gamemd {
 void COM_WriteInt(int a1, int a2, int a3)
 {
-  int v3; // ecx
+  unsigned int * v3;
   unsigned int *v4; // eax
   void **v5; // ecx
   int v6; // esi
-  int v8; // [esp+30h] [ebp-4h] BYREF
+  int v8;
 
-  v8 = (unsigned int *)(0);
-  v3 = 0; /*0x682e1e*/
-  v4 = &unk_83D658; /*0x682e20*/
+  v8 = (int)((unsigned int *)(0));
+  v3 = (int)((unsigned int *)(0));
+  v4 = (unsigned int *)(&unk_83D658);
   while ( *v4 != a2 ) /*0x682e27*/
   {
     v4 += 2; /*0x682e29*/
@@ -473,7 +473,7 @@ void * * ScenarioClass_SetTimer(int a1)
 {
   DWORD Ticks; // eax
   char *v3; // edx
-  unsigned int result;
+  void ** result;
   unsigned int *v5; // esi
   DWORD v6; // eax
   int v7; // ecx
@@ -483,7 +483,7 @@ void * * ScenarioClass_SetTimer(int a1)
   if ( a1 ) /*0x684068*/
   {
     Ticks = (void **)(Timer::GetTicks());
-    v3 = (char *)g_ScenarioClass_Instance + 1568; /*0x68407c*/
+    v3 = (char *)((void **)((char *)g_ScenarioClass_Instance + 1568));
     *((unsigned int *)g_ScenarioClass_Instance + 392) = Ticks; /*0x68408c*/
     *((unsigned int *)v3 + 1) = v9; /*0x684092*/
     *((unsigned int *)v3 + 2) = 60 * a1; /*0x684099*/
@@ -519,7 +519,7 @@ void * * ScenarioClass_SetTimer(int a1)
       dword_B07784 = 0; /*0x684165*/
     }
   }
-  result = (void **)(g_ScenarioClass_Instance);
+  result = (unsigned int)((void **)((unsigned int)((void **)(g_ScenarioClass_Instance))));
   ++*((unsigned int *)g_ScenarioClass_Instance + 395); /*0x684174*/
   return result; /*0x68417a*/
 }

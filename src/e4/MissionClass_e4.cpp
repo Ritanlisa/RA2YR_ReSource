@@ -97,7 +97,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
                        (uint8_t *)g_INI_Key_Rate,
                        this->uniqueId);
   v12 = (unsigned int)(*this);
-  this->uniqueId = Double_Overwrite; /*0x5b38bb*/
+  this->uniqueId = (unsigned int)(Double_Overwrite);
   if ( v12 == -1 ) /*0x5b38c1*/
     v13 = g_Str__none_; /*0x5b38c3*/
   else

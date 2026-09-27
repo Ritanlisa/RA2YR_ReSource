@@ -17,7 +17,7 @@
 namespace gamemd {
 MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
 {
-  int result; // eax
+  unsigned int result;
   int v5; // ecx
   int v6; // ecx
   int v7; // edx
@@ -57,7 +57,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   char v42; // [esp+44h] [ebp+4h]
   int v43; // [esp+44h] [ebp+4h]
 
-  result = (gamemd::MapClass **)((int)HouseClass_Player);
+  result = (gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((int)((gamemd::MapClass **)((int)HouseClass_Player)))));
   if ( !HouseClass_Player ) /*0x655c62*/
     return result; /*0x655c62*/
   result = (*(int (__thiscall **)(unsigned int, char *))(**(unsigned int **)(&this->u32_73C6) + 120))(this->u32_121C, v40); /*0x655c75*/
@@ -186,9 +186,9 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   v26 = aP1[1] + v23; /*0x6560a8*/
   if ( v24[2] <= 0 || v24[3] <= 0 ) /*0x6560be*/
   {
-    v27 = v22 + *aP1; /*0x656125*/
-    v29 = aP1[1] + v23; /*0x656127*/
-    result = 1; /*0x656129*/
+    v27 = (gamemd::MapClass **)(v22 + *aP1);
+    v29 = (gamemd::MapClass **)(aP1[1] + v23);
+    result = (gamemd::MapClass **)(1);
     v33 = 1; /*0x65612b*/
   }
   else
@@ -219,10 +219,10 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
     result = GroundHeight; /*0x65611d*/
     v33 = v32; /*0x656121*/
   }
-  *v24 = (gamemd::MapClass **)(v27);
-  v24[1] = v29; /*0x65612f*/
-  v24[2] = result; /*0x656132*/
-  v24[3] = v33; /*0x656135*/
+  *v24 = (int)((gamemd::MapClass **)(v27));
+  v24[1] = (int)((gamemd::MapClass **)(v29));
+  v24[2] = (int)(result);
+  v24[3] = (int)((gamemd::MapClass **)(v33));
   return result; /*0x656138*/
 }
 } // namespace gamemd
@@ -346,8 +346,8 @@ AbstractClass * * FogOfWar::RevealCell(IUnknown * aP1)
         && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->u32_125C + 8))(&this->u32_125C, v6 + v7, 0) )
       {
         v8 = (unsigned int)(this->u32_126C);
-        v9 = this->u32_1260; /*0x656380*/
-        this->u32_126C = v8 + 1; /*0x656386*/
+        v9 = (unsigned int)(this->u32_1260);
+        this->u32_126C = (unsigned int)(v8 + 1);
         *(unsigned int *)(v9 + 8 * v8) = *aP1; /*0x65638b*/
         *(unsigned int *)(v9 + 8 * v8 + 4) = aP1[1]; /*0x656391*/
       }
@@ -410,7 +410,7 @@ namespace gamemd {
 bool FogOfWar_Get(IUnknown * aP0)
 {
   int v1; // eax
-  int v2; // ecx
+  unsigned int * v2;
   unsigned int * v3;
   unsigned int v4;
   unsigned int NeighbourContent;
@@ -425,9 +425,9 @@ bool FogOfWar_Get(IUnknown * aP0)
   if ( (v1 & 1) != 0 ) /*0x5864b5*/
   {
     v8 = (unsigned int *)(*aP0 / 256);
-    v10 = aP0[1] / 256; /*0x5864e3*/
-    v2 = v1 / 2 + 1; /*0x5864f0*/
-    v3 = (int16_t)(v8 - v2) + ((int16_t)(v10 - v2) << 9); /*0x586508*/
+    v10 = (unsigned int *)(aP0[1] / 256);
+    v2 = (int)((unsigned int *)(v1 / 2 + 1));
+    v3 = (unsigned int *)((int16_t)(v8 - v2) + ((int16_t)(v10 - v2) << 9));
     if ( v3 >= 0x40000 || (v4 = *(unsigned int **)(g_Shroud_CellArray + 4 * v3)) == 0 ) /*0x58651e*/
     {
       IDA_LOWORD(v11) = v8 - v2; /*0x5864fa*/

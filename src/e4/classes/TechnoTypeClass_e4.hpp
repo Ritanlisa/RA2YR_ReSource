@@ -307,7 +307,7 @@ struct TechnoTypeClass {
     unsigned char q340;  // 0x340
     unsigned int q344;  // 0x344
     unsigned int q348;  // 0x348
-    char Locomotor[16];  // 0x34C
+    unsigned int Locomotor;  // 0x34C
     unsigned int u32_350;  // 0x350
     unsigned int q354;  // 0x354
     unsigned char q358;  // 0x358

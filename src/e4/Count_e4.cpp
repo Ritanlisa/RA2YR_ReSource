@@ -16,8 +16,8 @@ AbstractClass * * Count::DecrementRefCountsAudio()
   int result; // eax
   int v3; // edx
 
-  v1 = (int)(this->q01C - 1);
-  this->q01C = v1; /*0x408e76*/
+  v1 = (void *)((int)(this->q01C - 1));
+  this->q01C = (int)(v1);
   if ( v1 < 0 ) /*0x408e79*/
     this->q01C = 0; /*0x408e7b*/
   result = *this; /*0x408e82*/

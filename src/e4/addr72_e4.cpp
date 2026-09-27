@@ -184,7 +184,7 @@ AbstractClass * * sub_725C70()
       result = (*(int (__stdcall **)(unsigned char *))(*(unsigned int *)v7 + 8))(v7); /*0x725ce8*/
       if ( result ) /*0x725ced*/
       {
-        v3 = (int)(__RTtypeid(v7));
+        v3 = (void *)((int)(__RTtypeid(v7)));
         if ( __8type_info_QBEHABV0__Z(v3) /*0x725d61*/
           || (v4 = __RTtypeid(v7), __8type_info_QBEHABV0__Z(v4))
           || (v5 = __RTtypeid(v7), __8type_info_QBEHABV0__Z(v5))
@@ -242,9 +242,9 @@ unsigned char char LoadMouseClassResources()
   uint8_t result; // al
 
   dword_B0FC80 = (unsigned int)(LoadFileSHP(off_844C44, (bool *)&byte_B0FC90));
-  dword_B0FC84 = LoadFileSHP(off_844C48, (bool *)&byte_B0FC91); /*0x72aa70*/
-  dword_B0FC88 = LoadFileSHP(off_844C4C, (bool *)&byte_B0FC92); /*0x72aa85*/
-  dword_B0FC8C = LoadFileSHP(off_844C50, (bool *)&byte_B0FC93); /*0x72aa9a*/
+  dword_B0FC84 = (unsigned int)(LoadFileSHP(off_844C48, (bool *)&byte_B0FC91));
+  dword_B0FC88 = (unsigned int)(LoadFileSHP(off_844C4C, (bool *)&byte_B0FC92));
+  dword_B0FC8C = (unsigned int)(LoadFileSHP(off_844C50, (bool *)&byte_B0FC93));
   dword_B0FACC = LoadFileSHP(off_844C54, (bool *)&byte_B0FC94); /*0x72aab4*/
   LoadPaletteSimple(off_844BA4, &dword_B0FB64, &dword_B0FB68); /*0x72aab9*/
   LoadPaletteSimple(off_844BA0, &dword_B0FB6C, &dword_B0FB70); /*0x72aace*/
@@ -317,7 +317,7 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
       v5 = 0; /*0x72ae38*/
     }
     *v3 = (unsigned char *)(v5);
-    v8 = v4 + 1; /*0x72ae3e*/
+    v8 = (unsigned char *)(v4 + 1);
     v9 = 0; /*0x72ae45*/
     while ( 1 ) /*0x72ae5d*/
     {
@@ -340,7 +340,7 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
       v12 = 0; /*0x72aed2*/
     *a3 = v12; /*0x72aedb*/
   }
-  v18 = (unsigned int)(0);
+  v18 = (void **)((unsigned int)(0));
   Vector::Clear((int)v17); /*0x72aef1*/
   v16[0] = &off_7E1668; /*0x72aefa*/
   return BufferIOFileClass::Dtor(v16); /*0x72af07*/

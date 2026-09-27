@@ -29,9 +29,9 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
     }
     while ( ((uint8_t (__thiscall *)(void ***))v5[1])(&v5) ); /*0x7653db*/
   }
-  v7 = (unsigned int)(v7);
-  a2[1] = v6; /*0x7653ef*/
-  a2[2] = v7; /*0x7653f2*/
+  v7 = (char *)((unsigned int)(v7));
+  a2[1] = (unsigned int)(v6);
+  a2[2] = (unsigned int)(v7);
   return a2; /*0x7653ee*/
 }
 } // namespace gamemd

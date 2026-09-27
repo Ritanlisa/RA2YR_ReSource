@@ -24,7 +24,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
   int v12; // eax
   unsigned int *v13; // edx
   char *v14; // ebx
-  int v15; // eax
+  AbstractClass ** v15;
 
   v3 = a2; /*0x658b12*/
   if ( a2 ) /*0x658b1e*/
@@ -113,7 +113,7 @@ AbstractClass * * RadarHashVector::ComputeHashIndex(int a2, char * a3)
   {
     (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x658bf5*/
   }
-  v15 = (gamemd::AbstractClass **)(this->q008);
+  v15 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(this->q008)));
   if ( v15 < this->q010 ) /*0x658c00*/
     this->q010 = v15; /*0x658c02*/
   return 1; /*0x658c05*/
@@ -128,7 +128,7 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
   unsigned int *v7; // ecx
 
   this->Items = (unsigned int)(0);
-  this->Capacity = aP1; /*0x658df0*/
+  this->Capacity = (unsigned int)(aP1);
   this->IsInitialized = 1; /*0x658df3*/
   this->IsAllocated = 0; /*0x658df7*/
   if ( aP1 ) /*0x658e00*/
@@ -180,8 +180,8 @@ unsigned int * RadarHashVector::Construct(MapClass * aP1, MapClass * aP2)
     }
   }
   this->u32_14 = (unsigned int *)(10);
-  this->q010 = 0; /*0x658e6b*/
-  return this; /*0x658e70*/
+  this->q010 = (unsigned int *)(0);
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 // 0x658A70

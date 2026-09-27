@@ -137,7 +137,7 @@ AbstractClass * * UDPInterfaceClass::Flush()
     this->q3F330 = 0; /*0x7b3a70*/
     this->q3F334 = -1; /*0x7b3a7a*/
   }
-  return (gamemd::AbstractClass **)(result);
+  return (gamemd::AbstractClass **, unsigned int a4)(result);
 }
 } // namespace gamemd
 // 0x7B3AA0
@@ -296,8 +296,8 @@ AbstractClass * * UDPInterfaceClass::ProcessSocketIO(int a2, SOCKET s, int a4, u
         v13[1] = *(unsigned int *)&netshort.sa_data[2]; /*0x7b408c*/
       }
       v33 = (char *)(this->q010);
-      v34 = this->q018; /*0x7b4092*/
-      v35 = &this->q020; /*0x7b4095*/
+      v34 = (char *)(this->q018);
+      v35 = (char *)(&this->q020);
       if ( v34 < v33 /*0x7b40b8*/
         || (v35[13] || !v33)
         && (v36 = *((unsigned int *)v35 + 5), v36 > 0)

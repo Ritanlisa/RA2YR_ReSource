@@ -248,7 +248,7 @@ void* InfantryClass::Destruct(IUnknown * a1, AbstractClass * edx0)
       g_BuildingLoadQueue_Dirty = 1; /*0x517f02*/
     }
     v15[0] = (int)(v8);
-    v9 = BinaryArraySearch((int)g_BuildingLoadQueue_Array, v7, v15); /*0x517f18*/
+    v9 = (int)(BinaryArraySearch((int)g_BuildingLoadQueue_Array, v7, v15));
     if ( v9 ) /*0x517f1f*/
     {
       v10 = (v9 - (int)g_BuildingLoadQueue_Array) >> 3; /*0x517f27*/

@@ -275,8 +275,8 @@ int RandomMap::GenerateTerrain()
       }
       goto LABEL_84; /*0x58cd34*/
     }
-    v17 = RandomMap::CellListAlloc(0); /*0x58cadc*/
-    v45 = v17; /*0x58cae2*/
+    v17 = (unsigned int *)(RandomMap::CellListAlloc(0));
+    v45 = (unsigned int)(v17);
     v18 = v17->q010 - 1; /*0x58cae9*/
     v52 = v17->q010; /*0x58caed*/
     v51 = (double)v52; /*0x58caf5*/

@@ -20,7 +20,7 @@ struct FactoryClass {
     int referenceCount;  // 0x1C
     bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
-    unsigned int production;  // 0x24
+    void* ;  // 0x24
     bool q027;  // 0x27
     unsigned int u32_28;  // 0x28
     bool q02B;  // 0x2B
@@ -1602,6 +1602,7 @@ struct FactoryClass {
     unsigned int q02D;
     unsigned int vtable28;
     unsigned int u32_14;
+    unsigned int production;
 // --- flat members (END) ---
     AbstractClass * * Stat(int * a2);
     char GetFlag();

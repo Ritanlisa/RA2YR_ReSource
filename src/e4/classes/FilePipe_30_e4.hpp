@@ -8,7 +8,7 @@ struct FilePipe_30 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
-    int Capacity;  // 0x8
+    void* ;  // 0x8
     bool q00C;  // 0xC
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
@@ -26,6 +26,7 @@ struct FilePipe_30 {
     unsigned int Items;
     unsigned int Items2;
     unsigned int q008;
+    unsigned int Capacity;
 // --- flat members (END) ---
     void ddtor();  // 0x4778A0
     TypeList_flat * QueryInterface(char a2);  // 0x477A70

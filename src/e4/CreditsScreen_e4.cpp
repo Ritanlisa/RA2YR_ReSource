@@ -15,7 +15,7 @@
 namespace gamemd {
 INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
-  int result; // eax
+  INIClass ** result;
   unsigned int *WindowLongA; // eax
   HWND DlgItem; // esi
   wchar_t *String; // eax
@@ -31,7 +31,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   char v17[128]; // [esp+194h] [ebp-100h] BYREF
   char Destination[128]; // [esp+214h] [ebp-80h] BYREF
 
-  result = (gamemd::INIClass **)(BaseDialogProc(hWnd, a2, a3, a4));
+  result = (gamemd::INIClass **)((int)((gamemd::INIClass **)(BaseDialogProc(hWnd, a2, a3, a4))));
   if ( result ) /*0x531a2f*/
     return result; /*0x531a2f*/
   WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x531a38*/

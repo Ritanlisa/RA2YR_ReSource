@@ -491,11 +491,11 @@ CampaignClass * * HashTable_flat::Clear()
       if ( v13 > v16->u32_30 && v16->abstractFlags != 1 ) /*0x6b9608*/
       {
         v14 = (unsigned int)(v16->vtable4);
-        v15 = *(int **)v16; /*0x6b9611*/
-        v29 = *(int **)v16; /*0x6b9616*/
-        v16->vtable3 = v13 >> 1; /*0x6b961d*/
-        v16->vtable4 = v14 - 1; /*0x6b9627*/
-        v16 = operator new(4 * (v13 >> 1)); /*0x6b9633*/
+        v15 = (int *)((unsigned int)(*(int **)v16));
+        v29 = (int *)((unsigned int)(*(int **)v16));
+        v16->vtable3 = (unsigned int)(v13 >> 1);
+        v16->vtable4 = (unsigned int)(v14 - 1);
+        v16 = (unsigned int)(operator new(4 * (v13 >> 1)));
         v17 = 4 * v16->vtable3; /*0x6b9638*/
         *(unsigned int *)v16 = v16; /*0x6b963f*/
         memset(v16, 0, v17); /*0x6b9645*/

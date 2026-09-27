@@ -103,7 +103,7 @@ HashTable_flat * * IPXGlobalConnClass::SetAddress(int a2, int arg4, int * a3, IP
   unsigned int v21[3]; // [esp+28h] [ebp-Ch] BYREF
 
   v7 = (unsigned char *)(this);
-  v16 = this; /*0x5403fc*/
+  v16 = (unsigned char *)(this);
   Waypoint::InitInvalid(&v18); /*0x540400*/
   v18 = *a3; /*0x540413*/
   v19 = a3[1]; /*0x54041a*/

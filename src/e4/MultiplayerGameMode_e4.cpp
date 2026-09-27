@@ -11,6 +11,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/Frame_e4.hpp"
 
 // 0x5D89F0
 namespace gamemd {
@@ -25,7 +26,7 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
     if ( a3 ) /*0x5d8a16*/
     {
       this->q004 = (unsigned int *)(a3);
-      return this; /*0x5d8a1e*/
+      return (unsigned int *)(this);
     }
     this->q004 = (unsigned char)(operator new(4 * a2));
     this->u8_D = 1; /*0x5d8a30*/
@@ -41,8 +42,7 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
   void (__thiscall ***v4)(unsigned int, int); // ecx
   void (__thiscall ***v5)(unsigned int, int); // ecx
   void *v6; // eax
-
-  v3 = (unsigned int)(0);
+v3 = (void *)((unsigned int)(0));
   for ( *(unsigned int *)this = (void*)&MultiplayerGameMode_vftable; v3 < this->q018; ++v3 ) /*0x5d7f31*/
   {
     v4 = *(void (__thiscall ****)(unsigned int, int))(this->q00C + 4 * v3); /*0x5d7f36*/

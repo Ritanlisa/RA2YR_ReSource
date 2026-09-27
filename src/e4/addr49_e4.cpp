@@ -828,19 +828,19 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
 namespace gamemd {
 int E4Recv_496310::sub_496310(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
-  int result; // eax
-  int v13; // edx
-  int v17; // ebx
-  uint8_t v18; // al
+  void * result;
+  void * v13;
+  void * v17;
+  void * v18;
   int v19; // eax
   uint16_t v20; // cx
-  uint8_t v21; // [esp+18h] [ebp+Ch]
+  void * v21;
 
-  result = a6; /*0x496310*/
+  result = (void *)((int)(a6));
   v13 = a3; /*0x496314*/
   if ( a6 <= 0 ) /*0x496323*/
   {
-    v17 = a5; /*0x496347*/
+    v17 = (void *)((int)(a5));
   }
   else
   {
@@ -858,8 +858,8 @@ int E4Recv_496310::sub_496310(void * a1, void * a2, void * a3, void * a4, void *
   }
   while ( v17 > 0 ) /*0x49634d*/
   {
-    v18 = *a4++; /*0x496350*/
-    v21 = v18; /*0x496355*/
+    v18 = (void *)((uint8_t)(*a4++));
+    v21 = (void *)((uint8_t)(v18));
     if ( v18 ) /*0x496359*/
     {
       v19 = *(unsigned int *)(a1 + 4); /*0x496376*/
@@ -886,20 +886,20 @@ int E4Recv_496310::sub_496310(void * a1, void * a2, void * a3, void * a4, void *
 namespace gamemd {
 int E4Recv_4964D0::sub_4964D0(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
 {
-  int result; // eax
-  int v13; // edx
-  int v17; // ebx
-  uint8_t v18; // al
+  void * result;
+  void * v13;
+  void * v17;
+  void * v18;
   int v19; // eax
   int v20; // eax
   int16_t v21; // cx
-  uint8_t v22; // [esp+18h] [ebp+Ch]
+  void * v22;
 
-  result = a6; /*0x4964d0*/
+  result = (void *)((int)(a6));
   v13 = a3; /*0x4964d4*/
   if ( a6 <= 0 ) /*0x4964e3*/
   {
-    v17 = a5; /*0x496507*/
+    v17 = (void *)((int)(a5));
   }
   else
   {
@@ -917,8 +917,8 @@ int E4Recv_4964D0::sub_4964D0(void * a1, void * a2, void * a3, void * a4, void *
   }
   while ( v17 > 0 ) /*0x49650d*/
   {
-    v18 = *a4++; /*0x496510*/
-    v22 = v18; /*0x496515*/
+    v18 = (void *)((uint8_t)(*a4++));
+    v22 = (uint8_t)(v18);
     if ( v18 ) /*0x496519*/
     {
       v19 = *(unsigned int *)(a1 + 4); /*0x496536*/

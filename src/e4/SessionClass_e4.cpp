@@ -70,8 +70,8 @@ int SessionClass::initInternet()
 {
   int result; // eax
   void *v3; // ebp
-  int v4; // ebx
-  int v5; // edi
+  char * v4;
+  char * v5;
   char *v6; // eax
 
   if ( !this->MPGameMode ) /*0x540e73*/
@@ -79,9 +79,9 @@ int SessionClass::initInternet()
   v3 = operator new(0xB8u); /*0x540e89*/
   if ( v3 ) /*0x540e90*/
   {
-    v4 = (char *)(Game_PlayerInfoArray);
-    v5 = this->SessionClass_field_14; /*0x540e9a*/
-    v6 = CharToWideString(aMulticast); /*0x540ea4*/
+    v4 = (char *)((int)((char *)(Game_PlayerInfoArray)));
+    v5 = (char *)((int)((char *)(this->SessionClass_field_14)));
+    v6 = (char *)(CharToWideString(aMulticast));
     result = (int)IPXConnClass::constructor( /*0x540ebf*/
                     v3,
                     v5,
@@ -331,8 +331,8 @@ AbstractClass * * SessionClass::LoadMapSelection(char ** a1)
       && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(*v2 + 8))(v2, v9 + v10, 0) )
     {
       v11 = (unsigned int)(v2->SessionClass_field_10);
-      v12 = v2->MPGameMode; /*0x5cf042*/
-      v2->SessionClass_field_10 = v11 + 1; /*0x5cf048*/
+      v12 = (unsigned int)(v2->MPGameMode);
+      v2->SessionClass_field_10 = (unsigned int)(v11 + 1);
       *(unsigned int *)(v12 + 4 * v11) = v8; /*0x5cf04b*/
     }
     if ( ++v4 > 100 ) /*0x5cf052*/

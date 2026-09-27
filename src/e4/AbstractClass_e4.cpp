@@ -76,8 +76,8 @@ void AbstractClass::Initialize(TechnoClass * aP1, TechnoClass * aP2)
       && this->COMStub_Release(v8 + v9, 0) )
     {
       v10 = (unsigned int)(this->uniqueId);
-      v11 = this->vtable2; /*0x438fbe*/
-      this->uniqueId = v10 + 1; /*0x438fc4*/
+      v11 = (gamemd::AbstractClass *)((unsigned int)(this->vtable2));
+      this->uniqueId = (unsigned int)(v10 + 1);
       *(unsigned int *)(v11 + 4 * v10) = v5; /*0x438fc7*/
     }
     *(&this->vtable22) = 1; /*0x438fca*/
@@ -161,7 +161,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
   void ***result; // eax
   int v43; // ecx
 
-  v5 = a3; /*0x4fb9b2*/
+  v5 = (void **)(a3);
   if ( (void **)a1[5432] == a3 ) /*0x4fb9c1*/
     a1[5432] = 0; /*0x4fb9c3*/
   a3 = (void **)__RTDynamicCast(v5, 0, &AbstractClass `RTTI Type Descriptor', &TagClass `RTTI Type Descriptor', 0); /*0x4fb9e1*/
@@ -170,7 +170,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     v7 = (*(int (__thiscall **)(unsigned int *, void ***))(a1[14] + 16))(a1 + 14, &a3); /*0x4fb9f4*/
     if ( v7 != -1 ) /*0x4fb9fa*/
     {
-      v8 = a1[18]; /*0x4fb9fc*/
+      v8 = (int)(a1[18]);
       if ( v7 < v8 ) /*0x4fba01*/
       {
         v9 = v8 - 1; /*0x4fba03*/
@@ -181,8 +181,8 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
   }
   if ( (*((int (__thiscall **)(void **))*v5 + 11))(v5) == 6 && (unsigned char)a4 ) /*0x4fba32*/
   {
-    v10 = a1[20]; /*0x4fba38*/
-    a4 = v5; /*0x4fba45*/
+    v10 = (int)(a1[20]);
+    a4 = (void *)((int)(v5));
     v11 = (*(int (__thiscall **)(unsigned int *, void ***, int))(v10 + 16))(a1 + 20, &a4, a2); /*0x4fba49*/
     if ( v11 != -1 ) /*0x4fba4f*/
       Vector::RemoveAt(a1 + 20, v11); /*0x4fba54*/
@@ -191,7 +191,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     v13 = (*(int (__thiscall **)(unsigned int *, void ***))(v12 + 16))(a1 + 32, &a5); /*0x4fba70*/
     if ( v13 != -1 ) /*0x4fba76*/
     {
-      v14 = a1[36]; /*0x4fba78*/
+      v14 = (int)(a1[36]);
       if ( v13 < v14 ) /*0x4fba7d*/
       {
         v15 = v14 - 1; /*0x4fba7f*/
@@ -199,8 +199,8 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
           ++v13; /*0x4fba8a*/
       }
     }
-    v16 = a1[38]; /*0x4fba99*/
-    a5 = v5; /*0x4fbaa9*/
+    v16 = (int)(a1[38]);
+    a5 = (void *)((int)(v5));
     v17 = (*(int (__thiscall **)(unsigned int *, void ***))(v16 + 16))(a1 + 38, &a5); /*0x4fbab0*/
     if ( v17 != -1 ) /*0x4fbab6*/
       Vector::RemoveAt(a1 + 38, v17); /*0x4fbabb*/
@@ -209,7 +209,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
     v19 = (*(int (__thiscall **)(unsigned int *, void ***))(v18 + 16))(a1 + 44, &a5); /*0x4fbad7*/
     if ( v19 != -1 ) /*0x4fbadd*/
     {
-      v20 = a1[48]; /*0x4fbadf*/
+      v20 = (int)(a1[48]);
       if ( v19 < v20 ) /*0x4fbae4*/
       {
         v21 = v20 - 1; /*0x4fbae6*/

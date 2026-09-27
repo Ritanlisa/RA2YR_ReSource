@@ -263,7 +263,7 @@ int SlaveManagerClass::UpdateSlaves(void * a1)
   TechnoClass * v4;
   int v6; // [esp+Ch] [ebp-8h]
 
-  v2 = (gamemd::TechnoClass *)((int *)g_CurrentFrame);
+  v2 = (int *)((gamemd::TechnoClass *)((int *)g_CurrentFrame));
   v3 = *(&this->vtable30); /*0x6af5fd*/
   v4 = *(&this->vtable32); /*0x6af600*/
   if ( v3 == -1 ) /*0x6af606*/
@@ -391,9 +391,9 @@ TechnoClass * * SlaveManagerClass_ProcessSlaves(void * a1, void * a2, void * a3)
   char v101[8]; // [esp+9Ah] [ebp-10h] BYREF
   int v102; // [esp+A2h] [ebp-8h] BYREF
 
-  v4 = 0; /*0x6af6ca*/
-  result = 0; /*0x6af6cc*/
-  v6 = a1[18]; /*0x6af6ce*/
+  v4 = (int)(0);
+  result = (int)(0);
+  v6 = (int)(a1[18]);
   v83 = 0; /*0x6af6d1*/
   if ( v6 > 0 )
   {

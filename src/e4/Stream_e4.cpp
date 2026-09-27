@@ -18,7 +18,7 @@ int Stream::FlushAndReset()
   void * v5;
 
   v2 = (int)(*this);
-  v3 = this->Stream_field_08; /*0x439116*/
+  v3 = (int)(this->Stream_field_08);
   *(&this->Stream_field_042) = 45; /*0x439119*/
   this->vt_slot_12(); /*0x439120*/
   this->vt_slot_8(v3, 0); /*0x43912a*/
@@ -42,7 +42,7 @@ int Stream::ReadIntArray(int a2)
   if ( result >= 0 ) /*0x49fb89*/
   {
     v5 = (int)(*(unsigned int *)a2);
-    a2 = this->Stream_field_08; /*0x49fb9a*/
+    a2 = (int)(this->Stream_field_08);
     result = (*(int (__stdcall **)(int, int *, int, unsigned int))(v5 + 16))(a2, &a2, 4, 0); /*0x49fb9e*/
     if ( result >= 0 ) /*0x49fba3*/
     {

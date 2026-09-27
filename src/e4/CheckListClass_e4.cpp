@@ -38,7 +38,7 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
       memset(&v21[1], 0, 198); /*0x488560*/
       v16 = *result; /*0x48856b*/
       v21[0] = *((unsigned char *)result + 4) != 0 ? 3 : 32;
-      v21[1] = 32; /*0x48857e*/
+      v21[1] = (int)(32);
       swprintf(&v21[2], v16, a2); /*0x488585*/
       v9 = a1[11]; /*0x48858a*/
       Type = BuildingAnim::GetType(); /*0x48859c*/
@@ -63,10 +63,10 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
       {
         v9 |= 0x1000u; /*0x488622*/
       }
-      v13 = a1[12]; /*0x48862f*/
-      v19[0] = a4; /*0x488639*/
-      v17 = v13; /*0x488643*/
-      v19[1] = a5; /*0x488644*/
+      v13 = (unsigned int)(a1[12]);
+      v19[0] = (unsigned int)(a4);
+      v17 = (unsigned int)(v13);
+      v19[1] = (unsigned int)(a5);
       v15 = *((unsigned int *)BuildingTypeClass_AnimTable + Type); /*0x488659*/
       v14 = (*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2 + 120))(g_DSurface_Hidden_2, v20); /*0x488662*/
       return FillRectangle(v18, (int)v21, g_DSurface_Hidden_2, v14, (int)v19, v15, 0, v9, a6, v17); /*0x488675*/

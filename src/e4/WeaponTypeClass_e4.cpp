@@ -307,15 +307,15 @@ void WeaponTypeClass_SaveLoad_Prefix(void * a1, void * a2, void * a3, void * a4,
 {
   int *v4; // edi
   unsigned int *v5; // ebp
-  int v6; // esi
+  void * v6;
   int result; // eax
   int i; // ebx
   int j; // ebx
   int k; // ebx
   int m; // esi
 
-  v4 = a2; /*0x772cd3*/
-  v5 = a2 + 47; /*0x772cdd*/
+  v4 = (int)(a2);
+  v5 = (unsigned int *)(a2 + 47);
   (*(void (__thiscall **)(int *))(a2[47] + 12))(a2 + 47); /*0x772ce5*/
   (*(void (__thiscall **)(int *))(v4[54] + 12))(v4 + 54); /*0x772cf4*/
   v6 = a3; /*0x772cf7*/
@@ -368,7 +368,7 @@ void WeaponTypeClass_SaveLoad_Prefix(void * a1, void * a2, void * a3, void * a4,
 }
 // 0x772EB0
 namespace gamemd {
-void WeaponTypeClass_SaveLoad_Prefix_0()
+void WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   int result; // eax
   int v6; // edx

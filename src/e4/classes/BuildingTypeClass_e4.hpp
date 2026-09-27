@@ -2728,6 +2728,7 @@ struct BuildingTypeClass {
     unsigned int q1504;
     unsigned int q1508;
     unsigned int q8684;
+    unsigned int q8680;
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers(AbstractClass * a1, AbstractClass * a2);
     AbstractClass * * FindOrCreateAlt();

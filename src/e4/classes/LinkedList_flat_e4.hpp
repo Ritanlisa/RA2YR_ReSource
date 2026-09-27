@@ -4,7 +4,6 @@
 namespace gamemd {
 
 struct LinkedList_flat {
-    unsigned int PushFront;
     unsigned int m_Prev;
     unsigned int u32_28;
     unsigned int u32_18;
@@ -58,7 +57,7 @@ struct LinkedList_flat {
     unsigned char q124;  // 0x124
     unsigned char __pad_128;  // 0x128
     void* q130;  // 0x130
-AbstractClass * * LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4);
+AbstractClass * * LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4, void * a1, void * a2);
 LinkClass * * Append(int a2);
 LinkClass * * InsertAfter(int a2);
 int * Next();

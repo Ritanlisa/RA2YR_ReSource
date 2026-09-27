@@ -108,7 +108,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   {
     (*(void (__thiscall **)(unsigned char *))(((unsigned int)(this->q0042))))(this); /*0x76a0d9*/
   }
-  v12 = (unsigned int)(this->q008);
+  v12 = (void *)((unsigned int)(this->q008));
   if ( v12 < this->q010 ) /*0x76a0e4*/
     this->q010 = v12; /*0x76a0e6*/
   return 1; /*0x76a0e9*/
@@ -307,7 +307,7 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
   {
     (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x76a33e*/
   }
-  v7 = (unsigned int)(this->q008);
+  v7 = (void *)((unsigned int)(this->q008));
   if ( v7 < this->q010 ) /*0x76a349*/
     this->q010 = v7; /*0x76a34b*/
   return 1; /*0x76a34e*/
@@ -347,7 +347,7 @@ DynamicVector * MSFrameAnim::setPosition(char a2)
     this->Items = 0; /*0x76a6a1*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x76a6b2*/
+  this->q008 = (unsigned int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x76a6b9*/
     RA2_OPDEL(); /*0x76a6bc*/
   return this; /*0x76a6c6*/
@@ -367,7 +367,7 @@ DynamicVector * MSFrameAnim::setScale(char a2)
     this->Items = 0; /*0x76a740*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x76a751*/
+  this->q008 = (unsigned int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x76a758*/
     RA2_OPDEL(); /*0x76a75b*/
   return this; /*0x76a765*/

@@ -70,9 +70,9 @@ unsigned int * Surface::CopyRect(ObjectClass * aP1)
   int v49; // [esp+40h] [ebp+4h]
   unsigned int v50; // [esp+40h] [ebp+4h]
 
-  result = (int)(this);
-  v4 = aP1[2]; /*0x5d1fde*/
-  v4 = v4; /*0x5d1fe8*/
+  result = (unsigned int *)((int)(this));
+  v4 = (int)(aP1[2]);
+  v4 = (int)(v4);
   if ( v4 <= 0 ) /*0x5d1fec*/
     return result; /*0x5d1fec*/
   v39 = aP1[3]; /*0x5d1ff7*/
@@ -96,9 +96,9 @@ unsigned int * Surface::CopyRect(ObjectClass * aP1)
       if ( v5 > 0 ) /*0x5d2185*/
       {
         v23 = (int)(*aP1);
-        v42 = *aP1; /*0x5d2191*/
-        v43 = *aP1 + v4; /*0x5d219b*/
-        v38 = aP1[1]; /*0x5d21a3*/
+        v42 = (int)(*aP1);
+        v43 = (int)(*aP1 + v4);
+        v38 = (int)(aP1[1]);
         v40 = v39 + v38; /*0x5d21a9*/
         v24 = (int *)this->q00C; /*0x5d21b1*/
         while ( 1 ) /*0x5d21c0*/
@@ -133,7 +133,7 @@ unsigned int * Surface::CopyRect(ObjectClass * aP1)
         result = (unsigned int *)(this);
       }
       v30 = (unsigned int)(result->q00C);
-      v45 = v45; /*0x5d2230*/
+      v45 = (unsigned int)(v45);
       v32 = (unsigned int *)(v30 + 16 * v22); /*0x5d2237*/
       *v32 = v44; /*0x5d223d*/
       v46 = v46; /*0x5d223f*/
@@ -154,7 +154,7 @@ unsigned int * Surface::CopyRect(ObjectClass * aP1)
     return result; /*0x5d20af*/
   }
   v6 = (int)(*aP1);
-  v7 = aP1[1]; /*0x5d2012*/
+  v7 = (int)(aP1[1]);
   v8 = (int *)result->q00C; /*0x5d2015*/
   while ( 1 ) /*0x5d2020*/
   {
@@ -259,7 +259,7 @@ void sub_626C60()
   if ( v0 ) /*0x626c7c*/
   {
     *v0 = (unsigned int *)(-1);
-    v2 = operator new(0x18u); /*0x626c8c*/
+    v2 = (unsigned int *)(operator new(0x18u));
     v3 = v2; /*0x626c91*/
     if ( v2 ) /*0x626c98*/
     {
@@ -272,7 +272,7 @@ void sub_626C60()
       v3 = 0; /*0x626cbc*/
     }
     v1[1] = (unsigned int *)(v3);
-    v4 = operator new(0x18u); /*0x626cc8*/
+    v4 = (unsigned int *)(operator new(0x18u));
     v5 = v4; /*0x626ccd*/
     if ( v4 ) /*0x626cd4*/
     {
@@ -285,14 +285,14 @@ void sub_626C60()
       v5 = 0; /*0x626cf3*/
     }
     v1[2] = (unsigned int *)(v5);
-    v6 = operator new(0x10u); /*0x626cfa*/
+    v6 = (unsigned int *)(operator new(0x10u));
     v7 = v6; /*0x626cff*/
     if ( v6 ) /*0x626d06*/
     {
       v6[1] = (unsigned int *)(HashStringMod31);
-      v6[2] = 31; /*0x626d14*/
-      v6[3] = 10; /*0x626d1b*/
-      v8 = operator new(0x2ECu); /*0x626d1e*/
+      v6[2] = (unsigned int *)(31);
+      v6[3] = (unsigned int *)(10);
+      v8 = (unsigned int *)(operator new(0x2ECu));
       if ( v8 ) /*0x626d28*/
       {
         v9 = v8 + 1; /*0x626d2f*/
@@ -304,8 +304,8 @@ void sub_626C60()
         v9 = 0; /*0x626d44*/
       }
       v10 = (unsigned int)(v7[2]);
-      v11 = 0; /*0x626d49*/
-      *v7 = v9; /*0x626d4d*/
+      v11 = (unsigned int)(0);
+      *v7 = (unsigned int)(v9);
       if ( v10 > 0 ) /*0x626d4f*/
       {
         v12 = 0; /*0x626d51*/
@@ -323,7 +323,7 @@ void sub_626C60()
       v7 = 0; /*0x626d6a*/
     }
     v1[3] = (int)(v7);
-    g_FileExtensionState = v1; /*0x626d71*/
+    g_FileExtensionState = (int)(v1);
     return *(unsigned int *)(v1[1] + 16); /*0x626d7c*/
   }
   else
@@ -986,8 +986,8 @@ int Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a
       }
       else if ( v10 < v74 - v55 ) /*0x6ba9a8*/
       {
-        v62 = v29; /*0x6ba9b4*/
-        v52 = v30; /*0x6ba9b8*/
+        v62 = (unsigned char *)((int16_t *)(v29));
+        v52 = (int16_t *)(v30);
         v32 = (unsigned short *)(v70 + 2 * v31); /*0x6ba9bc*/
         v60 = v74 - v55 - v10; /*0x6ba9bf*/
         v58 = v32; /*0x6ba9c3*/

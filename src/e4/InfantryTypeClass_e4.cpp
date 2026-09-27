@@ -160,7 +160,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
 {
   void *v4; // eax
   int v5; // esi
-  int v6; // eax
+  unsigned int * v6;
   unsigned int *v7; // eax
   int *v8; // eax
   int v9; // ecx
@@ -175,11 +175,11 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
     v5 = InfantryClass::Construct((int)v4, (int)this, ppv); /*0x523b68*/
     if ( v5 ) /*0x523b6c*/
     {
-      v6 = (unsigned int *)(a2[1] << 8);
-      v12[0] = (*a2 << 8) + 128; /*0x523b93*/
-      v12[1] = v6 + 128; /*0x523b9b*/
-      v12[2] = 0; /*0x523bb1*/
-      v7 = Coord::To_Cell(&MapClass_Instance, v12); /*0x523bb9*/
+      v6 = (int)((unsigned int *)(a2[1] << 8));
+      v12[0] = (unsigned int *)((*a2 << 8) + 128);
+      v12[1] = (unsigned int *)(v6 + 128);
+      v12[2] = (unsigned int *)(0);
+      v7 = (unsigned int *)(Coord::To_Cell(&MapClass_Instance, v12));
       v8 = ObjectPlacement::CalcPosition(v7, v14, v12, 0, 0, 0); /*0x523bc0*/
       v13[0] = *v8; /*0x523bcf*/
       v9 = v8[1]; /*0x523bd5*/

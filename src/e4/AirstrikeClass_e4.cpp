@@ -13,6 +13,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x41D860
 namespace gamemd {
@@ -20,11 +21,11 @@ int AirstrikeClass::SpawnAircraft(int * a2)
 {
   int v3; // eax
   int v4; // ebp
-  int v5; // ebx
+  unsigned int * v5;
   unsigned int *v7; // eax
   void *v8; // eax
   unsigned int *v9; // eax
-  int result; // eax
+  AirstrikeClass * result;
   unsigned int *v11; // eax
   AirstrikeClass * v12;
   int v13; // eax
@@ -41,12 +42,12 @@ int AirstrikeClass::SpawnAircraft(int * a2)
   v17 = *(unsigned int *)(*(unsigned int *)g_RulesClass_Instance->DefaultTestParticleSystem + 3576); /*0x41d895*/
   if ( Audio::IsLoud((float *)(this->owner + 336)) ) /*0x41d8a2*/
   {
-    v5 = this->AirstrikeClass_field_28; /*0x41d8ae*/
+    v5 = (unsigned int *)(this->AirstrikeClass_field_28);
     v4 = *(unsigned int *)(this->AirstrikeClass_field_58 + 3576); /*0x41d8b1*/
   }
   else
   {
-    v5 = this->AirstrikeClass_field_24; /*0x41d8b9*/
+    v5 = (int)((unsigned int *)(this->AirstrikeClass_field_24));
   }
   v7 = (int)((unsigned int *)(*(int (__thiscall **)(int *, unsigned int *))(*a2 + 72))(a2, v18));
   IDA_LOWORD(v19) = *v7 / 256; /*0x41d8dc*/
@@ -61,7 +62,7 @@ int AirstrikeClass::SpawnAircraft(int * a2)
   this->EliteAirstrikeTeamTypeIndex = result; /*0x41d930*/
   if ( result ) /*0x41d933*/
   {
-    result = this->AirstrikeClass_field_5C; /*0x41d939*/
+    result = (gamemd::AirstrikeClass *)(this->AirstrikeClass_field_5C);
     if ( result ) /*0x41d93e*/
     {
       v11 = (unsigned int *)(result + 156); /*0x41d940*/
@@ -73,11 +74,11 @@ int AirstrikeClass::SpawnAircraft(int * a2)
     this->u32_50 = (unsigned int)(a2);
     if ( a2 ) /*0x41d975*/
     {
-      result = (*(int (__thiscall **)(int *))(*a2 + 44))(a2); /*0x41d97f*/
+      result = (gamemd::AirstrikeClass *)((int)((gamemd::AirstrikeClass *)((*(int (__thiscall **)(int *))(*a2 + 44))(a2))));
       if ( result == 6 ) /*0x41d985*/
       {
-        v12 = (int)(*a2);
-        a2[165] = this; /*0x41d994*/
+        v12 = (gamemd::AirstrikeClass *)((int)(*a2));
+        a2[165] = (int)(this);
         (*(void (__thiscall **)(int *, int))(v12 + 348))(a2, 100000); /*0x41d99a*/
         *((unsigned char *)a2 + 1784) = *((unsigned char *)&g_RulesClass_Instance[1].DMisl[12] /*0x41d9b8*/
                                 + 2 * g_RulesClass_Instance[1].CMisl[10]
@@ -96,7 +97,7 @@ int AirstrikeClass::SpawnAircraft(int * a2)
       }
     }
   }
-  return result; /*0x41da0b*/
+  return (int)(result);
 }
 } // namespace ra2
 
@@ -147,11 +148,11 @@ int AirstrikeClass::ReassignTarget(int a2)
       (*(void (__thiscall **)(unsigned int *))(v10 + 344))(v7); /*0x41daae*/
       (*(void (__thiscall **)(unsigned int *, int))(*v7 + 292))(v7, 2); /*0x41daba*/
     }
-    this->q050 = 0; /*0x41dac2*/
+    this->q050 = (unsigned int)((gamemd::AirstrikeClass *)(0));
     if ( v9 ) /*0x41dac9*/
     {
-      v11 = (unsigned int)(*v9);
-      v9[165] = this; /*0x41dad4*/
+      v11 = (gamemd::AirstrikeClass *)((unsigned int)(*v9));
+      v9[165] = (unsigned int)(this);
       (*(void (__thiscall **)(unsigned int *, int))(v11 + 348))(v9, 100000); /*0x41dada*/
       (*(void (__thiscall **)(unsigned int *, int))(*v9 + 292))(v9, 2); /*0x41dae6*/
     }
@@ -314,7 +315,7 @@ namespace gamemd {
 AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
 {
   AirstrikeClass * v3;
-  int v4; // eax
+  TechnoClass * v4;
   int v5;
   int v6; // eax
   int v7;
@@ -338,12 +339,12 @@ AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
     v3 = (gamemd::AirstrikeClass *)(dword_889FC8++);
     *((unsigned int *)dword_889FBC + v3) = this; /*0x41d3f5*/
   }
-  this->AirstrikeClass_field_3C = (gamemd::TechnoClass *)(0);
-  this->owner = aP1; /*0x41d3ff*/
-  this->AirstrikeClass_field_3D = 0; /*0x41d402*/
-  v4 = (*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 132))(aP1); /*0x41d407*/
-  v5 = this->owner; /*0x41d413*/
-  this->AirstrikeClass_field_24 = *(unsigned int *)(v4 + 1564); /*0x41d416*/
+  this->AirstrikeClass_field_3C = (unsigned int)((gamemd::TechnoClass *)(0));
+  this->owner = (unsigned int)((gamemd::TechnoClass *)(aP1));
+  this->AirstrikeClass_field_3D = (unsigned char)((gamemd::TechnoClass *)(0));
+  v4 = (int)((gamemd::TechnoClass *)((*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 132))(aP1)));
+  v5 = (gamemd::TechnoClass *)(this->owner);
+  this->AirstrikeClass_field_24 = (gamemd::TechnoClass *)(*(unsigned int *)(v4 + 1564));
   v6 = (*(int (__thiscall **)(int))(*(unsigned int *)v5 + 132))(v5); /*0x41d41b*/
   v7 = this->owner; /*0x41d427*/
   this->AirstrikeClass_field_28 = *(unsigned int *)(v6 + 1568); /*0x41d42a*/

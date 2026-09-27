@@ -407,7 +407,7 @@ struct ScenarioClass {
     unsigned int ScenarioClass_field_timer_34C0;  // 0x34C0
     unsigned int q34C4;  // 0x34C4
     unsigned int q34C8;  // 0x34C8
-    char campaignIndex[4];  // 0x34CC
+    unsigned int campaignIndex;  // 0x34CC
     char startingDropships[4];  // 0x34D0
     void* q34D4;  // 0x34D4
     char allowableUnitsCount[4];  // 0x34D8
@@ -585,6 +585,8 @@ struct ScenarioClass {
     unsigned int u32_7F02;
     unsigned int u32_7E40;
     unsigned int u32_B508;
+    unsigned int u32_8200;
+    unsigned int u32_B784;
 // --- flat members (END) ---
     void* checkWinningConditions(char a2);
     ScenarioClass * * CopyStartPositions();

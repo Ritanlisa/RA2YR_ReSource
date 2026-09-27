@@ -176,8 +176,8 @@ signed int SyncDelay::Start()
     goto LABEL_43; /*0x55e395*/
   }
   LABEL_44: v20 = (unsigned int)(dword_ABCD40 + g_FrameCounter_Total);
-  v21 = (unsigned int)(dword_ABCD40 + g_FrameCounter_Total) <= 0x7FFFFFFF; /*0x55e3af*/
-  dword_ABCD44 = (wchar_t *)dword_ABCD40; /*0x55e3b5*/
+  v21 = (wchar_t *)((unsigned int)((unsigned int)(dword_ABCD40 + g_FrameCounter_Total) <= 0x7FFFFFFF));
+  dword_ABCD44 = (unsigned int)((wchar_t *)dword_ABCD40);
   dword_ABCD40 = 0; /*0x55e3ba*/
   g_FrameCounter_Total = v20; /*0x55e3c0*/
   ++g_FrameCounter_Samples; /*0x55e3c6*/

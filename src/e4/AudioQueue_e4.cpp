@@ -361,8 +361,8 @@ unsigned char * AudioQueue::AllocBuffer(WinsockInterfaceClass * aP1)
       v5 = 0; /*0x7b21b7*/
       while ( 1 ) /*0x7b21b9*/
       {
-        v6 = (unsigned int)(this->q3F058);
-        this->q3F058 = v6 + 1; /*0x7b21c5*/
+        v6 = (void *)((unsigned int)(this->q3F058));
+        this->q3F058 = (unsigned int)(v6 + 1);
         if ( v6 + 1 > 127 ) /*0x7b21cb*/
           this->q3F058 = 0; /*0x7b21cd*/
         if ( !*((unsigned char *)&this->u32_A80 * v6 + 172133) ) /*0x7b21e2*/
@@ -393,8 +393,8 @@ unsigned char * AudioQueue::AllocBuffer(WinsockInterfaceClass * aP1)
       v3 = 0; /*0x7b2116*/
       while ( 1 ) /*0x7b2118*/
       {
-        v4 = (unsigned int)(this->q3F054);
-        this->q3F054 = v4 + 1; /*0x7b2124*/
+        v4 = (void *)((unsigned int)(this->q3F054));
+        this->q3F054 = (unsigned int)(v4 + 1);
         if ( v4 + 1 > 127 ) /*0x7b212a*/
           this->q3F054 = 0; /*0x7b212c*/
         if ( !*((unsigned char *)&this->u32_A80 * v4 + 86117) ) /*0x7b2141*/
@@ -420,7 +420,7 @@ namespace gamemd {
 int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * v9, unsigned short * a6)
 {
   int v8; // eax
-  unsigned int * v9;
+  unsigned int v9;
   int v10; // ecx
   int v11; // edx
   int v12; // ecx
@@ -494,8 +494,8 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
       && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->u32_38 + 8))(&this->u32_E0, v10 + v11, 0) )
     {
       v12 = (unsigned int)(this->u32_48);
-      v13 = this->u32_3C; /*0x7b244e*/
-      this->u32_48 = v12 + 1; /*0x7b2454*/
+      v13 = (unsigned int)(this->u32_3C);
+      this->u32_48 = (unsigned int)(v12 + 1);
       *(unsigned int *)(v13 + 4 * v12) = v9; /*0x7b2457*/
     }
     v14 = this->u32_3F070; /*0x7b245a*/
@@ -509,8 +509,8 @@ AnimClass * * AudioQueue::WriteBuffer(WinsockInterfaceClass * aP1, unsigned int 
       && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->q020 + 8))(&this->q080, v15 + v16, 0) )
     {
       v17 = (unsigned int)(this->u32_30);
-      v18 = this->ptr_24; /*0x7b2494*/
-      this->u32_30 = v17 + 1; /*0x7b249a*/
+      v18 = (gamemd::CampaignClass *)((unsigned int)(this->ptr_24));
+      this->u32_30 = (unsigned int)(v17 + 1);
       *(unsigned int *)(v18 + 4 * v17) = v9; /*0x7b249d*/
     }
     v14 = this->u32_3F06C; /*0x7b24a0*/

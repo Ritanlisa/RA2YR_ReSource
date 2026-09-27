@@ -69,7 +69,7 @@ struct AITriggerTypeClass {
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
     void* q0AC;  // 0xAC
-    unsigned int q0B0;  // 0xB0
+    void* ;  // 0xB0
     unsigned char q0B4;  // 0xB4
     void* q0B8;  // 0xB8
     unsigned char q0B9;  // 0xB9
@@ -99,7 +99,7 @@ struct AITriggerTypeClass {
     ObjectClass* q0FC;  // 0xFC
     unsigned char q0FF;  // 0xFF
     void* Name;  // 0x100
-    unsigned int q104;  // 0x104
+    void* ;  // 0x104
     void* q108;  // 0x108
     unsigned int q10C;  // 0x10C
     unsigned char q110;  // 0x110
@@ -1574,6 +1574,8 @@ struct AITriggerTypeClass {
     unsigned int u32_500;
     unsigned int u32_588;
     unsigned int vtable46;
+    unsigned int q0B0;
+    unsigned int q104;
 // --- flat members (END) ---
     AITriggerTypeClass * ddtor(char a2);
     DynamicVector * * OwnerHouseOwns(unsigned int * a2, int a3);

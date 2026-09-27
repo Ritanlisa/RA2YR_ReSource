@@ -94,10 +94,10 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
                     (uint8_t *)aParticlecap,
                     this->q2A4);
   v7 = (int)(this->q2A8);
-  this->q2A4 = Int_Overwrite; /*0x644371*/
-  v8 = INIClass::ReadInt_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aSpawnradius, v7); /*0x644380*/
-  v9 = this->q2A0; /*0x644385*/
-  this->q2A8 = v8; /*0x644390*/
+  this->q2A4 = (int)(Int_Overwrite);
+  v8 = (int)(INIClass::ReadInt_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aSpawnradius, v7));
+  v9 = (gamemd::ParticleSystemClass *)((int)(this->q2A0));
+  this->q2A8 = (int)(v8);
   this->q2A0 = INIClass::ReadDouble_Overwrite( /*0x6443a4*/
                              (int)aP1,
                              (uint8_t *)(&this->vtable46),
@@ -150,11 +150,11 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
           (uint8_t *)aSpawndirection,
           (float *)(&this->q1180));
   this->ParticleSystemTypeClass_field_2C0 = (double)(*v14);
-  this->StartScale = v14[1]; /*0x64448b*/
-  v35 = *(double *)(&this->q11C2); /*0x6444a1*/
-  this->ParticleSystemTypeClass_field_2C8 = v14[2]; /*0x6444aa*/
-  v15 = INIClass::ReadDouble_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aParticlesperco, v35); /*0x6444b0*/
-  v16 = *(double *)(&this->q1200); /*0x6444bb*/
+  this->StartScale = (double)(v14[1]);
+  v35 = (gamemd::AnimClass *)(*(double *)(&this->q11C2));
+  this->ParticleSystemTypeClass_field_2C8 = (double)(v14[2]);
+  v15 = (double)(INIClass::ReadDouble_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aParticlesperco, v35));
+  v16 = (gamemd::AnimClass *)(*(double *)(&this->q1200));
   *(double *)(&this->q11C2) = v15; /*0x6444c1*/
   v17 = INIClass::ReadDouble_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aSpiraldeltaper, v16); /*0x6444d1*/
   v18 = this->q2DC; /*0x6444d6*/

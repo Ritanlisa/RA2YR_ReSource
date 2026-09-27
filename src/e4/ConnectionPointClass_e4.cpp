@@ -43,8 +43,8 @@ int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
     v3[3] = v4; /*0x4a07ba*/
     if ( v4 ) /*0x4a07bd*/
     {
-      v5 = (unsigned int)(operator new(8 * v4));
-      v3[2] = v5; /*0x4a07d1*/
+      v5 = (void *)((unsigned int)(operator new(8 * v4)));
+      v3[2] = (unsigned int)(v5);
       if ( v5 ) /*0x4a07d4*/
       {
         v6 = (void *)(v3[3]);
@@ -86,11 +86,11 @@ namespace gamemd {
 unsigned int * ConnectionPointClass::Construct(unsigned int * a1, ConnectionPointClass * aP2)
 {
   this->q004 = (unsigned int *)(*a1);
-  this->q008 = a1[1]; /*0x4a0881*/
-  this->q00C = a1[2]; /*0x4a0887*/
-  this->u32_10 = a1[3]; /*0x4a088d*/
-  this->q018 = aP2; /*0x4a0896*/
-  this->q014 = 0; /*0x4a0899*/
+  this->q008 = (unsigned int *)(a1[1]);
+  this->q00C = (unsigned int *)(a1[2]);
+  this->u32_10 = (unsigned int *)(a1[3]);
+  this->q018 = (unsigned int *)(aP2);
+  this->q014 = (unsigned int *)(0);
   this->q020 = 0; /*0x4a089c*/
   this->q024 = 0; /*0x4a089f*/
   this->u8_28 = 1; /*0x4a08a2*/
@@ -300,7 +300,7 @@ VectorClass_flat * ConnectionPointClass_9::QueryInterface(char a2)
     this->q004 = 0; /*0x4a1510*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = 0; /*0x4a1521*/
+  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x4a1528*/
     RA2_OPDEL(); /*0x4a152b*/
   return this; /*0x4a1535*/

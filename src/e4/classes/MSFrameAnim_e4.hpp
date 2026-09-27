@@ -8,7 +8,7 @@ struct MSFrameAnim {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* q004;  // 0x4
-    unsigned int q008;  // 0x8
+    void* ;  // 0x8
     void* q00C;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned int q010;  // 0x10
@@ -65,6 +65,7 @@ struct MSFrameAnim {
     unsigned int Items2;
     unsigned int q0042;
     unsigned int q0043;
+    unsigned int q008;
 // --- flat members (END) ---
     MSFrameAnim * QueryInterface(char a2);  // 0x769BD0
     char setFrameRate(int a2,  unsigned int * a3);    // 0x769FE0

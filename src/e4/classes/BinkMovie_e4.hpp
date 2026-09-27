@@ -10,9 +10,9 @@ struct BinkMovie {
     unsigned int u32_4;  // 0x4
     void* q008;  // 0x8
     bool q00A;  // 0xA
-    unsigned int q00C;  // 0xC
-    unsigned int u32_10;  // 0x10
-    unsigned int u32_14;  // 0x14
+    void* ;  // 0xC
+    void* ;  // 0x10
+    void* ;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
     void* q020;  // 0x20
@@ -40,6 +40,9 @@ struct BinkMovie {
     unsigned int u32_100;
     unsigned int u32_40;
     unsigned int u32_42;
+    unsigned int q00C;
+    unsigned int u32_10;
+    unsigned int u32_14;
 // --- flat members (END) ---
     unsigned int * Close(char * FullPath);  // 0x432690
     unsigned int * Open(char * FullPath,  int a3);    // 0x4326C0

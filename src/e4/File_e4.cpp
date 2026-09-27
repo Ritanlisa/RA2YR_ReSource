@@ -13,6 +13,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/FilePipe_30_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x431F10
 namespace gamemd {
@@ -28,7 +29,7 @@ int File::IsReady(int a2)
 namespace gamemd {
 unsigned int * File::LoadFont()
 {
-  unsigned int v2; // ebp
+  unsigned int * v2;
   unsigned int *v3; // esi
   unsigned int *v4; // eax
   unsigned int *v5; // eax
@@ -62,8 +63,8 @@ unsigned int * File::LoadFont()
   int v34; // [esp+70h] [ebp-4h]
 
   v2 = (unsigned int *)(0);
-  v3 = 0; /*0x43399d*/
-  v4 = operator new(0x6Cu); /*0x43399f*/
+  v3 = (unsigned int *)(0);
+  v4 = (unsigned int *)(operator new(0x6Cu));
   if ( v4 ) /*0x4339a9*/
   {
     v5 = (unsigned int *)(CCFileClass::Construct(v4, Source));
@@ -323,9 +324,9 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   int *v5; // esi
   u_short v6; // ax
   void *v7; // eax
-  int v8; // ecx
-  int v9; // ebx
-  unsigned int *v10; // esi
+  int * v8;
+  unsigned int * v9;
+  int * v10;
   size_t v11; // ebp
   void *v12; // eax
   int v13; // eax
@@ -347,9 +348,9 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   while ( 1 ) /*0x625b50*/
   {
     v7 = (int *)(operator new(0x10u));
-    v8 = *v5; /*0x625b55*/
-    v9 = (int)v7; /*0x625b57*/
-    v10 = v5 + 2; /*0x625b5c*/
+    v8 = (unsigned int *)((int *)(*v5));
+    v9 = (int)((unsigned int *)((int)v7));
+    v10 = (unsigned int)((int *)(v5 + 2));
     *(unsigned int *)v7 = v8; /*0x625b5f*/
     *((unsigned int *)v7 + 1) = *(v10 - 1); /*0x625b64*/
     v11 = ntohs(*((unsigned short *)v7 + 3)); /*0x625b78*/

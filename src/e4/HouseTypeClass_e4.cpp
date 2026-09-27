@@ -193,13 +193,13 @@ void* HouseTypeClass::LoadFromINI(unsigned char *** aP1, void * a1, void * a2)
                             (uint8_t *)(a1 + 36),
                             (uint8_t *)g_INI_Key_Color,
                             *(unsigned int *)(a1 + 192));
-  Source[0] = *(unsigned char *)(a1 + 420); /*0x51195a*/
+  Source[0] = (double)(*(unsigned char *)(a1 + 420));
   Source[1] = 0; /*0x511966*/
   INIClass::GetString(v3, (uint8_t *)(a1 + 36), (uint8_t *)aPrefix, Source, v74, 2); /*0x51196b*/
   *(unsigned char *)(a1 + 420) = v74[0]; /*0x511974*/
   INIClass::ReadDouble_Overwrite(a1 + 36, (int)aFirepower, *(double *)(a1 + 200)); /*0x511990*/
-  v5 = *(unsigned int *)(a1 + 212); /*0x511995*/
-  v6 = *(unsigned int *)(a1 + 208); /*0x51199b*/
+  v5 = (double)(*(unsigned int *)(a1 + 212));
+  v6 = (double)(*(unsigned int *)(a1 + 208));
   *(double *)(a1 + 200) = a2; /*0x5119a1*/
   INIClass::ReadDouble_Overwrite(a1 + 36, (int)aGroundspeed, COERCE_DOUBLE(IDA___PAIR64__(v5, v6))); /*0x5119b1*/
   v7 = *(unsigned int *)(a1 + 220); /*0x5119b6*/

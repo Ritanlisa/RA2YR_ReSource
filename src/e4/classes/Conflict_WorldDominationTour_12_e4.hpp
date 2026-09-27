@@ -8,7 +8,7 @@ struct Conflict_WorldDominationTour_12 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
-    int q008;  // 0x8
+    void* ;  // 0x8
     unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
@@ -30,6 +30,7 @@ struct Conflict_WorldDominationTour_12 {
     unsigned int Items3;
     unsigned int q0042;
     unsigned int q0043;
+    unsigned int q008;
 // --- flat members (END) ---
     char Release(int a2,  unsigned int * a3);    // 0x766C10
     char Constructor_1(int a2,  unsigned int * a3);    // 0x766DC0

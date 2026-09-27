@@ -20,7 +20,7 @@ namespace gamemd {
 int Delegate::ProcessBitmapStream(char * Src, int a3)
 {
   char *v3; // ebp
-  int v5; // esi
+  unsigned char * v5;
   unsigned char *v6; // ebx
   int v7; // ecx
   char * v8;
@@ -28,7 +28,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   int v10; // eax
   uint8_t *v12; // [esp+8h] [ebp-Ch]
   int v13; // [esp+Ch] [ebp-8h]
-  size_t Size; // [esp+10h] [ebp-4h]
+  unsigned char * Size;
   int Srca; // [esp+18h] [ebp+4h]
 
   v3 = Src; /*0x42ddb4*/
@@ -37,16 +37,16 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   v13 = 0; /*0x42ddd5*/
   if ( this->m_allocated ) /*0x42ddce*/
   {
-    v5 = (unsigned char *)(4);
-    v12 = (uint8_t *)&this->Delegate_field_14; /*0x42de00*/
-    v6 = &this->m_straw; /*0x42de04*/
+    v5 = (int)((unsigned char *)(4));
+    v12 = (unsigned char *)((uint8_t *)&this->Delegate_field_14);
+    v6 = (unsigned char *)(&this->m_straw);
     Srca = 3; /*0x42de07*/
   }
   else
   {
-    v5 = (unsigned char *)(3);
-    v12 = (uint8_t *)&this->m_straw; /*0x42dde7*/
-    v6 = &this->Delegate_field_14; /*0x42ddeb*/
+    v5 = (int)((unsigned char *)(3));
+    v12 = (unsigned char *)((uint8_t *)&this->m_straw);
+    v6 = (unsigned char *)(&this->Delegate_field_14);
     Srca = 4; /*0x42ddee*/
   }
   v7 = this->Delegate_field_10; /*0x42de0f*/
@@ -166,13 +166,13 @@ int Delegate::ProcessBitmapAndDispatch()
   {
     if ( this->m_allocated ) /*0x42df4d*/
     {
-      v4 = (int)(&this->__pad_060);
-      v5 = DecodeBitmapRGB((uint8_t *)(&this->Delegate_field_080), v3, (unsigned char *)(&this->Delegate_field_084), 3); /*0x42df6d*/
+      v4 = (unsigned int *)((int)(&this->__pad_060));
+      v5 = (int)(DecodeBitmapRGB((uint8_t *)(&this->Delegate_field_080), v3, (unsigned char *)(&this->Delegate_field_084), 3));
     }
     else
     {
-      v4 = (int)(&this->q050);
-      v5 = EncodeBitmapRGB((char *)(&this->Delegate_field_084), v3, (unsigned char *)(&this->Delegate_field_080), 4); /*0x42df5d*/
+      v4 = (unsigned int *)((int)(&this->q050));
+      v5 = (int)(EncodeBitmapRGB((char *)(&this->Delegate_field_084), v3, (unsigned char *)(&this->Delegate_field_080), 4));
     }
     v2 = (int)(Delegate::Dispatch((unsigned int *)this, v4, v5));
     this->Delegate_field_10 = 0; /*0x42df7d*/

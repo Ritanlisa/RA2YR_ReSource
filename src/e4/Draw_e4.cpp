@@ -47,10 +47,10 @@ int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9
   {
     a3 = (int)(v12 + a3);
     a2 = (int)(a2 + a4);
-    v15 = v13 + a2; /*0x7bb978*/
-    v16 = *this; /*0x7bb97b*/
-    v29[1] = v12 + a3; /*0x7bb97d*/
-    v29[0] = v15; /*0x7bb985*/
+    v15 = (int)(v13 + a2);
+    v16 = (int)(*this);
+    v29[1] = (int)(v12 + a3);
+    v29[0] = (int)(v15);
     this->vt_slot_44(&a5, v29, &a2, a9); /*0x7bb99b*/
     v17 = v12 + a2; /*0x7bb9a2*/
     v18 = -v12; /*0x7bb9a5*/

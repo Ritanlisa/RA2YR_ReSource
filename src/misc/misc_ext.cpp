@@ -87,10 +87,10 @@ void AITriggerTypeClass::ProcessPower(void * a1, void * a2)
   Power::FlagProcess(a2, v6); /*0x41e6d4*/
   v7 = Power::TimerProcess(this->q0AC); /*0x41e6e2*/
   IDA_LOBYTE(v7) = this->u8_D1; /*0x41e6e7*/
-  return Power::FlagProcess(a2, v7); /*0x41e6f5*/
+  return Power::FlagProcess(a2, v7, unsigned int a3); /*0x41e6f5*/
 }
 // 0x41eaf0
-void AITriggerTypeClass::EnemyHouseOwns()
+void AITriggerTypeClass::EnemyHouseOwns(void * a1, void * a2, void * a3)
 {
   int v4; // esi
   int v5; // ebp

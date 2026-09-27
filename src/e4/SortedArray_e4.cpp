@@ -8,6 +8,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/SpawnManagerClass_e4.hpp"
 
 // 0x52B620
 namespace gamemd {
@@ -29,7 +31,7 @@ int SortedArray::BinarySearch(CCINIClass * aP1)
       this->q00C = 1; /*0x52b64f*/
     }
     v4 = (int)(*this);
-    v5 = *aP1; /*0x52b65b*/
+    v5 = (int)(*aP1);
     v6 = (int)this->q004; /*0x52b65d*/
     if ( v6 <= 0 ) /*0x52b662*/
       return 0; /*0x52b68e*/
@@ -67,7 +69,7 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   char * v10;
   int v11; // eax
 
-  v4 = this->u32_20; /*0x5387da*/
+  v4 = (unsigned int)(this->u32_20);
   if ( this->q010 + 1 <= v4 ) /*0x5387e0*/
   {
   LABEL_9:
@@ -93,8 +95,8 @@ int SortedArray::Append(DynamicVector * aP1, unsigned int * a2)
   {
     for ( i = 0; i < this->q010; *(unsigned int *)&v6[v8 + 4] = v9[1] ) /*0x53881c*/
     {
-      v8 = 8 * i; /*0x538820*/
-      v9 = (unsigned int *)(*(unsigned int *)&this->u32_20 * i++); /*0x538829*/
+      v8 = (char *)(8 * i);
+      v9 = (char *)((unsigned int *)(*(unsigned int *)&this->u32_20 * i++));
       *(unsigned int *)&v6[v8] = *v9; /*0x53882e*/
     }
     RA2_OPDEL(); /*0x538842*/
@@ -121,7 +123,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   int v11; // edi
   int v12; // eax
   unsigned int *v13; // edi
-  int v14; // eax
+  ObjectClass ** v14;
   int v15; // [esp+10h] [ebp-8h]
 
   v3 = this->q004; /*0x5388a9*/
@@ -134,8 +136,8 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     this->q00C = 1; /*0x5388d1*/
   }
   v4 = (int)(this->q004);
-  v5 = *(unsigned int **)this; /*0x5388e0*/
-  v15 = *aP1; /*0x5388e4*/
+  v5 = (int)(*(unsigned int **)this);
+  v15 = (int)(*aP1);
   if ( v4 <= 0 ) /*0x5388e8*/
     return 0; /*0x5388e8*/
   while ( 1 ) /*0x5388f1*/
@@ -166,10 +168,10 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     v12 = ((unsigned int)(this->u32_20)) * i++; /*0x538940*/
     *(unsigned int *)(v12 - 8) = v11; /*0x538944*/
   }
-  v13 = (gamemd::ObjectClass **)(*(unsigned int **)this);
-  v14 = this->q004 - 1; /*0x538959*/
-  this->q004 = v14; /*0x53895c*/
-  v13[2 * v14] = 0; /*0x53895f*/
+  v13 = (unsigned int *)((gamemd::ObjectClass **)(*(unsigned int **)this));
+  v14 = (unsigned int)((gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(this->q004 - 1))));
+  this->q004 = (unsigned char)((gamemd::ObjectClass **)(v14));
+  v13[2 * v14] = (gamemd::ObjectClass **)(0);
   v13[2 * v14 + 1] = 0; /*0x538962*/
   this->q010 = 0; /*0x538966*/
   return 1; /*0x538917*/

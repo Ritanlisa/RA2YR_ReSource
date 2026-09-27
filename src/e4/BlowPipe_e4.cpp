@@ -577,7 +577,7 @@ VectorClass_flat * BlowPipe_23::Destructor(char a2)
     this->q004 = 0; /*0x63edb0*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = 0; /*0x63edc1*/
+  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x63edc8*/
     RA2_OPDEL(); /*0x63edcb*/
   return this; /*0x63edd5*/
@@ -597,7 +597,7 @@ DynamicVector * BlowPipe_31::QueryInterface(char a2)
     this->q004 = 0; /*0x63ee00*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x63ee11*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x63ee18*/
     RA2_OPDEL(); /*0x63ee1b*/
   return this; /*0x63ee25*/
@@ -617,7 +617,7 @@ VectorClass_flat * BlowPipe_23::QueryInterface(char a2)
     this->q004 = 0; /*0x63ee50*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = 0; /*0x63ee61*/
+  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x63ee68*/
     RA2_OPDEL(); /*0x63ee6b*/
   return this; /*0x63ee75*/
@@ -637,7 +637,7 @@ DynamicVector * BlowPipe_23::Destructor_0(char a2)
     this->q004 = 0; /*0x63eea0*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x63eeb1*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x63eeb8*/
     RA2_OPDEL(); /*0x63eebb*/
   return this; /*0x63eec5*/
@@ -657,7 +657,7 @@ DynamicVector * BlowPipe_23::Destructor_1(char a2)
     this->q004 = 0; /*0x63ef40*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x63ef51*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x63ef58*/
     RA2_OPDEL(); /*0x63ef5b*/
   return this; /*0x63ef65*/

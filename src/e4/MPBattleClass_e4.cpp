@@ -15,6 +15,8 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
 
 // 0x5C0DD0
 namespace gamemd {

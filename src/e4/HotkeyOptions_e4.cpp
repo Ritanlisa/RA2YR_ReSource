@@ -68,7 +68,7 @@ ObjectClass * * HotkeyOptions::DlgProc(int hWnd, unsigned int a2, unsigned int a
   {
   int v51; // edi
     int v46 = (int)(GetDlgItem(hWnd, 1224));
-    int v47 = SendMessageA(v46, 392, 0, 0); /*0x5fbad6*/
+    int v47 = (int)(SendMessageA(v46, 392, 0, 0));
     if ( v47 == -1 ) /*0x5fbadb*/
       return 1; /*0x5fbadb*/
     int v76 = SendMessageA(v46, 409, v47, 0); /*0x5fbaf2*/
@@ -209,7 +209,7 @@ LABEL_127:
     if ( a2 == 1124 ) /*0x5fb38a*/
     {
       v18 = (int)(GetDlgItem);
-      int v19 = GetDlgItem(hWnd, 1223); /*0x5fb502*/
+      int v19 = (int)(GetDlgItem(hWnd, 1223));
       if ( SendMessageA(v19, 327, 0, 0) != dword_832D8C ) /*0x5fb514*/
       {
         dword_832D8C = (int)(SendMessageA(v19, 327, 0, 0));

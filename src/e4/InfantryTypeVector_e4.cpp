@@ -30,8 +30,8 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1)
       return 0; /*0x512f4f*/
   }
   v6 = (unsigned int)(this->q010);
-  v7 = this->u32_4; /*0x512f58*/
-  this->q010 = v6 + 1; /*0x512f5e*/
+  v7 = (unsigned int)(this->u32_4);
+  this->q010 = (unsigned int)(v6 + 1);
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x512f68*/
   return 1; /*0x512f51*/
 }
@@ -49,7 +49,7 @@ unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
     if ( a3 ) /*0x513916*/
     {
       this->u32_4 = (unsigned int *)(a3);
-      return this; /*0x51391e*/
+      return (unsigned int *)(this);
     }
     this->u32_4 = (unsigned int)(operator new(4 * a2));
     this->u8_D = 1; /*0x513930*/
@@ -70,7 +70,7 @@ unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
     if ( a3 ) /*0x5d89c6*/
     {
       this->u32_4 = (unsigned int *)(a3);
-      return this; /*0x5d89ce*/
+      return (unsigned int *)(this);
     }
     this->u32_4 = (unsigned int)(operator new(4 * a2));
     this->u8_D = 1; /*0x5d89e0*/

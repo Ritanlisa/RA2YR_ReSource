@@ -33,9 +33,9 @@ unsigned int * WWMouseClass::initSurface()
       if ( v3 ) /*0x7b9060*/
       {
         v4 = (unsigned int)(this->q054);
-        v5 = this->q04C; /*0x7b906d*/
-        v6 = this->q050; /*0x7b9071*/
-        v9[0] = this->q02C + this->Rect0; /*0x7b9074*/
+        v5 = (unsigned int)(this->q04C);
+        v6 = (void *)((unsigned int)(this->q050));
+        v9[0] = (unsigned int)(this->q02C + this->Rect0);
         v7 = this->q030; /*0x7b9078*/
         v8[0] = 0; /*0x7b907f*/
         v8[1] = 0; /*0x7b9083*/
@@ -133,9 +133,9 @@ void* WWMouseClass::captureMouse()
   void * v13;
   unsigned int *v14; // eax
   IUnknown * v15;
-  int v16; // [esp+4h] [ebp-30h] BYREF
-  int v17; // [esp+8h] [ebp-2Ch]
-  int v18; // [esp+Ch] [ebp-28h]
+  IUnknown * v16;
+  IUnknown * v17;
+  IUnknown * v18;
   int v19; // [esp+10h] [ebp-24h]
   unsigned int v20[4]; // [esp+14h] [ebp-20h] BYREF
   unsigned int v21[4]; // [esp+24h] [ebp-10h] BYREF
@@ -169,10 +169,10 @@ void* WWMouseClass::captureMouse()
           v17 += this->q018 - v6; /*0x7b9b7d*/
           ReleaseMutex(hMutex); /*0x7b9b88*/
         }
-        v16 = (IUnknown *)(v16);
-        v17 = v17; /*0x7b9b8e*/
-        v18 = v18; /*0x7b9b98*/
-        v19 = v19; /*0x7b9b9c*/
+        v16 = (IUnknown *)((int)((IUnknown *)(v16)));
+        v17 = (IUnknown *)((int)((IUnknown *)(v17)));
+        v18 = (int)((IUnknown *)(v18));
+        v19 = (IUnknown *)(v19);
         v20[0] = v16; /*0x7b9ba0*/
         this->Rect0 = v16; /*0x7b9ba4*/
         v20[2] = v18; /*0x7b9ba7*/
@@ -237,9 +237,9 @@ void WWMouseClass::releaseMouse()
           if ( v4 ) /*0x7b9ce4*/
           {
             v5 = (unsigned int)(this->q04C);
-            v6 = this->q050; /*0x7b9cef*/
-            v7 = this->q054; /*0x7b9cf3*/
-            v10[0] = this->q02C + this->Rect0; /*0x7b9cf6*/
+            v6 = (unsigned int)(this->q050);
+            v7 = (void *)((unsigned int)(this->q054));
+            v10[0] = (unsigned int)(this->q02C + this->Rect0);
             v8 = this->q030 + v5; /*0x7b9cfd*/
             v9[0] = 0; /*0x7b9d03*/
             v9[1] = 0; /*0x7b9d07*/

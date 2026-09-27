@@ -97,7 +97,7 @@ int DSurface::Destroy()
   int v3; // eax
   unsigned char (*)[4] result;
 
-  v2 = (unsigned int)(this->q018);
+  v2 = (void *)((unsigned int)(this->q018));
   *(unsigned int *)this = &DSurface_Vtable; /*0x4ba6b9*/
   if ( v2 ) /*0x4ba6c1*/
   {
@@ -128,7 +128,7 @@ unsigned int * DSurface::CreatePrimary()
 {
   char v1; // bl
   const unsigned int v2;
-  const unsigned int v3;
+  const unsigned int * v3;
   unsigned int *v4; // eax
   void *v6; // edi
   unsigned int *v7; // ebp
@@ -166,7 +166,7 @@ unsigned int * DSurface::CreatePrimary()
   Debug::Log("DSurface::AllowStretchBlits = %s\n", v2); /*0x4ba7b4*/
   if ( (v1 & 0x10) != 0 ) /*0x4ba7bf*/
   {
-    v3 = g_Str_true; /*0x4ba7d1*/
+    v3 = (const unsigned int *)(g_Str_true);
     if ( g_DDraw_UseHWBlit == 1 ) /*0x4ba7d6*/
       goto LABEL_8; /*0x4ba7d6*/
   }
@@ -174,7 +174,7 @@ unsigned int * DSurface::CreatePrimary()
   {
     g_DDraw_UseHWBlit = 0; /*0x4ba7c1*/
   }
-  v3 = (unsigned int *)(g_Str_false);
+  v3 = (const unsigned int)((unsigned int *)(g_Str_false));
   LABEL_8:
   Debug::Log("DSurface::AllowHWFill = %s\n", v3); /*0x4ba7dd*/
   v4 = operator new(0x24u); /*0x4ba7ea*/
@@ -182,10 +182,10 @@ unsigned int * DSurface::CreatePrimary()
   if ( v4 ) /*0x4ba7f8*/
   {
     v4[1] = (unsigned int)(0);
-    v4[2] = 0; /*0x4ba7ff*/
-    v4[3] = 0; /*0x4ba802*/
-    v4[4] = 0; /*0x4ba805*/
-    v4[5] = 0; /*0x4ba808*/
+    v4[2] = (unsigned int)(0);
+    v4[3] = (unsigned int)(0);
+    v4[4] = (unsigned int)(0);
+    v4[5] = (unsigned int)(0);
     *((unsigned char *)v4 + 24) = 0; /*0x4ba80b*/
     *((unsigned char *)v4 + 25) = 0; /*0x4ba80e*/
     v4[7] = 0; /*0x4ba811*/

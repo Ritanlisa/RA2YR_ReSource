@@ -184,7 +184,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   int v15; // eax
   unsigned int v16; // edi
   int v17; // eax
-  int v18; // eax
+  BuildingTypeClass * v18;
   int v19; // ecx
   int v20; // esi
   int v21; // edi
@@ -245,7 +245,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
   unsigned int v77[24]; // [esp+D0h] [ebp-C0h] BYREF
   unsigned int v78[24]; // [esp+130h] [ebp-60h] BYREF
 
-  v1 = (unsigned int)(a1);
+  v1 = (gamemd::BuildingTypeClass *)((unsigned int)(a1));
   IDA_LODWORD(v72) = a1; /*0x550a03*/
   if ( (byte_ABC7C8 & 1) == 0 ) /*0x550a07*/
   {
@@ -285,7 +285,7 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
     atexit(nullsub_22); /*0x550b1f*/
   }
   v2 = (unsigned int)(v1[9]);
-  v59 = v1[12]; /*0x550b33*/
+  v59 = (unsigned int)(v1[12]);
   v58 = v2; /*0x550b37*/
   v3 = Math::CalcAngle((double)v1[10] - (double)v1[13], (double)(int)v59 - (double)v2); /*0x550b56*/
   IDA_LOWORD(v59) = Math::RoundToInt((v3 - 1.570796326794897) * -10430.06004058427); /*0x550b6f*/
@@ -342,9 +342,9 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
     IDA_LOBYTE(v11) = v14 >> 1; /*0x550cd2*/
   }
   v63 = (int)(v75);
-  v64 = v76; /*0x550ce3*/
-  v68 = v75; /*0x550ce7*/
-  v69 = v76; /*0x550cef*/
+  v64 = (int)(v76);
+  v68 = (int)(v75);
+  v69 = (int)(v76);
   v67 = v74; /*0x550cf7*/
   v62 = v74; /*0x550cff*/
   v15 = v1[7]; /*0x550d03*/
@@ -359,9 +359,9 @@ void PrepareTacticalClassCellTransform(BuildingTypeClass * a1)
     {
       if ( v17 ) /*0x550d33*/
       {
-        v18 = (gamemd::BuildingTypeClass *)(4 * v16);
-        v19 = dword_ABC7F8[4 * v16]; /*0x550d42*/
-        v20 = dword_ABC7FC[4 * v16]; /*0x550d48*/
+        v18 = (gamemd::BuildingTypeClass *)((int)((gamemd::BuildingTypeClass *)(4 * v16)));
+        v19 = (gamemd::BuildingTypeClass *)(dword_ABC7F8[4 * v16]);
+        v20 = (gamemd::BuildingTypeClass *)(dword_ABC7FC[4 * v16]);
         v68 += v19; /*0x550d52*/
         v69 += v20; /*0x550d5a*/
         v21 = dword_ABC800[4 * v16]; /*0x550d5e*/

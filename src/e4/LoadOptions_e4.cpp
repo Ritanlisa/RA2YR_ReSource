@@ -13,13 +13,13 @@
 namespace gamemd {
 char LoadOptions::AddRef(LPCCH lpMultiByteStr)
 {
-  int v1; // esi
+  wchar_t * v1;
   wchar_t *StringCSF; // eax
   HWND MessageBox; // edi
   char Saved; // bl
 
-  v1 = (wchar_t *)((*(int (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance));
-  StringCSF = GetStringCSF(aTxtLoading, 0, g_Str_File_LoadDlg_CPP, 1052); /*0x559d83*/
+  v1 = (wchar_t *)((int)((wchar_t *)((*(int (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 40))(g_WWMouseClass_Instance))));
+  StringCSF = (wchar_t *)(GetStringCSF(aTxtLoading, 0, g_Str_File_LoadDlg_CPP, 1052));
   MessageBox = CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559d97*/
   (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x559d9b*/
   if ( MessageBox ) /*0x559da0*/
@@ -182,7 +182,7 @@ LoadOptions * LoadOptions::QueryInterface(char a2)
   void * v3;
   void * v4;
 
-  v3 = (unsigned int)(0);
+  v3 = (void *)((unsigned int)(0));
   for ( *(unsigned int *)this = (void*)&LoadOptionsClass_vftable; v3 < this->capacity; ++v3 ) /*0x55a0e1*/
     RA2_OPDEL(*(void **)(this->q024 + 4 * v3)); /*0x55a0ea*/
   (*(void (__thiscall **)(char *))(this->is_active + 12))(&this->q00C2); /*0x55a102*/
@@ -280,9 +280,9 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
         this->Items = 0; /*0x55a3a1*/
       }
     }
-    this->Items = (void *)(v4);
-    this->Capacity = a2; /*0x55a3b2*/
-    this->IsAllocated = a3 == 0; /*0x55a3b5*/
+    this->Items = (unsigned int)((void *)(v4));
+    this->Capacity = (unsigned int)((void *)(a2));
+    this->IsAllocated = (void *)(a3 == 0);
   }
   else
   {
@@ -328,7 +328,7 @@ VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a
     this->Items = 0; /*0x55a430*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->Capacity = 0; /*0x55a441*/
+  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x55a448*/
     RA2_OPDEL(); /*0x55a44b*/
   return this; /*0x55a455*/
@@ -348,7 +348,7 @@ DynamicVector * LoadOptions::vt00(char a2)
     this->Items = 0; /*0x55a480*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->Capacity = 0; /*0x55a491*/
+  this->Capacity = (unsigned int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x55a498*/
     RA2_OPDEL(); /*0x55a49b*/
   return this; /*0x55a4a5*/

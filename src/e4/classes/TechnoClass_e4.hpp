@@ -2216,7 +2216,6 @@ struct TechnoClass {
     unsigned int vtable30;
     unsigned int vtable31;
     unsigned int vtable32;
-    unsigned int CreatePlanningNode;
 // --- flat members (END) ---
     BOOL processDamageAnimation(int a1);
     BOOL updateWeaponCooldown(int a1);
@@ -2245,6 +2244,7 @@ struct TechnoClass {
     static double MutateAll(...);  // C2597 interim stub
     static double SetFocus(...);  // C2597 interim stub
     static double EjectPassengers(...);  // C2597 interim stub
+    static double CreatePlanningNode(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

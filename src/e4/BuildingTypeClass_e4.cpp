@@ -21,6 +21,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/Building_e4.hpp"
 
 // 0x45DD90
 namespace gamemd {
@@ -230,8 +232,8 @@ int BuildingTypeClass::ConstructFull(char * Source)
   this->ProtectWithWall = 0; /*0x45e266*/
   this->CanHideThings = 1; /*0x45e26c*/
   this->CrateBeneath = 0; /*0x45e273*/
-  this->LeaveRubble = 0; /*0x45e279*/
-  this->CrateBeneathIsMoney = 0; /*0x45e284*/
+  this->LeaveRubble = (unsigned int)(0);
+  this->CrateBeneathIsMoney = (unsigned int)(0);
   this->NumberOfDocks = 1; /*0x45e28a*/
   this->PreventsPlacementOverlap = 0; /*0x45e292*/
   this->ProductionCompletionThreshold = 1; /*0x45e298*/
@@ -559,10 +561,10 @@ AbstractClass * * BuildingTypeClass::LoadRepairAnimations()
       if ( v8 ) /*0x45eb6c*/
       {
         v8[3] = (unsigned int)(0);
-        *v8 = &XSurface_Vtable; /*0x45eb78*/
-        v8[1] = v9 + 16; /*0x45eb80*/
-        v8[2] = v9 + 16; /*0x45eb8b*/
-        v8[4] = 1; /*0x45eb8e*/
+        *v8 = (unsigned int)(&XSurface_Vtable);
+        v8[1] = (unsigned int)(v9 + 16);
+        v8[2] = (unsigned int)(v9 + 16);
+        v8[4] = (unsigned int)(1);
         Buffer::Init(v8 + 5, 0, (v9 + 16) * (v9 + 16)); /*0x45eb95*/
         *v8 = &BSurface_Vtable; /*0x45eb9a*/
         dword_89DDC0 = (int)v8; /*0x45eba0*/
@@ -681,8 +683,8 @@ void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
       this->q14FC = 0; /*0x45f46a*/
       *v8 = 0; /*0x45f470*/
     }
-    v9 = (unsigned int)(LoadFileSHP(Source, (bool *)(&this->q8646)));
-    this->q14FC = v9; /*0x45f47f*/
+    v9 = (void *)((unsigned int)(LoadFileSHP(Source, (bool *)(&this->q8646))));
+    this->q14FC = (unsigned int)(v9);
     if ( !v9 ) /*0x45f485*/
     {
       ObjectTypeClass::SetRTTI71(Source); /*0x45f48b*/
@@ -796,8 +798,8 @@ void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
       this->q1504 = 0; /*0x45f776*/
       *v15 = 0; /*0x45f77c*/
     }
-    v16 = (unsigned int)(LoadFileSHP(Source, (bool *)(&this->q8684)));
-    this->q1504 = v16; /*0x45f78b*/
+    v16 = (void *)((unsigned int)(LoadFileSHP(Source, (bool *)(&this->q8684))));
+    this->q1504 = (unsigned int)(v16);
     if ( !v16 ) /*0x45f791*/
     {
       ObjectTypeClass::SetRTTI71(Source); /*0x45f797*/
@@ -807,7 +809,7 @@ void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
         this->q1504 = 0; /*0x45f7b3*/
         *v15 = 0; /*0x45f7b9*/
       }
-      this->q1504 = SearchMIXFile(Source, 0); /*0x45f7c6*/
+      this->q1504 = (unsigned int)(SearchMIXFile(Source, 0));
     }
   }
   INIClass::GetString( /*0x45f7e9*/

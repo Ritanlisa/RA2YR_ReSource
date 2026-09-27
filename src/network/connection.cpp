@@ -109,7 +109,7 @@ bool IPXConnClass::initConnection(void * a1, void * a2, void * a3, void * a4, vo
   _DWORD *v10; // eax
 
   this->q024 = (_DWORD *)(a5);
-  this->RemoteSocket = a6; /*0x48be7b*/
+  this->RemoteSocket = (_DWORD *)(a6);
   *(_DWORD *)this = &(void*)(void*)&ConnectionClass_vftable; /*0x48be83*/
   this->RemoteAddress = a4 + 14; /*0x48be89*/
   this->q02C = a7; /*0x48be8c*/
@@ -177,13 +177,13 @@ int32_t IPXConnClass::receive(uint8_t* buffer, int32_t maxLen, void * a1, void *
   v9 = 0; /*0x53f6b2*/
   if ( (_BYTE)a6 || !g_Network_IsHosting ) /*0x53f6c3*/
   {
-    v10 = a2; /*0x53f767*/
+    v10 = (int)(a2);
   LABEL_13:
     *(_WORD *)(v10 + 12) = 0; /*0x53f76b*/
     *(_DWORD *)(v10 + 8) = 0; /*0x53f774*/
     goto LABEL_14; /*0x53f774*/
   }
-  v10 = a2; /*0x53f6c9*/
+  v10 = (int)(a2);
   if ( !*(_BYTE *)(a2 + 3) ) /*0x53f6cd*/
   {
     LinkedIndex = Factory::GetLinkedIndex(&g_NetworkEventQueue, *(&this->Active5)); /*0x53f6dd*/

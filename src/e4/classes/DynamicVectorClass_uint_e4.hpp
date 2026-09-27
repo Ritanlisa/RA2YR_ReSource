@@ -10,7 +10,7 @@ struct DynamicVectorClass_uint {
     void* Items;  // 0x4
     unsigned int q008;  // 0x8
     bool q00A;  // 0xA
-    unsigned int q00C;  // 0xC
+    void* ;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned int tail_E;  // 0xE
     unsigned int q010;  // 0x10
@@ -184,6 +184,7 @@ struct DynamicVectorClass_uint {
     unsigned int Count;
     unsigned int IsInitialized;
     unsigned int Items2;
+    unsigned int q00C;
 // --- flat members (END) ---
     void ddtor();  // 0x42D540
     int Clear(int a2);  // 0x42D590

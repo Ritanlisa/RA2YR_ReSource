@@ -48,7 +48,7 @@ void* JumpjetLocomotionClass::Update2()
   unsigned int *v14; // edi
   double v15; // st7
   unsigned int *v16; // eax
-  int v17; // ebx
+  void * v17;
   int Byte284; // eax
   float *v19; // eax
   double v20; // st7
@@ -96,19 +96,19 @@ void* JumpjetLocomotionClass::Update2()
   unsigned int v69[3]; // [esp+50h] [ebp-F8h] BYREF
   unsigned int v70[2]; // [esp+5Ch] [ebp-ECh] BYREF
   int v71; // [esp+64h] [ebp-E4h]
-  double v72; // [esp+6Ch] [ebp-DCh] BYREF
+  unsigned int v72;
   float v73[4]; // [esp+78h] [ebp-D0h] BYREF
   float v74[12]; // [esp+88h] [ebp-C0h] BYREF
   float v75[12]; // [esp+B8h] [ebp-90h] BYREF
   float v76[12]; // [esp+E8h] [ebp-60h] BYREF
   char v77[48]; // [esp+118h] [ebp-30h] BYREF
 
-  v1 = (unsigned int)((float *)this);
-  v2 = this->Powered; /*0x439b17*/
-  v3 = (float *)(&this->Owner4); /*0x439b1a*/
-  v58 = v2; /*0x439b22*/
-  v5 = this->Accel; /*0x439b28*/
-  v6 = this->Speed; /*0x439b2b*/
+  v1 = (float *)((unsigned int)((float *)this));
+  v2 = (void *)((unsigned int)(this->Powered));
+  v3 = (void *)((unsigned int)((float *)(&this->Owner4)));
+  v58 = (void *)((unsigned int)(v2));
+  v5 = (double)((unsigned int)(this->Accel));
+  v6 = (unsigned int)(this->Speed);
   v63 = this->vtable3; /*0x439b2e*/
   v7 = v5 - this->Owner; /*0x439b32*/
   v8 = this->Climb; /*0x439b35*/
@@ -133,8 +133,8 @@ void* JumpjetLocomotionClass::Update2()
     }
   }
   v46 = (unsigned int *)(Math::RoundToInt(v3[2]));
-  v41 = Math::RoundToInt(v3[1]); /*0x439bad*/
-  v12 = Math::RoundToInt(*v3); /*0x439bae*/
+  v41 = (unsigned int *)(Math::RoundToInt(v3[1]));
+  v12 = (unsigned int *)(Math::RoundToInt(*v3));
   Coord3D::Set(v70, v12, v41, v46); /*0x439bb8*/
   Vector3::AddAssign(v4); /*0x439bc0*/
   v47 = Math::RoundToInt(v3[2]); /*0x439bd0*/
@@ -216,8 +216,7 @@ void* JumpjetLocomotionClass::Update2()
     goto LABEL_33; /*0x439d3d*/
   }
   LABEL_32: v3[2] = (void *)((float)(v61 - 20));
-  LABEL_35:
-  Byte284 = CellClass::GetByte284(v69); /*0x439d91*/
+  LABEL_35: Byte284 = (int)((void *)(CellClass::GetByte284(v69)));
   qmemcpy(v75, CopyAudioData(v77, Byte284), sizeof(v75)); /*0x439dc4*/
   v19 = InvertMatrix3x3Signs(v76, v75); /*0x439dcd*/
   v20 = *((float *)v4 + 1); /*0x439dd2*/
@@ -259,11 +258,11 @@ void* JumpjetLocomotionClass::Update2()
     && (v10 < -0.0002 && v24[8] > (double)v8 || v10 >= -0.0003 && v10 + v8 + 1.0 < v24[8]) )
   {
     v30 = (float)(v6);
-    v31 = v8; /*0x439fbf*/
-    *v3 = v63; /*0x439fc3*/
-    v3[1] = v30; /*0x439fc6*/
-    v66 = v66; /*0x439fc9*/
-    v3[2] = v31; /*0x439fcf*/
+    v31 = (float)(v8);
+    *v3 = (float)(v63);
+    v3[1] = (float)(v30);
+    v66 = (float)(v66);
+    v3[2] = (float)(v31);
     v33 = v9; /*0x439fd2*/
     *(unsigned int *)v4 = v66; /*0x439fd6*/
     v34 = v10; /*0x439fd8*/
@@ -284,10 +283,9 @@ void* JumpjetLocomotionClass::Update2()
       *((float *)v4 + 2) = v37 * *((float *)v4 + 2); /*0x43a05a*/
     }
   }
-  v1 = (void *)((float *)this);
-  v17 = 1; /*0x43a061*/
-  LABEL_43:
-  v38 = QuaternionMathMultiply(v73, v1 + 12, v1 + 16); /*0x43a066*/
+  v1 = (float *)((void *)((float *)this));
+  v17 = (void *)((int)((void *)(1)));
+  LABEL_43: v38 = (float *)((void *)(QuaternionMathMultiply(v73, v1 + 12, v1 + 16)));
   Float4::Copy(v1 + 12, v70, v38); /*0x43a080*/
   v39 = JumpjetLocomotionClass::ComputeVectorLengthMetric(v1); /*0x43a087*/
   result = 2; /*0x43a098*/

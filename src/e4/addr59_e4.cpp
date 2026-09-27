@@ -43,8 +43,8 @@ void PlaceCabhutMap(FootClass * aP0)
   int v13; // edx
   unsigned int v14[3]; // [esp+10h] [ebp-Ch] BYREF
 
-  aP0 = (int)(aP0);
-  v2 = aP0[1]; /*0x5904bb*/
+  aP0 = (gamemd::FootClass *)((int)(aP0));
+  v2 = (int)(aP0[1]);
   if ( v2 >= aP0[3] + v2 + 1 ) /*0x5904c7*/
     return 0; /*0x59052b*/
   while ( 1 ) /*0x5904c9*/

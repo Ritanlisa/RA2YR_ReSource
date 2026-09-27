@@ -15,7 +15,7 @@ int WideString::WordWrap(wchar_t * a0, CampaignScore * aP1, int a3, CampaignScor
 {
   wchar_t *v6; // ebp
   signed int v7; // eax
-  unsigned int v8;
+  CampaignScore * v8;
   CampaignScore * v9;
   wchar_t *v10; // esi
   wchar_t *v11; // edx
@@ -166,13 +166,12 @@ AbstractClass * * WideString::Replace(CampaignScore * aP1, wchar_t * String)
   }
   if ( !v5 ) /*0x7b7581*/
   {
-    v3 = (const wchar_t *)(this);
-  LABEL_33:
-    v16 = &g_TypeClass_DefaultString; /*0x7b7587*/
+    v3 = (void **)((const wchar_t *)(this));
+  LABEL_33: v16 = (const wchar_t *)(&g_TypeClass_DefaultString);
     goto LABEL_35; /*0x7b758c*/
   }
-  v3 = (unsigned short *)(this);
-  v16 = v5; /*0x7b7592*/
+  v3 = (void **)((unsigned short *)(this));
+  v16 = (const wchar_t *)((unsigned short *)(v5));
   LABEL_35:
   if ( *v3 ) /*0x7b7594*/
     RA2_OPDEL(*v3); /*0x7b759b*/
@@ -340,7 +339,7 @@ void ** WideString::Reassign_Alt(const wchar_t ** a2)
   v3 = (const wchar_t *)*this; /*0x7b68e8*/
   if ( (*this || *a2) && (!v3 || !*a2 || wcscmp(v3, *a2)) ) /*0x7b68ff*/
   {
-    v4 = (unsigned short *)((wchar_t *)*a2);
+    v4 = (wchar_t *)((unsigned short *)((wchar_t *)*a2));
     if ( !*a2 ) /*0x7b690b*/
       v4 = &g_TypeClass_DefaultString; /*0x7b6911*/
     if ( *this ) /*0x7b6916*/
@@ -364,7 +363,7 @@ void ** WideString::Reassign_Alt(const wchar_t ** a2)
 namespace gamemd {
 wchar_t ** WideString::Append2(CampaignScore * aP1)
 {
-  wchar_t *v3; // esi
+  const wchar_t * v3;
   size_t v4; // edi
   wchar_t *v5; // eax
 
@@ -561,7 +560,7 @@ char WideString::RemoveChar(wchar_t a2)
   size_t v8; // eax
   wchar_t *v9; // edi
 
-  v3 = (wchar_t *)(0);
+  v3 = (char)((wchar_t *)(0));
   if ( !*this ) /*0x7b6e26*/
     return 0; /*0x7b6e2d*/
   v5 = wcslen(*this); /*0x7b6e3f*/
@@ -593,7 +592,7 @@ CampaignScore * WideString::GetOrEmpty()
 {
   wchar_t *result; // eax
 
-  result = *this; /*0x7b7100*/
+  result = (gamemd::CampaignScore *)(*this);
   if ( !*this ) /*0x7b7100*/
     return &g_TypeClass_DefaultString; /*0x7b7106*/
   return result; /*0x7b710b*/
@@ -606,7 +605,7 @@ CampaignScore * WideString::GetOrEmpty_Alt()
 {
   wchar_t *result; // eax
 
-  result = *this; /*0x7b7140*/
+  result = (gamemd::CampaignScore *)(*this);
   if ( !*this ) /*0x7b7140*/
     return &g_TypeClass_DefaultString; /*0x7b7146*/
   return result; /*0x7b714b*/

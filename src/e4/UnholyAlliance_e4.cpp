@@ -13,6 +13,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
 
 // 0x5CB440
 namespace gamemd {

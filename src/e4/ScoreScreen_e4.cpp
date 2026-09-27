@@ -27,9 +27,9 @@ unsigned int * ScoreScreen::LoadScoreFont(ScoreFontClass * aP1)
   int v7; // [esp+6Ch] [ebp-8h]
 
   this->q004 = (int)(0);
-  this->q008 = 0; /*0x690a1c*/
-  this->q00C = 0; /*0x690a1f*/
-  this->q014 = 0; /*0x690a22*/
+  this->q008 = (int)(0);
+  this->q00C = (int)(0);
+  this->q014 = (int)(0);
   ScoreScreen::LoadAudio(); /*0x690a2b*/
   ++dword_B0558C; /*0x690a3c*/
   this->q010 = 0; /*0x690a4a*/
@@ -84,9 +84,9 @@ unsigned int * ScoreScreen::LoadCountryFlags(int a2)
     BufferIOFileClass::Dtor(v5); /*0x690b7e*/
   }
   this->q004 = (unsigned int *)(20);
-  this->q014 = a2; /*0x690b8e*/
-  this->q008 = 35; /*0x690b91*/
-  return this; /*0x690b9a*/
+  this->q014 = (unsigned int *)(a2);
+  this->q008 = (unsigned int *)(35);
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 // 0x690F30
@@ -94,11 +94,11 @@ namespace gamemd {
 unsigned int * ScoreScreen::Constructor(ScoreAnimClass * aP1, int a3, int a4)
 {
   this->q008 = (unsigned int *)(a3);
-  this->q004 = aP1; /*0x690f41*/
-  this->q00C = Timer::GetTicks(); /*0x690f4d*/
-  this->q014 = 0; /*0x690f50*/
-  this->q018 = a4; /*0x690f57*/
-  return this; /*0x690f62*/
+  this->q004 = (unsigned int *)(aP1);
+  this->q00C = (unsigned int *)(Timer::GetTicks());
+  this->q014 = (unsigned int *)(0);
+  this->q018 = (unsigned int *)(a4);
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 // 0x7712C0

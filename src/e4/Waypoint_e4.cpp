@@ -14,17 +14,17 @@
 namespace gamemd {
 unsigned int * Waypoint::FindByCell(IUnknown * aP1)
 {
-  signed int v2; // esi
+  char * v2;
   char *i; // ebx
   void *v4; // eax
   int v5; // eax
   unsigned int *v6; // ecx
   int v7; // edi
   unsigned int *Element; // esi
-  signed int v10; // [esp+10h] [ebp-4h]
+  char * v10;
 
-  v2 = (char *)(0);
-  v10 = 0; /*0x5023bb*/
+  v2 = (char *)((int)((char *)(0)));
+  v10 = (char *)((int)((char *)(0)));
   for ( i = &this->u32_840; ; i += 4 ) /*0x5023bf*/
   {
     if ( !*(unsigned int *)i ) /*0x5023c5*/
@@ -36,7 +36,7 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
         v5 = 0; /*0x5023e2*/
       *(unsigned int *)i = v5; /*0x5023e4*/
     }
-    v6 = *(unsigned int **)i; /*0x5023e6*/
+    v6 = (int)(*(unsigned int **)i);
     v7 = 0; /*0x5023e8*/
     if ( *(int *)(this->u32_878 > 0 ) /*0x5023ef*/
       break; /*0x5023ef*/
@@ -53,7 +53,7 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
     v6 = *(unsigned int **)i; /*0x502424*/
     if ( ++v7 >= *(unsigned int *)(this->u32_878 ) /*0x50242a*/
     {
-      v2 = v10; /*0x50242c*/
+      v2 = (char *)(v10);
       goto LABEL_12; /*0x50242c*/
     }
   }
@@ -106,8 +106,8 @@ CHAR * Waypoint::To_String(CCINIClass * aP0)
 {
   if ( aP0 == -1 ) /*0x763613*/
   {
-    byte_B72654 = (CHAR *)(0);
-    return &byte_B72654; /*0x76361c*/
+    byte_B72654 = (unsigned char)((CHAR *)(0));
+    return (CHAR *)(&byte_B72654);
   }
   else
   {

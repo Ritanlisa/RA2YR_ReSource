@@ -22,6 +22,7 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Display_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x574600
 namespace gamemd {
@@ -150,7 +151,7 @@ Coord * * sub_575EE0(void * a1, int a2)
         IDA_HIWORD(v37) = IDA_HIWORD(a2) + IDA_HIWORD(g_DirectionOffsetPool); /*0x575fc2*/
         g_Map_GlobalCellIndex = v37; /*0x575fee*/
       }
-      v11 = (int)((void **)*((unsigned int *)v10 + 15));
+      v11 = (void **)((int)((void **)*((unsigned int *)v10 + 15)));
       if ( v11 ) /*0x575ff9*/
         TeamClass::Update_0(v11, 31, 0, g_MapSeedState, 0, 0); /*0x576009*/
       v12 = *CellStruct::Add(&a2, &v32, Direction_X_Offsets); /*0x576021*/
@@ -164,7 +165,7 @@ Coord * * sub_575EE0(void * a1, int a2)
         g_Map_GlobalCellIndex = v12; /*0x57604e*/
         v15 = &g_CellClassArray; /*0x576054*/
       }
-      v16 = (int)((void **)*((unsigned int *)v15 + 15));
+      v16 = (void **)((int)((void **)*((unsigned int *)v15 + 15)));
       if ( v16 ) /*0x57605e*/
         TeamClass::Update_0(v16, 31, 0, g_MapSeedState, 0, 0); /*0x57606e*/
       v17 = *CellStruct::Add((unsigned short *)v15 + 18, &v33, Direction_X_Offsets); /*0x576085*/
@@ -188,7 +189,7 @@ Coord * * sub_575EE0(void * a1, int a2)
         g_Map_GlobalCellIndex = v20; /*0x576119*/
         v22 = &g_CellClassArray; /*0x57611f*/
       }
-      v23 = (int)((void **)*((unsigned int *)v22 + 15));
+      v23 = (void **)((int)((void **)*((unsigned int *)v22 + 15)));
       if ( v23 ) /*0x576129*/
         TeamClass::Update_0(v23, 31, 0, g_MapSeedState, 0, 0); /*0x576139*/
       v24 = *CellStruct::Add(&a2, &v35, &Direction_Y_Offsets); /*0x576151*/
@@ -202,7 +203,7 @@ Coord * * sub_575EE0(void * a1, int a2)
         g_Map_GlobalCellIndex = v24; /*0x57617e*/
         v27 = &g_CellClassArray; /*0x576184*/
       }
-      v28 = (int)((void **)*((unsigned int *)v27 + 15));
+      v28 = (void **)((int)((void **)*((unsigned int *)v27 + 15)));
       if ( v28 ) /*0x57618e*/
         TeamClass::Update_0(v28, 31, 0, g_MapSeedState, 0, 0); /*0x57619e*/
       v31 = *CellStruct::Add((unsigned short *)v27 + 18, &v36, &Direction_Y_Offsets); /*0x5761c1*/
@@ -221,7 +222,7 @@ namespace gamemd {
 void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
 {
   char v2; // bl
-  int v3; // esi
+  unsigned int * v3;
   unsigned int *v4; // ebp
   unsigned int *v5; // edi
   int v6; // edi
@@ -231,12 +232,12 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   int k; // esi
   char v12; // [esp+13h] [ebp-5h]
 
-  v2 = 1; /*0x578e72*/
+  v2 = (unsigned int *)(1);
   v12 = 0; /*0x578e74*/
   if ( !g_MapTileArray ) /*0x578e79*/
   {
-    v3 = (unsigned int *)(g_MapCellWidth * g_MapCellWidth);
-    v4 = operator new(80 * g_MapCellWidth * g_MapCellWidth); /*0x578e90*/
+    v3 = (int)((unsigned int *)(g_MapCellWidth * g_MapCellWidth));
+    v4 = (unsigned int *)(operator new(80 * g_MapCellWidth * g_MapCellWidth));
     if ( v4 ) /*0x578e97*/
     {
       v5 = v4; /*0x578e9c*/
@@ -301,10 +302,10 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
 namespace gamemd {
 MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, IUnknown * aP2, int aP1a, int a5)
 {
-  MapClass * v7;
+  IUnknown * v7;
   char *CellData; // esi
   int TerrainMask; // eax
-  IUnknown * v10;
+  unsigned int v10;
   int * v11;
   unsigned int v12;
   int * v13;
@@ -312,7 +313,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
   char v15; // al
   int * v16;
   unsigned int v17;
-  char v18; // bl
+  int * v18;
   int * v19;
   unsigned int v20;
   IUnknown * v21;
@@ -344,9 +345,9 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
   unsigned int v52[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
   aP2 = (IUnknown *)(aP2);
-  v7 = aP2->outBuffer; /*0x57a43d*/
-  v52[2] = aP0; /*0x57a444*/
-  v45 = 0; /*0x57a448*/
+  v7 = (unsigned int)((IUnknown *)(aP2->outBuffer));
+  v52[2] = (IUnknown *)(aP0);
+  v45 = (IUnknown *)(0);
   aP2 = v7; /*0x57a44d*/
   CellData = Tactical::GetCellData((int16_t *)&aP2); /*0x57a45b*/
   *((unsigned int *)CellData + 16) = Cell::GetTerrainMask(aP0, (int *)aP2, 2); /*0x57a467*/
@@ -375,8 +376,8 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
         IDA_HIWORD(v46) = IDA_HIWORD(aP2->outBuffer); /*0x57a4ea*/
         g_Map_GlobalCellIndex = v46; /*0x57a51e*/
       }
-      v52[0] = (int *)(Cell::GetTerrainMask(aP0, v12, 0));
-      v51 = aP2->outBuffer; /*0x57a535*/
+      v52[0] = (unsigned int)((int *)(Cell::GetTerrainMask(aP0, v12, 0)));
+      v51 = (int *)(aP2->outBuffer);
       v13 = (int16_t)(v51 + 2) + (IDA_SHIWORD(v51) << 9); /*0x57a554*/
       if ( v13 >= 0x40000 || (v14 = *(int **)(g_Shroud_CellArray + 4 * v13)) == 0 ) /*0x57a56a*/
       {
@@ -400,8 +401,8 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
         g_Map_GlobalCellIndex = v48; /*0x57a5db*/
         v17 = g_CellClassArray; /*0x57a5e0*/
       }
-      v18 = (int *)(Cell::GetTerrainMask(aP0, v17, 0));
-      v52[0] = aP2->outBuffer; /*0x57a5f4*/
+      v18 = (int *)((char)((int *)(Cell::GetTerrainMask(aP0, v17, 0))));
+      v52[0] = (int *)(aP2->outBuffer);
       IDA_HIWORD(v49) = IDA_HIWORD(v52[0]); /*0x57a600*/
       v19 = (int16_t)(IDA_LOWORD(v52[0]) - 2) + (IDA_SHIWORD(v52[0]) << 9); /*0x57a613*/
       if ( v19 >= 0x40000 || (v20 = *(int **)(g_Shroud_CellArray + 4 * v19)) == 0 ) /*0x57a629*/

@@ -267,7 +267,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
     {
       if ( this->q034 ) /*0x632e01*/
       {
-        v9 = (gamemd::CampaignClass *)(this->q050);
+        v9 = (unsigned int)((gamemd::CampaignClass *)((unsigned int)((gamemd::CampaignClass *)(this->q050))));
         if ( v9 >= aP2 ) /*0x632e7e*/
           v9 = aP2; /*0x632e80*/
         memcpy((void *)(this->u32_13C - this->q050 + &this->q0180), Src, v9); /*0x632e97*/

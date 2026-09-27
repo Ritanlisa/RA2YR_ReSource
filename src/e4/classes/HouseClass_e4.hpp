@@ -1822,7 +1822,6 @@ struct HouseClass {
     unsigned int productionFactory_plants5;
     unsigned int q54E4;
     unsigned int gap0;
-    unsigned int AIBuildBase;
     unsigned int CheckWinCondition;
     unsigned int FindOwner;
     unsigned int GetPowerRatio;
@@ -1865,7 +1864,7 @@ struct HouseClass {
     int QueryInterface(CCINIClass * aP0, const void * a1, unsigned int * a2);
     int QueryInterface_Dispatch();
     int QueryInterface_Helper();
-    int RespawnStartingForces(TechnoClass * aP0, _UNKNOWN ** a1, unsigned int * a2, int a4);
+    int RespawnStartingForces(TechnoClass * aP0, void ** a1, unsigned int * a2, int a4);
     int RevealShroudForAllies(char a1, int a2);
     int SetPrimaryFactory(int a2);
     int UpdatePower();

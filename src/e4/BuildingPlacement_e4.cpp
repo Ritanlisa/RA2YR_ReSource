@@ -14,6 +14,7 @@
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Building_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x4FB840
 namespace gamemd {
@@ -30,7 +31,7 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
   a2 = a2; /*0x4fb85f*/
   if ( !a2 ) /*0x4fb865*/
     return (void *)(0);
-  a3 = a3; /*0x4fb86b*/
+  a3 = (unsigned int *)((void *)(a3));
   if ( !a3 ) /*0x4fb871*/
     return 0; /*0x4fb919*/
   MapClass::UnselectAll_ClearLimboLaunchers(); /*0x4fb877*/
@@ -590,8 +591,7 @@ unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknow
   int16_t v13[2]; // [esp+Ch] [ebp-18h] BYREF
   int v14; // [esp+10h] [ebp-14h] BYREF
   unsigned int v15[4]; // [esp+14h] [ebp-10h] BYREF
-
-  v2 = a2; /*0x500205*/
+v2 = (unsigned int *)(a2);
   v3 = (*(int (__thiscall **)(unsigned int *))(*a2 + 732))(a2); /*0x50021a*/
   v4 = (*(int (__thiscall **)(unsigned int *))(*v2 + 728))(v2) + v3; /*0x500222*/
   if ( (*(int (__thiscall **)(unsigned int *))(*v2 + 724))(v2) + v4 ) /*0x50022e*/
@@ -627,7 +627,7 @@ unsigned int * BuildingPlacement::FindPosition(int * a0, IUnknown * aP1, IUnknow
            v13,
            0,
            0);
-  *a1 = v11; /*0x5002f2*/
+  *a1 = (void *)(v11);
   return a1; /*0x5002f0*/
 }
 } // namespace gamemd

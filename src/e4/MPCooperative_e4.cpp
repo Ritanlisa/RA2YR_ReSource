@@ -120,8 +120,8 @@ int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
         continue; /*0x49be03*/
     }
     v14 = (unsigned int)(a2->q010);
-    v15 = a2->q004; /*0x49be0d*/
-    a2->q010 = v14 + 1; /*0x49be13*/
+    v15 = (unsigned int)(a2->q004);
+    a2->q010 = (unsigned int)(v14 + 1);
     *(unsigned int *)(v15 + 4 * v14) = v11; /*0x49be16*/
   }
   *aP2 = this->q068; /*0x49be28*/
@@ -244,7 +244,7 @@ int MPCooperative::WriteCoopSaveINI()
   v24 = 0; /*0x49c097*/
   Vector::Clear((int)v23); /*0x49c09e*/
   v22[0] = &off_7E1668; /*0x49c0aa*/
-  BufferIOFileClass::Dtor(v22, unsigned int a2, unsigned int a24, unsigned int a52, unsigned int a16, unsigned int a44, unsigned int a28, unsigned int a56, unsigned int a3); /*0x49c0b1*/
+  BufferIOFileClass::Dtor(v22, unsigned int a2, unsigned int a24, unsigned int a52, unsigned int a16, unsigned int a44, unsigned int a28, unsigned int a56, unsigned int a3, unsigned int a20, unsigned int a48); /*0x49c0b1*/
   return 1; /*0x49c0b7*/
 }
 }

@@ -170,19 +170,19 @@ unsigned int * Movie_Create(int a1, int a2, int * a3)
 namespace gamemd {
 CampaignClass * * MPCooperative___vt07(int a2)
 {
-  char v3; // bl
+  CampaignClass ** v3;
   int v4; // edx
   int v6; // ecx
   int v7; // eax
   int v8; // esi
   int v9; // eax
   int v10; // [esp-8h] [ebp-1Ch]
-  int v11; // [esp+Ch] [ebp-8h] BYREF
+  CampaignClass ** v11;
   int v12; // [esp+10h] [ebp-4h] BYREF
 
-  v3 = (gamemd::CampaignClass **)(0);
-  v10 = *(&this->ptr_507); /*0x5c17c5*/
-  v11 = 0; /*0x5c17cb*/
+  v3 = (gamemd::CampaignClass **)((char)((gamemd::CampaignClass **)(0)));
+  v10 = (gamemd::CampaignClass **)(*(&this->ptr_507));
+  v11 = (int)((gamemd::CampaignClass **)(0));
   Movie::GetSection((int)&g_DDrawSurfaceManager, v10, &v12); /*0x5c17cf*/
   v4 = v12; /*0x5c17d4*/
   if ( !v12 ) /*0x5c17da*/
@@ -241,7 +241,7 @@ int E4Recv_5C60D0::ShowConfirmDialog(void * a1, void * a2)
   wchar_t *StringCSF; // [esp-Ch] [ebp-14h]
 
   StringCSF = (wchar_t *)(GetStringCSF(g_Str_TXT_CANCEL, 0, aDRa2mdpostMpla, 108));
-  v3 = GetStringCSF(g_Str_TXT_OK, 0, aDRa2mdpostMpla, 108); /*0x5c6102*/
+  v3 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, aDRa2mdpostMpla, 108));
   return Dialog::ShowMessageBox(a2, lParam, v3, StringCSF, 0, 0) == 0; /*0x5c6116*/
 }
 }
@@ -328,13 +328,13 @@ void sub_5C63F0(void * a1, void * a2, void * a3, void * a4, void * a5)
   unsigned int v6; // esi
   unsigned int v7; // ebp
   int v8; // eax
-  int v9; // eax
-  int v10; // ecx
+  void * v9;
+  void * v10;
   unsigned int i; // ebp
-  unsigned int v12; // eax
+  void * v12;
   char v13; // al
 
-  v5 = a2; /*0x5c63fa*/
+  v5 = (unsigned char *)(a2);
   v6 = 4 * a5; /*0x5c63fc*/
   v7 = a1 - 4 * a5; /*0x5c6426*/
   if ( a1 != 4 * a5 ) /*0x5c6428*/
@@ -347,13 +347,13 @@ void sub_5C63F0(void * a1, void * a2, void * a3, void * a4, void * a5)
     memset(&a2[4 * (v7 >> 2, unsigned int a1, unsigned int a5, unsigned int a4)], a3, v7 & 3); /*0x5c644a*/
     v5 = &a2[v7]; /*0x5c6450*/
   }
-  v9 = a1; /*0x5c6454*/
+  v9 = (void *)((int)(a1));
   if ( a1 >= v6 ) /*0x5c6456*/
     v9 = 4 * a5; /*0x5c6458*/
   v10 = v9 + a4; /*0x5c645e*/
   for ( i = 0; ; ++i ) /*0x5c6460*/
   {
-    v12 = a1; /*0x5c6464*/
+    v12 = (void *)((unsigned int)(a1));
     if ( a1 >= v6 ) /*0x5c6466*/
       v12 = 4 * a5; /*0x5c6468*/
     if ( i >= v12 ) /*0x5c646c*/
@@ -376,9 +376,9 @@ void BitBuffer_RotateRight(unsigned int * a1, int a2, int a3)
   char v10; // bp
   int v11; // ecx
   int v12; // eax
-  unsigned int v13; // eax
+  int * v13;
   char v14; // cl
-  int v15; // ebp
+  int * v15;
   int v16; // eax
   int v17; // edi
   int v18; // ebx
@@ -390,7 +390,7 @@ void BitBuffer_RotateRight(unsigned int * a1, int a2, int a3)
   int v24; // ecx
   int v25; // [esp+10h] [ebp-8h]
   int v26; // [esp+10h] [ebp-8h]
-  int v27; // [esp+1Ch] [ebp+4h]
+  int * v27;
 
   v4 = 0; /*0x5c666b*/
   if ( a2 ) /*0x5c666f*/
@@ -449,7 +449,7 @@ void BitBuffer_RotateRight(unsigned int * a1, int a2, int a3)
     else
     {
       v27 = (int *)(0);
-      v9 = &a1[a3]; /*0x5c66b6*/
+      v9 = (int *)(&a1[a3]);
       v10 = 32 - a2; /*0x5c66b9*/
       v11 = a3; /*0x5c66bb*/
       v12 = a3 - 1; /*0x5c66c2*/
@@ -458,8 +458,8 @@ void BitBuffer_RotateRight(unsigned int * a1, int a2, int a3)
         v25 = v12 + 1; /*0x5c66c8*/
         while ( 1 ) /*0x5c66d2*/
         {
-          v13 = *--v9; /*0x5c66d2*/
-          v14 = v10; /*0x5c66e8*/
+          v13 = (unsigned int)((int *)(*--v9));
+          v14 = (int *)(v10);
           v15 = v27; /*0x5c66ea*/
           v27 = ((1 << a2) - 1) & v13; /*0x5c66ee*/
           *v9 = (v15 << v14) | (v13 >> a2); /*0x5c66f6*/
@@ -493,7 +493,7 @@ void RotateBitBufferLeft(int * a0, int a2, Buffer * aP2)
   bool v17; // zf
   int v18; // esi
   int i; // esi
-  unsigned int v20;
+  Buffer * v20;
   char v21; // [esp+10h] [ebp-4h]
   Buffer * v22;
 
@@ -545,7 +545,7 @@ void RotateBitBufferLeft(int * a0, int a2, Buffer * aP2)
       }
       for ( i = 0; ; ++i ) /*0x5c68b4*/
       {
-        v20 = (unsigned int)(v11);
+        v20 = (gamemd::Buffer *)((unsigned int)(v11));
         if ( v11 >= v13 ) /*0x5c68ba*/
           v20 = v13; /*0x5c68bc*/
         if ( i >= v20 ) /*0x5c68c0*/
@@ -1062,7 +1062,7 @@ void SubtractBigInteger(unsigned int * a1, unsigned int * a2, int a3, char * a4,
   char *v7; // eax
   Buffer * v8;
   int v9; // esi
-  int v11; // ecx
+  Buffer * v11;
   unsigned int *v12; // eax
   int v14; // esi
   int v15; // eax

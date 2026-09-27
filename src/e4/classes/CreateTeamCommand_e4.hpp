@@ -7,9 +7,9 @@ namespace gamemd {
 struct CreateTeamCommand {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned int q004;  // 0x4
+    void* ;  // 0x4
     int Capacity;  // 0x8
-    unsigned int q00C;  // 0xC
+    void* ;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned int q010;  // 0x10
     bool IsInitialized;  // 0x12
@@ -205,6 +205,8 @@ struct CreateTeamCommand {
     unsigned char q640C;  // 0x640C
     unsigned int q0042;
     unsigned int vt_slot_56;
+    unsigned int q004;
+    unsigned int q00C;
 // --- flat members (END) ---
     int vt02();  // 0x535CF0
     unsigned int * performAction_148();  // 0x537350

@@ -61,7 +61,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   int v30; // ecx
   int v31; // ebx
   int v32; // eax
-  int v33; // ebp
+  void ** v33;
   int v34; // ebx
   unsigned int *v35; // eax
   int v36; // edx
@@ -82,7 +82,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   int v51; // eax
   unsigned char *v52; // eax
   int v53; // [esp-8h] [ebp-50h]
-  unsigned int v54;
+  IUnknown * v54;
   int v57; // [esp+1Ch] [ebp-2Ch] BYREF
   char v58[4]; // [esp+20h] [ebp-28h] BYREF
   int v59[5]; // [esp+24h] [ebp-24h] BYREF
@@ -161,9 +161,9 @@ void House::AnnounceUpgrade(IUnknown * aP1)
   v17 = this->q038; /*0x47d590*/
   if ( v17 != 0xFFFF ) /*0x47d595*/
   {
-    v18 = (IUnknown *)(*((unsigned int *)g_FrameCounter + v17));
-    v53 = *(uint8_t *)(&this->u32_702); /*0x47d5ae*/
-    v54 = v18; /*0x47d5b1*/
+    v18 = (IUnknown *)((unsigned int)((IUnknown *)(*((unsigned int *)g_FrameCounter + v17))));
+    v53 = (unsigned int)(*(uint8_t *)(&this->u32_702));
+    v54 = (IUnknown *)(v18);
     v19 = House::LoadMapFileData(v53, 0); /*0x47d5b5*/
     if ( this->u8_11C ) /*0x47d5ba*/
     {
@@ -222,12 +222,12 @@ void House::AnnounceUpgrade(IUnknown * aP1)
           && v18->qB20 != -1
           && *(unsigned int *)(v18 + 724) == *(uint8_t *)(&this->u32_702) )
         {
-          v33 = (void **)(*v3);
-          v34 = *(int16_t *)(&this->u32_C8); /*0x47d9d3*/
-          v60 = dword_89E7C0 * this->u32_11B; /*0x47d9e1*/
-          v35 = (unsigned int *)Matrix3x4::TransformCell(v61, v54 + 716); /*0x47da03*/
-          v36 = v35[1]; /*0x47da0a*/
-          v37 = (v33 << 8) + 128 + *v35; /*0x47da10*/
+          v33 = (void **)((int)((void **)(*v3)));
+          v34 = (void **)(*(int16_t *)(&this->u32_C8));
+          v60 = (void **)(dword_89E7C0 * this->u32_11B);
+          v35 = (void **)((unsigned int *)Matrix3x4::TransformCell(v61, v54 + 716));
+          v36 = (void **)(v35[1]);
+          v37 = (void **)((v33 << 8) + 128 + *v35);
           v38 = v60 + v35[2]; /*0x47da18*/
           v59[0] = v37; /*0x47da1f*/
           v59[1] = (v34 << 8) + 128 + v36; /*0x47da23*/

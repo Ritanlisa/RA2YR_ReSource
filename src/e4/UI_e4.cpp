@@ -291,8 +291,8 @@ void * sub_730F30()
         Networking_NextPacketIndex = ((unsigned char)Networking_NextPacketIndex + 1) & 0x7F; /*0x730fc3*/
         ++Networking_LastEventIndex; /*0x730fc9*/
       }
-      dword_84555C = (void *)((int)g_CurrentFrame);
-      return g_CurrentFrame; /*0x730fce*/
+      dword_84555C = (unsigned int)((void *)((int)g_CurrentFrame));
+      return (void *)(g_CurrentFrame);
     }
   }
   return (void *)(result);
@@ -636,8 +636,8 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
   int16_t v13; // si
   unsigned int v14; // ebp
   int16_t v15; // di
-  int v16; // ecx
-  unsigned int v17; // eax
+  unsigned int * v16;
+  unsigned int * v17;
   bool v18; // zf
   int v19; // [esp+Ch] [ebp-24h]
   int v20; // [esp+10h] [ebp-20h]
@@ -696,9 +696,9 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
                 v15 = IDA_HIWORD(g_ScreenSaverState) /*0x621946*/
                     & ((g_GameScreenConfig * (uint16_t)(IDA_HIWORD(g_ScreenSaverState) & v13)
                       + v12 * (unsigned int)(uint16_t)(IDA_HIWORD(g_ScreenSaverState) & v7)) >> 8);
-                v16 = (unsigned int *)(g_GameScreenConfig * (uint16_t)(v13 & g_CreditsScreenState));
-                v4 = aP0; /*0x62195b*/
-                v6 = v20; /*0x62195f*/
+                v16 = (int)((unsigned int *)(g_GameScreenConfig * (uint16_t)(v13 & g_CreditsScreenState)));
+                v4 = (unsigned int *)(aP0);
+                v6 = (unsigned int)(v20);
                 v17 = v16 + v12 * (uint16_t)(v7 & g_CreditsScreenState); /*0x621963*/
                 v10 = v21; /*0x621965*/
                 IDA_LOWORD(v14) = v15 | v14; /*0x621969*/
@@ -933,7 +933,7 @@ void * UI_Setup_793930(void * a1, void * a2, int a3)
   v10 = 0; /*0x7939a5*/
   if ( dword_A8E04C > 0 ) /*0x7939a9*/
   {
-    result = &unk_A8DC50; /*0x7939ab*/
+    result = (unsigned int *)(&unk_A8DC50);
     while ( 1 ) /*0x7939b0*/
     {
       v11 = *(result - 1); /*0x7939b0*/

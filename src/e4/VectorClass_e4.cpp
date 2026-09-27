@@ -244,8 +244,8 @@ int VectorClass_flat::RemoveElement()
   }
   if ( v17 != 2 ) /*0x65a9eb*/
   {
-  LABEL_9: v9 = (void *)(*v1);
-    v10 = AbstractClass::IsTechnoType(this); /*0x65a9d3*/
+  LABEL_9: v9 = (int)((void *)(*v1));
+    v10 = (void *)(AbstractClass::IsTechnoType(this));
     return v1->ProcessInputKey(v10, v17, v18); /*0x65a9e5*/
   }
   v11 = this->u32_E8; /*0x65a9ed*/
@@ -375,8 +375,8 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
     this->IsInitialized = 0; /*0x4e0856*/
     if ( a2 ) /*0x4e085c*/
     {
-      *a2 = (unsigned int *)(a2);
-      v6 = a2 + 1; /*0x4e089b*/
+      *a2 = (int)((unsigned int *)(a2));
+      v6 = (unsigned int *)(a2 + 1);
       if ( a2 - 1 >= 0 ) /*0x4e089e*/
       {
         v9 = (unsigned int *)(a2 + 2);
@@ -395,8 +395,8 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
       v5 = (int *)operator new(8 * a2 + 4); /*0x4e0866*/
       if ( v5 ) /*0x4e0870*/
       {
-        *v5 = (unsigned int *)(a2);
-        v6 = v5 + 1; /*0x4e0879*/
+        *v5 = (int)((unsigned int *)(a2));
+        v6 = (unsigned int *)(v5 + 1);
         if ( a2 - 1 >= 0 ) /*0x4e087c*/
         {
           v7 = (unsigned int *)(v5 + 2);
@@ -483,8 +483,8 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
     this->IsInitialized = 0; /*0x4e0b26*/
     if ( a2 ) /*0x4e0b2c*/
     {
-      *a2 = (unsigned int *)(a2);
-      v6 = a2 + 1; /*0x4e0b6c*/
+      *a2 = (int)((unsigned int *)(a2));
+      v6 = (unsigned int *)(a2 + 1);
       if ( a2 - 1 >= 0 ) /*0x4e0b6f*/
       {
         v9 = (unsigned int *)(a2 + 2);
@@ -503,8 +503,8 @@ AbstractClass * * VectorClass_DistributionObject_ptr_CellClass___DiscreteDistrib
       v5 = (int *)operator new(8 * a2 + 4); /*0x4e0b36*/
       if ( v5 ) /*0x4e0b40*/
       {
-        *v5 = (unsigned int *)(a2);
-        v6 = v5 + 1; /*0x4e0b49*/
+        *v5 = (int)((unsigned int *)(a2));
+        v6 = (unsigned int *)(v5 + 1);
         if ( a2 - 1 >= 0 ) /*0x4e0b4c*/
         {
           v7 = (unsigned int *)(v5 + 2);
@@ -576,9 +576,9 @@ namespace gamemd {
 unsigned int * VectorClass_K_8::Constructor()
 {
   this->u32_8 = (unsigned int *)(0);
-  this->u32_C = 0; /*0x4a282d*/
-  this->q010 = 0; /*0x4a2830*/
-  this->q044 = 0; /*0x4a2833*/
+  this->u32_C = (unsigned int *)(0);
+  this->q010 = (unsigned int *)(0);
+  this->q044 = (unsigned int *)(0);
   this->q014 = 0; /*0x4a2836*/
   this->q018 = operator new(0x10000u); /*0x4a2843*/
   this->q01C = operator new(0x10000u); /*0x4a2850*/
@@ -659,7 +659,7 @@ unsigned int * VectorClass_ptr_BuildChoiceClass_int_ouseClass::Constructor(EnumC
     *((unsigned int *)v3 + 2) = v4; /*0x4a0c59*/
     if ( v4 ) /*0x4a0c5c*/
     {
-      v5 = (unsigned int)(operator new(4 * v4));
+      v5 = (void *)((unsigned int)(operator new(4 * v4)));
       *((unsigned int *)v3 + 1) = v5; /*0x4a0c6c*/
       if ( v5 ) /*0x4a0c6f*/
       {

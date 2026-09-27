@@ -362,8 +362,8 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
         if ( (*(int (__thiscall **)(_DWORD *))(*content + 44))(content) == 6 ) /*0x47ea0e*/
         {
           v9 = (int)(*(__int16 *)(&this->vtable46));
-          v10 = *(__int16 *)(&this->vtable48); /*0x47ea14*/
-          v11 = *content; /*0x47ea18*/
+          v10 = (int)(*(__int16 *)(&this->vtable48));
+          v11 = (int)(*content);
           v17 = 0; /*0x47ea1b*/
           v15 = (v9 << 8) + 128; /*0x47ea2e*/
           v16 = (v10 << 8) + 128; /*0x47ea3c*/
@@ -371,9 +371,9 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
         else
         {
           v15 = (int)(content[39]);
-          v11 = *content; /*0x47ea62*/
-          v16 = content[40]; /*0x47ea68*/
-          v17 = content[41]; /*0x47ea74*/
+          v11 = (int)(*content);
+          v16 = (int)(content[40]);
+          v17 = (int)(content[41]);
         }
         IDA_LOBYTE(v3) = (*(int (__thiscall **)(_DWORD *, int *))(v11 + 240))(content, &v15); /*0x47ea43*/
       }
@@ -430,8 +430,8 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
     if ( (*(int (__thiscall **)(_DWORD *))(*content + 44))(content) == 6 ) /*0x47eb1f*/
     {
       v6 = (int)(*(__int16 *)(this + 36));
-      v7 = *(__int16 *)(this + 38); /*0x47eb25*/
-      v8 = *content; /*0x47eb29*/
+      v7 = (int)(*(__int16 *)(this + 38));
+      v8 = (int)(*content);
       v11 = 0; /*0x47eb2b*/
       v9 = (v6 << 8) + 128; /*0x47eb3c*/
       v10 = (v7 << 8) + 128; /*0x47eb50*/
@@ -439,9 +439,9 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
     else
     {
       v9 = (int)(content[39]);
-      v8 = *content; /*0x47eb72*/
-      v10 = content[40]; /*0x47eb77*/
-      v11 = content[41]; /*0x47eb85*/
+      v8 = (int)(*content);
+      v10 = (int)(content[40]);
+      v11 = (int)(content[41]);
     }
     (*(void (__thiscall **)(_DWORD *, int *))(v8 + 244))(content, &v9); /*0x47eb54*/
   }

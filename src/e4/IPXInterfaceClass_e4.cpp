@@ -101,7 +101,7 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
   int v10; // eax
   SOCKET v11; // eax
   int v12; // eax
-  int v13; // ecx
+  unsigned short * v13;
   unsigned short *v14; // edi
   int *v15; // esi
   bool v16; // zf
@@ -210,8 +210,8 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
   v28 = *(unsigned short *)&to.sa_data[8]; /*0x7b15e6*/
   if ( *(unsigned int *)to.sa_data == this->q3F2FC ) /*0x7b15ef*/
   {
-    v13 = (unsigned short *)(3);
-    v14 = &this->u32_7E60C; /*0x7b15f6*/
+    v13 = (int)((unsigned short *)(3));
+    v14 = (unsigned short *)(&this->u32_7E60C);
     v15 = &v27; /*0x7b15fc*/
     v16 = 1; /*0x7b1600*/
     do /*0x7b1602*/
@@ -246,8 +246,8 @@ AbstractClass * * IPXInterfaceClass::SendPacket(ObjectClass * aP1, int a3, int a
       && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(this->LocalNode)(v21, v19 + v22, 0) )
     {
       v23 = (unsigned int)(v21[4]);
-      v24 = v21[1]; /*0x7b1708*/
-      v21[4] = v23 + 1; /*0x7b170e*/
+      v24 = (unsigned int)(v21[1]);
+      v21[4] = (unsigned int)(v23 + 1);
       *(unsigned int *)(v24 + 4 * v23) = v18; /*0x7b1711*/
     }
     return 0; /*0x7b1711*/
@@ -282,7 +282,7 @@ void * IPXInterfaceClass::bindSocket()
   unsigned char *v2; // eax
   int v3; // edx
 
-  this->u32_C = 0; /*0x7b19d2*/
+  this->u32_C = (unsigned int)(0);
   this->u32_10 = (unsigned char *)(0);
   *(&this->u32_80) = 1; /*0x7b19d8*/
   *(&this->u32_81) = 0; /*0x7b19db*/

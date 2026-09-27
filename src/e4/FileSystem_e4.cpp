@@ -53,7 +53,7 @@ int FileSystem::ProcessNextFileExtension()
     if ( v1 ) /*0x626dc5*/
     {
       *v1 = (unsigned int *)(-1);
-      v2 = operator new(0x18u); /*0x626dcf*/
+      v2 = (unsigned int *)(operator new(0x18u));
       v3 = v2; /*0x626dd4*/
       if ( v2 ) /*0x626ddb*/
       {

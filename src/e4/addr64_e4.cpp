@@ -431,9 +431,9 @@ AbstractClass * * ProcessNetworkEvents()
 namespace gamemd {
 void RunNetworkGameLoop()
 {
-  unsigned int v0;
+  AbstractClass ** v0;
   void *v1; // ebx
-  AbstractClass ** v2;
+  int * v2;
   int v3; // edi
   signed int v4; // eax
   int v5; // edi
@@ -469,17 +469,17 @@ void RunNetworkGameLoop()
   Debug::Log(); /*0x64835c*/
   if ( g_GameMode_Current[0] < 3 || g_GameMode_Current[0] > 4 ) /*0x648371*/
   {
-    v12 = (gamemd::AbstractClass **)((void *)dword_A8EA74);
-    v2 = &g_EventManager; /*0x648397*/
-    v1 = (void *)dword_A8EA74; /*0x64839c*/
-    v0 = dword_A8EA78 - 14; /*0x6483a0*/
+    v12 = (int *)((gamemd::AbstractClass **)((void *)dword_A8EA74));
+    v2 = (gamemd::AbstractClass **)(&g_EventManager);
+    v1 = (gamemd::AbstractClass **)((void *)dword_A8EA74);
+    v0 = (gamemd::AbstractClass **)(dword_A8EA78 - 14);
   }
   else
   {
-    v0 = (gamemd::AbstractClass **)(dword_A8DA40);
-    v1 = &unk_A8D812; /*0x648378*/
-    v12 = &unk_A8D812; /*0x64837d*/
-    v2 = g_NetworkManager; /*0x648381*/
+    v0 = (gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)(dword_A8DA40)));
+    v1 = (gamemd::AbstractClass **)(&unk_A8D812);
+    v12 = (int *)((gamemd::AbstractClass **)(&unk_A8D812));
+    v2 = (gamemd::AbstractClass **)(g_NetworkManager);
   }
   IDA_LOWORD(dword_AFA400) = BuildNetworkEventPacket((int)v2, (int)v1, v0, (int)g_ScenarioState, dword_AFA400) /*0x6483c1*/
                        + dword_AFA400;

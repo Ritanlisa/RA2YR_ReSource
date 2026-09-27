@@ -388,7 +388,7 @@ VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(char a2)
     this->Items = 0; /*0x766fe1*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->Capacity = 0; /*0x766ff2*/
+  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x766ff9*/
     RA2_OPDEL(); /*0x766ffc*/
   return this; /*0x767006*/
@@ -408,7 +408,7 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(char a2)
     this->Items = 0; /*0x7670a1*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x7670b2*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x7670b9*/
     RA2_OPDEL(); /*0x7670bc*/
   return this; /*0x7670c6*/

@@ -579,14 +579,13 @@ AbstractClass * * ObjectTypeClass::Load2DArt()
   if ( (*(int (__thiscall **)(char *))(((unsigned int)(this->uniqueId4))))(this) != 30 /*0x5f9241*/
     && (*(int (__thiscall **)(char *))(((unsigned int)(this->uniqueId4))))(this) != 37 )
   {
-    v7 = (unsigned int)(SearchMIXFile(&Source, 0));
-    this->q0A4 = v7; /*0x5f9250*/
+    v7 = (gamemd::AbstractClass **)((unsigned int)(SearchMIXFile(&Source, 0)));
+    this->q0A4 = (unsigned int)(v7);
     if ( !v7 ) /*0x5f9256*/
     {
       v15 = (unsigned int)(71);
-      v8 = 0; /*0x5f925d*/
-  LABEL_40:
-      this->q0A4 = SearchMIXFile(&Source, v8); /*0x5f927d*/
+      v8 = (unsigned int)(0);
+  LABEL_40: this->q0A4 = (unsigned int)(SearchMIXFile(&Source, v8));
     }
   }
   LABEL_41:
@@ -626,7 +625,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
   char v16; // cl
   char v17; // al
   int Coord; // eax
-  char v19; // cl
+  Color * v19;
   char v20; // al
   int v21; // eax
   int v22; // eax
@@ -712,8 +711,8 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
             (uint8_t *)&this->u32_90,
             (uint8_t *)aRadialcolor,
             (uint8_t *)&this->zero_3C2);
-  v19 = (gamemd::Color *)(*(&this->q0E09));
-  this->q098 = *(unsigned short *)Coord; /*0x5f955d*/
+  v19 = (gamemd::Color *)((char)((gamemd::Color *)(*(&this->q0E09))));
+  this->q098 = (gamemd::Color *)(*(unsigned short *)Coord);
   *(&this->zero_3C4) = *(unsigned char *)(Coord + 2); /*0x5f956c*/
   v20 = INIClass::ReadBool_Overwrite(&this->u32_90, aIgnoresfiresto, v19); /*0x5f956f*/
   v31 = *(&this->u32_E40); /*0x5f9580*/

@@ -33,7 +33,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   unsigned int v26; // ecx
   unsigned int v27; // edx
   double v28; // st7
-  double v30; // st7
+  unsigned int * v30;
   unsigned int v31; // edx
   int v32; // esi
   int v33; // eax
@@ -42,9 +42,9 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   unsigned int v36; // edx
   int *v37; // eax
   int v38; // eax
-  unsigned int v39; // ecx
+  void * v39;
   unsigned int v40; // edx
-  unsigned int v41; // eax
+  void * v41;
   int *v42; // eax
   unsigned int v43; // ecx
   unsigned int v44; // esi
@@ -88,7 +88,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   double v82[3]; // [esp+90h] [ebp-18h] BYREF
 
   v11 = (double *)(*a4 == dword_ABEF10);
-  v74 = a1; /*0x5b2110*/
+  v74 = (double *)(a1);
   if ( v11 && a4[1] == dword_ABEF14 && a4[2] == dword_ABEF18 ) /*0x5b2134*/
   {
     Math::Hypotenuse2D(a1); /*0x5b213c*/
@@ -121,14 +121,14 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
       *a1 = *a1 / v15; /*0x5b2223*/
       a1[1] = a1[1] / Math::ArcTan2(v68, unsigned int a2); /*0x5b2230*/
     }
-    v74 = (unsigned int *)((double *)((int16_t)v71 - 0x3FFF));
-    v16 = Math::ArcTan2((double)(int)v74 * -0.00009587672516830327); /*0x5b2252*/
+    v74 = (double *)((unsigned int *)((double *)((int16_t)v71 - 0x3FFF)));
+    v16 = (unsigned int *)(Math::ArcTan2((double)(int)v74 * -0.00009587672516830327));
     v17 = (int16_t)v71; /*0x5b2259*/
-    *a1 = v16 * *a1; /*0x5b225e*/
-    v74 = (double *)(v17 - 0x3FFF); /*0x5b2266*/
-    v18 = Math::ArcTan2((double)(v17 - 0x3FFF) * -0.00009587672516830327); /*0x5b2277*/
-    v19 = (int16_t)v71; /*0x5b227f*/
-    a1[1] = v18 * a1[1]; /*0x5b2284*/
+    *a1 = (void *)(v16 * *a1);
+    v74 = (double *)((void *)((double *)(v17 - 0x3FFF)));
+    v18 = (void *)(Math::ArcTan2((double)(v17 - 0x3FFF) * -0.00009587672516830327));
+    v19 = (void *)((int16_t)v71);
+    a1[1] = (void *)(v18 * a1[1]);
     v74 = (double *)(v19 - 0x3FFF); /*0x5b228c*/
     v20 = Math::SinCos((double)(v19 - 0x3FFF) * -0.00009587672516830327); /*0x5b229d*/
     v21 = v20 * v75[0]; /*0x5b22a2*/
@@ -150,12 +150,12 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
     v28 = Math::Sqrt(a1[1] * a1[1] + *a1 * *a1 + a1[2] * a1[2]); /*0x5b233a*/
     return Math::RoundToInt(v28, unsigned int a2, unsigned int a4, unsigned int a5); /*0x5b234d*/
   }
-  v30 = (unsigned int *)(a1[2]);
-  v79 = *a1; /*0x5b2357*/
+  v30 = (double)((unsigned int *)(a1[2]));
+  v79 = (unsigned int)(*a1);
   v31 = *((unsigned int *)a1 + 3); /*0x5b2369*/
   v80 = *((unsigned int *)a1 + 2); /*0x5b236c*/
-  v81 = v31; /*0x5b2370*/
-  v32 = Math::RoundToInt(v30); /*0x5b237d*/
+  v81 = (unsigned int)(v31);
+  v32 = (unsigned int)(Math::RoundToInt(v30));
   IDA_HIDWORD(v79) = Math::RoundToInt(v30); /*0x5b2384*/
   v33 = Math::RoundToInt(v30); /*0x5b2388*/
   v34 = Coord::Subtract(&v77, *a2 + v32, a2[1] + IDA_HIDWORD(v79), a2[2] + v33); /*0x5b23a6*/
@@ -235,7 +235,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
     goto LABEL_49; /*0x5b28e0*/
   }
   v56 = (unsigned int *)(v48[2]);
-  v77 = *v48; /*0x5b2645*/
+  v77 = (unsigned int *)(*v48);
   v57 = *((unsigned int *)v48 + 3); /*0x5b2657*/
   IDA_LODWORD(v78) = *((unsigned int *)v48 + 2); /*0x5b265a*/
   IDA_HIDWORD(v78) = v57; /*0x5b265e*/
@@ -260,7 +260,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   }
   if ( !a9 ) /*0x5b2737*/
   {
-    v64 = a2[2]; /*0x5b2744*/
+    v64 = (unsigned int)(a2[2]);
     v65 = v64 - dword_ABEF50 * v63 - GroundHeight; /*0x5b274b*/
     if ( v65 >= -20 ) /*0x5b2750*/
     {

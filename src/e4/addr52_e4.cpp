@@ -319,9 +319,9 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
         v7 = *v19; /*0x52835e*/
         if ( v7 ) /*0x528362*/
         {
-          v6 = (unsigned int)(a3);
-          this->vtable3 = v7; /*0x528368*/
-          this->vtable2 = a2; /*0x52836b*/
+          v6 = (uint8_t *)((unsigned int)(a3));
+          this->vtable3 = (unsigned int)(v7);
+          this->vtable2 = (unsigned int)(a2);
           goto LABEL_5; /*0x528370*/
         }
       }
@@ -383,9 +383,9 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
       this->vtable3 = 0; /*0x52a009*/
       goto LABEL_11; /*0x52a00c*/
     }
-    v6 = (unsigned int)((char *)a4);
-    this->vtable3 = v8; /*0x529ff9*/
-    this->vtable2 = v7; /*0x529ffc*/
+    v6 = (char *)((unsigned int)((char *)a4));
+    this->vtable3 = (unsigned int)(v8);
+    this->vtable2 = (unsigned int)(v7);
   }
   if ( v8 ) /*0x529ec7*/
   {
@@ -476,9 +476,9 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
       this->vtable3 = 0; /*0x52a2bc*/
       goto LABEL_11; /*0x52a2bf*/
     }
-    v7 = (unsigned int)((const char *)IDA_LODWORD(a4));
-    this->vtable3 = v8; /*0x52a2ac*/
-    this->vtable2 = a3; /*0x52a2af*/
+    v7 = (const char *)((unsigned int)((const char *)IDA_LODWORD(a4)));
+    this->vtable3 = (unsigned int)(v8);
+    this->vtable2 = (unsigned int)(a3);
   }
   if ( v8 ) /*0x52a155*/
   {

@@ -16,6 +16,7 @@
 #include "e4/classes/WarheadTypeClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/ParticleSystemTypeClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
 
 // 0x6A01A0
 namespace gamemd {
@@ -39,7 +40,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
   int v20; // [esp+1Ch] [ebp-8h]
   int v21; // [esp+20h] [ebp-4h]
 
-  v3 = (void *)(aP1);
+  v3 = (void *)((IUnknown *)((void *)(aP1)));
   if ( *aP1 != g_OverlayTypeConfig || aP1[1] != qword_B077FC || (v5 = aP1[2], v5 != MEMORY[0xB07800]) ) /*0x6a01ce*/
   {
     IDA_LOBYTE(v5) = this->ptr_60; /*0x6a01d4*/
@@ -390,8 +391,8 @@ LABEL_37:
   }
   if ( v30 <= 7 )
     goto LABEL_141;
-  char * v45 = (char *)(12 * this->WalkLocomotion_field_0x58 + 8333888);
-  ObjectClass * v46 = (unsigned int)(*(unsigned int *)&aP3.bombVisible = v45);
+  char * v45 = (unsigned int)((char *)(12 * this->WalkLocomotion_field_0x58 + 8333888));
+  ObjectClass * v46 = (unsigned int)((unsigned int)((unsigned int)(*(unsigned int *)&aP3.bombVisible = v45)));
   if ( v46 )
     int v47 = v45[1];
   else
@@ -423,7 +424,7 @@ LABEL_37:
       break;
     if ( (*(uint8_t (__thiscall **)(unsigned int))(*this->q00C + 192))(this->q00C) )
     {
-      v52 = this->q00C;
+      v52 = (gamemd::MouseClass *)(this->q00C);
   unsigned int v186[4]; // [esp+10Ch] [ebp-18h] BYREF
       v186[0] = *(unsigned int *)&v52->__pad_74[40];
       v186[1] = *(unsigned int *)&v52->__pad_74[44];

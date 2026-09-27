@@ -314,7 +314,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
   double v46; // [esp+40h] [ebp-8h]
 
   v4 = (int)(*end);
-  v5 = *start; /*0x5880b4*/
+  v5 = (int)(*start);
   if ( *start != *end || start[1] != end[1] || start[2] != end[2] )
   {
     IDA_LODWORD(v34) = v5 / 256; /*0x5880f3*/
@@ -361,7 +361,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
     else
     {
       v14 = (int)(start[1]);
-      v15 = end[1]; /*0x5881ec*/
+      v15 = (int)(end[1]);
       v16 = v15 / 256; /*0x588202*/
       v41 = v15 / 256; /*0x588208*/
       if ( (unsigned __int16)(v14 / 256) == (unsigned __int16)(v15 / 256) )
@@ -521,9 +521,9 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
   int v54; // [esp+60h] [ebp+10h]
 
   v46 = (int)(coords[2] / g_MapRenderState);
-  v9 = *coords; /*0x5678ff*/
-  v10 = coords[1]; /*0x567901*/
-  v11 = coords[2]; /*0x567904*/
+  v9 = (int)(*coords);
+  v10 = (int)(coords[1]);
+  v11 = (int)(coords[2]);
   v12 = ZCoordToScreenY(v11); /*0x567909*/
   v13 = ((((unsigned int)(((unsigned __int64)(2004318071LL * v12) >> 32) - v12) >> 31) /*0x567928*/
         + ((int)(((unsigned __int64)(2004318071LL * v12) >> 32) - v12) >> 4)) << 8)
@@ -568,8 +568,8 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
     radius = 10; /*0x567a59*/
   }
   v21 = (int *)(dword_7ED3D0[result]);
-  v43 = dword_ABD490; /*0x567a6a*/
-  v22 = &dword_ABCF60; /*0x567a72*/
+  v43 = (int *)(dword_ABD490);
+  v22 = (int *)(&dword_ABCF60);
   if ( !IDA_BYTE2(g_RulesClass_Instance[1].IonCannonDamage) && arg4 && result > 2 ) /*0x567a8c*/
   {
     v23 = dword_7ED3C4[result]; /*0x567a8e*/
@@ -615,10 +615,10 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
     v45 = v27 + 1; /*0x567b24*/
     while ( 1 ) /*0x567b37*/
     {
-      v28 = (_DWORD)(v43++);
-      v29 = *(_WORD *)v28 + v16; /*0x567b43*/
-      v30 = v17 + *((_WORD *)v28 + 1); /*0x567b4a*/
-      v31 = *(&this->q0181); /*0x567b4f*/
+      v28 = (int *)((_DWORD)(v43++));
+      v29 = (_DWORD)(*(_WORD *)v28 + v16);
+      v30 = (_DWORD)(v17 + *((_WORD *)v28 + 1));
+      v31 = (_DWORD)(*(&this->q0181));
       IDA_LOWORD(v50) = v29; /*0x567b55*/
       ++v25; /*0x567b5a*/
       IDA_HIWORD(v50) = v30; /*0x567b5d*/

@@ -276,7 +276,7 @@ unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
       v5 = 0; /*0x6ac632*/
       if ( g_TypeClass_FindCache <= 0 ) /*0x6ac63c*/
       {
-  LABEL_13: v5 = (unsigned int *)(0);
+  LABEL_13: v5 = (int)((unsigned int *)(0));
         if ( g_TriggerClassCount <= 0 ) /*0x6ac659*/
           return result; /*0x6ac659*/
         result = g_TriggerTypeCount; /*0x6ac65f*/
@@ -469,7 +469,7 @@ AnimClass * * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, in
   {
     GroundHeight += dword_B0E6D4; /*0x6e1d57*/
   }
-  v5 = (gamemd::AnimClass **)((void *)operator new(0x1C8u));
+  v5 = (void **)((gamemd::AnimClass **)((void *)operator new(0x1C8u)));
   if ( v5 ) /*0x6e1d6a*/
     *((unsigned char *)AnimClass::ctor(v5, (void *)g_RulesClass_Instance[1].BarrelDebris[1], v9, 0, 1, (void *)0x600, 0, 0) + 408) = 1; /*0x6e1d92*/
   else
@@ -497,7 +497,7 @@ AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown
   {
     GroundHeight += dword_B0E6D4; /*0x6e232a*/
   }
-  v6 = (gamemd::AnimClass **)((void *)operator new(0x1C8u));
+  v6 = (void **)((gamemd::AnimClass **)((void *)operator new(0x1C8u)));
   if ( v6 ) /*0x6e233d*/
     *((unsigned char *)AnimClass::ctor(v6, *((void **)g_AnimTypeCount + *(unsigned int *)&this->Value), v10, 0, 1, (void *)0x600, 0, 0) + 408) = 1; /*0x6e2368*/
   else

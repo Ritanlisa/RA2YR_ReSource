@@ -13,8 +13,8 @@ int Explosion::RemoveItem(int a2)
   void * v2;
   void * v4;
 
-  v2 = (unsigned int)(this->q010);
-  a2 = a2; /*0x53dda3*/
+  v2 = (void *)((unsigned int)(this->q010));
+  a2 = (unsigned int)(a2);
   if ( a2 >= v2 ) /*0x53dda9*/
     return 0; /*0x53ddcc*/
   v4 = v2 - 1; /*0x53ddab*/

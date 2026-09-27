@@ -140,7 +140,7 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
           goto LABEL_7; /*0x60ab12*/
       }
       v3 = (unsigned int *)(v4 + 1);
-      v15 = v4 + 1; /*0x60ab1d*/
+      v15 = (unsigned int *)(v4 + 1);
     }
   }
   LABEL_7:
@@ -254,10 +254,9 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
     }
     if ( v11 ) /*0x60af0e*/
     {
-  LABEL_85: v12 = (gamemd::AbstractClass **)(192);
-  LABEL_87:
-      v15[50] = v12; /*0x60af19*/
-      return 1; /*0x60af1d*/
+  LABEL_85: v12 = (int)((gamemd::AbstractClass **)(192));
+  LABEL_87: v15[50] = (unsigned int)((gamemd::AbstractClass **)(v12));
+      return (gamemd::AbstractClass **)(1);
     }
   LABEL_86:
     v12 = 0; /*0x60af17*/
@@ -283,7 +282,7 @@ AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
     if ( *aP1 ) /*0x623583*/
     {
       v3 = (unsigned int)(wcslen(aP1));
-      v4 = (wchar_t *)new wchar_t; /*0x623594*/
+      v4 = (wchar_t *)((unsigned int)((wchar_t *)new wchar_t));
       *(&this->vtable20) = v4; /*0x62359b*/
       wcscpy(v4, aP1); /*0x62359e*/
     }

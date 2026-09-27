@@ -40,7 +40,7 @@ DynamicVector * MapFile::QueryInterface(char a2)
     this->q004 = 0; /*0x69d566*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x69d577*/
+  this->q008 = (unsigned char)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x69d57e*/
     RA2_OPDEL(); /*0x69d581*/
   return this; /*0x69d58b*/
@@ -59,7 +59,7 @@ unsigned int * MapFile::Constructor(int a2, int a3)
     if ( a3 ) /*0x69d796*/
     {
       this->q004 = (unsigned int *)(a3);
-      return this; /*0x69d79e*/
+      return (unsigned int *)(this);
     }
     this->q004 = (unsigned char)(operator new(4 * a2));
     this->IsAllocated = 1; /*0x69d7b0*/

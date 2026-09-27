@@ -27,14 +27,13 @@ unsigned int * DynamicVector::Copy(VectorClass_flat * aP1)
   if ( !v3 ) /*0x5ac449*/
   {
     this->Items = (unsigned int *)(0);
-    this->IsAllocated = 0; /*0x5ac49d*/
-  LABEL_8:
-    this->q010 = aP1[4]; /*0x5ac4a1*/
-    this->CapacityIncrement = aP1[5]; /*0x5ac4aa*/
-    return this; /*0x5ac4ad*/
+    this->IsAllocated = (unsigned int *)(0);
+  LABEL_8: this->q010 = (unsigned int *)(aP1[4]);
+    this->CapacityIncrement = (unsigned int *)(aP1[5]);
+    return (unsigned int *)(this);
   }
   v4 = (gamemd::AbstractClass *)(operator new(4 * v3));
-  this->Items = v4; /*0x5ac45b*/
+  this->Items = (unsigned int)((gamemd::AbstractClass *)(v4));
   if ( !v4 ) /*0x5ac460*/
     goto LABEL_8; /*0x5ac460*/
   v5 = this->q008; /*0x5ac462*/
@@ -71,9 +70,9 @@ char DynamicVector::AddItem(VectorClass_flat * aP1)
     if ( v4 <= 0 || !this->checkCondition(v3 + v4, 0) ) /*0x413a98*/
       return 0; /*0x413a9f*/
   }
-  v6 = (unsigned int)(this->q010);
-  v7 = this->Items; /*0x413aa8*/
-  this->q010 = v6 + 1; /*0x413aae*/
+  v6 = (void *)((unsigned int)(this->q010));
+  v7 = (void *)((unsigned int)(this->Items));
+  this->q010 = (unsigned int)(v6 + 1);
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x413ab8*/
   return 1; /*0x413aa1*/
 }
@@ -86,7 +85,7 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
   void *v4; // eax
 
   this->Items = (unsigned int)(0);
-  this->q008 = aP1; /*0x42f681*/
+  this->q008 = (unsigned int)(aP1);
   this->IsInitialized = 1; /*0x42f684*/
   this->IsAllocated = 0; /*0x42f688*/
   if ( aP1 ) /*0x42f692*/
@@ -104,9 +103,9 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
       this->IsAllocated = 1; /*0x42f6c6*/
     }
   }
-  this->CapacityIncrement = (unsigned int *)(10);
-  this->q010 = 0; /*0x42f6d7*/
-  return this; /*0x42f6e0*/
+  this->CapacityIncrement = (int)((unsigned int *)(10));
+  this->q010 = (unsigned int *)(0);
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 
@@ -154,9 +153,9 @@ char DynamicVector::Add_Alt(VectorClass_flat * aP1)
     if ( v4 <= 0 || !this->Release(v3 + v4, 0) ) /*0x477ee8*/
       return 0; /*0x477eef*/
   }
-  v6 = (unsigned int)(this->q010);
-  v7 = this->Items; /*0x477ef8*/
-  this->q010 = v6 + 1; /*0x477efe*/
+  v6 = (void *)((unsigned int)(this->q010));
+  v7 = (void *)((unsigned int)(this->Items));
+  this->q010 = (unsigned int)(v6 + 1);
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x477f08*/
   return 1; /*0x477ef1*/
 }
@@ -199,9 +198,9 @@ char DynamicVector::Add_Alt4(VectorClass_flat * aP1)
     if ( v4 <= 0 || !this->Release(v3 + v4, 0) ) /*0x5253d8*/
       return 0; /*0x5253df*/
   }
-  v6 = (unsigned int)(this->q010);
-  v7 = this->Items; /*0x5253e8*/
-  this->q010 = v6 + 1; /*0x5253ee*/
+  v6 = (void *)((unsigned int)(this->q010));
+  v7 = (void *)((unsigned int)(this->Items));
+  this->q010 = (unsigned int)(v6 + 1);
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x5253f8*/
   return 1; /*0x5253e1*/
 }
@@ -226,8 +225,8 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
       return 0; /*0x5387af*/
   }
   v6 = (unsigned int)(this->q010);
-  v7 = this->q004; /*0x5387b8*/
-  this->q010 = v6 + 1; /*0x5387be*/
+  v7 = (unsigned int)(this->q004);
+  this->q010 = (unsigned int)(v6 + 1);
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x5387c8*/
   return 1; /*0x5387b1*/
 }
@@ -252,8 +251,8 @@ char DynamicVector::Add_Alt3(VectorClass_flat * aP1)
       return 0; /*0x5ad7ff*/
   }
   v6 = (unsigned int)(this->Count);
-  v7 = this->Items; /*0x5ad808*/
-  this->Count = v6 + 1; /*0x5ad80e*/
+  v7 = (void *)((unsigned int)(this->Items));
+  this->Count = (unsigned int)(v6 + 1);
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x5ad818*/
   return 1; /*0x5ad801*/
 }
@@ -353,8 +352,8 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
     }
   }
   this->u32_14 = (unsigned int *)(10);
-  this->q010 = 0; /*0x67acc0*/
-  return this; /*0x67acc9*/
+  this->q010 = (unsigned int *)(0);
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 
@@ -377,8 +376,8 @@ char DynamicVector::Add2(VectorClass_flat * aP1)
       return 0; /*0x67adaf*/
   }
   v6 = (unsigned int)(this->Count);
-  v7 = this->Items; /*0x67adb8*/
-  this->Count = v6 + 1; /*0x67adbe*/
+  v7 = (void *)((unsigned int)(this->Items));
+  this->Count = (unsigned int)(v6 + 1);
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x67adc8*/
   return 1; /*0x67adb1*/
 }
@@ -457,8 +456,8 @@ char DynamicVector::Add(DynamicVector * aP1)
       return 0; /*0x6c642f*/
   }
   v6 = (unsigned int)(this->q010);
-  v7 = this->q004; /*0x6c6438*/
-  this->q010 = v6 + 1; /*0x6c643e*/
+  v7 = (unsigned int)(this->q004);
+  this->q010 = (unsigned int)(v6 + 1);
   *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x6c6448*/
   return 1; /*0x6c6431*/
 }
@@ -485,8 +484,8 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
     }
   }
   this->u32_14 = (unsigned int *)(10);
-  this->q010 = 0; /*0x734320*/
-  return this; /*0x734329*/
+  this->q010 = (unsigned int *)(0);
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 

@@ -308,7 +308,7 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
   if ( result ) /*0x6b7e90*/
   {
     v12 = (gamemd::HouseClass *)((*(int (__stdcall **)(int))(result->vtable2 + 16))(result + 4));
-    result = Power::TimerProcess(v12); /*0x6b7e9f*/
+    result = (gamemd::HouseClass *)(Power::TimerProcess(v12));
   }
   v13 = this->owner; /*0x6b7ea4*/
   if ( v13 ) /*0x6b7ea9*/
@@ -403,8 +403,8 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
             && (*(uint8_t (__thiscall **)(int, int, unsigned int))(v6->Capacity)(v2 + 56, v10 + v11, 0) )
           {
             v12 = (unsigned int)(v2->q048);
-            v13 = v2->q03C; /*0x6b802a*/
-            v2->q048 = v12 + 1; /*0x6b8030*/
+            v13 = (unsigned int)(v2->q03C);
+            v2->q048 = (unsigned int)(v12 + 1);
             *(unsigned int *)(v13 + 4 * v12) = v5; /*0x6b8033*/
           }
           v7 = v16; /*0x6b803a*/
@@ -559,7 +559,7 @@ namespace gamemd {
 unsigned int * SpawnManagerClass::Constructor_6B83A0(DynamicVector * aP1, DynamicVector * aP2)
 {
   this->Items = (unsigned int)(0);
-  this->Capacity = aP1; /*0x6b83b0*/
+  this->Capacity = (unsigned int)(aP1);
   *(unsigned char *)&this->vtable4 = 1; /*0x6b83b3*/
   this->u8_D = 0; /*0x6b83b7*/
   if ( aP1 ) /*0x6b83c1*/
@@ -575,8 +575,8 @@ unsigned int * SpawnManagerClass::Constructor_6B83A0(DynamicVector * aP1, Dynami
     }
   }
   this->u32_14 = (unsigned int *)(10);
-  this->q010 = 0; /*0x6b83f0*/
-  return this; /*0x6b83f9*/
+  this->q010 = (unsigned int *)(0);
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 

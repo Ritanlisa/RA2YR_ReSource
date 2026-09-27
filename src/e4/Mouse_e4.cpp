@@ -14,6 +14,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x4A8BF0
 namespace gamemd {
@@ -119,7 +120,7 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
     dword_ABF294,
     v9);
   this->u32_5560 = (unsigned int)(aP1);
-  this->u32_555C = aP2; /*0x5bdda5*/
+  this->u32_555C = (unsigned int)(aP2);
   return 1; /*0x5bdcd8*/
 }
 }
@@ -187,8 +188,8 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
     else
     {
       v15 = (int)(0);
-      v16 = 0; /*0x7b94de*/
-      v11 = *aP1; /*0x7b94e3*/
+      v16 = (int)(0);
+      v11 = (int)(*aP1);
       v13 = (unsigned int *)v8; /*0x7b94e6*/
       v14 = v9; /*0x7b94ea*/
       v17 = v6; /*0x7b94ee*/

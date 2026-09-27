@@ -75,8 +75,8 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
   if ( g_DDraw_Initialized == 1 )
   {
     DSurface_WindowBounds = (int)(0);
-    dword_886FB4 = 0; /*0x560c78*/
-    g_CreditsScreenBounds = xRight; /*0x560c7e*/
+    dword_886FB4 = (int)(0);
+    g_CreditsScreenBounds = (int)(xRight);
     g_CreditsScreenConfig = yBottom; /*0x560c84*/
     xRight = xRight; /*0x560c8a*/
     DataGlobal_8A00A8 = yBottom; /*0x560c90*/

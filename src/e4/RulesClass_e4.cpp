@@ -34,7 +34,7 @@ unsigned int * RulesClass::InitINIChain(int a2, int a3)
     if ( a3 ) /*0x538b56*/
     {
       this->DetailMinFrameRateMovie = (unsigned int *)(a3);
-      return this; /*0x538b5e*/
+      return (unsigned int *)(this);
     }
     this->DetailMinFrameRateMovie = (unsigned int)(operator new(4 * a2));
     this->u8_D = 1; /*0x538b70*/

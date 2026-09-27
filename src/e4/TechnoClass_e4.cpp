@@ -368,9 +368,9 @@ unsigned int * TechnoClass::Update(BuildingClass * aP0, FootClass * aP1, void * 
     {
       if ( operator new(0x74u) ) /*0x6f3f9f*/
       {
-        v27 = *(unsigned int *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 132))(a1) + 3428); /*0x6f3fbf*/
-        v25 = *(unsigned int *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 132))(a1) + 3424); /*0x6f3fd0*/
-        v23 = *(unsigned int *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 132))(a1) + 3420); /*0x6f3fe1*/
+        v27 = (int)(*(unsigned int *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 132))(a1) + 3428));
+        v25 = (int)(*(unsigned int *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 132))(a1) + 3424));
+        v23 = (int)(*(unsigned int *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 132))(a1) + 3420));
         v5 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 132))(a1); /*0x6f3fe4*/
         v6 = SpawnManagerClass::SpawnManagerClass(a1, *(unsigned int *)(v5 + 3416), v23, v25, v27); /*0x6f3ff4*/
       }

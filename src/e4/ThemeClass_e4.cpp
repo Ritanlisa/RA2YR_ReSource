@@ -110,8 +110,8 @@ void * ThemeClass::InitializeThemes(char * a2)
   int v18; // [esp+14h] [ebp-24h]
   char Destination[32]; // [esp+18h] [ebp-20h] BYREF
 
-  v2 = (int)(a2);
-  KeyCount = INIClass::GetKeyCount(a2, (uint8_t *)g_INI_Key_Themes); /*0x7205a9*/
+  v2 = (char *)((int)(a2));
+  KeyCount = (int)(INIClass::GetKeyCount(a2, (uint8_t *)g_INI_Key_Themes));
   v5 = 0; /*0x7205ab*/
   v18 = KeyCount; /*0x7205af*/
   for ( i = 0; v5 < KeyCount; i = v5 ) /*0x7205b7*/

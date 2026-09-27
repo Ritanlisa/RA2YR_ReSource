@@ -36,12 +36,12 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
 {
   wchar_t *v3; // esi
   HWND v4; // ebx
-  signed int v5; // edi
+  unsigned int v5;
   wchar_t *v6; // eax
   int v7; // eax
   uint16_t *v8; // ebx
   int v9; // ecx
-  int v10; // ebx
+  wint_t * v10;
   wint_t *v11; // ebp
   int v13; // [esp+10h] [ebp-28h]
   int v14; // [esp+14h] [ebp-24h]
@@ -50,7 +50,7 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
   int v18; // [esp+24h] [ebp-14h] BYREF
   struct tagRECT Rect; // [esp+28h] [ebp-10h] BYREF
 
-  v3 = (wchar_t *)a1; /*0x5e2826*/
+  v3 = (wint_t *)((wchar_t *)a1);
   v4 = hWnd; /*0x5e2833*/
   v5 = wcslen(a1); /*0x5e2840*/
   v13 = 18; /*0x5e2842*/
@@ -68,7 +68,7 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
         v6 = wcschr(v3, 0xAu); /*0x5e2892*/
         if ( v6 ) /*0x5e289c*/
         {
-          v7 = v6 - v3 + 1; /*0x5e28a2*/
+          v7 = (wint_t *)(v6 - v3 + 1);
           if ( v5 >= v7 ) /*0x5e28a5*/
             v5 = v7; /*0x5e28a7*/
         }
@@ -96,7 +96,7 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
           v14 = 10; /*0x5e2902*/
           v5 -= 10; /*0x5e290a*/
         }
-        v10 = (wint_t *)(v5 - 1);
+        v10 = (wint_t *)((int)((wint_t *)(v5 - 1)));
         if ( v5 - 1 <= 0 ) /*0x5e291c*/
           goto LABEL_18; /*0x5e291c*/
         v11 = &v3[v10]; /*0x5e291e*/
@@ -242,13 +242,13 @@ void ShowDialogConfirm(CampaignScore * aP0, int nIDDlgItem, unsigned char (*a3)(
 namespace gamemd {
 void SetDialogPlayerName(HWND hDlg, int a2)
 {
-  HWND DlgItem; // edi
+  wchar_t * DlgItem;
   wchar_t *v4; // eax
 
   if ( a2 ) /*0x5e2ef5*/
   {
-    DlgItem = (wchar_t *)(GetDlgItem(hDlg, 1772));
-    v4 = WideString::GetOrEmpty_Alt((wchar_t **)(a2 + 32)); /*0x5e2f09*/
+    DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, 1772))));
+    v4 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)(a2 + 32)));
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)v4); /*0x5e2f17*/
   }
 }
@@ -434,17 +434,17 @@ char Game_CheckSettingsChanged(char a1, char a2)
 namespace gamemd {
 ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
 {
-  unsigned int v2;
+  char * v2;
   char *v4; // eax
   HWND result; // eax
   int v6; // esi
   char *v7; // eax
   wchar_t *v8; // eax
   wchar_t *String; // eax
-  int v10; // [esp-8h] [ebp-14h]
+  wchar_t * v10;
   int v11; // [esp-8h] [ebp-14h]
 
-  v2 = (char *)(a1);
+  v2 = (unsigned int)((char *)((unsigned int)((char *)(a1))));
   if ( !a1 ) /*0x5e39c9*/
     v2 = g_GameSetupBuffer; /*0x5e39cb*/
   v4 = CharToWideString(v2); /*0x5e39d7*/
@@ -478,8 +478,8 @@ ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
       }
       else
       {
-        v10 = (wchar_t *)(*(unsigned int *)(Game_PlayerInfoArray + 4 * v6));
-        v8 = GetStringCSF(g_Str_GUI_HostNoMap, 0, g_Str_File_netshare_cpp, 1169); /*0x5e3a5a*/
+        v10 = (wchar_t *)((int)((wchar_t *)(*(unsigned int *)(Game_PlayerInfoArray + 4 * v6))));
+        v8 = (wchar_t *)(GetStringCSF(g_Str_GUI_HostNoMap, 0, g_Str_File_netshare_cpp, 1169));
         return Dialog::ShowMessage(-1, (size_t)v8, v10, 11055906); /*0x5e3a62*/
       }
     }

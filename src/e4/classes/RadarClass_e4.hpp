@@ -10,7 +10,7 @@ struct RadarClass {
     void* vtable1;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8
-    unsigned int q00C;  // 0xC
+    void* ;  // 0xC
     unsigned int q00D;  // 0xD
     void* q010;  // 0x10
     unsigned int q014;  // 0x14
@@ -930,6 +930,7 @@ struct RadarClass {
     unsigned int u32_1D47;
     unsigned int u32_20C4;
     unsigned int UpdateFoundationShapesCustom;
+    unsigned int q00C;
 // --- flat members (END) ---
     CampaignClass * * Destruct();
     int GetBlip(int a1, int a2, int a3, ObjectClass * aP3);

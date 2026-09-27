@@ -25,10 +25,10 @@ unsigned char * Palette_6BitTo16Bit(char a2, char a3, char a4)
 namespace gamemd {
 AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void * a4)
 {
-  int v6; // esi
+  int v6;
   int v7; // eax
   int v8; // eax
-  int v9; // ecx
+  int v9;
   int v10; // eax
   void *v11; // ebx
   int v12; // eax
@@ -39,7 +39,7 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   int v17; // esi
   int v18; // esi
   int v19; // eax
-  int v20; // edi
+  void * v20;
   unsigned short *v21; // eax
   int v22; // ecx
   int v23; // ebp
@@ -234,10 +234,10 @@ AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void
   LABEL_31:
         if ( v36 != -1 && v36 < 256 ) /*0x6424dc*/
         {
-          v20 = a3; /*0x6424f3*/
+          v20 = (void *)((int)(a3));
           goto LABEL_36; /*0x6424f3*/
         }
-        v20 = a3; /*0x6424de*/
+        v20 = (void *)((int)(a3));
       }
       IDA_LOBYTE(v36) = 0; /*0x6424ed*/
   LABEL_36:

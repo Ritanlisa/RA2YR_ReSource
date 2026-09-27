@@ -8,7 +8,7 @@ namespace gamemd {
 struct SelectTeamCommand {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned int SelectTeamCommand_field_00;  // 0x4
+    void* ;  // 0x4
     char SelectTeamCommand_field_04[4];  // 0x8
     unsigned int q00C;  // 0xC
     unsigned int q010;  // 0x10
@@ -166,6 +166,7 @@ struct SelectTeamCommand {
     unsigned char q6E28;  // 0x6E28
     unsigned char q6E2C;  // 0x6E2C
     unsigned char q6E30;  // 0x6E30
+    unsigned int SelectTeamCommand_field_00;
 // --- flat members (END) ---
     unsigned int * Construct(int a2);
     void * AddRef();

@@ -22,6 +22,7 @@
 #include "e4/classes/BufferIOFileClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x74AD80
 namespace gamemd {
@@ -104,9 +105,9 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1, voi
   char v7; // al
   int Int_Overwrite; // eax
   unsigned int v9; // eax
-  unsigned int v10; // ecx
-  double v11; // rax
-  int v12; // ecx
+  void * v10;
+  void * v11;
+  void * v12;
   int v13; // eax
   int v14; // eax
   int v15; // edx
@@ -130,7 +131,7 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1, voi
   double v34; // [esp-8h] [ebp-2A0h]
   double v35; // [esp-8h] [ebp-2A0h]
   char v36; // [esp-4h] [ebp-29Ch]
-  int v37; // [esp+10h] [ebp-288h]
+  void * v37;
   int v38; // [esp+10h] [ebp-288h]
   int v39; // [esp+10h] [ebp-288h]
   int v40; // [esp+10h] [ebp-288h]
@@ -173,8 +174,8 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1, voi
     a2 = a2 * 0.01745277777777778; /*0x74b159*/
     *(double *, unsigned int a1, unsigned int a2)(a1 + 688) = a2; /*0x74b15f*/
   }
-  Int_Overwrite = INIClass::ReadInt_Overwrite(a1 + 36, aDuration, *(unsigned int *)(a1 + 668)); /*0x74b178*/
-  v35 = *(double *)(a1 + 696); /*0x74b18a*/
+  Int_Overwrite = (double)(INIClass::ReadInt_Overwrite(a1 + 36, aDuration, *(unsigned int *)(a1 + 668)));
+  v35 = (int)(*(double *)(a1 + 696));
   *(unsigned int *)(a1 + 668) = Int_Overwrite; /*0x74b193*/
   INIClass::ReadDouble_Overwrite(a1 + 36, (int)aMinzvel, v35); /*0x74b199*/
   v9 = *(unsigned int *)(a1 + 708); /*0x74b19e*/

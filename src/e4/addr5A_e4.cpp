@@ -250,9 +250,9 @@ int ProcessRandomMapCellAdjacency()
   result = LayerClass::CellIteratorNext(&MapClass_Instance); /*0x5a19f3*/
   for ( i = result; result; i = result )
   {
-    NeighbourContent = (int)(Cell::GetNeighbourContent((unsigned int *)i, 5u));
-    v14 = Cell::GetNeighbourContent((unsigned int *)i, 1u); /*0x5a1a1f*/
-    v2 = Cell::GetNeighbourContent((unsigned int *)i, 3u); /*0x5a1a2c*/
+    NeighbourContent = (void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 5u)));
+    v14 = (void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 1u)));
+    v2 = (void *)((int)(Cell::GetNeighbourContent((unsigned int *)i, 3u)));
     v3 = (int16_t *)Cell::GetNeighbourContent((unsigned int *)i, 2u); /*0x5a1a37*/
     v4 = (int16_t *)Cell::GetNeighbourContent((unsigned int *)i, 6u); /*0x5a1a44*/
     AdjacencyFlags = Cell::GetAdjacencyFlags(i); /*0x5a1a46*/

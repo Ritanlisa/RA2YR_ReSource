@@ -123,7 +123,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   unsigned char *v16; // ebp
   size_t v17; // esi
   uint8_t v18; // bl
-  char * v19;
+  unsigned int v19;
   unsigned char * v20;
   char v21; // bl
   unsigned int v22; // edi
@@ -132,11 +132,11 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   int v25; // esi
   int v26; // edx
   int v27; // eax
-  unsigned int v28;
+  uint8_t * v28;
   unsigned int v29; // edx
   int v30; // eax
   unsigned int v31; // esi
-  uint8_t v33; // bl
+  unsigned char * v33;
   unsigned char *v34; // eax
   bool v35; // cf
   uint8_t *v36; // eax
@@ -145,13 +145,13 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   uint8_t * v39;
   unsigned int v40; // edi
   unsigned int v41; // ebp
-  uint8_t v42; // cl
+  unsigned char * v42;
   unsigned char *v43; // eax
   uint8_t *v44; // eax
   unsigned char * v45;
   int v46; // eax
   unsigned int v47; // ecx
-  unsigned int v48;
+  uint8_t * v48;
   uint8_t v51; // [esp+38h] [ebp-8ACh]
   uint8_t v52; // [esp+38h] [ebp-8ACh]
   uint8_t v53; // [esp+38h] [ebp-8ACh]
@@ -191,9 +191,9 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
     if ( v10 ) /*0x63041d*/
     {
       v10[4] = (unsigned int)(v9);
-      v10[3] = 0; /*0x630429*/
-      v10[1] = v7; /*0x630438*/
-      v10[2] = v8; /*0x63043b*/
+      v10[3] = (unsigned int)(0);
+      v10[1] = (unsigned int)(v7);
+      v10[2] = (unsigned int)(v8);
       *v10 = &XSurface_Vtable; /*0x63043e*/
       Buffer::Init(v10 + 5, (int)v65, v7 * v8 * v9); /*0x630444*/
       v12 = v11; /*0x630449*/
@@ -210,7 +210,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   else
   {
     v13 = (unsigned int)(operator new(0x20u));
-    v14 = v13; /*0x630478*/
+    v14 = (unsigned int)(v13);
     if ( !v13 ) /*0x63047f*/
       return 0; /*0x6304c8*/
     v13[4] = v9; /*0x630481*/
@@ -229,7 +229,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   v15 = v15; /*0x6304dc*/
   if ( v15 ) /*0x6304e0*/
   {
-    v48 = (unsigned int)(v73);
+    v48 = (uint8_t *)((unsigned int)(v73));
     (*(void (__thiscall **)(int, unsigned char *, int))(a1->q024)(a1, v73, 2048); /*0x630504*/
     v15 = v15; /*0x63050e*/
     if ( v71 == 3 ) /*0x630514*/
@@ -250,7 +250,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
           v17 = 0; /*0x630557*/
           do /*0x6305ea*/
           {
-            v18 = *v48; /*0x630568*/
+            v18 = (unsigned int)(*v48);
             v19 = (char *)++v48; /*0x63056a*/
             if ( v48 >= (uint8_t *)&retaddr ) /*0x630571*/
             {
@@ -261,8 +261,8 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
             if ( (v18 & 0xC0) == 0xC0 ) /*0x63059a*/
             {
               v20 = (unsigned int)(*v19);
-              v21 = v18 & 0x3F; /*0x63059e*/
-              v59 = *v19; /*0x6305ab*/
+              v21 = (unsigned int)(v18 & 0x3F);
+              v59 = (unsigned char *)(*v19);
               v48 = (uint8_t *)(v19 + 1); /*0x6305af*/
               if ( v19 + 1 >= (char *)&retaddr ) /*0x6305b3*/
               {
@@ -324,8 +324,8 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
         v40 = v40; /*0x63083b*/
         while ( v41 < v40 ) /*0x630841*/
         {
-          v42 = (unsigned char *)(*v48);
-          v43 = v48 + 1; /*0x630858*/
+          v42 = (unsigned char *)((uint8_t)((unsigned char *)(*v48)));
+          v43 = (unsigned char *)(v48 + 1);
           v35 = v48 + 1 < (uint8_t *)&retaddr; /*0x630859*/
           v52 = *v48++; /*0x63085b*/
           if ( !v35 ) /*0x630863*/
@@ -337,9 +337,9 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
           }
           if ( (v42 & 0xC0) == 0xC0 ) /*0x630892*/
           {
-            v44 = (unsigned int)(v43 + 1);
-            v53 = v42 & 0x3F; /*0x630898*/
-            v60 = *(v44 - 1); /*0x6308a6*/
+            v44 = (uint8_t *)((unsigned int)(v43 + 1));
+            v53 = (unsigned int)(v42 & 0x3F);
+            v60 = (unsigned char *)(*(v44 - 1));
             v48 = v44; /*0x6308ac*/
             if ( v44 >= (uint8_t *)&retaddr ) /*0x6308b0*/
             {
@@ -363,7 +363,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
             *(unsigned char *)(v15 + v41++) = v42; /*0x63090f*/
           }
         }
-        v12 = v55; /*0x63091b*/
+        v12 = (uint8_t *)(v55);
         v28 = a1; /*0x63091f*/
         (*(void (__thiscall **)(unsigned int *))(*v55 + 96))(v55); /*0x630927*/
       }
@@ -382,8 +382,8 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
             {
               do /*0x63079c*/
               {
-                v33 = (unsigned char *)(*v48);
-                v34 = v48 + 1; /*0x6306e9*/
+                v33 = (unsigned char *)((uint8_t)((unsigned char *)(*v48)));
+                v34 = (unsigned char *)(v48 + 1);
                 v35 = v48 + 1 < (uint8_t *)&retaddr; /*0x6306ea*/
                 v51 = *v48++; /*0x6306ec*/
                 if ( !v35 ) /*0x6306f4*/
@@ -395,9 +395,9 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
                 }
                 if ( (v33 & 0xC0) == 0xC0 ) /*0x630723*/
                 {
-                  v36 = (unsigned int)(v34 + 1);
-                  v51 = v33 & 0x3F; /*0x630729*/
-                  v37 = *(v36 - 1); /*0x63072d*/
+                  v36 = (uint8_t *)((unsigned int)(v34 + 1));
+                  v51 = (unsigned int)(v33 & 0x3F);
+                  v37 = (unsigned char *)(*(v36 - 1));
                   v48 = v36; /*0x630737*/
                   if ( v36 >= (uint8_t *)&retaddr ) /*0x63073d*/
                   {
@@ -429,8 +429,8 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
         v39 = (uint8_t *)(v48);
         if ( v31 == v29 ) /*0x6307b9*/
         {
-          v28 = (uint8_t *)(a1);
-          v39 = v48 + 1; /*0x6307c1*/
+          v28 = (unsigned int)((uint8_t *)((unsigned int)((uint8_t *)(a1))));
+          v39 = (uint8_t *)(v48 + 1);
           v51 = *v48; /*0x6307cb*/
           if ( v48 + 1 >= (uint8_t *)&retaddr ) /*0x6307cf*/
           {
@@ -440,7 +440,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
         }
         else
         {
-          v28 = a1; /*0x6307f4*/
+          v28 = (unsigned int)((uint8_t *)(a1));
         }
         if ( (v51 & 0xC0) == 0xC0 && v39 + 1 >= (uint8_t *)&retaddr ) /*0x63080e*/
           (*(void (__thiscall **)(int, unsigned char *, int))(v28->q024)(v28, v73, 2048); /*0x630821*/
@@ -451,7 +451,7 @@ unsigned int * SHP_DecodeFrame(int a1, int a2, int a3, size_t Size)
   }
   else
   {
-    v28 = a1; /*0x63092c*/
+    v28 = (unsigned int)((uint8_t *)(a1));
   }
   if ( a2 ) /*0x630936*/
   {
@@ -660,7 +660,7 @@ void NetworkSettingsDlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4
   wchar_t lParam[64]; // [esp+14h] [ebp-3F4h] BYREF
   LONG dwNewLong[221]; // [esp+94h] [ebp-374h] BYREF
 
-  result = BaseDialogProc(hWnd, a2, a3, (unsigned int)a4); /*0x63178c*/
+  result = (int)(BaseDialogProc(hWnd, a2, a3, (unsigned int)a4));
   if ( !result ) /*0x631793*/
   {
     WindowLongA = GetWindowLongA(hWnd, 8); /*0x6317a2*/

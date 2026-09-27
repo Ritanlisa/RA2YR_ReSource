@@ -82,12 +82,12 @@ int E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
 namespace gamemd {
 void globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
 {
-  int v4; // ebp
+  void * v4;
   char v5; // bl
   int v6; // edi
   int *v7; // esi
   unsigned int *v8; // ecx
-  int v9; // edx
+  void * v9;
   int16_t *v10; // esi
   int v11; // edi
   int v12; // eax
@@ -96,7 +96,7 @@ void globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
   int v16[2]; // [esp+1Eh] [ebp-14h] BYREF
   unsigned int v17[3]; // [esp+26h] [ebp-Ch] BYREF
 
-  v4 = a3; /*0x6e2055*/
+  v4 = (void *)((int)(a3));
   v15 = 0; /*0x6e205b*/
   do /*0x6e20ec*/
   {
@@ -120,8 +120,8 @@ void globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
               {
                 if ( LinkedList::Contains(v8, v4) ) /*0x6e20a3*/
                 {
-                  v9 = *v7; /*0x6e20b4*/
-                  a3 = v7[27]; /*0x6e20b8*/
+                  v9 = (void *)((int)((void *)(*v7)));
+                  a3 = (void *)(v7[27]);
                   (*(void (__thiscall **)(int *, int *, unsigned int, int, unsigned int, int, unsigned int, unsigned int))(v9 + 364))( /*0x6e20d2*/
                     v7,
                     &a3,
@@ -224,13 +224,13 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   unsigned int *v5; // eax
   int v7; // [esp+0h] [ebp-10h] BYREF
   int v8; // [esp+4h] [ebp-Ch] BYREF
-  int v9; // [esp+8h] [ebp-8h]
-  int GroundHeight; // [esp+Ch] [ebp-4h]
+  unsigned int * v9;
+  unsigned int * GroundHeight;
 
   v7 = (unsigned int *)(*ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->M68));
-  GroundHeight = 0; /*0x6e339f*/
-  v9 = (IDA_SHIWORD(v7) << 8) + 128; /*0x6e33c0*/
-  v8 = ((int16_t)v7 << 8) + 128; /*0x6e33ca*/
+  GroundHeight = (int)((unsigned int *)(0));
+  v9 = (int)((unsigned int *)((IDA_SHIWORD(v7) << 8) + 128));
+  v8 = (unsigned int *)(((int16_t)v7 << 8) + 128);
   GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e33d5*/
   v5 = operator new(0x14u); /*0x6e33d9*/
   if ( v5 ) /*0x6e33e3*/
@@ -540,9 +540,9 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
 namespace gamemd {
 AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1, int a3)
 {
-  int v3; // esi
-  int v4; // ebp
-  int i; // ebx
+  int * v3;
+  int * v4;
+  int * i;
   int v6; // edi
   int v7; // edi
   int v8; // eax
@@ -559,8 +559,8 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
   char v20[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
   v3 = (int *)(*(unsigned int *)&this->M84);
-  v4 = -1; /*0x6efc79*/
-  v17 = this; /*0x6efc7f*/
+  v4 = (int *)(-1);
+  v17 = (int)(this);
   for ( i = v3; v3; v3 = v3->q5D8 ) /*0x6efc85*/
   {
     v6 = *(unsigned int *)((*(int (__thiscall **)(int))(v3->hasParachute)(v3) + 1532); /*0x6efc91*/
@@ -568,8 +568,8 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
       && (v3->u8_689 || (*(int (__thiscall **)(int))(v3->fallRate)(v3) == 2)
       && v6 > v4 )
     {
-      i = v3; /*0x6efcbc*/
-      v4 = v6; /*0x6efcbe*/
+      i = (int)(v3);
+      v4 = (int *)(v6);
     }
   }
   if ( !i ) /*0x6efccc*/

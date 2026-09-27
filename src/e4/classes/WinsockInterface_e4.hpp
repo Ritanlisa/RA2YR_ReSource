@@ -57,6 +57,7 @@ struct WinsockInterface {
     unsigned int vt_slot_24;
     unsigned char u8_3F068;
     unsigned int q092;
+    unsigned int WSAData;
 // --- flat members (END) ---
     char * ProcessPacket(int a2);  // 0x770270
     char Init();  // 0x7B1DE0

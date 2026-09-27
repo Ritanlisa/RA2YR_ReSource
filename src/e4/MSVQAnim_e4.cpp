@@ -11,7 +11,7 @@
 namespace gamemd {
 void * MSVQAnim::GetFrameRect(int * a2)
 {
-  int v3; // eax
+  int * v3;
   int *v4; // ecx
 
   if ( (byte_ABFB98 & 1) == 0 ) /*0x5cd2a0*/

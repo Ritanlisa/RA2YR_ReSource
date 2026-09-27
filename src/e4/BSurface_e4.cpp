@@ -27,9 +27,9 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
   int v18; // edx
   int v19;
 
-  a2 = (unsigned int *)(a2);
-  v14 = v14; /*0x410ce9*/
-  a5 = a5; /*0x410cef*/
+  a2 = (int)((unsigned int *)(a2));
+  v14 = (int)((unsigned int *)(v14));
+  a5 = (int)((unsigned int *)(a5));
   *(&this->Width1) = a5; /*0x410cf3*/
   *(unsigned int *)this = a2; /*0x410cf8*/
   a3 = a3; /*0x410cfa*/
@@ -42,11 +42,11 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
   if ( v10 ) /*0x410d20*/
   {
     v11 = (unsigned int)(*(&this->Width0));
-    v12 = *(&this->Width1); /*0x410d25*/
-    v10[1] = v11; /*0x410d28*/
-    v10[2] = v12; /*0x410d30*/
-    v10[3] = 0; /*0x410d38*/
-    *v10 = &XSurface_Vtable; /*0x410d3b*/
+    v12 = (unsigned int)(*(&this->Width1));
+    v10[1] = (unsigned int)(v11);
+    v10[2] = (unsigned int)(v12);
+    v10[3] = (unsigned int)(0);
+    *v10 = (unsigned int)(&XSurface_Vtable);
     v10[4] = 2; /*0x410d41*/
     Buffer::Init(v10 + 5, 0, 2 * v12 * v11); /*0x410d48*/
     *v10 = &BSurface_Vtable; /*0x410d4d*/
@@ -56,12 +56,12 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
   {
     v13 = 0; /*0x410d57*/
   }
-  v14 = (unsigned int *)(*(&this->Width0));
-  a5 = *(&this->Width1); /*0x410d5f*/
-  this->Buffer = v13; /*0x410d63*/
-  a2 = 0; /*0x410d66*/
-  a3 = 0; /*0x410d6a*/
-  v14 = v14; /*0x410d6e*/
+  v14 = (int)((unsigned int *)(*(&this->Width0)));
+  a5 = (int)((unsigned int *)(*(&this->Width1)));
+  this->Buffer = (unsigned int *)(v13);
+  a2 = (int)((unsigned int *)(0));
+  a3 = (unsigned int *)(0);
+  v14 = (unsigned int *)(v14);
   (*(void (__thiscall **)(unsigned int *, int *, int))(*v13 + 20))(v13, &a2, 127); /*0x410d7b*/
   v15 = (*(int (__thiscall **)(unsigned int, unsigned int, unsigned int))(*(unsigned int *)this->Buffer + 92))(this->Buffer, 0, 0); /*0x410d89*/
   v16 = *(&this->Width1); /*0x410d8c*/

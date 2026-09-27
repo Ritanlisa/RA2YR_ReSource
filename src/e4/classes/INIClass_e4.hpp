@@ -23,7 +23,7 @@ struct INIClass {
     char unknown30[4];  // 0x30
     bool needsSave_flag;  // 0x34
     unsigned char q035;  // 0x35
-    unsigned int unknown38;  // 0x38
+    void* ;  // 0x38
     unsigned int INIClass_field_3C;  // 0x3C
     unsigned int q040;  // 0x40
     unsigned int q044;  // 0x44
@@ -164,6 +164,7 @@ struct INIClass {
     unsigned int u32_44;
     unsigned char u8_D;
     unsigned int v3;
+    unsigned int unknown38;
     unsigned int ReadInt_Overwrite;
     unsigned int SetInt;
     unsigned int WriteToString;

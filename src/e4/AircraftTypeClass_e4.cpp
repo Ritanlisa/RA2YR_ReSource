@@ -102,7 +102,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   char v13; // [esp-Ch] [ebp-98h]
   char v14; // [esp-Ch] [ebp-98h]
   char v15; // [esp-Ch] [ebp-98h]
-  int v16; // [esp-Ch] [ebp-98h]
+  AnimTypeClass ** v16;
   int v17; // [esp+8h] [ebp-84h]
   char Destination[128]; // [esp+Ch] [ebp-80h] BYREF
 
@@ -138,7 +138,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   {
     v9 = v17; /*0x41cd2d*/
   }
-  v16 = (gamemd::AnimTypeClass **)(*(unsigned int *)(a1 + 3588));
+  v16 = (gamemd::AnimTypeClass **)((int)((gamemd::AnimTypeClass **)(*(unsigned int *)(a1 + 3588))));
   *(unsigned int *)(a1 + 3584) = v9; /*0x41cd43*/
   *(unsigned int *)(a1 + 3588) = INIClass::ReadInt_Overwrite(a1 + 504, aSpawndelay, v16); /*0x41cd4e*/
   v10 = INIClass::ReadBool_Overwrite(a1 + 36, aFlyby, *(unsigned char *)(a1 + 3595)); /*0x41cd63*/

@@ -25,6 +25,7 @@
 #include "e4/classes/Count_e4.hpp"
 #include "e4/classes/BulletClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x525110
 namespace gamemd {
@@ -377,8 +378,8 @@ AbstractClass * * DynamicVectorClass_UHashObject_HashString__ptr_SchemeNode::Rem
         this->Items = 0; /*0x628cb5*/
       }
     }
-    this->Items = (unsigned int)(v16);
-    this->q008 = v3; /*0x628cce*/
+    this->Items = (void *)((unsigned int)(v16));
+    this->q008 = (unsigned int)(v3);
     this->IsAllocated = a2 == 0; /*0x628cd1*/
   }
   else
@@ -583,7 +584,7 @@ char DynamicVectorClass_uint::Remove(int a2, unsigned int * a3)
   {
     (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x42d80e*/
   }
-  v7 = (unsigned int)(this->Capacity);
+  v7 = (void *)((unsigned int)(this->Capacity));
   if ( v7 < this->Count ) /*0x42d819*/
     this->Count = v7; /*0x42d81b*/
   return 1; /*0x42d81e*/
@@ -622,8 +623,8 @@ VectorClass_flat * DynamicVectorClass_uint::Destructor(char a2)
     RA2_OPDEL(v3); /*0x42db28*/
     this->Items = 0; /*0x42db30*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->Capacity = 0; /*0x42db41*/
+  this->IsAllocated = (unsigned char)((gamemd::VectorClass_flat *)(0));
+  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x42db48*/
     RA2_OPDEL(); /*0x42db4b*/
   return this; /*0x42db55*/
@@ -1096,8 +1097,8 @@ DynamicVector * DynamicVectorClass_PAD::Add(char a2)
     RA2_OPDEL(v3); /*0x49ee28*/
     this->Items = 0; /*0x49ee30*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x49ee41*/
+  this->IsAllocated = (unsigned char)((gamemd::DynamicVector *)(0));
+  this->q008 = (unsigned int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x49ee48*/
     RA2_OPDEL(); /*0x49ee4b*/
   return this; /*0x49ee55*/
@@ -1116,8 +1117,8 @@ VectorClass_flat * DynamicVectorClass_PAD_16::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x49f008*/
     this->Items = 0; /*0x49f010*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->Capacity = 0; /*0x49f021*/
+  this->IsAllocated = (unsigned char)((gamemd::VectorClass_flat *)(0));
+  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x49f028*/
     RA2_OPDEL(); /*0x49f02b*/
   return this; /*0x49f035*/
@@ -1136,8 +1137,8 @@ DynamicVector * DynamicVectorClass_PAD::Destructor(char a2)
     RA2_OPDEL(v3); /*0x49f058*/
     this->Items = 0; /*0x49f060*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x49f071*/
+  this->IsAllocated = (unsigned char)((gamemd::DynamicVector *)(0));
+  this->q008 = (unsigned int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x49f078*/
     RA2_OPDEL(); /*0x49f07b*/
   return this; /*0x49f085*/

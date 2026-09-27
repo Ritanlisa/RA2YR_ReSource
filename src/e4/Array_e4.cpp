@@ -16,13 +16,13 @@ int Array::GetClamped(CheckListClass * aP1)
 {
   int result; // eax
   CheckListClass * v3;
-  int v4; // eax
+  CheckListClass * v4;
 
   result = *(&this->q0047); /*0x557ac0*/
   if ( result ) /*0x557ac5*/
   {
-    v3 = (gamemd::CheckListClass *)(aP1);
-    v4 = result - 1; /*0x557ace*/
+    v3 = (gamemd::CheckListClass *)((unsigned int)((gamemd::CheckListClass *)(aP1)));
+    v4 = (gamemd::CheckListClass *)((int)((gamemd::CheckListClass *)(result - 1)));
     if ( aP1 >= v4 ) /*0x557ad1*/
       v3 = v4; /*0x557ad3*/
     return *(unsigned int *)(*(&this->q0044) + 4 * v3); /*0x557ad8*/
@@ -61,8 +61,8 @@ int Array::RemoveAt(int a2)
   void * v2;
   void * v4;
 
-  v2 = (unsigned int)(this->q010);
-  a2 = a2; /*0x63e593*/
+  v2 = (void *)((unsigned int)(this->q010));
+  a2 = (unsigned int)(a2);
   if ( a2 >= v2 ) /*0x63e599*/
     return 0; /*0x63e5bc*/
   v4 = v2 - 1; /*0x63e59b*/
@@ -198,7 +198,7 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
   int v17; // [esp+Ch] [ebp-4h]
 
   v4 = (gamemd::ObjectClass *)(v5);
-  v5 = *this; /*0x7ad799*/
+  v5 = (gamemd::ObjectClass *)(*this);
   if ( v5 > v5 ) /*0x7ad79e*/
   {
     v5 = v5; /*0x7ad7a0*/
@@ -251,13 +251,13 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
 namespace gamemd {
 int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall *a4, void * a1, void * a3)(int) a4)
 {
-  int result; // eax
-  int v6; // edi
+  void * result;
+  void * v6;
 
-  result = a3 - 1; /*0x4068f4*/
+  result = (void *)((int)(a3 - 1));
   if ( a3 - 1 >= 0 ) /*0x4068f5*/
   {
-    v6 = a3; /*0x406907*/
+    v6 = (void *)((int)(a3));
     do /*0x406911*/
     {
       result = a4(a1); /*0x40690c*/
@@ -274,11 +274,11 @@ int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall 
 namespace gamemd {
 int Array::ForEachReverse(ObjectClass * aP0, int a2, int a3, int (__thiscall *a4, void * a1)(int) a4)
 {
-  int v4; // esi
+  void * v4;
   int result; // eax
   int v6; // edi
 
-  v4 = a3 * a2 + a1; /*0x40afe3*/
+  v4 = (void *)((int)(a3 * a2 + a1));
   result = a3 - 1; /*0x40afe5*/
   if ( a3 - 1 >= 0 ) /*0x40afe6*/
   {

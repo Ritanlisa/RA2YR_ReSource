@@ -135,7 +135,7 @@ int VoxelAnim::Draw(unsigned int * a2)
   int v145; // [esp+1Ch] [ebp-54h]
   int v148; // [esp+20h] [ebp-50h]
   int v151; // [esp+24h] [ebp-4Ch]
-  unsigned int v152;
+  unsigned int * v152;
   double v153; // [esp+3Ch] [ebp-34h] BYREF
   double v154; // [esp+44h] [ebp-2Ch] BYREF
   double v155; // [esp+4Ch] [ebp-24h] BYREF
@@ -339,8 +339,7 @@ LABEL_123:
     *(unsigned char *)(v9 + 1674) = 0;
     return v9;
   }
-  unsigned int v5 =
-  v152 = v5;
+  unsigned int * v5 = (unsigned int *)((unsigned int *)(v152 = v5));
   if ( v5[376] != -1 )
     goto LABEL_32;
   int v6 = v5[400];
@@ -351,7 +350,7 @@ LABEL_123:
   if ( (int)g_CurrentFrame - v6 < v7 )
   {
     v7 -= (int)g_CurrentFrame - v6;
-    v5 = v152;
+    v5 = (unsigned int)(v152);
 LABEL_11:
     if ( v7 )
     {
@@ -406,8 +405,8 @@ LABEL_11:
             IDA_LOWORD(a2) = *v19 / 256;
             unsigned int v20 =
             IDA_HIWORD(a2) = v19[1] / 256;
-            unsigned int v21 = (unsigned int)(IDA_LODWORD(v154) = a2);
-            v152 = v20;
+            unsigned int * v21 = (unsigned int)((unsigned int)((unsigned int)((unsigned int)(IDA_LODWORD(v154) = a2))));
+            v152 = (unsigned int *)(v20);
             char v149 = (*(int (__thiscall **)(unsigned int *))(*v20 + 800))(v20);
             int v22 = *((unsigned int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v153) + 80) >> 8;
             IDA_LOBYTE(v22) = v22 & 1;

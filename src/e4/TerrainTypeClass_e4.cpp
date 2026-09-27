@@ -15,6 +15,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/LoadingScreen_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
 
 // 0x5447C0
 namespace gamemd {
@@ -95,11 +96,11 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
     this->q094 = v11; /*0x5449c3*/
   }
   this->u8_2F5 = (unsigned int *)(0);
-  this->q22F = 1; /*0x5449cb*/
-  this->Selectable = 0; /*0x5449d2*/
-  this->LegalTarget = 0; /*0x5449d8*/
-  this->Insignificant = 1; /*0x5449de*/
-  this->q233 = 1; /*0x5449e5*/
+  this->q22F = (char)((unsigned int *)(1));
+  this->Selectable = (char)((unsigned int *)(0));
+  this->LegalTarget = (char)((unsigned int *)(0));
+  this->Insignificant = (unsigned int *)(1);
+  this->q233 = (unsigned int *)(1);
   this->q235 = 0; /*0x5449ec*/
   return this; /*0x5449c4*/
 }

@@ -8,7 +8,7 @@ struct Trigger {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned int q004;  // 0x4
-    unsigned int u32_8;  // 0x8
+    void* ;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char u8_D;  // 0xD
     void* q010;  // 0x10
@@ -220,6 +220,7 @@ struct Trigger {
     void* ptr_4;
     void* ptr_41;
     unsigned int u32_1C2;
+    unsigned int u32_8;
 // --- flat members (END) ---
     char EnableOnce(AbstractClass * aP1);  // 0x554A60
     void * initTrigger(MSShapeAnim * aP1,  MSShapeAnim * aP2,  int a4,  int a5,  int a6,  int a7,  MSShapeAnim * aP7);    // 0x5CBD20

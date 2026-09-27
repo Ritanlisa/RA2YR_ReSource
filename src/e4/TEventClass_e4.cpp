@@ -16,6 +16,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/BuildingType_e4.hpp"
+#include "e4/classes/TClassFactory_MechLocomotionClass_e4.hpp"
 
 // 0x71E940
 namespace gamemd {
@@ -30,14 +32,14 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
   int v14; // ebx
   int v15; // ebp
   int v16; // esi
-  int v18; // eax
+  unsigned int v18;
   int v19; // edi
   const char *v20; // edx
   char *v21; // ebp
   int v22; // edi
   int v23; // esi
-  int v24; // edx
-  int v25; // eax
+  DynamicVector ** v24;
+  DynamicVector ** v25;
   int v26; // edx
   int v27; // eax
   void *v28; // ecx
@@ -89,8 +91,8 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
     case 14: /*0x71e964*/
       if ( *((unsigned int *)g_ScenarioClass_Instance + 1146) == -1 ) /*0x71ebf6*/
         return (gamemd::DynamicVector **)(0);
-      v24 = *((unsigned int *)g_ScenarioClass_Instance + 1146); /*0x71ebfc*/
-      v25 = (gamemd::DynamicVector **)(*((unsigned int *)g_ScenarioClass_Instance + 1148));
+      v24 = (gamemd::DynamicVector **)((int)(*((unsigned int *)g_ScenarioClass_Instance + 1146)));
+      v25 = (gamemd::DynamicVector **)((int)((gamemd::DynamicVector **)(*((unsigned int *)g_ScenarioClass_Instance + 1148))));
       if ( v24 == -1 ) /*0x71ec0b*/
         return (gamemd::DynamicVector **)(!v25);
       if ( (int)g_CurrentFrame - v24 >= v25 ) /*0x71ec17*/
@@ -170,11 +172,11 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
         v21 -= 4; /*0x71ea83*/
         if ( v19 < 0 ) /*0x71ea88*/
         {
-          v18 = a6; /*0x71ea8a*/
+          v18 = (gamemd::DynamicVector **)(a6);
           goto LABEL_22; /*0x71ea8e*/
         }
       }
-      v18 = (gamemd::DynamicVector **)(v19);
+      v18 = (gamemd::DynamicVector **)((int)((gamemd::DynamicVector **)(v19)));
   LABEL_22:
       if ( v18 >= dword_A8EB10 || v18 < 0 ) /*0x71eaa0*/
         return 0; /*0x71eaa0*/

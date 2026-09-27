@@ -204,7 +204,7 @@ AircraftTypeClass * * AircraftClass::GetCursorOverObject(IUnknown * aP1, IUnknow
   int v17; // eax
   char v18[12]; // [esp+10h] [ebp-Ch] BYREF
 
-  a3 = (int)(a3);
+  a3 = (IUnknown *)((int)(a3));
   v4 = (int *)a3; /*0x417ccb*/
   result = InfantryClass::GetCursorOverObject((void *)this, a3, a3); /*0x417cd3*/
   v7 = result; /*0x417cd8*/

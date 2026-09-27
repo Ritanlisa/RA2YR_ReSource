@@ -27,8 +27,8 @@ int LayerClass::CoordinatesLegal(IUnknown * aP1)
   int v4; // eax
 
   v2 = (int)(*(&this->q0181));
-  v3 = *aP1; /*0x56830c*/
-  v4 = aP1[1]; /*0x56830f*/
+  v3 = (int)(*aP1);
+  v4 = (int)(aP1[1]);
   return v4 + v3 > v2 && v3 - v4 < v2 && v4 - v3 < v2 && v4 + v3 <= v2 + 2 * *(&this->q0182); /*0x568337*/
 }
 }
@@ -98,7 +98,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
   int v77; // [esp+20h] [ebp-1D4h]
   int v78; // [esp+24h] [ebp-1D0h]
   int v79; // [esp+28h] [ebp-1CCh]
-  int v80; // [esp+2Ch] [ebp-1C8h]
+  IUnknown * v80;
   int v81; // [esp+30h] [ebp-1C4h]
   unsigned int *i; // [esp+34h] [ebp-1C0h]
   int v83; // [esp+38h] [ebp-1BCh]
@@ -125,12 +125,12 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
   unsigned int v104[24]; // [esp+134h] [ebp-C0h] BYREF
   unsigned int v105[24]; // [esp+194h] [ebp-60h] BYREF
 
-  v17 = (IUnknown *)(aP0);
-  v18 = *aP3; /*0x56dc33*/
-  v19 = aP3[1]; /*0x56dc36*/
-  v80 = (int)aP0; /*0x56dc49*/
-  v77 = 0; /*0x56dc4d*/
-  v85 = v18; /*0x56dc51*/
+  v17 = (unsigned int *)((IUnknown *)(aP0));
+  v18 = (IUnknown *)(*aP3);
+  v19 = (IUnknown *)(aP3[1]);
+  v80 = (int)((IUnknown *)((int)aP0));
+  v77 = (IUnknown *)(0);
+  v85 = (IUnknown *)(v18);
   v81 = v19; /*0x56dc55*/
   v76 = 0; /*0x56dc59*/
   if ( aP5 == 0xFFFF ) /*0x56dc5e*/
@@ -188,12 +188,11 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
           v25 = v78; /*0x56dd82*/
         }
         g_Map_GlobalCellIndex = (unsigned int)(v87);
-        v30 = &g_CellClassArray; /*0x56dd8c*/
-  LABEL_23:
-        v98[1] = v27; /*0x56dd91*/
-        v98[0] = (int16_t)(v85 + v26); /*0x56dd9f*/
-        v98[2] = aP8; /*0x56ddad*/
-        v98[3] = aP9; /*0x56ddb9*/
+        v30 = (unsigned int)(&g_CellClassArray);
+  LABEL_23: v98[1] = (unsigned int)(v27);
+        v98[0] = (unsigned int)((int16_t)(v85 + v26));
+        v98[2] = (unsigned int)(aP8);
+        v98[3] = (unsigned int)(aP9);
         if ( Type::CheckAmbiguity(v17, (int)v30, 1) ) /*0x56ddc0*/
         {
           if ( (uint8_t)MapClass::CheckCellsBuildable(&v75, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56de0e*/
@@ -247,12 +246,11 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
           v25 = v78; /*0x56df98*/
         }
         g_Map_GlobalCellIndex = (unsigned int)(v89);
-        v39 = &g_CellClassArray; /*0x56dfa2*/
-  LABEL_44:
-        v97[1] = v36; /*0x56dfa7*/
-        v97[3] = aP9; /*0x56dfbe*/
-        v97[0] = (int16_t)(v85 + v26); /*0x56dfc8*/
-        v97[2] = aP8; /*0x56dfcf*/
+        v39 = (unsigned int)(&g_CellClassArray);
+  LABEL_44: v97[1] = (unsigned int)(v36);
+        v97[3] = (unsigned int)(aP9);
+        v97[0] = (unsigned int)((int16_t)(v85 + v26));
+        v97[2] = (unsigned int)(aP8);
         if ( Type::CheckAmbiguity(v17, (int)v39, 1) ) /*0x56dfd6*/
         {
           if ( (uint8_t)MapClass::CheckCellsBuildable(&v75, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e024*/
@@ -315,12 +313,11 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
           v17 = (unsigned int *)v80; /*0x56e1d9*/
         }
         g_Map_GlobalCellIndex = (unsigned int)(v84);
-        v49 = &g_CellClassArray; /*0x56e1e3*/
-  LABEL_67:
-        v99[0] = (int16_t)(v85 - v78); /*0x56e1e8*/
-        v99[1] = (int16_t)(v45 + v81); /*0x56e1fd*/
-        v99[2] = aP8; /*0x56e209*/
-        v99[3] = aP9; /*0x56e210*/
+        v49 = (unsigned int)(&g_CellClassArray);
+  LABEL_67: v99[0] = (unsigned int)((int16_t)(v85 - v78));
+        v99[1] = (unsigned int)((int16_t)(v45 + v81));
+        v99[2] = (unsigned int)(aP8);
+        v99[3] = (unsigned int)(aP9);
         if ( Type::CheckAmbiguity(v17, (int)v49, 1) ) /*0x56e217*/
         {
           if ( (uint8_t)MapClass::CheckCellsBuildable(&v75, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e265*/
@@ -369,12 +366,11 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
           v17 = (unsigned int *)v80; /*0x56e3db*/
         }
         g_Map_GlobalCellIndex = (unsigned int)(v79);
-        v56 = &g_CellClassArray; /*0x56e3e5*/
-  LABEL_86:
-        v96[0] = (int16_t)(v78 + v85); /*0x56e3ea*/
-        v96[1] = (int16_t)(v45 + v81); /*0x56e3ff*/
-        v96[2] = aP8; /*0x56e40b*/
-        v96[3] = aP9; /*0x56e412*/
+        v56 = (unsigned int)(&g_CellClassArray);
+  LABEL_86: v96[0] = (unsigned int)((int16_t)(v78 + v85));
+        v96[1] = (unsigned int)((int16_t)(v45 + v81));
+        v96[2] = (unsigned int)(aP8);
+        v96[3] = (unsigned int)(aP9);
         if ( Type::CheckAmbiguity(v17, (int)v56, 1) ) /*0x56e419*/
         {
           if ( (uint8_t)MapClass::CheckCellsBuildable(&v75, aP8, aP9, aP4, aP5, aP6, -1, aP7, aP10) ) /*0x56e467*/
@@ -649,8 +645,8 @@ int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
   bool result; // al
 
   v3 = (int)(0);
-  v4 = aP1[1]; /*0x57846d*/
-  v5 = *aP1; /*0x578472*/
+  v4 = (int)(aP1[1]);
+  v5 = (int)(*aP1);
   if ( aP2 ) /*0x578477*/
   {
     v6 = v5 + (v4 << 9); /*0x57847e*/
@@ -824,7 +820,7 @@ void* LayerClass::DestroyCliff(int * a1, int a2, int a3)
             if ( v25 >= 0x40000 || (v26 = *(unsigned int **)(g_Shroud_CellArray + 4 * v25)) == 0 )
             {
               g_Map_GlobalCellIndex = a3;
-              v26 = g_CellClassArray;
+              v26 = (unsigned int *)(g_CellClassArray);
             }
             AbstractClass::ClearTargetToMeClearManagerTarget(v26);
             BuildingClass::AddUpgrade((int)&DataGlobal_87F7E8, (int)&a3);

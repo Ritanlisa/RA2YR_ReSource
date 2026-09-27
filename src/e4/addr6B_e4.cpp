@@ -39,7 +39,7 @@ unsigned int * sub_6B2430(int * a1, int a2)
   unsigned int *result; // eax
   int v3; // ebx
   int v4; // edi
-  int v6; // eax
+  unsigned int * v6;
 
   result = (unsigned int *)dword_B0B658; /*0x6b2430*/
   v3 = a1[1]; /*0x6b2436*/
@@ -53,8 +53,8 @@ unsigned int * sub_6B2430(int * a1, int a2)
                              0),
         (unsigned char)result) )
   {
-    v6 = (unsigned int *)(g_SlaveMgrPool++);
-    result = (char *)dword_B0B654 + 12 * v6; /*0x6b248f*/
+    v6 = (int)((unsigned int *)(g_SlaveMgrPool++));
+    result = (unsigned int *)((char *)dword_B0B654 + 12 * v6);
     *result = v4; /*0x6b2492*/
     result[1] = v3; /*0x6b2495*/
     result[2] = a2; /*0x6b2498*/
@@ -230,7 +230,7 @@ AbstractClass * * SlaveManager_InitGrid()
   int v13; // edx
   int v14; // esi
   int v15; // ecx
-  int v16; // eax
+  unsigned short * v16;
   int v17; // ecx
   int v18; // edi
   unsigned int *v19; // esi
@@ -247,13 +247,13 @@ AbstractClass * * SlaveManager_InitGrid()
   int v30; // edx
   char *v31; // [esp+8h] [ebp-4Ch]
   int v32; // [esp+Ch] [ebp-48h] BYREF
-  int v33; // [esp+10h] [ebp-44h] BYREF
+  unsigned short * v33;
   int i; // [esp+14h] [ebp-40h]
   int v35; // [esp+18h] [ebp-3Ch]
   int v36; // [esp+1Ch] [ebp-38h]
   int v37; // [esp+20h] [ebp-34h]
   unsigned short v38[2]; // [esp+24h] [ebp-30h] BYREF
-  int v39; // [esp+28h] [ebp-2Ch]
+  unsigned int v39;
   int v40; // [esp+2Ch] [ebp-28h]
   int v41; // [esp+30h] [ebp-24h] BYREF
   int v42; // [esp+34h] [ebp-20h] BYREF
@@ -309,10 +309,10 @@ AbstractClass * * SlaveManager_InitGrid()
     {
       while ( 1 ) /*0x6b2b77*/
       {
-        v39 = (unsigned short *)(0);
-        v33 = 0; /*0x6b2b7b*/
-        v31 = (char *)g_SlaveManagerPool + 8 * v7 + 8 * v6 * result; /*0x6b2b82*/
-        v31[4] = 0; /*0x6b2b86*/
+        v39 = (int)((unsigned short *)(0));
+        v33 = (int)((unsigned short *)(0));
+        v31 = (char *)((unsigned short *)((char *)g_SlaveManagerPool + 8 * v7 + 8 * v6 * result));
+        v31[4] = (unsigned short *)(0);
         v31[5] = 0; /*0x6b2b8a*/
         v45[1] = dword_8759AC + v6; /*0x6b2ba8*/
         v8 = dword_8759A8 + v7; /*0x6b2bad*/
@@ -351,7 +351,7 @@ AbstractClass * * SlaveManager_InitGrid()
           v14 = *((uint8_t *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v32) + 284); /*0x6b2c6c*/
           v15 = 15 * *((char *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v32) + 283) /*0x6b2c95*/
               + *(unsigned int *)*(&off_83FF18 + v14);
-          v16 = g_MapCellHeight_Value; /*0x6b2c97*/
+          v16 = (int)((unsigned short *)(g_MapCellHeight_Value));
           v39 = v15; /*0x6b2c9c*/
           v17 = (int16_t)(v45[1] - 1); /*0x6b2ca3*/
           v18 = v17 + v45[0]; /*0x6b2ca6*/
@@ -402,8 +402,8 @@ AbstractClass * * SlaveManager_InitGrid()
           if ( v26 > v16 && v25 - v45[1] < v16 && v45[1] - v25 < v16 && v26 <= g_MapCellCount ) /*0x6b2e60*/
           {
             v38[0] = (int)(-1);
-            v38[1] = 0; /*0x6b2e77*/
-            v43 = *CellStruct::Add(v45, &v44, v38); /*0x6b2e89*/
+            v38[1] = (int)(0);
+            v43 = (int)(*CellStruct::Add(v45, &v44, v38));
             v27 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v43); /*0x6b2e93*/
             IDA_LOBYTE(v28) = 1; /*0x6b2e9a*/
             if ( !(uint8_t)System_Init_6B2520(v27, v28) ) /*0x6b2e9c*/

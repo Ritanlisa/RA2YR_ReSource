@@ -52,7 +52,7 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
   char *v2; // ecx
   unsigned int *v3; // eax
   unsigned int *v4; // ebp
-  int v5; // esi
+  unsigned short * v5;
   CCINIClass * v6;
   unsigned short *v7; // ebx
   int v8; // edx
@@ -67,9 +67,9 @@ unsigned int * CreateFractalNoise(CCINIClass * aP0)
     if ( v3 ) /*0x42017f*/
     {
       v3[0x8000] = (unsigned short *)(aP0);
-      v5 = 0; /*0x420187*/
-      v3[32769] = 0; /*0x420189*/
-      v6 = aP0 - 1; /*0x420193*/
+      v5 = (int)((unsigned short *)(0));
+      v3[32769] = (unsigned short *)(0);
+      v6 = (unsigned short *)(aP0 - 1);
       v7 = v3; /*0x420194*/
       do /*0x4201d3*/
       {
@@ -134,8 +134,8 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int v13; // ebx
   int v14; // ecx
   int v15; // edx
-  int v16; // ebp
-  unsigned int v17; // esi
+  int * v16;
+  int * v17;
   int v18; // edx
   int *FoundationSize; // edx
   int v20; // eax
@@ -158,9 +158,9 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int v37; // [esp+8h] [ebp-C8h]
   int v38; // [esp+8h] [ebp-C8h]
   int v39; // [esp+8h] [ebp-C8h]
-  int v40; // [esp+Ch] [ebp-C4h]
+  int * v40;
   int v41; // [esp+10h] [ebp-C0h]
-  int v42; // [esp+14h] [ebp-BCh]
+  int * v42;
   int v43; // [esp+18h] [ebp-B8h]
   int v44; // [esp+1Ch] [ebp-B4h]
   uint8_t v45; // [esp+20h] [ebp-B0h]
@@ -168,15 +168,15 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int v47; // [esp+24h] [ebp-ACh]
   int v48; // [esp+28h] [ebp-A8h]
   char *v49; // [esp+2Ch] [ebp-A4h]
-  unsigned int v50; // [esp+30h] [ebp-A0h] BYREF
-  int v51; // [esp+34h] [ebp-9Ch]
-  int v52; // [esp+38h] [ebp-98h]
+  int * v50;
+  int * v51;
+  int * v52;
   int v53; // [esp+3Ch] [ebp-94h]
   int *v54; // [esp+40h] [ebp-90h]
   int v55; // [esp+44h] [ebp-8Ch]
   int v56; // [esp+4Ch] [ebp-84h]
   int v57; // [esp+50h] [ebp-80h]
-  int v58; // [esp+58h] [ebp-78h]
+  int * v58;
   int *v59; // [esp+5Ch] [ebp-74h]
   int v60; // [esp+60h] [ebp-70h]
   char **v61; // [esp+64h] [ebp-6Ch]
@@ -187,7 +187,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int v66; // [esp+7Ch] [ebp-54h]
   int v67; // [esp+84h] [ebp-4Ch]
   int v68[4]; // [esp+88h] [ebp-48h] BYREF
-  int v69; // [esp+98h] [ebp-38h]
+  int * v69;
   int v70[4]; // [esp+A0h] [ebp-30h] BYREF
   int v71[4]; // [esp+B0h] [ebp-20h] BYREF
   int v72[4]; // [esp+C0h] [ebp-10h] BYREF
@@ -205,10 +205,10 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
       v5 = *((unsigned int *)dword_88A0F4 + v4); /*0x420f72*/
       if ( !*(unsigned char *)(v5 + 60) ) /*0x420f75*/
       {
-        v50 = (int *)(*(unsigned int *)(v5 + 40));
-        v51 = *(unsigned int *)(v5 + 44); /*0x420f92*/
-        v52 = *(unsigned int *)(v5 + 48); /*0x420f99*/
-        v53 = *(unsigned int *)(v5 + 52); /*0x420fa0*/
+        v50 = (int *)((unsigned int)((int *)(*(unsigned int *)(v5 + 40))));
+        v51 = (int *)(*(unsigned int *)(v5 + 44));
+        v52 = (int *)(*(unsigned int *)(v5 + 48));
+        v53 = (int *)(*(unsigned int *)(v5 + 52));
         v6 = v51 - (unsigned int)g_TacticalClass_Instance[45].lpVtbl; /*0x420fb6*/
         v50 = DSurface_ViewBounds + v50 - (unsigned int)g_TacticalClass_Instance[44].lpVtbl; /*0x420fca*/
         v51 = g_Map_VisibleRect + v6; /*0x420fd2*/
@@ -235,9 +235,9 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         if ( v14 > 0 && v15 > 0 ) /*0x421070*/
         {
           v16 = (int *)(v13 - v63);
-          v17 = v50; /*0x42108a*/
-          v69 = v12 - v62; /*0x42108e*/
-          v18 = *((unsigned int *)dword_88A0F4 + v4); /*0x421099*/
+          v17 = (int *)((unsigned int)((int *)(v50)));
+          v69 = (int *)(v12 - v62);
+          v18 = (int)(*((unsigned int *)dword_88A0F4 + v4));
           v58 = v51; /*0x42109c*/
           v61 = *(char ***)(v18 + 56); /*0x4210ad*/
           FoundationSize = Building::GetFoundationSize(v72, 0); /*0x4210b6*/
@@ -259,7 +259,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           v23 = v55 + v56; /*0x42114e*/
           if ( v55 + v56 >= (int)(v20 + v17 + v21) ) /*0x421156*/
           {
-            v42 = v20 + v17 + v21; /*0x42115e*/
+            v42 = (int)(v20 + v17 + v21);
             v23 = v42; /*0x421162*/
           }
           else
@@ -375,10 +375,10 @@ unsigned int * ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown * a
   int v16; // [esp+20h] [ebp-8h]
   int v17; // [esp+24h] [ebp-4h]
 
-  result = (int)(aP0);
-  v6 = *aP2; /*0x421b6f*/
-  v7 = aP2[1]; /*0x421b71*/
-  v16 = aP2[2]; /*0x421b77*/
+  result = (unsigned int *)((int)(aP0));
+  v6 = (int)(*aP2);
+  v7 = (int)(aP2[1]);
+  v16 = (int)(aP2[2]);
   v17 = aP2[3]; /*0x421b7e*/
   v8 = aP1[2]; /*0x421b82*/
   if ( v8 <= 0 ) /*0x421b87*/
@@ -390,7 +390,7 @@ unsigned int * ClipRectIntersection(IUnknown * aP0, IUnknown * aP1, IUnknown * a
   if ( v6 < *aP1 ) /*0x421bb6*/
   {
     v10 = (int)(v6 - v9 + v16);
-    v6 = *aP1; /*0x421bc0*/
+    v6 = (int)(*aP1);
     v16 = v10; /*0x421bc2*/
   }
   if ( v16 < 1 ) /*0x421bcb*/

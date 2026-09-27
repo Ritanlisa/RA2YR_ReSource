@@ -432,7 +432,7 @@ DynamicVector * Buffer::Constructor_VectorClass_ObjectClass___(char a2)
     this->Items = 0; /*0x488050*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x488061*/
+  this->q008 = (unsigned int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x488068*/
     RA2_OPDEL(); /*0x48806b*/
   return this; /*0x488075*/
@@ -454,7 +454,7 @@ int * Buffer::RotateBufferCrypto(int * a2, int a3)
 namespace gamemd {
 int Buffer::AppendCellData(AbstractClass * aP1, int a3)
 {
-  int v4; // edi
+  int * v4;
   unsigned int *v7; // eax
   int *v8; // esi
   int v9; // eax
@@ -488,7 +488,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
     while ( 1 ) /*0x6c8a8a*/
     {
       v10 = (unsigned int)(Map_Append(v16, &unk_B0BDD0, *(unsigned int *)(a3 + 16)));
-      v11 = (char *)this->Buffer_field_08; /*0x6c8a8f*/
+      v11 = (char *)((unsigned int)((char *)this->Buffer_field_08));
       if ( (unsigned int)&v11[v10] > this->Buffer_field_04 + *this || (this->Buffer_field_08 = &v11[v10], !v11) ) /*0x6c8aa4*/
       {
         (*(void (__thiscall **)(int *))(*v8 + 96))(v8); /*0x6c8ae6*/
@@ -503,7 +503,7 @@ int Buffer::AppendCellData(AbstractClass * aP1, int a3)
       v8 = aP1; /*0x6c8adc*/
     }
     v4 = (int *)(v15);
-    v8 = aP1; /*0x6c8af9*/
+    v8 = (int *)(aP1);
   }
   (*(void (__thiscall **)(int *))(*v8 + 96))(v8); /*0x6c8b01*/
   return v4; /*0x6c8a08*/

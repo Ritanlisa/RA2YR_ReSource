@@ -11,11 +11,11 @@
 namespace gamemd {
 unsigned int * E4Recv_76AAF0::sub_76AAF0()
 {
-  this->M4 = 0; /*0x76aaf7*/
-  *this = &off_7F7220; /*0x76aafa*/
-  this->M8 = 0; /*0x76ab00*/
-  this->M14 = 10; /*0x76ab03*/
-  this->M15 = 10; /*0x76ab06*/
+  this->M4 = (unsigned int)(0);
+  *(_DWORD *)this = (unsigned int)(&off_7F7220);
+  this->M8 = (unsigned int)(0);
+  this->M14 = (unsigned int)(10);
+  this->M15 = (unsigned int)(10);
   this->M16 = 10000; /*0x76ab09*/
   this->M12 = 0; /*0x76ab0f*/
   this->M29 = 0; /*0x76ab13*/
@@ -31,11 +31,11 @@ unsigned int * E4Recv_76AAF0::sub_76AAF0()
   this->M35 = 100; /*0x76ab38*/
   this->M38 = 100; /*0x76ab3b*/
   this->u32_29 = (unsigned int *)(100);
-  this->M44 = 100; /*0x76ab41*/
-  this->M47 = 100; /*0x76ab44*/
-  this->M32 = 100; /*0x76ab47*/
-  this->u32_35 = 100; /*0x76ab4a*/
-  this->M48 = 1; /*0x76ab4d*/
+  this->M44 = (unsigned int *)(100);
+  this->M47 = (unsigned int *)(100);
+  this->M32 = (unsigned int *)(100);
+  this->u32_35 = (unsigned int *)(100);
+  this->M48 = (unsigned int *)(1);
   this->M19 = 1; /*0x76ab51*/
   this->q014 = 2; /*0x76ab55*/
   this->M28 = 1; /*0x76ab59*/

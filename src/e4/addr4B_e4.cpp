@@ -412,7 +412,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   char result; // al
   const wchar_t *v15; // eax
   int AudioEntryTechnoClass; // eax
-  unsigned int v17;
+  void * v17;
   int v18; // esi
   unsigned int *v19; // eax
   unsigned int *v20; // eax
@@ -642,9 +642,9 @@ char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
   if ( *aP1 != v2 || *(unsigned long long *)(aP1 + 1) != qword_8A0794 ) /*0x4b0e50*/
   {
     *v4 = (unsigned int *)(*aP1);
-    this->q044 = aP1[1]; /*0x4b0e6a*/
-    v6 = aP1[2]; /*0x4b0e6d*/
-    this->q18C = 1; /*0x4b0e70*/
+    this->q044 = (unsigned int *)(aP1[1]);
+    v6 = (unsigned int *)(aP1[2]);
+    this->q18C = (unsigned int *)(1);
     this->q048 = v6; /*0x4b0e74*/
     v9 = this->vtable4; /*0x4b0e7a*/
     v7 = Coord::To_Cell(&MapClass_Instance, aP1); /*0x4b0e81*/

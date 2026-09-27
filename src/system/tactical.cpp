@@ -250,7 +250,7 @@ void* TacticalClass::RenderIsometric(const RectangleStruct& viewRect, int flags)
         if ( LayerClass::CoordinatesLegal(&MapClass_Instance, (__int16 *)&v27) ) /*0x6d76e0*/
         {
           v16 = (int *)(CellCoord::To_CellObj(&MapClass_Instance, (__int16 *)&v27));
-          ScreenRect = CellClass::GetScreenRect((int)v16, v40); /*0x6d7708*/
+          ScreenRect = (int *)(CellClass::GetScreenRect((int)v16, v40));
           v33[0] = *ScreenRect; /*0x6d7711*/
           v33[1] = ScreenRect[1]; /*0x6d771a*/
           v34 = ScreenRect[2]; /*0x6d7721*/

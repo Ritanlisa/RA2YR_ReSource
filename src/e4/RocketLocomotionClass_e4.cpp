@@ -321,7 +321,7 @@ VectorClass_flat * RocketLocomotionClass_17::Constructor(char a2)
     this->Items = 0; /*0x664a90*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->Capacity = 0; /*0x664aa1*/
+  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x664aa8*/
     RA2_OPDEL(); /*0x664aab*/
   return this; /*0x664ab5*/

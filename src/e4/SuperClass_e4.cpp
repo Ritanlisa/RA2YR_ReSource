@@ -36,8 +36,8 @@ void * SuperClass::LaunchPsychicDominator(int a2)
   result = g_RulesClass_Instance; /*0x53ae50*/
   if ( g_RulesClass_Instance->PrerequisitePower[0] && g_RulesClass_Instance->PrerequisitePower[1] ) /*0x53ae66*/
   {
-    PsyDom_Owner = (void **)(this);
-    PsyDom_Coords = a2; /*0x53ae7f*/
+    PsyDom_Owner = (int)((void **)(this));
+    PsyDom_Coords = (int)((void **)(a2));
     v3 = (void *)g_RulesClass_Instance->PrerequisitePower[0]; /*0x53ae85*/
     v4 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&PsyDom_Coords); /*0x53ae95*/
     v5 = (int *)(*(int (__thiscall **)(void *, unsigned int *))(*(unsigned int *)v4 + 72))(v4, v9); /*0x53aea3*/
@@ -260,10 +260,10 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
 
   if ( !this->u32_6D ) /*0x6cb569*/
   {
-    v5 = (unsigned int)(this);
-    v6 = this->q028; /*0x6cb576*/
-    this->u32_6D = 1; /*0x6cb579*/
-    this->u32_6E = v5; /*0x6cb57d*/
+    v5 = (gamemd::SuperClass *)((unsigned int)(this));
+    v6 = (void *)((unsigned int)(this->q028));
+    this->u32_6D = (unsigned int)(1);
+    this->u32_6E = (unsigned int)(v5);
     this->q040 = 0; /*0x6cb580*/
     v7 = *(unsigned int *)(v6 + 96); /*0x6cb583*/
     IDA_LOBYTE(this) = 0; /*0x6cb589*/
@@ -300,8 +300,8 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
     v9 = (void *)(this->q028);
     if ( *(unsigned char *)(v9 + 245) ) /*0x6cb641*/
     {
-      v10 = (unsigned int)(this->q024);
-      this->q078 = -1; /*0x6cb64c*/
+      v10 = (void *)((unsigned int)(this->q024));
+      this->q078 = (unsigned int)(-1);
       if ( v10 == -1 ) /*0x6cb656*/
         v10 = *(unsigned int *)(v9 + 176); /*0x6cb658*/
       v11 = (unsigned int *)(&this->uniqueId8); /*0x6cb664*/

@@ -19,7 +19,7 @@ namespace gamemd {
 unsigned int * TauntCommandClass::Construct(int a2)
 {
   this->TauntCommandClass_field_00 = (unsigned int *)(a2);
-  return this; /*0x53629f*/
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 // 0x5362B0

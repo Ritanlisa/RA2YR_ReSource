@@ -29,7 +29,7 @@ struct Particle {
     void* q108;  // 0x108
     void* q10C;  // 0x10C
     unsigned int q110;  // 0x110
-    unsigned int q114;  // 0x114
+    void* ;  // 0x114
     unsigned int StateAIAdvance;  // 0x118
     unsigned char q11C;  // 0x11C
     unsigned int q120;  // 0x120
@@ -384,6 +384,7 @@ struct Particle {
     unsigned char q6574;  // 0x6574
     unsigned char q6C18;  // 0x6C18
     unsigned char q6C1C;  // 0x6C1C
+    unsigned int q114;
 // --- flat members (END) ---
     int Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, TechnoClass * aP4, InfantryClass * aP5, int a7, AbstractClass * aP7);    // 0x4664C0
 };

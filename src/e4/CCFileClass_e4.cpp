@@ -8,13 +8,14 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/AudioController_e4.hpp"
 
 // 0x4325C0
 namespace gamemd {
 AudioController * * CCFileClass::Close()
 {
   char result; // al
-  int v3; // eax
+  AudioController ** v3;
 
   if ( !*(&this->FileName1) ) /*0x4325c3*/
     return ((int (*)(void))FileClass::CloseHandle)(); /*0x432607*/
@@ -24,7 +25,7 @@ AudioController * * CCFileClass::Close()
   {
     if ( this->MixFileIndex ) /*0x4325d6*/
     {
-      v3 = (gamemd::AudioController **)(*(unsigned int *)this);
+      v3 = (gamemd::AudioController **)((int)((gamemd::AudioController **)(*(unsigned int *)this)));
       *(&this->FileName1) = 0; /*0x4325e1*/
       result = (*(int (__thiscall **)(unsigned char *))(v3 + 52))(this); /*0x4325e5*/
       *(&this->FileName1) = 1; /*0x4325e8*/
@@ -53,24 +54,23 @@ int CCFileClass::Destruct()
 namespace gamemd {
 int CCFileClass::GetFileSize()
 {
-  DWORD FileSize; // edi
+  void * FileSize;
   void * result;
   int v4; // ebx
   DWORD LastError; // eax
   int v6; // [esp-8h] [ebp-10h]
-
-  FileSize = (void *)(0);
-  result = this->FileName; /*0x65d0d6*/
+FileSize = (void *)((DWORD)((void *)(0)));
+  result = (void *)(this->FileName);
   if ( result == -1 ) /*0x65d0dc*/
   {
     if ( this->Destru_vt06() ) /*0x65d0e0*/
     {
-      FileSize = GetFileSize((HANDLE)this->FileTimeDateLo, 0); /*0x65d0f2*/
+      FileSize = (void *)(GetFileSize((HANDLE)this->FileTimeDateLo, 0));
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
         v4 = (int)(*this);
-        v6 = this->FileNameAllocated; /*0x65d0ff*/
-        LastError = GetLastError(); /*0x65d102*/
+        v6 = (int)(this->FileNameAllocated);
+        LastError = (int)(GetLastError());
         this->Destru_vt16(LastError, 0, v6); /*0x65d10b*/
         result = -1 - this->Handle; /*0x65d113*/
         this->FileName = result; /*0x65d116*/
@@ -79,11 +79,11 @@ int CCFileClass::GetFileSize()
     }
     else if ( this->Load_1(1) ) /*0x65d122*/
     {
-      FileSize = this->GetSize(); /*0x65d130*/
+      FileSize = (void *)(this->GetSize());
       this->Reset_8(); /*0x65d136*/
     }
-    result = (unsigned int)(FileSize - this->Handle);
-    this->FileName = result; /*0x65d140*/
+    result = (void *)((unsigned int)(FileSize - this->Handle));
+    this->FileName = (unsigned int)(result);
   }
   return (int)(result);
 }
@@ -148,7 +148,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
       if ( *((unsigned char *)dword_B077B4 + 16) ) /*0x69e3b3*/
       {
         v8 = (unsigned int *)((void *)*((unsigned int *)dword_B077B4 + 3));
-        v9 = (char *)dword_B077B4 + 12; /*0x69e3c0*/
+        v9 = (unsigned int *)((char *)dword_B077B4 + 12);
         if ( v8 ) /*0x69e3c5*/
           MixFileClass::CacheNode_Dtor(v8, 1); /*0x69e3c9*/
         *v9 = 0; /*0x69e3ce*/

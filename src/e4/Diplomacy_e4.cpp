@@ -27,7 +27,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   HWND v15; // eax
   HWND v16; // eax
   HWND v17; // ebp
-  HWND v18; // ebx
+  wchar_t * v18;
   wchar_t *v19; // eax
   HWND v20; // eax
   int DlgCtrlID; // eax
@@ -181,8 +181,8 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
       DrawPowerBarForPlayers(hDlg); /*0x658112*/
       if ( g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4 ) /*0x658124*/
       {
-        v18 = (wchar_t *)(GetDlgItem(hDlg, 1062));
-        v19 = WideString::GetOrEmpty_Alt((wchar_t **)(g_GameStateFlags + 32)); /*0x658139*/
+        v18 = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, 1062))));
+        v19 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)(g_GameStateFlags + 32)));
         SendMessageA(v18, 0x4B2u, 0, (LPARAM)v19); /*0x658147*/
       }
       v20 = GetDlgItem(hDlg, 1819); /*0x658153*/

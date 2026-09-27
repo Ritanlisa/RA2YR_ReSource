@@ -24,6 +24,8 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Waypoint_e4.hpp"
 #include "e4/classes/WaypointPathClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/WarheadTypeClass_e4.hpp"
 
 // 0x41D7E0
 namespace gamemd {
@@ -847,9 +849,9 @@ int Warhead::ApplyPostDamageEffects()
   int v2; // eax
   int v3; // esi
   int *v4; // ecx
-  int v5; // ebx
-  int v6; // ebp
-  int v7; // edx
+  int * v5;
+  int * v6;
+  int * v7;
   unsigned int *v8; // eax
   int *v9; // eax
   int result; // eax
@@ -956,9 +958,9 @@ int Warhead::ApplyPostDamageEffects()
     if ( v4 ) /*0x46a33e*/
     {
       v5 = (int *)(*(&this->u32_C9));
-      v6 = *(&this->u32_100); /*0x46a359*/
-      v7 = *v4; /*0x46a35f*/
-      v92 = *(&this->u32_101); /*0x46a361*/
+      v6 = (int *)(*(&this->u32_100));
+      v7 = (int *)(*v4);
+      v92 = (int *)(*(&this->u32_101));
       v8 = (unsigned int *)v4->GetCoords_0(&v93); /*0x46a370*/
       v9 = Coord::Subtract(&v90, *v8 - v5, v8[1] - v6, v8[2] - v92); /*0x46a392*/
       v84 = *v9; /*0x46a399*/
@@ -1165,8 +1167,8 @@ int Warhead::ApplyPostDamageEffects()
             if ( v80 ) /*0x46aa21*/
             {
               v73 = (int *)(0.0);
-              v74 = 0.0; /*0x46aa41*/
-              v75 = 0.0; /*0x46aa51*/
+              v74 = (int *)(0.0);
+              v75 = (int *)(0.0);
               v53 = (int *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&v76); /*0x46aa61*/
               v54 = &this->u64_9C; /*0x46aa66*/
               v84 = *(&this->u32_C9); /*0x46aa70*/

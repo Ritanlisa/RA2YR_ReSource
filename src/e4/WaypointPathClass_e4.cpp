@@ -198,8 +198,8 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int * a2)
     this->q034 = 1; /*0x7647fa*/
     return this; /*0x7647fe*/
   }
-  *a2 = (unsigned int *)(a2);
-  v4 = a2 + 1; /*0x764794*/
+  *a2 = (int)((unsigned int *)(a2));
+  v4 = (unsigned int *)(a2 + 1);
   if ( a2 - 1 >= 0 ) /*0x764796*/
   {
     a2 = a2; /*0x764798*/

@@ -42,7 +42,7 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
   void ***v9; // eax
   int v10; // edi
   void *v11; // eax
-  int v12; // ebp
+  FootClass * v12;
   void *v13; // eax
   int v14; // ebp
   void *v15; // eax
@@ -101,7 +101,7 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
           *((unsigned int *)g_ScenarioClass_Instance + 133) = -3; /*0x4d7f42*/
           *(unsigned int *)(*((unsigned int *)g_RulesClass_Instance + 749) + 832) = -5000; /*0x4d7f57*/
         }
-        v18 = (gamemd::FootClass *)((void *)operator new(0x1C8u));
+        v18 = (void **)((gamemd::FootClass *)((void *)operator new(0x1C8u)));
         if ( v18 ) /*0x4d7f70*/
           aP4 = AnimClass::ctor(v18, *((void **)g_RulesClass_Instance + 749), v42, 0, 1, (void *)0x600, 0, 0); /*0x4d7f98*/
         else
@@ -192,18 +192,18 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
       {
         return 0; /*0x4d7e61*/
       }
-      v12 = (gamemd::FootClass *)(*(unsigned int *)this);
+      v12 = (gamemd::FootClass *)((int)((gamemd::FootClass *)(*(unsigned int *)this)));
       v13 = CellCoord::To_CellObj(&MapClass_Instance, aP2); /*0x4d7e73*/
       (*(void (__thiscall **)(unsigned char *, int, void *, unsigned int, unsigned int))(v12 + 888))(this, 11, v13, 0, 0); /*0x4d7e7d*/
       return 1; /*0x4d7e8b*/
     case 35: /*0x4d7de0*/
       v32 = (int16_t *)CellCoord::To_CellObj(&MapClass_Instance, aP2); /*0x4d81af*/
       Type = (gamemd::FootClass *)(InfantryClass::GetType(v32));
-      aP2 = *(int16_t **)(Type + 40); /*0x4d81ca*/
-      v34 = (int16_t *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP2); /*0x4d81ce*/
-      v35 = *(unsigned int *)(InfantryClass::GetType(v34) + 44) - 4; /*0x4d81e0*/
-      aP3 = *(int16_t **)(Type + 40); /*0x4d81e3*/
-      v36 = v35 & 7; /*0x4d81e7*/
+      aP2 = (gamemd::FootClass *)(*(int16_t **)(Type + 40));
+      v34 = (gamemd::FootClass *)((int16_t *)CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP2));
+      v35 = (gamemd::FootClass *)(*(unsigned int *)(InfantryClass::GetType(v34) + 44) - 4);
+      aP3 = (gamemd::FootClass *)(*(int16_t **)(Type + 40));
+      v36 = (gamemd::FootClass *)(v35 & 7);
       v38 = 0; /*0x4d81ea*/
       v37 = (unsigned short)aP3 + IDA_LOWORD(Direction_X_Offsets[v36]); /*0x4d81fb*/
       v21 = *(unsigned int *)this; /*0x4d81fe*/

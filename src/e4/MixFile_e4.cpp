@@ -74,8 +74,8 @@ MixFileClass * * MixFile::LoadAll()
   char Buffer[260]; // [esp+CCh] [ebp-104h] BYREF
 
   v0 = (unsigned int)(CCFileClass::Construct(v47, aConqmdMix));
-  v1 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v0 + 20))(v0, 0); /*0x53048b*/
-  v49 = 0; /*0x530491*/
+  v1 = (void *)((unsigned int)((*(int (__thiscall **)(unsigned int *, unsigned int))(*v0 + 20))(v0, 0)));
+  v49 = (unsigned int)(0);
   Vector::Clear(v48); /*0x530495*/
   v47[0] = &off_7E1668; /*0x5304a3*/
   BufferIOFileClass::Dtor(v47); /*0x5304a7*/
@@ -306,8 +306,8 @@ MixFileClass * * MixFile::LoadAll()
   else
   {
     v24 = (unsigned int)(CCFileClass::Construct(v47, g_Str_File_THEME_MIX));
-    v25 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v24 + 20))(v24, 0); /*0x530c91*/
-    v49 = 0; /*0x530c97*/
+    v25 = (unsigned int)((*(int (__thiscall **)(unsigned int *, unsigned int))(*v24 + 20))(v24, 0));
+    v49 = (unsigned int)(0);
     Vector::Clear(v48); /*0x530c9b*/
     v47[0] = &off_7E1668; /*0x530ca4*/
     BufferIOFileClass::Dtor(v47); /*0x530ca8*/

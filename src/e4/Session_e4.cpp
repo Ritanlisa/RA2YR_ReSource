@@ -209,10 +209,10 @@ int Session::PrepareGame()
         if ( !result ) /*0x5e789c*/
         {
           g_UIControlState = (int)(0);
-          return result; /*0x5e78f4*/
+          return (int)(result);
         }
         result = (int)(unknown_libname_27(result));
-        g_UIControlState = (void *)result; /*0x5e78a5*/
+        g_UIControlState = (int)((void *)result);
       }
       if ( g_UIControlState ) /*0x5e78b0*/
       {

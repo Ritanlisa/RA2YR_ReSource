@@ -37,14 +37,14 @@ void TacticalClass::DrawBuildingPlacement(IUnknown * aP1, int * a2)
   uint8_t v12; // cl
   char v13; // al
   int *v14; // ecx
-  int v15; // [esp+10h] [ebp-18h]
+  int * v15;
   int v16; // [esp+14h] [ebp-14h]
   int v17; // [esp+18h] [ebp-10h] BYREF
   int v18; // [esp+1Ch] [ebp-Ch]
   int v19; // [esp+20h] [ebp-8h] BYREF
 
   v4 = (int *)(*(unsigned char **)&g_BuildingTypeClass_Array->gap0[4 * this->field44]);
-  v15 = 15 * this->u32_11B; /*0x47f534*/
+  v15 = (int *)(15 * this->u32_11B);
   v16 = (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v4 + 156))(v4); /*0x47f544*/
   v5 = BuildingClass::CalcDrawPos(this, &v19); /*0x47f54b*/
   v6 = *v5; /*0x47f554*/
@@ -333,8 +333,8 @@ unsigned int * TacticalClass::SetDisplayMode(unsigned int * a2, char a3)
 namespace gamemd {
 void TacticalClass::InterpolateView()
 {
-  unsigned int v0;
-  int v1; // edi
+  wchar_t * v0;
+  wchar_t * v1;
   unsigned int v2;
   wchar_t * v3;
   unsigned int v4;
@@ -351,24 +351,24 @@ void TacticalClass::InterpolateView()
   int v15; // eax
   wchar_t * v16;
   int v17; // [esp+8h] [ebp-40h]
-  unsigned int v18;
+  wchar_t * v18;
   wchar_t * v19;
   unsigned int v20;
   int v21; // [esp+18h] [ebp-30h]
   int v22; // [esp+1Ch] [ebp-2Ch]
   int v23; // [esp+20h] [ebp-28h]
-  unsigned int v24;
+  wchar_t * v24;
   wchar_t * v25;
   unsigned int v26;
   int v27[3]; // [esp+30h] [ebp-18h] BYREF
   int v28[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
-  v0 = g_SelectionManager; /*0x4ae295*/
+  v0 = (wchar_t *)(g_SelectionManager);
   if ( (int)g_SelectionManager > 0 ) /*0x4ae29f*/
   {
-    v1 = (wchar_t *)(0);
-    v2 = 0; /*0x4ae2a9*/
-    v3 = 0; /*0x4ae2ab*/
+    v1 = (wchar_t *)((int)((wchar_t *)(0)));
+    v2 = (wchar_t *)((unsigned int)((wchar_t *)(0)));
+    v3 = (unsigned int)((wchar_t *)(0));
     v18 = 0; /*0x4ae2af*/
     v19 = 0; /*0x4ae2b3*/
     v20 = 0; /*0x4ae2b7*/
@@ -376,8 +376,8 @@ void TacticalClass::InterpolateView()
     v16 = g_SelectionManager; /*0x4ae2c2*/
     do /*0x4ae2fc*/
     {
-      v5 = (wchar_t *)((unsigned int *)*v4++);
-      v27[0] = v5[39]; /*0x4ae2d5*/
+      v5 = (unsigned int *)((wchar_t *)((unsigned int *)*v4++));
+      v27[0] = (unsigned int)(v5[39]);
       v1 += v27[0]; /*0x4ae2d9*/
       v2 += v5[40]; /*0x4ae2e0*/
       v6 = v5[41]; /*0x4ae2e6*/
@@ -425,7 +425,7 @@ void TacticalClass::InterpolateView()
             v22 = v11[1]; /*0x4ae3c8*/
             v23 = v11[2]; /*0x4ae3cf*/
           }
-          v0 = (wchar_t *)(g_SelectionManager);
+          v0 = (wchar_t *)((unsigned int)((wchar_t *)(g_SelectionManager)));
           if ( ++v8 >= (int)g_SelectionManager ) /*0x4ae3dc*/
             break; /*0x4ae3dc*/
           v2 = v19; /*0x4ae354*/
@@ -446,9 +446,9 @@ void TacticalClass::InterpolateView()
         v14 = (v25 - v22) / v12; /*0x4ae419*/
         v15 = (v26 - v23) / v12; /*0x4ae41e*/
       }
-      v18 = (wchar_t *)(v13);
-      v19 = v14; /*0x4ae424*/
-      v20 = v15; /*0x4ae428*/
+      v18 = (wchar_t *)((unsigned int)((wchar_t *)(v13)));
+      v19 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)(v14))));
+      v20 = (wchar_t *)((unsigned int)((wchar_t *)(v15)));
     }
     Tactical::SetTacticalPosition(&v18); /*0x4ae437*/
   }
@@ -598,7 +598,7 @@ void TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
   unsigned int v12[6]; // [esp+8h] [ebp-1Ch] BYREF
   char v13; // [esp+20h] [ebp-4h]
 
-  v4 = ObjectClass::ToggleSidebarDisplay(a3); /*0x6d0501*/
+  v4 = (char)(ObjectClass::ToggleSidebarDisplay(a3));
   if ( !v4 ) /*0x6d0505*/
     return v4; /*0x6d0505*/
   v5 = a1[21828]; /*0x6d0513*/

@@ -34,7 +34,7 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
   int v10; // eax
   int v11; // ebp
   unsigned int *v12; // edi
-  int v13; // ebx
+  int * v13;
   int *v14; // edi
   char *v15; // esi
   int v16; // eax
@@ -100,11 +100,11 @@ int CComObject_CChatEventSink___ATL::DispatchConnectionPairs()
       if ( v11 < v10 ) /*0x7938cb*/
       {
         v13 = (int *)(*v12);
-        v14 = v12 + 1; /*0x7938d3*/
+        v14 = (int *)(v12 + 1);
         v15 = &this->q020 * v9; /*0x7938d6*/
         do /*0x793906*/
         {
-          v16 = *v14; /*0x7938d9*/
+          v16 = (unsigned int)(*v14);
           *(unsigned int *)v15 = v13; /*0x7938db*/
           *((unsigned int *)v15 + 1) = v16; /*0x7938e4*/
           Debug::Log(); /*0x7938e7*/
@@ -430,8 +430,8 @@ AbstractClass * * CComObject_CChatEventSink___ATL::FireEvent(int a1, int a2, uns
     }
     else
     {
-      v14 = (wchar_t *)(CharToWideString(a3 + 52));
-      String = GetStringCSF(aTxtCreatedChan, 0, g_Str_File_wonline_cpp, 5835); /*0x7a574c*/
+      v14 = (char *)((wchar_t *)(CharToWideString(a3 + 52)));
+      String = (wchar_t *)(GetStringCSF(aTxtCreatedChan, 0, g_Str_File_wonline_cpp, 5835));
       Dialog::ShowMessage(-1, (size_t)String, v14); /*0x7a5759*/
     }
     qmemcpy(&g_WOL_ProcessIdle, a3, 0x10Cu); /*0x7a57d8*/

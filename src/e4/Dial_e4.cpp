@@ -251,7 +251,7 @@ VectorClass_flat * Dial8Class_48::QueryInterface(char a2)
     this->q004 = 0; /*0x4a8050*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = 0; /*0x4a8061*/
+  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x4a8068*/
     RA2_OPDEL(); /*0x4a806b*/
   return this; /*0x4a8075*/
@@ -271,7 +271,7 @@ DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(char a2
     this->q004 = 0; /*0x4a80a0*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x4a80b1*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x4a80b8*/
     RA2_OPDEL(); /*0x4a80bb*/
   return this; /*0x4a80c5*/

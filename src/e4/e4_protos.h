@@ -4,7 +4,6 @@
 #include "e4/classes/_fwd_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 
-struct ZCoordToScreenY;
 struct WriteCompressionBlock;
 struct WriteAudioStreamToFile;
 struct WSAStartup;
@@ -190,6 +189,7 @@ struct FindBuildingAnimByName;
 struct FindBuddyList;
 struct FindAndValidateMap;
 struct FillScoreScreenStats;
+struct FillRectangle;
 struct FillLobbyPlayerSlot;
 struct FillListBox;
 struct FillComboBoxSides;
@@ -446,6 +446,7 @@ extern int unknown_libname_30();
 extern uint8_t FindClosestColor(const uint8_t* palette, int num_entries, const RGBColor& target);
 extern unsigned char * strncnt(const unsigned char * String, int Count);
 extern unsigned int * ComputeBounds(AbstractClass * aP0, ObjectClass * aP1, int a3, int a4);
+extern unsigned int * FillRectangle(IUnknown * aP0, IUnknown * aP1, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);
 extern unsigned int * FindClearPlacementCell(unsigned int * a0, MapSeedClass * aP1, MapSeedClass * aP2, int a4);
 extern unsigned int * UI_Move(unsigned int * a0, MouseClass * aP1, int a3);
 extern unsigned int * globalHelper_0A7070(MapSeedClass * aP0, short * a1, MapSeedClass * aP2, int a4);
@@ -571,6 +572,5 @@ extern wchar_t * sub_4E4F30();
 extern wchar_t ** CharStringToWide(ObjectClass * aP0, const char ** a1);
 extern wchar_t ** FormatWideStringPrefix(CampaignScore * aP0, const wchar_t * a1, wchar_t ** a2);
 extern wchar_t ** Render_Format(wchar_t ** a1, char ** a2);
-extern long long ZCoordToScreenY(IUnknown * aP0);
 
 } // namespace gamemd

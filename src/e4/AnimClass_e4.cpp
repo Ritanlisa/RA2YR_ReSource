@@ -167,8 +167,8 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   int v37; // eax
   int v38; // eax
   int v39; // eax
-  char v40; // al
-  int v41; // ebp
+  unsigned int * v40;
+  unsigned int * v41;
   unsigned int *v42; // eax
   unsigned int *v43; // eax
   unsigned int *v44; // eax
@@ -248,11 +248,11 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
         v6 -= (int)g_CurrentFrame - v4; /*0x422d01*/
     }
     v7 = (int)(v5 + *(&this->q0103) * v5 - v6);
-    v8 = v5 * this->CheckEndOfSequence(); /*0x422d23*/
-    v9 = v7 + 8; /*0x422d28*/
-    v10 = *a2 + 2 * (v7 + 8); /*0x422d30*/
-    v101 = *a2 - 2 * (v7 + 8); /*0x422d3c*/
-    v106 = v10; /*0x422d40*/
+    v8 = (int)(v5 * this->CheckEndOfSequence());
+    v9 = (int)(v7 + 8);
+    v10 = (int)(*a2 + 2 * (v7 + 8));
+    v101 = (int)(*a2 - 2 * (v7 + 8));
+    v106 = (int)(v10);
     v11 = a2[1]; /*0x422d47*/
     v107 = v7 + 8 + v11; /*0x422d4d*/
     v102 = v11 - (v7 + 8); /*0x422d51*/
@@ -462,9 +462,9 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   if ( this->q194 ) /*0x423358*/
   {
     v34 = (int)(ZCoordToScreenY(v101));
-    v35 = *a2; /*0x423384*/
-    v36 = *(unsigned int *)(*(&this->q0140) + 836) + v34 + a2[1]; /*0x42338b*/
-    v37 = *this; /*0x42339a*/
+    v35 = (int)(*a2);
+    v36 = (int)(*(unsigned int *)(*(&this->q0140) + 836) + v34 + a2[1]);
+    v37 = (int)(*this);
     v102 = v36; /*0x42339c*/
     v101 = v35; /*0x4233a2*/
     v38 = this->CheckDamageFlags(); /*0x4233a6*/
@@ -487,8 +487,8 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
       0,
       0);
   }
-  v40 = (unsigned int *)(this->q118);
-  v41 = 0; /*0x4233f4*/
+  v40 = (char)((unsigned int *)(this->q118));
+  v41 = (int)((unsigned int *)(0));
   *(float *)&v100 = 0.0; /*0x4233f8*/
   if ( !v40 ) /*0x4233fc*/
     goto LABEL_99; /*0x4233fc*/

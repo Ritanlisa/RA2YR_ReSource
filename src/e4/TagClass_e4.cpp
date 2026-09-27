@@ -18,6 +18,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/TagTypeClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
 
 // 0x6E4F60
 namespace gamemd {
@@ -228,7 +229,7 @@ Coord * * TagClass::Unlink()
 {
   int v2; // eax
   int result; // eax
-  int v4; // ecx
+  Coord ** v4;
 
   *(unsigned char *)(*(&this->vtable20) + 624) = 0; /*0x71ade9*/
   *(unsigned int *)(*(&this->vtable20) + 632) = 0; /*0x71adf2*/
@@ -247,7 +248,7 @@ Coord * * TagClass::Unlink()
       result->q044 = 0; /*0x71ae1e*/
     result = TagClass::Unlink(*(&this->vtable26)); /*0x71ae24*/
   }
-  v4 = (gamemd::Coord **)(this->creationFrame);
+  v4 = (int)((gamemd::Coord **)((int)((gamemd::Coord **)(this->creationFrame))));
   *(&this->vtable27) = 0; /*0x71ae2c*/
   *(&this->vtable26) = 0; /*0x71ae31*/
   *(&this->vtable25) = 0; /*0x71ae34*/
@@ -320,7 +321,7 @@ int TagClass::ProcessTag(int * a2)
   if ( v4 ) /*0x6e5707*/
   {
     v5 = (gamemd::TriggerClass *)((*(int (__stdcall **)(int))(v4->vtable2 + 16))(v4 + 4));
-    v4 = Power::TimerProcess(v5); /*0x6e5716*/
+    v4 = (gamemd::TriggerClass *)(Power::TimerProcess(v5));
   }
   IDA_LOBYTE(v4) = this->destroyed; /*0x6e571b*/
   return Power::FlagProcess(a2, v4); /*0x6e5726*/

@@ -9,6 +9,9 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/FogOfWar_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/FoggedObject_e4.hpp"
+#include "e4/classes/FoggedObjectClass_e4.hpp"
 
 // 0x4346C0
 namespace gamemd {
@@ -33,9 +36,9 @@ int Font::GetGlyphDataForChar(AbstractClass * aP1)
 namespace gamemd {
 int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, int aP1a, AbstractClass * aP4, AbstractClass * aP5, AbstractClass * aP6, AbstractClass * aP7, AbstractClass * aP8, AbstractClass * aP9)
 {
-  int v10; // edi
+  AbstractClass * v10;
   int16_t v12; // ax
-  int v13; // ebx
+  AbstractClass * v13;
   int v14; // esi
   unsigned short *v15; // edx
   int v16; // ecx
@@ -56,7 +59,7 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   char v31; // di
   int v32; // ecx
   int v33; // eax
-  int v34; // eax
+  AbstractClass * v34;
   unsigned short *v35; // ecx
   AbstractClass * v36;
   AbstractClass * v37;
@@ -71,14 +74,14 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   int v47; // [esp+20h] [ebp-20h]
   unsigned short *v48; // [esp+24h] [ebp-1Ch]
   unsigned short *v49; // [esp+28h] [ebp-18h]
-  int v50; // [esp+2Ch] [ebp-14h]
+  AbstractClass * v50;
   int16_t v51; // [esp+30h] [ebp-10h] BYREF
   uint8_t v52; // [esp+32h] [ebp-Eh]
   int16_t v53; // [esp+38h] [ebp-8h] BYREF
   uint8_t v54; // [esp+3Ah] [ebp-6h]
   int16_t v55; // [esp+58h] [ebp+18h]
 
-  v10 = (unsigned short)(0);
+  v10 = (gamemd::AbstractClass *)((unsigned short)(0));
   if ( !aP0 ) /*0x434cdf*/
     return 0; /*0x434cdf*/
   aP2 = aP2; /*0x434ce5*/
@@ -114,11 +117,11 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         {
           if ( (aP7 & 1) != 0 ) /*0x434d7b*/
           {
-            v17 = (aP5 - v10) / 2; /*0x434d84*/
+            v17 = (gamemd::AbstractClass *)((aP5 - v10) / 2);
           }
           else if ( (aP7 & 2) != 0 ) /*0x434d8b*/
           {
-            v17 = aP5 - v10; /*0x434d8f*/
+            v17 = (gamemd::AbstractClass *)(aP5 - v10);
           }
         }
         xLeft = aP1a + v17; /*0x434d97*/
@@ -198,8 +201,8 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         {
           if ( v13 > 1 ) /*0x434f5e*/
           {
-            v10 = (gamemd::AbstractClass *)(v50);
-            aP2 = v48; /*0x434f64*/
+            v10 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)(v50)));
+            aP2 = (gamemd::AbstractClass *)(v48);
           }
         }
         else if ( v13 > 1 ) /*0x434f6d*/
@@ -212,11 +215,11 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
         {
           if ( (aP7 & 1) != 0 ) /*0x434f8d*/
           {
-            v27 = (aP5 - v10) / 2; /*0x434f96*/
+            v27 = (gamemd::AbstractClass *)((aP5 - v10) / 2);
           }
           else if ( (aP7 & 2) != 0 ) /*0x434f9d*/
           {
-            v27 = aP5 - v10; /*0x434fa1*/
+            v27 = (gamemd::AbstractClass *)(aP5 - v10);
           }
         }
         xLeft = aP1a + v27; /*0x434fa9*/
@@ -262,12 +265,12 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
   LABEL_50:
         if ( aP2 == v26 ) /*0x4350f9*/
         {
-          v48 = 0; /*0x4350fb*/
+          v48 = (gamemd::AbstractClass *)(0);
           ++aP2; /*0x435103*/
         }
-        v10 = (gamemd::AbstractClass *)(0);
-        v13 = 0; /*0x435110*/
-        v34 = aP0->u32_1C; /*0x435112*/
+        v10 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)(0)));
+        v13 = (gamemd::AbstractClass *)((int)((gamemd::AbstractClass *)(0)));
+        v34 = (int)((gamemd::AbstractClass *)(aP0->u32_1C));
         v47 += v34; /*0x435117*/
         if ( aP6 && v47 >= aP6 ) /*0x435127*/
           break; /*0x435127*/
@@ -297,11 +300,11 @@ int Font::Print(AbstractClass * aP0, AbstractClass * aP1, AbstractClass * aP2, i
     {
       if ( (aP7 & 1) != 0 ) /*0x435178*/
       {
-        v36 = (aP5 - v10) / 2; /*0x435181*/
+        v36 = (gamemd::AbstractClass *)((aP5 - v10) / 2);
       }
       else if ( (aP7 & 2) != 0 ) /*0x435188*/
       {
-        v36 = aP5 - v10; /*0x43518c*/
+        v36 = (gamemd::AbstractClass *)(aP5 - v10);
       }
     }
     xLeft = aP1a + v36; /*0x435194*/

@@ -12,6 +12,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x4D3590
 namespace gamemd {
@@ -112,7 +113,7 @@ int FootClass::updateThreat()
 namespace gamemd {
 void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int a3@<edi> a3, unsigned int * ppv, IID rclsid, int a6, void * a4, void * a5)
 {
-  unsigned int v5;
+  unsigned int * v5;
   unsigned int *v6; // ecx
   unsigned int *v7; // ecx
   int v8; // eax
@@ -139,7 +140,7 @@ void FootClass::FootClass_ImbueLocomotor(int *a1@<ecx> a1, int a2@<ebp> a2, int 
   int v29; // [esp+70h] [ebp-Ch] BYREF
   int v30; // [esp+78h] [ebp-4h]
 
-  v5 = ppv; /*0x710006*/
+  v5 = (unsigned int *)(ppv);
   v28 = a1; /*0x71000d*/
   if ( ppv )
   {

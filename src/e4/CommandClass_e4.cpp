@@ -12,6 +12,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/GameLoop_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x6D1200
 namespace gamemd {
@@ -186,7 +188,7 @@ int CommandClass::AddAction(ToolTipManager * aP1)
   int v9; // eax
   int v10; // ecx
   int v11; // eax
-  int v12; // edx
+  unsigned int * v12;
   int v13; // eax
   ToolTipManager * v14;
   unsigned int *v15; // eax
@@ -196,8 +198,8 @@ int CommandClass::AddAction(ToolTipManager * aP1)
   int v20; // eax
 
   aP1 = (gamemd::ToolTipManager *)(aP1);
-  v4 = (int *)(&this->u32_E88); /*0x72458c*/
-  aP1 = *(unsigned int *)aP1; /*0x724592*/
+  v4 = (int *)((gamemd::ToolTipManager *)((int *)(&this->u32_E88)));
+  aP1 = (gamemd::ToolTipManager *)(*(unsigned int *)aP1);
   if ( this->u32_250 ) /*0x724596*/
   {
     if ( (uint8_t)CommandClass::executeAction(&aP1) ) /*0x7245a4*/
@@ -210,7 +212,7 @@ int CommandClass::AddAction(ToolTipManager * aP1)
     }
   }
   v7 = (unsigned int *)(operator new(0x1Cu));
-  v7 = v7; /*0x7245d4*/
+  v7 = (unsigned int)(v7);
   if ( v7 ) /*0x7245db*/
   {
     *v7 = *(unsigned int *)aP1; /*0x7245e6*/
@@ -227,8 +229,8 @@ int CommandClass::AddAction(ToolTipManager * aP1)
       && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->u32_234 + 8))(&this->u32_8D0, v9 + v10, 0) )
     {
       v11 = (unsigned int)(this->q244);
-      v12 = this->u32_238; /*0x72464f*/
-      this->q244 = v11 + 1; /*0x724655*/
+      v12 = (unsigned int)(this->u32_238);
+      this->q244 = (unsigned int)(v11 + 1);
       *(unsigned int *)(v12 + 4 * v11) = v7; /*0x724658*/
       v13 = v4[2]; /*0x72465e*/
       if ( v4[1] + 1 <= v13 ) /*0x724664*/

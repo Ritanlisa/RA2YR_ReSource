@@ -44,7 +44,7 @@ void __sbh_heap_check()
   unsigned int *v22; // [esp+110h] [ebp-38h]
   int *v23; // [esp+114h] [ebp-34h]
   int v24; // [esp+118h] [ebp-30h]
-  int v25; // [esp+11Ch] [ebp-2Ch]
+  int * v25;
   int *v26; // [esp+120h] [ebp-28h]
   int v27; // [esp+124h] [ebp-24h]
   int v28; // [esp+128h] [ebp-20h]
@@ -69,9 +69,9 @@ void __sbh_heap_check()
     if ( !IsBadWritePtr(v2, 0x41C4u) ) /*0x7d03e6*/
     {
       v3 = (int *)((void *)v1[3]);
-      v25 = 0; /*0x7d03f7*/
-      lp = v3; /*0x7d03fa*/
-      v26 = v2 + 81; /*0x7d0403*/
+      v25 = (int *)(0);
+      lp = (int *)(v3);
+      v26 = (int *)(v2 + 81);
       v4 = v2 + 49; /*0x7d0409*/
       v31 = v1[2]; /*0x7d040f*/
       v30 = 0; /*0x7d0412*/
@@ -286,10 +286,10 @@ void _filbuf(MouseClass * aP0)
     if ( (v5 & 8) != 0 && (v5 & 0x400) == 0 ) /*0x7d07b2*/
       aP0->_bufsiz = 4096; /*0x7d07b4*/
   }
-  ptr = (unsigned int)(aP0->_ptr);
-  aP0->_cnt = v2 - 1; /*0x7d07be*/
-  result = (uint8_t)*ptr; /*0x7d07c1*/
-  aP0->_ptr = ptr + 1; /*0x7d07c5*/
+  ptr = (char *)((unsigned int)(aP0->_ptr));
+  aP0->_cnt = (unsigned int)(v2 - 1);
+  result = (unsigned int)((uint8_t)*ptr);
+  aP0->_ptr = (unsigned int)(ptr + 1);
   return result; /*0x7d07c7*/
 }
 }

@@ -281,9 +281,9 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
         continue; /*0x7706c9*/
       }
     }
-    v12 = (unsigned int)(this->u32_38C);
-    v13 = this->u32_380; /*0x7706d3*/
-    this->u32_38C = (char *)v12 + 1; /*0x7706d9*/
+    v12 = (void *)((unsigned int)(this->u32_38C));
+    v13 = (char *)((unsigned int)(this->u32_380));
+    this->u32_38C = (unsigned int)((char *)v12 + 1);
     v13[(unsigned int)v12] = v10; /*0x7706e0*/
   }
   DeleteAndZero((void **)&aP2); /*0x770702*/
@@ -317,9 +317,9 @@ ObjectClass * * Animation::LoadSidebarAnimations(unsigned int * a1, ObjectClass 
         continue; /*0x7707e6*/
       }
     }
-    v20 = (unsigned int)(this->u32_3A4);
-    v21 = this->u32_398; /*0x7707f0*/
-    this->u32_3A4 = (char *)v20 + 1; /*0x7707f6*/
+    v20 = (void *)((unsigned int)(this->u32_3A4));
+    v21 = (char *)((unsigned int)(this->u32_398));
+    this->u32_3A4 = (unsigned int)((char *)v20 + 1);
     v21[(unsigned int)v20] = v17; /*0x7707f9*/
   }
   DeleteAndZero((void **)&aP2); /*0x77081b*/

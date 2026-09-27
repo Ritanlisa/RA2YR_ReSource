@@ -34,6 +34,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x52A9E0
 namespace gamemd {
@@ -122,7 +123,7 @@ void System_Search(ObjectClass * aP0, int edx0, int * a2)
 namespace gamemd {
 void sub_6269A0()
 {
-  unsigned int * v0;
+  unsigned int v0;
   unsigned int *v1; // eax
   unsigned int *v2; // edi
   unsigned int *v3; // eax
@@ -137,11 +138,11 @@ void sub_6269A0()
   if ( !g_FileExtensionState ) /*0x6269a9*/
   {
     v1 = (unsigned int *)(operator new(0x10u));
-    v2 = v1; /*0x6269b6*/
+    v2 = (unsigned int)(v1);
     if ( v1 ) /*0x6269bd*/
     {
       *v1 = (unsigned int *)(-1);
-      v3 = operator new(0x18u); /*0x6269cb*/
+      v3 = (unsigned int *)(operator new(0x18u));
       v4 = v3; /*0x6269d0*/
       if ( v3 ) /*0x6269d7*/
       {
@@ -151,10 +152,10 @@ void sub_6269A0()
       }
       else
       {
-        v4 = 0; /*0x6269fa*/
+        v4 = (unsigned int)(0);
       }
       v2[1] = (unsigned int *)(v4);
-      v5 = operator new(0x18u); /*0x626a01*/
+      v5 = (unsigned int *)(operator new(0x18u));
       v6 = v5; /*0x626a06*/
       if ( v5 ) /*0x626a0d*/
       {
@@ -166,8 +167,8 @@ void sub_6269A0()
       {
         v6 = 0; /*0x626a30*/
       }
-      v2[2] = (unsigned int)(v6);
-      v7 = (int *)new DynamicVectorArray; /*0x626a37*/
+      v2[2] = (unsigned int)((int *)((unsigned int)(v6)));
+      v7 = (int *)((unsigned int)((int *)new DynamicVectorArray));
       if ( v7 ) /*0x626a41*/
         v2[3] = DynamicVectorArray::Constructor(v7, 10, 31, (int)HashStringMod31); /*0x626a53*/
       else
@@ -225,11 +226,11 @@ void sub_626AB0(const char * a1, int a2)
   if ( !g_FileExtensionState ) /*0x626ac5*/
   {
     v2 = (unsigned int *)(operator new(0x10u));
-    v3 = v2; /*0x626ad2*/
+    v3 = (unsigned int)(v2);
     if ( v2 ) /*0x626ad9*/
     {
       *v2 = (unsigned int *)(-1);
-      v4 = operator new(0x18u); /*0x626ae8*/
+      v4 = (unsigned int *)(operator new(0x18u));
       v5 = v4; /*0x626aed*/
       if ( v4 ) /*0x626af9*/
       {
@@ -239,10 +240,10 @@ void sub_626AB0(const char * a1, int a2)
       }
       else
       {
-        v5 = 0; /*0x626b18*/
+        v5 = (unsigned int)(0);
       }
       v3[1] = (unsigned int *)(v5);
-      v6 = operator new(0x18u); /*0x626b1f*/
+      v6 = (unsigned int *)(operator new(0x18u));
       v7 = v6; /*0x626b24*/
       if ( v6 ) /*0x626b2b*/
       {
@@ -344,14 +345,14 @@ void sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, i
 namespace gamemd {
 AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, int a4, int a5)
 {
-  int v6; // esi
-  unsigned int v7;
+  AbstractClass ** v6;
+  AbstractClass ** v7;
   bool v8; // zf
   char *v9; // eax
 
   while ( 1 ) /*0x68c9d8*/
   {
-    v6 = 0; /*0x68c9d8*/
+    v6 = (int)((gamemd::AbstractClass **)(0));
     if ( g_AnimClass_SaveState > 0 ) /*0x68c9dc*/
       break; /*0x68c9dc*/
   LABEL_6:
@@ -359,11 +360,11 @@ AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectCl
     if ( v9 ) /*0x68ca24*/
       FontClass::InitMetrics(v9, aP0, a1, aP3, a4, a5, 1); /*0x68ca37*/
   }
-  v7 = BuildingTypeClass_AnimTable; /*0x68c9de*/
+  v7 = (gamemd::AbstractClass **)(BuildingTypeClass_AnimTable);
   while ( 1 ) /*0x68c9f6*/
   {
-    v8 = (gamemd::AbstractClass **)(_strcmpi(aP0, *(const void **)(v7[v6] + 772)) == 0);
-    v7 = BuildingTypeClass_AnimTable; /*0x68c9f8*/
+    v8 = (gamemd::AbstractClass **)((gamemd::AbstractClass **)(_strcmpi(aP0, *(const void **)(v7[v6] + 772)) == 0));
+    v7 = (gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)(BuildingTypeClass_AnimTable)));
     if ( v8 && *(unsigned int *)(*((unsigned int *)BuildingTypeClass_AnimTable + v6) + 784) == a5 ) /*0x68ca08*/
       return v6; /*0x68ca40*/
     if ( ++v6 >= g_AnimClass_SaveState ) /*0x68ca13*/

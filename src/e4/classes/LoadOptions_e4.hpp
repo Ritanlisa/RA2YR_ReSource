@@ -10,7 +10,7 @@ struct LoadOptions {
     void* vtable1;  // 0x0
     unsigned int q004;  // 0x4
     unsigned int q008;  // 0x8
-    unsigned int q00C;  // 0xC
+    void* ;  // 0xC
     void* IsAllocated;  // 0xD
     unsigned int max_entries;  // 0x10
     bool IsInitialized;  // 0x12
@@ -129,6 +129,7 @@ struct LoadOptions {
     unsigned int q0248;
     unsigned int q0249;
     unsigned int q0642;
+    unsigned int q00C;
 // --- flat members (END) ---
     DynamicVector * vt00(char a2);
     LoadOptions * QueryInterface(char a2);

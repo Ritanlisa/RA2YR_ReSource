@@ -212,7 +212,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
     atexit(nullsub_167); /*0x56c32b*/
   }
   v5 = (int *)(&dword_ABD434);
-  v24 = &dword_ABD434; /*0x56c338*/
+  v24 = (int *)(&dword_ABD434);
   while ( 1 ) /*0x56c343*/
   {
     v6 = *(unsigned short *)v5; /*0x56c343*/
@@ -238,7 +238,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
           if ( (*(int (__thiscall **)(unsigned int *))(*i + 44))(i) != 6 ) /*0x56c406*/
           {
             v17 = (int *)((unsigned int *)(*(int (__thiscall **)(unsigned int *, char *))(*i + 72))(i, v28));
-            v18 = Coord::Subtract(v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]); /*0x56c477*/
+            v18 = (int *)(Coord::Subtract(v29, *a2 - *v17, a2[1] - v17[1], a2[2] - v17[2]));
             v26[0] = *v18; /*0x56c47e*/
             v26[1] = v18[1]; /*0x56c485*/
             v26[2] = v18[2]; /*0x56c490*/
@@ -391,7 +391,7 @@ void * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * a
   if ( *aP2 != word_AC1528 || aP2[1] != word_AC152A ) /*0x5fc429*/
   {
     dword_8333BC = (int)(aP3);
-    v7 = aP2[1]; /*0x5fc444*/
+    v7 = (int)(aP2[1]);
     IDA_LOWORD(aP1) = ((*aP2 << 8) + 128) / 256; /*0x5fc469*/
     IDA_HIWORD(aP1) = ((v7 << 8) + 128) / 256; /*0x5fc485*/
     v8 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP1); /*0x5fc497*/
@@ -410,7 +410,7 @@ void* Object::HandleAction(int * a2, int * a3)
   int v5; // ebp
   int GroundHeight; // eax
   int v7; // eax
-  unsigned int v8;
+  BuildingTypeClass * v8;
   int v9; // ebx
   int v10; // edx
   int v11; // eax
@@ -423,10 +423,10 @@ void* Object::HandleAction(int * a2, int * a3)
   int v18; // eax
   int v19; // ecx
   char *v20; // esi
-  int v21; // eax
+  unsigned int * v21;
   int v22; // ecx
-  int v23; // ecx
-  int v24; // eax
+  unsigned int * v23;
+  unsigned int * v24;
   unsigned int *v25; // eax
   int16_t *v26; // eax
   int v27; // [esp-18h] [ebp-40h]
@@ -434,13 +434,13 @@ void* Object::HandleAction(int * a2, int * a3)
   int v29; // [esp+10h] [ebp-18h]
   int v30; // [esp+14h] [ebp-14h] BYREF
   int v31; // [esp+18h] [ebp-10h]
-  int v32; // [esp+1Ch] [ebp-Ch] BYREF
-  int v33; // [esp+20h] [ebp-8h]
-  int v34; // [esp+24h] [ebp-4h]
+  unsigned int * v32;
+  unsigned int * v33;
+  unsigned int * v34;
 
-  v4 = (int *)(&this->q03C6); /*0x5fd987*/
-  v5 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->q0442) + 156))(this->Type); /*0x5fd98d*/
-  v32 = *v4; /*0x5fd993*/
+  v4 = (int *)((unsigned int *)((int *)(&this->q03C6)));
+  v5 = (unsigned int *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->q0442) + 156))(this->Type));
+  v32 = (unsigned int *)(*v4);
   v33 = this->q0A0; /*0x5fd99f*/
   v34 = this->q0A4; /*0x5fd9a6*/
   GroundHeight = Cell::GetGroundHeight(&v32); /*0x5fd9af*/
@@ -453,7 +453,7 @@ void* Object::HandleAction(int * a2, int * a3)
   }
   else
   {
-    v8 = g_BuildingTypeClass_Array; /*0x5fd9d1*/
+    v8 = (gamemd::BuildingTypeClass *)(g_BuildingTypeClass_Array);
     while ( *(unsigned int *)v8->gap0 != this->Type ) /*0x5fd9d9*/
     {
       ++v7; /*0x5fd9db*/
@@ -550,17 +550,17 @@ void* Object::HandleAction(int * a2, int * a3)
   }
   else
   {
-    v21 = *v4; /*0x5fdba1*/
-    v22 = this->q0A0; /*0x5fdba3*/
-    v34 = this->q0A4; /*0x5fdba9*/
+    v21 = (int)((unsigned int *)(*v4));
+    v22 = (unsigned int *)(this->q0A0);
+    v34 = (unsigned int *)(this->q0A4);
     IDA_LOWORD(a2) = v21 / 256; /*0x5fdbb9*/
     IDA_HIWORD(a2) = v22 / 256; /*0x5fdbd1*/
     if ( LayerClass::CoordinatesLegal(&MapClass_Instance, (int16_t *)&a2) ) /*0x5fdbe3*/
     {
-      v23 = (unsigned int *)(this->q0A4);
-      v24 = this->q0A0; /*0x5fdbf1*/
-      v32 = *v4; /*0x5fdbf4*/
-      v34 = v23; /*0x5fdbfc*/
+      v23 = (int)((unsigned int *)(this->q0A4));
+      v24 = (int)((unsigned int *)(this->q0A0));
+      v32 = (int)((unsigned int *)(*v4));
+      v34 = (unsigned int *)(v23);
       v33 = v24; /*0x5fdc06*/
       v25 = Coord::To_Cell(&MapClass_Instance, &v32); /*0x5fdc0a*/
     }

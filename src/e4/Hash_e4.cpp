@@ -25,12 +25,12 @@ int sub_5C61E0()
 namespace gamemd {
 int sub_5E94D0()
 {
-  int result; // eax
+  LPARAM * result;
   LPARAM *v1; // edx
   LPARAM v2; // ecx
 
-  result = (LPARAM *)(0);
-  v1 = &g_NetworkPlayerName; /*0x5e94e7*/
+  result = (LPARAM *)((int)((LPARAM *)(0)));
+  v1 = (LPARAM *)(&g_NetworkPlayerName);
   do /*0x5e9508*/
   {
     v2 = *v1; /*0x5e94ec*/
@@ -47,12 +47,12 @@ int sub_5E94D0()
 namespace gamemd {
 char sub_5E9580()
 {
-  int v0; // edx
+  LPARAM * v0;
   LPARAM *v1; // ecx
   LPARAM v2; // eax
 
-  v0 = (LPARAM *)(0);
-  v1 = &g_NetworkPlayerName; /*0x5e9597*/
+  v0 = (LPARAM *)((int)((LPARAM *)(0)));
+  v1 = (LPARAM *)(&g_NetworkPlayerName);
   while ( 1 ) /*0x5e959c*/
   {
     v2 = *v1; /*0x5e959c*/

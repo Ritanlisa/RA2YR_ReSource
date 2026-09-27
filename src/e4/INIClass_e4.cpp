@@ -54,8 +54,8 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
     this->unknown38 = 0; /*0x52687e*/
     this->needsSave_flag = 1; /*0x526881*/
   }
-  v15[0] = (gamemd::ObjectClass **)(v3);
-  v7 = System_Search(v15); /*0x526894*/
+  v15[0] = (unsigned int)((gamemd::ObjectClass **)(v3));
+  v7 = (gamemd::ObjectClass **)(System_Search(v15));
   if ( !v7 ) /*0x52689b*/
     return 0; /*0x526938*/
   this->unknown38 = v7; /*0x5268a1*/
@@ -73,13 +73,13 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
     this->needsSave_flag = 1; /*0x5268d3*/
   }
   v10 = (gamemd::ObjectClass **)(this->INIClass_field_2C);
-  v11 = this->q028; /*0x5268da*/
+  v11 = (gamemd::ObjectClass **)(this->q028);
   if ( v10 <= 0 ) /*0x5268df*/
     return unk_B7882C; /*0x5268df*/
   while ( 1 ) /*0x5268ec*/
   {
     v12 = (gamemd::ObjectClass **)(*(unsigned int *)(v11 + 8 * (v10 / 2)));
-    v13 = v11 + 8 * (v10 / 2); /*0x5268f0*/
+    v13 = (gamemd::ObjectClass **)(v11 + 8 * (v10 / 2));
     if ( v12 <= v3 ) /*0x5268f6*/
       break; /*0x5268f6*/
     v10 /= 2; /*0x5268f8*/
@@ -95,8 +95,8 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
   }
   if ( v13 ) /*0x52691f*/
   {
-    this->unknown38 = (gamemd::ObjectClass **)(v13);
-    return *(unsigned int *)(this->unknown38 + 4); /*0x526921*/
+    this->unknown38 = (unsigned int)((gamemd::ObjectClass **)(v13));
+    return (gamemd::ObjectClass **)(*(unsigned int *)(this->unknown38 + 4));
   }
   return (gamemd::ObjectClass **)(unk_B7882C);
 }
@@ -109,7 +109,7 @@ VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1)
   int v3; // edi
   unsigned int *v4; // eax
   int v5; // eax
-  int v6; // eax
+  INIClass * v6;
   unsigned int *v7; // eax
   int v8; // eax
   int *v9; // esi
@@ -132,8 +132,8 @@ VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1)
       return 0; /*0x5269cb*/
     *((unsigned int *)v2 + 4) = v5; /*0x5269cd*/
   }
-  v6 = (gamemd::INIClass *)(*((unsigned int *)v2 + 1));
-  aP1 = (uint8_t *)v3; /*0x5269d3*/
+  v6 = (gamemd::INIClass *)((int)((gamemd::INIClass *)(*((unsigned int *)v2 + 1))));
+  aP1 = (gamemd::INIClass *)((uint8_t *)v3);
   if ( v6 ) /*0x5269d9*/
   {
     v7 = (unsigned int *)*((unsigned int *)v2 + 4); /*0x5269db*/
@@ -177,9 +177,9 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
   int *v22; // esi
   const char *v23; // ecx
   int v24; // esi
-  unsigned int v26; // [esp+Ch] [ebp-Ch] BYREF
-  int v27; // [esp+10h] [ebp-8h]
-  int v28; // [esp+14h] [ebp-4h]
+  uint8_t ** v26;
+  uint8_t ** v27;
+  uint8_t ** v28;
 
   v6 = (char *)(aP4);
   if ( !aP4 ) /*0x528a20*/
@@ -197,11 +197,11 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
     v10 = (int)this->q008; /*0x528a55*/
     goto LABEL_7; /*0x528a55*/
   }
-  v26 = (uint8_t **)(0);
-  v27 = 0; /*0x528af7*/
-  v28 = 0; /*0x528afb*/
-  v19 = (uint8_t *)Checksummer::Add_Buffer(&v26, aP1, strlen((const char *)aP1)); /*0x528b19*/
-  aP1 = v19; /*0x528b1b*/
+  v26 = (uint8_t **)((unsigned int)((uint8_t **)(0)));
+  v27 = (uint8_t **)((int)((uint8_t **)(0)));
+  v28 = (uint8_t **)((int)((uint8_t **)(0)));
+  v19 = (gamemd::INIClass *)((uint8_t *)Checksummer::Add_Buffer(&v26, aP1, strlen((const char *)aP1)));
+  aP1 = (gamemd::INIClass *)((uint8_t **)(v19));
   if ( !*(&this->u32_41) ) /*0x528b1f*/
     goto LABEL_29; /*0x528b1f*/
   v20 = *(&this->u32_44); /*0x528b26*/
@@ -211,7 +211,7 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
   if ( !v21 ) /*0x528b3f*/
   {
   LABEL_29: v23 = (char *)(aP3);
-    v6 = aP4; /*0x528b84*/
+    v6 = (char *)(aP4);
     this->u32_4 = 0; /*0x528b8a*/
     this->q008 = 0; /*0x528b8d*/
     goto LABEL_36; /*0x528b90*/
@@ -309,9 +309,9 @@ INIClass::INIClass()
   unsigned int * v6;
   int v7; // esi
 
-  result = (unsigned int *)(this);
-  v2 = &this->sectionHead; /*0x535aa6*/
-  v3 = result + 7; /*0x535aa9*/
+  result = (void **)((unsigned int *)(this));
+  v2 = (unsigned int *)(&this->sectionHead);
+  v3 = (unsigned int *)(result + 7);
   result[1] = 0; /*0x535aac*/
   result[2] = 0; /*0x535aaf*/
   v2[1] = 0; /*0x535ab2*/
@@ -334,9 +334,9 @@ INIClass::INIClass()
     }
   }
   v6 = (unsigned int)(v2[1]);
-  result[9] = v2; /*0x535af9*/
-  result[8] = v6; /*0x535afc*/
-  v7 = v2[1]; /*0x535aff*/
+  result[9] = (void *)((unsigned int)(v2));
+  result[8] = (void *)((unsigned int)(v6));
+  v7 = (unsigned int)(v2[1]);
   if ( v7 ) /*0x535b04*/
     this->v3 = v3; /*0x535b06*/
   v2[1] = v3; /*0x535b09*/

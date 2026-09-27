@@ -26,15 +26,15 @@ int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, Techn
   if ( aP1->qAA4 && aP3 ) /*0x466525*/
   {
     result = (unsigned int)(aP3->q21C->u32_16054);
-    this->q114 = result; /*0x466533*/
+    this->q114 = (unsigned int)(result);
   }
   else
   {
     this->q114 = -1; /*0x46653b*/
   }
   this->q150 = (int)(256);
-  this->q154 = 0; /*0x466550*/
-  this->q158 = 0; /*0x466556*/
-  return result; /*0x466545*/
+  this->q154 = (void *)((int)(0));
+  this->q158 = (void *)((int)(0));
+  return (int)(result);
 }
 }

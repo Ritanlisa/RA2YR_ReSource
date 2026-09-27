@@ -52,16 +52,16 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   int v32; // [esp+38h] [ebp-74h]
   int v33[2]; // [esp+3Ch] [ebp-70h] BYREF
   int v34[2]; // [esp+44h] [ebp-68h] BYREF
-  int v35; // [esp+4Ch] [ebp-60h] BYREF
+  int * v35;
   int v36; // [esp+50h] [ebp-5Ch]
   unsigned int v37[2]; // [esp+54h] [ebp-58h] BYREF
   int v38[4]; // [esp+5Ch] [ebp-50h] BYREF
   int v39; // [esp+6Ch] [ebp-40h] BYREF
   int v40; // [esp+70h] [ebp-3Ch]
-  int v41; // [esp+74h] [ebp-38h]
-  int v42; // [esp+78h] [ebp-34h]
-  int v43; // [esp+7Ch] [ebp-30h] BYREF
-  int v44; // [esp+80h] [ebp-2Ch]
+  int * v41;
+  int * v42;
+  int * v43;
+  int * v44;
   int v45; // [esp+84h] [ebp-28h]
   int v46; // [esp+88h] [ebp-24h]
   unsigned int v47[4]; // [esp+8Ch] [ebp-20h] BYREF
@@ -85,15 +85,15 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
       v11 = **(uint16_t **)(g_FileSystem_THEATER_PAL + 372); /*0x704a69*/
     v36 = -2; /*0x704a77*/
     v35 = (int *)(-2);
-    v12 = Coord2D::Add(&v35, v37, v34); /*0x704a8d*/
-    v13 = Rect::Construct(v47, v12, 3, 3); /*0x704a97*/
+    v12 = (int)(Coord2D::Add(&v35, v37, v34));
+    v13 = (int *)(Rect::Construct(v47, v12, 3, 3));
     v39 = *v13; /*0x704aa0*/
     v40 = v13[1]; /*0x704aa9*/
     v41 = (int *)(v13[2]);
-    v42 = v13[3]; /*0x704ac2*/
-    v14 = ClipRectIntersection(v48, &DSurface_ViewBounds, &v39, 0, 0); /*0x704acc*/
-    v43 = *v14; /*0x704ad4*/
-    v44 = v14[1]; /*0x704adb*/
+    v42 = (int *)(v13[3]);
+    v14 = (int *)(ClipRectIntersection(v48, &DSurface_ViewBounds, &v39, 0, 0));
+    v43 = (int *)(*v14);
+    v44 = (int *)(v14[1]);
     v45 = v14[2]; /*0x704ae2*/
     v46 = v14[3]; /*0x704aef*/
     (*(void (__thiscall **)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v43, v11); /*0x704afa*/
@@ -136,13 +136,13 @@ void DrawTacticalMapLine(FootClass * aP0, FootClass * aP1, int a3, int a4, int a
   v20 = ((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x704c89*/
       | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue)
       | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green);
-  v35 = (int *)(-2);
+  v35 = (unsigned int)((int *)(-2));
   v36 = -2; /*0x704c96*/
   v21 = (int *)(Coord2D::Add(&v35, v37, &v31));
-  v22 = Rect::Construct(v48, v21, 3, 3); /*0x704cb1*/
-  v43 = *v22; /*0x704cba*/
-  v44 = v22[1]; /*0x704cc3*/
-  v45 = v22[2]; /*0x704cca*/
+  v22 = (int *)(Rect::Construct(v48, v21, 3, 3));
+  v43 = (int *)(*v22);
+  v44 = (int *)(v22[1]);
+  v45 = (int *)(v22[2]);
   v46 = v22[3]; /*0x704cd9*/
   v23 = ClipRectIntersection(v47, &DSurface_ViewBounds, &v43, 0, 0); /*0x704ce3*/
   v39 = *v23; /*0x704ceb*/
@@ -201,13 +201,13 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   int *v10; // eax
   int *v11; // eax
   DWORD Time; // eax
-  int v13; // ecx
+  void * v13;
   int v14; // esi
   int v15; // edi
   int v16; // ebp
   double v17; // st7
   int result; // eax
-  int16_t v19; // [esp+10h] [ebp-90h] BYREF
+  void * v19;
   uint8_t v20; // [esp+12h] [ebp-8Eh]
   int v21; // [esp+18h] [ebp-88h] BYREF
   int v22; // [esp+1Ch] [ebp-84h]
@@ -220,18 +220,18 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
   int v29; // [esp+34h] [ebp-6Ch]
   int v30; // [esp+38h] [ebp-68h] BYREF
   int v31; // [esp+3Ch] [ebp-64h]
-  int v32; // [esp+40h] [ebp-60h]
+  int * v32;
   int v33; // [esp+44h] [ebp-5Ch]
-  int v34; // [esp+48h] [ebp-58h] BYREF
-  int v35; // [esp+4Ch] [ebp-54h]
+  int * v34;
+  int * v35;
   int v36; // [esp+50h] [ebp-50h]
   int v37; // [esp+54h] [ebp-4Ch]
   int v38; // [esp+58h] [ebp-48h] BYREF
   int v39; // [esp+5Ch] [ebp-44h]
   int v40; // [esp+60h] [ebp-40h]
-  int v41; // [esp+64h] [ebp-3Ch] BYREF
-  int v42; // [esp+68h] [ebp-38h]
-  int v43; // [esp+6Ch] [ebp-34h]
+  void * v41;
+  void * v42;
+  void * v43;
   int v44[4]; // [esp+70h] [ebp-30h] BYREF
   unsigned int v45[4]; // [esp+80h] [ebp-20h] BYREF
   unsigned int v46[4]; // [esp+90h] [ebp-10h] BYREF
@@ -250,23 +250,23 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
      | (IDA_BYTE1(a7, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6) >> g_BitMask_Blue << g_BitMask_Green)
      | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue);
   v8 = (int *)(Rect::Construct(v45, &v28, 3, 3));
-  v34 = *v8; /*0x704f2e*/
-  v35 = v8[1]; /*0x704f37*/
-  v36 = v8[2]; /*0x704f3e*/
+  v34 = (int *)(*v8);
+  v35 = (int *)(v8[1]);
+  v36 = (int *)(v8[2]);
   v37 = v8[3]; /*0x704f50*/
   v9 = ClipRectIntersection(v46, &DSurface_ViewBounds, &v34, 0, 0); /*0x704f5a*/
   v30 = *v9; /*0x704f61*/
   v31 = v9[1]; /*0x704f68*/
   v32 = v9[2]; /*0x704f6f*/
-  v33 = v9[3]; /*0x704f7c*/
+  v33 = (int)(v9[3]);
   (*(void (__thiscall **)(int, int *, int))(*(unsigned int *)DSurface_Composite + 20))(DSurface_Composite, &v30, v7); /*0x704f88*/
   v29 = v22 - 2; /*0x704f9f*/
   v28 = v21 - 2; /*0x704fad*/
   v10 = Rect::Construct(v46, &v28, 3, 3); /*0x704fb1*/
-  v30 = *v10; /*0x704fba*/
-  v31 = v10[1]; /*0x704fc3*/
-  v32 = v10[2]; /*0x704fca*/
-  v33 = v10[3]; /*0x704fdc*/
+  v30 = (int)(*v10);
+  v31 = (int)(v10[1]);
+  v32 = (int *)(v10[2]);
+  v33 = (unsigned int)(v10[3]);
   v11 = ClipRectIntersection(v45, &DSurface_ViewBounds, &v30, 0, 0); /*0x704fe6*/
   v34 = *v11; /*0x704fee*/
   v35 = v11[1]; /*0x704ff5*/
@@ -300,7 +300,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
     v22 += g_Map_VisibleRect; /*0x70516b*/
     if ( ClipLine(&v24, &v21, v44) ) /*0x70516f*/
     {
-      v20 = IDA_BYTE2(a7); /*0x70518f*/
+      v20 = (int16_t)(IDA_BYTE2(a7));
       v19 = a7; /*0x705195*/
       if ( (((unsigned short)v16 - (unsigned short)v28) & 0x1F8u) <= 0xF8 && (((unsigned short)v16 - (unsigned short)v28) & 0x1F8) != 0 ) /*0x7051aa*/
         Color::Lerp((uint8_t *)&v19, (v16 - v28) & 0xF8, (uint8_t *)&v26); /*0x7051b6*/
@@ -312,7 +312,7 @@ void* DrawTacticalLaserLine(void * a1, void * a2, void * a3, void * a4, void * a
       | (IDA_HIBYTE(v19, void * a1) >> g_BitMask_Blue << g_BitMask_Green)
       | (v20 >> g_BitMask_Red << g_BitShift_Blue, unsigned int a1));
     }
-    result = v38; /*0x705229*/
+    result = (int)(v38);
     ++v14; /*0x705235*/
     v16 += 8; /*0x705236*/
     --v15; /*0x705239*/
@@ -358,7 +358,7 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
   unsigned int *v37; // [esp+10h] [ebp-12Ch] BYREF
   int v38; // [esp+14h] [ebp-128h]
   unsigned int v39;
-  int v40; // [esp+1Ch] [ebp-120h]
+  int * v40;
   int v41; // [esp+20h] [ebp-11Ch] BYREF
   int v42; // [esp+24h] [ebp-118h]
   int v43; // [esp+28h] [ebp-114h]
@@ -444,9 +444,9 @@ void * TechnoClass_RenderVoxel(int * a1, int a2, void * a3, unsigned int * a4, c
     else
     {
       lpVtbl = (int *)(g_TacticalClass_Instance[45].lpVtbl);
-      v37 = 0; /*0x707100*/
-      v40 = v21 - (unsigned int)lpVtbl; /*0x707104*/
-      v38 = 0; /*0x70710c*/
+      v37 = (unsigned int *)((int *)(0));
+      v40 = (int *)(v21 - (unsigned int)lpVtbl);
+      v38 = (int *)(0);
       v39 = g_Map_VisibleRectOffset; /*0x707110*/
       v23 = ClipRectIntersection(v47, &v41, (int *)&v37, 0, 0); /*0x70711e*/
       v41 = *v23; /*0x707125*/
@@ -807,7 +807,7 @@ void UpdateTimedStateMachine(int * a1)
       case 6: /*0x70e97d*/
         if ( Timeout::GetRemaining(a1 + 106) <= 30 ) /*0x70eb96*/
         {
-          a1[112] = 7; /*0x70eb9c*/
+          a1[112] = (unsigned int *)(7);
           v14 = a1 + 109; /*0x70ebab*/
           *v14 = g_CurrentFrame; /*0x70ebb7*/
           v14[1] = v21; /*0x70ebbd*/

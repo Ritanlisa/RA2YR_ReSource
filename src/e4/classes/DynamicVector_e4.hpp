@@ -8,13 +8,13 @@ struct DynamicVector {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     unsigned int q004;  // 0x4
-    unsigned int q008;  // 0x8
+    void* ;  // 0x8
     char q00B[4];  // 0xB
     bool IsInitialized;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned int tail_E;  // 0xE
-    unsigned int q010;  // 0x10
-    int CapacityIncrement;  // 0x14
+    void* ;  // 0x10
+    void* ;  // 0x14
     unsigned char q018;  // 0x18
     AbstractClass* q01C;  // 0x1C
     int q020;  // 0x20
@@ -193,6 +193,9 @@ struct DynamicVector {
     unsigned int checkCondition;
     unsigned int initEvent;
     unsigned int u32_14;
+    unsigned int CapacityIncrement;
+    unsigned int q008;
+    unsigned int q010;
     unsigned int Release;
 // --- flat members (END) ---
     unsigned int * Copy(VectorClass_flat * aP1);  // 0x5AC430

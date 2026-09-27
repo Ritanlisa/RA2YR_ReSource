@@ -616,21 +616,21 @@ void PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3
   int v11; // ebp
   int v12; // edi
   int v13; // ebx
-  int v14; // ebp
+  unsigned short * v14;
   unsigned short *v15; // ebx
   int16_t v17; // [esp+10h] [ebp-10h]
-  int v18; // [esp+14h] [ebp-Ch]
+  void * v18;
 
-  v10 = a3; /*0x62109d*/
-  v11 = a3[3]; /*0x6210a1*/
+  v10 = (unsigned int *)((int)(a3));
+  v11 = (int)(a3[3]);
   v12 = a3[2] - *a3; /*0x6210ab*/
   v18 = *a3; /*0x6210ad*/
   v13 = ((uint8_t)yTop >> g_BitShift_Green_0 << g_BitShift_Red) /*0x6210b1*/
       | (IDA_BYTE2(yTop, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9) >> g_BitMask_Red << g_BitShift_Blue)
       | (IDA_BYTE1(yTop) >> g_BitMask_Blue << g_BitMask_Green);
-  yTop = a3[1]; /*0x6210b6*/
-  v14 = v11 - yTop; /*0x6210ba*/
-  v17 = v13; /*0x6210c0*/
+  yTop = (unsigned short *)(a3[1]);
+  v14 = (int)((unsigned short *)(v11 - yTop));
+  v17 = (unsigned short *)(v13);
   v15 = a4; /*0x6210c4*/
   if ( (a6 & 4) != 0 ) /*0x6210ca*/
   {
@@ -655,9 +655,9 @@ double sub_621150(int a1)
   unsigned int v6[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   result = (unsigned int)(1.0);
-  v6[0] = 43; /*0x62115b*/
-  v6[1] = 128; /*0x621163*/
-  v6[2] = 213; /*0x62116b*/
+  v6[0] = (unsigned int)(43);
+  v6[1] = (unsigned int)(128);
+  v6[2] = (unsigned int)(213);
   v2 = v6; /*0x621173*/
   v3 = 3; /*0x621177*/
   do /*0x6211c6*/
@@ -705,7 +705,7 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
   unsigned int v22[4]; // [esp+14h] [ebp-10h] BYREF
   int yTopa; // [esp+28h] [ebp+4h]
 
-  v9 = (int)(a1);
+  v9 = (unsigned int *)((int)(a1));
   if ( !g_DDraw_Active ) /*0x6211e0*/
     return 0; /*0x6211e8*/
   if ( !a7 ) /*0x6211f1*/
@@ -716,7 +716,7 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
       | (IDA_BYTE1(ecx0) >> g_BitMask_Blue << g_BitMask_Green)
       | (IDA_BYTE2(ecx0) >> g_BitMask_Red << g_BitShift_Blue);
   yTopa = (int)(aP2[1]);
-  v14 = aP2[2]; /*0x621262*/
+  v14 = (int)(aP2[2]);
   v20 = v14; /*0x621267*/
   if ( !a1 ) /*0x62126b*/
     v9 = (unsigned int *)g_FogOfWarState; /*0x62126d*/
@@ -751,7 +751,7 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
       goto LABEL_21; /*0x62131f*/
   }
   v16 = (int)(*aP2);
-  v17 = aP2[1]; /*0x621327*/
+  v17 = (int)(aP2[1]);
   v22[0] = v16; /*0x621332*/
   v22[1] = v17; /*0x621336*/
   v22[2] = v20 + v16; /*0x621342*/
@@ -783,8 +783,8 @@ AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
   int v17; // ecx
   int16_t v18; // ax
   int v19; // ebp
-  int v20; // ecx
-  int v21; // eax
+  AbstractClass ** v20;
+  AbstractClass ** v21;
   HWND hWnd; // [esp+14h] [ebp-74h] BYREF
   HWND v24; // [esp+18h] [ebp-70h] BYREF
   int *v25; // [esp+1Ch] [ebp-6Ch]
@@ -830,9 +830,9 @@ AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
     if ( v7 ) /*0x621543*/
     {
       v8 = (unsigned int)(Rect.bottom + 1);
-      v9 = Rect.right + 1; /*0x62154e*/
-      v7[2] = Rect.bottom + 1; /*0x62154f*/
-      v7[1] = v9; /*0x621557*/
+      v9 = (unsigned int)(Rect.right + 1);
+      v7[2] = (unsigned int)(Rect.bottom + 1);
+      v7[1] = (unsigned int)(v9);
       v7[3] = 0; /*0x62155f*/
       *v7 = &XSurface_Vtable; /*0x621562*/
       v7[4] = 2; /*0x621568*/
@@ -925,10 +925,10 @@ AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
       (*(void (__thiscall **)(unsigned int *))(*v7 + 96))(v7); /*0x62178c*/
     }
   }
-  v20 = (gamemd::AbstractClass **)(v3[1]);
-  v21 = *v3; /*0x621799*/
-  v35[2] = v3[2]; /*0x62179b*/
-  v35[3] = v3[3]; /*0x6217a2*/
+  v20 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(v3[1])));
+  v21 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*v3)));
+  v35[2] = (unsigned int)((gamemd::AbstractClass **)(v3[2]));
+  v35[3] = (gamemd::AbstractClass **)(v3[3]);
   v35[1] = v20 - v28.top; /*0x6217ae*/
   v35[0] = v21 - v28.left; /*0x6217c0*/
   return (*(int (__thiscall **)(int, int *, unsigned int *, unsigned int *, unsigned int, int))(*(unsigned int *)DSurface_Alternate + 8))( /*0x6217cc*/

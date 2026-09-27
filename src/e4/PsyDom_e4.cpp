@@ -31,7 +31,7 @@ void PsyDom::Fire()
   int v11; // eax
   unsigned int *v12; // eax
   int i; // esi
-  int v14; // eax
+  void ** v14;
   int v15; // edx
   int v16; // edi
   int *v17; // eax
@@ -70,7 +70,7 @@ void PsyDom::Fire()
   {
     v3 = 0; /*0x53b0d2*/
   }
-  v3[4] = (void **)(1);
+  v3[4] = (unsigned int)((void **)(1));
   v4 = (void *)g_RulesClass_Instance->PrerequisitePower[1]; /*0x53b0e6*/
   v5 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&PsyDom_Coords); /*0x53b0f1*/
   v6 = (int *)(*(int (__thiscall **)(void *, int *))(*(unsigned int *)v5 + 72))(v5, v33); /*0x53b0ff*/
@@ -118,7 +118,7 @@ void PsyDom::Fire()
           && !*(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)i + 132))(i) + 3434)
           && !(*(uint8_t (__thiscall **)(int))(*(unsigned int *)i + 84))(i) )
         {
-          v14 = (void **)(*(unsigned int *)(i + 704));
+          v14 = (void **)((int)((void **)(*(unsigned int *)(i + 704))));
           if ( v14 ) /*0x53b27e*/
             CaptureManagerClass::FreeUnit(*(unsigned int **)(v14 + 700), 0, (int)v10, (unsigned int *)i, v26, v27); /*0x53b287*/
           (*(void (__thiscall **)(int, void *, int))(*(unsigned int *)i + 980))(i, PsyDom_Owner, 1); /*0x53b298*/

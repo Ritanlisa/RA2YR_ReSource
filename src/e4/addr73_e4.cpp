@@ -27,6 +27,7 @@
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
 
 // 0x730A90
 namespace gamemd {
@@ -183,14 +184,14 @@ AbstractClass * * ProcessSelectionExperience()
 namespace gamemd {
 CellStruct * * sub_730D60()
 {
-  char result; // al
+  CellStruct ** result;
   int v1; // ebp
   char v2; // bl
   unsigned char *v3; // esi
-  int v4; // edi
-  int v5; // eax
-  int v6; // edi
-  int v7; // eax
+  CellStruct ** v4;
+  CellStruct ** v5;
+  CellStruct ** v6;
+  CellStruct ** v7;
   unsigned int v8;
 
   if ( FactoryClass::GetFlag() ) /*0x730d65*/
@@ -211,10 +212,10 @@ CellStruct * * sub_730D60()
           && (*(uint8_t (__thiscall **)(unsigned char *))(*(unsigned int *)v3 + 156))(v3)
           && (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v3 + 44))(v3) != 6 )
         {
-          v4 = (gamemd::CellStruct **)(*(unsigned int *)v3);
-          v5 = (*(int (__thiscall **)(unsigned char *, unsigned int, unsigned int))(*(unsigned int *)v3 + 452))(v3, 0, 0); /*0x730de0*/
-          result = (*(int (__thiscall **)(unsigned char *, int, int))(v4 + 888))(v3, 11, v5); /*0x730deb*/
-          v2 = result; /*0x730df1*/
+          v4 = (gamemd::CellStruct **)((int)((gamemd::CellStruct **)(*(unsigned int *)v3)));
+          v5 = (gamemd::CellStruct **)((int)((gamemd::CellStruct **)((*(int (__thiscall **)(unsigned char *, unsigned int, unsigned int))(*(unsigned int *)v3 + 452))(v3, 0, 0))));
+          result = (char)((gamemd::CellStruct **)((*(int (__thiscall **)(unsigned char *, int, int))(v4 + 888))(v3, 11, v5)));
+          v2 = (gamemd::CellStruct **)(result);
           if ( !result ) /*0x730df5*/
             return result; /*0x730df5*/
         }
@@ -227,10 +228,10 @@ CellStruct * * sub_730D60()
                               : (unsigned int *)1732)
                             + 3598)) )
         {
-          v6 = (gamemd::CellStruct **)(*(unsigned int *)v3);
-          v7 = (*(int (__thiscall **)(unsigned char *, unsigned int, unsigned int))(*(unsigned int *)v3 + 452))(v3, 0, 0); /*0x730e4b*/
-          result = (*(int (__thiscall **)(unsigned char *, int, int))(v6 + 888))(v3, 11, v7); /*0x730e56*/
-          v2 = result; /*0x730e5c*/
+          v6 = (gamemd::CellStruct **)((int)((gamemd::CellStruct **)(*(unsigned int *)v3)));
+          v7 = (gamemd::CellStruct **)((int)((gamemd::CellStruct **)((*(int (__thiscall **)(unsigned char *, unsigned int, unsigned int))(*(unsigned int *)v3 + 452))(v3, 0, 0))));
+          result = (char)((gamemd::CellStruct **)((*(int (__thiscall **)(unsigned char *, int, int))(v6 + 888))(v3, 11, v7)));
+          v2 = (gamemd::CellStruct **)(result);
           if ( !result ) /*0x730e60*/
             return result; /*0x730e60*/
         }
@@ -285,12 +286,11 @@ int E4Recv_731130::sub_731130()
 namespace gamemd {
 AbstractClass * * sub_731AA0()
 {
-  unsigned int v0;
-  int v1; // esi
+  AbstractClass ** v0;
+  AbstractClass ** v1;
   unsigned char *v2; // ecx
-
-  v0 = (gamemd::AbstractClass **)(g_SelectionManager);
-  v1 = 0; /*0x731aa9*/
+v0 = (gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)(g_SelectionManager)));
+  v1 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(0)));
   if ( (int)g_SelectionManager <= 0 ) /*0x731aad*/
     return 1; /*0x731ad8*/
   while ( 1 ) /*0x731ab4*/

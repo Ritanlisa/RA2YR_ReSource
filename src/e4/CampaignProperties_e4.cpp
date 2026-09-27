@@ -62,7 +62,7 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(cha
     this->q004 = 0; /*0x5d2cc0*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = 0; /*0x5d2cd1*/
+  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x5d2cd8*/
     RA2_OPDEL(); /*0x5d2cdb*/
   return this; /*0x5d2ce5*/

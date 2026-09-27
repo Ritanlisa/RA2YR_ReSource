@@ -34,12 +34,12 @@ void Math::Hypotenuse2D()
 namespace gamemd {
 void Math_Sqrt(void * a1)
 {
-  double v1; // st7
+  void * v1;
   unsigned int v3; // ecx
   int v4; // eax
-  float v5; // [esp+4h] [ebp+4h]
+  void * v5;
 
-  v1 = a1; /*0x4cac40*/
+  v1 = (double)(a1);
   if ( a1 == 0.0 ) /*0x4cac4f*/
     return 0.0; /*0x4cac53*/
   if ( a1 <= 0.0 ) /*0x4cac65*/
@@ -107,15 +107,15 @@ int Math::Sin(double a1)
 namespace gamemd {
 void Math_CalcAngle(void * a1, void * a2)
 {
-  double v3; // st7
+  void * v3;
   char v4; // c3
   double result; // st7
   int v6; // eax
-  float v7; // [esp+0h] [ebp-4h]
-  float v8; // [esp+10h] [ebp+Ch]
+  void * v7;
+  void * v8;
 
-  v7 = a2; /*0x4cae35*/
-  v8 = a1; /*0x4cae3d*/
+  v7 = (float)(a2);
+  v8 = (double)(a1);
   v3 = v8; /*0x4cae4b*/
   if ( v4 ) /*0x4cae54*/
   {
@@ -163,9 +163,9 @@ void * Math::BuildRotationMatrix(float * a2, float a3)
   float v16; // [esp+10h] [ebp+8h]
 
   a3 = (void *)(a3);
-  v16 = Math::ArcTan2(a3); /*0x5ae76f*/
-  v5 = Math::SinCos(a3); /*0x5ae775*/
-  v7 = *a2 * *a2; /*0x5ae787*/
+  v16 = (void *)(Math::ArcTan2(a3));
+  v5 = (void *)(Math::SinCos(a3));
+  v7 = (void *)(*a2 * *a2);
   *(unsigned int *)this = (1.0 - v7) * v16 + v7; /*0x5ae797*/
   v8 = 1.0 - v16; /*0x5ae7a1*/
   this->u32_4 = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/

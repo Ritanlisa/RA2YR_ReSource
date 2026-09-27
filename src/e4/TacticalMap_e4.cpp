@@ -19,6 +19,7 @@
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x484680
 namespace gamemd {
@@ -109,8 +110,8 @@ ScenarioClass * * TacticalMap::ComputeScreenTint()
   }
   else
   {
-    this->u16_10E = (gamemd::ScenarioClass **)(v14);
-    return v14; /*0x484890*/
+    this->u16_10E = (unsigned int)((gamemd::ScenarioClass **)(v14));
+    return (gamemd::ScenarioClass **)(v14);
   }
 }
 } // namespace gamemd
@@ -309,7 +310,7 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
   int *v8; // eax
   int *v9; // eax
   int *v10; // eax
-  unsigned int *v11; // ecx
+  int * v11;
   char *v14; // esi
   char *v15; // edi
   int result; // eax
@@ -325,10 +326,10 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
   int v28; // [esp+20h] [ebp-50h] BYREF
   int v29; // [esp+24h] [ebp-4Ch]
   int v30[2]; // [esp+28h] [ebp-48h] BYREF
-  int v31; // [esp+30h] [ebp-40h] BYREF
-  int v32; // [esp+34h] [ebp-3Ch]
-  int v33; // [esp+38h] [ebp-38h]
-  int v34; // [esp+3Ch] [ebp-34h]
+  int * v31;
+  int * v32;
+  int * v33;
+  int * v34;
   int v35[4]; // [esp+40h] [ebp-30h] BYREF
   unsigned int v36[4]; // [esp+50h] [ebp-20h] BYREF
   unsigned int v37[4]; // [esp+60h] [ebp-10h] BYREF
@@ -345,13 +346,13 @@ void* TacticalMap::RenderCell(char arg0, AbstractClass * aP2, int a4, int a2)
         do /*0x6d2cfd*/
         {
           v31 = (int *)(*(unsigned int *)((char *)g_CraterPool + v7));
-          v32 = *(unsigned int *)((char *)g_CraterPool + v7 + 4); /*0x6d2ba9*/
-          v33 = *(unsigned int *)((char *)g_CraterPool + v7 + 8); /*0x6d2bb0*/
-          v34 = *(unsigned int *)((char *)g_CraterPool + v7 + 12); /*0x6d2bbd*/
+          v32 = (int *)(*(unsigned int *)((char *)g_CraterPool + v7 + 4));
+          v33 = (int *)(*(unsigned int *)((char *)g_CraterPool + v7 + 8));
+          v34 = (int *)(*(unsigned int *)((char *)g_CraterPool + v7 + 12));
           v31 += aP2; /*0x6d2bc7*/
           v32 += a4; /*0x6d2bd0*/
-          v26 = g_Map_VisibleRect; /*0x6d2bda*/
-          v29 = g_Map_VisibleRect; /*0x6d2bde*/
+          v26 = (int)(g_Map_VisibleRect);
+          v29 = (int)(g_Map_VisibleRect);
           v25 = DSurface_ViewBounds; /*0x6d2be7*/
           v28 = DSurface_ViewBounds; /*0x6d2beb*/
           g_DSurface_WindowOffset = g_DSurface_WindowOffset; /*0x6d2bf5*/

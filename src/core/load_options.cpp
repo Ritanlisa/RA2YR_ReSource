@@ -89,8 +89,8 @@ LoadOptions::LoadOptions() {
   int v3; // eax
 
   v2 = (_DWORD)(&this->is_active);
-  v2[1] = 0; /*0x558748*/
-  v2[2] = 0; /*0x55874b*/
+  v2[1] = (_DWORD)(0);
+  v2[2] = (_DWORD)(0);
   *((_BYTE *)v2 + 12) = 1; /*0x55874e*/
   *((_BYTE *)v2 + 13) = 0; /*0x558752*/
   *v2 = &(void*)(void*)&DynamicVectorClass_FileEntryClass___vftable; /*0x558755*/

@@ -14,7 +14,7 @@ struct ConnectionClass {
     unsigned int PacketsSent;  // 0x10
     unsigned int q011;  // 0x11
     unsigned int PacketsReceived;  // 0x14
-    unsigned int q018;  // 0x18
+    void* ;  // 0x18
     unsigned int q01C;  // 0x1C
     unsigned int q020;  // 0x20
     void* q024;  // 0x24
@@ -69,6 +69,7 @@ struct ConnectionClass {
     unsigned int PlayerIndex7;
     unsigned int PlayerIndex8;
     unsigned int queueSendPacket;
+    unsigned int q018;
 // --- flat members (END) ---
     AbstractClass * * sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4);
     int StubReturnFalse();

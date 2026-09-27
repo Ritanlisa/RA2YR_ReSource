@@ -362,8 +362,8 @@ int ComStreamClass::Seek(void * a1, void * a2, void * a3, void * a4)
   dword_B77DF4 = a2; /*0x7a4083*/
   if ( !a2 ) /*0x7a4088*/
   {
-    dword_B77E60 = a3; /*0x7a4092*/
-    dword_B77E64 = a4; /*0x7a4097*/
+    dword_B77E60 = (unsigned int)(a3);
+    dword_B77E64 = (unsigned int)(a4);
   }
   v4 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x7a40a2*/
   if ( v4 ) /*0x7a40a9*/

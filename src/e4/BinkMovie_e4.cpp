@@ -149,8 +149,8 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
   FullPath = 0; /*0x4327fc*/
   if ( (uint8_t)LookupFileInfoCache(&FullPath, lDistanceToMove, 0) == 1 ) /*0x43280a*/
   {
-    FileA = (unsigned char)(CreateFileA(FullPath[3], 0x80000000, 3u, 0, 3u, 0x8000080u, 0));
-    this->q028 = FileA; /*0x43282d*/
+    FileA = (HANDLE)((unsigned char)(CreateFileA(FullPath[3], 0x80000000, 3u, 0, 3u, 0x8000080u, 0)));
+    this->q028 = (unsigned char)(FileA);
     if ( FileA != (HANDLE)-1 ) /*0x432830*/
     {
       SetFilePointer(FileA, lDistanceToMove[0], 0, 0); /*0x43283a*/
@@ -167,11 +167,11 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
     this->u32_24 = 0x3C /*0x4328b5*/
                            / (unsigned int)(*(unsigned int *)(this->u32_4 + 20)
                                           / *(unsigned int *)(this->u32_4 + 24));
-    v14 = (void *)((unsigned int *)BinkMovie::CreateSurfaceTracker(v6));
-    v15 = this->u32_4; /*0x4328bd*/
-    this->q020 = v14; /*0x4328c0*/
-    v16 = 0; /*0x4328c3*/
-    v17 = *v15; /*0x4328c5*/
+    v14 = (unsigned int *)((void *)((unsigned int *)BinkMovie::CreateSurfaceTracker(v6)));
+    v15 = (int *)((void *)(this->u32_4));
+    this->q020 = (void *)(v14);
+    v16 = (void *)(0);
+    v17 = (void *)(*v15);
     v18 = v15[1]; /*0x4328c7*/
     v19 = this->q00C; /*0x4328ca*/
     v18 = v18; /*0x4328cd*/
@@ -242,12 +242,12 @@ AbstractClass * * BinkMovie::InitFromFile(LPCSTR * FullPath)
       left = Rect.left; /*0x432a0e*/
       v27 = v17; /*0x432a12*/
     }
-    this->u32_10 = (gamemd::AbstractClass **)(left);
-    this->u32_14 = v22; /*0x432a2c*/
-    this->q018 = v27; /*0x432a2f*/
-    this->q01C = bottom; /*0x432a32*/
-    this->q008 = BinkDDSurfaceType(*(unsigned int *)(g_DSurface_Primary + 28)); /*0x432a44*/
-    return 1; /*0x432a4a*/
+    this->u32_10 = (unsigned int)((gamemd::AbstractClass **)(left));
+    this->u32_14 = (unsigned int)((gamemd::AbstractClass **)(v22));
+    this->q018 = (unsigned char)((gamemd::AbstractClass **)(v27));
+    this->q01C = (unsigned char)((gamemd::AbstractClass **)(bottom));
+    this->q008 = (gamemd::AbstractClass **)(BinkDDSurfaceType(*(unsigned int *)(g_DSurface_Primary + 28)));
+    return (gamemd::AbstractClass **)(1);
   }
   else
   {
@@ -376,7 +376,7 @@ int BinkMovie::RenderLoop(DSurface * aP1, int a3, int a4)
   bool result; // al
   void * v12;
   char v13; // bl
-  int v14; // ebp
+  void * v14;
   void * v15;
   void * v16;
   int v17; // [esp-Ch] [ebp-24h]
@@ -439,8 +439,8 @@ int BinkMovie::RenderLoop(DSurface * aP1, int a3, int a4)
       v19 = (*(int (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92))(aP1, 0, 0); /*0x432fa0*/
       if ( v19 ) /*0x432fa4*/
       {
-        v14 = (void *)((*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 116))(aP1));
-        v15 = (*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 128))(aP1); /*0x432fb3*/
+        v14 = (void *)((int)((void *)((*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 116))(aP1))));
+        v15 = (void *)((*(int (__thiscall **)(int))(*(unsigned int *)aP1 + 128))(aP1));
         v16 = this->q020; /*0x432fb9*/
         if ( v13 ) /*0x432fbe*/
           v16 |= 0x80000000; /*0x432fc0*/

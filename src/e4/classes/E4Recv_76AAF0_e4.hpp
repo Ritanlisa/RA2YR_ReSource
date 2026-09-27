@@ -28,12 +28,12 @@ struct E4Recv_76AAF0 {
     unsigned int q028;  // 0x28
     unsigned int M42;  // 0x2A
     unsigned int M43;  // 0x2B
-    unsigned int M44;  // 0x2C
+    void* ;  // 0x2C
     unsigned int M45;  // 0x2D
     unsigned int M46;  // 0x2E
-    unsigned int M47;  // 0x2F
+    void* ;  // 0x2F
     unsigned int q030;  // 0x30
-    unsigned int M32;  // 0x32
+    void* ;  // 0x32
     unsigned int M33;  // 0x33
     unsigned int M34;  // 0x34
     unsigned int M36;  // 0x36
@@ -92,6 +92,8 @@ struct E4Recv_76AAF0 {
     unsigned int u32_29;
     unsigned int u32_31;
     unsigned int u32_35;
+    unsigned int M44;
+    unsigned int M47;
 // --- flat members (END) ---
     unsigned int * sub_76AAF0();  // 0x76AAF0
 };

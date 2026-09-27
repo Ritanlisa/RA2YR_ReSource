@@ -39,7 +39,7 @@ AbstractClass * * JumpjetLocomotion::MoveTo(IUnknown * aP1, int aP3)
   int v20; // [esp+1Ch] [ebp-8h]
   int v21; // [esp+20h] [ebp-4h]
 
-  v3 = (void *)(aP1);
+  v3 = (IUnknown *)((void *)(aP1));
   if ( *aP1 != g_DDraw_ClipRect || aP1[1] != qword_8A0794 || (v5 = aP1[2], v5 != MEMORY[0x8A0798]) ) /*0x4b0afe*/
   {
     IDA_LOBYTE(v5) = this->ptr_60; /*0x4b0b04*/

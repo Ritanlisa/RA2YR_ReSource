@@ -47,8 +47,8 @@ unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
   this->referenceCount = 0; /*0x659412*/
   this->NeedsSaveOrLink = 0; /*0x659415*/
   this->u8_21 = (unsigned int *)(0);
-  this->u8_22 = 0; /*0x65941b*/
-  this->range = 0; /*0x65941e*/
+  this->u8_22 = (unsigned int *)(0);
+  this->range = (double)((unsigned int *)(0));
   *(&this->q0040) = 0; /*0x659421*/
   *(&this->q0041) = 0; /*0x659424*/
   *(&this->q0042) = 0; /*0x659427*/

@@ -11,9 +11,9 @@ namespace gamemd {
 int Menu::Reset()
 {
   this->u32_34 = (int)(0);
-  this->u32_38 = 0; /*0x4c614f*/
-  this->u32_3C = 1; /*0x4c6152*/
-  this->u16_40 = 0; /*0x4c6159*/
+  this->u32_38 = (int)(0);
+  this->u32_3C = (int)(1);
+  this->u16_40 = (int)(0);
   memset(0, 0x30u); /*0x4c615d*/
   this->u16_30 = 0; /*0x4c615f*/
   return this; /*0x4c6163*/

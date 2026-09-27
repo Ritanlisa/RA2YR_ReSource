@@ -164,7 +164,7 @@ DynamicVector * WDTState_4::QueryInterface(char a2)
     this->Items = 0; /*0x76bc31*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x76bc42*/
+  this->q008 = (unsigned int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x76bc49*/
     RA2_OPDEL(); /*0x76bc4c*/
   return this; /*0x76bc56*/

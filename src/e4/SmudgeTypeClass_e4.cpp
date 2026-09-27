@@ -21,6 +21,7 @@
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/Scenario_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x6B5260
 SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
@@ -108,7 +109,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
   }
 }
 // 0x6B56D0
-int SmudgeTypeClass::GetSize(unsigned char *** aP1)
+int SmudgeTypeClass::GetSize(unsigned char *** aP1, void * a1, void * a2)
 {
   char Bool_Overwrite; // al
   char v4; // cl

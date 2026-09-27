@@ -20,20 +20,20 @@ void sub_5C7EC0(const void * a1, int a2)
   int v10; // ecx
   unsigned int v11; // edx
   int *v12; // eax
-  int v14; // edx
+  int * v14;
   int *v15; // eax
   int v17; // eax
   int v18; // eax
-  int v19; // edx
+  int * v19;
   unsigned int v20; // ecx
   int v21; // ecx
   bool v22; // zf
   int *v23; // eax
-  int v24; // edx
+  int * v24;
   int *v25; // eax
   int v27; // eax
-  int v28; // edx
-  unsigned int v29; // ecx
+  int * v28;
+  unsigned int v29;
   unsigned int v30; // eax
 
   v2 = a2; /*0x5c7ec1*/
@@ -85,14 +85,13 @@ void sub_5C7EC0(const void * a1, int a2)
     while ( !*--v12 ); /*0x5c7f4b*/
   }
   v14 = (int *)(2);
-  dword_ABF8C8 = dword_ABF5AC[v2]; /*0x5c7f5e*/
-  v15 = &dword_ABF8CC; /*0x5c7f67*/
+  dword_ABF8C8 = (int *)(dword_ABF5AC[v2]);
+  v15 = (int *)(&dword_ABF8CC);
   dword_ABF8CC = dword_ABF5B0[v2]; /*0x5c7f6e*/
   if ( dword_ABF8CC ) /*0x5c7f74*/
   {
-  LABEL_16:
-    v18 = v14; /*0x5c7f8b*/
-    v19 = dword_ABF8C4[v14]; /*0x5c7f8d*/
+  LABEL_16: v18 = (int)(v14);
+    v19 = (int *)(dword_ABF8C4[v14]);
     v20 = 0x80000000; /*0x5c7f94*/
     v17 = 32 * v18; /*0x5c7f99*/
     if ( v19 >= 0 ) /*0x5c7f9e*/
@@ -130,12 +129,11 @@ void sub_5C7EC0(const void * a1, int a2)
       break; /*0x5c8018*/
   }
   v24 = (int *)(2);
-  v25 = &dword_ABF5A8; /*0x5c802e*/
+  v25 = (int *)(&dword_ABF5A8);
   if ( dword_ABF5A8 ) /*0x5c8033*/
   {
-  LABEL_24:
-    v27 = v24; /*0x5c8046*/
-    v28 = dword_ABF5A0[v24]; /*0x5c8048*/
+  LABEL_24: v27 = (int)(v24);
+    v28 = (int *)(dword_ABF5A0[v24]);
     v29 = 0x80000000; /*0x5c804f*/
     v30 = 32 * v27; /*0x5c8054*/
     if ( v28 >= 0 ) /*0x5c8059*/

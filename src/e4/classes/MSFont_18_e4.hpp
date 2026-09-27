@@ -8,7 +8,7 @@ struct MSFont_18 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
-    int q008;  // 0x8
+    void* ;  // 0x8
     bool q00C;  // 0xC
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
@@ -27,6 +27,7 @@ struct MSFont_18 {
     unsigned int Items;
     unsigned int Items2;
     unsigned int q0042;
+    unsigned int q008;
 // --- flat members (END) ---
     char SetCapacity8(int a2,  unsigned int * a3);    // 0x5D55A0
     void ClearBuffer();  // 0x5D5080

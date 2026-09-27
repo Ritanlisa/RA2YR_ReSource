@@ -283,7 +283,7 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(char a2)
     this->q004 = 0; /*0x53c7a0*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = 0; /*0x53c7b1*/
+  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x53c7b8*/
     RA2_OPDEL(); /*0x53c7bb*/
   return this; /*0x53c7c5*/
@@ -303,7 +303,7 @@ DynamicVector * DeleteCommandClass_28::Constructor(char a2)
     this->q004 = 0; /*0x53c7f0*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x53c801*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x53c808*/
     RA2_OPDEL(); /*0x53c80b*/
   return this; /*0x53c815*/

@@ -28,15 +28,15 @@ struct ParasiteClass {
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     unsigned int ParasiteClass_field_34;  // 0x34
-    unsigned int u32_38;  // 0x38
+    void* ;  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int q03B;  // 0x3B
-    unsigned int ParasiteClass_field_3C;  // 0x3C
+    void* ;  // 0x3C
     unsigned int q03D;  // 0x3D
-    unsigned int ParasiteClass_field_40;  // 0x40
+    void* ;  // 0x40
     bool q042;  // 0x42
     void* q044;  // 0x44
-    char q048[4];  // 0x48
+    unsigned int q048;  // 0x48
     bool q04A;  // 0x4A
     void* q04C;  // 0x4C
     unsigned char q04F;  // 0x4F
@@ -1562,6 +1562,7 @@ struct ParasiteClass {
     unsigned int uniqueId0;
     unsigned int vtable46;
     unsigned int nextArrayIndex8;
+    unsigned int u32_38;
 // --- flat members (END) ---
     AbstractClass * * TryInfect(unsigned int * a2);
     Coord * * Update();

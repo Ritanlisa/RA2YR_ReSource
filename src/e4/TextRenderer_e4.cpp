@@ -26,8 +26,8 @@ void * TextRenderer::GetInstance()
 namespace gamemd {
 void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8, void * a4, void * a5, void * a9)
 {
-  int v11; // esi
-  int v12; // eax
+  void * v11;
+  void * v12;
   int v13; // ecx
   int v14; // edx
   int v15; // edx
@@ -43,11 +43,11 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
   int v26; // [esp-4h] [ebp-50h]
   int v27; // [esp+14h] [ebp-38h] BYREF
   int v28; // [esp+18h] [ebp-34h] BYREF
-  int v29; // [esp+1Ch] [ebp-30h]
+  void * v29;
   int v30; // [esp+20h] [ebp-2Ch] BYREF
   int v31; // [esp+24h] [ebp-28h]
   int v32; // [esp+28h] [ebp-24h]
-  int v33; // [esp+2Ch] [ebp-20h]
+  void * v33;
   unsigned int v34[4]; // [esp+30h] [ebp-1Ch] BYREF
   char v35[12]; // [esp+40h] [ebp-Ch] BYREF
 
@@ -61,10 +61,10 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
   }
   else
   {
-    v11 = *a4; /*0x4b9733*/
+    v11 = (void *)((int)(*a4));
     v12 = *a4; /*0x4b9735*/
   }
-  v13 = a4[1]; /*0x4b9737*/
+  v13 = (int)(a4[1]);
   v14 = 110; /*0x4b9740*/
   if ( v11 > v12 ) /*0x4b974a*/
   {
@@ -170,10 +170,10 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
   else
   {
     this->u32_68 = (unsigned int)(a2);
-    this->u32_6C = aP2; /*0x642dc7*/
+    this->u32_6C = (unsigned int)(aP2);
   }
   this->u32_50 = (unsigned char)(aP3);
-  this->u8_70 = aP4; /*0x642dd9*/
+  this->u8_70 = (unsigned char)(aP4);
   this->u8_71 = a6; /*0x642ddc*/
   return a6; /*0x642ddf*/
 }
@@ -192,7 +192,7 @@ void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4
   int v11; // eax
   int v12; // ebx
   int *result; // eax
-  int v14; // edi
+  void * v14;
   int v15; // [esp+10h] [ebp-34h]
   int v16; // [esp+1Ch] [ebp-28h]
   unsigned int v17[7]; // [esp+24h] [ebp-20h] BYREF
@@ -215,7 +215,7 @@ void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4
     }
   }
   Instance = (unsigned int)(TextRenderer::GetInstance());
-  v10 = v17; /*0x642f5e*/
+  v10 = (unsigned int)(v17);
   v19 = 15; /*0x642f62*/
   do /*0x642f86*/
   {

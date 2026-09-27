@@ -48,7 +48,7 @@ int Mission::ExecuteTechnoMissionAction()
           break; /*0x520bdf*/
         if ( *(int *)(v3 + 3680) > 0 ) /*0x520bed*/
         {
-          v4 = (int)((void *)operator new(0x1C8u));
+          v4 = (void **)((int)((void *)operator new(0x1C8u)));
           if ( !v4 ) /*0x520c00*/
             goto LABEL_20; /*0x520c00*/
           v5 = (unsigned int)Random::State((unsigned int *)g_ScenarioClass_Instance + 134) % *(unsigned int *)(*(&this->u32_AC2) + 3680); /*0x520c2d*/
@@ -225,7 +225,7 @@ char Mission::ProcessUnitMissionAI()
     if ( !(*(uint8_t (__stdcall **)(unsigned int))(*(unsigned int *)*(&this->u32_A43) + 16))(*(&this->u32_A43)) ) /*0x520f72*/
     {
       v2 = (int)(*(&this->u32_901));
-      v3 = *this; /*0x520f7f*/
+      v3 = (int)(*this);
       if ( v2 ) /*0x520f86*/
       {
         this->vt_slot_1152(v2, 1); /*0x520f97*/

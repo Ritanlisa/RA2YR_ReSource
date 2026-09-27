@@ -157,8 +157,8 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
   if ( !v3 ) /*0x478901*/
   {
     this->Items = (unsigned int *)(0);
-    this->IsAllocated = 0; /*0x478977*/
-    return this; /*0x47897a*/
+    this->IsAllocated = (unsigned int *)(0);
+    return (unsigned int *)(this);
   }
   v4 = (char *)operator new(3 * v3); /*0x478907*/
   if ( v4 ) /*0x478911*/

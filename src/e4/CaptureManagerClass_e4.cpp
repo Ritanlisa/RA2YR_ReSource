@@ -245,15 +245,15 @@ void* CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3, void * a4)
   int v21; // ebx
   int v22; // edi
   int *v23; // eax
-  int v24; // ecx
-  int v25; // edx
-  int v26; // eax
+  void ** v24;
+  void ** v25;
+  void ** v26;
   void **v27; // eax
   void **v28; // eax
   int v29; // [esp+4h] [ebp-28h]
   unsigned int *v30; // [esp+8h] [ebp-24h]
-  int v31; // [esp+14h] [ebp-18h] BYREF
-  int v32; // [esp+18h] [ebp-14h]
+  void ** v31;
+  void ** v32;
   int v33; // [esp+1Ch] [ebp-10h]
   int v34[3]; // [esp+20h] [ebp-Ch] BYREF
 
@@ -285,7 +285,7 @@ void* CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3, void * a4)
         v12 = v11; /*0x471de8*/
       }
       v12[1] = (unsigned int)(v9);
-      *v12 = v5; /*0x471df0*/
+      *v12 = (unsigned int)(v5);
       v14 = *(unsigned int *)(a1 + 44); /*0x471df3*/
       if ( *(unsigned int *)(a1 + 52) < v14 /*0x471e18*/
         || (*(unsigned char *, void * a1)(a1 + 49) || !v14)
@@ -323,12 +323,12 @@ void* CaptureManagerClass::CaptureUnit(int a2, void * a1, void * a3, void * a4)
         v21 = 0; /*0x471eea*/
         v22 = *(unsigned int *)((*(int (__thiscall **)(unsigned int *))(*v5 + 132))(v5) + 1548); /*0x471ef2*/
       }
-      v23 = (void **)((int *)(*(int (__thiscall **)(unsigned int *, int *))(*v5 + 72))(v5, v34));
-      v24 = *v23; /*0x471f04*/
-      v25 = v23[1]; /*0x471f06*/
-      v26 = v22 + v23[2]; /*0x471f11*/
-      v31 = v24; /*0x471f13*/
-      v32 = v25; /*0x471f17*/
+      v23 = (int *)((void **)((int *)(*(int (__thiscall **)(unsigned int *, int *))(*v5 + 72))(v5, v34)));
+      v24 = (void **)((int)((void **)(*v23)));
+      v25 = (void **)((int)((void **)(v23[1])));
+      v26 = (int)((void **)(v22 + v23[2]));
+      v31 = (void **)(v24);
+      v32 = (void **)(v25);
       v33 = v26; /*0x471f1b*/
       v27 = (void *)operator new(0x1C8u); /*0x471f1f*/
       if ( v27 ) /*0x471f29*/
@@ -362,9 +362,9 @@ namespace gamemd {
 AnimClass * * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * a2, IUnknown * aP1, int _34, IUnknown ** a5, void * a1, void * a3, void * a4, void * a6)
 {
   int i; // ebx
-  unsigned int v9;
+  void * v9;
   int v10; // ecx
-  int v11; // edx
+  void * v11;
   int v12; // eax
   int v13; // ecx
   int v14; // eax
@@ -381,7 +381,7 @@ AnimClass * * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * 
     v9 = *(unsigned int **)(a1[10] + 4 * i); /*0x472018*/
     if ( (unsigned int *)*v9 == a4 ) /*0x472022*/
     {
-      v10 = a4[178]; /*0x472028*/
+      v10 = (int)(a4[178]);
       if ( v10 ) /*0x472030*/
       {
         (*(void (__thiscall **, unsigned int a3, unsigned int a4)(int))(*(unsigned int *)v10 + 248))(v10); /*0x472034*/
@@ -391,23 +391,23 @@ AnimClass * * CaptureManagerClass::FreeUnit(IUnknown * aP0, int _28, IUnknown * 
       {
         if ( g_RulesClass_Instance->IonBeam != -1 ) /*0x4720a3*/
         {
-          v20 = a4[39]; /*0x4720af*/
+          v20 = (int)(a4[39]);
           retaddr = (void *)a4[40]; /*0x4720b6*/
           StartAudioControllerAt(g_RulesClass_Instance->IonBeam, (int, unsigned int a4, unsigned int a6)&v20, 0); /*0x4720cb*/
         }
       }
       else
       {
-        v19[0] = a4[39]; /*0x472069*/
-        v11 = *a4; /*0x47206d*/
-        v19[1] = a4[40]; /*0x472072*/
-        v19[2] = a4[41]; /*0x472079*/
+        v19[0] = (unsigned int)(a4[39]);
+        v11 = (void *)((unsigned int)(*a4));
+        v19[1] = (unsigned int)(a4[40]);
+        v19[2] = (unsigned int)(a4[41]);
         v12 = (*(int (__thiscall **)(unsigned int *))(v11 + 132))(a4); /*0x47207f*/
         StartAudioControllerAt(*(unsigned int *, unsigned int a3, unsigned int a4, unsigned int a1)(v12 + 1456), (int)v19, 0); /*0x47208d*/
         v9 = a6; /*0x472092*/
       }
       a2 = (IUnknown *)(1);
-      a3 = v9[1]; /*0x4720d7*/
+      a3 = (int)(v9[1]);
       (*(void (__thiscall **)(unsigned int *))(*a4 + 980))(a4); /*0x4720da*/
       CaptureManagerClass::DecideUnitFate(a1, (int)a4); /*0x4720e3*/
       a4[176] = 0; /*0x4720e8*/

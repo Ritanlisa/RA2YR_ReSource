@@ -190,9 +190,9 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
     qmemcpy((void *)(&this->persistence0), Destination, 0x30u); /*0x6e6123*/
     this->q094 = v7; /*0x6e6125*/
   }
-  v4 = (void *)(strtok(0, Delimiter));
-  this->q0A0 = TagTypeClass::FindOrCreateTriggerType(v4); /*0x6e613d*/
-  return 1; /*0x6e6143*/
+  v4 = (char *)((void *)(strtok(0, Delimiter)));
+  this->q0A0 = (void *)(TagTypeClass::FindOrCreateTriggerType(v4));
+  return (void *)(1);
 }
 }
 // 0x6E6160

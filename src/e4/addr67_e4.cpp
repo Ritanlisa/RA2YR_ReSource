@@ -38,8 +38,8 @@ int sub_679CC0()
 
   if ( !byte_B053B8 ) /*0x679cd0*/
   {
-    v1[1] = (unsigned int)(0);
-    v1[2] = 0; /*0x679cde*/
+    v1[1] = (void *)((unsigned int)(0));
+    v1[2] = (void *)((unsigned int)(0));
     GenericList::Constructor(v2); /*0x679ce2*/
     memset(&v2[7], 0, 12); /*0x679cf8*/
     v3 = 0; /*0x679d04*/
@@ -101,9 +101,9 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
         *((unsigned int *)Block + v8) = v7; /*0x67b611*/
       }
     }
-    aP0->u32_4 = (void *)(0);
-    aP0->q008 = 0; /*0x67b630*/
-    aP0->q00C = 1; /*0x67b633*/
+    aP0->u32_4 = (unsigned int)((void *)(0));
+    aP0->q008 = (void *)(0);
+    aP0->q00C = (void *)(1);
     aP0->u8_D = 0; /*0x67b637*/
     VectorClass::CopyBuilding(&v17); /*0x67b640*/
     v22 = v22; /*0x67b657*/
@@ -119,9 +119,9 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
   }
   else
   {
-    aP0->u32_4 = (void *)(0);
-    aP0->q008 = 0; /*0x67b69c*/
-    aP0->q00C = 1; /*0x67b69f*/
+    aP0->u32_4 = (unsigned int)((void *)(0));
+    aP0->q008 = (void *)(0);
+    aP0->q00C = (void *)(1);
     aP0->u8_D = 0; /*0x67b6a3*/
     if ( (unsigned int *)aP0 != a4 ) /*0x67b6ac*/
     {
@@ -130,8 +130,8 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
       aP0->q008 = v13; /*0x67b6bb*/
       if ( v13 ) /*0x67b6be*/
       {
-        v14 = (unsigned int)(operator new(4 * v13));
-        aP0->u32_4 = v14; /*0x67b6d2*/
+        v14 = (void *)((unsigned int)(operator new(4 * v13)));
+        aP0->u32_4 = (unsigned int)(v14);
         if ( v14 ) /*0x67b6d5*/
         {
           v15 = aP0->q008; /*0x67b6d7*/
@@ -231,7 +231,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
       *(unsigned int *)(aP0 + 8) = v13; /*0x67bc7b*/
       if ( v13 ) /*0x67bc7e*/
       {
-        v14 = (unsigned int)(operator new(4 * v13));
+        v14 = (void *)((unsigned int)(operator new(4 * v13)));
         *(unsigned int *)(aP0 + 4) = v14; /*0x67bc92*/
         if ( v14 ) /*0x67bc95*/
         {

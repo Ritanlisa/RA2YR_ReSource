@@ -91,14 +91,14 @@ unsigned int ConnectionClass::initQueue(unsigned int a2)
   }
   else
   {
-    v5 = (unsigned int)(v2 + 1);
-    v6 = a2 + this->PacketsReceived; /*0x48ba56*/
-    this->q018 = v5; /*0x48ba58*/
+    v5 = (void *)((unsigned int)(v2 + 1));
+    v6 = (unsigned int)(a2 + this->PacketsReceived);
+    this->q018 = (unsigned int)(v5);
     this->PacketsReceived = v6; /*0x48ba5b*/
     v4 = v6 / v5; /*0x48ba5e*/
   }
   this->q01C = (unsigned int)(v4);
-  result = this->q020; /*0x48ba63*/
+  result = (void *)((unsigned int)(this->q020));
   if ( a2 > result ) /*0x48ba68*/
     this->q020 = a2; /*0x48ba6a*/
   return result; /*0x48ba6d*/

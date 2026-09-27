@@ -50,7 +50,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
   unsigned int *v22; // eax
   int ClosestObjectCell; // eax
   int *v24; // eax
-  unsigned int v25; // ebp
+  void ** v25;
   unsigned int v26; // eax
   void **v27; // edi
   void *WarheadVersusMultiplier; // eax
@@ -116,16 +116,16 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
       if ( !((int)g_CurrentFrame % 3) ) /*0x4b5f1f*/
       {
         v32 = (unsigned int *)(0.0);
-        v22 = Coord::To_Cell(&MapClass_Instance, (unsigned int *)(a1 + 28)); /*0x4b5f41*/
+        v22 = (unsigned int *)(Coord::To_Cell(&MapClass_Instance, (unsigned int *)(a1 + 28)));
         ClosestObjectCell = Object::FindClosestObjectCell(v22, &v32, 0, 0); /*0x4b5f48*/
         if ( !Object::IsAlliedWithObjectHouse(*(unsigned int **)(*(unsigned int *)(a1 + 8) + 540), ClosestObjectCell) ) /*0x4b5f57*/
         {
-          v24 = (void **)(RandomCoordScatter((int *)&v32, (int *)(a1 + 28), 85, 0));
-          v25 = VeteranRatio_high[51]; /*0x4b5f74*/
-          v33[0] = *v24; /*0x4b5f7a*/
-          v33[1] = v24[1]; /*0x4b5f86*/
-          v34 = v24[2]; /*0x4b5f8d*/
-          v26 = Random::State(Randomizer_Global); /*0x4b5f91*/
+          v24 = (int *)((void **)(RandomCoordScatter((int *)&v32, (int *)(a1 + 28), 85, 0)));
+          v25 = (void **)((unsigned int)((void **)(VeteranRatio_high[51])));
+          v33[0] = (int)((void **)(*v24));
+          v33[1] = (int)((void **)(v24[1]));
+          v34 = (void **)(v24[2]);
+          v26 = (void **)(Random::State(Randomizer_Global));
           StartAudioControllerAt(*(unsigned int *)(VeteranRatio_high[48] + 4 * (v26 % v25)), (int)&v35, 0); /*0x4b5fa8*/
           PlaySoundEffectAt(v33, 2 * VeteranRatio_high[41], *(unsigned int **)(a1 + 8), VeteranRatio_high[43], 1, 0); /*0x4b5fc7*/
           v27 = (void *)operator new(0x1C8u); /*0x4b5fd6*/

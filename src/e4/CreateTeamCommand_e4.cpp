@@ -262,7 +262,7 @@ namespace gamemd {
 unsigned int * CreateTeamCommand::Construct(int a2)
 {
   this->q004 = (unsigned int *)(a2);
-  return this; /*0x535c0f*/
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 
@@ -283,7 +283,7 @@ wchar_t * CreateTeamCommand::Release()
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
   v3 = (wchar_t *)(this->q004);
-  StringCSF = GetStringCSF(aTxtCreateTeam, 0, g_Str_File_Init_CPP, 6165); /*0x535c55*/
+  StringCSF = (wchar_t *)(GetStringCSF(aTxtCreateTeam, 0, g_Str_File_Init_CPP, 6165));
   swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3); /*0x535c60*/
   return &g_TeamCommandBuffer; /*0x535c6d*/
 }
@@ -305,7 +305,7 @@ wchar_t * CreateTeamCommand::Read()
   const wchar_t *v3; // [esp-4h] [ebp-4h]
 
   v3 = (wchar_t *)(this->q004);
-  StringCSF = GetStringCSF(aTxtCreateTeamD, 0, g_Str_File_Init_CPP, 6169); /*0x535ca5*/
+  StringCSF = (wchar_t *)(GetStringCSF(aTxtCreateTeamD, 0, g_Str_File_Init_CPP, 6169));
   swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3); /*0x535cb0*/
   return &g_TeamCommandBuffer; /*0x535cbd*/
 }

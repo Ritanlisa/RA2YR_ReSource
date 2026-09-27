@@ -16,7 +16,7 @@ namespace gamemd {
 unsigned int * CenterTeamCommand::Construct(int a2)
 {
   this->CenterTeamCommand_field_00 = (unsigned int *)(a2);
-  return this; /*0x5361af*/
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 // 0x5361C0

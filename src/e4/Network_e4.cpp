@@ -41,33 +41,32 @@
 namespace gamemd {
 int Network::SendBeaconDelete(int a2, int a3)
 {
-  int v4; // eax
-  int v5; // edi
+  IUnknown * v4;
+  int * v5;
   int v7; // edx
   int *v8; // ecx
   int v9; // esi
   unsigned int *v10; // eax
   int v11; // ebx
   int v12; // esi
-  char v14; // [esp+13h] [ebp-1DDh]
-  int v15; // [esp+14h] [ebp-1DCh]
+  int * v14;
+  IUnknown * v15;
   unsigned char v16[16]; // [esp+18h] [ebp-1D8h] BYREF
   int v17; // [esp+28h] [ebp-1C8h] BYREF
   char v18[452]; // [esp+2Ch] [ebp-1C4h] BYREF
 
-  v4 = *(&this->q0084); /*0x4311cc*/
+  v4 = (IUnknown *)(*(&this->q0084));
   if ( v4 ) /*0x4311d1*/
   {
     if ( a2 == -1 && a3 == -1 ) /*0x4311ed*/
     {
-      v14 = (int *)(1);
-      v5 = 0; /*0x4311f4*/
-  LABEL_5:
-      v7 = 0; /*0x4311fa*/
-      v8 = this; /*0x4311fc*/
+      v14 = (int *)((char)((int *)(1)));
+      v5 = (int *)(0);
+  LABEL_5: v7 = (int *)(0);
+      v8 = (int *)(this);
       while ( 1 ) /*0x4311fe*/
       {
-        v4 = *v8; /*0x4311fe*/
+        v4 = (IUnknown *)(*v8);
         if ( *v8 ) /*0x4311fe*/
         {
           if ( (v4->q00C & 2) != 0 ) /*0x431207*/
@@ -89,12 +88,12 @@ int Network::SendBeaconDelete(int a2, int a3)
     else
     {
       v14 = (int)(0);
-      v4 = a3 + 2 * a2 + a2; /*0x431229*/
-      v9 = *(this + v4); /*0x43122b*/
+      v4 = (IUnknown *)((int)(a3 + 2 * a2 + a2));
+      v9 = (int)(*(this + v4));
     }
     if ( v9 ) /*0x431231*/
     {
-      v4 = v9->q110; /*0x43123d*/
+      v4 = (int)(v9->q110);
       v15 = v4; /*0x431243*/
       if ( v4 == *((unsigned int *)HouseClass_Player + 12) || !v14 ) /*0x431252*/
       {
@@ -137,7 +136,7 @@ int Network::SendBeaconDelete(int a2, int a3)
               IDA_LOBYTE(v4) = v14; /*0x431355*/
               if ( v14 ) /*0x43135b*/
               {
-                v17 = 33; /*0x431367*/
+                v17 = (char)(33);
                 strcpy(v18, ToWideStringChar(*(char **)Game_PlayerInfoArray)); /*0x431390*/
                 IDA_LOBYTE(v4) = Game_PlayerCount; /*0x431394*/
                 v12 = 1; /*0x4313a2*/
@@ -426,7 +425,7 @@ int Network::Dispatch()
               v48 = v4; /*0x48d31e*/
               if ( !v6 ) /*0x48d322*/
               {
-                v7 = (LPARAM *)((const char *)ToWideStringChar(*(unsigned int *)(Game_PlayerInfoArray + 4 * v5)));
+                v7 = (const char *)((LPARAM *)((const char *)ToWideStringChar(*(unsigned int *)(Game_PlayerInfoArray + 4 * v5))));
                 Debug::Log("Sending to %s\n", v7); /*0x48d33c*/
                 Network::SendMessage(v54, 91, 0, *(unsigned int *)(Game_PlayerInfoArray + 4 * v5) + 40, v48, 0); /*0x48d366*/
                 MessageLoop(); /*0x48d36b*/

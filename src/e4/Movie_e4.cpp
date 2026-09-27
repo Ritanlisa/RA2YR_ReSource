@@ -16,6 +16,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x49CAF0
 namespace gamemd {
@@ -62,8 +63,8 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
       RA2_OPDEL(*(void **)(&this->q0180)); /*0x49cb93*/
     }
     this->q03C = (unsigned char)(0);
-    this->q040 = 0; /*0x49cb9e*/
-    this->q03C = operator new(4 * *(char *)(v5 + 8)); /*0x49cbae*/
+    this->q040 = (unsigned char)(0);
+    this->q03C = (unsigned char)(operator new(4 * *(char *)(v5 + 8)));
     v9 = 0; /*0x49cbb7*/
     if ( *(char *)(v5 + 8) > 0 ) /*0x49cbbb*/
     {

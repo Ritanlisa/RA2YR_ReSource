@@ -9,7 +9,7 @@ struct ParticleSystemClass_32_ {
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
     int Capacity;  // 0x8
-    unsigned int q00C;  // 0xC
+    void* ;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned int q010;  // 0x10
     bool IsInitialized;  // 0x12
@@ -24,6 +24,7 @@ struct ParticleSystemClass_32_ {
     unsigned char q050;  // 0x50
     bool q054;  // 0x54
     unsigned int q0042;
+    unsigned int q00C;
 // --- flat members (END) ---
     char ResizeDataArray(int a2,  unsigned int * a3);    // 0x4EB8A0
     int FindElementByValue(unsigned int * a2);  // 0x4EB950

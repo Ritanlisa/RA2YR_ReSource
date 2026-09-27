@@ -43,7 +43,7 @@ void* Factory_CalculateExitCell(void * a1, void * a2, void * a3, void * a4, void
 {
   int *v7; // edi
   unsigned int *v8; // ecx
-  int v10; // ecx
+  void * v10;
   int *v11; // edx
   int v12; // ebp
   int v13; // ecx
@@ -110,7 +110,7 @@ void* Factory_CalculateExitCell(void * a1, void * a2, void * a3, void * a4, void
   int v80; // [esp+74h] [ebp-10h] BYREF
   int v81[3]; // [esp+78h] [ebp-Ch] BYREF
 
-  v7 = a1 + 10; /*0x718b80*/
+  v7 = (int *)(a1 + 10);
   if ( a1[10] == dword_B0EBF8 && a1[11] == dword_B0EBFC && a1[12] == dword_B0EC00 ) /*0x718b9d*/
   {
     v8 = (unsigned int *)a1[3]; /*0x718ba7*/
@@ -123,14 +123,14 @@ void* Factory_CalculateExitCell(void * a1, void * a2, void * a3, void * a4, void
   {
     (*(void (__stdcall **, unsigned int a4, unsigned int a1)(unsigned int *))(*(unsigned int *)a1[3] + 244))(a1 + 10); /*0x718ba5*/
   }
-  a4 = a4; /*0x718bd6*/
-  v73[0] = *a4; /*0x718bdf*/
-  v10 = *a4; /*0x718be3*/
-  v73[1] = a4[1]; /*0x718be8*/
-  v74 = a4[2]; /*0x718bef*/
+  a4 = (void *)((int)(a4));
+  v73[0] = (int)(*a4);
+  v10 = (void *)((int)(*a4));
+  v73[1] = (unsigned int)((int)(a4[1]));
+  v74 = (int)(a4[2]);
   if ( v10 == dword_B0EBF8 && a4[1] == dword_B0EBFC && a4[2] == dword_B0EC00 ) /*0x718c13*/
   {
-    *v7 = *a4; /*0x71923b*/
+    *v7 = (int)(*a4);
     a1[11] = a4[1]; /*0x719240*/
     a1[12] = a4[2]; /*0x719246*/
   }
@@ -148,7 +148,7 @@ void* Factory_CalculateExitCell(void * a1, void * a2, void * a3, void * a4, void
     }
     if ( (*(int (__thiscall **)(unsigned int))(*(unsigned int *)a1[3] + 44))(a1[3]) == 15 ) /*0x718c80*/
     {
-      v13 = a1[3]; /*0x718c86*/
+      v13 = (int)(a1[3]);
       IDA_LOBYTE(a4) = 0; /*0x718c89*/
       if ( (*(uint8_t (__thiscall **)(int, int, int))(*(unsigned int *)v13 + 512))(v13, a3, a2) ) /*0x718c90*/
         (*(void (__thiscall **)(unsigned int))(*(unsigned int *)a1[3] + 492))(a1[3]); /*0x718c9f*/

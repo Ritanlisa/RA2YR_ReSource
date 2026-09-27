@@ -218,7 +218,7 @@ int * StartAudioController(AudioMixer * ecx0, int ** a2)
     return v4; /*0x750e16*/
   }
   v10 = (int *)(v7);
-  v9 = Math::RoundToInt(v10 * 16384.0); /*0x750dc6*/
+  v9 = (int *)(Math::RoundToInt(v10 * 16384.0));
   if ( v9 >= 0x4000 ) /*0x750dd0*/
     v9 = 0x4000; /*0x750dd2*/
   AudioMixer::PlayBuffer(v4, v9); /*0x750ddb*/
@@ -327,7 +327,7 @@ void ThemeClass_Update()
   uint64_t v0; // rdi
   uint64_t v1; // rax
   unsigned int * v2;
-  unsigned int v3;
+  unsigned int * v3;
   unsigned int * v4;
   char *v5; // edi
   unsigned int * v6;
@@ -356,8 +356,8 @@ void ThemeClass_Update()
     dword_B1D4C4 = 0; /*0x7527f2*/
   }
   v11 = (unsigned int)(0);
-  v10 = 0; /*0x752801*/
-  v2 = AudioQueue::GetNext(&dword_B1D3C8); /*0x752805*/
+  v10 = (unsigned int)(0);
+  v2 = (unsigned int *)(AudioQueue::GetNext(&dword_B1D3C8));
   v3 = (unsigned int *)v2; /*0x75280a*/
   if ( v2 ) /*0x75280e*/
   {
@@ -370,7 +370,7 @@ void ThemeClass_Update()
   v3 = (unsigned int *)v4; /*0x75283f*/
   if ( !v4 ) /*0x752843*/
   {
-    v3 = dword_B1D4B8; /*0x752866*/
+    v3 = (unsigned int *)(dword_B1D4B8);
     if ( dword_B1D4B8 ) /*0x75286e*/
     {
       dword_B1D4B8 = 0; /*0x752870*/
@@ -539,10 +539,10 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
          dword_B1D4A8 + dword_B1D4B4,
          0) )
   {
-    v3 = g_InfantrySelectState++; /*0x752d3b*/
+    v3 = (unsigned int)(g_InfantrySelectState++);
     *((unsigned int *)g_InfantryRenderPool + v3) = this; /*0x752d4a*/
   }
-  return this; /*0x752d4d*/
+  return (int)(this);
 }
 }
 // 0x753000
@@ -569,7 +569,7 @@ int CCINIClass::InitFromINIEVA()
   IDA_LOBYTE(v2) = INIClass::BinarySearchSection(g_INI_Key_DialogList) != 0; /*0x75301c*/
   if ( (unsigned char)v2 ) /*0x753023*/
   {
-    v2 = INIClass::GetKeyCount(g_INI_Key_DialogList); /*0x753030*/
+    v2 = (int)(INIClass::GetKeyCount(g_INI_Key_DialogList));
     v3 = v2; /*0x753035*/
     v4 = 0; /*0x753037*/
     v14 = v2; /*0x75303b*/

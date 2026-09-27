@@ -431,7 +431,7 @@ int Power::FinalizeDrain(int a2)
   unsigned int v6; // eax
   int v7; // edi
 
-  v2 = (unsigned int)(this->q004);
+  v2 = (void *)((unsigned int)(this->q004));
   if ( !v2 ) /*0x4a1c15*/
     this->q008 = 0; /*0x4a1c17*/
   *((unsigned char *)this + v2 + 8) = a2; /*0x4a1c1f*/
@@ -471,7 +471,7 @@ int Power::FlagProcess(int a2)
   unsigned int v6; // eax
   int v7; // edi
 
-  v2 = (unsigned int)(this->q004);
+  v2 = (void *)((unsigned int)(this->q004));
   if ( !v2 ) /*0x4a1ca7*/
     this->q008 = 0; /*0x4a1ca9*/
   *((unsigned char *)this + v2 + 8) = (unsigned char)a2 != 0; /*0x4a1cb7*/

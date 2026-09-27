@@ -13,12 +13,12 @@ namespace gamemd {
 void * GameOption_WorldDominationTour::ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5)
 {
 
-  aP5 = (unsigned char)(aP5);
-  arg8 = arg8; /*0x76782b*/
-  this->q008 = arg0; /*0x76782f*/
-  this->u32_C = arg8; /*0x767836*/
-  this->q004 = 0; /*0x76783d*/
-  this->q010 = aP5; /*0x76784a*/
+  aP5 = (gamemd::ObjectClass *)((unsigned char)(aP5));
+  arg8 = (unsigned char)(arg8);
+  this->q008 = (unsigned char)(arg0);
+  this->u32_C = (unsigned char)(arg8);
+  this->q004 = (unsigned char)(0);
+  this->q010 = (unsigned char)(aP5);
   String::AssignFromPtr((char **)&this->u32_14, (const char **)&a4); /*0x76784d*/
   String::AssignFromPtr((char **)&this->q018, (const char **)&a2); /*0x76785a*/
   DeleteAndZero(&a2); /*0x767869*/

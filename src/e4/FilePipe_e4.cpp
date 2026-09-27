@@ -171,7 +171,7 @@ TypeList_flat * FilePipe_30::QueryInterface(char a2)
     this->Items = 0; /*0x477a90*/
   }
   this->IsAllocated = (gamemd::TypeList_flat *)(0);
-  this->Capacity = 0; /*0x477aa1*/
+  this->Capacity = (int)((gamemd::TypeList_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x477aa8*/
     RA2_OPDEL(); /*0x477aab*/
   return this; /*0x477ab5*/
@@ -340,7 +340,7 @@ VectorClass_flat * FilePipe_38::QueryInterface(char a2)
     this->Items = 0; /*0x4786f0*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->Capacity = 0; /*0x478701*/
+  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x478708*/
     RA2_OPDEL(); /*0x47870b*/
   return this; /*0x478715*/
@@ -553,7 +553,7 @@ DynamicVector * FilePipe_30::Destructor(char a2)
     this->Items = 0; /*0x4ba180*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x4ba191*/
+  this->q008 = (unsigned int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x4ba198*/
     RA2_OPDEL(); /*0x4ba19b*/
   return this; /*0x4ba1a5*/
@@ -574,7 +574,7 @@ DynamicVector * FilePipe_30::Destructor_0(char a2)
     this->Items = 0; /*0x4ba220*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x4ba231*/
+  this->q008 = (unsigned int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x4ba238*/
     RA2_OPDEL(); /*0x4ba23b*/
   return this; /*0x4ba245*/

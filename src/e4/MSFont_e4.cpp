@@ -414,7 +414,7 @@ VectorClass_flat * MSFont_18::QueryInterface(char a2)
     this->Items = 0; /*0x5d5700*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->Capacity = 0; /*0x5d5711*/
+  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x5d5718*/
     RA2_OPDEL(); /*0x5d571b*/
   return this; /*0x5d5725*/
@@ -434,7 +434,7 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(char a2)
     this->Items = 0; /*0x5d5750*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x5d5761*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x5d5768*/
     RA2_OPDEL(); /*0x5d576b*/
   return this; /*0x5d5775*/

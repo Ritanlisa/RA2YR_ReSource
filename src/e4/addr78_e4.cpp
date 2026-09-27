@@ -204,9 +204,9 @@ void WOL_ResetSystem()
   memset(&unk_B75E58, 0, 0xF8u); /*0x780496*/
   memset(&unk_B769C8, 0, 0xF8u); /*0x7804a6*/
   word_B77AD0 = (unsigned int)(0);
-  g_WOL_GameListState = 0; /*0x7804af*/
-  g_WOL_IdleHandler = 1; /*0x7804b5*/
-  g_WOL_GameProcessState = -1; /*0x7804bb*/
+  g_WOL_GameListState = (unsigned int)(0);
+  g_WOL_IdleHandler = (unsigned int)(1);
+  g_WOL_GameProcessState = (unsigned int)(-1);
   g_WOL_GameListPool = time(0); /*0x7804ce*/
   dword_B76468 = 0; /*0x7804d3*/
   dword_B779CC = 0; /*0x7804d9*/

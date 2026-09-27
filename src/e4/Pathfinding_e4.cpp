@@ -18,7 +18,7 @@
 namespace gamemd {
 unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
 {
-  int v2; // edi
+  unsigned int * v2;
   unsigned int *v3; // eax
   unsigned int *v4; // ebx
   int *v5; // eax
@@ -100,11 +100,11 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   int64_t v82; // [esp+48h] [ebp-18h] BYREF
   int64_t v83; // [esp+50h] [ebp-10h]
 
-  v2 = (unsigned int *)(10 * a2);
-  v3 = operator new(80 * a2); /*0x5a5378*/
+  v2 = (int)((unsigned int *)(10 * a2));
+  v3 = (unsigned int *)(operator new(80 * a2));
   if ( v3 ) /*0x5a5384*/
   {
-    v4 = v3; /*0x5a5389*/
+    v4 = (unsigned int)(v3);
     IDA_LODWORD(v81[0]) = v2 - 1; /*0x5a538b*/
   }
   else
@@ -116,10 +116,10 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   v6 = v5; /*0x5a539e*/
   if ( v5 ) /*0x5a53a5*/
   {
-    v5[3] = 0; /*0x5a53ae*/
-    v5[4] = -1; /*0x5a53b2*/
-    *v5 = 0; /*0x5a53b9*/
-    v5[1] = v2; /*0x5a53bb*/
+    v5[3] = (int)(0);
+    v5[4] = (int)(-1);
+    *v5 = (int)(0);
+    v5[1] = (int)(v2);
     v7 = operator new(4 * v2 + 4); /*0x5a53be*/
     v8 = v6[1]; /*0x5a53c3*/
     v6[2] = (int)v7; /*0x5a53c6*/
@@ -199,7 +199,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
     v20 = 0; /*0x5a54e0*/
   }
   v74 = (unsigned int *)(v20);
-  v23 = operator new(0x18u); /*0x5a5512*/
+  v23 = (unsigned int *)(operator new(0x18u));
   v24 = v23; /*0x5a5517*/
   if ( v23 ) /*0x5a551e*/
   {

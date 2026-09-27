@@ -221,7 +221,7 @@ int UnitClass::CreateUnloadPlacementCraters(CellStruct* cell)
   int v9; // [esp+10h] [ebp+4h]
 
   v7 = (int)(0);
-  result = this->chronoDestCoords; /*0x6b608e*/
+  result = (int)(this->chronoDestCoords);
   if ( result > 0 ) /*0x6b6096*/
   {
     do /*0x6b611c*/
@@ -483,9 +483,9 @@ void* UnitClass::Deploy(void * a1)
   int v59; // [esp+3Ch] [ebp-Ch]
   int v60; // [esp+44h] [ebp-4h]
 
-  v1 = a1; /*0x7192f6*/
-  v2 = a1[2]; /*0x7192fd*/
-  v60 = 0; /*0x719300*/
+  v1 = (_DWORD *)((int)(a1));
+  v2 = (int)(a1[2]);
+  v60 = (int)(0);
   if ( *(_BYTE *)(v2 + 625) && !a1[13] && !*(_DWORD *)(v2 + 640) ) /*0x719313*/
     goto LABEL_82; /*0x719319*/
   v3 = a1[13]; /*0x719331*/
@@ -550,8 +550,8 @@ void* UnitClass::Deploy(void * a1)
         v57 = v15 - v12; /*0x719473*/
         v16 = Math::Sqrt((double)v13 * (double)v13 + (double)(v15 - v12) * (double)(v15 - v12) + (double)v56 /*0x71949f*/
                                                                                                * (double)v56);
-        v17 = (_DWORD *)(v1 + 14);
-        v18 = Math::RoundToInt(v16); /*0x7194af*/
+        v17 = (int *)((_DWORD *)(v1 + 14));
+        v18 = (_DWORD *)(Math::RoundToInt(v16));
         a1 = (_DWORD *)v18; /*0x7194ba*/
         v1[14] = g_CurrentFrame; /*0x7194be*/
         v1[15] = v59; /*0x7194c4*/
@@ -559,10 +559,10 @@ void* UnitClass::Deploy(void * a1)
         v19 = g_RulesClass_Instance; /*0x7194ca*/
         if ( *((_BYTE *)g_RulesClass_Instance + 3064) ) /*0x7194d0*/
         {
-          v20 = (_DWORD *)(v18 / *((_DWORD *)g_RulesClass_Instance + 765));
-          *v17 = (int)g_CurrentFrame; /*0x7194eb*/
-          v1[15] = v59; /*0x7194f1*/
-          v1[16] = v20; /*0x7194f4*/
+          v20 = (int)((_DWORD *)(v18 / *((_DWORD *)g_RulesClass_Instance + 765)));
+          *v17 = (int)((_DWORD *)((int)g_CurrentFrame));
+          v1[15] = (_DWORD *)(v59);
+          v1[16] = (_DWORD *)(v20);
           v19 = g_RulesClass_Instance; /*0x7194f7*/
         }
         v21 = *v17; /*0x7194fd*/
@@ -585,9 +585,9 @@ void* UnitClass::Deploy(void * a1)
         {
           v24 = (int *)(v1 + 14);
         }
-        *v17 = *v24; /*0x71953d*/
-        v1[15] = v24[1]; /*0x719542*/
-        v25 = a1; /*0x719548*/
+        *v17 = (int)((_DWORD *)(*v24));
+        v1[15] = (_DWORD *)(v24[1]);
+        v25 = (_DWORD *)(a1);
         v1[16] = v24[2]; /*0x71954c*/
         if ( (int)v25 < *((_DWORD *)g_RulesClass_Instance + 768) ) /*0x71955b*/
         {
@@ -740,7 +740,7 @@ void* UnitClass::Deploy(void * a1)
     }
     goto LABEL_82; /*0x719b97*/
   }
-  v45 = a1 + 9; /*0x719a03*/
+  v45 = (_DWORD *)(a1 + 9);
   (*(void (__thiscall **)(int, _DWORD *))(*(_DWORD *)v2 + 436))(v2, a1 + 9); /*0x719a07*/
   (*(void (__thiscall **)(_DWORD, _DWORD))(*(_DWORD *)v1[2] + 460))(v1[2], 0); /*0x719a13*/
   (*(void (__thiscall **)(_DWORD, int))(*(_DWORD *)v1[2] + 292))(v1[2], 1); /*0x719a20*/

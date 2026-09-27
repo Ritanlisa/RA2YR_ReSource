@@ -15,6 +15,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x474810
 namespace gamemd {
@@ -182,10 +184,10 @@ AbstractClass * * WarheadTypeClass::parseVerses()
   }
   if ( this ) /*0x52acb9*/
   {
-    v13 = this->vtable2; /*0x52acbb*/
+    v13 = (void *)(this->vtable2);
     if ( v13 ) /*0x52acc0*/
     {
-      result = (char *)this->vtable3; /*0x52acc2*/
+      result = (unsigned int)((char *)this->vtable3);
       if ( result ) /*0x52acc7*/
       {
         *((unsigned int *)result + 1) = v13; /*0x52acc9*/
@@ -414,7 +416,7 @@ int WarheadTypeClass::Construct(ObjectClass * aP1)
     *((unsigned int *)g_AnimPoolCount + v4) = this; /*0x75d18b*/
   }
   this->q0A0 = (int)(0);
-  this->q0A4 = 1072693248; /*0x75d1a0*/
+  this->q0A4 = (int)(1072693248);
   qmemcpy((void *)(&this->Tiberium8), (const void *)(&this->Tiberium0), 0x50u); /*0x75d1a7*/
   return this; /*0x75d1a9*/
 }

@@ -11,6 +11,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x4AF540
 namespace gamemd {
@@ -25,11 +27,11 @@ int LocomotionClass::Initialize()
   this->u32_2C = 0; /*0x4af559*/
   this->q024 = (gamemd::Coord *)(g_CurrentFrame);
   this->u32_30 = (int)(0);
-  this->q034 = g_DDraw_ClipRect; /*0x4af568*/
-  this->q038 = qword_8A0794; /*0x4af570*/
-  this->q040 = g_DDraw_ClipRect; /*0x4af585*/
-  this->q044 = qword_8A0794; /*0x4af58e*/
-  v3 = IDA_HIDWORD(qword_8A0794); /*0x4af591*/
+  this->q034 = (int)(g_DDraw_ClipRect);
+  this->q038 = (int)(qword_8A0794);
+  this->q040 = (int)(g_DDraw_ClipRect);
+  this->q044 = (int)(qword_8A0794);
+  v3 = (int)(IDA_HIDWORD(qword_8A0794));
   this->q050 = 0; /*0x4af597*/
   this->u32_4C = 0; /*0x4af59a*/
   this->q048 = v3; /*0x4af59d*/
@@ -51,14 +53,14 @@ int LocomotionClass::Initialize()
 namespace gamemd {
 void * LocomotionClass::UpdateAll()
 {
-  unsigned int result;
+  wchar_t * result;
   int i; // esi
   unsigned int *v2; // ecx
 
-  result = (unsigned int)((wchar_t *)dword_8A3880);
+  result = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)dword_8A3880)));
   for ( i = dword_8A3880 - 1; i >= 0; --i ) /*0x4c54ab*/
   {
-    v2 = (unsigned int *)*((unsigned int *)dword_8A3874 + i); /*0x4c54b3*/
+    v2 = (unsigned int *)((wchar_t *)((unsigned int *)*((unsigned int *)dword_8A3874 + i)));
     result = g_CurrentFrame; /*0x4c54be*/
     if ( (int)g_CurrentFrame >= v2[11] + v2[12] ) /*0x4c54c5*/
     {
@@ -150,10 +152,10 @@ int LocomotionClass::Update()
   LocomotionClass::Init(); /*0x54ac46*/
   this->DestinationCoords = dword_ABC5A8; /*0x54ac59*/
   this->q044 = (int)(dword_ABC5AC);
-  dword_ABC5B0 = dword_ABC5B0; /*0x54ac64*/
-  this->IsMoving = 0; /*0x54ac6a*/
-  this->CurrentState = 0; /*0x54ac6d*/
-  this->ptr_48 = dword_ABC5B0; /*0x54ac70*/
+  dword_ABC5B0 = (int)(dword_ABC5B0);
+  this->IsMoving = (int)(0);
+  this->CurrentState = (int)(0);
+  this->ptr_48 = (void *)((int)(dword_ABC5B0));
   FrameSnapshot::InitMax((unsigned short *)(&this->Climb4), g_RulesClass_Instance->V3Rocket[8]); /*0x54ac82*/
   this->CurrentHeight = 0; /*0x54ac87*/
   this->q078 = 0; /*0x54ac8a*/
@@ -177,11 +179,11 @@ namespace gamemd {
 unsigned int * LocomotionClass::Init()
 {
   this->u32_8 = (unsigned int *)(0);
-  this->LinkedTo = 0; /*0x55a6c9*/
-  this->u32_10 = 1; /*0x55a6cc*/
-  this->Dirty = 1; /*0x55a6cf*/
-  this->u8_14 = 0; /*0x55a6d2*/
-  return this; /*0x55a6e2*/
+  this->LinkedTo = (unsigned int *)(0);
+  this->u32_10 = (unsigned int *)(1);
+  this->Dirty = (unsigned int *)(1);
+  this->u8_14 = (unsigned int *)(0);
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 // 0x55A6F0

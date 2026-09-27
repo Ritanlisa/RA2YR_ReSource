@@ -8,7 +8,7 @@ struct DynamicVectorClass_PAD_16 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     unsigned int Items;  // 0x4
-    unsigned int Capacity;  // 0x8
+    void* ;  // 0x8
     unsigned char IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
@@ -28,6 +28,7 @@ struct DynamicVectorClass_PAD_16 {
     unsigned char q048;  // 0x48
     unsigned char q050;  // 0x50
     unsigned int Items2;
+    unsigned int Capacity;
 // --- flat members (END) ---
     int Get(int a2);  // 0x49EA00
     char Add(int a2);  // 0x49EB50

@@ -88,7 +88,7 @@ AbstractClass * * TerrainClass_ProcessUpdate(void * a1, void * a2, void * a3, vo
   AbstractClass aP0[11]; // [esp+C0h] [ebp-190h] BYREF
 
   result = 1;
-  v9 = a4;
+  v9 = (void **)(a4);
   int v10 = 0;
   if ( a4 && !*((unsigned char *)a4 + 144) )
     v9 = 0;

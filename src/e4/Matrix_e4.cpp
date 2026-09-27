@@ -46,7 +46,7 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
   int v8; // [esp+4h] [ebp-1Ch]
   float v9; // [esp+8h] [ebp-18h] BYREF
   float v10; // [esp+Ch] [ebp-14h]
-  int v11; // [esp+10h] [ebp-10h]
+  unsigned int * v11;
   float v12[3]; // [esp+14h] [ebp-Ch] BYREF
   int v13; // [esp+28h] [ebp+8h]
 
@@ -54,18 +54,18 @@ unsigned int * Matrix3x4::TransformCell(AbstractClass * aP1, AbstractClass * aP2
   if ( v13 >= dword_B0CE30 || (v8 = aP2[1], v8 >= dword_B0CE34) ) /*0x6d2386*/
   {
     *aP1 = (unsigned int *)(dword_B0CE08);
-    aP1[1] = dword_B0CE0C; /*0x6d240c*/
-    aP1[2] = dword_B0CE10; /*0x6d2415*/
-    return aP1; /*0x6d23f7*/
+    aP1[1] = (unsigned int *)(dword_B0CE0C);
+    aP1[2] = (unsigned int *)(dword_B0CE10);
+    return (unsigned int *)(aP1);
   }
   else
   {
     v9 = (unsigned int *)((float)v13);
-    v11 = 0; /*0x6d23a4*/
-    v10 = (float)v8; /*0x6d23ac*/
-    v4 = TransformMatrix3x4Point(v12, &this->u32_DE4, &v9); /*0x6d23b0*/
-    v9 = *v4; /*0x6d23b7*/
-    v10 = v4[1]; /*0x6d23c2*/
+    v11 = (int)((unsigned int *)(0));
+    v10 = (unsigned int *)((float)v8);
+    v4 = (float *)((unsigned int *)(TransformMatrix3x4Point(v12, &this->u32_DE4, &v9)));
+    v9 = (unsigned int *)(*v4);
+    v10 = (unsigned int *)(v4[1]);
     v11 = *((unsigned int *)v4 + 2); /*0x6d23c9*/
     v5 = Math::RoundToInt(v9); /*0x6d23d6*/
     v6 = Math::RoundToInt(v10); /*0x6d23d8*/

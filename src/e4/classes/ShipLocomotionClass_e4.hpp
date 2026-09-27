@@ -493,6 +493,7 @@ struct ShipLocomotionClass {
     unsigned char q640C;  // 0x640C
     unsigned char q6410;  // 0x6410
     unsigned int u32_86;
+    unsigned int IStreamVtbl;
 // --- flat members (END) ---
     HRESULT BeginMove(int * a1, int * pStm);
     HRESULT LoadFromStream(int * a1, int * pPStm, int a3);

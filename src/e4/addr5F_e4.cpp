@@ -27,6 +27,7 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Game_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x5F0070
 namespace gamemd {
@@ -177,7 +178,7 @@ char HandlePlayerDisconnection(int a1, int a2)
 namespace gamemd {
 AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
 {
-  unsigned int v3;
+  wchar_t * v3;
   wchar_t *String; // eax
   LPARAM v5; // esi
   unsigned int v6;
@@ -191,14 +192,14 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   HWND v14; // ecx
   wchar_t *v16; // [esp-Ah] [ebp-11Ch]
   wchar_t *v17; // [esp-Ah] [ebp-11Ch]
-  char v18; // [esp+19h] [ebp-F9h]
+  unsigned int v18;
   int Buffer; // [esp+1Ah] [ebp-F8h] BYREF
   HWND v20; // [esp+1Eh] [ebp-F4h]
   HWND hWnd; // [esp+22h] [ebp-F0h]
   unsigned char Source[236]; // [esp+26h] [ebp-ECh] BYREF
 
-  v18 = (wchar_t *)(IDA_HIBYTE(a1));
-  v3 = 3; /*0x5f2cfb*/
+  v18 = (wchar_t *)((unsigned int)((char)((wchar_t *)(IDA_HIBYTE(a1)))));
+  v3 = (unsigned int)((wchar_t *)(3));
   if ( a3 == 1 ) /*0x5f2d00*/
     String = GetStringCSF((wchar_t *)aTxtModemConner_0, 0, g_Str_File_NullMgr_CPP, 1580); /*0x5f2d13*/
   else
@@ -223,7 +224,7 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   {
     if ( Dialog::PumpMessages() == 1 || g_NetworkTestFlag ) /*0x5f2dab*/
     {
-      v3 = (HWND)(6);
+      v3 = (unsigned int)((HWND)(6));
       Debug::Log(); /*0x5f30fa*/
       v14 = g_ClipboardBuffer; /*0x5f30ff*/
       if ( !g_ClipboardBuffer ) /*0x5f310a*/
@@ -242,7 +243,7 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
     Debug::Log(); /*0x5f2ded*/
     if ( v9 == -1000 ) /*0x5f2dfb*/
     {
-      v3 = (HWND)(6);
+      v3 = (unsigned int)((HWND)(6));
       Debug::Log(); /*0x5f30c5*/
       v14 = g_ClipboardBuffer; /*0x5f30ca*/
       if ( !g_ClipboardBuffer ) /*0x5f30d5*/

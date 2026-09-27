@@ -292,7 +292,7 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
   if ( g_SuperWeaponTypeArray <= 0 ) /*0x511615*/
   {
   LABEL_16: this->veteranAircraft = (unsigned char *)(-1);
-    return this; /*0x511633*/
+    return (unsigned char *)(this);
   }
   else
   {
@@ -305,7 +305,7 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
         goto LABEL_16; /*0x511627*/
     }
     this->veteranAircraft = (unsigned char *)(v3);
-    return this; /*0x511640*/
+    return (unsigned char *)(this);
   }
 }
 }
@@ -372,8 +372,8 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
   {
     v4 = v3; /*0x6cea84*/
   }
-  v5 = (unsigned int)(this->q0BC);
-  this->WeaponType = v4; /*0x6cea8c*/
+  v5 = (gamemd::WeaponTypeClass *)((unsigned int)(this->q0BC));
+  this->WeaponType = (unsigned int)(v4);
   v6 = SuperWeaponTypeClass::loadSWProperties( /*0x6cea9b*/
          aP1,
          (uint8_t *)(&this->vtable46),
@@ -411,11 +411,11 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
           (uint8_t *)aPreclick,
           this->q0ED);
   v11 = (int)(this->q0EE);
-  this->q0ED = v10; /*0x6ceb28*/
-  v12 = INIClass::ReadBool_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aPostclick, v11); /*0x6ceb37*/
-  v33 = this->q0F4; /*0x6ceb44*/
-  this->q0EE = v12; /*0x6ceb4b*/
-  v13 = INIClass::ReadBool_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aShowtimer, v33); /*0x6ceb51*/
+  this->q0ED = (int)(v10);
+  v12 = (int)(INIClass::ReadBool_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aPostclick, v11));
+  v33 = (int)(this->q0F4);
+  this->q0EE = (int)(v12);
+  v13 = (int)(INIClass::ReadBool_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aShowtimer, v33));
   v14 = this->q0C0; /*0x6ceb56*/
   this->q0F4 = v13; /*0x6ceb5c*/
   if ( !INIClass::GetString( /*0x6ceb94*/

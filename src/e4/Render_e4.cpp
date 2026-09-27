@@ -115,10 +115,10 @@ void sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, 
         do /*0x53c24a*/
         {
           v19 = (float)(v29 * v29);
-          v10 = (1.0 - (v30 * v30 + v19) / v18) * 5.0; /*0x53c133*/
-          v23 = flt_A9FAA0 * v10 * v10; /*0x53c143*/
-          v25 = ComputeChronosphereDistortion(v23); /*0x53c151*/
-          v24 = ComputeDistortionVariant(v23); /*0x53c15a*/
+          v10 = (float)((1.0 - (v30 * v30 + v19) / v18) * 5.0);
+          v23 = (float)(flt_A9FAA0 * v10 * v10);
+          v25 = (float)(ComputeChronosphereDistortion(v23));
+          v24 = (float)(ComputeDistortionVariant(v23));
           v16 = v25 * v30 + v24 * v29 + v28; /*0x53c16e*/
           v11 = (int)v16; /*0x53c183*/
           v17 = v25 * v29 - v24 * v30 + v27; /*0x53c18b*/

@@ -127,8 +127,8 @@ int StreamClass::Vt32Thunk(int a1)
 namespace gamemd {
 int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 {
-  aP0->u32_8 = (void *)(a2);
-  aP0->vtable2 = a2; /*0x55a71b*/
+  aP0->u32_8 = (unsigned int)((void *)(a2));
+  aP0->vtable2 = (void *)(a2);
   return 0; /*0x55a720*/
 }
 } // namespace gamemd

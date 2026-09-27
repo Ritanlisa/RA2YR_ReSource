@@ -182,7 +182,7 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
   int v6; // ebx
   WinModemClass * v7;
   int (*v8)(void); // eax
-  int result; // eax
+  WinModemClass ** result;
   int Bytes; // eax
   int v11; // esi
   int v12; // eax
@@ -209,7 +209,7 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
     v8 = (int (*)(void))this->q068; /*0x774d63*/
     if ( v8 ) /*0x774d68*/
     {
-      result = (gamemd::WinModemClass **)(v8());
+      result = (unsigned int)((gamemd::WinModemClass **)((int)((gamemd::WinModemClass **)(v8()))));
       if ( result ) /*0x774d6e*/
         return result; /*0x774f2f*/
     }
@@ -247,7 +247,7 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
       if ( !v13 ) /*0x774e2b*/
       {
   LABEL_20: Str[a4 - 1] = (char *)(0);
-        v15 = strstr(Str, word_832678); /*0x774e45*/
+        v15 = (char *)(strstr(Str, word_832678));
         if ( v15 ) /*0x774e4c*/
         {
           if ( *Str == 65 && Str[1] == 84 && strchr(Str, 13) ) /*0x774e5d*/
@@ -348,7 +348,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
   int v19; // esi
   signed int v21; // eax
   size_t v22; // eax
-  size_t v24; // eax
+  AbstractClass ** v24;
   int i; // [esp+10h] [ebp-108h] BYREF
   DWORD Ticks; // [esp+14h] [ebp-104h]
   DWORD v28; // [esp+20h] [ebp-F8h] BYREF
@@ -443,7 +443,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
       && Str[2] >= 48
       && Str[2] <= 57 )
     {
-      v24 = (gamemd::AbstractClass **)(Count);
+      v24 = (unsigned int)((gamemd::AbstractClass **)((size_t)((gamemd::AbstractClass **)(Count))));
       if ( Count >= 80 ) /*0x775456*/
         v24 = 80; /*0x775458*/
       strncpy(Destination, Str, v24); /*0x77546b*/

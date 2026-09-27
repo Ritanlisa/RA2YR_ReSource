@@ -21,6 +21,7 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/TeamTypeClass_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/Draw_e4.hpp"
 
 // 0x5D6130
 namespace gamemd {
@@ -478,7 +479,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
     ComPtr::Dtor(g_UIControlState); /*0x5e85f3*/
     RA2_OPDEL(v2); /*0x5e85f9*/
   }
-  v3 = (int)(operator new(4u));
+  v3 = (void *)((int)(operator new(4u)));
   if ( v3 ) /*0x5e860d*/
     v4 = (void *)unknown_libname_27(v3); /*0x5e8611*/
   else

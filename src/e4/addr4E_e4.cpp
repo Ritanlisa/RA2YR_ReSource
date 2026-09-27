@@ -719,7 +719,7 @@ void * SetupLobbyCountryCombo(SkirmishDialog * aP0, int nIDDlgItem, int a3)
 namespace gamemd {
 void FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
+  wchar_t * DlgItem;
   wchar_t *String; // eax
   LRESULT v5; // ebx
   unsigned int v6;
@@ -731,8 +731,8 @@ void FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
   LPARAM lParam; // [esp+18h] [ebp-8h]
   WPARAM wParam; // [esp+1Ch] [ebp-4h]
 
-  DlgItem = (wchar_t *)(GetDlgItem(hDlg, nIDDlgItem));
-  v10 = !ShowWindow(DlgItem, 0); /*0x4e45ce*/
+  DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, nIDDlgItem))));
+  v10 = (wchar_t *)(!ShowWindow(DlgItem, 0));
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e45d3*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e45df*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e45eb*/
@@ -1142,7 +1142,7 @@ void FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
 namespace gamemd {
 void FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
+  wchar_t * DlgItem;
   wchar_t *String; // eax
   LRESULT v5; // eax
   unsigned int v6;
@@ -1154,8 +1154,8 @@ void FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
   LPARAM lParam; // [esp+18h] [ebp-8h]
   WPARAM wParam; // [esp+1Ch] [ebp-4h]
 
-  DlgItem = (wchar_t *)(GetDlgItem(hDlg, nIDDlgItem));
-  v10 = !ShowWindow(DlgItem, 0); /*0x4e50ed*/
+  DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, nIDDlgItem))));
+  v10 = (wchar_t *)(!ShowWindow(DlgItem, 0));
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e50f2*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e50fd*/
   SendMessageA(DlgItem, 0x4DEu, 0, 9); /*0x4e5108*/

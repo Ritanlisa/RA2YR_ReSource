@@ -8,7 +8,7 @@ struct ParticleSystemClass_32 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
-    int q008;  // 0x8
+    void* ;  // 0x8
     bool q00C;  // 0xC
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
@@ -24,6 +24,7 @@ struct ParticleSystemClass_32 {
     unsigned char q050;  // 0x50
     bool q054;  // 0x54
     unsigned int q0042;
+    unsigned int q008;
 // --- flat members (END) ---
     void ClearBuffer();  // 0x4E82F0
     void Destroy();  // 0x4E87E0

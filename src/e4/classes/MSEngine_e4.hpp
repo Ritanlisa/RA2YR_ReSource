@@ -8,7 +8,7 @@ struct MSEngine {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* q004;  // 0x4
-    unsigned int q008;  // 0x8
+    void* ;  // 0x8
     bool q00A;  // 0xA
     bool q00B;  // 0xB
     unsigned int u32_C;  // 0xC
@@ -128,6 +128,7 @@ struct MSEngine {
     unsigned int q0108;
     unsigned int u32_18;
     unsigned int u32_1C2;
+    unsigned int q008;
 // --- flat members (END) ---
     char Release(int a2,  char * a3);    // 0x5ACD30
     char SetCapacity(int a2,  char * a3);    // 0x5ACED0

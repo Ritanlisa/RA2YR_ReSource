@@ -910,7 +910,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_Point2D_(char a2)
     this->q004 = 0; /*0x5d1730*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x5d1741*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x5d1748*/
     RA2_OPDEL(); /*0x5d174b*/
   return this; /*0x5d1755*/
@@ -930,7 +930,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MSTextEntry___(char a2)
     this->q004 = 0; /*0x5d17d0*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x5d17e1*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x5d17e8*/
     RA2_OPDEL(); /*0x5d17eb*/
   return this; /*0x5d17f5*/
@@ -950,7 +950,7 @@ DynamicVector * MSPCXAnim_42::Constructor_VectorClass_MapSelection___(char a2)
     this->q004 = 0; /*0x5d1870*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x5d1881*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x5d1888*/
     RA2_OPDEL(); /*0x5d188b*/
   return this; /*0x5d1895*/
@@ -970,7 +970,7 @@ VectorClass_flat * MSPCXAnim_26::Constructor_VectorClass_MapStage___(char a2)
     this->q004 = 0; /*0x5d18c0*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = 0; /*0x5d18d1*/
+  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x5d18d8*/
     RA2_OPDEL(); /*0x5d18db*/
   return this; /*0x5d18e5*/
@@ -990,7 +990,7 @@ DynamicVector * MSPCXAnim_26::QueryInterface(char a2)
     this->q004 = 0; /*0x5d1910*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x5d1921*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x5d1928*/
     RA2_OPDEL(); /*0x5d192b*/
   return this; /*0x5d1935*/
@@ -1010,7 +1010,7 @@ VectorClass_flat * MSPCXAnim_42::QueryInterface(char a2)
     this->q004 = 0; /*0x5d1960*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = 0; /*0x5d1971*/
+  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x5d1978*/
     RA2_OPDEL(); /*0x5d197b*/
   return this; /*0x5d1985*/
@@ -1030,7 +1030,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSAnimEntry___(char a2)
     this->q004 = 0; /*0x5d19b0*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x5d19c1*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x5d19c8*/
     RA2_OPDEL(); /*0x5d19cb*/
   return this; /*0x5d19d5*/
@@ -1050,7 +1050,7 @@ DynamicVector * MSPCXAnim_26::Constructor_VectorClass_MSSfxEntry___(char a2)
     this->q004 = 0; /*0x5d1a50*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x5d1a61*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x5d1a68*/
     RA2_OPDEL(); /*0x5d1a6b*/
   return this; /*0x5d1a75*/

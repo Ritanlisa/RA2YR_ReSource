@@ -12,7 +12,7 @@ struct ConnectionPointClass {
     unsigned char q008;  // 0x8
     bool q00B;  // 0xB
     unsigned char q00C;  // 0xC
-    unsigned int u32_10;  // 0x10
+    void* ;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned int q01A;  // 0x1A

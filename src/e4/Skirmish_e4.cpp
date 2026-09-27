@@ -181,10 +181,10 @@ int Skirmish::ReadSettings(HWND hDlg)
   HWND hDlgf; // [esp+18h] [ebp+4h]
 
   v18 = (unsigned int)((int)this->q03C);
-  hDlga = GetDlgItem(hDlg, 1029); /*0x596ca2*/
-  v4 = SendMessageA(hDlga, 0x147u, 0, 0); /*0x596ca6*/
-  v5 = SendMessageA(hDlga, 0x150u, v4, 0); /*0x596cb3*/
-  this->q03C = (HWND)v5; /*0x596cb9*/
+  hDlga = (HWND)((unsigned int)(GetDlgItem(hDlg, 1029)));
+  v4 = (unsigned int)(SendMessageA(hDlga, 0x147u, 0, 0));
+  v5 = (unsigned int)(SendMessageA(hDlga, 0x150u, v4, 0));
+  this->q03C = (unsigned int)((HWND)v5);
   if ( v18 != v5 ) /*0x596cbe*/
     byte_ABE2D8 = 1; /*0x596cc0*/
   v19 = (int)this->u32_38; /*0x596cd0*/
@@ -194,11 +194,11 @@ int Skirmish::ReadSettings(HWND hDlg)
   this->u32_38 = (HWND)v7; /*0x596cf9*/
   if ( v19 != v7 ) /*0x596cfe*/
     byte_ABE2D8 = (unsigned int)(1);
-  v20 = (int)this->u32_40; /*0x596d10*/
-  hDlgc = GetDlgItem(hDlg, 1032); /*0x596d22*/
-  v8 = (HWND)(SendMessageA(hDlgc, 0x147u, 0, 0));
-  v9 = SendMessageA(hDlgc, 0x150u, v8, 0); /*0x596d33*/
-  this->u32_40 = (HWND)v9; /*0x596d39*/
+  v20 = (LRESULT)((int)this->u32_40);
+  hDlgc = (HWND)((LRESULT)(GetDlgItem(hDlg, 1032)));
+  v8 = (LRESULT)((HWND)(SendMessageA(hDlgc, 0x147u, 0, 0)));
+  v9 = (LRESULT)((HWND)(SendMessageA(hDlgc, 0x150u, v8, 0)));
+  this->u32_40 = (unsigned int)((HWND)v9);
   if ( v20 != v9 ) /*0x596d3e*/
     byte_ABE2D8 = 1; /*0x596d40*/
   v21 = (int)this->u32_48; /*0x596d50*/
@@ -328,7 +328,7 @@ int Skirmish::RenderPreview(SkirmishDialog * aP1)
   result = ValidateRect(aP1, 0); /*0x640726*/
   if ( *this ) /*0x64072c*/
   {
-    DlgItem = (int)(GetDlgItem(aP1, 1128));
+    DlgItem = (HWND)((int)(GetDlgItem(aP1, 1128)));
     ScreenDialogToClient(DlgItem, &Rect); /*0x640749*/
     left = Rect.left; /*0x64075a*/
     top = Rect.top; /*0x640764*/

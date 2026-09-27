@@ -20,7 +20,7 @@ unsigned int * UnitTypeVector::ConstructUnitTypeVectorClass(int a2, int a3)
     if ( a3 ) /*0x513966*/
     {
       this->ptr_4 = (unsigned int *)(a3);
-      return this; /*0x51396e*/
+      return (unsigned int *)(this);
     }
     this->ptr_4 = operator new(4 * a2); /*0x51397d*/
     this->u8_D = 1; /*0x513980*/
@@ -41,7 +41,7 @@ unsigned int * UnitTypeVector::Construct2(int a2, int a3)
     if ( a3 ) /*0x5d8976*/
     {
       this->ptr_4 = (unsigned int *)(a3);
-      return this; /*0x5d897e*/
+      return (unsigned int *)(this);
     }
     this->ptr_4 = operator new(4 * a2); /*0x5d898d*/
     this->u8_D = 1; /*0x5d8990*/

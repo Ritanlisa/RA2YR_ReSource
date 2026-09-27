@@ -155,7 +155,7 @@ void SHA1::Transform(void * a1, void * a2)
   _BYTE v33[8]; // [esp+30h] [ebp-140h] BYREF
   char v34; // [esp+38h] [ebp-138h] BYREF
 
-  v2 = a1; /*0x69db30*/
+  v2 = (int *)(a1);
   v3 = 16; /*0x69db44*/
   do /*0x69db76*/
   {
@@ -229,11 +229,11 @@ void SHA1::Transform(void * a1, void * a2)
     ++v29; /*0x69dc7d*/
   }
   while ( v21 );
-  v22 = v12 + a2[1]; /*0x69dc93*/
-  v23 = a2[3]; /*0x69dc95*/
-  v24 = v20 + *a2; /*0x69dc98*/
-  v25 = a2[4]; /*0x69dc9a*/
-  *a2 = v24; /*0x69dc9d*/
+  v22 = (void *)(v12 + a2[1]);
+  v23 = (void *)(a2[3]);
+  v24 = (unsigned int)((void *)(v20 + *a2));
+  v25 = (unsigned int)((void *)(a2[4]));
+  *a2 = (void *)(v24);
   v26 = v13 + a2[2]; /*0x69dca4*/
   a2[3] = v14 + v23; /*0x69dca6*/
   v27 = v32[4]; /*0x69dca9*/

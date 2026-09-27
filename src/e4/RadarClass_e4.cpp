@@ -345,10 +345,10 @@ namespace gamemd {
 unsigned int * RadarClass::initRadarSurface()
 {
   this->q004 = (unsigned int *)(0);
-  this->q008 = 0; /*0x4f4227*/
-  this->q00C = 2; /*0x4f422a*/
-  *this = &off_7EA6FC; /*0x4f4231*/
-  return this; /*0x4f4237*/
+  this->q008 = (unsigned int *)(0);
+  this->q00C = (unsigned int *)(2);
+  *this = (unsigned int *)(&off_7EA6FC);
+  return (unsigned int *)(this);
 }
 } // namespace gamemd
 

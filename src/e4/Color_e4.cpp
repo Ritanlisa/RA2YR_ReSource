@@ -22,10 +22,10 @@ int Color::ConvertToRGB(int v9)
   int v11; // [esp+28h] [ebp-8h]
   unsigned int v12; // [esp+2Ch] [ebp-4h]
 
-  v2 = (unsigned int)(this->q008);
-  v3 = this->q004; /*0x517453*/
-  v4 = 3 * *this; /*0x51745c*/
-  v10[2] = v2; /*0x51745f*/
+  v2 = (void *)((unsigned int)(this->q008));
+  v3 = (void *)((unsigned int)(this->q004));
+  v4 = (unsigned int)(3 * *this);
+  v10[2] = (unsigned int)(v2);
   v4 *= 2; /*0x517463*/
   v10[1] = v2; /*0x517467*/
   v10[3] = v2 * (255 - v3 * (v4 % 255) / 0xFFu) / 0xFF; /*0x51749b*/
@@ -63,7 +63,7 @@ unsigned char * Color::Lerp2(int a2, int a3, float a4)
   else
   {
     this->q008 = (unsigned char *)(Math::RoundToInt(0.0));
-    return this; /*0x661154*/
+    return (unsigned char *)(this);
   }
 }
 } // namespace gamemd
@@ -108,7 +108,7 @@ unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
   else
   {
     this->Capacity = (unsigned char *)(Math::RoundToInt(0.0));
-    return this; /*0x661285*/
+    return (unsigned char *)(this);
   }
 }
 } // namespace gamemd

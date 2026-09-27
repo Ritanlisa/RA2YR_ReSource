@@ -26,12 +26,12 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
   int v17; // edi
   int v18; // eax
   int v19; // ecx
-  int v20; // ebp
+  unsigned int v20;
   LONG v21; // edi
   LONG v22; // ebx
   int v23; // eax
   double v24; // st7
-  LPPERSISTSTREAM v25; // edi
+  void * v25;
   int v26; // eax
   double v27; // st7
   LONG v28; // ebx
@@ -55,7 +55,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
   int v46; // [esp+5Eh] [ebp-20h] BYREF
   LONG v47; // [esp+62h] [ebp-1Ch]
   LONG v48; // [esp+66h] [ebp-18h]
-  int v49; // [esp+6Ah] [ebp-14h]
+  void * v49;
   struct tagRECT Rect; // [esp+6Eh] [ebp-10h] BYREF
   int v51; // [esp+8Eh] [ebp+10h]
 
@@ -130,21 +130,21 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
             v12 = v47; /*0x4f48ed*/
             v45 = v19; /*0x4f48f1*/
           }
-          v20 = *a8; /*0x4f48f9*/
-          v21 = a8[1]; /*0x4f48fb*/
-          v22 = a8[2]; /*0x4f48fe*/
-          Rect.right = a8[3]; /*0x4f4904*/
-          v49 = v20; /*0x4f4910*/
+          v20 = (void *)((unsigned int)((void *)((LONG)(*a8))));
+          v21 = (int)(a8[1]);
+          v22 = (void *)(a8[2]);
+          Rect.right = (LONG)((unsigned int)(a8[3]));
+          v49 = (unsigned int)(v20);
           Rect.left = v21; /*0x4f4914*/
           Rect.top = v22; /*0x4f4918*/
           if ( g_TacticalClass_Instance /*0x4f4934*/
             && (g_TacticalClass_Instance[48].lpVtbl
              || g_TacticalClass_Instance[49].lpVtbl != (struct IPersistStreamVtbl *, void * a1)1072693248) )
           {
-            v51 = (LPPERSISTSTREAM)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1));
-            v23 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 128))(a1); /*0x4f4949*/
-            v24 = (double)v51; /*0x4f494f*/
-            v25 = g_TacticalClass_Instance; /*0x4f4953*/
+            v51 = (int)((LPPERSISTSTREAM)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1)));
+            v23 = (int)((LPPERSISTSTREAM)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 128))(a1)));
+            v24 = (int)((double)v51);
+            v25 = (LPPERSISTSTREAM)((void *)(g_TacticalClass_Instance));
             *(unsigned int *)v38 = v23; /*0x4f4959*/
             v42 = v24 / *(double *)&g_TacticalClass_Instance[48].lpVtbl; /*0x4f4965*/
             v26 = Math::RoundToInt((v24 - v42) * 0.5); /*0x4f4973*/

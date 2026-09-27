@@ -135,9 +135,9 @@ int AudioStream::SetupPlayback()
   int *v6; // edx
 
   v1 = (int)(this->u32_A8);
-  v2 = 0; /*0x404707*/
-  v3 = 0; /*0x404709*/
-  this->q1E0 = v1; /*0x40470e*/
+  v2 = (int)(0);
+  v3 = (int)(0);
+  this->q1E0 = (int)(v1);
   if ( !v1 || (this->u32_18 & 0x20) != 0 ) /*0x40471a*/
     return 0; /*0x40471a*/
   v4 = this->q024; /*0x40471c*/
@@ -180,7 +180,7 @@ namespace gamemd {
 int AudioStream::SelectRandom()
 {
   unsigned int *v2; // ecx
-  int v3; // edx
+  void * v3;
   void * v4;
   int v5; // eax
   void * v6;
@@ -189,8 +189,8 @@ int AudioStream::SelectRandom()
   int v10; // ecx
   int v12; // eax
 
-  v2 = (void *)(*(unsigned int **)(&this->q00C6));
-  v3 = v2[4]; /*0x4047b9*/
+  v2 = (unsigned int *)((void *)(*(unsigned int **)(&this->q00C6)));
+  v3 = (void *)((int)((void *)(v2[4])));
   if ( v2[22] >= 0x21u && (this->u32_18 & 0x20) == 0 ) /*0x4047c5*/
     return 0; /*0x4047c5*/
   v4 = this->q1E0; /*0x4047cb*/
@@ -199,7 +199,7 @@ int AudioStream::SelectRandom()
     if ( (v3 & 2) != 0 ) /*0x4047de*/
     {
       v5 = (void *)(Random::Range(Randomizer_Global, 0, v4 - 1));
-      v6 = this->q1E0 - 1; /*0x404803*/
+      v6 = (void *)(this->q1E0 - 1);
       this->q0AC = *(unsigned int *)(&this->u32_10 * v5 + 352); /*0x404804*/
       v5 = v5; /*0x40480c*/
       if ( v5 < v6 ) /*0x40480f*/
@@ -1098,7 +1098,7 @@ int AudioStream::ProcessStream()
   int v33; // [esp+10h] [ebp-Ch]
   int v35; // [esp+18h] [ebp-4h]
 
-  v1 = this; /*0x7bea86*/
+  v1 = (gamemd::AudioStream *)(this);
   v2 = *(unsigned int *)((char *)&this->__pad_666 + 26); /*0x7bea8d*/
   v3 = (unsigned int *)((char *)&this->__pad_666 + 26); /*0x7bea93*/
   v4 = &this->q040; /*0x7bea99*/

@@ -13,7 +13,7 @@
 namespace gamemd {
 int Mixer::ReleaseChannel()
 {
-  int result; // eax
+  int * result;
   int *v3; // edi
   int v4; // eax
 
@@ -42,7 +42,7 @@ int Mixer::ReleaseChannel()
         this->u32_8 = 0; /*0x4060d6*/
         return result; /*0x4060dc*/
       }
-      result = v3[6]; /*0x4060dd*/
+      result = (int)(v3[6]);
       IDA_LOBYTE(result) = result | 0x60; /*0x4060e0*/
       v3[6] = result; /*0x4060e2*/
     }

@@ -11,6 +11,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/DisplayClass_e4.hpp"
 
 // 0x7327D0
 namespace gamemd {
@@ -189,7 +190,7 @@ DynamicVector * MoveFeedback::QueryInterface(char a2)
     this->q004 = 0; /*0x40bcd0*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x40bce1*/
+  this->q008 = (unsigned char)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x40bce8*/
     RA2_OPDEL(); /*0x40bceb*/
   return this; /*0x40bcf5*/
@@ -301,7 +302,7 @@ DynamicVector * MoveFeedback::Constructor(char a2)
     this->q004 = 0; /*0x40c180*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x40c191*/
+  this->q008 = (unsigned char)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x40c198*/
     RA2_OPDEL(); /*0x40c19b*/
   return this; /*0x40c1a5*/

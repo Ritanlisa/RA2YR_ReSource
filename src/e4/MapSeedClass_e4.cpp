@@ -147,7 +147,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
           do /*0x5a5da0*/
           {
             v49 = (gamemd::ObjectClass *)((unsigned int)Random::State(&g_Randomizer));
-            v12 = Math::RoundToInt((double)v49 * 4.656612874161595e-10); /*0x5a5d98*/
+            v12 = (gamemd::ObjectClass *)(Math::RoundToInt((double)v49 * 4.656612874161595e-10));
           }
           while ( v12 > 1 ); /*0x5a5da0*/
           if ( v12 ) /*0x5a5da4*/

@@ -209,8 +209,8 @@ CellStruct * * sub_731AF0()
   v4 = 0; /*0x731b50*/
   if ( (int)g_SelectionManager <= 0 ) /*0x731b54*/
   {
-  LABEL_5: byte_B0FE58 = (gamemd::CellStruct **)(1);
-    return result; /*0x731b4d*/
+  unsigned int byte_B0FE58 =
+    return (gamemd::CellStruct **)(result);
   }
   while ( 1 ) /*0x731b56*/
   {
@@ -227,8 +227,8 @@ CellStruct * * sub_731AF0()
     }
     if ( ++v4 >= (int)v3 ) /*0x731b7d*/
     {
-      byte_B0FE58 = (gamemd::CellStruct **)(1);
-      return result; /*0x731b89*/
+      byte_B0FE58 = (unsigned char)((gamemd::CellStruct **)(1));
+      return (gamemd::CellStruct **)(result);
     }
   }
   v6 = GetStringCSF(aMsgAttackmoveu, 0, g_Str_File_UICmnds_cpp, 862); /*0x731b9b*/

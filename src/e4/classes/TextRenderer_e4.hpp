@@ -23,7 +23,7 @@ struct TextRenderer {
     unsigned char q058;  // 0x58
     unsigned int q064;  // 0x64
     unsigned int u32_68;  // 0x68
-    unsigned int u32_6C;  // 0x6C
+    void* ;  // 0x6C
     unsigned char u8_70;  // 0x70
     unsigned char u8_71;  // 0x71
     unsigned int q080;  // 0x80
@@ -162,7 +162,7 @@ struct TextRenderer {
     unsigned char q6044;  // 0x6044
     unsigned char q6BB0;  // 0x6BB0
     unsigned char q6BB4;  // 0x6BB4
-    unsigned int DrawTextA;
+    unsigned int u32_6C;
 // --- flat members (END) ---
     TriggerTypeClass * Destructor(char a2);
     int MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScreenClass * aP3, ProgressScreenClass * aP4, char a6);
@@ -170,6 +170,12 @@ struct TextRenderer {
     void * GetInstance();
     void * MeasureBuilding2();
     void * RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8);
+    static double DrawTextA(...);  // C2597 interim stub
+    static double m_bits(...);  // C2597 interim stub
+    static double m_bmp(...);  // C2597 interim stub
+    static double m_font(...);  // C2597 interim stub
+    static double m_hdc(...);  // C2597 interim stub
+    static double m_old_bmp(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

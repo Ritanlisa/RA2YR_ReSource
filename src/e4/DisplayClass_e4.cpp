@@ -60,7 +60,7 @@ int DisplayClass::AdvanceFrameCounter()
   void * v3;
   void * result;
 
-  v1 = (unsigned int)(this->q130);
+  v1 = (void *)((unsigned int)(this->q130));
   if ( v1 == -1 ) /*0x48769a*/
     this->q130 = 0; /*0x48769c*/
   v2 = this->q130 + 1; /*0x4876ac*/
@@ -74,7 +74,7 @@ int DisplayClass::AdvanceFrameCounter()
     result = (void *)(this->q130);
     if ( result > 0 ) /*0x4876d2*/
     {
-      result = (unsigned int)(this->q140);
+      result = (void *)((unsigned int)(this->q140));
       IDA_LOBYTE(result) = result | 0x20; /*0x4876da*/
       this->q140 = result; /*0x4876dc*/
     }

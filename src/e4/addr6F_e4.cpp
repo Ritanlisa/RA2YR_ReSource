@@ -12,12 +12,13 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x6F0AB0
 namespace gamemd {
 void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
 {
-  int v3; // esi
+  void *** v3;
   int v5; // eax
   int v6; // ebx
   char *v7; // ecx
@@ -74,9 +75,8 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   int v65; // [esp+54h] [ebp-Ch]
   int v66; // [esp+58h] [ebp-8h]
   int v67; // [esp+5Ch] [ebp-4h]
-
-  v3 = (void ***)(0);
-  v55 = aP0; /*0x6f0ab9*/
+v3 = (int)((void ***)(0));
+  v55 = (void ***)(aP0);
   Team_Helper_6F2230(0, 0); /*0x6f0ac9*/
   v5 = *(unsigned int *)(a2 + 22016); /*0x6f0ace*/
   v54 = 0; /*0x6f0adf*/

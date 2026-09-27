@@ -205,7 +205,7 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
   int v10; // edi
 
   v4 = (int)(*aP2);
-  v5 = aP2[1]; /*0x6557f9*/
+  v5 = (int)(aP2[1]);
   v7 = Math::RoundToInt((double)(*aP2 + (*(unsigned int *)((char *)&this->__pad_51DA + 102) << 8) - v5) * *(unsigned int *)((char *)&this->__pad_51DA + 70) * 0.00390625); /*0x65582b*/
   v8 = Math::RoundToInt((double)(v4 + v5 - (this->q5260 << 8)) * *(unsigned int *)((char *)&this->__pad_51DA + 70) * 0.00390625); /*0x655848*/
   if ( a4 ) /*0x655853*/
@@ -235,12 +235,12 @@ AbstractClass * * Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
   int v6; // eax
   int v7; // edi
   int v8; // esi
-  int v10; // [esp+14h] [ebp-4h]
+  AbstractClass ** v10;
 
-  v10 = (gamemd::AbstractClass **)(a1[1]);
-  v4 = (-60 * v10 / 2 + 60 * *a1 / 2) / 256; /*0x6d21c8*/
-  v5 = (30 * v10 / 2 + 30 * *a1 / 2) / 256; /*0x6d21cb*/
-  v6 = Math::RoundToInt((double)(int)a1[2] * dbl_B0CD48 + (double)(a1[2] >= 728) + 0.5); /*0x6d21f2*/
+  v10 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(a1[1])));
+  v4 = (gamemd::AbstractClass **)((-60 * v10 / 2 + 60 * *a1 / 2) / 256);
+  v5 = (gamemd::AbstractClass **)((30 * v10 / 2 + 30 * *a1 / 2) / 256);
+  v6 = (gamemd::AbstractClass **)(Math::RoundToInt((double)(int)a1[2] * dbl_B0CD48 + (double)(a1[2] >= 728) + 0.5));
   *(unsigned int *)aP2 = v4; /*0x6d21fd*/
   aP2[1] = v5 - v6; /*0x6d21ff*/
   v7 = *aP2 - *(&this->uniqueId4); /*0x6d2213*/

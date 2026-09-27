@@ -67,7 +67,7 @@ struct ObjectTypeClass {
     unsigned char unused_9B;  // 0x9B
     unsigned int Armor;  // 0x9C
     int q0A0;  // 0xA0
-    unsigned int q0A4;  // 0xA4
+    void* ;  // 0xA4
     bool ImageAllocated;  // 0xA8
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
@@ -1705,6 +1705,7 @@ struct ObjectTypeClass {
     unsigned int u32_E40;
     unsigned int u32_E41;
     unsigned int u32_E43;
+    unsigned int q0A4;
 // --- flat members (END) ---
     AbstractClass * * Load2DArt();
     BOOL loadTypeMember_5717AE0();

@@ -521,9 +521,9 @@ char CChatEventSink::EnsureCapacity(int a2)
       v8 = 10; /*0x7aee36*/
     if ( v8 < v7 ) /*0x7aee3d*/
     {
-      v9 = (unsigned int)(operator new(4 * v8));
-      v10 = (const void *)this->u32_8; /*0x7aee4c*/
-      v11 = v9; /*0x7aee54*/
+      v9 = (void *)((unsigned int)(operator new(4 * v8)));
+      v10 = (const void *)((unsigned int)((const void *)this->u32_8));
+      v11 = (void *)((unsigned int)(v9));
       if ( v10 ) /*0x7aee58*/
         qmemcpy(v9, v10, 4 * *(unsigned int *)this); /*0x7aee66*/
       RA2_OPDEL(this->u32_8); /*0x7aee73*/

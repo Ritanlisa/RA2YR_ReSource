@@ -75,12 +75,12 @@ int ColorListClass::GetColor(int a2)
 namespace gamemd {
 ColorListClass * ColorListClass::QueryInterface(char a2)
 {
-  int v3; // eax
+  char * v3;
   char *v4; // esi
   void *v5; // eax
 
-  v3 = (char *)(this->q174);
-  v4 = &this->u32_5D0; /*0x488f0b*/
+  v3 = (char *)((int)((char *)(this->q174)));
+  v4 = (char *)(&this->u32_5D0);
   (*(void (__thiscall **)(char *))(v3 + 12))(&this->u32_942); /*0x488f19*/
   this->q190 = 0; /*0x488f1e*/
   v5 = (void *)*((unsigned int *)v4 + 1); /*0x488f24*/

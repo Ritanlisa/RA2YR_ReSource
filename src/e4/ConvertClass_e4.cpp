@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/VectorClass_flat_e4.hpp"
 
 // 0x48E740
 namespace gamemd {
@@ -20,7 +21,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   int v13; // eax
   unsigned char *v14; // eax
   unsigned char *v15; // edi
-  int v16; // eax
+  unsigned char * v16;
   unsigned char *v17; // edi
   int i; // ebp
   int j; // ebp
@@ -29,8 +30,8 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   int v22; // eax
   int v23; // ecx
   char *v24; // eax
-  int v25; // edi
-  int v26; // eax
+  char * v25;
+  ConvertClass * v26;
   unsigned char v28[4]; // [esp+Ch] [ebp-14h] BYREF
   int16_t v29; // [esp+10h] [ebp-10h] BYREF
   char v30; // [esp+12h] [ebp-Eh]
@@ -111,7 +112,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   *(&this->q01C2) = 0; /*0x48e8a0*/
   aP4 = aP4; /*0x48e8a6*/
   v8 = (unsigned int)(1);
-  v9 = aP4 < 1; /*0x48e8af*/
+  v9 = (unsigned int)(aP4 < 1);
   *(&this->q01C3) = 0; /*0x48e8b1*/
   *(&this->q01C4) = 0; /*0x48e8b7*/
   *(&this->q01C5) = 0; /*0x48e8bd*/
@@ -198,8 +199,8 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
   }
   else
   {
-    v24 = (unsigned int)((char *)operator new(*(&this->q0241) << 9));
-    v25 = *(&this->q0241); /*0x48eb21*/
+    v24 = (char *)((unsigned int)((char *)operator new(*(&this->q0241) << 9)));
+    v25 = (unsigned int)(*(&this->q0241));
     *(&this->q0242) = v24; /*0x48eb2a*/
     *(&this->q0243) = &v24[512 * ((v25 - 1) >> 1)]; /*0x48eb3a*/
     if ( !aP5 ) /*0x48eb46*/

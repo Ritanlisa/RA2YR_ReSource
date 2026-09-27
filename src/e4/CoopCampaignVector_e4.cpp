@@ -32,7 +32,7 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(char a2)
     this->q004 = 0; /*0x5c5960*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = 0; /*0x5c5971*/
+  this->q008 = (unsigned char)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x5c5978*/
     RA2_OPDEL(); /*0x5c597b*/
   return this; /*0x5c5985*/
@@ -43,7 +43,7 @@ namespace gamemd {
 unsigned int * CoopCampaignVector::Construct(MultiplayerGameMode * aP1, MultiplayerGameMode * aP2)
 {
   this->q004 = (unsigned char)(0);
-  this->q008 = aP1; /*0x5c5a8e*/
+  this->q008 = (unsigned char)(aP1);
   this->q00C = 1; /*0x5c5a91*/
   this->IsAllocated = 0; /*0x5c5a95*/
   if ( aP1 ) /*0x5c5a9e*/
@@ -51,7 +51,7 @@ unsigned int * CoopCampaignVector::Construct(MultiplayerGameMode * aP1, Multipla
     if ( aP2 ) /*0x5c5aa6*/
     {
       this->q004 = (unsigned int *)(aP2);
-      return this; /*0x5c5aae*/
+      return (unsigned int *)(this);
     }
     this->q004 = operator new(4 * aP1); /*0x5c5abd*/
     this->IsAllocated = 1; /*0x5c5ac0*/

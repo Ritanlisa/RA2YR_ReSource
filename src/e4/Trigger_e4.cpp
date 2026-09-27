@@ -37,9 +37,9 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
   MSShapeAnim * v10;
 
   this->u32_8 = (unsigned char)(a4);
-  this->ptr_4 = aP2; /*0x5cbd32*/
-  this->q00C = 1; /*0x5cbd35*/
-  this->q010 = Timer::GetTicks(); /*0x5cbd48*/
+  this->ptr_4 = (void *)((unsigned char)(aP2));
+  this->q00C = (unsigned char)(1);
+  this->q010 = (unsigned char)(Timer::GetTicks());
   this->ptr_18 = 0; /*0x5cbd4f*/
   this->q020 = a5; /*0x5cbd52*/
   this->u32_38 = a7; /*0x5cbd58*/
@@ -271,16 +271,16 @@ namespace gamemd {
 unsigned int * Trigger::processTrigger(int a2, int a3)
 {
   this->ptr_4 = (unsigned int *)(a2);
-  this->u32_8 = a3; /*0x76f09d*/
-  return this; /*0x76f0a6*/
+  this->u32_8 = (unsigned int *)(a3);
+  return (unsigned int *)(this);
 }
 }
 // 0x76F1C0
 namespace gamemd {
 unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
 {
-  this->ptr_4 = (unsigned int)(0);
-  this->u32_8 = aP1; /*0x76f1ce*/
+  this->ptr_4 = (void *)((unsigned int)(0));
+  this->u32_8 = (unsigned int)(aP1);
   this->q00C = 1; /*0x76f1d1*/
   this->u8_D = 0; /*0x76f1d5*/
   if ( aP1 ) /*0x76f1de*/
@@ -288,7 +288,7 @@ unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
     if ( aP2 ) /*0x76f1e6*/
     {
       this->ptr_4 = (unsigned int *)(aP2);
-      return this; /*0x76f1ee*/
+      return (unsigned int *)(this);
     }
     this->ptr_4 = operator new(4 * aP1); /*0x76f1fd*/
     this->u8_D = 1; /*0x76f200*/

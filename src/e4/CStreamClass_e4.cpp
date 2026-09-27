@@ -383,7 +383,7 @@ VectorClass_flat * CStreamClass_16::QueryInterface(char a2)
     this->q004 = 0; /*0x4a4db0*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = 0; /*0x4a4dc1*/
+  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x4a4dc8*/
     RA2_OPDEL(); /*0x4a4dcb*/
   return this; /*0x4a4dd5*/

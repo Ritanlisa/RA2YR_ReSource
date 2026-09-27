@@ -66,7 +66,7 @@ void Weapon_Update(void * a1, void * a2)
     {
       do /*0x659e01*/
       {
-        v4 = Weapon_Update_Update_659FF0(a1); /*0x659ceb*/
+        v4 = (void *)(Weapon_Update_Update_659FF0(a1));
         IDA_LOWORD(a2) = (uint8_t)(*(unsigned char *)(a1 + 194) >> g_BitMask_Red); /*0x659d13*/
         IDA_LOWORD(v4) = (uint8_t)(*(unsigned char *)(a1 + 193) >> g_BitMask_Blue); /*0x659d28*/
         IDA_LODWORD(v4) = (unsigned int)v4 << g_BitMask_Green; /*0x659d30*/

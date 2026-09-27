@@ -27,8 +27,8 @@ int NetworkClass::ExecutePlanningModeCmd()
   {
     if ( !g_PlanningModeActive ) /*0x639fdd*/
     {
-      g_PlanningModeActive = (wchar_t *)(1);
-      StringCSF = GetStringCSF((wchar_t *)g_Str_MSG_PlanningModeNoDeploy, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x639ffb*/
+      g_PlanningModeActive = (int)((wchar_t *)(1));
+      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)g_Str_MSG_PlanningModeNoDeploy, 0, g_Str_File_PlanMgr_cpp, 3233));
   LABEL_10:
       AddMessageListPlayerMessage(StringCSF, 480); /*0x63a07b*/
       PlayVocClass(g_RulesClass_Instance->Scorches1[3], 0x2000, 1.0, 0); /*0x63a09e*/
@@ -38,16 +38,16 @@ int NetworkClass::ExecutePlanningModeCmd()
   {
     if ( !g_PlanningModeActive ) /*0x63a008*/
     {
-      g_PlanningModeActive = (wchar_t *)(1);
-      v3 = GetStringCSF(g_Str_MSG_PlanningModeNoStop, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a026*/
+      g_PlanningModeActive = (int)((wchar_t *)(1));
+      v3 = (wchar_t *)(GetStringCSF(g_Str_MSG_PlanningModeNoStop, 0, g_Str_File_PlanMgr_cpp, 3233));
       AddMessageListPlayerMessage(v3, 480); /*0x63a032*/
       PlayVocClass(g_RulesClass_Instance->Scorches1[3], 0x2000, 1.0, 0); /*0x63a04f*/
     }
   }
   else if ( v1 == 7 && !g_PlanningModeActive ) /*0x63a05c*/
   {
-    g_PlanningModeActive = (wchar_t *)(1);
-    StringCSF = GetStringCSF(g_Str_MSG_PlanningModeNoScatter, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a076*/
+    g_PlanningModeActive = (int)((wchar_t *)(1));
+    StringCSF = (wchar_t *)(GetStringCSF(g_Str_MSG_PlanningModeNoScatter, 0, g_Str_File_PlanMgr_cpp, 3233));
     goto LABEL_10; /*0x63a076*/
   }
   return PlayVocClass(g_RulesClass_Instance->Scorches1[3], 0x2000, 1.0, 0); /*0x63a0c0*/

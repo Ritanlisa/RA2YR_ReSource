@@ -18,7 +18,7 @@
 namespace gamemd {
 INIClass * * UnitTypeClass::ReadINIEntry()
 {
-  int v1; // ebp
+  char * v1;
   int i; // edi
   unsigned int *v3; // esi
   int v4; // eax
@@ -29,16 +29,16 @@ INIClass * * UnitTypeClass::ReadINIEntry()
   char Buffer[12]; // [esp+1Ch] [ebp-8Ch] BYREF
   char Source[128]; // [esp+28h] [ebp-80h] BYREF
 
-  v1 = (char *)(0);
-  v9 = this; /*0x6b4de3*/
+  v1 = (char *)((int)((char *)(0)));
+  v9 = (char *)(this);
   INIClass::ClearSection((int)aSmudge, 0); /*0x6b4de7*/
   v7 = 0; /*0x6b4dec*/
   do /*0x6b4e8e*/
   {
     for ( i = 0; i < 512; ++i ) /*0x6b4df0*/
     {
-      v8[0] = i; /*0x6b4df6*/
-      v8[1] = v1; /*0x6b4e01*/
+      v8[0] = (int16_t)(i);
+      v8[1] = (int16_t)(v1);
       v3 = CellCoord::To_CellObj(&MapClass_Instance, v8); /*0x6b4e0b*/
       v4 = v3[18]; /*0x6b4e0d*/
       if ( v4 != -1 && !*((unsigned char *)v3 + 287) ) /*0x6b4e15*/
@@ -162,7 +162,7 @@ void UnitTypeClass_CreateUnit(void * a1, void * a2)
   int v11; // edx
   unsigned int v13[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v4 = operator new(0x8E8u); /*0x7474bb*/
+  v4 = (void *)((char)(operator new(0x8E8u)));
   if ( !v4 ) /*0x7474c5*/
     return 0; /*0x7474c5*/
   v5 = (int *)UnitClass::Construct((int)v4, (int)this, ppv); /*0x7474d8*/

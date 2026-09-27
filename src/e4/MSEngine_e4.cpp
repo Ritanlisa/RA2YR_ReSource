@@ -73,8 +73,8 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
         }
       }
       this->q004 = (void *)(v7);
-      this->q008 = v3; /*0x5acdf1*/
-      this->IsAllocated = v5 == 0; /*0x5acdf4*/
+      this->q008 = (unsigned int)((void *)(v3));
+      this->IsAllocated = (void *)(v5 == 0);
       return 1; /*0x5acdfa*/
     }
     else
@@ -153,14 +153,14 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
       }
     }
     this->q004 = (void *)(v7);
-    this->q008 = v3; /*0x5acf8b*/
-    this->IsAllocated = v5 == 0; /*0x5acf8e*/
+    this->q008 = (unsigned int)((void *)(v3));
+    this->IsAllocated = (void *)(v5 == 0);
   }
   else
   {
     (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5acf97*/
   }
-  v12 = (unsigned int)(this->q008);
+  v12 = (void *)((unsigned int)(this->q008));
   if ( v12 < this->q010 ) /*0x5acfa2*/
     this->q010 = v12; /*0x5acfa4*/
   return 1; /*0x5acfa7*/
@@ -270,7 +270,7 @@ void MSEngine::Destruct()
     if ( v7 ) /*0x5d1b85*/
       (**v7)(v7, 1); /*0x5d1b8b*/
   }
-  v8 = (void *)(&this->u32_18);
+  v8 = (unsigned int *)((void *)(&this->u32_18));
   (*(void (__thiscall **)(unsigned int *))(this->u32_18 + 12))&this->q018; /*0x5d1b9d*/
   v9 = this->q008; /*0x5d1ba0*/
   v10 = &this->q008; /*0x5d1ba3*/
@@ -483,7 +483,7 @@ VectorClass_flat * MSEngine::QueryInterface(char a2)
     this->Items = 0; /*0x5ad4f0*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->Capacity = 0; /*0x5ad501*/
+  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x5ad508*/
     RA2_OPDEL(); /*0x5ad50b*/
   return this; /*0x5ad515*/
@@ -503,7 +503,7 @@ DynamicVector * MSEngine::Constructor(char a2)
     this->Items = 0; /*0x5ad540*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x5ad551*/
+  this->q008 = (unsigned int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x5ad558*/
     RA2_OPDEL(); /*0x5ad55b*/
   return this; /*0x5ad565*/

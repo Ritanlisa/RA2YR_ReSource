@@ -145,7 +145,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             BufferIOFileClass::Dtor(v20); /*0x5f8ff7*/
           }
         }
-        v25 = (unsigned int)(0);
+        v25 = (void **)((unsigned int)(0));
         Vector::Clear((int)v24); /*0x5f9013*/
         v23[0] = &off_7E1668; /*0x5f9021*/
         BufferIOFileClass::Dtor(v23); /*0x5f9025*/

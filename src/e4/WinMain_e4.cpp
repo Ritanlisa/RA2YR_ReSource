@@ -87,7 +87,7 @@
 namespace gamemd {
 void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
-  unsigned int v3;
+  ObjectClass * v3;
   unsigned int *v4; // eax
   unsigned char *v5; // esi
   int v6; // edi
@@ -103,19 +103,19 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   unsigned int *v16; // eax
   int v17; // esi
   uint8_t result; // al
-  ObjectClass * v19;
+  unsigned int v19;
   int v20; // [esp+18h] [ebp+4h]
 
-  v3 = (gamemd::ObjectClass *)(dword_ABF168);
-  dword_ABF230 = aP0; /*0x5bc190*/
-  hWndParent = a2; /*0x5bc196*/
-  byte_ABF238 = a3; /*0x5bc19c*/
+  v3 = (unsigned int)((gamemd::ObjectClass *)((unsigned int)((gamemd::ObjectClass *)(dword_ABF168))));
+  dword_ABF230 = (unsigned int)((gamemd::ObjectClass *)(aP0));
+  hWndParent = (int)(a2);
+  byte_ABF238 = (gamemd::ObjectClass *)(a3);
   v20 = 0; /*0x5bc1a1*/
   v19 = dword_ABF168; /*0x5bc1a5*/
   do /*0x5bc24f*/
   {
     v4 = (unsigned char *)(operator new(0x2738u));
-    v5 = v4; /*0x5bc1b3*/
+    v5 = (unsigned char *)(v4);
     if ( v4 ) /*0x5bc1ba*/
     {
       v4[2503] = 0; /*0x5bc1c0*/
@@ -361,17 +361,17 @@ void* sub_7B84F0()
   result = (HANDLE)(hMutex);
   if ( !hMutex ) /*0x7b8500*/
   {
-    result = (int)(CreateMutexA(0, 0, 0));
-    hMutex = result; /*0x7b850b*/
+    result = (HANDLE)((int)(CreateMutexA(0, 0, 0)));
+    hMutex = (int)(result);
   }
   if ( !dword_B7816C ) /*0x7b8516*/
   {
     if ( result ) /*0x7b851e*/
     {
       dword_B78138 = (unsigned int)(0);
-      dword_B78140 = 0; /*0x7b852a*/
-      dword_B78150 = 0; /*0x7b8530*/
-      dword_B78148 = 16; /*0x7b8536*/
+      dword_B78140 = (unsigned int)(0);
+      dword_B78150 = (unsigned int)(0);
+      dword_B78148 = (unsigned int)(16);
       dword_B7814C = 0; /*0x7b8540*/
       dword_B7813C = 0; /*0x7b8546*/
       result = CreateThread(0, 0x1000u, (LPTHREAD_START_ROUTINE)sub_7B8610, &dword_B78138, 0, &dword_B78158); /*0x7b8562*/

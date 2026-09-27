@@ -29,7 +29,7 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
       (*(void (__thiscall **)(unsigned int *))(v3[240] + 12))(v3 + 240); /*0x7718cf*/
     }
     Ticks = (DWORD *)(Timer::GetTicks());
-    v4 = v3 + 235; /*0x7718e1*/
+    v4 = (DWORD *)(v3 + 235);
     *v4 = Ticks; /*0x7718e7*/
     v4[1] = v6; /*0x7718e9*/
     v4[2] = 0; /*0x7718ec*/

@@ -226,7 +226,7 @@ char IsometricTileTypeClass::SetCapacity(int a2, unsigned int * a3)
   {
     (*(void (__thiscall **)(void *))(((unsigned int)(this->vtable22))))(this); /*0x54a45e*/
   }
-  v7 = (unsigned char)(this->vtable3);
+  v7 = (void *)((unsigned char)(this->vtable3));
   if ( v7 < this->q010 ) /*0x54a469*/
     this->q010 = v7; /*0x54a46b*/
   return 1; /*0x54a46e*/
@@ -264,8 +264,8 @@ DynamicVector * IsometricTileTypeClass::Constructor(char a2)
     RA2_OPDEL(v3); /*0x54a778*/
     this->vtable2 = 0; /*0x54a780*/
   }
-  this->q034 = (gamemd::DynamicVector *)(0);
-  this->vtable3 = 0; /*0x54a791*/
+  this->q034 = (unsigned char)((gamemd::DynamicVector *)(0));
+  this->vtable3 = (unsigned int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x54a798*/
     RA2_OPDEL(); /*0x54a79b*/
   return this; /*0x54a7a5*/
@@ -284,7 +284,7 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
     if ( a3 ) /*0x54a876*/
     {
       this->vtable2 = (unsigned int *)(a3);
-      return this; /*0x54a87e*/
+      return (unsigned int *)(this);
     }
     this->vtable2 = (unsigned int)(operator new(4 * a2));
     this->q034 = 1; /*0x54a890*/

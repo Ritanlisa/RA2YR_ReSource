@@ -245,7 +245,7 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
   int v2; // [esp+0h] [ebp-4h]
 
   result = (int)(*this);
-  v2 = *this; /*0x70ece5*/
+  v2 = (int)(*this);
   if ( *this ) /*0x70ece5*/
   {
     result = this->vtable2; /*0x70eceb*/

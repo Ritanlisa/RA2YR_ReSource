@@ -36,12 +36,12 @@ int IPXManagerClass::sendPacket(int a2, int a3, int a4)
 namespace gamemd {
 int IPXManagerClass::send(int a2)
 {
-  int v2; // edx
-  int result; // eax
+  unsigned int * v2;
+  unsigned int * result;
   unsigned int *i; // ecx
 
-  v2 = (unsigned int *)(*(&this->Initialized7));
-  result = 0; /*0x541043*/
+  v2 = (int)((unsigned int *)(*(&this->Initialized7)));
+  result = (int)((unsigned int *)(0));
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
   for ( i = &this->q028; *(unsigned int *)(*i + 100) != a2; ++i ) /*0x54104f*/
@@ -49,7 +49,7 @@ int IPXManagerClass::send(int a2)
     if ( ++result >= v2 ) /*0x54105f*/
       return -1; /*0x54105f*/
   }
-  return result; /*0x541064*/
+  return (int)(result);
 }
 } // namespace gamemd
 // 0x541070

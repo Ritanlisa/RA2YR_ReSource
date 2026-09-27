@@ -35,6 +35,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Draw_e4.hpp"
+#include "e4/classes/E4Recv_4B0DF0_e4.hpp"
 
 // 0x4C1440
 namespace gamemd {
@@ -275,7 +276,7 @@ void InitializeRadialGradientTexture()
                 if ( dword_8A0E04 ) /*0x4c17f1*/
                 {
                   v3 = (unsigned short *)(malloc(0x20000u));
-                  v12 = v3; /*0x4c1802*/
+                  v12 = (unsigned short *)(v3);
                   if ( !v3 ) /*0x4c1806*/
                     return 2; /*0x4c19a2*/
                   v4 = -128; /*0x4c180c*/
@@ -552,11 +553,11 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
   int v12; // eax
   int16_t v14; // [esp+10h] [ebp-10h] BYREF
   char v15; // [esp+12h] [ebp-Eh]
-  int v16; // [esp+14h] [ebp-Ch] BYREF
+  unsigned char * v16;
   int v17; // [esp+18h] [ebp-8h]
   int v18; // [esp+1Ch] [ebp-4h]
 
-  v16 = (unsigned char *)(a2);
+  v16 = (int)((unsigned char *)(a2));
   if ( !a3 || !a2 ) /*0x4c38fb*/
     return a4; /*0x4c38fb*/
   v5 = a4; /*0x4c3901*/

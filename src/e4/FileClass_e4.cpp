@@ -50,7 +50,7 @@ int FileClass::Open(int a2)
     return 1; /*0x65cc0b*/
   if ( !a2 ) /*0x65cc17*/
   {
-    FileA = (int)(CreateFileA((LPCSTR)this->q018, 0x80000000, 1u, 0, 3u, 0x80u, 0));
+    FileA = (HANDLE)((int)(CreateFileA((LPCSTR)this->q018, 0x80000000, 1u, 0, 3u, 0x80u, 0)));
     this->q014 = (int)FileA; /*0x65cc62*/
     if ( FileA == (HANDLE)-1 ) /*0x65cc65*/
       return 0; /*0x65cc6b*/
@@ -111,7 +111,7 @@ int FileClass::Read(BufferIOFileClass * aP1, AbstractClass * aP2)
   else
   {
     v6 = (gamemd::AbstractClass *)(this->vt_slot_40(0, 1));
-    v7 = aP2; /*0x65cd2d*/
+    v7 = (gamemd::AbstractClass *)(aP2);
     if ( aP2 >= this->q010 - v6 ) /*0x65cd35*/
       v7 = this->q010 - v6; /*0x65cd37*/
   }

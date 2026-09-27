@@ -420,7 +420,7 @@ int Options::DeleteAndZero()
     v3 = 0; /*0x6244ed*/
     do /*0x62450e*/
     {
-      v4 = this->q008 + v3; /*0x6244f4*/
+      v4 = (void *)(this->q008 + v3);
       DeleteAndZero::Alt((void **)(v4 + 8)); /*0x6244f9*/
       DeleteAndZero::Alt((void **)(v4 + 4)); /*0x624501*/
       result = *this; /*0x624506*/

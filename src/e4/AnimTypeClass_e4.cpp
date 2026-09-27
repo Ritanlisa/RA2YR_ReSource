@@ -227,8 +227,8 @@ void* AnimTypeClass::GetWarhead(int a2)
         this->ImageAllocated = 0; /*0x427b98*/
       }
       v4 = (int)(this->ImageFile);
-      v5 = (const char *)(&this->u32_C84); /*0x427ba5*/
-      this->Image = 0; /*0x427bad*/
+      v5 = (int)((const char *)(&this->u32_C84));
+      this->Image = (int)(0);
       if ( !v4 ) /*0x427bb7*/
         v5 = (const char *)(&this->vtable46); /*0x427bb9*/
       _makepath(Buffer, 0, 0, v5, Ext); /*0x427bcb*/

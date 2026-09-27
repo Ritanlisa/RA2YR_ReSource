@@ -39,7 +39,7 @@ struct CaptureManagerClass {
     bool CaptureManagerClass_field_41;  // 0x41
     unsigned char pad_42;  // 0x42
     unsigned int overloadLimit;  // 0x44
-    char overloadCount[4];  // 0x48
+    unsigned int overloadCount;  // 0x48
     bool q04A;  // 0x4A
     unsigned int linkCount;  // 0x4C
     unsigned char q04F;  // 0x4F

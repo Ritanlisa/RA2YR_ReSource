@@ -125,12 +125,12 @@ namespace gamemd {
 void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
 {
   int result; // eax
-  HWND DlgItem; // ebp
+  wchar_t * DlgItem;
   wchar_t *StringCSF; // eax
   HWND v7; // esi
   int v8; // edi
   wchar_t *v9; // eax
-  HouseClass * v10;
+  unsigned int v10;
   int v11; // edx
   wchar_t *v12; // eax
   unsigned int *WindowLongA; // eax
@@ -165,8 +165,8 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
     }
     else if ( a2 == 1175 ) /*0x4f18e8*/
     {
-      DlgItem = (wchar_t *)(GetDlgItem(hDlg, 1737));
-      StringCSF = GetStringCSF(aGuiLeave, 0, g_Str_File_GOptions_CPP, 547); /*0x4f1910*/
+      DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, 1737))));
+      StringCSF = (wchar_t *)(GetStringCSF(aGuiLeave, 0, g_Str_File_GOptions_CPP, 547));
       SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)StringCSF); /*0x4f1924*/
       dword_A8EE7C = 2; /*0x4f192c*/
       v7 = GetDlgItem(hDlg, 1810); /*0x4f1938*/
@@ -197,8 +197,8 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
         }
         else
         {
-          dword_A8EE7C = (wchar_t *)(3);
-          v12 = GetStringCSF(g_Str_GUI_Observe, 0, g_Str_File_GOptions_CPP, 586); /*0x4f19ef*/
+          dword_A8EE7C = (unsigned int)((wchar_t *)(3));
+          v12 = (wchar_t *)(GetStringCSF(g_Str_GUI_Observe, 0, g_Str_File_GOptions_CPP, 586));
           SendMessageA(v7, 0x4B2u, 0, (LPARAM)v12); /*0x4f19fd*/
           dword_A8EE80 = 4; /*0x4f19ff*/
         }
@@ -229,7 +229,7 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
   unsigned int *v8; // edi
   bool v9; // bl
   int v10; // esi
-  void * v11;
+  unsigned int * v11;
   void * v12;
   unsigned int * v13;
   void * v14;
@@ -263,13 +263,13 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
   unsigned int v46[22]; // [esp+54h] [ebp-6Ch] BYREF
   unsigned int v47[3]; // [esp+ACh] [ebp-14h] BYREF
   void ** v48;
-  int v49; // [esp+BCh] [ebp-4h]
+  unsigned int * v49;
   void *retaddr; // [esp+C0h] [ebp+0h]
 
   a1 = (unsigned int *)(a1);
-  a2 = a2; /*0x4f1cb3*/
-  v49 = 0; /*0x4f1cb7*/
-  v4 = (uint8_t *)String::GetOrEmpty_Alt(a1); /*0x4f1cbe*/
+  a2 = (unsigned int *)(a2);
+  v49 = (int)((unsigned int *)(0));
+  v4 = (unsigned int *)((uint8_t *)String::GetOrEmpty_Alt(a1));
   if ( !INIClass::BinarySearchSection((int)a2, v4) ) /*0x4f1cc6*/
     return 0; /*0x4f1cc6*/
   v6 = (char *)operator new(0x70u); /*0x4f1cdd*/
@@ -343,8 +343,8 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
     BufferIOFileClass::Dtor(v46); /*0x4f1eaf*/
     if ( v14 ) /*0x4f1eb6*/
     {
-      v10 = 0; /*0x4f1ec3*/
-      v43[0] = 0; /*0x4f1ec7*/
+      v10 = (unsigned int)(0);
+      v43[0] = (unsigned int)(0);
       v43[1] = 0; /*0x4f1ecb*/
       v43[2] = g_DisplayWidth; /*0x4f1ecf*/
       *(unsigned int *)Buffer = DataGlobal_8A00A8; /*0x4f1ed3*/

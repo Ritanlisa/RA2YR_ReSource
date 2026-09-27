@@ -653,7 +653,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_BuildingClass___
     this->q004 = 0; /*0x4ef5f0*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x4ef601*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x4ef608*/
     RA2_OPDEL(); /*0x4ef60b*/
   return this; /*0x4ef615*/
@@ -673,7 +673,7 @@ VectorClass_flat * ParticleSystemClass_16::QueryInterface(char a2)
     this->q004 = 0; /*0x4efd70*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = 0; /*0x4efd81*/
+  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x4efd88*/
     RA2_OPDEL(); /*0x4efd8b*/
   return this; /*0x4efd95*/
@@ -693,7 +693,7 @@ VectorClass_flat * ParticleSystemClass_32::QueryInterface(char a2)
     this->q004 = 0; /*0x4efe10*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = 0; /*0x4efe21*/
+  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x4efe28*/
     RA2_OPDEL(); /*0x4efe2b*/
   return this; /*0x4efe35*/
@@ -713,7 +713,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_TerrainClass___(
     this->q004 = 0; /*0x4efe60*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x4efe71*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x4efe78*/
     RA2_OPDEL(); /*0x4efe7b*/
   return this; /*0x4efe85*/
@@ -733,7 +733,7 @@ DynamicVector * ParticleSystemClass_32::Constructor_VectorClass_AircraftClass___
     this->q004 = 0; /*0x4eff00*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x4eff11*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x4eff18*/
     RA2_OPDEL(); /*0x4eff1b*/
   return this; /*0x4eff25*/

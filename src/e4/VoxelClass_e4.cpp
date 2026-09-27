@@ -39,11 +39,11 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   int v30; // eax
   int v31; // eax
   int16_t v32; // dx
-  int v34; // ebx
+  float * v34;
   float *inited; // eax
   float *v36; // eax
   unsigned int *Value; // eax
-  int v38; // edi
+  float * v38;
   float *v39; // eax
   float *v40; // eax
   int v41; // eax
@@ -65,10 +65,10 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   double v58; // [esp+E8h] [ebp-FCh]
   float v59; // [esp+F0h] [ebp-F4h]
   int v60; // [esp+F4h] [ebp-F0h] BYREF
-  int v61; // [esp+F8h] [ebp-ECh]
+  void * v61;
   unsigned int v62[2]; // [esp+FCh] [ebp-E8h] BYREF
-  int v63; // [esp+104h] [ebp-E0h]
-  int v64; // [esp+108h] [ebp-DCh] BYREF
+  void * v63;
+  void * v64;
   unsigned int v65[4]; // [esp+10Ch] [ebp-D8h] BYREF
   int v66; // [esp+11Ch] [ebp-C8h] BYREF
   float v67[3]; // [esp+120h] [ebp-C4h] BYREF
@@ -128,8 +128,8 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
   LABEL_21:
   if ( *(unsigned char *)(v18 + 3233) ) /*0x73c725*/
   {
-    v23 = a1[1060]; /*0x73c73a*/
-    v63 = a2; /*0x73c740*/
+    v23 = (int)(a1[1060]);
+    v63 = (unsigned int)(a2);
     v64 = a3; /*0x73c74d*/
     if ( v23 ) /*0x73c751*/
       v64 = a3 - 14; /*0x73c756*/
@@ -152,7 +152,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       0,
       0,
       v51);
-    v61 = g_DSurface_Hidden_2; /*0x73c7bd*/
+    v61 = (int)((void *)(g_DSurface_Hidden_2));
     g_DSurface_Hidden_2 = dword_B1D13C; /*0x73c7c3*/
     v63 = 128; /*0x73c7c9*/
     v62[1] = 128; /*0x73c7cd*/
@@ -267,7 +267,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
       10240);
     if ( *(unsigned int *)(*((unsigned int *)a1 + 433) + 192) && *(unsigned int *)(*((unsigned int *)a1 + 433) + 196) && !v52 ) /*0x73cc59*/
     {
-      v34 = (float *)(*(unsigned int *)a1);
+      v34 = (float *)((int)((float *)(*(unsigned int *)a1)));
       inited = (float *)AudioConfig::InitDefault(v73); /*0x73cc75*/
       v36 = MultiplyMatrix3x4(v70, inited, v71); /*0x73cc83*/
       (*(void (__thiscall **)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v34 + 1296))( /*0x73cca8*/
@@ -306,7 +306,7 @@ void* VoxelClass_RenderObject(void * a1, void * a2, void * a3, void * a4, void *
     {
       if ( v52 ) /*0x73cd2b*/
       {
-        v38 = *(unsigned int *)a1; /*0x73cd2d*/
+        v38 = (float *)((int)((float *)(*(unsigned int *)a1)));
         v39 = (float *)AudioConfig::InitDefault(v73); /*0x73cd47*/
         v40 = MultiplyMatrix3x4(v70, v39, v71); /*0x73cd55*/
         (*(void (__thiscall **)(unsigned char *, int, unsigned int, int, unsigned int, unsigned int *, unsigned int *, float *, int, int, unsigned int))(v38 + 1296))( /*0x73cd7a*/

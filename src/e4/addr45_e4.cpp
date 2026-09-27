@@ -819,11 +819,11 @@ int Map_InitCellOffsets()
 namespace gamemd {
 void * E4Recv_45DD20::sub_45DD20()
 {
-  int v1; // edx
+  int * v1;
   int *v2; // eax
 
   v1 = (int *)(0);
-  v2 = &dword_81928C; /*0x45dd22*/
+  v2 = (int *)(&dword_81928C);
   while ( (void *)*v2 != this ) /*0x45dd29*/
   {
     v2 += 2; /*0x45dd2b*/

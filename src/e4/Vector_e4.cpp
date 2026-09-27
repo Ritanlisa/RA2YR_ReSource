@@ -100,8 +100,8 @@ char Vector::RemoveAt(AbstractClass * aP1)
   void * v2;
   void * v4;
 
-  v2 = (unsigned int)(this->q010);
-  aP1 = aP1; /*0x45ae13*/
+  v2 = (void *)((unsigned int)(this->q010));
+  aP1 = (gamemd::AbstractClass *)((unsigned int)(aP1));
   if ( aP1 >= v2 ) /*0x45ae19*/
     return 0; /*0x45ae3c*/
   v4 = v2 - 1; /*0x45ae1b*/

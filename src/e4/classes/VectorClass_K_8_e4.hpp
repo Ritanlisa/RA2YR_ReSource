@@ -7,8 +7,8 @@ namespace gamemd {
 struct VectorClass_K_8 {
 // --- flat members (BEGIN) ---
     unsigned int u32_4;  // 0x4
-    unsigned int u32_8;  // 0x8
-    unsigned int u32_C;  // 0xC
+    void* ;  // 0x8
+    void* ;  // 0xC
     unsigned char u8_10;  // 0x10
     unsigned char u8_11;  // 0x11
     unsigned int u32_14;  // 0x14
@@ -41,6 +41,8 @@ struct VectorClass_K_8 {
     unsigned int q01C;
     unsigned int q044;
     unsigned int vtable2;
+    unsigned int u32_8;
+    unsigned int u32_C;
 // --- flat members (END) ---
     unsigned int * Constructor();  // 0x4A2820
     int QueryInterface(int a1,  const void * a2,  unsigned int * a3);    // 0x6BEE50

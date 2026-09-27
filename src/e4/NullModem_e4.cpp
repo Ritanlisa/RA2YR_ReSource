@@ -17,7 +17,7 @@
 namespace gamemd {
 char NullModem_TestConnection()
 {
-  char v0; // bl
+  wchar_t * v0;
   wchar_t *String; // esi
   wchar_t *v2; // eax
   HWND v3; // eax
@@ -33,7 +33,7 @@ char NullModem_TestConnection()
   int v13; // esi
   wchar_t *v14; // eax
   wchar_t *v16; // [esp-18h] [ebp-228h]
-  char v17; // [esp+Bh] [ebp-205h]
+  wchar_t * v17;
   int v18; // [esp+Ch] [ebp-204h]
   HWND hWnd; // [esp+10h] [ebp-200h]
   unsigned char v20[4]; // [esp+14h] [ebp-1FCh] BYREF
@@ -42,10 +42,10 @@ char NullModem_TestConnection()
   unsigned int v23[6]; // [esp+114h] [ebp-FCh] BYREF
   int v24; // [esp+12Ch] [ebp-E4h]
 
-  v0 = (wchar_t *)(0);
-  v17 = 1; /*0x5f03d0*/
-  g_NetworkTestFlag = 0; /*0x5f03d5*/
-  String = GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullDlg_CPP, 6489); /*0x5f03f1*/
+  v0 = (wchar_t *)((char)((wchar_t *)(0)));
+  v17 = (wchar_t *)((char)((wchar_t *)(1)));
+  g_NetworkTestFlag = (int)((wchar_t *)(0));
+  String = (wchar_t *)(GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullDlg_CPP, 6489));
   v2 = GetStringCSF(aTxtNullConnerr, 0, g_Str_File_NullDlg_CPP, 6489); /*0x5f03f3*/
   v3 = CreateMessageBox((LPARAM)v2, (LPARAM)String, (LONG)&g_NetworkTestFlag); /*0x5f03fc*/
   hWnd = v3; /*0x5f0403*/
@@ -91,7 +91,7 @@ char NullModem_TestConnection()
         if ( (uint8_t)v24 == g_TauntCommandState ) /*0x5f054d*/
         {
           v16 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullDlg_CPP, 6530));
-          v14 = GetStringCSF(g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, g_Str_File_NullDlg_CPP, 6530); /*0x5f0655*/
+          v14 = (wchar_t *)(GetStringCSF(g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, g_Str_File_NullDlg_CPP, 6530));
           Dialog::ShowMessageBox(v5, v14, v16, 0, 0, 0); /*0x5f065f*/
           break; /*0x5f065f*/
         }
@@ -113,7 +113,7 @@ char NullModem_TestConnection()
             break; /*0x5f05d0*/
           Stream::ReadPacket((int)&g_EventManager); /*0x5f05d7*/
         }
-        v0 = 1; /*0x5f05de*/
+        v0 = (wchar_t *)(1);
         v17 = 0; /*0x5f05e0*/
       }
     }
@@ -125,7 +125,7 @@ char NullModem_TestConnection()
     if ( v17 != 1 ) /*0x5f0618*/
       goto LABEL_33; /*0x5f0618*/
   }
-  v0 = 0; /*0x5f0664*/
+  v0 = (wchar_t *)((char)(0));
   LABEL_33:
   Dialog::Destroy(hWnd); /*0x5f0666*/
   return v0; /*0x5f0673*/

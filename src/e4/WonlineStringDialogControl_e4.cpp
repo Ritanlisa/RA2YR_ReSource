@@ -312,7 +312,7 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(char a2)
     this->q004 = 0; /*0x7ad390*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = 0; /*0x7ad3a1*/
+  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x7ad3a8*/
     RA2_OPDEL(); /*0x7ad3ab*/
   return this; /*0x7ad3b5*/
@@ -332,7 +332,7 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
     this->q004 = 0; /*0x7ad3e0*/
   }
   this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = 0; /*0x7ad3f1*/
+  this->q008 = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x7ad3f8*/
     RA2_OPDEL(); /*0x7ad3fb*/
   return this; /*0x7ad405*/

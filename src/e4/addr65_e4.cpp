@@ -483,7 +483,7 @@ int Trigger_AllocateLog(int a1)
   }
   else
   {
-    result = Random::State((unsigned int *)g_ScenarioClass_Instance + 134);
+    result = (int)(Random::State((unsigned int *)g_ScenarioClass_Instance + 134));
     dword_AFA26C = result;
   }
   return result;
@@ -558,9 +558,9 @@ void RenderScoreboardSidebar(void * a1, void * a2)
   IDA_LOBYTE(v2) = byte_884B8D; /*0x653fa0*/
   if ( byte_884B8D )
   {
-    v4 = VtableStub::72F510(); /*0x653fbc*/
-    i = a1[1145]; /*0x653fd4*/
-    v42 = a1[1147]; /*0x653fe6*/
+    v4 = (int)(VtableStub::72F510());
+    i = (int)(a1[1145]);
+    v42 = (int)(a1[1147]);
     v5 = (int *)(*(int (__thiscall **)(int, int *, unsigned int))(*(unsigned int *)DSurface_Sidebar + 120))( /*0x653ff1*/
                   DSurface_Sidebar,
                   &v48,
@@ -577,8 +577,8 @@ void RenderScoreboardSidebar(void * a1, void * a2)
                       v7,
                       0,
                       25);
-    v26 = DSurface_Sidebar; /*0x654057*/
-    String = GetStringCSF(aTxtNameColon, 0, aDRa2mdpostRada, 1268); /*0x654069*/
+    v26 = (int)(DSurface_Sidebar);
+    String = (int)(GetStringCSF(aTxtNameColon, 0, aDRa2mdpostRada, 1268));
     TextRenderer::DrawText(&v45, (size_t)String, v26, v29, v32, v34, v37, v39); /*0x654074*/
     v9 = a1[1150]; /*0x654079*/
     v10 = a1[1148]; /*0x65407f*/
@@ -593,7 +593,7 @@ void RenderScoreboardSidebar(void * a1, void * a2)
     v13 = *(unsigned int *)(g_SidebarConfig + 4) == 1
         ? *(uint8_t *, void * a1, void * a2)(*(unsigned int *)(g_SidebarConfig + 372) + 14)
         : *(uint16_t *)(*(unsigned int *)(g_SidebarConfig + 372) + 28);
-    v14 = a1[1148]; /*0x654113*/
+    v14 = (int)(a1[1148]);
     i = v14 + a1[1150] - 1; /*0x654129*/
     v42 = v12; /*0x654133*/
     v43 = v14; /*0x654137*/
@@ -619,7 +619,7 @@ void RenderScoreboardSidebar(void * a1, void * a2)
           v19 = 16409; /*0x6541ba*/
           v18 = *((unsigned int *, unsigned int a1, unsigned int a2)BuildingTypeClass_AnimTable + v43->u32_16054); /*0x6541bf*/
         }
-        Buffer[0] = 0; /*0x6541d3*/
+        Buffer[0] = (unsigned int)(0);
         swprintf(Buffer, (const size_t)&off_8240B4, (const wchar_t *const)(v16 + 90154)); /*0x6541da*/
         if ( !wcslen(Buffer) ) /*0x6541e4*/
           wcscpy(Buffer, L"________"); /*0x6541fa*/
@@ -667,15 +667,15 @@ void RenderScoreboardSidebar(void * a1, void * a2)
 namespace gamemd {
 unsigned int * E4Recv_655050::sub_655050(unsigned int * v5, short * a3)
 {
-  int v3; // esi
-  int v4; // eax
+  unsigned int * v3;
+  unsigned int * v4;
   int v5; // edx
-  int v6; // edi
+  unsigned int * v6;
   int v7; // esi
 
-  v3 = (unsigned int *)(*a3);
-  v4 = a3[1]; /*0x655066*/
-  v5 = v3 + *(&this->u32_20C6) - v4; /*0x65506e*/
+  v3 = (int)((unsigned int *)(*a3));
+  v4 = (int)((unsigned int *)(a3[1]));
+  v5 = (unsigned int *)((int)(v3 + *(&this->u32_20C6) - v4));
   v6 = v3 + v4 - *(&this->u32_20C8); /*0x655075*/
   v7 = 2; /*0x655077*/
   if ( v5 == -1 ) /*0x65507c*/

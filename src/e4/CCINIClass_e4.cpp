@@ -30,8 +30,8 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   int v14; // [esp+10h] [ebp-8h]
   int i; // [esp+10h] [ebp-8h]
 
-  v2 = (int)(a2);
-  result = INIClass::GetKeyCount(a1, (uint8_t *)aAitriggertypes); /*0x41f2f5*/
+  v2 = (gamemd::CCINIClass *)((int)(a2));
+  result = (int)(INIClass::GetKeyCount(a1, (uint8_t *)aAitriggertypes));
   v5 = 0; /*0x41f2fa*/
   v14 = result; /*0x41f2fe*/
   while ( v5 < v14 ) /*0x41f302*/
@@ -127,19 +127,19 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   unsigned int v10[4]; // [esp+Ch] [ebp-A8h] BYREF
   void * v11;
   unsigned int v12[3]; // [esp+20h] [ebp-94h] BYREF
-  char v13; // [esp+2Ch] [ebp-88h]
+  MultiplayerGameMode ** v13;
   int v14; // [esp+44h] [ebp-70h]
   int v15; // [esp+48h] [ebp-6Ch]
   int v16; // [esp+4Ch] [ebp-68h]
   int v17; // [esp+50h] [ebp-64h]
   unsigned int v18;
-  int v19; // [esp+58h] [ebp-5Ch]
-  int v20; // [esp+5Ch] [ebp-58h]
+  MultiplayerGameMode ** v19;
+  MultiplayerGameMode ** v20;
   int v21[5]; // [esp+A0h] [ebp-14h] BYREF
 
   v10[1] = (unsigned int)(0);
-  v10[2] = 0; /*0x474217*/
-  v10[3] = aP1; /*0x47421b*/
+  v10[2] = (unsigned int)(0);
+  v10[3] = (unsigned int)(aP1);
   v11 = 0; /*0x47421f*/
   v5 = INIClass::LoadFile(v10, aP2); /*0x474230*/
   *(&this->u32_184) = 0; /*0x474232*/
@@ -156,11 +156,11 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   INIClass::ClearSection(g_INI_Key_Digest, 0); /*0x47427d*/
   v12[1] = 0; /*0x474286*/
   v12[2] = (gamemd::MultiplayerGameMode **)(0);
-  v13 = 0; /*0x474291*/
-  v19 = 0; /*0x474295*/
-  v20 = 0; /*0x474299*/
-  v14 = 1732584193; /*0x47429d*/
-  v15 = -271733879; /*0x4742a5*/
+  v13 = (gamemd::MultiplayerGameMode **)((char)((gamemd::MultiplayerGameMode **)(0)));
+  v19 = (gamemd::MultiplayerGameMode **)((int)((gamemd::MultiplayerGameMode **)(0)));
+  v20 = (int)((gamemd::MultiplayerGameMode **)(0));
+  v14 = (gamemd::MultiplayerGameMode **)(1732584193);
+  v15 = (gamemd::MultiplayerGameMode **)(-271733879);
   v16 = -1732584194; /*0x4742ad*/
   v17 = 271733878; /*0x4742b5*/
   v18 = -1009589776; /*0x4742bd*/
@@ -215,9 +215,9 @@ CCINIClass::CCINIClass()
     }
   }
   v6 = (unsigned int)(v2[1]);
-  v3[2] = v2; /*0x535b89*/
-  v3[1] = v6; /*0x535b8c*/
-  v7 = v2[1]; /*0x535b8f*/
+  v3[2] = (unsigned int)(v2);
+  v3[1] = (unsigned int)(v6);
+  v7 = (unsigned int)(v2[1]);
   if ( v7 ) /*0x535b94*/
     this->v3 = v3; /*0x535b96*/
   v2[1] = v3; /*0x535b99*/

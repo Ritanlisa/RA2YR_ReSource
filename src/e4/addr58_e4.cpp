@@ -42,10 +42,10 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
   unsigned int v5;
   int v7; // eax
   unsigned int v8; // eax
-  int * NeighbourContent;
+  unsigned int NeighbourContent;
   unsigned int *v10; // ebp
   unsigned int *v11; // ebx
-  int * v12;
+  unsigned int v12;
   int v13; // ebx
   unsigned short *v14; // esi
   double v15; // st7
@@ -85,8 +85,8 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
     {
       if ( (*v10 & 0x100) != 0 ) /*0x58366b*/
       {
-        NeighbourContent = (unsigned int *)((int *)Cell::GetNeighbourContent(NeighbourContent, v8));
-        v10 = NeighbourContent + 80; /*0x583680*/
+        NeighbourContent = (int *)((unsigned int)((int *)((unsigned int *)((int *)Cell::GetNeighbourContent(NeighbourContent, v8)))));
+        v10 = (unsigned int *)(NeighbourContent + 80);
         if ( (NeighbourContent[80] & 0x100) == 0 /*0x5836a5*/
           && (Cell::IsInRange(NeighbourContent) || Cell::IsInRange2(NeighbourContent))
           && NeighbourContent[59] != 3 )
@@ -136,13 +136,13 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
   LABEL_28:
         v13 = v21; /*0x583801*/
     }
-    *a0 = (gamemd::VectorClass_flat **)(v13);
-    return a0; /*0x583805*/
+    *a0 = (int)((gamemd::VectorClass_flat **)(v13));
+    return (gamemd::VectorClass_flat **)(a0);
   }
   else
   {
     *a0 = (gamemd::VectorClass_flat **)(v5[9]);
-    return a0; /*0x58361a*/
+    return (gamemd::VectorClass_flat **)(a0);
   }
 }
 }
@@ -370,7 +370,7 @@ int MarkCliffEdgePassability(int a1)
   uint16_t v4; // cx
   unsigned short *v5; // ebx
   int i; // edx
-  int v7; // esi
+  unsigned int * v7;
   unsigned int * v8;
   unsigned int v9;
   int v10; // ecx
@@ -415,8 +415,8 @@ int MarkCliffEdgePassability(int a1)
           v5 = (unsigned short *)(4 * (*(unsigned short *)(v3 + 2) >= *(unsigned short *)(v3 + 6) ? 0 : 4) + 9041544);
           for ( i = *CellStruct::Add((unsigned short *)v3, &v29, v5); i != *(unsigned int *)(v3 + 4); i = v23 ) /*0x586c71*/
           {
-            v7 = (unsigned int *)(IDA_SHIWORD(i) << 9);
-            v8 = v7 + (int16_t)i; /*0x586c95*/
+            v7 = (int)((unsigned int *)(IDA_SHIWORD(i) << 9));
+            v8 = (unsigned int *)(v7 + (int16_t)i);
             if ( v8 >= 0x40000 || (v9 = *(unsigned int **)(g_Shroud_CellArray + 4 * v8)) == 0 ) /*0x586cab*/
             {
               g_Map_GlobalCellIndex = i; /*0x586cad*/

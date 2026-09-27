@@ -19,7 +19,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
   int16_t v7; // si
   int v8; // esi
   int v9; // ecx
-  int v10; // esi
+  wchar_t * v10;
   wchar_t *StringCSF; // eax
   int v12; // [esp+Ch] [ebp-4h]
 
@@ -35,7 +35,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
     result = a3; /*0x539f3e*/
   }
   LightningStorm_Coords = (int)(result);
-  LightningStorm_Owner = a4; /*0x539f4b*/
+  LightningStorm_Owner = (int)(a4);
   if ( !LightningStorm_Active ) /*0x539f59*/
   {
     if ( a2 ) /*0x539f61*/
@@ -66,7 +66,7 @@ int LightningStorm::Start(int a1, int a2, int a3, void * a4)
       ScenarioClass::UpdateLighting(); /*0x53a009*/
       if ( IDA_LOBYTE(g_RulesClass_Instance[1].WobblesPerSecond) ) /*0x53a014*/
       {
-        v10 = (wchar_t *)(3);
+        v10 = (wchar_t *)((int)((wchar_t *)(3)));
         if ( HouseClass_Player ) /*0x53a02a*/
           v10 = *((unsigned int *)HouseClass_Player + 22549); /*0x53a02c*/
         PlayVocClass(g_RulesClass_Instance->Scorches4[3], 0x2000, 1.0, 0); /*0x53a044*/
@@ -222,7 +222,7 @@ int LightningStorm::Strike2(int a1, int a2, int a3)
     v12 = g_RulesClass_Instance; /*0x53a45f*/
     if ( g_RulesClass_Instance->GDIGateOne > 0 ) /*0x53a46c*/
     {
-      v13 = Random::State((unsigned int *)g_ScenarioClass_Instance + 134); /*0x53a47a*/
+      v13 = (unsigned int)(Random::State((unsigned int *)g_ScenarioClass_Instance + 134));
       StartAudioControllerAt( /*0x53a49e*/
         *(unsigned int *)(g_RulesClass_Instance->RepairBay[1] + 4 * (v13 % g_RulesClass_Instance->GDIGateOne)),
         (int)&v31,

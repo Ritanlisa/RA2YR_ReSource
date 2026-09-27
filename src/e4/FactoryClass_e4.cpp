@@ -47,8 +47,8 @@ int FactoryClass::UpdateProduction()
     }
     if ( this->specialItem == -1 || this->production != 54 ) /*0x4c9b5d*/
     {
-      v3 = (void *)((unsigned int *)(&this->uniqueId4));
-      Speed = Locomotor::GetSpeed((int *)(&this->uniqueId4)); /*0x4c9b68*/
+      v3 = (unsigned int *)((void *)((unsigned int *)(&this->uniqueId4)));
+      Speed = (void *)(Locomotor::GetSpeed((int *)(&this->uniqueId4)));
       if ( Speed || (Speed = this->queuedCapacity) == 0 ) /*0x4c9b76*/
       {
         this->u32_28 = 0; /*0x4c9bba*/
@@ -87,9 +87,9 @@ int FactoryClass::UpdateProduction()
         else
         {
           v7 = (unsigned int)(this->production);
-          this->q05C = 1; /*0x4c9be8*/
-          Speed = v7 - 1; /*0x4c9beb*/
-          this->production = Speed; /*0x4c9bec*/
+          this->q05C = (unsigned int)(1);
+          Speed = (void *)((unsigned int)(v7 - 1));
+          this->production = (unsigned int)(Speed);
         }
         if ( this->production == 54 ) /*0x4c9c0a*/
         {
@@ -114,7 +114,7 @@ int FactoryClass::HasProgressChanged()
 {
   void * result;
 
-  result = (int)(*(&this->ptr_243));
+  result = (void *)((int)(*(&this->ptr_243)));
   *(&this->ptr_243) = 0; /*0x4c9c63*/
   return result; /*0x4c9c67*/
 }
@@ -182,9 +182,9 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
   }
   else
   {
-    v5 = this->q120; /*0x4c9cf3*/
-    v6 = this->q140; /*0x4c9cf6*/
-    v7 = &this->onHold; /*0x4c9cf9*/
+    v5 = (int)(this->q120);
+    v6 = (int)(this->q140);
+    v7 = (int)(&this->onHold);
     if ( v6 < v5 /*0x4c9d1b*/
       || (*(unsigned char *)(v7 + 13) || !v5)
       && (v8 = *(unsigned int *)(v7 + 20), v8 > 0)
@@ -329,8 +329,8 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
             && (*(uint8_t (__thiscall **)(int, int, unsigned int))(v3->q040 + 8))(v3 + 64, v8 + v9, 0) )
           {
             v10 = (unsigned int)(v3->q050);
-            v11 = v3->q044; /*0x4ca353*/
-            v3->q050 = v10 + 1; /*0x4ca359*/
+            v11 = (unsigned int)(v3->q044);
+            v3->q050 = (unsigned int)(v10 + 1);
             *(unsigned int *)(v11 + 4 * v10) = a2; /*0x4ca360*/
           }
           v6 = a1; /*0x4ca367*/
@@ -719,7 +719,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
 
   if ( a2 ) /*0x4ca93c*/
   {
-    this->IsInitialized = 0; /*0x4ca946*/
+    this->IsInitialized = (unsigned int *)(0);
     if ( a3 ) /*0x4ca94c*/
       v4 = a3; /*0x4ca962*/
     else
@@ -740,7 +740,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
           this->Items = 0; /*0x4ca9ae*/
         }
       }
-      this->Items = v4; /*0x4ca9b7*/
+      this->Items = (unsigned int)(v4);
       this->Capacity = a2; /*0x4ca9bf*/
       this->IsAllocated = a3 == 0; /*0x4ca9c2*/
       return 1; /*0x4ca9c8*/
@@ -818,8 +818,8 @@ VectorClass_flat * FactoryClass_33::QueryInterface(char a2)
     RA2_OPDEL(v3); /*0x4cab68*/
     this->Items = 0; /*0x4cab70*/
   }
-  this->IsAllocated = 0; /*0x4cab7b*/
-  this->Capacity = 0; /*0x4cab81*/
+  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
+  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x4cab88*/
     RA2_OPDEL(); /*0x4cab8b*/
   return this; /*0x4cab95*/

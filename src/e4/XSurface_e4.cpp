@@ -43,7 +43,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
   int v39; // [esp+18h] [ebp-8h]
   int v40; // [esp+1Ch] [ebp-4h]
   int v41; // [esp+24h] [ebp+4h]
-  int v42; // [esp+28h] [ebp+8h]
+  unsigned char * v42;
   unsigned char *v43; // [esp+34h] [ebp+14h]
 
   v7 = *a1; /*0x7ba8cd*/
@@ -69,7 +69,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
     v13 = (a6 + v11) % 16; /*0x7ba927*/
     v41 = -1; /*0x7ba92c*/
   }
-  v42 = (unsigned char *)((*(int (__thiscall **)(void *))(((unsigned int)(this->q02C2))))(this));
+  v42 = (int)((unsigned char *)((*(int (__thiscall **)(void *))(((unsigned int)(this->q02C2))))(this)));
   v14 = (unsigned short *)(*(int (__thiscall **)(void *, int, int))(((unsigned int)(this->q0242))))(this, v7, v40); /*0x7ba94f*/
   v43 = v14; /*0x7ba954*/
   if ( v14 )
@@ -415,8 +415,8 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
   int v54; // [esp+88h] [ebp+10h]
   int v55; // [esp+88h] [ebp+10h]
 
-  v4 = (int)(this);
-  v5 = a2[2]; /*0x7bb05e*/
+  v4 = (void *)((int)(this));
+  v5 = (int)(a2[2]);
   if ( v5 <= 0 ) /*0x7bb066*/
     return 0; /*0x7bb066*/
   if ( a2[3] <= 0 ) /*0x7bb071*/
