@@ -14,7 +14,6 @@ struct IPXConnClass {
     int PacketsSent;  // 0x10
     unsigned int q011;  // 0x11
     int PacketsReceived;  // 0x14
-    unsigned int Socket;  // 0x18
     unsigned int RemoteAddress;  // 0x1C
     int q020;  // 0x20
     int q024;  // 0x24

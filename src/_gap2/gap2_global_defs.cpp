@@ -20025,7 +20025,7 @@ int RulesClass::ResetRules() {
   }
   if ( g_GameMode_Current[0] && g_GameStateFlags ) /*0x668b9e*/
   {
-    GameConfig::Constructor(g_GameStateFlags); /*0x668ba0*/
+    GameConfig::Constructor((GameConfig *)g_GameStateFlags); /*0x668ba0*/
     RulesClass::Addition(v16); /*0x668baa*/
   }
   LABEL_99:

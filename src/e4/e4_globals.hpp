@@ -590,7 +590,7 @@ extern int Block;  // data: 0x87C484
 extern int BombClass_Array;  // data: 0xA8E828
 extern int BounceClass_Array;  // data: 0xA8ED58
 extern int BridgeDestruction;  // data: 0xA8B260
-extern int Buffer;  // data: 0x8A3A08
+// Buffer @0x8A3A08 removed G34: name clashed with class Buffer; use byte_8A3A08 (ida_globals.h)
 extern int BuildingClass_Array;  // data: 0xA8EB40
 extern int BuildingClass_InstanceArray;  // data: 0xB0F4EC
 extern int BuildingTypeClass_AnimTable;  // data: 0xB054D4

@@ -819,6 +819,13 @@ MODULE_SKIP = {"render", "network"}
 LNK_SKIP_MEMBERS = {
     ("TEventClass", "Execute"),
     ("TActionClass", "ExecuteAction"),
+    # G34: real definitions live in the e4 universe (GameConfig_e4.cpp,
+    # against GameConfig_e4.hpp's full layout). The app universe's
+    # cmdline.hpp GameConfig is a 4-bool legacy struct — bodies emitted
+    # here referenced this->q038/CCINIClass which don't exist in that TU
+    # (VSCode-visible errors; app/gap2_defs.cpp is not in the build).
+    ("GameConfig", "Constructor"),
+    ("GameConfig", "BuildChecksum"),
 }
 
 

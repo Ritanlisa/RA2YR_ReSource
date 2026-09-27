@@ -15,7 +15,6 @@ struct CCToolTip {
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned int q01C;  // 0x1C
-    unsigned int TextBuffer;  // 0x20
     unsigned int q024;  // 0x24
     unsigned int q028;  // 0x28
     unsigned char q02C;  // 0x2C

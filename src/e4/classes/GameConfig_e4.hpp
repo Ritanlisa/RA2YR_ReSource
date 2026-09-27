@@ -10,7 +10,7 @@ struct GameConfig {
     unsigned char q000;  // 0x0
     Coord * ptr_4;  // 0x4
     unsigned char q008;  // 0x8
-    void * q038;  // 0x38
+    CCINIClass * q038;  // 0x38
     unsigned char q03C;  // 0x3C
     unsigned char q060;  // 0x60
     bool no_cd;  // 0xCD
@@ -86,8 +86,11 @@ struct GameConfig {
     unsigned char q4870;  // 0x4870
     unsigned char q4874;  // 0x4874
     unsigned char q487C;  // 0x487C
-    unsigned int Constructor;
 // --- flat members (END) ---
+    void * ptr_41;  // 0x41 (ctor-installed filename pointer, member_set evidence 0x5D67B0)
+public:  // --- gap2/e4 method declarations ---
+    static void * Constructor(GameConfig * aP1);  // 0x5D67B0
+    static int BuildChecksum(void * aP1);  // 0x77E7A0
     char * ComputeCRC();
     int ComputeHash();
 };

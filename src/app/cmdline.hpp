@@ -21,10 +21,9 @@ struct GameConfig {
     bool spawn_mode = false;
     bool windowed = false;
     bool enable_log = false;
-public:  // --- gap2 auto-generated stub declarations (BEGIN) ---
-    void* Constructor();  // 0x5D67B0
-    int BuildChecksum();  // 0x77E7A0
-    // --- gap2 auto-generated stub declarations (END) ---
+    // G34: Constructor/BuildChecksum decls removed — real definitions live
+    // in the e4 universe (GameConfig_e4.cpp); nothing in the app universe
+    // calls them. See gen_gap2_defs.py LNK_SKIP_MEMBERS.
     public:  // funcs-move
     // === FUNCS-MOVE (BEGIN) ===
     void* ComputeCRC();  // 0x5e84d0

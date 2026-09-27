@@ -67,7 +67,11 @@ for p in sorted((SRC / 'e4').glob('*.cpp')):
         cls, mth = m.group('cls'), m.group('mth')
         if (cls, mth) not in groups:
             continue
-        ret = re.match(r'^[\w\s\*<>,:&]*', m.group(0)).group(0).strip()
+        # ret = everything before the cls::mth match; the old `re.match`
+        # with ':' in its char class swallowed `Cls::Mth` into ret and
+        # emitted `static double Cls::Mth Mth(...)` (C4596 qualified-member)
+        ret = m.group(0)[:m.start('cls')].strip()
+        ret = re.sub(r'\s+', ' ', ret)
         if ret in kw or not ret:
             ret = 'int'
         params = ' '.join(m.group('params').split()).replace('gamemd::', '')

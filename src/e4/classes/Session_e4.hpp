@@ -37,8 +37,6 @@ struct Session {
     unsigned int MaxAvgRoundTrip;  // 0x38C
     unsigned int FrameSyncStalls;  // 0x390
     unsigned int CommandCoundStalls;  // 0x394
-    unsigned int LoadGame;  // 0x680
-    unsigned int SaveGame;  // 0x684
     unsigned int SawCompletion;  // 0x689
     unsigned int OutOfSync;  // 0x68A
     unsigned int GameVersion;  // 0x68C

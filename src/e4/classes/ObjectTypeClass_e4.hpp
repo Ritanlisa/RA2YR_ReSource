@@ -1694,7 +1694,6 @@ struct ObjectTypeClass {
     unsigned int uniqueId4;
     unsigned int u32_DC7;
     unsigned int u32_DC8;
-    unsigned int q0A4;
     unsigned int u32_DC9;
     unsigned int q0E00;
     unsigned int q0E01;

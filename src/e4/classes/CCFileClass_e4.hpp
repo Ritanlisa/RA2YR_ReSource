@@ -155,7 +155,6 @@ struct CCFileClass {
     unsigned int Handle8;
     unsigned int Load_1;
     unsigned int Reset_8;
-    unsigned int Construct;
 // --- flat members (END) ---
     AudioController * * Close();
     int Destruct();
@@ -168,6 +167,7 @@ struct CCFileClass {
     static double Reset(...);  // C2597 interim stub
     static double GetSize(...);  // C2597 interim stub
     void Construct2(void* filename);  // init file object with name
+    static void Construct(void * self, void * aP2);  // 0x478EB1 ctor (data-member artifact removed G34)
 };
 
 } // namespace gamemd

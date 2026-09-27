@@ -207,7 +207,6 @@ struct TacticalMap {
     unsigned int q5464;  // 0x5464
     unsigned int q5490;  // 0x5490
     unsigned int NeedsSaveOrLink;
-    unsigned int Render;
     unsigned int abstractFlags;
     unsigned int nextArrayIndex;
     unsigned int objectTypeFlags;

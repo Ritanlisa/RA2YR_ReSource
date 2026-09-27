@@ -8,7 +8,6 @@ struct WideString {
     void* vfptr;  // minimal E2 declaration
     int WordWrap(wchar_t * a0,  CampaignScore * aP1,  int a3,  CampaignScore * aP3,  int a5);    // 0x5D4B20
     char Replace(CampaignScore * aP1,  wchar_t * String);    // 0x7B73F0
-    int Hash();  // 0x5DAC00
     wchar_t * Trim();  // 0x727D60
     wchar_t ** Assign(CampaignScore * aP1);  // 0x7B66D0
     wchar_t ** AssignFromPtr(const wchar_t ** a2);  // 0x7B6720

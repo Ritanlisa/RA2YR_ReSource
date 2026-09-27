@@ -40,8 +40,8 @@ int   g_BuildingTypeClass_Count = 0;        // 0x8B4160
 void* g_AnimTypeCount = nullptr;           // 0x8B4154
 void* g_TriggerTypeCount = nullptr;        // 0xA83C6C
 int   g_TriggerClassCount = 0;             // 0xA83C78
-void* CCINIClass_INI_Rules = nullptr;      // 0x887048
-void* CCINIClass_INI_Art = nullptr;         // 0x887180
+// G34: CCINIClass_INI_Rules / _INI_Art definitions moved to ida_globals.cpp
+// (declared in ida_globals.h; zero-init matches nullptr)
 int   g_GameModeOptions = 0;               // 0xA8EB60
 int   g_LoadScreenFlag = 0;                // 0x8A00A0
 extern int   dword_81C1D0;              // 0x81C1D0 -- CD availability (globals.cpp)

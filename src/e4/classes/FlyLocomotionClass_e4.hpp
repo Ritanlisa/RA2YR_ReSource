@@ -506,7 +506,6 @@ struct FlyLocomotionClass {
 // --- flat members (END) ---
     FlyLocomotionClass * ProcessMove(char a2);
     int BeginMove(int * a1, int * a2);
-    int LocomotionClass();
     int StubReturn96();
     int ddtor(int a1, unsigned int * a2);
     void ILocomotion_AcquireHunterSeekerTarget(int a1);

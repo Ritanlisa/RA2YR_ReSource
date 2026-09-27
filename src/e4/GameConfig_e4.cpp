@@ -15,6 +15,7 @@
 #include "e4/classes/GameClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/BombClass_e4.hpp"
+#include "e4/classes/GameOption_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
@@ -28,15 +29,15 @@ namespace gamemd {
 char * GameConfig::ComputeCRC()
 {
   unsigned int v0; // ebx
-  int *v1; // ebp
+  unsigned int *v1; // ebp
   int v2; // edx
   unsigned int v3; // edi
   int v4; // eax
   int v5; // eax
-  int *v6; // esi
+  unsigned int *v6; // esi
   int v7; // ebp
   char *v8; // ebp
-  int *v10; // [esp+10h] [ebp-104h]
+  unsigned int *v10; // [esp+10h] [ebp-104h]
   unsigned char v11[256]; // [esp+14h] [ebp-100h] BYREF
 
   v0 = 0; /*0x5e84e8*/
@@ -57,7 +58,7 @@ char * GameConfig::ComputeCRC()
       do /*0x5e853d*/
       {
         v5 = *(uint8_t *)v6 | (v5 << 8); /*0x5e8539*/
-        v6 = (int *)((char *)v6 + 1); /*0x5e853b*/
+        v6 = (unsigned int *)((char *)v6 + 1); /*0x5e853b*/
         --v7; /*0x5e853c*/
       }
       while ( v7 ); /*0x5e853d*/
@@ -88,7 +89,7 @@ int GameConfig::ComputeHash()
   int v1; // ebp
   int i; // esi
   int v3; // eax
-  int v4; // eax
+  void *v4; // eax
   void *v6[3]; // [esp+10h] [ebp-C4h] BYREF
   unsigned int v7[10]; // [esp+1Ch] [ebp-B8h] BYREF
   char v8; // [esp+44h] [ebp-90h]
@@ -106,7 +107,7 @@ int GameConfig::ComputeHash()
     v3 = MultiplayerGameMode::Find((void *)i); /*0x679dbb*/
     if ( v3 ) /*0x679dc2*/
     {
-      v4 = GameConfig::Constructor(v3); /*0x679dc6*/
+      v4 = GameConfig::Constructor((GameConfig *)v3); /*0x679dc6*/
       v0 += Hash::ComputeHashSHA1(v4); /*0x679dd2*/
     }
   }
@@ -121,15 +122,69 @@ int GameConfig::ComputeHash()
   v10 = 0; /*0x679e1b*/
   v11 = 0; /*0x679e1f*/
   v6[0] = &CCINIClass_Vtable; /*0x679e23*/
-  CCFileClass::Construct(v12, g_Str_File_CoopCampMD_ini); /*0x679e2b*/
-  if ( CCINIClass::Load(v6, (int)v12, 0, 0) ) /*0x679e3b*/
+  CCFileClass::Construct(v12, (void *)g_Str_File_CoopCampMD_ini); /*0x679e2b*/
+  if ( CCINIClass::Load((CCINIClass *)v6, v12, 0, 0) ) /*0x679e3b*/
     dword_B053B4 = Hash::ComputeHashSHA1((int)v6); /*0x679e4d*/
   byte_B053B8 = 1; /*0x679e59*/
   v14 = 0; /*0x679e68*/
-  Vector::Clear((int)v13); /*0x679e6f*/
-  v12[0] = &off_7E1668; /*0x679e78*/
+  ((Vector *)v13)->Clear(); /*0x679e6f*/
+  v12[0] = (unsigned int)&off_7E1668; /*0x679e78*/
   BufferIOFileClass::Dtor(v12); /*0x679e80*/
-  HashTable::DestroyHashTableINIClass(v6); /*0x679e89*/
+  DestroyHashTableINIClass((void *)v6); /*0x679e89*/
   return dword_B053B4 + v0; /*0x679e97*/
 }
+} // namespace gamemd
+
+// 0x5D67B0
+namespace gamemd {
+void * GameConfig::Constructor(GameConfig * aP1)
+{
+  if (!aP1->q038) {
+    // CCINIClass constructor initializes all internal members
+    aP1->q038 = new CCINIClass();
+    if (aP1->q038) {
+      // Load INI data from file
+      CCFileClass file;
+      file.Construct2(aP1->ptr_41);
+      if (file.Open(0))
+        CCINIClass::Load(aP1->q038, &file, 0, 0);
+    }
+  }
+  return aP1->q038;
+}
+
+// 0x77E7A0
+int GameConfig::BuildChecksum(void * aP1)
+{
+  (void)aP1;
+  int v2; // ecx
+  int *v3; // eax
+  int v4; // esi
+  char v5; // al
+  unsigned __int8 v6; // al
+  int Entry; // eax
+  int v9; // [esp-10h] [ebp-1Ch]
+  int v10; // [esp-Ch] [ebp-18h]
+  int v11; // [esp-8h] [ebp-14h]
+  const char *v12; // [esp-4h] [ebp-10h]
+
+  v2 = dword_B76B1C; /*0x77e7a5*/
+  if ( dword_B76B1C > 0 ) /*0x77e7ad*/
+  {
+    v3 = (int *)dword_B76E58; /*0x77e7af*/
+    do /*0x77e7c0*/
+    {
+      v3 += 37; /*0x77e7b6*/
+      --v2; /*0x77e7bb*/
+    }
+    while ( v2 ); /*0x77e7c0*/
+  }
+  v4 = CCINIClass_RulesHash ^ CCINIClass_AIHash ^ CCINIClass_ArtHash; /*0x77e7db*/
+  v5 = ((GameOption *)&Destination)->CheckDuplicate(); /*0x77e7dd*/
+  v6 = Hash_Check_5E9580(v5 == 0); /*0x77e7e8*/
+  v9 = Hash_Check_5E94D0(v6); /*0x77e7f8*/
+  Entry = GameOptions_GetEntry(); /*0x77e7fa*/  // IDA: GameOptions::GetEntry
+  return sprintf((char *)&byte_8A3A08, "%d,%d,%d,%d,%d,%s", Entry, v4, v9, v10, v11, v12); /*0x77e80e*/  // IDA global: Buffer @0x8A3A08 (renamed: clashes with class Buffer)
+}
+
 } // namespace gamemd

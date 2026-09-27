@@ -5,7 +5,6 @@ namespace gamemd {
 
 struct Credits {
     void* vfptr;
-    char Screen();
 };
 
 } // namespace gamemd

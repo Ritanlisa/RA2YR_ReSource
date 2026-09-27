@@ -3,7 +3,6 @@
 #include "e4/e4_globals.hpp"
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/e4_protos.h"
-#include "e4/classes/Init_e4.hpp"
 
 namespace gamemd {
 
@@ -207,4 +206,10 @@ double WTFMode::Shutdown(...) { return 0; }
 double WinAPI::Wrapper(...) { return 0; }
 double WordVector::Constructor(...) { return 0; }
 
+} // namespace gamemd
+
+// G34 supplies (GameConfig TU residual)
+namespace gamemd {
+void CCFileClass::Construct(void * self, void * aP2) { (void)self; (void)aP2; }
+void BufferIOFileClass::Dtor(void * self) { (void)self; }
 } // namespace gamemd

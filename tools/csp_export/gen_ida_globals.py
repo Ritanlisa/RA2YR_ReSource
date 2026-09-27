@@ -27,7 +27,9 @@ LABEL = re.compile(
     r'\b((?:dword|word|byte|qword|float|double|dbl|off|unk|stru)'
     r'_[0-9A-Fa-f]{5,8}'
     r'|g_[A-Za-z]\w*_Instance'
-    r'|[A-Z]\w*_Instance)\b')
+    r'|[A-Z]\w*_Instance'
+    r'|[A-Z]\w*_Vtable'
+    r'|CCINIClass_INI_[A-Za-z]+)\b')
 TYPE = {'dword': 'unsigned int', 'word': 'unsigned short',
         'byte': 'unsigned char', 'qword': 'unsigned long long',
         'float': 'float', 'double': 'double', 'dbl': 'double', 'off': 'void*',
@@ -45,17 +47,28 @@ DECL = re.compile(
     r'\b((?:dword|word|byte|qword|float|double|dbl|off|unk|stru)'
     r'_[0-9A-Fa-f]{5,8}'
     r'|g_[A-Za-z]\w*_Instance'
-    r'|[A-Z]\w*_Instance)\b')
+    r'|[A-Z]\w*_Instance'
+    r'|[A-Z]\w*_Vtable'
+    r'|CCINIClass_INI_[A-Za-z]+)\b')
 
 declared = set()
 for pat in ('*.hpp', '*.h'):
     for p in sorted(SRC.rglob(pat)):
         if '_generated' in str(p) or 'csp_canon' in str(p):
             continue
+        # own outputs are not "declarations seen elsewhere" — counting them
+        # makes the rewrite non-idempotent (a name emitted by run N is
+        # treated as already-declared by run N+1 and silently dropped)
+        if p.name in ('ida_globals.h', 'ida_globals.cpp'):
+            continue
         try:
             txt = p.read_text(encoding='latin-1', errors='replace')
         except OSError:
             continue
+        # strip comments: a name mentioned only in a comment (e.g. a vtable
+        # address note) is NOT a declaration — declaring it again is legal.
+        txt = re.sub(r'//[^\n]*', ' ', txt)
+        txt = re.sub(r'/\*.*?\*/', ' ', txt, flags=re.S)
         declared |= set(DECL.findall(txt))
 
 used = set()
@@ -71,7 +84,26 @@ for p in sorted(SRC.rglob('*.cpp')):
 # same-address alias coverage: a body may use word_87F5D8 while only
 # dword_87F5D8 was declared — same address, different spelling. Each used
 # spelling is declared on its own (different names, so no redecl conflict).
-new = sorted(used - declared)
+# A name DEFINED in any cpp (real definition, e.g. core/globals.cpp) must be
+# skipped entirely — declaring it here is fine (extern), but defining it in
+# ida_globals.cpp would be LNK2005.
+defined = set()
+DEFINITION = re.compile(
+    r'^\s*(?:unsigned \w+|void\s*\*|float|double|long long|\w+)'
+    r'\s+(\w+)\s*=\s*[^;]', re.M)
+for p in sorted(SRC.rglob('*.cpp')):
+    if '_generated' in str(p) or 'csp_canon' in str(p) \
+            or p.name == 'ida_globals.cpp':
+        continue
+    try:
+        txt = p.read_text(encoding='latin-1', errors='replace')
+    except OSError:
+        continue
+    txt = re.sub(r'//[^\n]*', ' ', txt)
+    txt = re.sub(r'/\*.*?\*/', ' ', txt, flags=re.S)
+    defined |= set(DEFINITION.findall(txt))
+
+new = sorted(used - declared - defined)
 hdr = ['// GENERATED bare-global externs (gen_ida_globals.py).',
        '// Interim: zero-filled definitions, see ida_globals.cpp.',
        '#pragma once', '', 'namespace gamemd {', '']

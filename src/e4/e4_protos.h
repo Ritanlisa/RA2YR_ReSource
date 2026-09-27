@@ -252,6 +252,15 @@ struct AllocateSurfaceScreenSurfaces;
 struct AddMessageListPlayerMessage;
 namespace gamemd {
 
+// supplied for GameConfig::BuildChecksum (0x77E7A0) body dependencies
+// (GameOptions struct itself is defined in _tree_full_e4.hpp; GetEntry is
+// declared as a free alias to avoid redefining the generated struct)
+extern int GameOptions_GetEntry();
+extern int Hash_Check_5E9580(int a1);
+extern int Hash_Check_5E94D0(int a1);
+// real definition: src/core/init_game.cpp (0x5256F0, free fn in gamemd)
+extern void DestroyHashTableINIClass(void * ini);
+
 extern AbstractClass * * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short a5);
 extern AbstractClass * * CreateSmokeEffectAt(int a1, int a2, int a3, int a4, int a5, char a6, int a7);
 extern AbstractClass * * CreateUnitOnCompletion();

@@ -188,37 +188,44 @@ struct WordVector;
 struct ActionQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double PushEntry(...);  // C2039/C3861 interim stub
 };
 
 struct AircraftTrackerClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double FillCurrentVector(...);  // C2039/C3861 interim stub
 };
 
 struct AircraftTypeVector {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct AllocCallback {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Dispatch(...);  // C2039/C3861 interim stub
 };
 
 struct AnimTypeVector {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct ArmorType {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double FindIndex(...);  // C2039/C3861 interim stub
 };
 
 struct AssetClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double ReleaseAndReload(...);  // C2039/C3861 interim stub
 };
 
 struct AudioChannel {
@@ -226,48 +233,58 @@ struct AudioChannel {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    static double DeactivatePlay(...);  // C2039/C3861 interim stub
+    static double IsActive(...);  // C2039/C3861 interim stub
 };
 
 struct AudioConfig {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double InitDefault(...);  // C2039/C3861 interim stub
 };
 
 struct AudioFile {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double GetCallback(...);  // C2039/C3861 interim stub
 };
 
 struct AudioFileClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Release(...);  // C2039/C3861 interim stub
 };
 
 struct AudioFrame {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double CounterInc(...);  // C2039/C3861 interim stub
 };
 
 struct AudioIndex {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double GetSampleInformation(...);  // C2039/C3861 interim stub
 };
 
 struct AudioList {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double GetNextEntry(...);  // C2039/C3861 interim stub
 };
 
 struct AudioNode {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Release(...);  // C2039/C3861 interim stub
 };
 
 struct AudioPool {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double ProcessQueue(...);  // C2039/C3861 interim stub
 };
 
 struct AudioSample {
@@ -277,21 +294,27 @@ struct AudioSample {
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char q010;  // 0x10
+    static double Destructor(...);  // C2039/C3861 interim stub
+    static double InitLinkedList(...);  // C2039/C3861 interim stub
+    static double IsBuffering(...);  // C2039/C3861 interim stub
 };
 
 struct AudioSource {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Get(...);  // C2039/C3861 interim stub
 };
 
 struct AudioTimer {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double DecrementAll(...);  // C2039/C3861 interim stub
 };
 
 struct BTree {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double DeleteSubtree(...);  // C2039/C3861 interim stub
 };
 
 struct BaseNodeClass {
@@ -301,6 +324,7 @@ struct BaseNodeClass {
     bool placed;  // 0x8
     char attempts[4];  // 0xC
     unsigned int q00D;  // 0xD
+    static double Vector_Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct BigInt {
@@ -309,11 +333,14 @@ struct BigInt {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
+    static double DecryptBlock(...);  // C2039/C3861 interim stub
+    static double RSAOperation(...);  // C2039/C3861 interim stub
 };
 
 struct BitArray {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double TestBit(...);  // C2039/C3861 interim stub
 };
 
 struct BufferIO {
@@ -321,11 +348,14 @@ struct BufferIO {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    static double Cleanup(...);  // C2039/C3861 interim stub
+    static double Flush(...);  // C2039/C3861 interim stub
 };
 
 struct BuildingLightQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double RemoveEntry(...);  // C2039/C3861 interim stub
 };
 
 struct BuildingLoadQueue {
@@ -334,11 +364,14 @@ struct BuildingLoadQueue {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
+    static double GetNext(...);  // C2039/C3861 interim stub
+    static double FindBuilding(...);  // C2039/C3861 interim stub
 };
 
 struct ButtonClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double SetState(...);  // C2039/C3861 interim stub
 };
 
 struct CampaignScore {
@@ -352,6 +385,8 @@ struct CampaignScore {
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
+    static double __pad_0(...);  // C2039/C3861 interim stub
+    static double __pad_08C(...);  // C2039/C3861 interim stub
 };
 
 struct CaptureManager {
@@ -361,21 +396,25 @@ struct CaptureManager {
     unsigned int q064;  // 0x64
     unsigned int q100;  // 0x100
     unsigned int q130;  // 0x130
+    static double FreeAll(...);  // C2039/C3861 interim stub
 };
 
 struct Char {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Swap(...);  // C2039/C3861 interim stub
 };
 
 struct ChatEvent {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double ProcessStrings(...);  // C2039/C3861 interim stub
 };
 
 struct Checksum {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double AddString(...);  // C2039/C3861 interim stub
 };
 
 struct Checksummer {
@@ -384,17 +423,22 @@ struct Checksummer {
     unsigned int bytePos;  // 0x4
     unsigned int state;  // 0x8
     unsigned char buffer;  // 0xC
+    static double Add_Buffer(...);  // C2039/C3861 interim stub
+    static double Add_double(...);  // C2039/C3861 interim stub
+    static double Add_float(...);  // C2039/C3861 interim stub
 };
 
 struct Cliff {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double ProcessTransitions(...);  // C2039/C3861 interim stub
 };
 
 struct Conditions {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double CheckResult(...);  // C2039/C3861 interim stub
 };
 
 struct Conflict {
@@ -405,12 +449,15 @@ struct Conflict {
     int Outcome;  // 0xC
     unsigned int referenceCount;  // 0x10
     unsigned int q014;  // 0x14
+    static double GetOwnerHouse(...);  // C2039/C3861 interim stub
 };
 
 struct Coord2D {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Add(...);  // C2039/C3861 interim stub
+    static double Sub(...);  // C2039/C3861 interim stub
 };
 
 struct Coord3D {
@@ -418,16 +465,19 @@ struct Coord3D {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    static double Set(...);  // C2039/C3861 interim stub
 };
 
 struct CoordList {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double GetBounds(...);  // C2039/C3861 interim stub
 };
 
 struct CountryCombo {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double IDToIndex(...);  // C2039/C3861 interim stub
 };
 
 struct CrateClass {
@@ -435,12 +485,14 @@ struct CrateClass {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    static double ProcessPickup(...);  // C2039/C3861 interim stub
 };
 
 struct DListNode {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double InitEmpty(...);  // C2039/C3861 interim stub
 };
 
 struct DeleteAndZero {
@@ -448,11 +500,15 @@ struct DeleteAndZero {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    static double Alt(...);  // C2039/C3861 interim stub
+    static double Alt2(...);  // C2039/C3861 interim stub
+    static double OrFree(...);  // C2039/C3861 interim stub
 };
 
 struct DiskSpace {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double CheckAvailable(...);  // C2039/C3861 interim stub
 };
 
 struct DynamicArray {
@@ -462,11 +518,14 @@ struct DynamicArray {
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char q010;  // 0x10
+    static double Remove(...);  // C2039/C3861 interim stub
+    static double Resize(...);  // C2039/C3861 interim stub
 };
 
 struct DynamicVectorArray {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct FacingClass {
@@ -476,11 +535,14 @@ struct FacingClass {
     char RotationTimer[12];  // 0x8
     void* q010;  // 0x10
     unsigned int ROT;  // 0x14
+    static double Set_SyncLog(...);  // C2039/C3861 interim stub
+    static double Update(...);  // C2039/C3861 interim stub
 };
 
 struct Field {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Int_Set(...);  // C2039/C3861 interim stub
 };
 
 struct FileExtension {
@@ -490,6 +552,8 @@ struct FileExtension {
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char u8_D;  // 0xD
+    static double Constructor(...);  // C2039/C3861 interim stub
+    static double MapHandler(...);  // C2039/C3861 interim stub
 };
 
 struct FileFind {
@@ -498,22 +562,29 @@ struct FileFind {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
+    static double Close(...);  // C2039/C3861 interim stub
+    static double CloseHandle(...);  // C2039/C3861 interim stub
+    static double Next(...);  // C2039/C3861 interim stub
 };
 
 struct FileStraw {
     void* vfptr;
     void* vtable1;  // 0x0
     unsigned char q004;  // 0x4
+    static double Destructor(...);  // C2039/C3861 interim stub
+    static double Open(...);  // C2039/C3861 interim stub
 };
 
 struct FileTree {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double CleanupAll(...);  // C2039/C3861 interim stub
 };
 
 struct FileTreeNode {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Destroy(...);  // C2039/C3861 interim stub
 };
 
 struct Flag {
@@ -521,12 +592,15 @@ struct Flag {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    static double IsNot2(...);  // C2039/C3861 interim stub
+    static double IsZero(...);  // C2039/C3861 interim stub
 };
 
 struct Float4 {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Copy(...);  // C2039/C3861 interim stub
 };
 
 struct FontClass {
@@ -537,23 +611,30 @@ struct FontClass {
     unsigned char q00C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned char q014;  // 0x14
+    static double InitMetrics(...);  // C2039/C3861 interim stub
+    static double RenderGlyph(...);  // C2039/C3861 interim stub
 };
 
 struct FontRenderer {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double DrawTextA(...);  // C2039/C3861 interim stub
+    static double InitContext(...);  // C2039/C3861 interim stub
 };
 
 struct FractalNoise {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Dtor(...);  // C2039/C3861 interim stub
 };
 
 struct FrameSnapshot {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Init(...);  // C2039/C3861 interim stub
+    static double InitMax(...);  // C2039/C3861 interim stub
 };
 
 struct GameOptions {
@@ -562,21 +643,25 @@ struct GameOptions {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
+    static double SaveLoad(...);  // C2039/C3861 interim stub
 };
 
 struct GameResult {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double CalcScore(...);  // C2039/C3861 interim stub
 };
 
 struct GameScreen {
     void* vfptr;
     CampaignClass* q000;  // 0x0
+    static double DlgProc(...);  // C2039/C3861 interim stub
 };
 
 struct GameState {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Reset(...);  // C2039/C3861 interim stub
 };
 
 struct Gap2Recv_402F60 {
@@ -857,6 +942,7 @@ struct Gap2Recv_4048B0 {
 struct GenericList {
     void* vfptr;
     void* vtable1;  // 0x0
+    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct Hash {
@@ -864,6 +950,9 @@ struct Hash {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    static double ComputeHashSHA1(...);  // C2039/C3861 interim stub
+    static double InsertOrdered(...);  // C2039/C3861 interim stub
+    static double Reset(...);  // C2039/C3861 interim stub
 };
 
 struct HashMap {
@@ -872,36 +961,44 @@ struct HashMap {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
+    static double Shrink(...);  // C2039/C3861 interim stub
+    static double Shrink2(...);  // C2039/C3861 interim stub
 };
 
 struct HashTree {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double MarkEntry(...);  // C2039/C3861 interim stub
 };
 
 struct HashVector_UInt {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Construct(...);  // C2039/C3861 interim stub
 };
 
 struct Heap {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double SiftDown(...);  // C2039/C3861 interim stub
 };
 
 struct IDXContainer {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double LoadSample(...);  // C2039/C3861 interim stub
 };
 
 struct ILocomotion {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double q008(...);  // C2039/C3861 interim stub
 };
 
 struct INISectionList {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct InputManager_ProcessEvents {
@@ -911,50 +1008,60 @@ struct InputManager_ProcessEvents {
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char q010;  // 0x10
+    static double Vtable(...);  // C2039/C3861 interim stub
 };
 
 struct Int4 {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Set(...);  // C2039/C3861 interim stub
 };
 
 struct IntDynamicVector {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Construct(...);  // C2039/C3861 interim stub
 };
 
 struct IntVector {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Copy(...);  // C2039/C3861 interim stub
 };
 
 struct IsRandMap {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Sed(...);  // C2039/C3861 interim stub
+    static double Sed2(...);  // C2039/C3861 interim stub
 };
 
 struct KeyValuePair {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Init(...);  // C2039/C3861 interim stub
 };
 
 struct KeywordClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double FindOrCreate(...);  // C2039/C3861 interim stub
 };
 
 struct KeywordType {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double FindOrCreate2(...);  // C2039/C3861 interim stub
 };
 
 struct Lightning {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Draw(...);  // C2039/C3861 interim stub
 };
 
 struct ListClass {
@@ -973,11 +1080,14 @@ struct ListClass {
     unsigned int u32_1C;  // 0x1C
     bool q01D;  // 0x1D
     unsigned int q01E;  // 0x1E
+    static double Construct(...);  // C2039/C3861 interim stub
+    static double Destruct(...);  // C2039/C3861 interim stub
 };
 
 struct Locomotor {
     void* vfptr;
     char Locomotor_field_00[4];  // 0x0
+    static double GetSpeed(...);  // C2039/C3861 interim stub
 };
 
 struct MPCombatTeam {
@@ -986,28 +1096,36 @@ struct MPCombatTeam {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
+    static double Constructor(...);  // C2039/C3861 interim stub
+    static double Constructor2(...);  // C2039/C3861 interim stub
+    static double MPTeam(...);  // C2039/C3861 interim stub
 };
 
 struct MSChoiceClass {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double LoadFromINI(...);  // C2039/C3861 interim stub
 };
 
 struct MapResourceClass {
     void* vfptr;
     IUnknown* q000;  // 0x0
+    static double __tail_0(...);  // C2039/C3861 interim stub
 };
 
 struct Matrix {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Copy12Float(...);  // C2039/C3861 interim stub
+    static double Scale(...);  // C2039/C3861 interim stub
 };
 
 struct Matrix2D {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Rotate(...);  // C2039/C3861 interim stub
 };
 
 struct Matrix3x3 {
@@ -1019,6 +1137,9 @@ struct Matrix3x3 {
     bool q00B;  // 0xB
     unsigned char q00C;  // 0xC
     unsigned char q010;  // 0x10
+    static double Multiply(...);  // C2039/C3861 interim stub
+    static double RotateX(...);  // C2039/C3861 interim stub
+    static double TransformPoint(...);  // C2039/C3861 interim stub
 };
 
 struct MessageListClass {
@@ -1039,11 +1160,14 @@ struct MessageListClass {
     unsigned int q02C;  // 0x2C
     bool IsScrolling;  // 0x30
     unsigned char padding_after_scroll;  // 0x31
+    static double AddMessage(...);  // C2039/C3861 interim stub
+    static double clearMessages(...);  // C2039/C3861 interim stub
 };
 
 struct Miles {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double DriverGet(...);  // C2039/C3861 interim stub
 };
 
 struct ModemGame {
@@ -1053,91 +1177,110 @@ struct ModemGame {
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char q010;  // 0x10
+    static double AdvanceTauntCommand(...);  // C2039/C3861 interim stub
 };
 
 struct MovieContext {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Cleanup(...);  // C2039/C3861 interim stub
 };
 
 struct Multiplay {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double LogToSYNC_NOMPDEBUG(...);  // C2039/C3861 interim stub
 };
 
 struct MultiplayerConfig {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Cleanup(...);  // C2039/C3861 interim stub
 };
 
 struct NetMessage {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Pack4(...);  // C2039/C3861 interim stub
 };
 
 struct NetworkEventQueueClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double WaitForResponse(...);  // C2039/C3861 interim stub
 };
 
 struct NetworkID {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Assign(...);  // C2039/C3861 interim stub
+    static double Compare(...);  // C2039/C3861 interim stub
 };
 
 struct NetworkSettings {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double DlgProc(...);  // C2039/C3861 interim stub
 };
 
 struct ObjectPlacement {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double CalcPosition(...);  // C2039/C3861 interim stub
 };
 
 struct ObjectPtr {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double RegisterForTracking(...);  // C2039/C3861 interim stub
 };
 
 struct OptionQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double PushEntry(...);  // C2039/C3861 interim stub
 };
 
 struct OwnerDrawControl {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double InitVtable(...);  // C2039/C3861 interim stub
 };
 
 struct PacketQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double ExtractEntry(...);  // C2039/C3861 interim stub
+    static double ReleaseEntry(...);  // C2039/C3861 interim stub
 };
 
 struct PaletteManager {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Load(...);  // C2039/C3861 interim stub
 };
 
 struct Performance {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Profile(...);  // C2039/C3861 interim stub
 };
 
 struct PhoneEditor {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double PopulateList(...);  // C2039/C3861 interim stub
 };
 
 struct PingPongBuffer {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double GetWriteOffset(...);  // C2039/C3861 interim stub
 };
 
 struct Pipe {
@@ -1150,48 +1293,58 @@ struct Pipe {
     unsigned char q00C;  // 0xC
     bool q00D;  // 0xD
     bool q00E;  // 0xE
+    static double Dtor(...);  // C2039/C3861 interim stub
 };
 
 struct PreviewClass {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double ReadPreview(...);  // C2039/C3861 interim stub
 };
 
 struct PriorityQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Add(...);  // C2039/C3861 interim stub
 };
 
 struct ProductionClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double StartTimer(...);  // C2039/C3861 interim stub
 };
 
 struct ProgressAnim {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Init(...);  // C2039/C3861 interim stub
 };
 
 struct Property {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double GetField11(...);  // C2039/C3861 interim stub
+    static double Set(...);  // C2039/C3861 interim stub
 };
 
 struct PtrVector {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Destroy(...);  // C2039/C3861 interim stub
 };
 
 struct PushCommandClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Execute(...);  // C2039/C3861 interim stub
 };
 
 struct Queue {
     void* vfptr;
+    static double GetNext(...);  // C2039/C3861 interim stub
 };
 
 struct Random {
@@ -1200,22 +1353,28 @@ struct Random {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
+    static double Gaussian(...);  // C2039/C3861 interim stub
+    static double Range(...);  // C2039/C3861 interim stub
+    static double State(...);  // C2039/C3861 interim stub
 };
 
 struct Rect_Point {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Set(...);  // C2039/C3861 interim stub
 };
 
 struct ResultNode {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double CleanupList(...);  // C2039/C3861 interim stub
 };
 
 struct SHPClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Load(...);  // C2039/C3861 interim stub
 };
 
 struct SaveLoad {
@@ -1228,31 +1387,38 @@ struct SaveLoadDialog {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    static double DlgProc(...);  // C2039/C3861 interim stub
 };
 
 struct ScreenSaver {
     void* vfptr;
+    static double Process(...);  // C2039/C3861 interim stub
 };
 
 struct ScriptQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double PushEntry(...);  // C2039/C3861 interim stub
 };
 
 struct SerialPort {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Close(...);  // C2039/C3861 interim stub
 };
 
 struct SettingsClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double ClampValues(...);  // C2039/C3861 interim stub
 };
 
 struct ShapeButton {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Draw(...);  // C2039/C3861 interim stub
+    static double SetShape(...);  // C2039/C3861 interim stub
 };
 
 struct ShapeButtonClass {
@@ -1260,28 +1426,33 @@ struct ShapeButtonClass {
     void* vtable1;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct ShroudClass {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double UpdateVisibility(...);  // C2039/C3861 interim stub
 };
 
 struct SlaveControlVector {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct SpawnControlVector {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct SquadClass {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double ProcessMove(...);  // C2039/C3861 interim stub
 };
 
 struct State {
@@ -1311,18 +1482,21 @@ struct State {
 struct StaticString {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Factory(...);  // C2039/C3861 interim stub
 };
 
 struct Straw {
     void* vfptr;
     void* vtable1;  // 0x0
     unsigned char q004;  // 0x4
+    static double Dtor(...);  // C2039/C3861 interim stub
 };
 
 struct StringTable {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Find(...);  // C2039/C3861 interim stub
 };
 
 struct StringVector {
@@ -1335,11 +1509,13 @@ struct StringVector {
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
+    static double Construct(...);  // C2039/C3861 interim stub
 };
 
 struct StructTable {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Append(...);  // C2039/C3861 interim stub
 };
 
 struct SubzoneConnectionVector {
@@ -1347,69 +1523,84 @@ struct SubzoneConnectionVector {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    static double Destruct(...);  // C2039/C3861 interim stub
 };
 
 struct SubzoneHashVector {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Construct(...);  // C2039/C3861 interim stub
 };
 
 struct SwizzleManager {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double SaveLoad(...);  // C2039/C3861 interim stub
 };
 
 struct SyncDelayClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double ProcessNetworkSync(...);  // C2039/C3861 interim stub
 };
 
 struct TabCameoListClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double AddCameo_ReplaceItAll(...);  // C2039/C3861 interim stub
 };
 
 struct Targeting {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Readd(...);  // C2039/C3861 interim stub
 };
 
 struct TaskManager {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Update(...);  // C2039/C3861 interim stub
 };
 
 struct TechnoTypeVector {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct Text {
     void* vfptr;
     char Text_field_00[4];  // 0x0
+    static double DrawRepeated(...);  // C2039/C3861 interim stub
+    static double Layout(...);  // C2039/C3861 interim stub
+    static double MeasureWidth(...);  // C2039/C3861 interim stub
 };
 
 struct TextGroup {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double SetRect(...);  // C2039/C3861 interim stub
 };
 
 struct TheatreClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double InitView(...);  // C2039/C3861 interim stub
 };
 
 struct TileData {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned int u16_2;  // 0x2
+    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct TileNode {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Cleanup(...);  // C2039/C3861 interim stub
 };
 
 struct TileSystem {
@@ -1419,22 +1610,26 @@ struct TileSystem {
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     unsigned char u8_D;  // 0xD
+    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct Timeout {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double GetRemaining(...);  // C2039/C3861 interim stub
 };
 
 struct TimerPool {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double AllocSlot(...);  // C2039/C3861 interim stub
 };
 
 struct ToggleClass {
     void* vfptr;
     void* vtable1;  // 0x0
     unsigned char q004;  // 0x4
+    static double RTTI(...);  // C2039/C3861 interim stub
 };
 
 struct ToolTipClass {
@@ -1456,37 +1651,45 @@ struct ToolTipClass {
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
+    static double initString(...);  // C2039/C3861 interim stub
+    static double updateString(...);  // C2039/C3861 interim stub
 };
 
 struct Tooltip {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Enable(...);  // C2039/C3861 interim stub
 };
 
 struct Tree {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Destructor(...);  // C2039/C3861 interim stub
 };
 
 struct Triple {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Set(...);  // C2039/C3861 interim stub
 };
 
 struct TypeClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double FindByName(...);  // C2039/C3861 interim stub
 };
 
 struct VQAClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double AdvanceFrame(...);  // C2039/C3861 interim stub
 };
 
 struct Vector2 {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double NormalizeNonZero(...);  // C2039/C3861 interim stub
 };
 
 struct Vector3 {
@@ -1494,51 +1697,63 @@ struct Vector3 {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    static double AddAssign(...);  // C2039/C3861 interim stub
+    static double Magnitude(...);  // C2039/C3861 interim stub
+    static double Subtract(...);  // C2039/C3861 interim stub
 };
 
 struct Vector4 {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double EraseAt_Copy(...);  // C2039/C3861 interim stub
 };
 
 struct VectorClassUInt {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct Viewport {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Clear(...);  // C2039/C3861 interim stub
 };
 
 struct VoxelAnimTypeVector {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 struct VoxelPalette {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double Init(...);  // C2039/C3861 interim stub
+    static double Reset(...);  // C2039/C3861 interim stub
 };
 
 struct VoxelSection {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double GetInfo(...);  // C2039/C3861 interim stub
 };
 
 struct WDTClass {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double GetCellType(...);  // C2039/C3861 interim stub
 };
 
 struct WDTObject {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static double GetSize(...);  // C2039/C3861 interim stub
 };
 
 struct WTFMode {
@@ -1566,16 +1781,19 @@ struct WTFMode {
     void* q12504;  // 0x12504
     unsigned int q21104;  // 0x21104
     void* q479250;  // 0x479250
+    static double Shutdown(...);  // C2039/C3861 interim stub
 };
 
 struct WinAPI {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Wrapper(...);  // C2039/C3861 interim stub
 };
 
 struct WordVector {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static double Constructor(...);  // C2039/C3861 interim stub
 };
 
 

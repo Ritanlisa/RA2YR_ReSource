@@ -11,56 +11,7 @@
 #include "object/abstract.hpp"
 #include "app/cmdline.hpp"
 
-// 0x5D67B0
-namespace gamemd { 
-void* GameConfig::Constructor() {
-  if (!this->q038) {
-    // CCINIClass constructor initializes all internal members
-    this->q038 = new CCINIClass();
-    if (this->q038) {
-      // Load INI data from file
-      CCFileClass file;
-      file.Construct2(this->ptr_41);
-      if (file.Open(0)) {
-        CCINIClass::Load(static_cast<CCINIClass*>(this->q038), &file, 0, 0);
-      }
-    } else {
-      this->q038 = nullptr;
-    }
-  }
-  return this->q038;
-}
-}
-// 0x77E7A0
-namespace gamemd { 
-int GameConfig::BuildChecksum() {
-  int v2; // ecx
-  int *v3; // eax
-  int v4; // esi
-  char v5; // al
-  unsigned __int8 v6; // al
-  int Entry; // eax
-  int v9; // [esp-10h] [ebp-1Ch]
-  int v10; // [esp-Ch] [ebp-18h]
-  int v11; // [esp-8h] [ebp-14h]
-  const char *v12; // [esp-4h] [ebp-10h]
-
-  v2 = dword_B76B1C; /*0x77e7a5*/
-  if ( dword_B76B1C > 0 ) /*0x77e7ad*/
-  {
-    v3 = dword_B76E58; /*0x77e7af*/
-    do /*0x77e7c0*/
-    {
-      v3 += 37; /*0x77e7b6*/
-      --v2; /*0x77e7bb*/
-    }
-    while ( v2 ); /*0x77e7c0*/
-  }
-  v4 = CCINIClass_RulesHash ^ CCINIClass_AIHash ^ CCINIClass_ArtHash; /*0x77e7db*/
-  v5 = GameOption::CheckDuplicate(&Destination); /*0x77e7dd*/
-  v6 = Hash_Check_5E9580(v5 == 0); /*0x77e7e8*/
-  v9 = Hash_Check_5E94D0(v6); /*0x77e7f8*/
-  Entry = GameOptions::GetEntry(); /*0x77e7fa*/
-  return sprintf(Buffer, "%d,%d,%d,%d,%d,%s", Entry, v4, v9, v10, v11, v12); /*0x77e80e*/
-}
-}
+// G34: GameConfig::Constructor (0x5D67B0) / BuildChecksum (0x77E7A0) moved
+// to the e4 universe (GameConfig_e4.cpp) — the app universe's cmdline.hpp
+// GameConfig is a 4-bool legacy struct without the members these bodies
+// access (q038/ptr_41/CCINIClass). See gen_gap2_defs.py LNK_SKIP_MEMBERS.

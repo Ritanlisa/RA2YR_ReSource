@@ -22,7 +22,6 @@ struct Multiplayer {
 // --- flat members (END) ---
     unsigned int * CopyDataArray(ObjectClass * aP1);
     void * FindStartPositions();
-    void Screen();
     void ShowProgress(int a2);
 };
 

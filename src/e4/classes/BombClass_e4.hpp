@@ -1561,7 +1561,6 @@ struct BombClass {
     unsigned int vtable25;
 // --- flat members (END) ---
     BombClass * CopyTo(char a2);
-    int AbstractClass();
     int InitPool();
     int IsDeathBomb();
     int Seek(TechnoTypeClass * aP0, int * a1, int aP2);

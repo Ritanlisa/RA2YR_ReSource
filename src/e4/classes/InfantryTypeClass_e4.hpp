@@ -185,7 +185,6 @@ struct InfantryTypeClass {
     int Immune;  // 0x203
     int IsLogic;  // 0x204
     int AllowCellContent;  // 0x205
-    int Voxel;  // 0x206
     int NewTheater;  // 0x207
     int HasRadialIndicator;  // 0x208
     int IgnoresFirestorm;  // 0x209

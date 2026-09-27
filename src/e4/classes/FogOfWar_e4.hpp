@@ -69,7 +69,6 @@ struct FogOfWar {
 // --- flat members (END) ---
     AbstractClass * * RevealCell(void* aP1);
     MapClass * * RevealArea(RadarClass * aP1);
-    int Render();
     int RenderCell();
 };
 
