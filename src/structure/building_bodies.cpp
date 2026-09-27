@@ -1,6 +1,12 @@
 // 自动生成 by tools/move_hpp_bodies.py — 函数体自 src/structure/building.hpp 迁出
 // hpp-impl 门控: 头文件只允许声明（= default 析构亦移出）
 #include "building.hpp"
+#include "core/globals_core.hpp"
+#include "core/globals_core.hpp"
+#include "core/globals_core.hpp"
+#include "e4/e4_globals.hpp"
+#include "core/globals_core.hpp"
+#include "structure/globals_structure.hpp"
 
 namespace gamemd {
 namespace Math {

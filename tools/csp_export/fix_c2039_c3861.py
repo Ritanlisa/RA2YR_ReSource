@@ -18,6 +18,7 @@ Usage: python tools/csp_export/fix_c2039_c3861.py <log> [--apply]
 import json
 import re
 import sys
+import collections
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -38,10 +39,13 @@ for m in re.finditer(
         r'error C2039: ["\u201c](\w+)["\u201d]: .{0,60}?gamemd::(\w+)', TXT):
     groups.setdefault((m.group(2), m.group(1)), 0)
     groups[(m.group(2), m.group(1))] += 1
-# C3861: "identifier": not found (class from enclosing decl context)
+# C3861: "identifier": not found — bare call. Resolve the class by searching
+# the def index for a UNIQUE `Cls::Name` definition (G34: these were skipped
+# entirely — 2.3K errors, e.g. ObjectPtr::RegisterForTracking 76x).
+mth3861 = collections.Counter()
 for m in re.finditer(
         r'error C3861: ["\u201c](\w+)["\u201d]: ', TXT):
-    pass  # supply_protos handles these
+    mth3861[m.group(1)] += 1
 # C2660: wrong arg count — "gamemd::Cls::Mth" in the signature
 for m in re.finditer(
         r'error C2660: .{0,100}?gamemd::(\w+)::(\w+)\(', TXT):
@@ -77,6 +81,17 @@ for p in sorted((SRC / 'e4').glob('*.cpp')):
         params = ' '.join(m.group('params').split()).replace('gamemd::', '')
         if (cls, mth) not in defs:
             defs[(cls, mth)] = (ret, params)
+
+# C3861 resolution: name -> unique defining class (if any)
+by_mth = collections.defaultdict(list)
+for (cls, mth) in defs:
+    by_mth[mth].append(cls)
+for name, count in mth3861.items():
+    cands = by_mth.get(name) or []
+    if len(cands) == 1:
+        cls = cands[0]
+        groups.setdefault((cls, name), 0)
+        groups[(cls, name)] += count
 
 # --------------------------------------------------------------- tree_full parse
 tf_txt = TREE_FULL.read_text(encoding='utf-8', errors='replace') \

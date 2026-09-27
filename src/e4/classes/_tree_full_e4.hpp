@@ -451,6 +451,9 @@ struct DeleteAndZero {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    static int Alt(...);  // def-aligned C2039/C3861
+    static int Alt2(...);  // def-aligned C2039/C3861
+    static int OrFree(...);  // def-aligned C2039/C3861
 };
 
 struct DiskSpace {
@@ -18088,6 +18091,9 @@ struct Hash {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+    static int ComputeHashSHA1(...);  // def-aligned C2039/C3861
+    static int InsertOrdered(...);  // def-aligned C2039/C3861
+    static int Reset(...);  // def-aligned C2039/C3861
 };
 
 struct HashMap {
@@ -18141,6 +18147,8 @@ struct Int4 {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    static int Set(...);  // def-aligned C2039/C3861
+    static double Set2(...);  // C2039/C3861 interim stub
 };
 
 struct IntDynamicVector {
@@ -18423,6 +18431,9 @@ struct Random {
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
+    static int Gaussian(...);  // def-aligned C2039/C3861
+    static int Range(...);  // def-aligned C2039/C3861
+    static int State(...);  // def-aligned C2039/C3861
 };
 
 struct Rect_Point {
@@ -18775,6 +18786,7 @@ struct WTFMode {
 struct WinAPI {
     void* vfptr;
     unsigned char q000;  // 0x0
+    static int Wrapper(...);  // def-aligned C2039/C3861
 };
 
 

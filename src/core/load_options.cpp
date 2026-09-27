@@ -660,6 +660,7 @@ void LoadSaveDialog_FillList(LoadOptions* opts, HWND hWnd) {
 
 
 #include "core/load_options.hpp"
+#include "e4/e4_globals.hpp"
 
 namespace gamemd {
 

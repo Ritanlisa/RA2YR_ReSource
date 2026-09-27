@@ -12,6 +12,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Frame_e4.hpp"
 #include "e4/classes/Main_e4.hpp"
+#include "app/cmdline.hpp"
 
 // 0x777420
 namespace gamemd {

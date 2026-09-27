@@ -1,6 +1,10 @@
 #include "ui/sidebar.hpp"
 
 #include <cstring>
+#include "e4/e4_globals.hpp"
+#include "e4/e4_globals.hpp"
+#include "e4/e4_globals.hpp"
+#include "e4/e4_globals.hpp"
 
 namespace gamemd
 {

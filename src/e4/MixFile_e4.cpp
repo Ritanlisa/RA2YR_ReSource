@@ -18,6 +18,7 @@
 #include "e4/classes/Mixer_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
+#include "app/cmdline.hpp"
 
 // 0x530460
 namespace gamemd {

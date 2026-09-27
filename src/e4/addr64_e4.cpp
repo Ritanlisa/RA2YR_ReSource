@@ -45,6 +45,7 @@
 #include "e4/classes/AbstractType_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "app/cmdline.hpp"
 
 // 0x6406E0
 namespace gamemd {

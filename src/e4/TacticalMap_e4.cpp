@@ -22,6 +22,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "app/cmdline.hpp"
 
 // 0x484680
 namespace gamemd {

@@ -36,6 +36,7 @@
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/Terrain_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "app/cmdline.hpp"
 
 // 0x560BF0
 namespace gamemd {

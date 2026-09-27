@@ -35,6 +35,7 @@
 #include "e4/classes/BaseClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "app/cmdline.hpp"
 
 // 0x402720
 namespace gamemd {

@@ -21,6 +21,12 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
+#include "core/ddraw_init.hpp"
+#include "core/ddraw_init.hpp"
+#include "core/ddraw_init.hpp"
+#include "core/ddraw_init.hpp"
+#include "core/ddraw_init.hpp"
+#include "core/ddraw_init.hpp"
 
 // 0x480180
 namespace gamemd {

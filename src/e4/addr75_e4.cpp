@@ -49,6 +49,7 @@
 #include "e4/classes/BufferIOFile_e4.hpp"
 #include "e4/classes/EventClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "app/cmdline.hpp"
 
 // 0x750920
 namespace gamemd {

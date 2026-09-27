@@ -34,6 +34,7 @@
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/XSurface_e4.hpp"
+#include "app/cmdline.hpp"
 
 // 0x472A80
 namespace gamemd {

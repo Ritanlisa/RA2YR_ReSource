@@ -37,6 +37,7 @@
 #include "e4/classes/Compare_e4.hpp"
 #include "e4/classes/CoordStruct_e4.hpp"
 #include "e4/classes/Node_flat_e4.hpp"
+#include "app/cmdline.hpp"
 
 // 0x4311C0
 namespace gamemd {

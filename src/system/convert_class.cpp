@@ -93,6 +93,12 @@ LightConvertClass::LightConvertClass(
 } // namespace gamemd
 
 #include "system/convert_class.hpp"
+#include "core/ddraw_init.hpp"
+#include "core/ddraw_init.hpp"
+#include "core/ddraw_init.hpp"
+#include "core/ddraw_init.hpp"
+#include "e4/e4_globals.hpp"
+#include "core/ddraw_init.hpp"
 
 namespace gamemd {
 

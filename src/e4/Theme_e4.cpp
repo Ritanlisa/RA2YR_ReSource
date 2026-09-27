@@ -14,6 +14,7 @@
 #include "e4/classes/Trigger_e4.hpp"
 #include "e4/classes/TriggerTypeClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "app/cmdline.hpp"
 
 // 0x720B20
 namespace gamemd {

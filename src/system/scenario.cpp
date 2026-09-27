@@ -1,6 +1,11 @@
 #include "system/scenario.hpp"
 
 #include <cstring>
+#include "core/globals_core.hpp"
+#include "core/globals_core.hpp"
+#include "core/globals_core.hpp"
+#include "core/globals_core.hpp"
+#include "e4/e4_globals.hpp"
 
 namespace gamemd
 {

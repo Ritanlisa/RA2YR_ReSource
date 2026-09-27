@@ -1,4 +1,5 @@
 #include "misc_ext.hpp"
+#include "e4/e4_globals.hpp"
 
 namespace gamemd
 {

@@ -2,6 +2,14 @@
 #include "system/cell.hpp"
 
 #include <cstring>
+#include "core/globals_core.hpp"
+#include "e4/e4_globals.hpp"
+#include "e4/e4_globals.hpp"
+#include "core/globals_core.hpp"
+#include "core/globals_core.hpp"
+#include "e4/e4_globals.hpp"
+#include "e4/e4_globals.hpp"
+#include "system/globals_system.hpp"
 
 namespace gamemd
 {

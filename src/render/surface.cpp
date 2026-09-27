@@ -6,6 +6,7 @@
 
 #include "core/ddraw_init.hpp"
 #include "core/reverse_marker.hpp"
+#include "app/cmdline.hpp"
 
 // g_ZBufferDescriptor (IDA: 0x887644) — Z-buffer descriptor pointer
 // Null in standalone build (no DDraw Z-buffer available)

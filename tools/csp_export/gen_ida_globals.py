@@ -24,16 +24,17 @@ SRC = ROOT / 'src'
 APPLY = '--apply' in sys.argv
 
 LABEL = re.compile(
-    r'\b((?:dword|word|byte|qword|float|double|dbl|off|unk|stru)'
+    r'\b((?:dword|word|byte|qword|float|double|dbl|off|unk|stru|xmmword)'
     r'_[0-9A-Fa-f]{5,8}'
-    r'|g_[A-Za-z]\w*_Instance'
+    r'|g_[A-Za-z]\w*'
     r'|[A-Z]\w*_Instance'
     r'|[A-Z]\w*_Vtable'
     r'|CCINIClass_INI_[A-Za-z]+)\b')
 TYPE = {'dword': 'unsigned int', 'word': 'unsigned short',
         'byte': 'unsigned char', 'qword': 'unsigned long long',
         'float': 'float', 'double': 'double', 'dbl': 'double', 'off': 'void*',
-        'unk': 'unsigned char', 'stru': 'unsigned char'}
+        'unk': 'unsigned char', 'stru': 'unsigned char',
+        'xmmword': 'xmmword_t'}
 
 
 def gtype(name):
@@ -44,9 +45,9 @@ def gtype(name):
 
 
 DECL = re.compile(
-    r'\b((?:dword|word|byte|qword|float|double|dbl|off|unk|stru)'
+    r'\b((?:dword|word|byte|qword|float|double|dbl|off|unk|stru|xmmword)'
     r'_[0-9A-Fa-f]{5,8}'
-    r'|g_[A-Za-z]\w*_Instance'
+    r'|g_[A-Za-z]\w*'
     r'|[A-Z]\w*_Instance'
     r'|[A-Z]\w*_Vtable'
     r'|CCINIClass_INI_[A-Za-z]+)\b')
@@ -103,10 +104,18 @@ for p in sorted(SRC.rglob('*.cpp')):
     txt = re.sub(r'/\*.*?\*/', ' ', txt, flags=re.S)
     defined |= set(DEFINITION.findall(txt))
 
-new = sorted(used - declared - defined)
+new = sorted(used - declared)
+# names already DEFINED in a cpp (e.g. core/globals.cpp) still need the
+# extern declaration for OTHER TUs — but must not get a second definition
+# here (LNK2005). Split: declare all `new`; define only the cpp-undefined.
+defined_new = sorted(n for n in new if n in defined)
+undef_new = sorted(n for n in new if n not in defined)
 hdr = ['// GENERATED bare-global externs (gen_ida_globals.py).',
        '// Interim: zero-filled definitions, see ida_globals.cpp.',
-       '#pragma once', '', 'namespace gamemd {', '']
+       '#pragma once', '',
+       '#ifndef GAMEMD_XMMWORD_T', '#define GAMEMD_XMMWORD_T',
+       'typedef unsigned char xmmword_t[16];', '#endif', '',
+       'namespace gamemd {', '']
 cpp = ['// GENERATED bare-global definitions (gen_ida_globals.py).',
        '// INTERIM FIDELITY GAP: zero images; real .data contents are a',
        '// later pipeline stage.',
@@ -114,6 +123,8 @@ cpp = ['// GENERATED bare-global definitions (gen_ida_globals.py).',
 for n in new:
     ty = gtype(n)
     hdr.append('extern %s %s;' % (ty, n))
+for n in undef_new:
+    ty = gtype(n)
     cpp.append('%s %s = 0;' % (ty, n))
 hdr += ['', '} // namespace gamemd', '']
 cpp += ['', '} // namespace gamemd', '']
@@ -122,5 +133,7 @@ if APPLY:
                                                 encoding='utf-8')
     (SRC / 'core' / 'ida_globals.cpp').write_text('\n'.join(cpp),
                                                   encoding='utf-8')
-print(f'bare globals: {len(new)} new (of {len(used)} referenced)')
+print(f'bare globals: {len(new)} declared '
+      f'({len(defined_new)} cpp-defined: extern only), '
+      f'{len(undef_new)} defined here (of {len(used)} referenced)')
 print('APPLIED' if APPLY else 'DRY RUN (use --apply)')

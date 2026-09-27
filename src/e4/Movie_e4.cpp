@@ -18,6 +18,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Bink_e4.hpp"
+#include "core/ddraw_init.hpp"
 
 // 0x49CAF0
 namespace gamemd {

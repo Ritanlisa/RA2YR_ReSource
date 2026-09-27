@@ -9,6 +9,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "core/ddraw_init.hpp"
 
 // 0x48E740
 namespace gamemd {

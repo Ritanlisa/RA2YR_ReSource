@@ -14,6 +14,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/Settings_e4.hpp"
+#include "core/ddraw_init.hpp"
 
 // 0x5FA620
 namespace gamemd {
