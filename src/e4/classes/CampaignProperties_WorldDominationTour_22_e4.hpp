@@ -8,7 +8,7 @@ struct CampaignProperties_WorldDominationTour_22 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
-    void* ;  // 0x8
+    void* pad_008;  // 0x8
     unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned int q018;  // 0x18

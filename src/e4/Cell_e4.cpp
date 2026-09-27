@@ -18,6 +18,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/CenterTeamCommand_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x419B00
 namespace gamemd {

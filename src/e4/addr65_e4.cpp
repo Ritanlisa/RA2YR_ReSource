@@ -36,6 +36,7 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/EventQueue_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x650A90
 namespace gamemd {

@@ -14,6 +14,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x554A60
 namespace gamemd {
@@ -46,13 +48,13 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
   this->u32_38 = (unsigned char)(a7);
   this->q024 = (unsigned char)(a6);
   this->u32_28 = (unsigned char)(0);
-  this->u8_34 = 0; /*0x5cbd65*/
-  this->u8_3C = 0; /*0x5cbd68*/
-  FileClassToBuffer = LoadFileClassToBuffer(aP1, (bool *)&this->ptr_180); /*0x5cbd70*/
-  this->u32_1C = FileClassToBuffer; /*0x5cbd75*/
-  this->q02C = 0; /*0x5cbd78*/
-  v10 = *(int16_t *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
-  this->u32_44 = aP7; /*0x5cbd84*/
+  this->u8_34 = (unsigned char)(0);
+  this->u8_3C = (unsigned char)(0);
+  FileClassToBuffer = (unsigned char)(LoadFileClassToBuffer(aP1, (bool *)&this->ptr_180));
+  this->u32_1C = (unsigned char)(FileClassToBuffer);
+  this->q02C = (gamemd::MSShapeAnim *)((unsigned char)(0));
+  v10 = (unsigned char)(*(int16_t *)(FileClassToBuffer + 6) - 1);
+  this->u32_44 = (unsigned char)(aP7);
   this->q030 = v10; /*0x5cbd87*/
   this->q040 = 0; /*0x5cbd8a*/
   return this; /*0x5cbd95*/

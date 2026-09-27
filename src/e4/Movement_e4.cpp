@@ -28,7 +28,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   double v20; // st7
   double v21; // st7
   void * v22;
-  unsigned int v23; // eax
+  void * v23;
   int v24; // edi
   unsigned int *v25; // eax
   unsigned int v26; // ecx
@@ -39,7 +39,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   int v32; // esi
   int v33; // eax
   unsigned int *v34; // eax
-  unsigned int v35; // ecx
+  void * v35;
   unsigned int v36; // edx
   int *v37; // eax
   int v38; // eax
@@ -83,9 +83,9 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   unsigned int v76;
   double v77; // [esp+60h] [ebp-48h] BYREF
   double v78; // [esp+68h] [ebp-40h]
-  double v79; // [esp+78h] [ebp-30h] BYREF
-  int v80; // [esp+80h] [ebp-28h]
-  unsigned int v81; // [esp+84h] [ebp-24h]
+  void * v79;
+  void * v80;
+  void * v81;
   double v82[3]; // [esp+90h] [ebp-18h] BYREF
 
   v11 = (double *)(*a4 == dword_ABEF10);
@@ -133,13 +133,13 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
     v74 = (double *)((void *)((double *)(v19 - 0x3FFF)));
     v20 = (void *)(Math::SinCos((double)(v19 - 0x3FFF) * -0.00009587672516830327));
     v21 = (void *)(v20 * v75[0]);
-    v22 = (unsigned int)((void *)(*(unsigned int *)a1));
+    v22 = (void *)((unsigned int)((void *)(*(unsigned int *)a1)));
     a1[2] = (void *)(v21);
-    v79 = (unsigned long long)(IDA___PAIR64__(*((unsigned int *)a1 + 1), v22)); /*0x5b22b3*/
-    v23 = *((unsigned int *)a1 + 3); /*0x5b22c2*/
-    v80 = *((unsigned int *)a1 + 2); /*0x5b22c5*/
-    v81 = v23; /*0x5b22c9*/
-    v24 = Math::RoundToInt(v21); /*0x5b22d6*/
+    v79 = (double)((void *)((unsigned long long)(IDA___PAIR64__(*((unsigned int *)a1 + 1), v22))));
+    v23 = (void *)((unsigned int)((void *)(*((unsigned int *)a1 + 3))));
+    v80 = (int)((void *)(*((unsigned int *)a1 + 2)));
+    v81 = (unsigned int)((void *)(v23));
+    v24 = (void *)(Math::RoundToInt(v21));
     IDA_HIDWORD(v79) = Math::RoundToInt(v21); /*0x5b22dd*/
     v69 = IDA___PAIR64__((unsigned int)Math::RoundToInt(v21) + a2[2], IDA_HIDWORD(v79) + a2[1]); /*0x5b22f9*/
     v25 = Coord::Subtract(&v79, *a2 + v24, v69, IDA_SHIDWORD(v69)); /*0x5b22ff*/
@@ -152,7 +152,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
     return Math::RoundToInt(v28, unsigned int a2, unsigned int a4, unsigned int a5); /*0x5b234d*/
   }
   v30 = (double)((unsigned int *)(a1[2]));
-  v79 = (unsigned int)(*a1);
+  v79 = (void *)((unsigned int)(*a1));
   v31 = *((unsigned int *)a1 + 3); /*0x5b2369*/
   v80 = *((unsigned int *)a1 + 2); /*0x5b236c*/
   v81 = (unsigned int)(v31);
@@ -160,11 +160,11 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   IDA_HIDWORD(v79) = Math::RoundToInt(v30); /*0x5b2384*/
   v33 = Math::RoundToInt(v30); /*0x5b2388*/
   v34 = Coord::Subtract(&v77, *a2 + v32, a2[1] + IDA_HIDWORD(v79), a2[2] + v33); /*0x5b23a6*/
-  v35 = v34[1]; /*0x5b23b2*/
-  v36 = v34[2]; /*0x5b23b5*/
-  *a2 = *v34; /*0x5b23b8*/
-  a2[1] = v35; /*0x5b23be*/
-  a2[2] = v36; /*0x5b23c4*/
+  v35 = (void *)(v34[1]);
+  v36 = (void *)(v34[2]);
+  *a2 = (void *)(*v34);
+  a2[1] = (void *)(v35);
+  a2[2] = (void *)(v36);
   v37 = Vector3::Subtract(a2, (int *)&v77, a4); /*0x5b23c7*/
   v38 = Coord::Length(v37); /*0x5b23ce*/
   v39 = *a4; /*0x5b23d3*/

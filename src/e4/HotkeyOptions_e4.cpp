@@ -10,6 +10,9 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/HouseTypeClass_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
 
 // 0x5FB320
 namespace gamemd {

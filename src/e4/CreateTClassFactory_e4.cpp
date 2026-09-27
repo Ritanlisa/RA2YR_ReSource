@@ -298,14 +298,14 @@ int E4Recv_6C0DD0::CreateTClassFactory_DiskLaserClass(void * a1, void * a2, void
     *a3 = a1; /*0x6c0e16*/
   if ( !*a3 ) /*0x6c0e18*/
     return -2147467262; /*0x6c0e20*/
-  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c0e2c*/
+  (*(void (__stdcall **, unsigned int a3)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c0e2c*/
   return 0; /*0x6c0dde*/
 }
 } // namespace gamemd
 
 // 0x6C0F50
 namespace gamemd {
-int E4Recv_6C0F50::CreateTClassFactory_ParasiteClass()
+int E4Recv_6C0F50::CreateTClassFactory_ParasiteClass(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6c0f57*/
     return -2147467261; /*0x6c0f59*/

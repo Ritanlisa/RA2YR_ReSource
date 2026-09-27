@@ -15,6 +15,7 @@
 #include "e4/classes/VectorCursor_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/COMObject_e4.hpp"
 
 // 0x7C8FD2
 namespace gamemd {

@@ -26,6 +26,7 @@
 #include "e4/classes/WaypointPathClass_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/WarheadTypeClass_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
 
 // 0x41D7E0
 namespace gamemd {
@@ -934,8 +935,8 @@ int Warhead::ApplyPostDamageEffects()
   double v88; // [esp+90h] [ebp-50h] BYREF
   int v89; // [esp+9Ch] [ebp-44h]
   int v90; // [esp+A0h] [ebp-40h] BYREF
-  int v91; // [esp+A4h] [ebp-3Ch]
-  unsigned int v92;
+  unsigned int v91;
+  int * v92;
   int v93; // [esp+ACh] [ebp-34h] BYREF
   int v94; // [esp+B0h] [ebp-30h]
   int v95; // [esp+B4h] [ebp-2Ch]
@@ -960,7 +961,7 @@ int Warhead::ApplyPostDamageEffects()
       v5 = (int *)(*(&this->u32_C9));
       v6 = (int *)(*(&this->u32_100));
       v7 = (int *)(*v4);
-      v92 = (int *)((unsigned int)((int *)(*(&this->u32_101))));
+      v92 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(*(&this->u32_101)))))));
       v8 = (int *)((unsigned int *)v4->GetCoords_0(&v93));
       v9 = (int *)(Coord::Subtract(&v90, *v8 - v5, v8[1] - v6, v8[2] - v92));
       v84 = *v9; /*0x46a399*/
@@ -1209,11 +1210,11 @@ int Warhead::ApplyPostDamageEffects()
               }
               v73 = (int *)(Math::ArcTan2(0.7853262558535721) * v73);
               v74 = (int *)(Math::ArcTan2(0.7853262558535721) * v74);
-              v65 = Math::SinCos(0.7853262558535721); /*0x46acf0*/
-              v90 = *v54; /*0x46ad00*/
-              v66 = *(&this->u32_100); /*0x46ad04*/
-              v75 = v65 * v87; /*0x46ad07*/
-              v67 = *(&this->u32_101); /*0x46ad0b*/
+              v65 = (int *)(Math::SinCos(0.7853262558535721));
+              v90 = (int *)(*v54);
+              v66 = (int *)(*(&this->u32_100));
+              v75 = (int *)(v65 * v87);
+              v67 = (int *)(*(&this->u32_101));
               v91 = v66; /*0x46ad0e*/
               v92 = v67; /*0x46ad16*/
               (*(void (__thiscall **)(int, int *, double *))(*(unsigned int *)v80 + 496))(v80, &v90, &v73); /*0x46ad29*/

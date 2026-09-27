@@ -15,6 +15,7 @@
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/HouseTypeClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x624760
 namespace gamemd {

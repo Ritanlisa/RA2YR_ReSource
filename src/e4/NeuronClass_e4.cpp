@@ -20,6 +20,7 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/CoordStruct_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/BuildingPlacement_e4.hpp"
 
 // 0x43A350
 NeuronClass::NeuronClass()

@@ -13,6 +13,7 @@
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/Frame_e4.hpp"
 #include "e4/classes/BinkMovie_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x5D89F0
 namespace gamemd {
@@ -43,7 +44,7 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
   void (__thiscall ***v4)(unsigned int, int); // ecx
   void (__thiscall ***v5)(unsigned int, int); // ecx
   void *v6; // eax
-v3 = (void *)((unsigned int)((void *)((unsigned int)(0))));
+v3 = (void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)(0))))));
   for ( *(unsigned int *)this = (void*)&MultiplayerGameMode_vftable; v3 < this->q018; ++v3 ) /*0x5d7f31*/
   {
     v4 = *(void (__thiscall ****)(unsigned int, int))(this->q00C + 4 * v3); /*0x5d7f36*/

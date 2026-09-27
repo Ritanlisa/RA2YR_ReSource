@@ -23,6 +23,8 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/Draw_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
+#include "e4/classes/CreateTeamCommand_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
 
 // 0x5D6130
 namespace gamemd {
@@ -468,7 +470,7 @@ AbstractClass * * SkirmishSetup_Setup_5E8590()
   }
   else if ( g_GameMode_Current[0] == 1 || (v0 = Event_Dispatch::Return0, g_GameMode_Current[0] == 2) ) /*0x5e85ba*/
   {
-    v0 = (char (*)())&loc_5BB260; /*0x5e85bc*/
+    v0 = (gamemd::AbstractClass **)((char (*)())&loc_5BB260);
   }
   if ( CCFileClass::Load(v0) != 1 ) /*0x5e85c9*/
     return -1; /*0x5e85cb*/

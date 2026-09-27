@@ -22,6 +22,9 @@
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/TClassFactory_CampaignClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x4FCDC0
 namespace gamemd {
@@ -255,7 +258,7 @@ int TActionClass::executeSellAction()
 namespace gamemd {
 unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
 {
-  unsigned int * result;
+  unsigned int result;
   int v5; // esi
   unsigned int v6;
   int v7; // eax
@@ -509,7 +512,7 @@ AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown
 namespace gamemd {
 AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
 {
-  int v6; // edi
+  void ** v6;
   int v7; // esi
   int v8; // ebx
   unsigned int *v9; // eax
@@ -532,7 +535,7 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
   {
     GroundHeight += dword_B0E6D4; /*0x6e242d*/
   }
-  v6 = *(unsigned int *)&this->Value; /*0x6e2431*/
+  v6 = (int)((void **)(*(unsigned int *)&this->Value));
   v7 = *((unsigned int *)g_WeaponTypeConfig + v6); /*0x6e2440*/
   v8 = *(unsigned int *)(v7 + 164); /*0x6e2449*/
   v9 = Coord::To_Cell(&MapClass_Instance, &v16); /*0x6e244f*/

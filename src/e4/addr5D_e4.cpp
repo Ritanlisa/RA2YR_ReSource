@@ -194,7 +194,7 @@ int E4Recv_5D25D0::sub_5D25D0(char * Source, int a3)
       return (char **)(0);
     }
   }
-  v8 = (unsigned int)(this->q040);
+  v8 = (char **)((unsigned int)(this->q040));
   v9 = (unsigned int)(this->attachedTag);
   this->q040 = (unsigned int)(v8 + 1);
   *(unsigned int *)(v9 + 4 * v8) = v5; /*0x5d263d*/
@@ -354,7 +354,7 @@ CampaignScore * * ProcessEditControlKey(CellStruct * aP0, int edx0, int * a2, un
         *(unsigned short *)(v5 + 2 * v40 + 40) = 0; /*0x5d497b*/
       }
     }
-    *a2 = (gamemd::CampaignScore **)((int)((gamemd::CampaignScore **)(0)));
+    *a2 = (int)((gamemd::CampaignScore **)((int)((gamemd::CampaignScore **)(0))));
     (*(void (__thiscall **)(unsigned int))(**(unsigned int **)(v5 + 36) + 80))(*(unsigned int *)(v5 + 36)); /*0x5d498d*/
     return v4; /*0x5d498d*/
   }

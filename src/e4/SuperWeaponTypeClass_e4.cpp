@@ -18,6 +18,8 @@
 #include "e4/classes/Type_e4.hpp"
 #include "e4/classes/Super_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/House_e4.hpp"
 
 // 0x4F6540
 namespace gamemd {

@@ -60,6 +60,7 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/ParticleSystemClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x539760
 namespace gamemd {
@@ -816,15 +817,14 @@ void Map_Helper_584030(IUnknown * aP0)
 namespace gamemd {
 void Map_Helper_59BAB0(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
-  int v5; // esi
+  void * v5;
   int v7; // edx
   double v8; // st7
   double v9; // st6
   int v10; // eax
   int v11; // edx
   int v12; // eax
-
-  v5 = *a2; /*0x59babb*/
+v5 = (void *)((int)(*a2));
   if ( *a2 == dword_ABE2F0 && a2[1] == dword_ABE2F4 && a2[2] == dword_ABE2F8 && a2[3] == dword_ABE2FC ) /*0x59bae5*/
     return 1; /*0x59baeb*/
   if ( a3 ) /*0x59baf4*/

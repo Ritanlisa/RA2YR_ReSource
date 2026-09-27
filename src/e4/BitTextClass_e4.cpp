@@ -28,7 +28,7 @@ int BitTextClass::ParseFontData(char * Source)
   this->u32_1C = (unsigned int)(1);
   this->q020 = (unsigned int)(0);
   this->u32_C = (unsigned int)(0);
-  this->ptr_8 = 0; /*0x4338c3*/
+  this->ptr_8 = (gamemd::CampaignClass *)((unsigned int)(0));
   SetRect((LPRECT)(&this->u32_108), 0, 0, 0, 0); /*0x4338c6*/
   this->u32_2C = 1; /*0x4338d0*/
   Font = File::LoadFont(Source); /*0x4338d3*/

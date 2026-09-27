@@ -7,30 +7,443 @@
 
 namespace gamemd {
 
-struct AudioEvent;
-struct CellLand;
+struct ActionQueue;
+struct AircraftTrackerClass;
+struct AircraftTypeVector;
+struct AllocCallback;
+struct AnimTypeVector;
+struct ArmorType;
+struct AssetClass;
+struct AudioChannel;
+struct AudioConfig;
+struct AudioFile;
+struct AudioFileClass;
+struct AudioFrame;
+struct AudioIndex;
+struct AudioList;
+struct AudioNode;
+struct AudioPool;
+struct AudioSample;
+struct AudioSource;
+struct AudioTimer;
+struct BTree;
+struct BaseNodeClass;
+struct BigInt;
+struct BitArray;
+struct BufferIO;
+struct BuildingLightQueue;
+struct BuildingLoadQueue;
+struct ButtonClass;
+struct CampaignScore;
+struct CaptureManager;
+struct Char;
+struct ChatEvent;
+struct Checksum;
+struct Checksummer;
+struct Cliff;
+struct Conditions;
+struct Conflict;
+struct Coord2D;
+struct Coord3D;
+struct CoordList;
+struct CountryCombo;
+struct CrateClass;
+struct DListNode;
 struct DeleteAndZero;
+struct DiskSpace;
+struct DynamicArray;
+struct DynamicVectorArray;
+struct FacingClass;
+struct Field;
+struct FileExtension;
+struct FileFind;
+struct FileStraw;
+struct FileTree;
+struct FileTreeNode;
+struct Flag;
+struct Float4;
+struct FontClass;
+struct FontRenderer;
+struct FractalNoise;
+struct FrameSnapshot;
 struct GScreenClass;
+struct GameOptions;
+struct GameResult;
+struct GameScreen;
+struct GameState;
 struct Gap2Recv_402F60;
 struct Gap2Recv_4048B0;
+struct GenericList;
 struct GetCurrentProcessId;
 struct GetCurrentThread;
 struct GetCurrentThreadId;
 struct Hash;
+struct HashMap;
+struct HashTree;
+struct HashVector_UInt;
+struct Heap;
+struct IDXContainer;
+struct ILocomotion;
+struct INISectionList;
+struct InputManager_ProcessEvents;
 struct Int4;
+struct IntDynamicVector;
+struct IntVector;
+struct IsRandMap;
+struct KeyValuePair;
+struct KeywordClass;
+struct KeywordType;
+struct Lightning;
+struct ListClass;
+struct Locomotor;
+struct MPCombatTeam;
+struct MSChoiceClass;
+struct MapResourceClass;
+struct Matrix;
+struct Matrix2D;
+struct Matrix3x3;
+struct MessageListClass;
+struct Miles;
+struct ModemGame;
+struct MovieContext;
+struct Multiplay;
+struct MultiplayerConfig;
+struct NetworkEventQueueClass;
+struct NetworkID;
+struct NetworkSettings;
+struct ObjectPlacement;
+struct ObjectPtr;
 struct OleUninitialize;
+struct OptionQueue;
+struct OwnerDrawControl;
+struct PacketQueue;
+struct PaletteManager;
+struct Performance;
+struct PhoneEditor;
+struct PingPongBuffer;
+struct Pipe;
+struct PreviewClass;
+struct PriorityQueue;
+struct ProductionClass;
+struct ProgressAnim;
+struct Property;
+struct PtrVector;
+struct PushCommandClass;
+struct Queue;
 struct Random;
+struct Rect_Point;
+struct ResultNode;
+struct SHPClass;
+struct SaveLoadDialog;
+struct Scalar;
+struct ScreenSaver;
+struct ScriptQueue;
+struct SerialPort;
+struct SettingsClass;
+struct ShapeButton;
+struct ShapeButtonClass;
+struct ShroudClass;
+struct SlaveControlVector;
+struct SpawnControlVector;
+struct SquadClass;
+struct StartCombo;
+struct StaticString;
+struct Straw;
+struct StringTable;
+struct StringVector;
+struct StructTable;
 struct Stub;
+struct SubzoneConnectionVector;
+struct SubzoneHashVector;
+struct SwizzleManager;
+struct SyncDelayClass;
+struct TabCameoListClass;
+struct Targeting;
+struct TaskManager;
+struct TechnoTypeVector;
+struct Text;
+struct TextGroup;
+struct TheatreClass;
+struct TileData;
+struct TileNode;
+struct TileSystem;
+struct TimerPool;
+struct ToggleClass;
+struct ToolTipClass;
+struct Tooltip;
+struct Tree;
+struct Triple;
+struct TypeClass;
+struct VQAClass;
+struct Vector2;
+struct Vector3;
+struct Vector4;
+struct VectorClassUInt;
+struct Viewport;
+struct VoxelAnimTypeVector;
+struct VoxelPalette;
+struct VoxelSection;
+struct WDTClass;
+struct WDTObject;
+struct WTFMode;
 struct WinAPI;
 
-struct AudioEvent {
+struct ActionQueue {
     void* vfptr;
     unsigned char q000;  // 0x0
 };
 
-struct CellLand {
+struct AircraftTrackerClass {
     void* vfptr;
     unsigned char q000;  // 0x0
+};
+
+struct AircraftTypeVector {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct AllocCallback {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct AnimTypeVector {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct ArmorType {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct AssetClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct AudioChannel {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+};
+
+struct AudioConfig {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct AudioFile {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct AudioFileClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct AudioFrame {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct AudioIndex {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct AudioList {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct AudioNode {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct AudioPool {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct AudioSample {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+    unsigned char q010;  // 0x10
+};
+
+struct AudioSource {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct AudioTimer {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct BTree {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct BaseNodeClass {
+    void* vfptr;
+    char buildingTypeIndex[4];  // 0x0
+    char mapCoords[4];  // 0x4
+    bool placed;  // 0x8
+    char attempts[4];  // 0xC
+    unsigned int q00D;  // 0xD
+};
+
+struct BigInt {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+};
+
+struct BitArray {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct BufferIO {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+};
+
+struct BuildingLightQueue {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct BuildingLoadQueue {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+};
+
+struct ButtonClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct CampaignScore {
+    void* vfptr;
+    void* vtable1;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+    unsigned char q010;  // 0x10
+    unsigned char q014;  // 0x14
+    unsigned char q018;  // 0x18
+    unsigned char q01C;  // 0x1C
+    unsigned char q020;  // 0x20
+};
+
+struct CaptureManager {
+    void* vfptr;
+    unsigned int u32_34;  // 0x34
+    unsigned int q040;  // 0x40
+    unsigned int q064;  // 0x64
+    unsigned int q100;  // 0x100
+    unsigned int q130;  // 0x130
+};
+
+struct Char {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct ChatEvent {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Checksum {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Checksummer {
+    void* vfptr;
+    unsigned int crcValue;  // 0x0
+    unsigned int bytePos;  // 0x4
+    unsigned int state;  // 0x8
+    unsigned char buffer;  // 0xC
+};
+
+struct Cliff {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Conditions {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct Conflict {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    Territory* Attacker;  // 0x4
+    Territory* Defender;  // 0x8
+    int Outcome;  // 0xC
+    unsigned int referenceCount;  // 0x10
+    unsigned int q014;  // 0x14
+};
+
+struct Coord2D {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct Coord3D {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+};
+
+struct CoordList {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct CountryCombo {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct CrateClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+};
+
+struct DListNode {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
 };
 
 struct DeleteAndZero {
@@ -38,6 +451,112 @@ struct DeleteAndZero {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
+};
+
+struct DiskSpace {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct DynamicArray {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+    unsigned char q010;  // 0x10
+};
+
+struct DynamicVectorArray {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct FacingClass {
+    void* vfptr;
+    unsigned int DesiredFacing;  // 0x0
+    unsigned int StartFacing;  // 0x4
+    char RotationTimer[12];  // 0x8
+    void* q010;  // 0x10
+    unsigned int ROT;  // 0x14
+};
+
+struct Field {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct FileExtension {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+    unsigned char u8_D;  // 0xD
+};
+
+struct FileFind {
+    void* vfptr;
+    CampaignClass* q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+};
+
+struct FileStraw {
+    void* vfptr;
+    void* vtable1;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct FileTree {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct FileTreeNode {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Flag {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+};
+
+struct Float4 {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct FontClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+    unsigned int u32_10;  // 0x10
+    unsigned char q014;  // 0x14
+};
+
+struct FontRenderer {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct FractalNoise {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct FrameSnapshot {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
 };
 
 struct GScreenClass {
@@ -17246,6 +17765,29 @@ struct GScreenClass {
     AbstractTypeClass* q2458373431058216657214904444666777078018;  // 0x2458373431058216657214904444666777078018
 };
 
+struct GameOptions {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+};
+
+struct GameResult {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct GameScreen {
+    void* vfptr;
+    CampaignClass* q000;  // 0x0
+};
+
+struct GameState {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
 struct Gap2Recv_402F60 {
     void* vfptr;
     unsigned int u32_28;  // 0x28
@@ -17521,6 +18063,11 @@ struct Gap2Recv_4048B0 {
     unsigned int q680398795939452744;  // 0x680398795939452744
 };
 
+struct GenericList {
+    void* vfptr;
+    void* vtable1;  // 0x0
+};
+
 struct GetCurrentProcessId {
     void* vfptr;
     unsigned char q000;  // 0x0
@@ -17543,15 +18090,331 @@ struct Hash {
     unsigned char q008;  // 0x8
 };
 
+struct HashMap {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+};
+
+struct HashTree {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct HashVector_UInt {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Heap {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct IDXContainer {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct ILocomotion {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct INISectionList {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct InputManager_ProcessEvents {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+    unsigned char q010;  // 0x10
+};
+
 struct Int4 {
     void* vfptr;
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
 };
 
+struct IntDynamicVector {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct IntVector {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct IsRandMap {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct KeyValuePair {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct KeywordClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct KeywordType {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Lightning {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct ListClass {
+    void* vfptr;
+    void* vtable1;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned char q00C;  // 0xC
+    unsigned int u32_10;  // 0x10
+    unsigned char q014;  // 0x14
+    char Enabled;  // 0x15
+    unsigned int u32_18;  // 0x18
+    unsigned int q019;  // 0x19
+    unsigned int q01A;  // 0x1A
+    bool q01B;  // 0x1B
+    unsigned int u32_1C;  // 0x1C
+    bool q01D;  // 0x1D
+    unsigned int q01E;  // 0x1E
+};
+
+struct Locomotor {
+    void* vfptr;
+    char Locomotor_field_00[4];  // 0x0
+};
+
+struct MPCombatTeam {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+};
+
+struct MSChoiceClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct MapResourceClass {
+    void* vfptr;
+    IUnknown* q000;  // 0x0
+};
+
+struct Matrix {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct Matrix2D {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Matrix3x3 {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    bool q00A;  // 0xA
+    bool q00B;  // 0xB
+    unsigned char q00C;  // 0xC
+    unsigned char q010;  // 0x10
+};
+
+struct MessageListClass {
+    void* vfptr;
+    char MessageCount[4];  // 0x0
+    char MaxMessageCount[4];  // 0x4
+    char ScrollOffset[4];  // 0x8
+    char TextColorIndex[4];  // 0xC
+    char DisplayDuration[4];  // 0x10
+    char MessageTimer[12];  // 0x14
+    unsigned int q018;  // 0x18
+    unsigned int q019;  // 0x19
+    unsigned int q01A;  // 0x1A
+    unsigned int q01C;  // 0x1C
+    char MessageRect[16];  // 0x20
+    unsigned int q024;  // 0x24
+    unsigned int q028;  // 0x28
+    unsigned int q02C;  // 0x2C
+    bool IsScrolling;  // 0x30
+    unsigned char padding_after_scroll;  // 0x31
+};
+
+struct Miles {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct ModemGame {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+    unsigned char q010;  // 0x10
+};
+
+struct MovieContext {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Multiplay {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct MultiplayerConfig {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct NetworkEventQueueClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct NetworkID {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct NetworkSettings {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct ObjectPlacement {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct ObjectPtr {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
 struct OleUninitialize {
     void* vfptr;
     unsigned char q000;  // 0x0
+};
+
+struct OptionQueue {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct OwnerDrawControl {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct PacketQueue {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct PaletteManager {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Performance {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct PhoneEditor {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct PingPongBuffer {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Pipe {
+    void* vfptr;
+    void* vtable1;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    bool q00A;  // 0xA
+    bool q00B;  // 0xB
+    unsigned char q00C;  // 0xC
+    bool q00D;  // 0xD
+    bool q00E;  // 0xE
+};
+
+struct PreviewClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct PriorityQueue {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct ProductionClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct ProgressAnim {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Property {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct PtrVector {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct PushCommandClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Queue {
+    void* vfptr;
 };
 
 struct Random {
@@ -17562,9 +18425,351 @@ struct Random {
     unsigned char q00C;  // 0xC
 };
 
+struct Rect_Point {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct ResultNode {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct SHPClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct SaveLoadDialog {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+};
+
+struct Scalar {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct ScreenSaver {
+    void* vfptr;
+};
+
+struct ScriptQueue {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct SerialPort {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct SettingsClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct ShapeButton {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct ShapeButtonClass {
+    void* vfptr;
+    void* vtable1;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+};
+
+struct ShroudClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct SlaveControlVector {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct SpawnControlVector {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct SquadClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct StartCombo {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct StaticString {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Straw {
+    void* vfptr;
+    void* vtable1;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct StringTable {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct StringVector {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    unsigned char q010;  // 0x10
+    unsigned char q014;  // 0x14
+    unsigned char q018;  // 0x18
+};
+
+struct StructTable {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
 struct Stub {
     void* vfptr;
     char Stub_field_00[4];  // 0x0
+};
+
+struct SubzoneConnectionVector {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+};
+
+struct SubzoneHashVector {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct SwizzleManager {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct SyncDelayClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct TabCameoListClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Targeting {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct TaskManager {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct TechnoTypeVector {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct Text {
+    void* vfptr;
+    char Text_field_00[4];  // 0x0
+};
+
+struct TextGroup {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct TheatreClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct TileData {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned int u16_2;  // 0x2
+};
+
+struct TileNode {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct TileSystem {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+    unsigned char u8_D;  // 0xD
+};
+
+struct TimerPool {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct ToggleClass {
+    void* vfptr;
+    void* vtable1;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct ToolTipClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+    unsigned char q00C;  // 0xC
+    bool IsAllocated;  // 0xD
+    unsigned char q010;  // 0x10
+    bool IsInitialized;  // 0x12
+    unsigned char q014;  // 0x14
+    int Count;  // 0x16
+    unsigned char q018;  // 0x18
+    unsigned char q01C;  // 0x1C
+    unsigned char q020;  // 0x20
+    unsigned char q024;  // 0x24
+    unsigned char q028;  // 0x28
+    unsigned char q02C;  // 0x2C
+    unsigned char q030;  // 0x30
+    unsigned char q034;  // 0x34
+};
+
+struct Tooltip {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Tree {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Triple {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct TypeClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct VQAClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Vector2 {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct Vector3 {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+    unsigned char q008;  // 0x8
+};
+
+struct Vector4 {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct VectorClassUInt {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct Viewport {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct VoxelAnimTypeVector {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct VoxelPalette {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct VoxelSection {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+};
+
+struct WDTClass {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct WDTObject {
+    void* vfptr;
+    unsigned char q000;  // 0x0
+    unsigned char q004;  // 0x4
+};
+
+struct WTFMode {
+    void* vfptr;
+    unsigned int u32_18;  // 0x18
+    unsigned int q024;  // 0x24
+    unsigned int u32_30;  // 0x30
+    unsigned int u32_3C;  // 0x3C
+    unsigned char u8_3D;  // 0x3D
+    IUnknown* q040;  // 0x40
+    AudioController* q050;  // 0x50
+    unsigned int q054;  // 0x54
+    AudioController* q05C;  // 0x5C
+    IUnknown* q064;  // 0x64
+    AudioController* q080;  // 0x80
+    void* q0E4;  // 0xE4
+    void* q0E8;  // 0xE8
+    IUnknown* q100;  // 0x100
+    AudioController* q128;  // 0x128
+    void* q228;  // 0x228
+    unsigned int u32_5D8;  // 0x5D8
+    void* q1378;  // 0x1378
+    void* q30D8;  // 0x30D8
+    unsigned int q5270;  // 0x5270
+    void* q12504;  // 0x12504
+    unsigned int q21104;  // 0x21104
+    void* q479250;  // 0x479250
 };
 
 struct WinAPI {

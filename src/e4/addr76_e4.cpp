@@ -63,6 +63,8 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/AudioMixer_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x7636F0
 namespace gamemd {

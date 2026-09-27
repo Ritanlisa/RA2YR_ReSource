@@ -12,6 +12,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x477900
 namespace gamemd {
@@ -180,7 +181,7 @@ unsigned int * ParticleTypeClass::EnsureCapacity(unsigned int * a2)
   }
   else
   {
-    v4 = 0; /*0x47892e*/
+    v4 = (char *)((unsigned int)(0));
   }
   this->Items = (unsigned int *)(v4);
   if ( !v4 ) /*0x478935*/

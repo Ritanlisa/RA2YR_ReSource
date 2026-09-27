@@ -8,7 +8,7 @@ struct MSEngine {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* q004;  // 0x4
-    void* ;  // 0x8
+    void* pad_008;  // 0x8
     bool q00A;  // 0xA
     bool q00B;  // 0xB
     unsigned int u32_C;  // 0xC

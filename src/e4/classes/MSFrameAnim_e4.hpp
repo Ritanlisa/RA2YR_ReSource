@@ -8,7 +8,7 @@ struct MSFrameAnim {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* q004;  // 0x4
-    void* ;  // 0x8
+    void* pad_008;  // 0x8
     void* q00C;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned int q010;  // 0x10

@@ -20,7 +20,7 @@ struct FactoryClass {
     int referenceCount;  // 0x1C
     bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
-    void* ;  // 0x24
+    void* pad_024;  // 0x24
     bool q027;  // 0x27
     unsigned int u32_28;  // 0x28
     bool q02B;  // 0x2B

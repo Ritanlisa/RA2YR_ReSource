@@ -18,6 +18,9 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/WaypointPathClass_e4.hpp"
+#include "e4/classes/WaypointClass_e4.hpp"
+#include "e4/classes/Particle_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
 
 // 0x474810
 namespace gamemd {

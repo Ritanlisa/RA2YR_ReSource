@@ -249,7 +249,7 @@ Coord * * TagClass::Unlink()
       result->q044 = 0; /*0x71ae1e*/
     result = TagClass::Unlink(*(&this->vtable26)); /*0x71ae24*/
   }
-  v4 = (gamemd::Coord **)((int)((gamemd::Coord **)((int)((gamemd::Coord **)((int)((gamemd::Coord **)(this->creationFrame)))))));
+  v4 = (gamemd::Coord **)((int)((gamemd::Coord **)((int)((gamemd::Coord **)((int)((gamemd::Coord **)((int)((gamemd::Coord **)((int)((gamemd::Coord **)(this->creationFrame)))))))))));
   *(&this->vtable27) = 0; /*0x71ae2c*/
   *(&this->vtable26) = 0; /*0x71ae31*/
   *(&this->vtable25) = 0; /*0x71ae34*/

@@ -24,6 +24,9 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/Building_e4.hpp"
 #include "e4/classes/BulletTypeClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/BulletClass_e4.hpp"
 
 // 0x45DD90
 namespace gamemd {
@@ -235,7 +238,7 @@ int BuildingTypeClass::ConstructFull(char * Source)
   this->CrateBeneath = 0; /*0x45e273*/
   this->LeaveRubble = (unsigned int)(0);
   this->CrateBeneathIsMoney = (unsigned int)(0);
-  this->NumberOfDocks = 1; /*0x45e28a*/
+  this->NumberOfDocks = (unsigned int)(1);
   this->PreventsPlacementOverlap = 0; /*0x45e292*/
   this->ProductionCompletionThreshold = 1; /*0x45e298*/
   this->CostRatePerFrame = 1; /*0x45e29e*/
@@ -596,7 +599,7 @@ void* BuildingTypeClass::LoadAnimations(ObjectTypeClass * aP1)
   void *v14; // eax
   unsigned char *v15; // esi
   void *v16; // eax
-  int v17; // eax
+  AbstractClass ** v17;
   unsigned char *v18; // esi
   void *v19; // eax
   const char *v20; // edi

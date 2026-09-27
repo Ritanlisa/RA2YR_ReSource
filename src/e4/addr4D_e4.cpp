@@ -16,6 +16,9 @@
 #include "e4/classes/Options_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/Draw_e4.hpp"
+#include "e4/classes/E4Recv_4C95D0_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/E4Recv_4C3DD0_e4.hpp"
 
 // 0x4D1650
 namespace gamemd {

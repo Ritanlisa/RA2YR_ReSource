@@ -200,7 +200,7 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   HWND v20; // [esp+1Eh] [ebp-F4h]
   HWND hWnd; // [esp+22h] [ebp-F0h]
   unsigned char Source[236]; // [esp+26h] [ebp-ECh] BYREF
-v18 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((char)((wchar_t *)(IDA_HIBYTE(a1)))))));
+v18 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((char)((wchar_t *)(IDA_HIBYTE(a1)))))))))));
   v3 = (unsigned int)((wchar_t *)(3));
   if ( a3 == 1 ) /*0x5f2d00*/
     String = GetStringCSF((wchar_t *)aTxtModemConner_0, 0, g_Str_File_NullMgr_CPP, 1580); /*0x5f2d13*/

@@ -346,7 +346,7 @@ char BulkData_Initialize()
     BufferIOFileClass::Dtor(v6); /*0x531839*/
     goto LABEL_12; /*0x53183e*/
   }
-  v8 = (unsigned int)(0);
+  v8 = (void **)((unsigned int)(0));
   Vector::Clear(v7); /*0x531861*/
   v6[0] = &off_7E1668; /*0x53186a*/
   BufferIOFileClass::Dtor(v6); /*0x531872*/

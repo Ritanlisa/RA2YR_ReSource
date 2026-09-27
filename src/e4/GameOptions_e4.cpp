@@ -9,6 +9,8 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/Mission_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x682780
 namespace gamemd {

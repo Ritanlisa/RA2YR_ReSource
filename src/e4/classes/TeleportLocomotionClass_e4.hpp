@@ -19,7 +19,7 @@ struct TeleportLocomotionClass {
     bool q01D;  // 0x1D
     ILocomotion * q020;  // 0x20
     unsigned int u32_24;  // 0x24
-    char LastCoords[12];  // 0x28
+    unsigned int LastCoords;  // 0x28
     bool q02B;  // 0x2B
     unsigned int u32_2C;  // 0x2C
     ObjectClass * ptr_30;  // 0x30
@@ -33,7 +33,7 @@ struct TeleportLocomotionClass {
     char State[4];  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int q03B;  // 0x3B
-    char Timer[12];  // 0x3C
+    unsigned int Timer;  // 0x3C
     unsigned int q03D;  // 0x3D
     char q040[4];  // 0x40
     bool q042;  // 0x42

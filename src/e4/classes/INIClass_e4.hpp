@@ -23,7 +23,7 @@ struct INIClass {
     char unknown30[4];  // 0x30
     bool needsSave_flag;  // 0x34
     unsigned char q035;  // 0x35
-    void* ;  // 0x38
+    void* pad_038;  // 0x38
     unsigned int INIClass_field_3C;  // 0x3C
     unsigned int q040;  // 0x40
     unsigned int q044;  // 0x44
@@ -167,6 +167,7 @@ struct INIClass {
     unsigned int unknown38;
     unsigned int ReadInt_Overwrite;
     unsigned int SetInt;
+    unsigned int SetIntFormat;
     unsigned int WriteToString;
 // --- flat members (END) ---
     INIClass * ReadCoord(double aP1, int a2, INIClass * aP2, int a4);
@@ -175,7 +176,7 @@ struct INIClass {
     char GetInt(char ** a2, char ** a3, unsigned int * a4);
     int GetBool(INIClass * aP1, unsigned char * a2, int a4);
     int GetStringByIndex(CCINIClass * aP1, CCINIClass * aP2);
-    int ReadInt(ObjectClass * aP1, void* aP2, INIClass * aP3);
+    int ReadInt(ObjectClass * aP1, ReferenceCounted * aP2, INIClass * aP3);
     int WOLobby_Play();
     int sub_44FE60();
     INIClass();

@@ -18,6 +18,8 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/Terrain_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/TerrainClass_e4.hpp"
 
 // 0x7665D0
 namespace gamemd {

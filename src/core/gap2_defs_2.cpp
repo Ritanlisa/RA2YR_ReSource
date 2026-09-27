@@ -381,7 +381,7 @@ int unknown::Release(int a1, void* a2) {
     }
     else
     {
-      v5 = RA2_OPNEW(16 * a1); /*0x589579*/
+      v5 = (_WORD *)(RA2_OPNEW(16 * a1));
       if ( v5 ) /*0x589580*/
       {
         v5 = v5; /*0x589585*/
@@ -415,7 +415,7 @@ int unknown::Release(int a1, void* a2) {
         v10 = 0; /*0x5895fa*/
         do /*0x58961e*/
         {
-          v11 = &v5[v10]; /*0x5895ff*/
+          v11 = (_DWORD *)(&v5[v10]);
           v12 = (_DWORD *)(v10 * 2 + this->Items); /*0x589602*/
           v10 += 8; /*0x589604*/
           --v9; /*0x589607*/

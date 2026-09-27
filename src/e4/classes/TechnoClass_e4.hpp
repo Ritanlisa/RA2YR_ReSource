@@ -457,7 +457,7 @@ struct TechnoClass {
     unsigned char q470;  // 0x470
     unsigned int audioLoopIndex3;  // 0x474
     unsigned int audioVolume3;  // 0x478
-    char audioController4[4];  // 0x47C
+    unsigned int audioController4;  // 0x47C
     TechnoClass* q47D;  // 0x47D
     char q480[4];  // 0x480
     unsigned int q484;  // 0x484

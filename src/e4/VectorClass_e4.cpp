@@ -585,7 +585,7 @@ unsigned int * VectorClass_K_8::Constructor()
   this->q01C = (unsigned int *)(operator new(0x10000u));
   this->q020 = (unsigned int *)(operator new(0x10000u));
   this->q024 = (unsigned int *)(0xFFFF);
-  return this; /*0x4a2874*/
+  return (unsigned int *)(this);
 }
 }
 // 0x5AD010

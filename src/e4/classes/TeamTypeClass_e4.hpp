@@ -70,19 +70,19 @@ struct TeamTypeClass {
     void* q098;  // 0x98
     void* q09C;  // 0x9C
     unsigned int q0A0;  // 0xA0
-    void* ;  // 0xA4
+    void* pad_0A4;  // 0xA4
     unsigned char u8_A5;  // 0xA5
     unsigned char u8_A6;  // 0xA6
     unsigned char u8_A7;  // 0xA7
     unsigned int q0A8;  // 0xA8
     unsigned char q0A9;  // 0xA9
     unsigned char q0AA;  // 0xAA
-    void* ;  // 0xAB
+    void* pad_0AB;  // 0xAB
     unsigned int q0AC;  // 0xAC
     unsigned char u8_AD;  // 0xAD
     unsigned char u8_AE;  // 0xAE
     unsigned char q0AF;  // 0xAF
-    void* ;  // 0xB0
+    void* pad_0B0;  // 0xB0
     unsigned char u8_B1;  // 0xB1
     unsigned char u8_B3;  // 0xB3
     unsigned int q0B4;  // 0xB4

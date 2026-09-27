@@ -41,6 +41,7 @@
 #include "e4/classes/TextRenderer_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/E4Recv_52A110_e4.hpp"
+#include "e4/classes/Building_e4.hpp"
 
 // 0x540C50
 namespace gamemd {

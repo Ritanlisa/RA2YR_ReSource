@@ -17,6 +17,8 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/BulletTypeClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x4E3560
 namespace gamemd {

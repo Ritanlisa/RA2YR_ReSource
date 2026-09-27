@@ -13,27 +13,27 @@ struct E4Recv_76AAF0 {
     unsigned int M14;  // 0xE
     unsigned int M15;  // 0xF
     unsigned int M16;  // 0x10
-    void* ;  // 0x13
-    void* ;  // 0x14
+    void* pad_013;  // 0x13
+    void* pad_014;  // 0x14
     unsigned int M18;  // 0x18
-    void* ;  // 0x1C
+    void* pad_01C;  // 0x1C
     unsigned int M29;  // 0x1D
     unsigned int M30;  // 0x1E
     unsigned int M31;  // 0x1F
     unsigned int M20;  // 0x20
     unsigned int M35;  // 0x23
-    unsigned int q024;  // 0x24
+    void* pad_024;  // 0x24
     unsigned int M38;  // 0x26
-    unsigned int M39;  // 0x27
+    void* ;  // 0x27
     unsigned int q028;  // 0x28
-    unsigned int M42;  // 0x2A
-    unsigned int M43;  // 0x2B
-    void* ;  // 0x2C
+    void* ;  // 0x2A
+    void* ;  // 0x2B
+    void* pad_02C;  // 0x2C
     unsigned int M45;  // 0x2D
     unsigned int M46;  // 0x2E
-    void* ;  // 0x2F
+    void* pad_02F;  // 0x2F
     unsigned int q030;  // 0x30
-    void* ;  // 0x32
+    void* pad_032;  // 0x32
     unsigned int M33;  // 0x33
     unsigned int M34;  // 0x34
     unsigned int M36;  // 0x36
@@ -43,7 +43,7 @@ struct E4Recv_76AAF0 {
     unsigned int M40;  // 0x40
     unsigned int M41;  // 0x41
     unsigned int q044;  // 0x44
-    void* ;  // 0x48
+    void* pad_048;  // 0x48
     unsigned int M49;  // 0x49
     unsigned int M50;  // 0x50
     unsigned int M51;  // 0x51
@@ -56,7 +56,7 @@ struct E4Recv_76AAF0 {
     unsigned int q068;  // 0x68
     unsigned int q070;  // 0x70
     unsigned int q080;  // 0x80
-    void* ;  // 0x84
+    void* pad_084;  // 0x84
     unsigned int q100;  // 0x100
     unsigned int q104;  // 0x104
     unsigned int q114;  // 0x114
@@ -98,6 +98,11 @@ struct E4Recv_76AAF0 {
     unsigned int M48;
     unsigned int M19;
     unsigned int q014;
+    unsigned int M28;
+    unsigned int q084;
+    unsigned int q024;
+    unsigned int M39;
+    unsigned int M42;
 // --- flat members (END) ---
     unsigned int * sub_76AAF0();  // 0x76AAF0
 };

@@ -8,7 +8,7 @@ struct ParticleSystemClass_16 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
-    void* ;  // 0x8
+    void* pad_008;  // 0x8
     bool q00C;  // 0xC
     bool IsAllocated;  // 0xD
     bool IsInitialized;  // 0x12

@@ -16,6 +16,7 @@
 #include "e4/classes/NetworkLobby_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
+#include "e4/classes/NetworkGameSetup_e4.hpp"
 
 // 0x639FD0
 namespace gamemd {

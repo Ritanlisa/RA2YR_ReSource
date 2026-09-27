@@ -13,7 +13,7 @@ struct Tactical {
     unsigned int u32_10;  // 0x10
     unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
-    void* ;  // 0x14
+    void* pad_014;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
@@ -47,7 +47,7 @@ struct Tactical {
     unsigned char q05C;  // 0x5C
     unsigned int q060;  // 0x60
     unsigned char q064;  // 0x64
-    void* ;  // 0x68
+    void* pad_068;  // 0x68
     unsigned int q06C;  // 0x6C
     unsigned char q070;  // 0x70
     unsigned int u16_72;  // 0x72

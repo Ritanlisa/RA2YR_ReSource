@@ -17,6 +17,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Count_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
 
 // 0x459F90
 namespace gamemd {
@@ -707,7 +708,7 @@ DynamicVector * TypeList_Infantry::Constructor_0(char a2)
     RA2_OPDEL(v3); /*0x513208*/
     this->Items = 0; /*0x513210*/
   }
-  this->IsAllocated = 0; /*0x51321b*/
+  this->IsAllocated = (unsigned char)((gamemd::DynamicVector *)(0));
   this->Capacity = 0; /*0x513221*/
   if ( (a2 & 1) != 0 ) /*0x513228*/
     RA2_OPDEL(); /*0x51322b*/

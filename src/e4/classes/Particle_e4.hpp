@@ -29,7 +29,7 @@ struct Particle {
     void* q108;  // 0x108
     void* q10C;  // 0x10C
     unsigned int q110;  // 0x110
-    void* ;  // 0x114
+    void* pad_114;  // 0x114
     unsigned int StateAIAdvance;  // 0x118
     unsigned char q11C;  // 0x11C
     unsigned int q120;  // 0x120

@@ -10,10 +10,10 @@ struct E4Recv_74BCA0 {
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
     unsigned int M12;  // 0xC
-    void* ;  // 0x10
+    void* pad_010;  // 0x10
     unsigned int M20;  // 0x14
     unsigned int q018;  // 0x18
-    void* ;  // 0x19
+    void* pad_019;  // 0x19
     unsigned int q020;  // 0x20
     unsigned int q024;  // 0x24
     unsigned int q034;  // 0x34

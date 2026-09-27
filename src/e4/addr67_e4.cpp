@@ -26,6 +26,10 @@
 #include "e4/classes/E4Recv_690400_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/GameSettings_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Waypoint_e4.hpp"
 
 // 0x679CC0
 namespace gamemd {
@@ -236,7 +240,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
       *(unsigned int *)(aP0 + 8) = v13; /*0x67bc7b*/
       if ( v13 ) /*0x67bc7e*/
       {
-        v14 = (void *)((unsigned int)(operator new(4 * v13)));
+        v14 = (void *)((unsigned int)((void *)((unsigned int)(operator new(4 * v13)))));
         *(unsigned int *)(aP0 + 4) = v14; /*0x67bc92*/
         if ( v14 ) /*0x67bc95*/
         {

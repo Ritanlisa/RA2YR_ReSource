@@ -7,6 +7,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/DisplayClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x4AF780
 namespace gamemd {

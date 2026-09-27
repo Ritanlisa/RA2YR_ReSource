@@ -10,7 +10,7 @@ struct DynamicVectorClass_uint {
     void* Items;  // 0x4
     unsigned int q008;  // 0x8
     bool q00A;  // 0xA
-    void* ;  // 0xC
+    void* pad_00C;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned int tail_E;  // 0xE
     unsigned int q010;  // 0x10
@@ -47,7 +47,7 @@ struct DynamicVectorClass_uint {
     unsigned int q096;  // 0x96
     unsigned char q09A;  // 0x9A
     unsigned char q100;  // 0x100
-    char q104[4];  // 0x104
+    unsigned int q104;  // 0x104
     CampaignClass* q114;  // 0x114
     unsigned char q118;  // 0x118
     unsigned int q128;  // 0x128

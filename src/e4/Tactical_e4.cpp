@@ -24,6 +24,7 @@
 #include "e4/classes/TagTypeClass_e4.hpp"
 #include "e4/classes/TriggerClass_e4.hpp"
 #include "e4/classes/Techno_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x42A6D0
 namespace gamemd {

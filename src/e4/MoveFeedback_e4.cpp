@@ -14,6 +14,8 @@
 #include "e4/classes/DisplayClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x7327D0
 namespace gamemd {

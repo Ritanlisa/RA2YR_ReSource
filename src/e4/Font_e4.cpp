@@ -13,6 +13,8 @@
 #include "e4/classes/FoggedObject_e4.hpp"
 #include "e4/classes/FoggedObjectClass_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/TeamClass_e4.hpp"
 
 // 0x4346C0
 namespace gamemd {

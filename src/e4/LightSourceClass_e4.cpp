@@ -10,6 +10,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Radar_e4.hpp"
 #include "e4/classes/LightConvertClass_e4.hpp"
+#include "e4/classes/Terrain_e4.hpp"
 
 // 0x554760
 namespace gamemd {

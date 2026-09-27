@@ -20,6 +20,8 @@
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/PageUserCommandClass_e4.hpp"
 
 // 0x4F11B0
 namespace gamemd {

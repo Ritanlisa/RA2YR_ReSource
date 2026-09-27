@@ -2,6 +2,7 @@
 #pragma once
 
 #include "e4/classes/_fwd_e4.hpp"
+#include "core/math.hpp"  // CellStruct (GetConnectionSpeed param)
 
 namespace gamemd {
 struct Network {

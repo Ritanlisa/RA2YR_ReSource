@@ -10,7 +10,7 @@ struct RadarClass {
     void* vtable1;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8
-    void* ;  // 0xC
+    void* pad_00C;  // 0xC
     unsigned int q00D;  // 0xD
     void* q010;  // 0x10
     unsigned int q014;  // 0x14

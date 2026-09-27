@@ -19,6 +19,7 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/VoxelAnimType_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x4CAF20
 namespace gamemd {
@@ -142,7 +143,7 @@ namespace gamemd {
 Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
 {
   int v4; // eax
-  int v5; // edx
+  int * v5;
   unsigned int *v6; // ebp
   int *v7; // eax
   float *v8; // eax
@@ -154,22 +155,22 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
   int v14; // eax
   unsigned int *v15; // esi
   int v16; // eax
-  int v17; // eax
+  int * v17;
   int *v18; // eax
   int *SHPFrame; // [esp-1Ch] [ebp-CCh]
   int *v21; // [esp-1Ch] [ebp-CCh]
   int v22; // [esp-18h] [ebp-C8h]
   int v23; // [esp-18h] [ebp-C8h]
-  int v25; // [esp+Ch] [ebp-A4h] BYREF
-  int v26; // [esp+10h] [ebp-A0h]
-  int v27; // [esp+14h] [ebp-9Ch]
+  unsigned int v25;
+  unsigned int v26;
+  int * v27;
   int v28; // [esp+18h] [ebp-98h] BYREF
   int v29; // [esp+1Ch] [ebp-94h] BYREF
   int v30; // [esp+20h] [ebp-90h] BYREF
   int v31; // [esp+24h] [ebp-8Ch]
   int GroundHeight; // [esp+28h] [ebp-88h]
-  int v33; // [esp+2Ch] [ebp-84h]
-  int v34; // [esp+30h] [ebp-80h]
+  int * v33;
+  int * v34;
   int v36[2]; // [esp+38h] [ebp-78h] BYREF
   int v37[4]; // [esp+40h] [ebp-70h] BYREF
   float v38[12]; // [esp+50h] [ebp-60h] BYREF
@@ -178,8 +179,8 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
   if ( (*(unsigned int *)g_ScenarioClass_Instance & 0x1000) == 0 /*0x749bb6*/
     || (v25 = *(&this->vtable49), v26 = *(&this->uniqueId0), v27 = *(&this->uniqueId1), IDA_LOBYTE(v4) = Game::Stub3((int)&v25), !(unsigned char)v4) )
   {
-    v5 = a2[1]; /*0x749bcb*/
-    v34 = *a2; /*0x749bd0*/
+    v5 = (int *)(a2[1]);
+    v34 = (int *)(*a2);
     v5 = v5; /*0x749bd4*/
     v30 = *(&this->vtable49); /*0x749bda*/
     v31 = *(&this->uniqueId0); /*0x749beb*/
@@ -191,16 +192,15 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
     v26 = *(&this->uniqueId0); /*0x749c26*/
     if ( *(&this->uniqueId1) >= dword_B1D1BC + GroundHeight ) /*0x749c38*/
     {
-      v33 = dword_B1D1BC + GroundHeight; /*0x749c3e*/
-      v27 = dword_B1D1BC + GroundHeight + 1; /*0x749c4a*/
+      v33 = (int *)(dword_B1D1BC + GroundHeight);
+      v27 = (unsigned int)((int *)(dword_B1D1BC + GroundHeight + 1));
       v25 = v30; /*0x749c4e*/
       v26 = v31; /*0x749c5b*/
       Coord::To_Screen(g_TacticalClass_Instance, &v25, v36); /*0x749c60*/
     }
     else
     {
-  LABEL_6:
-      v33 = GroundHeight; /*0x749c62*/
+  LABEL_6: v33 = (int *)(GroundHeight);
       Coord::To_Screen(g_TacticalClass_Instance, &v30, v36); /*0x749c76*/
     }
     IDA_LOBYTE(v4) = this->q13C; /*0x749c7b*/
@@ -266,8 +266,8 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
         v25 = (int)(v29 + v34);
         v14 = (int)(v14);
         v16 = (int)(*this);
-        v26 = (int *)(v28 + v5);
-        v17 = this->GetMember41(); /*0x749ea4*/
+        v26 = (unsigned int)((int *)(v28 + v5));
+        v17 = (unsigned int)(this->GetMember41());
         v23 = -2 - ZCoordToScreenY(v17); /*0x749eb8*/
         v21 = (int *)BuildingClass::GetSHPFrame(v15, v9); /*0x749ec8*/
         v18 = Miles::DriverGet(); /*0x749ed6*/

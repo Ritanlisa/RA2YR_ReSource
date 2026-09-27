@@ -10,7 +10,7 @@ struct AbstractClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    void* ;  // 0x10
+    void* pad_010;  // 0x10
     unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14

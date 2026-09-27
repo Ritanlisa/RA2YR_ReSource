@@ -10,6 +10,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/WalkLocomotion_e4.hpp"
 
 // 0x7B9040
 namespace gamemd {
@@ -41,8 +42,8 @@ unsigned int * WWMouseClass::initSurface()
         v8[1] = (unsigned int)(0);
         v9[2] = (unsigned int)(v6);
         v9[3] = (unsigned int)(v4);
-        v9[1] = v7 + v5; /*0x7b9097*/
-        v8[2] = v6; /*0x7b909b*/
+        v9[1] = (unsigned int)(v7 + v5);
+        v8[2] = (unsigned int)(v6);
         v8[3] = v4; /*0x7b909f*/
         return (unsigned int *)(*(int (__thiscall **)(int, unsigned int *, int, unsigned int *, unsigned int, int))(v2->vtable3)( /*0x7b90ab*/
                            v2,
@@ -177,14 +178,14 @@ void* WWMouseClass::captureMouse()
         this->Rect0 = (unsigned int)((IUnknown *)(v16));
         v20[2] = (unsigned int)((IUnknown *)(v18));
         v20[3] = (unsigned int)((IUnknown *)(v19));
-        this->q04C = (IUnknown *)(v17);
-        this->q050 = v18; /*0x7b9bb6*/
-        this->q054 = v19; /*0x7b9bb9*/
-        v11 = v16 + this->q02C; /*0x7b9bbf*/
-        v12 = *(int **)(&this->q0188); /*0x7b9bc1*/
-        v20[0] = v11; /*0x7b9bc4*/
-        v20[1] = this->q030 + v17; /*0x7b9bcd*/
-        v13 = *v12; /*0x7b9bd1*/
+        this->q04C = (unsigned int)((IUnknown *)(v17));
+        this->q050 = (unsigned int)((IUnknown *)(v18));
+        this->q054 = (unsigned int)((IUnknown *)(v19));
+        v11 = (IUnknown *)(v16 + this->q02C);
+        v12 = (IUnknown *)(*(int **)(&this->q0188));
+        v20[0] = (unsigned int)((IUnknown *)(v11));
+        v20[1] = (IUnknown *)(this->q030 + v17);
+        v13 = (IUnknown *)(*v12);
         v15 = this->q024; /*0x7b9bdb*/
         v14 = Rect::Set(v21, 0, 0, v18, v19); /*0x7b9be6*/
         (*(void (__thiscall **)(unsigned int, unsigned int *, int, unsigned int *, unsigned int, int))(v13 + 8))( /*0x7b9bef*/
@@ -245,9 +246,9 @@ void WWMouseClass::releaseMouse()
             v9[1] = (unsigned int)(0);
             v10[2] = (unsigned int)(v6);
             v10[3] = (unsigned int)(v7);
-            v10[1] = v8; /*0x7b9d19*/
-            v9[2] = v6; /*0x7b9d1d*/
-            v9[3] = v7; /*0x7b9d21*/
+            v10[1] = (unsigned int)(v8);
+            v9[2] = (unsigned int)(v6);
+            v9[3] = (unsigned int)(v7);
             (*(void (__thiscall **)(int, unsigned int *, int, unsigned int *, unsigned int, int))(*(unsigned int *)v3 + 8))( /*0x7b9d2d*/
               v3,
               v10,

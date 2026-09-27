@@ -347,7 +347,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
   aP2 = (IUnknown *)(aP2);
   v7 = (unsigned int)((IUnknown *)(aP2->outBuffer));
   v52[2] = (unsigned int)((IUnknown *)(aP0));
-  v45 = (IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)(0)))));
+  v45 = (IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)(0)))))))));
   aP2 = (IUnknown *)(v7);
   CellData = (char *)((IUnknown *)(Tactical::GetCellData((int16_t *)&aP2)));
   *((unsigned int *)CellData + 16) = Cell::GetTerrainMask(aP0, (int *)aP2, 2); /*0x57a467*/
@@ -363,7 +363,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       || (TerrainMask & 0xA) == 0xA && (TerrainMask & 0x11) == 0
       || (TerrainMask & 0x28) == 0x28 && (TerrainMask & 0x44) == 0 )
     {
-      v45 = (IUnknown *)((unsigned int)((IUnknown *)(1)));
+      v45 = (IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)(1)))))));
     }
     if ( (TerrainMask & 0x20) != 0 ) /*0x57a4d5*/
     {

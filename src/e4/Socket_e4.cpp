@@ -9,6 +9,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/SmudgeTypeClass_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x7B2630
 namespace gamemd {

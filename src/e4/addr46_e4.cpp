@@ -19,6 +19,9 @@
 #include "e4/classes/Techno_e4.hpp"
 #include "e4/classes/Control_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x46D350
 namespace gamemd {

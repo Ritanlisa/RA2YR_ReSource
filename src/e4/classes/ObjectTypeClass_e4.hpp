@@ -67,7 +67,7 @@ struct ObjectTypeClass {
     unsigned char unused_9B;  // 0x9B
     unsigned int Armor;  // 0x9C
     int q0A0;  // 0xA0
-    void* ;  // 0xA4
+    void* pad_0A4;  // 0xA4
     bool ImageAllocated;  // 0xA8
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB

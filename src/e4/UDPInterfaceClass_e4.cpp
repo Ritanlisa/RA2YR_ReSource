@@ -17,6 +17,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/TypeList_Infantry_e4.hpp"
 
 // 0x7B1B50
 namespace gamemd {

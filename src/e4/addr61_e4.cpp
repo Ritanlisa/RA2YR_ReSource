@@ -343,7 +343,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   HWND v6; // ecx
   LRESULT (__stdcall **v7)(HWND, UINT, WPARAM, LPARAM); // eax
   int v8; // eax
-  HWND v9; // ecx
+  AbstractClass ** v9;
   HDC v10; // esi
   struct tagRECT v12; // [esp+4h] [ebp-20h] BYREF
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
@@ -374,7 +374,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   if ( g_DialogHashMap_Count /*0x612aff*/
     && (v8 = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
   {
-    v9 = hWnd; /*0x612b01*/
+    v9 = (gamemd::AbstractClass **)(hWnd);
     do /*0x612b11*/
     {
       if ( *(HWND *)v8 == hWnd ) /*0x612b07*/
@@ -385,7 +385,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   }
   else
   {
-    v9 = (gamemd::AbstractClass **)(hWnd);
+    v9 = (gamemd::AbstractClass **)((HWND)((gamemd::AbstractClass **)(hWnd)));
   }
   if ( Msg != 307 ) /*0x612b22*/
     return (HGDIOBJ)CallWindowProcA(v4, v9, Msg, (WPARAM)hdc, lParam); /*0x612b5b*/
@@ -517,7 +517,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
   UINT v4; // edi
   LRESULT (__stdcall *v5)(HWND, UINT, WPARAM, LPARAM); // esi
   AbstractClass ** v6;
-  HWND v7; // ecx
+  AbstractClass ** v7;
   LRESULT (__stdcall **v8)(HWND, UINT, WPARAM, LPARAM); // eax
   AbstractClass ** result;
   AbstractClass ** v10;
@@ -628,7 +628,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
     && (v6 = *((unsigned int *)g_DialogHashMap_Entries
              + (g_DialogHashMap_Callback(&hWnd) & ((1 << g_DialogHashMap_Insert) - 1)))) != 0 )
   {
-    v7 = (gamemd::AbstractClass **)(hWnd);
+    v7 = (gamemd::AbstractClass **)((HWND)((gamemd::AbstractClass **)(hWnd)));
     while ( *(HWND *)v6 != hWnd ) /*0x61ed09*/
     {
       v6 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*(unsigned int *)(v6 + 8))));

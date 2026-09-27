@@ -29,6 +29,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ScreenCaptureCommandClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
 
 // 0x58BB30
 namespace gamemd {
@@ -63,7 +64,7 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
         }
         else
         {
-          v6 = v4[v3]; /*0x58bb95*/
+          v6 = (int)(v4[v3]);
           v7 = v4[v3 + 1]; /*0x58bb98*/
         }
         v1[v3] = (int *)(v6);
@@ -97,7 +98,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(void * a1, void * a2, v
   unsigned int v8; // eax
   unsigned int *FoundationSize; // eax
   unsigned int *v10; // ebx
-  unsigned int *v11; // ecx
+  void * v11;
   int v12; // ecx
   unsigned int v13; // edx
   int v14; // ecx
@@ -416,8 +417,7 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
   unsigned char v26[12]; // [esp+CCh] [ebp-30h] BYREF
   int v27; // [esp+D8h] [ebp-24h]
   CHAR v28[28]; // [esp+E0h] [ebp-1Ch] BYREF
-
-  v3 = Source; /*0x683ab8*/
+v3 = (char *)(Source);
   if ( (!Source || !strlen(Source)) && a3 != -1 ) /*0x683ade*/
   {
     if ( g_SpawnModeActive == 1 ) /*0x683ae7*/

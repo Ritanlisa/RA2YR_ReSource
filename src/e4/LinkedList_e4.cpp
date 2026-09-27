@@ -16,6 +16,9 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
 
 // 0x4791F0
 namespace gamemd {

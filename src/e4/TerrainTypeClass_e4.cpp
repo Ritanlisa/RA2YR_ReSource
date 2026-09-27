@@ -21,6 +21,11 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x5447C0
 namespace gamemd {

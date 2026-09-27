@@ -38,6 +38,8 @@
 #include "e4/classes/EventClass_e4.hpp"
 #include "e4/classes/E4Recv_731130_e4.hpp"
 #include "e4/classes/Voxel_e4.hpp"
+#include "e4/classes/UnitClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x7221B0
 namespace gamemd {
@@ -315,7 +317,7 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
     }
     else
     {
-      v5 = (unsigned int)(0);
+      v5 = (char *)((unsigned int)(0));
     }
     *v3 = (unsigned char *)(v5);
     v8 = (unsigned char *)(v4 + 1);

@@ -12,7 +12,7 @@ struct TypeList_Infantry {
     unsigned int q00C;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
-    unsigned int ;  // 0x10
+    unsigned int pad_010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned int q018;  // 0x18
     unsigned char q01C;  // 0x1C

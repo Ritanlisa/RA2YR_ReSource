@@ -26,6 +26,8 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
 
 // 0x6B5260
 SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)

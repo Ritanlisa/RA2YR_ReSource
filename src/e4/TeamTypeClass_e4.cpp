@@ -27,6 +27,10 @@
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/VectorClass_ptr_PlanningMemberClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/ScriptAction_e4.hpp"
 
 // 0x4C98B0
 namespace gamemd {
@@ -256,8 +260,8 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   AbstractClass * v13;
   AbstractClass * v14;
   void * v15;
-  char v16; // al
-  void * v17;
+  AbstractClass * v16;
+  AbstractClass * v17;
   char v18; // al
   char v19; // al
   char v20; // cl
@@ -330,22 +334,22 @@ AbstractClass * * TeamTypeClass::LoadFromINI(unsigned char *** aP1)
   v12 = (unsigned int)(INIClass::ReadBool_Overwrite(&this->q090, aAutocreate, v11));
   v46 = (unsigned int)(this->q0AA);
   this->q0A9 = (unsigned int)(v12);
-  this->q0AA = INIClass::ReadBool_Overwrite(&this->q090, aPrebuild, v46); /*0x6f11e6*/
-  v13 = INIClass::ReadBool_Overwrite(&this->q090, aReinforce, this->q0AB); /*0x6f11fb*/
-  v14 = this->q0B0; /*0x6f1200*/
+  this->q0AA = (gamemd::AbstractClass *)((unsigned int)(INIClass::ReadBool_Overwrite(&this->q090, aPrebuild, v46)));
+  v13 = (unsigned int)((gamemd::AbstractClass *)((unsigned int)(INIClass::ReadBool_Overwrite(&this->q090, aReinforce, this->q0AB))));
+  v14 = (unsigned int)(this->q0B0);
   this->q0AB = (gamemd::AbstractClass *)(v13);
   v15 = (unsigned int)((void *)(INIClass::ReadBool_Overwrite(&this->q090, aDroppod_0, v14)));
   v47 = (void *)((char)((void *)(this->u8_B1)));
   this->q0B0 = (unsigned int)((void *)(v15));
-  this->u8_B1 = (void *)(INIClass::ReadBool_Overwrite(&this->q090, aUsetransportor, v47));
-  v16 = (void *)(INIClass::ReadBool_Overwrite(&this->q090, aRecruiter, this->q0A8));
-  v17 = (void *)(this->q0AC);
-  this->q0A8 = v16; /*0x6f1254*/
-  v18 = INIClass::ReadBool_Overwrite(&this->q090, aWhiner, v17); /*0x6f1263*/
-  v48 = this->q0AF; /*0x6f1270*/
-  this->q0AC = v18; /*0x6f1277*/
-  this->q0AF = INIClass::ReadBool_Overwrite(&this->q090, g_INI_Key_Suicide, v48); /*0x6f1282*/
-  v19 = INIClass::ReadBool_Overwrite(&this->q090, aLooserecruit, this->u8_AE); /*0x6f1297*/
+  this->u8_B1 = (gamemd::AbstractClass *)((void *)(INIClass::ReadBool_Overwrite(&this->q090, aUsetransportor, v47)));
+  v16 = (unsigned int)((void *)(INIClass::ReadBool_Overwrite(&this->q090, aRecruiter, this->q0A8)));
+  v17 = (unsigned int)((void *)(this->q0AC));
+  this->q0A8 = (gamemd::AbstractClass *)(v16);
+  v18 = (gamemd::AbstractClass *)(INIClass::ReadBool_Overwrite(&this->q090, aWhiner, v17));
+  v48 = (gamemd::AbstractClass *)(this->q0AF);
+  this->q0AC = (gamemd::AbstractClass *)(v18);
+  this->q0AF = (gamemd::AbstractClass *)(INIClass::ReadBool_Overwrite(&this->q090, g_INI_Key_Suicide, v48));
+  v19 = (gamemd::AbstractClass *)(INIClass::ReadBool_Overwrite(&this->q090, aLooserecruit, this->u8_AE));
   v20 = this->u8_AD; /*0x6f129c*/
   this->u8_AE = v19; /*0x6f12a2*/
   v21 = INIClass::ReadBool_Overwrite(&this->q090, aAggressive, v20); /*0x6f12b1*/

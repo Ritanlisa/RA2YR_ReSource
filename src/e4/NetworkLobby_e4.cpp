@@ -27,6 +27,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/NeuronClass_e4.hpp"
 
 // 0x5D4210
 namespace gamemd {

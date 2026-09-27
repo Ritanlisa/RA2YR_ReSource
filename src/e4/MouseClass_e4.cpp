@@ -13,6 +13,8 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/MoveFeedback_e4.hpp"
 
 // 0x6D1770
 namespace gamemd {

@@ -28,6 +28,9 @@
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/LinkedList_flat_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Compare_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/Waypoint_e4.hpp"
 
 // 0x6A6AF0
 namespace gamemd {

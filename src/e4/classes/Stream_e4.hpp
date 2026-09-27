@@ -53,7 +53,7 @@ struct Stream {
     unsigned int u32_184;  // 0x184
     unsigned int u32_188;  // 0x188
     unsigned int u32_190;  // 0x190
-    void* ;  // 0x194
+    void* pad_194;  // 0x194
     unsigned int u32_198;  // 0x198
     unsigned int u32_19C;  // 0x19C
     unsigned int u32_1A4;  // 0x1A4

@@ -38,6 +38,7 @@
 #include "e4/classes/E4Recv_479740_e4.hpp"
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x4880F0
 namespace gamemd {
@@ -280,7 +281,7 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
                   && ((uint8_t (__thiscall *)(IUnknown **, int, unsigned int))v117->field_8)(&v117, var94 + v126, 0) )
                 {
                   v19 = (IUnknown *)(v121);
-                  v121 = (unsigned int)((int *)((unsigned int)((int *)((IUnknown *)((char *)v121 + 1)))));
+                  v121 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((IUnknown *)((char *)v121 + 1)))))));
                   *((unsigned int *)Block + (unsigned int)v19) = v109;
                 }
               }
@@ -423,7 +424,7 @@ LABEL_67:
           && ((uint8_t (__thiscall *)(IUnknown **, int, unsigned int))v117->field_8)(&v117, var94 + v126, 0) )
         {
           v48 = (IUnknown *)(v121);
-          v121 = (unsigned int)((int *)((unsigned int)((int *)((IUnknown *)((char *)v121 + 1)))));
+          v121 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((IUnknown *)((char *)v121 + 1)))))));
           *((unsigned int *)Block + (unsigned int)v48) = v31;
         }
         goto LABEL_80;

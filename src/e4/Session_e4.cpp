@@ -296,7 +296,7 @@ int Session::StartGame()
     ComPtr::Dtor(g_UIControlState); /*0x5ed397*/
     RA2_OPDEL(v2); /*0x5ed39d*/
   }
-  v3 = (int)(operator new(4u));
+  v3 = (void *)((int)(operator new(4u)));
   if ( v3 ) /*0x5ed3b2*/
     v4 = (void *)unknown_libname_27(v3); /*0x5ed3b6*/
   else

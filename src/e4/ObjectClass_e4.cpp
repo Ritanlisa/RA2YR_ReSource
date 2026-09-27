@@ -206,7 +206,7 @@ int ObjectClass::SpawnInfantry(FootClass * aP1, FootClass * aP2, FootClass * aP3
       v36 = (gamemd::FootClass *)((int)((gamemd::FootClass *)(v35 & 7)));
       v38 = (gamemd::FootClass *)(0);
       v37 = (gamemd::FootClass *)((int16_t)((gamemd::FootClass *)((unsigned short)aP3 + IDA_LOWORD(Direction_X_Offsets[v36]))));
-      v21 = (int)((gamemd::FootClass *)(*(unsigned int *)this));
+      v21 = (gamemd::FootClass *)((int)((gamemd::FootClass *)(*(unsigned int *)this)));
       IDA_LOWORD(v36) = IDA_HIWORD(Direction_X_Offsets[v36]); /*0x4d8200*/
       IDA_LOWORD(aP4) = v37; /*0x4d8204*/
       IDA_HIWORD(aP4) = IDA_HIWORD(aP3) + v36; /*0x4d8213*/

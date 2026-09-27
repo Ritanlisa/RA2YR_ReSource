@@ -15,6 +15,7 @@
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x626DA0
 namespace gamemd {

@@ -19,6 +19,7 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/TimerClass_e4.hpp"
+#include "e4/classes/Time_e4.hpp"
 
 // 0x59D510
 namespace gamemd {

@@ -16,6 +16,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/BuildingType_e4.hpp"
+#include "e4/classes/Building_e4.hpp"
 
 // 0x4080C0
 namespace gamemd {
@@ -182,9 +183,9 @@ void * ThemeClass::InitializeThemes(char * a2)
   result = Audio::GetEnabled(); /*0x720714*/
   if ( result ) /*0x72071b*/
   {
-    Enabled = Audio::GetEnabled(); /*0x720724*/
-    result = AudioStream::Constructor(Enabled, 0x4E20u); /*0x72072b*/
-    this->ThemeClass_field_2C = result; /*0x720732*/
+    Enabled = (unsigned int)(Audio::GetEnabled());
+    result = (void *)((unsigned int)(AudioStream::Constructor(Enabled, 0x4E20u)));
+    this->ThemeClass_field_2C = (unsigned int)(result);
     if ( result ) /*0x720735*/
     {
       SetAudioFileName((int)result, aMusicStream); /*0x72073e*/

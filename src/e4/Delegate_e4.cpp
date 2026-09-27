@@ -14,6 +14,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/DamageArea_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x42DDB0
 namespace gamemd {
@@ -22,7 +24,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   char *v3; // ebp
   unsigned char * v5;
   unsigned char *v6; // ebx
-  int v7; // ecx
+  unsigned char * v7;
   char * v8;
   int v9; // eax
   int v10; // eax
@@ -31,7 +33,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   unsigned char * Size;
   int Srca; // [esp+18h] [ebp+4h]
 
-  v3 = Src; /*0x42ddb4*/
+  v3 = (char *)((unsigned char *)(Src));
   if ( !Src || a3 < 1 ) /*0x42ddc8*/
     return Delegate::Dispatch((int)Src, a3); /*0x42df25*/
   v13 = 0; /*0x42ddd5*/
@@ -49,7 +51,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
     v6 = (unsigned char *)(&this->Delegate_field_14);
     Srca = 4; /*0x42ddee*/
   }
-  v7 = this->Delegate_field_10; /*0x42de0f*/
+  v7 = (int)((unsigned char *)(this->Delegate_field_10));
   if ( v7 > 0 ) /*0x42de14*/
   {
     Size = (unsigned int)(a3);

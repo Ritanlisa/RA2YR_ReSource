@@ -382,7 +382,7 @@ void WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a
   if ( result >= 0 ) /*0x772ec8*/
   {
     v6 = (void *)(*a3);
-    a4 = a2[65]; /*0x772ee1*/
+    a4 = (void *)(a2[65]);
     (*(void (__stdcall **)(int *, int *, int, unsigned int, int))(v6 + 16))(a3, &a4, 4, 0, a1); /*0x772ee5*/
     for ( i = 0; i < a5; ++i ) /*0x772ef0*/
       (*(void (__stdcall **)(int *, int, int, unsigned int))(*a3 + 16))(a3, a2[62] + 4 * i, 4, 0); /*0x772f03*/

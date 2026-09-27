@@ -37,12 +37,12 @@ struct WWMouseClass {
     unsigned int XY2;  // 0x40
     bool q042;  // 0x42
     MouseClass* q044;  // 0x44
-    void* ;  // 0x48
+    void* pad_048;  // 0x48
     bool q04A;  // 0x4A
-    void* ;  // 0x4C
+    void* pad_04C;  // 0x4C
     unsigned char q04F;  // 0x4F
-    unsigned int q050;  // 0x50
-    unsigned int q054;  // 0x54
+    void* pad_050;  // 0x50
+    void* ;  // 0x54
     MouseClass* q058;  // 0x58
     unsigned int u32_5C;  // 0x5C
     unsigned int q05D;  // 0x5D
@@ -1133,6 +1133,9 @@ struct WWMouseClass {
     unsigned int q0188;
     unsigned int u32_46;
     unsigned int Rect0;
+    unsigned int q04C;
+    unsigned int q050;
+    unsigned int q054;
 // --- flat members (END) ---
     MouseClass * updateHotspot(char a2);
     char checkCapture();

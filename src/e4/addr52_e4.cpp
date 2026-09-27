@@ -58,6 +58,7 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/Terrain_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/Color_e4.hpp"
 
 // 0x522100
 namespace gamemd {
@@ -343,7 +344,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   char *v6; // edi
   char *v7; // ebp
   int v8; // ebx
-  unsigned int v9; // kr04_4
+  unsigned int * v9;
   unsigned int *v10; // eax
   int v11; // ebx
   int v12; // eax
@@ -351,7 +352,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   char *v14; // ecx
   char *v15; // edx
   char *v16; // esi
-  unsigned int v17; // kr0C_4
+  unsigned int * v17;
   unsigned int *v18; // eax
   int v19; // edi
   uint8_t *v21; // [esp-Ch] [ebp-7Ch]
@@ -434,7 +435,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
   uint8_t *v6; // ebx
   const char *v7; // edx
   int v8; // esi
-  unsigned int v9; // kr04_4
+  unsigned int * v9;
   unsigned int *v10; // eax
   int v11; // esi
   int v12; // eax

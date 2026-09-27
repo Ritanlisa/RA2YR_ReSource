@@ -11,6 +11,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/ComStreamClass_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
 
 // 0x537A50
 namespace gamemd {

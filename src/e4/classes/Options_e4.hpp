@@ -7,7 +7,7 @@ namespace gamemd {
 struct Options {
 // --- flat members (BEGIN) ---
     unsigned int u32_4;  // 0x4
-    unsigned int ;  // 0x8
+    unsigned int pad_008;  // 0x8
     void* q00C;  // 0xC
     void* q010;  // 0x10
     void* q018;  // 0x18

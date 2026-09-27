@@ -114,9 +114,9 @@ void* JumpjetLocomotionClass::Update2()
   v8 = (float)((unsigned int)(this->Climb));
   v4 = (char *)((unsigned int)(&this->u32_90));
   v6 = (unsigned int)(v6);
-  v8 = v8; /*0x439b3e*/
-  v66 = this->Crash; /*0x439b44*/
-  v9 = this->Height; /*0x439b4a*/
+  v8 = (unsigned int)(v8);
+  v66 = (unsigned int)(this->Crash);
+  v9 = (unsigned int)(this->Height);
   IDA_LODWORD(v72) = *(unsigned int *)this; /*0x439b4d*/
   v9 = v9; /*0x439b51*/
   v10 = this->Accel; /*0x439b58*/

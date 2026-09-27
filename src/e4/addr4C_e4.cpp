@@ -38,6 +38,8 @@
 #include "e4/classes/E4Recv_4B0DF0_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/FoggedObjectClass_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/E4Recv_4E0A00_e4.hpp"
 
 // 0x4C1440
 namespace gamemd {

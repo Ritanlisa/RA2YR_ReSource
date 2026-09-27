@@ -18,6 +18,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/RadioClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x431090
 namespace gamemd {
@@ -199,9 +200,9 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   void * v46;
   IUnknown * v47;
   IUnknown * v48;
-  unsigned int v49;
+  IUnknown * v49;
   int v50; // ecx
-  unsigned int v51;
+  IUnknown * v51;
   IUnknown * v52;
   int64_t v53; // rax
   int64_t v54; // rax
@@ -217,7 +218,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v64; // edx
   int v65; // eax
   int *v66; // ecx
-  unsigned int v68;
+  IUnknown * v68;
   int v69; // ecx
   int v70; // edx
   IUnknown * v71;
@@ -256,7 +257,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v111; // [esp+64h] [ebp-10h]
   int v112; // [esp+6Ch] [ebp-8h]
   int v113; // [esp+70h] [ebp-4h]
-  IUnknown * v114;
+  unsigned int v114;
   int v115; // [esp+88h] [ebp+14h]
 
   v6 = (IUnknown *)((int)(aP1));
@@ -431,8 +432,8 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   v101 = (unsigned int)(10 * v109);
   v47 = (unsigned int)(aP1 - 10 * v109);
   v48 = (unsigned int)(aP1 + 10 * v109);
-  v49 = (unsigned int)(v9);
-  v114 = v48; /*0x582872*/
+  v49 = (IUnknown *)((unsigned int)(v9));
+  v114 = (IUnknown *)((unsigned int)(v48));
   v95 = 0; /*0x582878*/
   if ( v9 > v9 ) /*0x582886*/
     return v110; /*0x582886*/
@@ -442,7 +443,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
     v50 = v50; /*0x582897*/
     if ( v49 == v9 ) /*0x58289b*/
     {
-      v51 = v49; /*0x5828a5*/
+      v51 = (IUnknown *)((unsigned short)(v49));
       IDA_HIWORD(v103) = v115; /*0x5828a7*/
       IDA_LOWORD(v103) = v49 + 1; /*0x5828b3*/
       v95 = v103; /*0x5828c0*/
@@ -450,7 +451,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
     }
     else
     {
-      v51 = v49; /*0x5828ce*/
+      v51 = (IUnknown *)((unsigned int)(v49));
       if ( v49 >= v9 ) /*0x5828d2*/
       {
         IDA_LOWORD(v105) = v49 - 1; /*0x582902*/
@@ -542,7 +543,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   while ( v49 <= v9 ); /*0x582aca*/
   if ( v96 <= v9 ) /*0x582ad2*/
   {
-    v68 = (IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)(v114)))))));
+    v68 = (unsigned int)((IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)(v114))))))))));
     do /*0x582ae6*/
     {
       v69 = *(int16_t *)(v68 + 2 * aP2); /*0x582ae6*/

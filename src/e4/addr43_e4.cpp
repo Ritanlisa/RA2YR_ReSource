@@ -226,13 +226,13 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   v61 = (char)(0);
   v18 = (char)(0);
   v73 = (char)(aP2[1]);
-  v65 = 0; /*0x437406*/
-  v19 = aP2[2]; /*0x43740a*/
-  v66 = 0; /*0x43740d*/
-  v19 = v19; /*0x437411*/
-  v20 = aP2[3]; /*0x437419*/
-  v64 = 0; /*0x43741c*/
-  v20 = v20; /*0x437423*/
+  v65 = (gamemd::XSurface *)((char)(0));
+  v19 = (char)(aP2[2]);
+  v66 = (gamemd::XSurface *)((char)(0));
+  v19 = (char)(v19);
+  v20 = (int)((char)(aP2[3]));
+  v64 = (char)(0);
+  v20 = (char)(v20);
   v67 = 0; /*0x437427*/
   v68 = 0; /*0x43742b*/
   aP8 = 24 * aP8 + 8484624; /*0x43743a*/
@@ -318,8 +318,8 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
     {
       aP3 = (gamemd::XSurface *)(aP3);
       aP7 = (gamemd::XSurface *)((*(int (__thiscall **)(int *))(*aP3 + 116))(aP3));
-      v37 = (int)((gamemd::XSurface *)((*(int (__thiscall **)(int *))(*v30 + 116))(v30)));
-      a4 = (gamemd::XSurface *)(v37);
+      v37 = (gamemd::XSurface *)((int)((gamemd::XSurface *)((*(int (__thiscall **)(int *))(*v30 + 116))(v30))));
+      a4 = (int)((gamemd::XSurface *)(v37));
       if ( g_ZBufferDescriptor ) /*0x437661*/
         v65 = *((unsigned int *)g_ZBufferDescriptor + 10); /*0x437666*/
       if ( g_VisibleSurfaceDescriptor ) /*0x437671*/
@@ -332,7 +332,7 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
         v66 = (gamemd::XSurface *)((int)((gamemd::XSurface *)(-v66)));
         v65 = (gamemd::XSurface *)((int)((gamemd::XSurface *)(-v65)));
         v39 = (gamemd::XSurface *)(aP3->vt_slot_116());
-        v40 = (int)((gamemd::XSurface *)(*v30));
+        v40 = (gamemd::XSurface *)((int)((gamemd::XSurface *)(*v30)));
         aP2 = (gamemd::XSurface *)((int *)((char *)aP2 + (v17 - 1) * v39));
         v41 = v30->vt_slot_116(); /*0x4376c7*/
         v42 = v17; /*0x4376d3*/
@@ -580,13 +580,13 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
   v41 = (char *)((bool)(0));
   v48 = (bool)(0);
   v57 = (bool)(*aP2);
-  v50 = 0; /*0x437a5b*/
-  v68 = 0; /*0x437a62*/
-  v58 = aP2[1]; /*0x437a69*/
-  v45 = 0; /*0x437a6d*/
-  v46 = 0; /*0x437a74*/
-  v59 = aP2[2]; /*0x437a78*/
-  v60 = aP2[3]; /*0x437a8d*/
+  v50 = (bool)(0);
+  v68 = (bool)(0);
+  v58 = (bool)(aP2[1]);
+  v45 = (bool)(0);
+  v46 = (bool)(0);
+  v59 = (bool)(aP2[2]);
+  v60 = (bool)(aP2[3]);
   v18 = 24 * a9 + 8484624; /*0x437a9c*/
   v49 = 0; /*0x437aa7*/
   v19 = 0; /*0x437aab*/

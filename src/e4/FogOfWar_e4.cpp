@@ -57,7 +57,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   char v42; // [esp+44h] [ebp+4h]
   int v43; // [esp+44h] [ebp+4h]
 
-  result = (gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((int)((gamemd::MapClass **)((int)HouseClass_Player)))))))));
+  result = (gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((int)((gamemd::MapClass **)((int)HouseClass_Player)))))))))))));
   if ( !HouseClass_Player ) /*0x655c62*/
     return result; /*0x655c62*/
   result = (*(int (__thiscall **)(unsigned int, char *))(**(unsigned int **)(&this->u32_73C6) + 120))(this->u32_121C, v40); /*0x655c75*/
@@ -188,7 +188,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   {
     v27 = (gamemd::MapClass **)(v22 + *aP1);
     v29 = (gamemd::MapClass **)(aP1[1] + v23);
-    result = (gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)(1)))));
+    result = (gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)(1)))))))));
     v33 = 1; /*0x65612b*/
   }
   else

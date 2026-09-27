@@ -19,6 +19,9 @@
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/TClassFactory_MechLocomotionClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/TacticalClass_e4.hpp"
+#include "e4/classes/TacticalMap_e4.hpp"
+#include "e4/classes/TabClass_e4.hpp"
 
 // 0x71E940
 namespace gamemd {
@@ -44,8 +47,8 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
   int v26; // edx
   int v27; // eax
   void *v28; // ecx
-  int v29; // esi
-  int v30; // esi
+  DynamicVector ** v29;
+  int v30;
   int *WorldCoords; // eax
   int v32; // esi
   int v33; // edi
@@ -158,7 +161,7 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
         if ( --v16 < 0 ) /*0x71ea22*/
           return 0; /*0x71ea2d*/
       }
-      return (gamemd::DynamicVector **)(1);
+      return (gamemd::DynamicVector **)((gamemd::DynamicVector **)(1));
     case 61: /*0x71e964*/
       v18 = -1; /*0x71ea36*/
       v19 = dword_A8EB10 - 1; /*0x71ea39*/
@@ -173,11 +176,11 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
         v21 -= 4; /*0x71ea83*/
         if ( v19 < 0 ) /*0x71ea88*/
         {
-          v18 = (unsigned int)((gamemd::DynamicVector **)((unsigned int)((gamemd::DynamicVector **)(a6))));
+          v18 = (unsigned int)((gamemd::DynamicVector **)((unsigned int)((gamemd::DynamicVector **)((unsigned int)((gamemd::DynamicVector **)(a6))))));
           goto LABEL_22; /*0x71ea8e*/
         }
       }
-      v18 = (unsigned int)((gamemd::DynamicVector **)((unsigned int)((gamemd::DynamicVector **)((int)((gamemd::DynamicVector **)(v19))))));
+      v18 = (unsigned int)((gamemd::DynamicVector **)((unsigned int)((gamemd::DynamicVector **)((unsigned int)((gamemd::DynamicVector **)((int)((gamemd::DynamicVector **)(v19))))))));
   LABEL_22:
       if ( v18 >= dword_A8EB10 || v18 < 0 ) /*0x71eaa0*/
         return 0; /*0x71eaa0*/
@@ -278,7 +281,7 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
                 {
                   if ( (*(int (__thiscall **)(int, int))(*(unsigned int *)a4 + 208))(a4, 1) ) /*0x71ed14*/
                   {
-                    v29 = (*(int (__thiscall **)(int, int))(*(unsigned int *)a4 + 208))(a4, 1); /*0x71ed31*/
+                    v29 = (gamemd::DynamicVector **)((int)((gamemd::DynamicVector **)((*(int (__thiscall **)(int, int))(*(unsigned int *)a4 + 208))(a4, 1))));
                     if ( *(unsigned int *)(v29 + 48) == *(unsigned int *)(HouseClass::FindOwner((void *)*(&this->vtable23)) + 48) ) /*0x71ed40*/
                     {
                       *(unsigned char *)a6 = 1; /*0x71ed4d*/
@@ -295,7 +298,7 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
           {
             if ( a4 ) /*0x71ed6c*/
             {
-              v30 = (*(int (__thiscall **)(int, int))(*(unsigned int *)a4 + 204))(a4, 1); /*0x71ed7c*/
+              v30 = (gamemd::DynamicVector **)((int)((gamemd::DynamicVector **)((*(int (__thiscall **)(int, int))(*(unsigned int *)a4 + 204))(a4, 1))));
               if ( (*(int (__thiscall **)(int))(*(unsigned int *)v30 + 44))(v30) == 16 /*0x71eda2*/
                 && *(&this->vtable23) != -1
                 && (*(int (__thiscall **)(int))(*(unsigned int *)v30 + 64))(v30) == *(&this->vtable23) )
@@ -734,6 +737,6 @@ int TEventClass::StubReturn48()
 namespace gamemd {
 int TEventClass::Stub()
 {
-  return this->eventType; /*0x71fa73*/
+  return (int)(this->eventType);
 }
 } // namespace gamemd

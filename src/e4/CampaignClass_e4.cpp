@@ -22,6 +22,8 @@
 #include "e4/classes/Carryall_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x46CB60
 namespace gamemd {

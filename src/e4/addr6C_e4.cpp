@@ -42,6 +42,7 @@
 #include "e4/classes/E4Recv_6A87F0_e4.hpp"
 #include "e4/classes/E4Recv_6A93F0_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x6C6F50
 namespace gamemd {

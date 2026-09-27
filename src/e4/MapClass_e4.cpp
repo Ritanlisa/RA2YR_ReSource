@@ -46,7 +46,7 @@ int MapClass::isLocationShrouded(unsigned short a2)
   v5[0] = (int)(0);
   v5[1] = (int)(0);
   v2 = (int)(*(&this->q0040));
-  v3 = this->q014; /*0x4112eb*/
+  v3 = (int)((void *)((int)(this->q014)));
   v5[2] = v2; /*0x4112f4*/
   return (*(int (__thiscall **)(int, unsigned int *, unsigned int))(*(unsigned int *)v3 + 20))(v3, v5, a2); /*0x411303*/
 }
@@ -939,10 +939,10 @@ int MapClass::RevealArea0(IUnknown * aP1, MouseClass * aP2, HouseClass * aP3, Mo
   int *v52; // [esp+60h] [ebp+4h]
   char v53; // [esp+6Ch] [ebp+10h]
 
-  v41 = aP1[2] / g_MapRenderState; /*0x5673b7*/
-  v48 = *aP1; /*0x5673bf*/
-  v49 = aP1[1]; /*0x5673c6*/
-  v50 = aP1[2]; /*0x5673cd*/
+  v41 = (int)(aP1[2] / g_MapRenderState);
+  v48 = (int)(*aP1);
+  v49 = (int)(aP1[1]);
+  v50 = (int)(aP1[2]);
   v10 = ZCoordToScreenY(v50); /*0x5673d1*/
   v48 += (((unsigned int)(((uint64_t)(2004318071LL * v10) >> 32) - v10) >> 31) /*0x5673f8*/
         + ((int)(((uint64_t)(2004318071LL * v10) >> 32) - v10) >> 4)) << 8;

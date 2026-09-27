@@ -54,7 +54,7 @@ struct TacticalMap {
     unsigned int q108;  // 0x108
     unsigned int u16_10A;  // 0x10A
     unsigned int u16_10C;  // 0x10C
-    void* ;  // 0x10E
+    void* pad_10E;  // 0x10E
     unsigned int q118;  // 0x118
     char u32_11B;  // 0x11B
     char q130[4];  // 0x130

@@ -12,6 +12,7 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/LocomotionClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x642B60
 namespace gamemd {
@@ -183,12 +184,12 @@ void * * LoadingScreen::LoadSHPs()
   dword_B0FA00 = (unsigned int)((void **)(LoadFileSHP(off_844D20, (bool *)&byte_B0FCA8)));
   dword_B0FA8C = (unsigned int)((void **)(LoadFileSHP(off_844D24, (bool *)&byte_B0FCA9)));
   dword_B0FA48 = (unsigned int)((void **)(LoadFileSHP(off_844D28, (bool *)&byte_B0FCAA)));
-  dword_B0FA3C = (void **)(LoadFileSHP(off_844D2C, (bool *)&byte_B0FCAB));
-  dword_B0FA90 = LoadFileSHP(off_844D30, (bool *)&byte_B0FCAC); /*0x72fb91*/
-  dword_B0FAA8 = LoadFileSHP(off_844D34, (bool *)&byte_B0FCAD); /*0x72fba6*/
-  result = LoadFileSHP(off_844D38, (bool *)&byte_B0FCAE); /*0x72fbab*/
-  dword_B0FABC = result; /*0x72fbb0*/
-  return result; /*0x72fbb5*/
+  dword_B0FA3C = (unsigned int)((void **)(LoadFileSHP(off_844D2C, (bool *)&byte_B0FCAB)));
+  dword_B0FA90 = (unsigned int)((void **)(LoadFileSHP(off_844D30, (bool *)&byte_B0FCAC)));
+  dword_B0FAA8 = (unsigned int)((void **)(LoadFileSHP(off_844D34, (bool *)&byte_B0FCAD)));
+  result = (void **)(LoadFileSHP(off_844D38, (bool *)&byte_B0FCAE));
+  dword_B0FABC = (unsigned int)((void **)(result));
+  return (void **)((void **)((void **)(result)));
 }
 } // namespace gamemd
 // 0x72B2F0

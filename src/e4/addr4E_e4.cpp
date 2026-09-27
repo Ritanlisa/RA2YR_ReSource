@@ -25,6 +25,7 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/E4Recv_4C95D0_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x4E0A00
 namespace gamemd {

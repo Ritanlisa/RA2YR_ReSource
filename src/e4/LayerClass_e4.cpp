@@ -87,7 +87,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
   unsigned int *v65; // eax
   IUnknown * v66;
   IUnknown * v67;
-  unsigned int v69;
+  IUnknown * v69;
   int v70; // edi
   unsigned int *v71; // eax
   unsigned int *v72; // esi
@@ -131,7 +131,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
   v80 = (IUnknown *)((int)((IUnknown *)((int)aP0)));
   v77 = (IUnknown *)((int)((IUnknown *)(0)));
   v85 = (IUnknown *)((int)((IUnknown *)(v18)));
-  v81 = (unsigned int)((IUnknown *)((int)((IUnknown *)(v19))));
+  v81 = (IUnknown *)((unsigned int)((IUnknown *)((int)((IUnknown *)(v19)))));
   v76 = (IUnknown *)((unsigned int)((IUnknown *)(0)));
   if ( aP5 == 0xFFFF ) /*0x56dc5e*/
     aP5 = -1; /*0x56dc60*/
@@ -206,9 +206,9 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
                 && (!a17 || (uint8_t)MapClass::IsAreaFree(v98, -1)) )
               {
                 v32 = (int *)((IUnknown *)(v86));
-                v33 = (int)(v75);
-                v34 = v77; /*0x56deb2*/
-                *v86 = v75; /*0x56deb6*/
+                v33 = (IUnknown *)((int)(v75));
+                v34 = (IUnknown *)((int)(v77));
+                *v86 = (int)(v75);
                 v86 = v32 + 1; /*0x56debb*/
                 v77 = v34 + 1; /*0x56dec9*/
                 if ( (unsigned char)aP7 /*0x56df18*/
@@ -264,9 +264,9 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
                 && (!a17 || (uint8_t)MapClass::IsAreaFree(v97, -1)) )
               {
                 v41 = (int *)((IUnknown *)(v86));
-                v42 = (int)(v75);
-                v43 = v77; /*0x56e0c8*/
-                *v86 = v75; /*0x56e0cc*/
+                v42 = (IUnknown *)((int)(v75));
+                v43 = (IUnknown *)((int)(v77));
+                *v86 = (int)(v75);
                 v86 = v41 + 1; /*0x56e0d1*/
                 v77 = v43 + 1; /*0x56e0df*/
                 if ( (unsigned char)aP7 /*0x56e12f*/
@@ -331,7 +331,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
                 && (!a17 || (uint8_t)MapClass::IsAreaFree(v99, -1)) )
               {
                 v51 = (IUnknown *)((int16_t)((IUnknown *)(v75)));
-                v52 = (int)(v77);
+                v52 = (IUnknown *)((int)(v77));
                 *v46++ = v75; /*0x56e312*/
                 v77 = v52 + 1; /*0x56e31b*/
                 if ( (unsigned char)aP7 /*0x56e371*/
@@ -384,7 +384,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
                 && (!a17 || (uint8_t)MapClass::IsAreaFree(v96, -1)) )
               {
                 v58 = (IUnknown *)((int16_t)((IUnknown *)(v75)));
-                v59 = (int)(v77);
+                v59 = (IUnknown *)((int)(v77));
                 *v46++ = v75; /*0x56e510*/
                 v77 = v59 + 1; /*0x56e519*/
                 if ( (unsigned char)aP7 /*0x56e566*/
@@ -444,7 +444,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
     {
       v67 = (IUnknown *)((int)((IUnknown *)(v81 + 1)));
       *v61 = (unsigned int)((IUnknown *)(*(unsigned int *)v62));
-      v81 = (unsigned int)(v67);
+      v81 = (IUnknown *)((unsigned int)(v67));
       ++v61; /*0x56e66c*/
     }
     v62 += 2; /*0x56e673*/
@@ -461,7 +461,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
   }
   else
   {
-    v69 = (IUnknown *)((unsigned int)((IUnknown *)((int)(v80))));
+    v69 = (IUnknown *)((unsigned int)((IUnknown *)((unsigned int)((IUnknown *)((int)(v80))))));
     if ( !v80 ) /*0x56e6f4*/
       v69 = v81; /*0x56e6f6*/
     v70 = 0; /*0x56e6f8*/

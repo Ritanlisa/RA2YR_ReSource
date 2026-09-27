@@ -23,6 +23,8 @@
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/GameClass_e4.hpp"
+#include "e4/classes/GameOption_e4.hpp"
 
 // 0x6863E0
 namespace gamemd {

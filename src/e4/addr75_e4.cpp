@@ -46,6 +46,9 @@
 #include "e4/classes/HashTable_flat_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/BufferIOFile_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x750920
 namespace gamemd {
@@ -525,7 +528,7 @@ int TauntClass_Play(int a1)
 namespace gamemd {
 int E4Recv_752CB0::sub_752CB0(const char * a2)
 {
-  int v3; // eax
+  E4Recv_752CB0 * v3;
 
   this->q028 = (unsigned int)(1065353216);
   strcpy(a2); /*0x752cd4*/
@@ -543,7 +546,7 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
          dword_B1D4A8 + dword_B1D4B4,
          0) )
   {
-    v3 = (unsigned int)(g_InfantrySelectState++);
+    v3 = (gamemd::E4Recv_752CB0 *)((unsigned int)(g_InfantrySelectState++));
     *((unsigned int *)g_InfantryRenderPool + v3) = this; /*0x752d4a*/
   }
   return (int)(this);

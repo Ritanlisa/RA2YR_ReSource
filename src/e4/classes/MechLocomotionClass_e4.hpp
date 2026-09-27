@@ -14,7 +14,7 @@ struct MechLocomotionClass {
     unsigned char Powered;  // 0x10
     unsigned char Dirty;  // 0x11
     unsigned int RefCount;  // 0x14
-    char MovingDestination[12];  // 0x18
+    unsigned int MovingDestination;  // 0x18
     unsigned int q01A;  // 0x1A
     bool q01D;  // 0x1D
     void* q020;  // 0x20

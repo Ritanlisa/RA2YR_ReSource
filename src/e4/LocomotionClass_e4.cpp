@@ -37,13 +37,13 @@ int LocomotionClass::Initialize()
   this->q048 = (int)(v3);
   this->ptr_24 = (gamemd::Coord *)((int)(0));
   this->q058 = (int)(-1);
-  this->q05C = -1; /*0x4af5a9*/
-  this->u8_60 = 0; /*0x4af5ac*/
-  this->__pad_061 = 0; /*0x4af5af*/
-  this->u8_62 = 0; /*0x4af5b2*/
-  this->u8_63 = 0; /*0x4af5b5*/
-  this->q064 = 0; /*0x4af5b8*/
-  this->u32_65 = 1; /*0x4af5bb*/
+  this->q05C = (int)(-1);
+  this->u8_60 = (int)(0);
+  this->__pad_061 = (int)(0);
+  this->u8_62 = (int)(0);
+  this->u8_63 = (int)(0);
+  this->q064 = (int)(0);
+  this->u32_65 = (int)(1);
   this->q068 = 0; /*0x4af5bf*/
   this->ptr_18 = &off_7E7E8C; /*0x4af5cf*/
   return this; /*0x4af5d8*/

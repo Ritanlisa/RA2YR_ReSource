@@ -9,7 +9,7 @@ struct ParticleSystemClass_32_ {
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
     int Capacity;  // 0x8
-    void* ;  // 0xC
+    void* pad_00C;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned int q010;  // 0x10
     bool IsInitialized;  // 0x12

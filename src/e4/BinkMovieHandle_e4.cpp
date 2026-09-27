@@ -12,6 +12,7 @@
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/BitTextClass_e4.hpp"
 
 // 0x432AB0
 namespace gamemd {

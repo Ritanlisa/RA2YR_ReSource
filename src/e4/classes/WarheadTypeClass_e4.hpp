@@ -11,7 +11,7 @@ struct WarheadTypeClass {
     void* vtable2;  // 0x4
     unsigned int q008;  // 0x8
     unsigned int q00C;  // 0xC
-    void* ;  // 0x10
+    void* pad_010;  // 0x10
     unsigned char alignmentPadding_3;  // 0x11
     char referenceCount[4];  // 0x12
     bool IsAllocated;  // 0x13

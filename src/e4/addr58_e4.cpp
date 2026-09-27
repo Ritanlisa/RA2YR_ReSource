@@ -85,7 +85,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
     {
       if ( (*v10 & 0x100) != 0 ) /*0x58366b*/
       {
-        NeighbourContent = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int *)((int *)Cell::GetNeighbourContent(NeighbourContent, v8)))))))));
+        NeighbourContent = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int *)((int *)Cell::GetNeighbourContent(NeighbourContent, v8)))))))))))));
         v10 = (unsigned int *)(NeighbourContent + 80);
         if ( (NeighbourContent[80] & 0x100) == 0 /*0x5836a5*/
           && (Cell::IsInRange(NeighbourContent) || Cell::IsInRange2(NeighbourContent))
@@ -466,7 +466,7 @@ int MarkCliffEdgePassability(int a1)
               IDA_LOWORD(v24) = j; /*0x586dbf*/
               do /*0x586e08*/
               {
-                v19 = (int16_t)j + ((int16_t)(IDA_HIWORD(j) + v18) << 9); /*0x586dd2*/
+                v19 = (unsigned int)((int16_t)j + ((int16_t)(IDA_HIWORD(j) + v18) << 9));
                 if ( v19 >= 0x40000 || (v20 = *(unsigned int **)(g_Shroud_CellArray + 4 * v19), v3 = v21, !v20) ) /*0x586ded*/
                 {
                   IDA_HIWORD(v24) = IDA_HIWORD(j) + v18; /*0x586dc7*/

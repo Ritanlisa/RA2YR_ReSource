@@ -19,6 +19,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Factory_e4.hpp"
 
 // 0x526810
 namespace gamemd {
@@ -212,7 +213,7 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
   {
   LABEL_29: v23 = (char *)(aP3);
     v6 = (char *)(aP4);
-    this->u32_4 = 0; /*0x528b8a*/
+    this->u32_4 = (unsigned int)(0);
     this->q008 = 0; /*0x528b8d*/
     goto LABEL_36; /*0x528b90*/
   }
@@ -323,7 +324,7 @@ INIClass::INIClass()
     v4 = result[8]; /*0x535ad6*/
     if ( v4 ) /*0x535adb*/
     {
-      v5 = result[9]; /*0x535add*/
+      v5 = (void *)((unsigned int)(result[9]));
       if ( v5 ) /*0x535ae2*/
       {
         *(unsigned int *)(v5 + 4) = v4; /*0x535ae4*/

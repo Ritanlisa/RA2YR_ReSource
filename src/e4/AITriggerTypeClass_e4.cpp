@@ -911,7 +911,7 @@ VectorClass_flat * AITriggerTypeClass_40::QueryInterface(char a2)
     this->Items = 0; /*0x420650*/
   }
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->Capacity = 0; /*0x420661*/
+  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x420668*/
     RA2_OPDEL(); /*0x42066b*/
   return this; /*0x420675*/

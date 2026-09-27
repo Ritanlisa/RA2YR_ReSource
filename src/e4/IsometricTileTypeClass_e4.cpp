@@ -12,6 +12,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/Isometric_e4.hpp"
+#include "e4/classes/JumpjetLocomotion_e4.hpp"
 
 // 0x549B70
 namespace gamemd {

@@ -36,6 +36,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/TClassFactory_MechLocomotionClass_e4.hpp"
 
 // 0x52A9E0
 namespace gamemd {
@@ -124,7 +125,7 @@ void System_Search(ObjectClass * aP0, int edx0, int * a2)
 namespace gamemd {
 void sub_6269A0()
 {
-  unsigned int * v0;
+  unsigned int v0;
   unsigned int *v1; // eax
   unsigned int *v2; // edi
   unsigned int *v3; // eax

@@ -42,7 +42,7 @@ struct MapClass {
     bool q04A;  // 0x4A
     AbstractClass* q04C;  // 0x4C
     unsigned char q04F;  // 0x4F
-    void* ;  // 0x50
+    void* pad_050;  // 0x50
     void* q054;  // 0x54
     MapClass* q058;  // 0x58
     unsigned char q05C;  // 0x5C

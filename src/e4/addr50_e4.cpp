@@ -13,6 +13,9 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Options_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
 
 // 0x501750
 namespace gamemd {

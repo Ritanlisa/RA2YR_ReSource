@@ -19,6 +19,7 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/WaveClass_e4.hpp"
+#include "e4/classes/WaypointClass_e4.hpp"
 
 // 0x6A01A0
 namespace gamemd {
@@ -41,7 +42,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
   int v19; // [esp+18h] [ebp-Ch] BYREF
   int v20; // [esp+1Ch] [ebp-8h]
   int v21; // [esp+20h] [ebp-4h]
-v3 = (IUnknown *)((void *)((IUnknown *)((void *)((IUnknown *)((void *)(aP1))))));
+v3 = (IUnknown *)((void *)((IUnknown *)((void *)((IUnknown *)((void *)((IUnknown *)((void *)(aP1))))))));
   if ( *aP1 != g_OverlayTypeConfig || aP1[1] != qword_B077FC || (v5 = aP1[2], v5 != MEMORY[0xB07800]) ) /*0x6a01ce*/
   {
     IDA_LOBYTE(v5) = this->ptr_60; /*0x6a01d4*/

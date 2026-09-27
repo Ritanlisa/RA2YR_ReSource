@@ -58,6 +58,7 @@
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Array_e4.hpp"
 
 // 0x770E70
 namespace gamemd {
@@ -431,7 +432,7 @@ int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
           v15 = (char *)dword_B72F40; /*0x775f7a*/
           if ( dword_B72F40 ) /*0x775f82*/
           {
-            v16 = (unsigned int)((char *)v14);
+            v16 = (char *)((unsigned int)((char *)v14));
             v17 = -112 * dword_B72F38; /*0x775f91*/
             v18 = (unsigned int)(144 * dword_B72F38) >> 2; /*0x775f93*/
             qmemcpy(v16, dword_B72F40, 4 * v18); /*0x775f96*/
@@ -454,7 +455,7 @@ int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
           v21 = (char *)dword_B72F40; /*0x775ffa*/
           if ( dword_B72F40 ) /*0x776002*/
           {
-            v22 = (unsigned int)((char *)v20);
+            v22 = (char *)((unsigned int)((char *)v20));
             v23 = -112 * dword_B72F38; /*0x776011*/
             v24 = (unsigned int)(144 * dword_B72F38) >> 2; /*0x776013*/
             qmemcpy(v22, dword_B72F40, 4 * v24); /*0x776016*/

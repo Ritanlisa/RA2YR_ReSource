@@ -19,6 +19,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/FilePipe_30_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x4C9B20
 namespace gamemd {
@@ -126,7 +127,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
 {
   void * v5;
   void * v6;
-  int v7;
+  bool * v7;
   int v8; // eax
   int v9; // eax
   int v10; // edx
@@ -185,7 +186,7 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
   {
     v5 = (void *)((int)((void *)((int)(this->q120))));
     v6 = (bool *)((int)(this->q140));
-    v7 = (bool *)((int)((bool *)((int)(&this->onHold))));
+    v7 = (int)((bool *)((int)((bool *)((int)((bool *)((int)(&this->onHold)))))));
     if ( v6 < v5 /*0x4c9d1b*/
       || (*(unsigned char *)(v7 + 13) || !v5)
       && (v8 = *(unsigned int *)(v7 + 20), v8 > 0)

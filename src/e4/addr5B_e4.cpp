@@ -60,6 +60,8 @@
 #include "e4/classes/Frame_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_MapRegionClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x5B3B10
 namespace gamemd {
@@ -196,7 +198,7 @@ AbstractClass * * SearchMIXFile(char * Source, IUnknown * aP1)
     }
     if ( aP1 || strstr(Str, Ext) ) /*0x5b41f5*/
     {
-      v11 = (int)((void *)((int)((void *)(operator new(0x24u)))));
+      v11 = (int)((void *)((int)((void *)((int)((void *)(operator new(0x24u)))))));
       if ( v11 ) /*0x5b421a*/
         v10 = LoadSHPFile(v11, Source); /*0x5b4224*/
       else

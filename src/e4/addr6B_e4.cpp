@@ -222,12 +222,12 @@ AbstractClass * * SlaveManager_InitGrid()
   int v5; // ecx
   int v6; // esi
   int v7; // edx
-  unsigned short * v8;
+  unsigned int v8;
   unsigned short *j; // esi
-  int v10; // ebp
+  unsigned short * v10;
   int16_t v11; // ax
-  int v12; // ecx
-  int v13; // edx
+  unsigned short * v12;
+  unsigned short * v13;
   int v14; // esi
   int v15; // ecx
   unsigned short * v16;
@@ -320,7 +320,7 @@ AbstractClass * * SlaveManager_InitGrid()
         v32 = *(unsigned int *)v45; /*0x6b2bb1*/
         for ( j = v46; ; j += 2 ) /*0x6b2bb5*/
         {
-          v10 = IDA_SHIWORD(v32) + v8; /*0x6b2bc1*/
+          v10 = (unsigned short *)((int)(IDA_SHIWORD(v32) + v8));
           if ( v10 > g_MapCellHeight_Value /*0x6b2bdc*/
             && v8 - IDA_SHIWORD(v32) < g_MapCellHeight_Value
             && IDA_SHIWORD(v32) - v8 < g_MapCellHeight_Value
@@ -337,8 +337,8 @@ AbstractClass * * SlaveManager_InitGrid()
           v32 = v35; /*0x6b2c09*/
           ++v33; /*0x6b2c0d*/
         }
-        v12 = v8; /*0x6b2c1b*/
-        v13 = IDA_SHIWORD(v32) + v8; /*0x6b2c1e*/
+        v12 = (unsigned short *)((int)(v8));
+        v13 = (unsigned short *)(IDA_SHIWORD(v32) + v8);
         if ( v13 <= g_MapCellHeight_Value /*0x6b2c45*/
           || v12 - IDA_SHIWORD(v32) >= g_MapCellHeight_Value
           || IDA_SHIWORD(v32) - v12 >= g_MapCellHeight_Value

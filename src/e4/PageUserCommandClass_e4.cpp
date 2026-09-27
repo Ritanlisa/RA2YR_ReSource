@@ -14,6 +14,7 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/OverlayTypeClass_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
 
 // 0x537DD0
 PageUserCommandClass::PageUserCommandClass()

@@ -23,7 +23,7 @@ struct Movie {
     unsigned char q034;  // 0x34
     unsigned int q038;  // 0x38
     unsigned char q03C;  // 0x3C
-    void* ;  // 0x40
+    void* pad_040;  // 0x40
     unsigned int q044;  // 0x44
     unsigned char q048;  // 0x48
     unsigned int u32_4C;  // 0x4C

@@ -84,7 +84,7 @@ struct SuperWeaponTypeClass {
     char q0BC[4];  // 0xBC
     char q0C0[4];  // 0xC0
     unsigned int q0C3;  // 0xC3
-    char q0C4[4];  // 0xC4
+    unsigned int q0C4;  // 0xC4
     BuildingTypeClass* q0C8;  // 0xC8
     char SidebarImageFile;  // 0xCC
     unsigned char q0D0;  // 0xD0

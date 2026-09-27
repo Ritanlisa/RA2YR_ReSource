@@ -22,6 +22,9 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/ColorStruct_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x47F510
 namespace gamemd {
@@ -335,13 +338,13 @@ void TacticalClass::InterpolateView()
 {
   wchar_t * v0;
   wchar_t * v1;
-  unsigned int v2;
+  wchar_t * v2;
   wchar_t * v3;
-  unsigned int v4;
+  wchar_t * v4;
   unsigned int *v5; // edx
   int v6; // ebx
   wchar_t * v7;
-  unsigned int v8;
+  wchar_t * v8;
   int *v9; // eax
   int v10; // eax
   int *v11; // edx
@@ -352,28 +355,28 @@ void TacticalClass::InterpolateView()
   wchar_t * v16;
   int v17; // [esp+8h] [ebp-40h]
   wchar_t * v18;
-  wchar_t * v19;
-  unsigned int v20;
+  unsigned int v19;
+  wchar_t * v20;
   int v21; // [esp+18h] [ebp-30h]
   int v22; // [esp+1Ch] [ebp-2Ch]
   int v23; // [esp+20h] [ebp-28h]
   wchar_t * v24;
-  wchar_t * v25;
-  unsigned int v26;
+  unsigned int v25;
+  wchar_t * v26;
   int v27[3]; // [esp+30h] [ebp-18h] BYREF
   int v28[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
   v0 = (wchar_t *)(g_SelectionManager);
   if ( (int)g_SelectionManager > 0 ) /*0x4ae29f*/
   {
-    v1 = (wchar_t *)((int)((wchar_t *)(0)));
-    v2 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)(0)))))));
-    v3 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)(0))))));
+    v1 = (wchar_t *)((unsigned int)((wchar_t *)((int)((wchar_t *)(0)))));
+    v2 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)(0))))))));
+    v3 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)(0)))))));
     v18 = (wchar_t *)(0);
-    v19 = (unsigned int)((wchar_t *)(0));
-    v20 = (wchar_t *)(0);
-    v4 = g_ObjectClass_CurrentCount; /*0x4ae2bd*/
-    v16 = g_SelectionManager; /*0x4ae2c2*/
+    v19 = (wchar_t *)((unsigned int)((wchar_t *)(0)));
+    v20 = (wchar_t *)((unsigned int)((wchar_t *)(0)));
+    v4 = (unsigned int)((wchar_t *)(g_ObjectClass_CurrentCount));
+    v16 = (wchar_t *)(g_SelectionManager);
     do /*0x4ae2fc*/
     {
       v5 = (unsigned int *)((wchar_t *)((unsigned int *)*v4++));
@@ -447,7 +450,7 @@ void TacticalClass::InterpolateView()
         v15 = (v26 - v23) / v12; /*0x4ae41e*/
       }
       v18 = (wchar_t *)((unsigned int)((wchar_t *)(v13)));
-      v19 = (unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)(v14))))))));
+      v19 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)(v14)))))))));
       v20 = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)(v15)))))));
     }
     Tactical::SetTacticalPosition(&v18); /*0x4ae437*/

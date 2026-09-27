@@ -32,6 +32,7 @@
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x6DD8B0
 namespace gamemd {

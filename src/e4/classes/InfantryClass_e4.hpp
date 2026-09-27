@@ -445,7 +445,7 @@ struct InfantryClass {
     unsigned char q470;  // 0x470
     void* q474;  // 0x474
     unsigned char q478;  // 0x478
-    char audioController4[4];  // 0x47C
+    unsigned int audioController4;  // 0x47C
     char q480[4];  // 0x480
     unsigned char q484;  // 0x484
     unsigned int q487;  // 0x487

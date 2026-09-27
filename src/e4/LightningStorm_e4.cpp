@@ -109,7 +109,7 @@ AnimClass * * LightningStorm::Strike(IUnknown * aP0)
      + Coord::ScaleToScreenY((void *)(*(int16_t *)(v2 + 4) / 2))
      + dword_A9FA90 * *((char *)v1 + 283);
   result = (void **)(((int16_t)aP0 << 8) + 128);
-  v9[0] = result; /*0x53a1c8*/
+  v9[0] = (int)(result);
   v9[1] = (IDA_SHIWORD(aP0) << 8) + 128; /*0x53a1cc*/
   v9[2] = v3; /*0x53a1d0*/
   if ( result != dword_A9FA30 || (IDA_SHIWORD(aP0) << 8) + 128 != qword_A9FA34 || v3 != DataGlobal_A9FA38 ) /*0x53a1e4*/

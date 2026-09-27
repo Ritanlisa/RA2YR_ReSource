@@ -38,6 +38,10 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/E4Recv_7741C0_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
 
 // 0x743270
 namespace gamemd {
@@ -739,7 +743,7 @@ unsigned int * E4Recv_74BBF0::sub_74BBF0(int a2)
     *(unsigned int *)this = *(unsigned int *)a2; /*0x74bc85*/
     return this; /*0x74bc8d*/
   }
-  v5 = (void *)((unsigned int)((void *)((unsigned int)(operator new(v4)))));
+  v5 = (unsigned int)((void *)((unsigned int)((void *)((unsigned int)(operator new(v4))))));
   *((unsigned int *)v3 + 1) = v5; /*0x74bc48*/
   if ( !v5 ) /*0x74bc4b*/
     goto LABEL_8; /*0x74bc4b*/
@@ -950,10 +954,10 @@ int InitializeVeinholeSystem(char a1)
         VeinholeShrinkRate = (unsigned int)(g_RulesClass_Instance->VeinholeShrinkRate);
         v7[3] = (unsigned int)(0);
         v7[1] = (unsigned int)(VeinholeShrinkRate);
-        v7[4] = -1; /*0x74df4e*/
-        *v7 = 0; /*0x74df5c*/
-        v9 = operator new(4 * VeinholeShrinkRate + 4); /*0x74df5f*/
-        v10 = v7[1]; /*0x74df64*/
+        v7[4] = (unsigned int)(-1);
+        *v7 = (unsigned int)(0);
+        v9 = (void *)((unsigned int)(operator new(4 * VeinholeShrinkRate + 4)));
+        v10 = (unsigned int)(v7[1]);
         v7[2] = v9; /*0x74df67*/
         v11 = 0; /*0x74df6d*/
         if ( v10 >= 0 ) /*0x74df71*/
@@ -968,7 +972,7 @@ int InitializeVeinholeSystem(char a1)
       }
       else
       {
-        v7 = 0; /*0x74df84*/
+        v7 = (unsigned int)(0);
       }
       *(unsigned int *)(*((unsigned int *)g_VoxelDrawState + v5) + 176) = v7; /*0x74df90*/
       *(unsigned int *)(*((unsigned int *)g_VoxelDrawState + v5) + 196) = operator new(v2); /*0x74dfa9*/

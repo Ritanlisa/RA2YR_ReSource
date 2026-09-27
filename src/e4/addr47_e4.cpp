@@ -31,6 +31,9 @@
 #include "e4/classes/Control_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/House_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/XSurface_e4.hpp"
 
 // 0x472A80
 namespace gamemd {

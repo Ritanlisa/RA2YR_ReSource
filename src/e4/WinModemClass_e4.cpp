@@ -13,6 +13,8 @@
 #include "e4/classes/NullModemClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/WinsockInterface_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x774980
 namespace gamemd {
@@ -211,7 +213,7 @@ WinModemClass * * WinModemClass::LoadTypeData(int a2, char * Str, int a4, WinMod
     v8 = (gamemd::WinModemClass **)((int (*)(void))this->q068);
     if ( v8 ) /*0x774d68*/
     {
-      result = (gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((int)((gamemd::WinModemClass **)(v8())))))));
+      result = (gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((unsigned int)((gamemd::WinModemClass **)((int)((gamemd::WinModemClass **)(v8())))))))));
       if ( result ) /*0x774d6e*/
         return result; /*0x774f2f*/
     }
@@ -445,7 +447,7 @@ AbstractClass * * WinModemClass::Dial(const char * a2, unsigned char a3, char * 
       && Str[2] >= 48
       && Str[2] <= 57 )
     {
-      v24 = (gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((size_t)((gamemd::AbstractClass **)(Count)))))));
+      v24 = (gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((unsigned int)((gamemd::AbstractClass **)((size_t)((gamemd::AbstractClass **)(Count)))))))));
       if ( Count >= 80 ) /*0x775456*/
         v24 = 80; /*0x775458*/
       strncpy(Destination, Str, v24); /*0x77546b*/

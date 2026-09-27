@@ -13,6 +13,7 @@
 #include "e4/classes/ParasiteClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x4355B0
 namespace gamemd {
@@ -28,10 +29,10 @@ unsigned char * Palette_6BitTo16Bit(char a2, char a3, char a4)
 namespace gamemd {
 AbstractClass * * Palette_Preview_Generate(void * a1, void * a2, void * a3, void * a4)
 {
-  int v6;
+  void * v6;
   int v7; // eax
   int v8; // eax
-  int v9;
+  void * v9;
   int v10; // eax
   void *v11; // ebx
   int v12; // eax

@@ -33,6 +33,7 @@
 #include "e4/classes/Compare_e4.hpp"
 #include "e4/classes/E4Recv_7B60E0_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/E4Recv_7B7C00_e4.hpp"
 
 // 0x7A0430
 namespace gamemd {

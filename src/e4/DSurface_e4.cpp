@@ -19,6 +19,8 @@
 #include "e4/classes/Delegate_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
 
 // 0x480180
 namespace gamemd {

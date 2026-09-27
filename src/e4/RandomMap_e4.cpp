@@ -106,7 +106,7 @@ int RandomMap::GenerateTerrain()
   int v14; // eax
   int v15; // ecx
   char v16; // bl
-  unsigned int * v17;
+  int v17;
   unsigned int v18; // esi
   unsigned int v19; // eax
   int v20; // edi
@@ -275,7 +275,7 @@ int RandomMap::GenerateTerrain()
       }
       goto LABEL_84; /*0x58cd34*/
     }
-    v17 = (unsigned int *)(RandomMap::CellListAlloc(0));
+    v17 = (int)((unsigned int *)(RandomMap::CellListAlloc(0)));
     v45 = (unsigned int)(v17);
     v18 = v17->q010 - 1; /*0x58cae9*/
     v52 = v17->q010; /*0x58caed*/
@@ -325,7 +325,7 @@ int RandomMap::GenerateTerrain()
                   *(unsigned char *)(j + 283) = v27; /*0x58cc56*/
                 }
               }
-              v17 = v45; /*0x58cc6a*/
+              v17 = (unsigned int *)((int)(v45));
               v16 = 1; /*0x58cc6e*/
   LABEL_60:
               if ( v17 ) /*0x58cc72*/
@@ -340,7 +340,7 @@ int RandomMap::GenerateTerrain()
             }
           }
         }
-        v17 = v45; /*0x58cbc8*/
+        v17 = (unsigned int *)((int)(v45));
       }
       if ( ++v20 >= 8 ) /*0x58cbd0*/
         goto LABEL_60; /*0x58cbd0*/

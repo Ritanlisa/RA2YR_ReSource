@@ -232,7 +232,7 @@ struct ParticleSystemTypeClass {
     void* q29C;  // 0x29C
     ParticleSystemClass* q2A0;  // 0x2A0
     float q2A4;  // 0x2A4
-    void* ;  // 0x2A8
+    void* pad_2A8;  // 0x2A8
     int q2AC;  // 0x2AC
     int DamageDelay;  // 0x2B0
     int q2B4;  // 0x2B4

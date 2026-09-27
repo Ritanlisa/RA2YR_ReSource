@@ -31,6 +31,8 @@
 #include "e4/classes/DialogQueue_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/BufferIOFile_e4.hpp"
+#include "e4/classes/DialogClass_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
 
 // 0x792CF0
 namespace gamemd {

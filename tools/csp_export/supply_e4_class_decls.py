@@ -80,7 +80,11 @@ for cls in sorted(defs):
         used = {'vfptr'}
         for off in sorted(ent.get('members', {}), key=int):
             mm = ent['members'][off]
-            nm = mm.get('name') or ('q%03X' % int(off))
+            nm = (mm.get('name') or '').strip()
+            if not nm or not re.match(r'^[A-Za-z_]\w*$', nm):
+                # unnamed / control-char-polluted names once emitted
+                # `void* ;` (C2059 cascade in every includer) — pad instead
+                nm = 'q%03X' % int(off)
             if nm in used or nm.startswith('__pad'):
                 continue
             used.add(nm)

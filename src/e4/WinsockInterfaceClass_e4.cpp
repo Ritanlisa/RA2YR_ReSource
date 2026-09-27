@@ -10,6 +10,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/WinModemClass_e4.hpp"
 
 // 0x7B1AB0
 WinsockInterfaceClass::WinsockInterfaceClass()

@@ -10,6 +10,10 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/AudioQueue_e4.hpp"
 #include "e4/classes/AudioStream_e4.hpp"
+#include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/Trigger_e4.hpp"
+#include "e4/classes/TriggerTypeClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x720B20
 namespace gamemd {

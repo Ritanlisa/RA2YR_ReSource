@@ -9,6 +9,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x4D2DB0
 namespace gamemd {

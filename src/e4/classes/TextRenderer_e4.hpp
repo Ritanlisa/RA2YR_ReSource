@@ -23,7 +23,7 @@ struct TextRenderer {
     unsigned char q058;  // 0x58
     unsigned int q064;  // 0x64
     unsigned int u32_68;  // 0x68
-    void* ;  // 0x6C
+    void* pad_06C;  // 0x6C
     unsigned char u8_70;  // 0x70
     unsigned char u8_71;  // 0x71
     unsigned int q080;  // 0x80

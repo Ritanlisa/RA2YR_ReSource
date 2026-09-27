@@ -12,6 +12,8 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/AudioClass_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
 
 // 0x76FC50
 namespace gamemd {
@@ -24,7 +26,7 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   void *v9; // eax
   unsigned int v11[22]; // [esp+10h] [ebp-6Ch] BYREF
   unsigned char v12[12]; // [esp+68h] [ebp-14h] BYREF
-  int v13; // [esp+74h] [ebp-8h]
+  void ** v13;
 
   v5 = (char **)(&this->u32_C2); /*0x76fc68*/
   v6 = aP3[1] + this->u32_1C; /*0x76fc6b*/

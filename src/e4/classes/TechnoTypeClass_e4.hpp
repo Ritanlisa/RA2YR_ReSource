@@ -875,7 +875,7 @@ unsigned int q7A8;  // 0x7A8
     unsigned int RequiredHouses;  // 0xD74
     unsigned int ForbiddenHouses;  // 0xD78
     unsigned int SecretHouses;  // 0xD7C
-    unsigned int ;  // 0xD80
+    unsigned int pad_D80;  // 0xD80
     unsigned int SecondSpawnOffset;  // 0xD84
     unsigned int u32_D88;  // 0xD88
     unsigned int qD8C;  // 0xD8C
@@ -899,9 +899,9 @@ unsigned int q7A8;  // 0x7A8
     unsigned int qDBD;  // 0xDBD
     unsigned int qDBE;  // 0xDBE
     bool qDBF;  // 0xDBF
-    unsigned int ;  // 0xDC0
-    unsigned int ;  // 0xDC4
-    unsigned int ;  // 0xDC8
+    unsigned int pad_DC0;  // 0xDC0
+    unsigned int pad_DC4;  // 0xDC4
+    unsigned int pad_DC8;  // 0xDC8
     WeaponTypeClass* qDCC;  // 0xDCC
     unsigned char qDD0;  // 0xDD0
     void* qDD4;  // 0xDD4

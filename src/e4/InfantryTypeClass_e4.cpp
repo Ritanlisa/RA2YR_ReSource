@@ -107,18 +107,18 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
         goto LABEL_11; /*0x523872*/
     }
   }
-  this->ArrayIndex = v5; /*0x52387e*/
-  this->u32_E08 = 0; /*0x523886*/
-  this->qE04 = 0; /*0x523890*/
-  this->u32_E0C = 0; /*0x523896*/
-  this->u32_E14 = 0; /*0x523899*/
+  this->ArrayIndex = (unsigned int)((void *)(v5));
+  this->u32_E08 = (void *)(0);
+  this->qE04 = (void *)(0);
+  this->u32_E0C = (void *)(0);
+  this->u32_E14 = (void *)(0);
   this->u32_E18 = 0; /*0x52389f*/
   this->u8_E1C = 0; /*0x5238a5*/
-  this->qE10 = 0; /*0x5238ab*/
-  this->EliteOccupyWeapon = 0; /*0x5238b4*/
-  this->qE30 = 0; /*0x5238ba*/
-  this->u32_E24 = 0; /*0x5238c0*/
-  this->u32_E34 = 0; /*0x5238c3*/
+  this->qE10 = (unsigned int)(0);
+  this->EliteOccupyWeapon = (unsigned int)(0);
+  this->qE30 = (unsigned int)(0);
+  this->u32_E24 = (unsigned int)(0);
+  this->u32_E34 = (unsigned int)(0);
   this->u8_E38 = 0; /*0x5238c9*/
   this->RotCount = 8; /*0x5238cf*/
   this->u32_E28 = 0; /*0x5238d9*/

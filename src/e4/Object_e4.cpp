@@ -24,6 +24,9 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/OverlayTypeClass_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/LoadOptions_e4.hpp"
 
 // 0x47C3D0
 namespace gamemd {
@@ -251,7 +254,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
             }
             continue; /*0x56c4af*/
           }
-          v25[0] = (int *)((v8 << 8) + 128);
+          v25[0] = (unsigned int)((int *)((v8 << 8) + 128));
           v25[1] = (v7 << 8) + 128; /*0x56c429*/
           v25[2] = 0; /*0x56c431*/
           v15 = Vector3::Subtract(a2, v27, v25); /*0x56c439*/
@@ -561,8 +564,8 @@ void* Object::HandleAction(int * a2, int * a3)
       v24 = (int)((unsigned int *)(this->q0A0));
       v32 = (int)((unsigned int *)(*v4));
       v34 = (unsigned int *)(v23);
-      v33 = v24; /*0x5fdc06*/
-      v25 = Coord::To_Cell(&MapClass_Instance, &v32); /*0x5fdc0a*/
+      v33 = (unsigned int *)(v24);
+      v25 = (unsigned int *)(Coord::To_Cell(&MapClass_Instance, &v32));
     }
     else
     {

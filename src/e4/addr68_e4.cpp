@@ -50,6 +50,11 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Waypoint_e4.hpp"
 #include "e4/classes/GameSettings_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/Compare_e4.hpp"
+#include "e4/classes/Count_e4.hpp"
+#include "e4/classes/InfantryTypeClass_e4.hpp"
 
 // 0x682640
 namespace gamemd {
@@ -477,7 +482,7 @@ void * * ScenarioClass_SetTimer(int a1)
 {
   DWORD Ticks; // eax
   char *v3; // edx
-  unsigned int result;
+  void ** result;
   unsigned int *v5; // esi
   DWORD v6; // eax
   int v7; // ecx
@@ -523,7 +528,7 @@ void * * ScenarioClass_SetTimer(int a1)
       dword_B07784 = 0; /*0x684165*/
     }
   }
-  result = (void **)((unsigned int)((void **)((unsigned int)((void **)(g_ScenarioClass_Instance)))));
+  result = (unsigned int)((void **)((unsigned int)((void **)((unsigned int)((void **)(g_ScenarioClass_Instance))))));
   ++*((unsigned int *)g_ScenarioClass_Instance + 395); /*0x684174*/
   return result; /*0x68417a*/
 }

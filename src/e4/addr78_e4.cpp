@@ -30,6 +30,9 @@
 #include "e4/classes/File_e4.hpp"
 #include "e4/classes/BufferIOFile_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/DialogClass_e4.hpp"
+#include "e4/classes/DialogQueue_e4.hpp"
 
 // 0x780110
 namespace gamemd {
@@ -218,9 +221,9 @@ void WOL_ResetSystem()
   dword_B779CC = (unsigned int)(0);
   dword_B77E4C = (unsigned int)(0);
   g_WOL_ChannelList = (unsigned int)(0);
-  byte_B77DEC = 0; /*0x7804eb*/
-  byte_B77DC0 = 0; /*0x7804f1*/
-  byte_84A1B8 = 1; /*0x7804f7*/
+  byte_B77DEC = (unsigned int)(0);
+  byte_B77DC0 = (unsigned int)(0);
+  byte_84A1B8 = (unsigned int)(1);
   DeleteAndZero::Alt2(&dword_B73AE0); /*0x7804fe*/
   memset(&Handles, 0, 0x48u); /*0x780514*/
   g_NetworkLobby_Init = 0; /*0x780522*/

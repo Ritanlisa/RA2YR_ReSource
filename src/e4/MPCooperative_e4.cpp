@@ -22,6 +22,11 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/MSFont_18_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/GameClass_e4.hpp"
+#include "e4/classes/MSEngine_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x49B660
 namespace gamemd {

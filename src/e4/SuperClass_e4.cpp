@@ -21,6 +21,8 @@
 #include "e4/classes/RulesClass_e4.hpp"
 #include "e4/classes/SuperWeaponTypeClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x53AE50
 namespace gamemd {
@@ -303,7 +305,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
     if ( *(unsigned char *)(v9 + 245) ) /*0x6cb641*/
     {
       v10 = (void *)((unsigned int)(this->q024));
-      this->q078 = (unsigned int)(-1);
+      this->q078 = (void *)((unsigned int)(-1));
       if ( v10 == -1 ) /*0x6cb656*/
         v10 = *(unsigned int *)(v9 + 176); /*0x6cb658*/
       v11 = (unsigned int *)(&this->uniqueId8); /*0x6cb664*/
@@ -416,7 +418,7 @@ AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
   int v3; // eax
   int v4; // eax
   int v5; // eax
-  int v6; // ecx
+  void * v6;
   unsigned int v8[4]; // [esp+8h] [ebp-10h] BYREF
 
   v3 = *(unsigned int *)((char *)&this->q19D + 3); /*0x6cb839*/
@@ -431,7 +433,7 @@ AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
   }
   if ( this->q06C ) /*0x6cb870*/
   {
-    v8[0] = this; /*0x6cb885*/
+    v8[0] = (unsigned int)(this);
     v5 = (*(int (__thiscall **)(int *, unsigned int *))(g_BuildingInstanceCount + 16))(&g_BuildingInstanceCount, v8); /*0x6cb889*/
     if ( v5 != -1 ) /*0x6cb88f*/
       DynamicVector::RemoveItem(&g_BuildingInstanceCount, v5); /*0x6cb897*/
@@ -496,7 +498,7 @@ int SuperClass::ClickFire(int a2, short * a3)
       v5 = *(unsigned int *)((char *)&this->q1EC + 4); /*0x6cb949*/
       if ( v5 == 2 ) /*0x6cb94f*/
       {
-        v6 = this->q090; /*0x6cb951*/
+        v6 = (int16_t *)(this->q090);
         *(unsigned int *)((char *)&this->q1EC + 4) = 1; /*0x6cb954*/
         if ( v6 == (int16_t *)-1 ) /*0x6cb95e*/
           a3 = *(int16_t **)(this->u32_A0 + 176); /*0x6cb96f*/

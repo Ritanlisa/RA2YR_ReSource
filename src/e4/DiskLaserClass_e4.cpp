@@ -14,6 +14,7 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/DisplayClass_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/Display_e4.hpp"
 
 // 0x4A7A30
 DiskLaserClass::DiskLaserClass()

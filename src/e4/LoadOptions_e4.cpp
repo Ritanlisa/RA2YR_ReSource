@@ -9,6 +9,9 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/LoadGame_e4.hpp"
+#include "e4/classes/Display_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/MixFile_e4.hpp"
 
 // 0x559D60
 namespace gamemd {
@@ -182,8 +185,7 @@ LoadOptions * LoadOptions::QueryInterface(char a2)
 {
   void * v3;
   void * v4;
-
-  v3 = (void *)((unsigned int)((void *)((unsigned int)(0))));
+v3 = (unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)(0)))))));
   for ( *(unsigned int *)this = (void*)&LoadOptionsClass_vftable; v3 < this->capacity; ++v3 ) /*0x55a0e1*/
     RA2_OPDEL(*(void **)(this->q024 + 4 * v3)); /*0x55a0ea*/
   (*(void (__thiscall **)(char *))(this->is_active + 12))(&this->q00C2); /*0x55a102*/

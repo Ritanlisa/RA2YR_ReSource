@@ -27,10 +27,11 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x41A9E0
 namespace gamemd {
-void TechnoClass_CanFireAtTarget()
+void TechnoClass_CanFireAtTarget(void * a1, void * a2, void * a3, void * a4, void * a5)
 {
   int result; // eax
   int v7; // edi
@@ -42,7 +43,7 @@ void TechnoClass_CanFireAtTarget()
     {
       v7 = *ProgressTimer::GetValue((unsigned short *)(a1 + 928), &a5); /*0x41aa2e*/
       if ( (*(int (__stdcall **)(int))(*(unsigned int *)(a1 + 1728) + 28))(a1 + 1728) /*0x41aa6a*/
-        || abs16(v7 - *(unsigned short *)ObjectClass::CalcTargetFacing((void *)a1, (int *)&a5, (int)a3)) <= 0x800u )
+        || abs16(v7 - *(unsigned short *, void * a1, void * a2, void * a3, void * a4, void * a5)ObjectClass::CalcTargetFacing((void *)a1, (int *)&a5, (int)a3)) <= 0x800u )
       {
         return 0; /*0x41aa77*/
       }
@@ -63,7 +64,7 @@ void TechnoClass_CanFireAtTarget()
 namespace gamemd {
 TechnoClass::TechnoClass(AbstractClass * aP1)
 {
-  int v10; // eax
+  TechnoClass * v10;
   int v11; // eax
 
   RadioClass::Release(); /*0x6f2b46*/
@@ -303,7 +304,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
          dword_A8EC8C + dword_A8EC80,
          0) )
   {
-    v10 = (unsigned int)(g_SidebarState++);
+    v10 = (gamemd::TechnoClass *)((unsigned int)(g_SidebarState++));
     *((unsigned int *)g_TechnoClass_Count + v10) = this; /*0x6f31d2*/
   }
   if ( dword_B0F6D8 < dword_B0F6D0 /*0x6f3209*/

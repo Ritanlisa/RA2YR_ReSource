@@ -20,6 +20,10 @@
 #include "e4/classes/GameOption_e4.hpp"
 #include "e4/classes/AudioMixer_e4.hpp"
 #include "e4/classes/AudioQueue_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/GameConfig_e4.hpp"
+#include "e4/classes/AsyncIO_e4.hpp"
+#include "e4/classes/Mission_e4.hpp"
 
 // 0x437FD0
 namespace gamemd {
@@ -258,7 +262,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
   int v6; // ecx
   int v7; // eax
   int v8; // eax
-  CampaignClass * v9;
+  unsigned int v9;
   bool v10; // zf
   char v12[256]; // [esp+8h] [ebp-100h] BYREF
 

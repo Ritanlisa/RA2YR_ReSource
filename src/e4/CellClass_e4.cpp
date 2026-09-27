@@ -16,6 +16,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/CaptureManagerClass_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
 
 // 0x544C80
 namespace gamemd {
@@ -546,7 +547,7 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
   void *v16; // ecx
   unsigned int v17; // eax
   void *v18; // eax
-  void *v19; // ecx
+  IUnknown * v19;
   unsigned int v20; // eax
   char *v21; // eax
   unsigned int v22; // eax
@@ -651,7 +652,7 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
       else
       {
         v13 = (void *)((int)(&g_CellClassArray));
-        g_Map_GlobalCellIndex = aP1; /*0x56fde8*/
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v13); /*0x56fded*/
       aP1 = *(unsigned int *)v31 - 0x10000; /*0x56fe02*/
@@ -662,8 +663,8 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v16 = (int)(&g_CellClassArray);
-        g_Map_GlobalCellIndex = aP1; /*0x56fe35*/
+        v16 = (void *)((int)(&g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v16); /*0x56fe3a*/
       IDA_LOWORD(aP1) = v31[0] + 1; /*0x56fe4b*/
@@ -671,12 +672,12 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
       v17 = (int16_t)(v31[0] + 1) + ((int16_t)(v31[1] - 1) << 9); /*0x56fe5e*/
       if ( v17 < 0x40000 && (v18 = *(void **)(g_Shroud_CellArray + 4 * v17)) != 0 ) /*0x56fe74*/
       {
-        v19 = v18; /*0x56fe76*/
+        v19 = (IUnknown *)(v18);
       }
       else
       {
-        v19 = &g_CellClassArray; /*0x56fe7e*/
-        g_Map_GlobalCellIndex = aP1; /*0x56fe83*/
+        v19 = (IUnknown *)((int)(&g_CellClassArray));
+        g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v19); /*0x56fe88*/
       aP1 = *(unsigned int *)v31 - 0x10000; /*0x56fe9d*/

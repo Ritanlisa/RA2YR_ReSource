@@ -8,13 +8,13 @@ struct DynamicVector {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     unsigned int q004;  // 0x4
-    void* ;  // 0x8
+    void* pad_008;  // 0x8
     char q00B[4];  // 0xB
     bool IsInitialized;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned int tail_E;  // 0xE
-    void* ;  // 0x10
-    void* ;  // 0x14
+    void* pad_010;  // 0x10
+    void* pad_014;  // 0x14
     unsigned char q018;  // 0x18
     AbstractClass* q01C;  // 0x1C
     int q020;  // 0x20

@@ -10,7 +10,7 @@ struct LoadOptions {
     void* vtable1;  // 0x0
     unsigned int q004;  // 0x4
     unsigned int q008;  // 0x8
-    void* ;  // 0xC
+    void* pad_00C;  // 0xC
     void* IsAllocated;  // 0xD
     unsigned int max_entries;  // 0x10
     bool IsInitialized;  // 0x12

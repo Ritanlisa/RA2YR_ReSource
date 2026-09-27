@@ -22,6 +22,8 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/RadarClass_e4.hpp"
 #include "e4/classes/SmudgeTypeClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x46F600
 namespace gamemd {
@@ -165,7 +167,7 @@ namespace gamemd {
 int Skirmish::ReadSettings(HWND hDlg)
 {
   void * v4;
-  LRESULT v5; // eax
+  void * v5;
   LRESULT v6; // eax
   LRESULT v7; // eax
   LRESULT v8; // eax
@@ -188,10 +190,10 @@ int Skirmish::ReadSettings(HWND hDlg)
   HWND hDlge; // [esp+18h] [ebp+4h]
   HWND hDlgf; // [esp+18h] [ebp+4h]
 v18 = (void *)((int)((void *)((unsigned int)((int)this->q03C))));
-  hDlga = (LRESULT)((HWND)((unsigned int)(GetDlgItem(hDlg, 1029))));
-  v4 = (LRESULT)((void *)((unsigned int)(SendMessageA(hDlga, 0x147u, 0, 0))));
-  v5 = (void *)((unsigned int)(SendMessageA(hDlga, 0x150u, v4, 0)));
-  this->q03C = (unsigned int)((HWND)v5);
+  hDlga = (void *)((LRESULT)((HWND)((unsigned int)(GetDlgItem(hDlg, 1029)))));
+  v4 = (void *)((LRESULT)((void *)((unsigned int)(SendMessageA(hDlga, 0x147u, 0, 0)))));
+  v5 = (void *)((LRESULT)((void *)((unsigned int)(SendMessageA(hDlga, 0x150u, v4, 0)))));
+  this->q03C = (void *)((unsigned int)((HWND)v5));
   if ( v18 != v5 ) /*0x596cbe*/
     byte_ABE2D8 = 1; /*0x596cc0*/
   v19 = (int)this->u32_38; /*0x596cd0*/
@@ -334,7 +336,7 @@ int Skirmish::RenderPreview(SkirmishDialog * aP1)
 result = (int)((HWND)(ValidateRect(aP1, 0)));
   if ( *this ) /*0x64072c*/
   {
-    DlgItem = (int)((HWND)((int)(GetDlgItem(aP1, 1128))));
+    DlgItem = (HWND)((int)((HWND)((int)(GetDlgItem(aP1, 1128)))));
     ScreenDialogToClient(DlgItem, &Rect); /*0x640749*/
     left = Rect.left; /*0x64075a*/
     top = Rect.top; /*0x640764*/

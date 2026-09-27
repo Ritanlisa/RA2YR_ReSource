@@ -196,7 +196,7 @@ CellStruct * * sub_731AF0()
   wchar_t *v6; // eax
   int v7; // ecx
 
-  result = g_SelectionManager; /*0x731af1*/
+  result = (wchar_t *)(g_SelectionManager);
   if ( !g_SelectionManager ) /*0x731afa*/
   {
     StringCSF = (wchar_t *)(GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 856));
@@ -215,13 +215,13 @@ CellStruct * * sub_731AF0()
   }
   while ( 1 ) /*0x731b56*/
   {
-    result = (unsigned int)((wchar_t *)g_ObjectClass_CurrentCount);
+    result = (wchar_t *)((unsigned int)((wchar_t *)g_ObjectClass_CurrentCount));
     v5 = (unsigned char *)*((unsigned int *)g_ObjectClass_CurrentCount + v4); /*0x731b5b*/
     if ( v5 ) /*0x731b60*/
     {
       if ( (v5[20] & 1) != 0 ) /*0x731b6c*/
       {
-        result = (unsigned int)((wchar_t *)(*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v5 + 1216))(v5));
+        result = (wchar_t *)((unsigned int)((wchar_t *)(*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v5 + 1216))(v5)));
         if ( !(unsigned char)result ) /*0x731b78*/
           break; /*0x731b78*/
       }

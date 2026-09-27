@@ -30,12 +30,15 @@
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/CoordStruct_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/Movie_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x5E2820
 namespace gamemd {
 void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
 {
-  wchar_t *v3; // esi
+  wint_t * v3;
   unsigned int v4;
   wint_t * v5;
   wchar_t *v6; // eax
@@ -51,8 +54,8 @@ void DrawDialogText(ObjectClass * aP0, const wchar_t * a1, HWND hWnd)
   int v18; // [esp+24h] [ebp-14h] BYREF
   struct tagRECT Rect; // [esp+28h] [ebp-10h] BYREF
 
-  v3 = (wchar_t *)((wint_t *)((wchar_t *)a1));
-  v4 = (wint_t *)((HWND)((wint_t *)(hWnd)));
+  v3 = (wint_t *)((unsigned int)((wchar_t *)((wint_t *)((wchar_t *)a1))));
+  v4 = (wint_t *)((unsigned int)((wint_t *)((HWND)((wint_t *)(hWnd)))));
   v5 = (wint_t *)(wcslen(a1));
   v13 = 18; /*0x5e2842*/
   ScreenDialogToClient(hWnd, &Rect); /*0x5e284a*/
@@ -435,7 +438,7 @@ char Game_CheckSettingsChanged(char a1, char a2)
 namespace gamemd {
 ObjectClass * * ValidateNetworkLobbyHostMap(void * a1, void * a2)
 {
-  char * v2;
+  unsigned int v2;
   char *v4; // eax
   HWND result; // eax
   int v6; // esi

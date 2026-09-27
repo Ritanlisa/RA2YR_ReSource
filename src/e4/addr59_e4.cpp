@@ -28,6 +28,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
 
 // 0x5904B0
 namespace gamemd {

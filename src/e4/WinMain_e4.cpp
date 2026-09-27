@@ -110,7 +110,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   uint8_t result; // al
   unsigned int * v19;
   unsigned int * v20;
-v3 = (unsigned int)((gamemd::ObjectClass *)((unsigned int)((gamemd::ObjectClass *)((unsigned int)((gamemd::ObjectClass *)(dword_ABF168))))));
+v3 = (gamemd::ObjectClass *)((unsigned int)((gamemd::ObjectClass *)((unsigned int)((gamemd::ObjectClass *)((unsigned int)((gamemd::ObjectClass *)(dword_ABF168)))))));
   dword_ABF230 = (unsigned int)((gamemd::ObjectClass *)(aP0));
   hWndParent = (unsigned char)((int)(a2));
   byte_ABF238 = (unsigned char)((int)((gamemd::ObjectClass *)(a3)));
@@ -123,7 +123,7 @@ v3 = (unsigned int)((gamemd::ObjectClass *)((unsigned int)((gamemd::ObjectClass 
     if ( v4 ) /*0x5bc1ba*/
     {
       v4[2503] = (unsigned int)(0);
-      v4[2502] = v20; /*0x5bc1c6*/
+      v4[2502] = (unsigned int)(v20);
       v4[2504] = 0; /*0x5bc1cc*/
       v4[2505] = 0; /*0x5bc1d2*/
       v4[2506] = 0; /*0x5bc1d8*/

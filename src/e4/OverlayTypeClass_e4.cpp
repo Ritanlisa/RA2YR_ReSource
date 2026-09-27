@@ -18,6 +18,7 @@
 #include "e4/classes/EventClass_e4.hpp"
 #include "e4/classes/Options_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x5FE250
 OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)

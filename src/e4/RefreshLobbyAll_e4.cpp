@@ -11,6 +11,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/RandomMap_e4.hpp"
+#include "e4/classes/Rect_e4.hpp"
 
 // 0x5E8D40
 namespace gamemd {

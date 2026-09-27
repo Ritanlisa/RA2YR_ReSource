@@ -1169,8 +1169,8 @@ VectorClass_flat * DynamicVectorClass_AnimType::Add(char a2)
     RA2_OPDEL(v3); /*0x525028*/
     this->Items = 0; /*0x525030*/
   }
-  this->IsAllocated = 0; /*0x52503b*/
-  this->Capacity = 0; /*0x525041*/
+  this->IsAllocated = (unsigned char)((gamemd::VectorClass_flat *)(0));
+  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x525048*/
     RA2_OPDEL(); /*0x52504b*/
   return this; /*0x525055*/

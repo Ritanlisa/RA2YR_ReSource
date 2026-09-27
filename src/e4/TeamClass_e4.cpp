@@ -21,6 +21,10 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/TeamTypeClass_e4.hpp"
+#include "e4/classes/BuildingType_e4.hpp"
+#include "e4/classes/TaskForceClass_e4.hpp"
 
 // 0x4D9E70
 namespace gamemd {
@@ -93,7 +97,7 @@ int TeamClass::DisbandTeam(int a2)
   *(&this->referenceCount0) = (v4 << 11) + *(&this->referenceCount9) + 4; /*0x577c1f*/
   for (); i; i = LayerClass::CellIteratorNext(this) ) /*0x577c2c*/
   {
-    v6 = *(unsigned int *)(i + 320) & 0xFFFFFFFC; /*0x577c3d*/
+    v6 = (int)(*(unsigned int *)(i + 320) & 0xFFFFFFFC);
     *(unsigned int *)(i + 300) &= 0xFFFFFFE7; /*0x577c40*/
     *(unsigned int *)(i + 320) = v6; /*0x577c48*/
   }
@@ -638,7 +642,7 @@ TechnoClass * * TeamClass::RemoveAllMembers()
   result = (gamemd::TechnoClass **)((*(int (__thiscall **)(int))(this->vtable2 + 12))&this->uniqueId);
   this->q08C = (unsigned int)((gamemd::TechnoClass **)(-1));
   this->q090 = (unsigned char)((void *)(-1));
-  this->ptr_94 = (void *)(-1);
+  this->ptr_94 = (unsigned char)((void *)((unsigned char)((void *)(-1))));
   this->u8_98 = (gamemd::TechnoClass **)(0);
   this->u8_99 = 0; /*0x6362ff*/
   return result; /*0x636306*/

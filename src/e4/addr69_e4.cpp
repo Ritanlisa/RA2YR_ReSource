@@ -44,6 +44,11 @@
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/E4Recv_6A89E0_e4.hpp"
+#include "e4/classes/E4Recv_6A87F0_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/BombClass_e4.hpp"
+#include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/E4Recv_6A93F0_e4.hpp"
 
 // 0x690400
 namespace gamemd {

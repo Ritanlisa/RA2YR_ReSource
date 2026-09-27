@@ -17,6 +17,7 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/BombClass_e4.hpp"
+#include "e4/classes/GameClass_e4.hpp"
 
 // 0x4CD600
 namespace gamemd {

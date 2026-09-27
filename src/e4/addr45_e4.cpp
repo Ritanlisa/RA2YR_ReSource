@@ -24,6 +24,9 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/E4Recv_4B69E0_e4.hpp"
+#include "e4/classes/JumpjetLocomotion_e4.hpp"
+#include "e4/classes/TimerClass_e4.hpp"
 
 // 0x451400
 namespace gamemd {
@@ -373,8 +376,8 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
     if ( aP0 ) /*0x456bf4*/
     {
       v15 = (unsigned int)((double)v36);
-      v36 = 0; /*0x456bfe*/
-      v16 = (double *)&dword_818CC8; /*0x456c06*/
+      v36 = (unsigned int)(0);
+      v16 = (double *)((unsigned int)((double *)&dword_818CC8));
       v43 = v15; /*0x456c0b*/
       v42 = (double)IDA_SLODWORD(v37); /*0x456c13*/
       do /*0x456c23*/

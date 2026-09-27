@@ -223,7 +223,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   uint8_t v97; // [esp+1Ah] [ebp-F6h]
   uint8_t v98; // [esp+1Bh] [ebp-F5h]
   uint8_t v99; // [esp+1Bh] [ebp-F5h]
-  int v100; // [esp+1Ch] [ebp-F4h] BYREF
+  unsigned int v100;
   int v101; // [esp+20h] [ebp-F0h] BYREF
   int v102; // [esp+24h] [ebp-ECh]
   float v103; // [esp+28h] [ebp-E8h]
@@ -254,10 +254,10 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v101 = (int)(*a2 - 2 * (v7 + 8));
     v106 = (int)(v10);
     v11 = (int)(a2[1]);
-    v107 = v7 + 8 + v11; /*0x422d4d*/
-    v102 = v11 - (v7 + 8); /*0x422d51*/
-    v104 = (v8 - v7) << 8; /*0x422d5e*/
-    v100 = v104 / v8; /*0x422d67*/
+    v107 = (unsigned int *)(v7 + 8 + v11);
+    v102 = (unsigned int *)(v11 - (v7 + 8));
+    v104 = (unsigned int *)((v8 - v7) << 8);
+    v100 = (unsigned int *)(v104 / v8);
     if ( v104 / v8 >= 0 ) /*0x422d6b*/
     {
       if ( v104 / v8 > 255 ) /*0x422d7c*/

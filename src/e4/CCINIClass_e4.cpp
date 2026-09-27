@@ -16,6 +16,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x41F2E0
 namespace gamemd {
@@ -137,7 +138,7 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   MultiplayerGameMode ** v15;
   MultiplayerGameMode ** v16;
   MultiplayerGameMode ** v17;
-  unsigned int v18;
+  MultiplayerGameMode ** v18;
   MultiplayerGameMode ** v19;
   MultiplayerGameMode ** v20;
   int v21[5]; // [esp+A0h] [ebp-14h] BYREF
@@ -166,9 +167,9 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   v20 = (gamemd::MultiplayerGameMode **)((int)((gamemd::MultiplayerGameMode **)(0)));
   v14 = (gamemd::MultiplayerGameMode **)((int)((gamemd::MultiplayerGameMode **)(1732584193)));
   v15 = (gamemd::MultiplayerGameMode **)((int)((gamemd::MultiplayerGameMode **)(-271733879)));
-  v16 = (int)((gamemd::MultiplayerGameMode **)(-1732584194));
-  v17 = (unsigned int)((gamemd::MultiplayerGameMode **)(271733878));
-  v18 = (gamemd::MultiplayerGameMode **)(-1009589776);
+  v16 = (gamemd::MultiplayerGameMode **)((int)((gamemd::MultiplayerGameMode **)(-1732584194)));
+  v17 = (gamemd::MultiplayerGameMode **)((unsigned int)((gamemd::MultiplayerGameMode **)(271733878)));
+  v18 = (gamemd::MultiplayerGameMode **)((unsigned int)((gamemd::MultiplayerGameMode **)(-1009589776)));
   INIClass::WriteToString(v12); /*0x4742cd*/
   SHA1::ComputeThunk(&this->u32_185); /*0x4742da*/
   *(&this->u32_184) = 1; /*0x4742e3*/

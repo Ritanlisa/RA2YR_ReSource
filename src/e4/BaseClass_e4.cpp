@@ -11,6 +11,7 @@
 #include "e4/classes/CampaignClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Campaign_e4.hpp"
 
 // 0x42EE30
 namespace gamemd {

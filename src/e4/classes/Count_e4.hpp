@@ -11,7 +11,7 @@ struct Count {
     void* q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
-    void* ;  // 0x1C
+    void* pad_01C;  // 0x1C
     unsigned char q020;  // 0x20
     void* q028;  // 0x28
     void* q038;  // 0x38

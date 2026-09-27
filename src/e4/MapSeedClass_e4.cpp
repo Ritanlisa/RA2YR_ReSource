@@ -16,6 +16,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Map_e4.hpp"
+#include "e4/classes/MixFile_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x5A5B50
 namespace gamemd {
@@ -236,7 +238,7 @@ MapSeedClass * * MapSeedClass::PlaceBuildingClusters(MapSeedClass * aP1)
                 }
                 if ( (uint8_t)MapSeedClass::ValidateRectBounds(v52) ) /*0x5a61c0*/
                 {
-                  v16 = IDA_SHIWORD(v28); /*0x5a61cd*/
+                  v16 = (unsigned short)(IDA_SHIWORD(v28));
                   if ( IDA_SHIWORD(v28) - IDA_SWORD1(v20) < 4 ) /*0x5a61de*/
                   {
                     IDA_LOWORD(v5) = PlaceMapSeedClassBuildings(g_CellTileTypeCache + 7, &v20, -1, -1); /*0x5a63e7*/

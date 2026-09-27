@@ -9,9 +9,9 @@ struct LocomotionClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
-    void* ;  // 0x8
+    void* pad_008;  // 0x8
     _DWORD q00C;  // 0xC
-    void* ;  // 0x10
+    void* pad_010;  // 0x10
     bool Dirty;  // 0x11
     unsigned char u8_14;  // 0x14
     Coord * ptr_18;  // 0x18
@@ -20,7 +20,7 @@ struct LocomotionClass {
     bool q01D;  // 0x1D
     unsigned char q020;  // 0x20
     unsigned char q021;  // 0x21
-    void* ;  // 0x24
+    void* pad_024;  // 0x24
     unsigned int u32_28;  // 0x28
     bool q02B;  // 0x2B
     unsigned int u32_2C;  // 0x2C

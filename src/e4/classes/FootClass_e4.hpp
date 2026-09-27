@@ -628,7 +628,7 @@ struct FootClass {
     bool shouldGarrisonStructure;  // 0x691
     char FootClass_field_694[4];  // 0x694
     char FootClass_field_698[4];  // 0x698
-    char FootClass_field_69C[4];  // 0x69C
+    unsigned int FootClass_field_69C;  // 0x69C
     char FootClass_field_6A0[12];  // 0x6A0
     char FootClass_field_6A4[4];  // 0x6A4
     void* FootClass_bools_6A8;  // 0x6A8

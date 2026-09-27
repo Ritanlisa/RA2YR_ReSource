@@ -218,7 +218,7 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
           ++v19; /*0x4fbaf1*/
       }
     }
-    v22 = a1[50]; /*0x4fbb00*/
+    v22 = (int)(a1[50]);
     a5 = v5; /*0x4fbb10*/
     v23 = (*(int (__thiscall **)(unsigned int *, void ***))(v22 + 16))(a1 + 50, &a5); /*0x4fbb17*/
     if ( v23 != -1 ) /*0x4fbb1d*/

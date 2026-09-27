@@ -127,7 +127,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int v5; // ecx
   int v6; // ecx
   int *v7; // eax
-  int v8; // ecx
+  int * v8;
   int v9; // edx
   int v10; // eax
   int *v11; // edx
@@ -139,8 +139,8 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int * v17;
   int v18; // edx
   int *FoundationSize; // edx
-  int v20; // eax
-  int v21; // edi
+  int * v20;
+  int * v21;
   int v22; // ebx
   int * v23;
   int SubFile; // esi
@@ -162,7 +162,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   unsigned int v40;
   int * v41;
   int * v42;
-  int v43; // [esp+18h] [ebp-B8h]
+  int * v43;
   int v44; // [esp+1Ch] [ebp-B4h]
   uint8_t v45; // [esp+20h] [ebp-B0h]
   uint8_t v46; // [esp+20h] [ebp-B0h]
@@ -185,8 +185,8 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
   int v63; // [esp+6Ch] [ebp-64h]
   int v64; // [esp+70h] [ebp-60h]
   unsigned int v65;
-  int v66; // [esp+7Ch] [ebp-54h]
-  int v67; // [esp+84h] [ebp-4Ch]
+  int * v66;
+  int * v67;
   int v68[4]; // [esp+88h] [ebp-48h] BYREF
   int * v69;
   int v70[4]; // [esp+A0h] [ebp-30h] BYREF
@@ -215,13 +215,13 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
         v51 = (int *)(g_Map_VisibleRect + v6);
         v7 = (int *)(ClipRectIntersection(v70, (int *)&v50, v54, 0, 0));
         v68[0] = (int *)(*v7);
-        v68[1] = v7[1]; /*0x420ff7*/
-        v68[2] = v7[2]; /*0x421001*/
-        v8 = v3[1]; /*0x421008*/
-        v9 = v7[3]; /*0x42100b*/
-        v10 = *v3; /*0x42100e*/
-        v68[3] = v9; /*0x421010*/
-        v63 = v8; /*0x42101b*/
+        v68[1] = (int *)(v7[1]);
+        v68[2] = (int *)(v7[2]);
+        v8 = (int *)(v3[1]);
+        v9 = (int *)(v7[3]);
+        v10 = (int *)(*v3);
+        v68[3] = (int *)(v9);
+        v63 = (int *)(v8);
         v62 = v10; /*0x42102e*/
         v64 = 60; /*0x421032*/
         v65 = 30; /*0x42103d*/
@@ -242,11 +242,11 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           v58 = (int *)(v51);
           v61 = (char **)((int *)(*(char ***)(v18 + 56)));
           FoundationSize = (int *)(Building::GetFoundationSize(v72, 0));
-          v41 = (unsigned int)((int *)(v13));
+          v41 = (int *)((unsigned int)((int *)(v13)));
           v20 = (int *)(*FoundationSize);
-          v66 = FoundationSize[1]; /*0x4210c1*/
-          v21 = FoundationSize[2]; /*0x4210c8*/
-          v67 = FoundationSize[3]; /*0x4210ce*/
+          v66 = (int *)(FoundationSize[1]);
+          v21 = (int *)(FoundationSize[2]);
+          v67 = (int *)(FoundationSize[3]);
           if ( v13 <= v58 + v66 ) /*0x4210dd*/
             v41 = v58 + v66; /*0x4210df*/
           v60 = v41 - v58 - v66; /*0x4210fd*/
@@ -269,7 +269,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           }
           v47 = (int)(v40 + *((unsigned int *)g_VisibleSurfaceDescriptor + 10) - v23);
           v43 = (int *)(60 - v56);
-          v48 = v40 + v21 - v23; /*0x4211a1*/
+          v48 = (int *)(v40 + v21 - v23);
           v49 = (char *)&unk_7E2B20 + 60 * v16 + v69; /*0x4211b0*/
           SubFile = MixFileClass::GetSubFile(v61, 0); /*0x4211c9*/
           v25 = (unsigned short *)StreamClass::ReadAndSeek((int)g_VisibleSurfaceDescriptor, v40, v41 - g_Map_VisibleRect); /*0x4211d3*/
@@ -282,8 +282,8 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           {
             if ( v41 < v37 ) /*0x4212bb*/
             {
-              v33 = (int)(v49);
-              v39 = v37 - v41; /*0x4212c5*/
+              v33 = (char *)((int)(v49));
+              v39 = (int *)(v37 - v41);
               do /*0x421324*/
               {
                 if ( v40 < v42 ) /*0x4212cf*/
@@ -313,7 +313,7 @@ AbstractClass * * UpdateSpotlightsFoo(int * a1, int * a2)
           {
             v28 = (char *)((int)(v49));
             v38 = (int *)(v37 - v41);
-            v29 = (unsigned int)((int *)(v40));
+            v29 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(v40))))));
             do /*0x4212ad*/
             {
               if ( v29 < v42 ) /*0x421239*/

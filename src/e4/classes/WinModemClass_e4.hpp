@@ -34,7 +34,7 @@ struct WinModemClass {
     unsigned int u32_53;  // 0x53
     unsigned int q054;  // 0x54
     unsigned int u32_57;  // 0x57
-    unsigned int ;  // 0x5C
+    unsigned int pad_05C;  // 0x5C
     void* q060;  // 0x60
     void* q064;  // 0x64
     void* q068;  // 0x68

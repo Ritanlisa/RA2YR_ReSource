@@ -39,6 +39,9 @@
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/CCFileClass_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x6613A0
 namespace gamemd {

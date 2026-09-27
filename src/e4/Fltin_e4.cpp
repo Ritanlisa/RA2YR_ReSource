@@ -7,6 +7,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/Float_e4.hpp"
+#include "e4/classes/FlyLocomotionClass_e4.hpp"
 
 // 0x7D7C1B
 namespace gamemd {
