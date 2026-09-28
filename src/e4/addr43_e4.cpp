@@ -1302,7 +1302,7 @@ char sub_434840(unsigned int * a1, unsigned int * a2, unsigned int * a3)
 namespace gamemd {
 BOOL E4Recv_4349F0::sub_4349F0()
 {
-  BOOL result; // eax
+  bool result; // eax
 
   *(unsigned int *)&this->u32_10 = 0; /*0x4349f9*/
   this->q080 = 0; /*0x4349fc*/

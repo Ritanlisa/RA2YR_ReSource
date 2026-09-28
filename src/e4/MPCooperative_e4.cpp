@@ -678,7 +678,7 @@ CampaignClass * * MPCooperative::CopyTo()
   int v10; // ebx
   int v11; // ecx
   char *String2; // [esp+10h] [ebp-Ch] BYREF
-  BOOL v14; // [esp+14h] [ebp-8h]
+  bool v14; // [esp+14h] [ebp-8h]
   int v15; // [esp+18h] [ebp-4h] BYREF
 
   g_MPCooperativeState = -1; /*0x5c1a13*/

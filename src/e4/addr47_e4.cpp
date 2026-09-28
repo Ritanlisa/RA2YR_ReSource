@@ -2433,7 +2433,7 @@ CDFileClass * E4Recv_47AA00::sub_47AA00(char ** a2)
 
 // 0x47AAC0
 namespace gamemd {
-BOOL sub_47AAC0()
+bool sub_47AAC0()
 {
   void **v0; // esi
   void **v1; // edi

@@ -1996,7 +1996,7 @@ CampaignScore * * WOL_LobbyDlgProc(HWND hWnd, LONG a2, int a3, HWND a4)
   HWND DlgItem; // edi
   LRESULT v16; // eax
   wchar_t *v17; // [esp-4h] [ebp-14h]
-  BOOL v18; // [esp-4h] [ebp-14h]
+  bool v18; // [esp-4h] [ebp-14h]
 
   v4 = a4; /*0x796b92*/
   v5 = hWnd; /*0x796b97*/
@@ -3144,9 +3144,9 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
   LRESULT v11; // eax
   LPARAM v12; // ebp
   bool v13; // al
-  BOOL v14; // eax
+  bool v14; // eax
   HWND v15; // eax
-  BOOL v16; // eax
+  bool v16; // eax
   HWND v17; // eax
   LRESULT v18; // esi
   LRESULT v19; // eax
@@ -3175,14 +3175,14 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
   int v42; // ecx
   HWND v43; // eax
   LRESULT v44; // eax
-  BOOL v45; // ebp
+  bool v45; // ebp
   HWND v46; // eax
   HWND v47; // eax
   HWND v48; // eax
   HWND v49; // eax
   WPARAM v50; // [esp-8h] [ebp-50h]
-  BOOL v51; // [esp-4h] [ebp-4Ch]
-  BOOL v52; // [esp-4h] [ebp-4Ch]
+  bool v51; // [esp-4h] [ebp-4Ch]
+  bool v52; // [esp-4h] [ebp-4Ch]
   char **v53; // [esp-4h] [ebp-4Ch]
   void *v54; // [esp+10h] [ebp-38h] BYREF
   void *v55; // [esp+14h] [ebp-34h] BYREF
@@ -4151,7 +4151,7 @@ void ValidateGameJoinWOL(BlowStraw * aP0, ObjectClass * aP1, char a3)
   char v5; // cl
   char v6; // al
   wchar_t *v7; // eax
-  BOOL v9; // ecx
+  bool v9; // ecx
   wchar_t *v10; // eax
   int v12; // [esp+10h] [ebp-9Ch] BYREF
   int v13; // [esp+14h] [ebp-98h] BYREF
@@ -4326,8 +4326,8 @@ int E4Recv_79BF50::sub_79BF50()
   HWND v3; // eax
   int v4; // esi
   HWND v5; // eax
-  BOOL v7; // [esp-4h] [ebp-18h]
-  BOOL BuddyWOL; // [esp-4h] [ebp-18h]
+  bool v7; // [esp-4h] [ebp-18h]
+  bool BuddyWOL; // [esp-4h] [ebp-18h]
   uint8_t v9; // [esp+10h] [ebp-4h]
 
   v7 = String::Length(&g_WOL_LoginObject) != 0; /*0x79bf6f*/
@@ -4906,7 +4906,7 @@ void WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
   unsigned int v17; // edi
   HWND v18; // eax
   HWND v19; // eax
-  BOOL v20; // [esp-4h] [ebp-80h]
+  bool v20; // [esp-4h] [ebp-80h]
   char v21[108]; // [esp+10h] [ebp-6Ch] BYREF
 
   v4 = a4; /*0x79d729*/
@@ -5300,9 +5300,9 @@ AbstractClass * * WOL_PlayerOptions_DlgProc(HWND hWnd, unsigned int a2, UINT_PTR
   LRESULT v31; // edi
   int i; // esi
   int v33; // esi
-  BOOL v34; // [esp-4h] [ebp-90h]
-  BOOL v35; // [esp-4h] [ebp-90h]
-  BOOL Buddy; // [esp-4h] [ebp-90h]
+  bool v34; // [esp-4h] [ebp-90h]
+  bool v35; // [esp-4h] [ebp-90h]
+  bool Buddy; // [esp-4h] [ebp-90h]
   int v37; // [esp+10h] [ebp-7Ch] BYREF
   unsigned int v38[3]; // [esp+14h] [ebp-78h] BYREF
   char v39[108]; // [esp+20h] [ebp-6Ch] BYREF

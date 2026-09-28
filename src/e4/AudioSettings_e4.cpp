@@ -43,7 +43,7 @@ namespace gamemd {
 AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
   AbstractClass ** result;
-  BOOL IsSoundEnabled; // ebx
+  bool IsSoundEnabled; // ebx
   HWND DlgItem; // eax
   HWND v7; // edi
   LPARAM v8; // eax
@@ -81,7 +81,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   float v40; // [esp+0h] [ebp-F0h]
   float v41; // [esp+0h] [ebp-F0h]
   float v42; // [esp+0h] [ebp-F0h]
-  BOOL bEnable; // [esp+18h] [ebp-D8h]
+  bool bEnable; // [esp+18h] [ebp-D8h]
   WPARAM v44; // [esp+1Ch] [ebp-D4h]
   int Format; // [esp+20h] [ebp-D0h]
   int v46; // [esp+24h] [ebp-CCh]

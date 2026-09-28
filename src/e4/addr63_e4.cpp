@@ -2922,7 +2922,7 @@ AbstractClass * * Voxel_ProcessVertexData(unsigned int * a1, int * a2)
   int v11; // edi
   int v12; // edx
   int v13; // ebp
-  BOOL v14; // eax
+  bool v14; // eax
   int v15; // ecx
   int v16; // eax
   int v17; // eax
@@ -2930,7 +2930,7 @@ AbstractClass * * Voxel_ProcessVertexData(unsigned int * a1, int * a2)
   int v19; // ecx
   bool v20; // zf
   int v21; // edx
-  BOOL v22; // ebx
+  bool v22; // ebx
   int v23; // ebx
   int v24; // ebp
   int v25; // edi
@@ -2938,7 +2938,7 @@ AbstractClass * * Voxel_ProcessVertexData(unsigned int * a1, int * a2)
   int v27; // [esp+14h] [ebp-20h] BYREF
   int v28; // [esp+18h] [ebp-1Ch]
   unsigned int *v29; // [esp+1Ch] [ebp-18h]
-  BOOL v30; // [esp+20h] [ebp-14h]
+  bool v30; // [esp+20h] [ebp-14h]
   int v31; // [esp+24h] [ebp-10h]
   int v32; // [esp+28h] [ebp-Ch]
   int *v33; // [esp+2Ch] [ebp-8h]

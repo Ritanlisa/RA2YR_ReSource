@@ -12,7 +12,7 @@ namespace gamemd {
 unsigned int * E4Recv_76AAF0::sub_76AAF0()
 {
   this->M4 = (unsigned int)(0);
-  *(_DWORD *)this = (unsigned int)(&off_7F7220);
+  *(unsigned int *)this = (unsigned int)(&off_7F7220);
   this->M8 = (unsigned int)(0);
   this->M14 = (unsigned int)(10);
   this->M15 = (unsigned int)(10);

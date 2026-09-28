@@ -730,7 +730,7 @@ AbstractClass * * Dialog::IdleProcess()
   bool v6; // al
   int v7; // eax
   int v8; // edi
-  BOOL v9; // esi
+  bool v9; // esi
   HWND v10; // [esp+Ch] [ebp-Ch] BYREF
   DWORD TickCount; // [esp+10h] [ebp-8h]
   int v12; // [esp+14h] [ebp-4h]

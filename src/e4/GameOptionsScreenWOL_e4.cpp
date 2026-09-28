@@ -15,7 +15,7 @@ namespace gamemd {
 int sub_798340()
 {
   HANDLE *v0; // esi
-  BOOL result; // eax
+  bool result; // eax
 
   v0 = (HANDLE *)(&Handles);
   do /*0x79835b*/

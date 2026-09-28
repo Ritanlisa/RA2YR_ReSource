@@ -232,7 +232,7 @@ int SlaveManagerClass::SetOwner(TechnoClass * aP1)
   int v5; // ecx
   int i; // ecx
 
-  v3 = (_DWORD)(this->q024);
+  v3 = (unsigned int)(this->q024);
   *(unsigned int *)(v3 + 728) = 0; /*0x6af58b*/
   this->q024 = aP1; /*0x6af595*/
   v4 = *(unsigned int **)(aP1 + 728); /*0x6af598*/

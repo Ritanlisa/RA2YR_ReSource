@@ -285,7 +285,7 @@ namespace gamemd {
 void sub_46DCC0(HWND hDlg, bool a2)
 {
   int i; // edi
-  BOOL result; // eax
+  bool result; // eax
   int v5; // eax
   int DlgItem;
   int ResourceID2CSF; // eax

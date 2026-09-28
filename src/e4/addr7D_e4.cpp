@@ -4089,7 +4089,7 @@ void* _tzset_lk()
   char v6; // al
   int v7; // eax
   int v8; // [esp+10h] [ebp-8h]
-  BOOL UsedDefaultChar; // [esp+14h] [ebp-4h] BYREF
+  bool UsedDefaultChar; // [esp+14h] [ebp-4h] BYREF
 
   v8 = 0; /*0x7d4d32*/
   _lock(12); /*0x7d4d35*/
@@ -4779,7 +4779,7 @@ unsigned int * parse_cmdline(unsigned char * a1, unsigned char ** a2, unsigned c
   unsigned int v14; // ebx
   uint8_t v15; // dl
   int v17; // [esp+14h] [ebp+8h]
-  BOOL v18; // [esp+24h] [ebp+18h]
+  bool v18; // [esp+24h] [ebp+18h]
 
   *a5 = 0; /*0x7d5c1d*/
   v6 = a3; /*0x7d5c20*/
@@ -6667,7 +6667,7 @@ namespace gamemd {
 void __decomp()
 {
   int v2; // esi
-  BOOL v3; // eax
+  bool v3; // eax
   double v5; // [esp+10h] [ebp-8h]
 
   if ( a1 == 0.0 ) /*0x7d8e34*/
@@ -7506,7 +7506,7 @@ void __crtGetStringTypeW(DWORD dwInfoType, CCINIClass * aP1, int cchSrc, CCINICl
   LPSTR lpMultiByteStr; // [esp+Ch] [ebp-2Ch]
   int v18; // [esp+10h] [ebp-28h]
   WORD *v19; // [esp+14h] [ebp-24h]
-  BOOL StringTypeA; // [esp+18h] [ebp-20h]
+  bool StringTypeA; // [esp+18h] [ebp-20h]
   WORD CharType; // [esp+1Ch] [ebp-1Ch] BYREF
   CPPEH_RECORD ms_exc; // [esp+20h] [ebp-18h]
 
@@ -7946,7 +7946,7 @@ AbstractClass * * __crtsetenv(char * Str, int a2)
   uint8_t *v2; // eax
   uint8_t *v3; // esi
   void *v4; // eax
-  BOOL v5; // ebx
+  bool v5; // ebx
   unsigned int *v7; // eax
   unsigned int *v8; // eax
   unsigned int *v9; // edi
@@ -8070,7 +8070,7 @@ void _chsize_lk(int FileHandle, LONG lDistanceToMove)
   DWORD v5; // eax
   int v6; // eax
   void *osfhandle; // eax
-  BOOL v8; // eax
+  bool v8; // eax
   DWORD LastError; // edi
   unsigned char Buffer[4096]; // [esp+8h] [ebp-1004h] BYREF
   LONG v12; // [esp+1008h] [ebp-4h]
@@ -8616,9 +8616,9 @@ void _handle_exc(char a1, double * a2, short a3)
   char v9; // c3
   char v11; // c0
   char v12; // c3
-  BOOL v13; // esi
+  bool v13; // esi
   int v14; // ecx
-  BOOL v15; // edx
+  bool v15; // edx
   int16_t v16; // ax
   int v17; // eax
   double v19; // [esp+18h] [ebp-Ch]
@@ -9686,7 +9686,7 @@ namespace gamemd {
 int _getch()
 {
   int result; // eax
-  BOOL i; // eax
+  bool i; // eax
   int AsciiChar; // edi
   uint8_t *v3; // eax
   struct _INPUT_RECORD Buffer; // [esp+0h] [ebp-1Ch] BYREF
@@ -12072,7 +12072,7 @@ char xtoa(unsigned int a1, char * a2, unsigned int a3, int a4)
 namespace gamemd {
 char * _ltoa(int Value, char * Buffer, int Radix)
 {
-  BOOL v3; // eax
+  bool v3; // eax
 
   v3 = 0; /*0x7d4718*/
   if ( Radix == 10 ) /*0x7d471e*/
@@ -12095,7 +12095,7 @@ char * _ultoa(unsigned int Value, char * Buffer, int Radix)
 namespace gamemd {
 char * _i64toa(long long Value, char * Buffer, int Radix)
 {
-  BOOL v3; // eax
+  bool v3; // eax
 
   v3 = 0; /*0x7d475d*/
   if ( Radix == 10 && IDA_SHIDWORD(Value) <= 0 ) /*0x7d4768*/
@@ -12169,7 +12169,7 @@ char * _ui64toa(unsigned long long Value, char * Buffer, int Radix)
 
 // 0x7D49AE
 namespace gamemd {
-BOOL ctrlevent_capture_4(DWORD CtrlType)
+bool ctrlevent_capture_4(DWORD CtrlType)
 {
   void (__cdecl *v1)(int); // esi
   int *v2; // eax
@@ -13066,10 +13066,10 @@ int GetLcidFromLangCountry()
 
 // 0x7D718A
 namespace gamemd {
-BOOL GetLcidFromLanguage()
+bool GetLcidFromLanguage()
 {
   size_t v0; // eax
-  BOOL result; // eax
+  bool result; // eax
 
   v0 = strlen(dword_B78554); /*0x7d7190*/
   dword_B78550 = v0 == 3; /*0x7d719e*/
@@ -13086,9 +13086,9 @@ BOOL GetLcidFromLanguage()
 
 // 0x7D729D
 namespace gamemd {
-BOOL GetLcidFromCountry()
+bool GetLcidFromCountry()
 {
-  BOOL result; // eax
+  bool result; // eax
 
   dword_B78548 = strlen(dword_B78558) == 3; /*0x7d72b8*/
   result = EnumSystemLocalesA(CountryEnumProc_4, 1u); /*0x7d72bd*/
@@ -13142,11 +13142,11 @@ int TestDefaultCountry(short a1)
 
 // 0x7D73F9
 namespace gamemd {
-BOOL TestDefaultLanguage(int a1, int a2)
+bool TestDefaultLanguage(int a1, int a2)
 {
   int v2; // eax
   int PrimaryLen; // esi
-  BOOL result; // eax
+  bool result; // eax
   unsigned char v5[120]; // [esp+0h] [ebp-78h] BYREF
 
   v2 = a1 & 0x3FF; /*0x7d7408*/
@@ -13168,7 +13168,7 @@ BOOL TestDefaultLanguage(int a1, int a2)
 
 // 0x7D745B
 namespace gamemd {
-BOOL IsThisWindowsNT()
+bool IsThisWindowsNT()
 {
   struct _OSVERSIONINFOA VersionInformation; // [esp+0h] [ebp-94h] BYREF
 
@@ -15010,7 +15010,7 @@ void __multtenpow12(unsigned short * a1, int a2, int a3)
 
 // 0x7DC1AA
 namespace gamemd {
-BOOL __ValidateExecute_YAHP6GHXZ_Z(FARPROC lpfn)
+bool __ValidateExecute_YAHP6GHXZ_Z(FARPROC lpfn)
 {
   return !IsBadCodePtr(lpfn); /*0x7dc1c0*/
 }

@@ -292,7 +292,7 @@ int sub_799D30()
   char *v5; // eax
   int v6; // esi
   char *v7; // eax
-  BOOL v8; // esi
+  bool v8; // esi
   int v9; // [esp+18h] [ebp-28h]
   int v10; // [esp+24h] [ebp-1Ch]
   void *v11; // [esp+30h] [ebp-10h] BYREF

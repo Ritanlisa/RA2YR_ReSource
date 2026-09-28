@@ -2851,7 +2851,7 @@ AbstractClass * * Options_Screen_DlgProc(HWND hWnd, WPARAM wParam, unsigned int 
   HWND v30; // eax
   HWND v31; // eax
   HWND v32; // edi
-  BOOL IsSoundEnabled; // ebx
+  bool IsSoundEnabled; // ebx
   HWND v34; // eax
   HWND v35; // edi
   LPARAM v36; // eax

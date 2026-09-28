@@ -505,7 +505,7 @@ int SendMultiplayerStartSignal()
   HWND v8; // eax
   HWND v9; // eax
   HWND v10; // eax
-  BOOL v11; // [esp-4h] [ebp-4Ch]
+  bool v11; // [esp-4h] [ebp-4Ch]
   void *v12; // [esp+4h] [ebp-44h] BYREF
   char Buffer[64]; // [esp+8h] [ebp-40h] BYREF
 
@@ -5706,7 +5706,7 @@ char sub_5E35A0()
 
 // 0x5E9AA0
 namespace gamemd {
-BOOL sub_5E9AA0(HWND hDlg, int nIDDlgItem, int a3)
+bool sub_5E9AA0(HWND hDlg, int nIDDlgItem, int a3)
 {
   WPARAM v5; // ebx
   LRESULT v7; // [esp+10h] [ebp-8h]

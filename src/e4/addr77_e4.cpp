@@ -160,7 +160,7 @@ namespace gamemd {
 void ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
 {
   HWND result;
-  BOOL v4; // edi
+  bool v4; // edi
   LONG v5; // ecx
   LONG top; // eax
   LONG v7; // edx
@@ -955,7 +955,7 @@ ObjectClass * * InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yB
   int v7; // eax
   HCURSOR CursorA; // eax
   int SystemMetrics; // [esp-14h] [ebp-5Ch]
-  BOOL v11; // [esp-8h] [ebp-50h]
+  bool v11; // [esp-8h] [ebp-50h]
   LONG WindowLongA; // [esp-4h] [ebp-4Ch]
   struct tagRECT rc; // [esp+10h] [ebp-38h] BYREF
   WNDCLASSA WndClass; // [esp+20h] [ebp-28h] BYREF
@@ -4129,7 +4129,7 @@ BOOL E4Recv_7738A0::sub_7738A0(const char * cbData, LPBYTE lpData, const char * 
 
 // 0x773970
 namespace gamemd {
-BOOL sub_773970(BYTE * Type, DWORD cbData)
+bool sub_773970(BYTE * Type, DWORD cbData)
 {
   LSTATUS v2; // ebp
   char *v3; // ebx
@@ -4424,7 +4424,7 @@ unsigned int E4Recv_7767F0::sub_7767F0()
 
 // 0x7768F0
 namespace gamemd {
-BOOL sub_7768F0(HWND hWnd, LPARAM a2)
+bool sub_7768F0(HWND hWnd, LPARAM a2)
 {
   int v3; // ebp
   LRESULT i; // esi
@@ -4503,7 +4503,7 @@ void SaveWOLLobbySettings(unsigned char * a1, HWND a2, LPARAM lParam)
 
 // 0x776B40
 namespace gamemd {
-BOOL SaveWOLUISettings(HWND hWnd, char * a2)
+bool SaveWOLUISettings(HWND hWnd, char * a2)
 {
   int v2; // edi
   LRESULT i; // esi
@@ -4553,9 +4553,9 @@ BOOL SaveWOLUISettings(HWND hWnd, char * a2)
 
 // 0x776CD0
 namespace gamemd {
-BOOL sub_776CD0(INIClass * Block, HWND hWndParent, char * lParam)
+bool sub_776CD0(INIClass * Block, HWND hWndParent, char * lParam)
 {
-  BOOL result; // eax
+  bool result; // eax
   struct tagRECT Rect; // [esp+8h] [ebp-10h] BYREF
 
   if ( hWndParent ) /*0x776cdb*/
@@ -6477,7 +6477,7 @@ int E4Recv_77D240::sub_77D240()
 
 // 0x77D350
 namespace gamemd {
-BOOL sub_77D350(ObjectClass * String1)
+bool sub_77D350(ObjectClass * String1)
 {
   wchar_t *StringCSF; // eax
   size_t v3; // eax
@@ -6493,7 +6493,7 @@ BOOL sub_77D350(ObjectClass * String1)
 
 // 0x77D3A0
 namespace gamemd {
-BOOL sub_77D3A0(ObjectClass * String1)
+bool sub_77D3A0(ObjectClass * String1)
 {
   wchar_t *StringCSF; // eax
   size_t v3; // eax

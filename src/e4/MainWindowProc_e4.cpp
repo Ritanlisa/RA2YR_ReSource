@@ -94,7 +94,7 @@ void sub_5C09A0()
 }
 // 0x5C0980
 namespace gamemd {
-BOOL sub_5C0980()
+bool sub_5C0980()
 {
   return g_BigIntPool || dword_ABF3F8; /*0x5c0994*/
 }

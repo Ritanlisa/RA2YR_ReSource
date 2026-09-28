@@ -164,7 +164,7 @@ int ComStreamClass::QueryInterface(void * a1, void * a2, void * a3)
   void **v3; // esi
   int result; // eax
   unsigned int *v5; // eax
-  BOOL v6; // ebp
+  bool v6; // ebp
   int (__stdcall *v7)(char *, unsigned int *, char **, void *); // eax
   void *v8; // eax
   char *v9; // esi

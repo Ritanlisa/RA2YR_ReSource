@@ -1164,7 +1164,7 @@ void sub_731BF0()
 namespace gamemd {
 int sub_777E00()
 {
-  BOOL result; // eax
+  bool result; // eax
 
   result = 0; /*0x777e06*/
   WideCharStr[0] = 0; /*0x777e0a*/
@@ -1754,7 +1754,7 @@ char sub_5C0640(const char * a1, char * a2, int a3)
 
 // 0x5E8740
 namespace gamemd {
-BOOL sub_5E8740(int a1)
+bool sub_5E8740(int a1)
 {
   return wcscmp(*(const wchar_t **)(Game_PlayerInfoArray + 4 * a1), g_CurrentPlayerName) == 0; /*0x5e875b*/
 }
@@ -1973,7 +1973,7 @@ void * sub_72EB50()
 
 // 0x774070
 namespace gamemd {
-BOOL sub_774070()
+bool sub_774070()
 {
   return dword_B72D0C && *(unsigned int *)(dword_B72D0C + 8) && *(unsigned char *)(dword_B72D0C + 1036); /*0x77408f*/
 }

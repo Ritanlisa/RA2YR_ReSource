@@ -1761,7 +1761,7 @@ char sub_637DD0(char a1, int a2, int a3, int a4, int a5, int a6, int a7, short a
 
 // 0x733C60
 namespace gamemd {
-BOOL sub_733C60(int a1, const char * a2)
+bool sub_733C60(int a1, const char * a2)
 {
   const char *v4; // eax
 

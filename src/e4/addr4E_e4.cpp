@@ -119,7 +119,7 @@ void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   HWND v19; // eax
   HWND v20; // eax
   HWND v21; // esi
-  BOOL IsSoundEnabled; // eax
+  bool IsSoundEnabled; // eax
   HWND v23; // eax
   HWND v24; // esi
   unsigned int v25; // edi

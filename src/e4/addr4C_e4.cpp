@@ -3276,11 +3276,11 @@ int sub_4CC0E0()
 
 // 0x4CC680
 namespace gamemd {
-BOOL sub_4CC680(int a1, int a2, int a3)
+bool sub_4CC680(int a1, int a2, int a3)
 {
   int SlopeIndex; // ebx
   int v5; // esi
-  BOOL result; // eax
+  bool result; // eax
 
   SlopeIndex = Cell::GetSlopeIndex(a2); /*0x4cc690*/
   result = 0; /*0x4cc6c3*/

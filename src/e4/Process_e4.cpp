@@ -13,7 +13,7 @@ namespace gamemd {
 bool Process::WaitForExit(DWORD dwMilliseconds, CellStruct * aP2)
 {
   const HANDLE *v3; // esi
-  BOOL v5; // eax
+  bool v5; // eax
 
   v3 = &this->q01C; /*0x664614*/
   Debug::Log(); /*0x66461d*/

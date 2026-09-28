@@ -4120,7 +4120,7 @@ wchar_t ** sub_603FC0(wchar_t ** a1, HWND a2, HWND hWnd, unsigned short a4, void
 
 // 0x60AA60
 namespace gamemd {
-BOOL sub_60AA60(HWND hWnd, LPARAM a2)
+bool sub_60AA60(HWND hWnd, LPARAM a2)
 {
   HWND Parent; // eax
 

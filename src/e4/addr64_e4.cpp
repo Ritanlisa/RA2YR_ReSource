@@ -695,7 +695,7 @@ AbstractClass * * QueueNetworkProcessor(CellStruct * aP0, int * a1, int arg0, in
   int var69C; // [esp+9Ah] [ebp-69Ch] BYREF
   MouseClass *v126; // [esp+9Eh] [ebp-698h]
   ObjectClass *v127; // [esp+A2h] [ebp-694h]
-  BOOL var690; // [esp+A6h] [ebp-690h]
+  bool var690; // [esp+A6h] [ebp-690h]
   ObjectClass *v129; // [esp+AAh] [ebp-68Ch]
   ObjectClass *v130; // [esp+AEh] [ebp-688h] BYREF
   unsigned int var684; // [esp+B2h] [ebp-684h] BYREF

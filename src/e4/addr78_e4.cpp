@@ -822,7 +822,7 @@ AbstractClass * * __usercall GameListRenderWOL(CampaignScore *a1@<edi> a1)
   signed int v13; // ecx
   int v14; // ebx
   int v15; // edi
-  BOOL v16; // eax
+  bool v16; // eax
   int v17; // ebp
   LRESULT v18; // eax
   uint16_t v19; // si
@@ -4679,11 +4679,11 @@ Coord * * OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
 {
   int result; // eax
   HWND v5; // eax
-  BOOL v6; // eax
+  bool v6; // eax
   HWND v7; // eax
   HWND v8; // eax
   HWND v9; // eax
-  BOOL v10; // eax
+  bool v10; // eax
   HWND v11; // eax
   HWND v12; // eax
   HWND v13; // eax
@@ -4710,8 +4710,8 @@ Coord * * OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
   HWND v34; // eax
   HWND v35; // eax
   HWND DlgItem; // eax
-  BOOL v37; // [esp-4h] [ebp-10Ch]
-  BOOL v38; // [esp-4h] [ebp-10Ch]
+  bool v37; // [esp-4h] [ebp-10Ch]
+  bool v38; // [esp-4h] [ebp-10Ch]
   void *v39; // [esp+10h] [ebp-F8h] BYREF
   void *v40; // [esp+14h] [ebp-F4h] BYREF
   char lParam[9]; // [esp+18h] [ebp-F0h] BYREF

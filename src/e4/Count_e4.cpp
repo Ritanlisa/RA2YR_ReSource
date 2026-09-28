@@ -38,7 +38,7 @@ int Count::SetupAllCountriesLobby()
   void *v1; // ecx
   wchar_t **v2; // esi
   int ResourceID2; // ebp
-  BOOL result; // eax
+  bool result; // eax
   wchar_t *v5; // ebx
   int v6; // edi
   int PlayerSide; // esi

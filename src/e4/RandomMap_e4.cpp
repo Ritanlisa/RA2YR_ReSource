@@ -2289,7 +2289,7 @@ ObjectClass * * RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClas
   int v41; // esi
   int v42; // ebx
   unsigned int v43; // eax
-  BOOL v44; // ecx
+  bool v44; // ecx
   int16_t v45; // bp
   char *v46; // esi
   int v47; // ebx

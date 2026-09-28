@@ -161,7 +161,7 @@ int GameConfig::BuildChecksum(void * aP1)
   int *v3; // eax
   int v4; // esi
   char v5; // al
-  unsigned __int8 v6; // al
+  uint8_t v6; // al
   int Entry; // eax
   int v9; // [esp-10h] [ebp-1Ch]
   int v10; // [esp-Ch] [ebp-18h]

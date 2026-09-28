@@ -421,7 +421,8 @@ def main():
 
     stats = defaultdict(int)
     changed_files = 0
-    files = sorted(list(E4.glob('*.cpp')) + list(E4.glob('*.hpp')))
+    files = sorted(list(E4.glob('*.cpp')) + list(E4.glob('*.hpp'))
+                  + list((ROOT / 'src' / '_gap2').glob('*.cpp')))
     for p in files:
         try:
             txt = p.read_text(encoding='latin-1')

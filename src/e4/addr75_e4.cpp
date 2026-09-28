@@ -1960,7 +1960,7 @@ int E4Recv_759790::sub_759790()
 namespace gamemd {
 int E4Recv_75A120::sub_75A120(int a2, int * a3, int a4)
 {
-  BOOL result; // eax
+  bool result; // eax
   bool v6; // zf
   int v7; // eax
   int v9; // esi
@@ -3431,7 +3431,7 @@ int E4Recv_756570::sub_756570()
 namespace gamemd {
 BOOL E4Recv_7589F0::sub_7589F0(int a2)
 {
-  BOOL v4; // ebx
+  bool v4; // ebx
 
   (*(void (__thiscall **)(int, int))(*(unsigned int *)a2 + 28))(a2, 1); /*0x758a01*/
   v4 = (*(int (__thiscall **)(int, unsigned int, int))(*(unsigned int *)a2 + 36))(a2, this->uniqueId, 768) != 768; /*0x758a1b*/
@@ -3663,7 +3663,7 @@ unsigned int E4Recv_759BC0::sub_759BC0(signed int a2)
 
 // 0x75A100
 namespace gamemd {
-BOOL sub_75A100(int a1, int a2, unsigned int * a3, int a4)
+bool sub_75A100(int a1, int a2, unsigned int * a3, int a4)
 {
   return VoxelRenderer::InitializeBuffers(*(unsigned int *)(a1 + 172), a2, a3, a4); /*0x75a11e*/
 }
@@ -3671,7 +3671,7 @@ BOOL sub_75A100(int a1, int a2, unsigned int * a3, int a4)
 
 // 0x75A2B0
 namespace gamemd {
-BOOL sub_75A2B0(int a1, int a2, int * a3, int a4)
+bool sub_75A2B0(int a1, int a2, int * a3, int a4)
 {
   return sub_75A120(*(unsigned int *)(a1 + 172), a2, a3, a4); /*0x75a2ce*/
 }

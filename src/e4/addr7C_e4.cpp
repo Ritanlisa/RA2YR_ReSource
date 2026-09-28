@@ -6346,7 +6346,7 @@ void _wcstombs_lk(CCINIClass * aP0, ObjectClass * aP1, unsigned int cchWideChar)
   int v9; // eax
   int i; // edx
   CHAR v11; // cl
-  BOOL UsedDefaultChar; // [esp+10h] [ebp-8h] BYREF
+  bool UsedDefaultChar; // [esp+10h] [ebp-8h] BYREF
   CHAR MultiByteStr[2]; // [esp+16h] [ebp-2h] BYREF
   int cchWideChara; // [esp+28h] [ebp+10h]
 
@@ -14625,7 +14625,7 @@ unsigned int _setdefaultprecision()
 
 // 0x7CEAC1
 namespace gamemd {
-BOOL _ms_p5_test_fdiv()
+bool _ms_p5_test_fdiv()
 {
   return 4195835.0 - 4195835.0 / 3145727.0 * 3145727.0 > 1.0; /*0x7ceaf9*/
 }
@@ -14696,7 +14696,7 @@ char * _cropzeros(char * a1)
 
 // 0x7CEBD0
 namespace gamemd {
-BOOL _positive(double * a1)
+bool _positive(double * a1)
 {
   return *a1 >= 0.0; /*0x7cebe4*/
 }

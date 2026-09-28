@@ -2800,7 +2800,7 @@ BOOL E4Recv_69F5E0::sub_69F5E0()
   int v3; // eax
   int v4; // esi
   int v5; // ecx
-  BOOL result; // eax
+  bool result; // eax
 
   v1 = *(unsigned int *)&this->M48; /*0x69f5e4*/
   if ( v1 ) /*0x69f5ed*/

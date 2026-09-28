@@ -57,7 +57,7 @@ int VoxelRenderer::ProjectVertex(float a2, float a3, float a4, char a5)
 namespace gamemd {
 int VoxelRenderer::InitializeBuffers(int a2, unsigned int * a3, int a4)
 {
-  BOOL result; // eax
+  bool result; // eax
   bool v6; // al
   unsigned int * v8;
   unsigned int * v9;

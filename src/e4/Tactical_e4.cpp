@@ -1734,7 +1734,7 @@ int Tactical::DrawOverlay(int * a1, BuildingTypeClass * aP2, int a4, int a5)
   int v29; // [esp+18h] [ebp-18h] BYREF
   unsigned int v31[2]; // [esp+20h] [ebp-10h] BYREF
   unsigned int v32[2]; // [esp+28h] [ebp-8h] BYREF
-  BOOL v33; // [esp+38h] [ebp+8h]
+  bool v33; // [esp+38h] [ebp+8h]
 
   v6 = IsoCoord::ToPixel(&v29, *a1, a1[1]); /*0x6dbb79*/
   v7 = v6[1]; /*0x6dbb83*/

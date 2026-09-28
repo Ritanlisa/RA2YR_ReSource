@@ -415,7 +415,7 @@ int sub_53B410()
 }
 // 0x53A0E0
 namespace gamemd {
-BOOL sub_53A0E0()
+bool sub_53A0E0()
 {
   return LightningStorm_Active || LightningStorm_Deferment > 0; /*0x53a0f4*/
 }

@@ -429,7 +429,7 @@ namespace gamemd {
 void TechnoClass_StepCleanupIfHuman(int a1, void * a2)
 {
   char v4; // al
-  BOOL result; // eax
+  bool result; // eax
 
   result = 0; /*0x7327b7*/
   if ( a1 && *(unsigned char *)(a1 + 144) )

@@ -12,7 +12,7 @@ BOOL E4Recv_63DB20::sub_63DB20(unsigned int * a2)
 {
   int v2; // eax
   int v3; // edx
-  BOOL result; // eax
+  bool result; // eax
 
   result = 0; /*0x63db54*/
   if ( *a2 >= *this && *a2 < *this + this->M8 ) /*0x63db36*/

@@ -5857,7 +5857,7 @@ int * sub_5F6790(int * a1, int a2)
 
 // 0x623310
 namespace gamemd {
-BOOL Network_Start(HWND hWnd, LPARAM lParam)
+bool Network_Start(HWND hWnd, LPARAM lParam)
 {
   HWND DlgItem; // eax
 

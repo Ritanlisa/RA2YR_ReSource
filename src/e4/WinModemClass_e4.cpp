@@ -29,7 +29,7 @@ int WinModemClass::ReadSerial()
   DWORD cbOutQue; // eax
   bool v10; // zf
   void *v11; // ecx
-  BOOL v12; // eax
+  bool v12; // eax
   DWORD i; // eax
   DWORD NumberOfBytesTransferred; // [esp+10h] [ebp-18h] BYREF
   DWORD v16; // [esp+14h] [ebp-14h]

@@ -51,7 +51,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
   int v11; // ecx
   int v12; // eax
   HWND i; // esi
-  BOOL v14; // [esp+4h] [ebp-78h]
+  bool v14; // [esp+4h] [ebp-78h]
   LONG WindowLongA; // [esp+8h] [ebp-74h]
   XSurface * v16;
   int v17; // [esp+20h] [ebp-5Ch]

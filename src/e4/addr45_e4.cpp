@@ -50,7 +50,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
   unsigned int v18; // edx
   unsigned int v19; // ecx
   char v21; // al
-  BOOL v22; // edx
+  bool v22; // edx
   int v23; // eax
   unsigned char *v24; // ecx
   char v25[64]; // [esp+10h] [ebp-40h] BYREF

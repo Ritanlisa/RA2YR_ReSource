@@ -957,7 +957,7 @@ void * UI_Setup_793930(void * a1, void * a2, int a3)
 }
 // 0x53BAE0
 namespace gamemd {
-BOOL sub_53BAE0()
+bool sub_53BAE0()
 {
   return ChronoScreenEffect_Status != 0; /*0x53baed*/
 }
@@ -1042,7 +1042,7 @@ wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM a3, LPARAM a4)
 
 // 0x623170
 namespace gamemd {
-BOOL UI_Connect(HWND hWnd, LONG a2, LONG a3)
+bool UI_Connect(HWND hWnd, LONG a2, LONG a3)
 {
   LONG v5; // ecx
   LONG v6; // eax
@@ -1872,7 +1872,7 @@ int sub_7342B0()
 
 // 0x77CF40
 namespace gamemd {
-BOOL sub_77CF40()
+bool sub_77CF40()
 {
   return g_GameOptionsFlags == 3 || g_GameOptionsFlags == 1 || g_GameOptionsFlags == 2; /*0x77cf56*/
 }

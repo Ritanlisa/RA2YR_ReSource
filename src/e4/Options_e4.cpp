@@ -432,7 +432,7 @@ int Options::DeleteAndZero()
       v3 += 24; /*0x624509*/
     }
     while (); /*0x62450e*/
-    *(_DWORD *)this = 0; /*0x624511*/
+    *(unsigned int *)this = 0; /*0x624511*/
   }
   return result; /*0x624518*/
 }

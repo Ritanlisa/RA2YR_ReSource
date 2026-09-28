@@ -28,7 +28,7 @@ int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, 
   void **v3; // esi
   int result; // eax
   unsigned int *v5; // eax
-  BOOL v6; // ebp
+  bool v6; // ebp
   int (__stdcall *v7)(char *, unsigned int *, char **, void *); // eax
   void *v8; // eax
   char *v9; // esi

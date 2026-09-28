@@ -72,7 +72,7 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
   unsigned int v10; // edi
   int CellType; // ebp
   int v12; // edi
-  BOOL v13; // ecx
+  bool v13; // ecx
   int v14; // ecx
   int v15; // edi
   int v16; // ebp

@@ -3220,7 +3220,7 @@ int InitializeAudioStreaming(int a1, int a2)
 namespace gamemd {
 void Message_IsDialog(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMax)
 {
-  BOOL result; // eax
+  bool result; // eax
 
   do /*0x53e74f*/
     result = GameLoopMessagePump(lpMsg, a2, wMsgFilterMin, wMsgFilterMax, 1u); /*0x53e748*/
@@ -3238,7 +3238,7 @@ void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilt
   UINT message; // eax
   unsigned int v8; // eax
   int v9; // eax
-  BOOL v10; // ebx
+  bool v10; // ebx
   HWND v11; // eax
   HWND v12; // eax
   int v13; // eax

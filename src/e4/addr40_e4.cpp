@@ -4035,7 +4035,7 @@ void __setargv()
 
 // 0x4067D0
 namespace gamemd {
-BOOL sub_4067D0(char * a1, unsigned int * a2)
+bool sub_4067D0(char * a1, unsigned int * a2)
 {
   char **v4; // esi
   char *v5; // eax
@@ -4060,7 +4060,7 @@ BOOL sub_4067D0(char * a1, unsigned int * a2)
 
 // 0x406820
 namespace gamemd {
-BOOL sub_406820(unsigned int * a1, char * a2)
+bool sub_406820(unsigned int * a1, char * a2)
 {
   const void **v4; // esi
   void **v5; // eax
@@ -4210,7 +4210,7 @@ int sub_406AF0()
 
 // 0x406DE0
 namespace gamemd {
-BOOL sub_406DE0()
+bool sub_406DE0()
 {
   int *AudioChannel; // eax
   unsigned int v2[8]; // [esp+0h] [ebp-20h] BYREF

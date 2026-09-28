@@ -4491,7 +4491,7 @@ BOOL E4Recv_4AFED0::sub_4AFED0()
   int v3; // eax
   int v4; // esi
   int v5; // ecx
-  BOOL result; // eax
+  bool result; // eax
 
   v1 = *(unsigned int *)&this->M48; /*0x4afed4*/
   if ( v1 ) /*0x4afedd*/
