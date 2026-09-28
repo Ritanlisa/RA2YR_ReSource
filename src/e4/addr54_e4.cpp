@@ -49,6 +49,7 @@ int E4Recv_540C50::sub_540C50()
 {
   return IDA_LOBYTE(this->vtable1); /*0x540c55*/
 }
+}
 // 0x541170
 namespace gamemd {
 AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
@@ -100,6 +101,7 @@ AbstractClass * * E4Recv_541170::sub_541170(int a2, int a3, int a4, int a5)
     Debug::Log(); /*0x541240*/
   }
   return v13; /*0x5411af*/
+}
 }
 // 0x542F30
 namespace gamemd {
@@ -156,6 +158,7 @@ int E4Recv_542F30::sub_542F30()
     goto LABEL_8; /*0x542f77*/
   }
   return result; /*0x542fab*/
+}
 }
 // 0x544E70
 namespace gamemd {
@@ -221,6 +224,7 @@ AbstractClass * * SurfaceClass_CreatePrimary(int a1, int a2, int a3)
     }
   }
   return (gamemd::AbstractClass **)(result);
+}
 }
 // 0x545150
 namespace gamemd {
@@ -1514,6 +1518,7 @@ int ResetAllTechnoField776()
   }
   return result; /*0x547143*/
 }
+}
 // 0x547370
 namespace gamemd {
 int Map_InitCoordinateOffsets(int a1)
@@ -1784,6 +1789,7 @@ int Map_InitCoordinateOffsets(int a1)
   }
   return 24 * v3 + 11250996; /*0x547cbb*/
 }
+}
 // 0x549830
 namespace gamemd {
 int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
@@ -1920,6 +1926,7 @@ int E4Recv_549830::sub_549830(int a2, void ** a3, int a4, int a5)
   }
   return 1; /*0x54990d*/
 }
+}
 // 0x549B30
 namespace gamemd {
 int sub_549B30()
@@ -1930,6 +1937,7 @@ int sub_549B30()
   dword_AA1068 = 0; /*0x549b41*/
   dword_AA106C = 0; /*0x549b46*/
   return 0; /*0x549b4b*/
+}
 }
 // 0x54BA30
 namespace gamemd {

@@ -23,9 +23,9 @@ struct DamageArea {
     unsigned char u8_5C;
     unsigned int q008;
     unsigned int u32_4C;
+    unsigned int u32_58;
     unsigned long long u64_48;
     unsigned char u8_51;
-    unsigned int u32_58;
 // --- flat members (END) ---
     int ApplyScatter();
     int CheckOccupancyEligibility();

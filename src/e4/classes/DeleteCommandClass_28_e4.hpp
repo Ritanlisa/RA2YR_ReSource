@@ -13,7 +13,11 @@ struct DeleteCommandClass_28 {
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned int q0042;
+    unsigned int __pad_0;
+    unsigned int m_1;
+    unsigned int m_10;
+    unsigned int m_8;
+    unsigned int m_C;
 // --- flat members (END) ---
     void ClearBuffer();  // 0x53C4C0
     int Seek(int a2);  // 0x53C510

@@ -44,6 +44,8 @@ struct TacticalMap {
     unsigned int __pad_10;
     unsigned int __pad_34;
     unsigned int __pad_DA8;
+    unsigned int u32_DE4;
+    unsigned int u32_DE8;
 // --- flat members (END) ---
     ScenarioClass * * ComputeScreenTint();
     int Construct();

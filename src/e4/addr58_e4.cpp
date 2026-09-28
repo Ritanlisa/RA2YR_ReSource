@@ -41,7 +41,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
   unsigned int v3; // eax
   int *v4; // eax
   int *v5; // ecx
-  int v7; // eax
+  IUnknown * v7;
   unsigned int v8; // eax
   int *NeighbourContent; // edi
   unsigned int *v10; // ebp
@@ -71,7 +71,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
   }
   if ( (v5[80] & 0x100) != 0 ) /*0x583618*/
   {
-    v7 = (int)((IUnknown *)(-((v5[80] & 0x800) != 0)));
+    v7 = (IUnknown *)((int)((IUnknown *)(-((v5[80] & 0x800) != 0))));
     IDA_LOBYTE(v7) = v7 & 0xFE; /*0x583634*/
     v8 = v7 + 4; /*0x583637*/
     NeighbourContent = v5; /*0x58363b*/
@@ -145,6 +145,7 @@ VectorClass_flat * * FindCliffSeedCell(int * a0, IUnknown * aP1, IUnknown * aP2)
     *a0 = (int)((gamemd::VectorClass_flat **)(v5[9]));
     return (gamemd::VectorClass_flat **)(a0);
   }
+}
 }
 // 0x583AD0
 namespace gamemd {
@@ -264,6 +265,7 @@ AbstractClass * * E4Recv_583AD0::sub_583AD0(int * a2)
     return v16; /*0x583c23*/
   }
 }
+}
 // 0x585F40
 namespace gamemd {
 void InterpolateTerrainLighting(int a1, MouseClass * aP1, int a3, int a4)
@@ -365,6 +367,7 @@ void InterpolateTerrainLighting(int a1, MouseClass * aP1, int a3, int a4)
     v23 = v24; /*0x586278*/
   return (v23 + v25) >> 1; /*0x586076*/
 }
+}
 // 0x586BF0
 namespace gamemd {
 int MarkCliffEdgePassability(int a1)
@@ -377,7 +380,7 @@ int MarkCliffEdgePassability(int a1)
   int i; // edx
   int v7; // esi
   unsigned int v8; // eax
-  unsigned int v9;
+  unsigned int *v9; // eax
   int v10; // ecx
   unsigned int v11; // eax
   unsigned int *v12; // eax
@@ -414,7 +417,7 @@ int MarkCliffEdgePassability(int a1)
         v4 = *(unsigned short *)(v3 + 4); /*0x586c3a*/
         if ( *(unsigned short *)v3 == v4 )
         {
-          v5 = (int)((unsigned short *)(4 * (*(unsigned short *)(v3 + 2) >= *(unsigned short *)(v3 + 6) ? 0 : 4) + 9041544));
+          v5 = (unsigned short *)(4 * (*(unsigned short *)(v3 + 2) >= *(unsigned short *)(v3 + 6) ? 0 : 4) + 9041544);
           for ( i = *CellStruct::Add((unsigned short *)v3, &v29, v5); i != *(unsigned int *)(v3 + 4); i = v23 ) /*0x586c71*/
           {
             v7 = IDA_SHIWORD(i) << 9; /*0x586c92*/
@@ -496,6 +499,7 @@ int MarkCliffEdgePassability(int a1)
     }
   }
   return result; /*0x586e48*/
+}
 }
 // 0x588570
 namespace gamemd {
@@ -702,6 +706,7 @@ void ScanBuildingPlacementCells(MouseClass * aP0, VectorClass_flat * aP1, MouseC
   }
   return result; /*0x58894c*/
 }
+}
 // 0x588CE0
 void unknown::ddtor()
 {
@@ -741,6 +746,7 @@ void sub_58B670()
 {
   *(double *)&byte_ABECA0[40] = Math::ArcTan((double)(2 * dword_ABED00) / dbl_ABE368); /*0x58b692*/
 }
+}
 // 0x58B6E0
 namespace gamemd {
 int sub_58B6E0()
@@ -750,11 +756,13 @@ int sub_58B6E0()
   *(unsigned int *)&byte_ABECA0[32] = 0; /*0x58b6ec*/
   return 0; /*0x58b6f1*/
 }
+}
 // 0x58B7E0
 namespace gamemd {
 int sub_58B7E0()
 {
   return dword_ABDFD4; /*0x58b7e5*/
+}
 }
 // 0x58B7F0
 namespace gamemd {
@@ -762,17 +770,20 @@ int sub_58B7F0()
 {
   return dword_ABDFD0; /*0x58b7f5*/
 }
+}
 // 0x58B800
 namespace gamemd {
 int sub_58B800()
 {
   return dword_ABEC90; /*0x58b805*/
 }
+}
 // 0x58B810
 namespace gamemd {
 int * sub_58B810()
 {
   return dword_ABECD0; /*0x58b815*/
+}
 }
 // 0x58B820
 namespace gamemd {
@@ -905,6 +916,7 @@ ScenarioClass * * ComputeMapCameraBounds()
     }
   }
   return result; /*0x58baef*/
+}
 }
 // 0x58EBC0
 namespace gamemd {
@@ -1097,6 +1109,7 @@ AbstractClass * * BuildRandomMapTiles()
   }
   return result; /*0x58ee90*/
 }
+}
 // 0x58EF10
 namespace gamemd {
 AbstractClass * * sub_58EF10()
@@ -1228,6 +1241,7 @@ AbstractClass * * sub_58EF10()
     }
   }
   return 1; /*0x58f0ac*/
+}
 }
 // 0x585EE0
 namespace gamemd {

@@ -292,21 +292,21 @@ int IPXGlobalConnClass::SendPacket(int a2, short a3)
 namespace gamemd {
 int IPXGlobalConnClass::Release(const void * a1, AnimClass * aP2, int aP3, char aP4)
 {
-  return ConnectionClass::sendAck((int)this, a1, aP2, aP3, aP4); /*0x540629*/
+  return ConnectionClass::sendAck(a1, aP2, aP3, aP4); /*0x540629*/
 }
 } // namespace gamemd
 // 0x540630
 namespace gamemd {
 int IPXGlobalConnClass::ddtor(int a2, int a3)
 {
-  return ConnectionClass::receivePacket((ConnectionClass *)this, a2, a3); /*0x54063f*/
+  return ConnectionClass::receivePacket(a2, a3); /*0x54063f*/
 }
 } // namespace gamemd
 // 0x540650
 namespace gamemd {
 int IPXGlobalConnClass::Connect(void * a2, signed int * a3)
 {
-  return ConnectionClass::processTileUpdate((ConnectionClass *)this, a2, a3); /*0x54065f*/
+  return ConnectionClass::processTileUpdate(a2, a3); /*0x54065f*/
 }
 } // namespace gamemd
 // 0x540670

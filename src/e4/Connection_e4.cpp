@@ -15,6 +15,7 @@ int Connection::GetSpeed()
   else
     return 0; /*0x542308*/
 }
+}
 // 0x543090
 namespace gamemd {
 int Connection::Close()
@@ -25,4 +26,5 @@ int Connection::Close()
   if ( result ) /*0x543095*/
     *(unsigned char *)(result + 200) = 1; /*0x543097*/
   return result; /*0x54309e*/
+}
 }

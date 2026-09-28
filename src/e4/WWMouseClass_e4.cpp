@@ -12,6 +12,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/WalkLocomotion_e4.hpp"
 #include "e4/classes/ShipLocomotionClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 
 // 0x7B9040
 namespace gamemd {
@@ -198,7 +199,7 @@ void* WWMouseClass::captureMouse()
           0,
           1);
       }
-      Mouse::DrawCursor((Mouse *)this, (int *)this->WWMouseClass_field_0x24, 0, 0); /*0x7b9bfd*/
+      Mouse::DrawCursor((int *)this->WWMouseClass_field_0x24, 0, 0); /*0x7b9bfd*/
       ReleaseMutex(hMutex); /*0x7b9c09*/
     }
     ShowCursor(0); /*0x7b9c0d*/
@@ -310,7 +311,7 @@ MouseClass * WWMouseClass::updateHotspot(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&Mouse_vftable; /*0x7ba309*/
   if ( (a2 & 1) != 0 ) /*0x7ba30f*/
-    RA2_OPDEL(this); /*0x7ba312*/
+    RA2_OPDEL(); /*0x7ba312*/
   return this->__pad_0; /*0x7ba31c*/
 }
 } // namespace gamemd

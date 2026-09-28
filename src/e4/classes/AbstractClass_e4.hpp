@@ -40,6 +40,7 @@ struct AbstractClass {
     unsigned int RadLevelTimer;
     unsigned int RadLightTimer;
     unsigned int RefCount;
+    unsigned int TEventClass_field_28;
     unsigned int __pad_0;
     unsigned int __pad_A0;
     unsigned int __pad_C;
@@ -60,15 +61,16 @@ struct AbstractClass {
     unsigned int AirstrikeClass_field_54;
     unsigned int AirstrikeClass_field_58;
     unsigned int AirstrikeClass_field_5C;
-    unsigned int TEventClass_field_28;
+    unsigned int TEventClass_field_30;
+    unsigned int TEventClass_field_54;
     unsigned int __pad_28;
     unsigned int creationFrame;
     unsigned int owner;
-    unsigned int uniqueId;
     unsigned int COMStub_AddRef;
     unsigned int COMStub_Release;
     unsigned int ProcessPower;
     unsigned int QueryInterface;
+    unsigned int uniqueId;
 // --- flat members (END) ---
     void Initialize(TechnoClass * aP1,  TechnoClass * aP2);    // 0x438E70
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0

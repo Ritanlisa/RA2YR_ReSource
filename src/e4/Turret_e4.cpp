@@ -19,6 +19,9 @@
 #include "e4/classes/Tiberium_e4.hpp"
 #include "e4/classes/TiberiumClass_e4.hpp"
 #include "e4/classes/TypeList_TechnoType_e4.hpp"
+#include "e4/classes/TypeList_cptr_ParticleSystemTypeClass_e4.hpp"
+#include "e4/classes/UDPInterfaceClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x5F8CE0
 namespace gamemd {
@@ -148,7 +151,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             BufferIOFileClass::Dtor(v20); /*0x5f8ff7*/
           }
         }
-        v25 = (void **)((unsigned int)((void **)((unsigned int)(0))));
+        v25 = (void **)((unsigned int)((void **)((unsigned int)((void **)((unsigned int)(0))))));
         Vector::Clear((int)v24); /*0x5f9013*/
         v23[0] = &off_7E1668; /*0x5f9021*/
         BufferIOFileClass::Dtor(v23); /*0x5f9025*/
@@ -166,7 +169,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
 namespace gamemd {
 float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
 {
-  LocomotionClass *v3; // edi
+  unsigned int v3;
   unsigned int *v4; // esi
   float *result; // eax
   float v6; // [esp+0h] [ebp-40h]

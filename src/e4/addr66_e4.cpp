@@ -127,6 +127,7 @@ void Color_ComputeSaturation(unsigned int a1, int a2, int a3)
   *(unsigned char *)(a3 + 2) = v6; /*0x6614d7*/
   return a3; /*0x6614d4*/
 }
+}
 // 0x6615D0
 namespace gamemd {
 unsigned char * sub_6615D0(char * a1, unsigned char * a2, int a3)
@@ -164,6 +165,7 @@ unsigned char * sub_6615D0(char * a1, unsigned char * a2, int a3)
     goto LABEL_6; /*0x661619*/
   }
   return (unsigned char *)(v5 - a2); /*0x66162a*/
+}
 }
 // 0x661640
 namespace gamemd {
@@ -204,6 +206,7 @@ unsigned char * sub_661640(unsigned short * a1, unsigned char * a2)
     goto LABEL_6; /*0x66168d*/
   }
   return (unsigned char *)(v2 - a2); /*0x66169e*/
+}
 }
 // 0x6622C0
 namespace gamemd {
@@ -798,92 +801,96 @@ namespace gamemd {
 AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
 {
   uint8_t *v4; // eax
-  int *v5; // esi
+  Network *v5; // esi
   uint8_t v6; // dl
   uint8_t v7; // al
-  int *v8; // eax
+  NetworkID *v8; // eax
   int v9; // esi
   int v10; // edi
   int v11; // eax
   uint8_t v13; // [esp+5h] [ebp-583h]
   uint8_t v15; // [esp+7h] [ebp-581h]
   int v16; // [esp+8h] [ebp-580h]
-  DWORD TicksTimer; // [esp+10h] [ebp-578h]
+  int Ticks; // [esp+10h] [ebp-578h]
   int v19; // [esp+18h] [ebp-570h]
   int v20; // [esp+1Ch] [ebp-56Ch] BYREF
   char v21[2]; // [esp+22h] [ebp-566h] BYREF
   char v22[4]; // [esp+24h] [ebp-564h] BYREF
-  unsigned char v23[12]; // [esp+28h] [ebp-560h] BYREF
-  struct _PROCESS_INFORMATION ProcessInformation; // [esp+34h] [ebp-554h] BYREF
-  struct _STARTUPINFOA StartupInfo; // [esp+44h] [ebp-544h] BYREF
+  Waypoint v23; // [esp+28h] [ebp-560h] BYREF
   CHAR CommandLine[256]; // [esp+88h] [ebp-500h] BYREF
-  char v27[1024]; // [esp+188h] [ebp-400h] BYREF
+  char v25[1024]; // [esp+188h] [ebp-400h] BYREF
 
-  TicksTimer = Timer::GetTicks(); /*0x663dc6*/
+  Ticks = Timer::GetTicks(); /*0x663dc6*/
   v19 = 0; /*0x663dca*/
-  Waypoint::InitInvalid(v23); /*0x663dd2*/
+  Waypoint::InitInvalid(&v23); /*0x663dd2*/
   Debug::Log(); /*0x663ddc*/
-  GetStartupInfoA(&StartupInfo); /*0x663de9*/
-  if ( !(*(int (__thiscall **)(int))(*(unsigned int *)g_NetworkInterface + 72))(g_NetworkInterface) ) /*0x663df7*/
+  GetStartupInfoA((LPSTARTUPINFOA)&v23.__pad_0[28]); /*0x663de9*/
+  if ( !(*(int (__thiscall **)(unsigned int *))(*dword_887628 + 72))(dword_887628) ) /*0x663df7*/
     return 0; /*0x663e07*/
   if ( a2 ) /*0x663e15*/
   {
     sprintf(CommandLine, "mphmd.exe %d.%d.%d.%d", *a2, a2[1], a2[2], a2[3]); /*0x663f0e*/
-    if ( *(unsigned int *)Game_PlayerInfoArray == -40 ) /*0x663f21*/
+    if ( *dword_A8DA78 == -40 ) /*0x663f21*/
       goto LABEL_11; /*0x663f21*/
-    Network::CopyAddress((unsigned int *)(*(unsigned int *)Game_PlayerInfoArray + 40), &v20, (int)&v7); /*0x663f31*/
+    Network::CopyAddress((Network *)(*dword_A8DA78 + 40), &v20, (int)&v7); /*0x663f31*/
     v6 = a2[2]; /*0x663f39*/
     v7 = *a2; /*0x663f3c*/
     v13 = a2[1]; /*0x663f3e*/
     v6 = v6; /*0x663f42*/
     v7 = v7; /*0x663f4a*/
     v15 = a2[3]; /*0x663f5e*/
-    NetworkID::Assign(&dword_A8DBB0, &v20, (int)&v7, 0); /*0x663f62*/
-    Network::SetPort(&dword_A8DBB0, *(unsigned short *)(*(unsigned int *)Game_PlayerInfoArray + 40)); /*0x663f78*/
-    IDA_LOWORD(dword_A8DBBC) = *(unsigned short *)(*(unsigned int *)Game_PlayerInfoArray + 40); /*0x663f88*/
-    v8 = (int *)(*(unsigned int *)Game_PlayerInfoArray + 40); /*0x663f91*/
-    dword_A8DBA4 = *v8; /*0x663f96*/
-    dword_A8DBA8 = v8[1]; /*0x663f9f*/
-    dword_A8DBAC = v8[2]; /*0x663fa8*/
+    NetworkID::Assign(&qword_A8DBB0, &v20, (int)&v7, 0); /*0x663f62*/
+    Network::SetPort((Network *)&qword_A8DBB0, *(unsigned short *)(*dword_A8DA78 + 40)); /*0x663f78*/
+    dword_A8DBBC = *(unsigned short *)(*dword_A8DA78 + 40); /*0x663f88*/
+    v8 = (NetworkID *)(*dword_A8DA78 + 40); /*0x663f91*/
+    qword_A8DBA4 = *v8; /*0x663f96*/
+    dword_A8DBAC = *(unsigned int *)v8[1].__pad_0; /*0x663fa8*/
     goto LABEL_10; /*0x663fa8*/
   }
-  if ( !Game_PlayerCount ) /*0x663e22*/
+  if ( !dword_A8DA84 ) /*0x663e22*/
   {
-    v4 = (uint8_t *)(*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)g_NetworkInterface + 76))( /*0x663e2d*/
-                              g_NetworkInterface,
-                              0);
+    v4 = (uint8_t *)(*(int (__thiscall **)(unsigned int *, unsigned int))(*dword_887628 + 76))(dword_887628, 0); /*0x663e2d*/
     sprintf(CommandLine, "mphmd.exe %d.%d.%d.%d", *v4, v4[1], v4[2], v4[3]); /*0x663e54*/
     goto LABEL_11; /*0x663e5c*/
   }
-  v5 = (int *)(*(unsigned int *)Game_PlayerInfoArray + 40); /*0x663e69*/
-  if ( *(unsigned int *)Game_PlayerInfoArray != -40 ) /*0x663e6c*/
+  v5 = (Network *)(*dword_A8DA78 + 40); /*0x663e69*/
+  if ( *dword_A8DA78 != -40 ) /*0x663e6c*/
   {
     Network::CopyAddress(v5, &v20, (int)&v7); /*0x663e7e*/
     sprintf(CommandLine, "mphmd.exe %d.%d.%d.%d", v7, v13, v6, v15); /*0x663ebb*/
-    dword_A8DBB0 = *v5; /*0x663ec5*/
-    dword_A8DBB4 = v5[1]; /*0x663ecd*/
-    dword_A8DBB8 = v5[2]; /*0x663ed6*/
-    IDA_LOWORD(dword_A8DBBC) = 0; /*0x663edc*/
+    qword_A8DBB0 = *(NetworkID *)&v5->Network_field_0x0; /*0x663ec5*/
+    dword_A8DBB8 = v5->Network_field_0x8; /*0x663ed6*/
+    dword_A8DBBC = 0; /*0x663edc*/
   LABEL_10:
-    Network::FormatAddress((uint16_t *)&dword_A8DBB0, 0); /*0x663fad*/
+    Network::FormatAddress((Network *)&qword_A8DBB0, 0); /*0x663fad*/
     Debug::Log(); /*0x663fbf*/
   }
   LABEL_11:
-  if ( CreateProcessA(ApplicationName, CommandLine, 0, 0, 0, 0x200u, 0, 0, &StartupInfo, &ProcessInformation) ) /*0x663fed*/
+  if ( CreateProcessA( /*0x663fed*/
+         ApplicationName,
+         CommandLine,
+         0,
+         0,
+         0,
+         0x200u,
+         0,
+         0,
+         (LPSTARTUPINFOA)&v23.__pad_0[28],
+         (LPPROCESS_INFORMATION)&v23.__pad_0[12]) )
   {
-    this->M28 = ProcessInformation.hProcess; /*0x664029*/
+    this->M28 = *(unsigned int *)&v23.__pad_0[12]; /*0x664029*/
     Debug::Log(); /*0x66402c*/
     SetFocus(g_hWnd); /*0x66403b*/
     v9 = 1800; /*0x66404e*/
-    TicksTimer = Timer::GetTicks(); /*0x664053*/
+    Ticks = Timer::GetTicks(); /*0x664053*/
     v16 = v16; /*0x664057*/
     v19 = 1800; /*0x66405b*/
     v10 = 0; /*0x66405f*/
     while ( 1 ) /*0x664067*/
     {
-      if ( TicksTimer != -1 ) /*0x66406c*/
+      if ( Ticks != -1 ) /*0x66406c*/
       {
-        v11 = Timer::GetTicks() - TicksTimer; /*0x664077*/
+        v11 = Timer::GetTicks() - Ticks; /*0x664077*/
         if ( v11 >= v9 ) /*0x66407d*/
           return v10 != 0; /*0x66407d*/
         v9 -= v11; /*0x66407f*/
@@ -891,11 +898,11 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
       if ( !v9 ) /*0x664083*/
         break; /*0x664083*/
       Event::Dispatch(); /*0x664085*/
-      if ( Network::SendPacketThunk2(v27, v22, v23, v21) && v27[0] == 4 ) /*0x6640b7*/
+      if ( Network::SendPacketThunk2((Network *)&unk_A8E9C0, (int)v25, (int)v22, (int)&v23, (int)v21) && v25[0] == 4 ) /*0x6640b7*/
       {
         v10 = 1; /*0x6640be*/
         Debug::Log(); /*0x6640c3*/
-        this->M24 = 1; /*0x6640cb*/
+        *(&this->u32_84) = 1; /*0x6640cb*/
         return v10 != 0; /*0x6640cb*/
       }
       v9 = v19; /*0x664063*/
@@ -908,6 +915,7 @@ AbstractClass * * E4Recv_663DB0::LaunchMultiplayerHost(unsigned char * a2)
     Debug::Log(); /*0x664006*/
     return 0; /*0x664012*/
   }
+}
 }
 // 0x664750
 namespace gamemd {
@@ -926,6 +934,7 @@ int E4Recv_664750::sub_664750(char a2)
     return Network::SendPacket(&unk_A8E9C0.Socket, (int)v3, 338, 1u); /*0x6647a2*/
   }
   return result; /*0x66476f*/
+}
 }
 // 0x660AD0
 namespace gamemd {
@@ -1286,7 +1295,7 @@ void E4Recv_661F30::sub_661F30()
 {
   *(unsigned int *)this->__pad_0 = (void*)&RocketLocomotionClass_vftable; /*0x661f30*/
   *(unsigned int *)&this->__pad_0[4] = (void*)&RocketLocomotionClass_vftable; /*0x661f36*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x661f3d*/
+  LocomotionClass::Construct(); /*0x661f3d*/
 }
 } // namespace gamemd
 

@@ -100,7 +100,7 @@ int Count::SetupAllCountriesLobby()
           SessionClass::SetPlayerOption(*v8, v6); /*0x46f7c7*/
         }
       }
-      SetupLobbyCountryCombo((HWND)this, ResourceID2CSF, PlayerSide); /*0x46f7d3*/
+      SetupLobbyCountryCombo(ResourceID2CSF, PlayerSide); /*0x46f7d3*/
       result = ShowWindow(hWnd, 5); /*0x46f7df*/
       v2 = v8; /*0x46f7e5*/
     }

@@ -22,7 +22,7 @@ VectorClass_flat * SmudgeTypeVector::QueryInterface(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x67c0db*/
   this->m_8 = 0; /*0x67c0e1*/
   if ( (a2 & 1) != 0 ) /*0x67c0e8*/
-    RA2_OPDEL(this); /*0x67c0eb*/
+    RA2_OPDEL(); /*0x67c0eb*/
   return this->__pad_0; /*0x67c0f5*/
 }
 } // namespace gamemd

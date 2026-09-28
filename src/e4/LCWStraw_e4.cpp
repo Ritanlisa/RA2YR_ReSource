@@ -21,6 +21,6 @@ int LCWStraw::Dtor()
   this->u32_14 = 0; /*0x552465*/
   RA2_OPDEL(v3); /*0x55246d*/
   this->u32_18 = 0; /*0x552477*/
-  return Straw::Dtor((Straw *)this); /*0x552483*/
+  return Straw::Dtor(); /*0x552483*/
 }
 } // namespace gamemd

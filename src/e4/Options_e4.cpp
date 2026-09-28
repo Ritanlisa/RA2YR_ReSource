@@ -250,13 +250,15 @@ int Options::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND a4)
   }
   return result; /*0x4f120d*/
 }
+}
 // 0x558840
 namespace gamemd {
 int Options::PrepareSaveLoadDlg()
 {
   this->field_4 = (unsigned int)((void *)3);
   this->field_C = 0; /*0x558847*/
-  return SaveLoadDialog::DlgProc((SaveLoadDialog *)this);
+  return SaveLoadDialog::DlgProc();
+}
 }
 // 0x55FAA0
 namespace gamemd {
@@ -333,6 +335,7 @@ AbstractClass * * Options::Screen_Save()
   }
   return result; /*0x55fc77*/
 }
+}
 // 0x55FC80
 namespace gamemd {
 char Options::Screen_Dialog()
@@ -400,6 +403,7 @@ char Options::Screen_Dialog()
   g_WTFMode = v7; /*0x55fd9a*/
   return v7; /*0x55fd97*/
 }
+}
 // 0x6244E0
 namespace gamemd {
 int Options::DeleteAndZero()
@@ -431,6 +435,7 @@ int Options::DeleteAndZero()
   }
   return result; /*0x624518*/
 }
+}
 // 0x6248A0
 namespace gamemd {
 int Options::EnsureCapacity()
@@ -442,8 +447,8 @@ int Options::EnsureCapacity()
   void *v7; // esi
   void *v8; // [esp+8h] [ebp-4h]
 
-  v2 = (void *)(*(unsigned int *)this->__pad_0);
-  v3 = (int)this->field_4; /*0x6248a8*/
+  v2 = (int)((void *)(*(unsigned int *)this->__pad_0));
+  v3 = (unsigned int)((int)this->field_4);
   if ( 3 * v2 > v3 ) /*0x6248b0*/
     return 0; /*0x6248b3*/
   v5 = v3 / 2; /*0x6248bf*/
@@ -460,6 +465,7 @@ int Options::EnsureCapacity()
   this->field_8 = v8; /*0x62491b*/
   this->field_4 = (void *)v5; /*0x62491e*/
   return 1; /*0x6248b2*/
+}
 }
 // 0x6253B0
 namespace gamemd {
@@ -492,6 +498,7 @@ int Options::GrowBuffer()
   this->field_8 = v5; /*0x625434*/
   return 1; /*0x6253bf*/
 }
+}
 // 0x6254D0
 namespace gamemd {
 int Options::ReadOptionValue()
@@ -521,6 +528,7 @@ int Options::ReadOptionValue()
   this->field_8 = v8; /*0x62554b*/
   this->field_4 = (void *)v5; /*0x62554e*/
   return 1; /*0x6254e2*/
+}
 }
 // 0x625560
 namespace gamemd {
@@ -562,8 +570,9 @@ AbstractClass * * Options::DestroyComposite(char a2)
     RA2_OPDEL(v6); /*0x6255ca*/
   }
   if ( (a2 & 1) != 0 ) /*0x6255d9*/
-    RA2_OPDEL(this); /*0x6255dc*/
+    RA2_OPDEL(); /*0x6255dc*/
   return this; /*0x6255e6*/
+}
 }
 // 0x6255F0
 namespace gamemd {
@@ -663,6 +672,7 @@ void * Options::RebuildDropdownList(ObjectClass * aP1)
   DeleteAndZero::Alt(&v19); /*0x625763*/
   return v3; /*0x62576a*/
 }
+}
 // 0x625A20
 namespace gamemd {
 int Options::SaveOptionValue()
@@ -689,6 +699,7 @@ int Options::SaveOptionValue()
   this->field_4 = (void *)v4; /*0x625a99*/
   this->field_8 = v7; /*0x625a9c*/
   return 1; /*0x625a2f*/
+}
 }
 // 0x4F1720
 namespace gamemd {

@@ -99,3 +99,4 @@ void sub_7A19E0()
   Dialog::ShowMessage(12648447, (size_t)v8); /*0x7a1b90*/
   DeleteAndZero(&v12); /*0x7a1b9c*/
 }
+}

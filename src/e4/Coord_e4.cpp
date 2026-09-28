@@ -103,6 +103,7 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
   }
   return result; /*0x413a24*/
 }
+}
 // 0x413A30
 namespace gamemd {
 unsigned int * Coord::ToCell(IUnknown * v3)
@@ -114,6 +115,7 @@ unsigned int * Coord::ToCell(IUnknown * v3)
   *v3 = v3; /*0x413a60*/
   return v3; /*0x413a63*/
 }
+}
 // 0x41C230
 namespace gamemd {
 void * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
@@ -122,6 +124,7 @@ void * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
   *(unsigned int *)&this->Coord_field_0x2[2] = aP2; /*0x41c240*/
   this->Coord_field_0x8 = (void *)aP3; /*0x41c243*/
   return this->__pad_0; /*0x41c246*/
+}
 }
 // 0x41C380
 namespace gamemd {
@@ -140,6 +143,7 @@ int Coord::Length()
   IDA_WORD2(result) = IDA_HIWORD(v3); /*0x41c3ac*/
   IDA_LOWORD(result) = v3; /*0x41c3ac*/
   return result; /*0x41c3a9*/
+}
 }
 // 0x4399A0
 namespace gamemd {
@@ -189,11 +193,13 @@ void * Coord::To_Cell(IUnknown * aP1)
   g_MissionQueueFrame.briefing[139] = (int)v6; /*0x565789*/
   return (CellClass *)&g_MissionQueueFrame.briefing[130]; /*0x565773*/
 }
+}
 // 0x5AC370
 namespace gamemd {
 int Coord::Compare2D(unsigned short * a2)
 {
   return *(unsigned short *)this->__pad_0 != *a2 || *(unsigned short *)this->Coord_field_0x2 != a2[1]; /*0x5ac388*/
+}
 }
 // 0x6557F0
 namespace gamemd {
@@ -228,6 +234,7 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
   *v8 = v8; /*0x655881*/
   v8[1] = v9; /*0x655883*/
 }
+}
 // 0x6D2140
 namespace gamemd {
 AbstractClass * * Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
@@ -237,11 +244,11 @@ AbstractClass * * Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
   int v6; // eax
   int v7; // edi
   int v8; // esi
-  int v10; // [esp+14h] [ebp-4h]
+  AbstractClass ** v10;
 
-  v10 = a1[1]; /*0x6d214f*/
-  v4 = (-60 * v10 / 2 + 60 * *a1 / 2) / 256; /*0x6d21c8*/
-  v5 = (30 * v10 / 2 + 30 * *a1 / 2) / 256; /*0x6d21cb*/
+  v10 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(a1[1])));
+  v4 = (gamemd::AbstractClass **)((-60 * v10 / 2 + 60 * *a1 / 2) / 256);
+  v5 = (gamemd::AbstractClass **)((30 * v10 / 2 + 30 * *a1 / 2) / 256);
   IDA_LOWORD(v6) = Math::RoundToInt((double)(int)a1[2] * dbl_B0CD48 + (double)(a1[2] >= 728) + 0.5); /*0x6d21f2*/
   *(unsigned int *)aP2 = v4; /*0x6d21fd*/
   aP2[1] = v5 - v6; /*0x6d21ff*/
@@ -256,6 +263,7 @@ AbstractClass * * Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
   if ( v8 >= -180 ) /*0x6d2251*/
     return v8 <= dword_B0CE34 + 180; /*0x6d2269*/
   return 0; /*0x6d2220*/
+}
 }
 // 0x710700
 namespace gamemd {
@@ -279,6 +287,7 @@ void * Coord::Divide(int * a2, int a3)
     a2[2] = 0; /*0x710719*/
   }
   return a2; /*0x71071c*/
+}
 }
 // 0x6D1F10
 namespace gamemd {

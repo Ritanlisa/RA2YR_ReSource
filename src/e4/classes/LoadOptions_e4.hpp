@@ -31,12 +31,12 @@ struct LoadOptions {
     unsigned int __pad_0;
     unsigned int __pad_22;
     unsigned int __pad_4;
+    unsigned int m_0;
     unsigned int m_1;
     unsigned int m_10;
     unsigned int m_8;
     unsigned int m_C;
-    unsigned int max_entries5;
-    unsigned int q00C2;
+    unsigned int u32_2D;
     unsigned int u32_420;
 // --- flat members (END) ---
     DynamicVector * vt00(char a2);

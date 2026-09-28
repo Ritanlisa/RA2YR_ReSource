@@ -20,6 +20,8 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/TerrainClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
 
 // 0x7665D0
 namespace gamemd {
@@ -42,8 +44,8 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   int *v17; // [esp+38h] [ebp-8h]
   int v18; // [esp+3Ch] [ebp-4h]
 
-  v2 = (int *)(0);
-  v12 = (char *)((void **)(this));
+  v2 = (char *)((int *)(0));
+  v12 = (void **)(this);
   if ( !dword_B72770 ) /*0x7665e4*/
     InitWDTGameOptions(); /*0x7665e6*/
   v3 = 6; /*0x7665ef*/
@@ -114,6 +116,7 @@ wchar_t ** E4Recv_7665D0::sub_7665D0(wchar_t ** a2)
   DeleteAndZero::Alt(&v11); /*0x766787*/
   return a2; /*0x76678e*/
 }
+}
 // 0x7714B0
 namespace gamemd {
 void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
@@ -164,7 +167,7 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
     {
       if ( !(uint8_t)Audio::IsPlaying() ) /*0x77157c*/
       {
-        this->M940 = Timer::GetTicks(); /*0x771598*/
+        this->M940 = (unsigned int)(Timer::GetTicks());
         this->M944 = v17.DeleteAndZero_field_0x08; /*0x7715a2*/
         this->M948 = a4; /*0x7715a5*/
       }
@@ -186,4 +189,5 @@ void E4Recv_7714B0::sub_7714B0(int a2, char a3, int a4)
     }
   }
   DeleteAndZero((ObjectClass *)&v17); /*0x77160b*/
+}
 }

@@ -13,6 +13,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Conflict_WorldDominationTour_12_e4.hpp"
+#include "e4/classes/ConnectionPointClass_e4.hpp"
 
 // 0x48B750
 namespace gamemd {
@@ -287,7 +288,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
               v23 = Terrain::GetTileType((Terrain *)v21, v22); /*0x48c25a*/
               if ( v23 ) /*0x48c261*/
               {
-                v24 = *(unsigned int *)(v23 + 12); /*0x48c263*/
+                v24 = (int)(*(unsigned int *)(v23 + 12));
                 if ( !*(unsigned char *)(v24 + 2) && *(unsigned int *)(v24 + 4) == this->q011 + 1 ) /*0x48c276*/
                   break; /*0x48c276*/
               }
@@ -314,7 +315,7 @@ int ConnectionClass::receivePacket(int a2, int a3)
       TileIndex = (unsigned int *)Terrain::GetTileIndex((Terrain *)v6, v7); /*0x48c08e*/
       if ( TileIndex ) /*0x48c095*/
       {
-        v9 = TileIndex[5]; /*0x48c097*/
+        v9 = (int)(TileIndex[5]);
         if ( *(unsigned int *)(a2 + 4) == *(unsigned int *)(v9 + 4) && !*(unsigned char *)(v9 + 2) ) /*0x48c0a2*/
           break; /*0x48c0a2*/
       }

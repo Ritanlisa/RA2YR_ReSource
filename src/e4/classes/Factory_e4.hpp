@@ -21,7 +21,6 @@ struct Factory {
     void* q2100;  // 0x2100
     void* q5188;  // 0x5188
     void* q5520;  // 0x5520
-    unsigned int __pad_0;
     unsigned int field_10;
     unsigned int field_4;
 // --- flat members (END) ---

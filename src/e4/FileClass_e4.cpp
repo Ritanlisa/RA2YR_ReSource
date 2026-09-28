@@ -12,6 +12,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x473AE0
 namespace gamemd {
@@ -26,7 +28,7 @@ int FileClass::Write(CCFileClass * aP1, DWORD nNumberOfBytesToWrite)
     v5 = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->__pad_0 + 4))(this); /*0x473aed*/
     (*(void (__thiscall **)(CCFileClass *, int, unsigned int, int))(v4 + 64))(this, 13, 0, v5); /*0x473af7*/
   }
-  return FileClass::BufferedWriter((BufferIOFileClass *)this, (char *)aP1, nNumberOfBytesToWrite); /*0x473b0c*/
+  return FileClass::BufferedWriter((char *)aP1, nNumberOfBytesToWrite); /*0x473b0c*/
 }
 } // namespace gamemd
 // 0x473FC0
@@ -34,7 +36,7 @@ namespace gamemd {
 int FileClass::SetFileName(IUnknown * aP1)
 {
   this->u32_68 = 0; /*0x473fc4*/
-  return FileClass::OpenWithCDSearch((CDFileClass *)this, aP1); /*0x473fd1*/
+  return FileClass::OpenWithCDSearch(aP1); /*0x473fd1*/
 }
 } // namespace gamemd
 // 0x65CBF0
@@ -71,7 +73,7 @@ int FileClass::Open(int a2)
     v6 = ((unsigned int)(this->FileNameAllocated)); /*0x65cc7e*/
     goto LABEL_12; /*0x65cc7e*/
   }
-  FileClass::Open2(this, (const CHAR *)1); /*0x65cc1d*/
+  FileClass::Open2((const CHAR *)1); /*0x65cc1d*/
   result = (*(int (__thiscall **)(RawFileClass *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x65cc26*/
   if ( (unsigned char)result ) /*0x65cc2b*/
   {
@@ -371,7 +373,7 @@ unsigned int * FileClass::loc_401950(char a2)
     BufferIOFileClass::Dtor();
     if ( (a2 & 1) != 0 )
     RA2_OPDEL();
-    return (unsigned int *)(this);
+    return ();
 }
 } // namespace gamemd
 

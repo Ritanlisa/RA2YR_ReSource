@@ -31,6 +31,13 @@
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/WeaponTypeClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
+#include "e4/classes/E4Recv_728A00_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/classes/SlaveManagerClass_e4.hpp"
+#include "e4/classes/SmudgeTypeClass_e4.hpp"
+#include "e4/classes/MissionClass_e4.hpp"
 
 // 0x4C9C50
 namespace gamemd {
@@ -769,7 +776,8 @@ GadgetClass * * SidebarClass::LoadResources()
 namespace gamemd {
 int SidebarClass::initButtons2()
 {
-  return SidebarClass::InitButtons((TabClass *)this);
+  return SidebarClass::InitButtons();
+}
 }
 // 0x653010
 void SidebarClass::CreateScrollButtons()

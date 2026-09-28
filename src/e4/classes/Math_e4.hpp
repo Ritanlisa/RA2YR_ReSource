@@ -35,14 +35,27 @@ struct Math {
     unsigned int q084;  // 0x84
     unsigned int u32_88;  // 0x88
     unsigned int u32_8C;  // 0x8C
+    unsigned int u32_9C;  // 0x9C
+    unsigned int u32_A4;  // 0xA4
+    unsigned int u32_AC;  // 0xAC
     unsigned int u32_B4;  // 0xB4
     unsigned int u32_B8;  // 0xB8
     unsigned int u32_BC;  // 0xBC
+    unsigned int u32_D4;  // 0xD4
+    unsigned int u32_D8;  // 0xD8
+    unsigned int u32_DC;  // 0xDC
+    unsigned int u32_E4;  // 0xE4
     unsigned int q100;  // 0x100
     unsigned int q104;  // 0x104
+    unsigned int u32_108;  // 0x108
+    unsigned int u32_10C;  // 0x10C
     unsigned int q114;  // 0x114
     unsigned int q128;  // 0x128
+    unsigned int u32_12C;  // 0x12C
+    unsigned int u32_12E;  // 0x12E
+    unsigned int u32_12F;  // 0x12F
     unsigned int q130;  // 0x130
+    unsigned int u32_131;  // 0x131
     unsigned int q260;  // 0x260
     unsigned int q304;  // 0x304
     unsigned int q598;  // 0x598

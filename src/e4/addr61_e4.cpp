@@ -21,6 +21,7 @@
 #include "e4/classes/Event_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Mission_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x610570
 namespace gamemd {
@@ -137,6 +138,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
   Object::RemoveObjectArray(hWnd); /*0x61077f*/
   return 1; /*0x610784*/
 }
+}
 // 0x610810
 namespace gamemd {
 char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
@@ -190,6 +192,7 @@ char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
   dword_AC1DD4 = a3; /*0x61092d*/
   return TriggerClass::FindByEventType(1); /*0x610938*/
 }
+}
 // 0x610B50
 namespace gamemd {
 void sub_610B50()
@@ -219,6 +222,7 @@ void sub_610B50()
     1);
   *(unsigned int *)&g_DialogPool.__pad_208[776] = 1; /*0x610bd6*/
   return 1; /*0x610b61*/
+}
 }
 // 0x610BF0
 namespace gamemd {
@@ -256,6 +260,7 @@ AbstractClass * * sub_610BF0()
   *(unsigned int *)&g_DialogPool.__pad_208[772] = 0; /*0x610c8a*/
   *(unsigned int *)&g_DialogPool.__pad_208[776] = 0; /*0x610c90*/
   return 1; /*0x610c01*/
+}
 }
 // 0x612930
 namespace gamemd {
@@ -334,6 +339,7 @@ void sub_612930()
   }
   RA2_OPDEL(dword_AC1858); /*0x612a46*/
 }
+}
 // 0x612A60
 namespace gamemd {
 AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
@@ -394,19 +400,20 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   SetBkMode(v10, 1); /*0x612b39*/
   return GetStockObject(5); /*0x612b47*/
 }
+}
 // 0x61D6D0
 namespace gamemd {
 AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
   HWND v4; // ebp
-  AbstractClass ** result;
+  int result; // eax
   unsigned int *v6; // esi
   unsigned int v7; // eax
   int v8; // eax
   unsigned int *v9; // edi
   int v10; // ecx
   int v11; // eax
-  unsigned char (*)[4] v12;
+  unsigned int *v12; // ecx
   int v13; // eax
   struct tagRECT Rect; // [esp+18h] [ebp-30h] BYREF
   unsigned int v15[4]; // [esp+28h] [ebp-20h] BYREF
@@ -414,7 +421,7 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
   int v17; // [esp+40h] [ebp-8h]
   int v18; // [esp+44h] [ebp-4h]
 
-  v4 = hWnd; /*0x61d6d4*/
+  v4 = (HWND)((int)(hWnd));
   ScreenDialogToClient(hWnd, &Rect); /*0x61d6df*/
   hWnd = v4; /*0x61d6e9*/
   if ( !g_DialogHashMap_Count ) /*0x61d6ef*/
@@ -424,7 +431,7 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
     return 0; /*0x61d719*/
   while ( *(HWND *)result != hWnd ) /*0x61d725*/
   {
-    result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*(unsigned int *)(result + 516))));
+    result = (int)((gamemd::AbstractClass **)(*(unsigned int *)(result + 516)));
     if ( !result ) /*0x61d72f*/
       return result; /*0x61d72f*/
   }
@@ -477,9 +484,9 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
         }
         else
         {
-          v12 = (unsigned int)(0);
+          v12 = 0; /*0x61d83a*/
         }
-        v6[4] = v12; /*0x61d83c*/
+        v6[4] = (unsigned int)(v12);
         ++g_GameScreenState; /*0x61d847*/
         (*(void (__thiscall **)(unsigned int *, unsigned int *, int, unsigned int *, unsigned int, int))(*v12 + 8))( /*0x61d860*/
           v12,
@@ -508,21 +515,22 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
       return 0; /*0x61d76b*/
   }
 }
+}
 // 0x61ECA0
 namespace gamemd {
 AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
   UINT v4; // edi
   LRESULT (__stdcall *v5)(HWND, UINT, WPARAM, LPARAM); // esi
-  AbstractClass ** v6;
-  AbstractClass ** v7;
+  int v6; // eax
+  HWND v7; // ecx
   LRESULT (__stdcall **v8)(HWND, UINT, WPARAM, LPARAM); // eax
-  AbstractClass ** result;
+  int result; // eax
   int v10; // edi
   unsigned int *v11; // esi
   int v12; // eax
   int v13; // ecx
-  unsigned char (*)[4] v14;
+  unsigned int *v14; // ecx
   LRESULT v15; // eax
   int v16; // eax
   struct tagRECT Rect; // [esp+28h] [ebp-B4h] BYREF
@@ -554,11 +562,11 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
         {
           while ( *(HWND *)result != v18 ) /*0x61edf4*/
           {
-            result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*(unsigned int *)(result + 516))));
+            result = (int)((gamemd::AbstractClass **)(*(unsigned int *)(result + 516)));
             if ( !result ) /*0x61edfe*/
               return result; /*0x61edfe*/
           }
-          v10 = (int)(result + 4);
+          v10 = result + 4; /*0x61ee13*/
           if ( result != -4 ) /*0x61ee18*/
           {
             if ( !*(unsigned int *)(result + 20) ) /*0x61ee1e*/
@@ -626,7 +634,7 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
     && (v6 = *((unsigned int *)g_DialogHashMap_Entries
              + (g_DialogHashMap_Callback(&hWnd) & ((1 << g_DialogHashMap_Insert) - 1)))) != 0 )
   {
-    v7 = (gamemd::AbstractClass **)(hWnd);
+    v7 = (HWND)((int)(hWnd));
     while ( *(HWND *)v6 != hWnd ) /*0x61ed09*/
     {
       v6 = (int)((gamemd::AbstractClass **)(*(unsigned int *)(v6 + 8)));
@@ -639,15 +647,16 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
   }
   else
   {
-    v7 = (HWND)((gamemd::AbstractClass **)(hWnd));
+    v7 = hWnd; /*0x61ed23*/
   }
-  return CallWindowProcA(v5, v7, v4, wParam, lParam); /*0x61ed43*/
+  return (gamemd::AbstractClass **)(CallWindowProcA(v5, v7, v4, wParam, lParam));
+}
 }
 // 0x61EF70
 namespace gamemd {
 void FormatHotkeyDisplayString(void * a1, void * a2)
 {
-  int result; // eax
+  void * result;
   int16_t v3; // kr1C_2
   UINT v4; // eax
   UINT v5; // eax
@@ -656,8 +665,8 @@ void FormatHotkeyDisplayString(void * a1, void * a2)
   CHAR String[32]; // [esp+Ch] [ebp-214h] BYREF
   wchar_t Format[250]; // [esp+2Ch] [ebp-1F4h] BYREF
 
-  result = (short)(IDA_HIBYTE(a1));
-  v3 = a1; /*0x61ef84*/
+  result = (void *)((int16_t)((short)(IDA_HIBYTE(a1))));
+  v3 = (int16_t)(a1);
   IDA_LOBYTE(Format[0]) = 0; /*0x61ef88*/
   *a2 = 0; /*0x61ef8d*/
   if ( (a1 & 0x800) == 0 ) /*0x61ef92*/
@@ -694,6 +703,7 @@ void FormatHotkeyDisplayString(void * a1, void * a2)
     return swprintf(a2, (const size_t)g_Str_Trace__hs, Format); /*0x61f174*/
   }
   return result; /*0x61f180*/
+}
 }
 // 0x61F210
 namespace gamemd {

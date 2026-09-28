@@ -9,4 +9,3 @@ namespace gamemd
 
 // 0x54a950
 void BitArray::TestBit() {} // 0x54A950
-}

@@ -60,6 +60,7 @@ void TechnoClass_CanFireAtTarget(void * a1, void * a2, void * a3, void * a4, voi
   }
   return result; /*0x41aa13*/
 }
+}
 // 0x6F2B40
 namespace gamemd {
 TechnoClass::TechnoClass(AbstractClass * aP1)
@@ -74,7 +75,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   int v10; // eax
   int v11; // eax
 
-  RadioClass::Release((RadioClass *)this); /*0x6f2b46*/
+  RadioClass::Release(); /*0x6f2b46*/
   this->flashing[0] = 0; /*0x6f2b52*/
   IDA_LOBYTE(this->flashing[1]) = 0; /*0x6f2b58*/
   this->animation[0] = 0; /*0x6f2b5e*/
@@ -279,7 +280,7 @@ TechnoClass::TechnoClass(AbstractClass * aP1)
   this->currentTargets[5] = 10; /*0x6f309f*/
   this->currentTargets[4] = 0; /*0x6f30a5*/
   this->attackedTargets[1] = 0; /*0x6f30ab*/
-  this->attackedTargets[2] = 0; /*0x6f30b1*/
+  this->attackedTargets[2] = (unsigned int)(0);
   IDA_LOBYTE(this->attackedTargets[3]) = 1; /*0x6f30b7*/
   IDA_BYTE1(this->attackedTargets[3]) = 0; /*0x6f30be*/
   this->attackedTargets[0] = (int)&DynamicVectorClass_AbstractClass___vftable; /*0x6f30c4*/
@@ -644,7 +645,7 @@ int TechnoClass::DTOR()
   this->vtable2 = (void*)&MissionClass_vftable; /*0x6f477b*/
   this->vtable3 = (void*)&MissionClass_vftable; /*0x6f4782*/
   this->vtable4 = (void*)&MissionClass_vftable; /*0x6f4789*/
-  return ObjectClass::Dtor((ObjectClass *)this); /*0x6f4795*/
+  return ObjectClass::Dtor(); /*0x6f4795*/
 }
 } // namespace gamemd
 

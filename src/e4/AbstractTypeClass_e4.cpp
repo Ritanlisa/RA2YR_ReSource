@@ -19,7 +19,7 @@ int AbstractTypeClass::Constructor(AbstractClass * aP1)
   char Destination[48]; // [esp+20h] [ebp-34h] BYREF
   char v8; // [esp+50h] [ebp-4h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x410809*/
+  AbstractClass::Constructor(); /*0x410809*/
   v3 = &this->q024; /*0x410812*/
   this->q024 = 0; /*0x410817*/
   this->UINameLabel = 0; /*0x41081a*/
@@ -104,7 +104,7 @@ int AbstractTypeClass::Dtor()
     }
     while ( v2 < dword_A8E978 ); /*0x410a26*/
   }
-  return AbstractClass::DTOR((AbstractClass *)this); /*0x410a2f*/
+  return AbstractClass::DTOR(); /*0x410a2f*/
 }
 } // namespace gamemd
 // 0x410A60
@@ -204,9 +204,9 @@ AbstractTypeClass * AbstractTypeClass::ddtor(char a2)
     }
     while ( v3 < dword_A8E978 ); /*0x410c96*/
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x410c9a*/
+  AbstractClass::DTOR(); /*0x410c9a*/
   if ( (a2 & 1) != 0 ) /*0x410ca4*/
-    RA2_OPDEL(this); /*0x410ca7*/
+    RA2_OPDEL(); /*0x410ca7*/
   return &this->vtable0; /*0x410cb1*/
 }
 } // namespace gamemd
@@ -216,7 +216,7 @@ int AbstractTypeClass::Init(AbstractTypeClass * aP1)
 {
   char v3; // al
 
-  AbstractClass::InitVtables((unsigned int *)this, aP1); /*0x410968*/
+  AbstractClass::InitVtables(aP1); /*0x410968*/
   v3 = this->UINameLabel; /*0x41096d*/
   *(unsigned int *)this = (void*)&AbstractTypeClass_vftable; /*0x410975*/
   this->vtable2 = (void*)&AbstractTypeClass_vftable; /*0x41097b*/
@@ -254,7 +254,7 @@ char AbstractTypeClass::WriteINI(CCINIClass * aP1)
 namespace gamemd {
 int AbstractTypeClass::ProcessPower(AbstractClass * aP1)
 {
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x410be9*/
+  AbstractClass::ProcessPower(); /*0x410be9*/
   Checksum::AddString((Checksum *)aP1, (uint8_t *)this->__pad_24); /*0x410bf4*/
   Checksum::AddString((Checksum *)aP1, (uint8_t *)this->Name); /*0x410bff*/
   return Checksum::AddString((Checksum *)aP1, (uint8_t *)this->UINameLabel); /*0x410c0f*/

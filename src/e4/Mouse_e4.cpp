@@ -65,9 +65,10 @@ Tactical * * Mouse::SetBounds(IUnknown * aP1)
     IDA_LOWORD(v7) = this->u32_117A + this->u32_1176; /*0x4a8cee*/
     IDA_LOWORD(aP1) = v8 + this->u32_1174; /*0x4a8cf8*/
     IDA_HIWORD(aP1) = v7; /*0x4a8cfd*/
-    return MapClass::SetCellFlagsAlongPath((MapClass *)this, &aP1, (unsigned short *)1); /*0x4a8d11*/
+    return MapClass::SetCellFlagsAlongPath(&aP1, (unsigned short *)1); /*0x4a8d11*/
   }
   return result; /*0x4a8d17*/
+}
 }
 // 0x5BDC80
 namespace gamemd {
@@ -134,18 +135,20 @@ int Mouse::SetCursor(ObjectClass * aP1, ObjectClass * aP2)
   }
   return result; /*0x5bdcd8*/
 }
+}
 // 0x6938C0
 namespace gamemd {
 int Mouse::ReleaseCapture()
 {
   int result; // eax
 
-  DisplayClass::ExitMode((DisplayClass *)this); /*0x6938c3*/
+  DisplayClass::ExitMode(); /*0x6938c3*/
   this->u32_555A = 0; /*0x6938c8*/
   result = (int)GetCapture(); /*0x6938cf*/
   if ( (HWND)result == g_hWnd ) /*0x6938de*/
     return ReleaseCapture(); /*0x6938e0*/
   return result; /*0x6938db*/
+}
 }
 // 0x7B93F0
 namespace gamemd {
@@ -169,7 +172,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
   int v20[5]; // [esp+2Ch] [ebp-20h] BYREF
   int v21[3]; // [esp+40h] [ebp-Ch] BYREF
 
-  v13 = (int)this; /*0x7b93f5*/
+  v13 = (gamemd::WWMouseClass *)((int)this);
   v5 = *(MixFileClass **)&this->m_1[3]; /*0x7b93f9*/
   if ( v5 && aP1 && *(unsigned int *)&stru_87F5F0.__pad_58[128] ) /*0x7b9418*/
   {
@@ -209,6 +212,7 @@ AbstractClass * * Mouse::DrawCursor(IUnknown * aP1, WWMouseClass * aP2, int a4)
     Vector::Clear((int)v21); /*0x7b951f*/
   }
 }
+}
 // 0x53EC90
 namespace gamemd {
 SHORT Mouse::GetKeyState()
@@ -216,7 +220,7 @@ SHORT Mouse::GetKeyState()
   if ( stru_AA0398.AudioStream_field_0xAC ) /*0x53ec97*/
     return word_AA0168[(uint8_t)this]; /*0x53eca7*/
   else
-    return GetAsyncKeyState((uint8_t)this); /*0x53ec9a*/
+    return GetAsyncKeyState(); /*0x53ec9a*/
 }
 } // namespace gamemd
 

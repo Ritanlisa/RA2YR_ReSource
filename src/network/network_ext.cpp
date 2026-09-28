@@ -9,4 +9,3 @@ namespace gamemd {
 void IPXGlobalConnClass::Flush() {}
 // 0x7b0f50
 void NetworkOptions::ApplySettings() {}
-}

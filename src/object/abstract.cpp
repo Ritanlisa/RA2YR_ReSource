@@ -163,5 +163,3 @@ bool AbstractClass::operator<(const AbstractClass& rhs) const { return uniqueId 
 
 } // namespace game
 } // namespace ra2
-}
-}

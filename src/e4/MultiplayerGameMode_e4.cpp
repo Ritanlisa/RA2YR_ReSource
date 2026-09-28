@@ -30,7 +30,7 @@ unsigned int * MultiplayerGameMode::ConstructMultiplayerGameModeVectorClass(int 
     if ( a3 ) /*0x5d8a16*/
     {
       this->MultiplayerGameMode_field_0x04 = (unsigned int *)(a3);
-      return this->__pad_0; /*0x5d8a1e*/
+      return (unsigned int *)(this->__pad_0);
     }
     this->MultiplayerGameMode_field_0x04 = (unsigned int)(RA2_OPNEW(4 * a2));
     IDA_BYTE1(this->MultiplayerGameMode_field_0x0C) = 1; /*0x5d8a30*/
@@ -72,7 +72,7 @@ MultiplayerGameMode * MultiplayerGameMode::QueryInterface(char a2)
   IDA_BYTE1(this->MultiplayerGameMode_field_0x14) = 0; /*0x5d7fab*/
   this->MultiplayerGameMode_field_0x10 = 0; /*0x5d7fb1*/
   if ( (a2 & 1) != 0 ) /*0x5d7fb8*/
-    RA2_OPDEL(this); /*0x5d7fbb*/
+    RA2_OPDEL(); /*0x5d7fbb*/
   return this->__pad_0; /*0x5d7fc5*/
 }
 } // namespace gamemd

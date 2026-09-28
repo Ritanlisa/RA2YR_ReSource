@@ -22,6 +22,7 @@
 #include "e4/classes/ParticleSystemTypeClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/WaypointPathClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
 
 // 0x75F650
 namespace gamemd {
@@ -106,11 +107,12 @@ WaveClass * WaveClass::ddtor(char a2)
 {
   int v3; // eax
   void *v4; // eax
-this->vtable0 = (unsigned int)((void*)&WaveClass_vftable);
+
+  this->vtable0 = (unsigned int)((void*)&WaveClass_vftable);
   this->vtable1 = (void*)&WaveClass_vftable; /*0x76320c*/
   this->vtable2 = (void*)&WaveClass_vftable; /*0x763213*/
   this->vtable3 = &off_7F6BC8; /*0x76321a*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x763221*/
+  AbstractClass::AnnounceExpiredPointer(1); /*0x763221*/
   v3 = (*(int (__thiscall **)(unsigned char *, WaveClass **))(*(unsigned int *)&stru_A8EB00.gapE4[84] + 16))( /*0x76323a*/
          &stru_A8EB00.gapE4[84],
          &this);
@@ -133,11 +135,11 @@ this->vtable0 = (unsigned int)((void*)&WaveClass_vftable);
     RA2_OPDEL(v4); /*0x763296*/
     this->u32_1F4 = 0; /*0x76329e*/
   }
-  this->u32_1FD = (gamemd::WaveClass *)(0);
+  this->u32_1FD = (unsigned int)((gamemd::WaveClass *)(0));
   this->u32_1F8 = (gamemd::WaveClass *)(0);
-  ObjectClass::Dtor((ObjectClass *)this); /*0x7632b2*/
+  ObjectClass::Dtor(); /*0x7632b2*/
   if ( (a2 & 1) != 0 ) /*0x7632be*/
-    RA2_OPDEL(this); /*0x7632c1*/
+    RA2_OPDEL(); /*0x7632c1*/
   return &this->vtable0; /*0x7632cb*/
 }
 } // namespace gamemd

@@ -54,6 +54,7 @@ int EventClass::serializeEvent()
   }
   return result; /*0x48b405*/
 }
+}
 // 0x48BAD0
 namespace gamemd {
 int EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
@@ -64,6 +65,7 @@ int EventClass::SetData(int a2, int a3, int a4, int a5, int a6)
   this->EventClass_field_0x50 = (void *)a5; /*0x48baed*/
   this->EventClass_field_0x54 = (void *)a6; /*0x48baf0*/
   return a6; /*0x48baf3*/
+}
 }
 // 0x4C65E0
 namespace gamemd {
@@ -87,6 +89,7 @@ void * EventClass::Add(AbstractClass * aP1, unsigned char a3, int a4, char a5)
     return this; /*0x4c661e*/
   }
 }
+}
 // 0x4C66C0
 namespace gamemd {
 void * EventClass::AddEvent(int a2, unsigned char a3)
@@ -106,6 +109,7 @@ void * EventClass::AddEvent(int a2, unsigned char a3)
     this->u32_3 = g_CurrentFrame; /*0x4c66f9*/
     return this; /*0x4c66f7*/
   }
+}
 }
 // 0x4C6720
 namespace gamemd {
@@ -127,6 +131,7 @@ void * EventClass::Add2(AnimClass * aP1, unsigned char a3, IUnknown * aP3)
     this->u32_3 = g_CurrentFrame; /*0x4c675d*/
     return this; /*0x4c6760*/
   }
+}
 }
 // 0x4C6970
 namespace gamemd {
@@ -150,6 +155,7 @@ void * EventClass::AddEventEx(SelectClass_StripClass_SidebarClass * aP1, unsigne
     this->u32_3 = g_CurrentFrame; /*0x4c69be*/
     return this; /*0x4c69bc*/
   }
+}
 }
 // 0x4C6AE0
 namespace gamemd {
@@ -175,6 +181,7 @@ void * EventClass::Init(IUnknown * aP1, char a3, int a4, int a5, int arg10, unsi
     this->u32_3 = g_CurrentFrame; /*0x4c6b3f*/
     return this; /*0x4c6b42*/
   }
+}
 }
 // 0x4C6CB0
 namespace gamemd {
@@ -988,6 +995,7 @@ int EventClass::deserializeEvent(int a2, IUnknown * aP2)
   }
   return result; /*0x5422b4*/
 }
+}
 // 0x54F200
 namespace gamemd {
 int EventClass::Enqueue(unsigned short a2, char a3)
@@ -1037,6 +1045,7 @@ int EventClass::Enqueue(unsigned short a2, char a3)
   IDA_LOBYTE(result) = 0; /*0x54f2e1*/
   return result; /*0x54f2d7*/
 }
+}
 // 0x5F19C0
 namespace gamemd {
 int EventClass::CheckFlag()
@@ -1047,6 +1056,7 @@ int EventClass::CheckFlag()
   if ( EventClass_field_0x38 ) /*0x5f19c5*/
     EventClass::serializeEvent(EventClass_field_0x38[1]); /*0x5f19ca*/
   return 1; /*0x5f19d4*/
+}
 }
 // 0x664440
 namespace gamemd {
@@ -1065,8 +1075,8 @@ AbstractClass * * EventClass::validateEventType()
   int v13; // [esp+Ch] [ebp-Ch] BYREF
   uint8_t v14[8]; // [esp+10h] [ebp-8h] BYREF
 
-  v1 = unk_A8E2CC; /*0x664444*/
-  if ( unk_A8E2CC == -1 ) /*0x664451*/
+  v1 = dword_A8E2CC; /*0x664444*/
+  if ( dword_A8E2CC == -1 ) /*0x664451*/
   {
     v3 = *(unsigned int *)this->__pad_10; /*0x664453*/
     v4 = 0; /*0x664456*/
@@ -1074,7 +1084,7 @@ AbstractClass * * EventClass::validateEventType()
     {
       do /*0x66447c*/
       {
-        v5 = (char *)*((unsigned int *)this->EventClass_field_0x4 + v4); /*0x664461*/
+        v5 = *(char **)(this->EventClass_field_0x4 + 4 * v4); /*0x664461*/
         if ( v5[41] && !v5[39] ) /*0x66446a*/
         {
           v1 = *v5; /*0x664470*/
@@ -1093,16 +1103,16 @@ AbstractClass * * EventClass::validateEventType()
     {
       do /*0x6644a7*/
       {
-        v8 = (char *)*((unsigned int *)this->EventClass_field_0x4 + v7); /*0x66448e*/
+        v8 = *(char **)(this->EventClass_field_0x4 + 4 * v7); /*0x66448e*/
         v8[39] = *v8 == v1; /*0x664498*/
         ++v7; /*0x6644a4*/
       }
       while ( v7 < *(unsigned int *)this->__pad_10 ); /*0x6644a7*/
     }
   }
-  if ( SessionClass::IsValidHouse((int)&unk_A8B238, 0) /*0x6644d2*/
+  if ( SessionClass::IsValidHouse((int)&dword_A8B238, 0) /*0x6644d2*/
     || v1 == -1
-    || (void *)v1 != dword_A83D4C->Object_field_0x30
+    || v1 != dword_A83D4C->Object_field_0x30
     || dword_A8DA84 <= 2 )
   {
     return v1; /*0x664526*/
@@ -1123,8 +1133,9 @@ AbstractClass * * EventClass::validateEventType()
   }
   LABEL_23:
   Network::CopyAddress(v9, &v13, (int)v14); /*0x664500*/
-  LaunchMultiplayerHost((int)this, v14); /*0x664516*/
+  LaunchMultiplayerHost(v14); /*0x664516*/
   return v1; /*0x66451c*/
+}
 }
 // 0x40B6A0
 namespace gamemd {
@@ -1352,7 +1363,7 @@ DynamicVector * EventClass::executeAction(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x40bc3b*/
   this->m_8 = 0; /*0x40bc41*/
   if ( (a2 & 1) != 0 ) /*0x40bc48*/
-    RA2_OPDEL(this); /*0x40bc4b*/
+    RA2_OPDEL(); /*0x40bc4b*/
   return this->__pad_0; /*0x40bc55*/
 }
 } // namespace gamemd
@@ -1411,7 +1422,7 @@ VectorClass_flat * EventClass::queueEvent(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x40c13b*/
   this->m_8 = 0; /*0x40c141*/
   if ( (a2 & 1) != 0 ) /*0x40c148*/
-    RA2_OPDEL(this); /*0x40c14b*/
+    RA2_OPDEL(); /*0x40c14b*/
   return this->__pad_0; /*0x40c155*/
 }
 } // namespace gamemd

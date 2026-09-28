@@ -25,8 +25,8 @@ void sub_682780(int a1, int a2, wchar_t * String)
   unsigned int * v9;
 
   v9 = (int)((unsigned int *)(0));
-  v3 = (unsigned int *)(0);
-  v4 = &unk_83D658; /*0x682790*/
+  v3 = (int)((unsigned int *)(0));
+  v4 = (unsigned int *)(&unk_83D658);
   while ( *v4 != a2 ) /*0x682797*/
   {
     v4 += 2; /*0x682799*/
@@ -74,6 +74,7 @@ void sub_682780(int a1, int a2, wchar_t * String)
   }
   return v6; /*0x6827d6*/
 }
+}
 // 0x6829A0
 namespace gamemd {
 void sub_6829A0(int * a1, int a2, int a3)
@@ -120,4 +121,5 @@ void sub_6829A0(int * a1, int a2, int a3)
     return v4; /*0x682a0f*/
   }
   return v4; /*0x682a0b*/
+}
 }

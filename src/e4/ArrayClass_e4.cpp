@@ -29,3 +29,4 @@ int ArrayClass::GetAt_Wrap(int a2)
     return *((unsigned int *)this->field_8 + v3); /*0x636e9a*/
   return 0; /*0x636e95*/
 }
+}

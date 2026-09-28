@@ -28,6 +28,7 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "app/cmdline.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/E4Recv_4C3DD0_e4.hpp"
 
 // 0x4E0A00
 namespace gamemd {
@@ -98,6 +99,7 @@ unsigned int * E4Recv_4E0A00::sub_4E0A00(int a2, unsigned int * a2)
   this->M20 = 10; /*0x4e0a90*/
   this->M16 = 0; /*0x4e0a97*/
   return &this->vtable0; /*0x4e0aa0*/
+}
 }
 // 0x4E1FE0
 namespace gamemd {
@@ -293,6 +295,7 @@ void GameOptionsDlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
   }
   return result; /*0x4e2229*/
 }
+}
 // 0x4E34A0
 namespace gamemd {
 void * UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
@@ -352,6 +355,7 @@ void * UpdateLobbyGraphicsWOL(HWND hDlg, int a2, int a3)
   if ( DlgItem != HWND_MESSAGE|0x2 ) /*0x4e354f*/
     return CacheDialogInvalidate(DlgItem, (HWND)result); /*0x4e3555*/
   return result; /*0x4e355b*/
+}
 }
 // 0x4E3690
 namespace gamemd {
@@ -438,6 +442,7 @@ void * sub_4E3690(HWND hDlg, int a2)
   }
   Default = (HWND)BuildingType::FindDefault((void *)v8); /*0x4e37af*/
   return CacheDialogInvalidate(DlgItem, Default); /*0x4e37b8*/
+}
 }
 // 0x4E3CE0
 namespace gamemd {
@@ -602,6 +607,7 @@ void * SetupSkirmishDialogPlayerSlot(HWND hDlg, int a2)
   Default = (HWND)BuildingType::FindDefault((void *)v13); /*0x4e3f4e*/
   return CacheDialogInvalidate(v10, Default); /*0x4e3f5c*/
 }
+}
 // 0x4E3F70
 namespace gamemd {
 void * SetupLobbyCountryCombo(SkirmishDialog * aP0, int nIDDlgItem, int a3)
@@ -717,6 +723,7 @@ void * SetupLobbyCountryCombo(SkirmishDialog * aP0, int nIDDlgItem, int a3)
   Default = (HWND)BuildingType::FindDefault((void *)v12); /*0x4e4149*/
   return CacheDialogInvalidate(DlgItem, Default); /*0x4e4157*/
 }
+}
 // 0x4E45A0
 namespace gamemd {
 void FillComboBoxFactions(HWND hDlg, int nIDDlgItem)
@@ -793,6 +800,7 @@ DlgItem = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, nIDDlgItem))));
     return ShowWindow(DlgItem, 5); /*0x4e4754*/
   return result; /*0x4e475a*/
 }
+}
 // 0x4E48E0
 namespace gamemd {
 void SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
@@ -843,6 +851,7 @@ void SkirmishDialog_MapPlayerToControl(HWND a1, int a2)
   }
   return SetupSkirmishSpawnLocations(a1, v3, v2); /*0x4e4991*/
 }
+}
 // 0x4E49A0
 namespace gamemd {
 void SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
@@ -851,7 +860,7 @@ void SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
   int v5; // eax
   int v6; // eax
   int * v7;
-  unsigned int v8;
+  int *v8; // ecx
   WPARAM v9; // edi
   LRESULT v10; // ebp
   int v11; // esi
@@ -896,7 +905,7 @@ void SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
       break;
   }
   v7 = (int *)(0);
-  v8 = dword_8B4040; /*0x4e4a43*/
+  v8 = (int *)(dword_8B4040);
   while ( *v8 != v5 ) /*0x4e4a4a*/
   {
     v8 += 3; /*0x4e4a4c*/
@@ -1002,6 +1011,7 @@ void SetupSkirmishSpawnLocations(HWND hDlg, int nIDDlgItem, int a3)
   }
   return result; /*0x4e4c13*/
 }
+}
 // 0x4E4C20
 namespace gamemd {
 void FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
@@ -1009,7 +1019,7 @@ void FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
   int v4; // eax
   int v5; // eax
   int * v6;
-  unsigned int v7;
+  int *v7; // ecx
   LRESULT v8; // eax
   LRESULT v9; // eax
   int v10; // esi
@@ -1048,7 +1058,7 @@ void FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
       break;
   }
   v6 = (int *)(0);
-  v7 = dword_8B4040; /*0x4e4c9f*/
+  v7 = (int *)(dword_8B4040);
   while ( *v7 != v4 ) /*0x4e4ca6*/
   {
     v7 += 3; /*0x4e4ca8*/
@@ -1135,22 +1145,24 @@ void FillColorComboBoxUI(HWND hDlg, int nIDDlgItem)
   }
   return result; /*0x4e4e18*/
 }
+}
 // 0x4E50C0
 namespace gamemd {
 void FillComboBoxAllianceSlots(HWND hDlg, int nIDDlgItem)
 {
-  HWND DlgItem; // esi
+  wchar_t * DlgItem;
   wchar_t *StringCSF; // eax
   LRESULT v5; // eax
   unsigned int v6;
   LRESULT v7; // ebx
   int result; // eax
   bool v9; // [esp+12h] [ebp-Eh]
-  wchar_t * v10;
+  bool v10; // [esp+13h] [ebp-Dh]
   int v11; // [esp+14h] [ebp-Ch]
-  int * lParam;
-  WPARAM wParam; // [esp+1Ch] [ebp-4h]
-DlgItem = (HWND)((wchar_t *)(GetDlgItem(hDlg, nIDDlgItem)));
+  LPARAM lParam; // [esp+18h] [ebp-8h]
+  int * wParam;
+
+  DlgItem = (HWND)((wchar_t *)(GetDlgItem(hDlg, nIDDlgItem)));
   v10 = (wchar_t *)(!ShowWindow(DlgItem, 0));
   SendMessageA(DlgItem, 0x14Bu, 0, 0); /*0x4e50f2*/
   SendMessageA(DlgItem, 0x4DDu, 0, 1); /*0x4e50fd*/
@@ -1185,8 +1197,8 @@ DlgItem = (HWND)((wchar_t *)(GetDlgItem(hDlg, nIDDlgItem)));
       v11 = nIDDlgItem != 1707 ? -1 : 7;
       break;
   }
-  wParam = (int *)(0);
-  lParam = 0; /*0x4e51ca*/
+  wParam = (WPARAM)((int *)(0));
+  lParam = (int *)(0);
   v6 = dword_8B3F38; /*0x4e51ce*/
   do /*0x4e5228*/
   {
@@ -1208,6 +1220,7 @@ DlgItem = (HWND)((wchar_t *)(GetDlgItem(hDlg, nIDDlgItem)));
   if ( !v10 ) /*0x4e524b*/
     return ShowWindow(DlgItem, 5); /*0x4e5250*/
   return result; /*0x4e5256*/
+}
 }
 // 0x4E53D0
 namespace gamemd {
@@ -1257,6 +1270,7 @@ void Lobby_FillFactionComboBox(HWND a1, int a2)
   }
   return SetupLobbyFactionSlots(a1, v3, v2); /*0x4e5471*/
 }
+}
 // 0x4E5480
 namespace gamemd {
 void SetupLobbyFactionSlots(SessionClass * aP0, int nIDDlgItem, int a3)
@@ -1264,8 +1278,8 @@ void SetupLobbyFactionSlots(SessionClass * aP0, int nIDDlgItem, int a3)
   SessionClass * v4;
   int v5; // eax
   int v6; // eax
-  int v7; // edx
-  unsigned int v8;
+  int * v7;
+  int *v8; // ecx
   WPARAM v9; // edi
   LRESULT v10; // ebp
   int v11; // esi
@@ -1310,7 +1324,7 @@ void SetupLobbyFactionSlots(SessionClass * aP0, int nIDDlgItem, int a3)
       break;
   }
   v7 = (int *)(0);
-  v8 = dword_8B3F38; /*0x4e5523*/
+  v8 = (int *)(dword_8B3F38);
   while ( *v8 != v5 ) /*0x4e552a*/
   {
     v8 += 3; /*0x4e552c*/
@@ -1327,7 +1341,7 @@ void SetupLobbyFactionSlots(SessionClass * aP0, int nIDDlgItem, int a3)
   {
     while ( 1 ) /*0x4e557a*/
     {
-      v10 = SendDlgItemMessageA(v4, nIDDlgItem, 0x150u, v9, 0); /*0x4e557a*/
+      v10 = (HWND)(SendDlgItemMessageA(v4, nIDDlgItem, 0x150u, v9, 0));
       if ( v10 == a3 ) /*0x4e5580*/
         break; /*0x4e5580*/
       v4 = aP0; /*0x4e5586*/
@@ -1415,6 +1429,7 @@ void SetupLobbyFactionSlots(SessionClass * aP0, int nIDDlgItem, int a3)
     }
   }
   return result; /*0x4e56f3*/
+}
 }
 // 0x4E5700
 namespace gamemd {
@@ -1549,6 +1564,7 @@ void FillComboBoxSides(HWND hDlg, int nIDDlgItem)
   }
   return result; /*0x4e58f8*/
 }
+}
 // 0x4E5B60
 namespace gamemd {
 void FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
@@ -1615,6 +1631,7 @@ void FillLobbyPlayerSlot(HWND hDlg, int nIDDlgItem)
   }
   return result; /*0x4e5c90*/
 }
+}
 // 0x4E5E20
 namespace gamemd {
 void Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
@@ -1662,6 +1679,7 @@ void Lobby_SetupPlayerSlotDialog(HWND a1, int a2)
       v2 = 4; /*0x4e5eb1*/
   }
   return SetupLobbyPlayerSlots(a1, v3, v2); /*0x4e5ebe*/
+}
 }
 // 0x4E5ED0
 namespace gamemd {
@@ -1741,6 +1759,7 @@ void SetupLobbyPlayerSlots(SessionClass * aP0, int nIDDlgItem, int a3)
   }
   return result; /*0x4e6007*/
 }
+}
 // 0x4E6860
 namespace gamemd {
 int sub_4E6860()
@@ -1753,6 +1772,7 @@ int sub_4E6860()
   dword_A8ED54 = 10; /*0x4e6887*/
   dword_A8ED50 = 0; /*0x4e6891*/
   return atexit(sub_4E68A0); /*0x4e689c*/
+}
 }
 // 0x4E6CE0
 namespace gamemd {
@@ -1767,6 +1787,7 @@ int sub_4E6CE0()
   HouseClass_Count = 0; /*0x4e6d11*/
   return atexit(sub_4E6D20); /*0x4e6d1c*/
 }
+}
 // 0x4E6D20
 namespace gamemd {
 void sub_4E6D20()
@@ -1779,6 +1800,7 @@ void sub_4E6D20()
   }
   byte_A80235 = 0; /*0x4e6d4d*/
   dword_A80230 = 0; /*0x4e6d53*/
+}
 }
 // 0x4E7460
 namespace gamemd {
@@ -1793,6 +1815,7 @@ int sub_4E7460()
   g_CrateCount = 0; /*0x4e7491*/
   return atexit(sub_4E74A0); /*0x4e749c*/
 }
+}
 // 0x4E74A0
 namespace gamemd {
 void sub_4E74A0()
@@ -1805,6 +1828,7 @@ void sub_4E74A0()
   }
   byte_A83CED = 0; /*0x4e74cd*/
   dword_A83CE8 = 0; /*0x4e74d3*/
+}
 }
 // 0x4E75E0
 namespace gamemd {
@@ -1819,6 +1843,7 @@ int sub_4E75E0()
   g_BulletTypeInitState = 0; /*0x4e7611*/
   return atexit(sub_4E7620); /*0x4e761c*/
 }
+}
 // 0x4E7620
 namespace gamemd {
 void sub_4E7620()
@@ -1831,6 +1856,7 @@ void sub_4E7620()
   }
   byte_A83C8D = 0; /*0x4e764d*/
   dword_A83C88 = 0; /*0x4e7653*/
+}
 }
 // 0x4E7EA0
 namespace gamemd {
@@ -1852,6 +1878,7 @@ char * * sub_4E7EA0()
   g_NetworkEventIndex = 0; /*0x4e7eba*/
   Networking_NextPacketIndex = 0; /*0x4e7ec0*/
   return result; /*0x4e7ec6*/
+}
 }
 // 0x4E8090
 namespace gamemd {
@@ -1885,6 +1912,7 @@ void unknown_libname_18()
   }
   LABEL_10:
   g_EventManager = (void*)&ConnManClass_vftable; /*0x5f16cf*/
+}
 }
 // 0x4E9240
 namespace gamemd {
@@ -1933,40 +1961,41 @@ AbstractClass * * HouseClass__vt_02_(int a2, unsigned int * a3)
     return 1; /*0x4e92e8*/
   }
 }
+}
 // 0x4E9E20
 namespace gamemd {
 AbstractClass * * ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
 {
   unsigned int *v4; // edi
-  int v6; // ecx
+  int m_8; // ecx
   int i; // eax
 
   if ( a2 ) /*0x4e9e2c*/
   {
-    this->IsInitialized = 0; /*0x4e9e36*/
+    IDA_LOBYTE(this->m_C) = 0; /*0x4e9e36*/
     if ( a3 ) /*0x4e9e3c*/
       v4 = a3; /*0x4e9e52*/
     else
-      v4 = RA2_OPNEW(4 * a2); /*0x4e9e4e*/
-    this->IsInitialized = 1; /*0x4e9e56*/
+      v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x4e9e4e*/
+    IDA_LOBYTE(this->m_C) = 1; /*0x4e9e56*/
     if ( v4 ) /*0x4e9e5a*/
     {
-      if ( this->Items ) /*0x4e9e65*/
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x4e9e65*/
       {
-        v6 = this->Capacity; /*0x4e9e6c*/
-        if ( a2 < v6 ) /*0x4e9e71*/
-          v6 = a2; /*0x4e9e73*/
-        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x4e9e79*/
+        m_8 = this->m_8; /*0x4e9e6c*/
+        if ( a2 < m_8 ) /*0x4e9e71*/
+          m_8 = a2; /*0x4e9e73*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4e9e79*/
           ++i; /*0x4e9e7e*/
-        if ( this->IsAllocated ) /*0x4e9e8b*/
+        if ( IDA_BYTE1(this->m_C) ) /*0x4e9e8b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x4e9e96*/
-          this->Items = 0; /*0x4e9e9e*/
+          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4e9e96*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x4e9e9e*/
         }
       }
-      this->Items = v4; /*0x4e9ea7*/
-      this->Capacity = a2; /*0x4e9eaf*/
-      this->IsAllocated = a3 == 0; /*0x4e9eb2*/
+      *(unsigned int *)&this->m_1[3] = v4; /*0x4e9ea7*/
+      this->m_8 = a2; /*0x4e9eaf*/
+      IDA_BYTE1(this->m_C) = a3 == 0; /*0x4e9eb2*/
       return 1; /*0x4e9eb8*/
     }
     else
@@ -1976,21 +2005,23 @@ AbstractClass * * ParticleSystemClass__vt_02_(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(unsigned int *)&this->Items2))(this); /*0x4e9ec2*/
+    (*(void (__thiscall **)(_VectorClass_PAVParticleClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4e9ec2*/
     return 1; /*0x4e9ec8*/
   }
+}
 }
 // 0x4E9ED0
 namespace gamemd {
 void ParticleSystemClass__vt_03_()
 {
-  if ( this->Items && this->IsAllocated ) /*0x4e9edd*/
+  if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x4e9edd*/
   {
-    RA2_OPDEL(this->Items); /*0x4e9ee3*/
-    this->Items = 0; /*0x4e9eeb*/
+    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4e9ee3*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4e9eeb*/
   }
-  this->IsAllocated = 0; /*0x4e9eee*/
-  this->Capacity = 0; /*0x4e9ef1*/
+  IDA_BYTE1(this->m_C) = 0; /*0x4e9eee*/
+  this->m_8 = 0; /*0x4e9ef1*/
+}
 }
 // 0x4E0C30
 namespace gamemd {
@@ -2325,13 +2356,13 @@ int E4Recv_4E2A50::sub_4E2A50(ControlClass * aP1, int aP2, int aP3, ControlClass
   int v7; // ecx
   int v8; // eax
 
-  ControlClass::Construct((ControlClass *)this, aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
+  ControlClass::Construct(aP1, aP2, aP3, aP4, aP5, 7, 1); /*0x4e2a74*/
   v7 = this->M48; /*0x4e2a79*/
   *(unsigned int *)this->__pad_0 = (void*)&GaugeClass_vftable; /*0x4e2a83*/
   if ( v7 != 255 ) /*0x4e2a89*/
   {
     this->M48 = 255; /*0x4e2a8d*/
-    VectorClass_ptr_ConvertClass::MarkDirty((GadgetClass *)this); /*0x4e2a90*/
+    VectorClass_ptr_ConvertClass::MarkDirty(); /*0x4e2a90*/
   }
   v8 = 0; /*0x4e2a99*/
   if ( this->M48 < 0 ) /*0x4e2a9d*/
@@ -2698,6 +2729,7 @@ int * _cfltcvt_init()
   while ( (int)result < (int)&dword_8B3FA4 ); /*0x4e4fbd*/
   return result; /*0x4e4fbf*/
 }
+}
 // 0x4E4FC0
 namespace gamemd {
 void Lobby_ResetFactionTable(int a1)
@@ -2826,7 +2858,7 @@ int E4Recv_4E6070::sub_4E6070()
   *(unsigned int *)&this->bombVisible = 0; /*0x4e6087*/
   this->health = 0; /*0x4e608a*/
   Debug::Log(); /*0x4e608d*/
-  memset(this, 0xFFu, 0x18u); /*0x4e609f*/
+  memset(0xFFu, 0x18u); /*0x4e609f*/
   IDA_LOWORD(this->nextArrayIndex) = -1; /*0x4e60a9*/
   *((unsigned int *)&this->vtable0 + (*(unsigned int *)&this->bombVisible)++) = 2; /*0x4e60cc*/
   Debug::Log(); /*0x4e60d6*/
@@ -4864,18 +4896,18 @@ namespace gamemd {
 int ParticleSystemClass::vt_04_(int * a2)
 {
   int result; // eax
-  int v3; // edx
+  int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !this->vtable4 ) /*0x4e9f00*/
+  if ( !IDA_LOBYTE(this->m_C) ) /*0x4e9f00*/
     return 0; /*0x4e9f08*/
-  v3 = this->vtable3; /*0x4e9f0e*/
+  m_8 = this->m_8; /*0x4e9f0e*/
   result = 0; /*0x4e9f11*/
-  if ( v3 <= 0 ) /*0x4e9f15*/
+  if ( m_8 <= 0 ) /*0x4e9f15*/
     return -1; /*0x4e9f2c*/
-  for ( i = this->vtable2; *i != *a2; ++i ) /*0x4e9f1b*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e9f1b*/
   {
-    if ( ++result >= v3 ) /*0x4e9f2a*/
+    if ( ++result >= m_8 ) /*0x4e9f2a*/
       return -1; /*0x4e9f2a*/
   }
   return result; /*0x4e9f0a*/
@@ -4886,8 +4918,8 @@ int ParticleSystemClass::vt_04_(int * a2)
 namespace gamemd {
 unsigned int ParticleSystemClass::vt_05_(int a2)
 {
-  if ( this->vtable4 ) /*0x4e9f40*/
-    return (unsigned int)(a2 - this->vtable2) >> 2; /*0x4e9f55*/
+  if ( IDA_LOBYTE(this->m_C) ) /*0x4e9f40*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4e9f55*/
   else
     return 0; /*0x4e9f47*/
 }
@@ -4909,7 +4941,7 @@ VectorClass_flat * HouseClass::vt_00_(char a2)
   this->relatedTagsCapacity = 0; /*0x4ef50b*/
   this->vtable3 = 0; /*0x4ef511*/
   if ( (a2 & 1) != 0 ) /*0x4ef518*/
-    RA2_OPDEL(this); /*0x4ef51b*/
+    RA2_OPDEL(); /*0x4ef51b*/
   return this; /*0x4ef525*/
 }
 } // namespace gamemd
@@ -4920,17 +4952,17 @@ VectorClass_flat * ParticleSystemClass::vt_00_(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)this->vtable2; /*0x4ef803*/
-  *this = (void*)&VectorClass_ParticleClass___vftable; /*0x4ef806*/
-  if ( v3 && this->attachedTag ) /*0x4ef810*/
+  v3 = *(void **)&this->m_1[3]; /*0x4ef803*/
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_ParticleClass___vftable; /*0x4ef806*/
+  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4ef810*/
   {
     RA2_OPDEL(v3); /*0x4ef818*/
-    this->vtable2 = 0; /*0x4ef820*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4ef820*/
   }
-  this->attachedTag = 0; /*0x4ef82b*/
-  this->vtable3 = 0; /*0x4ef831*/
+  IDA_BYTE1(this->m_C) = 0; /*0x4ef82b*/
+  this->m_8 = 0; /*0x4ef831*/
   if ( (a2 & 1) != 0 ) /*0x4ef838*/
-    RA2_OPDEL(this); /*0x4ef83b*/
-  return this; /*0x4ef845*/
+    RA2_OPDEL(); /*0x4ef83b*/
+  return this->__pad_0; /*0x4ef845*/
 }
 } // namespace gamemd

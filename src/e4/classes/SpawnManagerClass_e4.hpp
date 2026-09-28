@@ -33,7 +33,7 @@ struct SpawnManagerClass {
     unsigned int q03B;  // 0x3B
     unsigned int spawnVectorCount;  // 0x3C
     unsigned int q03D;  // 0x3D
-    char spawnVectorCapacity[4];  // 0x40
+    unsigned int spawnVectorCapacity;  // 0x40
     bool q042;  // 0x42
     char creationFrame[4];  // 0x44
     unsigned char u8_45;  // 0x45

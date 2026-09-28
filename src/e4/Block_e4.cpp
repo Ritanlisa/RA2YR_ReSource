@@ -14,7 +14,7 @@ void * Block::Copy(const void * a2)
 
   result = this; /*0x6260d5*/
   if ( this != a2 ) /*0x6260d9*/
-    qmemcpy(this, a2, 0x300u); /*0x6260e3*/
+    qmemcpy(a2, 0x300u); /*0x6260e3*/
   return result; /*0x6260e6*/
 }
 } // namespace gamemd

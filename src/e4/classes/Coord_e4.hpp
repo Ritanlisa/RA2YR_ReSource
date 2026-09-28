@@ -36,6 +36,7 @@ struct Coord {
     unsigned int u32_B0;  // 0xB0
     unsigned int u32_B4;  // 0xB4
     unsigned char q0B8;  // 0xB8
+    unsigned int u32_E0;  // 0xE0
     Coord * q100;  // 0x100
     Coord * q104;  // 0x104
     unsigned char q108;  // 0x108

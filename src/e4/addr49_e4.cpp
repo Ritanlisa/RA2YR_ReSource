@@ -215,6 +215,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Stream_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
 
 // 0x490400
 namespace gamemd {
@@ -224,7 +225,7 @@ int E4Recv_490400::sub_490400()
   int result; // eax
 
   *(unsigned int *)this = (void*)&ConvertClass_vftable; /*0x490404*/
-  COMClass::RegisterAll((unsigned int *)this); /*0x49040a*/
+  COMClass::RegisterAll(); /*0x49040a*/
   RA2_OPDEL(*(void **)(&this->u32_908)); /*0x490416*/
   v2 = *(void **)(&this->u32_946); /*0x49041b*/
   this->M368 = 0; /*0x490421*/
@@ -241,6 +242,7 @@ int E4Recv_490400::sub_490400()
     while ( result < dword_89ED08 ); /*0x490485*/
   }
   return result; /*0x490457*/
+}
 }
 // 0x491B40
 namespace gamemd {
@@ -306,13 +308,14 @@ int E4Recv_491B40::sub_491B40(unsigned char * a2, unsigned char * a3, int a4, in
   }
   return result; /*0x491c07*/
 }
+}
 // 0x491C50
 namespace gamemd {
 int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
   char *v12; // edx
   int result; // eax
-  Stream * v14;
+  unsigned int v14;
   unsigned char *v15; // esi
   unsigned int v16; // edx
   int v18; // eax
@@ -323,7 +326,7 @@ int E4Recv_491C50::sub_491C50(unsigned char * a1, unsigned char * a2, int a4, in
   uint8_t v25; // [esp+20h] [ebp+Ch]
   char *v26; // [esp+3Ch] [ebp+28h]
 v12 = (char *)((gamemd::Stream *)(*(char **)this->m_4));
-  result = (gamemd::Stream *)(a5);
+  result = (int)((gamemd::Stream *)(a5));
   v14 = g_ZBufferDescriptor; /*0x491c6b*/
   v15 = a1; /*0x491c77*/
   v26 = v12; /*0x491c7b*/
@@ -361,10 +364,10 @@ v12 = (char *)((gamemd::Stream *)(*(char **)this->m_4));
       result = (int)++a10; /*0x491d03*/
       if ( v21 < *(uint16_t *)(v16 - 2) ) /*0x491d0a*/
       {
-        result = (unsigned int)(this->m_8);
+        result = this->m_8; /*0x491d22*/
         *v15 = *(unsigned char *)((uint8_t)v26[v24] + result); /*0x491d28*/
       }
-      v14 = (gamemd::Stream *)(g_ZBufferDescriptor);
+      v14 = (unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor));
       ++v15; /*0x491d30*/
       --v19; /*0x491d31*/
     }
@@ -382,23 +385,24 @@ v12 = (char *)((gamemd::Stream *)(*(char **)this->m_4));
   }
   return result; /*0x491d3e*/
 }
+}
 // 0x491D90
 namespace gamemd {
 int E4Recv_491D90::sub_491D90(unsigned char * a1, unsigned char * a2, RLEBlitTransRemapDestZRead_E * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
 {
-  int v11; // eax
+  RLEBlitTransRemapDestZRead_E * v11;
   Stream * v12;
   uint8_t *v14; // esi
-  unsigned int v15;
+  Stream *v15; // ecx
   int v18; // eax
-  RLEBlitTransRemapDestZRead_E * v19;
-v11 = (int)((gamemd::Stream *)(a5));
-  v12 = (gamemd::Stream *)((gamemd::RLEBlitTransRemapDestZRead_E *)(a7));
-  v14 = a1; /*0x491da0*/
+  int v19; // ebx
+v11 = (gamemd::RLEBlitTransRemapDestZRead_E *)((int)((gamemd::Stream *)(a5)));
+  v12 = (gamemd::Stream *)(a7);
+  v14 = (gamemd::Stream *)(a1);
   v15 = g_ZBufferDescriptor; /*0x491da8*/
   if ( a5 <= 0 ) /*0x491db5*/
   {
-    v19 = (gamemd::RLEBlitTransRemapDestZRead_E *)((int)(aP3));
+    v19 = (int)(aP3);
   }
   else
   {
@@ -431,13 +435,13 @@ v11 = (int)((gamemd::Stream *)(a5));
       }
       else
       {
-        v11 = (unsigned int)(*v14);
+        v11 = (uint8_t)(*v14);
         --v19; /*0x491e31*/
         ++v14; /*0x491e35*/
         IDA_LOBYTE(v11) = *(unsigned char *)(*(unsigned int *)&this->m_1[3] + v11); /*0x491e36*/
         *(v14 - 1) = v11; /*0x491e39*/
       }
-      v15 = (unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor));
+      v15 = (gamemd::Stream *)(g_ZBufferDescriptor);
     }
     else
     {
@@ -451,6 +455,7 @@ v11 = (int)((gamemd::Stream *)(a5));
       v12 -= v15[1].Stream_field_0C; /*0x491e4b*/
   }
   return v11; /*0x491e52*/
+}
 }
 // 0x491EA0
 namespace gamemd {
@@ -524,18 +529,18 @@ unsigned short * E4Recv_491FD0::sub_491FD0(int arg0, unsigned char * a2, RLEBlit
   int v11; // edx
   unsigned short *result; // eax
   Stream * v14;
-  unsigned int v15;
+  Stream *v15; // ecx
   int v18; // edx
-  RLEBlitTransXlatZReadWrite_E * v19;
+  int v19; // ebx
   uint8_t v20; // dl
   uint8_t v21; // dl
 v11 = (int)((gamemd::Stream *)(a5));
-  result = (unsigned short *)((gamemd::RLEBlitTransXlatZReadWrite_E *)(a6));
+  result = (unsigned short *)((gamemd::Stream *)(a6));
   v14 = (gamemd::Stream *)(arg0);
   v15 = g_ZBufferDescriptor; /*0x491fe8*/
   if ( a5 <= 0 ) /*0x491ff5*/
   {
-    v19 = (gamemd::RLEBlitTransXlatZReadWrite_E *)((int)(aP3));
+    v19 = (int)(aP3);
   }
   else
   {
@@ -565,7 +570,7 @@ v11 = (int)((gamemd::Stream *)(a5));
         *(unsigned char *)(v14 - 1) = *(unsigned char *)(*(unsigned int *)&this->m_1[3] + v20); /*0x49207f*/
         *result = arg10 - *a10; /*0x49208c*/
       }
-      v15 = (unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor));
+      v15 = (gamemd::Stream *)(g_ZBufferDescriptor);
       ++result; /*0x492098*/
       ++a10; /*0x49209b*/
       --v19; /*0x49209c*/
@@ -582,6 +587,7 @@ v11 = (int)((gamemd::Stream *)(a5));
       result = (unsigned short *)((char *)result - v15[1].Stream_field_0C); /*0x4920a2*/
   }
   return result; /*0x4920a9*/
+}
 }
 // 0x492100
 namespace gamemd {
@@ -663,27 +669,28 @@ unsigned short * E4Recv_492100::sub_492100(int arg0, unsigned char * a2, int a4,
   }
   return result; /*0x492200*/
 }
+}
 // 0x492250
 namespace gamemd {
 unsigned short * E4Recv_492250::sub_492250(unsigned char * a1, unsigned char * a2, RLEBlitTransRemapDestZReadWrite_E * aP3, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
 {
   int v11; // edx
-  uint16_t *result; // eax
+  RLEBlitTransRemapDestZReadWrite_E * result;
   unsigned char *v14; // esi
-  Stream * v15;
+  Stream *v15; // ecx
   int v18; // edx
-  RLEBlitTransRemapDestZReadWrite_E * v19;
+  int v19; // ebx
   uint8_t v21; // dl
   int v22; // edx
   char *v23; // edi
   int16_t v24; // cx
 v11 = (int)((gamemd::Stream *)(a5));
-  result = (uint16_t *)((gamemd::RLEBlitTransRemapDestZReadWrite_E *)(a6));
+  result = (gamemd::RLEBlitTransRemapDestZReadWrite_E *)((gamemd::Stream *)(a6));
   v14 = (gamemd::Stream *)(a1);
   v15 = g_ZBufferDescriptor; /*0x492268*/
   if ( a5 <= 0 ) /*0x492275*/
   {
-    v19 = (gamemd::RLEBlitTransRemapDestZReadWrite_E *)((int)(aP3));
+    v19 = (int)(aP3);
   }
   else
   {
@@ -738,7 +745,8 @@ v11 = (int)((gamemd::Stream *)(a5));
     if ( (unsigned int)result >= v15[1].Stream_field_08 ) /*0x49231c*/
       result = (uint16_t *)((char *)result - v15[1].Stream_field_0C); /*0x49231e*/
   }
-  return result; /*0x492325*/
+  return (unsigned short *)(result);
+}
 }
 // 0x492370
 namespace gamemd {
@@ -819,117 +827,122 @@ unsigned short * E4Recv_492370::sub_492370(unsigned char * a1, unsigned char * a
 namespace gamemd {
 int E4Recv_496310::sub_496310(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
-  void * result;
-  void * v13;
-  void * v17;
+  int v12; // esi
+  int result; // eax
+  int v14; // edx
   void * v18;
-  int v19; // eax
-  uint16_t v20; // cx
-  uint8_t v21; // [esp+18h] [ebp+Ch]
-result = (void *)((int)(a6));
-  v13 = (void *)(a3);
-  if ( a6 <= 0 ) /*0x496323*/
+  uint8_t v19; // al
+  int m_4; // eax
+  int v21; // ecx
+  uint8_t v22; // [esp+18h] [ebp+Ch]
+
+  result = (int)(a5);
+  v14 = (int)(a2);
+  if ( a5 <= 0 ) /*0x496323*/
   {
-    v17 = (void *)((int)(a5));
+    v18 = (unsigned char *)(a4);
   }
   else
   {
     do /*0x496338*/
     {
-      if ( *a4++ ) /*0x496325*/
+      if ( *(unsigned char *)a3++ ) /*0x496325*/
         --result; /*0x496335*/
       else
-        result -= *a4++; /*0x496330*/
+        result -= *(uint8_t *)a3++; /*0x496330*/
     }
     while ( result > 0 ); /*0x496338*/
     result = -result; /*0x49633e*/
-    v17 = a5 - result; /*0x496340*/
-    v13 = a3 + 2 * result; /*0x496342*/
+    v18 = &a4[-result]; /*0x496340*/
+    v14 = a2 + 2 * result; /*0x496342*/
   }
-  while ( v17 > 0 ) /*0x49634d*/
+  while ( (int)v18 > 0 ) /*0x49634d*/
   {
-    v18 = (unsigned char)(*a4++);
-    v21 = v18; /*0x496355*/
-    if ( v18 ) /*0x496359*/
+    v19 = *(unsigned char *)a3++; /*0x496350*/
+    v22 = v19; /*0x496355*/
+    if ( v19 ) /*0x496359*/
     {
-      v19 = *(unsigned int *)(a1 + 4); /*0x496376*/
-      IDA_LOWORD(a2) = *(unsigned short *)(a1 + 8); /*0x496379*/
-      v13 += 2; /*0x496383*/
-      v20 = *(unsigned short *)(v19 + 2 * v21); /*0x496386*/
-      IDA_LOWORD(v19) = *(unsigned short *)(v13 - 2) >> 2; /*0x49638e*/
-      result = 3 * (a2 & v19); /*0x49639a*/
-      --v17; /*0x49639f*/
-      *(unsigned short *)(v13 - 2) = result + (a2 & (v20 >> 2)); /*0x4963a0*/
+      m_4 = this->m_4; /*0x496376*/
+      IDA_LOWORD(v12) = *((unsigned short *)this + 4); /*0x496379*/
+      v14 += 2; /*0x496383*/
+      v21 = *(uint16_t *)(m_4 + 2 * v22); /*0x496386*/
+      IDA_LOWORD(m_4) = *(unsigned short *)(v14 - 2) >> 2; /*0x49638e*/
+      result = 3 * (v12 & m_4); /*0x49639a*/
+      --v18; /*0x49639f*/
+      *(unsigned short *)(v14 - 2) = result + (v12 & ((uint16_t)v21 >> 2)); /*0x4963a0*/
     }
     else
     {
-      IDA_LOBYTE(result) = *a4++; /*0x49635b*/
+      IDA_LOBYTE(result) = *(unsigned char *)a3++; /*0x49635b*/
       result = (uint8_t)result; /*0x496366*/
-      v17 -= (uint8_t)result; /*0x49636b*/
-      v13 += 2 * (uint8_t)result; /*0x49636d*/
+      v18 -= (uint8_t)result; /*0x49636b*/
+      v14 += 2 * (uint8_t)result; /*0x49636d*/
     }
   }
   return result; /*0x4963a9*/
+}
 }
 // 0x4964D0
 namespace gamemd {
 int E4Recv_4964D0::sub_4964D0(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
 {
+  int v12; // esi
   int result; // eax
-  int v13; // edx
-  int v17; // ebx
-  uint8_t v18; // al
-  int v19; // eax
-  int v20; // eax
-  int16_t v21; // cx
-  uint8_t v22; // [esp+18h] [ebp+Ch]
+  int v14; // edx
+  void * v18;
+  uint8_t v19; // al
+  int m_4; // eax
+  int v21; // eax
+  int16_t v22; // cx
+  uint8_t v23; // [esp+18h] [ebp+Ch]
 
-  result = a6; /*0x4964d0*/
-  v13 = a3; /*0x4964d4*/
-  if ( a6 <= 0 ) /*0x4964e3*/
+  result = (int)(a5);
+  v14 = (int)(a2);
+  if ( a5 <= 0 ) /*0x4964e3*/
   {
-    v17 = a5; /*0x496507*/
+    v18 = (unsigned char *)(a4);
   }
   else
   {
     do /*0x4964f8*/
     {
-      if ( *a4++ ) /*0x4964e5*/
+      if ( *(unsigned char *)a3++ ) /*0x4964e5*/
         --result; /*0x4964f5*/
       else
-        result -= *a4++; /*0x4964f0*/
+        result -= *(uint8_t *)a3++; /*0x4964f0*/
     }
     while ( result > 0 ); /*0x4964f8*/
     result = -result; /*0x4964fe*/
-    v17 = a5 - result; /*0x496500*/
-    v13 = a3 + 2 * result; /*0x496502*/
+    v18 = &a4[-result]; /*0x496500*/
+    v14 = a2 + 2 * result; /*0x496502*/
   }
-  while ( v17 > 0 ) /*0x49650d*/
+  while ( (int)v18 > 0 ) /*0x49650d*/
   {
-    v18 = *a4++; /*0x496510*/
-    v22 = v18; /*0x496515*/
-    if ( v18 ) /*0x496519*/
+    v19 = *(unsigned char *)a3++; /*0x496510*/
+    v23 = v19; /*0x496515*/
+    if ( v19 ) /*0x496519*/
     {
-      v19 = *(unsigned int *)(a1 + 4); /*0x496536*/
-      IDA_LOWORD(a2) = *(unsigned short *)(a1 + 8); /*0x496539*/
-      v13 += 2; /*0x496543*/
-      IDA_LOWORD(v19) = *(unsigned short *)(v19 + 2 * v22) >> 2; /*0x49654a*/
-      v20 = a2 & v19; /*0x49654e*/
-      v21 = 3 * v20; /*0x496550*/
-      IDA_LOWORD(v20) = *(unsigned short *)(v13 - 2) >> 2; /*0x496557*/
-      result = a2 & v20; /*0x49655b*/
-      --v17; /*0x49655f*/
-      *(unsigned short *)(v13 - 2) = result + v21; /*0x496560*/
+      m_4 = this->m_4; /*0x496536*/
+      IDA_LOWORD(v12) = *((unsigned short *)this + 4); /*0x496539*/
+      v14 += 2; /*0x496543*/
+      IDA_LOWORD(m_4) = *(unsigned short *)(m_4 + 2 * v23) >> 2; /*0x49654a*/
+      v21 = v12 & m_4; /*0x49654e*/
+      v22 = 3 * v21; /*0x496550*/
+      IDA_LOWORD(v21) = *(unsigned short *)(v14 - 2) >> 2; /*0x496557*/
+      result = v12 & v21; /*0x49655b*/
+      --v18; /*0x49655f*/
+      *(unsigned short *)(v14 - 2) = result + v22; /*0x496560*/
     }
     else
     {
-      IDA_LOBYTE(result) = *a4++; /*0x49651b*/
+      IDA_LOBYTE(result) = *(unsigned char *)a3++; /*0x49651b*/
       result = (uint8_t)result; /*0x496526*/
-      v17 -= (uint8_t)result; /*0x49652b*/
-      v13 += 2 * (uint8_t)result; /*0x49652d*/
+      v18 -= (uint8_t)result; /*0x49652b*/
+      v14 += 2 * (uint8_t, unsigned int a5, unsigned int a7, unsigned int a2, unsigned int a4)result; /*0x49652d*/
     }
   }
   return result; /*0x496569*/
+}
 }
 // 0x4965B0
 namespace gamemd {
@@ -955,7 +968,7 @@ int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, 
   {
     do /*0x4965e6*/
     {
-      if ( *a3++ ) /*0x4965d1*/
+      if (*a3++, unsigned int a4, unsigned int a2, unsigned int a7) /*0x4965d1*/
         --result; /*0x4965e3*/
       else
         result -= *a3++; /*0x4965de*/
@@ -965,7 +978,7 @@ int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, 
     v18 = a4 - v17; /*0x4965ee*/
     v15 = &a2[v17]; /*0x4965f0*/
     result = a7 + 2 * v17; /*0x4965f3*/
-    if ( (unsigned int)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4965ff*/
+    if ( (unsigned int, unsigned int a3, unsigned int a6, unsigned int a11)result >= g_ZBufferDescriptor[1].Stream_field_08 ) /*0x4965ff*/
       result -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496601*/
     v12 = result; /*0x496604*/
   }
@@ -994,6 +1007,7 @@ int E4Recv_4965B0::sub_4965B0(unsigned short * a1, RLEBlitTransXlatZRead * aP2, 
       v12 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496676*/
   }
   return result; /*0x49667d*/
+}
 }
 // 0x4966D0
 namespace gamemd {
@@ -1061,6 +1075,7 @@ int E4Recv_4966D0::sub_4966D0(int arg0, unsigned char * a2, int a4, int a5, int 
   }
   return result; /*0x4967c9*/
 }
+}
 // 0x496930
 namespace gamemd {
 int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75ZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
@@ -1126,6 +1141,7 @@ int E4Recv_496930::sub_496930(int arg0, unsigned char * a2, RLEBlitTransLucent75
   }
   return result; /*0x496a2e*/
 }
+}
 // 0x496A80
 namespace gamemd {
 int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTransLucent50ZRead_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int _38, char * a10)
@@ -1189,6 +1205,7 @@ int E4Recv_496A80::sub_496A80(unsigned short * a1, unsigned char * a2, RLEBlitTr
       v12 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496b6c*/
   }
   return result; /*0x496b77*/
+}
 }
 // 0x496BC0
 namespace gamemd {
@@ -1255,6 +1272,7 @@ int E4Recv_496BC0::sub_496BC0(int arg0, unsigned char * a2, RLEBlitTransLucent25
   }
   return result; /*0x496cbe*/
 }
+}
 // 0x496D10
 namespace gamemd {
 int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75ZReadWarp_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int arg20, char * a10)
@@ -1320,6 +1338,7 @@ int E4Recv_496D10::sub_496D10(int arg0, unsigned char * a2, RLEBlitTransLucent75
   }
   return result; /*0x496e13*/
 }
+}
 // 0x496E60
 namespace gamemd {
 int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTransLucent50ZReadWarp_G * aP3, int a5, int a6, unsigned int a7, int a8, int a9, int arg20, char * a10)
@@ -1383,6 +1402,7 @@ int E4Recv_496E60::sub_496E60(unsigned short * a1, unsigned char * a2, RLEBlitTr
       v14 -= g_ZBufferDescriptor[1].Stream_field_0C; /*0x496f51*/
   }
   return result; /*0x496f5c*/
+}
 }
 // 0x496FB0
 namespace gamemd {
@@ -1449,6 +1469,7 @@ int E4Recv_496FB0::sub_496FB0(int arg0, unsigned char * a2, RLEBlitTransLucent25
   }
   return result; /*0x4970b3*/
 }
+}
 // 0x497100
 namespace gamemd {
 unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlitTransXlatZReadWrite_G * aP3, int a5, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
@@ -1512,6 +1533,7 @@ unsigned short * E4Recv_497100::sub_497100(int arg0, unsigned char * a2, RLEBlit
       result = (unsigned short *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C); /*0x4971d9*/
   }
   return result; /*0x4971e0*/
+}
 }
 // 0x497230
 namespace gamemd {
@@ -1595,6 +1617,7 @@ unsigned short * E4Recv_497230::sub_497230(int arg0, unsigned char * a2, int a4,
   }
   return result; /*0x497339*/
 }
+}
 // 0x497390
 namespace gamemd {
 unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * a2, int a4, RLEBlitTransDarkenZReadWrite_G * aP4, int arg10, unsigned short * a6, int a8, int a9, int _38, char * a10)
@@ -1663,6 +1686,7 @@ unsigned short * E4Recv_497390::sub_497390(unsigned short * a1, unsigned char * 
       result = (uint16_t *)((char *)result - g_ZBufferDescriptor[1].Stream_field_0C); /*0x49745e*/
   }
   return result; /*0x497465*/
+}
 }
 // 0x49B7E0
 namespace gamemd {
@@ -1740,6 +1764,7 @@ void FillScoreScreenStats(IUnknown * Destination, char a2)
     *((unsigned int *)Destination + 24) += v16; /*0x49b8ec*/
   ToWideStringChar((char *)Destination); /*0x49b902*/
   return Debug::Log(); /*0x49b826*/
+}
 }
 // 0x49C0D0
 namespace gamemd {
@@ -2566,9 +2591,10 @@ AbstractClass * * E4Recv_49E7C0::sub_49E7C0(char a2)
     IDA_BYTE1(this->referenceCount) = 0; /*0x49e8c1*/
     this->nextArrayIndex = 0; /*0x49e8c6*/
     if ( (a2 & 1) != 0 ) /*0x49e8c9*/
-      RA2_OPDEL(this); /*0x49e8cc*/
+      RA2_OPDEL(); /*0x49e8cc*/
     return (char *)this; /*0x49e8d4*/
   }
+}
 }
 // 0x491100
 namespace gamemd {
@@ -5387,7 +5413,7 @@ BlitTransXlat * E4Recv_499CA0::___Gfacet_locale_std__UAEPAXI_Z_4(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x499ca9*/
   if ( (a2 & 1) != 0 ) /*0x499caf*/
-    RA2_OPDEL(this); /*0x499cb2*/
+    RA2_OPDEL(); /*0x499cb2*/
   return this; /*0x499cbc*/
 }
 } // namespace gamemd
@@ -5398,7 +5424,7 @@ std::locale::facet * E4Recv_499D40::___Gfacet_locale_std__UAEPAXI_Z_9(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x499d49*/
   if ( (a2 & 1) != 0 ) /*0x499d4f*/
-    RA2_OPDEL(this); /*0x499d52*/
+    RA2_OPDEL(); /*0x499d52*/
   return this; /*0x499d5c*/
 }
 } // namespace gamemd
@@ -5409,7 +5435,7 @@ std::locale::facet * E4Recv_499D60::___Gfacet_locale_std__UAEPAXI_Z_10(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x499d69*/
   if ( (a2 & 1) != 0 ) /*0x499d6f*/
-    RA2_OPDEL(this); /*0x499d72*/
+    RA2_OPDEL(); /*0x499d72*/
   return this; /*0x499d7c*/
 }
 } // namespace gamemd
@@ -5420,7 +5446,7 @@ RLEBlitTransXlat * E4Recv_499D80::___Gfacet_locale_std__UAEPAXI_Z_11(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x499d89*/
   if ( (a2 & 1) != 0 ) /*0x499d8f*/
-    RA2_OPDEL(this); /*0x499d92*/
+    RA2_OPDEL(); /*0x499d92*/
   return this; /*0x499d9c*/
 }
 } // namespace gamemd
@@ -5431,7 +5457,7 @@ std::locale::facet * E4Recv_499DC0::___Gfacet_locale_std__UAEPAXI_Z_13(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x499dc9*/
   if ( (a2 & 1) != 0 ) /*0x499dcf*/
-    RA2_OPDEL(this); /*0x499dd2*/
+    RA2_OPDEL(); /*0x499dd2*/
   return this; /*0x499ddc*/
 }
 } // namespace gamemd
@@ -5442,7 +5468,7 @@ std::locale::facet * E4Recv_499DE0::___Gfacet_locale_std__UAEPAXI_Z_14(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x499de9*/
   if ( (a2 & 1) != 0 ) /*0x499def*/
-    RA2_OPDEL(this); /*0x499df2*/
+    RA2_OPDEL(); /*0x499df2*/
   return this; /*0x499dfc*/
 }
 } // namespace gamemd
@@ -5453,7 +5479,7 @@ std::locale::facet * E4Recv_499E00::___Gfacet_locale_std__UAEPAXI_Z_15(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x499e09*/
   if ( (a2 & 1) != 0 ) /*0x499e0f*/
-    RA2_OPDEL(this); /*0x499e12*/
+    RA2_OPDEL(); /*0x499e12*/
   return this; /*0x499e1c*/
 }
 } // namespace gamemd
@@ -5464,7 +5490,7 @@ RLEBlitTransXlatZRead * E4Recv_499E20::___Gfacet_locale_std__UAEPAXI_Z_16(char a
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x499e29*/
   if ( (a2 & 1) != 0 ) /*0x499e2f*/
-    RA2_OPDEL(this); /*0x499e32*/
+    RA2_OPDEL(); /*0x499e32*/
   return this; /*0x499e3c*/
 }
 } // namespace gamemd
@@ -5475,7 +5501,7 @@ std::locale::facet * E4Recv_499E40::___Gfacet_locale_std__UAEPAXI_Z_17(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x499e49*/
   if ( (a2 & 1) != 0 ) /*0x499e4f*/
-    RA2_OPDEL(this); /*0x499e52*/
+    RA2_OPDEL(); /*0x499e52*/
   return this; /*0x499e5c*/
 }
 } // namespace gamemd
@@ -5486,7 +5512,7 @@ std::locale::facet * E4Recv_499E60::___Gfacet_locale_std__UAEPAXI_Z_18(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x499e69*/
   if ( (a2 & 1) != 0 ) /*0x499e6f*/
-    RA2_OPDEL(this); /*0x499e72*/
+    RA2_OPDEL(); /*0x499e72*/
   return this; /*0x499e7c*/
 }
 } // namespace gamemd
@@ -5497,7 +5523,7 @@ std::locale::facet * E4Recv_499E80::___Gfacet_locale_std__UAEPAXI_Z_19(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x499e89*/
   if ( (a2 & 1) != 0 ) /*0x499e8f*/
-    RA2_OPDEL(this); /*0x499e92*/
+    RA2_OPDEL(); /*0x499e92*/
   return this; /*0x499e9c*/
 }
 } // namespace gamemd
@@ -5508,7 +5534,7 @@ std::locale::facet * E4Recv_499EA0::___Gfacet_locale_std__UAEPAXI_Z_20(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x499ea9*/
   if ( (a2 & 1) != 0 ) /*0x499eaf*/
-    RA2_OPDEL(this); /*0x499eb2*/
+    RA2_OPDEL(); /*0x499eb2*/
   return this; /*0x499ebc*/
 }
 } // namespace gamemd
@@ -5519,7 +5545,7 @@ std::locale::facet * E4Recv_499EC0::___Gfacet_locale_std__UAEPAXI_Z_21(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x499ec9*/
   if ( (a2 & 1) != 0 ) /*0x499ecf*/
-    RA2_OPDEL(this); /*0x499ed2*/
+    RA2_OPDEL(); /*0x499ed2*/
   return this; /*0x499edc*/
 }
 } // namespace gamemd
@@ -5530,7 +5556,7 @@ std::locale::facet * E4Recv_499EE0::___Gfacet_locale_std__UAEPAXI_Z_22(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x499ee9*/
   if ( (a2 & 1) != 0 ) /*0x499eef*/
-    RA2_OPDEL(this); /*0x499ef2*/
+    RA2_OPDEL(); /*0x499ef2*/
   return this; /*0x499efc*/
 }
 } // namespace gamemd
@@ -5541,7 +5567,7 @@ std::locale::facet * E4Recv_499F00::___Gfacet_locale_std__UAEPAXI_Z_23(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x499f09*/
   if ( (a2 & 1) != 0 ) /*0x499f0f*/
-    RA2_OPDEL(this); /*0x499f12*/
+    RA2_OPDEL(); /*0x499f12*/
   return this; /*0x499f1c*/
 }
 } // namespace gamemd
@@ -5552,7 +5578,7 @@ BlitPlainXlat * E4Recv_499F20::___Gfacet_locale_std__UAEPAXI_Z_24(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x499f29*/
   if ( (a2 & 1) != 0 ) /*0x499f2f*/
-    RA2_OPDEL(this); /*0x499f32*/
+    RA2_OPDEL(); /*0x499f32*/
   return this; /*0x499f3c*/
 }
 } // namespace gamemd
@@ -5563,7 +5589,7 @@ std::locale::facet * E4Recv_499F40::___Gfacet_locale_std__UAEPAXI_Z_25(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x499f49*/
   if ( (a2 & 1) != 0 ) /*0x499f4f*/
-    RA2_OPDEL(this); /*0x499f52*/
+    RA2_OPDEL(); /*0x499f52*/
   return this; /*0x499f5c*/
 }
 } // namespace gamemd
@@ -5574,7 +5600,7 @@ BlitTransDarken * E4Recv_499F60::___Gfacet_locale_std__UAEPAXI_Z_26(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x499f69*/
   if ( (a2 & 1) != 0 ) /*0x499f6f*/
-    RA2_OPDEL(this); /*0x499f72*/
+    RA2_OPDEL(); /*0x499f72*/
   return this; /*0x499f7c*/
 }
 } // namespace gamemd
@@ -5585,7 +5611,7 @@ BlitTransLucent75 * E4Recv_499F80::___Gfacet_locale_std__UAEPAXI_Z_27(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x499f89*/
   if ( (a2 & 1) != 0 ) /*0x499f8f*/
-    RA2_OPDEL(this); /*0x499f92*/
+    RA2_OPDEL(); /*0x499f92*/
   return this; /*0x499f9c*/
 }
 } // namespace gamemd
@@ -5596,7 +5622,7 @@ BlitTransLucent50 * E4Recv_499FA0::___Gfacet_locale_std__UAEPAXI_Z_28(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x499fa9*/
   if ( (a2 & 1) != 0 ) /*0x499faf*/
-    RA2_OPDEL(this); /*0x499fb2*/
+    RA2_OPDEL(); /*0x499fb2*/
   return this; /*0x499fbc*/
 }
 } // namespace gamemd
@@ -5607,7 +5633,7 @@ BlitTransLucent25 * E4Recv_499FC0::___Gfacet_locale_std__UAEPAXI_Z_29(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x499fc9*/
   if ( (a2 & 1) != 0 ) /*0x499fcf*/
-    RA2_OPDEL(this); /*0x499fd2*/
+    RA2_OPDEL(); /*0x499fd2*/
   return this; /*0x499fdc*/
 }
 } // namespace gamemd
@@ -5618,7 +5644,7 @@ std::locale::facet * E4Recv_499FE0::___Gfacet_locale_std__UAEPAXI_Z_30(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x499fe9*/
   if ( (a2 & 1) != 0 ) /*0x499fef*/
-    RA2_OPDEL(this); /*0x499ff2*/
+    RA2_OPDEL(); /*0x499ff2*/
   return this; /*0x499ffc*/
 }
 } // namespace gamemd
@@ -5629,7 +5655,7 @@ BlitTransXlatZRead * E4Recv_49A000::___Gfacet_locale_std__UAEPAXI_Z_31(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x49a009*/
   if ( (a2 & 1) != 0 ) /*0x49a00f*/
-    RA2_OPDEL(this); /*0x49a012*/
+    RA2_OPDEL(); /*0x49a012*/
   return this; /*0x49a01c*/
 }
 } // namespace gamemd
@@ -5640,7 +5666,7 @@ std::locale::facet * E4Recv_49A020::___Gfacet_locale_std__UAEPAXI_Z_32(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x49a029*/
   if ( (a2 & 1) != 0 ) /*0x49a02f*/
-    RA2_OPDEL(this); /*0x49a032*/
+    RA2_OPDEL(); /*0x49a032*/
   return this; /*0x49a03c*/
 }
 } // namespace gamemd
@@ -5651,7 +5677,7 @@ std::locale::facet * E4Recv_49A040::___Gfacet_locale_std__UAEPAXI_Z_33(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x49a049*/
   if ( (a2 & 1) != 0 ) /*0x49a04f*/
-    RA2_OPDEL(this); /*0x49a052*/
+    RA2_OPDEL(); /*0x49a052*/
   return this; /*0x49a05c*/
 }
 } // namespace gamemd
@@ -5662,7 +5688,7 @@ std::locale::facet * E4Recv_49A060::___Gfacet_locale_std__UAEPAXI_Z_34(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x49a069*/
   if ( (a2 & 1) != 0 ) /*0x49a06f*/
-    RA2_OPDEL(this); /*0x49a072*/
+    RA2_OPDEL(); /*0x49a072*/
   return this; /*0x49a07c*/
 }
 } // namespace gamemd
@@ -5673,7 +5699,7 @@ std::locale::facet * E4Recv_49A080::___Gfacet_locale_std__UAEPAXI_Z_35(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x49a089*/
   if ( (a2 & 1) != 0 ) /*0x49a08f*/
-    RA2_OPDEL(this); /*0x49a092*/
+    RA2_OPDEL(); /*0x49a092*/
   return this; /*0x49a09c*/
 }
 } // namespace gamemd
@@ -5684,7 +5710,7 @@ std::locale::facet * E4Recv_49A0A0::___Gfacet_locale_std__UAEPAXI_Z_36(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x49a0a9*/
   if ( (a2 & 1) != 0 ) /*0x49a0af*/
-    RA2_OPDEL(this); /*0x49a0b2*/
+    RA2_OPDEL(); /*0x49a0b2*/
   return this; /*0x49a0bc*/
 }
 } // namespace gamemd
@@ -5695,7 +5721,7 @@ std::locale::facet * E4Recv_49A0C0::___Gfacet_locale_std__UAEPAXI_Z_37(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x49a0c9*/
   if ( (a2 & 1) != 0 ) /*0x49a0cf*/
-    RA2_OPDEL(this); /*0x49a0d2*/
+    RA2_OPDEL(); /*0x49a0d2*/
   return this; /*0x49a0dc*/
 }
 } // namespace gamemd
@@ -5706,7 +5732,7 @@ std::locale::facet * E4Recv_49A0E0::___Gfacet_locale_std__UAEPAXI_Z_38(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x49a0e9*/
   if ( (a2 & 1) != 0 ) /*0x49a0ef*/
-    RA2_OPDEL(this); /*0x49a0f2*/
+    RA2_OPDEL(); /*0x49a0f2*/
   return this; /*0x49a0fc*/
 }
 } // namespace gamemd
@@ -5717,7 +5743,7 @@ std::locale::facet * E4Recv_49A100::___Gfacet_locale_std__UAEPAXI_Z_39(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x49a109*/
   if ( (a2 & 1) != 0 ) /*0x49a10f*/
-    RA2_OPDEL(this); /*0x49a112*/
+    RA2_OPDEL(); /*0x49a112*/
   return this; /*0x49a11c*/
 }
 } // namespace gamemd
@@ -5728,7 +5754,7 @@ std::locale::facet * E4Recv_49A120::___Gfacet_locale_std__UAEPAXI_Z_40(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x49a129*/
   if ( (a2 & 1) != 0 ) /*0x49a12f*/
-    RA2_OPDEL(this); /*0x49a132*/
+    RA2_OPDEL(); /*0x49a132*/
   return this; /*0x49a13c*/
 }
 } // namespace gamemd
@@ -5739,7 +5765,7 @@ BlitTransXlatZReadWrite * E4Recv_49A140::___Gfacet_locale_std__UAEPAXI_Z_41(char
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x49a149*/
   if ( (a2 & 1) != 0 ) /*0x49a14f*/
-    RA2_OPDEL(this); /*0x49a152*/
+    RA2_OPDEL(); /*0x49a152*/
   return this; /*0x49a15c*/
 }
 } // namespace gamemd
@@ -5750,7 +5776,7 @@ std::locale::facet * E4Recv_49A160::___Gfacet_locale_std__UAEPAXI_Z_42(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x49a169*/
   if ( (a2 & 1) != 0 ) /*0x49a16f*/
-    RA2_OPDEL(this); /*0x49a172*/
+    RA2_OPDEL(); /*0x49a172*/
   return this; /*0x49a17c*/
 }
 } // namespace gamemd
@@ -5761,7 +5787,7 @@ std::locale::facet * E4Recv_49A180::___Gfacet_locale_std__UAEPAXI_Z_43(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x49a189*/
   if ( (a2 & 1) != 0 ) /*0x49a18f*/
-    RA2_OPDEL(this); /*0x49a192*/
+    RA2_OPDEL(); /*0x49a192*/
   return this; /*0x49a19c*/
 }
 } // namespace gamemd
@@ -5772,7 +5798,7 @@ std::locale::facet * E4Recv_49A7C0::___Gfacet_locale_std__UAEPAXI_Z_55(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a7c9*/
   if ( (a2 & 1) != 0 ) /*0x49a7cf*/
-    RA2_OPDEL(this); /*0x49a7d2*/
+    RA2_OPDEL(); /*0x49a7d2*/
   return this; /*0x49a7dc*/
 }
 } // namespace gamemd
@@ -5783,7 +5809,7 @@ std::locale::facet * E4Recv_49A7E0::___Gfacet_locale_std__UAEPAXI_Z_56(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a7e9*/
   if ( (a2 & 1) != 0 ) /*0x49a7ef*/
-    RA2_OPDEL(this); /*0x49a7f2*/
+    RA2_OPDEL(); /*0x49a7f2*/
   return this; /*0x49a7fc*/
 }
 } // namespace gamemd
@@ -5794,7 +5820,7 @@ std::locale::facet * E4Recv_49A800::___Gfacet_locale_std__UAEPAXI_Z_57(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a809*/
   if ( (a2 & 1) != 0 ) /*0x49a80f*/
-    RA2_OPDEL(this); /*0x49a812*/
+    RA2_OPDEL(); /*0x49a812*/
   return this; /*0x49a81c*/
 }
 } // namespace gamemd
@@ -5805,7 +5831,7 @@ RLEBlitTransXlatZRead * E4Recv_49A820::___Gfacet_locale_std__UAEPAXI_Z_58(char a
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a829*/
   if ( (a2 & 1) != 0 ) /*0x49a82f*/
-    RA2_OPDEL(this); /*0x49a832*/
+    RA2_OPDEL(); /*0x49a832*/
   return this; /*0x49a83c*/
 }
 } // namespace gamemd
@@ -5816,7 +5842,7 @@ std::locale::facet * E4Recv_49A840::___Gfacet_locale_std__UAEPAXI_Z_59(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a849*/
   if ( (a2 & 1) != 0 ) /*0x49a84f*/
-    RA2_OPDEL(this); /*0x49a852*/
+    RA2_OPDEL(); /*0x49a852*/
   return this; /*0x49a85c*/
 }
 } // namespace gamemd
@@ -5827,7 +5853,7 @@ std::locale::facet * E4Recv_49A860::___Gfacet_locale_std__UAEPAXI_Z_60(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a869*/
   if ( (a2 & 1) != 0 ) /*0x49a86f*/
-    RA2_OPDEL(this); /*0x49a872*/
+    RA2_OPDEL(); /*0x49a872*/
   return this; /*0x49a87c*/
 }
 } // namespace gamemd
@@ -5838,7 +5864,7 @@ std::locale::facet * E4Recv_49A880::___Gfacet_locale_std__UAEPAXI_Z_61(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a889*/
   if ( (a2 & 1) != 0 ) /*0x49a88f*/
-    RA2_OPDEL(this); /*0x49a892*/
+    RA2_OPDEL(); /*0x49a892*/
   return this; /*0x49a89c*/
 }
 } // namespace gamemd
@@ -5849,7 +5875,7 @@ std::locale::facet * E4Recv_49A8A0::___Gfacet_locale_std__UAEPAXI_Z_62(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a8a9*/
   if ( (a2 & 1) != 0 ) /*0x49a8af*/
-    RA2_OPDEL(this); /*0x49a8b2*/
+    RA2_OPDEL(); /*0x49a8b2*/
   return this; /*0x49a8bc*/
 }
 } // namespace gamemd
@@ -5860,7 +5886,7 @@ std::locale::facet * E4Recv_49A8C0::___Gfacet_locale_std__UAEPAXI_Z_63(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a8c9*/
   if ( (a2 & 1) != 0 ) /*0x49a8cf*/
-    RA2_OPDEL(this); /*0x49a8d2*/
+    RA2_OPDEL(); /*0x49a8d2*/
   return this; /*0x49a8dc*/
 }
 } // namespace gamemd
@@ -5871,7 +5897,7 @@ std::locale::facet * E4Recv_49A8E0::___Gfacet_locale_std__UAEPAXI_Z_64(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a8e9*/
   if ( (a2 & 1) != 0 ) /*0x49a8ef*/
-    RA2_OPDEL(this); /*0x49a8f2*/
+    RA2_OPDEL(); /*0x49a8f2*/
   return this; /*0x49a8fc*/
 }
 } // namespace gamemd
@@ -5882,7 +5908,7 @@ std::locale::facet * E4Recv_49A900::___Gfacet_locale_std__UAEPAXI_Z_65(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a909*/
   if ( (a2 & 1) != 0 ) /*0x49a90f*/
-    RA2_OPDEL(this); /*0x49a912*/
+    RA2_OPDEL(); /*0x49a912*/
   return this; /*0x49a91c*/
 }
 } // namespace gamemd
@@ -5893,7 +5919,7 @@ std::locale::facet * E4Recv_49A920::___Gfacet_locale_std__UAEPAXI_Z_66(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a929*/
   if ( (a2 & 1) != 0 ) /*0x49a92f*/
-    RA2_OPDEL(this); /*0x49a932*/
+    RA2_OPDEL(); /*0x49a932*/
   return this; /*0x49a93c*/
 }
 } // namespace gamemd
@@ -5904,7 +5930,7 @@ std::locale::facet * E4Recv_49A940::___Gfacet_locale_std__UAEPAXI_Z_67(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a949*/
   if ( (a2 & 1) != 0 ) /*0x49a94f*/
-    RA2_OPDEL(this); /*0x49a952*/
+    RA2_OPDEL(); /*0x49a952*/
   return this; /*0x49a95c*/
 }
 } // namespace gamemd
@@ -5915,7 +5941,7 @@ std::locale::facet * E4Recv_49A960::___Gfacet_locale_std__UAEPAXI_Z_68(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a969*/
   if ( (a2 & 1) != 0 ) /*0x49a96f*/
-    RA2_OPDEL(this); /*0x49a972*/
+    RA2_OPDEL(); /*0x49a972*/
   return this; /*0x49a97c*/
 }
 } // namespace gamemd
@@ -5926,7 +5952,7 @@ std::locale::facet * E4Recv_49A980::___Gfacet_locale_std__UAEPAXI_Z_69(char a2)
 {
   *(unsigned int *)this = (void*)&RLEBlitter_vftable; /*0x49a989*/
   if ( (a2 & 1) != 0 ) /*0x49a98f*/
-    RA2_OPDEL(this); /*0x49a992*/
+    RA2_OPDEL(); /*0x49a992*/
   return this; /*0x49a99c*/
 }
 } // namespace gamemd

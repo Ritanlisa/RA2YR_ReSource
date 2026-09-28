@@ -12,7 +12,7 @@ namespace gamemd {
 int BufferIOFileClass::Destruct()
 {
   *(unsigned int *)this->__pad_0 = &off_7E1668; /*0x535a60*/
-  return BufferIOFileClass::Dtor(this);
+  return BufferIOFileClass::Dtor();
 }
 } // namespace gamemd
 // 0x65CA70

@@ -10,7 +10,7 @@
 namespace gamemd {
 BOOL E4Recv_63DB20::sub_63DB20(unsigned int * a2)
 {
-  void * v2;
+  int v2; // eax
   void *vtable1; // edx
   BOOL result; // eax
 

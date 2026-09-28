@@ -23,7 +23,7 @@ namespace gamemd {
 int Delegate::ProcessBitmapStream(char * Src, int a3)
 {
   char *v3; // ebp
-  unsigned char * v5;
+  int v5; // esi
   unsigned char *v6; // ebx
   int v7; // ecx
   int v8; // ecx
@@ -36,7 +36,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
 
   v3 = Src; /*0x42ddb4*/
   if ( !Src || a3 < 1 ) /*0x42ddc8*/
-    return Delegate::Dispatch((Pipe *)this, (int)Src, a3); /*0x42df25*/
+    return Delegate::Dispatch((int)Src, a3); /*0x42df25*/
   v13 = 0; /*0x42ddd5*/
   if ( this->field_C ) /*0x42ddce*/
   {
@@ -247,10 +247,10 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   *(unsigned int *)this->__pad_0 = (void*)&GenericNode_vftable; /*0x52ae27*/
   if ( this ) /*0x52ae2d*/
   {
-    Previous = (gamemd::GenericNode *)((int)(this->Previous));
+    Previous = (gamemd::GenericNode *)(this->Previous);
     if ( Previous ) /*0x52ae34*/
     {
-      v4 = this->Delegate_field_08; /*0x52ae36*/
+      v4 = (int)(this->Delegate_field_08);
       if ( v4 ) /*0x52ae3b*/
       {
         v4->Previous = Previous; /*0x52ae3d*/
@@ -261,7 +261,7 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
     }
   }
   if ( (a2 & 1) != 0 ) /*0x52ae54*/
-    RA2_OPDEL(this); /*0x52ae57*/
+    RA2_OPDEL(); /*0x52ae57*/
   return this->__pad_0; /*0x52ae61*/
 }
 } // namespace gamemd
@@ -270,9 +270,9 @@ namespace gamemd {
 int * Delegate::ClearVectorAndStraw(char a2)
 {
   Vector::Clear((int)&this->__pad_0[12]); /*0x52ae76*/
-  Straw::Dtor((Straw *)this); /*0x52ae7d*/
+  Straw::Dtor(); /*0x52ae7d*/
   if ( (a2 & 1) != 0 ) /*0x52ae87*/
-    RA2_OPDEL(this); /*0x52ae8a*/
+    RA2_OPDEL(); /*0x52ae8a*/
   return (int *)this->__pad_0; /*0x52ae94*/
 }
 } // namespace gamemd
@@ -280,9 +280,9 @@ int * Delegate::ClearVectorAndStraw(char a2)
 namespace gamemd {
 int * Delegate::DestroyStraw(char a2)
 {
-  Straw::Dtor((Straw *)this); /*0x52aea3*/
+  Straw::Dtor(); /*0x52aea3*/
   if ( (a2 & 1) != 0 ) /*0x52aead*/
-    RA2_OPDEL(this); /*0x52aeb0*/
+    RA2_OPDEL(); /*0x52aeb0*/
   return (int *)this->__pad_0; /*0x52aeba*/
 }
 } // namespace gamemd
@@ -290,9 +290,9 @@ int * Delegate::DestroyStraw(char a2)
 namespace gamemd {
 int * Delegate::DestroyPipe(char a2)
 {
-  Pipe::Dtor((Pipe *)this); /*0x52aee3*/
+  Pipe::Dtor(); /*0x52aee3*/
   if ( (a2 & 1) != 0 ) /*0x52aeed*/
-    RA2_OPDEL(this); /*0x52aef0*/
+    RA2_OPDEL(); /*0x52aef0*/
   return (int *)this->__pad_0; /*0x52aefa*/
 }
 } // namespace gamemd

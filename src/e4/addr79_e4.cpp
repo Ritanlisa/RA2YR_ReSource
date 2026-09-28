@@ -34,6 +34,9 @@
 #include "e4/classes/DialogClass_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ComPtr_e4.hpp"
+#include "e4/classes/E4Recv_7B2E50_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x792CF0
 namespace gamemd {
@@ -101,13 +104,14 @@ void sub_792CF0(HWND hWnd, UINT a2, WPARAM a3, char * a4)
   }
   return result; /*0x792d2c*/
 }
+}
 // 0x793280
 namespace gamemd {
 void sub_793280(HWND hWnd, UINT a2, WPARAM a3, char * a4)
 {
   int result; // eax
-  int v5; // edi
-  unsigned int v6;
+  unsigned int v5;
+  int *v6; // esi
   HWND DlgItem; // eax
   int i; // esi
   HWND v9; // edi
@@ -188,6 +192,7 @@ void sub_793280(HWND hWnd, UINT a2, WPARAM a3, char * a4)
     }
   }
   return result; /*0x7932b0*/
+}
 }
 // 0x793490
 namespace gamemd {
@@ -305,6 +310,7 @@ AbstractClass * * HandleWOLForwardingError()
   }
   return (gamemd::AbstractClass **)(result);
 }
+}
 // 0x793B30
 namespace gamemd {
 int sub_793B30(char a1, const char * a2)
@@ -321,11 +327,12 @@ int sub_793B30(char a1, const char * a2)
   Debug::Log(); /*0x793b85*/
   return (*(int (__stdcall **)(LPVOID, unsigned char *))(*(unsigned int *)ppv + 60))(ppv, v3); /*0x793b9d*/
 }
+}
 // 0x793D20
 namespace gamemd {
 void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
 {
-  IUnknown * v3;
+  int v3; // ebp
   int v4; // esi
   char *v5; // edi
   char *v6; // ebx
@@ -335,9 +342,9 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   int v11; // eax
   int v12; // ebx
   int16_t v13; // si
-  int * v14;
+  uint16_t v14; // di
   char v15; // bl
-  unsigned int v16;
+  int *v16; // ebx
   int v17; // esi
   unsigned int *v18; // ecx
   int v19; // edx
@@ -391,9 +398,9 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   int v67; // [esp+32h] [ebp-71Ch]
   int j; // [esp+3Ah] [ebp-714h]
   int v69; // [esp+3Eh] [ebp-710h] BYREF
-  int v70; // [esp+42h] [ebp-70Ch]
+  IUnknown * v70;
   int v71; // [esp+46h] [ebp-708h]
-  IUnknown * v72;
+  int v72; // [esp+4Ah] [ebp-704h]
   int v73; // [esp+4Eh] [ebp-700h]
   int i; // [esp+56h] [ebp-6F8h]
   unsigned int v75[4]; // [esp+5Ah] [ebp-6F4h] BYREF
@@ -422,9 +429,10 @@ void NegotiateNetworkConnection(IUnknown * aP0, int a2, int a3)
   int v98[11]; // [esp+586h] [ebp-1C8h] BYREF
   int16_t v99; // [esp+5B2h] [ebp-19Ch]
   char v100; // [esp+5B4h] [ebp-19Ah]
-v3 = (IUnknown *)((int)(aP0));
-  v70 = a2; /*0x793d2c*/
-  v72 = aP0; /*0x793d34*/
+
+  v3 = (int)(aP0);
+  v70 = (IUnknown *)((int)(a2));
+  v72 = (int)(aP0);
   v4 = 0; /*0x793d3d*/
   Timer::GetTicks(); /*0x793d38*/
   Timer::GetTicks(); /*0x793d4b*/
@@ -487,7 +495,7 @@ v3 = (IUnknown *)((int)(aP0));
     if ( v56 ) /*0x793eea*/
     {
       v14 = (int *)(0);
-      v15 = dword_ABFEC8; /*0x793f1f*/
+      v15 = (int *)(dword_ABFEC8);
       Debug::Log(); /*0x793f2b*/
       if ( (v15 & 0x40) != 0 ) /*0x793f36*/
         goto LABEL_110; /*0x793f36*/
@@ -794,6 +802,7 @@ v3 = (IUnknown *)((int)(aP0));
   Debug::Log(); /*0x794794*/
   return v42; /*0x793e37*/
 }
+}
 // 0x7947B0
 namespace gamemd {
 char NetworkLobby_WaitForPlayers()
@@ -963,6 +972,7 @@ char NetworkLobby_WaitForPlayers()
   LABEL_45:
   Debug::Log(); /*0x794b7d*/
   return 0; /*0x7947f5*/
+}
 }
 // 0x794BA0
 namespace gamemd {
@@ -1426,6 +1436,7 @@ AbstractClass * * WOL_StartGame()
     byte_B77E27 = 0; /*0x794c14*/
     byte_B77E26 = 0; /*0x794c1b*/
   }
+}
 }
 // 0x795CD0
 namespace gamemd {
@@ -1893,6 +1904,7 @@ int WOL_NegotiateScenario(char a1)
     return 1; /*0x7966fe*/
   return result; /*0x796703*/
 }
+}
 // 0x796710
 namespace gamemd {
 char HandleWOLRematch()
@@ -1983,6 +1995,7 @@ char HandleWOLRematch()
   byte_B77E2C = 0; /*0x79693a*/
   Network::SetConnectionParams(&unk_A8E9C0, 30, -1, 600, 1); /*0x79694c*/
   return 1; /*0x7968d9*/
+}
 }
 // 0x796B90
 namespace gamemd {
@@ -2088,6 +2101,7 @@ CampaignScore * * WOL_LobbyDlgProc(HWND hWnd, LONG a2, int a3, HWND a4)
     return 0; /*0x796d1f*/
   }
   return result; /*0x796c01*/
+}
 }
 // 0x7970D0
 namespace gamemd {
@@ -2300,6 +2314,7 @@ AbstractClass * * NetworkGame_Init()
   byte_B76568[0] = 0; /*0x797596*/
   return Scenario::PreGameInit(); /*0x7975a0*/
 }
+}
 // 0x797640
 namespace gamemd {
 int sub_797640(int a1)
@@ -2392,6 +2407,7 @@ int sub_797640(int a1)
     SetFocus(DlgItem); /*0x7977c7*/
   byte_B77DC0 = v10; /*0x7977d6*/
   return v3; /*0x7977d3*/
+}
 }
 // 0x797800
 namespace gamemd {
@@ -2605,6 +2621,7 @@ ObjectClass * * WOL_FetchData()
   }
   return 0; /*0x79789f*/
 }
+}
 // 0x797C20
 namespace gamemd {
 AbstractClass * * WOL_InitVersionStrings()
@@ -2758,6 +2775,7 @@ AbstractClass * * WOL_InitVersionStrings()
   }
   return result; /*0x798112*/
 }
+}
 // 0x7982D0
 namespace gamemd {
 int sub_7982D0(int a1, DWORD a2)
@@ -2786,6 +2804,7 @@ int sub_7982D0(int a1, DWORD a2)
     ResetEvent(*(&Handles + v4)); /*0x798320*/
     return v4; /*0x79832e*/
   }
+}
 }
 // 0x7983E0
 namespace gamemd {
@@ -2967,6 +2986,7 @@ void Multiplayer_Setup2_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int
     return 0; /*0x7988a6*/
   }
   return result; /*0x798452*/
+}
 }
 // 0x7988C0
 namespace gamemd {
@@ -3157,6 +3177,7 @@ void Multiplayer_GameMode_DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned i
     return 0; /*0x798dca*/
   }
   return result; /*0x798932*/
+}
 }
 // 0x799080
 namespace gamemd {
@@ -3582,6 +3603,7 @@ void MainLobbyDlgProcWOL(HWND hWnd, LPARAM lParam, ObjectClass a3)
     }
   }
   return result; /*0x7990f4*/
+}
 }
 // 0x799EA0
 namespace gamemd {
@@ -4349,6 +4371,7 @@ bool WOL_FindBuddy()
   DeleteAndZero(&v11); /*0x79be54*/
   return v10; /*0x79bc98*/
 }
+}
 // 0x79BF50
 namespace gamemd {
 int E4Recv_79BF50::sub_79BF50()
@@ -4399,6 +4422,7 @@ int E4Recv_79BF50::sub_79BF50()
   LABEL_12:
   v5 = GetDlgItem((HWND)this, 1474); /*0x79c01b*/
   return EnableWindow(v5, v9); /*0x79c031*/
+}
 }
 // 0x79CBA0
 namespace gamemd {
@@ -4530,6 +4554,7 @@ AbstractClass * * RemoveWOLPlayerLogin(const char ** a1)
     DeleteAndZero((ObjectClass *)&v14.vtable3); /*0x79ce53*/
   }
 }
+}
 // 0x79CE70
 namespace gamemd {
 AbstractClass * * int WOL_RefreshChannelList()
@@ -4628,6 +4653,7 @@ AbstractClass * * int WOL_RefreshChannelList()
     return (*(unsigned int (__stdcall **)(LPVOID, char *))(*(unsigned int *)ppv + 96))(ppv, v10); /*0x79d0f7*/
   }
   return result; /*0x79ceda*/
+}
 }
 // 0x79D110
 namespace gamemd {
@@ -4735,6 +4761,7 @@ AbstractClass * * WOL_SendGameList()
     v12);
   DeleteAndZero((ObjectClass *)&v13); /*0x79d2dd*/
 }
+}
 // 0x79D2F0
 namespace gamemd {
 AbstractClass * * WOL_RefreshGameList()
@@ -4826,6 +4853,7 @@ AbstractClass * * WOL_RefreshGameList()
     ++v2; /*0x79d4c1*/
   }
   SendGameListWOL(v12); /*0x79d4d0*/
+}
 }
 // 0x79D4E0
 namespace gamemd {
@@ -4930,6 +4958,7 @@ AbstractClass * * CleanupWOLSession()
     Network_Cleanup(v13); /*0x79d707*/
   }
   RefreshGameListWOL(v13); /*0x79d70c*/
+}
 }
 // 0x79D720
 namespace gamemd {
@@ -5058,6 +5087,7 @@ void WOLLoginDialogProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
   }
   return result; /*0x79d771*/
 }
+}
 // 0x79DA90
 namespace gamemd {
 char ** ExtractChatCommand(char ** a1, HWND a2)
@@ -5095,6 +5125,7 @@ char ** ExtractChatCommand(char ** a1, HWND a2)
     DeleteAndZero::Alt((DeleteAndZero *)&v6); /*0x79db43*/
     return a1; /*0x79db48*/
   }
+}
 }
 // 0x79DFE0
 namespace gamemd {
@@ -5319,6 +5350,7 @@ void WOL_GameSetup_DlgProc(HWND hWnd, unsigned int a2, unsigned int a3, HWND a4)
     goto LABEL_50; /*0x79e3ce*/
   }
   return result; /*0x79e069*/
+}
 }
 // 0x79E520
 namespace gamemd {
@@ -5716,6 +5748,7 @@ AbstractClass * * WOL_PlayerOptions_DlgProc(HWND hWnd, unsigned int a2, UINT_PTR
   }
   return result; /*0x79e598*/
 }
+}
 // 0x79F0A0
 namespace gamemd {
 char sub_79F0A0(char ** a1, int * a2, char * a3)
@@ -5760,6 +5793,7 @@ char sub_79F0A0(char ** a1, int * a2, char * a3)
         goto LABEL_8; /*0x79f113*/
     }
   }
+}
 }
 // 0x79F140
 namespace gamemd {
@@ -6232,6 +6266,7 @@ Coord * * WOL_GameOptionsScreen()
   OwnerDrawControl::InitVtable(&v50); /*0x79fb22*/
   return 0; /*0x79f195*/
 }
+}
 // 0x79FC40
 namespace gamemd {
 Coord * * WOL_JoinLobby()
@@ -6530,11 +6565,12 @@ Coord * * WOL_JoinLobby()
   }
   return *(unsigned int *)&String2[4]; /*0x79fd7e*/
 }
+}
 // 0x792BE0
 namespace gamemd {
 char ShowUIMessage(MPCooperative * a1, wchar_t ** a2, char a3)
 {
-  HWND v5; // esi
+  DLGTEMPLATE *DialogIndirect; // esi
   HWND DlgItem; // edi
   wchar_t *v7; // eax
   HWND Current; // eax
@@ -6543,37 +6579,37 @@ char ShowUIMessage(MPCooperative * a1, wchar_t ** a2, char a3)
   wchar_t *v11; // eax
   char result; // al
 
-  v5 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x792bf6*/
-  if ( v5 ) /*0x792bfa*/
+  DialogIndirect = (DLGTEMPLATE *)Dialog::FindByHandle((Dialog *)0xC4); /*0x792bf6*/
+  if ( DialogIndirect ) /*0x792bfa*/
   {
-    g_WOL_ChannelList |= a1; /*0x792c06*/
-    if ( WideString::Length((const wchar_t **)a2) ) /*0x792c0c*/
+    dword_B77DC8 |= a1; /*0x792c06*/
+    if ( WideString::Length((WideString *)a2) ) /*0x792c0c*/
     {
-      DlgItem = GetDlgItem(v5, 1458); /*0x792c27*/
-      v7 = WideString::GetOrEmpty_Alt(a2); /*0x792c29*/
+      DlgItem = GetDlgItem((HWND)DialogIndirect, 1458); /*0x792c27*/
+      v7 = WideString::GetOrEmpty_Alt((WideString *)a2); /*0x792c29*/
       SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)v7); /*0x792c37*/
     }
   }
   else if ( a1 ) /*0x792c44*/
   {
-    Current = Dialog::GetCurrent(); /*0x792c47*/
+    Current = (HWND)Dialog::GetCurrent(); /*0x792c47*/
     v9 = GetDlgItem(Current, 1344); /*0x792c5a*/
     ShowUIMessage_Show(); /*0x792c5c*/
-    v5 = (HWND)CreateDialogIndirect(g_hInstance, g_hWnd, sub_792CF0, 0); /*0x792c7e*/
-    SetupDialog(v5); /*0x792c87*/
-    v10 = GetDlgItem(v5, 1458); /*0x792c96*/
-    v11 = WideString::GetOrEmpty_Alt(a2); /*0x792c98*/
+    DialogIndirect = (DLGTEMPLATE *)CreateDialogIndirect(g_hInstance, (HWND)0xC4, g_hWnd, (DLGPROC)sub_792CF0, 0); /*0x792c7e*/
+    SetupDialog((Dialog *)DialogIndirect, 196); /*0x792c87*/
+    v10 = GetDlgItem((HWND)DialogIndirect, 1458); /*0x792c96*/
+    v11 = WideString::GetOrEmpty_Alt((WideString *)a2); /*0x792c98*/
     SendMessageA(v10, 0x4B2u, 0, (LPARAM)v11); /*0x792ca6*/
-    g_WOL_ChannelList = a1; /*0x792cb3*/
+    dword_B77DC8 = a1; /*0x792cb3*/
     if ( v9 ) /*0x792cb9*/
       SetFocus(v9); /*0x792cbc*/
   }
   result = a3; /*0x792cc2*/
   if ( a3 ) /*0x792cc8*/
   {
-    result = g_WOL_ChannelList; /*0x792cca*/
-    if ( g_WOL_ChannelList ) /*0x792cd1*/
-      return MessageDialogLoopAlt(v5, 0, 1, 0); /*0x792ce0*/
+    result = dword_B77DC8; /*0x792cca*/
+    if ( dword_B77DC8 ) /*0x792cd1*/
+      return MessageDialogLoopAlt((HWND)DialogIndirect, (uint8_t (*)(void))GameLoop::Thunk, 0, 1, 0); /*0x792ce0*/
   }
   return result; /*0x792ce5*/
 }

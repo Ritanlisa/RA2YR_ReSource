@@ -97,7 +97,7 @@ struct TechnoTypeClass {
     unsigned int u32_E4;  // 0xE4
     AbstractClass* q0E8;  // 0xE8
     unsigned int q0EC;  // 0xEC
-    unsigned int ;  // 0xF0
+    void* q0F0;  // 0xF0
     unsigned char u8_F1;  // 0xF1
     unsigned char u8_F2;  // 0xF2
     unsigned char u8_F3;  // 0xF3
@@ -265,7 +265,7 @@ struct TechnoTypeClass {
     int guardRange;  // 0x2B0
     unsigned int u32_2B2;  // 0x2B2
     int sight;  // 0x2B4
-    void* ;  // 0x2B6
+    unsigned int u32_2B6;  // 0x2B6
     int cost;  // 0x2B8
     unsigned int u32_2BA;  // 0x2BA
     int strength;  // 0x2BC
@@ -287,17 +287,17 @@ struct TechnoTypeClass {
     int q2F8;  // 0x2F8
     unsigned int q2FC;  // 0x2FC
     double unknown_double_300;  // 0x300
-    void* ;  // 0x304
+    unsigned int q304;  // 0x304
     double AccelerationFactor;  // 0x308
     unsigned int q30A;  // 0x30A
-    unsigned int ;  // 0x30C
+    void* q30C;  // 0x30C
     int CloakingSpeed;  // 0x310
     unsigned char DebrisTypes;  // 0x314
     CampaignClass* VoxelAnimList_Items;  // 0x318
     unsigned int VoxelAnimList_Capacity;  // 0x31C
     unsigned int q320;  // 0x320
     unsigned int VoxelAnimList_FlagByte;  // 0x321
-    unsigned int q324;  // 0x324
+    void* ;  // 0x324
     unsigned int q328;  // 0x328
     unsigned char q32C;  // 0x32C
     unsigned char DebrisMaximums;  // 0x330
@@ -308,8 +308,8 @@ struct TechnoTypeClass {
     unsigned char q340;  // 0x340
     unsigned int q344;  // 0x344
     unsigned int q348;  // 0x348
-    unsigned int Locomotor;  // 0x34C
-    void* ;  // 0x350
+    char Locomotor[16];  // 0x34C
+    unsigned int u32_350;  // 0x350
     unsigned int q354;  // 0x354
     unsigned char q358;  // 0x358
     unsigned int q35C;  // 0x35C
@@ -319,11 +319,11 @@ struct TechnoTypeClass {
     double unknown_double_368;  // 0x368
     unsigned char q36C;  // 0x36C
     double Weight;  // 0x370
-    unsigned int ;  // 0x374
+    void* q374;  // 0x374
     double PhysicalSize;  // 0x378
     unsigned int u32_37C;  // 0x37C
     double Size;  // 0x380
-    unsigned int ;  // 0x384
+    void* q384;  // 0x384
     double SizeLimit;  // 0x388
     void* q38C;  // 0x38C
     bool HoverAttack;  // 0x390
@@ -334,7 +334,7 @@ struct TechnoTypeClass {
     double RollAngle;  // 0x3A0
     unsigned int u32_3A4;  // 0x3A4
     double PitchSpeed;  // 0x3A8
-    unsigned int ;  // 0x3AC
+    void* q3AC;  // 0x3AC
     double PitchAngle;  // 0x3B0
     unsigned int u32_3B4;  // 0x3B4
     unsigned int q3B7;  // 0x3B7
@@ -356,10 +356,10 @@ struct TechnoTypeClass {
     CampaignClass* BuildingTypeList_Items;  // 0x3EC
     unsigned int BuildingTypeList_Capacity;  // 0x3F0
     unsigned int BuildingTypeList_FlagByte;  // 0x3F5
-    void* ;  // 0x3F8
+    unsigned int u32_3F8;  // 0x3F8
     unsigned int u32_3FC;  // 0x3FC
     unsigned int q400;  // 0x400
-    char DeploysInto[4];  // 0x404
+    unsigned int DeploysInto;  // 0x404
     unsigned int UndeploysInto;  // 0x408
     char PowersUnit[4];  // 0x40C
     bool PoweredUnit;  // 0x410
@@ -369,7 +369,7 @@ struct TechnoTypeClass {
     unsigned int IntList_B_Capacity;  // 0x41C
     unsigned char q420;  // 0x420
     unsigned int IntList_B_FlagByte;  // 0x421
-    void* ;  // 0x424
+    TechnoTypeClass * ptr_424;  // 0x424
     unsigned int q428;  // 0x428
     HouseClass* q42C;  // 0x42C
     unsigned char VoiceSelectEnslaved;  // 0x430
@@ -377,7 +377,7 @@ struct TechnoTypeClass {
     unsigned int IntList_C_Capacity;  // 0x438
     void* q43C;  // 0x43C
     unsigned int IntList_C_FlagByte;  // 0x43D
-    void* ;  // 0x440
+    unsigned int q440;  // 0x440
     unsigned int q444;  // 0x444
     unsigned int q448;  // 0x448
     unsigned char VoiceSelectDeactivated;  // 0x44C
@@ -386,7 +386,7 @@ struct TechnoTypeClass {
     void* q458;  // 0x458
     unsigned int IntList_D_FlagByte;  // 0x459
     unsigned char q45C;  // 0x45C
-    unsigned int q460;  // 0x460
+    void* ;  // 0x460
     unsigned int q464;  // 0x464
     unsigned char VoiceMove;  // 0x468
     CampaignClass* IntList_E_Items;  // 0x46C
@@ -394,7 +394,7 @@ struct TechnoTypeClass {
     void* q474;  // 0x474
     unsigned int IntList_E_FlagByte;  // 0x475
     unsigned char q478;  // 0x478
-    unsigned int u32_47C;  // 0x47C
+    void* ;  // 0x47C
     AbstractTypeClass* q480;  // 0x480
     unsigned char VoiceAttack;  // 0x484
     unsigned int q487;  // 0x487
@@ -403,7 +403,7 @@ struct TechnoTypeClass {
     unsigned int q48F;  // 0x48F
     unsigned int IntList_F_FlagByte;  // 0x491
     TechnoTypeClass * ptr_494;  // 0x494
-    unsigned int ;  // 0x498
+    void* q498;  // 0x498
     void* q49C;  // 0x49C
     unsigned int q49D;  // 0x49D
     unsigned char VoiceSpecialAttack;  // 0x4A0
@@ -412,7 +412,7 @@ struct TechnoTypeClass {
     unsigned char q4AC;  // 0x4AC
     unsigned int IntList_G_FlagByte;  // 0x4AD
     void* q4B0;  // 0x4B0
-    unsigned int ;  // 0x4B4
+    void* q4B4;  // 0x4B4
     unsigned char q4B8;  // 0x4B8
     unsigned char VoiceDie;  // 0x4BC
     CampaignClass* IntList_H_Items;  // 0x4C0
@@ -420,7 +420,7 @@ struct TechnoTypeClass {
     unsigned char q4C8;  // 0x4C8
     unsigned int IntList_H_FlagByte;  // 0x4C9
     void* q4CC;  // 0x4CC
-    unsigned int ;  // 0x4D0
+    void* q4D0;  // 0x4D0
     unsigned char q4D4;  // 0x4D4
     unsigned char VoiceFeedback;  // 0x4D8
     CampaignClass* VoiceFeedback_Items;  // 0x4DC
@@ -509,7 +509,7 @@ struct TechnoTypeClass {
     int FlightLevel;  // 0x618
     int AirstrikeTeam;  // 0x61C
     int EliteAirstrikeTeam;  // 0x620
-    char AirstrikeTeamType[4];  // 0x624
+    unsigned int AirstrikeTeamType;  // 0x624
     char EliteAirstrikeTeamType[4];  // 0x628
     int AirstrikeRechargeTime;  // 0x62C
     int EliteAirstrikeRechargeTime;  // 0x630
@@ -939,25 +939,22 @@ struct TechnoTypeClass {
     unsigned int uniqueId9;
     unsigned int vtable48;
     unsigned int vtable49;
-    void* ptr_424;
+    unsigned int eliteWeapon28;
+    unsigned int eliteWeapon29;
     unsigned int q2588;
     unsigned int q25C6;
     unsigned int q25C7;
     unsigned int q25C8;
     unsigned int q25C9;
-    unsigned int q440;
-    unsigned int u32_3F8;
-    unsigned int q0F0;
-    unsigned int q304;
-    unsigned int q30C;
-    unsigned int q374;
-    unsigned int q384;
-    unsigned int q3AC;
-    unsigned int q498;
-    unsigned int q4B4;
-    unsigned int q4D0;
-    unsigned int u32_2B6;
-    unsigned int u32_350;
+    unsigned int weapon20;
+    unsigned int weapon21;
+    unsigned int weapon22;
+    unsigned int weapon23;
+    unsigned int weapon24;
+    unsigned int weapon25;
+    unsigned int q324;
+    unsigned int q460;
+    unsigned int u32_47C;
 // --- flat members (END) ---
     AbstractClass * * Construct(ObjectTypeClass * aP1);
     AbstractClass * * GetByTypeAndIndex(int a1, int a2);

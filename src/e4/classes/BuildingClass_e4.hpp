@@ -53,7 +53,7 @@ struct BuildingClass {
     unsigned char alignmentPadding69;  // 0x69
     unsigned int q06A;  // 0x6A
     void* health;  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    unsigned int estimatedHealth;  // 0x70
     void* isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int q077;  // 0x77
@@ -531,7 +531,6 @@ struct BuildingClass {
     unsigned char q568;  // 0x568
     unsigned char q56C;  // 0x56C
     void* q570;  // 0x570
-    unsigned char q574;  // 0x574
     unsigned int q578;  // 0x578
     void* q57C;  // 0x57C
     unsigned int q580;  // 0x580
@@ -691,8 +690,11 @@ struct BuildingClass {
     unsigned int Audio8_2;
     unsigned int CanRepair;
     unsigned int GetExitCoords;
+    unsigned int SuperWeaponToken;
     unsigned int TogglePrimaryFactory;
     unsigned int __pad_6B8;
+    unsigned int u32_898;
+    unsigned int u32_8B4;
     unsigned int vtable0;
     unsigned int UpdateFloatPosition;
     unsigned int ctor;
@@ -737,6 +739,7 @@ struct BuildingClass {
     static double PowerOff(...);  // C2597 interim stub
     static double GetProductionFrame(...);  // C2597 interim stub
     static double GetType(...);  // C2597 interim stub
+    static double GetSHPFrame(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

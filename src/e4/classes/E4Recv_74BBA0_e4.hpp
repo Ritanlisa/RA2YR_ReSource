@@ -9,6 +9,7 @@ struct E4Recv_74BBA0 {
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
     unsigned int M8;  // 0x8
+    unsigned int u32_14;  // 0x14
     unsigned int u32_30;  // 0x30
     unsigned int q034;  // 0x34
     unsigned int u32_38;  // 0x38

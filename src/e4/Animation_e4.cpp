@@ -17,6 +17,8 @@
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/ArrayClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/CheckListClass_e4.hpp"
 
 // 0x4549B0
 namespace gamemd {
@@ -61,7 +63,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
     {
       if ( this->u8_6EB <= 0 ) /*0x454a10*/
       {
-        v6 = this->u8_6EC; /*0x454a12*/
+        v6 = (unsigned char)(this->u8_6EC);
         if ( v6 != v5[5895] ) /*0x454a20*/
         {
           this->u8_6EB = (unsigned char)((void *)(1));
@@ -75,16 +77,16 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
       (*(void (__thiscall **)(Animation *))(((unsigned int)(this->u32_1A04))))(this); /*0x454a59*/
     v7 = this->u32_520; /*0x454a5f*/
     if ( *(unsigned char *)(v7 + 5491) && *(int *)(v7 + 3812) > 0 ) /*0x454a77*/
-      BuildingClass::ProcessAnimationStates((BuildingClass *)this); /*0x454a7b*/
+      BuildingClass::ProcessAnimationStates(); /*0x454a7b*/
     if ( *(unsigned char *)(this->u32_520 + 5492) ) /*0x454a86*/
     {
-      BuildingClass::ClearAnims((BuildingClass *)this, 19); /*0x454a98*/
+      BuildingClass::ClearAnims(19); /*0x454a98*/
       v8 = 0; /*0x454a9d*/
       for ( i = 0; i < 1428; i += 68 ) /*0x454a9f*/
       {
         if ( *(unsigned char *)(i + this->u32_520 + 3983) ) /*0x454aa7*/
         {
-          BuildingClass::GetHealthRatio((BuildingClass *)this); /*0x454ab4*/
+          BuildingClass::GetHealthRatio(); /*0x454ab4*/
           _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x454ab9*/
           __asm /*0x454abf*/
           {
@@ -105,7 +107,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
           if ( v13 ) /*0x454af1*/
           {
             if ( IDA_LOBYTE(v13->vtable0) ) /*0x454af3*/
-              BuildingClass::PlayAnim((BuildingClass *)this, _EDX, v13, v8, v12, 0, 0); /*0x454b01*/
+              BuildingClass::PlayAnim(_EDX, v13, v8, v12, 0, 0); /*0x454b01*/
           }
         }
         ++v8; /*0x454b09*/
@@ -119,11 +121,11 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
     this->u32_662 = 0; /*0x454b2a*/
     HouseClass::LostPoweredCenter(v14, *(unsigned int *)(v3 + 1036)); /*0x454b38*/
   }
-  v15 = (CaptureManager *)this->u32_2BC; /*0x454b3d*/
+  v15 = (gamemd::CaptureManager *)((unsigned char)((CaptureManager *)this->u32_2BC));
   if ( v15 ) /*0x454b45*/
     CaptureManager::FreeAll(v15); /*0x454b47*/
   if ( this->u32_2AC ) /*0x454b4c*/
-    TechnoClass::EjectPassengers((TechnoClass *)this, 1); /*0x454b5a*/
+    TechnoClass::EjectPassengers(1); /*0x454b5a*/
   v16 = this->u32_520; /*0x454b5f*/
   if ( *(unsigned char *)(v16 + 5831) && this->u8_6EB >= 0 && this->u8_6EC ) /*0x454b79*/
   {
@@ -149,7 +151,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
   }
   v19 = this->u32_520; /*0x454bf1*/
   if ( *(unsigned char *)(v19 + 5491) && *(int *)(v19 + 3812) > 0 ) /*0x454c09*/
-    BuildingClass::UpdateAnimationSlots((BuildingClass *)this); /*0x454c0d*/
+    BuildingClass::UpdateAnimationSlots(); /*0x454c0d*/
   if ( *(unsigned char *)(this->u32_520 + 5492) ) /*0x454c18*/
   {
     v20 = this->u32_21C; /*0x454c26*/
@@ -164,7 +166,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
     if ( v22 ) /*0x454c4d*/
     {
   LABEL_52:
-      BuildingClass::GetHealthRatio((BuildingClass *)this); /*0x454c59*/
+      BuildingClass::GetHealthRatio(); /*0x454c59*/
       _EDX = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x454c60*/
       __asm /*0x454c66*/
       {
@@ -182,12 +184,12 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
         v26 = (AnimTypeClass *)(this->u32_520 + 5208); /*0x454c8d*/
       }
       if ( v26 && IDA_LOBYTE(v26->vtable0) ) /*0x454c96*/
-        BuildingClass::PlayAnim((BuildingClass *)this, *(int *)&DSurface_ViewBounds.__pad_FC[324], v26, 19, v25, 0, 0); /*0x454ca5*/
+        BuildingClass::PlayAnim(*(int *)&DSurface_ViewBounds.__pad_FC[324], v26, 19, v25, 0, 0); /*0x454ca5*/
       v27 = 0; /*0x454caa*/
       for ( j = 0; j < 1428; j += 68 ) /*0x454cac*/
       {
         if ( *(unsigned char *)(j + this->u32_520 + 3983) ) /*0x454cb4*/
-          BuildingClass::ClearAnims((BuildingClass *)this, v27); /*0x454cc2*/
+          BuildingClass::ClearAnims(v27); /*0x454cc2*/
         ++v27; /*0x454cca*/
       }
       return; /*0x454cd1*/
@@ -203,7 +205,7 @@ BuildingClass * * Animation::UpdateBuildingAnimations()
 namespace gamemd {
 int Animation::GetProgress()
 {
-  void * result;
+  int result; // eax
   void * v2;
 
   IDA_LOBYTE(result) = *(&this->q0084); /*0x4a52f0*/
@@ -212,7 +214,7 @@ int Animation::GetProgress()
     if ( this->q014 ) /*0x4a52fb*/
     {
       v2 = (void *)((int)(this->q008));
-      result = (void *)((int)(this->q010));
+      result = (int)(this->q010);
       if ( v2 != -1 ) /*0x4a531a*/
       {
         if ( *(unsigned int *)&stru_A8EB00.gapE4[416] - v2 >= result ) /*0x4a5326*/
@@ -222,7 +224,7 @@ int Animation::GetProgress()
       }
     }
   }
-  return (int)(result);
+  return result; /*0x4a530d*/
 }
 } // namespace gamemd
 // 0x770550

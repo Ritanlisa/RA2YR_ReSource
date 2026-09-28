@@ -17,6 +17,9 @@
 #include "e4/classes/TeamClass_e4.hpp"
 #include "e4/classes/Frame_e4.hpp"
 #include "e4/classes/TechnoTypeClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x4346C0
 namespace gamemd {

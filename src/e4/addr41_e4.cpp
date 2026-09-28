@@ -29,6 +29,8 @@
 #include "e4/classes/Radar_e4.hpp"
 #include "e4/classes/Building_e4.hpp"
 #include "e4/classes/XSurface_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 
 // 0x4116A0
 namespace gamemd {
@@ -127,6 +129,7 @@ int sub_4116A0(unsigned int a1)
     return v15; /*0x4117fe*/
   }
   return *(unsigned int *)(v3 + 32); /*0x4116da*/
+}
 }
 // 0x411820
 namespace gamemd {
@@ -263,12 +266,13 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
   }
   return result; /*0x411840*/
 }
+}
 // 0x411B20
 namespace gamemd {
 AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
 {
   unsigned int v3;
-  unsigned int v4;
+  char *v4; // ecx
   unsigned char *v5; // esi
   int v6; // eax
   int v7; // edx
@@ -330,6 +334,7 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   *((unsigned int *)v5 + 24) = timeSetEvent(0x10u, 1u, fptc, dwUser, 1u); /*0x411cb6*/
   Debug::Log(); /*0x411cb9*/
   return *((unsigned int *)v5 + 24) != 0 ? -1 : -13;
+}
 }
 // 0x411DF0
 namespace gamemd {
@@ -445,6 +450,7 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
     LeaveCriticalSection((LPCRITICAL_SECTION)(v3 + 160)); /*0x411e74*/
     return -1; /*0x411e7a*/
   }
+}
 }
 // 0x412000
 namespace gamemd {
@@ -601,6 +607,7 @@ void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
   LeaveCriticalSection(v35); /*0x412211*/
   return -1; /*0x4120c7*/
 }
+}
 // 0x4123A0
 namespace gamemd {
 void fptc(UINT uTimerID, UINT uMsg, DWORD_PTR dwUser, DWORD_PTR dw1, DWORD_PTR dw2)
@@ -677,6 +684,7 @@ void fptc(UINT uTimerID, UINT uMsg, DWORD_PTR dwUser, DWORD_PTR dw1, DWORD_PTR d
   LeaveCriticalSection(v8); /*0x41250d*/
   InterlockedDecrement(lpAddend); /*0x412518*/
 }
+}
 // 0x413CD0
 namespace gamemd {
 bool sub_413CD0(int a1)
@@ -692,6 +700,7 @@ bool sub_413CD0(int a1)
     return *(unsigned char *)(v2 + 1753) == 0; /*0x413d10*/
   return 0; /*0x413cd9*/
 }
+}
 // 0x41B110
 namespace gamemd {
 INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
@@ -704,7 +713,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
   TypeClass *v8; // eax
   int v9; // edi
   void * v10;
-  void * v11;
+  int v11; // eax
   int v12; // esi
   char *v13; // eax
   char *v14; // eax
@@ -752,7 +761,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
       if ( v9 != -1 ) /*0x41b1a8*/
       {
         v10 = (int)((IUnknown *)*((unsigned int *)stru_A80220.vtable3 + v7));
-        v11 = (void *)((int)(RA2_OPNEW(0x6D8u)));
+        v11 = (int)(RA2_OPNEW(0x6D8u));
         if ( v11 ) /*0x41b1c6*/
         {
           v12 = AircraftClass::Construct(v11, v9, *((unsigned int *)unk_A8B21C + v9), v10); /*0x41b1de*/
@@ -836,6 +845,7 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
   }
   return result; /*0x41b421*/
 }
+}
 // 0x41C610
 namespace gamemd {
 int CompareFunction(unsigned int * a1, unsigned int * a2)
@@ -844,6 +854,7 @@ int CompareFunction(unsigned int * a1, unsigned int * a2)
     return 0; /*0x41c620*/
   else
     return *a1 >= *a2 ? 1 : -1;
+}
 }
 // 0x410070
 namespace gamemd {

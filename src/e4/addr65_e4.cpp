@@ -506,6 +506,7 @@ int sub_652630(unsigned int * a1, unsigned int * a2)
   else
     return *a1 >= *a2 ? 1 : -1;
 }
+}
 // 0x653FA0
 namespace gamemd {
 void RenderScoreboardSidebar(void * a1, void * a2)
@@ -679,6 +680,7 @@ void RenderScoreboardSidebar(void * a1, void * a2)
   }
   return v3; /*0x654310*/
 }
+}
 // 0x655050
 namespace gamemd {
 unsigned int * E4Recv_655050::sub_655050(unsigned int * v5, short * a3)
@@ -690,7 +692,7 @@ unsigned int * E4Recv_655050::sub_655050(unsigned int * v5, short * a3)
   int v7; // esi
 
   v3 = (int)((unsigned int *)(*a3));
-  v4 = (unsigned int *)(a3[1]);
+  v4 = (int)((unsigned int *)(a3[1]));
   v5 = (int)(v3 + this->M5264 - v4);
   v6 = v3 + v4 - this->M5272; /*0x655075*/
   v7 = 2; /*0x655077*/
@@ -710,11 +712,13 @@ unsigned int * E4Recv_655050::sub_655050(unsigned int * v5, short * a3)
   v5[3] = 1; /*0x6550aa*/
   return v5; /*0x6550a5*/
 }
+}
 // 0x655890
 namespace gamemd {
 int E4Recv_655890::sub_655890()
 {
   return (int)this->vtable0 + 251 * (int)this->vtable1; /*0x6558a3*/
+}
 }
 // 0x658640
 namespace gamemd {
@@ -788,6 +792,7 @@ void sub_6586D0()
   Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x658740*/
   stru_A8EB00.gapE4[440] = IDA_BYTE2(unk_A8B230[381].vtable3); /*0x658758*/
   return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x658763*/
+}
 }
 // 0x6591B0
 namespace gamemd {
@@ -929,6 +934,7 @@ AbstractClass * * UpdateProjectileTrails()
     goto LABEL_35; /*0x6593cd*/
   }
 }
+}
 // 0x659590
 namespace gamemd {
 int E4Recv_659590::sub_659590(unsigned int * a2, unsigned int * a3, short a4)
@@ -963,6 +969,7 @@ int E4Recv_659590::sub_659590(unsigned int * a2, unsigned int * a3, short a4)
   }
   return result; /*0x659642*/
 }
+}
 // 0x65B160
 namespace gamemd {
 int sub_65B160()
@@ -975,6 +982,7 @@ int sub_65B160()
   dword_B04BE4 = 10; /*0x65b187*/
   dword_B04BE0 = 0; /*0x65b191*/
   return atexit(sub_65B1A0); /*0x65b19c*/
+}
 }
 // 0x65B1A0
 namespace gamemd {
@@ -989,6 +997,7 @@ void sub_65B1A0()
   byte_B04BDD = 0; /*0x65b1cd*/
   dword_B04BD8 = 0; /*0x65b1d3*/
 }
+}
 // 0x65C300
 namespace gamemd {
 int RAMFileClass::nullsub_0_1()
@@ -997,6 +1006,7 @@ int RAMFileClass::nullsub_0_1()
     return 0; /*0x65c31a*/
   this->RAMFileClass_field_0x10 = 0; /*0x65c30c*/
   return 1; /*0x65c318*/
+}
 }
 // 0x65C350
 namespace gamemd {
@@ -1048,6 +1058,7 @@ AbstractClass * * RAMFileClass::nullsub_0_3(void * a1, signed int Size)
     (*(void (__thiscall **)(RAMFileClass *))(*(unsigned int *)this->__pad_0 + 52))(this); /*0x65c409*/
   return v4; /*0x65c40e*/
 }
+}
 // 0x65C420
 namespace gamemd {
 AbstractClass * * RAMFileClass::nullsub_0_4(int a2, int a3)
@@ -1089,6 +1100,7 @@ AbstractClass * * RAMFileClass::nullsub_0_4(int a2, int a3)
     this->RAMFileClass_field_0x10 = (AbstractClass *)result; /*0x65c48d*/
   return result; /*0x65c490*/
 }
+}
 // 0x65C560
 namespace gamemd {
 int RAMFileClass::nullsub_0_6(int a2)
@@ -1112,8 +1124,9 @@ void * RAMFileClass::nullsub_0_10(char a2)
   }
   *(unsigned int *)this->__pad_0 = (void*)&FileClass_vftable; /*0x65c5cf*/
   if ( (a2 & 1) != 0 ) /*0x65c5d7*/
-    RA2_OPDEL(this); /*0x65c5da*/
+    RA2_OPDEL(); /*0x65c5da*/
   return this; /*0x65c5e4*/
+}
 }
 // 0x65C630
 namespace gamemd {
@@ -1121,6 +1134,7 @@ void unknown_libname_28()
 {
   *this = a2; /*0x65c636*/
   return this; /*0x65c638*/
+}
 }
 // 0x65C910
 namespace gamemd {
@@ -1211,6 +1225,7 @@ int E4Recv_65C910::sub_65C910(ObjectClass * aP1, int a3)
   }
   return result; /*0x65c9ef*/
 }
+}
 // 0x65D510
 namespace gamemd {
 unsigned int int sub_65D510(int a1, const char * a2, int a3, unsigned char * a4)
@@ -1258,6 +1273,7 @@ unsigned int int sub_65D510(int a1, const char * a2, int a3, unsigned char * a4)
   FileStraw::Destructor((int)v10); /*0x65d5b1*/
   return v4; /*0x65d5b8*/
 }
+}
 // 0x65D5C0
 namespace gamemd {
 void int Stream_ReadLine(int a1, const char * a2, int a3, unsigned char * a4)
@@ -1297,6 +1313,7 @@ void int Stream_ReadLine(int a1, const char * a2, int a3, unsigned char * a4)
   }
   a2[v6] = 0; /*0x65d639*/
   return strlen(a2); /*0x65d644*/
+}
 }
 // 0x65D8E0
 namespace gamemd {
@@ -1538,6 +1555,7 @@ bool DeployScriptActionPlane(int a1, int edx0)
   }
   (*(void (__thiscall **)(int, int))(*(unsigned int *)v31 + 32))(v31, 1); /*0x65dd0e*/
   return 1; /*0x65db14*/
+}
 }
 // 0x65E010
 namespace gamemd {
@@ -1852,6 +1870,7 @@ void MoveScriptTypeClassToWaypoint(ScriptTypeClass * aP0, ObjectClass * aP1, int
   }
   return v14; /*0x65e643*/
 }
+}
 // 0x65E660
 namespace gamemd {
 void SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, int a5, int a6, int a7, int a8)
@@ -1953,6 +1972,7 @@ void SpawnSuperWeaponUnits(unsigned int * a0, int a2, IUnknown * aP2, int a4, in
     }
   }
   return v11; /*0x65e820*/
+}
 }
 // 0x65E850
 namespace gamemd {
@@ -2087,6 +2107,7 @@ void PlaceAircraftOnMap(unsigned int * a1, int a2, int a3, int a4, int a5, int a
     }
   }
   return v26; /*0x65ea81*/
+}
 }
 // 0x65EC30
 namespace gamemd {
@@ -2515,6 +2536,7 @@ void CreateTriggerClassIfFarEnough(IUnknown * aP0, int a2, IUnknown * aP2)
     IDA_LOBYTE(result) = 1; /*0x65fb3f*/
   }
   return result; /*0x65fb41*/
+}
 }
 // 0x652100
 namespace gamemd {

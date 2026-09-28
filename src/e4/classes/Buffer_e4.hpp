@@ -7,8 +7,8 @@ namespace gamemd {
 
 struct Buffer {
 // --- flat members (BEGIN) ---
-    void* ;  // 0x0
-    unsigned int Buffer_field_04;  // 0x4
+    unsigned int Buffer_field_00;  // 0x0
+    void* ;  // 0x4
     unsigned int Buffer_field_08;  // 0x8
     unsigned int Buffer_field_0C;  // 0xC
     bool IsAllocated;  // 0xD
@@ -30,7 +30,7 @@ struct Buffer {
     unsigned int u32_2C;
     unsigned int u32_2E42;
     unsigned int u32_88;
-    unsigned int Buffer_field_00;
+    unsigned int Buffer_field_04;
 // --- flat members (END) ---
     DynamicVector * Constructor_VectorClass_ObjectClass___(char a2);
     int * RotateBufferCrypto(int * a2, int a3);

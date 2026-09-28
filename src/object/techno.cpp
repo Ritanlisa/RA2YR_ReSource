@@ -3575,6 +3575,20 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
 }
   else
   {
+    v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d4a*/
+    v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3960); /*0x707d4f*/
+  }
+  if ( *(unsigned int *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
+    return *(unsigned int *)(v5 + 3948); /*0x707dc5*/
+  if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->vtable0 + 171))(this) /*0x707db2*/
+    && Random::Range((Random *)&unk_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
+  {
+    return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3948); /*0x707dc4*/
+  }
+  return v6; /*0x707d37*/
+}
+  else
+  {
     v5 = g_RulesClass_Instance; /*0x707d4a*/
     Scatter = g_RulesClass_Instance->?; /*0x707d4f*/
   }
@@ -3591,16 +3605,13 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
   {
     v5 = g_RulesClass_Instance; /*0x707d4a*/
     Scatter = g_RulesClass_Instance->AutoCrush; /*0x707d4f*/
-  }
   if ( *(unsigned int *)(v3->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
     return v5->Production; /*0x707dc5*/
   if ( this->HasActiveParam() /*0x707db2*/
     && Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 99) < 15 )
   {
     return g_RulesClass_Instance->Production; /*0x707dc4*/
-  }
   return Scatter; /*0x707d37*/
-}
   return *(&this->isChronosphereImmune9); /*0x4df1d6*/
 // 0x4df1e0
 int TechnoClass::vt_entry_4B4() {
@@ -3644,10 +3655,10 @@ int TechnoClass::vt_entry_4B8() { return 0; }
 }
   else
   {
-    v5 = *(&this->lastLayer1); /*0x4df229*/
+    v5 = this->q173; /*0x4df229*/
     if ( v5 ) /*0x4df231*/
     {
-      v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v5 + 72))(v5, v7); /*0x4df23d*/
+      v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(this->u32_1BB)(v5, v7); /*0x4df23d*/
       *a2 = *v6; /*0x4df247*/
       a2[1] = v6[1]; /*0x4df24c*/
       a2[2] = v6[2]; /*0x4df253*/
@@ -3679,6 +3690,22 @@ int TechnoClass::vt_entry_4B8() { return 0; }
     }
     return a2; /*0x4df23f*/
   }
+}
+  else
+  {
+    v5 = *(&this->lastLayer1); /*0x4df229*/
+    if ( v5 ) /*0x4df231*/
+    {
+      v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v5 + 72))(v5, v7); /*0x4df23d*/
+      *a2 = *v6; /*0x4df247*/
+      a2[1] = v6[1]; /*0x4df24c*/
+      a2[2] = v6[2]; /*0x4df253*/
+    else
+    {
+      *a2 = -1; /*0x4df26c*/
+      a2[1] = -1; /*0x4df26e*/
+      a2[2] = -1; /*0x4df271*/
+    return a2; /*0x4df23f*/
 // 0x5f7900
 int TechnoClass::FindMatchingUnit() { return -1; }
   int v6; // ebx
@@ -3805,30 +3832,30 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   IDA_BYTE1(this->vtable3) = 0; /*0x633e3e*/
   this->vtable2 = 0; /*0x633e41*/
 }
-  if ( g_ScriptPool == v7 ) /*0x633dd7*/
-    g_ScriptPool = 0; /*0x633dd9*/
-  if ( g_ScriptState == v7 ) /*0x633de5*/
-    g_ScriptState = 0; /*0x633de7*/
-  if ( g_ScriptActionPool == v7 ) /*0x633df3*/
-    g_ScriptActionPool = 0; /*0x633df5*/
-  v5 = *(void **)(&this->vtable46); /*0x633dfb*/
+  if ( *(TechnoClass **)&stru_AC4B30.__pad_EC[176] == v7 ) /*0x633dd7*/
+    *(unsigned int *)&stru_AC4B30.__pad_EC[176] = 0; /*0x633dd9*/
+  if ( *(TechnoClass **)&stru_AC4B30.__pad_EC[28] == v7 ) /*0x633de5*/
+    *(unsigned int *)&stru_AC4B30.__pad_EC[28] = 0; /*0x633de7*/
+  if ( *(TechnoClass **)&stru_AC4B30.__pad_70[80] == v7 ) /*0x633df3*/
+    *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x633df5*/
+  occupant = (void *)this->occupant; /*0x633dfb*/
   this->NeedsSaveOrLink = &(void*)(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
-  if ( v5 && this->queuedMission ) /*0x633e09*/
+  if ( occupant && IDA_BYTE1(this->fallRate) ) /*0x633e09*/
   {
-    RA2_OPDEL(v5); /*0x633e0f*/
-    this->objectTypeFlags = 0; /*0x633e17*/
+    RA2_OPDEL(occupant); /*0x633e0f*/
+    this->occupant = 0; /*0x633e17*/
   }
-  this->queuedMission = 0; /*0x633e1a*/
+  IDA_BYTE1(this->fallRate) = 0; /*0x633e1a*/
   this->owningHouseIndex = 0; /*0x633e1d*/
-  v6 = this->vtable2; /*0x633e20*/
-  *(unsigned int *)this = &(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
-  if ( v6 && this->attachedTag ) /*0x633e2d*/
+  vtable1 = this->vtable1; /*0x633e20*/
+  this->vtable0 = &(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
+  if ( vtable1 && IDA_BYTE1(this->vtable3) ) /*0x633e2d*/
   {
-    RA2_OPDEL(v6); /*0x633e33*/
-    this->vtable2 = 0; /*0x633e3b*/
+    RA2_OPDEL(vtable1); /*0x633e33*/
+    this->vtable1 = 0; /*0x633e3b*/
   }
-  this->attachedTag = 0; /*0x633e3e*/
-  this->vtable3 = 0; /*0x633e41*/
+  IDA_BYTE1(this->vtable3) = 0; /*0x633e3e*/
+  this->vtable2 = 0; /*0x633e41*/
 }
   if ( g_ScriptPool == v7 ) /*0x633dd7*/
     g_ScriptPool = 0; /*0x633dd9*/
@@ -3847,6 +3874,31 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   this->owningHouseIndex = 0; /*0x633e1d*/
   v6 = this->vtable2; /*0x633e20*/
   *(unsigned int *)this = &(void*)(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
+  if ( v6 && this->attachedTag ) /*0x633e2d*/
+  {
+    RA2_OPDEL(v6); /*0x633e33*/
+    this->vtable2 = 0; /*0x633e3b*/
+  }
+  this->attachedTag = 0; /*0x633e3e*/
+  this->vtable3 = 0; /*0x633e41*/
+}
+  if ( g_ScriptPool == v7 ) /*0x633dd7*/
+    g_ScriptPool = 0; /*0x633dd9*/
+  if ( g_ScriptState == v7 ) /*0x633de5*/
+    g_ScriptState = 0; /*0x633de7*/
+  if ( g_ScriptActionPool == v7 ) /*0x633df3*/
+    g_ScriptActionPool = 0; /*0x633df5*/
+  v5 = *(void **)(&this->vtable46); /*0x633dfb*/
+  this->NeedsSaveOrLink = &(void*)(void*)(void*)(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
+  if ( v5 && this->queuedMission ) /*0x633e09*/
+  {
+    RA2_OPDEL(v5); /*0x633e0f*/
+    this->objectTypeFlags = 0; /*0x633e17*/
+  }
+  this->queuedMission = 0; /*0x633e1a*/
+  this->owningHouseIndex = 0; /*0x633e1d*/
+  v6 = this->vtable2; /*0x633e20*/
+  *(unsigned int *)this = &(void*)(void*)(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
   if ( v6 && this->attachedTag ) /*0x633e2d*/
   {
     RA2_OPDEL(v6); /*0x633e33*/
@@ -4473,9 +4525,8 @@ int TechnoClass::CanTargetHouse() const { return false;
     *(unsigned char *)(v2 + 153) = 0; /*0x638a0a*/
   }
   return result; /*0x638a12*/
-}
-int TechnoClass::sub_7441B0() { return 0; }
-int TechnoClass::sub_744180() { return 0; }
+int TechnoClass::sub_7441B0() { return 0; 
+int TechnoClass::sub_744180() { return 0; 
 int TechnoClass::sub_744210() { return 0; 
 int TechnoClass::sub_744270() { return 0; 
 int TechnoClass::sub_744720() { return 0; 
@@ -4485,5 +4536,3 @@ int TechnoClass::sub_744100() { return 0;
 int TechnoClass::SelectAutoTargetWithGarrison() { return 0; }
 // 0x732050
 int TechnoClass::GatherAllBuildings() { return 0; }
-}
-}

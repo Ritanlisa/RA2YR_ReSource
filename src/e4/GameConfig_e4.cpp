@@ -23,6 +23,7 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
 
 // 0x5E84D0
 namespace gamemd {
@@ -141,16 +142,16 @@ void * GameConfig::Constructor(GameConfig * aP1)
 {
   GameConfig *v1; // edi
   void * v2;
-  void * v3;
+  int v3; // esi
   CCFileClass v6; // [esp+Ch] [ebp-6Ch] BYREF
   char v7[12]; // [esp+64h] [ebp-14h] BYREF
   int v8; // [esp+70h] [ebp-8h]
 
-  v1 = aP1; /*0x5d67b5*/
+  v1 = (gamemd::GameConfig *)((int)(aP1));
   if ( !*(unsigned int *)&aP1->__pad_0[56] ) /*0x5d67bd*/
   {
     v2 = (void *)((int)(RA2_OPNEW(0x58u)));
-    v3 = (void *)((int)(v2));
+    v3 = (int)(v2);
     if ( v2 ) /*0x5d67d5*/
     {
       *(unsigned int *)(v2 + 4) = 0; /*0x5d67de*/
@@ -187,6 +188,7 @@ void * GameConfig::Constructor(GameConfig * aP1)
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v6); /*0x5d6880*/
   }
   return *(char **)&v1->__pad_0[56]; /*0x5d6888*/
+}
 }
 // 0x77E7A0
 int GameConfig::BuildChecksum(void * aP1)

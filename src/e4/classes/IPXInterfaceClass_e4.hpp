@@ -36,6 +36,8 @@ struct IPXInterfaceClass {
     unsigned int BoundPort;
     unsigned int u32_1C;
     unsigned int u32_28;
+    unsigned int u32_30;
+    unsigned int u32_34;
     unsigned int u32_4;
     unsigned int u32_44;
     unsigned int u32_45;
@@ -43,8 +45,9 @@ struct IPXInterfaceClass {
     unsigned int u32_80;
     unsigned int u32_81;
     unsigned int u32_C;
-    unsigned int u32_30;
-    unsigned int u32_34;
+    unsigned int BoundPort8;
+    unsigned int BoundPort9;
+    unsigned int u32_38;
     unsigned int u32_3C;
     unsigned int u32_40;
     unsigned int u32_4C;

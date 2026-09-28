@@ -48,6 +48,7 @@ unsigned int * AudioQueue::CreateNode()
     dword_87DE28 = 1; /*0x402b72*/
   return v2->__pad_0; /*0x402b44*/
 }
+}
 // 0x4035F0
 namespace gamemd {
 int AudioQueue::FindBestChannel(int a1, int a2)
@@ -124,6 +125,7 @@ int AudioQueue::FindBestChannel(int a1, int a2)
     return v4; /*0x4036b0*/
   return result; /*0x4036b2*/
 }
+}
 // 0x403730
 namespace gamemd {
 int AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(int a1, int a2))( int)
@@ -153,6 +155,7 @@ int AudioQueue::StopAllVoices(__thiscall *__fastcall AudioQueue::StopAllVoices(i
     while ( v5 ); /*0x403766*/
   }
   return result; /*0x403768*/
+}
 }
 // 0x752680
 namespace gamemd {
@@ -209,6 +212,7 @@ void * AudioQueue::FindByData()
   }
   return result; /*0x7526fb*/
 }
+}
 // 0x771620
 namespace gamemd {
 RandomStruct * * AudioQueue::Update()
@@ -244,8 +248,8 @@ RandomStruct * * AudioQueue::Update()
       v4 = (gamemd::RandomStruct *)(this->q3D0);
       if ( v4 > 0 ) /*0x771681*/
       {
-        v5 = (unsigned int)(v4 - 1);
-        v6 = (unsigned int)(0);
+        v5 = (gamemd::RandomStruct *)((unsigned int)(v4 - 1));
+        v6 = (gamemd::RandomStruct *)((unsigned int)(0));
         for ( this->q3D0 = v5; v6 < this->q3D0; ++v6 ) /*0x77168e*/
           String::Reassign( /*0x77169e*/
             (char **)(this->u32_3C4 + 4 * v6),
@@ -422,7 +426,7 @@ namespace gamemd {
 int AudioQueue::ReadBuffer(void * a2, int a3, void * a4, unsigned int * v9, unsigned short * a6)
 {
   int v8; // eax
-  unsigned int * v9;
+  unsigned int v9;
   int v10; // ecx
   int v11; // edx
   int v12; // ecx
@@ -642,14 +646,14 @@ int AudioQueue::IsNotEmpty(int a1, int a2)
   int result; // eax
 
   result = *(unsigned int *)(a1 + 20); /*0x407b50*/
-  *(unsigned int *)(result + 156) = a2; /*0x407b53*/
+  *(unsigned int *, unsigned int a1)(result + 156) = a2; /*0x407b53*/
   return result; /*0x407b59*/
 }
 } // namespace gamemd
 
 // 0x4081A0
 namespace gamemd {
-int AudioQueue::HaltVoices()
+int AudioQueue::HaltVoices(void * a1)
 {
   int result; // eax
   int v2; // esi

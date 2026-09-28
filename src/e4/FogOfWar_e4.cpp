@@ -13,12 +13,14 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Render_e4.hpp"
 #include "e4/classes/Mixer_e4.hpp"
+#include "e4/classes/FoggedObjectClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x655C50
 namespace gamemd {
 MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
 {
-  unsigned int result;
+  MapClass ** result;
   int v5; // ecx
   int v6; // ecx
   int v7; // edx
@@ -385,7 +387,7 @@ int FogOfWar::Render()
         {
           v11[0] = v9; /*0x657d6c*/
           v11[1] = v8; /*0x657d73*/
-          FogOfWar::RevealArea((int)this, v11); /*0x657d77*/
+          FogOfWar::RevealArea(v11); /*0x657d77*/
           ++v9; /*0x657d7c*/
         }
         while ( v9 < v7 ); /*0x657d7f*/
@@ -404,7 +406,7 @@ int FogOfWar::Render()
            1);
     v5 = (*(int (__thiscall **)(int *, unsigned char *, unsigned int, int))(*v2 + 120))(v2, v12, this->ptr_1220, v4); /*0x657d21*/
     (*(void (__thiscall **)(unsigned int, int))(v3 + 8))(this->u32_121C, v5); /*0x657d2b*/
-    return FogOfWar::RenderCell(this); /*0x657d30*/
+    return FogOfWar::RenderCell(); /*0x657d30*/
   }
   return result; /*0x657d35*/
 }
@@ -429,7 +431,7 @@ bool FogOfWar_Get(IUnknown * aP0)
   if ( (v1 & 1) != 0 ) /*0x5864b5*/
   {
     v8 = (unsigned int)(*aP0 / 256);
-    v10 = (unsigned int)(aP0[1] / 256);
+    v10 = aP0[1] / 256; /*0x5864e3*/
     v2 = v1 / 2 + 1; /*0x5864f0*/
     v3 = (int16_t)(v8 - v2) + ((int16_t)(v10 - v2) << 9); /*0x586508*/
     if ( v3 >= 0x40000 || (v4 = *(unsigned int **)(g_Shroud_CellArray + 4 * v3)) == 0 ) /*0x58651e*/

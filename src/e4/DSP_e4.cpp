@@ -1003,3 +1003,4 @@ void DSP_AudioProcess(AudioStream * aP0, int a2, char a3)
   }
   return -1; /*0x7c10f2*/
 }
+}

@@ -46,6 +46,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/SideClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_MapRegionClass_e4.hpp"
+#include "e4/classes/Buffer_e4.hpp"
 
 // 0x5A1350
 namespace gamemd {
@@ -228,6 +229,7 @@ void Terrain_SelectTileVariant(int a1)
       return g_TerrainBuildConfig + v1;
   }
 }
+}
 // 0x5A19E0
 namespace gamemd {
 int ProcessRandomMapCellAdjacency()
@@ -239,7 +241,7 @@ int ProcessRandomMapCellAdjacency()
   int16_t *v4; // edi
   int AdjacencyFlags; // eax
   unsigned int v6; // eax
-  unsigned int v7;
+  unsigned int *v7; // ecx
   int v8; // edx
   int v9; // esi
   int v10; // eax
@@ -327,6 +329,7 @@ int ProcessRandomMapCellAdjacency()
     result = LayerClass::CellIteratorNext(&MapClass_Instance); /*0x5a1c49*/
   }
   return result; /*0x5a1c60*/
+}
 }
 // 0x5A1C70
 namespace gamemd {
@@ -433,6 +436,7 @@ int E4Recv_5A1C70::sub_5A1C70()
   }
   return result; /*0x5a1e09*/
 }
+}
 // 0x5A33F0
 namespace gamemd {
 void GenerateTerrainHeightMapInternal()
@@ -521,6 +525,7 @@ void GenerateTerrainHeightMapInternal()
     result = LayerClass::CellIteratorNext(&MapClass_Instance); /*0x5a35cf*/
   }
   return result; /*0x5a35e6*/
+}
 }
 // 0x5A45E0
 namespace gamemd {
@@ -781,6 +786,7 @@ void ScatterTerrainTrees(IUnknown * aP0, int a2, double a3)
     Scalar::Dtor((void **)v7, 1); /*0x5a4ac1*/
   return v42; /*0x5a4aca*/
 }
+}
 // 0x5A4B60
 namespace gamemd {
 void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5)
@@ -1022,6 +1028,7 @@ void FloodFillPathfinding(Random * aP0, int a2, CellClass * aP2, int a4, char a5
     RA2_OPDEL(v9); /*0x5a4f80*/
   }
 }
+}
 // 0x5A6510
 namespace gamemd {
 FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
@@ -1218,6 +1225,7 @@ FootClass * * MapSeed_PlaceBuildingsScatter2(int a1)
       RA2_OPDEL(Block); /*0x5a690e*/
   }
 }
+}
 // 0x5A6920
 namespace gamemd {
 void PlaceRandomNeutralUnits(int a1)
@@ -1351,6 +1359,7 @@ void PlaceRandomNeutralUnits(int a1)
   }
   return result; /*0x5a6b96*/
 }
+}
 // 0x5A6BA0
 namespace gamemd {
 int E4Recv_5A6BA0::sub_5A6BA0()
@@ -1397,6 +1406,7 @@ int E4Recv_5A6BA0::sub_5A6BA0()
       goto LABEL_6; /*0x5a6bf1*/
     }
   }
+}
 }
 // 0x5A6C10
 namespace gamemd {
@@ -1476,6 +1486,7 @@ void PlaceMapSeedClassBuildings(ObjectClass * aP0, ObjectClass * aP1, int a3, in
     }
   }
   return result; /*0x5a6d6e*/
+}
 }
 // 0x5A6D80
 namespace gamemd {
@@ -1609,6 +1620,7 @@ unsigned int * FindClearPlacementCell(unsigned int * a0, MapSeedClass * aP1, Map
   *a0 = v13; /*0x5a7067*/
   return a0; /*0x5a6e7b*/
 }
+}
 // 0x5A7070
 namespace gamemd {
 unsigned int * globalHelper_0A7070(MapSeedClass * aP0, short * a1, MapSeedClass * aP2, int a4)
@@ -1711,6 +1723,7 @@ unsigned int * globalHelper_0A7070(MapSeedClass * aP0, short * a1, MapSeedClass 
   *aP0 = v10; /*0x5a723d*/
   return aP0; /*0x5a723f*/
 }
+}
 // 0x5A7250
 namespace gamemd {
 void IsAreaClearMap(MapClass * aP0, char a2, char a3)
@@ -1804,6 +1817,7 @@ void IsAreaClearMap(MapClass * aP0, char a2, char a3)
   }
   return result; /*0x5a741e*/
 }
+}
 // 0x5A7440
 namespace gamemd {
 void MapClass_IsAreaUniform(int * a1, char a2)
@@ -1894,6 +1908,7 @@ void MapClass_IsAreaUniform(int * a1, char a2)
     }
   }
   return 0; /*0x5a762c*/
+}
 }
 // 0x5A78D0
 namespace gamemd {
@@ -2048,6 +2063,7 @@ void int PlaceMapSeedBuildingsStrategic(int a1)
   }
   return result; /*0x5a7b2c*/
 }
+}
 // 0x5A7FA0
 namespace gamemd {
 void IsoTile_Draw(int a1, unsigned short * a2, char a3)
@@ -2114,6 +2130,7 @@ void IsoTile_Draw(int a1, unsigned short * a2, char a3)
     }
   }
   return result; /*0x5a809c*/
+}
 }
 // 0x5A8720
 namespace gamemd {
@@ -2264,6 +2281,7 @@ void PlaceNeutralCreeps(unsigned short * a1)
     }
   }
   return result; /*0x5a89bb*/
+}
 }
 // 0x5A89D0
 namespace gamemd {
@@ -2571,6 +2589,7 @@ void MapSeed_ScheduleBuildings(int * a1)
   while ( !v37 ); /*0x5a8edd*/
   return v42 > 1; /*0x5a8ee4*/
 }
+}
 // 0x5A8F00
 namespace gamemd {
 void PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned int * a4, unsigned int * a5, int * a6)
@@ -2705,6 +2724,7 @@ void PlaceRandomTerrainFeatures(int a1, unsigned short * a2, int a3, unsigned in
   *a4 = *(unsigned int *)(v14 + 8); /*0x5a9197*/
   *a6 = v12; /*0x5a919a*/
   return 1; /*0x5a9199*/
+}
 }
 // 0x5A9C40
 namespace gamemd {
@@ -4187,6 +4207,7 @@ int sub_5AD9C0(unsigned int * a1, unsigned int * a2)
   else
     return *a1 >= *a2 ? 1 : -1;
 }
+}
 // 0x5AF550
 namespace gamemd {
 void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
@@ -4365,6 +4386,7 @@ void E4Recv_5AF550::sub_5AF550(float * a2, float * a3, AbstractClass * a4)
   }
   sub_5AF000((float *)_ESI, v20, v28); /*0x5af6f5*/
   Matrix2D::Rotate((int *)_ESI, a4); /*0x5af701*/
+}
 }
 // 0x5AF980
 namespace gamemd {
@@ -5341,6 +5363,7 @@ int E4Recv_5AF470::sub_5AF470()
   v1 = TransformMatrix3x4Point(v3, (float *)this, v2); /*0x5af496*/
   Math::CalcAngle(v1[1], *v1); /*0x5af4c4*/
 }
+}
 // 0x5AFB80
 namespace gamemd {
 float * TransformMatrix3x4Point(AbstractClass * aP0, IUnknown * aP1, IUnknown * aP2)
@@ -5535,6 +5558,6 @@ void E4Recv_5AFF50::sub_5AFF50()
 {
   *(unsigned int *)this->__pad_0 = (void*)&MechLocomotionClass_vftable; /*0x5aff50*/
   *(unsigned int *)&this->__pad_0[4] = (void*)&MechLocomotionClass_vftable; /*0x5aff56*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x5aff5d*/
+  LocomotionClass::Construct(); /*0x5aff5d*/
 }
 } // namespace gamemd

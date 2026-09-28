@@ -23,6 +23,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Byte_e4.hpp"
+#include "e4/classes/DropListClass_e4.hpp"
 
 // 0x4B5B70
 namespace gamemd {
@@ -224,6 +225,7 @@ int DroppodLocomotionClass::ILoco_Process(int a1)
     return 1; /*0x4b5e95*/
   }
 }
+}
 // 0x4B6200
 int DropPodLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
@@ -241,7 +243,7 @@ HRESULT DropPodLocomotionClass::BeginMove(int * a1, int * pStm)
   ILocomotion *Piggybackee; // eax
   LPVOID *p_Piggybackee; // esi
 
-  v2 = (int)(pStm);
+  v2 = pStm; /*0x4b6247*/
   v3 = SwizzleManager::SaveLoad((int *)a1->__pad_0, pStm); /*0x4b6252*/
   if ( v3 < 0 ) /*0x4b6256*/
     return v3; /*0x4b6256*/
@@ -275,8 +277,8 @@ HRESULT DropPodLocomotionClass::UpdateMovement(int * a1, int * pPStm, int a3)
   HRESULT v10; // esi
   int v11; // edx
 
-  v3 = (IStream *)((gamemd::DropPodLocomotionClass *)((IStream *)pPStm));
-  v4 = (gamemd::DropPodLocomotionClass *)(a1);
+  v3 = (IStream *)pPStm; /*0x4b62c5*/
+  v4 = a1; /*0x4b62ca*/
   result = LoadIPersistStream((LocomotionClass *)a1, pPStm, a3); /*0x4b62d1*/
   if ( result >= 0 ) /*0x4b62d8*/
   {
@@ -338,8 +340,8 @@ DropPodLocomotionClass * DropPodLocomotionClass::ProcessMove(char a2)
   Piggybackee = this->Piggybackee; /*0x4b6707*/
   if ( Piggybackee ) /*0x4b670c*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b6711*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x4b6716*/
+  LocomotionClass::Construct(); /*0x4b6716*/
   if ( (a2 & 1) != 0 ) /*0x4b6720*/
-    RA2_OPDEL(this); /*0x4b6723*/
+    RA2_OPDEL(); /*0x4b6723*/
   return this->__pad_0; /*0x4b672d*/
 }

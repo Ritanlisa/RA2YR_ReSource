@@ -8,6 +8,8 @@ struct BufferIOFile {
 // --- flat members (BEGIN) ---
     unsigned int u32_20;  // 0x20
     unsigned int q050;  // 0x50
+    unsigned int u32_64;  // 0x64
+    unsigned int u32_68;  // 0x68
     unsigned int q080;  // 0x80
     unsigned int q128;  // 0x128
     unsigned int u32_150;  // 0x150

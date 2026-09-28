@@ -6,10 +6,12 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x7C8A10
 namespace gamemd {
 int ImageList_DragShowNolock()
 {
   return ImageList_DragShowNolock(fShow);
+}
 }

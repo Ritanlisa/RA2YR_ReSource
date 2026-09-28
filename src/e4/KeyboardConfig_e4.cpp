@@ -119,7 +119,7 @@ AbstractClass * * KeyboardConfig::ReleaseBuffer(int a2)
   int i; // ecx
   int v5; // eax
   unsigned int *v6; // edx
-  char * v7;
+  int v7; // eax
 
   if ( a2 < 0 ) /*0x538b8c*/
     return 0; /*0x538b8c*/
@@ -132,7 +132,7 @@ AbstractClass * * KeyboardConfig::ReleaseBuffer(int a2)
     v6 = (unsigned int *)(*(unsigned int *)v3 + 8 * i++); /*0x538bc2*/
     *(unsigned int *)&v3[v5] = *v6; /*0x538bc7*/
   }
-  RA2_OPDEL(*(void **)v3); /*0x538bdb*/
+  RA2_OPDEL(); /*0x538bdb*/
   v7 = a2 + v3->vtable3; /*0x538be6*/
   *(unsigned int *)v3 = v3; /*0x538be8*/
   v3->vtable3 = v7; /*0x538bea*/

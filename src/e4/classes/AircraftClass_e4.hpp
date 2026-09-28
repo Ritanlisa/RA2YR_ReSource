@@ -55,7 +55,7 @@ struct AircraftClass {
     unsigned char alignmentPadding69;  // 0x69
     unsigned int q06A;  // 0x6A
     char health[4];  // 0x6C
-    char estimatedHealth[4];  // 0x70
+    unsigned int estimatedHealth;  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int q077;  // 0x77
@@ -363,7 +363,7 @@ struct AircraftClass {
     char barrelFacing[24];  // 0x370
     char q374[4];  // 0x374
     unsigned char q378;  // 0x378
-    char currentBurstIndex[4];  // 0x37C
+    unsigned int currentBurstIndex;  // 0x37C
     char q380[4];  // 0x380
     char q384[4];  // 0x384
     char primaryFacing[24];  // 0x388

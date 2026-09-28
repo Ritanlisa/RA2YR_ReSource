@@ -27,10 +27,10 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
   int v17; // edi
   int v18; // eax
   int v19; // ecx
-  void * v20;
+  unsigned int v20;
   LONG v21; // edi
   LONG v22; // ebx
-  void * v23;
+  int v23; // eax
   double v24; // st7
   LPPERSISTSTREAM v25; // edi
   int v26; // eax
@@ -56,7 +56,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
   int v46; // [esp+5Eh] [ebp-20h] BYREF
   LONG v47; // [esp+62h] [ebp-1Ch]
   LONG v48; // [esp+66h] [ebp-18h]
-  unsigned int v49;
+  void * v49;
   struct tagRECT Rect; // [esp+6Eh] [ebp-10h] BYREF
   int v51; // [esp+8Eh] [ebp+10h]
 

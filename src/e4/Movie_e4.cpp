@@ -19,6 +19,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Bink_e4.hpp"
 #include "core/ddraw_init.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x49CAF0
 namespace gamemd {
@@ -66,7 +67,7 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
     }
     this->q03C = (unsigned char)(0);
     this->q040 = (unsigned char)(0);
-    this->q03C = (unsigned char)(RA2_OPNEW(4 * *(char *)(v5 + 8)));
+    this->q03C = RA2_OPNEW(4 * *(char *)(v5 + 8)); /*0x49cbae*/
     v9 = 0; /*0x49cbb7*/
     if ( *(char *)(v5 + 8) > 0 ) /*0x49cbbb*/
     {
@@ -90,12 +91,13 @@ AbstractClass * * Movie::SetupScreen(CCINIClass * aP1)
   this->q044 = (void *)(v3);
   return 1; /*0x49cc3d*/
 }
+}
 // 0x49E3B0
 namespace gamemd {
 CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
 {
   if ( !this->q060 ) /*0x49e3b3*/
-    CampaignClass::LoadFromINI(this); /*0x49e3ba*/
+    CampaignClass::LoadFromINI(); /*0x49e3ba*/
   if ( aP1 < 0 || aP1 >= this->q05C ) /*0x49e3ca*/
   {
     *(unsigned int *)aP2 = 0; /*0x49e3e9*/
@@ -106,6 +108,7 @@ CampaignClass * * Movie::GetSection(CCINIClass * aP1, CCINIClass * aP2)
     *aP2 = this->q058 + 76 * aP1; /*0x49e3df*/
     return 1; /*0x49e3dd*/
   }
+}
 }
 // 0x5BED40
 namespace gamemd {
@@ -220,7 +223,7 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
       if ( a7 ) /*0x5bedc7*/
       {
         (*((void (__thiscall **)(ObjectClass *, unsigned int))g_DSurface_Hidden->vtable0 + 6))(g_DSurface_Hidden, 0); /*0x5bedd2*/
-        Frame::Present((int, unsigned int a8)g_DSurface_Hidden, 0, a2, a3, 0, (int)v17, v20, v21); /*0x5bedde*/
+        Frame::Present((int)g_DSurface_Hidden, 0, a2, a3, 0, (int)v17, v20, v21); /*0x5bedde*/
       }
       BinkMovie::Close(&v23, Str); /*0x5bedec*/
       if ( a8 == 1 ) /*0x5bedf9*/
@@ -261,6 +264,7 @@ void Movie::Play(CCINIClass * aP0, int a2, CCINIClass * aP2, IUnknown * aP3, cha
     }
   }
 }
+}
 // 0x5BF260
 namespace gamemd {
 void Movie_PlayWrapper(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
@@ -274,6 +278,7 @@ void Movie_PlayWrapper(void * a1, void * a2, void * a3, void * a4, void * a5, vo
     Movie::Play(-1, a2, a3, a4, a5, a6, 0); /*0x5bf296*/
     g_FramePresent_State = v6; /*0x5bf29b*/
   }
+}
 }
 // 0x7209D0
 namespace gamemd {
@@ -291,7 +296,7 @@ AbstractClass * * Movie::Update()
       IDA_LOBYTE(IsSoundEnabled) = stru_A8EB00.gapE4[144]; /*0x7209ed*/
       if ( stru_A8EB00.gapE4[144] ) /*0x7209f4*/
       {
-        IsSoundEnabled = this->Movie_field_0xC; /*0x7209fa*/
+        IsSoundEnabled = (void *)(this->Movie_field_0xC);
         if ( (int)IsSoundEnabled > 0 ) /*0x7209ff*/
         {
           v3 = *(AudioSample **)&this->__pad_28[4]; /*0x720a01*/
@@ -311,7 +316,7 @@ AbstractClass * * Movie::Update()
                 this->Movie_field_0x8 = Movie::SelectNextBuildableType((int)this, (int)this->Movie_field_0x4); /*0x720a5e*/
                 Debug::Log(); /*0x720a61*/
               }
-              IDA_LOBYTE(IsSoundEnabled) = ThemeClass::Play((ThemeClass *)this, this->Movie_field_0x8); /*0x720a6f*/
+              IDA_LOBYTE(this->Movie_field_0x8); /*0x720a6f*/
               this->Movie_field_0x8 = -2; /*0x720a74*/
             }
           }
@@ -320,6 +325,7 @@ AbstractClass * * Movie::Update()
     }
   }
   return (char)IsSoundEnabled; /*0x720a7b*/
+}
 }
 // 0x720A80
 namespace gamemd {
@@ -368,6 +374,7 @@ unsigned int Movie::SelectNextBuildableType(AnimClass * aP1)
     }
     return 0; /*0x720b12*/
   }
+}
 }
 // 0x49BC80
 namespace gamemd {

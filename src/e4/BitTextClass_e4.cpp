@@ -38,7 +38,7 @@ int BitTextClass::ParseFontData(char * Source)
   {
     this->u32_18 = Font[1]; /*0x4338e2*/
     this->u32_1C = Font[3]; /*0x4338ea*/
-    sub_434700((ObjectClass *)this); /*0x4338ed*/
+    sub_434700(); /*0x4338ed*/
   }
   else
   {

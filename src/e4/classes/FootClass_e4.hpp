@@ -253,10 +253,10 @@ struct FootClass {
     unsigned int ammo;  // 0x258
     unsigned int unitValue;  // 0x25C
     char lastSightRange[4];  // 0x260
-    unsigned int lastSightHeight;  // 0x264
+    char lastSightHeight[4];  // 0x264
     bool ambientParticles;  // 0x268
     bool isGeneratingGap;  // 0x269
-    char gapRadius[4];  // 0x26C
+    unsigned int gapRadius;  // 0x26C
     bool isBeingWarpedOut;  // 0x270
     bool isWarpingOut;  // 0x271
     bool isWarpEffectActive;  // 0x272

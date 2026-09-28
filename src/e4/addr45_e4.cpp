@@ -29,6 +29,7 @@
 #include "e4/classes/TimerClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/E4Recv_4964D0_e4.hpp"
 
 // 0x451400
 namespace gamemd {
@@ -170,6 +171,7 @@ char UpdateBuildingActiveAnim(int a1, int edx0)
     }
   }
 }
+}
 // 0x452000
 namespace gamemd {
 void sub_452000(unsigned int * a1)
@@ -250,6 +252,7 @@ void sub_452000(unsigned int * a1)
   while ( v13 ); /*0x45215b*/
   return result; /*0x45215d*/
 }
+}
 // 0x452D40
 namespace gamemd {
 void sub_452D40()
@@ -273,6 +276,7 @@ void sub_452D40()
     result = stru_A8EB00.parent_gap[20]; /*0x452db3*/
   }
   return result; /*0x452dbe*/
+}
 }
 // 0x456980
 namespace gamemd {
@@ -381,7 +385,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
     if ( aP0 ) /*0x456bf4*/
     {
       v15 = (unsigned int)((double)v36);
-      v36 = (unsigned int)(0);
+      v36 = 0; /*0x456bfe*/
       v16 = (double *)&dword_818CC8; /*0x456c06*/
       v43 = v15; /*0x456c0b*/
       v42 = (double)IDA_SLODWORD(v37); /*0x456c13*/
@@ -449,6 +453,7 @@ void* DrawTechnoDeployCircle(IUnknown * aP0, IUnknown * aP1, int a1, int a4, int
   }
   return (void *)(v14);
 }
+}
 // 0x456FB0
 namespace gamemd {
 BuildingTypeClass * * sub_456FB0(unsigned int * a1, int a2, int a3)
@@ -470,6 +475,7 @@ BuildingTypeClass * * sub_456FB0(unsigned int * a1, int a2, int a3)
     return (gamemd::BuildingTypeClass **)(v4);
   }
 }
+}
 // 0x459F40
 namespace gamemd {
 int ObjectType_IsBuildingType(int a1)
@@ -478,6 +484,7 @@ int ObjectType_IsBuildingType(int a1)
     return (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 44))(a1) == 6 ? a1 : 0;
   else
     return 0; /*0x459f47*/
+}
 }
 // 0x45C300
 namespace gamemd {
@@ -839,6 +846,7 @@ void * E4Recv_45DD20::sub_45DD20()
   }
   return (char *)stru_81926C.Name[2 * v1 + 7]; /*0x45dd3b*/
 }
+}
 // 0x45DD50
 namespace gamemd {
 int E4Recv_45DD50::sub_45DD50()
@@ -856,6 +864,7 @@ int E4Recv_45DD50::sub_45DD50()
       return 0; /*0x45dd7d*/
   }
   return stru_81926C.Name[2 * v2 + 8]; /*0x45dd78*/
+}
 }
 // 0x4503E0
 namespace gamemd {
@@ -924,15 +933,15 @@ namespace gamemd {
 void globalHelper_051EE0(int a1, int a2, IUnknown * aP4)
 {
   int v4; // ecx
-  int v5; // ebp
+  IUnknown * v5;
   int v6; // esi
   unsigned int *v7; // ebx
   unsigned char *v8; // eax
 
-  v4 = aP4; /*0x451ee3*/
+  v4 = (int)(aP4);
   if ( *(unsigned char *)(a1 + 1766) != (unsigned char)aP4 ) /*0x451eed*/
   {
-    v5 = 0; /*0x451ef2*/
+    v5 = (unsigned char)(0);
     *(unsigned char *)(a1 + 1766) = aP4; /*0x451ef4*/
     v6 = 0; /*0x451efa*/
     v7 = (unsigned int *)(a1 + 1372); /*0x451efc*/

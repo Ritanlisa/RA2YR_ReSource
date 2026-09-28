@@ -1008,7 +1008,7 @@ struct InfantryTypeClass {
     unsigned char qE30;  // 0xE30
     unsigned int u32_E34;  // 0xE34
     unsigned char u8_E38;  // 0xE38
-    void* ;  // 0xE3C
+    unsigned int qE3C;  // 0xE3C
     int qE40;  // 0xE40
     int qE44;  // 0xE44
     int qE48;  // 0xE48
@@ -1068,7 +1068,6 @@ struct InfantryTypeClass {
     unsigned int u32_5D00;
     unsigned int vtable0;
     unsigned int ArrayIndex;
-    unsigned int qE3C;
 // --- flat members (END) ---
     InfantryClass * ConstructInfantry(AbstractClass * ppv);
     InfantryTypeClass * * Constructor(ObjectClass * aP1);

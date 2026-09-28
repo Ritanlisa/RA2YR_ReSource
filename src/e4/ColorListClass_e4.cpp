@@ -93,9 +93,9 @@ ColorListClass * ColorListClass::QueryInterface(char a2)
   }
   v4[13] = (char)((gamemd::ColorListClass *)(0));
   *((unsigned int *)v4 + 2) = 0; /*0x488f47*/
-  ListClass::Destruct((ListClass *)this); /*0x488f4a*/
+  ListClass::Destruct(); /*0x488f4a*/
   if ( (a2 & 1) != 0 ) /*0x488f54*/
-    RA2_OPDEL(this); /*0x488f57*/
+    RA2_OPDEL(); /*0x488f57*/
   return this->__pad_0; /*0x488f61*/
 }
 } // namespace gamemd

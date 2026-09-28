@@ -15043,6 +15043,7 @@ struct VectorClass_C;
 struct VectorClass_Ce;
 struct VectorClass_Cel;
 struct VectorClass_Cell;
+struct VectorClass_D;
 struct VectorClass_Di;
 struct VectorClass_Dis;
 struct VectorClass_Dist;

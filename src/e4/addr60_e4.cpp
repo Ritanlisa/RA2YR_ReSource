@@ -100,6 +100,7 @@ void sub_600750()
   }
   RA2_OPDEL(g_DialogHashMap_Entries); /*0x600866*/
 }
+}
 // 0x600920
 namespace gamemd {
 void sub_600920()
@@ -176,6 +177,7 @@ void sub_600920()
     while ( g_DialogBuffer > (unsigned int)dword_AC18F0 ); /*0x600a2a*/
   }
   RA2_OPDEL(g_DialogPool); /*0x600a36*/
+}
 }
 // 0x600AF0
 namespace gamemd {
@@ -268,6 +270,7 @@ void sub_600AF0()
   }
   RA2_OPDEL(g_DialogHashMap_Base); /*0x600c53*/
 }
+}
 // 0x600C70
 namespace gamemd {
 void NavigateDialogTab(HWND hCtl, bool a2)
@@ -287,6 +290,7 @@ void NavigateDialogTab(HWND hCtl, bool a2)
     IDA_LOBYTE(result) = 1; /*0x600c99*/
   }
   return result; /*0x600c8e*/
+}
 }
 // 0x600CA0
 namespace gamemd {
@@ -496,6 +500,7 @@ void ValidateDialogEvent(int a1, HWND a2)
   }
   return 15; /*0x600f07*/
 }
+}
 // 0x6015E0
 namespace gamemd {
 void CtlDialogColorHandler(int a1, HWND a2)
@@ -697,6 +702,7 @@ void CtlDialogColorHandler(int a1, HWND a2)
   if ( v6 != 1685 ) /*0x601d0d*/
     return 1; /*0x601d0f*/
   return result; /*0x6018af*/
+}
 }
 // 0x601D20
 namespace gamemd {
@@ -901,6 +907,7 @@ void ValidateDialogControl(int a1, HWND a2)
   }
   return 8; /*0x601fef*/
 }
+}
 // 0x6023F0
 namespace gamemd {
 int sub_6023F0(int a1, HWND a2)
@@ -934,6 +941,7 @@ int sub_6023F0(int a1, HWND a2)
     return IDA_HIDWORD(g_RulesClass_Instance->GenericClick); /*0x602462*/
   else
     return -1; /*0x60247b*/
+}
 }
 // 0x602490
 namespace gamemd {
@@ -1113,6 +1121,7 @@ void IsValidActionDialog(int a1, HWND a2)
   }
   return Event::IsValidActionType(v4) && DlgCtrlID == 1685 && !SessionClass::GetGameSpeed(g_GameMode_Current); /*0x60262e*/
 }
+}
 // 0x602DD0
 namespace gamemd {
 char IsDialogControlHidden(int a1, HWND a2)
@@ -1197,6 +1206,7 @@ char IsDialogControlHidden(int a1, HWND a2)
   }
   return 0; /*0x602f56*/
 }
+}
 // 0x603040
 namespace gamemd {
 int LoadCampaignMissionData(int a1, HWND a2)
@@ -1266,6 +1276,7 @@ int LoadCampaignMissionData(int a1, HWND a2)
     return 14; /*0x60322f*/
   }
   return 0; /*0x6031c6*/
+}
 }
 // 0x6035F0
 namespace gamemd {
@@ -1356,6 +1367,7 @@ AbstractClass * * DispatchDialogControlAction(int a1, HWND a2)
   }
   return (gamemd::AbstractClass **)(result);
 }
+}
 // 0x603870
 namespace gamemd {
 AbstractClass * * GetDialogControlSHP(int a1, HWND a2, bool * a3)
@@ -1436,6 +1448,7 @@ AbstractClass * * GetDialogControlSHP(int a1, HWND a2, bool * a3)
     return (gamemd::AbstractClass **)((void *)dword_B0FAD0);
   }
   return 0; /*0x603a05*/
+}
 }
 // 0x603AA0
 namespace gamemd {
@@ -1518,6 +1531,7 @@ int IsDialogWindowClass(HWND a1, HWND a2)
     return 0; /*0x603afb*/
   return 192; /*0x603af0*/
 }
+}
 // 0x603D30
 namespace gamemd {
 void * CacheDialogInvalidate(HWND hWnd, HWND a2)
@@ -1549,6 +1563,7 @@ void * CacheDialogInvalidate(HWND hWnd, HWND a2)
   }
   return result; /*0x603d7c*/
 }
+}
 // 0x603E40
 namespace gamemd {
 unsigned int * sub_603E40(int a1, int a2)
@@ -1576,24 +1591,26 @@ unsigned int * sub_603E40(int a1, int a2)
   }
   return result; /*0x603e89*/
 }
+}
 // 0x604060
 namespace gamemd {
 wchar_t ** GetSkirmishMenuOwnerName(SkirmishDialog * aP0, HWND a2, HWND a3)
 {
   char *v4; // eax
-  wchar_t *String; // eax
+  wchar_t *StringCSF; // eax
 
   v4 = (char *)(DlgSkirmishMenuProc(a2, a3));
   if ( v4 ) /*0x604072*/
   {
-    String = (wchar_t *)(GetStringCSF((wchar_t *)v4, 0, g_Str_File_ownrdraw_cpp, 1957));
-    WideString::Assign(aP0, String); /*0x60408a*/
+    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)v4, 0, g_Str_File_ownrdraw_cpp, 1957));
+    WideString::Assign((WideString *)aP0, StringCSF); /*0x60408a*/
   }
   else
   {
-    WideString::Assign(aP0, &g_TypeClass_DefaultString); /*0x60409c*/
+    WideString::Assign((WideString *)aP0, &g_TypeClass_DefaultString); /*0x60409c*/
   }
   return (wchar_t **)(aP0);
+}
 }
 // 0x6040B0
 namespace gamemd {
@@ -1624,6 +1641,7 @@ AbstractClass * * DlgSkirmishMenuProc(HWND a1, HWND a2)
       goto LABEL_5; /*0x6040f8*/
 }
 }
+}
 // 0x606740
 namespace gamemd {
 int Dialog_SetActiveFlag(int a1, char a2)
@@ -1650,6 +1668,7 @@ int Dialog_SetActiveFlag(int a1, char a2)
     }
   }
   return result; /*0x606789*/
+}
 }
 // 0x6071E0
 namespace gamemd {
@@ -2613,6 +2632,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
   }
   return 0; /*0x608cbc*/
 }
+}
 // 0x608CD0
 namespace gamemd {
 void IsDialogControlVisible(int a1, HWND a2)
@@ -2900,6 +2920,7 @@ void IsDialogControlVisible(int a1, HWND a2)
   }
   return 1; /*0x608f34*/
 }
+}
 // 0x6096A0
 namespace gamemd {
 char sub_6096A0(int a1, HWND a2)
@@ -2927,6 +2948,7 @@ char sub_6096A0(int a1, HWND a2)
     return IsDialogControlVisible(a1, a2); /*0x609718*/
   else
     return 0; /*0x6096fc*/
+}
 }
 // 0x609730
 namespace gamemd {
@@ -3036,6 +3058,7 @@ void GetDialogDefaultButton(int a1, HWND a2)
   }
   return result; /*0x609795*/
 }
+}
 // 0x609AA0
 namespace gamemd {
 bool sub_609AA0(int a1, HWND a2)
@@ -3063,6 +3086,7 @@ bool sub_609AA0(int a1, HWND a2)
     return GetDialogDefaultButton(a1, a2); /*0x609b18*/
   else
     return 0; /*0x609afc*/
+}
 }
 // 0x609B30
 namespace gamemd {
@@ -3094,6 +3118,7 @@ bool sub_609B30(int a1, HWND a2)
     v4 = 0; /*0x609b7a*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x609b85*/
   return Event::IsValidActionType(v4) && DlgCtrlID == 1685; /*0x609b98*/
+}
 }
 // 0x609BC0
 namespace gamemd {
@@ -3149,6 +3174,7 @@ bool sub_609BC0(int a1, HWND a2)
   v8 = v5 + 1; /*0x609cbb*/
   return v8 && !v8[26] && (uint8_t)GetDialogDefaultButton(a1, a2); /*0x609cd8*/
 }
+}
 // 0x609CF0
 namespace gamemd {
 bool sub_609CF0(int a1, HWND a2)
@@ -3202,6 +3228,7 @@ bool sub_609CF0(int a1, HWND a2)
   }
   v8 = v5 + 1; /*0x609deb*/
   return v8 && !v8[26] && (uint8_t)GetDialogDefaultButton(a1, a2); /*0x609e08*/
+}
 }
 // 0x609E20
 namespace gamemd {
@@ -3322,6 +3349,7 @@ void FilterDialogButtonAction(int a1, HWND a2)
   }
   return 0; /*0x609f09*/
 }
+}
 // 0x60A100
 namespace gamemd {
 bool sub_60A100(int a1, HWND a2)
@@ -3352,6 +3380,7 @@ bool sub_60A100(int a1, HWND a2)
     v4 = 0; /*0x60a14a*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x60a14d*/
   return v4 == 226 && DlgCtrlID == 1821; /*0x60a159*/
+}
 }
 // 0x60A180
 namespace gamemd {
@@ -3389,6 +3418,7 @@ void EnumFunc(HWND hWnd, LPARAM a2)
   }
   return 1; /*0x60a1e4*/
 }
+}
 // 0x60A250
 namespace gamemd {
 void sub_60A250(HWND hWnd, LPARAM a2)
@@ -3424,6 +3454,7 @@ void sub_60A250(HWND hWnd, LPARAM a2)
     }
   }
   return 1; /*0x60a2b4*/
+}
 }
 // 0x60B000
 namespace gamemd {
@@ -3491,6 +3522,7 @@ AbstractClass * * RepositionGameSpeedIndicator(HWND hWnd, int a2)
              0);
   }
 }
+}
 // 0x60B880
 namespace gamemd {
 bool sub_60B880(int a1, HWND a2)
@@ -3531,6 +3563,7 @@ bool sub_60B880(int a1, HWND a2)
       || v4 == 115
       || v4 == 255
       || v4 == 234;
+}
 }
 // 0x60C0C0
 namespace gamemd {
@@ -3708,6 +3741,7 @@ void RepositionDialogControls(HWND hWnd, HWND a2)
     }
   }
 }
+}
 // 0x60C4A0
 int SkirmishDialog::ResizeDialogAndEnum()
 {
@@ -3833,6 +3867,7 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
     v15[8] = 0; /*0x60f734*/
     return 1; /*0x60f738*/
   }
+}
 }
 // 0x600320
 namespace gamemd {
@@ -4099,17 +4134,17 @@ namespace gamemd {
 wchar_t ** sub_603FC0(wchar_t ** a1, HWND a2, HWND hWnd, unsigned short a4, void * a5)
 {
   LPARAM lParam[2]; // [esp+10h] [ebp-Ch] BYREF
-  void *v9; // [esp+18h] [ebp-4h] BYREF
+  wchar_t *v9; // [esp+18h] [ebp-4h] BYREF
   LRESULT v10; // [esp+24h] [ebp+8h]
 
-  v10 = SendMessageA(hWnd, 0x4E8u, 0, a4 | ((uint16_t)a5 << 16)); /*0x603ffc*/
+  v10 = SendMessageA(hWnd, 0x4E8u, 0, a4 | (*(uint16_t *)a5.__pad_0 << 16)); /*0x603ffc*/
   unknown_libname_74(&v9); /*0x604000*/
   lParam[0] = (LPARAM)hWnd; /*0x604016*/
   lParam[1] = v10; /*0x60401a*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x60401e*/
-  WideString::AssignFromPtr((wchar_t **)&a5, (const wchar_t **)&v9); /*0x604029*/
-  DeleteAndZero::Alt(&v9); /*0x604032*/
-  WideString::AssignFromPtr(a1, (const wchar_t **)&a5); /*0x60403e*/
+  WideString::AssignFromPtr((WideString *)&a5, (const wchar_t **)&v9); /*0x604029*/
+  DeleteAndZero::Alt((DeleteAndZero *)&v9); /*0x604032*/
+  WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&a5); /*0x60403e*/
   DeleteAndZero::Alt(&a5); /*0x604047*/
   return a1; /*0x60404e*/
 }
@@ -4138,8 +4173,8 @@ BOOL E4Recv_60B740::sub_60B740()
 
   Parent = GetParent((HWND)this); /*0x60b748*/
   GetWindowRect(Parent, &Rect); /*0x60b75a*/
-  GetWindowRect((HWND)this, &v4); /*0x60b762*/
-  return MoveWindow((HWND)this, v4.left - Rect.left, v4.top - Rect.top, v4.right - v4.left, v4.bottom - v4.top, 0); /*0x60b791*/
+  GetWindowRect(&v4); /*0x60b762*/
+  return MoveWindow(v4.left - Rect.left, v4.top - Rect.top, v4.right - v4.left, v4.bottom - v4.top, 0); /*0x60b791*/
 }
 } // namespace gamemd
 

@@ -146,6 +146,7 @@ int TiberiumClass::Spread(int a1, int a2, int a3, int a4, int a5, int a6, char a
     (*(void (__thiscall **)(unsigned int *, int))*v28)(v28, 1); /*0x5a03d0*/
   return 1; /*0x5a03d2*/
 }
+}
 // 0x7216C0
 namespace gamemd {
 TiberiumClass::TiberiumClass(ObjectClass * aP1)
@@ -154,7 +155,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
   int v4; // eax
   int v5; // eax
 
-  AbstractTypeClass::Constructor((int *)this, aP1); /*0x7216ca*/
+  AbstractTypeClass::Constructor(aP1); /*0x7216ca*/
   this->location[1] = -1717986918; /*0x7216dc*/
   this->Spread = -1717986918; /*0x7216e7*/
   *(unsigned int *)&this->isInLogic = -1; /*0x7216f1*/
@@ -215,6 +216,7 @@ TiberiumClass::TiberiumClass(ObjectClass * aP1)
     *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v5) = this; /*0x721873*/
   }
   return &this->vtable0; /*0x721878*/
+}
 }
 // 0x721A50
 namespace gamemd {
@@ -444,6 +446,7 @@ AbstractClass * * TiberiumClass::SaveLoad_Prefix(int a1, int a2)
     v2->TiberiumClass_field_FC = 0; /*0x722086*/
   }
   return result; /*0x72208c*/
+}
 }
 // 0x721E40
 namespace gamemd {

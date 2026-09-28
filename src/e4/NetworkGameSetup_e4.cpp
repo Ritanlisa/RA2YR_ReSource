@@ -18,6 +18,8 @@
 #include "e4/classes/BuildingPlacement_e4.hpp"
 #include "e4/classes/EventClass_e4.hpp"
 #include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x5B9750
 namespace gamemd {
@@ -78,9 +80,9 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
 namespace gamemd {
 unsigned int * NetworkGameSetup::DeleteComPtr(char a2)
 {
-  ComPtr::Dtor((ComPtr *)this); /*0x5bb563*/
+  ComPtr::Dtor(); /*0x5bb563*/
   if ( (a2 & 1) != 0 ) /*0x5bb56d*/
-    RA2_OPDEL(this); /*0x5bb570*/
+    RA2_OPDEL(); /*0x5bb570*/
   return this->__pad_0; /*0x5bb57a*/
 }
 } // namespace gamemd

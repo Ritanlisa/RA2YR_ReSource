@@ -11,6 +11,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/GameOption_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x798340
 namespace gamemd {
@@ -18,12 +19,12 @@ int sub_798340()
 {
   HANDLE *v0; // esi
   BOOL result; // eax
-
-  v0 = (HANDLE *)(&Handles);
+v0 = (HANDLE *)(&Handles);
   do /*0x79835b*/
     result = ResetEvent(*v0++); /*0x798350*/
   while ( (int)v0 < (int)g_WOL_RequestObject ); /*0x79835b*/
   return result; /*0x79835d*/
+}
 }
 // 0x72C060
 namespace gamemd {

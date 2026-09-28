@@ -9,6 +9,7 @@
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/DisplayClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x4AF780
 namespace gamemd {
@@ -48,7 +49,7 @@ HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   IStream *v3; // esi
   DriveLocomotionClass *v4; // edi
   int IPersistStream; // ebx
-  ILocomotion * v6;
+  int v6; // ecx
   ILocomotion *Piggybackee; // eax
   int v8; // edi
   int *v9; // ebx
@@ -131,9 +132,9 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(char a2)
   Piggybackee = this->Piggybackee; /*0x4b4d17*/
   if ( Piggybackee ) /*0x4b4d1c*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b4d21*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x4b4d26*/
+  LocomotionClass::Construct(); /*0x4b4d26*/
   if ( (a2 & 1) != 0 ) /*0x4b4d30*/
-    RA2_OPDEL(this); /*0x4b4d33*/
+    RA2_OPDEL(); /*0x4b4d33*/
   return this->__pad_0; /*0x4b4d3d*/
 }
 } // namespace gamemd

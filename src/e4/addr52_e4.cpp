@@ -104,6 +104,7 @@ int E4Recv_522100::sub_522100()
     (*(void (__stdcall **)(int))(*(unsigned int *)v7 + 8))(v7); /*0x5221b6*/
   return v6; /*0x522115*/
 }
+}
 // 0x523440
 namespace gamemd {
 void BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2)
@@ -133,6 +134,7 @@ void BinaryArraySearch(AbstractClass * aP0, int edx0, int * a2)
     goto LABEL_7; /*0x52346e*/
   }
   return aP0 + 8 * (v3 / 2); /*0x523474*/
+}
 }
 // 0x525430
 namespace gamemd {
@@ -193,7 +195,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
       v22.Items = 0; /*0x52554d*/
     }
     v19 = (void **)(a6);
-    v22.IsAllocated = (void **)(0);
+    v22.IsAllocated = 0; /*0x525558*/
     v22.Capacity = 0; /*0x52555e*/
     a5 = (void*)&VectorClass_int_vftable; /*0x525562*/
     if ( a6 && IDA_HIBYTE(a8) ) /*0x525572*/
@@ -219,6 +221,7 @@ void * GetINIClassIntList(int a1, unsigned char *** edx0, INIClass * aP1, unsign
       RA2_OPDEL(v19); /*0x5255d0*/
   }
   return (void *)(a1);
+}
 }
 // 0x528220
 namespace gamemd {
@@ -307,10 +310,10 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
       a2 = v16; /*0x528314*/
       if ( this->fallRate ) /*0x528318*/
       {
-        attachedBomb = this->attachedBomb; /*0x52831f*/
+        attachedBomb = (gamemd::BombClass *)(this->attachedBomb);
         if ( !attachedBomb || attachedBomb->vtable0 != v16 ) /*0x528328*/
         {
-          v18 = (BombClass *)SortedArray::BinarySearch((SortedArray *)&this->owningHouseIndex, (int *)&a2); /*0x528331*/
+          v18 = (unsigned int)((BombClass *)SortedArray::BinarySearch((SortedArray *)&this->owningHouseIndex, (int *)&a2));
           if ( !v18 ) /*0x528338*/
             goto LABEL_27; /*0x528338*/
           this->attachedBomb = v18; /*0x52833a*/
@@ -323,7 +326,7 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
         vtable2 = *p_vtable1; /*0x52835e*/
         if ( vtable2 ) /*0x528362*/
         {
-          v6 = a3; /*0x528364*/
+          v6 = (unsigned int)(a3);
           this->vtable2 = vtable2; /*0x528368*/
           this->vtable1 = v4; /*0x52836b*/
           goto LABEL_5; /*0x528370*/
@@ -336,6 +339,7 @@ int E4Recv_528220::sub_528220(unsigned char * a2, unsigned char * a3, int a4)
     }
   }
   return a4; /*0x528383*/
+}
 }
 // 0x529E70
 namespace gamemd {
@@ -428,6 +432,7 @@ char ** E4Recv_529E70::sub_529E70(char ** a2, char * Source, char ** a4, char **
   a2[1] = v15; /*0x52a028*/
   a2[2] = v16; /*0x52a02b*/
   return a2; /*0x52a02e*/
+}
 }
 // 0x52A110
 namespace gamemd {
@@ -522,6 +527,7 @@ void * E4Recv_52A110::sub_52A110(float * a2, unsigned char * a3, float a4, float
   a2[1] = v17[1]; /*0x52a2d9*/
   a2[2] = v17[2]; /*0x52a2e1*/
   return a2; /*0x52a249*/
+}
 }
 // 0x52A2F0
 namespace gamemd {
@@ -623,6 +629,7 @@ Color * * E4Recv_52A2F0::sub_52A2F0(float * a2, float Source, char ** a4, float 
   a2[2] = v16; /*0x52a4c3*/
   return a2; /*0x52a4c6*/
 }
+}
 // 0x52A4D0
 namespace gamemd {
 ObjectClass * * E4Recv_52A4D0::sub_52A4D0(unsigned char * v14)
@@ -718,10 +725,11 @@ ObjectClass * * E4Recv_52A610::sub_52A610(void * a2)
   unsigned char v6[512]; // [esp+8h] [ebp-200h] BYREF
 
   v3 = sub_631FC0((ObjectClass *)a2, v6); /*0x52a628*/
-  INIClass::ReadBase64Data((char *)this, (uint8_t *)aPublickey, (int)v6, v3); /*0x52a63a*/
+  INIClass::ReadBase64Data((uint8_t *)aPublickey, (int)v6, v3); /*0x52a63a*/
   v4 = sub_631FE0((ObjectClass *)a2, v6); /*0x52a646*/
-  INIClass::ReadBase64Data((char *)this, (uint8_t *)aPrivatekey, (int)v6, v4); /*0x52a658*/
+  INIClass::ReadBase64Data((uint8_t *)aPrivatekey, (int)v6, v4); /*0x52a658*/
   return 1; /*0x52a65d*/
+}
 }
 // 0x52B720
 namespace gamemd {
@@ -731,6 +739,7 @@ int CompareFunc4Int(unsigned int * a1, unsigned int * a2)
     return 0; /*0x52b730*/
   else
     return *a1 >= *a2 ? 1 : -1;
+}
 }
 // 0x52BA60
 namespace gamemd {
@@ -1400,6 +1409,7 @@ char PlayIntroSequence()
   Screen::Capture(1, 0, a1, a2); /*0x52cb72*/
   return Event::Dispatch();
 }
+}
 // 0x52CD70
 namespace gamemd {
 void InitRules()
@@ -1672,6 +1682,7 @@ void InitRules()
     RA2_OPDEL(*(void **)&dwInitParam.m_1[3]); /*0x52d41b*/
   return 1; /*0x52d028*/
 }
+}
 // 0x52D870
 namespace gamemd {
 void sub_52D870(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
@@ -1742,6 +1753,7 @@ void sub_52D870(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
     return 0; /*0x52d98f*/
   }
   return result; /*0x52d90f*/
+}
 }
 // 0x52D9A0
 namespace gamemd {
@@ -2755,6 +2767,7 @@ char CommandLine_Parse(int a1, int a2)
   _putws(v17); /*0x52fb57*/
   return 0; /*0x52fb37*/
 }
+}
 // 0x52FC20
 namespace gamemd {
 Straw * * Random_Init()
@@ -2809,6 +2822,7 @@ Straw * * Random_Init()
     qmemcpy(&Randomizer_Global, v4, 0x3F4u); /*0x52fe51*/
   }
   return result; /*0x52fe53*/
+}
 }
 // 0x52FFD0
 namespace gamemd {
@@ -3016,7 +3030,7 @@ void nullsub_147()
 namespace gamemd {
 int InfantryTypeClass::j__do_always_noconv_codecvt_base_std__MBE_NXZ_19()
 {
-  return AbstractClass::processWeaponFire(this);
+  return AbstractClass::processWeaponFire();
 }
 } // namespace gamemd
 

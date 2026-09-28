@@ -14,6 +14,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/CCINIClass_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
 
 // 0x5B20F0
 namespace gamemd {
@@ -39,7 +40,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   int v34; // eax
   int v35; // eax
   unsigned int *v36; // eax
-  unsigned int v37; // ecx
+  int * v37;
   unsigned int v38; // edx
   int *v39; // eax
   int v40; // eax
@@ -50,7 +51,7 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   int *v45; // eax
   double v46; // st7
   unsigned int v47; // ecx
-  void * Vector3_field_0x08;
+  unsigned int Vector3_field_0x08; // esi
   unsigned int v49; // edx
   void *v50; // eax
   double *v51; // eax
@@ -94,7 +95,8 @@ long long Movement::CalcVelocity(IUnknown * aP0, unsigned int * a1, double a3, I
   double v92; // [esp+78h] [ebp-30h] BYREF
   unsigned int v93[4]; // [esp+80h] [ebp-28h]
   double v94[3]; // [esp+90h] [ebp-18h] BYREF
-_ESI = (unsigned int)(a1);
+
+  _ESI = (unsigned int)(a1);
   v11 = (unsigned int)(*a4 == (void *)g_MissionQueueFrame.localVariables[291]);
   *(unsigned int *)v88.__pad_0 = a1; /*0x5b2110*/
   if ( v11 /*0x5b2134*/
@@ -245,7 +247,7 @@ _ESI = (unsigned int)(a1);
           *(unsigned int *)a2->__pad_0 + v33,
           a2->Vector3_field_0x04 + IDA_HIDWORD(v92),
           a2->Vector3_field_0x08 + v35);
-  v37 = (unsigned int)((void *)(v36[1]));
+  v37 = (unsigned int)((int *)(v36[1]));
   v38 = (unsigned int)(v36[2]);
   *(unsigned int *)a2->__pad_0 = *v36; /*0x5b23b8*/
   a2->Vector3_field_0x04 = v37; /*0x5b23be*/

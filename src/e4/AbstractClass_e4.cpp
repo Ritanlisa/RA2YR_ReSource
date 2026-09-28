@@ -15,6 +15,8 @@
 #include "e4/classes/RefCount_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/AbstractTypeClass_e4.hpp"
+#include "e4/classes/AITriggerTypeClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x438E70
 namespace gamemd {
@@ -123,7 +125,7 @@ bool BuildingTypeClass::CanPlacePath(unsigned short *a2, int a3)
   if ( this->PlaceAnywhere ) /*0x464ac0*/
     return 1; /*0x464aca*/
   else
-    return BuildingClass::ValidatePath((TechnoTypeClass *)this, a2, a3); /*0x464ad9*/
+    return BuildingClass::ValidatePath(a2, a3); /*0x464ad9*/
 }
 } // namespace gamemd
 
@@ -346,12 +348,13 @@ VectorClass_flat * * AbstractClass_RemoveObjectFromHouse(void * a1, void * a2, v
   if ( *(AbstractClass **)(v7 + 21448) == v6 ) /*0x4fbcdd*/
     *(unsigned int *)(v7 + 21448) = 0; /*0x4fbcdf*/
   if ( *(AbstractClass **)(v7 + 21452) == v6 ) /*0x4fbceb*/
-    *(unsigned int *)(v7 + 21452) = 0; /*0x4fbced*/
+    *(unsigned int *, unsigned int a2, unsigned int a3)(v7 + 21452) = 0; /*0x4fbced*/
   return result; /*0x4fbcf3*/
+}
 }
 // 0x5C03D0
 namespace gamemd {
-ObjectClass * * AbstractClass_getPathDirection()
+ObjectClass * * AbstractClass_getPathDirection(void * a1, void * a2, void * a3)
 {
   int v3; // ebx
   char result; // al
@@ -393,14 +396,16 @@ ObjectClass * * AbstractClass_getPathDirection()
   }
   return result; /*0x5c047d*/
 }
+}
 // 0x5D7FD0
 namespace gamemd {
 unsigned int * AbstractClass::checkVisibility(char a2)
 {
   this->vtable0 = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d7fd9*/
   if ( (a2 & 1) != 0 ) /*0x5d7fdf*/
-    RA2_OPDEL(this); /*0x5d7fe2*/
+    RA2_OPDEL(); /*0x5d7fe2*/
   return &this->vtable0; /*0x5d7fec*/
+}
 }
 // 0x5D8030
 namespace gamemd {
@@ -408,8 +413,9 @@ unsigned int * AbstractClass::updateVisibilityState(char a2)
 {
   this->vtable0 = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8039*/
   if ( (a2 & 1) != 0 ) /*0x5d803f*/
-    RA2_OPDEL(this); /*0x5d8042*/
+    RA2_OPDEL(); /*0x5d8042*/
   return &this->vtable0; /*0x5d804c*/
+}
 }
 // 0x5D8050
 namespace gamemd {
@@ -417,8 +423,9 @@ unsigned int * AbstractClass::processFogReveal(char a2)
 {
   this->vtable0 = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8059*/
   if ( (a2 & 1) != 0 ) /*0x5d805f*/
-    RA2_OPDEL(this); /*0x5d8062*/
+    RA2_OPDEL(); /*0x5d8062*/
   return &this->vtable0; /*0x5d806c*/
+}
 }
 // 0x5D8070
 namespace gamemd {
@@ -426,8 +433,9 @@ unsigned int * AbstractClass::checkShroudState(char a2)
 {
   this->vtable0 = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8079*/
   if ( (a2 & 1) != 0 ) /*0x5d807f*/
-    RA2_OPDEL(this); /*0x5d8082*/
+    RA2_OPDEL(); /*0x5d8082*/
   return &this->vtable0; /*0x5d808c*/
+}
 }
 // 0x5D8090
 namespace gamemd {
@@ -435,8 +443,9 @@ unsigned int * AbstractClass::updateShroudMap(char a2)
 {
   this->vtable0 = (void*)&MultiplayerGameMode_InitializerBase_vftable; /*0x5d8099*/
   if ( (a2 & 1) != 0 ) /*0x5d809f*/
-    RA2_OPDEL(this); /*0x5d80a2*/
+    RA2_OPDEL(); /*0x5d80a2*/
   return &this->vtable0; /*0x5d80ac*/
+}
 }
 // 0x70D4A0
 namespace gamemd {
@@ -487,6 +496,7 @@ void AbstractClass::ClearTargetToMeClearManagerTarget(int a1)
     if ( *(unsigned int *)(v8 + 64) == a1 ) /*0x70d575*/
       *(unsigned int *)(v8 + 64) = 0; /*0x70d577*/
   }
+}
 }
 // 0x7258D0
 namespace gamemd {
@@ -663,6 +673,7 @@ AbstractClass * * AbstractClass::AnnounceExpiredPointer(AbstractClass * aP0, Abs
         return;
     }
   }
+}
 }
 // 0x410100
 namespace gamemd {
@@ -883,7 +894,7 @@ Surface * AbstractClass::getObjectValue(char a2)
 {
   *(unsigned int *)this->__pad_0 = &Surface_Vtable; /*0x4115d9*/
   if ( (a2 & 1) != 0 ) /*0x4115df*/
-    RA2_OPDEL(this); /*0x4115e2*/
+    RA2_OPDEL(); /*0x4115e2*/
   return (std::locale::facet *)this; /*0x4115ec*/
 }
 } // namespace gamemd
@@ -1136,10 +1147,10 @@ int AbstractClass::getMapCoords()
 namespace gamemd {
 std::locale::facet * AbstractClass::setMapCoords(char a2)
 {
-  *(unsigned int *)this = (void*)&Animate_vftable; /*0x427279*/
+  this->m_0 = (int)&Animate_vftable; /*0x427279*/
   if ( (a2 & 1) != 0 ) /*0x42727f*/
-    RA2_OPDEL(this); /*0x427282*/
-  return this; /*0x42728c*/
+    RA2_OPDEL(); /*0x427282*/
+  return (std::locale::facet *)this; /*0x42728c*/
 }
 } // namespace gamemd
 
@@ -1192,6 +1203,7 @@ void AbstractClass_queryInterface()
   this->vtable2 = GroundHeight; /*0x464aaf*/
   return &this->vtable0; /*0x464a9f*/
 }
+}
 // 0x465910
 namespace gamemd {
 char AbstractClass::releaseRef()
@@ -1222,7 +1234,7 @@ Blitter * AbstractClass::getTileIndex(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x499cc9*/
   if ( (a2 & 1) != 0 ) /*0x499ccf*/
-    RA2_OPDEL(this); /*0x499cd2*/
+    RA2_OPDEL(); /*0x499cd2*/
   return (std::locale::facet *)this; /*0x499cdc*/
 }
 } // namespace gamemd
@@ -1233,7 +1245,7 @@ BlitPlainXlat * AbstractClass::setTileIndex(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x499ce9*/
   if ( (a2 & 1) != 0 ) /*0x499cef*/
-    RA2_OPDEL(this); /*0x499cf2*/
+    RA2_OPDEL(); /*0x499cf2*/
   return this; /*0x499cfc*/
 }
 } // namespace gamemd
@@ -1244,7 +1256,7 @@ BlitTransXlat * AbstractClass::getOverlayType(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x499d09*/
   if ( (a2 & 1) != 0 ) /*0x499d0f*/
-    RA2_OPDEL(this); /*0x499d12*/
+    RA2_OPDEL(); /*0x499d12*/
   return this; /*0x499d1c*/
 }
 } // namespace gamemd
@@ -1255,7 +1267,7 @@ std::locale::facet * AbstractClass::setOverlayFlags(char a2)
 {
   *(unsigned int *)this = (void*)&Blitter_vftable; /*0x499d29*/
   if ( (a2 & 1) != 0 ) /*0x499d2f*/
-    RA2_OPDEL(this); /*0x499d32*/
+    RA2_OPDEL(); /*0x499d32*/
   return this; /*0x499d3c*/
 }
 } // namespace gamemd
@@ -1266,7 +1278,7 @@ RLEBlitter * AbstractClass::clearOverlayFlags(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&RLEBlitter_vftable; /*0x499da9*/
   if ( (a2 & 1) != 0 ) /*0x499daf*/
-    RA2_OPDEL(this); /*0x499db2*/
+    RA2_OPDEL(); /*0x499db2*/
   return (std::locale::facet *)this; /*0x499dbc*/
 }
 } // namespace gamemd
@@ -1284,6 +1296,7 @@ namespace gamemd {
 int AbstractClass_COMStub_143()
 {
   return IPersistStream::GetMaxSize();
+}
 }
 // 0x4DB250
 namespace gamemd {
@@ -1326,7 +1339,7 @@ GScreenClass * AbstractClass::getHouseHandle(char a2)
 {
   this->parent_gap[0] = (int)&off_7EA6FC; /*0x4f4c09*/
   if ( (a2 & 1) != 0 ) /*0x4f4c0f*/
-    RA2_OPDEL(this); /*0x4f4c12*/
+    RA2_OPDEL(); /*0x4f4c12*/
   return (std::locale::facet *)this; /*0x4f4c1c*/
 }
 } // namespace gamemd
@@ -1464,9 +1477,9 @@ MissionClass * AbstractClass::getWeaponRange(char a2)
   this->vtable1 = (void*)&MissionClass_vftable; /*0x5b3a69*/
   this->vtable2 = (void*)&MissionClass_vftable; /*0x5b3a70*/
   this->vtable3 = (void*)&MissionClass_vftable; /*0x5b3a77*/
-  ObjectClass::Dtor((ObjectClass *)this); /*0x5b3a7e*/
+  ObjectClass::Dtor(); /*0x5b3a7e*/
   if ( (a2 & 1) != 0 ) /*0x5b3a88*/
-    RA2_OPDEL(this); /*0x5b3a8b*/
+    RA2_OPDEL(); /*0x5b3a8b*/
   return &this->vtable0; /*0x5b3a95*/
 }
 } // namespace gamemd
@@ -1833,7 +1846,7 @@ FileClass * AbstractClass::processAITrigger(char a2)
 {
   *this = (FileClass)(void*)&FileClass_vftable; /*0x65c619*/
   if ( (a2 & 1) != 0 ) /*0x65c61f*/
-    RA2_OPDEL(this); /*0x65c622*/
+    RA2_OPDEL(); /*0x65c622*/
   return this; /*0x65c62c*/
 }
 } // namespace gamemd

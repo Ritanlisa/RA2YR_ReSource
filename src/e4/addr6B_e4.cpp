@@ -34,6 +34,9 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Waypoint_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/Init_e4.hpp"
 
 // 0x6B2430
 namespace gamemd {
@@ -45,7 +48,7 @@ unsigned int * sub_6B2430(int * a1, int a2)
   int v6; // eax
 
   result = (int)((unsigned int *)dword_B0B658);
-  v3 = a1[1]; /*0x6b2436*/
+  v3 = (int)(a1[1]);
   v4 = *a1; /*0x6b243b*/
   if ( g_SlaveMgrPool < dword_B0B658 /*0x6b2475*/
     || (byte_B0B65D || !dword_B0B658)
@@ -56,13 +59,14 @@ unsigned int * sub_6B2430(int * a1, int a2)
                              0),
         (unsigned char)result) )
   {
-    v6 = (int)((unsigned int *)(g_SlaveMgrPool++));
-    result = (unsigned int *)((char *)dword_B0B654 + 12 * v6);
+    v6 = (unsigned int *)(g_SlaveMgrPool++);
+    result = (char *)dword_B0B654 + 12 * v6; /*0x6b248f*/
     *result = v4; /*0x6b2492*/
     result[1] = v3; /*0x6b2495*/
     result[2] = a2; /*0x6b2498*/
   }
   return result; /*0x6b249b*/
+}
 }
 // 0x6B2700
 namespace gamemd {
@@ -106,7 +110,7 @@ CellClass * * InitializeBuildabilityGrid(int a1)
   {
     if ( v1 - 1 >= 0 ) /*0x6b2750*/
     {
-      v3 = (unsigned char *)(v2 + 5);
+      v3 = v2 + 5; /*0x6b2752*/
       v4 = v1; /*0x6b2755*/
       do /*0x6b2764*/
       {
@@ -118,7 +122,7 @@ CellClass * * InitializeBuildabilityGrid(int a1)
       }
       while ( v4 ); /*0x6b2764*/
     }
-    g_SlaveManagerPool = (int)(v2);
+    g_SlaveManagerPool = v2; /*0x6b2766*/
   }
   else
   {
@@ -209,7 +213,8 @@ CellClass * * InitializeBuildabilityGrid(int a1)
     }
     while ( v9 <= v8 ); /*0x6b2a52*/
   }
-  return (gamemd::CellClass **)(result);
+  return result; /*0x6b2a58*/
+}
 }
 // 0x6B2A70
 namespace gamemd {
@@ -267,7 +272,7 @@ AbstractClass * * SlaveManager_InitGrid()
   {
     if ( v1 - 1 >= 0 ) /*0x6b2aba*/
     {
-      v3 = (unsigned char *)(v2 + 5);
+      v3 = v2 + 5; /*0x6b2abc*/
       v4 = v1; /*0x6b2abf*/
       do /*0x6b2ace*/
       {
@@ -279,7 +284,7 @@ AbstractClass * * SlaveManager_InitGrid()
       }
       while ( v4 ); /*0x6b2ace*/
     }
-    g_SlaveManagerPool = (int)(v2);
+    g_SlaveManagerPool = v2; /*0x6b2ad0*/
   }
   else
   {
@@ -434,7 +439,8 @@ AbstractClass * * SlaveManager_InitGrid()
     }
     ++v7; /*0x6b2f14*/
   }
-  return (gamemd::AbstractClass **)(result);
+  return result; /*0x6b2f23*/
+}
 }
 // 0x6B2F30
 namespace gamemd {
@@ -447,7 +453,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   int v7; // esi
   int v8; // ecx
   int v9; // edx
-  unsigned int v10;
+  void *v10; // eax
   int16_t v11; // di
   unsigned int *v12; // ebx
   int v13; // ecx
@@ -544,7 +550,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   int v105; // [esp+7Ch] [ebp-40h]
   int v106; // [esp+80h] [ebp-3Ch]
   int v107; // [esp+84h] [ebp-38h]
-  void * v108;
+  int v108; // [esp+88h] [ebp-34h]
   int v109; // [esp+8Ch] [ebp-30h] BYREF
   int v110; // [esp+90h] [ebp-2Ch]
   int v111; // [esp+94h] [ebp-28h]
@@ -588,7 +594,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   if ( v5 <= v6 ) /*0x6b3032*/
   {
     v107 = (int)((void *)(v4));
-    v98 = (int16_t)v83; /*0x6b3047*/
+    v98 = (void *)((int16_t)v83);
     v10 = g_SlaveManagerPool; /*0x6b304b*/
     while ( 1 ) /*0x6b3050*/
     {
@@ -645,7 +651,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   LABEL_105:
       if ( ++v83 > v98 ) /*0x6b3602*/
       {
-        v8 = (int)(v100);
+        v8 = v100; /*0x6b3608*/
         v7 = v91; /*0x6b360c*/
         v9 = v108; /*0x6b3610*/
         goto LABEL_107; /*0x6b3610*/
@@ -674,7 +680,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
         v24 = v105++; /*0x6b31c0*/
         *((unsigned int *)Block + v24) = i; /*0x6b31cb*/
       }
-      v22 = (int *)(v103);
+      v22 = v103; /*0x6b31ce*/
     }
     for ( j = 0; j < v105; ++j ) /*0x6b31e1*/
       (*(void (__thiscall **)(unsigned int, unsigned int))(**((unsigned int **)Block + j) + 292))(*((unsigned int *)Block + j), 0); /*0x6b31ee*/
@@ -741,7 +747,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
     v38 = 4; /*0x6b337c*/
     do /*0x6b338c*/
     {
-      v39 = (int)((unsigned int *)(*v37++));
+      v39 = *v37++; /*0x6b3381*/
       --v38; /*0x6b3388*/
       *(v37 - 1) = v39 - v36; /*0x6b3389*/
     }
@@ -877,10 +883,10 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
       (*(void (__thiscall **)(unsigned int, int))(**((unsigned int **)Block + v60) + 292))(*((unsigned int *)Block + v60), 1); /*0x6b35d0*/
       (*(void (__thiscall **)(unsigned int, unsigned int))(**((unsigned int **)Block + v60) + 460))(*((unsigned int *)Block + v60), 0); /*0x6b35e1*/
     }
-  LABEL_104: v10 = (unsigned int)((void *)(g_SlaveManagerPool));
+  LABEL_104: v10 = (void *)(g_SlaveManagerPool);
     goto LABEL_105; /*0x6b35ee*/
   }
-  v10 = (unsigned int)((void *)(g_SlaveManagerPool));
+  v10 = g_SlaveManagerPool; /*0x6b3626*/
   LABEL_110:
   RA2_OPDEL(v10); /*0x6b362b*/
   g_SlaveManagerPool = 0; /*0x6b3649*/
@@ -891,7 +897,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   v97 = v62; /*0x6b3681*/
   if ( v61 <= v62 ) /*0x6b3685*/
   {
-    v108 = (void *)(v78 - 1);
+    v108 = v78 - 1; /*0x6b3691*/
     v96 = v80 + 1; /*0x6b369e*/
     do /*0x6b3811*/
     {
@@ -910,7 +916,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
           v67 = v64[3]; /*0x6b36fe*/
           if ( CellClass::DetermineTileType((int)v63) ) /*0x6b3701*/
           {
-            v68 = (int *)(CellClass::GetScreenRect((int)v63, v114));
+            v68 = CellClass::GetScreenRect((int)v63, v114); /*0x6b3718*/
             if ( v66 <= 0 || v67 <= 0 ) /*0x6b3727*/
             {
               v71 = *v68; /*0x6b37ad*/
@@ -962,7 +968,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
         v62 = v97; /*0x6b3802*/
         v61 = v82; /*0x6b3806*/
       }
-      v82 = (void **)(++v61);
+      v82 = ++v61; /*0x6b380d*/
     }
     while ( v61 <= v62 ); /*0x6b3811*/
   }
@@ -970,6 +976,7 @@ AbstractClass * * sub_6B2F30(char a1, int a2, int a3)
   if ( Block && v104 ) /*0x6b382d*/
     RA2_OPDEL(Block); /*0x6b3830*/
   return 1; /*0x6b3838*/
+}
 }
 // 0x6B3850
 namespace gamemd {
@@ -1060,7 +1067,7 @@ void ProcessSlaveManagerTerrain()
               *(unsigned char *)(i + 283) = v9 / 15; /*0x6b39dc*/
               do /*0x6b39ed*/
               {
-                v16 = (unsigned int *)(*v15++);
+                v16 = *v15++; /*0x6b39e2*/
                 --v14; /*0x6b39e9*/
                 *(v15 - 1) = v16 - v9; /*0x6b39ea*/
               }
@@ -1094,6 +1101,7 @@ void ProcessSlaveManagerTerrain()
   RA2_OPDEL(g_SlaveManagerPool); /*0x6b3a68*/
   g_SlaveManagerPool = 0; /*0x6b3a6d*/
   return 1; /*0x6b3a7c*/
+}
 }
 // 0x6B3A80
 namespace gamemd {
@@ -1222,6 +1230,7 @@ void Terrain_FlowCompute(int a1, char a2, int a3, int a4)
   IDA_LOBYTE(result) = 0; /*0x6b3cbf*/
   return result; /*0x6b3cb3*/
 }
+}
 // 0x6B3CD0
 namespace gamemd {
 char sub_6B3CD0(int a1, char a2, int a3, unsigned int a4)
@@ -1303,6 +1312,7 @@ char sub_6B3CD0(int a1, char a2, int a3, unsigned int a4)
     v5 = a3; /*0x6b3e41*/
   }
   return ProcessBuildingClassConstruction(a2, v10, v5); /*0x6b3e13*/
+}
 }
 // 0x6B3E60
 namespace gamemd {
@@ -1465,6 +1475,7 @@ AbstractClass * * ComputeTerrainFlowField(int a1, char a2, int a3, unsigned int 
   byte_B0B65D = 0; /*0x6b40ed*/
   return 0; /*0x6b402d*/
 }
+}
 // 0x6B5490
 namespace gamemd {
 int FactoryClass_LoadTheaterSHP(int a1)
@@ -1495,6 +1506,7 @@ int FactoryClass_LoadTheaterSHP(int a1)
     result = FactoryClass_Count; /*0x6b552b*/
   }
   return result; /*0x6b553a*/
+}
 }
 // 0x6B59A0
 namespace gamemd {
@@ -1645,6 +1657,7 @@ void StandardCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char 
       RA2_OPDEL(v31); /*0x6b5c70*/
   }
   return 0; /*0x6b59e2*/
+}
 }
 // 0x6B5C90
 namespace gamemd {
@@ -1805,6 +1818,7 @@ void TimedCreateUnitAtCoords(unsigned int * a0, IUnknown * aP1, int a3, char a4)
   IDA_LOBYTE(result) = 0; /*0x6b5f6b*/
   return result; /*0x6b5cd2*/
 }
+}
 // 0x6B6230
 namespace gamemd {
 void sub_6B6230()
@@ -1838,6 +1852,7 @@ void sub_6B6230()
     Dialog::Destroy(Dialog); /*0x6b62cb*/
   }
   Debug::Log(); /*0x6b62e9*/
+}
 }
 // 0x6B8F00
 namespace gamemd {
@@ -2126,6 +2141,7 @@ int Texture_DrawAffine(int a1, unsigned int * a2, int * a3, int a4, unsigned cha
   }
   return (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 96))(a1); /*0x6b9203*/
 }
+}
 // 0x6B9D00
 namespace gamemd {
 AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, int a5)
@@ -2366,6 +2382,7 @@ AbstractClass * * Palette_LoadFromFile(int a1, int a2, char * Source, int a4, in
     return 0; /*0x6b9d90*/
   }
 }
+}
 // 0x6BB390
 namespace gamemd {
 void sub_6BB390()
@@ -2468,6 +2485,7 @@ void sub_6BB390()
   if ( pptlib ) /*0x6bb740*/
     pptlib->lpVtbl->Release(pptlib); /*0x6bb745*/
   return 0; /*0x6bb73a*/
+}
 }
 // 0x6BB9A0
 namespace gamemd {
@@ -4397,6 +4415,7 @@ void WinMain_Setup()
     hMutex = 0; /*0x7b8718*/
   }
 }
+}
 // 0x6B0A90
 namespace gamemd {
 unsigned int * E4Recv_6B0A90::sub_6B0A90(int a2)
@@ -5348,7 +5367,7 @@ unsigned int E4Recv_6B94E0::sub_6B94E0()
   char *v4; // eax
 
   v2 = String::Length((String *)this); /*0x6b94ec*/
-  for ( i = 0; i < String::Length((String *)this); ++i ) /*0x6b94f0*/
+  for (); ++i ) /*0x6b94f0*/
   {
     v4 = String::GetOrEmpty((String *)this); /*0x6b94fb*/
     v2 = ((i + v4[i] + v2) >> 24) ^ ((i + v4[i] + v2) << 8); /*0x6b9510*/
@@ -5606,6 +5625,6 @@ int sub_6BB760()
 namespace gamemd {
 void  __noreturn E4Recv_6BEC50::ExitProgram()
 {
-  exit((int)this); /*0x6bec51*/
+  exit(); /*0x6bec51*/
 }
 } // namespace gamemd

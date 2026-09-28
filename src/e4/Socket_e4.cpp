@@ -12,6 +12,7 @@
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/E4Recv_5AFEF0_e4.hpp"
+#include "e4/classes/SlaveManagerClass_e4.hpp"
 
 // 0x7B2630
 namespace gamemd {

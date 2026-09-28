@@ -14,6 +14,7 @@
 #include "e4/classes/Stream_e4.hpp"
 #include "e4/classes/SuperClass_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Struct_e4.hpp"
 
 // 0x49B760
 namespace gamemd {
@@ -27,11 +28,11 @@ void String::AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2)
   {
     v4 = ToWideStringChar(aP1); /*0x49b772*/
     result = strlen(v4) + 1; /*0x49b779*/
-    qmemcpy(this, v4, result); /*0x49b788*/
+    qmemcpy(v4, result); /*0x49b788*/
   }
   else
   {
-    *(unsigned int *)this = 0; /*0x49b793*/
+    *(_DWORD *)this = 0; /*0x49b793*/
   }
   if ( aP2 ) /*0x49b79c*/
   {
@@ -44,6 +45,7 @@ void String::AssignWideToChar(CampaignScore * aP1, CampaignScore * aP2)
     *(&this->ptr_88) = 0; /*0x49b7cc*/
   }
   return result; /*0x49b7c5*/
+}
 }
 // 0x4CB5E0
 namespace gamemd {
@@ -87,14 +89,14 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   int v8; // eax
   char *v10; // [esp+Ch] [ebp-4h] BYREF
 
-  String::Assign((String *)this, 0); /*0x5d0389*/
+  String::Assign(0); /*0x5d0389*/
   this->ptr_4 = 0; /*0x5d0392*/
   this->ptr_8 = 0; /*0x5d0395*/
   this->u32_C = 0; /*0x5d0398*/
   unknown_libname_73(&v10); /*0x5d039b*/
   v3 = String::Tokenize(aP1, 0, Str, (void **)&v10); /*0x5d03ba*/
   if ( String::Length((String *)&v10) ) /*0x5d03bc*/
-    String::Reassign((String *)this, (const char **)&v10); /*0x5d03cc*/
+    String::Reassign((const char **)&v10); /*0x5d03cc*/
   v4 = String::Tokenize(aP1, v3, Str, (void **)&v10); /*0x5d03e7*/
   if ( String::Length((String *)&v10) ) /*0x5d03e9*/
   {
@@ -115,6 +117,7 @@ ObjectClass * * String::SplitComma(ObjectClass * aP1)
   }
   DeleteAndZero((ObjectClass *)&v10); /*0x5d045a*/
   return this; /*0x5d0461*/
+}
 }
 // 0x5F3350
 namespace gamemd {
@@ -151,6 +154,7 @@ int String::NormalizeNewlines()
   }
   return v1; /*0x5f3394*/
 }
+}
 // 0x763690
 namespace gamemd {
 ControlClass * * String::To_Waypoint()
@@ -162,6 +166,7 @@ ControlClass * * String::To_Waypoint()
     return toupper(this->ptr_4) + 26 * v2 - 39; /*0x7636db*/
   else
     return v2; /*0x7636e0*/
+}
 }
 // 0x7B51D0
 namespace gamemd {
@@ -193,8 +198,9 @@ void String::TrimLeft(ObjectClass * aP1)
       break; /*0x7b5212*/
   }
   if ( i > 0 ) /*0x7b5219*/
-    return String::Erase(this, 0, i); /*0x7b5220*/
+    return String::Erase(0, i); /*0x7b5220*/
   return result; /*0x7b5225*/
+}
 }
 // 0x7B54B0
 namespace gamemd {
@@ -204,6 +210,7 @@ unsigned int String::Length()
     return strlen(*(const char **)this->__pad_0); /*0x7b54c6*/
   else
     return 0; /*0x7b54b7*/
+}
 }
 // 0x7B57A0
 namespace gamemd {
@@ -340,6 +347,7 @@ AbstractClass * * String::Replace(char * SubStr, const char * a3)
     RA2_OPDEL(v4); /*0x7b5a2c*/
   return 1; /*0x7b5a34*/
 }
+}
 // 0x7B5F10
 namespace gamemd {
 AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
@@ -429,6 +437,7 @@ AbstractClass * * String::Tokenize(int a2, ObjectClass * aP2, ObjectClass * aP3)
   if ( v17 ) /*0x7b60c3*/
     RA2_OPDEL(v17); /*0x7b60c6*/
   return (int)(Stra + 1); /*0x7b5f1e*/
+}
 }
 // 0x7B7A60
 namespace gamemd {
@@ -525,6 +534,7 @@ AbstractClass * * String::Tokenize2(int a2, wchar_t * Str, void ** a4)
     RA2_OPDEL(v19); /*0x7b7be3*/
   return v23 + 1; /*0x7b7a6d*/
 }
+}
 // 0x7CCA34
 namespace gamemd {
 exception * * int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char * a3, int a4, void * a5)
@@ -595,12 +605,13 @@ exception * * int sub_7CCA34(unsigned char * a1, unsigned int a2, unsigned char 
   *a1 = 0; /*0x7ccb1f*/
   return a2 - v11; /*0x7ccb17*/
 }
+}
 // 0x4F4C30
 namespace gamemd {
 char * String::CopyUpper(ObjectClass * aP1)
 {
-  strcpy(this, aP1); /*0x4f4c4e*/
-  _strupr(this); /*0x4f4c57*/
+  strcpy(aP1); /*0x4f4c4e*/
+  _strupr(); /*0x4f4c57*/
   return this; /*0x4f4c61*/
 }
 } // namespace gamemd
@@ -609,7 +620,7 @@ char * String::CopyUpper(ObjectClass * aP1)
 namespace gamemd {
 char * String::Copy(const char * a2)
 {
-  strcpy(this, a2); /*0x4f4c8c*/
+  strcpy(a2); /*0x4f4c8c*/
   return this; /*0x4f4c97*/
 }
 } // namespace gamemd
@@ -618,7 +629,7 @@ char * String::Copy(const char * a2)
 namespace gamemd {
 char * String::CopyChecked(const char * a2)
 {
-  strcpy(this, a2); /*0x4f4ccc*/
+  strcpy(a2); /*0x4f4ccc*/
   return this; /*0x4f4cd7*/
 }
 } // namespace gamemd
@@ -646,7 +657,7 @@ unsigned int String::ComputeHash()
   char *v4; // eax
 
   v2 = String::Length(this); /*0x5e262c*/
-  for ( i = 0; i < String::Length(this); ++i ) /*0x5e2630*/
+  for (); ++i ) /*0x5e2630*/
   {
     v4 = String::GetOrEmpty(this); /*0x5e263b*/
     v2 = ((i + v4[i] + v2) >> 24) ^ ((i + v4[i] + v2) << 8); /*0x5e2650*/
@@ -665,8 +676,8 @@ char * String::Trim()
 
   if ( this ) /*0x727cf5*/
   {
-    v2 = *this; /*0x727cf7*/
-    v3 = this; /*0x727cfc*/
+    v2 = (const char *)(*this);
+    v3 = (const char *)(this);
     if ( *this ) /*0x727cf7*/
     {
       do /*0x727d0a*/
@@ -677,7 +688,7 @@ char * String::Trim()
       }
       while ( v2 ); /*0x727d0a*/
       if ( v3 != this ) /*0x727d0e*/
-        strcpy(this, v3); /*0x727d27*/
+        strcpy(v3); /*0x727d27*/
     }
     for ( i = strlen(this) - 1; i >= 0; --i ) /*0x727d3f*/
     {
@@ -688,7 +699,7 @@ char * String::Trim()
       *(this + i) = 0; /*0x727d4c*/
     }
   }
-  return this; /*0x727d55*/
+  return (char *)(this);
 }
 } // namespace gamemd
 

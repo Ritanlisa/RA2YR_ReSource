@@ -40,7 +40,7 @@ int TActionClass::executeBuildAction()
   {
     result = this->u32_1F7; /*0x4fcdca*/
     if ( !result ) /*0x4fcdd2*/
-      return HouseClass::CheckWinCondition((HouseClass *)this, 0); /*0x4fcdd6*/
+      return HouseClass::CheckWinCondition(0); /*0x4fcdd6*/
   }
   if ( this->u32_298 == -1 ) /*0x4fcde3*/
   {
@@ -48,6 +48,7 @@ int TActionClass::executeBuildAction()
     this->u32_298 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x4fcdea*/
   }
   return result; /*0x4fcddb*/
+}
 }
 // 0x50D2D0
 namespace gamemd {
@@ -71,12 +72,14 @@ int TActionClass::executeMoveAction(int a2)
   }
   return result; /*0x50d30e*/
 }
+}
 // 0x50DA00
 namespace gamemd {
 int TActionClass::executeGuardAction(int a2)
 {
   this->u32_54F0 = a2; /*0x50da04*/
   return a2; /*0x50da0a*/
+}
 }
 // 0x50DA20
 namespace gamemd {
@@ -86,12 +89,14 @@ int TActionClass::executeHuntAction(int a2)
   this->u32_54FC = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x50da30*/
   return a2; /*0x50da36*/
 }
+}
 // 0x50DFE0
 namespace gamemd {
 int TActionClass::executeDeployAction(int a2)
 {
   this->u32_5494 = a2; /*0x50dfe4*/
   return a2; /*0x50dfea*/
+}
 }
 // 0x567F70
 namespace gamemd {
@@ -111,10 +116,10 @@ void sub_567F70(int * a1, int a2)
   int v13; // eax
   int v14; // ebp
   unsigned int v15; // eax
-  unsigned int *v16; // ecx
-  unsigned int *v17; // ecx
-  unsigned int *v18; // ecx
-  unsigned int *v19; // eax
+  unsigned int v16;
+  unsigned int v17;
+  unsigned int v18;
+  unsigned int v19;
   int16_t v20; // [esp+14h] [ebp-8h]
   int16_t v21; // [esp+16h] [ebp-6h]
   int v22; // [esp+20h] [ebp+4h]
@@ -155,26 +160,26 @@ void sub_567F70(int * a1, int a2)
             if ( v15 >= 0x40000 || (v16 = *(unsigned int **)(v12 + 4 * v15)) == 0 ) /*0x56806e*/
             {
               g_Map_GlobalCellIndex = (int)((unsigned int *)(v22));
-              v16 = (unsigned int *)(g_CellClassArray);
+              v16 = g_CellClassArray; /*0x568076*/
             }
             if ( !v16[76] ) /*0x56807b*/
             {
               if ( v15 >= 0x40000 || (v17 = *(unsigned int **)(v12 + 4 * v15)) == 0 ) /*0x568098*/
               {
                 g_Map_GlobalCellIndex = (int)((unsigned int *)(v22));
-                v17 = (unsigned int *)(g_CellClassArray);
+                v17 = g_CellClassArray; /*0x5680a0*/
               }
-              v17[76] = (unsigned int *)(1);
+              v17[76] = (unsigned int)(1);
               if ( v15 >= 0x40000 || (v18 = *(unsigned int **)(g_Shroud_CellArray + 4 * v15)) == 0 ) /*0x5680c5*/
               {
                 g_Map_GlobalCellIndex = (int)((unsigned int *)(v22));
-                v18 = (unsigned int *)(g_CellClassArray);
+                v18 = g_CellClassArray; /*0x5680cd*/
               }
               v18[75] &= ~8u; /*0x5680dd*/
               if ( v15 >= 0x40000 || (v19 = *(unsigned int **)(g_Shroud_CellArray + 4 * v15)) == 0 ) /*0x5680f7*/
               {
                 g_Map_GlobalCellIndex = (int)((unsigned int *)(v22));
-                v19 = (unsigned int *)(g_CellClassArray);
+                v19 = g_CellClassArray; /*0x5680ff*/
               }
               v19[75] &= ~0x10u; /*0x56810d*/
               v12 = g_Shroud_CellArray; /*0x568113*/
@@ -194,6 +199,7 @@ void sub_567F70(int * a1, int a2)
     while ( v10 < result ); /*0x568130*/
   }
   return result; /*0x568137*/
+}
 }
 // 0x577C90
 namespace gamemd {
@@ -220,7 +226,7 @@ int TActionClass::executeRepairAction(int a2)
   this->TActionClass_field_44 = v4; /*0x577cf0*/
   this->q045 = v4 - 1; /*0x577cf9*/
   this->q046 = (v4 << 11) + this->q04F + 4; /*0x577d0e*/
-  for ( i = LayerClass::CellIteratorNext((LayerClass *)this); i; i = LayerClass::CellIteratorNext((LayerClass *)this) ) /*0x577d1d*/
+  for (); i; i = LayerClass::CellIteratorNext((LayerClass *)this) ) /*0x577d1d*/
   {
     DisplayClass::AdvanceFrameCounter((DisplayClass *)i); /*0x577d21*/
     if ( *(int *)(i + 304) >= 0 ) /*0x577d2e*/
@@ -236,6 +242,7 @@ int TActionClass::executeRepairAction(int a2)
   FogOfWar::Render((FogOfWar *)&stru_87F5F0.__pad_58[416]); /*0x577d79*/
   return (*((int (__thiscall **)(TActionClass *, int))this->vtable0 + 14))(this, 2); /*0x577d88*/
 }
+}
 // 0x578850
 namespace gamemd {
 int TActionClass::executeSellAction()
@@ -243,11 +250,12 @@ int TActionClass::executeSellAction()
   int result; // eax
   int v2; // edx
 
-  result = (int)((void *)(this->TActionClass_field_40));
-  v2 = (int)((void *)(this->u32_FC));
-  this->u32_11C = (void *)(v2 + result + 1);
+  result = this->TActionClass_field_40; /*0x578850*/
+  v2 = this->u32_FC; /*0x578856*/
+  this->u32_11C = v2 + result + 1; /*0x578861*/
   this->TActionClass_field_48 = result + this->q03D - v2; /*0x578871*/
   return result; /*0x578877*/
+}
 }
 // 0x6AC5F0
 namespace gamemd {
@@ -256,7 +264,7 @@ unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
   unsigned int result;
   int v5; // esi
   int v7; // eax
-  int v8; // edx
+  unsigned int * v8;
   int v9; // eax
   char *v10; // edx
   unsigned int *v11; // ecx
@@ -269,7 +277,8 @@ unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
     v5 = 0; /*0x6ac615*/
     if ( unk_A83CF0 <= 0 ) /*0x6ac61f*/
     {
-  LABEL_9: v5 = (int)(0);
+  LABEL_9:
+      v5 = 0; /*0x6ac632*/
       if ( unk_A8B228 <= 0 ) /*0x6ac63c*/
       {
   LABEL_13: v5 = (int)((unsigned int *)(0));
@@ -286,7 +295,7 @@ unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
       }
       else
       {
-        result = unk_A8B21C; /*0x6ac63e*/
+        result = (unsigned int *)(unk_A8B21C);
         while ( a2 != *result ) /*0x6ac645*/
         {
           ++v5; /*0x6ac647*/
@@ -298,7 +307,7 @@ unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
     }
     else
     {
-      result = unk_A83CE4; /*0x6ac621*/
+      result = (unsigned int *)(unk_A83CE4);
       while ( a2 != *result ) /*0x6ac628*/
       {
         ++v5; /*0x6ac62a*/
@@ -354,6 +363,7 @@ unsigned int * TActionClass::executeHarvestAction(int a2, MouseClass * aP2)
   result = (unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[416] + aP2 + 1); /*0x6ac71a*/
   this->u32_53A0 = result; /*0x6ac728*/
   return result; /*0x6ac670*/
+}
 }
 // 0x6E0B60
 namespace gamemd {
@@ -443,7 +453,8 @@ AbstractClass * * TActionClass::ConvertHouseUnits(int a2, int _14, unsigned int 
     }
     while ( v14 < *(int *)&stru_A8EB00.gapE4[164] ); /*0x6e0c89*/
   }
-  return v6; /*0x6e0ba6*/
+  return (gamemd::AbstractClass **)(v6);
+}
 }
 // 0x6E1CC0
 namespace gamemd {
@@ -481,6 +492,7 @@ AnimClass * * TActionClass::executeRetreatAction(AbstractClass * aP1, int a3, in
     MEMORY[0x198] = 1; /*0x6e1da3*/
   return 1; /*0x6e1d9b*/
 }
+}
 // 0x6E2290
 namespace gamemd {
 AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown * aP4)
@@ -517,6 +529,7 @@ AnimClass * * TActionClass::executeEscortAction(int a2, int a3, int a4, IUnknown
     MEMORY[0x198] = 1; /*0x6e237b*/
   return 1; /*0x6e2371*/
 }
+}
 // 0x6E2390
 namespace gamemd {
 AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4)
@@ -545,7 +558,7 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
     GroundHeight += dword_B0E6D4; /*0x6e242d*/
   }
   v6 = (gamemd::CellClass *)(*(unsigned int *)&this->pad_6E[34]);
-  v7 = *((unsigned int *)g_WeaponTypeConfig + v6); /*0x6e2440*/
+  v7 = (gamemd::CellClass *)(*((unsigned int *)g_WeaponTypeConfig + v6));
   v8 = *(unsigned int *)(v7 + 164); /*0x6e2449*/
   v9 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v16); /*0x6e244f*/
   WarheadVersusMultiplier = (void *)GetWarheadVersusMultiplier(v8, *(unsigned int *)(v7 + 172), v9->landType, &v16); /*0x6e246d*/
@@ -561,6 +574,7 @@ AbstractClass * * TActionClass::CreateWeaponImpactAtWaypoint(int a2, int a3, int
   CreateSmokeEffectAt(v8, *(unsigned int *)(*((unsigned int *)g_WeaponTypeConfig + v6) + 172), v16, v17, GroundHeight, 0, 0); /*0x6e24ea*/
   PlaySoundEffectAt(&v16, v8, 0, *(unsigned int *)(*((unsigned int *)g_WeaponTypeConfig + v6) + 172), 1, 0); /*0x6e250b*/
   return 1; /*0x6e2510*/
+}
 }
 // 0x6E2C40
 namespace gamemd {
@@ -628,6 +642,7 @@ ScenarioClass * * TActionClass::SpawnMeteorShower(AbstractClass * aP1, int a3, i
   }
   while ( v18 ); /*0x6e2dfa*/
   return 1; /*0x6e2e01*/
+}
 }
 // 0x6E36E0
 namespace gamemd {
@@ -715,6 +730,7 @@ AbstractClass * * TActionClass::executeGeneticMutatorAction(int a2, int a3, int 
     *(unsigned int *)&this->pad_6E[34]);
   return 1; /*0x6e41c3*/
 }
+}
 // 0x6E42D0
 namespace gamemd {
 int TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP4)
@@ -735,6 +751,7 @@ int TActionClass::executeIronCurtainAction(int a2, int a3, int a4, IUnknown * aP
   SuperClass::SetCharge(v6, (int)this->TActionClass_field_48); /*0x6e430d*/
   return 1; /*0x6e4314*/
 }
+}
 // 0x6E4320
 namespace gamemd {
 int TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown * aP4)
@@ -749,6 +766,7 @@ int TActionClass::executeNukeAction(int a2, int a3, int a4, IUnknown * aP4)
   SuperClass::SetRechargeTime(*(SuperClass **)(*(unsigned int *)(a2 + 600) + 4 * v5), (int)this->TActionClass_field_48); /*0x6e434b*/
   return 1; /*0x6e4352*/
 }
+}
 // 0x71E6A0
 namespace gamemd {
 TActionClass::TActionClass()
@@ -760,7 +778,7 @@ TActionClass::TActionClass()
   int v6; // eax
   int v7; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x71e6a4*/
+  AbstractClass::Constructor(); /*0x71e6a4*/
   this->idxArray = -1; /*0x71e6ab*/
   this->TActionClass_field_28 = 0; /*0x71e6b2*/
   this->TActionClass_field_2C = 0; /*0x71e6b5*/
@@ -828,6 +846,7 @@ TActionClass::TActionClass()
   }
   this->TActionClass_field_34 = 0; /*0x71e7f8*/
   return (int)this; /*0x71e7fd*/
+}
 }
 // 0x50D290
 namespace gamemd {
@@ -1612,7 +1631,7 @@ int TActionClass::Validate(int a2)
   unsigned int *TActionClass_field_50; // eax
   int v10; // eax
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x6e3e59*/
+  AbstractClass::ProcessPower(); /*0x6e3e59*/
   TActionClass_field_28 = this->TActionClass_field_28; /*0x6e3e5e*/
   if ( TActionClass_field_28 ) /*0x6e3e63*/
   {
@@ -1839,7 +1858,7 @@ namespace gamemd {
 int TActionClass::executeAirstrikeAction()
 {
   IDA_LOBYTE(this->TActionClass_field_44) = 1; /*0x7268f0*/
-  return BuildingClass::ProcessUpgradeEffects((BuildingClass *)this);
+  return BuildingClass::ProcessUpgradeEffects();
 }
 } // namespace gamemd
 

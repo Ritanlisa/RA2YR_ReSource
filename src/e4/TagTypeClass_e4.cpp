@@ -23,12 +23,12 @@
 namespace gamemd {
 AbstractTypeClass * * TagTypeClass::Construct(ObjectClass * aP1)
 {
-  TagTypeClass * v3;
-  TagTypeClass * v4;
+  int v3; // eax
+  int v4; // eax
   char Destination[48]; // [esp+8h] [ebp-34h] BYREF
   char v7; // [esp+38h] [ebp-4h]
 
-  AbstractTypeClass::Constructor((int)this, aP1); /*0x6e5b6c*/
+  AbstractTypeClass::Constructor(aP1); /*0x6e5b6c*/
   this->u32_98 = -1; /*0x6e5b78*/
   this->u32_9C = 0; /*0x6e5b82*/
   this->persistence = 0; /*0x6e5b88*/
@@ -50,7 +50,7 @@ AbstractTypeClass * * TagTypeClass::Construct(ObjectClass * aP1)
     qmemcpy(this + 100, Destination, 0x30u); /*0x6e5bdc*/
     this->u32_250 = v7; /*0x6e5bde*/
   }
-  this->u32_98 = (gamemd::TagTypeClass *)(g_MultiplayerCleanup);
+  this->u32_98 = g_MultiplayerCleanup; /*0x6e5be6*/
   if ( g_MultiplayerCleanup < dword_B0E788 /*0x6e5c1e*/
     || (byte_B0E78D || !dword_B0E788)
     && dword_B0E794 > 0
@@ -75,6 +75,7 @@ AbstractTypeClass * * TagTypeClass::Construct(ObjectClass * aP1)
   }
   return (gamemd::AbstractTypeClass **)(this);
 }
+}
 // 0x6E5CA0
 namespace gamemd {
 AbstractClass * * TagTypeClass::CleanupMembers()
@@ -86,7 +87,8 @@ AbstractClass * * TagTypeClass::CleanupMembers()
   unsigned int *v6; // ecx
   int v7; // eax
   int v8; // eax
-this->vtable0 = (unsigned int)((void*)&TagTypeClass_vftable);
+
+  this->vtable0 = (unsigned int)((void*)&TagTypeClass_vftable);
   this->vtable1 = (void*)&TagTypeClass_vftable; /*0x6e5cad*/
   this->vtable2 = (void*)&TagTypeClass_vftable; /*0x6e5cb4*/
   this->vtable3 = (void*)&TagTypeClass_vftable; /*0x6e5cbb*/
@@ -105,7 +107,7 @@ this->vtable0 = (unsigned int)((void*)&TagTypeClass_vftable);
     }
     while ( v3 ); /*0x6e5cfa*/
   }
-  v4 = (unsigned int)(0);
+  v4 = 0; /*0x6e5d01*/
   if ( g_GameObjectCleanup > 0 ) /*0x6e5d05*/
   {
     v5 = (unsigned int *)(g_TagClassCount);
@@ -149,7 +151,8 @@ this->vtable0 = (unsigned int)((void*)&TagTypeClass_vftable);
     }
     while ( v8 < g_MultiplayerCleanup ); /*0x6e5dc0*/
   }
-  return AbstractTypeClass::Dtor(this); /*0x6e5dc9*/
+  return AbstractTypeClass::Dtor(); /*0x6e5dc9*/
+}
 }
 // 0x6E5E50
 namespace gamemd {
@@ -202,8 +205,8 @@ void* TagTypeClass::GetAction(unsigned char *** a2)
     qmemcpy((void *)(&this->persistence0), Destination, 0x30u); /*0x6e6123*/
     this->q094 = v7; /*0x6e6125*/
   }
-  v4 = (unsigned int)((char *)((void *)(strtok(0, Delimiter))));
-  this->q0A0 = (void *)(TagTypeClass::FindOrCreateTriggerType(v4));
+  v4 = (char *)((unsigned int)((char *)((void *)(strtok(0, Delimiter)))));
+  this->q0A0 = (unsigned int)((void *)(TagTypeClass::FindOrCreateTriggerType(v4)));
   return (void *)(1);
 }
 }
@@ -245,14 +248,16 @@ AbstractTypeClass * * TagTypeClass::FindOrCreate()
     if ( ++v2 >= g_MultiplayerCleanup ) /*0x6e6364*/
       goto LABEL_6; /*0x6e6364*/
   }
-  return (char *)*((unsigned int *)dword_B0E784 + v2); /*0x6e637f*/
+  return (gamemd::AbstractTypeClass **)((char *)*((unsigned int *)dword_B0E784 + v2));
+}
 }
 // 0x6E63E0
 namespace gamemd {
 int TagTypeClass::PowerDrainUpdate(int * a2)
 {
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6e63e9*/
+  AbstractTypeClass::ProcessPower(a2); /*0x6e63e9*/
   return Power::TimerProcess(this->u32_9C); /*0x6e63fc*/
+}
 }
 // 0x6E64B0
 namespace gamemd {
@@ -285,6 +290,7 @@ TriggerTypeClass * * TagTypeClass::FindOrCreateTriggerType()
       goto LABEL_6; /*0x727af4*/
   }
   return *(unsigned int **)(FootClass_Array.targetLaserTimer[0] + 4 * v2); /*0x727b0f*/
+}
 }
 // 0x6E63A0
 namespace gamemd {
@@ -357,9 +363,9 @@ int TagTypeClass::GetObjectSize()
 namespace gamemd {
 TagTypeClass * TagTypeClass::ddtor(char a2)
 {
-  TagTypeClass::CleanupMembers((AbstractTypeClass *)this); /*0x6e64c3*/
+  TagTypeClass::CleanupMembers(); /*0x6e64c3*/
   if ( (a2 & 1) != 0 ) /*0x6e64cd*/
-    RA2_OPDEL(this); /*0x6e64d0*/
+    RA2_OPDEL(); /*0x6e64d0*/
   return this; /*0x6e64da*/
 }
 } // namespace gamemd

@@ -112,14 +112,16 @@ int COMObject::GetSizeMaxWrapper(AbstractClass * aP0, AbstractClass * aP1)
 namespace gamemd {
 int COMObject::QueryInterface2(void * a1, void * a2, void * a3)
 {
-  if ( !a3 ) /*0x6c0057*/
+  const void **v4; // [esp+10h] [ebp+Ch]
+
+  if ( !v4 ) /*0x6c0057*/
     return -2147467261; /*0x6c0059*/
-  *a3 = 0; /*0x6c0076*/
-  if ( !memcmp(a2, &IID_IUnknown, 0x10u) || !memcmp(a2, &unk_7F7CA0, 0x10u) ) /*0x6c0092*/
-    *a3 = a1; /*0x6c0096*/
-  if ( !*a3 ) /*0x6c0098*/
+  *v4 = 0; /*0x6c0076*/
+  if ( !memcmp(a3, &IID_IUnknown, 0x10u) || !memcmp(a3, &unk_7F7CA0, 0x10u) ) /*0x6c0092*/
+    *v4 = a2; /*0x6c0096*/
+  if ( !*v4 ) /*0x6c0098*/
     return -2147467262; /*0x6c00a0*/
-  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c00ac*/
+  (*(void (__stdcall **)(const void *))(*(unsigned int *)a2 + 4))(a2); /*0x6c00ac*/
   return 0; /*0x6c005e*/
 }
 } // namespace gamemd

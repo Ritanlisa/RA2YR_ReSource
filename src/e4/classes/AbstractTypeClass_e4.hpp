@@ -61,16 +61,16 @@ struct AbstractTypeClass {
     unsigned char q090;  // 0x90
     unsigned int q094;  // 0x94
     unsigned char tail_95;  // 0x95
+    unsigned int TaskForceClass_field_0x4;
+    unsigned int __pad_0;
     unsigned int __pad_24;
     unsigned int nextArrayIndex1;
     unsigned int vtable0;
     unsigned int vtable34;
     unsigned int vtable35;
     unsigned int vtable46;
-    unsigned int TaskForceClass_field_0x4;
-    unsigned int UIName;
-    unsigned int __pad_0;
     unsigned int __pad_8;
+    unsigned int UIName;
 // --- flat members (END) ---
     AbstractTypeClass * ddtor(char a2);
     BOOL NameEquals(void * a2);

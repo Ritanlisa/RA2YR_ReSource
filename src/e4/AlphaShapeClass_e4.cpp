@@ -18,7 +18,7 @@
 namespace gamemd {
 int AlphaShapeClass::SD_vt13(int a2)
 {
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x420da9*/
+  AbstractClass::ProcessPower(); /*0x420da9*/
   Power::TimerProcess(this->u32_28); /*0x420db4*/
   Power::TimerProcess(this->u32_2C); /*0x420dbf*/
   Power::TimerProcess(this->vtable4); /*0x420dca*/
@@ -83,9 +83,9 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2)
       ++v4; /*0x4217cf*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x4217e3*/
+  AbstractClass::DTOR(); /*0x4217e3*/
   if ( (a2 & 1) != 0 ) /*0x4217ed*/
-    RA2_OPDEL(this); /*0x4217f0*/
+    RA2_OPDEL(); /*0x4217f0*/
   return this->__pad_0; /*0x4217fa*/
 }
 } // namespace gamemd

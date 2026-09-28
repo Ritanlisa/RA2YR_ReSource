@@ -22,12 +22,14 @@
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/E4Recv_4880F0_e4.hpp"
 
 // 0x46D350
 namespace gamemd {
 void E4Recv_46D350::sub_46D350()
 {
-  *(void **)this = (void*)&CampaignScoreClass_vftable; /*0x46d350*/
+  this->m_0 = (int)&CampaignScoreClass_vftable; /*0x46d350*/
 }
 } // namespace gamemd
 
@@ -37,8 +39,8 @@ bool sub_46D650()
 {
   bool v0; // bl
   HWND v1; // eax
-  HWND DlgItem; // eax
-  LPARAM * v3;
+  LPARAM * DlgItem;
+  int v3; // ebp
   LPARAM *v4; // esi
   int v5; // ecx
   int v6; // edi
@@ -58,11 +60,11 @@ bool sub_46D650()
   v1 = (HWND)Dialog::FindByHandle((void *)0xBC6); /*0x46d68b*/
   if ( v1 ) /*0x46d692*/
   {
-    DlgItem = GetDlgItem(v1, 1842); /*0x46d69a*/
+    DlgItem = (LPARAM *)((HWND)((LPARAM *)(GetDlgItem(v1, 1842))));
     if ( DlgItem ) /*0x46d6a2*/
       PostMessageA(DlgItem, 0x405u, 1u, dword_A8EB68); /*0x46d6b3*/
   }
-  v3 = (LPARAM *)((int)((LPARAM *)(0)));
+  v3 = (int)((LPARAM *)(0));
   v4 = (LPARAM *)(&g_NetworkPlayerName);
   do /*0x46d7fd*/
   {
@@ -113,6 +115,7 @@ bool sub_46D650()
   }
   while ( (int)v4 < (int)&g_PlayerNameListEnd ); /*0x46d7fd*/
   return v0; /*0x46d808*/
+}
 }
 // 0x46D8B0
 namespace gamemd {
@@ -191,6 +194,7 @@ void sub_46D8B0()
     SessionClass::SetOption((int *)dword_A8DA90[v2], *(int *)&stru_A8D600.__pad_64[3]); /*0x46da15*/
   }
   return v1; /*0x46d8e2*/
+}
 }
 // 0x46DA70
 namespace gamemd {
@@ -318,6 +322,7 @@ void sub_46DCC0(HWND hDlg, bool a2)
   }
   return result; /*0x46dd60*/
 }
+}
 // 0x46DD70
 namespace gamemd {
 void EnableGameModeControls(HWND hDlg, bool a2)
@@ -360,6 +365,7 @@ void EnableGameModeControls(HWND hDlg, bool a2)
     }
   }
   return result; /*0x46de10*/
+}
 }
 // 0x46DE20
 namespace gamemd {
@@ -465,6 +471,7 @@ void sub_46DE20(HWND hDlg, int nCmdShow)
     return (HWND)ShowWindow(result, nCmdShow); /*0x46dfbf*/
   return result; /*0x46dfc1*/
 }
+}
 // 0x465CB0
 namespace gamemd {
 void nullsub_7()
@@ -477,7 +484,7 @@ void nullsub_7()
 namespace gamemd {
 Iostream_init * E4Recv_465D80::__0Iostream_init_QAE_XZ_2()
 {
-  return this; /*0x465d82*/
+  return (gamemd::Iostream_init *)(this);
 }
 } // namespace gamemd
 
@@ -1084,6 +1091,7 @@ void sub_46D480(void * a1, void * a2)
 
   *((unsigned char *)&g_GameModeOptionState + a2) = IDA_BYTE4(result); /*0x46d480*/
   return result; /*0x46d486*/
+}
 }
 // 0x46D490
 namespace gamemd {

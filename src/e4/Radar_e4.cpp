@@ -19,6 +19,7 @@
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/RadioClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Map_e4.hpp"
 
 // 0x431090
 namespace gamemd {
@@ -92,6 +93,7 @@ int Radar::FindNearestRadarTarget(int a2, int a3, int a4)
     }
   }
   return 0; /*0x431148*/
+}
 }
 // 0x4ADCD0
 namespace gamemd {
@@ -186,6 +188,7 @@ void Radar::UpdateReveal(char a1, IUnknown * aP1)
     goto LABEL_20; /*0x4adebf*/
   }
   return result; /*0x4aded0*/
+}
 }
 // 0x5090F0
 namespace gamemd {
@@ -301,7 +304,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   int v111; // [esp+64h] [ebp-10h]
   int v112; // [esp+6Ch] [ebp-8h]
   int v113; // [esp+70h] [ebp-4h]
-  IUnknown * v114;
+  int v114; // [esp+78h] [ebp+4h]
   int16_t *v115; // [esp+88h] [ebp+14h]
 
   v6 = (IUnknown *)((int)(aP1));
@@ -470,9 +473,9 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
       }
     }
   }
-  v46 = (int)(*(unsigned int *)&this->__pad_64[148]);
-  v110 = (int)((aP1 - v6) / 10 - 1);
-  v109 = v46 + *(unsigned int *)&this->__pad_64[144] + 1; /*0x58285f*/
+  v46 = (void *)(*(unsigned int *)&this->__pad_64[148]);
+  v110 = (int)((void *)((aP1 - v6) / 10 - 1));
+  v109 = (int)(v46 + *(unsigned int *)&this->__pad_64[144] + 1);
   *(unsigned int *)v101 = 10 * v109; /*0x582868*/
   v47 = aP1 - 10 * v109; /*0x58286c*/
   v48 = aP1 + 10 * v109; /*0x58286e*/
@@ -578,7 +581,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
       {
         v107[0] = v51; /*0x58297f*/
         v107[1] = (unsigned short)v115 - 1; /*0x582984*/
-        Radar::ProcessSubzone(this, v47, aP2, aP3, aP4, v107); /*0x582989*/
+        Radar::ProcessSubzone(v47, aP2, aP3, aP4, v107); /*0x582989*/
         goto LABEL_73; /*0x58298e*/
       }
     }
@@ -590,7 +593,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
   while ( v49 <= v9 ); /*0x582aca*/
   if ( v96 <= v9 ) /*0x582ad2*/
   {
-    v68 = (int)(v114);
+    v68 = v114; /*0x582ad8*/
     do /*0x582ae6*/
     {
       v69 = *(int16_t *)(v68 + 2 * aP2); /*0x582ae6*/
@@ -689,7 +692,7 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
       {
         v105[0] = v9; /*0x582bc3*/
         v105[1] = (unsigned short)v72 + 1; /*0x582bc8*/
-        Radar::ProcessSubzone(this, v68, aP2, aP3, aP4, v105); /*0x582bcd*/
+        Radar::ProcessSubzone(v68, aP2, aP3, aP4, v105); /*0x582bcd*/
       }
       else
       {
@@ -700,7 +703,8 @@ void* Radar::ProcessSubzone(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnk
     }
     while ( v9 <= v9 ); /*0x582ae6*/
   }
-  return v110; /*0x582d1e*/
+  return (void *)(v110);
+}
 }
 // 0x584550
 namespace gamemd {
@@ -1277,6 +1281,7 @@ AbstractClass * * Radar::Update(IUnknown * aP1)
       RA2_OPDEL(v110); /*0x584db1*/
   }
 }
+}
 // 0x58ABD0
 namespace gamemd {
 void * Radar::CopyDataArray(int * a2)
@@ -1348,11 +1353,13 @@ void * Radar::CopyDataArray(int * a2)
   this->Radar_field_0x14 = (void *)a2[5]; /*0x58ac5e*/
   return (int *)this->__pad_0; /*0x58ac57*/
 }
+}
 // 0x6558B0
 namespace gamemd {
 int Radar::PixelIndex()
 {
   return *(unsigned int *)&this->Radar_field_0x2[2] + 251 * *(unsigned int *)&this->Radar_field_0x6[2]; /*0x6558c4*/
+}
 }
 // 0x656EC0
 namespace gamemd {
@@ -1551,7 +1558,7 @@ MapClass * * Radar::RenderMinimap()
   {
     if ( v91 ) /*0x6571cf*/
       this->u32_14D9 = 0; /*0x6571d1*/
-    Surface::RenderRadar((Surface *)this); /*0x6571da*/
+    Surface::RenderRadar(); /*0x6571da*/
     v92 = 0; /*0x6571ea*/
     if ( this->q14EC != *v15 /*0x657216*/
       || this->__pad_53C != this->q14E0
@@ -1564,23 +1571,23 @@ MapClass * * Radar::RenderMinimap()
         v28 = i + this->__pad_53C; /*0x65723e*/
         v101 = this->q14EC - *v9; /*0x657240*/
         v102 = v28 - v27; /*0x65724d*/
-        FogOfWar::RevealCell((int)this, &v101); /*0x657251*/
+        FogOfWar::RevealCell(&v101); /*0x657251*/
         v29 = i + this->__pad_53C - this->q14A0; /*0x65727c*/
         v101 = this->u32_14F4 + this->q14EC - 1 - *v9; /*0x65727e*/
         v102 = v29; /*0x657285*/
-        FogOfWar::RevealCell((int)this, &v101); /*0x657289*/
+        FogOfWar::RevealCell(&v101); /*0x657289*/
       }
       for ( j = 0; j < this->u32_14F4; ++j ) /*0x6572a3*/
       {
         v31 = j + this->q14EC - *v9; /*0x6572bd*/
         v102 = this->__pad_53C - this->q14A0; /*0x6572bf*/
         v101 = v31; /*0x6572c3*/
-        FogOfWar::RevealCell((int)this, &v101); /*0x6572ce*/
+        FogOfWar::RevealCell(&v101); /*0x6572ce*/
         v32 = this->q14A0; /*0x6572eb*/
         v33 = this->__pad_53C + this->u32_14F8 - 1; /*0x6572f1*/
         v101 = j + this->q14EC - *v9; /*0x6572f5*/
         v102 = v33 - v32; /*0x6572ff*/
-        FogOfWar::RevealCell((int)this, &v101); /*0x657306*/
+        FogOfWar::RevealCell(&v101); /*0x657306*/
       }
       v2 = v100; /*0x657316*/
       v92 = 1; /*0x65731a*/
@@ -1672,7 +1679,7 @@ MapClass * * Radar::RenderMinimap()
             {
               v101 = v93; /*0x6574bb*/
               v102 = v49; /*0x6574bf*/
-              FogOfWar::RevealArea((int)this, &v101); /*0x6574c3*/
+              FogOfWar::RevealArea(&v101); /*0x6574c3*/
               ++v49; /*0x6574d4*/
             }
             while ( v49 < this->q124C + this->q1254 ); /*0x6574d9*/
@@ -1689,7 +1696,7 @@ MapClass * * Radar::RenderMinimap()
       v2 = v100; /*0x657507*/
     }
     for ( k = this->q126C - 1; k >= 0; --k ) /*0x657512*/
-      FogOfWar::RevealArea((int)this, (int *)(this->ptr_1260 + 8 * k)); /*0x657520*/
+      FogOfWar::RevealArea((int *)(this->ptr_1260 + 8 * k)); /*0x657520*/
     (*(void (__thiscall **)(char *))(this->q125C + 12))((char *)&this->u32_7580); /*0x657534*/
     Render_Render_660000(v89); /*0x657537*/
     v52 = (int *)(*(int (__thiscall **)(unsigned int, int *))(**((unsigned int **)&this->u32_1CC9) + 120))( /*0x657549*/
@@ -1869,6 +1876,7 @@ MapClass * * Radar::RenderMinimap()
     v2[2] = v107; /*0x6578dd*/
     v2[3] = v108; /*0x6578e0*/
   }
+}
 }
 // 0x692610
 namespace gamemd {
@@ -2114,4 +2122,5 @@ AbstractClass * * Radar::ScanWaypoints(MouseClass * aP0, MouseClass * aP1, int a
     return 0; /*0x692b45*/
   else
     return v30; /*0x692b51*/
+}
 }

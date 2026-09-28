@@ -22,7 +22,7 @@
 namespace gamemd {
 int MoveFeedback::ProcessCommand()
 {
-  void * v1;
+  char v1; // bl
   void * result;
   void * v3;
   int v4; // ebp
@@ -36,13 +36,13 @@ int MoveFeedback::ProcessCommand()
   int i; // edi
   int v14; // ecx
 
-  v1 = (char)((void *)(g_MoveFeedback));
+  v1 = g_MoveFeedback; /*0x7327d9*/
   g_MoveFeedback = g_MoveFeedback; /*0x7327e8*/
   g_MoveFeedback = 0; /*0x7327ec*/
   if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x7327f5*/
   {
     result = (void *)((int)(RA2_OPNEW(0x18u)));
-    v3 = (int)((void *)(result));
+    v3 = (void *)((int)(result));
     v4 = 0; /*0x732802*/
     if ( result ) /*0x732809*/
     {
@@ -197,7 +197,7 @@ DynamicVector * MoveFeedback::QueryInterface(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x40bcdb*/
   this->m_8 = 0; /*0x40bce1*/
   if ( (a2 & 1) != 0 ) /*0x40bce8*/
-    RA2_OPDEL(this); /*0x40bceb*/
+    RA2_OPDEL(); /*0x40bceb*/
   return this->__pad_0; /*0x40bcf5*/
 }
 } // namespace gamemd
@@ -310,7 +310,7 @@ DynamicVector * MoveFeedback::Constructor(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x40c18b*/
   this->m_8 = 0; /*0x40c191*/
   if ( (a2 & 1) != 0 ) /*0x40c198*/
-    RA2_OPDEL(this); /*0x40c19b*/
+    RA2_OPDEL(); /*0x40c19b*/
   return this->__pad_0; /*0x40c1a5*/
 }
 } // namespace gamemd

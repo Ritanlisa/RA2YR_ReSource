@@ -310,7 +310,7 @@ char * RadarHashVector::Destructor(char a2)
     IDA_BYTE1(this->m_C) = 0; /*0x658ce9*/
     this->m_8 = 0; /*0x658cee*/
     if ( (a2 & 1) != 0 ) /*0x658cf1*/
-      RA2_OPDEL(this); /*0x658cf4*/
+      RA2_OPDEL(); /*0x658cf4*/
     return this->__pad_0; /*0x658cfc*/
   }
 }
@@ -331,7 +331,7 @@ VectorClass_flat * RadarHashVector::QueryInterface(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x658d3b*/
   this->m_8 = 0; /*0x658d41*/
   if ( (a2 & 1) != 0 ) /*0x658d48*/
-    RA2_OPDEL(this); /*0x658d4b*/
+    RA2_OPDEL(); /*0x658d4b*/
   return this->__pad_0; /*0x658d55*/
 }
 } // namespace gamemd

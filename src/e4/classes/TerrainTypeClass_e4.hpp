@@ -220,7 +220,7 @@ struct TerrainTypeClass {
     char q28C[4];  // 0x28C
     unsigned char q290;  // 0x290
     int ArrayIndex;  // 0x294
-    char Foundation[4];  // 0x298
+    unsigned int Foundation;  // 0x298
     int RadarColor;  // 0x29C
     void* q29D;  // 0x29D
     void* q29E;  // 0x29E

@@ -3344,6 +3344,7 @@ unsigned int * Rules::CopyDataArray(VectorClass_flat * aP1)
   this->u32_14 = aP1[5]; /*0x67a5cc*/
   return this->__pad_0; /*0x67a5d1*/
 }
+}
 // 0x5FB2E0
 namespace gamemd {
 char * Rules::GetProductionTimeMult(CellStruct * aP1)

@@ -15,6 +15,7 @@
 #include "e4/classes/WinsockInterface_e4.hpp"
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/WonlineStringDialogControl_12_e4.hpp"
 
 // 0x774980
 namespace gamemd {
@@ -77,7 +78,7 @@ int WinModemClass::ReadSerial()
     this->u32_20 = cbOutQue; /*0x774a49*/
     if ( !v10 ) /*0x774a4c*/
     {
-      WinModemClass::LogCommErrors((WinModemClass *)this, v8, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774a62*/
+      WinModemClass::LogCommErrors(v8, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774a62*/
       cbInQue = Stat.cbInQue; /*0x774a67*/
     }
     if ( cbInQue < 0x2000 ) /*0x774a71*/

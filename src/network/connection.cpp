@@ -268,7 +268,7 @@ IPXManagerClass::IPXManagerClass() noexcept
 }
 
 // 0x542fe0
-void IPXManagerClass::Init()
+void IPXManagerClass::Init(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
 {
   int result; // eax
 
@@ -467,4 +467,3 @@ void IPXManagerClass::release()
 }
 // 0x542330
 int32_t IPXManagerClass::GetConnectionCount() { return 0; }
-}

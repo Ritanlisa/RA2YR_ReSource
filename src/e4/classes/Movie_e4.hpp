@@ -55,13 +55,16 @@ struct Movie {
     unsigned char q278;  // 0x278
     unsigned int q280;  // 0x280
     unsigned char tail_28D;  // 0x28D
+    unsigned int Movie_field_0xC;
+    unsigned int __pad_10;
+    unsigned int __pad_28;
     unsigned int q0180;
     unsigned int q058;
     unsigned int q05C;
     unsigned int q060;
+    unsigned int PlayWrapper;
     unsigned int q038;
     unsigned int q06C;
-    unsigned int PlayWrapper;
 // --- flat members (END) ---
     char SetupScreen(CCINIClass * aP1);  // 0x49CAF0
     char GetSection(CCINIClass * aP1,  CCINIClass * aP2);    // 0x49E3B0

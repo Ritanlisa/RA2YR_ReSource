@@ -14,7 +14,6 @@ struct BSurface {
     int LockCount;  // 0xC
     int BytesPerPixel;  // 0x10
     unsigned char* Buffer;  // 0x14
-    unsigned int Stub;
     unsigned int __pad_0;
     unsigned int q0188;
     unsigned int q044;

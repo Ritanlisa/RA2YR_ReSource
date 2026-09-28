@@ -19,6 +19,7 @@
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
 
 // 0x610950
 namespace gamemd {
@@ -92,11 +93,13 @@ char TriggerClass::FindByEventType(char a1)
   DrawDialogGradient((int *)g_DSurface_Primary, (int *)&v8, 1, -1); /*0x610b36*/
   return 1; /*0x610961*/
 }
+}
 // 0x71FA30
 namespace gamemd {
 int TriggerClass::GetValue()
 {
   return this->u32_54; /*0x71fa33*/
+}
 }
 // 0x7264C0
 namespace gamemd {
@@ -141,9 +144,10 @@ int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, 
   {
   LABEL_16:
     if ( a5 ) /*0x7265a0*/
-      BuildingClass::ProcessUpgradeEffects((BuildingClass *)this); /*0x7265a4*/
+      BuildingClass::ProcessUpgradeEffects(); /*0x7265a4*/
   }
   return v12; /*0x7265af*/
+}
 }
 // 0x726820
 namespace gamemd {

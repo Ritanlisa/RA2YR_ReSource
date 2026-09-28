@@ -193,6 +193,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   }
   return 0; /*0x4f65ea*/
 }
+}
 // 0x5113F0
 namespace gamemd {
 unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
@@ -204,7 +205,7 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
   SuperWeaponTypeClass **v7; // edx
   SuperWeaponTypeClass **v8; // ecx
 
-  AbstractTypeClass::Constructor((int *)this, aP1); /*0x5113fa*/
+  AbstractTypeClass::Constructor(aP1); /*0x5113fa*/
   v3 = 0; /*0x5113ff*/
   IDA_LOBYTE(this->ArrayIndex) = 0; /*0x511404*/
   this->Type = (BuildingTypeClass *)-1; /*0x51140a*/
@@ -299,9 +300,8 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
   this->SidebarImage = (SHPStruct *)v6; /*0x511608*/
   if ( dword_A83CA8 <= 0 ) /*0x511615*/
   {
-  LABEL_16:
-    this->Type = (BuildingTypeClass *)-1; /*0x511629*/
-    return this; /*0x511633*/
+  LABEL_16: this->Type = (gamemd::BuildingTypeClass *)((unsigned char *)((BuildingTypeClass *)-1));
+    return (unsigned char *)(this);
   }
   else
   {
@@ -313,9 +313,10 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
       if ( (int)v3 >= dword_A83CA8 ) /*0x511627*/
         goto LABEL_16; /*0x511627*/
     }
-    this->Type = v3; /*0x51163a*/
-    return this; /*0x511640*/
+    this->Type = (gamemd::BuildingTypeClass *)((unsigned char *)(v3));
+    return (unsigned char *)(this);
   }
+}
 }
 // 0x6CEA20
 namespace gamemd {
@@ -604,6 +605,7 @@ int SuperWeaponTypeClass::SD_vt27(int a2, int a3)
     return 70; /*0x6cefca*/
   }
 }
+}
 // 0x6CEFE0
 namespace gamemd {
 SuperWeaponTypeClass * SuperWeaponTypeClass::SDDTOR(char a2)
@@ -626,9 +628,9 @@ SuperWeaponTypeClass * SuperWeaponTypeClass::SDDTOR(char a2)
     }
     while ( v3 < dword_A8E340 ); /*0x6cf046*/
   }
-  AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x6cf04a*/
+  AbstractTypeClass::Dtor(); /*0x6cf04a*/
   if ( (a2 & 1) != 0 ) /*0x6cf054*/
-    RA2_OPDEL(this); /*0x6cf057*/
+    RA2_OPDEL(); /*0x6cf057*/
   return &this->vtable0; /*0x6cf061*/
 }
 } // namespace gamemd
@@ -641,7 +643,7 @@ int SuperWeaponTypeClass::loadSWProperties(CCINIClass * aP1, unsigned char * a2,
   char **v5; // esi
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
 
-  INIClass::GetString((INIClass *)this, aP1, a2, (&off_7E4C50)[a4], Destination, 32); /*0x474f02*/
+  INIClass::GetString(aP1, a2, (&off_7E4C50)[a4], Destination, 32); /*0x474f02*/
   v4 = 0; /*0x474f07*/
   v5 = (char **)&off_7E4C50; /*0x474f09*/
   while ( _strcmpi(Destination, *v5) ) /*0x474f20*/
@@ -731,7 +733,7 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(ObjectClass * aP1)
 {
   int v3; // eax
 
-  AbstractTypeClass::Constructor(this, aP1); /*0x6ce5bb*/
+  AbstractTypeClass::Constructor(aP1); /*0x6ce5bb*/
   this->u32_9C = 0; /*0x6ce5cb*/
   this->u32_28 = -1; /*0x6ce5d1*/
   this->u32_A4 = -1; /*0x6ce5d7*/
@@ -869,7 +871,7 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
   int v8; // edx
   int v9; // eax
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6ce919*/
+  AbstractTypeClass::ProcessPower(a2); /*0x6ce919*/
   Power::TimerProcess(this->ArrayIndex); /*0x6ce927*/
   Power::TimerProcess(this->ActionValue_2[0]); /*0x6ce935*/
   Power::TimerProcess(this->RechargeVoice); /*0x6ce943*/

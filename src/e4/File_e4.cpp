@@ -17,6 +17,7 @@
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/FactoryClass_e4.hpp"
 #include "e4/classes/Sidebar_e4.hpp"
+#include "e4/classes/FileSystem_e4.hpp"
 
 // 0x431F10
 namespace gamemd {
@@ -25,9 +26,10 @@ int File::IsReady(int a2)
   int result; // eax
 
   if ( !IDA_BYTE1(this->BufferSize) ) /*0x431f10*/
-    return FileClass::Open((RawFileClass *)this, 0); /*0x431f1e*/
+    return FileClass::Open(0); /*0x431f1e*/
   IDA_LOBYTE(result) = 1; /*0x431f17*/
   return result; /*0x431f19*/
+}
 }
 // 0x433990
 namespace gamemd {
@@ -189,6 +191,7 @@ unsigned int * File::LoadFont()
   }
   return v3; /*0x433bf8*/
 }
+}
 // 0x4CB920
 namespace gamemd {
 File * * File::Dispatch()
@@ -221,17 +224,19 @@ File * * File::Dispatch()
   }
   return v5; /*0x4cb962*/
 }
+}
 // 0x5BD570
 namespace gamemd {
 unsigned int * File::LoadFileHVA(ObjectClass * aP1)
 {
-  this->__pad_0[0] = 0; /*0x5bd575*/
+  this->__pad_0[0] = (unsigned int *)(0);
   *(unsigned int *)&this->File_field_0x2[2] = 0; /*0x5bd577*/
   *(unsigned int *)&this->__pad_6[2] = 0; /*0x5bd57a*/
   *(unsigned int *)&this->__pad_6[6] = 0; /*0x5bd57d*/
   if ( !File::ParseFileHVA((int)this, aP1) ) /*0x5bd585*/
     this->__pad_0[0] = 1; /*0x5bd58e*/
   return this->__pad_0; /*0x5bd593*/
+}
 }
 // 0x5BD5C0
 namespace gamemd {
@@ -313,7 +318,8 @@ AbstractClass * * File::ParseFileHVA(int a2)
       return 0; /*0x5bd65f*/
     }
   }
-  return result; /*0x5bd5f2*/
+  return (gamemd::AbstractClass **)(result);
+}
 }
 // 0x625AF0
 namespace gamemd {
@@ -324,8 +330,8 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   u_short *v5; // esi
   uint16_t v6; // ax
   void * v7;
-  int v8; // ecx
-  void * v9;
+  void * v8;
+  int v9; // ebx
   unsigned int *v10; // esi
   size_t v11; // ebp
   void *v12; // eax
@@ -334,7 +340,7 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   int v15; // [esp+8h] [ebp-8h]
   u_short *v17; // [esp+14h] [ebp+4h]
 
-  v3 = *aP1; /*0x625b02*/
+  v3 = (void *)(*aP1);
   *(unsigned short *)this->__pad_0 = *aP1; /*0x625b05*/
   *(unsigned short *)this->__pad_0 = ntohs(v3); /*0x625b11*/
   v4 = aP1[1]; /*0x625b17*/
@@ -371,6 +377,7 @@ File * * File::LoadPaletteData(ObjectClass * aP1)
   }
   return result; /*0x625bec*/
 }
+}
 // 0x625DB0
 namespace gamemd {
 int File::FindByPrefix(char * Str1, unsigned char * a3)
@@ -395,6 +402,7 @@ int File::FindByPrefix(char * Str1, unsigned char * a3)
     return 0; /*0x625dd4*/
   }
   return v4; /*0x625dd6*/
+}
 }
 // 0x734990
 namespace gamemd {
@@ -572,6 +580,7 @@ AbstractClass * * File::ParseCSFString()
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v23); /*0x734d10*/
   return 0; /*0x734cde*/
 }
+}
 // 0x755CD0
 namespace gamemd {
 unsigned int * File::LoadFileVXL(ObjectClass * aP1, SomeVoxelCache * aP2)
@@ -586,6 +595,7 @@ unsigned int * File::LoadFileVXL(ObjectClass * aP1, SomeVoxelCache * aP2)
   if ( !Voxel::SortDepth((int)this, aP1, aP2) ) /*0x755cf5*/
     this->__pad_0[0] = 1; /*0x755cfe*/
   return this->__pad_0; /*0x755d03*/
+}
 }
 // 0x76AC90
 namespace gamemd {
@@ -791,6 +801,7 @@ AbstractClass * * File::LoadWDTDecompress(CCINIClass * aP1, int a3)
     goto LABEL_14; /*0x76b12e*/
   }
   return 1; /*0x76b0b9*/
+}
 }
 // 0x7C12B0
 namespace gamemd {

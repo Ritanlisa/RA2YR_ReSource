@@ -22,6 +22,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/WaypointPathClass_e4.hpp"
 
 // 0x512680
 namespace gamemd {
@@ -81,7 +82,7 @@ unsigned int * WeaponTypeClass::Constructor(ObjectClass * aP1)
 {
   int v3; // eax
 
-  AbstractTypeClass::Constructor((int *)this, aP1); /*0x771c7a*/
+  AbstractTypeClass::Constructor(aP1); /*0x771c7a*/
   this->AmbientDamage = 0; /*0x771c87*/
   this->Burst = 1; /*0x771c8d*/
   this->Projectile = 0; /*0x771c97*/
@@ -193,7 +194,7 @@ int WeaponTypeClass::Destructor()
   this->vtable1 = (void*)&WeaponTypeClass_vftable; /*0x771f5d*/
   this->vtable2 = (void*)&WeaponTypeClass_vftable; /*0x771f64*/
   this->vtable3 = (void*)&WeaponTypeClass_vftable; /*0x771f6b*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x771f72*/
+  AbstractClass::AnnounceExpiredPointer(1); /*0x771f72*/
   this->Projectile = 0; /*0x771f7d*/
   this->Warhead = 0; /*0x771f83*/
   v7 = this; /*0x771f95*/
@@ -236,7 +237,7 @@ int WeaponTypeClass::Destructor()
   }
   IDA_BYTE1(this->Report[3]) = 0; /*0x772069*/
   this->Report[2] = 0; /*0x77206f*/
-  return AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x77207a*/
+  return AbstractTypeClass::Dtor(); /*0x77207a*/
 }
 } // namespace gamemd
 // 0x772AE0
@@ -264,7 +265,7 @@ int WeaponTypeClass::ProcessPower(int * a2)
   int v21; // ecx
   int v22; // edx
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x772ae9*/
+  AbstractTypeClass::ProcessPower(a2); /*0x772ae9*/
   Power::TimerProcess(this->AmbientDamage); /*0x772af7*/
   IDA_LOBYTE(v3) = this->IsSonic; /*0x772afc*/
   Power::FlagProcess((Power *)a2, v3); /*0x772b05*/
@@ -386,6 +387,7 @@ void WeaponTypeClass_SaveLoad_Prefix(void * a1, void * a2, void * a3, void * a4,
   }
   return result; /*0x772ea6*/
 }
+}
 // 0x772EB0
 namespace gamemd {
 void WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a4, void * a5)
@@ -420,6 +422,7 @@ void WeaponTypeClass_SaveLoad_Prefix_0(void * a1, void * a2, void * a3, void * a
     return 0; /*0x772f89*/
   }
   return result; /*0x772f8c*/
+}
 }
 // 0x7730F0
 WeaponTypeClass * WeaponTypeClass::ddtor(char a2)
@@ -509,7 +512,7 @@ char WeaponTypeClass::ReadTrajectoryData(WeaponTypeClass * aP1, char * a2, int a
     }
     while ( v5 < v4 ); /*0x475c3a*/
   }
-  return INIClass::SetString((char *)this, aP1, a2, Source); /*0x475c61*/
+  return INIClass::SetString(aP1, a2, Source); /*0x475c61*/
 }
 // 0x475C70
 char WeaponTypeClass::ReadVeteranData(unsigned char * a2, char * a3, int a4, int * Block, int a6, short a7, int a8, int a9, int a10)
@@ -548,7 +551,7 @@ char WeaponTypeClass::ReadVeteranData(unsigned char * a2, char * a3, int a4, int
 // 0x771F00
 unsigned int * WeaponTypeClass::loadWeaponProperties(AbstractTypeClass * aP1)
 {
-  AbstractTypeClass::Init((int)this, aP1); /*0x771f08*/
+  AbstractTypeClass::Init(aP1); /*0x771f08*/
   this->Report[0] = (int)&TypeList_int_vftable; /*0x771f12*/
   this->DownReport[0] = (int)&TypeList_int_vftable; /*0x771f18*/
   this->Anim[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x771f1e*/

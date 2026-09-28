@@ -56,7 +56,7 @@
 namespace gamemd {
 int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
 {
-  int v3; // edi
+  void * v3;
   int EnumConnectionsClass_field_0x0C; // eax
   int v5; // eax
   int v6; // eax
@@ -85,7 +85,7 @@ int EnumConnectionsClass::_vt06(unsigned int * a1, unsigned int * a2)
     *(unsigned int *)(v3 + 12) = EnumConnectionsClass_field_0x0C; /*0x4a01ea*/
     if ( EnumConnectionsClass_field_0x0C ) /*0x4a01ed*/
     {
-      v5 = RA2_OPNEW(8 * EnumConnectionsClass_field_0x0C); /*0x4a01f7*/
+      v5 = (int)(RA2_OPNEW(8 * EnumConnectionsClass_field_0x0C));
       *(unsigned int *)(v3 + 8) = v5; /*0x4a0201*/
       if ( v5 ) /*0x4a0204*/
       {
@@ -143,7 +143,8 @@ unsigned int * E4Recv_4A02B0::sub_4A02B0(unsigned int * a2)
   int v9; // edx
   int i; // esi
   int v12; // [esp-4h] [ebp-14h]
-p_EnumConnectionsClass_field_0x04 = (int *)(&this->EnumConnectionsClass_field_0x04);
+
+  p_EnumConnectionsClass_field_0x04 = (int *)(&this->EnumConnectionsClass_field_0x04);
   this->EnumConnectionsClass_field_0x08 = 0; /*0x4a02c1*/
   this->EnumConnectionsClass_field_0x0C = 0; /*0x4a02c4*/
   IDA_LOBYTE(this->EnumConnectionsClass_field_0x10) = 1; /*0x4a02c7*/
@@ -156,7 +157,7 @@ p_EnumConnectionsClass_field_0x04 = (int *)(&this->EnumConnectionsClass_field_0x
     p_EnumConnectionsClass_field_0x04[2] = v4; /*0x4a02e3*/
     if ( v4 ) /*0x4a02e6*/
     {
-      v5 = RA2_OPNEW(8 * v4); /*0x4a02ec*/
+      v5 = (int)(RA2_OPNEW(8 * v4));
       p_EnumConnectionsClass_field_0x04[1] = v5; /*0x4a02f6*/
       if ( v5 ) /*0x4a02f9*/
       {
@@ -194,7 +195,8 @@ p_EnumConnectionsClass_field_0x04 = (int *)(&this->EnumConnectionsClass_field_0x
     v12 = *(unsigned int *)(this->EnumConnectionsClass_field_0x08 + 8 * i); /*0x4a035b*/
     (*(void (__stdcall **)(int))(*(unsigned int *)v12 + 4))(v12); /*0x4a035e*/
   }
-  return this->__pad_0; /*0x4a036b*/
+  return (unsigned int *)(this->__pad_0);
+}
 }
 // 0x4A0380
 namespace gamemd {
@@ -210,7 +212,8 @@ unsigned int * E4Recv_4A0380::sub_4A0380(unsigned int * a2)
   int v10; // eax
   int i; // esi
   int v13; // [esp-4h] [ebp-14h]
-p_EnumConnectionsClass_field_0x04 = (int *)(&this->EnumConnectionsClass_field_0x04);
+
+  p_EnumConnectionsClass_field_0x04 = (int *)(&this->EnumConnectionsClass_field_0x04);
   this->EnumConnectionsClass_field_0x08 = 0; /*0x4a0394*/
   this->EnumConnectionsClass_field_0x0C = 0; /*0x4a0397*/
   IDA_LOBYTE(this->EnumConnectionsClass_field_0x10) = 1; /*0x4a039a*/
@@ -223,7 +226,7 @@ p_EnumConnectionsClass_field_0x04 = (int *)(&this->EnumConnectionsClass_field_0x
     p_EnumConnectionsClass_field_0x04[2] = v4; /*0x4a03b6*/
     if ( v4 ) /*0x4a03b9*/
     {
-      v5 = RA2_OPNEW(8 * v4); /*0x4a03c3*/
+      v5 = (int)(RA2_OPNEW(8 * v4));
       p_EnumConnectionsClass_field_0x04[1] = v5; /*0x4a03cd*/
       if ( v5 ) /*0x4a03d0*/
       {
@@ -262,12 +265,13 @@ p_EnumConnectionsClass_field_0x04 = (int *)(&this->EnumConnectionsClass_field_0x
     v13 = *(unsigned int *)(this->EnumConnectionsClass_field_0x08 + 8 * i); /*0x4a0439*/
     (*(void (__stdcall **)(int))(*(unsigned int *)v13 + 4))(v13); /*0x4a043c*/
   }
-  return this->__pad_0; /*0x4a0449*/
+  return (unsigned int *)(this->__pad_0);
+}
 }
 // 0x4A0B20
 int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
 {
-  int v3; // edi
+  void * v3;
   int EnumConnectionPointsClass_field_0x14; // eax
   int v5; // eax
   int v6; // ecx
@@ -294,7 +298,7 @@ int EnumConnectionPointsClass::_vt06(unsigned int * a1, unsigned int * a2)
     *(unsigned int *)(v3 + 20) = EnumConnectionPointsClass_field_0x14; /*0x4a0b83*/
     if ( EnumConnectionPointsClass_field_0x14 ) /*0x4a0b86*/
     {
-      v5 = RA2_OPNEW(4 * EnumConnectionPointsClass_field_0x14); /*0x4a0b90*/
+      v5 = (int)(RA2_OPNEW(4 * EnumConnectionPointsClass_field_0x14));
       *(unsigned int *)(v3 + 16) = v5; /*0x4a0b9a*/
       if ( v5 ) /*0x4a0b9d*/
       {
@@ -421,7 +425,8 @@ AbstractClass * * DrawSidebarCreditsTimer(void * a1, void * a2, void * a3)
       *(unsigned char *)(v5 + 10) = 0; /*0x4a25e7*/
     }
   }
-  return result; /*0x4a24ed*/
+  return (gamemd::AbstractClass **)(result);
+}
 }
 // 0x4A2B60
 namespace gamemd {
@@ -498,17 +503,19 @@ void CStreamClass___vt03(int a1, char * a2, signed int Size, signed int * a4)
     *a4 = Size; /*0x4a2cbd*/
   return 0; /*0x4a2b70*/
 }
+}
 // 0x4A3270
 namespace gamemd {
 void * E4Recv_4A3270::sub_4A3270(int a2, int a3, int a4)
 {
-  void * p_estimatedHealth;
+  int *p_estimatedHealth; // ebx
   int v6; // ebx
   unsigned int v8[25]; // [esp+10h] [ebp-64h] BYREF
-p_estimatedHealth = (unsigned int)(&this->estimatedHealth);
-  this->vtable0 = (unsigned int)((void *)a4);
+
+  p_estimatedHealth = (unsigned int)(&this->estimatedHealth);
+  this->vtable0 = (void *)a4; /*0x4a328f*/
   this->estimatedHealth = 0; /*0x4a3291*/
-  *(unsigned int *)&this->isOnMap = 0; /*0x4a3297*/
+  this->isOnMap = (unsigned int)(0); /*0x4a3297*/
   memset(&this->vtable1, 0, 0x6Cu); /*0x4a329e*/
   this->vtable1 = (void *)108; /*0x4a32a4*/
   this->vtable2 = (void *)7; /*0x4a32aa*/
@@ -517,7 +524,7 @@ p_estimatedHealth = (unsigned int)(&this->estimatedHealth);
   this->vtable3 = (void *)a3; /*0x4a32c2*/
   if ( a4 == 1 ) /*0x4a32c5*/
   {
-    this->vtable2 = (void *)71; /*0x4a32c7*/
+    this->vtable2 = (unsigned int)((void *)71);
     this->referenceCount = 16; /*0x4a32ce*/
   }
   if ( !dword_8A0E00 /*0x4a32e5*/
@@ -554,13 +561,14 @@ p_estimatedHealth = (unsigned int)(&this->estimatedHealth);
   }
   return (int *)this; /*0x4a32ff*/
 }
+}
 // 0x4A38D0
 namespace gamemd {
 AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
 {
   void *result; // eax
-  int v5; // esi
-  void * v6;
+  void * v5;
+  size_t v6; // edi
   bool v7; // zf
   CCFileClass v8; // [esp+Ch] [ebp-6Ch] BYREF
   int v9[5]; // [esp+64h] [ebp-14h] BYREF
@@ -578,7 +586,8 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
       v7 = v5 == 0; /*0x4a391c*/
       if ( !v5 ) /*0x4a391e*/
       {
-  LABEL_6: *aP1 = (gamemd::AbstractClass **)(!v7);
+  LABEL_6:
+        *aP1 = !v7; /*0x4a392f*/
         *(unsigned int *)v8.__pad_0 = (void*)&CCFileClass_vftable; /*0x4a3938*/
         v9[3] = 0; /*0x4a3940*/
         Vector::Clear((int)v9); /*0x4a3948*/
@@ -588,24 +597,25 @@ AbstractClass * * LoadFileSHP(ConvertClass * aP0, ConvertClass * aP1)
       }
       (*(void (__thiscall **)(CCFileClass *, int, size_t))(*(unsigned int *)v8.__pad_0 + 36))(&v8, v5, v6); /*0x4a392a*/
     }
-    v7 = (gamemd::AbstractClass **)(v5 == 0);
+    v7 = v5 == 0; /*0x4a392d*/
     goto LABEL_6; /*0x4a392d*/
   }
   return result; /*0x4a3961*/
+}
 }
 // 0x4A3970
 namespace gamemd {
 AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
 {
   char *v3; // esi
-  AbstractClass ** result;
+  int result; // eax
   void *v5; // esi
   size_t v6; // ebx
   bool v7; // zf
   unsigned int v8[22]; // [esp+Ch] [ebp-6Ch] BYREF
   unsigned int v9[5]; // [esp+64h] [ebp-14h] BYREF
 
-  v3 = (int)(String::GetOrEmpty_Alt(a1));
+  v3 = String::GetOrEmpty_Alt(a1); /*0x4a397c*/
   *a2 = 0; /*0x4a3982*/
   result = SearchMIXFile(v3, 0); /*0x4a3985*/
   if ( !result ) /*0x4a398c*/
@@ -634,6 +644,7 @@ AbstractClass * * FileClass_LoadToBuffer(char ** a1, bool * a2)
     goto LABEL_6; /*0x4a39d4*/
   }
   return result; /*0x4a3a08*/
+}
 }
 // 0x4A3C30
 namespace gamemd {
@@ -747,6 +758,7 @@ void Palette_Fade(const void * a1, signed int a2, void (*a3)(void) a3)
   }
   return result; /*0x4a3db6*/
 }
+}
 // 0x4A4130
 namespace gamemd {
 INIClass * * int sub_4A4130()
@@ -825,6 +837,7 @@ INIClass * * int sub_4A4130()
   }
   return v4; /*0x4a42dd*/
 }
+}
 // 0x4A4900
 namespace gamemd {
 unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, unsigned int a4, int a5)
@@ -900,6 +913,7 @@ unsigned int * sub_4A4900(unsigned int a1, unsigned int a2, unsigned int a3, uns
     RA2_OPDEL(Block); /*0x4a4a7c*/
   return v5; /*0x4a4a45*/
 }
+}
 // 0x4A59E0
 namespace gamemd {
 unsigned int * GetTextBoundingRect(unsigned int * a1, CampaignScore * a2, int a3, int a4, short a5, int a6, int a7)
@@ -934,6 +948,7 @@ unsigned int * GetTextBoundingRect(unsigned int * a1, CampaignScore * a2, int a3
   a1[2] = v11 + 2 * a6; /*0x4a5a3d*/
   a1[3] = v10 + 2 * a7; /*0x4a5a40*/
   return a1; /*0x4a5a43*/
+}
 }
 // 0x4A5A50
 namespace gamemd {
@@ -1206,6 +1221,7 @@ void SHP_DrawBuildingTiles(int * a1, int a2, char a3)
     return (*(int (__thiscall **)(int, int *, int))(*(unsigned int *)g_DSurface_Hidden_2 + 88))(g_DSurface_Hidden_2, a1, v59); /*0x4a5e33*/
   }
 }
+}
 // 0x4A5EB0
 namespace gamemd {
 void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass aP3)
@@ -1279,6 +1295,7 @@ void * RenderTextLabel(int * a0, AbstractClass * aP1, int * a2, AbstractClass aP
   a1[1] = v11; /*0x4a5ff9*/
   return a1; /*0x4a5ff6*/
 }
+}
 // 0x4A6010
 namespace gamemd {
 void globalHelper_0A6010()
@@ -1305,6 +1322,7 @@ void globalHelper_0A6010()
   *a1 = *v12; /*0x4a60b9*/
   a1[1] = v12[1]; /*0x4a60bf*/
   return a1; /*0x4a60bb*/
+}
 }
 // 0x4A6360
 namespace gamemd {
@@ -1408,6 +1426,7 @@ ControlClass * * RenderTextLabelWordWrap(int * a1, const wchar_t * a2, int a3, u
   v10[1] = v27; /*0x4a64e4*/
   return v10; /*0x4a64e9*/
 }
+}
 // 0x4A65C0
 namespace gamemd {
 int * * sub_4A65C0(int * a1, int a2, int a3, unsigned int * a4, int a5, short a6, int a7, int a8, int a9, int a10)
@@ -1441,6 +1460,7 @@ int * * sub_4A65C0(int * a1, int a2, int a3, unsigned int * a4, int a5, short a6
   *a1 = *v12; /*0x4a6602*/
   a1[1] = v12[1]; /*0x4a660a*/
   return a1; /*0x4a6604*/
+}
 }
 // 0x4A66D0
 namespace gamemd {
@@ -1476,6 +1496,7 @@ void globalHelper_0A66D0()
   a1[1] = v12[1]; /*0x4a671a*/
   return a1; /*0x4a6714*/
 }
+}
 // 0x4A67E0
 namespace gamemd {
 int * * sub_4A67E0(char a1, int a2)
@@ -1492,6 +1513,7 @@ int * * sub_4A67E0(char a1, int a2)
   *(int *)((char *)&dword_8A0158 + 3) = v2; /*0x4a6802*/
   IDA_HIBYTE(dword_8A015C) = a2; /*0x4a6808*/
   return &dword_8A0150; /*0x4a6813*/
+}
 }
 // 0x4A6840
 namespace gamemd {
@@ -1727,6 +1749,7 @@ long long long Direction_InitOffsets()
   dword_8A01F8 = result; /*0x4a718f*/
   return result; /*0x4a7194*/
 }
+}
 // 0x4A80D6
 namespace gamemd {
 int sub_4A80D6()
@@ -1791,6 +1814,7 @@ int sub_4A80D6()
     }
   }
   return -1; /*0x4a8257*/
+}
 }
 // 0x4A8EB0
 namespace gamemd {
@@ -1886,6 +1910,7 @@ void GetBuildingPlacement(IUnknown * aP0, int a2, DisplayClass * aP2, IUnknown *
   }
   return v25; /*0x4a9054*/
 }
+}
 // 0x4A9070
 namespace gamemd {
 void ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, DisplayClass * aP2, short * a3)
@@ -1951,6 +1976,7 @@ void ProcessDataBuildingTypeClass(unsigned int * a0, DisplayClass * aP1, Display
     }
   }
 }
+}
 // 0x4A9770
 namespace gamemd {
 void RemoveTarget(IUnknown * aP0)
@@ -2013,6 +2039,7 @@ void RemoveTarget(IUnknown * aP0)
   }
   return result; /*0x4a9836*/
 }
+}
 // 0x4AA2B0
 namespace gamemd {
 unsigned char * sub_4AA2B0(unsigned char * a1)
@@ -2063,6 +2090,7 @@ unsigned char * sub_4AA2B0(unsigned char * a1)
       goto LABEL_12; /*0x4aa350*/
   }
 }
+}
 // 0x4AA380
 namespace gamemd {
 unsigned char * sub_4AA380(unsigned char * a1)
@@ -2106,6 +2134,7 @@ unsigned char * sub_4AA380(unsigned char * a1)
     if ( --v2 < 0 ) /*0x4aa412*/
       goto LABEL_12; /*0x4aa412*/
   }
+}
 }
 // 0x4AC4F0
 namespace gamemd {
@@ -2179,6 +2208,7 @@ ScenarioClass * * sub_4AC4F0()
   if ( g_TacticalClass_Instance ) /*0x4ac646*/
     return (void *)Tactical::SetTacticalPosition((int)g_TacticalClass_Instance, &v11); /*0x4ac64d*/
   return result; /*0x4ac5c5*/
+}
 }
 // 0x4AE750
 namespace gamemd {
@@ -2343,6 +2373,7 @@ AbstractClass * * DispatchSelectionWaypointMove()
   }
   return (char)v4; /*0x4ae85e*/
 }
+}
 // 0x4AEA20
 namespace gamemd {
 void sub_4AEA20()
@@ -2379,6 +2410,7 @@ void sub_4AEA20()
   }
   while ( v3 < 8 ); /*0x4aeac1*/
   return result; /*0x4aeac6*/
+}
 }
 // 0x4AED70
 namespace gamemd {
@@ -2609,6 +2641,7 @@ void DrawToSurfaceSHP(int a1, int a2, ConvertClass * aP2, unsigned int arg4, Con
   }
   return result; /*0x4af289*/
 }
+}
 // 0x4AF2A0
 namespace gamemd {
 int E4Recv_4AF2A0::BlitterDrawSHP()
@@ -2634,6 +2667,7 @@ int E4Recv_4AF2A0::BlitterDrawSHP()
   v16 = (*(int (__thiscall **)(int *, char *))(*a3 + 120))(a3, v20); /*0x4af313*/
   IDA_LOBYTE(result) = BlitterCopySHP(a1, a6, v19, a3, v16, a4, v18, a9, a10, a11, a12, a13); /*0x4af323*/
   return result; /*0x4af328*/
+}
 }
 // 0x4AF9B0
 namespace gamemd {
@@ -2697,6 +2731,7 @@ void * E4Recv_4AF9B0::sub_4AF9B0(void * a2)
   }
   qmemcpy(a2, &v13, 0x30u); /*0x4afa79*/
   return a2; /*0x4afa8a*/
+}
 }
 // 0x4A0450
 namespace gamemd {
@@ -2994,7 +3029,7 @@ namespace gamemd {
 int E4Recv_4A2030::sub_4A2030(Pipe * aP1, int aP2)
 {
   Checksummer::Add_Buffer((Checksummer *)&this->vtable3, aP1, aP2); /*0x4a2042*/
-  return Delegate::Dispatch((Pipe *)this, (int)aP1, aP2); /*0x4a2050*/
+  return Delegate::Dispatch((int)aP1, aP2); /*0x4a2050*/
 }
 } // namespace gamemd
 
@@ -3806,6 +3841,7 @@ int E4Recv_4A5E50::sub_4A5E50(int a2, AbstractClass * aP2, AbstractClass * aP3)
   PixelData = FontClass::GetPixelData((FontClass *)g_FogOfWarState, 0x57u); /*0x4a5e7d*/
   Text::Layout(v5, (uint16_t *)this, aP2, aP3, a2 * PixelData); /*0x4a5e8d*/
   return *aP3 / v5[7].Text_field_00; /*0x4a5e98*/
+}
 }
 // 0x4A6500
 namespace gamemd {

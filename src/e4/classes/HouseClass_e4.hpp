@@ -1302,6 +1302,7 @@ struct HouseClass {
     void* q3460;  // 0x3460
     unsigned int q3484;  // 0x3484
     void* q3488;  // 0x3488
+    unsigned int u32_34D4;  // 0x34D4
     void* q3504;  // 0x3504
     unsigned char q3508;  // 0x3508
     unsigned int q3540;  // 0x3540

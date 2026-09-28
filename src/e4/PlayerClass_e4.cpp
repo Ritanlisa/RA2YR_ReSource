@@ -42,6 +42,6 @@ char PlayerClass::AssignPlayerIndex()
 namespace gamemd {
 bool PlayerClass::IsValidIndex(int a1)
 {
-  return a1 >= 0 && a1 < Game_PlayerCount; /*0x5d8ca2*/
+  return (int)a1 >= 0 && (int)a1 < dword_A8DA84; /*0x5d8ca2*/
 }
 } // namespace gamemd

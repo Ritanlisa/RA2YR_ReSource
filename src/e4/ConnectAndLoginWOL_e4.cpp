@@ -16,6 +16,6 @@ namespace gamemd {
 void E4Recv_77D1F0::ConnectAndLoginWOL_Connect()
 {
   *(unsigned int *)this->__pad_0 = &off_7F7624; /*0x77d1f0*/
-  OwnerDrawControl::InitVtable((OwnerDrawControl *)this); /*0x77d1f6*/
+  OwnerDrawControl::InitVtable(); /*0x77d1f6*/
 }
 } // namespace gamemd

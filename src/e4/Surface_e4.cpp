@@ -18,6 +18,7 @@
 #include "e4/classes/TagClass_e4.hpp"
 #include "e4/classes/TaskForceClass_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x411580
 namespace gamemd {
@@ -337,6 +338,7 @@ void sub_626C60()
     return *(unsigned int *)(MEMORY[4] + 16); /*0x626d8b*/
   }
 }
+}
 // 0x641DB0
 AbstractClass * * Surface::LoadToSurfaceSHP(char * Source)
 {
@@ -360,16 +362,16 @@ AbstractClass * * Surface::LoadToSurfaceSHP(char * Source)
   v3 = DecodeFrameSHP((int)&v9, 0, 0, 0); /*0x641df9*/
   if ( v3 && (*(int (__thiscall **)(unsigned int *))(*v3 + 124))(v3) && (*(int (__thiscall **)(unsigned int *))(*v3 + 128))(v3) ) /*0x641e16*/
   {
-    v4 = (char *)((int)((char *)RA2_OPNEW(0x24u)));
+    v4 = (char *)RA2_OPNEW(0x24u); /*0x641e2c*/
     if ( v4 ) /*0x641e33*/
     {
-      v8 = (int)((char *)((*(int (__thiscall **)(unsigned int *))(*v3 + 128))(v3)));
-      v5 = (int)((char *)((*(int (__thiscall **)(unsigned int *))(*v3 + 124))(v3)));
-      v6 = (char *)(DSurface::Construct(v4, v5, v8, 1, 0));
+      v8 = (*(int (__thiscall **)(unsigned int *))(*v3 + 128))(v3); /*0x641e45*/
+      v5 = (*(int (__thiscall **)(unsigned int *))(*v3 + 124))(v3); /*0x641e48*/
+      v6 = DSurface::Construct(v4, v5, v8, 1, 0); /*0x641e4e*/
     }
     else
     {
-      v6 = (char *)((unsigned int)(0));
+      v6 = 0; /*0x641e55*/
     }
     *(unsigned int *)this->__pad_0 = v6; /*0x641e57*/
     (*(void (__thiscall **)(char *, unsigned int))(v6->nextArrayIndex)(v6, 0); /*0x641e5f*/
@@ -434,7 +436,7 @@ int Surface::RenderRadar()
   int v36; // [esp+18h] [ebp-84h]
   int v37; // [esp+1Ch] [ebp-80h]
   int v38; // [esp+24h] [ebp-78h]
-  unsigned int v39;
+  int v39; // [esp+28h] [ebp-74h] BYREF
   int v40; // [esp+2Ch] [ebp-70h]
   int v41; // [esp+30h] [ebp-6Ch]
   int v42; // [esp+34h] [ebp-68h]
@@ -595,7 +597,7 @@ int Surface::RenderRadar()
 // 0x6BA3E0
 int Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
 {
-  int v5;
+  int v5; // ebx
   int result; // eax
   int v7; // edi
   int v8; // eax
@@ -615,7 +617,8 @@ int Surface::TileBlit(INIClass * aP0, ObjectClass * aP1, int a3, int a4, int a5)
   unsigned char v24[16]; // [esp+40h] [ebp-20h] BYREF
   unsigned int v25[4]; // [esp+50h] [ebp-10h] BYREF
   unsigned int *v26; // [esp+64h] [ebp+4h]
-v5 = (int)((gamemd::ObjectClass *)((int)(aP1)));
+
+  v5 = aP1; /*0x6ba3e4*/
   result = (*(int (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)aP1 + 92))(aP1, 0, 0); /*0x6ba3f3*/
   result = result; /*0x6ba3f8*/
   if ( result )
@@ -678,7 +681,7 @@ v5 = (int)((gamemd::ObjectClass *)((int)(aP1)));
   }
   else
   {
-    IDA_LOBYTE(result, unsigned int a4) = 0; /*0x6ba3ff*/
+    IDA_LOBYTE(result, unsigned int a2, unsigned int a3, unsigned int a1) = 0; /*0x6ba3ff*/
   }
   return result; /*0x6ba3fe*/
 }
@@ -687,7 +690,7 @@ int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * 
 {
   int result; // eax
   int v5; // ebp
-  void * v6;
+  int v6; // ebx
   int v7; // esi
   int v8; // edi
   int v9; // eax
@@ -707,8 +710,8 @@ int Surface::BlitTransparent(int * a0, ObjectClass * aP1, int a3, ObjectClass * 
     v5 = (*(int (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)a3 + 92))(a3, 0, 0); /*0x6ba5bb*/
     if ( v5 ) /*0x6ba5bf*/
     {
-      v6 = (void *)((int)(*a1));
-      v7 = (int)(a1[1]);
+      v6 = *a1; /*0x6ba5d8*/
+      v7 = a1[1]; /*0x6ba5da*/
       v16 = (*(int (__thiscall **)(int))(*(unsigned int *)a3 + 124))(a3); /*0x6ba5f2*/
       v8 = (*(int (__thiscall **)(int))(*(unsigned int *)a3 + 128))(a3); /*0x6ba604*/
       v9 = (*(int (__thiscall **)(int))(*(unsigned int *)a2 + 116))(a2) / 2; /*0x6ba60e*/
@@ -1015,7 +1018,7 @@ int Surface::AlphaBlend(unsigned int * a1, int a2, int a3, int a4, int a5, int a
       }
       else if ( v10 < v74 - v55 ) /*0x6ba9a8*/
       {
-        v62 = (unsigned char *)((int16_t *)(v29));
+        v62 = v29; /*0x6ba9b4*/
         v52 = v30; /*0x6ba9b8*/
         v32 = (unsigned short *)(v70 + 2 * v31); /*0x6ba9bc*/
         v60 = v74 - v55 - v10; /*0x6ba9bf*/
@@ -1104,7 +1107,7 @@ TechnoClass * * Surface::BlitTechnoTo(short * a1, TechnoClass * aP2, TechnoClass
   int v42; // [esp+64h] [ebp+4h]
   int *v43; // [esp+70h] [ebp+10h]
 
-  v8 = (unsigned int)(a1[3]);
+  v8 = a1[3]; /*0x70748e*/
   v9 = a1[2]; /*0x707492*/
   v41 = (int16_t *)*((unsigned int *)a1 + 2); /*0x7074a2*/
   Surface::Construct(&v37, v9, v8); /*0x7074a6*/
@@ -1334,7 +1337,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
       {
         v64 = &v8[v7 - 1]; /*0x7603ac*/
       }
-      Voxel::loadSectionData((Voxel *)this); /*0x7603ba*/
+      Voxel::loadSectionData(); /*0x7603ba*/
       v10 = this->q1CC; /*0x7603bf*/
       if ( v10 <= 1 || v10 >= 6 ) /*0x7603d1*/
       {
@@ -1378,7 +1381,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                 for ( i = abs32(v56 - v6 - this->WaveClass_field_17C); v50 >= v60; --v68 ) /*0x760925*/
                 {
                   if ( *(unsigned short *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v50, v51) > (uint16_t)v88 ) /*0x760940*/
-                    Voxel::BlendColor((Voxel *)this, v50, v57, i, v68); /*0x760950*/
+                    Voxel::BlendColor(v50, v57, i, v68); /*0x760950*/
                   --v50; /*0x76095e*/
                   --v50; /*0x76095f*/
                 }
@@ -1425,7 +1428,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                 {
                   if ( *v42 > v87 ) /*0x7607e1*/
                   {
-                    Voxel::BlendColor((Voxel *)this, v40, v57, j, v41); /*0x7607ed*/
+                    Voxel::BlendColor(v40, v57, j, v41); /*0x7607ed*/
                     v42 = v67; /*0x7607f2*/
                   }
                   --v42; /*0x7607fa*/
@@ -1491,7 +1494,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
                   while ( 1 ) /*0x760622*/
                   {
                     if ( *(unsigned short *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v32, v33) > v86 ) /*0x76063b*/
-                      Voxel::BlendColor((Voxel *)this, v32, v57, v34, v65); /*0x76064b*/
+                      Voxel::BlendColor(v32, v57, v34, v65); /*0x76064b*/
                     ++v32; /*0x760659*/
                     ++v32; /*0x76065a*/
                     ++v65; /*0x760667*/
@@ -1541,7 +1544,7 @@ void Surface::RenderToSurfaceVoxel(unsigned int * a2, int * a3)
               {
                 if ( *v20 > v86 ) /*0x7604e8*/
                 {
-                  Voxel::BlendColor((Voxel *)this, v24, v57, m, v21); /*0x7604f4*/
+                  Voxel::BlendColor(v24, v57, m, v21); /*0x7604f4*/
                   v24 = v75; /*0x7604f9*/
                 }
                 ++v20; /*0x760501*/

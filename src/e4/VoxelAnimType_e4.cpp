@@ -142,6 +142,7 @@ AbstractClass * * VoxelAnimType::LoadSection(const char * a2, int a3)
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x5f7d99*/
   return 0; /*0x5f7cf6*/
 }
+}
 // 0x5F7DB0
 namespace gamemd {
 AbstractClass * * VoxelAnimType::LoadBarrel(const char * a2, int a3)
@@ -249,6 +250,7 @@ AbstractClass * * VoxelAnimType::LoadBarrel(const char * a2, int a3)
     return 1; /*0x5f7e6d*/
   }
 }
+}
 // 0x5F8110
 namespace gamemd {
 int VoxelAnimType::LoadAnim()
@@ -341,7 +343,7 @@ int VoxelAnimType::LoadAnim()
       String::Release(*((String **)&this->u32_105)); /*0x5f81ed*/
       RA2_OPDEL(v6); /*0x5f81f3*/
     }
-    v7 = (unsigned int)((File *)RA2_OPNEW(0x10u));
+    v7 = (gamemd::File *)((unsigned int)((File *)RA2_OPNEW(0x10u)));
     if ( v7 ) /*0x5f8207*/
       FileHVA = File::LoadFileHVA(v7, (int)&v51); /*0x5f8210*/
     else
@@ -652,7 +654,7 @@ int VoxelAnimType::LoadAnim()
       && (uint8_t)HouseClass::HasPower((HouseClass *)this)
       && !*(&this->u32_5205) )
     {
-      ObjectTypeClass::CleanupWeapons(this); /*0x5f8acb*/
+      ObjectTypeClass::CleanupWeapons(); /*0x5f8acb*/
     }
     else
     {
@@ -724,4 +726,5 @@ int VoxelAnimType::LoadAnim()
   Vector::Clear((int)v59); /*0x5f8cb4*/
   *(unsigned int *)v58.__pad_0 = &off_7E1668; /*0x5f8cc0*/
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v58); /*0x5f8cd0*/
+}
 }

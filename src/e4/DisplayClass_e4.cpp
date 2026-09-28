@@ -20,6 +20,8 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/DropListClass_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/classes/E4Recv_696AE0_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x487630
 namespace gamemd {
@@ -63,7 +65,8 @@ int DisplayClass::AdvanceFrameCounter()
   char *v2; // eax
   int v3; // edx
   int result; // eax
-DisplayClass_field_0x130 = (void *)((unsigned int)(this->DisplayClass_field_0x130));
+
+  DisplayClass_field_0x130 = (void *)((unsigned int)(this->DisplayClass_field_0x130));
   if ( DisplayClass_field_0x130 == (void *)-1 ) /*0x48769a*/
     this->DisplayClass_field_0x130 = 0; /*0x48769c*/
   v2 = (char *)this->DisplayClass_field_0x130 + 1; /*0x4876ac*/
@@ -95,7 +98,7 @@ int DisplayClass::LoadTypeData()
   unsigned int v6[4]; // [esp+4h] [ebp-20h] BYREF
   int v7[4]; // [esp+14h] [ebp-10h] BYREF
 
-  MapClass::Destru_vt05((MapClass *)this); /*0x4a8856*/
+  MapClass::Destru_vt05(); /*0x4a8856*/
   stru_8A0390.health = SearchMIXFile(aPlaceShp, 0); /*0x4a886e*/
   dword_8A072C = SearchMIXFile(aShadowShp, 0); /*0x4a887c*/
   Viewport = Display::GetViewport(v7); /*0x4a8881*/
@@ -115,7 +118,7 @@ int DisplayClass::SetSize()
   LayerClass *v2; // esi
   int result; // eax
 
-  MapClass::Destru_vt07((MapClass *)this); /*0x4a88c3*/
+  MapClass::Destru_vt07(); /*0x4a88c3*/
   *(unsigned int *)&this->__pad_1198[12] = 0; /*0x4a88cd*/
   this->DisplayClass_field_0x11A8 = 0; /*0x4a88d3*/
   *(unsigned int *)this->__pad_11AC = -1; /*0x4a88d9*/
@@ -141,13 +144,14 @@ namespace gamemd {
 char DisplayClass::ddtor()
 {
   char result; // al
+  GScreenClass *v3; // [esp+0h] [ebp-4h]
 
-  VectorCursor_uint_DynamicVectorClass_uint____13_::Get(); /*0x4a8933*/
-  result = stru_A8EB00.gapE4[391]; /*0x4a8938*/
-  if ( !stru_A8EB00.gapE4[391] ) /*0x4a893f*/
+  VectorCursor_uint_DynamicVectorClass_uint____13::Get(v3); /*0x4a8933*/
+  result = byte_A8ED6B; /*0x4a8938*/
+  if ( !byte_A8ED6B ) /*0x4a893f*/
   {
     Hash::Reset((LinkClass *)&stru_8A06F8); /*0x4a8946*/
-    return (*((char (__thiscall **)(DisplayClass *, GadgetClass *))this->DisplayClass_field_0x0 + 12))( /*0x4a8954*/
+    return (*(char (__thiscall **)(DisplayClass *, GadgetClass *))(this->DisplayClass_field_0x0 + 48))( /*0x4a8954*/
              this,
              &stru_8A06F8);
   }
@@ -901,7 +905,7 @@ int DisplayClass::ReadFromBuffer(void * a1, signed int Size)
 namespace gamemd {
 void DisplayClass::Update(PowerClass * aP1, int a3)
 {
-  VectorCursor_uint_DynamicVectorClass_uint____13_::Count((int *)this, aP1, a3); /*0x4a970a*/
+  VectorCursor_uint_DynamicVectorClass_uint____13_::Count(aP1, a3); /*0x4a970a*/
 }
 } // namespace gamemd
 // 0x4A9840
@@ -934,14 +938,14 @@ bool DisplayClass::SetCoordVisible(IUnknown * aP0, MouseClass * aP1, char a3)
 namespace gamemd {
 int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
 {
-  int v5; // eax
+  HWND v5; // eax
   int *v6; // eax
   bool v8[2]; // [esp+6h] [ebp-2Ah] BYREF
   int16_t v9[2]; // [esp+8h] [ebp-28h] BYREF
   int v10; // [esp+Ch] [ebp-24h] BYREF
   unsigned int v11[3]; // [esp+10h] [ebp-20h] BYREF
   int v12; // [esp+1Ch] [ebp-14h] BYREF
-  int v13; // [esp+20h] [ebp-10h]
+  HWND v13; // [esp+20h] [ebp-10h]
   int v14[3]; // [esp+24h] [ebp-Ch] BYREF
 
   v10 = 0; /*0x4aac1c*/
@@ -949,27 +953,27 @@ int DisplayClass::ProcessTacticalMouseInput(char a2, int a3, int a4)
   v13 = 0; /*0x4aac2c*/
   if ( (a2 & 0x55) != 0 ) /*0x4aac34*/
   {
-    v5 = *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[296] + 4); /*0x4aac3d*/
-    v12 = **(unsigned int **)&stru_87F5F0.__pad_58[296]; /*0x4aac40*/
+    v5 = dword_87F770[1]; /*0x4aac3d*/
+    v12 = (int)*dword_87F770; /*0x4aac40*/
     v13 = v5; /*0x4aac44*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 44))(stru_887598.lineTrailer); /*0x4aac52*/
-    (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 48))(stru_887598.lineTrailer); /*0x4aac5d*/
-    v6 = (int *)(*(int (__thiscall **)(void *, unsigned int *))(*(unsigned int *)stru_887598.lineTrailer + 52))( /*0x4aac6d*/
-                  stru_887598.lineTrailer,
+    (*(void (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 44))(dword_887640); /*0x4aac52*/
+    (*(void (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 48))(dword_887640); /*0x4aac5d*/
+    v6 = (int *)(*(int (__thiscall **)(MouseClass *, unsigned int *))(dword_887640->MouseClass_field_0x0 + 52))( /*0x4aac6d*/
+                  dword_887640,
                   v11);
     v12 = *v6; /*0x4aac72*/
-    v13 = v6[1]; /*0x4aac79*/
+    v13 = (HWND)v6[1]; /*0x4aac79*/
   }
   TacticalClass::TransformPixel((TacticalClass *)g_TacticalClass_Instance, v11, &v12); /*0x4aac8d*/
   v12 -= DSurface_ViewBounds.field_0; /*0x4aaca3*/
-  v13 -= (int)DSurface_ViewBounds.field_4; /*0x4aacb1*/
+  v13 = (HWND)((char *)v13 - dword_886FA4); /*0x4aacb1*/
   Tactical::MouseOver(&v12, v9, v14, &v10, &v8[1], &a2); /*0x4aacd4*/
-  if ( v9[0] != *(unsigned short *)&stru_87F5F0.__pad_E12[1370] || v9[1] != *(unsigned short *)&stru_87F5F0.__pad_E12[1372] ) /*0x4aacf3*/
-    Tactical::MouseMove((Tactical *)&stru_87F5F0.__pad_58[416], v11, v9); /*0x4aad04*/
-  return COMObject::ActivateThunk(this, 0, a3, 0); /*0x4aad19*/
+  if ( *(unsigned int *)v9 != dword_88095C ) /*0x4aace5*/
+    Tactical::MouseMove((Tactical *)&dword_87F7E8, v11, v9); /*0x4aad04*/
+  return COMObject::ActivateThunk(0, a3, 0); /*0x4aad19*/
 }
 } // namespace gamemd
 // 0x4AE6B0
@@ -1047,9 +1051,9 @@ unsigned int * DisplayClass::loc_4AEB50(char a2)
 namespace gamemd {
 unsigned int * DisplayClass::updateRenderState(char a2)
 {
-  GadgetClass::Dtor(this); /*0x4aebb3*/
+  GadgetClass::Dtor(); /*0x4aebb3*/
   if ( (a2 & 1) != 0 ) /*0x4aebbd*/
-    RA2_OPDEL(this); /*0x4aebc0*/
+    RA2_OPDEL(); /*0x4aebc0*/
   return this; /*0x4aebca*/
 }
 } // namespace gamemd
@@ -1057,9 +1061,9 @@ unsigned int * DisplayClass::updateRenderState(char a2)
 namespace gamemd {
 DisplayClass * DisplayClass::Read(char a2)
 {
-  MapClass::Destruct((char *)this); /*0x4aebf3*/
+  MapClass::Destruct(); /*0x4aebf3*/
   if ( (a2 & 1) != 0 ) /*0x4aebfd*/
-    RA2_OPDEL(this); /*0x4aec00*/
+    RA2_OPDEL(); /*0x4aec00*/
   return (char *)this; /*0x4aec0a*/
 }
 } // namespace gamemd
@@ -1068,9 +1072,9 @@ namespace gamemd {
 int * DisplayClass::processDisplayMode(char a2)
 {
   Vector::Clear((int)(this + 1)); /*0x4aec36*/
-  Straw::Dtor((Straw *)this); /*0x4aec3d*/
+  Straw::Dtor(); /*0x4aec3d*/
   if ( (a2 & 1) != 0 ) /*0x4aec47*/
-    RA2_OPDEL(this); /*0x4aec4a*/
+    RA2_OPDEL(); /*0x4aec4a*/
   return (int *)this->__pad_0; /*0x4aec54*/
 }
 } // namespace gamemd

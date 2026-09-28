@@ -42,21 +42,23 @@ void CaptureManagerClass__vt_03_()
 {
   void *v2; // eax
 
-  v2 = this->Items; /*0x472a86*/
-  this->q010 = 0; /*0x472a89*/
-  if ( v2 && this->IsAllocated ) /*0x472a90*/
+  v2 = *(void **)&this->m_1[3]; /*0x472a86*/
+  this->m_10 = 0; /*0x472a89*/
+  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x472a90*/
   {
     RA2_OPDEL(v2); /*0x472a96*/
-    this->Items = 0; /*0x472a9e*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x472a9e*/
   }
-  this->IsAllocated = 0; /*0x472aa1*/
-  this->q008 = 0; /*0x472aa4*/
+  IDA_BYTE1(this->m_C) = 0; /*0x472aa1*/
+  this->m_8 = 0; /*0x472aa4*/
+}
 }
 // 0x472AD0
 namespace gamemd {
 void CaptureManagerClass__vt_06_(int a2)
 {
-  return *(unsigned int *, unsigned int a4)(this->Items + 4 * a2); /*0x472ada*/
+  return *(unsigned int *, unsigned int a4)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x472ada*/
+}
 }
 // 0x4770E0
 namespace gamemd {
@@ -193,6 +195,7 @@ VectorClass_flat * * LoadBuildingTypeClassPrerequisites(unsigned int * a1, unsig
     return a1; /*0x47742f*/
   }
 }
+}
 // 0x4790B0
 namespace gamemd {
 void SoundWarning_Set(int a1)
@@ -211,6 +214,7 @@ void SoundWarning_Set(int a1)
   }
   return result; /*0x4790c3*/
 }
+}
 // 0x479740
 namespace gamemd {
 AbstractClass * * E4Recv_479740::sub_479740(DWORD BytesReturned)
@@ -225,7 +229,7 @@ AbstractClass * * E4Recv_479740::sub_479740(DWORD BytesReturned)
 
   if ( stru_887598.onBridge ) /*0x47974c*/
   {
-    sub_47A080(this, BytesReturned); /*0x479753*/
+    sub_47A080(BytesReturned); /*0x479753*/
     return; /*0x47975d*/
   }
   v2 = (char)BytesReturned + 65; /*0x479769*/
@@ -267,6 +271,7 @@ AbstractClass * * E4Recv_479740::sub_479740(DWORD BytesReturned)
   }
   LABEL_18:
   CloseHandle(FileA); /*0x4798e4*/
+}
 }
 // 0x479BA0
 namespace gamemd {
@@ -326,6 +331,7 @@ AbstractClass * * sub_479BA0(DWORD BytesReturned)
   LABEL_17:
   CloseHandle(FileA); /*0x479d49*/
   return v7; /*0x479be9*/
+}
 }
 // 0x479D60
 namespace gamemd {
@@ -388,6 +394,7 @@ AbstractClass * * sub_479D60(DWORD BytesReturned)
   CloseHandle(FileA); /*0x479ecf*/
   return 1; /*0x479da5*/
 }
+}
 // 0x479EF0
 namespace gamemd {
 AbstractClass * * sub_479EF0(DWORD BytesReturned)
@@ -449,6 +456,7 @@ AbstractClass * * sub_479EF0(DWORD BytesReturned)
   CloseHandle(FileA); /*0x47a05f*/
   return 1; /*0x479f35*/
 }
+}
 // 0x47A080
 namespace gamemd {
 AbstractClass * * ObjectClass::sub_47A080(DWORD a2)
@@ -469,7 +477,7 @@ AbstractClass * * ObjectClass::sub_47A080(DWORD a2)
   if ( !CDROM::DeviceIoControl(FileA, a2) ) /*0x47a0e5*/
   {
     Debug::Log(); /*0x47a0fa*/
-    DriveControlCD((int)this, FileA, a2); /*0x47a105*/
+    DriveControlCD(FileA, a2); /*0x47a105*/
     return; /*0x47a111*/
   }
   memset(&InBuffer[1], 0, 0x18u); /*0x47a123*/
@@ -487,7 +495,7 @@ AbstractClass * * ObjectClass::sub_47A080(DWORD a2)
   if ( (InBuffer[6] & 1) != 0 ) /*0x47a17b*/
     goto LABEL_8; /*0x47a17b*/
   LABEL_9:
-  DriveControlCD((int)this, FileA, a2); /*0x47a18e*/
+  DriveControlCD(FileA, a2); /*0x47a18e*/
   CloseHandle(FileA); /*0x47a19b*/
 }
 } // namespace ra2
@@ -530,6 +538,7 @@ void DriveControlCD(ObjectClass * aP0, HANDLE hDevice, DWORD BytesReturned)
   IDA_LOBYTE(result) = 1; /*0x47a9b5*/
   return result; /*0x47a9b7*/
 }
+}
 // 0x47AA50
 namespace gamemd {
 int sub_47AA50(char a1)
@@ -545,6 +554,7 @@ int sub_47AA50(char a1)
     return 0; /*0x47aa90*/
   FindClose(FirstFileA); /*0x47aa9a*/
   return 1; /*0x47aa92*/
+}
 }
 // 0x47E040
 namespace gamemd {
@@ -757,6 +767,7 @@ void CellClass_UpdateNeighborTerrain(int a1, int a2, unsigned int a3, int a4)
   }
   return result; /*0x47e458*/
 }
+}
 // 0x47E470
 namespace gamemd {
 void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
@@ -968,6 +979,7 @@ void CellClass_SetOccupancyFlags(int a1, int a2, unsigned int a3, int a4)
   }
   return result; /*0x47e888*/
 }
+}
 // 0x47EFE0
 namespace gamemd {
 void int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
@@ -1135,6 +1147,7 @@ void int sub_47EFE0(unsigned int * a1, int * a2, unsigned int a3)
     }
   }
   return result; /*0x47f204*/
+}
 }
 // 0x47F250
 namespace gamemd {
@@ -1316,11 +1329,12 @@ unsigned short * RenderFogOfWarOverlay(int a1, int * a2, unsigned int a3)
   }
   return result; /*0x47f478*/
 }
+}
 // 0x470C30
 namespace gamemd {
 void E4Recv_470C30::sub_470C30()
 {
-  *this = (void*)&CampaignEndScoreClass_vftable; /*0x470c30*/
+  this->m_0 = (int)&CampaignEndScoreClass_vftable; /*0x470c30*/
 }
 } // namespace gamemd
 
@@ -1982,8 +1996,8 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   int v13; // [esp+44h] [ebp-44h]
 
   if ( !a3 ) /*0x474552*/
-    return INIClass::WriteToString((INIClass *)this, aP1); /*0x47455c*/
-  INIClass::ClearSection((int *)this, (int)g_INI_Key_Digest, 0); /*0x474575*/
+    return INIClass::WriteToString(aP1); /*0x47455c*/
+  INIClass::ClearSection((int)g_INI_Key_Digest, 0); /*0x474575*/
   memset(&v6.SHA1_field_0x04, 0, 9); /*0x47457e*/
   v12 = 0; /*0x47458d*/
   v13 = 0; /*0x474591*/
@@ -1993,7 +2007,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
   v10 = 271733878; /*0x4745ad*/
   v11 = -1009589776; /*0x4745b5*/
   *(unsigned int *)v6.__pad_0 = (void*)&SHAPipe_vftable; /*0x4745bd*/
-  INIClass::WriteToString((INIClass *)this, (int)&v6); /*0x4745c5*/
+  INIClass::WriteToString((int)&v6); /*0x4745c5*/
   SHA1::ComputeThunk(&v6, (char *)&this->ambientSoundController[1] + 1); /*0x4745d2*/
   IDA_LOBYTE(this->ambientSoundController[1]) = 1; /*0x4745db*/
   Pipe::Dtor((Pipe *)&v6); /*0x4745df*/
@@ -2003,7 +2017,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
     (int)&this->ambientSoundController[1] + 1,
     20);
   v5 = INIClass::WriteToString((INIClass *)this, aP1); /*0x47460a*/
-  INIClass::ClearSection((int *)this, (int)g_INI_Key_Digest, 0); /*0x47460c*/
+  INIClass::ClearSection((int)g_INI_Key_Digest, 0); /*0x47460c*/
   return v5; /*0x474561*/
 }
 } // namespace gamemd
@@ -2012,7 +2026,7 @@ CCINIClass * E4Recv_474540::sub_474540(CCINIClass * aP1, char a3)
 namespace gamemd {
 char E4Recv_474660::sub_474660(unsigned char * Block, char * a3, int a4)
 {
-  return INIClass::SetDouble((char *)this, Block, a3, (double)a4 * 0.00390625); /*0x47467f*/
+  return INIClass::SetDouble(Block, a3, (double)a4 * 0.00390625); /*0x47467f*/
 }
 } // namespace gamemd
 
@@ -2038,7 +2052,7 @@ int E4Recv_476E20::sub_476E20()
   v7 = 271733878; /*0x476e5c*/
   v8 = -1009589776; /*0x476e64*/
   *(unsigned int *)v3.__pad_0 = (void*)&SHAPipe_vftable; /*0x476e6c*/
-  INIClass::WriteToString((INIClass *)this, (int)&v3); /*0x476e74*/
+  INIClass::WriteToString((int)&v3); /*0x476e74*/
   SHA1::ComputeThunk(&v3, (char *)&this->ambientSoundController[1] + 1); /*0x476e81*/
   IDA_LOBYTE(this->ambientSoundController[1]) = 1; /*0x476e8a*/
   return Pipe::Dtor((Pipe *)&v3); /*0x476e93*/
@@ -2328,7 +2342,7 @@ char ObjectClass::sub_47A1B0(DWORD BytesReturned)
       Debug::Log(); /*0x47a26f*/
       v5 = 0; /*0x47a277*/
     }
-    DriveControlCD((int)this, FileA, BytesReturned); /*0x47a28f*/
+    DriveControlCD(FileA, BytesReturned); /*0x47a28f*/
     CloseHandle(FileA); /*0x47a295*/
     Debug::Log(); /*0x47a2af*/
     return v5; /*0x47a2b7*/
@@ -2367,7 +2381,7 @@ char ObjectClass::sub_47A2D0(DWORD BytesReturned)
       Debug::Log(); /*0x47a38f*/
       v5 = 0; /*0x47a397*/
     }
-    DriveControlCD((int)this, FileA, BytesReturned); /*0x47a3af*/
+    DriveControlCD(FileA, BytesReturned); /*0x47a3af*/
     CloseHandle(FileA); /*0x47a3b5*/
     Debug::Log(); /*0x47a3cf*/
     return v5; /*0x47a3d7*/
@@ -2433,11 +2447,11 @@ CDFileClass * E4Recv_47AA00::sub_47AA00(char ** a2)
 {
   char *v3; // eax
 
-  BufferIOFileClass::Constructor((BufferIOFileClass *)this); /*0x47aa03*/
+  BufferIOFileClass::Constructor(); /*0x47aa03*/
   this->M84 = 0; /*0x47aa0c*/
   *(unsigned int *)this->__pad_0 = &off_7E1668; /*0x47aa10*/
   v3 = String::GetOrEmpty_Alt((String *)a2); /*0x47aa16*/
-  FileClass::OpenWithCDSearch(this, v3); /*0x47aa1e*/
+  FileClass::OpenWithCDSearch(v3); /*0x47aa1e*/
   return this->__pad_0; /*0x47aa25*/
 }
 } // namespace gamemd

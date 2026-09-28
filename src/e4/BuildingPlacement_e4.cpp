@@ -28,7 +28,7 @@
 namespace gamemd {
 void* BuildingPlacement::Activate(int a2, unsigned int * a3)
 {
-  void * v4;
+  int v4; // edi
   unsigned int *v5; // esi
   int v6; // eax
   const void *v7; // eax
@@ -39,10 +39,10 @@ void* BuildingPlacement::Activate(int a2, unsigned int * a3)
     return 0; /*0x4fb84c*/
   if ( *(unsigned int *)&stru_87F5F0.__pad_E12[1422] ) /*0x4fb859*/
     return 0; /*0x4fb859*/
-  v4 = (void *)(a2);
+  v4 = a2; /*0x4fb85f*/
   if ( !a2 ) /*0x4fb865*/
     return (void *)(0);
-  v5 = a3; /*0x4fb86b*/
+  v5 = (unsigned int *)((void *)(a3));
   if ( !a3 ) /*0x4fb871*/
     return 0; /*0x4fb919*/
   MapClass::UnselectAll_ClearLimboLaunchers(v10); /*0x4fb877*/
@@ -111,10 +111,11 @@ VectorClass_flat * * BuildingPlacement::ProcessBuildingPlacementAction()
   int v45; // [esp+48h] [ebp-24h]
   char v46; // [esp+5Bh] [ebp-11h]
   int v47; // [esp+5Ch] [ebp-10h] BYREF
-  CellClass * v48;
+  int v48; // [esp+60h] [ebp-Ch] BYREF
   int v49; // [esp+64h] [ebp-8h]
   int v50; // [esp+68h] [ebp-4h]
-v2 = (gamemd::BuildingPlacement *)((gamemd::CellClass *)((BuildingPlacement *)((char *)&this->u32_184)));
+
+  v2 = (gamemd::BuildingPlacement *)((gamemd::CellClass *)((BuildingPlacement *)((char *)&this->u32_184)));
   v3 = (gamemd::CellClass *)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], (unsigned int *)&this->q0046));
   BuildingPlacement_field_0x0C = this->BuildingPlacement_field_0x0C; /*0x54c567*/
   v5 = (BuildingPlacement *)v3; /*0x54c56a*/
@@ -141,7 +142,7 @@ v2 = (gamemd::BuildingPlacement *)((gamemd::CellClass *)((BuildingPlacement *)((
       }
       else
       {
-        v13 = (gamemd::CellClass *)((gamemd::VectorClass_flat **)((CellClass *)(*(int (__stdcall **)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C)));
+        v13 = (CellClass *)(*(int (__stdcall **)(int))(*(unsigned int *)this->BuildingPlacement_field_0x0C + 444))(this->BuildingPlacement_field_0x0C); /*0x54c624*/
         CellClass::AttachObject(v13, v45); /*0x54c62c*/
         v14 = (unsigned char *)this->BuildingPlacement_field_0x0C; /*0x54c631*/
         v15 = v14[116]; /*0x54c638*/

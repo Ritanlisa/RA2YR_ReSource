@@ -44,7 +44,7 @@ DynamicVector * MapFile::QueryInterface(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x69d571*/
   this->m_8 = 0; /*0x69d577*/
   if ( (a2 & 1) != 0 ) /*0x69d57e*/
-    RA2_OPDEL(this); /*0x69d581*/
+    RA2_OPDEL(); /*0x69d581*/
   return this->__pad_0; /*0x69d58b*/
 }
 } // namespace gamemd

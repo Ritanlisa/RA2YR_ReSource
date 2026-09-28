@@ -17,6 +17,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/BulletTypeClass_e4.hpp"
 #include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
 
 // 0x425D10
 namespace gamemd {
@@ -229,6 +230,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
   aP1[2] = 0; /*0x4260e0*/
   return aP1; /*0x425faa*/
 }
+}
 // 0x485020
 namespace gamemd {
 int Building::GetNthOfType()
@@ -241,6 +243,7 @@ int Building::GetNthOfType()
   else
     return ((uint8_t)this->__pad_A4[122] + 1) /*0x48504f*/
          * *(unsigned int *)(*(unsigned int *)(g_BuildingLoadQueue_Array.TurretAnimData[2] + 4 * BuildingByTiberiumType) + 184);
+}
 }
 // 0x772A90
 namespace gamemd {

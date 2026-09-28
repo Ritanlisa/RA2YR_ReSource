@@ -123,6 +123,7 @@ long MainMenu_Screen()
   SetFocus(g_hWnd); /*0x531f50*/
   return dwNewLong; /*0x531f5a*/
 }
+}
 // 0x531F60
 int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
 {

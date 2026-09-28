@@ -39,11 +39,6 @@ struct CheckListClass {
     bool q04A;  // 0x4A
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
-    unsigned int IsReadOnly;
-    unsigned int q118;
-    unsigned int subList1;
-    unsigned int subList2;
-    unsigned int u32_2E0;
 // --- flat members (END) ---
     int COMStub();
     int COMStub_Return0();

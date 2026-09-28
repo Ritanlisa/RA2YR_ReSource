@@ -12,7 +12,7 @@ namespace gamemd {
 int LightConvertClass::SelectRLEBlitter(IUnknown * aP1)
 {
   if ( !*(unsigned int *)&this->__pad_5[3] ) /*0x490e53*/
-    ConvertClass::InitTables((ConvertClass *)this); /*0x490e5a*/
+    ConvertClass::InitTables(); /*0x490e5a*/
   if ( (aP1 & 0x10) != 0 ) /*0x490e65*/
   {
     if ( (aP1 & 0x4000) != 0 ) /*0x490e6a*/

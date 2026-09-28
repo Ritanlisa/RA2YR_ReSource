@@ -73,6 +73,7 @@ char sub_5F0070()
   }
   return v0; /*0x5f0119*/
 }
+}
 // 0x5F0180
 namespace gamemd {
 char HandlePlayerDisconnection(int a1, int a2)
@@ -176,6 +177,7 @@ char HandlePlayerDisconnection(int a1, int a2)
   }
   return result; /*0x5f03a2*/
 }
+}
 // 0x5F2CE0
 namespace gamemd {
 AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
@@ -200,8 +202,9 @@ AbstractClass * * WaitModemConnection(void * a1, void * a2, void * a3)
   HWND v21; // [esp+1Eh] [ebp-F4h]
   HWND hWnd; // [esp+22h] [ebp-F0h]
   unsigned char Source[236]; // [esp+26h] [ebp-ECh] BYREF
-v19 = (gamemd::AbstractClass **)((char)((gamemd::AbstractClass **)(IDA_HIBYTE(a1))));
-  v3 = (int)((wchar_t *)(3));
+
+  v19 = (gamemd::AbstractClass **)((char)((gamemd::AbstractClass **)(IDA_HIBYTE(a1))));
+  v3 = (int)((gamemd::AbstractClass **)(3));
   if ( a3 == 1 ) /*0x5f2d00*/
     StringCSF = GetStringCSF((wchar_t *)aTxtModemConner_0, 0, g_Str_File_NullMgr_CPP, 1580); /*0x5f2d13*/
   else
@@ -335,6 +338,7 @@ v19 = (gamemd::AbstractClass **)((char)((gamemd::AbstractClass **)(IDA_HIBYTE(a1
   Dialog::Destroy(v21); /*0x5f3141*/
   return v3; /*0x5f3149*/
 }
+}
 // 0x5F33B0
 namespace gamemd {
 void* sub_5F33B0()
@@ -347,12 +351,13 @@ void* sub_5F33B0()
   v0 = EventQueue::Process(g_BinkMoviePlayer); /*0x5f33c1*/
   v1 = v0; /*0x5f33c9*/
   if ( !v0 )
-    return g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0;
+    return (void *)(g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0);
   Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x5f33d7*/
   if ( v1 != 27 )
     return g_NetworkTestFlag != 0 ? 0xFFFFFC18 : 0;
   g_NetworkTestFlag = 1; /*0x5f33e1*/
   return -1000; /*0x5f33ed*/
+}
 }
 // 0x5F66A0
 namespace gamemd {
@@ -425,6 +430,7 @@ unsigned int * sub_5F66A0(unsigned int * a1, int a2)
   a1[3] = v6; /*0x5f6774*/
   return a1; /*0x5f6777*/
 }
+}
 // 0x5FBEF0
 namespace gamemd {
 char sub_5FBEF0()
@@ -452,6 +458,7 @@ char sub_5FBEF0()
     Dialog::Destroy(Dialog); /*0x5fbf59*/
   }
   return 1; /*0x5fbf60*/
+}
 }
 // 0x5FDD20
 namespace gamemd {
@@ -568,6 +575,7 @@ AbstractClass * * sub_5FDDF0()
       RA2_OPDEL(Block); /*0x5fdee6*/
   }
 }
+}
 // 0x5FE620
 namespace gamemd {
 int BuildingTypeClass_LoadSHPs(int a1)
@@ -625,6 +633,7 @@ int BuildingTypeClass_LoadSHPs(int a1)
   }
   return result; /*0x5fe763*/
 }
+}
 // 0x5FF390
 namespace gamemd {
 void sub_5FF390()
@@ -656,6 +665,7 @@ void sub_5FF390()
       RA2_OPDEL(v2); /*0x5ff405*/
     }
   }
+}
 }
 // 0x5FF420
 namespace gamemd {
@@ -848,6 +858,7 @@ AbstractClass * * GenerateRangeRingTextures()
     while ( v1 < 0x10000 ); /*0x5ff7ed*/
   }
   return result; /*0x5ff7ef*/
+}
 }
 // 0x5F1350
 namespace gamemd {

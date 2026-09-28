@@ -55,6 +55,8 @@
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/E4Recv_771890_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/DialogClass_e4.hpp"
+#include "e4/classes/SkirmishDialog_e4.hpp"
 
 // 0x750920
 namespace gamemd {
@@ -98,6 +100,7 @@ AbstractClass * * VocClass_Play(int a1, int a2, float a3, int a4)
   if ( a4 ) /*0x7509c5*/
     SetAudioSource(v5); /*0x7509cc*/
   return v6; /*0x750931*/
+}
 }
 // 0x750AC0
 namespace gamemd {
@@ -190,6 +193,7 @@ void ComputeAudioPosition(AudioMixer * aP0, unsigned int * a1, int a3)
   *a1 = v18; /*0x750d2e*/
   return v21; /*0x750b7b*/
 }
+}
 // 0x750D40
 namespace gamemd {
 int * StartAudioController(AudioMixer * ecx0, int ** a2)
@@ -204,7 +208,7 @@ int * StartAudioController(AudioMixer * ecx0, int ** a2)
   float v11; // [esp+8h] [ebp-8h]
   unsigned int v12; // [esp+Ch] [ebp-4h] BYREF
 
-  result = (int *)((gamemd::VocClass *)((double)(0)));
+  result = (gamemd::VocClass *)((double)(0));
   if ( !a2 ) /*0x750d4d*/
     return result; /*0x750d4d*/
   v5 = (VocClass *)AudioSource::Get(a2); /*0x750d5e*/
@@ -246,6 +250,7 @@ int * StartAudioController(AudioMixer * ecx0, int ** a2)
   AudioMixer::RequestOrEndBuffer((int)v5, v12); /*0x750de6*/
   SetAudioSource((int)a2, v5, (int)v7); /*0x750df0*/
   return v5; /*0x750df9*/
+}
 }
 // 0x751DD0
 namespace gamemd {
@@ -290,6 +295,7 @@ char sub_751DD0(LPCSTR lpRootPathName, UINT * a2)
     return 0; /*0x751e23*/
   }
   return 1; /*0x751e1d*/
+}
 }
 // 0x752480
 namespace gamemd {
@@ -345,6 +351,7 @@ void ThemeManager_Update(int a1, int a2, int a3)
     }
   }
   return result; /*0x75257f*/
+}
 }
 // 0x752760
 namespace gamemd {
@@ -460,6 +467,7 @@ void ThemeClass_Update()
     }
   }
 }
+}
 // 0x752A40
 namespace gamemd {
 void ThemeQueue_ClearPlaylist(int a1)
@@ -477,6 +485,7 @@ void ThemeQueue_ClearPlaylist(int a1)
       RA2_OPDEL((void *)i); /*0x752a8c*/
     }
   }
+}
 }
 // 0x752B70
 namespace gamemd {
@@ -540,14 +549,15 @@ int TauntClass_Play(int a1)
   }
   return result; /*0x752c5f*/
 }
+}
 // 0x752CB0
 namespace gamemd {
 int E4Recv_752CB0::sub_752CB0(const char * a2)
 {
   int v3; // eax
 
-  this->owningHouseIndex = (unsigned int)(1065353216);
-  strcpy((char *)this, a2); /*0x752cd4*/
+  this->owningHouseIndex = 1065353216; /*0x752cbe*/
+  strcpy(a2); /*0x752cd4*/
   IDA_LOBYTE(this->fallRate) = 0; /*0x752cdf*/
   IDA_BYTE1(this->attachedTag) = 0; /*0x752ce2*/
   IDA_BYTE2(this->ambientSoundController[0]) = 0; /*0x752ce5*/
@@ -562,10 +572,11 @@ int E4Recv_752CB0::sub_752CB0(const char * a2)
          dword_B1D4A8 + dword_B1D4B4,
          0) )
   {
-    v3 = g_InfantrySelectState++; /*0x752d3b*/
+    v3 = (unsigned int)(g_InfantrySelectState++);
     *((unsigned int *)g_InfantryRenderPool + v3) = this; /*0x752d4a*/
   }
   return (int)this; /*0x752d4d*/
+}
 }
 // 0x753000
 namespace gamemd {
@@ -586,12 +597,12 @@ int CCINIClass::InitFromINIEVA()
   int v14; // [esp+18h] [ebp-CCh]
   char Destination[200]; // [esp+1Ch] [ebp-C8h] BYREF
 
-  v1 = (int)(this);
+  v1 = (gamemd::ObjectClass *)((int)(this));
   v13 = (int)this; /*0x753011*/
   IDA_LOBYTE(KeyCount) = INIClass::BinarySearchSection((int)this, g_INI_Key_DialogList) != 0; /*0x75301c*/
   if ( (unsigned char)KeyCount ) /*0x753023*/
   {
-    KeyCount = INIClass::GetKeyCount((char *)v1, g_INI_Key_DialogList); /*0x753030*/
+    KeyCount = (int)(INIClass::GetKeyCount((char *)v1, g_INI_Key_DialogList));
     v3 = KeyCount; /*0x753035*/
     v4 = 0; /*0x753037*/
     v14 = KeyCount; /*0x75303b*/
@@ -619,8 +630,7 @@ int CCINIClass::InitFromINIEVA()
         }
         if ( v6 == -1 ) /*0x7530b7*/
         {
-  LABEL_10:
-          v7 = RA2_OPNEW(0x54u); /*0x7530bd*/
+  LABEL_10: v7 = (int)(RA2_OPNEW(0x54u));
           if ( v7 ) /*0x7530cb*/
           {
             *(unsigned int *)(v7 + 40) = 1065353216; /*0x7530da*/
@@ -663,6 +673,7 @@ int CCINIClass::InitFromINIEVA()
   }
   return KeyCount; /*0x753195*/
 }
+}
 // 0x7531A0
 namespace gamemd {
 int E4Recv_7531A0::EVA_LoadINI()
@@ -671,8 +682,7 @@ int E4Recv_7531A0::EVA_LoadINI()
   void *v2; // esi
   int v3; // eax
   ObjectClass *v4; // [esp+0h] [ebp-4h] BYREF
-
-  v4 = this; /*0x7531a0*/
+v4 = (gamemd::ObjectClass *)(this);
   if ( dword_B1D4C4 ) /*0x7531a8*/
   {
     *(unsigned int *)(dword_B1D4C4 + 80) = 2; /*0x7531aa*/
@@ -702,6 +712,7 @@ int E4Recv_7531A0::EVA_LoadINI()
   }
   return result; /*0x753241*/
 }
+}
 // 0x7532A0
 namespace gamemd {
 void sub_7532A0(std::codecvt_base * a1)
@@ -710,6 +721,7 @@ void sub_7532A0(std::codecvt_base * a1)
     return _do_always_noconv_codecvt_base_std__MBE_NXZ_21(a1); /*0x7532a2*/
   else
     return *(unsigned int *)(*((unsigned int *)g_InfantryRenderPool + (unsigned int)a1) + 80) == 2; /*0x7532ba*/
+}
 }
 // 0x7540F0
 namespace gamemd {
@@ -794,6 +806,7 @@ void TransformVoxelVertex(unsigned int * a1, SomeVoxelCache * a2, SomeVoxelCache
   if ( *((float *)v7 + 9) > (double)*(float *)&stru_B2D93C.Buffer_field_14 ) /*0x7542c8*/
     stru_B2D93C.Buffer_field_14 = (int)v7[9]; /*0x7542cd*/
   return ++stru_B2D804.Buffer_field_1C; /*0x7542d7*/
+}
 }
 // 0x7542F0
 namespace gamemd {
@@ -952,6 +965,7 @@ AbstractClass * * InitializeAudioOcclusion(IUnknown * aP0, unsigned int * a1, un
   *a2 = result; /*0x7544fa*/
   return result; /*0x7544f7*/
 }
+}
 // 0x757120
 namespace gamemd {
 void RenderVoxels()
@@ -1107,6 +1121,7 @@ void RenderVoxels()
   }
   return result; /*0x75734e*/
 }
+}
 // 0x757360
 namespace gamemd {
 void ProcessVoxelDepthSamples()
@@ -1259,6 +1274,7 @@ void ProcessVoxelDepthSamples()
     while ( v24 < v18 ); /*0x757585*/
   }
   return result; /*0x75758b*/
+}
 }
 // 0x757980
 namespace gamemd {
@@ -1421,6 +1437,7 @@ void ProcessVoxelColorScanline()
     while ( v29 < v9 ); /*0x757bd7*/
   }
   return v9; /*0x757bde*/
+}
 }
 // 0x757BF0
 namespace gamemd {
@@ -1589,6 +1606,7 @@ void VoxelDrawScanline()
   }
   return v8; /*0x757e63*/
 }
+}
 // 0x7581F0
 namespace gamemd {
 void ProcessVoxelColorSamples()
@@ -1744,6 +1762,7 @@ void ProcessVoxelColorSamples()
   }
   return result; /*0x75841c*/
 }
+}
 // 0x758430
 namespace gamemd {
 void ProcessVoxelScanSamples()
@@ -1897,6 +1916,7 @@ void ProcessVoxelScanSamples()
   }
   return result; /*0x758659*/
 }
+}
 // 0x758AD0
 namespace gamemd {
 AbstractClass * * E4Recv_758AD0::sub_758AD0(int * a2)
@@ -1929,6 +1949,7 @@ AbstractClass * * E4Recv_758AD0::sub_758AD0(int * a2)
   (*(void (__thiscall **)(int *))(*a2 + 52))(a2); /*0x758b55*/
   return v3; /*0x758b58*/
 }
+}
 // 0x759180
 namespace gamemd {
 int sub_759180()
@@ -1942,6 +1963,7 @@ int sub_759180()
   g_AsyncIOState = 0; /*0x7591b1*/
   return atexit(sub_7591C0); /*0x7591bc*/
 }
+}
 // 0x7591C0
 namespace gamemd {
 void sub_7591C0()
@@ -1954,6 +1976,7 @@ void sub_7591C0()
   }
   byte_B45B65 = 0; /*0x7591ed*/
   dword_B45B60 = 0; /*0x7591f3*/
+}
 }
 // 0x759790
 namespace gamemd {
@@ -2065,6 +2088,7 @@ unsigned int * * sub_75A2F0(int a1, int a2, unsigned int * Block, size_t Size)
   }
   return result; /*0x75a310*/
 }
+}
 // 0x75A350
 namespace gamemd {
 int sub_75A350(int a1, int a2, unsigned char * a3, unsigned int a4)
@@ -2102,12 +2126,14 @@ int sub_75A350(int a1, int a2, unsigned char * a3, unsigned int a4)
   }
   return result; /*0x75a39f*/
 }
+}
 // 0x75A7D0
 namespace gamemd {
 int AnimSystem_Reset(int a1)
 {
   byte_B45BA8[a1 >> 3] |= 1 << (a1 & 7); /*0x75a7dc*/
   return a1 >> 3; /*0x75a7e2*/
+}
 }
 // 0x75F230
 namespace gamemd {
@@ -2158,6 +2184,7 @@ void sub_75F230(unsigned int * a1, unsigned int * a2)
   v10 = (v3 <= 0) - 1; /*0x75f31d*/
   IDA_LOBYTE(v10) = v10 & 0xFC; /*0x75f326*/
   return v10 + 4; /*0x75f2b3*/
+}
 }
 // 0x7500F0
 namespace gamemd {
@@ -2929,6 +2956,7 @@ void sub_753BF0()
   while ( result < byte_B2FE79 ); /*0x753c4a*/
   return result; /*0x753c4c*/
 }
+}
 // 0x753C60
 namespace gamemd {
 char * sub_753C60()
@@ -3661,7 +3689,7 @@ unsigned int E4Recv_759BC0::sub_759BC0(signed int a2)
       this->u32_504 = v2; /*0x759bf0*/
     this->u32_504 = v2; /*0x759bf6*/
   }
-  MovieClass::RenderLoop((char *)this, v2, 0); /*0x759c01*/
+  MovieClass::RenderLoop(v2, 0); /*0x759c01*/
   result = this->u32_504; /*0x759c06*/
   if ( result >= this->u32_508 ) /*0x759c14*/
     this->u32_504 = 0; /*0x759c16*/
@@ -3992,7 +4020,7 @@ int WarheadTypeClass__vt_03_(int a1, unsigned int * a2)
   *a2 = -1463464540; /*0x75e096*/
   a2[1] = 298979195; /*0x75e09e*/
   a2[2] = 1610642049; /*0x75e0a7*/
-  a2[3] = -1252326136; /*0x75e0b0*/
+  a2[3] = unk_7E984C; /*0x75e0b0*/
   return 0; /*0x75e08d*/
 }
 } // namespace gamemd

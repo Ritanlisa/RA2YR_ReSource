@@ -12,11 +12,11 @@ struct SwizzleManagerClass_19 {
     unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
-    unsigned int Capacity;
-    unsigned int IsInitialized;
-    unsigned int Items;
-    unsigned int Items2;
-    unsigned int q0042;
+    unsigned int __pad_0;
+    unsigned int m_1;
+    unsigned int m_10;
+    unsigned int m_8;
+    unsigned int m_C;
 // --- flat members (END) ---
     char Release(int a2,  unsigned int * a3);    // 0x6CF5A0
     char SetCapacity(int a2,  unsigned int * a3);    // 0x6CF720

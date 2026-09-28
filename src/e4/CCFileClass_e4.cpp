@@ -18,8 +18,8 @@ AudioController * * CCFileClass::Close()
   AudioController ** v3;
 
   if ( !IDA_BYTE1(this->BufferSize) ) /*0x4325c3*/
-    return FileClass::CloseHandle((RawFileClass *)this); /*0x432607*/
-  BufferIO::Flush((BufferIO *)this); /*0x4325ca*/
+    return FileClass::CloseHandle(); /*0x432607*/
+  BufferIO::Flush(); /*0x4325ca*/
   result = IDA_BYTE2(this->BufferOffset); /*0x4325cf*/
   if ( result ) /*0x4325d4*/
   {
@@ -48,7 +48,7 @@ int CCFileClass::Destruct()
   this->tail_19 = 0; /*0x535a7c*/
   Vector::Clear((int)&this->CacheReadAhead8); /*0x535a83*/
   *(unsigned int *)this->__pad_0 = &off_7E1668; /*0x535a8a*/
-  return BufferIOFileClass::Dtor((BufferIOFileClass *)this); /*0x535a95*/
+  return BufferIOFileClass::Dtor(); /*0x535a95*/
 }
 } // namespace gamemd
 // 0x65D0D0

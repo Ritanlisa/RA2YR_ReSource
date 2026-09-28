@@ -7,6 +7,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/RadBeam_e4.hpp"
 
 // 0x497A10
 namespace gamemd {
@@ -119,7 +120,7 @@ std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter(
 {
   *(unsigned int *)this->__pad_0 = (void*)&RLEBlitter_vftable; /*0x49a9a9*/
   if ( (a2 & 1) != 0 ) /*0x49a9af*/
-    RA2_OPDEL(this); /*0x49a9b2*/
+    RA2_OPDEL(); /*0x49a9b2*/
   return (std::locale::facet *)this; /*0x49a9bc*/
 }
 } // namespace gamemd
@@ -129,7 +130,7 @@ std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_
 {
   *(unsigned int *)this->__pad_0 = (void*)&RLEBlitter_vftable; /*0x49a9c9*/
   if ( (a2 & 1) != 0 ) /*0x49a9cf*/
-    RA2_OPDEL(this); /*0x49a9d2*/
+    RA2_OPDEL(); /*0x49a9d2*/
   return (std::locale::facet *)this; /*0x49a9dc*/
 }
 } // namespace gamemd
@@ -139,7 +140,7 @@ std::locale::facet * RLEBlitTransZRemapXlatAlpha_ushort::Constructor_RLEBlitter_
 {
   *(unsigned int *)this->__pad_0 = (void*)&RLEBlitter_vftable; /*0x49a9e9*/
   if ( (a2 & 1) != 0 ) /*0x49a9ef*/
-    RA2_OPDEL(this); /*0x49a9f2*/
+    RA2_OPDEL(); /*0x49a9f2*/
   return (std::locale::facet *)this; /*0x49a9fc*/
 }
 } // namespace gamemd
@@ -149,13 +150,13 @@ RLEBlitTransZRemapXlatAlpha_ushort * RLEBlitTransZRemapXlatAlpha_ushort::QueryIn
 {
   void *m_C; // eax
 
-  m_C = (gamemd::RLEBlitTransZRemapXlatAlpha_ushort *)((void *)this->m_C);
+  m_C = (unsigned int)((gamemd::RLEBlitTransZRemapXlatAlpha_ushort *)((void *)this->m_C));
   *(unsigned int *)this->__pad_0 = (void*)&RLEBlitTransZRemapXlatAlpha_unsigned_short_vftable; /*0x49aa4b*/
   FractalNoise::Dtor(m_C); /*0x49aa52*/
   this->m_C = 0; /*0x49aa5b*/
   *(unsigned int *)this->__pad_0 = (void*)&RLEBlitter_vftable; /*0x49aa64*/
   if ( (a2 & 1) != 0 ) /*0x49aa6a*/
-    RA2_OPDEL(this); /*0x49aa6d*/
+    RA2_OPDEL(); /*0x49aa6d*/
   return this->__pad_0; /*0x49aa77*/
 }
 } // namespace gamemd

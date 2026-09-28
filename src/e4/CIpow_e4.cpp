@@ -19,6 +19,7 @@
 #include "e4/classes/BuildingPlacement_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/COMClass_e4.hpp"
 
 // 0x7C8FD2
 namespace gamemd {
@@ -133,6 +134,7 @@ void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * 
     return -0.0; /*0x7c915e*/
   return result; /*0x7c9068*/
 }
+}
 // 0x7C91A5
 namespace gamemd {
 void* __usercall CIpow_Helper_Helper(double a1@<st0> a1)
@@ -144,4 +146,5 @@ void* __usercall CIpow_Helper_Helper(double a1@<st0> a1)
     _ST6 = a1 * dbl_87BED0; /*0x7c91bb*/
     __asm { frndint } /*0x7c91bd*/
   }
+}
 }

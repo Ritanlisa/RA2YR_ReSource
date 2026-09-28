@@ -88,6 +88,7 @@
 #include "e4/classes/WinsockInterface_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/WWMouseClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x5BC180
 namespace gamemd {
@@ -101,7 +102,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   unsigned char *v8; // ecx
   unsigned int *v9; // eax
   int v10; // edx
-  unsigned int v11;
+  int *v11; // ebx
   unsigned char *v12; // ecx
   int v13; // edi
   int v14; // ebp
@@ -109,12 +110,12 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   unsigned int *v16; // eax
   int v17; // esi
   uint8_t result; // al
-  unsigned int v19;
+  int *v19; // [esp+10h] [ebp-4h]
   unsigned int v20;
 
-  v3 = (gamemd::ObjectClass *)((unsigned int *)(dword_ABF168));
-  dword_ABF230 = (unsigned int)((int *)(aP0));
-  hWndParent = (int)(a2);
+  v3 = (gamemd::ObjectClass *)((unsigned int)((int *)(dword_ABF168)));
+  dword_ABF230 = (unsigned int *)(aP0);
+  hWndParent = (int *)(a2);
   byte_ABF238 = a3; /*0x5bc19c*/
   v20 = 0; /*0x5bc1a1*/
   v19 = dword_ABF168; /*0x5bc1a5*/
@@ -209,6 +210,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   }
   return result; /*0x5bc2b9*/
 }
+}
 // 0x69A1F0
 int WinMain::Constructor_VectorClass_Wstring_()
 {
@@ -259,7 +261,7 @@ unsigned int * WinMain::ShutdownCleanup()
 
   for ( i = (void **)dword_B1CF8C; dword_B1CF8C; i = (void **)dword_B1CF8C ) /*0x734d3b*/
   {
-    dword_B1CF8C = (unsigned int)(*i);
+    dword_B1CF8C = *i; /*0x734d40*/
     RA2_OPDEL(i); /*0x734d46*/
   }
   v2 = (void **)dword_B1CF78; /*0x734d57*/
@@ -296,7 +298,7 @@ unsigned int * WinMain::ShutdownCleanup()
     RA2_OPDEL(dword_B1CF74); /*0x734def*/
     dword_B1CF74 = 0; /*0x734df7*/
   }
-  result = (unsigned int *)(dword_B1CF88);
+  result = dword_B1CF88; /*0x734dfd*/
   if ( dword_B1CF88 ) /*0x734e04*/
   {
     do /*0x734e15*/
@@ -352,6 +354,7 @@ void sub_5D7E50()
   }
   return result; /*0x5d7f1a*/
 }
+}
 // 0x7B84F0
 namespace gamemd {
 void* sub_7B84F0()
@@ -359,7 +362,8 @@ void* sub_7B84F0()
   HANDLE result; // eax
   DWORD LastError; // eax
   CHAR Buffer[1024]; // [esp+4h] [ebp-400h] BYREF
-result = (HANDLE)(hMutex);
+
+  result = (HANDLE)(hMutex);
   if ( !hMutex ) /*0x7b8500*/
   {
     result = (HANDLE)((int)(CreateMutexA(0, 0, 0)));
@@ -396,6 +400,7 @@ result = (HANDLE)(hMutex);
     }
   }
   return result; /*0x7b85fe*/
+}
 }
 // 0x49F8B0
 LSTATUS WinMain::CleanupResource()

@@ -52,7 +52,8 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   int v38; // [esp+2Ch] [ebp+8h]
   char v39; // [esp+30h] [ebp+Ch]
   char v40; // [esp+34h] [ebp+10h]
-result = (int)(BaseDialogProc(hDlg, a2, a3, (unsigned int)a4));
+
+  result = (int)(BaseDialogProc(hDlg, a2, a3, (unsigned int)a4));
   if ( result ) /*0x657dc4*/
     return result; /*0x657dc4*/
   if ( a2 != 273 ) /*0x657dd1*/
@@ -202,7 +203,7 @@ result = (int)(BaseDialogProc(hDlg, a2, a3, (unsigned int)a4));
       *(unsigned int *)GetWindowLongA(hDlg, 8) = 1059; /*0x6581d1*/
       return 0; /*0x6581de*/
     }
-    return (int *)(0);
+    return 0; /*0x6581b7*/
   }
   v22 = (int *)(&dword_83923C);
   while ( *v22 != DlgCtrlID ) /*0x6581e8*/

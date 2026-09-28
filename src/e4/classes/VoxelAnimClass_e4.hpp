@@ -672,6 +672,7 @@ struct VoxelAnimClass {
     unsigned int VoxelAnimClass_field_0x0;
     unsigned int VoxelAnimClass_field_0x104;
     unsigned int VoxelAnimClass_field_0x108;
+    unsigned int VoxelAnimClass_field_0x10C;
     unsigned int VoxelAnimClass_field_0x114;
     unsigned int VoxelAnimClass_field_0x128;
     unsigned int VoxelAnimClass_field_0x4;
@@ -679,7 +680,6 @@ struct VoxelAnimClass {
     unsigned int __pad_12C;
     unsigned int __pad_98;
     unsigned int __pad_C;
-    unsigned int VoxelAnimClass_field_0x10C;
 // --- flat members (END) ---
     AbstractClass * * GetFrameCount(int * a2);
     Coord * * ProcessAnim(int * a2, unsigned int * a3);

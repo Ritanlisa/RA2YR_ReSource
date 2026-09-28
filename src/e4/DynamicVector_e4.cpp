@@ -52,6 +52,7 @@ unsigned int * DynamicVector::Copy(VectorClass_flat * aP1)
   *(unsigned int *)this->__pad_14 = aP1[5]; /*0x5ac48c*/
   return this->__pad_0; /*0x5ac491*/
 }
+}
 // 0x413A70
 namespace gamemd {
 char DynamicVector::AddItem(VectorClass_flat * aP1)
@@ -488,8 +489,8 @@ char DynamicVector::RemoveAt2(int a2)
   int v3; // eax
   char *v4; // edx
 
-  DynamicVector_field_0x10 = (char *)this->DynamicVector_field_0x10; /*0x67c3f0*/
-  v3 = a2; /*0x67c3f3*/
+  DynamicVector_field_0x10 = (char *)((unsigned int)((char *)this->DynamicVector_field_0x10));
+  v3 = (unsigned int)(a2);
   if ( a2 >= (int)DynamicVector_field_0x10 ) /*0x67c3f9*/
     return 0; /*0x67c41c*/
   v4 = DynamicVector_field_0x10 - 1; /*0x67c3fb*/
@@ -532,7 +533,7 @@ char DynamicVector::Add(DynamicVector * aP1)
       return 0; /*0x6c642f*/
     }
   }
-  DynamicVector_field_0x10 = this->DynamicVector_field_0x10; /*0x6c6435*/
+  DynamicVector_field_0x10 = (void *)((unsigned int)(this->DynamicVector_field_0x10));
   v7 = *(unsigned int *)&this->DynamicVector_field_0x1[3]; /*0x6c6438*/
   this->DynamicVector_field_0x10 = (char *)DynamicVector_field_0x10 + 1; /*0x6c643e*/
   *(unsigned int *)(v7 + 4 * (unsigned int)DynamicVector_field_0x10) = *aP1; /*0x6c6448*/

@@ -20,6 +20,7 @@
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/AnimTypeClass_e4.hpp"
 
 // 0x624760
 namespace gamemd {
@@ -30,15 +31,12 @@ int HashTable_flat::Get(IUnknown * aP1, IUnknown * result)
   result = (IUnknown *)(this->HashTable_field_0x04);
   if ( result ) /*0x624769*/
   {
-    result = *(unsigned int *)(*(unsigned int *)this->__pad_0 /*0x62478a*/
-                       + 4
-                       * (((int (__thiscall *)(unsigned int *))this->HashTable_field_0x18)(aP1)
-                        & ((1 << this->HashTable_field_0x0C) - 1)));
+    result = (IUnknown *)(*(unsigned int *)(*(unsigned int *)this->__pad_0 /*0x62478a*/ + 4 * (((int (__thiscall *)(unsigned int *))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1))));
     if ( result ) /*0x62478f*/
     {
       while ( *(unsigned int *)result != *aP1 ) /*0x62479c*/
       {
-        result = (int)(result->q204);
+        result = result->q204; /*0x62479e*/
         if ( !result ) /*0x6247a6*/
         {
           IDA_LOBYTE(result) = 0; /*0x6247a9*/
@@ -450,7 +448,7 @@ int HashTable_flat::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
       v6 = *(uint16_t *)(HashTable_field_0x04 + 6); /*0x625ff4*/
     result = v6; /*0x625ff9*/
     qmemcpy(a2, *(const void **)(HashTable_field_0x04 + 8), v6); /*0x626003*/
-    *(unsigned int *)aP3 = *(uint16_t *)(HashTable_field_0x04 + 6); /*0x626013*/
+    *aP3 = *(uint16_t *)(HashTable_field_0x04 + 6); /*0x626013*/
     IDA_LOBYTE(result) = HashTable_field_0x04 != 0; /*0x626019*/
   }
   else
@@ -610,7 +608,7 @@ CampaignClass * * HashTable_flat::Clear()
     {
       if ( IDA_LOBYTE(this->HashTable_field_0x14) ) /*0x6b970f*/
         break; /*0x6b9714*/
-      HashTable::RebuildEx(this); /*0x6b9718*/
+      HashTable::RebuildEx(); /*0x6b9718*/
     }
     while ( this->HashTable_field_0x08 > (unsigned int)this->HashTable_field_0x30 ); /*0x6b9725*/
   }
@@ -749,7 +747,7 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
         if ( *(float *)&v16[4] > *(double *)&this->HashTable_field_0x20 ) /*0x6ba3aa*/
           goto LABEL_22; /*0x6ba3aa*/
       }
-      HashTable::RebuildEx(this); /*0x6ba3ae*/
+      HashTable::RebuildEx(); /*0x6ba3ae*/
     }
   }
   LABEL_22:
@@ -863,7 +861,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
         RA2_OPDEL(v14); /*0x6badab*/
       }
     }
-    return 1; /*0x6badb6*/
+    return (gamemd::AbstractClass **)(1);
   }
   else
   {
@@ -930,7 +928,7 @@ AbstractClass * * HashTable_flat::RemoveHashTableEntry(ObjectClass * aP1, void *
         RA2_OPDEL(v27); /*0x6baed6*/
       }
     }
-    return v38; /*0x6baede*/
+    return (gamemd::AbstractClass **)(v38);
   }
 }
 } // namespace gamemd
@@ -1374,11 +1372,11 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
     --this->HashTable_field_0x04; /*0x7add8a*/
     if ( v11 || v12 ) /*0x7add8f*/
     {
-      HashTable_field_0x08 = this->HashTable_field_0x08; /*0x7add98*/
+      HashTable_field_0x08 = (int *)(this->HashTable_field_0x08);
       if ( HashTable_field_0x08 > this->HashTable_field_0x30 && IDA_LOBYTE(this->HashTable_field_0x14) != 1 ) /*0x7addaa*/
       {
         v14 = (unsigned int)(*(int **)this->__pad_0);
-        v39 = *(int **)this->__pad_0; /*0x7addb8*/
+        v39 = (unsigned int)(*(int **)this->__pad_0);
         v15 = this->HashTable_field_0x0C - 1; /*0x7addbe*/
         this->HashTable_field_0x08 = HashTable_field_0x08 >> 1; /*0x7addbf*/
         this->HashTable_field_0x0C = v15; /*0x7addc9*/
@@ -1416,7 +1414,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
         RA2_OPDEL(v14); /*0x7ade32*/
       }
     }
-    return 1; /*0x7ade3d*/
+    return (gamemd::AbstractClass **)(1);
   }
   else
   {
@@ -1444,7 +1442,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
       v25 = this->HashTable_field_0x08; /*0x7adeb5*/
       if ( v25 > this->HashTable_field_0x30 && IDA_LOBYTE(this->HashTable_field_0x14) != 1 ) /*0x7adec7*/
       {
-        HashTable_field_0x0C = this->HashTable_field_0x0C; /*0x7adecd*/
+        HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
         v27 = *(int **)this->__pad_0; /*0x7aded0*/
         v40 = *(int **)this->__pad_0; /*0x7aded5*/
         this->HashTable_field_0x08 = v25 >> 1; /*0x7adedb*/
@@ -1483,7 +1481,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
         RA2_OPDEL(v27); /*0x7adf4b*/
       }
     }
-    return v38; /*0x7adf53*/
+    return (gamemd::AbstractClass **)(v38);
   }
 }
 } // namespace gamemd

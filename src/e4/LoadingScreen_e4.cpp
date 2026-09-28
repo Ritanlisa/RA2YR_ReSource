@@ -171,7 +171,7 @@ void * * LoadingScreen::LoadSHPs()
   else
   {
     dword_B0FA68 = (unsigned int)((char *)(LoadFileSHP(off_844D14, (bool *)&byte_B0FCA5)));
-    dword_B0FAC8 = (unsigned int)(LoadFileSHP(off_844D04, (bool *)&byte_B0FCA1));
+    dword_B0FAC8 = (unsigned int)((char *)(LoadFileSHP(off_844D04, (bool *)&byte_B0FCA1)));
     SHP = (char *)(LoadFileSHP(off_844D00, (bool *)&byte_B0FCA0));
     v1 = off_844D08; /*0x72fa9f*/
   }

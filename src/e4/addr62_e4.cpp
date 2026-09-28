@@ -343,6 +343,7 @@ void Surface_DrawLineAlpha(int a1, int * a2, int * a3, short a4, unsigned char a
   }
   return result; /*0x6200e3*/
 }
+}
 // 0x6208F0
 namespace gamemd {
 void Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
@@ -510,6 +511,7 @@ void Dialog_DrawGradient(int * a1, int * a2, int a3, int a4)
   }
   return result; /*0x620cbb*/
 }
+}
 // 0x620CD0
 namespace gamemd {
 int ComputeHashModPrime(int * a1, int * a2, int a3)
@@ -616,15 +618,16 @@ int ComputeHashModPrime(int * a1, int * a2, int a3)
   }
   return result; /*0x620f4c*/
 }
+}
 // 0x621040
 namespace gamemd {
 void PrintFontLayout(AbstractClass * aP0, AbstractClass * aP1, AbstractClass aP3, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
   int *v10; // esi
-  void * v11;
+  int v11; // ebp
   int v12; // edi
   int v13; // ebx
-  void * v14;
+  int v14; // ebp
   Char *v15; // ebx
   int16_t v17; // [esp+10h] [ebp-10h]
   void * v18;
@@ -693,6 +696,8 @@ double sub_621150(int a1)
   while ( v3 ); /*0x6211c6*/
   return result; /*0x6211c8*/
 }
+}
+}
 // 0x6211D0
 namespace gamemd {
 void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2, unsigned short * a3, int a5, int a6, int arg10, int * a7, int a9)
@@ -706,7 +711,7 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
   int v17; // ebx
   int v18; // [esp+4h] [ebp-20h] BYREF
   int v19; // [esp+8h] [ebp-1Ch] BYREF
-  unsigned int v20;
+  int v20; // [esp+Ch] [ebp-18h]
   int v21; // [esp+10h] [ebp-14h]
   unsigned int v22[4]; // [esp+14h] [ebp-10h] BYREF
   int yTopa; // [esp+28h] [ebp+4h]
@@ -767,6 +772,7 @@ void DrawTextRendererTextAligned(int ecx0, unsigned int * a1, ObjectClass * aP2,
   Property::Set((Property *)v9, v13); /*0x62135e*/
   return FontRenderer::DrawText(v9, a7, a3, v12, yTopa, a5, a9) - v12; /*0x6211e4*/
 }
+}
 // 0x6214B0
 namespace gamemd {
 AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
@@ -775,7 +781,7 @@ AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
   int v4; // edi
   unsigned int *v5; // ebp
   int v6; // eax
-  unsigned int * v7;
+  unsigned int *v7; // esi
   int v8; // eax
   int v9; // ecx
   HWND Parent; // eax
@@ -846,7 +852,7 @@ AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
     }
     else
     {
-      v7 = (unsigned int *)((unsigned int)(0));
+      v7 = 0; /*0x62157e*/
     }
     *(unsigned int *)(v4 + 16) = v7; /*0x621580*/
     v29[0] = 0; /*0x621591*/
@@ -944,6 +950,7 @@ AbstractClass * * SetupDialogRenderBuffer(int * a1, HWND a2, unsigned char a3)
            0,
            1);
 }
+}
 // 0x6223C0
 namespace gamemd {
 unsigned int * E4Recv_6223C0::DestroyDialog()
@@ -952,7 +959,8 @@ unsigned int * E4Recv_6223C0::DestroyDialog()
   unsigned int *v2; // esi
   void (__thiscall ***v3)(unsigned int, int); // ecx
   ObjectClass *v4; // [esp+4h] [ebp-4h] BYREF
-result = (gamemd::ObjectClass *)(*(unsigned int **)&g_DialogPool.__pad_208[60]);
+
+  result = (gamemd::ObjectClass *)(*(unsigned int **)&g_DialogPool.__pad_208[60]);
   v4 = (gamemd::ObjectClass *)(this);
   if ( *(unsigned int *)&g_DialogPool.__pad_208[60] ) /*0x6223cd*/
   {
@@ -982,6 +990,7 @@ result = (gamemd::ObjectClass *)(*(unsigned int **)&g_DialogPool.__pad_208[60]);
     }
   }
   return result; /*0x622407*/
+}
 }
 // 0x622470
 namespace gamemd {
@@ -1054,6 +1063,7 @@ void AddDynamicVector(HWND a1, int * a2)
   ++*a2; /*0x6225c2*/
   return 1; /*0x6225ca*/
 }
+}
 // 0x622650
 namespace gamemd {
 void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2, void * a3)(HWND, UINT, WPARAM, LPARAM) a2, LPARAM a3)
@@ -1101,6 +1111,7 @@ void sub_622650(unsigned short a1, INT_PTR (__stdcall *a2, void * a3)(HWND, UINT
     }
   }
   return result; /*0x622675*/
+}
 }
 // 0x622820
 namespace gamemd {
@@ -1223,6 +1234,7 @@ AbstractClass * * SetupDialog(CoordStruct * hWnd, int a2)
   EnumChildWindows((HWND)hWnd, Dialog::HandleTabKey, 0); /*0x622b30*/
   EnumChildWindows((HWND)hWnd, Dialog::DispatchEvent, 0); /*0x622b39*/
   return Dialog::RestoreParent(hWnd); /*0x622b42*/
+}
 }
 // 0x622B50
 namespace gamemd {
@@ -1479,6 +1491,7 @@ void* CreateMessageBox(LPARAM lParam, LPARAM a2, LONG dwNewLong)
   }
   return v5; /*0x6232a9*/
 }
+}
 // 0x623730
 namespace gamemd {
 unsigned int * E4Recv_623730::sub_623730(unsigned int * a2)
@@ -1499,7 +1512,7 @@ unsigned int * E4Recv_623730::sub_623730(unsigned int * a2)
   attachedTag = this->attachedTag; /*0x623741*/
   owningHouseIndex = (void *)this->owningHouseIndex; /*0x623744*/
   v5 = this->ambientSoundController[0]; /*0x623747*/
-  qmemcpy(this, a2, 0x200u); /*0x62374a*/
+  qmemcpy(a2, 0x200u); /*0x62374a*/
   this->ambientSoundController[0] = v5; /*0x623750*/
   this->owningHouseIndex = (int)owningHouseIndex; /*0x623755*/
   this->attachedTag = attachedTag; /*0x623758*/
@@ -1552,6 +1565,7 @@ unsigned int * E4Recv_623730::sub_623730(unsigned int * a2)
     wcscpy(*(wchar_t **)(v14 + 8), (const wchar_t *)i[2]); /*0x62381a*/
   }
   return &this->vtable0; /*0x623828*/
+}
 }
 // 0x623880
 namespace gamemd {
@@ -1794,6 +1808,7 @@ CampaignScore * * DrawTextRendererMultiline(IUnknown * aP0, int * a1, wchar_t * 
   }
   return result; /*0x623ca7*/
 }
+}
 // 0x623E40
 namespace gamemd {
 AbstractClass * * GetDialogText(HWND hWnd, void ** a2)
@@ -1816,6 +1831,7 @@ AbstractClass * * GetDialogText(HWND hWnd, void ** a2)
     DeleteAndZero::Alt2((DeleteAndZero *)a2); /*0x623e5c*/
     return 0; /*0x623e61*/
   }
+}
 }
 // 0x6241F0
 namespace gamemd {
@@ -1864,6 +1880,7 @@ void Dialog_Run(unsigned short a1, INT_PTR (__stdcall *a2)(HWND, UINT, WPARAM, L
     return 0; /*0x62420b*/
   }
 }
+}
 // 0x6242B0
 namespace gamemd {
 int E4Recv_6242B0::sub_6242B0()
@@ -1874,7 +1891,7 @@ int E4Recv_6242B0::sub_6242B0()
   CHAR ClassName[128]; // [esp+10h] [ebp-80h] BYREF
 
   hWnd = (HWND)this; /*0x6242c4*/
-  GetClassNameA((HWND)this, ClassName, 128); /*0x6242c8*/
+  GetClassNameA(ClassName, 128); /*0x6242c8*/
   if ( !strcmp(ClassName, g_INI_Key_Edit) ) /*0x6242df*/
     return 1; /*0x62430a*/
   if ( !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x624325*/
@@ -1900,6 +1917,7 @@ int E4Recv_6242B0::sub_6242B0()
     v3 = hWnd; /*0x6243f2*/
     return !strcmp(ClassName, g_INI_Key_ComboBox) && (GetWindowLongA(v3, -16) & 3) != 3; /*0x624445*/
   }
+}
 }
 // 0x627020
 namespace gamemd {
@@ -2018,6 +2036,7 @@ unsigned int * sub_627020()
   }
   return result; /*0x627146*/
 }
+}
 // 0x6278C0
 namespace gamemd {
 int E4Recv_6278C0::sub_6278C0(const char * a2)
@@ -2095,6 +2114,7 @@ int E4Recv_6278C0::sub_6278C0(const char * a2)
   }
   return v11; /*0x6279f4*/
 }
+}
 // 0x627A10
 namespace gamemd {
 unsigned int * E4Recv_627A10::sub_627A10(ObjectClass * aP1)
@@ -2170,6 +2190,7 @@ unsigned int * E4Recv_627A10::sub_627A10(ObjectClass * aP1)
   }
   return result; /*0x627af5*/
 }
+}
 // 0x629530
 namespace gamemd {
 void E4Recv_629530::sub_629530()
@@ -2206,6 +2227,7 @@ void E4Recv_629530::sub_629530()
     }
     IDA_LOBYTE(this->customSound_controller[1]) = 0; /*0x6295a0*/
   }
+}
 }
 // 0x62E070
 namespace gamemd {
@@ -2506,13 +2528,13 @@ LRESULT GetEditControlText(HWND hWnd, void ** a2)
   {
     v6 = (wchar_t *)RA2_OPNEW(2 * v4 + 4); /*0x623ed5*/
     v7 = SendMessageA(hWnd, 0x4B3u, v4 + 1, (LPARAM)v6); /*0x623ee8*/
-    WideString::Assign_Alt((void **)a2, v6); /*0x623eeb*/
+    WideString::Assign_Alt(a2, v6); /*0x623eeb*/
     RA2_OPDEL(v6); /*0x623ef1*/
     return v7; /*0x623ef9*/
   }
   else
   {
-    SafeDelete::Ptr(a2); /*0x623ebc*/
+    SafeDelete::Ptr((SafeDelete *)a2); /*0x623ebc*/
     return 0; /*0x623ec1*/
   }
 }
@@ -2680,7 +2702,7 @@ unsigned char E4Recv_6261B0::sub_6261B0(ObjectClass * aP1, int a3, int a4)
 namespace gamemd {
 int E4Recv_626250::sub_626250(const char * a2, int a3)
 {
-  strcpy((char *)this, a2); /*0x62626c*/
+  strcpy(a2); /*0x62626c*/
   this->q040 = a3; /*0x62627c*/
   return (int)this; /*0x62627b*/
 }

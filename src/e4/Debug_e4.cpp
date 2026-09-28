@@ -67,9 +67,10 @@ int Debug::ScrollText(CellStruct * aP1)
           break; /*0x5bd1d1*/
       }
     }
-    return Text::DrawRepeated((Text *)this, v5, v13, v7 - v5, 1); /*0x5bd1e0*/
+    return Text::DrawRepeated(v5, v13, v7 - v5, 1); /*0x5bd1e0*/
   }
   return result; /*0x5bd1e8*/
+}
 }
 // 0x6E61F0
 namespace gamemd {
@@ -86,6 +87,7 @@ int Debug::AccumFlags()
     Debug_field_0xA0 = Debug_field_0xA0->NextTrigger; /*0x6e6205*/
   }
   return i; /*0x6e6213*/
+}
 }
 // 0x4068E0
 namespace gamemd {

@@ -39,11 +39,14 @@ struct Power {
     unsigned int u32_34D0;
     unsigned int u32_3540;
     unsigned int u32_3544;
+    unsigned int u32_3548;
+    unsigned int u32_354C;
     unsigned int u32_60C;
     unsigned int u32_610;
     unsigned int u32_614;
     unsigned int u32_61C;
     unsigned int u32_7E40;
+    unsigned char u8_34A4;
     unsigned char u8_34AC;
     unsigned char u8_34AD;
     unsigned char u8_34AE;
@@ -56,18 +59,15 @@ struct Power {
     unsigned int Power_field_0x0;
     unsigned int Power_field_0x4;
     unsigned int Power_field_0xC;
-    unsigned int q004;
-    unsigned int q008;
     unsigned int u32_3528;
     unsigned int u32_352C;
     unsigned int u32_3530;
-    unsigned int u32_3548;
-    unsigned int u32_354C;
     unsigned int u32_3550;
     unsigned int u32_3554;
     unsigned int u32_3558;
     unsigned int u32_355C;
-    unsigned char u8_34A4;
+    unsigned int q004;
+    unsigned int q008;
 // --- flat members (END) ---
     int Update(int * a2);  // 0x43A5D0
     unsigned int * UpdateAll();  // 0x67C6E0

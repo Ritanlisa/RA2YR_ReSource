@@ -21,10 +21,14 @@ int Map::GetInvalidCoord() {
   v2[2] = dword_887688; /*0x4104dd*/
   return (int)v2; /*0x4104e0*/
 }
+}
+}
 // 0x4F28B0
 namespace gamemd { namespace wdt { 
 bool Map::CanScroll() {
   return this->Height < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x4f28bd*/
+}
+}
 }
 // 0x4F3A90
 namespace gamemd { namespace wdt { 
@@ -40,6 +44,8 @@ int State::SetIfChanged(int a1) {
     return (*(int (__stdcall **)(int))(v3 + 16))(a1); /*0x4f3aa1*/
   }
   return result; /*0x4f3aa4*/
+}
+}
 }
 // 0x5C2500
 namespace gamemd { namespace wdt { 
@@ -134,6 +140,8 @@ void Campaign::SetupMovie() {
   }
   return result; /*0x5c2633*/
 }
+}
+}
 // 0x76BFE0
 namespace gamemd { namespace wdt { 
 int Conflict::GetOwnerHouse() {
@@ -144,4 +152,6 @@ int Conflict::GetOwnerHouse() {
     return *(unsigned int *)(Outcome + 36) - 1; /*0x76bfea*/
   else
     return 0; /*0x76bfec*/
+}
+}
 }

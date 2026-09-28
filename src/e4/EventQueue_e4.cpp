@@ -100,7 +100,8 @@ namespace gamemd {
 int EventQueue::Check()
 {
   void * v1;
-v1 = (void *)((int)(this->q314));
+
+  v1 = (void *)((int)(this->q314));
   if ( v1 == this->q318 ) /*0x54f65e*/
     return 0; /*0x54f669*/
   else

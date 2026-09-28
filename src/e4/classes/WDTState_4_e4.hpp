@@ -12,11 +12,11 @@ struct WDTState_4 {
     unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
-    unsigned int IsInitialized;
-    unsigned int Items;
-    unsigned int q0042;
-    unsigned int q0043;
-    unsigned int q008;
+    unsigned int __pad_0;
+    unsigned int m_1;
+    unsigned int m_10;
+    unsigned int m_8;
+    unsigned int m_C;
 // --- flat members (END) ---
     char Release(int a2,  unsigned int * a3);    // 0x76BA70
     int ddtor();  // 0x76B710

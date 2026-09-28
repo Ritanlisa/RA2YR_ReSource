@@ -41,6 +41,6 @@ unsigned int * IRTTITypeInfo::loc_74F6A0(char a2)
     this->q008 = 0;
     if ( (a2 & 1) != 0 )
     RA2_OPDEL();
-    return (unsigned int *)(this);
+    return ();
 }
 } // namespace gamemd

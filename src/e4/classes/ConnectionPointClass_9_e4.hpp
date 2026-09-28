@@ -11,7 +11,10 @@ struct ConnectionPointClass_9 {
     int q008;  // 0x8
     bool q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned int q0042;
+    unsigned int __pad_0;
+    unsigned int m_1;
+    unsigned int m_8;
+    unsigned int m_C;
 // --- flat members (END) ---
     char Release(int a2,  unsigned int * a3);    // 0x4A1280
     int EnumConnections(int a2);  // 0x4A0F70

@@ -125,7 +125,7 @@ void * NullModemClass::QueryInterface(char a2)
     FileFind::Close(v3); /*0x5f3663*/
     RA2_OPDEL(v3); /*0x5f3669*/
   }
-  ObjectClass::FreeResources((ObjectClass *)this); /*0x5f3673*/
+  ObjectClass::FreeResources(); /*0x5f3673*/
   if ( this->PacketsSent != -1 ) /*0x5f3680*/
   {
     if ( !g_ClipboardBuffer ) /*0x5f368a*/
@@ -135,7 +135,7 @@ void * NullModemClass::QueryInterface(char a2)
       (**(void (__thiscall ***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f369f*/
     g_ClipboardBuffer = 0; /*0x5f36a1*/
     this->PacketsSent = -1; /*0x5f36ad*/
-    ObjectClass::FreeResources((ObjectClass *)this); /*0x5f36b0*/
+    ObjectClass::FreeResources(); /*0x5f36b0*/
   }
   if ( g_ClipboardBuffer ) /*0x5f36bd*/
   {
@@ -145,7 +145,7 @@ void * NullModemClass::QueryInterface(char a2)
   LABEL_10:
   *(unsigned int *)this->__pad_0 = (void*)&ConnManClass_vftable; /*0x5f36cf*/
   if ( (a2 & 1) != 0 ) /*0x5f36db*/
-    RA2_OPDEL(this); /*0x5f36de*/
+    RA2_OPDEL(); /*0x5f36de*/
   return this->__pad_0; /*0x5f36e8*/
 }
 } // namespace gamemd
@@ -200,13 +200,13 @@ int NullModemClass::sendData()
   if ( ClearCommError(*((HANDLE *)&this->Active3), &Errors, &Stat) ) /*0x774771*/
   {
     v4 = (void *)((DWORD)((void *)(Errors)));
-    cbInQue = Stat.cbInQue; /*0x77477f*/
+    cbInQue = (DWORD)((void *)(Stat.cbInQue));
     cbOutQue = Stat.cbOutQue; /*0x774783*/
     v7 = Errors == 0; /*0x774787*/
     this->u32_1C = Stat.cbInQue; /*0x774789*/
     this->Active = cbOutQue; /*0x77478c*/
     if ( !v7 ) /*0x77478f*/
-      WinModemClass::LogCommErrors((WinModemClass *)this, v4, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x7747a5*/
+      WinModemClass::LogCommErrors(v4, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x7747a5*/
   }
   return 1; /*0x77470a*/
 }
@@ -240,13 +240,13 @@ int NullModemClass::receiveData()
   if ( ClearCommError(*((HANDLE *)&this->Active3), &Errors, &Stat) ) /*0x774851*/
   {
     v2 = (void *)((DWORD)((void *)(Errors)));
-    cbInQue = Stat.cbInQue; /*0x77485f*/
+    cbInQue = (DWORD)((void *)(Stat.cbInQue));
     cbOutQue = Stat.cbOutQue; /*0x774863*/
     v5 = Errors == 0; /*0x774867*/
     this->u32_1C = Stat.cbInQue; /*0x774869*/
     this->Active = cbOutQue; /*0x77486c*/
     if ( !v5 ) /*0x77486f*/
-      WinModemClass::LogCommErrors((WinModemClass *)this, v2, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774885*/
+      WinModemClass::LogCommErrors(v2, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774885*/
   }
   return (*(int (__thiscall **)(NullModemClass *, int))(*(unsigned int *)this->__pad_0 + 16))(this, 1); /*0x774893*/
 }

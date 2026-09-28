@@ -19,6 +19,7 @@
 #include "e4/classes/Building_e4.hpp"
 #include "e4/classes/Display_e4.hpp"
 #include "e4/classes/TextRenderer_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x4080C0
 namespace gamemd {
@@ -106,7 +107,7 @@ void * ThemeClass::InitializeThemes(char * a2)
   int v10; // eax
   int v11; // ecx
   int v12; // eax
-  int v13; // edx
+  void * v13;
   void *result; // eax
   void *Enabled; // eax
   int v16; // [esp+0h] [ebp-38h] BYREF
@@ -164,8 +165,8 @@ v2 = (char *)((int)(a2));
           && (v11 = this->ThemeClass_field_28, v11 > 0)
           && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->q014 + 8))(&this->q014, v10 + v11, 0) )
         {
-          v12 = (unsigned int)(this->q024);
-          v13 = (unsigned int)(this->u32_18);
+          v12 = (int)((void *)((unsigned int)(this->q024)));
+          v13 = (void *)((unsigned int)(this->u32_18));
           this->q024 = (unsigned int)(v12 + 1);
           *(unsigned int *)(v13 + 4 * v12) = v9; /*0x7206e4*/
         }
@@ -184,7 +185,7 @@ v2 = (char *)((int)(a2));
   result = Audio::GetEnabled(); /*0x720714*/
   if ( result ) /*0x72071b*/
   {
-    Enabled = Audio::GetEnabled(); /*0x720724*/
+    Enabled = (unsigned int)(Audio::GetEnabled());
     result = AudioStream::Constructor(Enabled, 0x4E20u); /*0x72072b*/
     this->ThemeClass_field_2C = result; /*0x720732*/
     if ( result ) /*0x720735*/

@@ -85,7 +85,7 @@ void COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
       goto LABEL_5; /*0x68268a*/
     }
   }
-  v5 = (&off_83D65C)[2 * v3]; /*0x6826c9*/
+  v5 = (void **)((&off_83D65C)[2 * v3]);
   LABEL_5:
   v6 = (*(int (__stdcall **)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v9); /*0x68268c*/
   if ( v6 >= 0 ) /*0x6826ad*/
@@ -121,6 +121,7 @@ void COM_WriteString(int a1, int a2, LPCCH lpMultiByteStr)
     goto LABEL_18; /*0x6826b1*/
   }
   return v6; /*0x6826bf*/
+}
 }
 // 0x682880
 namespace gamemd {
@@ -173,6 +174,7 @@ void COM_ReadString(int * a1, int a2, LPCCH lpMultiByteStr)
   }
   return v5; /*0x682913*/
 }
+}
 // 0x682A90
 namespace gamemd {
 void COM_Property_ReadBool(int a1, int a2, char a3)
@@ -182,9 +184,10 @@ void COM_Property_ReadBool(int a1, int a2, char a3)
   void **v5; // ecx
   int v6; // esi
   unsigned int * v8;
-v8 = (int)((unsigned int *)(0));
-  v3 = (unsigned int *)(0);
-  v4 = &unk_83D658; /*0x682aa0*/
+
+  v8 = (int)((unsigned int *)(0));
+  v3 = (int)((unsigned int *)(0));
+  v4 = (unsigned int *)(&unk_83D658);
   while ( *v4 != a2 ) /*0x682aa7*/
   {
     v4 += 2; /*0x682aa9*/
@@ -195,7 +198,7 @@ v8 = (int)((unsigned int *)(0));
       goto LABEL_5; /*0x682ab4*/
     }
   }
-  v5 = (&off_83D65C)[2 * v3]; /*0x682aeb*/
+  v5 = (void **)((&off_83D65C)[2 * v3]);
   LABEL_5:
   v6 = (*(int (__stdcall **)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v8); /*0x682ab6*/
   if ( v6 >= 0 ) /*0x682ad4*/
@@ -230,6 +233,7 @@ v8 = (int)((unsigned int *)(0));
     goto LABEL_18; /*0x682ad8*/
   }
   return v6; /*0x682ae6*/
+}
 }
 // 0x682B80
 namespace gamemd {
@@ -278,6 +282,7 @@ void COM_PropertyBag_Read(int * a1, int a2, int a3)
   }
   return v4; /*0x682beb*/
 }
+}
 // 0x682C70
 namespace gamemd {
 void sub_682C70(int a1, int a2, unsigned int * a3)
@@ -304,7 +309,7 @@ void sub_682C70(int a1, int a2, unsigned int * a3)
       goto LABEL_5; /*0x682ca5*/
     }
   }
-  v6 = (&off_83D65C)[2 * v4]; /*0x682cd8*/
+  v6 = (void **)((&off_83D65C)[2 * v4]);
   LABEL_5:
   v7 = (*(int (__stdcall **)(int, void **, unsigned int, int, unsigned int, unsigned int **))(*(unsigned int *)a1 + 16))( /*0x682ca7*/
          a1,
@@ -336,18 +341,20 @@ void sub_682C70(int a1, int a2, unsigned int * a3)
   }
   return v7; /*0x682cd3*/
 }
+}
 // 0x682E10
 namespace gamemd {
 void COM_WriteInt(int a1, int a2, int a3)
 {
-  unsigned int * v3;
+  int v3; // ecx
   unsigned int *v4; // eax
   void **v5; // ecx
   int v6; // esi
-  int v8; // [esp+30h] [ebp-4h] BYREF
-v8 = (int)((unsigned int *)(0));
-  v3 = (unsigned int *)(0);
-  v4 = &unk_83D658; /*0x682e20*/
+  unsigned int * v8;
+
+  v8 = (int)((unsigned int *)(0));
+  v3 = (int)((unsigned int *)(0));
+  v4 = (unsigned int *)(&unk_83D658);
   while ( *v4 != a2 ) /*0x682e27*/
   {
     v4 += 2; /*0x682e29*/
@@ -358,7 +365,7 @@ v8 = (int)((unsigned int *)(0));
       goto LABEL_5; /*0x682e34*/
     }
   }
-  v5 = (&off_83D65C)[2 * v3]; /*0x682e6b*/
+  v5 = (void **)((&off_83D65C)[2 * v3]);
   LABEL_5:
   v6 = (*(int (__stdcall **)(int, void **, int, unsigned int, unsigned int, int *))(*(unsigned int *)a1 + 12))(a1, v5, 18, 0, 0, &v8); /*0x682e36*/
   if ( v6 >= 0 ) /*0x682e54*/
@@ -393,6 +400,7 @@ v8 = (int)((unsigned int *)(0));
     goto LABEL_18; /*0x682e58*/
   }
   return v6; /*0x682e66*/
+}
 }
 // 0x682F00
 namespace gamemd {
@@ -445,6 +453,7 @@ void COM_SetBufferParams(int * a1, int a2, int * a3)
   }
   return v4; /*0x682f6f*/
 }
+}
 // 0x683FB0
 namespace gamemd {
 void sub_683FB0()
@@ -469,13 +478,14 @@ void sub_683FB0()
   AsyncIO::Read(v2); /*0x684048*/
   return sub_406F40();
 }
+}
 // 0x684060
 namespace gamemd {
 void * * ScenarioClass_SetTimer(int a1)
 {
   DWORD Ticks; // eax
   char *v3; // edx
-  void *result; // eax
+  unsigned int result;
   unsigned int *v5; // esi
   DWORD v6; // eax
   int v7; // ecx
@@ -499,7 +509,7 @@ void * * ScenarioClass_SetTimer(int a1)
     sub_406F00(); /*0x6840ca*/
     if ( !g_GameMode_Current[0] || g_GameMode_Current[0] == 5 ) /*0x6840db*/
     {
-      v5 = (char *)g_ScenarioClass_Instance + 1556; /*0x6840e2*/
+      v5 = (unsigned int *)((char *)g_ScenarioClass_Instance + 1556);
       if ( *((unsigned int *)g_ScenarioClass_Instance + 389) != -1 ) /*0x6840f1*/
       {
         v6 = Timer::GetTicks(); /*0x6840f6*/
@@ -525,6 +535,7 @@ void * * ScenarioClass_SetTimer(int a1)
   ++*((unsigned int *)g_ScenarioClass_Instance + 395); /*0x684174*/
   return result; /*0x68417a*/
 }
+}
 // 0x684290
 namespace gamemd {
 ScenarioClass * * Mouse_Update()
@@ -543,6 +554,7 @@ ScenarioClass * * Mouse_Update()
   result = Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x6842e0*/
   dword_B07784 = 0; /*0x6842e5*/
   return result; /*0x6842ef*/
+}
 }
 // 0x684370
 namespace gamemd {
@@ -885,6 +897,7 @@ void PostLoadInitScenario()
   Map_Init(*(ObjectClass **)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 8)); /*0x68510b*/
   return result; /*0x685110*/
 }
+}
 // 0x6851F0
 namespace gamemd {
 void ScenarioClass_Reset()
@@ -1167,6 +1180,7 @@ void SaveScenarioToINI()
   RawFileClass::Dtor(&v13); /*0x687ef1*/
   return HashTable::DestroyHashTableINIClass((INIClass *)&v10.vtable1); /*0x687eff*/
 }
+}
 // 0x687F10
 namespace gamemd {
 AbstractClass * * SessionClass_AssignHouses()
@@ -1389,6 +1403,7 @@ AbstractClass * * SessionClass_AssignHouses()
   }
   *(unsigned int *)(v26 + 90196) = Network_Assign(g_INI_Key_LightGrey, 53); /*0x68836d*/
   return HouseClass::GetColor((char *)v26); /*0x688378*/
+}
 }
 // 0x6886B0
 namespace gamemd {
@@ -1838,6 +1853,7 @@ void GenerateScenarioUnits()
       RA2_OPDEL(Block); /*0x688ebc*/
   }
 }
+}
 // 0x688ED0
 namespace gamemd {
 void FindInfantryDeployPosition(int * a1, RadarClass * a2, int a3)
@@ -2064,6 +2080,7 @@ void FindInfantryDeployPosition(int * a1, RadarClass * a2, int a3)
     }
   }
   return 0; /*0x688fa8*/
+}
 }
 // 0x681070
 namespace gamemd {
@@ -2823,7 +2840,7 @@ int E4Recv_68F8A0::sub_68F8A0()
         result != -1;
         result = (*(int (__thiscall **)(int *, int *))(v14 + 16))(&this->referenceCount, &v15) )
   {
-    Screen::TransitionLoop((Screen *)this, 1); /*0x68f98d*/
+    Screen::TransitionLoop(1); /*0x68f98d*/
     v14 = *p_referenceCount; /*0x68f992*/
     v15 = v4; /*0x68f99b*/
   }

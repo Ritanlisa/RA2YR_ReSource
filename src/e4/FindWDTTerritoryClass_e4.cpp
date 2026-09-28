@@ -15,7 +15,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
 {
   void* v5;
   char *v6; // [esp+8h] [ebp-8h]
-  void ** v7;
+  int v7; // [esp+Ch] [ebp-4h]
 
   v6 = (char *)(&this->u32_60);
   v7 = (int)((void **)(0));

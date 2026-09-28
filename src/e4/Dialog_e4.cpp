@@ -30,6 +30,7 @@ void Dialog::MapDialogResource()
     Debug::Log(); /*0x49f77e*/
   }
 }
+}
 // 0x5B5BC0
 namespace gamemd {
 int Dialog::InitializeGameSettings()
@@ -111,6 +112,7 @@ int Dialog::InitializeGameSettings()
   if ( v19 ) /*0x5b5e55*/
     EnableWindow(v19, 1); /*0x5b5e59*/
   return PlayVocClass(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1716), 0x2000, 1.0, 0); /*0x5b5e7c*/
+}
 }
 // 0x5D3490
 namespace gamemd {
@@ -212,17 +214,20 @@ int Dialog::ShowMessageBox(int lParam, unsigned short * a2, Movie * aP2, IUnknow
     (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 12))(g_WWMouseClass_Instance); /*0x5d367d*/
   return dwNewLong; /*0x5d3693*/
 }
+}
 // 0x5D5DC0
 namespace gamemd {
 int Dialog::GetModeNeg2()
 {
   return this->u32_FC != 0 ? 0 : -2;
 }
+}
 // 0x5D5DD0
 namespace gamemd {
 int Dialog::GetMode3()
 {
   return this->q03C != 0 ? 3 : -2;
+}
 }
 // 0x5EE350
 namespace gamemd {
@@ -233,7 +238,7 @@ int Dialog::RefreshDialogsGame()
   int result; // eax
 
   if ( this ) /*0x5ee352*/
-    UpdateObserveButtonWOL((ObjectClass *)this); /*0x5ee354*/
+    UpdateObserveButtonWOL(); /*0x5ee354*/
   v1 = (ObjectClass *)Dialog::FindByHandle((Dialog *)0x116); /*0x5ee35e*/
   if ( v1 ) /*0x5ee365*/
     UpdateObserveButtonWOL(v1); /*0x5ee369*/
@@ -244,6 +249,7 @@ int Dialog::RefreshDialogsGame()
   if ( result ) /*0x5ee38f*/
     UpdateObserveButtonWOL((ObjectClass *)result); /*0x5ee393*/
   return result; /*0x5ee398*/
+}
 }
 // 0x5F2950
 namespace gamemd {
@@ -382,6 +388,7 @@ int Dialog::RunModemDialing(ObjectClass * aP1, int a3, char a4)
   g_NetworkTestFlag = 0; /*0x5f2cbc*/
   Dialog::Destroy((Dialog *)hWnd); /*0x5f2cc3*/
   return v6; /*0x5f2cca*/
+}
 }
 // 0x606800
 namespace gamemd {
@@ -673,6 +680,7 @@ AbstractClass * * Dialog::MapControlToAction(HWND hWnd, LPARAM a2)
   }
   return 1; /*0x60711e*/
 }
+}
 // 0x607FD0
 namespace gamemd {
 int Dialog::StopBink()
@@ -714,6 +722,7 @@ int Dialog::StopBink()
     }
   }
   return result; /*0x60801e*/
+}
 }
 // 0x608070
 namespace gamemd {
@@ -806,6 +815,7 @@ AbstractClass * * Dialog::IdleProcess()
   EnumChildWindows(v3, Dialog::MapControlToAction, 0); /*0x608236*/
   EnableWindow(v3, (uint8_t)v15); /*0x608250*/
   return 1; /*0x6080cb*/
+}
 }
 // 0x60A330
 namespace gamemd {
@@ -916,6 +926,7 @@ int Dialog::HandleTabKey(HWND hWnd, LPARAM a2)
   }
   *((unsigned int *)hWnda + 44) = 2; /*0x60a581*/
   return 1; /*0x60a47a*/
+}
 }
 // 0x60A5B0
 namespace gamemd {
@@ -1134,6 +1145,7 @@ AbstractClass * * Dialog::DispatchEvent(HWND hWnd, LPARAM a2)
     return 1; /*0x60a6d9*/
   }
 }
+}
 // 0x60F760
 namespace gamemd {
 AbstractClass * * Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
@@ -1221,6 +1233,7 @@ AbstractClass * * Dialog::InitWindow(SkirmishDialog * aP0, LPARAM a2)
     *(unsigned int *)(v2 + 32) = a2; /*0x60f96e*/
     return 1; /*0x60f962*/
   }
+}
 }
 // 0x60F9A0
 namespace gamemd {
@@ -1534,6 +1547,7 @@ AbstractClass * * Dialog::InitializeControls(HWND hWnd, LPARAM a2)
   SendMessageA(hWnd, 0x497u, 0, 0); /*0x610339*/
   return 1; /*0x61033f*/
 }
+}
 // 0x610360
 namespace gamemd {
 AbstractClass * * Dialog::DestroyDialogSystem()
@@ -1552,7 +1566,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
   int64_t v14; // [esp+10h] [ebp-208h] BYREF
   unsigned char v15[512]; // [esp+18h] [ebp-200h] BYREF
 
-  EnumChildWindows((HWND)this, DestroyDialogChildWindow, 0); /*0x610374*/
+  EnumChildWindows(DestroyDialogChildWindow, 0); /*0x610374*/
   hWnd = (HWND)this; /*0x610389*/
   DynamicArray::Resize((DynamicArray *)&g_DialogPool.__pad_208[128], (int *)&hWnd, &v14); /*0x61038d*/
   memset(v15, 0, sizeof(v15)); /*0x6103a3*/
@@ -1628,6 +1642,7 @@ AbstractClass * * Dialog::DestroyDialogSystem()
   SetWindowLongA(hWnd, -21, 0); /*0x610548*/
   Object::RemoveObjectArray((Object *)hWnd); /*0x610552*/
   return 1; /*0x61055c*/
+}
 }
 // 0x6137D0
 namespace gamemd {
@@ -2155,8 +2170,8 @@ AbstractClass * * Dialog::DrawBackground()
   LABEL_7:
   if ( v3 ) /*0x621ee7*/
   {
-    GetClientRect((HWND)this, &Rect); /*0x621ef3*/
-    ScreenDialogToClient((HWND)this, &v38); /*0x621eff*/
+    GetClientRect(&Rect); /*0x621ef3*/
+    ScreenDialogToClient(&v38); /*0x621eff*/
     left = v38.left; /*0x621f10*/
     right = v38.right - v38.left; /*0x621f14*/
     top = v38.top; /*0x621f1a*/
@@ -2384,6 +2399,7 @@ AbstractClass * * Dialog::DrawBackground()
     }
   }
 }
+}
 // 0x622720
 namespace gamemd {
 int Dialog::Destroy()
@@ -2398,7 +2414,7 @@ int Dialog::Destroy()
 
   Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x62272a*/
   Dialog::IdleProcess(v8, (ObjectClass *)this); /*0x622731*/
-  DestroyWindow((HWND)this); /*0x622737*/
+  DestroyWindow(); /*0x622737*/
   result = 0; /*0x622745*/
   if ( g_DialogTrackingList > 0 ) /*0x622749*/
   {
@@ -2434,6 +2450,7 @@ int Dialog::Destroy()
     }
   }
   return result; /*0x622760*/
+}
 }
 // 0x6233A0
 namespace gamemd {
@@ -2475,6 +2492,7 @@ CampaignClass * * Dialog::CleanupTree()
     RA2_OPDEL(Dialog_field_0x3C); /*0x623409*/
   }
 }
+}
 // 0x624930
 namespace gamemd {
 int Dialog::UpdateControlState(unsigned int * a2, unsigned int * a3)
@@ -2496,6 +2514,7 @@ int Dialog::UpdateControlState(unsigned int * a2, unsigned int * a3)
   }
   *a3 = v4 + 1; /*0x624990*/
   return 1; /*0x62493b*/
+}
 }
 // 0x624BE0
 namespace gamemd {
@@ -2554,6 +2573,7 @@ AbstractClass * * Dialog::GrowBuffer()
     }
     RA2_OPDEL(v3); /*0x624c6e*/
   }
+}
 }
 // 0x624CA0
 namespace gamemd {
@@ -2744,9 +2764,10 @@ AbstractClass * * Dialog::BindGadgetData(IUnknown * aP1, IUnknown * aP2)
     }
   LABEL_41:
     if ( v39 <= *(double *)&this->__pad_10[16] ) /*0x624fa5*/
-      HashTable::Rebuild2((HashTable *)this); /*0x624fa9*/
+      HashTable::Rebuild2(); /*0x624fa9*/
     return v33; /*0x624fb0*/
   }
+}
 }
 // 0x671EA0
 namespace gamemd {
@@ -2918,6 +2939,7 @@ INIClass * * Dialog::ReadMultiplayerDialogSettings()
   }
   return result; /*0x672219*/
 }
+}
 // 0x775940
 namespace gamemd {
 int Dialog::FindByHandle()
@@ -2935,17 +2957,20 @@ int Dialog::FindByHandle()
   }
   return *((unsigned int *)&stru_B72D28.vtable0 + 2 * v1); /*0x77595f*/
 }
+}
 // 0x775B10
 namespace gamemd {
 int Dialog::GetCurrent()
 {
   return (int)hWnd; /*0x775b15*/
 }
+}
 // 0x775B20
 namespace gamemd {
 int Dialog::GetCurrentType()
 {
   return dword_B72F48; /*0x775b25*/
+}
 }
 // 0x4E4EC0
 namespace gamemd {
@@ -3190,7 +3215,7 @@ BOOL Dialog::IsSpecialTemplate()
 namespace gamemd {
 BOOL Dialog::EnumAndCleanup()
 {
-  return EnumChildWindows((HWND)this, sub_60AA60, 0); /*0x60aaae*/
+  return EnumChildWindows(sub_60AA60, 0); /*0x60aaae*/
 }
 } // namespace gamemd
 
@@ -3257,8 +3282,8 @@ BOOL Dialog::SubclassEditControl(HWND hWnd, LPARAM a2)
 namespace gamemd {
 HWND Dialog::Show()
 {
-  ShowWindow((HWND)this, 1); /*0x622806*/
-  SetForegroundWindow((HWND)this); /*0x62280d*/
+  ShowWindow(1); /*0x622806*/
+  SetForegroundWindow(); /*0x62280d*/
   return Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x62281e*/
 }
 } // namespace gamemd
@@ -3311,8 +3336,8 @@ int Dialog::FindByPtr()
 namespace gamemd {
 BOOL Dialog::GetField()
 {
-  EnumChildWindows((HWND)this, DialogClass::Reposition, 1); /*0x775bab*/
-  return DialogClass::Reposition((HWND)this, 0); /*0x775bb9*/
+  EnumChildWindows(DialogClass::Reposition, 1); /*0x775bab*/
+  return DialogClass::Reposition(0); /*0x775bb9*/
 }
 } // namespace gamemd
 
@@ -3324,7 +3349,7 @@ HWND Dialog::RestoreParent()
 
   result = GetWindowLongA((HWND)this, -8); /*0x777066*/
   if ( result ) /*0x77706e*/
-    return SetDialogParent((HWND)this, (HWND)result); /*0x777074*/
+    return SetDialogParent((HWND)result); /*0x777074*/
   return result; /*0x777079*/
 }
 } // namespace gamemd

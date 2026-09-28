@@ -34,8 +34,6 @@ struct INIClass {
     unsigned int q0146;
     unsigned int sectionHead0;
     unsigned int vtable0;
-    unsigned int ReadDifficultyModifiers;
-    unsigned int GetCoord2;
     unsigned int ReadInt_Overwrite;
     unsigned int SetInt;
     unsigned int SetString;

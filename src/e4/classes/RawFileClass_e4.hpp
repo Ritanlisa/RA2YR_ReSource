@@ -12,6 +12,7 @@ struct RawFileClass {
     int FileSize;  // 0x8
     void* Handle;  // 0xC
     unsigned int FileName;  // 0x10
+    unsigned int u32_11;  // 0x11
     char FileTimeDateLo[2];  // 0x14
     char FileTimeDateHi[2];  // 0x16
     bool FileNameAllocated;  // 0x18

@@ -25,11 +25,13 @@ int Math_InitDegToRad(void * a1, void * a2)
   dbl_887648 = 0.0174532925199433 * 90.0; /*0x41001c*/
   return result; /*0x410022*/
 }
+}
 // 0x41C350
 namespace gamemd {
 void Math::Hypotenuse2D()
 {
   return Math::Sqrt(*(double *)this * *(double *)this + this->q008 * this->q008); /*0x41c36e*/
+}
 }
 // 0x4CAC40
 namespace gamemd {
@@ -57,6 +59,7 @@ void Math_Sqrt(void * a1)
   }
   return result; /*0x4cac59*/
 }
+}
 // 0x4CACB0
 namespace gamemd {
 void Math_SinCos(void * a1)
@@ -76,6 +79,7 @@ void Math_SinCos(void * a1)
       ++result; /*0x4cace9*/
   }
   return result; /*0x4cacf1*/
+}
 }
 // 0x4CAD00
 namespace gamemd {
@@ -100,6 +104,7 @@ void Math_ArcTan2(void * a1)
   }
   return result; /*0x4cad48*/
 }
+}
 // 0x4CAD50
 namespace gamemd {
 int Math::Sin(double a1)
@@ -112,6 +117,7 @@ int Math::Sin(double a1)
   if ( result < 0 )
     return (((unsigned short)result - 1) | 0xFFFFF000) + 1 + ((int)((((unsigned short)result - 1) | 0xFFFFF000) + 1) < 0 ? 0x1000 : 0);
   return result; /*0x4cad7b*/
+}
 }
 // 0x4CAE30
 namespace gamemd {
@@ -164,6 +170,7 @@ void Math_CalcAngle(void * a1, void * a2)
   }
   return result; /*0x4cae6a*/
 }
+}
 // 0x5AE750
 namespace gamemd {
 void * Math::BuildRotationMatrix(float * a2, float a3)
@@ -204,6 +211,7 @@ void * Math::BuildRotationMatrix(float * a2, float a3)
   *(&this->u32_40) = (1.0 - v14) * v16 + v14; /*0x5ae84a*/
   return this; /*0x5ae851*/
 }
+}
 // 0x5F6560
 namespace gamemd {
 int Math::DistSq2D(TechnoClass * aP1)
@@ -219,6 +227,7 @@ int Math::DistSq2D(TechnoClass * aP1)
   v4 = v2[1]; /*0x5f6576*/
   v7 = v2[2]; /*0x5f657c*/
   return (v3 - *aP1) * (v3 - *aP1) + (v4 - aP1[1]) * (v4 - aP1[1]); /*0x5f658b*/
+}
 }
 // 0x646590
 namespace gamemd {
@@ -305,6 +314,7 @@ unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, 
   a1[3] = v20; /*0x64671d*/
   return a1; /*0x646722*/
 }
+}
 // 0x7C5F00
 namespace gamemd {
 void Math_RoundToInt(void * a1)
@@ -316,6 +326,7 @@ void Math_RoundToInt(void * a1)
   IDA_LOWORD(result) = v1; /*0x7c5f22*/
   IDA_HIWORD(result) = IDA_WORD2(v1); /*0x7c5f22*/
   return result; /*0x7c5f22*/
+}
 }
 // 0x473650
 namespace gamemd {

@@ -236,7 +236,6 @@ void History::Record(const char* event)
     entry.Frame = 0;
     std::strncpy(entry.Text, event ? event : "", sizeof(entry.Text) - 1);
     entries.push_back(entry);
-}
 
 void History::Clear()
 {
@@ -246,4 +245,3 @@ void History::Clear()
 
 } // namespace wdt
 } // namespace gamemd
-}

@@ -45,6 +45,9 @@
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/E4Recv_542F30_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/BombClass_e4.hpp"
 
 // 0x530000
 namespace gamemd {
@@ -81,7 +84,7 @@ MixFileClass * * sub_530000()
                    g_MixFilePool_Capacity + g_MixFilePool_GrowSize,
                    0) )
             {
-              v4 = (unsigned int *)((unsigned int)(g_MixFilePool_Count++));
+              v4 = (unsigned int)(g_MixFilePool_Count++);
               *((unsigned int *)g_MixFilePool + v4) = v3; /*0x5300b3*/
             }
             ReturnTrue(0); /*0x5300ba*/
@@ -113,7 +116,7 @@ MixFileClass * * sub_530000()
                    g_MixFilePool_Capacity + g_MixFilePool_GrowSize,
                    0) )
             {
-              v8 = (unsigned int *)((unsigned int)(g_MixFilePool_Count++));
+              v8 = (unsigned int)(g_MixFilePool_Count++);
               *((unsigned int *)g_MixFilePool + v8) = v7; /*0x53016f*/
             }
           }
@@ -124,6 +127,7 @@ MixFileClass * * sub_530000()
     FindClose(v5); /*0x530183*/
   }
   return (gamemd::MixFileClass **)(1);
+}
 }
 // 0x5312A0
 namespace gamemd {
@@ -225,7 +229,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
   v30 = v37 - 40; /*0x531444*/
   if ( v11 ) /*0x53144d*/
   {
-    v12 = Text::MeasureWidth(v10, 0, unsigned int a2); /*0x531454*/
+    v12 = (int)(Text::MeasureWidth(v10, 0, unsigned int a2));
     v29 = v36 - v12 - 10; /*0x531461*/
   }
   TextRenderer::Printf((int)v32, v10, g_DSurface_Hidden, (int)v35, (int)&v29, 0xFFFF, 0, 22, a2); /*0x531485*/
@@ -233,7 +237,7 @@ void ShowLoadingScreen(void * a1, void * a2, void * a3)
   v13 = v13; /*0x5314a5*/
   if ( v11 ) /*0x5314a7*/
   {
-    v15 = Text::MeasureWidth(v13, 0, unsigned int a1, unsigned int a3); /*0x5314ae*/
+    v15 = (size_t)(Text::MeasureWidth(v13, 0, unsigned int a1, unsigned int a3));
     v29 = v36 - v15 - 10; /*0x5314bf*/
     v30 += v11->q01C + 3; /*0x5314ca*/
   }
@@ -363,6 +367,7 @@ char BulkData_Initialize()
   *(unsigned int *)v7.__pad_0 = &off_7E1668; /*0x531890*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x531898*/
   return 1; /*0x5317c4*/
+}
 }
 // 0x532150
 namespace gamemd {
@@ -1830,6 +1835,7 @@ DSurface * * AllocateSurfaceScreenSurfaces(int a1, ObjectClass * aP1, ObjectClas
   }
   return 1; /*0x534438*/
 }
+}
 // 0x5349C0
 namespace gamemd {
 void TheaterClass_LoadMIX(int a1)
@@ -1998,6 +2004,7 @@ void TheaterClass_LoadMIX(int a1)
     Multiplayer::ShowProgress(g_GameMode_Current, 25); /*0x534dc5*/
   }
 }
+}
 // 0x5353D0
 namespace gamemd {
 ObjectClass * * Radar_FindClosestEnemy(short * a1, int a2)
@@ -2103,6 +2110,7 @@ ObjectClass * * Radar_FindClosestEnemy(short * a1, int a2)
   }
   return result; /*0x5355ab*/
 }
+}
 // 0x538D40
 namespace gamemd {
 void sub_538D40()
@@ -2197,6 +2205,7 @@ void sub_538D40()
   byte_A9F91C = 0; /*0x538e61*/
   return result; /*0x538e5e*/
 }
+}
 // 0x538E70
 namespace gamemd {
 AbstractClass * * E4Recv_538E70::sub_538E70(double a2)
@@ -2236,6 +2245,7 @@ AbstractClass * * E4Recv_538E70::sub_538E70(double a2)
   }
   while ( v3 < 256 );
   return result; /*0x538f0d*/
+}
 }
 // 0x538F20
 namespace gamemd {
@@ -2338,6 +2348,7 @@ char sub_538F20(int a1, int a2, char * Source)
     return (*(char (__thiscall **)(int))(*(unsigned int *)a2 + 96))(a2); /*0x5390f2*/
   return result; /*0x5390fd*/
 }
+}
 // 0x539560
 namespace gamemd {
 int sub_539560()
@@ -2345,12 +2356,14 @@ int sub_539560()
   LightningStorm_Coords = dword_A9F9F8; /*0x539565*/
   return dword_A9F9F8; /*0x53956a*/
 }
+}
 // 0x539570
 namespace gamemd {
 int sub_539570()
 {
   PsyDom_Coords = dword_A9F9F8; /*0x539575*/
   return dword_A9F9F8; /*0x53957a*/
+}
 }
 // 0x53A6C0
 namespace gamemd {
@@ -2601,6 +2614,7 @@ void SuperWeapon_Update()
   }
   return v17; /*0x53a93c*/
 }
+}
 // 0x53AF40
 namespace gamemd {
 AnimClass * * PsyDom::Update()
@@ -2696,6 +2710,7 @@ void sub_53B460(int a1)
     Map_Process_753570(); /*0x53b554*/
   }
 }
+}
 // 0x53B560
 namespace gamemd {
 AnimClass * * UpdateChronosphereEffect()
@@ -2766,6 +2781,7 @@ AnimClass * * UpdateChronosphereEffect()
     default:
       return;
   }
+}
 }
 // 0x53BBA0
 namespace gamemd {
@@ -3028,6 +3044,7 @@ int RenderChronosphereScreenEffect(char a1)
   (*(void (__thiscall **)(int))(*(unsigned int *)g_ChronoEffectState + 96))(g_ChronoEffectState); /*0x53c07e*/
   return (*(int (__thiscall **)(int))(*(unsigned int *)DSurface_Composite + 96))(DSurface_Composite); /*0x53c08c*/
 }
+}
 // 0x53D330
 namespace gamemd {
 void GenerateLightningStormGlow()
@@ -3190,6 +3207,7 @@ void GenerateLightningStormGlow()
   }
   return result; /*0x53d545*/
 }
+}
 // 0x53DE00
 namespace gamemd {
 int InitializeAudioStreaming(int a1, int a2)
@@ -3286,6 +3304,7 @@ int InitializeAudioStreaming(int a1, int a2)
   }
   return 1; /*0x53df89*/
 }
+}
 // 0x53E730
 namespace gamemd {
 void Message_IsDialog(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterMax)
@@ -3298,6 +3317,7 @@ void Message_IsDialog(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilterM
   if ( lpMsg->message == 18 ) /*0x53e75b*/
     return 0; /*0x53e75d*/
   return result; /*0x53e754*/
+}
 }
 // 0x53E770
 namespace gamemd {
@@ -3503,6 +3523,7 @@ void GameLoopMessagePump(LPMSG lpMsg, HWND a2, UINT wMsgFilterMin, UINT wMsgFilt
     if ( !wRemoveMsg ) /*0x53eb81*/
       PeekMessageA(lpMsg, a2, wMsgFilterMin, wMsgFilterMax, 1u); /*0x53eb99*/
   }
+}
 }
 // 0x532130
 namespace gamemd {

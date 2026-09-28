@@ -33,7 +33,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
 {
   int v3; // eax
 
-  AbstractTypeClass::Constructor((int *)this, aP1); /*0x46cb68*/
+  AbstractTypeClass::Constructor(aP1); /*0x46cb68*/
   this->vtable0 = (void*)&CampaignClass_vftable; /*0x46cb70*/
   this->scenario[28] = -1; /*0x46cb76*/
   this->description[28] = -1; /*0x46cb7c*/
@@ -54,6 +54,7 @@ CampaignClass::CampaignClass(ObjectClass * aP1)
   IDA_LOBYTE(this->scenario[29]) = 0; /*0x46cbf7*/
   wcscpy((wchar_t *)&this->description[29], &g_TypeClass_DefaultString); /*0x46cbfe*/
   return (int)this; /*0x46cc08*/
+}
 }
 // 0x46CE10
 namespace gamemd {
@@ -129,6 +130,7 @@ int CampaignClass::LoadFromINIList()
     result = (*(int (__thiscall **)(int, INIClass *))(*(unsigned int *)v6 + 100))(v6, this); /*0x46cf65*/
   }
   return result; /*0x46cf75*/
+}
 }
 // 0x49C5A0
 namespace gamemd {
@@ -327,6 +329,7 @@ AbstractClass * * CampaignClass::SaveProgress()
   IDA_LOBYTE(this->scenario[17]) = 1; /*0x49cad2*/
   return 1; /*0x49c618*/
 }
+}
 // 0x46CF80
 namespace gamemd {
 int CampaignClass::ddtor(int a1, unsigned int * a2)
@@ -416,9 +419,9 @@ CampaignClass * CampaignClass::DTOR(char a2)
     }
     while ( v3 < dword_A83D08 ); /*0x46d0fd*/
   }
-  AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x46d101*/
+  AbstractTypeClass::Dtor(); /*0x46d101*/
   if ( (a2 & 1) != 0 ) /*0x46d10b*/
-    RA2_OPDEL(this); /*0x46d10e*/
+    RA2_OPDEL(); /*0x46d10e*/
   return &this->vtable0; /*0x46d118*/
 }
 } // namespace gamemd

@@ -15,6 +15,7 @@ int DialogClass::GetFlag()
 {
   return (int)(this->q034);
 }
+}
 // 0x775BC0
 namespace gamemd {
 int DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
@@ -65,6 +66,7 @@ int DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
   Rect.bottom = v8 + Rect.top - 1; /*0x775d48*/
   MoveWindow(aP0, Rect.left, Rect.top, v7, v8, 1); /*0x775d4c*/
   return 1; /*0x775d52*/
+}
 }
 // 0x60D450
 namespace gamemd {

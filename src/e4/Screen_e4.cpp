@@ -371,7 +371,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
         }
       }
     }
-    Screen::TransitionLoop(this, 1); /*0x68f625*/
+    Screen::TransitionLoop(1); /*0x68f625*/
     v63 += 2; /*0x68f646*/
     v53 -= 2; /*0x68f651*/
     aP1 += (int)aP1; /*0x68f660*/
@@ -461,7 +461,7 @@ int Screen::TransitionRender(AnimClass * aP1, AnimClass * aP2, int a4)
     v7 - *(unsigned int *)(this->u32_C + 8) - v59,
     2);
   (*(void (__thiscall **)(unsigned int, wchar_t *))(**((unsigned int **)this + 3) + 8))(this->u32_C, v76); /*0x68f878*/
-  return Screen::TransitionLoop(this, 20); /*0x68f884*/
+  return Screen::TransitionLoop(20); /*0x68f884*/
 }
 // 0x690160
 int Screen::TransitionLoop(int a2)
@@ -488,7 +488,7 @@ int Screen::TransitionLoop(int a2)
   v16 = 1; /*0x69017c*/
   do
   {
-    Screen::CleanupTransitionObjects(this); /*0x690189*/
+    Screen::CleanupTransitionObjects(); /*0x690189*/
     GetClientRect(g_hWnd, &Rect); /*0x69019a*/
     ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x6901ab*/
     v3 = *(unsigned int *)this; /*0x6901b1*/

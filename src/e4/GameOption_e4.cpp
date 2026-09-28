@@ -29,7 +29,7 @@ void * GameOption::SetDescriptionWStr(CampaignScore * aP1)
   else
   {
     StringCSF = (wchar_t *)(GetStringCSF(g_Str_MSG_NoDescription, 0, g_Str_File_Session_CPP, 2845));
-    return wcscpy((wchar_t *)this, StringCSF); /*0x69ad09*/
+    return wcscpy(StringCSF); /*0x69ad09*/
   }
   return result; /*0x69aced*/
 }

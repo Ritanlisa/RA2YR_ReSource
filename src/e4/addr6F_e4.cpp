@@ -15,12 +15,21 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/E4Recv_6E0080_e4.hpp"
+#include "e4/classes/E4Recv_6E3380_e4.hpp"
+#include "e4/classes/E4Recv_6E37F0_e4.hpp"
+#include "e4/classes/E4Recv_6EFC70_e4.hpp"
+#include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Super_e4.hpp"
+#include "e4/classes/Rect_e4.hpp"
 
 // 0x6F0AB0
 namespace gamemd {
 void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
 {
-  void *** v3;
+  int v3; // esi
   int v5; // eax
   int v6; // ebx
   char *v7; // ecx
@@ -65,20 +74,19 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
   unsigned int v53[2]; // [esp+18h] [ebp-48h] BYREF
   int v54; // [esp+20h] [ebp-40h]
   void ***v55; // [esp+24h] [ebp-3Ch]
-  void* v56;
+  void **v56; // [esp+28h] [ebp-38h] BYREF
   void *Block; // [esp+2Ch] [ebp-34h]
   int v58; // [esp+30h] [ebp-30h]
   char v59; // [esp+35h] [ebp-2Bh]
   int v60; // [esp+38h] [ebp-28h]
   int v61; // [esp+3Ch] [ebp-24h]
-  void* v62;
+  void **v62; // [esp+44h] [ebp-1Ch] BYREF
   void *v63; // [esp+48h] [ebp-18h]
   char v64; // [esp+51h] [ebp-Fh]
   int v65; // [esp+54h] [ebp-Ch]
   int v66; // [esp+58h] [ebp-8h]
   int v67; // [esp+5Ch] [ebp-4h]
-
-  v3 = (int)((void ***)(0));
+v3 = (void ***)(0);
   v55 = (void **)(aP0);
   Team_Helper_6F2230(0, 0); /*0x6f0ac9*/
   v5 = *(unsigned int *)(a2 + 22016); /*0x6f0ace*/
@@ -146,7 +154,7 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     }
     if ( v6 < *(unsigned int *)(IDA_HIDWORD(g_RulesClass_Instance->?) + 4 * *(unsigned int *)(a2 + 388)) ) /*0x6f0bf4*/
     {
-      v17 = (int)((void **)(0));
+      v17 = (void **)(0);
       Team_Helper_6F27F0(0, 0); /*0x6f0c02*/
       v62 = (void*)&DynamicVectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f0c0b*/
       v66 = 10; /*0x6f0c13*/
@@ -177,9 +185,8 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
           v67 = 0; /*0x6f0c8b*/
           ((void (__thiscall *)(void ***))v62[3])(&v62); /*0x6f0c93*/
         }
-  LABEL_33:
-        v53[0] = v19; /*0x6f0c9c*/
-        v53[1] = v20; /*0x6f0ca9*/
+  LABEL_33: v53[0] = (unsigned int)(v19);
+        v53[1] = (unsigned int)(v20);
         Team_Helper_6F25E0(v53); /*0x6f0cad*/
         v67 += v20; /*0x6f0cb2*/
         goto LABEL_34; /*0x6f0cb2*/
@@ -227,19 +234,17 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
           goto LABEL_50; /*0x6f0d71*/
         }
       }
-  LABEL_51:
-      v29 = *(unsigned int *)(v25 + 224); /*0x6f0d78*/
+  LABEL_51: v29 = (int)(*(unsigned int *)(v25 + 224));
       if ( v29 /*0x6f0da9*/
         && (v60 < v27
          || (v59 || !v27)
          && v61 > 0
          && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v56[2])(&v56, v61 + v27, 0)) )
       {
-        v30 = v60++; /*0x6f0db4*/
+        v30 = (void **)(v60++);
         *((unsigned int *)Block + v30) = v29; /*0x6f0dbf*/
       }
-  LABEL_58:
-      v62 = (void*)&VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable; /*0x6f0dc2*/
+  LABEL_58: v62 = (unsigned int *)((void*)&VectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable);
       if ( v63 && v64 ) /*0x6f0dd8*/
         Team_Helper_6F26E0(v63, 3); /*0x6f0de0*/
     }
@@ -292,11 +297,11 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
           }
         }
       }
-      v31 = (unsigned int *)(Block);
+      v31 = Block; /*0x6f0f77*/
     }
     v61 = (unsigned int)(v61);
     v40->uniqueId = (void **)(v60);
-    v40->abstractFlags = (unsigned int)(v61);
+    v40->abstractFlags = v61; /*0x6f0f88*/
     *(unsigned int *)v40 = (void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0f8b*/
     v56 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f91*/
     if ( v31 ) /*0x6f0f99*/
@@ -338,15 +343,15 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
       RA2_OPDEL(Block); /*0x6f0ef6*/
       Block = 0; /*0x6f0efe*/
     }
-    v40 = (unsigned int)((int)v55);
-    v46 = (void **)(v55);
-    v59 = (unsigned int)(0);
+    v40 = (void ***)((unsigned int)((int)v55));
+    v46 = (unsigned int)(v55);
+    v59 = (void **)(0);
     v58 = 0; /*0x6f0f12*/
     v55[1] = 0; /*0x6f0f16*/
     v46[2] = 0; /*0x6f0f19*/
     *((unsigned char *)v46 + 12) = 1; /*0x6f0f1c*/
     *((unsigned char *)v46 + 13) = 0; /*0x6f0f20*/
-    *(void **)v46 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f24*/
+    *v46 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f24*/
     Team_Helper_6F2780(&v56); /*0x6f0f2a*/
     *(unsigned int *)v40 = (void*)&TypeList_TeamTypeClass_const___vftable; /*0x6f0f2f*/
     v56 = (void*)&VectorClass_TeamTypeClass_const___vftable; /*0x6f0f35*/
@@ -357,11 +362,12 @@ void AISelectTeamHouseClass(IUnknown * aP0, int a2, int a3)
     v40->abstractFlags = v61; /*0x6f0f4e*/
     if ( !v41 && v59 ) /*0x6f0f59*/
     {
-      RA2_OPDEL(v47, unsigned int a8, unsigned int a6, unsigned int a10, unsigned int a1); /*0x6f0f5c*/
+      RA2_OPDEL(v47, unsigned int a10); /*0x6f0f5c*/
       return v40; /*0x6f0f6d*/
     }
   }
   return v40; /*0x6f0f66*/
+}
 }
 // 0x6F8960
 namespace gamemd {
@@ -384,7 +390,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
   if ( a10 != -1 ) /*0x6f8992*/
   {
     v12 = (*((int (__thiscall **)(TechnoClass *))a1->vtable0 + 33))(a1); /*0x6f899a*/
-    if ( MapClass::GetTileIndex((MapClass *, unsigned int a1)&stru_87F5F0.__pad_58[416], a6, *(unsigned int *)(v12 + 1460), 1) != a10 ) /*0x6f89b4*/
+    if ( MapClass::GetTileIndex((MapClass *)&stru_87F5F0.__pad_58[416], a6, *(unsigned int *)(v12 + 1460), 1) != a10 ) /*0x6f89b4*/
       return 0; /*0x6f89bc*/
   }
   v14 = v11[58]; /*0x6f89bf*/
@@ -401,7 +407,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
       mindControlledBy = a1->transporter->mindControlledBy; /*0x6f89fa*/
       if ( mindControlledBy ) /*0x6f8a02*/
       {
-        owner = (Object *, unsigned int a1)mindControlledBy->owner; /*0x6f8a04*/
+        owner = (Object *)mindControlledBy->owner; /*0x6f8a04*/
         v25 = 1; /*0x6f8a0a*/
       }
     }
@@ -431,13 +437,13 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
       goto LABEL_34; /*0x6f8a6b*/
   LABEL_33:
     v14 = v14->vtable4; /*0x6f8b3e*/
-    if (!v14, unsigned int a1) /*0x6f8b43*/
+    if ( !v14 ) /*0x6f8b43*/
       goto LABEL_34; /*0x6f8b43*/
   }
   if ( ((uint8_t)Object::IsAlliedWithObjectHouse((Object *)a1->owner, v14) || v25) /*0x6f8ac7*/
-    && !*(unsigned char *, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8)((*((int (__thiscall **)(TechnoClass *))a1->vtable0 + 33))(a1) + 1728)
+    && !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))a1->vtable0 + 33))(a1) + 1728)
     && !a1->isBerserk
-    && (!v25 || !owner || !(uint8_t, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8)Object::IsAlliedWithObjectHouse(owner, v14)) )
+    && (!v25 || !owner || !(uint8_t)Object::IsAlliedWithObjectHouse(owner, v14)) )
   {
     if ( (*((int (__thiscall **)(TechnoClass *))a1->vtable0 + 11))(a1) != 15 ) /*0x6f8ada*/
       goto LABEL_33; /*0x6f8ada*/
@@ -458,7 +464,7 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
         || (*(int (__thiscall **)(int))(*(unsigned int *)v14 + 44))(v14) != 6
         || (*(int (__thiscall **)(unsigned int, unsigned int))(**(unsigned int **)(v14 + 1312) + 132))(
              *(unsigned int *)(v14 + 1312),
-             *(unsigned int *, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8)(v14 + 540)) <= 0 )
+             *(unsigned int *)(v14 + 540)) <= 0 )
       {
         goto LABEL_33; /*0x6f8b3c*/
       }
@@ -471,29 +477,21 @@ AbstractClass * * SelectTechnoClassAreaTarget(IUnknown * aP0, IUnknown * aP1, IU
   *a8 = v15; /*0x6f8b5d*/
   if ( !(uint8_t)Object::IsAlliedWithObjectHouse((Object *)a1->owner, v15)
     || TechnoClass::GetValue(a1, -1) < 0
-    || !(uint8_t, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)House::IsCurrentPlayer((House *)a1->owner)
+    || !(uint8_t)House::IsCurrentPlayer((House *)a1->owner)
     && a1
     && (*((int (__thiscall **)(TechnoClass *))a1->vtable0 + 11))(a1) == 15
     && *(unsigned char *)(*((*((int (__thiscall **)(TechnoClass *))a1->vtable0 + 11))(a1) == 15
                   ? &a1[1].ironTintTimer[1]
                   : (int *)1728)
                 + 3779)
-    || *(unsigned char *, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)((*((int (__thiscall **)(TechnoClass *))a1->vtable0 + 33))(a1) + 1728)
+    || *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))a1->vtable0 + 33))(a1) + 1728)
     || a1->isBerserk
     || v25 )
   {
-    return TechnoClass::EvaluateTarget( /*0x6f8c05*/
-             a4,
-             a3,
-             a5,
-             a7,
-             v15,
-             (int)a9,
-             (int *)0xFFFFFFFF,
-             (int)&g_BuildingLoadQueue_Array.VoxelCaches[3],
-             v24);
+    return (gamemd::AbstractClass **)((gamemd::AbstractClass **)(TechnoClass::EvaluateTarget( /*0x6f8c05*/ a4, a3, a5, a7, v15, (int)a9, (int *)0xFFFFFFFF, (int)&g_BuildingLoadQueue_Array.VoxelCaches[3], v24)));
   }
   return v23; /*0x6f89b6*/
+}
 }
 // 0x6F03F0
 namespace gamemd {
@@ -860,7 +858,7 @@ int Tactical_DrawLine3D(unsigned int * a1, int * a2, int a3)
 
   v5 = (int *)(Coord::Subtract(v26, (3 * *a1 + *a2) / 4, (3 * a1[1] + a2[1]) / 4, (3 * a1[2] + a2[2]) / 4));
   v6 = (int *)(a1[1]);
-  v7 = *v5; /*0x6f5f4a*/
+  v7 = (int *)(*v5);
   v8 = v5[1]; /*0x6f5f4c*/
   v9 = v5[2]; /*0x6f5f4f*/
   v21[1] = v8; /*0x6f5f52*/

@@ -35,12 +35,14 @@
 #include "e4/classes/DialogQueue_e4.hpp"
 #include "e4/classes/E4Recv_771890_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/E4Recv_776320_e4.hpp"
+#include "e4/classes/ScoreScreen_e4.hpp"
 
 // 0x780110
 namespace gamemd {
 void WOL_ResetSystem()
 {
-  unsigned int *AccountInfoWOL; // eax
+  void ** AccountInfoWOL;
   int v2; // esi
   unsigned int v3; // eax
   unsigned int v4; // ebp
@@ -279,6 +281,7 @@ void WOL_ResetSystem()
   CCINIClass_AIHash = result; /*0x7806b2*/
   return result; /*0x7806b7*/
 }
+}
 // 0x7806C0
 namespace gamemd {
 AbstractClass * * PopulateWOLLobbyListBox()
@@ -396,12 +399,13 @@ AbstractClass * * PopulateWOLLobbyListBox()
     }
   }
 }
+}
 // 0x780A90
 namespace gamemd {
 wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
 {
   wchar_t **v4; // eax
-  unsigned int *v5; // esi
+  HashTable *v5; // esi
   int v6; // esi
   wchar_t *v7; // eax
   wchar_t **v8; // eax
@@ -418,28 +422,29 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
   wchar_t **v19; // eax
   wchar_t **v21; // [esp-Ch] [ebp-A8h]
   wchar_t **v22; // [esp-4h] [ebp-A0h]
-  void *v23; // [esp+10h] [ebp-8Ch] BYREF
-  int v24; // [esp+14h] [ebp-88h] BYREF
-  void *v25; // [esp+18h] [ebp-84h] BYREF
-  void *v26; // [esp+1Ch] [ebp-80h] BYREF
-  void *v27; // [esp+20h] [ebp-7Ch] BYREF
-  void *v28; // [esp+24h] [ebp-78h] BYREF
-  void *v29; // [esp+28h] [ebp-74h] BYREF
-  void *v30; // [esp+2Ch] [ebp-70h] BYREF
-  const wchar_t *v31[27]; // [esp+30h] [ebp-6Ch] BYREF
+  String v23; // [esp+10h] [ebp-8Ch] BYREF
+  String v24; // [esp+18h] [ebp-84h] BYREF
+  wchar_t *v25; // [esp+20h] [ebp-7Ch] BYREF
+  wchar_t *v26; // [esp+24h] [ebp-78h] BYREF
+  wchar_t *v27; // [esp+28h] [ebp-74h] BYREF
+  WideString v28; // [esp+2Ch] [ebp-70h] BYREF
+  const wchar_t *v29[27]; // [esp+30h] [ebp-6Ch] BYREF
 
-  String::Assign((char **)&v23, a2 + 36); /*0x780aa6*/
-  v4 = CharStringToWide((wchar_t **)&v28, (const char **)&v23); /*0x780abd*/
-  WideString::AssignConcat((const wchar_t **)v4, (wchar_t **)&v24, (wchar_t *)L" : ");
-  DeleteAndZero::Alt(&v28); /*0x780acd*/
-  String::ToLower((const char **)&v23); /*0x780ad6*/
-  v5 = (unsigned int *)g_WOL_HashTable; /*0x780adb*/
-  memset(v31, 0, sizeof(v31)); /*0x780aee*/
+  String::Assign(&v23, a2 + 36); /*0x780aa6*/
+  v4 = CharStringToWide(&v26, (const char **)&v23); /*0x780abd*/
+  WideString::AssignConcat((WideString *)v4, (wchar_t **)&v23.m_3[1], (wchar_t *)L" : ");
+  DeleteAndZero::Alt((DeleteAndZero *)&v26); /*0x780acd*/
+  String::ToLower(&v23); /*0x780ad6*/
+  v5 = g_WOL_HashTable; /*0x780adb*/
+  memset(v29, 0, sizeof(v29)); /*0x780aee*/
   if ( g_WOL_HashTable /*0x780b14*/
-    && *(unsigned int *)(g_WOL_HashTable + 4)
-    && (v6 = *(unsigned int *)(*v5 + 4 * ((*(int (__thiscall **)(void **))(g_WOL_HashTable + 24))(&v23) & ((1 << v5[3]) - 1)))) != 0 )
+    && g_WOL_HashTable->HashTable_field_0x04
+    && (v6 = *(unsigned int *)(*(unsigned int *)v5->__pad_0
+                       + 4
+                       * (((int (__thiscall *)(String *))g_WOL_HashTable->HashTable_field_0x18)(&v23)
+                        & ((1 << v5->HashTable_field_0x0C) - 1)))) != 0 )
   {
-    while ( !String::Compare((const char **)v6, (const char **)&v23) ) /*0x780b24*/
+    while ( !(uint8_t)String::Compare((String *)v6, (const char **)&v23) ) /*0x780b24*/
     {
       v6 = *(unsigned int *)(v6 + 112); /*0x780b2a*/
       if ( !v6 ) /*0x780b2f*/
@@ -447,40 +452,40 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
     }
     v11 = (wchar_t *)((const void *)(v6 + 4));
     if ( v11 ) /*0x780c14*/
-      qmemcpy(v31, v11, sizeof(v31)); /*0x780c1f*/
-    v22 = FormatWideString((wchar_t **)&v26, v31[7]); /*0x780c36*/
-    v21 = WideString::Assign((wchar_t **)&v27, (wchar_t *)asc_82083C); /*0x780c49*/
+      qmemcpy(v29, v11, sizeof(v29)); /*0x780c1f*/
+    v22 = FormatWideString((wchar_t **)&v24.m_3[1], v29[7]); /*0x780c36*/
+    v21 = WideString::Assign((WideString *)&v25, (wchar_t *)asc_82083C); /*0x780c49*/
     StringCSF = GetStringCSF(g_Str_TXT_RANK, 0, g_Str_File_wonline_cpp, 2937); /*0x780c59*/
-    v13 = WideString::Assign((wchar_t **)&v30, StringCSF); /*0x780c63*/
-    v14 = WideString::ConcatAlloc((const wchar_t **)v13, (wchar_t **)&v29, (const wchar_t **)v21); /*0x780c6a*/
-    v15 = WideString::ConcatAlloc((const wchar_t **)v14, (wchar_t **)&v28, (const wchar_t **)v22); /*0x780c71*/
-    WideString::Append((wchar_t **)&v24, (const wchar_t **)v15); /*0x780c7b*/
-    DeleteAndZero::Alt(&v28); /*0x780c84*/
-    DeleteAndZero::Alt(&v29); /*0x780c8d*/
-    DeleteAndZero::Alt(&v30); /*0x780c96*/
-    DeleteAndZero::Alt(&v27); /*0x780c9f*/
-    DeleteAndZero::Alt(&v26); /*0x780ca8*/
+    v13 = WideString::Assign(&v28, StringCSF); /*0x780c63*/
+    v14 = WideString::ConcatAlloc((WideString *)v13, &v27, (const wchar_t **)v21); /*0x780c6a*/
+    v15 = WideString::ConcatAlloc((WideString *)v14, &v26, (const wchar_t **)v22); /*0x780c71*/
+    WideString::Append((WideString *)&v23.m_3[1], (const wchar_t **)v15); /*0x780c7b*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v26); /*0x780c84*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v27); /*0x780c8d*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v28); /*0x780c96*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v25); /*0x780c9f*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v24.m_3[1]); /*0x780ca8*/
   }
   else
   {
   LABEL_6: v7 = (wchar_t *)(GetStringCSF(g_Str_TXT_UNRANKED, 0, g_Str_File_wonline_cpp, 2939));
-    WideString::Append2((wchar_t **)&v24, v7); /*0x780b4c*/
+    WideString::Append2((WideString *)&v23.m_3[1], v7); /*0x780b4c*/
   }
-  String::Assign((char **)&v25, a2 + 46); /*0x780b59*/
-  if ( !String::Length((const char **)&v25) ) /*0x780b62*/
-    String::Assign_Alt(&v25, a2 + 87); /*0x780b73*/
-  if ( String::Length((const char **)&v25) ) /*0x780b7c*/
+  String::Assign(&v24, a2 + 46); /*0x780b59*/
+  if ( !String::Length(&v24) ) /*0x780b62*/
+    String::Assign_Alt(&v24, a2 + 87); /*0x780b73*/
+  if ( String::Length(&v24) ) /*0x780b7c*/
   {
-    v8 = CharStringToWide((wchar_t **)&v27, (const char **)&v25); /*0x780b8d*/
-    v9 = FormatWideStringPrefix((wchar_t **)&v26, asc_84A69C, v8); /*0x780b9c*/
-    WideString::Append((wchar_t **)&v24, (const wchar_t **)v9); /*0x780ba6*/
-    DeleteAndZero::Alt(&v26); /*0x780baf*/
-    DeleteAndZero::Alt(&v27); /*0x780bb8*/
+    v8 = CharStringToWide(&v25, (const char **)&v24); /*0x780b8d*/
+    v9 = FormatWideStringPrefix((wchar_t **)&v24.m_3[1], asc_84A69C, v8); /*0x780b9c*/
+    WideString::Append((WideString *)&v23.m_3[1], (const wchar_t **)v9); /*0x780ba6*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v24.m_3[1]); /*0x780baf*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v25); /*0x780bb8*/
   }
-  v10 = *((unsigned int *)g_WOL_ConnectionPool + (dword_B76548(&v23) & ((1 << dword_B7653C) - 1))); /*0x780bdc*/
+  v10 = *(unsigned int *)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 + 4 * (dword_B76548(&v23) & ((1 << dword_B7653C) - 1))); /*0x780bdc*/
   if ( v10 )
   {
-    while ( !String::Compare((const char **)v10, (const char **)&v23) ) /*0x780bf5*/
+    while ( !(uint8_t)String::Compare((String *)v10, (const char **)&v23) ) /*0x780bf5*/
     {
       v10 = *(unsigned int *)(v10 + 8); /*0x780bfb*/
       if ( !v10 ) /*0x780c00*/
@@ -490,10 +495,10 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
     {
       if ( dword_B76534 )
       {
-        v16 = *((unsigned int *)g_WOL_ConnectionPool + (dword_B76548(&v23) & ((1 << dword_B7653C) - 1))); /*0x780ceb*/
+        v16 = *(unsigned int *)(*(unsigned int *)g_WOL_ConnectionPool.__pad_0 + 4 * (dword_B76548(&v23) & ((1 << dword_B7653C) - 1))); /*0x780ceb*/
         if ( v16 )
         {
-          while ( !String::Compare((const char **)v16, (const char **)&v23) ) /*0x780d00*/
+          while ( !(uint8_t)String::Compare((String *)v16, (const char **)&v23) ) /*0x780d00*/
           {
             v16 = *(unsigned int *)(v16 + 8); /*0x780d02*/
             if ( !v16 ) /*0x780d07*/
@@ -504,11 +509,11 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
             v17 = *(unsigned int *)(v16 + 4); /*0x780d16*/
             if ( v17 )
             {
-              v18 = FormatLocaleStringWOL((wchar_t **)&v27, v17); /*0x780d22*/
-              v19 = FormatWideStringPrefix((wchar_t **)&v26, L" : ", v18);
-              WideString::Append((wchar_t **)&v24, (const wchar_t **)v19); /*0x780d3b*/
-              DeleteAndZero::Alt(&v26); /*0x780d44*/
-              DeleteAndZero::Alt(&v27); /*0x780d4d*/
+              v18 = FormatLocaleStringWOL(&v25, v17); /*0x780d22*/
+              v19 = FormatWideStringPrefix((wchar_t **)&v24.m_3[1], L" : ", v18);
+              WideString::Append((WideString *)&v23.m_3[1], (const wchar_t **)v19); /*0x780d3b*/
+              DeleteAndZero::Alt((DeleteAndZero *)&v24.m_3[1]); /*0x780d44*/
+              DeleteAndZero::Alt((DeleteAndZero *)&v25); /*0x780d4d*/
             }
           }
         }
@@ -516,11 +521,12 @@ wchar_t ** FormatWOLPlayerInfo(wchar_t ** a1, const char * a2)
     }
   }
   LABEL_27:
-  WideString::AssignFromPtr(a1, (const wchar_t **)&v24); /*0x780d52*/
-  DeleteAndZero(&v25); /*0x780d62*/
-  DeleteAndZero::Alt((void **)&v24); /*0x780d6b*/
-  DeleteAndZero(&v23); /*0x780d74*/
+  WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v23.m_3[1]); /*0x780d52*/
+  DeleteAndZero((ObjectClass *)&v24); /*0x780d62*/
+  DeleteAndZero::Alt((DeleteAndZero *)&v23.m_3[1]); /*0x780d6b*/
+  DeleteAndZero((ObjectClass *)&v23); /*0x780d74*/
   return a1; /*0x780d7b*/
+}
 }
 // 0x780E30
 namespace gamemd {
@@ -533,17 +539,14 @@ void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
   wchar_t *v8; // eax
   const wchar_t *v10; // [esp-4h] [ebp-2B4h]
   wchar_t *v11; // [esp-4h] [ebp-2B4h]
-  void *v12; // [esp+10h] [ebp-2A0h] BYREF
-  void *v13; // [esp+14h] [ebp-29Ch] BYREF
-  int v14; // [esp+18h] [ebp-298h] BYREF
-  void *v15; // [esp+1Ch] [ebp-294h] BYREF
-  int v16; // [esp+20h] [ebp-290h] BYREF
-  int v17; // [esp+24h] [ebp-28Ch] BYREF
-  int v18; // [esp+28h] [ebp-288h] BYREF
-  int v19; // [esp+2Ch] [ebp-284h] BYREF
-  int v20; // [esp+30h] [ebp-280h] BYREF
-  char v21[108]; // [esp+34h] [ebp-27Ch] BYREF
-  wchar_t *v22[67]; // [esp+A0h] [ebp-210h] BYREF
+  DeleteAndZero v12; // [esp+10h] [ebp-2A0h] BYREF
+  String v13; // [esp+1Ch] [ebp-294h] BYREF
+  int v14; // [esp+24h] [ebp-28Ch] BYREF
+  int v15; // [esp+28h] [ebp-288h] BYREF
+  int v16; // [esp+2Ch] [ebp-284h] BYREF
+  int v17; // [esp+30h] [ebp-280h] BYREF
+  char v18[108]; // [esp+34h] [ebp-27Ch] BYREF
+  wchar_t *v19[67]; // [esp+A0h] [ebp-210h] BYREF
   char String[132]; // [esp+1ACh] [ebp-104h] BYREF
   wchar_t Buffer[64]; // [esp+230h] [ebp-80h] BYREF
 
@@ -551,61 +554,62 @@ void * FormatWOLPlayerInfoForDisplay(wchar_t ** a1, HWND a2, WPARAM wParam)
   {
     StringCSF = GetStringCSF(aSttLobbylistga, 0, g_Str_File_wonline_cpp, 2987); /*0x780e4d*/
   LABEL_14:
-    WideString::Assign(a1, StringCSF); /*0x78106f*/
+    WideString::Assign((WideString *)a1, StringCSF); /*0x78106f*/
     return a1; /*0x781077*/
   }
-  memset(v22, 0, sizeof(v22)); /*0x780e6a*/
+  memset(v19, 0, sizeof(v19)); /*0x780e6a*/
   v5 = SendMessageA(a2, 0x199u, wParam, 0); /*0x780e6c*/
-  if ( v5 < 0 || v5 >= (int)g_WOL_ChatState ) /*0x780e80*/
+  if ( v5 < 0 || v5 >= (int)dword_B76AE0 ) /*0x780e80*/
   {
     StringCSF = GetStringCSF(aSttLobbylistga, 0, g_Str_File_wonline_cpp, 2994); /*0x78106a*/
     goto LABEL_14; /*0x78106a*/
   }
-  qmemcpy(v22, (char *)g_WOL_ConnectionHandler + 268 * v5, sizeof(v22)); /*0x780ea4*/
-  String::Assign((char **)&v15, (const char *)&v22[13]); /*0x780eb2*/
-  CChatEventSink::EncodeString(39); /*0x780ebd*/
-  memset(v21, 0, sizeof(v21)); /*0x780ecf*/
-  v6 = String::GetOrEmpty((char **)&v15); /*0x780ed5*/
-  strncpy(&v21[36], v6, 0xAu); /*0x780ee0*/
-  FormatWOLPlayerInfo((wchar_t **)&v12, v21); /*0x780ef0*/
-  v7 = WideString::Assign((wchar_t **)&v13, Control); /*0x780efe*/
-  WideString::Append((wchar_t **)&v12, (const wchar_t **)v7); /*0x780f08*/
-  DeleteAndZero::Alt(&v13); /*0x780f11*/
-  if ( v22[10] == (wchar_t *)-1 ) /*0x780f20*/
+  qmemcpy(v19, (char *)dword_B76AE8 + 268 * v5, sizeof(v19)); /*0x780ea4*/
+  String::Assign(&v13, (const char *)&v19[13]); /*0x780eb2*/
+  CChatEventSink::EncodeString((CChatEventSink *)&v13, 39); /*0x780ebd*/
+  memset(v18, 0, sizeof(v18)); /*0x780ecf*/
+  v6 = String::GetOrEmpty(&v13); /*0x780ed5*/
+  strncpy(&v18[36], v6, 0xAu); /*0x780ee0*/
+  FormatWOLPlayerInfo((wchar_t **)&v12, v18); /*0x780ef0*/
+  v7 = WideString::Assign((WideString *)&v12.DeleteAndZero_field_0x04, (wchar_t *)L", "); /*0x780efe*/
+  WideString::Append((WideString *)&v12, (const wchar_t **)v7); /*0x780f08*/
+  DeleteAndZero::Alt((DeleteAndZero *)&v12.DeleteAndZero_field_0x04); /*0x780f11*/
+  if ( v19[10] == (wchar_t *)-1 ) /*0x780f20*/
   {
     v11 = GetStringCSF(g_Str_TXT_UNKNOWN_PING, 0, g_Str_File_wonline_cpp, 3024); /*0x780f6a*/
-    WideString::Append2((wchar_t **)&v12, v11); /*0x780f6f*/
+    WideString::Append2((WideString *)&v12, v11); /*0x780f6f*/
   }
   else
   {
-    v10 = v22[10]; /*0x780f22*/
+    v10 = v19[10]; /*0x780f22*/
     v8 = GetStringCSF(aMsgPinginfo, 0, g_Str_File_wonline_cpp, 3021); /*0x780f34*/
     swprintf(Buffer, (const size_t)v8, v10); /*0x780f42*/
-    WideString::Append2((wchar_t **)&v12, Buffer); /*0x780f52*/
+    WideString::Append2((WideString *)&v12, Buffer); /*0x780f52*/
   }
-  strncpy(String, (const char *)&v22[56], 0x80u); /*0x780f89*/
-  v17 = 0; /*0x780f95*/
-  v18 = 0; /*0x780f99*/
-  v16 = 0; /*0x780f9d*/
-  v20 = 0; /*0x780fa1*/
-  v19 = 0; /*0x780fa5*/
-  unknown_libname_73(&v14); /*0x780fa9*/
-  ParseStringCommaInts(String, &v17, &v18, &v16, &v20, &v19, (void **)&v14); /*0x780fd2*/
-  if ( String::Length((const char **)&v14) ) /*0x780fdb*/
+  strncpy(String, (const char *)&v19[56], 0x80u); /*0x780f89*/
+  v14 = 0; /*0x780f95*/
+  v15 = 0; /*0x780f99*/
+  *(unsigned int *)&v13.m_3[1] = 0; /*0x780f9d*/
+  v17 = 0; /*0x780fa1*/
+  v16 = 0; /*0x780fa5*/
+  unknown_libname_73(&v12.DeleteAndZero_field_0x08); /*0x780fa9*/
+  ParseStringCommaInts(String, &v14, &v15, (int *)&v13.m_3[1], &v17, &v16, (void **)&v12.DeleteAndZero_field_0x08); /*0x780fd2*/
+  if ( String::Length((String *)&v12.DeleteAndZero_field_0x08) ) /*0x780fdb*/
   {
-    Render_Format(&v13, &v14); /*0x780fec*/
-    if ( WideString::Length((const wchar_t **)&v13) ) /*0x780ff5*/
+    Render_Format((wchar_t **)&v12.DeleteAndZero_field_0x04, (String *)&v12.DeleteAndZero_field_0x08); /*0x780fec*/
+    if ( WideString::Length((WideString *)&v12.DeleteAndZero_field_0x04) ) /*0x780ff5*/
     {
-      WideString::Append2((wchar_t **)&v12, Control); /*0x781007*/
-      WideString::Append((wchar_t **)&v12, (const wchar_t **)&v13); /*0x781015*/
+      WideString::Append2((WideString *)&v12, (wchar_t *)L", "); /*0x781007*/
+      WideString::Append((WideString *)&v12, (const wchar_t **)&v12.DeleteAndZero_field_0x04); /*0x781015*/
     }
-    DeleteAndZero::Alt(&v13); /*0x78101e*/
+    DeleteAndZero::Alt((DeleteAndZero *)&v12.DeleteAndZero_field_0x04); /*0x78101e*/
   }
-  WideString::AssignFromPtr(a1, (const wchar_t **)&v12); /*0x78102a*/
-  DeleteAndZero((void **)&v14); /*0x781033*/
+  WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v12); /*0x78102a*/
+  DeleteAndZero((ObjectClass *)&v12.DeleteAndZero_field_0x08); /*0x781033*/
   DeleteAndZero::Alt(&v12); /*0x78103c*/
-  DeleteAndZero(&v15); /*0x781045*/
+  DeleteAndZero((ObjectClass *)&v13); /*0x781045*/
   return a1; /*0x78104c*/
+}
 }
 // 0x781130
 namespace gamemd {
@@ -789,6 +793,7 @@ void FilterWOLGameListEntry(AbstractClass * aP0, int a2, int a3, int a4)
     return 0; /*0x78133e*/
   return g_GameMode_Current[0] == 4 && (aP0[5] || (aP0[8] & 0x100) != 0); /*0x781370*/
 }
+}
 // 0x781380
 namespace gamemd {
 int sub_781380(unsigned int * a1, unsigned int * a2)
@@ -812,6 +817,7 @@ int sub_781380(unsigned int * a1, unsigned int * a2)
     IDA_LOBYTE(v4) = v4 & 0xFE; /*0x781397*/
     return v4 + 1; /*0x781399*/
   }
+}
 }
 // 0x781480
 namespace gamemd {
@@ -1181,6 +1187,7 @@ AbstractClass * * __usercall GameListRenderWOL(CampaignScore *a1@<edi> a1)
   DeleteAndZero((ObjectClass *)&v51); /*0x781ca6*/
   DeleteAndZero((ObjectClass *)&v52); /*0x781caf*/
 }
+}
 // 0x781FB0
 namespace gamemd {
 AbstractClass * * InsertGameSettings(unsigned char * a1, char a2)
@@ -1362,6 +1369,7 @@ AbstractClass * * InsertGameSettings(unsigned char * a1, char a2)
   LABEL_75:
   g_WOL_UserList.owningHouseIndex = owningHouseIndex + 1; /*0x78230e*/
   return result; /*0x781fea*/
+}
 }
 // 0x782320
 namespace gamemd {
@@ -1817,6 +1825,7 @@ void InsertBuddyList(char * a1, char a2)
   }
   return DeleteAndZero((ObjectClass *)v47); /*0x782b98*/
 }
+}
 // 0x782BB0
 namespace gamemd {
 int FindBuddyList(int a1, char a2)
@@ -2067,6 +2076,7 @@ int FindBuddyList(int a1, char a2)
   }
   return DynamicClass::Insert((DynamicClass *)&g_WOL_UserList.owningHouseIndex, a1, v29); /*0x782be6*/
 }
+}
 // 0x7830C0
 namespace gamemd {
 int sub_7830C0(signed int * a1, signed int * a2)
@@ -2118,6 +2128,7 @@ int sub_7830C0(signed int * a1, signed int * a2)
     IDA_LOBYTE(v3) = v3 & 0xFE; /*0x7830df*/
     return v3 + 1; /*0x7830e1*/
   }
+}
 }
 // 0x783270
 namespace gamemd {
@@ -2258,6 +2269,7 @@ void SortWOLPlayerList(char a1)
     RA2_OPDEL(Block); /*0x7832b7*/
   }
 }
+}
 // 0x7835C0
 namespace gamemd {
 int sub_7835C0(int a1, signed int * a2)
@@ -2308,6 +2320,7 @@ int sub_7835C0(int a1, signed int * a2)
     qmemcpy(v10, (char *)g_WOL_ConnectionFlags + 108 * v9, sizeof(v10)); /*0x783690*/
   return _strcmpi(&v11[36], &v10[36]); /*0x7835e0*/
 }
+}
 // 0x7836E0
 namespace gamemd {
 int sub_7836E0(const void * a1, signed int * a2)
@@ -2357,6 +2370,7 @@ int sub_7836E0(const void * a1, signed int * a2)
   if ( *a2 >= 0 && v9 < (int)g_WOL_State ) /*0x78379c*/
     qmemcpy(v10, (char *)g_WOL_ConnectionFlags + 108 * v9, sizeof(v10)); /*0x7837b0*/
   return _strcmpi(&v11[36], &v10[36]); /*0x783700*/
+}
 }
 // 0x786080
 namespace gamemd {
@@ -2450,6 +2464,7 @@ Coord * * WOL_HandleLogout()
   }
   return (char)v2; /*0x78626a*/
 }
+}
 // 0x786DC0
 namespace gamemd {
 int E4Recv_786DC0::sub_786DC0()
@@ -2487,6 +2502,7 @@ int E4Recv_786DC0::sub_786DC0()
   String::Assign_Alt((String *)&g_WebBrowserConfig, v7); /*0x786e4f*/
   IDA_LOBYTE(dword_84A238) = 0; /*0x786e54*/
   return 1; /*0x786e2f*/
+}
 }
 // 0x787010
 namespace gamemd {
@@ -2860,6 +2876,7 @@ void WOL_LoginFlow()
   v43.Flag_field_0x08 = (int)&off_7F7624; /*0x7876db*/
   OwnerDrawControl::InitVtable((OwnerDrawControl *)&v43.Flag_field_0x08); /*0x7876df*/
   return 1; /*0x787348*/
+}
 }
 // 0x787770
 namespace gamemd {
@@ -3299,6 +3316,7 @@ void NetworkLobbyWOL(HWND hWnd, char a2)
   }
   return result; /*0x788148*/
 }
+}
 // 0x788180
 namespace gamemd {
 void WOL_FindLobbyID(char a1)
@@ -3510,6 +3528,7 @@ void WOL_FindLobbyID(char a1)
   DeleteAndZero(&v15); /*0x7886ee*/
   return v8; /*0x788619*/
 }
+}
 // 0x788710
 namespace gamemd {
 int sub_788710(int a1, char a2)
@@ -3549,6 +3568,7 @@ int sub_788710(int a1, char a2)
       SetFocus(DlgItem); /*0x7887e6*/
   }
   return g_WOL_ChannelState == 0; /*0x7887f6*/
+}
 }
 // 0x788800
 namespace gamemd {
@@ -3619,6 +3639,7 @@ Coord * * WOL_LeaveChannelEx(int a1, char ** a2, void * a3)
     }
   }
 }
+}
 // 0x788A30
 namespace gamemd {
 int WOL_JoinGameLobby()
@@ -3663,6 +3684,7 @@ int WOL_JoinGameLobby()
     GameListRenderWOL(v10); /*0x788add*/
     return v2; /*0x788ae2*/
   }
+}
 }
 // 0x788B00
 namespace gamemd {
@@ -4034,6 +4056,7 @@ Coord * * CreateAccountWOL()
   CreateAccountWOL_Create_72C290(v49); /*0x7894ee*/
   return result; /*0x788c94*/
 }
+}
 // 0x789500
 namespace gamemd {
 Coord * * WOL_FindChannel(const char * a1, int a2, unsigned char a3, int a4)
@@ -4096,6 +4119,7 @@ Coord * * WOL_FindChannel(const char * a1, int a2, unsigned char a3, int a4)
   if ( v7 ) /*0x7895ee*/
     goto LABEL_20; /*0x7895ee*/
   return v6; /*0x789626*/
+}
 }
 // 0x7896A0
 namespace gamemd {
@@ -4235,6 +4259,7 @@ MapClass * * PopulateWOLUserList(HWND hWnd, char a2)
     return 1; /*0x789954*/
   }
 }
+}
 // 0x789960
 namespace gamemd {
 void ValidateJoinWOL()
@@ -4319,6 +4344,7 @@ void ValidateJoinWOL()
     return v15; /*0x789b52*/
   }
   return result; /*0x789974*/
+}
 }
 // 0x789B60
 namespace gamemd {
@@ -4679,6 +4705,7 @@ void CreateGameWOL()
   DeleteAndZero((ObjectClass *)&v43); /*0x78a456*/
   return 1; /*0x789c37*/
 }
+}
 // 0x78D120
 namespace gamemd {
 Coord * * OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
@@ -4969,6 +4996,7 @@ Coord * * OnlineLobbyDlgProcWOL(HWND hDlg, unsigned int a2, int a3, HWND hWnd)
   DeleteAndZero::Alt(&v39); /*0x78d36b*/
   return 0; /*0x78d266*/
 }
+}
 // 0x78DA30
 namespace gamemd {
 Coord * * sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
@@ -5028,6 +5056,7 @@ Coord * * sub_78DA30(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
     return 1; /*0x78db56*/
   }
   return result; /*0x78da98*/
+}
 }
 // 0x78E230
 namespace gamemd {
@@ -5323,6 +5352,7 @@ ObjectClass * * sub_78E230(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
     }
   }
 }
+}
 // 0x78E950
 namespace gamemd {
 void WOLobbySmallDlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
@@ -5429,6 +5459,7 @@ void WOLobbySmallDlgProc(HWND hWnd, UINT a2, WPARAM a3, HWND hCtl)
   }
   CloseDialog(hWnd, 1); /*0x78eac3*/
   return 0; /*0x78e97b*/
+}
 }
 // 0x78EBC0
 namespace gamemd {
@@ -5594,26 +5625,25 @@ void GameSetup_DlgProc(HWND hWnd, unsigned int a2, int a3, HWND a4)
   }
   return result; /*0x78ec13*/
 }
+}
 // 0x780A00
 namespace gamemd {
 wchar_t ** WOL_FormatLocaleString(wchar_t ** a1, int a2)
 {
   char **v3; // eax
   char *v4; // eax
-  wchar_t *String; // eax
-  void *v7; // [esp+8h] [ebp-Ch] BYREF
-  void *v8; // [esp+Ch] [ebp-8h] BYREF
-  void *v9; // [esp+10h] [ebp-4h] BYREF
+  wchar_t *StringCSF; // eax
+  DeleteAndZero v7; // [esp+8h] [ebp-Ch] BYREF
 
-  v3 = FormatStringInt((char **)&v9, a2, 2); /*0x780a0f*/
-  ProcessStringAndCopy((char **)&v8, aWolLocale, v3); /*0x780a1e*/
-  DeleteAndZero(&v9); /*0x780a27*/
-  v4 = String::GetOrEmpty((char **)&v8); /*0x780a3a*/
-  String = GetStringCSF((wchar_t *)v4, 0, g_Str_File_wonline_cpp, 2909); /*0x780a43*/
-  WideString::Assign((wchar_t **)&v7, String); /*0x780a4d*/
-  WideString::AssignFromPtr(a1, (const wchar_t **)&v7); /*0x780a65*/
+  v3 = FormatStringInt((char **)&v7.DeleteAndZero_field_0x08, a2, 2); /*0x780a0f*/
+  ProcessStringAndCopy((char **)&v7.DeleteAndZero_field_0x04, aWolLocale, v3); /*0x780a1e*/
+  DeleteAndZero((ObjectClass *)&v7.DeleteAndZero_field_0x08); /*0x780a27*/
+  v4 = String::GetOrEmpty((String *)&v7.DeleteAndZero_field_0x04); /*0x780a3a*/
+  StringCSF = GetStringCSF((wchar_t *)v4, 0, g_Str_File_wonline_cpp, 2909); /*0x780a43*/
+  WideString::Assign((WideString *)&v7, StringCSF); /*0x780a4d*/
+  WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v7); /*0x780a65*/
   DeleteAndZero::Alt(&v7); /*0x780a6e*/
-  DeleteAndZero(&v8); /*0x780a77*/
+  DeleteAndZero((ObjectClass *)&v7.DeleteAndZero_field_0x04); /*0x780a77*/
   return a1; /*0x780a7e*/
 }
 } // namespace gamemd
@@ -5867,10 +5897,6 @@ namespace gamemd {
 short WOL_ChatMessage(char a1, wchar_t * a2)
 {
   byte_B77E40 = a1; /*0x78abf0*/
-  return WideString::Reassign(&dword_B76230, a2); /*0x78ac01*/
+  return WideString::Reassign((WideString *)&unk_B76230, a2); /*0x78ac01*/
 }
 } // namespace gamemd
-}
-}
-}
-}

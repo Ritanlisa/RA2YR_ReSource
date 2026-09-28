@@ -9,6 +9,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Trigger_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x728C00
 namespace gamemd {
@@ -178,8 +179,7 @@ int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
 {
   int result; // eax
   int v3; // edx
-
-  result = (int)(SwizzleManager::SaveLoad((int *)a1->__pad_0, a2));
+result = (int)(SwizzleManager::SaveLoad((int *)a1->__pad_0, a2));
   if ( result >= 0 ) /*0x72a164*/
   {
     if ( a1 ) /*0x72a168*/
@@ -208,9 +208,9 @@ int TunnelLocomotionClass::StubReturn60()
 namespace gamemd {
 TunnelLocomotionClass * TunnelLocomotionClass::ProcessMove(char a2)
 {
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x72a213*/
+  LocomotionClass::Construct(); /*0x72a213*/
   if ( (a2 & 1) != 0 ) /*0x72a21d*/
-    RA2_OPDEL(this); /*0x72a220*/
+    RA2_OPDEL(); /*0x72a220*/
   return this->__pad_0; /*0x72a22a*/
 }
 } // namespace gamemd

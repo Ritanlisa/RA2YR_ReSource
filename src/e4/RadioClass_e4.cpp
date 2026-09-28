@@ -17,7 +17,7 @@
 namespace gamemd {
 unsigned int * RadioClass::Release()
 {
-  RadioClass::Constructor((int)this); /*0x65a753*/
+  RadioClass::Constructor(); /*0x65a753*/
   this->radioLinks[1] = 0; /*0x65a75a*/
   this->radioLinks[2] = 1; /*0x65a764*/
   IDA_LOBYTE(this->radioLinks[3]) = 1; /*0x65a76e*/
@@ -43,7 +43,7 @@ int RadioClass::ProcessCmd()
 {
   if ( !this->inLimbo ) /*0x65aa83*/
     (*((void (__thiscall **)(RadioClass *, int))this->vtable0 + 160))(this, 3); /*0x65aa91*/
-  return ObjectClass::Undeploy((ObjectClass *)this); /*0x65aa9e*/
+  return ObjectClass::Undeploy(); /*0x65aa9e*/
 }
 } // namespace ra2
 
@@ -58,7 +58,7 @@ int RadioClass::PowerDrainUpdate(AbstractClass * aP1)
   int v7; // ecx
   int v8; // eax
 
-  AbstractClass::COMStub_13((int)this, aP1); /*0x65ab1a*/
+  AbstractClass::COMStub_13(aP1); /*0x65ab1a*/
   Power::TimerProcess(this->radioLinks[2]); /*0x65ab28*/
   result = this->radioLinks[2]; /*0x65ab2d*/
   for ( i = 0; i < result; ++i ) /*0x65ab37*/
@@ -125,7 +125,7 @@ int RadioClass::LoadState(ObjectClass * aP1, ObjectClass * aP2)
       {
         while ( 1 ) /*0x65abf7*/
         {
-          result = (unsigned int)((unsigned int)((int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((*(int (__stdcall **)(int, int *, int, unsigned int))(aP2->vtable4)(aP2, &aP1, 4, 0); /*0x65abf7*/ if ( result < 0 ) /*0x65abfc*/ break; /*0x65abfc*/ *(unsigned int *)(aP1->q0E4 + 4 * v7) = aP1; /*0x65ac08*/ v8 = aP2; /*0x65ac0b*/ if ( ++v7 >= aP2 ) /*0x65ac12*/ goto LABEL_8; /*0x65ac12*/ } } } } return result)))))))))))))))))));
+          result = (unsigned int)((unsigned int)((int)((unsigned int)((unsigned int)((int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((*(int (__stdcall **)(int, int *, int, unsigned int))(aP2->vtable4)(aP2, &aP1, 4, 0); /*0x65abf7*/ if ( result < 0 ) /*0x65abfc*/ break; /*0x65abfc*/ *(unsigned int *)(aP1->q0E4 + 4 * v7) = aP1; /*0x65ac08*/ v8 = aP2; /*0x65ac0b*/ if ( ++v7 >= aP2 ) /*0x65ac12*/ goto LABEL_8; /*0x65ac12*/ } } } } return result))))))))))))))))))))));
 }
 } // namespace ra2
 
@@ -205,7 +205,7 @@ int RadioClass::ExecuteAction(TimerStruct * aP1, IUnknown * aP2)
   int v7; // edx
   unsigned int *v8; // eax
 
-  Object::Unlink((ObjectClass *)this); /*0x65aacf*/
+  Object::Unlink(); /*0x65aacf*/
   result = this->radioLinks[2]; /*0x65aad4*/
   for ( i = 0; i < result; ++i ) /*0x65aade*/
   {

@@ -25,9 +25,9 @@ namespace gamemd {
 int ParasiteClass::Constructor()
 {
   int v2; // ecx
-  ParasiteClass * v3;
+  int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x629213*/
+  AbstractClass::Constructor(); /*0x629213*/
   *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x62921f*/
   this->ParasiteClass_field_34 = 0; /*0x629222*/
   v2 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x629225*/
@@ -45,7 +45,7 @@ int ParasiteClass::Constructor()
          dword_AC4918 + dword_AC4924,
          0) )
   {
-    v3 = (gamemd::ParasiteClass *)((unsigned int)(dword_AC4920++));
+    v3 = (unsigned int)(dword_AC4920++);
     *((unsigned int *)dword_AC4914 + v3) = this; /*0x62929a*/
   }
   return (int)this; /*0x62929f*/
@@ -56,10 +56,10 @@ int ParasiteClass::Constructor()
 namespace gamemd {
 ParasiteClass::ParasiteClass(TechnoClass * aP1)
 {
-  ParasiteClass * v4;
+  int v4; // eax
   int v6; // [esp+8h] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6292b6*/
+  AbstractClass::Constructor(); /*0x6292b6*/
   this->q02C = g_CurrentFrame; /*0x6292c4*/
   this->ParasiteClass_field_34 = 0; /*0x6292c9*/
   this->u32_38 = g_CurrentFrame; /*0x6292d2*/
@@ -90,7 +90,7 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
          dword_AC4918 + dword_AC4924,
          0) )
   {
-    v4 = (gamemd::ParasiteClass *)((unsigned int)(dword_AC4920++));
+    v4 = (unsigned int)(dword_AC4920++);
     *((unsigned int *)dword_AC4914 + v4) = this; /*0x62937c*/
   }
   return this; /*0x629381*/
@@ -749,9 +749,9 @@ void * ParasiteClass::UpdateParasite(char a2)
     }
     while ( v5 < dword_AC4920 ); /*0x62b045*/
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x62b049*/
+  AbstractClass::DTOR(); /*0x62b049*/
   if ( (a2 & 1) != 0 ) /*0x62b053*/
-    RA2_OPDEL(this); /*0x62b056*/
+    RA2_OPDEL(); /*0x62b056*/
   return &this->vtable0; /*0x62b060*/
 }
 } // namespace ra2

@@ -6,6 +6,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/WarheadTypeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/E4Recv_7B9530_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x7E0000
 namespace gamemd {
@@ -181,8 +183,8 @@ namespace gamemd {
 void sub_7E01FB(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
 {
   unsigned char *v5; // [esp-24h] [ebp-34h]
-  unsigned char * v6;
-  unsigned int v7;
+  unsigned int v6;
+  unsigned int *v7; // [esp+4h] [ebp-Ch]
   unsigned char * v8;
   char *v10; // [esp+Ch] [ebp-4h]
   int *v11; // [esp+18h] [ebp+8h]
@@ -190,7 +192,7 @@ void sub_7E01FB(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
   unsigned int v13; // [esp+28h] [ebp+18h]
 
   v8 = (unsigned char *)(a4 >> 1);
-  v13 = (unsigned int *)(a5 >> 1);
+  v13 = (unsigned char *)(a5 >> 1);
   ObfuscateDataBlock(a1, dword_877D20, a4); /*0x7e022a*/
   v7 = &unk_878720; /*0x7e023b*/
   v6 = dword_877D20; /*0x7e023e*/

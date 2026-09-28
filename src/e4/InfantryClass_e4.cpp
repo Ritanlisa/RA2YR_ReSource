@@ -98,6 +98,7 @@ int InfantryClass::ScanTarget(int * a1)
     return v9 / 2; /*0x4d4fa3*/
   return result; /*0x4d4fa0*/
 }
+}
 // 0x4D5350
 namespace gamemd {
 AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
@@ -182,6 +183,7 @@ AbstractClass * * InfantryClass::ProcessDeploy(void ** a1)
   MissionControl = MissionClass::GetMissionControl((MissionClass *)a1); /*0x4d5582*/
   IDA_LOWORD(v11) = Math::RoundToInt(*((double *)MissionControl + 2) * 900.0); /*0x4d5592*/
   return v11 + Random::Range((Random *)&unk_A8B230[14].NeedsSaveOrLink, 0, 2); /*0x4d55b0*/
+}
 }
 // 0x517D90
 namespace gamemd {

@@ -33,6 +33,7 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Remove()
 {
   this->u32_C = 2; /*0x4f42d0*/
 }
+}
 // 0x4F4BB0
 namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
@@ -41,7 +42,7 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
   int v4; // edx
   int v5; // eax
 
-  if ( ((uint8_t)g_CurrentFrame & 1) == 0 ) /*0x4f4bb7*/
+  if ( ((uint8_t)dword_A8ED84 & 1) == 0 ) /*0x4f4bb7*/
   {
     v3 = this->u32_4; /*0x4f4bb9*/
     if ( v3 >= 0 ) /*0x4f4bbe*/
@@ -67,6 +68,7 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
       this->u32_8 = -1 - v5; /*0x4f4bdd*/
     }
   }
+}
 }
 // 0x4F42A0
 namespace gamemd {

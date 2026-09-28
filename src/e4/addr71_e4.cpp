@@ -23,6 +23,7 @@
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
 
 // 0x710860
 namespace gamemd {
@@ -32,6 +33,7 @@ int sub_710860(unsigned int * a1, unsigned int * a2)
     return 0; /*0x710870*/
   else
     return *a1 >= *a2 ? 1 : -1;
+}
 }
 // 0x7187A0
 namespace gamemd {
@@ -172,6 +174,7 @@ UnitTypeClass * * E4Recv_7187A0::ProcessUnitDeploymentAtCell(int a2, int a3, int
   }
   return (char)v12; /*0x7189d4*/
 }
+}
 // 0x71D580
 namespace gamemd {
 int InitializeCellSpreadTables()
@@ -255,6 +258,7 @@ int InitializeCellSpreadTables()
   memset(&unk_B0EF00, 0, 0x230u); /*0x71da73*/
   return Array::ForEach((int)&dword_B0EEFC, 4, 141, (int (__thiscall *)(int))__0Iostream_init_QAE_XZ_2); /*0x71da7a*/
 }
+}
 // 0x71DCA0
 namespace gamemd {
 int ObjectTypeClass_LoadTheaterSHP(int a1)
@@ -292,6 +296,7 @@ int ObjectTypeClass_LoadTheaterSHP(int a1)
     result = g_RulesClassInitState; /*0x71dd63*/
   }
   return result; /*0x71dd72*/
+}
 }
 // 0x7108E0
 namespace gamemd {
@@ -1255,7 +1260,7 @@ int E4Recv_71FF20::sub_71FF20(int aP1, int a3, int a4, int aP2, int aP3, int aP4
 {
   int Instance; // ebx
 
-  ToggleClass::Construct((int)this, aP1, aP2, aP3, aP4, aP5); /*0x71ff41*/
+  ToggleClass::Construct(aP1, aP2, aP3, aP4, aP5); /*0x71ff41*/
   this->__pad_0[53] = aP9; /*0x71ff52*/
   this->__pad_0[52] = a9; /*0x71ff5c*/
   this->a3 = a3; /*0x71ff5f*/

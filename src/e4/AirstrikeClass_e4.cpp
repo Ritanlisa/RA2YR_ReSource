@@ -133,7 +133,7 @@ int AirstrikeClass::ReassignTarget(int a2)
       if ( !v4 ) /*0x41da4d*/
         goto LABEL_6; /*0x41da4d*/
     }
-    IDA_LOBYTE(v8) = WTFMode::ResetUnitFlags((WTFMode *)this); /*0x41da5c*/
+    IDA_LOBYTE(); /*0x41da5c*/
   }
   else
   {
@@ -223,9 +223,9 @@ int AirstrikeClass::RemoveAircraft(AudioController * aP1)
   }
   if ( this->u32_30 <= 0 ) /*0x41dcf0*/
   {
-    g_CurrentFrame = (unsigned int)((int)((void *)(g_CurrentFrame)));
-    this->u32_3C = (void *)(0);
-    this->q040 = (int)g_CurrentFrame; /*0x41dcfb*/
+    g_CurrentFrame = (int)((void *)(g_CurrentFrame));
+    this->u32_3C = (unsigned int)((void *)(0));
+    this->q040 = (void *)((int)g_CurrentFrame);
     this->u8_3D = 0; /*0x41dcfe*/
   }
   return result; /*0x41dd01*/
@@ -254,9 +254,9 @@ void * AirstrikeClass::CopyTo(char a2)
     }
     while ( v3 < dword_889FC8 ); /*0x41ddb6*/
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x41ddba*/
+  AbstractClass::DTOR(); /*0x41ddba*/
   if ( (a2 & 1) != 0 ) /*0x41ddc4*/
-    RA2_OPDEL(this); /*0x41ddc7*/
+    RA2_OPDEL(); /*0x41ddc7*/
   return &this->vtable0; /*0x41ddd1*/
 }
 } // namespace ra2
@@ -326,7 +326,7 @@ AbstractClass * * AirstrikeClass::UpdateAll()
 namespace gamemd {
 AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
 {
-  AirstrikeClass * v3;
+  int v3; // eax
   int v4; // eax
   int v5;
   int v6; // eax
@@ -339,7 +339,7 @@ AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
   TechnoClass * v13;
   int v14; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x41d384*/
+  AbstractClass::Constructor(); /*0x41d384*/
   *(unsigned int *)this = (void*)&AirstrikeClass_vftable; /*0x41d389*/
   this->vtable2 = (void*)&AirstrikeClass_vftable; /*0x41d38f*/
   this->vtable3 = (void*)&AirstrikeClass_vftable; /*0x41d396*/
@@ -385,7 +385,7 @@ AirstrikeClass::AirstrikeClass(TechnoClass * aP1)
 namespace gamemd {
 int AirstrikeClass::Stat(AbstractClass * aP1)
 {
-  return AbstractClass::ProcessPower((AbstractClass *)this); /*0x41d6ea*/
+  return AbstractClass::ProcessPower(); /*0x41d6ea*/
 }
 } // namespace gamemd
 

@@ -17,3 +17,4 @@ int Super::GetDefaultTimer()
     return *((unsigned int *)this->field_28 + 44); /*0x6cc26b*/
   return result; /*0x6cc271*/
 }
+}

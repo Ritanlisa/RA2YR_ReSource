@@ -53,10 +53,11 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
     v6 = *(unsigned int **)i; /*0x502424*/
     if ( ++v7 >= *(unsigned int *)(this->u32_878 ) /*0x50242a*/
     {
-      v2 = v10; /*0x50242c*/
+      v2 = (char *)(v10);
       goto LABEL_12; /*0x50242c*/
     }
   }
+}
 }
 // 0x53ECB0
 namespace gamemd {
@@ -74,6 +75,7 @@ void * Waypoint::InitInvalid()
   this->__pad_0[9] = -1; /*0x53ecce*/
   return this->__pad_0; /*0x53ecd1*/
 }
+}
 // 0x763A50
 namespace gamemd {
 int Waypoint::FindCell(unsigned int * a2)
@@ -83,8 +85,8 @@ int Waypoint::FindCell(unsigned int * a2)
   void *v6; // [esp+10h] [ebp-8h]
   Waypoint *v7; // [esp+14h] [ebp-4h]
 
-  v3 = 0; /*0x763a59*/
-  v7 = this; /*0x763a5b*/
+  v3 = (int)((void *)(0));
+  v7 = (void *)(this);
   v6 = this->field_38; /*0x763a64*/
   if ( (int)v6 <= 0 ) /*0x763a68*/
     return 0; /*0x763adc*/
@@ -99,14 +101,15 @@ int Waypoint::FindCell(unsigned int * a2)
   *(unsigned int *)&v7->__pad_0[36] = v3; /*0x763ad0*/
   return 1; /*0x763acd*/
 }
+}
 // 0x763610
 namespace gamemd {
 CHAR * Waypoint::To_String(CCINIClass * aP0)
 {
   if ( aP0 == -1 ) /*0x763613*/
   {
-    byte_B72654 = 0; /*0x763615*/
-    return &byte_B72654; /*0x76361c*/
+    byte_B72654 = (unsigned char)((CHAR *)(0));
+    return (CHAR *)(&byte_B72654);
   }
   else
   {

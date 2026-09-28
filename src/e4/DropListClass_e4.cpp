@@ -36,6 +36,7 @@ void DropListClass_OnKeyUp(void * a1, void * a2, void * a3)
   }
   return result; /*0x4b507f*/
 }
+}
 // 0x4B55A0
 int DropListClass::COMStub()
 {

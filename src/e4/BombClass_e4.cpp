@@ -15,6 +15,8 @@
 #include "e4/classes/SidebarClass_e4.hpp"
 #include "e4/classes/BlowStraw_29_e4.hpp"
 #include "e4/classes/TabClass_e4.hpp"
+#include "e4/classes/BlowPipe_23_e4.hpp"
+#include "e4/classes/CommandClass_e4.hpp"
 
 // 0x4385D0
 namespace gamemd {
@@ -22,7 +24,7 @@ int BombClass::AbstractClass()
 {
   int v2; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4385d4*/
+  AbstractClass::Constructor(); /*0x4385d4*/
   this->BombClass_field_54 = 0; /*0x4385de*/
   this->vtable0 = (void*)&BombClass_vftable; /*0x4385e1*/
   this->vtable1 = (void*)&BombClass_vftable; /*0x4385e7*/
@@ -88,7 +90,7 @@ int BombClass::Stat(int * a2)
   int BombClass_field_2C; // eax
   int v9; // eax
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x438a99*/
+  AbstractClass::ProcessPower(); /*0x438a99*/
   BombClass_field_28 = this->BombClass_field_28; /*0x438a9e*/
   if ( BombClass_field_28 ) /*0x438aa3*/
   {
@@ -190,8 +192,7 @@ BombClass * BombClass::CopyTo(char a2)
 {
   int v3; // eax
   BombClass *v5; // [esp+4h] [ebp-4h] BYREF
-
-  this->vtable0 = (unsigned int)((void*)&BombClass_vftable);
+this->vtable0 = (unsigned int)((void*)&BombClass_vftable);
   this->vtable1 = (void*)&BombClass_vftable; /*0x4393fd*/
   this->vtable2 = (void*)&BombClass_vftable; /*0x439404*/
   this->vtable3 = (void*)&BombClass_vftable; /*0x43940b*/
@@ -207,9 +208,9 @@ BombClass * BombClass::CopyTo(char a2)
     }
     while ( v3 < dword_89C678 ); /*0x43945e*/
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x439462*/
+  AbstractClass::DTOR(); /*0x439462*/
   if ( (a2 & 1) != 0 ) /*0x43946c*/
-    RA2_OPDEL(this); /*0x43946f*/
+    RA2_OPDEL(); /*0x43946f*/
   return &this->vtable0; /*0x439479*/
 }
 } // namespace gamemd

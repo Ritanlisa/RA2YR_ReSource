@@ -23,6 +23,8 @@
 #include "e4/classes/MSEngine_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/LinkClass_e4.hpp"
+#include "e4/classes/LinkedList_flat_e4.hpp"
 
 // 0x660840
 namespace gamemd {

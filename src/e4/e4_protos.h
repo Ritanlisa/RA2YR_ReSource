@@ -425,6 +425,7 @@ extern int WSACleanup();
 extern int WSAGetLastError();
 extern int WSAStartup();
 extern int WriteCompressionBlock(Pipe * aP0, BlowStraw * aP1, CCINIClass * aP2, int * a3, int a5);
+extern int ZCoordToScreenY(int z_world);
 extern int bind();
 extern int getsockopt();
 extern int globalHelper_0C9DBD(int a1, CCINIClass * aP1, int a3);
@@ -588,6 +589,5 @@ extern wchar_t * sub_4E4F30();
 extern wchar_t ** CharStringToWide(ObjectClass * aP0, const char ** a1);
 extern wchar_t ** FormatWideStringPrefix(CampaignScore * aP0, const wchar_t * a1, wchar_t ** a2);
 extern wchar_t ** Render_Format(wchar_t ** a1, char ** a2);
-extern int ZCoordToScreenY(int z_world);
 
 } // namespace gamemd

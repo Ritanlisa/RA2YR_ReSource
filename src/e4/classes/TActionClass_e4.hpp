@@ -78,7 +78,6 @@ struct TActionClass {
     void* TActionClass_field_90;  // 0xB8
     unsigned char q0B9;  // 0xB9
     unsigned int u32_10C;
-    unsigned int u32_11C;
     unsigned int u32_1F7;
     unsigned int u32_1F8;
     unsigned int u32_298;
@@ -87,8 +86,6 @@ struct TActionClass {
     unsigned int u32_54F0;
     unsigned int u32_54F4;
     unsigned int u32_54FC;
-    unsigned int u32_FC;
-    unsigned int vtable0;
     unsigned int TActionClass_field_44;
 // --- flat members (END) ---
     AbstractClass * * ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4);

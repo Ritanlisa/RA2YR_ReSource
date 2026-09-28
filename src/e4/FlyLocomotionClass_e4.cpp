@@ -11,6 +11,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
 
 // 0x4CC9A0
 namespace gamemd {
@@ -18,7 +19,7 @@ int FlyLocomotionClass::LocomotionClass()
 {
   int v2; // edx
 
-  LocomotionClass::Init((LocomotionClass *)this); /*0x4cc9a3*/
+  LocomotionClass::Init(); /*0x4cc9a3*/
   this->AirportBound = 0; /*0x4cc9ad*/
   this->MovingDestination[0] = dword_8B3C78; /*0x4cc9b6*/
   this->MovingDestination[1] = dword_8B3C7C; /*0x4cc9be*/
@@ -185,8 +186,7 @@ namespace gamemd {
 int FlyLocomotionClass::BeginMove(int * a1, int * a2)
 {
   int result; // eax
-
-  result = (int)(SwizzleManager::SaveLoad((int *)a1->__pad_0, a2));
+result = (int)(SwizzleManager::SaveLoad((int *)a1->__pad_0, a2));
   if ( result >= 0 ) /*0x4cfcd2*/
   {
     if ( a1 ) /*0x4cfcd6*/
@@ -211,9 +211,9 @@ FlyLocomotionClass * FlyLocomotionClass::ProcessMove(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&FlyLocomotionClass_vftable; /*0x4d03a3*/
   *(unsigned int *)&this->__pad_0[4] = (void*)&FlyLocomotionClass_vftable; /*0x4d03a9*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x4d03b0*/
+  LocomotionClass::Construct(); /*0x4d03b0*/
   if ( (a2 & 1) != 0 ) /*0x4d03ba*/
-    RA2_OPDEL(this); /*0x4d03bd*/
+    RA2_OPDEL(); /*0x4d03bd*/
   return this->__pad_0; /*0x4d03c7*/
 }
 } // namespace gamemd

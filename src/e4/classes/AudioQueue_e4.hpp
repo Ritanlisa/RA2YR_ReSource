@@ -37,18 +37,18 @@ struct AudioQueue {
     unsigned int q0204;
     unsigned int q034;
     unsigned int q040;
+    unsigned int q080;
     unsigned int q3F05C;
+    unsigned int u32_146;
     unsigned int u32_18;
     unsigned int u32_28;
     unsigned int u32_38;
+    unsigned int u32_3F06C;
     unsigned int u32_3F070;
     unsigned int u32_4C;
     unsigned int u32_E0;
     unsigned char u8_2D;
     unsigned char u8_45;
-    unsigned int q080;
-    unsigned int u32_146;
-    unsigned int u32_3F06C;
 // --- flat members (END) ---
     unsigned int * CreateNode();  // 0x402AF0
     int FindBestChannel(int a1,  int a2);    // 0x4035F0

@@ -72,12 +72,13 @@ unsigned int * FoggedObject::DrawVector_Constructor(IUnknown * aP1, IUnknown * a
   this->FoggedObject_field_0x4 = (AbstractClass *)aP2; /*0x4d2df6*/
   return this->__pad_0; /*0x4d2dfb*/
 }
+}
 // 0x4D2D10
 VectorClass_flat * FoggedObject_DrawVector::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  v3 = *(void **)&this->m_1[3]; /*0x4d2d13*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorClass_FoggedObjectClass_DrawRecord_vftable; /*0x4d2d16*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4d2d20*/
   {
@@ -87,6 +88,6 @@ VectorClass_flat * FoggedObject_DrawVector::QueryInterface(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x4d2d3b*/
   this->m_8 = 0; /*0x4d2d41*/
   if ( (a2 & 1) != 0 ) /*0x4d2d48*/
-    RA2_OPDEL(this); /*0x4d2d4b*/
+    RA2_OPDEL(); /*0x4d2d4b*/
   return this->__pad_0; /*0x4d2d55*/
 }

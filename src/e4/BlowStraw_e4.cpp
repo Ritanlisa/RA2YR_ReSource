@@ -23,6 +23,8 @@
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Bounds_e4.hpp"
+#include "e4/classes/BlowPipe_23_e4.hpp"
+#include "e4/classes/BlowPipe_31_e4.hpp"
 
 // 0x6D0680
 namespace gamemd {
@@ -79,7 +81,7 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
         this->vt_slot_52(dword_B0CCB0); /*0x6d0883*/
         for ( i = 0; i < 25; ++i ) /*0x6d0886*/
         {
-          FontClassEntry = GetFontClassEntry(i); /*0x6d088a*/
+          FontClassEntry = (int)(GetFontClassEntry(i));
           if ( FontClassEntry ) /*0x6d0891*/
             HashTable::Remove((int *)g_TacticalRender, *((unsigned int *)FontClassEntry + 9)); /*0x6d089d*/
         }
@@ -255,6 +257,7 @@ CellStruct * * sub_731AF0()
                       240,
                       1);
 }
+}
 // 0x5BE9E0
 namespace gamemd {
 TabClass * BlowStraw_29::Read(char a2)
@@ -282,6 +285,6 @@ TabClass * BlowStraw_29::Read(char a2)
 namespace gamemd {
 int BlowStraw_29_::Stub()
 {
-  return ObjectClass::processDamage(this);
+  return ObjectClass::processDamage();
 }
 } // namespace gamemd

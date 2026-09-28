@@ -9,13 +9,14 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/LocomotionClass_e4.hpp"
 
 // 0x786EF0
 namespace gamemd {
 void sub_786EF0()
 {
   const unsigned int v2;
-  int v3; // [esp-4h] [ebp-10Ch]
+  unsigned int v3;
   char Buffer[260]; // [esp+4h] [ebp-104h] BYREF
 
   if ( dword_B77DF8 == -2147221385 /*0x786f26*/
@@ -63,6 +64,7 @@ void sub_786EF0()
     ShowDialogConfirm(&word_B77AD0, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x786f36*/
     return 0; /*0x786f3b*/
   }
+}
 }
 // 0x72BCA0
 namespace gamemd {
@@ -199,7 +201,7 @@ int sub_786390(void * a1)
       {
         cbData = 4; /*0x786445*/
         RegQueryValueExA(phkResult, off_84A940, 0, &Type, Data, &cbData); /*0x78644d*/
-        RegCloseKey(phkResult, unsigned int a1); /*0x786458*/
+        RegCloseKey(phkResult); /*0x786458*/
       }
     }
   }

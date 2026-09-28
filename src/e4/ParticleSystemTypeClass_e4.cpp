@@ -79,7 +79,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     64);
   v3 = (int)(BuildingTypeClass::FindOrCreateEx(Destination));
   v4 = (char)((void *)(this->q298));
-  this->q294 = v3; /*0x644323*/
+  this->q294 = (void *)(v3);
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x644332*/
                      (int)aP1,
                      (uint8_t *)(&this->vtable46),
@@ -233,7 +233,7 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
 {
   int v3; // ecx
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x644709*/
+  AbstractTypeClass::ProcessPower(a2); /*0x644709*/
   Power::TimerProcess((int)this->ParticleSystemTypeClass_field_0x294); /*0x644717*/
   IDA_LOBYTE(v3) = this->__pad_298[0]; /*0x64471c*/
   Power::FlagProcess((Power *)a2, v3); /*0x644725*/
@@ -245,6 +245,7 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
   Checksummer::Add_float((Checksummer *)a2, this->DamageDelay); /*0x644779*/
   Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B4); /*0x644787*/
   return Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B8); /*0x64479a*/
+}
 }
 // 0x644960
 namespace gamemd {
@@ -273,9 +274,9 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
       ++v3; /*0x6449bd*/
     }
   }
-  ObjectTypeClass::Destruct((int)this); /*0x6449d1*/
+  ObjectTypeClass::Destruct(); /*0x6449d1*/
   if ( (a2 & 1) != 0 ) /*0x6449db*/
-    RA2_OPDEL(this); /*0x6449de*/
+    RA2_OPDEL(); /*0x6449de*/
   return &this->ParticleSystemTypeClass_field_0x0; /*0x6449e8*/
 }
 } // namespace gamemd

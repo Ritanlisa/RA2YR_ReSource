@@ -35,6 +35,9 @@
 #include "e4/classes/VocClass_e4.hpp"
 #include "e4/classes/INIClass_e4.hpp"
 #include "e4/classes/E4Recv_717A40_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x730A90
 namespace gamemd {
@@ -48,6 +51,7 @@ void AddMessageListPlayerMessage(CellStruct * a1, int a2)
   if ( dword_A83D4C ) /*0x730aa8*/
     v2 = *(unsigned int *)&dword_A83D4C[134].__pad_90[4]; /*0x730aaa*/
   return MessageListClass::AddMessage((MessageListClass *)&stru_A8BB1C.__pad_87[189], 0, 0, a1, v2, 16454, a2, 1); /*0x730ac9*/
+}
 }
 // 0x730AF0
 namespace gamemd {
@@ -185,6 +189,7 @@ AbstractClass * * ProcessSelectionExperience()
   }
   return (gamemd::AbstractClass **)(v1);
 }
+}
 // 0x730D60
 namespace gamemd {
 CellStruct * * sub_730D60()
@@ -291,6 +296,7 @@ int E4Recv_731130::sub_731130()
       return 1; /*0x7311a4*/
   }
 }
+}
 // 0x731AA0
 namespace gamemd {
 AbstractClass * * sub_731AA0()
@@ -298,8 +304,7 @@ AbstractClass * * sub_731AA0()
   int v1; // edi
   int v2; // esi
   unsigned char *v3; // ecx
-
-  v1 = (gamemd::AbstractClass **)(*(unsigned int *)&stru_A8EB00.gapE4[228]);
+v1 = (int)((gamemd::AbstractClass **)(*(unsigned int *)&stru_A8EB00.gapE4[228]));
   v2 = (gamemd::AbstractClass **)(0);
   if ( *(int *)&stru_A8EB00.gapE4[228] <= 0 ) /*0x731aad*/
     return 1; /*0x731ad8*/
@@ -315,6 +320,7 @@ AbstractClass * * sub_731AA0()
       return 1; /*0x731ad6*/
   }
   return 0; /*0x731ad8*/
+}
 }
 // 0x731EB0
 namespace gamemd {
@@ -372,6 +378,7 @@ unsigned int * sub_731EB0(unsigned char (__fastcall *a1)(int, int) a1, int a2)
   while ( v4 < v13 ); /*0x731f56*/
   return v3; /*0x731f5b*/
 }
+}
 // 0x731F70
 namespace gamemd {
 unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, int) a1, int a2)
@@ -428,6 +435,7 @@ unsigned int * TechnoClass_GatherFiltered(unsigned char (__fastcall *a1)(int, in
   while ( v4 < Height ); /*0x732031*/
   return v3; /*0x732036*/
 }
+}
 // 0x732770
 namespace gamemd {
 void TechnoClass_StepCleanupIfHuman(int a1, void * a2)
@@ -443,6 +451,7 @@ void TechnoClass_StepCleanupIfHuman(int a1, void * a2)
       return 1; /*0x732782*/
   }
   return result; /*0x7327b6*/
+}
 }
 // 0x732950
 namespace gamemd {
@@ -576,8 +585,7 @@ void SelectAllOfType()
         DynamicVector::AddItem(v6, &v23); /*0x732b15*/
     }
   }
-  LABEL_36:
-  DynamicVector_field_0x10 = v6->DynamicVector_field_0x10; /*0x732b1f*/
+  LABEL_36: DynamicVector_field_0x10 = (void *)(v6->DynamicVector_field_0x10);
   for ( k = 0; k < (int)DynamicVector_field_0x10; ++k ) /*0x732b26*/
   {
     v19 = *(void **)(*(unsigned int *)&v6->DynamicVector_field_0x1[3] + 4 * k); /*0x732b2b*/
@@ -594,7 +602,7 @@ void SelectAllOfType()
   }
   else
   {
-    v21 = GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 1009); /*0x732b71*/
+    v21 = (wchar_t *)(GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 1009));
     wcscpy(Destination, v21); /*0x732b73*/
   }
   v20 = 3; /*0x732bc8*/
@@ -616,6 +624,7 @@ void SelectAllOfType()
   if ( v6 ) /*0x732c16*/
     return (**(int (__thiscall ***)(DynamicVector *, int))v6->__pad_0)(v6, 1); /*0x732c1e*/
   return result; /*0x732c20*/
+}
 }
 // 0x732FF0
 namespace gamemd {
@@ -718,6 +727,7 @@ char sub_732FF0(void * a1, int (__fastcall *a2)(unsigned int, int) a2, int a3)
   if ( v4 ) /*0x733149*/
     IDA_LOBYTE(HeightMap) = (*(int (__thiscall **)(unsigned int *, int))*v4)(v4, 1); /*0x733151*/
   return HeightMap; /*0x733153*/
+}
 }
 // 0x7331B0
 namespace gamemd {
@@ -861,6 +871,7 @@ void sub_7331B0()
     *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8] = v12; /*0x733366*/
   }
   return HeightMap; /*0x73336c*/
+}
 }
 // 0x733380
 namespace gamemd {
@@ -1015,6 +1026,7 @@ int E4Recv_733380::UpdateUnitHealthTooltip()
   }
   return result; /*0x7335de*/
 }
+}
 // 0x7336C0
 namespace gamemd {
 int E4Recv_7336C0::DrawUnitExperiencePopup()
@@ -1168,6 +1180,7 @@ int E4Recv_7336C0::DrawUnitExperiencePopup()
   }
   return result; /*0x733928*/
 }
+}
 // 0x7339B0
 namespace gamemd {
 int SelectUnitsByTheme(char a1)
@@ -1299,6 +1312,7 @@ int SelectUnitsByTheme(char a1)
   }
   return result; /*0x733c50*/
 }
+}
 // 0x733CD0
 namespace gamemd {
 unsigned int * E4Recv_733CD0::sub_733CD0()
@@ -1379,6 +1393,7 @@ unsigned int * E4Recv_733CD0::sub_733CD0()
       return (unsigned int *)v3; /*0x733df3*/
     v1 = this; /*0x733d27*/
   }
+}
 }
 // 0x733E10
 namespace gamemd {
@@ -1580,6 +1595,7 @@ void * SelectFactionThemeMusic(int a1, const char * a2, int a3, unsigned int * a
     (*(void (__thiscall **)(unsigned int *, int))*v11)(v11, 1); /*0x73410a*/
   return v34; /*0x73410c*/
 }
+}
 // 0x734E60
 namespace gamemd {
 void * GetStringCSF(wchar_t * Format, unsigned int * a2, CampaignScore * aP3, int a4)
@@ -1608,6 +1624,7 @@ void * GetStringCSF(wchar_t * Format, unsigned int * a2, CampaignScore * aP3, in
     return v8 + 2; /*0x734f03*/
   }
 }
+}
 // 0x734F50
 namespace gamemd {
 int E4Recv_734F50::sub_734F50()
@@ -1623,6 +1640,7 @@ int E4Recv_734F50::sub_734F50()
     return CSFClass::LoadFile((const char *)dword_B1CF68); /*0x734f6d*/
   }
   return result; /*0x734f72*/
+}
 }
 // 0x734F80
 namespace gamemd {
@@ -1640,17 +1658,20 @@ int E4Recv_734F80::sub_734F80()
   }
   return result; /*0x734fa2*/
 }
+}
 // 0x734FB0
 namespace gamemd {
 int sub_734FB0()
 {
   return dword_B1CF84; /*0x734fb5*/
 }
+}
 // 0x734FC0
 namespace gamemd {
 int sub_734FC0()
 {
   return dword_B1CF60; /*0x734fc5*/
+}
 }
 // 0x735120
 namespace gamemd {
@@ -1678,6 +1699,7 @@ void * * CharToWideString(unsigned char * a1)
   dword_B1CF94 = ((unsigned char)dword_B1CF94 + 1) & 7; /*0x735179*/
   return result; /*0x735126*/
 }
+}
 // 0x735370
 namespace gamemd {
 int sub_735370()
@@ -1688,6 +1710,7 @@ int sub_735370()
   dword_B1CFB4 = 0; /*0x735381*/
   return 0; /*0x735386*/
 }
+}
 // 0x735390
 namespace gamemd {
 int sub_735390()
@@ -1697,6 +1720,7 @@ int sub_735390()
   dword_B1CFC8 = dword_B1CFB0; /*0x7353b1*/
   dword_B1CFCC = dword_B1CFB4; /*0x7353b7*/
   return dword_B1CFB4; /*0x7353bc*/
+}
 }
 // 0x730660
 namespace gamemd {

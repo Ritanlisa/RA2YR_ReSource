@@ -14,6 +14,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Player_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
 
 // 0x5A5360
 namespace gamemd {
@@ -171,7 +172,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   {
     for ( ; v15 > 1; v16 >>= 1 ) /*0x5a5499*/
     {
-      v17 = v6[2]; /*0x5a549b*/
+      v17 = (unsigned int)(v6[2]);
       v18 = *(unsigned int *)(v17 + 4 * v16); /*0x5a549e*/
       if ( *(float *)(v18 + 4) <= (double)*(float *)&v80 ) /*0x5a54ad*/
         break; /*0x5a54ad*/
@@ -211,7 +212,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   }
   else
   {
-    v24 = 0; /*0x5a5541*/
+    v24 = (unsigned int)(0);
   }
   IDA_LODWORD(v78) = v24; /*0x5a5547*/
   v25 = a2 <= 0; /*0x5a554b*/
@@ -354,7 +355,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
     {
       while ( 1 ) /*0x5a5868*/
       {
-        v57 = v24[1]; /*0x5a5868*/
+        v57 = (unsigned int)(v24[1]);
         a2 = 0; /*0x5a586b*/
         a1 = *(int16_t **)(v57 + 4 * v55); /*0x5a5872*/
         do /*0x5a5910*/

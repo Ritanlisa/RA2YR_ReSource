@@ -24,7 +24,7 @@ CaptureManagerClass::CaptureManagerClass(TechnoClass * aP1, int a3, char a4)
 {
   int v5; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4717d3*/
+  AbstractClass::Constructor(); /*0x4717d3*/
   this->owner = 1; /*0x4717e2*/
   this->controlNodeCount = 0; /*0x4717e6*/
   this->controlNodeCapacity = 0; /*0x4717e9*/
@@ -1010,9 +1010,9 @@ CaptureManagerClass * CaptureManagerClass::ddtor(char a2)
   }
   IDA_BYTE1(this->owner) = 0; /*0x472a4f*/
   this->controlNodeCapacity = 0; /*0x472a53*/
-  AbstractClass::DTOR((AbstractClass *)this); /*0x472a5a*/
+  AbstractClass::DTOR(); /*0x472a5a*/
   if ( (a2 & 1) != 0 ) /*0x472a64*/
-    RA2_OPDEL(this); /*0x472a67*/
+    RA2_OPDEL(); /*0x472a67*/
   return &this->vtable0; /*0x472a71*/
 }
 } // namespace gamemd
@@ -1217,7 +1217,7 @@ VectorClass_flat * CaptureManagerClass::Constructor_VectorClass_ControlNode___(c
   IDA_BYTE1(this->m_C) = 0; /*0x47302b*/
   this->m_8 = 0; /*0x473031*/
   if ( (a2 & 1) != 0 ) /*0x473038*/
-    RA2_OPDEL(this); /*0x47303b*/
+    RA2_OPDEL(); /*0x47303b*/
   return this->__pad_0; /*0x473045*/
 }
 } // namespace gamemd
@@ -1238,7 +1238,7 @@ DynamicVector * CaptureManagerClass::QueryInterface(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x47307b*/
   this->m_8 = 0; /*0x473081*/
   if ( (a2 & 1) != 0 ) /*0x473088*/
-    RA2_OPDEL(this); /*0x47308b*/
+    RA2_OPDEL(); /*0x47308b*/
   return this->__pad_0; /*0x473095*/
 }
 } // namespace gamemd
@@ -1270,6 +1270,6 @@ unsigned int * CaptureManagerClass::Constructor_473140(int a2, int a3)
 namespace gamemd {
 char CaptureManagerClass::AddMember(TechnoClass * aP1)
 {
-  return TeamClass::AddMember((int *)this, aP1, 1); /*0x6ea4fc*/
+  return TeamClass::AddMember(aP1, 1); /*0x6ea4fc*/
 }
 } // namespace gamemd

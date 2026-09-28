@@ -114,11 +114,13 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   }
   return result; /*0x41f480*/
 }
+}
 // 0x473450
 namespace gamemd {
 int CCINIClass::GetDB()
 {
   return this->headNode[0]; /*0x473453*/
+}
 }
 // 0x4741F0
 namespace gamemd {
@@ -167,7 +169,7 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   v16 = 271733878; /*0x4742b5*/
   v17 = -1009589776; /*0x4742bd*/
   *(unsigned int *)v12.__pad_0 = (void*)&SHAPipe_vftable; /*0x4742c5*/
-  INIClass::WriteToString((INIClass *)this, (int)&v12); /*0x4742cd*/
+  INIClass::WriteToString((int)&v12); /*0x4742cd*/
   SHA1::ComputeThunk(&v12, this->__pad_41); /*0x4742da*/
   this->ownsFile = 1; /*0x4742e3*/
   Pipe::Dtor((Pipe *)&v12); /*0x4742e7*/
@@ -179,6 +181,7 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   LABEL_8:
   FileStraw::Destructor((int)v10); /*0x474306*/
   return v7; /*0x474311*/
+}
 }
 // 0x535B30
 namespace gamemd {
@@ -277,7 +280,7 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
       result = dword_A8B210; /*0x41f563*/
     }
   }
-  return result; /*0x41f56d*/
+  return (gamemd::AITriggerTypeClass *)(result);
 }
 } // namespace gamemd
 

@@ -41,7 +41,7 @@ struct AirstrikeClass {
     bool q04A;  // 0x4A
     unsigned int ;  // 0x4C
     unsigned char q04F;  // 0x4F
-    void* ;  // 0x50
+    unsigned int u32_50;  // 0x50
     unsigned int AirstrikeClass_field_54;  // 0x54
     unsigned int AirstrikeClass_field_58;  // 0x58
     unsigned int AirstrikeClass_field_5C;  // 0x5C
@@ -53,9 +53,8 @@ struct AirstrikeClass {
     unsigned int u32_3C;
     unsigned char u8_3D;
     unsigned int vtable0;
-    unsigned int EliteAirstrikeTeamTypeIndex;
     unsigned int q140;
-    unsigned int u32_50;
+    unsigned int EliteAirstrikeTeamTypeIndex;
     unsigned int owner;
 // --- flat members (END) ---
     AbstractClass * * UpdateAll();

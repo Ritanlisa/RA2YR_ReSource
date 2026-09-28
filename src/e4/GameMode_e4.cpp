@@ -20,12 +20,14 @@
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/Mission_e4.hpp"
 #include "e4/classes/VoxClass_e4.hpp"
+#include "e4/classes/AudioMixer_e4.hpp"
 
 // 0x5D5DE0
 namespace gamemd {
 int GameMode::IsValid(unsigned int a2)
 {
   return (!this->u32_FC || a2 != -2) && a2 < 4; /*0x5d5df2*/
+}
 }
 // 0x6B8CA0
 namespace gamemd {
@@ -129,4 +131,5 @@ unsigned int GameMode::ReadFlagsFromINI(CCINIClass * aP1)
     *(unsigned int *)this = result; /*0x6b8ed7*/
   }
   return result; /*0x6b8ed9*/
+}
 }

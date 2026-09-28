@@ -85,6 +85,7 @@ int Event::Dispatch()
   }
   return result; /*0x48d1bf*/
 }
+}
 // 0x5E2FA0
 namespace gamemd {
 void sub_5E2FA0()
@@ -110,6 +111,7 @@ void sub_5E2FA0()
   }
   return result; /*0x5e2fed*/
 }
+}
 // 0x5E95E0
 namespace gamemd {
 void sub_5E95E0()
@@ -120,7 +122,7 @@ void sub_5E95E0()
   uint8_t v4; // [esp+0h] [ebp-Ch]
   unsigned int v5;
 
-  v5 = (LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((int)((LPARAM *)(dword_A8B548)))))))))))))));
+  v5 = (unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((int)((LPARAM *)(dword_A8B548))))))))))))))))));
   if ( dword_A8B548 >= dword_A8BB0C ) /*0x5e95f4*/
     v5 = dword_A8BB0C; /*0x5e95f6*/
   v0 = 0; /*0x5e9618*/
@@ -239,6 +241,7 @@ void sub_796960()
   }
   return owningHouseIndex; /*0x796ad4*/
 }
+}
 // 0x7A0F40
 namespace gamemd {
 int sub_7A0F40()
@@ -295,6 +298,7 @@ int sub_7A0F40()
   }
   return result; /*0x7a104e*/
 }
+}
 // 0x786270
 namespace gamemd {
 void sub_786270()
@@ -331,6 +335,7 @@ void sub_786270()
     stru_B76AC4.ambientSoundController[3],
     3);
   return 1; /*0x78631f*/
+}
 }
 // 0x7C5F3D
 namespace gamemd {
@@ -386,6 +391,7 @@ void sub_7C5F3D()
     return 0; /*0x7c5ff1*/
   }
 }
+}
 // 0x7C5FFF
 namespace gamemd {
 int sub_7C5FFF()
@@ -408,6 +414,7 @@ int sub_7C5FFF()
     return 0; /*0x7c605c*/
   }
 }
+}
 // 0x48D1D0
 char Event_Dispatch::Return0()
 {
@@ -420,64 +427,64 @@ bool Event::IsValidActionType()
 {
   int result; // eax
 
-  IDA_LOBYTE(result) = this == (void *)268 /*0x6015d5*/
-                || this == (void *)148
-                || this == (void *)182
-                || this == (void *)163
-                || this == (void *)115
-                || this == (void *)216
-                || this == (void *)3003
-                || this == (void *)245
-                || this == (void *)261
-                || this == (void *)226
-                || this == (void *)213
-                || this == (void *)693
-                || this == (void *)183
-                || this == (void *)692
-                || this == (void *)257
-                || this == (void *)297
-                || this == (void *)3015
-                || this == (void *)3014
-                || this == (void *)215
-                || this == (void *)264
-                || this == (void *)188
-                || this == (void *)189
-                || this == (void *)187
-                || this == (void *)181
-                || this == (void *)3002
-                || this == (void *)255
-                || this == (void *)234
-                || this == (void *)107
-                || this == (void *)256
-                || this == (void *)258
-                || this == (void *)184
-                || this == (void *)214
-                || this == (void *)259
-                || this == (void *)287
-                || this == (void *)293
-                || this == (void *)277
-                || this == (void *)290
-                || this == (void *)274
-                || this == (void *)231
-                || this == (void *)278
-                || this == (void *)194
-                || this == (void *)201
-                || this == (void *)285
-                || this == (void *)284
-                || this == (void *)275
-                || this == (void *)254
-                || this == (void *)265
-                || this == (void *)271
-                || this == (void *)279
-                || this == (void *)276
-                || this == (void *)195
-                || this == (void *)292
-                || this == (void *)230
-                || this == (void *)243
-                || this == (void *)244
-                || this == (void *)700
-                || this == (void *)283
-                || this == (void *)270;
+  IDA_LOBYTE(result) = this == (Event *)268 /*0x6015d5*/
+                || this == (Event *)148
+                || this == (Event *)182
+                || this == (Event *)163
+                || this == (Event *)115
+                || this == (Event *)216
+                || this == (Event *)3003
+                || this == (Event *)245
+                || this == (Event *)261
+                || this == (Event *)226
+                || this == (Event *)213
+                || this == (Event *)693
+                || this == (Event *)183
+                || this == (Event *)692
+                || this == (Event *)257
+                || this == (Event *)297
+                || this == (Event *)3015
+                || this == (Event *)3014
+                || this == (Event *)215
+                || this == (Event *)264
+                || this == (Event *)188
+                || this == (Event *)189
+                || this == (Event *)187
+                || this == (Event *)181
+                || this == (Event *)3002
+                || this == (Event *)255
+                || this == (Event *)234
+                || this == (Event *)107
+                || this == (Event *)256
+                || this == (Event *)258
+                || this == (Event *)184
+                || this == (Event *)214
+                || this == (Event *)259
+                || this == (Event *)287
+                || this == (Event *)293
+                || this == (Event *)277
+                || this == (Event *)290
+                || this == (Event *)274
+                || this == (Event *)231
+                || this == (Event *)278
+                || this == (Event *)194
+                || this == (Event *)201
+                || this == (Event *)285
+                || this == (Event *)284
+                || this == (Event *)275
+                || this == (Event *)254
+                || this == (Event *)265
+                || this == (Event *)271
+                || this == (Event *)279
+                || this == (Event *)276
+                || this == (Event *)195
+                || this == (Event *)292
+                || this == (Event *)230
+                || this == (Event *)243
+                || this == (Event *)244
+                || this == (Event *)700
+                || this == (Event *)283
+                || this == (Event *)270;
   return result; /*0x6015d4*/
 }
 } // namespace gamemd

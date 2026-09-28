@@ -27,6 +27,7 @@
 #include "e4/classes/OverlayTypeClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/LoadOptions_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x47C3D0
 namespace gamemd {
@@ -78,6 +79,7 @@ int Object::FindClosestObjectCell(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3
   while ( v8 ); /*0x47c4ac*/
   return v12; /*0x47c4b6*/
 }
+}
 // 0x47C5A0
 namespace gamemd {
 int Object::FindObjectCell(TechnoClass * aP1, char aP2)
@@ -121,6 +123,7 @@ int Object::FindObjectCell(TechnoClass * aP1, char aP2)
   }
   return result; /*0x47c609*/
 }
+}
 // 0x4F9A90
 namespace gamemd {
 int Object::IsAlliedWithObjectHouse(IUnknown * aP1)
@@ -155,6 +158,7 @@ int Object::IsAlliedWithObjectHouse(IUnknown * aP1)
     IDA_LOBYTE(result) = 0; /*0x4f9adb*/
   }
   return result; /*0x4f9aaa*/
+}
 }
 // 0x4F9AF0
 namespace gamemd {
@@ -192,6 +196,7 @@ int Object::IsAlliedWithObjectSimpleHouse(unsigned char * a2)
     IDA_LOBYTE(result) = 0; /*0x4f9b41*/
   }
   return result; /*0x4f9b10*/
+}
 }
 // 0x56C210
 namespace gamemd {
@@ -286,7 +291,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
             }
             continue; /*0x56c4af*/
           }
-          v25[0] = (v8 << 8) + 128; /*0x56c41b*/
+          v25[0] = (unsigned int)((int *)((v8 << 8) + 128));
           v25[1] = (v10 << 8) + 128; /*0x56c429*/
           v25[2] = 0; /*0x56c431*/
           v15 = Vector3::Subtract((Vector3 *)a2, v27, v25); /*0x56c439*/
@@ -310,6 +315,7 @@ unsigned int * Object::FindNearestObjectAtCell(unsigned int * a2)
       return 0; /*0x56c4f0*/
   }
   return result; /*0x56c4de*/
+}
 }
 // 0x5902C0
 namespace gamemd {
@@ -399,32 +405,34 @@ void sub_5902C0(int a1)
   }
   return 0; /*0x590492*/
 }
+}
 // 0x5FC380
 namespace gamemd {
 void * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * aP3)
 {
+  IUnknown * v5;
   int v6; // eax
   int v7; // ecx
   CellClass *v8; // eax
 
-  ObjectClass::ctor((ObjectClass *)this); /*0x5fc386*/
-  aP1 = aP1; /*0x5fc38b*/
-  *(unsigned int *)this = (void*)&OverlayClass_vftable; /*0x5fc38f*/
-  this->Type = aP1; /*0x5fc395*/
-  this->vtable3 = (void*)&OverlayClass_vftable; /*0x5fc39f*/
-  this->vtable2 = (void*)&OverlayClass_vftable; /*0x5fc3a6*/
-  this->vtable4 = (void*)&OverlayClass_vftable; /*0x5fc3ac*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)((char *)this + 4)); /*0x5fc3b3*/
-  if ( *(int *)&stru_A8EB00.gapE4[124] < *(int *)&stru_A8EB00.gapE4[116] /*0x5fc3ef*/
-    || (stru_A8EB00.gapE4[121] || !*(unsigned int *)&stru_A8EB00.gapE4[116])
-    && *(int *)&stru_A8EB00.gapE4[128] > 0
-    && (*(uint8_t (__thiscall **)(unsigned char *, int, unsigned int))(*(unsigned int *)&stru_A8EB00.gapE4[108] + 8))(
-         &stru_A8EB00.gapE4[108],
-         *(unsigned int *)&stru_A8EB00.gapE4[116] + *(unsigned int *)&stru_A8EB00.gapE4[128],
+  ObjectClass::ctor(); /*0x5fc386*/
+  v5 = aP1; /*0x5fc38b*/
+  *(unsigned int *)this->__pad_0 = (void*)&OverlayClass_vftable; /*0x5fc38f*/
+  this->Object_field_0xAC = v5; /*0x5fc395*/
+  this->Object_field_0x8 = (int)&OverlayClass_vftable; /*0x5fc39f*/
+  *(unsigned int *)&this->Object_field_0x2[2] = (void*)&OverlayClass_vftable; /*0x5fc3a6*/
+  *(unsigned int *)this->__pad_C = (void*)&OverlayClass_vftable; /*0x5fc3ac*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->Object_field_0x2[2]); /*0x5fc3b3*/
+  if ( dword_A8EC60 < dword_A8EC58 /*0x5fc3ef*/
+    || (byte_A8EC5D || !dword_A8EC58)
+    && dword_A8EC64 > 0
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A8EC50 + 8))(
+         &dword_A8EC50,
+         dword_A8EC58 + dword_A8EC64,
          0) )
   {
-    v6 = (*(unsigned int *)&stru_A8EB00.gapE4[124])++; /*0x5fc3fc*/
-    *(unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[112] + 4 * v6) = this; /*0x5fc40b*/
+    v6 = dword_A8EC60++; /*0x5fc3fc*/
+    *((unsigned int *)dword_A8EC54 + v6) = this; /*0x5fc40b*/
   }
   if ( *aP2 != word_AC1528 || aP2[1] != word_AC152A ) /*0x5fc429*/
   {
@@ -432,12 +440,13 @@ void * Object::SpawnAtCell(IUnknown * aP1, IUnknown * aP2, BuildingTypeClass * a
     v7 = (int)(aP2[1]);
     IDA_LOWORD(aP1) = ((*aP2 << 8) + 128) / 256; /*0x5fc469*/
     IDA_HIWORD(aP1) = ((v7 << 8) + 128) / 256; /*0x5fc485*/
-    v8 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP1); /*0x5fc497*/
+    v8 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, (int16_t *)&aP1); /*0x5fc497*/
     if ( !CellClass::FindInfantry(v8, 0) ) /*0x5fc4a0*/
-      ObjectClass::Deploy((ObjectClass *)this); /*0x5fc4b1*/
+      ObjectClass::Deploy(); /*0x5fc4b1*/
     dword_8333BC = -1; /*0x5fc4b6*/
   }
   return this; /*0x5fc4c2*/
+}
 }
 // 0x5FD970
 namespace gamemd {
@@ -642,6 +651,7 @@ int Object::ProcessEvent()
 {
   return (int)this->Type; /*0x5fdde6*/
 }
+}
 // 0x5FDF70
 namespace gamemd {
 void * Object::DrawObject(char a2)
@@ -670,12 +680,13 @@ void * Object::DrawObject(char a2)
     }
   }
   if ( unk_A8E9A0 ) /*0x5fdfe6*/
-    ObjectClass::Undeploy((ObjectClass *)this); /*0x5fdfea*/
+    ObjectClass::Undeploy(); /*0x5fdfea*/
   this->Type = 0; /*0x5fdff1*/
-  ObjectClass::Dtor((ObjectClass *)this); /*0x5fdffb*/
+  ObjectClass::Dtor(); /*0x5fdffb*/
   if ( (a2 & 1) != 0 ) /*0x5fe005*/
-    RA2_OPDEL(this); /*0x5fe008*/
+    RA2_OPDEL(); /*0x5fe008*/
   return &this->vtable0; /*0x5fe012*/
+}
 }
 // 0x62AC30
 namespace gamemd {
@@ -835,6 +846,7 @@ void* * Object::CalculateObjectPlacementPosition(int * a2)
   a2[2] = v29; /*0x62ad11*/
   return a2; /*0x62ad00*/
 }
+}
 // 0x639E30
 namespace gamemd {
 void sub_639E30(int * a1, unsigned int * a2)
@@ -940,6 +952,7 @@ void sub_639E30(int * a1, unsigned int * a2)
   }
   return v19 != -1; /*0x639f49*/
 }
+}
 // 0x646E90
 namespace gamemd {
 char Object_Init(char a1, int a2, int a3, char a4, int a5)
@@ -966,6 +979,7 @@ char Object_Init(char a1, int a2, int a3, char a4, int a5)
   ++Networking_LastEventIndex; /*0x646f43*/
   Networking_NextPacketIndex = ((unsigned char)Networking_NextPacketIndex + 1) & 0x7F; /*0x646f48*/
   return 1; /*0x646f50*/
+}
 }
 // 0x7DEEFA
 namespace gamemd {
@@ -1031,6 +1045,7 @@ void Object_Calc(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, 
   while ( a6 );
   return v9; /*0x7defd4*/
 }
+}
 // 0x7DEFD7
 namespace gamemd {
 void Object_Calc_7DEFD7(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
@@ -1094,6 +1109,7 @@ void Object_Calc_7DEFD7(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
   }
   while ( a6 );
   return v9; /*0x7df0b1*/
+}
 }
 // 0x7DF0B4
 namespace gamemd {
@@ -1159,6 +1175,7 @@ void Object_Calc_7DF0B4(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
   while ( a6 );
   return v9; /*0x7df18e*/
 }
+}
 // 0x7DF191
 namespace gamemd {
 void Object_Calc_7DF191(MouseClass * aP0, unsigned short * a1, int a3, int a4, int a5, int a6)
@@ -1222,6 +1239,7 @@ void Object_Calc_7DF191(MouseClass * aP0, unsigned short * a1, int a3, int a4, i
   }
   while ( a6 );
   return v9; /*0x7df26b*/
+}
 }
 // 0x7DF280
 namespace gamemd {
@@ -1294,6 +1312,7 @@ void Object_Calc_7DF280(MouseClass * aP0, unsigned char * a1, unsigned short * a
   _m_empty(); /*0x7df3b9*/
   return v11; /*0x7df3bf*/
 }
+}
 // 0x7DF3C2
 namespace gamemd {
 void Object_Calc_7DF3C2(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
@@ -1364,6 +1383,7 @@ void Object_Calc_7DF3C2(MouseClass * aP0, unsigned char * a1, unsigned short * a
   LABEL_9:
   _m_empty(); /*0x7df4f7*/
   return v11; /*0x7df4fd*/
+}
 }
 // 0x7DF500
 namespace gamemd {
@@ -1436,6 +1456,7 @@ void Object_Calc_7DF500(MouseClass * aP0, unsigned char * a1, unsigned short * a
   _m_empty(); /*0x7df637*/
   return v11; /*0x7df63d*/
 }
+}
 // 0x7DF640
 namespace gamemd {
 void Object_Calc_7DF640(MouseClass * aP0, unsigned char * a1, unsigned short * a2, int a4, int a5, int a6, int a7, int a8)
@@ -1507,6 +1528,7 @@ void Object_Calc_7DF640(MouseClass * aP0, unsigned char * a1, unsigned short * a
   _m_empty(); /*0x7df778*/
   return v11; /*0x7df77e*/
 }
+}
 // 0x5A7E90
 namespace gamemd {
 void sub_5A7E90(int a1, unsigned short * a2)
@@ -1569,6 +1591,7 @@ void sub_5A7E90(int a1, unsigned short * a2)
   }
   return result; /*0x5a7f8d*/
 }
+}
 // 0x710890
 namespace gamemd {
 void sub_710890(int a1, int a2, int * a3)
@@ -1598,6 +1621,7 @@ void sub_710890(int a1, int a2, int * a3)
     goto LABEL_7; /*0x7108be*/
   }
   return a1 + 8 * (v3 / 2); /*0x7108c4*/
+}
 }
 // 0x42B1F0
 namespace gamemd {
@@ -1686,7 +1710,7 @@ char Object::CheckState(IUnknown * aP1, int a3)
   if ( CellClass::FindInfantry(v5, 0) ) /*0x5fd2ba*/
     return 0; /*0x5fd2c4*/
   else
-    return ObjectClass::Deploy((ObjectClass *)this); /*0x5fd2d2*/
+    return ObjectClass::Deploy(); /*0x5fd2d2*/
 }
 } // namespace gamemd
 
@@ -1814,9 +1838,9 @@ bool sub_733C60(int a1, const char * a2)
 namespace gamemd {
 SessionClass * Object::DtorWithDelete(char a2)
 {
-  DeleteAndZero((ObjectClass *)this); /*0x7ad333*/
+  DeleteAndZero(); /*0x7ad333*/
   if ( (a2 & 1) != 0 ) /*0x7ad33d*/
-    RA2_OPDEL(this); /*0x7ad340*/
+    RA2_OPDEL(); /*0x7ad340*/
   return (void **)this; /*0x7ad34a*/
 }
 } // namespace gamemd

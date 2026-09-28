@@ -18,7 +18,7 @@
 namespace gamemd {
 int ConnectionPointClass::GetConnectionInterface(unsigned int * a1, int a2)
 {
-  void * v3;
+  int v3;
   int v4; // eax
   void * v5;
   int v6; // eax
@@ -112,35 +112,35 @@ namespace gamemd {
 AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
 {
   unsigned int *v4; // edi
-  int v6; // ecx
+  int m_8; // ecx
   int i; // eax
 
   if ( a2 ) /*0x4a128c*/
   {
-    this->q00C = (unsigned int *)(0);
+    IDA_LOBYTE(this->m_C) = 0; /*0x4a1296*/
     if ( a3 ) /*0x4a129c*/
       v4 = a3; /*0x4a12b2*/
     else
-      v4 = operator new(4 * a2); /*0x4a12ae*/
-    this->q00C = 1; /*0x4a12b6*/
+      v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x4a12ae*/
+    IDA_LOBYTE(this->m_C) = 1; /*0x4a12b6*/
     if ( v4 ) /*0x4a12ba*/
     {
-      if ( this->q004 ) /*0x4a12c5*/
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x4a12c5*/
       {
-        v6 = this->q008; /*0x4a12cc*/
-        if ( a2 < v6 ) /*0x4a12d1*/
-          v6 = a2; /*0x4a12d3*/
-        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->q004 + 4 * i - 4) ) /*0x4a12d9*/
+        m_8 = this->m_8; /*0x4a12cc*/
+        if ( a2 < m_8 ) /*0x4a12d1*/
+          m_8 = a2; /*0x4a12d3*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4a12d9*/
           ++i; /*0x4a12de*/
-        if ( this->IsAllocated ) /*0x4a12eb*/
+        if ( IDA_BYTE1(this->m_C) ) /*0x4a12eb*/
         {
-          RA2_OPDEL(this->q004); /*0x4a12f6*/
-          this->q004 = 0; /*0x4a12fe*/
+          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4a12f6*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x4a12fe*/
         }
       }
-      this->q004 = v4; /*0x4a1307*/
-      this->q008 = a2; /*0x4a130f*/
-      this->IsAllocated = a3 == 0; /*0x4a1312*/
+      *(unsigned int *)&this->m_1[3] = v4; /*0x4a1307*/
+      this->m_8 = a2; /*0x4a130f*/
+      IDA_BYTE1(this->m_C) = a3 == 0; /*0x4a1312*/
       return 1; /*0x4a1318*/
     }
     else
@@ -150,7 +150,7 @@ AbstractClass * * ConnectionPointClass_9::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x4a1322*/
+    (*(void (__thiscall **)(_VectorClass_PAUIConnectionPoint *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4a1322*/
     return 1; /*0x4a1328*/
   }
 }
@@ -233,7 +233,7 @@ int ConnectionPointClass::EnumConnections(int a1, int a2)
 namespace gamemd {
 int ConnectionPointClass_9::EnumConnections(int a2)
 {
-  return *(unsigned int *)(this->q004 + 4 * a2); /*0x4a0f7a*/
+  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4a0f7a*/
 }
 } // namespace gamemd
 
@@ -241,24 +241,24 @@ int ConnectionPointClass_9::EnumConnections(int a2)
 namespace gamemd {
 char ConnectionPointClass_9::AddRef(int a2)
 {
-  int v2; // esi
+  int m_8; // esi
   int v3; // edx
   unsigned int *v4; // eax
   int v5; // ecx
 
-  v2 = this->q008; /*0x4a1242*/
-  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x4a124d*/
+  m_8 = this->m_8; /*0x4a1242*/
+  if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4a124d*/
   {
     v3 = 0; /*0x4a124f*/
-    if ( v2 <= 0 ) /*0x4a1253*/
+    if ( m_8 <= 0 ) /*0x4a1253*/
       return 1; /*0x4a1273*/
-    v4 = (unsigned int *)this->q004; /*0x4a1255*/
+    v4 = *(unsigned int **)&this->m_1[3]; /*0x4a1255*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4a125b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4a1264*/
     {
       ++v3; /*0x4a1266*/
       ++v4; /*0x4a1267*/
-      if ( v3 >= v2 ) /*0x4a126c*/
+      if ( v3 >= m_8 ) /*0x4a126c*/
         return 1; /*0x4a126c*/
     }
   }
@@ -271,18 +271,18 @@ namespace gamemd {
 int ConnectionPointClass_9::Advise(unsigned int * a2)
 {
   int result; // eax
-  int v3; // edx
+  int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !this->q00C ) /*0x4a1360*/
+  if ( !IDA_LOBYTE(this->m_C) ) /*0x4a1360*/
     return 0; /*0x4a1368*/
-  v3 = this->q008; /*0x4a136e*/
+  m_8 = this->m_8; /*0x4a136e*/
   result = 0; /*0x4a1371*/
-  if ( v3 <= 0 ) /*0x4a1375*/
+  if ( m_8 <= 0 ) /*0x4a1375*/
     return -1; /*0x4a138c*/
-  for ( i = this->q004; *i != *a2; ++i ) /*0x4a137b*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4a137b*/
   {
-    if ( ++result >= v3 ) /*0x4a138a*/
+    if ( ++result >= m_8 ) /*0x4a138a*/
       return -1; /*0x4a138a*/
   }
   return result; /*0x4a136a*/
@@ -293,8 +293,8 @@ int ConnectionPointClass_9::Advise(unsigned int * a2)
 namespace gamemd {
 unsigned int ConnectionPointClass_9::Unadvise(int a2)
 {
-  if ( this->q00C ) /*0x4a13a0*/
-    return (unsigned int)(a2 - this->q004) >> 2; /*0x4a13b5*/
+  if ( IDA_LOBYTE(this->m_C) ) /*0x4a13a0*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4a13b5*/
   else
     return 0; /*0x4a13a7*/
 }
@@ -306,17 +306,17 @@ VectorClass_flat * ConnectionPointClass_9::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)this->q004; /*0x4a14f3*/
-  *(void **)this = (void*)&VectorClass_IConnectionPoint___vftable; /*0x4a14f6*/
-  if ( v3 && this->IsAllocated ) /*0x4a1500*/
+  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_IConnectionPoint___vftable; /*0x4a14f6*/
+  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4a1500*/
   {
     RA2_OPDEL(v3); /*0x4a1508*/
-    this->q004 = 0; /*0x4a1510*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4a1510*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
+  IDA_BYTE1(this->m_C) = 0; /*0x4a151b*/
+  this->m_8 = 0; /*0x4a1521*/
   if ( (a2 & 1) != 0 ) /*0x4a1528*/
-    RA2_OPDEL(this); /*0x4a152b*/
-  return this; /*0x4a1535*/
+    RA2_OPDEL(); /*0x4a152b*/
+  return this->__pad_0; /*0x4a1535*/
 }
 } // namespace gamemd

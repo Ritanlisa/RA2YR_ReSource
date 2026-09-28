@@ -56,7 +56,7 @@ int INIClass::sub_44FE60()
   int i; // esi
   int v4; // ecx
 
-  INIClass::ClearSection((int)this, (int)aStructures, 0); /*0x44fe6c*/
+  INIClass::ClearSection((int)aStructures, 0); /*0x44fe6c*/
   result = g_BuildingProductionState; /*0x44fe71*/
   for ( i = 0; i < g_BuildingProductionState; ++i ) /*0x44fe7a*/
   {

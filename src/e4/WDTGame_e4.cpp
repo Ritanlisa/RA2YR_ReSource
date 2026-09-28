@@ -7,6 +7,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/WDTState_4_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/Voxel_e4.hpp"
 
 // 0x7B7E40
 namespace gamemd {
@@ -18,7 +19,7 @@ wchar_t ** WDTGame_Helper(CampaignScore * aP0, const wchar_t * a1, wchar_t * For
 
   swprintf(String, (const size_t)a0Dd_0, Format); /*0x7b7e58*/
   swprintf(String, (const size_t)String, a1); /*0x7b7e68*/
-  *(unsigned int *)aP0 = 0; /*0x7b7e76*/
+  *(_DWORD *)aP0 = 0; /*0x7b7e76*/
   if ( String ) /*0x7b7e7c*/
     v5 = wcslen(String) + 1; /*0x7b7e8b*/
   else

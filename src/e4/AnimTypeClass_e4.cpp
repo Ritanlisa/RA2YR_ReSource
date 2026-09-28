@@ -25,7 +25,7 @@ unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
 {
   int v3; // eax
 
-  AbstractTypeClass::Constructor((int *)this, aP1); /*0x41e359*/
+  AbstractTypeClass::Constructor(aP1); /*0x41e359*/
   *(unsigned int *)this->__pad_98 = -1; /*0x41e363*/
   *(unsigned int *)&this->ImageAllocated = -1; /*0x41e369*/
   this->BarrelVoxel_2[0] = 0; /*0x41e374*/
@@ -67,6 +67,7 @@ unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
   }
   return &this->vtable0; /*0x41e473*/
 }
+}
 // 0x427530
 namespace gamemd {
 unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
@@ -76,7 +77,7 @@ unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
   int v5; // eax
   AnimTypeClass **v6; // ecx
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x42753a*/
+  ObjectTypeClass::ConstructFull(aP1); /*0x42753a*/
   this->MiddleFrameIndex = -1; /*0x427544*/
   this->MiddleFrameWidth = 0; /*0x42754a*/
   this->MiddleFrameHeight = 0; /*0x427550*/
@@ -208,6 +209,7 @@ unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
   this->MiddleFrameIndex = v5; /*0x427842*/
   return &this->vtable0; /*0x42784a*/
 }
+}
 // 0x427B50
 namespace gamemd {
 void* AnimTypeClass::GetWarhead(int a2)
@@ -237,7 +239,7 @@ void* AnimTypeClass::GetWarhead(int a2)
       }
       v4 = (int)(this->ImageFile);
       v5 = (int)((const char *)(&this->u32_C84));
-      this->Image = (unsigned int)((void *)((int)(0)));
+      this->Image = (void *)((unsigned int)((void *)((int)(0))));
       if ( !v4 ) /*0x427bb7*/
         v5 = (const char *)(&this->vtable46); /*0x427bb9*/
       _makepath(Buffer, 0, 0, v5, Ext); /*0x427bcb*/
@@ -711,6 +713,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1, void * a3)
     *(unsigned int *)(a1 + 740) = v61; /*0x4287d6*/
   return 1; /*0x4287dc*/
 }
+}
 // 0x428800
 namespace gamemd {
 ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
@@ -758,6 +761,7 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
   }
   return result; /*0x42892b*/
 }
+}
 // 0x4289D0
 namespace gamemd {
 int AnimTypeClass::PowerDrainUpdate(int * a2)
@@ -775,7 +779,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   int v13; // edx
   int v14; // ecx
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x4289d9*/
+  AbstractTypeClass::ProcessPower(a2); /*0x4289d9*/
   Power::TimerProcess(this->Layer[0]); /*0x4289e7*/
   IDA_LOBYTE(v3) = this->Normalized; /*0x4289ec*/
   Power::FlagProcess((Power *)a2, v3); /*0x4289f5*/
@@ -817,6 +821,7 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   IDA_LOBYTE(v14) = this->Tiled; /*0x428b5f*/
   return Power::FlagProcess((Power *)a2, v14); /*0x428b6d*/
 }
+}
 // 0x428B80
 namespace gamemd {
 AnimTypeClass * * AnimTypeClass::FindOrCreate()
@@ -841,6 +846,7 @@ AnimTypeClass * * AnimTypeClass::FindOrCreate()
       goto LABEL_6; /*0x428bd4*/
   }
   return *(unsigned int **)(FootClass_Array.primaryFacing[3] + 4 * v2); /*0x428bef*/
+}
 }
 // 0x428C30
 namespace gamemd {
@@ -912,6 +918,7 @@ int AnimTypeClass::GetDamage()
   }
   return result; /*0x428dd4*/
 }
+}
 // 0x428EA0
 namespace gamemd {
 AnimTypeClass * AnimTypeClass::ddtor(char a2)
@@ -954,9 +961,9 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2)
       ++v4; /*0x428f3f*/
     }
   }
-  ObjectTypeClass::Destruct((int)this); /*0x428f53*/
+  ObjectTypeClass::Destruct(); /*0x428f53*/
   if ( (a2 & 1) != 0 ) /*0x428f5d*/
-    RA2_OPDEL(this); /*0x428f60*/
+    RA2_OPDEL(); /*0x428f60*/
   return &this->vtable0; /*0x428f6a*/
 }
 } // namespace gamemd
@@ -980,6 +987,7 @@ int AnimTypeClass::LookupByName()
       return -1; /*0x48e07a*/
   }
   return v2; /*0x48e07c*/
+}
 }
 // 0x427A80
 namespace gamemd {

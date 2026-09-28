@@ -62,11 +62,12 @@ unsigned int * TaskForceClass::ParseUnitCountAndType(char * Buffer)
     return this->__pad_0; /*0x4c4f3c*/
   }
 }
+}
 // 0x6E7E80
 namespace gamemd {
 unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
 {
-  TaskForceClass * v3;
+  int v3; // eax
   ObjectTypeClass **p_TaskForceClass_field_0xA4; // eax
   int v5; // ecx
 
@@ -86,7 +87,7 @@ unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
          dword_A8E8D8 + dword_A8E8E4,
          0) )
   {
-    v3 = (gamemd::TaskForceClass *)((unsigned int)(dword_A8E8E0++));
+    v3 = (unsigned int)(dword_A8E8E0++);
     *((unsigned int *)unk_A8E8D4 + v3) = this; /*0x6e7f21*/
   }
   p_TaskForceClass_field_0xA4 = (gamemd::ObjectTypeClass **)(&this->TaskForceClass_field_0xA4);
@@ -100,6 +101,7 @@ unsigned int * TaskForceClass::Construct(ObjectClass * aP1)
   }
   while ( v5 ); /*0x6e7f38*/
   return this->__pad_0; /*0x6e7f3c*/
+}
 }
 // 0x6E8220
 namespace gamemd {
@@ -115,7 +117,8 @@ AbstractClass * * TaskForceClass::LoadFromINI(char * a1, int a2)
   int v11; // eax
   int v12; // [esp+10h] [ebp-1Ch]
   char Source[24]; // [esp+14h] [ebp-18h] BYREF
-result = (int)(INIClass::GetKeyCount(a1->__pad_0, g_INI_Key_TaskForces));
+
+  result = (int)(INIClass::GetKeyCount(a1->__pad_0, g_INI_Key_TaskForces));
   v5 = result; /*0x6e8235*/
   v6 = 0; /*0x6e8237*/
   v12 = result; /*0x6e823b*/
@@ -144,7 +147,8 @@ result = (int)(INIClass::GetKeyCount(a1->__pad_0, g_INI_Key_TaskForces));
       v10 = (unsigned int *)*((unsigned int *)unk_A8E8D4 + v8); /*0x6e82f9*/
       goto LABEL_12; /*0x6e82fc*/
     }
-  LABEL_8: v9 = (gamemd::TaskForceClass *)((unsigned int *)((TaskForceClass *)RA2_OPNEW(0xD4u)));
+  LABEL_8:
+    v9 = (TaskForceClass *)RA2_OPNEW(0xD4u); /*0x6e82d7*/
     if ( v9 ) /*0x6e82e1*/
       v10 = TaskForceClass::Construct(v9, Source); /*0x6e82ef*/
     else
@@ -160,6 +164,7 @@ result = (int)(INIClass::GetKeyCount(a1->__pad_0, g_INI_Key_TaskForces));
   }
   return result; /*0x6e8330*/
 }
+}
 // 0x6E87F0
 namespace gamemd {
 void * TaskForceClass::ExecuteAction(char a2)
@@ -171,7 +176,7 @@ void * TaskForceClass::ExecuteAction(char a2)
   this->TaskForceClass_field_0x4 = (int)&TaskForceClass_vftable; /*0x6e87fc*/
   *(unsigned int *)this->__pad_8 = (void*)&TaskForceClass_vftable; /*0x6e8803*/
   *(unsigned int *)&this->__pad_8[4] = (void*)&TaskForceClass_vftable; /*0x6e880a*/
-  AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x6e8811*/
+  AbstractClass::AnnounceExpiredPointer(1); /*0x6e8811*/
   v5 = this; /*0x6e8826*/
   v3 = (*(int (__thiscall **)(unsigned int *, TaskForceClass **))(dword_A8E8D0 + 16))(&dword_A8E8D0, &v5); /*0x6e882a*/
   if ( v3 != -1 && v3 < dword_A8E8E0 && v3 < --dword_A8E8E0 ) /*0x6e8845*/
@@ -183,10 +188,11 @@ void * TaskForceClass::ExecuteAction(char a2)
     }
     while ( v3 < dword_A8E8E0 ); /*0x6e885d*/
   }
-  AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x6e8861*/
+  AbstractTypeClass::Dtor(); /*0x6e8861*/
   if ( (a2 & 1) != 0 ) /*0x6e886b*/
-    RA2_OPDEL(this); /*0x6e886e*/
+    RA2_OPDEL(); /*0x6e886e*/
   return (void **)this; /*0x6e8878*/
+}
 }
 // 0x4C4F90
 namespace gamemd {
@@ -347,7 +353,7 @@ int TaskForceClass::ddtor(int a1, unsigned int * a2)
 namespace gamemd {
 int TaskForceClass::LoadTask(int * a2)
 {
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6e8759*/
+  AbstractTypeClass::ProcessPower(a2); /*0x6e8759*/
   Power::TimerProcess((int)this->TaskForceClass_field_0x98); /*0x6e8767*/
   return Power::TimerProcess(this->TaskForceClass_field_0x9C[0]); /*0x6e877a*/
 }

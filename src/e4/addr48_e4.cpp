@@ -40,6 +40,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
 
 // 0x4880F0
 namespace gamemd {
@@ -108,6 +109,7 @@ ConvertClass * * E4Recv_4880F0::sub_4880F0(int a2)
   (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x4881f5*/
   return 1; /*0x4881fd*/
 }
+}
 // 0x489180
 namespace gamemd {
 void Network_SendTimestamp(int a1, int a2, int a3, int a4)
@@ -115,25 +117,30 @@ void Network_SendTimestamp(int a1, int a2, int a3, int a4)
   int v4; // esi
   int result; // eax
   double v7; // st7
-  int v8; // ecx
-  float v9; // [esp+8h] [ebp-Ch]
-  float v10; // [esp+Ch] [ebp-8h]
+  int v8; // eax
+  int v9; // eax
+  float v10; // [esp+8h] [ebp-Ch]
+  float v11; // [esp+Ch] [ebp-8h]
 
   v4 = a1; /*0x489184*/
-  if ( !a1 || (*(unsigned char *)g_ScenarioClass_Instance & 0x20) != 0 || !a2 ) /*0x4891a5*/
+  if ( !a1 || (dword_A8B230->vtable0 & 0x20) != 0 || !a2 ) /*0x4891a5*/
     return 0; /*0x489263*/
   if ( a1 < 0 )
     return a4 >= 8 ? 0 : a1;
   v7 = (double)a1; /*0x4891c6*/
-  v9 = v7; /*0x4891ca*/
-  v10 = v7 * *(float *)(a2 + 300); /*0x4891d4*/
-  v8 = Math::RoundToInt(*(float *)(a2 + 292) * 256.0); /*0x4891f1*/
-  if ( v10 != v9 && v8 ) /*0x489200*/
-    v4 = Math::RoundToInt((v9 - v10) * (double)(v8 - a4) / (double)v8 + v10); /*0x489225*/
-  result = Math::RoundToInt((double)(v4 <= 0 ? 0 : v4) * *(double *)(a2 + 8 * a3 + 160));
-  if ( result >= *((unsigned int *)g_RulesClass_Instance + 1458) ) /*0x489257*/
-    return *((unsigned int *)g_RulesClass_Instance + 1458); /*0x48925a*/
+  v10 = v7; /*0x4891ca*/
+  v11 = v7 * *(float *)(a2 + 300); /*0x4891d4*/
+  IDA_LOWORD(v8) = Math::RoundToInt(*(float *)(a2 + 292) * 256.0); /*0x4891e4*/
+  if ( v11 != v10 && v8 ) /*0x489200*/
+  {
+    IDA_LOWORD(v9) = Math::RoundToInt((v10 - v11) * (double)(v8 - a4) / (double)v8 + v11); /*0x489220*/
+    v4 = v9; /*0x489225*/
+  }
+  IDA_LOWORD(result) = Math::RoundToInt((double)(v4 <= 0 ? 0 : v4) * *(double *)(a2 + 8 * a3 + 160));
+  if ( result >= dword_8871E0->IRepairRate[0] ) /*0x489257*/
+    return dword_8871E0->IRepairRate[0]; /*0x48925a*/
   return result; /*0x4891b8*/
+}
 }
 // 0x489280
 namespace gamemd {
@@ -286,7 +293,7 @@ void PlaySoundEffectAt(TechnoClass * aP0, IUnknown * aP1, unsigned int * a2, Obj
                   && ((uint8_t (__thiscall *)(IUnknown **, int, unsigned int))v117->field_8)(&v117, var94 + v126, 0) )
                 {
                   v19 = (IUnknown *)((int *)((IUnknown *)(v121)));
-                  v121 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((IUnknown *)((char *)v121 + 1))))))));
+                  v121 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((IUnknown *)((char *)v121 + 1)))))))));
                   *((unsigned int *)Block + (unsigned int)v19) = v109;
                 }
               }
@@ -429,7 +436,7 @@ LABEL_67:
           && ((uint8_t (__thiscall *)(IUnknown **, int, unsigned int))v117->field_8)(&v117, var94 + v126, 0) )
         {
           v48 = (IUnknown *)(v121);
-          v121 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((IUnknown *)((char *)v121 + 1))))))));
+          v121 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((IUnknown *)((char *)v121 + 1)))))))));
           *((unsigned int *)Block + (unsigned int)v48) = v31;
         }
         goto LABEL_80;
@@ -997,6 +1004,7 @@ void Math_SolveTrajectory(char a1, int a2, int a3, int a4, double a5, int a6)
     return 1; /*0x48a9f4*/
   }
 }
+}
 // 0x48B0E0
 namespace gamemd {
 AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a5)
@@ -1047,8 +1055,9 @@ AbstractClass * * CommBufferClass::sub_48B0E0(int a2, int a3, size_t Size, int a
     }
     while ( v8 < this->CommBufferClass_field_0x8 ); /*0x48b1db*/
   }
-  Struct::ClearAllMemberFlags((Struct *)this); /*0x48b1df*/
+  Struct::ClearAllMemberFlags(); /*0x48b1df*/
   return this->__pad_0; /*0x48b1e6*/
+}
 }
 // 0x48BB60
 namespace gamemd {
@@ -1112,6 +1121,7 @@ bool sub_48BB60(int a1)
   v7 = &unk_B7883C; /*0x48bbef*/
   return !*v7 || (*(uint8_t (__thiscall **)(unsigned int, int))(*(unsigned int *)*v7 + 20))(*v7, v1) == 0; /*0x48bc1d*/
 }
+}
 // 0x48BC20
 namespace gamemd {
 int CompareFuncInt(unsigned int * a1, unsigned int * a2)
@@ -1120,6 +1130,7 @@ int CompareFuncInt(unsigned int * a1, unsigned int * a2)
     return 0; /*0x48bc30*/
   else
     return *a1 >= *a2 ? 1 : -1;
+}
 }
 // 0x48C8B0
 namespace gamemd {
@@ -1293,6 +1304,7 @@ AbstractClass * * Main_Game_Frame()
   WTFMode::Init((WTFMode *)&unk_A8B238); /*0x48cc70*/
   return PostFrameCleanup(v11); /*0x48c990*/
 }
+}
 // 0x48CCC0
 namespace gamemd {
 void MainGame()
@@ -1424,6 +1436,7 @@ void MainGame()
     IDA_LOBYTE(inited) = (*(char (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 20))(stru_887598.lineTrailer); /*0x48cfc3*/
   return inited; /*0x48cd8b*/
 }
+}
 // 0x48DEE0
 namespace gamemd {
 void sub_48DEE0(unsigned int * a1, int a2, int a3)
@@ -1457,6 +1470,7 @@ void sub_48DEE0(unsigned int * a1, int a2, int a3)
       }
     }
   }
+}
 }
 // 0x48E0B0
 namespace gamemd {
@@ -1528,6 +1542,7 @@ CellStruct * * sub_48E0B0()
     }
   }
   return result; /*0x48e26c*/
+}
 }
 // 0x483710
 namespace gamemd {
@@ -1767,12 +1782,12 @@ int E4Recv_488210::sub_488210(unsigned int a2, unsigned int * a3, int a4)
   {
     if ( IDA_BYTE1(this->fallRate) ) /*0x48821d*/
     {
-      GadgetClass::Hide((GadgetClass *)this); /*0x488224*/
-      return GadgetClass::ProcessMouseOver((ToggleClass *)this, a2, a3, 0); /*0x48823a*/
+      GadgetClass::Hide(); /*0x488224*/
+      return GadgetClass::ProcessMouseOver(a2, a3, 0); /*0x48823a*/
     }
-    GadgetClass::Show((GadgetClass *)this); /*0x48823d*/
+    GadgetClass::Show(); /*0x48823d*/
   }
-  return GadgetClass::ProcessMouseOver((ToggleClass *)this, a2, a3, 0); /*0x488238*/
+  return GadgetClass::ProcessMouseOver(a2, a3, 0); /*0x488238*/
 }
 } // namespace gamemd
 
@@ -1792,7 +1807,7 @@ int sub_488260()
 namespace gamemd {
 CheckListClass * E4Recv_488280::sub_488280(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
 {
-  ListClass::Construct((int)this, aP1, a3, a4, aP4, a6, aP6, aP7, a9); /*0x4882ad*/
+  ListClass::Construct(aP1, a3, a4, aP4, a6, aP6, aP7, a9); /*0x4882ad*/
   this->u32_174 = 0; /*0x4882b2*/
   *(unsigned int *)this->__pad_0 = (void*)&CheckListClass_vftable; /*0x4882b9*/
   return this->__pad_0; /*0x4882c1*/
@@ -1815,7 +1830,7 @@ int sub_488740()
 namespace gamemd {
 ColorListClass * E4Recv_488760::sub_488760(ListClass * aP1, int a3, int a4, ListClass * aP4, int a6, ControlClass * aP6, ListClass * aP7, int a9)
 {
-  ListClass::Construct((int)this, aP1, a3, a4, aP4, a6, aP6, aP7, a9); /*0x48878d*/
+  ListClass::Construct(aP1, a3, a4, aP4, a6, aP6, aP7, a9); /*0x48878d*/
   this->u32_178 = 0; /*0x488799*/
   this->u32_17C = 0; /*0x48879f*/
   this->u32_180 = 1; /*0x4887a5*/
@@ -2206,9 +2221,9 @@ void CommBufferClass::sub_48B1F0()
 namespace gamemd {
 ObjectClass * E4Recv_48BB00::sub_48BB00(char a2)
 {
-  sub_48B1F0((CommBufferClass *)this); /*0x48bb03*/
+  sub_48B1F0(); /*0x48bb03*/
   if ( (a2 & 1) != 0 ) /*0x48bb0d*/
-    RA2_OPDEL(this); /*0x48bb10*/
+    RA2_OPDEL(); /*0x48bb10*/
   return this; /*0x48bb1a*/
 }
 } // namespace gamemd

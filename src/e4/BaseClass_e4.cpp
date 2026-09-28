@@ -151,6 +151,7 @@ int BaseClass::LoadBaseNodeClass(VectorClass_flat * aP0, int a2)
   }
   return 0; /*0x42f056*/
 }
+}
 // 0x42F070
 namespace gamemd {
 int BaseClass::LoadArrayFields(unsigned int * a1, int a2)
@@ -238,4 +239,5 @@ int BaseClass::LoadArrayFields(unsigned int * a1, int a2)
     }
   }
   return 0; /*0x42f161*/
+}
 }

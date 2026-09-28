@@ -20,7 +20,7 @@ BulletClass::BulletClass()
 {
   int v2; // eax
 
-  ObjectClass::ctor((ObjectClass *)this); /*0x466384*/
+  ObjectClass::ctor(); /*0x466384*/
   this->BulletClass_field_0xAC = 0; /*0x466391*/
   this->BulletClass_field_0xB0 = 0; /*0x466397*/
   this->__pad_B4[0] = 0; /*0x46639d*/
@@ -68,6 +68,7 @@ BulletClass::BulletClass()
   }
   return (int)this->__pad_0; /*0x4664bc*/
 }
+}
 // 0x466560
 namespace gamemd {
 BulletClass * * BulletClass::Dtor()
@@ -80,7 +81,7 @@ BulletClass * * BulletClass::Dtor()
   this->BulletClass_field_0x4 = (void*)&BulletClass_vftable; /*0x46656c*/
   this->BulletClass_field_0x8 = (void*)&BulletClass_vftable; /*0x466573*/
   *(unsigned int *)this->__pad_C = (void*)&BulletClass_vftable; /*0x46657a*/
-  AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x466581*/
+  AbstractClass::AnnounceExpiredPointer(1); /*0x466581*/
   if ( this->__pad_158[0] ) /*0x466586*/
   {
     v5 = this; /*0x4665a0*/
@@ -100,7 +101,7 @@ BulletClass * * BulletClass::Dtor()
     }
   }
   if ( unk_A8E9A0 ) /*0x4665e0*/
-    ObjectClass::Undeploy((ObjectClass *)this); /*0x4665e4*/
+    ObjectClass::Undeploy(); /*0x4665e4*/
   this->BulletClass_field_0xAC = 0; /*0x4665e9*/
   this->BulletClass_field_0xB0 = 0; /*0x4665f3*/
   this->BulletClass_field_0x154 = 0; /*0x4665fd*/
@@ -119,7 +120,8 @@ BulletClass * * BulletClass::Dtor()
       ++v3; /*0x46663e*/
     }
   }
-  return ObjectClass::Dtor((ObjectClass *)this); /*0x466657*/
+  return ObjectClass::Dtor(); /*0x466657*/
+}
 }
 // 0x466660
 namespace gamemd {
@@ -131,7 +133,7 @@ int * BulletClass::CalculateSpreadAngle(int a1)
     dword_89DDF4 = 2147450879; /*0x46668f*/
     atexit(nullsub_108); /*0x466694*/
   }
-  return &dword_89DDF4; /*0x4666a2*/
+  return (int *)(&dword_89DDF4);
 }
 } // namespace gamemd
 

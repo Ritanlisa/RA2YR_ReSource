@@ -58,6 +58,7 @@ int NetworkClass::ExecutePlanningModeCmd()
   }
   return PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a0c0*/
 }
+}
 // 0x6FFE00
 namespace gamemd {
 AbstractClass * * NetworkClass::RecordEvent()
@@ -96,6 +97,7 @@ AbstractClass * * NetworkClass::RecordEvent()
   }
   return result; /*0x6ffe4d*/
 }
+}
 // 0x7B1C50
 namespace gamemd {
 AnimClass * * NetworkClass::UnregisterAsync()
@@ -118,4 +120,5 @@ AnimClass * * NetworkClass::UnregisterAsync()
       return WSAAsyncSelect(result, v2, 0, 0); /*0x7b1c8f*/
   }
   return result; /*0x7b1c7f*/
+}
 }

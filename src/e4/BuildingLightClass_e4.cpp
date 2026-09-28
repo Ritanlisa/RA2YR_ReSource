@@ -121,32 +121,28 @@ namespace gamemd {
 BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
 {
   int v3; // eax
-  ObjectClass *v5; // [esp+4h] [ebp-4h] BYREF
+  BuildingLightClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->vtable0 = (unsigned int)((gamemd::ObjectClass *)((void*)&BuildingLightClass_vftable));
-  this->vtable1 = (gamemd::ObjectClass *)((void*)&BuildingLightClass_vftable);
-  this->vtable2 = (gamemd::ObjectClass *)((void*)&BuildingLightClass_vftable);
-  this->vtable3 = (void*)&BuildingLightClass_vftable; /*0x4370d8*/
+  this->vtable0 = (unsigned int)((void *)((int)&BuildingLightClass_vftable));
+  this->vtable1 = (void *)((int)&BuildingLightClass_vftable);
+  this->vtable2 = (void *)((int)&BuildingLightClass_vftable);
+  this->vtable3 = (int)&BuildingLightClass_vftable; /*0x4370d8*/
   if ( (uint8_t)ObjectClass::Undeploy(this) ) /*0x4370df*/
-    VectorClass::RemoveItem((VectorClass *)&stru_87F5F0.__pad_58[304], (int)this); /*0x4370ee*/
+    VectorClass::RemoveItem(&dword_87F778, (int)this); /*0x4370ee*/
   v5 = this; /*0x437103*/
-  v3 = (*(int (__thiscall **)(char *, ObjectClass **))(*(unsigned int *)&FootClass_Array.isUseless + 16))( /*0x437107*/
-         &FootClass_Array.isUseless,
-         &v5);
-  if ( v3 != -1 && v3 < FootClass_Array.turretRecoil[2] ) /*0x437117*/
+  v3 = (*(int (__thiscall **)(int *, BuildingLightClass **))(dword_8B4190 + 16))(&dword_8B4190, &v5); /*0x437107*/
+  if ( v3 != -1 && v3 < dword_8B41A0 && v3 < --dword_8B41A0 ) /*0x437122*/
   {
-    --FootClass_Array.turretRecoil[2]; /*0x43711c*/
-    for ( ; /*0x437122*/
-          v3 < FootClass_Array.turretRecoil[2];
-          *(unsigned int *)(*(unsigned int *)&FootClass_Array.isALoaner + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&FootClass_Array.isALoaner
-                                                                                      + 4 * v3) )
+    do /*0x43713a*/
     {
       ++v3; /*0x43712a*/
+      *((unsigned int *)dword_8B4194 + v3 - 1) = *((unsigned int *)dword_8B4194 + v3); /*0x43712e*/
     }
+    while ( v3 < dword_8B41A0 ); /*0x43713a*/
   }
-  ObjectClass::Dtor(this); /*0x43713e*/
+  ObjectClass::Dtor(); /*0x43713e*/
   if ( (a2 & 1) != 0 ) /*0x437148*/
-    RA2_OPDEL(this); /*0x43714b*/
+    RA2_OPDEL(); /*0x43714b*/
   return this; /*0x437155*/
 }
 } // namespace gamemd

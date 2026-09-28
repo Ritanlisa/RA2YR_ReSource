@@ -92,8 +92,7 @@ void sub_5C7EC0(const void * a1, int a2)
   dword_ABF8CC = dword_ABF5B0[v2]; /*0x5c7f6e*/
   if ( dword_ABF8CC ) /*0x5c7f74*/
   {
-  LABEL_16:
-    v18 = v14; /*0x5c7f8b*/
+  LABEL_16: v18 = (int)(v14);
     v19 = dword_ABF8C4[v14]; /*0x5c7f8d*/
     v20 = 0x80000000; /*0x5c7f94*/
     v17 = 32 * v18; /*0x5c7f99*/
@@ -135,8 +134,7 @@ void sub_5C7EC0(const void * a1, int a2)
   v25 = (int *)(&dword_ABF5A8);
   if ( dword_ABF5A8 ) /*0x5c8033*/
   {
-  LABEL_24:
-    v27 = v24; /*0x5c8046*/
+  LABEL_24: v27 = (int)(v24);
     v28 = dword_ABF5A0[v24]; /*0x5c8048*/
     v29 = 0x80000000; /*0x5c804f*/
     v30 = 32 * v27; /*0x5c8054*/
@@ -166,4 +164,5 @@ void sub_5C7EC0(const void * a1, int a2)
   IDA_LOWORD(dword_ABF6B4) = IDA_HIWORD(dword_ABF5A4); /*0x5c8091*/
   IDA_LOWORD(dword_ABF5A0[0]) = dword_ABF5A4; /*0x5c8091*/
   return 0; /*0x5c809a*/
+}
 }

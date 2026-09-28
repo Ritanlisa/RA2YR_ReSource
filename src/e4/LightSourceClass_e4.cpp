@@ -11,6 +11,7 @@
 #include "e4/classes/Radar_e4.hpp"
 #include "e4/classes/LightConvertClass_e4.hpp"
 #include "e4/classes/Terrain_e4.hpp"
+#include "e4/classes/Lobby_e4.hpp"
 
 // 0x554760
 namespace gamemd {
@@ -18,7 +19,7 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, LightSourceClass * aP
 {
   int v10; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x554763*/
+  AbstractClass::Constructor(); /*0x554763*/
   this->LightTint[0] = a7; /*0x554774*/
   this->LightIntensity = a6; /*0x554777*/
   this->LightTint[1] = aP7; /*0x55477e*/
@@ -54,7 +55,7 @@ int LightSourceClass::Constructor()
   int v2; // edx
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x554833*/
+  AbstractClass::Constructor(); /*0x554833*/
   this->LightIntensity = 0; /*0x55483d*/
   this->LightTint[0] = 0; /*0x554840*/
   this->LightTint[1] = 0; /*0x554843*/
@@ -87,7 +88,7 @@ int LightSourceClass::Constructor()
 namespace gamemd {
 int LightSourceClass::Stat(AbstractClass * aP1)
 {
-  return AbstractClass::ProcessPower((AbstractClass *)this); /*0x55507a*/
+  return AbstractClass::ProcessPower(); /*0x55507a*/
 }
 } // namespace gamemd
 // 0x555080
@@ -181,11 +182,11 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   if ( this->Activated ) /*0x5551bf*/
   {
     this->Activated = 0; /*0x5551ca*/
-    TacticalClass::ScrollView((TacticalClass *)this, 0); /*0x5551ce*/
+    TacticalClass::ScrollView(0); /*0x5551ce*/
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x5551d5*/
+  AbstractClass::DTOR(); /*0x5551d5*/
   if ( (a2 & 1) != 0 ) /*0x5551df*/
-    RA2_OPDEL(this); /*0x5551e2*/
+    RA2_OPDEL(); /*0x5551e2*/
   return &this->vtable0; /*0x5551ec*/
 }
 } // namespace gamemd

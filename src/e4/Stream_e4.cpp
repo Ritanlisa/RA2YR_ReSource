@@ -10,6 +10,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/SuperClass_e4.hpp"
 #include "e4/classes/Struct_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x439110
 namespace gamemd {
@@ -20,7 +21,8 @@ int Stream::FlushAndReset()
   int Stream_field_08; // edi
   int Stream_field_04; // eax
   int Stream_field_0C; // edi
-v1 = (gamemd::Stream *)((int)(this));
+
+  v1 = (gamemd::Stream *)((int)(this));
   m_Stream = (gamemd::StreamClass *)((int)(this->m_Stream));
   Stream_field_08 = (int)(this->Stream_field_08);
   this->Stream_field_0C = 45; /*0x439119*/
@@ -88,8 +90,7 @@ int Stream::WriteIntArray(TechnoTypeClass * aP1)
   int result; // eax
   int i; // esi
   int Stream_field_10; // [esp+20h] [ebp-4h] BYREF
-
-  v3 = (int)(*aP1);
+v3 = (int)(*aP1);
   Stream_field_10 = this->Stream_field_10; /*0x67a4b9*/
   aP1->IsClean(&Stream_field_10, 4, 0); /*0x67a4bd*/
   result = Stream_field_10; /*0x67a4c0*/

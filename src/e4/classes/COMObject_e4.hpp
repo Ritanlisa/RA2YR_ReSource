@@ -15,6 +15,7 @@ struct COMObject {
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
+    unsigned int u32_1D;  // 0x1D
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
     unsigned char q028;  // 0x28
@@ -32,7 +33,7 @@ struct COMObject {
     unsigned int __pad_0;
     unsigned int __pad_31;
     unsigned int m_2D;
-    unsigned int u32_1D;
+    unsigned int parent_gap;
 // --- flat members (END) ---
     bool IsSameType(void* aP0);
     int FindNextActive(unsigned char * a1);

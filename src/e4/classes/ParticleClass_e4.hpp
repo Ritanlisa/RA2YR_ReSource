@@ -356,7 +356,7 @@ struct ParticleClass {
     void* q4B0;  // 0x4B0
     void* q4B4;  // 0x4B4
     unsigned char q4B8;  // 0x4B8
-    unsigned int ;  // 0x4C4
+    void* q4C4;  // 0x4C4
     unsigned char q4C8;  // 0x4C8
     void* q4CC;  // 0x4CC
     void* q4D0;  // 0x4D0
@@ -550,7 +550,6 @@ struct ParticleClass {
     unsigned int q0185;
     unsigned int q0186;
     unsigned int vtable49;
-    unsigned int q4C4;
 // --- flat members (END) ---
     int * CheckDrawFlags(int a1);
     int CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2);

@@ -35,11 +35,11 @@ int Warhead::GetWarheadSound(int a2)
 {
   Warhead * v3;
 
-  if ( Audio::IsLoud((float *)(this->q130 + 336)) ) /*0x41d7ec*/
+  if ( (uint8_t)Audio::IsLoud((int *)(this->q130 + 336)) ) /*0x41d7ec*/
     v3 = this->q048; /*0x41d7f5*/
   else
     v3 = this->q044; /*0x41d7fa*/
-  return !this->u8_3C && v3 + this->q040 <= (int)g_CurrentFrame || a2 != this->u32_14; /*0x41d814*/
+  return !this->u8_3C && v3 + this->q040 <= (int)dword_A8ED84 || a2 != this->u32_14; /*0x41d814*/
 }
 } // namespace gamemd
 // 0x452820
@@ -941,7 +941,7 @@ int Warhead::ApplyPostDamageEffects()
   int v89; // [esp+9Ch] [ebp-44h]
   int * v90;
   unsigned int v91;
-  unsigned int v92;
+  int * v92;
   int v93; // [esp+ACh] [ebp-34h] BYREF
   int v94; // [esp+B0h] [ebp-30h]
   int v95; // [esp+B4h] [ebp-2Ch]
@@ -965,8 +965,8 @@ int Warhead::ApplyPostDamageEffects()
     {
       v5 = (int *)(*(&this->u32_C9));
       v6 = (int *)(*(&this->u32_100));
-      v7 = (unsigned int)((int *)(*v4));
-      v92 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(*(&this->u32_101))))))));
+      v7 = (int *)((unsigned int)((int *)(*v4)));
+      v92 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(*(&this->u32_101))))))))));
       v8 = (int *)((unsigned int *)v4->GetCoords_0(&v93));
       v9 = (int *)(Coord::Subtract(&v90, *v8 - v5, v8[1] - v6, v8[2] - v92));
       v84 = *v9; /*0x46a399*/
@@ -1220,8 +1220,8 @@ int Warhead::ApplyPostDamageEffects()
               v66 = (int *)(*(&this->u32_100));
               v75 = (int *)(v65 * v87);
               v67 = (int *)(*(&this->u32_101));
-              v91 = (int *)(v66);
-              v92 = v67; /*0x46ad16*/
+              v91 = (unsigned int)((int *)(v66));
+              v92 = (unsigned int)(v67);
               (*(void (__thiscall **)(int, int *, double *))(*(unsigned int *)v80 + 496))(v80, &v90, &v73); /*0x46ad29*/
               v68 = *(&this->u32_100); /*0x46ad31*/
               v69 = *(&this->u32_101); /*0x46ad34*/
@@ -1346,11 +1346,11 @@ int Warhead::ProcessDamageArea()
   if ( v21 ) /*0x65b77a*/
   {
     TacticalClass::UpdateScrollTarget(v21, v7, v10, v12, v15, 0); /*0x65b7e8*/
-    return RadSiteClass::Radiate((int)this); /*0x65b7ef*/
+    return RadSiteClass::Radiate(); /*0x65b7ef*/
   }
   else
   {
-    v22 = (LightSourceClass *)RA2_OPNEW(0x4Cu); /*0x65b77e*/
+    v22 = (unsigned int)((LightSourceClass *)RA2_OPNEW(0x4Cu));
     if ( v22 ) /*0x65b788*/
       v23 = LightSourceClass::Construct(v22, v31, v33, v34, v30, v7, v10, v12, v15); /*0x65b7b2*/
     else
@@ -1358,7 +1358,7 @@ int Warhead::ProcessDamageArea()
     this->u32_24 = v23; /*0x65b7bb*/
     v23[13] = 0; /*0x65b7be*/
     Trigger::EnableOnce(*((Trigger **)this + 9), 0); /*0x65b7ca*/
-    return RadSiteClass::Radiate((int)this); /*0x65b7d1*/
+    return RadSiteClass::Radiate(); /*0x65b7d1*/
   }
 }
 } // namespace gamemd

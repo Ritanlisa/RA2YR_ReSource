@@ -38,3 +38,4 @@ int ColorScheme::Destructor()
   }
   return result; /*0x68c925*/
 }
+}

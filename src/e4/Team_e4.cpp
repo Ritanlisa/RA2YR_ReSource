@@ -143,6 +143,7 @@ void Team_Start()
   }
   return result; /*0x5611d9*/
 }
+}
 // 0x5D26C0
 namespace gamemd {
 int Team::ReleaseAll(ObjectClass * aP1)
@@ -165,6 +166,7 @@ int Team::ReleaseAll(ObjectClass * aP1)
     while ( v3 < result ); /*0x5d26e4*/
   }
   return result; /*0x5d26e7*/
+}
 }
 // 0x6219D0
 namespace gamemd {
@@ -286,6 +288,7 @@ void sub_6219D0(int * a1, int a2, int a3, int a4)
   }
   return result; /*0x621b6c*/
 }
+}
 // 0x634B20
 namespace gamemd {
 Game * * E4Recv_634B20::sub_634B20()
@@ -363,6 +366,7 @@ Game * * E4Recv_634B20::sub_634B20()
     }
   }
 }
+}
 // 0x637640
 namespace gamemd {
 void ** E4Recv_637640::sub_637640()
@@ -422,6 +426,7 @@ void ** E4Recv_637640::sub_637640()
     *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x637740*/
   return result; /*0x637747*/
 }
+}
 // 0x638B70
 namespace gamemd {
 void sub_638B70(int * a1, int a2, char a3, char a4)
@@ -467,6 +472,7 @@ int Team::GetMember(AbstractClass * aP1)
 {
   return *((unsigned int *)this->field_E4 + aP1); /*0x65ad3d*/
 }
+}
 // 0x65AE30
 namespace gamemd {
 int Team::AllMembersValid()
@@ -496,6 +502,7 @@ int Team::AllMembersValid()
   }
   return result; /*0x65ae51*/
 }
+}
 // 0x63A1B0
 namespace gamemd {
 void sub_63A1B0(int a1)
@@ -521,6 +528,7 @@ void sub_63A1B0(int a1)
     AddMessageListPlayerMessage(StringCSF, 480); /*0x63a1f7*/
     goto LABEL_7; /*0x63a1f7*/
   }
+}
 }
 // 0x76ED10
 namespace gamemd {
@@ -586,6 +594,7 @@ bool Team_Start_76ED10()
   SelectionInitializeWOL((int)v13); /*0x76ee9f*/
   return v6; /*0x76ed22*/
 }
+}
 // 0x7AFAD0
 namespace gamemd {
 void Team_Start_7AFAD0()
@@ -618,6 +627,7 @@ void Team_Start_7AFAD0()
       return 3; /*0x7afb64*/
   }
   return 0; /*0x7afb34*/
+}
 }
 // 0x752460
 namespace gamemd {

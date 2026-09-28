@@ -21,6 +21,8 @@
 #include "e4/classes/WaveClass_e4.hpp"
 #include "e4/classes/WaypointClass_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/Warhead_e4.hpp"
+#include "e4/classes/WaypointPathClass_e4.hpp"
 
 // 0x6A01A0
 namespace gamemd {
@@ -115,6 +117,7 @@ AbstractClass * * WalkLocomotion::MoveTo(IUnknown * aP1, int aP3)
     }
   }
   return v5; /*0x6a0295*/
+}
 }
 // 0x6A05F0
 namespace gamemd {
@@ -441,7 +444,7 @@ LABEL_37:
     {
       int v54 = *((unsigned int *)v50 + 3 * v53 - 1);
       char * v55 = (char *)v50 + 12 * v53;
-      aP3.abstractFlags = v54;
+      aP3.abstractFlags = (void *)(v54);
       int v56 = *((unsigned int *)v55 - 2);
       int v57 = *((unsigned int *)v55 - 3);
       aP3.customSound_controller[1] = v56;
@@ -465,16 +468,12 @@ LABEL_37:
     }
     aP3.abstractFlags = *(unsigned int *)(*(unsigned int *)&aP3[8] + 12 * this->q05C + 8);
   int *v60; // eax
-    v60 = WalkLocomotion::TransformCoords(
-            (unsigned int *)this,
-            (ObjectClass *)&aP3.lastLayer,
-            (IUnknown *)&aP3.health,
-            (ObjectClass *)&aP3.abstractFlags);
+    v60 = (int *)(WalkLocomotion::TransformCoords( (unsigned int *)this, (ObjectClass *)&aP3.lastLayer, (IUnknown *)&aP3.health, (ObjectClass *)&aP3.abstractFlags));
     int v61 = v60[1];
-    aP3.nextArrayIndex = *v60;
+    aP3.nextArrayIndex = (void *)(*v60);
     aP3.NeedsSaveOrLink = 0;
-    v62 = this->q00C;
-    aP3.referenceCount = v61;
+    v62 = (gamemd::MouseClass *)(this->q00C);
+    aP3.referenceCount = (void *)(v61);
     int v63 = v61;
     int v64 = *(unsigned int *)&v62->__pad_74[40];
     int v65 = *(unsigned int *)&v62->__pad_74[44];
@@ -2366,4 +2365,5 @@ unsigned int * WalkLocomotion::TransformCoords(ObjectClass * aP1, IUnknown * aP2
   *aP1 = &WalkLocomotion_field_0x40[v6]; /*0x6a3e22*/
   aP1[1] = &WalkLocomotion_field_0x44[v7]; /*0x6a3e25*/
   return aP1; /*0x6a3e20*/
+}
 }

@@ -9,6 +9,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x557AC0
 namespace gamemd {
@@ -21,13 +22,14 @@ int Array::GetClamped(CheckListClass * aP1)
   result = (void *)((int)(this->q044));
   if ( result ) /*0x557ac5*/
   {
-    v3 = (unsigned int)((gamemd::CheckListClass *)((int)(aP1)));
+    v3 = (gamemd::CheckListClass *)((int)(aP1));
     v4 = (gamemd::CheckListClass *)(result - 1);
     if ( aP1 >= v4 ) /*0x557ad1*/
       v3 = v4; /*0x557ad3*/
     return *(unsigned int *)(this->q038 + 4 * v3); /*0x557ad8*/
   }
   return (int)(result);
+}
 }
 // 0x634290
 namespace gamemd {
@@ -52,6 +54,7 @@ int Array::FindValue(IUnknown * aP1)
   }
   return result; /*0x6342b4*/
 }
+}
 // 0x63E590
 namespace gamemd {
 int Array::RemoveAt(int a2)
@@ -68,8 +71,8 @@ int Array::RemoveAt(int a2)
   }
   else
   {
-    v4 = (char *)((unsigned int)(Array_field_0x10 - 1));
-    this->Array_field_0x10 = (unsigned int)(v4);
+    v4 = (unsigned int)(Array_field_0x10 - 1);
+    this->Array_field_0x10 = v4; /*0x63e59e*/
     if ( a2 < (int)v4 ) /*0x63e5a1*/
     {
       do /*0x63e5b4*/
@@ -83,11 +86,13 @@ int Array::RemoveAt(int a2)
   }
   return result; /*0x63e5b9*/
 }
+}
 // 0x65AD40
 namespace gamemd {
 int Array::Get(int a2)
 {
   return *((unsigned int *)this->Array_field_0xE4 + a2); /*0x65ad4d*/
+}
 }
 // 0x65ADF0
 namespace gamemd {
@@ -122,6 +127,7 @@ int Array::ContainsValue(IUnknown * aP1)
   }
   return result; /*0x65ae1a*/
 }
+}
 // 0x7490D0
 namespace gamemd {
 int Array::Zero()
@@ -142,6 +148,7 @@ int Array::Zero()
     while ( result < (int)this->Array_field_0x800 ); /*0x7490f1*/
   }
   return result; /*0x7490f4*/
+}
 }
 // 0x749150
 namespace gamemd {
@@ -167,6 +174,7 @@ void Array::ByteSwap()
     this->q201 = 0; /*0x749191*/
   }
 }
+}
 // 0x763980
 namespace gamemd {
 int Array::GetElement(CampaignScore * aP1)
@@ -175,6 +183,7 @@ int Array::GetElement(CampaignScore * aP1)
     return 0; /*0x763999*/
   else
     return (int)this->Array_field_0x2C + 12 * aP1; /*0x763993*/
+}
 }
 // 0x7ACD30
 namespace gamemd {
@@ -190,6 +199,7 @@ int Array::CleanupArrayWOL()
   }
   *(unsigned int *)this->__pad_0 = 0; /*0x7acd4d*/
   return result; /*0x7acd53*/
+}
 }
 // 0x7AD790
 namespace gamemd {
@@ -260,6 +270,7 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
     qmemcpy(v14, a1, 0x10Cu); /*0x7ad917*/
   ++*(unsigned int *)this->__pad_0; /*0x7ad91e*/
   return 1; /*0x7ad91b*/
+}
 }
 // 0x4068F0
 namespace gamemd {
@@ -368,7 +379,7 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
   {
     if ( (*(int (__thiscall **)(int))(*(unsigned int *)aP0 + 44))(aP0) == 44 ) /*0x55b893*/
     {
-      v2 = g_ScenarioUpdateState; /*0x55b895*/
+      v2 = (unsigned int)(g_ScenarioUpdateState);
       v3 = 0; /*0x55b89b*/
       if ( g_ScenarioUpdateState > 0 ) /*0x55b89f*/
       {

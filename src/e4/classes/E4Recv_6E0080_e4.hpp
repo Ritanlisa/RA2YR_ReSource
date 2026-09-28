@@ -14,6 +14,7 @@ struct E4Recv_6E0080 {
     unsigned int q608;  // 0x608
     unsigned int q1544;  // 0x1544
     unsigned int q5444;  // 0x5444
+    unsigned int ambientSoundController;
 // --- flat members (END) ---
     char sub_6E0080(int a2,  int a3,  int a4,  int a5);    // 0x6E0080
 };

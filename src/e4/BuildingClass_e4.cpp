@@ -40,21 +40,21 @@ void* BuildingClass::LoadFromStream()
   char *i; // eax
   unsigned int *v8; // eax
   int v9; // ebp
-  BuildingClass * result;
+  int result; // eax
   int v11; // esi
   int vtable2; // eax
   int v13; // eax
   int FiringOccupantIndex; // ecx
   int v15; // eax
-  BuildingClass * v16;
-  BuildingClass * v17;
+  int v16; // eax
+  int v17; // edx
   int v18; // esi
   int v19; // eax
   int v20; // ebx
   int v21; // ecx
   int v22; // eax
-  BuildingClass * v23;
-  BuildingClass * v24;
+  int v23; // eax
+  int v24; // edx
   int v25; // esi
   int *Anims; // esi
   int v27; // ebp
@@ -181,7 +181,7 @@ void* BuildingClass::LoadFromStream()
           {
             while ( 1 ) /*0x45409c*/
             {
-              result = (int)((gamemd::BuildingClass *)((*(int (__stdcall **)(int, BuildingClass **, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v33, 4, 0)));
+              result = (*(int (__stdcall **)(int, BuildingClass **, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v33, 4, 0); /*0x45409c*/
               if ( result < 0 ) /*0x4540a1*/
                 break; /*0x4540a1*/
               v21 = v1->Audio8[0]; /*0x4540a7*/
@@ -193,9 +193,9 @@ void* BuildingClass::LoadFromStream()
                      v21 + v22,
                      0) )
               {
-                v23 = (gamemd::BuildingClass *)((unsigned int)(v1->Audio8[2]));
-                v24 = (gamemd::BuildingClass *)((char)(v1->Audio7[4]));
-                v1->Audio8[2] = (char)(v23 + 1);
+                v23 = (unsigned int)(v1->Audio8[2]);
+                v24 = (unsigned int)(v1->Audio7[4]);
+                v1->Audio8[2] = (unsigned int)(v23 + 1);
                 *(unsigned int *)(v24 + 4 * v23) = v33; /*0x4540ef*/
               }
               v19 = v34; /*0x4540f2*/
@@ -209,7 +209,7 @@ void* BuildingClass::LoadFromStream()
       {
         while ( 1 ) /*0x453fed*/
         {
-          result = (int)((gamemd::BuildingClass *)((*(int (__stdcall **)(int, BuildingClass **, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v33, 4, 0)));
+          result = (*(int (__stdcall **)(int, BuildingClass **, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v33, 4, 0); /*0x453fed*/
           if ( result < 0 ) /*0x453ff2*/
             break; /*0x453ff2*/
           FiringOccupantIndex = v1->FiringOccupantIndex; /*0x453ff8*/
@@ -221,9 +221,9 @@ void* BuildingClass::LoadFromStream()
                  FiringOccupantIndex + v15,
                  0) )
           {
-            v16 = (gamemd::BuildingClass *)((unsigned int)(v1->Audio7[1]));
-            v17 = (char)(v1->Occupants[0]);
-            v1->Audio7[1] = (char)(v16 + 1);
+            v16 = (unsigned int)(v1->Audio7[1]);
+            v17 = (unsigned int)(v1->Occupants[0]);
+            v1->Audio7[1] = (unsigned int)(v16 + 1);
             *(unsigned int *)(v17 + 4 * v16) = v33; /*0x454040*/
           }
           v13 = v34; /*0x454043*/
@@ -234,6 +234,7 @@ void* BuildingClass::LoadFromStream()
     }
   }
   return (void *)(result);
+}
 }
 // 0x455D50
 namespace gamemd {
@@ -248,11 +249,12 @@ int BuildingClass::AssignDestination_SyncLog()
     if ( (*((uint8_t (__thiscall **)(BuildingClass *))this->vtable0 + 161))(this) /*0x455d73*/
       || this->Type->ConstructionYard )
     {
-      TechnoClass::SetFocus((TechnoClass *)this, (int)v3); /*0x455d80*/
+      TechnoClass::SetFocus((int)v3); /*0x455d80*/
     }
     IPersistStream::Stub(v3, v4); /*0x455d8d*/
   }
   return result; /*0x455d93*/
+}
 }
 // 0x4DFCB0
 namespace gamemd {
@@ -318,6 +320,7 @@ int BuildingClass::FindClosestForRepair(unsigned int * a1)
     a1->shouldEnterOccupiable = 0; /*0x4dfda9*/
     return 0; /*0x4dfdb0*/
   }
+}
 }
 // 0x4DFE00
 namespace gamemd {
@@ -387,6 +390,7 @@ int BuildingClass::FindClosestForRepair2(int a1)
     return 0; /*0x4dfef6*/
   }
 }
+}
 // 0x629720
 namespace gamemd {
 int BuildingClass::AnimController()
@@ -444,6 +448,7 @@ int BuildingClass::AnimController()
   }
   return 0; /*0x62978a*/
 }
+}
 // 0x70BF50
 namespace gamemd {
 int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
@@ -452,7 +457,7 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
   BuildingClass * v3;
   int v4; // ebp
 
-  result = (int)(RadioClass::LoadState(aP0, aP2));
+  result = RadioClass::LoadState(aP0, aP2); /*0x70bf5c*/
   if ( result >= 0 ) /*0x70bf65*/
   {
     aP0->planningToken = (void *)((int)(0));
@@ -516,6 +521,7 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
   }
   return result; /*0x70c249*/
 }
+}
 // 0x712130
 namespace gamemd {
 int BuildingClass::processCapture()
@@ -532,6 +538,7 @@ int BuildingClass::processCapture()
   if ( v1 != v2 && v1->location <= 1 && (!v2 || *(int *)(v2 + 156) <= 1) ) /*0x71215f*/
     return 0; /*0x712161*/
   return result; /*0x712163*/
+}
 }
 // 0x739EC0
 namespace gamemd {
@@ -554,12 +561,12 @@ void BuildingClass::ClearSuperWeaponAnim()
   result = this->UpgradeLevel; /*0x451694*/
   if ( result ) /*0x45169c*/
   {
-    v3 = result; /*0x4516a1*/
+    v3 = (int)(result);
     v4 = 0; /*0x4516a4*/
     v5 = this->DamageFireAnims[result + 8]; /*0x4516a6*/
     if ( v5 && (v4 = *(unsigned int *)(v5 + 5872) != -1, *(unsigned char *)(v5 + 3233)) ) /*0x4516c0*/
     {
-      BuildingClass::ClearAnims(this, 9); /*0x4516ce*/
+      BuildingClass::ClearAnims(9); /*0x4516ce*/
       this->DamageFireAnims[this->UpgradeLevel + 8] = 0; /*0x4516dc*/
       this->UpgradeLevel = 0; /*0x4516e7*/
       this->SuperWeaponToken = -1; /*0x4516ee*/
@@ -571,7 +578,7 @@ void BuildingClass::ClearSuperWeaponAnim()
     }
     else
     {
-      BuildingClass::ClearAnims(this, v3 - 1); /*0x45170e*/
+      BuildingClass::ClearAnims(v3 - 1); /*0x45170e*/
       v6 = this->UpgradeLevel - 1; /*0x451719*/
       this->UpgradeLevel = v6; /*0x45171b*/
       this->Upgrades[v6] = 0; /*0x451726*/
@@ -590,7 +597,7 @@ TechnoClass * BuildingClass::ClearLimpetCheck()
 {
   unsigned int *v2; // [esp+4h] [ebp+4h]
 
-  *v2 = g_TerrainTypeTable; /*0x459dba*/
+  *v2 = (gamemd::TechnoClass *)(g_TerrainTypeTable);
   return (int)v2; /*0x459dbc*/
 }
 } // namespace gamemd
@@ -607,11 +614,11 @@ int BuildingClass::Mission_Guard()
 namespace gamemd {
 int BuildingClass::FindInPointerArray(unsigned int * a2)
 {
-  int v2; // edx
+  void * v2;
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = this->uniqueId; /*0x45a610*/
+  v2 = (int)(this->uniqueId);
   result = 0; /*0x45a613*/
   if ( v2 <= 0 ) /*0x45a618*/
     return -1; /*0x45a62f*/
@@ -621,6 +628,7 @@ int BuildingClass::FindInPointerArray(unsigned int * a2)
       return -1; /*0x45a62d*/
   }
   return result; /*0x45a632*/
+}
 }
 // 0x5F5E80
 namespace gamemd {

@@ -31,6 +31,8 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/NeuronClass_25_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x5D4210
 namespace gamemd {
@@ -44,7 +46,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, 
   int v13; // edx
   wchar_t *v14; // ebx
   int v15; // eax
-  int v16; // eax
+  void * v16;
   int v17; // ecx
   int v18; // eax
   int v19; // ecx
@@ -153,6 +155,7 @@ int NetworkLobby::MessageList_Append(int a2, int a3, CellStruct * aP3, char a5, 
     return *(unsigned int *)&this->__pad_C[24]; /*0x5d4378*/
   }
 }
+}
 // 0x5DB9B0
 namespace gamemd {
 int NetworkLobby_UpdatePlayerList()
@@ -203,6 +206,7 @@ int NetworkLobby_UpdatePlayerList()
     return UpdateWindow(v5); /*0x5dbb48*/
   }
   return result; /*0x5dbb52*/
+}
 }
 // 0x5DC350
 namespace gamemd {
@@ -1625,6 +1629,7 @@ int NetworkLobby::DlgProc(HWND hDlg, UINT a2, WPARAM nIDDlgItem, unsigned int lP
   }
   return result; /*0x5de60a*/
 }
+}
 // 0x5E00B0
 namespace gamemd {
 void NetworkLobby_MessageHandler()
@@ -2990,6 +2995,7 @@ void NetworkLobby::SetupPlayers()
     }
   }
 }
+}
 // 0x5E9240
 namespace gamemd {
 int NetworkLobby::AssignPlayerSlot()
@@ -3010,6 +3016,7 @@ int NetworkLobby::AssignPlayerSlot()
   dword_A8DA90[result] = (LPARAM)this; /*0x5e9284*/
   return result; /*0x5e927a*/
 }
+}
 // 0x5E9E00
 namespace gamemd {
 int NetworkLobby::InitLobbyDropdowns()
@@ -3026,7 +3033,7 @@ int NetworkLobby::InitLobbyDropdowns()
     result = Dialog::OptionIDToIndex(ResourceID4CSF); /*0x5e9e20*/
     if ( (ObjectClass *)result == unk_A8DA8C ) /*0x5e9e2b*/
     {
-      SetupLobbyPlayerSlots((HWND)this, (int)ResourceID4CSF, ComboBoxSelectedRaw2); /*0x5e9e32*/
+      SetupLobbyPlayerSlots((int)ResourceID4CSF, ComboBoxSelectedRaw2); /*0x5e9e32*/
       result = dword_A8DA84; /*0x5e9e37*/
       if ( dword_A8DA84 ) /*0x5e9e3e*/
         result = SessionClass::SetOption2((int *)*dword_A8DA78, ComboBoxSelectedRaw2); /*0x5e9e48*/
@@ -3037,6 +3044,7 @@ int NetworkLobby::InitLobbyDropdowns()
     }
   }
   return result; /*0x5e9e5c*/
+}
 }
 // 0x5EA2A0
 namespace gamemd {
@@ -3114,6 +3122,7 @@ void * NetworkLobby::Dispatch()
   }
   return result; /*0x5ea3d3*/
 }
+}
 // 0x5EB660
 namespace gamemd {
 int NetworkLobby::SetupPlayerSlotControls()
@@ -3178,7 +3187,7 @@ int NetworkLobby::SetupPlayerSlotControls()
         dword_A8DA90[i] = g_Lobby_PlayerCount; /*0x5eb765*/
       else
         dword_A8DA90[i] = g_HouseClass_ObserverFlags; /*0x5eb756*/
-      SetupSkirmishPlayerSlots((HWND)this, (void *)i, 0); /*0x5eb772*/
+      SetupSkirmishPlayerSlots((void *)i, 0); /*0x5eb772*/
       *(unsigned int *)&stru_A8B250.__pad_0[4 * i + 44] = -1; /*0x5eb77a*/
       *(unsigned int *)&stru_A8B250.__pad_0[4 * i + 76] = -1; /*0x5eb781*/
       *(unsigned int *)&stru_A8B250.__pad_0[4 * i + 108] = -1; /*0x5eb788*/
@@ -3186,6 +3195,7 @@ int NetworkLobby::SetupPlayerSlotControls()
     }
   }
   return v7; /*0x5eb7a2*/
+}
 }
 // 0x5EE3A0
 namespace gamemd {
@@ -3267,6 +3277,7 @@ char NetworkLobby::FillOptionCombo()
   }
   return (char)ResourceID4; /*0x5ee4a5*/
 }
+}
 // 0x5DA080
 namespace gamemd {
 int NetworkLobby::GetPlayerCount(char a1)
@@ -3301,7 +3312,7 @@ char NetworkLobby::ValidateSerialNumber()
   CHAR SubKey[256]; // [esp+9Ch] [ebp-100h] BYREF
 
   strcpy((char *)Data, "0000000000000000000000"); /*0x5dc17c*/
-  strcpy(this, (const char *)Data); /*0x5dc1b7*/
+  strcpy((const char *)Data); /*0x5dc1b7*/
   memset(Data, 0, sizeof(Data)); /*0x5dc1c9*/
   if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven ) /*0x5dc1d2*/
   {
@@ -3317,7 +3328,7 @@ char NetworkLobby::ValidateSerialNumber()
     }
   }
   Data[22] = 0; /*0x5dc26d*/
-  strcpy(this, (const char *)Data); /*0x5dc28b*/
+  strcpy((const char *)Data); /*0x5dc28b*/
   v2 = 0; /*0x5dc294*/
   v3 = fopen(aWoldataKey, aR); /*0x5dc296*/
   v4 = v3; /*0x5dc29b*/
@@ -3330,7 +3341,7 @@ char NetworkLobby::ValidateSerialNumber()
       v2 = 0; /*0x5dc2f9*/
   }
   fclose(v4); /*0x5dc30c*/
-  strcpy(this, (const char *)Data); /*0x5dc32e*/
+  strcpy((const char *)Data); /*0x5dc32e*/
   return 1; /*0x5dc2a4*/
 }
 } // namespace gamemd
@@ -3588,7 +3599,7 @@ void NetworkLobby::UpdateLabels()
     do /*0x5ee6e4*/
     {
       ResourceID3CSF = GetResourceID3CSF(v2); /*0x5ee6b8*/
-      FillComboBoxSides((HWND)this, ResourceID3CSF); /*0x5ee6be*/
+      FillComboBoxSides(ResourceID3CSF); /*0x5ee6be*/
       v5 = SetComboBoxSelection((HWND)this, ResourceID3CSF, -1); /*0x5ee6c9*/
       if ( *v3 ) /*0x5ee6ce*/
         SessionClass::SetOption(*v3, v5); /*0x5ee6d5*/

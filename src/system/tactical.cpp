@@ -2089,18 +2089,18 @@ int TacticalClass::InitView()
   int v1; // eax
   unsigned int *result; // eax
   int v3; // [esp+0h] [ebp-10h] BYREF
-  unsigned int v4[2]; // [esp+4h] [ebp-Ch] BYREF
+  int v4[2]; // [esp+4h] [ebp-Ch] BYREF
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v1 = (*((int16_t *)g_ScenarioClass_Instance + 6734) << 8) + 128; /*0x537648*/
-  v4[0] = (*((int16_t *)g_ScenarioClass_Instance + 6733) << 8) + 128; /*0x53764d*/
+  v1 = (SLOWORD(dword_A8B230[374].vtable1) << 8) + 128; /*0x537648*/
+  v4[0] = (IDA_SHIWORD(dword_A8B230[374].vtable0) << 8) + 128; /*0x53764d*/
   v4[1] = v1; /*0x537656*/
   GroundHeight = 0; /*0x53765a*/
   GroundHeight = Cell::GetGroundHeight(v4); /*0x53766d*/
-  Tactical::SetTacticalPosition(v4); /*0x537676*/
-  result = (unsigned int *)g_RadarBlipManager; /*0x53767b*/
-  if ( g_RadarBlipManager ) /*0x537682*/
-    return Tactical::MouseMove((int)&MapClass_Instance, &v3, &word_A8F2F8); /*0x537693*/
+  Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, v4); /*0x537676*/
+  result = (unsigned int *)dword_880990; /*0x53767b*/
+  if ( dword_880990 ) /*0x537682*/
+    return Tactical::MouseMove((Tactical *)&dword_87F7E8, &v3, &word_A8F2F8); /*0x537693*/
   return result; /*0x537698*/
 }
 // 0x6d5f60

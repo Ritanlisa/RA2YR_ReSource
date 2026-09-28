@@ -36,6 +36,7 @@ int Rect::SetRedraw(int a1) {
   this->Width = result; /*0x48bab3*/
   return result; /*0x48bab6*/
 }
+}
 // 0x4A0E60
 namespace gamemd { 
 void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int a2) {
@@ -54,6 +55,7 @@ void* EnumConnectionPointsClass::Constructor_VectorClass_IConnectionPoint___(int
     RA2_OPDEL(this); /*0x4a0e9b*/
   return this->__pad_0; /*0x4a0ea5*/
 }
+}
 // 0x4A0F20
 namespace gamemd { 
 void EnumConnectionPointsClass::ClearBuffer() {
@@ -69,6 +71,7 @@ void EnumConnectionPointsClass::ClearBuffer() {
   IDA_BYTE1(this->m_C) = 0; /*0x4a0f41*/
   this->m_8 = 0; /*0x4a0f44*/
 }
+}
 // 0x4A0F50
 namespace gamemd { 
 int EnumConnectionPointsClass::PointerToIndex(int a2) {
@@ -76,6 +79,7 @@ int EnumConnectionPointsClass::PointerToIndex(int a2) {
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4a0f65*/
   else
     return 0; /*0x4a0f57*/
+}
 }
 // 0x4A13C0
 namespace gamemd { 
@@ -121,6 +125,7 @@ int EnumConnectionPointsClass::SetCapacity(int a2, void* a3) {
     this->m_10 = v7; /*0x4a145b*/
   return 1; /*0x4a145e*/
 }
+}
 // 0x4A1470
 namespace gamemd { 
 int EnumConnectionPointsClass::FindItem(int * a2) {
@@ -139,6 +144,7 @@ int EnumConnectionPointsClass::FindItem(int * a2) {
   }
   return result; /*0x4a1492*/
 }
+}
 // 0x4E1530
 namespace gamemd { 
 int COMObject::ActivateThunk(int a1, int a2, int a3) {
@@ -150,6 +156,7 @@ int COMObject::ActivateThunk(int a1, int a2, int a3) {
   this->q01C = 1; /*0x4e153b*/
   (*(void (__stdcall **)(int))(v4 + 120))(a1); /*0x4e153f*/
   return 1; /*0x4e1547*/
+}
 }
 // 0x4E1920
 namespace gamemd { 
@@ -167,6 +174,7 @@ int COMObject::FindInList(int a2) {
   }
   return (int)v2->__pad_0; /*0x4e1948*/
 }
+}
 // 0x4E1970
 namespace gamemd { 
 int COMObject::TrackCurrent(int a1) {
@@ -181,6 +189,7 @@ int COMObject::TrackCurrent(int a1) {
   }
   if ( (a1 & 0x44) != 0 ) /*0x4e1991*/
     FootClass_Array.missionTimer[0] = 0; /*0x4e1993*/
+}
 }
 // 0x4E19A0
 namespace gamemd { 
@@ -198,6 +207,7 @@ int COMObject::ActivateGlobal() {
   FootClass_Array.missionTimer[2] = (int)this; /*0x4e19c6*/
   return v2; /*0x4e19cc*/
 }
+}
 // 0x4E19D0
 namespace gamemd { 
 int COMObject::DeactivateGlobal() {
@@ -212,10 +222,12 @@ int COMObject::DeactivateGlobal() {
   }
   return v1; /*0x4e19eb*/
 }
+}
 // 0x4E19F0
 namespace gamemd { 
 bool COMObject::IsPrimaryInstance() {
   return this == (GadgetClass *)FootClass_Array.missionTimer[2]; /*0x4e19fd*/
+}
 }
 // 0x4E2AF0
 namespace gamemd { 
@@ -226,6 +238,7 @@ int COMObject::Check(int a1) {
   (*(void (__thiscall **)(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2b02*/
   return 1; /*0x4e2b0a*/
 }
+}
 // 0x4E2B20
 namespace gamemd { 
 int COMObject::SetField(int a1) {
@@ -235,6 +248,7 @@ int COMObject::SetField(int a1) {
   (*(void (__thiscall **)(TriColorGaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2b32*/
   return 1; /*0x4e2b3a*/
 }
+}
 // 0x4E30F0
 namespace gamemd { 
 void* COMObject::ScalarDtor(int a2) {
@@ -243,11 +257,13 @@ void* COMObject::ScalarDtor(int a2) {
     RA2_OPDEL(this); /*0x4e3100*/
   return this->__pad_0; /*0x4e310a*/
 }
+}
 // 0x4F42B0
 namespace gamemd { 
 int COMObject::DtorSequence(int a1) {
   (*(void (__thiscall **)(GScreenClass *))(this->parent_gap[0] + 28))(this); /*0x4f42b5*/
   return (*(int (__thiscall **)(GScreenClass *))(this->parent_gap[0] + 32))(this); /*0x4f42bf*/
+}
 }
 // 0x5233A0
 namespace gamemd { 
@@ -265,6 +281,7 @@ void* COMObject::SwapReference(int a2) {
   }
   return (int *)this->__pad_0; /*0x5233c6*/
 }
+}
 // 0x53EDE0
 namespace gamemd { 
 int Struct::Copy6Bytes(IPXManagerClass * aP1) {
@@ -277,6 +294,7 @@ int Struct::Copy6Bytes(IPXManagerClass * aP1) {
   *((unsigned short *)v2 + 2) = result; /*0x53edef*/
   return result; /*0x53edf3*/
 }
+}
 // 0x54A120
 namespace gamemd { 
 void* Rect::Set4(int a2, int a3, int a4, int a5) {
@@ -286,6 +304,7 @@ void* Rect::Set4(int a2, int a3, int a4, int a5) {
   *(this + 3) = a5; /*0x54a13a*/
   return this; /*0x54a13d*/
 }
+}
 // 0x54F6B0
 namespace gamemd { 
 bool EventQueue::CheckPosition() {
@@ -294,6 +313,7 @@ bool EventQueue::CheckPosition() {
   result = (this->q318 + 1) % 256; /*0x54f6c4*/
   IDA_LOBYTE(result) = result == this->q314; /*0x54f6cb*/
   return result; /*0x54f6ce*/
+}
 }
 // 0x589300
 namespace gamemd { 
@@ -325,6 +345,7 @@ int unknown::AddRef(int a1) {
     }
   }
   return 0; /*0x589353*/
+}
 }
 // 0x589550
 namespace gamemd { 
@@ -362,7 +383,7 @@ int unknown::Release(int a1, void* a2) {
         }
         while ( v8 ); /*0x5895d4*/
       }
-      v5 = a2; /*0x5895d6*/
+      v5 = (unsigned short *)(a2);
     }
     else
     {
@@ -431,6 +452,7 @@ int unknown::Release(int a1, void* a2) {
     this->m_10 = v13; /*0x589665*/
   return 1; /*0x589668*/
 }
+}
 // 0x6247D0
 namespace gamemd { 
 void* Struct::WideStringCopy(int a1) {
@@ -441,6 +463,7 @@ void* Struct::WideStringCopy(int a1) {
   this->u32_10 = *(Struct *)(a1 + 16); /*0x6247fd*/
   this->u32_14 = *(Struct *)(a1 + 20); /*0x624803*/
   return (wchar_t **)this; /*0x624808*/
+}
 }
 // 0x65D480
 namespace gamemd { 
@@ -462,6 +485,7 @@ int ComPtr::Set(int a2) {
   }
   return result; /*0x65d4aa*/
 }
+}
 // 0x67FDD0
 namespace gamemd { 
 int ComPtr::ReleaseSimple() {
@@ -472,12 +496,14 @@ int ComPtr::ReleaseSimple() {
     return (*(int (__stdcall **)(int))(result->q008)(result); /*0x67fdd9*/
   return result; /*0x67fddc*/
 }
+}
 // 0x683030
 namespace gamemd { 
 int COMObject::ValidatePtr() {
   if ( !*(unsigned int *)this->__pad_0 ) /*0x683033*/
     WinAPI::Wrapper(-2147467261); /*0x68303d*/
   return *(unsigned int *)this->__pad_0; /*0x683044*/
+}
 }
 // 0x69B8C0
 namespace gamemd { 
@@ -597,10 +623,12 @@ void Player::RandomAssign() {
   }
   while ( (int)v7 < (int)&stru_A8B250.__pad_0[108] ); /*0x69baa0*/
 }
+}
 // 0x6ABAC0
 namespace gamemd { 
 bool PlayerClass::HasPlayers() {
   return *((unsigned int *)this + 21) > 0; /*0x6abaca*/
+}
 }
 // 0x6D1810
 namespace gamemd { 
@@ -613,6 +641,7 @@ void* Struct::Zero25() {
   this->u32_14 = 0; /*0x6d1822*/
   this->u32_18 = 0; /*0x6d1825*/
   return &this->Struct_field_00; /*0x6d1828*/
+}
 }
 // 0x6D9FF0
 namespace gamemd { 
@@ -652,6 +681,7 @@ int PlayerClass::ProcessOccupancyUpdate(void* a1) {
     return 0; /*0x6da05f*/
   }
   return result; /*0x6da071*/
+}
 }
 // 0x6DA080
 namespace gamemd { 
@@ -706,6 +736,7 @@ int PlayerClass::HasOccupiedCell() {
       return 0; /*0x6da13a*/
   }
   return 1; /*0x6da13e*/
+}
 }
 // 0x732600
 namespace gamemd { 
@@ -813,6 +844,7 @@ int PlayerClass::UpdateAIUnits() {
     IDA_LOBYTE(HeightMap) = (*(char (__thiscall **)(EventClass *, int))v2->EventClass_field_0x0)(v2, 1); /*0x732758*/
   return HeightMap; /*0x73275a*/
 }
+}
 // 0x765790
 namespace gamemd { 
 void* COMClass::invokeMethod(int a2) {
@@ -822,6 +854,7 @@ void* COMClass::invokeMethod(int a2) {
     RA2_OPDEL(this); /*0x7657a6*/
   return this->__pad_0; /*0x7657b0*/
 }
+}
 // 0x7657C0
 namespace gamemd { 
 void* COMClass::getTypeInfo(int a2) {
@@ -830,6 +863,7 @@ void* COMClass::getTypeInfo(int a2) {
   if ( (a2 & 1) != 0 ) /*0x7657d3*/
     RA2_OPDEL(this); /*0x7657d6*/
   return this->__pad_0; /*0x7657e0*/
+}
 }
 // 0x7659F0
 namespace gamemd { 
@@ -924,6 +958,7 @@ int COMClass::registerObject(int a1, void* a2) {
     this->m_10 = v12; /*0x765af6*/
   return 1; /*0x765af9*/
 }
+}
 // 0x765B10
 namespace gamemd { 
 int COMClass::unregisterObject(int a2) {
@@ -942,6 +977,7 @@ int COMClass::unregisterObject(int a2) {
   }
   return result; /*0x765b36*/
 }
+}
 // 0x7669C0
 namespace gamemd { 
 void* COMClass::connectPoint(int a2) {
@@ -950,6 +986,7 @@ void* COMClass::connectPoint(int a2) {
   if ( (a2 & 1) != 0 ) /*0x7669d3*/
     RA2_OPDEL(this); /*0x7669d6*/
   return this->__pad_0; /*0x7669e0*/
+}
 }
 // 0x766A80
 namespace gamemd { 
@@ -962,6 +999,7 @@ int COMClass::enumConnections(int a2) {
   if ( v3 ) /*0x766a94*/
     return *(unsigned int *)&this->__pad_7[5]; /*0x766a96*/
   return result; /*0x766a99*/
+}
 }
 // 0x766AA0
 namespace gamemd { 
@@ -1001,6 +1039,7 @@ void* COMClass::adviseConnection(void* a1, int a2, void* a3) {
   DeleteAndZero((ObjectClass *)&Format); /*0x766b7b*/
   return a1; /*0x766b82*/
 }
+}
 // 0x766B90
 namespace gamemd { 
 void* COMClass::unadviseConnection(int a2) {
@@ -1010,6 +1049,7 @@ void* COMClass::unadviseConnection(int a2) {
     RA2_OPDEL(this); /*0x766baa*/
   return (void **)this; /*0x766bb4*/
 }
+}
 // 0x7674E0
 namespace gamemd { 
 int COMClass::unlockServer(int a2) {
@@ -1018,11 +1058,13 @@ int COMClass::unlockServer(int a2) {
   else
     return *(unsigned int *)&this->__pad_0[12]; /*0x7674f7*/
 }
+}
 // 0x76F060
 namespace gamemd { 
 void* ComPtr::Territory_Dtor() {
   *(unsigned int *)this->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76f060*/
   return ComPtr::Release(this);
+}
 }
 // 0x7AE5D0
 namespace gamemd { 
@@ -1100,4 +1142,5 @@ int StringVector::Insert(void* a1, int v5) {
     String::AssignFromPtr(v15, a1); /*0x7ae71a*/
   ++*(unsigned int *)this->__pad_0; /*0x7ae723*/
   return 1; /*0x7ae721*/
+}
 }

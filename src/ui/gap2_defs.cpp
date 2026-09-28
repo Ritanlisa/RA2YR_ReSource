@@ -31,6 +31,7 @@ namespace gamemd {
 void* MouseClass::InitMouse(int a1) {
   return *((unsigned int *)a1 + 5465); /*0x40d286*/
 }
+}
 // 0x40D540
 namespace gamemd { 
 void MouseClass::initCursor() {
@@ -46,6 +47,7 @@ void MouseClass::initCursor() {
   IDA_BYTE1(this->m_C) = 0; /*0x40d561*/
   this->m_8 = 0; /*0x40d564*/
 }
+}
 // 0x40D570
 namespace gamemd { 
 int MouseClass::updateCursorState(int a2) {
@@ -53,6 +55,7 @@ int MouseClass::updateCursorState(int a2) {
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x40d585*/
   else
     return 0; /*0x40d577*/
+}
 }
 // 0x40D720
 namespace gamemd { 
@@ -98,6 +101,7 @@ int MouseClass::selectCursor(int a2, int * a3) {
     this->m_10 = v7; /*0x40d7bb*/
   return 1; /*0x40d7be*/
 }
+}
 // 0x40D7D0
 namespace gamemd { 
 int MouseClass::getCursorFrame(int * a2) {
@@ -116,6 +120,7 @@ int MouseClass::getCursorFrame(int * a2) {
   }
   return result; /*0x40d7f2*/
 }
+}
 // 0x40D850
 namespace gamemd { 
 void* MouseClass::applyCursorSettings(int a2) {
@@ -133,6 +138,7 @@ void* MouseClass::applyCursorSettings(int a2) {
   if ( (a2 & 1) != 0 ) /*0x40d888*/
     RA2_OPDEL(this); /*0x40d88b*/
   return this->__pad_0; /*0x40d895*/
+}
 }
 // 0x433F50
 namespace gamemd { 
@@ -214,6 +220,7 @@ int MessageListClass::CountCharsInWidth(void* a1, int a2, int a3, int a4) {
   }
   return v17; /*0x43403b*/
 }
+}
 // 0x4884A0
 namespace gamemd { 
 int CheckListClass::GetItem(int a1, void* a2, int a3) {
@@ -246,15 +253,18 @@ int CheckListClass::GetItem(int a1, void* a2, int a3) {
   }
   return v6; /*0x4884af*/
 }
+}
 // 0x4886C0
 namespace gamemd { 
 int CheckListClass::SelectItem(int a1) {
   return ListClass::RemoveItem((ListClass *)this, a1); /*0x4886ca*/
 }
+}
 // 0x4886D0
 namespace gamemd { 
 int CheckListClass::SetFocus(int a1) {
   return ColorListClass::Clear((ListClass *)this, a1); /*0x4886da*/
+}
 }
 // 0x4886E0
 namespace gamemd { 
@@ -273,6 +283,7 @@ void* CheckListClass::QueryInterface(int a2) {
     RA2_OPDEL(this); /*0x488725*/
   return (unsigned int *)this; /*0x48872f*/
 }
+}
 // 0x4B4FB0
 namespace gamemd { 
 int DropListClass::SetFocus(void* a1) {
@@ -280,15 +291,18 @@ int DropListClass::SetFocus(void* a1) {
   (*(void (__thiscall **)(DropListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4b4fcd*/
   return (*(int (__thiscall **)(char *, wchar_t *))(this->q02C + 136))((char *)this + 176, a1); /*0x4b4fe3*/
 }
+}
 // 0x4B4FF0
 namespace gamemd { 
 int DropListClass::KillFocus() {
   return (*(int (__thiscall **)(char *))(this->q02C + 156))((char *)&this->q0446);
 }
+}
 // 0x4B5010
 namespace gamemd { 
 int DropListClass::GetItemData() {
   return (*(int (__thiscall **)(char *))(this->q02C + 152))((char *)&this->q0446);
+}
 }
 // 0x4B50A0
 namespace gamemd { 
@@ -302,6 +316,7 @@ int DropListClass::AddItem() {
     IDA_LOBYTE(this->DropListClass_field_0x48) = 0; /*0x4b50b9*/
   }
   return result; /*0x4b50bd*/
+}
 }
 // 0x4B50C0
 namespace gamemd { 
@@ -357,6 +372,7 @@ int DropListClass::Open(int a1, void* a2, void* a3) {
   }
   return v12; /*0x4b5183*/
 }
+}
 // 0x4B54E0
 namespace gamemd { 
 int DropListClass::RemoveItem(int a1, int a2) {
@@ -369,6 +385,7 @@ int DropListClass::RemoveItem(int a1, int a2) {
            &this->DropListClass_field_0x50,
            a1 + this->DropListClass_field_0x14,
            a2);
+}
 }
 // 0x4B5530
 namespace gamemd { 
@@ -399,6 +416,7 @@ namespace gamemd {
 int DropListClass::ScrollUp() {
   return (*(int (__thiscall **)(char *))(this->q02C + 148))((char *)&this->q0446);
 }
+}
 // 0x4B55D0
 namespace gamemd { 
 int DropListClass::ScrollDown(int a1) {
@@ -416,6 +434,7 @@ void* DropListClass::QueryInterface(int a2) {
     RA2_OPDEL(this); /*0x4b561b*/
   return this->__pad_0; /*0x4b5625*/
 }
+}
 // 0x4C30B0
 namespace gamemd { 
 int DropListClass::Constructor() {
@@ -423,6 +442,7 @@ int DropListClass::Constructor() {
   if ( COMObject::IsPrimaryInstance((GadgetClass *)this) ) /*0x4c30b9*/
     COMObject::DeactivateGlobal((GadgetClass *)this); /*0x4c30c4*/
   return GadgetClass::Dtor((GadgetClass *)this); /*0x4c30d0*/
+}
 }
 // 0x4C30E0
 namespace gamemd { 
@@ -436,6 +456,7 @@ int DropListClass::SelectItem(void* a1, int a2) {
   v5 = *this; /*0x4c30f8*/
   *(&this->u32_45) = v4; /*0x4c30ff*/
   return this->MarkDirty(); /*0x4c3105*/
+}
 }
 // 0x4C3110
 namespace gamemd { 
@@ -452,6 +473,7 @@ int DropListClass::GetItem(int a1) {
   (*(void (__thiscall **)(EditClass *, unsigned int))(*(unsigned int *)&this->q0388))(this, this->q034); /*0x4c3163*/
   (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 36))(stru_887598.lineTrailer); /*0x4c3171*/
   return 1; /*0x4c3179*/
+}
 }
 // 0x4C3190
 namespace gamemd { 
@@ -518,6 +540,7 @@ int DropListClass::GetSelected() {
   v5[2] = v2; /*0x4c32c6*/
   return DrawBuildingTilesSHP(v5, 4, 1); /*0x4c32cf*/
 }
+}
 // 0x4C32E0
 namespace gamemd { 
 void* DropListClass::GetItemText(void* a1) {
@@ -544,7 +567,7 @@ void* DropListClass::GetItemText(void* a1) {
   unsigned char v24[4]; // [esp+20h] [ebp-10h] BYREF
   unsigned char v25[12]; // [esp+24h] [ebp-Ch] BYREF
 
-  v3 = (*(int (__thiscall **)(EditClass *))(*(unsigned int *)&this->q0208))(this); /*0x4c32ea*/
+  v3 = (*(int (__thiscall **)(EditClass *))(((unsigned int)(this->q0208))))(this); /*0x4c32ea*/
   v4 = this->q010; /*0x4c32f0*/
   v22 = this->q00C + 1; /*0x4c32ff*/
   v5 = this->q014 - 2; /*0x4c3307*/
@@ -557,7 +580,7 @@ void* DropListClass::GetItemText(void* a1) {
   v7 = (*(int (__thiscall **)(AudioStream *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 120))(g_DSurface_Hidden_2); /*0x4c333a*/
   FillRectangle(v23, (int)a1, (int)g_DSurface_Hidden_2, v7, (int)v25, (int)&v22, v16, 0, v18, v5); /*0x4c334f*/
   TextRenderer::GetInstance(); /*0x4c3357*/
-  result = (unsigned int *)(*(int (__thiscall **)(EditClass *))(*(unsigned int *)&this->q0208))(this); /*0x4c3362*/
+  result = (unsigned int *)(*(int (__thiscall **)(EditClass *))(((unsigned int)(this->q0208))))(this); /*0x4c3362*/
   if ( (unsigned char)result ) /*0x4c3367*/
   {
     result = (unsigned int *)wcslen(a1); /*0x4c336e*/
@@ -583,6 +606,7 @@ void* DropListClass::GetItemText(void* a1) {
     }
   }
   return result; /*0x4c340c*/
+}
 }
 // 0x4C3420
 namespace gamemd { 
@@ -666,6 +690,7 @@ int DropListClass::Close() {
     this->u32_3C = wcslen(v2); /*0x4c358a*/
   return COMObject::ActivateGlobal((GadgetClass *)this); /*0x4c3594*/
 }
+}
 // 0x5005B0
 namespace gamemd { 
 int SidebarClass::MarkTabForRebuild(int a1, int a2, int a3) {
@@ -703,6 +728,7 @@ int SidebarClass::MarkTabForRebuild(int a1, int a2, int a3) {
   }
   return result; /*0x5005e0*/
 }
+}
 // 0x500700
 namespace gamemd { 
 int SidebarClass::getTypeProductionCount(int a1, int a2, int a3) {
@@ -738,6 +764,7 @@ int SidebarClass::getTypeProductionCount(int a1, int a2, int a3) {
   }
   return result; /*0x50071f*/
 }
+}
 // 0x536050
 namespace gamemd { 
 void* SelectTeamCommand::Read() {
@@ -749,10 +776,12 @@ void* SelectTeamCommand::Read() {
   swprintf((wchar_t *const)&stru_A8EB00.gapE4[2672], (const size_t)StringCSF, v3); /*0x536070*/
   return (wchar_t *)&stru_A8EB00.gapE4[2672]; /*0x53607d*/
 }
+}
 // 0x536080
 namespace gamemd { 
 int SelectTeamCommand::Do(int a1) {
   return TacticalClass::SetObserverView(*(char **)&this->m_1[3]); /*0x536088*/
+}
 }
 // 0x536140
 namespace gamemd { 
@@ -765,10 +794,12 @@ void* AddTeamCommand::Read() {
   swprintf((wchar_t *const)&stru_A8EB00.gapE4[2672], (const size_t)StringCSF, v3); /*0x536160*/
   return (wchar_t *)&stru_A8EB00.gapE4[2672]; /*0x53616d*/
 }
+}
 // 0x536170
 namespace gamemd { 
 int AddTeamCommand::Do(int a1) {
   return SquadClass::SelectAllMembers(*(char **)&this->m_1[3]); /*0x536178*/
+}
 }
 // 0x536230
 namespace gamemd { 
@@ -781,10 +812,12 @@ void* CenterTeamCommand::Read() {
   swprintf((wchar_t *const)&stru_A8EB00.gapE4[2672], (const size_t)StringCSF, v3); /*0x536250*/
   return (wchar_t *)&stru_A8EB00.gapE4[2672]; /*0x53625d*/
 }
+}
 // 0x536260
 namespace gamemd { 
 int CenterTeamCommand::Do(int a1) {
   return (int)TacticalClass::ResetView(*(char **)&this->m_1[3]); /*0x536268*/
+}
 }
 // 0x536320
 namespace gamemd { 
@@ -796,6 +829,7 @@ void* TauntCommandClass::Read() {
   StringCSF = GetStringCSF(aTxtTauntDesc, 0, g_Str_File_Init_CPP, 6409); /*0x536335*/
   swprintf((wchar_t *const)&stru_A8EB00.gapE4[2672], (const size_t)StringCSF, TauntCommandClass_field_00); /*0x536340*/
   return (wchar_t *)&stru_A8EB00.gapE4[2672]; /*0x53634d*/
+}
 }
 // 0x536350
 namespace gamemd { 
@@ -918,6 +952,7 @@ void CheckListClass::initList() {
   IDA_BYTE1(this->m_C) = 0; /*0x556ed1*/
   this->m_8 = 0; /*0x556ed4*/
 }
+}
 // 0x556EE0
 namespace gamemd { 
 int CheckListClass::addItem(int a2) {
@@ -925,6 +960,7 @@ int CheckListClass::addItem(int a2) {
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x556ef5*/
   else
     return 0; /*0x556ee7*/
+}
 }
 // 0x557090
 namespace gamemd { 
@@ -970,6 +1006,7 @@ int CheckListClass::removeItem(int a2, void* a3) {
     this->m_10 = v7; /*0x55712b*/
   return 1; /*0x55712e*/
 }
+}
 // 0x557140
 namespace gamemd { 
 int CheckListClass::checkItem(int * a2) {
@@ -988,6 +1025,7 @@ int CheckListClass::checkItem(int * a2) {
   }
   return result; /*0x557162*/
 }
+}
 // 0x5571C0
 namespace gamemd { 
 void* CheckListClass::toggleItem(int a2) {
@@ -1005,6 +1043,7 @@ void* CheckListClass::toggleItem(int a2) {
   if ( (a2 & 1) != 0 ) /*0x5571f8*/
     RA2_OPDEL(this); /*0x5571fb*/
   return this->__pad_0; /*0x557205*/
+}
 }
 // 0x557570
 namespace gamemd { 
@@ -1037,6 +1076,7 @@ int CheckListClass::RemoveItem(int a1, int a2) {
     this->u32_12C = v4; /*0x5575de*/
   return result; /*0x5575e4*/
 }
+}
 // 0x557800
 namespace gamemd { 
 int ListClass::Destru_vt43(int a1) {
@@ -1050,6 +1090,7 @@ int ListClass::Destru_vt43(int a1) {
     v5 = (*(int (__thiscall **)(char *, int *))(this->u32_D + 16))((char *)this + 52, &a1); /*0x557819*/
     return (*(int (__thiscall **)(ListClass *, int))(v4 + 168))(this, v5); /*0x55781f*/
   }
+}
 }
 // 0x557A20
 namespace gamemd { 
@@ -1070,6 +1111,7 @@ int CheckListClass::SetItemState(int a1) {
   }
   return v3; /*0x557a5f*/
 }
+}
 // 0x557A70
 namespace gamemd { 
 int CheckListClass::OnKeyUp(int a1) {
@@ -1088,6 +1130,7 @@ int CheckListClass::OnKeyUp(int a1) {
     }
   }
   return v3; /*0x557aaf*/
+}
 }
 // 0x557B00
 namespace gamemd { 
@@ -1165,6 +1208,7 @@ int CheckListClass::GetItemData() {
   (*(void (__thiscall **)(ListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x557cf7*/
   return 1; /*0x557cff*/
 }
+}
 // 0x557D10
 namespace gamemd { 
 int CheckListClass::KillFocus(int a1) {
@@ -1224,6 +1268,7 @@ void* ListClass::Destru_vt50(int a1, int a2, int a3, int a4, int a5) {
           g_DSurface_Hidden_2,
           v21);
   return FillRectangle(v20, *v14, (int)g_DSurface_Hidden_2, v15, (int)v19, v17, 0, v7, a4, v13); /*0x557df8*/
+}
 }
 // 0x557E60
 namespace gamemd { 
@@ -1320,6 +1365,7 @@ void* ListClass::Destru_vt00(int a2) {
     RA2_OPDEL(this); /*0x558104*/
   return this->__pad_0; /*0x55810e*/
 }
+}
 // 0x558130
 namespace gamemd { 
 void* CheckListClass::drawList(int a2) {
@@ -1338,6 +1384,7 @@ void* CheckListClass::drawList(int a2) {
     RA2_OPDEL(this); /*0x55816b*/
   return this->__pad_0; /*0x558175*/
 }
+}
 // 0x5581E0
 namespace gamemd { 
 void CheckListClass::scrollList() {
@@ -1353,6 +1400,7 @@ void CheckListClass::scrollList() {
   IDA_BYTE1(this->m_C) = 0; /*0x558201*/
   this->m_8 = 0; /*0x558204*/
 }
+}
 // 0x558210
 namespace gamemd { 
 int CheckListClass::selectItem(int a2) {
@@ -1360,6 +1408,7 @@ int CheckListClass::selectItem(int a2) {
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x558225*/
   else
     return 0; /*0x558217*/
+}
 }
 // 0x5583C0
 namespace gamemd { 
@@ -1405,6 +1454,7 @@ int CheckListClass::clearList(int a2, void* a3) {
     this->m_10 = v7; /*0x55845b*/
   return 1; /*0x55845e*/
 }
+}
 // 0x558470
 namespace gamemd { 
 int CheckListClass::getItemCount(int * a2) {
@@ -1422,6 +1472,7 @@ int CheckListClass::getItemCount(int * a2) {
       return -1; /*0x55848d*/
   }
   return result; /*0x558492*/
+}
 }
 // 0x5BDAA0
 namespace gamemd { 
@@ -1472,6 +1523,7 @@ int MouseClass::SetPosition(int a1) {
   }
   return result; /*0x5bdb7f*/
 }
+}
 // 0x5BDF30
 namespace gamemd { 
 void* MouseClass::LoadTypeData() {
@@ -1481,6 +1533,7 @@ void* MouseClass::LoadTypeData() {
   result = LoadFileSHP(g_Str_File_MOUSE_SHA, (bool *)&g_MissionQueueFrame.localVariables[534]); /*0x5bdf3f*/
   g_MissionQueueFrame.localVariables[516] = (int)result; /*0x5bdf44*/
   return result; /*0x5bdf49*/
+}
 }
 // 0x5BDF50
 namespace gamemd { 
@@ -2194,6 +2247,7 @@ int MouseClass::DrawCursor() {
   }
   return result; /*0x5be831*/
 }
+}
 // 0x5BE9B0
 namespace gamemd { 
 void* MouseClass::drawCursor(int a1) {
@@ -2202,6 +2256,7 @@ void* MouseClass::drawCursor(int a1) {
   this->MouseClass_field_0x0 = &(void*)(void*)&TabClass_vftable; /*0x5be9c7*/
   this->u32_5518 = &(void*)(void*)&TabClass_vftable; /*0x5be9cd*/
   return &this->MouseClass_field_0x0; /*0x5be9d9*/
+}
 }
 // 0x5BEA30
 namespace gamemd { 
@@ -2232,6 +2287,7 @@ void* MouseClass::loadCursor(int a2, int a3) {
   this->MouseClass_field_0x14 = 10; /*0x5bea90*/
   this->MouseClass_field_0x10 = 0; /*0x5bea97*/
   return &this->MouseClass_field_0x0; /*0x5beaa0*/
+}
 }
 // 0x5D3A60
 namespace gamemd { 
@@ -2296,6 +2352,7 @@ void MessageListClass::Init(int a1, int a2, int a3, int a4, int a5, int a6, int 
   if ( a9 >= result ) /*0x5d3b83*/
     this->u32_2BC = --result; /*0x5d3b86*/
   return result; /*0x5d3b8c*/
+}
 }
 // 0x5D3BA0
 namespace gamemd { 
@@ -2478,6 +2535,7 @@ int MessageListClass::AddMessage(void* a1, int a2, void* a3, int a4, int a5, int
   }
   return v24; /*0x5d3bc5*/
 }
+}
 // 0x60CBA0
 namespace gamemd { 
 int CampaignScore::LookupDialogHash() {
@@ -2504,6 +2562,7 @@ int CampaignScore::LookupDialogHash() {
     }
   }
   return result; /*0x60cbe7*/
+}
 }
 // 0x60CC00
 namespace gamemd { 
@@ -2533,6 +2592,7 @@ int CampaignScore::FindDialogTemplate() {
     }
   }
   return result; /*0x60cc47*/
+}
 }
 // 0x6258E0
 namespace gamemd { 
@@ -2592,6 +2652,7 @@ void ComboBoxOwnerDraw::SetCapacity() {
     RA2_OPDEL(v3); /*0x62597a*/
   }
 }
+}
 // 0x625990
 namespace gamemd { 
 int ComboBoxOwnerDraw::GrowBuffer() {
@@ -2622,10 +2683,12 @@ int ComboBoxOwnerDraw::GrowBuffer() {
   this->ComboBoxOwnerDraw_field_0x08 = (int)v5; /*0x625a14*/
   return 1; /*0x62599f*/
 }
+}
 // 0x637060
 namespace gamemd { 
 void TabClass::processTabInput() {
   *(unsigned int *)&stru_AC4B30.__pad_48[8] = this; /*0x637060*/
+}
 }
 // 0x637AB0
 namespace gamemd { 
@@ -2770,6 +2833,7 @@ int SidebarClass::ResetProductionState() {
   }
   return result; /*0x637cec*/
 }
+}
 // 0x63E880
 namespace gamemd { 
 int SidebarClass::addToList(void* a1) {
@@ -2799,6 +2863,7 @@ int SidebarClass::addToList(void* a1) {
   SidebarClass_field_0x4[v6] = *a1; /*0x63e8c8*/
   return 1; /*0x63e8b1*/
 }
+}
 // 0x63F730
 namespace gamemd { 
 void* PowerClass::updateDrain() {
@@ -2822,6 +2887,7 @@ void* PowerClass::updateDrain() {
   this->field_1528 = 0; /*0x63f7a4*/
   return v4; /*0x63f7a2*/
 }
+}
 // 0x63F7C0
 namespace gamemd { 
 void PowerClass::checkBlackout() {
@@ -2831,6 +2897,7 @@ void PowerClass::checkBlackout() {
   result = LoadFileSHP(aPowerpShp, (bool *)&stru_AC4B30.__pad_EC[604]); /*0x63f7cf*/
   *(unsigned int *)&stru_AC4B30.__pad_EC[600] = result; /*0x63f7d4*/
   return result; /*0x63f7d9*/
+}
 }
 // 0x63FEA0
 namespace gamemd { 
@@ -3103,6 +3170,7 @@ void PowerClass::updatePowerBarAnimation() {
   TacticalClass::MouseInput((RadarClass *)this, a2, a3); /*0x640385*/
   return result; /*0x640396*/
 }
+}
 // 0x6403A0
 namespace gamemd { 
 int PowerClass::getDrain() {
@@ -3137,6 +3205,7 @@ int PowerClass::getDrain() {
   }
   return v1; /*0x64043d*/
 }
+}
 // 0x640450
 namespace gamemd { 
 void* PowerClass::getAvailable(int a1) {
@@ -3152,6 +3221,7 @@ void* PowerClass::getAvailable(int a1) {
   swprintf((wchar_t *const)&stru_AC4B30.__pad_EC[276], (const size_t)StringCSF, v4, v5); /*0x64048a*/
   return (wchar_t *)&stru_AC4B30.__pad_EC[276]; /*0x640497*/
 }
+}
 // 0x6404B0
 namespace gamemd { 
 void* PowerClass::Initialize(int a2) {
@@ -3159,6 +3229,7 @@ void* PowerClass::Initialize(int a2) {
   if ( (a2 & 1) != 0 ) /*0x6404bd*/
     RA2_OPDEL(this); /*0x6404c0*/
   return this->__pad_0; /*0x6404ca*/
+}
 }
 // 0x6568A0
 namespace gamemd { 
@@ -3332,6 +3403,7 @@ int SidebarClass::Load(int a1) {
   }
   return result; /*0x656ab3*/
 }
+}
 // 0x656AC0
 namespace gamemd { 
 int SidebarClass::Save(int a1) {
@@ -3428,6 +3500,7 @@ int SidebarClass::Save(int a1) {
   }
   return result; /*0x656bcd*/
 }
+}
 // 0x674650
 namespace gamemd { 
 int SidebarClass::ReadButtonList() {
@@ -3478,6 +3551,7 @@ int SidebarClass::ReadButtonList() {
     IDA_LOBYTE(result) = 0; /*0x67471f*/
   }
   return result; /*0x674711*/
+}
 }
 // 0x68C710
 namespace gamemd { 
@@ -3546,6 +3620,7 @@ bool MouseClass::GetHotspot() {
       || stru_A8EB00.gapE4[440]
       || g_TacticalClass_Instance && *(float *)&g_TacticalClass_Instance[54] != 0.0;
 }
+}
 // 0x693840
 namespace gamemd { 
 int MouseClass::GetButtonState(int a1) {
@@ -3559,6 +3634,7 @@ int MouseClass::GetButtonState(int a1) {
   result = (*(int (__thiscall **)(ScrollClass *, unsigned int, ScrollClass *))(v2->m_ScrollX + 72))(v2, 0, this); /*0x69385a*/
   IDA_LOBYTE(v2[1365].m_MaxX) = 0; /*0x69385d*/
   return result; /*0x693864*/
+}
 }
 // 0x693880
 namespace gamemd { 
@@ -3575,6 +3651,7 @@ int MouseClass::CheckCapture(void* a1) {
     return (*(int (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x6938b7*/
   }
   return result; /*0x6938bb*/
+}
 }
 // 0x6969C0
 namespace gamemd { 
@@ -3610,6 +3687,7 @@ int ListBox::SetCustomEntry(int nIDDlgItem, LPARAM a3, void * a4) {
   }
   return result; /*0x696acb*/
 }
+}
 // 0x69DFC0
 namespace gamemd { 
 int SidebarClass::startButtonFlash(int a1, int a2, int a3) {
@@ -3619,6 +3697,7 @@ int SidebarClass::startButtonFlash(int a1, int a2, int a3) {
   this->SidebarClass_field_0x3C = (void *)(a2 + a1); /*0x69dfd4*/
   IDA_LOBYTE(this->SidebarClass_field_0x34) = a3; /*0x69dfdb*/
   return 1; /*0x69dfe0*/
+}
 }
 // 0x69E010
 namespace gamemd { 
@@ -3654,6 +3733,7 @@ int SidebarClass::updateFlashTimer() {
     }
   }
   return 0; /*0x69e029*/
+}
 }
 // 0x6A4E60
 namespace gamemd { 
@@ -3700,6 +3780,7 @@ void* TabClass::initTabData() {
   }
   while ( v5 ); /*0x6a4f07*/
   return this; /*0x6a4f0b*/
+}
 }
 // 0x6A5310
 namespace gamemd { 
@@ -3950,6 +4031,7 @@ int SidebarClass::Init() {
   }
   return v2; /*0x6a5839*/
 }
+}
 // 0x6A5F20
 namespace gamemd { 
 int SidebarClass::UpdateCameoProductionState(void* a1) {
@@ -4035,6 +4117,7 @@ int SidebarClass::UpdateCameoProductionState(void* a1) {
     }
   }
   return v3; /*0x6a6039*/
+}
 }
 // 0x6A7780
 namespace gamemd { 
@@ -4366,6 +4449,7 @@ int SidebarClass::InitCameoGrid(int a1) {
   }
   return result; /*0x6a8329*/
 }
+}
 // 0x6A8330
 namespace gamemd { 
 int SidebarClass::RefreshCameoGrid() {
@@ -4397,6 +4481,7 @@ int SidebarClass::RefreshCameoGrid() {
   g_CameoRenderFlag = 1; /*0x6a83d2*/
   return v5; /*0x6a83d0*/
 }
+}
 // 0x6A83E0
 namespace gamemd { 
 int SidebarClass::sortCameoList() {
@@ -4408,6 +4493,7 @@ int SidebarClass::sortCameoList() {
                (GScreenClass *)&stru_87F5F0.__pad_58[416],
                56 * (i + 60 * (int)this->SidebarClass_field_0x38) + 11566720);
   return result; /*0x6a8413*/
+}
 }
 // 0x6A8B30
 namespace gamemd { 
@@ -4867,6 +4953,7 @@ int SidebarClass::UpdateCameos(int a1, int a2) {
   }
   return result; /*0x6a92b5*/
 }
+}
 // 0x6AA600
 namespace gamemd { 
 int SidebarClass::UpdateProduction() {
@@ -5200,6 +5287,7 @@ int SidebarClass::UpdateProduction() {
   if ( v46 ) /*0x6aac85*/
     RA2_OPDEL(v46 - 4); /*0x6aac8f*/
   return v42; /*0x6aac9b*/
+}
 }
 // 0x6AAD00
 namespace gamemd { 
@@ -5684,6 +5772,7 @@ namespace gamemd {
 int SidebarClass::saveLoadPrefix(int a1) {
   return SidebarClass::Load((RadarClass *)this, a1); /*0x6ac5da*/
 }
+}
 // 0x6AC7C0
 namespace gamemd { 
 int TabClass::drawTabBackground() {
@@ -5698,6 +5787,7 @@ int TabClass::drawTabBackground() {
   *(unsigned int *)&this->__pad_20[12] = 1; /*0x6ac7d9*/
   return (int)this; /*0x6ac7e0*/
 }
+}
 // 0x6AC870
 namespace gamemd { 
 void* SidebarClass::initButtons() {
@@ -5711,6 +5801,7 @@ void* SidebarClass::initButtons() {
   this->SidebarClass_field_0x14 = 0; /*0x6ac885*/
   *(unsigned int *)this->__pad_18 = 1; /*0x6ac888*/
   return this; /*0x6ac88f*/
+}
 }
 // 0x6B1DC0
 namespace gamemd { 
@@ -5749,6 +5840,7 @@ int SliderClass::OnClick(int a1) {
   else
     this->q014 = result; /*0x6b1e38*/
   return result; /*0x6b1e3b*/
+}
 }
 // 0x6B1E50
 namespace gamemd { 
@@ -5828,6 +5920,7 @@ int SliderClass::SetValue(int a1, void* a2, int a3) {
   *v9 = 0; /*0x6b1fd4*/
   return 1; /*0x6b1fda*/
 }
+}
 // 0x6B2000
 namespace gamemd { 
 int SliderClass::OnTrack(int a1) {
@@ -5890,6 +5983,7 @@ int SliderClass::HitTest() {
   }
   return DrawBuildingTilesSHP(&SliderClass_field_0x0C, 1, 1); /*0x6b20ab*/
 }
+}
 // 0x6B20F0
 namespace gamemd { 
 int SliderClass::GetRange(int a1) {
@@ -5911,6 +6005,7 @@ int SliderClass::GetRange(int a1) {
   (*(void (__thiscall **)(SliderClass *))(*(unsigned int *)this->__pad_0 + 156))(this); /*0x6b2139*/
   return 1; /*0x6b213f*/
 }
+}
 // 0x6B2160
 namespace gamemd { 
 int SliderClass::SetRange(int a1, int a2, int a3) {
@@ -5926,6 +6021,7 @@ int SliderClass::SetRange(int a1, int a2, int a3) {
       IDA_LOBYTE(v4) = (*(char (__thiscall **)(SliderClass *, int))(*(unsigned int *)this->__pad_0 + 176))(this, 1); /*0x6b218f*/
   }
   return v4; /*0x6b2195*/
+}
 }
 // 0x6CBEE0
 namespace gamemd { 
@@ -6029,6 +6125,7 @@ int SidebarClass::GetProductionState() {
     return 53; /*0x6cc05a*/
   return result; /*0x6cbfec*/
 }
+}
 // 0x6CFCC0
 namespace gamemd { 
 int SidebarClass::findEntryIndexByName() {
@@ -6045,6 +6142,7 @@ int SidebarClass::findEntryIndexByName() {
       return dword_8427CC; /*0x6cfd11*/
   }
   return v1; /*0x6cfd0d*/
+}
 }
 // 0x6CFE20
 namespace gamemd { 
@@ -6265,6 +6363,7 @@ void* TabClass::Constructor() {
   TabClass::processTabInput(this != 0 ? (TabClass *)((char *)this + 21784) : 0);
   return &this->TabClass_field_0x0; /*0x6d0248*/
 }
+}
 // 0x6D02B0
 namespace gamemd { 
 int SidebarClass::LoadButtonSHPs() {
@@ -6314,6 +6413,7 @@ int SidebarClass::LoadButtonSHPs() {
   this->u32_5520 = 0; /*0x6d0382*/
   return result; /*0x6d030f*/
 }
+}
 // 0x6D03A0
 namespace gamemd { 
 int SidebarClass::InitButtons() {
@@ -6352,6 +6452,7 @@ int SidebarClass::InitButtons() {
     }
   }
   return result; /*0x6d048e*/
+}
 }
 // 0x6D0A20
 namespace gamemd { 
@@ -6658,6 +6759,7 @@ int SidebarClass::DrawTabs(int a1) {
   }
   return SidebarClass::Redraw((SidebarClass *)this, a1); /*0x6d0e3d*/
 }
+}
 // 0x723EC0
 namespace gamemd { 
 int GadgetClass::ProcessMouseOver(int a1, void* a2, int a3) {
@@ -6736,11 +6838,13 @@ int GadgetClass::ProcessMouseOver(int a1, void* a2, int a3) {
   }
   return CellClass::Draw((ControlClass *)this, v5, a2, 0); /*0x723f62*/
 }
+}
 // 0x724520
 namespace gamemd { 
 int SidebarClass::initializeStrip(int a1) {
   this->SidebarClass_field_0x228 = (void *)a1; /*0x724524*/
   return a1; /*0x72452a*/
+}
 }
 // 0x724530
 namespace gamemd { 
@@ -6751,6 +6855,7 @@ int SidebarClass::updateStripVisibility() {
   this->SidebarClass_field_0x22C = (void *)result; /*0x724536*/
   return result; /*0x72453c*/
 }
+}
 // 0x724540
 namespace gamemd { 
 int SidebarClass::updateStripPosition() {
@@ -6759,6 +6864,7 @@ int SidebarClass::updateStripPosition() {
   result = (int)this->SidebarClass_field_0x22C; /*0x724540*/
   this->SidebarClass_field_0x228 = (void *)result; /*0x724546*/
   return result; /*0x72454c*/
+}
 }
 // 0x724AB0
 namespace gamemd { 
@@ -6769,6 +6875,7 @@ int ToolTipManager::release(int a1) {
   this->TextBuffer[1] = 0; /*0x724abb*/
   this->Position[0] = 0; /*0x724abe*/
   return 0; /*0x724ac1*/
+}
 }
 // 0x724CD0
 namespace gamemd { 
@@ -6816,6 +6923,7 @@ int ToolTipClass::readString(int a2, int * a3) {
     return 1; /*0x724d78*/
   }
 }
+}
 // 0x724D80
 namespace gamemd { 
 void ToolTipClass::writeString() {
@@ -6826,6 +6934,7 @@ void ToolTipClass::writeString() {
   }
   IDA_BYTE1(this->m_C) = 0; /*0x724d9e*/
   this->m_8 = 0; /*0x724da1*/
+}
 }
 // 0x724DB0
 namespace gamemd { 
@@ -6847,6 +6956,7 @@ int ToolTipClass::seekString(int * a2) {
   }
   return result; /*0x724dba*/
 }
+}
 // 0x724DF0
 namespace gamemd { 
 int ToolTipClass::setString(int a2) {
@@ -6854,6 +6964,7 @@ int ToolTipClass::setString(int a2) {
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x724e05*/
   else
     return 0; /*0x724df7*/
+}
 }
 // 0x724E10
 namespace gamemd { 
@@ -6899,6 +7010,7 @@ int ToolTipClass::release(int a2, int * a3) {
     this->m_10 = v7; /*0x724eab*/
   return 1; /*0x724eae*/
 }
+}
 // 0x724EC0
 namespace gamemd { 
 int ToolTipClass::read(int * a2) {
@@ -6916,6 +7028,7 @@ int ToolTipClass::read(int * a2) {
       return -1; /*0x724edd*/
   }
   return result; /*0x724ee2*/
+}
 }
 // 0x724EF0
 namespace gamemd { 
@@ -6935,6 +7048,7 @@ void* ToolTipClass::compareString(int a2) {
     RA2_OPDEL(this); /*0x724f2b*/
   return this->__pad_0; /*0x724f35*/
 }
+}
 // 0x72A440
 namespace gamemd { 
 int MessageListClass::clearMessages(int a1, int a2, int a3, int a4, int a5) {
@@ -6945,13 +7059,14 @@ int MessageListClass::clearMessages(int a1, int a2, int a3, int a4, int a5) {
   this->q00B = a5; /*0x72a472*/
   this->IsAllocated = a4; /*0x72a475*/
   this->tail_E = -1; /*0x72a478*/
-  this->u32_3C = 0; /*0x72a47f*/
+  *(unsigned int *)(this + 60) = 0; /*0x72a47f*/
   *(unsigned char *)(this + 64) = 0; /*0x72a482*/
-  *(unsigned char *)(this + 65) = 0; /*0x72a485*/
+  this->u32_41 = 0; /*0x72a485*/
   this->u32_44 = 0; /*0x72a488*/
   this->u32_48 = 0; /*0x72a48b*/
   *(unsigned int *)this = &(void*)(void*)&TextLabelClass_vftable; /*0x72a48e*/
   return this; /*0x72a496*/
+}
 }
 // 0x72AD90
 namespace gamemd { 
@@ -6972,6 +7087,7 @@ void* SidebarClass::calcSidebarRect() {
   result[2] = v3; /*0x72adcf*/
   result[3] = v4; /*0x72add2*/
   return result; /*0x72adce*/
+}
 }
 // 0x72D300
 namespace gamemd { 
@@ -7000,6 +7116,7 @@ int CampaignScore::LoadCampaignScoreAssetsGame() {
     g_BuildingLoadQueue_Array.__pad_F70[1020] = 1; /*0x72d33d*/
   }
   return result; /*0x72d344*/
+}
 }
 // 0x72D460
 namespace gamemd { 
@@ -7083,6 +7200,7 @@ void* CampaignScore::LoadScreenAssets() {
   }
   return result; /*0x72d4b3*/
 }
+}
 // 0x734250
 namespace gamemd { 
 int SidebarClass::registerBuildingType() {
@@ -7094,6 +7212,7 @@ int SidebarClass::registerBuildingType() {
   else
     g_BuildingLoadQueue_Array.QueueingCell[1] = (int)this; /*0x734266*/
   return result; /*0x734265*/
+}
 }
 // 0x77DA50
 namespace gamemd { 
@@ -7158,6 +7277,7 @@ void* SidebarClass::FindProductionData() {
   LABEL_18:
   DeleteAndZero((ObjectClass *)&v7); /*0x77db73*/
   return v2; /*0x77da87*/
+}
 }
 // 0x7B8730
 namespace gamemd { 
@@ -7228,6 +7348,7 @@ void* MouseClass::Construct(int a1, int a2) {
   ShowCursor(0); /*0x7b88ba*/
   return &this->MouseClass_field_0x0; /*0x7b88c2*/
 }
+}
 // 0x7B88D0
 namespace gamemd { 
 int WWMouseClass::loadCursorImages() {
@@ -7265,6 +7386,7 @@ int WWMouseClass::loadCursorImages() {
   *(unsigned int *)this->__pad_0 = &(void*)(void*)&Mouse_vftable; /*0x7b8957*/
   return result; /*0x7b895d*/
 }
+}
 // 0x7B8960
 namespace gamemd { 
 void MouseClass::CalcConfiningRect() {
@@ -7297,6 +7419,7 @@ void MouseClass::CalcConfiningRect() {
   v1->MouseClass_field_0x8 = (void *)v5; /*0x7b89d7*/
   v1->MouseClass_field_0xC = (void *)v4; /*0x7b89da*/
   Debug::Log(); /*0x7b89dd*/
+}
 }
 // 0x7B8A00
 namespace gamemd { 
@@ -7431,6 +7554,7 @@ void WWMouseClass::AddRef(void* a1, int a2, int a3) {
     }
   }
 }
+}
 // 0x7B8E80
 namespace gamemd { 
 void* WWMouseClass::initCursorState(void* v3) {
@@ -7473,6 +7597,7 @@ void* WWMouseClass::initCursorState(void* v3) {
   v3[2] = v6; /*0x7b8f18*/
   v3[3] = v7; /*0x7b8f1d*/
   return v3; /*0x7b8f13*/
+}
 }
 // 0x7B8F30
 namespace gamemd { 
@@ -7548,6 +7673,7 @@ int WWMouseClass::updateCursorRect() {
     }
   }
   return WWMouseClass_field_0x24; /*0x7b902d*/
+}
 }
 // 0x7B90C0
 namespace gamemd { 
@@ -7681,6 +7807,7 @@ int WWMouseClass::DrawCursorBuffered(void* a1, int a2) {
   }
   return result; /*0x7b92a6*/
 }
+}
 // 0x7B92D0
 namespace gamemd { 
 void WWMouseClass::updateCursor() {
@@ -7745,6 +7872,7 @@ void WWMouseClass::updateCursor() {
   }
   return result; /*0x7b93df*/
 }
+}
 // 0x7B9690
 namespace gamemd { 
 bool WWMouseClass::renderDragSelectionRect() {
@@ -7790,6 +7918,7 @@ bool WWMouseClass::renderDragSelectionRect() {
     }
   }
   return ReleaseMutex(hMutex); /*0x7b973c*/
+}
 }
 // 0x7B9750
 namespace gamemd { 
@@ -7885,10 +8014,12 @@ int WWMouseClass::showCursor() {
   }
   return result; /*0x7b991c*/
 }
+}
 // 0x7B9D70
 namespace gamemd { 
 int WWMouseClass::checkStatus(int a1, int a2, int a3, int a4) {
   return (*(int (__thiscall **)(WWMouseClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x7b9d75*/
+}
 }
 // 0x7B9D90
 namespace gamemd { 
@@ -7911,6 +8042,7 @@ void WWMouseClass::processFrame() {
   if ( *a3 >= (int)WWMouseClass_field_0x38 ) /*0x7b9de4*/
     *a3 = (int)WWMouseClass_field_0x38 - 1; /*0x7b9de7*/
   return result; /*0x7b9de0*/
+}
 }
 // 0x7B9E30
 namespace gamemd { 
@@ -8029,6 +8161,7 @@ bool WWMouseClass::FlipCursorBuffer() {
   }
   return ReleaseMutex(hMutex); /*0x7ba07d*/
 }
+}
 // 0x7BA090
 namespace gamemd { 
 int WWMouseClass::UpdateCursorMovement() {
@@ -8118,11 +8251,13 @@ int WWMouseClass::UpdateCursorMovement() {
   }
   return result; /*0x7ba162*/
 }
+}
 // 0x7BA320
 namespace gamemd {
 bool WWMouseClass::IsRefCountNegative()
 {
   return (int)this->WWMouseClass_field_0xC < 0; /*0x7ba32a*/
+}
 }
 // 0x7BA380
 namespace gamemd { 
@@ -8131,6 +8266,6 @@ int WWMouseClass::checkHotspot(int a1, int a2) {
   this->WWMouseClass_field_0x20 = (void *)a2; /*0x7ba38b*/
   return a1; /*0x7ba38e*/
 }
+}
 // 0x7BA3A0
 namespace gamemd { void* WWMouseClass::QueryInterface(int a1) { return nullptr; } }
-}

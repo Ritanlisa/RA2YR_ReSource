@@ -17,6 +17,7 @@ struct LinkedList_flat {
     unsigned int __tail_0;
     unsigned int m_Next;
     unsigned int m_Prev;
+    unsigned int q004;
     unsigned int q014;
     unsigned int q018;
     unsigned int q01C;

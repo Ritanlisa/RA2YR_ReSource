@@ -18,17 +18,17 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
   unsigned short *v13; // eax
   unsigned short *v14; // [esp+18h] [ebp+14h]
 
-  result = (unsigned int)(a4);
+  result = a4; /*0x493930*/
   if ( a4 > 0 ) /*0x49393b*/
   {
-    v11 = (unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor));
+    v11 = (gamemd::Stream *)((unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor)));
     v14 = (unsigned short *)a4; /*0x493952*/
     do /*0x4939c4*/
     {
       if ( argC < (uint16_t)*a5 && *a2 ) /*0x493967*/
       {
         *a1 = (unsigned short)((gamemd::Stream *)(3 * (this->m_8 & (*a1 >> 2)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 2))));
-        *a5 = argC; /*0x493999*/
+        *a5 = (gamemd::Stream *)(argC);
         v11 = g_ZBufferDescriptor; /*0x49399c*/
       }
       ++a1; /*0x4939a6*/
@@ -44,6 +44,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25(unsigned short * a
   }
   return result; /*0x4939c9*/
 }
+}
 // 0x493A60
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
@@ -54,17 +55,17 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a
   unsigned short *v15; // eax
   unsigned short *v16; // [esp+14h] [ebp+14h]
 
-  result = (int)(a4);
+  result = a4; /*0x493a60*/
   if ( a4 > 0 ) /*0x493a6a*/
   {
-    v12 = (int)((gamemd::Stream *)(argC));
+    v12 = (gamemd::Stream *)((int)((gamemd::Stream *)(argC)));
     v14 = g_ZBufferDescriptor; /*0x493a80*/
     v16 = (unsigned short *)a4; /*0x493a86*/
     do /*0x493aee*/
     {
       if ( v12 < (uint16_t)*a5 && *a2 ) /*0x493a97*/
       {
-        v12 = (int)((gamemd::Stream *)(argC));
+        v12 = (gamemd::Stream *)((int)((gamemd::Stream *)(argC)));
         *a1 = (this->m_8 & (*a1 >> 1)) + (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 1)); /*0x493ac6*/
         *a5 = argC; /*0x493ac9*/
         v14 = g_ZBufferDescriptor; /*0x493acc*/
@@ -82,6 +83,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent50(unsigned short * a
   }
   return result; /*0x493af4*/
 }
+}
 // 0x493B90
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short * a1, unsigned char * a2, int a4, int argC, unsigned short * a5, int a7, int a8, int a9)
@@ -91,17 +93,17 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *
   unsigned short *v13; // eax
   unsigned short *v14; // [esp+18h] [ebp+14h]
 
-  result = (unsigned int)(a4);
+  result = a4; /*0x493b90*/
   if ( a4 > 0 ) /*0x493b9b*/
   {
-    v11 = (unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor));
+    v11 = (gamemd::Stream *)((unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor)));
     v14 = (unsigned short *)a4; /*0x493bb2*/
     do /*0x493c24*/
     {
       if ( argC < (uint16_t)*a5 && *a2 ) /*0x493bc7*/
       {
         *a1 = (unsigned short)((gamemd::Stream *)((this->m_8 & (*a1 >> 2)) + 3 * (this->m_8 & (*(unsigned short *)(this->m_4 + 2 * (uint8_t)*a2) >> 2))));
-        *a5 = argC; /*0x493bf9*/
+        *a5 = (gamemd::Stream *)(argC);
         v11 = g_ZBufferDescriptor; /*0x493bfc*/
       }
       ++a1; /*0x493c06*/
@@ -116,6 +118,7 @@ int BlitTransXlatAlpha_ushort::Blit_Alpha_ZReadWrite_Lucent25_0(unsigned short *
     while ( v14 ); /*0x493c24*/
   }
   return result; /*0x493c29*/
+}
 }
 // 0x493DF0
 namespace gamemd {
@@ -151,7 +154,8 @@ int BlitTransXlatAlpha_ushort::AddRef(unsigned short * a2, unsigned char * a3, i
     }
     while ( v17 ); /*0x493e8e*/
   }
-  return result; /*0x493e92*/
+  return (int)(result);
+}
 }
 // 0x493EA0
 namespace gamemd {
@@ -185,6 +189,7 @@ int BlitTransXlatAlpha_ushort::BlitRect(int a2, int a3, int a4, int a5, int a6, 
            a8,
            0);
 }
+}
 // 0x493F00
 namespace gamemd {
 int BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
@@ -199,6 +204,7 @@ int BlitTransXlatAlpha_ushort::GetSize(int a2, int a3, int a4, int a5, int a6, i
            a7,
            a8,
            0);
+}
 }
 // 0x4939D0
 namespace gamemd {
@@ -359,7 +365,7 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a1a9*/
   if ( (a2 & 1) != 0 ) /*0x49a1af*/
-    RA2_OPDEL(this); /*0x49a1b2*/
+    RA2_OPDEL(); /*0x49a1b2*/
   return (std::locale::facet *)this; /*0x49a1bc*/
 }
 } // namespace gamemd
@@ -370,7 +376,7 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_0(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a1c9*/
   if ( (a2 & 1) != 0 ) /*0x49a1cf*/
-    RA2_OPDEL(this); /*0x49a1d2*/
+    RA2_OPDEL(); /*0x49a1d2*/
   return (std::locale::facet *)this; /*0x49a1dc*/
 }
 } // namespace gamemd
@@ -381,7 +387,7 @@ std::locale::facet * BlitTransXlatAlpha_ushort::Constructor_Blitter_1(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a1e9*/
   if ( (a2 & 1) != 0 ) /*0x49a1ef*/
-    RA2_OPDEL(this); /*0x49a1f2*/
+    RA2_OPDEL(); /*0x49a1f2*/
   return (std::locale::facet *)this; /*0x49a1fc*/
 }
 } // namespace gamemd
@@ -392,13 +398,13 @@ BlitTransXlatAlpha_ushort * BlitTransXlatAlpha_ushort::Blit(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)((unsigned int)((void *)this->ptr_8));
+  v3 = (gamemd::BlitTransXlatAlpha_ushort *)((void *)this->ptr_8);
   *(unsigned int *)this->__pad_0 = (void*)&BlitTransXlatAlpha_unsigned_short_vftable; /*0x49a24b*/
   FractalNoise::Dtor(v3); /*0x49a252*/
   this->ptr_8 = 0; /*0x49a25b*/
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a264*/
   if ( (a2 & 1) != 0 ) /*0x49a26a*/
-    RA2_OPDEL(this); /*0x49a26d*/
+    RA2_OPDEL(); /*0x49a26d*/
   return this->__pad_0; /*0x49a277*/
 }
 } // namespace gamemd

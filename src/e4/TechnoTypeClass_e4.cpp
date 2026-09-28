@@ -16,6 +16,8 @@
 #include "e4/classes/Palette_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/TagClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x48DCD0
 namespace gamemd {
@@ -134,9 +136,9 @@ unsigned int * TechnoTypeClass::LoadBase(ObjectClass * aP1)
   this->u8_AD = 0; /*0x6f0741*/
   this->u8_AE = (void *)(0);
   this->u8_AF = (unsigned char)((void *)(0));
-  this->MainVoxel = 0; /*0x6f0753*/
-  this->u8_B1 = 0; /*0x6f0759*/
-  this->u8_B2 = 0; /*0x6f075f*/
+  this->MainVoxel = (void *)(0);
+  this->u8_B1 = (unsigned char)((void *)(0));
+  this->u8_B2 = (void *)(0);
   this->u8_B3 = 0; /*0x6f0765*/
   *(&this->uniqueId5) = 7; /*0x6f076b*/
   *(&this->uniqueId6) = -1; /*0x6f0775*/
@@ -226,7 +228,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   int v15; // eax
   int v16; // eax
 
-  ObjectTypeClass::ConstructFull((int)this, Source); /*0x710afb*/
+  ObjectTypeClass::ConstructFull(Source); /*0x710afb*/
   this->armed = 1; /*0x710b02*/
   this->weaponCount = 0; /*0x710b0e*/
   this->weapon1 = 0; /*0x710b14*/
@@ -236,42 +238,42 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->ammo = 0; /*0x710b36*/
   this->EliteAbilities = 0; /*0x710b3d*/
   this->u32_2B2 = 0; /*0x710b43*/
-  this->u32_2B6 = (void *)(0);
-  this->u32_2BA = 0; /*0x710b51*/
+  this->u32_2B6 = 0; /*0x710b4b*/
+  this->u32_2BA = (void *)(0);
   this->u16_2BE = 0; /*0x710b57*/
   this->armor = 0; /*0x710b5e*/
   this->techLevel = 0; /*0x710b64*/
-  this->pipScale = (unsigned char)(0);
-  this->speed = 0; /*0x710b70*/
+  this->pipScale = 0; /*0x710b6a*/
+  this->speed = (unsigned char)(0);
   this->speedType = 0; /*0x710b76*/
   this->threatPosed = 0; /*0x710b7c*/
-  this->threatAvoidValue = (unsigned char)(0);
-  this->u32_2DC = (unsigned int)(0);
-  this->cloakRadius = 0; /*0x710b8e*/
-  this->trainable = 0; /*0x710b94*/
+  this->threatAvoidValue = 0; /*0x710b82*/
+  this->u32_2DC = (unsigned char)(0);
+  this->cloakRadius = (int)((void *)(0));
+  this->trainable = (double)(0);
   this->buildLimit = 0; /*0x710b9a*/
   this->u32_2EC = 0; /*0x710ba0*/
   this->q2F0 = 0; /*0x710ba6*/
   this->u32_2F4 = 0; /*0x710bac*/
   this->q2F8 = 500; /*0x710bb2*/
   this->unknown_double_300 = -755914244; /*0x710bbc*/
-  this->q304 = (void *)(1063281229);
-  this->AccelerationFactor = (unsigned int)(-343597384);
-  this->q30C = (unsigned char)(1067366481);
+  this->q304 = 1063281229; /*0x710bc6*/
+  this->AccelerationFactor = (void *)(-343597384);
+  this->q30C = (void *)((unsigned char)(1067366481));
   this->CloakingSpeed = 7; /*0x710be4*/
   VoxelAnimTypeVector::Constructor(0, 0); /*0x710bee*/
-  this->q324 = 0; /*0x710bf8*/
-  this->q328 = 10; /*0x710bfb*/
-  this->DebrisTypes = (void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x710bfe*/
+  this->q324 = (void *)(0);
+  this->q328 = (unsigned int)(10);
+  this->DebrisTypes = (unsigned int)((void*)&TypeList_VoxelAnimTypeClass_const___vftable);
   VectorClass::Construct((unsigned int *)&this->DebrisMaximums, 0, 0); /*0x710c0f*/
   this->q344 = 10; /*0x710c14*/
   this->q340 = 0; /*0x710c17*/
   this->DebrisMaximums = (void*)&TypeList_int_vftable; /*0x710c1a*/
   this->Locomotor = 1247291207; /*0x710c2d*/
-  this->u32_350 = (void *)(298948665);
-  this->q354 = (unsigned int)((void *)(-1610610249));
-  this->q358 = -777003740; /*0x710c4b*/
-  this->unknown_double_360 = 0; /*0x710c4e*/
+  this->u32_350 = 298948665; /*0x710c39*/
+  this->q354 = (void *)(-1610610249);
+  this->q358 = (unsigned char)((void *)(-777003740));
+  this->unknown_double_360 = (void *)(0);
   this->q364 = 0; /*0x710c54*/
   this->unknown_double_368 = 0; /*0x710c5a*/
   this->q36C = 0; /*0x710c60*/
@@ -301,35 +303,35 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->PipScale = 0; /*0x710d1c*/
   *(&this->q1884) = 0; /*0x710d22*/
   this->LeptonMindControlOffset = 70; /*0x710d28*/
-  this->PixelSelectionBracketDelta = (unsigned char)(0);
-  this->PipWrap = 0; /*0x710d40*/
+  this->PixelSelectionBracketDelta = 0; /*0x710d33*/
+  this->PipWrap = (unsigned char)(0);
   VectorClass::BuildingTypeConstructor((unsigned int *)&this->Dock, 0, 0); /*0x710d46*/
   this->u32_3FC = 10; /*0x710d4b*/
-  this->u32_3F8 = (unsigned char)(0);
+  this->u32_3F8 = 0; /*0x710d51*/
   this->Dock = (unsigned char)((void*)&TypeList_BuildingTypeClass_const___vftable);
-  this->DeploysInto = (void *)(0);
-  this->UndeploysInto = 0; /*0x710d67*/
-  this->PowersUnit = (unsigned char)(0);
+  this->DeploysInto = 0; /*0x710d61*/
+  this->UndeploysInto = (void *)(0);
+  this->PowersUnit = (unsigned int)(0);
   *(&this->u32_1A00) = 0; /*0x710d7b*/
   VectorClass::Construct((unsigned int *)&this->VoiceSelect, 0, 0); /*0x710d81*/
-  this->q428 = 10; /*0x710d8e*/
-  this->ptr_424 = (unsigned char)(0);
+  this->q428 = (void *)(10);
+  this->ptr_424 = (gamemd::TechnoTypeClass *)((unsigned int)(0));
   this->VoiceSelect = (unsigned char)((void*)&TypeList_int_vftable);
   VectorClass::Construct((unsigned int *)&this->VoiceSelectEnslaved, 0, 0); /*0x710da4*/
-  this->q444 = 10; /*0x710db1*/
-  this->q440 = (unsigned char)(0);
+  this->q444 = (void *)(10);
+  this->q440 = 0; /*0x710db7*/
   this->VoiceSelectEnslaved = (unsigned char)((void*)&TypeList_int_vftable);
   VectorClass::Construct((unsigned int *)&this->VoiceSelectDeactivated, 0, 0); /*0x710dc7*/
-  this->q460 = 10; /*0x710dd4*/
-  this->q45C = 0; /*0x710dda*/
-  this->VoiceSelectDeactivated = (unsigned char)((void*)&TypeList_int_vftable);
+  this->q460 = (unsigned char)(10);
+  this->q45C = (unsigned char)(0);
+  this->VoiceSelectDeactivated = (void*)&TypeList_int_vftable; /*0x710de0*/
   VectorClass::Construct((unsigned int *)&this->VoiceMove, 0, 0); /*0x710dea*/
-  this->u32_47C = 10; /*0x710df7*/
-  this->q478 = 0; /*0x710dfd*/
-  this->VoiceMove = (unsigned char)((void*)&TypeList_int_vftable);
+  this->u32_47C = (unsigned char)(10);
+  this->q478 = (void *)(0);
+  this->VoiceMove = (void*)&TypeList_int_vftable; /*0x710e03*/
   VectorClass::Construct((unsigned int *)&this->VoiceAttack, 0, 0); /*0x710e0d*/
-  this->q498 = 10; /*0x710e1a*/
-  this->ptr_494 = 0; /*0x710e20*/
+  this->q498 = (unsigned char)(10);
+  this->ptr_494 = (unsigned char)(0);
   this->VoiceAttack = (unsigned char)((void*)&TypeList_int_vftable);
   VectorClass::Construct((unsigned int *)&this->VoiceSpecialAttack, 0, 0); /*0x710e30*/
   this->q4B4 = 10; /*0x710e3d*/
@@ -370,10 +372,10 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->DeploySound = -1; /*0x710f37*/
   this->UndeploySound = -1; /*0x710f3d*/
   this->ChronoInSound = -1; /*0x710f43*/
-  this->ChronoOutSound = -1; /*0x710f49*/
+  this->ChronoOutSound = (unsigned char)(-1);
   this->VoiceHarvest = -1; /*0x710f4f*/
   this->VoicePrimaryWeaponAttack = (unsigned char)(-1);
-  this->VoicePrimaryEliteWeaponAttack = (unsigned char)(-1);
+  this->VoicePrimaryEliteWeaponAttack = -1; /*0x710f5b*/
   this->VoiceSecondaryWeaponAttack = -1; /*0x710f61*/
   this->VoiceSecondaryEliteWeaponAttack = -1; /*0x710f68*/
   this->VoiceDeploy = -1; /*0x710f75*/
@@ -403,7 +405,7 @@ void * TechnoTypeClass::ReadINI(char * Source, int a3)
   this->SensorsSight = 0; /*0x711008*/
   this->DetectDisguiseRange = 0; /*0x71100e*/
   this->BombSight = 0; /*0x711014*/
-  this->LeadershipRating = 5; /*0x71101a*/
+  this->LeadershipRating = (unsigned char)(5);
   this->NavalTargeting = 0; /*0x711024*/
   this->LandTargeting = 0; /*0x71102a*/
   this->BuildTimeMultiplier = 1065353216; /*0x711030*/
@@ -756,7 +758,7 @@ AbstractClass * * TechnoTypeClass::Construct(ObjectTypeClass * aP1)
   int v3; // eax
   int v4; // ecx
 
-  ObjectTypeClass::Construct((unsigned int *)this, aP1); /*0x71184b*/
+  ObjectTypeClass::Construct(aP1); /*0x71184b*/
   TechnoTypeClass::Constructor_0(aP1); /*0x711859*/
   this->DebrisTypes = (void*)&TypeList_VoxelAnimTypeClass_const___vftable; /*0x71185e*/
   IntDynamicVector::Construct((unsigned int *)(&this->q1446), aP1); /*0x71186d*/
@@ -1006,7 +1008,7 @@ int TechnoTypeClass::DTOR()
   }
   this->VoxelAnimList_FlagByte = 0; /*0x711e5f*/
   this->VoxelAnimList_Capacity = 0; /*0x711e65*/
-  return ObjectTypeClass::Destruct(this); /*0x711e70*/
+  return ObjectTypeClass::Destruct(); /*0x711e70*/
 }
 } // namespace gamemd
 // 0x711F00
@@ -1505,7 +1507,8 @@ char TechnoTypeClass::vt_entry_A0()
 namespace gamemd {
 void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0()
 {
-  return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
+  return TechnoTypeClass::CanAttackMove_IgnoreWeapon();
+}
 }
 // 0x711E90
 bool TechnoTypeClass::CanAttackMove_IgnoreWeapon()
@@ -1524,9 +1527,9 @@ double TechnoTypeClass::ComputeBuildTime()
 // 0x7179A0
 TechnoTypeClass * TechnoTypeClass::ddtor(char a2)
 {
-  TechnoTypeClass::DTOR((int)this); /*0x7179a3*/
+  TechnoTypeClass::DTOR(); /*0x7179a3*/
   if ( (a2 & 1) != 0 ) /*0x7179ad*/
-    RA2_OPDEL(this); /*0x7179b0*/
+    RA2_OPDEL(); /*0x7179b0*/
   return this; /*0x7179ba*/
 }
 // 0x717AF0
@@ -1600,5 +1603,6 @@ char TechnoTypeClass::RemoveItem(int a2)
 namespace gamemd {
 void* TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0()
 {
-  return TechnoTypeClass::CanAttackMove_IgnoreWeapon(this);
+  return TechnoTypeClass::CanAttackMove_IgnoreWeapon();
+}
 }

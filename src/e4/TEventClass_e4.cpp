@@ -79,7 +79,8 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
   int v60; // [esp+24h] [ebp-14h]
   int v61; // [esp+28h] [ebp-10h]
   unsigned char v62[12]; // [esp+2Ch] [ebp-Ch] BYREF
-TEventClass_field_2C = (int)(this->TEventClass_field_2C);
+
+  TEventClass_field_2C = (int)(this->TEventClass_field_2C);
   switch ( TEventClass_field_2C ) /*0x71e964*/
   {
     case 13: /*0x71e964*/
@@ -571,6 +572,7 @@ TEventClass_field_2C = (int)(this->TEventClass_field_2C);
       return v18;
   }
 }
+}
 // 0x71F390
 namespace gamemd {
 int TEventClass::PrepareSaveToINI(const char * a2)
@@ -582,7 +584,8 @@ int TEventClass::PrepareSaveToINI(const char * a2)
   int v7; // [esp-Ch] [ebp-14h]
   int v8; // [esp-8h] [ebp-10h]
   const CHAR * TEventClass_field_34;
-TEventClass_field_2C = (int)(this->TEventClass_field_2C);
+
+  TEventClass_field_2C = (int)(this->TEventClass_field_2C);
   switch ( TEventClass_field_2C ) /*0x71f3a8*/
   {
     case 1: /*0x71f3a8*/
@@ -630,7 +633,7 @@ TEventClass_field_2C = (int)(this->TEventClass_field_2C);
       v3 = 7; /*0x71f3e0*/
       break; /*0x71f3e5*/
     case 23: /*0x71f3a8*/
-      v3 = (int)(12);
+      v3 = 12; /*0x71f3e7*/
       break; /*0x71f3ec*/
     case 27: /*0x71f3a8*/
     case 28: /*0x71f3a8*/
@@ -670,18 +673,20 @@ TEventClass_field_2C = (int)(this->TEventClass_field_2C);
                this->TEventClass_field_34,
                this->TEventClass_field_38);
     TEventClass_field_34 = (int)((const CHAR *)(this->TEventClass_field_34));
-    v8 = (int)((const CHAR *)(0));
+    v8 = (int)(0);
     v7 = (int)(this->TEventClass_field_2C);
     v6 = g_Str_Trace__d__d; /*0x71f44a*/
   }
   return wsprintfA((LPSTR)&a2[strlen(a2)], v6, v7, v8, TEventClass_field_34); /*0x71f441*/
+}
 }
 // 0x71F800
 namespace gamemd {
 int TEventClass::CheckConditions(int a2, int a3)
 {
   int result; // eax
-result = (int)(this->TEventClass_field_28);
+
+  result = (int)(this->TEventClass_field_28);
   if ( result == a2 ) /*0x71f809*/
   {
     result = result->TEventClass_field_28; /*0x71f80b*/
@@ -690,6 +695,7 @@ result = (int)(this->TEventClass_field_28);
   if ( this->TEventClass_field_30 == a2 ) /*0x71f814*/
     this->TEventClass_field_30 = 0; /*0x71f816*/
   return result; /*0x71f81d*/
+}
 }
 // 0x71FA80
 namespace gamemd {
@@ -749,10 +755,11 @@ void * TEventClass::Fire(char a2)
       ++v5; /*0x71fb6f*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x71fb83*/
+  AbstractClass::DTOR(); /*0x71fb83*/
   if ( (a2 & 1) != 0 ) /*0x71fb8d*/
-    RA2_OPDEL(this); /*0x71fb90*/
+    RA2_OPDEL(); /*0x71fb90*/
   return &this->vtable0; /*0x71fb9a*/
+}
 }
 // 0x71F820
 namespace gamemd {
@@ -763,7 +770,7 @@ int TEventClass::ProcessEvent(int a2)
   int TEventClass_field_30; // eax
   int v6; // eax
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x71f829*/
+  AbstractClass::ProcessPower(); /*0x71f829*/
   TEventClass_field_28 = this->TEventClass_field_28; /*0x71f82e*/
   if ( TEventClass_field_28 ) /*0x71f833*/
   {
@@ -854,6 +861,6 @@ int TEventClass::StubReturn48()
 namespace gamemd {
 int TEventClass::Stub()
 {
-  return this->eventType; /*0x71fa73*/
+  return (int)(this->eventType);
 }
 } // namespace gamemd

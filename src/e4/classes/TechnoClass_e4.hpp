@@ -152,9 +152,9 @@ struct TechnoClass {
     char currentWeaponSlot[4];  // 0x138
     unsigned char q139;  // 0x139
     char q13C[4];  // 0x13C
-    unsigned int currentRank;  // 0x140
+    char currentRank[4];  // 0x140
     char gattlingStage[4];  // 0x144
-    char gattlingValue[4];  // 0x148
+    unsigned int gattlingValue;  // 0x148
     unsigned int ammoReloadTimer;  // 0x14C
     void* q14E;  // 0x14E
     HouseClass* initialOwner;  // 0x150
@@ -311,7 +311,7 @@ struct TechnoClass {
     HouseClass* q2F4;  // 0x2F4
     TechnoClass* diskLaserChargeState;  // 0x2F8
     float ammo;  // 0x2FC
-    char unitValue[4];  // 0x300
+    unsigned int unitValue;  // 0x300
     ParticleSystemClass* fireParticles;  // 0x304
     void* sparkParticles;  // 0x308
     unsigned int q30A;  // 0x30A
@@ -504,16 +504,18 @@ struct TechnoClass {
     void* planningToken;  // 0x514
     ObjectTypeClass* disguiseAsType;  // 0x518
     HouseClass* disguisedAsHouse;  // 0x51C
-    unsigned int IsWaypointHidden;
     unsigned int __pad_18C;
     unsigned int __pad_1C4;
     unsigned int barrelRecoil;
     unsigned int checkCloakState;
     unsigned int damageParticles_2;
-    unsigned int railgunParticles_2;
-    unsigned int vtable33;
+    unsigned int master;
     unsigned int queueUpToEnter;
+    unsigned int railgunParticles_2;
     unsigned int vtable0;
+    unsigned int vtable33;
+    unsigned int vtable34;
+    unsigned int FindClosestPlacementCell;
     unsigned int CalcFlashAlpha;
 // --- flat members (END) ---
     BOOL processDamageAnimation(int a1);
@@ -544,6 +546,8 @@ struct TechnoClass {
     static double SetFocus(...);  // C2597 interim stub
     static double EjectPassengers(...);  // C2597 interim stub
     static double CreatePlanningNode(...);  // C2597 interim stub
+    static double IsDeployed(...);  // C2597 interim stub
+    static double IsWaypointHidden(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

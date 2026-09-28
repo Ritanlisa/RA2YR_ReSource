@@ -21,6 +21,7 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/LightningStorm_e4.hpp"
 #include "e4/classes/E4Recv_779690_e4.hpp"
+#include "e4/classes/Rules_e4.hpp"
 
 // 0x4791F0
 namespace gamemd {
@@ -290,7 +291,7 @@ LinkClass * * LinkedList_flat::Append(int a2)
   this->m_Prev = v3; /*0x556714*/
   v4 = *(unsigned int *)this->__pad_0; /*0x556717*/
   this->m_Next = 0; /*0x55671b*/
-  return (*(int (__thiscall **)(LinkClass *))(v4 + 24))(this); /*0x556725*/
+  return (); /*0x556725*/
 }
 } // namespace gamemd
 // 0x556730

@@ -29,7 +29,7 @@ int MapSeed::ValidateName(int a2)
 
   if ( a2 ) /*0x597736*/
     return (*(int (__stdcall **)(int, char *))(this->q008)(a2, &this->q00C0); /*0x597740*/
-  IDA_LOBYTE(result) = ShowSaveLoadDialog((int)this, &this->q00C0); /*0x597752*/
+  IDA_LOBYTE(&this->q00C0); /*0x597752*/
   return result; /*0x597744*/
 }
 } // namespace gamemd

@@ -48,7 +48,8 @@ void PlaceCabhutMap(FootClass * aP0)
   int v12; // edx
   int v13; // edx
   unsigned int v14[3]; // [esp+10h] [ebp-Ch] BYREF
-aP0 = (gamemd::FootClass *)((int)(aP0));
+
+  aP0 = (gamemd::FootClass *)((int)(aP0));
   v2 = (int)(aP0[1]);
   if ( v2 >= aP0[3] + v2 + 1 ) /*0x5904c7*/
     return 0; /*0x59052b*/
@@ -87,6 +88,7 @@ aP0 = (gamemd::FootClass *)((int)(aP0));
   v14[2] = 0; /*0x5905aa*/
   v11->COMStub_54(v14, 0); /*0x5905b2*/
   return 1; /*0x59052b*/
+}
 }
 // 0x594190
 namespace gamemd {
@@ -188,6 +190,7 @@ void sub_594190(int * a1, int a2)
   }
   return result; /*0x5942df*/
 }
+}
 // 0x594420
 namespace gamemd {
 void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
@@ -226,8 +229,9 @@ void FloodFillRandomMapTerrain(int a1, IUnknown * a2, int a3)
   char v35; // [esp+35h] [ebp-Bh]
   int v36; // [esp+38h] [ebp-8h]
   int v37; // [esp+3Ch] [ebp-4h]
-v31 = (int)((unsigned int *)(a2));
-  v4 = (unsigned int *)((void **)(RA2_OPNEW(0x50u)));
+
+  v31 = a2; /*0x594426*/
+  v4 = RA2_OPNEW(0x50u); /*0x59442e*/
   if ( v4 ) /*0x594438*/
     v5 = RandomMap::TerrainTileDataConstructor(v4, *(unsigned int *)(a1 + 36)); /*0x594445*/
   else
@@ -253,7 +257,7 @@ v31 = (int)((unsigned int *)(a2));
   {
     while ( 1 ) /*0x5944fc*/
     {
-      v11 = (unsigned int *)(Block);
+      v11 = Block; /*0x5944fc*/
       v12 = v10 - 1; /*0x594500*/
       v13 = *((unsigned int *)Block + v12); /*0x594503*/
       v26 = v13; /*0x594506*/
@@ -264,7 +268,7 @@ v31 = (int)((unsigned int *)(a2));
         {
           while ( 1 ) /*0x59451f*/
           {
-            v11[v12] = (unsigned int *)(v11[v12 + 1]);
+            v11[v12] = v11[v12 + 1]; /*0x59451f*/
             if ( ++v12 >= v36 ) /*0x594529*/
               break; /*0x594529*/
             v11 = Block; /*0x594517*/
@@ -334,6 +338,7 @@ v31 = (int)((unsigned int *)(a2));
     if ( v35 ) /*0x5946e5*/
       RA2_OPDEL(Block); /*0x5946e8*/
   }
+}
 }
 // 0x594B50
 namespace gamemd {
@@ -473,7 +478,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
       v43 = 0; /*0x594d6a*/
       v42 = 1; /*0x594d6e*/
     }
-    v18 = (char *)Base + 8 * k + 4; /*0x594d81*/
+    v18 = (unsigned int *)((char *)Base + 8 * k + 4);
     if ( *(int *)v45.__tail_10 < v45.m_8 /*0x594da7*/
       || (IDA_BYTE1(v45.m_C) || !v45.m_8)
       && v46 > 0
@@ -548,6 +553,7 @@ ObjectClass * * RandomMap_DistributeTerrain()
   if ( *(unsigned int *)&v45.m_1[3] && IDA_BYTE1(v45.m_C) ) /*0x594f25*/
     RA2_OPDEL(*(void **)&v45.m_1[3]); /*0x594f28*/
   return 1; /*0x594f03*/
+}
 }
 // 0x595CE0
 namespace gamemd {
@@ -718,6 +724,7 @@ AbstractTypeClass * * CleanupRandomMapCache()
       RA2_OPDEL(Items); /*0x595f9c*/
   }
 }
+}
 // 0x595FB0
 namespace gamemd {
 unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
@@ -847,6 +854,7 @@ unsigned int * GenerateRandomMapAndMinimap(HWND hDlg, char (*a2)() a2)
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v18); /*0x5962df*/
   *(unsigned int *)v17.__pad_0 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x5962e8*/
   return ComPtr::Release(&v17); /*0x5962f5*/
+}
 }
 // 0x59A8F0
 namespace gamemd {
@@ -1069,6 +1077,7 @@ AbstractClass * * ArrangeBuildingPlacementGrid(int a1, int a2, MapResourceClass 
       RA2_OPDEL(v44); /*0x59acfd*/
   }
 }
+}
 // 0x59C630
 namespace gamemd {
 int sub_59C630()
@@ -1145,6 +1154,7 @@ int sub_59C630()
   }
   return result; /*0x59c7f3*/
 }
+}
 // 0x5942F0
 namespace gamemd {
 int E4Recv_5942F0::sub_5942F0(int * a2)
@@ -1210,7 +1220,7 @@ int E4Recv_5942F0::sub_5942F0(int * a2)
 namespace gamemd {
 int j_Options_GetValue(const char ** dwNewLong)
 {
-  return Options::PrepareSaveLoadDlg(dwNewLong);
+  return Options::PrepareSaveLoadDlg((Options *)dwNewLong);
 }
 // 0x598000
 namespace gamemd {

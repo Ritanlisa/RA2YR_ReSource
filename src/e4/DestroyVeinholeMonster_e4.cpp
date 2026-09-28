@@ -15,7 +15,7 @@ void E4Recv_74F620::sub_74F620()
 
   for ( i = 0; i <= (int)this->vtable0; *((unsigned int *)this->vtable2 + i - 1) = 0 ) /*0x74f626*/
     ++i; /*0x74f62b*/
-  __Release__NonReentrantLock_details_Concurrency__QAEXXZ_0((Concurrency::details::_NonReentrantLock *)this); /*0x74f639*/
+  __Release__NonReentrantLock_details_Concurrency__QAEXXZ_0(); /*0x74f639*/
 }
 } // namespace gamemd
 

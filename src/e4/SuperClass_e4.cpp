@@ -23,6 +23,7 @@
 #include "e4/classes/AbstractTypeClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
 
 // 0x53AE50
 namespace gamemd {
@@ -67,9 +68,9 @@ void * SuperClass::LaunchPsychicDominator(int a2)
 namespace gamemd {
 int SuperClass::Constructor()
 {
-  int v2; // eax
+  SuperClass * v2;
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6caec3*/
+  AbstractClass::Constructor(); /*0x6caec3*/
   this->SuperClass_field_0x24 = (unsigned int)((void *)-1);
   this->SuperClass_field_0x28 = (unsigned int)(0);
   this->SuperClass_field_0x2C = (unsigned int)(0);
@@ -101,24 +102,25 @@ int SuperClass::Constructor()
          dword_A83CC0 + dword_A83CCC,
          0) )
   {
-    v2 = (unsigned int)(dword_A83CC8++);
+    v2 = (gamemd::SuperClass *)((unsigned int)(dword_A83CC8++));
     *((unsigned int *)unk_A83CBC + v2) = this; /*0x6caf80*/
   }
   return (int)this; /*0x6caf85*/
+}
 }
 // 0x6CAF90
 namespace gamemd {
 int SuperClass::Construct(int a2, CCINIClass * aP2)
 {
-  int v5; // eax
-  int v6; // eax
-  int v7; // eax
+  SuperClass * v5;
+  SuperClass * v6;
+  SuperClass * v7;
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6caf94*/
-  this->q028 = (void *)(a2);
+  AbstractClass::Constructor(); /*0x6caf94*/
+  this->q028 = (unsigned int)(a2);
   this->q024 = (void *)((unsigned int)(-1));
-  this->q02C = (void *)((unsigned int)(aP2));
-  this->q030 = (unsigned int)(g_CurrentFrame);
+  this->q02C = (unsigned int)(aP2);
+  this->q030 = g_CurrentFrame; /*0x6cafb5*/
   this->q038 = 0; /*0x6cafb8*/
   this->BlinkTimer = 0; /*0x6cafbb*/
   this->BlinkState = 0; /*0x6cafbe*/
@@ -149,7 +151,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
          dword_A83CC0 + dword_A83CCC,
          0) )
   {
-    v5 = (unsigned int)(dword_A83CC8++);
+    v5 = (gamemd::SuperClass *)((unsigned int)(dword_A83CC8++));
     *((unsigned int *)dword_A83CBC + v5) = this; /*0x6cb065*/
   }
   if ( g_AnimManager < g_AnimTypePool /*0x6cb09c*/
@@ -160,7 +162,7 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
          g_AnimTypePool + g_AnimManagerConfig,
          0) )
   {
-    v6 = (unsigned int)(g_AnimManager++);
+    v6 = (gamemd::SuperClass *)((unsigned int)(g_AnimManager++));
     *((unsigned int *)g_AnimPoolCount + v6) = this; /*0x6cb0b8*/
   }
   if ( dword_B0F6D8 < dword_B0F6D0 /*0x6cb0ef*/
@@ -171,16 +173,17 @@ int SuperClass::Construct(int a2, CCINIClass * aP2)
          dword_B0F6D0 + dword_B0F6DC,
          0) )
   {
-    v7 = (unsigned int)(dword_B0F6D8++);
+    v7 = (gamemd::SuperClass *)((int)(dword_B0F6D8++));
     *((unsigned int *)dword_B0F6CC + v7) = this; /*0x6cb10b*/
   }
-  return this; /*0x6cb110*/
+  return (int)(this);
+}
 }
 // 0x6CB120
 namespace gamemd {
 SuperClass * * SuperClass::CleanupMembers()
 {
-  void * v2;
+  void ** v2;
   int v3; // eax
   int v4; // eax
   int v5; // eax
@@ -188,7 +191,7 @@ SuperClass * * SuperClass::CleanupMembers()
   int v7; // eax
   int v8; // eax
 
-  v2 = (void *)((unsigned int)(this->q068));
+  v2 = (void **)((unsigned int)(this->q068));
   *(unsigned int *)this = (void*)&SuperClass_vftable; /*0x6cb127*/
   this->vtable2 = (void*)&SuperClass_vftable; /*0x6cb12f*/
   this->vtable3 = (void*)&SuperClass_vftable; /*0x6cb136*/
@@ -260,7 +263,8 @@ SuperClass * * SuperClass::CleanupMembers()
       ++v8; /*0x6cb2bf*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x6cb2d3*/
+  AbstractClass::DTOR(); /*0x6cb2d3*/
+}
 }
 // 0x6CB560
 namespace gamemd {
@@ -287,7 +291,7 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
   {
     v5 = (gamemd::SuperClass *)((char)(this));
     v6 = (unsigned int)(this->Height);
-    this->unknown_6D = (unsigned int)(1);
+    this->unknown_6D = 1; /*0x6cb579*/
     this->unknown_6E = v5; /*0x6cb57d*/
     this->DestinationCoords = 0; /*0x6cb580*/
     v7 = *(unsigned int *)(v6 + 96); /*0x6cb583*/
@@ -402,9 +406,10 @@ AbstractClass * * SuperClass::StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknow
     }
     if ( !this->unknown_6E ) /*0x6cb788*/
   LABEL_45:
-    SuperClass::AnnounceReady(this, aP2); /*0x6cb78a*/
+    SuperClass::AnnounceReady(aP2); /*0x6cb78a*/
   }
   return 0; /*0x6cb79a*/
+}
 }
 // 0x6CB7B0
 namespace gamemd {
@@ -431,17 +436,18 @@ int SuperClass::Lose()
   }
   return 1; /*0x6cb80c*/
 }
+}
 // 0x6CB830
 namespace gamemd {
 AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
 {
-  int v3; // eax
+  void * v3;
   int v4; // eax
   int v5; // eax
-  int v6; // ecx
+  void * v6;
   unsigned int v8[4]; // [esp+8h] [ebp-10h] BYREF
 
-  v3 = (int)(this->q068);
+  v3 = (void *)((int)(this->q068));
   if ( v3 ) /*0x6cb83e*/
   {
     *(unsigned char *)(v3 + 405) = 0; /*0x6cb840*/
@@ -465,7 +471,7 @@ AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
   {
     return 0; /*0x6cb90d*/
   }
-  this->q078 = (void *)(-1);
+  this->q078 = (int)((void *)(-1));
   if ( this->q030 == -1 ) /*0x6cb8c6*/
     this->q030 = g_CurrentFrame; /*0x6cb8ce*/
   v6 = this->q024; /*0x6cb8d1*/
@@ -477,6 +483,7 @@ AbstractClass * * SuperClass::StopPreclickAnim(IUnknown * aP1)
   if ( *(unsigned char *)(this->q028 + 229) ) /*0x6cb8f7*/
     this->q07C = 0; /*0x6cb8ff*/
   return 1; /*0x6cb902*/
+}
 }
 // 0x6CB920
 namespace gamemd {
@@ -2049,6 +2056,7 @@ AbstractClass * * SuperClass::Reset()
     }
   }
   return result; /*0x6ce18b*/
+}
 }
 // 0x6CB3A0
 namespace gamemd {

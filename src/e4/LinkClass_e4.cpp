@@ -9,13 +9,14 @@
 #include "e4/classes/Math_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x4E1480
 namespace gamemd {
 int LinkClass::Destroy()
 {
   (*(void (__thiscall **)(GadgetClass *))(*(unsigned int *)this->__pad_0 + 84))(this); /*0x4e1485*/
-  return LinkedList::RemoveNode((LinkClass *)this); /*0x4e148f*/
+  return LinkedList::RemoveNode(); /*0x4e148f*/
 }
 } // namespace gamemd
 // 0x5565A0
@@ -47,9 +48,9 @@ int LinkClass::Destruct()
 namespace gamemd {
 LinkClass * LinkClass::Destru_vt00(char a2)
 {
-  LinkClass::Destruct(this); /*0x4e1ad3*/
+  LinkClass::Destruct(); /*0x4e1ad3*/
   if ( (a2 & 1) != 0 ) /*0x4e1add*/
-    RA2_OPDEL(this); /*0x4e1ae0*/
+    RA2_OPDEL(); /*0x4e1ae0*/
   return this->__pad_0; /*0x4e1aea*/
 }
 } // namespace gamemd

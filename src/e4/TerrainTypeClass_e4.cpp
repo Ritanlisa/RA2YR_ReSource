@@ -29,6 +29,8 @@
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/TimerClass_e4.hpp"
 #include "e4/classes/Team_e4.hpp"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
 
 // 0x5447C0
 namespace gamemd {
@@ -39,7 +41,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   char Destination[48]; // [esp+10h] [ebp-34h] BYREF
   char v11; // [esp+40h] [ebp-4h]
 
-  ObjectTypeClass::ConstructFull((int *)this, aP4); /*0x5447ce*/
+  ObjectTypeClass::ConstructFull(aP4); /*0x5447ce*/
   this->ArrayIndex = a2; /*0x5447d9*/
   this->Foundation = 0xFFFF; /*0x5447e4*/
   *(unsigned int *)this->RadarColor = 0xFFFF; /*0x5447ea*/
@@ -51,7 +53,7 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   IDA_LODWORD(this->AnimationProbability) = (void*)&DynamicVectorClass_unsigned_short___vftable; /*0x544811*/
   this->FoundationData = (CellStruct *)10; /*0x54481b*/
   *(unsigned int *)&this->IsVeinhole = 0; /*0x544825*/
-  this->u32_2CC = (unsigned int)(0);
+  this->u32_2CC = 0; /*0x544830*/
   this->MainVoxel = (unsigned int)(-1);
   this->u32_2C4 = -1; /*0x54483c*/
   this->u32_2C8 = -1; /*0x544842*/
@@ -131,7 +133,7 @@ TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
   int v5; // ecx
   TerrainTypeClass **v6; // edx
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x71da89*/
+  ObjectTypeClass::ConstructFull(aP1); /*0x71da89*/
   this->ArrayIndex = -1; /*0x71da90*/
   this->Foundation = 0; /*0x71da9a*/
   this->RadarColor[0] = 0; /*0x71daa5*/
@@ -413,7 +415,7 @@ int TerrainTypeClass::PowerDrainUpdate(int * a2)
   int v5; // eax
   int v6; // edx
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x71e149*/
+  AbstractTypeClass::ProcessPower(a2); /*0x71e149*/
   Power::TimerProcess(this->ArrayIndex); /*0x71e157*/
   IDA_LOBYTE(v3) = this->WaterBound; /*0x71e15c*/
   Power::FlagProcess((Power *)a2, v3); /*0x71e165*/

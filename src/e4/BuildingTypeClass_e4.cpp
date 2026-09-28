@@ -47,7 +47,7 @@ int BuildingTypeClass::ConstructFull(char * Source)
   int v19; // ecx
   unsigned int *v20; // edi
 
-  TechnoTypeClass::ReadINI((char *)this, Source, 0); /*0x45dda1*/
+  TechnoTypeClass::ReadINI(Source, 0); /*0x45dda1*/
   this->ArrayIndex = -1; /*0x45ddaf*/
   this->qDFC = 0; /*0x45ddb5*/
   this->qE00 = 0; /*0x45ddbb*/
@@ -65,7 +65,7 @@ int BuildingTypeClass::ConstructFull(char * Source)
   this->LightIntensity = 0; /*0x45de21*/
   this->LightRedTint = 1000000; /*0x45de27*/
   this->LightGreenTint = (void *)(1000000);
-  this->LightBlueTint = (unsigned int)(1000000);
+  this->LightBlueTint = (int)((gamemd::InfantryTypeClass *)(1000000));
   this->PrimaryFirePixelOffset = 0xFFFF; /*0x45de40*/
   this->u32_E48 = 0xFFFF; /*0x45de46*/
   this->SecondaryFirePixelOffset = 0xFFFF; /*0x45de4c*/
@@ -82,7 +82,7 @@ int BuildingTypeClass::ConstructFull(char * Source)
   this->qEA0 = 0; /*0x45de8e*/
   this->qEA4 = 0; /*0x45de94*/
   this->ExitCoord = (gamemd::SHPStruct *)(0);
-  this->SecretBuilding = 0; /*0x45dea0*/
+  this->SecretBuilding = (gamemd::BuildingTypeClass *)((gamemd::SHPStruct *)(0));
   this->BuildingTypeClass_field_EB0 = -1; /*0x45dea6*/
   this->FoundationOutside = 3; /*0x45deac*/
   this->BuildingTypeClass_field_ED8 = 0; /*0x45deb6*/
@@ -283,8 +283,8 @@ int BuildingTypeClass::ConstructFull(char * Source)
         goto LABEL_11; /*0x45e358*/
     }
   }
-  this->ArrayIndex = (unsigned int)((void *)(v6));
-  this->RubbleLoaded = 0; /*0x45e362*/
+  this->ArrayIndex = (void *)(v6);
+  this->RubbleLoaded = (void *)(0);
   this->qF08 = 1; /*0x45e368*/
   this->qF0C = 0; /*0x45e36e*/
   this->qF10 = 0; /*0x45e374*/
@@ -391,7 +391,7 @@ int BuildingTypeClass::ConstructFull(char * Source)
 namespace gamemd {
 unsigned int * BuildingTypeClass::loadBuildingProperty_b_545E520(ObjectTypeClass * aP1)
 {
-  TechnoTypeClass::Construct((int)this, aP1); /*0x45e528*/
+  TechnoTypeClass::Construct(aP1); /*0x45e528*/
   this->Buildup[0] = 0; /*0x45e52f*/
   *(unsigned int *)&this->__pad_1714[116] = 0; /*0x45e535*/
   *(unsigned int *)&this->__pad_1714[120] = 0; /*0x45e53b*/
@@ -482,7 +482,7 @@ AbstractClass * * BuildingTypeClass::CleanupMembers(AbstractClass * a1, Abstract
   }
   this->__pad_1714[125] = 0; /*0x45e734*/
   *(unsigned int *)&this->__pad_1714[120] = 0; /*0x45e73a*/
-  return TechnoTypeClass::DTOR((int)this); /*0x45e745*/
+  return TechnoTypeClass::DTOR(); /*0x45e745*/
 }
 } // namespace gamemd
 // 0x45E970
@@ -1139,7 +1139,7 @@ int BuildingTypeClass::UpdatePower()
   int v52; // edx
   Checksummer *v54; // [esp+Ch] [ebp+4h]
 
-  BuildingTypeClass::ProcessPower((int)this, &v54->crcValue); /*0x464b39*/
+  BuildingTypeClass::ProcessPower(&v54->crcValue); /*0x464b39*/
   Checksummer::Add_double(v54, this->GateCloseDelay[0], this->GateCloseDelay[1]); /*0x464b4e*/
   Power::TimerProcess(this->LightVisibility); /*0x464b5c*/
   Power::TimerProcess(this->LightIntensity); /*0x464b6a*/
@@ -1665,7 +1665,7 @@ unsigned int * BuildingTypeClass::Construct(AbstractClass * aP1)
   int v3; // eax
   int v4; // eax
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x644beb*/
+  ObjectTypeClass::ConstructFull(aP1); /*0x644beb*/
   this->WalkRate = 0; /*0x644bf8*/
   this->IdleRate = 0; /*0x644bfe*/
   *(unsigned int *)this->VeteranAbilities = 0; /*0x644c04*/
@@ -1818,7 +1818,7 @@ void* BuildingTypeClass::ProcessPower(AbstractClass * aP1)
   int v40; // eax
   int v41; // ecx
 
-  AbstractTypeClass::ProcessPower((char *)this, aP1); /*0x7171a9*/
+  AbstractTypeClass::ProcessPower(aP1); /*0x7171a9*/
   Checksummer::Add_double(this->q2F0, this->u32_2F4); /*0x7171be*/
   Power::TimerProcess(this->q2F8); /*0x7171cc*/
   Checksummer::Add_double(this->unknown_double_300, this->q304); /*0x7171e1*/
@@ -2102,7 +2102,7 @@ char BuildingTypeClass::Enqueue(int a2)
     v6 = (unsigned int *)(*(unsigned int *)v3 + 8 * i++); /*0x41c542*/
     *(unsigned int *)&v3[v5] = *v6; /*0x41c547*/
   }
-  RA2_OPDEL(*(void **)v3); /*0x41c55b*/
+  RA2_OPDEL(); /*0x41c55b*/
   v7 = a2 + v3->vtable3; /*0x41c566*/
   *(unsigned int *)v3 = v3; /*0x41c568*/
   v3->vtable3 = v7; /*0x41c56a*/
@@ -2214,7 +2214,7 @@ int BuildingTypeClass::GetMaxPips()
   }
   else if ( this->PipScale[0] != 4 ) /*0x45ed0d*/
   {
-    return ObjectClass::GetModeSpecificValue((TechnoTypeClass *)this); /*0x45ed0f*/
+    return ObjectClass::GetModeSpecificValue(); /*0x45ed0f*/
   }
   return result; /*0x45ed30*/
 }
@@ -2328,9 +2328,9 @@ int BuildingTypeClass::ddtor()
 {
   char v3; // [esp+8h] [ebp+4h]
 
-  BuildingTypeClass::CleanupMembers(this); /*0x465dc3*/
+  BuildingTypeClass::CleanupMembers(); /*0x465dc3*/
   if ( (v3 & 1) != 0 ) /*0x465dcd*/
-    RA2_OPDEL(this); /*0x465dd0*/
+    RA2_OPDEL(); /*0x465dd0*/
   return (int)this; /*0x465dda*/
 }
 } // namespace gamemd

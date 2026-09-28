@@ -23,7 +23,7 @@ CounterClass * CounterClass::QueryInterface(char a2)
   this->u32_D = (unsigned int)((gamemd::CounterClass *)(0));
   this->u32_8 = (gamemd::CounterClass *)(0);
   if ( (a2 & 1) != 0 ) /*0x49fd18*/
-    RA2_OPDEL(this); /*0x49fd1b*/
+    RA2_OPDEL(); /*0x49fd1b*/
   return &this->items; /*0x49fd25*/
 }
 } // namespace gamemd

@@ -161,6 +161,7 @@ unsigned int TacticalClass::RenderCellFogOfWar(IUnknown * aP1, Tactical * aP2)
   }
   return result; /*0x48027d*/
 }
+}
 // 0x4802A0
 namespace gamemd {
 void TacticalClass::DrawCellTerrainOverlay(int * a2, int * a3)
@@ -194,6 +195,7 @@ void TacticalClass::DrawCellTerrainOverlay(int * a2, int * a3)
       a3[2],
       a3[3],
       58 - 15 * SHIBYTE(this->visibleCells[13]));
+}
 }
 // 0x4AC380
 namespace gamemd {
@@ -270,7 +272,8 @@ void* TacticalClass::ProcessScroll(int * a2)
       IDA_LOBYTE(v4) = TacticalClass::UpdateScrollMaxBounds((TacticalClass *)g_TacticalClass_Instance, &v11); /*0x4ac429*/
     }
   }
-  return v4; /*0x4ac42e*/
+  return (void *)(v4);
+}
 }
 // 0x4AC700
 namespace gamemd {
@@ -345,6 +348,7 @@ unsigned int * TacticalClass::SetDisplayMode(unsigned int * a2, char a3)
     }
   }
   return result; /*0x4ac7a0*/
+}
 }
 // 0x4AE290
 namespace gamemd {
@@ -472,6 +476,7 @@ void TacticalClass::InterpolateView()
   }
   return result; /*0x4ae43e*/
 }
+}
 // 0x4F45B0
 namespace gamemd {
 AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
@@ -533,6 +538,7 @@ AbstractClass * * TacticalClass_RenderFrame(void * a1, void * a2, void * a3)
     byte_A9FA94 = 0; /*0x4f4766*/
   }
   return (gamemd::AbstractClass **)(result);
+}
 }
 // 0x547230
 namespace gamemd {
@@ -627,7 +633,7 @@ void TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
   char v8; // bl
   char v9; // al
   ShapeButtonClass *v10; // edi
-  int *v11; // edi
+  unsigned int v11;
   int v12; // eax
   ShapeButtonClass *v13; // eax
   int v15; // [esp+0h] [ebp-24h]
@@ -677,7 +683,7 @@ void TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
     IDA_LOBYTE(result) = v8; /*0x6d0672*/
     return result; /*0x6d0672*/
   }
-  v10 = &stru_B0C1C0; /*0x6d05cc*/
+  v10 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0);
   do /*0x6d05e2*/
   {
     (*(void (__thiscall **)(CommandClass *, ShapeButtonClass *))(*(unsigned int *)v6 + 52))(v6, v10); /*0x6d05d6*/
@@ -691,7 +697,7 @@ void TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
     v12 = *v11; /*0x6d05f5*/
     if ( *v11 >= 0 && v12 < 25 ) /*0x6d05fe*/
     {
-      v13 = &stru_B0C1C0 + 8 * v12; /*0x6d0606*/
+      v13 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v12);
       if ( v13 ) /*0x6d060d*/
         HashTable::Remove(*(HashTable **)&stru_88732C.__pad_1C[32], *(unsigned int *)v13[3].__pad_0); /*0x6d0619*/
     }
@@ -702,6 +708,7 @@ void TacticalClass_BuildCommandBar(void * a1, void * a2, void * a3)
   result = (*(int (__thiscall **)(CommandClass *, int))(*(unsigned int *)v6 + 56))(v6, 2); /*0x6d0640*/
   IDA_LOBYTE(result) = v8; /*0x6d0643*/
   return result; /*0x6d0535*/
+}
 }
 // 0x6D2DE0
 namespace gamemd {
@@ -913,6 +920,7 @@ int TacticalClass::CalcAllDrawPositions(AbstractClass * aP1, BuildingTypeClass *
   }
   return result; /*0x6d3866*/
 }
+}
 // 0x6D6D10
 namespace gamemd {
 void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
@@ -1110,7 +1118,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
                   v46 = 0; /*0x6d715f*/
                   v44 = (((v32[0] << 8) + 128) / 256) << 8; /*0x6d717b*/
                   v45 = (((v32[1] << 8) + 128) / 256) << 8; /*0x6d717f*/
-                  Coord::To_Screen((Coord *)this, &v44, v39); /*0x6d7183*/
+                  Coord::To_Screen(&v44, v39); /*0x6d7183*/
                   v39[0] -= 30; /*0x6d719b*/
                   TacticalClass::DrawBuildingPlacement(v29, v39, v51); /*0x6d719f*/
                 }
@@ -1130,6 +1138,7 @@ void* * TacticalClass::DrawBuildingsInView(AbstractClass * aP1)
     }
   }
   return result; /*0x6d71d3*/
+}
 }
 // 0x6D9B50
 namespace gamemd {
@@ -1181,6 +1190,7 @@ int TacticalClass::CheckUnitOverlap(int a2, int a3, AbstractClass * aP3, int a5)
     if ( v8 >= stru_A8EB00.parent_gap[20] ) /*0x6d9cb7*/
       return 0; /*0x6d9cb7*/
   }
+}
 }
 // 0x6DA380
 namespace gamemd {
@@ -1546,6 +1556,7 @@ void* TacticalClass::DrawPlacementCircles()
     }
   }
 }
+}
 // 0x732D10
 namespace gamemd {
 unsigned int * TacticalClass::CollectSelectedIDs()
@@ -1715,6 +1726,7 @@ unsigned int * TacticalClass::CollectSelectedIDs()
   }
   while ( v30 < (int)v31 ); /*0x732fc9*/
   return v2; /*0x732fd0*/
+}
 }
 // 0x41B900
 namespace gamemd {

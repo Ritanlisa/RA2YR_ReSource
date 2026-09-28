@@ -112,7 +112,7 @@ int ObjectTypeClass::ReadInt(unsigned char * a2, unsigned char * a3, int a4)
   {
     v4 = (char *)(*((unsigned int *)unk_A8E334 + a4) + 36); /*0x474f65*/
   }
-  INIClass::GetString((INIClass *)this, a2, a3, v4, Destination, 32); /*0x474f85*/
+  INIClass::GetString(a2, a3, v4, Destination, 32); /*0x474f85*/
   return ObjectTypeClass_Read((ObjectClass *)Destination); /*0x474f93*/
 }
 } // namespace gamemd
@@ -128,7 +128,7 @@ int ObjectTypeClass::ConstructFull(AbstractClass * aP1)
   char Destination[24]; // [esp+8h] [ebp-1Ch] BYREF
   char v10; // [esp+20h] [ebp-4h]
 
-  AbstractTypeClass::Constructor(this, aP1); /*0x5f709c*/
+  AbstractTypeClass::Constructor(aP1); /*0x5f709c*/
   v3 = &this->u32_C8; /*0x5f70a3*/
   this->q098 = 0; /*0x5f70a9*/
   this->q264 = 0; /*0x5f70af*/
@@ -253,7 +253,7 @@ unsigned int * ObjectTypeClass::Construct(ObjectTypeClass * aP1)
   char *v5; // eax
   int v6; // edx
 
-  AbstractTypeClass::Init((int)this, aP1); /*0x5f7328*/
+  AbstractTypeClass::Init(aP1); /*0x5f7328*/
   v3 = &this->ChargerTurrets[3]; /*0x5f732f*/
   this->Image = 0; /*0x5f7335*/
   v4 = 18; /*0x5f733b*/
@@ -332,7 +332,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
     this->q0A4 = 0; /*0x5f7489*/
     this->ImageAllocated = 0; /*0x5f748f*/
   }
-  ObjectTypeClass::CleanupWeapons((char *)this); /*0x5f7497*/
+  ObjectTypeClass::CleanupWeapons(); /*0x5f7497*/
   RA2_OPDEL(*(void **)(&this->q1000)); /*0x5f74a3*/
   this->q280 = 0; /*0x5f74a8*/
   this->q284 = 0; /*0x5f74ae*/
@@ -378,7 +378,7 @@ SomeVoxelCache * * ObjectTypeClass::Destruct()
   ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)(&this->u32_4C2)); /*0x5f757d*/
   ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)(&this->u32_484)); /*0x5f7588*/
   ObjectTypeClass::ReleaseWaveAndString((ObjectTypeClass *)(&this->u32_446)); /*0x5f7593*/
-  return AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x5f759f*/
+  return AbstractTypeClass::Dtor(); /*0x5f759f*/
 }
 } // namespace gamemd
 // 0x5F77F0
@@ -804,7 +804,7 @@ void* ObjectTypeClass::LoadFromINI(CCINIClass * aP1)
           this->Voxel);
   this->Voxel = v25; /*0x5f9634*/
   if ( !v25 && (*((int (__thiscall **)(ObjectTypeClass *))this->vtable0 + 11))(this) != 5 ) /*0x5f9649*/
-    ObjectTypeClass::Load2DArt((char *)this); /*0x5f964d*/
+    ObjectTypeClass::Load2DArt(); /*0x5f964d*/
   if ( this->AlphaImageFile[0] ) /*0x5f9652*/
   {
     _makepath((char *)&Destination.Name[5], 0, 0, this->AlphaImageFile, Ext); /*0x5f9674*/
@@ -4990,7 +4990,7 @@ char ObjectTypeClass::ReadBool(INIClass * Block, INIClass * aP2, int a4)
   char Buffer[32]; // [esp+4h] [ebp-20h] BYREF
 
   sprintf(Buffer, "%d", 360 * a4 / 256); /*0x4746ba*/
-  return INIClass::SetString((char *)this, Block, aP2, Buffer); /*0x4746d8*/
+  return INIClass::SetString(Block, aP2, Buffer); /*0x4746d8*/
 }
 } // namespace gamemd
 // 0x4746E0
@@ -5032,7 +5032,7 @@ char ObjectTypeClass::ReadBool2(INIClass * Block, INIClass * aP2, short * a4)
   char Buffer[64]; // [esp+4h] [ebp-40h] BYREF
 
   sprintf(Buffer, "%d,%d", *a4, a4[1]); /*0x4747dd*/
-  return INIClass::SetString((char *)this, Block, aP2, Buffer); /*0x4747fb*/
+  return INIClass::SetString(Block, aP2, Buffer); /*0x4747fb*/
 }
 } // namespace gamemd
 // 0x4749E0
@@ -5043,7 +5043,7 @@ int ObjectTypeClass::loadTypeMember_54749E0(CCINIClass * aP1, unsigned char * a2
   char Destination[32]; // [esp+4h] [ebp-20h] BYREF
 
   v5 = sub_473960(a4); /*0x4749f1*/
-  INIClass::GetString((INIClass *)this, aP1, a2, v5, Destination, 32); /*0x474a03*/
+  INIClass::GetString(aP1, a2, v5, Destination, 32); /*0x474a03*/
   return ObjectTypeClass::loadTypeMember_473980((ObjectTypeClass *)Destination); /*0x474a11*/
 }
 } // namespace gamemd
@@ -5054,7 +5054,7 @@ char ObjectTypeClass::ReadString(INIClass * Block, INIClass * aP2, unsigned char
   char Buffer[64]; // [esp+4h] [ebp-40h] BYREF
 
   sprintf(Buffer, "%d,%d,%d", *a4, a4[1], a4[2]); /*0x474d75*/
-  return INIClass::SetString((char *)this, Block, aP2, Buffer); /*0x474d93*/
+  return INIClass::SetString(Block, aP2, Buffer); /*0x474d93*/
 }
 } // namespace gamemd
 // 0x474E40
@@ -5065,7 +5065,7 @@ int ObjectTypeClass::loadTypeMember_5474E40(INIClass * aP1, unsigned char * a2, 
   char **v5; // esi
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
 
-  INIClass::GetString((INIClass *)this, aP1, a2, (&off_81BA88)[a4], Destination, 32); /*0x474e62*/
+  INIClass::GetString(aP1, a2, (&off_81BA88)[a4], Destination, 32); /*0x474e62*/
   v4 = 0; /*0x474e67*/
   v5 = &off_81BA88; /*0x474e69*/
   while ( _strcmpi(Destination, *v5) ) /*0x474e80*/
@@ -5084,7 +5084,7 @@ int ObjectTypeClass::ReadDouble(unsigned char * a2, unsigned char * a3, int a4)
 {
   char Destination[100]; // [esp+4h] [ebp-64h] BYREF
 
-  INIClass::GetString((INIClass *)this, a2, a3, &g_INI_DefaultBuffer, Destination, 100); /*0x474fba*/
+  INIClass::GetString(a2, a3, &g_INI_DefaultBuffer, Destination, 100); /*0x474fba*/
   if ( strlen(Destination) ) /*0x474fc3*/
     return VocClass::FindByName((VocClass *)Destination); /*0x474fd4*/
   else
@@ -5099,7 +5099,7 @@ int ObjectTypeClass::ReadDouble2(INIClass * aP1, unsigned char * a2, void * a4)
   StringTable Destination[4]; // [esp+4h] [ebp-20h] BYREF
 
   Name = AbstractType::FindName(a4); /*0x475001*/
-  INIClass::GetString((INIClass *)this, aP1, a2, Name, Destination[0].__pad_0, 32); /*0x475013*/
+  INIClass::GetString(aP1, a2, Name, Destination[0].__pad_0, 32); /*0x475013*/
   return StringTable::Lookup(Destination); /*0x475021*/
 }
 } // namespace gamemd
@@ -5111,7 +5111,7 @@ int ObjectTypeClass::ReadBool3(INIClass * aP1, unsigned char * a2, void * a4)
   char Destination[32]; // [esp+4h] [ebp-20h] BYREF
 
   v5 = sub_45DD20((ObjectClass *)a4); /*0x475071*/
-  INIClass::GetString((INIClass *)this, aP1, a2, v5, Destination, 32); /*0x475083*/
+  INIClass::GetString(aP1, a2, v5, Destination, 32); /*0x475083*/
   return sub_45DD50((ObjectClass *)Destination); /*0x475091*/
 }
 } // namespace gamemd
@@ -5168,7 +5168,7 @@ int ObjectTypeClass::loadTypeMember_5477590(CCINIClass * aP1, unsigned char * a2
   bool v6; // zf
   char String[128]; // [esp+8h] [ebp-80h] BYREF
 
-  INIClass::GetString((INIClass *)this, aP1, a2, (&off_81BABC)[aP3], String, 128); /*0x4775c1*/
+  INIClass::GetString(aP1, a2, (&off_81BABC)[aP3], String, 128); /*0x4775c1*/
   v4 = strtok(String, Str); /*0x4775d5*/
   result = _strcmpi(v4, g_INI_Key_None); /*0x4775dd*/
   if ( result ) /*0x4775e7*/
@@ -5308,9 +5308,9 @@ void ObjectTypeClass::CleanupWeapons()
 namespace gamemd {
 ObjectTypeClass * ObjectTypeClass::Destru_vt08(char a2)
 {
-  ObjectTypeClass::Destruct((int)this); /*0x5f9ae3*/
+  ObjectTypeClass::Destruct(); /*0x5f9ae3*/
   if ( (a2 & 1) != 0 ) /*0x5f9aed*/
-    RA2_OPDEL(this); /*0x5f9af0*/
+    RA2_OPDEL(); /*0x5f9af0*/
   return this; /*0x5f9afa*/
 }
 } // namespace gamemd
@@ -5464,7 +5464,7 @@ int ObjectTypeClass::ReadDestroyAnim()
   unsigned char v6[4]; // [esp+Ch] [ebp-10h] BYREF
   char Buffer[12]; // [esp+10h] [ebp-Ch] BYREF
 
-  INIClass::ClearSection((int)this, (int)aTerrain, 0); /*0x71cb9f*/
+  INIClass::ClearSection((int)aTerrain, 0); /*0x71cb9f*/
   result = dword_A8E998; /*0x71cba4*/
   for ( i = 0; i < dword_A8E998; ++i ) /*0x71cbad*/
   {
@@ -5475,7 +5475,7 @@ int ObjectTypeClass::ReadDestroyAnim()
       {
         v5 = *(unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v4 + 440))(v4, v6); /*0x71cbe6*/
         sprintf(Buffer, "%d", (int16_t)v5 + 1000 * IDA_SHIWORD(v5)); /*0x71cc09*/
-        INIClass::SetString(this, (uint8_t *)aTerrain, Buffer, (char *)(*(unsigned int *)(v4 + 200) + 36)); /*0x71cc29*/
+        INIClass::SetString((uint8_t *)aTerrain, Buffer, (char *)(*(unsigned int *)(v4 + 200) + 36)); /*0x71cc29*/
       }
     }
     result = dword_A8E998; /*0x71cc2e*/

@@ -88,3 +88,4 @@ void Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a
   }
   return result; /*0x620716*/
 }
+}

@@ -6,15 +6,15 @@
 namespace gamemd {
 struct VectorClass_K_8 {
 // --- flat members (BEGIN) ---
-    void* ;  // 0x4
+    unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC
     unsigned char u8_10;  // 0x10
     unsigned char u8_11;  // 0x11
     unsigned int u32_14;  // 0x14
-    void* ;  // 0x18
-    void* ;  // 0x1C
-    void* ;  // 0x20
+    unsigned int u32_18;  // 0x18
+    unsigned int u32_1C;  // 0x1C
+    unsigned int q020;  // 0x20
     unsigned int q024;  // 0x24
     unsigned int q028;  // 0x28
     unsigned char q034;  // 0x34
@@ -35,10 +35,16 @@ struct VectorClass_K_8 {
     unsigned int q5170;  // 0x5170
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int q020;
-    unsigned int u32_1C;
-    unsigned int u32_18;
-    unsigned int u32_4;
+    unsigned int CStreamClass_field_0x04;
+    unsigned int CStreamClass_field_0x08;
+    unsigned int CStreamClass_field_0x0C;
+    unsigned int CStreamClass_field_0x10;
+    unsigned int CStreamClass_field_0x14;
+    unsigned int CStreamClass_field_0x18;
+    unsigned int CStreamClass_field_0x1C;
+    unsigned int CStreamClass_field_0x20;
+    unsigned int __pad_0;
+    unsigned int CStreamClass_field_0x24;
 // --- flat members (END) ---
     unsigned int * Constructor();  // 0x4A2820
     int QueryInterface(int a1,  const void * a2,  unsigned int * a3);    // 0x6BEE50

@@ -194,10 +194,10 @@ struct JumpjetLocomotion {
     unsigned char q1710;  // 0x1710
     void* q1768;  // 0x1768
     unsigned int JumpjetLocomotion_field_0x40;
+    unsigned int JumpjetLocomotion_field_0x44;
     unsigned int JumpjetLocomotion_field_0x58;
     unsigned int u32_184;
     unsigned int v22;
-    unsigned int JumpjetLocomotion_field_0x44;
     unsigned int q00C;
 // --- flat members (END) ---
     char MoveTo(void* aP1,  int aP3);    // 0x4B0AD0

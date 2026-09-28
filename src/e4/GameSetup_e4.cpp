@@ -14,6 +14,8 @@
 #include "e4/classes/Game_e4.hpp"
 #include "e4/classes/MixFileClass_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x60D320
 namespace gamemd {
@@ -34,7 +36,7 @@ int GameSetup::LookupDialogHash()
     return 0; /*0x60d352*/
   while ( *v1 != v4 ) /*0x60d35a*/
   {
-    v1 = (GameSetup **)v1[129]; /*0x60d35c*/
+    v1 = (gamemd::GameSetup **)((unsigned int *)((GameSetup **)v1[129]));
     if ( !v1 ) /*0x60d364*/
       return 0; /*0x60d364*/
   }

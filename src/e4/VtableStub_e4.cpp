@@ -8,12 +8,14 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Voxel_e4.hpp"
+#include "e4/classes/Math_e4.hpp"
 
 // 0x643E70
 namespace gamemd {
 void VtableStub_643E70()
 {
   *(&this->q0085) = 0; /*0x643e70*/
+}
 }
 // 0x65D690
 char VtableStub::RetZero_eax_35(int a1)

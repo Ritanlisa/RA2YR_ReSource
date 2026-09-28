@@ -115,7 +115,7 @@ unsigned int * SideClass::Construct(CCINIClass * aP1)
 {
   int v3; // eax
 
-  AbstractTypeClass::Constructor((int *)this, aP1); /*0x6a4559*/
+  AbstractTypeClass::Constructor(aP1); /*0x6a4559*/
   this->houseTypesCount = 0; /*0x6a4563*/
   this->q028 = 0; /*0x6a4569*/
   this->u32_A4 = 1; /*0x6a456f*/
@@ -141,12 +141,14 @@ unsigned int * SideClass::Construct(CCINIClass * aP1)
   }
   return &this->vtable0; /*0x6a460b*/
 }
+}
 // 0x6A4710
 namespace gamemd {
 int SideClass::GetCountry(int * a2)
 {
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6a4719*/
+  AbstractTypeClass::ProcessPower(a2); /*0x6a4719*/
   return Power::TimerProcess(this->u32_A8); /*0x6a472c*/
+}
 }
 // 0x6A4780
 namespace gamemd {
@@ -219,6 +221,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
   }
   return result; /*0x6a488b*/
 }
+}
 // 0x6A4930
 namespace gamemd {
 void * SideClass::Init(char a2)
@@ -253,10 +256,11 @@ void * SideClass::Init(char a2)
   }
   this->u32_A5 = 0; /*0x6a49d2*/
   this->q028 = 0; /*0x6a49d9*/
-  AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x6a49e3*/
+  AbstractTypeClass::Dtor(); /*0x6a49e3*/
   if ( (a2 & 1) != 0 ) /*0x6a49ed*/
-    RA2_OPDEL(this); /*0x6a49f0*/
+    RA2_OPDEL(); /*0x6a49f0*/
   return &this->vtable0; /*0x6a49fa*/
+}
 }
 // 0x49D9F0
 namespace gamemd {

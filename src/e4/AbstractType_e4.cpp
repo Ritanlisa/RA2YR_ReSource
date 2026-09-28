@@ -13,12 +13,12 @@
 namespace gamemd {
 char * AbstractType::FindName()
 {
-  int * v1;
-  int *v2; // eax
+  int v1; // edx
+  AbstractType **v2; // eax
 
-  v1 = (int *)(0);
-  v2 = (int *)(&dword_816EE4);
-  while ( (void *)*v2 != this ) /*0x40dcb9*/
+  v1 = 0; /*0x40dcb0*/
+  v2 = (AbstractType **)dword_816EE4; /*0x40dcb2*/
+  while ( *v2 != this ) /*0x40dcb9*/
   {
     v2 += 2; /*0x40dcbb*/
     ++v1; /*0x40dcbe*/

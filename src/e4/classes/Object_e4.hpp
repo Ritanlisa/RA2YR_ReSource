@@ -40,6 +40,7 @@ struct Object {
     unsigned int u32_A4;  // 0xA4
     void* q0AC;  // 0xAC
     unsigned char q0B0;  // 0xB0
+    unsigned int u32_B4;  // 0xB4
     void* q0E4;  // 0xE4
     void* q0E8;  // 0xE8
     unsigned char q0EC;  // 0xEC

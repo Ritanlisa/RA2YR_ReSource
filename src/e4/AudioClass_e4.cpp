@@ -96,3 +96,4 @@ BuildingTypeClass * * AudioClass::ProcessEvent()
   }
   return result; /*0x722a11*/
 }
+}

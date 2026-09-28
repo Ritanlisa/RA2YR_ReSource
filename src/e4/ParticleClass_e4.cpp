@@ -179,6 +179,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
     }
   }
 }
+}
 // 0x62D5E0
 namespace gamemd {
 void ParticleClass::AdjustHeight()
@@ -227,7 +228,7 @@ void ParticleClass::AdjustHeight()
         if ( (int)Cell::GetGroundHeight(&v10) > GroundHeight ) /*0x62d6a7*/
         {
           this->q12D = (unsigned int)((void *)(1));
-          this->q4C4 = 1; /*0x62d6b1*/
+          this->q4C4 = (void *)(1);
         }
       }
       return this->SetPosition(&v10); /*0x62d6c0*/

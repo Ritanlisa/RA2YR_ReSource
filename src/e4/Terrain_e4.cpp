@@ -21,6 +21,9 @@
 #include "e4/classes/Territory_WorldDominationTour_8_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/E4Recv_7714B0_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
 
 // 0x48B720
 namespace gamemd {
@@ -30,6 +33,7 @@ int Terrain::GetTileIndex(int a2)
        ? (int)this->Terrain_field_0x24 + 36 * *((unsigned int *)this->Terrain_field_0x30 + a2)
        : 0;
 }
+}
 // 0x48B9E0
 namespace gamemd {
 int Terrain::GetTileType(AnimClass * aP1)
@@ -37,6 +41,7 @@ int Terrain::GetTileType(AnimClass * aP1)
   return (*((unsigned int *)this->Terrain_field_0x34 + 6 * *((unsigned int *)this->Terrain_field_0x40 + aP1)) & 1) != 0
        ? (int)this->Terrain_field_0x34 + 24 * *((unsigned int *)this->Terrain_field_0x40 + aP1)
        : 0;
+}
 }
 // 0x568E40
 namespace gamemd {
@@ -437,9 +442,9 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
       v45[3] = abs32(v59 - v62) + 128; /*0x5696fd*/
     }
     if ( v63 ) /*0x569706*/
-      Terrain::ConnectivityGraph(this); /*0x56970c*/
+      Terrain::ConnectivityGraph(); /*0x56970c*/
     if ( *(int *)v81.__tail_10 > 0 ) /*0x569717*/
-      LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v81); /*0x569722*/
+      LayerClass::Update_Pathfinding_2((int)&v81); /*0x569722*/
     *(unsigned int *)v81.__pad_0 = (void*)&VectorClass_Cell_vftable; /*0x56972b*/
     if ( *(unsigned int *)&v81.m_1[3] ) /*0x569735*/
     {
@@ -447,6 +452,7 @@ AbstractClass * * Terrain::PlaceCliffs(int a2, int a3, IUnknown * aP3)
         RA2_OPDEL(*(void **)&v81.m_1[3]); /*0x569740*/
     }
   }
+}
 }
 // 0x56C510
 namespace gamemd {
@@ -531,7 +537,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
   int16_t v78; // [esp+14h] [ebp-50h]
   int *Block; // [esp+18h] [ebp-4Ch]
   uint8_t *Blocka; // [esp+18h] [ebp-4Ch]
-  unsigned int v81;
+  int v81; // [esp+1Ch] [ebp-48h]
   int16_t *v82; // [esp+20h] [ebp-44h]
   unsigned int *v83; // [esp+24h] [ebp-40h]
   int v84; // [esp+28h] [ebp-3Ch]
@@ -545,7 +551,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
   int v92; // [esp+30h] [ebp-34h] BYREF
   int v93; // [esp+34h] [ebp-30h]
   int v94; // [esp+38h] [ebp-2Ch]
-  int v95; // [esp+3Ch] [ebp-28h]
+  unsigned int v95;
   int v96; // [esp+40h] [ebp-24h]
   unsigned short *v97; // [esp+44h] [ebp-20h]
   Terrain *v98; // [esp+48h] [ebp-1Ch]
@@ -557,7 +563,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
   int v104; // [esp+60h] [ebp-4h]
 
   v1 = (gamemd::Terrain *)((void **)(this));
-  v81 = (unsigned int *)(-1);
+  v81 = (void **)(-1);
   v95 = -1; /*0x56c51e*/
   Terrain_field_0x14 = this->Terrain_field_0x14; /*0x56c529*/
   v3 = 0; /*0x56c52c*/
@@ -764,7 +770,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
   v89 = 0; /*0x56c872*/
   if ( *(int *)&v1->__pad_44[8] > 0 ) /*0x56c87c*/
   {
-    v48 = v77; /*0x56c87e*/
+    v48 = (int)(v77);
     v49 = v40; /*0x56c882*/
     do /*0x56c8aa*/
     {
@@ -923,6 +929,7 @@ AbstractClass * * Terrain::ConnectivityGraph()
   if ( v100 && IDA_BYTE1(v102) ) /*0x56cb6b*/
     RA2_OPDEL(v100); /*0x56cb6e*/
   return v81; /*0x56cb57*/
+}
 }
 // 0x56CB90
 namespace gamemd {
@@ -1282,6 +1289,7 @@ int Terrain::FloodFillConnectivity(unsigned char * a1, IUnknown * aP2, AbstractC
   }
   return v77; /*0x56d0f0*/
 }
+}
 // 0x570050
 namespace gamemd {
 AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
@@ -1389,7 +1397,7 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
         v8 = v2[1] + v5; /*0x5700b9*/
         IDA_LOWORD(aP1) = *v2 + v4; /*0x5700c1*/
         IDA_HIWORD(aP1) = v8; /*0x5700c6*/
-        CellClass::ApplyCliffTileModifications((CellClass *)this, (int)&aP1); /*0x5700d6*/
+        CellClass::ApplyCliffTileModifications((int)&aP1); /*0x5700d6*/
         return; /*0x5700e2*/
       }
       ++v5; /*0x5700a7*/
@@ -1545,7 +1553,7 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
           g_MissionQueueFrame.briefing[139] = *(unsigned int *)v81; /*0x57053d*/
           v39 = &g_MissionQueueFrame.briefing[130]; /*0x570543*/
         }
-        DestroyCliffMap((ObjectClass *)this, (int)v39, 2, &v82); /*0x57054f*/
+        DestroyCliffMap((int)v39, 2, &v82); /*0x57054f*/
         goto LABEL_109; /*0x57054f*/
       }
       if ( (v37 == g_TerrainSoundTable2 /*0x570486*/
@@ -1566,7 +1574,7 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
           g_MissionQueueFrame.briefing[139] = *(unsigned int *)v81; /*0x5707e3*/
           v57 = &g_MissionQueueFrame.briefing[130]; /*0x5707e9*/
         }
-        DestroyCliffMap((ObjectClass *)this, (int)v57, 4, &v82); /*0x5707f8*/
+        DestroyCliffMap((int)v57, 4, &v82); /*0x5707f8*/
   LABEL_109:
         Cell::CreateCrater(v82, v83, v84, v85, 0); /*0x5707fd*/
         goto LABEL_139; /*0x57082a*/
@@ -1613,7 +1621,7 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
           v67 = &g_MissionQueueFrame.briefing[130]; /*0x570947*/
         }
         *((unsigned char *)v67 + 283) += 4; /*0x570957*/
-        IDA_LOBYTE(aP1) = InvalidateTileRegionMap((ObjectClass *)this, v79); /*0x570967*/
+        IDA_LOBYTE(v79); /*0x570967*/
         Capacity = v86.Capacity; /*0x57096b*/
         v69 = 0; /*0x57096f*/
         while ( 1 ) /*0x570971*/
@@ -1663,7 +1671,7 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
               Terrain::ConnectivityGraph(v53); /*0x570a8e*/
   LABEL_139:
             if ( v87 > 0 ) /*0x570a99*/
-              LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v86); /*0x570aa4*/
+              LayerClass::Update_Pathfinding_2((int)&v86); /*0x570aa4*/
             v86.vtable0 = (void*)&VectorClass_Cell_vftable; /*0x570aad*/
             if ( v86.Items ) /*0x570ab7*/
             {
@@ -1709,7 +1717,7 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
       v48 = &g_MissionQueueFrame.briefing[130]; /*0x57066a*/
     }
     *((unsigned char *)v48 + 283) += 4; /*0x57067b*/
-    IDA_LOBYTE(aP1) = InvalidateTileRegionMap((ObjectClass *)this, v79); /*0x57068b*/
+    IDA_LOBYTE(v79); /*0x57068b*/
     v49 = v86.Capacity; /*0x57068f*/
     v50 = 0; /*0x570693*/
   LABEL_90:
@@ -1740,14 +1748,14 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
           v76[1] = v81[1]; /*0x570717*/
           v76[0] = v32 - 2; /*0x57071c*/
           *(unsigned int *)v77 = *(unsigned int *)v76; /*0x570729*/
-          Terrain::ProcessCellModification(this, v77); /*0x570730*/
+          Terrain::ProcessCellModification(v77); /*0x570730*/
           v54 = v81[0] + (v81[1] << 9); /*0x570744*/
           if ( v54 >= 0x40000 || (v55 = *(int **)(*(unsigned int *)&stru_87F5F0.__pad_58[732] + 4 * v54)) == 0 ) /*0x57075a*/
           {
             g_MissionQueueFrame.briefing[139] = *(unsigned int *)v81; /*0x57075c*/
             v55 = &g_MissionQueueFrame.briefing[130]; /*0x570762*/
           }
-          DestroyCliffMap((ObjectClass *)this, (int)v55, 2, &v82); /*0x570771*/
+          DestroyCliffMap((int)v55, 2, &v82); /*0x570771*/
           Cell::CreateCrater(v82, v83, v84, v85, 0); /*0x57079e*/
           goto LABEL_137; /*0x5707a3*/
         }
@@ -1755,6 +1763,7 @@ AbstractClass * * Terrain::ProcessCellModification(IUnknown * aP1)
       }
     }
   }
+}
 }
 // 0x573540
 namespace gamemd {
@@ -1869,7 +1878,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
         v8 = IDA_HIWORD(v2->field_0) + v5; /*0x5735ab*/
         IDA_LOWORD(aP1) = IDA_LOWORD(v2->field_0) + v4; /*0x5735b3*/
         IDA_HIWORD(aP1) = v8; /*0x5735b8*/
-        CellClass::ApplyTileMod58((CellClass *)this, (int)&aP1); /*0x5735c8*/
+        CellClass::ApplyTileMod58((int)&aP1); /*0x5735c8*/
         return; /*0x5735d4*/
       }
       ++v5; /*0x57359a*/
@@ -2028,7 +2037,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
             g_MissionQueueFrame.briefing[139] = *(unsigned int *)v87; /*0x573a52*/
             v46 = &g_MissionQueueFrame.briefing[130]; /*0x573a58*/
           }
-          Terrain::PlaceCliffs(this, (int)v46, 2, &v88); /*0x573a64*/
+          Terrain::PlaceCliffs((int)v46, 2, &v88); /*0x573a64*/
           goto LABEL_111; /*0x573a64*/
         }
         if ( (v44 == g_TerrainSoundTable2 /*0x573984*/
@@ -2089,7 +2098,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
             v57 = &g_MissionQueueFrame.briefing[130]; /*0x573b8c*/
           }
           *((unsigned char *)v57 + 283) += 4; /*0x573b9c*/
-          IDA_LOBYTE(aP1) = InvalidateTileRegionMap((ObjectClass *)this, v84); /*0x573bac*/
+          IDA_LOBYTE(v84); /*0x573bac*/
           Capacity = v92.Capacity; /*0x573bb0*/
           v59 = 0; /*0x573bb4*/
           while ( 2 ) /*0x573bb6*/
@@ -2138,7 +2147,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
             g_MissionQueueFrame.briefing[139] = *(unsigned int *)v87; /*0x573d06*/
             v65 = &g_MissionQueueFrame.briefing[130]; /*0x573d0c*/
           }
-          Terrain::PlaceCliffs(this, (int)v65, 4, &v88); /*0x573d1b*/
+          Terrain::PlaceCliffs((int)v65, 4, &v88); /*0x573d1b*/
   LABEL_111:
           Cell::CreateCrater(v88, v89, v90, v91, 0); /*0x573d20*/
           goto LABEL_141; /*0x573d4d*/
@@ -2194,7 +2203,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
       v75 = &g_MissionQueueFrame.briefing[130]; /*0x573e6a*/
     }
     *((unsigned char *)v75 + 283) += 4; /*0x573e7a*/
-    IDA_LOBYTE(aP1) = InvalidateTileRegionMap((ObjectClass *)this, v84); /*0x573e8a*/
+    IDA_LOBYTE(v84); /*0x573e8a*/
     v76 = v92.Capacity; /*0x573e8e*/
     v77 = 0; /*0x573e92*/
   LABEL_123:
@@ -2239,7 +2248,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
             Terrain::ConnectivityGraph(v47); /*0x573fb1*/
   LABEL_141:
           if ( v93 > 0 ) /*0x573fbc*/
-            LayerClass::Update_Pathfinding_2((LayerClass *)this, (int)&v92); /*0x573fc7*/
+            LayerClass::Update_Pathfinding_2((int)&v92); /*0x573fc7*/
           v92.vtable0 = (void*)&VectorClass_Cell_vftable; /*0x573fd0*/
           if ( v92.Items ) /*0x573fda*/
           {
@@ -2252,6 +2261,7 @@ AbstractClass * * Terrain::RecursiveModify(IUnknown * aP1)
       }
     }
   }
+}
 }
 // 0x576770
 namespace gamemd {
@@ -2411,7 +2421,7 @@ int Terrain::CreateCrater(IUnknown * aP1)
     }
     if ( (v27 == dword_AA1548 || v27 == dword_AA0740) && *((unsigned char *)v26 + 282) == 12 ) /*0x576a44*/
     {
-      IDA_LOBYTE(v10) = CellClass::RecursiveCraterUpdate((CellClass *)this, (int16_t *)&aP1, 4, &v38); /*0x576b26*/
+      IDA_LOBYTE((int16_t *)&aP1, 4, &v38); /*0x576b26*/
       goto LABEL_51; /*0x576b26*/
     }
     if ( (v27 == g_TerrainSoundConfig /*0x576a6e*/
@@ -2420,7 +2430,7 @@ int Terrain::CreateCrater(IUnknown * aP1)
        || v27 == g_TerrainSoundConfig + 1)
       && *((unsigned char *)v26 + 282) == 7 )
     {
-      IDA_LOBYTE(v10) = CellClass::RecursiveCraterUpdate((CellClass *)this, (int16_t *)&aP1, 4, &v38); /*0x576b38*/
+      IDA_LOBYTE((int16_t *)&aP1, 4, &v38); /*0x576b38*/
       if ( (unsigned char)v10 ) /*0x576b3f*/
       {
         v10 = v38; /*0x576b41*/
@@ -2444,7 +2454,7 @@ int Terrain::CreateCrater(IUnknown * aP1)
     v21 = v36; /*0x576a9e*/
     aP1 = v36; /*0x576aa2*/
   }
-  IDA_LOBYTE(v10) = CellClass::RecursiveCraterUpdate((CellClass *)this, (int16_t *)&aP1, 2, &v38); /*0x576ab7*/
+  IDA_LOBYTE((int16_t *)&aP1, 2, &v38); /*0x576ab7*/
   LABEL_51:
   if ( (unsigned char)v10 ) /*0x576abe*/
   {
@@ -2462,6 +2472,7 @@ int Terrain::CreateCrater(IUnknown * aP1)
     }
   }
   return v10; /*0x5768c0*/
+}
 }
 // 0x579620
 namespace gamemd {
@@ -2704,6 +2715,7 @@ VectorClass_flat * * Terrain::SelectTileType(Random * aP0, IUnknown * aP1)
   v35 = *(unsigned char *)(aP0 + 283); /*0x579b33*/
   IDA_LOBYTE(aP0) = 1; /*0x579b3a*/
   return GenerateTerrainMap(0, 0, v35, aP1, &aP0, 0) || (unsigned char)aP0; /*0x579b4e*/
+}
 }
 // 0x5A28C0
 namespace gamemd {
@@ -3049,6 +3061,7 @@ void Terrain::PlaceTiberiumTrees(ScenarioClass * aP0, int a2, int a3, char a4)
     RA2_OPDEL((void *)v8[2]); /*0x5a2eb4*/
     RA2_OPDEL(v8); /*0x5a2eba*/
   }
+}
 }
 // 0x6D6410
 namespace gamemd {

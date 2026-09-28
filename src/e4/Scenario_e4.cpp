@@ -368,6 +368,7 @@ int Scenario::CopyLocalScenarioData()
   *(unsigned short *)&this->__pad_3C[4] = unk_A8B230[381].vtable3; /*0x4c61fc*/
   return result; /*0x4c6200*/
 }
+}
 // 0x50D610
 namespace gamemd {
 int Scenario::ProcessSidebarUnits()
@@ -413,6 +414,7 @@ int Scenario::ProcessSidebarUnits()
     result = i - 1; /*0x50d6af*/
   }
   return result; /*0x50d6bd*/
+}
 }
 // 0x552B10
 namespace gamemd {
@@ -471,6 +473,7 @@ Game * * Scenario::ComputeDisplayPosition()
   }
   return result; /*0x552b87*/
 }
+}
 // 0x552BE0
 namespace gamemd {
 unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
@@ -518,6 +521,7 @@ unsigned int * Scenario::ComputeDialogPos(unsigned int * a2)
     a2[1] = Scenario_field_0x30 + 7; /*0x552c0e*/
   }
   return result; /*0x552c11*/
+}
 }
 // 0x55AFB0
 namespace gamemd {
@@ -901,6 +905,7 @@ void Scenario::Update()
       RA2_OPDEL(Block); /*0x55b711*/
   }
 }
+}
 // 0x597A10
 namespace gamemd {
 int Scenario::LoadOrReloadOptions(IUnknown * aP1)
@@ -909,6 +914,7 @@ int Scenario::LoadOrReloadOptions(IUnknown * aP1)
     return (*(char (__thiscall **)(Scenario *, int))(this->Scenario_field_0x0 + 4))(this, aP1); /*0x597a1b*/
   else
     return (uint8_t)LoadOptions::Run((LoadOptions *)this) != 0; /*0x597a28*/
+}
 }
 // 0x5E7460
 namespace gamemd {
@@ -930,11 +936,13 @@ int Scenario::PreGameInit()
   g_IntroMovieObject = v1; /*0x5e74d4*/
   return nullsub_37(&g_IntroMovieObject);
 }
+}
 // 0x642AD0
 namespace gamemd {
 void Scenario::SetByte96()
 {
   IDA_LOBYTE(this->Scenario_field_0x60) = 0; /*0x642ad0*/
+}
 }
 // 0x684240
 namespace gamemd {
@@ -951,17 +959,17 @@ int Scenario::ClearScreen()
   dword_B07784 = 0; /*0x684282*/
   return result; /*0x68428c*/
 }
+}
 // 0x684620
 namespace gamemd {
 int Scenario::LoadWithProgress()
 {
-  char v1; // al
-  wchar_t *v2; // edi
-  wchar_t *String; // eax
-  int v4; // esi
-  int v5; // eax
-  int v6; // ecx
-  int v7; // eax
+  char v2; // al
+  wchar_t *v3; // edi
+  wchar_t *StringCSF; // eax
+  Scenario *Instance; // esi
+  int v6; // eax
+  int uniqueId; // ecx
   int v8; // eax
   int *v9; // eax
   int v10; // eax
@@ -969,142 +977,141 @@ int Scenario::LoadWithProgress()
   unsigned short *v12; // edi
   int v13; // eax
   char v14; // bl
-  int v15; // ecx
-  wchar_t *v16; // eax
-  char v18; // bl
+  ScenarioClass *v15; // ecx
+  int *v16; // eax
+  char Sync; // bl
   int i; // esi
   int j; // esi
-  wchar_t *v21; // [esp-10h] [ebp-258h]
-  char v22; // [esp-8h] [ebp-250h]
-  const wchar_t *v23; // [esp-4h] [ebp-24Ch]
-  int v24; // [esp-4h] [ebp-24Ch]
-  int v25; // [esp+10h] [ebp-238h]
-  unsigned char v26[8]; // [esp+14h] [ebp-234h] BYREF
-  const wchar_t *v27; // [esp+1Ch] [ebp-22Ch] BYREF
+  wchar_t *v23; // [esp-10h] [ebp-258h]
+  char v24; // [esp-8h] [ebp-250h]
+  const wchar_t *v25; // [esp-4h] [ebp-24Ch]
+  int _72B380; // [esp-4h] [ebp-24Ch]
+  ObjectClass *v27; // [esp+0h] [ebp-248h]
+  ObjectClass *v28; // [esp+0h] [ebp-248h]
+  LoadProgressMgr *v29; // [esp+10h] [ebp-238h]
+  int v30[2]; // [esp+14h] [ebp-234h] BYREF
+  const wchar_t *v31; // [esp+1Ch] [ebp-22Ch] BYREF
   char Buffer[16]; // [esp+20h] [ebp-228h] BYREF
-  int v29; // [esp+30h] [ebp-218h]
-  int v30; // [esp+34h] [ebp-214h]
-  int v31; // [esp+38h] [ebp-210h]
-  int v32; // [esp+3Ch] [ebp-20Ch] BYREF
+  int v33; // [esp+30h] [ebp-218h]
+  int v34; // [esp+34h] [ebp-214h]
+  int v35; // [esp+38h] [ebp-210h]
+  int v36; // [esp+3Ch] [ebp-20Ch] BYREF
   char Source[260]; // [esp+40h] [ebp-208h] BYREF
-  wchar_t v34[130]; // [esp+144h] [ebp-104h] BYREF
+  wchar_t v38[130]; // [esp+144h] [ebp-104h] BYREF
 
   strcpy(Source, this); /*0x684653*/
-  g_CurrentFrame = 0; /*0x68466b*/
-  *((unsigned char *)g_ScenarioClass_Instance + 13720) = 1; /*0x684675*/
-  ++g_IKnowWhatImDoing; /*0x684685*/
+  dword_A8ED84 = 0; /*0x68466b*/
+  IDA_LOBYTE(dword_A8B230[381].vtable1) = 1; /*0x684675*/
+  ++dword_A8E7AC; /*0x684685*/
   if ( _strcmpi(&Source[strlen(Source) - 4], aSed) ) /*0x684694*/
-    *((unsigned char *)g_ScenarioClass_Instance + 13501) = 0; /*0x6846be*/
+    IDA_BYTE1(dword_A8B230[375].vtable0) = 0; /*0x6846be*/
   else
-    *((unsigned char *)g_ScenarioClass_Instance + 13501) = 1; /*0x6846aa*/
+    IDA_BYTE1(dword_A8B230[375].vtable0) = 1; /*0x6846aa*/
   Debug::Log(); /*0x6846c5*/
-  v25 = 0; /*0x6846d4*/
-  if ( !g_ArmageddonMode ) /*0x6846d8*/
+  v29 = 0; /*0x6846d4*/
+  if ( !byte_A8ED6B ) /*0x6846d8*/
   {
-    v1 = 1; /*0x6846eb*/
-    if ( g_GameMode_Current[0] && g_GameMode_Current[0] != 5 ) /*0x6846f2*/
-      v1 = Game_PlayerCount; /*0x6846f4*/
-    ProgressAnim::Init((int)g_UIManager, 0, 1079574528, v1, 0); /*0x684706*/
-    v2 = 0; /*0x684710*/
-    if ( g_GameMode_Current[0] == 4 && *(unsigned int *)dword_B779C4 ) /*0x68471c*/
+    v2 = 1; /*0x6846eb*/
+    if ( *(unsigned int *)&dword_A8B238 && *(unsigned int *)&dword_A8B238 != 5 ) /*0x6846f2*/
+      v2 = dword_A8DA84; /*0x6846f4*/
+    ProgressAnim::Init((int)&dword_AC4F58, 0, 1079574528, v2, 0); /*0x684706*/
+    v3 = 0; /*0x684710*/
+    if ( *(unsigned int *)&dword_A8B238 == 4 && *(unsigned int *)dword_B779C4 ) /*0x68471c*/
     {
-      v23 = dword_B779D4; /*0x684729*/
-      String = GetStringCSF(aTxtGameId, 0, g_Str_File_Scenario_CPP, 1199); /*0x684736*/
-      swprintf(v34, (const size_t)String, v23); /*0x684744*/
-      v2 = v34; /*0x68474c*/
+      v25 = dword_B779D4; /*0x684729*/
+      StringCSF = GetStringCSF(aTxtGameId, 0, g_Str_File_Scenario_CPP, 1199); /*0x684736*/
+      swprintf(v38, (const size_t)StringCSF, v25); /*0x684744*/
+      v3 = v38; /*0x68474c*/
     }
-    v4 = LoadProgressMgr::GetInstance(); /*0x684758*/
-    v25 = v4; /*0x68475c*/
-    Scenario::ComputeDisplayPosition(v4); /*0x684760*/
-    Function::643E80(v4); /*0x68476b*/
-    v5 = 0; /*0x68477c*/
-    if ( g_GameMode_Current[0] ) /*0x684780*/
+    Instance = (Scenario *)LoadProgressMgr::GetInstance(); /*0x684758*/
+    v29 = (LoadProgressMgr *)Instance; /*0x68475c*/
+    Scenario::ComputeDisplayPosition(Instance); /*0x684760*/
+    Function::Method_643E80((Function *)&dword_AC4F58, (int)Instance); /*0x68476b*/
+    v6 = 0; /*0x68477c*/
+    if ( *(unsigned int *)&dword_A8B238 ) /*0x684780*/
     {
-      v7 = *(unsigned int *)(*(unsigned int *)Game_PlayerInfoArray + 75); /*0x6847a4*/
-      if ( v7 == -3 ) /*0x6847aa*/
-        v7 = 0; /*0x6847ac*/
-      v5 = *(unsigned int *)(*((unsigned int *)g_SuperWeaponTypeCount + v7) + 188); /*0x6847b7*/
-    }
-    else
-    {
-      v6 = *((unsigned int *)g_ScenarioClass_Instance + 3379); /*0x684782*/
-      if ( v6 != -1 ) /*0x68478b*/
-        v5 = *(unsigned int *)(*((unsigned int *)g_CampaignTypeArray + v6) + 152); /*0x684795*/
-    }
-    *((unsigned int *)g_ScenarioClass_Instance + 3374) = v5; /*0x6847c3*/
-    Scenario::SetDword32(v5); /*0x6847c9*/
-    v8 = LoadProgressMgr::GetInstance(); /*0x6847ce*/
-    SessionClass::Load(v8); /*0x6847d5*/
-    if ( g_GameMode_Current[0] ) /*0x6847e1*/
-    {
-      SHPClass::Load((int)g_UIManager, g_Str_File_PROGBARM_SHP, 0, 0); /*0x684800*/
+      v8 = *(unsigned int *)(*dword_A8DA78 + 75); /*0x6847a4*/
+      if ( v8 == -3 ) /*0x6847aa*/
+        v8 = 0; /*0x6847ac*/
+      v6 = *(unsigned int *)(*((unsigned int *)dword_A83C9C + v8) + 188); /*0x6847b7*/
     }
     else
     {
-      v24 = Map_Load_72B380(); /*0x6847e8*/
-      SHPClass::Load((int)g_UIManager, aSpldbrShp, 0, v24); /*0x6847f0*/
+      uniqueId = dword_A8B230[375].uniqueId; /*0x684782*/
+      if ( uniqueId != -1 ) /*0x68478b*/
+        v6 = *(unsigned int *)(*((unsigned int *)dword_A83CFC + uniqueId) + 152); /*0x684795*/
     }
-    v22 = g_GameMode_Current[0] != 0; /*0x684819*/
-    v9 = (int *)Scenario::ComputeDialogPos(v26); /*0x68481e*/
-    TextRenderer::MeasureBuilding((int)g_UIManager, *v9, v9[1], (int)v2, v22, v22); /*0x68482f*/
-    v10 = Map_Load(v4); /*0x684836*/
-    Scenario::SetDword30(v10); /*0x684841*/
-    if ( g_NetworkInterface ) /*0x68484d*/
+    dword_A8B230[374].NeedsSaveOrLink = v6; /*0x6847c3*/
+    Scenario::SetDword32((Scenario *)&dword_AC4F58, v6); /*0x6847c9*/
+    LoadProgressMgr::GetInstance(); /*0x6847ce*/
+    SessionClass::Load(v27); /*0x6847d5*/
+    if ( *(unsigned int *)&dword_A8B238 ) /*0x6847e1*/
     {
-      if ( g_GameMode_Current[0] == 4 && Game_PlayerCount > 1 ) /*0x684865*/
+      SHPClass::Load((int)&dword_AC4F58, g_Str_File_PROGBARM_SHP, 0, 0); /*0x684800*/
+    }
+    else
+    {
+      _72B380 = Map_Load_72B380(); /*0x6847e8*/
+      SHPClass::Load((int)&dword_AC4F58, aSpldbrShp, 0, _72B380); /*0x6847f0*/
+    }
+    v24 = *(unsigned int *)&dword_A8B238 != 0; /*0x684819*/
+    v9 = Scenario::ComputeDialogPos(Instance, v30); /*0x68481e*/
+    TextRenderer::MeasureBuilding((int *)dword_AC4F58.__pad_0, *v9, v9[1], (int)v3, v24, v24); /*0x68482f*/
+    v10 = Map_Load(); /*0x684836*/
+    Scenario::SetDword30((Scenario *)&dword_AC4F58, v10); /*0x684841*/
+    if ( dword_887628 ) /*0x68484d*/
+    {
+      if ( *(unsigned int *)&dword_A8B238 == 4 && dword_A8DA84 > 1 ) /*0x684865*/
       {
         Debug::Log(); /*0x684870*/
-        (*(void (__thiscall **)(int))(*(unsigned int *)g_NetworkInterface + 48))(g_NetworkInterface); /*0x684880*/
+        (*(void (__thiscall **)(unsigned int *))(*dword_887628 + 48))(dword_887628); /*0x684880*/
         strcpy(Buffer, "xxx.xxx.xxx.xxx"); /*0x68489a*/
-        v29 = 0; /*0x6848a3*/
-        v30 = 0; /*0x6848b0*/
-        v31 = 0; /*0x6848b6*/
-        v32 = 0; /*0x6848be*/
+        v33 = 0; /*0x6848a3*/
+        v34 = 0; /*0x6848b0*/
+        v35 = 0; /*0x6848b6*/
+        v36 = 0; /*0x6848be*/
         v11 = 1; /*0x6848c2*/
-        if ( Game_PlayerCount > 1 ) /*0x6848c4*/
+        if ( dword_A8DA84 > 1 ) /*0x6848c4*/
         {
-          v12 = (unsigned short *)(&Network_PlayerPorts + 2); /*0x6848ca*/
+          v12 = &dword_A8E2B2 + 2; /*0x6848ca*/
           do /*0x684955*/
           {
-            Network::CopyAddress((unsigned int *)(*(unsigned int *)(Game_PlayerInfoArray + 4 * v11) + 40), &v27, (int)v26); /*0x6848e5*/
-            sprintf(Buffer, "%d.%d.%d.%d", v26[0], v26[1], v26[2], v26[3]); /*0x68491f*/
-            Debug::Log(); /*0x68492e*/
+            Network::CopyAddress((Network *)(dword_A8DA78[v11] + 40), &v31, (int)v30); /*0x6848e5*/
+            sprintf(Buffer, "%d.%d.%d.%d", IDA_LOBYTE(v30[0]), IDA_BYTE1(v30[0]), IDA_BYTE2(v30[0]), IDA_HIBYTE(v30[0])); /*0x68491f*/
+            v13 = Debug::Log(); /*0x68492e*/
             IDA_LOWORD(v13) = *v12; /*0x684933*/
-            (*(void (__thiscall **)(int, char *, int))(*(unsigned int *)g_NetworkInterface + 44))( /*0x684947*/
-              g_NetworkInterface,
-              Buffer,
-              v13);
+            (*(void (__thiscall **)(unsigned int *, char *, int))(*dword_887628 + 44))(dword_887628, Buffer, v13); /*0x684947*/
             ++v11; /*0x68494f*/
             ++v12; /*0x684950*/
           }
-          while ( v11 < Game_PlayerCount ); /*0x684955*/
+          while ( v11 < dword_A8DA84 ); /*0x684955*/
         }
       }
     }
   }
-  if ( *((unsigned char *)g_ScenarioClass_Instance + 13501) ) /*0x684961*/
+  if ( IDA_BYTE1(dword_A8B230[375].vtable0) ) /*0x684961*/
   {
-    v14 = Scenario::LoadOrReloadOptions(Source); /*0x68497a*/
+    v14 = Scenario::LoadOrReloadOptions((Scenario *)byte_ABDFD8, (int)Source); /*0x68497a*/
     if ( v14 ) /*0x68497e*/
     {
-      RandomMap::Generate((int *)dword_ABDFD8, 0, 0); /*0x684989*/
+      RandomMap::Generate((RandomMap *)byte_ABDFD8, 0, 0); /*0x684989*/
       IDA_LOBYTE(v15) = 1; /*0x68498e*/
       ScenarioClass::SetupAlliances(v15); /*0x684990*/
     }
-    strcpy((char *)g_ScenarioClass_Instance + 4700, Source); /*0x6849b8*/
+    strcpy((char *)&dword_A8B230[130].abstractFlags, Source); /*0x6849b8*/
   }
   else
   {
-    v14 = ScenarioClass::Construct(Source); /*0x6849ce*/
+    v14 = ScenarioClass::Construct(Source, a2); /*0x6849ce*/
   }
-  if ( !IDA_BYTE2(g_RulesClass_Instance[1].NukeTakeOff) ) /*0x6849d6*/
-    MapClass::ClearShroud(&MapClass_Instance, 0); /*0x6849e7*/
+  if ( !dword_8871E0->__pad_13BC[242] ) /*0x6849d6*/
+    MapClass::ClearShroud((MapClass *)&dword_87F7E8, 0); /*0x6849e7*/
   if ( v14 )
   {
     MessageListClass::Init( /*0x684ac9*/
-      g_GameNetworkObject,
-      DSurface_ViewBounds + 3,
-      g_Map_VisibleRect,
+      &unk_A8BC60,
+      DSurface_ViewBounds.field_0 + 3,
+      dword_886FA4,
       6,
       98,
       14,
@@ -1113,60 +1120,76 @@ int Scenario::LoadWithProgress()
       0,
       20,
       98,
-      g_Map_VisibleRectOffset - 6);
-    PostLoadInitScenario(); /*0x684ace*/
-    if ( g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4 ) /*0x684adf*/
+      dword_886FA8 - 6);
+    PostLoadInitScenario(v27); /*0x684ace*/
+    if ( *(unsigned int *)&dword_A8B238 == 3 || *(unsigned int *)&dword_A8B238 == 4 ) /*0x684adf*/
     {
-      Multiplayer::ShowProgress(g_GameMode_Current, 99); /*0x684ae8*/
-      if ( g_GameMode_Current[0] == 4 ) /*0x684af3*/
+      Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, 99); /*0x684ae8*/
+      if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x684af3*/
       {
-        if ( g_Network_IsHosting ) /*0x684afc*/
-          Process::WaitForExit((const HANDLE *)&g_NetworkEventQueue, 0x3A98u, 1); /*0x684b0a*/
+        if ( byte_A8DBA0 ) /*0x684afc*/
+          Process::WaitForExit((Process *)&unk_B052D0, 0x3A98u, 1); /*0x684b0a*/
       }
     }
-    Multiplayer::ShowProgress(g_GameMode_Current, *((unsigned char *)g_ScenarioClass_Instance + 13501) != 0 ? 200 : 100);
+    Multiplayer::ShowProgress((Multiplayer *)&dword_A8B238, IDA_BYTE1(dword_A8B230[375].vtable0) != 0 ? 200 : 100);
     byte_A8B8C1 = 0; /*0x684b30*/
     byte_A8B8C2 = 0; /*0x684b37*/
-    v18 = WaitForMultiplayerLoadSync(); /*0x684b43*/
-    if ( g_GameMode_Current[0] == 4 ) /*0x684b4c*/
-      ParseAndApplyAlliances(g_GameMode_Current); /*0x684b53*/
-    --g_IKnowWhatImDoing; /*0x684b66*/
-    if ( !g_ArmageddonMode ) /*0x684b6c*/
+    Sync = WaitForMultiplayerLoadSync(v28); /*0x684b43*/
+    if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x684b4c*/
+      ParseAndApplyAlliances((ObjectClass *)&dword_A8B238); /*0x684b53*/
+    --dword_A8E7AC; /*0x684b66*/
+    if ( !byte_A8ED6B ) /*0x684b6c*/
     {
-      if ( v18 ) /*0x684b70*/
+      if ( Sync ) /*0x684b70*/
       {
         Event::Dispatch(); /*0x684b72*/
-        while ( Progress::GetAverage((int)g_UIManager) < 1.0 ) /*0x684b8c*/
+        Progress::GetAverage((Progress *)&dword_AC4F58); /*0x684b7c*/
+        __asm /*0x684b81*/
         {
-          for ( i = 0; i < Game_PlayerCount; ++i ) /*0x684b97*/
-            Network::UpdateLatencyDisplay((int)g_UIManager, i, 100.0, NAN); /*0x684bae*/
+          fcomp ds:dbl_7E1718
+          fnstsw ax
+        }
+        if ( (_AX & 0x100) != 0 ) /*0x684b8c*/
+        {
+          do /*0x684bd2*/
+          {
+            for ( i = 0; i < dword_A8DA84; ++i ) /*0x684b97*/
+              Network::UpdateLatencyDisplay((int)&dword_AC4F58, i, 100.0, NAN); /*0x684bae*/
+            Progress::GetAverage((Progress *)&dword_AC4F58); /*0x684bc2*/
+            __asm /*0x684bc7*/
+            {
+              fcomp ds:dbl_7E1718
+              fnstsw ax
+            }
+          }
+          while ( (_AX & 0x100) != 0 ); /*0x684bd2*/
         }
       }
     }
-    *((unsigned char *)g_ScenarioClass_Instance + 13720) = 0; /*0x684bde*/
-    Scenario::SetByte96(g_UIManager); /*0x684be5*/
-    if ( v25 ) /*0x684bf0*/
+    IDA_LOBYTE(dword_A8B230[381].vtable1) = 0; /*0x684bde*/
+    Scenario::SetByte96((Scenario *)&dword_AC4F58); /*0x684be5*/
+    if ( v29 ) /*0x684bf0*/
     {
-      Function::643E80(0); /*0x684bf9*/
-      LoadProgressMgr::ReleaseBuffer(v25); /*0x684c00*/
+      Function::Method_643E80((Function *)&dword_AC4F58, 0); /*0x684bf9*/
+      LoadProgressMgr::ReleaseBuffer(v29); /*0x684c00*/
     }
-    for ( j = HouseClass_Count - 1; j >= 0; --j ) /*0x684c10*/
-      Scenario::ProcessSidebarUnits(*(unsigned int *)&HouseClass_Array->gap0[4 * j]); /*0x684c1b*/
+    for ( j = dword_A80238 - 1; j >= 0; --j ) /*0x684c10*/
+      Scenario::ProcessSidebarUnits(*((Scenario **)&dword_A8022C->vtable0 + j)); /*0x684c1b*/
     return 1; /*0x684c24*/
   }
   else
   {
     Debug::Log(); /*0x6849fe*/
     FadePalette(&FileSystem_TEMPERAT_PAL, 7, (void (*)(void))Event::Dispatch); /*0x684a15*/
-    v27 = asc_82083C; /*0x684a31*/
-    v21 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_Scenario_CPP, 1293); /*0x684a45*/
-    v16 = GetStringCSF(aTxtUnableReadS, 0, g_Str_File_Scenario_CPP, 1293); /*0x684a50*/
-    Dialog::ShowMessageBox(4, v16, v21, 0, 0, 0); /*0x684a5a*/
-    --g_IKnowWhatImDoing; /*0x684a6b*/
-    *((unsigned char *)g_ScenarioClass_Instance + 13720) = 0; /*0x684a71*/
-    if ( v25 ) /*0x684a7d*/
+    v31 = asc_82083C; /*0x684a31*/
+    v23 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_Scenario_CPP, 1293); /*0x684a45*/
+    v16 = (int *)GetStringCSF(aTxtUnableReadS, 0, g_Str_File_Scenario_CPP, 1293); /*0x684a50*/
+    Dialog::ShowMessageBox(v16, v23, 0, 0, 0, (int)v27); /*0x684a5a*/
+    --dword_A8E7AC; /*0x684a6b*/
+    IDA_LOBYTE(dword_A8B230[381].vtable1) = 0; /*0x684a71*/
+    if ( v29 ) /*0x684a7d*/
     {
-      Function::643E80(0); /*0x684a86*/
+      Function::Method_643E80((Function *)&dword_AC4F58, 0); /*0x684a86*/
       LoadProgressMgr::Destroy(); /*0x684a8b*/
     }
     return 0; /*0x684a90*/
@@ -1452,6 +1475,7 @@ void Scenario_EndGameFlow()
   TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x685d9a*/
   return FadePalette(&FileSystem_TEMPERAT_PAL, 7, (void (*)(void))Event::Dispatch); /*0x6858fa*/
 }
+}
 // 0x685DC0
 namespace gamemd {
 void Scenario_EndGame()
@@ -1699,6 +1723,7 @@ void Scenario_EndGame()
   if ( *(unsigned int *)&unk_A8B238 == 4 ) /*0x68621d*/
     IDA_LOBYTE(v15) = ChatMessageWOL(0, &g_TypeClass_DefaultString); /*0x68622a*/
   return v15; /*0x686045*/
+}
 }
 // 0x4758F0
 namespace gamemd {

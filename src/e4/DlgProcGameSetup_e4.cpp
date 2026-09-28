@@ -8,6 +8,8 @@
 #include "e4/classes/Display_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/DisplayClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x72B8E0
 namespace gamemd {
@@ -15,7 +17,7 @@ char sub_72B8E0()
 {
   char result; // al
 
-  result = byte_B0FD5D; /*0x72b8e0*/
+  result = (unsigned int)(byte_B0FD5D);
   if ( !byte_B0FD5D ) /*0x72b8e7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72b8f3*/

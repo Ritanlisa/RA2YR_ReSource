@@ -11,6 +11,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/WWMouseClass_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x6A0310
 namespace gamemd {
@@ -274,9 +275,9 @@ WalkLocomotionClass * WalkLocomotionClass::ProcessMove(char a2)
   Piggybackee = this->Piggybackee; /*0x75cbf7*/
   if ( Piggybackee ) /*0x75cbfc*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x75cc01*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x75cc06*/
+  LocomotionClass::Construct(); /*0x75cc06*/
   if ( (a2 & 1) != 0 ) /*0x75cc10*/
-    RA2_OPDEL(this); /*0x75cc13*/
+    RA2_OPDEL(); /*0x75cc13*/
   return this->__pad_0; /*0x75cc1d*/
 }
 } // namespace gamemd

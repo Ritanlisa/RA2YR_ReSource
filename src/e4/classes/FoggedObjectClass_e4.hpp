@@ -44,9 +44,9 @@ struct FoggedObjectClass {
     unsigned int u32_6C;
     unsigned char u8_69;
     unsigned int vtable0;
-    unsigned int vtable4;
     unsigned int House;
     unsigned int LastSight;
+    unsigned int vtable4;
 // --- flat members (END) ---
     AbstractClass * * InitDrawRecord(unsigned int * a2);
     AbstractClass * * InitTerrainFog(void* aP1, int a3, int a4);

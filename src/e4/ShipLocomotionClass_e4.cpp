@@ -9,6 +9,7 @@
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
 #include "e4/classes/FileClass_e4.hpp"
+#include "e4/classes/Session_e4.hpp"
 
 // 0x69EE90
 namespace gamemd {
@@ -129,9 +130,9 @@ ShipLocomotionClass * ShipLocomotionClass::ProcessMove(char a2)
   Piggybackee = this->Piggybackee; /*0x6a42c7*/
   if ( Piggybackee ) /*0x6a42cc*/
     (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x6a42d1*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x6a42d6*/
+  LocomotionClass::Construct(); /*0x6a42d6*/
   if ( (a2 & 1) != 0 ) /*0x6a42e0*/
-    RA2_OPDEL(this); /*0x6a42e3*/
+    RA2_OPDEL(); /*0x6a42e3*/
   return this->__pad_0; /*0x6a42ed*/
 }
 } // namespace gamemd

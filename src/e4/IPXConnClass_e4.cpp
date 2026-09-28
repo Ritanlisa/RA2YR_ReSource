@@ -16,7 +16,7 @@ void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3
   int v13; // [esp+8h] [ebp-8h] BYREF
   int16_t v14; // [esp+Ch] [ebp-4h]
 
-  IPXConnClass::initConnection((ConnectionClass *)this, aP1, aP2, aP3, aP4, 2, -1, 60, aP8); /*0x53f458*/
+  IPXConnClass::initConnection(aP1, aP2, aP3, aP4, 2, -1, 60, aP8); /*0x53f458*/
   Waypoint::InitInvalid((Waypoint *)((char *)&this->RemoteAddress6)); /*0x53f462*/
   *(unsigned int *)this->__pad_0 = (void*)&IPXConnClass_vftable; /*0x53f46b*/
   if ( a5 ) /*0x53f473*/

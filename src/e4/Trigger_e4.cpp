@@ -27,9 +27,10 @@ int Trigger::EnableOnce(AbstractClass * aP1)
   if ( !(unsigned char)result ) /*0x554a65*/
   {
     IDA_LOBYTE(this->Trigger_field_0x48) = 1; /*0x554a6b*/
-    return TacticalClass::ScrollView((TacticalClass *)this, aP1); /*0x554a70*/
+    return TacticalClass::ScrollView(aP1); /*0x554a70*/
   }
   return result; /*0x554a75*/
+}
 }
 // 0x5CBD20
 namespace gamemd {
@@ -59,6 +60,7 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
   *(unsigned int *)&this->__pad_30[16] = 0; /*0x5cbd8a*/
   *(unsigned int *)this->__pad_0 = (void*)&MSFadeAnim_vftable; /*0x5cbd8d*/
   return this; /*0x5cbd95*/
+}
 }
 // 0x76D4D0
 namespace gamemd {
@@ -273,10 +275,11 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
 namespace gamemd {
 unsigned int * Trigger::processTrigger(int a2, int a3)
 {
-  this->Trigger_field_0x4 = (unsigned int)((MSAnim *)a2);
+  this->Trigger_field_0x4 = (unsigned int *)((MSAnim *)a2);
   *(unsigned int *)this->__pad_8 = a3; /*0x76f09d*/
   *(unsigned int *)this->__pad_0 = (void*)&VectorCursor_MSSfxEntry___DynamicVectorClass_MSSfxEntry___vftable; /*0x76f0a0*/
   return this->__pad_0; /*0x76f0a6*/
+}
 }
 // 0x76F1C0
 namespace gamemd {
@@ -291,13 +294,14 @@ unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
   {
     if ( aP2 ) /*0x76f1e6*/
     {
-      this->Trigger_field_0x4 = (unsigned int)((MSAnim *)aP2);
-      return this->__pad_0; /*0x76f1ee*/
+      this->Trigger_field_0x4 = (unsigned int *)((MSAnim *)aP2);
+      return (unsigned int *)(this->__pad_0);
     }
     this->Trigger_field_0x4 = (MSAnim *)RA2_OPNEW(4 * aP1); /*0x76f1fd*/
     this->__pad_8[5] = 1; /*0x76f200*/
   }
-  return this->__pad_0; /*0x76f1ed*/
+  return (unsigned int *)(this->__pad_0);
+}
 }
 // 0x76FF20
 namespace gamemd {
@@ -305,4 +309,5 @@ int Trigger::executeActions(int a2)
 {
   this->Trigger_field_0x2C = (unsigned int)((void *)a2);
   return a2; /*0x76ff27*/
+}
 }

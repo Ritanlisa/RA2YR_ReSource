@@ -105,6 +105,7 @@ struct Sidebar {
     unsigned char u8_53D3;
     unsigned int Sidebar_field_0x10;
     unsigned int Sidebar_field_0xC;
+    unsigned int field_150C;
 // --- flat members (END) ---
     int StartSidebarProduction(void * a1,  BuildingTypeClass * aP2,  HouseClass * aP3,  char a5);    // 0x4FA350
     int Dispatch(IUnknown * aP1,  char a3,  int a4,  char a5);    // 0x5007A0

@@ -46,8 +46,8 @@ void Player::BuildListString()
       WideString::Assign_Alt((void **)&v6, v3); /*0x5e8e1e*/
     }
     v5 = (wchar_t *)(WideString::GetOrEmpty((wchar_t **)&v6));
-    wcscat((wchar_t *)this, v5); /*0x5e8e64*/
-    wcscat((wchar_t *)this, asc_8304FC); /*0x5e8e6f*/
+    wcscat(v5); /*0x5e8e64*/
+    wcscat(asc_8304FC); /*0x5e8e6f*/
     DeleteAndZero::Alt(&v6); /*0x5e8e7b*/
     ++v2; /*0x5e8e80*/
   }

@@ -24,14 +24,14 @@ struct FactoryClass {
     bool q027;  // 0x27
     unsigned int u32_28;  // 0x28
     bool q02B;  // 0x2B
-    unsigned int ;  // 0x2C
+    TerrainTypeClass* q02C;  // 0x2C
     unsigned int u32_2D;  // 0x2D
     bool q02F;  // 0x2F
     TechnoTypeClass** queuedObjects;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
-    unsigned int queuedCount;  // 0x34
-    unsigned int queuedCapacity;  // 0x38
+    char queuedCount[4];  // 0x34
+    char queuedCapacity[4];  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int q03B;  // 0x3B
     TechnoClass* object;  // 0x3C
@@ -55,7 +55,7 @@ struct FactoryClass {
     unsigned int balance;  // 0x60
     char originalBalance[4];  // 0x64
     char specialItem[4];  // 0x68
-    void* ;  // 0x6C
+    HouseClass* owner;  // 0x6C
     bool isSuspended;  // 0x70
     bool isManual;  // 0x71
     unsigned char align72;  // 0x72
@@ -67,8 +67,6 @@ struct FactoryClass {
     unsigned int vtable22;
     unsigned int vtable23;
     unsigned int vtable24;
-    unsigned int owner;
-    unsigned int q02C;
 // --- flat members (END) ---
     AbstractClass * * Stat(int * a2);
     char GetFlag();

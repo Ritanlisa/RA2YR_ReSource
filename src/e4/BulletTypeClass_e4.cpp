@@ -120,7 +120,7 @@ unsigned char * BulletTypeClass::Construct(ObjectClass * aP1)
   int v3; // eax
   int v4; // eax
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x46bbc9*/
+  ObjectTypeClass::ConstructFull(aP1); /*0x46bbc9*/
   this->airburst = 0; /*0x46bbd5*/
   this->floater = 0; /*0x46bbdb*/
   this->subjectToCliffs = 0; /*0x46bbe1*/
@@ -245,7 +245,7 @@ WeaponTypeClass * * BulletTypeClass::LoadFromINI(unsigned char *** a2)
   char Destination[128]; // [esp+Ch] [ebp-80h] BYREF
 
   v4 = v3; /*0x46beef*/
-  INIClass::ResetSection((INIClass *)this); /*0x46bef3*/
+  INIClass::ResetSection(); /*0x46bef3*/
   if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)v4, (uint8_t ***)this) ) /*0x46befb*/
     return 0; /*0x46c42a*/
   *(unsigned int *)(v4 + 752) = INIClass::ReadInt_Overwrite( /*0x46bf21*/
@@ -601,7 +601,7 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2)
   *(unsigned int *)&this->gap0[4] = (void*)&BulletTypeClass_vftable; /*0x46c89c*/
   *(unsigned int *)&this->gap0[8] = (void*)&BulletTypeClass_vftable; /*0x46c8a3*/
   *(unsigned int *)&this->gap0[12] = (void*)&BulletTypeClass_vftable; /*0x46c8aa*/
-  AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x46c8b1*/
+  AbstractClass::AnnounceExpiredPointer(1); /*0x46c8b1*/
   v6 = this; /*0x46c8c6*/
   v3 = (*(int (__thiscall **)(int *, BulletTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x46c8ca*/
          &g_BuildingLoadQueue_Array.LightVisibility,
@@ -628,9 +628,9 @@ BulletTypeClass * BulletTypeClass::ddtor(char a2)
     }
     while ( v4 < dword_A83C90 ); /*0x46c946*/
   }
-  ObjectTypeClass::Destruct((int)this); /*0x46c94a*/
+  ObjectTypeClass::Destruct(); /*0x46c94a*/
   if ( (a2 & 1) != 0 ) /*0x46c954*/
-    RA2_OPDEL(this); /*0x46c957*/
+    RA2_OPDEL(); /*0x46c957*/
   return (void **)this; /*0x46c961*/
 }
 } // namespace gamemd

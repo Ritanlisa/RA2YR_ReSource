@@ -8,7 +8,7 @@ namespace gamemd {
 struct BitTextClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned int m_CharWidth;  // 0x4
+    char m_CharWidth[4];  // 0x4
     CampaignClass * ptr_8;  // 0x8
     unsigned int u32_C;  // 0xC
     unsigned int m_CharWidth8;

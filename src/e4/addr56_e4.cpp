@@ -257,6 +257,7 @@ char ChangeVideoMode(ObjectClass * xRight, int yBottom)
   (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 16))(stru_887598.lineTrailer); /*0x560dc2*/
   return 0; /*0x560dc7*/
 }
+}
 // 0x561400
 namespace gamemd {
 void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, unsigned int a4)
@@ -374,6 +375,7 @@ void VideoSettingsDialogProc(INIClass * aP0, unsigned int a2, WPARAM wParam, uns
   EnableWindow(v13, (uint8_t)g_DDraw_AllowStretchBlits); /*0x5615a3*/
   return 0; /*0x5615aa*/
 }
+}
 // 0x568140
 namespace gamemd {
 void sub_568140(int * a1, int a2)
@@ -391,10 +393,10 @@ void sub_568140(int * a1, int a2)
   int v12; // esi
   int v13; // ebp
   unsigned int v14; // eax
-  unsigned int v15;
-  unsigned int v16;
-  unsigned int v17;
-  unsigned int v18;
+  unsigned int *v15; // ecx
+  unsigned int *v16; // ecx
+  unsigned int *v17; // ecx
+  unsigned int *v18; // eax
   int16_t v19; // [esp+14h] [ebp-8h]
   int16_t v20; // [esp+16h] [ebp-6h]
   int v21; // [esp+20h] [ebp+4h]
@@ -431,25 +433,25 @@ void sub_568140(int * a1, int a2)
           if ( v14 >= 0x40000 || (v15 = *(unsigned int **)(g_Shroud_CellArray + 4 * v14)) == 0 ) /*0x56823b*/
           {
             g_Map_GlobalCellIndex = (int)((unsigned int *)(v21));
-            v15 = g_CellClassArray; /*0x568243*/
+            v15 = (unsigned int *)(g_CellClassArray);
           }
-          v15[76] = (unsigned int)(0);
+          v15[76] = 0; /*0x56824a*/
           if ( v14 >= 0x40000 || (v16 = *(unsigned int **)(g_Shroud_CellArray + 4 * v14)) == 0 ) /*0x568264*/
           {
             g_Map_GlobalCellIndex = (int)((unsigned int *)(v21));
-            v16 = g_CellClassArray; /*0x56826c*/
+            v16 = (unsigned int *)(g_CellClassArray);
           }
           v16[77] = 0; /*0x568273*/
           if ( v14 >= 0x40000 || (v17 = *(unsigned int **)(g_Shroud_CellArray + 4 * v14)) == 0 ) /*0x56828d*/
           {
-            g_Map_GlobalCellIndex = (unsigned int *)(v21);
-            v17 = g_CellClassArray; /*0x568295*/
+            g_Map_GlobalCellIndex = (int)((unsigned int *)(v21));
+            v17 = (unsigned int *)(g_CellClassArray);
           }
           v17[75] |= 0x10u; /*0x56829a*/
           if ( v14 >= 0x40000 || (v18 = *(unsigned int **)(g_Shroud_CellArray + 4 * v14)) == 0 ) /*0x5682b7*/
           {
-            g_Map_GlobalCellIndex = (unsigned int *)(v21);
-            v18 = g_CellClassArray; /*0x5682bf*/
+            g_Map_GlobalCellIndex = (int)((unsigned int *)(v21));
+            v18 = (unsigned int *)(g_CellClassArray);
           }
           v12 = v10 * v10; /*0x5682ca*/
           v18[75] |= 8u; /*0x5682d1*/
@@ -463,6 +465,7 @@ void sub_568140(int * a1, int a2)
     }
   }
   return result; /*0x5682f5*/
+}
 }
 // 0x56AF40
 namespace gamemd {
@@ -538,6 +541,7 @@ BombClass * * E4Recv_56AF40::sub_56AF40(int a2)
   LCWPipe::Dtor((LCWPipe *)&v17); /*0x56b0d8*/
   return v11; /*0x56b0df*/
 }
+}
 // 0x56B250
 namespace gamemd {
 BombClass * * E4Recv_56B250::sub_56B250(int a2)
@@ -605,6 +609,7 @@ BombClass * * E4Recv_56B250::sub_56B250(int a2)
   v12 = (*(int (__thiscall **)(Pipe *))(*(unsigned int *)v17.__pad_0 + 4))(&v17); /*0x56b3cf*/
   LZOPipe::Destructor((LZOPipe *)&v17); /*0x56b3d1*/
   return v12 + v11; /*0x56b3d9*/
+}
 }
 // 0x561350
 namespace gamemd {

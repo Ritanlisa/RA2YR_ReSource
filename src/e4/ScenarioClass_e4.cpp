@@ -45,7 +45,8 @@ ScenarioClass * * ScenarioClass::CopyStartPositions()
   int v6; // ecx
   void *v7; // edx
   void *v8; // esi
-result = (void *)(unk_A8B230);
+
+  result = (void *)(unk_A8B230);
   if ( unk_A8B230 ) /*0x58bb38*/
   {
     unk_A8B230[122].abstractFlags = (gamemd::AbstractClass *)(g_MissionQueueFrame.localVariables[162]);
@@ -80,13 +81,14 @@ result = (void *)(unk_A8B230);
         v5 = &g_MissionQueueFrame.waypoints[1470]; /*0x58bb82*/
       }
     }
-    v2[122].vtable1 = (gamemd::ScenarioClass **)((void *)g_MissionQueueFrame.briefing[355]);
-    unk_A8B230[122].vtable2 = (gamemd::ScenarioClass **)((void *)g_MissionQueueFrame.briefing[354]);
+    v2[122].vtable1 = (void *)g_MissionQueueFrame.briefing[355]; /*0x58bbda*/
+    unk_A8B230[122].vtable2 = (void *)g_MissionQueueFrame.briefing[354]; /*0x58bbed*/
     unk_A8B230[122].vtable3 = (void *)g_MissionQueueFrame.localVariables[131]; /*0x58bbfe*/
     result = (void *)g_MissionQueueFrame.localVariables[147]; /*0x58bc0a*/
     unk_A8B230[122].uniqueId = g_MissionQueueFrame.localVariables[147]; /*0x58bc0f*/
   }
   return (gamemd::ScenarioClass **)(result);
+}
 }
 // 0x5CC330
 namespace gamemd {
@@ -180,7 +182,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(void * a1, void * a2, v
     v14 = 3; /*0x5cc420*/
   v15 = *(unsigned int *)(v5 + 56) | dword_830078[v14]; /*0x5cc443*/
   v16 = *(unsigned int *)this->__pad_0; /*0x5cc445*/
-  v30 = (int)(*(unsigned int *)(v5 + 4));
+  v30 = *(unsigned int *)(v5 + 4); /*0x5cc447*/
   v27 = v15; /*0x5cc452*/
   v31 = *(unsigned int *)(v5 + 8); /*0x5cc456*/
   v17 = (int *)(*(int (__thiscall **)(MSOverlayAnim *))(v16 + 120))(this); /*0x5cc45a*/
@@ -201,7 +203,7 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(void * a1, void * a2, v
     0,
     0,
     0);
-  v18 = (int)((void *)(*(unsigned int *)(v5 + 68)));
+  v18 = *(unsigned int *)(v5 + 68); /*0x5cc475*/
   if ( v18 ) /*0x5cc47a*/
   {
     a3 = (void *)(v5);
@@ -247,11 +249,13 @@ CampaignClass * * ScenarioClass_AnimateConstructionStage(void * a1, void * a2, v
   }
   return (gamemd::CampaignClass **)(*(unsigned char *)(v5 + 72) == 0);
 }
+}
 // 0x5D6430
 namespace gamemd {
 void ScenarioClass_dispatchEvents()
 {
   return Random::Range((Random *)&unk_A8B230[14].NeedsSaveOrLink, 0, 9); /*0x69b684*/
+}
 }
 // 0x5D6440
 namespace gamemd {
@@ -289,11 +293,12 @@ int ScenarioClass::AssignStartPositions(char a1)
     RA2_OPDEL(Block); /*0x5d6c5b*/
   return 1; /*0x5d6c4f*/
 }
+}
 // 0x6832C0
 namespace gamemd {
 TimerStruct * * ScenarioClass::Constructor()
 {
-  TechnoTypeClass * v2;
+  int v2; // eax
   int v3; // ecx
   int v4; // eax
   int v5; // edx
@@ -310,8 +315,8 @@ TimerStruct * * ScenarioClass::Constructor()
   this->pauseTimer[1] = Timer::GetTicks(); /*0x6832f6*/
   *(unsigned int *)this->__pad_628 = 0; /*0x6832fc*/
   v2 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x683302*/
-  this->missionTimer[2] = (gamemd::TechnoTypeClass *)(0);
-  this->missionTimer[0] = (char)((gamemd::TechnoTypeClass *)(v2));
+  this->missionTimer[2] = 0; /*0x683307*/
+  this->missionTimer[0] = (gamemd::TechnoTypeClass *)(v2);
   IDA_LOBYTE(this->missionTimer_text[0]) = 0; /*0x683313*/
   v3 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x683319*/
   this->shroudRegrowTimer[2] = 0; /*0x68331f*/
@@ -340,10 +345,10 @@ TimerStruct * * ScenarioClass::Constructor()
   this->ionLevel = 10; /*0x6833cf*/
   this->ionGround = 0; /*0x6833d2*/
   this->ionAmbient = (int)&TypeList_int_vftable; /*0x6833d5*/
-  ScenarioClass::InitTimer(this); /*0x6833db*/
+  ScenarioClass::InitTimer(); /*0x6833db*/
   this->__pad_3566[50] = 0; /*0x6833e2*/
   this->isRandom = 0; /*0x6833e8*/
-  ScenarioClass::ResetIntroFlags(this); /*0x6833ee*/
+  ScenarioClass::ResetIntroFlags(); /*0x6833ee*/
   this->techLevel = 1; /*0x6833f3*/
   this->campaignIndex = -1; /*0x6833fd*/
   IDA_LOBYTE(this->nextScenario[1]) = 0; /*0x683407*/
@@ -397,11 +402,12 @@ TimerStruct * * ScenarioClass::Constructor()
   *(int *)((char *)this->view1 + 2) = 0; /*0x68353c*/
   *(int *)((char *)this->view2 + 2) = 0; /*0x683543*/
   *(int *)((char *)this->view3 + 2) = 0; /*0x683549*/
-  return (int)this->nextScenario; /*0x683533*/
+  return (int, unsigned int a4)this->nextScenario; /*0x683533*/
+}
 }
 // 0x683AB0
 namespace gamemd {
-int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
+int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3, void * a1, void * a4)
 {
   char *v4; // ebp
   int uniqueId; // eax
@@ -421,13 +427,14 @@ int ScenarioClass::LoadScenarioAndStart(AnimClass * Source, char a2, int a3)
   int v21[3]; // [esp+CCh] [ebp-30h] BYREF
   int v22; // [esp+D8h] [ebp-24h]
   CHAR v23[28]; // [esp+E0h] [ebp-1Ch] BYREF
-v4 = (char *)(Source);
+
+  v4 = (char *)(Source);
   if ( (!Source || !strlen(Source)) && a4 != -1 ) /*0x683ade*/
   {
     if ( stru_A8EB00.gapE4[377] == 1 ) /*0x683ae7*/
       v4 = &stru_A83D50.__pad_C8[48]; /*0x683ae9*/
     else
-      v4 = (char *)(*((unsigned int *)unk_A83CFC + a4) + 156); /*0x683af8*/
+      v4 = (char *, unsigned int a4)(*((unsigned int *)unk_A83CFC + a4) + 156); /*0x683af8*/
   }
   unk_A8B230[375].uniqueId = a4; /*0x683b0a*/
   Debug::Log(); /*0x683b10*/
@@ -539,6 +546,7 @@ v4 = (char *)(Source);
     ChatMessageWOL(0, &g_TypeClass_DefaultString); /*0x683e8f*/
   return 1; /*0x683d4a*/
 }
+}
 // 0x683EB0
 namespace gamemd {
 int ScenarioClass::CleanupTemporary()
@@ -582,6 +590,7 @@ int ScenarioClass::CleanupTemporary()
            stru_887598.lineTrailer,
            this);
 }
+}
 // 0x684180
 namespace gamemd {
 unsigned char * ScenarioClass::ProcessIntroTimer()
@@ -615,6 +624,7 @@ unsigned char * ScenarioClass::ProcessIntroTimer()
     }
   }
   return result; /*0x684239*/
+}
 }
 // 0x686730
 namespace gamemd {
@@ -666,6 +676,7 @@ void ScenarioClass_Construct()
     }
   }
   return result; /*0x686756*/
+}
 }
 // 0x686B20
 namespace gamemd {
@@ -2277,13 +2288,14 @@ int ScenarioClass_ClearFlag_0()
 {
   return ScenarioClass::ClearFlag();
 }
+}
 // 0x5CEB60
 namespace gamemd {
 MSAnim * ScenarioClass::checkWinningConditions(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&MSAnim_vftable; /*0x5ceb69*/
   if ( (a2 & 1) != 0 ) /*0x5ceb6f*/
-    RA2_OPDEL(this); /*0x5ceb72*/
+    RA2_OPDEL(); /*0x5ceb72*/
   return this->__pad_0; /*0x5ceb7c*/
 }
 } // namespace gamemd

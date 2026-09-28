@@ -9,6 +9,7 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/SuperClass_e4.hpp"
+#include "e4/classes/Stream_e4.hpp"
 
 // 0x48B2A0
 namespace gamemd {
@@ -112,7 +113,7 @@ unsigned char * Struct::Zero3()
 namespace gamemd {
 int Struct::ZeroInit32()
 {
-  memset(this, 0, 0x20u); /*0x4085aa*/
+  memset(0, 0x20u); /*0x4085aa*/
   return 0; /*0x4085ac*/
 }
 } // namespace gamemd
@@ -120,13 +121,15 @@ int Struct::ZeroInit32()
 namespace gamemd {
 int Struct::ZeroInitAndSetup_0()
 {
-  return Struct::ZeroInitAndSetup((ConnectionClass *)this);
+  return Struct::ZeroInitAndSetup();
+}
 }
 // 0x5EF280
 namespace gamemd {
 int Struct::ZeroInitAndSetup_0_0()
 {
-  return Struct::ZeroInitAndSetup((ConnectionClass *)this);
+  return Struct::ZeroInitAndSetup();
+}
 }
 // 0x5F75E0
 unsigned int * Struct::InitTriple256(unsigned int * a1)

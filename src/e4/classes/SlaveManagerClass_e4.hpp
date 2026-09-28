@@ -33,7 +33,7 @@ struct SlaveManagerClass {
     unsigned int q03B;  // 0x3B
     unsigned int slaveVectorCount;  // 0x3C
     unsigned int q03D;  // 0x3D
-    char slaveVectorCapacity[4];  // 0x40
+    unsigned int slaveVectorCapacity;  // 0x40
     bool q042;  // 0x42
     char creationFrame[4];  // 0x44
     unsigned char u8_45;  // 0x45
@@ -53,10 +53,10 @@ struct SlaveManagerClass {
     unsigned int vtable0;
     unsigned int vtable46;
     unsigned int house;
+    unsigned int master;
     unsigned int q050;
     unsigned int slaveOwner;
     unsigned int slaves;
-    unsigned int master;
 // --- flat members (END) ---
     AbstractClass * * LoadManager(unsigned int * a1, int a2);
     SlaveManagerClass * ProcessOrders(char a2);

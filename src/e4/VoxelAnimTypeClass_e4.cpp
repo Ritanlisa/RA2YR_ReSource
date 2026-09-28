@@ -24,6 +24,8 @@
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/VoxelAnimClass_e4.hpp"
+#include "e4/classes/VoxelAnim_e4.hpp"
+#include "e4/classes/Game_e4.hpp"
 
 // 0x74AD80
 namespace gamemd {
@@ -32,7 +34,7 @@ unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
   int v3; // eax
   int v4; // eax
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x74ad89*/
+  ObjectTypeClass::ConstructFull(aP1); /*0x74ad89*/
   this->StartSound = -1; /*0x74ad93*/
   this->StopSound = -1; /*0x74ad99*/
   this->Normalized = 0; /*0x74ad9f*/
@@ -42,9 +44,9 @@ unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
   this->MinAngularVelocity[0] = 0; /*0x74adbe*/
   this->MaxAngularVelocity[0] = 484854086; /*0x74adc4*/
   this->MinZVel[0] = 0; /*0x74adce*/
-  this->MaxZVel[0] = 0; /*0x74add4*/
+  this->MaxZVel[0] = (unsigned int)(0);
   this->MaxXYVel[0] = (unsigned int)(0);
-  this->VoxelIndex = (unsigned int)(0);
+  this->VoxelIndex = 0; /*0x74ade1*/
   this->Duration = 30; /*0x74ade7*/
   this->Elasticity[1] = 1072273817; /*0x74adf1*/
   this->MinAngularVelocity[1] = 0; /*0x74adfb*/
@@ -99,6 +101,7 @@ unsigned int * VoxelAnimTypeClass::Constructor(ObjectClass * aP1)
   }
   return &this->vtable0; /*0x74af5e*/
 }
+}
 // 0x74B050
 namespace gamemd {
 AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1, void * a1, void * a2)
@@ -151,7 +154,7 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1, voi
   VocClass Destination; // [esp+18h] [ebp-280h] BYREF
 
   v4 = v3; /*0x74b061*/
-  INIClass::ResetSection((INIClass *)this); /*0x74b066*/
+  INIClass::ResetSection(); /*0x74b066*/
   if ( !ObjectTypeClass::LoadFromINI((ObjectTypeClass *)v4, (uint8_t ***)this) ) /*0x74b06e*/
     return 0; /*0x74b614*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x74b08d*/
@@ -168,10 +171,10 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1, voi
   v8 = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)(v4 + 36), aIsmeteor, *(unsigned char *)(v4 + 720)); /*0x74b0db*/
   v43 = *(double *)(v4 + 672); /*0x74b0ed*/
   *(unsigned char *)(v4 + 720) = v8; /*0x74b0f6*/
-  INIClass::ReadDouble_Overwrite((double *)this, (uint8_t *)(v4 + 36), g_INI_Key_Elasticity, v43); /*0x74b0fc*/
+  INIClass::ReadDouble_Overwrite((uint8_t *)(v4 + 36), g_INI_Key_Elasticity, v43); /*0x74b0fc*/
   __asm { fstp qword ptr [esi+2A0h] } /*0x74b101*/
   *(double *)(v4 + 672) = _RT1; /*0x74b101*/
-  INIClass::ReadDouble_Overwrite((double *)this, (uint8_t *)(v4 + 36), aMinangularvelo, -1.0); /*0x74b116*/
+  INIClass::ReadDouble_Overwrite((uint8_t *)(v4 + 36), aMinangularvelo, -1.0); /*0x74b116*/
   __asm /*0x74b11b*/
   {
     fcom ds:dbl_7E2800
@@ -190,7 +193,7 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1, voi
     }
     *(double *)(v4 + 680) = _RT1; /*0x74b12e*/
   }
-  INIClass::ReadDouble_Overwrite((double *)this, (uint8_t *)(v4 + 36), aMaxangularvelo, -1.0); /*0x74b147*/
+  INIClass::ReadDouble_Overwrite((uint8_t *)(v4 + 36), aMaxangularvelo, -1.0); /*0x74b147*/
   __asm /*0x74b14c*/
   {
     fcom ds:dbl_7E2800
@@ -216,7 +219,7 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1, voi
                     *(unsigned int *)(v4 + 668));
   v44 = *(double *)(v4 + 696); /*0x74b18a*/
   *(unsigned int *)(v4 + 668) = Int_Overwrite; /*0x74b193*/
-  INIClass::ReadDouble_Overwrite((double *)this, (uint8_t *)(v4 + 36), aMinzvel, v44); /*0x74b199*/
+  INIClass::ReadDouble_Overwrite((uint8_t *)(v4 + 36), aMinzvel, v44); /*0x74b199*/
   v15 = *(unsigned int *)(v4 + 708); /*0x74b19e*/
   v16 = *(unsigned int *)(v4 + 704); /*0x74b1a4*/
   __asm { fstp qword ptr [esi+2B8h] } /*0x74b1aa*/
@@ -226,10 +229,10 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1, voi
     (uint8_t *)(v4 + 36),
     aMaxzvel,
     COERCE_DOUBLE(IDA___PAIR64__(v15, v16)));
-  v18 = *(double *)(v4 + 712); /*0x74b1c5*/
+  v18 = (unsigned int *)(*(double *)(v4 + 712));
   __asm { fstp qword ptr [esi+2C0h] } /*0x74b1cb*/
   *(double *)(v4 + 704) = _RT1; /*0x74b1cb*/
-  INIClass::ReadDouble_Overwrite((double *)this, (uint8_t *)(v4 + 36), aMaxxyvel, v18); /*0x74b1db*/
+  INIClass::ReadDouble_Overwrite((uint8_t *)(v4 + 36), aMaxxyvel, v18); /*0x74b1db*/
   v20 = *(unsigned int **)(v4 + 724); /*0x74b1e0*/
   __asm { fstp qword ptr [esi+2C8h] } /*0x74b1ea*/
   *(double *)(v4 + 712) = _RT1; /*0x74b1ea*/
@@ -246,7 +249,7 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1, voi
   }
   else
   {
-    v22 = v46; /*0x74b220*/
+    v22 = (unsigned int)(v46);
   }
   *(unsigned int *)(v4 + 724) = v22; /*0x74b224*/
   *(unsigned int *)(v4 + 728) = INIClass::ReadInt_Overwrite( /*0x74b248*/
@@ -427,6 +430,7 @@ AbstractTypeClass * * VoxelAnimTypeClass::LoadFromINI(unsigned char *** aP1, voi
   }
   return 1; /*0x74b4f2*/
 }
+}
 // 0x74B690
 namespace gamemd {
 int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
@@ -462,6 +466,7 @@ int VoxelAnimTypeClass::PowerDrainUpdate(int * a2)
   IDA_LOBYTE(v7) = this->IsTiberium; /*0x74b7b6*/
   return Power::FlagProcess((Power *)a2, v7); /*0x74b7c4*/
 }
+}
 // 0x74BA30
 namespace gamemd {
 VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(char a2)
@@ -474,7 +479,7 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(char a2)
   this->vtable1 = (void*)&VoxelAnimTypeClass_vftable; /*0x74ba3c*/
   this->vtable2 = (void*)&VoxelAnimTypeClass_vftable; /*0x74ba43*/
   this->vtable3 = (void*)&VoxelAnimTypeClass_vftable; /*0x74ba4a*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x74ba51*/
+  AbstractClass::AnnounceExpiredPointer(1); /*0x74ba51*/
   v6 = this; /*0x74ba66*/
   v3 = (*(int (__thiscall **)(int *, VoxelAnimTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x74ba6a*/
          &g_BuildingLoadQueue_Array.LightVisibility,
@@ -509,9 +514,9 @@ VoxelAnimTypeClass * VoxelAnimTypeClass::ddtor(char a2)
     this->MainVoxel[0] = 0; /*0x74baf4*/
     this->TurretVoxel[0] = 0; /*0x74bafa*/
   }
-  ObjectTypeClass::Destruct((int)this); /*0x74bb02*/
+  ObjectTypeClass::Destruct(); /*0x74bb02*/
   if ( (a2 & 1) != 0 ) /*0x74bb0c*/
-    RA2_OPDEL(this); /*0x74bb0f*/
+    RA2_OPDEL(); /*0x74bb0f*/
   return &this->vtable0; /*0x74bb19*/
 }
 } // namespace gamemd

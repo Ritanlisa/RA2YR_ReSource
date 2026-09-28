@@ -20,6 +20,6 @@ int LCWPipe::Dtor()
   this->u32_14 = 0; /*0x552075*/
   RA2_OPDEL(v3); /*0x55207d*/
   this->u32_18 = 0; /*0x552087*/
-  return Pipe::Dtor((Pipe *)this); /*0x552093*/
+  return Pipe::Dtor(); /*0x552093*/
 }
 } // namespace gamemd

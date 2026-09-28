@@ -21,6 +21,8 @@
 #include "e4/classes/E4Recv_4C3DD0_e4.hpp"
 #include "e4/classes/E4Recv_4C2790_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/AudioStream_e4.hpp"
 
 // 0x4D1650
 namespace gamemd {
@@ -183,6 +185,7 @@ int sub_4D2370()
   }
   return result; /*0x4d2491*/
 }
+}
 // 0x4D2ED0
 namespace gamemd {
 int globalHelper_0D2ED0(unsigned int * a1, unsigned int * a2)
@@ -191,6 +194,7 @@ int globalHelper_0D2ED0(unsigned int * a1, unsigned int * a2)
     return 0; /*0x4d2ee0*/
   else
     return *a1 >= *a2 ? 1 : -1;
+}
 }
 // 0x4D2F00
 namespace gamemd {
@@ -221,6 +225,7 @@ void sub_4D2F00(int a1, int a2, int * a3)
     goto LABEL_7; /*0x4d2f2e*/
   }
   return a1 + 8 * (v3 / 2); /*0x4d2f34*/
+}
 }
 // 0x4DB8A0
 namespace gamemd {
@@ -280,6 +285,7 @@ int E4Recv_4DB8A0::sub_4DB8A0()
   if ( v2 ) /*0x4db99b*/
     return (*(int (__stdcall **)(int))(*(unsigned int *)v2 + 8))(v2); /*0x4db9a0*/
   return result; /*0x4db9a3*/
+}
 }
 // 0x4D0540
 namespace gamemd {

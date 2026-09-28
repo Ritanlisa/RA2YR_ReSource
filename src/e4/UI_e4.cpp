@@ -78,11 +78,13 @@ void sub_52B6D0(int a1, int a2, int * a3)
   }
   return a1 + 8 * (v3 / 2); /*0x52b704*/
 }
+}
 // 0x53E720
 namespace gamemd {
 int sub_53E720()
 {
   return g_StreamBufferState; /*0x53e725*/
+}
 }
 // 0x60AF50
 namespace gamemd {
@@ -105,6 +107,7 @@ void UI_Get(HWND hWnd, unsigned int * a2)
     v7 = (Rect.bottom - Rect.top - 600) / 2 < 0 ? 0 : (Rect.bottom - Rect.top - 600) / 2;
   MoveWindow(hWnd, v6 + *a2, v7 + a2[1], a2[2], a2[3], 0); /*0x60afe4*/
   return InvalidateRect(hWnd, 0, 0); /*0x60aff5*/
+}
 }
 // 0x622610
 namespace gamemd {
@@ -129,6 +132,7 @@ void sub_622610()
   }
   return result; /*0x622646*/
 }
+}
 // 0x647040
 namespace gamemd {
 void sub_647040()
@@ -151,6 +155,7 @@ void sub_647040()
   dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6470d0*/
   return 1; /*0x6470d8*/
 }
+}
 // 0x6470F0
 namespace gamemd {
 void sub_6470F0()
@@ -172,6 +177,7 @@ void sub_6470F0()
   ++stru_A80220.lineTrailer; /*0x64717b*/
   dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x647180*/
   return 1; /*0x647188*/
+}
 }
 // 0x725070
 namespace gamemd {
@@ -203,6 +209,7 @@ void sub_725070(int a1, int a2, unsigned int * a3)
   }
   return a1 + 8 * (v3 / 2); /*0x7250a4*/
 }
+}
 // 0x6AC430
 namespace gamemd {
 void sub_6AC430()
@@ -216,6 +223,7 @@ void sub_6AC430()
   v2 = (int)((uint64_t)(1374389535LL /*0x6ac46c*/
                               * (g_DSurface_ViewBounds - g_SidebarBounds - v1 + g_DSurface_SidebarBounds - 7)) >> 32) >> 4;
   return 2 * ((v2 >> 31) + v2); /*0x6ac478*/
+}
 }
 // 0x730EA0
 namespace gamemd {
@@ -262,6 +270,7 @@ wchar_t * * sub_730EA0()
   }
   return (wchar_t **)(result);
 }
+}
 // 0x730F30
 namespace gamemd {
 void * sub_730F30()
@@ -289,6 +298,7 @@ void * sub_730F30()
     }
   }
   return result; /*0x730fd8*/
+}
 }
 // 0x730FE0
 namespace gamemd {
@@ -378,6 +388,7 @@ AbstractClass * * sub_7318F0()
   }
   return (gamemd::AbstractClass **)(result);
 }
+}
 // 0x6D0E60
 namespace gamemd {
 void sub_6D0E60()
@@ -411,6 +422,7 @@ void sub_6D0E60()
     0,
     0);
   g_TooltipActive = 1; /*0x6d0eae*/
+}
 }
 // 0x60B1D0
 namespace gamemd {
@@ -455,7 +467,7 @@ void UI_Get_60B1D0(HWND hWnd, HWND a2)
     {
       while ( *v9 != v13 ) /*0x60b2d2*/
       {
-        v9 = (HWND *)((unsigned int *)((HWND *)v9[129]));
+        v9 = (HWND *)v9[129]; /*0x60b2d4*/
         if ( !v9 ) /*0x60b2dc*/
           goto LABEL_9; /*0x60b2dc*/
       }
@@ -477,6 +489,7 @@ void UI_Get_60B1D0(HWND hWnd, HWND a2)
   }
   v10 = (168 - v6) / 2; /*0x60b2f0*/
   return MoveWindow(hWnd, right - v10 - v6 - v15 - Rect.left, v14 + top - Rect.top, v6, v8, 0); /*0x60b31b*/
+}
 }
 // 0x602B90
 namespace gamemd {
@@ -535,6 +548,7 @@ void UI_Helper_602B90(int a1, HWND a2)
        || DlgCtrlID == 1882
        || DlgCtrlID == 1883)
       || v4 == 3014 && (DlgCtrlID == 1919 || DlgCtrlID == 1755);
+}
 }
 // 0x603240
 namespace gamemd {
@@ -597,6 +611,7 @@ void UI_Helper_603240(int a1, HWND a2)
        || v4 == 3015)
       && DlgCtrlID == 1820;
 }
+}
 // 0x60D2C0
 namespace gamemd {
 unsigned int * sub_60D2C0(int a1, int a2)
@@ -624,11 +639,12 @@ unsigned int * sub_60D2C0(int a1, int a2)
   }
   return result; /*0x60d309*/
 }
+}
 // 0x6217E0
 namespace gamemd {
 void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
 {
-  ObjectClass * v4;
+  unsigned int *v4; // esi
   ObjectClass * v5;
   int v6; // ebx
   int16_t v7; // di
@@ -651,8 +667,8 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
   int v24; // [esp+20h] [ebp-10h]
   int v28; // [esp+38h] [ebp+8h]
 
-  v4 = (gamemd::ObjectClass *)((int)(aP0));
-  v5 = (int)(aP1);
+  v4 = (unsigned int *)((int)(aP0));
+  v5 = aP1; /*0x6217ec*/
   v6 = (aP0[2] * a4) >> 16; /*0x6217fa*/
   v19 = 1; /*0x6217fd*/
   v20 = v6; /*0x621805*/
@@ -700,8 +716,8 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
                 v15 = IDA_HIWORD(g_ScreenSaverState) /*0x621946*/
                     & ((g_GameScreenConfig * (uint16_t)(IDA_HIWORD(g_ScreenSaverState) & v13)
                       + v12 * (unsigned int)(uint16_t)(IDA_HIWORD(g_ScreenSaverState) & v7)) >> 8);
-                v16 = (gamemd::ObjectClass *)((int)(g_GameScreenConfig * (uint16_t)(v13 & g_CreditsScreenState)));
-                v4 = (int)(aP0);
+                v16 = (int)(g_GameScreenConfig * (uint16_t)(v13 & g_CreditsScreenState));
+                v4 = (unsigned int *)(aP0);
                 v6 = v20; /*0x62195f*/
                 v17 = v16 + v12 * (uint16_t)(v7 & g_CreditsScreenState); /*0x621963*/
                 v10 = v21; /*0x621965*/
@@ -730,6 +746,7 @@ void UI_Helper_6217E0(ObjectClass * aP0, ObjectClass * aP1, short a3, int a4)
       (*(void (__thiscall **)(int))(v5->q060)(v5); /*0x6219bd*/
     }
   }
+}
 }
 // 0x6D0FD0
 namespace gamemd {
@@ -816,6 +833,7 @@ void sub_6D0FD0()
   }
   return result; /*0x6d1124*/
 }
+}
 // 0x639DA0
 namespace gamemd {
 int sub_639DA0()
@@ -823,7 +841,8 @@ int sub_639DA0()
   wchar_t *v0; // ebx
   int v1; // edi
   unsigned char *v2; // esi
-v0 = (wchar_t *)(g_SelectionManager);
+
+  v0 = (wchar_t *)(g_SelectionManager);
   v1 = 0; /*0x639dae*/
   if ( (int)g_SelectionManager <= 0 ) /*0x639db2*/
     return -1; /*0x639e1b*/
@@ -844,6 +863,7 @@ v0 = (wchar_t *)(g_SelectionManager);
       return -1; /*0x639ddd*/
   }
   return 2; /*0x639df1*/
+}
 }
 // 0x5EBDD0
 namespace gamemd {
@@ -897,6 +917,7 @@ void UI_Setup_5EBDD0(SkirmishDialog * aP0, int a2, int a3, int a4)
     Lobby::SetupPlayerWidgets(aP0); /*0x5ebe92*/
   }
 }
+}
 // 0x793930
 namespace gamemd {
 void * UI_Setup_793930(void * a1, void * a2, int a3)
@@ -932,7 +953,7 @@ void * UI_Setup_793930(void * a1, void * a2, int a3)
   v10 = 0; /*0x7939a5*/
   if ( dword_A8E04C > 0 ) /*0x7939a9*/
   {
-    result = &unk_A8DC50; /*0x7939ab*/
+    result = (unsigned int *)(&unk_A8DC50);
     while ( 1 ) /*0x7939b0*/
     {
       v11 = *(result - 1); /*0x7939b0*/
@@ -952,6 +973,7 @@ void * UI_Setup_793930(void * a1, void * a2, int a3)
     return (unsigned int *)a3; /*0x7939f6*/
   }
   return result; /*0x7939d7*/
+}
 }
 // 0x53BAE0
 namespace gamemd {
@@ -1026,14 +1048,14 @@ namespace gamemd {
 wchar_t ** UI_Assign(wchar_t ** a1, HWND a2, LPARAM a3, LPARAM a4)
 {
   LPARAM lParam[2]; // [esp+8h] [ebp-Ch] BYREF
-  void *v8; // [esp+10h] [ebp-4h] BYREF
+  wchar_t *v8; // [esp+10h] [ebp-4h] BYREF
 
   unknown_libname_74(&v8); /*0x603f0d*/
   lParam[0] = a3; /*0x603f1e*/
   lParam[1] = a4; /*0x603f2b*/
   SendMessageA(a2, 0x4E9u, 0, (LPARAM)lParam); /*0x603f2f*/
-  WideString::AssignFromPtr(a1, (const wchar_t **)&v8); /*0x603f3c*/
-  DeleteAndZero::Alt(&v8); /*0x603f45*/
+  WideString::AssignFromPtr((WideString *)a1, (const wchar_t **)&v8); /*0x603f3c*/
+  DeleteAndZero::Alt((DeleteAndZero *)&v8); /*0x603f45*/
   return a1; /*0x603f4c*/
 }
 } // namespace gamemd
@@ -1366,6 +1388,7 @@ void sub_6AC480(int a1, int * a2, unsigned int * a3, int a4)
     }
   }
   return result; /*0x6ac5bb*/
+}
 }
 // 0x6BA120
 namespace gamemd {

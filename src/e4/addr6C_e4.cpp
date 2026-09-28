@@ -50,6 +50,7 @@
 #include "e4/classes/E4Recv_6E0290_e4.hpp"
 #include "e4/classes/E4Recv_6E2790_e4.hpp"
 #include "e4/classes/GadgetClass_e4.hpp"
+#include "e4/classes/TechnoClass_e4.hpp"
 
 // 0x6C6F50
 namespace gamemd {
@@ -1240,6 +1241,7 @@ int sub_6C87F0()
   byte_B0BDB4 = 1; /*0x6c880a*/
   return v1; /*0x6c8811*/
 }
+}
 // 0x6C8FF0
 namespace gamemd {
 void DlgProcScoreScreen()
@@ -1417,6 +1419,7 @@ void DlgProcScoreScreen()
   }
   return result; /*0x6c905c*/
 }
+}
 // 0x6CA1E0
 namespace gamemd {
 int E4Recv_6CA1E0::sub_6CA1E0(char * Source)
@@ -1495,6 +1498,7 @@ int E4Recv_6CA1E0::sub_6CA1E0(char * Source)
     }
   }
 }
+}
 // 0x6CA4A0
 namespace gamemd {
 void sub_6CA4A0(wchar_t * String2, int a2, int a3)
@@ -1517,6 +1521,7 @@ void sub_6CA4A0(wchar_t * String2, int a2, int a3)
     }
     ((void (__fastcall *)(int, int))v3[1])(a2, a3); /*0x6ca4e5*/
   }
+}
 }
 // 0x6CA4F0
 namespace gamemd {
@@ -1572,6 +1577,7 @@ wchar_t * * sub_6CA4F0(unsigned int * a1)
     a1 = v10; /*0x6ca500*/
   }
 }
+}
 // 0x6CA6A0
 namespace gamemd {
 int sub_6CA6A0(BlowStraw * String1, int a2)
@@ -1624,6 +1630,7 @@ int sub_6CA6A0(BlowStraw * String1, int a2)
   }
   return result; /*0x6ca70b*/
 }
+}
 // 0x6CF320
 namespace gamemd {
 int globalHelper_0CF320(unsigned int * a1, unsigned int * a2)
@@ -1632,6 +1639,7 @@ int globalHelper_0CF320(unsigned int * a1, unsigned int * a2)
     return 0; /*0x6cf330*/
   else
     return *a1 >= *a2 ? 1 : -1;
+}
 }
 // 0x6CFD60
 namespace gamemd {
@@ -1652,6 +1660,7 @@ unsigned int * sub_6CFD60(unsigned int * a1, int a2)
   a1[3] = v6; /*0x6cfd9d*/
   return result; /*0x6cfda0*/
 }
+}
 // 0x6CFDB0
 namespace gamemd {
 int sub_6CFDB0(int a1)
@@ -1666,6 +1675,7 @@ int sub_6CFDB0(int a1)
   if ( result <= v2 ) /*0x6cfde0*/
     dword_B0CC2C = v2; /*0x6cfde2*/
   return result; /*0x6cfdd8*/
+}
 }
 // 0x6C0025
 namespace gamemd {
@@ -1693,12 +1703,12 @@ unsigned int * E4Recv_6C6540::sub_6C6540(int a2, wchar_t * String, int a4, int a
 {
   int Instance; // ebx
 
-  GadgetClass::Construct((GadgetClass *)this, aP1, aP5, aP3, aP4, 0, 0); /*0x6c6560*/
+  GadgetClass::Construct(aP1, aP5, aP3, aP4, 0, 0); /*0x6c6560*/
   Buffer::Init((Buffer *)((char *)this + 36), 0, 0); /*0x6c656c*/
   this->M48 = 0; /*0x6c657e*/
   this->M52 = a4; /*0x6c6585*/
   *(unsigned int *)this->__pad_0 = (void*)&StaticButtonClass_vftable; /*0x6c6588*/
-  StaticButtonClass::Draw(this, String, 0); /*0x6c658e*/
+  StaticButtonClass::Draw(String, 0); /*0x6c658e*/
   if ( aP3 == -1 || aP4 == -1 ) /*0x6c659b*/
   {
     Instance = TextRenderer::GetInstance(); /*0x6c65a8*/
@@ -1890,9 +1900,9 @@ namespace gamemd {
 rc_ptr * E4Recv_6C8840::sub_6C8840(char a2)
 {
   *(unsigned int *)this = (void*)&rc_ptr_PlayerProfile_vftable; /*0x6c8843*/
-  ComPtr::Release((ComPtr *)this); /*0x6c8849*/
+  ComPtr::Release(); /*0x6c8849*/
   if ( (a2 & 1) != 0 ) /*0x6c8853*/
-    RA2_OPDEL(this); /*0x6c8856*/
+    RA2_OPDEL(); /*0x6c8856*/
   return this; /*0x6c8860*/
 }
 } // namespace gamemd

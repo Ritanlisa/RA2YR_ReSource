@@ -236,8 +236,8 @@ MouseClass * * BlitterCopySHP(XSurface * aP0, XSurface * aP1, XSurface * aP2, XS
   v67 = (void *)((char)(0));
   v68 = (char)(0);
   aP8 = (char)(24 * aP8 + 8484624);
-  v21 = 0; /*0x43745f*/
-  result = CalcSurfaceBlitRects(&v72, aP3, a4, v76, &aP5, &v62, &aP2); /*0x437461*/
+  v21 = (char)(0);
+  result = (char)(CalcSurfaceBlitRects(&v72, aP3, a4, v76, &aP5, &v62, &aP2));
   if ( result ) /*0x437468*/
   {
     if ( g_VisibleSurfaceDescriptor ) /*0x43747c*/
@@ -760,6 +760,7 @@ MouseClass * * BlitterRLEBlitSHP(IUnknown * aP0, int * a1, TechnoClass * aP2, IU
     return 0; /*0x437d45*/
   }
 }
+}
 // 0x437F50
 namespace gamemd {
 unsigned int * E4Recv_437F50::sub_437F50()
@@ -782,6 +783,7 @@ unsigned int * E4Recv_437F50::sub_437F50()
       WinAPI::Wrapper(v2); /*0x437fb3*/
   }
   return &this->vtable0; /*0x437fba*/
+}
 }
 // 0x43A600
 namespace gamemd {
@@ -818,6 +820,7 @@ void BrainClass::sub_43A600()
   this->m_11[0] = 0; /*0x43a65d*/
   *(unsigned int *)&this->__pad_9[3] = 0; /*0x43a660*/
 }
+}
 // 0x43AA90
 namespace gamemd {
 unsigned int * BrainClass::sub_43AA90(char a2)
@@ -853,8 +856,9 @@ unsigned int * BrainClass::sub_43AA90(char a2)
   this->m_11[0] = 0; /*0x43aaf8*/
   *(unsigned int *)&this->__pad_9[3] = 0; /*0x43aafe*/
   if ( (a2 & 1) != 0 ) /*0x43ab05*/
-    RA2_OPDEL(this); /*0x43ab08*/
+    RA2_OPDEL(); /*0x43ab08*/
   return &this->vfptr; /*0x43ab12*/
+}
 }
 // 0x430010
 namespace gamemd {
@@ -2350,6 +2354,7 @@ int sub_43B0F0()
   dword_89C84C = 0; /*0x43b0f7*/
   dword_89C850 = 0; /*0x43b0fc*/
   return 0; /*0x43b101*/
+}
 }
 // 0x43B110
 namespace gamemd {

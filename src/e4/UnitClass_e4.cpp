@@ -5,6 +5,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Network_e4.hpp"
 
 // 0x6B7BB0
 namespace gamemd {
@@ -31,7 +32,7 @@ void UnitClass::ProcessIdleOrders()
           g_MissionQueueFrame.nextScenario[0] = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x6b7bfa*/
           g_MissionQueueFrame.nextScenario[1] = v6; /*0x6b7bff*/
           g_MissionQueueFrame.nextScenario[2] = 2; /*0x6b7c05*/
-          UnitClass::ClearTargetRef(this, **(unsigned int **)(this->ambientSoundController[0] + 4 * v3)); /*0x6b7c16*/
+          UnitClass::ClearTargetRef(**(unsigned int **)(this->ambientSoundController[0] + 4 * v3)); /*0x6b7c16*/
         }
       }
       result = this->ambientSoundController[3]; /*0x6b7c1b*/
@@ -43,4 +44,5 @@ void UnitClass::ProcessIdleOrders()
   this->health = 0; /*0x6b7c29*/
   *(unsigned int *)&this->bombVisible = 0; /*0x6b7c2c*/
   return result; /*0x6b7c2f*/
+}
 }

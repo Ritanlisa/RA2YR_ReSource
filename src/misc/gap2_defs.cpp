@@ -24,6 +24,7 @@ void* VocClass::GetSampleName() {
   if ( g_AudioConfigState ) /*0x40517c*/
     return &this->Name; /*0x40517e*/
 }
+}
 // 0x406170
 namespace gamemd { 
 int VocClass::Check() {
@@ -31,6 +32,7 @@ int VocClass::Check() {
     return this->Header[2]; /*0x406182*/
   else
     return 0; /*0x406186*/
+}
 }
 // 0x408000
 namespace gamemd { 
@@ -57,6 +59,7 @@ void AudioMixer::ProcessAudioFrame() {
       LeaveCriticalSection((LPCRITICAL_SECTION)&stru_87E790.__pad_5C[12]); /*0x40805f*/
     }
   }
+}
 }
 // 0x408A70
 namespace gamemd { 
@@ -125,6 +128,7 @@ int AudioMixer::SetupChannels() {
   result = v6->AudioMixer_field_00 + this->AudioMixer_field_14; /*0x408b05*/
   v6->AudioMixer_field_00 = result; /*0x408b07*/
   return result; /*0x408b09*/
+}
 }
 // 0x514F70
 namespace gamemd { int MovementAI::MainFootClass(int a1) {
@@ -1945,6 +1949,7 @@ int MovementAI::MarkOccupiedPathCell() {
   *(unsigned int *)(this->m_State + 1504) = -1; /*0x5164b4*/
   return 1; /*0x516484*/
 }
+}
 // 0x5164D0
 namespace gamemd { 
 int MovementAI::StepFootClass(int a1) {
@@ -2261,6 +2266,7 @@ int MovementAI::StepFootClass(int a1) {
   }
   return result; /*0x5166dd*/
 }
+}
 // 0x583820
 namespace gamemd { 
 void* Pathfinding::CheckCliff(void* a1, void* a2, int a3, int a4) {
@@ -2388,6 +2394,7 @@ void* Pathfinding::CheckCliff(void* a1, void* a2, int a3, int a4) {
     return a1; /*0x583872*/
   }
 }
+}
 // 0x5B29C0
 namespace gamemd { 
 int Movement::CompareAbsCoords(void* a2, void* a3) {
@@ -2412,6 +2419,7 @@ int Movement::CompareAbsCoords(void* a2, void* a3) {
     return 1; /*0x5b29fb*/
   }
 }
+}
 // 0x5B2A30
 namespace gamemd { 
 void Movement::UpdateLocomotion(void* a1) {
@@ -2433,6 +2441,7 @@ void Movement::UpdateLocomotion(void* a1) {
   *this = Math::ArcTan2((double)(*a1 - 0x3FFF) * -0.00009587672516830327) * *this; /*0x5b2b2e*/
   this->u32_4 = Math::ArcTan2((double)(*a1 - 0x3FFF) * -0.00009587672516830327) * this->u32_4; /*0x5b2b51*/
   this->u32_8 = Math::SinCos((double)(*a1 - 0x3FFF) * -0.00009587672516830327) * v6; /*0x5b2b7b*/
+}
 }
 // 0x668BF0
 namespace gamemd { 
@@ -2565,6 +2574,7 @@ int RulesClass::Addition() {
   RulesClass::LoadSpecialWeapons(this); /*0x668f5e*/
   SmallFunc_721D10(v1->__pad_0); /*0x668f65*/
   return SidebarClass::ReadButtonList((SidebarClass *)this); /*0x668f86*/
+}
 }
 // 0x668FB0
 namespace gamemd { 
@@ -2719,6 +2729,7 @@ int RulesClass::LoadSpecialWeapons() {
   }
   return result; /*0x6691b7*/
 }
+}
 // 0x66CF70
 namespace gamemd { 
 int RulesClass::ReadCountryList() {
@@ -2798,6 +2809,7 @@ int RulesClass::ReadCountryList() {
     IDA_LOBYTE(result) = 0; /*0x66d13b*/
   }
   return result; /*0x66d117*/
+}
 }
 // 0x66D530
 namespace gamemd { int RulesClass::LoadFromINI() {
@@ -6612,6 +6624,7 @@ int RulesClass::LoadCountries() {
   }
   return KeyCount > 0; /*0x67234c*/
 }
+}
 // 0x672440
 namespace gamemd { 
 int RulesClass::ReadDataList() {
@@ -6738,6 +6751,7 @@ int RulesClass::ReadDataList() {
   }
   return KeyCount > 0; /*0x6725df*/
 }
+}
 // 0x672660
 namespace gamemd { 
 int RulesClass::LoadBuildingTypes() {
@@ -6764,6 +6778,7 @@ int RulesClass::LoadBuildingTypes() {
   }
   return KeyCount > 0; /*0x6726bc*/
 }
+}
 // 0x672740
 namespace gamemd { 
 int RulesClass::ReadSideData() {
@@ -6786,6 +6801,7 @@ int RulesClass::ReadSideData() {
   }
   return KeyCount > 0; /*0x6727b1*/
 }
+}
 // 0x6728B0
 namespace gamemd { 
 int RulesClass::LoadAnimTypes() {
@@ -6804,6 +6820,7 @@ int RulesClass::LoadAnimTypes() {
   }
   return KeyCount > 0; /*0x672908*/
 }
+}
 // 0x672A00
 namespace gamemd { 
 int RulesClass::readColors() {
@@ -6821,6 +6838,7 @@ int RulesClass::readColors() {
       NetworkEventClass::Process(Destination); /*0x672a4c*/
   }
   return KeyCount > 0; /*0x672a58*/
+}
 }
 // 0x672AE0
 namespace gamemd { int RulesClass::ReadMultiplayerDefaults() {
@@ -7829,6 +7847,7 @@ int RulesClass::LoadSpeedTypes() {
   IDA_LOBYTE(result) = 1; /*0x674232*/
   return result; /*0x674230*/
 }
+}
 // 0x674240
 namespace gamemd { 
 int RulesClass::ReadIQSection() {
@@ -7913,6 +7932,7 @@ int RulesClass::ReadIQSection() {
     IDA_LOBYTE(result) = 0; /*0x6743c7*/
   }
   return result; /*0x6743bf*/
+}
 }
 // 0x674730
 namespace gamemd { 
@@ -8209,6 +8229,7 @@ int RulesClass::SaveLoad_Prefix(void* a1) {
   while ( v61 ); /*0x675203*/
   return result; /*0x675205*/
 }
+}
 // 0x675210
 namespace gamemd { int RulesClass::SaveLoad_Prefix_0(int a1) {
 // 0x675210
@@ -8383,6 +8404,7 @@ void* SuperClass::ProcessEvent(int a2) {
     RA2_OPDEL(this); /*0x6ce230*/
   return this; /*0x6ce23a*/
 }
+}
 // 0x6CE270
 namespace gamemd { 
 int SuperClass::SetFieldX() {
@@ -8392,6 +8414,7 @@ int SuperClass::SetFieldX() {
   if ( this->SuperClass_field_0x0 ) /*0x6ce270*/
     return (*(int (__stdcall **)(int))(*(unsigned int *)result + 4))(result); /*0x6ce279*/
   return result; /*0x6ce27c*/
+}
 }
 // 0x6CE280
 namespace gamemd { 
@@ -8417,6 +8440,7 @@ void SuperClass::AdvanceCountdown() {
     }
   }
 }
+}
 // 0x6CE2C0
 namespace gamemd { 
 void* SuperClass::SetCurrentFrame() {
@@ -8429,6 +8453,7 @@ void* SuperClass::SetCurrentFrame() {
   }
   return result; /*0x6ce2cc*/
 }
+}
 // 0x7209B0
 namespace gamemd { 
 int AudioSettings::Check(int a1) {
@@ -8436,6 +8461,7 @@ int AudioSettings::Check(int a1) {
     return 0; /*0x7209c9*/
   else
     return *(unsigned int *)(this->u32_18 + 4 * a1) + 512; /*0x7209c1*/
+}
 }
 // 0x720BB0
 namespace gamemd { 
@@ -8538,6 +8564,7 @@ int ThemeClass::Play(int a1) {
   }
   return this->ThemeClass_field_00; /*0x720e0a*/
 }
+}
 // 0x720E50
 namespace gamemd { 
 int AudioSettings::ComputeTransform(int a1) {
@@ -8547,6 +8574,7 @@ int AudioSettings::ComputeTransform(int a1) {
     return 0; /*0x720e6f*/
   IDA_LOWORD(result) = Math::RoundToInt(*(float *)(*(unsigned int *)(this->u32_18 + 4 * a1) + 644)); /*0x720e67*/
   return result; /*0x720e6c*/
+}
 }
 // 0x721140
 namespace gamemd { 
@@ -8588,6 +8616,7 @@ bool RulesClass::IsTypeBuildable(int a1) {
   else
     IDA_LOBYTE(result) = 0; /*0x7211c9*/
   return result; /*0x721159*/
+}
 }
 // 0x74E6B0
 namespace gamemd { 
@@ -8688,4 +8717,5 @@ int VoxClass::SetEVAIndex() {
     dword_B1D4C8 = (int)this; /*0x7534ed*/
   }
   return result; /*0x7534ec*/
+}
 }

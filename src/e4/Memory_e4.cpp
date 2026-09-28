@@ -10,6 +10,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/MixFile_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x53EC40
 namespace gamemd {
@@ -21,6 +22,7 @@ int sub_53EC40(unsigned char a1, char a2)
   if ( g_StreamBufferState )
     word_AA0168[a1] = a2 != 0 ? 0 : 0x8000;
   return result; /*0x53ec67*/
+}
 }
 // 0x6149B0
 namespace gamemd {

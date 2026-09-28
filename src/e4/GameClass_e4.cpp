@@ -25,6 +25,8 @@
 #include "e4/classes/AsyncIO_e4.hpp"
 #include "e4/classes/Mission_e4.hpp"
 #include "e4/classes/CampaignClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x437FD0
 namespace gamemd {
@@ -33,6 +35,7 @@ int GameClass::initGameMode(int a2, int a3)
   if ( !*(unsigned int *)this->__pad_0 ) /*0x437fd3*/
     WinAPI::Wrapper(-2147467261); /*0x437fdd*/
   return (*(int (__stdcall **)(unsigned int, int, int))(**(unsigned int **)this->__pad_0 + 12))(*(unsigned int *)this->__pad_0, a3, a2); /*0x437ff4*/
+}
 }
 // 0x4381D0
 namespace gamemd {
@@ -57,6 +60,7 @@ unsigned int * GameClass::processFrame(int a2, int a3)
     return (unsigned int *)GameClass::initGameMode(v6, a2, a3); /*0x438208*/
   return result; /*0x4381f9*/
 }
+}
 // 0x438300
 namespace gamemd {
 unsigned int * GameClass::updateUI(int a2, int a3)
@@ -80,6 +84,7 @@ unsigned int * GameClass::updateUI(int a2, int a3)
     return (unsigned int *)GameClass::initGameMode(v6, a2, a3); /*0x438338*/
   return result; /*0x438329*/
 }
+}
 // 0x5D2260
 namespace gamemd {
 int GameClass::loadScenarioFiles(ObjectClass * aP1)
@@ -91,7 +96,7 @@ int GameClass::loadScenarioFiles(ObjectClass * aP1)
   int v7; // [esp+1Ch] [ebp-24h]
   int v8; // [esp+20h] [ebp-20h] BYREF
   int v9; // [esp+24h] [ebp-1Ch]
-  int v10; // [esp+28h] [ebp-18h]
+  ObjectClass * v10;
   int v11; // [esp+2Ch] [ebp-14h]
   struct tagRECT Rect; // [esp+30h] [ebp-10h] BYREF
 
@@ -114,8 +119,8 @@ int GameClass::loadScenarioFiles(ObjectClass * aP1)
       v7 = 0; /*0x5d22b8*/
       do /*0x5d231d*/
       {
-        v6 = (int *)(*(unsigned int *)&this->__pad_8[4] + result); /*0x5d22c7*/
-        v8 = *v6; /*0x5d22ce*/
+        v6 = (gamemd::ObjectClass *)((int *)(*(unsigned int *)&this->__pad_8[4] + result));
+        v8 = (gamemd::ObjectClass *)(*v6);
         v9 = v6[1]; /*0x5d22d5*/
         v10 = v6[2]; /*0x5d22dc*/
         v11 = v6[3]; /*0x5d22e9*/
@@ -144,6 +149,7 @@ int GameClass::loadScenarioFiles(ObjectClass * aP1)
   }
   return result; /*0x5d233a*/
 }
+}
 // 0x5D2410
 namespace gamemd {
 int GameClass::FrameLoop(int a2)
@@ -167,8 +173,8 @@ int GameClass::FrameLoop(int a2)
       Event::Dispatch(); /*0x5d2437*/
       (*(void (__thiscall **)(GameClass *))(*(unsigned int *)this->__pad_0 + 8))(this); /*0x5d2440*/
       DDraw::WaitForIdle(v9); /*0x5d2443*/
-      DSurface::RenderToSurface((DSurface *)this, (int *)g_DSurface_Hidden); /*0x5d2451*/
-      GameClass::loadScenarioFiles(this, (int)g_DSurface_Hidden); /*0x5d245f*/
+      DSurface::RenderToSurface((int *)g_DSurface_Hidden); /*0x5d2451*/
+      GameClass::loadScenarioFiles((int)g_DSurface_Hidden); /*0x5d245f*/
       MessageLoop(); /*0x5d2464*/
       if ( !stru_A8EB00.gapE4[412] ) /*0x5d2470*/
       {
@@ -181,7 +187,7 @@ int GameClass::FrameLoop(int a2)
             v4 = v11 - v3; /*0x5d248f*/
           v11 = v4; /*0x5d2495*/
         }
-        DDraw::HandleSuspend((DDraw *)this); /*0x5d249f*/
+        DDraw::HandleSuspend(); /*0x5d249f*/
         Ticks = Timer::GetTicks(); /*0x5d24b3*/
       }
       Sleep(0); /*0x5d24b9*/
@@ -203,6 +209,7 @@ int GameClass::FrameLoop(int a2)
   }
   while ( !v7 ); /*0x5d2511*/
   return result; /*0x5d2517*/
+}
 }
 // 0x5D6370
 namespace gamemd {
@@ -236,6 +243,7 @@ int GameClass::FindOpenSlot()
       return -1; /*0x5d63c3*/
   }
 }
+}
 // 0x631D30
 namespace gamemd {
 int GameClass::GetRelatedObject()
@@ -258,7 +266,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
   int v6; // ecx
   int v7; // eax
   int v8; // eax
-  unsigned int v9;
+  char * v9;
   bool v10; // zf
   int v12[64]; // [esp+8h] [ebp-100h] BYREF
 
@@ -270,7 +278,7 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
     {
       if ( *(unsigned int *)&this->__pad_24[16] ) /*0x632e01*/
       {
-        v9 = (gamemd::CampaignClass *)((char *)(this->q050));
+        v9 = (char *)((int)((char *)(this->q050)));
         if ( v9 >= aP2 ) /*0x632e7e*/
           v9 = aP2; /*0x632e80*/
         memcpy(&this->__pad_24[this->u32_13C - this->q050 + 24], Src, v9); /*0x632e97*/
@@ -307,7 +315,8 @@ void * GameClass::WriteEncryptedStream(BombClass * Src, signed int aP2)
     }
     return v5 + Delegate::Dispatch((Pipe *)this, (int)v3, aP2); /*0x632f0a*/
   }
-  return Delegate::Dispatch((Pipe *)this, (int)Src, aP2); /*0x632f02*/
+  return Delegate::Dispatch((int)Src, aP2); /*0x632f02*/
+}
 }
 // 0x633130
 namespace gamemd {
@@ -330,12 +339,12 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
   v3 = a2; /*0x633138*/
   v4 = Size; /*0x633141*/
   if ( !a2 ) /*0x63314c*/
-    return Delegate::Invoke((Straw *)this, (int)a2, Size); /*0x63314c*/
+    return Delegate::Invoke((int)a2, Size); /*0x63314c*/
   if ( Size < 1 ) /*0x633155*/
-    return Delegate::Invoke((Straw *)this, (int)a2, Size); /*0x633155*/
+    return Delegate::Invoke((int)a2, Size); /*0x633155*/
   m_38 = this->m_38; /*0x63315b*/
   if ( !m_38 ) /*0x633160*/
-    return Delegate::Invoke((Straw *)this, (int)a2, Size); /*0x6332e5*/
+    return Delegate::Invoke((int)a2, Size); /*0x6332e5*/
   v16 = 0; /*0x633169*/
   if ( IDA_LOBYTE(this->m_C) ) /*0x633166*/
   {
@@ -386,6 +395,7 @@ int GameClass::ReadEncryptedStream(char * a2, signed int Size)
   }
   return v16 + Delegate::Invoke((Straw *)this, (int)v3, v4); /*0x6331db*/
 }
+}
 // 0x69AE10
 namespace gamemd {
 int GameClass::initPlayerData(const char ** a2)
@@ -405,6 +415,7 @@ int GameClass::initPlayerData(const char ** a2)
       return 0; /*0x69ae5b*/
   }
   return 1; /*0x69ae2d*/
+}
 }
 // 0x6BEC60
 namespace gamemd {
@@ -468,6 +479,7 @@ ObjectClass * * GameClass::Shutdown()
   Network::ShutdownInterface(v7); /*0x6bed43*/
   WinMainSetup(); /*0x6bed48*/
 }
+}
 // 0x74F960
 namespace gamemd {
 int GameClass::ReadVersionFile()
@@ -505,6 +517,7 @@ int GameClass::ReadVersionFile()
   *(unsigned short *)this->__pad_8 = 1; /*0x74fa02*/
   *(unsigned int *)&this->__pad_3D[7] = v3; /*0x74fa08*/
   return 1; /*0x74f9fb*/
+}
 }
 // 0x74FA20
 namespace gamemd {
@@ -544,6 +557,7 @@ int GameClass::ReadVersionFile2()
   *(unsigned int *)&this->__pad_3D[7] = v3; /*0x74fac8*/
   return 1; /*0x74fabb*/
 }
+}
 // 0x74FC80
 namespace gamemd {
 void GameClass::ReadVersionString()
@@ -566,6 +580,7 @@ void GameClass::ReadVersionString()
     this->GameClass_field_0x2A[0] = 0; /*0x74fcfe*/
   }
   RawFileClass::Dtor(&v2); /*0x74fd05*/
+}
 }
 // 0x7BA3C0
 namespace gamemd {
@@ -597,14 +612,15 @@ int GameClass::processNetworkPacket(void * Src, signed int Size)
   }
   return result; /*0x7ba413*/
 }
+}
 // 0x4AECA0
 namespace gamemd {
 int * GameClass::initDisplay(char a2)
 {
   Vector::Clear((int)(this + 1)); /*0x4aeca6*/
-  Pipe::Dtor((Pipe *)this); /*0x4aecad*/
+  Pipe::Dtor(); /*0x4aecad*/
   if ( (a2 & 1) != 0 ) /*0x4aecb7*/
-    RA2_OPDEL(this); /*0x4aecba*/
+    RA2_OPDEL(); /*0x4aecba*/
   return (int *)this->__pad_0; /*0x4aecc4*/
 }
 } // namespace gamemd
@@ -658,7 +674,7 @@ unsigned int * GameClass::saveGameState(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&PixelFXClass_vftable; /*0x631f49*/
   if ( (a2 & 1) != 0 ) /*0x631f4f*/
-    RA2_OPDEL(this); /*0x631f52*/
+    RA2_OPDEL(); /*0x631f52*/
   return this->__pad_0; /*0x631f5c*/
 }
 } // namespace gamemd
@@ -688,9 +704,9 @@ PKPipe * GameClass::validateGameFile(char a2)
   }
   v4->Pipe_field_0x0C = 0; /*0x633017*/
   Pipe::Dtor(v4); /*0x63301e*/
-  Pipe::Dtor((Pipe *)this); /*0x633025*/
+  Pipe::Dtor(); /*0x633025*/
   if ( (a2 & 1) != 0 ) /*0x63302f*/
-    RA2_OPDEL(this); /*0x633032*/
+    RA2_OPDEL(); /*0x633032*/
   return this->__pad_0; /*0x63303c*/
 }
 } // namespace gamemd
@@ -720,9 +736,9 @@ PKStrawClass * GameClass::applyGameSettings(char a2)
   }
   p_m_14[1].Straw_field_0x04 = 0; /*0x633397*/
   Straw::Dtor(p_m_14); /*0x63339e*/
-  Straw::Dtor((Straw *)this); /*0x6333a5*/
+  Straw::Dtor(); /*0x6333a5*/
   if ( (a2 & 1) != 0 ) /*0x6333af*/
-    RA2_OPDEL(this); /*0x6333b2*/
+    RA2_OPDEL(); /*0x6333b2*/
   return this->__pad_0; /*0x6333bc*/
 }
 } // namespace gamemd

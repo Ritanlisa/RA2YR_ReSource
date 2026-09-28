@@ -18,7 +18,7 @@ int WaypointPathClass::Init()
 {
   int v2; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x763733*/
+  AbstractClass::Constructor(); /*0x763733*/
   this->idxArray = -1; /*0x76373a*/
   this->waypoints[1] = 0; /*0x763741*/
   this->waypoints[2] = 0; /*0x763744*/
@@ -44,13 +44,14 @@ int WaypointPathClass::Init()
   }
   return (int)this; /*0x7637cd*/
 }
+}
 // 0x763810
 namespace gamemd {
 int WaypointPathClass::Construct(WaypointClass * aP1)
 {
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x763813*/
+  AbstractClass::Constructor(); /*0x763813*/
   this->idxArray = -1; /*0x76381e*/
   this->u32_2C = 0; /*0x763825*/
   this->u32_30 = 0; /*0x763828*/
@@ -75,7 +76,8 @@ int WaypointPathClass::Construct(WaypointClass * aP1)
     v3 = (unsigned int)(dword_B72618++);
     *((unsigned int *)dword_B7260C + v3) = this; /*0x7638b6*/
   }
-  return this; /*0x7638bb*/
+  return (int)(this);
+}
 }
 // 0x763C70
 namespace gamemd {
@@ -166,6 +168,7 @@ int WaypointPathClass::LoadState(unsigned int * a1, int a2)
   }
   return result; /*0x763d7a*/
 }
+}
 // 0x764760
 namespace gamemd {
 unsigned int * WaypointPathClass::computePath(int a2, unsigned int * a2)
@@ -235,11 +238,12 @@ unsigned int * WaypointPathClass::computePath(int a2, unsigned int * a2)
   this->vtable1 = a2 + 1; /*0x7647a7*/
   return &this->vtable0; /*0x7647ac*/
 }
+}
 // 0x763C00
 namespace gamemd {
 int WaypointPathClass::PowerDrainUpdate(int a2)
 {
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x763c09*/
+  AbstractClass::ProcessPower(); /*0x763c09*/
   Power::TimerProcess(this->idxArray); /*0x763c14*/
   return Power::TimerProcess(this->waypoints[4]); /*0x763c24*/
 }
@@ -326,7 +330,7 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
   this->vtable1 = (void*)&WaypointPathClass_vftable; /*0x763e2c*/
   this->vtable2 = (void*)&WaypointPathClass_vftable; /*0x763e33*/
   this->vtable3 = (void*)&WaypointPathClass_vftable; /*0x763e3a*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x763e41*/
+  AbstractClass::AnnounceExpiredPointer(1); /*0x763e41*/
   v6 = this; /*0x763e56*/
   v3 = (*(int (__thiscall **)(int *, WaypointPathClass **))(dword_B72608 + 16))(&dword_B72608, &v6); /*0x763e5a*/
   if ( v3 != -1 && v3 < dword_B72618 && v3 < --dword_B72618 ) /*0x763e75*/
@@ -347,9 +351,9 @@ WaypointPathClass * WaypointPathClass::ProcessEvent(char a2)
   }
   IDA_BYTE1(this->waypoints[3]) = 0; /*0x763ec1*/
   this->waypoints[2] = 0; /*0x763ec5*/
-  AbstractClass::DTOR((AbstractClass *)this); /*0x763ecc*/
+  AbstractClass::DTOR(); /*0x763ecc*/
   if ( (a2 & 1) != 0 ) /*0x763ed6*/
-    RA2_OPDEL(this); /*0x763ed9*/
+    RA2_OPDEL(); /*0x763ed9*/
   return &this->vtable0; /*0x763ee3*/
 }
 } // namespace gamemd

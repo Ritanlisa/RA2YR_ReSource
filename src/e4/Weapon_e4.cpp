@@ -24,6 +24,7 @@
 #include "e4/classes/Power_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x53AE00
 namespace gamemd {
@@ -31,11 +32,13 @@ int sub_53AE00()
 {
   wchar_t *StringCSF; // eax
   int v1; // ecx
-StringCSF = (wchar_t *)(GetStringCSF(aMsgLightningst, 0, g_Str_File_Ion_cpp, 1123));
+
+  StringCSF = (wchar_t *)(GetStringCSF(aMsgLightningst, 0, g_Str_File_Ion_cpp, 1123));
   v1 = 3; /*0x53ae1c*/
   if ( HouseClass_Player ) /*0x53ae23*/
     v1 = *((unsigned int *)HouseClass_Player + 22549); /*0x53ae25*/
   return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53ae47*/
+}
 }
 // 0x659CA0
 namespace gamemd {
@@ -109,6 +112,7 @@ void Weapon_Update(void * a1, void * a2)
   v12 = *(unsigned int *)(v3 + 124) + 1; /*0x659e12*/
   *(unsigned int *)(v3 + 124) = v12; /*0x659e14*/
   return v12 >= v11; /*0x659e19*/
+}
 }
 // 0x70C690
 AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass * aP3, IUnknown * aP4)
@@ -419,8 +423,9 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
                  v43.ObjectVector_field_0x14 + v43.ObjectVector_field_0x08,
                  0) )
           {
-            v23 = (unsigned int)(v43.ObjectVector_field_0x10);
-  LABEL_54: v43.ObjectVector_field_0x10 = (unsigned int)(v23 + 1);
+            v23 = v43.ObjectVector_field_0x10; /*0x70cb9a*/
+  LABEL_54:
+            v43.ObjectVector_field_0x10 = v23 + 1; /*0x70cb9e*/
             *(unsigned int *)(v43.ObjectVector_field_0x04 + 4 * v23) = aP3; /*0x70cba9*/
           }
   LABEL_55:
@@ -456,7 +461,7 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
             LayerClass::DestroyCliff((int *)&stru_87F5F0.__pad_58[416], v35, (int)aP3); /*0x70cc39*/
         }
       }
-      v56 = (unsigned int)(v56);
+      v56 = v56; /*0x70cc45*/
       *(unsigned int *)v43.__pad_0 = (void*)&VectorClass_ObjectClass___vftable; /*0x70cc4b*/
       *a1 = v55; /*0x70cc53*/
       v57 = v57; /*0x70cc55*/
@@ -467,20 +472,20 @@ AbstractClass * * Weapon::DestroyTerrain(int * a1, IUnknown * aP2, InfantryClass
         if ( IDA_BYTE1(v43.ObjectVector_field_0x0C) ) /*0x70cc6d*/
           RA2_OPDEL((void *)v43.ObjectVector_field_0x04); /*0x70cc70*/
       }
-      return (gamemd::CellClass *)(a1);
+      return a1; /*0x70cc78*/
     }
   }
   v26 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v49); /*0x70cae2*/
   if ( (uint8_t)CellClass::IsActiveOrNext(v26) ) /*0x70cae9*/
   {
-    v27 = (gamemd::CellClass *)(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6092));
+    v27 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6092); /*0x70cb01*/
     if ( Random::Range((Random *)&unk_A8B230[14].NeedsSaveOrLink, 0, 99) < v27 ) /*0x70cb14*/
     {
       v28 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v49); /*0x70cb20*/
       LayerClass::DestroyCliff((int *)&stru_87F5F0.__pad_58[416], v29, (int)v28); /*0x70cb2b*/
     }
   }
-  v50 = (unsigned int)(v50);
+  v50 = v50; /*0x70cb37*/
   *(unsigned int *)v43.__pad_0 = (void*)&VectorClass_ObjectClass___vftable; /*0x70cb3d*/
   *a1 = v49; /*0x70cb45*/
   v51 = v51; /*0x70cb47*/
@@ -494,12 +499,14 @@ namespace gamemd {
 int sub_53B410()
 {
   wchar_t *StringCSF; // eax
-  unsigned int v1;
-StringCSF = (wchar_t *)(GetStringCSF(aMsgDominatorac, 0, g_Str_File_Ion_cpp, 1339));
+  int v1; // ecx
+
+  StringCSF = (wchar_t *)(GetStringCSF(aMsgDominatorac, 0, g_Str_File_Ion_cpp, 1339));
   v1 = 3; /*0x53b42c*/
   if ( HouseClass_Player ) /*0x53b433*/
     v1 = *((unsigned int *)HouseClass_Player + 22549); /*0x53b435*/
   return MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v1, 16454, 150, 0); /*0x53b457*/
+}
 }
 // 0x53A0E0
 namespace gamemd {

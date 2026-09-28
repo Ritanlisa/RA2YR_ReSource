@@ -798,5 +798,3 @@ int ShowMessageBox(const wchar_t* msg, const wchar_t* ok, const wchar_t* cancel,
 
 } // namespace Dialog
 } // namespace gamemd
-}
-}

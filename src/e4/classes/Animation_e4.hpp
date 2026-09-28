@@ -14,7 +14,7 @@ struct Animation {
     void* q014;  // 0x14
     void* q018;  // 0x18
     unsigned int q019;  // 0x19
-    unsigned int ;  // 0x20
+    void* q020;  // 0x20
     void* q024;  // 0x24
     unsigned int u32_30;  // 0x30
     void* q034;  // 0x34
@@ -96,7 +96,6 @@ struct Animation {
     unsigned int q0548;
     unsigned int u32_1A04;
     unsigned int u32_1A08;
-    unsigned int q020;
 // --- flat members (END) ---
     BuildingClass * * UpdateBuildingAnimations();
     ObjectClass * * LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2);

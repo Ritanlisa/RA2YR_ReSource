@@ -29,7 +29,7 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
   void *Buffer; // ecx
 
   a2 = (int)(a2);
-  v14 = v14; /*0x410ce9*/
+  v14 = (int)((void *)(v14));
   a5 = a5; /*0x410cef*/
   this->q00B = a5; /*0x410cf3*/
   *(unsigned int *)this->__pad_0 = a2; /*0x410cf8*/
@@ -75,6 +75,7 @@ unsigned int * BSurface::Construct(int a2, int a3, int v14, int a5)
   this->u32_1C = v18; /*0x410da6*/
   (*(void (__thiscall **)(void *))(*(unsigned int *)Buffer + 96))(Buffer); /*0x410dab*/
   return this->__pad_0; /*0x410db0*/
+}
 }
 // 0x7B8C60
 namespace gamemd {
@@ -215,18 +216,18 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int v14, int a5)
 {
   int v6; // edi
   int v7; // ecx
-  void * v10;
+  int v10; // edi
   int v11; // eax
   int v12; // ecx
   void *v13; // ecx
-  unsigned char * v14;
+  int v14; // eax
   int v15; // eax
   int v16; // ecx
   int v17; // ecx
   int v18; // edx
   void *Buffer; // ecx
 
-  a2 = (int)(a2);
+  a2 = a2; /*0x7bc975*/
   v14 = v14; /*0x7bc979*/
   a5 = a5; /*0x7bc97f*/
   this->q00B = a5; /*0x7bc983*/
@@ -240,8 +241,8 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int v14, int a5)
   v10 = RA2_OPNEW(0x20u); /*0x7bc9a7*/
   if ( v10 ) /*0x7bc9b0*/
   {
-    v11 = (unsigned int)(this->q00A);
-    v12 = (unsigned int)(this->q00B);
+    v11 = this->q00A; /*0x7bc9b2*/
+    v12 = this->q00B; /*0x7bc9b5*/
     *(unsigned int *)(v10 + 4) = v11; /*0x7bc9b8*/
     *(unsigned int *)(v10 + 8) = v12; /*0x7bc9c0*/
     *(unsigned int *)(v10 + 12) = 0; /*0x7bc9c8*/
@@ -255,9 +256,9 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int v14, int a5)
   {
     v13 = 0; /*0x7bc9e7*/
   }
-  v14 = (int)((unsigned char *)(this->q00A));
-  a5 = (int)((unsigned int *)(this->q00B));
-  this->Buffer = (unsigned int *)(v13);
+  v14 = this->q00A; /*0x7bc9ec*/
+  a5 = this->q00B; /*0x7bc9ef*/
+  this->Buffer = v13; /*0x7bc9f3*/
   a2 = 0; /*0x7bc9f6*/
   a3 = 0; /*0x7bc9fa*/
   v14 = v14; /*0x7bc9fe*/
@@ -273,6 +274,7 @@ unsigned int * BSurface::ConstructEx(int a2, int a3, int v14, int a5)
   this->u32_1C = v18; /*0x7bca39*/
   (*(void (__thiscall **)(void *))(*(unsigned int *)Buffer + 96))(Buffer); /*0x7bca3e*/
   return this->__pad_0; /*0x7bca43*/
+}
 }
 // 0x4114F0
 char BSurface::Stub(int a1, int a2)
@@ -302,7 +304,7 @@ BSurface * BSurface::ScalarDtor(char a2)
   Vector::Clear((int)&this->Buffer); /*0x411656*/
   *(unsigned int *)this->__pad_0 = &Surface_Vtable; /*0x41165f*/
   if ( (a2 & 1) != 0 ) /*0x411667*/
-    RA2_OPDEL(this); /*0x41166a*/
+    RA2_OPDEL(); /*0x41166a*/
   return this->__pad_0; /*0x411674*/
 }
 } // namespace gamemd

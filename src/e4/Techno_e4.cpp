@@ -24,6 +24,7 @@ int Techno::GetOwnerHouse()
   }
   return result; /*0x6f2092*/
 }
+}
 // 0x70E360
 namespace gamemd {
 BuildingTypeClass * Techno::StartInvulnerability(BuildingTypeClass * aP1)
@@ -31,6 +32,6 @@ BuildingTypeClass * Techno::StartInvulnerability(BuildingTypeClass * aP1)
   int v3; // eax
 
   v3 = TechnoClass::InvulnerabilityIntensity_SetContext(this, aP1); /*0x70e368*/
-  return TechnoClass::CalcFlashAlpha(this, v3); /*0x70e375*/
+  return TechnoClass::CalcFlashAlpha(v3); /*0x70e375*/
 }
 } // namespace gamemd

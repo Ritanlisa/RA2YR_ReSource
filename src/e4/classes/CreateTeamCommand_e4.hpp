@@ -9,9 +9,9 @@ struct CreateTeamCommand {
     void* vtable1;  // 0x0
     void* q004;  // 0x4
     int Capacity;  // 0x8
-    unsigned int ;  // 0xC
+    void* q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned int ;  // 0x10
+    void* q010;  // 0x10
     bool IsInitialized;  // 0x12
     unsigned char q014;  // 0x14
     unsigned char q015;  // 0x15
@@ -61,8 +61,6 @@ struct CreateTeamCommand {
     unsigned int q0042;
     unsigned int q0046;
     unsigned int u32_539C;
-    unsigned int q00C;
-    unsigned int q010;
 // --- flat members (END) ---
     int vt02();  // 0x535CF0
     unsigned int * performAction_148();  // 0x537350

@@ -6,6 +6,9 @@
 namespace gamemd {
 struct WideString {
 // --- flat members (BEGIN) ---
+    unsigned int u32_C;  // 0xC
+    unsigned int u32_10;  // 0x10
+    unsigned int u32_14;  // 0x14
     unsigned int u32_45C;  // 0x45C
 // --- flat members (END) ---
     int WordWrap(wchar_t * a0,  CampaignScore * aP1,  int a3,  CampaignScore * aP3,  int a5);    // 0x5D4B20

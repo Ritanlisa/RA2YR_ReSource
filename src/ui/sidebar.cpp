@@ -304,4 +304,3 @@ void ObjectClass_ToggleSidebarDisplay(void* obj, bool show)
     (void)show;
 
 } // namespace gamemd
-}

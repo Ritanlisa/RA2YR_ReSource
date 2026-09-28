@@ -99,6 +99,7 @@ int WTFMode::ResetUnitFlags() {
   }
   return (char)v1; /*0x41dc3f*/
 }
+}
 // 0x47EC40
 namespace gamemd { 
 void* WTFMode::FindObjectByType(int a1) {
@@ -117,12 +118,14 @@ void* WTFMode::FindObjectByType(int a1) {
   }
   return v2; /*0x47ec79*/
 }
+}
 // 0x4A31F0
 namespace gamemd { 
 bool CStreamClass::IsEmpty(int a2) {
   if ( a2 ) /*0x4a31f9*/
     WinAPI::Wrapper(-2147467261); /*0x4a3200*/
   return *(unsigned int *)this->__pad_0 == 0; /*0x4a320e*/
+}
 }
 // 0x4A4AD0
 namespace gamemd { 
@@ -139,6 +142,7 @@ void CStreamClass::ClearBuffer() {
   IDA_BYTE1(this->m_C) = 0; /*0x4a4af1*/
   this->m_8 = 0; /*0x4a4af4*/
 }
+}
 // 0x4A4B00
 namespace gamemd { 
 int CStreamClass::PointerToIndex(int a2) {
@@ -146,6 +150,7 @@ int CStreamClass::PointerToIndex(int a2) {
     return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4a4b15*/
   else
     return 0; /*0x4a4b07*/
+}
 }
 // 0x4A4CB0
 namespace gamemd { 
@@ -191,6 +196,7 @@ int CStreamClass::CopyItems(int a1, void* a2) {
     this->m_10 = v7; /*0x4a4d4b*/
   return 1; /*0x4a4d4e*/
 }
+}
 // 0x4A4D60
 namespace gamemd { 
 int CStreamClass::FindItem(int * a2) {
@@ -208,6 +214,7 @@ int CStreamClass::FindItem(int * a2) {
       return -1; /*0x4a4d7d*/
   }
   return result; /*0x4a4d82*/
+}
 }
 // 0x4A4DE0
 namespace gamemd { 
@@ -227,6 +234,7 @@ void* CStreamClass::Constructor_VectorClass__DDSURFACEDESC___(int a2) {
     RA2_OPDEL(this); /*0x4a4e1b*/
   return this->__pad_0; /*0x4a4e25*/
 }
+}
 // 0x55A150
 namespace gamemd { 
 void LoadOptions::vt03() {
@@ -241,6 +249,7 @@ void LoadOptions::vt03() {
   }
   IDA_BYTE1(this->m_C) = 0; /*0x55a171*/
   this->m_8 = 0; /*0x55a174*/
+}
 }
 // 0x5AE6F0
 namespace gamemd { 
@@ -264,6 +273,7 @@ void* Matrix3D::Constructor(float a1, float a2) {
   v5 = -a1; /*0x5ae73e*/
   Matrix2D::Rotate((int *)this->__pad_0, v5); /*0x5ae741*/
   return (int *)this->__pad_0; /*0x5ae748*/
+}
 }
 // 0x5AF080
 namespace gamemd { 
@@ -311,6 +321,7 @@ int Stream::WriteBlock(int a1, int a2, int a3) {
   if ( !result ) /*0x5f1c1b*/
     ++*(this + 26); /*0x5f1c1d*/
   return result; /*0x5f1bfc*/
+}
 }
 // 0x5F1C60
 namespace gamemd { 
@@ -423,6 +434,7 @@ int Stream::ReadPacket() {
     return (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 20))(this->u32_38); /*0x5f1d24*/
   }
 }
+}
 // 0x67C690
 namespace gamemd { 
 int Stream::ReadOLEObjects() {
@@ -453,6 +465,7 @@ int Stream::ReadOLEObjects() {
   }
   return result; /*0x67c6d7*/
 }
+}
 // 0x7B0440
 namespace gamemd { 
 void* StreamWrapper::QueryInterface(int a2) {
@@ -475,6 +488,7 @@ void* StreamWrapper::QueryInterface(int a2) {
     RA2_OPDEL(this); /*0x7b047f*/
   return this->__pad_0; /*0x7b0489*/
 }
+}
 // 0x7BCAE0
 namespace gamemd { 
 int Stream::GetField() {
@@ -486,8 +500,10 @@ int Stream::GetField() {
     return (**v1)(v1, 1); /*0x7bcaeb*/
   return result; /*0x7bcaed*/
 }
+}
 // 0x7BE640
 namespace gamemd { 
 void Stream::CopyFromTemplate() {
   qmemcpy(this, &unk_84E738, 0x88u); /*0x7be64e*/
+}
 }

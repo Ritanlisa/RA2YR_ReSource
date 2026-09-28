@@ -212,7 +212,7 @@ unsigned int * ConvertClass::Construct(ConvertClass * aP1, int a3, ConvertClass 
     this->u32_184 = IDA_HIWORD(g_DDraw_Gray127); /*0x48eb6d*/
   }
   if ( !aP5 ) /*0x48eb7a*/
-    ConvertClass::InitTables(this); /*0x48eb7e*/
+    ConvertClass::InitTables(); /*0x48eb7e*/
   if ( dword_89ED08 < dword_89ED00 /*0x48ebb7*/
     || (byte_89ED05 || !dword_89ED00)
     && dword_89ED0C > 0

@@ -208,7 +208,7 @@ void ScoreScreen::RemoveItem(int a2, int a3, ObjectClass * aP3, char a5, int a6)
       }
     }
   }
-  return DeleteAndZero((ObjectClass *, unsigned int a5, unsigned int a2, unsigned int a3, unsigned int a4)&v25); /*0x7714a0*/
+  return DeleteAndZero((ObjectClass *)&v25); /*0x7714a0*/
 }
 } // namespace gamemd
 // 0x778210
@@ -222,7 +222,7 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   int v12; // ebp
   int *Viewport; // eax
   ConvertClass *v14; // eax
-  int v15; // eax
+  void * v15;
   unsigned int *v16; // eax
   int v17; // eax
   int v18; // edx
@@ -289,11 +289,11 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
       v31[0] = *Viewport; /*0x778319*/
       v31[1] = Viewport[1]; /*0x778320*/
       v11 = (Viewport[2] - v29) / 2; /*0x77833e*/
-      v12 = (Viewport[3] - v30[0], unsigned int a7, unsigned int a2) / 2; /*0x778340*/
+      v12 = (Viewport[3] - v30[0]) / 2; /*0x778340*/
     }
     if ( a7 && (*(int (__thiscall **)(int *))(*v8 + 112))(v8) == 1 ) /*0x77835b*/
     {
-      v14 = (ConvertClass *)RA2_OPNEW(0x188u); /*0x778366*/
+      v14 = (int)((ConvertClass *)RA2_OPNEW(0x188u));
       if ( v14 ) /*0x778370*/
         ConvertClass::Construct(v14, a7, a7, (int)a2, 1, 0); /*0x778382*/
       v15 = *a2; /*0x778395*/
@@ -329,4 +329,5 @@ AbstractClass * * ScoreScreen_DrawSHPBackground(void * a1, void * a2, void * a3,
   Vector::Clear((int)v39); /*0x778474*/
   *(unsigned int *)v38.__pad_0 = &off_7E1668; /*0x77847d*/
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v38); /*0x77848a*/
+}
 }

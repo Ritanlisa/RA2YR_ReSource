@@ -24,6 +24,7 @@ void * TextRenderer::GetInstance()
 {
   return (void *)(g_FogOfWarState);
 }
+}
 // 0x4B96A0
 namespace gamemd {
 void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3, wchar_t * Format, char a6, int a7, int _6C, int * a8, void * a4, void * a5, void * a9)
@@ -31,7 +32,7 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
   void * v11;
   void * v12;
   int v13; // ecx
-  void * v14;
+  int v14; // edx
   int v15; // edx
   int v16; // edi
   int v17; // eax
@@ -45,7 +46,7 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
   int v26; // [esp-4h] [ebp-50h]
   int v27; // [esp+14h] [ebp-38h] BYREF
   int v28; // [esp+18h] [ebp-34h] BYREF
-  int v29; // [esp+1Ch] [ebp-30h]
+  void * v29;
   int v30; // [esp+20h] [ebp-2Ch] BYREF
   int v31; // [esp+24h] [ebp-28h]
   int v32; // [esp+28h] [ebp-24h]
@@ -63,11 +64,11 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
   }
   else
   {
-    v11 = (int)(*a4);
+    v11 = (void *)((int)(*a4));
     v12 = *a4; /*0x4b9735*/
   }
-  v13 = (void *)((int)(a4[1]));
-  v14 = (void *)(110);
+  v13 = (int)(a4[1]);
+  v14 = 110; /*0x4b9740*/
   if ( v11 > v12 ) /*0x4b974a*/
   {
     v14 = v11 - v12 + 110; /*0x4b9750*/
@@ -102,6 +103,7 @@ void * TextRenderer::RenderCentered(int a1, int a2, ObjectClass * aP2, int * a3,
                     0,
                     v27);
   return TextRenderer::DrawText(&v27, (size_t)&word_8A0870, g_DSurface_Hidden, v21, v23, v24, v25, v26); /*0x4b987c*/
+}
 }
 // 0x642C80
 namespace gamemd {
@@ -143,7 +145,7 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
         Default = (*(int (__thiscall **)(int))(*(unsigned int *)Default + 128))(Default); /*0x642d04*/
       }
     }
-    Instance = (int)(TextRenderer::GetInstance());
+    Instance = (void *)((int)(TextRenderer::GetInstance()));
     v11 = v21; /*0x642d14*/
     v23 = 15; /*0x642d18*/
     do /*0x642d3d*/
@@ -180,20 +182,21 @@ int TextRenderer::MeasureBuilding(int a2, ProgressScreenClass * aP2, ProgressScr
   this->u32_71 = a6; /*0x642ddc*/
   return result; /*0x642ddf*/
 }
+}
 // 0x642EF0
 namespace gamemd {
 void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4)
 {
   unsigned int *FoundationSize; // eax
   int v5; // ebp
-  unsigned int v6;
+  int v6; // edi
   int Default; // eax
   int v8; // esi
   int Instance; // ebx
   unsigned int v10;
   int v11; // eax
   int v12; // ebx
-  unsigned int result;
+  int *result; // eax
   void * v14;
   int v15; // [esp+10h] [ebp-34h]
   int v16; // [esp+1Ch] [ebp-28h]
@@ -217,7 +220,7 @@ void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4
     }
   }
   Instance = (unsigned short *)(TextRenderer::GetInstance());
-  v10 = v17; /*0x642f5e*/
+  v10 = (unsigned int)(v17);
   v19 = 15; /*0x642f62*/
   do /*0x642f86*/
   {
@@ -243,6 +246,7 @@ void * TextRenderer::MeasureBuilding2(void * a1, void * a2, void * a3, void * a4
     *a2 = a3 * v14; /*0x642fe8*/
   return result; /*0x642fdf*/
 }
+}
 // 0x4A60E0
 namespace gamemd {
 unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, ObjectClass * aP2, ConvertClass * aP3, int a2, int a6, int a7, int a8, CampaignScore * aP8)
@@ -262,7 +266,7 @@ unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, Obje
   }
   else
   {
-    v11 = (unsigned int *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1); /*0x4a619a*/
+    v11 = (unsigned int *)((unsigned int *)RenderTextLabel(aP2, aP3, a2, a6, a7, a8, 1));
     *(unsigned int *)aP0 = *v11; /*0x4a61a5*/
     aP0[1] = v11[1]; /*0x4a61aa*/
     return aP0; /*0x4a619c*/
@@ -274,9 +278,9 @@ unsigned int * TextRenderer::Printf(ConvertClass * aP0, size_t BufferCount, Obje
 namespace gamemd {
 TriggerTypeClass * TextRenderer::Destructor(char a2)
 {
-  TriggerClass::ProcessEvents((AbstractClass *)this); /*0x727cd3*/
+  TriggerClass::ProcessEvents(); /*0x727cd3*/
   if ( (a2 & 1) != 0 ) /*0x727cdd*/
-    RA2_OPDEL(this); /*0x727ce0*/
+    RA2_OPDEL(); /*0x727ce0*/
   return this; /*0x727cea*/
 }
 } // namespace gamemd

@@ -11,6 +11,7 @@
 #include "e4/classes/Count_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x72C240
 namespace gamemd {

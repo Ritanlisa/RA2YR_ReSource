@@ -38,7 +38,7 @@ struct SuperClass {
     bool BlinkState;  // 0x40
     bool q042;  // 0x42
     HouseClass* Owner;  // 0x44
-    char BlinkTimer[4];  // 0x48
+    unsigned int BlinkTimer;  // 0x48
     bool q04A;  // 0x4A
     unsigned int q04C;  // 0x4C
     unsigned char q04F;  // 0x4F
@@ -666,13 +666,13 @@ struct SuperClass {
     unsigned int Crash;
     unsigned int Deviation;
     unsigned int SetCurrentFrame;
+    unsigned int u32_7C;
+    unsigned int unknown_6C;
+    unsigned int unknown_6F;
     unsigned int q030;
     unsigned int q060;
     unsigned int q074;
     unsigned int q07C;
-    unsigned int u32_7C;
-    unsigned int unknown_6C;
-    unsigned int unknown_6F;
 // --- flat members (END) ---
     AbstractClass * * Reset();
     AbstractClass * * StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3);

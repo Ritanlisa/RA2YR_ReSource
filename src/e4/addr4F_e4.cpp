@@ -45,6 +45,7 @@
 #include "e4/classes/BuildingType_e4.hpp"
 #include "e4/classes/E4Recv_5093C0_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x4F10E0
 namespace gamemd {
@@ -95,6 +96,7 @@ int InGameUI_Open()
     ScenarioClass::ShowMissionBriefing(g_ScenarioClass_Instance); /*0x4f1191*/
   return MapClass::MarkForRedraw(2); /*0x4f11a2*/
 }
+}
 // 0x4F1840
 namespace gamemd {
 long sub_4F1840()
@@ -122,6 +124,7 @@ long sub_4F1840()
   }
   return dwNewLong; /*0x4f18a4*/
 }
+}
 // 0x4F18B0
 namespace gamemd {
 void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
@@ -132,7 +135,7 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
   HWND v7; // esi
   int v8; // edi
   wchar_t *v9; // eax
-  unsigned int v10;
+  HouseClass *v10; // ecx
   int v11; // edx
   wchar_t *v12; // eax
   unsigned int *WindowLongA; // eax
@@ -220,13 +223,14 @@ void sub_4F18B0(HWND hDlg, unsigned int a2, unsigned int a3, unsigned int a4)
   }
   return result; /*0x4f1a2f*/
 }
+}
 // 0x4F1CA0
 namespace gamemd {
 void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
 {
   String *v3; // edx
   uint8_t *v5; // eax
-  void * v7;
+  int v7; // eax
   int v8; // ebp
   int v9; // edi
   bool v10; // bl
@@ -249,29 +253,31 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
   bool v27; // bl
   int Int; // esi
   int v29; // ebp
-  bool *v30; // esi
-  bool v31; // bl
-  unsigned int *v32; // esi
-  int v33; // ecx
+  bool v30; // bl
+  int v31; // esi
+  int v32; // ecx
+  int v33; // eax
   int v34; // eax
-  int v35; // eax
-  int v36; // edx
+  int v35; // edx
+  int *p_nextObject; // [esp-4h] [ebp-C4h]
+  unsigned int *v37; // [esp+0h] [ebp-C0h]
   ObjectClass v38; // [esp+Ch] [ebp-B4h] BYREF
   int v39; // [esp+B8h] [ebp-8h]
   int v40; // [esp+BCh] [ebp-4h]
   void *retaddr; // [esp+C0h] [ebp+0h]
 
-  v38.abstractFlags = (unsigned int)((int)v3);
-  v38.uniqueId = (unsigned int)((int)a2);
+  v38.abstractFlags = (void *)((unsigned int)((int)v3));
+  v38.uniqueId = (int)a2; /*0x4f1cb3*/
   v40 = (unsigned int)(0);
-  v5 = (uint8_t *)String::GetOrEmpty_Alt(v3); /*0x4f1cbe*/
+  v5 = (uint8_t *)((unsigned int)((uint8_t *)String::GetOrEmpty_Alt(v3)));
   if ( !INIClass::BinarySearchSection((int)a2, v5) ) /*0x4f1cc6*/
     return 0; /*0x4f1cc6*/
   v7 = RA2_OPNEW(0x70u); /*0x4f1cdd*/
   v8 = v7; /*0x4f1ce2*/
-  v38.NeedsSaveOrLink = (void *)v7; /*0x4f1ce9*/
+  v38.NeedsSaveOrLink = v7; /*0x4f1ce9*/
   if ( !v7 ) /*0x4f1ced*/
     return 0; /*0x4f1cda*/
+  p_nextObject = (int *)a3; /*0x4f1cef*/
   MSEngine::Construct((MSEngine *)(v7 + 4)); /*0x4f1cf3*/
   String::Assign((String *)(v8 + 76), aTitlePcx); /*0x4f1d02*/
   v38.referenceCount = v8 + 80; /*0x4f1d0f*/
@@ -303,7 +309,7 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
   {
     String::Concat2((String *)&v38.vtable2, (char **)&v38, aVqa); /*0x4f1dd6*/
     v12 = CCFileClass::Construct2((CCFileClass *)&v38.ambientSoundController[2], (char **)&v38); /*0x4f1de4*/
-    v13 = (*(int (__thiscall **)(unsigned int *, unsigned int, int))(*v12 + 20))(v12, 0, a3); /*0x4f1df8*/
+    v13 = (*(int (__thiscall **)(unsigned int *, unsigned int, int *))(*v12 + 20))(v12, 0, p_nextObject); /*0x4f1df8*/
     v38.ambientSoundController[3] = (int)&CCFileClass_vftable; /*0x4f1dfa*/
     v39 = 0; /*0x4f1e02*/
     Vector::Clear((int)&v38.location[1]); /*0x4f1e09*/
@@ -314,7 +320,12 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
       v14 = (MSVQAnim *)RA2_OPNEW(0x30u); /*0x4f1e25*/
       if ( v14 ) /*0x4f1e2f*/
       {
-        Config = MSVQAnim::ConstructMSVQAnimHidden(v14, (char **)&v38.vtable1, (int *)DSurface_Alternate, v8 + 28, 1); /*0x4f1e4e*/
+        Config = MSVQAnim::ConstructMSVQAnimHidden( /*0x4f1e4e*/
+                   v14,
+                   (char **)&v38.vtable1,
+                   &DSurface_Alternate->DSurface_field_0x0,
+                   v8 + 28,
+                   1);
         if ( Config ) /*0x4f1e52*/
         {
   LABEL_18: v21 = (unsigned int)(*(int (__thiscall ****)(unsigned int, int))(v8 + 84));
@@ -323,7 +334,8 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
           else
             PriorityQueue::Add((PriorityQueue *)(v8 + 4), (int)Config); /*0x4f1f81*/
           *(unsigned int *)(v8 + 84) = Config; /*0x4f1f86*/
-          v22 = (int *)(*(int (__thiscall **)(unsigned int *, ObjectClass **))(*Config + 24))(Config, &v38.nextObject); /*0x4f1f92*/
+          p_nextObject = &v38.nextObject; /*0x4f1f91*/
+          v22 = (int *)(*(int (__thiscall **)(unsigned int *))(*Config + 24))(Config); /*0x4f1f92*/
           v23 = *v22; /*0x4f1f95*/
           v24 = v22[1]; /*0x4f1f97*/
           v38.occupant = v23; /*0x4f1f9a*/
@@ -358,7 +370,7 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
                    (char **)&v38.uniqueId,
                    (int)DSurface_Alternate,
                    v8 + 28,
-                   (int *)&v38.nextObject,
+                   &v38.nextObject,
                    1);
     }
     DeleteAndZero((ObjectClass *)&v38.uniqueId); /*0x4f1f07*/
@@ -409,8 +421,7 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
       sprintf((char *const)v38.ambientSoundController, "%d", v29); /*0x4f2050*/
       String::Assign((String *)&v38, &g_INI_DefaultBuffer); /*0x4f2061*/
       String::Assign((String *)&v38.vtable1, (const char *)v38.ambientSoundController); /*0x4f206f*/
-      v30 = (bool *)v38.uniqueId; /*0x4f207c*/
-      v31 = INIClass::ReadString( /*0x4f2099*/
+      v30 = INIClass::ReadString( /*0x4f2099*/
               (INIClass *)v38.uniqueId,
               (char **)v38.abstractFlags,
               (char **)&v38.vtable1,
@@ -418,21 +429,21 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
               (int)&v38.vtable2) > 0;
       DeleteAndZero((ObjectClass *)&v38.vtable1); /*0x4f209c*/
       DeleteAndZero(&v38); /*0x4f20a5*/
-      if ( v31 ) /*0x4f20ac*/
+      if ( v30 ) /*0x4f20ac*/
       {
-        v32 = sub_4F38B0((char **)&v38.vtable2, v30, (char *)v38.NeedsSaveOrLink + 4, (char *)&v38.occupant); /*0x4f20c6*/
-        if ( v32 ) /*0x4f20ca*/
+        v31 = sub_4F38B0((char **)(v38.NeedsSaveOrLink + 4), &v38.occupant, (int)p_nextObject, v37); /*0x4f20c6*/
+        if ( v31 ) /*0x4f20ca*/
         {
-          v33 = v9->Capacity; /*0x4f20cc*/
-          if ( v9->Items < v33 /*0x4f20f1*/
-            || (v9->IsAllocated || !v33)
-            && (v34 = *(unsigned int *)(v9 + 20), v34 > 0)
-            && (*(uint8_t (__thiscall **)(int, int, unsigned int))(v9->Capacity)(v9, v33 + v34, 0) )
+          v32 = v9->Capacity; /*0x4f20cc*/
+          if ( v9->Items < v32 /*0x4f20f1*/
+            || (v9->IsAllocated || !v32)
+            && (v33 = *(unsigned int *)(v9 + 20), v33 > 0)
+            && (*(uint8_t (__thiscall **)(int, int, unsigned int))(v9->Capacity)(v9, v32 + v33, 0) )
           {
-            v35 = v9->Items; /*0x4f20f8*/
-            v36 = v9->Items; /*0x4f20fb*/
-            v9->Items = v35 + 1; /*0x4f2101*/
-            *(unsigned int *)(v36 + 4 * v35) = v32; /*0x4f2104*/
+            v34 = v9->Items; /*0x4f20f8*/
+            v35 = v9->Items; /*0x4f20fb*/
+            v9->Items = v34 + 1; /*0x4f2101*/
+            *(unsigned int *)(v35 + 4 * v34) = v31; /*0x4f2104*/
           }
         }
       }
@@ -443,6 +454,7 @@ void LoadFromINIGraphicMenu(void * a1, void * a2, void * a3)
   DeleteAndZero((ObjectClass *)&v38.nextArrayIndex); /*0x4f2118*/
   DeleteAndZero((ObjectClass *)&v38.vtable2); /*0x4f2121*/
   return (char **)v38.NeedsSaveOrLink; /*0x4f1ccf*/
+}
 }
 // 0x4F2300
 namespace gamemd {
@@ -610,6 +622,7 @@ int E4Recv_4F2640::sub_4F2640(int (__thiscall ***a2)(unsigned int, int) a1)
   int->customSound_controller[1] = (int)a2; /*0x4f2659*/
   return result; /*0x4f265c*/
 }
+}
 // 0x4F2C70
 namespace gamemd {
 void ParseINIAnimGadgetDefinition()
@@ -719,6 +732,7 @@ void ParseINIAnimGadgetDefinition()
     DeleteAndZero((ObjectClass *)&v19); /*0x4f2d15*/
     return 0; /*0x4f2d1a*/
   }
+}
 }
 // 0x4F3140
 namespace gamemd {
@@ -831,6 +845,7 @@ ReferenceCounted * * ParseINIGadgetDefinition(ObjectClass * aP0, ObjectClass * e
   DeleteAndZero((ObjectClass *)&v20); /*0x4f3444*/
   DeleteAndZero((ObjectClass *)&v21); /*0x4f344d*/
   return v8; /*0x4f317b*/
+}
 }
 // 0x4F3460
 namespace gamemd {
@@ -989,6 +1004,7 @@ void sub_4F38B0()
   DeleteAndZero((void **)&v13); /*0x4f3a38*/
   return v6; /*0x4f3a43*/
 }
+}
 // 0x4F3AB0
 namespace gamemd {
 int E4Recv_4F3AB0::sub_4F3AB0(int a2)
@@ -1004,6 +1020,7 @@ int E4Recv_4F3AB0::sub_4F3AB0(int a2)
     return vtable0[5](a2); /*0x4f3ac1*/
   }
   return result; /*0x4f3ac4*/
+}
 }
 // 0x4F3B80
 namespace gamemd {
@@ -1034,6 +1051,7 @@ unsigned int * sub_4F3B80(ObjectClass * a1, ObjectClass * edx0)
     v8 = 0; /*0x4f3c29*/
   DeleteAndZero((ObjectClass *)&v9); /*0x4f3c2f*/
   return v8; /*0x4f3bb3*/
+}
 }
 // 0x4F3D40
 namespace gamemd {
@@ -1106,6 +1124,7 @@ int E4Recv_4F3D40::sub_4F3D40()
   DeleteAndZero((ObjectClass *)&v8); /*0x4f3e54*/
   return v5; /*0x4f3e5b*/
 }
+}
 // 0x4F4E53
 namespace gamemd {
 void sub_4F4E53()
@@ -1133,6 +1152,7 @@ void sub_4F4E53()
   }
   while ( v7 ); /*0x4f4ea3*/
   return result; /*0x4f4ea9*/
+}
 }
 // 0x4FA210
 namespace gamemd {
@@ -1201,6 +1221,7 @@ int E4Recv_4FA210::sub_4FA210(int a2, int a3)
     RA2_OPDEL(v9); /*0x4fa2c5*/
   return a2; /*0x4fa2cf*/
 }
+}
 // 0x4FBD80
 namespace gamemd {
 AbstractClass * * E4Recv_4FBD80::sub_4FBD80(int a2, int a3)
@@ -1247,6 +1268,7 @@ AbstractClass * * E4Recv_4FBD80::sub_4FBD80(int a2, int a3)
       break; /*0x4fbdf3*/
   }
   return result; /*0x4fbdac*/
+}
 }
 // 0x4F0ED0
 namespace gamemd {
@@ -1591,7 +1613,7 @@ int * E4Recv_4F2F10::sub_4F2F10(GraphicMenuAnimItem * aP1, unsigned int * a2, Gr
   char v16[12]; // [esp+D8h] [ebp-14h] BYREF
   int v17; // [esp+E4h] [ebp-8h]
 
-  GraphicMenuItem::Constructor((GraphicMenuItem *)this, aP1); /*0x4f2f21*/
+  GraphicMenuItem::Constructor(aP1); /*0x4f2f21*/
   this->GraphicMenuAnimItem_field_0x10 = *a4; /*0x4f2f3c*/
   this->GraphicMenuAnimItem_field_0x14 = a4[1]; /*0x4f2f41*/
   this->u32_18 = a4[2]; /*0x4f2f47*/
@@ -1683,7 +1705,7 @@ unsigned int * E4Recv_4F3C40::sub_4F3C40(int a2, const char ** a3)
   int v10; // edx
 
   v3 = this; /*0x4f3c49*/
-  GraphicMenuItem::Constructor((GraphicMenuItem *)this, a2); /*0x4f3c50*/
+  GraphicMenuItem::Constructor(a2); /*0x4f3c50*/
   p_uniqueId = &v3->uniqueId; /*0x4f3c55*/
   v3->abstractFlags = 0; /*0x4f3c5e*/
   v3->nextArrayIndex = 0; /*0x4f3c61*/
@@ -1876,6 +1898,7 @@ namespace gamemd {
 void j_Stub_InfiniteLoop()
 {
   Stub::InfiniteLoop(a1, a2); /*0x4f4d90*/
+}
 }
 // 0x4F4EE0
 namespace gamemd {
@@ -2207,7 +2230,7 @@ int E4Recv_4FFD50::sub_4FFD50(int a2)
   if ( !a2 ) /*0x4ffd5c*/
     return -1; /*0x4ffd5e*/
   v4 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)a2 + 72))(a2, v5); /*0x4ffd6f*/
-  return PathfindingClass::FindPath((PathfindingClass *)this, v4); /*0x4ffd61*/
+  return PathfindingClass::FindPath(v4); /*0x4ffd61*/
 }
 } // namespace gamemd
 
@@ -2222,6 +2245,6 @@ int E4Recv_4FFD90::sub_4FFD90(short * a2)
   v2 = a2[1]; /*0x4ffda2*/
   v4[0] = (*a2 << 8) + 128; /*0x4ffdaf*/
   v4[1] = (v2 << 8) + 128; /*0x4ffdc0*/
-  return PathfindingClass::FindPath((PathfindingClass *)this, v4); /*0x4ffdc9*/
+  return PathfindingClass::FindPath(v4); /*0x4ffdc9*/
 }
 } // namespace gamemd

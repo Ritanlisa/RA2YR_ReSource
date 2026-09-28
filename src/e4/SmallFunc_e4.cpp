@@ -31,6 +31,7 @@
 #include "e4/classes/TeamTypeClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/WideString_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x6F19B0
 namespace gamemd {
@@ -85,6 +86,7 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
     ++i; /*0x6f1a8e*/
   }
   return (gamemd::TeamTypeClass **)(result);
+}
 }
 // 0x40D1B0
 namespace gamemd {
@@ -187,7 +189,7 @@ int E4Recv_5AFEF0::sub_5AFEF0()
 {
   int v2; // eax
 
-  LocomotionClass::Init((LocomotionClass *)this); /*0x5afef3*/
+  LocomotionClass::Init(); /*0x5afef3*/
   this->MovingDestination[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff01*/
   this->MovingDestination[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff0a*/
   this->MovingDestination[2] = g_MissionQueueFrame.localVariables[229]; /*0x5aff16*/
@@ -296,7 +298,7 @@ char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int
 namespace gamemd {
 int E4Recv_728A00::sub_728A00()
 {
-  LocomotionClass::Init((LocomotionClass *)this); /*0x728a03*/
+  LocomotionClass::Init(); /*0x728a03*/
   this->CurrentState[0] = 0; /*0x728a0d*/
   this->CurrentState[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728a16*/
   this->CurrentState[2] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728a1e*/

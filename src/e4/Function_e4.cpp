@@ -10,8 +10,9 @@
 namespace gamemd {
 void Function_643E80(void * a1, void * a2)
 {
-  a1->q004 = a2; /*0x643e84*/
+  a1->Function_field_0x04 = a2; /*0x643e84*/
   return a2; /*0x643e87*/
+}
 }
 // 0x645D00
 namespace gamemd {

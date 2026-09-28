@@ -48,6 +48,7 @@
 #include "app/cmdline.hpp"
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/E4Recv_655890_e4.hpp"
 
 // 0x6406E0
 namespace gamemd {
@@ -56,13 +57,15 @@ void unknown_libname_27()
   this->vtable0 = 0; /*0x6406e2*/
   return &this->vtable0; /*0x6406e8*/
 }
+}
 // 0x645B60
 namespace gamemd {
 void * E4Recv_645B60::sub_645B60()
 {
   char ** v2;
   char **v3; // esi
-v2 = (char **)((int)((char **)(0)));
+
+  v2 = (char **)((int)((char **)(0)));
   v3 = (char **)(off_7F0248);
   while ( _strcmpi((char *)this, *v3) ) /*0x645b7a*/
   {
@@ -72,6 +75,7 @@ v2 = (char **)((int)((char **)(0)));
       return 0; /*0x645b8d*/
   }
   return v2; /*0x645b88*/
+}
 }
 // 0x645D60
 namespace gamemd {
@@ -144,6 +148,7 @@ ObjectClass * * E4Recv_645D60::sub_645D60(float * a2)
     *(float *)&this->vtable3 = -*(float *)&this->vtable3; /*0x645eb9*/
   }
   return (float *)this; /*0x645ebe*/
+}
 }
 // 0x646730
 namespace gamemd {
@@ -266,6 +271,7 @@ void * ConvertMatrixToQuaternion(float * a1, float * a2)
   }
   return result; /*0x646801*/
 }
+}
 // 0x646F70
 namespace gamemd {
 char sub_646F70(IUnknown * a1, int a2, int a3, char a4, int a5, int a6, int a7)
@@ -292,6 +298,7 @@ char sub_646F70(IUnknown * a1, int a2, int a3, char a4, int a5, int a6, int a7)
   ++Networking_LastEventIndex; /*0x647020*/
   Networking_NextPacketIndex = ((unsigned char)Networking_NextPacketIndex + 1) & 0x7F; /*0x647025*/
   return 1; /*0x64702d*/
+}
 }
 // 0x647260
 namespace gamemd {
@@ -436,6 +443,7 @@ AbstractClass * * ProcessNetworkEvents()
     }
   }
 }
+}
 // 0x648350
 namespace gamemd {
 void RunNetworkGameLoop()
@@ -487,7 +495,7 @@ void RunNetworkGameLoop()
   {
     v1 = (unsigned short)(unk_A8DA40);
     v2 = (gamemd::IPXManagerClass *)(&unk_A8D812);
-    v13 = (unsigned short)(&unk_A8D812);
+    v13 = (gamemd::IPXManagerClass *)(&unk_A8D812);
     v3 = &unk_A8E9C0; /*0x648381*/
   }
   IDA_LOWORD(dword_AFA400) = BuildNetworkEventPacket((int)v3, (int)v2, v1, (int)unk_A8B550, dword_AFA400) + dword_AFA400; /*0x6483c1*/
@@ -615,6 +623,7 @@ void RunNetworkGameLoop()
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x6486b2*/
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x6486c5*/
   SendNetworkFrameSync(&v3->Socket, dword_AFA400); /*0x6486d8*/
+}
 }
 // 0x648710
 namespace gamemd {
@@ -1549,12 +1558,11 @@ AbstractClass * * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short 
   int v23; // [esp+14h] [ebp-18h]
   int v24; // [esp+18h] [ebp-14h]
   int v25; // [esp+1Ch] [ebp-10h]
-  int v26; // [esp+20h] [ebp-Ch]
   int v27; // [esp+24h] [ebp-8h] BYREF
   int v28; // [esp+28h] [ebp-4h]
 
   v6 = Networking_LastEventIndex; /*0x649caf*/
-  v26 = a1; /*0x649cc4*/
+  a1 = a1; /*0x649cc4*/
   v25 = 0; /*0x649cc8*/
   v22 = Networking_LastEventIndex; /*0x649ccc*/
   if ( Networking_LastEventIndex > 0x2000 - g_GameInitState ) /*0x649cd0*/
@@ -1567,15 +1575,15 @@ AbstractClass * * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short 
     *(unsigned char *)a2 = 28; /*0x649cff*/
     v27 = 0; /*0x649d0a*/
     v8 = a4; /*0x649d1b*/
-    *(unsigned int *)(a2 + 3) = g_GameTypeFlags == 2
+    a2->q00C = g_GameTypeFlags == 2
                         ? (wchar_t *)(g_ScenarioLoadState
                                     * (((unsigned int)g_CurrentFrame + g_ScenarioLoadState + a4 - 1)
                                      / g_ScenarioLoadState))
                         : (wchar_t *)((char *)g_CurrentFrame + a4);
-    *(unsigned char *)(a2 + 2) = *((unsigned char *)HouseClass_Player + 48); /*0x649d49*/
-    *(unsigned int *)(a2 + 7) = *(unsigned int *)Networking_CurrentFrameCRC; /*0x649d57*/
-    *(unsigned short *)(a2 + 11) = a5; /*0x649d5a*/
-    *(unsigned char *)(a2 + 13) = a4; /*0x649d5e*/
+    a2->q008 = *((unsigned char *)HouseClass_Player + 48); /*0x649d49*/
+    a2->q01C = *(unsigned int *)Networking_CurrentFrameCRC; /*0x649d57*/
+    a2->q02C = a5; /*0x649d5a*/
+    a2->q034 = a4; /*0x649d5e*/
     v9 = g_GameTypeFlags != 0 ? 14 : 111;
     if ( g_GameTypeFlags )
     {
@@ -1639,10 +1647,10 @@ AbstractClass * * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short 
                 --Networking_LastEventIndex,
                 !Networking_LastEventIndex) )
           {
-            a1 = v26; /*0x649f57*/
+            a1 = a1; /*0x649f57*/
             break; /*0x649f57*/
           }
-          a1 = v26; /*0x649f4a*/
+          a1 = a1; /*0x649f4a*/
           v8 = a4; /*0x649f4e*/
         }
       }
@@ -1670,6 +1678,7 @@ AbstractClass * * BuildNetworkEventPacket(int a1, int a2, int a3, int a4, short 
   if ( v20 ) /*0x649fda*/
     Debug::Log(); /*0x649fe8*/
   return v20; /*0x649ff2*/
+}
 }
 // 0x64A000
 namespace gamemd {
@@ -1700,6 +1709,7 @@ void Network_SendFrameSync(int * a1, short a2)
   (*(void (__thiscall **)(int *, unsigned char *, int, unsigned int, int))(v4 + 8))(a1, v6, 14, 0, -1); /*0x64a090*/
   ((void (*)(const char *, ...))Debug::Log)(aSentFramesyncO); /*0x64a098*/
   return ++dword_B0487C; /*0x64a0a6*/
+}
 }
 // 0x64A0C0
 namespace gamemd {
@@ -1954,11 +1964,11 @@ AbstractClass * * Network_ProcessFrameSync(int a1, int a2, int a3, unsigned int 
     return v41; /*0x64a593*/
   }
 }
+}
 // 0x64A630
 namespace gamemd {
 int Network_ProcessMessage(int a1, int a2)
 {
-  int v2; // esi
   int v3; // eax
   char *v5; // ebp
   wchar_t *v6; // edi
@@ -2026,6 +2036,7 @@ int Network_ProcessMessage(int a1, int a2)
   v11 = -(*((unsigned int *)HouseClass_Player + 12) != *(char *)(a1 + 2)); /*0x64a7a4*/
   IDA_LOBYTE(v11) = v11 & 0xFA; /*0x64a7a7*/
   return v11 + 6; /*0x64a660*/
+}
 }
 // 0x64AAE0
 namespace gamemd {
@@ -2101,6 +2112,7 @@ void KickNetworkPlayer(HWND hDlg, LPARAM lParam)
   }
   return result; /*0x64abcf*/
 }
+}
 // 0x64B240
 namespace gamemd {
 AbstractClass * * Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4)
@@ -2168,6 +2180,7 @@ AbstractClass * * Network_KickPlayerNow(int a1, int a2, int a3, unsigned char a4
     }
     HandleNetworkPlayerDisconnect(v6, a4); /*0x64b3fe*/
   }
+}
 }
 // 0x64B4D0
 namespace gamemd {
@@ -2261,6 +2274,7 @@ void Compress_DictionaryLookup(unsigned char * a1, unsigned int * a2, unsigned c
   }
   IDA_LOBYTE(result) = 0; /*0x64b651*/
   return result; /*0x64b5c4*/
+}
 }
 // 0x64B660
 namespace gamemd {
@@ -2487,6 +2501,7 @@ AbstractClass * * Network_CompressMegaMission(int a1, int a2, int a3, int a4, in
   result = a4; /*0x64bda7*/
   *a6 = v28; /*0x64bdbc*/
   return result; /*0x64bdb9*/
+}
 }
 // 0x64BDD0
 namespace gamemd {
@@ -2756,6 +2771,7 @@ AbstractClass * * Network_DecodeEvents(char * a1, unsigned int a2)
   }
   return -1; /*0x64c362*/
 }
+}
 // 0x64CD30
 namespace gamemd {
 void sub_64CD30(int a1, int a2, int a3, char a4, int a5)
@@ -2776,6 +2792,7 @@ void sub_64CD30(int a1, int a2, int a3, char a4, int a5)
     *(unsigned int *)v6 = *(unsigned int *)a5; /*0x64cd8b*/
     v6[4] = *(unsigned char *)(a5 + 4); /*0x64cd90*/
   }
+}
 }
 // 0x64CDA0
 namespace gamemd {
@@ -3933,7 +3950,6 @@ int sub_6432C0(char a1)
   int Default; // eax
   int v3; // esi
   int Instance; // ebp
-  unsigned short *v5; // esi
   int v6; // edi
   int v7; // eax
   int v8; // ebp
@@ -3995,6 +4011,7 @@ char sub_6435B0(int a1, int a2, int a3)
 {
   int Default; // eax
   int v4; // esi
+  int v5; // edi
   char result; // al
   int v7; // esi
   int v8[4]; // [esp+8h] [ebp-10h] BYREF
@@ -4470,6 +4487,7 @@ void sub_646464()
   *(unsigned int *)(a2 + 12) = v8; /*0x646464*/
   return a3; /*0x64646e*/
 }
+}
 // 0x646480
 namespace gamemd {
 float * Quaternion_FromAxisAngle(float * a1, float * a2, float a3)
@@ -4803,10 +4821,10 @@ LRESULT E4Recv_64AAA0::sub_64AAA0()
   v2 = SendMessageA((HWND)this, 0x18Bu, 0, 0); /*0x64aab7*/
   if ( v2 > 50 ) /*0x64aabc*/
   {
-    SendMessageA((HWND)this, 0x182u, 0, 0); /*0x64aac8*/
+    SendMessageA(0x182u, 0, 0); /*0x64aac8*/
     --v2; /*0x64aaca*/
   }
-  return SendMessageA((HWND)this, 0x197u, v2 - 1, 0); /*0x64aad7*/
+  return SendMessageA(0x197u, v2 - 1, 0); /*0x64aad7*/
 }
 } // namespace gamemd
 

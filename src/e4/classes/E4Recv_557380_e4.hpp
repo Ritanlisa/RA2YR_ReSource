@@ -21,7 +21,7 @@ struct E4Recv_557380 {
     unsigned int M65;  // 0x41
     unsigned int q044;  // 0x44
     unsigned int q048;  // 0x48
-    unsigned int M76;  // 0x4C
+    void* ;  // 0x4C
     unsigned int q050;  // 0x50
     unsigned int M52;  // 0x52
     unsigned int q054;  // 0x54
@@ -181,6 +181,7 @@ struct E4Recv_557380 {
     unsigned int q5684;  // 0x5684
     unsigned int q6214;  // 0x6214
     unsigned int q6408;  // 0x6408
+    unsigned int q0208;
     unsigned int u32_142;
 // --- flat members (END) ---
     int sub_557380(int a2);  // 0x557380

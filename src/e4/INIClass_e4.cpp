@@ -21,6 +21,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Factory_e4.hpp"
 #include "e4/classes/HouseTypeClass_e4.hpp"
+#include "e4/classes/HoverLocomotionClass_e4.hpp"
 
 // 0x526810
 namespace gamemd {
@@ -34,8 +35,8 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
   unsigned int *v9; // ecx
   ObjectClass ** v10;
   VoxelStruct * v11;
-  VoxelStruct * v12;
-  ObjectClass ** v13;
+  ObjectClass ** v12;
+  VoxelStruct * v13;
   unsigned int v15[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   if ( !aP1 ) /*0x526820*/
@@ -56,7 +57,7 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
     this->unknown38 = 0; /*0x52687e*/
     this->needsSave_flag = 1; /*0x526881*/
   }
-  v15[0] = (int)((gamemd::ObjectClass **)(v3));
+  v15[0] = (unsigned int)((gamemd::ObjectClass **)(v3));
   v7 = (gamemd::ObjectClass **)(System_Search(v15));
   if ( !v7 ) /*0x52689b*/
     return 0; /*0x526938*/
@@ -74,14 +75,14 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
     this->unknown38 = 0; /*0x5268d0*/
     this->needsSave_flag = 1; /*0x5268d3*/
   }
-  v10 = (int)((gamemd::ObjectClass **)(this->INIClass_field_2C));
-  v11 = (gamemd::VoxelStruct *)((int)(this->q028));
+  v10 = (gamemd::VoxelStruct *)((int)((gamemd::ObjectClass **)(this->INIClass_field_2C)));
+  v11 = (gamemd::ObjectClass **)(this->q028);
   if ( v10 <= 0 ) /*0x5268df*/
     return unk_B7882C; /*0x5268df*/
   while ( 1 ) /*0x5268ec*/
   {
-    v12 = (gamemd::VoxelStruct *)((int)((gamemd::ObjectClass **)(*(unsigned int *)(v11 + 8 * (v10 / 2)))));
-    v13 = (int)((gamemd::ObjectClass **)(v11 + 8 * (v10 / 2)));
+    v12 = (int)((gamemd::ObjectClass **)(*(unsigned int *)(v11 + 8 * (v10 / 2))));
+    v13 = (gamemd::ObjectClass **)(v11 + 8 * (v10 / 2));
     if ( v12 <= v3 ) /*0x5268f6*/
       break; /*0x5268f6*/
     v10 /= 2; /*0x5268f8*/
@@ -97,10 +98,11 @@ ObjectClass * * INIClass::BinarySearchSection(INIClass * aP1)
   }
   if ( v13 ) /*0x52691f*/
   {
-    this->unknown38 = (gamemd::ObjectClass **)(v13);
-    return *(unsigned int *)(this->unknown38 + 4); /*0x526921*/
+    this->unknown38 = (unsigned int)((gamemd::ObjectClass **)(v13));
+    return (gamemd::ObjectClass **)(*(unsigned int *)(this->unknown38 + 4));
   }
   return (gamemd::ObjectClass **)(unk_B7882C);
+}
 }
 // 0x526960
 namespace gamemd {
@@ -128,7 +130,7 @@ VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1)
   v4 = (unsigned int *)*((unsigned int *)v2 + 4); /*0x5269b2*/
   if ( !v4 || *v4 != v3 ) /*0x5269bb*/
   {
-    v5 = (int)(SortedArray::BinarySearch(&aP1));
+    v5 = (gamemd::INIClass *)(SortedArray::BinarySearch(&aP1));
     if ( !v5 ) /*0x5269cb*/
       return 0; /*0x5269cb*/
     *((unsigned int *)v2 + 4) = v5; /*0x5269cd*/
@@ -156,6 +158,7 @@ VoxelStruct * * INIClass::GetKeyCount(INIClass * aP1)
     return *(unsigned int *)(v10 + 48); /*0x526a14*/
   return 0; /*0x526a0f*/
 }
+}
 // 0x528A10
 namespace gamemd {
 unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * aP3, INIClass * aP4, int Count)
@@ -179,7 +182,8 @@ unsigned int INIClass::GetString(INIClass * aP1, unsigned char * a2, INIClass * 
   char *v23; // ecx
   int v24; // esi
   unsigned char v26[12]; // [esp+Ch] [ebp-Ch] BYREF
-v6 = (char *)((unsigned char *)(aP4));
+
+  v6 = (char *)((unsigned char *)(aP4));
   if ( !aP4 ) /*0x528a20*/
     return 0; /*0x528a20*/
   if ( Count < 2 ) /*0x528a2b*/
@@ -207,13 +211,13 @@ v6 = (char *)((unsigned char *)(aP4));
   if ( !v21 ) /*0x528b3f*/
   {
   LABEL_29: v23 = (char *)(aP3);
-    v6 = (char *)((unsigned int)(aP4));
+    v6 = (char *)(aP4);
     this->headNode[0] = 0; /*0x528b8a*/
     this->headNode[1] = 0; /*0x528b8d*/
     goto LABEL_36; /*0x528b90*/
   }
-  this->unknown38 = (char *)(v21);
-  LABEL_24: aP1 = (gamemd::INIClass *)((char *)(v19));
+  this->unknown38 = (gamemd::INIClass *)((unsigned int)((char *)(v21)));
+  LABEL_24: aP1 = (char *)(v19);
   if ( (uint8_t)HashTable::BinarySearch((int *)&this->__pad_20[8], (int *)&aP1) ) /*0x528b4f*/
     v22 = (int *)(this->unknown38 + 4); /*0x528b5b*/
   else
@@ -289,6 +293,7 @@ v6 = (char *)((unsigned char *)(aP4));
   String::Trim(v6); /*0x528be3*/
   return strlen(v6); /*0x528bbe*/
 }
+}
 // 0x535AA0
 namespace gamemd {
 INIClass::INIClass()
@@ -297,13 +302,13 @@ INIClass::INIClass()
   int *sectionHead; // ecx
   unsigned int *v3; // edx
   int v4; // edi
-  void * v5;
+  int v5; // esi
   int v6; // esi
   int * v7;
 
-  result = (void **)((int *)((unsigned int)(this->__pad_0)));
-  sectionHead = (int)(this->sectionHead);
-  v3 = (unsigned int *)(result + 7);
+  result = (int *)((void **)((unsigned int)(this->__pad_0)));
+  sectionHead = (unsigned int *)(this->sectionHead);
+  v3 = result + 7; /*0x535aa9*/
   result[1] = 0; /*0x535aac*/
   result[2] = 0; /*0x535aaf*/
   sectionHead[1] = 0; /*0x535ab2*/
@@ -328,7 +333,7 @@ INIClass::INIClass()
       }
     }
   }
-  v6 = (unsigned int)(sectionHead[1]);
+  v6 = (void *)((unsigned int)(sectionHead[1]));
   result[9] = (void *)((unsigned int)(sectionHead));
   result[8] = (unsigned int)(v6);
   v7 = sectionHead[1]; /*0x535aff*/
@@ -342,8 +347,9 @@ INIClass::INIClass()
   *((unsigned char *)result + 52) = 0; /*0x535b1c*/
   result[14] = 0; /*0x535b1f*/
   result[15] = 0; /*0x535b23*/
-  *result = &(void*, unsigned int a5)(void*)&INIClass_vftable; /*0x535b27*/
+  *result = (void*)&INIClass_vftable; /*0x535b27*/
   return result; /*0x535b22*/
+}
 }
 // 0x474620
 namespace gamemd {
@@ -434,7 +440,7 @@ int INIClass::ReadInt(ObjectClass * aP1, ReferenceCounted * aP2, INIClass * aP3)
 
   v7 = (uint8_t *)String::GetOrEmpty_Alt(aP2); /*0x527905*/
   v5 = (uint8_t *)String::GetOrEmpty_Alt(aP1); /*0x527906*/
-  return INIClass::ReadInt_Overwrite(this, v5, v7, aP3); /*0x527913*/
+  return INIClass::ReadInt_Overwrite(v5, v7, aP3); /*0x527913*/
 }
 } // namespace gamemd
 
@@ -449,6 +455,6 @@ char INIClass::GetInt(char ** a2, char ** a3, unsigned int * a4)
   v5 = String::GetOrEmpty_Alt(a3); /*0x529835*/
   v6 = (uint8_t *)String::GetOrEmpty_Alt(a2); /*0x52983c*/
   sprintf(Buffer, "%d,%d", *a4, a4[1]); /*0x529853*/
-  return INIClass::SetString(this, v6, v5, Buffer); /*0x529869*/
+  return INIClass::SetString(v6, v5, Buffer); /*0x529869*/
 }
 } // namespace gamemd

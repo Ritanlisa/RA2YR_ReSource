@@ -164,6 +164,7 @@ void sub_53C0A0(unsigned short * a1, int a2, unsigned short a3, int a4, int a5, 
   }
   return result; /*0x53c273*/
 }
+}
 // 0x652230
 namespace gamemd {
 AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
@@ -221,6 +222,7 @@ AbstractClass * * Render_Show(CCINIClass * aP0, int a2, void * a1)
   }
   return (gamemd::AbstractClass **)(result);
 }
+}
 // 0x705270
 AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a6, int a7, char a8)
 {
@@ -243,7 +245,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   int v24; // ebx
   uint8_t v25; // al
   int result; // eax
-  int * v27;
+  int v27; // [esp+24h] [ebp-A0h] BYREF
   int v28; // [esp+28h] [ebp-9Ch]
   int v29; // [esp+2Ch] [ebp-98h] BYREF
   int v30; // [esp+30h] [ebp-94h]
@@ -281,7 +283,7 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   v8 = ((uint8_t)a7 >> g_BitShift_Green_0 << g_BitShift_Red) /*0x705348*/
      | (IDA_BYTE2(a7) >> g_BitMask_Red << g_BitShift_Blue)
      | (IDA_BYTE1(a7) >> g_BitMask_Blue << g_BitMask_Green);
-  v27 = (int *)((uint8_t)word_A83CDA);
+  v27 = (uint8_t)word_A83CDA; /*0x705363*/
   v43[0] = v29; /*0x70538d*/
   v9 = (IDA_HIBYTE(word_A83CDA) >> g_BitMask_Red << g_BitShift_Blue) /*0x705397*/
      | ((uint8_t)word_A83CDA >> g_BitMask_Blue << g_BitMask_Green)
@@ -292,11 +294,11 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
   v44[1] = v34 + 1; /*0x7053b8*/
   if ( a8 ) /*0x7053bc*/
   {
-    v27 = (int *)(-2);
+    v27 = -2; /*0x7053cb*/
     v28 = -2; /*0x7053dc*/
-    v11 = (int *)(Coord2D::Add(&v27, v52, v43));
-    v12 = (int *)(Rect::Construct(v53, v11, 3, 3));
-    v39 = (int *)(*v12);
+    v11 = Coord2D::Add(&v27, v52, v43); /*0x7053e6*/
+    v12 = Rect::Construct(v53, v11, 3, 3); /*0x7053f3*/
+    v39 = *v12; /*0x7053fc*/
     v40 = v12[1]; /*0x705405*/
     v41 = v12[2]; /*0x70540c*/
     v42 = v12[3]; /*0x70541e*/
@@ -337,9 +339,9 @@ AbstractClass * * Render::DrawLine(int a1, int a2, int a3, int a4, int a5, int a
       v44,
       v17);
   }
-  v27 = (int *)(v29 - 2);
-  v28 = (int *)(v30 - 2);
-  v18 = (int *)(Rect::Construct(v54, &v27, 3, 3));
+  v27 = v29 - 2; /*0x705583*/
+  v28 = v30 - 2; /*0x70558b*/
+  v18 = Rect::Construct(v54, &v27, 3, 3); /*0x705597*/
   v35 = *v18; /*0x7055a0*/
   v36 = v18[1]; /*0x7055a9*/
   v37 = v18[2]; /*0x7055b0*/
@@ -416,36 +418,37 @@ wchar_t ** Render_Format(wchar_t ** a1, char ** a2)
   char *v9; // eax
 
   v4 = String::GetOrEmpty_Alt(a2); /*0x780d9f*/
-  if ( _strcmpi(v4, &stru_82BA00.Selectable) ) /*0x780da5*/
+  if ( _strcmpi(v4, aRandmapSed) ) /*0x780da5*/
   {
     v7 = 0; /*0x780ddb*/
-    if ( unk_A8B8D8 <= 0 ) /*0x780ddf*/
+    if ( dword_A8B8D8 <= 0 ) /*0x780ddf*/
     {
   LABEL_6:
-      WideString::Assign(a1, &g_TypeClass_DefaultString); /*0x780e0b*/
+      WideString::Assign((WideString *)a1, &g_TypeClass_DefaultString); /*0x780e0b*/
       return a1; /*0x780e17*/
     }
     else
     {
       while ( 1 ) /*0x780de6*/
       {
-        v8 = *(unsigned int *)(unk_A8B8CC + 4 * v7); /*0x780de6*/
+        v8 = *(unsigned int *)(dword_A8B8CC + 4 * v7); /*0x780de6*/
         v9 = String::GetOrEmpty_Alt(a2); /*0x780def*/
         if ( !_strcmpi(v9, (char *)(v8 + 88)) ) /*0x780df5*/
           break; /*0x780df5*/
-        if ( ++v7 >= unk_A8B8D8 ) /*0x780e09*/
+        if ( ++v7 >= dword_A8B8D8 ) /*0x780e09*/
           goto LABEL_6; /*0x780e09*/
       }
-      WideString::Assign(a1, (wchar_t *)v8); /*0x780e21*/
+      WideString::Assign((WideString *)a1, (wchar_t *)v8); /*0x780e21*/
       return a1; /*0x780e26*/
     }
   }
   else
   {
-    StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)stru_82BA00.ChargerBarrels_0x12_, 0, g_Str_File_wonline_cpp, 2970));
-    WideString::Assign(a1, StringCSF); /*0x780dca*/
+    StringCSF = GetStringCSF(aTxtRandomMapDe, 0, g_Str_File_wonline_cpp, 2970); /*0x780dc2*/
+    WideString::Assign((WideString *)a1, StringCSF); /*0x780dca*/
     return a1; /*0x780dcf*/
   }
+}
 }
 // 0x7C7371
 void Render::DrawTileBitmap(int a1, unsigned short * a2, short a3, short a4, unsigned int a5, int a6)
@@ -1139,7 +1142,7 @@ void sub_731BF0()
     IsButtonDown = 1; /*0x731c5d*/
   if ( v1 && IsButtonDown ) /*0x731c66*/
   {
-    v3 = g_SelectionManager; /*0x731c68*/
+    v3 = (wchar_t *)(g_SelectionManager);
     v4 = 0; /*0x731c6e*/
     if ( (int)g_SelectionManager <= 0 ) /*0x731c72*/
       return 1; /*0x731ca2*/
@@ -1157,6 +1160,7 @@ void sub_731BF0()
   }
   return 0; /*0x731bfc*/
 }
+}
 // 0x777E00
 namespace gamemd {
 int sub_777E00()
@@ -1172,6 +1176,7 @@ int sub_777E00()
   if ( dword_B7355C ) /*0x777e25*/
     return ImmNotifyIME(dword_B7355C, 0x15u, 4u, 0); /*0x777e2d*/
   return result; /*0x777e32*/
+}
 }
 // 0x778030
 namespace gamemd {
@@ -1227,11 +1232,13 @@ void Render_Draw_778030(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
   }
   return 0; /*0x7780f9*/
 }
+}
 // 0x778120
 namespace gamemd {
 int sub_778120()
 {
   return dword_B73570; /*0x778125*/
+}
 }
 // 0x6CA310
 namespace gamemd {
@@ -1309,6 +1316,7 @@ WinModemClass * * Render_Parse_6CA310(CampaignScore * aP0, CCINIClass * aP1)
   Debug::Log(); /*0x6ca426*/
   return 0; /*0x6ca440*/
 }
+}
 // 0x6CA940
 namespace gamemd {
 void sub_6CA940(int a1, unsigned short * a2, int a3)
@@ -1348,6 +1356,7 @@ void sub_6CA940(int a1, unsigned short * a2, int a3)
     return 1; /*0x6ca9b1*/
   }
 }
+}
 // 0x53D850
 namespace gamemd {
 void sub_53D850()
@@ -1380,6 +1389,7 @@ void sub_53D850()
   for ( i = dword_AA0128 - 1; i >= 0; --i ) /*0x53d8c0*/
     result = ZBuffer::RenderSprite(*((ZBuffer **)dword_AA011C + i)); /*0x53d8cb*/
   return result; /*0x53d8d3*/
+}
 }
 // 0x5541C0
 namespace gamemd {
@@ -1419,6 +1429,7 @@ CampaignScore * * Render_Render_5541C0(unsigned short * a0, int a2, AbstractClas
   Rect::Inflate(v10, v11, dy); /*0x554252*/
   return DSurface::FillRectWithColor(v14, a2, 0, 0x9Fu); /*0x554269*/
 }
+}
 // 0x554280
 namespace gamemd {
 void Render_Render_554280(unsigned short * a0, AbstractClass * aP1, int * a2, unsigned short a4, char a5)
@@ -1448,6 +1459,7 @@ void Render_Render_554280(unsigned short * a0, AbstractClass * aP1, int * a2, un
            0,
            0,
            0);
+}
 }
 // 0x63B0A0
 namespace gamemd {
@@ -1483,6 +1495,7 @@ AbstractClass * * sub_63B0A0()
       ScriptAction::ProcessIdleAction((ScriptAction *)v6); /*0x63b141*/
   }
 }
+}
 // 0x642BB0
 namespace gamemd {
 void sub_642BB0(unsigned int a1)
@@ -1502,6 +1515,7 @@ void sub_642BB0(unsigned int a1)
     return *((unsigned int *)BuildingTypeClass_AnimTable + SessionClass::GetPlayerColorScheme(PlayerColor)); /*0x642c15*/
   }
   return result; /*0x642bec*/
+}
 }
 // 0x660000
 namespace gamemd {
@@ -1534,6 +1548,7 @@ void sub_660000()
     result = stru_B04DA8.LoadGame_field_0x10; /*0x66003e*/
   }
   return result; /*0x660049*/
+}
 }
 // 0x6603B0
 namespace gamemd {
@@ -1594,6 +1609,7 @@ void sub_6603B0()
     while ( v1 >= 0 ); /*0x6603ca*/
   }
 }
+}
 // 0x7760B0
 namespace gamemd {
 void Render_Render_7760B0(HDC hdc, const char * a2, LONG a3, LONG a4, char a5)
@@ -1639,6 +1655,7 @@ void Render_Render_7760B0(HDC hdc, const char * a2, LONG a3, LONG a4, char a5)
   }
   RestoreDC(hdc, -1); /*0x7761fc*/
   return v8; /*0x776204*/
+}
 }
 // 0x556D40
 namespace gamemd {

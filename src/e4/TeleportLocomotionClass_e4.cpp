@@ -11,13 +11,14 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/AbstractTypeClass_e4.hpp"
 
 // 0x718000
 TeleportLocomotionClass::TeleportLocomotionClass()
 {
   int v2; // ecx
 
-  LocomotionClass::Init((LocomotionClass *)this); /*0x718003*/
+  LocomotionClass::Init(); /*0x718003*/
   this->MovingDestination[0] = g_BuildingLoadQueue_Array.BuildLimit; /*0x718011*/
   this->MovingDestination[1] = g_BuildingLoadQueue_Array.Category[0]; /*0x71801a*/
   this->MovingDestination[2] = g_BuildingLoadQueue_Array.unknown_3C0[0]; /*0x718026*/

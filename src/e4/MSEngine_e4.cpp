@@ -89,6 +89,7 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
     return 1; /*0x5ace0b*/
   }
 }
+}
 // 0x5ACED0
 namespace gamemd {
 AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
@@ -165,6 +166,7 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
     this->m_10 = v12; /*0x5acfa4*/
   return 1; /*0x5acfa7*/
 }
+}
 // 0x5CEE60
 namespace gamemd {
 CampaignClass * * MSEngine::Destructor()
@@ -173,7 +175,7 @@ CampaignClass * * MSEngine::Destructor()
   void *v3; // eax
   void *MSEngine_field_0x4; // eax
 
-  SessionClass::Destruct((SessionClass *)this); /*0x5cee64*/
+  SessionClass::Destruct(); /*0x5cee64*/
   v2 = (void *)this->u32_48; /*0x5cee69*/
   this->u32_44 = (void*)&VectorClass_MSSfxEntry___vftable; /*0x5cee70*/
   if ( v2 && this->u32_51 ) /*0x5cee79*/
@@ -203,6 +205,7 @@ CampaignClass * * MSEngine::Destructor()
   IDA_BYTE1(this->MSEngine_field_0xC[0]) = 0; /*0x5ceedb*/
   this->MSEngine_field_0x8 = 0; /*0x5ceede*/
 }
+}
 // 0x5D1AA0
 namespace gamemd {
 unsigned int * MSEngine::Construct()
@@ -216,8 +219,8 @@ unsigned int * MSEngine::Construct()
   *((unsigned char *)p_MSEngine_field_0x8 + 12) = 1; /*0x5d1ab8*/
   *((unsigned char *)p_MSEngine_field_0x8 + 13) = 0; /*0x5d1abb*/
   *p_MSEngine_field_0x8 = (void*)&VectorClass_TRect_int_vftable; /*0x5d1abe*/
-  this->u32_1C = 0; /*0x5d1ac4*/
-  this->q008 = 0; /*0x5d1ac7*/
+  this->u32_1C = (unsigned int *)(0);
+  this->q008 = (unsigned int *)(0);
   this->u32_24 = 1; /*0x5d1aca*/
   this->u32_25 = 0; /*0x5d1acd*/
   this->u32_18 = (void*)&DynamicVectorClass_MSAnim___vftable; /*0x5d1ad0*/
@@ -237,6 +240,7 @@ unsigned int * MSEngine::Construct()
   (*(void (__thiscall **)(char *))(this->u32_18 + 12))((char *)&this->q0084); /*0x5d1b11*/
   (*(void (__thiscall **)(char *))(this->u32_C + 12))((char *)&this->q0108); /*0x5d1b18*/
   return this->__pad_0; /*0x5d1b1b*/
+}
 }
 // 0x5D1B30
 namespace gamemd {
@@ -473,6 +477,7 @@ int MSEngine::FindItem(unsigned int * a2)
   }
   return result; /*0x5ad003*/
 }
+}
 // 0x5AD4D0
 namespace gamemd {
 VectorClass_flat * MSEngine::QueryInterface(char a2)
@@ -489,7 +494,7 @@ VectorClass_flat * MSEngine::QueryInterface(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x5ad4fb*/
   this->m_8 = 0; /*0x5ad501*/
   if ( (a2 & 1) != 0 ) /*0x5ad508*/
-    RA2_OPDEL(this); /*0x5ad50b*/
+    RA2_OPDEL(); /*0x5ad50b*/
   return this->__pad_0; /*0x5ad515*/
 }
 } // namespace gamemd
@@ -510,7 +515,7 @@ DynamicVector * MSEngine::Constructor(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x5ad54b*/
   this->m_8 = 0; /*0x5ad551*/
   if ( (a2 & 1) != 0 ) /*0x5ad558*/
-    RA2_OPDEL(this); /*0x5ad55b*/
+    RA2_OPDEL(); /*0x5ad55b*/
   return this->__pad_0; /*0x5ad565*/
 }
 } // namespace gamemd

@@ -136,7 +136,7 @@ unsigned int * SessionClass::Load()
     {
       if ( g_GameMode_Current[0] ) /*0x552d36*/
       {
-        PlayerSide = (void *)SessionClass::GetPlayerSide(*(unsigned int *)Game_PlayerInfoArray); /*0x552d51*/
+        PlayerSide = (unsigned int *)((void *)SessionClass::GetPlayerSide(*(unsigned int *)Game_PlayerInfoArray));
         return PaletteManager::Load(PlayerSide); /*0x552d58*/
       }
       else
@@ -646,7 +646,7 @@ CampaignClass * * SessionClass::loadSettings()
   DeleteAndZero((ObjectClass *)this->unknown_0C); /*0x5d0169*/
   DeleteAndZero((ObjectClass *)this->unknown_08); /*0x5d0170*/
   DeleteAndZero((ObjectClass *)this->MPGameMode); /*0x5d0178*/
-  DeleteAndZero((ObjectClass *)this); /*0x5d017f*/
+  DeleteAndZero(); /*0x5d017f*/
 }
 } // namespace gamemd
 // 0x5D39D0
@@ -2489,7 +2489,7 @@ TypeList_flat * SessionClass::QueryInterface(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x69c6eb*/
   this->m_8 = 0; /*0x69c6f1*/
   if ( (a2 & 1) != 0 ) /*0x69c6f8*/
-    RA2_OPDEL(this); /*0x69c6fb*/
+    RA2_OPDEL(); /*0x69c6fb*/
   return this->__pad_0; /*0x69c705*/
 }
 // 0x69C710
@@ -2680,7 +2680,7 @@ VectorClass_flat * SessionClass::validateGame(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x69d48b*/
   this->m_8 = 0; /*0x69d491*/
   if ( (a2 & 1) != 0 ) /*0x69d498*/
-    RA2_OPDEL(this); /*0x69d49b*/
+    RA2_OPDEL(); /*0x69d49b*/
   return this->__pad_0; /*0x69d4a5*/
 }
 // 0x7B2720

@@ -74,6 +74,7 @@ int E4Recv_501750::sub_501750(int a2)
   }
   return result; /*0x5018ae*/
 }
+}
 // 0x504790
 namespace gamemd {
 void UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
@@ -89,7 +90,7 @@ void UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
   int v13; // [esp+18h] [ebp+8h]
 
   v4 = (int64_t)(0);
-  v5 = aP0; /*0x50479c*/
+  v5 = (IUnknown *)((int64_t)(aP0));
   if ( *(int *)(aP0 + 22036) > 0 ) /*0x5047a2*/
   {
     do /*0x5047c8*/
@@ -133,6 +134,7 @@ void UpdateHouseClassAnger(IUnknown * aP0, HouseClass * aP1, int a3, int a4)
     *(unsigned int *)(v5 + 22016) = -1; /*0x50484f*/
   return v5; /*0x50483f*/
 }
+}
 // 0x5004E0
 namespace gamemd {
 int House_GetTechLevel(int a1, int a2)
@@ -171,7 +173,7 @@ int globalHelper_005F80(int a1, int * a2, int a3, int a4)
   v5 = *((int16_t *)a2 + 1) - *(int16_t *)(a1 + 22354); /*0x505f9a*/
   v6 = (IDA_HIDWORD(v5) ^ v5) - IDA_HIDWORD(v5); /*0x505fa2*/
   v7 = abs32(v4); /*0x505fa7*/
-  if (v7 <= v6, unsigned int a5) /*0x505fab*/
+  if ( v7 <= v6 ) /*0x505fab*/
     v7 = v6; /*0x505fad*/
   return a3 + 1000 * v7; /*0x505fa1*/
 }

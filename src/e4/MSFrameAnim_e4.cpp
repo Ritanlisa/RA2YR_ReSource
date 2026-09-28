@@ -17,10 +17,11 @@ namespace gamemd {
 void * MSFrameAnim::QueryInterface(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&MSFrameAnim_vftable; /*0x769bd3*/
-  VtableStub::5CB6C0(this); /*0x769bd9*/
+  VtableStub::5CB6C0(); /*0x769bd9*/
   if ( (a2 & 1) != 0 ) /*0x769be3*/
-    RA2_OPDEL(this); /*0x769be6*/
+    RA2_OPDEL(); /*0x769be6*/
   return this->__pad_0; /*0x769bf0*/
+}
 }
 // 0x769FE0
 namespace gamemd {
@@ -115,6 +116,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   if ( v12 < this->m_10 ) /*0x76a0e4*/
     this->m_10 = v12; /*0x76a0e6*/
   return 1; /*0x76a0e9*/
+}
 }
 // 0x767ED0
 namespace gamemd {
@@ -243,9 +245,9 @@ namespace gamemd {
 rc_ptr * MSFrameAnim::resumeAnimation(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x769d93*/
-  ComPtr::Release((ComPtr *)this); /*0x769d99*/
+  ComPtr::Release(); /*0x769d99*/
   if ( (a2 & 1) != 0 ) /*0x769da3*/
-    RA2_OPDEL(this); /*0x769da6*/
+    RA2_OPDEL(); /*0x769da6*/
   return this->__pad_0; /*0x769db0*/
 }
 } // namespace gamemd
@@ -268,6 +270,7 @@ int MSFrameAnim::getCurrentFrame(int a2)
       return -1; /*0x76a121*/
   }
   return result; /*0x76a126*/
+}
 }
 // 0x76A2B0
 namespace gamemd {
@@ -336,6 +339,7 @@ int MSFrameAnim::resetAnimation(unsigned int * a2)
   }
   return result; /*0x76a382*/
 }
+}
 // 0x76A680
 namespace gamemd {
 DynamicVector * MSFrameAnim::setPosition(char a2)
@@ -352,7 +356,7 @@ DynamicVector * MSFrameAnim::setPosition(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x76a6ac*/
   this->m_8 = 0; /*0x76a6b2*/
   if ( (a2 & 1) != 0 ) /*0x76a6b9*/
-    RA2_OPDEL(this); /*0x76a6bc*/
+    RA2_OPDEL(); /*0x76a6bc*/
   return this->__pad_0; /*0x76a6c6*/
 }
 } // namespace gamemd
@@ -373,7 +377,7 @@ DynamicVector * MSFrameAnim::setScale(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x76a74b*/
   this->m_8 = 0; /*0x76a751*/
   if ( (a2 & 1) != 0 ) /*0x76a758*/
-    RA2_OPDEL(this); /*0x76a75b*/
+    RA2_OPDEL(); /*0x76a75b*/
   return this->__pad_0; /*0x76a765*/
 }
 } // namespace gamemd
@@ -382,7 +386,7 @@ DynamicVector * MSFrameAnim::setScale(char a2)
 namespace gamemd {
 unsigned int * MSFrameAnim::drawFrame()
 {
-  ComPtr::Constructor((ComPtr *)this); /*0x76a7c3*/
+  ComPtr::Constructor(); /*0x76a7c3*/
   *(unsigned int *)this->__pad_0 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a7c8*/
   return this->__pad_0; /*0x76a7d0*/
 }

@@ -11,6 +11,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/SpawnManagerClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
+#include "e4/classes/E4Recv_728A00_e4.hpp"
 
 // 0x52B620
 namespace gamemd {
@@ -132,13 +133,13 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     return 0; /*0x5388ae*/
   if ( !this->q00C ) /*0x5388b0*/
   {
-    qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5388c2*/
+    qsort(v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5388c2*/
     this->q010 = 0; /*0x5388ca*/
     this->q00C = 1; /*0x5388d1*/
   }
-  v4 = (unsigned int *)((int)(this->q004));
+  v4 = (int)(this->q004);
   v5 = (int)(*(unsigned int **)this);
-  v15 = *aP1; /*0x5388e4*/
+  v15 = (int)(*aP1);
   if ( v4 <= 0 ) /*0x5388e8*/
     return 0; /*0x5388e8*/
   while ( 1 ) /*0x5388f1*/
@@ -169,8 +170,8 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     v12 = ((unsigned int)(this->u32_20)) * i++; /*0x538940*/
     *(unsigned int *)(v12 - 8) = v11; /*0x538944*/
   }
-  v13 = (int)((unsigned int *)((gamemd::ObjectClass **)(*(unsigned int **)this)));
-  v14 = (gamemd::ObjectClass **)(this->q004 - 1);
+  v13 = (unsigned int *)((gamemd::ObjectClass **)(*(unsigned int **)this));
+  v14 = (int)((gamemd::ObjectClass **)(this->q004 - 1));
   this->q004 = (gamemd::ObjectClass **)(v14);
   v13[2 * v14] = 0; /*0x53895f*/
   v13[2 * v14 + 1] = 0; /*0x538962*/
@@ -198,7 +199,7 @@ int SortedArray::FindPair(int * a2)
     return 1; /*0x5389a6*/
   if ( !this->q00C ) /*0x5389a9*/
   {
-    qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5389bb*/
+    qsort(v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5389bb*/
     this->q010 = 0; /*0x5389c3*/
     this->q00C = 1; /*0x5389ca*/
   }

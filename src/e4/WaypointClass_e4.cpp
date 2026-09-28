@@ -20,7 +20,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
   int *v2; // ebp
   int v3; // ebx
   signed int v4; // esi
-  void * v5;
+  int v5; // eax
   int v6; // eax
   Array *v7; // ecx
   int v8; // edi
@@ -29,7 +29,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
   int v11; // eax
   WaypointPathClass ** result;
   unsigned int v13; // esi
-  void * v14;
+  int v14; // eax
   int v15; // eax
   signed int v16; // [esp+10h] [ebp-Ch]
   int16_t v18; // [esp+1Ah] [ebp-2h]
@@ -43,7 +43,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
   {
     if ( !*v2 ) /*0x50219f*/
     {
-      v5 = (void *)((int)(RA2_OPNEW(0x40u)));
+      v5 = (int)(RA2_OPNEW(0x40u));
       if ( v5 ) /*0x5021b1*/
         v6 = WaypointPathClass::Construct(v5, v4); /*0x5021b6*/
       else
@@ -63,7 +63,7 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
       v13 = this->padding_18[113]; /*0x502233*/
       if ( !this->padding_18[v13 + 114] ) /*0x502239*/
       {
-        v14 = (void *)((int)(RA2_OPNEW(0x40u)));
+        v14 = (int)(RA2_OPNEW(0x40u));
         if ( v14 ) /*0x502250*/
           v15 = WaypointPathClass::Construct(v14, v13); /*0x502255*/
         else
@@ -91,4 +91,5 @@ WaypointPathClass * * WaypointClass::FindOrAddPath(unsigned int * a2)
       goto LABEL_13; /*0x50221a*/
     }
   }
+}
 }

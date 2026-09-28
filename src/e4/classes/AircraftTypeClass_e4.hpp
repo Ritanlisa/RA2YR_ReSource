@@ -71,7 +71,7 @@ struct AircraftTypeClass {
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
     SHPStruct* AlphaImage;  // 0xAC
-    char MainVoxel[4];  // 0xB0
+    unsigned int MainVoxel;  // 0xB0
     char TurretVoxel[4];  // 0xB4
     char q0B8[4];  // 0xB8
     unsigned char q0B9;  // 0xB9
@@ -133,7 +133,7 @@ struct AircraftTypeClass {
     unsigned char q178;  // 0x178
     unsigned int q17C;  // 0x17C
     char q180[4];  // 0x180
-    char q184[4];  // 0x184
+    unsigned int q184;  // 0x184
     char q188[4];  // 0x188
     unsigned char q18C;  // 0x18C
     unsigned int q190;  // 0x190
@@ -203,7 +203,7 @@ struct AircraftTypeClass {
     bool q238;  // 0x238
     bool q239;  // 0x239
     bool q23A;  // 0x23A
-    unsigned int q23B;  // 0x23B
+    char q23B[3];  // 0x23B
     bool q23D;  // 0x23D
     unsigned char q23E;  // 0x23E
     int LineTrailColorDecrement;  // 0x240
@@ -287,7 +287,7 @@ struct AircraftTypeClass {
     unsigned char q340;  // 0x340
     unsigned int q344;  // 0x344
     unsigned int q348;  // 0x348
-    unsigned int Locomotor;  // 0x34C
+    char Locomotor[4];  // 0x34C
     unsigned char q350;  // 0x350
     unsigned int q354;  // 0x354
     unsigned char q358;  // 0x358
@@ -336,9 +336,9 @@ struct AircraftTypeClass {
     unsigned int BuildingTypeList_FlagByte;  // 0x3F5
     unsigned char q3F9;  // 0x3F9
     unsigned int q400;  // 0x400
-    char DeploysInto[4];  // 0x404
+    unsigned int DeploysInto;  // 0x404
     unsigned int UndeploysInto;  // 0x408
-    unsigned int PowersUnit;  // 0x40C
+    char PowersUnit[4];  // 0x40C
     bool PoweredUnit;  // 0x410
     unsigned int VoiceSelect;  // 0x414
     unsigned int IntList_B_Items;  // 0x418
@@ -507,7 +507,7 @@ struct AircraftTypeClass {
     AbstractClass* q65C;  // 0x65C
     int WalkRate;  // 0x660
     int IdleRate;  // 0x664
-    char VeteranAbilities[4];  // 0x668
+    unsigned int VeteranAbilities;  // 0x668
     unsigned char q66C;  // 0x66C
     int ThreatPosed;  // 0x670
     int Points;  // 0x674
@@ -897,7 +897,6 @@ struct AircraftTypeClass {
     bool qE0D;  // 0xE0D
     bool qE0E;  // 0xE0E
     unsigned char qE0F;  // 0xE0F
-    unsigned int gap0;
 // --- flat members (END) ---
     AircraftTypeClass(ObjectClass * aP1);
     AircraftClass * ConstructAircraft(AbstractClass * ppv);

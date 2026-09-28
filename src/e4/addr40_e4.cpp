@@ -77,7 +77,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   char *v3; // ebp
   char *v4; // eax
   char *v5; // eax
-  unsigned int * v6;
+  unsigned int *v6; // eax
   unsigned int *v7; // eax
   void *v8; // edi
   int v9; // eax
@@ -94,7 +94,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   char Str[260]; // [esp+8Ch] [ebp-244h] BYREF
   struct _WIN32_FIND_DATAA FindFileData; // [esp+190h] [ebp-140h] BYREF
 
-  v3 = (char *)((unsigned int)((char *)RA2_OPNEW(0x124u)));
+  v3 = (char *)((unsigned int *)((char *)RA2_OPNEW(0x124u)));
   memset(v3, 0, 0x124u); /*0x4011e5*/
   strcpy(Str, a1); /*0x401204*/
   v4 = strrchr(Str, 46); /*0x401215*/
@@ -197,6 +197,7 @@ AbstractClass * * LoadAudioFile(const char * a1, const char * a2)
   v19[0] = (int)&off_7E1668; /*0x4014c4*/
   BufferIOFileClass::Dtor(v19); /*0x4014cc*/
   return v3; /*0x4014d3*/
+}
 }
 // 0x401C00
 namespace gamemd {
@@ -428,6 +429,7 @@ ObjectClass * * sub_402990()
     dword_87DE2C = 0; /*0x402adf*/
   }
 }
+}
 // 0x402C70
 namespace gamemd {
 ObjectClass * * CreateAudioChannel(int a1, const void * a2)
@@ -543,6 +545,7 @@ ObjectClass * * CreateAudioChannel(int a1, const void * a2)
   ++v7[4]; /*0x402edb*/
   return v7; /*0x402cc5*/
 }
+}
 // 0x403210
 namespace gamemd {
 ObjectClass * * sub_403210()
@@ -599,6 +602,7 @@ ObjectClass * * sub_403210()
     *(unsigned int *)off_815E98[3].__pad_0 = 0; /*0x403302*/
   }
   return result; /*0x403305*/
+}
 }
 // 0x403FA0
 namespace gamemd {
@@ -699,6 +703,7 @@ void sub_403FA0()
   }
   dword_87E2A4 = 0; /*0x404122*/
   g_AudioConfigState = 0; /*0x404128*/
+}
 }
 // 0x4041D0
 namespace gamemd {
@@ -1028,6 +1033,7 @@ void Audio_Process()
   }
   return result; /*0x4046e0*/
 }
+}
 // 0x404BB0
 namespace gamemd {
 TechnoTypeClass * * E4Recv_404BB0::sub_404BB0()
@@ -1167,7 +1173,7 @@ int E4Recv_405AC0::sub_405AC0()
   v3 = (unsigned int *)AudioStream::SelectRandom((int)v2); /*0x405ad2*/
   if ( *(unsigned int *)(v2[9] + 92) < 0x21u ) /*0x405adb*/
     goto LABEL_2; /*0x405adb*/
-  BindChannelAudioStream(this, 0); /*0x405af0*/
+  BindChannelAudioStream(0); /*0x405af0*/
   v5 = v2[9]; /*0x405af5*/
   if ( (*(unsigned char *)(v5 + 16) & 0x88) == 0 || v3 || v2[154] ) /*0x405b02*/
   {
@@ -1175,13 +1181,14 @@ int E4Recv_405AC0::sub_405AC0()
     if ( v6 < 0x21 ) /*0x405b21*/
     {
   LABEL_2:
-      BindChannelAudioStream(this, v3); /*0x405add*/
+      BindChannelAudioStream(v3); /*0x405add*/
       return 0; /*0x405aeb*/
     }
     v2[79] = v6; /*0x405b32*/
     v2[82] = v3; /*0x405b38*/
   }
   return 0; /*0x405ae8*/
+}
 }
 // 0x405E80
 namespace gamemd {
@@ -1259,6 +1266,7 @@ unsigned int * E4Recv_405E80::sub_405E80()
   result[2] = 0; /*0x405fc3*/
   return result; /*0x405fc3*/
 }
+}
 // 0x406750
 namespace gamemd {
 int sub_406750()
@@ -1282,6 +1290,7 @@ INIClass * * E4Recv_406760::sub_406760(void (__thiscall *this)(char *) a1)
     sprintf(Buffer, "StaticSounds: %05d - Max: %05d", dword_B1D3A8, dword_B1D3AC);
     return a1(Buffer); /*0x4067ba*/
   }
+}
 }
 // 0x406B10
 namespace gamemd {
@@ -1380,6 +1389,7 @@ int E4Recv_406B10::InitializeAudioSubsystem()
   g_AudioInitialized = (int)this; /*0x406d1e*/
   return 1; /*0x406d29*/
 }
+}
 // 0x406EC0
 namespace gamemd {
 int sub_406EC0()
@@ -1402,6 +1412,7 @@ int sub_406EC0()
     }
   }
   return result; /*0x406ede*/
+}
 }
 // 0x406F40
 namespace gamemd {
@@ -1427,6 +1438,7 @@ int sub_406F40()
     }
   }
   return result; /*0x406f68*/
+}
 }
 // 0x406F70
 namespace gamemd {
@@ -1462,6 +1474,7 @@ void * AudioVideo_Update()
   }
   return result; /*0x406fed*/
 }
+}
 // 0x407040
 namespace gamemd {
 int sub_407040(int a1)
@@ -1489,6 +1502,7 @@ int sub_407040(int a1)
     }
   }
   return result; /*0x407056*/
+}
 }
 // 0x407B60
 namespace gamemd {
@@ -1709,6 +1723,7 @@ RawFileClass * * ThreadAudioMixerMain(unsigned int * a1, RawFileClass * a2, int 
   a1[3] = v41; /*0x407f14*/
   return 1; /*0x407ef2*/
 }
+}
 // 0x408610
 namespace gamemd {
 AbstractClass * * sub_408610(int a1, unsigned int * a2, size_t * a3)
@@ -1806,6 +1821,7 @@ AbstractClass * * sub_408610(int a1, unsigned int * a2, size_t * a3)
   }
   return v4; /*0x4087e1*/
 }
+}
 // 0x408970
 namespace gamemd {
 int E4Recv_408970::sub_408970()
@@ -1900,6 +1916,7 @@ int E4Recv_408970::sub_408970()
   *v11 += v1->abstractFlags; /*0x408a5a*/
   return result; /*0x408a5c*/
 }
+}
 // 0x408C30
 namespace gamemd {
 void AudioStream_AcquireBuffer(unsigned int * a1, int a2)
@@ -1977,6 +1994,7 @@ void AudioStream_AcquireBuffer(unsigned int * a1, int a2)
   }
   return result; /*0x408c6d*/
 }
+}
 // 0x408F80
 namespace gamemd {
 void sub_408F80(AudioStream * a1, int * a2, int a3, char * a4)
@@ -2030,6 +2048,7 @@ void sub_408F80(AudioStream * a1, int * a2, int a3, char * a4)
   while ( a3 ); /*0x408fae*/
   return 1; /*0x40900a*/
 }
+}
 // 0x409030
 namespace gamemd {
 void WriteAudioStreamToFile(MouseClass * aP0, FILE * a1, signed int arg0, char * a3)
@@ -2078,6 +2097,7 @@ void WriteAudioStreamToFile(MouseClass * aP0, FILE * a1, signed int arg0, char *
   }
   while ( arg0 ); /*0x40905e*/
   return 1; /*0x4090c7*/
+}
 }
 // 0x409100
 namespace gamemd {
@@ -2139,8 +2159,9 @@ int E4Recv_409100::sub_409100()
     this->vtable1 = 0; /*0x409198*/
   this->vtable2 = 0; /*0x40919f*/
   this->uniqueId &= ~1u; /*0x4091ac*/
-  ReadAudioStream((int *)this, 0); /*0x4091b1*/
+  ReadAudioStream(0); /*0x4091b1*/
   return v6; /*0x40910a*/
+}
 }
 // 0x4091C0
 namespace gamemd {
@@ -2237,6 +2258,7 @@ void ReadAudioStream(AudioStream * aP0, int a2)
     return 0; /*0x4091de*/
   }
 }
+}
 // 0x4093F0
 namespace gamemd {
 void long sub_4093F0()
@@ -2261,6 +2283,7 @@ void long sub_4093F0()
     v1 = stru_87E790.AudioStream_field_0xBC[0]; /*0x409453*/
   }
   return qword_816320; /*0x409466*/
+}
 }
 // 0x4095B0
 namespace gamemd {
@@ -2639,6 +2662,7 @@ void ProcessAudioStream(int * a1, int a2)
       v24);
   return v31; /*0x409c32*/
 }
+}
 // 0x40A090
 namespace gamemd {
 AudioController * * E4Recv_40A090::sub_40A090()
@@ -2727,6 +2751,7 @@ int DirectSound_CreateBuffer(int a1, int a2, short a3)
   }
   return result; /*0x40a83d*/
 }
+}
 // 0x40A850
 namespace gamemd {
 void sub_40A850()
@@ -2772,6 +2797,7 @@ void sub_40A850()
   }
   return result; /*0x40a8f6*/
 }
+}
 // 0x40A900
 namespace gamemd {
 int sub_40A900(int a1)
@@ -2785,6 +2811,7 @@ int sub_40A900(int a1)
     v1 = 0; /*0x40a92b*/
   return dword_816380[v1]; /*0x40a926*/
 }
+}
 // 0x40A940
 namespace gamemd {
 void sub_40A940()
@@ -2796,6 +2823,7 @@ void sub_40A940()
     return (*(int (__stdcall **)(unsigned int))(**(unsigned int **)&stru_87E790.__pad_D8[56] + 72))(*(unsigned int *)&stru_87E790.__pad_D8[56]); /*0x40a94c*/
   return result; /*0x40a94f*/
 }
+}
 // 0x40D220
 namespace gamemd {
 void sub_40D220()
@@ -2803,12 +2831,14 @@ void sub_40D220()
   if ( dword_87F7B8 ) /*0x40d227*/
     (*(void (__stdcall **)(int))(*(unsigned int *)dword_87F7B8 + 8))(dword_87F7B8); /*0x40d22c*/
 }
+}
 // 0x40D330
 namespace gamemd {
 void unknown_libname_3()
 {
   if ( IDA_LODWORD(dbl_884D88) || IDA_HIDWORD(dbl_884D88) != 1072693248 ) /*0x5b1e2c*/
     timeEndPeriod(1u); /*0x5b1e30*/
+}
 }
 // 0x40E3E0
 namespace gamemd {
@@ -2875,8 +2905,9 @@ void * E4Recv_40E3E0::sub_40E3E0(char a2)
     }
   }
   if ( (a2 & 1) != 0 ) /*0x40e481*/
-    RA2_OPDEL(this); /*0x40e484*/
+    RA2_OPDEL(); /*0x40e484*/
   return &this->vtable; /*0x40e48e*/
+}
 }
 // 0x40E4C0
 namespace gamemd {
@@ -2943,8 +2974,9 @@ void * E4Recv_40E4C0::sub_40E4C0(char a2)
     }
   }
   if ( (a2 & 1) != 0 ) /*0x40e561*/
-    RA2_OPDEL(this); /*0x40e564*/
+    RA2_OPDEL(); /*0x40e564*/
   return &this->vtable; /*0x40e56e*/
+}
 }
 // 0x40F290
 namespace gamemd {
@@ -2952,6 +2984,7 @@ void unknown_libname_11()
 {
   if ( dword_887464 ) /*0x6c89d5*/
     RA2_OPDEL((void *)dword_887464); /*0x6c89d8*/
+}
 }
 // 0x4010C0
 namespace gamemd {
@@ -3182,11 +3215,13 @@ void sub_402020(unsigned int* a1)
 {
   return a1->abstractFlags; /*0x402023*/
 }
+}
 // 0x402430
 namespace gamemd {
 void sub_402430(unsigned int* a1)
 {
   return a1->location[2] & 8; /*0x402439*/
+}
 }
 // 0x402440
 namespace gamemd {
@@ -3220,7 +3255,7 @@ int E4Recv_4026C0::sub_4026C0()
 {
   (*(void (**)(void))(this->u32_35 + 40))(); /*0x4026c9*/
   this->location[2] |= 0x10u; /*0x4026d5*/
-  return (*(int (__thiscall **)(ObjectClass *))(*((unsigned int *)this + 53) + 44))(this);
+  return ();
 }
 } // namespace gamemd
 
@@ -3304,7 +3339,7 @@ void E4Recv_402EF0::sub_402EF0()
   this->v5 = v5; /*0x402f40*/
   if ( v5 < 0 ) /*0x402f43*/
     *(unsigned int *)(this->nextArrayIndex + 16) = 0; /*0x402f48*/
-  RA2_OPDEL(this); /*0x402f50*/
+  RA2_OPDEL(); /*0x402f50*/
 }
 } // namespace gamemd
 
@@ -3398,11 +3433,13 @@ void sub_403810(int (**a1)(void))
 {
   return (*((int (**)(void))this + 67))();
 }
+}
 // 0x4038E0
 namespace gamemd {
 void sub_4038E0(unsigned long long* a1, unsigned long long a2)
 {
   return (uint64_t)(a2 - *(unsigned long long *)&a1->owningHouseIndex) >= *(unsigned long long *)&a1->vtable0; /*0x403903*/
+}
 }
 // 0x4039C0
 namespace gamemd {
@@ -4328,7 +4365,7 @@ int sub_407020()
 namespace gamemd {
 int E4Recv_407060::sub_407060()
 {
-  return RequestBufferMixer((unsigned int *)this, 0x4000);
+  return RequestBufferMixer(0x4000);
 }
 } // namespace gamemd
 
@@ -6983,7 +7020,7 @@ GenericNode * GenericNode::sub_40E390(char a2)
     }
   }
   if ( (a2 & 1) != 0 ) /*0x40e3c4*/
-    RA2_OPDEL(this); /*0x40e3c7*/
+    RA2_OPDEL(); /*0x40e3c7*/
   return this->__pad_0; /*0x40e3d1*/
 }
 // 0x40E4A0

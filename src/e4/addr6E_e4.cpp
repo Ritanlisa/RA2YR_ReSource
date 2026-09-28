@@ -54,6 +54,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/TechnoClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Timer_e4.hpp"
 
 // 0x6E0250
 namespace gamemd {
@@ -62,6 +64,7 @@ int E4Recv_6E0250::sub_6E0250(int a2, int a3, int a4, int a5)
   IDA_HIBYTE(unk_A8B230[374].vtable3) = this->isAliveFlag; /*0x6e025c*/
   return 1; /*0x6e0264*/
 }
+}
 // 0x6E0270
 namespace gamemd {
 int E4Recv_6E0270::sub_6E0270(int a2, int a3, int a4, int a5)
@@ -69,12 +72,14 @@ int E4Recv_6E0270::sub_6E0270(int a2, int a3, int a4, int a5)
   IDA_BYTE2(unk_A8B230[374].vtable3) = this->isAliveFlag; /*0x6e027c*/
   return 1; /*0x6e0284*/
 }
+}
 // 0x6E0290
 namespace gamemd {
 int E4Recv_6E0290::sub_6E0290(int a2, int a3, int a4, int a5)
 {
   IDA_LOBYTE(unk_A8B230[374].uniqueId) = this->isAliveFlag; /*0x6e029c*/
   return 1; /*0x6e02a4*/
+}
 }
 // 0x6E2050
 namespace gamemd {
@@ -85,7 +90,7 @@ void globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
   int v6; // edi
   int *v7; // esi
   unsigned int *v8; // ecx
-  void * v9;
+  int v9; // edx
   int16_t *v10; // esi
   int v11; // edi
   int v12; // eax
@@ -162,6 +167,7 @@ void globalHelper_0E2050(void * a1, void * a2, void * a3, void * a4)
   }
   return v15; /*0x6e21b8*/
 }
+}
 // 0x6E2790
 namespace gamemd {
 int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
@@ -183,6 +189,7 @@ int E4Recv_6E2790::sub_6E2790(int a2, int a3, int a4, int a5)
   }
   Tactical::SetTacticalPosition((TacticalClass *)g_TacticalClass_Instance, v8); /*0x6e2836*/
   return 1; /*0x6e283d*/
+}
 }
 // 0x6E30C0
 namespace gamemd {
@@ -213,6 +220,7 @@ void CreateHouseClass(void * a1, void * a2, void * a3, void * a4, void * a5, voi
   HouseClass::RespawnStartingForces(v10, a2, a3, (int)v7); /*0x6e3108*/
   return 1; /*0x6e3102*/
 }
+}
 // 0x6E3380
 namespace gamemd {
 int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
@@ -223,8 +231,8 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   int v9; // [esp+8h] [ebp-8h]
   int GroundHeight; // [esp+Ch] [ebp-4h]
 
-  v7 = (int)((unsigned int *)(*ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->M68)));
-  GroundHeight = (unsigned int *)(0);
+  v7 = (unsigned int *)(*ScenarioClass::Get_Waypoint_Location((char *)g_ScenarioClass_Instance, &v7, this->M68));
+  GroundHeight = (int)((unsigned int *)(0));
   v9 = (unsigned int *)((IDA_SHIWORD(v7) << 8) + 128);
   v8 = ((int16_t)v7 << 8) + 128; /*0x6e33ca*/
   GroundHeight = Cell::GetGroundHeight(&v8); /*0x6e33d5*/
@@ -232,6 +240,7 @@ int E4Recv_6E3380::sub_6E3380(int a2, int a3, int a4, int a5)
   if ( v5 ) /*0x6e33e3*/
     ActionQueue::PushEntry(v5, v8, v9, GroundHeight); /*0x6e3400*/
   return 1; /*0x6e3407*/
+}
 }
 // 0x6E37F0
 namespace gamemd {
@@ -296,6 +305,7 @@ void sub_6E4090(int a1, int a2, int a3, int a4)
   }
   BuildingClass::UnloadUnits((int *)v5, 0, 0); /*0x6e40f2*/
   return 1; /*0x6e40e3*/
+}
 }
 // 0x6EC250
 namespace gamemd {
@@ -379,17 +389,17 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
   FootClass * v9;
   int v10; // ecx
   unsigned int *v11; // eax
-  HouseClass * v12;
+  int v12; // edx
   unsigned int *v13; // eax
-  HouseClass * v14;
+  int v14; // edx
   int TileData; // eax
-  FootClass * v16;
+  int v16; // ecx
   int v17; // edi
   int v18; // ebx
   int v19; // ecx
   int v20; // edx
   double v21; // st7
-  FootClass * v22;
+  int v22; // eax
   int v23; // edi
   int v24; // ebx
   int v25; // ecx
@@ -430,7 +440,7 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
   }
   do /*0x6eee55*/
   {
-    v7 = (unsigned int *)*((unsigned int *)g_BuildingClass_InstanceCount + v5); /*0x6eec1a*/
+    v7 = (int)((unsigned int *)*((unsigned int *)g_BuildingClass_InstanceCount + v5));
     v8 = (void *)v7[135]; /*0x6eec1d*/
     v30 = v8 == a1; /*0x6eec30*/
     if ( v7[328] != ecx0 ) /*0x6eec34*/
@@ -525,6 +535,7 @@ unsigned int * DamageMapClassArea(int ecx0, void * a1, FootClass * aP2, int a4, 
     goto LABEL_22; /*0x6eee6d*/
   return result; /*0x6eee7a*/
 }
+}
 // 0x6EFC70
 namespace gamemd {
 AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1, int a3)
@@ -566,8 +577,8 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
     v20->needsRedraw = 1; /*0x6efcd5*/
     return; /*0x6efce0*/
   }
-  owner = i->owner; /*0x6efce3*/
-  v8 = 0; /*0x6efce9*/
+  owner = (gamemd::HouseClass *)((int)(i->owner));
+  v8 = (int)(0);
   lastBuiltInfantryType = owner->lastBuiltInfantryType; /*0x6efcf0*/
   if ( lastBuiltInfantryType <= 0 ) /*0x6efcf8*/
     goto LABEL_16; /*0x6efcf8*/
@@ -643,6 +654,7 @@ AbstractClass * * E4Recv_6EFC70::ProcessAISuperWeaponSelection(ScriptClass * aP1
     __asm { fstp st } /*0x6efe40*/
     v20->needsRedraw = 1; /*0x6efe42*/
   }
+}
 }
 // 0x6E0030
 namespace gamemd {

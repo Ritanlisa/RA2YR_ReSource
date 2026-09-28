@@ -12,6 +12,8 @@
 #include "e4/classes/VectorClass_ptr_BuildChoiceClass_int_ouseClass_e4.hpp"
 #include "e4/classes/VectorClass_ptr_ColorScheme_e4.hpp"
 #include "e4/classes/VectorClass_Ptr_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/VectorClass_e_e4.hpp"
 
 // 0x5862C0
 namespace gamemd {
@@ -24,11 +26,11 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
   int v7; // eax
   int v8; // ecx
   unsigned int v9; // eax
-  unsigned int v10;
+  CellClass *v10; // eax
   int v12; // [esp+14h] [ebp+4h]
 
   v3 = (int)(aP0[1]);
-  v4 = a2 + v3; /*0x5862d2*/
+  v4 = (int)(a2 + v3);
   v5 = v3 - a2; /*0x5862d4*/
   if ( v5 > v4 ) /*0x5862d8*/
     return 0; /*0x58633f*/
@@ -48,16 +50,17 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
   {
     v9 = (unsigned int)(((int16_t)v5 << 9) + (int16_t)v8);
     IDA_LOWORD(v12) = v8; /*0x5862fd*/
-    if ( v9 >= 0x40000 || (v10 = *(unsigned int **)(g_Shroud_CellArray + 4 * v9)) == 0 ) /*0x586311*/
+    if ( v9 >= 0x40000 || (v10 = *(CellClass **)(dword_87F924 + 4 * v9)) == 0 ) /*0x586311*/
     {
-      g_Map_GlobalCellIndex = (int)((unsigned int *)(v12));
-      v10 = g_CellClassArray; /*0x58631c*/
+      dword_ABDC74 = (unsigned int)((gamemd::CellClass *)(v12));
+      v10 = (gamemd::CellClass *)(&unk_ABDC50);
     }
-    if ( v10[57] ) /*0x586321*/
+    if ( v10->firstObject ) /*0x586321*/
       return 1; /*0x58633f*/
     if ( ++v8 > a2 + *aP0 ) /*0x586332*/
       goto LABEL_9; /*0x586332*/
   }
+}
 }
 // 0x74EEE0
 int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2)
@@ -93,8 +96,8 @@ int VeinholeMonsterClass::StubReturn264()
 // 0x74F340
 VeinholeMonsterClass * VeinholeMonsterClass::SpreadTiberium(char a2)
 {
-  DestroyVeinholeMonster(this); /*0x74f343*/
+  DestroyVeinholeMonster(); /*0x74f343*/
   if ( (a2 & 1) != 0 ) /*0x74f34d*/
-    RA2_OPDEL(this); /*0x74f350*/
+    RA2_OPDEL(); /*0x74f350*/
   return (void **)this; /*0x74f35a*/
 }

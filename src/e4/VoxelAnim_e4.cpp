@@ -406,7 +406,7 @@ LABEL_11:
             unsigned int * v19 = (unsigned int *)(*(int (__thiscall **)(unsigned char *, int *, unsigned int))(*(unsigned int *)v18 + 76))(v18, &v160, 0);
             IDA_LOWORD(a2) = *v19 / 256;
             unsigned int v20 = (unsigned int)(IDA_HIWORD(a2) = v19[1] / 256);
-            unsigned int * v21 = (unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)(IDA_LODWORD(v154) = a2)))))))))))))))));
+            unsigned int * v21 = (unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)((unsigned int)(IDA_LODWORD(v154) = a2)))))))))))))))))));
             v152 = (unsigned int *)(v20);
             char v149 = (*(int (__thiscall **)(unsigned int *))(*v20 + 800))(v20);
             int v22 = *((unsigned int *)CellCoord::To_CellObj(&DataGlobal_87F7E8, (int16_t *)&v153) + 80) >> 8;

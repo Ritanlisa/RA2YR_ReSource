@@ -48,9 +48,9 @@ MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&MechLocomotionClass_vftable; /*0x5b1b53*/
   *(unsigned int *)&this->__pad_0[4] = (void*)&MechLocomotionClass_vftable; /*0x5b1b59*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x5b1b60*/
+  LocomotionClass::Construct(); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
-    RA2_OPDEL(this); /*0x5b1b6d*/
+    RA2_OPDEL(); /*0x5b1b6d*/
   return this->__pad_0; /*0x5b1b77*/
 }
 } // namespace gamemd

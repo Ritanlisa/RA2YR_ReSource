@@ -14,8 +14,8 @@ int Particle::Init(AbstractClass * aP1, TechnoClass * aP2, IUnknown * aP3, Techn
   AbstractClass * result;
 
   result = (gamemd::AbstractClass *)((void *)(aP1));
-  this->q10C = aP2; /*0x4664c8*/
-  this->q110 = a7; /*0x4664d2*/
+  this->q10C = (void *)(aP2);
+  this->q110 = (void *)(a7);
   this->q128 = aP5; /*0x4664dc*/
   this->q0E0 = aP7; /*0x4664e6*/
   this->q06C = aP4; /*0x4664f6*/

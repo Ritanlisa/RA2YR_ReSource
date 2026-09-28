@@ -10,20 +10,9 @@ struct Surface {
     void* vtable1;  // 0x0
     int Width;  // 0x4
     int Height;  // 0x8
+    unsigned int u32_B;  // 0xB
     unsigned int LockCount;
-    unsigned int __pad_0;
     unsigned int q00C;
-    unsigned int u32_104;
-    unsigned int u32_1224;
-    unsigned int u32_1228;
-    unsigned int u32_1234;
-    unsigned int u32_123C;
-    unsigned int u32_1240;
-    unsigned int u32_1244;
-    unsigned int u32_1490;
-    unsigned int u32_1498;
-    unsigned int u32_24C;
-    unsigned int u32_6D3;
 // --- flat members (END) ---
     AbstractClass * * LoadToSurfaceSHP(char * Source);
     LPDIRECTDRAW CreateSurfacePalette();

@@ -15,6 +15,7 @@
 #include "e4/classes/HashTable_flat_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/InfantryTypeClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x5FB320
 namespace gamemd {
@@ -546,4 +547,5 @@ void sub_5FC120(int a1, int a2, int * a3)
     goto LABEL_7; /*0x5fc14e*/
   }
   return a1 + 8 * (v3 / 2); /*0x5fc154*/
+}
 }

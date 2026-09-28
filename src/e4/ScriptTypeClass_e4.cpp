@@ -105,9 +105,9 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2)
       ++v3; /*0x691ffd*/
     }
   }
-  AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x692011*/
+  AbstractTypeClass::Dtor(); /*0x692011*/
   if ( (a2 & 1) != 0 ) /*0x69201b*/
-    RA2_OPDEL(this); /*0x69201e*/
+    RA2_OPDEL(); /*0x69201e*/
   return &this->vtable0; /*0x692028*/
 }
 } // namespace gamemd

@@ -44,6 +44,8 @@
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/TActionClass_e4.hpp"
 #include "e4/classes/TClassFactory_CampaignClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x52A9E0
 namespace gamemd {
@@ -96,6 +98,7 @@ unsigned char * sub_52A9E0(unsigned char * a1, unsigned int * a2, unsigned int *
   *a4 &= ((*a4 & 0x80000000) != 0) - 1; /*0x52aa79*/
   return result; /*0x52aa75*/
 }
+}
 // 0x52B750
 namespace gamemd {
 void System_Search(ObjectClass * aP0, int edx0, int * a2)
@@ -126,11 +129,12 @@ void System_Search(ObjectClass * aP0, int edx0, int * a2)
   }
   return aP0 + 8 * (v3 / 2); /*0x52b784*/
 }
+}
 // 0x6269A0
 namespace gamemd {
 void sub_6269A0()
 {
-  unsigned int v1;
+  FileSystem * v1;
   FileSystem *v2; // eax
   FileSystem *v3; // edi
   StringVector *v4; // eax
@@ -140,7 +144,7 @@ void sub_6269A0()
   DynamicVectorArray *v8; // eax
   int v9; // esi
   int v10; // edi
-v1 = (gamemd::FileSystem *)(g_FileExtensionState);
+v1 = (unsigned int)((gamemd::FileSystem *)(g_FileExtensionState));
   if ( !g_FileExtensionState ) /*0x6269a9*/
   {
     v2 = (FileSystem *)RA2_OPNEW(0x10u); /*0x6269b1*/
@@ -159,7 +163,7 @@ v1 = (gamemd::FileSystem *)(g_FileExtensionState);
       }
       else
       {
-        v5 = (unsigned int)(0);
+        v5 = (gamemd::StringVector *)((unsigned int)(0));
       }
       *(unsigned int *)&v3[4] = v5; /*0x6269fe*/
       v6 = (VectorClass *)RA2_OPNEW(0x18u); /*0x626a01*/
@@ -204,6 +208,7 @@ v1 = (gamemd::FileSystem *)(g_FileExtensionState);
   (*(void (__thiscall **)(unsigned int))(**(unsigned int **)&v1[4] + 12))(*(unsigned int *)&v1[4]); /*0x626a99*/
   return (*(int (__thiscall **)(unsigned int))(**(unsigned int **)&g_FileExtensionState[8] + 12))(*(unsigned int *)&g_FileExtensionState[8]); /*0x626aa9*/
 }
+}
 // 0x626AB0
 namespace gamemd {
 void sub_626AB0(const char * a1, int a2)
@@ -219,7 +224,7 @@ void sub_626AB0(const char * a1, int a2)
   int v10; // esi
   int v11; // eax
   int v12; // ecx
-  char * v13;
+  int v13; // eax
   int v14; // edx
   int v15; // esi
   int v16; // ecx
@@ -232,11 +237,11 @@ void sub_626AB0(const char * a1, int a2)
   if ( !g_FileExtensionState ) /*0x626ac5*/
   {
     v2 = (unsigned int *)(RA2_OPNEW(0x10u));
-    v3 = (unsigned int *)(v2);
+    v3 = (unsigned int)(v2);
     if ( v2 ) /*0x626ad9*/
     {
       *v2 = (unsigned int *)(-1);
-      v4 = RA2_OPNEW(0x18u); /*0x626ae8*/
+      v4 = (unsigned int *)(RA2_OPNEW(0x18u));
       v5 = v4; /*0x626aed*/
       if ( v4 ) /*0x626af9*/
       {
@@ -250,7 +255,7 @@ void sub_626AB0(const char * a1, int a2)
         v5 = (unsigned int)(0);
       }
       v3[1] = (unsigned int *)(v5);
-      v6 = RA2_OPNEW(0x18u); /*0x626b1f*/
+      v6 = (unsigned int *)(RA2_OPNEW(0x18u));
       v7 = v6; /*0x626b24*/
       if ( v6 ) /*0x626b2b*/
       {
@@ -276,7 +281,7 @@ void sub_626AB0(const char * a1, int a2)
       g_FileExtensionState = 0; /*0x626b84*/
     }
   }
-  v9 = (unsigned int)((char *)RA2_OPNEW(0x100u));
+  v9 = (char *)RA2_OPNEW(0x100u); /*0x626b9c*/
   strcpy(v9, a1); /*0x626bb5*/
   v10 = *((unsigned int *)g_FileExtensionState + 1); /*0x626bc4*/
   v11 = *(unsigned int *)(v10 + 8); /*0x626bc7*/
@@ -309,6 +314,7 @@ void sub_626AB0(const char * a1, int a2)
   }
   return v17; /*0x626c57*/
 }
+}
 // 0x7C8F46
 namespace gamemd {
 int sub_7C8F46()
@@ -320,6 +326,7 @@ int sub_7C8F46()
   result = _setdefaultprecision(); /*0x7c8f55*/
   __asm { fnclex } /*0x7c8f5a*/
   return result; /*0x7c8f5c*/
+}
 }
 // 0x7A2EA0
 namespace gamemd {
@@ -346,18 +353,19 @@ void sub_7A2EA0(int (__stdcall ***a1)(unsigned int, void *, int *) a1, int a2, i
     (*(void (__stdcall **)(int))(*(unsigned int *)v8 + 8))(v8); /*0x7a2f16*/
   return v5; /*0x7a2f1b*/
 }
+}
 // 0x68C9C0
 namespace gamemd {
 AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectClass * aP3, int a4, int a5)
 {
-  int v6; // esi
+  unsigned int * v6;
   unsigned int v7;
   bool v8; // zf
   char *v9; // eax
 
   while ( 1 ) /*0x68c9d8*/
   {
-    v6 = (unsigned int *)(0);
+    v6 = (int)((unsigned int *)(0));
     if ( g_AnimClass_SaveState > 0 ) /*0x68c9dc*/
       break; /*0x68c9dc*/
   LABEL_6:
@@ -368,13 +376,14 @@ AbstractClass * * System_Read_68C9C0(BlowStraw * aP0, ObjectClass * a1, ObjectCl
   v7 = BuildingTypeClass_AnimTable; /*0x68c9de*/
   while ( 1 ) /*0x68c9f6*/
   {
-    v8 = (gamemd::AbstractClass **)((gamemd::AbstractClass **)((gamemd::AbstractClass **)(_strcmpi(aP0, *(const void **)(v7[v6] + 772)) == 0)));
-    v7 = BuildingTypeClass_AnimTable; /*0x68c9f8*/
+    v8 = (unsigned int)((gamemd::AbstractClass **)(_strcmpi(aP0, *(const void **)(v7[v6] + 772)) == 0));
+    v7 = (gamemd::AbstractClass **)(BuildingTypeClass_AnimTable);
     if ( v8 && *(unsigned int *)(*((unsigned int *)BuildingTypeClass_AnimTable + v6) + 784) == a5 ) /*0x68ca08*/
       return v6; /*0x68ca40*/
     if ( ++v6 >= g_AnimClass_SaveState ) /*0x68ca13*/
       goto LABEL_6; /*0x68ca13*/
   }
+}
 }
 // 0x5BDB90
 namespace gamemd {
@@ -407,7 +416,7 @@ DynamicVector * System_Init()
     g_MultiplayerGameList = 0; /*0x5d5b05*/
     atexit(MultiplayerConfig::Cleanup); /*0x5d5b0a*/
   }
-  return &g_MultiplayerModeConfig; /*0x5d5b17*/
+  return (gamemd::DynamicVector *)(&g_MultiplayerModeConfig);
 }
 } // namespace gamemd
 
@@ -436,7 +445,7 @@ char sub_72C9C0()
 {
   char result; // al
 
-  result = (unsigned int)(byte_B0FCF1);
+  result = byte_B0FCF1; /*0x72c9c0*/
   if ( !byte_B0FCF1 ) /*0x72c9c7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c9d3*/

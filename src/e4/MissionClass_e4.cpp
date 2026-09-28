@@ -24,7 +24,7 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
   unsigned int v10;
   void *vtable0; // eax
   unsigned int v13;
-  AbstractClass ** abstractFlags;
+  int abstractFlags; // ecx
 
   INIClass::ResetSection((INIClass *)a2); /*0x5b376a*/
   if ( this->vtable0 == (void *)-1 ) /*0x5b3774*/
@@ -117,8 +117,8 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
   }
   if ( (_AX & 0x4000) != 0 ) /*0x5b38f0*/
   {
-    abstractFlags = (int)((gamemd::AbstractClass **)(this->abstractFlags));
-    this->nextArrayIndex = (unsigned int)((gamemd::AbstractClass **)(this->uniqueId));
+    abstractFlags = this->abstractFlags; /*0x5b38f5*/
+    this->nextArrayIndex = this->uniqueId; /*0x5b38f8*/
     this->referenceCount = abstractFlags; /*0x5b38fb*/
   }
   return (gamemd::AbstractClass **)(1);

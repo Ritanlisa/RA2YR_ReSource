@@ -27,7 +27,7 @@ SpawnManagerClass::SpawnManagerClass(TechnoClass * aP1, int a3, int a4, int a5, 
   int v20; // [esp+14h] [ebp-8h]
   int i; // [esp+20h] [ebp+4h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6b6c99*/
+  AbstractClass::Constructor(); /*0x6b6c99*/
   SpawnControlVector::Constructor(0, 0); /*0x6b6ca7*/
   this->spawns = (void*)&DynamicVectorClass_SpawnManagerClass_SpawnControl___vftable; /*0x6b6cb0*/
   this->q04C = 10; /*0x6b6cb6*/
@@ -114,7 +114,7 @@ void* SpawnManagerClass::Constructor()
   int v2; // eax
   int v4; // [esp+10h] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6b6ea8*/
+  AbstractClass::Constructor(); /*0x6b6ea8*/
   SpawnControlVector::Constructor((SpawnControlVector *)this->spawns, 0, 0); /*0x6b6eb6*/
   this->spawns[0] = (int)&DynamicVectorClass_SpawnManagerClass_SpawnControl___vftable; /*0x6b6ebb*/
   *(unsigned int *)&this->__pad_48[4] = 10; /*0x6b6ec1*/
@@ -168,7 +168,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   this->vtable3 = (int)((void*)&SpawnManagerClass_vftable);
   this->vtable4 = (void*)&SpawnManagerClass_vftable; /*0x6b7029*/
   if ( unk_A8E9A0 ) /*0x6b7037*/
-    TaskManager::Update(this); /*0x6b7039*/
+    TaskManager::Update(); /*0x6b7039*/
   for ( i = this->q048 - 1; i >= 0; --i ) /*0x6b7042*/
   {
     if ( *(unsigned int *)(this->spawnVectorCount + 4 * i) ) /*0x6b7047*/
@@ -196,7 +196,7 @@ void SpawnManagerClass::Constructor_SpawnManagerClass()
   }
   this->u8_45 = 0; /*0x6b70e3*/
   this->spawnVectorCapacity = 0; /*0x6b70e7*/
-  AbstractClass::DTOR((AbstractClass *)this); /*0x6b70ee*/
+  AbstractClass::DTOR(); /*0x6b70ee*/
 }
 } // namespace ra2
 
@@ -284,7 +284,7 @@ int SpawnManagerClass::PowerDrainUpdate(int a2)
   TechnoClass *owner; // esi
   int v14; // eax
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x6b7de9*/
+  AbstractClass::ProcessPower(); /*0x6b7de9*/
   Power::TimerProcess(this->SpawnManagerClass_field_70); /*0x6b7df4*/
   SpawnManagerClass_field_6C = this->SpawnManagerClass_field_6C; /*0x6b7df9*/
   if ( SpawnManagerClass_field_6C ) /*0x6b7dfe*/
@@ -346,7 +346,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
   int v5; // edi
   int *spawns; // esi
   int v7; // eax
-  int v8; // eax
+  void * v8;
   int v9; // ecx
   int spawnVectorCapacity; // ecx
   int v11; // eax
@@ -407,10 +407,10 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
       {
         while ( 1 ) /*0x6b7fc8*/
         {
-          v8 = (int)(RA2_OPNEW(0x18u));
+          v8 = (void *)((int)(RA2_OPNEW(0x18u)));
           if ( v8 ) /*0x6b7fd2*/
           {
-            v9 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x6b7fd4*/
+            v9 = (int)(*(unsigned int *)&stru_A8EB00.gapE4[416]);
             *(unsigned int *)(v8 + 16) = 0; /*0x6b7fda*/
             *(unsigned int *)(v8 + 8) = v9; /*0x6b7fdd*/
             v5 = v8; /*0x6b7fe0*/
@@ -427,7 +427,7 @@ AbstractClass * * SpawnManagerClass::LoadFromStream(int aP1, AbstractClass * aP1
                  spawnVectorCapacity + v11,
                  0) )
           {
-            v12 = *(unsigned int *)v2->__pad_48; /*0x6b8027*/
+            v12 = (int)(*(unsigned int *)v2->__pad_48);
             spawnVectorCount = v2->spawnVectorCount; /*0x6b802a*/
             *(unsigned int *)v2->__pad_48 = v12 + 1; /*0x6b8030*/
             *(unsigned int *)(spawnVectorCount + 4 * v12) = v5; /*0x6b8033*/
@@ -511,9 +511,9 @@ int SpawnManagerClass::StubReturn65()
 namespace gamemd {
 SpawnManagerClass * SpawnManagerClass::ProcessEvent(char a2)
 {
-  SpawnManagerClass::Constructor_SpawnManagerClass((TaskManager *)this); /*0x6b8143*/
+  SpawnManagerClass::Constructor_SpawnManagerClass(); /*0x6b8143*/
   if ( (a2 & 1) != 0 ) /*0x6b814d*/
-    RA2_OPDEL(this); /*0x6b8150*/
+    RA2_OPDEL(); /*0x6b8150*/
   return this; /*0x6b815a*/
 }
 } // namespace gamemd
@@ -524,15 +524,15 @@ void SpawnManagerClass_25::ddtor()
 {
   void *v2; // eax
 
-  v2 = this->Items; /*0x6b8166*/
-  this->q010 = 0; /*0x6b8169*/
-  if ( v2 && this->IsAllocated ) /*0x6b8170*/
+  v2 = *(void **)&this->m_1[3]; /*0x6b8166*/
+  this->m_10 = 0; /*0x6b8169*/
+  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x6b8170*/
   {
     RA2_OPDEL(v2); /*0x6b8176*/
-    this->Items = 0; /*0x6b817e*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6b817e*/
   }
-  this->IsAllocated = 0; /*0x6b8181*/
-  this->q008 = 0; /*0x6b8184*/
+  IDA_BYTE1(this->m_C) = 0; /*0x6b8181*/
+  this->m_8 = 0; /*0x6b8184*/
 }
 } // namespace gamemd
 
@@ -540,8 +540,8 @@ void SpawnManagerClass_25::ddtor()
 namespace gamemd {
 unsigned int SpawnManagerClass_25::LoadState(int a2)
 {
-  if ( this->IsInitialized ) /*0x6b8190*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x6b81a5*/
+  if ( IDA_LOBYTE(this->m_C) ) /*0x6b8190*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x6b81a5*/
   else
     return 0; /*0x6b8197*/
 }
@@ -551,7 +551,7 @@ unsigned int SpawnManagerClass_25::LoadState(int a2)
 namespace gamemd {
 int SpawnManagerClass_25::SaveState(int a2)
 {
-  return *(unsigned int *)(this->Items + 4 * a2); /*0x6b81ba*/
+  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x6b81ba*/
 }
 } // namespace gamemd
 
@@ -570,7 +570,7 @@ char SpawnManagerClass_25::AddRef(int a2)
     v3 = 0; /*0x6b822f*/
     if ( v2 <= 0 ) /*0x6b8233*/
       return 1; /*0x6b8253*/
-    v4 = (unsigned int *)this->Items; /*0x6b8235*/
+    v4 = *(unsigned int **)&this->m_1[3]; /*0x6b8235*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x6b823b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x6b8244*/
     {
@@ -617,44 +617,44 @@ namespace gamemd {
 char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
 {
   unsigned int *v4; // edi
-  int v5; // ecx
+  int m_8; // ecx
   int i; // eax
   int v7; // eax
 
   if ( a2 ) /*0x6b840c*/
   {
-    this->IsInitialized = (unsigned int *)(0);
+    IDA_LOBYTE(this->m_C) = 0; /*0x6b8412*/
     if ( a3 ) /*0x6b8418*/
       v4 = a3; /*0x6b842e*/
     else
-      v4 = operator new(4 * a2); /*0x6b842a*/
-    this->IsInitialized = 1; /*0x6b8432*/
+      v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x6b842a*/
+    IDA_LOBYTE(this->m_C) = 1; /*0x6b8432*/
     if ( !v4 ) /*0x6b8436*/
       return 0; /*0x6b84aa*/
-    if ( this->Items ) /*0x6b8438*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x6b8438*/
     {
-      v5 = this->q008; /*0x6b843f*/
-      if ( a2 < v5 ) /*0x6b8444*/
-        v5 = a2; /*0x6b8446*/
-      for ( i = 0; i < v5; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x6b844c*/
+      m_8 = this->m_8; /*0x6b843f*/
+      if ( a2 < m_8 ) /*0x6b8444*/
+        m_8 = a2; /*0x6b8446*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x6b844c*/
         ++i; /*0x6b8451*/
-      if ( this->IsAllocated ) /*0x6b845e*/
+      if ( IDA_BYTE1(this->m_C) ) /*0x6b845e*/
       {
-        RA2_OPDEL(this->q004); /*0x6b8469*/
-        this->Items = 0; /*0x6b8471*/
+        RA2_OPDEL(*(void **)&this->m_1[3]); /*0x6b8469*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x6b8471*/
       }
     }
-    this->Items = (unsigned int)(v4);
-    this->q008 = a2; /*0x6b8482*/
-    this->IsAllocated = a3 == 0; /*0x6b8485*/
+    *(unsigned int *)&this->m_1[3] = v4; /*0x6b847a*/
+    this->m_8 = a2; /*0x6b8482*/
+    IDA_BYTE1(this->m_C) = a3 == 0; /*0x6b8485*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x6b848e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAUSpawnControl_SpawnManagerClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x6b848e*/
   }
-  v7 = this->q008; /*0x6b8491*/
-  if ( v7 < this->q010 ) /*0x6b8499*/
-    this->q010 = v7; /*0x6b849b*/
+  v7 = this->m_8; /*0x6b8491*/
+  if ( v7 < this->m_10 ) /*0x6b8499*/
+    this->m_10 = v7; /*0x6b849b*/
   return 1; /*0x6b849e*/
 }
 } // namespace gamemd
@@ -663,20 +663,21 @@ char SpawnManagerClass_25::Release(int a2, unsigned int * a3)
 namespace gamemd {
 int SpawnManagerClass_25::Spawn(unsigned int * a2)
 {
-  int v2; // edx
+  int m_10; // edx
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = this->q010; /*0x6b84b0*/
+  m_10 = this->m_10; /*0x6b84b0*/
   result = 0; /*0x6b84b3*/
-  if ( v2 <= 0 ) /*0x6b84b8*/
+  if ( m_10 <= 0 ) /*0x6b84b8*/
     return -1; /*0x6b84cf*/
-  for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x6b84be*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x6b84be*/
   {
-    if ( ++result >= v2 ) /*0x6b84cd*/
+    if ( ++result >= m_10 ) /*0x6b84cd*/
       return -1; /*0x6b84cd*/
   }
   return result; /*0x6b84d2*/
+}
 }
 // 0x6B8790
 namespace gamemd {
@@ -684,16 +685,17 @@ DynamicVector * SpawnManagerClass_25::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)this->q004; /*0x6b8793*/
-  if ( v3 && *(unsigned char *)&this->IsAllocated ) /*0x6b87a0*/
+  v3 = *(void **)&this->m_1[3]; /*0x6b8793*/
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_SpawnManagerClass_SpawnControl___vftable; /*0x6b8796*/
+  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x6b87a0*/
   {
     RA2_OPDEL(v3); /*0x6b87a8*/
-    this->q004 = 0; /*0x6b87b0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x6b87b0*/
   }
-  *(unsigned char *)&this->IsAllocated = 0; /*0x6b87bb*/
-  this->q008 = 0; /*0x6b87c1*/
+  IDA_BYTE1(this->m_C) = 0; /*0x6b87bb*/
+  this->m_8 = 0; /*0x6b87c1*/
   if ( (a2 & 1) != 0 ) /*0x6b87c8*/
     RA2_OPDEL(); /*0x6b87cb*/
-  return this; /*0x6b87d5*/
+  return this->__pad_0; /*0x6b87d5*/
 }
 } // namespace gamemd

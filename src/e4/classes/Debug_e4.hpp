@@ -13,6 +13,7 @@ struct Debug {
     unsigned int u32_24;  // 0x24
     unsigned int q034;  // 0x34
     unsigned char q038;  // 0x38
+    unsigned int u32_58;  // 0x58
     void* q0A0;  // 0xA0
     unsigned int Debug_field_0xA0;
 // --- flat members (END) ---

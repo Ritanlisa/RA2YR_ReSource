@@ -419,6 +419,7 @@ TechnoClass * * TriggerTypeClass::ReadINI(unsigned int * a0, TechnoClass * aP1, 
     return 0; /*0x6fcd20*/
   return 8; /*0x6fc0df*/
 }
+}
 // 0x727BB0
 namespace gamemd {
 int TriggerTypeClass::GetClassIdentifier(int a1, unsigned int * a2)

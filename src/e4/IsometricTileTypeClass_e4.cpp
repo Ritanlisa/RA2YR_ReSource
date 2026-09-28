@@ -15,6 +15,7 @@
 #include "e4/classes/JumpjetLocomotion_e4.hpp"
 #include "e4/classes/JumpjetLocomotionClass_e4.hpp"
 #include "e4/classes/LinkClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x549B70
 namespace gamemd {
@@ -25,7 +26,7 @@ int IsometricTileTypeClass::ProcessPower(int * a2)
   int v5; // edx
   int v6; // eax
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x549b79*/
+  AbstractTypeClass::ProcessPower(a2); /*0x549b79*/
   Power::TimerProcess(this->u32_294); /*0x549b87*/
   Power::TimerProcess(this->u32_298); /*0x549b95*/
   Power::TimerProcess(this->u32_29C); /*0x549ba3*/
@@ -156,9 +157,9 @@ int IsometricTileTypeClass::GetObjectSize()
 namespace gamemd {
 IsometricTileTypeClass * IsometricTileTypeClass::ddtor(char a2)
 {
-  IsometricTileTypeClass::CleanupMembers((int)this); /*0x54a173*/
+  IsometricTileTypeClass::CleanupMembers(); /*0x54a173*/
   if ( (a2 & 1) != 0 ) /*0x54a17d*/
-    RA2_OPDEL(this); /*0x54a180*/
+    RA2_OPDEL(); /*0x54a180*/
   return this; /*0x54a18a*/
 }
 } // namespace gamemd
@@ -271,7 +272,7 @@ DynamicVector * IsometricTileTypeClass::Constructor(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x54a78b*/
   this->m_8 = 0; /*0x54a791*/
   if ( (a2 & 1) != 0 ) /*0x54a798*/
-    RA2_OPDEL(this); /*0x54a79b*/
+    RA2_OPDEL(); /*0x54a79b*/
   return this->__pad_0; /*0x54a7a5*/
 }
 } // namespace gamemd
@@ -288,12 +289,12 @@ unsigned int * IsometricTileTypeClass::Constructor_0(int a2, int a3)
   {
     if ( a3 ) /*0x54a876*/
     {
-      this->IsometricTileTypeClass_field_0x04 = (unsigned int)(a3);
-      return (unsigned int)(this->__pad_0);
+      this->IsometricTileTypeClass_field_0x04 = (unsigned int *)(a3);
+      return this->__pad_0; /*0x54a87e*/
     }
-    this->IsometricTileTypeClass_field_0x04 = (unsigned int *)(RA2_OPNEW(4 * a2));
+    this->IsometricTileTypeClass_field_0x04 = (unsigned int)(RA2_OPNEW(4 * a2));
     IDA_BYTE1(this->IsometricTileTypeClass_field_0x0C) = 1; /*0x54a890*/
   }
-  return this->__pad_0; /*0x54a87d*/
+  return (unsigned int *)(this->__pad_0);
 }
 } // namespace gamemd

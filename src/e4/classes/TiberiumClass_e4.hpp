@@ -16,7 +16,7 @@ struct TiberiumClass {
     ObjectClass* nextObject;  // 0x12
     bool IsAllocated;  // 0x13
     double abstractFlags;  // 0x14
-    unsigned int Growth;  // 0x16
+    char Growth[4];  // 0x16
     char nextArrayIndex[4];  // 0x18
     unsigned int q01A;  // 0x1A
     char referenceCount[4];  // 0x1C
@@ -26,7 +26,7 @@ struct TiberiumClass {
     unsigned int owningHouseIndex;  // 0x28
     bool q02B;  // 0x2B
     OverlayTypeClass* fallRate;  // 0x2C
-    char q030[4];  // 0x30
+    unsigned int q030;  // 0x30
     unsigned char q031;  // 0x31
     char Power[4];  // 0x32
     char attachedTag[4];  // 0x34
@@ -46,7 +46,7 @@ struct TiberiumClass {
     unsigned char q04F;  // 0x4F
     char customSound_controller[20];  // 0x50
     unsigned char alignmentPadding75_3;  // 0x51
-    char NumImages[4];  // 0x52
+    unsigned int NumImages;  // 0x52
     unsigned int spawnStatus;  // 0x54
     unsigned int TiberiumClass_field_EC;  // 0x56
     unsigned int TiberiumClass_field_10C;  // 0x58
@@ -126,7 +126,7 @@ struct TiberiumClass {
     char q110[4];  // 0x110
     unsigned int q111;  // 0x111
     char q114[4];  // 0x114
-    char TiberiumClass_field_118[4];  // 0x118
+    unsigned int TiberiumClass_field_118;  // 0x118
     char q11C[12];  // 0x11C
     unsigned int q120;  // 0x120
     unsigned int q124;  // 0x124

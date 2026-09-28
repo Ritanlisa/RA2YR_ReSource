@@ -24,7 +24,7 @@ struct TEventClass {
     unsigned int TEventClass_field_28;  // 0x28
     bool q02B;  // 0x2B
     char TEventClass_field_2C[4];  // 0x2C
-    char TEventClass_field_30[4];  // 0x30
+    unsigned int TEventClass_field_30;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     char TEventClass_field_34[4];  // 0x34

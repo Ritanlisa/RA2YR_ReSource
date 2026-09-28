@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Socket_e4.hpp"
+#include "e4/classes/IPXInterfaceClass_e4.hpp"
 
 // 0x540D80
 namespace gamemd {
@@ -38,7 +39,7 @@ namespace gamemd {
 int IPXManagerClass::send(int a2)
 {
   IPXManagerClass * v2;
-  IPXManagerClass * result;
+  int result; // eax
   IPXManagerClass *i; // ecx
 
   v2 = (gamemd::IPXManagerClass *)((int)((gamemd::IPXManagerClass *)(this->u32_44)));
@@ -98,9 +99,9 @@ namespace gamemd {
 int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)
 {
   void * v5;
-  int v6; // ecx
-  int v7; // eax
-  int v8; // ecx
+  void * v6;
+  void * v7;
+  unsigned int * v8;
   int v9; // edx
   int v10; // edi
   void * v11;
@@ -120,11 +121,11 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)
     return 0; /*0x541661*/
   while ( 1 ) /*0x54162b*/
   {
-    v6 = (void *)(*(unsigned int *)(&this->q010 * this->curConnIndex + 40));
-    v7 = (void *)((*(int (__thiscall **)(int, int, int))(*(unsigned int *)v6 + 16))(v6, a2, a3));
-    v8 = this->curConnIndex; /*0x541634*/
-    v9 = *(unsigned int *)(&this->q010 * v8++ + 40); /*0x541637*/
-    v10 = *(unsigned int *)(v9 + 100); /*0x54163c*/
+    v6 = (int)((void *)(*(unsigned int *)(&this->q010 * this->curConnIndex + 40)));
+    v7 = (void *)((int)((void *)((*(int (__thiscall **)(int, int, int))(*(unsigned int *)v6 + 16))(v6, a2, a3))));
+    v8 = (int)((unsigned int *)(this->curConnIndex));
+    v9 = (void *)(*(unsigned int *)(&this->q010 * v8++ + 40));
+    v10 = (void *)(*(unsigned int *)(v9 + 100));
     v11 = this->q044; /*0x54163f*/
     this->curConnIndex = v8; /*0x541644*/
     if ( v8 >= v11 ) /*0x541647*/
@@ -149,9 +150,9 @@ void IPXManagerClass::StubReturnFalse(int a1, int a2)
 namespace gamemd {
 IPXManagerClass * IPXManagerClass::QueryInterface(char a2)
 {
-  IPXManagerClass::processPacket((char *)this); /*0x5430e3*/
+  IPXManagerClass::processPacket(); /*0x5430e3*/
   if ( (a2 & 1) != 0 ) /*0x5430ed*/
-    RA2_OPDEL(this); /*0x5430f0*/
+    RA2_OPDEL(); /*0x5430f0*/
   return (char *)this; /*0x5430fa*/
 }
 } // namespace gamemd

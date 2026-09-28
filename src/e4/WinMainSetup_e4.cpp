@@ -11,15 +11,16 @@
 #include "e4/classes/LoadingScreen_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
 #include "e4/classes/WinModemClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x6BB8E0
 namespace gamemd {
 AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
 {
-  AbstractClass ** result;
+  uint8_t result; // al
   DDraw *v2; // [esp+0h] [ebp-4h]
 
-  result = (gamemd::AbstractClass **)(g_DDraw_Force3D);
+  result = g_DDraw_Force3D; /*0x6bb8e0*/
   if ( g_DDraw_Force3D ) /*0x6bb8ea*/
     result = DDraw::CleanupSurfaces(v2); /*0x6bb8ec*/
   if ( !byte_B0BCF5 ) /*0x6bb8f7*/
@@ -54,10 +55,11 @@ AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
       (*(void (__thiscall **)(DSurface *, int))g_DSurface_Primary->DSurface_field_0x0)(g_DSurface_Primary, 1); /*0x6bb979*/
       g_DSurface_Primary = 0; /*0x6bb97b*/
     }
-    result = (gamemd::AbstractClass **)((uint8_t)((gamemd::AbstractClass **)((uint8_t)sub_4A44F0((ObjectClass *)v2))));
+    result = (uint8_t)sub_4A44F0((ObjectClass *)v2); /*0x6bb981*/
     byte_B0BCF5 = 1; /*0x6bb986*/
   }
   return (gamemd::AbstractClass **)(result);
+}
 }
 // 0x72B130
 namespace gamemd {
@@ -79,7 +81,7 @@ void sub_72B130()
     }
     byte_B0FC90 = 0; /*0x72b157*/
   }
-  dword_B0FC80 = (unsigned int)((void *)(0));
+  dword_B0FC80 = 0; /*0x72b162*/
   if ( byte_B0FC91 ) /*0x72b16a*/
   {
     v1 = (void *)(dword_B0FC84);
@@ -90,7 +92,7 @@ void sub_72B130()
     }
     byte_B0FC91 = 0; /*0x72b186*/
   }
-  dword_B0FC84 = (unsigned int)((void *)(0));
+  dword_B0FC84 = 0; /*0x72b191*/
   if ( byte_B0FC92 ) /*0x72b199*/
   {
     v2 = (void *)(dword_B0FC88);
@@ -101,7 +103,7 @@ void sub_72B130()
     }
     byte_B0FC92 = 0; /*0x72b1b5*/
   }
-  dword_B0FC88 = (unsigned int)((void *)(0));
+  dword_B0FC88 = 0; /*0x72b1c0*/
   if ( byte_B0FC93 ) /*0x72b1c8*/
   {
     v3 = (void *)(dword_B0FC8C);
@@ -112,7 +114,7 @@ void sub_72B130()
     }
     byte_B0FC93 = 0; /*0x72b1e4*/
   }
-  dword_B0FC8C = (unsigned int)((void *)(0));
+  dword_B0FC8C = 0; /*0x72b1ef*/
   if ( byte_B0FC94 ) /*0x72b1f7*/
   {
     v4 = (void *)(dword_B0FACC);
@@ -124,6 +126,7 @@ void sub_72B130()
     byte_B0FC94 = 0; /*0x72b213*/
   }
   dword_B0FACC = 0; /*0x72b219*/
+}
 }
 // 0x53D550
 namespace gamemd {

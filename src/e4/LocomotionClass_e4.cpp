@@ -22,15 +22,15 @@ int LocomotionClass::Initialize()
   int v2; // ecx
   int v3; // ecx
 
-  LocomotionClass::Init(this); /*0x4af543*/
+  LocomotionClass::Init(); /*0x4af543*/
   this->u32_1C = 0; /*0x4af54d*/
   this->u32_8 = 0; /*0x4af550*/
   v2 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x4af553*/
-  this->u32_2C = (unsigned int)(0);
-  this->u32_24 = (gamemd::FootClass *)(v2);
-  this->LinkedTo = (unsigned int)(0);
+  this->u32_2C = 0; /*0x4af559*/
+  this->u32_24 = (unsigned int)(v2);
+  this->LinkedTo = 0; /*0x4af55f*/
   this->u32_34 = (unsigned int)(g_DDraw_ClipRect);
-  this->u32_38 = qword_8A0794; /*0x4af570*/
+  this->u32_38 = (unsigned int)(qword_8A0794);
   this->u32_10 = g_DDraw_ClipRect; /*0x4af585*/
   this->Dirty = qword_8A0794; /*0x4af58e*/
   v3 = IDA_HIDWORD(qword_8A0794); /*0x4af591*/
@@ -124,7 +124,7 @@ v1 = (void *)(this->q5D4);
 namespace gamemd {
 int LocomotionClass::ProcessData()
 {
-  LocomotionClass::Init(this); /*0x513c24*/
+  LocomotionClass::Init(); /*0x513c24*/
   this->u32_18 = *(unsigned int *)&stru_A8EB00.gapE4[1436]; /*0x513c34*/
   this->u32_1C = *(unsigned int *)&stru_A8EB00.gapE4[1440]; /*0x513c3d*/
   this->u32_8 = *(unsigned int *)&stru_A8EB00.gapE4[1444]; /*0x513c49*/
@@ -155,7 +155,7 @@ int LocomotionClass::Update()
   int v2; // ecx
   int v4; // [esp+Ch] [ebp-4h] BYREF
 
-  LocomotionClass::Init((LocomotionClass *)this); /*0x54ac46*/
+  LocomotionClass::Init(); /*0x54ac46*/
   this->DestinationCoords[0] = dword_ABC5A8; /*0x54ac59*/
   this->DestinationCoords[1] = dword_ABC5AC; /*0x54ac61*/
   v2 = dword_ABC5B0; /*0x54ac64*/
@@ -212,9 +212,9 @@ void LocomotionClass::Construct()
 namespace gamemd {
 LocomotionClass * LocomotionClass::ProcessMove(char a2)
 {
-  LocomotionClass::Construct(this); /*0x5172f3*/
+  LocomotionClass::Construct(); /*0x5172f3*/
   if ( (a2 & 1) != 0 ) /*0x5172fd*/
-    RA2_OPDEL(this); /*0x517300*/
+    RA2_OPDEL(); /*0x517300*/
   return this->__pad_0; /*0x51730a*/
 }
 } // namespace gamemd

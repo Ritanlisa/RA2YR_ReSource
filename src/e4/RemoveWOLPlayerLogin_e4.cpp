@@ -64,3 +64,4 @@ void E4Recv_7AE830::sub_7AE830()
     RA2_OPDEL(vtable0); /*0x7ae8ca*/
   }
 }
+}

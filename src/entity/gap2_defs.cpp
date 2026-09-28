@@ -276,6 +276,7 @@ namespace gamemd {
 int AnimClass::CheckEndOfSequence() {
   return *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[52]; /*0x42551c*/
 }
+}
 // 0x425530
 namespace gamemd { 
 int AnimClass::Undeploy() {
@@ -296,6 +297,7 @@ int AnimClass::Undeploy() {
     return 0; /*0x4255a7*/
   RemoveTarget((int)this); /*0x42559b*/
   return 1; /*0x4255a2*/
+}
 }
 // 0x4255B0
 namespace gamemd { 
@@ -327,6 +329,7 @@ int AnimClass::ProcessCraterFormation() {
   }
   return ObjectClass::Destroy((ObjectClass *)this); /*0x425624*/
 }
+}
 // 0x425630
 namespace gamemd { 
 int AnimClass::CheckDamageFlags() {
@@ -340,6 +343,7 @@ int AnimClass::CheckDamageFlags() {
   if ( AnimClass_field_0xCC ) /*0x425651*/
     result += AnimClass_field_0xCC[41]; /*0x425669*/
   return result; /*0x42566b*/
+}
 }
 // 0x426270
 namespace gamemd { 
@@ -364,6 +368,7 @@ int AnimClass::UpdateDamageRadius(void* a1) {
   }
   return result; /*0x4262d3*/
 }
+}
 // 0x426590
 namespace gamemd { 
 void* AnimClass::MissionStubReturnZero3(int a2) {
@@ -371,6 +376,7 @@ void* AnimClass::MissionStubReturnZero3(int a2) {
   if ( (a2 & 1) != 0 ) /*0x42659d*/
     RA2_OPDEL(this); /*0x4265a0*/
   return this; /*0x4265aa*/
+}
 }
 // 0x4397E0
 namespace gamemd { 
@@ -480,6 +486,7 @@ void* AnimClass::InitRotation(void* a1, int a2, int a3, int a4, int a5, int a6, 
   v20 = ConvertMatrixToQuaternion(v30, (float *)v31.m_Data); /*0x43997f*/
   return Float4::Copy((float *)this->AnimClass_field_0x30, &v27, v20); /*0x439992*/
 }
+}
 // 0x447E00
 namespace gamemd { 
 int AnimClass::initAnimation() {
@@ -501,6 +508,7 @@ int AnimClass::initAnimation() {
   + (double)(v4[1] - v3[1]) * (double)(v4[1] - v3[1]));
   IDA_LOWORD(result) = Math::RoundToInt(v1); /*0x447e7c*/
   return result; /*0x447e81*/
+}
 }
 // 0x448070
 namespace gamemd { 
@@ -558,6 +566,7 @@ bool AnimClass::updateAnimation(int a1) {
   if ( *(unsigned int *)(this->u32_520 + 3768) == 7 ) /*0x448134*/
     House::ChooseHouseEnemy(*(House **)(&this->occupant0), this); /*0x44813d*/
   return this->u32_3D3 != v11; /*0x44808c*/
+}
 }
 // 0x468090
 namespace gamemd { 
@@ -724,6 +733,7 @@ int BulletClass::LoseTarget() {
     this->BulletClass_field_0x10C = v2; /*0x4684ba*/
   }
   return (int16_t)v2; /*0x4684c0*/
+}
 }
 // 0x4684E0
 namespace gamemd { 
@@ -972,6 +982,7 @@ int BulletClass::UpdateFlightPath() {
   IDA_LOBYTE(v1) = v1 & 0xFE; /*0x468ba0*/
   return v1 + 3; /*0x468ba5*/
 }
+}
 // 0x468BB0
 namespace gamemd { 
 bool BulletClass::CheckBulletCollision(void* a1) {
@@ -1056,6 +1067,7 @@ bool BulletClass::CheckBulletCollision(void* a1) {
     }
   }
   return result; /*0x468c78*/
+}
 }
 // 0x468D80
 namespace gamemd { 
@@ -1256,6 +1268,7 @@ int BulletClass::SaveLoad_Prefix(void* a1, int a2) {
   }
   return result; /*0x46af99*/
 }
+}
 // 0x46B0C0
 namespace gamemd { 
 int BulletClass::RenderVoxelBullet(int a1, void* a2, void* a3, void* a4, int a5, int a6, int a7) {
@@ -1330,6 +1343,7 @@ int BulletClass::RenderVoxelBullet(int a1, void* a2, void* a3, void* a4, int a5,
            0,
            0);
 }
+}
 // 0x46B280
 namespace gamemd { 
 int BulletClass::InitScalable() {
@@ -1354,16 +1368,19 @@ int BulletClass::InitScalable() {
            (BulletTypeClass *)this->BulletClass_field_0xAC,
            v3 / 3 + *((unsigned int *)this->BulletClass_field_0xAC + 185));
 }
+}
 // 0x46B5A0
 namespace gamemd { 
 int BulletClass::CheckEndOfSequence(int a1) {
   this->BulletClass_field_0x10C = (void *)a1; /*0x46b5a4*/
   return a1; /*0x46b5aa*/
 }
+}
 // 0x46B5B0
 namespace gamemd { 
 int BulletClass::CheckMissionAbort() {
   return (int)this->BulletClass_field_0xAC; /*0x46b5b6*/
+}
 }
 // 0x46B5C0
 namespace gamemd { 
@@ -1372,6 +1389,7 @@ void* BulletClass::CheckActionStatus(int a2) {
   if ( (a2 & 1) != 0 ) /*0x46b5cd*/
     RA2_OPDEL(this); /*0x46b5d0*/
   return this; /*0x46b5da*/
+}
 }
 // 0x46B960
 namespace gamemd { 
@@ -1388,6 +1406,7 @@ int TerrainClass::SetFieldF8(int a1) {
   *((unsigned int *)this + 62) = a1; /*0x487c74*/
   return a1; /*0x487c7a*/
 }
+}
 // 0x4E1100
 namespace gamemd { 
 void* BulletClass::ResetDetonationTimer() {
@@ -1400,6 +1419,7 @@ void* BulletClass::ResetDetonationTimer() {
   *(unsigned int *)&this->__pad_1C[4] = 0; /*0x4e1121*/
   *(unsigned int *)&this->__pad_1C[8] = 0; /*0x4e1124*/
   return this->__pad_0; /*0x4e1127*/
+}
 }
 // 0x4E1130
 namespace gamemd { 
@@ -1453,6 +1473,7 @@ int BulletClass::InitDetonationTimer(void* a1, void* a2, int a3, int a4) {
   IDA_LOWORD(result) = v9; /*0x4e11dc*/
   *(unsigned int *)&this->__pad_1C[8] = result; /*0x4e11e1*/
   return result; /*0x4e11e4*/
+}
 }
 // 0x4E11F0
 namespace gamemd { 
@@ -1513,6 +1534,7 @@ int BulletClass::CheckProximityDetonation(void* a1) {
   *(unsigned int *)&this->__pad_1C[8] = v7; /*0x4e12a1*/
   return 0; /*0x4e1282*/
 }
+}
 // 0x4E87B0
 namespace gamemd { 
 int ParticleSystemClass::updateParticles(int a1) {
@@ -1520,6 +1542,7 @@ int ParticleSystemClass::updateParticles(int a1) {
     return (unsigned int)(a1 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4e87c5*/
   else
     return 0; /*0x4e87b7*/
+}
 }
 // 0x4E9DE0
 namespace gamemd { 
@@ -1546,6 +1569,7 @@ int ParticleSystemClass::AddRef(int a1) {
     }
   }
   return 0; /*0x4e9e0e*/
+}
 }
 // 0x4E9F60
 namespace gamemd { 
@@ -1591,6 +1615,7 @@ int ParticleSystemClass::Release(int a1, void* a2) {
     this->m_10 = v7; /*0x4e9ffb*/
   return 1; /*0x4e9ffe*/
 }
+}
 // 0x4EA010
 namespace gamemd { 
 int ParticleSystemClass::Init(void* a1) {
@@ -1608,6 +1633,7 @@ int ParticleSystemClass::Init(void* a1) {
       return -1; /*0x4ea02d*/
   }
   return result; /*0x4ea032*/
+}
 }
 // 0x4EB3E0
 namespace gamemd { 
@@ -1653,6 +1679,7 @@ int ParticleSystemClass::ReallocateBuffer(int a1, void* a2) {
     this->m_10 = v7; /*0x4eb47b*/
   return 1; /*0x4eb47e*/
 }
+}
 // 0x4EB490
 namespace gamemd { 
 int ParticleSystemClass::processParticleFrame(void* a1) {
@@ -1670,6 +1697,7 @@ int ParticleSystemClass::processParticleFrame(void* a1) {
       return -1; /*0x4eb4ad*/
   }
   return result; /*0x4eb4b2*/
+}
 }
 // 0x4EF850
 namespace gamemd { 
@@ -1689,6 +1717,7 @@ void* ParticleSystemClass::QueryInterface(int a2) {
     RA2_OPDEL(this); /*0x4ef88b*/
   return this->__pad_0; /*0x4ef895*/
 }
+}
 // 0x4EFDA0
 namespace gamemd { 
 void* ParticleSystemClass::finalizeParticles(int a2) {
@@ -1706,6 +1735,7 @@ void* ParticleSystemClass::finalizeParticles(int a2) {
   if ( (a2 & 1) != 0 ) /*0x4efdd8*/
     RA2_OPDEL(this); /*0x4efddb*/
   return this->__pad_0; /*0x4efde5*/
+}
 }
 // 0x547CF0
 namespace gamemd { void TerrainClass::GenerateTexture(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17) {
@@ -4339,6 +4369,7 @@ void TerrainClass::ProcessSlope(void* a1) {
     }
   }
 }
+}
 // 0x59C920
 namespace gamemd { 
 int TiberiumClass::Grow(void* a1) {
@@ -5004,6 +5035,7 @@ int TiberiumClass::Grow(void* a1) {
   }
   return 0; /*0x59cc78*/
 }
+}
 // 0x5B35E0
 namespace gamemd { 
 int MissionClass::QueueMission() {
@@ -5034,6 +5066,7 @@ int MissionClass::QueueMission() {
     }
   }
   return result; /*0x5b3641*/
+}
 }
 // 0x5FD6A0
 namespace gamemd { 
@@ -5136,6 +5169,7 @@ int OverlayClass::WriteINI() {
   Vector::Clear((int)v22); /*0x5fd8d3*/
   return Pipe::Dtor(v21); /*0x5fd8e1*/
 }
+}
 // 0x5FE020
 namespace gamemd { 
 void* OverlayClass::updateOverlayState(int a1, int a2) {
@@ -5144,6 +5178,7 @@ void* OverlayClass::updateOverlayState(int a1, int a2) {
   this->vtable3 = 0; /*0x5fe030*/
   this->vtable0 = &XSurface_Vtable; /*0x5fe037*/
   return &this->vtable0; /*0x5fe03d*/
+}
 }
 // 0x62B5E0
 namespace gamemd { 
@@ -5390,6 +5425,7 @@ void ParticleClass::UpdateParticlePhysics() {
     }
   }
 }
+}
 // 0x62C540
 namespace gamemd { 
 void ParticleClass::UpdateAnimationDrift() {
@@ -5458,6 +5494,7 @@ void ParticleClass::UpdateAnimationDrift() {
   if ( *(float *)this->__pad_E4 > 3.0 ) /*0x62c6bc*/
     *(float *)this->__pad_E4 = *(float *)this->__pad_E4 - ParticleClass_field_0xAC[192]; /*0x62c6ca*/
 }
+}
 // 0x62CE40
 namespace gamemd { 
 int ParticleClass::Dispatch() {
@@ -5487,6 +5524,7 @@ int ParticleClass::Dispatch() {
   if ( !--*(unsigned short *)this->__pad_128 ) /*0x62ce8d*/
     this->__pad_128[9] = 1; /*0x62ce97*/
   return result; /*0x62ce9e*/
+}
 }
 // 0x62D3F0
 namespace gamemd { 
@@ -5542,10 +5580,12 @@ void ParticleClass::CheckWaterImpact() {
     (*(void (__thiscall **)(ParticleClass *, char **))(*(unsigned int *)this->__pad_0 + 436))(this, &v15); /*0x62d4ff*/
   }
 }
+}
 // 0x62D6F0
 namespace gamemd { 
 bool ParticleClass::CheckMirrorState(int a1) {
   return (uint8_t)ObjectClass::UpdateProductionDisplay((ObjectClass *)this) != 0; /*0x62d6ff*/
+}
 }
 // 0x62D830
 namespace gamemd { 
@@ -5580,10 +5620,12 @@ int ParticleClass::vt_entry_1E8() {
   }
   return 0; /*0x62d8d2*/
 }
+}
 // 0x62D990
 namespace gamemd { 
 int ParticleClass::Stub() {
   return (int)this->ParticleClass_field_0xAC; /*0x62d996*/
+}
 }
 // 0x62D9A0
 namespace gamemd { 
@@ -5618,6 +5660,7 @@ void* ParticleClass::UpdateParticle(int a1) {
   if ( (a1 & 1) != 0 ) /*0x62da2c*/
     RA2_OPDEL(this); /*0x62da2f*/
   return (void **)this; /*0x62da39*/
+}
 }
 // 0x62DC50
 namespace gamemd { 
@@ -5742,6 +5785,7 @@ int ParticleSystemClass::Constructor(int a1, void* a2, int a3, void* a4, void* a
   }
   return (int)this; /*0x62df07*/
 }
+}
 // 0x62DF20
 namespace gamemd { 
 int ParticleClass::ProcessCreation() {
@@ -5801,6 +5845,7 @@ int ParticleClass::ProcessCreation() {
   }
   return (int)this; /*0x62e06c*/
 }
+}
 // 0x62E280
 namespace gamemd { 
 void ParticleSystemClass::CreateBuildingLight(int a1, int a2) {
@@ -5852,6 +5897,7 @@ void ParticleSystemClass::CreateBuildingLight(int a1, int a2) {
     }
   }
 }
+}
 // 0x62E380
 namespace gamemd { 
 int ParticleSystemClass::CreateParticle(void* a1, void* a2) {
@@ -5893,6 +5939,7 @@ int ParticleSystemClass::CreateParticle(void* a1, void* a2) {
     *(unsigned int *)(v12 + 4 * v11) = v6; /*0x62e41a*/
   }
   return v6; /*0x62e41f*/
+}
 }
 // 0x62E4C0
 namespace gamemd { 
@@ -5960,6 +6007,7 @@ int ParticleClass::CreateInstance(void* a1, float a2, int a3) {
   }
   *(unsigned int *)(v13 + 4 * v16 - 4) = v6; /*0x62e5b9*/
   return v6; /*0x62e5c0*/
+}
 }
 // 0x62E6D0
 namespace gamemd { 
@@ -6049,6 +6097,7 @@ void ParticleSystemClass::UpdateAllParticles() {
     }
     --v4; /*0x62e82b*/
   }
+}
 }
 // 0x62F230
 namespace gamemd { 
@@ -6446,6 +6495,7 @@ int ParticleSystemClass::Update() {
   }
   return (char)Owner; /*0x62fe42*/
 }
+}
 // 0x62FE90
 namespace gamemd { 
 int ParticleSystemClass::UpdateSystem(int a1, int a1) {
@@ -6484,6 +6534,7 @@ int ParticleSystemClass::UpdateSystem(int a1, int a1) {
     this->SpotlightRadius = 0; /*0x62ff13*/
   }
   return result; /*0x62ff19*/
+}
 }
 // 0x62FF20
 namespace gamemd { 
@@ -6560,6 +6611,7 @@ int ParticleSystemClass::Write(int a1, void* a1) {
   }
   return result; /*0x630088*/
 }
+}
 // 0x630100
 namespace gamemd { 
 int ParticleSystemClass::PowerDrainUpdate(void* a1) {
@@ -6593,15 +6645,18 @@ int ParticleSystemClass::PowerDrainUpdate(void* a1) {
   Checksummer::Add_float((Checksummer *)a1, *(unsigned int *)&this->__pad_E5[3]); /*0x630181*/
   return Power::TimerProcess(*(unsigned int *)&this->__pad_E5[7]); /*0x630194*/
 }
+}
 // 0x6301E0
 namespace gamemd { 
 void ParticleSystemClass::ProcessFrame() {
   this->__pad_E5[19] = 1; /*0x6301e0*/
 }
+}
 // 0x630220
 namespace gamemd { 
 int ParticleSystemClass::Stub() {
   return (int)this->Type; /*0x630226*/
+}
 }
 // 0x6302A0
 namespace gamemd { 
@@ -6622,6 +6677,7 @@ void* ParticleSystemClass::resetSystemState(int a1, int a2) {
     IDA_BYTE1(this->vtable3) = 1; /*0x6302e0*/
   }
   return &this->vtable0; /*0x6302cd*/
+}
 }
 // 0x65B2F0
 namespace gamemd { 
@@ -6659,10 +6715,12 @@ void RadSiteClass::Constructor() {
   }
   AbstractClass::DTOR((AbstractClass *)this); /*0x65b38f*/
 }
+}
 // 0x65B3B0
 namespace gamemd { 
 int RadSiteClass::PowerDrainUpdate(int a1) {
   return AbstractClass::ProcessPower((AbstractClass *)this); /*0x65b3ba*/
+}
 }
 // 0x65B800
 namespace gamemd { 
@@ -6734,6 +6792,7 @@ int RadSiteClass::Tick() {
   }
   return result; /*0x65b8dc*/
 }
+}
 // 0x65BED0
 namespace gamemd { 
 void* RadSiteClass::ProcessEvent(int a2) {
@@ -6741,6 +6800,7 @@ void* RadSiteClass::ProcessEvent(int a2) {
   if ( (a2 & 1) != 0 ) /*0x65bedd*/
     RA2_OPDEL(this); /*0x65bee0*/
   return &this->vtable0; /*0x65beea*/
+}
 }
 // 0x6620F0
 namespace gamemd { 
@@ -6807,6 +6867,7 @@ int BulletClass::ComputeImpactTrajectory(int a1) {
   }
   TechnoClass::CalculateDamage(_ESI); /*0x662216*/
   return 1; /*0x6621b0*/
+}
 }
 // 0x71B7B0
 namespace gamemd { 
@@ -6885,6 +6946,7 @@ int TerrainClass::CleanupMembers() {
     }
   }
   return ObjectClass::Dtor((ObjectClass *)this); /*0x71b910*/
+}
 }
 // 0x71B920
 namespace gamemd { 
@@ -6977,6 +7039,7 @@ int TerrainClass::UpdateAnims(int a1, int a2, int a3, int a4, int a5, int a6, vo
     return v20; /*0x71bb79*/
   }
   return result; /*0x71b939*/
+}
 }
 // 0x71BB90
 namespace gamemd { 
@@ -7073,6 +7136,7 @@ void* TerrainClass::Construct(void* a1, void* a2) {
   }
   return &this->vtable0; /*0x71bdd7*/
 }
+}
 // 0x71BFB0
 namespace gamemd { 
 int TerrainClass::CheckNearbyObjects(int a1) {
@@ -7107,6 +7171,7 @@ int TerrainClass::CheckNearbyObjects(int a1) {
   }
   return 1; /*0x71c026*/
 }
+}
 // 0x71C070
 namespace gamemd { 
 void* TerrainClass::ClearCellFlags(void* a1) {
@@ -7130,6 +7195,7 @@ void* TerrainClass::ClearCellFlags(void* a1) {
     result[292] &= ~0x10u; /*0x71c0f9*/
   return result; /*0x71c0f6*/
 }
+}
 // 0x71C110
 namespace gamemd { 
 void* TerrainClass::SetOccupyBit_PassableTerrain(void* a1) {
@@ -7152,6 +7218,7 @@ void* TerrainClass::SetOccupyBit_PassableTerrain(void* a1) {
   if ( (v2 & 4) != 0 ) /*0x71c197*/
     result[292] |= 0x10u; /*0x71c199*/
   return result; /*0x71c196*/
+}
 }
 // 0x71C1B0
 namespace gamemd { 
@@ -7239,6 +7306,7 @@ void TerrainClass::Draw(void* a1, void* a2) {
         0);
   }
 }
+}
 // 0x71C360
 namespace gamemd { 
 void TerrainClass::ProcessDestructionAnim(void* a1, void* a2) {
@@ -7305,6 +7373,7 @@ void TerrainClass::ProcessDestructionAnim(void* a1, void* a2) {
         0);
   }
 }
+}
 // 0x71C4D0
 namespace gamemd { 
 int TerrainClass::IsPlacementValid(int a1, int a2, int a3, int a4, int a5) {
@@ -7349,6 +7418,7 @@ int TerrainClass::IsPlacementValid(int a1, int a2, int a3, int a4, int a5) {
       return 7; /*0x71c59a*/
   }
   return 0; /*0x71c58e*/
+}
 }
 // 0x71C5B0
 namespace gamemd { 
@@ -7404,6 +7474,7 @@ int TerrainClass::PlayAmbientAnimation() {
   this->__pad_C0[12] = 1; /*0x71c68a*/
   return 1; /*0x71c694*/
 }
+}
 // 0x71C6B0
 namespace gamemd { 
 int TerrainClass::ProcessTick() {
@@ -7438,6 +7509,7 @@ int TerrainClass::ProcessTick() {
     }
   }
   return (char)health; /*0x71c72b*/
+}
 }
 // 0x71C730
 namespace gamemd { 
@@ -7528,6 +7600,7 @@ int TerrainClass::Update() {
   }
   return result; /*0x71c839*/
 }
+}
 // 0x71C930
 namespace gamemd { 
 int TerrainClass::ApplyCellModifications() {
@@ -7580,6 +7653,7 @@ int TerrainClass::ApplyCellModifications() {
   }
   return v8; /*0x71ca67*/
 }
+}
 // 0x71CC50
 namespace gamemd { 
 int TerrainClass::CheckSpawnConditions(void* a1, int a2, int a3) {
@@ -7630,6 +7704,7 @@ int TerrainClass::CheckSpawnConditions(void* a1, int a2, int a3) {
   (*((void (__thiscall **)(TerrainClass *, int *, int *))this->vtable0 + 69))(this, &v18, a1); /*0x71cd7b*/
   return 1; /*0x71cd81*/
 }
+}
 // 0x71CF50
 namespace gamemd { 
 int TerrainClass::PowerDrainUpdate(void* a1) {
@@ -7650,6 +7725,7 @@ int TerrainClass::PowerDrainUpdate(void* a1) {
   Power::TimerProcess(this->TerrainClass_field_rect_D0[0]); /*0x71cfad*/
   return Power::TimerProcess(this->TerrainClass_field_rect_D0[1]); /*0x71cfc0*/
 }
+}
 // 0x71CFD0
 namespace gamemd { 
 int TerrainClass::ProcessFrameStep(int a1, int a2) {
@@ -7659,6 +7735,7 @@ int TerrainClass::ProcessFrameStep(int a1, int a2) {
   if ( *(unsigned int *)&this->__pad_C0[8] == a1 ) /*0x71cfe9*/
     *(unsigned int *)&this->__pad_C0[8] = 0; /*0x71cfeb*/
   return result; /*0x71cff5*/
+}
 }
 // 0x71D160
 namespace gamemd { 
@@ -7757,6 +7834,7 @@ void* TerrainClass::Export(void* a1) {
     return a1; /*0x71d198*/
   }
 }
+}
 // 0x71D350
 namespace gamemd { 
 void* TerrainClass::MissionStubReturnZero4(int a2) {
@@ -7764,6 +7842,7 @@ void* TerrainClass::MissionStubReturnZero4(int a2) {
   if ( (a2 & 1) != 0 ) /*0x71d35d*/
     RA2_OPDEL(this); /*0x71d360*/
   return this; /*0x71d36a*/
+}
 }
 // 0x721880
 namespace gamemd { 
@@ -7859,6 +7938,7 @@ int TiberiumClass::CleanupMembers() {
   this->u32_CC = 0; /*0x721a34*/
   return AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x721a3f*/
 }
+}
 // 0x721DC0
 namespace gamemd { 
 int TiberiumClass::Harvest(void* a1) {
@@ -7870,6 +7950,7 @@ int TiberiumClass::Harvest(void* a1) {
   Power::TimerProcess(this->GrowthPercentage[0]); /*0x721e0f*/
   Power::TimerProcess(*(unsigned int *)this->__pad_E4); /*0x721e1d*/
   return Power::TimerProcess(*(unsigned int *)&this->__pad_E4[4]); /*0x721e30*/
+}
 }
 // 0x722140
 namespace gamemd { 
@@ -7903,10 +7984,12 @@ int TiberiumClass::UpdateField(int a1, int a2) {
     this->NumImages = 0; /*0x72219c*/
   return result; /*0x722199*/
 }
+}
 // 0x723700
 namespace gamemd { 
 int TiberiumClass::Stub() {
   return *(unsigned int *)&this->isInLogic; /*0x723706*/
+}
 }
 // 0x723710
 namespace gamemd { 
@@ -7915,6 +7998,7 @@ void* TiberiumClass::DrawOre(int a2) {
   if ( (a2 & 1) != 0 ) /*0x72371d*/
     RA2_OPDEL(this); /*0x723720*/
   return this; /*0x72372a*/
+}
 }
 // 0x727FD0
 namespace gamemd { 
@@ -7970,6 +8054,7 @@ void* TubeClass::Construct(void* a1, int a2) {
   }
   return (AbstractClass *)this; /*0x7280c0*/
 }
+}
 // 0x728630
 namespace gamemd { 
 int TubeClass::PowerDrainUpdate(void* a1) {
@@ -7991,6 +8076,7 @@ int TubeClass::PowerDrainUpdate(void* a1) {
   }
   while ( v4 ); /*0x728691*/
   return Power::TimerProcess(this->estimatedHealth); /*0x7286a1*/
+}
 }
 // 0x728710
 namespace gamemd { 
@@ -8048,6 +8134,7 @@ void* TubeClass::ProcessEvent(int a1) {
   if ( (a1 & 1) != 0 ) /*0x7287d4*/
     RA2_OPDEL(this); /*0x7287d7*/
   return &this->vtable0; /*0x7287e1*/
+}
 }
 // 0x729370
 namespace gamemd { 
@@ -8118,6 +8205,7 @@ void WaveClass::Destroy() {
   if ( nextArrayIndex ) /*0x755d41*/
     RA2_OPDEL(nextArrayIndex); /*0x755d44*/
   this->nextArrayIndex = 0; /*0x755d4c*/
+}
 }
 // 0x75E950
 namespace gamemd { 
@@ -8216,6 +8304,7 @@ void* WaveClass::Constructor(void* a1, void* a2, void* a3, void* a4, void* a5) {
     return &this->vtable0; /*0x75ea9a*/
   }
 }
+}
 // 0x75ED30
 namespace gamemd { 
 int WaveClass::Destructor() {
@@ -8253,6 +8342,7 @@ int WaveClass::Destructor() {
   this->u32_1F8 = 0; /*0x75eddb*/
   return ObjectClass::Dtor((ObjectClass *)this); /*0x75ede7*/
 }
+}
 // 0x75F610
 namespace gamemd { 
 int WaveClass::UpdateWave(int a1, int a2) {
@@ -8265,6 +8355,7 @@ int WaveClass::UpdateWave(int a1, int a2) {
   if ( this->Target == (void *)a1 ) /*0x75f63b*/
     this->Target = 0; /*0x75f63d*/
   return result; /*0x75f643*/
+}
 }
 // 0x75F8B0
 namespace gamemd { 
@@ -8302,6 +8393,7 @@ int WaveClass::DrawWave(void* a1, int a2) {
   }
   return 1; /*0x75f964*/
 }
+}
 // 0x75F980
 namespace gamemd { 
 int WaveClass::UpdateWavePosition() {
@@ -8315,6 +8407,7 @@ int WaveClass::UpdateWavePosition() {
   this->inLimbo = 1; /*0x75f9cc*/
   this->needsRedraw = 0; /*0x75f9d3*/
   return 1; /*0x75f9dc*/
+}
 }
 // 0x75F9F0
 namespace gamemd { 
@@ -8339,6 +8432,7 @@ void WaveClass::ProcessWaveCollision(void* a1, void* a2) {
         return;
     }
   }
+}
 }
 // 0x760F50
 namespace gamemd { 
@@ -8388,6 +8482,7 @@ int WaveClass::Update() {
       return result;
   }
   return result; /*0x760f8c*/
+}
 }
 // 0x7632D0
 namespace gamemd { void* WaveClass::Constructor_7632D0(int a1, int a2) { return nullptr; } }

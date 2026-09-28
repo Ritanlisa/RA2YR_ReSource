@@ -17,14 +17,16 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/CaptureManagerClass_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
+#include "e4/classes/LayerClass_e4.hpp"
 
 // 0x544C80
 namespace gamemd {
 int CellClass::EnsureFileLoaded()
 {
   if ( !this->sensorsOfHouses[10] && this->u32_2F4 ) /*0x544c8d*/
-    MapClass::LoadFileData((MapClass *)this); /*0x544c97*/
+    MapClass::LoadFileData(); /*0x544c97*/
   return this->sensorsOfHouses[10] != 0; /*0x544ca9*/
+}
 }
 // 0x56EF50
 namespace gamemd {
@@ -62,7 +64,7 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
 
   aP1 = (IUnknown *)(aP1);
   v3 = (IUnknown *)(*CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)));
-  aP1 = (IUnknown *)(v3);
+  aP1 = v3; /*0x56ef79*/
   *(unsigned int *)v3 = v3; /*0x56ef7d*/
   v4 = (int16_t)v3 + (IDA_SHIWORD(v3) << 9); /*0x56ef8c*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(g_Shroud_CellArray + 4 * v4)) != 0 ) /*0x56efa2*/
@@ -190,6 +192,7 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
   }
   return v9; /*0x56f1c5*/
 }
+}
 // 0x56F2F0
 namespace gamemd {
 HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
@@ -226,7 +229,7 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
 
   aP1 = (IUnknown *)(aP1);
   v3 = (IUnknown *)(*CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)));
-  aP1 = (IUnknown *)(v3);
+  aP1 = v3; /*0x56f319*/
   *(unsigned int *)v3 = v3; /*0x56f31d*/
   v4 = (int16_t)v3 + (IDA_SHIWORD(v3) << 9); /*0x56f32c*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(g_Shroud_CellArray + 4 * v4)) != 0 ) /*0x56f342*/
@@ -341,8 +344,8 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v29 = (void *)((int)(&g_CellClassArray));
-        g_Map_GlobalCellIndex = (int)(aP1);
+        v29 = (int)(&g_CellClassArray);
+        g_Map_GlobalCellIndex = aP1; /*0x56f5fa*/
       }
       CellClass::UpdateAnimations((int)v29); /*0x56f5ff*/
       aP1 = *(unsigned int *)v3 + 0x10000; /*0x56f617*/
@@ -353,6 +356,7 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
     IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 3, -1, v23[283] - 4, 0); /*0x56f560*/
   }
   return v9; /*0x56f565*/
+}
 }
 // 0x56F8B0
 namespace gamemd {
@@ -444,7 +448,7 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
       }
       else
       {
-        v24 = &g_CellClassArray; /*0x56fb6c*/
+        v24 = (int)(&g_CellClassArray);
         g_Map_GlobalCellIndex = aP1; /*0x56fb71*/
       }
       CellClass::UpdateAnimations((int)v24); /*0x56fb76*/
@@ -518,6 +522,7 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
     }
   }
   return v9; /*0x56fb2c*/
+}
 }
 // 0x56FC80
 namespace gamemd {
@@ -685,6 +690,7 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
   }
   return v9; /*0x56fefc*/
 }
+}
 // 0x572440
 namespace gamemd {
 HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
@@ -850,6 +856,7 @@ HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
   }
   return v9; /*0x5726b5*/
 }
+}
 // 0x5727E0
 namespace gamemd {
 HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
@@ -1014,6 +1021,7 @@ HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
     IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 3, -1, v23[283] - 4, 0); /*0x572a50*/
   }
   return v9; /*0x572a55*/
+}
 }
 // 0x572DA0
 namespace gamemd {
@@ -1181,6 +1189,7 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
   }
   return v9; /*0x57301c*/
 }
+}
 // 0x573170
 namespace gamemd {
 HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
@@ -1346,6 +1355,7 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
     }
   }
   return v9; /*0x5733ec*/
+}
 }
 // 0x57BAA0
 namespace gamemd {
@@ -1556,6 +1566,7 @@ int CellClass::GetOccupiedRatio()
     return this->CellClass_field_4C * this->unknown70 / CellClass_field_6C; /*0x65b524*/
   else
     return 0; /*0x65b518*/
+}
 }
 // 0x487E60
 namespace gamemd {

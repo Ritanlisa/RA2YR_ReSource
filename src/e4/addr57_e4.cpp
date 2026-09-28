@@ -24,6 +24,7 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Mission_e4.hpp"
 
 // 0x574600
 namespace gamemd {
@@ -62,6 +63,7 @@ void sub_574600(int a1, int a2, int a3)
       goto LABEL_20; /*0x57469c*/
   }
   return *(unsigned char *)(v4 + 282) == v3; /*0x574669*/
+}
 }
 // 0x575EE0
 namespace gamemd {
@@ -146,7 +148,7 @@ Coord * * sub_575EE0(void * a1, int a2)
       v9 = (int16_t)(g_DirectionOffsetPool + a2) + ((int16_t)(IDA_HIWORD(a2) + IDA_HIWORD(g_DirectionOffsetPool)) << 9); /*0x575fcd*/
       if ( v9 >= 0x40000 || (v10 = *(void **)(g_Shroud_CellArray + 4 * v9)) == 0 ) /*0x575fe3*/
       {
-        v10 = (void **)(&g_CellClassArray);
+        v10 = &g_CellClassArray; /*0x575fe9*/
         IDA_LOWORD(v37) = g_DirectionOffsetPool + a2; /*0x575fba*/
         IDA_HIWORD(v37) = IDA_HIWORD(a2) + IDA_HIWORD(g_DirectionOffsetPool); /*0x575fc2*/
         g_Map_GlobalCellIndex = v37; /*0x575fee*/
@@ -162,7 +164,7 @@ Coord * * sub_575EE0(void * a1, int a2)
       }
       else
       {
-        g_Map_GlobalCellIndex = (int)((void **)(v12));
+        g_Map_GlobalCellIndex = v12; /*0x57604e*/
         v15 = &g_CellClassArray; /*0x576054*/
       }
       v16 = (void **)((int)((void **)*((unsigned int *)v15 + 15)));
@@ -186,7 +188,7 @@ Coord * * sub_575EE0(void * a1, int a2)
       v21 = (int16_t)v20 + (IDA_SHIWORD(v20) << 9); /*0x576101*/
       if ( v21 >= 0x40000 || (v22 = *(void **)(g_Shroud_CellArray + 4 * v21)) == 0 ) /*0x576117*/
       {
-        g_Map_GlobalCellIndex = (int)((void **)(v20));
+        g_Map_GlobalCellIndex = v20; /*0x576119*/
         v22 = &g_CellClassArray; /*0x57611f*/
       }
       v23 = (void **)((int)((void **)*((unsigned int *)v22 + 15)));
@@ -200,7 +202,7 @@ Coord * * sub_575EE0(void * a1, int a2)
       }
       else
       {
-        g_Map_GlobalCellIndex = (int)((void **)(v24));
+        g_Map_GlobalCellIndex = v24; /*0x57617e*/
         v27 = &g_CellClassArray; /*0x576184*/
       }
       v28 = (void **)((int)((void **)*((unsigned int *)v27 + 15)));
@@ -216,12 +218,13 @@ Coord * * sub_575EE0(void * a1, int a2)
   }
   return (gamemd::Coord **)((char)v4);
 }
+}
 // 0x578E60
 namespace gamemd {
 void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
 {
   char v2; // bl
-  int v3; // esi
+  unsigned int * v3;
   unsigned int *v4; // ebp
   unsigned int *v5; // edi
   int v6; // edi
@@ -231,7 +234,7 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   int k; // esi
   char v12; // [esp+13h] [ebp-5h]
 
-  v2 = (int)(1);
+  v2 = 1; /*0x578e72*/
   v12 = 0; /*0x578e74*/
   if ( !g_MapTileArray ) /*0x578e79*/
   {
@@ -296,30 +299,31 @@ void* CreateMapObject(ProgressScreenClass * aP0, int aP1)
   }
   return (void *)(v2);
 }
+}
 // 0x57A430
 namespace gamemd {
 MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, IUnknown * aP2, int aP1a, int a5)
 {
-  MapClass * v7;
+  int v7; // eax
   char *CellData; // esi
   int TerrainMask; // eax
-  unsigned int v10;
+  IUnknown * v10;
   unsigned int v11; // eax
   int *v12; // eax
-  int * v13;
+  unsigned int v13; // eax
   unsigned int v14;
   char v15; // al
-  int * v16;
+  unsigned int v16; // eax
   unsigned int v17;
   char v18; // bl
-  int * v19;
+  unsigned int v19; // eax
   unsigned int v20;
   char v21; // al
-  int * v22;
-  unsigned int v23;
+  unsigned int v22; // eax
+  int *v23; // eax
   char v24; // bl
   unsigned int v25; // eax
-  unsigned int v26;
+  int *v26; // eax
   char v27; // al
   unsigned int v28; // eax
   int *v29; // eax
@@ -333,7 +337,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
   int v41; // edx
   int v42; // edi
   char *v43; // eax
-  unsigned int v45;
+  char v45; // [esp+13h] [ebp-15h]
   int v46; // [esp+14h] [ebp-14h]
   int v47; // [esp+14h] [ebp-14h]
   int v48; // [esp+14h] [ebp-14h]
@@ -365,7 +369,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
     }
     if ( (TerrainMask & 0x20) != 0 ) /*0x57a4d5*/
     {
-      v50 = aP2->outBuffer; /*0x57a4de*/
+      v50 = (int *)(aP2->outBuffer);
       v11 = (int16_t)(v50 + 1) + (IDA_SHIWORD(v50) << 9); /*0x57a4fd*/
       if ( v11 >= 0x40000 || (v12 = *(int **)(g_Shroud_CellArray + 4 * v11)) == 0 ) /*0x57a513*/
       {
@@ -375,7 +379,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
         g_Map_GlobalCellIndex = v46; /*0x57a51e*/
       }
       v52[0] = (unsigned int)(Cell::GetTerrainMask(aP0, v12, 0));
-      v51 = (int *)(aP2->outBuffer);
+      v51 = aP2->outBuffer; /*0x57a535*/
       v13 = (int16_t)(v51 + 2) + (IDA_SHIWORD(v51) << 9); /*0x57a554*/
       if ( v13 >= 0x40000 || (v14 = *(int **)(g_Shroud_CellArray + 4 * v13)) == 0 ) /*0x57a56a*/
       {
@@ -416,12 +420,12 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
     }
     if ( (v10 & 8) != 0 ) /*0x57a658*/
     {
-      v52[0] = (unsigned int)(aP2->outBuffer);
+      v52[0] = aP2->outBuffer; /*0x57a661*/
       v22 = SLOWORD(v52[0]) + ((int16_t)(IDA_HIWORD(v52[0]) - 1) << 9); /*0x57a67f*/
       if ( v22 >= 0x40000 || (v23 = *(int **)(g_Shroud_CellArray + 4 * v22)) == 0 ) /*0x57a695*/
       {
         g_Map_GlobalCellIndex = (int *)(v52[0] - 0x10000);
-        v23 = g_CellClassArray; /*0x57a6a0*/
+        v23 = (int *)(g_CellClassArray);
       }
       v24 = Cell::GetTerrainMask(aP0, v23, 0); /*0x57a6b2*/
       v52[0] = aP2->outBuffer; /*0x57a6b4*/
@@ -442,7 +446,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
       v28 = SLOWORD(v52[0]) + ((int16_t)(IDA_HIWORD(v52[0]) + 1) << 9); /*0x57a73e*/
       if ( v28 >= 0x40000 || (v29 = *(int **)(g_Shroud_CellArray + 4 * v28)) == 0 ) /*0x57a754*/
       {
-        g_Map_GlobalCellIndex = v52[0] + 0x10000; /*0x57a75a*/
+        g_Map_GlobalCellIndex = (int *)(v52[0] + 0x10000);
         v29 = g_CellClassArray; /*0x57a75f*/
       }
       v30 = Cell::GetTerrainMask(aP0, v29, 0); /*0x57a771*/
@@ -497,6 +501,7 @@ MapClass * * RecursiveCellClassNeighbourUpdate(MapClass * aP0, IUnknown * aP1, I
     }
   }
   return 1; /*0x57a81e*/
+}
 }
 // 0x57ACF0
 namespace gamemd {
@@ -754,6 +759,7 @@ MapClass * * GenerateMapClassCliffTransitions()
   }
   return (unsigned char)a3 != 0; /*0x57b1ee*/
 }
+}
 // 0x57B440
 namespace gamemd {
 MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass * aP2, MouseClass * aP3, MouseClass * aP4, MouseClass * aP5)
@@ -912,6 +918,7 @@ MapClass * * GenerateTerrainMap(MouseClass * aP0, MouseClass * aP1, MouseClass *
   }
   return 0; /*0x57b6aa*/
 }
+}
 // 0x57C870
 namespace gamemd {
 void sub_57C870(int a1)
@@ -980,6 +987,7 @@ void sub_57C870(int a1)
   IDA_HIWORD(v18) = IDA_HIWORD(Direction_X_Offsets[0]) + v9; /*0x57c96d*/
   return UpdateTeamsInAreaMap(v17, v18); /*0x57c985*/
 }
+}
 // 0x57C990
 namespace gamemd {
 void sub_57C990(int a1)
@@ -1045,6 +1053,7 @@ void sub_57C990(int a1)
   IDA_LOWORD(v18) = Direction_Y_Offsets + v16; /*0x57ca88*/
   IDA_HIWORD(v18) = IDA_HIWORD(Direction_Y_Offsets) + v9; /*0x57ca8d*/
   return UpdateTeamsInAreaMap(v17, v18); /*0x57caa5*/
+}
 }
 // 0x57DAF0
 namespace gamemd {
@@ -1112,6 +1121,7 @@ void sub_57DAF0(int a1)
   IDA_HIWORD(v18) = IDA_HIWORD(Direction_X_Offsets[0]) + v9; /*0x57dbf5*/
   return UpdateTeamsInAreaMap(v17, v18); /*0x57dc0d*/
 }
+}
 // 0x57DC20
 namespace gamemd {
 void sub_57DC20(int a1)
@@ -1177,6 +1187,7 @@ void sub_57DC20(int a1)
   IDA_LOWORD(v18) = Direction_Y_Offsets + v16; /*0x57dd20*/
   IDA_HIWORD(v18) = IDA_HIWORD(Direction_Y_Offsets) + v9; /*0x57dd25*/
   return UpdateTeamsInAreaMap(v17, v18); /*0x57dd3d*/
+}
 }
 // 0x57DD50
 namespace gamemd {
@@ -1457,6 +1468,7 @@ AbstractClass * * CreateCliffRampMap(IUnknown * aP0)
     }
   }
   return result; /*0x57e290*/
+}
 }
 // 0x57E2A0
 namespace gamemd {
@@ -1741,6 +1753,7 @@ void* CreateCliffStraightMap(IUnknown * aP0)
   }
   return v2; /*0x57e785*/
 }
+}
 // 0x57E7A0
 namespace gamemd {
 AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
@@ -2021,6 +2034,7 @@ AbstractClass * * CreateCliffBridgeMap(IUnknown * aP0)
     }
   }
   return result; /*0x57eced*/
+}
 }
 // 0x57ED00
 namespace gamemd {
@@ -2304,6 +2318,7 @@ void* CreateCliffStraightBridgeMap(IUnknown * aP0)
     }
   }
   return v2; /*0x57f1f2*/
+}
 }
 // 0x572230
 namespace gamemd {

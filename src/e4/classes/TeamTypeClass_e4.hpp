@@ -67,9 +67,12 @@ struct TeamTypeClass {
     unsigned int vtable0;
     unsigned int vtable46;
     unsigned int q0A4;
+    unsigned int q0A8;
     unsigned int q0A9;
     unsigned int q0AA;
     unsigned int q0AB;
+    unsigned int q0AC;
+    unsigned int q0AF;
     unsigned int q0B0;
     unsigned char u8_A5;
     unsigned char u8_A6;

@@ -31,6 +31,12 @@
 #include "e4/classes/E4Recv_5AFEF0_e4.hpp"
 #include "e4/classes/SmudgeTypeVector_e4.hpp"
 #include "e4/classes/E4Recv_728A00_e4.hpp"
+#include "e4/classes/Draw_e4.hpp"
+#include "e4/classes/SidebarClass_e4.hpp"
+#include "e4/classes/SlaveManagerClass_e4.hpp"
+#include "e4/classes/SortedArray_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/Skirmish_e4.hpp"
 
 // 0x6B5260
 SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
@@ -40,7 +46,7 @@ SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
   int v5; // ecx
   void **v6; // edx
 
-  ObjectTypeClass::ConstructFull((int)this, aP1); /*0x6b5269*/
+  ObjectTypeClass::ConstructFull(aP1); /*0x6b5269*/
   this->ArrayIndex = -1; /*0x6b5277*/
   this->Width = 1; /*0x6b5281*/
   this->Height = 1; /*0x6b5287*/
@@ -202,9 +208,9 @@ SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass *a2, char a3, void * a1)
       ++v4; /*0x6b61dc*/
     }
   }
-  ObjectTypeClass::Destruct((int)this); /*0x6b61f0*/
+  ObjectTypeClass::Destruct(); /*0x6b61f0*/
   if ( (a2 & 1) != 0 ) /*0x6b61fa*/
-    RA2_OPDEL(this); /*0x6b61fd*/
+    RA2_OPDEL(); /*0x6b61fd*/
   return &this->vtable0; /*0x6b6207*/
 }
 // 0x6B5550
@@ -245,7 +251,7 @@ int SmudgeTypeClass::PowerDrainUpdate(int * a2)
   int v3; // ecx
   int v4; // edx
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6b57f9*/
+  AbstractTypeClass::ProcessPower(a2); /*0x6b57f9*/
   Power::TimerProcess(this->ArrayIndex); /*0x6b5807*/
   IDA_LOBYTE(v3) = this->Crater; /*0x6b580c*/
   Power::FlagProcess((Power *)a2, v3); /*0x6b5815*/

@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/TextRenderer_e4.hpp"
 
 // 0x5BCC90
 namespace gamemd {
@@ -17,8 +18,7 @@ int TextBuffer::Init()
   TextBuffer *v3; // edx
   TextBuffer *v4; // eax
   int v5; // esi
-
-  v1 = (gamemd::TextBuffer *)((int)((gamemd::TextBuffer *)(0)));
+v1 = (gamemd::TextBuffer *)((int)((gamemd::TextBuffer *)(0)));
   v2 = (gamemd::TextBuffer *)(&this->u32_1F40);
   do /*0x5bccbe*/
   {
@@ -39,6 +39,6 @@ int TextBuffer::Init()
   }
   while ( v1 < 25 ); /*0x5bccbe*/
   this->q2734 = 1; /*0x5bccc8*/
-  return Text::DrawRepeated((Text *)this, 0, 0, 80, 25); /*0x5bccd4*/
+  return Text::DrawRepeated(0, 0, 80, 25); /*0x5bccd4*/
 }
 } // namespace gamemd

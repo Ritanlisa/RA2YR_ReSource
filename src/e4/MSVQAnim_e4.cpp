@@ -6,6 +6,8 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/MSPCXAnim_26_e4.hpp"
+#include "e4/classes/MSPCXAnim_42_e4.hpp"
 
 // 0x5CD290
 namespace gamemd {
@@ -66,7 +68,7 @@ MSVQAnim * MSVQAnim::QueryInterface(char a2)
   }
   *(unsigned int *)this->__pad_0 = (void*)&MSAnim_vftable; /*0x5cecee*/
   if ( (a2 & 1) != 0 ) /*0x5cecf7*/
-    RA2_OPDEL(this); /*0x5cecfa*/
+    RA2_OPDEL(); /*0x5cecfa*/
   return this->__pad_0; /*0x5ced04*/
 }
 } // namespace gamemd

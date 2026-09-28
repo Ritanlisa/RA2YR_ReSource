@@ -41,7 +41,7 @@ unsigned int * DialogControl::Constructor()
   unsigned int *v2; // eax
   unsigned int *v3; // eax
 
-  memset(this, 0, 0x200u); /*0x62334d*/
+  memset(0, 0x200u); /*0x62334d*/
   this->u32_68 = 11; /*0x62334f*/
   this->u32_64 = g_FogOfWarState; /*0x62335d*/
   v2 = (unsigned int *)RA2_OPNEW(4u); /*0x623360*/

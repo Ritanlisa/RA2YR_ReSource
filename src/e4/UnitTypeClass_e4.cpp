@@ -31,9 +31,10 @@ INIClass * * UnitTypeClass::ReadINIEntry()
   char *v9; // [esp+18h] [ebp-90h]
   char Buffer[12]; // [esp+1Ch] [ebp-8Ch] BYREF
   char Source[128]; // [esp+28h] [ebp-80h] BYREF
-v1 = (int)((char *)(0));
+
+  v1 = (char *)((int)((char *)(0)));
   v9 = (char *)(this);
-  INIClass::ClearSection((int)this, (int)aSmudge, 0); /*0x6b4de7*/
+  INIClass::ClearSection((int)aSmudge, 0); /*0x6b4de7*/
   v7 = 0; /*0x6b4dec*/
   do /*0x6b4e8e*/
   {
@@ -65,7 +66,7 @@ UnitTypeClass::UnitTypeClass(INIClass * aP1)
   bool v4; // zf
   int v5; // ecx
 
-  TechnoTypeClass::ReadINI((char *)this, aP1, -1); /*0x7470de*/
+  TechnoTypeClass::ReadINI(aP1, -1); /*0x7470de*/
   this->ArrayIndex = -1; /*0x7470e3*/
   this->qDFC = -1; /*0x7470eb*/
   this->qE00 = 0; /*0x7470f1*/
@@ -188,6 +189,7 @@ void UnitTypeClass_CreateUnit(void * a1, void * a2)
   v13[1] = v10; /*0x747534*/
   return v5->COMStub_54(v13, (uint8_t)(((v9 >> 7) + 1) >> 1)); /*0x74754d*/
 }
+}
 // 0x747560
 namespace gamemd {
 void UnitTypeClass_ConstructUnit()
@@ -199,6 +201,7 @@ void UnitTypeClass_ConstructUnit()
     return UnitClass::Construct(v3, (int)this, ppv); /*0x74757c*/
   else
     return 0; /*0x747585*/
+}
 }
 // 0x747620
 namespace gamemd {
@@ -290,7 +293,7 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
 
   v4 = v3; /*0x74762f*/
   v83 = v3; /*0x747633*/
-  INIClass::ResetSection((INIClass *)this); /*0x747637*/
+  INIClass::ResetSection(); /*0x747637*/
   if ( !(uint8_t)ObjectTypeClass::LoadExtras((TechnoTypeClass *)this, a2, v79) ) /*0x74763f*/
     return 0; /*0x747ea0*/
   p_occupant = (uint8_t *)&v4->occupant; /*0x747654*/
@@ -509,7 +512,7 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
   }
   while ( v35 < 4 ); /*0x747b47*/
   strcpy(Source, (const char *)&v4[1].ProductionTimer + 2); /*0x747b6f*/
-  INIClass::GetString((INIClass *)this, p_occupant, aAltimage, Source, (char *)&v4[1].ProductionTimer + 2, 25); /*0x747b88*/
+  INIClass::GetString(p_occupant, aAltimage, Source, (char *)&v4[1].ProductionTimer + 2, 25); /*0x747b88*/
   _makepath(v86, 0, 0, (const char *)&v83[1].ProductionTimer + 2, Ext); /*0x747ba6*/
   v83[1].BunkerState = (int)SearchMIXFile(v86, 0); /*0x747bc4*/
   if ( AbstractTypeClass::NameEquals((int)v83, g_INI_Key_TRUCKA.Size) ) /*0x747bca*/
@@ -567,6 +570,7 @@ void* UnitTypeClass_LoadFromINI(void * a1, void * a2, void * a3)
     BuildingClass::SetSlot(v83, v68, v69); /*0x747e8b*/
   }
   return 1; /*0x747e92*/
+}
 }
 // 0x74B960
 VoxelAnimTypeClass * * UnitTypeClass::FindOrCreate()
@@ -671,7 +675,7 @@ int UnitTypeClass::PowerDrainUpdate(int * a2)
   int v10; // edx
   int v11; // eax
 
-  BuildingTypeClass::ProcessPower((int)this, a2); /*0x747f79*/
+  BuildingTypeClass::ProcessPower(a2); /*0x747f79*/
   Power::TimerProcess(this->MovementRestrictedTo[0]); /*0x747f87*/
   IDA_LOBYTE(v3) = this->Passive; /*0x747f8c*/
   Power::FlagProcess((Power *)a2, v3); /*0x747f95*/

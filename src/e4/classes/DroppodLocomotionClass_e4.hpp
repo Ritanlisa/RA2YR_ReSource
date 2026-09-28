@@ -15,12 +15,6 @@ struct DroppodLocomotionClass {
     void* q1554;  // 0x1554
     void* q5188;  // 0x5188
     void* q5460;  // 0x5460
-    unsigned int BeginMove;
-    unsigned int Piggybackee;
-    unsigned int ProcessMove;
-    unsigned int StubReturn48;
-    unsigned int UpdateMovement;
-    unsigned int ddtor;
 // --- flat members (END) ---
     char ILoco_Process(int a1);  // 0x4B5B70
 };

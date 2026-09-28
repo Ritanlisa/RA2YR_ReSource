@@ -218,7 +218,8 @@ TriggerClass * * TagClass::Destructor(void ** a1, AbstractClass * a2)
     while ( v20 < g_GameObjectCleanup ); /*0x6e520c*/
   }
   AbstractClass::AnnounceExpiredPointer(&this->vtable0, 1); /*0x6e5212*/
-  return AbstractClass::DTOR((AbstractClass *)this); /*0x6e521e*/
+  return AbstractClass::DTOR(); /*0x6e521e*/
+}
 }
 // 0x6E6220
 namespace gamemd {
@@ -237,12 +238,13 @@ int TagClass::HasValidHouse()
   }
   return 1; /*0x6e6242*/
 }
+}
 // 0x71ADE0
 namespace gamemd {
 Coord * * TagClass::Unlink()
 {
   int v2; // eax
-  Coord **(__thiscall TagClass::* )(void) result;
+  int result; // eax
   TagTypeClass *buildingType; // ecx
 
   this->firstTrigger[8].destroyed = 0; /*0x71ade9*/
@@ -262,14 +264,15 @@ Coord * * TagClass::Unlink()
       result->enabled = 0; /*0x71ae1e*/
     result = TagClass::Unlink(*((TagClass **)&this->vtable26)); /*0x71ae24*/
   }
-  buildingType = this->buildingType; /*0x71ae29*/
-  this->q011 = 0; /*0x71ae2c*/
-  this->uniqueId = 0; /*0x71ae31*/
+  buildingType = (gamemd::TagTypeClass *)((gamemd::Coord **)(this->buildingType));
+  this->q011 = (unsigned int)((gamemd::Coord **)(0));
+  this->uniqueId = (gamemd::Coord **)(0);
   this->u32_3C = 0; /*0x71ae34*/
   this->u32_38 = 0; /*0x71ae37*/
   if ( buildingType ) /*0x71ae3a*/
     return (*((int (__thiscall **)(TagTypeClass *, unsigned int, int))buildingType->vtable0 + 289))(buildingType, 0, 1); /*0x71ae41*/
   return result; /*0x71ae47*/
+}
 }
 // 0x6E5610
 namespace gamemd {
@@ -327,7 +330,7 @@ int TagClass::ProcessTag(int * a2)
   TriggerClass *firstTrigger; // eax
   int v5; // eax
 
-  AbstractClass::ProcessPower((AbstractClass *)this); /*0x6e56e9*/
+  AbstractClass::ProcessPower(); /*0x6e56e9*/
   v3 = (*((int (__stdcall **)(void **))this->buildingType->vtable1 + 4))(&this->buildingType->vtable1); /*0x6e56f7*/
   Power::TimerProcess(v3); /*0x6e56fd*/
   firstTrigger = this->firstTrigger; /*0x6e5702*/
@@ -399,9 +402,9 @@ int TagClass::StubReturn44()
 namespace gamemd {
 TagClass * TagClass::ProcessTrigger(char a2)
 {
-  TagClass::Destructor(this); /*0x6e58b3*/
+  TagClass::Destructor(); /*0x6e58b3*/
   if ( (a2 & 1) != 0 ) /*0x6e58bd*/
-    RA2_OPDEL(this); /*0x6e58c0*/
+    RA2_OPDEL(); /*0x6e58c0*/
   return &this->vtable0; /*0x6e58ca*/
 }
 } // namespace gamemd

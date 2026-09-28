@@ -24,6 +24,7 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/FootClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
 
 // 0x41C8B0
 AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
@@ -32,7 +33,7 @@ AircraftTypeClass::AircraftTypeClass(ObjectClass * aP1)
   bool v4; // zf
   int v5; // ecx
 
-  TechnoTypeClass::ReadINI((char *)this, aP1, 4); /*0x41c8bb*/
+  TechnoTypeClass::ReadINI(aP1, 4); /*0x41c8bb*/
   this->ArrayIndex = -1; /*0x41c8c6*/
   this->qDFC = 0; /*0x41c8d0*/
   this->qE08 = 0; /*0x41c8d6*/
@@ -106,7 +107,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   char v9; // al
   int v10; // eax
   char v11; // al
-  AnimTypeClass ** v12;
+  char v12; // cl
   char v14; // [esp-Ch] [ebp-98h]
   char v15; // [esp-Ch] [ebp-98h]
   char v16; // [esp-Ch] [ebp-98h]
@@ -116,7 +117,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   char Destination[128]; // [esp+Ch] [ebp-80h] BYREF
 
   v4 = v3; /*0x41cc2f*/
-  INIClass::ResetSection((INIClass *)this); /*0x41cc33*/
+  INIClass::ResetSection(); /*0x41cc33*/
   if ( !(uint8_t)ObjectTypeClass::LoadExtras((TechnoTypeClass *)this, a2, v18) ) /*0x41cc3b*/
     return 0; /*0x41cd98*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x41cc5c*/
@@ -173,6 +174,7 @@ AnimTypeClass * * AircraftTypeClass_LoadTypeData(void * a1, void * a2, void * a3
   *(unsigned char *)(v4 + 3596) = INIClass::ReadBool_Overwrite((int *)this, (uint8_t *)(v4 + 36), aFlyback, v12); /*0x41cd83*/
   return 1; /*0x41cd8a*/
 }
+}
 // 0x41CFE0
 AircraftTypeClass * AircraftTypeClass::ddtor(char a2)
 {
@@ -183,7 +185,7 @@ AircraftTypeClass * AircraftTypeClass::ddtor(char a2)
   *(unsigned int *)&this->gap0[4] = (void*)&AircraftTypeClass_vftable; /*0x41cfec*/
   *(unsigned int *)&this->gap0[8] = (void*)&AircraftTypeClass_vftable; /*0x41cff3*/
   *(unsigned int *)&this->gap0[12] = (void*)&AircraftTypeClass_vftable; /*0x41cffa*/
-  AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x41d001*/
+  AbstractClass::AnnounceExpiredPointer(1); /*0x41d001*/
   v5 = this; /*0x41d016*/
   v3 = (*(int (__thiscall **)(unsigned int *, AircraftTypeClass **))(dword_A8B218 + 16))(&dword_A8B218, &v5); /*0x41d01a*/
   if ( v3 != -1 && v3 < unk_A8B228 && v3 < --unk_A8B228 ) /*0x41d035*/
@@ -195,18 +197,18 @@ AircraftTypeClass * AircraftTypeClass::ddtor(char a2)
     }
     while ( v3 < unk_A8B228 ); /*0x41d04d*/
   }
-  TechnoTypeClass::DTOR((int)this); /*0x41d051*/
+  TechnoTypeClass::DTOR(); /*0x41d051*/
   if ( (a2 & 1) != 0 ) /*0x41d05b*/
-    RA2_OPDEL(this); /*0x41d05e*/
+    RA2_OPDEL(); /*0x41d05e*/
   return (void **)this; /*0x41d068*/
 }
 // 0x41CB20
 AircraftClass * AircraftTypeClass::ConstructAircraft(AbstractClass * ppv)
 {
   int v2; // edi
-  void * v4;
+  int v4; // eax
 
-  v4 = (void *)((int)(RA2_OPNEW(0x6D8u)));
+  v4 = RA2_OPNEW(0x6D8u); /*0x41cb28*/
   if ( v4 ) /*0x41cb32*/
     return (AircraftClass *)AircraftClass::Construct(v4, v2, (int)this, ppv); /*0x41cb3c*/
   else
@@ -227,7 +229,7 @@ int * AircraftTypeClass::CreateAircraft(int a1)
     dword_889F24 = 2147450879; /*0x41cbb4*/
     atexit(nullsub_85); /*0x41cbba*/
   }
-  return (int *)(&dword_889F20);
+  return &dword_889F20; /*0x41cbc8*/
 }
 // 0x41CBE0
 char AircraftTypeClass::GetDimensions(int a1, int a2)
@@ -243,7 +245,7 @@ int AircraftTypeClass::PowerDrainUpdate(int * a2)
   int v6; // eax
   int v7; // ecx
 
-  v3 = (int)(BuildingTypeClass::ProcessPower((int)this, a2));
+  v3 = BuildingTypeClass::ProcessPower((int)this, a2); /*0x41cdb9*/
   IDA_LOBYTE(v3) = this->qE08; /*0x41cdbe*/
   Power::FlagProcess((Power *)a2, v3); /*0x41cdc7*/
   IDA_LOBYTE(v4) = this->qE09; /*0x41cdcc*/
@@ -261,7 +263,7 @@ int AircraftTypeClass::LoadFromINI(ObjectTypeClass * aP0, int aP1)
 {
   int result; // eax
 
-  result = (int)(TechnoTypeClass::SaveLoad_Prefix((TechnoTypeClass *)aP0, aP1));
+  result = TechnoTypeClass::SaveLoad_Prefix((TechnoTypeClass *)aP0, aP1); /*0x41ce2b*/
   if ( result >= 0 ) /*0x41ce32*/
   {
     if ( aP0 ) /*0x41ce36*/
@@ -313,7 +315,7 @@ int AircraftTypeClass::GetObjectSize()
 // 0x41CFD0
 int AircraftTypeClass::GetAuxField()
 {
-  return (int)(this->ArrayIndex);
+  return this->ArrayIndex; /*0x41cfd6*/
 }
 // 0x712120
 int AircraftTypeClass::GetGameplayValue()

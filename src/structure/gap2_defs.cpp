@@ -74,6 +74,7 @@ int InfantryClass::PerFrameUpdate() {
   }
   return result; /*0x517d8c*/
 }
+}
 // 0x413D20
 namespace gamemd { 
 int AircraftClass::Construct(int a1, void* a2) {
@@ -692,6 +693,7 @@ int BuildingLightClass::Draw_Start(int a1, int a2) {
   }
   return BehaviourMode; /*0x4361bc*/
 }
+}
 // 0x4361D0
 namespace gamemd { 
 int BuildingLightClass::SD_vt23() {
@@ -1062,6 +1064,7 @@ int BuildingLightClass::SD_vt05(void* a1, int a2) {
   }
   return Register; /*0x4369b6*/
 }
+}
 // 0x436A00
 namespace gamemd { 
 int BuildingLightClass::SD_vt10(int a1, int a2) {
@@ -1074,6 +1077,7 @@ int BuildingLightClass::SD_vt10(int a1, int a2) {
   if ( this->FollowingObject == (ObjectClass *)a1 ) /*0x436a2b*/
     this->FollowingObject = 0; /*0x436a2d*/
   return result; /*0x436a33*/
+}
 }
 // 0x436E80
 namespace gamemd { 
@@ -1102,6 +1106,7 @@ int BuildingLightClass::CalculateDistanceIntensity() {
     return (v5 - v6) / ((*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1928) - v6) / 10); /*0x436f36*/
   else
     return 0; /*0x436f0e*/
+}
 }
 // 0x436F40
 namespace gamemd { 
@@ -1138,6 +1143,7 @@ int BuildingLightClass::SD_vt13(void* a1) {
   }
   return result; /*0x437020*/
 }
+}
 // 0x437030
 namespace gamemd { 
 int BuildingLightClass::SD_vt53() {
@@ -1146,6 +1152,7 @@ int BuildingLightClass::SD_vt53() {
   VectorClass::RemoveItem((VectorClass *)&stru_87F5F0.__pad_58[304], (int)this); /*0x437042*/
   return 1; /*0x437049*/
 }
+}
 // 0x437050
 namespace gamemd { 
 int BuildingLightClass::SD_vt54(int a1, int a2) {
@@ -1153,6 +1160,7 @@ int BuildingLightClass::SD_vt54(int a1, int a2) {
     return 0; /*0x43707b*/
   ObjectClass::SetDeployState((LogicClass *)this, 0); /*0x437070*/
   return 1; /*0x437077*/
+}
 }
 // 0x43B680
 namespace gamemd { 
@@ -1186,6 +1194,7 @@ void* BuildingClass::ctor(int a1) {
   this->vtable2 = &BuildingClass_Vtable3; /*0x43b72c*/
   this->vtable3 = &BuildingClass_Vtable4; /*0x43b733*/
   return &this->vtable0; /*0x43b73c*/
+}
 }
 // 0x443410
 namespace gamemd { 
@@ -1320,6 +1329,7 @@ int BuildingClass::HandleFactoryCommand() {
   IDA_LOBYTE(result) = 1; /*0x4436dd*/
   return result; /*0x443444*/
 }
+}
 // 0x445F80
 namespace gamemd { int SuperWeapon::CreateUnits() {
 {
@@ -1422,6 +1432,7 @@ int BuildingClass::PushScriptAction() {
   }
   return result; /*0x44d7c5*/
 }
+}
 // 0x459FF0
 namespace gamemd { 
 void BuildingClass::initBuildingData() {
@@ -1446,10 +1457,12 @@ int BuildingClass::updateFactoryProduction(int a2) {
   else
     return 0; /*0x45a027*/
 }
+}
 // 0x465D70
 namespace gamemd { 
 int BuildingClass::processPowerState() {
-  return this->u32_EDC; /*0x465d76*/
+  return this->q3B7; /*0x465d76*/
+}
 }
 // 0x46B310
 namespace gamemd { 
@@ -1535,6 +1548,7 @@ int SuperWeapon::CreateNukePayload() {
   }
   return result; /*0x46b535*/
 }
+}
 // 0x484F20
 namespace gamemd { 
 int InfantryClass::GetType() {
@@ -1545,6 +1559,7 @@ int InfantryClass::GetType() {
     return 0; /*0x484f43*/
   else
     return *(unsigned int *)(FootClass_Array.barrelFacing[3] + 4 * v1); /*0x484f3f*/
+}
 }
 // 0x485460
 namespace gamemd { 
@@ -1623,11 +1638,13 @@ int BuildingClass::CheckAdjacentCells() {
   IDA_LOBYTE(result) = 0; /*0x485581*/
   return result; /*0x485578*/
 }
+}
 // 0x487110
 namespace gamemd { 
 void* BuildingClass::checkOccupant(int a2) {
   this->spawnStatus |= 1 << a2; /*0x48711d*/
   return &this->vtable0; /*0x487120*/
+}
 }
 // 0x487130
 namespace gamemd { 
@@ -1635,17 +1652,20 @@ void* BuildingClass::updateOccupiedState(int a2) {
   this->spawnStatus &= ~(1 << a2); /*0x487144*/
   return &this->vtable0; /*0x487147*/
 }
+}
 // 0x487170
 namespace gamemd { 
 int BuildingClass::processGarrison(int a2) {
   ++*((unsigned short *)&this->currentMission + a2); /*0x487174*/
   return a2; /*0x48717c*/
 }
+}
 // 0x487180
 namespace gamemd { 
 int BuildingClass::evaulateDefense(int a2) {
   --*((unsigned short *)&this->currentMission + a2); /*0x487184*/
   return a2; /*0x48718c*/
+}
 }
 // 0x4AA290
 namespace gamemd { 
@@ -1654,6 +1674,7 @@ int BuildingClass::updateSellBack(void* aP1, void* aP2) {
 
   v3 = (Object *)CellCoord::To_CellObj((CellCoord *)this, aP1); /*0x4aa29c*/
   return Object::FindObjectCell(v3, aP2, 0); /*0x4aa2a8*/
+}
 }
 // 0x4DA030
 namespace gamemd { 
@@ -1725,6 +1746,8 @@ double BuildingClass::checkRepairEligibility(HouseClass* pHouse) {
   else
     return Float4::Sum(v1) / (double)g_RulesClass_Instance[1].?[1]; /*0x4f9780*/
 }
+}
+}
 // 0x4FAD20
 namespace gamemd { 
 int SuperWeapon::SelectSuperWeaponTarget(int a1) {
@@ -1782,6 +1805,7 @@ int SuperWeapon::SelectSuperWeaponTarget(int a1) {
     }
   }
   return v5; /*0x4fae44*/
+}
 }
 // 0x4FAE50
 namespace gamemd { 
@@ -1990,10 +2014,12 @@ int SuperWeapon::UpdateSuperWeaponsUnavailableHouseClass() {
   }
   return v2; /*0x50b369*/
 }
+}
 // 0x5176A0
 namespace gamemd { 
 bool InfantryClass::SetField6() {
   return ((int)this->vtable0 & 1) == 0; /*0x5176a6*/
+}
 }
 // 0x517A50
 namespace gamemd { 
@@ -2095,6 +2121,7 @@ int InfantryClass::Construct(int a1, void* a2) {
     ++g_BuildingLoadQueue_Array.vtable1; /*0x517cab*/
   }
   return this; /*0x517cb2*/
+}
 }
 // 0x517FA0
 namespace gamemd { int InfantryClass::ProcessDeployment(void* a1, int a2, int a3, void* a4, int a5, int a6, int a7) {
@@ -4027,6 +4054,7 @@ int InfantryClass::Update() {
   }
   return (char)movementDestination; /*0x51bad3*/
 }
+}
 // 0x523370
 namespace gamemd { 
 void* InfantryClass::checkBridgeClearance(int a2) {
@@ -4042,6 +4070,7 @@ void* InfantryClass::checkBridgeClearance(int a2) {
       (*(void (__stdcall **)(void *))(*(unsigned int *)vtable0 + 8))(vtable0); /*0x523391*/
   }
   return (int *)this; /*0x523396*/
+}
 }
 // 0x5233D0
 namespace gamemd { 
@@ -4074,6 +4103,7 @@ void* InfantryClass::updateOccupiedBuilding(void* aP1) {
       WinAPI::Wrapper(v5); /*0x52342e*/
   }
   return &this->vtable0; /*0x523435*/
+}
 }
 // 0x539AE0
 namespace gamemd { 
@@ -4367,12 +4397,14 @@ int SuperWeapon::SerializeSuperWeaponState() {
   }
   return result; /*0x539e95*/
 }
+}
 // 0x5AEAD0
 namespace gamemd { 
 void BuildingClass::processBaseExpansion(float a2) {
   *this = a2 * *this; /*0x5aead6*/
   this->u32_10 = a2 * this->u32_10; /*0x5aeadf*/
   this->q020 = a2 * this->q020; /*0x5aeae9*/
+}
 }
 // 0x5AEAF0
 namespace gamemd { 
@@ -4388,6 +4420,7 @@ void BuildingClass::recalcAdjacency(float a2) {
   *(this + 6) = a2 * *(this + 6); /*0x5aeb31*/
   *(this + 10) = a2 * *(this + 10); /*0x5aeb3b*/
 }
+}
 // 0x63D540
 namespace gamemd { 
 int BuildingClass::updateAnimationState() {
@@ -4399,6 +4432,7 @@ int BuildingClass::updateAnimationState() {
   if ( v1 == 29 ) /*0x63d551*/
     return Factory::IdleHandler(); /*0x63d553*/
   return -1; /*0x63d55b*/
+}
 }
 // 0x6A60E0
 namespace gamemd { 
@@ -4591,6 +4625,7 @@ int BuildingLightClass::FindAllTargets(int a1, int a2, int a3, int a4) {
   while ( v6 < stru_A8EB00.parent_gap[20] ); /*0x6e29fc*/
   return v5; /*0x6e29ff*/
 }
+}
 // 0x6EFE60
 namespace gamemd { 
 void SuperWeapon::DispatchTeam(int a1, int a2) {
@@ -4736,10 +4771,12 @@ void SuperWeapon::DispatchTeam(int a1, int a2) {
     *(unsigned char *)(v24 + 128) = 1; /*0x6f0102*/
   }
 }
+}
 // 0x70DDC0
 namespace gamemd { 
 int BuildingClass::checkPlacement() {
   return this->gattlingStage; /*0x70ddc6*/
+}
 }
 // 0x7353C0
 namespace gamemd { 
@@ -4926,4 +4963,5 @@ int UnitClass::Construct() {
     ++g_BuildingLoadQueue_Array.vtable1; /*0x73576f*/
   }
   return (int)this; /*0x735776*/
+}
 }

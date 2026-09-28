@@ -162,4 +162,3 @@ void SkirmishVector::PushBack() {}
 // 0x55dee0
 void SyncDelayClass::ProcessNetworkSync() {}
 
-}

@@ -17,13 +17,14 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
 #include "e4/classes/VoxelAnim_e4.hpp"
+#include "e4/classes/WaypointClass_e4.hpp"
 
 // 0x748220
 namespace gamemd {
 int Voxel::BuildIndexTable()
 {
   int v1; // ebx
-  void * result;
+  int result; // eax
   int v4; // edx
   int v5; // edi
   int16_t v6; // bx
@@ -44,7 +45,7 @@ int Voxel::BuildIndexTable()
     RA2_OPDEL(dword_B1D14C); /*0x748233*/
     dword_B1D14C = 0; /*0x74823b*/
   }
-  result = (void *)((unsigned int)(RA2_OPNEW(0x1FFFCu)));
+  result = (unsigned int)(RA2_OPNEW(0x1FFFCu));
   dword_B1D14C = (unsigned int)((void *)result);
   if ( result ) /*0x748255*/
   {
@@ -106,13 +107,14 @@ int Voxel::BuildIndexTable()
   }
   return result; /*0x748340*/
 }
+}
 // 0x754510
 namespace gamemd {
 AbstractClass * * Voxel::RenderFrame()
 {
   int v1; // edi
   char *v2; // esi
-  unsigned int * v3;
+  int v3; // ebx
   unsigned int *v4; // ecx
   char *v5; // eax
   int v6; // edx
@@ -150,10 +152,10 @@ AbstractClass * * Voxel::RenderFrame()
     }
     while ( v1 < dword_B2FB70 ); /*0x754585*/
   }
-  v3 = (int)((unsigned int *)(dword_B2D820));
+  v3 = dword_B2D820; /*0x754587*/
   if ( dword_B2D820 > 0 ) /*0x75458f*/
   {
-    v4 = (unsigned int)(&unk_B2D824);
+    v4 = (unsigned int *)(&unk_B2D824);
     v5 = (char *)&unk_B2D958; /*0x754596*/
     v6 = dword_B2D820; /*0x75459b*/
     do /*0x7545a8*/
@@ -165,7 +167,7 @@ AbstractClass * * Voxel::RenderFrame()
     }
     while ( v6 ); /*0x7545a8*/
   }
-  v7 = (int)(v3 - 1);
+  v7 = v3 - 1; /*0x7545aa*/
   if ( v3 - 1 > 0 ) /*0x7545af*/
   {
     v8 = 1; /*0x7545b1*/
@@ -174,7 +176,7 @@ AbstractClass * * Voxel::RenderFrame()
     {
       if ( v8 < v3 ) /*0x7545bd*/
       {
-        v10 = (int)(v9 + 4);
+        v10 = v9 + 4; /*0x7545bf*/
         v11 = v3 - v8; /*0x7545c2*/
         do /*0x7545dd*/
         {
@@ -245,8 +247,9 @@ AbstractClass * * Voxel::RenderFrame()
   v25[5] = v20; /*0x7546f8*/
   IDA_LODWORD(v25[2]) = v19; /*0x754707*/
   IDA_LODWORD(v25[3]) = v26; /*0x75470b*/
-  qmemcpy(this, v25, 0x18u); /*0x75470f*/
+  qmemcpy(v25, 0x18u); /*0x75470f*/
   return this; /*0x754711*/
+}
 }
 // 0x754CB0
 namespace gamemd {
@@ -559,6 +562,7 @@ int Voxel::Projection_Setup()
   dword_B45158 = -1082130432; /*0x75596e*/
   dword_B4515C = 0; /*0x755978*/
   return result; /*0x75591d*/
+}
 }
 // 0x755DB0
 namespace gamemd {
@@ -1227,6 +1231,7 @@ void* Voxel::DrawHelper(IUnknown * aP1)
     return 1; /*0x75c5f9*/
   }
 }
+}
 // 0x75EDF0
 namespace gamemd {
 int Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
@@ -1257,6 +1262,7 @@ int Voxel::BlendShadowColor(int a2, WaveClass * aP2, int arg8, unsigned short * 
   result = v8 >> g_BitMask_Red << g_BitShift_Blue; /*0x75ef07*/
   *a4 = (v9 >> g_BitShift_Green_0 << g_BitShift_Red) | result | (v10 >> g_BitMask_Blue << g_BitMask_Green); /*0x75ef19*/
   return result; /*0x75ef1c*/
+}
 }
 // 0x75F140
 namespace gamemd {
@@ -1295,6 +1301,7 @@ int Voxel::loadSectionData()
   result = 3 * *(unsigned int *)v5; /*0x75f217*/
   *(unsigned int *)&this->__pad_134[260] = result; /*0x75f21a*/
   return result; /*0x75f220*/
+}
 }
 // 0x75F4C0
 namespace gamemd {
@@ -1447,7 +1454,7 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
       {
         v64 = &v8[v7 - 1]; /*0x75fb5c*/
       }
-      Voxel::loadSectionData((Voxel *)this); /*0x75fb6a*/
+      Voxel::loadSectionData(); /*0x75fb6a*/
       v10 = this->q1CC; /*0x75fb6f*/
       if ( v10 <= 1 || v10 >= 6 ) /*0x75fb81*/
       {
@@ -1491,7 +1498,7 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
                 for ( i = abs32(v56 - v6 - this->WaveClass_field_17C); v50 >= v60; --v68 ) /*0x7600d5*/
                 {
                   if ( *(unsigned short *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v50, v51) > (uint16_t)v88 ) /*0x7600f0*/
-                    Voxel::BlendShadowColor((Voxel *)this, v50, v57, i, v68); /*0x760100*/
+                    Voxel::BlendShadowColor(v50, v57, i, v68); /*0x760100*/
                   --v50; /*0x76010e*/
                   --v50; /*0x76010f*/
                 }
@@ -1538,7 +1545,7 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
                 {
                   if ( *v42 > v87 ) /*0x75ff91*/
                   {
-                    Voxel::BlendShadowColor((Voxel *)this, v40, v57, j, v41); /*0x75ff9d*/
+                    Voxel::BlendShadowColor(v40, v57, j, v41); /*0x75ff9d*/
                     v42 = v67; /*0x75ffa2*/
                   }
                   --v42; /*0x75ffaa*/
@@ -1604,7 +1611,7 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
                   while ( 1 ) /*0x75fdd2*/
                   {
                     if ( *(unsigned short *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v32, v33) > v86 ) /*0x75fdeb*/
-                      Voxel::BlendShadowColor((Voxel *)this, v32, v57, v34, v65); /*0x75fdfb*/
+                      Voxel::BlendShadowColor(v32, v57, v34, v65); /*0x75fdfb*/
                     ++v32; /*0x75fe09*/
                     ++v32; /*0x75fe0a*/
                     ++v65; /*0x75fe17*/
@@ -1654,7 +1661,7 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
               {
                 if ( *v20 > v86 ) /*0x75fc98*/
                 {
-                  Voxel::BlendShadowColor((Voxel *)this, v24, v57, m, v21); /*0x75fca4*/
+                  Voxel::BlendShadowColor(v24, v57, m, v21); /*0x75fca4*/
                   v24 = v75; /*0x75fca9*/
                 }
                 ++v20; /*0x75fcb1*/
@@ -1685,6 +1692,7 @@ void Voxel::ShadowCalc(WaveClass * aP1, int * a2)
       this->q1A8 = 0; /*0x76016f*/
     }
   }
+}
 }
 // 0x760190
 namespace gamemd {
@@ -1719,6 +1727,7 @@ int Voxel::BlendColor(int a2, WaveClass * aP2, int arg8, unsigned short * a4)
       | result
       | (v9 >> g_BitShift_Green_0 << g_BitShift_Red);
   return result; /*0x7602d3*/
+}
 }
 // 0x7609E0
 namespace gamemd {
@@ -1953,6 +1962,7 @@ AbstractClass * * Voxel::FaceDraw(unsigned int * a1, WaveClass * aP2)
     }
   }
 }
+}
 // 0x7610F0
 namespace gamemd {
 void* Voxel::FaceBlit()
@@ -2109,7 +2119,7 @@ void* Voxel::FaceBlit()
       if ( (uint8_t)Coord::Compare2D((Coord *)v37, &v41) ) /*0x761572*/
       {
         *(unsigned int *)v37 = *Coord::ToCell((Coord *)&v49, v45); /*0x761592*/
-        Voxel::renderSection(this, v37); /*0x761596*/
+        Voxel::renderSection(v37); /*0x761596*/
       }
       if ( *(int *)&this->__pad_134[152] >= 4 ) /*0x7615a1*/
       {
@@ -2118,11 +2128,12 @@ void* Voxel::FaceBlit()
         if ( (uint8_t)Coord::Compare2D((Coord *)v38, v29) ) /*0x7615df*/
         {
           *(unsigned int *)v38 = *Coord::ToCell((Coord *)&v49, v47); /*0x7615ff*/
-          Voxel::renderSection(this, v38); /*0x761603*/
+          Voxel::renderSection(v38); /*0x761603*/
         }
       }
     }
   }
+}
 }
 // 0x761640
 namespace gamemd {
@@ -2671,6 +2682,7 @@ int Voxel::SectionProject(int * a2, int a3)
   *(unsigned int *)(result + 44) = *(unsigned int *)&this->__pad_D0[32]; /*0x762034*/
   qmemcpy(&this->__pad_134[164], (const void *)(*(unsigned int *)&this->__pad_134[160] + 928), 0x18u); /*0x762049*/
   return result; /*0x76204b*/
+}
 }
 // 0x762070
 namespace gamemd {
@@ -3252,6 +3264,7 @@ AbstractClass * * Voxel::LightRender(AbstractClass ** a2, int a3)
   qmemcpy(&this->__pad_134[164], (const void *)(*(unsigned int *)&this->__pad_134[160] + 928), 0x18u); /*0x762aca*/
   return result; /*0x762acc*/
 }
+}
 // 0x762AF0
 namespace gamemd {
 DynamicVectorClass_flat * * Voxel::TransformMatrix()
@@ -3387,7 +3400,7 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
               0,
               0);
       v18 = (int *)(*(int (__thiscall **)(int, int *, int))(*(unsigned int *)v16 + 88))(v16, &v14, v17); /*0x762cb9*/
-      Voxel::LightRender((Voxel *)this, v18, 0); /*0x762cbf*/
+      Voxel::LightRender(v18, 0); /*0x762cbf*/
       goto LABEL_22; /*0x762cc4*/
     }
     if ( this->WaveClass_field_15C == 3 ) /*0x762ccf*/
@@ -3402,7 +3415,7 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
                      0,
                      0,
                      v20);
-      Voxel::LightRender((Voxel *)this, v21, (int)v85); /*0x762d0e*/
+      Voxel::LightRender(v21, (int)v85); /*0x762d0e*/
     }
     else
     {
@@ -3417,7 +3430,7 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
                      0,
                      0,
                      v23);
-      Voxel::SectionProject((Voxel *)this, v24, (int)v85); /*0x762d52*/
+      Voxel::SectionProject(v24, (int)v85); /*0x762d52*/
     }
   }
   LABEL_22:
@@ -3510,7 +3523,7 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
   if ( !this->q12D || 0.050000001 * 0.5 + *(double *)(&this->WaveClass_field_1282) < *(double *)(&this->WaveClass_field_12C0) ) /*0x762e82*/
   {
   LABEL_42:
-    Voxel::FaceBlit((Voxel *)this); /*0x7631db*/
+    Voxel::FaceBlit(); /*0x7631db*/
     return; /*0x7631dd*/
   }
   v36 = *(double *)(&this->WaveClass_field_12C0) + 0.050000001; /*0x762e8e*/
@@ -3534,7 +3547,8 @@ DynamicVectorClass_flat * * Voxel::TransformMatrix()
   v47 = this->q14C; /*0x762f41*/
   *(unsigned int *)(v47 + 24) = v44; /*0x762f4b*/
   *(unsigned int *)(v47 + 28) = v46; /*0x762f50*/
-  Voxel::FaceBlit((Voxel *)this); /*0x762f53*/
+  Voxel::FaceBlit(); /*0x762f53*/
+}
 }
 // 0x763330
 namespace gamemd {
@@ -3565,6 +3579,7 @@ int Voxel::freeSectionMemory(unsigned int * a2)
   this->Voxel_field_0x10[0] = v6 + 1; /*0x76336e*/
   *(unsigned int *)(v7 + 4 * v6) = *a2; /*0x763378*/
   return 1; /*0x763361*/
+}
 }
 // 0x7DF9C0
 namespace gamemd {
@@ -3675,6 +3690,7 @@ int Voxel::FacePixelBuffer(int * a1)
   while ( IDA_BYTE1(v3) ); /*0x7dfa51*/
   return result; /*0x7dfa55*/
 }
+}
 // 0x7DFAE0
 namespace gamemd {
 int Voxel::FacePixelBufferEx(int a1)
@@ -3780,6 +3796,7 @@ int Voxel::FacePixelBufferEx(int a1)
   }
   while ( IDA_BYTE1(v3) ); /*0x7dfb72*/
   return result; /*0x7dfb76*/
+}
 }
 // 0x7DFC00
 namespace gamemd {
@@ -3888,6 +3905,7 @@ int Voxel::FacePixelBuffer3(int * a1)
   }
   while ( IDA_BYTE1(v3) ); /*0x7dfc94*/
   return result; /*0x7dfc98*/
+}
 }
 // 0x754C00
 namespace gamemd {

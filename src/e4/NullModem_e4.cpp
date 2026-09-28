@@ -78,7 +78,7 @@ char NullModem_TestConnection(void * a1)
       v6 = v10; /*0x5f04d1*/
       v23[0] = 100; /*0x5f04d3*/
       IDA_LOBYTE(v23[6]) = g_TauntCommandState; /*0x5f04db*/
-      Stream::WriteBlock(&g_EventManager, (int, unsigned int a1)v23, 250, 0); /*0x5f04df*/
+      Stream::WriteBlock(&g_EventManager, (int)v23, 250, 0); /*0x5f04df*/
     }
     if ( ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v25, (int)v22) > 0 ) /*0x5f04fd*/
     {
@@ -129,4 +129,5 @@ char NullModem_TestConnection(void * a1)
   LABEL_33:
   Dialog::Destroy(hWnd); /*0x5f0666*/
   return v1; /*0x5f0673*/
+}
 }

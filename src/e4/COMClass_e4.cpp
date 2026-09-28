@@ -48,9 +48,9 @@ void * COMClass::lockServer(char a2)
   else
   {
     *(unsigned int *)this->__pad_0 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x76705a*/
-    ComPtr::Release((ComPtr *)this); /*0x767060*/
+    ComPtr::Release(); /*0x767060*/
     if ( (a2 & 1) != 0 ) /*0x767068*/
-      RA2_OPDEL(this); /*0x76706b*/
+      RA2_OPDEL(); /*0x76706b*/
     return this->__pad_0; /*0x767073*/
   }
 }
@@ -61,7 +61,7 @@ VectorCursor * COMClass::disconnectPoint(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&VectorCursor_rc_ptr_WorldDominationTour_GameOption_DynamicVectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7669f9*/
   if ( (a2 & 1) != 0 ) /*0x7669ff*/
-    RA2_OPDEL(this); /*0x766a02*/
+    RA2_OPDEL(); /*0x766a02*/
   return this->__pad_0; /*0x766a0c*/
 }
 } // namespace gamemd

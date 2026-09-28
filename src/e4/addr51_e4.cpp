@@ -20,6 +20,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/E4Recv_522100_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x5108F0
 namespace gamemd {
@@ -29,6 +30,7 @@ int globalHelper_0108F0(unsigned int * a1, unsigned int * a2)
     return 0; /*0x510900*/
   else
     return *a1 >= *a2 ? 1 : -1;
+}
 }
 // 0x517360
 namespace gamemd {
@@ -49,6 +51,7 @@ unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
   IDA_LOBYTE(this->vtable0) = result; /*0x5173e1*/
   return result; /*0x5173cb*/
 }
+}
 // 0x5173F0
 namespace gamemd {
 int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
@@ -65,8 +68,9 @@ int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
     v3 = a2[1] - IDA_BYTE1(this->vtable0); /*0x517414*/
   v4 = IDA_BYTE2(this->vtable0) - a2[2]; /*0x517422*/
   if ( v4 < 0 ) /*0x517424*/
-    v4 = a2[2] - IDA_BYTE2(this->vtable0, unsigned int a2, unsigned int a3); /*0x517426*/
+    v4 = a2[2] - IDA_BYTE2(this->vtable0); /*0x517426*/
   return v2 * v2 + v3 * v3 + v4 * v4; /*0x517437*/
+}
 }
 // 0x51FEF0
 namespace gamemd {
@@ -145,6 +149,7 @@ void SaveInfantryToINI(void * a1, void * a2, void * a3)
     ++result; /*0x520094*/
   }
   return result; /*0x5200a5*/
+}
 }
 // 0x510B00
 namespace gamemd {
@@ -288,7 +293,7 @@ namespace gamemd {
 unsigned int HouseClass_FormatPlayerName(int a1, unsigned char * a2, int a3)
 {
   unsigned int result; // eax
-  const int * v4;
+  const char *v4; // edi
 
   result = a3; /*0x510e10*/
   if ( a3 < 16 ) /*0x510e19*/
@@ -611,7 +616,7 @@ void E4Recv_513D00::sub_513D00()
 {
   *(unsigned int *)this->__pad_0 = (void*)&HoverLocomotionClass_vftable; /*0x513d00*/
   *(unsigned int *)&this->__pad_0[4] = (void*)&HoverLocomotionClass_vftable; /*0x513d06*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x513d0d*/
+  LocomotionClass::Construct(); /*0x513d0d*/
 }
 } // namespace gamemd
 
@@ -632,7 +637,7 @@ int E4Recv_517110::sub_517110()
     || this->owningHouseIndex != *(unsigned int *)&stru_A8EB00.gapE4[1440]
     || this->fallRate != *(unsigned int *)&stru_A8EB00.gapE4[1444] )
   {
-    v2 = this->occupant / 256; /*0x517161*/
+    v2 = (int)((void *)(this->occupant / 256));
     v3 = this->owningHouseIndex / 256; /*0x517164*/
     v4 = (unsigned short *)(*(int (__thiscall **)(void *, unsigned char *))(*(unsigned int *)this->vtable3 + 440))(this->vtable3, v8); /*0x517167*/
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
@@ -644,7 +649,7 @@ int E4Recv_517110::sub_517110()
   (*(void (__thiscall **)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/
   result = MovementAI::StepFootClass((MovementAI *)this, 0); /*0x5171a3*/
   if ( v5 ) /*0x5171aa*/
-    return MovementAI::MainFootClass((MovementAI *)this, 1); /*0x5171b0*/
+    return MovementAI::MainFootClass(1); /*0x5171b0*/
   return result; /*0x5171b5*/
 }
 } // namespace gamemd

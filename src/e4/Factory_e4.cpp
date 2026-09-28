@@ -19,6 +19,8 @@
 #include "e4/classes/FileClass_e4.hpp"
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x663D60
 namespace gamemd {
@@ -56,6 +58,7 @@ int Factory::GetLinkedIndex(DynamicVector * aP1)
   }
   return result; /*0x663d6c*/
 }
+}
 // 0x718B70
 namespace gamemd {
 void* Factory_CalculateExitCell(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
@@ -80,11 +83,11 @@ void* Factory_CalculateExitCell(void * a1, void * a2, void * a3, void * a4, void
   int v25; // ebx
   void *v26; // eax
   CellClass *v27; // eax
-  CellClass * v28;
+  unsigned int *v28; // ecx
   unsigned char *v29; // ebx
-  int v30; // ebp
+  CellClass * v30;
   unsigned int *v31; // eax
-  CellClass * v32;
+  int v32; // ecx
   unsigned int *v33; // eax
   CellClass *v34; // eax
   int v35; // ecx
@@ -115,7 +118,7 @@ void* Factory_CalculateExitCell(void * a1, void * a2, void * a3, void * a4, void
   char v65; // [esp+38h] [ebp-4Ch]
   int16_t v66[2]; // [esp+3Ch] [ebp-48h] BYREF
   char v67[4]; // [esp+40h] [ebp-44h] BYREF
-  CellClass * v68;
+  int v68; // [esp+44h] [ebp-40h] BYREF
   char v69; // [esp+48h] [ebp-3Ch]
   uint16_t v70; // [esp+4Ah] [ebp-3Ah]
   int16_t v71[2]; // [esp+4Ch] [ebp-38h] BYREF
@@ -124,19 +127,18 @@ void* Factory_CalculateExitCell(void * a1, void * a2, void * a3, void * a4, void
   void *v74; // [esp+5Ch] [ebp-28h] BYREF
   int v75; // [esp+60h] [ebp-24h] BYREF
   int v76; // [esp+64h] [ebp-20h] BYREF
-  int v77; // [esp+68h] [ebp-1Ch]
+  int * v77;
   int v78; // [esp+6Ch] [ebp-18h] BYREF
   int v79; // [esp+70h] [ebp-14h] BYREF
   int v80; // [esp+74h] [ebp-10h] BYREF
   int v81[3]; // [esp+78h] [ebp-Ch] BYREF
-
-  v6 = (int *)(v6);
+v6 = (int *)((unsigned int *)((int *)(v6)));
   v8 = v6 + 10; /*0x718b80*/
   if ( v6[10] == g_BuildingLoadQueue_Array.BuildLimit /*0x718b9d*/
     && v6[11] == g_BuildingLoadQueue_Array.Category[0]
     && v6[12] == g_BuildingLoadQueue_Array.unknown_3C0[0] )
   {
-    v9 = (unsigned int *)v6[3]; /*0x718ba7*/
+    v9 = (int *)((unsigned int *)v6[3]);
     v75 = v9[39]; /*0x718bb6*/
     v76 = v9[40]; /*0x718bbd*/
     v77 = v9[41]; /*0x718bc4*/
@@ -211,15 +213,15 @@ void* Factory_CalculateExitCell(void * a1, void * a2, void * a3, void * a4, void
         {
           if ( (*(int (__thiscall **)(unsigned int))(*v20 + 44))(*(unsigned int *)(v19 + 1444)) == 6 ) /*0x718dcb*/
           {
-            v21 = (int)(Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], this));
+            v21 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], this); /*0x718dd3*/
             if ( Cell::IsBridge((Cell *)v21) == v20 ) /*0x718de1*/
               IDA_LOBYTE(a5) = 1; /*0x718de3*/
           }
         }
       }
-      v77 = (gamemd::CellClass *)(*v8);
-      v78 = v6[11]; /*0x718dfa*/
-      a5 = a5; /*0x718e05*/
+      v77 = (int *)(*v8);
+      v78 = (gamemd::CellClass *)(v6[11]);
+      a5 = (gamemd::CellClass *)(a5);
       v79 = v6[12]; /*0x718e06*/
       v22 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], &v74); /*0x718e1e*/
       v23 = ObjectPlacement::CalcPosition((ObjectPlacement *)v22, &v80, &v74, a5, v67[0], 0); /*0x718e25*/
@@ -244,13 +246,13 @@ void* Factory_CalculateExitCell(void * a1, void * a2, void * a3, void * a4, void
         && v6[11] == g_BuildingLoadQueue_Array.Category[0]
         && v6[12] == g_BuildingLoadQueue_Array.unknown_3C0[0] )
       {
-        v28 = (int)((unsigned int *)v6[3]);
+        v28 = (unsigned int *)v6[3]; /*0x718efb*/
         v29 = (unsigned char *)v28[361]; /*0x718efe*/
         if ( v29 ) /*0x718f06*/
         {
           if ( (v29[20] & 2) != 0 ) /*0x718f10*/
           {
-            v30 = (gamemd::CellClass *)(*(unsigned int *)((*(int (__thiscall **)(unsigned int *))(*v28 + 132))(v28) + 1460));
+            v30 = (unsigned int *)((gamemd::CellClass *)(*(unsigned int *)((*(int (__thiscall **)(unsigned int *))(*v28 + 132))(v28) + 1460)));
             v31 = (gamemd::CellClass *)((unsigned int *)(*(int (__thiscall **)(unsigned char *, int *, unsigned int))(*(unsigned int *)v29 + 76))(v29, &v78, 0));
             *(unsigned short *)v67 = *v31 / 256; /*0x718f45*/
             v32 = v6[3]; /*0x718f54*/
@@ -291,7 +293,7 @@ void* Factory_CalculateExitCell(void * a1, void * a2, void * a3, void * a4, void
                                 0);
             if ( *(unsigned int *)v66 != g_BuildingLoadQueue_Array.unknown_int_398 ) /*0x71901f*/
             {
-              v38 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v66); /*0x71903d*/
+              v38 = (int *)(CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v66));
               v61 = (char)this; /*0x71904f*/
               v60 = (unsigned int *)(*(int (__thiscall **)(void *, int *))(*(unsigned int *)v38 + 72))(v38, &v78); /*0x71905a*/
               v39 = (ObjectPlacement *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v66); /*0x71906a*/
@@ -382,6 +384,7 @@ void* Factory_CalculateExitCell(void * a1, void * a2, void * a3, void * a4, void
     (*(void (__thiscall **)(unsigned int, unsigned int *))(*(unsigned int *)v6[3] + 240))(v6[3], v6 + 10); /*0x719276*/
     return 1; /*0x71927d*/
   }
+}
 }
 // 0x523C90
 namespace gamemd {

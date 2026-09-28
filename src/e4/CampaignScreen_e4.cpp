@@ -88,17 +88,17 @@ void CampaignScreen_Init()
       if ( hWnd == (HWND)1240 ) /*0x47138e*/
       {
         if ( !wParam ) /*0x4713ce*/
-          SendDlgItemMessageA((HWND)this, 1835, 0x4D5u, 0, 29); /*0x4713de*/
+          SendDlgItemMessageA(1835, 0x4D5u, 0, 29); /*0x4713de*/
       }
       else if ( hWnd == (HWND)1260 ) /*0x471393*/
       {
-        SendDlgItemMessageA((HWND)this, 1835, 0x4D3u, 0, 0); /*0x4713ca*/
+        SendDlgItemMessageA(1835, 0x4D3u, 0, 0); /*0x4713ca*/
       }
       else if ( hWnd == (HWND)1261 ) /*0x471396*/
       {
         Screen::Capture(1, 0, wParam, (int)v5); /*0x47139c*/
-        ShowWindow((HWND)this, 0); /*0x4713a4*/
-        Dialog::InitWindow((HWND)this, 1); /*0x4713ad*/
+        ShowWindow(0); /*0x4713a4*/
+        Dialog::InitWindow(1); /*0x4713ad*/
         return 0; /*0x4713be*/
       }
       return 0; /*0x471396*/
@@ -111,8 +111,8 @@ void CampaignScreen_Init()
     }
     if ( hWnd == (HWND)15 ) /*0x470d84*/
     {
-      Dialog::DrawBackground((Dialog *)this); /*0x471343*/
-      Dialog::StopBink((Dialog *)this); /*0x47134a*/
+      Dialog::DrawBackground(); /*0x471343*/
+      Dialog::StopBink(); /*0x47134a*/
       return 0; /*0x47135b*/
     }
     if ( hWnd != (HWND)272 ) /*0x470d90*/
@@ -253,4 +253,5 @@ void CampaignScreen_Init()
     goto LABEL_26; /*0x471319*/
   }
   return result; /*0x470da5*/
+}
 }

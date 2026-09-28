@@ -54,6 +54,10 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/E4Recv_6A74A0_e4.hpp"
+#include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/House_e4.hpp"
 
 // 0x690400
 namespace gamemd {
@@ -97,6 +101,7 @@ AbstractClass * * E4Recv_690400::sub_690400()
              g_DSurface_Hidden,
              0);
   return result; /*0x6904b7*/
+}
 }
 // 0x693B70
 namespace gamemd {
@@ -192,7 +197,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       Flagged = (char *)(GameSettings::FindFlagged());
       if ( Flagged ) /*0x693c50*/
       {
-        v5 = CharToWideString(Flagged + 36); /*0x693c55*/
+        v5 = (char *)(CharToWideString(Flagged + 36));
         Network::SendToPlayer((int)g_NetworkManager, (int)v43, 455, 1, (wchar_t *)v5); /*0x693c6f*/
       }
     }
@@ -331,7 +336,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
       v22 = (char *)(GameSettings::FindFlagged());
       if ( v22 ) /*0x694010*/
       {
-        v23 = CharToWideString(v22 + 36); /*0x694015*/
+        v23 = (char *)(CharToWideString(v22 + 36));
         Network::SendToPlayer((int)g_NetworkManager, (int)v43, 455, 1, (wchar_t *)v23); /*0x69402f*/
       }
     }
@@ -374,6 +379,7 @@ CampaignClass * * Network_RequestFile(char * a1, int a2, int a3)
     v31 = g_Str_false; /*0x69417e*/
   Debug::Log("Receive_Remote_File returned %s\n", v31); /*0x694189*/
   return v30; /*0x693d6c*/
+}
 }
 // 0x6941A0
 namespace gamemd {
@@ -572,6 +578,7 @@ void ReceiveNetworkFile(RawFileClass * a1, DWORD a2, int a3, char a4)
   RA2_OPDEL(v6); /*0x694742*/
   RawFileClass::Dtor((RawFileClass *)v43); /*0x69474e*/
   return v21; /*0x694755*/
+}
 }
 // 0x694760
 namespace gamemd {
@@ -996,6 +1003,7 @@ void Network_SendFile(char * Source, int a2, char a3, char a4)
   IDA_LOBYTE(result) = v42; /*0x6951d4*/
   return result; /*0x6947de*/
 }
+}
 // 0x6951F0
 namespace gamemd {
 AbstractClass * * FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a2, int a4, char a5)
@@ -1091,6 +1099,7 @@ AbstractClass * * FindAndValidateMap(ObjectClass * aP0, int edx0, const char * a
   v18[0] = (int)&off_7E1668; /*0x6954a3*/
   BufferIOFileClass::Dtor(v18); /*0x6954ab*/
   return 1; /*0x695401*/
+}
 }
 // 0x695760
 namespace gamemd {
@@ -1300,6 +1309,7 @@ void LoadGame_DlgProc(HWND hWnd, WPARAM wParam, unsigned int a3, HWND a4)
   SetFocus(v14); /*0x695a2b*/
   return 0; /*0x6957ff*/
 }
+}
 // 0x6994F0
 namespace gamemd {
 void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, CampaignScore * aP3, unsigned char * a4, unsigned int * a5, unsigned int * a6)
@@ -1467,6 +1477,7 @@ void ParseMapFileHeader(CampaignScore * aP0, unsigned short * a1, char * a2, Cam
   *(unsigned int *)v20.__pad_0 = &off_7E1668; /*0x699963*/
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v20); /*0x699970*/
 }
+}
 // 0x69B690
 namespace gamemd {
 int E4Recv_69B690::sub_69B690()
@@ -1517,6 +1528,7 @@ int E4Recv_69B690::sub_69B690()
     }
   }
 }
+}
 // 0x69BCC0
 namespace gamemd {
 void sub_69BCC0(ObjectClass * aP0)
@@ -1538,6 +1550,7 @@ void sub_69BCC0(ObjectClass * aP0)
       return 0; /*0x69bcf4*/
   }
   return v1; /*0x69bcef*/
+}
 }
 // 0x69F0C0
 namespace gamemd {
@@ -1601,6 +1614,7 @@ void * E4Recv_69F0C0::sub_69F0C0(void * a2)
   }
   qmemcpy(a2, &v13, 0x30u); /*0x69f189*/
   return a2; /*0x69f19a*/
+}
 }
 // 0x690150
 namespace gamemd {
@@ -2279,7 +2293,7 @@ HWND E4Recv_696950::sub_696950()
     IDA_HIBYTE(this->abstractFlags) = 0; /*0x69698f*/
     String::Trim((char *)&this->vtable2); /*0x696993*/
     _strupr((char *)&this->vtable2); /*0x696999*/
-    return ListBox::SetCustomEntry((ListBox *)this, 1625, 3, &this->vtable2); /*0x6969ab*/
+    return ListBox::SetCustomEntry(1625, 3, &this->vtable2); /*0x6969ab*/
   }
   return result; /*0x6969b1*/
 }

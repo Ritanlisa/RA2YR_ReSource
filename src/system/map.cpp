@@ -717,7 +717,7 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
       result = --v46; /*0x567d79*/
       if ( !v46 ) /*0x567d82*/
         return result; /*0x567d82*/
-      IDA_LOWORD(v17, unsigned int a4) = v50; /*0x567b2a*/
+      IDA_LOWORD(v17) = v50; /*0x567b2a*/
     }
   }
   return result; /*0x567d88*/
@@ -785,10 +785,10 @@ void MapClass::RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, u
   {
     v9 = (int)(*a2);
     v10 = (int)(a2[1]);
-    v11 = a2[2]; /*0x567e1a*/
+    v11 = (int)(a2[2]);
     v12 = ZCoordToScreenY(v11); /*0x567e1f*/
     v13 = ((((unsigned int)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 31) /*0x567e3e*/
-          + ((int, void * a1, void * a2, void * a3, void * a4, void * a5)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 4)) << 8)
+          + ((int)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 4)) << 8)
         + v9;
     v14 = ZCoordToScreenY(v11); /*0x567e40*/
     v15 = (int)(((uint64_t)(2004318071LL * v14) >> 32) - v14) >> 4; /*0x567e52*/
@@ -884,4 +884,3 @@ bool MapClass::MakeTraversable(const ObjectClass* visitor, const CellStruct& cel
     return false;
 
 } // namespace gamemd
-}

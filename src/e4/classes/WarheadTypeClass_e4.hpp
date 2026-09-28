@@ -20,7 +20,7 @@ struct WarheadTypeClass {
     unsigned int InfDeath;  // 0x18
     float CellSpread;  // 0x1C
     bool q01D;  // 0x1D
-    void* ;  // 0x20
+    float CellInset;  // 0x20
     float q024;  // 0x24
     bool CausesDelayKill;  // 0x28
     int DelayKillFrames;  // 0x2C
@@ -199,13 +199,12 @@ struct WarheadTypeClass {
     unsigned int u32_680;
     unsigned int vtable21;
     unsigned int vtable26;
-    unsigned int AnimList;
-    unsigned int CellInset;
     unsigned int Tiberium0;
     unsigned int Tiberium8;
     unsigned int __pad_144;
     unsigned int u32_9C6;
     unsigned int u32_A84;
+    unsigned int AnimList;
     unsigned int DebrisTypes;
     unsigned int q0FC;
     unsigned int q104;

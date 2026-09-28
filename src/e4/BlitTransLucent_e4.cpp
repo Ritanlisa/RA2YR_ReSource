@@ -223,7 +223,7 @@ BlitTransLucent25Alpha_ushort * BlitTransLucent25Alpha_ushort::Blit(char a2)
   this->m_8 = 0; /*0x49a35b*/
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a364*/
   if ( (a2 & 1) != 0 ) /*0x49a36a*/
-    RA2_OPDEL(this); /*0x49a36d*/
+    RA2_OPDEL(); /*0x49a36d*/
   return this->__pad_0; /*0x49a377*/
 }
 } // namespace gamemd
@@ -233,7 +233,7 @@ std::locale::facet * BlitTransLucent25Alpha_ushort::Constructor_Blitter(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a389*/
   if ( (a2 & 1) != 0 ) /*0x49a38f*/
-    RA2_OPDEL(this); /*0x49a392*/
+    RA2_OPDEL(); /*0x49a392*/
   return (std::locale::facet *)this; /*0x49a39c*/
 }
 } // namespace gamemd
@@ -249,7 +249,7 @@ BlitTransLucent25AlphaZReadWrite_ushort * BlitTransLucent25AlphaZReadWrite_ushor
   this->m_8 = 0; /*0x49a73b*/
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a744*/
   if ( (a2 & 1) != 0 ) /*0x49a74a*/
-    RA2_OPDEL(this); /*0x49a74d*/
+    RA2_OPDEL(); /*0x49a74d*/
   return this->__pad_0; /*0x49a757*/
 }
 } // namespace gamemd
@@ -259,7 +259,7 @@ RLEBlitTransXlat * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBlitt
 {
   *(unsigned int *)this->__pad_0 = (void*)&RLEBlitter_vftable; /*0x49a769*/
   if ( (a2 & 1) != 0 ) /*0x49a76f*/
-    RA2_OPDEL(this); /*0x49a772*/
+    RA2_OPDEL(); /*0x49a772*/
   return (std::locale::facet *)this; /*0x49a77c*/
 }
 } // namespace gamemd
@@ -269,7 +269,7 @@ std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBli
 {
   *(unsigned int *)this->__pad_0 = (void*)&RLEBlitter_vftable; /*0x49a789*/
   if ( (a2 & 1) != 0 ) /*0x49a78f*/
-    RA2_OPDEL(this); /*0x49a792*/
+    RA2_OPDEL(); /*0x49a792*/
   return (std::locale::facet *)this; /*0x49a79c*/
 }
 } // namespace gamemd
@@ -279,7 +279,7 @@ std::locale::facet * BlitTransLucent25AlphaZReadWrite_ushort::Constructor_RLEBli
 {
   *(unsigned int *)this->__pad_0 = (void*)&RLEBlitter_vftable; /*0x49a7a9*/
   if ( (a2 & 1) != 0 ) /*0x49a7af*/
-    RA2_OPDEL(this); /*0x49a7b2*/
+    RA2_OPDEL(); /*0x49a7b2*/
   return (std::locale::facet *)this; /*0x49a7bc*/
 }
 } // namespace gamemd

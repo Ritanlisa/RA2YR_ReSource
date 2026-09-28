@@ -79,15 +79,12 @@ struct TeamClass {
     unsigned char u8_98;  // 0x98
     unsigned char u8_99;  // 0x99
     void* q09C;  // 0x9C
-    unsigned int ParasiteClass_field_34;
-    unsigned int __pad_28;
     unsigned int u32_10C;
-    unsigned int u32_240;
-    unsigned int u32_456;
-    unsigned int u32_458;
     unsigned int u32_68F;
     unsigned int u32_690;
     unsigned int u32_691;
+    unsigned int u32_A8;
+    unsigned int u32_B0;
     unsigned int vtable0;
 // --- flat members (END) ---
     AbstractClass * * DestroyAllMembers(TechnoClass * aP1);

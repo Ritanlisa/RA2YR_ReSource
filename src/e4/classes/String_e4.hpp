@@ -15,6 +15,7 @@ struct String {
     unsigned int q024;  // 0x24
     unsigned int u32_28;  // 0x28
     unsigned int u32_2C;  // 0x2C
+    unsigned int u32_2D;  // 0x2D
     unsigned int u32_34;  // 0x34
     unsigned int u32_38;  // 0x38
     unsigned int q054;  // 0x54
@@ -30,7 +31,6 @@ struct String {
     unsigned int __pad_0;
     unsigned int m_3;
     void* ptr_88;
-    unsigned int NotEquals;
     void* ptr_4;
     void* ptr_8;
 // --- flat members (END) ---
@@ -74,5 +74,6 @@ struct String {
     char CopyTruncated(size_t Count);  // 0x7B5D70
     char TruncateTo(size_t Count);  // 0x7B78D0
     int Wrapper5to4(CampaignScore * aP0,  int a2,  int a3,  int a4);    // 0x7CCA19
+    bool NotEquals(const char * a2);  // def-aligned
 };
 } // namespace gamemd

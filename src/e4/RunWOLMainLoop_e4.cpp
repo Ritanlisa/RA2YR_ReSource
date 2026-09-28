@@ -51,6 +51,7 @@ Coord * * sub_77E110()
   }
   return v1; /*0x77e17b*/
 }
+}
 // 0x785EA0
 namespace gamemd {
 void sub_785EA0()
@@ -146,6 +147,7 @@ void sub_785EA0()
   }
   return result; /*0x786072*/
 }
+}
 // 0x798DE0
 namespace gamemd {
 Coord * * RunWOLMainLoop_Read()
@@ -215,6 +217,7 @@ Coord * * RunWOLMainLoop_Read()
     OwnerDrawControl::InitVtable(&v13); /*0x798f41*/
   }
   return v7; /*0x798efa*/
+}
 }
 // 0x72C7E0
 namespace gamemd {

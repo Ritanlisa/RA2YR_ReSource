@@ -18,6 +18,7 @@ struct WaypointClass {
     unsigned int q060;  // 0x60
     unsigned int q064;  // 0x64
     unsigned int q068;  // 0x68
+    unsigned int u32_80;  // 0x80
     bool q083;  // 0x83
     unsigned int u32_BC;  // 0xBC
     unsigned int q100;  // 0x100

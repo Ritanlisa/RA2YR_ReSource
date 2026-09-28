@@ -14,7 +14,7 @@
 // 0x74f3b0 | ?::Seek
 // 0x74f3c0 | ?::AddRef
 // 0x74f400 | ?::Release
-// 0x74f4b0 | ?::ddtor
+// 0x74f4b0 | _::ddtor
 // 0x74f4e0 | ?::Read
 // 0x74f520 | ?::Write
 // 0x74f650 | ?::QueryInterface
@@ -260,7 +260,7 @@
 // 0x4cbba0 | FootClass::FindPathWithRetry
 
 // ---- Function (2) ----
-// 0x643e80 | Function::643E80
+// 0x643e80 | Function::Method_643E80
 // 0x645d00 | Function::645D00
 
 // ---- GUID (1) ----

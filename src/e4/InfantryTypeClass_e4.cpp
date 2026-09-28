@@ -32,7 +32,7 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
   unsigned int *v6; // edx
   int i; // eax
 
-  TechnoTypeClass::ReadINI((char *)this, aP1, 0); /*0x5236ae*/
+  TechnoTypeClass::ReadINI(aP1, 0); /*0x5236ae*/
   this->ArrayIndex = -1; /*0x5236b3*/
   this->qDFC = 1; /*0x5236bd*/
   this->qE00 = 7; /*0x5236c7*/
@@ -57,10 +57,10 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
   this->qEA8 = -1; /*0x52374e*/
   this->qEAC = 0; /*0x523754*/
   this->qEAD = 0; /*0x52375a*/
-  this->qEAE = (unsigned int)(0);
+  this->qEAE = 0; /*0x523760*/
   this->qEB0 = (unsigned int)(0);
   this->qEB4 = (unsigned int)(0);
-  this->qEB5 = 0; /*0x523772*/
+  this->qEB5 = (unsigned int)(0);
   this->HarvestRate = 1; /*0x523778*/
   this->qEBC = 0; /*0x523782*/
   this->qEBD = 1; /*0x523788*/
@@ -116,13 +116,13 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
     }
   }
   this->ArrayIndex = (void *)(v5);
-  this->u32_E08 = (void *)(0);
+  this->u32_E08 = 0; /*0x523886*/
   this->qE04 = 0; /*0x523890*/
   this->u32_E0C = 0; /*0x523896*/
   this->u32_E14 = 0; /*0x523899*/
   this->u32_E18 = 0; /*0x52389f*/
   this->u8_E1C = 0; /*0x5238a5*/
-  this->qE10 = (unsigned int)(0);
+  this->qE10 = 0; /*0x5238ab*/
   this->EliteOccupyWeapon = 0; /*0x5238b4*/
   this->qE30 = 0; /*0x5238ba*/
   this->u32_E24 = 0; /*0x5238c0*/
@@ -158,7 +158,7 @@ InfantryTypeClass * * InfantryTypeClass::Constructor(ObjectClass * aP1)
 namespace gamemd {
 unsigned int * InfantryTypeClass::Constructor_523980(ObjectTypeClass * aP1)
 {
-  TechnoTypeClass::Construct((int)this, aP1); /*0x523988*/
+  TechnoTypeClass::Construct(aP1); /*0x523988*/
   this->DeadBodies[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x523992*/
   this->DeathAnims[0] = (int)&TypeList_AnimTypeClass_const___vftable; /*0x523998*/
   this->VoiceComment[0] = (int)&TypeList_int_vftable; /*0x52399e*/
@@ -176,7 +176,7 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
   int v3; // edi
   void * v5;
   int v6; // esi
-  CellClass * v7;
+  int * v7;
   CellClass *v8; // eax
   int *v9; // eax
   int v10; // ecx
@@ -184,13 +184,14 @@ int InfantryTypeClass::CreateInfantry(short * a2, AbstractClass * ppv)
   unsigned int v13[3]; // [esp+4h] [ebp-24h] BYREF
   unsigned int v14[3]; // [esp+10h] [ebp-18h] BYREF
   int v15[3]; // [esp+1Ch] [ebp-Ch] BYREF
-v5 = (void *)((int)(RA2_OPNEW(0x6F0u)));
+
+  v5 = (void *)((int)(RA2_OPNEW(0x6F0u)));
   if ( v5 ) /*0x523b55*/
   {
     v6 = InfantryClass::Construct(v5, v3, (int)this, ppv); /*0x523b68*/
     if ( v6 ) /*0x523b6c*/
     {
-      v7 = (gamemd::CellClass *)((int)((gamemd::CellClass *)(a2[1] << 8)));
+      v7 = (int *)(a2[1] << 8);
       v13[0] = (unsigned int)((gamemd::CellClass *)((*a2 << 8) + 128));
       v13[1] = (gamemd::CellClass *)(v7 + 128);
       v13[2] = 0; /*0x523bb1*/
@@ -278,7 +279,7 @@ int InfantryTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
                              (uint8_t *)(v4 + 36),
                              aPip,
                              *(unsigned int *)(v4 + 3580));
-  PipIdx = (int)(INIClass::GetPipIdx((INIClass *)a2, (uint8_t *)(v4 + 36), aOccupypip, *(unsigned int *)(v4 + 3584)));
+  PipIdx = INIClass::GetPipIdx((INIClass *)a2, (uint8_t *)(v4 + 36), aOccupypip, *(unsigned int *)(v4 + 3584)); /*0x5240fd*/
   v6 = *(unsigned int *)(v4 + 3588); /*0x524102*/
   v45 = 128; /*0x52410c*/
   v44.CapacityIncrement = (int)String; /*0x524111*/
@@ -300,7 +301,7 @@ int InfantryTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   {
     v7 = v6; /*0x524139*/
   }
-  v8 = (int)(*(unsigned int *)(v4 + 3616));
+  v8 = *(unsigned int *)(v4 + 3616); /*0x52413b*/
   *(unsigned int *)(v4 + 3588) = v7; /*0x524141*/
   if ( INIClass::GetString( /*0x52415e*/
          (INIClass *)a2,
@@ -674,6 +675,7 @@ ObjectTypeClass * * InfantryTypeClass_LoadTypeData()
   }
   return result; /*0x524b57*/
 }
+}
 // 0x524B60
 namespace gamemd {
 TechnoTypeClass * * InfantryTypeClass_SaveLoad_Prefix()
@@ -713,6 +715,7 @@ TechnoTypeClass * * InfantryTypeClass_SaveLoad_Prefix()
     return v7; /*0x524c52*/
   }
   return result; /*0x524c51*/
+}
 }
 // 0x524D70
 InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
@@ -768,9 +771,9 @@ InfantryTypeClass * InfantryTypeClass::ddtor(char a2)
   }
   IDA_BYTE1(this->DeadBodies[3]) = 0; /*0x524e92*/
   this->DeadBodies[2] = 0; /*0x524e98*/
-  TechnoTypeClass::DTOR((int)this); /*0x524e9e*/
+  TechnoTypeClass::DTOR(); /*0x524e9e*/
   if ( (a2 & 1) != 0 ) /*0x524eaa*/
-    RA2_OPDEL(this); /*0x524ead*/
+    RA2_OPDEL(); /*0x524ead*/
   return (int)this; /*0x524eb7*/
 }
 // 0x524F20
@@ -919,7 +922,7 @@ int InfantryTypeClass::PowerDrainUpdate(int * a2)
   int v12; // ecx
   int v13; // edx
 
-  BuildingTypeClass::ProcessPower((int)this, a2); /*0x524849*/
+  BuildingTypeClass::ProcessPower(a2); /*0x524849*/
   Power::TimerProcess(this->Pip[0]); /*0x524857*/
   Checksummer::Add_Buffer((Checksummer *)a2, (uint8_t *)this->Sequence[0], 1512); /*0x52486a*/
   Power::TimerProcess(this->FireUp); /*0x524878*/

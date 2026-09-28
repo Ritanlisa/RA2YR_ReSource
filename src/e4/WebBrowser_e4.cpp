@@ -73,6 +73,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   }
   return 1; /*0x77381e*/
 }
+}
 // 0x773E90
 namespace gamemd {
 int WebBrowser::ShowDialog()
@@ -91,7 +92,8 @@ int WebBrowser::ShowDialog()
   int v12; // [esp+38h] [ebp-Ch]
   int v13; // [esp+3Ch] [ebp-8h]
   int v14; // [esp+40h] [ebp-4h]
-v1 = (const char *)(this);
+
+  v1 = (const char *)(this);
   v9 = (const char *)(this);
   if ( !this || !strlen(this) ) /*0x773eaa*/
     return (HWND)Debug::Log(aDowebpagedialo); /*0x774060*/
@@ -151,6 +153,7 @@ v1 = (const char *)(this);
   }
   return result; /*0x774051*/
 }
+}
 // 0x7740A0
 namespace gamemd {
 int WebBrowser::GoForward()
@@ -172,8 +175,9 @@ int WebBrowser::GoForward()
   if ( WebBrowser_field_0x8 ) /*0x7740e2*/
     (*(void (__stdcall **)(void *))(*(unsigned int *)WebBrowser_field_0x8 + 8))(this->WebBrowser_field_0x8); /*0x7740e7*/
   if ( (v4 & 1) != 0 ) /*0x7740ef*/
-    RA2_OPDEL(this); /*0x7740f2*/
+    RA2_OPDEL(); /*0x7740f2*/
   return (int)this->__pad_0; /*0x7740fc*/
+}
 }
 // 0x551630
 namespace gamemd {

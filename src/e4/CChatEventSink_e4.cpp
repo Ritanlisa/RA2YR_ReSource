@@ -468,9 +468,9 @@ int CChatEventSink::Check(unsigned int * a2, int a3)
 namespace gamemd {
 ObjectClass * CChatEventSink::DeleteAndZero(char a2)
 {
-  DeleteAndZero((ObjectClass *)this); /*0x7ad353*/
+  DeleteAndZero(); /*0x7ad353*/
   if ( (a2 & 1) != 0 ) /*0x7ad35d*/
-    RA2_OPDEL(this); /*0x7ad360*/
+    RA2_OPDEL(); /*0x7ad360*/
   return (void **)this; /*0x7ad36a*/
 }
 } // namespace gamemd

@@ -8,6 +8,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/MixFile_e4.hpp"
 
 // 0x520AE0
 namespace gamemd {
@@ -90,7 +91,7 @@ int Mission::ExecuteTechnoMissionAction()
         (*(void (__thiscall **)(Mission *, int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 28, 1, 0); /*0x520b38*/
         if ( !*(unsigned char *)(*(unsigned int *)&this->__pad_5B8[264] + 3785) ) /*0x520b44*/
           this->__pad_18C[280] = 1; /*0x520b4e*/
-        Mission::GetMissionDelay(this); /*0x520b57*/
+        Mission::GetMissionDelay(); /*0x520b57*/
         break; /*0x520b5c*/
       case 31: /*0x520b27*/
         (*(void (__thiscall **)(Mission *, unsigned int, int, unsigned int))(*(unsigned int *)this->__pad_0 + 1368))(this, 0, 1, 0); /*0x520b93*/
@@ -194,6 +195,7 @@ int Mission::ExecuteTechnoMissionAction()
     while ( v13 < result ); /*0x520ef2*/
   }
   return result; /*0x520ef4*/
+}
 }
 // 0x520F40
 namespace gamemd {
@@ -400,6 +402,7 @@ char Mission::ProcessUnitMissionAI()
   }
   return v17; /*0x52125a*/
 }
+}
 // 0x5BDA80
 namespace gamemd {
 int Mission::SetAndCall(IUnknown * aP1, IUnknown * aP2)
@@ -409,6 +412,7 @@ int Mission::SetAndCall(IUnknown * aP1, IUnknown * aP2)
   MouseClass_field_0x0 = (int (__stdcall **)(int, int))this->MouseClass_field_0x0; /*0x5bda84*/
   this->u32_5564 = aP1; /*0x5bda8d*/
   return MouseClass_field_0x0[19](aP1, aP2); /*0x5bda96*/
+}
 }
 // 0x6ED7E0
 namespace gamemd {
@@ -522,6 +526,7 @@ char Mission::AssignTeamMemberMissions(ScriptClass * aP1, int a3)
   }
   return v3; /*0x6eda86*/
 }
+}
 // 0x70F770
 namespace gamemd {
 int Mission::GetMissionDelay()
@@ -552,4 +557,5 @@ int Mission::GetMissionDelay()
     }
   }
   return result; /*0x70f7cd*/
+}
 }

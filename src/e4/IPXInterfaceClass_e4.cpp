@@ -27,7 +27,7 @@
 namespace gamemd {
 unsigned int * IPXInterfaceClass::Construct()
 {
-  IPXInterfaceClass::bindSocket((char *)this); /*0x7b0d93*/
+  IPXInterfaceClass::bindSocket(); /*0x7b0d93*/
   this->Socket = (int)&IPXInterfaceClass_vftable; /*0x7b0da4*/
   this->u32_3F2FC = -1; /*0x7b0dad*/
   this->u32_3F300 = -1; /*0x7b0db3*/
@@ -613,9 +613,9 @@ int IPXInterfaceClass::COMStub_Ret1139(int a1)
 namespace gamemd {
 IPXInterfaceClass * IPXInterfaceClass::QueryInterface(char a2)
 {
-  WinsockInterfaceClass::WinsockInterfaceClass((int)this); /*0x7b1793*/
+  WinsockInterfaceClass::WinsockInterfaceClass(); /*0x7b1793*/
   if ( (a2 & 1) != 0 ) /*0x7b179d*/
-    RA2_OPDEL(this); /*0x7b17a0*/
+    RA2_OPDEL(); /*0x7b17a0*/
   return this; /*0x7b17aa*/
 }
 } // namespace gamemd
@@ -748,7 +748,7 @@ DynamicVector * IPXInterfaceClass::closeSession(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x7b2b7b*/
   this->m_8 = 0; /*0x7b2b81*/
   if ( (a2 & 1) != 0 ) /*0x7b2b88*/
-    RA2_OPDEL(this); /*0x7b2b8b*/
+    RA2_OPDEL(); /*0x7b2b8b*/
   return this->__pad_0; /*0x7b2b95*/
 }
 } // namespace gamemd

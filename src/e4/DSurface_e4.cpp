@@ -566,7 +566,7 @@ DSurface * * DSurface::Blit(int * a1, int * a2, unsigned int * a3, int * a4, DSu
     }
   }
   if ( v42 == 1 ) /*0x4bb282*/
-    return XSurface::BlitPart((XSurface *)this, (void **)a2, v10, (void **)aP5, (void **)a7, 1); /*0x4bb2a2*/
+    return XSurface::BlitPart((void **)a2, v10, (void **)aP5, (void **)a7, 1); /*0x4bb2a2*/
   v17 = a2[1]; /*0x4bb2a7*/
   v18 = a2[2]; /*0x4bb2aa*/
   v49 = *a2; /*0x4bb2ad*/
@@ -745,7 +745,7 @@ void* DSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
            this->DSurface_field_0x1C[0],
            1) )
     {
-      return XSurface::FillRectEx((XSurface *)this, (unsigned int *)aP1, (int *)a2, aP3); /*0x4bb81d*/
+      return XSurface::FillRectEx((unsigned int *)aP1, (int *)a2, aP3); /*0x4bb81d*/
     }
     if ( g_DDraw_Initialized || stru_A8EB00.gapE4[412] ) /*0x4bb690*/
     {
@@ -933,6 +933,7 @@ void DSurface_FillRectWithFlags()
   }
   (*(void (__thiscall **)(int))(*(unsigned int *)v32 + 96))(v32); /*0x4bbae8*/
   return 1; /*0x4bb849*/
+}
 }
 // 0x4BBB00
 void DSurface::BlitStretch(int a1, int a2, int a3)
@@ -4706,7 +4707,7 @@ ObjectClass * * DSurface::RenderToSurface(ObjectClass * aP1)
     }
     this->DSurface_field_0x4 = 0; /*0x5d1f38*/
     v13 = (int *)(*(int (__thiscall **)(int *, unsigned char *))(*aP1 + 120))(aP1, v25); /*0x5d1f44*/
-    Surface::CopyRect((Surface *)this, v13); /*0x5d1f4a*/
+    Surface::CopyRect(v13); /*0x5d1f4a*/
     (*((void (__thiscall **)(DSurface *, int *))this->DSurface_field_0x0 + 1))(this, aP1); /*0x5d1f54*/
   }
   result = (int)this->DSurface_field_0x28; /*0x5d1f57*/
@@ -4732,7 +4733,7 @@ ObjectClass * * DSurface::RenderToSurface(ObjectClass * aP1)
         }
       }
     }
-    Surface::CopyRect((Surface *)this, &v21); /*0x5d1fb1*/
+    Surface::CopyRect(&v21); /*0x5d1fb1*/
     result = (int)this->DSurface_field_0x28; /*0x5d1fb6*/
   }
   return result; /*0x5d1fbe*/
@@ -5150,7 +5151,7 @@ int DSurface::Flip()
 
   if ( (this->__pad_2C[88] & 1) != 0 && (this->__pad_2C[190] & 3) != 0 ) /*0x7c2c73*/
   {
-    DSurface::LockAndPrepareRect(this); /*0x7c2c75*/
+    DSurface::LockAndPrepareRect(); /*0x7c2c75*/
     if ( (this->u32_7BC & 0x40000000) != 0 ) /*0x7c2c84*/
     {
       sub_412600(); /*0x7c2c86*/
@@ -5174,7 +5175,7 @@ int DSurface::Flip()
         0);
     }
   }
-  DSurface::CommitBuffers(this); /*0x7c2cd1*/
+  DSurface::CommitBuffers(); /*0x7c2cd1*/
   (*(void (__cdecl **)(DSurface *, int, unsigned int, unsigned int))&this->__pad_2C[20])(this, 4, 0, 0); /*0x7c2cdd*/
   (*(void (__cdecl **)(DSurface *, int, DSurface *, int))&this->__pad_2C[24])(this, 5, this, 2012); /*0x7c2ce9*/
   return (*(int (__cdecl **)(DSurface *, int, DSurface *, unsigned int))&this->__pad_2C[24])(this, 3, this, 0); /*0x7c2cf8*/

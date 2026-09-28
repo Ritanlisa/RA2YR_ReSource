@@ -65,7 +65,7 @@ struct HouseTypeClass {
     float buildtimeDefensesMult;  // 0x9C
     float incomeMult;  // 0xA0
     InfantryTypeClass** veteranInfantry;  // 0xA4
-    char veteranInfantryCount[4];  // 0xA8
+    unsigned int veteranInfantryCount;  // 0xA8
     unsigned char q0A9;  // 0xA9
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB

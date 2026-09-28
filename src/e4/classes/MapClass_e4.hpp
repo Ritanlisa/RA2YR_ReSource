@@ -479,6 +479,7 @@ struct MapClass {
     unsigned int __pad_5C;
     unsigned int __pad_F8;
     unsigned int q01C6;
+    unsigned int q0086;
     unsigned int RevealArea2;
 // --- flat members (END) ---
     AbstractClass * * AllocateMapDataBuffer(int a2, int * a3);

@@ -24,6 +24,7 @@ struct VectorClass_Ptr {
     unsigned int __pad_5;
     unsigned int m_1;
     unsigned int m_C;
+    unsigned int __tail_10;
 // --- flat members (END) ---
     char ResizeAndCopy(int a2,  unsigned int * a3);    // 0x5AD010
 };

@@ -147,6 +147,7 @@ int CompareFunc2Int(unsigned int * a1, unsigned int * a2)
   else
     return *a1 >= *a2 ? 1 : -1;
 }
+}
 // 0x725C70
 namespace gamemd {
 AbstractClass * * sub_725C70()
@@ -154,7 +155,7 @@ AbstractClass * * sub_725C70()
   int result; // eax
   int v2; // esi
   int v3; // eax
-  void * v4;
+  int v4; // eax
   int v5; // eax
   int v6; // eax
   int v7; // eax
@@ -186,7 +187,7 @@ AbstractClass * * sub_725C70()
       result = (*(int (__stdcall **)(unsigned int *))(*v8 + 8))(v8); /*0x725ce8*/
       if ( result ) /*0x725ced*/
       {
-        v4 = (void *)((int)(__RTtypeid(v8)));
+        v4 = (int)(__RTtypeid(v8));
         if ( __8type_info_QBEHABV0__Z((const char *)&BuildingClass `RTTI Type Descriptor', v4) /*0x725d61*/
           || (v5 = __RTtypeid(v8), __8type_info_QBEHABV0__Z((const char *)&UnitClass `RTTI Type Descriptor', v5))
           || (v6 = __RTtypeid(v8), __8type_info_QBEHABV0__Z((const char *)&InfantryClass `RTTI Type Descriptor', v6))
@@ -206,6 +207,7 @@ AbstractClass * * sub_725C70()
     }
   }
   return result; /*0x725d8c*/
+}
 }
 // 0x728200
 namespace gamemd {
@@ -235,6 +237,7 @@ void sub_728200()
       --v1; /*0x728253*/
     }
   }
+}
 }
 // 0x72AA40
 namespace gamemd {
@@ -272,6 +275,7 @@ unsigned char char LoadMouseClassResources()
     byte_B0FBE0 = 1; /*0x72ac31*/
   }
   return result; /*0x72ac38*/
+}
 }
 // 0x72ADE0
 namespace gamemd {
@@ -348,6 +352,7 @@ void Palette_LoadSimple(char * Source, unsigned int * a2, unsigned int * a3)
   *(unsigned int *)v17.__pad_0 = &off_7E1668; /*0x72aefa*/
   return BufferIOFileClass::Dtor((BufferIOFileClass *)&v17); /*0x72af07*/
 }
+}
 // 0x72DAA0
 namespace gamemd {
 void CleanupEVASystem()
@@ -393,6 +398,7 @@ void CleanupEVASystem()
     (**(void (__thiscall ***)(int, int))dword_B0FBC0)(dword_B0FBC0, 1); /*0x72dda3*/
     dword_B0FBC0 = 0; /*0x72dda5*/
   }
+}
 }
 // 0x72DFB0
 namespace gamemd {
@@ -475,6 +481,7 @@ int * * LoadingScreen_InitResources()
   }
   return result; /*0x72e19f*/
 }
+}
 // 0x72E2D0
 namespace gamemd {
 void DrawScoreScreenStats(ConvertClass * aP0, int a2)
@@ -554,6 +561,7 @@ void DrawScoreScreenStats(ConvertClass * aP0, int a2)
     return (*(int (__thiscall **)(int *, int *, int, unsigned int))(v14 + 16))(aP0, &v17, a2, 0); /*0x72e445*/
   }
   return result; /*0x72e44a*/
+}
 }
 // 0x72E450
 namespace gamemd {
@@ -740,6 +748,7 @@ AbstractClass * * RenderScoreScreen(ConvertClass * a1, int * a2, char a3)
       0,
       0,
       0);
+}
 }
 // 0x72EC70
 namespace gamemd {
@@ -940,6 +949,7 @@ int * * MouseClass_SetupResources(int a1, int a2)
   }
   return result; /*0x72ef32*/
 }
+}
 // 0x72F540
 namespace gamemd {
 AbstractClass * * RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
@@ -1039,6 +1049,7 @@ AbstractClass * * RenderCreditsScreen(int a1, ConvertClass * a2, char a3)
   v8 = *(unsigned int *)dword_B0FC6C; /*0x72f9c0*/
   i = *((unsigned int *)dword_B0FC6C + 1); /*0x72f9ea*/
   DrawToSurfaceSHP(a1, dword_B0FBE8, (int)dword_B0FABC, 0, &v8, a2, 1024, 0, 0, 0, 1000, 0, 0, 0, 0, 0); /*0x72f9f7*/
+}
 }
 // 0x72FC60
 namespace gamemd {
@@ -1377,6 +1388,7 @@ unsigned int * Screen_SetupBuffers(int a1, int a2)
     dword_B0FC54 = 0; /*0x7300ec*/
   }
   return result; /*0x7300d6*/
+}
 }
 // 0x720230
 namespace gamemd {

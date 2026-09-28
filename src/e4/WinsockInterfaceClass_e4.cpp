@@ -27,7 +27,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   *(unsigned int *)this = (void*)&WinsockInterfaceClass_vftable; /*0x7b1abc*/
   if ( v2 ) /*0x7b1ac4*/
   {
-    NetworkClass::UnregisterAsync((SOCKET *)this); /*0x7b1ac6*/
+    NetworkClass::UnregisterAsync(); /*0x7b1ac6*/
     (*(void (__thiscall **)(int))(this->u32_4)(this); /*0x7b1ad0*/
     WSACleanup(); /*0x7b1ad3*/
     this->u32_3F068 = 0; /*0x7b1ad8*/
@@ -92,7 +92,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
   this->Socket = (int)&WinsockInterfaceClass_vftable; /*0x7b278c*/
   if ( v3 ) /*0x7b2794*/
   {
-    NetworkClass::UnregisterAsync(this); /*0x7b2796*/
+    NetworkClass::UnregisterAsync(); /*0x7b2796*/
     (*(void (__thiscall **)(WinsockInterfaceClass *))(this->Socket + 4))(this); /*0x7b27a0*/
     WSACleanup(); /*0x7b27a3*/
     this->u32_3F068 = 0; /*0x7b27a8*/
@@ -125,6 +125,6 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
   this->u32_15 = 0; /*0x7b281b*/
   this->u32_4 = 0; /*0x7b2820*/
   if ( (a2 & 1) != 0 ) /*0x7b2823*/
-    RA2_OPDEL(this); /*0x7b2826*/
+    RA2_OPDEL(); /*0x7b2826*/
   return (SOCKET *)this; /*0x7b2830*/
 }

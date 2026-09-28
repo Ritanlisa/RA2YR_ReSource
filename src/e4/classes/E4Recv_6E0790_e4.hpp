@@ -15,6 +15,7 @@ struct E4Recv_6E0790 {
     unsigned int q144;  // 0x144
     unsigned int q324;  // 0x324
     unsigned int q804;  // 0x804
+    unsigned int vtable46;
 // --- flat members (END) ---
     char sub_6E0790(int a2,  int a3,  int a4,  int a5);    // 0x6E0790
 };

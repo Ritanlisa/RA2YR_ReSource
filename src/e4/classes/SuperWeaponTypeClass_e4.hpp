@@ -41,13 +41,13 @@ struct SuperWeaponTypeClass {
     bool AIDefendAgainst;  // 0x40
     bool PreClick;  // 0x41
     bool PostClick;  // 0x42
-    unsigned int PreDependent;  // 0x44
+    char PreDependent[4];  // 0x44
     bool ShowTimer;  // 0x48
     bool ManualControl;  // 0x49
     bool q04A;  // 0x4A
     float Range;  // 0x4C
     unsigned char q04F;  // 0x4F
-    char LineMultiplier[4];  // 0x50
+    unsigned int LineMultiplier;  // 0x50
     bool q054;  // 0x54
     void* q057;  // 0x57
     unsigned char q058;  // 0x58

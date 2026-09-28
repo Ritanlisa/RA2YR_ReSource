@@ -42,6 +42,9 @@
 #include "e4/classes/E4Recv_4E0A00_e4.hpp"
 #include "e4/classes/MapClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/E4Recv_4DB8A0_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x4C1440
 namespace gamemd {
@@ -82,6 +85,7 @@ void sub_4C1440()
     }
   }
   return result; /*0x4c1470*/
+}
 }
 // 0x4C14D0
 namespace gamemd {
@@ -171,6 +175,7 @@ void sub_4C14D0()
   }
   return result; /*0x4c151c*/
 }
+}
 // 0x4C1600
 namespace gamemd {
 void sub_4C1600()
@@ -205,6 +210,7 @@ void sub_4C1600()
     }
   }
   return result; /*0x4c168c*/
+}
 }
 // 0x4C16A0
 namespace gamemd {
@@ -344,7 +350,7 @@ void InitializeRadialGradientTexture()
                   result = (*(int (__stdcall **)(unsigned int *, unsigned int *))(*v22 + 88))(v22, v25); /*0x4c1923*/
                   if ( !result ) /*0x4c1928*/
                   {
-                    v13 = (gamemd::ObjectClass *)((unsigned int)((ObjectClass *)RA2_OPNEW(0x78u)));
+                    v13 = (unsigned int)((ObjectClass *)RA2_OPNEW(0x78u));
                     if ( v13 ) /*0x4c193a*/
                       dword_8A0E08 = (DDraw *)sub_4A3270(v13, v25[3], v25[2], 1); /*0x4c194f*/
                     else
@@ -374,6 +380,7 @@ void InitializeRadialGradientTexture()
     }
   }
   return result; /*0x4c16e8*/
+}
 }
 // 0x4C1E70
 namespace gamemd {
@@ -407,6 +414,7 @@ void sub_4C1E70(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, 
            v12,
            0);
 }
+}
 // 0x4C2790
 namespace gamemd {
 int E4Recv_4C2790::sub_4C2790()
@@ -434,6 +442,7 @@ int E4Recv_4C2790::sub_4C2790()
   result = this->owningHouseIndex >> 1; /*0x4c2821*/
   this->owningHouseIndex = result; /*0x4c2823*/
   return result; /*0x4c2820*/
+}
 }
 // 0x4C2830
 namespace gamemd {
@@ -531,6 +540,7 @@ void sub_4C2830()
   }
   return result; /*0x4c29d1*/
 }
+}
 // 0x4C29E0
 namespace gamemd {
 ParticleSystemClass * * sub_4C29E0()
@@ -562,6 +572,7 @@ ParticleSystemClass * * sub_4C29E0()
   byte_8A0E95 = 0; /*0x4c2a44*/
   dword_8A0E90 = 0; /*0x4c2a4a*/
 }
+}
 // 0x4C38E0
 namespace gamemd {
 char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
@@ -576,11 +587,10 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
   int v12; // eax
   int16_t v14; // [esp+10h] [ebp-10h] BYREF
   char v15; // [esp+12h] [ebp-Eh]
-  int v16; // [esp+14h] [ebp-Ch] BYREF
+  unsigned char * v16;
   int v17; // [esp+18h] [ebp-8h]
   int v18; // [esp+1Ch] [ebp-4h]
-
-  v16 = (int)((char **)((unsigned char *)(a2)));
+v16 = (char **)((int)((unsigned char *)(a2)));
   if ( !a3 || !a2 ) /*0x4c38fb*/
     return a4; /*0x4c38fb*/
   v5 = a4; /*0x4c3901*/
@@ -628,6 +638,7 @@ char * * sub_4C38E0(char * a1, int a2, int a3, char * a4)
   }
   return (char **)(v5);
 }
+}
 // 0x4C3DD0
 namespace gamemd {
 AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
@@ -650,6 +661,7 @@ AbstractClass * * E4Recv_4C3DD0::sub_4C3DD0(int a2)
            v5,
            0,
            1);
+}
 }
 // 0x4C83E0
 namespace gamemd {
@@ -691,6 +703,7 @@ void DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
   ShowWindow(hDlg, 1); /*0x4c843f*/
   TimerPool::AllocSlot(hDlg); /*0x4c8447*/
   return 0; /*0x4c844e*/
+}
 }
 // 0x4C95D0
 namespace gamemd {
@@ -752,6 +765,7 @@ unsigned int * E4Recv_4C95D0::sub_4C95D0(unsigned int * a3, unsigned short * a3)
   *a3 = a3; /*0x4c966b*/
   return a3; /*0x4c9655*/
 }
+}
 // 0x4CB150
 namespace gamemd {
 void ComputeDistortionVariant(float a1)
@@ -764,6 +778,7 @@ void ComputeDistortionVariant(float a1)
   if ( result < 0 )
     return (((unsigned short)result - 1) | 0xFFFFE000) + 1 + ((int)((((unsigned short)result - 1) | 0xFFFFE000) + 1) < 0 ? 0x2000 : 0);
   return result; /*0x4cb190*/
+}
 }
 // 0x4CB4C0
 namespace gamemd {
@@ -799,6 +814,7 @@ void sub_4CB4C0()
     }
   }
 }
+}
 // 0x4CB580
 namespace gamemd {
 AbstractClass * * E4Recv_4CB580::sub_4CB580(char * Source, int a3)
@@ -807,7 +823,7 @@ AbstractClass * * E4Recv_4CB580::sub_4CB580(char * Source, int a3)
   unsigned int vtable1_high; // edx
   char *v6; // edi
 
-  strncpy((char *)this, Source, 4u); /*0x4cb58d*/
+  strncpy(Source, 4u); /*0x4cb58d*/
   IDA_LOWORD(this->vtable1) = 1; /*0x4cb598*/
   IDA_HIWORD(this->vtable1) = 1; /*0x4cb59c*/
   v4 = (char *)RA2_OPNEW(1u); /*0x4cb5a0*/
@@ -819,6 +835,7 @@ AbstractClass * * E4Recv_4CB580::sub_4CB580(char * Source, int a3)
   this->vtable3 = 0; /*0x4cb5c8*/
   return (char *)this; /*0x4cb5c7*/
 }
+}
 // 0x4CB640
 namespace gamemd {
 void * E4Recv_4CB640::sub_4CB640(RandomStruct * aP1, int a3)
@@ -827,7 +844,7 @@ void * E4Recv_4CB640::sub_4CB640(RandomStruct * aP1, int a3)
   unsigned int vtable1_high; // edx
   char *v6; // edi
 
-  strncpy((char *)this, aP1, 4u); /*0x4cb64d*/
+  strncpy(aP1, 4u); /*0x4cb64d*/
   IDA_LOWORD(this->vtable1) = 3; /*0x4cb654*/
   IDA_HIWORD(this->vtable1) = 2; /*0x4cb65a*/
   v4 = (char *)RA2_OPNEW(2u); /*0x4cb660*/
@@ -839,6 +856,7 @@ void * E4Recv_4CB640::sub_4CB640(RandomStruct * aP1, int a3)
   this->vtable3 = 0; /*0x4cb688*/
   return (char *)this; /*0x4cb687*/
 }
+}
 // 0x4CB6A0
 namespace gamemd {
 void * E4Recv_4CB6A0::sub_4CB6A0(RandomStruct * aP1, int a3)
@@ -847,7 +865,7 @@ void * E4Recv_4CB6A0::sub_4CB6A0(RandomStruct * aP1, int a3)
   unsigned int vtable1_high; // edx
   char *v6; // edi
 
-  strncpy((char *)this, aP1, 4u); /*0x4cb6ad*/
+  strncpy(aP1, 4u); /*0x4cb6ad*/
   IDA_LOWORD(this->vtable1) = 4; /*0x4cb6b4*/
   IDA_HIWORD(this->vtable1) = 2; /*0x4cb6ba*/
   v4 = (char *)RA2_OPNEW(2u); /*0x4cb6c0*/
@@ -858,6 +876,7 @@ void * E4Recv_4CB6A0::sub_4CB6A0(RandomStruct * aP1, int a3)
   qmemcpy(v6, &a3 + 4 * (vtable1_high >> 2), vtable1_high & 3); /*0x4cb6e5*/
   this->vtable3 = 0; /*0x4cb6e8*/
   return (char *)this; /*0x4cb6e7*/
+}
 }
 // 0x4CEFB0
 namespace gamemd {
@@ -1162,6 +1181,7 @@ void FootClass_LandAtPosition(int a1, int a2, char a3, float a4, int a5, int a6)
   if ( v55 ) /*0x4cf5f8*/
     (*(void (__stdcall **)(int))(v55->q008)(v55); /*0x4cf5fd*/
   return v23; /*0x4cf600*/
+}
 }
 // 0x4C1B80
 namespace gamemd {
@@ -3447,6 +3467,6 @@ void E4Recv_4CCA70::sub_4CCA70()
 {
   *(unsigned int *)this->__pad_0 = (void*)&FlyLocomotionClass_vftable; /*0x4cca70*/
   *(unsigned int *)&this->__pad_0[4] = (void*)&FlyLocomotionClass_vftable; /*0x4cca76*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x4cca7d*/
+  LocomotionClass::Construct(); /*0x4cca7d*/
 }
 } // namespace gamemd

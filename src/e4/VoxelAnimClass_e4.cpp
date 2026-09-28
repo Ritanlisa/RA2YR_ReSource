@@ -42,7 +42,8 @@ unsigned int VoxelAnimClass::ProcessFrame()
   float v14; // [esp+8h] [ebp-4h]
   float v15; // [esp+8h] [ebp-4h]
   float v16; // [esp+8h] [ebp-4h]
-v1 = (int)((unsigned int *)(0));
+
+  v1 = (int)((unsigned int *)(0));
   v2 = (unsigned int *)(&unk_86D0BC);
   v3 = 0x2000; /*0x4caf2a*/
   do /*0x4cb050*/
@@ -91,6 +92,7 @@ v1 = (int)((unsigned int *)(0));
   while ( v3 ); /*0x4cb050*/
   return result; /*0x4cb056*/
 }
+}
 // 0x7499F0
 namespace gamemd {
 int VoxelAnimClass::CleanupMembers()
@@ -104,7 +106,7 @@ int VoxelAnimClass::CleanupMembers()
   this->VoxelAnimClass_field_0x4[0] = (unsigned int)((int)&VoxelAnimClass_vftable);
   this->VoxelAnimClass_field_0x8 = (void*)&VoxelAnimClass_vftable; /*0x749a03*/
   *(unsigned int *)this->__pad_C = (void*)&VoxelAnimClass_vftable; /*0x749a0a*/
-  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x749a11*/
+  AbstractClass::AnnounceExpiredPointer(1); /*0x749a11*/
   v6 = this; /*0x749a26*/
   v2 = (*(int (__thiscall **)(char *, VoxelAnimClass **))(*(unsigned int *)&stru_88732C.__pad_1C[64] + 16))( /*0x749a2a*/
          &stru_88732C.__pad_1C[64],
@@ -127,7 +129,7 @@ int VoxelAnimClass::CleanupMembers()
     this->VoxelAnimClass_field_0x108 = 0; /*0x749a71*/
   }
   if ( unk_A8E9A0 ) /*0x749a82*/
-    ObjectClass::Undeploy((ObjectClass *)this); /*0x749a86*/
+    ObjectClass::Undeploy(); /*0x749a86*/
   Mixer::ReleaseChannel((Mixer *)&this->VoxelAnimClass_field_0x114); /*0x749a95*/
   Mixer::ReleaseChannel((Mixer *)&this->VoxelAnimClass_field_0x128); /*0x749aa2*/
   AudioFileClass::Release((AudioFileClass *)&this->VoxelAnimClass_field_0x114); /*0x749aa9*/
@@ -148,7 +150,8 @@ int VoxelAnimClass::CleanupMembers()
     }
   }
   this->VoxelAnimClass_field_0x104 = 0; /*0x749b02*/
-  return ObjectClass::Dtor((ObjectClass *)this); /*0x749b11*/
+  return ObjectClass::Dtor(); /*0x749b11*/
+}
 }
 // 0x749B70
 namespace gamemd {
@@ -176,7 +179,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
   int v24; // [esp-18h] [ebp-C8h]
   int v25; // [esp-10h] [ebp-C0h]
   Viewport *v26; // [esp-4h] [ebp-B4h]
-  int v27; // [esp+Ch] [ebp-A4h] BYREF
+  int * v27;
   int v28; // [esp+10h] [ebp-A0h]
   int v29; // [esp+14h] [ebp-9Ch]
   int v30; // [esp+18h] [ebp-98h] BYREF
@@ -212,7 +215,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
     v28 = *(unsigned int *)&this->__pad_98[8]; /*0x749c26*/
     if ( *(unsigned int *)&this->__pad_98[12] >= dword_B1D1BC + GroundHeight ) /*0x749c38*/
     {
-      v35 = dword_B1D1BC + GroundHeight; /*0x749c3e*/
+      v35 = (int *)(dword_B1D1BC + GroundHeight);
       v29 = dword_B1D1BC + GroundHeight + 1; /*0x749c4a*/
       v27 = v32; /*0x749c4e*/
       v28 = v33; /*0x749c5b*/
@@ -295,7 +298,7 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
           v16 = *(BuildingClass **)&stru_87F5F0.__pad_58[108]; /*0x749e72*/
           v15 = 1000; /*0x749e78*/
         }
-        v27 = v31 + v36; /*0x749e8b*/
+        v27 = (int *)(v31 + v36);
         v25 = v15; /*0x749e97*/
         VoxelAnimClass_field_0x0 = (int (__thiscall **)(VoxelAnimClass *))this->VoxelAnimClass_field_0x0; /*0x749e98*/
         v28 = v30 + v37; /*0x749ea0*/
@@ -320,7 +323,8 @@ Coord * * VoxelAnimClass::ProcessAnim(int * a2, unsigned int * a3)
       }
     }
   }
-  return (char)VoxelAnimClass_field_0x104; /*0x749eea*/
+  return (gamemd::Coord **)((char)VoxelAnimClass_field_0x104);
+}
 }
 // 0x749F30
 namespace gamemd {
@@ -835,6 +839,7 @@ void VoxelAnimClass_Update()
   v81 = Coord::GetCoords(&v108, v86); /*0x74a941*/
   return VoxelAnimClass_field_0x0[109](v1, v81); /*0x749f7b*/
 }
+}
 // 0x74A970
 namespace gamemd {
 int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
@@ -860,6 +865,7 @@ int VoxelAnimClass::SaveLoad_Prefix(ObjectClass * aP1, int aP1a)
   }
   return Register; /*0x74a9fd*/
 }
+}
 // 0x74AA30
 namespace gamemd {
 AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
@@ -871,7 +877,7 @@ AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
   int v7; // edx
   int v8; // eax
 
-  HouseClass::ProcessPower((ObjectClass *)this); /*0x74aa39*/
+  HouseClass::ProcessPower(); /*0x74aa39*/
   Power::TimerProcess(this->VoxelAnimClass_field_0x100); /*0x74aa47*/
   v3 = (*(int (__stdcall **)(char *))(*((unsigned int *)this->VoxelAnimClass_field_0x104 + 1) + 16))((char *)this->VoxelAnimClass_field_0x104 + 4); /*0x74aa58*/
   Power::TimerProcess(v3); /*0x74aa5e*/
@@ -889,17 +895,19 @@ AbstractClass * * VoxelAnimClass::GetFrameCount(int * a2)
   Power::FlagProcess((Power *)a2, v8); /*0x74aaad*/
   return Power::TimerProcess(this->VoxelAnimClass_field_0x140); /*0x74aac0*/
 }
+}
 // 0x74AB30
 namespace gamemd {
 int VoxelAnimClass::LoadFrame()
 {
   return (int)this->VoxelAnimClass_field_0x104; /*0x74ab36*/
 }
+}
 // 0x75AA90
 namespace gamemd {
 int VoxelAnimClass::Reset()
 {
-  LocomotionClass::Init((LocomotionClass *)this); /*0x75aa93*/
+  LocomotionClass::Init(); /*0x75aa93*/
   this->VoxelAnimClass_field_0x1C[0] = g_AsyncMovieState; /*0x75aaa1*/
   *(unsigned int *)this->__pad_20 = g_MovieFrameState1; /*0x75aaaa*/
   *(unsigned int *)&this->__pad_20[4] = g_MovieFrameState2; /*0x75aab6*/
@@ -915,6 +923,7 @@ int VoxelAnimClass::Reset()
   *(unsigned int *)&this->__pad_C[12] = (void*)&WalkLocomotionClass_vftable; /*0x75aaec*/
   return (int)this; /*0x75aaf5*/
 }
+}
 // 0x75EBE0
 namespace gamemd {
 int VoxelAnimClass::Constructor()
@@ -922,7 +931,7 @@ int VoxelAnimClass::Constructor()
   int v2; // eax
   Voxel *v4; // [esp+0h] [ebp-8h]
 
-  ObjectClass::ctor((ObjectClass *)this); /*0x75ebe4*/
+  ObjectClass::ctor(); /*0x75ebe4*/
   this->__pad_12C[0] = 1; /*0x75ebeb*/
   *(unsigned int *)&this->__pad_12C[12] = 0; /*0x75ebf2*/
   this->VoxelAnimClass_field_0x140 = 0; /*0x75ebf8*/
@@ -967,6 +976,7 @@ int VoxelAnimClass::Constructor()
   if ( !byte_B725CC ) /*0x75ed20*/
     Voxel::InitDistanceTable(v4); /*0x75ed22*/
   return (int)this; /*0x75ed29*/
+}
 }
 // 0x4399E0
 namespace gamemd {
@@ -1042,7 +1052,7 @@ int VoxelAnimClass::DrawVoxelFrame(int a2, int a3, int a4)
   v5 = (unsigned int *)(*((int (__thiscall **)(VoxelAnimClass *, unsigned char *))this->VoxelAnimClass_field_0x0 + 18))(this, v7); /*0x749b2f*/
   if ( (Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v5)->copyFlags & 0x10) != 0 ) /*0x749b44*/
     this->__pad_20[96] = 1; /*0x749b46*/
-  return ObjectClass::CalcDrawRect((ObjectClass *)this); /*0x749b60*/
+  return ObjectClass::CalcDrawRect(); /*0x749b60*/
 }
 } // namespace gamemd
 
@@ -1104,9 +1114,9 @@ int VoxelAnimClass::StubReturnFalse(int a1)
 namespace gamemd {
 VoxelAnimClass * VoxelAnimClass::DrawVoxel(char a2)
 {
-  VoxelAnimClass::CleanupMembers(this); /*0x74ab53*/
+  VoxelAnimClass::CleanupMembers(); /*0x74ab53*/
   if ( (a2 & 1) != 0 ) /*0x74ab5d*/
-    RA2_OPDEL(this); /*0x74ab60*/
+    RA2_OPDEL(); /*0x74ab60*/
   return this; /*0x74ab6a*/
 }
 } // namespace gamemd

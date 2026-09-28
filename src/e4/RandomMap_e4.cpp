@@ -28,6 +28,7 @@
 #include "e4/classes/MouseClass_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/RawFileClass_e4.hpp"
 
 // 0x486790
 namespace gamemd {
@@ -37,6 +38,7 @@ int RandomMap::Check()
 
   v1 = this->RandomMap_field_0x38[0]; /*0x486790*/
   return v1 >= dword_AA0E24 && v1 < dword_AA0E24 + 16; /*0x4867a6*/
+}
 }
 // 0x58BF70
 namespace gamemd {
@@ -89,7 +91,8 @@ unsigned int * RandomMap::TerrainTileDataConstructor(int a2)
     v6 = g_MissionQueueFrame.briefing[342]++; /*0x58c04e*/
     *(unsigned int *)(g_MissionQueueFrame.briefing[339] + 4 * v6) = this; /*0x58c05d*/
   }
-  return this->__pad_0; /*0x58c062*/
+  return (unsigned int *)(this->__pad_0);
+}
 }
 // 0x58C800
 namespace gamemd {
@@ -109,7 +112,7 @@ int RandomMap::GenerateTerrain()
   int v14; // eax
   int v15; // ecx
   char v16; // bl
-  int v17;
+  unsigned int * v17;
   unsigned int v18; // esi
   unsigned int v19; // eax
   int v20; // edi
@@ -328,7 +331,7 @@ int RandomMap::GenerateTerrain()
                   *(unsigned char *)(j + 283) = v27; /*0x58cc56*/
                 }
               }
-              v17 = (unsigned int *)((int)(v45));
+              v17 = (int)((unsigned int *)((int)(v45)));
               v16 = 1; /*0x58cc6e*/
   LABEL_60:
               if ( v17 ) /*0x58cc72*/
@@ -540,6 +543,7 @@ MapClass * * RandomMap::ExpandTerrainCells(int a2, int a3)
   }
   return result; /*0x58d3da*/
 }
+}
 // 0x58D410
 namespace gamemd {
 unsigned int * RandomMap::TerrainAlloc()
@@ -632,6 +636,7 @@ unsigned int * RandomMap::TerrainAlloc()
   }
   while ( v4 );
   return &v3->vtable0; /*0x58d588*/
+}
 }
 // 0x58E740
 namespace gamemd {
@@ -765,6 +770,7 @@ RandomMap * * RandomMap::CollectTerrainCells(int a2)
     (*(void (__thiscall **)(unsigned int *, int))*p_vtable0)(p_vtable0, 1); /*0x58e978*/
   return 1; /*0x58e97a*/
 }
+}
 // 0x58E9B0
 namespace gamemd {
 AbstractClass * * RandomMap::PlaceRandomMapTerrain()
@@ -871,6 +877,7 @@ AbstractClass * * RandomMap::PlaceRandomMapTerrain()
   if ( v19.Items && v19.IsAllocated ) /*0x58eba6*/
     RA2_OPDEL(v19.Items); /*0x58eba9*/
   return 1; /*0x58eb91*/
+}
 }
 // 0x58F0C0
 namespace gamemd {
@@ -1005,6 +1012,7 @@ void* RandomMap::CollectBorderCells()
   if ( v6 ) /*0x58f29f*/
     (*(void (__thiscall **)(unsigned int *, int))*v6)(v6, 1); /*0x58f2a8*/
   RA2_OPDEL(Block); /*0x58f2af*/
+}
 }
 // 0x58F2C0
 namespace gamemd {
@@ -1890,6 +1898,7 @@ int RandomMap::AllocateArea()
   }
   return v2; /*0x590723*/
 }
+}
 // 0x590970
 namespace gamemd {
 int RandomMap::CheckCellPlacement(short * a1, void * a2, DynamicVector * aP3)
@@ -2186,13 +2195,14 @@ int RandomMap::CheckCellPlacement(short * a1, void * a2, DynamicVector * aP3)
             IDA_LOWORD(aP3) = v37 - 1; /*0x590f97*/
             IDA_HIWORD(a1) = v38 - 4; /*0x590f9c*/
             IDA_HIWORD(aP3) = v38 + 4; /*0x590fb1*/
-            return RandomMap::CheckPlacementArea(this, (int16_t *)&a1, (int16_t *)&aP3, a2); /*0x590fbb*/
+            return RandomMap::CheckPlacementArea((int16_t *)&a1, (int16_t *)&aP3, a2); /*0x590fbb*/
           }
         }
       }
     }
   }
   return v9; /*0x5909a3*/
+}
 }
 // 0x590FD0
 namespace gamemd {
@@ -2261,6 +2271,7 @@ int RandomMap::CheckNeighborhoodCompatibility(unsigned short * a1, DynamicVector
     *aP2 = 0; /*0x591052*/
     return 0; /*0x591054*/
   }
+}
 }
 // 0x592440
 namespace gamemd {
@@ -2639,6 +2650,7 @@ ObjectClass * * RandomMap::CheckPlacementArea(short * a2, short * a3, ObjectClas
   }
   return result; /*0x5924b6*/
 }
+}
 // 0x5958E0
 namespace gamemd {
 CampaignClass * * RandomMap::CleanupRandomMapData()
@@ -2792,7 +2804,8 @@ CampaignClass * * RandomMap::CleanupRandomMapData()
   }
   this->__pad_4C[329] = 0; /*0x595ba0*/
   *(unsigned int *)&this->__pad_4C[324] = 0; /*0x595ba6*/
-  LoadOptions::Cleanup((LoadOptions *)this); /*0x595bac*/
+  LoadOptions::Cleanup(); /*0x595bac*/
+}
 }
 // 0x596E50
 namespace gamemd {
@@ -2840,7 +2853,7 @@ int RandomMap::SetupDialog(HWND hDlg)
   int result; // eax
   LPARAM lParama; // [esp+10h] [ebp-4h]
 
-  SettingsClass::ClampValues((SettingsClass *)this); /*0x596e59*/
+  SettingsClass::ClampValues(); /*0x596e59*/
   for ( i = GetDlgItem(hDlg, 1002); SendMessageA(i, 0x146u, 0, 0) > 0; SendMessageA(i, 0x144u, 0, 0) ) /*0x596e76*/
     ; /*0x596e90*/
   v3 = 0; /*0x596ea2*/
@@ -2953,6 +2966,7 @@ int RandomMap::SetupDialog(HWND hDlg)
   *(unsigned int *)&v28->__pad_4C[4] = v39; /*0x597249*/
   return result; /*0x597248*/
 }
+}
 // 0x597D60
 namespace gamemd {
 AbstractClass * * RandomMap::LoadInfo(wchar_t * Destination, int a2)
@@ -3024,6 +3038,7 @@ AbstractClass * * RandomMap::LoadInfo(wchar_t * Destination, int a2)
   *(unsigned int *)v5.__pad_0 = &off_7E1668; /*0x597f18*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v5); /*0x597f20*/
   return 1; /*0x597f26*/
+}
 }
 // 0x5981F0
 namespace gamemd {
@@ -3405,6 +3420,7 @@ WeaponStruct * * RandomMap::LoadConfig()
   CCFileClass::Reset(&v29); /*0x598938*/
   return CCFileClass::Destruct(&v29); /*0x598946*/
 }
+}
 // 0x598960
 namespace gamemd {
 AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
@@ -3431,7 +3447,6 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
   int n; // eax
   void (__stdcall *v24)(HWND, UINT, WPARAM, LPARAM); // esi
   int ii; // eax
-  int *v26; // edi
   int jj; // eax
   unsigned int *v28; // eax
   int kk; // eax
@@ -3553,11 +3568,11 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
   {
     g_RandomMap_TerrainState = g_RandomMap_TerrainState; /*0x598ca4*/
     v12 = *((unsigned int *)g_RandomMap_TerrainState + j); /*0x598caa*/
-    if ( *(unsigned char *)(v12 + 20) ) /*0x598cad*/
+    if ( v12->q014 ) /*0x598cad*/
     {
       v13 = this->q03C; /*0x598cb6*/
       v14 = v13 == 3 || v13 == 4; /*0x598cc7*/
-      RandomMap::CollectTerrainCells((*(unsigned int *)(v12 + 12) > 8000) + !v14 + 4); /*0x598ce4*/
+      RandomMap::CollectTerrainCells((v12->q00C > 8000) + !v14 + 4); /*0x598ce4*/
       RandomMap::PlaceRandomMapTerrain(v12); /*0x598ceb*/
     }
   }
@@ -3575,9 +3590,9 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
   {
     BuildRandomMapTiles(); /*0x598d62*/
     ResetMapState(); /*0x598d67*/
-    ProcessRandomMapCellAdjacency(this); /*0x598d6e*/
+    ProcessRandomMapCellAdjacency(); /*0x598d6e*/
     CreateMapObject(0, -1); /*0x598d7b*/
-    MapClass::FindPassableNeighbor(this); /*0x598d82*/
+    MapClass::FindPassableNeighbor(); /*0x598d82*/
   }
   if ( *((unsigned char *)g_ScenarioClass_Instance + 13720) ) /*0x598d8d*/
     Multiplayer::ShowProgress(&g_GameMode_Current, 169); /*0x598d9f*/
@@ -3594,7 +3609,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
   }
   if ( off_82AF14 ) /*0x598e14*/
     off_82AF14(); /*0x598e16*/
-  RandomMap::PlaceShoreObjects(this); /*0x598e1a*/
+  RandomMap::PlaceShoreObjects(); /*0x598e1a*/
   Debug::Log(); /*0x598e24*/
   LayerClass::CellIteratorReset(&MapClass_Instance); /*0x598e31*/
   for ( k = LayerClass::CellIteratorNext(&MapClass_Instance); k; k = LayerClass::CellIteratorNext(&MapClass_Instance) ) /*0x598e42*/
@@ -3614,11 +3629,11 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
   while ( !(uint8_t)SpreadMapSeedTerrainFromWaypoints(this) ); /*0x598ebd*/
   Debug::Log(); /*0x598ec4*/
   if ( this->q03C ) /*0x598ec9*/
-    PlaceRandomAIBuildings(this); /*0x598ed5*/
+    PlaceRandomAIBuildings(); /*0x598ed5*/
   if ( off_82AF14 ) /*0x598ee1*/
     off_82AF14(); /*0x598ee3*/
   Debug::Log(); /*0x598eea*/
-  RandomMap::PlaceRandomMapTiberium(this); /*0x598ef4*/
+  RandomMap::PlaceRandomMapTiberium(); /*0x598ef4*/
   if ( off_82AF14 ) /*0x598f00*/
     off_82AF14(); /*0x598f02*/
   if ( g_MapTileArray ) /*0x598f0a*/
@@ -3709,8 +3724,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
   if ( off_82AF14 ) /*0x59916d*/
     off_82AF14(); /*0x59916f*/
   Debug::Log(); /*0x599176*/
-  v26 = this; /*0x59917b*/
-  GenerateTerrainHeightMap(this); /*0x599184*/
+  GenerateTerrainHeightMap(); /*0x599184*/
   if ( *((unsigned char *)g_ScenarioClass_Instance + 13720) ) /*0x59918f*/
     Multiplayer::ShowProgress(&g_GameMode_Current, 189); /*0x5991a1*/
   else
@@ -3727,7 +3741,7 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
   if ( off_82AF14 ) /*0x599211*/
     off_82AF14(); /*0x599213*/
   Debug::Log(); /*0x59921a*/
-  if ( v26->u32_38 ) /*0x59921f*/
+  if ( this->u32_38 ) /*0x59921f*/
   {
     LayerClass::CellIteratorReset(&MapClass_Instance); /*0x59923e*/
     for ( jj = LayerClass::CellIteratorNext(&MapClass_Instance); jj; jj = LayerClass::CellIteratorNext(&MapClass_Instance) ) /*0x59924f*/
@@ -3739,12 +3753,12 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
       v28[8] = -755914244; /*0x599295*/
       v28[9] = 1062232653; /*0x599298*/
     }
-    RandomMap::GenerateRandomMapTerrain(v26); /*0x5992ab*/
+    RandomMap::GenerateRandomMapTerrain(this); /*0x5992ab*/
   }
   else
   {
-    CellClass::Reset(v26); /*0x59922b*/
-    RandomMap::PlaceResources(v26); /*0x599232*/
+    CellClass::Reset(this); /*0x59922b*/
+    RandomMap::PlaceResources(this); /*0x599232*/
   }
   if ( off_82AF14 ) /*0x5992b7*/
     off_82AF14(); /*0x5992b9*/
@@ -3773,8 +3787,8 @@ AbstractClass * * RandomMap::Generate(char a2, HWND hDlg)
   BuildingClass::ClearOccupancyData(); /*0x59939b*/
   BuildingClass::ClearFactoryData(); /*0x5993a0*/
   Debug::Log(); /*0x5993aa*/
-  v26->q304 = 0; /*0x5993af*/
-  v26->q308 = 0; /*0x5993b5*/
+  this->q304 = 0; /*0x5993af*/
+  this->q308 = 0; /*0x5993b5*/
   if ( g_MapTileArray ) /*0x5993c5*/
   {
     RA2_OPDEL(g_MapTileArray); /*0x5993c8*/
@@ -4427,16 +4441,16 @@ int RandomMap::FinalizeMapData()
     if ( v4 ) /*0x59a6ff*/
     {
       if ( v4 == 1 ) /*0x59a702*/
-        RandomMap::PlaceTerrainFeatures(this); /*0x59a706*/
+        RandomMap::PlaceTerrainFeatures(); /*0x59a706*/
     }
     else
     {
-      RandomMap::FillTerrainProgressively(this); /*0x59a70f*/
+      RandomMap::FillTerrainProgressively(); /*0x59a70f*/
     }
   }
   else
   {
-    RandomMap::ArrangeBuildingGrid(this); /*0x59a718*/
+    RandomMap::ArrangeBuildingGrid(); /*0x59a718*/
   }
   LayerClass::CellIteratorReset((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x59a722*/
   for ( j = (Cell *)LayerClass::CellIteratorNext((LayerClass *)&stru_87F5F0.__pad_58[416]); /*0x59a735*/
@@ -4528,6 +4542,7 @@ int RandomMap::FinalizeMapData()
   }
   return result; /*0x59a8db*/
 }
+}
 // 0x59AD10
 namespace gamemd {
 void RandomMap::ArrangeBuildingGrid()
@@ -4542,6 +4557,7 @@ void RandomMap::ArrangeBuildingGrid()
   int v9; // esi
   int v10; // edi
   int v11; // eax
+  int v12; // ebp
   int v13; // esi
   int v14; // eax
   int v15; // ecx
@@ -4649,6 +4665,7 @@ void RandomMap::ArrangeBuildingGrid()
       RA2_OPDEL(Block); /*0x59af85*/
   }
 }
+}
 // 0x59AFA0
 namespace gamemd {
 void RandomMap::FillTerrainProgressively()
@@ -4662,7 +4679,7 @@ void RandomMap::FillTerrainProgressively()
   int v7; // eax
   int v8; // edi
   int j; // ecx
-  int64_t v10; // rax
+  int64_t v25; // rax
   int v11; // esi
   int v12; // [esp+10h] [ebp-48h]
   int v13; // [esp+14h] [ebp-44h]
@@ -4741,6 +4758,7 @@ void RandomMap::FillTerrainProgressively()
       v1 = this; /*0x59b0d2*/
     }
   }
+}
 }
 // 0x59B200
 namespace gamemd {
@@ -4932,6 +4950,7 @@ int RandomMap::PlaceTerrainFeatures()
   while ( !v17 ); /*0x59b6c1*/
   return result; /*0x59b6c7*/
 }
+}
 // 0x59B740
 namespace gamemd {
 void RandomMap::PlaceShoreObjects()
@@ -5039,6 +5058,7 @@ void RandomMap::PlaceShoreObjects()
     if ( v19 ) /*0x59b926*/
       RA2_OPDEL(Block); /*0x59b929*/
   }
+}
 }
 // 0x59BBC0
 namespace gamemd {
@@ -5512,22 +5532,20 @@ int RandomMap::GrowTiberium()
   int v2; // eax
   int v3; // edi
   int v4; // edi
-  int16_t v6; // [esp+Ch] [ebp-4h] BYREF
-  int16_t v7; // [esp+Eh] [ebp-2h]
+  int v6; // [esp+Ch] [ebp-4h] BYREF
 
-  v2 = *(&this->q0045); /*0x59c594*/
-  ++*(&this->q04C4); /*0x59c59b*/
-  if ( (v2 == 3 || v2 == 4) && *(&this->q0049) > 20 ) /*0x59c5ac*/
+  v2 = this->RandomMap_field_0x3C[0]; /*0x59c594*/
+  ++this->u32_308; /*0x59c59b*/
+  if ( (v2 == 3 || v2 == 4) && *(int *)this->__pad_4C > 20 ) /*0x59c5ac*/
   {
     v3 = 0; /*0x59c5ae*/
     while ( v3 < 10 ) /*0x59c5b5*/
     {
       v6 = 0; /*0x59c5c1*/
-      v7 = 0; /*0x59c5c6*/
       ++v3; /*0x59c5d0*/
-      if ( Tiberium::ProcessGrowth(this, (int)&v6, 0.0, 0) ) /*0x59c5cb*/
+      if ( Tiberium::ProcessGrowth((Tiberium *)this, (int)&v6, 0.0, 0) ) /*0x59c5cb*/
       {
-        ++*(&this->q04C4); /*0x59c5db*/
+        ++this->u32_308; /*0x59c5db*/
         break; /*0x59c5db*/
       }
     }
@@ -5537,12 +5555,11 @@ int RandomMap::GrowTiberium()
   while ( v4 < 10 ) /*0x59c5e8*/
   {
     v6 = 0; /*0x59c5ee*/
-    v7 = 0; /*0x59c5f6*/
-    result = TiberiumClass::Grow(this, &v6); /*0x59c5fb*/
-    ++v4; /*0x59c600*/
+    result = TiberiumClass::Grow((TiberiumClass *)this, &v6); /*0x59c5fb*/
+    ++v3; /*0x59c600*/
     if ( result ) /*0x59c603*/
     {
-      ++this->q308; /*0x59c605*/
+      ++this->u32_308; /*0x59c605*/
       return result; /*0x59c605*/
     }
   }
@@ -5673,6 +5690,7 @@ unsigned int * RandomMap::CellListAlloc(int a2)
     }
     return &v4->vtable0; /*0x5a08b5*/
   }
+}
 }
 // 0x5A08D0
 namespace gamemd {
@@ -6323,6 +6341,7 @@ int RandomMap::SpreadArea(MouseClass * aP1, float a3, MapResourceClass * aP3, sh
   if ( v11 ) /*0x5a116e*/
     Scalar::Dtor((Scalar *)v11, 1); /*0x5a1174*/
   return v87; /*0x5a117d*/
+}
 }
 // 0x5A23A0
 namespace gamemd {
@@ -7147,6 +7166,7 @@ int RandomMap::GenerateRandomMapTerrain()
   }
   return result; /*0x5a45d5*/
 }
+}
 // 0x5A80B0
 namespace gamemd {
 VectorClass_flat * * RandomMap::PlaceMapSeedBuildings()
@@ -7287,6 +7307,7 @@ VectorClass_flat * * RandomMap::PlaceMapSeedBuildings()
   while ( v27 < 10 ); /*0x5a82c4*/
   return result; /*0x5a82ca*/
 }
+}
 // 0x5B9C90
 namespace gamemd {
 AbstractClass * * RandomMap::RegenerateRandomMapPreview()
@@ -7402,6 +7423,7 @@ AbstractClass * * RandomMap::RegenerateRandomMapPreview()
   }
   byte_8316D4 = 1; /*0x5b9f10*/
   Debug::Log(); /*0x5b9f17*/
+}
 }
 // 0x6558D0
 namespace gamemd {
@@ -7702,6 +7724,7 @@ int RandomMap::RemoveMatching(IUnknown * aP1)
   }
   return result; /*0x74f19e*/
 }
+}
 // 0x42F420
 namespace gamemd {
 void RandomMap::ddtor()
@@ -7793,6 +7816,7 @@ int RandomMap::Read(unsigned short * a2)
   }
   return result; /*0x42f960*/
 }
+}
 // 0x42FBF0
 namespace gamemd {
 DynamicVector * RandomMap::QueryInterface(char a2)
@@ -7809,7 +7833,7 @@ DynamicVector * RandomMap::QueryInterface(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x42fc1b*/
   this->m_8 = 0; /*0x42fc21*/
   if ( (a2 & 1) != 0 ) /*0x42fc28*/
-    RA2_OPDEL(this); /*0x42fc2b*/
+    RA2_OPDEL(); /*0x42fc2b*/
   return this->__pad_0; /*0x42fc35*/
 }
 } // namespace gamemd
@@ -7893,7 +7917,7 @@ unsigned int * RandomMap::Constructor_VectorClass_Cell_(char a2)
   IDA_BYTE1(this->RandomMap_field_0x34[0]) = 0; /*0x5ac318*/
   this->RandomMap_field_0x30 = 0; /*0x5ac31e*/
   if ( (a2 & 1) != 0 ) /*0x5ac325*/
-    RA2_OPDEL(this); /*0x5ac328*/
+    RA2_OPDEL(); /*0x5ac328*/
   return this->__pad_0; /*0x5ac332*/
 }
 } // namespace gamemd

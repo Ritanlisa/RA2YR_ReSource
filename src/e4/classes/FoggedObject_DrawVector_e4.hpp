@@ -14,10 +14,6 @@ struct FoggedObject_DrawVector {
     bool IsAllocated;  // 0xD
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
-    unsigned int __pad_0;
-    unsigned int m_1;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     VectorClass_flat * QueryInterface(char a2);
 };

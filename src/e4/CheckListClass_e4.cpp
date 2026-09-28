@@ -17,11 +17,11 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
   ListClass *v7; // ecx
   ListClass *v8; // esi
   size_t *result; // eax
-  int ListClass_field_0x0C; // edi
+  double (__cdecl *)(...) ListClass_field_0x0C;
   int Type; // ebx
   int v12; // ecx
   int v13; // eax
-  int ListClass_field_0x10; // eax
+  double (__cdecl *)(...) ListClass_field_0x10;
   int v15; // eax
   int v16; // [esp-20h] [ebp-114h]
   size_t v17; // [esp-10h] [ebp-104h]
@@ -41,7 +41,7 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
       memset(&v22[1], 0, 198); /*0x488560*/
       v17 = *result; /*0x48856b*/
       v22[0] = *((unsigned char *)result + 4) != 0 ? 3 : 32;
-      v22[1] = 32; /*0x48857e*/
+      v22[1] = (int)(32);
       swprintf(&v22[2], v17, a2); /*0x488585*/
       ListClass_field_0x0C = v8[1].ListClass_field_0x0C; /*0x48858a*/
       Type = BuildingAnim::GetType(); /*0x48859c*/
@@ -78,6 +78,7 @@ void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a
     }
   }
   return result; /*0x48867d*/
+}
 }
 // 0x4886B0
 int CheckListClass::COMStub()

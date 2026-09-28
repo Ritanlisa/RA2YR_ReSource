@@ -20,13 +20,14 @@
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/House_e4.hpp"
 
 // 0x4A7A30
 DiskLaserClass::DiskLaserClass()
 {
   int v2; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x4a7a33*/
+  AbstractClass::Constructor(); /*0x4a7a33*/
   *(unsigned int *)this->__pad_0 = (void*)&DiskLaserClass_vftable; /*0x4a7a3a*/
   this->DiskLaserClass_field_0x04 = (int)&DiskLaserClass_vftable; /*0x4a7a40*/
   this->DiskLaserClass_field_0x08 = (int)&DiskLaserClass_vftable; /*0x4a7a47*/
@@ -72,9 +73,9 @@ void * DiskLaserClass::CopyTo(char a2)
     }
     while ( v3 < dword_8A0218 ); /*0x4a7cf6*/
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x4a7cfa*/
+  AbstractClass::DTOR(); /*0x4a7cfa*/
   if ( (a2 & 1) != 0 ) /*0x4a7d04*/
-    RA2_OPDEL(this); /*0x4a7d07*/
+    RA2_OPDEL(); /*0x4a7d07*/
   return this->__pad_0; /*0x4a7d11*/
 }
 // 0x4A7B90

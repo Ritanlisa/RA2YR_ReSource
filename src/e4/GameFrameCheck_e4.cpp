@@ -89,6 +89,7 @@ int sub_6863E0()
     Tooltip::Enable(*(Tooltip **)&stru_88732C.__pad_1C[32], stru_A8EB00.parent_gap[32]); /*0x686553*/
   return TacticalMap::Redraw((GScreenClass *)&stru_87F5F0.__pad_58[416]); /*0x686562*/
 }
+}
 // 0x686570
 namespace gamemd {
 AbstractClass * * sub_686570()
@@ -157,4 +158,5 @@ AbstractClass * * sub_686570()
   }
   unk_A8E9A0 = (unsigned char)((gamemd::AbstractClass **)(0));
   return (gamemd::AbstractClass **)(result);
+}
 }

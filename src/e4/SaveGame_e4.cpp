@@ -68,6 +68,7 @@ int SaveGame::LoadArrayData(int * a2)
   }
   return result; /*0x43924e*/
 }
+}
 // 0x54E750
 namespace gamemd {
 int SaveGame::WriteDataArray(int * a2)
@@ -94,6 +95,7 @@ int SaveGame::WriteDataArray(int * a2)
     }
   }
   return result; /*0x54e79c*/
+}
 }
 // 0x6607D0
 namespace gamemd {
@@ -130,6 +132,7 @@ int SaveGame::SaveTriggerEvents()
            &word_B04D78,
            4,
            0) >= 0;
+}
 }
 // 0x67D300
 namespace gamemd {
@@ -959,7 +962,7 @@ int SaveGame::LoadMainGameState()
                        0);
             if ( result >= 0 )
             {
-              SuperWeaponClass::LoadFromSaveStream((SuperWeaponClass *)this); /*0x67f895*/
+              SuperWeaponClass::LoadFromSaveStream(); /*0x67f895*/
               v5 = *(unsigned int *)this->__pad_0; /*0x67f8a0*/
               unk1Particles = FootClass_Array.unk1Particles; /*0x67f8ac*/
               result = (*(int (__stdcall **)(SaveGame *, ParticleSystemClass **, int, unsigned int))(v5 + 16))( /*0x67f8b0*/
@@ -1091,6 +1094,7 @@ int SaveGame::LoadMainGameState()
   }
   return result; /*0x67f9b8*/
 }
+}
 // 0x74ED60
 namespace gamemd {
 int SaveGame::LoadVeinholeData()
@@ -1175,6 +1179,7 @@ int SaveGame::LoadVeinholeData()
   }
   return 1; /*0x74ed85*/
 }
+}
 // 0x751620
 namespace gamemd {
 int SaveGame::SaveAudioQueueItems()
@@ -1235,6 +1240,7 @@ int SaveGame::SaveAudioQueueItems()
     }
   }
   return v2; /*0x751701*/
+}
 }
 // 0x4073B0
 namespace gamemd {
@@ -3047,7 +3053,7 @@ int SaveGame::WriteMagicHeader()
   {
     v4 = *(unsigned int *)this->__pad_0; /*0x7533cf*/
     v5 = 1450145861; /*0x7533db*/
-    return (*(int (__stdcall **)(SaveGame *, int *, int, unsigned int))(v4 + 16))(this, &v5, 4, 0); /*0x7533e3*/
+    return (&v5, 4, 0); /*0x7533e3*/
   }
   return result; /*0x7533e6*/
 }

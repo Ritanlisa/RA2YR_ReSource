@@ -123,6 +123,7 @@ struct CellClass {
     unsigned char padding144;  // 0x144
     unsigned int __pad_28;
     unsigned int estimatedHealth6;
+    unsigned int mapCoords;
     unsigned int u32_11E;
     unsigned int u32_24;
     unsigned int u32_2F4;
@@ -132,10 +133,6 @@ struct CellClass {
     unsigned int vtable28;
     unsigned int vtable46;
     unsigned int vtable48;
-    unsigned int AttachObject;
-    unsigned int IsActiveOrNext;
-    unsigned int ReduceTiberium;
-    unsigned int mapCoords;
 // --- flat members (END) ---
     HouseClass * * UpdateTerrain(void* aP0, void* aP1);
     HouseClass * * UpdateTileVariant2(void* aP0, void* aP1);
@@ -168,6 +165,8 @@ struct CellClass {
     static double UpdateAnimations(...);  // C2597 interim stub
     static double InBounds(...);  // C2597 interim stub
     static double InMapDataRange(...);  // C2597 interim stub
+    static double AttachObject(...);  // C2597 interim stub
+    static double ReduceTiberium(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

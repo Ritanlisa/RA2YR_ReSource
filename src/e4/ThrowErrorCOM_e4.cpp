@@ -7,16 +7,18 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Theme_e4.hpp"
 
 // 0x7DCDC0
 namespace gamemd {
 unsigned int * _com_error::ThrowErrorCOM_Helper(int a2, int a3, char a4)
 {
-  this->u32_C = (unsigned int *)(0);
+  this->u32_C = 0; /*0x7dcdc7*/
   this->u32_4 = a2; /*0x7dcdcb*/
-  *(void ** *)this = (void*)&_com_error_vftable; /*0x7dcdd2*/
+  this->vfptr = (int)&_com_error_vftable; /*0x7dcdd2*/
   this->u32_8 = a3; /*0x7dcdda*/
   if ( a3 && a4 ) /*0x7dcde4*/
     (*(void (__stdcall **)(int))(*(unsigned int *)a3 + 4))(a3); /*0x7dcde9*/
-  return this; /*0x7dcdee*/
+  return &this->vfptr; /*0x7dcdee*/
+}
 }

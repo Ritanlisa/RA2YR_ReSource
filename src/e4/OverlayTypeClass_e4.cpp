@@ -19,6 +19,7 @@
 #include "e4/classes/Options_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/Dialog_e4.hpp"
 
 // 0x5FE250
 OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
@@ -28,7 +29,7 @@ OverlayTypeClass::OverlayTypeClass(ObjectClass * aP1)
   int v5; // ecx
   OverlayTypeClass **v6; // edx
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x5fe259*/
+  ObjectTypeClass::ConstructFull(aP1); /*0x5fe259*/
   this->Strength_2 = 1; /*0x5fe265*/
   *(unsigned int *)&this->Wall = 1; /*0x5fe26b*/
   this->Explodes = 1; /*0x5fe271*/
@@ -308,7 +309,7 @@ unsigned int * OverlayTypeClass::Construct(ObjectClass * aP1)
 {
   void *v3; // eax
 
-  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x6440a9*/
+  ObjectTypeClass::ConstructFull(aP1); /*0x6440a9*/
   this->LandType[0] = -1; /*0x6440b3*/
   *(unsigned int *)&this->RadarColor[2] = -1; /*0x6440b9*/
   this->u32_2B8 = -1; /*0x6440bf*/
@@ -408,17 +409,17 @@ int * OverlayTypeClass::GetTile(int a1)
 // 0x5FE530
 bool OverlayTypeClass::GetType(IUnknown * aP2, int a3)
 {
-  void *v4; // eax
+  Object *v4; // eax
 
-  v4 = (void *)RA2_OPNEW(0xB0u); /*0x5fe538*/
+  v4 = (Object *)RA2_OPNEW(0xB0u); /*0x5fe538*/
   return v4 && Object::SpawnAtCell(v4, (int)this, aP2, -1); /*0x5fe559*/
 }
 // 0x5FE570
 OverlayClass * OverlayTypeClass::GetDamage(int a2)
 {
-  void *v3; // eax
+  Object *v3; // eax
 
-  v3 = (void *)RA2_OPNEW(0xB0u); /*0x5fe578*/
+  v3 = (Object *)RA2_OPNEW(0xB0u); /*0x5fe578*/
   if ( v3 ) /*0x5fe582*/
     return Object::SpawnAtCell(v3, (int)this, &word_AC1608, -1); /*0x5fe58e*/
   else
@@ -470,7 +471,7 @@ int OverlayTypeClass::PowerDrainUpdate(int * a2)
   int v6; // ecx
   int v7; // edx
 
-  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x5fea59*/
+  AbstractTypeClass::ProcessPower(a2); /*0x5fea59*/
   Power::TimerProcess(this->LandType[0]); /*0x5fea67*/
   Power::TimerProcess((int)this->CellAnim); /*0x5fea75*/
   Power::TimerProcess(this->Strength_2); /*0x5fea83*/
@@ -591,8 +592,8 @@ OverlayTypeClass * OverlayTypeClass::ddtor(char a2)
       ++v3; /*0x5fef8d*/
     }
   }
-  ObjectTypeClass::Destruct((int)this); /*0x5fefa1*/
+  ObjectTypeClass::Destruct(); /*0x5fefa1*/
   if ( (a2 & 1) != 0 ) /*0x5fefab*/
-    RA2_OPDEL(this); /*0x5fefae*/
+    RA2_OPDEL(); /*0x5fefae*/
   return &this->vtable0; /*0x5fefb8*/
 }

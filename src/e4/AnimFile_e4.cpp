@@ -42,7 +42,7 @@ AnimFile * AnimFile::QueryInterface(char a2)
   this->u32_88 = (unsigned int)(0);
   *(unsigned int *)this->__pad_0 = (void*)&Animate_vftable; /*0x427308*/
   if ( (a2 & 1) != 0 ) /*0x42730e*/
-    RA2_OPDEL(this); /*0x427311*/
+    RA2_OPDEL(); /*0x427311*/
   return this; /*0x42731b*/
 }
 } // namespace gamemd

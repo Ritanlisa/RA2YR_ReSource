@@ -20,6 +20,10 @@
 #include "e4/classes/TypeList_Infantry_e4.hpp"
 #include "e4/classes/Socket_e4.hpp"
 #include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
+#include "e4/classes/TypeList_Particle_e4.hpp"
+#include "e4/classes/TypeList_cptr_ParticleSystemTypeClass_e4.hpp"
 
 // 0x7B1B50
 namespace gamemd {
@@ -522,7 +526,7 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2)
       }
     }
   }
-  UDPInterfaceClass::connect(this); /*0x7b4224*/
+  UDPInterfaceClass::connect(); /*0x7b4224*/
   v9 = (void *)this->u32_3F554; /*0x7b4229*/
   this->u32_3F550 = (void*)&VectorClass_unsigned_char___vftable; /*0x7b422f*/
   if ( v9 && this->u32_3F55D ) /*0x7b423d*/
@@ -541,9 +545,9 @@ CampaignClass * * UDPInterfaceClass::Destructor(char a2)
   }
   this->u32_3F345 = 0; /*0x7b428d*/
   this->u32_3F340 = 0; /*0x7b4293*/
-  WinsockInterfaceClass::WinsockInterfaceClass((int)this); /*0x7b4299*/
+  WinsockInterfaceClass::WinsockInterfaceClass(); /*0x7b4299*/
   if ( (a2 & 1) != 0 ) /*0x7b42a3*/
-    RA2_OPDEL(this); /*0x7b42a6*/
+    RA2_OPDEL(); /*0x7b42a6*/
   return (void ***)this; /*0x7b42b0*/
 }
 } // namespace gamemd
@@ -763,7 +767,7 @@ short UDPInterfaceClass_Destru::ddtor(WinsockInterfaceClass * aP1, unsigned int 
              arg4,
              aP5);
   else
-    return AudioQueue::WriteBuffer((WinsockInterfaceClass *)this, aP1, arg4, a3, a5, aP5, a7, a8); /*0x7b3713*/
+    return AudioQueue::WriteBuffer(aP1, arg4, a3, a5, aP5, a7, a8); /*0x7b3713*/
 }
 } // namespace gamemd
 // 0x7B3720
@@ -851,6 +855,7 @@ void UDPInterfaceClass_Destru_Connect()
     while ( v10 + 1 < result ); /*0x7b3875*/
   }
   return result; /*0x7b387e*/
+}
 }
 // 0x7B3890
 int UDPInterfaceClass_Destru::Receive()
@@ -958,6 +963,6 @@ DynamicVector * UDPInterfaceClass::receivePacket(char a2)
   IDA_BYTE1(this->m_C) = 0; /*0x7b45fb*/
   this->m_8 = 0; /*0x7b4601*/
   if ( (a2 & 1) != 0 ) /*0x7b4608*/
-    RA2_OPDEL(this); /*0x7b460b*/
+    RA2_OPDEL(); /*0x7b460b*/
   return this->__pad_0; /*0x7b4615*/
 }

@@ -244,7 +244,7 @@ int TacticalMap::Construct()
 {
   float v5; // [esp+0h] [ebp-10h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x6d1c25*/
+  AbstractClass::Constructor(); /*0x6d1c25*/
   this->Tactical_field_0xA8 = (IUnknown *)-1; /*0x6d1c2c*/
   this->__pad_AC[0] = 0; /*0x6d1c36*/
   this->__pad_AC[1] = 0; /*0x6d1c3c*/

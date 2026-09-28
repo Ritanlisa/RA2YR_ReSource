@@ -14,15 +14,6 @@ struct TypeList_flat {
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
     unsigned int u32_18;  // 0x18
-    unsigned int m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
-    unsigned int Capacity;
-    unsigned int IsAllocated;
-    unsigned int IsInitialized;
-    unsigned int Items;
-    unsigned int vtable0;
 // --- flat members (END) ---
 CCINIClass * BuildingTypeConstructor();
 CCINIClass * ConstructSmudge();

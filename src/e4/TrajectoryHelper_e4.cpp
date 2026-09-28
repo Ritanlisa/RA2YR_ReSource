@@ -101,6 +101,7 @@ unsigned int * TrajectoryHelper::FindFirstObstacle(IUnknown * aP0, int * a1, int
   }
   return result; /*0x4cc304*/
 }
+}
 // 0x4CC360
 namespace gamemd {
 unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char * a2, int a3, int a4, int a5, int a6, int a7, void * other)
@@ -241,6 +242,7 @@ unsigned int * TrajectoryHelper::GetObstacle(unsigned char * a1, unsigned char *
     }
   }
   return 0; /*0x4cc5c8*/
+}
 }
 // 0x4CC310
 namespace gamemd {

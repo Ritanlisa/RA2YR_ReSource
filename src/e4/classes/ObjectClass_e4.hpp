@@ -60,6 +60,7 @@ struct ObjectClass {
     IPXGlobalConnClass* q05C;  // 0x5C
     ObjectClass* q060;  // 0x60
     unsigned int u32_61;  // 0x61
+    unsigned int u32_62;  // 0x62
     unsigned int u32_63;  // 0x63
     char customSound[4];  // 0x64
     bool bombVisible;  // 0x68

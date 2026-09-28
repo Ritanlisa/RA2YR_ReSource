@@ -115,6 +115,7 @@ struct Cell {
     unsigned int Cell_field_0x11B;
     unsigned int Cell_field_0x140;
     unsigned int Cell_field_0x38;
+    unsigned int Cell_field_0xE4;
     unsigned int __pad_1C;
     unsigned int __pad_3C;
     unsigned int __pad_70;
@@ -123,7 +124,6 @@ struct Cell {
     unsigned int u32_5A4;
     unsigned int u32_6C4;
     unsigned int u32_901;
-    unsigned int Cell_field_0xE4;
     unsigned int IsBridge;
 // --- flat members (END) ---
     char IsOccupied(short * a2,  char a3);    // 0x419B00

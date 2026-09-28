@@ -35,6 +35,7 @@
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/RandomMap_e4.hpp"
 #include "e4/classes/TiberiumClass_e4.hpp"
+#include "e4/classes/TemporalClass_e4.hpp"
 
 // 0x6DD8B0
 namespace gamemd {
@@ -1284,6 +1285,7 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
   }
   return Register; /*0x71cf25*/
 }
+}
 // 0x71D000
 namespace gamemd {
 AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * aP2, AbstractClass * aP2)
@@ -1330,6 +1332,7 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * aP2, AbstractCla
     }
   }
   return 1; /*0x71d137*/
+}
 }
 // 0x71CF30
 namespace gamemd {

@@ -20,6 +20,9 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/AnimTypeClass_e4.hpp"
 #include "e4/classes/House_e4.hpp"
+#include "e4/classes/HashTable_flat_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/HouseClass_e4.hpp"
 
 // 0x6F2040
 namespace gamemd {
@@ -35,6 +38,7 @@ int sub_6F2040()
     result = g_MultiplayerLogState; /*0x6f2059*/
   }
   return result; /*0x6f2063*/
+}
 }
 // 0x4371D0
 char Helper::ProcessData(void ** a1, int a2, int * a3)

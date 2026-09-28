@@ -30,9 +30,9 @@
 namespace gamemd {
 void * Multiplayer::FindStartPositions()
 {
-  int v1; // esi
+  AbstractClass * v1;
   Multiplayer *v2; // edi
-  unsigned int v3;
+  AbstractClass * v3;
   int v4; // ebx
   int v5; // eax
   unsigned int *v6; // ecx
@@ -57,8 +57,8 @@ void * Multiplayer::FindStartPositions()
   int v26; // [esp+38h] [ebp-8h]
   int v27; // [esp+3Ch] [ebp-4h]
 
-  v1 = (int)((gamemd::AbstractClass *)(0));
-  v2 = this; /*0x688389*/
+  v1 = (gamemd::gamemd::AbstractClass *)((int)((gamemd::gamemd::AbstractClass *)(0)));
+  v2 = (gamemd::gamemd::AbstractClass *)(this);
   v21 = this; /*0x688391*/
   VectorClass::CellConstructor(&v25, 0, 0); /*0x688395*/
   v3 = unk_A8B230; /*0x68839a*/
@@ -102,7 +102,7 @@ void * Multiplayer::FindStartPositions()
   }
   else
   {
-    v10 = v1; /*0x688423*/
+    v10 = (int)(v1);
     v20 = v1; /*0x688425*/
   }
   for ( i = 0; (int)i < v10; ++i ) /*0x688435*/
@@ -116,12 +116,12 @@ void * Multiplayer::FindStartPositions()
       goto LABEL_24; /*0x688491*/
     if ( (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v25.vtable0 + 2))(&v25, v4 + v25.Capacity, 0) ) /*0x6884a0*/
     {
-  LABEL_22: v13 = (int)((gamemd::AbstractClass *)(v26++));
+  LABEL_22:
+      v13 = v26++; /*0x6884ab*/
       *((unsigned int *)v25.Items + v13) = v12; /*0x6884b6*/
     }
-    v3 = (unsigned int)((gamemd::AbstractClass *)(unk_A8B230));
-  LABEL_24:
-    v23 = *(int *)((char *)&v3[44].vtable0 + 4 * i + 2); /*0x6884bf*/
+    v3 = (gamemd::gamemd::AbstractClass *)((unsigned int)((gamemd::gamemd::AbstractClass *)(unk_A8B230)));
+  LABEL_24: v23 = (gamemd::gamemd::AbstractClass *)(*(int *)((char *)&v3[44].vtable0 + 4 * i + 2));
     Debug::Log(); /*0x6884d9*/
     v4 = v27; /*0x6884de*/
     v3 = unk_A8B230; /*0x6884e2*/
@@ -214,11 +214,11 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
   this->u32_8 = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/
   {
-    this->u32_4 = (int)(0);
-    this->u8_D = (int)(0);
+    this->u32_4 = 0; /*0x68c319*/
+    this->u8_D = 0; /*0x68c320*/
     return this; /*0x68c324*/
   }
-  v4 = (unsigned int)(RA2_OPNEW(4 * v3));
+  v4 = (void *)((int)(RA2_OPNEW(4 * v3)));
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
   this->u32_4 = v4; /*0x68c2eb*/

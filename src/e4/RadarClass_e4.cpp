@@ -14,6 +14,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x652C00
 namespace gamemd {
@@ -28,7 +29,7 @@ CampaignClass * * RadarClass::Destruct()
 
   this->RadarClass_field_0x0 = (unsigned int)((gamemd::MapClass **)((void*)&RadarClass_vftable));
   AudioFileClass::Release((AudioFileClass *)&this->RadarClass_field_0x14C0); /*0x652c12*/
-  TacticalClass::FreeResources((TacticalClass *)this); /*0x652c19*/
+  TacticalClass::FreeResources(); /*0x652c19*/
   p_RadarClass_field_0x1488 = &this->RadarClass_field_0x1488; /*0x652c1e*/
   v3 = 22; /*0x652c24*/
   do /*0x652c53*/
@@ -64,8 +65,9 @@ CampaignClass * * RadarClass::Destruct()
   }
   this->__pad_122C[5] = (gamemd::CampaignClass **)(0);
   *(unsigned int *)this->__pad_122C = 0; /*0x652cbf*/
-  MapClass::Destruct((char *)this); /*0x652cc5*/
+  MapClass::Destruct(); /*0x652cc5*/
   return result; /*0x652cca*/
+}
 }
 // 0x654650
 namespace gamemd {
@@ -145,13 +147,14 @@ void RadarClass_RecreateSurface(void * a1, void * a2)
     }
     else
     {
-      v17 = 0; /*0x65479b*/
+      v17 = (char *)((unsigned int)(0));
     }
     *((unsigned int *)v3 + 1159) = v17; /*0x65479d*/
     (*(void (__thiscall **)(char *, unsigned int))(v17->nextArrayIndex)(v17, 0); /*0x6547a8*/
     IDA_LOBYTE(result) = RadarClass::UpdateFoundationShapesCustom(v3); /*0x6547ad*/
   }
   return result; /*0x6547b3*/
+}
 }
 // 0x6A8420
 namespace gamemd {
@@ -345,6 +348,7 @@ int RadarClass::GetBlip(int a1, int a2, int a3, ObjectClass * aP3)
   v14 = *(const wchar_t **)(v16 + 96); /*0x6a86ed*/
   v15 = (const wchar_t *)v25[24]; /*0x6a86f0*/
   return wcscmp(v14, v15) <= 0; /*0x6a8457*/
+}
 }
 // 0x4F4220
 namespace gamemd {

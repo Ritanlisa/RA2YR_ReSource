@@ -120,7 +120,7 @@ int AudioMixer::Init()
   SetupSampleAudioMixer((int *)this + 10, 100); /*0x401019*/
   SetupSampleAudioMixer((int *)&this->AudioMixer_field_14, 0x2000); /*0x401028*/
   SetRateMixerSample((unsigned int *)this + 10, 10, 0x3E8u, 0); /*0x40103b*/
-  SetRateMixerSample(this, 0x4000, 0x3E8u, 0); /*0x40104e*/
+  SetRateMixerSample(0x4000, 0x3E8u, 0); /*0x40104e*/
   SetRateMixerSample((unsigned int *)&this->AudioMixer_field_14, 0x4000, 0x3E8u, 0); /*0x401061*/
   return EndBufferMixer(&this->AudioMixer_field_00, 0x4000); /*0x40106d*/
 }

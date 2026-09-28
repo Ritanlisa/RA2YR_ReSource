@@ -45,7 +45,7 @@ int sub_679CC0()
   char v6; // [esp+44h] [ebp-84h]
   unsigned int v7[22]; // [esp+5Ch] [ebp-6Ch] BYREF
   unsigned char v8[12]; // [esp+B4h] [ebp-14h] BYREF
-  void ** v9;
+  int v9; // [esp+C0h] [ebp-8h]
 
   if ( !byte_B053B8 ) /*0x679cd0*/
   {
@@ -72,6 +72,7 @@ int sub_679CC0()
   }
   return dword_B053B4; /*0x679d84*/
 }
+}
 // 0x67B550
 namespace gamemd {
 void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, VectorClass_flat * aP2, unsigned char * a3, unsigned int * a4)
@@ -83,7 +84,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
   void *Items; // eax
   bool v11; // zf
   int Capacity; // eax
-  void * v14;
+  int v14; // eax
   int v15; // ecx
   int v16; // eax
   VectorClass v17; // [esp+Ch] [ebp-9Ch] BYREF
@@ -148,7 +149,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
       aP0->Capacity = Capacity; /*0x67b6bb*/
       if ( Capacity ) /*0x67b6be*/
       {
-        v14 = (void *)((int)(RA2_OPNEW(4 * Capacity)));
+        v14 = (int)(RA2_OPNEW(4 * Capacity));
         aP0->Items = (unsigned int)((void *)v14);
         if ( v14 ) /*0x67b6d5*/
         {
@@ -178,6 +179,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
   }
   return aP0; /*0x67b682*/
 }
+}
 // 0x67BB10
 namespace gamemd {
 void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIClass * aP1, unsigned char * a3, unsigned int * a4)
@@ -189,7 +191,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
   void *InfantryTypeVector_field_0x04; // eax
   bool v11; // zf
   int v13; // eax
-  void * v14;
+  int v14; // eax
   int v15; // ecx
   int v16; // eax
   InfantryTypeVector v17; // [esp+Ch] [ebp-9Ch] BYREF
@@ -286,6 +288,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     *(unsigned int *)aP0 = (void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67bccc*/
   }
   return aP0; /*0x67bc42*/
+}
 }
 // 0x674500
 int RulesClass::sub_674500()

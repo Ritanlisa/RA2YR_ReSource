@@ -942,174 +942,188 @@ void DamageAnimClass::Constructor()
   int v10; // ebx
   int v11; // eax
   int v12; // edi
-  double v13; // st7
-  double v14; // st6
+  int v13; // eax
+  double v14; // st7
   int v15; // eax
-  int v16; // ebx
-  double v17; // st7
+  double v16; // st6
+  int v17; // eax
   int v18; // eax
-  double v19; // st7
-  signed int v20; // edx
-  double v21; // st7
-  int v22; // eax
+  int VoxelAnimClass_field_0x104; // ebx
+  double v20; // st7
+  int v21; // eax
+  double v22; // st7
+  int v23; // edx
   double v24; // st7
-  signed int v25; // ebx
-  int v26; // edx
-  int v27; // eax
-  int v28; // ecx
-  void *v29; // edi
-  void *v30; // eax
+  int v25; // eax
+  int v26; // eax
+  double v27; // st6
+  double v28; // st7
+  int v29; // eax
+  signed int v30; // ebx
+  int v31; // eax
+  int v32; // edx
+  int v33; // eax
+  int v34; // ecx
+  int *v35; // edi
+  CellClass *v36; // eax
   int *Coords; // [esp-18h] [ebp-68h]
-  int v33; // [esp-14h] [ebp-64h]
-  int v34; // [esp-10h] [ebp-60h]
-  double v35; // [esp+8h] [ebp-48h]
-  double v36; // [esp+8h] [ebp-48h]
-  int v37; // [esp+1Ch] [ebp-34h]
-  float v38; // [esp+1Ch] [ebp-34h]
-  float v40; // [esp+20h] [ebp-30h]
-  int v41; // [esp+24h] [ebp-2Ch]
-  int v43; // [esp+28h] [ebp-28h]
-  int v44; // [esp+28h] [ebp-28h]
-  int v45; // [esp+2Ch] [ebp-24h] BYREF
-  float v46; // [esp+30h] [ebp-20h]
-  float v47; // [esp+34h] [ebp-1Ch]
-  int v48; // [esp+38h] [ebp-18h] BYREF
-  int v49; // [esp+3Ch] [ebp-14h]
-  int v50; // [esp+40h] [ebp-10h]
+  int v39; // [esp-14h] [ebp-64h]
+  int v40; // [esp-10h] [ebp-60h]
+  double v41; // [esp+8h] [ebp-48h]
+  int v42; // [esp+1Ch] [ebp-34h]
+  float v43; // [esp+1Ch] [ebp-34h]
+  int v44; // [esp+20h] [ebp-30h]
+  float v45; // [esp+20h] [ebp-30h]
+  int v46; // [esp+24h] [ebp-2Ch]
+  int v47; // [esp+24h] [ebp-2Ch]
+  int v48; // [esp+28h] [ebp-28h]
+  int v49; // [esp+28h] [ebp-28h]
+  float v50; // [esp+2Ch] [ebp-24h] BYREF
+  float v51; // [esp+30h] [ebp-20h]
+  float v52; // [esp+34h] [ebp-1Ch]
+  int v53; // [esp+38h] [ebp-18h] BYREF
+  int v54; // [esp+3Ch] [ebp-14h]
+  int v55; // [esp+40h] [ebp-10h]
 
-  ObjectClass::ctor(this); /*0x7493be*/
-  this->u32_B0 = 0; /*0x7493d2*/
-  this->q0B8 = 0; /*0x7493d4*/
-  this->q0C0 = 0; /*0x7493d7*/
-  this->q0B4 = 0; /*0x7493de*/
-  this->u32_BC = 0; /*0x7493e1*/
-  this->q0C4 = 0; /*0x7493e4*/
-  Int4::Set((unsigned int *)&this->q0E0, 0, 0, 0, 1065353216); /*0x7493e7*/
-  Int4::Set((unsigned int *)&this->q0F0, 0, 0, 0, 1065353216); /*0x7493f7*/
-  this->q104 = a2; /*0x749402*/
-  this->q100 = -1; /*0x74940c*/
-  this->q108 = 0; /*0x749416*/
-  this->q10C = a4; /*0x74941c*/
-  this->q110 = 0; /*0x749422*/
-  this->q13C = 0; /*0x749428*/
-  this->q140 = 0; /*0x74942e*/
-  *(unsigned int *)this = &(void*)(void*)&VoxelAnimClass_vftable; /*0x749434*/
-  this->vtable2 = &(void*)(void*)&VoxelAnimClass_vftable; /*0x74943a*/
-  this->vtable3 = &(void*)(void*)&VoxelAnimClass_vftable; /*0x749440*/
-  this->vtable4 = &(void*)(void*)&VoxelAnimClass_vftable; /*0x749447*/
-  AbstractClass::GenerateUniqueID((int)this + 4); /*0x74944e*/
-  AudioController::Init((unsigned int *)&this->u32_189); /*0x749459*/
-  AudioController::Init((unsigned int *)&this->u32_1C4); /*0x749464*/
-  this->q140 = *(unsigned int *)(this->q104 + 668); /*0x749475*/
+  ObjectClass::ctor((ObjectClass *)this); /*0x7493be*/
+  *(unsigned int *)&this->__pad_98[24] = 0; /*0x7493d2*/
+  *(unsigned int *)&this->__pad_98[32] = 0; /*0x7493d4*/
+  *(unsigned int *)&this->__pad_98[40] = 0; /*0x7493d7*/
+  *(unsigned int *)&this->__pad_98[28] = 0; /*0x7493de*/
+  *(unsigned int *)&this->__pad_98[36] = 0; /*0x7493e1*/
+  *(unsigned int *)&this->__pad_98[44] = 0; /*0x7493e4*/
+  Int4::Set((Int4 *)&this->__pad_98[72], 0, 0, 0, 1065353216); /*0x7493e7*/
+  Int4::Set((Int4 *)&this->__pad_98[88], 0, 0, 0, 1065353216); /*0x7493f7*/
+  this->VoxelAnimClass_field_0x104 = a2; /*0x749402*/
+  this->VoxelAnimClass_field_0x100 = -1; /*0x74940c*/
+  this->VoxelAnimClass_field_0x108 = 0; /*0x749416*/
+  this->VoxelAnimClass_field_0x10C = a4; /*0x74941c*/
+  this->__pad_110[0] = 0; /*0x749422*/
+  this->__pad_12C[16] = 0; /*0x749428*/
+  this->VoxelAnimClass_field_0x140 = 0; /*0x74942e*/
+  this->VoxelAnimClass_field_0x0 = (int)&(void*)(void*)&VoxelAnimClass_vftable; /*0x749434*/
+  this->VoxelAnimClass_field_0x4 = (int)&(void*)(void*)&VoxelAnimClass_vftable; /*0x74943a*/
+  this->VoxelAnimClass_field_0x8 = (int)&(void*)(void*)&VoxelAnimClass_vftable; /*0x749440*/
+  *(unsigned int *)this->__pad_C = &(void*)(void*)&VoxelAnimClass_vftable; /*0x749447*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->VoxelAnimClass_field_0x4); /*0x74944e*/
+  AudioController::Init((AudioController *)&this->VoxelAnimClass_field_0x114); /*0x749459*/
+  AudioController::Init((AudioController *)&this->VoxelAnimClass_field_0x128); /*0x749464*/
+  this->VoxelAnimClass_field_0x140 = *(unsigned int *)(this->VoxelAnimClass_field_0x104 + 668); /*0x749475*/
   if ( dword_887398 < dword_887390 /*0x7494af*/
     || (byte_887395 || !dword_887390)
     && dword_88739C > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(VoxelAnimClass_Array + 8))(
-         &VoxelAnimClass_Array,
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_887388 + 8))(
+         &dword_887388,
          dword_887390 + dword_88739C,
          0) )
   {
     v5 = dword_887398++; /*0x7494bc*/
     *((unsigned int *)dword_88738C + v5) = this; /*0x7494cb*/
   }
-  if ( *(unsigned char *)(this->q104 + 720) ) /*0x7494d4*/
+  if ( *(unsigned char *)(this->VoxelAnimClass_field_0x104 + 720) ) /*0x7494d4*/
   {
-    v44 = Random::State((unsigned int *)g_ScenarioClass_Instance + 134); /*0x74967e*/
-    v15 = Random::State((unsigned int *)g_ScenarioClass_Instance + 134); /*0x749688*/
-    v16 = this->q104; /*0x74968d*/
-    v15 = v15; /*0x749693*/
-    v17 = v16->q2B8; /*0x749697*/
-    v18 = Math::RoundToInt(v17); /*0x7496a5*/
-    v40 = (double)((int)abs32(v44) % v18) - v16->qB20; /*0x7496d2*/
-    *(float *)&v45 = (double)((int)abs32(v15) % v18) - v16->qB20; /*0x7496e4*/
-    v46 = v40; /*0x7496e8*/
-    v47 = v17; /*0x7496ec*/
-    v19 = -v40; /*0x7496f4*/
-    if ( *(float *)&v45 < v19 ) /*0x749701*/
+    v49 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x74967e*/
+    v18 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x749688*/
+    VoxelAnimClass_field_0x104 = this->VoxelAnimClass_field_0x104; /*0x74968d*/
+    v47 = v18; /*0x749693*/
+    v20 = *(double *)(VoxelAnimClass_field_0x104 + 696); /*0x749697*/
+    IDA_LOWORD(v21) = Math::RoundToInt(v20); /*0x7496a5*/
+    v45 = (double)((int)abs32(v49) % v21) - *(double *)(VoxelAnimClass_field_0x104 + 712); /*0x7496d2*/
+    v50 = (double)((int)abs32(v47) % v21) - *(double *)(VoxelAnimClass_field_0x104 + 712); /*0x7496e4*/
+    v51 = v45; /*0x7496e8*/
+    v52 = v20; /*0x7496ec*/
+    v22 = -v45; /*0x7496f4*/
+    if ( v50 < v22 ) /*0x749701*/
     {
-      *(float *)&v45 = -*(float *)&v45; /*0x749709*/
-      v46 = v19; /*0x74970d*/
+      v50 = -v50; /*0x749709*/
+      v51 = v22; /*0x74970d*/
     }
-    v20 = this->q140 - abs32(Random::State((unsigned int *)g_ScenarioClass_Instance + 134) % 20); /*0x74973d*/
-    this->q140 = v20; /*0x74973f*/
-    v21 = (double)v20; /*0x74974c*/
-    v48 = Math::RoundToInt(v21); /*0x749768*/
-    v22 = Math::RoundToInt(v21); /*0x74976e*/
-    v21 = v21; /*0x749776*/
-    v24 = (double)a3[2]; /*0x749776*/
-    v49 = v22; /*0x74977c*/
-    v50 = Math::RoundToInt(v24 - v21 * v47); /*0x749787*/
-    ObjectClass::Deploy(this); /*0x749794*/
-    v25 = abs32(Random::State((unsigned int *)g_ScenarioClass_Instance + 134)); /*0x7497c7*/
-    v26 = v25 /*0x7497d3*/
-        % (int)Math::RoundToInt(*(double *)(this->q104 + 688) - *(double *)(this->q104 + 680) + 1.0);
-    v27 = this->q104; /*0x7497d5*/
-    v36 = (double)v26 + v27->q2A8; /*0x7497f6*/
-    v34 = v27->q2A4; /*0x74980e*/
-    v33 = v27->q2A0; /*0x749813*/
-    Coords = (int *)ObjectClass::GetCoords(this); /*0x74981c*/
-    AnimClass::InitRotation((char *)&this->q2C0, Coords, v33, v34, 1610612736, 1073112678, 0, 0, &v45, v36); /*0x74981f*/
+    v23 = this->VoxelAnimClass_field_0x140 - abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink) % 20); /*0x74973d*/
+    this->VoxelAnimClass_field_0x140 = v23; /*0x74973f*/
+    v24 = (double)v23; /*0x74974c*/
+    IDA_LOWORD(v25) = Math::RoundToInt(v24); /*0x74975a*/
+    v53 = v25; /*0x749768*/
+    IDA_LOWORD(v26) = Math::RoundToInt(v24); /*0x74976e*/
+    v27 = v24; /*0x749776*/
+    v28 = (double)a3[2]; /*0x749776*/
+    v54 = v26; /*0x74977c*/
+    IDA_LOWORD(v29) = Math::RoundToInt(v28 - v27 * v52); /*0x749782*/
+    v55 = v29; /*0x749787*/
+    ObjectClass::Deploy((ObjectClass *)this); /*0x749794*/
+    v30 = abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)); /*0x7497c7*/
+    IDA_LOWORD(v31) = Math::RoundToInt( /*0x7497c9*/
+                    *(double *)(this->VoxelAnimClass_field_0x104 + 688)
+                  - *(double *)(this->VoxelAnimClass_field_0x104 + 680)
+                  + 1.0);
+    v32 = v30 % v31; /*0x7497d3*/
+    v33 = this->VoxelAnimClass_field_0x104; /*0x7497d5*/
+    v41 = (double)v32 + *(double *)(v33 + 680); /*0x7497f6*/
+    v40 = *(unsigned int *)(v33 + 676); /*0x74980e*/
+    v39 = *(unsigned int *)(v33 + 672); /*0x749813*/
+    Coords = (int *)ObjectClass::GetCoords((ObjectClass *)this); /*0x74981c*/
+    AnimClass::InitRotation((AnimClass *)&this->__pad_98[24], Coords, v39, v40, 1610612736, 1073112678, 0, 0, &v50, v41); /*0x74981f*/
   }
   else
   {
-    ObjectClass::Deploy(this); /*0x7494e9*/
-    v6 = (int *)ObjectClass::GetCoords(this); /*0x7494f5*/
+    ObjectClass::Deploy((ObjectClass *)this); /*0x7494e9*/
+    v6 = (int *)ObjectClass::GetCoords((ObjectClass *)this); /*0x7494f5*/
     v7 = *v6; /*0x7494fa*/
     v8 = v6[1]; /*0x7494fc*/
     v9 = v6[2]; /*0x7494ff*/
-    v49 = v8; /*0x749502*/
-    v48 = v7; /*0x74950f*/
-    v50 = v9 + 10; /*0x749513*/
-    v43 = Random::State((unsigned int *)g_ScenarioClass_Instance + 134); /*0x749522*/
-    v10 = Random::State((unsigned int *)g_ScenarioClass_Instance + 134); /*0x74953c*/
-    v37 = Random::State((unsigned int *)g_ScenarioClass_Instance + 134); /*0x74954f*/
-    v11 = Random::State((unsigned int *)g_ScenarioClass_Instance + 134); /*0x749559*/
-    v12 = this->q104; /*0x74955e*/
-    v11 = v11; /*0x749564*/
-    v41 = Math::RoundToInt(v12->qB20 + v12->qB20); /*0x74957e*/
-    v13 = (double)((int)abs32(v37) % v41) - v12->qB20; /*0x749592*/
-    v38 = (double)((int)abs32(v10) % (int)Math::RoundToInt(v13)) + v12->q2B8; /*0x7495d8*/
-    v14 = (double)((int)abs32(v11) % v41) - v12->qB20; /*0x7495ec*/
-    v47 = v38; /*0x7495f2*/
-    *(float *)&v45 = v14; /*0x7495f6*/
-    v46 = v13; /*0x7495fa*/
-    v35 = (double)((int)abs32(v43) % (int)Math::RoundToInt(v12->q2B0 - v12->q2A8 + 1.0)) /*0x749644*/
-        + v12->q2A8;
+    v54 = v8; /*0x749502*/
+    v53 = v7; /*0x74950f*/
+    v55 = v9 + 10; /*0x749513*/
+    v48 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x749522*/
+    v10 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x74953c*/
+    v42 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x74954f*/
+    v11 = Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink); /*0x749559*/
+    v12 = this->VoxelAnimClass_field_0x104; /*0x74955e*/
+    v44 = v11; /*0x749564*/
+    IDA_LOWORD(v13) = Math::RoundToInt(*(double *)(v12 + 712) + *(double *)(v12 + 712)); /*0x749570*/
+    v46 = v13; /*0x74957e*/
+    v14 = (double)((int)abs32(v42) % v13) - *(double *)(v12 + 712); /*0x749592*/
+    IDA_LOWORD(v15) = Math::RoundToInt(v14); /*0x7495b0*/
+    v43 = (double)((int)abs32(v10) % v15) + *(double *)(v12 + 696); /*0x7495d8*/
+    v16 = (double)((int)abs32(v44) % v46) - *(double *)(v12 + 712); /*0x7495ec*/
+    v52 = v43; /*0x7495f2*/
+    v50 = v16; /*0x7495f6*/
+    v51 = v14; /*0x7495fa*/
+    IDA_LOWORD(v17) = Math::RoundToInt(*(double *)(v12 + 688) - *(double *)(v12 + 680) + 1.0); /*0x749617*/
     AnimClass::InitRotation( /*0x749663*/
-      (char *)&this->q2C0,
-      &v48,
-      v12->q2A0,
-      v12->q2A4,
+      (AnimClass *)&this->__pad_98[24],
+      &v53,
+      *(unsigned int *)(v12 + 672),
+      *(unsigned int *)(v12 + 676),
       1610612736,
       1073112678,
       0,
       0,
-      &v45,
-      v35);
+      &v50,
+      (double)((int)abs32(v48) % v17) + *(double *)(v12 + 680));
   }
-  v28 = *(unsigned int *)(this->q104 + 732); /*0x74982d*/
-  if ( v28 == -1 ) /*0x749836*/
-    Mixer::ReleaseChannel((int **)&this->u32_189); /*0x74984e*/
+  v34 = *(unsigned int *)(this->VoxelAnimClass_field_0x104 + 732); /*0x74982d*/
+  if ( v34 == -1 ) /*0x749836*/
+    Mixer::ReleaseChannel((Mixer *)&this->VoxelAnimClass_field_0x114); /*0x74984e*/
   else
-    StartAudioControllerAt(v28, (int)a3, (int)&this->health6); /*0x749841*/
-  AudioFile::Stop((unsigned int *)&this->u32_1C4); /*0x749859*/
-  if ( *(unsigned int *)(this->q104 + 764) ) /*0x749864*/
+    StartAudioControllerAt(v34, a3, (int **)&this->VoxelAnimClass_field_0x114); /*0x749841*/
+  AudioFile::Stop((AudioFile *)&this->VoxelAnimClass_field_0x128); /*0x749859*/
+  if ( *(unsigned int *)(this->VoxelAnimClass_field_0x104 + 764) ) /*0x749864*/
   {
-    v29 = RA2_OPNEW(0x100u); /*0x749878*/
-    if ( v29 ) /*0x74987f*/
+    v35 = (int *)RA2_OPNEW(0x100u); /*0x749878*/
+    if ( v35 ) /*0x74987f*/
     {
-      v30 = Coord::To_Cell(&MapClass_Instance, a3); /*0x74988f*/
-      this->q108 = ParticleSystemClass::Constructor( /*0x7498aa*/
-                                 (int)v29,
-                                 *(unsigned int *)(this->q104 + 764),
-                                 a3,
-                                 (int)v30,
-                                 this,
-                                 &dword_B1D188,
-                                 0);
+      v36 = Coord::To_Cell((Coord *)&dword_87F7E8, a3); /*0x74988f*/
+      this->VoxelAnimClass_field_0x108 = ParticleSystemClass::Constructor( /*0x7498aa*/
+                                           v35,
+                                           *(unsigned int *)(this->VoxelAnimClass_field_0x104 + 764),
+                                           a3,
+                                           (int)v36,
+                                           this,
+                                           &dword_B1D188,
+                                           0);
       return this; /*0x7498b8*/
     }
-    this->q108 = 0; /*0x7498bd*/
+    this->VoxelAnimClass_field_0x108 = 0; /*0x7498bd*/
   }
   return this; /*0x7498b2*/
 }
@@ -1701,11 +1715,12 @@ void FileExtension::CheckExtensionMatch()
   int v4; // eax
   int v6; // eax
   int v7; // ecx
+  int a2; // edx
   int FileExtension_field_0x04; // eax
   int v10; // esi
 
   FileExtension_field_0x08 = this->FileExtension_field_0x08; /*0x628d13*/
-  if ( *((unsigned int *)this + 4) >= FileExtension_field_0x08 ) /*0x628d1b*/
+  if ( this->q004 >= FileExtension_field_0x08 ) /*0x628d1b*/
   {
     if ( !IDA_BYTE1(this->FileExtension_field_0x0C) && FileExtension_field_0x08 ) /*0x628d26*/
       return 0; /*0x628d26*/
@@ -1844,6 +1859,7 @@ void FilePipe::Release()
 {
   int v2; // eax
   int FilePipe_field_0x0C; // ecx
+  int v4; // edi
 
   v2 = (*(int (__thiscall **)(FilePipe *))(*(unsigned int *)this->__pad_0 + 4))(this); /*0x7ba456*/
   FilePipe_field_0x0C = this->FilePipe_field_0x0C; /*0x7ba459*/
@@ -1853,7 +1869,6 @@ void FilePipe::Release()
     this->q004 = 0; /*0x7ba469*/
     (*(void (__thiscall **)(int))(*(unsigned int *)FilePipe_field_0x0C + 52))(FilePipe_field_0x0C); /*0x7ba46f*/
   }
-  return v4; /*0x7ba474*/
 }
 // 0x7ba480
 void FilePipe::Read()
@@ -2146,9 +2161,9 @@ void FileTreeNode::Destroy()
 
   if ( *(unsigned short *)this->__tail_0 == 0xFFFF ) /*0x69e507*/
   {
-    if ( *((unsigned char *)this + 16) ) /*0x69e509*/
+    if ( this->u32_10 ) /*0x69e509*/
     {
-      v3 = (void *)*((unsigned int *)this + 3); /*0x69e511*/
+      v3 = (void *)this->u32_C; /*0x69e511*/
       if ( v3 ) /*0x69e516*/
       {
         FileTreeNode::Destroy(*((FileTreeNode **)this + 3)); /*0x69e51a*/
@@ -3550,17 +3565,16 @@ void IsometricTileTypeClass::CleanupMembers()
   int v7; // ecx
   int v8; // eax
   void *v9; // eax
-  int v11; // [esp+8h] [ebp-4h] BYREF
 
   *(unsigned int *)this = &(void*)(void*)&IsometricTileTypeClass_vftable; /*0x544a77*/
   this->vtable2 = &(void*)(void*)&IsometricTileTypeClass_vftable; /*0x544a7d*/
   this->vtable3 = &(void*)(void*)&IsometricTileTypeClass_vftable; /*0x544a84*/
   this->vtable4 = &(void*)(void*)&IsometricTileTypeClass_vftable; /*0x544a8b*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x544a92*/
-  v2 = this->q2BC; /*0x544a97*/
+  v2 = this->u32_2BC; /*0x544a97*/
   if ( v2 ) /*0x544aa1*/
   {
-    this->q2BC = 0; /*0x544aa3*/
+    this->u32_2BC = 0; /*0x544aa3*/
     (*(void (__thiscall **)(int, int))(*(unsigned int *)v2 + 32))(v2, 1); /*0x544aad*/
   }
   v3 = (*(int (__thiscall **)(int *, int *))(dword_A8ED28 + 16))(&dword_A8ED28, &this); /*0x544ac4*/
@@ -3585,8 +3599,8 @@ void IsometricTileTypeClass::CleanupMembers()
   }
   for ( i = this->u32_2B4 - 1; i >= 0; --i ) /*0x544b4a*/
   {
-    if ( *(unsigned int *)(this->q2A8 + 4 * i) ) /*0x544b52*/
-      RA2_OPDEL(*(void **)(this->q2A8 + 4 * i)); /*0x544b5a*/
+    if ( *(unsigned int *)(this->u32_2A8 + 4 * i) ) /*0x544b52*/
+      RA2_OPDEL(*(void **)(this->u32_2A8 + 4 * i)); /*0x544b5a*/
     v6 = this->u32_2B4; /*0x544b62*/
     if ( i < v6 ) /*0x544b6a*/
     {
@@ -3594,21 +3608,21 @@ void IsometricTileTypeClass::CleanupMembers()
       i = i; /*0x544b6f*/
       for ( this->u32_2B4 = v7; /*0x544b79*/
             i < this->u32_2B4;
-            *(unsigned int *)(this->q2A8 + 4 * i - 4) = *(unsigned int *)(this->q2A8 + 4 * i) )
+            *(unsigned int *)(this->u32_2A8 + 4 * i - 4) = *(unsigned int *)(this->u32_2A8 + 4 * i) )
       {
         ++i; /*0x544b81*/
       }
     }
   }
-  v9 = *(void **)(&this->q1100); /*0x544b96*/
-  this->q2A4 = &(void*)(void*)&VectorClass_unsigned_short___vftable; /*0x544b9c*/
-  if ( v9 && this->qAC4 ) /*0x544bab*/
+  v9 = *(void **)(&this->q0440); /*0x544b96*/
+  this->u32_2A4 = &(void*)(void*)&VectorClass_unsigned_short___vftable; /*0x544b9c*/
+  if ( v9 && this->u32_2B1 ) /*0x544bab*/
   {
     RA2_OPDEL(v9); /*0x544bb4*/
-    this->q2A8 = 0; /*0x544bbc*/
+    this->u32_2A8 = 0; /*0x544bbc*/
   }
-  this->qAC4 = 0; /*0x544bc4*/
-  this->q2AC = 0; /*0x544bca*/
+  this->u32_2B1 = 0; /*0x544bc4*/
+  this->u32_2AC = 0; /*0x544bca*/
   return ObjectTypeClass::Destruct(this); /*0x544bd5*/
 }
 // 0x544cb0
@@ -3633,7 +3647,7 @@ void IsometricTileTypeClass::GetTerrainType()
   IsometricTileClass *v4; // eax
 
   v4 = (IsometricTileClass *)RA2_OPNEW(0xB0u); /*0x549aa8*/
-  return v4 && IsometricTileClass::IsometricTileClass(v4, this->u32_294, a2); /*0x549acd*/
+  return v4 && IsometricTileClass::IsometricTileClass(v4, this->q294, a2); /*0x549acd*/
 }
 // 0x549ae0
 void IsometricTileTypeClass::GetHeight()
@@ -4670,62 +4684,65 @@ void MapPreview::Upload()
   int v13; // eax
   int v14; // esi
   int v15; // edi
-  int v16; // eax
-  int *v17; // ebp
-  void *v18; // esi
-  int v19; // edi
-  DWORD v20; // edi
+  int v16; // esi
+  int v17; // eax
+  int v18; // esi
+  void *v19; // ebp
+  void *v20; // esi
+  int v21; // edi
+  DWORD v22; // edi
+  size_t *v23; // [esp+0h] [ebp-588h]
   int Ticks; // [esp+10h] [ebp-578h]
-  int v22; // [esp+10h] [ebp-578h]
+  int v25; // [esp+10h] [ebp-578h]
   size_t Size[2]; // [esp+1Ch] [ebp-56Ch] BYREF
-  int *v24; // [esp+24h] [ebp-564h]
-  unsigned int v25[2]; // [esp+28h] [ebp-560h] BYREF
-  int v26; // [esp+30h] [ebp-558h] BYREF
-  int v27; // [esp+36h] [ebp-552h] BYREF
-  Pipe v28; // [esp+44h] [ebp-544h] BYREF
-  int v29; // [esp+5Ch] [ebp-52Ch]
-  Waypoint v30; // [esp+60h] [ebp-528h] BYREF
-  char v31[64]; // [esp+B8h] [ebp-4D0h] BYREF
+  Palette *v27; // [esp+24h] [ebp-564h]
+  unsigned int v28[2]; // [esp+28h] [ebp-560h] BYREF
+  int v29; // [esp+30h] [ebp-558h] BYREF
+  int v30; // [esp+36h] [ebp-552h] BYREF
+  Pipe v31; // [esp+44h] [ebp-544h] BYREF
+  int v32; // [esp+5Ch] [ebp-52Ch]
+  Waypoint v33; // [esp+60h] [ebp-528h] BYREF
+  char v34[64]; // [esp+B8h] [ebp-4D0h] BYREF
   char Buffer[256]; // [esp+F8h] [ebp-490h] BYREF
-  int v33[113]; // [esp+1F8h] [ebp-390h] BYREF
-  int16_t v34; // [esp+3BCh] [ebp-1CCh]
-  char v35; // [esp+3BEh] [ebp-1CAh]
-  int v36[114]; // [esp+3C0h] [ebp-1C8h] BYREF
+  int v36[113]; // [esp+1F8h] [ebp-390h] BYREF
+  int16_t v37; // [esp+3BCh] [ebp-1CCh]
+  char v38; // [esp+3BEh] [ebp-1CAh]
+  int v39[114]; // [esp+3C0h] [ebp-1C8h] BYREF
 
-  v24 = (int *)this; /*0x5e7ec0*/
+  v27 = (Palette *)this; /*0x5e7ec0*/
   result = Timer::GetTicks(); /*0x5e7ec4*/
   if ( this ) /*0x5e7ed7*/
   {
     result = dword_A8DA84; /*0x5e7edd*/
     if ( dword_A8DA84 > 1 ) /*0x5e7ee9*/
     {
-      if ( unk_A8B230 ) /*0x5e7ef6*/
+      if ( dword_A8B230 ) /*0x5e7ef6*/
       {
         sprintf( /*0x5e7f2e*/
           Buffer,
           "%c%d,%d,%d,%d,%d",
           87,
-          unk_A8B230[122].vtable3,
-          unk_A8B230[122].uniqueId,
-          unk_A8B230[122].vtable1,
-          unk_A8B230[122].vtable2,
-          unk_A8B230[122].abstractFlags);
+          dword_A8B230[122].vtable3,
+          dword_A8B230[122].uniqueId,
+          dword_A8B230[122].vtable1,
+          dword_A8B230[122].vtable2,
+          dword_A8B230[122].abstractFlags);
         for ( i = 0; i < 8; ++i ) /*0x5e7f36*/
         {
-          v4 = Map_Helper_58BB00((int *)((char *)&v27 + 2), i); /*0x5e7f3e*/
+          v4 = Map_Helper_58BB00((int *)((char *)&v30 + 2), i); /*0x5e7f3e*/
           v5 = *v4; /*0x5e7f43*/
           v6 = v4[1]; /*0x5e7f4c*/
-          if ( (uint8_t)ScenarioClass::Is_Waypoint_Valid((char *)unk_A8B230, i) ) /*0x5e7f4f*/
-            v7 = *ScenarioClass::Get_Waypoint_Location((char *)unk_A8B230, v25, i); /*0x5e7f69*/
+          if ( (uint8_t)ScenarioClass::Is_Waypoint_Valid((char *)dword_A8B230, i) ) /*0x5e7f4f*/
+            v7 = *ScenarioClass::Get_Waypoint_Location((char *)dword_A8B230, v28, i); /*0x5e7f69*/
           else
             v7 = dword_AC0B90; /*0x5e7f6d*/
           Size[1] = v7; /*0x5e7f72*/
-          sprintf(v31, ",%d,%d,%d,%d", v5, v6, (int16_t)v7, IDA_SHIWORD(v7)); /*0x5e7f8f*/
-          strcat(Buffer, v31); /*0x5e7fc1*/
+          sprintf(v34, ",%d,%d,%d,%d", v5, v6, (int16_t)v7, IDA_SHIWORD(v7)); /*0x5e7f8f*/
+          strcat(Buffer, v34); /*0x5e7fc1*/
         }
         Network::SendOptionsGame(Buffer); /*0x5e7fdb*/
       }
-      if ( *(unsigned int *)&unk_A8B238 == 4 ) /*0x5e7fe7*/
+      if ( *(unsigned int *)&dword_A8B238 == 4 ) /*0x5e7fe7*/
       {
         if ( dword_ABFEC8 && (dword_ABFEC8 & 1) == 0 ) /*0x5e7ff8*/
         {
@@ -4742,7 +4759,7 @@ void MapPreview::Upload()
             PlayerName = GameClass::FindPlayerName(v8); /*0x5e8013*/
             if ( PlayerName < 8 ) /*0x5e801a*/
             {
-              v10 = *(unsigned int *)&stru_A8DBC0.alignmentPadding69[4 * PlayerName + 3]; /*0x5e8021*/
+              v10 = dword_A8DC2C[PlayerName]; /*0x5e8021*/
               if ( v10 ) /*0x5e802a*/
               {
                 if ( (v10 & 1) == 0 ) /*0x5e802f*/
@@ -4761,16 +4778,16 @@ void MapPreview::Upload()
       }
   LABEL_22:
       Debug::Log(); /*0x5e80da*/
-      memset(v33, 0, sizeof(v33)); /*0x5e80f5*/
-      v34 = 0; /*0x5e80f7*/
-      v35 = 0; /*0x5e80f9*/
-      v33[0] = 25; /*0x5e8119*/
-      strcpy((char *)&v33[1], unk_A8B380); /*0x5e8127*/
+      memset(v36, 0, sizeof(v36)); /*0x5e80f5*/
+      v37 = 0; /*0x5e80f7*/
+      v38 = 0; /*0x5e80f9*/
+      v36[0] = 25; /*0x5e8119*/
+      strcpy((char *)&v36[1], unk_A8B380); /*0x5e8127*/
       Network::SetConnectionParams(&unk_A8E9C0, 50, -1, 5000, 1); /*0x5e813e*/
       Ticks = Timer::GetTicks(); /*0x5e8150*/
       for ( j = 1; j < dword_A8DA84; ++j ) /*0x5e8170*/
       {
-        Network::SendToPlayer((int)&unk_A8E9C0, (int)v33, 455, 1, (wchar_t *)dword_A8DA78[j]); /*0x5e818b*/
+        Network::SendToPlayer((int)&unk_A8E9C0, (int)v36, 455, 1, (wchar_t *)dword_A8DA78[j]); /*0x5e818b*/
         Event::Dispatch(); /*0x5e8190*/
       }
       while ( Network::GetQueueCount(&unk_A8E9C0) ) /*0x5e81a4*/
@@ -4798,43 +4815,43 @@ void MapPreview::Upload()
       }
       if ( v14 ) /*0x5e8208*/
       {
-        Waypoint::InitInvalid(&v30); /*0x5e8212*/
-        v25[0] = 0; /*0x5e821d*/
+        Waypoint::InitInvalid(&v33); /*0x5e8212*/
+        v28[0] = 0; /*0x5e821d*/
         v15 = 0; /*0x5e8221*/
-        v25[1] = 0; /*0x5e8223*/
-        v22 = Timer::GetTicks(); /*0x5e8230*/
+        v28[1] = 0; /*0x5e8223*/
+        v25 = Timer::GetTicks(); /*0x5e8230*/
         Debug::Log(); /*0x5e824d*/
         if ( dword_A8DA84 - 1 > 0 ) /*0x5e825e*/
         {
           do /*0x5e8318*/
           {
-            v14 = 1800; /*0x5e826d*/
-            if ( v22 != -1 ) /*0x5e8274*/
+            v16 = 1800; /*0x5e826d*/
+            if ( v25 != -1 ) /*0x5e8274*/
             {
-              v16 = Timer::GetTicks() - v22; /*0x5e827f*/
-              if ( v16 >= 1800 ) /*0x5e8285*/
+              v17 = Timer::GetTicks() - v25; /*0x5e827f*/
+              if ( v17 >= 1800 ) /*0x5e8285*/
                 break; /*0x5e8285*/
-              v14 = 1800 - v16; /*0x5e828b*/
+              v16 = 1800 - v17; /*0x5e828b*/
             }
-            if ( !v14 ) /*0x5e828f*/
+            if ( !v16 ) /*0x5e828f*/
               break; /*0x5e828f*/
             Event::Dispatch(); /*0x5e8295*/
-            v26 = 455; /*0x5e82b6*/
-            if ( Network::Send((Network *)&unk_A8E9C0, (int)v36, (int)&v26, (int)&v30, (int)&v27) ) /*0x5e82ba*/
+            v29 = 455; /*0x5e82b6*/
+            if ( Network::Send((Network *)&unk_A8E9C0, (int)v39, (int)&v29, (int)&v33, (int)&v30) ) /*0x5e82ba*/
             {
-              if ( v36[0] == 26 ) /*0x5e82ca*/
+              if ( v39[0] == 26 ) /*0x5e82ca*/
               {
-                v14 = 1; /*0x5e82d1*/
+                v18 = 1; /*0x5e82d1*/
                 if ( dword_A8DA84 > 1 ) /*0x5e82d8*/
                 {
-                  while ( !(uint8_t)NetworkID::Compare((bool *)v30.__pad_0, dword_A8DA78[v14] + 40) ) /*0x5e82f1*/
+                  while ( !(uint8_t)NetworkID::Compare((bool *)v33.__pad_0, dword_A8DA78[v18] + 40) ) /*0x5e82f1*/
                   {
-                    if ( ++v14 >= dword_A8DA84 ) /*0x5e82fb*/
+                    if ( ++v18 >= dword_A8DA84 ) /*0x5e82fb*/
                       goto LABEL_47; /*0x5e82fb*/
                   }
-                  if ( !*((unsigned char *)v25 + v14) ) /*0x5e82ff*/
+                  if ( !*((unsigned char *)v28 + v18) ) /*0x5e82ff*/
                   {
-                    *((unsigned char *)v25 + v14) = 1; /*0x5e830b*/
+                    *((unsigned char *)v28 + v18) = 1; /*0x5e830b*/
                     ++v15; /*0x5e830e*/
                   }
                 }
@@ -4850,36 +4867,36 @@ void MapPreview::Upload()
         {
           Debug::Log(); /*0x5e8331*/
           Size[0] = 0; /*0x5e833d*/
-          v17 = Palette::Preview_Generate(v24, v14, 64, Size); /*0x5e8351*/
+          v19 = (void *)Palette::Preview_Generate(v27, 64, (int)Size, v23); /*0x5e8351*/
           Debug::Log(); /*0x5e835d*/
-          v18 = (void *)RA2_OPNEW(4 * Size[0]); /*0x5e837a*/
-          v28.Pipe_field_0x04 = 0; /*0x5e838b*/
-          v28.Pipe_field_0x08 = 0; /*0x5e838f*/
-          *(unsigned int *)v28.__pad_0 = &(void*)(void*)&Pipe_vftable; /*0x5e8393*/
-          Buffer::Init((Buffer *)&v28.Pipe_field_0x0C, (int)v18, 4 * Size[0]); /*0x5e839b*/
-          v29 = 0; /*0x5e83a7*/
-          *(unsigned int *)v28.__pad_0 = &(void*)(void*)&BufferPipe_vftable; /*0x5e83b1*/
-          LZOPipe::Constructor((LZOPipe *)&v30.__pad_0[48], 0, 0x2000); /*0x5e83b9*/
-          Pipe::SetDelegate((Pipe *)&v30.__pad_0[48], (int)&v28); /*0x5e83ca*/
-          v19 = Compression::Read((int *)&v30.__pad_0[48], (int)v17, Size[0]); /*0x5e83e1*/
-          v20 = (*(int (__thiscall **)(char *))(*(unsigned int *)&v30.__pad_0[48] + 4))(&v30.__pad_0[48]) + v19; /*0x5e83f4*/
-          RA2_OPDEL(v17); /*0x5e83f7*/
+          v20 = (void *)RA2_OPNEW(4 * Size[0]); /*0x5e837a*/
+          v31.Pipe_field_0x04 = 0; /*0x5e838b*/
+          v31.Pipe_field_0x08 = 0; /*0x5e838f*/
+          *(unsigned int *)v31.__pad_0 = &(void*)(void*)&Pipe_vftable; /*0x5e8393*/
+          Buffer::Init((Buffer *)&v31.Pipe_field_0x0C, (int)v20, 4 * Size[0]); /*0x5e839b*/
+          v32 = 0; /*0x5e83a7*/
+          *(unsigned int *)v31.__pad_0 = &(void*)(void*)&BufferPipe_vftable; /*0x5e83b1*/
+          LZOPipe::Constructor((LZOPipe *)&v33.__pad_0[48], 0, 0x2000); /*0x5e83b9*/
+          Pipe::SetDelegate((Pipe *)&v33.__pad_0[48], (int)&v31); /*0x5e83ca*/
+          v21 = Compression::Read((int *)&v33.__pad_0[48], (int)v19, Size[0]); /*0x5e83e1*/
+          v22 = (*(int (__thiscall **)(char *))(*(unsigned int *)&v33.__pad_0[48] + 4))(&v33.__pad_0[48]) + v21; /*0x5e83f4*/
+          RA2_OPDEL(v19); /*0x5e83f7*/
           Debug::Log(); /*0x5e8402*/
-          RawFileClass::Construct((RawFileClass *)&v30.__pad_0[12], (int)&stru_82BA00.__pad_F70[736]); /*0x5e8413*/
-          if ( (uint8_t)FileClass::Open((RawFileClass *)&v30.__pad_0[12], 0) ) /*0x5e841d*/
-            FileClass::Delete((RawFileClass *)&v30.__pad_0[12]); /*0x5e842a*/
-          FileClass::Open2((RawFileClass *)&v30.__pad_0[12], (const CHAR *)2); /*0x5e8435*/
-          FileClass::Write2((RawFileClass *)&v30.__pad_0[12], Size, 4u); /*0x5e8445*/
-          FileClass::Write2((RawFileClass *)&v30.__pad_0[12], v18, v20); /*0x5e8450*/
-          FileClass::CloseHandle((RawFileClass *)&v30.__pad_0[12]); /*0x5e8459*/
-          RA2_OPDEL(v18); /*0x5e845f*/
+          RawFileClass::Construct((RawFileClass *)&v33.__pad_0[12], (int)aPreviewBin); /*0x5e8413*/
+          if ( (uint8_t)FileClass::Open((RawFileClass *)&v33.__pad_0[12], 0) ) /*0x5e841d*/
+            FileClass::Delete((RawFileClass *)&v33.__pad_0[12]); /*0x5e842a*/
+          FileClass::Open2((RawFileClass *)&v33.__pad_0[12], (const CHAR *)2); /*0x5e8435*/
+          FileClass::Write2((RawFileClass *)&v33.__pad_0[12], Size, 4u); /*0x5e8445*/
+          FileClass::Write2((RawFileClass *)&v33.__pad_0[12], v20, v22); /*0x5e8450*/
+          FileClass::CloseHandle((RawFileClass *)&v33.__pad_0[12]); /*0x5e8459*/
+          RA2_OPDEL(v20); /*0x5e845f*/
           Debug::Log(); /*0x5e8469*/
-          SendNetworkFile(&stru_82BA00.__pad_F70[736], 3, 1, 0); /*0x5e847e*/
+          SendNetworkFile(aPreviewBin, 3, 1, 0); /*0x5e847e*/
           Network::SetConnectionParams(&unk_A8E9C0, 30, -1, 600, 1); /*0x5e8493*/
-          RawFileClass::Dtor((RawFileClass *)&v30.__pad_0[12]); /*0x5e849c*/
-          LZOPipe::Destructor((LZOPipe *)&v30.__pad_0[48]); /*0x5e84a8*/
-          Vector::Clear((int)&v28.Pipe_field_0x0C); /*0x5e84b1*/
-          return Pipe::Dtor(&v28); /*0x5e84ba*/
+          RawFileClass::Dtor((RawFileClass *)&v33.__pad_0[12]); /*0x5e849c*/
+          LZOPipe::Destructor((LZOPipe *)&v33.__pad_0[48]); /*0x5e84a8*/
+          Vector::Clear((int)&v31.Pipe_field_0x0C); /*0x5e84b1*/
+          return Pipe::Dtor(&v31); /*0x5e84ba*/
         }
       }
     }
@@ -6338,12 +6355,13 @@ void MapSeedClass::Generate()
 // 0x767740
 void MapSizeGameOption_WorldDominationTour::Read()
 {
+  const wchar_t **v3; // edi
   wchar_t **v4; // eax
   wchar_t *v6; // eax
   wchar_t *StringCSF; // [esp-4h] [ebp-10h]
   void *v8; // [esp+8h] [ebp-4h] BYREF
 
-  a3 = a3; /*0x767743*/
+  v3 = a3; /*0x767743*/
   if ( WideString::Length(a3) ) /*0x767749*/
   {
     WideString::Assign((wchar_t **)&a3, (wchar_t *)L", "); /*0x76775b*/
@@ -6764,7 +6782,7 @@ void PlanningNodeClass::CleanupAll()
     RA2_OPDEL(dword_AC4B34); /*0x6371cf*/
     dword_AC4B34 = 0; /*0x6371d7*/
   }
-  result = dword_AC4C1C; /*0x6371dd*/
+  dword_AC4C1C = dword_AC4C1C; /*0x6371dd*/
   byte_AC4B3D = 0; /*0x6371e2*/
   dword_AC4B38 = 0; /*0x6371ea*/
   dword_AC4C28 = 0; /*0x6371f0*/
@@ -6787,7 +6805,6 @@ void PlanningNodeClass::CleanupAll()
   byte_AC4CF5 = 0; /*0x637254*/
   dword_AC4C90 = -1; /*0x63725b*/
   dword_AC4C04 = 0; /*0x637265*/
-  return result; /*0x637211*/
 }
 // 0x63ebd0
 void PlanningNodeClass::RemoveFromArray()
@@ -6799,12 +6816,12 @@ void PlanningNodeClass::RemoveFromArray()
   v3 = (*(int (__thiscall **)(PlanningNodeClass *, int))(*(unsigned int *)this->__pad_0 + 16))(this, a2); /*0x63ebdc*/
   if ( v3 == -1 ) /*0x63ebe2*/
     return 0; /*0x63ebe2*/
-  v4 = *((unsigned int *)this + 4); /*0x63ebe4*/
+  v4 = this->uniqueId; /*0x63ebe4*/
   if ( v3 >= v4 ) /*0x63ebe9*/
     return 0; /*0x63ec0b*/
   v5 = v4 - 1; /*0x63ebeb*/
-  for ( *((unsigned int *)this + 4) = v5; /*0x63ebf1*/
-        v3 < *((unsigned int *)this + 4);
+  for ( this->uniqueId = v5; /*0x63ebf1*/
+        v3 < this->uniqueId;
         *(unsigned int *)(this->PlanningNodeClass_field_0x04 + 4 * v3 - 4) = *(unsigned int *)(this->PlanningNodeClass_field_0x04
                                                                                  + 4 * v3) )
   {
@@ -7019,22 +7036,22 @@ void ScoreAnimClass::AdvanceFrame()
   LABEL_5:
   v5 = this->q024; /*0x690c2b*/
   Ticks = Timer::GetTicks(); /*0x690c32*/
-  v7 = this->q01C; /*0x690c37*/
+  v7 = this->u32_1C; /*0x690c37*/
   v8 = this->q020; /*0x690c3a*/
   *(unsigned int *)&this->m_9[3] = Ticks; /*0x690c3d*/
-  this->q010 = v13; /*0x690c45*/
-  this->q014 = v5; /*0x690c4a*/
-  this->q01C = v7 + 1; /*0x690c4f*/
+  this->u32_10 = v13; /*0x690c45*/
+  this->u32_14 = v5; /*0x690c4a*/
+  this->u32_1C = v7 + 1; /*0x690c4f*/
   if ( v7 + 1 >= v8 ) /*0x690c52*/
-    this->q01C = 0; /*0x690c54*/
+    this->u32_1C = 0; /*0x690c54*/
   v12 = *(unsigned int *)&this->m_1[3]; /*0x690c6d*/
   v13 = *(unsigned int *)&this->m_5[3]; /*0x690c7c*/
   v9 = (int *)(*((int (__thiscall **)(ObjectClass *, unsigned char *))g_DSurface_Hidden->vtable0 + 30))(g_DSurface_Hidden, v14); /*0x690c8c*/
   DrawToSurfaceSHP( /*0x690ca6*/
     (int)g_DSurface_Hidden,
-    this->q028,
+    this->u32_28,
     this->q018,
-    this->q01C,
+    this->u32_1C,
     &v12,
     v9,
     1024,
@@ -7054,9 +7071,9 @@ void ScoreAnimClass::AdvanceFrame()
                  v14);
   DrawToSurfaceSHP( /*0x690cf6*/
     (int)DSurface_Alternate,
-    this->q028,
+    this->u32_28,
     this->q018,
-    this->q01C,
+    this->u32_1C,
     &v12,
     v10,
     1024,
@@ -7074,107 +7091,110 @@ void ScoreAnimClass::AdvanceFrame()
 // 0x690d60
 void ScoreAnimClass::AnimateText()
 {
-  signed int v4; // edi
-  signed int v5; // eax
-  int v7; // eax
-  int v8; // ecx
-  int v9; // edx
-  int v10; // eax
-  int v11; // ecx
-  int v12; // ebx
-  char v13; // dl
-  int v14; // ebp
-  int v16; // [esp+4Ch] [ebp-14h]
-  int v17; // [esp+50h] [ebp-10h] BYREF
-  int v18; // [esp+54h] [ebp-Ch]
-  int v19; // [esp+58h] [ebp-8h]
-  int v20; // [esp+5Ch] [ebp-4h]
+  int v3; // ebp
+  int v5; // edi
+  int v6; // eax
+  int v8; // eax
+  int v9; // ecx
+  int v10; // edx
+  int v11; // eax
+  int v12; // ecx
+  int m_4; // ebx
+  char v14; // dl
+  int v15; // ebp
+  int v16; // [esp+3Ch] [ebp-24h]
+  int v17; // [esp+4Ch] [ebp-14h]
+  int v18; // [esp+50h] [ebp-10h] BYREF
+  int m_8; // [esp+54h] [ebp-Ch]
+  int v20; // [esp+58h] [ebp-8h]
+  int v21; // [esp+5Ch] [ebp-4h]
 
   byte_B05584 = 1; /*0x690d63*/
-  v4 = *(unsigned int *)(a1 + 20); /*0x690d71*/
-  if ( *(unsigned int *)(a1 + 12) == -1 ) /*0x690d77*/
+  v5 = *(unsigned int *)this->__pad_14; /*0x690d71*/
+  if ( this->m_C == -1 ) /*0x690d77*/
   {
   LABEL_4:
-    if ( v4 ) /*0x690d8c*/
+    if ( v5 ) /*0x690d8c*/
       return 0; /*0x690d8c*/
     goto LABEL_5; /*0x690d8c*/
   }
-  v5 = Timer::GetTicks() - *(unsigned int *)(a1 + 12); /*0x690d81*/
-  if ( v5 < v4 ) /*0x690d86*/
+  v6 = Timer::GetTicks() - this->m_C; /*0x690d81*/
+  if ( v6 < v5 ) /*0x690d86*/
   {
-    v4 -= v5; /*0x690d88*/
+    v5 -= v6; /*0x690d88*/
     goto LABEL_4; /*0x690d88*/
   }
   LABEL_5:
-  *(unsigned int *)(a1 + 12) = Timer::GetTicks(); /*0x690d92*/
-  *(unsigned int *)(a1 + 16) = v18; /*0x690da7*/
-  *(unsigned int *)(a1 + 20) = 2; /*0x690daa*/
-  if ( *(unsigned int *)(a1 + 28) > wcslen(*(const wchar_t **)(a1 + 24)) && *(int *)(a1 + 32) > 2 ) /*0x690dc4*/
+  this->m_C = Timer::GetTicks(); /*0x690d92*/
+  this->m_10 = m_8; /*0x690da7*/
+  *(unsigned int *)this->__pad_14 = 2; /*0x690daa*/
+  if ( *(unsigned int *)&this->m_1A[2] > (unsigned int)wcslen(*(const wchar_t **)&this->__pad_14[4]) && this->m_20 > 2 ) /*0x690dc4*/
     return 1; /*0x690dcd*/
-  if ( !*(unsigned char *)(a1 + 36) )
+  if ( !IDA_LOBYTE(this->m_24) )
   {
-    v7 = (*(int (__thiscall **)(unsigned int, unsigned int))(**(unsigned int **)(a1 + 40) + 8))( /*0x690de0*/
-           *(unsigned int *)(a1 + 40),
-           *(unsigned int *)(a1 + 24));
-    v8 = *(unsigned int *)(a1 + 4) - 8 <= 0 ? 0 : *(unsigned int *)(a1 + 4) - 8;
-    v9 = *(unsigned int *)(*(unsigned int *)(a1 + 40) + 8); /*0x690dfd*/
-    v19 = v7 + 10; /*0x690e00*/
-    v17 = v8; /*0x690e04*/
-    v18 = *(unsigned int *)(a1 + 8); /*0x690e0f*/
-    v20 = v9; /*0x690e1f*/
-    (*(void (__thiscall **)(int, int *, int, int *, unsigned int, int))(*(unsigned int *)g_DSurface_Hidden + 8))( /*0x690e2b*/
+    v8 = (*(int (__thiscall **)(unsigned int, unsigned int))(**(unsigned int **)this->__pad_28 + 8))( /*0x690de0*/
+           *(unsigned int *)this->__pad_28,
+           *(unsigned int *)&this->__pad_14[4]);
+    v9 = this->m_4 - 8 <= 0 ? 0 : this->m_4 - 8;
+    v10 = *(unsigned int *)(*(unsigned int *)this->__pad_28 + 8); /*0x690dfd*/
+    v20 = v8 + 10; /*0x690e00*/
+    v18 = v9; /*0x690e04*/
+    m_8 = this->m_8; /*0x690e0f*/
+    v21 = v10; /*0x690e1f*/
+    (*(void (__thiscall **)(ObjectClass *, int *, DSurface *, int *, unsigned int, int))(g_DSurface_Hidden->vtable0 + 8))( /*0x690e2b*/
       g_DSurface_Hidden,
-      &v17,
+      &v18,
       DSurface_Alternate,
-      &v17,
+      &v18,
       0,
       1);
   }
-  v10 = *(unsigned int *)(a1 + 28); /*0x690e2e*/
-  v11 = 0; /*0x690e31*/
-  v12 = *(unsigned int *)(a1 + 4); /*0x690e34*/
-  v16 = 0; /*0x690e3a*/
-  if ( v10 >= 0 ) /*0x690e3e*/
+  v11 = *(unsigned int *)&this->m_1A[2]; /*0x690e2e*/
+  v12 = 0; /*0x690e31*/
+  m_4 = this->m_4; /*0x690e34*/
+  v16 = v3; /*0x690e39*/
+  v17 = 0; /*0x690e3a*/
+  if ( v11 >= 0 ) /*0x690e3e*/
   {
     while ( 1 ) /*0x690e4d*/
     {
-      v13 = *(unsigned char *)(*(unsigned int *)(a1 + 24) + 2 * v11); /*0x690e4d*/
-      if ( !v13 ) /*0x690e52*/
+      v14 = *(unsigned char *)(*(unsigned int *)&this->__pad_14[4] + 2 * v12); /*0x690e4d*/
+      if ( !v14 ) /*0x690e52*/
         break; /*0x690e52*/
-      if ( *(unsigned char *)(a1 + 36) == 1 || (v14 = v10 - v11, v10 - v11 >= 2) ) /*0x690e61*/
-        v14 = 2; /*0x690e63*/
-      IDA_LOWORD(v4) = v13; /*0x690e6d*/
-      (*(void (__thiscall **)(unsigned int, int, signed int, int, unsigned int, int, int, signed int))(**(unsigned int **)(a1 + 40) + 16))( /*0x690e81*/
-        *(unsigned int *)(a1 + 40),
+      if ( IDA_LOBYTE(this->m_24) == 1 || (v15 = v11 - v12, v11 - v12 >= 2) ) /*0x690e61*/
+        v15 = 2; /*0x690e63*/
+      IDA_LOWORD(v5) = v14; /*0x690e6d*/
+      (*(void (__thiscall **)(unsigned int, ObjectClass *, int, int, int, int, int, int))(**(unsigned int **)this->__pad_28 + 16))( /*0x690e81*/
+        *(unsigned int *)this->__pad_28,
         g_DSurface_Hidden,
-        v4,
-        v12,
-        *(unsigned int *)(a1 + 8),
-        v14,
+        v5,
+        m_4,
+        this->m_8,
+        v15,
         1,
-        a2);
-      if ( v14 == 2 ) /*0x690e87*/
-        (*(void (__thiscall **)(unsigned int, int, signed int, int, unsigned int, int, unsigned int))(**(unsigned int **)(a1 + 40) + 16))( /*0x690e9e*/
-          *(unsigned int *)(a1 + 40),
+        v16);
+      if ( v15 == 2 ) /*0x690e87*/
+        (*(void (__thiscall **)(unsigned int, DSurface *, int, int, int, int, unsigned int))(**(unsigned int **)this->__pad_28 + 16))( /*0x690e9e*/
+          *(unsigned int *)this->__pad_28,
           DSurface_Alternate,
-          v4,
-          v12,
-          *(unsigned int *)(a1 + 8),
+          v5,
+          m_4,
+          this->m_8,
           2,
           0);
-      a2 = v4; /*0x690ea4*/
-      v12 += (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(a1 + 40) + 4))(*(unsigned int *)(a1 + 40)) + 1; /*0x690eae*/
-      v10 = *(unsigned int *)(a1 + 28); /*0x690eb2*/
-      if ( ++v16 > v10 ) /*0x690ebc*/
+      v16 = v5; /*0x690ea4*/
+      m_4 += (*(int (__thiscall **)(unsigned int))(**(unsigned int **)this->__pad_28 + 4))(*(unsigned int *)this->__pad_28) + 1; /*0x690eae*/
+      v11 = *(unsigned int *)&this->m_1A[2]; /*0x690eb2*/
+      if ( ++v17 > v11 ) /*0x690ebc*/
       {
-        *(unsigned int *)(a1 + 28) = v10 + 1; /*0x690ec1*/
+        *(unsigned int *)&this->m_1A[2] = v11 + 1; /*0x690ec1*/
         return 0; /*0x690ecb*/
       }
-      v11 = v16; /*0x690e46*/
+      v12 = v17; /*0x690e46*/
     }
-    ++*(unsigned int *)(a1 + 32); /*0x690ece*/
+    ++this->m_20; /*0x690ece*/
   }
-  ++*(unsigned int *)(a1 + 28); /*0x690ed7*/
+  ++*(unsigned int *)&this->m_1A[2]; /*0x690ed7*/
   return 0; /*0x690dc6*/
 }
 // 0x690f70
@@ -7639,7 +7659,7 @@ void ScoreFontClass::QueryInterface()
 
   ScoreFontClass_field_0x0C = (void *)this->ScoreFontClass_field_0x0C; /*0x691046*/
   *(unsigned int *)this->__pad_0 = &(void*)(void*)&ScoreFontClass_vftable; /*0x691049*/
-  if ( ScoreFontClass_field_0x0C && *((unsigned char *)this + 16) == 1 ) /*0x691057*/
+  if ( ScoreFontClass_field_0x0C && this->q004 == 1 ) /*0x691057*/
   {
     RA2_OPDEL(ScoreFontClass_field_0x0C); /*0x69105a*/
     this->ScoreFontClass_field_0x0C = 0; /*0x691062*/
@@ -7740,17 +7760,18 @@ void ScoreScreen::AccumulateScoreStats()
       ++v9; /*0x68efef*/
     }
     while ( v9 < stru_A80220.nextArrayIndex ); /*0x68eff3*/
+    v1 = this; /*0x68eff9*/
     v4 = v8; /*0x68effd*/
   }
   if ( *((unsigned int *)dword_A83D4C->Object_field_0x34 + 47) ) /*0x68f00f*/
   {
-    Screen::TransitionRender((Screen *)this, v2, v4, 227); /*0x68f03c*/
-    return Screen::TransitionRender((Screen *)this, v5, v3, 283); /*0x68f04a*/
+    Screen::TransitionRender((Screen *)v1, v2, v4, 227); /*0x68f03c*/
+    return Screen::TransitionRender((Screen *)v1, v5, v3, 283); /*0x68f04a*/
   }
   else
   {
-    Screen::TransitionRender((Screen *)this, v4, v2, 227); /*0x68f01d*/
-    return Screen::TransitionRender((Screen *)this, v3, v5, 283); /*0x68f02b*/
+    Screen::TransitionRender((Screen *)v1, v4, v2, 227); /*0x68f01d*/
+    return Screen::TransitionRender((Screen *)v1, v3, v5, 283); /*0x68f02b*/
   }
 }
 // 0x68f9b0
@@ -8176,8 +8197,8 @@ void ShroudClass::Reset()
 // 0x6b8880
 void SpawnControlVector::Constructor()
 {
-  this->q004 = 0; /*0x6b888b*/
-  this->u32_8 = a2; /*0x6b888e*/
+  this->count = 0; /*0x6b888b*/
+  this->capacity = a2; /*0x6b888e*/
   this->u32_C = 1; /*0x6b8891*/
   this->u32_D = 0; /*0x6b8895*/
   *this = (SpawnControlVector)&(void*)(void*)&VectorClass_SpawnManagerClass_SpawnControl___vftable; /*0x6b8898*/
@@ -8185,10 +8206,10 @@ void SpawnControlVector::Constructor()
   {
     if ( a3 ) /*0x6b88a6*/
     {
-      this->q004 = a3; /*0x6b88a8*/
+      this->count = a3; /*0x6b88a8*/
       return this; /*0x6b88ae*/
     }
-    this->q004 = RA2_OPNEW(4 * a2); /*0x6b88bd*/
+    this->count = RA2_OPNEW(4 * a2); /*0x6b88bd*/
     this->u32_D = 1; /*0x6b88c0*/
   }
   return this; /*0x6b88ad*/
@@ -8435,7 +8456,9 @@ void SuperWeaponClass::LoadFromSaveStream()
 // 0x6c5640
 void SuperWeaponClass::ProcessCharged()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c564e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c564e*/
 }
 // 0x6da740
 void SuperWeaponClass::UpdateAll()
@@ -8470,17 +8493,17 @@ void SuperWeaponClass::CreateChemLauncher()
   int GroundHeight; // [esp+34h] [ebp-1Ch]
   unsigned long long v27[3]; // [esp+38h] [ebp-18h] BYREF
 
-  *(unsigned int *)v19 = *ScenarioClass::Get_Waypoint_Location((char *)unk_A8B230, v20, this->u32_44); /*0x6e3913*/
+  *(unsigned int *)v19 = *ScenarioClass::Get_Waypoint_Location((char *)unk_A8B230, v10, this->q044); /*0x6e3913*/
   GroundHeight = 0; /*0x6e3917*/
   v25 = (v19[1] << 8) + 128; /*0x6e3938*/
   v24 = (v19[0] << 8) + 128; /*0x6e3942*/
   GroundHeight = Cell::GetGroundHeight(&v24); /*0x6e394b*/
   if ( (*((unsigned int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v19) + 80) & 0x100) != 0 ) /*0x6e3967*/
     GroundHeight += dword_B0E6D4; /*0x6e3975*/
-  v20[0] = v24 / 256; /*0x6e398f*/
-  v20[1] = v25 / 256; /*0x6e39a4*/
-  v10 = *JumpjetLocomotionClass::ClampToCellBounds((JumpjetLocomotionClass *)&stru_87F5F0.__pad_58[416], &v21, v20, 0); /*0x6e39c1*/
-  *(unsigned int *)v20 = v10; /*0x6e39c8*/
+  v10[0] = v24 / 256; /*0x6e398f*/
+  v10[1] = v25 / 256; /*0x6e39a4*/
+  v10 = *JumpjetLocomotionClass::ClampToCellBounds((JumpjetLocomotionClass *)&stru_87F5F0.__pad_58[416], &v21, v10, 0); /*0x6e39c1*/
+  *(unsigned int *)v10 = v10; /*0x6e39c8*/
   v11 = (unsigned int *)*((unsigned int *)g_WeaponTypeConfig + SuperWeaponClass::FindByName(&stru_842C2C)); /*0x6e39de*/
   v12 = v11[40]; /*0x6e39ec*/
   v18 = v11[43]; /*0x6e39f2*/
@@ -8496,17 +8519,17 @@ void SuperWeaponClass::CreateChemLauncher()
   Math::ArcTan2(-0.00009587672516830327); /*0x6e3a52*/
   v22 = v7; /*0x6e3a57*/
   Math::ArcTan2(1.570748388432313); /*0x6e3a65*/
-  v23 = v21; /*0x6e3a76*/
-  *(double *)&v27[1] = v21; /*0x6e3a92*/
+  v21 = v21; /*0x6e3a76*/
+  *(double *)&v22[1] = v21; /*0x6e3a92*/
   v22 = v8 * v22 * 100.0; /*0x6e3a96*/
-  *(double *)v27 = v22; /*0x6e3aa2*/
+  *(double *)v22 = v22; /*0x6e3aa2*/
   Math::SinCos(-0.00009587672516830327); /*0x6e3ab2*/
-  *(double *)&v27[2] = v9 * 100.0; /*0x6e3ac5*/
+  *(double *)&v22[2] = v9 * 100.0; /*0x6e3ac5*/
   v15 = *UIObjectCOM; /*0x6e3ac9*/
   IDA_LODWORD(v22) = ((int16_t)v10 << 8) + 128; /*0x6e3ae0*/
-  IDA_HIDWORD(v22) = (v20[1] << 8) + 128; /*0x6e3ae4*/
-  IDA_LODWORD(v23) = 0; /*0x6e3af4*/
-  (*(void (__thiscall **)(int *, double *, unsigned long long *))(v15 + 496))(UIObjectCOM, &v22, v27); /*0x6e3afc*/
+  IDA_HIDWORD(v22) = (v10[1] << 8) + 128; /*0x6e3ae4*/
+  IDA_LODWORD(v21) = 0; /*0x6e3af4*/
+  (*(void (__thiscall **)(int *, double *, unsigned long long *))(v15 + 496))(UIObjectCOM, &v22, v22); /*0x6e3afc*/
   return 1; /*0x6e3b04*/
 }
 // 0x773030
@@ -8527,12 +8550,15 @@ void SuperWeaponClass::FindByName()
 // 0x6c39c0
 void TClassFactory_AnimClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c39ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c39ce*/
 }
 // 0x6c39e0
 void TClassFactory_AnimClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c39f0*/
   if ( !v1 ) /*0x6c39f4*/
@@ -8542,26 +8568,27 @@ void TClassFactory_AnimClass::GetClassName()
 // 0x6c3a10
 int TClassFactory_AnimClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  AnimClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c3a18*/
+  if ( !v9 ) /*0x6c3a18*/
     return -2147024809; /*0x6c3a1b*/
-  *a4 = 0; /*0x6c3a28*/
-  if ( a2 ) /*0x6c3a30*/
+  *v9 = 0; /*0x6c3a28*/
+  if ( a3 ) /*0x6c3a30*/
     return -2147221232; /*0x6c3a33*/
-  v5 = RA2_OPNEW(0x1C8u); /*0x6c3a41*/
+  v5 = (AnimClass *)RA2_OPNEW(0x1C8u); /*0x6c3a41*/
   if ( !v5 ) /*0x6c3a4b*/
     return -2147024882; /*0x6c3a4b*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))AnimClass::SimpleCtor((int)v5); /*0x6c3a4f*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))AnimClass::SimpleCtor(v5); /*0x6c3a4f*/
   v7 = v6; /*0x6c3a54*/
   if ( !v6 ) /*0x6c3a58*/
     return -2147024882; /*0x6c3a5b*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c3a6f*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c3a6f*/
   if ( v8 < 0 ) /*0x6c3a73*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c3a7b*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c3a7b*/
   return v8; /*0x6c3a1a*/
 }
 // 0x6c3a90
@@ -8569,24 +8596,28 @@ void TClassFactory_AnimClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c3a9a*/
-  if ( a2 ) /*0x6c3a9d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c3a9a*/
+  if ( v5 ) /*0x6c3a9d*/
     v3 = v2 + 1; /*0x6c3a9f*/
   else
     v3 = v2 - 1; /*0x6c3aa8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c3aa0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c3aa0*/
   return 0; /*0x6c3aa5*/
 }
 // 0x6c5040
 void TClassFactory_BulletClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c504e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c504e*/
 }
 // 0x6c5060
 void TClassFactory_BulletClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c5070*/
   if ( !v1 ) /*0x6c5074*/
@@ -8596,26 +8627,27 @@ void TClassFactory_BulletClass::GetClassName()
 // 0x6c5090
 int TClassFactory_BulletClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  BulletClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c5098*/
+  if ( !v9 ) /*0x6c5098*/
     return -2147024809; /*0x6c509b*/
-  *a4 = 0; /*0x6c50a8*/
-  if ( a2 ) /*0x6c50b0*/
+  *v9 = 0; /*0x6c50a8*/
+  if ( a3 ) /*0x6c50b0*/
     return -2147221232; /*0x6c50b3*/
-  v5 = RA2_OPNEW(0x160u); /*0x6c50c1*/
+  v5 = (BulletClass *)RA2_OPNEW(0x160u); /*0x6c50c1*/
   if ( !v5 ) /*0x6c50cb*/
     return -2147024882; /*0x6c50cb*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))BulletClass::BulletClass((int)v5); /*0x6c50cf*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))BulletClass::BulletClass(v5); /*0x6c50cf*/
   v7 = v6; /*0x6c50d4*/
   if ( !v6 ) /*0x6c50d8*/
     return -2147024882; /*0x6c50db*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c50ef*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c50ef*/
   if ( v8 < 0 ) /*0x6c50f3*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c50fb*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c50fb*/
   return v8; /*0x6c509a*/
 }
 // 0x6c5110
@@ -8623,24 +8655,28 @@ void TClassFactory_BulletClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c511a*/
-  if ( a2 ) /*0x6c511d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c511a*/
+  if ( v5 ) /*0x6c511d*/
     v3 = v2 + 1; /*0x6c511f*/
   else
     v3 = v2 - 1; /*0x6c5128*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c5120*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c5120*/
   return 0; /*0x6c5125*/
 }
 // 0x6c00c0
 void TClassFactory_CampaignClass::AddRefCOM()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c00ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c00ce*/
 }
 // 0x6c00e0
 void TClassFactory_CampaignClass::Release()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c00f0*/
   if ( !v1 ) /*0x6c00f4*/
@@ -8650,26 +8686,27 @@ void TClassFactory_CampaignClass::Release()
 // 0x6c0110
 void TClassFactory_CampaignClass::CreateInstanceCOM()
 {
-  AbstractClass *v5; // eax
+  TubeClass *v5; // eax
   AbstractClass *v6; // eax
   AbstractClass *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c0118*/
+  if ( !v9 ) /*0x6c0118*/
     return -2147024809; /*0x6c011b*/
-  *a4 = 0; /*0x6c0128*/
-  if ( a2 ) /*0x6c0130*/
+  *v9 = 0; /*0x6c0128*/
+  if ( a3 ) /*0x6c0130*/
     return -2147221232; /*0x6c0133*/
-  v5 = (AbstractClass *)RA2_OPNEW(0x1C4u); /*0x6c0141*/
+  v5 = (TubeClass *)RA2_OPNEW(0x1C4u); /*0x6c0141*/
   if ( !v5 ) /*0x6c014b*/
     return -2147024882; /*0x6c014b*/
   v6 = TubeClass::Construct(v5, &word_B0BC68, 0); /*0x6c0156*/
   v7 = v6; /*0x6c015b*/
   if ( !v6 ) /*0x6c015f*/
     return -2147024882; /*0x6c0162*/
-  v8 = (*(int (__stdcall **)(AbstractClass *, int, unsigned int *))v6->vtable0[0])(v6, a3, a4); /*0x6c0176*/
+  v8 = (*(int (__stdcall **)(AbstractClass *, unsigned int *, unsigned int *))v6->vtable0)(v6, a4, v9); /*0x6c0176*/
   if ( v8 < 0 ) /*0x6c017a*/
-    (*(void (__thiscall **)(AbstractClass *, int))(v7->vtable0[0] + 32))(v7, 1); /*0x6c0182*/
+    (*(void (__thiscall **)(AbstractClass *, int))(v7->vtable0 + 32))(v7, 1); /*0x6c0182*/
   return v8; /*0x6c011a*/
 }
 // 0x6c0190
@@ -8677,29 +8714,35 @@ void TClassFactory_CampaignClass::AdjustRefCOM()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c019a*/
-  if ( a2 ) /*0x6c019d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c019a*/
+  if ( v5 ) /*0x6c019d*/
     v3 = v2 + 1; /*0x6c019f*/
   else
     v3 = v2 - 1; /*0x6c01a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c01a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c01a0*/
   return 0; /*0x6c01a5*/
 }
 // 0x6c0240
 void TClassFactory_CampaignClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c024e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c024e*/
 }
 // 0x6bf940
 void TClassFactory_CellClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6bf94e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6bf94e*/
 }
 // 0x6bf960
 void TClassFactory_CellClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6bf970*/
   if ( !v1 ) /*0x6bf974*/
@@ -8709,24 +8752,25 @@ void TClassFactory_CellClass::GetClassName()
 // 0x6bf990
 int TClassFactory_CellClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  unsigned int *v5; // eax
+  CellClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6bf998*/
+  if ( !v9 ) /*0x6bf998*/
     return -2147024809; /*0x6bf99b*/
-  *a4 = 0; /*0x6bf9a8*/
-  if ( a2 ) /*0x6bf9b0*/
+  *v9 = 0; /*0x6bf9a8*/
+  if ( a3 ) /*0x6bf9b0*/
     return -2147221232; /*0x6bf9b3*/
-  v5 = RA2_OPNEW(0x148u); /*0x6bf9c1*/
+  v5 = (CellClass *)RA2_OPNEW(0x148u); /*0x6bf9c1*/
   if ( !v5 ) /*0x6bf9cb*/
     return -2147024882; /*0x6bf9cb*/
   v6 = CellClass::Construct(v5); /*0x6bf9cf*/
   v7 = v6; /*0x6bf9d4*/
   if ( !v6 ) /*0x6bf9d8*/
     return -2147024882; /*0x6bf9db*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6bf9ef*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6bf9ef*/
   if ( v8 < 0 ) /*0x6bf9f3*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6bf9fb*/
   return v8; /*0x6bf99a*/
@@ -8736,24 +8780,28 @@ void TClassFactory_CellClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6bfa1a*/
-  if ( a2 ) /*0x6bfa1d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6bfa1a*/
+  if ( v5 ) /*0x6bfa1d*/
     v3 = v2 + 1; /*0x6bfa1f*/
   else
     v3 = v2 - 1; /*0x6bfa28*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6bfa20*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6bfa20*/
   return 0; /*0x6bfa25*/
 }
 // 0x6bfac0
 void TClassFactory_EMPulseClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6bface*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6bface*/
 }
 // 0x6bfae0
 void TClassFactory_EMPulseClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6bfaf0*/
   if ( !v1 ) /*0x6bfaf4*/
@@ -8763,26 +8811,27 @@ void TClassFactory_EMPulseClass::GetClassName()
 // 0x6bfb10
 int TClassFactory_EMPulseClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  EMPulseClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6bfb18*/
+  if ( !v9 ) /*0x6bfb18*/
     return -2147024809; /*0x6bfb1b*/
-  *a4 = 0; /*0x6bfb28*/
-  if ( a2 ) /*0x6bfb30*/
+  *v9 = 0; /*0x6bfb28*/
+  if ( a3 ) /*0x6bfb30*/
     return -2147221232; /*0x6bfb33*/
-  v5 = RA2_OPNEW(0x34u); /*0x6bfb3e*/
+  v5 = (EMPulseClass *)RA2_OPNEW(0x34u); /*0x6bfb3e*/
   if ( !v5 ) /*0x6bfb48*/
     return -2147024882; /*0x6bfb48*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))Helper_4C5370((int)v5); /*0x6bfb4c*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))Helper_4C5370(v5); /*0x6bfb4c*/
   v7 = v6; /*0x6bfb51*/
   if ( !v6 ) /*0x6bfb55*/
     return -2147024882; /*0x6bfb58*/
-  v8 = (**v6)(v6, a3, a4); /*0x6bfb6c*/
+  v8 = (**v6)(v6, a4, v9); /*0x6bfb6c*/
   if ( v8 < 0 ) /*0x6bfb70*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6bfb78*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6bfb78*/
   return v8; /*0x6bfb1a*/
 }
 // 0x6bfb90
@@ -8790,13 +8839,14 @@ void TClassFactory_EMPulseClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6bfb9a*/
-  if ( a2 ) /*0x6bfb9d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6bfb9a*/
+  if ( v5 ) /*0x6bfb9d*/
     v3 = v2 + 1; /*0x6bfb9f*/
   else
     v3 = v2 - 1; /*0x6bfba8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6bfba0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6bfba0*/
   return 0; /*0x6bfba5*/
 }
 // 0x50e830
@@ -9608,7 +9658,7 @@ void AlphaShapeClass::CTOR()
   int v11; // edx
 
   AbstractClass::Constructor((AbstractClass *)this); /*0x420965*/
-  *(unsigned int *)(this + 56) = 0; /*0x42096e*/
+  this->tail_E = 0; /*0x42096e*/
   this->u32_24 = a2; /*0x420975*/
   this->u32_3C = 0; /*0x420978*/
   *(unsigned int *)this = &(void*)(void*)&AlphaShapeClass_vftable; /*0x42097c*/
@@ -9756,7 +9806,7 @@ void AngerVector::Construct()
 
   this->vtable2 = 0; /*0x5106ed*/
   this->vtable3 = a2; /*0x5106f0*/
-  *((unsigned char *)this + 12) = 1; /*0x5106f3*/
+  this->vtable4 = 1; /*0x5106f3*/
   this->u32_D = 0; /*0x5106f7*/
   *this = (AngerVector)&(void*)(void*)&VectorClass_AngerStruct_vftable; /*0x5106fa*/
   if ( !a2 ) /*0x510700*/
@@ -10282,7 +10332,7 @@ void ArtConfig::ReadLayout()
         ++this->u32_3C; /*0x768e5c*/
         ComPtr::Set(v74); /*0x768e65*/
       }
-      v73 = (int)&(void*)(void*)(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x768e6e*/
+      v73 = (int)&(void*)(void*)(void*)(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x768e6e*/
       ComPtr::Release(&v73); /*0x768e76*/
       v57 = v67[0]; /*0x768e7b*/
     }
@@ -10294,7 +10344,7 @@ void ArtConfig::ReadLayout()
   for ( k = 0; k < this->u32_3C; ++k ) /*0x768ec1*/
     ArtConfig::validateConfig(a3, this->q014, this + 68); /*0x768ed9*/
   DeleteAndZero(&v80); /*0x768eea*/
-  v87[0] = &(void*)(void*)(void*)(void*)&CCFileClass_vftable; /*0x768ef6*/
+  v87[0] = &(void*)(void*)(void*)(void*)(void*)&CCFileClass_vftable; /*0x768ef6*/
   v89 = 0; /*0x768efe*/
   Vector::Clear(v88); /*0x768f09*/
   v87[0] = &off_7E1668; /*0x768f12*/
@@ -10402,6 +10452,7 @@ void ArtConfig::saveConfig()
   int v3; // esi
   char *v4; // ebp
   char **v5; // eax
+  char **v6; // esi
   char **v7; // ebx
   int v9; // ecx
   int v10; // eax
@@ -10416,25 +10467,25 @@ void ArtConfig::saveConfig()
     if ( v4 ) /*0x76921f*/
     {
       v5 = (char **)RA2_OPNEW(8u); /*0x769223*/
-      v5 = v5; /*0x769228*/
+      v6 = v5; /*0x769228*/
       if ( v5 ) /*0x76922f*/
       {
         String::AssignFromPtr(v5, a2); /*0x769234*/
-        v5[1] = v4; /*0x769239*/
-        v7 = v5; /*0x76923c*/
+        v6[1] = v4; /*0x769239*/
+        v7 = v6; /*0x76923c*/
       }
       else
       {
         v7 = 0; /*0x769252*/
       }
-      v9 = this->__pad_310; /*0x769254*/
+      v9 = this->u32_C4; /*0x769254*/
       if ( this->u32_CC < v9 /*0x769285*/
-        || (this->q324 || !v9)
-        && (v10 = this->q340, v10 > 0)
+        || (this->u32_C9 || !v9)
+        && (v10 = this->u32_D0, v10 > 0)
         && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->u32_BC + 8))(this + 188, v9 + v10, 0) )
       {
         v11 = this->u32_CC; /*0x76928c*/
-        v12 = this->q300; /*0x76928f*/
+        v12 = this->u32_C0; /*0x76928f*/
         this->u32_CC = v11 + 1; /*0x769295*/
         *(unsigned int *)(v12 + 4 * v11) = v7; /*0x769298*/
       }
@@ -10443,12 +10494,12 @@ void ArtConfig::saveConfig()
   }
   else
   {
-    while ( !String::Compare(*(const char ***)(*(unsigned int *)(this + 192) + 4 * v3), a2) ) /*0x769206*/
+    while ( !String::Compare(*(const char ***)(this->u32_C0 + 4 * v3), a2) ) /*0x769206*/
     {
       if ( ++v3 >= this->u32_CC ) /*0x769211*/
         goto LABEL_4; /*0x769211*/
     }
-    return *(char **)(*(unsigned int *)(this->q300 + 4 * v3) + 4); /*0x76924c*/
+    return *(char **)(*(unsigned int *)(this->u32_C0 + 4 * v3) + 4); /*0x76924c*/
   }
 }
 // 0x76fb90
@@ -10608,8 +10659,6 @@ void BTree::DeleteSubtree()
 // 0x42f9c0
 void BaseNodeClass_Vector::Release()
 {
-  int v3; // ebx
-  char *v5; // ebp
   int v6; // eax
   char *v7; // edi
   int m_8; // ecx
@@ -10617,10 +10666,10 @@ void BaseNodeClass_Vector::Release()
   char *v11; // ebx
   unsigned int *v12; // edx
 
-  v3 = a2; /*0x42f9c2*/
+  a2 = a2; /*0x42f9c2*/
   if ( a2 ) /*0x42f9cd*/
   {
-    v5 = a3; /*0x42f9d3*/
+    a3 = a3; /*0x42f9d3*/
     IDA_LOBYTE(this->m_C) = 0; /*0x42f9d7*/
     if ( a3 ) /*0x42f9dd*/
     {
@@ -11356,10 +11405,10 @@ void BlowPipe::Read()
       v11 = (BlowPipe *)this->BlowPipe_field_0x0C; /*0x43815b*/
       v15 = &this->BlowPipe_field_0x10; /*0x438164*/
       if ( this->u32_1C == 1 ) /*0x438168*/
-        BlowPipe::DrawAlt(v11, (int)a2, 8, (int)v15); /*0x43816a*/
+        BlowPipe::DrawAlt(v11, (int)v3, 8, (int)v15); /*0x43816a*/
       else
-        BlowPipe::Draw(v11, (int)a2, 8, (int)v15); /*0x438171*/
-      a2 += 8; /*0x438184*/
+        BlowPipe::Draw(v11, (int)v3, 8, (int)v15); /*0x438171*/
+      v3 += 8; /*0x438184*/
       --v10; /*0x438189*/
       Srca += Delegate::Dispatch((Pipe *)this, (int)&this->BlowPipe_field_0x10, 8); /*0x43818a*/
     }
@@ -11368,7 +11417,7 @@ void BlowPipe::Read()
   }
   if ( (int)v4 > 0 ) /*0x438197*/
   {
-    memcpy(&this->BlowPipe_field_0x10, a2, v4); /*0x43819f*/
+    memcpy(&this->BlowPipe_field_0x10, v3, v4); /*0x43819f*/
     this->u32_18 = v4; /*0x4381a7*/
   }
   return Srca; /*0x4381ae*/
@@ -11574,6 +11623,7 @@ void BridgeClass::GetCellData()
   int v18; // edi
   int v19; // [esp+10h] [ebp-18h] BYREF
   int16_t v20[2]; // [esp+14h] [ebp-14h] BYREF
+  int v21; // [esp+18h] [ebp-10h]
   int v22; // [esp+24h] [ebp-4h]
 
   v3 = (int *)(16 * a2 + this->Capacity); /*0x42e833*/
@@ -11587,19 +11637,18 @@ void BridgeClass::GetCellData()
   v5 = v5; /*0x42e869*/
   v6 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v20); /*0x42e86d*/
   v7 = Cell::IsBridge(v6); /*0x42e874*/
-  v8 = v7; /*0x42e879*/
+  v7 = v7; /*0x42e879*/
   if ( !v7 ) /*0x42e87d*/
     return 0; /*0x42e87d*/
   v9 = (unsigned short *)(16 * a2 + this->u32_8 + 4); /*0x42e88a*/
   v10 = (unsigned short *)(*(int (__thiscall **)(unsigned int *, int *))(*v7 + 440))(v7, &v19); /*0x42e893*/
-  if ( *v10 != *v9 || v10[1] != v9[1] || v8[135] != this->u32_74 ) /*0x42e8be*/
+  if ( *v10 != *v9 || v10[1] != v9[1] || v7[135] != this->u32_74 ) /*0x42e8be*/
     return 0; /*0x42e8be*/
-  if ( v8[328] == v5 ) /*0x42e8ca*/
-    return v8; /*0x42e8d5*/
+  if ( v7[328] == v5 ) /*0x42e8ca*/
   if ( !*(unsigned char *)(v5 + 3720) ) /*0x42e8d8*/
     return 0; /*0x42e987*/
   v12 = 0; /*0x42e8e6*/
-  v13 = v8 + 379; /*0x42e8e8*/
+  v13 = v7 + 379; /*0x42e8e8*/
   v19 = 0; /*0x42e8ee*/
   v14 = 3; /*0x42e8f2*/
   do /*0x42e900*/
@@ -11617,11 +11666,11 @@ void BridgeClass::GetCellData()
     v16 = this->u32_8; /*0x42e90e*/
     do /*0x42e96a*/
     {
-      if ( *(int *)v16 >= 0 && *((unsigned int *)unk_A83C6C + *(unsigned int *)v16) == v21 ) /*0x42e924*/
+      if ( *(int *)v16 >= 0 && *((unsigned int *)unk_A83C6C + *(unsigned int *)v16) == v5 ) /*0x42e924*/
       {
-        v17 = v8[39]; /*0x42e92e*/
-        v18 = v8[40]; /*0x42e930*/
-        v22 = v8[41]; /*0x42e936*/
+        v17 = v7[39]; /*0x42e92e*/
+        v18 = v7[40]; /*0x42e930*/
+        v22 = v7[41]; /*0x42e936*/
         if ( *(unsigned short *)(v16 + 4) == (uint16_t)(v17 / 256) /*0x42e960*/
           && *(unsigned short *)(v16 + 6) == (uint16_t)(v18 / 256) )
         {
@@ -11634,7 +11683,7 @@ void BridgeClass::GetCellData()
     while ( a2 ); /*0x42e96a*/
     v12 = v19; /*0x42e96c*/
   }
-  return v12 <= 0 ? 0 : v8;
+  return v12 <= 0 ? 0 : v7;
 }
 // 0x50e450
 void BuildLocation::InitCandidate()
@@ -11769,7 +11818,7 @@ void CCToolTip::CalculatePopupPosition()
   v26 = this; /*0x478ba3*/
   if ( (*(int (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 40))(stru_887598.lineTrailer) >= 0 ) /*0x478bb4*/
   {
-    v25 = g_FogOfWarState; /*0x478bcb*/
+    g_FogOfWarState = g_FogOfWarState; /*0x478bcb*/
     if ( IDA_LOBYTE(stru_A8EB00.parent_gap[31]) == 1 ) /*0x478bcf*/
     {
       v2 = (uint16_t *)a2; /*0x478bdc*/
@@ -11811,7 +11860,7 @@ void CCToolTip::CalculatePopupPosition()
       v9 = *(unsigned int *)v3->__pad_8; /*0x478c69*/
       if ( v4 >= v9 ) /*0x478c6e*/
       {
-        Text::Layout(v25, v2 + 8, &v24, &a2, v9 - 4); /*0x478c83*/
+        Text::Layout(g_FogOfWarState, v2 + 8, &v24, &a2, v9 - 4); /*0x478c83*/
         v10 = *((unsigned int *)v2 + 2); /*0x478c90*/
         v5 = v24 + 4; /*0x478c93*/
         v11 = (char *)a2 + 3; /*0x478c96*/
@@ -13542,8 +13591,8 @@ void CellCoord::To_CellObj()
   v2 = *a2 + (a2[1] << 9); /*0x5657af*/
   if ( v2 >= 0x40000 || (result = *(void **)(this->u32_13C + 4 * v2)) == 0 ) /*0x5657c6*/
   {
-    g_Map_GlobalCellIndex = *(unsigned int *)a2; /*0x5657cf*/
-    return &g_CellClassArray; /*0x5657ca*/
+    g_MissionQueueFrame.briefing[139] = *(unsigned int *)a2; /*0x5657cf*/
+    return &g_MissionQueueFrame.briefing[130]; /*0x5657ca*/
   }
   return result; /*0x5657b1*/
 }
@@ -13565,11 +13614,11 @@ void CellLand::IsBuildable()
       return result; /*0x4863ed*/
     }
   }
-  if ( dword_AA073C == -1 || (result = this->tail_E, result < dword_AA073C) || result >= dword_AA073C + 4 ) /*0x486405*/
+  if ( dword_AA073C == -1 || (result = this->u32_38, result < dword_AA073C) || result >= dword_AA073C + 4 ) /*0x486405*/
   {
-    if ( dword_ABB110 == -1 || (result = this->tail_E, result < dword_ABB110) || result >= dword_ABB110 + 4 ) /*0x486448*/
+    if ( dword_ABB110 == -1 || (result = this->u32_38, result < dword_ABB110) || result >= dword_ABB110 + 4 ) /*0x486448*/
     {
-      if ( dword_AA1050 == -1 || (result = this->tail_E, result < dword_AA1050) || result >= dword_AA1050 + 4 ) /*0x48648c*/
+      if ( dword_AA1050 == -1 || (result = this->u32_38, result < dword_AA1050) || result >= dword_AA1050 + 4 ) /*0x48648c*/
       {
         if ( dword_AA10A0 == -1 /*0x4864cf*/
           || (result = this->u32_38, result < dword_AA10A0)
@@ -13690,14 +13739,15 @@ void CellSystem::UpdateVisibility()
   unsigned int *v9; // eax
   char AdjacentPassableMask; // al
   int v11; // [esp+Ch] [ebp-14h]
+  int v12; // [esp+10h] [ebp-10h] BYREF
   unsigned char v13[12]; // [esp+14h] [ebp-Ch] BYREF
 
   v2 = this->u32_F4; /*0x57810d*/
   this->u32_10C = 1; /*0x578113*/
   this->u32_110 = v2; /*0x578119*/
   this->u32_114 = v2 - 1; /*0x578122*/
-  this->u32_118 = (v2 << 11) + this->__pad_13C + 4; /*0x578137*/
-  for ( i = LayerClass::CellIteratorNext(this); i; i = LayerClass::CellIteratorNext(this) ) /*0x578146*/
+  this->u32_118 = (v2 << 11) + this->u32_13C + 4; /*0x578137*/
+  for ( i = LayerClass::CellIteratorNext((LayerClass *)this); i; i = LayerClass::CellIteratorNext((LayerClass *)this) ) /*0x578146*/
   {
     if ( (*(unsigned char *)(i + 320) & 0x20) != 0 ) /*0x57814f*/
     {
@@ -13707,17 +13757,17 @@ void CellSystem::UpdateVisibility()
       *(unsigned int *)(i + 300) = v4; /*0x578162*/
       *(unsigned int *)(i + 320) = v5; /*0x578168*/
       *(unsigned char *)(i + 312) = 1; /*0x57816e*/
-      Tactical::AddCellToDrawList((int)g_TacticalClass_Instance, i); /*0x57817b*/
+      Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, i); /*0x57817b*/
       if ( *(unsigned char *)(i + 288) == 0xFE ) /*0x578187*/
-        CellClass::SpiralFindClosest(i, (int)HouseClass_Player, 1); /*0x578197*/
+        CellClass::SpiralFindClosest(i, (int)dword_A83D4C, 1); /*0x578197*/
     }
   }
   v6 = this->u32_F4; /*0x5781a9*/
   this->u32_10C = 1; /*0x5781af*/
   this->u32_110 = v6; /*0x5781b5*/
   this->u32_114 = v6 - 1; /*0x5781be*/
-  this->u32_118 = (v6 << 11) + this->__pad_13C + 4; /*0x5781d3*/
-  result = LayerClass::CellIteratorNext(this); /*0x5781d9*/
+  this->u32_118 = (v6 << 11) + this->u32_13C + 4; /*0x5781d3*/
+  result = LayerClass::CellIteratorNext((LayerClass *)this); /*0x5781d9*/
   for ( j = (unsigned char *)result; result; j = (unsigned char *)result ) /*0x5781e2*/
   {
     v9 = (unsigned int *)(*(int (__thiscall **)(unsigned char *, unsigned char *))(*(unsigned int *)j + 72))(j, v13); /*0x5781f1*/
@@ -13729,11 +13779,11 @@ void CellSystem::UpdateVisibility()
     {
       j[288] = AdjacentPassableMask; /*0x57823f*/
       j[312] = 1; /*0x578245*/
-      Tactical::AddCellToDrawList((int)g_TacticalClass_Instance, (int)j); /*0x578252*/
+      Tactical::AddCellToDrawList((int *)g_TacticalClass_Instance, (int)j); /*0x578252*/
       if ( j[288] == 0xFE ) /*0x57825e*/
-        CellClass::SpiralFindClosest((int)j, (int)HouseClass_Player, 1); /*0x57826e*/
+        CellClass::SpiralFindClosest((int)j, (int)dword_A83D4C, 1); /*0x57826e*/
     }
-    result = LayerClass::CellIteratorNext(this); /*0x578275*/
+    result = LayerClass::CellIteratorNext((LayerClass *)this); /*0x578275*/
   }
   return result; /*0x578284*/
 }
@@ -13788,7 +13838,7 @@ void Chat::RefreshMessagePositions()
         }
         while ( v5 ); /*0x5d43e6*/
       }
-      v2 = *((unsigned int *)this + 3) + 1; /*0x5d43ec*/
+      v2 = this->u32_C + 1; /*0x5d43ec*/
       this->u32_C = v2; /*0x5d43ed*/
     }
   }
@@ -14351,7 +14401,7 @@ void Cliff::ProcessTransitions()
     if ( (Cell::GetAdjacencyFlags((int)v7) & 2) != 0 ) /*0x5790a1*/
       v21 = 1; /*0x5790a3*/
   }
-  if ( (v7 & 2) != 0 ) /*0x5790ab*/
+  if ( (v4 & 2) != 0 ) /*0x5790ab*/
   {
     v23 = *(unsigned int *)(v2 + 36); /*0x5790b0*/
     IDA_HIWORD(a1) = IDA_HIWORD(v23); /*0x5790bc*/
@@ -14365,7 +14415,7 @@ void Cliff::ProcessTransitions()
     if ( (Cell::GetAdjacencyFlags((int)v9) & 0x20) != 0 ) /*0x5790ff*/
       v21 = 1; /*0x579101*/
   }
-  if ( (v7 & 8) != 0 ) /*0x579109*/
+  if ( (v4 & 8) != 0 ) /*0x579109*/
   {
     v24 = *(unsigned int *)(v2 + 36); /*0x57910e*/
     a1 = v24 - 0x10000; /*0x57911e*/
@@ -14378,7 +14428,7 @@ void Cliff::ProcessTransitions()
     if ( (Cell::GetAdjacencyFlags((int)v11) & 0x80u) != 0 ) /*0x57915c*/
       v21 = 1; /*0x57915e*/
   }
-  if ( v7 < 0 ) /*0x579166*/
+  if ( v4 < 0 ) /*0x579166*/
   {
     v25 = *(unsigned int *)(v2 + 36); /*0x57916b*/
     a1 = v25 + 0x10000; /*0x57917b*/
@@ -14391,22 +14441,22 @@ void Cliff::ProcessTransitions()
     if ( (Cell::GetAdjacencyFlags((int)v13) & 8) != 0 ) /*0x5791b9*/
       v21 = 1; /*0x5791bb*/
   }
-  if ( (v7 & 0x11) == 0x11 && ((v7 & 0xA) != 0xA || (v7 & 0xE0) != 0) && (v5 != 160 || (v7 & 0xE) != 0) ) /*0x5791e4*/
+  if ( (v4 & 0x11) == 0x11 && ((v4 & 0xA) != 0xA || (v4 & 0xE0) != 0) && (v5 != 160 || (v4 & 0xE) != 0) ) /*0x5791e4*/
     v21 = 1; /*0x5791e6*/
-  if ( (v7 & 0x44) == 0x44 && ((v7 & 0x28) != 0x28 || (v7 & 0x83) != 0) && ((v7 & 0x82) != 0x82 || (v7 & 0x38) != 0) ) /*0x579213*/
+  if ( (v4 & 0x44) == 0x44 && ((v4 & 0x28) != 0x28 || (v4 & 0x83) != 0) && ((v4 & 0x82) != 0x82 || (v4 & 0x38) != 0) ) /*0x579213*/
     v21 = 1; /*0x579215*/
-  if ( (v7 & 0x2C) == 0x24 /*0x57926f*/
-    || (v7 & 0xA1) == 0x21
-    || (v7 & 0x1A) == 0x12
-    || (v7 & 0xC2) == 0x42
-    || (v7 & 0xB) == 9
-    || (v7 & 0x68) == 0x48
-    || (v7 & 0x86) == 0x84
-    || (v7 & 0xB0) == 0x90 )
+  if ( (v4 & 0x2C) == 0x24 /*0x57926f*/
+    || (v4 & 0xA1) == 0x21
+    || (v4 & 0x1A) == 0x12
+    || (v4 & 0xC2) == 0x42
+    || (v4 & 0xB) == 9
+    || (v4 & 0x68) == 0x48
+    || (v4 & 0x86) == 0x84
+    || (v4 & 0xB0) == 0x90 )
   {
     v21 = 1; /*0x579271*/
   }
-  if ( (v7 & 0x88) == 0x88 || (v7 & 0x22) == 0x22 || v21 ) /*0x579291*/
+  if ( (v4 & 0x88) == 0x88 || (v4 & 0x22) == 0x22 || v21 ) /*0x579291*/
   {
     a1 = *(unsigned int *)(v2 + 36); /*0x5792a0*/
     v14 = MapClass::GetTileDataField14(&a1); /*0x5792a4*/
@@ -14439,31 +14489,33 @@ void ComStreamClass::closeStream()
 // 0x7a2fe0
 void ComStreamClass::SetSize()
 {
-  void **v6; // [esp+0h] [ebp-8h] BYREF
-  unsigned char *v7; // [esp+4h] [ebp-4h]
+  ComStreamClass *v4; // esi
+  rc_ptr v6[4]; // [esp+0h] [ebp-8h] BYREF
+  ComStreamClass *v7; // [esp+4h] [ebp-4h]
+  int v8; // [esp+18h] [ebp+10h]
 
-  if ( a2 < 0 || a4 <= 0 ) /*0x7a2ff5*/
+  if ( (int)a3 < 0 || v8 <= 0 ) /*0x7a2ff5*/
   {
     SetEvent(hEvent); /*0x7a30b9*/
     return 0; /*0x7a30bf*/
   }
   else
   {
-    Audio_Set(&v6, a3); /*0x7a3003*/
+    Audio_Set(v6, (void *)a4); /*0x7a3003*/
     if ( v7 && ComStreamClass::initStream(v7) ) /*0x7a3010*/
     {
       if ( ComStreamClass::closeStream(v7) ) /*0x7a301d*/
       {
         Debug::Log(); /*0x7a302b*/
-        ComStreamClass::getStreamSize((int *)&v6); /*0x7a3037*/
+        ComStreamClass::getStreamSize((ComStreamClass *)v6); /*0x7a3037*/
         SetEvent(dword_B736B0); /*0x7a3042*/
       }
       else
       {
         Debug::Log(); /*0x7a304a*/
-        v7 = v7; /*0x7a304f*/
-        dword_B7646C = *((unsigned int *)v7 + 10) + time(0); /*0x7a3066*/
-        ComStreamClass::seekToPosition((int *)&v6); /*0x7a306b*/
+        v4 = v7; /*0x7a304f*/
+        dword_B7646C = v4->ComStreamClass_field_0x28 + time(0); /*0x7a3066*/
+        ComStreamClass::seekToPosition((ComStreamClass *)v6); /*0x7a306b*/
         SetEvent(dword_B736B0); /*0x7a3077*/
       }
     }
@@ -14472,8 +14524,8 @@ void ComStreamClass::SetSize()
       Debug::Log(); /*0x7a3085*/
       SetEvent(dword_B736B0); /*0x7a3094*/
     }
-    v6 = &(void*)(void*)&rc_ptr_WDTState_vftable; /*0x7a309e*/
-    ComPtr::Release(&v6); /*0x7a30a6*/
+    *(unsigned int *)v6 = &(void*)(void*)&rc_ptr_WDTState_vftable; /*0x7a309e*/
+    ComPtr::Release((ComPtr *)v6); /*0x7a30a6*/
     return 0; /*0x7a30ab*/
   }
 }
@@ -14489,57 +14541,52 @@ void ComStreamClass::Read()
 // 0x7a3b30
 void ComStreamClass::Commit()
 {
-  float v6; // esi
-  float v7; // ebp
+  int v6; // esi
+  int v7; // ebp
   int v8; // esi
   int v9; // edi
   unsigned int *v10; // edi
   int v11; // ebx
   double v12; // st7
   int v13; // esi
-  char **v14; // eax
-  char **v15; // ebx
+  String *v14; // eax
+  String *v15; // ebx
   int v16; // edx
-  char *v17; // eax
+  int v17; // eax
 
-  if ( a2 ) /*0x7a3b3c*/
+  if ( a3 == 0.0 ) /*0x7a3b3c*/
   {
-    Debug::Log(); /*0x7a3d71*/
-    return 0; /*0x7a3d79*/
-  }
-  else
-  {
-    v6 = a3; /*0x7a3b44*/
-    v7 = a3; /*0x7a3b51*/
-    String::Assign((char **)&a2, &g_INI_DefaultBuffer); /*0x7a3b53*/
-    if ( v6 != 0.0 ) /*0x7a3b5a*/
+    v6 = a4; /*0x7a3b44*/
+    v7 = a4; /*0x7a3b51*/
+    String::Assign((String *)&a3, &g_INI_DefaultBuffer); /*0x7a3b53*/
+    if ( v6 ) /*0x7a3b5a*/
     {
       do /*0x7a3b6d*/
       {
-        String::Assign_Bool((void **)&a2, (const char *)(IDA_LODWORD(v7) + 28)); /*0x7a3b6d*/
-        String::ToLower((const char **)&a2); /*0x7a3b76*/
-        String::GetOrEmpty((char **)&a2); /*0x7a3b87*/
+        String::Assign_Bool((String *)&a3, (const char *)(v7 + 28)); /*0x7a3b6d*/
+        String::ToLower((String *)&a3); /*0x7a3b76*/
+        String::GetOrEmpty((String *)&a3); /*0x7a3b87*/
         Debug::Log(); /*0x7a3b92*/
         if ( dword_B76644 ) /*0x7a3ba1*/
         {
-          a3 = (double)(unsigned int)(dword_B76644 - 1) / (double)dword_B76648; /*0x7a3bc9*/
-          v8 = dword_B76658(&a2) & ((1 << dword_B7664C) - 1); /*0x7a3be7*/
+          *(float *)&a4 = (double)(unsigned int)(dword_B76644 - 1) / (double)dword_B76648; /*0x7a3bc9*/
+          v8 = dword_B76658(&a3) & ((1 << dword_B7664C) - 1); /*0x7a3be7*/
           v9 = *((unsigned int *)dword_B76640 + v8); /*0x7a3be9*/
           if ( v9 ) /*0x7a3bee*/
           {
-            if ( String::Compare(*((const char ***)dword_B76640 + v8), (const char **)&a2) ) /*0x7a3bfb*/
+            if ( (uint8_t)String::Compare(*((String **)dword_B76640 + v8), (const char **)&a3) ) /*0x7a3bfb*/
             {
               v10 = (unsigned int *)*((unsigned int *)dword_B76640 + v8); /*0x7a3c09*/
               v11 = v10[18]; /*0x7a3c0e*/
               if ( v10 ) /*0x7a3c11*/
               {
-                DeleteAndZero(*((void ***)dword_B76640 + v8)); /*0x7a3c15*/
+                DeleteAndZero(*((ObjectClass **)dword_B76640 + v8)); /*0x7a3c15*/
                 RA2_OPDEL(v10); /*0x7a3c1b*/
               }
-              a3 = a3; /*0x7a3c29*/
+              v12 = *(float *)&a4; /*0x7a3c29*/
               *((unsigned int *)dword_B76640 + v8) = v11; /*0x7a3c2d*/
               --dword_B76644; /*0x7a3c3c*/
-              if ( a3 > dbl_B76660 ) /*0x7a3c46*/
+              if ( v12 > dbl_B76660 ) /*0x7a3c46*/
                 goto LABEL_17; /*0x7a3c46*/
             }
             else
@@ -14547,7 +14594,7 @@ void ComStreamClass::Commit()
               v13 = v13->q048; /*0x7a3c4a*/
               if ( v13 ) /*0x7a3c4f*/
               {
-                while ( !String::Compare((const char **)v13, (const char **)&a2) ) /*0x7a3c5f*/
+                while ( !(uint8_t)String::Compare((String *)v13, (const char **)&a3) ) /*0x7a3c5f*/
                 {
                   v13 = v13; /*0x7a3c61*/
                   v13 = v13->q048; /*0x7a3c63*/
@@ -14556,38 +14603,43 @@ void ComStreamClass::Commit()
                 }
                 v13->q048 = v13->q048; /*0x7a3c6f*/
                 --dword_B76644; /*0x7a3c7b*/
-                ComStreamClass::writeData((void **)v13, 1); /*0x7a3c87*/
+                ComStreamClass::writeData((ComStreamClass *)v13, 1); /*0x7a3c87*/
               }
   LABEL_15:
-              if ( a3 > dbl_B76660 ) /*0x7a3c9b*/
+              if ( *(float *)&a4 > dbl_B76660 ) /*0x7a3c9b*/
                 goto LABEL_17; /*0x7a3c9b*/
             }
-            ComStreamClass::flushStream(&dword_B76640); /*0x7a3ca2*/
+            ComStreamClass::flushStream((ComStreamClass *)&dword_B76640); /*0x7a3ca2*/
           }
         }
   LABEL_17:
-        v14 = (char **)RA2_OPNEW(0x4Cu); /*0x7a3ca7*/
+        v14 = (String *)RA2_OPNEW(0x4Cu); /*0x7a3ca7*/
         v15 = v14; /*0x7a3cae*/
         if ( v14 ) /*0x7a3cb5*/
           unknown_libname_73(v14); /*0x7a3cb9*/
         else
           v15 = 0; /*0x7a3cc0*/
-        String::Reassign(v15, (const char **)&a2); /*0x7a3cc9*/
-        qmemcpy(v15 + 1, (const void *)IDA_LODWORD(v7), 0x44u); /*0x7a3cd8*/
-        v15[18] = 0; /*0x7a3ce0*/
-        v16 = dword_B76658(&a2) & ((1 << dword_B7664C) - 1); /*0x7a3cfd*/
-        v17 = (char *)*((unsigned int *)dword_B76640 + v16); /*0x7a3cff*/
+        String::Reassign(v15, (const char **)&a3); /*0x7a3cc9*/
+        qmemcpy(&v15->m_3[1], (const void *)v7, 0x44u); /*0x7a3cd8*/
+        *(unsigned int *)v15[9].__pad_0 = 0; /*0x7a3ce0*/
+        v16 = dword_B76658(&a3) & ((1 << dword_B7664C) - 1); /*0x7a3cfd*/
+        v17 = *((unsigned int *)dword_B76640 + v16); /*0x7a3cff*/
         *((unsigned int *)dword_B76640 + v16) = v15; /*0x7a3d02*/
         if ( v17 ) /*0x7a3d07*/
-          v15[18] = v17; /*0x7a3d09*/
+          *(unsigned int *)v15[9].__pad_0 = v17; /*0x7a3d09*/
         if ( (double)(unsigned int)++dword_B76644 / (double)dword_B76648 >= dbl_B76668 ) /*0x7a3d40*/
-          ComStreamClass::readData(&dword_B76640); /*0x7a3d47*/
-        v7 = *(float *)(IDA_LODWORD(v7) + 24); /*0x7a3d4c*/
+          ComStreamClass::readData((ComStreamClass *)&dword_B76640); /*0x7a3d47*/
+        v7 = *(unsigned int *)(v7 + 24); /*0x7a3d4c*/
       }
-      while ( v7 != 0.0 ); /*0x7a3b6d*/
+      while ( v7 ); /*0x7a3b6d*/
     }
-    DeleteAndZero((void **)&a2); /*0x7a3d58*/
+    DeleteAndZero((ObjectClass *)&a3); /*0x7a3d58*/
     return 0; /*0x7a3d63*/
+  }
+  else
+  {
+    Debug::Log(); /*0x7a3d71*/
+    return 0; /*0x7a3d79*/
   }
 }
 // 0x55c350
@@ -14600,6 +14652,7 @@ void Compression::Read()
   int v8; // eax
   int v10; // edx
   int v11; // eax
+  int v12; // edx
   uint8_t *v13; // ecx
   int v14; // eax
   int v15; // ecx
@@ -14624,13 +14677,13 @@ void Compression::Read()
   v4 = Size; /*0x55c357*/
   if ( !Src || Size < 1 ) /*0x55c368*/
     return Delegate::Dispatch((Pipe *)this, Src, Size); /*0x55c5d0*/
-  v6 = this->q00C; /*0x55c36e*/
+  v6 = this->u32_C; /*0x55c36e*/
   Src = 0; /*0x55c375*/
   if ( v6 == 1 ) /*0x55c37d*/
   {
     while ( 1 ) /*0x55c38b*/
     {
-      if ( *((unsigned short *)this + 18) == 0xFFFF ) /*0x55c391*/
+      if ( this->u32_24 == 0xFFFF ) /*0x55c391*/
       {
         v7 = 4 - this->q004; /*0x55c39b*/
         if ( v4 < v7 ) /*0x55c39f*/
@@ -14745,7 +14798,7 @@ void Conditions::CheckResult3()
 {
   DisplayClass *v3; // ecx
 
-  return DisplayClass::vt_entry_94(v3, (int16_t *)this, a2, v4) != 0; /*0x653849*/
+  return DisplayClass::vt_entry_94(v3, (int16_t *)this, a2, a3) != 0; /*0x653849*/
 }
 // 0x7667a0
 void Conflict_WorldDominationTour::QueryInterface()
@@ -14766,12 +14819,12 @@ void ConnectionPointClass::QueryInterface()
 {
   ConnectionPointClass *v4; // eax
 
-  if ( !v4 ) /*0x4a04b7*/
+  if ( !a3 ) /*0x4a04b7*/
     return -2147467261; /*0x4a04b9*/
   v4 = 0; /*0x4a04c9*/
   if ( !memcmp(a2, &unk_7F7CC0, 0x10u) || !memcmp(a2, &IID_IUnknown, 0x10u) ) /*0x4a04eb*/
     v4 = this; /*0x4a04ef*/
-  *v4 = v4; /*0x4a04f7*/
+  *a3 = v4; /*0x4a04f7*/
   if ( !v4 ) /*0x4a04fa*/
     return -2147467262; /*0x4a0508*/
   (*(void (__stdcall **)(ConnectionPointClass *))(*(unsigned int *)v4->__pad_0 + 4))(v4); /*0x4a04ff*/
@@ -14802,7 +14855,7 @@ void ConnectionPointClass::Release()
     this->ConnectionPointClass_field_0x1C = (int)&(void*)(void*)&VectorClass_tagCONNECTDATA_vftable; /*0x4a0585*/
     if ( ConnectionPointClass_field_0x20 ) /*0x4a058d*/
     {
-      if ( *((unsigned char *)this + 41) ) /*0x4a058f*/
+      if ( this->u32_29 ) /*0x4a058f*/
       {
         RA2_OPDEL(ConnectionPointClass_field_0x20); /*0x4a0597*/
         this->ConnectionPointClass_field_0x20 = 0; /*0x4a059f*/
@@ -14926,7 +14979,7 @@ void CrateClass::FindPlacement()
   int v17; // [esp+20h] [ebp-8h] BYREF
   int v18; // [esp+24h] [ebp-4h] BYREF
 
-  v1 = (unsigned short *)((char *)&this->LevelAndPassabilityStruct2pointer_706); /*0x56bd43*/
+  v1 = (unsigned short *)((char *)&this->q08C6); /*0x56bd43*/
   for ( i = 0; i < 256; ++i ) /*0x56bd5c*/
   {
     if ( *v1 == *(unsigned short *)&g_MissionQueueFrame.waypoints[2134] /*0x56bd67*/
@@ -15061,12 +15114,12 @@ void Dial8Class::Constructor()
   *(unsigned int *)this->__pad_0 = &(void*)(void*)&Dial8Class_vftable; /*0x4a53da*/
   IDA_LOBYTE(v10) = 0; /*0x4a53ed*/
   this->u32_2C = this->Dial8Class_field_0x0C + this->u32_14 / 2; /*0x4a53ef*/
-  this->u32_30 = this->u32_10 + this->u32_18 / 2; /*0x4a53ff*/
+  this->q00C = this->q004 + this->u32_18 / 2; /*0x4a53ff*/
   IDA_HIBYTE(v10) = a7; /*0x4a5406*/
   this->u32_B4 = a7; /*0x4a5408*/
   IDA_LOWORD(a6) = v10; /*0x4a540e*/
   v11 = (((a6 >> 12) + 1) >> 1) & 7; /*0x4a541d*/
-  this->u32_B8 = v11; /*0x4a5420*/
+  *((unsigned int *)this + 46) = v11; /*0x4a5420*/
   this->u32_BC = v11; /*0x4a5426*/
   this->u32_34 = this->u32_2C; /*0x4a5436*/
   v12 = this->u32_30; /*0x4a5439*/
@@ -15074,9 +15127,9 @@ void Dial8Class::Constructor()
   v13 = this->u32_2C; /*0x4a5479*/
   v19 = 56 * a5 / 2 / 100; /*0x4a5486*/
   this->u32_3C = v19 + v13; /*0x4a548d*/
-  *((unsigned int *)this + 18) = v12; /*0x4a5497*/
+  this->u32_48 = v12; /*0x4a5497*/
   this->u32_54 = v13; /*0x4a549c*/
-  this->u32_68 = v12; /*0x4a54a5*/
+  *((unsigned int *)this + 26) = v12; /*0x4a54a5*/
   this->u32_74 = v13; /*0x4a54b8*/
   v16 = v12 - (int)(56 * v7) / 2 / 100; /*0x4a54c8*/
   this->u32_40 = v16; /*0x4a54cc*/
@@ -15084,7 +15137,7 @@ void Dial8Class::Constructor()
   this->u32_44 = v13 + v17; /*0x4a54f4*/
   this->u32_4C = v19 + v13; /*0x4a5502*/
   this->u32_50 = v12 + (int)(56 * v7) / 2 / 100; /*0x4a550f*/
-  *((unsigned int *)this + 22) = v12 + (int)(8 * v7) / 2 / 10; /*0x4a5519*/
+  this->u32_58 = v12 + (int)(8 * v7) / 2 / 10; /*0x4a5519*/
   this->u32_5C = v13 - v19; /*0x4a5528*/
   this->u32_60 = v12 + (int)(56 * v7) / 2 / 100; /*0x4a552b*/
   this->u32_64 = v13 - v17; /*0x4a553a*/
@@ -15150,7 +15203,7 @@ void Dial8Class::SetValue()
     else
     {
       this->u32_BC = v11; /*0x4a5762*/
-      CellClass::Draw((ControlClass *)this, a2, a3, 0); /*0x4a5772*/
+      CellClass::Draw((ControlClass *)this, v5, a3, 0); /*0x4a5772*/
     }
     return 1; /*0x4a5781*/
   }
@@ -15165,7 +15218,6 @@ void Dial8Class::SetValue()
 void Dial8Class::GetValue()
 {
   ControlClass *v5; // ecx
-  ControlClass *v6; // esi
   void *v7; // ecx
   int *p_ControlClass_field_0x08; // edi
   int v9; // ebx
@@ -15187,16 +15239,16 @@ void Dial8Class::GetValue()
   int ControlClass_field_0x0C; // [esp+20h] [ebp-4h] BYREF
   void *retaddr; // [esp+24h] [ebp+0h]
 
-  v6 = v5; /*0x4a57b4*/
+  v5 = v5; /*0x4a57b4*/
   BuildingAnim::GetType(); /*0x4a57b6*/
-  if ( !Control::DispatchClick(v6, (int)this) ) /*0x4a57c6*/
+  if ( !Control::DispatchClick(v5, (int)this) ) /*0x4a57c6*/
     return 0; /*0x4a5944*/
   (*(void (__thiscall **)(void *, int, int, int))(*(unsigned int *)stru_887598.lineTrailer + 12))( /*0x4a57de*/
     stru_887598.lineTrailer,
     a4,
     a3,
     a2);
-  v7 = *(void **)v6[1].__pad_0; /*0x4a57e4*/
+  v7 = *(void **)v5[1].__pad_0; /*0x4a57e4*/
   ControlClass_field_0x0C = v6->ControlClass_field_0x0C; /*0x4a57ea*/
   retaddr = v7; /*0x4a57f1*/
   DrawBuildingTilesSHP(&ControlClass_field_0x0C, 0, 1); /*0x4a5805*/
@@ -15985,19 +16037,19 @@ void DynamicArray::Resize()
   }
   else
   {
-    v21 = (unsigned int *)v21[2]; /*0x624aed*/
+    v21 = (unsigned int *)v7[2]; /*0x624aed*/
     v33 = 0; /*0x624af0*/
     if ( v21 ) /*0x624af7*/
     {
       while ( *v21 != v8 ) /*0x624afb*/
       {
-        v21 = v21; /*0x624afd*/
+        v7 = v21; /*0x624afd*/
         v21 = (unsigned int *)v21[2]; /*0x624aff*/
         if ( !v21 ) /*0x624b04*/
           goto LABEL_21; /*0x624b04*/
       }
       *a3 = v21[1]; /*0x624b10*/
-      v21[2] = v21[2]; /*0x624b15*/
+      v7[2] = v21[2]; /*0x624b15*/
       --this->DynamicArray_field_0x04; /*0x624b1c*/
       RA2_OPDEL(v21); /*0x624b1f*/
       v33 = 1; /*0x624b27*/
@@ -16201,10 +16253,10 @@ void DynamicClass::Insert()
     if ( v10 ) /*0x7aca69*/
       qmemcpy(v9, v10, 108 * *(unsigned int *)this); /*0x7aca7d*/
     RA2_OPDEL(*((void **)this + 2)); /*0x7aca8a*/
-    this->q008 = v9; /*0x7aca9a*/
-    this->q004 = v19; /*0x7aca9d*/
+    this->u32_8 = v17; /*0x7aca9a*/
+    this->u32_4 = v19; /*0x7aca9d*/
   }
-  if ( *(unsigned int *)this >= this->q004 ) /*0x7acaa7*/
+  if ( *(unsigned int *)this >= this->u32_4 ) /*0x7acaa7*/
   {
     v11 = 2 * *(unsigned int *)this; /*0x7acaa9*/
     v20 = v11; /*0x7acaae*/
@@ -16259,6 +16311,7 @@ void DynamicVectorArray::Constructor()
   int v7; // ecx
   unsigned int *v8; // ebp
   unsigned int *v9; // eax
+  int v10; // edx
   DynamicVectorArray v11; // eax
   int v12; // edx
   int v13; // eax
@@ -16276,7 +16329,7 @@ void DynamicVectorArray::Constructor()
     v9 = v6 + 1; /*0x6280ae*/
     if ( a3 - 1 >= 0 ) /*0x6280b0*/
     {
-      a3 = a3; /*0x6280b2*/
+      v10 = a3; /*0x6280b2*/
       do /*0x6280dc*/
       {
         v9[1] = 0; /*0x6280ba*/
@@ -16299,7 +16352,7 @@ void DynamicVectorArray::Constructor()
   {
     v11 = 0; /*0x6280e7*/
   }
-  v12 = *((unsigned int *)this + 2); /*0x6280e9*/
+  v12 = this->u32_8; /*0x6280e9*/
   *this = v11; /*0x6280ec*/
   v13 = 0; /*0x6280ee*/
   if ( v12 > 0 ) /*0x6280f2*/
@@ -16762,15 +16815,15 @@ void Function::Method_4B4D60()
 {
   int result; // eax
 
-  result = *this; /*0x4b4d60*/
-  if ( *this ) /*0x4b4d60*/
+  result = *(unsigned int *)this->__pad_0; /*0x4b4d60*/
+  if ( *(unsigned int *)this->__pad_0 ) /*0x4b4d60*/
     return (*(int (__stdcall **)(int))(*(unsigned int *)result + 8))(result); /*0x4b4d69*/
   return result; /*0x4b4d6c*/
 }
 // 0x6342d0
 void Function::Method_6342D0()
 {
-  return **(unsigned int **)(this->vtable2 + 4 * a2); /*0x6342dc*/
+  return **(unsigned int **)(this->Function_field_0x04 + 4 * a2); /*0x6342dc*/
 }
 // 0x4e5ac0
 void GDlg::LoadLetterStrings()
@@ -16788,9 +16841,9 @@ void GDlg::LoadLetterStrings()
 // 0x4e2580
 void GaugeClass::SetValue()
 {
-  if ( a2 == this->nextObject ) /*0x4e2589*/
+  if ( a2 == this->q00C ) /*0x4e2589*/
     return 0; /*0x4e259b*/
-  *((unsigned int *)this + 12) = a2; /*0x4e258b*/
+  this->q00C = a2; /*0x4e258b*/
   (*(void (__thiscall **)(GaugeClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x4e2590*/
   return 1; /*0x4e2598*/
 }
@@ -16836,7 +16889,7 @@ void GaugeClass::GetRange()
     GaugeClass_field_0x14 = this->GaugeClass_field_0x18; /*0x4e2601*/
   }
   v3 = GaugeClass_field_0x14 - 2; /*0x4e2608*/
-  if ( v3 >= 0 ) /*0x4e2611*/
+  if ( v7 >= 0 ) /*0x4e2611*/
   {
     if ( v3 > v3 ) /*0x4e2633*/
       v3 = v3; /*0x4e2635*/
@@ -17726,11 +17779,11 @@ void IntVector::Copy()
     return this->__pad_0; /*0x477b80*/
   VectorClass::Destroy((int)this); /*0x477b82*/
   v3 = a2[2]; /*0x477b88*/
-  this->u32_8 = v3; /*0x477b8d*/
+  this->Capacity = v3; /*0x477b8d*/
   if ( !v3 ) /*0x477b90*/
   {
     this->IntVector_field_0x04 = 0; /*0x477bce*/
-    this->u32_D = 0; /*0x477bd1*/
+    this->IsAllocated = 0; /*0x477bd1*/
     return this->__pad_0; /*0x477bd4*/
   }
   v4 = RA2_OPNEW(4 * v3); /*0x477b96*/
@@ -18181,7 +18234,7 @@ void LCWPipe_Destru::QueryInterface()
   v3 = (void *)this->u32_14; /*0x552393*/
   *(unsigned int *)this->__pad_0 = &(void*)(void*)&LCWPipe_vftable; /*0x552396*/
   RA2_OPDEL(v3); /*0x55239d*/
-  v4 = (void *)*((unsigned int *)this + 6); /*0x5523a2*/
+  v4 = (void *)this->u32_18; /*0x5523a2*/
   this->u32_14 = 0; /*0x5523a5*/
   RA2_OPDEL(v4); /*0x5523ad*/
   this->u32_18 = 0; /*0x5523b7*/
@@ -18243,7 +18296,7 @@ void LZOPipe::Constructor()
   this->q004 = 0; /*0x55c2bf*/
   this->u32_14 = 0; /*0x55c2c2*/
   this->u32_18 = 0; /*0x55c2c5*/
-  *((unsigned int *)this + 3) = a2; /*0x55c2cc*/
+  this->u32_C = a2; /*0x55c2cc*/
   this->u32_1C = a3; /*0x55c2cf*/
   *(unsigned int *)this->__pad_0 = &(void*)(void*)&LZOPipe_vftable; /*0x55c2d5*/
   this->u32_20 = a3; /*0x55c2dc*/
@@ -18323,11 +18376,11 @@ void LZOPipe_Destru::QueryInterface()
   void *v3; // eax
   void *v4; // ecx
 
-  v3 = (void *)this->u32_14; /*0x55c6d3*/
+  v3 = (void *)this->ptr_14; /*0x55c6d3*/
   *(unsigned int *)this->__pad_0 = &(void*)(void*)&LZOPipe_vftable; /*0x55c6d6*/
   RA2_OPDEL(v3); /*0x55c6dd*/
   v4 = (void *)this->u32_18; /*0x55c6e2*/
-  this->u32_14 = 0; /*0x55c6e5*/
+  this->ptr_14 = 0; /*0x55c6e5*/
   RA2_OPDEL(v4); /*0x55c6ed*/
   this->u32_18 = 0; /*0x55c6f7*/
   Pipe::Dtor((Pipe *)this); /*0x55c6fe*/
@@ -18338,18 +18391,18 @@ void LZOPipe_Destru::QueryInterface()
 // 0x55c720
 void LZOStraw::Constructor()
 {
-  this->u32_1C = a3; /*0x55c72f*/
-  this->u32_20 = a3; /*0x55c732*/
+  this->q070 = a3; /*0x55c72f*/
+  this->ptr_20 = a3; /*0x55c732*/
   this->LZOStraw_field_0x04 = 0; /*0x55c737*/
   this->u32_8 = 0; /*0x55c73b*/
   this->u32_C = a2; /*0x55c73e*/
-  this->q004 = 0; /*0x55c741*/
-  this->u32_14 = 0; /*0x55c744*/
+  this->q010 = 0; /*0x55c741*/
+  this->ptr_14 = 0; /*0x55c744*/
   this->u32_18 = 0; /*0x55c747*/
   *(unsigned int *)this->__pad_0 = &(void*)(void*)&LZOStraw_vftable; /*0x55c74a*/
-  this->u32_14 = RA2_OPNEW(2 * a3); /*0x55c75a*/
+  this->ptr_14 = RA2_OPNEW(2 * a3); /*0x55c75a*/
   if ( !a2 ) /*0x55c75d*/
-    this->u32_18 = RA2_OPNEW(this->u32_1C + this->u32_20); /*0x55c770*/
+    this->u32_18 = RA2_OPNEW(this->q070 + this->ptr_20); /*0x55c770*/
   return this->__pad_0; /*0x55c775*/
 }
 // 0x55c780
@@ -18721,7 +18774,7 @@ void MPCombatTeam::AddToList()
 
   v3 = WideString::GetOrEmpty_Alt((wchar_t **)(this + 4)); /*0x5d8d19*/
   v4 = SendMessageA(hWnd, 0x143u, 0, (LPARAM)v3); /*0x5d8d33*/
-  SendMessageA(hWnd, 0x151u, v4, this->q008); /*0x5d8d40*/
+  SendMessageA(hWnd, 0x151u, v4, this->u32_8); /*0x5d8d40*/
   return v4; /*0x5d8d44*/
 }
 // 0x5c9b10
@@ -19005,12 +19058,13 @@ void MSBinkAnim::Stop()
 {
   BinkMovieHandle *v1; // ecx
 
-  v1 = (BinkMovieHandle *)*((unsigned int *)this + 7); /*0x5cc880*/
+  v1 = (BinkMovieHandle *)this->u32_1C; /*0x5cc880*/
   return !v1 || (uint8_t)BinkMovie::IsAtEnd(v1); /*0x5cc892*/
 }
 // 0x5cc8a0
 void MSBinkAnim::Load()
 {
+  int v3; // ebp
   BinkMovieHandle *v6; // ecx
   unsigned int *v7; // edx
   int v8; // eax
@@ -19025,21 +19079,21 @@ void MSBinkAnim::Load()
     return 1; /*0x5cc8bb*/
   if ( !(uint8_t)BinkMovie::IsAtEnd(v6) && BinkMovie::RenderFrameToSurface(*((BinkMovieHandle **)this + 7)) ) /*0x5cc8cd*/
   {
-    (*(void (__thiscall **)(MSBinkAnim *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 20))(this, v3, 0); /*0x5cc8df*/
-    a3 = a3; /*0x5cc8e2*/
+    (*(void (__thiscall **)(MSBinkAnim *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 20))(this, a2, 0); /*0x5cc8df*/
+    v7 = a3; /*0x5cc8e2*/
     a2 = (int)this; /*0x5cc8eb*/
     *a3 = this->u32_24; /*0x5cc8f1*/
-    a3[1] = this->q00A; /*0x5cc8f6*/
-    a3[2] = this->u32_2C; /*0x5cc8fc*/
-    a3[3] = this->q00C; /*0x5cc907*/
-    a2 = (*(int (__thiscall **)(unsigned int, int *))(**((unsigned int **)&this->u32_43) + 16))(this->u32_34, &a2); /*0x5cc912*/
-    v8 = this->u32_34; /*0x5cc916*/
+    v7[1] = this->u32_28; /*0x5cc8f6*/
+    v7[2] = this->u32_2C; /*0x5cc8fc*/
+    v7[3] = this->u32_30; /*0x5cc907*/
+    a2 = (*(int (__thiscall **)(unsigned int, int *))(**((unsigned int **)&this->q0043) + 16))(this->u32_34, &a2); /*0x5cc912*/
+    v8 = *((unsigned int *)this + 13); /*0x5cc916*/
     for ( i = 0; i < *(unsigned int *)(v8 + 16); ++i ) /*0x5cc920*/
     {
       if ( i != a2 ) /*0x5cc926*/
       {
         v10 = *(unsigned int *)(*(unsigned int *)(v8 + 4) + 4 * i); /*0x5cc92d*/
-        (*(void (__thiscall **)(int, int, char *))(*(unsigned int *)v10 + 20))(v10, v3, (char *)this + 36); /*0x5cc932*/
+        (*(void (__thiscall **)(int, int, char *))(*(unsigned int *)v10 + 20))(v10, v3, (char *)&this->q00C6); /*0x5cc932*/
       }
       v8 = this->u32_34; /*0x5cc935*/
     }
@@ -19062,7 +19116,7 @@ void MSBinkAnim::QueryInterface()
 {
   BinkMovie *v3; // edi
 
-  v3 = (BinkMovie *)*((unsigned int *)this + 7); /*0x5cec74*/
+  v3 = (BinkMovie *)this->u32_1C; /*0x5cec74*/
   *(unsigned int *)this->__pad_0 = &(void*)(void*)&MSBinkAnim_vftable; /*0x5cec77*/
   if ( v3 ) /*0x5cec7f*/
   {
@@ -19149,7 +19203,7 @@ void MSBitPrintAnim::SetText()
   a3[1] = this->u32_24; /*0x5cd4a6*/
   a3[2] = this->u32_28; /*0x5cd4ac*/
   a3[3] = this->u32_2C; /*0x5cd4b4*/
-  return this->u32_30 == 0; /*0x5cd4bf*/
+  return this->q00C == 0; /*0x5cd4bf*/
 }
 // 0x5cd4d0
 void MSBitPrintAnim::Draw()
@@ -19168,7 +19222,7 @@ void MSBitPrintAnim::Draw()
   char v15; // [esp-14h] [ebp-28h]
   unsigned int v16[4]; // [esp+4h] [ebp-10h] BYREF
 
-  result = g_GameFontObject; /*0x5cd4d0*/
+  g_GameFontObject = g_GameFontObject; /*0x5cd4d0*/
   if ( g_GameFontObject && g_FogOfWarState ) /*0x5cd4eb*/
   {
     v5 = a3; /*0x5cd4ed*/
@@ -19191,7 +19245,6 @@ void MSBitPrintAnim::Draw()
     v10 = WideString::GetOrEmpty((wchar_t **)this + 7); /*0x5cd549*/
     return Font::Print((int)g_FogOfWarState, a2, v10, v11, v12, v13, v14, v15, 0, 0); /*0x5cd560*/
   }
-  return result; /*0x5cd567*/
 }
 // 0x5cf8e0
 void MSChoiceClass::LoadFromINI()
@@ -19598,7 +19651,7 @@ void MSFont::Constructor_MSFont()
       v2 += 8; /*0x5d2e57*/
     }
     while ( (int)v2 < (int)&g_MissionQueueFrame.overParTitle[26] ); /*0x5d2e5f*/
-    v3 = (void (__thiscall ***)(unsigned int, int))this->q018; /*0x5d2e61*/
+    v3 = (void (__thiscall ***)(unsigned int, int))this->u32_18; /*0x5d2e61*/
     if ( v3 ) /*0x5d2e66*/
       (**v3)(v3, 1); /*0x5d2e6c*/
     if ( this->MSFont_field_0x14 ) /*0x5d2e6e*/
@@ -19607,7 +19660,7 @@ void MSFont::Constructor_MSFont()
         RA2_OPDEL((void *)this->MSFont_field_0x14); /*0x5d2e7c*/
     }
     this->MSFont_field_0x14 = 0; /*0x5d2e84*/
-    this->u32_1C = 0; /*0x5d2e87*/
+    this->q070 = 0; /*0x5d2e87*/
   }
 }
 // 0x5d3170
@@ -19732,7 +19785,7 @@ short MSFont::ddtor(int a2, unsigned short *a3, int a4, int a5, int a6)
   unsigned char v19[16]; // [esp+28h] [ebp-10h] BYREF
 
   IDA_HIWORD(v8) = IDA_HIWORD(a4); /*0x5d3333*/
-  a3 = a3; /*0x5d3338*/
+  v6 = a3; /*0x5d3338*/
   v16 = a4; /*0x5d333c*/
   IDA_LOWORD(v8) = *a3; /*0x5d3343*/
   if ( *a3 ) /*0x5d3343*/
@@ -19741,15 +19794,15 @@ short MSFont::ddtor(int a2, unsigned short *a3, int a4, int a5, int a6)
     {
       if ( (unsigned short)v8 == 10 ) /*0x5d3355*/
       {
-        v8 = this->MSFont_field_0x08 + v8; /*0x5d3362*/
+        v8 = this->MSFont_field_0x08 + a5; /*0x5d3362*/
         v16 = a4; /*0x5d3364*/
-        v8 = v8; /*0x5d3368*/
+        a5 = v8; /*0x5d3368*/
       }
       else
       {
         if ( (uint16_t)v8 > 0x20u ) /*0x5d3375*/
         {
-          szSrc = *(unsigned char *)a3; /*0x5d3389*/
+          szSrc = *(unsigned char *)v6; /*0x5d3389*/
           CharToOemBuffA(&szSrc, &szDst, 1u); /*0x5d338d*/
           v9 = szDst - 33; /*0x5d3398*/
           if ( szDst == 33 ) /*0x5d339d*/
@@ -19762,7 +19815,7 @@ short MSFont::ddtor(int a2, unsigned short *a3, int a4, int a5, int a6)
           }
           v10 = 3 * v9; /*0x5d33af*/
           v11 = *Building::GetFoundationSize(v18, 3 * v9 + 2); /*0x5d33cb*/
-          v17[1] = v8; /*0x5d33e2*/
+          v17[1] = a5; /*0x5d33e2*/
           v17[0] = v16 - v11; /*0x5d33e7*/
           v12 = (int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)a2 + 120))(a2, v19); /*0x5d33fa*/
           v8 = DrawToSurfaceSHP( /*0x5d3413*/
@@ -20036,7 +20089,7 @@ void MSOverlayAnim::Draw()
   v16 = v5; /*0x5cbbe7*/
   if ( (v7 & 0x200) != 0 ) /*0x5cbbeb*/
   {
-    v8 = this->u32_1C; /*0x5cbbed*/
+    v8 = this->u32_7; /*0x5cbbed*/
     v15 = *(int16_t *)(v8 + 2) / -2 + v6; /*0x5cbbfd*/
     v16 = *(int16_t *)(v8 + 4) / -2 + v5; /*0x5cbc10*/
   }
@@ -20054,17 +20107,17 @@ void MSOverlayAnim::Draw()
       v11 = this->u32_38; /*0x5cbc5f*/
       v14[0] = this->MSShapeAnim_field_0x04; /*0x5cbc6b*/
       IDA_BYTE1(v11) |= 4u; /*0x5cbc73*/
-      v13 = v11; /*0x5cbc77*/
+      v11 = v11; /*0x5cbc77*/
       v14[1] = this->u32_8; /*0x5cbc78*/
       v12 = (int *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)v7 + 120))(v7, v19); /*0x5cbc85*/
       DrawToSurfaceSHP( /*0x5cbc9b*/
         v7,
         this->u32_20,
-        this->u32_1C,
+        this->u32_7,
         this->u32_28,
         v14,
         v12,
-        v13,
+        v11,
         0,
         0,
         0,
@@ -20095,7 +20148,7 @@ void MSOverlayAnim::Update()
   v7 = this->MSShapeAnim_field_0x04 + *FoundationSize; /*0x5cbcdd*/
   if ( (this->u32_7 & 0x200) != 0 ) /*0x5cbce5*/
   {
-    v8 = this->u32_1C; /*0x5cbce7*/
+    v8 = this->u32_7; /*0x5cbce7*/
     v7 += *(int16_t *)(v8 + 2) / -2; /*0x5cbcf5*/
     v4 += *(int16_t *)(v8 + 4) / -2; /*0x5cbd02*/
   }
@@ -20123,8 +20176,8 @@ void MSOverlayAnim::Init()
   this->u32_3C = 0; /*0x5cc294*/
   *(unsigned int *)this->__pad_0 = &(void*)(void*)&MSShapeAnim_vftable; /*0x5cc296*/
   FileClassToBuffer = LoadFileClassToBuffer(v7, (bool *)this + 60); /*0x5cc29c*/
-  this->u32_1C = FileClassToBuffer; /*0x5cc2a1*/
-  this->u32_2C = 0; /*0x5cc2a4*/
+  this->u32_7 = FileClassToBuffer; /*0x5cc2a1*/
+  *((unsigned int *)this + 11) = 0; /*0x5cc2a4*/
   v12 = *(int16_t *)(FileClassToBuffer + 6); /*0x5cc2a7*/
   this->u32_48 = a8; /*0x5cc2b4*/
   this->u32_30 = v12 - 1; /*0x5cc2bb*/
@@ -20133,7 +20186,7 @@ void MSOverlayAnim::Init()
   *(unsigned int *)this->__pad_0 = &(void*)(void*)&MSOverlayAnim_vftable; /*0x5cc2ca*/
   this->u32_28 = a9; /*0x5cc2d0*/
   if ( !a10 ) /*0x5cc2d3*/
-    *((unsigned int *)this + 16) = 4; /*0x5cc2d5*/
+    this->u32_40 = 4; /*0x5cc2d5*/
   return this; /*0x5cc2de*/
 }
 // 0x5ceac0
@@ -20163,7 +20216,7 @@ void MSPCXAnim::Construct()
   this->MSPCXAnim_field_0x18 = 0; /*0x5ce677*/
   *(unsigned int *)this->__pad_0 = &(void*)(void*)&MSAnim_vftable; /*0x5ce67a*/
   v6 = (MSPCXAnim *)((char *)&this->q0044); /*0x5ce685*/
-  this->u32_1C = DSurface_Alternate; /*0x5ce688*/
+  this->u32_7 = DSurface_Alternate; /*0x5ce688*/
   this->u32_20 = a3; /*0x5ce68b*/
   this->u32_24 = 0; /*0x5ce68e*/
   this->u32_28 = a5; /*0x5ce691*/
@@ -20191,9 +20244,9 @@ void MSPCXAnim::Construct()
         *(unsigned int *)v6->__pad_0 = *v9; /*0x5ce72f*/
         this->u32_30 = v9[1]; /*0x5ce734*/
         this->u32_34 = v9[2]; /*0x5ce73a*/
-        this->u32_38 = v9[3]; /*0x5ce740*/
+        *((unsigned int *)this + 14) = v9[3]; /*0x5ce740*/
         *(unsigned int *)v6->__pad_0 = *a4; /*0x5ce74c*/
-        v10 = *((unsigned int *)this + 7); /*0x5ce751*/
+        v10 = this->u32_1C; /*0x5ce751*/
         this->u32_30 = a4[1]; /*0x5ce754*/
         (*(void (__thiscall **)(int, unsigned char *))(*(unsigned int *)v10 + 120))(v10, v13); /*0x5ce75e*/
       }
@@ -20910,8 +20963,6 @@ void MSVQAnim::ConstructMSVQAnimHidden()
   int *v17; // edi
   int v18; // edi
   int v19; // eax
-  int *v20; // ebp
-  char **v21; // eax
   int v23; // [esp-8h] [ebp-84h]
   CCFileClass v24; // [esp+10h] [ebp-6Ch] BYREF
   int v25[3]; // [esp+68h] [ebp-14h] BYREF
@@ -20962,15 +21013,15 @@ void MSVQAnim::ConstructMSVQAnimHidden()
     unknown_libname_73(&a5); /*0x5ccd89*/
     String::Tokenize((String *)v12, 0, asc_826598, (void **)&a5); /*0x5ccd9f*/
     v21 = String::Concat2((String *)&a5, (char **)&a2, g_Str_File__PCX); /*0x5ccdb8*/
-    CCFileClass::Construct2(&a2, v21); /*0x5ccdc2*/
+    CCFileClass::Construct2(&v24, v21); /*0x5ccdc2*/
     DeleteAndZero((ObjectClass *)&a2); /*0x5ccdce*/
-    if ( (uint8_t)CCFileClass::Open(&a2, 0) ) /*0x5ccdd9*/
-      this->u32_28 = DecodeFrameSHP((int)&a2, 0, 0, 0); /*0x5ccdf1*/
-    *(unsigned int *)a2.__pad_0 = &(void*)(void*)&CCFileClass_vftable; /*0x5ccdf8*/
+    if ( (uint8_t)CCFileClass::Open(&v24, 0) ) /*0x5ccdd9*/
+      this->u32_28 = DecodeFrameSHP((int)&v24, 0, 0, 0); /*0x5ccdf1*/
+    *(unsigned int *)v24.__pad_0 = &(void*)(void*)&CCFileClass_vftable; /*0x5ccdf8*/
     v26 = 0; /*0x5cce00*/
-    Vector::Clear((int)v35); /*0x5cce08*/
-    *(unsigned int *)a2.__pad_0 = &off_7E1668; /*0x5cce11*/
-    BufferIOFileClass::Dtor((BufferIOFileClass *)&a2); /*0x5cce19*/
+    Vector::Clear((int)v25); /*0x5cce08*/
+    *(unsigned int *)v24.__pad_0 = &off_7E1668; /*0x5cce11*/
+    BufferIOFileClass::Dtor((BufferIOFileClass *)&v24); /*0x5cce19*/
     DeleteAndZero((ObjectClass *)&a5); /*0x5cce25*/
   }
   return this->__pad_0; /*0x5cce2c*/
@@ -20998,6 +21049,8 @@ void MSVQAnim::Load()
   int v21; // ecx
   int *v22; // eax
   int v23; // ecx
+  int v24; // ebx
+  unsigned int *v25; // ecx
   int v26; // eax
   int v27; // edx
   int v28; // eax
@@ -21024,7 +21077,7 @@ void MSVQAnim::Load()
         v35 = *v22; /*0x5cd00d*/
         v36 = v22[1]; /*0x5cd016*/
         v37 = v22[2]; /*0x5cd01d*/
-        v23 = this->ptr_8; /*0x5cd021*/
+        v23 = this->q008; /*0x5cd021*/
         v38 = v22[3]; /*0x5cd027*/
         (*(void (__thiscall **)(int, int *, unsigned int, int *, unsigned int, int))(*(unsigned int *)v23 + 8))( /*0x5cd03b*/
           v23,
@@ -21033,17 +21086,17 @@ void MSVQAnim::Load()
           &v35,
           0,
           1);
-        a2 = a2; /*0x5cd03e*/
+        v24 = a2; /*0x5cd03e*/
         (*(void (__thiscall **)(MSVQAnim *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 20))(this, a2, 0); /*0x5cd049*/
         v35 = v35; /*0x5cd04c*/
-        v26 = v36; /*0x5cd054*/
+        v36 = v36; /*0x5cd054*/
         a2 = (int)this; /*0x5cd058*/
         *v35 = v35; /*0x5cd05c*/
-        v27 = v37; /*0x5cd05e*/
-        v25[1] = v26; /*0x5cd062*/
-        v28 = v38; /*0x5cd065*/
-        v25[2] = v27; /*0x5cd069*/
-        v25[3] = v28; /*0x5cd06c*/
+        v37 = v37; /*0x5cd05e*/
+        v35[1] = v36; /*0x5cd062*/
+        v38 = v38; /*0x5cd065*/
+        v35[2] = v37; /*0x5cd069*/
+        v35[3] = v38; /*0x5cd06c*/
         v29 = (*(int (__thiscall **)(unsigned int, int *))(**((unsigned int **)this + 9) + 16))(this->u32_24, &a2); /*0x5cd07c*/
         v30 = this->u32_24; /*0x5cd07e*/
         for ( i = 0; i < *(unsigned int *)(v30 + 16); ++i ) /*0x5cd088*/
@@ -21068,7 +21121,7 @@ void MSVQAnim::Load()
   if ( !v5 ) /*0x5cceae*/
   {
     v6 = Entity_Load(MSVQAnim_field_0x1C, (unsigned char *)&v34 + 3); /*0x5cceb8*/
-    v7 = a3; /*0x5ccebd*/
+    v7 = v35; /*0x5ccebd*/
     v8 = a2; /*0x5ccec1*/
     if ( v6 == 1 ) /*0x5ccec7*/
     {
@@ -21159,7 +21212,7 @@ void MSVQAnim::Play()
   v15 = this; /*0x5cd0ea*/
   if ( !MSVQAnim_field_0x1C || this->u32_2D ) /*0x5cd0f4*/
     return; /*0x5cd0f9*/
-  if ( !a3 ) /*0x5cd105*/
+  if ( !v35 ) /*0x5cd105*/
   {
   LABEL_28:
     (*(void (__thiscall **)(int, int, DSurface *, int, unsigned int, int))(*(unsigned int *)a2 + 8))( /*0x5cd217*/
@@ -21177,21 +21230,21 @@ void MSVQAnim::Play()
   v7 = v5[1]; /*0x5cd125*/
   v8 = v5[2]; /*0x5cd128*/
   v9 = v5[3]; /*0x5cd12b*/
-  v19 = (int *)a3[2]; /*0x5cd133*/
-  if ( a3[2] <= 0 ) /*0x5cd137*/
+  v19 = (int *)v35[2]; /*0x5cd133*/
+  if ( v35[2] <= 0 ) /*0x5cd137*/
     goto LABEL_23; /*0x5cd137*/
-  v14 = a3[3]; /*0x5cd142*/
+  v14 = v35[3]; /*0x5cd142*/
   if ( v14 <= 0 || v5[2] <= 0 || v5[3] <= 0 ) /*0x5cd15c*/
     goto LABEL_23; /*0x5cd15c*/
-  v10 = *a3; /*0x5cd162*/
-  if ( v6 < *a3 ) /*0x5cd166*/
+  v10 = *v35; /*0x5cd162*/
+  if ( v6 < *v35 ) /*0x5cd166*/
   {
     v8 += v6 - v10; /*0x5cd16a*/
-    v6 = *a3; /*0x5cd16c*/
+    v6 = *v35; /*0x5cd16c*/
   }
   if ( v8 < 1 ) /*0x5cd171*/
     goto LABEL_21; /*0x5cd171*/
-  v11 = a3[1]; /*0x5cd173*/
+  v11 = v35[1]; /*0x5cd173*/
   if ( v7 < v11 ) /*0x5cd17c*/
   {
     v9 += v7 - v11; /*0x5cd180*/
@@ -21671,6 +21724,7 @@ void MovieClass::ReadConfig()
   wchar_t *StringCSF; // eax
   LRESULT v10; // eax
   int v11; // eax
+  LPARAM v12; // esi
   LRESULT v13; // eax
   int v14; // [esp-8h] [ebp-20h]
   int v15; // [esp+10h] [ebp-8h]
@@ -21712,15 +21766,15 @@ void MovieClass::ReadConfig()
               v11 = SideClass::FindByName(*(SideClass **)(*(unsigned int *)(*(unsigned int *)(*((unsigned int *)hDlg + 5) + 4 * nIDDlgItem) /*0x5c24a6*/
                                                                     + 4)
                                                         + 4 * v4));
-              v11 = v11; /*0x5c24ab*/
+              v12 = v11; /*0x5c24ab*/
               if ( v11 >= 0 && v11 < v15 ) /*0x5c24b5*/
               {
                 v13 = SendMessageA(DlgItem, 0x4C2u, 0, *(unsigned int *)(*((unsigned int *)unk_A83C9C + v11) + 96)); /*0x5c24cb*/
-                SendMessageA(DlgItem, 0x151u, v13, v11); /*0x5c24d5*/
+                SendMessageA(DlgItem, 0x151u, v13, v12); /*0x5c24d5*/
               }
               ++v4; /*0x5c24db*/
             }
-            while ( v4 < v8 ); /*0x5c24de*/
+            while ( v4 < v16 ); /*0x5c24de*/
           }
           SendMessageA(DlgItem, 0x14Eu, 0, 0); /*0x5c24ea*/
           return ShowWindow(DlgItem, 5); /*0x5c24ef*/
@@ -21816,7 +21870,7 @@ void MovieClass::RenderLoop()
       {
         v8 = 1; /*0x759b2a*/
         if ( this->u32_1450 && !this->u32_1540 ) /*0x759b33*/
-          ProcessAudioStreamPipeline(this->u32_200, 2, 0); /*0x759b47*/
+          ProcessAudioStreamPipeline(*((unsigned int *)this + 128), 2, 0); /*0x759b47*/
         this->u32_1540 = 1; /*0x759b51*/
         Debug::Log(); /*0x759b58*/
       }
@@ -21825,7 +21879,7 @@ void MovieClass::RenderLoop()
         v4 = ProcessAudioStreamPipeline(this->u32_200, 1, 0); /*0x759acd*/
         if ( v4 >= 0 ) /*0x759ad1*/
         {
-          if ( *(this + 1320) ) /*0x759ad7*/
+          if ( this->u32_14A0 ) /*0x759ad7*/
           {
             this->q204.CreateSurfacePalette(); /*0x759ae5*/
             this->u32_14A0 = 0; /*0x759aea*/
@@ -22833,7 +22887,7 @@ void PacketQueue::ExtractEntry()
   unsigned int *v10; // ecx
   int i; // ecx
 
-  if ( !*((unsigned int *)this + 10) ) /*0x48b576*/
+  if ( !this->u32_28 ) /*0x48b576*/
     return 0; /*0x48b576*/
   v8 = this->u32_24 + 36 * *(unsigned int *)(this->u32_30 + 4 * a4); /*0x48b58f*/
   if ( (*(unsigned char *)v8 & 1) == 0 ) /*0x48b595*/
@@ -22855,7 +22909,7 @@ void PacketQueue::ExtractEntry()
   *(unsigned int *)(this->u32_24 + 36 * *(unsigned int *)(this->u32_30 + 4 * a4)) &= ~2u; /*0x48b65e*/
   v10 = (unsigned int *)(this->u32_24 + 36 * *(unsigned int *)(this->u32_30 + 4 * a4)); /*0x48b66e*/
   *v10 &= ~4u; /*0x48b676*/
-  *(unsigned int *)(*((unsigned int *)this + 9) + 36 * *(unsigned int *)(*((unsigned int *)this + 12) + 4 * a4) + 4) = 0; /*0x48b684*/
+  *(unsigned int *)(this->u32_24 + 36 * *(unsigned int *)(this->u32_30 + 4 * a4) + 4) = 0; /*0x48b684*/
   *(unsigned int *)(this->u32_24 + 36 * *(unsigned int *)(this->u32_30 + 4 * a4) + 8) = 0; /*0x48b694*/
   *(unsigned int *)(this->u32_24 + 36 * *(unsigned int *)(this->u32_30 + 4 * a4) + 12) = 0; /*0x48b6a4*/
   *(unsigned int *)(this->u32_24 + 36 * *(unsigned int *)(this->u32_30 + 4 * a4) + 16) = 0; /*0x48b6b4*/
@@ -23777,8 +23831,8 @@ void PrintTimerOnTactical::Start()
   }
   v26 = 0; /*0x6d4c68*/
   Text::Layout(Instance, v35, &v26, 0, g_Map_VisibleRectOffset); /*0x6d4c70*/
-  v9 = a2; /*0x6d4c77*/
-  v10 = a2; /*0x6d4c7b*/
+  v9 = v28; /*0x6d4c77*/
+  v10 = v28; /*0x6d4c7b*/
   if ( !a3 && a5 && a6 ) /*0x6d4c93*/
   {
     IDA_LODWORD(v11) = Audio::Callback(); /*0x6d4c95*/
@@ -24123,17 +24177,17 @@ void RateScaler::Init()
   int v4; // ecx
   int v5; // [esp+8h] [ebp-Ch]
 
-  IDA_LOBYTE(result) = this->u32_18; /*0x4a51f6*/
-  if ( (unsigned char)result || this->u32_19 != 1 ) /*0x4a5201*/
+  IDA_LOBYTE(result) = this->q018; /*0x4a51f6*/
+  if ( (unsigned char)result || this->q064 != 1 ) /*0x4a5201*/
   {
-    this->u32_18 = 1; /*0x4a520d*/
+    this->q018 = 1; /*0x4a520d*/
     *(double *)this->__tail_0 = a2 * 900.0; /*0x4a5211*/
     IDA_LOWORD(result) = Math::RoundToInt(a2 * 900.0); /*0x4a5213*/
     v4 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x4a5218*/
-    this->u32_19 = 1; /*0x4a5221*/
-    this->u32_8 = v4; /*0x4a5225*/
-    this->u32_C = v5; /*0x4a522b*/
-    this->u32_10 = result; /*0x4a522e*/
+    this->q064 = 1; /*0x4a5221*/
+    this->q008 = v4; /*0x4a5225*/
+    this->q00C = v5; /*0x4a522b*/
+    this->q040 = result; /*0x4a522e*/
     this->u32_14 = result; /*0x4a5231*/
   }
   return result; /*0x4a5234*/
@@ -24295,36 +24349,36 @@ void ScoutVector::Construct()
 {
   int v4; // eax
   int v5; // ecx
-  char *v7; // eax
-  char *v8; // ecx
+  int v7; // eax
+  int v8; // ecx
   int v9; // edx
 
-  *(this + 1) = 0; /*0x51078d*/
-  this->vtable3 = a2; /*0x510790*/
-  this->vtable4 = 1; /*0x510793*/
-  this->q034 = 0; /*0x510797*/
-  *this = &(void*)(void*)&VectorClass_ScoutStruct_vftable; /*0x51079a*/
+  *((unsigned int *)this + 1) = 0; /*0x51078d*/
+  *((unsigned int *)this + 2) = a2; /*0x510790*/
+  *((unsigned char *)this + 12) = 1; /*0x510793*/
+  *((unsigned char *)this + 13) = 0; /*0x510797*/
+  *this = (ScoutVector)&(void*)(void*)&VectorClass_ScoutStruct_vftable; /*0x51079a*/
   if ( !a2 ) /*0x5107a0*/
     return this; /*0x5107a0*/
   if ( !a3 ) /*0x5107a8*/
   {
-    v7 = (char *)RA2_OPNEW(8 * a2); /*0x5107d2*/
+    v7 = RA2_OPNEW(8 * a2); /*0x5107d2*/
     if ( v7 ) /*0x5107dc*/
     {
       v8 = v7; /*0x5107e1*/
       if ( a2 - 1 >= 0 ) /*0x5107e5*/
       {
-        a2 = a2; /*0x5107e7*/
+        v9 = a2; /*0x5107e7*/
         do /*0x5107f1*/
         {
           *(unsigned int *)v8 = 0; /*0x5107e8*/
-          v8[4] = 0; /*0x5107ea*/
+          *(unsigned char *)(v8 + 4) = 0; /*0x5107ea*/
           v8 += 8; /*0x5107ed*/
-          --a2; /*0x5107f0*/
+          --v9; /*0x5107f0*/
         }
-        while ( a2 ); /*0x5107f1*/
-        this->vtable2 = v7; /*0x5107f3*/
-        this->q034 = 1; /*0x5107f6*/
+        while ( v9 ); /*0x5107f1*/
+        this->q004 = v7; /*0x5107f3*/
+        this->u8_D = 1; /*0x5107f6*/
         return this; /*0x5107ff*/
       }
     }
@@ -24332,11 +24386,11 @@ void ScoutVector::Construct()
     {
       v7 = 0; /*0x510802*/
     }
-    *(this + 1) = v7; /*0x510804*/
-    *((unsigned char *)this + 13) = 1; /*0x510807*/
+    this->q004 = v7; /*0x510804*/
+    this->u32_D = 1; /*0x510807*/
     return this; /*0x51080b*/
   }
-  v4 = a3; /*0x5107ad*/
+  a3 = a3; /*0x5107ad*/
   if ( a2 - 1 >= 0 ) /*0x5107b1*/
   {
     v5 = a2; /*0x5107b3*/
@@ -24349,7 +24403,7 @@ void ScoutVector::Construct()
     }
     while ( v5 ); /*0x5107bd*/
   }
-  *(this + 1) = a3; /*0x5107bf*/
+  this->u32_4 = a3; /*0x5107bf*/
   return this; /*0x5107c4*/
 }
 // 0x660b80
@@ -24360,7 +24414,7 @@ void ScriptActionQueue::PushNext()
   dword_B04D88 = (dword_B04D88 + 1) % 8; /*0x660b92*/
   result = dword_B04D88; /*0x660b91*/
   dword_B04D48[dword_B04D88] = (int)*this; /*0x660b99*/
-  dword_B04DD8 = result; /*0x660ba0*/
+  result = result; /*0x660ba0*/
   return result; /*0x660ba5*/
 }
 // 0x63eb80
@@ -24910,7 +24964,7 @@ void SortedArray::BinarySearch2()
   int v8; // esi
   char *v9; // edx
 
-  v3 = this->Items; /*0x52b215*/
+  v3 = this->q004; /*0x52b215*/
   if ( !v3 ) /*0x52b21b*/
     return &unk_B78830; /*0x52b21b*/
   v4 = *(unsigned int **)(&this->q0046); /*0x52b21d*/
@@ -25025,18 +25079,18 @@ void SortedStateVector::BinarySearch()
   int v6; // ecx
   int v7; // esi
 
-  result = this->vtable2; /*0x7107e3*/
+  result = this->u32_4; /*0x7107e3*/
   if ( result ) /*0x7107e8*/
   {
-    if ( !this->q00C ) /*0x7107ee*/
+    if ( !this->u32_C ) /*0x7107ee*/
     {
       qsort(*(void **)this, result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)sub_710860); /*0x710800*/
-      this->q010 = 0; /*0x710808*/
-      this->q00C = 1; /*0x71080f*/
+      this->u32_10 = 0; /*0x710808*/
+      this->u32_C = 1; /*0x71080f*/
     }
     v4 = *this; /*0x710819*/
     v5 = *a2; /*0x71081b*/
-    v6 = this->q004; /*0x71081d*/
+    v6 = this->u32_4; /*0x71081d*/
     if ( v6 <= 0 ) /*0x710822*/
       return 0; /*0x71084e*/
     while ( 1 ) /*0x71082b*/
@@ -25068,10 +25122,10 @@ void SortedVector::BinarySearch()
   int v6; // ecx
   int v7; // esi
 
-  result = this->q004; /*0x55f6e3*/
+  result = this->u32_4; /*0x55f6e3*/
   if ( result ) /*0x55f6e8*/
   {
-    if ( !this->q00C ) /*0x55f6ee*/
+    if ( !this->u32_C ) /*0x55f6ee*/
     {
       qsort(*(void **)this, result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x55f700*/
       this->q010 = 0; /*0x55f708*/
@@ -25217,11 +25271,11 @@ void StartingTechnoVector::Construct()
   {
     if ( a3 ) /*0x5106b6*/
     {
-      *((unsigned int *)this + 1) = a3; /*0x5106b8*/
+      this->q004 = a3; /*0x5106b8*/
       return this; /*0x5106be*/
     }
-    *((unsigned int *)this + 1) = RA2_OPNEW(4 * a2); /*0x5106cd*/
-    *((unsigned char *)this + 13) = 1; /*0x5106d0*/
+    this->q004 = RA2_OPNEW(4 * a2); /*0x5106cd*/
+    this->u32_D = 1; /*0x5106d0*/
   }
   return this; /*0x5106bd*/
 }
@@ -25321,7 +25375,7 @@ void StaticButtonClass::HitTest()
   StaticButtonClass_field_0x14 = this->StaticButtonClass_field_0x14; /*0x6c6751*/
   if ( StaticButtonClass_field_0x14 > 0 ) /*0x6c6756*/
   {
-    StaticButtonClass_field_0x14 = *((unsigned int *)this + 6); /*0x6c6758*/
+    StaticButtonClass_field_0x14 = this->u32_18; /*0x6c6758*/
     if ( StaticButtonClass_field_0x14 > 0 ) /*0x6c675d*/
     {
       if ( this != (StaticButtonClass *)-36 ) /*0x6c6761*/
@@ -25330,7 +25384,7 @@ void StaticButtonClass::HitTest()
         IDA_LOBYTE(StaticButtonClass_field_0x14) = (uint8_t)INIClass::loadFile( /*0x6c6779*/
                                                                   v2,
                                                                   this->StaticButtonClass_field_0x14
-                                                                * this->u32_18
+                                                                * this->q018
                                                                 * v4);
       }
       if ( !*(unsigned int *)v2->__pad_0 ) /*0x6c6781*/
@@ -25338,7 +25392,7 @@ void StaticButtonClass::HitTest()
       StaticButtonClass_field_0x10 = this->StaticButtonClass_field_0x10; /*0x6c6786*/
       v6 = this->StaticButtonClass_field_0x14; /*0x6c6789*/
       StaticButtonClass_field_0x0C = this->StaticButtonClass_field_0x0C; /*0x6c678c*/
-      v7 = this->u32_18; /*0x6c6790*/
+      v7 = this->q018; /*0x6c6790*/
       v13 = StaticButtonClass_field_0x10; /*0x6c6793*/
       v15 = v7; /*0x6c6797*/
       v14 = v6; /*0x6c67a6*/
@@ -25354,7 +25408,7 @@ void StaticButtonClass::HitTest()
     v8 = this->StaticButtonClass_field_0x14; /*0x6c67b4*/
     v9 = this->StaticButtonClass_field_0x10; /*0x6c67ba*/
     StaticButtonClass_field_0x0C = this->StaticButtonClass_field_0x0C; /*0x6c67bd*/
-    v10 = this->u32_18; /*0x6c67c1*/
+    v10 = this->q018; /*0x6c67c1*/
     v14 = v8; /*0x6c67c4*/
     v15 = v10; /*0x6c67ce*/
     v13 = v9; /*0x6c67d7*/
@@ -25531,11 +25585,9 @@ void Subzone::BuildGraph()
   int v65; // [esp+38h] [ebp-44h]
   int v66; // [esp+3Ch] [ebp-40h]
   int v67; // [esp+40h] [ebp-3Ch]
-  unsigned int *v68; // [esp+44h] [ebp-38h]
   int v69; // [esp+48h] [ebp-34h] BYREF
   int v70; // [esp+4Ch] [ebp-30h]
   int v71; // [esp+50h] [ebp-2Ch]
-  int v72; // [esp+54h] [ebp-28h]
   VectorClass v73; // [esp+58h] [ebp-24h] BYREF
   int v74; // [esp+68h] [ebp-14h]
   int v75; // [esp+6Ch] [ebp-10h]
@@ -26046,12 +26098,11 @@ void SubzoneHashVector::Construct()
   int v5; // ecx
   int v7; // eax
   int v8; // ecx
-  int v9; // edx
 
-  this->Items = 0; /*0x58b07d*/
-  this->q008 = a2; /*0x58b080*/
-  this->IsInitialized = 1; /*0x58b083*/
-  this->IsAllocated = 0; /*0x58b087*/
+  this->u32_4 = 0; /*0x58b07d*/
+  this->u32_8 = a2; /*0x58b080*/
+  this->u32_C = 1; /*0x58b083*/
+  this->u32_D = 0; /*0x58b087*/
   *this = (SubzoneHashVector)&(void*)(void*)&VectorClass_HashObject_unsigned_int_SubzoneConnectionStruct_vftable; /*0x58b08a*/
   if ( !a2 ) /*0x58b090*/
     return this; /*0x58b090*/
@@ -26072,8 +26123,8 @@ void SubzoneHashVector::Construct()
           --a2; /*0x58b0e1*/
         }
         while ( a2 ); /*0x58b0e2*/
-        this->Items = v7; /*0x58b0e4*/
-        this->IsAllocated = 1; /*0x58b0e7*/
+        this->u32_4 = v7; /*0x58b0e4*/
+        this->u32_D = 1; /*0x58b0e7*/
         return this; /*0x58b0f0*/
       }
     }
@@ -26081,20 +26132,20 @@ void SubzoneHashVector::Construct()
     {
       v7 = 0; /*0x58b0f3*/
     }
-    this->Items = v7; /*0x58b0f5*/
-    this->IsAllocated = 1; /*0x58b0f8*/
+    this->u32_4 = v7; /*0x58b0f5*/
+    this->u32_D = 1; /*0x58b0f8*/
     return this; /*0x58b0fc*/
   }
   if ( a2 - 1 >= 0 ) /*0x58b09f*/
   {
     v4 = a3 + 4; /*0x58b0a1*/
-    a2 = a2; /*0x58b0a4*/
+    v5 = a2; /*0x58b0a4*/
     do /*0x58b0ae*/
     {
       *(unsigned int *)v4 = 0; /*0x58b0a5*/
       *(unsigned char *)(v4 + 4) = 0; /*0x58b0a7*/
       v4 += 12; /*0x58b0aa*/
-      --a2; /*0x58b0ad*/
+      --v5; /*0x58b0ad*/
     }
     while ( v5 ); /*0x58b0ae*/
   }
@@ -26233,19 +26284,19 @@ void SwizzleManagerClass::ConvertNodes()
   unsigned int *v9; // edx
   int v10; // edx
 
-  result = this->CapacityIncrement; /*0x6cf354*/
+  result = *(unsigned int *)(this + 20); /*0x6cf354*/
   if ( result ) /*0x6cf359*/
   {
-    v3 = this->q02C; /*0x6cf35f*/
+    v3 = *(unsigned int *)(this + 44); /*0x6cf35f*/
     if ( v3 > 0 ) /*0x6cf364*/
-      qsort(*(void **)(&this->IsInitialized2), v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)globalHelper_0CF320); /*0x6cf372*/
-    v4 = this->CapacityIncrement; /*0x6cf37a*/
+      qsort(*(void **)(this + 32), v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)globalHelper_0CF320); /*0x6cf372*/
+    v4 = *(unsigned int *)(this + 20); /*0x6cf37a*/
     if ( v4 > 0 ) /*0x6cf37f*/
-      qsort(*(void **)(this + 8), v4, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)globalHelper_0CF320); /*0x6cf38d*/
-    v5 = *(unsigned int **)(this + 32); /*0x6cf395*/
-    v6 = *(unsigned int *)(this + 44); /*0x6cf399*/
-    v7 = *(unsigned int *)(this + 20); /*0x6cf39d*/
-    v8 = *(unsigned int **)(this + 8); /*0x6cf3a1*/
+      qsort(this->q008, v4, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)globalHelper_0CF320); /*0x6cf38d*/
+    v5 = *(unsigned int **)(&this->q00C2); /*0x6cf395*/
+    v6 = this->u32_2C; /*0x6cf399*/
+    v7 = this->q014; /*0x6cf39d*/
+    v8 = this->q008; /*0x6cf3a1*/
     while ( v7 > 0 ) /*0x6cf3a6*/
     {
       if ( *v8 == *v5 ) /*0x6cf3ae*/
@@ -26619,12 +26670,15 @@ void TAction::CenterOnStartCoords()
 // 0x6c5c40
 void TClassFactory_AITriggerTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c5c4e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c5c4e*/
 }
 // 0x6c5c60
 void TClassFactory_AITriggerTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c5c70*/
   if ( !v1 ) /*0x6c5c74*/
@@ -26634,24 +26688,25 @@ void TClassFactory_AITriggerTypeClass::GetClassName()
 // 0x6c5c90
 void TClassFactory_AITriggerTypeClass::GetClassIdentifier()
 {
-  unsigned int *v5; // eax
+  AnimTypeClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c5c98*/
+  if ( !v9 ) /*0x6c5c98*/
     return -2147024809; /*0x6c5c9b*/
-  *a4 = 0; /*0x6c5ca8*/
-  if ( a2 ) /*0x6c5cb0*/
+  *v9 = 0; /*0x6c5ca8*/
+  if ( a3 ) /*0x6c5cb0*/
     return -2147221232; /*0x6c5cb3*/
-  v5 = RA2_OPNEW(0x110u); /*0x6c5cc1*/
+  v5 = (AnimTypeClass *)RA2_OPNEW(0x110u); /*0x6c5cc1*/
   if ( !v5 ) /*0x6c5ccb*/
     return -2147024882; /*0x6c5ccb*/
   v6 = AnimTypeClass::Construct2(v5, 0); /*0x6c5cd1*/
   v7 = v6; /*0x6c5cd6*/
   if ( !v6 ) /*0x6c5cda*/
     return -2147024882; /*0x6c5cdd*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6c5cf1*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6c5cf1*/
   if ( v8 < 0 ) /*0x6c5cf5*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6c5cfd*/
   return v8; /*0x6c5c9a*/
@@ -26661,24 +26716,28 @@ void TClassFactory_AITriggerTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c5d1a*/
-  if ( a2 ) /*0x6c5d1d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c5d1a*/
+  if ( v5 ) /*0x6c5d1d*/
     v3 = v2 + 1; /*0x6c5d1f*/
   else
     v3 = v2 - 1; /*0x6c5d28*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c5d20*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c5d20*/
   return 0; /*0x6c5d25*/
 }
 // 0x6c36c0
 void TClassFactory_AircraftClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c36ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c36ce*/
 }
 // 0x6c36e0
 void TClassFactory_AircraftClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c36f0*/
   if ( !v1 ) /*0x6c36f4*/
@@ -26688,26 +26747,27 @@ void TClassFactory_AircraftClass::GetClassName()
 // 0x6c3710
 int TClassFactory_AircraftClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  int v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c3718*/
+  if ( !v9 ) /*0x6c3718*/
     return -2147024809; /*0x6c371b*/
-  *a4 = 0; /*0x6c3728*/
-  if ( a2 ) /*0x6c3730*/
+  *v9 = 0; /*0x6c3728*/
+  if ( a3 ) /*0x6c3730*/
     return -2147221232; /*0x6c3733*/
   v5 = RA2_OPNEW(0x6D8u); /*0x6c3741*/
   if ( !v5 ) /*0x6c374b*/
     return -2147024882; /*0x6c374b*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))AircraftClass::Construct((int)v5, 0, 0); /*0x6c3753*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))AircraftClass::Construct(v5, (int)v9, 0, 0); /*0x6c3753*/
   v7 = v6; /*0x6c3758*/
   if ( !v6 ) /*0x6c375c*/
     return -2147024882; /*0x6c375f*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c3773*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c3773*/
   if ( v8 < 0 ) /*0x6c3777*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c377f*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c377f*/
   return v8; /*0x6c371a*/
 }
 // 0x6c3790
@@ -26715,24 +26775,28 @@ void TClassFactory_AircraftClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c379a*/
-  if ( a2 ) /*0x6c379d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c379a*/
+  if ( v5 ) /*0x6c379d*/
     v3 = v2 + 1; /*0x6c379f*/
   else
     v3 = v2 - 1; /*0x6c37a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c37a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c37a0*/
   return 0; /*0x6c37a5*/
 }
 // 0x6c2ac0
 void TClassFactory_AircraftTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c2ace*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c2ace*/
 }
 // 0x6c2ae0
 void TClassFactory_AircraftTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c2af0*/
   if ( !v1 ) /*0x6c2af4*/
@@ -26742,26 +26806,27 @@ void TClassFactory_AircraftTypeClass::GetClassName()
 // 0x6c2b10
 void TClassFactory_AircraftTypeClass::GetClassIdentifier()
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  int v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c2b18*/
+  if ( !v9 ) /*0x6c2b18*/
     return -2147024809; /*0x6c2b1b*/
-  *a4 = 0; /*0x6c2b28*/
-  if ( a2 ) /*0x6c2b30*/
+  *v9 = 0; /*0x6c2b28*/
+  if ( a3 ) /*0x6c2b30*/
     return -2147221232; /*0x6c2b33*/
   v5 = RA2_OPNEW(0xE10u); /*0x6c2b41*/
   if ( !v5 ) /*0x6c2b4b*/
     return -2147024882; /*0x6c2b4b*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))AircraftTypeClass::AircraftTypeClass((int)v5, 0); /*0x6c2b51*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))AircraftTypeClass::AircraftTypeClass(v5, 0); /*0x6c2b51*/
   v7 = v6; /*0x6c2b56*/
   if ( !v6 ) /*0x6c2b5a*/
     return -2147024882; /*0x6c2b5d*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c2b71*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c2b71*/
   if ( v8 < 0 ) /*0x6c2b75*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c2b7d*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c2b7d*/
   return v8; /*0x6c2b1a*/
 }
 // 0x6c2b90
@@ -26769,24 +26834,28 @@ void TClassFactory_AircraftTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c2b9a*/
-  if ( a2 ) /*0x6c2b9d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c2b9a*/
+  if ( v5 ) /*0x6c2b9d*/
     v3 = v2 + 1; /*0x6c2b9f*/
   else
     v3 = v2 - 1; /*0x6c2ba8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c2ba0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c2ba0*/
   return 0; /*0x6c2ba5*/
 }
 // 0x6c0840
 void TClassFactory_AirstrikeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c084e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c084e*/
 }
 // 0x6c0860
 void TClassFactory_AirstrikeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c0870*/
   if ( !v1 ) /*0x6c0874*/
@@ -26800,11 +26869,12 @@ int TClassFactory_AirstrikeClass::ddtor(void *a2, int a3, unsigned int *a4)
   AbstractClass *v6; // eax
   AbstractClass *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c0898*/
+  if ( !v9 ) /*0x6c0898*/
     return -2147024809; /*0x6c089b*/
-  *a4 = 0; /*0x6c08a8*/
-  if ( a2 ) /*0x6c08b0*/
+  *v9 = 0; /*0x6c08a8*/
+  if ( a3 ) /*0x6c08b0*/
     return -2147221232; /*0x6c08b3*/
   v5 = (AbstractClass *)RA2_OPNEW(0x60u); /*0x6c08be*/
   if ( !v5 ) /*0x6c08c8*/
@@ -26813,9 +26883,9 @@ int TClassFactory_AirstrikeClass::ddtor(void *a2, int a3, unsigned int *a4)
   v7 = v6; /*0x6c08d1*/
   if ( !v6 ) /*0x6c08d5*/
     return -2147024882; /*0x6c08d8*/
-  v8 = (*(int (__stdcall **)(AbstractClass *, int, unsigned int *))v6->vtable0[0])(v6, a3, a4); /*0x6c08ec*/
+  v8 = (*(int (__stdcall **)(AbstractClass *, unsigned int *, unsigned int *))v6->vtable0)(v6, a4, v9); /*0x6c08ec*/
   if ( v8 < 0 ) /*0x6c08f0*/
-    (*(void (__thiscall **)(AbstractClass *, int))(v7->vtable0[0] + 32))(v7, 1); /*0x6c08f8*/
+    (*(void (__thiscall **)(AbstractClass *, int))(v7->vtable0 + 32))(v7, 1); /*0x6c08f8*/
   return v8; /*0x6c089a*/
 }
 // 0x6c0910
@@ -26823,24 +26893,28 @@ void TClassFactory_AirstrikeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c091a*/
-  if ( a2 ) /*0x6c091d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c091a*/
+  if ( v5 ) /*0x6c091d*/
     v3 = v2 + 1; /*0x6c091f*/
   else
     v3 = v2 - 1; /*0x6c0928*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c0920*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c0920*/
   return 0; /*0x6c0925*/
 }
 // 0x6c60c0
 void TClassFactory_AlphaShapeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c60ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c60ce*/
 }
 // 0x6c60e0
 void TClassFactory_AlphaShapeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c60f0*/
   if ( !v1 ) /*0x6c60f4*/
@@ -26850,26 +26924,27 @@ void TClassFactory_AlphaShapeClass::GetClassName()
 // 0x6c6110
 int TClassFactory_AlphaShapeClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  AlphaShapeClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c6118*/
+  if ( !v9 ) /*0x6c6118*/
     return -2147024809; /*0x6c611b*/
-  *a4 = 0; /*0x6c6128*/
-  if ( a2 ) /*0x6c6130*/
+  *v9 = 0; /*0x6c6128*/
+  if ( a3 ) /*0x6c6130*/
     return -2147221232; /*0x6c6133*/
-  v5 = RA2_OPNEW(0x40u); /*0x6c613e*/
+  v5 = (AlphaShapeClass *)RA2_OPNEW(0x40u); /*0x6c613e*/
   if ( !v5 ) /*0x6c6148*/
     return -2147024882; /*0x6c6148*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))AlphaShapeClass::Constructor((int)v5); /*0x6c614c*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))AlphaShapeClass::Constructor(v5); /*0x6c614c*/
   v7 = v6; /*0x6c6151*/
   if ( !v6 ) /*0x6c6155*/
     return -2147024882; /*0x6c6158*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c616c*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c616c*/
   if ( v8 < 0 ) /*0x6c6170*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c6178*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c6178*/
   return v8; /*0x6c611a*/
 }
 // 0x6c6190
@@ -26877,24 +26952,28 @@ void TClassFactory_AlphaShapeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c619a*/
-  if ( a2 ) /*0x6c619d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c619a*/
+  if ( v5 ) /*0x6c619d*/
     v3 = v2 + 1; /*0x6c619f*/
   else
     v3 = v2 - 1; /*0x6c61a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c61a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c61a0*/
   return 0; /*0x6c61a5*/
 }
 // 0x6c3b40
 void TClassFactory_AnimTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c3b4e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c3b4e*/
 }
 // 0x6c3b60
 void TClassFactory_AnimTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c3b70*/
   if ( !v1 ) /*0x6c3b74*/
@@ -26904,24 +26983,25 @@ void TClassFactory_AnimTypeClass::GetClassName()
 // 0x6c3b90
 void TClassFactory_AnimTypeClass::GetClassIdentifier()
 {
-  unsigned int *v5; // eax
+  AnimTypeClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c3b98*/
+  if ( !v9 ) /*0x6c3b98*/
     return -2147024809; /*0x6c3b9b*/
-  *a4 = 0; /*0x6c3ba8*/
-  if ( a2 ) /*0x6c3bb0*/
+  *v9 = 0; /*0x6c3ba8*/
+  if ( a3 ) /*0x6c3bb0*/
     return -2147221232; /*0x6c3bb3*/
-  v5 = RA2_OPNEW(0x378u); /*0x6c3bc1*/
+  v5 = (AnimTypeClass *)RA2_OPNEW(0x378u); /*0x6c3bc1*/
   if ( !v5 ) /*0x6c3bcb*/
     return -2147024882; /*0x6c3bcb*/
   v6 = AnimTypeClass::Construct(v5, 0); /*0x6c3bd1*/
   v7 = v6; /*0x6c3bd6*/
   if ( !v6 ) /*0x6c3bda*/
     return -2147024882; /*0x6c3bdd*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6c3bf1*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6c3bf1*/
   if ( v8 < 0 ) /*0x6c3bf5*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6c3bfd*/
   return v8; /*0x6c3b9a*/
@@ -26931,24 +27011,28 @@ void TClassFactory_AnimTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c3c1a*/
-  if ( a2 ) /*0x6c3c1d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c3c1a*/
+  if ( v5 ) /*0x6c3c1d*/
     v3 = v2 + 1; /*0x6c3c1f*/
   else
     v3 = v2 - 1; /*0x6c3c28*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c3c20*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c3c20*/
   return 0; /*0x6c3c25*/
 }
 // 0x6c1140
 void TClassFactory_BombClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c114e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c114e*/
 }
 // 0x6c1160
 void TClassFactory_BombClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c1170*/
   if ( !v1 ) /*0x6c1174*/
@@ -26958,26 +27042,27 @@ void TClassFactory_BombClass::GetClassName()
 // 0x6c1190
 int TClassFactory_BombClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  BombClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c1198*/
+  if ( !v9 ) /*0x6c1198*/
     return -2147024809; /*0x6c119b*/
-  *a4 = 0; /*0x6c11a8*/
-  if ( a2 ) /*0x6c11b0*/
+  *v9 = 0; /*0x6c11a8*/
+  if ( a3 ) /*0x6c11b0*/
     return -2147221232; /*0x6c11b3*/
-  v5 = RA2_OPNEW(0x5Cu); /*0x6c11be*/
+  v5 = (BombClass *)RA2_OPNEW(0x5Cu); /*0x6c11be*/
   if ( !v5 ) /*0x6c11c8*/
     return -2147024882; /*0x6c11c8*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))BombClass::AbstractClass((int)v5); /*0x6c11cc*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))BombClass::AbstractClass(v5); /*0x6c11cc*/
   v7 = v6; /*0x6c11d1*/
   if ( !v6 ) /*0x6c11d5*/
     return -2147024882; /*0x6c11d8*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c11ec*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c11ec*/
   if ( v8 < 0 ) /*0x6c11f0*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c11f8*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c11f8*/
   return v8; /*0x6c119a*/
 }
 // 0x6c1210
@@ -26985,24 +27070,28 @@ void TClassFactory_BombClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c121a*/
-  if ( a2 ) /*0x6c121d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c121a*/
+  if ( v5 ) /*0x6c121d*/
     v3 = v2 + 1; /*0x6c121f*/
   else
     v3 = v2 - 1; /*0x6c1228*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c1220*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c1220*/
   return 0; /*0x6c1225*/
 }
 // 0x6c3540
 void TClassFactory_BuildingClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c354e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c354e*/
 }
 // 0x6c3560
 void TClassFactory_BuildingClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c3570*/
   if ( !v1 ) /*0x6c3574*/
@@ -27012,26 +27101,27 @@ void TClassFactory_BuildingClass::GetClassName()
 // 0x6c3590
 int TClassFactory_BuildingClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  int v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c3598*/
+  if ( !v9 ) /*0x6c3598*/
     return -2147024809; /*0x6c359b*/
-  *a4 = 0; /*0x6c35a8*/
-  if ( a2 ) /*0x6c35b0*/
+  *v9 = 0; /*0x6c35a8*/
+  if ( a3 ) /*0x6c35b0*/
     return -2147221232; /*0x6c35b3*/
   v5 = RA2_OPNEW(0x720u); /*0x6c35c1*/
   if ( !v5 ) /*0x6c35cb*/
     return -2147024882; /*0x6c35cb*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))BuildingClass::Construct((int)v5, 0, 0); /*0x6c35d3*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))BuildingClass::Construct(v5, 0, 0); /*0x6c35d3*/
   v7 = v6; /*0x6c35d8*/
   if ( !v6 ) /*0x6c35dc*/
     return -2147024882; /*0x6c35df*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c35f3*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c35f3*/
   if ( v8 < 0 ) /*0x6c35f7*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c35ff*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c35ff*/
   return v8; /*0x6c359a*/
 }
 // 0x6c3610
@@ -27039,24 +27129,28 @@ void TClassFactory_BuildingClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c361a*/
-  if ( a2 ) /*0x6c361d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c361a*/
+  if ( v5 ) /*0x6c361d*/
     v3 = v2 + 1; /*0x6c361f*/
   else
     v3 = v2 - 1; /*0x6c3628*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c3620*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c3620*/
   return 0; /*0x6c3625*/
 }
 // 0x6c03c0
 void TClassFactory_BuildingLightClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c03ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c03ce*/
 }
 // 0x6c03e0
 void TClassFactory_BuildingLightClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c03f0*/
   if ( !v1 ) /*0x6c03f4*/
@@ -27066,10 +27160,11 @@ void TClassFactory_BuildingLightClass::GetClassName()
 // 0x6c0410
 int TClassFactory_BuildingLightClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  int *v6; // eax
-  int *v7; // esi
-  int v8; // edi
-  int v9; // [esp+0h] [ebp-8h]
+  double v5; // st7
+  int *v7; // eax
+  int *v8; // esi
+  int v9; // edi
+  int v10; // [esp+0h] [ebp-8h]
 
   if ( !a5 ) /*0x6c0418*/
     return -2147024809; /*0x6c041b*/
@@ -27078,38 +27173,42 @@ int TClassFactory_BuildingLightClass::ddtor(void *a2, int a3, unsigned int *a4)
     return -2147221232; /*0x6c0433*/
   if ( !RA2_OPNEW(0xE8u) ) /*0x6c0441*/
     return -2147024882; /*0x6c0441*/
-  v6 = BuildingLightClass::CTOR(0, a1, v9); /*0x6c0451*/
-  v7 = v6; /*0x6c0456*/
-  if ( !v6 ) /*0x6c045a*/
+  v7 = BuildingLightClass::CTOR(0, v5, v10); /*0x6c0451*/
+  v8 = v7; /*0x6c0456*/
+  if ( !v7 ) /*0x6c045a*/
     return -2147024882; /*0x6c045d*/
-  v8 = (*(int (__stdcall **)(int *, int, unsigned int *))*v6)(v6, a4, a5); /*0x6c0471*/
-  if ( v8 < 0 ) /*0x6c0475*/
-    (*(void (__thiscall **)(int *, int))(*v7 + 32))(v7, 1); /*0x6c047d*/
-  return v8; /*0x6c041a*/
+  v9 = (*(int (__stdcall **)(int *, int, unsigned int *))*v7)(v7, a4, a5); /*0x6c0471*/
+  if ( v9 < 0 ) /*0x6c0475*/
+    (*(void (__thiscall **)(int *, int))(*v8 + 32))(v8, 1); /*0x6c047d*/
+  return v9; /*0x6c041a*/
 }
 // 0x6c0490
 void TClassFactory_BuildingLightClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c049a*/
-  if ( a2 ) /*0x6c049d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c049a*/
+  if ( v5 ) /*0x6c049d*/
     v3 = v2 + 1; /*0x6c049f*/
   else
     v3 = v2 - 1; /*0x6c04a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c04a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c04a0*/
   return 0; /*0x6c04a5*/
 }
 // 0x6c2940
 void TClassFactory_BuildingTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c294e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c294e*/
 }
 // 0x6c2960
 void TClassFactory_BuildingTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c2970*/
   if ( !v1 ) /*0x6c2974*/
@@ -27119,26 +27218,27 @@ void TClassFactory_BuildingTypeClass::GetClassName()
 // 0x6c2990
 void TClassFactory_BuildingTypeClass::GetClassIdentifier()
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  int v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c2998*/
+  if ( !v9 ) /*0x6c2998*/
     return -2147024809; /*0x6c299b*/
-  *a4 = 0; /*0x6c29a8*/
-  if ( a2 ) /*0x6c29b0*/
+  *v9 = 0; /*0x6c29a8*/
+  if ( a3 ) /*0x6c29b0*/
     return -2147221232; /*0x6c29b3*/
   v5 = RA2_OPNEW(0x1798u); /*0x6c29c1*/
   if ( !v5 ) /*0x6c29cb*/
     return -2147024882; /*0x6c29cb*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))BuildingTypeClass::ConstructFull((int)v5, 0); /*0x6c29d1*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))BuildingTypeClass::ConstructFull(v5, 0); /*0x6c29d1*/
   v7 = v6; /*0x6c29d6*/
   if ( !v6 ) /*0x6c29da*/
     return -2147024882; /*0x6c29dd*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c29f1*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c29f1*/
   if ( v8 < 0 ) /*0x6c29f5*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c29fd*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c29fd*/
   return v8; /*0x6c299a*/
 }
 // 0x6c2a10
@@ -27146,24 +27246,28 @@ void TClassFactory_BuildingTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c2a1a*/
-  if ( a2 ) /*0x6c2a1d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c2a1a*/
+  if ( v5 ) /*0x6c2a1d*/
     v3 = v2 + 1; /*0x6c2a1f*/
   else
     v3 = v2 - 1; /*0x6c2a28*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c2a20*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c2a20*/
   return 0; /*0x6c2a25*/
 }
 // 0x6c2dc0
 void TClassFactory_BulletTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c2dce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c2dce*/
 }
 // 0x6c2de0
 void TClassFactory_BulletTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c2df0*/
   if ( !v1 ) /*0x6c2df4*/
@@ -27173,24 +27277,25 @@ void TClassFactory_BulletTypeClass::GetClassName()
 // 0x6c2e10
 void TClassFactory_BulletTypeClass::GetClassIdentifier()
 {
-  unsigned char *v5; // eax
+  BulletTypeClass *v5; // eax
   unsigned char *v6; // eax
   unsigned char *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c2e18*/
+  if ( !v9 ) /*0x6c2e18*/
     return -2147024809; /*0x6c2e1b*/
-  *a4 = 0; /*0x6c2e28*/
-  if ( a2 ) /*0x6c2e30*/
+  *v9 = 0; /*0x6c2e28*/
+  if ( a3 ) /*0x6c2e30*/
     return -2147221232; /*0x6c2e33*/
-  v5 = RA2_OPNEW(0x2F8u); /*0x6c2e41*/
+  v5 = (BulletTypeClass *)RA2_OPNEW(0x2F8u); /*0x6c2e41*/
   if ( !v5 ) /*0x6c2e4b*/
     return -2147024882; /*0x6c2e4b*/
   v6 = BulletTypeClass::Construct(v5, 0); /*0x6c2e51*/
   v7 = v6; /*0x6c2e56*/
   if ( !v6 ) /*0x6c2e5a*/
     return -2147024882; /*0x6c2e5d*/
-  v8 = (**(int (__stdcall ***)(unsigned char *, int, unsigned int *))v6)(v6, a3, a4); /*0x6c2e71*/
+  v8 = (**(int (__stdcall ***)(unsigned char *, unsigned int *, unsigned int *))v6)(v6, a4, v9); /*0x6c2e71*/
   if ( v8 < 0 ) /*0x6c2e75*/
     (*(void (__thiscall **)(unsigned char *, int))(*(unsigned int *)v7 + 32))(v7, 1); /*0x6c2e7d*/
   return v8; /*0x6c2e1a*/
@@ -27200,24 +27305,28 @@ void TClassFactory_BulletTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c2e9a*/
-  if ( a2 ) /*0x6c2e9d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c2e9a*/
+  if ( v5 ) /*0x6c2e9d*/
     v3 = v2 + 1; /*0x6c2e9f*/
   else
     v3 = v2 - 1; /*0x6c2ea8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c2ea0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c2ea0*/
   return 0; /*0x6c2ea5*/
 }
 // 0x6c0cc0
 void TClassFactory_CaptureManagerClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c0cce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c0cce*/
 }
 // 0x6c0ce0
 void TClassFactory_CaptureManagerClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c0cf0*/
   if ( !v1 ) /*0x6c0cf4*/
@@ -27227,26 +27336,27 @@ void TClassFactory_CaptureManagerClass::GetClassName()
 // 0x6c0d10
 int TClassFactory_CaptureManagerClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  CaptureManagerClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c0d18*/
+  if ( !v9 ) /*0x6c0d18*/
     return -2147024809; /*0x6c0d1b*/
-  *a4 = 0; /*0x6c0d28*/
-  if ( a2 ) /*0x6c0d30*/
+  *v9 = 0; /*0x6c0d28*/
+  if ( a3 ) /*0x6c0d30*/
     return -2147221232; /*0x6c0d33*/
-  v5 = RA2_OPNEW(0x50u); /*0x6c0d3e*/
+  v5 = (CaptureManagerClass *)RA2_OPNEW(0x50u); /*0x6c0d3e*/
   if ( !v5 ) /*0x6c0d48*/
     return -2147024882; /*0x6c0d48*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))SmallFunc_471890((int)v5); /*0x6c0d4c*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))SmallFunc_471890(v5); /*0x6c0d4c*/
   v7 = v6; /*0x6c0d51*/
   if ( !v6 ) /*0x6c0d55*/
     return -2147024882; /*0x6c0d58*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c0d6c*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c0d6c*/
   if ( v8 < 0 ) /*0x6c0d70*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c0d78*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c0d78*/
   return v8; /*0x6c0d1a*/
 }
 // 0x6c0d90
@@ -27254,24 +27364,28 @@ void TClassFactory_CaptureManagerClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c0d9a*/
-  if ( a2 ) /*0x6c0d9d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c0d9a*/
+  if ( v5 ) /*0x6c0d9d*/
     v3 = v2 + 1; /*0x6c0d9f*/
   else
     v3 = v2 - 1; /*0x6c0da8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c0da0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c0da0*/
   return 0; /*0x6c0da5*/
 }
 // 0x6c0e40
 void TClassFactory_DiskLaserClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c0e4e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c0e4e*/
 }
 // 0x6c0e60
 void TClassFactory_DiskLaserClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c0e70*/
   if ( !v1 ) /*0x6c0e74*/
@@ -27281,26 +27395,27 @@ void TClassFactory_DiskLaserClass::GetClassName()
 // 0x6c0e90
 int TClassFactory_DiskLaserClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  DiskLaserClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c0e98*/
+  if ( !v9 ) /*0x6c0e98*/
     return -2147024809; /*0x6c0e9b*/
-  *a4 = 0; /*0x6c0ea8*/
-  if ( a2 ) /*0x6c0eb0*/
+  *v9 = 0; /*0x6c0ea8*/
+  if ( a3 ) /*0x6c0eb0*/
     return -2147221232; /*0x6c0eb3*/
-  v5 = RA2_OPNEW(0x40u); /*0x6c0ebe*/
+  v5 = (DiskLaserClass *)RA2_OPNEW(0x40u); /*0x6c0ebe*/
   if ( !v5 ) /*0x6c0ec8*/
     return -2147024882; /*0x6c0ec8*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))DiskLaserClass::DiskLaserClass((int)v5); /*0x6c0ecc*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))DiskLaserClass::DiskLaserClass(v5); /*0x6c0ecc*/
   v7 = v6; /*0x6c0ed1*/
   if ( !v6 ) /*0x6c0ed5*/
     return -2147024882; /*0x6c0ed8*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c0eec*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c0eec*/
   if ( v8 < 0 ) /*0x6c0ef0*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c0ef8*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c0ef8*/
   return v8; /*0x6c0e9a*/
 }
 // 0x6c0f10
@@ -27308,24 +27423,28 @@ void TClassFactory_DiskLaserClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c0f1a*/
-  if ( a2 ) /*0x6c0f1d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c0f1a*/
+  if ( v5 ) /*0x6c0f1d*/
     v3 = v2 + 1; /*0x6c0f1f*/
   else
     v3 = v2 - 1; /*0x6c0f28*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c0f20*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c0f20*/
   return 0; /*0x6c0f25*/
 }
 // 0x6c3fc0
 void TClassFactory_DriveLocomotionClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c3fce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c3fce*/
 }
 // 0x6c3fe0
 void TClassFactory_DriveLocomotionClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c3ff0*/
   if ( !v1 ) /*0x6c3ff4*/
@@ -27335,26 +27454,27 @@ void TClassFactory_DriveLocomotionClass::GetClassName()
 // 0x6c4010
 int TClassFactory_DriveLocomotionClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  LocomotionClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c4018*/
+  if ( !v9 ) /*0x6c4018*/
     return -2147024809; /*0x6c401b*/
-  *a4 = 0; /*0x6c4028*/
-  if ( a2 ) /*0x6c4030*/
+  *v9 = 0; /*0x6c4028*/
+  if ( a3 ) /*0x6c4030*/
     return -2147221232; /*0x6c4033*/
-  v5 = RA2_OPNEW(0x70u); /*0x6c403e*/
+  v5 = (LocomotionClass *)RA2_OPNEW(0x70u); /*0x6c403e*/
   if ( !v5 ) /*0x6c4048*/
     return -2147024882; /*0x6c4048*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))LocomotionClass::Initialize((int)v5); /*0x6c404c*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))LocomotionClass::Initialize(v5); /*0x6c404c*/
   v7 = v6; /*0x6c4051*/
   if ( !v6 ) /*0x6c4055*/
     return -2147024882; /*0x6c4058*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c406c*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c406c*/
   if ( v8 < 0 ) /*0x6c4070*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4078*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4078*/
   return v8; /*0x6c401a*/
 }
 // 0x6c4090
@@ -27362,24 +27482,28 @@ void TClassFactory_DriveLocomotionClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c409a*/
-  if ( a2 ) /*0x6c409d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c409a*/
+  if ( v5 ) /*0x6c409d*/
     v3 = v2 + 1; /*0x6c409f*/
   else
     v3 = v2 - 1; /*0x6c40a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c40a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c40a0*/
   return 0; /*0x6c40a5*/
 }
 // 0x6c48c0
 void TClassFactory_DropPodLocomotionClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c48ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c48ce*/
 }
 // 0x6c48e0
 void TClassFactory_DropPodLocomotionClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c48f0*/
   if ( !v1 ) /*0x6c48f4*/
@@ -27389,26 +27513,27 @@ void TClassFactory_DropPodLocomotionClass::GetClassName()
 // 0x6c4910
 int TClassFactory_DropPodLocomotionClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  DropPodLocomotionClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c4918*/
+  if ( !v9 ) /*0x6c4918*/
     return -2147024809; /*0x6c491b*/
-  *a4 = 0; /*0x6c4928*/
-  if ( a2 ) /*0x6c4930*/
+  *v9 = 0; /*0x6c4928*/
+  if ( a3 ) /*0x6c4930*/
     return -2147221232; /*0x6c4933*/
-  v5 = RA2_OPNEW(0x30u); /*0x6c493e*/
+  v5 = (DropPodLocomotionClass *)RA2_OPNEW(0x30u); /*0x6c493e*/
   if ( !v5 ) /*0x6c4948*/
     return -2147024882; /*0x6c4948*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))SmallFunc_4B5AB0((int)v5); /*0x6c494c*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))SmallFunc_4B5AB0(v5); /*0x6c494c*/
   v7 = v6; /*0x6c4951*/
   if ( !v6 ) /*0x6c4955*/
     return -2147024882; /*0x6c4958*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c496c*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c496c*/
   if ( v8 < 0 ) /*0x6c4970*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4978*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4978*/
   return v8; /*0x6c491a*/
 }
 // 0x6c4990
@@ -27416,24 +27541,28 @@ void TClassFactory_DropPodLocomotionClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c499a*/
-  if ( a2 ) /*0x6c499d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c499a*/
+  if ( v5 ) /*0x6c499d*/
     v3 = v2 + 1; /*0x6c499f*/
   else
     v3 = v2 - 1; /*0x6c49a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c49a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c49a0*/
   return 0; /*0x6c49a5*/
 }
 // 0x6c51c0
 void TClassFactory_FactoryClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c51ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c51ce*/
 }
 // 0x6c51e0
 void TClassFactory_FactoryClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c51f0*/
   if ( !v1 ) /*0x6c51f4*/
@@ -27443,26 +27572,27 @@ void TClassFactory_FactoryClass::GetClassName()
 // 0x6c5210
 int TClassFactory_FactoryClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  TeamTypeClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c5218*/
+  if ( !v9 ) /*0x6c5218*/
     return -2147024809; /*0x6c521b*/
-  *a4 = 0; /*0x6c5228*/
-  if ( a2 ) /*0x6c5230*/
+  *v9 = 0; /*0x6c5228*/
+  if ( a3 ) /*0x6c5230*/
     return -2147221232; /*0x6c5233*/
-  v5 = RA2_OPNEW(0x74u); /*0x6c523e*/
+  v5 = (TeamTypeClass *)RA2_OPNEW(0x74u); /*0x6c523e*/
   if ( !v5 ) /*0x6c5248*/
     return -2147024882; /*0x6c5248*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))TeamTypeClass::Construct((int)v5); /*0x6c524c*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))TeamTypeClass::Construct(v5); /*0x6c524c*/
   v7 = v6; /*0x6c5251*/
   if ( !v6 ) /*0x6c5255*/
     return -2147024882; /*0x6c5258*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c526c*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c526c*/
   if ( v8 < 0 ) /*0x6c5270*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c5278*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c5278*/
   return v8; /*0x6c521a*/
 }
 // 0x6c5290
@@ -27470,24 +27600,28 @@ void TClassFactory_FactoryClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c529a*/
-  if ( a2 ) /*0x6c529d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c529a*/
+  if ( v5 ) /*0x6c529d*/
     v3 = v2 + 1; /*0x6c529f*/
   else
     v3 = v2 - 1; /*0x6c52a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c52a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c52a0*/
   return 0; /*0x6c52a5*/
 }
 // 0x6c4a40
 void TClassFactory_FlyLocomotionClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c4a4e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c4a4e*/
 }
 // 0x6c4a60
 void TClassFactory_FlyLocomotionClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c4a70*/
   if ( !v1 ) /*0x6c4a74*/
@@ -27497,26 +27631,27 @@ void TClassFactory_FlyLocomotionClass::GetClassName()
 // 0x6c4a90
 int TClassFactory_FlyLocomotionClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  FlyLocomotionClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c4a98*/
+  if ( !v9 ) /*0x6c4a98*/
     return -2147024809; /*0x6c4a9b*/
-  *a4 = 0; /*0x6c4aa8*/
-  if ( a2 ) /*0x6c4ab0*/
+  *v9 = 0; /*0x6c4aa8*/
+  if ( a3 ) /*0x6c4ab0*/
     return -2147221232; /*0x6c4ab3*/
-  v5 = RA2_OPNEW(0x60u); /*0x6c4abe*/
+  v5 = (FlyLocomotionClass *)RA2_OPNEW(0x60u); /*0x6c4abe*/
   if ( !v5 ) /*0x6c4ac8*/
     return -2147024882; /*0x6c4ac8*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))FlyLocomotionClass::LocomotionClass((int)v5); /*0x6c4acc*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))FlyLocomotionClass::LocomotionClass(v5); /*0x6c4acc*/
   v7 = v6; /*0x6c4ad1*/
   if ( !v6 ) /*0x6c4ad5*/
     return -2147024882; /*0x6c4ad8*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c4aec*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c4aec*/
   if ( v8 < 0 ) /*0x6c4af0*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4af8*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4af8*/
   return v8; /*0x6c4a9a*/
 }
 // 0x6c4b10
@@ -27524,24 +27659,28 @@ void TClassFactory_FlyLocomotionClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c4b1a*/
-  if ( a2 ) /*0x6c4b1d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c4b1a*/
+  if ( v5 ) /*0x6c4b1d*/
     v3 = v2 + 1; /*0x6c4b1f*/
   else
     v3 = v2 - 1; /*0x6c4b28*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c4b20*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c4b20*/
   return 0; /*0x6c4b25*/
 }
 // 0x6c5f40
 void TClassFactory_FoggedObjectClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c5f4e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c5f4e*/
 }
 // 0x6c5f60
 void TClassFactory_FoggedObjectClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c5f70*/
   if ( !v1 ) /*0x6c5f74*/
@@ -27551,24 +27690,25 @@ void TClassFactory_FoggedObjectClass::GetClassName()
 // 0x6c5f90
 int TClassFactory_FoggedObjectClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  unsigned int *v5; // eax
+  ObjectClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c5f98*/
+  if ( !v9 ) /*0x6c5f98*/
     return -2147024809; /*0x6c5f9b*/
-  *a4 = 0; /*0x6c5fa8*/
-  if ( a2 ) /*0x6c5fb0*/
+  *v9 = 0; /*0x6c5fa8*/
+  if ( a3 ) /*0x6c5fb0*/
     return -2147221232; /*0x6c5fb3*/
-  v5 = RA2_OPNEW(0x78u); /*0x6c5fbe*/
+  v5 = (ObjectClass *)RA2_OPNEW(0x78u); /*0x6c5fbe*/
   if ( !v5 ) /*0x6c5fc8*/
     return -2147024882; /*0x6c5fc8*/
   v6 = ObjectClass::Construct(v5); /*0x6c5fcc*/
   v7 = v6; /*0x6c5fd1*/
   if ( !v6 ) /*0x6c5fd5*/
     return -2147024882; /*0x6c5fd8*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6c5fec*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6c5fec*/
   if ( v8 < 0 ) /*0x6c5ff0*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6c5ff8*/
   return v8; /*0x6c5f9a*/
@@ -27578,24 +27718,28 @@ void TClassFactory_FoggedObjectClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c601a*/
-  if ( a2 ) /*0x6c601d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c601a*/
+  if ( v5 ) /*0x6c601d*/
     v3 = v2 + 1; /*0x6c601f*/
   else
     v3 = v2 - 1; /*0x6c6028*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c6020*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c6020*/
   return 0; /*0x6c6025*/
 }
 // 0x6c3e40
 void TClassFactory_HouseClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c3e4e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c3e4e*/
 }
 // 0x6c3e60
 void TClassFactory_HouseClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c3e70*/
   if ( !v1 ) /*0x6c3e74*/
@@ -27605,26 +27749,27 @@ void TClassFactory_HouseClass::GetClassName()
 // 0x6c3e90
 int TClassFactory_HouseClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  int *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c3e98*/
+  if ( !v9 ) /*0x6c3e98*/
     return -2147024809; /*0x6c3e9b*/
-  *a4 = 0; /*0x6c3ea8*/
-  if ( a2 ) /*0x6c3eb0*/
+  *v9 = 0; /*0x6c3ea8*/
+  if ( a3 ) /*0x6c3eb0*/
     return -2147221232; /*0x6c3eb3*/
-  v5 = RA2_OPNEW(0x160B8u); /*0x6c3ec1*/
+  v5 = (int *)RA2_OPNEW(0x160B8u); /*0x6c3ec1*/
   if ( !v5 ) /*0x6c3ecb*/
     return -2147024882; /*0x6c3ecb*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))HouseClass::Construct((int)v5, 0); /*0x6c3ed1*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))HouseClass::Construct(v5, 0); /*0x6c3ed1*/
   v7 = v6; /*0x6c3ed6*/
   if ( !v6 ) /*0x6c3eda*/
     return -2147024882; /*0x6c3edd*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c3ef1*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c3ef1*/
   if ( v8 < 0 ) /*0x6c3ef5*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c3efd*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c3efd*/
   return v8; /*0x6c3e9a*/
 }
 // 0x6c3f10
@@ -27632,24 +27777,28 @@ void TClassFactory_HouseClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c3f1a*/
-  if ( a2 ) /*0x6c3f1d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c3f1a*/
+  if ( v5 ) /*0x6c3f1d*/
     v3 = v2 + 1; /*0x6c3f1f*/
   else
     v3 = v2 - 1; /*0x6c3f28*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c3f20*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c3f20*/
   return 0; /*0x6c3f25*/
 }
 // 0x6c3cc0
 void TClassFactory_HouseTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c3cce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c3cce*/
 }
 // 0x6c3ce0
 void TClassFactory_HouseTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c3cf0*/
   if ( !v1 ) /*0x6c3cf4*/
@@ -27659,24 +27808,25 @@ void TClassFactory_HouseTypeClass::GetClassName()
 // 0x6c3d10
 void TClassFactory_HouseTypeClass::GetClassIdentifier()
 {
-  unsigned char *v5; // eax
+  SuperWeaponTypeClass *v5; // eax
   unsigned char *v6; // eax
   unsigned char *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c3d18*/
+  if ( !v9 ) /*0x6c3d18*/
     return -2147024809; /*0x6c3d1b*/
-  *a4 = 0; /*0x6c3d28*/
-  if ( a2 ) /*0x6c3d30*/
+  *v9 = 0; /*0x6c3d28*/
+  if ( a3 ) /*0x6c3d30*/
     return -2147221232; /*0x6c3d33*/
-  v5 = RA2_OPNEW(0x1B0u); /*0x6c3d41*/
+  v5 = (SuperWeaponTypeClass *)RA2_OPNEW(0x1B0u); /*0x6c3d41*/
   if ( !v5 ) /*0x6c3d4b*/
     return -2147024882; /*0x6c3d4b*/
   v6 = SuperWeaponTypeClass::Construct(v5, 0); /*0x6c3d51*/
   v7 = v6; /*0x6c3d56*/
   if ( !v6 ) /*0x6c3d5a*/
     return -2147024882; /*0x6c3d5d*/
-  v8 = (**(int (__stdcall ***)(unsigned char *, int, unsigned int *))v6)(v6, a3, a4); /*0x6c3d71*/
+  v8 = (**(int (__stdcall ***)(unsigned char *, unsigned int *, unsigned int *))v6)(v6, a4, v9); /*0x6c3d71*/
   if ( v8 < 0 ) /*0x6c3d75*/
     (*(void (__thiscall **)(unsigned char *, int))(*(unsigned int *)v7 + 32))(v7, 1); /*0x6c3d7d*/
   return v8; /*0x6c3d1a*/
@@ -27686,24 +27836,28 @@ void TClassFactory_HouseTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c3d9a*/
-  if ( a2 ) /*0x6c3d9d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c3d9a*/
+  if ( v5 ) /*0x6c3d9d*/
     v3 = v2 + 1; /*0x6c3d9f*/
   else
     v3 = v2 - 1; /*0x6c3da8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c3da0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c3da0*/
   return 0; /*0x6c3da5*/
 }
 // 0x6c42c0
 void TClassFactory_HoverLocomotionClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c42ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c42ce*/
 }
 // 0x6c42e0
 void TClassFactory_HoverLocomotionClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c42f0*/
   if ( !v1 ) /*0x6c42f4*/
@@ -27713,26 +27867,27 @@ void TClassFactory_HoverLocomotionClass::GetClassName()
 // 0x6c4310
 int TClassFactory_HoverLocomotionClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  LocomotionClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c4318*/
+  if ( !v9 ) /*0x6c4318*/
     return -2147024809; /*0x6c431b*/
-  *a4 = 0; /*0x6c4328*/
-  if ( a2 ) /*0x6c4330*/
+  *v9 = 0; /*0x6c4328*/
+  if ( a3 ) /*0x6c4330*/
     return -2147221232; /*0x6c4333*/
-  v5 = RA2_OPNEW(0x78u); /*0x6c433e*/
+  v5 = (LocomotionClass *)RA2_OPNEW(0x78u); /*0x6c433e*/
   if ( !v5 ) /*0x6c4348*/
     return -2147024882; /*0x6c4348*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))LocomotionClass::ProcessData((int)v5); /*0x6c434c*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))LocomotionClass::ProcessData(v5); /*0x6c434c*/
   v7 = v6; /*0x6c4351*/
   if ( !v6 ) /*0x6c4355*/
     return -2147024882; /*0x6c4358*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c436c*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c436c*/
   if ( v8 < 0 ) /*0x6c4370*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4378*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4378*/
   return v8; /*0x6c431a*/
 }
 // 0x6c4390
@@ -27740,24 +27895,28 @@ void TClassFactory_HoverLocomotionClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c439a*/
-  if ( a2 ) /*0x6c439d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c439a*/
+  if ( v5 ) /*0x6c439d*/
     v3 = v2 + 1; /*0x6c439f*/
   else
     v3 = v2 - 1; /*0x6c43a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c43a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c43a0*/
   return 0; /*0x6c43a5*/
 }
 // 0x6c3840
 void TClassFactory_InfantryClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c384e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c384e*/
 }
 // 0x6c3860
 void TClassFactory_InfantryClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c3870*/
   if ( !v1 ) /*0x6c3874*/
@@ -27767,26 +27926,27 @@ void TClassFactory_InfantryClass::GetClassName()
 // 0x6c3890
 int TClassFactory_InfantryClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  int v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c3898*/
+  if ( !v9 ) /*0x6c3898*/
     return -2147024809; /*0x6c389b*/
-  *a4 = 0; /*0x6c38a8*/
-  if ( a2 ) /*0x6c38b0*/
+  *v9 = 0; /*0x6c38a8*/
+  if ( a3 ) /*0x6c38b0*/
     return -2147221232; /*0x6c38b3*/
   v5 = RA2_OPNEW(0x6F0u); /*0x6c38c1*/
   if ( !v5 ) /*0x6c38cb*/
     return -2147024882; /*0x6c38cb*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))InfantryClass::Construct((int)v5, 0, 0); /*0x6c38d3*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))InfantryClass::Construct(v5, (int)v9, 0, 0); /*0x6c38d3*/
   v7 = v6; /*0x6c38d8*/
   if ( !v6 ) /*0x6c38dc*/
     return -2147024882; /*0x6c38df*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c38f3*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c38f3*/
   if ( v8 < 0 ) /*0x6c38f7*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c38ff*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c38ff*/
   return v8; /*0x6c389a*/
 }
 // 0x6c3910
@@ -27794,24 +27954,28 @@ void TClassFactory_InfantryClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c391a*/
-  if ( a2 ) /*0x6c391d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c391a*/
+  if ( v5 ) /*0x6c391d*/
     v3 = v2 + 1; /*0x6c391f*/
   else
     v3 = v2 - 1; /*0x6c3928*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c3920*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c3920*/
   return 0; /*0x6c3925*/
 }
 // 0x6c2c40
 void TClassFactory_InfantryTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c2c4e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c2c4e*/
 }
 // 0x6c2c60
 void TClassFactory_InfantryTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c2c70*/
   if ( !v1 ) /*0x6c2c74*/
@@ -27821,26 +27985,27 @@ void TClassFactory_InfantryTypeClass::GetClassName()
 // 0x6c2c90
 void TClassFactory_InfantryTypeClass::GetClassIdentifier()
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  int v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c2c98*/
+  if ( !v9 ) /*0x6c2c98*/
     return -2147024809; /*0x6c2c9b*/
-  *a4 = 0; /*0x6c2ca8*/
-  if ( a2 ) /*0x6c2cb0*/
+  *v9 = 0; /*0x6c2ca8*/
+  if ( a3 ) /*0x6c2cb0*/
     return -2147221232; /*0x6c2cb3*/
   v5 = RA2_OPNEW(0xED0u); /*0x6c2cc1*/
   if ( !v5 ) /*0x6c2ccb*/
     return -2147024882; /*0x6c2ccb*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))InfantryTypeClass::Constructor((int)v5, 0); /*0x6c2cd1*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))InfantryTypeClass::Constructor(v5, 0); /*0x6c2cd1*/
   v7 = v6; /*0x6c2cd6*/
   if ( !v6 ) /*0x6c2cda*/
     return -2147024882; /*0x6c2cdd*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c2cf1*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c2cf1*/
   if ( v8 < 0 ) /*0x6c2cf5*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c2cfd*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c2cfd*/
   return v8; /*0x6c2c9a*/
 }
 // 0x6c2d10
@@ -27848,24 +28013,28 @@ void TClassFactory_InfantryTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c2d1a*/
-  if ( a2 ) /*0x6c2d1d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c2d1a*/
+  if ( v5 ) /*0x6c2d1d*/
     v3 = v2 + 1; /*0x6c2d1f*/
   else
     v3 = v2 - 1; /*0x6c2d28*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c2d20*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c2d20*/
   return 0; /*0x6c2d25*/
 }
 // 0x6c2f40
 void TClassFactory_IsometricTileTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c2f4e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c2f4e*/
 }
 // 0x6c2f60
 void TClassFactory_IsometricTileTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c2f70*/
   if ( !v1 ) /*0x6c2f74*/
@@ -27875,24 +28044,25 @@ void TClassFactory_IsometricTileTypeClass::GetClassName()
 // 0x6c2f90
 void TClassFactory_IsometricTileTypeClass::GetClassIdentifier()
 {
-  unsigned int *v5; // eax
+  TerrainTypeClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c2f98*/
+  if ( !v9 ) /*0x6c2f98*/
     return -2147024809; /*0x6c2f9b*/
-  *a4 = 0; /*0x6c2fa8*/
-  if ( a2 ) /*0x6c2fb0*/
+  *v9 = 0; /*0x6c2fa8*/
+  if ( a3 ) /*0x6c2fb0*/
     return -2147221232; /*0x6c2fb3*/
-  v5 = RA2_OPNEW(0x30Cu); /*0x6c2fc1*/
+  v5 = (TerrainTypeClass *)RA2_OPNEW(0x30Cu); /*0x6c2fc1*/
   if ( !v5 ) /*0x6c2fcb*/
     return -2147024882; /*0x6c2fcb*/
   v6 = TerrainTypeClass::Construct(v5, 0, 0, 0, 0, 0); /*0x6c2fd9*/
   v7 = v6; /*0x6c2fde*/
   if ( !v6 ) /*0x6c2fe2*/
     return -2147024882; /*0x6c2fe5*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6c2ff9*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6c2ff9*/
   if ( v8 < 0 ) /*0x6c2ffd*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6c3005*/
   return v8; /*0x6c2f9a*/
@@ -27902,24 +28072,28 @@ void TClassFactory_IsometricTileTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c301a*/
-  if ( a2 ) /*0x6c301d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c301a*/
+  if ( v5 ) /*0x6c301d*/
     v3 = v2 + 1; /*0x6c301f*/
   else
     v3 = v2 - 1; /*0x6c3028*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c3020*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c3020*/
   return 0; /*0x6c3025*/
 }
 // 0x6c4140
 void TClassFactory_JumpjetLocomotionClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c414e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c414e*/
 }
 // 0x6c4160
 void TClassFactory_JumpjetLocomotionClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c4170*/
   if ( !v1 ) /*0x6c4174*/
@@ -27929,26 +28103,27 @@ void TClassFactory_JumpjetLocomotionClass::GetClassName()
 // 0x6c4190
 int TClassFactory_JumpjetLocomotionClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  JumpjetLocomotionClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c4198*/
+  if ( !v9 ) /*0x6c4198*/
     return -2147024809; /*0x6c419b*/
-  *a4 = 0; /*0x6c41a8*/
-  if ( a2 ) /*0x6c41b0*/
+  *v9 = 0; /*0x6c41a8*/
+  if ( a3 ) /*0x6c41b0*/
     return -2147221232; /*0x6c41b3*/
-  v5 = RA2_OPNEW(0x98u); /*0x6c41c1*/
+  v5 = (JumpjetLocomotionClass *)RA2_OPNEW(0x98u); /*0x6c41c1*/
   if ( !v5 ) /*0x6c41cb*/
     return -2147024882; /*0x6c41cb*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))LocomotionClass::Update((int)v5); /*0x6c41cf*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))LocomotionClass::Update(v5); /*0x6c41cf*/
   v7 = v6; /*0x6c41d4*/
   if ( !v6 ) /*0x6c41d8*/
     return -2147024882; /*0x6c41db*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c41ef*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c41ef*/
   if ( v8 < 0 ) /*0x6c41f3*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c41fb*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c41fb*/
   return v8; /*0x6c419a*/
 }
 // 0x6c4210
@@ -27956,24 +28131,28 @@ void TClassFactory_JumpjetLocomotionClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c421a*/
-  if ( a2 ) /*0x6c421d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c421a*/
+  if ( v5 ) /*0x6c421d*/
     v3 = v2 + 1; /*0x6c421f*/
   else
     v3 = v2 - 1; /*0x6c4228*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c4220*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c4220*/
   return 0; /*0x6c4225*/
 }
 // 0x6bfc40
 void TClassFactory_LightSourceClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6bfc4e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6bfc4e*/
 }
 // 0x6bfc60
 void TClassFactory_LightSourceClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6bfc70*/
   if ( !v1 ) /*0x6bfc74*/
@@ -27983,26 +28162,27 @@ void TClassFactory_LightSourceClass::GetClassName()
 // 0x6bfc90
 int TClassFactory_LightSourceClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  LightSourceClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6bfc98*/
+  if ( !v9 ) /*0x6bfc98*/
     return -2147024809; /*0x6bfc9b*/
-  *a4 = 0; /*0x6bfca8*/
-  if ( a2 ) /*0x6bfcb0*/
+  *v9 = 0; /*0x6bfca8*/
+  if ( a3 ) /*0x6bfcb0*/
     return -2147221232; /*0x6bfcb3*/
-  v5 = RA2_OPNEW(0x4Cu); /*0x6bfcbe*/
+  v5 = (LightSourceClass *)RA2_OPNEW(0x4Cu); /*0x6bfcbe*/
   if ( !v5 ) /*0x6bfcc8*/
     return -2147024882; /*0x6bfcc8*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))LightSourceClass::Constructor((int)v5); /*0x6bfccc*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))LightSourceClass::Constructor(v5); /*0x6bfccc*/
   v7 = v6; /*0x6bfcd1*/
   if ( !v6 ) /*0x6bfcd5*/
     return -2147024882; /*0x6bfcd8*/
-  v8 = (**v6)(v6, a3, a4); /*0x6bfcec*/
+  v8 = (**v6)(v6, a4, v9); /*0x6bfcec*/
   if ( v8 < 0 ) /*0x6bfcf0*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6bfcf8*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6bfcf8*/
   return v8; /*0x6bfc9a*/
 }
 // 0x6bfd10
@@ -28010,24 +28190,28 @@ void TClassFactory_LightSourceClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6bfd1a*/
-  if ( a2 ) /*0x6bfd1d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6bfd1a*/
+  if ( v5 ) /*0x6bfd1d*/
     v3 = v2 + 1; /*0x6bfd1f*/
   else
     v3 = v2 - 1; /*0x6bfd28*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6bfd20*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6bfd20*/
   return 0; /*0x6bfd25*/
 }
 // 0x6c5dc0
 void TClassFactory_NeuronClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c5dce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c5dce*/
 }
 // 0x6c5de0
 void TClassFactory_NeuronClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c5df0*/
   if ( !v1 ) /*0x6c5df4*/
@@ -28037,26 +28221,27 @@ void TClassFactory_NeuronClass::GetClassName()
 // 0x6c5e10
 int TClassFactory_NeuronClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  NeuronClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c5e18*/
+  if ( !v9 ) /*0x6c5e18*/
     return -2147024809; /*0x6c5e1b*/
-  *a4 = 0; /*0x6c5e28*/
-  if ( a2 ) /*0x6c5e30*/
+  *v9 = 0; /*0x6c5e28*/
+  if ( a3 ) /*0x6c5e30*/
     return -2147221232; /*0x6c5e33*/
-  v5 = RA2_OPNEW(0x38u); /*0x6c5e3e*/
+  v5 = (NeuronClass *)RA2_OPNEW(0x38u); /*0x6c5e3e*/
   if ( !v5 ) /*0x6c5e48*/
     return -2147024882; /*0x6c5e48*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))NeuronClass::NeuronClass((int)v5); /*0x6c5e4c*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))NeuronClass::NeuronClass(v5); /*0x6c5e4c*/
   v7 = v6; /*0x6c5e51*/
   if ( !v6 ) /*0x6c5e55*/
     return -2147024882; /*0x6c5e58*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c5e6c*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c5e6c*/
   if ( v8 < 0 ) /*0x6c5e70*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c5e78*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c5e78*/
   return v8; /*0x6c5e1a*/
 }
 // 0x6c5e90
@@ -28064,24 +28249,28 @@ void TClassFactory_NeuronClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c5e9a*/
-  if ( a2 ) /*0x6c5e9d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c5e9a*/
+  if ( v5 ) /*0x6c5e9d*/
     v3 = v2 + 1; /*0x6c5e9f*/
   else
     v3 = v2 - 1; /*0x6c5ea8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c5ea0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c5ea0*/
   return 0; /*0x6c5ea5*/
 }
 // 0x6c30c0
 void TClassFactory_OverlayTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c30ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c30ce*/
 }
 // 0x6c30e0
 void TClassFactory_OverlayTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c30f0*/
   if ( !v1 ) /*0x6c30f4*/
@@ -28091,24 +28280,25 @@ void TClassFactory_OverlayTypeClass::GetClassName()
 // 0x6c3110
 void TClassFactory_OverlayTypeClass::GetClassIdentifier()
 {
-  unsigned int *v5; // eax
+  OverlayTypeClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c3118*/
+  if ( !v9 ) /*0x6c3118*/
     return -2147024809; /*0x6c311b*/
-  *a4 = 0; /*0x6c3128*/
-  if ( a2 ) /*0x6c3130*/
+  *v9 = 0; /*0x6c3128*/
+  if ( a3 ) /*0x6c3130*/
     return -2147221232; /*0x6c3133*/
-  v5 = RA2_OPNEW(0x2BCu); /*0x6c3141*/
+  v5 = (OverlayTypeClass *)RA2_OPNEW(0x2BCu); /*0x6c3141*/
   if ( !v5 ) /*0x6c314b*/
     return -2147024882; /*0x6c314b*/
   v6 = OverlayTypeClass::OverlayTypeClass(v5, 0); /*0x6c3151*/
   v7 = v6; /*0x6c3156*/
   if ( !v6 ) /*0x6c315a*/
     return -2147024882; /*0x6c315d*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6c3171*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6c3171*/
   if ( v8 < 0 ) /*0x6c3175*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6c317d*/
   return v8; /*0x6c311a*/
@@ -28118,24 +28308,28 @@ void TClassFactory_OverlayTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c319a*/
-  if ( a2 ) /*0x6c319d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c319a*/
+  if ( v5 ) /*0x6c319d*/
     v3 = v2 + 1; /*0x6c319f*/
   else
     v3 = v2 - 1; /*0x6c31a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c31a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c31a0*/
   return 0; /*0x6c31a5*/
 }
 // 0x6c0fc0
 void TClassFactory_ParasiteClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c0fce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c0fce*/
 }
 // 0x6c0fe0
 void TClassFactory_ParasiteClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c0ff0*/
   if ( !v1 ) /*0x6c0ff4*/
@@ -28145,26 +28339,27 @@ void TClassFactory_ParasiteClass::GetClassName()
 // 0x6c1010
 int TClassFactory_ParasiteClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  ParasiteClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c1018*/
+  if ( !v9 ) /*0x6c1018*/
     return -2147024809; /*0x6c101b*/
-  *a4 = 0; /*0x6c1028*/
-  if ( a2 ) /*0x6c1030*/
+  *v9 = 0; /*0x6c1028*/
+  if ( a3 ) /*0x6c1030*/
     return -2147221232; /*0x6c1033*/
-  v5 = RA2_OPNEW(0x58u); /*0x6c103e*/
+  v5 = (ParasiteClass *)RA2_OPNEW(0x58u); /*0x6c103e*/
   if ( !v5 ) /*0x6c1048*/
     return -2147024882; /*0x6c1048*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))ParasiteClass::Constructor((int)v5); /*0x6c104c*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))ParasiteClass::Constructor(v5); /*0x6c104c*/
   v7 = v6; /*0x6c1051*/
   if ( !v6 ) /*0x6c1055*/
     return -2147024882; /*0x6c1058*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c106c*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c106c*/
   if ( v8 < 0 ) /*0x6c1070*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c1078*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c1078*/
   return v8; /*0x6c101a*/
 }
 // 0x6c1090
@@ -28172,19 +28367,21 @@ void TClassFactory_ParasiteClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c109a*/
-  if ( a2 ) /*0x6c109d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c109a*/
+  if ( v5 ) /*0x6c109d*/
     v3 = v2 + 1; /*0x6c109f*/
   else
     v3 = v2 - 1; /*0x6c10a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c10a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c10a0*/
   return 0; /*0x6c10a5*/
 }
 // 0x6c5660
 void TClassFactory_ParticleClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c5670*/
   if ( !v1 ) /*0x6c5674*/
@@ -28194,26 +28391,27 @@ void TClassFactory_ParticleClass::GetClassName()
 // 0x6c5690
 int TClassFactory_ParticleClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  ObjectClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c5698*/
+  if ( !v9 ) /*0x6c5698*/
     return -2147024809; /*0x6c569b*/
-  *a4 = 0; /*0x6c56a8*/
-  if ( a2 ) /*0x6c56b0*/
+  *v9 = 0; /*0x6c56a8*/
+  if ( a3 ) /*0x6c56b0*/
     return -2147221232; /*0x6c56b3*/
-  v5 = RA2_OPNEW(0x138u); /*0x6c56c1*/
+  v5 = (ObjectClass *)RA2_OPNEW(0x138u); /*0x6c56c1*/
   if ( !v5 ) /*0x6c56cb*/
     return -2147024882; /*0x6c56cb*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))ObjectClass::ProcessUpdate((int)v5); /*0x6c56cf*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))ObjectClass::ProcessUpdate(v5); /*0x6c56cf*/
   v7 = v6; /*0x6c56d4*/
   if ( !v6 ) /*0x6c56d8*/
     return -2147024882; /*0x6c56db*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c56ef*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c56ef*/
   if ( v8 < 0 ) /*0x6c56f3*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c56fb*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c56fb*/
   return v8; /*0x6c569a*/
 }
 // 0x6c5710
@@ -28221,24 +28419,28 @@ void TClassFactory_ParticleClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c571a*/
-  if ( a2 ) /*0x6c571d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c571a*/
+  if ( v5 ) /*0x6c571d*/
     v3 = v2 + 1; /*0x6c571f*/
   else
     v3 = v2 - 1; /*0x6c5728*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c5720*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c5720*/
   return 0; /*0x6c5725*/
 }
 // 0x6c5940
 void TClassFactory_ParticleSystemClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c594e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c594e*/
 }
 // 0x6c5960
 void TClassFactory_ParticleSystemClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c5970*/
   if ( !v1 ) /*0x6c5974*/
@@ -28248,26 +28450,27 @@ void TClassFactory_ParticleSystemClass::GetClassName()
 // 0x6c5990
 int TClassFactory_ParticleSystemClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  ParticleSystemClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c5998*/
+  if ( !v9 ) /*0x6c5998*/
     return -2147024809; /*0x6c599b*/
-  *a4 = 0; /*0x6c59a8*/
-  if ( a2 ) /*0x6c59b0*/
+  *v9 = 0; /*0x6c59a8*/
+  if ( a3 ) /*0x6c59b0*/
     return -2147221232; /*0x6c59b3*/
-  v5 = RA2_OPNEW(0x100u); /*0x6c59c1*/
+  v5 = (ParticleSystemClass *)RA2_OPNEW(0x100u); /*0x6c59c1*/
   if ( !v5 ) /*0x6c59cb*/
     return -2147024882; /*0x6c59cb*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))ParticleClass::ProcessCreation((int)v5); /*0x6c59cf*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))ParticleClass::ProcessCreation(v5); /*0x6c59cf*/
   v7 = v6; /*0x6c59d4*/
   if ( !v6 ) /*0x6c59d8*/
     return -2147024882; /*0x6c59db*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c59ef*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c59ef*/
   if ( v8 < 0 ) /*0x6c59f3*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c59fb*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c59fb*/
   return v8; /*0x6c599a*/
 }
 // 0x6c5a10
@@ -28275,24 +28478,28 @@ void TClassFactory_ParticleSystemClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c5a1a*/
-  if ( a2 ) /*0x6c5a1d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c5a1a*/
+  if ( v5 ) /*0x6c5a1d*/
     v3 = v2 + 1; /*0x6c5a1f*/
   else
     v3 = v2 - 1; /*0x6c5a28*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c5a20*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c5a20*/
   return 0; /*0x6c5a25*/
 }
 // 0x6c5ac0
 void TClassFactory_ParticleSystemTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c5ace*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c5ace*/
 }
 // 0x6c5ae0
 void TClassFactory_ParticleSystemTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c5af0*/
   if ( !v1 ) /*0x6c5af4*/
@@ -28302,24 +28509,25 @@ void TClassFactory_ParticleSystemTypeClass::GetClassName()
 // 0x6c5b10
 void TClassFactory_ParticleSystemTypeClass::GetClassIdentifier()
 {
-  unsigned int *v5; // eax
+  OverlayTypeClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c5b18*/
+  if ( !v9 ) /*0x6c5b18*/
     return -2147024809; /*0x6c5b1b*/
-  *a4 = 0; /*0x6c5b28*/
-  if ( a2 ) /*0x6c5b30*/
+  *v9 = 0; /*0x6c5b28*/
+  if ( a3 ) /*0x6c5b30*/
     return -2147221232; /*0x6c5b33*/
-  v5 = RA2_OPNEW(0x310u); /*0x6c5b41*/
+  v5 = (OverlayTypeClass *)RA2_OPNEW(0x310u); /*0x6c5b41*/
   if ( !v5 ) /*0x6c5b4b*/
     return -2147024882; /*0x6c5b4b*/
   v6 = OverlayTypeClass::Construct(v5, 0); /*0x6c5b51*/
   v7 = v6; /*0x6c5b56*/
   if ( !v6 ) /*0x6c5b5a*/
     return -2147024882; /*0x6c5b5d*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6c5b71*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6c5b71*/
   if ( v8 < 0 ) /*0x6c5b75*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6c5b7d*/
   return v8; /*0x6c5b1a*/
@@ -28329,24 +28537,28 @@ void TClassFactory_ParticleSystemTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c5b9a*/
-  if ( a2 ) /*0x6c5b9d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c5b9a*/
+  if ( v5 ) /*0x6c5b9d*/
     v3 = v2 + 1; /*0x6c5b9f*/
   else
     v3 = v2 - 1; /*0x6c5ba8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c5ba0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c5ba0*/
   return 0; /*0x6c5ba5*/
 }
 // 0x6c57c0
 void TClassFactory_ParticleTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c57ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c57ce*/
 }
 // 0x6c57e0
 void TClassFactory_ParticleTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c57f0*/
   if ( !v1 ) /*0x6c57f4*/
@@ -28356,24 +28568,25 @@ void TClassFactory_ParticleTypeClass::GetClassName()
 // 0x6c5810
 void TClassFactory_ParticleTypeClass::GetClassIdentifier()
 {
-  unsigned int *v5; // eax
+  BuildingTypeClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c5818*/
+  if ( !v9 ) /*0x6c5818*/
     return -2147024809; /*0x6c581b*/
-  *a4 = 0; /*0x6c5828*/
-  if ( a2 ) /*0x6c5830*/
+  *v9 = 0; /*0x6c5828*/
+  if ( a3 ) /*0x6c5830*/
     return -2147221232; /*0x6c5833*/
-  v5 = RA2_OPNEW(0x318u); /*0x6c5841*/
+  v5 = (BuildingTypeClass *)RA2_OPNEW(0x318u); /*0x6c5841*/
   if ( !v5 ) /*0x6c584b*/
     return -2147024882; /*0x6c584b*/
   v6 = BuildingTypeClass::Construct(v5, 0); /*0x6c5851*/
   v7 = v6; /*0x6c5856*/
   if ( !v6 ) /*0x6c585a*/
     return -2147024882; /*0x6c585d*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6c5871*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6c5871*/
   if ( v8 < 0 ) /*0x6c5875*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6c587d*/
   return v8; /*0x6c581a*/
@@ -28383,24 +28596,28 @@ void TClassFactory_ParticleTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c589a*/
-  if ( a2 ) /*0x6c589d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c589a*/
+  if ( v5 ) /*0x6c589d*/
     v3 = v2 + 1; /*0x6c589f*/
   else
     v3 = v2 - 1; /*0x6c58a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c58a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c58a0*/
   return 0; /*0x6c58a5*/
 }
 // 0x6c12c0
 void TClassFactory_RadSiteClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c12ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c12ce*/
 }
 // 0x6c12e0
 void TClassFactory_RadSiteClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c12f0*/
   if ( !v1 ) /*0x6c12f4*/
@@ -28410,24 +28627,25 @@ void TClassFactory_RadSiteClass::GetClassName()
 // 0x6c1310
 int TClassFactory_RadSiteClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  unsigned int *v5; // eax
+  RadSiteClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c1318*/
+  if ( !v9 ) /*0x6c1318*/
     return -2147024809; /*0x6c131b*/
-  *a4 = 0; /*0x6c1328*/
-  if ( a2 ) /*0x6c1330*/
+  *v9 = 0; /*0x6c1328*/
+  if ( a3 ) /*0x6c1330*/
     return -2147221232; /*0x6c1333*/
-  v5 = RA2_OPNEW(0x74u); /*0x6c133e*/
+  v5 = (RadSiteClass *)RA2_OPNEW(0x74u); /*0x6c133e*/
   if ( !v5 ) /*0x6c1348*/
     return -2147024882; /*0x6c1348*/
   v6 = RadSiteClass::RadSiteClass(v5); /*0x6c134c*/
   v7 = v6; /*0x6c1351*/
   if ( !v6 ) /*0x6c1355*/
     return -2147024882; /*0x6c1358*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6c136c*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6c136c*/
   if ( v8 < 0 ) /*0x6c1370*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6c1378*/
   return v8; /*0x6c131a*/
@@ -28437,24 +28655,28 @@ void TClassFactory_RadSiteClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c139a*/
-  if ( a2 ) /*0x6c139d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c139a*/
+  if ( v5 ) /*0x6c139d*/
     v3 = v2 + 1; /*0x6c139f*/
   else
     v3 = v2 - 1; /*0x6c13a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c13a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c13a0*/
   return 0; /*0x6c13a5*/
 }
 // 0x6c4440
 void TClassFactory_RocketLocomotionClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c444e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c444e*/
 }
 // 0x6c4460
 void TClassFactory_RocketLocomotionClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c4470*/
   if ( !v1 ) /*0x6c4474*/
@@ -28464,26 +28686,27 @@ void TClassFactory_RocketLocomotionClass::GetClassName()
 // 0x6c4490
 int TClassFactory_RocketLocomotionClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  RocketLocomotionClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c4498*/
+  if ( !v9 ) /*0x6c4498*/
     return -2147024809; /*0x6c449b*/
-  *a4 = 0; /*0x6c44a8*/
-  if ( a2 ) /*0x6c44b0*/
+  *v9 = 0; /*0x6c44a8*/
+  if ( a3 ) /*0x6c44b0*/
     return -2147221232; /*0x6c44b3*/
-  v5 = RA2_OPNEW(0x60u); /*0x6c44be*/
+  v5 = (RocketLocomotionClass *)RA2_OPNEW(0x60u); /*0x6c44be*/
   if ( !v5 ) /*0x6c44c8*/
     return -2147024882; /*0x6c44c8*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))RocketLocomotionClass::RocketLocomotionClass((int)v5); /*0x6c44cc*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))RocketLocomotionClass::RocketLocomotionClass(v5); /*0x6c44cc*/
   v7 = v6; /*0x6c44d1*/
   if ( !v6 ) /*0x6c44d5*/
     return -2147024882; /*0x6c44d8*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c44ec*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c44ec*/
   if ( v8 < 0 ) /*0x6c44f0*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c44f8*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c44f8*/
   return v8; /*0x6c449a*/
 }
 // 0x6c4510
@@ -28491,24 +28714,28 @@ void TClassFactory_RocketLocomotionClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c451a*/
-  if ( a2 ) /*0x6c451d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c451a*/
+  if ( v5 ) /*0x6c451d*/
     v3 = v2 + 1; /*0x6c451f*/
   else
     v3 = v2 - 1; /*0x6c4528*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c4520*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c4520*/
   return 0; /*0x6c4525*/
 }
 // 0x6c1d40
 void TClassFactory_ScriptClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c1d4e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c1d4e*/
 }
 // 0x6c1d60
 void TClassFactory_ScriptClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c1d70*/
   if ( !v1 ) /*0x6c1d74*/
@@ -28518,26 +28745,27 @@ void TClassFactory_ScriptClass::GetClassName()
 // 0x6c1d90
 int TClassFactory_ScriptClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  AbstractClass *v5; // eax
+  ScriptClass *v5; // eax
   AbstractClass *v6; // eax
   AbstractClass *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c1d98*/
+  if ( !v9 ) /*0x6c1d98*/
     return -2147024809; /*0x6c1d9b*/
-  *a4 = 0; /*0x6c1da8*/
-  if ( a2 ) /*0x6c1db0*/
+  *v9 = 0; /*0x6c1da8*/
+  if ( a3 ) /*0x6c1db0*/
     return -2147221232; /*0x6c1db3*/
-  v5 = (AbstractClass *)RA2_OPNEW(0x30u); /*0x6c1dbe*/
+  v5 = (ScriptClass *)RA2_OPNEW(0x30u); /*0x6c1dbe*/
   if ( !v5 ) /*0x6c1dc8*/
     return -2147024882; /*0x6c1dc8*/
   v6 = ScriptClass::Construct(v5, 0); /*0x6c1dce*/
   v7 = v6; /*0x6c1dd3*/
   if ( !v6 ) /*0x6c1dd7*/
     return -2147024882; /*0x6c1dda*/
-  v8 = (*(int (__stdcall **)(AbstractClass *, int, unsigned int *))v6->vtable0[0])(v6, a3, a4); /*0x6c1dee*/
+  v8 = (*(int (__stdcall **)(AbstractClass *, unsigned int *, unsigned int *))v6->vtable0)(v6, a4, v9); /*0x6c1dee*/
   if ( v8 < 0 ) /*0x6c1df2*/
-    (*(void (__thiscall **)(AbstractClass *, int))(v7->vtable0[0] + 32))(v7, 1); /*0x6c1dfa*/
+    (*(void (__thiscall **)(AbstractClass *, int))(v7->vtable0 + 32))(v7, 1); /*0x6c1dfa*/
   return v8; /*0x6c1d9a*/
 }
 // 0x6c1e10
@@ -28545,24 +28773,28 @@ void TClassFactory_ScriptClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c1e1a*/
-  if ( a2 ) /*0x6c1e1d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c1e1a*/
+  if ( v5 ) /*0x6c1e1d*/
     v3 = v2 + 1; /*0x6c1e1f*/
   else
     v3 = v2 - 1; /*0x6c1e28*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c1e20*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c1e20*/
   return 0; /*0x6c1e25*/
 }
 // 0x6c1ec0
 void TClassFactory_ScriptTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c1ece*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c1ece*/
 }
 // 0x6c1ee0
 void TClassFactory_ScriptTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c1ef0*/
   if ( !v1 ) /*0x6c1ef4*/
@@ -28572,24 +28804,25 @@ void TClassFactory_ScriptTypeClass::GetClassName()
 // 0x6c1f10
 void TClassFactory_ScriptTypeClass::GetClassIdentifier()
 {
-  unsigned int *v5; // eax
+  ScriptTypeClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c1f18*/
+  if ( !v9 ) /*0x6c1f18*/
     return -2147024809; /*0x6c1f1b*/
-  *a4 = 0; /*0x6c1f28*/
-  if ( a2 ) /*0x6c1f30*/
+  *v9 = 0; /*0x6c1f28*/
+  if ( a3 ) /*0x6c1f30*/
     return -2147221232; /*0x6c1f33*/
-  v5 = RA2_OPNEW(0x234u); /*0x6c1f41*/
+  v5 = (ScriptTypeClass *)RA2_OPNEW(0x234u); /*0x6c1f41*/
   if ( !v5 ) /*0x6c1f4b*/
     return -2147024882; /*0x6c1f4b*/
   v6 = ScriptTypeClass::Constructor(v5, 0); /*0x6c1f51*/
   v7 = v6; /*0x6c1f56*/
   if ( !v6 ) /*0x6c1f5a*/
     return -2147024882; /*0x6c1f5d*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6c1f71*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6c1f71*/
   if ( v8 < 0 ) /*0x6c1f75*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6c1f7d*/
   return v8; /*0x6c1f1a*/
@@ -28599,24 +28832,28 @@ void TClassFactory_ScriptTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c1f9a*/
-  if ( a2 ) /*0x6c1f9d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c1f9a*/
+  if ( v5 ) /*0x6c1f9d*/
     v3 = v2 + 1; /*0x6c1f9f*/
   else
     v3 = v2 - 1; /*0x6c1fa8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c1fa0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c1fa0*/
   return 0; /*0x6c1fa5*/
 }
 // 0x6c4ec0
 void TClassFactory_ShipLocomotionClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c4ece*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c4ece*/
 }
 // 0x6c4ee0
 void TClassFactory_ShipLocomotionClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c4ef0*/
   if ( !v1 ) /*0x6c4ef4*/
@@ -28626,26 +28863,27 @@ void TClassFactory_ShipLocomotionClass::GetClassName()
 // 0x6c4f10
 int TClassFactory_ShipLocomotionClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  LocomotionClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c4f18*/
+  if ( !v9 ) /*0x6c4f18*/
     return -2147024809; /*0x6c4f1b*/
-  *a4 = 0; /*0x6c4f28*/
-  if ( a2 ) /*0x6c4f30*/
+  *v9 = 0; /*0x6c4f28*/
+  if ( a3 ) /*0x6c4f30*/
     return -2147221232; /*0x6c4f33*/
-  v5 = RA2_OPNEW(0x70u); /*0x6c4f3e*/
+  v5 = (LocomotionClass *)RA2_OPNEW(0x70u); /*0x6c4f3e*/
   if ( !v5 ) /*0x6c4f48*/
     return -2147024882; /*0x6c4f48*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))LocomotionClass::Process((int)v5); /*0x6c4f4c*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))LocomotionClass::Process(v5); /*0x6c4f4c*/
   v7 = v6; /*0x6c4f51*/
   if ( !v6 ) /*0x6c4f55*/
     return -2147024882; /*0x6c4f58*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c4f6c*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c4f6c*/
   if ( v8 < 0 ) /*0x6c4f70*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4f78*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4f78*/
   return v8; /*0x6c4f1a*/
 }
 // 0x6c4f90
@@ -28653,24 +28891,28 @@ void TClassFactory_ShipLocomotionClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c4f9a*/
-  if ( a2 ) /*0x6c4f9d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c4f9a*/
+  if ( v5 ) /*0x6c4f9d*/
     v3 = v2 + 1; /*0x6c4f9f*/
   else
     v3 = v2 - 1; /*0x6c4fa8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c4fa0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c4fa0*/
   return 0; /*0x6c4fa5*/
 }
 // 0x6bfdc0
 void TClassFactory_SideClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6bfdce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6bfdce*/
 }
 // 0x6bfde0
 void TClassFactory_SideClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6bfdf0*/
   if ( !v1 ) /*0x6bfdf4*/
@@ -28680,24 +28922,25 @@ void TClassFactory_SideClass::GetClassName()
 // 0x6bfe10
 int TClassFactory_SideClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  unsigned int *v5; // eax
+  SideClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6bfe18*/
+  if ( !v9 ) /*0x6bfe18*/
     return -2147024809; /*0x6bfe1b*/
-  *a4 = 0; /*0x6bfe28*/
-  if ( a2 ) /*0x6bfe30*/
+  *v9 = 0; /*0x6bfe28*/
+  if ( a3 ) /*0x6bfe30*/
     return -2147221232; /*0x6bfe33*/
-  v5 = RA2_OPNEW(0xB4u); /*0x6bfe41*/
+  v5 = (SideClass *)RA2_OPNEW(0xB4u); /*0x6bfe41*/
   if ( !v5 ) /*0x6bfe4b*/
     return -2147024882; /*0x6bfe4b*/
   v6 = SideClass::Construct(v5, 0); /*0x6bfe51*/
   v7 = v6; /*0x6bfe56*/
   if ( !v6 ) /*0x6bfe5a*/
     return -2147024882; /*0x6bfe5d*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6bfe71*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6bfe71*/
   if ( v8 < 0 ) /*0x6bfe75*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6bfe7d*/
   return v8; /*0x6bfe1a*/
@@ -28707,24 +28950,28 @@ void TClassFactory_SideClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6bfe9a*/
-  if ( a2 ) /*0x6bfe9d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6bfe9a*/
+  if ( v5 ) /*0x6bfe9d*/
     v3 = v2 + 1; /*0x6bfe9f*/
   else
     v3 = v2 - 1; /*0x6bfea8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6bfea0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6bfea0*/
   return 0; /*0x6bfea5*/
 }
 // 0x6c0b40
 void TClassFactory_SlaveManagerClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c0b4e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c0b4e*/
 }
 // 0x6c0b60
 void TClassFactory_SlaveManagerClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c0b70*/
   if ( !v1 ) /*0x6c0b74*/
@@ -28734,26 +28981,27 @@ void TClassFactory_SlaveManagerClass::GetClassName()
 // 0x6c0b90
 int TClassFactory_SlaveManagerClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  SlaveManagerClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c0b98*/
+  if ( !v9 ) /*0x6c0b98*/
     return -2147024809; /*0x6c0b9b*/
-  *a4 = 0; /*0x6c0ba8*/
-  if ( a2 ) /*0x6c0bb0*/
+  *v9 = 0; /*0x6c0ba8*/
+  if ( a3 ) /*0x6c0bb0*/
     return -2147221232; /*0x6c0bb3*/
-  v5 = RA2_OPNEW(0x64u); /*0x6c0bbe*/
+  v5 = (SlaveManagerClass *)RA2_OPNEW(0x64u); /*0x6c0bbe*/
   if ( !v5 ) /*0x6c0bc8*/
     return -2147024882; /*0x6c0bc8*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))SlaveManagerClass::Constructor((int)v5); /*0x6c0bcc*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))SlaveManagerClass::Constructor(v5); /*0x6c0bcc*/
   v7 = v6; /*0x6c0bd1*/
   if ( !v6 ) /*0x6c0bd5*/
     return -2147024882; /*0x6c0bd8*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c0bec*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c0bec*/
   if ( v8 < 0 ) /*0x6c0bf0*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c0bf8*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c0bf8*/
   return v8; /*0x6c0b9a*/
 }
 // 0x6c0c10
@@ -28761,24 +29009,28 @@ void TClassFactory_SlaveManagerClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c0c1a*/
-  if ( a2 ) /*0x6c0c1d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c0c1a*/
+  if ( v5 ) /*0x6c0c1d*/
     v3 = v2 + 1; /*0x6c0c1f*/
   else
     v3 = v2 - 1; /*0x6c0c28*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c0c20*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c0c20*/
   return 0; /*0x6c0c25*/
 }
 // 0x6c3240
 void TClassFactory_SmudgeTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c324e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c324e*/
 }
 // 0x6c3260
 void TClassFactory_SmudgeTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c3270*/
   if ( !v1 ) /*0x6c3274*/
@@ -28792,11 +29044,12 @@ void TClassFactory_SmudgeTypeClass::GetClassIdentifier()
   char *v6; // eax
   char *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c3298*/
+  if ( !v9 ) /*0x6c3298*/
     return -2147024809; /*0x6c329b*/
-  *a4 = 0; /*0x6c32a8*/
-  if ( a2 ) /*0x6c32b0*/
+  *v9 = 0; /*0x6c32a8*/
+  if ( a3 ) /*0x6c32b0*/
     return -2147221232; /*0x6c32b3*/
   v5 = (char *)RA2_OPNEW(0x2A4u); /*0x6c32c1*/
   if ( !v5 ) /*0x6c32cb*/
@@ -28805,7 +29058,7 @@ void TClassFactory_SmudgeTypeClass::GetClassIdentifier()
   v7 = v6; /*0x6c32d6*/
   if ( !v6 ) /*0x6c32da*/
     return -2147024882; /*0x6c32dd*/
-  v8 = (**(int (__stdcall ***)(char *, int, unsigned int *))v6)(v6, a3, a4); /*0x6c32f1*/
+  v8 = (**(int (__stdcall ***)(char *, unsigned int *, unsigned int *))v6)(v6, a4, v9); /*0x6c32f1*/
   if ( v8 < 0 ) /*0x6c32f5*/
     (*(void (__thiscall **)(char *, int))(*(unsigned int *)v7 + 32))(v7, 1); /*0x6c32fd*/
   return v8; /*0x6c329a*/
@@ -28815,24 +29068,28 @@ void TClassFactory_SmudgeTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c331a*/
-  if ( a2 ) /*0x6c331d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c331a*/
+  if ( v5 ) /*0x6c331d*/
     v3 = v2 + 1; /*0x6c331f*/
   else
     v3 = v2 - 1; /*0x6c3328*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c3320*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c3320*/
   return 0; /*0x6c3325*/
 }
 // 0x6c09c0
 void TClassFactory_SpawnManagerClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c09ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c09ce*/
 }
 // 0x6c09e0
 void TClassFactory_SpawnManagerClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c09f0*/
   if ( !v1 ) /*0x6c09f4*/
@@ -28842,26 +29099,27 @@ void TClassFactory_SpawnManagerClass::GetClassName()
 // 0x6c0a10
 int TClassFactory_SpawnManagerClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  SpawnManagerClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c0a18*/
+  if ( !v9 ) /*0x6c0a18*/
     return -2147024809; /*0x6c0a1b*/
-  *a4 = 0; /*0x6c0a28*/
-  if ( a2 ) /*0x6c0a30*/
+  *v9 = 0; /*0x6c0a28*/
+  if ( a3 ) /*0x6c0a30*/
     return -2147221232; /*0x6c0a33*/
-  v5 = RA2_OPNEW(0x74u); /*0x6c0a3e*/
+  v5 = (SpawnManagerClass *)RA2_OPNEW(0x74u); /*0x6c0a3e*/
   if ( !v5 ) /*0x6c0a48*/
     return -2147024882; /*0x6c0a48*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))SpawnManagerClass::Constructor((int)v5); /*0x6c0a4c*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))SpawnManagerClass::Constructor(v5); /*0x6c0a4c*/
   v7 = v6; /*0x6c0a51*/
   if ( !v6 ) /*0x6c0a55*/
     return -2147024882; /*0x6c0a58*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c0a6c*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c0a6c*/
   if ( v8 < 0 ) /*0x6c0a70*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c0a78*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c0a78*/
   return v8; /*0x6c0a1a*/
 }
 // 0x6c0a90
@@ -28869,24 +29127,28 @@ void TClassFactory_SpawnManagerClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c0a9a*/
-  if ( a2 ) /*0x6c0a9d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c0a9a*/
+  if ( v5 ) /*0x6c0a9d*/
     v3 = v2 + 1; /*0x6c0a9f*/
   else
     v3 = v2 - 1; /*0x6c0aa8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c0aa0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c0aa0*/
   return 0; /*0x6c0aa5*/
 }
 // 0x6c18c0
 void TClassFactory_TActionClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c18ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c18ce*/
 }
 // 0x6c18e0
 void TClassFactory_TActionClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c18f0*/
   if ( !v1 ) /*0x6c18f4*/
@@ -28896,26 +29158,27 @@ void TClassFactory_TActionClass::GetClassName()
 // 0x6c1910
 int TClassFactory_TActionClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  TActionClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c1918*/
+  if ( !v9 ) /*0x6c1918*/
     return -2147024809; /*0x6c191b*/
-  *a4 = 0; /*0x6c1928*/
-  if ( a2 ) /*0x6c1930*/
+  *v9 = 0; /*0x6c1928*/
+  if ( a3 ) /*0x6c1930*/
     return -2147221232; /*0x6c1933*/
-  v5 = RA2_OPNEW(0x94u); /*0x6c1941*/
+  v5 = (TActionClass *)RA2_OPNEW(0x94u); /*0x6c1941*/
   if ( !v5 ) /*0x6c194b*/
     return -2147024882; /*0x6c194b*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))TActionClass::ctor((int)v5); /*0x6c194f*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))TActionClass::ctor(v5); /*0x6c194f*/
   v7 = v6; /*0x6c1954*/
   if ( !v6 ) /*0x6c1958*/
     return -2147024882; /*0x6c195b*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c196f*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c196f*/
   if ( v8 < 0 ) /*0x6c1973*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c197b*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c197b*/
   return v8; /*0x6c191a*/
 }
 // 0x6c1990
@@ -28923,24 +29186,28 @@ void TClassFactory_TActionClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c199a*/
-  if ( a2 ) /*0x6c199d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c199a*/
+  if ( v5 ) /*0x6c199d*/
     v3 = v2 + 1; /*0x6c199f*/
   else
     v3 = v2 - 1; /*0x6c19a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c19a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c19a0*/
   return 0; /*0x6c19a5*/
 }
 // 0x6c1440
 void TClassFactory_TEventClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c144e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c144e*/
 }
 // 0x6c1460
 void TClassFactory_TEventClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c1470*/
   if ( !v1 ) /*0x6c1474*/
@@ -28950,26 +29217,27 @@ void TClassFactory_TEventClass::GetClassName()
 // 0x6c1490
 int TClassFactory_TEventClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  TActionClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c1498*/
+  if ( !v9 ) /*0x6c1498*/
     return -2147024809; /*0x6c149b*/
-  *a4 = 0; /*0x6c14a8*/
-  if ( a2 ) /*0x6c14b0*/
+  *v9 = 0; /*0x6c14a8*/
+  if ( a3 ) /*0x6c14b0*/
     return -2147221232; /*0x6c14b3*/
-  v5 = RA2_OPNEW(0x58u); /*0x6c14be*/
+  v5 = (TActionClass *)RA2_OPNEW(0x58u); /*0x6c14be*/
   if ( !v5 ) /*0x6c14c8*/
     return -2147024882; /*0x6c14c8*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))TActionClass::TActionClass((int)v5); /*0x6c14cc*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))TActionClass::TActionClass(v5); /*0x6c14cc*/
   v7 = v6; /*0x6c14d1*/
   if ( !v6 ) /*0x6c14d5*/
     return -2147024882; /*0x6c14d8*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c14ec*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c14ec*/
   if ( v8 < 0 ) /*0x6c14f0*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c14f8*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c14f8*/
   return v8; /*0x6c149a*/
 }
 // 0x6c1510
@@ -28977,24 +29245,28 @@ void TClassFactory_TEventClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c151a*/
-  if ( a2 ) /*0x6c151d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c151a*/
+  if ( v5 ) /*0x6c151d*/
     v3 = v2 + 1; /*0x6c151f*/
   else
     v3 = v2 - 1; /*0x6c1528*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c1520*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c1520*/
   return 0; /*0x6c1525*/
 }
 // 0x6c2040
 void TClassFactory_TagClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c204e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c204e*/
 }
 // 0x6c2060
 void TClassFactory_TagClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c2070*/
   if ( !v1 ) /*0x6c2074*/
@@ -29004,26 +29276,27 @@ void TClassFactory_TagClass::GetClassName()
 // 0x6c2090
 int TClassFactory_TagClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  int v5; // eax
+  int (__stdcall ***Type)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c2098*/
+  if ( !v9 ) /*0x6c2098*/
     return -2147024809; /*0x6c209b*/
-  *a4 = 0; /*0x6c20a8*/
-  if ( a2 ) /*0x6c20b0*/
+  *v9 = 0; /*0x6c20a8*/
+  if ( a3 ) /*0x6c20b0*/
     return -2147221232; /*0x6c20b3*/
   v5 = RA2_OPNEW(0x38u); /*0x6c20be*/
   if ( !v5 ) /*0x6c20c8*/
     return -2147024882; /*0x6c20c8*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))TeknoClass::GetType((int)v5, 0); /*0x6c20ce*/
-  v7 = v6; /*0x6c20d3*/
-  if ( !v6 ) /*0x6c20d7*/
+  Type = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))TeknoClass::GetType(v5, 0); /*0x6c20ce*/
+  v7 = Type; /*0x6c20d3*/
+  if ( !Type ) /*0x6c20d7*/
     return -2147024882; /*0x6c20da*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c20ee*/
+  v8 = (**Type)(Type, a4, v9); /*0x6c20ee*/
   if ( v8 < 0 ) /*0x6c20f2*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c20fa*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c20fa*/
   return v8; /*0x6c209a*/
 }
 // 0x6c2110
@@ -29031,24 +29304,28 @@ void TClassFactory_TagClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c211a*/
-  if ( a2 ) /*0x6c211d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c211a*/
+  if ( v5 ) /*0x6c211d*/
     v3 = v2 + 1; /*0x6c211f*/
   else
     v3 = v2 - 1; /*0x6c2128*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c2120*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c2120*/
   return 0; /*0x6c2125*/
 }
 // 0x6c21c0
 void TClassFactory_TagTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c21ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c21ce*/
 }
 // 0x6c21e0
 void TClassFactory_TagTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c21f0*/
   if ( !v1 ) /*0x6c21f4*/
@@ -29062,11 +29339,12 @@ void TClassFactory_TagTypeClass::GetClassIdentifier()
   char *v6; // eax
   char *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c2218*/
+  if ( !v9 ) /*0x6c2218*/
     return -2147024809; /*0x6c221b*/
-  *a4 = 0; /*0x6c2228*/
-  if ( a2 ) /*0x6c2230*/
+  *v9 = 0; /*0x6c2228*/
+  if ( a3 ) /*0x6c2230*/
     return -2147221232; /*0x6c2233*/
   v5 = (char *)RA2_OPNEW(0xA4u); /*0x6c2241*/
   if ( !v5 ) /*0x6c224b*/
@@ -29075,7 +29353,7 @@ void TClassFactory_TagTypeClass::GetClassIdentifier()
   v7 = v6; /*0x6c2256*/
   if ( !v6 ) /*0x6c225a*/
     return -2147024882; /*0x6c225d*/
-  v8 = (**(int (__stdcall ***)(char *, int, unsigned int *))v6)(v6, a3, a4); /*0x6c2271*/
+  v8 = (**(int (__stdcall ***)(char *, unsigned int *, unsigned int *))v6)(v6, a4, v9); /*0x6c2271*/
   if ( v8 < 0 ) /*0x6c2275*/
     (*(void (__thiscall **)(char *, int))(*(unsigned int *)v7 + 32))(v7, 1); /*0x6c227d*/
   return v8; /*0x6c221a*/
@@ -29085,24 +29363,28 @@ void TClassFactory_TagTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c229a*/
-  if ( a2 ) /*0x6c229d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c229a*/
+  if ( v5 ) /*0x6c229d*/
     v3 = v2 + 1; /*0x6c229f*/
   else
     v3 = v2 - 1; /*0x6c22a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c22a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c22a0*/
   return 0; /*0x6c22a5*/
 }
 // 0x6c2640
 void TClassFactory_TaskForceClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c264e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c264e*/
 }
 // 0x6c2660
 void TClassFactory_TaskForceClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c2670*/
   if ( !v1 ) /*0x6c2674*/
@@ -29112,24 +29394,25 @@ void TClassFactory_TaskForceClass::GetClassName()
 // 0x6c2690
 int TClassFactory_TaskForceClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  unsigned int *v5; // eax
+  TaskForceClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c2698*/
+  if ( !v9 ) /*0x6c2698*/
     return -2147024809; /*0x6c269b*/
-  *a4 = 0; /*0x6c26a8*/
-  if ( a2 ) /*0x6c26b0*/
+  *v9 = 0; /*0x6c26a8*/
+  if ( a3 ) /*0x6c26b0*/
     return -2147221232; /*0x6c26b3*/
-  v5 = RA2_OPNEW(0xD4u); /*0x6c26c1*/
+  v5 = (TaskForceClass *)RA2_OPNEW(0xD4u); /*0x6c26c1*/
   if ( !v5 ) /*0x6c26cb*/
     return -2147024882; /*0x6c26cb*/
   v6 = TaskForceClass::Construct(v5, 0); /*0x6c26d1*/
   v7 = v6; /*0x6c26d6*/
   if ( !v6 ) /*0x6c26da*/
     return -2147024882; /*0x6c26dd*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6c26f1*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6c26f1*/
   if ( v8 < 0 ) /*0x6c26f5*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6c26fd*/
   return v8; /*0x6c269a*/
@@ -29139,24 +29422,28 @@ void TClassFactory_TaskForceClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c271a*/
-  if ( a2 ) /*0x6c271d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c271a*/
+  if ( v5 ) /*0x6c271d*/
     v3 = v2 + 1; /*0x6c271f*/
   else
     v3 = v2 - 1; /*0x6c2728*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c2720*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c2720*/
   return 0; /*0x6c2725*/
 }
 // 0x6c2340
 void TClassFactory_TeamClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c234e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c234e*/
 }
 // 0x6c2360
 void TClassFactory_TeamClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c2370*/
   if ( !v1 ) /*0x6c2374*/
@@ -29166,26 +29453,27 @@ void TClassFactory_TeamClass::GetClassName()
 // 0x6c2390
 int TClassFactory_TeamClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  int v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c2398*/
+  if ( !v9 ) /*0x6c2398*/
     return -2147024809; /*0x6c239b*/
-  *a4 = 0; /*0x6c23a8*/
-  if ( a2 ) /*0x6c23b0*/
+  *v9 = 0; /*0x6c23a8*/
+  if ( a3 ) /*0x6c23b0*/
     return -2147221232; /*0x6c23b3*/
   v5 = RA2_OPNEW(0xA0u); /*0x6c23c1*/
   if ( !v5 ) /*0x6c23cb*/
     return -2147024882; /*0x6c23cb*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))MissionClass::Construct((int)v5, 0, 0, 0); /*0x6c23d5*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))MissionClass::Construct(v5, 0, 0, 0); /*0x6c23d5*/
   v7 = v6; /*0x6c23da*/
   if ( !v6 ) /*0x6c23de*/
     return -2147024882; /*0x6c23e1*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c23f5*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c23f5*/
   if ( v8 < 0 ) /*0x6c23f9*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c2401*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c2401*/
   return v8; /*0x6c239a*/
 }
 // 0x6c2410
@@ -29193,24 +29481,28 @@ void TClassFactory_TeamClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c241a*/
-  if ( a2 ) /*0x6c241d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c241a*/
+  if ( v5 ) /*0x6c241d*/
     v3 = v2 + 1; /*0x6c241f*/
   else
     v3 = v2 - 1; /*0x6c2428*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c2420*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c2420*/
   return 0; /*0x6c2425*/
 }
 // 0x6c24c0
 void TClassFactory_TeamTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c24ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c24ce*/
 }
 // 0x6c24e0
 void TClassFactory_TeamTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c24f0*/
   if ( !v1 ) /*0x6c24f4*/
@@ -29220,24 +29512,25 @@ void TClassFactory_TeamTypeClass::GetClassName()
 // 0x6c2510
 void TClassFactory_TeamTypeClass::GetClassIdentifier()
 {
-  unsigned int *v5; // eax
-  unsigned int *v6; // eax
+  TeamTypeClass *v5; // eax
+  unsigned int *Base; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c2518*/
+  if ( !v9 ) /*0x6c2518*/
     return -2147024809; /*0x6c251b*/
-  *a4 = 0; /*0x6c2528*/
-  if ( a2 ) /*0x6c2530*/
+  *v9 = 0; /*0x6c2528*/
+  if ( a3 ) /*0x6c2530*/
     return -2147221232; /*0x6c2533*/
-  v5 = RA2_OPNEW(0xF8u); /*0x6c2541*/
+  v5 = (TeamTypeClass *)RA2_OPNEW(0xF8u); /*0x6c2541*/
   if ( !v5 ) /*0x6c254b*/
     return -2147024882; /*0x6c254b*/
-  v6 = TechnoTypeClass::LoadBase(v5, 0); /*0x6c2551*/
-  v7 = v6; /*0x6c2556*/
-  if ( !v6 ) /*0x6c255a*/
+  Base = TechnoTypeClass::LoadBase(v5, 0); /*0x6c2551*/
+  v7 = Base; /*0x6c2556*/
+  if ( !Base ) /*0x6c255a*/
     return -2147024882; /*0x6c255d*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6c2571*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*Base)(Base, a4, v9); /*0x6c2571*/
   if ( v8 < 0 ) /*0x6c2575*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6c257d*/
   return v8; /*0x6c251a*/
@@ -29247,24 +29540,28 @@ void TClassFactory_TeamTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c259a*/
-  if ( a2 ) /*0x6c259d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c259a*/
+  if ( v5 ) /*0x6c259d*/
     v3 = v2 + 1; /*0x6c259f*/
   else
     v3 = v2 - 1; /*0x6c25a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c25a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c25a0*/
   return 0; /*0x6c25a5*/
 }
 // 0x6c4bc0
 void TClassFactory_TeleportLocomotionClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c4bce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c4bce*/
 }
 // 0x6c4be0
 void TClassFactory_TeleportLocomotionClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c4bf0*/
   if ( !v1 ) /*0x6c4bf4*/
@@ -29274,26 +29571,27 @@ void TClassFactory_TeleportLocomotionClass::GetClassName()
 // 0x6c4c10
 int TClassFactory_TeleportLocomotionClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  TeleportLocomotionClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c4c18*/
+  if ( !v9 ) /*0x6c4c18*/
     return -2147024809; /*0x6c4c1b*/
-  *a4 = 0; /*0x6c4c28*/
-  if ( a2 ) /*0x6c4c30*/
+  *v9 = 0; /*0x6c4c28*/
+  if ( a3 ) /*0x6c4c30*/
     return -2147221232; /*0x6c4c33*/
-  v5 = RA2_OPNEW(0x4Cu); /*0x6c4c3e*/
+  v5 = (TeleportLocomotionClass *)RA2_OPNEW(0x4Cu); /*0x6c4c3e*/
   if ( !v5 ) /*0x6c4c48*/
     return -2147024882; /*0x6c4c48*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))TeleportLocomotionClass::TeleportLocomotionClass((int)v5); /*0x6c4c4c*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))TeleportLocomotionClass::TeleportLocomotionClass(v5); /*0x6c4c4c*/
   v7 = v6; /*0x6c4c51*/
   if ( !v6 ) /*0x6c4c55*/
     return -2147024882; /*0x6c4c58*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c4c6c*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c4c6c*/
   if ( v8 < 0 ) /*0x6c4c70*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4c78*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4c78*/
   return v8; /*0x6c4c1a*/
 }
 // 0x6c4c90
@@ -29301,24 +29599,28 @@ void TClassFactory_TeleportLocomotionClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c4c9a*/
-  if ( a2 ) /*0x6c4c9d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c4c9a*/
+  if ( v5 ) /*0x6c4c9d*/
     v3 = v2 + 1; /*0x6c4c9f*/
   else
     v3 = v2 - 1; /*0x6c4ca8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c4ca0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c4ca0*/
   return 0; /*0x6c4ca5*/
 }
 // 0x6c06c0
 void TClassFactory_TemporalClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c06ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c06ce*/
 }
 // 0x6c06e0
 void TClassFactory_TemporalClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c06f0*/
   if ( !v1 ) /*0x6c06f4*/
@@ -29328,26 +29630,27 @@ void TClassFactory_TemporalClass::GetClassName()
 // 0x6c0710
 int TClassFactory_TemporalClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  TemporalClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c0718*/
+  if ( !v9 ) /*0x6c0718*/
     return -2147024809; /*0x6c071b*/
-  *a4 = 0; /*0x6c0728*/
-  if ( a2 ) /*0x6c0730*/
+  *v9 = 0; /*0x6c0728*/
+  if ( a3 ) /*0x6c0730*/
     return -2147221232; /*0x6c0733*/
-  v5 = RA2_OPNEW(0x50u); /*0x6c073e*/
+  v5 = (TemporalClass *)RA2_OPNEW(0x50u); /*0x6c073e*/
   if ( !v5 ) /*0x6c0748*/
     return -2147024882; /*0x6c0748*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))TemporalClass::Constructor((int)v5); /*0x6c074c*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))TemporalClass::Constructor(v5); /*0x6c074c*/
   v7 = v6; /*0x6c0751*/
   if ( !v6 ) /*0x6c0755*/
     return -2147024882; /*0x6c0758*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c076c*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c076c*/
   if ( v8 < 0 ) /*0x6c0770*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c0778*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c0778*/
   return v8; /*0x6c071a*/
 }
 // 0x6c0790
@@ -29355,24 +29658,28 @@ void TClassFactory_TemporalClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c079a*/
-  if ( a2 ) /*0x6c079d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c079a*/
+  if ( v5 ) /*0x6c079d*/
     v3 = v2 + 1; /*0x6c079f*/
   else
     v3 = v2 - 1; /*0x6c07a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c07a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c07a0*/
   return 0; /*0x6c07a5*/
 }
 // 0x6bff40
 void TClassFactory_TiberiumClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6bff4e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6bff4e*/
 }
 // 0x6bff60
 void TClassFactory_TiberiumClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6bff70*/
   if ( !v1 ) /*0x6bff74*/
@@ -29382,24 +29689,25 @@ void TClassFactory_TiberiumClass::GetClassName()
 // 0x6bff90
 int TClassFactory_TiberiumClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  unsigned int *v5; // eax
+  TiberiumClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6bff98*/
+  if ( !v9 ) /*0x6bff98*/
     return -2147024809; /*0x6bff9b*/
-  *a4 = 0; /*0x6bffa8*/
-  if ( a2 ) /*0x6bffb0*/
+  *v9 = 0; /*0x6bffa8*/
+  if ( a3 ) /*0x6bffb0*/
     return -2147221232; /*0x6bffb3*/
-  v5 = RA2_OPNEW(0x128u); /*0x6bffc1*/
+  v5 = (TiberiumClass *)RA2_OPNEW(0x128u); /*0x6bffc1*/
   if ( !v5 ) /*0x6bffcb*/
     return -2147024882; /*0x6bffcb*/
   v6 = TiberiumClass::TiberiumClass(v5, 0); /*0x6bffd1*/
   v7 = v6; /*0x6bffd6*/
   if ( !v6 ) /*0x6bffda*/
     return -2147024882; /*0x6bffdd*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6bfff1*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6bfff1*/
   if ( v8 < 0 ) /*0x6bfff5*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6bfffd*/
   return v8; /*0x6bff9a*/
@@ -29408,28 +29716,34 @@ int TClassFactory_TiberiumClass::ddtor(void *a2, int a3, unsigned int *a4)
 void TClassFactory_TiberiumClass::GetSize()
 {
   int v2; // ecx
+  int result; // eax
+  int v4; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c001a*/
-  if ( a2 ) /*0x6c001d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c001a*/
+  if ( v4 ) /*0x6c001d*/
   {
-    *(unsigned int *)(a1 + 4) = v2 + 1; /*0x6c0020*/
-    return nullsub_114(a1, a2); /*0x6c0024*/
+    *(unsigned int *)(a2 + 4) = v2 + 1; /*0x6c0020*/
+    nullsub_114(a2, v4); /*0x6c0024*/
   }
   else
   {
-    *(unsigned int *)(a1 + 4) = v2 - 1; /*0x6c0029*/
+    *(unsigned int *)(a2 + 4) = v2 - 1; /*0x6c0029*/
     return 0; /*0x6c002c*/
   }
+  return result; /*0x6c002e*/
 }
 // 0x6c1a40
 void TClassFactory_TriggerClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c1a4e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c1a4e*/
 }
 // 0x6c1a60
 void TClassFactory_TriggerClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c1a70*/
   if ( !v1 ) /*0x6c1a74*/
@@ -29439,26 +29753,27 @@ void TClassFactory_TriggerClass::GetClassName()
 // 0x6c1a90
 int TClassFactory_TriggerClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  int v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c1a98*/
+  if ( !v9 ) /*0x6c1a98*/
     return -2147024809; /*0x6c1a9b*/
-  *a4 = 0; /*0x6c1aa8*/
-  if ( a2 ) /*0x6c1ab0*/
+  *v9 = 0; /*0x6c1aa8*/
+  if ( a3 ) /*0x6c1ab0*/
     return -2147221232; /*0x6c1ab3*/
   v5 = RA2_OPNEW(0x48u); /*0x6c1abe*/
   if ( !v5 ) /*0x6c1ac8*/
     return -2147024882; /*0x6c1ac8*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))TriggerClass::Construct((int)v5, 0); /*0x6c1ace*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))TriggerClass::Construct(v5, 0); /*0x6c1ace*/
   v7 = v6; /*0x6c1ad3*/
   if ( !v6 ) /*0x6c1ad7*/
     return -2147024882; /*0x6c1ada*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c1aee*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c1aee*/
   if ( v8 < 0 ) /*0x6c1af2*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c1afa*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c1afa*/
   return v8; /*0x6c1a9a*/
 }
 // 0x6c1b10
@@ -29466,24 +29781,28 @@ void TClassFactory_TriggerClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c1b1a*/
-  if ( a2 ) /*0x6c1b1d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c1b1a*/
+  if ( v5 ) /*0x6c1b1d*/
     v3 = v2 + 1; /*0x6c1b1f*/
   else
     v3 = v2 - 1; /*0x6c1b28*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c1b20*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c1b20*/
   return 0; /*0x6c1b25*/
 }
 // 0x6c1bc0
 void TClassFactory_TriggerTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c1bce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c1bce*/
 }
 // 0x6c1be0
 void TClassFactory_TriggerTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c1bf0*/
   if ( !v1 ) /*0x6c1bf4*/
@@ -29493,24 +29812,25 @@ void TClassFactory_TriggerTypeClass::GetClassName()
 // 0x6c1c10
 void TClassFactory_TriggerTypeClass::GetClassIdentifier()
 {
-  unsigned int *v5; // eax
+  TriggerTypeClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c1c18*/
+  if ( !v9 ) /*0x6c1c18*/
     return -2147024809; /*0x6c1c1b*/
-  *a4 = 0; /*0x6c1c28*/
-  if ( a2 ) /*0x6c1c30*/
+  *v9 = 0; /*0x6c1c28*/
+  if ( a3 ) /*0x6c1c30*/
     return -2147221232; /*0x6c1c33*/
-  v5 = RA2_OPNEW(0xB4u); /*0x6c1c41*/
+  v5 = (TriggerTypeClass *)RA2_OPNEW(0xB4u); /*0x6c1c41*/
   if ( !v5 ) /*0x6c1c4b*/
     return -2147024882; /*0x6c1c4b*/
   v6 = TriggerTypeClass::Construct(v5, 0); /*0x6c1c51*/
   v7 = v6; /*0x6c1c56*/
   if ( !v6 ) /*0x6c1c5a*/
     return -2147024882; /*0x6c1c5d*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6c1c71*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6c1c71*/
   if ( v8 < 0 ) /*0x6c1c75*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6c1c7d*/
   return v8; /*0x6c1c1a*/
@@ -29520,24 +29840,28 @@ void TClassFactory_TriggerTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c1c9a*/
-  if ( a2 ) /*0x6c1c9d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c1c9a*/
+  if ( v5 ) /*0x6c1c9d*/
     v3 = v2 + 1; /*0x6c1c9f*/
   else
     v3 = v2 - 1; /*0x6c1ca8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c1ca0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c1ca0*/
   return 0; /*0x6c1ca5*/
 }
 // 0x6c45c0
 void TClassFactory_TunnelLocomotionClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c45ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c45ce*/
 }
 // 0x6c45e0
 void TClassFactory_TunnelLocomotionClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c45f0*/
   if ( !v1 ) /*0x6c45f4*/
@@ -29547,26 +29871,27 @@ void TClassFactory_TunnelLocomotionClass::GetClassName()
 // 0x6c4610
 int TClassFactory_TunnelLocomotionClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  TunnelLocomotionClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c4618*/
+  if ( !v9 ) /*0x6c4618*/
     return -2147024809; /*0x6c461b*/
-  *a4 = 0; /*0x6c4628*/
-  if ( a2 ) /*0x6c4630*/
+  *v9 = 0; /*0x6c4628*/
+  if ( a3 ) /*0x6c4630*/
     return -2147221232; /*0x6c4633*/
-  v5 = RA2_OPNEW(0x3Cu); /*0x6c463e*/
+  v5 = (TunnelLocomotionClass *)RA2_OPNEW(0x3Cu); /*0x6c463e*/
   if ( !v5 ) /*0x6c4648*/
     return -2147024882; /*0x6c4648*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))SmallFunc_728A00((int)v5); /*0x6c464c*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))SmallFunc_728A00(v5); /*0x6c464c*/
   v7 = v6; /*0x6c4651*/
   if ( !v6 ) /*0x6c4655*/
     return -2147024882; /*0x6c4658*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c466c*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c466c*/
   if ( v8 < 0 ) /*0x6c4670*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4678*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4678*/
   return v8; /*0x6c461a*/
 }
 // 0x6c4690
@@ -29574,24 +29899,28 @@ void TClassFactory_TunnelLocomotionClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c469a*/
-  if ( a2 ) /*0x6c469d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c469a*/
+  if ( v5 ) /*0x6c469d*/
     v3 = v2 + 1; /*0x6c469f*/
   else
     v3 = v2 - 1; /*0x6c46a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c46a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c46a0*/
   return 0; /*0x6c46a5*/
 }
 // 0x6c33c0
 void TClassFactory_UnitClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c33ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c33ce*/
 }
 // 0x6c33e0
 void TClassFactory_UnitClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c33f0*/
   if ( !v1 ) /*0x6c33f4*/
@@ -29601,26 +29930,27 @@ void TClassFactory_UnitClass::GetClassName()
 // 0x6c3410
 int TClassFactory_UnitClass::ddtor(int *a2, int a3)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  int *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c3418*/
+  if ( !v9 ) /*0x6c3418*/
     return -2147024809; /*0x6c341b*/
-  *a4 = 0; /*0x6c3428*/
-  if ( a2 ) /*0x6c3430*/
+  *v9 = 0; /*0x6c3428*/
+  if ( a3 ) /*0x6c3430*/
     return -2147221232; /*0x6c3433*/
-  v5 = RA2_OPNEW(0x8E8u); /*0x6c3441*/
+  v5 = (int *)RA2_OPNEW(0x8E8u); /*0x6c3441*/
   if ( !v5 ) /*0x6c344b*/
     return -2147024882; /*0x6c344b*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))UnitClass::Construct((int)v5, 0, 0); /*0x6c3453*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))UnitClass::Construct(v5, 0, 0); /*0x6c3453*/
   v7 = v6; /*0x6c3458*/
   if ( !v6 ) /*0x6c345c*/
     return -2147024882; /*0x6c345f*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c3473*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c3473*/
   if ( v8 < 0 ) /*0x6c3477*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c347f*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c347f*/
   return v8; /*0x6c341a*/
 }
     int v2;
@@ -29630,24 +29960,28 @@ void TClassFactory_UnitClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c349a*/
-  if ( a2 ) /*0x6c349d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c349a*/
+  if ( v5 ) /*0x6c349d*/
     v3 = v2 + 1; /*0x6c349f*/
   else
     v3 = v2 - 1; /*0x6c34a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c34a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c34a0*/
   return 0; /*0x6c34a5*/
 }
 // 0x6c27c0
 void TClassFactory_UnitTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c27ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c27ce*/
 }
 // 0x6c27e0
 void TClassFactory_UnitTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c27f0*/
   if ( !v1 ) /*0x6c27f4*/
@@ -29657,26 +29991,27 @@ void TClassFactory_UnitTypeClass::GetClassName()
 // 0x6c2810
 void TClassFactory_UnitTypeClass::GetClassIdentifier()
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  int v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c2818*/
+  if ( !v9 ) /*0x6c2818*/
     return -2147024809; /*0x6c281b*/
-  *a4 = 0; /*0x6c2828*/
-  if ( a2 ) /*0x6c2830*/
+  *v9 = 0; /*0x6c2828*/
+  if ( a3 ) /*0x6c2830*/
     return -2147221232; /*0x6c2833*/
   v5 = RA2_OPNEW(0xE78u); /*0x6c2841*/
   if ( !v5 ) /*0x6c284b*/
     return -2147024882; /*0x6c284b*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))UnitTypeClass::UnitTypeClass((int)v5, 0); /*0x6c2851*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))UnitTypeClass::UnitTypeClass(v5, 0); /*0x6c2851*/
   v7 = v6; /*0x6c2856*/
   if ( !v6 ) /*0x6c285a*/
     return -2147024882; /*0x6c285d*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c2871*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c2871*/
   if ( v8 < 0 ) /*0x6c2875*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c287d*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c287d*/
   return v8; /*0x6c281a*/
 }
 // 0x6c2890
@@ -29684,24 +30019,28 @@ void TClassFactory_UnitTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c289a*/
-  if ( a2 ) /*0x6c289d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c289a*/
+  if ( v5 ) /*0x6c289d*/
     v3 = v2 + 1; /*0x6c289f*/
   else
     v3 = v2 - 1; /*0x6c28a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c28a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c28a0*/
   return 0; /*0x6c28a5*/
 }
 // 0x6c1740
 void TClassFactory_VoxelAnimClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c174e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c174e*/
 }
 // 0x6c1760
 void TClassFactory_VoxelAnimClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c1770*/
   if ( !v1 ) /*0x6c1774*/
@@ -29711,26 +30050,27 @@ void TClassFactory_VoxelAnimClass::GetClassName()
 // 0x6c1790
 int TClassFactory_VoxelAnimClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  ObjectClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c1798*/
+  if ( !v9 ) /*0x6c1798*/
     return -2147024809; /*0x6c179b*/
-  *a4 = 0; /*0x6c17a8*/
-  if ( a2 ) /*0x6c17b0*/
+  *v9 = 0; /*0x6c17a8*/
+  if ( a3 ) /*0x6c17b0*/
     return -2147221232; /*0x6c17b3*/
-  v5 = RA2_OPNEW(0x148u); /*0x6c17c1*/
+  v5 = (ObjectClass *)RA2_OPNEW(0x148u); /*0x6c17c1*/
   if ( !v5 ) /*0x6c17cb*/
     return -2147024882; /*0x6c17cb*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))ObjectClass::Initialize((int)v5); /*0x6c17cf*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))ObjectClass::Initialize(v5); /*0x6c17cf*/
   v7 = v6; /*0x6c17d4*/
   if ( !v6 ) /*0x6c17d8*/
     return -2147024882; /*0x6c17db*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c17ef*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c17ef*/
   if ( v8 < 0 ) /*0x6c17f3*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c17fb*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c17fb*/
   return v8; /*0x6c179a*/
 }
 // 0x6c1810
@@ -29738,24 +30078,28 @@ void TClassFactory_VoxelAnimClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c181a*/
-  if ( a2 ) /*0x6c181d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c181a*/
+  if ( v5 ) /*0x6c181d*/
     v3 = v2 + 1; /*0x6c181f*/
   else
     v3 = v2 - 1; /*0x6c1828*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c1820*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c1820*/
   return 0; /*0x6c1825*/
 }
 // 0x6c15c0
 void TClassFactory_VoxelAnimTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c15ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c15ce*/
 }
 // 0x6c15e0
 void TClassFactory_VoxelAnimTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c15f0*/
   if ( !v1 ) /*0x6c15f4*/
@@ -29765,24 +30109,25 @@ void TClassFactory_VoxelAnimTypeClass::GetClassName()
 // 0x6c1610
 void TClassFactory_VoxelAnimTypeClass::GetClassIdentifier()
 {
-  unsigned int *v5; // eax
+  VoxelAnimTypeClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c1618*/
+  if ( !v9 ) /*0x6c1618*/
     return -2147024809; /*0x6c161b*/
-  *a4 = 0; /*0x6c1628*/
-  if ( a2 ) /*0x6c1630*/
+  *v9 = 0; /*0x6c1628*/
+  if ( a3 ) /*0x6c1630*/
     return -2147221232; /*0x6c1633*/
-  v5 = RA2_OPNEW(0x308u); /*0x6c1641*/
+  v5 = (VoxelAnimTypeClass *)RA2_OPNEW(0x308u); /*0x6c1641*/
   if ( !v5 ) /*0x6c164b*/
     return -2147024882; /*0x6c164b*/
   v6 = VoxelAnimTypeClass::Constructor(v5, 0); /*0x6c1651*/
   v7 = v6; /*0x6c1656*/
   if ( !v6 ) /*0x6c165a*/
     return -2147024882; /*0x6c165d*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6c1671*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6c1671*/
   if ( v8 < 0 ) /*0x6c1675*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6c167d*/
   return v8; /*0x6c161a*/
@@ -29792,24 +30137,28 @@ void TClassFactory_VoxelAnimTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c169a*/
-  if ( a2 ) /*0x6c169d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c169a*/
+  if ( v5 ) /*0x6c169d*/
     v3 = v2 + 1; /*0x6c169f*/
   else
     v3 = v2 - 1; /*0x6c16a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c16a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c16a0*/
   return 0; /*0x6c16a5*/
 }
 // 0x6c4740
 void TClassFactory_WalkLocomotionClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c474e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c474e*/
 }
 // 0x6c4760
 void TClassFactory_WalkLocomotionClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c4770*/
   if ( !v1 ) /*0x6c4774*/
@@ -29819,26 +30168,27 @@ void TClassFactory_WalkLocomotionClass::GetClassName()
 // 0x6c4790
 int TClassFactory_WalkLocomotionClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  VoxelAnimClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c4798*/
+  if ( !v9 ) /*0x6c4798*/
     return -2147024809; /*0x6c479b*/
-  *a4 = 0; /*0x6c47a8*/
-  if ( a2 ) /*0x6c47b0*/
+  *v9 = 0; /*0x6c47a8*/
+  if ( a3 ) /*0x6c47b0*/
     return -2147221232; /*0x6c47b3*/
-  v5 = RA2_OPNEW(0x3Cu); /*0x6c47be*/
+  v5 = (VoxelAnimClass *)RA2_OPNEW(0x3Cu); /*0x6c47be*/
   if ( !v5 ) /*0x6c47c8*/
     return -2147024882; /*0x6c47c8*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))VoxelAnimClass::Reset((int)v5); /*0x6c47cc*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))VoxelAnimClass::Reset(v5); /*0x6c47cc*/
   v7 = v6; /*0x6c47d1*/
   if ( !v6 ) /*0x6c47d5*/
     return -2147024882; /*0x6c47d8*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c47ec*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c47ec*/
   if ( v8 < 0 ) /*0x6c47f0*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c47f8*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c47f8*/
   return v8; /*0x6c479a*/
 }
 // 0x6c4810
@@ -29846,24 +30196,28 @@ void TClassFactory_WalkLocomotionClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c481a*/
-  if ( a2 ) /*0x6c481d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c481a*/
+  if ( v5 ) /*0x6c481d*/
     v3 = v2 + 1; /*0x6c481f*/
   else
     v3 = v2 - 1; /*0x6c4828*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c4820*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c4820*/
   return 0; /*0x6c4825*/
 }
 // 0x6c5340
 void TClassFactory_WarheadTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c534e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c534e*/
 }
 // 0x6c5360
 void TClassFactory_WarheadTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c5370*/
   if ( !v1 ) /*0x6c5374*/
@@ -29873,26 +30227,27 @@ void TClassFactory_WarheadTypeClass::GetClassName()
 // 0x6c5390
 void TClassFactory_WarheadTypeClass::GetClassIdentifier()
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  int v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c5398*/
+  if ( !v9 ) /*0x6c5398*/
     return -2147024809; /*0x6c539b*/
-  *a4 = 0; /*0x6c53a8*/
-  if ( a2 ) /*0x6c53b0*/
+  *v9 = 0; /*0x6c53a8*/
+  if ( a3 ) /*0x6c53b0*/
     return -2147221232; /*0x6c53b3*/
   v5 = RA2_OPNEW(0x1D0u); /*0x6c53c1*/
   if ( !v5 ) /*0x6c53cb*/
     return -2147024882; /*0x6c53cb*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))WarheadTypeClass::Construct((int)v5, 0); /*0x6c53d1*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))WarheadTypeClass::Construct(v5, 0); /*0x6c53d1*/
   v7 = v6; /*0x6c53d6*/
   if ( !v6 ) /*0x6c53da*/
     return -2147024882; /*0x6c53dd*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c53f1*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c53f1*/
   if ( v8 < 0 ) /*0x6c53f5*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c53fd*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c53fd*/
   return v8; /*0x6c539a*/
 }
 // 0x6c5410
@@ -29900,24 +30255,28 @@ void TClassFactory_WarheadTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c541a*/
-  if ( a2 ) /*0x6c541d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c541a*/
+  if ( v5 ) /*0x6c541d*/
     v3 = v2 + 1; /*0x6c541f*/
   else
     v3 = v2 - 1; /*0x6c5428*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c5420*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c5420*/
   return 0; /*0x6c5425*/
 }
 // 0x6c0540
 void TClassFactory_WaypointPathClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c054e*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c054e*/
 }
 // 0x6c0560
 void TClassFactory_WaypointPathClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c0570*/
   if ( !v1 ) /*0x6c0574*/
@@ -29927,26 +30286,27 @@ void TClassFactory_WaypointPathClass::GetClassName()
 // 0x6c0590
 int TClassFactory_WaypointPathClass::ddtor(void *a2, int a3, unsigned int *a4)
 {
-  void *v5; // eax
-  int (__stdcall ***v6)(unsigned int, int, unsigned int *); // eax
-  int (__stdcall ***v7)(unsigned int, unsigned int, unsigned int *); // esi
+  WaypointPathClass *v5; // eax
+  int (__stdcall ***v6)(unsigned int, unsigned int *, unsigned int *); // eax
+  int (__stdcall ***v7)(unsigned int, unsigned int *, unsigned int *); // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c0598*/
+  if ( !v9 ) /*0x6c0598*/
     return -2147024809; /*0x6c059b*/
-  *a4 = 0; /*0x6c05a8*/
-  if ( a2 ) /*0x6c05b0*/
+  *v9 = 0; /*0x6c05a8*/
+  if ( a3 ) /*0x6c05b0*/
     return -2147221232; /*0x6c05b3*/
-  v5 = RA2_OPNEW(0x40u); /*0x6c05be*/
+  v5 = (WaypointPathClass *)RA2_OPNEW(0x40u); /*0x6c05be*/
   if ( !v5 ) /*0x6c05c8*/
     return -2147024882; /*0x6c05c8*/
-  v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))WaypointPathClass::Init((int)v5); /*0x6c05cc*/
+  v6 = (int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *))WaypointPathClass::Init(v5); /*0x6c05cc*/
   v7 = v6; /*0x6c05d1*/
   if ( !v6 ) /*0x6c05d5*/
     return -2147024882; /*0x6c05d8*/
-  v8 = (**v6)(v6, a3, a4); /*0x6c05ec*/
+  v8 = (**v6)(v6, a4, v9); /*0x6c05ec*/
   if ( v8 < 0 ) /*0x6c05f0*/
-    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c05f8*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int *, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c05f8*/
   return v8; /*0x6c059a*/
 }
 // 0x6c0610
@@ -29954,24 +30314,28 @@ void TClassFactory_WaypointPathClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c061a*/
-  if ( a2 ) /*0x6c061d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c061a*/
+  if ( v5 ) /*0x6c061d*/
     v3 = v2 + 1; /*0x6c061f*/
   else
     v3 = v2 - 1; /*0x6c0628*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c0620*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c0620*/
   return 0; /*0x6c0625*/
 }
 // 0x6c54c0
 void TClassFactory_WeaponTypeClass::AddRef()
 {
-  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c54ce*/
+  int v2; // [esp+4h] [ebp+4h]
+
+  return InterlockedIncrement((volatile LONG *)(v2 + 4)); /*0x6c54ce*/
 }
 // 0x6c54e0
 void TClassFactory_WeaponTypeClass::GetClassName()
 {
   LONG v1; // esi
+  volatile LONG *Block; // [esp+Ch] [ebp+4h]
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c54f0*/
   if ( !v1 ) /*0x6c54f4*/
@@ -29981,24 +30345,25 @@ void TClassFactory_WeaponTypeClass::GetClassName()
 // 0x6c5510
 void TClassFactory_WeaponTypeClass::GetClassIdentifier()
 {
-  unsigned int *v5; // eax
+  WeaponTypeClass *v5; // eax
   unsigned int *v6; // eax
   unsigned int *v7; // esi
   int v8; // edi
+  unsigned int *v9; // [esp+18h] [ebp+10h]
 
-  if ( !a4 ) /*0x6c5518*/
+  if ( !v9 ) /*0x6c5518*/
     return -2147024809; /*0x6c551b*/
-  *a4 = 0; /*0x6c5528*/
-  if ( a2 ) /*0x6c5530*/
+  *v9 = 0; /*0x6c5528*/
+  if ( a3 ) /*0x6c5530*/
     return -2147221232; /*0x6c5533*/
-  v5 = RA2_OPNEW(0x160u); /*0x6c5541*/
+  v5 = (WeaponTypeClass *)RA2_OPNEW(0x160u); /*0x6c5541*/
   if ( !v5 ) /*0x6c554b*/
     return -2147024882; /*0x6c554b*/
   v6 = WeaponTypeClass::Constructor(v5, 0); /*0x6c5551*/
   v7 = v6; /*0x6c5556*/
   if ( !v6 ) /*0x6c555a*/
     return -2147024882; /*0x6c555d*/
-  v8 = (*(int (__stdcall **)(unsigned int *, int, unsigned int *))*v6)(v6, a3, a4); /*0x6c5571*/
+  v8 = (*(int (__stdcall **)(unsigned int *, unsigned int *, unsigned int *))*v6)(v6, a4, v9); /*0x6c5571*/
   if ( v8 < 0 ) /*0x6c5575*/
     (*(void (__thiscall **)(unsigned int *, int))(*v7 + 32))(v7, 1); /*0x6c557d*/
   return v8; /*0x6c551a*/
@@ -30008,13 +30373,14 @@ void TClassFactory_WeaponTypeClass::GetSize()
 {
   int v2; // ecx
   int v3; // ecx
+  int v5; // [esp+8h] [ebp+8h]
 
-  v2 = *(unsigned int *)(a1 + 4); /*0x6c559a*/
-  if ( a2 ) /*0x6c559d*/
+  v2 = *(unsigned int *)(a2 + 4); /*0x6c559a*/
+  if ( v5 ) /*0x6c559d*/
     v3 = v2 + 1; /*0x6c559f*/
   else
     v3 = v2 - 1; /*0x6c55a8*/
-  *(unsigned int *)(a1 + 4) = v3; /*0x6c55a0*/
+  *(unsigned int *)(a2 + 4) = v3; /*0x6c55a0*/
   return 0; /*0x6c55a5*/
 }
 // 0x510640
@@ -30236,10 +30602,10 @@ void TeknoClass::GetType()
 // 0x67b370
 void TerrainTypeVector::Construct()
 {
-  this->Items = 0; /*0x67b379*/
-  this->Capacity = a2; /*0x67b380*/
-  this->IsInitialized = 1; /*0x67b383*/
-  this->IsAllocated = 0; /*0x67b387*/
+  this->vtable2 = 0; /*0x67b379*/
+  this->vtable3 = a2; /*0x67b380*/
+  this->vtable4 = 1; /*0x67b383*/
+  this->destroyed = 0; /*0x67b387*/
   *this = (TerrainTypeVector)&(void*)(void*)&VectorClass_TerrainTypeClass_const___vftable; /*0x67b38b*/
   if ( a2 ) /*0x67b391*/
   {
@@ -30349,31 +30715,31 @@ void TheatreClass::InitView()
 // 0x58bdc0
 void TileData::Constructor()
 {
-  this->Capacity = 0; /*0x58bdc4*/
-  this->q010 = 0; /*0x58bdc7*/
-  this->q018 = 0; /*0x58bdca*/
-  this->q020 = 0; /*0x58bdcd*/
-  *(&this->Items0) = 0; /*0x58bdd0*/
-  *(&this->Items2) = 0; /*0x58bdd3*/
-  *(unsigned short *)this = 0; /*0x58bdd6*/
-  *((unsigned short *)this + 1) = 0; /*0x58bdd9*/
-  *(this + 3) = 0; /*0x58bddd*/
-  *(this + 5) = 0; /*0x58bde0*/
-  *(this + 7) = 0; /*0x58bde3*/
-  *(this + 9) = 0; /*0x58bde6*/
-  *(this + 11) = 0; /*0x58bde9*/
-  *(this + 13) = 0; /*0x58bdec*/
-  *(this + 14) = 0; /*0x58bdef*/
-  *(this + 15) = 0; /*0x58bdf2*/
-  *(this + 16) = -1; /*0x58bdf5*/
-  *((unsigned char *)this + 68) = 0; /*0x58bdfc*/
-  *((unsigned char *)this + 69) = 0; /*0x58bdff*/
-  *((unsigned char *)this + 70) = 0; /*0x58be02*/
-  *((unsigned char *)this + 71) = 0; /*0x58be05*/
-  *((unsigned char *)this + 72) = 0; /*0x58be08*/
-  *((unsigned char *)this + 73) = 0; /*0x58be0b*/
-  *((unsigned char *)this + 74) = 1; /*0x58be0e*/
-  *((unsigned char *)this + 75) = 0; /*0x58be12*/
+  this->capacity = 0; /*0x58bdc4*/
+  this->count = 0; /*0x58bdc7*/
+  this->u32_18 = 0; /*0x58bdca*/
+  this->capacity = 0; /*0x58bdcd*/
+  this->u32_28 = 0; /*0x58bdd0*/
+  this->u32_30 = 0; /*0x58bdd3*/
+  *(unsigned short *)this->__tail_0 = 0; /*0x58bdd6*/
+  *(unsigned short *)&this->__tail_0[2] = 0; /*0x58bdd9*/
+  this->u32_C = 0; /*0x58bddd*/
+  this->u32_14 = 0; /*0x58bde0*/
+  this->u32_1C = 0; /*0x58bde3*/
+  this->u32_24 = 0; /*0x58bde6*/
+  this->q00B = 0; /*0x58bde9*/
+  this->u32_34 = 0; /*0x58bdec*/
+  this->u32_38 = 0; /*0x58bdef*/
+  this->u32_3C = 0; /*0x58bdf2*/
+  this->u32_40 = -1; /*0x58bdf5*/
+  this->u32_44 = 0; /*0x58bdfc*/
+  this->u32_45 = 0; /*0x58bdff*/
+  this->u32_46 = 0; /*0x58be02*/
+  this->u32_47 = 0; /*0x58be05*/
+  this->u32_48 = 0; /*0x58be08*/
+  this->u32_49 = 0; /*0x58be0b*/
+  this->u32_4A = 1; /*0x58be0e*/
+  this->u32_4B = 0; /*0x58be12*/
   return this; /*0x58be15*/
 }
 // 0x58c070
@@ -30382,7 +30748,6 @@ void TileNode::Cleanup()
   void (__thiscall ***v2)(unsigned int, int); // ecx
   int v3; // eax
   int result; // eax
-  TileNode *v5; // [esp+8h] [ebp-4h] BYREF
 
   v2 = (void (__thiscall ***)(unsigned int, int))*this; /*0x58c077*/
   if ( v2 ) /*0x58c07b*/
@@ -30390,10 +30755,9 @@ void TileNode::Cleanup()
     (**v2)(v2, 1); /*0x58c081*/
     *this = 0; /*0x58c083*/
   }
-  v5 = this; /*0x58c095*/
   v3 = (*(int (__thiscall **)(int *, TileNode **))(g_MissionQueueFrame.briefing[338] + 16))( /*0x58c099*/
          &g_MissionQueueFrame.briefing[338],
-         &v5);
+         &this);
   if ( v3 != -1 && v3 < g_MissionQueueFrame.briefing[342] ) /*0x58c0a9*/
   {
     --g_MissionQueueFrame.briefing[342]; /*0x58c0ae*/
@@ -30405,15 +30769,15 @@ void TileNode::Cleanup()
       ++v3; /*0x58c0bc*/
     }
   }
-  result = *((unsigned int *)this + 11); /*0x58c0ce*/
-  *((unsigned int *)this + 10) = &(void*)(void*)&VectorClass_Cell_vftable; /*0x58c0d1*/
-  if ( result && *((unsigned char *)this + 53) ) /*0x58c0dc*/
+  result = this->q00B; /*0x58c0ce*/
+  this->u32_28 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x58c0d1*/
+  if ( result && this->u32_35 ) /*0x58c0dc*/
   {
     RA2_OPDEL((void *)result); /*0x58c0e2*/
-    *((unsigned int *)this + 11) = 0; /*0x58c0ea*/
+    this->q00B = 0; /*0x58c0ea*/
   }
-  *((unsigned char *)this + 53) = 0; /*0x58c0ed*/
-  *((unsigned int *)this + 12) = 0; /*0x58c0f0*/
+  this->u32_35 = 0; /*0x58c0ed*/
+  this->u32_30 = 0; /*0x58c0f0*/
   return result; /*0x58c0f3*/
 }
 // 0x58d0a0
@@ -30506,7 +30870,7 @@ void TileSystem::AnalyzeTileConnectivity()
       v4 = v21; /*0x58e6bd*/
       goto LABEL_18; /*0x58e6bd*/
     }
-    v4 = v21; /*0x58e6c9*/
+    v21 = v21; /*0x58e6c9*/
     Capacity = v21->Capacity; /*0x58e6cd*/
     if ( (int)v21[1].vtable0 < Capacity ) /*0x58e6d5*/
       goto LABEL_25; /*0x58e6d5*/
@@ -30535,7 +30899,7 @@ void TileSystem::AnalyzeTileConnectivity()
       v22 = v22; /*0x58e639*/
       continue; /*0x58e63d*/
     }
-    return &v4->vtable0; /*0x58e721*/
+    return &v21->vtable0; /*0x58e721*/
   }
 }
 // 0x5ad740
@@ -30612,8 +30976,8 @@ void ToggleRepairModeCommandClass::Execute()
 void Triple::Set()
 {
   *this = (Triple)a2; /*0x43a0ba*/
-  this->q004 = a3; /*0x43a0c0*/
-  this->q008 = a4; /*0x43a0c3*/
+  this->Items = a3; /*0x43a0c0*/
+  this->Capacity = a4; /*0x43a0c3*/
   return this; /*0x43a0c6*/
 }
 // 0x67a740
@@ -31063,8 +31427,7 @@ void VeinholeMonsterClass::Construct()
 // 0x74c5b0
 void VeinholeMonsterClass::Constructor()
 {
-  int v4; // eax
-  int v5; // edx
+  int DigSound; // eax
   int v6; // eax
   int v7; // edi
   unsigned char *v8; // eax
@@ -31074,7 +31437,7 @@ void VeinholeMonsterClass::Constructor()
   int v12; // eax
   int v13; // eax
   unsigned int *v14; // edi
-  int v15; // eax
+  int AircraftFogReveal; // eax
   int v16; // eax
   int v17; // ecx
   int v18; // eax
@@ -31082,9 +31445,9 @@ void VeinholeMonsterClass::Constructor()
   size_t v20; // eax
   size_t v21; // eax
   int v22; // eax
-  int vtable2; // ebp
-  unsigned int *v24; // edi
-  int j; // eax
+  int v23; // ebp
+  int v24; // edi
+  signed int j; // eax
   unsigned int *v26; // edx
   char *v28; // [esp+10h] [ebp-18h]
   int v29; // [esp+14h] [ebp-14h]
@@ -31098,43 +31461,43 @@ void VeinholeMonsterClass::Constructor()
   this->q02B = 0; /*0x74c5c4*/
   this->u32_B0 = 0; /*0x74c5ca*/
   this->u32_B4 = 0; /*0x74c5d0*/
-  v4 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 224); /*0x74c5e1*/
-  this->u32_B8 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x74c5e7*/
-  this->u32_C0 = v4; /*0x74c5ed*/
+  DigSound = dword_8871E0->DigSound; /*0x74c5e1*/
+  this->u32_B8 = dword_A8ED84; /*0x74c5e7*/
+  this->u32_C0 = DigSound; /*0x74c5ed*/
   this->u32_C4 = 0; /*0x74c5f3*/
   this->u32_C8 = 0; /*0x74c5f9*/
   this->u32_CC = 0; /*0x74c5ff*/
   this->u32_D0 = 0; /*0x74c605*/
   this->u32_D4 = 0; /*0x74c60b*/
-  v5 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x74c611*/
+  dword_A8ED84 = dword_A8ED84; /*0x74c611*/
   this->u32_E0 = 0; /*0x74c617*/
-  this->u32_D8 = v5; /*0x74c61d*/
+  this->u32_D8 = dword_A8ED84; /*0x74c61d*/
   this->u32_E4 = 0; /*0x74c623*/
   this->u32_E8 = 1; /*0x74c629*/
-  this->u32_EC = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x74c638*/
+  this->u32_EC = dword_A8ED84; /*0x74c638*/
   this->u32_F4 = 0; /*0x74c63e*/
   this->u32_F8 = a2->vtable0; /*0x74c64b*/
   this->u32_FC = 0; /*0x74c651*/
   this->u32_100 = 0; /*0x74c657*/
   this->u32_101 = 0; /*0x74c65d*/
   this->u32_104 = 0; /*0x74c663*/
-  *(unsigned int *)this = &(void*)(void*)&VeinholeMonsterClass_vftable; /*0x74c669*/
-  this->vtable2 = &(void*)(void*)&VeinholeMonsterClass_vftable; /*0x74c66f*/
-  this->vtable3 = &(void*)(void*)&VeinholeMonsterClass_vftable; /*0x74c675*/
-  this->vtable4 = &(void*)(void*)&VeinholeMonsterClass_vftable; /*0x74c67c*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)((char *)this + 4)); /*0x74c683*/
+  *(unsigned int *)this->__pad_0 = &(void*)(void*)&VeinholeMonsterClass_vftable; /*0x74c669*/
+  this->VeinholeMonsterClass_field_0x04 = (int)&(void*)(void*)&VeinholeMonsterClass_vftable; /*0x74c66f*/
+  this->VeinholeMonsterClass_field_0x08 = (int)&(void*)(void*)&VeinholeMonsterClass_vftable; /*0x74c675*/
+  this->VeinholeMonsterClass_field_0x0C = (int)&(void*)(void*)&VeinholeMonsterClass_vftable; /*0x74c67c*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->VeinholeMonsterClass_field_0x04); /*0x74c683*/
   if ( ObjectClass::IsCellSuitableForPlacement(a2) ) /*0x74c68a*/
   {
-    if ( stru_B1D290.uniqueId < (int)stru_B1D290.vtable2 /*0x74c6cb*/
-      || (IDA_BYTE1(stru_B1D290.vtable3) || !stru_B1D290.vtable2)
-      && stru_B1D290.abstractFlags > 0
-      && (*((uint8_t (__thiscall **)(ObjectClass *, char *, unsigned int))stru_B1D290.vtable0 + 2))(
+    if ( dword_B1D2A0 < dword_B1D298 /*0x74c6cb*/
+      || (byte_B1D29D || !dword_B1D298)
+      && dword_B1D2A4 > 0
+      && (*(uint8_t (__thiscall **)(ObjectClass *, int, unsigned int))(stru_B1D290.vtable0 + 8))(
            &stru_B1D290,
-           (char *)stru_B1D290.vtable2 + stru_B1D290.abstractFlags,
+           dword_B1D298 + dword_B1D2A4,
            0) )
     {
-      v6 = stru_B1D290.uniqueId++; /*0x74c6d8*/
-      *((unsigned int *)stru_B1D290.vtable1 + v6) = this; /*0x74c6e7*/
+      v6 = dword_B1D2A0++; /*0x74c6d8*/
+      *((unsigned int *)dword_B1D294 + v6) = this; /*0x74c6e7*/
     }
     if ( !dword_A8E7AC ) /*0x74c6f0*/
     {
@@ -31148,7 +31511,7 @@ void VeinholeMonsterClass::Constructor()
           IDA_LOWORD(v29) = v7 + IDA_LOWORD(a2->v24); /*0x74c719*/
           IDA_HIWORD(v29) = v34 + IDA_HIWORD(a2->v24); /*0x74c722*/
           *(unsigned int *)v30 = v29; /*0x74c72b*/
-          v8 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v30); /*0x74c735*/
+          v8 = CellCoord::To_CellObj((CellCoord *)&dword_87F7E8, v30); /*0x74c735*/
           v9 = v28[v7]; /*0x74c73e*/
           v8[284] = v9; /*0x74c743*/
           if ( v9 ) /*0x74c749*/
@@ -31167,26 +31530,26 @@ void VeinholeMonsterClass::Constructor()
       }
       while ( v11 ); /*0x74c796*/
     }
-    this->u32_D8 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x74c7ac*/
+    this->u32_D8 = dword_A8ED84; /*0x74c7ac*/
     v32 = v32; /*0x74c7ae*/
     this->u32_E4 = 4; /*0x74c7b2*/
     this->u32_DC = v32; /*0x74c7b8*/
     this->u32_E0 = 4; /*0x74c7bb*/
     this->u32_E8 = 0; /*0x74c7be*/
     this->u32_D0 = -1; /*0x74c7c4*/
-    v13 = RA2_OPNEW(8 * *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 220)); /*0x74c7e2*/
+    v13 = RA2_OPNEW(8 * dword_8871E0->AircraftFogReveal); /*0x74c7e2*/
     if ( !v13 ) /*0x74c7ec*/
       v13 = 0; /*0x74c7f5*/
     this->u32_B4 = v13; /*0x74c7f9*/
     v14 = (unsigned int *)RA2_OPNEW(0x14u); /*0x74c804*/
     if ( v14 ) /*0x74c80b*/
     {
-      v15 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 220); /*0x74c812*/
+      AircraftFogReveal = dword_8871E0->AircraftFogReveal; /*0x74c812*/
       v14[3] = 0; /*0x74c818*/
       v14[4] = -1; /*0x74c81b*/
       *v14 = 0; /*0x74c822*/
-      v14[1] = v15; /*0x74c82b*/
-      v16 = RA2_OPNEW(4 * v15 + 4); /*0x74c82f*/
+      v14[1] = AircraftFogReveal; /*0x74c82b*/
+      v16 = RA2_OPNEW(4 * AircraftFogReveal + 4); /*0x74c82f*/
       v17 = v14[1]; /*0x74c834*/
       v14[2] = v16; /*0x74c837*/
       v18 = 0; /*0x74c83d*/
@@ -31208,10 +31571,10 @@ void VeinholeMonsterClass::Constructor()
     for ( i = 0; i <= *v14; *(unsigned int *)(v14[2] + 4 * i - 4) = 0 ) /*0x74c862*/
       ++i; /*0x74c867*/
     *v14 = 0; /*0x74c872*/
-    if ( !stru_B1D290.customSound_controller[4] ) /*0x74c87b*/
+    if ( !dword_B1D2F0 ) /*0x74c87b*/
     {
       v20 = Object::ComputeAllocationSize(); /*0x74c87d*/
-      stru_B1D290.customSound_controller[4] = RA2_OPNEW(v20); /*0x74c88b*/
+      dword_B1D2F0 = (void *)RA2_OPNEW(v20); /*0x74c88b*/
     }
     v21 = Object::ComputeAllocationSize(); /*0x74c890*/
     this->u32_C4 = RA2_OPNEW(v21); /*0x74c89b*/
@@ -31221,37 +31584,37 @@ void VeinholeMonsterClass::Constructor()
     GroundHeight = 0; /*0x74c8cf*/
     GroundHeight = Cell::GetGroundHeight(&v22); /*0x74c8d8*/
     ObjectClass::Deploy((ObjectClass *)this); /*0x74c8e4*/
-    this->u32_6C = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4084) + 160); /*0x74c8fb*/
-    *(unsigned int *)v30 = AbstractClass::GetVtable3((AbstractClass *)((char *)this + 4)); /*0x74c90d*/
-    if ( (int)g_BuildingLoadQueue_Array.vtable1 + 1 <= (int)g_BuildingLoadQueue_Array.vtable2 ) /*0x74c919*/
+    this->u32_6C = *(unsigned int *)(*(unsigned int *)&dword_8871E0->__pad_C3C[952] + 160); /*0x74c8fb*/
+    *(unsigned int *)v30 = AbstractClass::GetVtable3((AbstractClass *)&this->VeinholeMonsterClass_field_0x04); /*0x74c90d*/
+    if ( (int)(dword_B0E844 + 1) <= dword_B0E848 ) /*0x74c919*/
       goto LABEL_35; /*0x74c919*/
-    if ( g_BuildingLoadQueue_Array.vtable2 ) /*0x74c921*/
+    if ( dword_B0E848 ) /*0x74c921*/
     {
-      vtable2 = (int)g_BuildingLoadQueue_Array.vtable2; /*0x74c92a*/
-      if ( (int)g_BuildingLoadQueue_Array.vtable2 < 0 ) /*0x74c92e*/
+      v23 = dword_B0E848; /*0x74c92a*/
+      if ( dword_B0E848 < 0 ) /*0x74c92e*/
         return this; /*0x74c92e*/
     }
     else
     {
-      vtable2 = 10; /*0x74c923*/
+      v23 = 10; /*0x74c923*/
     }
-    v24 = (unsigned int *)RA2_OPNEW(8 * ((int)g_BuildingLoadQueue_Array.vtable2 + vtable2)); /*0x74c947*/
+    v24 = RA2_OPNEW(8 * (v23 + dword_B0E848)); /*0x74c947*/
     if ( v24 ) /*0x74c94e*/
     {
-      for ( j = 0; j < (int)g_BuildingLoadQueue_Array.vtable1; v24[2 * j - 1] = v26[1] ) /*0x74c967*/
+      for ( j = 0; j < (int)dword_B0E844; *(unsigned int *)(v24 + 8 * j - 4) = v26[1] ) /*0x74c967*/
       {
-        v26 = (char *)g_BuildingLoadQueue_Array.v24 + 8 * j++; /*0x74c96f*/
-        v24[2 * j - 2] = *v26; /*0x74c975*/
+        v26 = (unsigned int *)(g_BuildingLoadQueue_Array.v24 + 8 * j++); /*0x74c96f*/
+        *(unsigned int *)(v24 + 8 * j - 8) = *v26; /*0x74c975*/
       }
-      RA2_OPDEL(g_BuildingLoadQueue_Array.v24); /*0x74c990*/
+      RA2_OPDEL((void *)g_BuildingLoadQueue_Array.v24); /*0x74c990*/
       g_BuildingLoadQueue_Array.v24 = v24; /*0x74c99f*/
-      g_BuildingLoadQueue_Array.vtable2 = (char *)g_BuildingLoadQueue_Array.vtable2 + vtable2; /*0x74c9a5*/
-      g_BuildingLoadQueue_Array.uniqueId = 0; /*0x74c9aa*/
+      dword_B0E848 += v23; /*0x74c9a5*/
+      dword_B0E850 = 0; /*0x74c9aa*/
   LABEL_35:
-      *((unsigned int *)g_BuildingLoadQueue_Array.v24 + 2 * (int)g_BuildingLoadQueue_Array.vtable1) = *(unsigned int *)v30; /*0x74c9b0*/
-      *((unsigned int *)g_BuildingLoadQueue_Array.v24 + 2 * (int)g_BuildingLoadQueue_Array.vtable1 + 1) = this; /*0x74c9ce*/
-      IDA_LOBYTE(g_BuildingLoadQueue_Array.vtable3) = 0; /*0x74c9d8*/
-      ++g_BuildingLoadQueue_Array.vtable1; /*0x74c9de*/
+      *(unsigned int *)(g_BuildingLoadQueue_Array.v24 + 8 * dword_B0E844) = *(unsigned int *)v30; /*0x74c9b0*/
+      *(unsigned int *)(g_BuildingLoadQueue_Array.v24 + 8 * dword_B0E844 + 4) = this; /*0x74c9ce*/
+      byte_B0E84C = 0; /*0x74c9d8*/
+      ++dword_B0E844; /*0x74c9de*/
     }
   }
   return this; /*0x74c9e5*/
@@ -32064,12 +32427,12 @@ void VtableStub::Push_407510()
 // 0x425270
 void VtableStub::Method_425270()
 {
-  this->u32_678 = 0; /*0x425270*/
+  this->u32_19E = 0; /*0x425270*/
 }
 // 0x477740
 void VtableStub::Method_477740()
 {
-  return (*(int (__thiscall **)(void *))(this->q004)(this);
+  return (*(int (__thiscall **)(Pipe *))(*(unsigned int *)this->__pad_0 + 4))(this);
 }
 // 0x5175d0
 void VtableStub::Method_5175D0()
@@ -32172,7 +32535,6 @@ void WDTGame::ToggleTeamMode()
 // 0x76d180
 void WDTGame::ProcessTerritorySelection()
 {
-  char *v3; // ebx
   int v5; // ecx
   wchar_t *StringCSF; // eax
   int *v7; // eax
@@ -32198,8 +32560,8 @@ void WDTGame::ProcessTerritorySelection()
       DeleteAndZero((ObjectClass *)&a3); /*0x76d1f9*/
       StringCSF = GetStringCSF(aWolWdtterritor, 0, g_Str_File_WDTSel_cpp, 894); /*0x76d20f*/
       WideString::Assign((wchar_t **)&a3, StringCSF); /*0x76d219*/
-      ScoreText::Show((ScoreText *)this, (const wchar_t **)&a3); /*0x76d225*/
-      DeleteAndZero::Alt((DeleteAndZero *)&a3); /*0x76d22e*/
+      ScoreText::Show((ScoreText *)this, (const wchar_t **)&v11); /*0x76d225*/
+      DeleteAndZero::Alt((DeleteAndZero *)&v11); /*0x76d22e*/
     }
   }
   else
@@ -32433,8 +32795,8 @@ void WDTSurface::ToggleState()
     if ( a3 && this->bombVisible ) /*0x7693b3*/
       v5 = this->estimatedHealth; /*0x7693ba*/
     else
-      v5 = this->health; /*0x7693bf*/
-    MSAnim::Reset(*(unsigned int **)(this + 100), v5); /*0x7693c6*/
+      v5 = this->u32_6C; /*0x7693bf*/
+    MSAnim::Reset(*(unsigned int **)(&this->q0280), v5); /*0x7693c6*/
     Team::ReleaseAll(a2, &this->q0204); /*0x7693d5*/
     return DSurface::Flip2(); /*0x7693dc*/
   }
@@ -32446,15 +32808,15 @@ void WDTSurface::PointInRect()
   int v2; // edx
   int v3; // eax
   int v4; // edx
-  BOOL result; // eax
+  int result; // eax
 
-  v2 = *(&this->vtable31); /*0x769440*/
+  v2 = this->u32_54; /*0x769440*/
   result = 0; /*0x769475*/
-  if ( *a2 >= v2 && *a2 < v2 + *(&this->vtable33) ) /*0x769457*/
+  if ( *a2 >= v2 && *a2 < v2 + this->u32_5C ) /*0x769457*/
   {
     v3 = a2[1]; /*0x769459*/
-    v4 = *(&this->vtable32); /*0x76945c*/
-    if ( v3 >= v4 && v3 < v4 + *(&this->vtable34) ) /*0x76946a*/
+    v4 = this->u32_58; /*0x76945c*/
+    if ( v3 >= v4 && v3 < v4 + this->u32_60 ) /*0x76946a*/
       return 1; /*0x76944c*/
   }
   return result; /*0x769471*/
@@ -32580,7 +32942,7 @@ void WaypointPath::Constructor()
   {
     v4 = 0; /*0x5a9aab*/
   }
-  *((unsigned int *)this + 1) = v4; /*0x5a9ab1*/
+  this->q004 = v4; /*0x5a9ab1*/
   *v4 = *a2; /*0x5a9ab7*/
   v4[1] = a2[1]; /*0x5a9abc*/
   v7 = this->q004; /*0x5a9ac3*/
@@ -32802,7 +33164,7 @@ void World::ToScreen()
   IDA_LOWORD(v8) = Math::RoundToInt(v12); /*0x6d20c4*/
   v8 = v8; /*0x6d20c9*/
   *this = v6; /*0x6d20cf*/
-  this->u32_4 = v8; /*0x6d20d1*/
+  this->q004 = v8; /*0x6d20d1*/
   return (int)this; /*0x6d20d4*/
 }
 // 0x7680c0
@@ -32843,7 +33205,7 @@ void WorldDomination::SetupTerritoryNodes()
     g_DSurface_Hidden,
     0,
     1);
-  v7 = *(void (__thiscall ****)(unsigned int, int))(this + 120); /*0x768157*/
+  v7 = *(void (__thiscall ****)(unsigned int, int))(&this->IsInitialized0); /*0x768157*/
   if ( v7 ) /*0x76815d*/
     (**v7)(v7, 1); /*0x768163*/
   v8 = this->u32_C0; /*0x768165*/
@@ -32862,9 +33224,9 @@ void WorldDomination::SetupTerritoryNodes()
     (**v9)(v9, 3); /*0x7681b7*/
     this->IsInitialized = 0; /*0x7681b9*/
   }
-  this->u32_39 = 0; /*0x7681bf*/
-  this->IsAllocated = 0; /*0x7681c2*/
-  DeleteAndZero((ObjectClass *)(this + 40)); /*0x7681c5*/
+  *(unsigned char *)(this + 57) = 0; /*0x7681bf*/
+  this->u32_34 = 0; /*0x7681c2*/
+  DeleteAndZero((ObjectClass *)(&this->u32_100)); /*0x7681c5*/
   ReferenceCounted::Constructor((ReferenceCounted *)this); /*0x7681cc*/
 }
 // 0x53d580
@@ -33035,4 +33397,3 @@ DiskLaserClass::DiskLaserClass() {}
 NeuronClass::NeuronClass() {}
 
 WorldDominationTour::WorldDominationTour() {}
-}

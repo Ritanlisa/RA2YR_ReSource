@@ -1856,7 +1856,7 @@ int SetMember12631F10(void* _this, int a0, int a1) // thiscall
 
 // IDA: 0x631F30  proposal: MethodStub631F30
 // IDA: void __thiscall sub_631F30(unsigned int *this)
-//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)&PixelFXClass_vftable;
+//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)(void*)&PixelFXClass_vftable;
 void MethodStub631F30(void* _this) // thiscall
 {
 }

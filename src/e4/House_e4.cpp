@@ -171,8 +171,8 @@ void House::AnnounceUpgrade(IUnknown * aP1)
             this->u32_EC = 3; /*0x47d53e*/
         }
       }
-      CellClass::DetermineTileType((CellClass *)this); /*0x47d54a*/
-      BuildingClass::DetermineVisualState((BuildingClass *)this); /*0x47d551*/
+      CellClass::DetermineTileType(); /*0x47d54a*/
+      BuildingClass::DetermineVisualState(); /*0x47d551*/
       v17 = v6; /*0x47d55c*/
       v5[1] = this->u32_11B; /*0x47d560*/
       IDA_LOBYTE(result) = this->u32_11B; /*0x47d563*/
@@ -196,7 +196,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
       {
   LABEL_40:
         this->u8_11C = HouseClass::GetCameoTypeIndex((HouseClass *)v19, *(uint8_t *)(&this->u32_702)); /*0x47d7fb*/
-        CellClass::DetermineTileType((CellClass *)this); /*0x47d813*/
+        CellClass::DetermineTileType(); /*0x47d813*/
         v27 = this->ptr_44; /*0x47d818*/
         if ( v27 == -1 ) /*0x47d81e*/
           goto LABEL_47; /*0x47d81e*/
@@ -357,7 +357,7 @@ void House::AnnounceUpgrade(IUnknown * aP1)
             this->u32_EC = 3; /*0x47d7c1*/
         }
       }
-      BuildingClass::DetermineVisualState((BuildingClass *)this); /*0x47d7cd*/
+      BuildingClass::DetermineVisualState(); /*0x47d7cd*/
       result = v57; /*0x47d7d2*/
       v57->q004 = this->u32_11B; /*0x47d7dd*/
       *(unsigned char *)(v6 + 8) = this->u32_11B; /*0x47d7ea*/
@@ -429,13 +429,14 @@ void House::AnnounceUpgrade(IUnknown * aP1)
       }
     }
   }
-  BuildingClass::DetermineVisualState((BuildingClass *)this); /*0x47dd36*/
+  BuildingClass::DetermineVisualState(); /*0x47dd36*/
   v53 = (unsigned char *)v57; /*0x47dd3b*/
   v57->q004 = this->u32_11B; /*0x47dd45*/
   *v53 = this->u8_4C; /*0x47dd4b*/
   result = v6; /*0x47dd4d*/
   *(unsigned char *)(v6 + 8) = this->u32_11B; /*0x47dd57*/
   return result; /*0x47d56f*/
+}
 }
 // 0x47FB90
 namespace gamemd {
@@ -543,6 +544,7 @@ unsigned int * House::GetStartCoords(IUnknown * aP1)
   aP1[2] = v21; /*0x47fdc6*/
   aP1[3] = v22; /*0x47fdc9*/
   return aP1; /*0x47fd5c*/
+}
 }
 // 0x4FD500
 namespace gamemd {
@@ -829,6 +831,7 @@ void sub_501A20()
     }
   }
 }
+}
 // 0x50B6F0
 namespace gamemd {
 int House::IsHumanPlayer()
@@ -836,6 +839,7 @@ int House::IsHumanPlayer()
   if ( *(unsigned int *)&unk_A8B238 ) /*0x50b6f7*/
     return this == (House *)dword_A83D4C; /*0x50b720*/
   return IDA_LOBYTE(this->House_field_0x1EC) || IDA_BYTE1(this->House_field_0x1EC); /*0x50b70f*/
+}
 }
 // 0x50B730
 namespace gamemd {
@@ -848,6 +852,7 @@ int House::IsCurrentPlayer()
   if ( !*(unsigned int *)&unk_A8B238 ) /*0x50b73d*/
     IDA_LOBYTE(result) = (unsigned char)result || IDA_BYTE1(this->House_field_0x1EC); /*0x50b750*/
   return result; /*0x50b74f*/
+}
 }
 // 0x50DB00
 namespace gamemd {
@@ -1080,6 +1085,7 @@ AbstractClass * * House::ChooseHouseEnemy(BuildingClass * aP1)
     return 0; /*0x50ded7*/
   return result; /*0x50dc9d*/
 }
+}
 // 0x544BE0
 namespace gamemd {
 int House::LookupObject(int a2)
@@ -1093,6 +1099,7 @@ int House::LookupObject(int a2)
   else
     return 0; /*0x544c13*/
 }
+}
 // 0x544C20
 namespace gamemd {
 int House::LoadMapFileData(int a2, char a3)
@@ -1100,9 +1107,10 @@ int House::LoadMapFileData(int a2, char a3)
   unsigned int *v4; // eax
 
   if ( a3 && !*(unsigned int *)&this->__pad_7C[40] && this->__pad_2B0[68] ) /*0x544c35*/
-    MapClass::LoadFileData((MapClass *)this); /*0x544c3f*/
+    MapClass::LoadFileData(); /*0x544c3f*/
   v4 = (unsigned int *)(*(int (__thiscall **)(House *))(*(unsigned int *)this->__pad_0 + 156))(this); /*0x544c48*/
   return v4 && a2 < *v4 * v4[1] && v4[a2 + 4]; /*0x544c50*/
+}
 }
 // 0x69E090
 namespace gamemd {
@@ -1128,6 +1136,7 @@ void House::Constructor()
     *(unsigned int *)v3.__pad_0 = &off_7E1668; /*0x69e0e1*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v3); /*0x69e0e9*/
   }
+}
 }
 // 0x70C270
 namespace gamemd {
@@ -1167,7 +1176,7 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   int v34; // [esp-4h] [ebp-14h]
   Checksummer *v35; // [esp+14h] [ebp+4h]
 
-  RadioClass::PowerDrainUpdate((RadioClass *)this, aP1); /*0x70c27b*/
+  RadioClass::PowerDrainUpdate(aP1); /*0x70c27b*/
   Power::TimerProcess(this->controlGroup); /*0x70c289*/
   Checksummer::Add_double((Checksummer *)aP1, this->armorMultiplier[0], this->armorMultiplier[1]); /*0x70c29e*/
   Checksummer::Add_double((Checksummer *)aP1, this->firepowerMultiplier[0], this->firepowerMultiplier[1]); /*0x70c2b3*/
@@ -1281,6 +1290,7 @@ int House::PowerBeginUpdate(AbstractClass * aP1)
   }
   return result; /*0x70c599*/
 }
+}
 // 0x72F350
 namespace gamemd {
 unsigned int * sub_72F350()
@@ -1308,6 +1318,7 @@ unsigned int * sub_72F350()
   result = SetupScreenBuffers(g_CommandLineFlags, g_CommandLineParam); /*0x72f415*/
   byte_B0FC0C = 1; /*0x72f41a*/
   return result; /*0x72f421*/
+}
 }
 // 0x6D1660
 namespace gamemd {
@@ -1371,6 +1382,7 @@ void House_Play_6D1660()
     return (*(char (__thiscall **)(unsigned char *, unsigned int))(v10 + 56))(v3, 0); /*0x6d1766*/
   }
   return result; /*0x6d1769*/
+}
 }
 // 0x637A10
 namespace gamemd {

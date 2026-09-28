@@ -233,7 +233,7 @@ struct VoxelAnimTypeClass {
     bool Translucent;  // 0x295
     bool SourceShared;  // 0x296
     unsigned int VoxelIndex;  // 0x298
-    unsigned int Duration;  // 0x29C
+    char Duration[4];  // 0x29C
     double Elasticity;  // 0x2A0
     void* q2A4;  // 0x2A4
     double MinAngularVelocity;  // 0x2A8
@@ -254,8 +254,8 @@ struct VoxelAnimTypeClass {
     AnimTypeClass* BounceAnim;  // 0x2E4
     AnimTypeClass* ExpireAnim;  // 0x2E8
     AnimTypeClass* TrailerAnim;  // 0x2EC
-    char Damage[4];  // 0x2F0
-    unsigned int DamageRadius;  // 0x2F4
+    unsigned int Damage;  // 0x2F0
+    char DamageRadius[4];  // 0x2F4
     WarheadTypeClass* Warhead;  // 0x2F8
     ParticleSystemTypeClass* AttachedSystem;  // 0x2FC
     bool IsTiberium;  // 0x300

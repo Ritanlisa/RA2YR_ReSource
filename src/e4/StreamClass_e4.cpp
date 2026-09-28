@@ -81,10 +81,10 @@ int StreamClass::Set(IUnknown * aP1)
 
   if ( *aP1 ) /*0x45af28*/
   {
-    v3 = (unsigned int *)((**(int (__stdcall ***)(unsigned int, int *, unsigned int **))*aP1)(*aP1, &stru_818E00.VoxelCaches[17], &aP1));
+    v3 = (**(int (__stdcall ***)(unsigned int, int *, unsigned int **))*aP1)(*aP1, &stru_818E00.VoxelCaches[17], &aP1); /*0x45af3d*/
     if ( v3 >= 0 ) /*0x45af41*/
     {
-      v5 = (unsigned int)(aP1);
+      v5 = (unsigned int *)(aP1);
       if ( *(unsigned int *)this->__pad_0 ) /*0x45af5c*/
         (*(void (__stdcall **)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x45af6a*/
       *(unsigned int *)this->__pad_0 = v5; /*0x45af6d*/

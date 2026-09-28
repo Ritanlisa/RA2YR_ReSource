@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x49F5C0
 namespace gamemd {

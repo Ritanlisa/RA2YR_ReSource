@@ -57,9 +57,9 @@ HoverLocomotionClass * HoverLocomotionClass::ProcessMove(char a2)
 {
   *(unsigned int *)this->__pad_0 = (void*)&HoverLocomotionClass_vftable; /*0x5172c3*/
   *(unsigned int *)&this->__pad_0[4] = (void*)&HoverLocomotionClass_vftable; /*0x5172c9*/
-  LocomotionClass::Construct((LocomotionClass *)this); /*0x5172d0*/
+  LocomotionClass::Construct(); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
-    RA2_OPDEL(this); /*0x5172dd*/
+    RA2_OPDEL(); /*0x5172dd*/
   return this->__pad_0; /*0x5172e7*/
 }
 } // namespace gamemd

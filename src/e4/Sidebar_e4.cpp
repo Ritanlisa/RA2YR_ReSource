@@ -18,6 +18,8 @@
 #include "e4/classes/VectorClass_ptr_ConvertClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
+#include "e4/classes/MultiplayerGameMode_e4.hpp"
+#include "e4/classes/SideClass_e4.hpp"
 
 // 0x4FA350
 namespace gamemd {
@@ -67,7 +69,7 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
       if ( aP3 ) /*0x4fa3c9*/
         v21 = this->u8_53D3; /*0x4fa3d1*/
       else
-        v21 = this->u8_53D2; /*0x4fa3dd*/
+        v21 = (int)(this->u8_53D2);
       break; /*0x4fa3d5*/
     case 2: /*0x4fa3b0*/
     case 3: /*0x4fa3b0*/
@@ -259,8 +261,9 @@ AbstractClass * * Sidebar::StartSidebarProduction(void * a1, BuildingTypeClass *
 namespace gamemd {
 int Sidebar::Dispatch(IUnknown * aP1, char a3, int a4, char a5)
 {
-  unsigned int result;
-result = (unsigned int)((IUnknown *)((char)(aP1 - 1)));
+  IUnknown * result;
+
+  result = (IUnknown *)((char)(aP1 - 1));
   switch ( aP1 ) /*0x5007b7*/
   {
     case 1: /*0x5007b7*/
@@ -278,7 +281,7 @@ result = (unsigned int)((IUnknown *)((char)(aP1 - 1)));
       }
       else
       {
-        this->u32_53D4 = (unsigned int)((IUnknown *)(a5));
+        this->u32_53D4 = (IUnknown *)(a5);
         result = a5; /*0x5007f5*/
       }
       break; /*0x5007f2*/
@@ -296,6 +299,7 @@ result = (unsigned int)((IUnknown *)((char)(aP1 - 1)));
       return result;
   }
   return (int)(result);
+}
 }
 // 0x533F50
 namespace gamemd {
@@ -321,6 +325,7 @@ CreateTeamCommand * * Sidebar::ScrollSidebarSkipGame()
              0);
   }
   return result; /*0x533fab*/
+}
 }
 // 0x636310
 namespace gamemd {
@@ -424,8 +429,9 @@ TechnoClass * * Sidebar::CancelSidebarProductionQueue()
     }
     IDA_BYTE1(this->Sidebar_field_0x10) = 0; /*0x6364fa*/
     this->Sidebar_field_0xC[0] = 0; /*0x6364fe*/
-    RA2_OPDEL(this); /*0x636501*/
+    RA2_OPDEL(); /*0x636501*/
   }
+}
 }
 // 0x63F040
 namespace gamemd {
@@ -451,6 +457,7 @@ int Sidebar::RemoveItem(int a2)
     while ( v3 < (int)this->Sidebar_field_0x10 ); /*0x63f064*/
   }
   return 1; /*0x63f069*/
+}
 }
 // 0x63FB20
 namespace gamemd {
@@ -644,8 +651,9 @@ ObjectClass * * Sidebar::Render(char a2)
       while ( v11 < *(unsigned int *)this->__pad_1534 ); /*0x63fda0*/
     }
   }
-  IDA_LOBYTE(result) = RadarClass::Destru_vt16((RadarClass *)this, a2); /*0x63fdac*/
+  IDA_LOBYTE(a2); /*0x63fdac*/
   return result; /*0x63fdb1*/
+}
 }
 // 0x6A60A0
 namespace gamemd {
@@ -822,6 +830,7 @@ AbstractClass * * Sidebar::FlushSidebarTooltip(char a2)
   }
   LABEL_25:
   g_TooltipActive = 0; /*0x6a7488*/
+}
 }
 // 0x6A9540
 namespace gamemd {

@@ -38,6 +38,7 @@ int LayerClass::CoordinatesLegal(IUnknown * aP1)
                 && (result = this->u32_F8, v5 <= v2 + 2 * result);
   return result; /*0x568337*/
 }
+}
 // 0x56DC20
 namespace gamemd {
 unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7, IUnknown * aP8, IUnknown * aP9, IUnknown * aP10, IUnknown * aP11, IUnknown * aP12, IUnknown * aP13, IUnknown * aP14, MouseClass * aP15, char a17)
@@ -131,7 +132,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
   unsigned int v105[24]; // [esp+134h] [ebp-C0h] BYREF
   unsigned int v106[24]; // [esp+194h] [ebp-60h] BYREF
 
-  v17 = (gamemd::MapClass *)((int)((IUnknown *)((MapClass *)aP0)));
+  v17 = (gamemd::MapClass *)((IUnknown *)((MapClass *)aP0));
   v18 = (IUnknown *)(*aP3);
   v19 = (IUnknown *)((Type *)aP3[1]);
   v81 = aP0; /*0x56dc49*/
@@ -505,6 +506,7 @@ unsigned int * LayerClass::Pathfinding_Find(IUnknown * aP0, IUnknown * aP1, IUnk
     return aP2; /*0x56e780*/
   }
 }
+}
 // 0x577D90
 namespace gamemd {
 void * LayerClass::Reveal(int a2)
@@ -518,8 +520,8 @@ void * LayerClass::Reveal(int a2)
 
   result = (void *)a2; /*0x577d90*/
   if ( a2 ) /*0x577da2*/
-    *(unsigned char *)(*(unsigned int *)&HouseClass_Array->vtable0[4 * *(unsigned int *)(a2 + 48)] + 577) = 1; /*0x577db0*/
-  if ( (void *)a2 == HouseClass_Player ) /*0x577dbc*/
+    *(unsigned char *)(*(&dword_A8022C->vtable0 + *(unsigned int *)(a2 + 48)) + 577) = 1; /*0x577db0*/
+  if ( (Object *)a2 == dword_A83D4C ) /*0x577dbc*/
   {
     if ( a2 ) /*0x577dca*/
       goto LABEL_8; /*0x577dca*/
@@ -530,22 +532,22 @@ void * LayerClass::Reveal(int a2)
   }
   Debug::Log(); /*0x577dd1*/
   LABEL_8:
-  if ( g_GameMode_Current[0] != 3 && g_GameMode_Current[0] != 4 /*0x577df4*/
-    || !g_GameStateFlags
-    || (v8 = 1, (*(uint8_t (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 4))(g_GameStateFlags)) )
+  if ( *(unsigned int *)&dword_A8B238 != 3 && *(unsigned int *)&dword_A8B238 != 4 /*0x577df4*/
+    || !dword_A8B23C
+    || (v8 = 1, (*(uint8_t (__thiscall **)(ObjectClass *))(dword_A8B23C->vtable0 + 4))(dword_A8B23C)) )
   {
     v8 = 0; /*0x577dff*/
   }
-  result = HouseClass_Player; /*0x577e04*/
-  if ( !*((unsigned char *)HouseClass_Player + 576) ) /*0x577e09*/
+  result = dword_A83D4C; /*0x577e04*/
+  if ( !dword_A83D4C->__pad_140[256] ) /*0x577e09*/
   {
     HouseClass::ResetObjectOrders(0, 0); /*0x577e1e*/
-    *((unsigned char *)HouseClass_Player + 576) = 1; /*0x577e29*/
-    g_Cell_PositionLUT = g_Cell_PositionLUT; /*0x577e3a*/
+    dword_A83D4C->__pad_140[256] = 1; /*0x577e29*/
+    dword_87F8DC = dword_87F8DC; /*0x577e3a*/
     dword_87F8F4 = 1; /*0x577e42*/
-    dword_87F8FC = g_Cell_PositionLUT - 1; /*0x577e4b*/
-    dword_87F900 = (g_Cell_PositionLUT << 11) + g_Shroud_CellArray + 4; /*0x577e5a*/
-    v4 = LayerClass::CellIteratorNext(&MapClass_Instance); /*0x577e60*/
+    dword_87F8FC = dword_87F8DC - 1; /*0x577e4b*/
+    dword_87F900 = (dword_87F8DC << 11) + dword_87F924 + 4; /*0x577e5a*/
+    v4 = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x577e60*/
     if ( v4 ) /*0x577e67*/
     {
       while ( 1 ) /*0x577e6e*/
@@ -559,7 +561,7 @@ void * LayerClass::Reveal(int a2)
         if ( v6 != this->u32_F4 + 5 ) /*0x577e8e*/
           goto LABEL_21; /*0x577e8e*/
   LABEL_24:
-        v4 = LayerClass::CellIteratorNext(&MapClass_Instance); /*0x577ee9*/
+        v4 = LayerClass::CellIteratorNext((LayerClass *)&dword_87F7E8); /*0x577ee9*/
         if ( !v4 ) /*0x577ef5*/
           goto LABEL_25; /*0x577ef5*/
       }
@@ -578,10 +580,11 @@ void * LayerClass::Reveal(int a2)
     }
   LABEL_25:
     Radar::UpdateReveal(0, 0); /*0x577efc*/
-    FogOfWar::Render((int **)&MapClass_Instance); /*0x577f0d*/
-    return (void *)MapClass::MarkForRedraw(&MapClass_Instance, 2); /*0x577f19*/
+    FogOfWar::Render((FogOfWar *)&dword_87F7E8); /*0x577f0d*/
+    return (void *)MapClass::MarkForRedraw((GScreenClass *)&dword_87F7E8, 2); /*0x577f19*/
   }
   return result; /*0x577f1e*/
+}
 }
 // 0x578290
 namespace gamemd {
@@ -632,6 +635,7 @@ int LayerClass::CellIteratorNext()
     return *v2; /*0x57833d*/
   }
 }
+}
 // 0x578350
 namespace gamemd {
 int LayerClass::CellIteratorReset()
@@ -646,6 +650,7 @@ int LayerClass::CellIteratorReset()
   result = (v1 << 11) + this->u32_13C + 4; /*0x578378*/
   this->u32_118 = result; /*0x57837c*/
   return result; /*0x578382*/
+}
 }
 // 0x578460
 namespace gamemd {
@@ -680,6 +685,7 @@ int LayerClass::IsWithinUsableArea(IUnknown * aP1, TechnoClass * aP2)
                 && (v9 = this->u32_FC, v5 - v4 < 2 * (v9 + this->u32_104) - result)
                 && (result -= 2 * v9, v4 - v5 < result);
   return result; /*0x578525*/
+}
 }
 // 0x581140
 namespace gamemd {

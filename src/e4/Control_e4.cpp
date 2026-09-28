@@ -9,6 +9,7 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/CoopCampaignVector_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
 
 // 0x48E620
 namespace gamemd {
@@ -19,7 +20,7 @@ int Control::DispatchClick(ControlClass * aP1)
   v3 = this->u32_28; /*0x48e623*/
   if ( v3 ) /*0x48e628*/
     (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)v3 + 108))(v3, 0); /*0x48e62e*/
-  return GadgetClass::ClearState((GadgetClass *)this, aP1); /*0x48e63d*/
+  return GadgetClass::ClearState(aP1); /*0x48e63d*/
 }
 } // namespace gamemd
 // 0x60B950
@@ -48,7 +49,7 @@ int Control::RepositionControlsDialog()
   hWnd = (HWND)this; /*0x60b95a*/
   Parent = GetParent((HWND)this); /*0x60b96a*/
   GetWindowRect(Parent, &Rect); /*0x60b972*/
-  GetWindowRect((HWND)this, &v18); /*0x60b97a*/
+  GetWindowRect(&v18); /*0x60b97a*/
   X = v18.left - Rect.left; /*0x60b996*/
   nHeight = v18.bottom - v18.top; /*0x60b9a2*/
   v3 = v18.top - Rect.top; /*0x60b9ab*/

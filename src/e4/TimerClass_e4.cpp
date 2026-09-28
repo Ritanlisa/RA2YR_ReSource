@@ -26,6 +26,7 @@ int TimerClass::Active()
   }
   return v2 != 0; /*0x4c94a9*/
 }
+}
 // 0x54FE60
 namespace gamemd {
 void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int a6, int a7, int a8, char a9, int a10, int a11, int a12, int a13, char a14, char a15, int a16, int a17)
@@ -116,6 +117,7 @@ signed int TimerClass::GetRemaining()
     }
   }
   return result; /*0x5ceb00*/
+}
 }
 // 0x5CEB20
 namespace gamemd {

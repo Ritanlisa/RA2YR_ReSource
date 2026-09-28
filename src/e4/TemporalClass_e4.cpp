@@ -17,6 +17,9 @@
 #include "e4/classes/TeamTypeClass_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/TerrainClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x71A450
 namespace gamemd {
@@ -25,7 +28,7 @@ int TemporalClass::Constructor()
   int v2; // eax
   int v3; // eax
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x71a453*/
+  AbstractClass::Constructor(); /*0x71a453*/
   v2 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x71a458*/
   this->TemporalClass_field_34 = 0; /*0x71a45d*/
   *(unsigned int *)&this->__pad_28[4] = v2; /*0x71a464*/
@@ -55,7 +58,7 @@ TemporalClass::TemporalClass(TechnoClass * aP1)
   int v3; // eax
   int v5; // [esp+Ch] [ebp-8h]
 
-  AbstractClass::Constructor((AbstractClass *)this); /*0x71a4e7*/
+  AbstractClass::Constructor(); /*0x71a4e7*/
   *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x71a4fb*/
   this->TemporalClass_field_34 = 0; /*0x71a4fe*/
   this->vtable0 = (void*)&TemporalClass_vftable; /*0x71a501*/
@@ -142,7 +145,7 @@ void ** TemporalClass::ProcessTimeWarp()
   {
     v3[158] = 0; /*0x71a77f*/
     *(unsigned char *)(*(unsigned int *)this->__pad_28 + 624) = 0; /*0x71a78a*/
-    return (void **)TagClass::Unlink((TagClass *)this); /*0x71a790*/
+    return (); /*0x71a790*/
   }
   else
   {
@@ -167,11 +170,11 @@ void ** TemporalClass::ProcessTimeWarp()
     IDA_LOWORD(v13) = Math::RoundToInt(v1); /*0x71a827*/
     if ( v13 > *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3936) << 8 )
     {
-      return (void **)FactoryClass::CompleteItem((FactoryClass *)this); /*0x71a841*/
+      return (); /*0x71a841*/
     }
     else
     {
-  LABEL_10: v14 = (gamemd::TemporalClass *)((int)((TemporalClass *)this->q011));
+  LABEL_10: v14 = (int)((TemporalClass *)this->q011);
       WarpPerStep = (unsigned int)(0);
       if ( v14 ) /*0x71a855*/
         WarpPerStep = TemporalClass::GetWarpPerStep(v14, 1); /*0x71a85e*/
@@ -298,13 +301,13 @@ void ** TemporalClass::ProcessTimeWarp()
             (*(void (__thiscall **)(unsigned int, int))(**(unsigned int **)this->__pad_28 + 224))( /*0x71aac4*/
               *(unsigned int *)this->__pad_28,
               this->creationFrame);
-            result = (void **)((int)((void **)(*(int (__thiscall **)(unsigned int))(**(unsigned int **)this->__pad_28 + 248))(*(unsigned int *)this->__pad_28)));
+            result = (int)((void **)(*(int (__thiscall **)(unsigned int))(**(unsigned int **)this->__pad_28 + 248))(*(unsigned int *)this->__pad_28));
           }
           v38 = (int)(this->creationFrame);
           if ( v38 ) /*0x71aada*/
             result = (void **)(*(int (__thiscall **)(int, unsigned int, int))(this->u32_4A8)(v38, 0, 1); /*0x71aae1*/
         }
-        v39 = (int)(this->creationFrame);
+        v39 = this->creationFrame; /*0x71aae7*/
         *(unsigned int *)this->__pad_28 = 0; /*0x71aaea*/
         this->q011 = 0; /*0x71aaef*/
         this->uniqueId = 0; /*0x71aaf2*/
@@ -349,8 +352,7 @@ void * TemporalClass::ProcessEvent(char a2)
 {
   int v3; // eax
   TemporalClass *v5; // [esp+4h] [ebp-4h] BYREF
-
-  this->vtable0 = (unsigned int)((void*)&TemporalClass_vftable);
+this->vtable0 = (unsigned int)((void*)&TemporalClass_vftable);
   this->vtable1 = (void*)&TemporalClass_vftable; /*0x71b1c3*/
   this->vtable2 = (void*)&TemporalClass_vftable; /*0x71b1ca*/
   this->vtable3 = (void*)&TemporalClass_vftable; /*0x71b1d1*/
@@ -369,9 +371,9 @@ void * TemporalClass::ProcessEvent(char a2)
       ++v3; /*0x71b206*/
     }
   }
-  AbstractClass::DTOR((AbstractClass *)this); /*0x71b21a*/
+  AbstractClass::DTOR(); /*0x71b21a*/
   if ( (a2 & 1) != 0 ) /*0x71b224*/
-    RA2_OPDEL(this); /*0x71b227*/
+    RA2_OPDEL(); /*0x71b227*/
   return &this->vtable0; /*0x71b231*/
 }
 } // namespace ra2
@@ -380,7 +382,7 @@ void * TemporalClass::ProcessEvent(char a2)
 namespace gamemd {
 int TemporalClass::SetTarget(AbstractClass * aP1)
 {
-  return AbstractClass::ProcessPower((AbstractClass *)this); /*0x71a65a*/
+  return AbstractClass::ProcessPower(); /*0x71a65a*/
 }
 } // namespace gamemd
 

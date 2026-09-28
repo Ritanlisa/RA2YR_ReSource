@@ -60,6 +60,8 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/AudioMixer_e4.hpp"
+#include "e4/classes/E4Recv_752CB0_e4.hpp"
+#include "e4/classes/RawFileClass_e4.hpp"
 
 // 0x770E70
 namespace gamemd {
@@ -79,12 +81,14 @@ void sub_770E70(char **this@<ecx> a1, ObjectClass * aP1, ObjectClass * aP2, Obje
   INIClass::ReadTokenizedPair((INIClass *)a1, aP1, aP2, v5, 2, (char **)&aP3); /*0x770eed*/
   DeleteAndZero((ObjectClass *)&aP3); /*0x770ef6*/
 }
+}
 // 0x771890
 namespace gamemd {
 void E4Recv_771890::sub_771890()
 {
   *(void ** *)this = (void*)&WorldDominationTour_Voices_Anim_vftable; /*0x771890*/
-  VtableStub::5CB6C0(this); /*0x771896*/
+  VtableStub::5CB6C0(); /*0x771896*/
+}
 }
 // 0x7741C0
 namespace gamemd {
@@ -123,7 +127,7 @@ int E4Recv_7741C0::FindRegistrySubKey(void * a1, void * a2, void * a3)
          &cbSecurityDescriptor,
          &ftLastWriteTime) )
   {
-    return (DWORD)(0);
+    return (unsigned char *)(0);
   }
   v4 = (DWORD)((unsigned char *)(cbMaxSubKeyLen + 16));
   v5 = (unsigned char *)(RA2_OPNEW(cbMaxSubKeyLen + 16));
@@ -153,6 +157,7 @@ int E4Recv_7741C0::FindRegistrySubKey(void * a1, void * a2, void * a3)
   RA2_OPDEL(v5); /*0x7742e5*/
   RA2_OPDEL(lpClass); /*0x7742ef*/
   return (int)phkResult; /*0x7742c3*/
+}
 }
 // 0x775690
 namespace gamemd {
@@ -185,6 +190,7 @@ void ScreenDialogToClient(HWND hWnd, LPRECT lpRect)
     return v4; /*0x7756ee*/
   }
   return result; /*0x7756a5*/
+}
 }
 // 0x775700
 namespace gamemd {
@@ -230,11 +236,12 @@ const DLGTEMPLATE * CreateDialogIndirect(ObjectClass * aP0, HWND a2, HWND hWndPa
   }
   return result; /*0x775734*/
 }
+}
 // 0x7757E0
 namespace gamemd {
 void Dialog_Close(HWND a1, int a2)
 {
-  int result; // eax
+  ObjectClass * result;
   Dialog *v3; // ebx
   ObjectClass *i; // esi
   int v5; // edi
@@ -245,7 +252,7 @@ void Dialog_Close(HWND a1, int a2)
 
   if ( a1 || g_DialogTrackingList && (a1 = *(&g_ClipboardBuffer + 2 * g_DialogTrackingList)) != 0 ) /*0x7757fe*/
   {
-    result = (int)((gamemd::ObjectClass *)(0));
+    result = (gamemd::ObjectClass *)((int)((gamemd::ObjectClass *)(0)));
     if ( g_DialogTrackingList <= 0 ) /*0x77580a*/
       goto LABEL_11; /*0x77580a*/
     for ( i = &stru_B72D28; i->vtable0 != a1; i = (ObjectClass *)((char *)i + 8) ) /*0x77580c*/
@@ -256,7 +263,7 @@ void Dialog_Close(HWND a1, int a2)
         return result; /*0x775822*/
       }
     }
-    v5 = result; /*0x775826*/
+    v5 = (int)(result);
     if ( result == -1 ) /*0x775828*/
     {
   LABEL_11:
@@ -279,7 +286,7 @@ void Dialog_Close(HWND a1, int a2)
         }
         while ( v7 ); /*0x775870*/
       }
-      g_DialogTrackingList = v5; /*0x775875*/
+      g_DialogTrackingList = (int)((HWND)(v5));
       if ( v5 ) /*0x77587d*/
       {
         v8 = (HWND)(*(&g_ClipboardBuffer + 2 * v5));
@@ -294,7 +301,7 @@ void Dialog_Close(HWND a1, int a2)
       }
       else
       {
-        hWnd = 0; /*0x7758e1*/
+        hWnd = (gamemd::ObjectClass *)(0);
         dword_B72F48 = 0; /*0x7758e8*/
         result = (int)SetFocus(g_hWnd); /*0x7758ee*/
       }
@@ -307,6 +314,7 @@ void Dialog_Close(HWND a1, int a2)
     IDA_LOBYTE(result) = 0; /*0x775801*/
   }
   return result; /*0x775800*/
+}
 }
 // 0x7759E0
 namespace gamemd {
@@ -371,11 +379,13 @@ void MessageDialogLoopAlt(HWND hWnd, unsigned char (*a2)(void) a2, int a3, char 
     SendMessageA(hWnd, 0x4A9u, 0, 0); /*0x775af7*/
   return dword_B72F4C; /*0x775b02*/
 }
+}
 // 0x775B30
 namespace gamemd {
 int sub_775B30()
 {
   return dword_B72F4C; /*0x775b35*/
+}
 }
 // 0x775DB0
 namespace gamemd {
@@ -438,7 +448,7 @@ int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
           v15 = (char *)dword_B72F40; /*0x775f7a*/
           if ( dword_B72F40 ) /*0x775f82*/
           {
-            v16 = (char *)v14; /*0x775f89*/
+            v16 = (char *)((unsigned int)((char *)v14));
             v17 = -112 * dword_B72F38; /*0x775f91*/
             v18 = (unsigned int)(144 * dword_B72F38) >> 2; /*0x775f93*/
             qmemcpy(v16, dword_B72F40, 4 * v18); /*0x775f96*/
@@ -461,7 +471,7 @@ int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
           v21 = (char *)dword_B72F40; /*0x775ffa*/
           if ( dword_B72F40 ) /*0x776002*/
           {
-            v22 = (char *)v20; /*0x776009*/
+            v22 = (char *)((unsigned int)((char *)v20));
             v23 = -112 * dword_B72F38; /*0x776011*/
             v24 = (unsigned int)(144 * dword_B72F38) >> 2; /*0x776013*/
             qmemcpy(v22, dword_B72F40, 4 * v24); /*0x776016*/
@@ -513,6 +523,7 @@ int CacheRenderedText(HDC a1, const char * a2, int a3, int a4, int a5)
   }
   return result; /*0x775e79*/
 }
+}
 // 0x776230
 namespace gamemd {
 char sub_776230(HWND hWnd, HWND a2, LPARAM * a3)
@@ -542,6 +553,7 @@ char sub_776230(HWND hWnd, HWND a2, LPARAM * a3)
     qword_B730A0 = a2; /*0x776302*/
   }
   return byte_B7309C; /*0x776261*/
+}
 }
 // 0x776320
 namespace gamemd {
@@ -589,6 +601,7 @@ int E4Recv_776320::sub_776320()
   SendMessageA(qword_B730A0, 0x110Bu, 8u, 0); /*0x776470*/
   return 1; /*0x776478*/
 }
+}
 // 0x776490
 namespace gamemd {
 struct tagPOINT * Dialog_HitTest(unsigned int a1, int a2, struct tagPOINT * a3)
@@ -625,6 +638,7 @@ struct tagPOINT * Dialog_HitTest(unsigned int a1, int a2, struct tagPOINT * a3)
   v12[3].y = v3; /*0x776556*/
   qmemcpy(a3, v12, 0x28u); /*0x77655a*/
   return a3; /*0x77655c*/
+}
 }
 // 0x776570
 namespace gamemd {
@@ -671,6 +685,7 @@ void E4Recv_776570::sub_776570()
     }
   }
 }
+}
 // 0x777080
 namespace gamemd {
 AbstractClass * * SetDialogParent(HWND hWnd, HWND a2)
@@ -704,6 +719,7 @@ AbstractClass * * SetDialogParent(HWND hWnd, HWND a2)
   if ( v6 < 0 ) /*0x77713d*/
     v6 = 0; /*0x77713f*/
   return SetWindowPos(hWnd, 0, v5, v6, -1, -1, 5u); /*0x777152*/
+}
 }
 // 0x7775C0
 namespace gamemd {
@@ -934,6 +950,7 @@ int WindowProc_Main(int a1, int a2, HWND hWnd, UINT Msg, signed int wParam, LPAR
   }
   return DefWindowProcA(v13, Msg, wParam, (LPARAM)lParam); /*0x777624*/
 }
+}
 // 0x777BB0
 namespace gamemd {
 void * E4Recv_777BB0::sub_777BB0()
@@ -951,8 +968,9 @@ void * E4Recv_777BB0::sub_777BB0()
   v2 = strchr(g_Str_gsmallwoo, 95); /*0x777bec*/
   if ( v2 ) /*0x777bf6*/
     v5 = v2[1]; /*0x777bfb*/
-  sprintf((char *const)this, "%s-%s", &v4, Buffer); /*0x777c12*/
+  sprintf("%s-%s", &v4, Buffer); /*0x777c12*/
   return (char *)this; /*0x777c1c*/
+}
 }
 // 0x777C30
 namespace gamemd {
@@ -1007,6 +1025,7 @@ ObjectClass * * InitWindowCreation(ObjectClass * aP0, int a2, int xRight, int yB
   CursorA = LoadCursorA(g_hInstance, (LPCSTR)0x68); /*0x777dea*/
   return SetCursor(CursorA); /*0x777df3*/
 }
+}
 // 0x777EA0
 namespace gamemd {
 int IME_ProcessComposition()
@@ -1053,6 +1072,7 @@ int IME_ProcessComposition()
     }
   }
   return result; /*0x777f6c*/
+}
 }
 // 0x778A20
 namespace gamemd {
@@ -1227,6 +1247,7 @@ unsigned int * PlayerProfile_Load(unsigned int * a1, const char ** a2)
     return a1; /*0x778aaf*/
   }
 }
+}
 // 0x778F30
 namespace gamemd {
 CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
@@ -1262,7 +1283,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
   v3 = String::GetOrEmpty_Alt(a1); /*0x778f33*/
   v4 = CharToWideString(v3); /*0x778f3a*/
   WideString::Reassign(a2, (wchar_t *)v4); /*0x778f42*/
-  v5 = WideString::GetOrEmpty((wchar_t **)a2); /*0x778f4e*/
+  v5 = WideString::GetOrEmpty(a2); /*0x778f4e*/
   if ( wcsstr(v5, L"Jan") ) /*0x778f54*/
   {
     StringCSF = GetStringCSF(g_Str_TXT_JANUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 127); /*0x778f6e*/
@@ -1270,7 +1291,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
   }
   else
   {
-    v8 = WideString::GetOrEmpty((wchar_t **)a2); /*0x778f89*/
+    v8 = WideString::GetOrEmpty(a2); /*0x778f89*/
     if ( wcsstr(v8, L"Feb") ) /*0x778f8f*/
     {
       v9 = GetStringCSF(g_Str_TXT_FEBRUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 132); /*0x778fac*/
@@ -1278,7 +1299,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
     }
     else
     {
-      v10 = WideString::GetOrEmpty((wchar_t **)a2); /*0x778fc7*/
+      v10 = WideString::GetOrEmpty(a2); /*0x778fc7*/
       if ( wcsstr(v10, L"Mar") ) /*0x778fcd*/
       {
         v11 = GetStringCSF(g_Str_TXT_MARCH, 0, g_Str_File_WOLPersonaInformation_cpp, 137); /*0x778fea*/
@@ -1286,7 +1307,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
       }
       else
       {
-        v12 = WideString::GetOrEmpty((wchar_t **)a2); /*0x779005*/
+        v12 = WideString::GetOrEmpty(a2); /*0x779005*/
         if ( wcsstr(v12, L"Apr") ) /*0x77900b*/
         {
           v13 = GetStringCSF(g_Str_TXT_APRIL, 0, g_Str_File_WOLPersonaInformation_cpp, 142); /*0x779028*/
@@ -1294,7 +1315,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
         }
         else
         {
-          v14 = WideString::GetOrEmpty((wchar_t **)a2); /*0x779043*/
+          v14 = WideString::GetOrEmpty(a2); /*0x779043*/
           if ( wcsstr(v14, L"May") ) /*0x779049*/
           {
             v15 = GetStringCSF(g_Str_TXT_MAY, 0, g_Str_File_WOLPersonaInformation_cpp, 147); /*0x779066*/
@@ -1302,7 +1323,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
           }
           else
           {
-            v16 = WideString::GetOrEmpty((wchar_t **)a2); /*0x779081*/
+            v16 = WideString::GetOrEmpty(a2); /*0x779081*/
             if ( wcsstr(v16, L"Jun") ) /*0x779087*/
             {
               v17 = GetStringCSF(g_Str_TXT_JUNE, 0, g_Str_File_WOLPersonaInformation_cpp, 152); /*0x7790a4*/
@@ -1310,7 +1331,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
             }
             else
             {
-              v18 = WideString::GetOrEmpty((wchar_t **)a2); /*0x7790bf*/
+              v18 = WideString::GetOrEmpty(a2); /*0x7790bf*/
               if ( wcsstr(v18, L"Jul") ) /*0x7790c5*/
               {
                 v19 = GetStringCSF(g_Str_TXT_JULY, 0, g_Str_File_WOLPersonaInformation_cpp, 157); /*0x7790e2*/
@@ -1318,7 +1339,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
               }
               else
               {
-                v20 = WideString::GetOrEmpty((wchar_t **)a2); /*0x7790fd*/
+                v20 = WideString::GetOrEmpty(a2); /*0x7790fd*/
                 if ( wcsstr(v20, L"Aug") ) /*0x779103*/
                 {
                   v21 = GetStringCSF(g_Str_TXT_AUGUST, 0, g_Str_File_WOLPersonaInformation_cpp, 162); /*0x779120*/
@@ -1326,7 +1347,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
                 }
                 else
                 {
-                  v22 = WideString::GetOrEmpty((wchar_t **)a2); /*0x77913b*/
+                  v22 = WideString::GetOrEmpty(a2); /*0x77913b*/
                   if ( wcsstr(v22, L"Sep") ) /*0x779141*/
                   {
                     v23 = GetStringCSF(g_Str_TXT_SEPTEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 167); /*0x77915e*/
@@ -1334,7 +1355,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
                   }
                   else
                   {
-                    v24 = WideString::GetOrEmpty((wchar_t **)a2); /*0x779179*/
+                    v24 = WideString::GetOrEmpty(a2); /*0x779179*/
                     if ( wcsstr(v24, L"Oct") ) /*0x77917f*/
                     {
                       v25 = GetStringCSF(g_Str_TXT_OCTOBER, 0, g_Str_File_WOLPersonaInformation_cpp, 172); /*0x77919c*/
@@ -1342,7 +1363,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
                     }
                     else
                     {
-                      v26 = WideString::GetOrEmpty((wchar_t **)a2); /*0x7791b7*/
+                      v26 = WideString::GetOrEmpty(a2); /*0x7791b7*/
                       if ( wcsstr(v26, L"Nov") ) /*0x7791bd*/
                       {
                         v27 = GetStringCSF(g_Str_TXT_NOVEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 177); /*0x7791da*/
@@ -1350,7 +1371,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
                       }
                       else
                       {
-                        v28 = WideString::GetOrEmpty((wchar_t **)a2); /*0x7791f5*/
+                        v28 = WideString::GetOrEmpty(a2); /*0x7791f5*/
                         v7 = wcsstr(v28, L"Dec"); /*0x7791fb*/
                         if ( v7 ) /*0x779205*/
                         {
@@ -1369,6 +1390,7 @@ CampaignScore * * LocalizeWOLDateString(char ** a1, void ** a2)
     }
   }
   return (char)v7; /*0x778f80*/
+}
 }
 // 0x779230
 namespace gamemd {
@@ -1413,99 +1435,100 @@ CampaignScore * * ConvertDateMonthNames(wchar_t ** a1, void ** a2)
   wchar_t *v40; // [esp-4h] [ebp-10h]
   wchar_t *v41; // [esp-4h] [ebp-10h]
   wchar_t *v42; // [esp-4h] [ebp-10h]
-  void *v43; // [esp+8h] [ebp-4h] BYREF
+  WideString v43[4]; // [esp+8h] [ebp-4h] BYREF
 
-  unknown_libname_74(&v43); /*0x77923b*/
-  v4 = WideString::GetOrEmpty_Alt(a1); /*0x779242*/
-  WideString::Reassign(&v43, v4); /*0x77924c*/
+  unknown_libname_74(v43); /*0x77923b*/
+  v4 = WideString::GetOrEmpty_Alt((WideString *)a1); /*0x779242*/
+  WideString::Reassign(v43, v4); /*0x77924c*/
   StringCSF = GetStringCSF(g_Str_TXT_JANUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 191); /*0x77926b*/
-  v5 = WideString::GetOrEmpty((wchar_t **)&v43); /*0x77926c*/
+  v5 = WideString::GetOrEmpty(v43); /*0x77926c*/
   if ( wcsstr(v5, StringCSF) ) /*0x779272*/
   {
     v6 = GetStringCSF(g_Str_TXT_JANUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 192); /*0x779294*/
-    WideString::Replace(&v43, v6, (wchar_t *)L"Jan"); /*0x77929e*/
+    WideString::Replace(v43, v6, (wchar_t *)L"Jan"); /*0x77929e*/
   }
   v32 = GetStringCSF(g_Str_TXT_FEBRUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 194); /*0x7792bd*/
-  v7 = WideString::GetOrEmpty((wchar_t **)&v43); /*0x7792be*/
+  v7 = WideString::GetOrEmpty(v43); /*0x7792be*/
   if ( wcsstr(v7, v32) ) /*0x7792c4*/
   {
     v8 = GetStringCSF(g_Str_TXT_FEBRUARY, 0, g_Str_File_WOLPersonaInformation_cpp, 195); /*0x7792e6*/
-    WideString::Replace(&v43, v8, (wchar_t *)L"Feb"); /*0x7792f0*/
+    WideString::Replace(v43, v8, (wchar_t *)L"Feb"); /*0x7792f0*/
   }
   v33 = GetStringCSF(g_Str_TXT_MARCH, 0, g_Str_File_WOLPersonaInformation_cpp, 197); /*0x77930f*/
-  v9 = WideString::GetOrEmpty((wchar_t **)&v43); /*0x779310*/
+  v9 = WideString::GetOrEmpty(v43); /*0x779310*/
   if ( wcsstr(v9, v33) ) /*0x779316*/
   {
     v10 = GetStringCSF(g_Str_TXT_MARCH, 0, g_Str_File_WOLPersonaInformation_cpp, 198); /*0x779338*/
-    WideString::Replace(&v43, v10, (wchar_t *)L"Mar"); /*0x779342*/
+    WideString::Replace(v43, v10, (wchar_t *)L"Mar"); /*0x779342*/
   }
   v34 = GetStringCSF(g_Str_TXT_APRIL, 0, g_Str_File_WOLPersonaInformation_cpp, 200); /*0x779361*/
-  v11 = WideString::GetOrEmpty((wchar_t **)&v43); /*0x779362*/
+  v11 = WideString::GetOrEmpty(v43); /*0x779362*/
   if ( wcsstr(v11, v34) ) /*0x779368*/
   {
     v12 = GetStringCSF(g_Str_TXT_APRIL, 0, g_Str_File_WOLPersonaInformation_cpp, 201); /*0x77938a*/
-    WideString::Replace(&v43, v12, (wchar_t *)L"Apr"); /*0x779394*/
+    WideString::Replace(v43, v12, (wchar_t *)L"Apr"); /*0x779394*/
   }
   v35 = GetStringCSF(g_Str_TXT_MAY, 0, g_Str_File_WOLPersonaInformation_cpp, 203); /*0x7793b3*/
-  v13 = WideString::GetOrEmpty((wchar_t **)&v43); /*0x7793b4*/
+  v13 = WideString::GetOrEmpty(v43); /*0x7793b4*/
   if ( wcsstr(v13, v35) ) /*0x7793ba*/
   {
     v14 = GetStringCSF(g_Str_TXT_MAY, 0, g_Str_File_WOLPersonaInformation_cpp, 204); /*0x7793dc*/
-    WideString::Replace(&v43, v14, (wchar_t *)L"May"); /*0x7793e6*/
+    WideString::Replace(v43, v14, (wchar_t *)L"May"); /*0x7793e6*/
   }
   v36 = GetStringCSF(g_Str_TXT_JUNE, 0, g_Str_File_WOLPersonaInformation_cpp, 206); /*0x779405*/
-  v15 = WideString::GetOrEmpty((wchar_t **)&v43); /*0x779406*/
+  v15 = WideString::GetOrEmpty(v43); /*0x779406*/
   if ( wcsstr(v15, v36) ) /*0x77940c*/
   {
     v16 = GetStringCSF(g_Str_TXT_JUNE, 0, g_Str_File_WOLPersonaInformation_cpp, 207); /*0x77942e*/
-    WideString::Replace(&v43, v16, (wchar_t *)L"Jun"); /*0x779438*/
+    WideString::Replace(v43, v16, (wchar_t *)L"Jun"); /*0x779438*/
   }
   v37 = GetStringCSF(g_Str_TXT_JULY, 0, g_Str_File_WOLPersonaInformation_cpp, 209); /*0x779457*/
-  v17 = WideString::GetOrEmpty((wchar_t **)&v43); /*0x779458*/
+  v17 = WideString::GetOrEmpty(v43); /*0x779458*/
   if ( wcsstr(v17, v37) ) /*0x77945e*/
   {
     v18 = GetStringCSF(g_Str_TXT_JULY, 0, g_Str_File_WOLPersonaInformation_cpp, 210); /*0x779480*/
-    WideString::Replace(&v43, v18, (wchar_t *)L"Jul"); /*0x77948a*/
+    WideString::Replace(v43, v18, (wchar_t *)L"Jul"); /*0x77948a*/
   }
   v38 = GetStringCSF(g_Str_TXT_AUGUST, 0, g_Str_File_WOLPersonaInformation_cpp, 212); /*0x7794a9*/
-  v19 = WideString::GetOrEmpty((wchar_t **)&v43); /*0x7794aa*/
+  v19 = WideString::GetOrEmpty(v43); /*0x7794aa*/
   if ( wcsstr(v19, v38) ) /*0x7794b0*/
   {
     v20 = GetStringCSF(g_Str_TXT_AUGUST, 0, g_Str_File_WOLPersonaInformation_cpp, 213); /*0x7794d2*/
-    WideString::Replace(&v43, v20, (wchar_t *)L"Aug"); /*0x7794dc*/
+    WideString::Replace(v43, v20, (wchar_t *)L"Aug"); /*0x7794dc*/
   }
   v39 = GetStringCSF(g_Str_TXT_SEPTEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 215); /*0x7794fb*/
-  v21 = WideString::GetOrEmpty((wchar_t **)&v43); /*0x7794fc*/
+  v21 = WideString::GetOrEmpty(v43); /*0x7794fc*/
   if ( wcsstr(v21, v39) ) /*0x779502*/
   {
     v22 = GetStringCSF(g_Str_TXT_SEPTEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 216); /*0x779524*/
-    WideString::Replace(&v43, v22, (wchar_t *)L"Sep"); /*0x77952e*/
+    WideString::Replace(v43, v22, (wchar_t *)L"Sep"); /*0x77952e*/
   }
   v40 = GetStringCSF(g_Str_TXT_OCTOBER, 0, g_Str_File_WOLPersonaInformation_cpp, 218); /*0x77954d*/
-  v23 = WideString::GetOrEmpty((wchar_t **)&v43); /*0x77954e*/
+  v23 = WideString::GetOrEmpty(v43); /*0x77954e*/
   if ( wcsstr(v23, v40) ) /*0x779554*/
   {
     v24 = GetStringCSF(g_Str_TXT_OCTOBER, 0, g_Str_File_WOLPersonaInformation_cpp, 219); /*0x779576*/
-    WideString::Replace(&v43, v24, (wchar_t *)L"Oct"); /*0x779580*/
+    WideString::Replace(v43, v24, (wchar_t *)L"Oct"); /*0x779580*/
   }
   v41 = GetStringCSF(g_Str_TXT_NOVEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 221); /*0x77959f*/
-  v25 = WideString::GetOrEmpty((wchar_t **)&v43); /*0x7795a0*/
+  v25 = WideString::GetOrEmpty(v43); /*0x7795a0*/
   if ( wcsstr(v25, v41) ) /*0x7795a6*/
   {
     v26 = GetStringCSF(g_Str_TXT_NOVEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 222); /*0x7795c8*/
-    WideString::Replace(&v43, v26, (wchar_t *)L"Nov"); /*0x7795d2*/
+    WideString::Replace(v43, v26, (wchar_t *)L"Nov"); /*0x7795d2*/
   }
   v42 = GetStringCSF(g_Str_TXT_DECEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 224); /*0x7795f1*/
-  v27 = WideString::GetOrEmpty((wchar_t **)&v43); /*0x7795f2*/
+  v27 = WideString::GetOrEmpty(v43); /*0x7795f2*/
   if ( wcsstr(v27, v42) ) /*0x7795f8*/
   {
     v28 = GetStringCSF(g_Str_TXT_DECEMBER, 0, g_Str_File_WOLPersonaInformation_cpp, 225); /*0x77961a*/
-    WideString::Replace(&v43, v28, (wchar_t *)L"Dec"); /*0x779624*/
+    WideString::Replace(v43, v28, (wchar_t *)L"Dec"); /*0x779624*/
   }
-  v29 = (char *)WideString::GetOrEmpty((wchar_t **)&v43); /*0x77962d*/
+  v29 = (char *)WideString::GetOrEmpty(v43); /*0x77962d*/
   v30 = ToWideStringChar(v29); /*0x779634*/
   String::Assign_Bool(a2, v30); /*0x77963c*/
-  DeleteAndZero::Alt((DeleteAndZero *)&v43); /*0x779645*/
+  DeleteAndZero::Alt((DeleteAndZero *)v43); /*0x779645*/
+}
 }
 // 0x77B2A0
 namespace gamemd {
@@ -1698,6 +1721,7 @@ int RunWOLMainLoop(char a1)
     return 0; /*0x77b5ef*/
   }
 }
+}
 // 0x77BAE0
 namespace gamemd {
 void sub_77BAE0()
@@ -1773,6 +1797,7 @@ void sub_77BAE0()
     while ( dword_B768C8 > (unsigned int)dword_B768F0 ); /*0x77bbf5*/
   }
   RA2_OPDEL(g_WOL_ListParser); /*0x77bc01*/
+}
 }
 // 0x77BCB0
 namespace gamemd {
@@ -1850,6 +1875,7 @@ void sub_77BCB0()
   }
   RA2_OPDEL(dword_B73AF8); /*0x77bdd1*/
 }
+}
 // 0x77BE80
 namespace gamemd {
 void sub_77BE80()
@@ -1925,6 +1951,7 @@ void sub_77BE80()
     while ( dword_B77D88 > (unsigned int)dword_B77DB0 ); /*0x77bf95*/
   }
   RA2_OPDEL(dword_B77D80); /*0x77bfa1*/
+}
 }
 // 0x77C050
 namespace gamemd {
@@ -2002,6 +2029,7 @@ void sub_77C050()
   }
   RA2_OPDEL(dword_B76640); /*0x77c171*/
 }
+}
 // 0x77C220
 namespace gamemd {
 void sub_77C220()
@@ -2077,6 +2105,7 @@ void sub_77C220()
     while ( g_WOL_MsgPool > (unsigned int)dword_B766B0 ); /*0x77c335*/
   }
   RA2_OPDEL(g_WOL_MessageQueue); /*0x77c341*/
+}
 }
 // 0x77C450
 namespace gamemd {
@@ -2156,6 +2185,7 @@ void sub_77C450()
   }
   RA2_OPDEL(g_WOL_ConnectionPool); /*0x77c571*/
 }
+}
 // 0x77CB00
 namespace gamemd {
 void sub_77CB00()
@@ -2233,6 +2263,7 @@ void sub_77CB00()
     while ( dword_B76998 > (unsigned int)dword_B769C0 ); /*0x77cc15*/
   }
   RA2_OPDEL(g_WOL_AccountInfo); /*0x77cc21*/
+}
 }
 // 0x77CCD0
 namespace gamemd {
@@ -2312,6 +2343,7 @@ void sub_77CCD0()
   }
   RA2_OPDEL(g_WOL_EventQueue); /*0x77cdfa*/
 }
+}
 // 0x77D3F0
 namespace gamemd {
 int E4Recv_77D3F0::sub_77D3F0()
@@ -2344,6 +2376,7 @@ int E4Recv_77D3F0::sub_77D3F0()
   DeleteAndZero((ObjectClass *)&v6); /*0x77d483*/
   return 1; /*0x77d477*/
 }
+}
 // 0x77D840
 namespace gamemd {
 int sub_77D840()
@@ -2364,6 +2397,7 @@ int sub_77D840()
   Timer::PumpMessages((HWND *)g_BinkMoviePlayer); /*0x77d895*/
   g_GameActive = *((unsigned char *)g_ScenarioClass_Instance + 13730); /*0x77d8a7*/
   return MapClass::MarkForRedraw(&MapClass_Instance, 2); /*0x77d8b7*/
+}
 }
 // 0x77DC90
 namespace gamemd {
@@ -2446,6 +2480,7 @@ void OpenURLWOL(INIClass * a1, int a2)
     }
   }
   return result; /*0x77de8d*/
+}
 }
 // 0x77E900
 namespace gamemd {
@@ -2583,6 +2618,7 @@ Coord * * AssignWOLPlayerSide(const char ** a1, int a2)
   DeleteAndZero((ObjectClass *)&v24.DeleteAndZero_field_0x04); /*0x77eb81*/
   DeleteAndZero((ObjectClass *)&v23.m_3[1]); /*0x77eb8a*/
 }
+}
 // 0x77ED00
 namespace gamemd {
 void SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, int a4, int aP1a)
@@ -2709,6 +2745,7 @@ void SetupLobbyPlayerSlot(CCINIClass * aP0, CCINIClass * aP1, CCINIClass * aP2, 
     return v26; /*0x77ef77*/
   }
 }
+}
 // 0x77EF90
 namespace gamemd {
 char WOL_RequestChannelList2(int a1, unsigned char a2)
@@ -2788,6 +2825,7 @@ char WOL_RequestChannelList2(int a1, unsigned char a2)
   }
   g_WOL_RequestState = v5 + 1; /*0x77f113*/
   return 1; /*0x77efc3*/
+}
 }
 // 0x77F120
 namespace gamemd {
@@ -2887,6 +2925,7 @@ char RequestChannelListWOL()
   SetEvent(Handles); /*0x77f214*/
   return 0; /*0x77f21c*/
 }
+}
 // 0x77F320
 namespace gamemd {
 AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
@@ -2984,6 +3023,7 @@ AbstractClass * * WOL_RequestChannelListEx(int a1, unsigned char a2, char a3)
   }
   return result; /*0x77f341*/
 }
+}
 // 0x77F520
 namespace gamemd {
 char sub_77F520(char a1)
@@ -3077,6 +3117,7 @@ char sub_77F520(char a1)
   }
   return result; /*0x77f53b*/
 }
+}
 // 0x77F710
 namespace gamemd {
 char sub_77F710(unsigned char a1, char a2)
@@ -3169,6 +3210,7 @@ char sub_77F710(unsigned char a1, char a2)
     }
   }
   return result; /*0x77f72e*/
+}
 }
 // 0x770060
 namespace gamemd {

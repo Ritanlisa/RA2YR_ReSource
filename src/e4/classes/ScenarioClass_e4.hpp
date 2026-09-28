@@ -49,11 +49,14 @@ struct ScenarioClass {
     unsigned int q088;  // 0x88
     unsigned int u32_89;  // 0x89
     unsigned int u32_8B;  // 0x8B
+    unsigned int u32_8C;  // 0x8C
     unsigned int u32_90;  // 0x90
     unsigned int u32_94;  // 0x94
     unsigned int u32_98;  // 0x98
     unsigned int u32_9C;  // 0x9C
     unsigned int u32_A0;  // 0xA0
+    unsigned int u32_A8;  // 0xA8
+    unsigned int u32_B0;  // 0xB0
     void* q0BC;  // 0xBC
     unsigned int q0C0;  // 0xC0
     unsigned int u32_C4;  // 0xC4
@@ -410,7 +413,7 @@ struct ScenarioClass {
     char ScenarioClass_field_timer_34C0[12];  // 0x34C0
     unsigned int q34C4;  // 0x34C4
     unsigned int q34C8;  // 0x34C8
-    unsigned int campaignIndex;  // 0x34CC
+    char campaignIndex[4];  // 0x34CC
     char startingDropships[4];  // 0x34D0
     TechnoTypeClass** allowableUnits;  // 0x34D4
     char allowableUnitsCount[4];  // 0x34D8
@@ -418,22 +421,22 @@ struct ScenarioClass {
     char allowableMaximumsCount[4];  // 0x34E0
     unsigned char u8_34E1;  // 0x34E1
     void* dropshipUnitCounts;  // 0x34E4
-    unsigned int dropshipCountsCount;  // 0x34E8
+    char dropshipCountsCount[4];  // 0x34E8
     char ambientOriginal[4];  // 0x34EC
     unsigned int ambientCurrent;  // 0x34F0
     char ambientTarget[4];  // 0x34F4
     char red[4];  // 0x34F8
     char green[4];  // 0x34FC
     unsigned char u8_34FD;  // 0x34FD
-    unsigned int blue;  // 0x3500
+    char blue[4];  // 0x3500
     unsigned int ground;  // 0x3504
     char level[4];  // 0x3508
-    char ionAmbient[4];  // 0x350C
+    unsigned int ionAmbient;  // 0x350C
     char ionRed[4];  // 0x3510
     char ionGreen[4];  // 0x3514
     char ionBlue[4];  // 0x3518
     unsigned char u8_3519;  // 0x3519
-    unsigned int ionGround;  // 0x351C
+    char ionGround[4];  // 0x351C
     unsigned int ionLevel;  // 0x3520
     char nukeAmbient[4];  // 0x3524
     char nukeRed[4];  // 0x3528
@@ -491,6 +494,7 @@ struct ScenarioClass {
     unsigned int __pad_0;
     unsigned int __pad_3566;
     unsigned int __pad_628;
+    unsigned int CheckExists;
 // --- flat members (END) ---
     void* checkWinningConditions(char a2);
     ScenarioClass * * CopyStartPositions();

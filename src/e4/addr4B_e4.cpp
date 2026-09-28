@@ -63,7 +63,8 @@ void JumpjetLocomotionClass_Process(int a1)
   int v30; // [esp+10h] [ebp-10h] BYREF
   int v31; // [esp+14h] [ebp-Ch]
   int v32; // [esp+18h] [ebp-8h]
-v1 = (gamemd::DriveLocomotionClass *)(a1);
+
+  v1 = (gamemd::DriveLocomotionClass *)(a1);
   v2 = (char *)a1 - 4; /*0x4b0518*/
   v3 = *(uint8_t *)((*((int (__thiscall **)(FootClass *))a1->Owner->vtable0 + 111))(a1->Owner) + 284); /*0x4b0521*/
   v4 = *((unsigned int *)v2 + 7); /*0x4b0523*/
@@ -294,6 +295,7 @@ v1 = (gamemd::DriveLocomotionClass *)(a1);
   }
   return (*(char (__stdcall **)(DriveLocomotionClass *))(*(unsigned int *)v1->__pad_0 + 16))(v1); /*0x4b06cb*/
 }
+}
 // 0x4B69E0
 namespace gamemd {
 int E4Recv_4B69E0::sub_4B69E0(int a2)
@@ -332,6 +334,7 @@ int E4Recv_4B69E0::sub_4B69E0(int a2)
   if ( v3 != -1 ) /*0x4b6a77*/
     ++*((unsigned int *)unk_A8B230[377].vtable3 + v3); /*0x4b6a8b*/
   return 1; /*0x4b6a8d*/
+}
 }
 // 0x4B6AB0
 namespace gamemd {
@@ -387,6 +390,7 @@ int E4Recv_4B6AB0::sub_4B6AB0(int a2)
   *(&this->abstractFlags + v10) = 0; /*0x4b6b62*/
   return 1; /*0x4b6b6a*/
 }
+}
 // 0x4B6BF0
 namespace gamemd {
 int E4Recv_4B6BF0::sub_4B6BF0()
@@ -407,6 +411,7 @@ int E4Recv_4B6BF0::sub_4B6BF0()
       return -1; /*0x4b6c23*/
   }
   return result; /*0x4b6c28*/
+}
 }
 // 0x4B9890
 namespace gamemd {
@@ -556,6 +561,7 @@ CampaignScore * * DisplayBuildingInfoPanel(CampaignScore ** a1, unsigned int * a
   }
   return result; /*0x4b9bbf*/
 }
+}
 // 0x4BE9D0
 namespace gamemd {
 void Color_BlendPack(unsigned char * a1, int a2, int a3, int a4)
@@ -612,6 +618,7 @@ void Color_BlendPack(unsigned char * a1, int a2, int a3, int a4)
        | (v5 >> g_BitMask_Blue << g_BitMask_Green)
        | (v6 >> g_BitMask_Red << g_BitShift_Blue);
 }
+}
 // 0x4B0DF0
 namespace gamemd {
 char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
@@ -646,7 +653,7 @@ char E4Recv_4B0DF0::sub_4B0DF0(IUnknown * aP1)
     v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x4b0e81*/
     if ( (uint8_t)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((unsigned char *)this->vtable3 + 129) ) /*0x4b0e94*/
     {
-      JumpjetLocomotion::MoveTo((int)this, aP1, 1); /*0x4b0ea3*/
+      JumpjetLocomotion::MoveTo(aP1, 1); /*0x4b0ea3*/
       return 1; /*0x4b0ead*/
     }
     if ( *((unsigned char *)this->vtable3 + 144) ) /*0x4b0eb3*/
@@ -687,7 +694,7 @@ DropListClass * E4Recv_4B4E10::sub_4B4E10(DropListClass * aP1, wchar_t * String,
   int Instance; // eax
   int v13; // edx
 
-  sub_4C2FC0((EditClass *)this, aP1, String, a4, aP4, aP5, aP6, aP7, 18, 7); /*0x4b4e3f*/
+  sub_4C2FC0(aP1, String, a4, aP4, aP5, aP6, aP7, 18, 7); /*0x4b4e3f*/
   IDA_LOBYTE(this->DropListClass_field_0x48) = 0; /*0x4b4e62*/
   this->DropListClass_field_0x4C = a9; /*0x4b4e66*/
   ShapeButtonClass::Constructor((ShapeButtonClass *)&this->DropListClass_field_0x50, 0, a11, aP7 + aP5, aP6, 0, 0, 0); /*0x4b4e69*/
@@ -710,7 +717,7 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
 {
   int v3; // eax
 
-  ControlClass::CtorFromData((ControlClass *)this, a2); /*0x4b53eb*/
+  ControlClass::CtorFromData(a2); /*0x4b53eb*/
   this->M44 = *(EditClass *)(a2 + 44); /*0x4b53f6*/
   this->M48 = *(EditClass *)(a2 + 48); /*0x4b53fc*/
   this->q034 = *(EditClass *)(a2 + 52); /*0x4b5402*/
@@ -752,7 +759,7 @@ int E4Recv_4B53E0::sub_4B53E0(int a2)
 namespace gamemd {
 int E4Recv_4B56E0::sub_4B56E0(int a2)
 {
-  LinkedList::MoveNode((void *)this, (void *)a2); /*0x4b56e9*/
+  LinkedList::MoveNode((void *)a2); /*0x4b56e9*/
   this->M12 = *(unsigned int *)(a2 + 12); /*0x4b56f1*/
   this->M16 = *(unsigned int *)(a2 + 16); /*0x4b56f7*/
   this->M20 = *(unsigned int *)(a2 + 20); /*0x4b56fd*/
@@ -783,7 +790,7 @@ int E4Recv_4B56E0::sub_4B56E0(int a2)
 namespace gamemd {
 int E4Recv_4B5780::sub_4B5780(int a2)
 {
-  LinkedList::MoveNode((void *)this, (void *)a2); /*0x4b5789*/
+  LinkedList::MoveNode((void *)a2); /*0x4b5789*/
   this->M12 = *(unsigned int *)(a2 + 12); /*0x4b5791*/
   this->M16 = *(unsigned int *)(a2 + 16); /*0x4b5797*/
   this->M20 = *(unsigned int *)(a2 + 20); /*0x4b579d*/

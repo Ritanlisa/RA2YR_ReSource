@@ -33,7 +33,8 @@ namespace gamemd {
 int sub_6D1130()
 {
   unsigned int v0;
-dword_B0CCD4 = (unsigned int)((void *)(240));
+
+  dword_B0CCD4 = (unsigned int)((void *)(240));
   dword_B0CD00 = (unsigned int)((void *)(g_SidebarConfig));
   byte_B0CCDD = 0; /*0x6d1158*/
   dword_B0CCE0 = 0; /*0x6d115e*/
@@ -48,6 +49,7 @@ dword_B0CCD4 = (unsigned int)((void *)(240));
   dword_B0CC60 = 5; /*0x6d11c2*/
   Rect_Point::Set(dword_B0CC40, *(unsigned int *)dword_B0FC64, *((unsigned int *)dword_B0FC64 + 1)); /*0x6d11e2*/
   return ShapeButton::SetShape((int)dword_B0CC40, (int)v0, 0, 0); /*0x6d11f4*/
+}
 }
 // 0x6D6BB0
 namespace gamemd {
@@ -133,6 +135,7 @@ unsigned int * sub_6D6BB0(unsigned short * a1)
   }
   return result; /*0x6d6cfc*/
 }
+}
 // 0x6D0E50
 namespace gamemd {
 void nullsub_236()
@@ -145,7 +148,7 @@ void nullsub_236()
 namespace gamemd {
 void * sub_6D0F10()
 {
-  unsigned int v0;
+  int v0; // esi
   unsigned int v1;
   void *result; // eax
   bool v3; // cl
@@ -153,7 +156,7 @@ void * sub_6D0F10()
   char Buffer[256]; // [esp+Ch] [ebp-100h] BYREF
 
   v4 = (int *)(0);
-  v0 = (unsigned int)((int *)(0));
+  v0 = (int *)(0);
   v1 = dword_B0C148; /*0x6d0f1f*/
   do /*0x6d0f5a*/
   {
@@ -457,7 +460,7 @@ void E4Recv_6D1E80::sub_6D1E80()
   this->Tactical_field_0x8[0] = (int)&Tactical_vftable; /*0x6d1e8d*/
   this->Tactical_field_0xC[0] = (int)&Tactical_vftable; /*0x6d1e94*/
   g_TacticalClass_Instance = 0; /*0x6d1e9b*/
-  AbstractClass::DTOR((AbstractClass *)this); /*0x6d1ea5*/
+  AbstractClass::DTOR(); /*0x6d1ea5*/
 }
 } // namespace gamemd
 
@@ -594,13 +597,13 @@ char ClampCoordMap(AbstractClass * aP0)
     }
     else
     {
-      *(unsigned int *)aP0 = v2; /*0x6d86e9*/
+      *(_DWORD *)aP0 = v2; /*0x6d86e9*/
       return 1; /*0x6d86ef*/
     }
   }
   else
   {
-    *(unsigned int *)aP0 = v1; /*0x6d86d9*/
+    *(_DWORD *)aP0 = v1; /*0x6d86d9*/
     return 1; /*0x6d86df*/
   }
 }

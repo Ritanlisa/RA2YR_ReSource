@@ -26,9 +26,9 @@ int GaugeClass::Draw(int a2)
 namespace gamemd {
 GaugeClass * GaugeClass::QueryInterface(char a2)
 {
-  GadgetClass::Dtor((GadgetClass *)this); /*0x4e30d3*/
+  GadgetClass::Dtor(); /*0x4e30d3*/
   if ( (a2 & 1) != 0 ) /*0x4e30dd*/
-    RA2_OPDEL(this); /*0x4e30e0*/
+    RA2_OPDEL(); /*0x4e30e0*/
   return this->__pad_0; /*0x4e30ea*/
 }
 } // namespace gamemd

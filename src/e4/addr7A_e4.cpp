@@ -151,6 +151,7 @@ Coord * * int CollectWOLConnectionTokens()
   }
   return result; /*0x7a067b*/
 }
+}
 // 0x7A0690
 namespace gamemd {
 void WOL_RequestMatch(void * a1)
@@ -390,6 +391,7 @@ void WOL_RequestMatch(void * a1)
   ComPtr::Release((ComPtr *)&v31[24]); /*0x7a0cfe*/
   return 1; /*0x7a07c7*/
 }
+}
 // 0x7A0DD0
 namespace gamemd {
 void E4Recv_7A0DD0::sub_7A0DD0()
@@ -413,6 +415,7 @@ void E4Recv_7A0DD0::sub_7A0DD0()
     if ( GameUI ) /*0x7a0e34*/
       UpdateLobbyGraphicsWOL(GameUI, v2, -1); /*0x7a0e3c*/
   }
+}
 }
 // 0x7A1060
 namespace gamemd {
@@ -549,6 +552,7 @@ Coord * * WOL_ProcessPingRequests()
     }
   }
   return result; /*0x7a1328*/
+}
 }
 // 0x7A1330
 namespace gamemd {
@@ -709,6 +713,7 @@ Coord * * UpdateWOLLobbyPings()
     DeleteAndZero((ObjectClass *)&v19.m_3[1]); /*0x7a168f*/
   }
 }
+}
 // 0x7A16B0
 namespace gamemd {
 ObjectClass * * HandleWOLMatchMessage()
@@ -802,6 +807,7 @@ ObjectClass * * HandleWOLMatchMessage()
       Dialog::ShowMessage((int)Math::InitDegToRad, (size_t)v12); /*0x7a19cc*/
     }
   }
+}
 }
 // 0x7A1BB0
 namespace gamemd {
@@ -998,6 +1004,7 @@ AbstractClass * * WOL_MatchGame()
     return 0; /*0x7a2061*/
   }
 }
+}
 // 0x7A2830
 namespace gamemd {
 Coord * * E4Recv_7A2830::sub_7A2830()
@@ -1030,6 +1037,7 @@ Coord * * E4Recv_7A2830::sub_7A2830()
     return (*(int (__stdcall **)(LPVOID, unsigned int *))(*(unsigned int *)ppv + 84))(ppv, v6); /*0x7a28a4*/
   }
   return result; /*0x7a288f*/
+}
 }
 // 0x7A29E0
 namespace gamemd {
@@ -1230,6 +1238,7 @@ void BuddyDlgProcWOL(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
   }
   return result; /*0x7a2a54*/
 }
+}
 // 0x7A4C10
 namespace gamemd {
 CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3)
@@ -1339,6 +1348,7 @@ CampaignScore * * CComObject_CChatEventSink___ATL__vt_04_(int a1, int a2, int a3
     return 0; /*0x7a4e92*/
   }
 }
+}
 // 0x7AF640
 namespace gamemd {
 AbstractClass * * E4Recv_7AF640::sub_7AF640(int a2)
@@ -1375,6 +1385,7 @@ AbstractClass * * E4Recv_7AF640::sub_7AF640(int a2)
     }
   }
   return result; /*0x7af6aa*/
+}
 }
 // 0x7AF6C0
 namespace gamemd {
@@ -1491,6 +1502,7 @@ void WorldDominationFactionDlgProc(HWND hWnd, unsigned int a2, int a3, unsigned 
   }
   return result; /*0x7af75a*/
 }
+}
 // 0x7AF970
 namespace gamemd {
 AbstractClass * * sub_7AF970()
@@ -1550,6 +1562,7 @@ AbstractClass * * sub_7AF970()
     (*(void (__thiscall **)(unsigned int *, int))*v10)(v10, 1); /*0x7afab3*/
   OwnerDrawControl::InitVtable(&v6); /*0x7afab9*/
   return v4; /*0x7afac0*/
+}
 }
 // 0x7AFB90
 namespace gamemd {
@@ -1731,6 +1744,7 @@ int StartWDTCampaign()
         continue; /*0x7affed*/
     }
   }
+}
 }
 // 0x7A0D10
 namespace gamemd {

@@ -15,6 +15,7 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Coord_e4.hpp"
 #include "e4/classes/LoadingScreen_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x4E5D60
 namespace gamemd {
@@ -81,13 +82,13 @@ void Lobby::UpdatePlayerLabels()
   int v4; // eax
   LPARAM v5; // eax
   int v6; // ebp
-  HWND v7; // ebx
+  wchar_t * v7;
   HWND DlgItem; // esi
   wchar_t *v9; // ebx
   wchar_t *v10; // ebp
   wchar_t *StringCSF; // eax
   char *v12; // eax
-  LRESULT v13; // eax
+  char * v13;
   char *v14; // eax
   int v15; // eax
   ObjectClass *v16; // ebp
@@ -100,12 +101,12 @@ void Lobby::UpdatePlayerLabels()
   wchar_t *v23; // eax
   LRESULT v24; // eax
   wchar_t *v25; // eax
-  wchar_t * v26;
+  LRESULT v26; // eax
   wchar_t *v27; // eax
   LRESULT v28; // eax
   wchar_t *v29; // eax
   LRESULT v30; // eax
-  LRESULT v31; // eax
+  wchar_t * v31;
   wchar_t *v32; // eax
   char v33; // [esp+1h] [ebp-13h]
   char v34; // [esp+2h] [ebp-12h]
@@ -239,7 +240,7 @@ void Lobby::UpdatePlayerLabels()
     {
       v6 = 1041; /*0x5eb1f7*/
     }
-    v7 = (HWND)IDA_HIDWORD(v38); /*0x5eb259*/
+    v7 = (wchar_t *)((HWND)((wchar_t *)((HWND)IDA_HIDWORD(v38))));
     DlgItem = GetDlgItem((HWND)IDA_HIDWORD(v38), v6); /*0x5eb265*/
     v35 = !ShowWindow(DlgItem, 0); /*0x5eb27d*/
     SendDlgItemMessageA(v7, v6, 0x14Bu, 0, 0); /*0x5eb282*/
@@ -275,7 +276,7 @@ void Lobby::UpdatePlayerLabels()
         goto LABEL_79; /*0x5eb344*/
       StringCSF = GetStringCSF(g_Str_GUI_OpenObserver, 0, g_Str_File_netshare_cpp, 5448); /*0x5eb357*/
     }
-    v10 = StringCSF; /*0x5eb35c*/
+    v10 = (wchar_t *)(StringCSF);
   LABEL_79:
     if ( v9 /*0x5eb380*/
       && (v9 == (wchar_t *)g_Lobby_PlayerTeam
@@ -298,7 +299,7 @@ void Lobby::UpdatePlayerLabels()
         && v9 != (wchar_t *)g_Lobby_PlayerSide
         && v9 != (wchar_t *)g_Lobby_PlayerColor )
       {
-        v13 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v10); /*0x5eb409*/
+        v13 = (char *)((LRESULT)((char *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v10))));
         SendMessageA(DlgItem, 0x151u, v13, (LPARAM)v9); /*0x5eb413*/
       }
       v14 = (char *)(CharToWideString(unk_A8B380));
@@ -367,7 +368,7 @@ void Lobby::UpdatePlayerLabels()
     }
     else
     {
-      v31 = SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v10); /*0x5eb5ff*/
+      v31 = (wchar_t *)((LRESULT)((wchar_t *)(SendMessageA(DlgItem, 0x4C2u, 0, (LPARAM)v10))));
       SendMessageA(DlgItem, 0x151u, v31, (LPARAM)v9); /*0x5eb609*/
       v16 = v36; /*0x5eb60b*/
     }
@@ -404,8 +405,7 @@ void Lobby::SetupPlayerWidgets()
   int ResourceID3CSF; // [esp+18h] [ebp-Ch]
   int v19; // [esp+1Ch] [ebp-8h]
   HWND hWnd; // [esp+20h] [ebp-4h]
-
-  v1 = (gamemd::ObjectClass *)(g_MPCooperativeState);
+v1 = (gamemd::ObjectClass *)(g_MPCooperativeState);
   if ( (int)g_MPCooperativeState >= 0 ) /*0x5eba0f*/
   {
     if ( !g_MPCooperativeState ) /*0x5eba15*/

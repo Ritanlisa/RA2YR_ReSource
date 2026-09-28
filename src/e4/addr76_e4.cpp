@@ -78,6 +78,7 @@ void unknown_libname_36()
   this->vtable2 = 0; /*0x7636f9*/
   return &this->vtable0; /*0x7636fc*/
 }
+}
 // 0x764B90
 namespace gamemd {
 HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int a3)
@@ -110,14 +111,14 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   int v32; // [esp+6Ch] [ebp-64h]
   int v33; // [esp+70h] [ebp-60h]
   unsigned int v34[22]; // [esp+74h] [ebp-5Ch] BYREF
-  void * v35;
+  int v35; // [esp+CCh] [ebp-4h]
 
-  v4 = (void *)((unsigned int)(&this->M32));
+  v4 = (unsigned int)(&this->M32);
   v35 = (unsigned int)(0);
   this->M4 = (unsigned int)(0);
   *(unsigned int *)this = (void*)&ReferenceCounted_vftable; /*0x764bad*/
   ComPtr::Constructor((unsigned int *)this + 2); /*0x764bb3*/
-  *v4 = (void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x764bbf*/
+  *(void **)v4 = (void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x764bbf*/
   ComPtr::Set(v4, *(unsigned int *)(a3 + 4)); /*0x764bcb*/
   Team_Create_767B00(&this->M40, *(unsigned int *)(a3 + 4) + 8); /*0x764bdb*/
   Team_Create_765C90(4, 0); /*0x764be9*/
@@ -181,12 +182,12 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
                    v12 + v13,
                    0) )
             {
-              v14 = (unsigned int)(this->q028);
-              v22 = (unsigned int)(v27[1]);
-              this->q028 = (unsigned int)(v14 + 1);
+              v14 = this->q028; /*0x764d42*/
+              v22 = v27[1]; /*0x764d49*/
+              this->q028 = v14 + 1; /*0x764d4d*/
               ComPtr::Set((unsigned int *)(this->M28 + 8 * v14), v22); /*0x764d56*/
             }
-            v27[0] = (void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x764d5f*/
+            v27[0] = (unsigned int)((void*)&rc_ptr_WorldDominationTour_Conflict_vftable);
             ComPtr::Release(v27); /*0x764d67*/
           }
           v25[0] = (void*)&rc_ptr_WDTTerritory_vftable; /*0x764d70*/
@@ -198,7 +199,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
       }
       while ( v15 ); /*0x764d8a*/
     }
-    v28[0] = (void*)&rc_ptr_WorldDominationTour_State_vftable; /*0x764d94*/
+    v28[0] = (unsigned int)((void*)&rc_ptr_WorldDominationTour_State_vftable);
     ComPtr::Release(v28); /*0x764d9c*/
   }
   BufferIOFile::Constructor(v34, aWdthistIni_0); /*0x764daa*/
@@ -206,7 +207,7 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
   if ( File::IsReady(v34, 0) )
   {
     v29[1] = (void *)((unsigned int)(0));
-    v29[2] = (unsigned int)(0);
+    v29[2] = (void *)((unsigned int)(0));
     GenericList::Constructor(v30); /*0x764dcf*/
     v30[0] = (void*)&List_INIClass_INISection___vftable; /*0x764dde*/
     memset(&v30[7], 0, 12); /*0x764de6*/
@@ -249,9 +250,10 @@ HashTable_flat * * E4Recv_764B90::WDT_Campaign_Constructor(const char ** a2, int
     }
     HashTable::DestroyHashTableINIClass(v29); /*0x764f05*/
   }
-  v34[0] = &off_7E1668; /*0x764f0e*/
+  v34[0] = (unsigned int)(&off_7E1668);
   BufferIOFileClass::Dtor(v34); /*0x764f16*/
   return this; /*0x764f1d*/
+}
 }
 // 0x765000
 namespace gamemd {
@@ -361,6 +363,7 @@ AbstractClass * * E4Recv_7651D0::sub_7651D0()
   v7.location[1] = (int)&off_7E1668; /*0x765356*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v7.location[1]); /*0x765361*/
   return HashTable::DestroyHashTableINIClass((INIClass *)&v7.vtable2); /*0x76536f*/
+}
 }
 // 0x7660F0
 namespace gamemd {
@@ -537,11 +540,13 @@ int WDT_InitGameOptions()
   System_Init_7668F0(v29); /*0x766570*/
   return System_Init_766910(&v27); /*0x76657e*/
 }
+}
 // 0x7667E0
 namespace gamemd {
 int E4Recv_7667E0::sub_7667E0()
 {
   return IDA_BYTE2(this->vtable3); /*0x7667e5*/
+}
 }
 // 0x7667F0
 namespace gamemd {
@@ -549,12 +554,14 @@ int E4Recv_7667F0::sub_7667F0()
 {
   return IDA_HIBYTE(this->vtable3); /*0x7667f5*/
 }
+}
 // 0x767EC0
 namespace gamemd {
 void E4Recv_767EC0::sub_767EC0()
 {
   *(unsigned int *)this->__pad_0 = (void*)&MSFrameAnim_vftable; /*0x767ec0*/
-  VtableStub::5CB6C0(this); /*0x767ec6*/
+  VtableStub::5CB6C0(); /*0x767ec6*/
+}
 }
 // 0x769480
 namespace gamemd {
@@ -564,6 +571,7 @@ void unknown_libname_37()
   this->vtable1 = 0; /*0x769486*/
   this->vtable2 = 0; /*0x769489*/
   return &this->vtable0; /*0x76948c*/
+}
 }
 // 0x769550
 namespace gamemd {
@@ -916,6 +924,7 @@ int WDTMap_LoadAsset(const char ** a1, int a2)
   HashTable::DestroyHashTableINIClass((INIClass *)&v55.ambientSoundController[1]); /*0x769baf*/
   return BufferIOFileClass::Destruct((BufferIOFileClass *)&v55.needsRedraw); /*0x769bc0*/
 }
+}
 // 0x76B7B0
 namespace gamemd {
 unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
@@ -980,6 +989,7 @@ unsigned int * E4Recv_76B7B0::sub_76B7B0(unsigned int * a2)
   }
   while ( v10 < (int)this->vtable2 ); /*0x76b84a*/
   return &this->vtable0; /*0x76b84e*/
+}
 }
 // 0x76F970
 namespace gamemd {
@@ -2363,8 +2373,8 @@ int sub_76AA90()
 namespace gamemd {
 void E4Recv_76AB90::sub_76AB90()
 {
-  *this = &off_7F7220; /*0x76ab90*/
-  ReferenceCounted::Constructor(this); /*0x76ab96*/
+  this->m_0 = (int)&off_7F7220; /*0x76ab90*/
+  ReferenceCounted::Constructor(); /*0x76ab96*/
 }
 } // namespace gamemd
 
@@ -2712,7 +2722,7 @@ bool E4Recv_76D3A0::sub_76D3A0(unsigned int * a2)
   {
     this->u32_460 = v3; /*0x76d3cb*/
     v4 = ComPtr::DestroyWrapper((int)v8, v3); /*0x76d3d9*/
-    TerritorySelectWDT(this, v4); /*0x76d3e1*/
+    TerritorySelectWDT(v4); /*0x76d3e1*/
     ComPtr::Territory_Dtor((ComPtr *)v8); /*0x76d3ea*/
   }
   FindTerritoryWOL(v8, this->u32_45C + 44, this->u32_460); /*0x76d403*/
@@ -2740,7 +2750,7 @@ unsigned int * E4Recv_76D470::sub_76D470(unsigned int * a2)
   {
     this->u32_460 = result; /*0x76d48e*/
     FindTerritoryWOL(v4, this->u32_45C + 44, (int)result); /*0x76d4a2*/
-    TerritorySelectWDT(this, (int)v4); /*0x76d4ae*/
+    TerritorySelectWDT((int)v4); /*0x76d4ae*/
     *(unsigned int *)v4 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76d4b7*/
     return ComPtr::Release((ComPtr *)v4); /*0x76d4bf*/
   }
@@ -2771,7 +2781,7 @@ int E4Recv_76DED0::sub_76DED0()
                                                                                      + 8 * v6
                                                                                      + 4));
     if ( v4 ) /*0x76df1a*/
-      Session::RemoveTeam((Session *)this, v4); /*0x76df1f*/
+      Session::RemoveTeam(v4); /*0x76df1f*/
     (*(void (__thiscall **)(_VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(unsigned int *)v5.__pad_0 + 8))(&v5); /*0x76df2c*/
   }
   return result; /*0x76df3e*/
@@ -2801,7 +2811,7 @@ int E4Recv_76DF50::sub_76DF50()
                                                                                      + 8 * v6
                                                                                      + 4));
     if ( v4 ) /*0x76df9a*/
-      Session::RemoveTeam((Session *)this, v4); /*0x76df9f*/
+      Session::RemoveTeam(v4); /*0x76df9f*/
     (*(void (__thiscall **)(_VectorCursor_V_rc_ptr_VTerritory_WorldDominationTour_V_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(unsigned int *)v5.__pad_0 + 8))(&v5); /*0x76dfac*/
   }
   return result; /*0x76dfbe*/
@@ -3202,7 +3212,7 @@ rc_ptr * FindTerritoryWOL(ObjectClass * aP0, int a2, int a3)
 unsigned int* Campaign_WorldDominationTour_24_::ddtor()
 {
   --this->q020; /*0x765b52*/
-  return this; /*0x765b55*/
+  return this->__pad_0; /*0x765b55*/
 }
 // 0x76f190
 unsigned int* VectorCursor::ddtor()
@@ -3220,11 +3230,11 @@ unsigned int* Count::ddtor()
 unsigned int* Conflict_WorldDominationTour_26::ddtor()
 {
   --this->q008; /*0x766fb2*/
-  return this; /*0x766fb5*/
+  return this->__pad_0; /*0x766fb5*/
 }
 // 0x76a5b0
 unsigned int* Map_WorldDominationTour_38::ddtor()
 {
   --this->q008; /*0x76a5b2*/
-  return this; /*0x76a5b5*/
+  return this->__pad_0; /*0x76a5b5*/
 }

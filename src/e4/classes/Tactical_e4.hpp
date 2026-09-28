@@ -8,7 +8,7 @@ struct Tactical {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     unsigned int ;  // 0x4
-    unsigned int ;  // 0x8
+    void* vtable3;  // 0x8
     unsigned int ;  // 0xC
     void* ;  // 0x10
     unsigned int q011;  // 0x11
@@ -588,13 +588,12 @@ struct Tactical {
     unsigned int __pad_10;
     unsigned int __pad_34;
     unsigned int u32_146;
-    unsigned int vtable3;
-    unsigned int vtable4;
     unsigned int q068;
     unsigned int q06C;
     unsigned int u32_10;
     unsigned int u32_14;
     unsigned int vtable2;
+    unsigned int vtable4;
 // --- flat members (END) ---
     char * ConstructTacticalSurface();  // 0x42A6D0
     int * CreateTacticalLightSurface(int * a2,  int * a1,  IUnknown * aP2,  int * a3,  int * a4,  IUnknown * aP5);    // 0x484050

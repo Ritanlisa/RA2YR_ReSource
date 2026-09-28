@@ -92,7 +92,7 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
   v17 = (uint16_t *)result; /*0x494ba0*/
   if ( a4 > 0 ) /*0x494ba4*/
   {
-    v13 = (unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor));
+    v13 = (gamemd::Stream *)((unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor)));
     v16 = (uint16_t *)a4; /*0x494bb1*/
     do /*0x494c31*/
     {
@@ -100,7 +100,7 @@ int BlitTransXlatAlphaZRead_ushort::AddRef(unsigned short * a2, unsigned char * 
       if ( a5 < v15 && *a3 ) /*0x494bd1*/
       {
         *a2 = (gamemd::Stream *)(*(unsigned short *)(*(unsigned int *)&this->m_1[3] + 2 * ((uint8_t)*a3 | v17[*a7])));
-        v13 = g_ZBufferDescriptor; /*0x494bfc*/
+        v13 = (gamemd::Stream *)(g_ZBufferDescriptor);
       }
       ++a2; /*0x494c06*/
       ++a3; /*0x494c0a*/
@@ -134,7 +134,7 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
   v18 = (uint16_t *)result; /*0x494c80*/
   if ( a4 > 0 ) /*0x494c84*/
   {
-    v14 = (unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor));
+    v14 = (gamemd::Stream *)((unsigned int)((gamemd::Stream *)(g_ZBufferDescriptor)));
     v17 = (uint16_t *)a4; /*0x494c91*/
     do /*0x494d16*/
     {
@@ -142,7 +142,7 @@ int BlitTransXlatAlphaZRead_ushort::BlitRect(unsigned short * a2, unsigned char 
       if ( a5 < v16 && *a3 ) /*0x494cb1*/
       {
         *a2 = (gamemd::Stream *)(a10 | *(unsigned short *)(*(unsigned int *)&this->m_1[3] + 2 * ((uint8_t)*a3 | v18[*a7])));
-        v14 = g_ZBufferDescriptor; /*0x494ce1*/
+        v14 = (gamemd::Stream *)(g_ZBufferDescriptor);
       }
       ++a2; /*0x494ceb*/
       ++a3; /*0x494cef*/
@@ -341,7 +341,7 @@ std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter(char a2
 {
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a3a9*/
   if ( (a2 & 1) != 0 ) /*0x49a3af*/
-    RA2_OPDEL(this); /*0x49a3b2*/
+    RA2_OPDEL(); /*0x49a3b2*/
   return (std::locale::facet *)this; /*0x49a3bc*/
 }
 } // namespace gamemd
@@ -351,7 +351,7 @@ std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_0(char 
 {
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a3c9*/
   if ( (a2 & 1) != 0 ) /*0x49a3cf*/
-    RA2_OPDEL(this); /*0x49a3d2*/
+    RA2_OPDEL(); /*0x49a3d2*/
   return (std::locale::facet *)this; /*0x49a3dc*/
 }
 } // namespace gamemd
@@ -361,7 +361,7 @@ std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_1(char 
 {
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a3e9*/
   if ( (a2 & 1) != 0 ) /*0x49a3ef*/
-    RA2_OPDEL(this); /*0x49a3f2*/
+    RA2_OPDEL(); /*0x49a3f2*/
   return (std::locale::facet *)this; /*0x49a3fc*/
 }
 } // namespace gamemd
@@ -371,7 +371,7 @@ std::locale::facet * BlitTransXlatAlphaZRead_ushort::Constructor_Blitter_2(char 
 {
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a409*/
   if ( (a2 & 1) != 0 ) /*0x49a40f*/
-    RA2_OPDEL(this); /*0x49a412*/
+    RA2_OPDEL(); /*0x49a412*/
   return (std::locale::facet *)this; /*0x49a41c*/
 }
 } // namespace gamemd
@@ -387,7 +387,7 @@ BlitTransXlatAlphaZRead_ushort * BlitTransXlatAlphaZRead_ushort::Blit(char a2)
   this->m_8 = 0; /*0x49a43b*/
   *(unsigned int *)this->__pad_0 = (void*)&Blitter_vftable; /*0x49a444*/
   if ( (a2 & 1) != 0 ) /*0x49a44a*/
-    RA2_OPDEL(this); /*0x49a44d*/
+    RA2_OPDEL(); /*0x49a44d*/
   return this->__pad_0; /*0x49a457*/
 }
 } // namespace gamemd

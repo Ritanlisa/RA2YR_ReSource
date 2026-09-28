@@ -19,3 +19,4 @@ unsigned int * CoordStruct::Set2(IUnknown * aP1, AbstractClass * aP2)
   this->X = v4 + 128; /*0x642769*/
   return &this->X; /*0x64276b*/
 }
+}

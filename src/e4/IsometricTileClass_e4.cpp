@@ -12,7 +12,7 @@ IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileCl
 {
   int v4; // eax
 
-  ObjectClass::ctor((ObjectClass *)this); /*0x543786*/
+  ObjectClass::ctor(); /*0x543786*/
   this->u32_AC = *(IsometricTileClass *)(*(unsigned int *)&stru_A8EB00.gapE4[328] + 4 * aP1); /*0x54379c*/
   *this = (IsometricTileClass)(void*)&IsometricTileClass_vftable; /*0x5437a2*/
   this->u32_4 = (void*)&IsometricTileClass_vftable; /*0x5437a8*/
@@ -21,7 +21,7 @@ IsometricTileClass::IsometricTileClass(IsometricTileClass * aP1, IsometricTileCl
   if ( *aP2 != word_AA06D0 || aP2[1] != word_AA06D2 ) /*0x5437d4*/
   {
     this->u32_81 = 0; /*0x543805*/
-    ObjectClass::SetPosition((IUnknown *)this); /*0x54380c*/
+    ObjectClass::SetPosition(); /*0x54380c*/
     (*(void (__thiscall **)(IsometricTileClass *, int))(*(unsigned int *)this + 292))(this, 1); /*0x543818*/
   }
   if ( *(int *)&stru_87F5F0.__pad_58[280] < *(int *)&stru_87F5F0.__pad_58[272] /*0x543855*/

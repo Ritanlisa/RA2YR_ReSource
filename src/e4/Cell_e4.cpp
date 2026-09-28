@@ -81,6 +81,7 @@ TechnoClass * * Cell::IsOccupied(short * a2, char a3)
   }
   return 0; /*0x419c60*/
 }
+}
 // 0x42B1C0
 namespace gamemd {
 int Cell::PosToIndex()
@@ -88,6 +89,7 @@ int Cell::PosToIndex()
   return ((SLOWORD(this->Cell_field_0x0) - IDA_SHIWORD(this->Cell_field_0x0) + *(unsigned int *)&stru_87F5F0.__pad_58[660] - 1) >> 1) /*0x42b1e3*/
        + *(unsigned int *)&stru_87F5F0.__pad_58[660]
        * (SLOWORD(this->Cell_field_0x0) - *(unsigned int *)&stru_87F5F0.__pad_58[660] + IDA_SHIWORD(this->Cell_field_0x0) - 1);
+}
 }
 // 0x43B4C0
 namespace gamemd {
@@ -141,6 +143,7 @@ int Cell::CanPlaceBuilding(unsigned int * a2)
     goto LABEL_6; /*0x43b5af*/
   }
   return 1; /*0x43b5c2*/
+}
 }
 // 0x481670
 namespace gamemd {
@@ -270,6 +273,7 @@ void * Cell::GetNeighbourContent(unsigned int a2)
   }
   return result; /*0x481863*/
 }
+}
 // 0x4834A0
 namespace gamemd {
 int Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, IUnknown * aP6, IUnknown * aP7)
@@ -290,7 +294,7 @@ int Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, 
     goto LABEL_39; /*0x4834ad*/
   if ( aP4 != -1 ) /*0x4834c2*/
   {
-    result = MapClass::GetTileIndex(&MapClass_Instance, (int16_t *)&this->q048, aP5, aP7); /*0x4834cf*/
+    result = MapClass::GetTileIndex((MapClass *)&dword_87F7E8, (int16_t *)&this->q048, aP5, aP7); /*0x4834cf*/
     if ( aP4 != result ) /*0x4834d6*/
     {
       IDA_LOBYTE(result) = 0; /*0x4834db*/
@@ -338,7 +342,7 @@ int Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, 
   v12 = this->u32_44; /*0x483583*/
   if ( v12 != -1 ) /*0x483589*/
   {
-    v13 = *((unsigned int *)&g_BuildingTypeClass_Array->vtable0 + v12); /*0x483591*/
+    v13 = *(&dword_A83D84->vtable0 + v12); /*0x483591*/
     if ( v13 ) /*0x483596*/
     {
       if ( *(unsigned char *)(v13 + 680) ) /*0x483598*/
@@ -365,6 +369,7 @@ int Cell::IsBuildable(int a2, char a3, char a4, IUnknown * aP4, IUnknown * aP5, 
     IDA_LOBYTE(result) = 0; /*0x4835f9*/
   return result; /*0x4834d8*/
 }
+}
 // 0x485060
 namespace gamemd {
 int Cell::IsValidHeight()
@@ -373,6 +378,7 @@ int Cell::IsValidHeight()
 
   Cell_field_0x38 = this->Cell_field_0x38; /*0x485060*/
   return Cell_field_0x38 >= g_CellPassabilityLUT && Cell_field_0x38 < g_CellPassabilityLUT + 14; /*0x485079*/
+}
 }
 // 0x486380
 namespace gamemd {
@@ -383,6 +389,7 @@ void Cell::IsEmpty()
   result = this->Cell_field_0x38; /*0x486380*/
   IDA_LOBYTE(result) = result == 0xFFFF || !result; /*0x486391*/
   return result; /*0x486390*/
+}
 }
 // 0x4865D0
 namespace gamemd {
@@ -399,6 +406,7 @@ int Cell::IsGroundTypeRange()
                 || result >= dword_AA10A0 && result < dword_AA10A0 + 4;
   return result; /*0x4865e6*/
 }
+}
 // 0x486750
 namespace gamemd {
 int Cell::IsInRange()
@@ -409,6 +417,7 @@ int Cell::IsInRange()
                 && (result = this->Cell_field_0x38, result >= g_Cell_BuildabilityLUT)
                 && result < g_Cell_BuildabilityLUT + 16;
   return result; /*0x48676b*/
+}
 }
 // 0x486770
 namespace gamemd {
@@ -421,6 +430,7 @@ int Cell::IsInRange2()
                 && result < g_TerrainBridgeIndex + 16;
   return result; /*0x48678b*/
 }
+}
 // 0x4867B0
 namespace gamemd {
 void Cell::IsShore()
@@ -430,6 +440,7 @@ void Cell::IsShore()
   result = this->Cell_field_0x38; /*0x4867b0*/
   IDA_LOBYTE(result) = result == dword_AA0E18 || result >= dword_AA0748 && result < dword_AA0748 + 16; /*0x4867d1*/
   return result; /*0x4867d0*/
+}
 }
 // 0x486FF0
 namespace gamemd {
@@ -487,11 +498,13 @@ int Cell::IsBuildableAdvanced()
   IDA_LOBYTE(result) = 0; /*0x4870a1*/
   return result; /*0x487005*/
 }
+}
 // 0x4870B0
 namespace gamemd {
 int Cell::HasOccupierBit(IUnknown * aP1)
 {
   return ((1 << aP1) & *(unsigned int *)&this->__pad_70[8]) != 0; /*0x4870c8*/
+}
 }
 // 0x487A10
 namespace gamemd {
@@ -536,9 +549,8 @@ int Cell::SearchEnemies(IUnknown * aP1)
       if ( !v3 || (*(int (__thiscall **)(unsigned int *))(*v3 + 44))(v3) != 2 ) /*0x487a76*/
         goto LABEL_11; /*0x487a76*/
     }
-  LABEL_10:
-    v6 = *v3; /*0x487a78*/
-    aP1 = v3[27]; /*0x487a84*/
+  LABEL_10: v6 = (int)((IUnknown *)(*v3));
+    aP1 = (IUnknown *)(v3[27]);
     (*(void (__thiscall **)(unsigned int *, int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))(v6 + 364))( /*0x487a9e*/
       v3,
       &aP1,
@@ -616,6 +628,7 @@ int Cell::SearchEnemies(IUnknown * aP1)
   while ( v14 < 3 ); /*0x487bff*/
   return result; /*0x487c05*/
 }
+}
 // 0x487CB0
 namespace gamemd {
 long long Cell::GetTraversability()
@@ -634,6 +647,7 @@ int Cell::GetSlopeIndex()
 {
   return this->u32_11B + 4 * ((this->u32_140 >> 7) & 1); /*0x487d66*/
 }
+}
 // 0x487DF0
 namespace gamemd {
 int Cell::IsBridge2()
@@ -642,6 +656,7 @@ int Cell::IsBridge2()
 
   IDA_LOBYTE(result) = *(unsigned int *)&this->__pad_E8[4] == 5; /*0x487df7*/
   return result; /*0x487dfa*/
+}
 }
 // 0x4DCE80
 namespace gamemd {
@@ -700,6 +715,7 @@ Coord * * Cell::IsValidDestination(short * a2)
             0,
             1);
 }
+}
 // 0x5657E0
 namespace gamemd {
 int Cell::Exists(MouseClass * aP1)
@@ -710,11 +726,13 @@ int Cell::Exists(MouseClass * aP1)
   IDA_LOBYTE(result) = *((unsigned int *)this->Cell_field_0x13C + 512 * aP1[1] + result) != 0; /*0x5657fa*/
   return result; /*0x5657fd*/
 }
+}
 // 0x56D430
 namespace gamemd {
 int Cell::CoordToIndex(IUnknown * aP1)
 {
   return *aP1 + aP1[1] * ((int)this->Cell_field_0xF8 + (unsigned int)this->Cell_field_0xF4 + 1); /*0x56d450*/
+}
 }
 // 0x56D460
 namespace gamemd {
@@ -799,6 +817,7 @@ int Cell::SetRadar(IUnknown * aP1)
     *((unsigned short *)v5 + 1) = *((unsigned short *)v16 + 1); /*0x56d58f*/
   }
   return result; /*0x56d51b*/
+}
 }
 // 0x56E990
 namespace gamemd {
@@ -887,6 +906,7 @@ AbstractClass * * Cell::UpdateTileType(IUnknown * aP0, IUnknown * aP1, int a3)
   }
   return (char)v7; /*0x56eb69*/
 }
+}
 // 0x56EB80
 namespace gamemd {
 ObjectClass * * Cell::SetTileType(IUnknown * aP0, IUnknown * a3, IUnknown * aP2, IUnknown * aP3, int a5)
@@ -974,6 +994,7 @@ ObjectClass * * Cell::SetTileType(IUnknown * aP0, IUnknown * a3, IUnknown * aP2,
   }
   return result; /*0x56ed29*/
 }
+}
 // 0x578AD0
 namespace gamemd {
 int Cell::IsPassableAllied(IUnknown * aP0, IUnknown * aP1)
@@ -1007,6 +1028,7 @@ int Cell::IsPassableAllied(IUnknown * aP0, IUnknown * aP1)
     goto LABEL_10; /*0x578b4b*/
   }
   return BuildingClass::MakeTraversable(v4); /*0x578b58*/
+}
 }
 // 0x579B70
 namespace gamemd {
@@ -1250,6 +1272,7 @@ HouseClass * * Cell::GetAdjacencyFlags(MouseClass * aP0)
   }
   return v29; /*0x57a0a7*/
 }
+}
 // 0x57B210
 namespace gamemd {
 int Cell::GetTerrainMask(IUnknown * aP1, int a3)
@@ -1369,6 +1392,7 @@ int Cell::GetTerrainMask(IUnknown * aP1, int a3)
   }
   return result; /*0x57b273*/
 }
+}
 // 0x5A9940
 namespace gamemd {
 void * Cell::Clear()
@@ -1376,6 +1400,7 @@ void * Cell::Clear()
   this->Cell_field_0x0 = 0; /*0x5a9942*/
   this->Cell_field_0x4 = (void *)-1; /*0x5a994d*/
   return this; /*0x5a9954*/
+}
 }
 // 0x6B5F80
 namespace gamemd {
@@ -1446,6 +1471,7 @@ int Cell::IsWalkable(unsigned short * a2, char a3)
     IDA_LOBYTE(result) = 0; /*0x6b606f*/
   }
   return result; /*0x6b6060*/
+}
 }
 // 0x6D2790
 namespace gamemd {
@@ -1636,6 +1662,7 @@ void* Cell::CreateCrater(IUnknown aP2)
   }
   return v12; /*0x6d2aba*/
 }
+}
 // 0x6D8700
 namespace gamemd {
 CellStruct * * Cell::GetAdjacentPassableMask(IUnknown * aP0, int a2)
@@ -1767,6 +1794,7 @@ CellStruct * * Cell::GetAdjacentPassableMask(IUnknown * aP0, int a2)
   if ( (v15 & (uint8_t)v6) == 0 ) /*0x6d8ac1*/
     v2 |= 4u; /*0x6d8ac3*/
   return byte_7F4194[v2]; /*0x6d8acd*/
+}
 }
 // 0x4265B0
 namespace gamemd {

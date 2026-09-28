@@ -33,6 +33,7 @@
 #include "e4/classes/Waypoint_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Skirmish_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x6A6AF0
 namespace gamemd {
@@ -91,6 +92,7 @@ int E4Recv_6A6AF0::sub_6A6AF0(ObjectClass * aP1, int a3)
     return 1; /*0x6a6c20*/
   }
   return 0; /*0x6a6c1d*/
+}
 }
 // 0x6A74A0
 namespace gamemd {
@@ -151,10 +153,11 @@ int E4Recv_6A87F0::sub_6A87F0(int a2, int a3)
   LABEL_7:
   if ( !dword_A8E7AC && a2 != 31 ) /*0x6a882b*/
     VoxClass::FindAndPlay(&stru_83FA64, -1); /*0x6a8837*/
-  TabCameoListClass::AddCameo_ReplaceItAll((TabCameoListClass *)this, a2, a3); /*0x6a8840*/
+  TabCameoListClass::AddCameo_ReplaceItAll(a2, a3); /*0x6a8840*/
   IDA_LOBYTE(this->ambientSoundController[0]) = 1; /*0x6a8848*/
   g_CameoRenderFlag = 1; /*0x6a884c*/
   return 1; /*0x6a8847*/
+}
 }
 // 0x6A89E0
 namespace gamemd {
@@ -189,7 +192,7 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
   }
   else
   {
-    v5 = (int)((gamemd::ObjectClass *)(26));
+    v5 = (int)(26);
     if ( NeedsSaveOrLink ) /*0x6a8a8a*/
       v5 = 18; /*0x6a8a8c*/
     v6 = (g_DSurface_ViewBounds - g_SidebarBounds - v5 + g_DSurface_SidebarBounds - 7) / 50; /*0x6a8aaa*/
@@ -209,6 +212,7 @@ int E4Recv_6A89E0::sub_6A89E0(char a2)
     v8->ambientSoundController[3] += v3; /*0x6a8afb*/
     return 1; /*0x6a8aff*/
   }
+}
 }
 // 0x6A93F0
 namespace gamemd {
@@ -243,11 +247,13 @@ BombClass * * E4Recv_6A93F0::sub_6A93F0()
   g_CameoRenderFlag = 1; /*0x6a9498*/
   return v5; /*0x6a9496*/
 }
+}
 // 0x6ACBAE
 namespace gamemd {
 void* __inc_tmpoff()
 {
   ++MEMORY[0x51D]; /*0x6acbae*/
+}
 }
 // 0x6ADC20
 namespace gamemd {
@@ -343,6 +349,7 @@ void SetupSkirmishSpawnLocationEntry(SessionClass * hDlg, int nIDDlgItem)
   EnableWindow(v14, v20); /*0x6addc4*/
   EnableWindow(hWnda, v20); /*0x6addcc*/
   return EnableWindow(v22, v20); /*0x6addd6*/
+}
 }
 // 0x6AE080
 namespace gamemd {
@@ -474,6 +481,7 @@ void HideSkirmishSpawnLocations(HWND hDlg, int a2)
     }
   }
 }
+}
 // 0x6AE2C0
 namespace gamemd {
 void ShowSkirmishSetupScreen(void * a1, void * a2)
@@ -527,6 +535,7 @@ void ShowSkirmishSetupScreen(void * a1, void * a2)
   if ( dwNewLong == 1472 ) /*0x6ae3c9*/
     Screen::Capture(1, 0, v2, a2); /*0x6ae3cf*/
   return dwNewLong == 1559; /*0x6ae3e0*/
+}
 }
 // 0x6AFD60
 namespace gamemd {
@@ -797,7 +806,7 @@ char E4Recv_6A04C0::sub_6A04C0(IUnknown * aP1)
     v7 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], aP1); /*0x6a0551*/
     if ( (uint8_t)CrateClass::ProcessPickup((CrateClass *)v7, (int)vtable3) && !*((unsigned char *)this->vtable3 + 129) ) /*0x6a0564*/
     {
-      WalkLocomotion::MoveTo((int)this, aP1, 1); /*0x6a0573*/
+      WalkLocomotion::MoveTo(aP1, 1); /*0x6a0573*/
       return 1; /*0x6a057d*/
     }
     if ( *((unsigned char *)this->vtable3 + 144) ) /*0x6a0583*/

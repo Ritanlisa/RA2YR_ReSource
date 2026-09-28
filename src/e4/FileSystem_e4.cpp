@@ -54,7 +54,8 @@ int FileSystem::ProcessNextFileExtension()
   int v30; // [esp+18h] [ebp-10h]
   unsigned int *v31; // [esp+18h] [ebp-10h]
   int v32; // [esp+1Ch] [ebp-Ch]
-v1 = (gamemd::FileSystem *)(g_FileExtensionState);
+
+  v1 = (gamemd::FileSystem *)(g_FileExtensionState);
   if ( !g_FileExtensionState ) /*0x626db1*/
   {
     v2 = (FileSystem *)RA2_OPNEW(0x10u); /*0x626db9*/
@@ -73,7 +74,7 @@ v1 = (gamemd::FileSystem *)(g_FileExtensionState);
       }
       else
       {
-        v4 = (unsigned int)(0);
+        v4 = 0; /*0x626df8*/
       }
       *(unsigned int *)&v1[4] = v4; /*0x626dfc*/
       v5 = (FileExtension *)RA2_OPNEW(0x18u); /*0x626dff*/
@@ -90,9 +91,9 @@ v1 = (gamemd::FileSystem *)(g_FileExtensionState);
     }
     else
     {
-      v1 = (int)(0);
+      v1 = 0; /*0x626e45*/
     }
-    g_FileExtensionState = v1; /*0x626e47*/
+    g_FileExtensionState = (int)(v1);
   }
   v8 = *(unsigned int **)&v1[12]; /*0x626e4d*/
   v9 = 0; /*0x626e50*/

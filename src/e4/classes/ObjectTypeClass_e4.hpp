@@ -233,7 +233,6 @@ struct ObjectTypeClass {
     unsigned int NoSpawnAlt6;
     unsigned int VoxelCaches;
     unsigned int __pad_14D;
-    unsigned int gap0;
     unsigned int q0400;
     unsigned int q0401;
     unsigned int q0402;
@@ -262,6 +261,10 @@ struct ObjectTypeClass {
     unsigned int zero_3C6;
     unsigned int zero_3C7;
     unsigned int zero_3C9;
+    unsigned int ParticleSystemTypeClass_field_0x0;
+    unsigned int ParticleSystemTypeClass_field_0x4;
+    unsigned int ParticleSystemTypeClass_field_0x8;
+    unsigned int SpawnCount;
     unsigned int q0E80;
     unsigned int q0F00;
     unsigned int q0F80;
@@ -273,6 +276,7 @@ struct ObjectTypeClass {
     unsigned int u32_C08;
     unsigned int vtable0;
     unsigned int q094;
+    unsigned int q0D09;
 // --- flat members (END) ---
     AbstractClass * * Load2DArt();
     BOOL loadTypeMember_5717AE0();

@@ -19,7 +19,7 @@ int INIEntry::GetTechnoType(CCINIClass * aP1, unsigned char * a2)
   int IndexByName; // eax
   TypeClass Destination[32]; // [esp+4h] [ebp-80h] BYREF
 
-  INIClass::GetString((INIClass *)this, aP1, a2, g_Str__none_, (char *)Destination, 128); /*0x476ed5*/
+  INIClass::GetString(aP1, a2, g_Str__none_, (char *)Destination, 128); /*0x476ed5*/
   ExitCellByName = Factory::FindExitCellByName((Factory *)Destination); /*0x476ede*/
   if ( ExitCellByName != -1 ) /*0x476ee6*/
     return *((unsigned int *)unk_A8E34C + ExitCellByName); /*0x476eef*/

@@ -34,6 +34,7 @@ void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass 
     this->Y = aP5 | 5; /*0x4e1339*/
   return result; /*0x4e1333*/
 }
+}
 // 0x4E1390
 namespace gamemd {
 GadgetClass * * GadgetClass::Dtor()
@@ -57,7 +58,8 @@ GadgetClass * * GadgetClass::Dtor()
     FootClass_Array.missionTimer[1] = 0; /*0x4e13cd*/
   if ( this == v1 ) /*0x4e13d5*/
     FootClass_Array.missionTimer[2] = 0; /*0x4e13d7*/
-  return LinkClass::Destruct((LinkClass *)this);
+  return LinkClass::Destruct();
+}
 }
 // 0x557920
 namespace gamemd {
@@ -103,6 +105,7 @@ int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
   }
   (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 36))(stru_887598.lineTrailer); /*0x5579f6*/
   return 1; /*0x5579fe*/
+}
 }
 // 0x60AAB0
 namespace gamemd {
@@ -255,17 +258,16 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
     }
     if ( v11 ) /*0x60af0e*/
     {
-  LABEL_85:
-      v12 = 192; /*0x60af10*/
-  LABEL_87:
-      v15[50] = v12; /*0x60af19*/
-      return 1; /*0x60af1d*/
+  LABEL_85: v12 = (int)((gamemd::AbstractClass **)(192));
+  LABEL_87: v15[50] = (unsigned int)((gamemd::AbstractClass **)(v12));
+      return (gamemd::AbstractClass **)(1);
     }
   LABEL_86:
     v12 = 0; /*0x60af17*/
     goto LABEL_87; /*0x60af17*/
   }
-  return 1; /*0x60af23*/
+  return (gamemd::AbstractClass **)(1);
+}
 }
 // 0x623560
 namespace gamemd {
@@ -290,6 +292,7 @@ AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
     }
   }
 }
+}
 // 0x723EA0
 namespace gamemd {
 int GadgetClass::Show()
@@ -299,4 +302,5 @@ int GadgetClass::Show()
   v1 = *(unsigned int *)this->__pad_0; /*0x723ea0*/
   *((unsigned char *)this + 45) = 1; /*0x723ea2*/
   return (*(int (**)(void))(v1 + 72))();
+}
 }

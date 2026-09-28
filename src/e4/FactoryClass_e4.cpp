@@ -24,6 +24,7 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/RawFileClass_e4.hpp"
 #include "e4/classes/TypeList_flat_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x4C9B20
 namespace gamemd {
@@ -114,6 +115,7 @@ int FactoryClass::UpdateProduction()
   }
   return Speed; /*0x4c9bbe*/
 }
+}
 // 0x4C9C60
 namespace gamemd {
 int FactoryClass::HasProgressChanged()
@@ -124,34 +126,35 @@ int FactoryClass::HasProgressChanged()
   this->__pad_42[27] = 0; /*0x4c9c63*/
   return result; /*0x4c9c67*/
 }
+}
 // 0x4C9C70
 namespace gamemd {
 int FactoryClass::DemandProduction(int a2, void * a3, char a4)
 {
-  bool * v5;
-  bool * v6;
-  int v7; // esi
+  void * v5;
+  int v6; // eax
+  bool * v7;
   int v8; // eax
-  void * v9;
+  int v9; // eax
   void * v10;
-  int v12; // ecx
-  int v13; // eax
+  void * v12;
+  void * v13;
   int v14; // eax
-  void * v15;
+  int v15; // eax
   void * v16;
   int v17; // [esp+Ch] [ebp-8h]
 
   if ( (*(int (__thiscall **)(int))(*(unsigned int *)a2 + 44))(a2) == 7 ) /*0x4c9c85*/
-    BuildingClass::AbandonProduction(this); /*0x4c9c89*/
+    BuildingClass::AbandonProduction(); /*0x4c9c89*/
   if ( (*(int (__thiscall **)(int))(*(unsigned int *)a2 + 44))(a2) == 7 /*0x4c9ccf*/
     || (!this->queuedCapacity || this->isSuspended)
     && this->u32_50 <= 0
     && (!this->q058 || !this->isSuspended)
     || a4 )
   {
-    this->u8_5D = (gamemd::TerrainTypeClass *)((int)(1));
-    this->isSuspended = (int)(1);
-    this->q02C = (int)(g_CurrentFrame);
+    this->u8_5D = (unsigned char)((void *)(1));
+    this->isSuspended = (void *)(1);
+    this->q02C = (void *)(g_CurrentFrame);
     this->queuedCapacity = 0; /*0x4c9d8b*/
     this->queuedObjects = v17; /*0x4c9d8e*/
     this->queuedCount = 0; /*0x4c9d92*/
@@ -159,19 +162,19 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
     this->q058 = (*(int (__thiscall **)(int, void *))(*(unsigned int *)a2 + 140))(a2, a3); /*0x4c9da4*/
     if ( !(uint8_t)House::IsCurrentPlayer(a3) ) /*0x4c9da7*/
     {
-      v12 = this->q058; /*0x4c9db1*/
+      v12 = (void *)((int)(this->q058));
       if ( v12 ) /*0x4c9db6*/
       {
         if ( (*(int (__thiscall **)(int))(*(unsigned int *)v12 + 44))(v12) == 6 ) /*0x4c9dc0*/
           *(unsigned char *)(this->q058 + 1738) = 1; /*0x4c9dc5*/
       }
     }
-    v13 = (gamemd::HouseClass *)(this->q058);
+    v13 = (void *)((int)(this->q058));
     if ( v13 ) /*0x4c9dd1*/
     {
-      v14 = (void *)((int)(*(unsigned int *)(v13 + 540)));
-      this->owner = (void *)((unsigned int)(v14));
-      v15 = (unsigned int)((*(int (__thiscall **)(int, int))(*(unsigned int *)a2 + 132))(a2, v14));
+      v14 = (int)((gamemd::HouseClass *)((int)(*(unsigned int *)(v13 + 540))));
+      this->owner = (gamemd::HouseClass *)(v14);
+      v15 = (*(int (__thiscall **)(int, int))(*(unsigned int *)a2 + 132))(a2, v14); /*0x4c9de1*/
       v16 = this->q058; /*0x4c9de7*/
       this->balance = v15; /*0x4c9dea*/
       *(unsigned int *)(v16 + 768) = v15; /*0x4c9ded*/
@@ -187,21 +190,22 @@ int FactoryClass::DemandProduction(int a2, void * a3, char a4)
   }
   else
   {
-    v5 = (bool *)((int)(this->q048));
-    v6 = (int)(this->u32_50);
-    v7 = (void *)(&this->onHold);
+    v5 = (void *)((int)(this->q048));
+    v6 = this->u32_50; /*0x4c9cf6*/
+    v7 = &this->onHold; /*0x4c9cf9*/
     if ( v6 < v5 /*0x4c9d1b*/
       || (this->u8_4D || !v5)
       && (v8 = this->q054, v8 > 0)
       && (*(uint8_t (__thiscall **)(int, int, unsigned int))(this->q048)(v7, v5 + v8, 0) )
     {
       v9 = (int)(this->u32_50);
-      v10 = (int)(this->q044);
+      v10 = this->q044; /*0x4c9d25*/
       this->u32_50 = v9 + 1; /*0x4c9d2b*/
       *(unsigned int *)(v10 + 4 * v9) = a2; /*0x4c9d2e*/
     }
     return 1; /*0x4c9d32*/
   }
+}
 }
 // 0x4C9E10
 namespace gamemd {
@@ -210,7 +214,7 @@ int FactoryClass::SetObject(int a2)
   HouseClass *v3; // eax
   int v5; // [esp+8h] [ebp-8h]
 
-  BuildingClass::AbandonProduction((int)this); /*0x4c9e16*/
+  BuildingClass::AbandonProduction(); /*0x4c9e16*/
   *(unsigned int *)&this->__pad_42[22] = a2; /*0x4c9e21*/
   v3 = *(HouseClass **)(a2 + 540); /*0x4c9e27*/
   this->balance = 0; /*0x4c9e2d*/
@@ -223,6 +227,7 @@ int FactoryClass::SetObject(int a2)
   this->__pad_42[27] = 1; /*0x4c9e50*/
   this->isSuspended = 1; /*0x4c9e53*/
   return 1; /*0x4c9e56*/
+}
 }
 // 0x4C9E60
 namespace gamemd {
@@ -247,6 +252,7 @@ int FactoryClass::StartProduction(char a2)
     *(&this->vtable23) = 0; /*0x4c9e8e*/
   }
 }
+}
 // 0x4C9FB0
 namespace gamemd {
 int FactoryClass::GetBuildTimeFrames()
@@ -268,12 +274,13 @@ int FactoryClass::GetBuildTimeFrames()
     return 255; /*0x4c9fe5*/
   return result; /*0x4c9fdd*/
 }
+}
 // 0x4CA270
 namespace gamemd {
 int FactoryClass::LoadFromStream(int a1, int * a2)
 {
   int *v2; // ebp
-  FactoryClass *v3; // edi
+  unsigned int v3;
   int result; // eax
   int v5; // edx
   FactoryClass *v6; // eax
@@ -284,8 +291,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
   int v11; // edx
   int v12; // esi
   int v13; // [esp+28h] [ebp-4h]
-
-  v2 = (gamemd::FactoryClass *)(a2);
+v2 = (int *)((gamemd::FactoryClass *)(a2));
   v3 = a1; /*0x4ca279*/
   result = AbstractClass::SaveLoad_Prefix_0(a1, (int)a2); /*0x4ca27f*/
   if ( result >= 0 ) /*0x4ca288*/
@@ -303,12 +309,12 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
       v3->vtable2 = (void*)&FactoryClass_vftable; /*0x4ca2d4*/
       v3->vtable3 = (void*)&FactoryClass_vftable; /*0x4ca2db*/
     }
-    v5 = (gamemd::FactoryClass *)(*v2);
-    a1 = (gamemd::FactoryClass *)(0);
+    v5 = *v2; /*0x4ca2e2*/
+    a1 = 0; /*0x4ca2ee*/
     result = (*(int (__stdcall **)(int *, FactoryClass **, int, unsigned int))(v5 + 12))(v2, &a1, 4, 0); /*0x4ca2f2*/
     if ( result >= 0 ) /*0x4ca2f7*/
     {
-      v6 = a1; /*0x4ca2fd*/
+      v6 = (gamemd::FactoryClass *)(a1);
       v13 = 0; /*0x4ca301*/
       if ( (int)a1 <= 0 ) /*0x4ca307*/
       {
@@ -349,7 +355,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
             *(unsigned int *)&v3->__pad_42[14] = v10 + 1; /*0x4ca359*/
             *(unsigned int *)(v11 + 4 * v10) = a2; /*0x4ca360*/
           }
-          v6 = a1; /*0x4ca367*/
+          v6 = (gamemd::FactoryClass *)(a1);
           if ( ++v13 >= (int)a1 ) /*0x4ca372*/
             goto LABEL_14; /*0x4ca372*/
         }
@@ -357,6 +363,7 @@ int FactoryClass::LoadFromStream(int a1, int * a2)
     }
   }
   return result; /*0x4ca3b0*/
+}
 }
 // 0x4CA430
 namespace gamemd {
@@ -400,6 +407,7 @@ AbstractClass * * FactoryClass::Stat(int * a2)
   v7 = (*((int (__stdcall **)(void **))this->owner->vtable1 + 4))(&this->owner->vtable1); /*0x4ca563*/
   return Power::TimerProcess(v7); /*0x4ca56e*/
 }
+}
 // 0x4CA580
 namespace gamemd {
 int FactoryClass::Revert(int a2, int a3)
@@ -410,6 +418,7 @@ int FactoryClass::Revert(int a2, int a3)
   if ( a2 == *(unsigned int *)&this->__pad_42[22] ) /*0x4ca589*/
     *(unsigned int *)&this->__pad_42[22] = 0; /*0x4ca58b*/
   return result; /*0x4ca592*/
+}
 }
 // 0x4CA5A0
 namespace gamemd {
@@ -459,6 +468,7 @@ int FactoryClass::StartProduction_2()
   }
   return v2; /*0x4ca60f*/
 }
+}
 // 0x4CA670
 namespace gamemd {
 int FactoryClass::CountType(IUnknown * aP1)
@@ -487,6 +497,7 @@ int FactoryClass::CountType(IUnknown * aP1)
   }
   return v3; /*0x4ca6aa*/
 }
+}
 // 0x4CA6B0
 namespace gamemd {
 int FactoryClass::IsQueued(int a2)
@@ -505,6 +516,7 @@ int FactoryClass::IsQueued(int a2)
       return 0; /*0x4ca6cb*/
   }
   return 1; /*0x4ca6cf*/
+}
 }
 // 0x4CA770
 namespace gamemd {
@@ -536,7 +548,7 @@ void * FactoryClass::CopyTo(char a2)
     }
   }
   if ( unk_A8E9A0 ) /*0x4ca7e6*/
-    BuildingClass::AbandonProduction((int)this); /*0x4ca7ea*/
+    BuildingClass::AbandonProduction(); /*0x4ca7ea*/
   v7 = this; /*0x4ca7ff*/
   v4 = (*(int (__thiscall **)(int *, FactoryClass **))(g_BuildingLoadQueue_Array.PowerBonus + 16))( /*0x4ca803*/
          &g_BuildingLoadQueue_Array.PowerBonus,
@@ -561,10 +573,11 @@ void * FactoryClass::CopyTo(char a2)
   }
   this->__pad_42[11] = 0; /*0x4ca85f*/
   *(unsigned int *)&this->__pad_42[6] = 0; /*0x4ca863*/
-  AbstractClass::DTOR((AbstractClass *)this); /*0x4ca86a*/
+  AbstractClass::DTOR(); /*0x4ca86a*/
   if ( (a2 & 1) != 0 ) /*0x4ca874*/
-    RA2_OPDEL(this); /*0x4ca877*/
+    RA2_OPDEL(); /*0x4ca877*/
   return &this->vtable0; /*0x4ca881*/
+}
 }
 // 0x635060
 namespace gamemd {
@@ -708,7 +721,7 @@ int FactoryClass::StubReturn116()
 namespace gamemd {
 int FactoryClass_33::Seek(int a2)
 {
-  return *(unsigned int *)(this->q004 + 4 * a2); /*0x4ca8ea*/
+  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x4ca8ea*/
 }
 } // namespace gamemd
 
@@ -716,24 +729,24 @@ int FactoryClass_33::Seek(int a2)
 namespace gamemd {
 char FactoryClass_33::AddRef(int a2)
 {
-  int v2; // esi
+  int m_8; // esi
   int v3; // edx
   unsigned int *v4; // eax
   int v5; // ecx
 
-  v2 = this->Capacity; /*0x4ca8f2*/
-  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x4ca8fd*/
+  m_8 = this->m_8; /*0x4ca8f2*/
+  if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x4ca8fd*/
   {
     v3 = 0; /*0x4ca8ff*/
-    if ( v2 <= 0 ) /*0x4ca903*/
+    if ( m_8 <= 0 ) /*0x4ca903*/
       return 1; /*0x4ca923*/
-    v4 = (unsigned int *)this->Items; /*0x4ca905*/
+    v4 = *(unsigned int **)&this->m_1[3]; /*0x4ca905*/
     v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x4ca90b*/
     while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x4ca914*/
     {
       ++v3; /*0x4ca916*/
       ++v4; /*0x4ca917*/
-      if ( v3 >= v2 ) /*0x4ca91c*/
+      if ( v3 >= m_8 ) /*0x4ca91c*/
         return 1; /*0x4ca91c*/
     }
   }
@@ -746,35 +759,35 @@ namespace gamemd {
 char FactoryClass_33::Release(int a2, unsigned int * a3)
 {
   unsigned int *v4; // edi
-  int v6; // ecx
+  int m_8; // ecx
   int i; // eax
 
   if ( a2 ) /*0x4ca93c*/
   {
-    this->IsInitialized = (unsigned int *)(0);
+    IDA_LOBYTE(this->m_C) = 0; /*0x4ca946*/
     if ( a3 ) /*0x4ca94c*/
       v4 = a3; /*0x4ca962*/
     else
-      v4 = operator new(4 * a2); /*0x4ca95e*/
-    this->IsInitialized = 1; /*0x4ca966*/
+      v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x4ca95e*/
+    IDA_LOBYTE(this->m_C) = 1; /*0x4ca966*/
     if ( v4 ) /*0x4ca96a*/
     {
-      if ( this->Items ) /*0x4ca975*/
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x4ca975*/
       {
-        v6 = this->Capacity; /*0x4ca97c*/
-        if ( a2 < v6 ) /*0x4ca981*/
-          v6 = a2; /*0x4ca983*/
-        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x4ca989*/
+        m_8 = this->m_8; /*0x4ca97c*/
+        if ( a2 < m_8 ) /*0x4ca981*/
+          m_8 = a2; /*0x4ca983*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x4ca989*/
           ++i; /*0x4ca98e*/
-        if ( this->IsAllocated ) /*0x4ca99b*/
+        if ( IDA_BYTE1(this->m_C) ) /*0x4ca99b*/
         {
-          RA2_OPDEL(this->q004); /*0x4ca9a6*/
-          this->Items = 0; /*0x4ca9ae*/
+          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4ca9a6*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x4ca9ae*/
         }
       }
-      this->Items = (unsigned int)(v4);
-      this->Capacity = a2; /*0x4ca9bf*/
-      this->IsAllocated = a3 == 0; /*0x4ca9c2*/
+      *(unsigned int *)&this->m_1[3] = v4; /*0x4ca9b7*/
+      this->m_8 = a2; /*0x4ca9bf*/
+      IDA_BYTE1(this->m_C) = a3 == 0; /*0x4ca9c2*/
       return 1; /*0x4ca9c8*/
     }
     else
@@ -784,7 +797,7 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x4ca9d2*/
+    (*(void (__thiscall **)(_VectorClass_PBVTechnoTypeClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x4ca9d2*/
     return 1; /*0x4ca9d8*/
   }
 }
@@ -794,13 +807,13 @@ char FactoryClass_33::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void FactoryClass_33::ddtor()
 {
-  if ( this->Items && this->IsAllocated ) /*0x4ca9ed*/
+  if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x4ca9ed*/
   {
-    RA2_OPDEL(this->Items); /*0x4ca9f3*/
-    this->Items = 0; /*0x4ca9fb*/
+    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x4ca9f3*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4ca9fb*/
   }
-  *(unsigned char *)&this->IsAllocated = 0; /*0x4ca9fe*/
-  this->Capacity = 0; /*0x4caa01*/
+  IDA_BYTE1(this->m_C) = 0; /*0x4ca9fe*/
+  this->m_8 = 0; /*0x4caa01*/
 }
 } // namespace gamemd
 
@@ -809,18 +822,18 @@ namespace gamemd {
 int FactoryClass_33::Read(unsigned int * a2)
 {
   int result; // eax
-  int v3; // edx
+  int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !this->IsInitialized ) /*0x4caa10*/
+  if ( !IDA_LOBYTE(this->m_C) ) /*0x4caa10*/
     return 0; /*0x4caa18*/
-  v3 = this->Capacity; /*0x4caa1e*/
+  m_8 = this->m_8; /*0x4caa1e*/
   result = 0; /*0x4caa21*/
-  if ( v3 <= 0 ) /*0x4caa25*/
+  if ( m_8 <= 0 ) /*0x4caa25*/
     return -1; /*0x4caa3c*/
-  for ( i = this->Items; *i != *a2; ++i ) /*0x4caa2b*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4caa2b*/
   {
-    if ( ++result >= v3 ) /*0x4caa3a*/
+    if ( ++result >= m_8 ) /*0x4caa3a*/
       return -1; /*0x4caa3a*/
   }
   return result; /*0x4caa1a*/
@@ -831,8 +844,8 @@ int FactoryClass_33::Read(unsigned int * a2)
 namespace gamemd {
 unsigned int FactoryClass_33::Write(int a2)
 {
-  if ( this->IsInitialized ) /*0x4caa50*/
-    return (unsigned int)(a2 - this->Items) >> 2; /*0x4caa65*/
+  if ( IDA_LOBYTE(this->m_C) ) /*0x4caa50*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4caa65*/
   else
     return 0; /*0x4caa57*/
 }
@@ -844,18 +857,18 @@ VectorClass_flat * FactoryClass_33::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)this->Items; /*0x4cab53*/
-  *this = (void*)&VectorClass_TechnoTypeClass_const___vftable; /*0x4cab56*/
-  if ( v3 && this->IsAllocated ) /*0x4cab60*/
+  v3 = *(void **)&this->m_1[3]; /*0x4cab53*/
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TechnoTypeClass_const___vftable; /*0x4cab56*/
+  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x4cab60*/
   {
     RA2_OPDEL(v3); /*0x4cab68*/
-    this->Items = 0; /*0x4cab70*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x4cab70*/
   }
-  this->IsAllocated = 0; /*0x4cab7b*/
-  this->Capacity = 0; /*0x4cab81*/
+  IDA_BYTE1(this->m_C) = 0; /*0x4cab7b*/
+  this->m_8 = 0; /*0x4cab81*/
   if ( (a2 & 1) != 0 ) /*0x4cab88*/
-    RA2_OPDEL(this); /*0x4cab8b*/
-  return this; /*0x4cab95*/
+    RA2_OPDEL(); /*0x4cab8b*/
+  return this->__pad_0; /*0x4cab95*/
 }
 } // namespace gamemd
 
