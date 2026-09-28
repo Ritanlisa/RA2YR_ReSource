@@ -15,22 +15,24 @@
 #include "e4/classes/FootClass_e4.hpp"
 #include "e4/classes/TechnoClass_e4.hpp"
 #include "e4/classes/TeamClass_e4.hpp"
+#include "e4/classes/Frame_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x4346C0
 namespace gamemd {
 int Font::GetGlyphDataForChar(AbstractClass * aP1)
 {
-  unsigned int *v2; // ecx
+  unsigned int *Font_field_04; // ecx
   int result; // eax
   int v4; // edx
 
-  v2 = (unsigned int *)this->Font_field_04; /*0x4346c0*/
+  Font_field_04 = (unsigned int *)this->Font_field_04; /*0x4346c0*/
   result = 0; /*0x4346c3*/
-  if ( v2 ) /*0x4346c7*/
+  if ( Font_field_04 ) /*0x4346c7*/
   {
-    v4 = *(uint16_t *)(v2[6] + 2 * aP1); /*0x4346da*/
+    v4 = *(uint16_t *)(Font_field_04[6] + 2 * aP1); /*0x4346da*/
     if ( (unsigned short)v4 ) /*0x4346e2*/
-      return v2[7] + (v4 - 1) * v2[5]; /*0x4346eb*/
+      return Font_field_04[7] + (v4 - 1) * Font_field_04[5]; /*0x4346eb*/
   }
   return result; /*0x4346ee*/
 }

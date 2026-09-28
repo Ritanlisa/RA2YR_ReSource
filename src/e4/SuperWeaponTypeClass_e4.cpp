@@ -25,7 +25,7 @@
 namespace gamemd {
 AbstractClass * * SuperWeaponTypeClass::IsAvailable()
 {
-  char *v2; // edi
+  int v2; // edi
   char v3; // cl
   int v4; // eax
   int v5; // edx
@@ -33,23 +33,23 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   int v7; // edi
   int v9; // ecx
   int v11; // ebp
-  int BuildableFromArray; // eax
-  char *v13; // edi
+  unsigned int *BuildableFromArray; // eax
+  int v13; // edi
   char v14; // cl
   int v15; // eax
   int v16; // edx
   int v17; // ecx
   int v18; // edi
   int v20; // ecx
-  char *v21; // edi
+  int v21; // edi
   int v22; // edx
   int v23; // ecx
   int v24; // eax
   int v25; // edi
   int v27; // edi
-  int v28; // eax
+  unsigned int *v28; // eax
   int v29; // ebx
-  int v30; // eax
+  unsigned int *v30; // eax
   int v31; // eax
   bool v32; // [esp+12h] [ebp-Ah]
   bool v33; // [esp+13h] [ebp-9h]
@@ -58,13 +58,13 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   bool v36; // [esp+16h] [ebp-6h]
   bool v37; // [esp+17h] [ebp-5h]
 
-  v36 = *(&this->NeedsSaveOrLink7) > 0; /*0x4f6565*/
-  v33 = *(&this->NeedsSaveOrLink6) > 0; /*0x4f656c*/
-  v37 = *(&this->NeedsSaveOrLink8) > 0; /*0x4f6573*/
-  v2 = (char *)g_RulesClass_Instance + 2848; /*0x4f657d*/
-  v32 = *(&this->vtable34) > 0; /*0x4f6583*/
-  v3 = SuperWeaponTypeClass::FindByName((void *)(*(&this->vtable23) + 152)); /*0x4f6598*/
-  v4 = *((unsigned int *)v2 + 4); /*0x4f659a*/
+  v36 = this->q057 > 0; /*0x4f6565*/
+  v33 = this->u32_158 > 0; /*0x4f656c*/
+  v37 = this->q058 > 0; /*0x4f6573*/
+  v2 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2848; /*0x4f657d*/
+  v32 = (int)this->UIName > 0; /*0x4f6583*/
+  v3 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(this->SidebarImageFile_0x18_ + 152)); /*0x4f6598*/
+  v4 = v2->uniqueId; /*0x4f659a*/
   v5 = 1 << v3; /*0x4f659d*/
   v6 = 0; /*0x4f659f*/
   if ( v4 <= 0 ) /*0x4f65a3*/
@@ -74,7 +74,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   }
   else
   {
-    v7 = *((unsigned int *)v2 + 1); /*0x4f65a5*/
+    v7 = v2->vtable2; /*0x4f65a5*/
     v7 = v7; /*0x4f65a8*/
     while ( (v5 & *(unsigned int *)(*(unsigned int *)v7 + 1740)) == 0 ) /*0x4f65b3*/
     {
@@ -85,17 +85,19 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
     }
     v9 = *(unsigned int *)(v7 + 4 * v6); /*0x4f65f4*/
   }
-  if ( this->DynamicVector_1559.GetOrGrow(*(unsigned int *)(v9 + 3576)) ) /*0x4f65cc*/
+  if ( DynamicVector::GetOrGrow((DynamicVector *)((char *)this + 21860), *(unsigned int *)(v9 + 3576)) ) /*0x4f65cc*/
     v32 = 1; /*0x4f65d5*/
   if ( v36 && v33 ) /*0x4f65e8*/
     return 1; /*0x4f65f3*/
-  v11 = (*(int (__stdcall **)(unsigned int *))(this->ActionValue + 24))&this->ActionValue; /*0x4f6603*/
+  v11 = (*(int (__stdcall **)(int *))(this->ActionValue[0] + 24))(this->ActionValue); /*0x4f6603*/
   v11 = v11; /*0x4f6612*/
-  BuildableFromArray = HouseClass::FirstBuildableFromArray((char *)g_RulesClass_Instance + 2276); /*0x4f6616*/
-  v13 = (char *)g_RulesClass_Instance + 2876; /*0x4f6623*/
+  BuildableFromArray = HouseClass::FirstBuildableFromArray( /*0x4f6616*/
+                         (HouseClass *)this,
+                         *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2276);
+  v13 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2876; /*0x4f6623*/
   v34 = BuildableFromArray != 0; /*0x4f662c*/
-  v14 = SuperWeaponTypeClass::FindByName((void *)(*(&this->vtable23) + 152)); /*0x4f6641*/
-  v15 = *((unsigned int *)v13 + 4); /*0x4f6643*/
+  v14 = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(this->SidebarImageFile_0x18_ + 152)); /*0x4f6641*/
+  v15 = *(unsigned int *)(v13 + 16); /*0x4f6643*/
   v16 = 1 << v14; /*0x4f6646*/
   v17 = 0; /*0x4f6648*/
   if ( v15 <= 0 ) /*0x4f664c*/
@@ -105,7 +107,7 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   }
   else
   {
-    v18 = *((unsigned int *)v13 + 1); /*0x4f664e*/
+    v18 = *(unsigned int *)(v13 + 4); /*0x4f664e*/
     v18 = v18; /*0x4f6651*/
     while ( (v16 & *(unsigned int *)(*(unsigned int *)v18 + 1740)) == 0 ) /*0x4f665c*/
     {
@@ -123,17 +125,17 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   v35 = v20 != 0; /*0x4f6673*/
   if ( v20 ) /*0x4f6677*/
   {
-    v21 = (char *)g_RulesClass_Instance + 2876; /*0x4f668c*/
-    v22 = 1 << SuperWeaponTypeClass::FindByName((void *)(*(&this->vtable23) + 152)); /*0x4f669e*/
-    v23 = *((unsigned int *)v21 + 4); /*0x4f66a0*/
+    v21 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2876; /*0x4f668c*/
+    v22 = 1 << SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)(this->SidebarImageFile_0x18_ + 152)); /*0x4f669e*/
+    v23 = *(unsigned int *)(v21 + 16); /*0x4f66a0*/
     v24 = 0; /*0x4f66a3*/
     if ( v23 <= 0 ) /*0x4f66a7*/
     {
-      v27 = (*(int (__thiscall **)(unsigned int, unsigned int *))(MEMORY[0] + 132))(0, this); /*0x4f6702*/
+      v27 = (*(int (__thiscall **)(unsigned int, SuperWeaponTypeClass *))(MEMORY[0] + 132))(0, this); /*0x4f6702*/
     }
     else
     {
-      v25 = *((unsigned int *)v21 + 1); /*0x4f66a9*/
+      v25 = *(unsigned int *)(v21 + 4); /*0x4f66a9*/
       v25 = v25; /*0x4f66ac*/
       while ( (v22 & *(unsigned int *)(*(unsigned int *)v25 + 1740)) == 0 ) /*0x4f66b7*/
       {
@@ -142,12 +144,12 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
         if ( v24 >= v23 ) /*0x4f66bf*/
         {
           v11 = v11; /*0x4f66c1*/
-          v27 = (*(int (__thiscall **)(unsigned int, unsigned int *))(MEMORY[0] + 132))(0, this); /*0x4f66d2*/
+          v27 = (*(int (__thiscall **)(unsigned int, SuperWeaponTypeClass *))(MEMORY[0] + 132))(0, this); /*0x4f66d2*/
           goto LABEL_28; /*0x4f66d4*/
         }
       }
       v11 = v11; /*0x4f66e2*/
-      v27 = (*(int (__thiscall **)(unsigned int, unsigned int *))(**(unsigned int **)(v25 + 4 * v24) + 132))( /*0x4f66f1*/
+      v27 = (*(int (__thiscall **)(unsigned int, SuperWeaponTypeClass *))(**(unsigned int **)(v25 + 4 * v24) + 132))( /*0x4f66f1*/
               *(unsigned int *)(v25 + 4 * v24),
               this);
     }
@@ -156,8 +158,8 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   {
     v27 = 0x7FFFFFFF; /*0x4f6706*/
   }
-  LABEL_28: v28 = (gamemd::AbstractClass **)(HouseClass::FirstBuildableFromArray((char *)g_RulesClass_Instance + 2360));
-  v29 = (*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)v28 + 132))(v28, this); /*0x4f6728*/
+  LABEL_28: v28 = (unsigned int *)(HouseClass::FirstBuildableFromArray((HouseClass *)this, *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2360));
+  v29 = (*(int (__thiscall **)(unsigned int *, SuperWeaponTypeClass *))(*v28 + 132))(v28, this); /*0x4f6728*/
   if ( !v34 && v35 ) /*0x4f6738*/
   {
     if ( v33 ) /*0x4f6740*/
@@ -166,8 +168,8 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
       return 1; /*0x4f6761*/
     return v32 && v11 >= v27 + v29; /*0x4f6772*/
   }
-  v30 = (gamemd::AbstractClass **)(HouseClass::FirstBuildableFromArray((char *)g_RulesClass_Instance + 2276));
-  v31 = (*(int (__thiscall **)(int, unsigned int *))(*(unsigned int *)v30 + 132))(v30, this); /*0x4f6799*/
+  v30 = (unsigned int *)(HouseClass::FirstBuildableFromArray((HouseClass *)this, *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2276));
+  v31 = (*(int (__thiscall **)(unsigned int *, SuperWeaponTypeClass *))(*v30 + 132))(v30, this); /*0x4f6799*/
   if ( v34 && !v35 ) /*0x4f67ad*/
   {
     if ( v33 ) /*0x4f67b5*/
@@ -191,88 +193,91 @@ AbstractClass * * SuperWeaponTypeClass::IsAvailable()
   }
   return 0; /*0x4f65ea*/
 }
-}
 // 0x5113F0
 namespace gamemd {
 unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
 {
-  int v3; // ebx
-  int v4; // eax
+  BuildingTypeClass *v3; // ebx
+  unsigned int v4;
   bool v5; // zf
   int v6; // ecx
-  void **v7; // edx
-  void **v8; // ecx
+  SuperWeaponTypeClass **v7; // edx
+  SuperWeaponTypeClass **v8; // ecx
 
-  AbstractTypeClass::Constructor(aP1); /*0x5113fa*/
+  AbstractTypeClass::Constructor((int *)this, aP1); /*0x5113fa*/
   v3 = 0; /*0x5113ff*/
-  *(&this->m_zero_3C2) = 0; /*0x511404*/
-  this->veteranAircraft = -1; /*0x51140a*/
-  this->veteranAircraftCount = -1; /*0x511410*/
-  this->suffix_4 = -1; /*0x511416*/
-  this->wallOwner = 0; /*0x51141c*/
-  this->q0C8 = 0; /*0x511427*/
-  this->q0CC = 1072693248; /*0x51142d*/
-  this->q0D0 = 0; /*0x511433*/
-  this->u32_D4 = 1072693248; /*0x511439*/
-  this->q0D8 = 0; /*0x51143f*/
-  this->q0DC = 1072693248; /*0x511445*/
-  this->q0E0 = 0; /*0x51144b*/
-  this->q0E4 = 1072693248; /*0x511451*/
-  this->q0E8 = 0; /*0x511457*/
-  this->q0F0 = 0; /*0x51145d*/
-  this->q0F8 = 0; /*0x511463*/
-  this->q0EC = 1072693248; /*0x511469*/
-  this->q0F4 = 1072693248; /*0x51146f*/
-  this->q0FC = 1072693248; /*0x511475*/
+  IDA_LOBYTE(this->ArrayIndex) = 0; /*0x511404*/
+  this->Type = (BuildingTypeClass *)-1; /*0x51140a*/
+  this->SidebarImage = (SHPStruct *)-1; /*0x511410*/
+  this->ActionValue_2[0] = -1; /*0x511416*/
+  this->SpecialSound = 0; /*0x51141c*/
+  this->AuxBuilding = 0; /*0x511427*/
+  this->SidebarImageFile[0] = 1072693248; /*0x51142d*/
+  this->SidebarImageFile[1] = 0; /*0x511433*/
+  this->SidebarImageFile[2] = 1072693248; /*0x511439*/
+  this->SidebarImageFile[3] = 0; /*0x51143f*/
+  this->SidebarImageFile[4] = 1072693248; /*0x511445*/
+  this->SidebarImageFile[5] = 0; /*0x51144b*/
+  *(unsigned int *)&this->zero_E4 = 1072693248; /*0x511451*/
+  this->FlashSidebarTabFrames = 0; /*0x511457*/
+  this->PreDependent = 0; /*0x51145d*/
+  this->Range = 0.0; /*0x511463*/
+  *(unsigned int *)&this->AIDefendAgainst = 1072693248; /*0x511469*/
+  *(unsigned int *)&this->ShowTimer = 1072693248; /*0x51146f*/
+  this->LineMultiplier = 1072693248; /*0x511475*/
   this->q100 = 1065353216; /*0x51148a*/
   this->q104 = 1065353216; /*0x511490*/
-  this->q108 = 1065353216; /*0x511496*/
+  this->q108 = (unsigned int)(1065353216);
   this->q10C = 1065353216; /*0x51149c*/
   this->q110 = 1065353216; /*0x5114a2*/
   this->q114 = 1065353216; /*0x5114a8*/
-  this->q118 = 1065353216; /*0x5114ae*/
+  this->q118 = (unsigned int)(1065353216);
   this->q11C = 1065353216; /*0x5114b4*/
   this->q120 = 1065353216; /*0x5114ba*/
   this->q124 = 1065353216; /*0x5114c0*/
-  this->q128 = 1065353216; /*0x5114c6*/
+  this->q128 = (unsigned int)(1065353216);
   this->q12C = 1065353216; /*0x5114cc*/
   this->q130 = 1065353216; /*0x5114d2*/
-  this->q134 = 1065353216; /*0x5114d8*/
-  this->q138 = 1065353216; /*0x5114de*/
+  this->q134 = (unsigned int)(1065353216);
+  this->q138 = (unsigned int)(1065353216);
   this->q13C = 1065353216; /*0x5114e4*/
   this->q140 = 1065353216; /*0x5114ea*/
   this->q144 = 1065353216; /*0x5114f0*/
   this->q148 = 1065353216; /*0x5114f6*/
-  InfantryTypeVector::Construct2((unsigned int *)&this->q14C, 0, 0); /*0x5114fc*/
+  InfantryTypeVector::Construct2((InfantryTypeVector *)((char *)&this->currentSpeed_units_mult2), 0, 0); /*0x5114fc*/
   this->q160 = 10; /*0x511501*/
   this->q15C = 0; /*0x511508*/
-  UnitTypeVector::ConstructUnitTypeVectorClass((unsigned int *)&this->q168, 0, 0); /*0x51151b*/
+  this->q14C = (void*)&TypeList_InfantryTypeClass_const___vftable; /*0x51150b*/
+  UnitTypeVector::ConstructUnitTypeVectorClass((UnitTypeVector *)((char *)&this->buildtimeUnitsMult0), 0, 0); /*0x51151b*/
   this->u32_17C = 10; /*0x511520*/
   this->u32_178 = 0; /*0x511527*/
-  AircraftTypeVector::Constructor(0, 0); /*0x51153a*/
+  this->q168 = (void*)&TypeList_UnitTypeClass_const___vftable; /*0x51152a*/
+  AircraftTypeVector::Constructor((AircraftTypeVector *)&this->q184, 0, 0); /*0x51153a*/
   this->q198 = 10; /*0x511542*/
   this->q194 = 0; /*0x511549*/
-  *(&this->veteranInfantryCount0) = 65; /*0x511552*/
-  *(&this->veteranInfantryCount1) = 0; /*0x511559*/
-  *(&this->veteranInfantryCount2) = 0; /*0x51155f*/
-  *(&this->veteranInfantryCount3) = 1; /*0x511565*/
-  *(&this->veteranInfantryCount4) = 0; /*0x51156c*/
-  AbstractClass::GenerateUniqueID((int)&this->uniqueId); /*0x51158d*/
-  *(&this->veteranInfantry6) = 0; /*0x511592*/
-  v4 = g_SuperWeaponTypeArray; /*0x511598*/
-  if ( g_SuperWeaponTypeArray < dword_A83CA0 /*0x5115d6*/
-    || (byte_A83CA5 || !dword_A83CA0)
-    && dword_A83CAC > 0
-    && (v5 = (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A83C98 + 8))(
+  this->q184 = (void*)&TypeList_AircraftTypeClass_const___vftable; /*0x51154c*/
+  this->q1A4 = 16777281; /*0x511552*/
+  this->q1A8 = 0; /*0x51156c*/
+  this->vtable0 = (void*)&HouseTypeClass_vftable; /*0x511572*/
+  this->vtable1 = (void*)&HouseTypeClass_vftable; /*0x511578*/
+  this->vtable2 = (void*)&HouseTypeClass_vftable; /*0x51157f*/
+  this->vtable3 = (void*)&HouseTypeClass_vftable; /*0x511586*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->vtable1); /*0x51158d*/
+  this->q1A0 = 0; /*0x511592*/
+  v4 = dword_A83CA8; /*0x511598*/
+  if ( dword_A83CA8 < dword_A83CA0 /*0x5115d6*/
+    || (unk_A83CA5 || !dword_A83CA0)
+    && dword_A83CAC[0] > 0
+    && (v5 = (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(dword_A83C98 + 8))(
                &dword_A83C98,
-               dword_A83CA0 + dword_A83CAC,
+               dword_A83CA0 + dword_A83CAC[0],
                0) == 0,
-        v4 = g_SuperWeaponTypeArray,
+        v4 = dword_A83CA8,
         !v5) )
   {
-    g_SuperWeaponTypeArray = (unsigned int)(v4 + 1);
-    *((unsigned int *)g_SuperWeaponTypeCount + v4) = this; /*0x5115e5*/
-    v4 = g_SuperWeaponTypeArray; /*0x5115e8*/
+    dword_A83CA8 = (unsigned int)(v4 + 1);
+    *((unsigned int *)unk_A83C9C + v4) = this; /*0x5115e5*/
+    v4 = dword_A83CA8; /*0x5115e8*/
   }
   v6 = 0; /*0x5115ed*/
   if ( v4 <= 0 ) /*0x5115f1*/
@@ -282,7 +287,7 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
   }
   else
   {
-    v7 = (void **)g_SuperWeaponTypeCount; /*0x5115f3*/
+    v7 = (SuperWeaponTypeClass **)unk_A83C9C; /*0x5115f3*/
     while ( *v7 != this ) /*0x5115fb*/
     {
       ++v6; /*0x5115fd*/
@@ -291,26 +296,26 @@ unsigned char * SuperWeaponTypeClass::Construct(AbstractClass * aP1)
         goto LABEL_11; /*0x511603*/
     }
   }
-  this->veteranAircraftCount = (unsigned int)(v6);
-  if ( g_SuperWeaponTypeArray <= 0 ) /*0x511615*/
+  this->SidebarImage = (SHPStruct *)v6; /*0x511608*/
+  if ( dword_A83CA8 <= 0 ) /*0x511615*/
   {
-  LABEL_16: this->veteranAircraft = (unsigned char *)(-1);
-    return (unsigned char *)(this);
+  LABEL_16:
+    this->Type = (BuildingTypeClass *)-1; /*0x511629*/
+    return this; /*0x511633*/
   }
   else
   {
-    v8 = (void **)g_SuperWeaponTypeCount; /*0x511617*/
+    v8 = (SuperWeaponTypeClass **)unk_A83C9C; /*0x511617*/
     while ( *v8 != this ) /*0x51161f*/
     {
-      ++v3; /*0x511621*/
+      v3 = (BuildingTypeClass *)((char *)v3 + 1); /*0x511621*/
       ++v8; /*0x511622*/
-      if ( v3 >= g_SuperWeaponTypeArray ) /*0x511627*/
+      if ( (int)v3 >= dword_A83CA8 ) /*0x511627*/
         goto LABEL_16; /*0x511627*/
     }
-    this->veteranAircraft = (unsigned char *)(v3);
-    return (unsigned char *)(this);
+    this->Type = v3; /*0x51163a*/
+    return this; /*0x511640*/
   }
-}
 }
 // 0x6CEA20
 namespace gamemd {
@@ -376,7 +381,7 @@ void* SuperWeaponTypeClass::SD_vt25(unsigned char *** aP1)
     v4 = v3; /*0x6cea84*/
   }
   v5 = (gamemd::WeaponTypeClass *)((unsigned int)(this->q0BC));
-  this->WeaponType = (unsigned int)(v4);
+  this->WeaponType = (gamemd::WeaponTypeClass *)((unsigned int)(v4));
   v6 = SuperWeaponTypeClass::loadSWProperties( /*0x6cea9b*/
          aP1,
          (uint8_t *)(&this->vtable46),
@@ -585,42 +590,46 @@ int SuperWeaponTypeClass::SD_vt27(int a2, int a3)
 {
   int v4; // eax
 
-  if ( *(&this->uniqueId5) != 10 ) /*0x6cef8b*/
-    return *(&this->uniqueId7); /*0x6cef8b*/
+  if ( this->Type != (BuildingTypeClass *)10 ) /*0x6cef8b*/
+    return this->ActionValue_2[0]; /*0x6cef8b*/
   if ( a3
     && (*(int (__thiscall **)(int))(*(unsigned int *)a3 + 44))(a3) == 6
     && (v4 = (*(int (__thiscall **)(int))(*(unsigned int *)a3 + 44))(a3),
-        (uint8_t)HouseClass::IsAlliedWith(*(void **)(v4 == 6 ? a3 + 0x21C : 540), HouseClass_Player)) )
+        (uint8_t)HouseClass::IsAlliedWith(*(void **)(v4 == 6 ? a3 + 0x21C : 540), (void *)dword_A83D4C)) )
   {
-    return *(&this->uniqueId7); /*0x6cefd3*/
+    return this->ActionValue_2[0]; /*0x6cefd3*/
   }
   else
   {
     return 70; /*0x6cefca*/
   }
 }
-}
 // 0x6CEFE0
 namespace gamemd {
 SuperWeaponTypeClass * SuperWeaponTypeClass::SDDTOR(char a2)
 {
   int v3; // eax
-  unsigned int *v5; // [esp+4h] [ebp-4h] BYREF
+  SuperWeaponTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  v3 = (*(int (__thiscall **)(int *, unsigned int **))(dword_A8E330 + 16))(&dword_A8E330, &this); /*0x6cf013*/
-  if ( v3 != -1 && v3 < g_HouseClassInitState && v3 < --g_HouseClassInitState ) /*0x6cf02e*/
+  this->vtable0 = (void*)&SuperWeaponTypeClass_vftable; /*0x6cefed*/
+  this->vtable1 = (void*)&SuperWeaponTypeClass_vftable; /*0x6ceff3*/
+  this->vtable2 = (void*)&SuperWeaponTypeClass_vftable; /*0x6ceffa*/
+  this->vtable3 = (void*)&SuperWeaponTypeClass_vftable; /*0x6cf001*/
+  v5 = this; /*0x6cf00f*/
+  v3 = (*(int (__thiscall **)(unsigned int *, SuperWeaponTypeClass **))(dword_A8E330 + 16))(&dword_A8E330, &v5); /*0x6cf013*/
+  if ( v3 != -1 && v3 < dword_A8E340 && v3 < --dword_A8E340 ) /*0x6cf02e*/
   {
     do /*0x6cf046*/
     {
       ++v3; /*0x6cf036*/
-      *((unsigned int *)g_SuperWeaponPool + v3 - 1) = *((unsigned int *)g_SuperWeaponPool + v3); /*0x6cf03a*/
+      *((unsigned int *)unk_A8E334 + v3 - 1) = *((unsigned int *)unk_A8E334 + v3); /*0x6cf03a*/
     }
-    while ( v3 < g_HouseClassInitState ); /*0x6cf046*/
+    while ( v3 < dword_A8E340 ); /*0x6cf046*/
   }
-  AbstractTypeClass::Dtor(); /*0x6cf04a*/
+  AbstractTypeClass::Dtor((AbstractTypeClass *)this); /*0x6cf04a*/
   if ( (a2 & 1) != 0 ) /*0x6cf054*/
-    RA2_OPDEL(); /*0x6cf057*/
-  return this; /*0x6cf061*/
+    RA2_OPDEL(this); /*0x6cf057*/
+  return &this->vtable0; /*0x6cf061*/
 }
 } // namespace gamemd
 
@@ -629,12 +638,12 @@ namespace gamemd {
 int SuperWeaponTypeClass::loadSWProperties(CCINIClass * aP1, unsigned char * a2, int a4)
 {
   int v4; // edi
-  const void **v5; // esi
+  char **v5; // esi
   char Destination[32]; // [esp+8h] [ebp-20h] BYREF
 
-  INIClass::GetString(aP1, a2, (&off_7E4C50)[a4], Destination, 32); /*0x474f02*/
+  INIClass::GetString((INIClass *)this, aP1, a2, (&off_7E4C50)[a4], Destination, 32); /*0x474f02*/
   v4 = 0; /*0x474f07*/
-  v5 = (const void **)&off_7E4C50; /*0x474f09*/
+  v5 = (char **)&off_7E4C50; /*0x474f09*/
   while ( _strcmpi(Destination, *v5) ) /*0x474f20*/
   {
     ++v5; /*0x474f22*/
@@ -652,36 +661,38 @@ int SuperWeaponTypeClass::FindOrCreate(INIClass * aP1, unsigned char * a2, CCINI
 {
   void *v4; // esi
   int result; // eax
-  int v6; // eax
-  int v7; // ecx
+  SuperWeaponTypeClass *v6; // eax
+  unsigned char *v7; // eax
+  int v8; // ecx
   unsigned int *i; // edx
   char Destination[128]; // [esp+4h] [ebp-80h] BYREF
 
-  if ( !INIClass::GetString(this, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475563*/
+  if ( !INIClass::GetString((INIClass *)this, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x475563*/
     return aP3; /*0x4755f8*/
   v4 = (void *)PlayerSlot::NameToDialogID(Destination); /*0x475579*/
-  if ( BuildingType::IsSpecialType(v4) ) /*0x47557d*/
+  if ( (uint8_t)BuildingType::IsSpecialType(v4) ) /*0x47557d*/
     return (int)v4; /*0x475586*/
-  result = SuperWeaponTypeClass::FindByName(Destination); /*0x475596*/
+  result = SuperWeaponTypeClass::FindByName((SuperWeaponTypeClass *)Destination); /*0x475596*/
   if ( result == -1 ) /*0x47559e*/
   {
-    if ( operator new(0x1B0u) ) /*0x4755a5*/
-      v6 = SuperWeaponTypeClass::Construct(Destination); /*0x4755b8*/
+    v6 = (SuperWeaponTypeClass *)RA2_OPNEW(0x1B0u); /*0x4755a5*/
+    if ( v6 ) /*0x4755af*/
+      v7 = SuperWeaponTypeClass::Construct(v6, Destination); /*0x4755b8*/
     else
-      v6 = 0; /*0x4755bf*/
-    v7 = 0; /*0x4755c7*/
-    if ( g_SuperWeaponTypeArray <= 0 ) /*0x4755cb*/
+      v7 = 0; /*0x4755bf*/
+    v8 = 0; /*0x4755c7*/
+    if ( dword_A83CA8 <= 0 ) /*0x4755cb*/
     {
       return -1; /*0x4755df*/
     }
     else
     {
-      for ( i = g_SuperWeaponTypeCount; *i != v6; ++i ) /*0x4755cd*/
+      for ( i = unk_A83C9C; (unsigned char *)*i != v7; ++i ) /*0x4755cd*/
       {
-        if ( ++v7 >= g_SuperWeaponTypeArray ) /*0x4755dd*/
+        if ( ++v8 >= dword_A83CA8 ) /*0x4755dd*/
           return -1; /*0x4755dd*/
       }
-      return v7; /*0x4755ec*/
+      return v8; /*0x4755ec*/
     }
   }
   return result; /*0x475588*/
@@ -693,24 +704,24 @@ namespace gamemd {
 int SuperWeaponTypeClass::FindByName()
 {
   int v3; // ebx
-  unsigned int *v4; // esi
+  int v4; // esi
 
-  if ( !_strcmpi(this, g_Str__random_) ) /*0x5117db*/
+  if ( !_strcmpi((char *)this, g_Str__random_) ) /*0x5117db*/
     return -2; /*0x5117e9*/
   if ( !this ) /*0x5117f2*/
     return -1; /*0x5117f2*/
   v3 = 0; /*0x5117f9*/
-  if ( g_SuperWeaponTypeArray <= 0 ) /*0x5117fd*/
+  if ( dword_A83CA8 <= 0 ) /*0x5117fd*/
     return -1; /*0x511833*/
   while ( 1 ) /*0x511805*/
   {
-    v4 = (unsigned int *)*((unsigned int *)g_SuperWeaponTypeCount + v3); /*0x511805*/
-    if ( !_strcmpi(v4 + 25, this) || !_strcmpi(v4 + 9, this) ) /*0x51181d*/
+    v4 = *((unsigned int *)unk_A83C9C + v3); /*0x511805*/
+    if ( !_strcmpi((char *)(v4 + 100), (char *)this) || !_strcmpi((char *)(v4 + 36), (char *)this) ) /*0x51181d*/
       break; /*0x51181d*/
-    if ( ++v3 >= g_SuperWeaponTypeArray ) /*0x511831*/
+    if ( ++v3 >= dword_A83CA8 ) /*0x511831*/
       return -1; /*0x511831*/
   }
-  return v4[46]; /*0x5117e7*/
+  return *(unsigned int *)(v4 + 184); /*0x5117e7*/
 }
 } // namespace gamemd
 
@@ -720,34 +731,38 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(ObjectClass * aP1)
 {
   int v3; // eax
 
-  AbstractTypeClass::Constructor(aP1); /*0x6ce5bb*/
-  this->q270 = 0; /*0x6ce5cb*/
-  this->q280 = -1; /*0x6ce5d1*/
-  *(unsigned int *)&this->q290 = -1; /*0x6ce5d7*/
-  this->q2A0 = -1; /*0x6ce5dd*/
-  this->q2B0 = -1; /*0x6ce5e3*/
-  *(unsigned int *)&this->q2C0 = 4500; /*0x6ce5e9*/
-  *(unsigned int *)((char *)&this->q2C0 + 16) = -1; /*0x6ce5f3*/
-  *(unsigned int *)&this->q2E0 = 0; /*0x6ce5f9*/
-  *(unsigned int *)((char *)&this->q2E0 + 16) = 0; /*0x6ce5ff*/
-  this->q300 = -1; /*0x6ce605*/
-  this->q310 = -1; /*0x6ce60b*/
-  this->q320 = 0; /*0x6ce611*/
-  *(unsigned char *)&this->SidebarImageFile = 0; /*0x6ce617*/
-  *(unsigned int *)((char *)&this->q394 + 12) = -1; /*0x6ce619*/
-  *(unsigned int *)&this->q3C0 = -1; /*0x6ce61f*/
-  this->q0E5 = 0; /*0x6ce628*/
-  this->q0E6 = 1; /*0x6ce62f*/
-  this->q0E7 = 0; /*0x6ce636*/
-  this->q0EC = 0; /*0x6ce63c*/
-  this->q0ED = 0; /*0x6ce642*/
-  this->q0EE = 0; /*0x6ce648*/
-  this->q0F4 = 0; /*0x6ce64e*/
-  this->q0F5 = 0; /*0x6ce654*/
-  *(unsigned int *)((char *)&this->q3DB + 5) = 0; /*0x6ce65a*/
-  *(unsigned int *)((char *)&this->q3E8 + 8) = 0; /*0x6ce660*/
-  this->AbstractClass_4.GenerateUniqueID(); /*0x6ce681*/
-  this->q260 = g_HouseClassInitState; /*0x6ce68c*/
+  AbstractTypeClass::Constructor(this, aP1); /*0x6ce5bb*/
+  this->u32_9C = 0; /*0x6ce5cb*/
+  this->u32_28 = -1; /*0x6ce5d1*/
+  this->u32_A4 = -1; /*0x6ce5d7*/
+  this->u32_A8 = -1; /*0x6ce5dd*/
+  this->q02B = -1; /*0x6ce5e3*/
+  this->q02C = 4500; /*0x6ce5e9*/
+  this->u32_B4 = -1; /*0x6ce5f3*/
+  this->u32_B8 = 0; /*0x6ce5f9*/
+  this->u32_BC = 0; /*0x6ce5ff*/
+  this->q030 = -1; /*0x6ce605*/
+  this->q031 = -1; /*0x6ce60b*/
+  this->needsSave = 0; /*0x6ce611*/
+  this->u32_CC = 0; /*0x6ce617*/
+  this->q03A = -1; /*0x6ce619*/
+  this->zero_3C = -1; /*0x6ce61f*/
+  this->u32_E5 = 0; /*0x6ce628*/
+  this->u32_E6 = 1; /*0x6ce62f*/
+  this->u32_E7 = 0; /*0x6ce636*/
+  this->q03B = 0; /*0x6ce63c*/
+  this->u32_ED = 0; /*0x6ce642*/
+  this->u32_EE = 0; /*0x6ce648*/
+  this->UINameLabel = 0; /*0x6ce64e*/
+  this->u32_F5 = 0; /*0x6ce654*/
+  this->u32_F8 = 0; /*0x6ce65a*/
+  this->u32_FC = 0; /*0x6ce660*/
+  *(unsigned int *)this = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce666*/
+  this->vtable2 = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce66d*/
+  this->vtable3 = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce673*/
+  this->vtable4 = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce67a*/
+  this->vtable2.GenerateUniqueID(); /*0x6ce681*/
+  this->u32_98 = g_HouseClassInitState; /*0x6ce68c*/
   if ( g_HouseClassInitState < dword_A8E338 /*0x6ce6c4*/
     || (byte_A8E33D || !dword_A8E338)
     && dword_A8E344 > 0
@@ -759,8 +774,8 @@ SuperWeaponTypeClass::SuperWeaponTypeClass(ObjectClass * aP1)
     v3 = g_HouseClassInitState++; /*0x6ce6d1*/
     *((unsigned int *)g_SuperWeaponPool + v3) = this; /*0x6ce6e0*/
   }
-  if ( &this->ActionValue != &this->SidebarImageFile ) /*0x6ce6e8*/
-    qmemcpy((void *)&this->q330, (const void *)&this->u32_90, 0x19u); /*0x6ce6ef*/
+  if ( &this->q090 != &this->q0504 ) /*0x6ce6e8*/
+    qmemcpy((void *)(&this->q0504), (const void *)(&this->vtable46), 0x19u); /*0x6ce6ef*/
   return this; /*0x6ce6f2*/
 }
 } // namespace gamemd
@@ -774,7 +789,7 @@ int SuperWeaponTypeClass::SD_vt03(int a1, unsigned int * a2)
   *a2 = 217234663; /*0x6ce7d6*/
   a2[1] = 298989284; /*0x6ce7de*/
   a2[2] = 1610668216; /*0x6ce7e7*/
-  a2[3] = -318126072; /*0x6ce7f0*/
+  a2[3] = unk_7E957C; /*0x6ce7f0*/
   return 0; /*0x6ce7cd*/
 }
 } // namespace gamemd
@@ -784,25 +799,29 @@ namespace gamemd {
 int SuperWeaponTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
   int result; // eax
-  int v3; // eax
+  SHPStruct *v3; // eax
   char v4; // [esp+7h] [ebp-201h] BYREF
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
 
-  result = AbstractClass::SaveLoad_Prefix_0((unsigned int *)a1, a2); /*0x6ce814*/
+  result = AbstractClass::SaveLoad_Prefix_0(a1, a2); /*0x6ce814*/
   if ( result >= 0 ) /*0x6ce81b*/
   {
     if ( a1 ) /*0x6ce823*/
     {
-      AbstractTypeClass::Init(a1, (int)&v4); /*0x6ce82c*/
-      *(unsigned int *)(a1 + 184) = 0; /*0x6ce831*/
+      AbstractTypeClass::Init((int)a1, (int)&v4); /*0x6ce82c*/
+      a1->SidebarImage = 0; /*0x6ce831*/
+      a1->vtable0 = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce83b*/
+      a1->vtable1 = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce841*/
+      a1->vtable2 = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce848*/
+      a1->vtable3 = (void*)&SuperWeaponTypeClass_vftable; /*0x6ce84f*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 156)); /*0x6ce862*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 200)); /*0x6ce873*/
-    _makepath(Buffer, 0, 0, (const char *)(a1 + 204), Ext); /*0x6ce88d*/
-    v3 = SearchMIXFile(Buffer, 0); /*0x6ce89b*/
-    *(unsigned int *)(a1 + 184) = v3; /*0x6ce8a2*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->WeaponType); /*0x6ce862*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->AuxBuilding); /*0x6ce873*/
+    _makepath(Buffer, 0, 0, (const char *)a1->SidebarImageFile, Ext); /*0x6ce88d*/
+    v3 = (SHPStruct *)SearchMIXFile(Buffer, 0); /*0x6ce89b*/
+    a1->SidebarImage = v3; /*0x6ce8a2*/
     if ( !v3 ) /*0x6ce8a8*/
-      *(unsigned int *)(a1 + 184) = SearchMIXFile(g_Str_File_XXICON_SHP, 0); /*0x6ce8b6*/
+      a1->SidebarImage = (SHPStruct *)SearchMIXFile(&stru_820320.__pad_14D[143], 0); /*0x6ce8b6*/
     return 0; /*0x6ce8bc*/
   }
   return result; /*0x6ce8be*/
@@ -815,7 +834,7 @@ int SuperWeaponTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int
 {
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x6ce8df*/
+  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x6ce8df*/
   if ( result >= 0 ) /*0x6ce8e6*/
     return 0; /*0x6ce8e8*/
   return result; /*0x6ce8ea*/
@@ -850,30 +869,30 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
   int v8; // edx
   int v9; // eax
 
-  AbstractTypeClass::ProcessPower(a2); /*0x6ce919*/
+  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6ce919*/
   Power::TimerProcess(this->ArrayIndex); /*0x6ce927*/
-  Power::TimerProcess(this->q0BC); /*0x6ce935*/
+  Power::TimerProcess(this->ActionValue_2[0]); /*0x6ce935*/
   Power::TimerProcess(this->RechargeVoice); /*0x6ce943*/
-  Power::TimerProcess(this->q0A4); /*0x6ce951*/
-  Power::TimerProcess(this->q0A8); /*0x6ce95f*/
+  Power::TimerProcess(this->ChargingVoice); /*0x6ce951*/
+  Power::TimerProcess(this->ImpatientVoice); /*0x6ce95f*/
   v3 = Power::TimerProcess(this->SuspendVoice); /*0x6ce96d*/
-  IDA_LOBYTE(v3) = this->q0E6; /*0x6ce972*/
-  Power::FlagProcess(a2, v3); /*0x6ce97b*/
-  IDA_LOBYTE(v4) = this->q0E7; /*0x6ce980*/
-  Power::FlagProcess(a2, v4); /*0x6ce989*/
-  IDA_LOBYTE(v5) = this->q0ED; /*0x6ce98e*/
-  v6 = Power::FlagProcess(a2, v5); /*0x6ce997*/
-  IDA_LOBYTE(v6) = this->q0EE; /*0x6ce99c*/
-  Power::FlagProcess(a2, v6); /*0x6ce9a5*/
-  Power::TimerProcess(this->q0F0); /*0x6ce9b3*/
-  IDA_LOBYTE(v7) = this->q0F4; /*0x6ce9b8*/
-  Power::FlagProcess(a2, v7); /*0x6ce9c1*/
+  IDA_LOBYTE(v3) = this->IsPowered; /*0x6ce972*/
+  Power::FlagProcess((Power *)a2, v3); /*0x6ce97b*/
+  IDA_LOBYTE(v4) = this->DisableableFromShell; /*0x6ce980*/
+  Power::FlagProcess((Power *)a2, v4); /*0x6ce989*/
+  IDA_LOBYTE(v5) = this->PreClick; /*0x6ce98e*/
+  v6 = Power::FlagProcess((Power *)a2, v5); /*0x6ce997*/
+  IDA_LOBYTE(v6) = this->PostClick; /*0x6ce99c*/
+  Power::FlagProcess((Power *)a2, v6); /*0x6ce9a5*/
+  Power::TimerProcess(this->PreDependent); /*0x6ce9b3*/
+  IDA_LOBYTE(v7) = this->ShowTimer; /*0x6ce9b8*/
+  Power::FlagProcess((Power *)a2, v7); /*0x6ce9c1*/
   Power::TimerProcess(this->RechargeTime); /*0x6ce9cf*/
-  Power::TimerProcess(this->Type); /*0x6ce9dd*/
-  IDA_LOBYTE(v8) = this->q0E5; /*0x6ce9e2*/
-  v9 = Power::FlagProcess(a2, v8); /*0x6ce9eb*/
-  IDA_LOBYTE(v9) = this->q0F5; /*0x6ce9f0*/
-  return Power::FlagProcess(a2, v9); /*0x6ce9fe*/
+  Power::TimerProcess((int)this->Type); /*0x6ce9dd*/
+  IDA_LOBYTE(v8) = this->UseChargeDrain; /*0x6ce9e2*/
+  v9 = Power::FlagProcess((Power *)a2, v8); /*0x6ce9eb*/
+  IDA_LOBYTE(v9) = this->ManualControl; /*0x6ce9f0*/
+  return Power::FlagProcess((Power *)a2, v9); /*0x6ce9fe*/
 }
 } // namespace gamemd
 
@@ -881,6 +900,6 @@ int SuperWeaponTypeClass::SD_vt13(int * a2)
 namespace gamemd {
 int SuperWeaponTypeClass::SD_vt16()
 {
-  return *(&this->vtable48); /*0x6cea16*/
+  return this->ArrayIndex; /*0x6cea16*/
 }
 } // namespace gamemd

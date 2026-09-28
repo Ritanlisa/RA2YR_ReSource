@@ -12,6 +12,7 @@ struct E4Recv_473750 {
     unsigned int M12;  // 0xC
     unsigned int M16;  // 0x10
     unsigned int M20;  // 0x14
+    unsigned int u32_16;  // 0x16
     unsigned int q018;  // 0x18
     unsigned int M28;  // 0x1C
     unsigned int q020;  // 0x20

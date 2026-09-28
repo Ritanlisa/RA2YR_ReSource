@@ -12,10 +12,8 @@ int MechLocomotionClass::ddtor(int a1, unsigned int * a2)
 {
   if ( !a2 ) /*0x5b1966*/
     return -2147467261; /*0x5b1968*/
-  *a2 = 1439777208; /*0x5b1976*/
-  a2[1] = 298965908; /*0x5b197e*/
-  a2[2] = 1610651820; /*0x5b1987*/
-  a2[3] = -1252326136; /*0x5b1990*/
+  *(IID *)a2 = g_CLSID_TunnelLocomotion; /*0x5b1976*/
+  a2[3] = unk_7E9AAC; /*0x5b1990*/
   return 0; /*0x5b196d*/
 }
 } // namespace gamemd
@@ -25,13 +23,13 @@ int MechLocomotionClass::BeginMove(int * a1, int * a2)
 {
   int result; // eax
 
-  result = SwizzleManager::SaveLoad(a1, a2); /*0x5b19ab*/
+  result = (int)(SwizzleManager::SaveLoad((int *)a1->__pad_0, a2));
   if ( result >= 0 ) /*0x5b19b2*/
   {
     if ( a1 ) /*0x5b19b6*/
     {
-      *a1 = (int)&MechLocomotionClass_vftable; /*0x5b19b8*/
-      a1[1] = (int)&MechLocomotionClass_vftable; /*0x5b19be*/
+      *(unsigned int *)a1->__pad_0 = (void*)&MechLocomotionClass_vftable; /*0x5b19b8*/
+      *(unsigned int *)&a1->__pad_0[4] = (void*)&MechLocomotionClass_vftable; /*0x5b19be*/
     }
   }
   return result; /*0x5b19c5*/
@@ -48,9 +46,11 @@ int MechLocomotionClass::StubReturn52()
 namespace gamemd {
 MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
 {
-  LocomotionClass::Construct(); /*0x5b1b60*/
+  *(unsigned int *)this->__pad_0 = (void*)&MechLocomotionClass_vftable; /*0x5b1b53*/
+  *(unsigned int *)&this->__pad_0[4] = (void*)&MechLocomotionClass_vftable; /*0x5b1b59*/
+  LocomotionClass::Construct((LocomotionClass *)this); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
-    RA2_OPDEL(); /*0x5b1b6d*/
-  return this; /*0x5b1b77*/
+    RA2_OPDEL(this); /*0x5b1b6d*/
+  return this->__pad_0; /*0x5b1b77*/
 }
 } // namespace gamemd

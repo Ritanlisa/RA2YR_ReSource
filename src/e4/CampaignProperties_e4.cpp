@@ -56,6 +56,7 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(cha
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x5d2ca3*/
+  *(void **)this = (void*)&VectorClass_MSAnim___vftable; /*0x5d2ca6*/
   if ( v3 && this->IsAllocated ) /*0x5d2cb0*/
   {
     RA2_OPDEL(v3); /*0x5d2cb8*/
@@ -64,7 +65,7 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(cha
   this->IsAllocated = (gamemd::VectorClass_flat *)(0);
   this->q008 = (int)((gamemd::VectorClass_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x5d2cd8*/
-    RA2_OPDEL(); /*0x5d2cdb*/
+    RA2_OPDEL(this); /*0x5d2cdb*/
   return this; /*0x5d2ce5*/
 }
 } // namespace gamemd

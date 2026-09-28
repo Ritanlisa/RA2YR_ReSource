@@ -38,6 +38,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
       do /*0x766c97*/
       {
         ComPtr::Constructor(v6); /*0x766c88*/
+        *(void **)v6 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766c8d*/
         v6 += 2; /*0x766c93*/
         --a2; /*0x766c96*/
       }
@@ -47,7 +48,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
   }
   else
   {
-    v5 = (unsigned int *)(operator new(8 * a2 + 4));
+    v5 = (unsigned int *)(RA2_OPNEW(8 * a2 + 4));
     if ( !v5 ) /*0x766c41*/
     {
       v8 = 0; /*0x766c6f*/
@@ -62,6 +63,7 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
       do /*0x766c67*/
       {
         ComPtr::Constructor(v6); /*0x766c58*/
+        *(void **)v6 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766c5d*/
         v6 += 2; /*0x766c63*/
         --a2; /*0x766c66*/
       }
@@ -94,7 +96,6 @@ int Conflict_WorldDominationTour_12::Release(int a2, unsigned int * a3)
   *(&this->q0043) = a3 == 0; /*0x766d0c*/
   return 1; /*0x766ca7*/
 }
-}
 // 0x766DC0
 namespace gamemd {
 AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigned int * a3)
@@ -122,6 +123,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
         do /*0x766e45*/
         {
           ComPtr::Constructor(v8); /*0x766e36*/
+          *(void **)v8 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766e3b*/
           v8 += 2; /*0x766e41*/
           --a2; /*0x766e44*/
         }
@@ -132,7 +134,7 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
     }
     else
     {
-      v5 = (unsigned int *)(operator new(8 * a2 + 4));
+      v5 = (unsigned int *)(RA2_OPNEW(8 * a2 + 4));
       if ( v5 ) /*0x766df1*/
       {
         *v5 = a2; /*0x766df3*/
@@ -186,7 +188,6 @@ AbstractClass * * Conflict_WorldDominationTour_12::Constructor_1(int a2, unsigne
     this->q010 = v12; /*0x766ec6*/
   return 1; /*0x766ec9*/
 }
-}
 // 0x766800
 namespace gamemd {
 int Conflict_WorldDominationTour_12_::ReleaseBuffer()
@@ -194,17 +195,16 @@ int Conflict_WorldDominationTour_12_::ReleaseBuffer()
   int (__thiscall ***v2)(unsigned int, int); // ecx
   int result; // eax
 
-  v2 = *(int (__thiscall ****)(unsigned int, int))&this->ptr_10; /*0x766806*/
-  this->q010 = 0; /*0x766809*/
-  if ( v2 && this->IsAllocated ) /*0x766810*/
+  v2 = *(int (__thiscall ****)(unsigned int, int))&this->m_1[3]; /*0x766806*/
+  this->m_10 = 0; /*0x766809*/
+  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x766810*/
   {
     result = (**v2)(v2, 3); /*0x76681d*/
-    this->Items = 0; /*0x76681f*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x76681f*/
   }
-  this->IsAllocated = 0; /*0x766822*/
-  this->q008 = 0; /*0x766825*/
+  IDA_BYTE1(this->m_C) = 0; /*0x766822*/
+  this->m_8 = 0; /*0x766825*/
   return result; /*0x766828*/
-}
 }
 // 0x766920
 namespace gamemd {
@@ -246,8 +246,9 @@ unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3)
 {
   int v3; // edi
 
-  v3 = this->Items + 8 * a3; /*0x76685d*/
+  v3 = (unsigned int)(this->Items + 8 * a3);
   ComPtr::Constructor(a2); /*0x766862*/
+  *(void **)a2 = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766867*/
   ComPtr::Set(a2, v3->q010); /*0x766873*/
   return a2; /*0x76687a*/
 }
@@ -257,9 +258,10 @@ unsigned int * Conflict_WorldDominationTour_12::Seek(unsigned int * a2, int a3)
 namespace gamemd {
 rc_ptr * Conflict_WorldDominationTour_12::Constructor(char a2)
 {
-  ComPtr::Release(); /*0x766969*/
+  *this = (void*)&rc_ptr_WorldDominationTour_ValueGameOption_unsigned_char_vftable; /*0x766963*/
+  ComPtr::Release(this); /*0x766969*/
   if ( (a2 & 1) != 0 ) /*0x766973*/
-    RA2_OPDEL(); /*0x766976*/
+    RA2_OPDEL(this); /*0x766976*/
   return this; /*0x766980*/
 }
 } // namespace gamemd
@@ -268,9 +270,10 @@ rc_ptr * Conflict_WorldDominationTour_12::Constructor(char a2)
 namespace gamemd {
 rc_ptr * Conflict_WorldDominationTour_12::Constructor_0(char a2)
 {
-  ComPtr::Release(); /*0x766999*/
+  *this = (void*)&rc_ptr_WorldDominationTour_FlagGameOption_vftable; /*0x766993*/
+  ComPtr::Release(this); /*0x766999*/
   if ( (a2 & 1) != 0 ) /*0x7669a3*/
-    RA2_OPDEL(); /*0x7669a6*/
+    RA2_OPDEL(this); /*0x7669a6*/
   return this; /*0x7669b0*/
 }
 } // namespace gamemd
@@ -343,7 +346,6 @@ int Conflict_WorldDominationTour_12::Read(int a2)
   }
   return result; /*0x766d6a*/
 }
-}
 // 0x766DA0
 namespace gamemd {
 unsigned int Conflict_WorldDominationTour_12::Write(int a2)
@@ -374,7 +376,6 @@ int Conflict_WorldDominationTour_12::IndexOf(int a2)
   }
   return result; /*0x766f66*/
 }
-}
 // 0x766FC0
 namespace gamemd {
 VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(char a2)
@@ -382,15 +383,16 @@ VectorClass_flat * Conflict_WorldDominationTour_12::QueryInterface(char a2)
   void (__thiscall ***v3)(unsigned int, int); // ecx
 
   v3 = (void (__thiscall ***)(unsigned int, int))this->Items; /*0x766fc3*/
+  *(void **)this = (void*)&VectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x766fc6*/
   if ( v3 && this->IsAllocated ) /*0x766fd0*/
   {
     (**v3)(v3, 3); /*0x766fdf*/
     this->Items = 0; /*0x766fe1*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
+  this->IsAllocated = 0; /*0x766fec*/
+  this->Capacity = 0; /*0x766ff2*/
   if ( (a2 & 1) != 0 ) /*0x766ff9*/
-    RA2_OPDEL(); /*0x766ffc*/
+    RA2_OPDEL(this); /*0x766ffc*/
   return this; /*0x767006*/
 }
 } // namespace gamemd
@@ -402,15 +404,16 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(char a2)
   void (__thiscall ***v3)(unsigned int, int); // ecx
 
   v3 = (void (__thiscall ***)(unsigned int, int))this->Items; /*0x767083*/
+  *(void **)this = (void*)&VectorClass_rc_ptr_WorldDominationTour_GameOption_vftable; /*0x767086*/
   if ( v3 && this->IsAllocated ) /*0x767090*/
   {
     (**v3)(v3, 3); /*0x76709f*/
     this->Items = 0; /*0x7670a1*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = (int)((gamemd::DynamicVector *)(0));
+  this->IsAllocated = 0; /*0x7670ac*/
+  this->q008 = 0; /*0x7670b2*/
   if ( (a2 & 1) != 0 ) /*0x7670b9*/
-    RA2_OPDEL(); /*0x7670bc*/
+    RA2_OPDEL(this); /*0x7670bc*/
   return this; /*0x7670c6*/
 }
 } // namespace gamemd
@@ -419,7 +422,8 @@ DynamicVector * Conflict_WorldDominationTour_12::Constructor_2(char a2)
 namespace gamemd {
 unsigned int * Conflict_WorldDominationTour_12::Constructor_3()
 {
-  ComPtr::Constructor(); /*0x7670d3*/
+  ComPtr::Constructor(this); /*0x7670d3*/
+  *(void **)this = (void*)&rc_ptr_WorldDominationTour_GameOption_vftable; /*0x7670d8*/
   return this; /*0x7670e0*/
 }
 } // namespace gamemd

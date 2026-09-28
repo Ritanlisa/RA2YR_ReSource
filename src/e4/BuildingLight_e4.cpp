@@ -294,7 +294,10 @@ Coord * * BuildingLight::CalculateShading()
 namespace gamemd {
 double BuildingLight::CalcIntensity(double a1)
 {
-  return *((float *)&unk_859094 - Math::RoundToInt((a1 + 1.0) * -2048.0)); /*0x4cada1*/
+  int v1; // eax
+
+  IDA_LOWORD(v1) = Math::RoundToInt((a1 + 1.0) * -2048.0); /*0x4cad90*/
+  return 4 * v1; /*0x4cada1*/
 }
 } // namespace gamemd
 }

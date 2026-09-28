@@ -21,7 +21,7 @@ struct E4Recv_4B53E0 {
     unsigned int q044;  // 0x44
     unsigned int q048;  // 0x48
     unsigned int M76;  // 0x4C
-    void* q050;  // 0x50
+    unsigned int q050;  // 0x50
     unsigned int M52;  // 0x52
     unsigned int q054;  // 0x54
     unsigned int q060;  // 0x60

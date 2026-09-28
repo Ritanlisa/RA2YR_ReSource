@@ -14,7 +14,7 @@ struct Animation {
     void* q014;  // 0x14
     void* q018;  // 0x18
     unsigned int q019;  // 0x19
-    unsigned int q020;  // 0x20
+    unsigned int ;  // 0x20
     void* q024;  // 0x24
     unsigned int u32_30;  // 0x30
     void* q034;  // 0x34
@@ -48,9 +48,17 @@ struct Animation {
     unsigned char q328;  // 0x328
     unsigned int u32_350;  // 0x350
     unsigned int u32_37C;  // 0x37C
+    unsigned int u32_380;  // 0x380
+    unsigned int u32_384;  // 0x384
     unsigned char u8_389;  // 0x389
+    unsigned int u32_38C;  // 0x38C
+    unsigned int u32_390;  // 0x390
     unsigned int u32_394;  // 0x394
+    unsigned int u32_398;  // 0x398
+    unsigned int u32_39C;  // 0x39C
     unsigned char u8_3A1;  // 0x3A1
+    unsigned int u32_3A4;  // 0x3A4
+    unsigned int u32_3A8;  // 0x3A8
     unsigned int u32_414;  // 0x414
     unsigned int u32_418;  // 0x418
     unsigned int u32_520;  // 0x520
@@ -60,6 +68,7 @@ struct Animation {
     unsigned int q580;  // 0x580
     unsigned int q584;  // 0x584
     unsigned int q620;  // 0x620
+    unsigned int u32_662;  // 0x662
     unsigned char u8_669;  // 0x669
     unsigned int q684;  // 0x684
     unsigned char u8_6EB;  // 0x6EB
@@ -83,20 +92,11 @@ struct Animation {
     unsigned int q6034;  // 0x6034
     unsigned int q6144;  // 0x6144
     char q7084;  // 0x7084
+    unsigned int q0084;
     unsigned int q0548;
-    unsigned int u32_1180;
     unsigned int u32_1A04;
     unsigned int u32_1A08;
-    unsigned int u32_20C2;
-    unsigned int u32_380;
-    unsigned int u32_384;
-    unsigned int u32_38C;
-    unsigned int u32_390;
-    unsigned int u32_662;
-    unsigned int u32_398;
-    unsigned int u32_39C;
-    unsigned int u32_3A4;
-    unsigned int u32_3A8;
+    unsigned int q020;
 // --- flat members (END) ---
     BuildingClass * * UpdateBuildingAnimations();
     ObjectClass * * LoadSidebarAnimations(unsigned int * a1, ObjectClass * aP2);

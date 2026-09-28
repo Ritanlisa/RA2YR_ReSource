@@ -18,6 +18,7 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x610950
 namespace gamemd {
@@ -40,16 +41,16 @@ char TriggerClass::FindByEventType(char a1)
     if ( dword_AC1CC8 ) /*0x610978*/
       (**(void (__thiscall ***)(int, int))dword_AC1CC8)(dword_AC1CC8, 1); /*0x61097e*/
     dword_AC1CC8 = 0; /*0x610982*/
-    v2 = operator new(0x20u); /*0x61098d*/
+    v2 = RA2_OPNEW(0x20u); /*0x61098d*/
     if ( v2 ) /*0x610994*/
     {
       v4 = (unsigned int)(IDA_HIDWORD(xmmword_AC1CB8));
       v3 = (unsigned int)(DWORD2(xmmword_AC1CB8));
       v2[1] = (unsigned int)(DWORD2(xmmword_AC1CB8));
-      v2[2] = (unsigned int)(v4);
-      v2[3] = (unsigned int)(0);
-      *v2 = (unsigned int)(&XSurface_Vtable);
-      v2[4] = (unsigned int)(2);
+      v2[2] = v4; /*0x6109a9*/
+      v2[3] = 0; /*0x6109b1*/
+      *v2 = &XSurface_Vtable; /*0x6109b4*/
+      v2[4] = 2; /*0x6109ba*/
       Buffer::Init(v2 + 5, 0, 2 * v4 * v3); /*0x6109c1*/
       *v2 = &BSurface_Vtable; /*0x6109c6*/
       v5 = (int)v2; /*0x6109cc*/
@@ -91,20 +92,18 @@ char TriggerClass::FindByEventType(char a1)
   DrawDialogGradient((int *)g_DSurface_Primary, (int *)&v8, 1, -1); /*0x610b36*/
   return 1; /*0x610961*/
 }
-}
 // 0x71FA30
 namespace gamemd {
 int TriggerClass::GetValue()
 {
-  return *(&this->vtable31); /*0x71fa33*/
-}
+  return this->u32_54; /*0x71fa33*/
 }
 // 0x7264C0
 namespace gamemd {
 int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, char a5, int a6)
 {
   char v7; // bl
-  unsigned int *v8; // edi
+  TriggerClass *v8; // edi
   int Owner; // eax
   int v11; // [esp-10h] [ebp-18h]
   char v12; // [esp+7h] [ebp-1h]
@@ -122,19 +121,19 @@ int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, 
   {
     if ( (this->occuredEvents & (1 << v7)) != 0 /*0x726540*/
       || (v11 = a6,
-          Owner = HouseClass::FindOwner(*(void **)(this->buildingType->House + 180)),
-          TEventClass::Execute(v8, aP1, Owner, aP2, (int *)(&this->abstractFlags2), (int)&a5, v11)) )
+          Owner = HouseClass::FindOwner(*(HouseClass **)(this->buildingType->House + 180)),
+          TEventClass::Execute((TEventClass *)v8, aP1, Owner, aP2, (int *)(&this->abstractFlags2), (int)&a5, v11)) )
     {
       if ( TriggerClass::GetValue(v8) ) /*0x726551*/
         this->house = TriggerClass::GetValue(v8); /*0x726561*/
-      if ( a5 && TEventClass::GetStateA(v8) && TEventClass::GetStateB_SpyEvent(v8) ) /*0x726579*/
+      if ( a5 && TEventClass::GetStateA((TEventClass *)v8) && TEventClass::GetStateB_SpyEvent((TEventClass *)v8) ) /*0x726579*/
         this->occuredEvents |= 1 << v7; /*0x726582*/
     }
     else
     {
       v12 = 0; /*0x726549*/
     }
-    v8 = (unsigned int *)v8[10]; /*0x726585*/
+    v8 = v8->nextTrigger; /*0x726585*/
     ++v7; /*0x726588*/
   }
   while ( v8 ); /*0x72658b*/
@@ -142,10 +141,9 @@ int TriggerClass::RegisterEvent(TriggerClass * aP1, TechnoClass * aP2, char a4, 
   {
   LABEL_16:
     if ( a5 ) /*0x7265a0*/
-      BuildingClass::ProcessUpgradeEffects(); /*0x7265a4*/
+      BuildingClass::ProcessUpgradeEffects((BuildingClass *)this); /*0x7265a4*/
   }
   return v12; /*0x7265af*/
-}
 }
 // 0x726820
 namespace gamemd {
@@ -156,7 +154,7 @@ int TriggerClass::ddtor(int a1, unsigned int * a2)
   *a2 = -1070787184; /*0x726836*/
   a2[1] = 298977834; /*0x72683e*/
   a2[2] = 1610655660; /*0x726847*/
-  a2[3] = -1252326136; /*0x726850*/
+  a2[3] = unk_7E97EC; /*0x726850*/
   return 0; /*0x72682d*/
 }
 } // namespace gamemd
@@ -172,15 +170,15 @@ int TriggerClass::LoadTrigger(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x726876*/
     {
-      AbstractClass::InitVtables(aP0, (int)&aP1); /*0x72687f*/
-      *(unsigned int *)aP0 = (int)&TriggerClass_vftable; /*0x726884*/
-      aP0[1] = (int)&TriggerClass_vftable; /*0x72688a*/
-      aP0[2] = (int)&TriggerClass_vftable; /*0x726891*/
-      aP0[3] = (int)&TriggerClass_vftable; /*0x726898*/
+      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x72687f*/
+      aP0->vtable0 = (void*)&TriggerClass_vftable; /*0x726884*/
+      aP0->vtable1 = (void*)&TriggerClass_vftable; /*0x72688a*/
+      aP0->vtable2 = (void*)&TriggerClass_vftable; /*0x726891*/
+      aP0->vtable3 = (void*)&TriggerClass_vftable; /*0x726898*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x7268a8*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x7268b6*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 11); /*0x7268c4*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x7268a8*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->nextTrigger); /*0x7268b6*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->house); /*0x7268c4*/
     return 0; /*0x7268c9*/
   }
   return result; /*0x7268cb*/
@@ -193,7 +191,7 @@ int TriggerClass::SaveTrigger(TechnoTypeClass * aP0, int * a1, int aP2)
 {
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x7268df*/
+  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x7268df*/
   if ( result >= 0 ) /*0x7268e6*/
     return 0; /*0x7268e8*/
   return result; /*0x7268ea*/

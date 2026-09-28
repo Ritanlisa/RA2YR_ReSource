@@ -9,9 +9,9 @@ struct TextBuffer {
 // --- flat members (BEGIN) ---
     unsigned int u32_FAC;  // 0xFAC
     unsigned int u32_1F40;  // 0x1F40
-    void* q2734;  // 0x2734
+    unsigned int ;  // 0x2734
     unsigned int q8000;  // 0x8000
-    unsigned int u32_FAC6;
+    unsigned int q2734;
 // --- flat members (END) ---
     int Init();
 };

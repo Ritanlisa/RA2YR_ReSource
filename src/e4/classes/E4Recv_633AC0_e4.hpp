@@ -14,6 +14,9 @@ struct E4Recv_633AC0 {
     unsigned int q628;  // 0x628
     unsigned int q5494;  // 0x5494
     unsigned int q5510;  // 0x5510
+    unsigned int estimatedHealth;
+    unsigned int isOnMap;
+    unsigned int vtable0;
 // --- flat members (END) ---
     unsigned int * sub_633AC0();  // 0x633AC0
 };

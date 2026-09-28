@@ -7,14 +7,16 @@ namespace gamemd {
 struct Timer {
 // --- flat members (BEGIN) ---
     unsigned int u32_4;  // 0x4
-    unsigned int q008;  // 0x8
+    AbstractClass * ptr_8;  // 0x8
     unsigned int u32_C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
     unsigned int q018;  // 0x18
+    unsigned int u32_1C;  // 0x1C
     unsigned int q020;  // 0x20
     unsigned int q024;  // 0x24
     unsigned int q034;  // 0x34
+    unsigned int u32_38;  // 0x38
     unsigned int u32_4C;  // 0x4C
     unsigned int q050;  // 0x50
     unsigned int q054;  // 0x54
@@ -32,9 +34,37 @@ struct Timer {
     unsigned int u32_314;  // 0x314
     unsigned int u32_318;  // 0x318
     unsigned int q598;  // 0x598
+    unsigned int u32_614;  // 0x614
+    unsigned int u32_618;  // 0x618
+    unsigned int u32_61C;  // 0x61C
+    unsigned int u32_620;  // 0x620
+    unsigned int u32_624;  // 0x624
+    unsigned int u32_628;  // 0x628
     unsigned int q640;  // 0x640
     unsigned int q774;  // 0x774
     unsigned int q788;  // 0x788
+    unsigned int u32_11E8;  // 0x11E8
+    unsigned int u32_11EC;  // 0x11EC
+    unsigned int u32_11F0;  // 0x11F0
+    unsigned int u32_11F4;  // 0x11F4
+    unsigned int u32_11F8;  // 0x11F8
+    unsigned int u32_11FC;  // 0x11FC
+    unsigned int u32_1200;  // 0x1200
+    unsigned int u32_1204;  // 0x1204
+    unsigned int u32_120C;  // 0x120C
+    unsigned int u32_1210;  // 0x1210
+    unsigned int u32_1214;  // 0x1214
+    unsigned int u32_1218;  // 0x1218
+    unsigned int u32_121C;  // 0x121C
+    unsigned int u32_1220;  // 0x1220
+    unsigned int u32_1520;  // 0x1520
+    unsigned int u32_1528;  // 0x1528
+    unsigned int u32_152C;  // 0x152C
+    unsigned int u32_1530;  // 0x1530
+    unsigned int u32_1534;  // 0x1534
+    unsigned int u32_1538;  // 0x1538
+    unsigned int u32_153C;  // 0x153C
+    unsigned int u32_1540;  // 0x1540
     unsigned int q1600;  // 0x1600
     unsigned int q1634;  // 0x1634
     unsigned int q1908;  // 0x1908
@@ -44,11 +74,9 @@ struct Timer {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
     unsigned int q6440;  // 0x6440
-    void* ptr_8;
-    void* ptr_84;
-    void* ptr_85;
-    unsigned int q04C7;
-    unsigned int q04C8;
+    unsigned int __pad_0;
+    unsigned int __pad_6;
+    unsigned int m_18;
 // --- flat members (END) ---
     DynamicVector * Start(DynamicVector * aP1);  // 0x46B640
     char StartDouble(double a2);  // 0x4A5240

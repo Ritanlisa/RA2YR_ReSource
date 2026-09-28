@@ -302,7 +302,6 @@ int BlowPipe_31::Read(unsigned int * a2)
   }
   return result; /*0x63e642*/
 }
-}
 // 0x63E650
 namespace gamemd {
 char BlowPipe_23::AddRef(int a2)
@@ -495,7 +494,6 @@ int BlowPipe_23::FindItemIndex_0(unsigned int * a2)
   }
   return result; /*0x63e8f2*/
 }
-}
 // 0x63EAD0
 namespace gamemd {
 char BlowPipe_23::SetCapacity_1(int a2, unsigned int * a3)
@@ -571,15 +569,16 @@ VectorClass_flat * BlowPipe_23::Destructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x63ed93*/
+  *(void **)this = (void*)&VectorClass_PlanningNodeClass___vftable; /*0x63ed96*/
   if ( v3 && this->IsAllocated ) /*0x63eda0*/
   {
     RA2_OPDEL(v3); /*0x63eda8*/
     this->q004 = 0; /*0x63edb0*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
+  this->IsAllocated = 0; /*0x63edbb*/
+  this->q008 = 0; /*0x63edc1*/
   if ( (a2 & 1) != 0 ) /*0x63edc8*/
-    RA2_OPDEL(); /*0x63edcb*/
+    RA2_OPDEL(this); /*0x63edcb*/
   return this; /*0x63edd5*/
 }
 } // namespace gamemd
@@ -591,15 +590,16 @@ DynamicVector * BlowPipe_31::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x63ede3*/
+  *(void **)this = (void*)&VectorClass_PlanningNodeClass___vftable; /*0x63ede6*/
   if ( v3 && this->IsAllocated ) /*0x63edf0*/
   {
     RA2_OPDEL(v3); /*0x63edf8*/
     this->q004 = 0; /*0x63ee00*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = (int)((gamemd::DynamicVector *)(0));
+  this->IsAllocated = 0; /*0x63ee0b*/
+  this->q008 = 0; /*0x63ee11*/
   if ( (a2 & 1) != 0 ) /*0x63ee18*/
-    RA2_OPDEL(); /*0x63ee1b*/
+    RA2_OPDEL(this); /*0x63ee1b*/
   return this; /*0x63ee25*/
 }
 } // namespace gamemd
@@ -611,15 +611,16 @@ VectorClass_flat * BlowPipe_23::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x63ee33*/
+  *(void **)this = (void*)&VectorClass_EventClass___vftable; /*0x63ee36*/
   if ( v3 && this->IsAllocated ) /*0x63ee40*/
   {
     RA2_OPDEL(v3); /*0x63ee48*/
     this->q004 = 0; /*0x63ee50*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
+  this->IsAllocated = 0; /*0x63ee5b*/
+  this->q008 = 0; /*0x63ee61*/
   if ( (a2 & 1) != 0 ) /*0x63ee68*/
-    RA2_OPDEL(); /*0x63ee6b*/
+    RA2_OPDEL(this); /*0x63ee6b*/
   return this; /*0x63ee75*/
 }
 } // namespace gamemd
@@ -631,15 +632,16 @@ DynamicVector * BlowPipe_23::Destructor_0(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x63ee83*/
+  *(void **)this = (void*)&VectorClass_EventClass___vftable; /*0x63ee86*/
   if ( v3 && this->IsAllocated ) /*0x63ee90*/
   {
     RA2_OPDEL(v3); /*0x63ee98*/
     this->q004 = 0; /*0x63eea0*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = (int)((gamemd::DynamicVector *)(0));
+  this->IsAllocated = 0; /*0x63eeab*/
+  this->q008 = 0; /*0x63eeb1*/
   if ( (a2 & 1) != 0 ) /*0x63eeb8*/
-    RA2_OPDEL(); /*0x63eebb*/
+    RA2_OPDEL(this); /*0x63eebb*/
   return this; /*0x63eec5*/
 }
 } // namespace gamemd
@@ -651,15 +653,16 @@ DynamicVector * BlowPipe_23::Destructor_1(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x63ef23*/
+  *(void **)this = (void*)&VectorClass_PlanningTokenClass___vftable; /*0x63ef26*/
   if ( v3 && this->IsAllocated ) /*0x63ef30*/
   {
     RA2_OPDEL(v3); /*0x63ef38*/
     this->q004 = 0; /*0x63ef40*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = (int)((gamemd::DynamicVector *)(0));
+  this->IsAllocated = 0; /*0x63ef4b*/
+  this->q008 = 0; /*0x63ef51*/
   if ( (a2 & 1) != 0 ) /*0x63ef58*/
-    RA2_OPDEL(); /*0x63ef5b*/
+    RA2_OPDEL(this); /*0x63ef5b*/
   return this; /*0x63ef65*/
 }
 } // namespace gamemd

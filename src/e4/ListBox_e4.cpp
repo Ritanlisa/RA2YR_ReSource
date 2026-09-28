@@ -8,6 +8,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/LinkedList_flat_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x614190
 namespace gamemd {
@@ -255,7 +256,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
       if ( (WindowLongA & 4) != 0 ) /*0x614450*/
       {
         v16 = CallWindowProcA(lpPrevWndFunc, hWnd, 0xEu, 0, 0) + 3; /*0x614473*/
-        v17 = (char *)operator new(v16); /*0x614486*/
+        v17 = (char *)RA2_OPNEW(v16); /*0x614486*/
         CallWindowProcA(lpPrevWndFunc, hWnd, 0xDu, v16, (LPARAM)v17); /*0x61448e*/
         strcat(v17, String2); /*0x6144b3*/
         CallWindowProcA(lpPrevWndFunc, hWnd, 0xCu, 0, (LPARAM)v17); /*0x6144cb*/

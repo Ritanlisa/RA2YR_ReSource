@@ -28,29 +28,29 @@ int BuildingType::FindDefault()
 
   result = 0; /*0x4e3560*/
   if ( this == (void *)-2 ) /*0x4e3565*/
-    return HashTable::Find(g_DialogHashTable, off_844AE8[0], 0); /*0x4e3573*/
+    return HashTable::Find(&g_DialogHashTable, off_844AE8, 0); /*0x4e3573*/
   if ( !this ) /*0x4e357b*/
-    return HashTable::Find(g_DialogHashTable, off_844AF0[0], 0); /*0x4e358a*/
+    return HashTable::Find(&g_DialogHashTable, off_844AF0, 0); /*0x4e358a*/
   if ( this == (void *)1 ) /*0x4e3593*/
-    return HashTable::Find(g_DialogHashTable, off_844AF4[0], 0); /*0x4e35a3*/
+    return HashTable::Find(&g_DialogHashTable, off_844AF4, 0); /*0x4e35a3*/
   if ( this == (void *)2 ) /*0x4e35ac*/
-    return HashTable::Find(g_DialogHashTable, off_844AF8[0], 0); /*0x4e35bb*/
+    return HashTable::Find(&g_DialogHashTable, off_844AF8, 0); /*0x4e35bb*/
   if ( this == (void *)3 ) /*0x4e35c4*/
-    return HashTable::Find(g_DialogHashTable, off_844AFC[0], 0); /*0x4e35d4*/
+    return HashTable::Find(&g_DialogHashTable, off_844AFC, 0); /*0x4e35d4*/
   if ( this == (void *)4 ) /*0x4e35dd*/
-    return HashTable::Find(g_DialogHashTable, off_844B00[0], 0); /*0x4e35ed*/
+    return HashTable::Find(&g_DialogHashTable, off_844B00, 0); /*0x4e35ed*/
   if ( this == (void *)5 ) /*0x4e35f6*/
-    return HashTable::Find(g_DialogHashTable, off_844B04[0], 0); /*0x4e3605*/
+    return HashTable::Find(&g_DialogHashTable, off_844B04, 0); /*0x4e3605*/
   if ( this == (void *)6 ) /*0x4e360e*/
-    return HashTable::Find(g_DialogHashTable, off_844B08[0], 0); /*0x4e361e*/
+    return HashTable::Find(&g_DialogHashTable, off_844B08, 0); /*0x4e361e*/
   if ( this == (void *)7 ) /*0x4e3627*/
-    return HashTable::Find(g_DialogHashTable, off_844B0C[0], 0); /*0x4e3637*/
+    return HashTable::Find(&g_DialogHashTable, off_844B0C, 0); /*0x4e3637*/
   if ( this == (void *)8 ) /*0x4e3640*/
-    return HashTable::Find(g_DialogHashTable, off_844B10[0], 0); /*0x4e364f*/
+    return HashTable::Find(&g_DialogHashTable, off_844B10, 0); /*0x4e364f*/
   if ( this == (void *)-3 ) /*0x4e3658*/
-    return HashTable::Find(g_DialogHashTable, off_844AEC[0], 0); /*0x4e3668*/
+    return HashTable::Find(&g_DialogHashTable, off_844AEC, 0); /*0x4e3668*/
   if ( this == (void *)9 ) /*0x4e3671*/
-    return HashTable::Find(g_DialogHashTable, off_844B14[0], 0); /*0x4e3681*/
+    return HashTable::Find(&g_DialogHashTable, off_844B14, 0); /*0x4e3681*/
   return result; /*0x4e3578*/
 }
 } // namespace gamemd
@@ -105,14 +105,17 @@ int BuildingType::FindOwnerHouse()
 namespace gamemd {
 bool BuildingType::IsSpecialType()
 {
-  return this == (void *)4475 /*0x510fa2*/
-      || this == (void *)4476
-      || this == (void *)4477
-      || this == (void *)4478
-      || this == (void *)4479
-      || this == (void *)4480
-      || this == (void *)4481
-      || this == (void *)4482;
+  int result; // eax
+
+  IDA_LOBYTE(result) = this == (void *)4475 /*0x510fa3*/
+                || this == (void *)4476
+                || this == (void *)4477
+                || this == (void *)4478
+                || this == (void *)4479
+                || this == (void *)4480
+                || this == (void *)4481
+                || this == (void *)4482;
+  return result; /*0x510fa2*/
 }
 } // namespace gamemd
 

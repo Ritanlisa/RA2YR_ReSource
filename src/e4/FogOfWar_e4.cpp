@@ -12,6 +12,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/Render_e4.hpp"
+#include "e4/classes/Mixer_e4.hpp"
 
 // 0x655C50
 namespace gamemd {
@@ -56,8 +57,7 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   int v41; // [esp+44h] [ebp+4h]
   char v42; // [esp+44h] [ebp+4h]
   int v43; // [esp+44h] [ebp+4h]
-
-  result = (gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((int)((gamemd::MapClass **)((int)HouseClass_Player)))))))))))));
+result = (gamemd::MapClass **)((int)((gamemd::MapClass **)((int)HouseClass_Player)));
   if ( !HouseClass_Player ) /*0x655c62*/
     return result; /*0x655c62*/
   result = (*(int (__thiscall **)(unsigned int, char *))(**(unsigned int **)(&this->u32_73C6) + 120))(this->u32_121C, v40); /*0x655c75*/
@@ -65,13 +65,13 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   v41 = *aP1; /*0x655c82*/
   if ( v41 < *(unsigned int *)result ) /*0x655c86*/
     return result; /*0x655c86*/
-  if ( v5 >= *(unsigned int *)result + result->q008 ) /*0x655c93*/
+  if ( v5 >= *(unsigned int *)result + result->vtable3 ) /*0x655c93*/
     return result; /*0x655c93*/
   v6 = aP1[1]; /*0x655c99*/
-  v7 = result->q004; /*0x655c9c*/
+  v7 = result->vtable2; /*0x655c9c*/
   if ( v6 < v7 ) /*0x655ca5*/
     return result; /*0x655ca5*/
-  result = v7 + result->q00C; /*0x655cae*/
+  result = v7 + result->vtable4; /*0x655cae*/
   if ( v6 >= result ) /*0x655cb2*/
     return result; /*0x655cb2*/
   v8 = (double)v41 / this->u32_1488 - (double)this->u32_1490; /*0x655cc2*/
@@ -187,8 +187,8 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   if ( v24[2] <= 0 || v24[3] <= 0 ) /*0x6560be*/
   {
     v27 = (gamemd::MapClass **)(v22 + *aP1);
-    v29 = (gamemd::MapClass **)(aP1[1] + v23);
-    result = (gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)((unsigned int)((gamemd::MapClass **)(1)))))))));
+    v29 = aP1[1] + v23; /*0x656127*/
+    result = 1; /*0x656129*/
     v33 = 1; /*0x65612b*/
   }
   else
@@ -222,8 +222,8 @@ MapClass * * FogOfWar::RevealArea(RadarClass * aP1)
   *v24 = (int)((gamemd::MapClass **)(v27));
   v24[1] = (int)((gamemd::MapClass **)(v29));
   v24[2] = (int)(result);
-  v24[3] = (int)((gamemd::MapClass **)(v33));
-  return (gamemd::MapClass **)(result);
+  v24[3] = v33; /*0x656135*/
+  return result; /*0x656138*/
 }
 } // namespace gamemd
 // 0x656150
@@ -368,13 +368,13 @@ int FogOfWar::Render()
   int v7; // ebp
   int v8; // ebx
   int v9; // esi
-  unsigned int v11[6]; // [esp+14h] [ebp-20h] BYREF
+  int v11[6]; // [esp+14h] [ebp-20h] BYREF
   unsigned char v12[8]; // [esp+2Ch] [ebp-8h] BYREF
 
   if ( g_hWnd ) /*0x657cf0*/
   {
-    v7 = (*(int (__thiscall **)(unsigned int))(**(&this->u32_1CC9) + 124))(*(&this->u32_1CC9)); /*0x657d4e*/
-    result = (*(int (__thiscall **)(unsigned int))(**(&this->u32_1CC9) + 128))(*(&this->u32_1CC9)); /*0x657d52*/
+    v7 = (*(int (__thiscall **)(unsigned int))(**((unsigned int **)&this->u32_1CC9) + 124))(this->u32_121C); /*0x657d4e*/
+    result = (*(int (__thiscall **)(unsigned int))(**((unsigned int **)&this->u32_1CC9) + 128))(this->u32_121C); /*0x657d52*/
     v8 = 0; /*0x657d58*/
     for ( result = result; v8 < result; ++v8 ) /*0x657d60*/
     {
@@ -385,7 +385,7 @@ int FogOfWar::Render()
         {
           v11[0] = v9; /*0x657d6c*/
           v11[1] = v8; /*0x657d73*/
-          FogOfWar::RevealArea(v11); /*0x657d77*/
+          FogOfWar::RevealArea((int)this, v11); /*0x657d77*/
           ++v9; /*0x657d7c*/
         }
         while ( v9 < v7 ); /*0x657d7f*/
@@ -395,12 +395,16 @@ int FogOfWar::Render()
   }
   else
   {
-    v2 = *(&this->u32_1CC9); /*0x657cf2*/
+    v2 = (int *)this->u32_121C; /*0x657cf2*/
     v3 = *v2; /*0x657d06*/
-    v4 = (*(int (__thiscall **)(unsigned int, unsigned int *, unsigned int, int))(**(&this->u32_1D00) + 120))(*(&this->u32_1D00), v11, 0, 1); /*0x657d0d*/
-    v5 = (*(int (__thiscall **)(int *, unsigned char *, unsigned int, int))(*v2 + 120))(v2, v12, *(&this->u32_1D00), v4); /*0x657d21*/
-    (*(void (__thiscall **)(unsigned int, int))(v3 + 8))(*(&this->u32_1CC9), v5); /*0x657d2b*/
-    return FogOfWar::RenderCell(); /*0x657d30*/
+    v4 = (*(int (__thiscall **)(unsigned int, int *, unsigned int, int))(**((unsigned int **)&this->u32_1D00) + 120))( /*0x657d0d*/
+           this->ptr_1220,
+           v11,
+           0,
+           1);
+    v5 = (*(int (__thiscall **)(int *, unsigned char *, unsigned int, int))(*v2 + 120))(v2, v12, this->ptr_1220, v4); /*0x657d21*/
+    (*(void (__thiscall **)(unsigned int, int))(v3 + 8))(this->u32_121C, v5); /*0x657d2b*/
+    return FogOfWar::RenderCell(this); /*0x657d30*/
   }
   return result; /*0x657d35*/
 }
@@ -410,11 +414,11 @@ namespace gamemd {
 bool FogOfWar_Get(IUnknown * aP0)
 {
   int v1; // eax
-  unsigned int * v2;
-  unsigned int * v3;
+  int v2; // ecx
+  unsigned int v3; // eax
   unsigned int v4;
   unsigned int NeighbourContent;
-  unsigned int * v6;
+  unsigned int v6; // eax
   int16_t v8; // [esp+4h] [ebp-8h]
   int16_t v9; // [esp+4h] [ebp-8h]
   int16_t v10; // [esp+6h] [ebp-6h]
@@ -424,15 +428,15 @@ bool FogOfWar_Get(IUnknown * aP0)
   v1 = aP0[2] / g_MapRenderState; /*0x5864ac*/
   if ( (v1 & 1) != 0 ) /*0x5864b5*/
   {
-    v8 = (unsigned int *)(*aP0 / 256);
-    v10 = (unsigned int *)(aP0[1] / 256);
-    v2 = (int)((unsigned int *)(v1 / 2 + 1));
-    v3 = (unsigned int *)((int16_t)(v8 - v2) + ((int16_t)(v10 - v2) << 9));
+    v8 = (unsigned int)(*aP0 / 256);
+    v10 = (unsigned int)(aP0[1] / 256);
+    v2 = v1 / 2 + 1; /*0x5864f0*/
+    v3 = (int16_t)(v8 - v2) + ((int16_t)(v10 - v2) << 9); /*0x586508*/
     if ( v3 >= 0x40000 || (v4 = *(unsigned int **)(g_Shroud_CellArray + 4 * v3)) == 0 ) /*0x58651e*/
     {
       IDA_LOWORD(v11) = v8 - v2; /*0x5864fa*/
       IDA_HIWORD(v11) = v10 - v2; /*0x5864f5*/
-      g_Map_GlobalCellIndex = v11; /*0x586524*/
+      MEMORY[0xABDC74] = v11; /*0x586524*/
       v4 = g_CellClassArray; /*0x586529*/
     }
     if ( (int)v4[79] <= 0 ) /*0x586536*/
@@ -441,13 +445,13 @@ bool FogOfWar_Get(IUnknown * aP0)
   }
   else
   {
-    v9 = (unsigned int *)(*aP0 / 256);
+    v9 = (unsigned int)(*aP0 / 256);
     IDA_HIWORD(v12) = aP0[1] / 256 - v1 / 2; /*0x586580*/
     IDA_LOWORD(v12) = v9 - v1 / 2; /*0x586585*/
     v6 = (int16_t)v12 + (IDA_SHIWORD(v12) << 9); /*0x586593*/
     if ( v6 >= 0x40000 || (NeighbourContent = *(unsigned int **)(g_Shroud_CellArray + 4 * v6)) == 0 ) /*0x5865a9*/
     {
-      g_Map_GlobalCellIndex = v12; /*0x5865af*/
+      MEMORY[0xABDC74] = (unsigned int *)(v12);
       NeighbourContent = g_CellClassArray; /*0x5865b4*/
     }
   }

@@ -47,6 +47,8 @@ struct ScenarioClass {
     unsigned int u32_80;  // 0x80
     unsigned int q084;  // 0x84
     unsigned int q088;  // 0x88
+    unsigned int u32_89;  // 0x89
+    unsigned int u32_8B;  // 0x8B
     unsigned int u32_90;  // 0x90
     unsigned int u32_94;  // 0x94
     unsigned int u32_98;  // 0x98
@@ -84,7 +86,7 @@ struct ScenarioClass {
     unsigned int u32_174;  // 0x174
     unsigned int u32_178;  // 0x178
     bool q17B;  // 0x17B
-    void* q17C;  // 0x17C
+    CampaignScore* q17C;  // 0x17C
     unsigned int u32_180;  // 0x180
     unsigned int q188;  // 0x188
     void* q18C;  // 0x18C
@@ -108,13 +110,13 @@ struct ScenarioClass {
     unsigned int q280;  // 0x280
     unsigned int q304;  // 0x304
     unsigned char q308;  // 0x308
-    void* q30C;  // 0x30C
+    CampaignScore* q30C;  // 0x30C
     unsigned int q310;  // 0x310
     unsigned int q320;  // 0x320
     unsigned int q324;  // 0x324
     unsigned int q328;  // 0x328
     unsigned int q338;  // 0x338
-    void* q380;  // 0x380
+    CampaignScore* q380;  // 0x380
     unsigned int q384;  // 0x384
     unsigned char q3D7;  // 0x3D7
     void* q408;  // 0x408
@@ -133,7 +135,7 @@ struct ScenarioClass {
     char elapsedTimer[12];  // 0x610
     void* q614;  // 0x614
     unsigned int q618;  // 0x618
-    unsigned int pauseTimer;  // 0x61C
+    char pauseTimer[12];  // 0x61C
     unsigned int q620;  // 0x620
     unsigned int q624;  // 0x624
     unsigned int q628;  // 0x628
@@ -155,7 +157,7 @@ struct ScenarioClass {
     unsigned int u32_754;  // 0x754
     unsigned int u32_758;  // 0x758
     unsigned int q774;  // 0x774
-    void* q780;  // 0x780
+    CampaignScore* q780;  // 0x780
     unsigned int q784;  // 0x784
     unsigned int q790;  // 0x790
     unsigned int u32_7BC;  // 0x7BC
@@ -213,24 +215,24 @@ struct ScenarioClass {
     bool teamsPresent;  // 0x11E0
     unsigned char q11E1;  // 0x11E1
     char numCoopHumanStartSpots[4];  // 0x11E4
-    unsigned int missionTimer;  // 0x11E8
+    char missionTimer[12];  // 0x11E8
     unsigned int q11EC;  // 0x11EC
     unsigned int q11F0;  // 0x11F0
     unsigned int missionTimer_text_csf;  // 0x11F4
     char missionTimer_text;  // 0x11F8
-    unsigned int shroudRegrowTimer;  // 0x1218
+    char shroudRegrowTimer[12];  // 0x1218
     unsigned int q121C;  // 0x121C
     unsigned int q1220;  // 0x1220
-    unsigned int fogTimer;  // 0x1224
+    char fogTimer[12];  // 0x1224
     unsigned int q1228;  // 0x1228
     unsigned int q122C;  // 0x122C
-    unsigned int iceTimer;  // 0x1230
+    char iceTimer[12];  // 0x1230
     unsigned int q1234;  // 0x1234
     unsigned int q1238;  // 0x1238
-    unsigned int ScenarioClass_field_timer_123c;  // 0x123C
+    char ScenarioClass_field_timer_123c[12];  // 0x123C
     unsigned int q1240;  // 0x1240
     unsigned int q1244;  // 0x1244
-    unsigned int ambientTimer;  // 0x1248
+    char ambientTimer[12];  // 0x1248
     unsigned int q124C;  // 0x124C
     unsigned int q1250;  // 0x1250
     unsigned int techLevel;  // 0x1254
@@ -308,7 +310,7 @@ struct ScenarioClass {
     unsigned int u32_18C8;  // 0x18C8
     unsigned int q1908;  // 0x1908
     unsigned char q1910;  // 0x1910
-    void* q1920;  // 0x1920
+    CampaignScore* q1920;  // 0x1920
     unsigned int q1924;  // 0x1924
     unsigned int q1980;  // 0x1980
     unsigned int q1984;  // 0x1984
@@ -332,12 +334,13 @@ struct ScenarioClass {
     unsigned int q2100;  // 0x2100
     unsigned int q2128;  // 0x2128
     unsigned int q2178;  // 0x2178
-    void* q2198;  // 0x2198
+    CampaignScore* q2198;  // 0x2198
     unsigned int q2304;  // 0x2304
     unsigned int q2324;  // 0x2324
     void* q2328;  // 0x2328
     char localVariables[4100];  // 0x248C
-    void* q2884;  // 0x2884
+    unsigned int u32_24B2;  // 0x24B2
+    CampaignScore* q2884;  // 0x2884
     void * ptr_2888;  // 0x2888
     unsigned int u32_288C;  // 0x288C
     void* q2890;  // 0x2890
@@ -367,7 +370,7 @@ struct ScenarioClass {
     unsigned int u32_30C4;  // 0x30C4
     unsigned char u8_30C8;  // 0x30C8
     void* q30CC;  // 0x30CC
-    void* q30D0;  // 0x30D0
+    CampaignScore* q30D0;  // 0x30D0
     void* q30D4;  // 0x30D4
     unsigned int q3248;  // 0x3248
     unsigned int u32_348E;  // 0x348E
@@ -404,12 +407,12 @@ struct ScenarioClass {
     bool isRandom;  // 0x34BD
     bool pickedUpAnyCrate;  // 0x34BE
     unsigned char q34BF;  // 0x34BF
-    unsigned int ScenarioClass_field_timer_34C0;  // 0x34C0
+    char ScenarioClass_field_timer_34C0[12];  // 0x34C0
     unsigned int q34C4;  // 0x34C4
     unsigned int q34C8;  // 0x34C8
     unsigned int campaignIndex;  // 0x34CC
     char startingDropships[4];  // 0x34D0
-    void* q34D4;  // 0x34D4
+    TechnoTypeClass** allowableUnits;  // 0x34D4
     char allowableUnitsCount[4];  // 0x34D8
     void* allowableUnitMaximums;  // 0x34DC
     char allowableMaximumsCount[4];  // 0x34E0
@@ -417,7 +420,7 @@ struct ScenarioClass {
     void* dropshipUnitCounts;  // 0x34E4
     unsigned int dropshipCountsCount;  // 0x34E8
     char ambientOriginal[4];  // 0x34EC
-    char ambientCurrent[4];  // 0x34F0
+    unsigned int ambientCurrent;  // 0x34F0
     char ambientTarget[4];  // 0x34F4
     char red[4];  // 0x34F8
     char green[4];  // 0x34FC
@@ -425,7 +428,7 @@ struct ScenarioClass {
     unsigned int blue;  // 0x3500
     unsigned int ground;  // 0x3504
     char level[4];  // 0x3508
-    unsigned int ionAmbient;  // 0x350C
+    char ionAmbient[4];  // 0x350C
     char ionRed[4];  // 0x3510
     char ionGreen[4];  // 0x3514
     char ionBlue[4];  // 0x3518
@@ -484,110 +487,10 @@ struct ScenarioClass {
     char ls640BkgdName;  // 0x367C
     char ls800BkgdName;  // 0x36BC
     char ls800BkgdPal;  // 0x36FC
-    unsigned char q373C;  // 0x373C
-    unsigned int q4134;  // 0x4134
-    unsigned int q4144;  // 0x4144
-    unsigned int q4148;  // 0x4148
-    unsigned int q4160;  // 0x4160
-    unsigned int q4168;  // 0x4168
-    unsigned int q4200;  // 0x4200
-    unsigned int q4204;  // 0x4204
-    unsigned int q4208;  // 0x4208
-    unsigned char q4394;  // 0x4394
-    int q4400;  // 0x4400
-    int q4404;  // 0x4404
-    int q4408;  // 0x4408
-    unsigned int q4444;  // 0x4444
-    unsigned int q4448;  // 0x4448
-    unsigned int q4460;  // 0x4460
-    unsigned int q4464;  // 0x4464
-    unsigned int q4480;  // 0x4480
-    unsigned int q4544;  // 0x4544
-    int q4580;  // 0x4580
-    unsigned int q4584;  // 0x4584
-    unsigned int q4588;  // 0x4588
-    unsigned int q4600;  // 0x4600
-    unsigned int q4640;  // 0x4640
-    unsigned int q4644;  // 0x4644
-    unsigned int q4648;  // 0x4648
-    unsigned int q4660;  // 0x4660
-    unsigned int q4664;  // 0x4664
-    unsigned int q4668;  // 0x4668
-    unsigned int q4680;  // 0x4680
-    unsigned int q4684;  // 0x4684
-    unsigned int q4688;  // 0x4688
-    unsigned int q4700;  // 0x4700
-    unsigned int q4904;  // 0x4904
-    unsigned int q4908;  // 0x4908
-    unsigned int q4950;  // 0x4950
-    unsigned int q4960;  // 0x4960
-    unsigned int u32_4970;  // 0x4970
-    unsigned int q4984;  // 0x4984
-    unsigned int q4994;  // 0x4994
-    unsigned int q5050;  // 0x5050
-    unsigned int q5128;  // 0x5128
-    unsigned int q5138;  // 0x5138
-    unsigned int q5160;  // 0x5160
-    unsigned int q5170;  // 0x5170
-    void * q5180;  // 0x5180
-    void * q5184;  // 0x5184
-    void * q5188;  // 0x5188
-    unsigned int q5200;  // 0x5200
-    unsigned int q5384;  // 0x5384
-    unsigned int q5388;  // 0x5388
-    unsigned int q5404;  // 0x5404
-    unsigned int q5408;  // 0x5408
-    unsigned int q5420;  // 0x5420
-    unsigned int q5424;  // 0x5424
-    unsigned int q5428;  // 0x5428
-    int q5444;  // 0x5444
-    unsigned int q5448;  // 0x5448
-    unsigned int q5458;  // 0x5458
-    unsigned int q5460;  // 0x5460
-    unsigned int q5480;  // 0x5480
-    unsigned int q5488;  // 0x5488
-    unsigned int q5490;  // 0x5490
-    unsigned int q5494;  // 0x5494
-    unsigned int q5504;  // 0x5504
-    unsigned int q5510;  // 0x5510
-    unsigned int q5684;  // 0x5684
-    void* q56F4;  // 0x56F4
-    unsigned char q56F8;  // 0x56F8
-    unsigned int q5988;  // 0x5988
-    unsigned int q6194;  // 0x6194
-    unsigned int q6198;  // 0x6198
-    unsigned int q6208;  // 0x6208
-    unsigned int q6230;  // 0x6230
-    unsigned int q6240;  // 0x6240
-    unsigned int q6244;  // 0x6244
-    unsigned int q6248;  // 0x6248
-    unsigned int q6258;  // 0x6258
-    unsigned int q6344;  // 0x6344
-    unsigned int q6408;  // 0x6408
-    unsigned int q6454;  // 0x6454
-    unsigned int q6528;  // 0x6528
-    unsigned int u32_7220;  // 0x7220
-    unsigned int q7248;  // 0x7248
-    int q7280;  // 0x7280
-    int q7284;  // 0x7284
-    unsigned int q7288;  // 0x7288
-    int q7300;  // 0x7300
-    unsigned int q7304;  // 0x7304
-    unsigned int u32_D46;
-    unsigned int u32_15204;
-    unsigned int allowableUnits;
-    unsigned int u32_152C2;
-    unsigned int u32_15380;
     unsigned int InitTimer;
-    unsigned int q2786;
-    unsigned int u32_7580;
-    unsigned int u32_7C00;
-    unsigned int u32_7F02;
-    unsigned int u32_7E40;
-    unsigned int u32_B508;
-    unsigned int u32_8200;
-    unsigned int u32_B784;
-    unsigned int u32_EAC4;
+    unsigned int __pad_0;
+    unsigned int __pad_3566;
+    unsigned int __pad_628;
 // --- flat members (END) ---
     void* checkWinningConditions(char a2);
     ScenarioClass * * CopyStartPositions();

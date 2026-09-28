@@ -11,4 +11,3 @@ int GetCurrentThreadId_0()
 {
   return (int)(GetCurrentThreadId());
 }
-}

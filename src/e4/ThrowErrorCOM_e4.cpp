@@ -12,11 +12,11 @@
 namespace gamemd {
 unsigned int * _com_error::ThrowErrorCOM_Helper(int a2, int a3, char a4)
 {
-  this->q00C = (unsigned int *)(0);
-  this->q004 = (unsigned int *)(a2);
-  this->q008 = (unsigned int *)(a3);
+  this->u32_C = (unsigned int *)(0);
+  this->u32_4 = a2; /*0x7dcdcb*/
+  *(void ** *)this = (void*)&_com_error_vftable; /*0x7dcdd2*/
+  this->u32_8 = a3; /*0x7dcdda*/
   if ( a3 && a4 ) /*0x7dcde4*/
     (*(void (__stdcall **)(int))(*(unsigned int *)a3 + 4))(a3); /*0x7dcde9*/
   return this; /*0x7dcdee*/
-}
 }

@@ -9,8 +9,8 @@ struct EventClass {
     AbstractClass* q000;  // 0x0
     unsigned int u32_3;  // 0x3
     void* q004;  // 0x4
-    unsigned int q008;  // 0x8
-    unsigned int q00B;  // 0xB
+    void* q008;  // 0x8
+    BuildingTypeClass* q00B;  // 0xB
     void* q00C;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned int u32_F;  // 0xF
@@ -78,31 +78,18 @@ struct EventClass {
     unsigned int q1600;  // 0x1600
     void* q1634;  // 0x1634
     void* q16C0;  // 0x16C0
-    unsigned char q16C4;  // 0x16C4
-    void* q1908;  // 0x1908
-    void* q1910;  // 0x1910
-    unsigned char q1924;  // 0x1924
-    unsigned int q1928;  // 0x1928
-    unsigned int q1938;  // 0x1938
-    unsigned char q3000;  // 0x3000
-    unsigned char q3598;  // 0x3598
-    unsigned char q4900;  // 0x4900
-    void* q5170;  // 0x5170
-    void* q5444;  // 0x5444
-    void* q5508;  // 0x5508
-    void* q5684;  // 0x5684
-    void* q5824;  // 0x5824
-    unsigned char q5828;  // 0x5828
-    void* q6408;  // 0x6408
-    unsigned int q6440;  // 0x6440
-    unsigned int q0040;
+    unsigned int EventClass_field_0x0;
+    unsigned int EventClass_field_0x24;
+    unsigned int EventClass_field_0x28;
+    unsigned int EventClass_field_0x30;
+    unsigned int EventClass_field_0x4;
+    unsigned int EventClass_field_0x44;
+    unsigned int EventClass_field_0x48;
+    unsigned int EventClass_field_0x4C;
+    unsigned int EventClass_field_0x50;
+    unsigned int EventClass_field_0x54;
+    unsigned int __pad_10;
     unsigned int q0041;
-    unsigned int q0042;
-    unsigned int q0047;
-    unsigned int q0048;
-    unsigned int q0049;
-    unsigned int q0080;
-    unsigned int q0081;
     unsigned int q007;
 // --- flat members (END) ---
     int serializeEvent();  // 0x48B390

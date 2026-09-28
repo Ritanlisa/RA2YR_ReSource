@@ -7,14 +7,14 @@ namespace gamemd {
 
 struct ColorStruct {
 // --- flat members (BEGIN) ---
-    unsigned int q010;  // 0x10
-    unsigned int q014;  // 0x14
+    void* q010;  // 0x10
+    void* q014;  // 0x14
     void* q020;  // 0x20
-    unsigned int q030;  // 0x30
-    unsigned int q034;  // 0x34
+    void* q030;  // 0x30
+    void* q034;  // 0x34
     void* q048;  // 0x48
-    unsigned int q050;  // 0x50
-    unsigned int q054;  // 0x54
+    void* q050;  // 0x50
+    void* q054;  // 0x54
     void* q080;  // 0x80
     void* q084;  // 0x84
     void* q114;  // 0x114

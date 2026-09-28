@@ -8,7 +8,7 @@ struct E4Recv_635560 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
-    unsigned int vtable2;
+    unsigned int vtable1;
 // --- flat members (END) ---
     int sub_635560(int a2);  // 0x635560
 };

@@ -39,14 +39,14 @@ int DDraw::ReleaseSurfaces()
 namespace gamemd {
 void DDraw::Init()
 {
-  *(&this->u32_26646) = 0; /*0x4a3640*/
+  this->q18000 = 0; /*0x4a3640*/
 }
 } // namespace gamemd
 // 0x4A3E40
 namespace gamemd {
 int DDraw::CapabilityCheck()
 {
-  const unsigned int v0;
+  const char *v0; // eax
   int v2; // [esp+8h] [ebp-44h] BYREF
   int v3; // [esp+Ch] [ebp-40h]
   int v4; // [esp+10h] [ebp-3Ch]
@@ -71,7 +71,7 @@ int DDraw::CapabilityCheck()
     v3 = 5; /*0x4a3eb3*/
     if ( XSurface::GetPixel(v7, &v2) == 1 ) /*0x4a3ebf*/
     {
-      v0 = g_INI_Key_OK; /*0x4a3ed0*/
+      v0 = (const char *)(g_INI_Key_OK);
       if ( g_DDraw_UseHWBlit ) /*0x4a3ed5*/
         goto LABEL_7; /*0x4a3ed5*/
     }
@@ -128,45 +128,49 @@ int DDraw::WaitForIdle()
 namespace gamemd {
 int DDraw::CleanupSurfaces()
 {
+  StructTable *v1; // esi
+  DDraw *v2; // esi
+  DDraw *v3; // esi
+  AudioStream *v4; // esi
   int result; // eax
 
-  dword_8A0E10 = dword_8A0E10; /*0x4c19b1*/
+  v1 = (gamemd::StructTable *)(dword_8A0E10);
   if ( dword_8A0E10 ) /*0x4c19bc*/
   {
-    DDraw::Init(dword_8A0E10); /*0x4c19c0*/
-    RA2_OPDEL(dword_8A0E10); /*0x4c19c6*/
+    DDraw::Init((DDraw *)dword_8A0E10); /*0x4c19c0*/
+    RA2_OPDEL(v1); /*0x4c19c6*/
     dword_8A0E10 = 0; /*0x4c19ce*/
   }
-  dword_8A0E0C = dword_8A0E0C; /*0x4c19d4*/
+  v2 = (gamemd::DDraw *)(dword_8A0E0C);
   if ( dword_8A0E0C ) /*0x4c19dc*/
   {
     DDraw::ReleaseSurfaces(dword_8A0E0C); /*0x4c19e0*/
-    RA2_OPDEL(dword_8A0E0C); /*0x4c19e6*/
+    RA2_OPDEL(v2); /*0x4c19e6*/
     dword_8A0E0C = 0; /*0x4c19ee*/
   }
-  dword_8A0E08 = dword_8A0E08; /*0x4c19f4*/
+  v3 = (gamemd::DDraw *)(dword_8A0E08);
   if ( dword_8A0E08 ) /*0x4c19fc*/
   {
     DDraw::ReleaseSurfaces(dword_8A0E08); /*0x4c1a00*/
-    RA2_OPDEL(dword_8A0E08); /*0x4c1a06*/
+    RA2_OPDEL(v3); /*0x4c1a06*/
     dword_8A0E08 = 0; /*0x4c1a0e*/
   }
-  dword_8A0E04 = dword_8A0E04; /*0x4c1a14*/
+  v4 = (gamemd::AudioStream *)(dword_8A0E04);
   if ( dword_8A0E04 ) /*0x4c1a1c*/
   {
-    DDraw::ReleaseSurfaces(dword_8A0E04); /*0x4c1a20*/
-    RA2_OPDEL(dword_8A0E04); /*0x4c1a26*/
+    DDraw::ReleaseSurfaces((DDraw *)dword_8A0E04); /*0x4c1a20*/
+    RA2_OPDEL(v4); /*0x4c1a26*/
     dword_8A0E04 = 0; /*0x4c1a2e*/
   }
-  if ( DataGlobal_8A0DFC ) /*0x4c1a3b*/
+  if ( IDA_HIDWORD(g_DrawColorState) ) /*0x4c1a3b*/
   {
-    (*(void (__stdcall **)(int))(*(unsigned int *)DataGlobal_8A0DFC + 8))(DataGlobal_8A0DFC); /*0x4c1a40*/
-    DataGlobal_8A0DFC = 0; /*0x4c1a43*/
+    (*(void (__stdcall **)(unsigned int))(*(unsigned int *)IDA_HIDWORD(g_DrawColorState) + 8))(IDA_HIDWORD(g_DrawColorState)); /*0x4c1a40*/
+    IDA_HIDWORD(g_DrawColorState) = 0; /*0x4c1a43*/
   }
-  if ( g_DrawColorState ) /*0x4c1a50*/
+  if ( (unsigned int)g_DrawColorState ) /*0x4c1a50*/
   {
-    (*(void (__stdcall **)(int))(*(unsigned int *)g_DrawColorState + 8))(g_DrawColorState); /*0x4c1a55*/
-    g_DrawColorState = 0; /*0x4c1a58*/
+    (*(void (__stdcall **)(unsigned int))(*(unsigned int *)g_DrawColorState + 8))(g_DrawColorState); /*0x4c1a55*/
+    IDA_LODWORD(g_DrawColorState) = 0; /*0x4c1a58*/
   }
   if ( dword_8A0DF4 ) /*0x4c1a65*/
   {
@@ -186,37 +190,37 @@ int DDraw::CleanupSurfaces()
 namespace gamemd {
 int DDraw::HandleSuspend()
 {
-  int v1; // eax
+  int result; // eax
   int i; // edi
   int v4; // ecx
   int j; // edi
   int v6; // ecx
 
-  IDA_LOBYTE(v1) = g_DDraw_Active; /*0x5d2530*/
-  if ( g_DDraw_Active != 1 ) /*0x5d253b*/
+  IDA_LOBYTE(result) = stru_A8EB00.gapE4[412]; /*0x5d2530*/
+  if ( stru_A8EB00.gapE4[412] != 1 ) /*0x5d253b*/
   {
-    Debug::Log(aMsenginePausin); /*0x5d2546*/
-    for ( i = 0; i < *(&this->vtable20); ++i ) /*0x5d2555*/
+    Debug::Log(); /*0x5d2546*/
+    for ( i = 0; i < this->u32_28; ++i ) /*0x5d2555*/
     {
-      v4 = *(unsigned int *)(this->referenceCount + 4 * i); /*0x5d255a*/
+      v4 = *(unsigned int *)(this->u32_1C + 4 * i); /*0x5d255a*/
       (*(void (__thiscall **)(int))(*(unsigned int *)v4 + 8))(v4); /*0x5d255f*/
     }
-    while ( !g_DDraw_Active ) /*0x5d2571*/
+    while ( !stru_A8EB00.gapE4[412] ) /*0x5d2571*/
     {
-      Debug::Log(aMsengineSleepi); /*0x5d257e*/
+      Debug::Log(); /*0x5d257e*/
       Sleep(0x1F4u); /*0x5d258b*/
       MessageLoop(); /*0x5d258d*/
     }
-    Debug::Log(aMsengineResumi); /*0x5d25a0*/
-    v1 = *(&this->vtable20); /*0x5d25a5*/
-    for ( j = 0; j < v1; ++j ) /*0x5d25af*/
+    Debug::Log(); /*0x5d25a0*/
+    result = this->u32_28; /*0x5d25a5*/
+    for ( j = 0; j < result; ++j ) /*0x5d25af*/
     {
-      v6 = *(unsigned int *)(this->referenceCount + 4 * j); /*0x5d25b4*/
+      v6 = *(unsigned int *)(this->u32_1C + 4 * j); /*0x5d25b4*/
       (*(void (__thiscall **)(int))(*(unsigned int *)v6 + 12))(v6); /*0x5d25b9*/
-      v1 = *(&this->vtable20); /*0x5d25bc*/
+      result = this->u32_28; /*0x5d25bc*/
     }
   }
-  return v1; /*0x5d25c4*/
+  return result; /*0x5d25c4*/
 }
 } // namespace gamemd
 // 0x4A3DD0
@@ -226,16 +230,16 @@ int DDraw::LogError(void * a1, void * a2)
   int result; // eax
   CHAR Text[80]; // [esp+0h] [ebp-50h] BYREF
 
-  if ( uType ) /*0x4a3dd5*/
+  if ( a1 ) /*0x4a3dd5*/
   {
     if ( g_DDraw_ErrorCallback ) /*0x4a3dfd*/
     {
-      return g_DDraw_ErrorCallback(uType); /*0x4a3dff*/
+      return g_DDraw_ErrorCallback(a1); /*0x4a3dff*/
     }
     else
     {
-      sprintf(Text, "DDRAW.DLL Error code = %08X", uType); /*0x4a3e10*/
-      return MessageBoxA(g_hWnd, Text, g_Str_Direct_X, 0x30u, unsigned int a2); /*0x4a3e2a*/
+      sprintf(Text, "DDRAW.DLL Error code = %08X", a1); /*0x4a3e10*/
+      return MessageBoxA(g_hWnd, Text, g_Str_Direct_X, 0x30u); /*0x4a3e2a*/
     }
   }
   else if ( a2 ) /*0x4a3dd9*/

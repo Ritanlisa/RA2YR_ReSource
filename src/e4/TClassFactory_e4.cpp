@@ -38,7 +38,7 @@ int TClassFactory_MechLocomotionClass::GetClassName()
 
   v1 = InterlockedDecrement(Block + 1); /*0x6c4d70*/
   if ( !v1 ) /*0x6c4d74*/
-    RA2_OPDEL((void *, unsigned int a4, unsigned int a2, unsigned int a3)Block); /*0x6c4d77*/
+    RA2_OPDEL((void *)Block); /*0x6c4d77*/
   return v1; /*0x6c4d81*/
 }
 } // namespace gamemd
@@ -56,7 +56,7 @@ int TClassFactory_CampaignClass::ddtor(void * a1, void * a2, void * a3, void * a
   *a4 = 0; /*0x6c02a8*/
   if ( a2 ) /*0x6c02b0*/
     return -2147221232; /*0x6c02b3*/
-  v5 = operator new(0x3A0u); /*0x6c02c1*/
+  v5 = RA2_OPNEW(0x3A0u); /*0x6c02c1*/
   if ( !v5 ) /*0x6c02cb*/
     return -2147024882; /*0x6c02cb*/
   v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))CampaignClass::CampaignClass((int)v5, 0); /*0x6c02d1*/
@@ -65,7 +65,7 @@ int TClassFactory_CampaignClass::ddtor(void * a1, void * a2, void * a3, void * a
     return -2147024882; /*0x6c02dd*/
   v8 = (**v6)(v6, a3, a4); /*0x6c02f1*/
   if ( v8 < 0 ) /*0x6c02f5*/
-    ((void (__thiscall *, unsigned int a1, unsigned int a2)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c02fd*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c02fd*/
   return v8; /*0x6c029a*/
 }
 } // namespace gamemd
@@ -87,9 +87,9 @@ int TClassFactory_CampaignClass::GetSize(void * a1, void * a2)
 } // namespace gamemd
 // 0x6C4D40
 namespace gamemd {
-LONG TClassFactory_MechLocomotionClass::AddRef()
+LONG TClassFactory_MechLocomotionClass::AddRef(void * a1)
 {
-  return InterlockedIncrement((volatile LONG *, unsigned int a4, unsigned int a2, unsigned int a3)(a1 + 4)); /*0x6c4d4e*/
+  return InterlockedIncrement((volatile LONG *)(a1 + 4)); /*0x6c4d4e*/
 }
 } // namespace gamemd
 // 0x6C4D90
@@ -106,7 +106,7 @@ int TClassFactory_MechLocomotionClass::ddtor(void * a1, void * a2, void * a3, vo
   *a4 = 0; /*0x6c4da8*/
   if ( a2 ) /*0x6c4db0*/
     return -2147221232; /*0x6c4db3*/
-  v5 = operator new(0x34u); /*0x6c4dbe*/
+  v5 = RA2_OPNEW(0x34u); /*0x6c4dbe*/
   if ( !v5 ) /*0x6c4dc8*/
     return -2147024882; /*0x6c4dc8*/
   v6 = (int (__stdcall ***)(unsigned int, int, unsigned int *))SmallFunc_5AFEF0((int)v5); /*0x6c4dcc*/
@@ -115,7 +115,7 @@ int TClassFactory_MechLocomotionClass::ddtor(void * a1, void * a2, void * a3, vo
     return -2147024882; /*0x6c4dd8*/
   v8 = (**v6)(v6, a3, a4); /*0x6c4dec*/
   if ( v8 < 0 ) /*0x6c4df0*/
-    ((void (__thiscall *, unsigned int a1, unsigned int a2)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4df8*/
+    ((void (__thiscall *)(int (__stdcall ***)(unsigned int, unsigned int, unsigned int *), int))(*v7)[8])(v7, 1); /*0x6c4df8*/
   return v8; /*0x6c4d9a*/
 }
 } // namespace gamemd

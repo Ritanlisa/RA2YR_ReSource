@@ -7,13 +7,13 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/DialogControl_e4.hpp"
 
 // 0x5D6350
 namespace gamemd {
 int DialogClass::GetFlag()
 {
-  return *(&this->u32_142); /*0x5d6353*/
-}
+  return (int)(this->q034);
 }
 // 0x775BC0
 namespace gamemd {
@@ -66,12 +66,11 @@ int DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
   MoveWindow(aP0, Rect.left, Rect.top, v7, v8, 1); /*0x775d4c*/
   return 1; /*0x775d52*/
 }
-}
 // 0x60D450
 namespace gamemd {
 ATOM DialogClass::RegisterWinClasses()
 {
-  ATOM result; // ax
+  int result; // eax
   WNDCLASSA WndClass; // [esp+0h] [ebp-28h] BYREF
 
   result = 1; /*0x60d456*/
@@ -79,10 +78,10 @@ ATOM DialogClass::RegisterWinClasses()
   {
     dword_AC48CC = (unsigned int)((LPCSTR)(1));
     WndClass.hInstance = (HINSTANCE)((LPCSTR)(g_hInstance));
-    WndClass.style = (UINT)((LPCSTR)(3));
-    WndClass.lpfnWndProc = (WNDPROC)((LPCSTR)(GameScreen::DlgProc));
-    WndClass.cbClsExtra = (int)((LPCSTR)(0));
-    WndClass.cbWndExtra = (int)((LPCSTR)(0));
+    WndClass.style = (LPCSTR)(3);
+    WndClass.lpfnWndProc = (WNDPROC)GameScreen::DlgProc; /*0x60d49e*/
+    WndClass.cbClsExtra = 0; /*0x60d4a6*/
+    WndClass.cbWndExtra = 0; /*0x60d4aa*/
     memset(&WndClass.hIcon, 0, 12); /*0x60d4ae*/
     WndClass.lpszMenuName = aCombodropwin; /*0x60d4ba*/
     WndClass.lpszClassName = aCombodropwin; /*0x60d4be*/
@@ -94,7 +93,7 @@ ATOM DialogClass::RegisterWinClasses()
     WndClass.hInstance = g_hInstance; /*0x60d4f4*/
     memset(&WndClass.hIcon, 0, 16); /*0x60d4f8*/
     WndClass.lpszClassName = g_INI_Key_NewEdit; /*0x60d508*/
-    return RegisterClassA(&WndClass); /*0x60d510*/
+    IDA_LOWORD(result) = RegisterClassA(&WndClass); /*0x60d510*/
   }
   return result; /*0x60d515*/
 }

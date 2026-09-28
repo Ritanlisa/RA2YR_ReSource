@@ -13,9 +13,9 @@ int ColorListClass::SetColor()
 {
   int v1; // eax
 
-  v1 = *(&this->q0241); /*0x557ae0*/
-  if ( *(&this->q0047) > v1 ) /*0x557aeb*/
-    return *(unsigned int *)(*(&this->q0044) + 4 * v1); /*0x557af3*/
+  v1 = this->u32_16C; /*0x557ae0*/
+  if ( this->u32_44 > v1 ) /*0x557aeb*/
+    return *(unsigned int *)(this->u32_38 + 4 * v1); /*0x557af3*/
   else
     return 0; /*0x557aed*/
 }
@@ -28,20 +28,20 @@ int ColorListClass::Clear(unsigned int a2)
   int v4; // ecx
 
   result = a2; /*0x557f40*/
-  if ( a2 >= *(&this->q0047) ) /*0x557f4a*/
+  if ( a2 >= this->u32_44 ) /*0x557f4a*/
   {
-    *(&this->q0241) = 0; /*0x557f9b*/
+    this->u32_16C = 0; /*0x557f9b*/
   }
   else
   {
-    *(&this->q0241) = a2; /*0x557f4c*/
-    this->AddItem_1(); /*0x557f56*/
-    if ( *(&this->q0241) < *(&this->q0242) ) /*0x557f67*/
-      this->OnKeyDown(*(&this->q0241)); /*0x557f6e*/
-    v4 = *(&this->q0080); /*0x557f74*/
-    result = *(&this->q0241); /*0x557f7d*/
-    if ( result >= v4 + *(&this->q0242) ) /*0x557f87*/
-      return (result - v4 + 1); /*0x557f91*/
+    this->u32_16C = a2; /*0x557f4c*/
+    (*(void (__thiscall **)(ListClass *))(*(unsigned int *)this->__pad_0 + 72))(this); /*0x557f56*/
+    if ( this->u32_16C < this->u32_170 ) /*0x557f67*/
+      (*(void (__thiscall **)(ListClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 192))(this, this->u32_16C); /*0x557f6e*/
+    v4 = this->q014; /*0x557f74*/
+    result = this->u32_16C; /*0x557f7d*/
+    if ( result >= v4 + this->u32_170 ) /*0x557f87*/
+      return (*(int (__thiscall **)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 192))(this, result - v4 + 1); /*0x557f91*/
   }
   return result; /*0x557f97*/
 }
@@ -52,15 +52,15 @@ void ColorListClass::RemoveColor(wchar_t * String2)
 {
   int v3; // esi
 
-  if ( String2 && (int)*(&this->q0047) > 0 ) /*0x558022*/
+  if ( String2 && this->u32_44 > 0 ) /*0x558022*/
   {
     v3 = 0; /*0x558024*/
-    while ( _wcsicmp(*(const wchar_t **)(*(&this->q0044) + 4 * v3), String2) ) /*0x55803c*/
+    while ( _wcsicmp(*(const wchar_t **)(this->u32_38 + 4 * v3), String2) ) /*0x55803c*/
     {
-      if ( ++v3 >= *(&this->q0047) ) /*0x558044*/
+      if ( ++v3 >= this->u32_44 ) /*0x558044*/
         return; /*0x558044*/
     }
-    this->Clear(v3); /*0x558051*/
+    (*(void (__thiscall **)(ListClass *, int))(*(unsigned int *)this->__pad_0 + 184))(this, v3); /*0x558051*/
   }
 }
 } // namespace gamemd
@@ -68,32 +68,34 @@ void ColorListClass::RemoveColor(wchar_t * String2)
 namespace gamemd {
 int ColorListClass::GetColor(int a2)
 {
-  return (a2, 0); /*0x488eef*/
+  return (*(int (__thiscall **)(ColorListClass *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 204))(this, a2, 0); /*0x488eef*/
 }
 } // namespace gamemd
 // 0x488F00
 namespace gamemd {
 ColorListClass * ColorListClass::QueryInterface(char a2)
 {
-  char * v3;
+  int v3; // eax
   char *v4; // esi
   void *v5; // eax
 
-  v3 = (char *)((int)((char *)(this->q174)));
-  v4 = (char *)(&this->u32_5D0);
-  (*(void (__thiscall **)(char *))(v3 + 12))(&this->u32_942); /*0x488f19*/
-  this->q190 = 0; /*0x488f1e*/
+  v3 = (unsigned int)(this->u32_174);
+  v4 = (char *)((unsigned int)((char *)this + 372));
+  *(unsigned int *)this->__pad_0 = (void*)&ColorListClass_vftable; /*0x488f13*/
+  (*(void (__thiscall **)(char *))(v3 + 12))((char *)this + 372); /*0x488f19*/
+  this->u32_190 = 0; /*0x488f1e*/
   v5 = (void *)*((unsigned int *)v4 + 1); /*0x488f24*/
+  *(unsigned int *)v4 = (void*)&VectorClass_int_vftable; /*0x488f29*/
   if ( v5 && v4[13] ) /*0x488f31*/
   {
     RA2_OPDEL(v5); /*0x488f37*/
     *((unsigned int *)v4 + 1) = 0; /*0x488f3f*/
   }
-  v4[13] = 0; /*0x488f44*/
+  v4[13] = (char)((gamemd::ColorListClass *)(0));
   *((unsigned int *)v4 + 2) = 0; /*0x488f47*/
-  ListClass::Destruct(); /*0x488f4a*/
+  ListClass::Destruct((ListClass *)this); /*0x488f4a*/
   if ( (a2 & 1) != 0 ) /*0x488f54*/
-    RA2_OPDEL(); /*0x488f57*/
-  return this; /*0x488f61*/
+    RA2_OPDEL(this); /*0x488f57*/
+  return this->__pad_0; /*0x488f61*/
 }
 } // namespace gamemd

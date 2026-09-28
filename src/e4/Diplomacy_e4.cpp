@@ -10,6 +10,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/Map_e4.hpp"
 
 // 0x657DA0
 namespace gamemd {
@@ -51,8 +52,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   int v38; // [esp+2Ch] [ebp+8h]
   char v39; // [esp+30h] [ebp+Ch]
   char v40; // [esp+34h] [ebp+10h]
-
-  result = (int)(BaseDialogProc(hDlg, a2, a3, (unsigned int)a4));
+result = (int)(BaseDialogProc(hDlg, a2, a3, (unsigned int)a4));
   if ( result ) /*0x657dc4*/
     return result; /*0x657dc4*/
   if ( a2 != 273 ) /*0x657dd1*/
@@ -89,10 +89,10 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
           v10 = 0; /*0x657e9b*/
         }
         if ( v10 < v33 /*0x657ec1*/
-          && (v11 = *(unsigned int *)&HouseClass_Array->gap0[4 * v10], (hDlga = (void *)v11) != 0)
+          && (v11 = *(unsigned int *)&HouseClass_Array->vtable0[4 * v10], (hDlga = (void *)v11) != 0)
           && *(unsigned char *)(*(unsigned int *)(v11 + 52) + 421) )
         {
-          if ( !IDA_BYTE1(g_RulesClass_Instance[1].FlamingInfantry) /*0x657ef9*/
+          if ( !IDA_BYTE1(g_RulesClass_Instance[1].InfantryBrute) /*0x657ef9*/
             || (void *)HouseClass_Observer == HouseClass_Player
             || g_GameOptionsFlags == 2 )
           {
@@ -202,7 +202,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
       *(unsigned int *)GetWindowLongA(hDlg, 8) = 1059; /*0x6581d1*/
       return 0; /*0x6581de*/
     }
-    return 0; /*0x6581b7*/
+    return (int *)(0);
   }
   v22 = (int *)(&dword_83923C);
   while ( *v22 != DlgCtrlID ) /*0x6581e8*/

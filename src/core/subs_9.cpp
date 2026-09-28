@@ -1322,7 +1322,7 @@ int ReturnZero74C340()
 //   *(this + 15) = 0;
 //   *(this + 16) = 0;
 //   *(this + 17) = v2 & 0xFFFFFFF0;
-//   ((void**)this)[0] = (void*)(void*)(void*)&VersionClass_vftable;
+//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)&VersionClass_vftable;
 //   *((unsigned char *)this + 42) = 0;
 //   *((unsigned char *)this + 12) = 0;
 //   return this;
@@ -2660,7 +2660,7 @@ int ReturnZero767E50()
 
 // IDA: 0x767EC0  proposal: VtableStub::5CB6C0
 // IDA: void __thiscall sub_767EC0(unsigned int *this)
-//   ((void**)this)[0] = (void*)(void*)(void*)&MSFrameAnim_vftable;
+//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)&MSFrameAnim_vftable;
 //   VtableStub::5CB6C0(this);
 void VtableStub_5CB6C0(void* _this) // thiscall
 {

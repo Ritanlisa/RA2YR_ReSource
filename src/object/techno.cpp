@@ -241,21 +241,21 @@ FireError TechnoClass::GetFireError(AbstractClass* target, int weapon_index, boo
 // 0x70ece0
 BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
 {
-  int result; // eax
-  int v2; // [esp+0h] [ebp-4h]
+  BulletClass *result; // eax
+  void *vtable0; // [esp+0h] [ebp-4h]
 
-  result = (int)(*this);
-  v2 = (int)(*this);
-  if ( *this ) /*0x70ece5*/
+  result = (BulletClass *)this->vtable0; /*0x70ece1*/
+  vtable0 = this->vtable0; /*0x70ece5*/
+  if ( this->vtable0 ) /*0x70ece5*/
   {
-    result = this->vtable2; /*0x70eceb*/
+    result = (BulletClass *)this->vtable1; /*0x70eceb*/
     this->nextArrayIndex = 1; /*0x70ecf5*/
-    this->referenceCount = result; /*0x70ecf8*/
-    if ( result < 1 ) /*0x70ecfb*/
+    this->referenceCount = (int)result; /*0x70ecf8*/
+    if ( (int)result < 1 ) /*0x70ecfb*/
       this->referenceCount = 1; /*0x70ecfd*/
-    this->uniqueId = (double)v2 / (double)this->referenceCount; /*0x70ed07*/
+    *(float *)&this->uniqueId = (double)(int)vtable0 / (double)this->referenceCount; /*0x70ed07*/
   }
-  return (ra2::game::BulletClass *)(result);
+  return result; /*0x70ed0b*/
 }
 bool TechnoClass::IsCloseEnoughToAttack(AbstractClass* target) const
 {
@@ -352,32 +352,38 @@ void TechnoClass::Uncloak(bool play_sound)
 // 0x6f3330
 AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
 {
-  unsigned int *v2; // eax
+  HouseClass *v2; // eax
   int result; // eax
   int v4; // edi
   int v5; // ebx
   unsigned char *v6; // ebp
-  int v7; // esi
+  int gattlingStage; // esi
   int v8; // eax
   int v9; // eax
   bool v10; // bl
   unsigned int *v11; // [esp+1Ch] [ebp+4h]
 
-  v2 = (unsigned int *)(*(int (__thiscall **)(void *))(target->q084)(target); /*0x6f333b*/
-  if ( HouseClass::HasPower(v2) && !*(unsigned char *)((*(int (__thiscall **)(void *))(target->q084)(target) + 3285) )
-    return *((unsigned int *)target + 78) != -1 ? *((unsigned int *)target + 78) : 0;
-  if ( (*(uint8_t (__thiscall **)(void *))(target->q400)(target) ) /*0x6f337d*/
+  v2 = (HouseClass *)(*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target); /*0x6f333b*/
+  if ( (uint8_t)HouseClass::HasPower(v2)
+    && !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target) + 3285) )
+  {
+    return target->currentWeaponSlot != -1 ? target->currentWeaponSlot : 0;
+  }
+  if ( (*((uint8_t (__thiscall **)(TechnoClass *))target->vtable0 + 256))(target) ) /*0x6f337d*/
     return 0; /*0x6f337d*/
-  v4 = *(unsigned int *)(*(int (__thiscall **)(void *, int))(*(unsigned int *)target + 1016))(target, 1); /*0x6f3397*/
+  v4 = *(unsigned int *)(*((int (__thiscall **)(TechnoClass *, int))target->vtable0 + 254))(target, 1); /*0x6f3397*/
   if ( !v4 ) /*0x6f339f*/
     return 0; /*0x6f339f*/
-  v5 = *(unsigned int *)(*(int (__thiscall **)(void *, unsigned int))(*(unsigned int *)target + 1016))(target, 0); /*0x6f33b1*/
+  v5 = *(unsigned int *)(*((int (__thiscall **)(TechnoClass *, unsigned int))target->vtable0 + 254))(target, 0); /*0x6f33b1*/
   if ( !v5 || *(unsigned char *)(v4 + 310) || !v11 ) /*0x6f33d3*/
     return 0; /*0x6f33d3*/
-  if ( *((unsigned char *)target + 130) && *(unsigned int *)((*(int (__thiscall **)(void *))(target->q084)(target) + 3408) != -1 ) /*0x6f33f4*/
-    return *(unsigned int *)((*(int (__thiscall **)(void *))(target->q084)(target) + 3408); /*0x6f340d*/
+  if ( target->inOpenToppedTransport /*0x6f33f4*/
+    && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target) + 3408) != -1 )
+  {
+    return *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target) + 3408); /*0x6f340d*/
+  }
   v6 = (v11[5] & 1) != 0 ? (unsigned char *)v11 : 0;
-  if ( !*(unsigned char *)((*(int (__thiscall **)(void *))(target->q084)(target) + 3285) )
+  if ( !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target) + 3285) )
   {
     if ( *(unsigned char *)(*(unsigned int *)(v4 + 172) + 364) )
     {
@@ -404,29 +410,30 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
       if ( *(unsigned char *)(v4 + 322) /*0x6f3590*/
         && v6
         && *(unsigned char *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 132))(v6) + 1519)
-        && !*((unsigned int *)target + 115)
-        && !Object::IsAlliedWithObjectHouse(*((unsigned int **)target + 135), (int)v6) )
+        && !target->drainTarget
+        && !(uint8_t)Object::IsAlliedWithObjectHouse((Object *)target->owner, (int)v6) )
       {
         return 1; /*0x6f35a5*/
       }
-      if ( *(unsigned char *)(v4 + 336) && (*(int (__thiscall **)(void *))(target->q184)(target) == 16 ) /*0x6f35c3*/
+      if ( *(unsigned char *)(v4 + 336) && (*((int (__thiscall **)(TechnoClass *))target->vtable0 + 97))(target) == 16 ) /*0x6f35c3*/
         return 1; /*0x6f35d1*/
-      if ( (*(int (__thiscall **)(void *))(target->q02C)(target) == 6 && *((unsigned char *)target + 1633) ) /*0x6f35e0*/
+      if ( (*((int (__thiscall **)(TechnoClass *))target->vtable0 + 11))(target) == 6 && *((unsigned char *)target + 1633) ) /*0x6f35e0*/
         return 1; /*0x6f35f6*/
       if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 6 /*0x6f362f*/
-        && Object::IsAlliedWithObjectSimpleHouse(*((unsigned int **)target + 135), v11)
+        && (uint8_t)Object::IsAlliedWithObjectSimpleHouse((Object *)target->owner, v11)
         && *(unsigned char *)(*(unsigned int *)(v4 + 172) + 344)
         && *(unsigned char *)(v11[328] + 5493) )
       {
         return 1; /*0x6f3645*/
       }
-      if ( (*(int (__thiscall **)(void *))(target->q02C)(target) == 2 && *((unsigned char *)target + 1738) ) /*0x6f3658*/
+      if ( (*((int (__thiscall **)(TechnoClass *))target->vtable0 + 11))(target) == 2 && *((unsigned char *)target + 1738) ) /*0x6f3658*/
         return 1; /*0x6f366e*/
       if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 11 /*0x6f36ca*/
         && (v11[59] != 2 && (*(uint8_t (__thiscall **)(unsigned int *))(*v11 + 80))(v11)
-         || (v11[80] & 0x100) != 0 && *(unsigned char *)((*(int (__thiscall **)(void *))(target->q084)(target) + 3278))
+         || (v11[80] & 0x100) != 0
+         && *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target) + 3278))
         && !(*(uint8_t (__thiscall **)(unsigned int *))(*v11 + 84))(v11)
-        && *(unsigned int *)((*(int (__thiscall **)(void *))(target->q084)(target) + 1540) == 2 )
+        && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target) + 1540) == 2 )
       {
         return 1; /*0x6f36d8*/
       }
@@ -445,13 +452,13 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
           v10 = 0; /*0x6f378d*/
         if ( !v6[140] && v10 ) /*0x6f379b*/
         {
-          result = (*(int (__thiscall **)(void *, unsigned int *))(*(unsigned int *)target + 744))(target, v11); /*0x6f37a2*/
+          result = (*((int (__thiscall **)(TechnoClass *, unsigned int *))target->vtable0 + 186))(target, v11); /*0x6f37a2*/
           if ( result != -1 ) /*0x6f37ab*/
             return result; /*0x6f37ab*/
           return 0; /*0x6f37ab*/
         }
         if ( !(*(uint8_t (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 84))(v6) /*0x6f37d6*/
-          && *(unsigned int *)((*(int (__thiscall **)(void *))(target->q084)(target) + 1540) == 2 )
+          && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target) + 1540) == 2 )
         {
           return 1; /*0x6f37e4*/
         }
@@ -464,37 +471,54 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
     }
     return 0; /*0x6f37ad*/
   }
-  v7 = *((unsigned int *)target + 80); /*0x6f3436*/
+  gattlingStage = target->gattlingStage; /*0x6f3436*/
   if ( *(unsigned char *)(*(unsigned int *)(v4 + 160) + 676) /*0x6f3455*/
     && v6
     && (*(uint8_t (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 84))(v6) )
   {
-    return 2 * v7 + 1; /*0x6f345c*/
+    return 2 * gattlingStage + 1; /*0x6f345c*/
   }
   else
   {
-    return 2 * v7; /*0x6f346a*/
+    return 2 * gattlingStage; /*0x6f346a*/
   }
 }
 // 0x4f9af0
         && Object::IsAlliedWithObjectSimpleHouse(this->owner, v11)
         {
-          int v3; // eax
-          int v5; // eax
+          int result; // eax
+          char v4; // cl
 
           if ( !v11 ) /*0x4f9af9*/
-            return 0; /*0x4f9af9*/
+            goto LABEL_10; /*0x4f9af9*/
           if ( (v11[20] & 2) == 0 ) /*0x4f9aff*/
-            return 0; /*0x4f9aff*/
-          v3 = (*(int (**)(void))(*(unsigned int *)v11 + 60))(); /*0x4f9b03*/
-          if ( !v3 ) /*0x4f9b08*/
-            return 0; /*0x4f9b08*/
-          if ( (unsigned int *)v3 == owner ) /*0x4f9b0c*/
-            return 1; /*0x4f9b11*/
-          v5 = *(unsigned int *)(v3 + 48); /*0x4f9b14*/
-          if ( v5 == *(owner + 12) ) /*0x4f9b1c*/
-            return 1; /*0x4f9b21*/
-          return v5 != -1 && (*(owner + 5602) & (1 << v5)) != 0; /*0x4f9b3b*/
+            goto LABEL_10; /*0x4f9aff*/
+          result = (*(int (**)(void))(*(unsigned int *)v11 + 60))(); /*0x4f9b03*/
+          if ( !result ) /*0x4f9b08*/
+            goto LABEL_10; /*0x4f9b08*/
+          if ( (Object *)result == owner ) /*0x4f9b0c*/
+          {
+            IDA_LOBYTE(result) = 1; /*0x4f9b0e*/
+            return result; /*0x4f9b11*/
+          }
+          result = *(unsigned int *)(result + 48); /*0x4f9b14*/
+          if ( (void *)result == owner->Object_field_0x30 ) /*0x4f9b1c*/
+          {
+            IDA_LOBYTE(result) = 1; /*0x4f9b1e*/
+            return result; /*0x4f9b21*/
+          }
+          if ( result != -1 ) /*0x4f9b27*/
+          {
+            v4 = result; /*0x4f9b2e*/
+            result = *((unsigned int *)owner + 5602); /*0x4f9b30*/
+            IDA_LOBYTE(result) = (result & (1 << v4)) != 0; /*0x4f9b3b*/
+          }
+          else
+          {
+          LABEL_10:
+            IDA_LOBYTE(result) = 0; /*0x4f9b41*/
+          }
+          return result; /*0x4f9b10*/
         }
       if ( (*(int (__thiscall **)(void *))(this->fallRate)(this) == 2 && this->u32_6CA )
         return 1;
@@ -3508,33 +3532,61 @@ uint32_t TechnoClass::getWeaponRangeValue(uint32_t a, uint32_t b) const { return
 DirStruct* TechnoClass::GetRealFacing(DirStruct* buffer) const { return nullptr; }
 // 0x707d20
 InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
-  int v3; // ecx
-  int v4; // eax
-  RulesClass *v5; // eax
-  int Scatter; // esi
+  HouseClass *owner; // ecx
+  int sideIndex; // eax
+  int v5; // eax
+  int v6; // esi
   bool v7; // zf
 
-  if ( !*(unsigned char *)(this->Vt34Thunk() + 3277) ) /*0x707d2b*/
+  if ( !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->vtable0 + 33))(this) + 3277) ) /*0x707d2b*/
     return 0; /*0x707d38*/
-  v3 = *(&this->attachedTag5); /*0x707d39*/
-  v4 = v3->sideIndex; /*0x707d40*/
-  if ( v4 ) /*0x707d48*/
+  owner = this->owner; /*0x707d39*/
+  sideIndex = owner->sideIndex; /*0x707d40*/
+  if ( sideIndex ) /*0x707d48*/
   {
-    if ( v4 == 1 ) /*0x707d5a*/
+    if ( sideIndex == 1 ) /*0x707d5a*/
     {
-      v5 = g_RulesClass_Instance; /*0x707d5c*/
-      Scatter = g_RulesClass_Instance->Scatter; /*0x707d61*/
+      v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d5c*/
+      v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3964); /*0x707d61*/
     }
     else
     {
-      v7 = v4 == 2; /*0x707d69*/
-      v5 = g_RulesClass_Instance; /*0x707d6c*/
+      v7 = sideIndex == 2; /*0x707d69*/
+      v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d6c*/
       if ( v7 ) /*0x707d71*/
-        Scatter = g_RulesClass_Instance->ContentScan; /*0x707d73*/
+        v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3968); /*0x707d73*/
       else
-        Scatter = g_RulesClass_Instance->Production; /*0x707d7b*/
+        v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3948); /*0x707d7b*/
     }
   }
+  else
+  {
+    v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d4a*/
+    v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3960); /*0x707d4f*/
+  }
+  if ( *(unsigned int *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
+    return *(unsigned int *)(v5 + 3948); /*0x707dc5*/
+  if ( (*((uint8_t (__thiscall **)(TechnoClass *))this->vtable0 + 171))(this) /*0x707db2*/
+    && Random::Range((Random *)&unk_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
+  {
+    return *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3948); /*0x707dc4*/
+  }
+  return v6; /*0x707d37*/
+}
+  else
+  {
+    v5 = g_RulesClass_Instance; /*0x707d4a*/
+    Scatter = g_RulesClass_Instance->?; /*0x707d4f*/
+  }
+  if ( *(unsigned int *)(v3->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
+    return v5->?; /*0x707dc5*/
+  if ( this->HasActiveParam() /*0x707db2*/
+    && Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, 99) < 15 )
+  {
+    return g_RulesClass_Instance->?; /*0x707dc4*/
+  }
+  return Scatter; /*0x707d37*/
+}
   else
   {
     v5 = g_RulesClass_Instance; /*0x707d4a*/
@@ -3552,7 +3604,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
   return *(&this->isChronosphereImmune9); /*0x4df1d6*/
 // 0x4df1e0
 int TechnoClass::vt_entry_4B4() {
-  return *(&this->isAliveFlag9); /*0x4df1e6*/
+  return this->u32_5C4; /*0x4df1e6*/
 }
 // 0x4df1f0
 int TechnoClass::vt_entry_4B8() { return 0; }
@@ -3562,7 +3614,7 @@ int TechnoClass::vt_entry_4B8() { return 0; }
   unsigned int *v6; // ecx
   unsigned char v7[12]; // [esp+4h] [ebp-Ch] BYREF
 
-  v2 = *(&this->lastLayer0); /*0x4df1f0*/
+  v2 = this->u32_5C8; /*0x4df1f0*/
   if ( v2 ) /*0x4df1fc*/
   {
     v3 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(v2->q048)(v2, v7); /*0x4df20a*/
@@ -3571,6 +3623,44 @@ int TechnoClass::vt_entry_4B8() { return 0; }
     a2[2] = v3[2]; /*0x4df220*/
     return a2; /*0x4df20c*/
   }
+  else
+  {
+    v5 = this->q173; /*0x4df229*/
+    if ( v5 ) /*0x4df231*/
+    {
+      v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v5 + 72))(v5, v7); /*0x4df23d*/
+      *a2 = *v6; /*0x4df247*/
+      a2[1] = v6[1]; /*0x4df24c*/
+      a2[2] = v6[2]; /*0x4df253*/
+    }
+    else
+    {
+      *a2 = -1; /*0x4df26c*/
+      a2[1] = -1; /*0x4df26e*/
+      a2[2] = -1; /*0x4df271*/
+    }
+    return a2; /*0x4df23f*/
+  }
+}
+  else
+  {
+    v5 = *(&this->lastLayer1); /*0x4df229*/
+    if ( v5 ) /*0x4df231*/
+    {
+      v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v5 + 72))(v5, v7); /*0x4df23d*/
+      *a2 = *v6; /*0x4df247*/
+      a2[1] = v6[1]; /*0x4df24c*/
+      a2[2] = v6[2]; /*0x4df253*/
+    }
+    else
+    {
+      *a2 = -1; /*0x4df26c*/
+      a2[1] = -1; /*0x4df26e*/
+      a2[2] = -1; /*0x4df271*/
+    }
+    return a2; /*0x4df23f*/
+  }
+}
   else
   {
     v5 = *(&this->lastLayer1); /*0x4df229*/
@@ -3649,12 +3739,12 @@ int TechnoClass::FindMatchingUnit() { return -1; }
   return v6; /*0x5f7a68*/
 // 0x659540
 int RadBeam::drawMindControlPips(int a2) {
-  *(&this->u32_81) = a2; /*0x659544*/
+  this->customSound_controller[1] = a2; /*0x659544*/
   return a2; /*0x659547*/
 }
 // 0x659550
 char RadBeam::drawPassengerPips(char a2) {
-  *(&this->NeedsSaveOrLink8) = a2; /*0x659554*/
+  IDA_LOBYTE(this->customSound_controller[2]) = a2; /*0x659554*/
   return a2; /*0x659557*/
 }
 // 0x633d30
@@ -3662,28 +3752,59 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   int v2; // eax
   int v3; // eax
   int v4; // eax
-  void *v5; // eax
-  void *v6; // eax
-  int v7; // [esp+Ch] [ebp-4h] BYREF
+  void *occupant; // eax
+  void *vtable1; // eax
+  TechnoClass *v7; // [esp+Ch] [ebp-4h] BYREF
 
-  FactoryClass::ClearObjects((int *)this); /*0x633d35*/
+  FactoryClass::ClearObjects((FactoryClass *)this); /*0x633d35*/
   v7 = this; /*0x633d4a*/
-  v2 = (*(int (__thiscall **)(int *, int *))(g_ScriptConfig + 16))(&g_ScriptConfig, &v7); /*0x633d4e*/
+  v2 = (*(int (__thiscall **)(char *, TechnoClass **))(*(unsigned int *)&stru_AC4B30.__pad_EC[124] + 16))( /*0x633d4e*/
+         &stru_AC4B30.__pad_EC[124],
+         &v7);
   if ( v2 != -1 ) /*0x633d54*/
-    Array::RemoveAt(&g_ScriptConfig, v2); /*0x633d5c*/
-  v3 = (*(int (__thiscall **)(int *, int *))(dword_AC4B30 + 16))(&dword_AC4B30, &v7); /*0x633d71*/
+    Array::RemoveAt((Array *)&stru_AC4B30.__pad_EC[124], v2); /*0x633d5c*/
+  v3 = (*(int (__thiscall **)(Array *, TechnoClass **))(*(unsigned int *)stru_AC4B30.__pad_0 + 16))(&stru_AC4B30, &v7); /*0x633d71*/
   if ( v3 != -1 ) /*0x633d77*/
-    Array::RemoveAt(&dword_AC4B30, v3); /*0x633d7f*/
-  v4 = (*(int (__thiscall **)(int *, int *))(dword_AC4C18 + 16))(&dword_AC4C18, &v7); /*0x633d94*/
-  if ( v4 != -1 && v4 < dword_AC4C28 && v4 < --dword_AC4C28 ) /*0x633daf*/
+    Array::RemoveAt(&stru_AC4B30, v3); /*0x633d7f*/
+  v4 = (*((int (__thiscall **)(void **, TechnoClass **))stru_AC4B30.Array_field_0xE8 + 4))( /*0x633d94*/
+         &stru_AC4B30.Array_field_0xE8,
+         &v7);
+  if ( v4 != -1 && v4 < *(int *)&stru_AC4B30.__pad_EC[12] ) /*0x633da4*/
   {
-    do /*0x633dc7*/
+    --*(unsigned int *)&stru_AC4B30.__pad_EC[12]; /*0x633da9*/
+    for ( ; /*0x633daf*/
+          v4 < *(int *)&stru_AC4B30.__pad_EC[12];
+          *(unsigned int *)(*(unsigned int *)stru_AC4B30.__pad_EC + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)stru_AC4B30.__pad_EC
+                                                                                + 4 * v4) )
     {
       ++v4; /*0x633db7*/
-      *((unsigned int *)dword_AC4C1C + v4 - 1) = *((unsigned int *)dword_AC4C1C + v4); /*0x633dbb*/
     }
-    while ( v4 < dword_AC4C28 ); /*0x633dc7*/
   }
+  if ( *(TechnoClass **)&stru_AC4B30.__pad_EC[176] == v7 ) /*0x633dd7*/
+    *(unsigned int *)&stru_AC4B30.__pad_EC[176] = 0; /*0x633dd9*/
+  if ( *(TechnoClass **)&stru_AC4B30.__pad_EC[28] == v7 ) /*0x633de5*/
+    *(unsigned int *)&stru_AC4B30.__pad_EC[28] = 0; /*0x633de7*/
+  if ( *(TechnoClass **)&stru_AC4B30.__pad_70[80] == v7 ) /*0x633df3*/
+    *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x633df5*/
+  occupant = (void *)this->occupant; /*0x633dfb*/
+  this->NeedsSaveOrLink = &(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
+  if ( occupant && IDA_BYTE1(this->fallRate) ) /*0x633e09*/
+  {
+    RA2_OPDEL(occupant); /*0x633e0f*/
+    this->occupant = 0; /*0x633e17*/
+  }
+  IDA_BYTE1(this->fallRate) = 0; /*0x633e1a*/
+  this->owningHouseIndex = 0; /*0x633e1d*/
+  vtable1 = this->vtable1; /*0x633e20*/
+  this->vtable0 = &(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
+  if ( vtable1 && IDA_BYTE1(this->vtable3) ) /*0x633e2d*/
+  {
+    RA2_OPDEL(vtable1); /*0x633e33*/
+    this->vtable1 = 0; /*0x633e3b*/
+  }
+  IDA_BYTE1(this->vtable3) = 0; /*0x633e3e*/
+  this->vtable2 = 0; /*0x633e41*/
+}
   if ( g_ScriptPool == v7 ) /*0x633dd7*/
     g_ScriptPool = 0; /*0x633dd9*/
   if ( g_ScriptState == v7 ) /*0x633de5*/
@@ -3691,7 +3812,7 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   if ( g_ScriptActionPool == v7 ) /*0x633df3*/
     g_ScriptActionPool = 0; /*0x633df5*/
   v5 = *(void **)(&this->vtable46); /*0x633dfb*/
-  this->NeedsSaveOrLink = &(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
+  this->NeedsSaveOrLink = &(void*)(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
   if ( v5 && this->queuedMission ) /*0x633e09*/
   {
     RA2_OPDEL(v5); /*0x633e0f*/
@@ -3700,7 +3821,32 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   this->queuedMission = 0; /*0x633e1a*/
   this->owningHouseIndex = 0; /*0x633e1d*/
   v6 = this->vtable2; /*0x633e20*/
-  *(unsigned int *)this = &(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
+  *(unsigned int *)this = &(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
+  if ( v6 && this->attachedTag ) /*0x633e2d*/
+  {
+    RA2_OPDEL(v6); /*0x633e33*/
+    this->vtable2 = 0; /*0x633e3b*/
+  }
+  this->attachedTag = 0; /*0x633e3e*/
+  this->vtable3 = 0; /*0x633e41*/
+}
+  if ( g_ScriptPool == v7 ) /*0x633dd7*/
+    g_ScriptPool = 0; /*0x633dd9*/
+  if ( g_ScriptState == v7 ) /*0x633de5*/
+    g_ScriptState = 0; /*0x633de7*/
+  if ( g_ScriptActionPool == v7 ) /*0x633df3*/
+    g_ScriptActionPool = 0; /*0x633df5*/
+  v5 = *(void **)(&this->vtable46); /*0x633dfb*/
+  this->NeedsSaveOrLink = &(void*)(void*)(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
+  if ( v5 && this->queuedMission ) /*0x633e09*/
+  {
+    RA2_OPDEL(v5); /*0x633e0f*/
+    this->objectTypeFlags = 0; /*0x633e17*/
+  }
+  this->queuedMission = 0; /*0x633e1a*/
+  this->owningHouseIndex = 0; /*0x633e1d*/
+  v6 = this->vtable2; /*0x633e20*/
+  *(unsigned int *)this = &(void*)(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
   if ( v6 && this->attachedTag ) /*0x633e2d*/
   {
     RA2_OPDEL(v6); /*0x633e33*/
@@ -4275,6 +4421,7 @@ retn    4
 */
 // 0x6f3820
 int TechnoClass::CanTargetHouse() const { return false; 
+  unsigned int *v1; // esi
   int result; // eax
   char v4; // bl
   char v5; // [esp+Eh] [ebp-2h]
@@ -4282,17 +4429,17 @@ int TechnoClass::CanTargetHouse() const { return false;
   unsigned char *v7; // [esp+14h] [ebp+4h]
   char v8; // [esp+14h] [ebp+4h]
 
-  v7 = v7; /*0x6f3823*/
+  v1 = v7; /*0x6f3823*/
   if ( !v7 || (v7[20] & 1) == 0 ) /*0x6f3832*/
     return -1; /*0x6f3836*/
   v4 = *(unsigned char *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v7 + 132))(v7) + 3433); /*0x6f384a*/
   v8 = *(unsigned char *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v7 + 132))(v7) + 3479); /*0x6f3862*/
-  v6 = *(unsigned int *)((*(int (__thiscall **)(unsigned int *))(*v7 + 132))(v7) + 1660) == 3; /*0x6f3879*/
-  v5 = *(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*v7 + 132))(v7) + 1684); /*0x6f388c*/
-  switch ( *(unsigned int *)((*(int (__thiscall **)(void *))(*(unsigned int *)&this->attachedTag2))(this) + 1536) ) /*0x6f38a3*/
+  v6 = *(unsigned int *)((*(int (__thiscall **)(unsigned int *))(*v1 + 132))(v1) + 1660) == 3; /*0x6f3879*/
+  v5 = *(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*v1 + 132))(v1) + 1684); /*0x6f388c*/
+  switch ( *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->vtable0 + 33))(this) + 1536) ) /*0x6f38a3*/
   {
     case 0: /*0x6f38a3*/
-      if ( !v4 || !v7[136] ) /*0x6f38ae*/
+      if ( !v4 || !v1[136] ) /*0x6f38ae*/
         goto LABEL_16; /*0x6f38b6*/
       return -1; /*0x6f38b6*/
     case 1: /*0x6f38a3*/

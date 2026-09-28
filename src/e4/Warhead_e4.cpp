@@ -27,6 +27,7 @@
 #include "e4/classes/Init_e4.hpp"
 #include "e4/classes/WarheadTypeClass_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
 
 // 0x41D7E0
 namespace gamemd {
@@ -45,7 +46,7 @@ int Warhead::GetWarheadSound(int a2)
 namespace gamemd {
 int Warhead::RemoveFromDamageList(int a2)
 {
-  unsigned int *v2; // esi
+  Warhead *v2; // esi
   int v3; // eax
   int v4; // ecx
   int v5; // ecx
@@ -53,27 +54,31 @@ int Warhead::RemoveFromDamageList(int a2)
   int v7; // eax
   int v8; // edx
 
-  v2 = &this->u32_66C; /*0x452827*/
-  v3 = (*(int (__thiscall **)(unsigned int *, int *))(*(&this->u32_A41) + 16))(&this->u32_66C, &a2); /*0x452834*/
+  v2 = (gamemd::Warhead *)(&this->u32_66C);
+  v3 = (*(int (__thiscall **)(Warhead *, int *))(this->u32_66C + 16))(&this->u32_66C, &a2); /*0x452834*/
   if ( v3 != -1 ) /*0x45283a*/
   {
-    v4 = v2[4]; /*0x45283c*/
+    v4 = *(unsigned int *)&v2[16]; /*0x45283c*/
     if ( v3 < v4 ) /*0x452841*/
     {
       v5 = v4 - 1; /*0x452843*/
-      for ( v2[4] = v5; v3 < v2[4]; *(unsigned int *)(v2[1] + 4 * v3 - 4) = *(unsigned int *)(v2[1] + 4 * v3) ) /*0x452849*/
+      for ( *(unsigned int *)&v2[16] = v5; /*0x452849*/
+            v3 < *(unsigned int *)&v2[16];
+            *(unsigned int *)(*(unsigned int *)&v2[4] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&v2[4] + 4 * v3) )
+      {
         ++v3; /*0x45284e*/
+      }
     }
   }
-  v6 = v2[2]; /*0x45285d*/
-  if ( v2[4] < v6 /*0x452887*/
-    || ((IDA_LOBYTE(v7) = *((unsigned char *)v2 + 13), (unsigned char)v7) || !v6)
-    && (v7 = v2[5], v7 > 0)
-    && (IDA_LOBYTE(v7) = (*(int (__thiscall **)(unsigned int *, int, unsigned int))(this->u32_1A3)(v2, v6 + v7, 0), (unsigned char)v7) )
+  v6 = (unsigned char)(*(unsigned int *)&v2[8]);
+  if ( *(unsigned int *)&v2[16] < v6 /*0x452887*/
+    || ((IDA_LOBYTE(v7) = v2[13], (unsigned char)v7) || !v6)
+    && (v7 = *(unsigned int *)&v2[20], v7 > 0)
+    && (IDA_LOBYTE(v7) = (*(int (__thiscall **)(Warhead *, int, unsigned int))(this->u32_1A3)(v2, v6 + v7, 0), (unsigned char)v7) )
   {
-    v7 = v2[4]; /*0x452889*/
-    v8 = v2[1]; /*0x45288c*/
-    v2[4] = v7 + 1; /*0x452892*/
+    v7 = *(unsigned int *)&v2[16]; /*0x452889*/
+    v8 = *(unsigned int *)&v2[4]; /*0x45288c*/
+    *(unsigned int *)&v2[16] = v7 + 1; /*0x452892*/
     *(unsigned int *)(v8 + 4 * v7) = a2; /*0x452899*/
   }
   return v7; /*0x45289c*/
@@ -911,8 +916,8 @@ int Warhead::ApplyPostDamageEffects()
   double v63; // st7
   unsigned int v64; // ebp
   double v65; // st7
-  int v66; // ecx
-  int v67; // edx
+  int * v66;
+  int * v67;
   int v68; // ecx
   int v69; // edx
   char v70; // al
@@ -934,9 +939,9 @@ int Warhead::ApplyPostDamageEffects()
   double v87; // [esp+88h] [ebp-58h]
   double v88; // [esp+90h] [ebp-50h] BYREF
   int v89; // [esp+9Ch] [ebp-44h]
-  int v90; // [esp+A0h] [ebp-40h] BYREF
+  int * v90;
   unsigned int v91;
-  int * v92;
+  unsigned int v92;
   int v93; // [esp+ACh] [ebp-34h] BYREF
   int v94; // [esp+B0h] [ebp-30h]
   int v95; // [esp+B4h] [ebp-2Ch]
@@ -960,8 +965,8 @@ int Warhead::ApplyPostDamageEffects()
     {
       v5 = (int *)(*(&this->u32_C9));
       v6 = (int *)(*(&this->u32_100));
-      v7 = (int *)(*v4);
-      v92 = (unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(*(&this->u32_101)))))));
+      v7 = (unsigned int)((int *)(*v4));
+      v92 = (int *)((unsigned int)((int *)((unsigned int)((int *)((unsigned int)((int *)(*(&this->u32_101))))))));
       v8 = (int *)((unsigned int *)v4->GetCoords_0(&v93));
       v9 = (int *)(Coord::Subtract(&v90, *v8 - v5, v8[1] - v6, v8[2] - v92));
       v84 = *v9; /*0x46a399*/
@@ -1215,7 +1220,7 @@ int Warhead::ApplyPostDamageEffects()
               v66 = (int *)(*(&this->u32_100));
               v75 = (int *)(v65 * v87);
               v67 = (int *)(*(&this->u32_101));
-              v91 = v66; /*0x46ad0e*/
+              v91 = (int *)(v66);
               v92 = v67; /*0x46ad16*/
               (*(void (__thiscall **)(int, int *, double *))(*(unsigned int *)v80 + 496))(v80, &v90, &v73); /*0x46ad29*/
               v68 = *(&this->u32_100); /*0x46ad31*/
@@ -1253,103 +1258,107 @@ int Warhead::ApplyPostDamageEffects()
 namespace gamemd {
 int Warhead::ProcessDamageArea()
 {
-  double *v2; // edi
+  int v2; // edi
   int v3; // ebx
   int v4; // ebp
   int v5; // eax
   double v6; // st7
-  int v7; // ebx
-  double v8; // st7
+  int v7; // eax
   double v9; // st7
-  int v10; // ebp
+  int v10; // eax
   double v11; // st7
   int v12; // eax
-  int v13; // ecx
-  int v14; // edi
-  int v15; // ecx
-  void *v16; // eax
-  int *v17; // eax
-  unsigned int *v18; // eax
-  unsigned int *v19; // eax
-  int v21; // [esp+10h] [ebp-30h]
-  int v22; // [esp+10h] [ebp-30h]
-  int v23; // [esp+18h] [ebp-28h]
-  int v24; // [esp+1Ch] [ebp-24h]
-  int v25; // [esp+20h] [ebp-20h]
-  int v26; // [esp+24h] [ebp-1Ch]
-  int v27; // [esp+28h] [ebp-18h]
-  int v28; // [esp+2Ch] [ebp-14h]
-  int v29; // [esp+2Ch] [ebp-14h]
-  int v30; // [esp+30h] [ebp-10h]
-  unsigned char v31[12]; // [esp+34h] [ebp-Ch] BYREF
+  double v14; // st7
+  int v15; // eax
+  int v16; // ecx
+  int v18; // ecx
+  void *v19; // eax
+  int *v20; // eax
+  int v21; // ecx
+  LightSourceClass *v22; // eax
+  unsigned int *v23; // eax
+  int v25; // [esp+10h] [ebp-30h]
+  int v27; // [esp+18h] [ebp-28h]
+  int v28; // [esp+1Ch] [ebp-24h]
+  int v29; // [esp+20h] [ebp-20h]
+  int v30; // [esp+24h] [ebp-1Ch]
+  int v31; // [esp+28h] [ebp-18h]
+  int v32; // [esp+2Ch] [ebp-14h]
+  int v33; // [esp+2Ch] [ebp-14h]
+  int v34; // [esp+30h] [ebp-10h]
+  unsigned char v35[12]; // [esp+34h] [ebp-Ch] BYREF
 
-  v24 = *((unsigned int *)g_RulesClass_Instance + 1540); /*0x65b5a3*/
-  v25 = *((unsigned int *)g_RulesClass_Instance + 1541); /*0x65b5a7*/
-  this->u32_A0 = g_CurrentFrame; /*0x65b5ab*/
-  *(unsigned int *)&this->u32_B0 = v28; /*0x65b5b3*/
-  *(unsigned int *)((char *)&this->u32_B0 + 16) = v24; /*0x65b5b9*/
-  *(unsigned int *)((char *)&this->u32_B0 + 32) = g_CurrentFrame; /*0x65b5c2*/
-  *(unsigned int *)((char *)&this->u32_B0 + 48) = v28; /*0x65b5c8*/
-  *(unsigned int *)((char *)&this->u32_B0 + 64) = v25; /*0x65b5cb*/
-  v2 = (double *)g_RulesClass_Instance; /*0x65b5ce*/
-  v3 = *((uint8_t *)g_RulesClass_Instance + 6194); /*0x65b5e2*/
-  v4 = *((uint8_t *)g_RulesClass_Instance + 6193); /*0x65b5e8*/
-  v5 = *((uint8_t *)g_RulesClass_Instance + 6192); /*0x65b5f5*/
-  if ( *((unsigned int *)g_ScenarioClass_Instance + 1174) == 1 ) /*0x65b5fb*/
+  v28 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6160); /*0x65b5a3*/
+  v29 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6164); /*0x65b5a7*/
+  this->u32_A0 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x65b5ab*/
+  this->u32_2C = v32; /*0x65b5b3*/
+  this->u32_30 = v28; /*0x65b5b9*/
+  this->q034 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x65b5c2*/
+  this->u32_38 = v32; /*0x65b5c8*/
+  this->u8_3C = v29; /*0x65b5cb*/
+  v2 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x65b5ce*/
+  v3 = *(uint8_t *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6194); /*0x65b5e2*/
+  v4 = *(uint8_t *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6193); /*0x65b5e8*/
+  v5 = *(uint8_t *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6192); /*0x65b5f5*/
+  if ( unk_A8B230[130].uniqueId == 1 ) /*0x65b5fb*/
   {
     v3 = -128; /*0x65b5fd*/
     v5 = -128; /*0x65b602*/
   }
-  v21 = 1000 * v5 / 255; /*0x65b62a*/
-  v6 = (double)this->q130 * *((double *)g_RulesClass_Instance + 772); /*0x65b63e*/
-  v26 = *(unsigned int *)((char *)&this->q114 + 12); /*0x65b679*/
-  v23 = 1000 * v3 / 255; /*0x65b684*/
+  v25 = 1000 * v5 / 255; /*0x65b62a*/
+  v6 = (double)this->q130 * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6176); /*0x65b63e*/
+  v30 = this->q048; /*0x65b679*/
+  v27 = 1000 * v3 / 255; /*0x65b684*/
   if ( v6 > 2000.0 ) /*0x65b68b*/
     v6 = 2000.0; /*0x65b68f*/
-  v7 = Math::RoundToInt(v6); /*0x65b69e*/
-  v8 = (double)v21 * v2[773]; /*0x65b6a0*/
-  if ( v8 > 2000.0 ) /*0x65b6b3*/
-    v8 = 2000.0; /*0x65b6b7*/
-  v22 = Math::RoundToInt(v8); /*0x65b6c6*/
-  v9 = (double)(1000 * v4 / 255) * v2[773]; /*0x65b6ca*/
-  if ( v9 > 2000.0 ) /*0x65b6dd*/
-    v9 = 2000.0; /*0x65b6e1*/
-  v10 = Math::RoundToInt(v9); /*0x65b6f0*/
-  v11 = (double)v23 * v2[773]; /*0x65b6f2*/
-  if ( v11 > 2000.0 ) /*0x65b705*/
-    v11 = 2000.0; /*0x65b709*/
-  v12 = Math::RoundToInt(v11); /*0x65b70f*/
-  v13 = *(unsigned int *)((char *)&this->u32_1A3 + 13); /*0x65b714*/
-  v14 = v12; /*0x65b71b*/
-  this->q160 = v22; /*0x65b71f*/
-  *(unsigned int *)((char *)&this->q164 + 12) = v10; /*0x65b722*/
-  *(unsigned int *)((char *)&this->q176 + 10) = v12; /*0x65b72a*/
-  *(unsigned int *)&this->q150 = v7; /*0x65b72d*/
-  *(unsigned int *)((char *)&this->q136 + 10) = v13 / v24; /*0x65b730*/
-  v15 = v13 / v25; /*0x65b73a*/
-  *(unsigned int *)((char *)&this->q176 + 26) = v15; /*0x65b741*/
-  *(unsigned int *)((char *)&this->q176 + 42) = v7 / v15; /*0x65b749*/
-  v16 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&this->q100); /*0x65b750*/
-  v17 = (int *)(*(int (__thiscall **)(void *, unsigned char *))(*(unsigned int *)v16 + 72))(v16, v31); /*0x65b75e*/
-  v27 = *v17; /*0x65b763*/
-  v29 = v17[1]; /*0x65b76a*/
-  v30 = v17[2]; /*0x65b776*/
-  if ( *(unsigned int *)((char *)&this->q088 + 8) ) /*0x65b76e*/
+  IDA_LOWORD(v7) = Math::RoundToInt(v6); /*0x65b695*/
+  v7 = v7; /*0x65b69e*/
+  v9 = (double)v25 * v2->u32_1828; /*0x65b6a0*/
+  if ( v9 > 2000.0 ) /*0x65b6b3*/
+    v9 = 2000.0; /*0x65b6b7*/
+  IDA_LOWORD(v10) = Math::RoundToInt(v9); /*0x65b6bd*/
+  v10 = v10; /*0x65b6c6*/
+  v11 = (double)(1000 * v4 / 255) * v2->u32_1828; /*0x65b6ca*/
+  if ( v11 > 2000.0 ) /*0x65b6dd*/
+    v11 = 2000.0; /*0x65b6e1*/
+  IDA_LOWORD(v12) = Math::RoundToInt(v11); /*0x65b6e7*/
+  v12 = v12; /*0x65b6f0*/
+  v14 = (double)v27 * v2->u32_1828; /*0x65b6f2*/
+  if ( v14 > 2000.0 ) /*0x65b705*/
+    v14 = 2000.0; /*0x65b709*/
+  IDA_LOWORD(v15) = Math::RoundToInt(v14); /*0x65b70f*/
+  v16 = this->u32_6C; /*0x65b714*/
+  v15 = v15; /*0x65b71b*/
+  this->u32_58 = v10; /*0x65b71f*/
+  this->u32_5C = v12; /*0x65b722*/
+  this->u32_60 = v15; /*0x65b72a*/
+  this->q054 = v7; /*0x65b72d*/
+  this->u32_14 = v16 / v28; /*0x65b730*/
+  v18 = v16 / v29; /*0x65b73a*/
+  this->u32_64 = v18; /*0x65b741*/
+  this->u32_68 = v7 / v18; /*0x65b749*/
+  v19 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&this->u32_C2); /*0x65b750*/
+  v20 = (int *)(*(int (__thiscall **)(void *, unsigned char *))(*(unsigned int *)v19 + 72))(v19, v35); /*0x65b75e*/
+  v31 = *v20; /*0x65b763*/
+  v33 = v20[1]; /*0x65b76a*/
+  v21 = this->u32_24; /*0x65b76e*/
+  v34 = v20[2]; /*0x65b776*/
+  if ( v21 ) /*0x65b77a*/
   {
-    TacticalClass::UpdateScrollTarget(v7, v22, v10, v14, 0); /*0x65b7e8*/
-    return RadSiteClass::Radiate(); /*0x65b7ef*/
+    TacticalClass::UpdateScrollTarget(v21, v7, v10, v12, v15, 0); /*0x65b7e8*/
+    return RadSiteClass::Radiate((int)this); /*0x65b7ef*/
   }
   else
   {
-    v18 = (unsigned int)(operator new(0x4Cu));
-    if ( v18 ) /*0x65b788*/
-      v19 = LightSourceClass::Construct(v18, v27, v29, v30, v26, v7, v22, v10, v14); /*0x65b7b2*/
+    v22 = (LightSourceClass *)RA2_OPNEW(0x4Cu); /*0x65b77e*/
+    if ( v22 ) /*0x65b788*/
+      v23 = LightSourceClass::Construct(v22, v31, v33, v34, v30, v7, v10, v12, v15); /*0x65b7b2*/
     else
-      v19 = 0; /*0x65b7b9*/
-    *(unsigned int *)((char *)&this->q088 + 8) = v19; /*0x65b7bb*/
-    v19[13] = 0; /*0x65b7be*/
-    Trigger::EnableOnce(*(unsigned char *)&this->u32_24, 0); /*0x65b7ca*/
-    return RadSiteClass::Radiate(); /*0x65b7d1*/
+      v23 = 0; /*0x65b7b9*/
+    this->u32_24 = v23; /*0x65b7bb*/
+    v23[13] = 0; /*0x65b7be*/
+    Trigger::EnableOnce(*((Trigger **)this + 9), 0); /*0x65b7ca*/
+    return RadSiteClass::Radiate((int)this); /*0x65b7d1*/
   }
 }
 } // namespace gamemd

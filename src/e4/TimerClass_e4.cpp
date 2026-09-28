@@ -26,7 +26,6 @@ int TimerClass::Active()
   }
   return v2 != 0; /*0x4c94a9*/
 }
-}
 // 0x54FE60
 namespace gamemd {
 void * TimerClass::Construct(int a2, int a3, TechnoTypeClass * aP3, int a5, int a6, int a7, int a8, char a9, int a10, int a11, int a12, int a13, char a14, char a15, int a16, int a17)
@@ -100,24 +99,23 @@ signed int TimerClass::GetRemaining()
   signed int result; // eax
   signed int v3; // edi
 
-  result = this->q040; /*0x5cead3*/
+  result = this->q004; /*0x5cead3*/
   if ( result != -1 ) /*0x5cead9*/
   {
-    v3 = this->q018; /*0x5ceadc*/
-    result = Timer::GetTicks() - this->q040; /*0x5ceaec*/
+    v3 = this->u32_18; /*0x5ceadc*/
+    result = Timer::GetTicks() - this->q004; /*0x5ceaec*/
     if ( result >= v3 ) /*0x5ceaf1*/
     {
-      this->q018 = 0; /*0x5ceb04*/
-      this->q040 = -1; /*0x5ceb07*/
+      this->u32_18 = 0; /*0x5ceb04*/
+      this->q004 = -1; /*0x5ceb07*/
     }
     else
     {
-      this->q040 = -1; /*0x5ceaf5*/
-      this->q018 = v3 - result; /*0x5ceafc*/
+      this->q004 = -1; /*0x5ceaf5*/
+      this->u32_18 = v3 - result; /*0x5ceafc*/
     }
   }
   return result; /*0x5ceb00*/
-}
 }
 // 0x5CEB20
 namespace gamemd {

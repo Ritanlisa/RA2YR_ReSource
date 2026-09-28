@@ -12,6 +12,13 @@
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Power_e4.hpp"
+#include "e4/classes/CCFileClass_e4.hpp"
+#include "e4/classes/FactoryClass_e4.hpp"
+#include "e4/classes/FileClass_e4.hpp"
+#include "e4/classes/FilePipe_38_e4.hpp"
+#include "e4/classes/DynamicVector_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x7D7C31
 namespace gamemd {

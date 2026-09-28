@@ -102,7 +102,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   int64_t v83; // [esp+50h] [ebp-10h]
 
   v2 = (int)((unsigned int *)(10 * a2));
-  v3 = (unsigned int *)(operator new(80 * a2));
+  v3 = (unsigned int *)(RA2_OPNEW(80 * a2));
   if ( v3 ) /*0x5a5384*/
   {
     v4 = (unsigned int)(v3);
@@ -113,15 +113,15 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
     v4 = 0; /*0x5a5391*/
   }
   v79 = v4; /*0x5a5395*/
-  v5 = (int *)operator new(0x14u); /*0x5a5399*/
+  v5 = (int *)RA2_OPNEW(0x14u); /*0x5a5399*/
   v6 = v5; /*0x5a539e*/
   if ( v5 ) /*0x5a53a5*/
   {
     v5[3] = (int)(0);
-    v5[4] = (int)(-1);
-    *v5 = (int)(0);
-    v5[1] = (int)(v2);
-    v7 = operator new(4 * v2 + 4); /*0x5a53be*/
+    v5[4] = -1; /*0x5a53b2*/
+    *v5 = 0; /*0x5a53b9*/
+    v5[1] = v2; /*0x5a53bb*/
+    v7 = RA2_OPNEW(4 * v2 + 4); /*0x5a53be*/
     v8 = v6[1]; /*0x5a53c3*/
     v6[2] = (int)v7; /*0x5a53c6*/
     v9 = 0; /*0x5a53cc*/
@@ -171,7 +171,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   {
     for ( ; v15 > 1; v16 >>= 1 ) /*0x5a5499*/
     {
-      v17 = (unsigned int)(v6[2]);
+      v17 = v6[2]; /*0x5a549b*/
       v18 = *(unsigned int *)(v17 + 4 * v16); /*0x5a549e*/
       if ( *(float *)(v18 + 4) <= (double)*(float *)&v80 ) /*0x5a54ad*/
         break; /*0x5a54ad*/
@@ -197,20 +197,21 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
   }
   else
   {
-    v20 = (unsigned short *)(0);
+    v20 = 0; /*0x5a54e0*/
   }
   v74 = (unsigned int *)(v20);
-  v23 = (unsigned int *)(operator new(0x18u));
+  v23 = (unsigned int *)(RA2_OPNEW(0x18u));
   v24 = v23; /*0x5a5517*/
   if ( v23 ) /*0x5a551e*/
   {
     VectorClass::CellConstructor(v23, 0, 0); /*0x5a5526*/
+    *(void **)v24 = (void*)&DynamicVectorClass_Cell_vftable; /*0x5a552b*/
     v24[5] = 10; /*0x5a5531*/
     v24[4] = 0; /*0x5a5538*/
   }
   else
   {
-    v24 = (unsigned int)(0);
+    v24 = 0; /*0x5a5541*/
   }
   IDA_LODWORD(v78) = v24; /*0x5a5547*/
   v25 = a2 <= 0; /*0x5a554b*/
@@ -353,7 +354,7 @@ unsigned int * Pathfinding::ExpandNode(short * a1, int a2)
     {
       while ( 1 ) /*0x5a5868*/
       {
-        v57 = (unsigned int)(v24[1]);
+        v57 = v24[1]; /*0x5a5868*/
         a2 = 0; /*0x5a586b*/
         a1 = *(int16_t **)(v57 + 4 * v55); /*0x5a5872*/
         do /*0x5a5910*/

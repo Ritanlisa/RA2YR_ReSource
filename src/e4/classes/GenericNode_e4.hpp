@@ -9,7 +9,6 @@ struct GenericNode {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     GenericNode* Previous;  // 0x4
-    GenericNode* q008;  // 0x8
 // --- flat members (END) ---
     GenericNode * sub_40E390(char a2);
 };

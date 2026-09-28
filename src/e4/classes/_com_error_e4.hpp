@@ -5,6 +5,9 @@
 
 namespace gamemd {
 struct _com_error {
+    unsigned int u32_4;
+    unsigned int u32_8;
+    unsigned int u32_C;
     unsigned int q004;
     unsigned int q008;
     unsigned int q00C;

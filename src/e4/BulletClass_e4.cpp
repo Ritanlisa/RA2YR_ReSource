@@ -11,57 +11,62 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/BuildingTypeClass_e4.hpp"
+#include "e4/classes/TechnoTypeClass_e4.hpp"
 
 // 0x466380
 namespace gamemd {
 BulletClass::BulletClass()
 {
-  BulletClass * v2;
+  int v2; // eax
 
-  ObjectClass::ctor(); /*0x466384*/
-  this->q0AC = 0; /*0x466391*/
-  this->q0B0 = 0; /*0x466397*/
-  this->q0B4 = 0; /*0x46639d*/
-  BulletClass::ResetDetonationTimer(&this->q0484); /*0x4663a3*/
-  this->q120 = 0; /*0x4663aa*/
-  this->q104 = 1; /*0x4663b0*/
-  this->CourseLock = 1; /*0x4663b6*/
-  this->Bright = 0; /*0x4663bf*/
-  this->q100 = 0; /*0x4663c5*/
-  this->q108 = 0; /*0x4663cb*/
-  this->q10C = 0; /*0x4663d1*/
-  this->q110 = 0; /*0x4663d7*/
-  this->InheritedColor = -1; /*0x4663dd*/
-  this->q118 = 0; /*0x4663e3*/
-  this->AnimFrame = 0; /*0x4663e9*/
-  this->WeaponType = 0; /*0x4663ef*/
-  this->SourceCoords = 0; /*0x4663f5*/
-  this->q12D = 0; /*0x4663fb*/
-  this->q130 = 0; /*0x466401*/
-  this->NextAnim = -1; /*0x466407*/
-  this->u16_14E = -1; /*0x46640e*/
-  this->q154 = 0; /*0x466419*/
-  this->q158 = 0; /*0x46641f*/
-  this->vtable2.GenerateUniqueID(); /*0x46643f*/
-  this->q134 = 0; /*0x466444*/
-  this->TargetCoords = 0; /*0x46644a*/
-  this->q13C = 0; /*0x466450*/
-  this->q140 = 0; /*0x466456*/
-  this->q144 = 0; /*0x46645c*/
-  this->DamageMultiplier = 0; /*0x466462*/
-  if ( dword_A8ED50 < dword_A8ED48 /*0x46649b*/
-    || (byte_A8ED4D || !dword_A8ED48)
-    && dword_A8ED54 > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(BulletClass_Array + 8))(
-         &BulletClass_Array,
-         dword_A8ED48 + dword_A8ED54,
+  ObjectClass::ctor((ObjectClass *)this); /*0x466384*/
+  this->BulletClass_field_0xAC = 0; /*0x466391*/
+  this->BulletClass_field_0xB0 = 0; /*0x466397*/
+  this->__pad_B4[0] = 0; /*0x46639d*/
+  BulletClass::ResetDetonationTimer((BulletClass *)&this->__pad_B4[4]); /*0x4663a3*/
+  *(unsigned int *)&this->__pad_110[16] = 0; /*0x4663aa*/
+  this->__pad_B4[80] = (unsigned int)(1);
+  this->__pad_B4[81] = (unsigned int)(1);
+  this->__pad_B4[44] = (unsigned int)(0);
+  *(unsigned int *)&this->__pad_B4[76] = 0; /*0x4663c5*/
+  *(unsigned int *)&this->__pad_B4[84] = 0; /*0x4663cb*/
+  this->BulletClass_field_0x10C = 0; /*0x4663d1*/
+  *(unsigned int *)this->__pad_110 = 0; /*0x4663d7*/
+  *(unsigned int *)&this->__pad_110[4] = -1; /*0x4663dd*/
+  *(unsigned int *)&this->__pad_110[8] = 0; /*0x4663e3*/
+  *(unsigned int *)&this->__pad_110[20] = 0; /*0x4663e9*/
+  *(unsigned int *)&this->__pad_110[24] = 0; /*0x4663ef*/
+  this->__pad_110[28] = 0; /*0x4663f5*/
+  this->__pad_110[29] = 0; /*0x4663fb*/
+  this->BulletClass_field_0x130 = 0; /*0x466401*/
+  *(unsigned short *)&this->__pad_144[8] = -1; /*0x466407*/
+  *(unsigned short *)&this->__pad_144[10] = -1; /*0x46640e*/
+  this->BulletClass_field_0x154 = 0; /*0x466419*/
+  this->__pad_158[0] = 0; /*0x46641f*/
+  *(unsigned int *)this->__pad_0 = (void*)&BulletClass_vftable; /*0x466425*/
+  this->BulletClass_field_0x4 = (void*)&BulletClass_vftable; /*0x46642b*/
+  this->BulletClass_field_0x8 = (void*)&BulletClass_vftable; /*0x466431*/
+  *(unsigned int *)this->__pad_C = (void*)&BulletClass_vftable; /*0x466438*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->BulletClass_field_0x4); /*0x46643f*/
+  *(unsigned int *)this->__pad_134 = 0; /*0x466444*/
+  *(unsigned int *)&this->__pad_134[4] = 0; /*0x46644a*/
+  *(unsigned int *)&this->__pad_134[8] = 0; /*0x466450*/
+  this->BulletClass_field_0x140 = 0; /*0x466456*/
+  *(unsigned int *)this->__pad_144 = 0; /*0x46645c*/
+  *(unsigned int *)&this->__pad_144[4] = 0; /*0x466462*/
+  if ( *(int *)&stru_A8EB00.gapE4[364] < *(int *)&stru_A8EB00.gapE4[356] /*0x46649b*/
+    || (stru_A8EB00.gapE4[361] || !*(unsigned int *)&stru_A8EB00.gapE4[356])
+    && *(int *)&stru_A8EB00.gapE4[368] > 0
+    && (*(uint8_t (__thiscall **)(unsigned char *, int, unsigned int))(*(unsigned int *)&stru_A8EB00.gapE4[348] + 8))(
+         &stru_A8EB00.gapE4[348],
+         *(unsigned int *)&stru_A8EB00.gapE4[356] + *(unsigned int *)&stru_A8EB00.gapE4[368],
          0) )
   {
-    v2 = (gamemd::BulletClass *)(dword_A8ED50++);
-    *((unsigned int *)dword_A8ED44 + v2) = this; /*0x4664b7*/
+    v2 = (*(unsigned int *)&stru_A8EB00.gapE4[364])++; /*0x4664a8*/
+    *(unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[352] + 4 * v2) = this; /*0x4664b7*/
   }
-  return this; /*0x4664bc*/
-}
+  return (int)this->__pad_0; /*0x4664bc*/
 }
 // 0x466560
 namespace gamemd {
@@ -69,39 +74,52 @@ BulletClass * * BulletClass::Dtor()
 {
   int v2; // eax
   int v3; // eax
-  void *this; // [esp+4h] [ebp-4h] BYREF
+  BulletClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  AbstractClass::AnnounceExpiredPointer(1); /*0x466581*/
-  if ( this->q158 ) /*0x466586*/
+  *(unsigned int *)this->__pad_0 = (void*)&BulletClass_vftable; /*0x466566*/
+  this->BulletClass_field_0x4 = (void*)&BulletClass_vftable; /*0x46656c*/
+  this->BulletClass_field_0x8 = (void*)&BulletClass_vftable; /*0x466573*/
+  *(unsigned int *)this->__pad_C = (void*)&BulletClass_vftable; /*0x46657a*/
+  AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x466581*/
+  if ( this->__pad_158[0] ) /*0x466586*/
   {
-    v2 = (*(int (__thiscall **)(int *, void **))(g_BuildingInstanceCount + 16))(&g_BuildingInstanceCount, &this); /*0x4665a4*/
-    if ( v2 != -1 && v2 < g_BuildingTypeInstanceCount && v2 < --g_BuildingTypeInstanceCount ) /*0x4665bf*/
+    v5 = this; /*0x4665a0*/
+    v2 = (*(int (__thiscall **)(int *, BulletClass **))(g_BuildingLoadQueue_Array.ForbiddenHouses[0] + 16))( /*0x4665a4*/
+           g_BuildingLoadQueue_Array.ForbiddenHouses,
+           &v5);
+    if ( v2 != -1 && v2 < g_BuildingLoadQueue_Array.SecondSpawnOffset[1] ) /*0x4665b4*/
     {
-      do /*0x4665d7*/
+      --g_BuildingLoadQueue_Array.SecondSpawnOffset[1]; /*0x4665b9*/
+      for ( ; /*0x4665bf*/
+            v2 < g_BuildingLoadQueue_Array.SecondSpawnOffset[1];
+            *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0] + 4 * v2 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0]
+                                                                                            + 4 * v2) )
       {
         ++v2; /*0x4665c7*/
-        *((unsigned int *)g_BuildingClassPoolManager + v2 - 1) = *((unsigned int *)g_BuildingClassPoolManager + v2); /*0x4665cb*/
       }
-      while ( v2 < g_BuildingTypeInstanceCount ); /*0x4665d7*/
     }
   }
-  if ( g_WTFMode ) /*0x4665e0*/
-    ObjectClass::Undeploy(); /*0x4665e4*/
-  this->q0AC = 0; /*0x4665e9*/
-  this->q0B0 = 0; /*0x4665f3*/
-  this->q154 = 0; /*0x4665fd*/
-  v3 = (*(int (__thiscall **)(int *, void **))(BulletClass_Array + 16))(&BulletClass_Array, &this); /*0x46661b*/
-  if ( v3 != -1 && v3 < dword_A8ED50 && v3 < --dword_A8ED50 ) /*0x466636*/
+  if ( unk_A8E9A0 ) /*0x4665e0*/
+    ObjectClass::Undeploy((ObjectClass *)this); /*0x4665e4*/
+  this->BulletClass_field_0xAC = 0; /*0x4665e9*/
+  this->BulletClass_field_0xB0 = 0; /*0x4665f3*/
+  this->BulletClass_field_0x154 = 0; /*0x4665fd*/
+  v5 = this; /*0x466617*/
+  v3 = (*(int (__thiscall **)(unsigned char *, BulletClass **))(*(unsigned int *)&stru_A8EB00.gapE4[348] + 16))( /*0x46661b*/
+         &stru_A8EB00.gapE4[348],
+         &v5);
+  if ( v3 != -1 && v3 < *(int *)&stru_A8EB00.gapE4[364] ) /*0x46662b*/
   {
-    do /*0x46664e*/
+    --*(unsigned int *)&stru_A8EB00.gapE4[364]; /*0x466630*/
+    for ( ; /*0x466636*/
+          v3 < *(int *)&stru_A8EB00.gapE4[364];
+          *(unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[352] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[352]
+                                                                                   + 4 * v3) )
     {
       ++v3; /*0x46663e*/
-      *((unsigned int *)dword_A8ED44 + v3 - 1) = *((unsigned int *)dword_A8ED44 + v3); /*0x466642*/
     }
-    while ( v3 < dword_A8ED50 ); /*0x46664e*/
   }
-  return ObjectClass::Dtor(); /*0x466657*/
-}
+  return ObjectClass::Dtor((ObjectClass *)this); /*0x466657*/
 }
 // 0x466660
 namespace gamemd {
@@ -113,7 +131,7 @@ int * BulletClass::CalculateSpreadAngle(int a1)
     dword_89DDF4 = 2147450879; /*0x46668f*/
     atexit(nullsub_108); /*0x466694*/
   }
-  return (int *)(&dword_89DDF4);
+  return &dword_89DDF4; /*0x4666a2*/
 }
 } // namespace gamemd
 
@@ -121,7 +139,7 @@ int * BulletClass::CalculateSpreadAngle(int a1)
 namespace gamemd {
 int BulletClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x46afc4*/
+  return AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x46afc4*/
 }
 } // namespace gamemd
 
@@ -129,8 +147,8 @@ int BulletClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 namespace gamemd {
 LONG BulletClass::CheckTargetValidity(int a1)
 {
-  ++g_BulletClassPool; /*0x46afdf*/
-  return InterlockedIncrement((volatile LONG *, unsigned int a1)(a1 + 28)); /*0x46afeb*/
+  ++*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x46afdf*/
+  return InterlockedIncrement((volatile LONG *)a1->__pad_1C); /*0x46afeb*/
 }
 } // namespace gamemd
 
@@ -140,10 +158,10 @@ LONG BulletClass::ValidateTarget(volatile LONG * a1)
 {
   LONG v1; // esi
 
-  --g_BulletClassPool; /*0x46b000*/
-  v1 = InterlockedDecrement(a1 + 7); /*0x46b00d*/
+  --*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x46b000*/
+  v1 = InterlockedDecrement((volatile LONG *)a1->__pad_1C); /*0x46b00d*/
   if ( !v1 && a1 ) /*0x46b015*/
-    (*(void (__thiscall **)(volatile LONG *, int))(*a1 + 32))(a1, 1); /*0x46b01d*/
+    (*(void (__thiscall **)(BulletClass *, int))(*(unsigned int *)a1->__pad_0 + 32))(a1, 1); /*0x46b01d*/
   return v1; /*0x46b022*/
 }
 } // namespace gamemd
@@ -173,7 +191,7 @@ int BulletClass::PowerDrainProcess(int a1, unsigned int * a2)
   *a2 = 237448649; /*0x46b576*/
   a2[1] = 298949647; /*0x46b57e*/
   a2[2] = -1610610249; /*0x46b587*/
-  a2[3] = -777003740; /*0x46b590*/
+  a2[3] = unk_7E96EC; /*0x46b590*/
   return 0; /*0x46b56d*/
 }
 } // namespace gamemd

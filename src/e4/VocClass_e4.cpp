@@ -13,48 +13,49 @@
 namespace gamemd {
 int VocClass::Release()
 {
-  void * v2;
+  Voice *v1; // ebp
+  VocClass **pVoiceChannel; // ecx
   int result; // eax
-  int v4; // ebx
-  unsigned int **v5; // edi
+  int v5; // ebx
+  RefCount **v6; // edi
 
-  if ( (this->Volume & 1) == 0 ) /*0x4052f7*/
+  if ( (this->Volume[0] & 1) == 0 ) /*0x4052f7*/
   {
-    v2 = this->pVoiceChannel; /*0x4052fd*/
-    if ( v2 && this == *(unsigned int *)(v2 + 192) ) /*0x405311*/
+    pVoiceChannel = (VocClass **)this->pVoiceChannel; /*0x4052fd*/
+    if ( pVoiceChannel && this == pVoiceChannel[48] ) /*0x405311*/
     {
-      if ( (this->Volume & 2) != 0 ) /*0x405317*/
-        Voice::Stop(v2); /*0x405319*/
-      AudioStream::ReleaseChannel(*(unsigned int **)(&this->VocClass_field_446)); /*0x405324*/
-      *(unsigned int *)(this->pVoiceChannel + 192) = 0; /*0x40532f*/
-      *(unsigned int *)(this->pVoiceChannel + 188) = 0; /*0x40533b*/
-      *(unsigned int *)(this->pVoiceChannel + 180) = 0; /*0x405347*/
-      *(unsigned int *)(this->pVoiceChannel + 184) = 0; /*0x405353*/
-      *(unsigned int *)(this->pVoiceChannel + 144) = 0; /*0x40535f*/
-      *(unsigned int *)(this->pVoiceChannel + 152) = 0; /*0x40536b*/
-      *(unsigned int *)(this->pVoiceChannel + 156) = 0; /*0x405377*/
+      if ( (this->Volume[0] & 2) != 0 ) /*0x405317*/
+        Voice::Stop(v1); /*0x405319*/
+      AudioStream::ReleaseChannel((AudioStream *)this->pVoiceChannel); /*0x405324*/
+      *((unsigned int *)this->pVoiceChannel + 48) = 0; /*0x40532f*/
+      *((unsigned int *)this->pVoiceChannel + 47) = 0; /*0x40533b*/
+      *((unsigned int *)this->pVoiceChannel + 45) = 0; /*0x405347*/
+      *((unsigned int *)this->pVoiceChannel + 46) = 0; /*0x405353*/
+      *((unsigned int *)this->pVoiceChannel + 36) = 0; /*0x40535f*/
+      *((unsigned int *)this->pVoiceChannel + 38) = 0; /*0x40536b*/
+      *((unsigned int *)this->pVoiceChannel + 39) = 0; /*0x405377*/
       this->pVoiceChannel = 0; /*0x40537d*/
     }
     result = this->ActiveBufferCount; /*0x405383*/
-    v4 = 0; /*0x405389*/
+    v5 = 0; /*0x405389*/
     if ( result > 0 ) /*0x40538d*/
     {
-      v5 = (unsigned int **)(&this->u32_100); /*0x405390*/
+      v6 = (RefCount **)&this->Volume[4]; /*0x405390*/
       do /*0x4053a8*/
       {
-        RefCount::Decrement(*v5); /*0x405395*/
-        *v5 = 0; /*0x40539a*/
+        RefCount::Decrement(*v6); /*0x405395*/
+        *v6 = 0; /*0x40539a*/
         result = this->ActiveBufferCount; /*0x40539c*/
-        ++v4; /*0x4053a2*/
-        ++v5; /*0x4053a3*/
+        ++v5; /*0x4053a2*/
+        ++v6; /*0x4053a3*/
       }
-      while ( v4 < result ); /*0x4053a8*/
+      while ( v5 < result ); /*0x4053a8*/
     }
     this->ActiveBufferCount = 0; /*0x4053ab*/
-    this->u32_1C = 4; /*0x4053b1*/
+    this->Volume[1] = 4; /*0x4053b1*/
     this->Attack = 0; /*0x4053b8*/
     this->u32_278 = 0; /*0x4053be*/
-    this->Volume |= 1u; /*0x4053ca*/
+    this->Volume[0] |= 1u; /*0x4053ca*/
   }
   return result; /*0x4053cf*/
 }
@@ -85,7 +86,7 @@ int VocClass::FindByName()
   v3 = 0; /*0x753262*/
   if ( g_InfantrySelectState <= 0 ) /*0x753266*/
     return -1; /*0x753288*/
-  while ( _strcmpi(this, *((const void **)g_InfantryRenderPool + v3)) ) /*0x75327c*/
+  while ( _strcmpi((char *)this, *((char **)g_InfantryRenderPool + v3)) ) /*0x75327c*/
   {
     if ( ++v3 >= g_InfantrySelectState ) /*0x753286*/
       return -1; /*0x753286*/

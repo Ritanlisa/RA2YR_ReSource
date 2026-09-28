@@ -15,56 +15,57 @@ namespace gamemd {
 HWND E4Recv_696AE0::sub_696AE0()
 {
   HWND DlgItem; // edi
-  HWND result; // eax
-  char *v5; // esi
+  int result; // eax
+  HWND v4; // ebp
+  char *p_vtable2; // esi
   LRESULT v6; // edi
-  char * v7;
+  int v7; // eax
   char *v8; // [esp+10h] [ebp-8h]
 
-  DlgItem = GetDlgItem(*(HWND *)this, 1629); /*0x696b05*/
-  result = GetDlgItem(*(HWND *)this, 1630); /*0x696b07*/
-  result = result; /*0x696b0b*/
+  DlgItem = GetDlgItem((HWND)this->vtable0, 1629); /*0x696b05*/
+  result = (int)GetDlgItem((HWND)this->vtable0, 1630); /*0x696b07*/
+  v4 = (HWND)result; /*0x696b0b*/
   if ( DlgItem ) /*0x696b0d*/
   {
     if ( result ) /*0x696b15*/
     {
-      v5 = (char *)((char *)&this->vfptr + 32); /*0x696b21*/
-      SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)v5); /*0x696b30*/
+      p_vtable2 = (char *)&this->vtable2; /*0x696b21*/
+      SendMessageA(DlgItem, 0x4B5u, 0x80u, (LPARAM)p_vtable2); /*0x696b30*/
       SendMessageA(DlgItem, 0x4B4u, 0, (LPARAM)&g_INI_DefaultBuffer); /*0x696b3f*/
-      String::Trim(v5); /*0x696b43*/
+      String::Trim(p_vtable2); /*0x696b43*/
       result = 0; /*0x696b4d*/
-      if ( strlen(v5) ) /*0x696b4f*/
+      if ( strlen(p_vtable2) ) /*0x696b4f*/
       {
-        _strupr(v5); /*0x696b5b*/
-        v6 = SendMessageA(result, 0x4C4u, 0xFFFFFFFF, (LPARAM)v5); /*0x696b6e*/
+        _strupr(p_vtable2); /*0x696b5b*/
+        v6 = SendMessageA(v4, 0x4C4u, 0xFFFFFFFF, (LPARAM)p_vtable2); /*0x696b6e*/
         if ( v6 == -1 ) /*0x696b73*/
         {
-          v8 = (char *)operator new(0x29u); /*0x696b8c*/
-          strcpy(v8, v5); /*0x696ba2*/
-          result = (HWND)SendMessageA(result, 0x4C8u, 0, (LPARAM)v8); /*0x696bb1*/
-          v6 = (LRESULT)result; /*0x696bb3*/
-          if ( result == HWND_MESSAGE|0x2 ) /*0x696bb8*/
+          v8 = (char *)((HWND)((char *)RA2_OPNEW(0x29u)));
+          strcpy(v8, p_vtable2); /*0x696ba2*/
+          result = SendMessageA(v4, 0x4C8u, 0, (LPARAM)v8); /*0x696bb1*/
+          v6 = result; /*0x696bb3*/
+          if ( result == -1 ) /*0x696bb8*/
             return result; /*0x696bb8*/
           if ( dword_A8DB5C < dword_A8DB54 /*0x696bf1*/
-            || (byte_A8DB59 || !dword_A8DB54)
-            && dword_A8DB60 > 0
-            && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A8DB4C + 8))(
+            || (unk_A8DB59 || !dword_A8DB54)
+            && unk_A8DB60 > 0
+            && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(dword_A8DB4C + 8))(
                  &dword_A8DB4C,
-                 dword_A8DB54 + dword_A8DB60,
+                 dword_A8DB54 + unk_A8DB60,
                  0) )
           {
-            v7 = (char *)(dword_A8DB5C++);
-            *(unsigned int *)(dword_A8DB50 + 4 * v7) = v8; /*0x696c11*/
+            v7 = (unsigned int)(dword_A8DB5C++);
+            *(unsigned int *)(unk_A8DB50 + 4 * v7) = v8; /*0x696c11*/
           }
         }
-        SendMessageA(result, 0x186u, v6, 0); /*0x696c1d*/
-        SendMessageA(result, 0x197u, v6, 0); /*0x696c28*/
-        this->M152 = v6; /*0x696c2e*/
-        return (HWND)this; /*0x696c2a*/
+        SendMessageA(v4, 0x186u, v6, 0); /*0x696c1d*/
+        SendMessageA(v4, 0x197u, v6, 0); /*0x696c28*/
+        this->isInLogic = (unsigned int)(v6); /*0x696c2e*/
+        return (int)this; /*0x696c2a*/
       }
     }
   }
-  return result; /*0x696c34*/
+  return (HWND)(result);
 }
 } // namespace gamemd
 
@@ -72,23 +73,23 @@ HWND E4Recv_696AE0::sub_696AE0()
 namespace gamemd {
 HWND E4Recv_696C40::sub_696C40()
 {
-  HWND result; // eax
+  int result; // eax
   HWND v3; // edi
   LRESULT v4; // esi
   int v5; // eax
 
-  result = GetDlgItem(*(HWND *)this, 1630); /*0x696c4f*/
-  v3 = result; /*0x696c55*/
+  result = (int)GetDlgItem((HWND)this->vtable0, 1630); /*0x696c4f*/
+  v3 = (HWND)result; /*0x696c55*/
   if ( result ) /*0x696c59*/
   {
-    result = (HWND)SendMessageA(result, 0x18Bu, 0, 0); /*0x696c6f*/
-    if ( (int)result > 0 ) /*0x696c73*/
+    result = SendMessageA((HWND)result, 0x18Bu, 0, 0); /*0x696c6f*/
+    if ( result > 0 ) /*0x696c73*/
     {
-      result = (HWND)SendMessageA(v3, 0x188u, 0, 0); /*0x696c7f*/
-      v4 = (LRESULT)result; /*0x696c81*/
-      if ( result != HWND_MESSAGE|0x2 ) /*0x696c86*/
+      result = SendMessageA(v3, 0x188u, 0, 0); /*0x696c7f*/
+      v4 = result; /*0x696c81*/
+      if ( result != -1 ) /*0x696c86*/
       {
-        SendMessageA(v3, 0x182u, (WPARAM)result, 0); /*0x696c91*/
+        SendMessageA(v3, 0x182u, result, 0); /*0x696c91*/
         if ( v4 < dword_A8DB5C ) /*0x696c9b*/
         {
           v5 = v4; /*0x696c9e*/
@@ -97,7 +98,7 @@ HWND E4Recv_696C40::sub_696C40()
             do /*0x696cc0*/
             {
               ++v5; /*0x696cb0*/
-              *(unsigned int *)(dword_A8DB50 + 4 * v5 - 4) = *(unsigned int *)(dword_A8DB50 + 4 * v5); /*0x696cb4*/
+              *(unsigned int *)(unk_A8DB50 + 4 * v5 - 4) = *(unsigned int *)(unk_A8DB50 + 4 * v5); /*0x696cb4*/
             }
             while ( v5 < dword_A8DB5C ); /*0x696cc0*/
           }
@@ -105,11 +106,11 @@ HWND E4Recv_696C40::sub_696C40()
         if ( v4 >= SendMessageA(v3, 0x18Bu, 0, 0) ) /*0x696cd0*/
           --v4; /*0x696cd2*/
         SendMessageA(v3, 0x186u, v4, 0); /*0x696cdc*/
-        result = (HWND)SendMessageA(v3, 0x197u, v4, 0); /*0x696ce7*/
-        *(unsigned int *)((char *)&this->q152 + 270) = v4; /*0x696ce9*/
+        result = SendMessageA(v3, 0x197u, v4, 0); /*0x696ce7*/
+        this->isInLogic = (unsigned int)(v4); /*0x696ce9*/
       }
     }
   }
-  return result; /*0x696cef*/
+  return (HWND)(result);
 }
 } // namespace gamemd

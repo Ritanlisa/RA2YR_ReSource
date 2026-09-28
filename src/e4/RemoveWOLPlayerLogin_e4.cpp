@@ -10,56 +10,57 @@
 namespace gamemd {
 void E4Recv_7AE830::sub_7AE830()
 {
-  unsigned int v2; // esi
-  int *v3; // ebp
-  int v4; // edi
+  unsigned int vtable2; // esi
+  int *vtable0; // ebp
+  char *vtable3; // edi
   void *v5; // edi
   unsigned int v6; // edx
+  int *v7; // edi
+  unsigned int v8; // ebp
   int v9; // esi
   int v10; // edx
   int v11; // ecx
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  v2 = v5->vtable3; /*0x7ae835*/
-  if ( v2 > v5->u32_30 && *((unsigned char *)v5 + 20) != 1 ) /*0x7ae847*/
+  vtable2 = (unsigned int)this->vtable2; /*0x7ae835*/
+  if ( (ObjectClass *)vtable2 > this->nextObject && IDA_LOBYTE(this->abstractFlags) != 1 ) /*0x7ae847*/
   {
-    v3 = (int *)*v5; /*0x7ae850*/
-    v4 = v5->vtable4; /*0x7ae853*/
-    v13 = (int *)*v5; /*0x7ae856*/
-    v5->vtable3 = v2 >> 1; /*0x7ae85c*/
-    v5->vtable4 = v4 - 1; /*0x7ae864*/
-    v5 = operator new(4 * (v2 >> 1)); /*0x7ae86f*/
-    v6 = 4 * v5->vtable3; /*0x7ae874*/
-    *v5 = v5; /*0x7ae87b*/
+    vtable0 = (int *)((unsigned int)((int *)this->vtable0));
+    vtable3 = (unsigned int)((char *)this->vtable3);
+    v13 = (int *)this->vtable0; /*0x7ae856*/
+    this->vtable2 = (void *)(vtable2 >> 1); /*0x7ae85c*/
+    this->vtable3 = vtable3 - 1; /*0x7ae864*/
+    v5 = (void *)RA2_OPNEW(4 * (vtable2 >> 1)); /*0x7ae86f*/
+    v6 = 4 * (int)this->vtable2; /*0x7ae874*/
+    this->vtable0 = v5; /*0x7ae87b*/
     memset(v5, 0, v6); /*0x7ae880*/
-    if ( (int)v2 > 0 ) /*0x7ae88b*/
+    if ( (int)vtable2 > 0 ) /*0x7ae88b*/
     {
-      v3 = v3; /*0x7ae88d*/
-      v2 = v2; /*0x7ae88f*/
+      v7 = vtable0; /*0x7ae88d*/
+      v8 = vtable2; /*0x7ae88f*/
       do /*0x7ae8c3*/
       {
-        v9 = *v3; /*0x7ae891*/
-        if ( *v3 ) /*0x7ae891*/
+        v9 = *v7; /*0x7ae891*/
+        if ( *v7 ) /*0x7ae891*/
         {
           do /*0x7ae8bd*/
           {
-            v10 = ((int (__thiscall *)(int))v5->nextArrayIndex)(v9) & ((1 << v5->vtable4) - 1); /*0x7ae8a7*/
-            v11 = *(unsigned int *)(*v5 + 4 * v10); /*0x7ae8ab*/
-            *(unsigned int *)(*v5 + 4 * v10) = v9; /*0x7ae8b1*/
+            v10 = ((int (__thiscall *)(int))this->nextArrayIndex)(v9) & ((1 << (int)this->vtable3) - 1); /*0x7ae8a7*/
+            v11 = *((unsigned int *)this->vtable0 + v10); /*0x7ae8ab*/
+            *((unsigned int *)this->vtable0 + v10) = v9; /*0x7ae8b1*/
             v12 = *(unsigned int *)(v9 + 8); /*0x7ae8b3*/
             *(unsigned int *)(v9 + 8) = v11; /*0x7ae8b6*/
             v9 = v12; /*0x7ae8b9*/
           }
           while ( v12 ); /*0x7ae8bd*/
         }
-        ++v3; /*0x7ae8bf*/
-        --v2; /*0x7ae8c2*/
+        ++v7; /*0x7ae8bf*/
+        --v8; /*0x7ae8c2*/
       }
-      while ( v2 ); /*0x7ae8c3*/
-      v3 = v13; /*0x7ae8c5*/
+      while ( v8 ); /*0x7ae8c3*/
+      vtable0 = v13; /*0x7ae8c5*/
     }
-    RA2_OPDEL(v3); /*0x7ae8ca*/
+    RA2_OPDEL(vtable0); /*0x7ae8ca*/
   }
-}
 }

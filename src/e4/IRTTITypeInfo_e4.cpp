@@ -11,7 +11,7 @@
 namespace gamemd {
 unsigned int IRTTITypeInfo::GetOffset()
 {
-  return (unsigned int)(this->q0C8);
+  return *(unsigned int *)&this->__pad_C0[8]; /*0x71d156*/
 }
 } // namespace ra2
 
@@ -19,7 +19,9 @@ unsigned int IRTTITypeInfo::GetOffset()
 namespace gamemd {
 int IRTTITypeInfo::QueryInterface(int a1, const void * a2, unsigned int * a3)
 {
-  return AbstractClass::QueryInterface(a1 - 4, a2, a3);
+  AbstractClass *v3; // ecx
+
+  return AbstractClass::QueryInterface(v3);
 }
 } // namespace gamemd
 

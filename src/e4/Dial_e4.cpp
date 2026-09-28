@@ -237,7 +237,6 @@ int Dial8Class_48::FindItem(unsigned int * a2)
   }
   return result; /*0x4a7fd2*/
 }
-}
 // 0x4A8030
 namespace gamemd {
 VectorClass_flat * Dial8Class_48::QueryInterface(char a2)
@@ -245,15 +244,16 @@ VectorClass_flat * Dial8Class_48::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x4a8033*/
+  *(void **)this = (void*)&VectorClass_DiskLaserClass___vftable; /*0x4a8036*/
   if ( v3 && this->IsAllocated ) /*0x4a8040*/
   {
     RA2_OPDEL(v3); /*0x4a8048*/
     this->q004 = 0; /*0x4a8050*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
+  this->IsAllocated = 0; /*0x4a805b*/
+  this->q008 = 0; /*0x4a8061*/
   if ( (a2 & 1) != 0 ) /*0x4a8068*/
-    RA2_OPDEL(); /*0x4a806b*/
+    RA2_OPDEL(this); /*0x4a806b*/
   return this; /*0x4a8075*/
 }
 } // namespace gamemd
@@ -265,15 +265,16 @@ DynamicVector * Dial8Class_48::Constructor_VectorClass_DiskLaserClass___(char a2
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x4a8083*/
+  *(void **)this = (void*)&VectorClass_DiskLaserClass___vftable; /*0x4a8086*/
   if ( v3 && this->IsAllocated ) /*0x4a8090*/
   {
     RA2_OPDEL(v3); /*0x4a8098*/
     this->q004 = 0; /*0x4a80a0*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = (int)((gamemd::DynamicVector *)(0));
+  this->IsAllocated = 0; /*0x4a80ab*/
+  this->q008 = 0; /*0x4a80b1*/
   if ( (a2 & 1) != 0 ) /*0x4a80b8*/
-    RA2_OPDEL(); /*0x4a80bb*/
+    RA2_OPDEL(this); /*0x4a80bb*/
   return this; /*0x4a80c5*/
 }
 } // namespace gamemd

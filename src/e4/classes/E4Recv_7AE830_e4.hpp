@@ -29,6 +29,12 @@ struct E4Recv_7AE830 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
+    unsigned int abstractFlags;
+    unsigned int nextArrayIndex;
+    unsigned int nextObject;
+    unsigned int vtable0;
+    unsigned int vtable2;
+    unsigned int vtable3;
 // --- flat members (END) ---
     int Vf4(int,  ...);    // G6 vtable slot dispatch
     void sub_7AE830();  // 0x7AE830

@@ -35,6 +35,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
         do /*0x76baf5*/
         {
           ComPtr::Constructor(v8); /*0x76bae6*/
+          *(void **)v8 = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76baeb*/
           v8 += 2; /*0x76baf1*/
           --a2; /*0x76baf4*/
         }
@@ -45,7 +46,7 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
     }
     else
     {
-      v5 = (unsigned int *)(operator new(8 * a2 + 4));
+      v5 = (unsigned int *)(RA2_OPNEW(8 * a2 + 4));
       if ( v5 ) /*0x76baa1*/
       {
         *v5 = a2; /*0x76baa3*/
@@ -99,7 +100,6 @@ AbstractClass * * WDTState_4::Release(int a2, unsigned int * a3)
     this->q010 = v12; /*0x76bb76*/
   return 1; /*0x76bb79*/
 }
-}
 // 0x76B710
 namespace gamemd {
 int WDTState_4::ddtor()
@@ -150,7 +150,6 @@ int WDTState_4::Read(int a2)
   }
   return result; /*0x76bbb6*/
 }
-}
 // 0x76BC10
 namespace gamemd {
 DynamicVector * WDTState_4::QueryInterface(char a2)
@@ -158,15 +157,16 @@ DynamicVector * WDTState_4::QueryInterface(char a2)
   void (__thiscall ***v3)(unsigned int, int); // ecx
 
   v3 = (void (__thiscall ***)(unsigned int, int))this->Items; /*0x76bc13*/
+  *(void **)this = (void*)&VectorClass_rc_ptr_WDTTerritory_vftable; /*0x76bc16*/
   if ( v3 && this->IsAllocated ) /*0x76bc20*/
   {
     (**v3)(v3, 3); /*0x76bc2f*/
     this->Items = 0; /*0x76bc31*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = (unsigned int)((gamemd::DynamicVector *)(0));
+  this->IsAllocated = 0; /*0x76bc3c*/
+  this->q008 = 0; /*0x76bc42*/
   if ( (a2 & 1) != 0 ) /*0x76bc49*/
-    RA2_OPDEL(); /*0x76bc4c*/
+    RA2_OPDEL(this); /*0x76bc4c*/
   return this; /*0x76bc56*/
 }
 } // namespace gamemd
@@ -175,7 +175,8 @@ DynamicVector * WDTState_4::QueryInterface(char a2)
 namespace gamemd {
 unsigned int * WDTState_4::Constructor()
 {
-  ComPtr::Constructor(); /*0x76bc63*/
+  ComPtr::Constructor(this); /*0x76bc63*/
+  *(void **)this = (void*)&rc_ptr_WDTTerritory_vftable; /*0x76bc68*/
   return this; /*0x76bc70*/
 }
 } // namespace gamemd

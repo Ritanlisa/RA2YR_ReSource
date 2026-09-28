@@ -7,375 +7,67 @@ namespace gamemd {
 struct Power {
 // --- flat members (BEGIN) ---
     unsigned int q000;  // 0x0
-    unsigned int q004;  // 0x4
-    unsigned int q008;  // 0x8
+    unsigned int ;  // 0x4
+    unsigned int ;  // 0x8
     void* q00C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    void* q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    void* q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned int u32_E4;  // 0xE4
-    unsigned int u32_E8;  // 0xE8
-    unsigned char q0EC;  // 0xEC
-    unsigned int u32_268;  // 0x268
-    unsigned int u32_26C;  // 0x26C
-    unsigned int u32_270;  // 0x270
-    unsigned char q274;  // 0x274
-    unsigned char q278;  // 0x278
-    unsigned char q27C;  // 0x27C
-    unsigned char q2A4;  // 0x2A4
-    unsigned char q2A8;  // 0x2A8
-    unsigned int u32_60C;  // 0x60C
-    unsigned int u32_610;  // 0x610
-    unsigned int u32_614;  // 0x614
-    unsigned char q618;  // 0x618
-    unsigned int u32_61C;  // 0x61C
-    unsigned int q620;  // 0x620
-    unsigned int q624;  // 0x624
-    unsigned char q628;  // 0x628
-    unsigned char q62C;  // 0x62C
-    unsigned int u32_728;  // 0x728
-    unsigned int u32_72C;  // 0x72C
-    unsigned char q730;  // 0x730
-    unsigned char q734;  // 0x734
-    unsigned int u32_73C;  // 0x73C
-    unsigned int u32_740;  // 0x740
-    unsigned int u32_744;  // 0x744
-    unsigned int u32_748;  // 0x748
-    unsigned int u32_74C;  // 0x74C
-    unsigned char q750;  // 0x750
-    unsigned int u32_754;  // 0x754
-    unsigned char q758;  // 0x758
-    unsigned char q75C;  // 0x75C
-    unsigned int u32_7E4;  // 0x7E4
-    unsigned char q7E8;  // 0x7E8
-    unsigned char q7EC;  // 0x7EC
-    unsigned int u32_814;  // 0x814
-    unsigned int u32_818;  // 0x818
-    unsigned int u32_81C;  // 0x81C
-    unsigned char q820;  // 0x820
-    unsigned char q824;  // 0x824
-    unsigned char q9C0;  // 0x9C0
-    unsigned char q9C4;  // 0x9C4
-    unsigned char q9CC;  // 0x9CC
-    unsigned char q9D0;  // 0x9D0
-    unsigned int u32_B60;  // 0xB60
-    unsigned int u32_B64;  // 0xB64
-    unsigned int u32_B68;  // 0xB68
-    unsigned char qB6C;  // 0xB6C
-    unsigned char qB70;  // 0xB70
-    unsigned char qB74;  // 0xB74
-    unsigned char qB78;  // 0xB78
-    unsigned char qB7C;  // 0xB7C
-    unsigned int u32_11E8;  // 0x11E8
-    unsigned char q11EC;  // 0x11EC
-    unsigned int u32_11F0;  // 0x11F0
-    unsigned char q11F4;  // 0x11F4
-    unsigned char q11F8;  // 0x11F8
-    unsigned char q11FC;  // 0x11FC
-    unsigned char q1200;  // 0x1200
-    unsigned char q1204;  // 0x1204
-    unsigned int u32_1218;  // 0x1218
-    unsigned char q121C;  // 0x121C
-    unsigned int u32_1220;  // 0x1220
-    unsigned int u32_1224;  // 0x1224
-    unsigned char q1228;  // 0x1228
-    unsigned int u32_122C;  // 0x122C
-    unsigned int u32_1230;  // 0x1230
-    unsigned char q1234;  // 0x1234
-    unsigned int u32_1238;  // 0x1238
-    unsigned int u32_123C;  // 0x123C
-    unsigned char q1240;  // 0x1240
-    unsigned int u32_1244;  // 0x1244
-    unsigned char q1248;  // 0x1248
-    unsigned char q124C;  // 0x124C
-    unsigned char q1250;  // 0x1250
-    unsigned char q1254;  // 0x1254
-    unsigned int u32_1258;  // 0x1258
-    unsigned char q125C;  // 0x125C
-    unsigned char q1260;  // 0x1260
-    unsigned char q1264;  // 0x1264
-    unsigned char q1268;  // 0x1268
-    unsigned char q126C;  // 0x126C
-    unsigned int u32_1434;  // 0x1434
-    unsigned int u32_1438;  // 0x1438
-    unsigned int u32_143C;  // 0x143C
-    unsigned int u32_1440;  // 0x1440
-    unsigned int u32_1444;  // 0x1444
-    unsigned int u32_1448;  // 0x1448
-    unsigned int u32_144C;  // 0x144C
-    unsigned char q1450;  // 0x1450
-    unsigned char q1454;  // 0x1454
-    unsigned char q1458;  // 0x1458
-    unsigned char q145C;  // 0x145C
-    unsigned char q1460;  // 0x1460
-    unsigned int u32_150C;  // 0x150C
-    unsigned int u32_1510;  // 0x1510
-    unsigned int u32_1514;  // 0x1514
-    unsigned int u32_1518;  // 0x1518
-    unsigned int u32_151C;  // 0x151C
-    unsigned int u32_1520;  // 0x1520
-    unsigned char q1524;  // 0x1524
-    unsigned char q1528;  // 0x1528
-    unsigned char q152C;  // 0x152C
-    unsigned char q1530;  // 0x1530
-    unsigned char q1534;  // 0x1534
-    unsigned int u32_1540;  // 0x1540
-    unsigned int u32_1544;  // 0x1544
-    unsigned int q1548;  // 0x1548
-    unsigned int u32_154C;  // 0x154C
-    unsigned int u32_1550;  // 0x1550
-    unsigned int u32_1554;  // 0x1554
-    unsigned int q1558;  // 0x1558
-    unsigned char q155C;  // 0x155C
-    unsigned char q1560;  // 0x1560
-    unsigned int q1564;  // 0x1564
-    unsigned char q1568;  // 0x1568
-    unsigned char q156C;  // 0x156C
-    unsigned char q1570;  // 0x1570
-    unsigned char q1574;  // 0x1574
-    unsigned char q1840;  // 0x1840
-    unsigned char q1844;  // 0x1844
-    unsigned char q184C;  // 0x184C
-    unsigned char q1850;  // 0x1850
-    unsigned char q1854;  // 0x1854
-    unsigned int q1860;  // 0x1860
-    unsigned int q1864;  // 0x1864
-    unsigned int q1868;  // 0x1868
-    unsigned char q186C;  // 0x186C
-    unsigned char q1870;  // 0x1870
-    unsigned char q1874;  // 0x1874
-    unsigned char q1880;  // 0x1880
-    unsigned char q1884;  // 0x1884
-    unsigned char q190C;  // 0x190C
-    unsigned char q1910;  // 0x1910
-    unsigned char q1914;  // 0x1914
-    unsigned int u32_1C70;  // 0x1C70
-    unsigned int u32_1C74;  // 0x1C74
-    unsigned int u32_1C78;  // 0x1C78
-    unsigned int u32_1C7C;  // 0x1C7C
-    unsigned int u32_1C80;  // 0x1C80
-    unsigned int u32_1C84;  // 0x1C84
-    unsigned char q1C88;  // 0x1C88
-    unsigned char q1C8C;  // 0x1C8C
-    unsigned char q1C90;  // 0x1C90
-    unsigned char q1C94;  // 0x1C94
-    unsigned char q1C98;  // 0x1C98
-    unsigned int q2020;  // 0x2020
-    unsigned char q2024;  // 0x2024
-    unsigned char q2028;  // 0x2028
-    unsigned char q2050;  // 0x2050
-    unsigned char q2054;  // 0x2054
-    unsigned char q2058;  // 0x2058
-    unsigned char q205C;  // 0x205C
-    unsigned int q2068;  // 0x2068
-    unsigned char q206C;  // 0x206C
-    unsigned char q2070;  // 0x2070
-    unsigned char q2074;  // 0x2074
-    unsigned char q2078;  // 0x2078
-    unsigned char q207C;  // 0x207C
-    unsigned char q2080;  // 0x2080
-    unsigned char q2084;  // 0x2084
-    unsigned char q23C0;  // 0x23C0
-    unsigned char q23C4;  // 0x23C4
-    unsigned char q23C8;  // 0x23C8
-    unsigned char q23CC;  // 0x23CC
-    unsigned char q269C;  // 0x269C
-    unsigned char q26A0;  // 0x26A0
-    unsigned int q2920;  // 0x2920
-    unsigned char q2924;  // 0x2924
-    unsigned char q2928;  // 0x2928
-    unsigned char q292C;  // 0x292C
-    unsigned char q2FA0;  // 0x2FA0
-    unsigned char q2FA4;  // 0x2FA4
-    unsigned char q2FA8;  // 0x2FA8
-    unsigned char q2FAC;  // 0x2FAC
-    unsigned int u32_34A0;  // 0x34A0
-    unsigned char u8_34A4;  // 0x34A4
-    unsigned char u8_34AC;  // 0x34AC
-    unsigned char u8_34AD;  // 0x34AD
-    unsigned char u8_34AE;  // 0x34AE
-    unsigned char u8_34AF;  // 0x34AF
-    unsigned char u8_34B0;  // 0x34B0
-    unsigned char u8_34B1;  // 0x34B1
-    unsigned char u8_34B2;  // 0x34B2
-    unsigned char u8_34B4;  // 0x34B4
-    unsigned char u8_34BC;  // 0x34BC
-    unsigned int u32_34CC;  // 0x34CC
-    unsigned int u32_34D0;  // 0x34D0
-    unsigned char q34D4;  // 0x34D4
-    unsigned char q34D8;  // 0x34D8
-    unsigned char q34DC;  // 0x34DC
-    unsigned char q34E0;  // 0x34E0
-    unsigned char q34E4;  // 0x34E4
-    unsigned int u32_3528;  // 0x3528
-    unsigned int u32_352C;  // 0x352C
-    unsigned int u32_3530;  // 0x3530
-    unsigned char q3534;  // 0x3534
-    unsigned char q3538;  // 0x3538
-    unsigned char q353C;  // 0x353C
-    unsigned int u32_3540;  // 0x3540
-    unsigned int u32_3544;  // 0x3544
-    unsigned int u32_3548;  // 0x3548
-    unsigned int u32_354C;  // 0x354C
-    unsigned int u32_3550;  // 0x3550
-    unsigned int u32_3554;  // 0x3554
-    unsigned int u32_3558;  // 0x3558
-    unsigned int u32_355C;  // 0x355C
-    unsigned char q3560;  // 0x3560
-    unsigned char q3564;  // 0x3564
-    unsigned char q3568;  // 0x3568
-    unsigned char q356C;  // 0x356C
-    unsigned char q3570;  // 0x3570
-    unsigned int q4584;  // 0x4584
-    unsigned char q4588;  // 0x4588
-    unsigned char q458C;  // 0x458C
-    unsigned char q4590;  // 0x4590
-    unsigned char q4594;  // 0x4594
-    unsigned char q4598;  // 0x4598
-    unsigned char q4600;  // 0x4600
-    unsigned char q4604;  // 0x4604
-    unsigned char q4608;  // 0x4608
-    unsigned char q4620;  // 0x4620
-    unsigned char q4624;  // 0x4624
-    unsigned char q4628;  // 0x4628
-    unsigned int q4640;  // 0x4640
-    unsigned int q4644;  // 0x4644
-    unsigned char q4648;  // 0x4648
-    unsigned char q464C;  // 0x464C
-    unsigned char q4650;  // 0x4650
-    unsigned char q4654;  // 0x4654
-    unsigned char q4658;  // 0x4658
-    unsigned char q4660;  // 0x4660
-    unsigned int q4664;  // 0x4664
-    unsigned int q4668;  // 0x4668
-    unsigned char q466C;  // 0x466C
-    unsigned char q4670;  // 0x4670
-    unsigned char q4674;  // 0x4674
-    unsigned char q4680;  // 0x4680
-    unsigned char q4684;  // 0x4684
-    unsigned char q4688;  // 0x4688
-    unsigned char q468C;  // 0x468C
-    unsigned char q4690;  // 0x4690
-    unsigned char q4694;  // 0x4694
-    unsigned char q4698;  // 0x4698
-    unsigned char q469C;  // 0x469C
-    unsigned char q4700;  // 0x4700
-    unsigned char q4704;  // 0x4704
-    unsigned char q4708;  // 0x4708
-    unsigned char q470C;  // 0x470C
-    unsigned char q48D8;  // 0x48D8
-    unsigned char q48DC;  // 0x48DC
-    unsigned char q48E0;  // 0x48E0
-    unsigned char q48E4;  // 0x48E4
-    unsigned int q5180;  // 0x5180
-    unsigned int q5184;  // 0x5184
-    unsigned int q5188;  // 0x5188
-    unsigned char q518C;  // 0x518C
-    unsigned char q5190;  // 0x5190
-    unsigned char q5194;  // 0x5194
-    unsigned char q5198;  // 0x5198
-    unsigned char q519C;  // 0x519C
-    unsigned char q5200;  // 0x5200
-    unsigned char q5204;  // 0x5204
-    unsigned char q5208;  // 0x5208
-    unsigned char q520C;  // 0x520C
-    unsigned char q52BC;  // 0x52BC
-    unsigned char q52C0;  // 0x52C0
-    unsigned char q52C4;  // 0x52C4
-    unsigned char q52C8;  // 0x52C8
-    unsigned int q5388;  // 0x5388
-    unsigned char q538C;  // 0x538C
-    unsigned char q5390;  // 0x5390
-    unsigned char q5394;  // 0x5394
-    unsigned char q5398;  // 0x5398
-    unsigned char q539C;  // 0x539C
-    unsigned int q5400;  // 0x5400
-    unsigned int q5404;  // 0x5404
-    unsigned int q5408;  // 0x5408
-    unsigned char q540C;  // 0x540C
-    unsigned char q5410;  // 0x5410
-    unsigned char q5414;  // 0x5414
-    unsigned char q5420;  // 0x5420
-    unsigned char q5424;  // 0x5424
-    unsigned char q5434;  // 0x5434
-    unsigned char q5438;  // 0x5438
-    unsigned int q5440;  // 0x5440
-    unsigned int q5444;  // 0x5444
-    unsigned char q5448;  // 0x5448
-    unsigned char q544C;  // 0x544C
-    unsigned char q5450;  // 0x5450
-    unsigned char q5454;  // 0x5454
-    unsigned int q5458;  // 0x5458
-    unsigned char q545C;  // 0x545C
-    unsigned int q5460;  // 0x5460
-    unsigned char q5464;  // 0x5464
-    unsigned char q5468;  // 0x5468
-    unsigned char q546C;  // 0x546C
-    unsigned char q5470;  // 0x5470
-    unsigned char q5474;  // 0x5474
-    unsigned char q5478;  // 0x5478
-    unsigned char q5480;  // 0x5480
-    unsigned char q5484;  // 0x5484
-    unsigned char q5488;  // 0x5488
-    unsigned char q548C;  // 0x548C
-    unsigned int q5490;  // 0x5490
-    unsigned char q5494;  // 0x5494
-    unsigned char q5498;  // 0x5498
-    unsigned char q5750;  // 0x5750
-    unsigned char q5754;  // 0x5754
-    unsigned int q6194;  // 0x6194
-    unsigned int q6198;  // 0x6198
-    unsigned char q619C;  // 0x619C
-    unsigned char q61A0;  // 0x61A0
-    unsigned char q61A4;  // 0x61A4
-    unsigned char q61A8;  // 0x61A8
-    unsigned char q6208;  // 0x6208
-    unsigned char q620C;  // 0x620C
-    unsigned char q6220;  // 0x6220
-    unsigned char q6224;  // 0x6224
-    unsigned char q6228;  // 0x6228
-    unsigned int q6230;  // 0x6230
-    unsigned char q6234;  // 0x6234
-    unsigned char q6238;  // 0x6238
-    unsigned int q6240;  // 0x6240
-    unsigned int q6244;  // 0x6244
-    unsigned int q6248;  // 0x6248
-    unsigned char q624C;  // 0x624C
-    unsigned char q6250;  // 0x6250
-    unsigned char q6254;  // 0x6254
-    unsigned char q6258;  // 0x6258
-    unsigned char q625C;  // 0x625C
-    unsigned char q6260;  // 0x6260
-    unsigned char q6264;  // 0x6264
-    unsigned char q665C;  // 0x665C
-    unsigned char q6660;  // 0x6660
-    unsigned int q7280;  // 0x7280
-    unsigned int q7284;  // 0x7284
-    unsigned int q7288;  // 0x7288
-    unsigned char q728C;  // 0x728C
-    unsigned char q7290;  // 0x7290
-    unsigned char q7294;  // 0x7294
-    unsigned char q7298;  // 0x7298
-    unsigned char q729C;  // 0x729C
-    unsigned int q7300;  // 0x7300
-    unsigned char q7304;  // 0x7304
-    unsigned char q7308;  // 0x7308
-    unsigned char q730C;  // 0x730C
-    unsigned char q769C;  // 0x769C
-    unsigned char q76A0;  // 0x76A0
-    unsigned char q76A4;  // 0x76A4
-    unsigned char q76A8;  // 0x76A8
-    unsigned int q0042;
+    unsigned int u32_11E8;
+    unsigned int u32_11F0;
+    unsigned int u32_1218;
+    unsigned int u32_1220;
+    unsigned int u32_1224;
+    unsigned int u32_122C;
+    unsigned int u32_1230;
+    unsigned int u32_1238;
+    unsigned int u32_123C;
+    unsigned int u32_1244;
+    unsigned int u32_1258;
+    unsigned int u32_1434;
+    unsigned int u32_1438;
+    unsigned int u32_143C;
+    unsigned int u32_1440;
+    unsigned int u32_1444;
+    unsigned int u32_1448;
+    unsigned int u32_144C;
+    unsigned int u32_1C70;
+    unsigned int u32_1C74;
+    unsigned int u32_1C78;
+    unsigned int u32_1C7C;
+    unsigned int u32_1C80;
+    unsigned int u32_1C84;
+    unsigned int u32_34A0;
+    unsigned int u32_34CC;
+    unsigned int u32_34D0;
+    unsigned int u32_3540;
+    unsigned int u32_3544;
+    unsigned int u32_60C;
+    unsigned int u32_610;
+    unsigned int u32_614;
+    unsigned int u32_61C;
     unsigned int u32_7E40;
+    unsigned char u8_34AC;
+    unsigned char u8_34AD;
+    unsigned char u8_34AE;
+    unsigned char u8_34AF;
+    unsigned char u8_34B0;
+    unsigned char u8_34B1;
+    unsigned char u8_34B2;
+    unsigned char u8_34B4;
+    unsigned char u8_34BC;
+    unsigned int Power_field_0x0;
+    unsigned int Power_field_0x4;
+    unsigned int Power_field_0xC;
+    unsigned int q004;
+    unsigned int q008;
+    unsigned int u32_3528;
+    unsigned int u32_352C;
+    unsigned int u32_3530;
+    unsigned int u32_3548;
+    unsigned int u32_354C;
+    unsigned int u32_3550;
+    unsigned int u32_3554;
+    unsigned int u32_3558;
+    unsigned int u32_355C;
+    unsigned char u8_34A4;
 // --- flat members (END) ---
     int Update(int * a2);  // 0x43A5D0
     unsigned int * UpdateAll();  // 0x67C6E0

@@ -24,7 +24,7 @@ struct House {
     unsigned int u32_34;  // 0x34
     unsigned int q038;  // 0x38
     AbstractClass * ptr_40;  // 0x40
-    unsigned int q044;  // 0x44
+    void * ptr_44;  // 0x44
     unsigned int u32_48;  // 0x48
     unsigned char u8_4C;  // 0x4C
     unsigned int q050;  // 0x50
@@ -58,6 +58,7 @@ struct House {
     void * q104;  // 0x104
     unsigned int q108;  // 0x108
     unsigned int q114;  // 0x114
+    unsigned int u32_116;  // 0x116
     unsigned char q118;  // 0x118
     unsigned int u32_11A;  // 0x11A
     char u32_11B;  // 0x11B
@@ -89,6 +90,7 @@ struct House {
     unsigned int u32_1C0;  // 0x1C0
     unsigned int u32_1C8;  // 0x1C8
     unsigned int u32_1CC;  // 0x1CC
+    unsigned int u32_1E4;  // 0x1E4
     void* q1EC;  // 0x1EC
     unsigned char u8_1ED;  // 0x1ED
     unsigned char q1F0;  // 0x1F0
@@ -99,6 +101,7 @@ struct House {
     unsigned int q208;  // 0x208
     unsigned int u32_210;  // 0x210
     unsigned int u32_214;  // 0x214
+    unsigned int u32_21C;  // 0x21C
     AbstractClass * ptr_220;  // 0x220
     unsigned int q228;  // 0x228
     unsigned int q240;  // 0x240
@@ -124,6 +127,7 @@ struct House {
     unsigned int q300;  // 0x300
     unsigned int q304;  // 0x304
     unsigned int q308;  // 0x308
+    unsigned int u32_30C;  // 0x30C
     unsigned int q310;  // 0x310
     unsigned int q320;  // 0x320
     unsigned int q324;  // 0x324
@@ -159,152 +163,11 @@ struct House {
     unsigned int q460;  // 0x460
     AnimClass * ptr_468;  // 0x468
     unsigned int u32_474;  // 0x474
-    void* ptr_480;  // 0x480
+    TimerStruct * ptr_480;  // 0x480
     unsigned int u32_504;  // 0x504
     unsigned int q508;  // 0x508
     void* q520;  // 0x520
-    unsigned char q524;  // 0x524
-    unsigned int q528;  // 0x528
-    unsigned int q530;  // 0x530
-    unsigned int q534;  // 0x534
-    AbstractClass * q544;  // 0x544
-    ProgressTimer * q584;  // 0x584
-    unsigned int q588;  // 0x588
-    AbstractClass * q598;  // 0x598
-    void * q608;  // 0x608
-    unsigned int q628;  // 0x628
-    unsigned int q630;  // 0x630
-    unsigned char q640;  // 0x640
-    unsigned char q644;  // 0x644
-    void* q648;  // 0x648
-    unsigned char q658;  // 0x658
-    void* q664;  // 0x664
-    unsigned char q668;  // 0x668
-    void* q684;  // 0x684
-    unsigned char q688;  // 0x688
-    unsigned int q744;  // 0x744
-    unsigned int q748;  // 0x748
-    unsigned int q764;  // 0x764
-    unsigned int q768;  // 0x768
-    unsigned int q774;  // 0x774
-    unsigned int q784;  // 0x784
-    unsigned int q800;  // 0x800
-    unsigned int q804;  // 0x804
-    ParticleSystemClass * q808;  // 0x808
-    ParticleSystemClass * q820;  // 0x820
-    unsigned int q834;  // 0x834
-    unsigned int q840;  // 0x840
-    unsigned int q850;  // 0x850
-    unsigned int q854;  // 0x854
-    unsigned int q864;  // 0x864
-    unsigned int q904;  // 0x904
-    unsigned int q914;  // 0x914
-    unsigned char q978;  // 0x978
-    unsigned char q980;  // 0x980
-    unsigned int q1030;  // 0x1030
-    unsigned char q1048;  // 0x1048
-    unsigned char q1050;  // 0x1050
-    unsigned int q1078;  // 0x1078
-    unsigned int q1110;  // 0x1110
-    unsigned int q1120;  // 0x1120
-    AnimClass * q1128;  // 0x1128
-    unsigned int q1140;  // 0x1140
-    void* q1170;  // 0x1170
-    unsigned char q1174;  // 0x1174
-    unsigned int q1284;  // 0x1284
-    unsigned int q1288;  // 0x1288
-    unsigned int q1298;  // 0x1298
-    unsigned int q1320;  // 0x1320
-    unsigned int q1328;  // 0x1328
-    unsigned int q1330;  // 0x1330
-    AbstractClass * q1348;  // 0x1348
-    unsigned int q1378;  // 0x1378
-    unsigned int q1398;  // 0x1398
-    void * q1544;  // 0x1544
-    unsigned int q1554;  // 0x1554
-    unsigned int q1584;  // 0x1584
-    unsigned char q1600;  // 0x1600
-    unsigned char q1604;  // 0x1604
-    void* q1608;  // 0x1608
-    unsigned char q1624;  // 0x1624
-    unsigned int q1634;  // 0x1634
-    unsigned char q1640;  // 0x1640
-    void* q1668;  // 0x1668
-    unsigned int q1860;  // 0x1860
-    unsigned int q1864;  // 0x1864
-    unsigned int q1874;  // 0x1874
-    unsigned char q1878;  // 0x1878
-    unsigned int q1908;  // 0x1908
-    unsigned int q1910;  // 0x1910
-    unsigned int q1924;  // 0x1924
-    unsigned int q2048;  // 0x2048
-    unsigned int q2054;  // 0x2054
-    ParticleSystemClass * q2070;  // 0x2070
-    ParticleSystemClass * q2080;  // 0x2080
-    unsigned int q2100;  // 0x2100
-    unsigned int q2128;  // 0x2128
-    unsigned int q2148;  // 0x2148
-    unsigned int u32_21D0;  // 0x21D0
-    unsigned int u32_21D4;  // 0x21D4
-    unsigned int u32_21F0;  // 0x21F0
-    unsigned int u32_2264;  // 0x2264
-    unsigned int u32_2268;  // 0x2268
-    unsigned int u32_226C;  // 0x226C
-    unsigned int u32_2280;  // 0x2280
-    unsigned int q2308;  // 0x2308
-    unsigned int q2324;  // 0x2324
-    unsigned char q2424;  // 0x2424
-    unsigned char q2434;  // 0x2434
-    unsigned char q4134;  // 0x4134
-    unsigned int q4144;  // 0x4144
-    unsigned char q4168;  // 0x4168
-    unsigned char q4178;  // 0x4178
-    unsigned int q4368;  // 0x4368
-    unsigned int q4374;  // 0x4374
-    unsigned int q4384;  // 0x4384
-    void* q4434;  // 0x4434
-    void* q4464;  // 0x4464
-    unsigned char q4468;  // 0x4468
-    unsigned int q4740;  // 0x4740
-    unsigned int q4744;  // 0x4744
-    unsigned int q4760;  // 0x4760
-    unsigned int q4904;  // 0x4904
-    unsigned int q4914;  // 0x4914
-    unsigned int q4984;  // 0x4984
-    unsigned int q4994;  // 0x4994
-    ProgressTimer * q5138;  // 0x5138
-    unsigned int q5158;  // 0x5158
-    AbstractClass * q5170;  // 0x5170
-    void * q5444;  // 0x5444
-    unsigned int q5460;  // 0x5460
-    unsigned int u32_5490;  // 0x5490
-    unsigned int q5494;  // 0x5494
-    unsigned int u32_54D8;  // 0x54D8
-    unsigned int q5508;  // 0x5508
-    unsigned int q5510;  // 0x5510
-    unsigned int u32_5600;  // 0x5600
-    unsigned int u32_5608;  // 0x5608
-    unsigned int u32_5614;  // 0x5614
-    unsigned int q5634;  // 0x5634
-    unsigned char q5638;  // 0x5638
-    void* q5640;  // 0x5640
-    unsigned int u32_5648;  // 0x5648
-    unsigned char q5668;  // 0x5668
-    unsigned int q5684;  // 0x5684
-    void* q577C;  // 0x577C
-    unsigned char q5780;  // 0x5780
-    unsigned char q5784;  // 0x5784
-    unsigned int q6240;  // 0x6240
-    unsigned int q6244;  // 0x6244
-    unsigned char q6248;  // 0x6248
-    unsigned int q6260;  // 0x6260
-    unsigned char q6264;  // 0x6264
-    unsigned char q6268;  // 0x6268
-    unsigned int q6290;  // 0x6290
-    unsigned int q6294;  // 0x6294
-    unsigned char q6298;  // 0x6298
-    unsigned int q6408;  // 0x6408
-    unsigned char q640C;  // 0x640C
+    unsigned int __pad_3D7;
 // --- flat members (END) ---
     void AnnounceUpgrade(void* aP1);  // 0x47D2B0
     unsigned int * GetStartCoords(void* aP1);  // 0x47FB90
@@ -313,7 +176,7 @@ struct House {
     int IsCurrentPlayer();  // 0x50B730
     int ChooseHouseEnemy(BuildingClass * aP1);  // 0x50DB00
     int LookupObject(int a2);  // 0x544BE0
-    bool LoadMapFileData(int a2,  char a3);    // 0x544C20
+    int LoadMapFileData(int a2, char a3);    // 0x544C20
     void Constructor();  // 0x69E090
     int PowerBeginUpdate(AbstractClass * aP1);  // 0x70C270
 };

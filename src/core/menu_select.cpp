@@ -523,7 +523,7 @@ static MenuState Campaign_Screen(int arg) {
     btnNew.Callback   = [&]() { result = MenuState::WOLInternet; dlg.finished = true; };
     btnStart.Callback = [&]() { result = MenuState::StartScenario; dlg.finished = true; };
     btnSkirmish.Callback = [&]() {
-        g_GameMode = GMODE_SKIRMISH_SETUP;
+        g_GameMode = (void *)(GMODE_SKIRMISH_SETUP);
         result = MenuState::NetworkGame5; dlg.finished = true;
     };
     btnBack.Callback  = [&]() { result = MenuState::MenuIdle; dlg.finished = true; };
@@ -746,48 +746,48 @@ static void Options_Screen_Save(HWND hDlg) {
     // DlgItem 1295: Game Speed slider (0-4)
     HWND ctrl1295 = GetDlgItem(hDlg, 1295);
     if (ctrl1295)
-        g_GameSpeed = (int)SendMessageA(ctrl1295, 0x400, 0, 0);
+        g_GameSpeed = (void *)((int)SendMessageA(ctrl1295, 0x400, 0, 0));
 
     // DlgItem 1537: Scroll Mode checkbox
     HWND ctrl1537 = GetDlgItem(hDlg, 1537);
     if (ctrl1537) {
-        g_ScrollMode = (SendMessageA(ctrl1537, 0xF0, 0, 0) == 1) ? 1 : 0;
+        g_ScrollMode = (void *)((SendMessageA(ctrl1537, 0xF0, 0, 0) == 1) ? 1 : 0);
         // SetGlobalFlag(g_ScrollMode);
     }
 
     // DlgItem 1540: MCV Auto-Deploy checkbox
     HWND ctrl1540 = GetDlgItem(hDlg, 1540);
     if (ctrl1540)
-        g_MCVDeployMode = (SendMessageA(ctrl1540, 0xF0, 0, 0) == 1);
+        g_MCVDeployMode = (void *)((SendMessageA(ctrl1540, 0xF0, 0, 0) == 1));
 
     // DlgItem 1538: Other option checkbox
     HWND ctrl1538 = GetDlgItem(hDlg, 1538);
     if (ctrl1538)
-        g_OptionFlag80 = (SendMessageA(ctrl1538, 0xF0, 0, 0) == 1);
+        g_OptionFlag80 = (void *)((SendMessageA(ctrl1538, 0xF0, 0, 0) == 1));
 
     // DlgItem 1322: Volume slider (6 - slider = volume step)
     HWND ctrl1322 = GetDlgItem(hDlg, 1322);
     if (ctrl1322)
-        g_SfxVolumeSlider = 6 - (int)SendMessageA(ctrl1322, 0x400, 0, 0);
+        g_SfxVolumeSlider = (void *)(6 - (int)SendMessageA(ctrl1322, 0x400, 0, 0));
 
     // DlgItem 1327: Score/Music volume slider (0.0-1.0, step 0.1)
     HWND ctrl1327 = GetDlgItem(hDlg, 1327);
     if (ctrl1327) {
-        g_ScoreVolume = (float)((double)SendMessageA(ctrl1327, 0x400, 0, 0) * 0.1);
+        g_ScoreVolume = (void *)((float)((double)SendMessageA(ctrl1327, 0x400, 0, 0) * 0.1));
         // Options::SetScoreVolume(g_ScoreVolume, 0);
     }
 
     // DlgItem 1330: Sound volume slider
     HWND ctrl1330 = GetDlgItem(hDlg, 1330);
     if (ctrl1330) {
-        g_SoundVolume = (float)((double)SendMessageA(ctrl1330, 0x400, 0, 0) * 0.1);
+        g_SoundVolume = (void *)((float)((double)SendMessageA(ctrl1330, 0x400, 0, 0) * 0.1));
         // Options::SetSoundVolume(g_SoundVolume, 0);
     }
 
     // DlgItem 1334: Voice/Notification volume slider
     HWND ctrl1334 = GetDlgItem(hDlg, 1334);
     if (ctrl1334) {
-        g_VoiceVolume = (float)((double)SendMessageA(ctrl1334, 0x400, 0, 0) * 0.1);
+        g_VoiceVolume = (void *)((float)((double)SendMessageA(ctrl1334, 0x400, 0, 0) * 0.1));
         // Options::SetVoiceVolume(g_VoiceVolume, 0);
     }
 }
@@ -1020,7 +1020,7 @@ static INT_PTR CALLBACK Options_DialogProc(HWND hDlg, UINT msg, WPARAM wParam, L
                 const int kRes[][2] = {{640,400},{640,480},{800,600},{1024,768}};
                 if (data >= 0 && data < 4) {
                     g_ScreenWidth = kRes[data][0];
-                    g_ScreenHeight = kRes[data][1];
+                    g_ScreenHeight = (void *)(kRes[data][1]);
                 }
             }
             return 0;
@@ -1420,7 +1420,7 @@ static void MainGameFrame() {
 // ============================================================================
 // (REVERSE marker moved to menu_globals_gen.cpp)
 char MenuSelect() {
-    g_MenuState = MenuState::MenuIdle;
+    g_MenuState = (void *)(MenuState::MenuIdle);
     g_GameMode = 0;
 
     while (true) {
@@ -1440,14 +1440,14 @@ char MenuSelect() {
         // IDA case 2: Skirmish
         case MenuState::Skirmish:
             g_GameMode = GMODE_SKIRMISH;
-            g_MenuState = MenuState::NetworkGameFlow;
+            g_MenuState = (void *)(MenuState::NetworkGameFlow);
             MultiplayerScreen(2);
             break;
 
         // IDA case 3: Internet/Multiplayer
         case MenuState::Multiplayer:
             g_GameMode = GMODE_INTERNET;
-            g_MenuState = MenuState::NetworkGameFlow;
+            g_MenuState = (void *)(MenuState::NetworkGameFlow);
             MultiplayerScreen(1);
             break;
 
@@ -1459,7 +1459,7 @@ char MenuSelect() {
         // IDA case 5: Options
         case MenuState::Options:
             Options_Screen_Dialog();
-            g_MenuState = MenuState::MenuIdle;
+            g_MenuState = (void *)(MenuState::MenuIdle);
             break;
 
         // IDA case 6: Exit confirm
@@ -1477,7 +1477,7 @@ char MenuSelect() {
         // IDA case 8: New game start → return 1
         case MenuState::WOLInternet:
             Event_Dispatch();
-            g_MenuState = MenuState::MenuIdle;
+            g_MenuState = (void *)(MenuState::MenuIdle);
             Event_Dispatch();
             Event_Dispatch();
             return 1;
@@ -1485,7 +1485,7 @@ char MenuSelect() {
         // IDA case 9: Load savegame
         case MenuState::SaveLoadGame:
             ShowSaveLoadDialog();
-            g_MenuState = MenuState::Campaign;
+            g_MenuState = (void *)(MenuState::Campaign);
             break;
 
         // IDA case 10: Back to campaign
@@ -1511,7 +1511,7 @@ char MenuSelect() {
         // IDA case 15: Credits
         case MenuState::CampaignIntro:
             Event_Dispatch();
-            g_MenuState = MenuState::CampaignSub;
+            g_MenuState = (void *)(MenuState::CampaignSub);
             break;
 
         // IDA case 16/17: Network game flow

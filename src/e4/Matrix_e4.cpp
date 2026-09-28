@@ -12,18 +12,18 @@
 namespace gamemd {
 int Matrix3x4::Identity()
 {
-  *(unsigned int *)this = 1065353216; /*0x5ae867*/
-  this->q004 = 0; /*0x5ae869*/
-  this->q008 = 0; /*0x5ae86c*/
-  this->q00C = 0; /*0x5ae86f*/
-  this->q010 = 0; /*0x5ae872*/
-  this->q014 = 1065353216; /*0x5ae875*/
-  this->q018 = 0; /*0x5ae878*/
-  this->q01C = 0; /*0x5ae87b*/
-  this->q020 = 0; /*0x5ae87e*/
-  this->q024 = 0; /*0x5ae881*/
-  *(&this->q0040) = 1065353216; /*0x5ae884*/
-  *(&this->q0041) = 0; /*0x5ae887*/
+  this->m_Data[0] = 1065353216; /*0x5ae867*/
+  this->m_Data[1] = 0; /*0x5ae869*/
+  this->m_Data[2] = 0; /*0x5ae86c*/
+  this->m_Data[3] = 0; /*0x5ae86f*/
+  this->m_Data[4] = 0; /*0x5ae872*/
+  this->m_Data[5] = 1065353216; /*0x5ae875*/
+  this->m_Data[6] = 0; /*0x5ae878*/
+  this->m_Data[7] = 0; /*0x5ae87b*/
+  this->m_Data[8] = 0; /*0x5ae87e*/
+  this->m_Data[9] = 0; /*0x5ae881*/
+  this->m_Data[10] = 1065353216; /*0x5ae884*/
+  this->m_Data[11] = 0; /*0x5ae887*/
   return 0; /*0x5ae88a*/
 }
 } // namespace gamemd
@@ -31,9 +31,12 @@ int Matrix3x4::Identity()
 namespace gamemd {
 void Matrix3x4::Translate(ParticleSystemClass * aP1)
 {
-  this->q00C = aP1 * *this + this->q00C; /*0x5ae989*/
+  int result; // eax
+
+  this->q00C = aP1 * *(float *)this + this->q00C; /*0x5ae989*/
   this->q01C = aP1 * this->q010 + this->q01C; /*0x5ae996*/
-  *(&this->q0041) = aP1 * this->q020 + *(&this->q0041); /*0x5ae9a3*/
+  this->q02C = aP1 * this->q020 + this->q02C; /*0x5ae9a3*/
+  return result; /*0x5ae9a6*/
 }
 } // namespace gamemd
 // 0x6D2360

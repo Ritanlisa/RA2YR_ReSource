@@ -13,6 +13,6 @@ BOOL Settings::CheckString()
   char *v0; // eax
 
   v0 = (char *)(CharToWideString(g_GameSetupBuffer));
-  return wcscmp((const wchar_t *)v0, &g_CurrentPlayerName) == 0; /*0x5e877d*/
+  return wcscmp((const wchar_t *)v0, g_CurrentPlayerName) == 0; /*0x5e877d*/
 }
 } // namespace gamemd

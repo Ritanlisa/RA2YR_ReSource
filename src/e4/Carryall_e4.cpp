@@ -12,6 +12,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/CellStruct_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/CaptureManagerClass_e4.hpp"
 
 // 0x416D50
 namespace gamemd {

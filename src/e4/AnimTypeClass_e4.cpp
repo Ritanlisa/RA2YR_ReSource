@@ -23,105 +23,108 @@
 namespace gamemd {
 unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
 {
-  AnimTypeClass * v3;
+  int v3; // eax
 
-  AbstractTypeClass::Constructor(aP1); /*0x41e359*/
-  *(&this->vtable48) = -1; /*0x41e363*/
-  *(&this->uniqueId2) = -1; /*0x41e369*/
-  *(&this->uniqueId6) = 0; /*0x41e374*/
-  *(&this->uniqueId8) = 0; /*0x41e37a*/
-  *(&this->abstractFlags0) = 0; /*0x41e380*/
-  *(&this->uniqueId7) = 1072693248; /*0x41e386*/
-  *(&this->uniqueId9) = 1072693248; /*0x41e38c*/
-  *(&this->abstractFlags1) = 1072693248; /*0x41e392*/
-  this->u8_D2 = 1; /*0x41e39a*/
-  this->u8_D3 = 1; /*0x41e3a0*/
-  this->u8_D4 = 1; /*0x41e3a6*/
-  *(&this->vtable49) = 0; /*0x41e3b9*/
-  *(&this->uniqueId0) = 0; /*0x41e3bf*/
-  this->Image = 0; /*0x41e3c5*/
-  *(&this->uniqueId3) = 0; /*0x41e3cb*/
-  *(&this->uniqueId4) = 0; /*0x41e3d1*/
-  this->q0D0 = 0; /*0x41e3d7*/
-  this->u8_D1 = 0; /*0x41e3dd*/
-  *(&this->abstractFlags4) = 0; /*0x41e3e3*/
-  *(&this->abstractFlags5) = 0; /*0x41e3e9*/
-  *(&this->abstractFlags6) = 0; /*0x41e3ef*/
-  *(&this->nextArrayIndex5) = 0; /*0x41e3f5*/
-  *(&this->nextArrayIndex6) = 0; /*0x41e3fb*/
-  memset(&this->u32_E4, 0, 0x20u); /*0x41e41c*/
-  if ( g_AnimTypeInitQueue < dword_A8B208 /*0x41e452*/
-    || (byte_A8B20D || !dword_A8B208)
+  AbstractTypeClass::Constructor((int *)this, aP1); /*0x41e359*/
+  *(unsigned int *)this->__pad_98 = -1; /*0x41e363*/
+  *(unsigned int *)&this->ImageAllocated = -1; /*0x41e369*/
+  this->BarrelVoxel_2[0] = 0; /*0x41e374*/
+  this->ChargerTurrets[1] = (unsigned int)(0);
+  this->ChargerTurrets[3] = (unsigned int)(0);
+  this->ChargerTurrets[0] = 1072693248; /*0x41e386*/
+  this->ChargerTurrets[2] = 1072693248; /*0x41e38c*/
+  this->ChargerTurrets[4] = 1072693248; /*0x41e392*/
+  IDA_BYTE2(this->ChargerTurrets[5]) = 1; /*0x41e39a*/
+  IDA_HIBYTE(this->ChargerTurrets[5]) = 1; /*0x41e3a0*/
+  IDA_LOBYTE(this->ChargerTurrets[6]) = 1; /*0x41e3a6*/
+  this->Armor[0] = 0; /*0x41e3b9*/
+  this->Strength = 0; /*0x41e3bf*/
+  IDA_LOBYTE(this->Image) = 0; /*0x41e3c5*/
+  this->AlphaImage = 0; /*0x41e3cb*/
+  this->MainVoxel[0] = 0; /*0x41e3d1*/
+  IDA_LOBYTE(this->ChargerTurrets[5]) = 0; /*0x41e3d7*/
+  IDA_BYTE1(this->ChargerTurrets[5]) = 0; /*0x41e3dd*/
+  this->ChargerTurrets[7] = 0; /*0x41e3e3*/
+  this->ChargerTurrets[8] = 0; /*0x41e3e9*/
+  this->ChargerTurrets[9] = 0; /*0x41e3ef*/
+  this->ChargerBarrels[0] = 0; /*0x41e3f5*/
+  this->ChargerBarrels[1] = 0; /*0x41e3fb*/
+  this->vtable0 = (void*)&AITriggerTypeClass_vftable; /*0x41e401*/
+  this->vtable1 = (void*)&AITriggerTypeClass_vftable; /*0x41e407*/
+  this->vtable2 = (void*)&AITriggerTypeClass_vftable; /*0x41e40e*/
+  this->vtable3 = (void*)&AITriggerTypeClass_vftable; /*0x41e415*/
+  memset(&this->ChargerTurrets[10], 0, 0x20u); /*0x41e41c*/
+  if ( dword_A8B210 < dword_A8B208 /*0x41e452*/
+    || (unk_A8B20D || !dword_A8B208)
     && dword_A8B214 > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(AITriggerTypeClass_Array + 8))(
-         &AITriggerTypeClass_Array,
+    && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(dword_A8B200 + 8))(
+         &dword_A8B200,
          dword_A8B208 + dword_A8B214,
          0) )
   {
-    v3 = (gamemd::AnimTypeClass *)(g_AnimTypeInitQueue++);
-    *((unsigned int *)dword_A8B204 + v3) = this; /*0x41e46e*/
+    v3 = (unsigned int)(dword_A8B210++);
+    *((unsigned int *)unk_A8B204 + v3) = this; /*0x41e46e*/
   }
-  return (unsigned int *)(this);
-}
+  return &this->vtable0; /*0x41e473*/
 }
 // 0x427530
 namespace gamemd {
 unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
 {
-  AnimTypeClass * v3;
-  AnimTypeClass * v4;
+  int v3; // eax
+  int v4; // eax
   int v5; // eax
-  void **v6; // ecx
+  AnimTypeClass **v6; // ecx
 
-  ObjectTypeClass::ConstructFull(aP1); /*0x42753a*/
-  *(&this->DetailLevel5) = -1; /*0x427544*/
-  *(&this->DetailLevel6) = 0; /*0x42754a*/
-  *(&this->DetailLevel7) = 0; /*0x427550*/
-  *(&this->DetailLevel8) = 0; /*0x427556*/
+  ObjectTypeClass::ConstructFull((int *)this, aP1); /*0x42753a*/
+  this->MiddleFrameIndex = -1; /*0x427544*/
+  this->MiddleFrameWidth = 0; /*0x42754a*/
+  this->MiddleFrameHeight = 0; /*0x427550*/
+  *(unsigned int *)this->__pad_2A0 = 0; /*0x427556*/
   this->AnimTypeClass_field_2A4 = 0; /*0x42755c*/
-  *(&this->TranslucencyDetailLevel0) = 0; /*0x427562*/
-  *(&this->TranslucencyDetailLevel1) = 0; /*0x427568*/
-  *(&this->TranslucencyDetailLevel2) = 1; /*0x42756e*/
-  *(&this->TranslucencyDetailLevel3) = 0; /*0x427578*/
-  *(&this->TranslucencyDetailLevel4) = 0; /*0x42757e*/
-  *(&this->TranslucencyDetailLevel5) = 0; /*0x427584*/
-  *(&this->TranslucencyDetailLevel6) = 0; /*0x42758a*/
-  *(&this->TranslucencyDetailLevel7) = 0; /*0x427590*/
-  *(&this->TranslucencyDetailLevel8) = 0; /*0x427596*/
-  *(&this->TranslucencyDetailLevel9) = -1; /*0x42759c*/
-  *(&this->RandomLoopDelay0) = 0; /*0x4275a2*/
-  *(&this->RandomLoopDelay1) = 0; /*0x4275a8*/
-  *(&this->RandomLoopDelay2) = 0; /*0x4275ae*/
-  *(&this->RandomLoopDelay3) = 0; /*0x4275b4*/
-  *(&this->RandomLoopDelay4) = 0; /*0x4275ba*/
-  *(&this->RandomLoopDelay5) = 0; /*0x4275c0*/
-  *(&this->RandomLoopDelay6) = 0; /*0x4275c6*/
-  *(&this->RandomLoopDelay7) = 0; /*0x4275cc*/
-  *(&this->RandomLoopDelay8) = 0; /*0x4275d2*/
-  *(&this->RandomLoopDelay9) = 0; /*0x4275d8*/
-  *(&this->RandomRate0) = -1; /*0x4275de*/
-  *(&this->RandomRate1) = -1; /*0x4275e4*/
-  *(&this->RandomRate2) = 0; /*0x4275ea*/
-  *(&this->RandomRate3) = 0; /*0x4275f0*/
-  *(&this->RandomRate4) = 0; /*0x4275f6*/
-  *(&this->RandomRate5) = 0; /*0x4275fc*/
-  *(&this->RandomRate6) = -1610612736; /*0x427602*/
-  *(&this->RandomRate7) = 1072273817; /*0x42760c*/
-  *(&this->RandomRate8) = 0; /*0x42761b*/
-  *(&this->RandomRate9) = 1074528256; /*0x427621*/
-  *(&this->Translucency0) = 0; /*0x427627*/
-  *(&this->Translucency1) = 1074528256; /*0x42762d*/
-  *(&this->Translucency2) = 0; /*0x427633*/
-  *(&this->Translucency3) = 1076756480; /*0x427639*/
-  *(&this->Translucency4) = 0; /*0x427643*/
-  *(&this->Translucency5) = 0; /*0x427649*/
-  *(&this->Translucency6) = 0; /*0x42764f*/
-  *(&this->Translucency7) = 0; /*0x427655*/
-  *(&this->Translucency8) = 0; /*0x42765b*/
-  *(&this->Translucency9) = 0; /*0x427661*/
-  *(&this->Spawns0) = 0; /*0x427667*/
-  *(&this->Spawns1) = -1; /*0x42766d*/
-  *(&this->Spawns2) = 0; /*0x427673*/
+  this->Damage[0] = 0; /*0x427562*/
+  this->Damage[1] = 0; /*0x427568*/
+  this->Rate = 1; /*0x42756e*/
+  this->Start = 0; /*0x427578*/
+  this->LoopStart = 0; /*0x42757e*/
+  this->LoopEnd = 0; /*0x427584*/
+  this->End = 0; /*0x42758a*/
+  this->LoopCount = 0; /*0x427590*/
+  this->Next = 0; /*0x427596*/
+  this->SpawnsParticle = -1; /*0x42759c*/
+  this->NumParticles = 0; /*0x4275a2*/
+  this->DetailLevel = 0; /*0x4275a8*/
+  this->TranslucencyDetailLevel = 0; /*0x4275ae*/
+  this->RandomLoopDelay[0] = 0; /*0x4275b4*/
+  this->RandomLoopDelay[1] = 0; /*0x4275ba*/
+  this->RandomRate[0] = 0; /*0x4275c0*/
+  this->RandomRate[1] = 0; /*0x4275c6*/
+  this->Translucency = 0; /*0x4275cc*/
+  this->Spawns = 0; /*0x4275d2*/
+  this->SpawnCount = 0; /*0x4275d8*/
+  this->Report = -1; /*0x4275de*/
+  this->StopSound = -1; /*0x4275e4*/
+  this->BounceAnim = 0; /*0x4275ea*/
+  this->ExpireAnim = 0; /*0x4275f0*/
+  this->TrailerAnim = 0; /*0x4275f6*/
+  this->TrailerSeperation = 0; /*0x4275fc*/
+  this->Elasticity[0] = -1610612736; /*0x427602*/
+  this->Elasticity[1] = 1072273817; /*0x42760c*/
+  this->MinZVel[0] = 0; /*0x42761b*/
+  this->MinZVel[1] = 1074528256; /*0x427621*/
+  this->AnimTypeClass_field_double_320[0] = 0; /*0x427627*/
+  this->AnimTypeClass_field_double_320[1] = 1074528256; /*0x42762d*/
+  this->MaxXYVel[0] = 0; /*0x427633*/
+  this->MaxXYVel[1] = 1076756480; /*0x427639*/
+  this->Warhead = 0; /*0x427643*/
+  this->DamageRadius = 0; /*0x427649*/
+  this->TiberiumSpawnType = 0; /*0x42764f*/
+  this->TiberiumSpreadRadius = 0; /*0x427655*/
+  this->YSortAdjust = 0; /*0x42765b*/
+  this->YDrawOffset = 0; /*0x427661*/
+  this->ZAdjust = 0; /*0x427667*/
+  this->MakeInfantry = -1; /*0x42766d*/
+  this->RunningFrames = 0; /*0x427673*/
   this->IsFlamingGuy = 0; /*0x427679*/
   this->IsVeins = 0; /*0x42767f*/
   this->IsMeteor = 0; /*0x427685*/
@@ -131,13 +134,13 @@ unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
   this->Bouncer = 0; /*0x42769d*/
   this->Tiled = 0; /*0x4276a3*/
   this->ShouldUseCellDrawer = 1; /*0x4276a9*/
-  this->UseNormalLight = 0; /*0x4276b0*/
-  this->DemandLoad = 0; /*0x4276b6*/
+  this->UseNormalLight = (unsigned int)(0);
+  this->DemandLoad = (unsigned int)(0);
   this->FreeLoad = 0; /*0x4276bc*/
   this->IsAnimatedTiberium = 0; /*0x4276c2*/
   this->AltPalette = 0; /*0x4276c8*/
   this->Normalized = 0; /*0x4276ce*/
-  *(&this->Spawns7) = 3; /*0x4276d4*/
+  this->Layer[0] = 3; /*0x4276d4*/
   this->DoubleThick = 0; /*0x4276de*/
   this->Flat = 0; /*0x4276e4*/
   this->Translucent = 0; /*0x4276ea*/
@@ -151,56 +154,59 @@ unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
   this->Shadow = 0; /*0x42771e*/
   this->PsiWarning = 0; /*0x427724*/
   this->ShouldFogRemove = 1; /*0x42772a*/
-  AbstractClass::GenerateUniqueID((int)&this->vtable2); /*0x42774b*/
-  this->q234 = 1; /*0x427750*/
-  this->q22F = 1; /*0x427757*/
-  this->q230 = 0; /*0x42775e*/
-  this->q231 = 0; /*0x427764*/
-  this->q232 = 1; /*0x42776a*/
-  this->q233 = 1; /*0x427771*/
-  this->q235 = 0; /*0x427778*/
-  if ( g_BuildingTypeCount2 < dword_8B4158 /*0x4277b0*/
-    || (byte_8B415D || !dword_8B4158)
-    && dword_8B4164 > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(AnimTypeClass_Array + 8))(
-         &AnimTypeClass_Array,
-         dword_8B4158 + dword_8B4164,
+  this->vtable0 = (void*)&AnimTypeClass_vftable; /*0x427731*/
+  this->vtable1 = (void*)&AnimTypeClass_vftable; /*0x427737*/
+  this->vtable2 = (void*)&AnimTypeClass_vftable; /*0x42773d*/
+  this->vtable3 = (void*)&AnimTypeClass_vftable; /*0x427744*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->vtable1); /*0x42774b*/
+  this->IsLogic = 1; /*0x427750*/
+  this->RadarInvisible = 1; /*0x427757*/
+  this->Selectable = 0; /*0x42775e*/
+  this->LegalTarget = 0; /*0x427764*/
+  this->Insignificant = 1; /*0x42776a*/
+  this->Immune = 1; /*0x427771*/
+  this->AllowCellContent = 0; /*0x427778*/
+  if ( FootClass_Array.secondaryFacing[0] < FootClass_Array.primaryFacing[4] /*0x4277b0*/
+    || (IDA_BYTE1(FootClass_Array.primaryFacing[5]) || !FootClass_Array.primaryFacing[4])
+    && FootClass_Array.secondaryFacing[1] > 0
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(FootClass_Array.primaryFacing[2] + 8))(
+         &FootClass_Array.primaryFacing[2],
+         FootClass_Array.primaryFacing[4] + FootClass_Array.secondaryFacing[1],
          0) )
   {
-    v3 = g_BuildingTypeCount2++; /*0x4277bd*/
-    *((unsigned int *)g_AnimTypeCount + v3) = this; /*0x4277cc*/
+    v3 = FootClass_Array.secondaryFacing[0]++; /*0x4277bd*/
+    *(unsigned int *)(FootClass_Array.primaryFacing[3] + 4 * v3) = this; /*0x4277cc*/
   }
-  if ( g_AnimManager < g_AnimTypePool /*0x427803*/
-    || (g_AnimPoolLocked || !g_AnimTypePool)
-    && g_AnimManagerConfig > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_AnimPoolManager + 8))(
-         &g_AnimPoolManager,
-         g_AnimTypePool + g_AnimManagerConfig,
+  if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x427803*/
+    || (IDA_BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
+    && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
+         &g_BuildingLoadQueue_Array.LightVisibility,
+         g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
          0) )
   {
-    v4 = (gamemd::AnimTypeClass *)(g_AnimManager++);
-    *((unsigned int *)g_AnimPoolCount + v4) = this; /*0x42781f*/
+    v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x427810*/
+    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x42781f*/
   }
   v5 = 0; /*0x427828*/
-  if ( g_BuildingTypeCount2 <= 0 ) /*0x42782c*/
+  if ( FootClass_Array.secondaryFacing[0] <= 0 ) /*0x42782c*/
   {
   LABEL_17:
     v5 = -1; /*0x427840*/
   }
   else
   {
-    v6 = (void **)g_AnimTypeCount; /*0x42782e*/
+    v6 = (AnimTypeClass **)FootClass_Array.primaryFacing[3]; /*0x42782e*/
     while ( *v6 != this ) /*0x427836*/
     {
       ++v5; /*0x427838*/
       ++v6; /*0x427839*/
-      if ( v5 >= g_BuildingTypeCount2 ) /*0x42783e*/
+      if ( v5 >= FootClass_Array.secondaryFacing[0] ) /*0x42783e*/
         goto LABEL_17; /*0x42783e*/
     }
   }
-  *(&this->DetailLevel5) = v5; /*0x427842*/
-  return this; /*0x42784a*/
-}
+  this->MiddleFrameIndex = v5; /*0x427842*/
+  return &this->vtable0; /*0x42784a*/
 }
 // 0x427B50
 namespace gamemd {
@@ -231,7 +237,7 @@ void* AnimTypeClass::GetWarhead(int a2)
       }
       v4 = (int)(this->ImageFile);
       v5 = (int)((const char *)(&this->u32_C84));
-      this->Image = (int)(0);
+      this->Image = (unsigned int)((void *)((int)(0)));
       if ( !v4 ) /*0x427bb7*/
         v5 = (const char *)(&this->vtable46); /*0x427bb9*/
       _makepath(Buffer, 0, 0, v5, Ext); /*0x427bcb*/
@@ -266,12 +272,12 @@ void* AnimTypeClass::GetWarhead(int a2)
     this->q2A0 = -1; /*0x427c7a*/
     IDA_LOBYTE(v3, unsigned int a1) = -1; /*0x427c71*/
   }
-  return (void *)(v3);
+  return (void *, unsigned int a3)(v3);
 }
 }
 // 0x427D00
 namespace gamemd {
-int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
+int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1, void * a3)
 {
   char Bool_Overwrite; // al
   int v5; // eax
@@ -344,8 +350,8 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   char Source[128]; // [esp+18h] [ebp-A0h] BYREF
   char Destination[32]; // [esp+98h] [ebp-20h] BYREF
 
-  INIClass::ResetSection(a2); /*0x427d13*/
-  if ( !ObjectTypeClass::LoadFromINI((char *)a1, a2) ) /*0x427d22*/
+  INIClass::ResetSection(a3); /*0x427d13*/
+  if ( !ObjectTypeClass::LoadFromINI((char *)a1, a3) ) /*0x427d22*/
     return 0; /*0x4287ea*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite(a1 + 36, aShadow, *(unsigned char *)(a1 + 882)); /*0x427d3b*/
   if ( Bool_Overwrite != *(unsigned char *)(a1 + 882) ) /*0x427d46*/
@@ -357,16 +363,16 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
       *(unsigned int *)(a1 + 704) *= 2; /*0x427d6d*/
     v5 = *(unsigned int *)(a1 + 704); /*0x427d73*/
     if ( *(unsigned int *)(a1 + 700) > v5 ) /*0x427d81*/
-      *(unsigned int *, unsigned int a1)(a1 + 700) = v5; /*0x427d83*/
+      *(unsigned int *)(a1 + 700) = v5; /*0x427d83*/
   }
   if ( *(unsigned char *)(a1 + 504) ) /*0x427d89*/
   {
     if ( !*(unsigned int *)(a1 + 164) ) /*0x427d93*/
     {
       *(unsigned char *)(a1 + 556) = INIClass::ReadBool_Overwrite(a1 + 36, g_INI_Key_Theater, *(unsigned char *)(a1 + 556)); /*0x427db4*/
-      *(unsigned char *, unsigned int a1)(a1 + 567) = INIClass::ReadBool_Overwrite(a1 + 36, aNewtheater, *(unsigned char *)(a1 + 567)); /*0x427dd1*/
+      *(unsigned char *)(a1 + 567) = INIClass::ReadBool_Overwrite(a1 + 36, aNewtheater, *(unsigned char *)(a1 + 567)); /*0x427dd1*/
     }
-    (*(void (__thiscall **, unsigned int a1)(int, int))(*(unsigned int *)a1 + 160))(a1, -1); /*0x427ddd*/
+    (*(void (__thiscall **)(int, int))(*(unsigned int *)a1 + 160))(a1, -1); /*0x427ddd*/
   }
   *(unsigned int *)(a1 + 868) = AnimTypeClass::ReadINIString(a1 + 36, aLayer, *(unsigned int *)(a1 + 868)); /*0x427df7*/
   *(unsigned char *)(a1 + 865) = INIClass::ReadBool_Overwrite(a1 + 36, aAltpalette, *(unsigned char *)(a1 + 865)); /*0x427e14*/
@@ -401,7 +407,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   *(unsigned int *)(a1 + 708) = INIClass::ReadInt_Overwrite(a1 + 36, aLoopcount, *(unsigned int *)(a1 + 708)); /*0x42804a*/
   v8 = *(unsigned int *)(a1 + 712); /*0x428050*/
   if ( INIClass::GetString( /*0x428059*/
-         a2,
+         a3,
          (uint8_t *)(a1 + 36),
          (uint8_t *)aNext,
          &g_INI_DefaultBuffer,
@@ -443,7 +449,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   v19 = *(unsigned int *)(a1 + 752); /*0x4281c9*/
   *(unsigned int *)(a1 + 844) = v18; /*0x4281e6*/
   if ( INIClass::GetString( /*0x4281ec*/
-         a2,
+         a3,
          (uint8_t *)(a1 + 36),
          (uint8_t *)g_INI_Key_Spawns,
          &g_INI_DefaultBuffer,
@@ -469,7 +475,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   v25 = *(unsigned int *)(a1 + 824); /*0x42826f*/
   *(unsigned int *)(a1 + 828) = v24; /*0x428275*/
   if ( INIClass::GetString( /*0x428292*/
-         a2,
+         a3,
          (uint8_t *)(a1 + 36),
          (uint8_t *)aTiberiumspawnt,
          &g_INI_DefaultBuffer,
@@ -499,7 +505,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   v33 = *(unsigned int *)(a1 + 760); /*0x428344*/
   *(unsigned int *)(a1 + 840) = v32; /*0x428361*/
   if ( !INIClass::GetString( /*0x42837c*/
-          a2,
+          a3,
           (uint8_t *)(a1 + 36),
           (uint8_t *)g_INI_Key_StartSound,
           &g_INI_DefaultBuffer,
@@ -513,7 +519,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   if ( Index == -1 ) /*0x428389*/
   {
     if ( !INIClass::GetString( /*0x4283b7*/
-            a2,
+            a3,
             (uint8_t *)(a1 + 36),
             (uint8_t *)aReport,
             &g_INI_DefaultBuffer,
@@ -527,7 +533,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   }
   v36 = *(unsigned int *)(a1 + 764); /*0x4283c2*/
   if ( !INIClass::GetString( /*0x4283f4*/
-          a2,
+          a3,
           (uint8_t *)(a1 + 36),
           (uint8_t *)g_INI_Key_StopSound,
           &g_INI_DefaultBuffer,
@@ -540,7 +546,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   v38 = *(unsigned int **)(a1 + 768); /*0x4283f8*/
   *(unsigned int *)(a1 + 764) = v37; /*0x428415*/
   if ( INIClass::GetString( /*0x42841b*/
-         a2,
+         a3,
          (uint8_t *)(a1 + 36),
          (uint8_t *)aBounceanim,
          &g_INI_DefaultBuffer,
@@ -561,7 +567,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
       goto LABEL_47; /*0x4284af*/
     }
   LABEL_43:
-    v40 = operator new(0x378u); /*0x42848c*/
+    v40 = RA2_OPNEW(0x378u); /*0x42848c*/
     if ( v40 ) /*0x428496*/
       v41 = AnimTypeClass::Construct(v40, Source); /*0x42849f*/
     else
@@ -573,7 +579,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   *(unsigned int *)(a1 + 768) = v38; /*0x4284b5*/
   v42 = *(unsigned int **)(a1 + 772); /*0x4284cf*/
   if ( !INIClass::GetString( /*0x4284df*/
-          a2,
+          a3,
           (uint8_t *)(a1 + 36),
           (uint8_t *)aExpireanim,
           &g_INI_DefaultBuffer,
@@ -593,7 +599,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   if ( g_BuildingTypeCount2 <= 0 ) /*0x42851a*/
   {
   LABEL_54:
-    v44 = operator new(0x378u); /*0x428544*/
+    v44 = RA2_OPNEW(0x378u); /*0x428544*/
     if ( v44 ) /*0x428553*/
     {
       v45 = AnimTypeClass::Construct(v44, Source); /*0x42855c*/
@@ -611,7 +617,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   v46 = *(unsigned int **)(a1 + 776); /*0x428573*/
   *(unsigned int *)(a1 + 772) = v45; /*0x428590*/
   if ( INIClass::GetString( /*0x428596*/
-         a2,
+         a3,
          (uint8_t *)(a1 + 36),
          (uint8_t *)aTraileranim,
          &g_INI_DefaultBuffer,
@@ -632,7 +638,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
       goto LABEL_70; /*0x428629*/
     }
   LABEL_65:
-    v48 = operator new(0x378u); /*0x428606*/
+    v48 = RA2_OPNEW(0x378u); /*0x428606*/
     if ( v48 ) /*0x428610*/
       v49 = AnimTypeClass::Construct(v48, Source); /*0x428619*/
     else
@@ -651,7 +657,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   v51 = *(unsigned int *)(a1 + 816); /*0x428665*/
   *(unsigned int *)(a1 + 820) = v50; /*0x428682*/
   if ( INIClass::GetString( /*0x428688*/
-         a2,
+         a3,
          (uint8_t *)(a1 + 36),
          (uint8_t *)g_INI_Key_Warhead,
          &g_INI_DefaultBuffer,
@@ -674,7 +680,7 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
   v69 = *(unsigned char *)(a1 + 861); /*0x4286f4*/
   *(unsigned char *)(a1 + 860) = v55; /*0x4286fb*/
   *(unsigned char *)(a1 + 861) = INIClass::ReadBool_Overwrite(a1 + 36, aUsenormallight, v69); /*0x428706*/
-  if ( INIClass::GetString(a2, (uint8_t *)(a1 + 36), (uint8_t *)aSpawnsparticle, 0, Destination, 32) ) /*0x428720*/
+  if ( INIClass::GetString(a3, (uint8_t *)(a1 + 36), (uint8_t *)aSpawnsparticle, 0, Destination, 32) ) /*0x428720*/
     *(unsigned int *)(a1 + 716) = BuildingTypeClass::FindOrCreateEx(Destination); /*0x428735*/
   *(unsigned int *)(a1 + 720) = INIClass::ReadInt_Overwrite(a1 + 36, aNumparticles, *(unsigned int *)(a1 + 720)); /*0x428753*/
   v70 = -1; /*0x42876a*/
@@ -705,51 +711,52 @@ int AnimTypeClass::LoadFromINI(unsigned char *** a2, void * a1)
     *(unsigned int *)(a1 + 740) = v61; /*0x4287d6*/
   return 1; /*0x4287dc*/
 }
-}
 // 0x428800
 namespace gamemd {
 ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
 {
   int result; // eax
-  char v3; // [esp+7h] [ebp-201h] BYREF
-  char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
+  char v3[513]; // [esp+7h] [ebp-201h] BYREF
 
-  result = ObjectTypeClass::LoadCleanup(a1, a2); /*0x428814*/
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)a1, a2); /*0x428814*/
   if ( result >= 0 ) /*0x42881b*/
   {
     if ( a1 ) /*0x428823*/
     {
-      ObjectTypeClass::Construct((unsigned int *)a1, (int)&v3); /*0x42882c*/
+      ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x42882c*/
+      a1->vtable0 = (void*)&AnimTypeClass_vftable; /*0x428831*/
+      a1->vtable1 = (void*)&AnimTypeClass_vftable; /*0x428837*/
+      a1->vtable2 = (void*)&AnimTypeClass_vftable; /*0x42883e*/
+      a1->vtable3 = (void*)&AnimTypeClass_vftable; /*0x428845*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x42884e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x428855*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 712)); /*0x428866*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 772)); /*0x428877*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 776)); /*0x428888*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 768)); /*0x428899*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 752)); /*0x4288aa*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 816)); /*0x4288bb*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(a1 + 824)); /*0x4288cc*/
-    if ( !*(unsigned char *)(a1 + 862) ) /*0x4288d1*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->Next); /*0x428866*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->ExpireAnim); /*0x428877*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->TrailerAnim); /*0x428888*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->BounceAnim); /*0x428899*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->Spawns); /*0x4288aa*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->Warhead); /*0x4288bb*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&a1->TiberiumSpawnType); /*0x4288cc*/
+    if ( !a1->DemandLoad ) /*0x4288d1*/
     {
-      if ( *(unsigned char *)(a1 + 556) ) /*0x4288db*/
+      if ( a1->Theater ) /*0x4288db*/
       {
         _makepath( /*0x428910*/
-          Buffer,
+          &v3[1],
           0,
           0,
-          (const char *)(a1 + 36),
-          (const char *)&off_7E1BC6 + 112 * *((unsigned int *)g_ScenarioClass_Instance + 1174));
-        *(unsigned int *)(a1 + 164) = SearchMIXFile(Buffer, 1); /*0x428923*/
+          (const char *)a1->BarrelVoxel,
+          (const char *)&off_7E1BC6 + 112 * unk_A8B230[130].uniqueId);
+        a1->Image = (SHPStruct *)SearchMIXFile(&v3[1], 1); /*0x428923*/
         return 0; /*0x428932*/
       }
-      if ( *(unsigned char *)(a1 + 567) ) /*0x428935*/
-        (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)a1 + 160))(a1, *((unsigned int *)g_ScenarioClass_Instance + 1174)); /*0x42894f*/
+      if ( a1->NewTheater ) /*0x428935*/
+        (*((void (__thiscall **)(AnimTypeClass *, int))a1->vtable0 + 40))(a1, unk_A8B230[130].uniqueId); /*0x42894f*/
     }
     return 0; /*0x428955*/
   }
   return result; /*0x42892b*/
-}
 }
 // 0x4289D0
 namespace gamemd {
@@ -768,136 +775,142 @@ int AnimTypeClass::PowerDrainUpdate(int * a2)
   int v13; // edx
   int v14; // ecx
 
-  AbstractTypeClass::ProcessPower(a2); /*0x4289d9*/
-  Power::TimerProcess(this->Layer); /*0x4289e7*/
+  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x4289d9*/
+  Power::TimerProcess(this->Layer[0]); /*0x4289e7*/
   IDA_LOBYTE(v3) = this->Normalized; /*0x4289ec*/
-  Power::FlagProcess(a2, v3); /*0x4289f5*/
+  Power::FlagProcess((Power *)a2, v3); /*0x4289f5*/
   IDA_LOBYTE(v4) = this->Flat; /*0x4289fa*/
-  v5 = Power::FlagProcess(a2, v4); /*0x428a03*/
+  v5 = Power::FlagProcess((Power *)a2, v4); /*0x428a03*/
   IDA_LOBYTE(v5) = this->Translucent; /*0x428a08*/
-  Power::FlagProcess(a2, v5); /*0x428a11*/
+  Power::FlagProcess((Power *)a2, v5); /*0x428a11*/
   IDA_LOBYTE(v6) = this->Scorch; /*0x428a16*/
-  Power::FlagProcess(a2, v6); /*0x428a1f*/
+  Power::FlagProcess((Power *)a2, v6); /*0x428a1f*/
   IDA_LOBYTE(v7) = this->Flamer; /*0x428a24*/
-  v8 = Power::FlagProcess(a2, v7); /*0x428a2d*/
+  v8 = Power::FlagProcess((Power *)a2, v7); /*0x428a2d*/
   IDA_LOBYTE(v8) = this->Crater; /*0x428a32*/
-  Power::FlagProcess(a2, v8); /*0x428a3b*/
+  Power::FlagProcess((Power *)a2, v8); /*0x428a3b*/
   IDA_LOBYTE(v9) = this->Sticky; /*0x428a40*/
-  Power::FlagProcess(a2, v9); /*0x428a49*/
+  Power::FlagProcess((Power *)a2, v9); /*0x428a49*/
   IDA_LOBYTE(v10) = this->PingPong; /*0x428a4e*/
-  v11 = Power::FlagProcess(a2, v10); /*0x428a57*/
+  v11 = Power::FlagProcess((Power *)a2, v10); /*0x428a57*/
   IDA_LOBYTE(v11) = this->Reverse; /*0x428a5c*/
-  Power::FlagProcess(a2, v11); /*0x428a65*/
+  Power::FlagProcess((Power *)a2, v11); /*0x428a65*/
   IDA_LOBYTE(v12) = this->Shadow; /*0x428a6a*/
-  Power::FlagProcess(a2, v12); /*0x428a73*/
+  Power::FlagProcess((Power *)a2, v12); /*0x428a73*/
   Power::TimerProcess(this->MiddleFrameWidth); /*0x428a81*/
-  Checksummer::Add_double((unsigned int *)a2, this->Damage, this->q2AC); /*0x428a96*/
+  Checksummer::Add_double((Checksummer *)a2, this->Damage[0], this->Damage[1]); /*0x428a96*/
   IDA_LOBYTE(v13) = this->TiberiumChainReaction; /*0x428a9b*/
-  Power::FlagProcess(a2, v13); /*0x428aa4*/
+  Power::FlagProcess((Power *)a2, v13); /*0x428aa4*/
   Power::TimerProcess(this->Rate); /*0x428ab2*/
-  Power::TimerProcess(this->q2B4); /*0x428ac0*/
-  Power::TimerProcess(this->q2B8); /*0x428ace*/
-  Power::TimerProcess(this->q2BC); /*0x428adc*/
-  Power::TimerProcess(this->q2C0); /*0x428aea*/
-  Power::TimerProcess(this->q2F8); /*0x428af8*/
-  Power::TimerProcess(this->q2FC); /*0x428b06*/
+  Power::TimerProcess(this->Start); /*0x428ac0*/
+  Power::TimerProcess(this->LoopStart); /*0x428ace*/
+  Power::TimerProcess(this->LoopEnd); /*0x428adc*/
+  Power::TimerProcess(this->End); /*0x428aea*/
+  Power::TimerProcess(this->Report); /*0x428af8*/
+  Power::TimerProcess(this->StopSound); /*0x428b06*/
   Power::TimerProcess(this->NumParticles); /*0x428b14*/
-  Power::TimerProcess(this->q2D4); /*0x428b22*/
-  Power::TimerProcess(this->q2D8); /*0x428b30*/
-  Power::TimerProcess(this->q2DC); /*0x428b3e*/
-  Power::TimerProcess(this->q2E0); /*0x428b4c*/
-  Power::TimerProcess(this->q2EC); /*0x428b5a*/
+  Power::TimerProcess(this->DetailLevel); /*0x428b22*/
+  Power::TimerProcess(this->TranslucencyDetailLevel); /*0x428b30*/
+  Power::TimerProcess(this->RandomLoopDelay[0]); /*0x428b3e*/
+  Power::TimerProcess(this->RandomLoopDelay[1]); /*0x428b4c*/
+  Power::TimerProcess(this->Translucency); /*0x428b5a*/
   IDA_LOBYTE(v14) = this->Tiled; /*0x428b5f*/
-  return Power::FlagProcess(a2, v14); /*0x428b6d*/
-}
+  return Power::FlagProcess((Power *)a2, v14); /*0x428b6d*/
 }
 // 0x428B80
 namespace gamemd {
 AnimTypeClass * * AnimTypeClass::FindOrCreate()
 {
   int v2; // esi
+  AnimTypeClass *v3; // eax
 
   if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x428b9c*/
     return 0; /*0x428bff*/
   v2 = 0; /*0x428bad*/
-  if ( g_BuildingTypeCount2 <= 0 ) /*0x428bb1*/
+  if ( FootClass_Array.secondaryFacing[0] <= 0 ) /*0x428bb1*/
   {
   LABEL_6:
-    if ( operator new(0x378u) ) /*0x428bdb*/
-      return AnimTypeClass::Construct(Source); /*0x428bf1*/
+    v3 = (AnimTypeClass *)RA2_OPNEW(0x378u); /*0x428bd6*/
+    if ( v3 ) /*0x428be5*/
+      return AnimTypeClass::Construct(v3, Source); /*0x428bf1*/
     return 0; /*0x428be5*/
   }
-  while ( _strcmpi((const void *)(*((unsigned int *)g_AnimTypeCount + v2) + 36), Source) ) /*0x428bca*/
+  while ( _strcmpi((char *)(*(unsigned int *)(FootClass_Array.primaryFacing[3] + 4 * v2) + 36), Source) ) /*0x428bca*/
   {
-    if ( ++v2 >= g_BuildingTypeCount2 ) /*0x428bd4*/
+    if ( ++v2 >= FootClass_Array.secondaryFacing[0] ) /*0x428bd4*/
       goto LABEL_6; /*0x428bd4*/
   }
-  return *((unsigned int *)g_AnimTypeCount + v2); /*0x428bef*/
-}
+  return *(unsigned int **)(FootClass_Array.primaryFacing[3] + 4 * v2); /*0x428bef*/
 }
 // 0x428C30
 namespace gamemd {
 int AnimTypeClass::GetDamage()
 {
   int result; // eax
-  const char *v3; // eax
-  void *EntireFile; // eax
-  void *v5; // eax
-  int v6; // esi
-  unsigned int v7[22]; // [esp+4h] [ebp-2D8h] BYREF
+  const char *ImageFile; // eax
+  SHPStruct *v4; // eax
+  SHPStruct *v5; // eax
+  SHPStruct *Image; // esi
+  CCFileClass v7; // [esp+4h] [ebp-2D8h] BYREF
   char v8[12]; // [esp+5Ch] [ebp-280h] BYREF
   int v9; // [esp+68h] [ebp-274h]
-  unsigned int v10[22]; // [esp+70h] [ebp-26Ch] BYREF
+  CCFileClass v10; // [esp+70h] [ebp-26Ch] BYREF
   char v11[12]; // [esp+C8h] [ebp-214h] BYREF
   int v12; // [esp+D4h] [ebp-208h]
   char Buffer[512]; // [esp+DCh] [ebp-200h] BYREF
 
-  result = this->Image; /*0x428c39*/
-  if ( !result && *(&this->q1582) ) /*0x428c47*/
+  result = (int)this->Image; /*0x428c39*/
+  if ( !result && this->DemandLoad ) /*0x428c47*/
   {
     Debug::Log(); /*0x428c5e*/
-    v3 = &this->u32_7E0; /*0x428c69*/
-    if ( !*(&this->u32_C84) ) /*0x428c63*/
-      v3 = &this->u32_90; /*0x428c76*/
-    _makepath(Buffer, 0, 0, v3, Ext); /*0x428c8b*/
-    if ( *(&this->u32_DC6) ) /*0x428c90*/
+    ImageFile = this->ImageFile; /*0x428c69*/
+    if ( !this->ImageFile[0] ) /*0x428c63*/
+      ImageFile = (const char *)this->BarrelVoxel; /*0x428c76*/
+    _makepath(Buffer, 0, 0, ImageFile, Ext); /*0x428c8b*/
+    if ( this->Theater ) /*0x428c90*/
     {
-      _makepath(Buffer, 0, 0, &this->u32_90, (const char *)&off_7E1BC6 + 112 * *((unsigned int *)g_ScenarioClass_Instance + 1174)); /*0x428ccc*/
+      _makepath( /*0x428ccc*/
+        Buffer,
+        0,
+        0,
+        (const char *)this->BarrelVoxel,
+        (const char *)&off_7E1BC6 + 112 * unk_A8B230[130].uniqueId);
     }
-    else if ( *(&this->q0E07) ) /*0x428cd6*/
+    else if ( this->NewTheater ) /*0x428cd6*/
     {
-      TheaterObjectTypeClassSpecificID(Buffer, *((unsigned int *)g_ScenarioClass_Instance + 1174)); /*0x428cf3*/
+      TheaterObjectTypeClassSpecificID(Buffer, unk_A8B230[130].uniqueId); /*0x428cf3*/
     }
-    CCFileClass::Construct(v7, Buffer); /*0x428d04*/
-    EntireFile = CCFileClass::ReadEntireFile(v7); /*0x428d0d*/
-    this->Image = EntireFile; /*0x428d14*/
-    if ( EntireFile ) /*0x428d1a*/
+    CCFileClass::Construct(&v7, Buffer); /*0x428d04*/
+    v4 = (SHPStruct *)CCFileClass::ReadEntireFile(&v7); /*0x428d0d*/
+    this->Image = v4; /*0x428d14*/
+    if ( v4 ) /*0x428d1a*/
     {
-      *(&this->DetailLevel8) = 1; /*0x428d1c*/
+      this->ImageAllocated = 1; /*0x428d1c*/
     }
     else
     {
-      ObjectTypeClass::SetRTTI71(Buffer); /*0x428d2c*/
-      CCFileClass::Construct(v10, Buffer); /*0x428d3d*/
-      v5 = CCFileClass::ReadEntireFile(v10); /*0x428d46*/
+      ObjectTypeClass::SetRTTI71((ObjectTypeClass *)Buffer); /*0x428d2c*/
+      CCFileClass::Construct(&v10, Buffer); /*0x428d3d*/
+      v5 = (SHPStruct *)CCFileClass::ReadEntireFile(&v10); /*0x428d46*/
       this->Image = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
-        *(&this->DetailLevel8) = 1; /*0x428d55*/
+        this->ImageAllocated = 1; /*0x428d55*/
+      *(unsigned int *)v10.__pad_0 = (void*)&CCFileClass_vftable; /*0x428d63*/
       v12 = 0; /*0x428d6b*/
       Vector::Clear((int)v11); /*0x428d76*/
-      v10[0] = &off_7E1668; /*0x428d7f*/
-      BufferIOFileClass::Dtor(v10); /*0x428d87*/
+      *(unsigned int *)v10.__pad_0 = &off_7E1668; /*0x428d7f*/
+      BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x428d87*/
     }
-    (*(void (__thiscall **)(char *, unsigned int))(*(unsigned int *)&this->DetailLevel0))(this, *((unsigned int *)g_ScenarioClass_Instance + 1174)); /*0x428d9c*/
-    v6 = this->Image; /*0x428da2*/
+    (*((void (__thiscall **)(AnimTypeClass *, int))this->vtable0 + 40))(this, unk_A8B230[130].uniqueId); /*0x428d9c*/
+    Image = this->Image; /*0x428da2*/
+    *(unsigned int *)v7.__pad_0 = (void*)&CCFileClass_vftable; /*0x428dac*/
     v9 = 0; /*0x428db4*/
     Vector::Clear((int)v8); /*0x428dbc*/
-    v7[0] = &off_7E1668; /*0x428dc5*/
-    BufferIOFileClass::Dtor(v7); /*0x428dcd*/
-    return v6; /*0x428dd2*/
+    *(unsigned int *)v7.__pad_0 = &off_7E1668; /*0x428dc5*/
+    BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x428dcd*/
+    return (int)Image; /*0x428dd2*/
   }
   return result; /*0x428dd4*/
-}
 }
 // 0x428EA0
 namespace gamemd {
@@ -905,31 +918,46 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2)
 {
   int v3; // eax
   int v4; // eax
+  AnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  v3 = (*(int (__thiscall **)(int *, unsigned int **))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &this); /*0x428ed3*/
-  if ( v3 != -1 && v3 < g_AnimManager && v3 < --g_AnimManager ) /*0x428eee*/
+  this->vtable0 = (void*)&AnimTypeClass_vftable; /*0x428ead*/
+  this->vtable1 = (void*)&AnimTypeClass_vftable; /*0x428eb3*/
+  this->vtable2 = (void*)&AnimTypeClass_vftable; /*0x428eba*/
+  this->vtable3 = (void*)&AnimTypeClass_vftable; /*0x428ec1*/
+  v6 = this; /*0x428ecf*/
+  v3 = (*(int (__thiscall **)(int *, AnimTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x428ed3*/
+         &g_BuildingLoadQueue_Array.LightVisibility,
+         &v6);
+  if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x428ee3*/
   {
-    do /*0x428f06*/
+    --g_BuildingLoadQueue_Array.LightBlueTint; /*0x428ee8*/
+    for ( ; /*0x428eee*/
+          v3 < g_BuildingLoadQueue_Array.LightBlueTint;
+          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
+                                                                                         + 4 * v3) )
     {
       ++v3; /*0x428ef6*/
-      *((unsigned int *)g_AnimPoolCount + v3 - 1) = *((unsigned int *)g_AnimPoolCount + v3); /*0x428efa*/
     }
-    while ( v3 < g_AnimManager ); /*0x428f06*/
   }
-  v4 = (*(int (__thiscall **)(int *, unsigned int **))(AnimTypeClass_Array + 16))(&AnimTypeClass_Array, &this); /*0x428f1c*/
-  if ( v4 != -1 && v4 < g_BuildingTypeCount2 && v4 < --g_BuildingTypeCount2 ) /*0x428f37*/
+  v6 = this; /*0x428f18*/
+  v4 = (*(int (__thiscall **)(int *, AnimTypeClass **))(FootClass_Array.primaryFacing[2] + 16))( /*0x428f1c*/
+         &FootClass_Array.primaryFacing[2],
+         &v6);
+  if ( v4 != -1 && v4 < FootClass_Array.secondaryFacing[0] ) /*0x428f2c*/
   {
-    do /*0x428f4f*/
+    --FootClass_Array.secondaryFacing[0]; /*0x428f31*/
+    for ( ; /*0x428f37*/
+          v4 < FootClass_Array.secondaryFacing[0];
+          *(unsigned int *)(FootClass_Array.primaryFacing[3] + 4 * v4 - 4) = *(unsigned int *)(FootClass_Array.primaryFacing[3]
+                                                                                 + 4 * v4) )
     {
       ++v4; /*0x428f3f*/
-      *((unsigned int *)g_AnimTypeCount + v4 - 1) = *((unsigned int *)g_AnimTypeCount + v4); /*0x428f43*/
     }
-    while ( v4 < g_BuildingTypeCount2 ); /*0x428f4f*/
   }
-  ObjectTypeClass::Destruct(); /*0x428f53*/
+  ObjectTypeClass::Destruct((int)this); /*0x428f53*/
   if ( (a2 & 1) != 0 ) /*0x428f5d*/
-    RA2_OPDEL(); /*0x428f60*/
-  return this; /*0x428f6a*/
+    RA2_OPDEL(this); /*0x428f60*/
+  return &this->vtable0; /*0x428f6a*/
 }
 } // namespace gamemd
 
@@ -938,52 +966,51 @@ namespace gamemd {
 int AnimTypeClass::LookupByName()
 {
   int v2; // edi
-  const void **v3; // esi
+  char **v3; // esi
 
   if ( !this ) /*0x48e057*/
     return -1; /*0x48e07c*/
   v2 = 0; /*0x48e059*/
-  v3 = (const void **)off_81DA78; /*0x48e05b*/
-  while ( _strcmpi(*v3, this) ) /*0x48e06e*/
+  v3 = off_81DA78; /*0x48e05b*/
+  while ( _strcmpi(*v3, (char *)this) ) /*0x48e06e*/
   {
     ++v3; /*0x48e070*/
     ++v2; /*0x48e073*/
-    if ( (int)v3 >= (int)&dword_81DA8C ) /*0x48e07a*/
+    if ( (int)v3 >= (int)dword_81DA8C ) /*0x48e07a*/
       return -1; /*0x48e07a*/
   }
   return v2; /*0x48e07c*/
-}
 }
 // 0x427A80
 namespace gamemd {
 char AnimTypeClass::GetLoopCount(int a2)
 {
-  int v2; // eax
+  SHPStruct *v2; // eax
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
 
-  IDA_LOBYTE(v2) = g_ArmageddonMode; /*0x427a80*/
-  if ( g_ArmageddonMode || a2 != dword_822CF8 ) /*0x427aa0*/
+  IDA_LOBYTE(v2) = stru_A8EB00.gapE4[391]; /*0x427a80*/
+  if ( stru_A8EB00.gapE4[391] || a2 != dword_822CF8 ) /*0x427aa0*/
   {
-    if ( !this->q22C || this->DemandLoad ) /*0x427ab0*/
+    if ( !this->Theater || this->DemandLoad ) /*0x427ab0*/
     {
-      IDA_LOBYTE(v2) = this->q237; /*0x427b2b*/
+      IDA_LOBYTE(v2) = this->NewTheater; /*0x427b2b*/
       if ( (unsigned char)v2 ) /*0x427b33*/
-        IDA_LOBYTE(a2); /*0x427b3a*/
+        IDA_LOBYTE(v2) = (*((char (__thiscall **)(AnimTypeClass *, int))this->vtable0 + 40))(this, a2); /*0x427b3a*/
     }
     else
     {
       if ( this->Image && this->ImageAllocated ) /*0x427ac4*/
       {
-        RA2_OPDEL(*((void **)&this->uniqueId1)); /*0x427acf*/
+        RA2_OPDEL(this->Image); /*0x427acf*/
         this->ImageAllocated = 0; /*0x427ad7*/
       }
       this->Image = 0; /*0x427af6*/
-      _makepath(Buffer, 0, 0, (const char *)&this->u32_90, (const char *)&off_7E1BC6 + 112 * a2); /*0x427b07*/
-      v2 = SearchMIXFile(Buffer, 1); /*0x427b15*/
+      _makepath(Buffer, 0, 0, (const char *)this->BarrelVoxel, (const char *)&off_7E1BC6 + 112 * a2); /*0x427b07*/
+      v2 = (SHPStruct *)SearchMIXFile(Buffer, 1); /*0x427b15*/
       this->Image = v2; /*0x427b1a*/
     }
   }
-  return v2; /*0x427b20*/
+  return (char)v2; /*0x427b20*/
 }
 } // namespace gamemd
 
@@ -996,11 +1023,11 @@ int AnimTypeClass::FindIndex()
   if ( !this ) /*0x427cb6*/
     return -1; /*0x427cb6*/
   v2 = 0; /*0x427cbd*/
-  if ( g_BuildingTypeCount2 <= 0 ) /*0x427cc1*/
+  if ( FootClass_Array.secondaryFacing[0] <= 0 ) /*0x427cc1*/
     return -1; /*0x427ce6*/
-  while ( _strcmpi((const void *)(*((unsigned int *)g_AnimTypeCount + v2) + 36), this) ) /*0x427cda*/
+  while ( _strcmpi((char *)(*(unsigned int *)(FootClass_Array.primaryFacing[3] + 4 * v2) + 36), (char *)this) ) /*0x427cda*/
   {
-    if ( ++v2 >= g_BuildingTypeCount2 ) /*0x427ce4*/
+    if ( ++v2 >= FootClass_Array.secondaryFacing[0] ) /*0x427ce4*/
       return -1; /*0x427ce4*/
   }
   return v2; /*0x427ce6*/
@@ -1013,7 +1040,7 @@ int AnimTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP
 {
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, aP2); /*0x42897f*/
+  result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x42897f*/
   if ( result >= 0 ) /*0x428986*/
     return 0; /*0x428988*/
   return result; /*0x42898a*/
@@ -1029,7 +1056,7 @@ int AnimTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   *a2 = -1366608934; /*0x4289a6*/
   a2[1] = 298976796; /*0x4289ae*/
   a2[2] = 1610654892; /*0x4289b7*/
-  a2[3] = -1252326136; /*0x4289c0*/
+  a2[3] = unk_7E962C; /*0x4289c0*/
   return 0; /*0x42899d*/
 }
 } // namespace gamemd
@@ -1040,9 +1067,9 @@ int AnimTypeClass::GetAnimData(int a2, int a3)
 {
   int result; // eax
 
-  result = *(&this->TranslucencyDetailLevel8); /*0x428c10*/
+  result = (int)this->Next; /*0x428c10*/
   if ( result == a2 ) /*0x428c1c*/
-    *(&this->TranslucencyDetailLevel8) = 0; /*0x428c1e*/
+    this->Next = 0; /*0x428c1e*/
   return result; /*0x428c28*/
 }
 } // namespace gamemd
@@ -1103,8 +1130,8 @@ int AnimTypeClass::ReadINIString(INIClass * aP1, unsigned char * a2, Layer a3)
   char Destination[128]; // [esp+8h] [ebp-80h] BYREF
 
   v5 = globalHelper_08E090(a3); /*0x47706d*/
-  if ( INIClass::GetString(this, aP1, a2, v5, Destination, 128) ) /*0x477085*/
-    return AnimTypeClass::LookupByName(Destination); /*0x477092*/
+  if ( INIClass::GetString((INIClass *)this, aP1, a2, v5, Destination, 128) ) /*0x477085*/
+    return AnimTypeClass::LookupByName((AnimTypeClass *)Destination); /*0x477092*/
   else
     return a3; /*0x4770a2*/
 }

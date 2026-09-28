@@ -18,7 +18,7 @@ struct E4Recv_4517D0 {
     unsigned int q1924;  // 0x1924
     unsigned int q4978;  // 0x4978
     unsigned int q5684;  // 0x5684
-    unsigned int u32_883;
+    unsigned int vtable0;
 // --- flat members (END) ---
     int sub_4517D0();  // 0x4517D0
 };

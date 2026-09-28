@@ -13,8 +13,7 @@
 namespace gamemd {
 void VtableStub_643E70()
 {
-  *(this + 25) = 0; /*0x643e70*/
-}
+  *(&this->q0085) = 0; /*0x643e70*/
 }
 // 0x65D690
 char VtableStub::RetZero_eax_35(int a1)

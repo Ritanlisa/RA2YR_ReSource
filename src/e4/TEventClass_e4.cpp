@@ -22,185 +22,207 @@
 #include "e4/classes/TacticalClass_e4.hpp"
 #include "e4/classes/TacticalMap_e4.hpp"
 #include "e4/classes/TabClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
 
 // 0x71E940
 namespace gamemd {
 DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6, int a7)
 {
-  int v8; // ecx
-  int v9; // eax
-  int v10; // edi
-  const char *v11; // edx
-  char *v12; // ebp
-  int v13; // edi
-  int v14; // ebx
-  int v15; // ebp
-  int v16; // esi
-  DynamicVector ** v18;
-  int v19; // edi
-  const char *v20; // edx
-  char *v21; // ebp
-  int v22; // edi
-  int v23; // esi
-  DynamicVector ** v24;
-  DynamicVector ** v25;
-  int v26; // edx
-  int v27; // eax
-  void *v28; // ecx
-  DynamicVector ** v29;
-  int v30;
+  double v7; // st7
+  int TEventClass_field_2C; // ecx
+  int v10; // eax
+  int v11; // edi
+  int *TEventClass_field_38; // edx
+  int v13; // ebp
+  int v14; // edi
+  int v15; // ebx
+  int TEventClass_field_34; // ebp
+  int v17; // esi
+  int v18; // eax
+  int v19; // eax
+  int v20; // edi
+  int *v21; // edx
+  int v22; // ebp
+  int v23; // edi
+  int v24; // esi
+  void *vtable3; // edx
+  int abstractFlags; // eax
+  int v27; // edx
+  int v28; // eax
+  HouseClass *v29; // ecx
+  int v30; // esi
+  int v31; // esi
   int *WorldCoords; // eax
-  int v32; // esi
-  int v33; // edi
-  int v34; // ebx
-  int *v35; // eax
-  int v36; // edx
-  int v37; // ecx
-  int v38; // eax
-  double v39; // st7
-  int v40; // esi
+  int v33; // esi
+  int v34; // edi
+  int v35; // ebx
+  int *v36; // eax
+  int v37; // edx
+  int v38; // ecx
+  int v39; // eax
+  WaveClass *waveEffect; // esi
   int v41; // edx
-  char *v42; // ecx
-  int v43; // eax
+  ParticleSystemClass *auxParticles1; // ecx
+  unsigned int *vtable0; // eax
   int v44; // esi
   int v45; // edx
   int *v46; // eax
   int v47; // ecx
   int v48; // eax
   int Owner; // esi
-  int v50; // eax
-  void *v51; // ecx
-  void *v52; // edi
-  int v53; // ebx
-  unsigned int v55[3]; // [esp+20h] [ebp-18h] BYREF
-  unsigned char v56[12]; // [esp+2Ch] [ebp-Ch] BYREF
-
-  v8 = *(&this->vtable21); /*0x71e94d*/
-  switch ( v8 ) /*0x71e964*/
+  int v52; // eax
+  HouseClass *v53; // ecx
+  HouseClass *v54; // edi
+  int v55; // ebx
+  double v57; // [esp+4h] [ebp-34h]
+  int v59; // [esp+20h] [ebp-18h] BYREF
+  int v60; // [esp+24h] [ebp-14h]
+  int v61; // [esp+28h] [ebp-10h]
+  unsigned char v62[12]; // [esp+2Ch] [ebp-Ch] BYREF
+TEventClass_field_2C = (int)(this->TEventClass_field_2C);
+  switch ( TEventClass_field_2C ) /*0x71e964*/
   {
     case 13: /*0x71e964*/
     case 51: /*0x71e964*/
-      v26 = *a5; /*0x71ec37*/
-      v27 = a5[2]; /*0x71ec39*/
+      v27 = *a5; /*0x71ec37*/
+      v28 = a5[2]; /*0x71ec39*/
       if ( *a5 == -1 ) /*0x71ec3f*/
         goto LABEL_44; /*0x71ec3f*/
-      if ( (int)g_CurrentFrame - v26 < v27 ) /*0x71ec4b*/
+      if ( *(unsigned int *)&stru_A8EB00.gapE4[416] - v27 < v28 ) /*0x71ec4b*/
       {
-        v27 -= (int)g_CurrentFrame - v26; /*0x71ec4d*/
+        v28 -= *(unsigned int *)&stru_A8EB00.gapE4[416] - v27; /*0x71ec4d*/
   LABEL_44:
-        if ( v27 ) /*0x71ec51*/
-          return 0; /*0x71ec51*/
+        if ( v28 ) /*0x71ec51*/
+          goto LABEL_139; /*0x71ec51*/
       }
-      return (gamemd::DynamicVector **)(1);
+      IDA_LOBYTE(v18) = 1; /*0x71ec5a*/
+      return v18; /*0x71ec60*/
     case 14: /*0x71e964*/
-      if ( *((unsigned int *)g_ScenarioClass_Instance + 1146) == -1 ) /*0x71ebf6*/
-        return (gamemd::DynamicVector **)(0);
-      v24 = (gamemd::DynamicVector **)((int)(*((unsigned int *)g_ScenarioClass_Instance + 1146)));
-      v25 = (gamemd::DynamicVector **)((int)((gamemd::DynamicVector **)(*((unsigned int *)g_ScenarioClass_Instance + 1148))));
-      if ( v24 == -1 ) /*0x71ec0b*/
-        return (gamemd::DynamicVector **)(!v25);
-      if ( (int)g_CurrentFrame - v24 >= v25 ) /*0x71ec17*/
-        return (gamemd::DynamicVector **)(1);
-      v25 -= (int)g_CurrentFrame - v24; /*0x71ec1d*/
-      return !v25; /*0x71ec21*/
+      if ( unk_A8B230[127].vtable3 == (void *)-1 ) /*0x71ebf6*/
+        goto LABEL_139; /*0x71ebf6*/
+      vtable3 = unk_A8B230[127].vtable3; /*0x71ebfc*/
+      abstractFlags = unk_A8B230[127].abstractFlags; /*0x71ec02*/
+      if ( vtable3 == (void *)-1 ) /*0x71ec0b*/
+        goto LABEL_39; /*0x71ec0b*/
+      if ( *(unsigned int *)&stru_A8EB00.gapE4[416] - (int)vtable3 >= abstractFlags ) /*0x71ec17*/
+        goto LABEL_153; /*0x71ec17*/
+      abstractFlags -= *(unsigned int *)&stru_A8EB00.gapE4[416] - (unsigned int)vtable3; /*0x71ec1d*/
+  LABEL_39:
+      if ( abstractFlags ) /*0x71ec21*/
+        goto LABEL_139; /*0x71ec21*/
+      IDA_LOBYTE(v18) = 1; /*0x71ec2a*/
+      return v18; /*0x71ec30*/
     case 27: /*0x71e964*/
-      ScenarioClass::GetGlobalStateByID(g_ScenarioClass_Instance, *(&this->vtable23), &a6); /*0x71eb62*/
-      return a6; /*0x71eb72*/
+      ScenarioClass::GetGlobalStateByID((ScenarioClass *)unk_A8B230, this->TEventClass_field_34, &a6); /*0x71eb62*/
+      IDA_LOBYTE(v18) = a6; /*0x71eb67*/
+      return v18; /*0x71eb72*/
     case 28: /*0x71e964*/
-      ScenarioClass::GetGlobalStateByID(g_ScenarioClass_Instance, *(&this->vtable23), &a6); /*0x71eb84*/
-      return (unsigned char)a6 == 0; /*0x71eb9b*/
+      ScenarioClass::GetGlobalStateByID((ScenarioClass *)unk_A8B230, this->TEventClass_field_34, &a6); /*0x71eb84*/
+      IDA_LOBYTE(v18) = (unsigned char)a6 == 0; /*0x71eb95*/
+      return v18; /*0x71eb9b*/
     case 36: /*0x71e964*/
-      ScenarioClass::GetLocalStateByID(g_ScenarioClass_Instance, *(&this->vtable23), &a6); /*0x71ebad*/
-      return a6; /*0x71ebbd*/
+      ScenarioClass::GetLocalStateByID((ScenarioClass *)unk_A8B230, this->TEventClass_field_34, &a6); /*0x71ebad*/
+      IDA_LOBYTE(v18) = a6; /*0x71ebb2*/
+      return v18; /*0x71ebbd*/
     case 37: /*0x71e964*/
-      ScenarioClass::GetLocalStateByID(g_ScenarioClass_Instance, *(&this->vtable23), &a6); /*0x71ebcf*/
-      return (unsigned char)a6 == 0; /*0x71ebe6*/
+      ScenarioClass::GetLocalStateByID((ScenarioClass *)unk_A8B230, this->TEventClass_field_34, &a6); /*0x71ebcf*/
+      IDA_LOBYTE(v18) = (unsigned char)a6 == 0; /*0x71ebe0*/
+      return v18; /*0x71ebe6*/
     case 45: /*0x71e964*/
-      return *((unsigned int *)g_ScenarioClass_Instance + 3403) <= *(&this->vtable23); /*0x71eb03*/
+      return (int)unk_A8B230[378].vtable1 <= this->TEventClass_field_34; /*0x71eb03*/
     case 46: /*0x71e964*/
-      return *((unsigned int *)g_ScenarioClass_Instance + 3403) >= *(&this->vtable23); /*0x71eb25*/
+      IDA_LOBYTE(v18) = (int)unk_A8B230[378].vtable1 >= this->TEventClass_field_34; /*0x71eb1f*/
+      return v18; /*0x71eb25*/
     case 47: /*0x71e964*/
-      return *(&this->vtable23) <= (int)g_CurrentFrame / 15; /*0x71eb50*/
+      IDA_LOBYTE(v18) = this->TEventClass_field_34 <= *(unsigned int *)&stru_A8EB00.gapE4[416] / 15; /*0x71eb49*/
+      return v18; /*0x71eb50*/
     case 60: /*0x71e964*/
-      v9 = -1; /*0x71e971*/
-      v10 = dword_A8EB10 - 1; /*0x71e974*/
+      v10 = -1; /*0x71e971*/
+      v11 = stru_A8EB00.parent_gap[4] - 1; /*0x71e974*/
       a6 = -1; /*0x71e975*/
-      if ( dword_A8EB10 - 1 < 0 ) /*0x71e97b*/
+      if ( stru_A8EB00.parent_gap[4] - 1 < 0 ) /*0x71e97b*/
         goto LABEL_8; /*0x71e97b*/
-      v11 = (const char *)(&this->vtable24); /*0x71e982*/
-      v12 = (char *)dword_A8EB04 + 4 * v10; /*0x71e985*/
-      while ( strcmp((const char *)(*(unsigned int *)v12 + 36), v11) ) /*0x71e9bb*/
+      TEventClass_field_38 = this->TEventClass_field_38; /*0x71e982*/
+      v13 = stru_A8EB00.parent_gap[1] + 4 * v11; /*0x71e985*/
+      while ( strcmp((const char *)(*(unsigned int *)v13 + 36), (const char *)TEventClass_field_38) ) /*0x71e9bb*/
       {
-        --v10; /*0x71e9bd*/
-        v12 -= 4; /*0x71e9be*/
-        if ( v10 < 0 ) /*0x71e9c3*/
+        --v11; /*0x71e9bd*/
+        v13 -= 4; /*0x71e9be*/
+        if ( v11 < 0 ) /*0x71e9c3*/
         {
-          v9 = a6; /*0x71e9c5*/
+          v10 = a6; /*0x71e9c5*/
           goto LABEL_8; /*0x71e9c9*/
         }
       }
-      v9 = v10; /*0x71e9cb*/
+      v10 = (int)(v11);
   LABEL_8:
-      if ( v9 >= dword_A8EB10 ) /*0x71e9d3*/
-        return 0; /*0x71e9d3*/
-      if ( v9 < 0 ) /*0x71e9db*/
-        return 0; /*0x71e9db*/
-      v13 = 0; /*0x71e9eb*/
-      v14 = *((unsigned int *)dword_A8EB04 + v9); /*0x71e9ed*/
-      v15 = *(&this->vtable23); /*0x71e9f5*/
-      v16 = g_SidebarState - 1; /*0x71e9f8*/
-      if ( g_SidebarState - 1 < 0 ) /*0x71e9fd*/
-        return 0; /*0x71e9fd*/
+      if ( v10 >= stru_A8EB00.parent_gap[4] ) /*0x71e9d3*/
+        goto LABEL_139; /*0x71e9d3*/
+      if ( v10 < 0 ) /*0x71e9db*/
+        goto LABEL_139; /*0x71e9db*/
+      v14 = 0; /*0x71e9eb*/
+      v15 = *(unsigned int *)(stru_A8EB00.parent_gap[1] + 4 * v10); /*0x71e9ed*/
+      TEventClass_field_34 = this->TEventClass_field_34; /*0x71e9f5*/
+      v17 = *(unsigned int *)&stru_A8EB00.gapE4[164] - 1; /*0x71e9f8*/
+      if ( *(unsigned int *)&stru_A8EB00.gapE4[164] - 1 < 0 ) /*0x71e9fd*/
+        goto LABEL_139; /*0x71e9fd*/
       while ( 1 ) /*0x71ea03*/
       {
-        if ( (*(int (__thiscall **)(unsigned int))(**((unsigned int **)g_TechnoClass_Count + v16) + 132))(*((unsigned int *)g_TechnoClass_Count /*0x71ea16*/
-                                                                                              + v16)) == v14 )
-          ++v13; /*0x71ea18*/
-        if ( v13 >= v15 ) /*0x71ea1b*/
+        if ( (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(*(unsigned int *)&stru_A8EB00.gapE4[152] + 4 * v17) + 132))(*(unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[152] + 4 * v17)) == v15 ) /*0x71ea16*/
+          ++v14; /*0x71ea18*/
+        if ( v14 >= TEventClass_field_34 ) /*0x71ea1b*/
           break; /*0x71ea1b*/
-        if ( --v16 < 0 ) /*0x71ea22*/
-          return 0; /*0x71ea2d*/
-      }
-      return (gamemd::DynamicVector **)((gamemd::DynamicVector **)(1));
-    case 61: /*0x71e964*/
-      v18 = -1; /*0x71ea36*/
-      v19 = dword_A8EB10 - 1; /*0x71ea39*/
-      a6 = -1; /*0x71ea3a*/
-      if ( dword_A8EB10 - 1 < 0 ) /*0x71ea40*/
-        goto LABEL_22; /*0x71ea40*/
-      v20 = (const char *)(&this->vtable24); /*0x71ea47*/
-      v21 = (char *)dword_A8EB04 + 4 * v19; /*0x71ea4a*/
-      while ( strcmp((const char *)(*(unsigned int *)v21 + 36), v20) ) /*0x71ea80*/
-      {
-        --v19; /*0x71ea82*/
-        v21 -= 4; /*0x71ea83*/
-        if ( v19 < 0 ) /*0x71ea88*/
+        if ( --v17 < 0 ) /*0x71ea22*/
         {
-          v18 = (unsigned int)((gamemd::DynamicVector **)((unsigned int)((gamemd::DynamicVector **)((unsigned int)((gamemd::DynamicVector **)(a6))))));
+          IDA_LOBYTE(v18) = 0; /*0x71ea27*/
+          return v18; /*0x71ea2d*/
+        }
+      }
+      goto LABEL_153; /*0x71ea1b*/
+    case 61: /*0x71e964*/
+      v19 = -1; /*0x71ea36*/
+      v20 = stru_A8EB00.parent_gap[4] - 1; /*0x71ea39*/
+      a6 = -1; /*0x71ea3a*/
+      if ( stru_A8EB00.parent_gap[4] - 1 < 0 ) /*0x71ea40*/
+        goto LABEL_22; /*0x71ea40*/
+      v21 = this->TEventClass_field_38; /*0x71ea47*/
+      v22 = stru_A8EB00.parent_gap[1] + 4 * v20; /*0x71ea4a*/
+      while ( strcmp((const char *)(*(unsigned int *)v22 + 36), (const char *)v21) ) /*0x71ea80*/
+      {
+        --v20; /*0x71ea82*/
+        v22 -= 4; /*0x71ea83*/
+        if ( v20 < 0 ) /*0x71ea88*/
+        {
+          v19 = a6; /*0x71ea8a*/
           goto LABEL_22; /*0x71ea8e*/
         }
       }
-      v18 = (unsigned int)((gamemd::DynamicVector **)((unsigned int)((gamemd::DynamicVector **)((unsigned int)((gamemd::DynamicVector **)((int)((gamemd::DynamicVector **)(v19))))))));
+      v19 = v20; /*0x71ea90*/
   LABEL_22:
-      if ( v18 >= dword_A8EB10 || v18 < 0 ) /*0x71eaa0*/
-        return 0; /*0x71eaa0*/
-      v22 = *((unsigned int *)dword_A8EB04 + v18); /*0x71eab2*/
-      v23 = g_SidebarState - 1; /*0x71eab5*/
-      if ( g_SidebarState - 1 < 0 ) /*0x71eaba*/
-        return 1; /*0x71eaba*/
-      while ( (*(int (__thiscall **)(unsigned int))(**((unsigned int **)g_TechnoClass_Count + v23) + 132))(*((unsigned int *)g_TechnoClass_Count /*0x71ead2*/
-                                                                                               + v23)) != v22 )
+      if ( v19 >= stru_A8EB00.parent_gap[4] || v19 < 0 ) /*0x71eaa0*/
+        goto LABEL_139; /*0x71eaa0*/
+      v23 = *(unsigned int *)(stru_A8EB00.parent_gap[1] + 4 * v19); /*0x71eab2*/
+      v24 = *(unsigned int *)&stru_A8EB00.gapE4[164] - 1; /*0x71eab5*/
+      if ( *(unsigned int *)&stru_A8EB00.gapE4[164] - 1 < 0 ) /*0x71eaba*/
+        goto LABEL_153; /*0x71eaba*/
+      while ( (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(*(unsigned int *)&stru_A8EB00.gapE4[152] + 4 * v24) + 132))(*(unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[152] + 4 * v24)) != v23 ) /*0x71ead2*/
       {
-        if ( --v23 < 0 ) /*0x71ead9*/
-          return 1; /*0x71eae4*/
+        if ( --v24 < 0 ) /*0x71ead9*/
+        {
+          IDA_LOBYTE(v18) = 1; /*0x71eade*/
+          return v18; /*0x71eae4*/
+        }
       }
-      return 0; /*0x71ead2*/
+      goto LABEL_139; /*0x71ead2*/
     default:
-      if ( !v8 ) /*0x71ec65*/
-        return 0; /*0x71ec65*/
-      if ( v8 != 19 && v8 != 20 && v8 != 21 && v8 != 22 ) /*0x71ec81*/
+      if ( !TEventClass_field_2C ) /*0x71ec65*/
+        goto LABEL_139; /*0x71ec65*/
+      if ( TEventClass_field_2C != 19 /*0x71ec81*/
+        && TEventClass_field_2C != 20
+        && TEventClass_field_2C != 21
+        && TEventClass_field_2C != 22 )
       {
-        switch ( v8 ) /*0x71ec93*/
+        switch ( TEventClass_field_2C ) /*0x71ec93*/
         {
           case 1: /*0x71ec93*/
           case 2: /*0x71ec93*/
@@ -235,120 +257,149 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
           case 53: /*0x71ec93*/
           case 54: /*0x71ec93*/
           case 59: /*0x71ec93*/
-            if ( a2 == v8 && !g_ArmageddonMode ) /*0x71eca9*/
+            if ( a2 == TEventClass_field_2C && !stru_A8EB00.gapE4[391] ) /*0x71eca9*/
               break; /*0x71eca9*/
-            return 0; /*0x71eca9*/
+            goto LABEL_139; /*0x71eca9*/
           default:
             break;
         }
       }
-      switch ( v8 ) /*0x71ecd6*/
+      switch ( TEventClass_field_2C ) /*0x71ecd6*/
       {
         case 1: /*0x71ecd6*/
         case 25: /*0x71ecd6*/
         case 26: /*0x71ecd6*/
         case 24: /*0x71ecd6*/
         case 59: /*0x71ecd6*/
-          if ( a2 == v8 ) /*0x71f1bf*/
+          if ( a2 == TEventClass_field_2C ) /*0x71f1bf*/
           {
-            v51 = (void *)*(&this->vtable23); /*0x71f1c1*/
-            if ( v51 == (void *)-1 || HouseClass::FindOwner(v51) ) /*0x71f1c9*/
+            v53 = (HouseClass *)this->TEventClass_field_34; /*0x71f1c1*/
+            if ( v53 == (HouseClass *)-1 || HouseClass::FindOwner(v53) ) /*0x71f1c9*/
             {
               if ( a4 ) /*0x71f1d8*/
               {
-                v52 = (void *)*(&this->vtable23); /*0x71f1da*/
-                if ( v52 == (void *)-1 /*0x71f1f5*/
-                  || (v53 = (*(int (__thiscall **)(int))(*(unsigned int *)a4 + 56))(a4),
-                      v53 == *(unsigned int *)(HouseClass::FindOwner(v52) + 48)) )
+                v54 = (HouseClass *)this->TEventClass_field_34; /*0x71f1da*/
+                if ( v54 == (HouseClass *)-1 /*0x71f1f5*/
+                  || (v55 = (*(int (__thiscall **)(int))(*(unsigned int *)a4 + 56))(a4),
+                      v55 == *(unsigned int *)(HouseClass::FindOwner(v54) + 48)) )
                 {
                   *(unsigned char *)a6 = 1; /*0x71f1ff*/
-                  *(&this->vtable31) = (*(int (__thiscall **)(int))(*(unsigned int *)a4 + 60))(a4); /*0x71f209*/
-                  return 1; /*0x71f20f*/
+                  this->TEventClass_field_54 = (*(int (__thiscall **)(int))(*(unsigned int *)a4 + 60))(a4); /*0x71f209*/
+  LABEL_153:
+                  IDA_LOBYTE(v18) = 1; /*0x71f20c*/
+                  return v18; /*0x71f20f*/
                 }
               }
             }
           }
-          return 0; /*0x71f16c*/
+  LABEL_139:
+          IDA_LOBYTE(v18) = 0; /*0x71f163*/
+          return v18; /*0x71f16c*/
         case 53: /*0x71ecd6*/
           if ( a2 == 53 ) /*0x71ece3*/
           {
             if ( a4 ) /*0x71ecef*/
             {
-              v28 = (void *)*(&this->vtable23); /*0x71ecf5*/
-              if ( v28 != (void *)-1 ) /*0x71ecfb*/
+              v29 = (HouseClass *)this->TEventClass_field_34; /*0x71ecf5*/
+              if ( v29 != (HouseClass *)-1 ) /*0x71ecfb*/
               {
-                if ( HouseClass::FindOwner(v28) ) /*0x71ed01*/
+                if ( HouseClass::FindOwner(v29) ) /*0x71ed01*/
                 {
                   if ( (*(int (__thiscall **)(int, int))(*(unsigned int *)a4 + 208))(a4, 1) ) /*0x71ed14*/
                   {
-                    v29 = (gamemd::DynamicVector **)((int)((gamemd::DynamicVector **)((*(int (__thiscall **)(int, int))(*(unsigned int *)a4 + 208))(a4, 1))));
-                    if ( *(unsigned int *)(v29 + 48) == *(unsigned int *)(HouseClass::FindOwner((void *)*(&this->vtable23)) + 48) ) /*0x71ed40*/
+                    v30 = (*(int (__thiscall **)(int, int))(*(unsigned int *)a4 + 208))(a4, 1); /*0x71ed31*/
+                    if ( *(unsigned int *)(v30 + 48) == *(unsigned int *)(HouseClass::FindOwner((HouseClass *)this->TEventClass_field_34) /*0x71ed40*/
+                                                            + 48) )
                     {
                       *(unsigned char *)a6 = 1; /*0x71ed4d*/
-                      return 1; /*0x71ed56*/
+                      IDA_LOBYTE(v18) = 1; /*0x71ed50*/
+                      return v18; /*0x71ed56*/
                     }
                   }
                 }
               }
             }
           }
-          return 0; /*0x71ed40*/
+          goto LABEL_139; /*0x71ed40*/
         case 54: /*0x71ecd6*/
           if ( a2 == 54 ) /*0x71ed60*/
           {
             if ( a4 ) /*0x71ed6c*/
             {
-              v30 = (gamemd::DynamicVector **)((int)((gamemd::DynamicVector **)((*(int (__thiscall **)(int, int))(*(unsigned int *)a4 + 204))(a4, 1))));
-              if ( (*(int (__thiscall **)(int))(*(unsigned int *)v30 + 44))(v30) == 16 /*0x71eda2*/
-                && *(&this->vtable23) != -1
-                && (*(int (__thiscall **)(int))(*(unsigned int *)v30 + 64))(v30) == *(&this->vtable23) )
+              v31 = (*(int (__thiscall **)(int, int))(*(unsigned int *)a4 + 204))(a4, 1); /*0x71ed7c*/
+              if ( (*(int (__thiscall **)(int))(*(unsigned int *)v31 + 44))(v31) == 16 /*0x71eda2*/
+                && this->TEventClass_field_34 != -1
+                && (*(int (__thiscall **)(int))(*(unsigned int *)v31 + 64))(v31) == this->TEventClass_field_34 )
               {
                 *(unsigned char *)a6 = 1; /*0x71edaf*/
-                return 1; /*0x71edb8*/
+                IDA_LOBYTE(v18) = 1; /*0x71edb2*/
+                return v18; /*0x71edb8*/
               }
             }
           }
-          return 0; /*0x71eda2*/
+          goto LABEL_139; /*0x71eda2*/
         case 34: /*0x71ecd6*/
           if ( a2 == 34 ) /*0x71edc6*/
           {
-            WorldCoords = (int *)(Cell::GetWorldCoords((int16_t *)g_ScenarioClass_Instance, v55, *(&this->vtable23)));
-            v32 = *WorldCoords; /*0x71ede0*/
-            v33 = WorldCoords[1]; /*0x71ede6*/
-            v34 = WorldCoords[2]; /*0x71edeb*/
-            v35 = (int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)a4 + 72))(a4, v56); /*0x71edf3*/
-            v36 = v35[1]; /*0x71edf6*/
-            v37 = *v35; /*0x71edf9*/
-            v38 = v35[2]; /*0x71edfb*/
-            v55[1] = v36 - v33; /*0x71ee00*/
-            v55[2] = v38 - v34; /*0x71ee0c*/
-            v55[0] = v37 - v32; /*0x71ee14*/
-            v39 = Math::Sqrt( /*0x71ee38*/
-                    (double)(v37 - v32) * (double)(v37 - v32)
-                  + (double)(v38 - v34) * (double)(v38 - v34)
-                  + (double)(v36 - v33) * (double)(v36 - v33));
-            return (gamemd::DynamicVector **)((int)Math::RoundToInt(v39) <= 1280);
+            WorldCoords = (int *)(Cell::GetWorldCoords((Cell *)unk_A8B230, &v59, this->TEventClass_field_34));
+            v33 = *WorldCoords; /*0x71ede0*/
+            v34 = WorldCoords[1]; /*0x71ede6*/
+            v35 = WorldCoords[2]; /*0x71edeb*/
+            v36 = (int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)a4 + 72))(a4, v62); /*0x71edf3*/
+            v37 = v36[1]; /*0x71edf6*/
+            v38 = *v36; /*0x71edf9*/
+            v39 = v36[2]; /*0x71edfb*/
+            v60 = v37 - v34; /*0x71ee00*/
+            __asm { fild [esp+2Ch+var_14] } /*0x71ee06*/
+            v61 = v39 - v35; /*0x71ee0c*/
+            __asm { fild [esp+2Ch+var_10] } /*0x71ee10*/
+            v59 = v38 - v33; /*0x71ee14*/
+            __asm /*0x71ee1b*/
+            {
+              fild [esp+34h+var_18]
+              fld st
+              fmul st, st(1)
+              fld st(2)
+              fmul st, st(3)
+              faddp st(1), st
+              fld st(3)
+              fmul st, st(4)
+              faddp st(1), st
+              fstp [esp+34h+var_38+4]; double
+              fstp st
+              fstp st
+              fstp st
+            }
+            Math::Sqrt(v57); /*0x71ee38*/
+            IDA_LOWORD(v18) = Math::RoundToInt(v7); /*0x71ee40*/
+            IDA_LOBYTE(v18) = v18 <= 1280; /*0x71ee4d*/
+            return v18; /*0x71ee54*/
           }
-          return 0; /*0x71edc6*/
+          goto LABEL_139; /*0x71edc6*/
       }
-      if ( v8 == 44 && (a2 != 44 || !a7 || *(&this->vtable23) != *(unsigned int *)(*(unsigned int *)(a7 + 540) + 48)) ) /*0x71ee7c*/
-        return 0; /*0x71ee7c*/
+      if ( TEventClass_field_2C == 44 /*0x71ee7c*/
+        && (a2 != 44 || !a7 || this->TEventClass_field_34 != *(unsigned int *)(*(unsigned int *)(a7 + 540) + 48)) )
+      {
+        goto LABEL_139; /*0x71ee7c*/
+      }
       if ( a3 ) /*0x71ee88*/
       {
-        switch ( v8 ) /*0x71eea2*/
+        switch ( TEventClass_field_2C ) /*0x71eea2*/
         {
           case 12: /*0x71eea2*/
-            if ( (*(int (__stdcall **)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) >= *(&this->vtable23) ) /*0x71ef0e*/
+            if ( (*(int (__stdcall **)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) >= this->TEventClass_field_34 ) /*0x71ef0e*/
               goto LABEL_122; /*0x71ef0e*/
-            return 0; /*0x71ef1d*/
+            IDA_LOBYTE(v18) = 0; /*0x71ef17*/
+            return v18; /*0x71ef1d*/
           case 15: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 21640) >= *(&this->vtable23) ) /*0x71f04a*/
+            if ( *(unsigned int *)(a3 + 21640) >= this->TEventClass_field_34 ) /*0x71f04a*/
               goto LABEL_122; /*0x71f04a*/
-            return 0; /*0x71f055*/
+            IDA_LOBYTE(v18) = 0; /*0x71f04f*/
+            return v18; /*0x71f055*/
           case 16: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 21556) >= *(&this->vtable23) ) /*0x71f063*/
+            if ( *(unsigned int *)(a3 + 21556) >= this->TEventClass_field_34 ) /*0x71f063*/
               goto LABEL_122; /*0x71f063*/
-            return 0; /*0x71f063*/
+            goto LABEL_139; /*0x71f063*/
           case 17: /*0x71eea2*/
             if ( *(int *)(a3 + 752) <= 0 ) /*0x71ef47*/
               goto LABEL_122; /*0x71ef47*/
@@ -363,7 +414,7 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
               if ( *v46 ) /*0x71ef5d*/
               {
                 if ( !*(unsigned char *)(v47 + 129) && *(unsigned int *)(*(unsigned int *)(v47 + 1312) + 3768) ) /*0x71ef73*/
-                  return 0; /*0x71ef7b*/
+                  goto LABEL_139; /*0x71ef7b*/
               }
               ++v45; /*0x71ef81*/
               ++v46; /*0x71ef82*/
@@ -373,46 +424,48 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
           case 18: /*0x71eea2*/
             if ( *(unsigned char *)(a3 + 505) ) /*0x71ef8e*/
               goto LABEL_122; /*0x71ef96*/
-            return 0; /*0x71efa5*/
+            IDA_LOBYTE(v18) = 0; /*0x71ef9f*/
+            return v18; /*0x71efa5*/
           case 19: /*0x71eea2*/
             v48 = *(unsigned int *)(a3 + 620); /*0x71efeb*/
             goto LABEL_112; /*0x71efeb*/
           case 20: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 628) != *(&this->vtable23) ) /*0x71f00e*/
-              return 0; /*0x71f00e*/
+            if ( *(unsigned int *)(a3 + 628) != this->TEventClass_field_34 ) /*0x71f00e*/
+              goto LABEL_139; /*0x71f00e*/
             *(unsigned char *)a6 = 1; /*0x71f018*/
             goto LABEL_122; /*0x71f01b*/
           case 21: /*0x71eea2*/
-            if ( *(unsigned int *)(a3 + 624) != *(&this->vtable23) ) /*0x71f028*/
-              return 0; /*0x71f028*/
+            if ( *(unsigned int *)(a3 + 624) != this->TEventClass_field_34 ) /*0x71f028*/
+              goto LABEL_139; /*0x71f028*/
             *(unsigned char *)a6 = 1; /*0x71f032*/
             goto LABEL_122; /*0x71f035*/
           case 22: /*0x71eea2*/
             v48 = *(unsigned int *)(a3 + 632); /*0x71f037*/
   LABEL_112:
-            if ( v48 != *(&this->vtable23) ) /*0x71eff4*/
-              return 0; /*0x71eff4*/
+            if ( v48 != this->TEventClass_field_34 ) /*0x71eff4*/
+              goto LABEL_139; /*0x71eff4*/
             *(unsigned char *)a6 = 1; /*0x71effe*/
             goto LABEL_122; /*0x71f001*/
           case 23: /*0x71eea2*/
-            v40 = g_HouseClass_AIProductionState; /*0x71eea9*/
+            waveEffect = FootClass_Array.waveEffect; /*0x71eea9*/
             v41 = 0; /*0x71eeaf*/
-            if ( g_HouseClass_AIProductionState <= 0 ) /*0x71eeb3*/
+            if ( (int)FootClass_Array.waveEffect <= 0 ) /*0x71eeb3*/
               goto LABEL_91; /*0x71eeb3*/
-            v42 = (char *)g_TeamClassPool; /*0x71eeb8*/
+            auxParticles1 = FootClass_Array.auxParticles1; /*0x71eeb8*/
             break; /*0x71eeb8*/
           case 32: /*0x71eea2*/
-            if ( !DynamicVector::GetOrGrow((unsigned int *)(a3 + 21840), *(&this->vtable23)) ) /*0x71efb9*/
-              return 0; /*0x71efb9*/
+            if ( !DynamicVector::GetOrGrow((DynamicVector *)(a3 + 21840), this->TEventClass_field_34) ) /*0x71efb9*/
+              goto LABEL_139; /*0x71efb9*/
             *(unsigned char *)a6 = 1; /*0x71efc3*/
             goto LABEL_122; /*0x71efc6*/
           case 52: /*0x71eea2*/
-            if ( (*(int (__stdcall **)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) <= *(&this->vtable23) ) /*0x71ef2d*/
+            if ( (*(int (__stdcall **)(int))(*(unsigned int *)(a3 + 36) + 24))(a3 + 36) <= this->TEventClass_field_34 ) /*0x71ef2d*/
               goto LABEL_122; /*0x71ef2d*/
-            return 0; /*0x71ef3c*/
+            IDA_LOBYTE(v18) = 0; /*0x71ef36*/
+            return v18; /*0x71ef3c*/
           case 57: /*0x71eea2*/
-            if ( DynamicVector::GetOrGrow((unsigned int *)(a3 + 21840), *(&this->vtable23)) ) /*0x71efd5*/
-              return 0; /*0x71efdc*/
+            if ( DynamicVector::GetOrGrow((DynamicVector *)(a3 + 21840), this->TEventClass_field_34) ) /*0x71efd5*/
+              goto LABEL_139; /*0x71efdc*/
             *(unsigned char *)a6 = 1; /*0x71efe6*/
             goto LABEL_122; /*0x71efe9*/
           default:
@@ -420,74 +473,117 @@ DynamicVector * * TEventClass::Execute(int a2, int a3, int a4, int * a5, int a6,
         }
         while ( 1 ) /*0x71eebe*/
         {
-          v43 = *(unsigned int *)v42; /*0x71eebe*/
-          if ( *(unsigned int *)(v42->q024 == *(&this->vtable22) && !*(unsigned int *)(v43 + 84) && *(unsigned char *)(v43 + 130) ) /*0x71eecc*/
+          vtable0 = auxParticles1->vtable0; /*0x71eebe*/
+          if ( *((unsigned int *)auxParticles1->vtable0 + 9) == this->TEventClass_field_30 /*0x71eecc*/
+            && !vtable0[21]
+            && *((unsigned char *)vtable0 + 130) )
+          {
             break; /*0x71eecc*/
+          }
           ++v41; /*0x71eed6*/
-          v42 += 4; /*0x71eed7*/
-          if ( v41 >= g_HouseClass_AIProductionState ) /*0x71eedc*/
+          auxParticles1 = (ParticleSystemClass *)((char *)auxParticles1 + 4); /*0x71eed7*/
+          if ( v41 >= (int)FootClass_Array.waveEffect ) /*0x71eedc*/
             goto LABEL_91; /*0x71eedc*/
         }
         *(unsigned char *)a6 = 1; /*0x71eee4*/
-        v40 = g_HouseClass_AIProductionState; /*0x71eee7*/
+        waveEffect = FootClass_Array.waveEffect; /*0x71eee7*/
   LABEL_91:
-        if ( v41 == v40 ) /*0x71eeef*/
-          return 0; /*0x71eefe*/
-      }
-  LABEL_122:
-      Owner = HouseClass::FindOwner((void *)*(&this->vtable23)); /*0x71f069*/
-      if ( Owner ) /*0x71f075*/
-      {
-        switch ( *(&this->vtable21) ) /*0x71f092*/
+        if ( (WaveClass *)v41 == waveEffect ) /*0x71eeef*/
         {
-          case 3: /*0x71f092*/
-            return *(unsigned char *)(Owner + 580) != 0; /*0x71f0f8*/
-          case 5: /*0x71f092*/
-            return *(unsigned char *)(Owner + 500) != 0; /*0x71f112*/
-          case 9: /*0x71f092*/
-            if ( VectorClass::GetCount((unsigned int *)(Owner + 21860)) > 0 ) /*0x71f13c*/
-              return 0; /*0x71f13c*/
-            return VectorClass::GetCount((unsigned int *)(Owner + 21880)) <= 0; /*0x71f156*/
-          case 0xA: /*0x71f092*/
-            return *(int *)(Owner + 752) <= 0; /*0x71f12c*/
-          case 0xB: /*0x71f092*/
-            return *(int *)(Owner + 752) <= 0 /*0x71f1af*/
-                && VectorClass::GetCount((unsigned int *)(Owner + 21860)) <= 0
-                && VectorClass::GetCount((unsigned int *)(Owner + 21880)) <= 0;
-          case 0x1E: /*0x71f092*/
-            return HouseClass::GetPowerRatio((int *)Owner) < 1.0; /*0x71f0ba*/
-          case 0x37: /*0x71f092*/
-            v50 = *(unsigned int *)(Owner + 748); /*0x71f159*/
-            return v50 <= 0; /*0x71f159*/
-          case 0x38: /*0x71f092*/
-            if ( *(unsigned int *)(Owner + 744) - *(unsigned int *)(Owner + 748) > 0 ) /*0x71f17f*/
-              return 0; /*0x71f17f*/
-            v50 = *(unsigned int *)(Owner + 756); /*0x71f181*/
-            return v50 <= 0; /*0x71f161*/
-          case 0x3A: /*0x71f092*/
-            return HouseClass::GetPowerRatio((int *)Owner) >= 1.0; /*0x71f0de*/
-          default:
-            return 1;
+          IDA_LOBYTE(v18) = 0; /*0x71eef8*/
+          return v18; /*0x71eefe*/
         }
       }
-      return (gamemd::DynamicVector **)(1);
+  LABEL_122:
+      Owner = HouseClass::FindOwner((HouseClass *)this->TEventClass_field_34); /*0x71f069*/
+      if ( Owner ) /*0x71f075*/
+      {
+        switch ( this->TEventClass_field_2C ) /*0x71f092*/
+        {
+          case 3: /*0x71f092*/
+            if ( *(unsigned char *)(Owner + 580) ) /*0x71f0e1*/
+              break; /*0x71f0e9*/
+            IDA_LOBYTE(v18) = 0; /*0x71f0f2*/
+            return v18; /*0x71f0f8*/
+          case 5: /*0x71f092*/
+            if ( *(unsigned char *)(Owner + 500) ) /*0x71f0fb*/
+              break; /*0x71f103*/
+            IDA_LOBYTE(v18) = 0; /*0x71f10c*/
+            return v18; /*0x71f112*/
+          case 9: /*0x71f092*/
+            if ( VectorClass::GetCount((VectorClass *)(Owner + 21860)) > 0 ) /*0x71f13c*/
+              goto LABEL_139; /*0x71f13c*/
+            if ( VectorClass::GetCount((VectorClass *)(Owner + 21880)) <= 0 ) /*0x71f14b*/
+              break; /*0x71f14b*/
+            IDA_LOBYTE(v18) = 0; /*0x71f150*/
+            return v18; /*0x71f156*/
+          case 0xA: /*0x71f092*/
+            if ( *(int *)(Owner + 752) <= 0 ) /*0x71f11d*/
+              break; /*0x71f11d*/
+            IDA_LOBYTE(v18) = 0; /*0x71f126*/
+            return v18; /*0x71f12c*/
+          case 0xB: /*0x71f092*/
+            if ( *(int *)(Owner + 752) <= 0 /*0x71f1af*/
+              && VectorClass::GetCount((VectorClass *)(Owner + 21860)) <= 0
+              && VectorClass::GetCount((VectorClass *)(Owner + 21880)) <= 0 )
+            {
+              break; /*0x71f1af*/
+            }
+            goto LABEL_139; /*0x71f1af*/
+          case 0x1E: /*0x71f092*/
+            HouseClass::GetPowerRatio((HouseClass *)Owner); /*0x71f09b*/
+            __asm /*0x71f0a0*/
+            {
+              fcomp ds:dbl_7E1718
+              fnstsw ax
+            }
+            if ( (_AX & 0x100) != 0 ) /*0x71f0ab*/
+              break; /*0x71f0ab*/
+            IDA_LOBYTE(v18) = 0; /*0x71f0b4*/
+            return v18; /*0x71f0ba*/
+          case 0x37: /*0x71f092*/
+            v52 = *(unsigned int *)(Owner + 748); /*0x71f159*/
+            goto LABEL_138; /*0x71f159*/
+          case 0x38: /*0x71f092*/
+            if ( *(unsigned int *)(Owner + 744) - *(unsigned int *)(Owner + 748) > 0 ) /*0x71f17f*/
+              goto LABEL_139; /*0x71f17f*/
+            v52 = *(unsigned int *)(Owner + 756); /*0x71f181*/
+  LABEL_138:
+            if ( v52 > 0 ) /*0x71f161*/
+              goto LABEL_139; /*0x71f161*/
+            break; /*0x71f161*/
+          case 0x3A: /*0x71f092*/
+            HouseClass::GetPowerRatio((HouseClass *)Owner); /*0x71f0bf*/
+            __asm /*0x71f0c4*/
+            {
+              fcomp ds:dbl_7E1718
+              fnstsw ax
+            }
+            if ( (_AX & 0x100) == 0 ) /*0x71f0cf*/
+              break; /*0x71f0cf*/
+            IDA_LOBYTE(v18) = 0; /*0x71f0d8*/
+            return v18; /*0x71f0de*/
+          default:
+            break;
+        }
+      }
+      IDA_LOBYTE(v18) = 1; /*0x71f1b1*/
+      return v18;
   }
-}
 }
 // 0x71F390
 namespace gamemd {
 int TEventClass::PrepareSaveToINI(const char * a2)
 {
-  int v2; // edx
+  int TEventClass_field_2C; // edx
   int v3; // eax
-  int v4; // esi
+  int TEventClass_field_30; // esi
   const unsigned int v6;
   int v7; // [esp-Ch] [ebp-14h]
   int v8; // [esp-8h] [ebp-10h]
-  int v9; // [esp-4h] [ebp-Ch]
-
-  v2 = *(&this->vtable21); /*0x71f390*/
-  switch ( v2 ) /*0x71f3a8*/
+  const CHAR * TEventClass_field_34;
+TEventClass_field_2C = (int)(this->TEventClass_field_2C);
+  switch ( TEventClass_field_2C ) /*0x71f3a8*/
   {
     case 1: /*0x71f3a8*/
     case 3: /*0x71f3a8*/
@@ -534,7 +630,7 @@ int TEventClass::PrepareSaveToINI(const char * a2)
       v3 = 7; /*0x71f3e0*/
       break; /*0x71f3e5*/
     case 23: /*0x71f3a8*/
-      v3 = 12; /*0x71f3e7*/
+      v3 = (int)(12);
       break; /*0x71f3ec*/
     case 27: /*0x71f3a8*/
     case 28: /*0x71f3a8*/
@@ -555,42 +651,45 @@ int TEventClass::PrepareSaveToINI(const char * a2)
       v3 = 0; /*0x71f3fc*/
       break; /*0x71f3fc*/
   }
-  v4 = *(&this->vtable22); /*0x71f3fe*/
-  if ( v4 ) /*0x71f403*/
+  TEventClass_field_30 = (int)(this->TEventClass_field_30);
+  if ( TEventClass_field_30 ) /*0x71f403*/
   {
-    v9 = v4 + 36; /*0x71f408*/
-    v8 = 1; /*0x71f409*/
-    v7 = *(&this->vtable21); /*0x71f40b*/
+    TEventClass_field_34 = (const CHAR *)((int)(TEventClass_field_30 + 36));
+    v8 = (int)(1);
+    v7 = (int)(this->TEventClass_field_2C);
     v6 = aDDS; /*0x71f40c*/
   }
   else
   {
     if ( v3 == 43 ) /*0x71f416*/
-      return wsprintfA((LPSTR)&a2[strlen(a2)], aDDDS, v2, 2, *(&this->vtable23), &this->vtable24); /*0x71f443*/
-    v9 = *(&this->vtable23); /*0x71f446*/
-    v8 = 0; /*0x71f447*/
-    v7 = *(&this->vtable21); /*0x71f449*/
+      return wsprintfA( /*0x71f443*/
+               (LPSTR)&a2[strlen(a2)],
+               aDDDS,
+               TEventClass_field_2C,
+               2,
+               this->TEventClass_field_34,
+               this->TEventClass_field_38);
+    TEventClass_field_34 = (int)((const CHAR *)(this->TEventClass_field_34));
+    v8 = (int)((const CHAR *)(0));
+    v7 = (int)(this->TEventClass_field_2C);
     v6 = g_Str_Trace__d__d; /*0x71f44a*/
   }
-  return wsprintfA((LPSTR)&a2[strlen(a2)], v6, v7, v8, v9); /*0x71f441*/
-}
+  return wsprintfA((LPSTR)&a2[strlen(a2)], v6, v7, v8, TEventClass_field_34); /*0x71f441*/
 }
 // 0x71F800
 namespace gamemd {
 int TEventClass::CheckConditions(int a2, int a3)
 {
   int result; // eax
-
-  result = *(&this->vtable20); /*0x71f800*/
+result = (int)(this->TEventClass_field_28);
   if ( result == a2 ) /*0x71f809*/
   {
     result = result->TEventClass_field_28; /*0x71f80b*/
-    *(&this->vtable20) = result; /*0x71f80e*/
+    this->TEventClass_field_28 = result; /*0x71f80e*/
   }
-  if ( *(&this->vtable22) == a2 ) /*0x71f814*/
-    *(&this->vtable22) = 0; /*0x71f816*/
+  if ( this->TEventClass_field_30 == a2 ) /*0x71f814*/
+    this->TEventClass_field_30 = 0; /*0x71f816*/
   return result; /*0x71f81d*/
-}
 }
 // 0x71FA80
 namespace gamemd {
@@ -599,65 +698,83 @@ void * TEventClass::Fire(char a2)
   int v3; // eax
   int v4; // eax
   int v5; // eax
+  TEventClass *v7; // [esp+8h] [ebp-4h] BYREF
 
-  AbstractClass::AnnounceExpiredPointer(1); /*0x71faa1*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(TActionClass_Array + 16))(&TActionClass_Array, &this); /*0x71faba*/
-  if ( v3 != -1 && v3 < g_TActionClassState && v3 < --g_TActionClassState ) /*0x71fad5*/
+  this->vtable0 = (unsigned int)((void*)&TEventClass_vftable);
+  this->vtable1 = (void*)&TEventClass_vftable; /*0x71fa8c*/
+  this->vtable2 = (void*)&TEventClass_vftable; /*0x71fa93*/
+  this->vtable3 = (void*)&TEventClass_vftable; /*0x71fa9a*/
+  AbstractClass::AnnounceExpiredPointer(&this->vtable0, 1); /*0x71faa1*/
+  v7 = this; /*0x71fab6*/
+  v3 = (*(int (__thiscall **)(int *, TEventClass **))(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[0] + 16))( /*0x71faba*/
+         g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2,
+         &v7);
+  if ( v3 != -1 && v3 < g_BuildingLoadQueue_Array.GateCloseDelay[0] ) /*0x71faca*/
   {
-    do /*0x71faed*/
+    --g_BuildingLoadQueue_Array.GateCloseDelay[0]; /*0x71facf*/
+    for ( ; /*0x71fad5*/
+          v3 < g_BuildingLoadQueue_Array.GateCloseDelay[0];
+          *(unsigned int *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.HalfDamageSmokeLocation2[1] + 4 * v3) )
     {
       ++v3; /*0x71fadd*/
-      *((unsigned int *)dword_B0F65C + v3 - 1) = *((unsigned int *)dword_B0F65C + v3); /*0x71fae1*/
     }
-    while ( v3 < g_TActionClassState ); /*0x71faed*/
   }
-  v4 = (*(int (__thiscall **)(int *, void ***))(g_AnimPoolManager + 16))(&g_AnimPoolManager, &this); /*0x71fb03*/
-  if ( v4 != -1 && v4 < g_AnimManager && v4 < --g_AnimManager ) /*0x71fb1e*/
+  v7 = this; /*0x71faff*/
+  v4 = (*(int (__thiscall **)(int *, TEventClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x71fb03*/
+         &g_BuildingLoadQueue_Array.LightVisibility,
+         &v7);
+  if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.LightBlueTint ) /*0x71fb13*/
   {
-    do /*0x71fb36*/
+    --g_BuildingLoadQueue_Array.LightBlueTint; /*0x71fb18*/
+    for ( ; /*0x71fb1e*/
+          v4 < g_BuildingLoadQueue_Array.LightBlueTint;
+          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
+                                                                                         + 4 * v4) )
     {
       ++v4; /*0x71fb26*/
-      *((unsigned int *)g_AnimPoolCount + v4 - 1) = *((unsigned int *)g_AnimPoolCount + v4); /*0x71fb2a*/
     }
-    while ( v4 < g_AnimManager ); /*0x71fb36*/
   }
-  v5 = (*(int (__thiscall **)(int *, void ***))(dword_B0F1A0 + 16))(&dword_B0F1A0, &this); /*0x71fb4c*/
-  if ( v5 != -1 && v5 < dword_B0F1B0 && v5 < --dword_B0F1B0 ) /*0x71fb67*/
+  v7 = this; /*0x71fb48*/
+  v5 = (*(int (__thiscall **)(int *, TEventClass **))(g_BuildingLoadQueue_Array.Weapon[50] + 16))( /*0x71fb4c*/
+         &g_BuildingLoadQueue_Array.Weapon[50],
+         &v7);
+  if ( v5 != -1 && v5 < g_BuildingLoadQueue_Array.Weapon[54] ) /*0x71fb5c*/
   {
-    do /*0x71fb7f*/
+    --g_BuildingLoadQueue_Array.Weapon[54]; /*0x71fb61*/
+    for ( ; /*0x71fb67*/
+          v5 < g_BuildingLoadQueue_Array.Weapon[54];
+          *(unsigned int *)(g_BuildingLoadQueue_Array.Weapon[51] + 4 * v5 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.Weapon[51]
+                                                                                     + 4 * v5) )
     {
       ++v5; /*0x71fb6f*/
-      *((unsigned int *)dword_B0F1A4 + v5 - 1) = *((unsigned int *)dword_B0F1A4 + v5); /*0x71fb73*/
     }
-    while ( v5 < dword_B0F1B0 ); /*0x71fb7f*/
   }
-  AbstractClass::DTOR(); /*0x71fb83*/
+  AbstractClass::DTOR((AbstractClass *)this); /*0x71fb83*/
   if ( (a2 & 1) != 0 ) /*0x71fb8d*/
-    RA2_OPDEL(); /*0x71fb90*/
-  return this; /*0x71fb9a*/
-}
+    RA2_OPDEL(this); /*0x71fb90*/
+  return &this->vtable0; /*0x71fb9a*/
 }
 // 0x71F820
 namespace gamemd {
 int TEventClass::ProcessEvent(int a2)
 {
-  int v3; // eax
+  int TEventClass_field_28; // eax
   int v4; // eax
-  int v5; // eax
+  int TEventClass_field_30; // eax
   int v6; // eax
 
-  AbstractClass::ProcessPower(); /*0x71f829*/
-  v3 = this->TEventClass_field_28; /*0x71f82e*/
-  if ( v3 ) /*0x71f833*/
+  AbstractClass::ProcessPower((AbstractClass *)this); /*0x71f829*/
+  TEventClass_field_28 = this->TEventClass_field_28; /*0x71f82e*/
+  if ( TEventClass_field_28 ) /*0x71f833*/
   {
-    v4 = (*(int (__stdcall **)(int))(*(unsigned int *)(v3 + 4) + 16))(v3 + 4); /*0x71f83c*/
+    v4 = (*(int (__stdcall **)(int))(*(unsigned int *)(TEventClass_field_28 + 4) + 16))(TEventClass_field_28 + 4); /*0x71f83c*/
     Power::TimerProcess(v4); /*0x71f842*/
   }
   Power::TimerProcess(this->TEventClass_field_2C); /*0x71f84d*/
-  v5 = this->TEventClass_field_30; /*0x71f852*/
-  if ( v5 ) /*0x71f857*/
+  TEventClass_field_30 = this->TEventClass_field_30; /*0x71f852*/
+  if ( TEventClass_field_30 ) /*0x71f857*/
   {
-    v6 = (*(int (__stdcall **)(int))(*(unsigned int *)(v5 + 4) + 16))(v5 + 4); /*0x71f860*/
+    v6 = (*(int (__stdcall **)(int))(*(unsigned int *)(TEventClass_field_30 + 4) + 16))(TEventClass_field_30 + 4); /*0x71f860*/
     Power::TimerProcess(v6); /*0x71f866*/
   }
   return Power::TimerProcess(this->TEventClass_field_34); /*0x71f876*/
@@ -673,7 +790,7 @@ int TEventClass::ddtor(int a1, unsigned int * a2)
   *a2 = 1326367635; /*0x71f896*/
   a2[1] = 298977877; /*0x71f89e*/
   a2[2] = 1610655660; /*0x71f8a7*/
-  a2[3] = -1252326136; /*0x71f8b0*/
+  a2[3] = unk_7E981C; /*0x71f8b0*/
   return 0; /*0x71f88d*/
 }
 } // namespace gamemd
@@ -689,15 +806,15 @@ int TEventClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x71f8d6*/
     {
-      AbstractClass::InitVtables(aP0, (int)&aP1); /*0x71f8df*/
-      *(unsigned int *)aP0 = (int)&TEventClass_vftable; /*0x71f8e4*/
-      aP0[1] = (int)&TEventClass_vftable; /*0x71f8ea*/
-      aP0[2] = (int)&TEventClass_vftable; /*0x71f8f1*/
-      aP0[3] = (int)&TEventClass_vftable; /*0x71f8f8*/
+      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x71f8df*/
+      aP0->vtable0 = (void*)&TEventClass_vftable; /*0x71f8e4*/
+      aP0->vtable1 = (void*)&TEventClass_vftable; /*0x71f8ea*/
+      aP0->vtable2 = (void*)&TEventClass_vftable; /*0x71f8f1*/
+      aP0->vtable3 = (void*)&TEventClass_vftable; /*0x71f8f8*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 10); /*0x71f908*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 12); /*0x71f916*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 21); /*0x71f924*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->TEventClass_field_28); /*0x71f908*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->TEventClass_field_30); /*0x71f916*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->TEventClass_field_54); /*0x71f924*/
     return 0; /*0x71f929*/
   }
   return result; /*0x71f92b*/
@@ -710,7 +827,7 @@ int TEventClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x71f93f*/
+  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x71f93f*/
   if ( result >= 0 ) /*0x71f946*/
     return 0; /*0x71f948*/
   return result; /*0x71f94a*/
@@ -737,6 +854,6 @@ int TEventClass::StubReturn48()
 namespace gamemd {
 int TEventClass::Stub()
 {
-  return (int)(this->eventType);
+  return this->eventType; /*0x71fa73*/
 }
 } // namespace gamemd

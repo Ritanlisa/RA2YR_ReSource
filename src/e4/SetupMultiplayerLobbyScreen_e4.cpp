@@ -22,7 +22,7 @@ void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
   int v10; // [esp+Ch] [ebp-Ch]
   char * v11;
 
-  v3 = a2; /*0x5ebec8*/
+  v3 = (char *)((int)(a2));
   v4 = a2 + nIDDlgItem; /*0x5ebed0*/
   v11 = a2 + nIDDlgItem; /*0x5ebedd*/
   if ( g_GameMode_Current[0] == 4 ) /*0x5ebee1*/
@@ -95,10 +95,9 @@ void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nID
       ++v3; /*0x5ebff6*/
     }
     while ( v3 < v11 );
-    v3 = a2; /*0x5ebfff*/
+    v3 = (char *)((int)(a2));
   }
   UpdateMultiplayerLobbySlots(hDlg, v3, nIDDlgItem); /*0x5ec00d*/
   RetVtableStubZero_eax_27(); /*0x5ec012*/
   return CheckGameSettingsChanged(1, 0); /*0x5ec020*/
-}
 }

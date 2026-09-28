@@ -33,7 +33,12 @@ struct E4Recv_7AF540 {
     unsigned int q5170;  // 0x5170
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int vt_slot_8;
+    unsigned int abstractFlags;
+    unsigned int nextArrayIndex;
+    unsigned int referenceCount;
+    unsigned int uniqueId;
+    unsigned int vtable0;
+    unsigned int vtable3;
 // --- flat members (END) ---
     int Vf8(int,  ...);    // G6 vtable slot dispatch
     int sub_7AF540(HWND hWnd,  int * a3);    // 0x7AF540

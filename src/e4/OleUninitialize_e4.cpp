@@ -12,4 +12,3 @@ void OleUninitialize_0()
 {
   OleUninitialize(); /*0x7c891a*/
 }
-}

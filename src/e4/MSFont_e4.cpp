@@ -117,9 +117,9 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
 // 0x5D3450
 MSFont * MSFont::QueryInterface(char a2)
 {
-  MSFont::Constructor_MSFont(); /*0x5d3453*/
+  MSFont::Constructor_MSFont(this); /*0x5d3453*/
   if ( (a2 & 1) != 0 ) /*0x5d345d*/
-    RA2_OPDEL(); /*0x5d3460*/
+    RA2_OPDEL(this); /*0x5d3460*/
   return this; /*0x5d346a*/
 }
 // 0x5D5080
@@ -380,7 +380,6 @@ int MSFont_18::FindItem(unsigned int * a2)
   }
   return result; /*0x5d53a2*/
 }
-}
 // 0x5D56A0
 namespace gamemd {
 int MSFont_18::FindPair8(unsigned int * a2)
@@ -400,7 +399,6 @@ int MSFont_18::FindPair8(unsigned int * a2)
   }
   return result; /*0x5d56cf*/
 }
-}
 // 0x5D56E0
 namespace gamemd {
 VectorClass_flat * MSFont_18::QueryInterface(char a2)
@@ -408,15 +406,16 @@ VectorClass_flat * MSFont_18::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5d56e3*/
+  *(void **)this = (void*)&VectorClass_HWND_____vftable; /*0x5d56e6*/
   if ( v3 && this->IsAllocated ) /*0x5d56f0*/
   {
     RA2_OPDEL(v3); /*0x5d56f8*/
     this->Items = 0; /*0x5d5700*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
+  this->IsAllocated = 0; /*0x5d570b*/
+  this->Capacity = 0; /*0x5d5711*/
   if ( (a2 & 1) != 0 ) /*0x5d5718*/
-    RA2_OPDEL(); /*0x5d571b*/
+    RA2_OPDEL(this); /*0x5d571b*/
   return this; /*0x5d5725*/
 }
 } // namespace gamemd
@@ -428,15 +427,16 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x5d5733*/
+  *(void **)this = (void*)&VectorClass_HWND_____vftable; /*0x5d5736*/
   if ( v3 && this->IsAllocated ) /*0x5d5740*/
   {
     RA2_OPDEL(v3); /*0x5d5748*/
     this->Items = 0; /*0x5d5750*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = (int)((gamemd::DynamicVector *)(0));
+  this->IsAllocated = 0; /*0x5d575b*/
+  this->q008 = 0; /*0x5d5761*/
   if ( (a2 & 1) != 0 ) /*0x5d5768*/
-    RA2_OPDEL(); /*0x5d576b*/
+    RA2_OPDEL(this); /*0x5d576b*/
   return this; /*0x5d5775*/
 }
 } // namespace gamemd

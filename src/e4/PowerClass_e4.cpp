@@ -19,8 +19,7 @@
 namespace gamemd {
 void PowerClass_Stub()
 {
-  return RadarClass::Destru_vt05();
-}
+  RadarClass::Destru_vt05((RadarClass *)this); /*0x63f7b0*/
 }
 // 0x63F7E0
 void PowerClass::checkLowPower()

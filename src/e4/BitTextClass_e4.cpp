@@ -17,39 +17,40 @@ int BitTextClass::ParseFontData(char * Source)
   struct tagRECT *v3; // ebp
   unsigned int *Font; // eax
 
-  v3 = (tagRECT *)((unsigned int)((struct tagRECT *)(&this->u32_108)));
-  this->m_CharWidth = (unsigned int)(0);
-  this->u16_24 = (unsigned int)(0x7FFF);
-  this->u16_26 = (unsigned int)(13653);
-  this->u32_28 = (unsigned int)(64);
-  this->q040 = (unsigned int)(1);
-  this->u8_41 = (unsigned int)(1);
-  this->q018 = (unsigned int)(1);
-  this->u32_1C = (unsigned int)(1);
-  this->q020 = (unsigned int)(0);
-  this->u32_C = (unsigned int)(0);
-  this->ptr_8 = (gamemd::CampaignClass *)((unsigned int)(0));
-  SetRect((LPRECT)(&this->u32_108), 0, 0, 0, 0); /*0x4338c6*/
+  v3 = (tagRECT *)((unsigned int)((struct tagRECT *)(&this->m_CharWidth8)));
+  *(unsigned int *)this = (void*)&BitFont_vftable; /*0x433895*/
+  this->m_CharWidth = 0; /*0x43389b*/
+  this->u32_24 = 0x7FFF; /*0x43389e*/
+  this->u32_26 = 13653; /*0x4338a4*/
+  this->u32_28 = 64; /*0x4338aa*/
+  this->u32_40 = 1; /*0x4338b1*/
+  this->u32_41 = 1; /*0x4338b4*/
+  this->u32_18 = 1; /*0x4338b7*/
+  this->u32_1C = 1; /*0x4338ba*/
+  this->ptr_8 = 0; /*0x4338bd*/
+  this->u32_C = 0; /*0x4338c0*/
+  this->ptr_8 = 0; /*0x4338c3*/
+  SetRect((LPRECT)(&this->m_CharWidth8), 0, 0, 0, 0); /*0x4338c6*/
   this->u32_2C = 1; /*0x4338d0*/
   Font = File::LoadFont(Source); /*0x4338d3*/
   this->m_CharWidth = Font; /*0x4338da*/
   if ( Font ) /*0x4338dd*/
   {
-    this->q018 = Font[1]; /*0x4338e2*/
+    this->u32_18 = Font[1]; /*0x4338e2*/
     this->u32_1C = Font[3]; /*0x4338ea*/
-    sub_434700(); /*0x4338ed*/
+    sub_434700((ObjectClass *)this); /*0x4338ed*/
   }
   else
   {
     this->m_CharWidth = 0; /*0x433900*/
-    this->u16_24 = 0x7FFF; /*0x433903*/
-    this->u16_26 = 13653; /*0x433909*/
+    this->u32_24 = 0x7FFF; /*0x433903*/
+    this->u32_26 = 13653; /*0x433909*/
     this->u32_28 = 64; /*0x43390f*/
-    this->q040 = 1; /*0x433916*/
-    this->u8_41 = 1; /*0x433919*/
-    this->q018 = 1; /*0x43391c*/
+    this->u32_40 = 1; /*0x433916*/
+    this->u32_41 = 1; /*0x433919*/
+    this->u32_18 = 1; /*0x43391c*/
     this->u32_1C = 1; /*0x43391f*/
-    this->q020 = 0; /*0x433922*/
+    this->ptr_8 = 0; /*0x433922*/
     this->u32_C = 0; /*0x433925*/
     this->ptr_8 = 0; /*0x433928*/
     SetRect(v3, 0, 0, 0, 0); /*0x43392b*/
@@ -62,15 +63,19 @@ int BitTextClass::ParseFontData(char * Source)
 namespace gamemd {
 unsigned int * BitTextClass::LoadFont()
 {
-  if ( operator new(0x44u) ) /*0x434adb*/
+  void * v2;
+
+  this->m_FontBitmap = (int)((void*)&BitText_vftable);
+  v2 = RA2_OPNEW(0x44u); /*0x434adb*/
+  if ( v2 ) /*0x434ae5*/
   {
-    g_FogOfWarState = (int)((unsigned int *)(BitTextClass::ParseFontData(aGameFnt)));
-    return (unsigned int *)(this);
+    g_FogOfWarState = (int)((Text *)BitTextClass::ParseFontData(v2, aGameFnt));
+    return &this->m_FontBitmap; /*0x434af8*/
   }
   else
   {
-    g_FogOfWarState = (int)((unsigned int *)(0));
-    return (unsigned int *)(this);
+    g_FogOfWarState = 0; /*0x434afe*/
+    return &this->m_FontBitmap; /*0x434afc*/
   }
 }
 } // namespace gamemd

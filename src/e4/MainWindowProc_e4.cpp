@@ -18,68 +18,69 @@
 namespace gamemd {
 AbstractClass * * sub_777420()
 {
-  int v0; // ecx
-  void *v1; // ecx
-  HWND result; // eax
+  int v1; // ecx
+  AsyncIO *v2; // ecx
+  int result; // eax
   HWND Current; // eax
-  HWND v4; // eax
+  HWND v5; // eax
 
   Debug::Log(); /*0x777425*/
-  sub_407040(v0); /*0x77742d*/
+  sub_407040(v1); /*0x77742d*/
   Debug::Log(); /*0x77744b*/
-  if ( g_WWMouseClass_Instance && byte_B73560 == 1 && !g_ArmageddonMode ) /*0x77746d*/
-    (*(void (**)(void))(*(unsigned int *)g_WWMouseClass_Instance + 24))(); /*0x777471*/
+  if ( stru_887598.lineTrailer && byte_B73560 == 1 && !stru_A8EB00.gapE4[391] ) /*0x77746d*/
+    (*(void (**)(void))(*(unsigned int *)stru_887598.lineTrailer + 24))(); /*0x777471*/
   if ( !g_DDraw_Initialized ) /*0x77747c*/
   {
     if ( DSurface_Alternate ) /*0x77748a*/
-      DSurface::RestoreIfLost((int *)DSurface_Alternate); /*0x77748c*/
+      DSurface::RestoreIfLost(DSurface_Alternate); /*0x77748c*/
     if ( g_DSurface_Hidden ) /*0x777499*/
-      DSurface::RestoreIfLost((int *)g_DSurface_Hidden); /*0x77749b*/
+      DSurface::RestoreIfLost((DSurface *)g_DSurface_Hidden); /*0x77749b*/
     if ( DSurface_Composite /*0x7774c7*/
-      && DSurface::RestoreIfLost((int *)DSurface_Composite)
-      && (!g_BounceClassInit || (int)g_CurrentFrame > 16) )
+      && DSurface::RestoreIfLost((DSurface *)DSurface_Composite)
+      && (!stru_A8EB00.gapE4[376] || *(int *)&stru_A8EB00.gapE4[416] > 16) )
     {
-      (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)DSurface_Composite + 24))(DSurface_Composite, 0); /*0x7774d3*/
+      (*(void (__thiscall **)(AudioStream *, unsigned int))(*(unsigned int *)DSurface_Composite->__pad_0 + 24))( /*0x7774d3*/
+        DSurface_Composite,
+        0);
     }
     if ( DSurface_Tile /*0x7774f8*/
-      && DSurface::RestoreIfLost((int *)DSurface_Tile)
-      && (!g_BounceClassInit || (int)g_CurrentFrame > 16) )
+      && DSurface::RestoreIfLost(DSurface_Tile)
+      && (!stru_A8EB00.gapE4[376] || *(int *)&stru_A8EB00.gapE4[416] > 16) )
     {
-      (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)DSurface_Tile + 24))(DSurface_Tile, 0); /*0x777504*/
+      (*((void (__thiscall **)(DSurface *, unsigned int))DSurface_Tile->DSurface_field_0x0 + 6))(DSurface_Tile, 0); /*0x777504*/
     }
     if ( DSurface_Sidebar ) /*0x77750f*/
     {
-      if ( DSurface::RestoreIfLost((int *)DSurface_Sidebar) ) /*0x777511*/
+      if ( DSurface::RestoreIfLost(DSurface_Sidebar) ) /*0x777511*/
       {
         g_CameoRenderFlag = 1; /*0x77751f*/
-        if ( !g_BounceClassInit || (int)g_CurrentFrame > 16 ) /*0x777530*/
-          (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)DSurface_Sidebar + 24))(DSurface_Sidebar, 0); /*0x77753c*/
+        if ( !stru_A8EB00.gapE4[376] || *(int *)&stru_A8EB00.gapE4[416] > 16 ) /*0x777530*/
+          (*((void (__thiscall **)(DSurface *, unsigned int))DSurface_Sidebar->DSurface_field_0x0 + 6))(DSurface_Sidebar, 0); /*0x77753c*/
       }
     }
     if ( g_DSurface_Primary /*0x777561*/
-      && DSurface::RestoreIfLost((int *)g_DSurface_Primary)
-      && (!g_BounceClassInit || (int)g_CurrentFrame > 16) )
+      && DSurface::RestoreIfLost(g_DSurface_Primary)
+      && (!stru_A8EB00.gapE4[376] || *(int *)&stru_A8EB00.gapE4[416] > 16) )
     {
-      (*(void (__thiscall **)(int, int *, unsigned int))(*(unsigned int *)g_DSurface_Primary + 20))( /*0x777572*/
+      (*((void (__thiscall **)(DSurface *, char *, unsigned int))g_DSurface_Primary->DSurface_field_0x0 + 5))( /*0x777572*/
         g_DSurface_Primary,
-        &DSurface_WindowBounds,
+        &DSurface_ViewBounds.__pad_8[8],
         0);
     }
   }
-  MapClass::MarkForRedraw(&MapClass_Instance, 2); /*0x77757c*/
+  MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 2); /*0x77757c*/
   InvalidateRect(g_hWnd, 0, 0); /*0x77758c*/
-  IDA_LOBYTE(v1) = 0; /*0x777592*/
-  AsyncIO::Read(v1); /*0x777594*/
+  IDA_LOBYTE(v2) = 0; /*0x777592*/
+  AsyncIO::Read(v2); /*0x777594*/
   result = Dialog::GetCurrent(); /*0x777599*/
   if ( result ) /*0x7775a1*/
   {
-    Current = (gamemd::AbstractClass **)(Dialog::GetCurrent());
+    Current = (gamemd::AbstractClass **)((HWND)Dialog::GetCurrent());
     SetActiveWindow(Current); /*0x7775a9*/
-    v4 = Dialog::GetCurrent(); /*0x7775af*/
-    return SetFocus(v4); /*0x7775b5*/
+    v5 = (HWND)Dialog::GetCurrent(); /*0x7775af*/
+    return (int)SetFocus(v5); /*0x7775b5*/
   }
   return (gamemd::AbstractClass **)(result);
-}
 }
 // 0x5C09A0
 namespace gamemd {
@@ -87,10 +88,9 @@ void sub_5C09A0()
 {
   int result; // eax
 
-  if ( dword_ABF3F8 ) /*0x5c09a8*/
-    return (*(int (__thiscall **)(int))(*(unsigned int *)dword_ABF3F8 + 40))(dword_ABF3F8); /*0x5c09ac*/
+  if ( g_MissionQueueFrame.localVariables[605] ) /*0x5c09a8*/
+    return (*(int (__thiscall **)(int))(*(unsigned int *)g_MissionQueueFrame.localVariables[605] + 40))(g_MissionQueueFrame.localVariables[605]); /*0x5c09ac*/
   return result; /*0x5c09af*/
-}
 }
 // 0x5C0980
 namespace gamemd {

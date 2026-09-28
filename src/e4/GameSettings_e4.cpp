@@ -15,6 +15,7 @@
 #include "e4/classes/SessionClass_e4.hpp"
 #include "e4/classes/Settings_e4.hpp"
 #include "core/ddraw_init.hpp"
+#include "e4/classes/GameSetup_e4.hpp"
 
 // 0x5FA620
 namespace gamemd {
@@ -86,7 +87,7 @@ AbstractClass * * GameSettings::Read()
     v3 = 4; /*0x5fa685*/
   this->ptr_4 = v3; /*0x5fa68c*/
   v52 = v3 <= 0 ? 0 : v3;
-  this->ptr_4 = (void *)(v52);
+  this->ptr_4 = (gamemd::AbstractClass *)((void *)(v52));
   Debug::Log("Difficulty = %d\n", v52); /*0x5fa6a0*/
   v4 = INIClass::ReadInt_Overwrite(g_INI_Key_Options, aCampdifficulty, this->ptr_8); /*0x5fa6bb*/
   this->ptr_8 = v4; /*0x5fa6c3*/
@@ -94,7 +95,7 @@ AbstractClass * * GameSettings::Read()
     v4 = 2; /*0x5fa6c8*/
   this->ptr_8 = v4; /*0x5fa6cf*/
   v53 = v4 <= 0 ? 0 : v4;
-  this->ptr_8 = (void *)(v53);
+  this->ptr_8 = (gamemd::AbstractClass *)((void *)(v53));
   Debug::Log("CampDifficulty = %d\n", v53); /*0x5fa6e3*/
   v5 = INIClass::ReadInt_Overwrite(g_INI_Key_Options, aScrollmethod, this->u32_C); /*0x5fa6fe*/
   this->u32_C = v5; /*0x5fa709*/
@@ -115,7 +116,7 @@ AbstractClass * * GameSettings::Read()
     v10 = 2; /*0x5fa799*/
   this->ptr_18 = v10; /*0x5fa7a0*/
   v54 = v10 <= 0 ? 0 : v10;
-  this->ptr_18 = (void *)(v54);
+  this->ptr_18 = (gamemd::AbstractClass *)((void *)(v54));
   Debug::Log("DetailLevel = %d\n", v54); /*0x5fa7b4*/
   this->u8_1C = 1; /*0x5fa7c3*/
   Debug::Log("SideBar on %s\n", aRight); /*0x5fa7c6*/
@@ -293,7 +294,7 @@ void * GameSettings::ParseNetworkAddress()
   v5 = strlen(v3) + 1; /*0x5fb088*/
   if ( v5 != 1 ) /*0x5fb08d*/
   {
-    v6 = (char *)operator new(v5); /*0x5fb09a*/
+    v6 = (char *)RA2_OPNEW(v5); /*0x5fb09a*/
     strcpy(v6, v3); /*0x5fb0b8*/
     v7 = 0; /*0x5fb0c1*/
     result = strtok(v6, asc_826598); /*0x5fb0c3*/
@@ -331,7 +332,7 @@ void GameSettings::SetScoreVolume(int volume)
   result = volume; /*0x721290*/
   if ( volume >= 255 ) /*0x721299*/
     result = 255; /*0x72129b*/
-  this->u32_C = result; /*0x7212a0*/
+  this->parent_gap[3] = result; /*0x7212a0*/
   return result; /*0x7212a3*/
 }
 } // namespace gamemd

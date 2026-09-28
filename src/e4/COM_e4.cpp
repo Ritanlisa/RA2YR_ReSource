@@ -17,7 +17,7 @@ int COM::GetClassID(int a1, unsigned int * a2)
   *a2 = 605729558; /*0x43a516*/
   a2[1] = 298994933; /*0x43a51e*/
   a2[2] = 268445372; /*0x43a527*/
-  a2[3] = 1303416651; /*0x43a530*/
+  a2[3] = unk_7E998C; /*0x43a530*/
   return 0; /*0x43a50d*/
 }
 } // namespace gamemd
@@ -25,8 +25,8 @@ int COM::GetClassID(int a1, unsigned int * a2)
 namespace gamemd {
 LONG COM::AddRef(int a1)
 {
-  ++g_BulletClassPool; /*0x55a95f*/
-  return InterlockedIncrement((volatile LONG *)(a1 + 20)); /*0x55a96b*/
+  ++*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x55a95f*/
+  return InterlockedIncrement(&a1->RefCount); /*0x55a96b*/
 }
 } // namespace gamemd
 // 0x55A970
@@ -35,10 +35,10 @@ LONG COM::ReleaseRef(volatile LONG * a1)
 {
   LONG v1; // esi
 
-  --g_BulletClassPool; /*0x55a980*/
-  v1 = InterlockedDecrement(a1 + 5); /*0x55a98d*/
+  --*(unsigned int *)&g_MissionQueueFrame.waypoints[274]; /*0x55a980*/
+  v1 = InterlockedDecrement(&a1->RefCount); /*0x55a98d*/
   if ( !v1 && a1 ) /*0x55a995*/
-    (*(void (__thiscall **)(volatile LONG *, int))(*a1 + 32))(a1, 1); /*0x55a99d*/
+    (*(void (__thiscall **)(LocomotionClass *, int))(*(unsigned int *)a1->__pad_0 + 32))(a1, 1); /*0x55a99d*/
   return v1; /*0x55a9a2*/
 }
 } // namespace gamemd

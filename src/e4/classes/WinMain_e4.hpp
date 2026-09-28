@@ -40,6 +40,15 @@ struct WinMain {
     unsigned int u32_2924;  // 0x2924
     unsigned int q5760;  // 0x5760
     unsigned int q5764;  // 0x5764
+    unsigned int u32_4183;
+    unsigned int u32_4184;
+    unsigned int u32_4187;
+    unsigned int u32_4189;
+    unsigned int u32_41C0;
+    unsigned int u32_41C3;
+    unsigned int u32_A80;
+    unsigned int u32_A81;
+    unsigned int u32_A84;
 // --- flat members (END) ---
     LSTATUS CleanupResource();
     int Constructor_VectorClass_Wstring_();

@@ -15,66 +15,73 @@ namespace gamemd {
 unsigned int * DynamicVector::Copy(VectorClass_flat * aP1)
 {
   int v3; // eax
-  void *v4; // eax
-  AbstractClass * v5;
+  void * v4;
+  int DynamicVector_field_0x8; // ecx
   int v6; // eax
 
-  if ( this == aP1 ) /*0x5ac43a*/
+  if ( this == (DynamicVector *)aP1 ) /*0x5ac43a*/
     goto LABEL_8; /*0x5ac43a*/
-  this->initEvent(); /*0x5ac43e*/
+  (*(void (__thiscall **)(DynamicVector *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5ac43e*/
   v3 = aP1[2]; /*0x5ac441*/
-  this->q008 = v3; /*0x5ac446*/
+  this->DynamicVector_field_0x8 = v3; /*0x5ac446*/
   if ( !v3 ) /*0x5ac449*/
   {
-    this->Items = (unsigned int *)(0);
-    this->IsAllocated = (unsigned int *)(0);
-  LABEL_8: this->q010 = (unsigned int *)(aP1[4]);
-    this->CapacityIncrement = (unsigned int *)(aP1[5]);
-    return (unsigned int *)(this);
+    *(unsigned int *)&this->DynamicVector_field_0x1[3] = 0; /*0x5ac496*/
+    this->__pad_C[1] = 0; /*0x5ac49d*/
+  LABEL_8:
+    this->DynamicVector_field_0x10 = (void *)aP1[4]; /*0x5ac4a1*/
+    *(unsigned int *)this->__pad_14 = aP1[5]; /*0x5ac4aa*/
+    return this->__pad_0; /*0x5ac4ad*/
   }
-  v4 = (gamemd::AbstractClass *)(operator new(4 * v3));
-  this->Items = (unsigned int)((gamemd::AbstractClass *)(v4));
+  v4 = (void *)((int)(RA2_OPNEW(4 * v3)));
+  *(unsigned int *)&this->DynamicVector_field_0x1[3] = v4; /*0x5ac45b*/
   if ( !v4 ) /*0x5ac460*/
     goto LABEL_8; /*0x5ac460*/
-  v5 = this->q008; /*0x5ac462*/
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x5ac462*/
   v6 = 0; /*0x5ac465*/
-  this->IsAllocated = 1; /*0x5ac469*/
-  if ( v5 <= 0 ) /*0x5ac46d*/
+  this->__pad_C[1] = 1; /*0x5ac469*/
+  if ( DynamicVector_field_0x8 <= 0 ) /*0x5ac46d*/
     goto LABEL_8; /*0x5ac46d*/
   do /*0x5ac481*/
   {
-    *(unsigned int *)(this->Items + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x5ac478*/
+    *(unsigned int *)(*(unsigned int *)&this->DynamicVector_field_0x1[3] + 4 * v6) = *(unsigned int *)(aP1[1] + 4 * v6); /*0x5ac478*/
     ++v6; /*0x5ac47e*/
   }
-  while ( v6 < this->q008 ); /*0x5ac481*/
-  this->q010 = aP1[4]; /*0x5ac486*/
-  this->CapacityIncrement = aP1[5]; /*0x5ac48c*/
-  return this; /*0x5ac491*/
-}
+  while ( v6 < this->DynamicVector_field_0x8 ); /*0x5ac481*/
+  this->DynamicVector_field_0x10 = (void *)aP1[4]; /*0x5ac486*/
+  *(unsigned int *)this->__pad_14 = aP1[5]; /*0x5ac48c*/
+  return this->__pad_0; /*0x5ac491*/
 }
 // 0x413A70
 namespace gamemd {
 char DynamicVector::AddItem(VectorClass_flat * aP1)
 {
-  AbstractClass * v3;
-  int v4; // eax
-  void * v6;
-  void * v7;
+  int DynamicVector_field_0x8; // ecx
+  int result; // eax
+  int v5; // edx
 
-  v3 = (gamemd::AbstractClass *)(this->q008);
-  if ( this->q010 >= v3 ) /*0x413a7b*/
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x413a73*/
+  result = (int)this->DynamicVector_field_0x10; /*0x413a76*/
+  if ( result < DynamicVector_field_0x8 /*0x413a9d*/
+    || (this->__pad_C[1] || !DynamicVector_field_0x8)
+    && (result = *(unsigned int *)this->__pad_14, result > 0)
+    && (result = (*(int (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
+                   this,
+                   DynamicVector_field_0x8 + result,
+                   0),
+        (unsigned char)result) )
   {
-    if ( !this->IsAllocated && v3 ) /*0x413a86*/
-      return 0; /*0x413a86*/
-    v4 = this->CapacityIncrement; /*0x413a88*/
-    if ( v4 <= 0 || !this->checkCondition(v3 + v4, 0) ) /*0x413a98*/
-      return 0; /*0x413a9f*/
+    result = (unsigned int)((int)this->DynamicVector_field_0x10);
+    v5 = *(unsigned int *)&this->DynamicVector_field_0x1[3]; /*0x413aa8*/
+    this->DynamicVector_field_0x10 = (void *)(result + 1); /*0x413aae*/
+    *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x413ab8*/
+    IDA_LOBYTE(result) = 1; /*0x413abb*/
   }
-  v6 = (void *)((unsigned int)(this->q010));
-  v7 = (void *)((unsigned int)(this->Items));
-  this->q010 = (unsigned int)(v6 + 1);
-  *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x413ab8*/
-  return 1; /*0x413aa1*/
+  else
+  {
+    IDA_LOBYTE(result) = 0; /*0x413a9f*/
+  }
+  return result; /*0x413aa1*/
 }
 } // namespace gamemd
 
@@ -82,30 +89,32 @@ char DynamicVector::AddItem(VectorClass_flat * aP1)
 namespace gamemd {
 unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * aP2)
 {
-  void *v4; // eax
+  int v4; // eax
 
-  this->Items = (unsigned int)(0);
-  this->q008 = (unsigned int)(aP1);
-  this->IsInitialized = 1; /*0x42f684*/
-  this->IsAllocated = 0; /*0x42f688*/
+  *(unsigned int *)&this->DynamicVector_field_0x1[3] = 0; /*0x42f67a*/
+  this->DynamicVector_field_0x8 = aP1; /*0x42f681*/
+  this->__pad_C[0] = 1; /*0x42f684*/
+  this->__pad_C[1] = 0; /*0x42f688*/
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_Cell_vftable; /*0x42f68c*/
   if ( aP1 ) /*0x42f692*/
   {
     if ( aP2 ) /*0x42f69a*/
     {
-      this->Items = (unsigned int)(aP2);
+      *(unsigned int *)&this->DynamicVector_field_0x1[3] = aP2; /*0x42f69d*/
     }
     else
     {
-      v4 = (unsigned int)(operator new(4 * aP1));
+      v4 = RA2_OPNEW(4 * aP1); /*0x42f6ae*/
       if ( !v4 ) /*0x42f6b8*/
         v4 = 0; /*0x42f6c1*/
-      this->Items = v4; /*0x42f6c3*/
-      this->IsAllocated = 1; /*0x42f6c6*/
+      *(unsigned int *)&this->DynamicVector_field_0x1[3] = v4; /*0x42f6c3*/
+      this->__pad_C[1] = 1; /*0x42f6c6*/
     }
   }
-  this->CapacityIncrement = (int)((unsigned int *)(10));
-  this->q010 = (unsigned int *)(0);
-  return (unsigned int *)(this);
+  *(unsigned int *)this->__pad_0 = (void*)&DynamicVectorClass_Cell_vftable; /*0x42f6ca*/
+  *(unsigned int *)this->__pad_14 = 10; /*0x42f6d0*/
+  this->DynamicVector_field_0x10 = 0; /*0x42f6d7*/
+  return this->__pad_0; /*0x42f6e0*/
 }
 } // namespace gamemd
 
@@ -113,25 +122,33 @@ unsigned int * DynamicVector::Constructor_Cell(ObjectClass * aP1, ObjectClass * 
 namespace gamemd {
 char DynamicVector::RemoveItem(IUnknown * aP1)
 {
-  void * v2;
-  void * v4;
+  char *DynamicVector_field_0x10; // edx
+  IUnknown * result;
+  char *v4; // edx
 
-  v2 = this->q010; /*0x45add0*/
-  aP1 = aP1; /*0x45add3*/
-  if ( aP1 >= v2 ) /*0x45add9*/
-    return 0; /*0x45adfc*/
-  v4 = v2 - 1; /*0x45addb*/
-  this->q010 = v4; /*0x45adde*/
-  if ( aP1 < v4 ) /*0x45ade1*/
+  DynamicVector_field_0x10 = (int)((char *)this->DynamicVector_field_0x10);
+  result = aP1; /*0x45add3*/
+  if ( aP1 >= (int)DynamicVector_field_0x10 ) /*0x45add9*/
   {
-    do /*0x45adf4*/
-    {
-      ++aP1; /*0x45ade7*/
-      *(unsigned int *)(this->Items + 4 * aP1 - 4) = *(unsigned int *)(this->Items + 4 * aP1); /*0x45adeb*/
-    }
-    while ( aP1 < this->q010 ); /*0x45adf4*/
+    IDA_LOBYTE(result) = 0; /*0x45adfc*/
   }
-  return 1; /*0x45adf9*/
+  else
+  {
+    v4 = DynamicVector_field_0x10 - 1; /*0x45addb*/
+    this->DynamicVector_field_0x10 = v4; /*0x45adde*/
+    if ( aP1 < (int)v4 ) /*0x45ade1*/
+    {
+      do /*0x45adf4*/
+      {
+        ++result; /*0x45ade7*/
+        *(unsigned int *)(*(unsigned int *)&this->DynamicVector_field_0x1[3] + 4 * result - 4) = *(unsigned int *)(*(unsigned int *)&this->DynamicVector_field_0x1[3] /*0x45adeb*/
+                                                                                               + 4 * result);
+      }
+      while ( result < (int)this->DynamicVector_field_0x10 ); /*0x45adf4*/
+    }
+    IDA_LOBYTE(result) = 1; /*0x45adf7*/
+  }
+  return result; /*0x45adf9*/
 }
 } // namespace gamemd
 
@@ -139,25 +156,32 @@ char DynamicVector::RemoveItem(IUnknown * aP1)
 namespace gamemd {
 char DynamicVector::Add_Alt(VectorClass_flat * aP1)
 {
-  int v3; // ecx
-  int v4; // eax
-  void * v6;
-  void * v7;
+  int DynamicVector_field_0x8; // ecx
+  int result; // eax
+  int v5; // edx
 
-  v3 = this->Capacity; /*0x477ec3*/
-  if ( this->q010 >= v3 ) /*0x477ecb*/
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x477ec3*/
+  result = (int)this->DynamicVector_field_0x10; /*0x477ec6*/
+  if ( result < DynamicVector_field_0x8 /*0x477eed*/
+    || (this->__pad_C[1] || !DynamicVector_field_0x8)
+    && (result = *(unsigned int *)this->__pad_14, result > 0)
+    && (result = (*(int (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
+                   this,
+                   DynamicVector_field_0x8 + result,
+                   0),
+        (unsigned char)result) )
   {
-    if ( !this->IsAllocated && v3 ) /*0x477ed6*/
-      return 0; /*0x477ed6*/
-    v4 = this->u32_14; /*0x477ed8*/
-    if ( v4 <= 0 || !this->Release(v3 + v4, 0) ) /*0x477ee8*/
-      return 0; /*0x477eef*/
+    result = (unsigned int)((int)this->DynamicVector_field_0x10);
+    v5 = *(unsigned int *)&this->DynamicVector_field_0x1[3]; /*0x477ef8*/
+    this->DynamicVector_field_0x10 = (void *)(result + 1); /*0x477efe*/
+    *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x477f08*/
+    IDA_LOBYTE(result) = 1; /*0x477f0b*/
   }
-  v6 = (void *)((unsigned int)(this->q010));
-  v7 = (void *)((unsigned int)(this->Items));
-  this->q010 = (unsigned int)(v6 + 1);
-  *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x477f08*/
-  return 1; /*0x477ef1*/
+  else
+  {
+    IDA_LOBYTE(result) = 0; /*0x477eef*/
+  }
+  return result; /*0x477ef1*/
 }
 } // namespace gamemd
 
@@ -165,16 +189,24 @@ char DynamicVector::Add_Alt(VectorClass_flat * aP1)
 namespace gamemd {
 int DynamicVector::GetOrGrow(DynamicVector * aP1)
 {
-  AbstractClass * v3;
+  int DynamicVector_field_0x8; // edi
+  int i; // eax
 
-  v3 = (gamemd::AbstractClass *)(this->q008);
-  if ( aP1 < v3 ) /*0x49faee*/
-    return *(unsigned int *)(this->Items + 4 * aP1); /*0x49fb26*/
-  if ( this->checkCondition(aP1 + 10, 0) ) /*0x49fafa*/
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x49fae9*/
+  if ( aP1 < DynamicVector_field_0x8 ) /*0x49faee*/
+    return *(unsigned int *)(*(unsigned int *)&this->DynamicVector_field_0x1[3] + 4 * aP1); /*0x49fb26*/
+  if ( (*(uint8_t (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))( /*0x49fafa*/
+         this,
+         aP1 + 10,
+         0) )
   {
-    for ( v3 = v3; v3 < this->q008; *(unsigned int *)(this->Items + 4 * v3 - 4) = 0 ) /*0x49fb08*/
-      ++v3; /*0x49fb0d*/
-    return *(unsigned int *)(this->Items + 4 * aP1); /*0x49fb1b*/
+    for ( i = DynamicVector_field_0x8; /*0x49fb08*/
+          i < this->DynamicVector_field_0x8;
+          *(unsigned int *)(*(unsigned int *)&this->DynamicVector_field_0x1[3] + 4 * i - 4) = 0 )
+    {
+      ++i; /*0x49fb0d*/
+    }
+    return *(unsigned int *)(*(unsigned int *)&this->DynamicVector_field_0x1[3] + 4 * aP1); /*0x49fb1b*/
   }
   return 0; /*0x49fb20*/
 }
@@ -184,25 +216,32 @@ int DynamicVector::GetOrGrow(DynamicVector * aP1)
 namespace gamemd {
 char DynamicVector::Add_Alt4(VectorClass_flat * aP1)
 {
-  int v3; // ecx
-  int v4; // eax
-  void * v6;
-  void * v7;
+  int DynamicVector_field_0x8; // ecx
+  int result; // eax
+  int v5; // edx
 
-  v3 = this->Capacity; /*0x5253b3*/
-  if ( this->q010 >= v3 ) /*0x5253bb*/
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x5253b3*/
+  result = (int)this->DynamicVector_field_0x10; /*0x5253b6*/
+  if ( result < DynamicVector_field_0x8 /*0x5253dd*/
+    || (this->__pad_C[1] || !DynamicVector_field_0x8)
+    && (result = *(unsigned int *)this->__pad_14, result > 0)
+    && (result = (*(int (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
+                   this,
+                   DynamicVector_field_0x8 + result,
+                   0),
+        (unsigned char)result) )
   {
-    if ( !this->IsAllocated && v3 ) /*0x5253c6*/
-      return 0; /*0x5253c6*/
-    v4 = this->u32_14; /*0x5253c8*/
-    if ( v4 <= 0 || !this->Release(v3 + v4, 0) ) /*0x5253d8*/
-      return 0; /*0x5253df*/
+    result = (unsigned int)((int)this->DynamicVector_field_0x10);
+    v5 = *(unsigned int *)&this->DynamicVector_field_0x1[3]; /*0x5253e8*/
+    this->DynamicVector_field_0x10 = (void *)(result + 1); /*0x5253ee*/
+    *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x5253f8*/
+    IDA_LOBYTE(result) = 1; /*0x5253fb*/
   }
-  v6 = (void *)((unsigned int)(this->q010));
-  v7 = (void *)((unsigned int)(this->Items));
-  this->q010 = (unsigned int)(v6 + 1);
-  *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x5253f8*/
-  return 1; /*0x5253e1*/
+  else
+  {
+    IDA_LOBYTE(result) = 0; /*0x5253df*/
+  }
+  return result; /*0x5253e1*/
 }
 } // namespace gamemd
 
@@ -210,24 +249,30 @@ char DynamicVector::Add_Alt4(VectorClass_flat * aP1)
 namespace gamemd {
 char DynamicVector::Add_Alt2(DynamicVector * aP1)
 {
-  int v3; // ecx
+  int DynamicVector_field_0x8; // ecx
   int v4; // eax
-  int v6; // eax
+  void *DynamicVector_field_0x10; // eax
   int v7; // edx
 
-  v3 = *(unsigned int *)&this->q008; /*0x538783*/
-  if ( this->q010 >= v3 ) /*0x53878b*/
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x538783*/
+  if ( (int)this->DynamicVector_field_0x10 >= DynamicVector_field_0x8 ) /*0x53878b*/
   {
-    if ( !this->IsAllocated && v3 ) /*0x538796*/
+    if ( !this->__pad_C[1] && DynamicVector_field_0x8 ) /*0x538796*/
       return 0; /*0x538796*/
-    v4 = this->CapacityIncrement; /*0x538798*/
-    if ( v4 <= 0 || !(*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(*&this->q008))(this, v3 + v4, 0) ) /*0x5387a8*/
+    v4 = *(unsigned int *)this->__pad_14; /*0x538798*/
+    if ( v4 <= 0 /*0x5387a8*/
+      || !(*(uint8_t (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
+            this,
+            DynamicVector_field_0x8 + v4,
+            0) )
+    {
       return 0; /*0x5387af*/
+    }
   }
-  v6 = (unsigned int)(this->q010);
-  v7 = (unsigned int)(this->q004);
-  this->q010 = (unsigned int)(v6 + 1);
-  *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x5387c8*/
+  DynamicVector_field_0x10 = (void *)((unsigned int)(this->DynamicVector_field_0x10));
+  v7 = *(unsigned int *)&this->DynamicVector_field_0x1[3]; /*0x5387b8*/
+  this->DynamicVector_field_0x10 = (char *)DynamicVector_field_0x10 + 1; /*0x5387be*/
+  *(unsigned int *)(v7 + 4 * (unsigned int)DynamicVector_field_0x10) = *aP1; /*0x5387c8*/
   return 1; /*0x5387b1*/
 }
 } // namespace gamemd
@@ -236,25 +281,32 @@ char DynamicVector::Add_Alt2(DynamicVector * aP1)
 namespace gamemd {
 char DynamicVector::Add_Alt3(VectorClass_flat * aP1)
 {
-  int v3; // ecx
-  int v4; // eax
-  int v6; // eax
-  void * v7;
+  int DynamicVector_field_0x8; // ecx
+  int result; // eax
+  int v5; // edx
 
-  v3 = this->Capacity; /*0x5ad7d3*/
-  if ( this->Count >= v3 ) /*0x5ad7db*/
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x5ad7d3*/
+  result = (int)this->DynamicVector_field_0x10; /*0x5ad7d6*/
+  if ( result < DynamicVector_field_0x8 /*0x5ad7fd*/
+    || (this->__pad_C[1] || !DynamicVector_field_0x8)
+    && (result = *(unsigned int *)this->__pad_14, result > 0)
+    && (result = (*(int (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
+                   this,
+                   DynamicVector_field_0x8 + result,
+                   0),
+        (unsigned char)result) )
   {
-    if ( !this->IsAllocated && v3 ) /*0x5ad7e6*/
-      return 0; /*0x5ad7e6*/
-    v4 = this->CapacityIncrement; /*0x5ad7e8*/
-    if ( v4 <= 0 || !this->Resize(v3 + v4, 0) ) /*0x5ad7f8*/
-      return 0; /*0x5ad7ff*/
+    result = (unsigned int)((int)this->DynamicVector_field_0x10);
+    v5 = *(unsigned int *)&this->DynamicVector_field_0x1[3]; /*0x5ad808*/
+    this->DynamicVector_field_0x10 = (void *)(result + 1); /*0x5ad80e*/
+    *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x5ad818*/
+    IDA_LOBYTE(result) = 1; /*0x5ad81b*/
   }
-  v6 = (unsigned int)(this->Count);
-  v7 = (void *)((unsigned int)(this->Items));
-  this->Count = (unsigned int)(v6 + 1);
-  *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x5ad818*/
-  return 1; /*0x5ad801*/
+  else
+  {
+    IDA_LOBYTE(result) = 0; /*0x5ad7ff*/
+  }
+  return result; /*0x5ad801*/
 }
 } // namespace gamemd
 
@@ -265,24 +317,24 @@ char DynamicVector::GrowCapacity()
   int v2; // eax
   int v4; // ebp
   void *v5; // edx
-  const void *v6; // esi
+  const void *DynamicVector_field_0x8; // esi
   int v7; // [esp+4h] [ebp-4h]
 
-  v2 = (int)(*this);
-  if ( *this < this->q004 ) /*0x62481b*/
+  v2 = *(unsigned int *)this->__pad_0; /*0x624814*/
+  if ( *(unsigned int *)this->__pad_0 < *(unsigned int *)&this->DynamicVector_field_0x1[3] ) /*0x62481b*/
     return 0; /*0x62481d*/
   v4 = 2 * v2; /*0x624823*/
   if ( 2 * v2 < 10 ) /*0x62482b*/
     v4 = 10; /*0x62482d*/
-  v5 = operator new(24 * v4); /*0x62483f*/
+  v5 = (void *)RA2_OPNEW(24 * v4); /*0x62483f*/
   memset(v5, 0, 4 * ((unsigned int)(24 * v4) >> 2)); /*0x62484a*/
   v7 = (int)v5; /*0x624854*/
-  v6 = (const void *)*(unsigned int *)&this->q008; /*0x62485a*/
-  if ( v6 ) /*0x62485f*/
-    qmemcpy(v5, v6, 24 * *this); /*0x624870*/
-  RA2_OPDEL((void *)*(unsigned int *)&this->q008); /*0x62487d*/
-  this->q004 = v4; /*0x624889*/
-  *(unsigned int *)&this->q008 = v7; /*0x62488c*/
+  DynamicVector_field_0x8 = (const void *)this->DynamicVector_field_0x8; /*0x62485a*/
+  if ( DynamicVector_field_0x8 ) /*0x62485f*/
+    qmemcpy(v5, DynamicVector_field_0x8, 24 * *(unsigned int *)this->__pad_0); /*0x624870*/
+  RA2_OPDEL((void *)this->DynamicVector_field_0x8); /*0x62487d*/
+  *(unsigned int *)&this->DynamicVector_field_0x1[3] = v4; /*0x624889*/
+  this->DynamicVector_field_0x8 = v7; /*0x62488c*/
   return 1; /*0x62481f*/
 }
 } // namespace gamemd
@@ -294,16 +346,20 @@ int DynamicVector::Read(TechnoTypeClass * aP1)
   int v3; // ecx
   int result; // eax
   int i; // esi
-  int v6; // [esp+20h] [ebp-4h] BYREF
+  void *DynamicVector_field_0x10; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *aP1; /*0x67a52c*/
-  v6 = this->q010; /*0x67a539*/
-  (*(void (__stdcall **)(int *, int *, int, unsigned int))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a53d*/
-  result = v6; /*0x67a540*/
-  for ( i = 0; i < v6; ++i ) /*0x67a548*/
+  v3 = (void *)(*aP1);
+  DynamicVector_field_0x10 = (void *)(this->DynamicVector_field_0x10);
+  aP1->IsClean(&DynamicVector_field_0x10, 4, 0); /*0x67a53d*/
+  result = (int)DynamicVector_field_0x10; /*0x67a540*/
+  for ( i = 0; i < (int)DynamicVector_field_0x10; ++i ) /*0x67a548*/
   {
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->q004 + 4 * i, 4, 0); /*0x67a558*/
-    result = v6; /*0x67a55b*/
+    (*(void (__stdcall **)(int *, int, int, unsigned int))(*aP1 + 16))( /*0x67a558*/
+      aP1,
+      *(unsigned int *)&this->DynamicVector_field_0x1[3] + 4 * i,
+      4,
+      0);
+    result = (int)DynamicVector_field_0x10; /*0x67a55b*/
   }
   return result; /*0x67a564*/
 }
@@ -316,16 +372,20 @@ int DynamicVector::Read_Alt(TechnoTypeClass * aP1)
   int v3; // ecx
   int result; // eax
   int i; // esi
-  int v6; // [esp+20h] [ebp-4h] BYREF
+  void *DynamicVector_field_0x10; // [esp+20h] [ebp-4h] BYREF
 
-  v3 = *aP1; /*0x67a6ec*/
-  v6 = this->q010; /*0x67a6f9*/
-  (*(void (__stdcall **)(int *, int *, int, unsigned int))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a6fd*/
-  result = v6; /*0x67a700*/
-  for ( i = 0; i < v6; ++i ) /*0x67a708*/
+  v3 = (void *)(*aP1);
+  DynamicVector_field_0x10 = (void *)(this->DynamicVector_field_0x10);
+  aP1->IsClean(&DynamicVector_field_0x10, 4, 0); /*0x67a6fd*/
+  result = (int)DynamicVector_field_0x10; /*0x67a700*/
+  for ( i = 0; i < (int)DynamicVector_field_0x10; ++i ) /*0x67a708*/
   {
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->q004 + 4 * i, 4, 0); /*0x67a718*/
-    result = v6; /*0x67a71b*/
+    (*(void (__stdcall **)(int *, int, int, unsigned int))(*aP1 + 16))( /*0x67a718*/
+      aP1,
+      *(unsigned int *)&this->DynamicVector_field_0x1[3] + 4 * i,
+      4,
+      0);
+    result = (int)DynamicVector_field_0x10; /*0x67a71b*/
   }
   return result; /*0x67a724*/
 }
@@ -335,25 +395,27 @@ int DynamicVector::Read_Alt(TechnoTypeClass * aP1)
 namespace gamemd {
 unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
 {
-  this->Items = 0; /*0x67ac79*/
-  this->Capacity = a2; /*0x67ac80*/
-  this->IsInitialized = 1; /*0x67ac83*/
-  this->IsAllocated = 0; /*0x67ac87*/
+  *(unsigned int *)&this->DynamicVector_field_0x1[3] = 0; /*0x67ac79*/
+  this->DynamicVector_field_0x8 = a2; /*0x67ac80*/
+  this->__pad_C[0] = 1; /*0x67ac83*/
+  this->__pad_C[1] = 0; /*0x67ac87*/
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_VoxelAnimTypeClass_const___vftable; /*0x67ac8b*/
   if ( a2 ) /*0x67ac91*/
   {
     if ( a3 ) /*0x67ac99*/
     {
-      this->Items = a3; /*0x67ac9b*/
+      *(unsigned int *)&this->DynamicVector_field_0x1[3] = a3; /*0x67ac9b*/
     }
     else
     {
-      this->Items = (unsigned int)(operator new(4 * a2));
-      this->IsAllocated = 1; /*0x67acaf*/
+      *(unsigned int *)&this->DynamicVector_field_0x1[3] = RA2_OPNEW(4 * a2); /*0x67acac*/
+      this->__pad_C[1] = 1; /*0x67acaf*/
     }
   }
-  this->u32_14 = (unsigned int *)(10);
-  this->q010 = (unsigned int *)(0);
-  return (unsigned int *)(this);
+  *(unsigned int *)this->__pad_0 = (void*)&DynamicVectorClass_VoxelAnimTypeClass_const___vftable; /*0x67acb3*/
+  *(unsigned int *)this->__pad_14 = 10; /*0x67acb9*/
+  this->DynamicVector_field_0x10 = 0; /*0x67acc0*/
+  return this->__pad_0; /*0x67acc9*/
 }
 } // namespace gamemd
 
@@ -361,25 +423,32 @@ unsigned int * DynamicVector::Constructor_VoxelAnim(int a2, int a3)
 namespace gamemd {
 char DynamicVector::Add2(VectorClass_flat * aP1)
 {
-  int v3; // ecx
-  int v4; // eax
-  int v6; // eax
-  void * v7;
+  int DynamicVector_field_0x8; // ecx
+  int result; // eax
+  int v5; // edx
 
-  v3 = this->Capacity; /*0x67ad83*/
-  if ( this->Count >= v3 ) /*0x67ad8b*/
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x67ad83*/
+  result = (int)this->DynamicVector_field_0x10; /*0x67ad86*/
+  if ( result < DynamicVector_field_0x8 /*0x67adad*/
+    || (this->__pad_C[1] || !DynamicVector_field_0x8)
+    && (result = *(unsigned int *)this->__pad_14, result > 0)
+    && (result = (*(int (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
+                   this,
+                   DynamicVector_field_0x8 + result,
+                   0),
+        (unsigned char)result) )
   {
-    if ( !this->IsAllocated && v3 ) /*0x67ad96*/
-      return 0; /*0x67ad96*/
-    v4 = this->CapacityIncrement; /*0x67ad98*/
-    if ( v4 <= 0 || !this->Resize(v3 + v4, 0) ) /*0x67ada8*/
-      return 0; /*0x67adaf*/
+    result = (unsigned int)((int)this->DynamicVector_field_0x10);
+    v5 = *(unsigned int *)&this->DynamicVector_field_0x1[3]; /*0x67adb8*/
+    this->DynamicVector_field_0x10 = (void *)(result + 1); /*0x67adbe*/
+    *(unsigned int *)(v5 + 4 * result) = *aP1; /*0x67adc8*/
+    IDA_LOBYTE(result) = 1; /*0x67adcb*/
   }
-  v6 = (unsigned int)(this->Count);
-  v7 = (void *)((unsigned int)(this->Items));
-  this->Count = (unsigned int)(v6 + 1);
-  *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x67adc8*/
-  return 1; /*0x67adb1*/
+  else
+  {
+    IDA_LOBYTE(result) = 0; /*0x67adaf*/
+  }
+  return result; /*0x67adb1*/
 }
 } // namespace gamemd
 
@@ -387,24 +456,25 @@ char DynamicVector::Add2(VectorClass_flat * aP1)
 namespace gamemd {
 char DynamicVector::RemoveAt(int a2)
 {
-  int v2; // edx
+  char *DynamicVector_field_0x10; // edx
   int v3; // eax
-  int v4; // edx
+  char *v4; // edx
 
-  v2 = this->q010; /*0x67c360*/
-  v3 = a2; /*0x67c363*/
-  if ( a2 >= v2 ) /*0x67c369*/
+  DynamicVector_field_0x10 = (char *)((unsigned int)((char *)this->DynamicVector_field_0x10));
+  v3 = (unsigned int)(a2);
+  if ( a2 >= (int)DynamicVector_field_0x10 ) /*0x67c369*/
     return 0; /*0x67c38c*/
-  v4 = v2 - 1; /*0x67c36b*/
-  this->q010 = v4; /*0x67c36e*/
-  if ( a2 < v4 ) /*0x67c371*/
+  v4 = DynamicVector_field_0x10 - 1; /*0x67c36b*/
+  this->DynamicVector_field_0x10 = v4; /*0x67c36e*/
+  if ( a2 < (int)v4 ) /*0x67c371*/
   {
     do /*0x67c384*/
     {
       ++v3; /*0x67c377*/
-      *(unsigned int *)(this->q004 + 4 * v3 - 4) = *(unsigned int *)(this->q004 + 4 * v3); /*0x67c37b*/
+      *(unsigned int *)(*(unsigned int *)&this->DynamicVector_field_0x1[3] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&this->DynamicVector_field_0x1[3] /*0x67c37b*/
+                                                                                         + 4 * v3);
     }
-    while ( v3 < this->q010 ); /*0x67c384*/
+    while ( v3 < (int)this->DynamicVector_field_0x10 ); /*0x67c384*/
   }
   return 1; /*0x67c389*/
 }
@@ -414,24 +484,25 @@ char DynamicVector::RemoveAt(int a2)
 namespace gamemd {
 char DynamicVector::RemoveAt2(int a2)
 {
-  int v2; // edx
+  char *DynamicVector_field_0x10; // edx
   int v3; // eax
-  int v4; // edx
+  char *v4; // edx
 
-  v2 = this->q010; /*0x67c3f0*/
+  DynamicVector_field_0x10 = (char *)this->DynamicVector_field_0x10; /*0x67c3f0*/
   v3 = a2; /*0x67c3f3*/
-  if ( a2 >= v2 ) /*0x67c3f9*/
+  if ( a2 >= (int)DynamicVector_field_0x10 ) /*0x67c3f9*/
     return 0; /*0x67c41c*/
-  v4 = v2 - 1; /*0x67c3fb*/
-  this->q010 = v4; /*0x67c3fe*/
-  if ( a2 < v4 ) /*0x67c401*/
+  v4 = DynamicVector_field_0x10 - 1; /*0x67c3fb*/
+  this->DynamicVector_field_0x10 = v4; /*0x67c3fe*/
+  if ( a2 < (int)v4 ) /*0x67c401*/
   {
     do /*0x67c414*/
     {
       ++v3; /*0x67c407*/
-      *(unsigned int *)(this->q004 + 4 * v3 - 4) = *(unsigned int *)(this->q004 + 4 * v3); /*0x67c40b*/
+      *(unsigned int *)(*(unsigned int *)&this->DynamicVector_field_0x1[3] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&this->DynamicVector_field_0x1[3] /*0x67c40b*/
+                                                                                         + 4 * v3);
     }
-    while ( v3 < this->q010 ); /*0x67c414*/
+    while ( v3 < (int)this->DynamicVector_field_0x10 ); /*0x67c414*/
   }
   return 1; /*0x67c419*/
 }
@@ -441,24 +512,30 @@ char DynamicVector::RemoveAt2(int a2)
 namespace gamemd {
 char DynamicVector::Add(DynamicVector * aP1)
 {
-  int v3; // ecx
+  int DynamicVector_field_0x8; // ecx
   int v4; // eax
-  int v6; // eax
+  void *DynamicVector_field_0x10; // eax
   int v7; // edx
 
-  v3 = *(unsigned int *)&this->q008; /*0x6c6403*/
-  if ( this->q010 >= v3 ) /*0x6c640b*/
+  DynamicVector_field_0x8 = this->DynamicVector_field_0x8; /*0x6c6403*/
+  if ( (int)this->DynamicVector_field_0x10 >= DynamicVector_field_0x8 ) /*0x6c640b*/
   {
-    if ( !this->IsAllocated && v3 ) /*0x6c6416*/
+    if ( !this->__pad_C[1] && DynamicVector_field_0x8 ) /*0x6c6416*/
       return 0; /*0x6c6416*/
-    v4 = this->CapacityIncrement; /*0x6c6418*/
-    if ( v4 <= 0 || !(*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(*&this->q008))(this, v3 + v4, 0) ) /*0x6c6428*/
+    v4 = *(unsigned int *)this->__pad_14; /*0x6c6418*/
+    if ( v4 <= 0 /*0x6c6428*/
+      || !(*(uint8_t (__thiscall **)(DynamicVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
+            this,
+            DynamicVector_field_0x8 + v4,
+            0) )
+    {
       return 0; /*0x6c642f*/
+    }
   }
-  v6 = (unsigned int)(this->q010);
-  v7 = (unsigned int)(this->q004);
-  this->q010 = (unsigned int)(v6 + 1);
-  *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x6c6448*/
+  DynamicVector_field_0x10 = this->DynamicVector_field_0x10; /*0x6c6435*/
+  v7 = *(unsigned int *)&this->DynamicVector_field_0x1[3]; /*0x6c6438*/
+  this->DynamicVector_field_0x10 = (char *)DynamicVector_field_0x10 + 1; /*0x6c643e*/
+  *(unsigned int *)(v7 + 4 * (unsigned int)DynamicVector_field_0x10) = *aP1; /*0x6c6448*/
   return 1; /*0x6c6431*/
 }
 } // namespace gamemd
@@ -467,25 +544,27 @@ char DynamicVector::Add(DynamicVector * aP1)
 namespace gamemd {
 unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
 {
-  this->Items = 0; /*0x7342d9*/
-  this->Capacity = a2; /*0x7342e0*/
-  this->IsInitialized = 1; /*0x7342e3*/
-  this->IsAllocated = 0; /*0x7342e7*/
+  *(unsigned int *)&this->DynamicVector_field_0x1[3] = 0; /*0x7342d9*/
+  this->DynamicVector_field_0x8 = a2; /*0x7342e0*/
+  this->__pad_C[0] = 1; /*0x7342e3*/
+  this->__pad_C[1] = 0; /*0x7342e7*/
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TechnoClass___vftable; /*0x7342eb*/
   if ( a2 ) /*0x7342f1*/
   {
     if ( a3 ) /*0x7342f9*/
     {
-      this->Items = a3; /*0x7342fb*/
+      *(unsigned int *)&this->DynamicVector_field_0x1[3] = a3; /*0x7342fb*/
     }
     else
     {
-      this->Items = (unsigned int)(operator new(4 * a2));
-      this->IsAllocated = 1; /*0x73430f*/
+      *(unsigned int *)&this->DynamicVector_field_0x1[3] = RA2_OPNEW(4 * a2); /*0x73430c*/
+      this->__pad_C[1] = 1; /*0x73430f*/
     }
   }
-  this->u32_14 = (unsigned int *)(10);
-  this->q010 = (unsigned int *)(0);
-  return (unsigned int *)(this);
+  *(unsigned int *)this->__pad_0 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x734313*/
+  *(unsigned int *)this->__pad_14 = 10; /*0x734319*/
+  this->DynamicVector_field_0x10 = 0; /*0x734320*/
+  return this->__pad_0; /*0x734329*/
 }
 } // namespace gamemd
 
@@ -493,31 +572,37 @@ unsigned int * DynamicVector::Constructor_Techno(int a2, int a3)
 namespace gamemd {
 char DynamicVector::EnsureCapacity()
 {
-  int v2; // eax
-  int v4; // esi
-  void *v5; // ebp
-  int v6; // [esp+4h] [ebp-4h]
+  int result; // eax
+  int v3; // esi
+  void *v4; // ebp
+  int v5; // [esp+4h] [ebp-4h]
 
-  v2 = (int)(*this);
-  if ( *this < this->q004 ) /*0x7af00b*/
-    return 0; /*0x7af00d*/
-  v4 = 2 * v2; /*0x7af014*/
-  v6 = 2 * v2; /*0x7af01b*/
-  if ( 2 * v2 < 10 ) /*0x7af01f*/
+  result = *(unsigned int *)this->__pad_0; /*0x7af004*/
+  if ( *(unsigned int *)this->__pad_0 >= *(unsigned int *)&this->DynamicVector_field_0x1[3] ) /*0x7af00b*/
   {
-    v6 = 10; /*0x7af021*/
-    v4 = 10; /*0x7af029*/
+    v3 = 2 * result; /*0x7af014*/
+    v5 = 2 * result; /*0x7af01b*/
+    if ( 2 * result < 10 ) /*0x7af01f*/
+    {
+      v5 = 10; /*0x7af021*/
+      v3 = 10; /*0x7af029*/
+    }
+    v4 = (void *)RA2_OPNEW(4 * v3); /*0x7af03c*/
+    memset(v4, 0, 4 * ((unsigned int)(4 * v3) >> 2)); /*0x7af04a*/
+    if ( this->DynamicVector_field_0x8 ) /*0x7af053*/
+    {
+      qmemcpy(v4, (const void *)this->DynamicVector_field_0x8, 4 * *(unsigned int *)this->__pad_0); /*0x7af068*/
+      v3 = v5; /*0x7af071*/
+    }
+    RA2_OPDEL((void *)this->DynamicVector_field_0x8); /*0x7af079*/
+    *(unsigned int *)&this->DynamicVector_field_0x1[3] = v3; /*0x7af081*/
+    this->DynamicVector_field_0x8 = (int)v4; /*0x7af084*/
+    IDA_LOBYTE(result) = 1; /*0x7af087*/
   }
-  v5 = operator new(4 * v4); /*0x7af03c*/
-  memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7af04a*/
-  if ( *(unsigned int *)&this->q008 ) /*0x7af053*/
+  else
   {
-    qmemcpy(v5, (const void *)*(unsigned int *)&this->q008, 4 * *this); /*0x7af068*/
-    v4 = v6; /*0x7af071*/
+    IDA_LOBYTE(result) = 0; /*0x7af00d*/
   }
-  RA2_OPDEL((void *)*(unsigned int *)&this->q008); /*0x7af079*/
-  this->q004 = v4; /*0x7af081*/
-  *(unsigned int *)&this->q008 = (int)v5; /*0x7af084*/
-  return 1; /*0x7af00f*/
+  return result; /*0x7af00f*/
 }
 } // namespace gamemd

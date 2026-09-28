@@ -9,6 +9,7 @@ struct E4Recv_75A120 {
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
     unsigned int u32_10;  // 0x10
+    unsigned int u32_28;  // 0x28
     unsigned int u32_2C;  // 0x2C
     unsigned int q034;  // 0x34
     unsigned int q044;  // 0x44

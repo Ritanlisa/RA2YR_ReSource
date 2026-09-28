@@ -14,23 +14,24 @@
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/ArtConfig_e4.hpp"
 
 // 0x5BF450
 namespace gamemd {
 AbstractClass * * AsyncIO::Shutdown()
 {
-  int v0; // esi
+  unsigned int * v1;
   unsigned int i;
-  void (__thiscall ***v2)(unsigned int, int); // ecx
+  void (__thiscall ***v3)(unsigned int, int); // ecx
   char result; // al
 
-  v0 = 0; /*0x5bf459*/
-  for ( i = AsyncIO_Instance; v0 < g_AsyncIOState; ++v0 ) /*0x5bf462*/
+  v1 = (int)((unsigned int *)(0));
+  for ( i = AsyncIO_Instance; v1 < g_AsyncIOState; ++v1 ) /*0x5bf462*/
   {
-    v2 = (void (__thiscall ***)(unsigned int, int))i[v0]; /*0x5bf464*/
-    if ( v2 ) /*0x5bf469*/
+    v3 = (void (__thiscall ***)(unsigned int, int))i[v1]; /*0x5bf464*/
+    if ( v3 ) /*0x5bf469*/
     {
-      (**v2)(v2, 1); /*0x5bf473*/
+      (**v3)(v3, 1); /*0x5bf473*/
       i = AsyncIO_Instance; /*0x5bf475*/
     }
   }
@@ -40,10 +41,10 @@ AbstractClass * * AsyncIO::Shutdown()
     RA2_OPDEL(i); /*0x5bf498*/
     AsyncIO_Instance = 0; /*0x5bf4a0*/
   }
-  result = byte_ABF35C; /*0x5bf4a6*/
+  result = g_MissionQueueFrame.localVariables[566]; /*0x5bf4a6*/
   byte_B45B65 = 0; /*0x5bf4ab*/
   dword_B45B60 = 0; /*0x5bf4b3*/
-  if ( byte_ABF35C ) /*0x5bf4b9*/
+  if ( IDA_LOBYTE(g_MissionQueueFrame.localVariables[566]) ) /*0x5bf4b9*/
   {
     AudioTimer::DecrementAll(); /*0x5bf4bb*/
     ProcessAudioTimer(); /*0x5bf4c0*/
@@ -51,7 +52,7 @@ AbstractClass * * AsyncIO::Shutdown()
     RequestBufferMixer((unsigned int *)g_MixerState, 0x4000); /*0x5bf4d5*/
     RequestBufferMixer((unsigned int *)g_MixerChannel_Ambient, 0x4000); /*0x5bf4e5*/
     result = AudioMixer::Pump(); /*0x5bf4ea*/
-    byte_ABF35C = 0; /*0x5bf4ef*/
+    IDA_LOBYTE(g_MissionQueueFrame.localVariables[566]) = 0; /*0x5bf4ef*/
   }
   return (gamemd::AbstractClass **)(result);
 }
@@ -61,9 +62,9 @@ namespace gamemd {
 int AsyncIO::WaitCompletion()
 {
   char v2; // al
-  signed int v4; // eax
+  int v4; // eax
   DWORD NumberOfBytesTransferred; // [esp+4h] [ebp-1Ch] BYREF
-  DWORD Ticks; // [esp+8h] [ebp-18h]
+  int Ticks; // [esp+8h] [ebp-18h]
   int v9; // [esp+10h] [ebp-10h]
   int v10; // [esp+18h] [ebp-8h]
 
@@ -105,7 +106,7 @@ int AsyncIO::Read()
 
   result = g_AsyncIOState; /*0x5bf500*/
   if ( g_AsyncIOState > 0 ) /*0x5bf507*/
-    return (*(int (__thiscall **)(unsigned int, void *))(**(unsigned int **)AsyncIO_Instance + 12))( /*0x5bf515*/
+    return (*(int (__thiscall **)(unsigned int, AsyncIO *))(**(unsigned int **)AsyncIO_Instance + 12))( /*0x5bf515*/
              *(unsigned int *)AsyncIO_Instance,
              this);
   return result; /*0x5bf518*/

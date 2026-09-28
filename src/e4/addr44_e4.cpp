@@ -21,10 +21,11 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * v10, int a3)
   int v6; // esi
   int v7; // ecx
   unsigned char v9[12]; // [esp+14h] [ebp-Ch] BYREF
+  int v10; // [esp+28h] [ebp+8h]
 
   v3 = 6; /*0x44f6ed*/
   v4 = 5; /*0x44f6f2*/
-  v5 = (unsigned int *)(*(int (__thiscall **)(void *, unsigned char *))(this->u32_48)(this, v9); /*0x44f6f7*/
+  v5 = (unsigned int *)(*((int (__thiscall **)(ObjectClass *, unsigned char *))this->vtable0 + 18))(this, v9); /*0x44f6f7*/
   v6 = *v5 / 256; /*0x44f71b*/
   v7 = v5[1] / 256; /*0x44f71e*/
   if ( a3 ) /*0x44f72e*/
@@ -36,13 +37,14 @@ unsigned int * E4Recv_44F6E0::sub_44F6E0(unsigned int * v10, int a3)
   {
     v3 = 0; /*0x44f739*/
   }
-  if ( (int16_t)v6 - dword_87F90C > g_AircraftTrackerPool / 2 ) /*0x44f751*/
+  if ( (int16_t)v6 - *(unsigned int *)&stru_87F5F0.__pad_58[708] > *(unsigned int *)&stru_87F5F0.__pad_58[716] / 2 ) /*0x44f751*/
     v3 = -v3; /*0x44f753*/
-  if ( (int16_t)v7 - dword_87F910 > g_AircraftTrackerState / 2 ) /*0x44f76b*/
+  if ( (int16_t)v7 - *(unsigned int *)&stru_87F5F0.__pad_58[712] > *(unsigned int *)&stru_87F5F0.__pad_58[720] / 2 ) /*0x44f76b*/
     v4 = -v4; /*0x44f76d*/
   IDA_LOWORD(v10) = v6 + v3; /*0x44f77f*/
   IDA_HIWORD(v10) = v7 + v4; /*0x44f784*/
   *v10 = v10; /*0x44f78f*/
+  return v10; /*0x44f78d*/
 }
 } // namespace gamemd
 
@@ -54,7 +56,7 @@ int INIClass::sub_44FE60()
   int i; // esi
   int v4; // ecx
 
-  INIClass::ClearSection((int)aStructures, 0); /*0x44fe6c*/
+  INIClass::ClearSection((int)this, (int)aStructures, 0); /*0x44fe6c*/
   result = g_BuildingProductionState; /*0x44fe71*/
   for ( i = 0; i < g_BuildingProductionState; ++i ) /*0x44fe7a*/
   {

@@ -58,17 +58,15 @@ struct E4Recv_7B9530 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int objectTypeFlags;
-    unsigned int vtable2;
+    unsigned int occupant;
     unsigned int abstractFlags;
     unsigned int ambientSoundController;
     unsigned int customSound_controller;
     unsigned int fallRate;
     unsigned int nextArrayIndex;
     unsigned int nextObject;
-    unsigned int q04C;
-    unsigned int vtable3;
-    unsigned int vtable46;
+    unsigned int vtable1;
+    unsigned int vtable2;
 // --- flat members (END) ---
     BOOL sub_7B9530();  // 0x7B9530
 };

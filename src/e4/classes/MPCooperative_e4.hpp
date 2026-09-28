@@ -13,7 +13,7 @@ struct MPCooperative {
     bool IsAllocated;  // 0xD
     void* q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned int q014;  // 0x14
+    unsigned int ;  // 0x14
     int Count;  // 0x16
     unsigned int u32_18;  // 0x18
     unsigned int u32_1C;  // 0x1C
@@ -23,11 +23,11 @@ struct MPCooperative {
     void* q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
-    unsigned int q038;  // 0x38
+    unsigned int ;  // 0x38
     unsigned int u32_3C;  // 0x3C
     void* q03F;  // 0x3F
     void* q040;  // 0x40
-    unsigned int q044;  // 0x44
+    unsigned int ;  // 0x44
     void* q048;  // 0x48
     unsigned char u8_49;  // 0x49
     void* q04C;  // 0x4C
@@ -42,6 +42,7 @@ struct MPCooperative {
     void* q068;  // 0x68
     void* q06C;  // 0x6C
     unsigned int u32_70;  // 0x70
+    unsigned int u32_71;  // 0x71
     unsigned char q074;  // 0x74
     unsigned char q078;  // 0x78
     unsigned char q07C;  // 0x7C
@@ -56,9 +57,18 @@ struct MPCooperative {
     ObjectClass* q0A4;  // 0xA4
     unsigned char q0A8;  // 0xA8
     unsigned char q0AC;  // 0xAC
+    unsigned int u32_AD;  // 0xAD
+    unsigned int u32_AE;  // 0xAE
+    unsigned int u32_AF;  // 0xAF
     unsigned char q0B0;  // 0xB0
+    unsigned int u32_B1;  // 0xB1
+    unsigned int u32_B2;  // 0xB2
+    unsigned int u32_B3;  // 0xB3
     void* q0B8;  // 0xB8
     void* q0BC;  // 0xBC
+    unsigned int u32_BD;  // 0xBD
+    unsigned int u32_BE;  // 0xBE
+    unsigned int u32_BF;  // 0xBF
     void* q0C0;  // 0xC0
     IPXManagerClass* q0C4;  // 0xC4
     unsigned char q0C8;  // 0xC8
@@ -66,6 +76,7 @@ struct MPCooperative {
     bool q0CD;  // 0xCD
     bool q0CE;  // 0xCE
     unsigned char q0D2;  // 0xD2
+    unsigned int u32_D5;  // 0xD5
     void* q100;  // 0x100
     void* q104;  // 0x104
     void* q108;  // 0x108
@@ -89,6 +100,8 @@ struct MPCooperative {
     unsigned char q168;  // 0x168
     void* q184;  // 0x184
     void* q188;  // 0x188
+    unsigned int u32_194;  // 0x194
+    unsigned int u32_198;  // 0x198
     unsigned int u32_1A4;  // 0x1A4
     unsigned char q1A8;  // 0x1A8
     unsigned char q1AA;  // 0x1AA
@@ -170,187 +183,12 @@ struct MPCooperative {
     IPXManagerClass* q1030;  // 0x1030
     unsigned char q1060;  // 0x1060
     void* q11E4;  // 0x11E4
-    unsigned char q11E8;  // 0x11E8
-    unsigned char q11EC;  // 0x11EC
-    unsigned char q11F0;  // 0x11F0
-    unsigned char q11F4;  // 0x11F4
-    unsigned char q11F8;  // 0x11F8
-    unsigned char q1298;  // 0x1298
-    unsigned char q129C;  // 0x129C
-    bool q1304;  // 0x1304
-    unsigned char q1308;  // 0x1308
-    unsigned char q130C;  // 0x130C
-    unsigned char q1310;  // 0x1310
-    unsigned char q1314;  // 0x1314
-    unsigned char q1318;  // 0x1318
-    unsigned char q1320;  // 0x1320
-    unsigned char q1324;  // 0x1324
-    unsigned char q1440;  // 0x1440
-    unsigned char q1444;  // 0x1444
-    unsigned char q1448;  // 0x1448
-    unsigned char q144C;  // 0x144C
-    unsigned char q1450;  // 0x1450
-    unsigned char q1454;  // 0x1454
-    unsigned char q1458;  // 0x1458
-    unsigned char q145C;  // 0x145C
-    void* q1544;  // 0x1544
-    unsigned char q1548;  // 0x1548
-    unsigned char q154C;  // 0x154C
-    unsigned char q1550;  // 0x1550
-    void* q1554;  // 0x1554
-    unsigned char q1558;  // 0x1558
-    unsigned char q155C;  // 0x155C
-    unsigned char q1560;  // 0x1560
-    void* q1564;  // 0x1564
-    unsigned char q1568;  // 0x1568
-    unsigned char q156C;  // 0x156C
-    void* q1584;  // 0x1584
-    unsigned char q1588;  // 0x1588
-    unsigned char q158C;  // 0x158C
-    void* q1600;  // 0x1600
-    unsigned char q1604;  // 0x1604
-    unsigned char q1608;  // 0x1608
-    unsigned char q160C;  // 0x160C
-    unsigned char q1624;  // 0x1624
-    unsigned char q1628;  // 0x1628
-    MultiplayerGameMode * q1634;  // 0x1634
-    unsigned char q1638;  // 0x1638
-    unsigned char q1648;  // 0x1648
-    unsigned char q164C;  // 0x164C
-    void* q1908;  // 0x1908
-    unsigned char q190C;  // 0x190C
-    void* q1910;  // 0x1910
-    unsigned char q1914;  // 0x1914
-    unsigned char q1920;  // 0x1920
-    void* q1924;  // 0x1924
-    unsigned char q1928;  // 0x1928
-    unsigned char q1938;  // 0x1938
-    unsigned char q193C;  // 0x193C
-    unsigned char q1944;  // 0x1944
-    unsigned char q1948;  // 0x1948
-    unsigned char q2048;  // 0x2048
-    unsigned char q204C;  // 0x204C
-    void* q2054;  // 0x2054
-    unsigned char q2058;  // 0x2058
-    unsigned char q2064;  // 0x2064
-    unsigned char q2068;  // 0x2068
-    unsigned char q2070;  // 0x2070
-    unsigned char q2074;  // 0x2074
-    unsigned char q2080;  // 0x2080
-    unsigned int q2084;  // 0x2084
-    CampaignClass* q2088;  // 0x2088
-    unsigned char q208C;  // 0x208C
-    void* q2098;  // 0x2098
-    unsigned char q209C;  // 0x209C
-    AnimClass* q2100;  // 0x2100
-    unsigned char q2104;  // 0x2104
-    ObjectClass* q2128;  // 0x2128
-    unsigned char q212C;  // 0x212C
-    unsigned char q2148;  // 0x2148
-    unsigned char q214C;  // 0x214C
-    void* q2308;  // 0x2308
-    unsigned char q230C;  // 0x230C
-    void* q2324;  // 0x2324
-    unsigned char q2328;  // 0x2328
-    unsigned int q3328;  // 0x3328
-    unsigned char q332C;  // 0x332C
-    unsigned char q3330;  // 0x3330
-    unsigned char q3334;  // 0x3334
-    unsigned char q3338;  // 0x3338
-    unsigned char q333C;  // 0x333C
-    void* q4134;  // 0x4134
-    unsigned char q4138;  // 0x4138
-    unsigned char q413C;  // 0x413C
-    unsigned char q4140;  // 0x4140
-    IPXManagerClass* q4144;  // 0x4144
-    unsigned char q4148;  // 0x4148
-    unsigned char q414C;  // 0x414C
-    unsigned char q4150;  // 0x4150
-    unsigned char q4154;  // 0x4154
-    unsigned char q4158;  // 0x4158
-    unsigned char q4194;  // 0x4194
-    unsigned char q4198;  // 0x4198
-    void* q4580;  // 0x4580
-    unsigned char q4584;  // 0x4584
-    unsigned char q4588;  // 0x4588
-    unsigned char q458C;  // 0x458C
-    unsigned char q4634;  // 0x4634
-    unsigned char q4638;  // 0x4638
-    unsigned char q463C;  // 0x463C
-    unsigned char q4640;  // 0x4640
-    unsigned char q4760;  // 0x4760
-    unsigned char q4764;  // 0x4764
-    bool q4868;  // 0x4868
-    unsigned char q486C;  // 0x486C
-    unsigned char q4870;  // 0x4870
-    unsigned char q4874;  // 0x4874
-    unsigned char q4880;  // 0x4880
-    unsigned char q4884;  // 0x4884
-    unsigned char q4890;  // 0x4890
-    unsigned char q4894;  // 0x4894
-    unsigned char q4968;  // 0x4968
-    unsigned char q496C;  // 0x496C
-    unsigned char q4970;  // 0x4970
-    unsigned char q4974;  // 0x4974
-    void* q5170;  // 0x5170
-    unsigned char q5174;  // 0x5174
-    unsigned char q5178;  // 0x5178
-    unsigned char q517C;  // 0x517C
-    unsigned char q5184;  // 0x5184
-    unsigned char q5188;  // 0x5188
-    unsigned char q518C;  // 0x518C
-    unsigned char q5190;  // 0x5190
-    unsigned char q5194;  // 0x5194
-    unsigned char q5200;  // 0x5200
-    unsigned char q5204;  // 0x5204
-    unsigned char q5208;  // 0x5208
-    unsigned char q52F4;  // 0x52F4
-    unsigned char q52F8;  // 0x52F8
-    unsigned char q52FC;  // 0x52FC
-    void* q5444;  // 0x5444
-    unsigned char q5448;  // 0x5448
-    unsigned char q544C;  // 0x544C
-    unsigned char q5454;  // 0x5454
-    unsigned char q5458;  // 0x5458
-    void* q5460;  // 0x5460
-    unsigned char q5464;  // 0x5464
-    unsigned char q5468;  // 0x5468
-    unsigned char q5480;  // 0x5480
-    unsigned char q5484;  // 0x5484
-    unsigned int q5494;  // 0x5494
-    unsigned char q5498;  // 0x5498
-    void* q5508;  // 0x5508
-    unsigned char q550C;  // 0x550C
-    unsigned char q5510;  // 0x5510
-    unsigned char q5514;  // 0x5514
-    unsigned char q5640;  // 0x5640
-    unsigned char q5644;  // 0x5644
-    unsigned char q5668;  // 0x5668
-    unsigned char q566C;  // 0x566C
-    MultiplayerGameMode * q5684;  // 0x5684
-    unsigned char q5688;  // 0x5688
-    unsigned char q5704;  // 0x5704
-    unsigned char q5708;  // 0x5708
-    unsigned char q6044;  // 0x6044
-    unsigned char q6048;  // 0x6048
-    unsigned char q604C;  // 0x604C
-    unsigned char q6050;  // 0x6050
-    void* q6408;  // 0x6408
-    unsigned char q640C;  // 0x640C
-    unsigned char q6418;  // 0x6418
-    unsigned char q641C;  // 0x641C
-    unsigned char q6420;  // 0x6420
-    unsigned char q6424;  // 0x6424
-    unsigned char q6428;  // 0x6428
-    unsigned char q6450;  // 0x6450
-    unsigned char q6454;  // 0x6454
-    unsigned char q6458;  // 0x6458
-    unsigned char q6468;  // 0x6468
-    unsigned char q646C;  // 0x646C
-    unsigned char q6470;  // 0x6470
-    unsigned char q6474;  // 0x6474
-    unsigned char q6478;  // 0x6478
+    unsigned int MPCooperative_field_0x0;
+    unsigned int __pad_18;
     unsigned int q0088;
+    unsigned int q014;
+    unsigned int q038;
+    unsigned int q044;
 // --- flat members (END) ---
     int processTurn(char * a2,  char * a3);    // 0x49B660
     char BuildScoreEntries(int a2,  CCINIClass * aP2);    // 0x49BCE0

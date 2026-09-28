@@ -22,16 +22,17 @@
 namespace gamemd {
 rc_ptr * ConstructWDTSelection_Create_767FB0(rc_ptr_base * a1, int a2, int a3, ReferenceCounted * aP3)
 {
-  void *v6; // eax
+  ReferenceCounted *v6; // eax
   void *v7; // edi
 
-  v6 = operator new(0xD4u); /*0x767fbb*/
+  v6 = (ReferenceCounted *)RA2_OPNEW(0xD4u); /*0x767fbb*/
   if ( v6 ) /*0x767fc5*/
     v7 = ConstructWDTSelection_Create_767FB0_Create(v6, a2, a3, aP3); /*0x767fd9*/
   else
     v7 = 0; /*0x767fdd*/
-  ComPtr::Constructor(a1); /*0x767fe1*/
-  ComPtr::Set(a1, (int)v7); /*0x767fef*/
+  ComPtr::Constructor((ComPtr *)a1); /*0x767fe1*/
+  *(unsigned int *)a1 = (void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x767fe8*/
+  ComPtr::Set((ComPtr *)a1, (int)v7); /*0x767fef*/
   return a1; /*0x767ff6*/
 }
 } // namespace gamemd

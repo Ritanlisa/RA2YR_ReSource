@@ -15,11 +15,13 @@
 #include "e4/classes/Process_e4.hpp"
 #include "e4/classes/OverlayTypeClass_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x537DD0
 PageUserCommandClass::PageUserCommandClass()
 {
-  return this; /*0x537dd8*/
+  *(unsigned int *)this->__pad_0 = (void*)&PageUserCommandClass_vftable; /*0x537dd2*/
+  return this->__pad_0; /*0x537dd8*/
 }
 // 0x537DE0
 char * PageUserCommandClass::AddRef()

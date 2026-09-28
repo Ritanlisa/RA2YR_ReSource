@@ -568,7 +568,7 @@ int DamageArea::CheckOccupancyEligibility()
   int v8; // [esp+18h] [ebp-8h] BYREF
   int v9; // [esp+1Ch] [ebp-4h] BYREF
 
-  v2 = *(unsigned int **)(&this->q0042); /*0x4d0187*/
+  v2 = (unsigned int *)this->u32_C; /*0x4d0187*/
   if ( v2 ) /*0x4d018c*/
   {
     if ( (*(int (__thiscall **)(unsigned int))(*v2 + 44))(this->u32_C) == 2 ) /*0x4d0198*/
@@ -581,11 +581,11 @@ int DamageArea::CheckOccupancyEligibility()
       v2 = 0; /*0x4d019a*/
     }
   }
-  if ( this->u8_51 || !this->u8_5C ) /*0x4d01c1*/
+  if ( this->u32_51 || !this->u32_5C ) /*0x4d01c1*/
     return 1; /*0x4d01c6*/
   if ( !v2 || !*(unsigned char *)(v2[433] + 3595) ) /*0x4d01d6*/
   {
-    v3 = *(int (__stdcall ****)(unsigned int, void *, int *))(&this->q0042); /*0x4d01e4*/
+    v3 = (int (__stdcall ***)(unsigned int, void *, int *))this->u32_C; /*0x4d01e4*/
     v4 = 0; /*0x4d01e7*/
     v8 = 0; /*0x4d01eb*/
     if ( v3 ) /*0x4d01ef*/
@@ -594,13 +594,13 @@ int DamageArea::CheckOccupancyEligibility()
       if ( v5 >= 0 ) /*0x4d0208*/
       {
         v9 = v9; /*0x4d021c*/
-        Release3COM(&v8); /*0x4d0224*/
+        Release3COM((ObjectClass *)&v8); /*0x4d0224*/
         v4 = v9; /*0x4d0229*/
         v8 = v9; /*0x4d022c*/
       }
       else
       {
-        Release3COM(&v8); /*0x4d020e*/
+        Release3COM((ObjectClass *)&v8); /*0x4d020e*/
         v4 = 0; /*0x4d0213*/
         v8 = 0; /*0x4d0215*/
       }

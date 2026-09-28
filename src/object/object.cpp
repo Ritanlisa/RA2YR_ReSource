@@ -71,29 +71,29 @@ bool ObjectClass::Remove()
 // 0x5f65f0
 AbstractClass * * ObjectClass::Destroy()
 {
-  int v2; // ecx
+  ObjectClass *attachedBomb; // ecx
   int result; // eax
 
-  v2 = (int)(this->attachedBomb);
-  if ( v2 ) /*0x5f65f8*/
-    ObjectClass::CleanupAudioAndRefs(v2); /*0x5f65fa*/
+  attachedBomb = (ObjectClass *)this->attachedBomb; /*0x5f65f3*/
+  if ( attachedBomb ) /*0x5f65f8*/
+    ObjectClass::CleanupAudioAndRefs(attachedBomb); /*0x5f65fa*/
   if ( this && (this->abstractFlags & 1) != 0 ) /*0x5f6607*/
-    TechnoClass::CleanupAll(this, 0); /*0x5f660d*/
-  AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x5f6616*/
-  (*(void (__thiscall **)(void *))(*(unsigned int *)&this->q0542))(this); /*0x5f661f*/
+    TechnoClass::CleanupAll((TechnoClass *)this, 0); /*0x5f660d*/
+  AbstractClass::AnnounceExpiredPointer(&this->vtable0, 1); /*0x5f6616*/
+  (*((void (__thiscall **)(ObjectClass *))this->vtable0 + 53))(this); /*0x5f661f*/
   this->isAliveFlag = 0; /*0x5f6625*/
-  result = dword_B0F6A0; /*0x5f662c*/
-  if ( g_LaserDrawConfig < dword_B0F6A0 /*0x5f6666*/
-    || (byte_B0F6A5 || !dword_B0F6A0)
-    && dword_B0F6AC > 0
-    && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_DiskLaserManager + 8))(
-                   &g_DiskLaserManager,
-                   dword_B0F6A0 + dword_B0F6AC,
+  result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x5f662c*/
+  if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x5f6666*/
+    || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
+    && g_BuildingLoadQueue_Array.UnitExitSound > 0
+    && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
+                   &g_BuildingLoadQueue_Array.ToTile,
+                   *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
                    0),
         (unsigned char)result) )
   {
-    result = g_LaserDrawConfig++; /*0x5f666e*/
-    *((unsigned int *)dword_B0F69C + result) = this; /*0x5f667d*/
+    result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x5f666e*/
+    *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x5f667d*/
   }
   return result; /*0x5f6680*/
 }
@@ -102,11 +102,11 @@ void ObjectClass::MarkForRedraw()
 {
   int result; // eax
 
-  IDA_LOBYTE(result) = this->u32_80; /*0x5f4d10*/
+  IDA_LOBYTE(result) = this->__pad_74[12]; /*0x5f4d10*/
   if ( !(unsigned char)result ) /*0x5f4d18*/
   {
-    this->u32_80 = 1; /*0x5f4d1a*/
-    return MapClass::MarkForRedraw(&MapClass_Instance, 0); /*0x5f4d28*/
+    this->__pad_74[12] = 1; /*0x5f4d1a*/
+    return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x5f4d28*/
   }
   return result; /*0x5f4d2d*/
 }
@@ -115,11 +115,11 @@ void ObjectClass::MarkForRedraw()
     {
       int result; // eax
 
-      IDA_LOBYTE(result) = this->u32_80; /*0x5f4d10*/
+      IDA_LOBYTE(result) = this->__pad_74[12]; /*0x5f4d10*/
       if ( !(unsigned char)result ) /*0x5f4d18*/
       {
-        this->u32_80 = 1; /*0x5f4d1a*/
-        return MapClass::MarkForRedraw(&MapClass_Instance, 0); /*0x5f4d28*/
+        this->__pad_74[12] = 1; /*0x5f4d1a*/
+        return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x5f4d28*/
       }
       return result; /*0x5f4d2d*/
     }

@@ -17,37 +17,7 @@ struct MPBattleClass {
     bool q014;  // 0x14
     unsigned char q015;  // 0x15
     bool q020;  // 0x20
-    bool q034;  // 0x34
-    bool q039;  // 0x39
-    unsigned char q03D;  // 0x3D
-    bool q050;  // 0x50
-    unsigned char q054;  // 0x54
-    bool q080;  // 0x80
-    unsigned char q084;  // 0x84
-    void* q0AC;  // 0xAC
-    bool q0AD;  // 0xAD
-    unsigned int q0AF;  // 0xAF
-    unsigned int q0B1;  // 0xB1
-    unsigned char q0DC;  // 0xDC
-    unsigned char q0E0;  // 0xE0
-    unsigned char q0E4;  // 0xE4
-    unsigned char q0E8;  // 0xE8
-    bool q128;  // 0x128
-    unsigned char q12C;  // 0x12C
-    bool q130;  // 0x130
-    unsigned char q134;  // 0x134
-    unsigned char q220;  // 0x220
-    unsigned char q224;  // 0x224
-    unsigned char q228;  // 0x228
-    void* q370;  // 0x370
-    unsigned char q374;  // 0x374
-    unsigned char q394;  // 0x394
-    unsigned char q398;  // 0x398
-    unsigned char q544;  // 0x544
-    unsigned char q548;  // 0x548
-    unsigned char q694;  // 0x694
-    unsigned char q698;  // 0x698
-    void* q880;  // 0x880
+    unsigned int __pad_0;
 // --- flat members (END) ---
     int areTeamChangesAllowed();
     int drawTeamDropdown();

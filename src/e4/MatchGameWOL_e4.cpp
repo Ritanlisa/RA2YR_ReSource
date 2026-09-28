@@ -28,7 +28,7 @@ void sub_7A19E0()
   int v13; // [esp+10h] [ebp-70h] BYREF
   unsigned int v14[27]; // [esp+14h] [ebp-6Ch] BYREF
 
-  v10 = (wchar_t *)((unsigned int)((wchar_t *)(dword_B76AC4)));
+  v10 = (wchar_t *)((int)((wchar_t *)(dword_B76AC4)));
   StringCSF = (wchar_t *)(GetStringCSF(aWolMatchfoundw, 0, g_Str_File_wonline_cpp, 28774));
   Dialog::ShowMessage(12648447, (size_t)StringCSF, v10); /*0x7a1a07*/
   String::ToLowerCopy((const char **)&dword_B76AC4, (char **)&v12); /*0x7a1a19*/
@@ -98,5 +98,4 @@ void sub_7A19E0()
   }
   Dialog::ShowMessage(12648447, (size_t)v8); /*0x7a1b90*/
   DeleteAndZero(&v12); /*0x7a1b9c*/
-}
 }

@@ -17,26 +17,26 @@ AudioController * * CCFileClass::Close()
   char result; // al
   AudioController ** v3;
 
-  if ( !*(&this->FileName1) ) /*0x4325c3*/
-    return ((int (*)(void))FileClass::CloseHandle)(); /*0x432607*/
-  BufferIO::Flush(); /*0x4325ca*/
-  result = *(&this->Handle8); /*0x4325cf*/
+  if ( !IDA_BYTE1(this->BufferSize) ) /*0x4325c3*/
+    return FileClass::CloseHandle((RawFileClass *)this); /*0x432607*/
+  BufferIO::Flush((BufferIO *)this); /*0x4325ca*/
+  result = IDA_BYTE2(this->BufferOffset); /*0x4325cf*/
   if ( result ) /*0x4325d4*/
   {
     if ( this->MixFileIndex ) /*0x4325d6*/
     {
-      v3 = (gamemd::AudioController **)((int)((gamemd::AudioController **)(*(unsigned int *)this)));
-      *(&this->FileName1) = 0; /*0x4325e1*/
-      result = (*(int (__thiscall **)(unsigned char *))(v3 + 52))(this); /*0x4325e5*/
-      *(&this->FileName1) = 1; /*0x4325e8*/
-      *(&this->Handle8) = 0; /*0x4325ec*/
-      *(&this->Handle7) = 0; /*0x4325f0*/
+      v3 = (gamemd::AudioController **)((int)((gamemd::AudioController **)(*(unsigned int *)this->__pad_0)));
+      IDA_BYTE1(this->BufferSize) = 0; /*0x4325e1*/
+      result = (*(int (__thiscall **)(BufferIOFileClass *))(v3 + 52))(this); /*0x4325e5*/
+      IDA_BYTE1(this->BufferSize) = 1; /*0x4325e8*/
+      IDA_BYTE2(this->BufferOffset) = 0; /*0x4325ec*/
+      IDA_BYTE1(this->BufferOffset) = 0; /*0x4325f0*/
       return result; /*0x4325f5*/
     }
-    result = FileClass::CloseHandle(this); /*0x4325f8*/
-    *(&this->Handle8) = 0; /*0x4325fd*/
+    result = FileClass::CloseHandle((RawFileClass *)this); /*0x4325f8*/
+    IDA_BYTE2(this->BufferOffset) = 0; /*0x4325fd*/
   }
-  *(&this->Handle7) = 0; /*0x432601*/
+  IDA_BYTE1(this->BufferOffset) = 0; /*0x432601*/
   return result; /*0x4325f4*/
 }
 } // namespace gamemd
@@ -44,66 +44,68 @@ AudioController * * CCFileClass::Close()
 namespace gamemd {
 int CCFileClass::Destruct()
 {
-  *(&this->FileSize5) = 0; /*0x535a7c*/
-  Vector::Clear((int)(&this->FileSize2)); /*0x535a83*/
-  *this = &off_7E1668; /*0x535a8a*/
-  return BufferIOFileClass::Dtor(); /*0x535a95*/
+  *(unsigned int *)this->__pad_0 = (void*)&CCFileClass_vftable; /*0x535a76*/
+  this->tail_19 = 0; /*0x535a7c*/
+  Vector::Clear((int)&this->CacheReadAhead8); /*0x535a83*/
+  *(unsigned int *)this->__pad_0 = &off_7E1668; /*0x535a8a*/
+  return BufferIOFileClass::Dtor((BufferIOFileClass *)this); /*0x535a95*/
 }
 } // namespace gamemd
 // 0x65D0D0
 namespace gamemd {
 int CCFileClass::GetFileSize()
 {
-  void * FileSize;
-  void * result;
+  DWORD FileSize; // edi
+  int result; // eax
   int v4; // ebx
   DWORD LastError; // eax
   int v6; // [esp-8h] [ebp-10h]
-FileSize = (void *)((DWORD)((void *)(0)));
-  result = (void *)(this->FileName);
+
+  FileSize = 0; /*0x65d0d4*/
+  result = (int)this->FileName; /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
   {
-    if ( this->Destru_vt06() ) /*0x65d0e0*/
+    if ( (*(uint8_t (__thiscall **)(RawFileClass *))(*(unsigned int *)this->__pad_0 + 24))(this) ) /*0x65d0e0*/
     {
-      FileSize = (void *)(GetFileSize((HANDLE)this->FileTimeDateLo, 0));
+      FileSize = GetFileSize(*(HANDLE *)this->FileTimeDateLo, 0); /*0x65d0f2*/
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
-        v4 = (int)(*this);
-        v6 = (int)(this->FileNameAllocated);
-        LastError = (int)(GetLastError());
-        this->Destru_vt16(LastError, 0, v6); /*0x65d10b*/
-        result = -1 - this->Handle; /*0x65d113*/
-        this->FileName = result; /*0x65d116*/
+        v4 = *(unsigned int *)this->__pad_0; /*0x65d0fd*/
+        v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65d0ff*/
+        LastError = GetLastError(); /*0x65d102*/
+        (*(void (__thiscall **)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
+        result = -1 - (unsigned int)this->Handle; /*0x65d113*/
+        this->FileName = (void *)result; /*0x65d116*/
         return result; /*0x65d11b*/
       }
     }
-    else if ( this->Load_1(1) ) /*0x65d122*/
+    else if ( (*(int (__thiscall **)(RawFileClass *, int))(*(unsigned int *)this->__pad_0 + 28))(this, 1) ) /*0x65d122*/
     {
-      FileSize = (void *)(this->GetSize());
-      this->Reset_8(); /*0x65d136*/
+      FileSize = (*(int (__thiscall **)(RawFileClass *))(*(unsigned int *)this->__pad_0 + 44))(this); /*0x65d130*/
+      (*(void (__thiscall **)(RawFileClass *))(*(unsigned int *)this->__pad_0 + 52))(this); /*0x65d136*/
     }
-    result = (void *)((unsigned int)(FileSize - this->Handle));
-    this->FileName = (unsigned int)(result);
+    result = FileSize - (unsigned int)this->Handle; /*0x65d13e*/
+    this->FileName = (void *)result; /*0x65d140*/
   }
-  return (int)(result);
+  return result; /*0x65d119*/
 }
 } // namespace gamemd
 // 0x69E320
 namespace gamemd {
 void CCFileClass::ProcessStream(unsigned int a1)
 {
-  unsigned int v1;
+  unsigned int *v1; // edi
   void *v3; // esi
   int v4; // eax
   int v5; // eax
-  unsigned int v6;
+  void *v6; // esi
   unsigned char *v7; // ebp
   void *v8; // ecx
   unsigned int *v9; // edi
   int v10; // eax
   int v11; // eax
 
-  v1 = dword_B077B0; /*0x69e324*/
+  v1 = (unsigned int *)(dword_B077B0);
   if ( dword_B077B0 ) /*0x69e330*/
   {
     do /*0x69e3a1*/
@@ -139,7 +141,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
     }
     while ( v1 ); /*0x69e3a1*/
   }
-  v6 = dword_B077B4; /*0x69e3a3*/
+  v6 = (void *)(dword_B077B4);
   if ( dword_B077B4 ) /*0x69e3ab*/
   {
     if ( *(unsigned short *)dword_B077B4 == 0xFFFF ) /*0x69e3b1*/
@@ -154,7 +156,7 @@ void CCFileClass::ProcessStream(unsigned int a1)
         *v9 = 0; /*0x69e3ce*/
         *v7 = 0; /*0x69e3d0*/
       }
-      v10 = *((unsigned int *)v6 + 6); /*0x69e3d3*/
+      v10 = (unsigned int)(*((unsigned int *)v6 + 6));
       if ( v10 ) /*0x69e3d8*/
         *(unsigned int *)(v10 + 28) = *((unsigned int *)v6 + 7); /*0x69e3dd*/
       v11 = *((unsigned int *)v6 + 7); /*0x69e3e0*/

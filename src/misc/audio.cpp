@@ -28,7 +28,8 @@ VocClass* VocClass::Find(const char* pName)
 int32_t VocClass::FindIndex(const char* pName)
 {
   int v2; // esi
-  char *v3; // eax
+  char *v3; // ecx
+  char *v4; // eax
 
   if ( !pName ) /*0x7514d6*/
     return -1; /*0x7514d6*/
@@ -37,8 +38,9 @@ int32_t VocClass::FindIndex(const char* pName)
     return -1; /*0x751515*/
   while ( 1 )
   {
-    v3 = **((unsigned int **)g_VocAudioConfig + v2) ? (char *)VocClass::GetSampleName() : g_Str_Invalid_Voc;
-    if ( !_strcmpi(pName, v3) ) /*0x7514ff*/
+    v3 = (char *)**((unsigned int **)g_VocAudioConfig + v2); /*0x7514eb*/
+    v4 = v3 ? VocClass::GetSampleName(v3) : g_Str_Invalid_Voc;
+    if ( !_strcmpi((char *)pName, v4) ) /*0x7514ff*/
       break; /*0x7514ff*/
     if ( ++v2 >= g_VocPlayState ) /*0x751513*/
       return -1; /*0x751513*/
@@ -183,13 +185,13 @@ bool AudioInit(HWND hWnd)
     }
 
     g_pDirectSound = pDS;
-    g_Audio_Enabled = true;
+    g_Audio_Enabled = (void *)(true);
     return true;
 }
 
 void AudioShutdown()
 {
-    g_Audio_Enabled = false;
+    g_Audio_Enabled = (void *)(false);
     if (g_pDirectSound) {
         g_pDirectSound->Release();
         g_pDirectSound = nullptr;

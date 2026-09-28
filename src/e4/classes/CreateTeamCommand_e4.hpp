@@ -7,11 +7,11 @@ namespace gamemd {
 struct CreateTeamCommand {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    void* pad_004;  // 0x4
+    void* q004;  // 0x4
     int Capacity;  // 0x8
-    void* pad_00C;  // 0xC
+    unsigned int ;  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned int q010;  // 0x10
+    unsigned int ;  // 0x10
     bool IsInitialized;  // 0x12
     unsigned char q014;  // 0x14
     unsigned char q015;  // 0x15
@@ -54,159 +54,15 @@ struct CreateTeamCommand {
     unsigned char q138;  // 0x138
     unsigned char q140;  // 0x140
     unsigned char q144;  // 0x144
-    unsigned char q1F1;  // 0x1F1
-    unsigned int q224;  // 0x224
-    unsigned int q228;  // 0x228
-    unsigned char q22C;  // 0x22C
-    unsigned char q230;  // 0x230
-    unsigned char q240;  // 0x240
-    unsigned char q244;  // 0x244
-    unsigned char q24C;  // 0x24C
-    unsigned char q254;  // 0x254
-    unsigned char q258;  // 0x258
-    int q304;  // 0x304
-    unsigned char q308;  // 0x308
-    unsigned char q320;  // 0x320
-    unsigned char q374;  // 0x374
-    unsigned char q378;  // 0x378
-    unsigned char q37C;  // 0x37C
-    unsigned char q380;  // 0x380
-    unsigned int q548;  // 0x548
-    unsigned char q54C;  // 0x54C
-    unsigned char q550;  // 0x550
-    unsigned char q554;  // 0x554
-    unsigned char q55C;  // 0x55C
-    unsigned char q560;  // 0x560
-    unsigned int q564;  // 0x564
-    unsigned int q568;  // 0x568
-    unsigned char q56C;  // 0x56C
-    unsigned char q570;  // 0x570
-    unsigned char q574;  // 0x574
-    unsigned char q578;  // 0x578
-    unsigned char q57C;  // 0x57C
-    unsigned char q580;  // 0x580
-    unsigned int q584;  // 0x584
-    unsigned char q588;  // 0x588
-    unsigned char q58C;  // 0x58C
-    unsigned char q590;  // 0x590
-    unsigned char q594;  // 0x594
-    unsigned char q598;  // 0x598
-    unsigned int q630;  // 0x630
-    bool q774;  // 0x774
-    unsigned char q800;  // 0x800
-    unsigned char q884;  // 0x884
-    unsigned char q888;  // 0x888
-    unsigned char q88C;  // 0x88C
-    unsigned char q8D4;  // 0x8D4
-    unsigned char q8D8;  // 0x8D8
-    unsigned char q8DC;  // 0x8DC
-    unsigned char qA58;  // 0xA58
-    unsigned char qA5C;  // 0xA5C
-    unsigned char qA60;  // 0xA60
-    unsigned int u32_F94;  // 0xF94
-    unsigned char q135C;  // 0x135C
-    unsigned char q1360;  // 0x1360
-    unsigned char q1364;  // 0x1364
-    unsigned char q136C;  // 0x136C
-    unsigned char q1370;  // 0x1370
-    unsigned char q1374;  // 0x1374
-    unsigned int q1378;  // 0x1378
-    unsigned char q137C;  // 0x137C
-    unsigned int q1380;  // 0x1380
-    unsigned int q1384;  // 0x1384
-    unsigned char q1388;  // 0x1388
-    unsigned char q138C;  // 0x138C
-    unsigned int q1394;  // 0x1394
-    unsigned char q1398;  // 0x1398
-    unsigned char q139C;  // 0x139C
-    unsigned char q1400;  // 0x1400
-    unsigned char q1404;  // 0x1404
-    unsigned char q1408;  // 0x1408
-    unsigned char q140C;  // 0x140C
-    unsigned char q1410;  // 0x1410
-    unsigned char q1414;  // 0x1414
-    unsigned char q1420;  // 0x1420
-    unsigned char q1424;  // 0x1424
-    unsigned char q1428;  // 0x1428
-    unsigned char q1430;  // 0x1430
-    unsigned char q1434;  // 0x1434
-    unsigned char q1574;  // 0x1574
-    unsigned int q1584;  // 0x1584
-    unsigned char q1634;  // 0x1634
-    bool q1908;  // 0x1908
-    unsigned char q1910;  // 0x1910
-    unsigned char q2048;  // 0x2048
-    unsigned char q2180;  // 0x2180
-    unsigned char q2184;  // 0x2184
-    unsigned char q2214;  // 0x2214
-    unsigned char q2218;  // 0x2218
-    unsigned char q2260;  // 0x2260
-    unsigned char q2264;  // 0x2264
-    unsigned char q2268;  // 0x2268
-    unsigned char q2648;  // 0x2648
-    unsigned char q264C;  // 0x264C
-    void* q3490;  // 0x3490
-    void* q3494;  // 0x3494
-    void* q3498;  // 0x3498
-    unsigned char q349C;  // 0x349C
-    unsigned int q3988;  // 0x3988
-    unsigned char q4950;  // 0x4950
-    unsigned char q4954;  // 0x4954
-    unsigned char q495C;  // 0x495C
-    unsigned char q4960;  // 0x4960
-    unsigned char q496C;  // 0x496C
-    unsigned char q4970;  // 0x4970
-    unsigned char q4978;  // 0x4978
-    unsigned char q497C;  // 0x497C
-    unsigned int q4984;  // 0x4984
-    unsigned char q4988;  // 0x4988
-    unsigned char q498C;  // 0x498C
-    unsigned char q4990;  // 0x4990
-    unsigned int q4994;  // 0x4994
-    unsigned char q4998;  // 0x4998
-    unsigned char q5000;  // 0x5000
-    unsigned char q5004;  // 0x5004
-    unsigned char q500C;  // 0x500C
-    unsigned char q5010;  // 0x5010
-    unsigned char q5014;  // 0x5014
-    unsigned char q5018;  // 0x5018
-    unsigned char q501C;  // 0x501C
-    unsigned char q5120;  // 0x5120
-    unsigned char q5124;  // 0x5124
-    unsigned char q5128;  // 0x5128
-    unsigned char q512C;  // 0x512C
-    unsigned char q5130;  // 0x5130
-    unsigned char q5134;  // 0x5134
-    unsigned int q5138;  // 0x5138
-    unsigned char q513C;  // 0x513C
-    unsigned char q5140;  // 0x5140
-    unsigned char q5144;  // 0x5144
-    unsigned char q514C;  // 0x514C
-    unsigned char q5150;  // 0x5150
-    unsigned char q5154;  // 0x5154
-    unsigned int q5158;  // 0x5158
-    unsigned char q515C;  // 0x515C
-    unsigned char q5160;  // 0x5160
-    unsigned char q5164;  // 0x5164
-    unsigned char q5168;  // 0x5168
-    unsigned char q516C;  // 0x516C
-    unsigned char q5170;  // 0x5170
-    void* q539C;  // 0x539C
-    unsigned char q53A0;  // 0x53A0
-    unsigned char q53A4;  // 0x53A4
-    unsigned char q53A8;  // 0x53A8
-    unsigned int q5508;  // 0x5508
-    unsigned char q550C;  // 0x550C
-    unsigned char q5684;  // 0x5684
-    unsigned char q5688;  // 0x5688
-    unsigned char q5994;  // 0x5994
-    unsigned char q5998;  // 0x5998
-    bool q6408;  // 0x6408
-    unsigned char q640C;  // 0x640C
+    unsigned int CreateTeamCommand_field_0x4;
+    unsigned int __pad_0;
+    unsigned int __pad_14;
+    unsigned int m_1;
     unsigned int q0042;
-    unsigned int vt_slot_56;
-    unsigned int q004;
+    unsigned int q0046;
+    unsigned int u32_539C;
     unsigned int q00C;
+    unsigned int q010;
 // --- flat members (END) ---
     int vt02();  // 0x535CF0
     unsigned int * performAction_148();  // 0x537350

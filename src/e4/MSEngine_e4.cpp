@@ -9,6 +9,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/LoadGame_e4.hpp"
 
 // 0x5ACD30
 namespace gamemd {
@@ -16,9 +17,9 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
 {
   int v3; // ebx
   char *v5; // ebp
-  char *v6; // eax
+  void * v6;
   char *v7; // edi
-  unsigned int v9;
+  int m_8; // ecx
   int v10; // eax
   char *v11; // ebx
   unsigned int *v12; // edx
@@ -27,54 +28,54 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   if ( a2 ) /*0x5acd3d*/
   {
     v5 = a3; /*0x5acd43*/
-    this->u32_C = 0; /*0x5acd47*/
+    IDA_LOBYTE(this->m_C) = 0; /*0x5acd47*/
     if ( a3 ) /*0x5acd4d*/
     {
       v7 = a3; /*0x5acd73*/
     }
     else
     {
-      v6 = (char *)operator new(16 * a2); /*0x5acd55*/
+      v6 = (void *)((int)(RA2_OPNEW(16 * a2)));
       if ( v6 ) /*0x5acd5f*/
-        v7 = v6; /*0x5acd64*/
+        v7 = (char *)v6; /*0x5acd64*/
       else
         v7 = 0; /*0x5acd6c*/
     }
-    this->u32_C = 1; /*0x5acd7b*/
+    IDA_LOBYTE(this->m_C) = 1; /*0x5acd7b*/
     if ( v7 ) /*0x5acd7f*/
     {
-      if ( this->q004 ) /*0x5acd8b*/
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x5acd8b*/
       {
-        v9 = this->q008; /*0x5acd92*/
-        if ( a2 < v9 ) /*0x5acd97*/
-          v9 = a2; /*0x5acd99*/
-        if ( v9 > 0 ) /*0x5acd9d*/
+        m_8 = this->m_8; /*0x5acd92*/
+        if ( a2 < m_8 ) /*0x5acd97*/
+          m_8 = a2; /*0x5acd99*/
+        if ( m_8 > 0 ) /*0x5acd9d*/
         {
           v10 = 0; /*0x5acd9f*/
           do /*0x5acdc3*/
           {
             v11 = &v7[v10]; /*0x5acda4*/
-            v12 = (unsigned int *)(v10 + this->q004); /*0x5acda7*/
+            v12 = (unsigned int *)(v10 + *(unsigned int *)&this->m_1[3]); /*0x5acda7*/
             v10 += 16; /*0x5acda9*/
-            --v9; /*0x5acdac*/
+            --m_8; /*0x5acdac*/
             *(unsigned int *)v11 = *v12; /*0x5acdaf*/
             *((unsigned int *)v11 + 1) = v12[1]; /*0x5acdb4*/
             *((unsigned int *)v11 + 2) = v12[2]; /*0x5acdba*/
             *((unsigned int *)v11 + 3) = v12[3]; /*0x5acdc0*/
           }
-          while ( v9 ); /*0x5acdc3*/
+          while ( m_8 ); /*0x5acdc3*/
           v5 = a3; /*0x5acdc5*/
           v3 = a2; /*0x5acdc9*/
         }
-        if ( this->IsAllocated ) /*0x5acdcd*/
+        if ( IDA_BYTE1(this->m_C) ) /*0x5acdcd*/
         {
-          RA2_OPDEL(this->q004); /*0x5acdd8*/
-          this->q004 = 0; /*0x5acde0*/
+          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x5acdd8*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x5acde0*/
         }
       }
-      this->q004 = (void *)(v7);
-      this->q008 = (unsigned int)((void *)(v3));
-      this->IsAllocated = (void *)(v5 == 0);
+      *(unsigned int *)&this->m_1[3] = v7; /*0x5acde9*/
+      this->m_8 = v3; /*0x5acdf1*/
+      IDA_BYTE1(this->m_C) = v5 == 0; /*0x5acdf4*/
       return 1; /*0x5acdfa*/
     }
     else
@@ -84,10 +85,9 @@ AbstractClass * * MSEngine::Release(int a2, char * a3)
   }
   else
   {
-    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5ace05*/
+    (*(void (__thiscall **)(_VectorClass_V_TRect_H *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5ace05*/
     return 1; /*0x5ace0b*/
   }
-}
 }
 // 0x5ACED0
 namespace gamemd {
@@ -95,76 +95,75 @@ AbstractClass * * MSEngine::SetCapacity(int a2, char * a3)
 {
   int v3; // ebx
   char *v5; // ebp
-  char *v6; // eax
+  void * v6;
   char *v7; // edi
-  unsigned int v8;
+  int m_8; // ecx
   int v9; // eax
   char *v10; // ebx
   unsigned int *v11; // edx
-  void * v12;
+  int v12; // eax
 
   v3 = a2; /*0x5aced2*/
   if ( a2 ) /*0x5acedd*/
   {
     v5 = a3; /*0x5acee3*/
-    this->u32_C = 0; /*0x5acee7*/
+    IDA_LOBYTE(this->m_C) = 0; /*0x5acee7*/
     if ( a3 ) /*0x5aceed*/
     {
       v7 = a3; /*0x5acf13*/
     }
     else
     {
-      v6 = (char *)operator new(16 * a2); /*0x5acef5*/
+      v6 = (void *)((int)(RA2_OPNEW(16 * a2)));
       if ( v6 ) /*0x5aceff*/
-        v7 = v6; /*0x5acf04*/
+        v7 = (char *)v6; /*0x5acf04*/
       else
         v7 = 0; /*0x5acf0c*/
     }
-    this->u32_C = 1; /*0x5acf1b*/
+    IDA_LOBYTE(this->m_C) = 1; /*0x5acf1b*/
     if ( !v7 ) /*0x5acf1f*/
       return 0; /*0x5acfb4*/
-    if ( this->q004 ) /*0x5acf25*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x5acf25*/
     {
-      v8 = this->q008; /*0x5acf2c*/
-      if ( a2 < v8 ) /*0x5acf31*/
-        v8 = a2; /*0x5acf33*/
-      if ( v8 > 0 ) /*0x5acf37*/
+      m_8 = this->m_8; /*0x5acf2c*/
+      if ( a2 < m_8 ) /*0x5acf31*/
+        m_8 = a2; /*0x5acf33*/
+      if ( m_8 > 0 ) /*0x5acf37*/
       {
         v9 = 0; /*0x5acf39*/
         do /*0x5acf5d*/
         {
           v10 = &v7[v9]; /*0x5acf3e*/
-          v11 = (unsigned int *)(v9 + this->q004); /*0x5acf41*/
+          v11 = (unsigned int *)(v9 + *(unsigned int *)&this->m_1[3]); /*0x5acf41*/
           v9 += 16; /*0x5acf43*/
-          --v8; /*0x5acf46*/
+          --m_8; /*0x5acf46*/
           *(unsigned int *)v10 = *v11; /*0x5acf49*/
           *((unsigned int *)v10 + 1) = v11[1]; /*0x5acf4e*/
           *((unsigned int *)v10 + 2) = v11[2]; /*0x5acf54*/
           *((unsigned int *)v10 + 3) = v11[3]; /*0x5acf5a*/
         }
-        while ( v8 ); /*0x5acf5d*/
+        while ( m_8 ); /*0x5acf5d*/
         v3 = a2; /*0x5acf5f*/
         v5 = a3; /*0x5acf63*/
       }
-      if ( this->IsAllocated ) /*0x5acf67*/
+      if ( IDA_BYTE1(this->m_C) ) /*0x5acf67*/
       {
-        RA2_OPDEL(this->q004); /*0x5acf72*/
-        this->q004 = 0; /*0x5acf7a*/
+        RA2_OPDEL(*(void **)&this->m_1[3]); /*0x5acf72*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x5acf7a*/
       }
     }
-    this->q004 = (void *)(v7);
-    this->q008 = (unsigned int)((void *)(v3));
-    this->IsAllocated = (void *)(v5 == 0);
+    *(unsigned int *)&this->m_1[3] = v7; /*0x5acf83*/
+    this->m_8 = v3; /*0x5acf8b*/
+    IDA_BYTE1(this->m_C) = v5 == 0; /*0x5acf8e*/
   }
   else
   {
-    (*(void (__thiscall **)(void *))(((unsigned int)(this->q0042))))(this); /*0x5acf97*/
+    (*(void (__thiscall **)(_DynamicVectorClass_V_TRect_H *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5acf97*/
   }
-  v12 = (void *)((unsigned int)(this->q008));
-  if ( v12 < this->q010 ) /*0x5acfa2*/
-    this->q010 = v12; /*0x5acfa4*/
+  v12 = this->m_8; /*0x5acf9a*/
+  if ( v12 < this->m_10 ) /*0x5acfa2*/
+    this->m_10 = v12; /*0x5acfa4*/
   return 1; /*0x5acfa7*/
-}
 }
 // 0x5CEE60
 namespace gamemd {
@@ -172,67 +171,72 @@ CampaignClass * * MSEngine::Destructor()
 {
   void *v2; // eax
   void *v3; // eax
-  void *v4; // eax
+  void *MSEngine_field_0x4; // eax
 
-  SessionClass::Destruct(); /*0x5cee64*/
-  v2 = *(void **)(&this->u32_1C2); /*0x5cee69*/
-  if ( v2 && this->u8_51 ) /*0x5cee79*/
+  SessionClass::Destruct((SessionClass *)this); /*0x5cee64*/
+  v2 = (void *)this->u32_48; /*0x5cee69*/
+  this->u32_44 = (void*)&VectorClass_MSSfxEntry___vftable; /*0x5cee70*/
+  if ( v2 && this->u32_51 ) /*0x5cee79*/
   {
     RA2_OPDEL(v2); /*0x5cee7f*/
-    this->ptr_48 = 0; /*0x5cee87*/
+    this->u32_48 = 0; /*0x5cee87*/
   }
-  this->u8_51 = 0; /*0x5cee8a*/
+  this->u32_51 = 0; /*0x5cee8a*/
   this->u32_4C = 0; /*0x5cee8d*/
-  v3 = *(void **)(&this->q0108); /*0x5cee90*/
-  if ( v3 && this->u8_39 ) /*0x5cee9e*/
+  v3 = (void *)this->u32_C; /*0x5cee90*/
+  this->q00B = (void*)&VectorClass_MSAnimEntry___vftable; /*0x5cee93*/
+  if ( v3 && this->u32_39 ) /*0x5cee9e*/
   {
     RA2_OPDEL(v3); /*0x5ceea4*/
-    this->u32_30 = 0; /*0x5ceeac*/
+    this->u32_C = 0; /*0x5ceeac*/
   }
-  this->u8_39 = 0; /*0x5ceeb2*/
-  this->q034 = 0; /*0x5ceeb5*/
-  DeleteAndZero((void **)(&this->q0100)); /*0x5ceeb8*/
-  v4 = this->q004; /*0x5ceebd*/
-  if ( v4 && this->IsAllocated ) /*0x5ceeca*/
+  this->u32_39 = (unsigned int)(0);
+  this->IsAllocated = (unsigned int)(0);
+  DeleteAndZero((ObjectClass *)(this + 2)); /*0x5ceeb8*/
+  MSEngine_field_0x4 = this->MSEngine_field_0x4; /*0x5ceebd*/
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_MapStage___vftable; /*0x5ceec0*/
+  if ( MSEngine_field_0x4 && IDA_BYTE1(this->MSEngine_field_0xC[0]) ) /*0x5ceeca*/
   {
-    RA2_OPDEL(v4); /*0x5ceed0*/
-    this->q004 = 0; /*0x5ceed8*/
+    RA2_OPDEL(MSEngine_field_0x4); /*0x5ceed0*/
+    this->MSEngine_field_0x4 = 0; /*0x5ceed8*/
   }
-  this->IsAllocated = 0; /*0x5ceedb*/
-  this->q008 = 0; /*0x5ceede*/
-}
+  IDA_BYTE1(this->MSEngine_field_0xC[0]) = 0; /*0x5ceedb*/
+  this->MSEngine_field_0x8 = 0; /*0x5ceede*/
 }
 // 0x5D1AA0
 namespace gamemd {
 unsigned int * MSEngine::Construct()
 {
-  char *v2; // ecx
-  int v3; // edx
+  void **p_MSEngine_field_0x8; // ecx
+  void (__thiscall **v3)(void **, int, unsigned int); // edx
 
-  v2 = (char *)(&this->q008);
-  *((unsigned int *)v2 + 1) = 0; /*0x5d1ab2*/
-  *((unsigned int *)v2 + 2) = 0; /*0x5d1ab5*/
-  v2[12] = 1; /*0x5d1ab8*/
-  v2[13] = 0; /*0x5d1abb*/
+  p_MSEngine_field_0x8 = (void **)((unsigned int)(&this->MSEngine_field_0x8));
+  p_MSEngine_field_0x8[1] = (void *)((unsigned int)(0));
+  p_MSEngine_field_0x8[2] = (unsigned int)(0);
+  *((unsigned char *)p_MSEngine_field_0x8 + 12) = 1; /*0x5d1ab8*/
+  *((unsigned char *)p_MSEngine_field_0x8 + 13) = 0; /*0x5d1abb*/
+  *p_MSEngine_field_0x8 = (void*)&VectorClass_TRect_int_vftable; /*0x5d1abe*/
   this->u32_1C = 0; /*0x5d1ac4*/
-  this->u32_20 = 0; /*0x5d1ac7*/
-  this->q024 = 1; /*0x5d1aca*/
-  this->q094 = 0; /*0x5d1acd*/
-  *(&this->q0041) = 10; /*0x5d1ad6*/
-  *(&this->q0040) = 0; /*0x5d1add*/
-  *(&this->q0043) = 0; /*0x5d1ae0*/
-  *(&this->q0044) = 0; /*0x5d1ae3*/
-  this->u8_3C = 1; /*0x5d1ae6*/
-  this->u8_3D = 0; /*0x5d1ae9*/
-  *(&this->q0047) = 10; /*0x5d1af2*/
-  *(&this->q0046) = 0; /*0x5d1af9*/
-  v3 = *(unsigned int *)v2; /*0x5d1afc*/
-  this->q004 = 0; /*0x5d1b07*/
-  (*(void (__thiscall **)(char *, int, unsigned int))(v3 + 8))(v2, 20, 0); /*0x5d1b0a*/
-  (*(void (__thiscall **)(unsigned int *))(this->u32_18 + 12))&this->q018; /*0x5d1b11*/
-  (*(void (__thiscall **)(unsigned int *))(*(&this->q0042) + 12))(&this->q0042); /*0x5d1b18*/
-  return this; /*0x5d1b1b*/
-}
+  this->q008 = 0; /*0x5d1ac7*/
+  this->u32_24 = 1; /*0x5d1aca*/
+  this->u32_25 = 0; /*0x5d1acd*/
+  this->u32_18 = (void*)&DynamicVectorClass_MSAnim___vftable; /*0x5d1ad0*/
+  this->q00B = 10; /*0x5d1ad6*/
+  this->q00A = 0; /*0x5d1add*/
+  this->IsAllocated = 0; /*0x5d1ae0*/
+  this->q00E = 0; /*0x5d1ae3*/
+  this->u32_3C = 1; /*0x5d1ae6*/
+  this->u32_3D = 0; /*0x5d1ae9*/
+  this->u32_C = (void*)&DynamicVectorClass_MSSfx___vftable; /*0x5d1aec*/
+  this->u32_44 = 10; /*0x5d1af2*/
+  this->q010 = 0; /*0x5d1af9*/
+  v3 = (void (__thiscall **)(void **, int, unsigned int))*p_MSEngine_field_0x8; /*0x5d1afc*/
+  *(unsigned int *)this->__pad_0 = (void*)&MSEngine_vftable; /*0x5d1b01*/
+  this->MSEngine_field_0x4 = 0; /*0x5d1b07*/
+  v3[2](p_MSEngine_field_0x8, 20, 0); /*0x5d1b0a*/
+  (*(void (__thiscall **)(char *))(this->u32_18 + 12))((char *)&this->q0084); /*0x5d1b11*/
+  (*(void (__thiscall **)(char *))(this->u32_C + 12))((char *)&this->q0108); /*0x5d1b18*/
+  return this->__pad_0; /*0x5d1b1b*/
 }
 // 0x5D1B30
 namespace gamemd {
@@ -330,15 +334,15 @@ void MSEngine::ClearBuffer()
 {
   void *v2; // eax
 
-  v2 = (void *)(this->Items);
-  this->q010 = 0; /*0x5ac529*/
-  if ( v2 && this->IsAllocated ) /*0x5ac530*/
+  v2 = *(void **)&this->m_1[3]; /*0x5ac526*/
+  this->m_10 = 0; /*0x5ac529*/
+  if ( v2 && IDA_BYTE1(this->m_C) ) /*0x5ac530*/
   {
     RA2_OPDEL(v2); /*0x5ac536*/
-    this->Items = 0; /*0x5ac53e*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5ac53e*/
   }
-  this->IsAllocated = 0; /*0x5ac541*/
-  this->q008 = 0; /*0x5ac544*/
+  IDA_BYTE1(this->m_C) = 0; /*0x5ac541*/
+  this->m_8 = 0; /*0x5ac544*/
 }
 } // namespace gamemd
 
@@ -346,8 +350,8 @@ void MSEngine::ClearBuffer()
 namespace gamemd {
 unsigned int MSEngine::PointerToIndex(int a2)
 {
-  if ( this->IsInitialized ) /*0x5ac550*/
-    return (unsigned int)(a2 - this->Items) >> 4; /*0x5ac565*/
+  if ( IDA_LOBYTE(this->m_C) ) /*0x5ac550*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 4; /*0x5ac565*/
   else
     return 0; /*0x5ac557*/
 }
@@ -359,7 +363,7 @@ unsigned int * MSEngine::Shutdown(unsigned int * a2, int a3)
 {
   unsigned int *v3; // ecx
 
-  v3 = (unsigned int *)(this->Items + 16 * a3); /*0x5ac57d*/
+  v3 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 16 * a3); /*0x5ac57d*/
   *a2 = *v3; /*0x5ac587*/
   a2[1] = v3[1]; /*0x5ac58c*/
   a2[2] = v3[2]; /*0x5ac592*/
@@ -372,21 +376,21 @@ unsigned int * MSEngine::Shutdown(unsigned int * a2, int a3)
 namespace gamemd {
 char MSEngine::AddRef(int a2)
 {
-  int v2; // edi
+  int m_8; // edi
   int v3; // esi
   int v4; // edx
   unsigned int *v5; // eax
   unsigned int *v6; // ecx
   int v7; // edx
 
-  v2 = this->Capacity; /*0x5acccb*/
-  if ( v2 == *(unsigned int *)(a2 + 8) ) /*0x5accd0*/
+  m_8 = this->m_8; /*0x5acccb*/
+  if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x5accd0*/
   {
     v3 = 0; /*0x5accd2*/
-    if ( v2 <= 0 ) /*0x5accd6*/
+    if ( m_8 <= 0 ) /*0x5accd6*/
       return 1; /*0x5acd1a*/
     v4 = *(unsigned int *)(a2 + 4); /*0x5accd8*/
-    v5 = (unsigned int *)this->Items; /*0x5accdb*/
+    v5 = *(unsigned int **)&this->m_1[3]; /*0x5accdb*/
     v6 = (unsigned int *)(v4 + 8); /*0x5accde*/
     v7 = v4 - (unsigned int)v5; /*0x5acce1*/
     while ( *v5 == *(unsigned int *)((char *)v5 + v7) && v5[1] == *(v6 - 1) && v5[2] == *v6 && v5[3] == v6[1] ) /*0x5acd07*/
@@ -394,7 +398,7 @@ char MSEngine::AddRef(int a2)
       ++v3; /*0x5acd09*/
       v6 += 4; /*0x5acd0a*/
       v5 += 4; /*0x5acd0d*/
-      if ( v3 >= v2 ) /*0x5acd12*/
+      if ( v3 >= m_8 ) /*0x5acd12*/
         return 1; /*0x5acd12*/
     }
   }
@@ -406,13 +410,13 @@ char MSEngine::AddRef(int a2)
 namespace gamemd {
 void MSEngine::ddtor()
 {
-  if ( this->Items && this->IsAllocated ) /*0x5ace2d*/
+  if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x5ace2d*/
   {
-    RA2_OPDEL(this->Items); /*0x5ace33*/
-    this->Items = 0; /*0x5ace3b*/
+    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x5ace33*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5ace3b*/
   }
-  this->IsAllocated = 0; /*0x5ace3e*/
-  this->Capacity = 0; /*0x5ace41*/
+  IDA_BYTE1(this->m_C) = 0; /*0x5ace3e*/
+  this->m_8 = 0; /*0x5ace41*/
 }
 } // namespace gamemd
 
@@ -421,18 +425,18 @@ namespace gamemd {
 int MSEngine::Init(unsigned int * a2)
 {
   int result; // eax
-  int v3; // esi
+  int m_8; // esi
   unsigned int *i; // ecx
 
-  if ( !this->IsInitialized ) /*0x5ace50*/
+  if ( !IDA_LOBYTE(this->m_C) ) /*0x5ace50*/
     return 0; /*0x5ace5e*/
-  v3 = this->Capacity; /*0x5ace64*/
+  m_8 = this->m_8; /*0x5ace64*/
   result = 0; /*0x5ace67*/
-  if ( v3 <= 0 ) /*0x5ace6b*/
+  if ( m_8 <= 0 ) /*0x5ace6b*/
     return -1; /*0x5acea0*/
-  for ( i = this->Items; *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5ace71*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5ace71*/
   {
-    if ( ++result >= v3 ) /*0x5ace9e*/
+    if ( ++result >= m_8 ) /*0x5ace9e*/
       return -1; /*0x5ace9e*/
   }
   return result; /*0x5ace5b*/
@@ -443,8 +447,8 @@ int MSEngine::Init(unsigned int * a2)
 namespace gamemd {
 unsigned int MSEngine::Run(int a2)
 {
-  if ( this->IsInitialized ) /*0x5aceb0*/
-    return (unsigned int)(a2 - this->Items) >> 4; /*0x5acec5*/
+  if ( IDA_LOBYTE(this->m_C) ) /*0x5aceb0*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 4; /*0x5acec5*/
   else
     return 0; /*0x5aceb7*/
 }
@@ -454,21 +458,20 @@ unsigned int MSEngine::Run(int a2)
 namespace gamemd {
 int MSEngine::FindItem(unsigned int * a2)
 {
-  void * v2;
+  int m_10; // esi
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = (void *)(this->q010);
+  m_10 = this->m_10; /*0x5acfc3*/
   result = 0; /*0x5acfc6*/
-  if ( v2 <= 0 ) /*0x5acfcb*/
+  if ( m_10 <= 0 ) /*0x5acfcb*/
     return -1; /*0x5ad000*/
-  for ( i = (unsigned int *)this->Items; *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5acfd1*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2 || i[1] != a2[1] || i[2] != a2[2] || i[3] != a2[3]; i += 4 ) /*0x5acfd1*/
   {
-    if ( ++result >= v2 ) /*0x5acffe*/
+    if ( ++result >= m_10 ) /*0x5acffe*/
       return -1; /*0x5acffe*/
   }
   return result; /*0x5ad003*/
-}
 }
 // 0x5AD4D0
 namespace gamemd {
@@ -476,17 +479,18 @@ VectorClass_flat * MSEngine::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)this->Items; /*0x5ad4d3*/
-  if ( v3 && this->IsAllocated ) /*0x5ad4e0*/
+  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TRect_int_vftable; /*0x5ad4d6*/
+  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5ad4e0*/
   {
     RA2_OPDEL(v3); /*0x5ad4e8*/
-    this->Items = 0; /*0x5ad4f0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5ad4f0*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
+  IDA_BYTE1(this->m_C) = 0; /*0x5ad4fb*/
+  this->m_8 = 0; /*0x5ad501*/
   if ( (a2 & 1) != 0 ) /*0x5ad508*/
-    RA2_OPDEL(); /*0x5ad50b*/
-  return this; /*0x5ad515*/
+    RA2_OPDEL(this); /*0x5ad50b*/
+  return this->__pad_0; /*0x5ad515*/
 }
 } // namespace gamemd
 
@@ -496,17 +500,18 @@ DynamicVector * MSEngine::Constructor(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)this->Items; /*0x5ad523*/
-  if ( v3 && this->IsAllocated ) /*0x5ad530*/
+  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TRect_int_vftable; /*0x5ad526*/
+  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5ad530*/
   {
     RA2_OPDEL(v3); /*0x5ad538*/
-    this->Items = 0; /*0x5ad540*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5ad540*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = (unsigned int)((gamemd::DynamicVector *)(0));
+  IDA_BYTE1(this->m_C) = 0; /*0x5ad54b*/
+  this->m_8 = 0; /*0x5ad551*/
   if ( (a2 & 1) != 0 ) /*0x5ad558*/
-    RA2_OPDEL(); /*0x5ad55b*/
-  return this; /*0x5ad565*/
+    RA2_OPDEL(this); /*0x5ad55b*/
+  return this->__pad_0; /*0x5ad565*/
 }
 } // namespace gamemd
 
@@ -514,7 +519,7 @@ DynamicVector * MSEngine::Constructor(char a2)
 namespace gamemd {
 void MSEngine::DestroyData()
 {
-  if ( *this ) /*0x5d5850*/
-    free(); /*0x5d5857*/
+  if ( *(unsigned int *)this->__pad_0 ) /*0x5d5850*/
+    free(*(void **)this->__pad_0); /*0x5d5857*/
 }
 } // namespace gamemd

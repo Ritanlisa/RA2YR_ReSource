@@ -14,21 +14,7 @@
 #include "type/techno_type.hpp"
 
 // 0x45EC90
-namespace gamemd { short BuildingTypeClass::GetFoundationWidth() const {
-  return dword_8192B8[*(&this->u32_17C6)]; /*0x45ec9d*/
-}
-// 0x0 (lnk)
-namespace gamemd { AbstractTypeClass::AbstractTypeClass(char const *) noexcept {} }
-// 0x45ECA0
-namespace gamemd { short BuildingTypeClass::GetFoundationHeight(IUnknown * aP1) const {
-  if ( a2 && this->Bib ) /*0x45eca8*/
-    return dword_819310[this->qEF0] + 1; /*0x45ecc4*/
-  else
-    return dword_819310[this->qEF0]; /*0x45ecd1*/
-}
-// 0x0 (lnk)
-namespace gamemd { bool BuildingTypeClass::IsCellClearOfTerrainObstacles(gamemd::Vector2D<short> const &) const { return false; } }
-// 0x0 (lnk)
-namespace gamemd { gamemd::Vector3D<int> * TechnoTypeClass::GetParticleSysOffset(gamemd::Vector3D<int> *) const { return nullptr; } }
-}
+namespace gamemd { 
+short BuildingTypeClass::GetFoundationWidth() const {
+  return stru_81926C.Type[this->Foundation[0]]; /*0x45ec9d*/
 }

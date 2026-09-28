@@ -7,6 +7,8 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/Mission_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x5B3760
 namespace gamemd {
@@ -20,95 +22,104 @@ AbstractClass * * MissionClass::LoadFromINI(unsigned int * a2)
   unsigned int v8;
   unsigned int v9;
   unsigned int v10;
-  double Double_Overwrite; // st7
-  int v12; // eax
+  void *vtable0; // eax
   unsigned int v13;
-  double v14; // st7
-  int v15; // ecx
+  AbstractClass ** abstractFlags;
 
-  INIClass::ResetSection(a2); /*0x5b376a*/
-  if ( *this == -1 ) /*0x5b3774*/
+  INIClass::ResetSection((INIClass *)a2); /*0x5b376a*/
+  if ( this->vtable0 == (void *)-1 ) /*0x5b3774*/
     v3 = g_Str__none_; /*0x5b3776*/
   else
-    v3 = off_816CAC[*this]; /*0x5b377d*/
+    v3 = off_816CAC[(int)this->vtable0]; /*0x5b377d*/
   if ( !INIClass::BinarySearchSection((int)a2, (uint8_t *)v3) ) /*0x5b3787*/
     return 0; /*0x5b3906*/
-  if ( *this == -1 ) /*0x5b379e*/
+  if ( this->vtable0 == (void *)-1 ) /*0x5b379e*/
     v4 = g_Str__none_; /*0x5b37a0*/
   else
-    v4 = off_816CAC[*this]; /*0x5b37a7*/
-  this->vtable2 = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
-                           (int)a2,
-                           (uint8_t *)v4,
-                           (uint8_t *)aNothreat,
-                           this->vtable2);
-  if ( *this == -1 ) /*0x5b37c7*/
+    v4 = off_816CAC[(int)this->vtable0]; /*0x5b37a7*/
+  IDA_LOBYTE(this->vtable1) = INIClass::ReadBool_Overwrite( /*0x5b37bf*/
+                            a2,
+                            (uint8_t *)v4,
+                            (uint8_t *)&stru_82BA00.Weapon[8],
+                            (char)this->vtable1);
+  if ( this->vtable0 == (void *)-1 ) /*0x5b37c7*/
     v5 = g_Str__none_; /*0x5b37c9*/
   else
-    v5 = off_816CAC[*this]; /*0x5b37d0*/
-  this->abstractFlags = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
-                           (int)a2,
+    v5 = off_816CAC[(int)this->vtable0]; /*0x5b37d0*/
+  IDA_BYTE1(this->vtable1) = INIClass::ReadBool_Overwrite( /*0x5b37e8*/
+                           a2,
                            (uint8_t *)v5,
-                           (uint8_t *)aZombie,
-                           this->abstractFlags);
-  if ( *this == -1 ) /*0x5b37f0*/
+                           (uint8_t *)&stru_82BA00.Weapon[6],
+                           IDA_BYTE1(this->vtable1));
+  if ( this->vtable0 == (void *)-1 ) /*0x5b37f0*/
     v6 = g_Str__none_; /*0x5b37f2*/
   else
-    v6 = off_816CAC[*this]; /*0x5b37f9*/
-  this->nextArrayIndex = INIClass::ReadBool_Overwrite( /*0x5b3811*/
-                           (int)a2,
+    v6 = off_816CAC[(int)this->vtable0]; /*0x5b37f9*/
+  IDA_BYTE2(this->vtable1) = INIClass::ReadBool_Overwrite( /*0x5b3811*/
+                           a2,
                            (uint8_t *)v6,
-                           (uint8_t *)aRecruitable,
-                           this->nextArrayIndex);
-  if ( *this == -1 ) /*0x5b3819*/
+                           (uint8_t *)&stru_82BA00.Weapon[3],
+                           IDA_BYTE2(this->vtable1));
+  if ( this->vtable0 == (void *)-1 ) /*0x5b3819*/
     v7 = g_Str__none_; /*0x5b381b*/
   else
-    v7 = off_816CAC[*this]; /*0x5b3822*/
-  this->referenceCount = INIClass::ReadBool_Overwrite( /*0x5b383a*/
-                           (int)a2,
-                           (uint8_t *)v7,
-                           (uint8_t *)aParalyzed,
-                           this->referenceCount);
-  if ( *this == -1 ) /*0x5b3842*/
+    v7 = off_816CAC[(int)this->vtable0]; /*0x5b3822*/
+  IDA_HIBYTE(this->vtable1) = INIClass::ReadBool_Overwrite( /*0x5b383a*/
+                            a2,
+                            (uint8_t *)v7,
+                            (uint8_t *)stru_82BA00.Weapon,
+                            IDA_HIBYTE(this->vtable1));
+  if ( this->vtable0 == (void *)-1 ) /*0x5b3842*/
     v8 = g_Str__none_; /*0x5b3844*/
   else
-    v8 = off_816CAC[*this]; /*0x5b384b*/
-  this->vtable3 = INIClass::ReadBool_Overwrite( /*0x5b3863*/
-                           (int)a2,
-                           (uint8_t *)v8,
-                           (uint8_t *)aRetaliate,
-                           this->vtable3);
-  if ( *this == -1 ) /*0x5b386b*/
+    v8 = off_816CAC[(int)this->vtable0]; /*0x5b384b*/
+  IDA_LOBYTE(this->vtable2) = INIClass::ReadBool_Overwrite( /*0x5b3863*/
+                            a2,
+                            (uint8_t *)v8,
+                            (uint8_t *)&stru_82BA00.TurretWeapon[30],
+                            (char)this->vtable2);
+  if ( this->vtable0 == (void *)-1 ) /*0x5b386b*/
     v9 = g_Str__none_; /*0x5b386d*/
   else
-    v9 = off_816CAC[*this]; /*0x5b3874*/
-  this->objectTypeFlags = INIClass::ReadBool_Overwrite( /*0x5b388c*/
-                           (int)a2,
+    v9 = off_816CAC[(int)this->vtable0]; /*0x5b3874*/
+  IDA_BYTE1(this->vtable2) = INIClass::ReadBool_Overwrite( /*0x5b388c*/
+                           a2,
                            (uint8_t *)v9,
-                           (uint8_t *)aScatter,
-                           this->objectTypeFlags);
-  if ( *this == -1 ) /*0x5b3894*/
+                           (uint8_t *)&stru_82BA00.TurretWeapon[28],
+                           IDA_BYTE1(this->vtable2));
+  if ( this->vtable0 == (void *)-1 ) /*0x5b3894*/
     v10 = g_Str__none_; /*0x5b3896*/
   else
-    v10 = off_816CAC[*this]; /*0x5b389d*/
-  Double_Overwrite = INIClass::ReadDouble_Overwrite( /*0x5b38b4*/
-                       (int)a2,
-                       (uint8_t *)v10,
-                       (uint8_t *)g_INI_Key_Rate,
-                       this->uniqueId);
-  v12 = (unsigned int)(*this);
-  this->uniqueId = (unsigned int)(Double_Overwrite);
-  if ( v12 == -1 ) /*0x5b38c1*/
+    v10 = off_816CAC[(int)this->vtable0]; /*0x5b389d*/
+  INIClass::ReadDouble_Overwrite( /*0x5b38b4*/
+    (double *)a2,
+    (uint8_t *)v10,
+    (uint8_t *)g_INI_Key_Rate,
+    *(double *)&this->uniqueId);
+  vtable0 = (char *)(this->vtable0);
+  __asm { fstp qword ptr [esi+10h] } /*0x5b38bb*/
+  *(double *)&this->uniqueId = _RT1; /*0x5b38bb*/
+  if ( vtable0 == (void *)-1 ) /*0x5b38c1*/
     v13 = g_Str__none_; /*0x5b38c3*/
   else
-    v13 = off_816CAC[v12]; /*0x5b38ca*/
-  v14 = INIClass::ReadDouble_Overwrite((int)a2, (uint8_t *)v13, (uint8_t *)aAarate, 0.0); /*0x5b38dd*/
-  this->nextArrayIndex = v14; /*0x5b38e2*/
-  if ( v14 == 0.0 ) /*0x5b38f0*/
+    v13 = off_816CAC[(unsigned int)vtable0]; /*0x5b38ca*/
+  INIClass::ReadDouble_Overwrite( /*0x5b38dd*/
+    (double *)a2,
+    (uint8_t *)v13,
+    (uint8_t *)&stru_82BA00.TurretWeapon[26],
+    0.0);
+  __asm { fst qword ptr [esi+18h] } /*0x5b38e2*/
+  *(double *)&this->nextArrayIndex = _RT1; /*0x5b38e2*/
+  __asm /*0x5b38e5*/
   {
-    v15 = this->abstractFlags; /*0x5b38f5*/
-    this->nextArrayIndex = this->uniqueId; /*0x5b38f8*/
-    this->referenceCount = v15; /*0x5b38fb*/
+    fcomp ds:dbl_7E2800
+    fnstsw ax
+  }
+  if ( (_AX & 0x4000) != 0 ) /*0x5b38f0*/
+  {
+    abstractFlags = (int)((gamemd::AbstractClass **)(this->abstractFlags));
+    this->nextArrayIndex = (unsigned int)((gamemd::AbstractClass **)(this->uniqueId));
+    this->referenceCount = abstractFlags; /*0x5b38fb*/
   }
   return (gamemd::AbstractClass **)(1);
 }

@@ -8,6 +8,8 @@ struct E4Recv_655890 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
+    unsigned int vtable0;
+    unsigned int vtable1;
 // --- flat members (END) ---
     int Vf251(int,  ...);    // G6 vtable slot dispatch
     int sub_655890();  // 0x655890

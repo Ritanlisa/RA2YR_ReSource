@@ -11,31 +11,33 @@
 namespace gamemd {
 void DropListClass_OnKeyUp(void * a1, void * a2, void * a3)
 {
-  int *v4; // esi
+  int v3; // ecx
+  wchar_t **v4; // edi
+  int *v5; // esi
   wchar_t *result; // eax
-  int v6; // ebx
-  int v7; // eax
-  const wchar_t *v8; // eax
+  int v7; // ebx
+  int v8; // eax
+  const wchar_t *v9; // eax
 
-  v4 = (int *)(a1 + 176); /*0x4b503a*/
-  result = (wchar_t *)(*(int (__thiscall **)(int))(*(unsigned int *)(a1 + 176) + 148))(a1 + 176); /*0x4b5042*/
-  if ( a3 >= (unsigned int)result ) /*0x4b504e*/
+  v4 = (wchar_t **)v3; /*0x4b5032*/
+  v5 = (int *)(v3 + 176); /*0x4b503a*/
+  result = (wchar_t *)(*(int (__thiscall **)(int))(*(unsigned int *)(v3 + 176) + 148))(v3 + 176); /*0x4b5042*/
+  if ( this >= (DropListClass *)result ) /*0x4b504e*/
   {
-    **(unsigned short **, unsigned int a2, unsigned int a3, unsigned int a1)(a1 + 52) = 0; /*0x4b5089*/
+    *v4[13] = 0; /*0x4b5089*/
   }
   else
   {
-    (*(void (__thiscall **)(int *, unsigned int, int))(*v4 + 184))(v4, a3, a2); /*0x4b5056*/
-    v6 = *v4; /*0x4b505e*/
-    v7 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 164))(a1); /*0x4b5062*/
-    v8 = (const wchar_t *)v4->GetClamped(v7); /*0x4b506b*/
-    return wcscpy(*(wchar_t **)(a1 + 52), v8); /*0x4b5076*/
+    (*(void (__thiscall **)(int *, DropListClass *, int))(*v5 + 184))(v5, this, a2); /*0x4b5056*/
+    v7 = *v5; /*0x4b505e*/
+    v8 = (*((int (__thiscall **)(wchar_t **))*v4 + 41))(v4); /*0x4b5062*/
+    v9 = (const wchar_t *)v5->GetClamped(v8); /*0x4b506b*/
+    return wcscpy(v4[13], v9); /*0x4b5076*/
   }
   return result; /*0x4b507f*/
-}
 }
 // 0x4B55A0
 int DropListClass::COMStub()
 {
-  return *(&this->u32_43); /*0x4b55a3*/
+  return this->q034; /*0x4b55a3*/
 }

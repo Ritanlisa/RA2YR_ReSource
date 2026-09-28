@@ -30,8 +30,10 @@ struct ArrayClass {
     unsigned int q1908;  // 0x1908
     void* q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int u32_C6;
-    unsigned int u32_C7;
+    unsigned int __pad_18;
+    unsigned int field_14;
+    unsigned int field_8;
+    unsigned int field_94;
 // --- flat members (END) ---
     int GetAt_Wrap(int a2);  // 0x636E60
 };

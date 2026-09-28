@@ -23,51 +23,51 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/Screen_e4.hpp"
+#include "e4/classes/MultiplayerSiege_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x688380
 namespace gamemd {
 void * Multiplayer::FindStartPositions()
 {
   int v1; // esi
-  unsigned int *v2; // edi
-  char *v3; // edx
+  Multiplayer *v2; // edi
+  unsigned int v3;
   int v4; // ebx
   int v5; // eax
   unsigned int *v6; // ecx
   int v7; // ebp
-  int v8; // ecx
+  unsigned int *v8; // ecx
   int v9; // edi
-  int v10; // ebp
+  signed int v10; // ebp
   unsigned int i; // esi
   int v12; // edi
   int v13; // eax
   int16_t v14; // si
   int v15; // eax
-  void *v16; // eax
+  void *Items; // eax
   int v17; // edx
   int v19; // [esp+10h] [ebp-30h] BYREF
   int v20; // [esp+14h] [ebp-2Ch]
-  unsigned int *v21; // [esp+18h] [ebp-28h]
+  Multiplayer *v21; // [esp+18h] [ebp-28h]
   int v22; // [esp+1Ch] [ebp-24h]
   int v23; // [esp+20h] [ebp-20h] BYREF
   int v24; // [esp+24h] [ebp-1Ch] BYREF
-  void* v25;
-  void *Block; // [esp+2Ch] [ebp-14h]
-  int v27; // [esp+30h] [ebp-10h]
-  char v28; // [esp+35h] [ebp-Bh]
-  int v29; // [esp+38h] [ebp-8h]
-  int v30; // [esp+3Ch] [ebp-4h]
+  VectorClass v25; // [esp+28h] [ebp-18h] BYREF
+  int v26; // [esp+38h] [ebp-8h]
+  int v27; // [esp+3Ch] [ebp-4h]
 
-  v1 = 0; /*0x688387*/
+  v1 = (int)((gamemd::AbstractClass *)(0));
   v2 = this; /*0x688389*/
   v21 = this; /*0x688391*/
   VectorClass::CellConstructor(&v25, 0, 0); /*0x688395*/
-  v3 = (char *)g_ScenarioClass_Instance; /*0x68839a*/
+  v3 = unk_A8B230; /*0x68839a*/
   v4 = 10; /*0x6883a0*/
-  v30 = 10; /*0x6883ad*/
-  v29 = 0; /*0x6883b1*/
+  v25.vtable0 = (void*)&DynamicVectorClass_Cell_vftable; /*0x6883a5*/
+  v27 = 10; /*0x6883ad*/
+  v26 = 0; /*0x6883b1*/
   v5 = 0; /*0x6883b5*/
-  v6 = (char *)g_ScenarioClass_Instance + 1586; /*0x6883b7*/
+  v6 = (void **)((char *)&unk_A8B230[44].vtable0 + 2); /*0x6883b7*/
   do /*0x6883e9*/
   {
     if ( v5 < 0 ) /*0x6883c6*/
@@ -80,24 +80,24 @@ void * Multiplayer::FindStartPositions()
   }
   while ( v5 < 8 ); /*0x6883e9*/
   v7 = 0; /*0x6883f0*/
-  if ( Game_PlayerCount > 0 ) /*0x6883f4*/
+  if ( dword_A8DA84 > 0 ) /*0x6883f4*/
   {
-    v8 = Game_PlayerInfoArray; /*0x6883f6*/
-    v9 = Game_PlayerCount; /*0x6883fc*/
+    v8 = (unsigned int *)(dword_A8DA78);
+    v9 = dword_A8DA84; /*0x6883fc*/
     do /*0x68840b*/
     {
-      if ( *(unsigned int *)(*(unsigned int *)v8 + 107) == -1 ) /*0x688404*/
+      if ( *(unsigned int *)(*v8 + 107) == -1 ) /*0x688404*/
         ++v7; /*0x688406*/
-      v8 += 4; /*0x688407*/
+      ++v8; /*0x688407*/
       --v9; /*0x68840a*/
     }
     while ( v9 ); /*0x68840b*/
-    v4 = v30; /*0x68840d*/
+    v4 = v27; /*0x68840d*/
     v2 = v21; /*0x688411*/
   }
-  if ( v1 <= g_Rules_AlliesAllowed + Game_PlayerCount - v7 ) /*0x688421*/
+  if ( v1 <= *(unsigned int *)&stru_A8B250.__pad_0[36] + dword_A8DA84 - v7 ) /*0x688421*/
   {
-    v20 = g_Rules_AlliesAllowed + Game_PlayerCount - v7; /*0x68842b*/
+    v20 = *(unsigned int *)&stru_A8B250.__pad_0[36] + dword_A8DA84 - v7; /*0x68842b*/
     v10 = v20; /*0x68842f*/
   }
   else
@@ -107,42 +107,44 @@ void * Multiplayer::FindStartPositions()
   }
   for ( i = 0; (int)i < v10; ++i ) /*0x688435*/
   {
-    if ( i > 0x2BD || *(unsigned int *)&v3[4 * i + 1586] == dword_B05458 ) /*0x68845d*/
+    if ( i > 0x2BD || *(void **)((char *)&v3[44].vtable0 + 4 * i + 2) == (void *)dword_B05458 ) /*0x68845d*/
       continue; /*0x68845d*/
-    v12 = *(unsigned int *)&v3[4 * i + 1586]; /*0x688478*/
-    if ( v29 < v27 ) /*0x688481*/
+    v12 = *(int *)((char *)&v3[44].vtable0 + 4 * i + 2); /*0x688478*/
+    if ( v26 < v25.Capacity ) /*0x688481*/
       goto LABEL_22; /*0x688481*/
-    if ( !v28 && v27 || v4 <= 0 ) /*0x688491*/
+    if ( !v25.IsAllocated && v25.Capacity || v4 <= 0 ) /*0x688491*/
       goto LABEL_24; /*0x688491*/
-    if ( ((uint8_t (__thiscall *)(void ***, int, unsigned int))v25[2])(&v25, v4 + v27, 0) ) /*0x6884a0*/
+    if ( (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v25.vtable0 + 2))(&v25, v4 + v25.Capacity, 0) ) /*0x6884a0*/
     {
-  LABEL_22:
-      v13 = v29++; /*0x6884ab*/
-      *((unsigned int *)Block + v13) = v12; /*0x6884b6*/
+  LABEL_22: v13 = (int)((gamemd::AbstractClass *)(v26++));
+      *((unsigned int *)v25.Items + v13) = v12; /*0x6884b6*/
     }
-    v3 = (char *)g_ScenarioClass_Instance; /*0x6884b9*/
+    v3 = (unsigned int)((gamemd::AbstractClass *)(unk_A8B230));
   LABEL_24:
-    v23 = *(unsigned int *)&v3[4 * i + 1586]; /*0x6884bf*/
-    Debug::Log("Multiplayer start waypoint found at cell %d,%d\n", (int16_t)v23, IDA_SHIWORD(v23)); /*0x6884d9*/
-    v4 = v30; /*0x6884de*/
-    v3 = (char *)g_ScenarioClass_Instance; /*0x6884e2*/
+    v23 = *(int *)((char *)&v3[44].vtable0 + 4 * i + 2); /*0x6884bf*/
+    Debug::Log(); /*0x6884d9*/
+    v4 = v27; /*0x6884de*/
+    v3 = unk_A8B230; /*0x6884e2*/
     v2 = v21; /*0x6884e8*/
   }
-  if ( v10 - v29 > 0 ) /*0x688502*/
+  if ( v10 - v26 > 0 ) /*0x688502*/
   {
-    Debug::Log(aMultiplayerSta_0); /*0x68850d*/
-    if ( v29 < v10 ) /*0x68851b*/
+    Debug::Log(); /*0x68850d*/
+    if ( v26 < v10 ) /*0x68851b*/
     {
       do /*0x688643*/
       {
-        v14 = Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 0, g_AircraftTrackerState - 10); /*0x688551*/
-        IDA_LOWORD(v22) = dword_87F90C /*0x688573*/
-                    + Random::Range((unsigned int *)g_ScenarioClass_Instance + 134, 10, g_AircraftTrackerPool - 10);
-        IDA_HIWORD(v22) = v14 + dword_87F910 + 10; /*0x688588*/
+        v14 = Random::Range((Random *)&unk_A8B230[14].NeedsSaveOrLink, 0, *(unsigned int *)&stru_87F5F0.__pad_58[720] - 10); /*0x688551*/
+        IDA_LOWORD(v22) = *(unsigned short *)&stru_87F5F0.__pad_58[708] /*0x688573*/
+                    + Random::Range(
+                        (Random *)&unk_A8B230[14].NeedsSaveOrLink,
+                        10,
+                        *(unsigned int *)&stru_87F5F0.__pad_58[716] - 10);
+        IDA_HIWORD(v22) = v14 + *(unsigned short *)&stru_87F5F0.__pad_58[712] + 10; /*0x688588*/
         v19 = v22; /*0x688594*/
         v23 = 0; /*0x6885ab*/
         v19 = *LayerClass::Pathfinding_Find( /*0x6885c3*/
-                 &MapClass_Instance,
+                 (Type *)&stru_87F5F0.__pad_58[416],
                  (int)&v23,
                  &v24,
                  (int16_t *)&v19,
@@ -161,32 +163,38 @@ void * Multiplayer::FindStartPositions()
                  0);
         if ( v19 != dword_B05458 ) /*0x6885c7*/
         {
-          if ( v29 < v27 /*0x688603*/
-            || (v28 || !v27)
-            && v30 > 0
-            && ((uint8_t (__thiscall *)(void ***, int, unsigned int))v25[2])(&v25, v30 + v27, 0) )
+          if ( v26 < v25.Capacity /*0x688603*/
+            || (v25.IsAllocated || !v25.Capacity)
+            && v27 > 0
+            && (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v25.vtable0 + 2))(
+                 &v25,
+                 v27 + v25.Capacity,
+                 0) )
           {
-            v15 = v29++; /*0x688612*/
-            *((unsigned int *)Block + v15) = v19; /*0x68861d*/
+            v15 = v26++; /*0x688612*/
+            *((unsigned int *)v25.Items + v15) = v19; /*0x68861d*/
           }
-          Debug::Log("Random multiplayer start waypoint added at cell %d,%d\n", (int16_t)v19, IDA_SHIWORD(v19)); /*0x688631*/
+          Debug::Log(); /*0x688631*/
         }
       }
-      while ( v29 < v20 ); /*0x688643*/
+      while ( v26 < v20 ); /*0x688643*/
       v2 = v21; /*0x688649*/
     }
   }
-  v2[1] = 0; /*0x688651*/
-  v2[2] = 0; /*0x688654*/
-  *((unsigned char *)v2 + 13) = 0; /*0x688657*/
-  *((unsigned char *)v2 + 12) = 1; /*0x68865f*/
-  Multiplayer::CopyDataArray(&v25); /*0x688669*/
-  v16 = Block; /*0x68867c*/
-  v17 = v30; /*0x688684*/
-  v2[4] = v29; /*0x688688*/
-  v2[5] = v17; /*0x68868d*/
-  if ( v16 && v28 ) /*0x688698*/
-    RA2_OPDEL(v16); /*0x68869b*/
+  *(unsigned int *)&v2[4] = 0; /*0x688651*/
+  *(unsigned int *)&v2[8] = 0; /*0x688654*/
+  v2[13] = 0; /*0x688657*/
+  v2[12] = (Multiplayer)1; /*0x68865f*/
+  *(unsigned int *)v2 = (void*)&VectorClass_Cell_vftable; /*0x688663*/
+  Multiplayer::CopyDataArray(v2, &v25); /*0x688669*/
+  *(unsigned int *)v2 = (void*)&DynamicVectorClass_Cell_vftable; /*0x68866e*/
+  v25.vtable0 = (void*)&VectorClass_Cell_vftable; /*0x688674*/
+  Items = v25.Items; /*0x68867c*/
+  v17 = v27; /*0x688684*/
+  *(unsigned int *)&v2[16] = v26; /*0x688688*/
+  *(unsigned int *)&v2[20] = v17; /*0x68868d*/
+  if ( Items && v25.IsAllocated ) /*0x688698*/
+    RA2_OPDEL(Items); /*0x68869b*/
   return v2; /*0x6886a5*/
 }
 } // namespace gamemd
@@ -195,22 +203,22 @@ namespace gamemd {
 unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
 {
   int v3; // edi
-  void *v4; // eax
+  void * v4;
   int v5; // ecx
   int v6; // eax
 
-  if ( this == aP1 ) /*0x68c2bb*/
+  if ( this == (Multiplayer *)aP1 ) /*0x68c2bb*/
     return this; /*0x68c2bb*/
-  this->vt_slot_12(); /*0x68c2bf*/
+  (*(void (__thiscall **)(Multiplayer *))(((unsigned int)(this->u32_42))))(this); /*0x68c2bf*/
   v3 = aP1[2]; /*0x68c2c2*/
   this->u32_8 = v3; /*0x68c2c7*/
   if ( !v3 ) /*0x68c2ca*/
   {
-    this->u32_4 = 0; /*0x68c319*/
-    this->u8_D = 0; /*0x68c320*/
+    this->u32_4 = (int)(0);
+    this->u8_D = (int)(0);
     return this; /*0x68c324*/
   }
-  v4 = (void *)((unsigned int)(operator new(4 * v3)));
+  v4 = (unsigned int)(RA2_OPNEW(4 * v3));
   if ( !v4 ) /*0x68c2de*/
     v4 = 0; /*0x68c2e7*/
   this->u32_4 = v4; /*0x68c2eb*/
@@ -234,92 +242,113 @@ unsigned int * Multiplayer::CopyDataArray(ObjectClass * aP1)
 namespace gamemd {
 void Multiplayer::ShowProgress(int a2)
 {
+  int result; // eax
   double v3; // st7
+  int v5; // eax
   int i; // esi
-  int v5; // esi
-  int v6; // eax
-  double v7; // st7
   int v8; // esi
   int v9; // eax
-  DWORD Ticks; // [esp+8h] [ebp-1DCh]
-  int v11; // [esp+14h] [ebp-1D0h]
-  double v12; // [esp+14h] [ebp-1D0h]
-  int v13[113]; // [esp+1Ch] [ebp-1C8h] BYREF
-  int16_t v14; // [esp+1E0h] [ebp-4h]
-  char v15; // [esp+1E2h] [ebp-2h]
+  int v10; // eax
+  int v11; // esi
+  int v12; // eax
+  int Ticks; // [esp+8h] [ebp-1DCh]
+  int v14; // [esp+14h] [ebp-1D0h]
+  double v15; // [esp+14h] [ebp-1D0h]
+  int v16[113]; // [esp+1Ch] [ebp-1C8h] BYREF
+  int16_t v17; // [esp+1E0h] [ebp-4h]
+  char v18; // [esp+1E2h] [ebp-2h]
 
-  if ( !g_ArmageddonMode ) /*0x69aea1*/
+  IDA_LOBYTE(result) = stru_A8EB00.gapE4[391]; /*0x69ae90*/
+  if ( !stru_A8EB00.gapE4[391] ) /*0x69aea1*/
   {
-    v11 = a2; /*0x69aeb4*/
-    if ( *((unsigned char *)g_ScenarioClass_Instance + 13501) ) /*0x69aeb8*/
-      v11 = a2 / 2; /*0x69aec7*/
-    v12 = (double)v11; /*0x69aed6*/
-    if ( Progress::GetWeighted(0) * 100.0 < v12 ) /*0x69aef1*/
-      Network::UpdateLatencyDisplay(0, v12, NAN); /*0x69af0a*/
-    if ( *(&this->u32_4049) != 1 ) /*0x69af16*/
+    v14 = a2; /*0x69aeb4*/
+    if ( IDA_BYTE1(unk_A8B230[375].vtable0) ) /*0x69aeb8*/
+      v14 = a2 / 2; /*0x69aec7*/
+    __asm { fild dword ptr [esp+1E4h+var_1D0] } /*0x69aecb*/
+    __asm { fstp [esp+1E8h+var_1D0] }
+    result = Progress::GetWeighted((int)&stru_AC4B30.__pad_EC[828], 0); /*0x69aeda*/
+    __asm { fmul ds:dbl_7E2AC0 } /*0x69aedf*/
+    __asm
+    {
+      fcomp [esp+1E4h+var_1D0]
+      fnstsw ax
+    }
+    if ( (result & 0x100) != 0 ) /*0x69aef1*/
+      result = Network::UpdateLatencyDisplay((int)&stru_AC4B30.__pad_EC[828], 0, v15, NAN); /*0x69af0a*/
+    if ( this->u32_284C != 1 ) /*0x69af16*/
     {
       Ticks = Timer::GetTicks(); /*0x69af26*/
-      switch ( *this ) /*0x69af3e*/
+      switch ( *(unsigned int *)this ) /*0x69af3e*/
       {
         case 1: /*0x69af3e*/
         case 2: /*0x69af3e*/
-          memset(v13, 0, 250); /*0x69b099*/
-          v13[0] = 108; /*0x69b0a2*/
-          v7 = Progress::GetWeighted(0); /*0x69b0aa*/
-          *(int *)((char *)&v13[6] + 1) = Math::RoundToInt(v7 * 100.0); /*0x69b0c0*/
-          IDA_LOBYTE(v13[6]) = g_EventDispatchState; /*0x69b0d5*/
-          Stream::WriteBlock(v13, 250, 0); /*0x69b0d9*/
-          Stream::ReadPacket(&g_EventManager); /*0x69b0e3*/
-          while ( Count::GetCountQueue(&g_EventManager) > 5 ) /*0x69b0f5*/
+          memset(v16, 0, 250); /*0x69b099*/
+          v16[0] = 108; /*0x69b0a2*/
+          Progress::GetWeighted((int)&stru_AC4B30.__pad_EC[828], 0); /*0x69b0aa*/
+          __asm { fmul ds:dbl_7E2AC0 } /*0x69b0af*/
+          IDA_LOWORD(v10) = Math::RoundToInt(v3); /*0x69b0b5*/
+          *(int *)((char *)&v16[6] + 1) = v10; /*0x69b0c0*/
+          IDA_LOBYTE(v16[6]) = unk_A8DB30; /*0x69b0d5*/
+          Stream::WriteBlock((int *)&unk_A8EA70, (int)v16, 250, 0); /*0x69b0d9*/
+          Stream::ReadPacket((int)&unk_A8EA70); /*0x69b0e3*/
+          while ( Count::GetCountQueue((Count *)&unk_A8EA70) > 5 ) /*0x69b0f5*/
           {
-            v8 = 240; /*0x69b101*/
+            v11 = 240; /*0x69b101*/
             if ( Ticks != -1 ) /*0x69b107*/
             {
-              v9 = Timer::GetTicks() - Ticks; /*0x69b112*/
-              if ( v9 >= 240 ) /*0x69b118*/
-                goto LABEL_25; /*0x69b118*/
-              v8 = 240 - v9; /*0x69b11a*/
+              v12 = Timer::GetTicks() - Ticks; /*0x69b112*/
+              if ( v12 >= 240 ) /*0x69b118*/
+                return Event::Dispatch(); /*0x69b118*/
+              v11 = 240 - v12; /*0x69b11a*/
             }
-            if ( v8 <= 0 ) /*0x69b11e*/
+            if ( v11 <= 0 ) /*0x69b11e*/
               break; /*0x69b11e*/
             Sleep(0x14u); /*0x69b122*/
-            EventQueue::Process(g_BinkMoviePlayer); /*0x69b12a*/
-            Stream::ReadPacket(&g_EventManager); /*0x69b134*/
+            EventQueue::Process(*(EventQueue **)&stru_87F5F0.__pad_58[296]); /*0x69b12a*/
+            Stream::ReadPacket((int)&unk_A8EA70); /*0x69b134*/
           }
           break; /*0x69b146*/
         case 3: /*0x69af3e*/
         case 4: /*0x69af3e*/
-          memset(v13, 0, sizeof(v13)); /*0x69af52*/
-          v14 = 0; /*0x69af54*/
-          v15 = 0; /*0x69af56*/
-          v13[0] = 15; /*0x69af5c*/
-          v3 = Progress::GetWeighted(0); /*0x69af64*/
-          *(int *)((char *)&v13[11] + 3) = Math::RoundToInt(v3 * 100.0); /*0x69af7a*/
-          strcpy((char *)&v13[1], ToWideStringChar(*(char **)Game_PlayerInfoArray)); /*0x69af9e*/
-          if ( (double)*(int *)((char *)&v13[11] + 3) >= 99.95 ) /*0x69afb6*/
+          memset(v16, 0, sizeof(v16)); /*0x69af52*/
+          v17 = 0; /*0x69af54*/
+          v18 = 0; /*0x69af56*/
+          v16[0] = 15; /*0x69af5c*/
+          Progress::GetWeighted((int)&stru_AC4B30.__pad_EC[828], 0); /*0x69af64*/
+          __asm { fmul ds:dbl_7E2AC0 } /*0x69af69*/
+          IDA_LOWORD(v5) = Math::RoundToInt(v3); /*0x69af6f*/
+          *(int *)((char *)&v16[11] + 3) = v5; /*0x69af7a*/
+          strcpy((char *)&v16[1], ToWideStringChar((char *)*dword_A8DA78)); /*0x69af9e*/
+          __asm /*0x69afa7*/
           {
-            for ( i = 1; i < Game_PlayerCount; ++i ) /*0x69afdf*/
-            {
-              Debug::Log(aSendingGuarent); /*0x69afe6*/
-              Network::SendToPlayer((int)v13, 51, 1, *(wchar_t **)(Game_PlayerInfoArray + 4 * i)); /*0x69b006*/
-            }
+            fild [esp+1E8h+var_199]
+            fcomp ds:dbl_7F12F0
+            fnstsw ax
+          }
+          if ( (_AX & 0x100) != 0 ) /*0x69afb6*/
+          {
+            Network::SendMessage(&unk_A8E9C0.Socket, (int)v16, 51, 0, 0, 0, 0); /*0x69afcc*/
           }
           else
           {
-            Network::SendMessage(v13, 51, 0, 0, 0, 0); /*0x69afcc*/
+            for ( i = 1; i < dword_A8DA84; ++i ) /*0x69afdf*/
+            {
+              Debug::Log(); /*0x69afe6*/
+              Network::SendToPlayer((int)&unk_A8E9C0, (int)v16, 51, 1, (wchar_t *)dword_A8DA78[i]); /*0x69b006*/
+            }
           }
           Event::Dispatch(); /*0x69b015*/
-          while ( Network::GetQueueCount(&g_NetworkManager) > 5 ) /*0x69b027*/
+          while ( Network::GetQueueCount(&unk_A8E9C0) > 5 ) /*0x69b027*/
           {
-            v5 = 240; /*0x69b037*/
+            v8 = 240; /*0x69b037*/
             if ( Ticks != -1 ) /*0x69b03d*/
             {
-              v6 = Timer::GetTicks() - Ticks; /*0x69b048*/
-              if ( v6 >= 240 ) /*0x69b04e*/
-                goto LABEL_25; /*0x69b04e*/
-              v5 = 240 - v6; /*0x69b054*/
+              v9 = Timer::GetTicks() - Ticks; /*0x69b048*/
+              if ( v9 >= 240 ) /*0x69b04e*/
+                return Event::Dispatch(); /*0x69b04e*/
+              v8 = 240 - v9; /*0x69b054*/
             }
-            if ( v5 <= 0 ) /*0x69b058*/
+            if ( v8 <= 0 ) /*0x69b058*/
               break; /*0x69b058*/
             Sleep(0x14u); /*0x69b060*/
             MessageLoop(); /*0x69b062*/
@@ -327,18 +356,21 @@ void Multiplayer::ShowProgress(int a2)
           }
           break; /*0x69b079*/
         default:
-          break;
+          return Event::Dispatch();
       }
-  LABEL_25:
-      Event::Dispatch(); /*0x69b148*/
+      return Event::Dispatch(); /*0x69b148*/
     }
   }
+  return result; /*0x69b081*/
 }
 } // namespace gamemd
 // 0x53F1F0
 namespace gamemd {
 void Multiplayer::Screen()
 {
+  int result; // eax
+
   dword_828140 = (int)this; /*0x53f1f0*/
+  return result; /*0x53f1f6*/
 }
 } // namespace gamemd

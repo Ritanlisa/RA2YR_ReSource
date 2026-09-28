@@ -15,25 +15,29 @@
 namespace gamemd {
 void VoxClass::FindAndPlay(int a2, int a3)
 {
-  int v3; // esi
+  int v2; // edx
+  int v4; // ebx
+  int v5; // esi
+  int result; // eax
 
+  v4 = v2; /*0x752704*/
   if ( a3 ) /*0x752708*/
   {
-    v3 = 0; /*0x752710*/
+    v5 = 0; /*0x752710*/
     if ( g_InfantrySelectState <= 0 ) /*0x752714*/
     {
-  LABEL_5:
-      UpdateThemeManager(a3); /*0x752736*/
+      return UpdateThemeManager(-1, v4, a3); /*0x752736*/
     }
     else
     {
-      while ( _strcmpi(a3, *((const void **)g_InfantryRenderPool + v3)) ) /*0x75272a*/
+      while ( _strcmpi((char *)a3, *((char **)g_InfantryRenderPool + v5)) ) /*0x75272a*/
       {
-        if ( ++v3 >= g_InfantrySelectState ) /*0x752734*/
-          goto LABEL_5; /*0x752734*/
+        if ( ++v5 >= g_InfantrySelectState ) /*0x752734*/
+          return UpdateThemeManager(-1, v4, a3); /*0x752734*/
       }
-      UpdateThemeManager(a3); /*0x752754*/
+      return UpdateThemeManager(v5, v4, a3); /*0x752754*/
     }
   }
+  return result; /*0x752746*/
 }
 } // namespace gamemd

@@ -1632,7 +1632,7 @@ char MethodStub46D490(void* _this) // thiscall
 
 // IDA: 0x470C30  proposal: MethodStub470C30
 // IDA: void __thiscall sub_470C30(unsigned int *this)
-//   ((void**)this)[0] = (void*)(void*)(void*)&CampaignEndScoreClass_vftable;
+//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)&CampaignEndScoreClass_vftable;
 void MethodStub470C30(void* _this) // thiscall
 {
 }

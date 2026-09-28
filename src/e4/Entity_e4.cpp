@@ -30,7 +30,6 @@ int sub_53AB70()
     1);
   return MapClass::MarkForRedraw(&MapClass_Instance, 1); /*0x53ac4a*/
 }
-}
 // 0x5C0080
 namespace gamemd {
 char sub_5C0080(char ** a1, unsigned char * a2)

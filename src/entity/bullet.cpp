@@ -67,7 +67,4 @@ AbstractType __stdcall BulletClass::whatAmI() const { return kObjectTypeId; }
 int BulletClass::objectSize() const { return sizeof(BulletClass); }
 // 0x468000
 uint8_t BulletClass::GetAnimFrame() const { return 0; }
-void BulletClass::SetTarget(AbstractClass* pTarget) {}
-bool BulletClass::MoveTo(const CoordStruct& where, const BulletVelocity& velocity) { return false; }
-
 } // namespace gamemd

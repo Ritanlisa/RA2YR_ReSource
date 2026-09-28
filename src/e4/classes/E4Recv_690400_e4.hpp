@@ -8,6 +8,8 @@ struct E4Recv_690400 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
+    unsigned int vtable0;
+    unsigned int vtable1;
 // --- flat members (END) ---
     int sub_690400();  // 0x690400
 };

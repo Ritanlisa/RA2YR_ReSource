@@ -34,11 +34,6 @@ struct AudioClass {
     unsigned int q5138;  // 0x5138
     unsigned int q5160;  // 0x5160
     unsigned int q6408;  // 0x6408
-    unsigned int u32_180;
-    unsigned int u32_181;
-    unsigned int u32_182;
-    unsigned int u32_183;
-    unsigned int u32_C8;
 // --- flat members (END) ---
     int ProcessEvent();  // 0x7228B0
 };

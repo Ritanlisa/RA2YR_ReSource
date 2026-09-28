@@ -47,15 +47,7 @@ struct E4Recv_7714B0 {
     unsigned int q2404;  // 0x2404
     unsigned int q2408;  // 0x2408
     unsigned int q6408;  // 0x6408
-    unsigned int u32_5C5;
-    unsigned int u32_5C6;
-    unsigned int u32_5C7;
-    unsigned int u32_5C9;
-    unsigned int u32_600;
-    unsigned int u32_601;
-    unsigned int u32_602;
-    unsigned int u32_604;
-    unsigned int u32_605;
+    unsigned int vtable0;
 // --- flat members (END) ---
     void sub_7714B0(int a2,  char a3,  int a4);    // 0x7714B0
 };

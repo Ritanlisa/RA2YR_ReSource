@@ -26,10 +26,12 @@ int ToolTipManager::ddtor(char a2)
   int result; // eax
 
   if ( a2 == 1 ) /*0x724b89*/
-    ToolTipClass::initString(); /*0x724b8b*/
-  result = this->Position; /*0x724b90*/
+    ToolTipClass::initString((ToolTipClass *)this); /*0x724b8b*/
+  result = this->Position[0]; /*0x724b90*/
   if ( result ) /*0x724b95*/
-    return (&this->u32_84); /*0x724b9f*/
+    return (*(int (__thiscall **)(ToolTipManager *, int *))(((unsigned int)(this->IsVisible)) + 16))( /*0x724b9f*/
+             this,
+             &this->DisplayTimer[1]);
   return result; /*0x724ba2*/
 }
 } // namespace gamemd
@@ -54,6 +56,7 @@ DynamicVector * ToolTipManager_7::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x724f43*/
+  *(void **)this = (void*)&VectorClass_ToolTip_const___vftable; /*0x724f46*/
   if ( v3 && this->IsAllocated ) /*0x724f50*/
   {
     RA2_OPDEL(v3); /*0x724f58*/
@@ -62,7 +65,7 @@ DynamicVector * ToolTipManager_7::QueryInterface(char a2)
   this->IsAllocated = (gamemd::DynamicVector *)(0);
   this->Capacity = (int)((gamemd::DynamicVector *)(0));
   if ( (a2 & 1) != 0 ) /*0x724f78*/
-    RA2_OPDEL(); /*0x724f7b*/
+    RA2_OPDEL(this); /*0x724f7b*/
   return this; /*0x724f85*/
 }
 } // namespace gamemd

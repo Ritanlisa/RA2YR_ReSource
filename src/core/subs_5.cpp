@@ -2353,7 +2353,7 @@ int MethodStub5BF8B0()
 
 // IDA: 0x5C0630  proposal: MethodStub5C0630
 // IDA: void __thiscall sub_5C0630(unsigned int *this)
-//   ((void**)this)[0] = (void*)(void*)(void*)&MovieHandle_vftable;
+//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)&MovieHandle_vftable;
 void MethodStub5C0630(void* _this) // thiscall
 {
 }
@@ -2925,7 +2925,7 @@ void InitFloatConst5CAC70()
 
 // IDA: 0x5CAE60  proposal: MultiplayerTeam::Destructor
 // IDA: void __thiscall sub_5CAE60(void **this)
-//   ((void**)this)[0] = (void*)(void*)(void*)&MultiplayerSiegeDefenderTeam_vftable;
+//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)&MultiplayerSiegeDefenderTeam_vftable;
 //   MultiplayerTeam::Destructor(this);
 void MultiplayerTeam_Destructor(void* _this) // thiscall
 {
@@ -2933,7 +2933,7 @@ void MultiplayerTeam_Destructor(void* _this) // thiscall
 
 // IDA: 0x5CAF00  proposal: MultiplayerTeam::Destructor5CAF00
 // IDA: void __thiscall sub_5CAF00(void **this)
-//   ((void**)this)[0] = (void*)(void*)(void*)&MultiplayerSiegeAttackerTeam_vftable;
+//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)&MultiplayerSiegeAttackerTeam_vftable;
 //   MultiplayerTeam::Destructor(this);
 void MultiplayerTeam_Destructor5CAF00(void* _this) // thiscall
 {

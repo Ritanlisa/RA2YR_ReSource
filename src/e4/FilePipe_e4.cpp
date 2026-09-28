@@ -151,7 +151,7 @@ int FilePipe_38::Seek(int a2, int a3)
 {
   void * v3;
 
-  v3 = this->Items + 3 * a3; /*0x47796d*/
+  v3 = (void *)((int)(this->Items + 3 * a3));
   *(unsigned short *)a2 = *(unsigned short *)v3; /*0x477978*/
   *(unsigned char *)(a2 + 2) = *(unsigned char *)(v3 + 2); /*0x47797f*/
   return a2; /*0x47797b*/
@@ -165,6 +165,7 @@ TypeList_flat * FilePipe_30::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x477a73*/
+  *(void **)this = (void*)&VectorClass_TechnoTypeClass___vftable; /*0x477a76*/
   if ( v3 && this->IsAllocated ) /*0x477a80*/
   {
     RA2_OPDEL(v3); /*0x477a88*/
@@ -173,7 +174,7 @@ TypeList_flat * FilePipe_30::QueryInterface(char a2)
   this->IsAllocated = (gamemd::TypeList_flat *)(0);
   this->Capacity = (int)((gamemd::TypeList_flat *)(0));
   if ( (a2 & 1) != 0 ) /*0x477aa8*/
-    RA2_OPDEL(); /*0x477aab*/
+    RA2_OPDEL(this); /*0x477aab*/
   return this; /*0x477ab5*/
 }
 } // namespace gamemd
@@ -243,7 +244,6 @@ int FilePipe_30::Read(unsigned int * a2)
       return -1; /*0x47820d*/
   }
   return result; /*0x478212*/
-}
 }
 // 0x4782E0
 namespace gamemd {
@@ -334,15 +334,16 @@ VectorClass_flat * FilePipe_38::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4786d3*/
+  *(void **)this = (void*)&VectorClass_RGBClass_vftable; /*0x4786d6*/
   if ( v3 && this->IsAllocated ) /*0x4786e0*/
   {
     RA2_OPDEL(v3); /*0x4786e8*/
     this->Items = 0; /*0x4786f0*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
+  this->IsAllocated = 0; /*0x4786fb*/
+  this->Capacity = 0; /*0x478701*/
   if ( (a2 & 1) != 0 ) /*0x478708*/
-    RA2_OPDEL(); /*0x47870b*/
+    RA2_OPDEL(this); /*0x47870b*/
   return this; /*0x478715*/
 }
 } // namespace gamemd
@@ -471,7 +472,6 @@ int FilePipe_30::FindItemIndex(unsigned int * a2)
   }
   return result; /*0x4b9ef2*/
 }
-}
 // 0x4BA080
 namespace gamemd {
 char FilePipe_30::SetCapacity_0(int a2, unsigned int * a3)
@@ -547,15 +547,16 @@ DynamicVector * FilePipe_30::Destructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x4ba163*/
+  *(void **)this = (void*)&VectorClass_TechnoTypeClass___vftable; /*0x4ba166*/
   if ( v3 && this->IsAllocated ) /*0x4ba170*/
   {
     RA2_OPDEL(v3); /*0x4ba178*/
     this->Items = 0; /*0x4ba180*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = (unsigned int)((gamemd::DynamicVector *)(0));
+  this->IsAllocated = 0; /*0x4ba18b*/
+  this->q008 = 0; /*0x4ba191*/
   if ( (a2 & 1) != 0 ) /*0x4ba198*/
-    RA2_OPDEL(); /*0x4ba19b*/
+    RA2_OPDEL(this); /*0x4ba19b*/
   return this; /*0x4ba1a5*/
 }
 } // namespace gamemd
@@ -573,10 +574,10 @@ DynamicVector * FilePipe_30::Destructor_0(char a2)
     RA2_OPDEL(v3); /*0x4ba218*/
     this->Items = 0; /*0x4ba220*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = (unsigned int)((gamemd::DynamicVector *)(0));
+  this->IsAllocated = 0; /*0x4ba22b*/
+  this->q008 = 0; /*0x4ba231*/
   if ( (a2 & 1) != 0 ) /*0x4ba238*/
-    RA2_OPDEL(); /*0x4ba23b*/
+    RA2_OPDEL(this); /*0x4ba23b*/
   return this; /*0x4ba245*/
 }
 } // namespace gamemd

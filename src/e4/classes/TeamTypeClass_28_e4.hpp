@@ -12,17 +12,6 @@ struct TeamTypeClass_28 {
     unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
-    unsigned char q014;  // 0x14
-    int Count;  // 0x16
-    unsigned int q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned int q024;  // 0x24
-    unsigned char q028;  // 0x28
-    int q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    unsigned int q054;  // 0x54
 // --- flat members (END) ---
     char Release(int a2,  int * a3);    // 0x6F22F0
     char SetCapacity(int a2,  int * a3);    // 0x6F24B0

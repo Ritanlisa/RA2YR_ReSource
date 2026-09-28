@@ -13,29 +13,34 @@ struct E4Recv_76AAF0 {
     unsigned int M14;  // 0xE
     unsigned int M15;  // 0xF
     unsigned int M16;  // 0x10
-    void* pad_013;  // 0x13
-    void* pad_014;  // 0x14
+    unsigned int M19;  // 0x13
+    unsigned int q014;  // 0x14
     unsigned int M18;  // 0x18
-    void* pad_01C;  // 0x1C
+    unsigned int M28;  // 0x1C
     unsigned int M29;  // 0x1D
     unsigned int M30;  // 0x1E
     unsigned int M31;  // 0x1F
     unsigned int M20;  // 0x20
+    unsigned int u32_22;  // 0x22
     unsigned int M35;  // 0x23
-    void* pad_024;  // 0x24
+    unsigned int q024;  // 0x24
+    unsigned int u32_25;  // 0x25
     unsigned int M38;  // 0x26
-    void* ;  // 0x27
+    unsigned int M39;  // 0x27
     unsigned int q028;  // 0x28
-    void* ;  // 0x2A
-    void* ;  // 0x2B
-    void* pad_02C;  // 0x2C
+    unsigned int u32_29;  // 0x29
+    unsigned int M42;  // 0x2A
+    unsigned int M43;  // 0x2B
+    unsigned int M44;  // 0x2C
     unsigned int M45;  // 0x2D
     unsigned int M46;  // 0x2E
-    void* pad_02F;  // 0x2F
+    unsigned int M47;  // 0x2F
     unsigned int q030;  // 0x30
-    void* pad_032;  // 0x32
+    unsigned int u32_31;  // 0x31
+    unsigned int M32;  // 0x32
     unsigned int M33;  // 0x33
     unsigned int M34;  // 0x34
+    unsigned int u32_35;  // 0x35
     unsigned int M36;  // 0x36
     unsigned int M37;  // 0x37
     unsigned int q038;  // 0x38
@@ -43,7 +48,7 @@ struct E4Recv_76AAF0 {
     unsigned int M40;  // 0x40
     unsigned int M41;  // 0x41
     unsigned int q044;  // 0x44
-    void* pad_048;  // 0x48
+    unsigned int M48;  // 0x48
     unsigned int M49;  // 0x49
     unsigned int M50;  // 0x50
     unsigned int M51;  // 0x51
@@ -56,7 +61,7 @@ struct E4Recv_76AAF0 {
     unsigned int q068;  // 0x68
     unsigned int q070;  // 0x70
     unsigned int q080;  // 0x80
-    void* pad_084;  // 0x84
+    unsigned int q084;  // 0x84
     unsigned int q100;  // 0x100
     unsigned int q104;  // 0x104
     unsigned int q114;  // 0x114
@@ -87,22 +92,21 @@ struct E4Recv_76AAF0 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int u32_22;
-    unsigned int u32_25;
-    unsigned int u32_29;
-    unsigned int u32_31;
-    unsigned int u32_35;
-    unsigned int M44;
-    unsigned int M47;
-    unsigned int M32;
-    unsigned int M48;
-    unsigned int M19;
-    unsigned int q014;
-    unsigned int M28;
-    unsigned int q084;
-    unsigned int q024;
-    unsigned int M39;
-    unsigned int M42;
+    unsigned int NeedsSaveOrLink;
+    unsigned int abstractFlags;
+    unsigned int ambientSoundController;
+    unsigned int attachedBomb;
+    unsigned int attachedTag;
+    unsigned int fallRate;
+    unsigned int nextObject;
+    unsigned int occupant;
+    unsigned int owningHouseIndex;
+    unsigned int referenceCount;
+    unsigned int uniqueId;
+    unsigned int vtable0;
+    unsigned int vtable1;
+    unsigned int vtable2;
+    unsigned int vtable3;
 // --- flat members (END) ---
     unsigned int * sub_76AAF0();  // 0x76AAF0
 };

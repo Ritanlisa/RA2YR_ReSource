@@ -14,12 +14,12 @@ namespace gamemd {
 unsigned int * NetworkAddress::Assign(unsigned int * a1, IUnknown * aP2, short a4)
 {
   unsigned int *result; // eax
-  char *v5; // ecx
+  char *m_Port; // ecx
 
-  result = this; /*0x53ece4*/
-  v5 = &this->u32_4; /*0x53ece9*/
-  *(unsigned int *)v5 = *(unsigned int *)aP2; /*0x53ecec*/
-  *((unsigned short *)v5 + 2) = aP2->vtable2; /*0x53ecf4*/
+  result = &this->m_IP; /*0x53ece4*/
+  m_Port = this->m_Port; /*0x53ece9*/
+  *(unsigned int *)m_Port = *(unsigned int *)aP2; /*0x53ecec*/
+  *((unsigned short *)m_Port + 2) = aP2->u32_4; /*0x53ecf4*/
   if ( dword_828140 == 1 ) /*0x53ed01*/
   {
     *result = *a1; /*0x53ed09*/

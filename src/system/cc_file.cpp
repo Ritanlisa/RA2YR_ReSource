@@ -27,32 +27,46 @@ REVERSE(0x473c50, "CCFileClass::Open: IDA verified", "None")
 // 0x473c50
 int CCFileClass::Open(const char* pFileName)
 {
-  if ( *(&this->FileSize6) == 1 ) /*0x473c5c*/
-    return 1; /*0x473c5e*/
-  if ( this->Destru_vt06() ) /*0x473c69*/
+  int result; // eax
+  const char *v4; // eax
+
+  if ( this->u32_68 == 1 ) /*0x473c5c*/
   {
-    *(&this->FileSize6) = 1; /*0x473c70*/
-    return 1; /*0x473c73*/
+    IDA_LOBYTE(result) = 1; /*0x473c5e*/
   }
   else
   {
-    this->GetMember06(); /*0x473c84*/
-    if ( (uint8_t)LookupFileInfoCache(0, 0, 0) ) /*0x473c8b*/
+    result = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->__pad_0 + 24))(this); /*0x473c69*/
+    if ( (unsigned char)result ) /*0x473c6e*/
     {
-      *(&this->FileSize6) = 1; /*0x473c94*/
-      return 1; /*0x473c97*/
-    }
-    else if ( (uint8_t)File::IsReady(0) ) /*0x473ca2*/
-    {
-      *(&this->FileSize6) = 1; /*0x473cab*/
-      return 1; /*0x473cae*/
+      this->u32_68 = 1; /*0x473c70*/
+      IDA_LOBYTE(result) = 1; /*0x473c73*/
     }
     else
     {
-      *(&this->FileSize6) = 2; /*0x473cb5*/
-      return 0; /*0x473cbd*/
+      v4 = (const char *)(*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->__pad_0 + 4))(this); /*0x473c84*/
+      if ( LookupFileInfoCache(v4, 0, 0, 0, 0) ) /*0x473c8b*/
+      {
+        this->u32_68 = 1; /*0x473c94*/
+        IDA_LOBYTE(result) = 1; /*0x473c97*/
+      }
+      else
+      {
+        result = File::IsReady((BufferIOFileClass *)this, 0); /*0x473ca2*/
+        if ( (unsigned char)result ) /*0x473ca9*/
+        {
+          this->u32_68 = 1; /*0x473cab*/
+          IDA_LOBYTE(result) = 1; /*0x473cae*/
+        }
+        else
+        {
+          this->u32_68 = 2; /*0x473cb5*/
+          IDA_LOBYTE(result) = 0; /*0x473cbd*/
+        }
+      }
     }
   }
+  return result; /*0x473c60*/
 }
 // 0x4a3890
 void* CCFileClass::ReadEntireFile()
@@ -61,12 +75,12 @@ void* CCFileClass::ReadEntireFile()
   size_t v3; // ebx
 
   v2 = 0; /*0x4a3895*/
-  if ( (*(uint8_t (__thiscall **)(void *, unsigned int))(((unsigned int)(this->FileSize0))))(this, 0) ) /*0x4a389a*/
+  if ( (*(uint8_t (__thiscall **)(CCFileClass *, unsigned int))(*(unsigned int *)this->__pad_0 + 20))(this, 0) ) /*0x4a389a*/
   {
-    v3 = (*(int (__thiscall **)(void *))(((unsigned int)(this->FileName4))))(this); /*0x4a38a8*/
-    v2 = RA2_OPNEW(v3); /*0x4a38b0*/
+    v3 = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->__pad_0 + 44))(this); /*0x4a38a8*/
+    v2 = (void *)RA2_OPNEW(v3); /*0x4a38b0*/
     if ( v2 ) /*0x4a38b7*/
-      (*(void (__thiscall **)(void *, void *, size_t))(((unsigned int)(this->Handle6))))(this, v2, v3); /*0x4a38bf*/
+      (*(void (__thiscall **)(CCFileClass *, void *, size_t))(*(unsigned int *)this->__pad_0 + 36))(this, v2, v3); /*0x4a38bf*/
   }
   return v2; /*0x4a38c4*/
 }
@@ -75,12 +89,13 @@ REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
 // 0x473ce0
 int CCFileClass::Reset()
 {
-  unsigned int *v2; // ecx
+  Buffer *v2; // ecx
+  int result; // eax
 
-  v2 = &this->q058; /*0x473ce3*/
+  v2 = (unsigned char)((Buffer *)((char *)&this->CacheReadAhead8));
   if ( v2 ) /*0x473ce8*/
     Buffer::Init(v2, 0, 0); /*0x473cee*/
-  *(&this->FileSize5) = 0; /*0x473cf5*/
-  return CCFileClass::Close(this); /*0x473d01*/
-}
+  this->tail_19 = 0; /*0x473cf5*/
+  IDA_LOBYTE(result) = CCFileClass::Close((BufferIOFileClass *)this); /*0x473cfc*/
+  return result; /*0x473d01*/
 }

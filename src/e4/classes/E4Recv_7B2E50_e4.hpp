@@ -7,16 +7,17 @@ namespace gamemd {
 struct E4Recv_7B2E50 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
-    unsigned int q3F338;
-    unsigned int q3F33C;
-    unsigned int q3F340;
-    unsigned int q3F554;
-    unsigned int q3F558;
-    unsigned int q3F560;
-    unsigned int qFCD2;
-    unsigned int qFD54;
-    unsigned char u8_3F345;
-    unsigned char u8_3F55D;
+    unsigned int Socket;
+    unsigned int u32_3F338;
+    unsigned int u32_3F33C;
+    unsigned int u32_3F340;
+    unsigned int u32_3F345;
+    unsigned int u32_3F348;
+    unsigned int u32_3F550;
+    unsigned int u32_3F554;
+    unsigned int u32_3F558;
+    unsigned int u32_3F55D;
+    unsigned int u32_3F560;
 // --- flat members (END) ---
     void sub_7B2E50();  // 0x7B2E50
 };

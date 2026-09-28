@@ -121,23 +121,32 @@ namespace gamemd {
 BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
 {
   int v3; // eax
-  void *v5; // [esp+4h] [ebp-4h] BYREF
+  ObjectClass *v5; // [esp+4h] [ebp-4h] BYREF
 
+  this->vtable0 = (unsigned int)((gamemd::ObjectClass *)((void*)&BuildingLightClass_vftable));
+  this->vtable1 = (gamemd::ObjectClass *)((void*)&BuildingLightClass_vftable);
+  this->vtable2 = (gamemd::ObjectClass *)((void*)&BuildingLightClass_vftable);
+  this->vtable3 = (void*)&BuildingLightClass_vftable; /*0x4370d8*/
   if ( (uint8_t)ObjectClass::Undeploy(this) ) /*0x4370df*/
-    VectorClass::RemoveItem(&g_GameConfigManager, (int)this); /*0x4370ee*/
-  v3 = (*(int (__thiscall **)(int *, void **))(dword_8B4190 + 16))(&dword_8B4190, &this); /*0x437107*/
-  if ( v3 != -1 && v3 < dword_8B41A0 && v3 < --dword_8B41A0 ) /*0x437122*/
+    VectorClass::RemoveItem((VectorClass *)&stru_87F5F0.__pad_58[304], (int)this); /*0x4370ee*/
+  v5 = this; /*0x437103*/
+  v3 = (*(int (__thiscall **)(char *, ObjectClass **))(*(unsigned int *)&FootClass_Array.isUseless + 16))( /*0x437107*/
+         &FootClass_Array.isUseless,
+         &v5);
+  if ( v3 != -1 && v3 < FootClass_Array.turretRecoil[2] ) /*0x437117*/
   {
-    do /*0x43713a*/
+    --FootClass_Array.turretRecoil[2]; /*0x43711c*/
+    for ( ; /*0x437122*/
+          v3 < FootClass_Array.turretRecoil[2];
+          *(unsigned int *)(*(unsigned int *)&FootClass_Array.isALoaner + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&FootClass_Array.isALoaner
+                                                                                      + 4 * v3) )
     {
       ++v3; /*0x43712a*/
-      *((unsigned int *)dword_8B4194 + v3 - 1) = *((unsigned int *)dword_8B4194 + v3); /*0x43712e*/
     }
-    while ( v3 < dword_8B41A0 ); /*0x43713a*/
   }
-  ObjectClass::Dtor(); /*0x43713e*/
+  ObjectClass::Dtor(this); /*0x43713e*/
   if ( (a2 & 1) != 0 ) /*0x437148*/
-    RA2_OPDEL(); /*0x43714b*/
+    RA2_OPDEL(this); /*0x43714b*/
   return this; /*0x437155*/
 }
 } // namespace gamemd
@@ -182,7 +191,7 @@ signed int BuildingLightClass::UpdateOscillation()
   if ( *(unsigned int *)(v2 + 1504) != -1 ) /*0x513d4c*/
   {
     v3 = (int *)((void *)((int *)(v2 + 156)));
-    v28 = (unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((int)((void *)(*v3))))))))))));
+    v28 = (void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((int)((void *)(*v3)))))))))))));
     v29 = (void *)((int)((void *)(v3[1])));
     v30 = (void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((int)((void *)(v3[2])))))))));
     GroundHeight = (void *)((int)((void *)(Cell::GetGroundHeight(&v28))));
@@ -195,7 +204,7 @@ signed int BuildingLightClass::UpdateOscillation()
     v11 = (void *)(8 * v7 + 9041624);
     v12 = (unsigned int)(v8 + dword_89F6D8[2 * v7]);
     v29 = (void *)(v9 + *(unsigned int *)(v11 + 4));
-    v28 = v12; /*0x513dbb*/
+    v28 = (void *)(v12);
     v30 = v10; /*0x513dbf*/
     if ( Cell::GetGroundHeight(&v28) > GroundHeight ) /*0x513dca*/
       v26 = v24 - IDA_HIDWORD(g_RulesClass_Instance->VeteranROF); /*0x513ddc*/
@@ -265,7 +274,7 @@ int BuildingLightClass::SD_vt03(int a1, unsigned int * a2)
   *a2 = 1417814616; /*0x436926*/
   a2[1] = 298965160; /*0x43692e*/
   a2[2] = 1610638004; /*0x436937*/
-  a2[3] = 2041169559; /*0x436940*/
+  a2[3] = unk_7E973C; /*0x436940*/
   return 0; /*0x43691d*/
 }
 } // namespace gamemd
@@ -274,7 +283,7 @@ int BuildingLightClass::SD_vt03(int a1, unsigned int * a2)
 namespace gamemd {
 int BuildingLightClass::SD_vt06(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x4369d4*/
+  return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x4369d4*/
 }
 } // namespace gamemd
 

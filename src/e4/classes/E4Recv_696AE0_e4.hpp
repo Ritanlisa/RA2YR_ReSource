@@ -13,6 +13,9 @@ struct E4Recv_696AE0 {
     unsigned int q338;  // 0x338
     unsigned int q824;  // 0x824
     unsigned int q2084;  // 0x2084
+    unsigned int isInLogic;
+    unsigned int vtable0;
+    unsigned int vtable2;
 // --- flat members (END) ---
     HWND sub_696AE0();  // 0x696AE0
 };

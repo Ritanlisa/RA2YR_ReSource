@@ -5,7 +5,9 @@
 
 namespace gamemd {
 struct WideString {
-    void* vfptr;  // minimal E2 declaration
+// --- flat members (BEGIN) ---
+    unsigned int u32_45C;  // 0x45C
+// --- flat members (END) ---
     int WordWrap(wchar_t * a0,  CampaignScore * aP1,  int a3,  CampaignScore * aP3,  int a5);    // 0x5D4B20
     char Replace(CampaignScore * aP1,  wchar_t * String);    // 0x7B73F0
     wchar_t * Trim();  // 0x727D60

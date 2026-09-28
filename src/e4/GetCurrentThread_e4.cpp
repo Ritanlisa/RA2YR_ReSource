@@ -11,4 +11,3 @@ int GetCurrentThread_0()
 {
   return (int)(GetCurrentThread());
 }
-}

@@ -20,6 +20,7 @@
 #include "e4/classes/Movie_e4.hpp"
 #include "e4/classes/Event_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Mission_e4.hpp"
 
 // 0x610570
 namespace gamemd {
@@ -43,7 +44,7 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
   memset(v15, 0, sizeof(v15)); /*0x6105a0*/
   v15[26] = (void *)11; /*0x6105a4*/
   v15[25] = (void *)g_FogOfWarState; /*0x6105ac*/
-  v2 = operator new(4u); /*0x6105b0*/
+  v2 = RA2_OPNEW(4u); /*0x6105b0*/
   if ( v2 ) /*0x6105bc*/
     v3 = (void *)unknown_libname_74(v2); /*0x6105c0*/
   else
@@ -136,7 +137,6 @@ AbstractClass * * DestroyDialogChildWindow(HWND hWnd, LPARAM a2)
   Object::RemoveObjectArray(hWnd); /*0x61077f*/
   return 1; /*0x610784*/
 }
-}
 // 0x610810
 namespace gamemd {
 char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
@@ -190,71 +190,72 @@ char sub_610810(int a1, const wchar_t * a2, CoordStruct * a3)
   dword_AC1DD4 = a3; /*0x61092d*/
   return TriggerClass::FindByEventType(1); /*0x610938*/
 }
-}
 // 0x610B50
 namespace gamemd {
 void sub_610B50()
 {
-  unsigned int v1[2]; // [esp+4h] [ebp-20h] BYREF
-  int64_t v2; // [esp+Ch] [ebp-18h]
-  __int128 v3; // [esp+14h] [ebp-10h] BYREF
+  unsigned int v2[2]; // [esp+4h] [ebp-20h] BYREF
+  int64_t v3; // [esp+Ch] [ebp-18h]
+  unsigned long long v4[2]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( !dword_AC1DCC ) /*0x610b5d*/
+  if ( !*(unsigned int *)&g_DialogPool.__pad_208[772] ) /*0x610b5d*/
     return 0; /*0x610b5f*/
-  if ( dword_AC1DD0 == 1 ) /*0x610b6d*/
+  if ( *(unsigned int *)&g_DialogPool.__pad_208[776] == 1 ) /*0x610b6d*/
     return 0; /*0x610b6f*/
-  if ( !dword_AC1CC8 ) /*0x610b7e*/
+  if ( !*(unsigned int *)&g_DialogPool.__pad_208[512] ) /*0x610b7e*/
     return 0; /*0x610b80*/
-  v1[0] = 0; /*0x610b9e*/
-  v1[1] = 0; /*0x610ba2*/
-  v3 = xmmword_AC1CB8; /*0x610bab*/
-  v2 = *((unsigned long long *)&xmmword_AC1CB8 + 1); /*0x610bc8*/
-  (*(void (__thiscall **)(int, __int128 *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x610bd3*/
+  v2[0] = 0; /*0x610b9e*/
+  v2[1] = 0; /*0x610ba2*/
+  v4[0] = *(unsigned long long *)&g_DialogPool.__pad_208[496]; /*0x610bab*/
+  v4[1] = *(unsigned long long *)&g_DialogPool.__pad_208[504]; /*0x610bc4*/
+  v3 = *(unsigned long long *)&g_DialogPool.__pad_208[504]; /*0x610bc8*/
+  (*((void (__thiscall **)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x610bd3*/
+   + 2))(
     g_DSurface_Primary,
-    &v3,
-    dword_AC1CC8,
-    v1,
+    v4,
+    *(unsigned int *)&g_DialogPool.__pad_208[512],
+    v2,
     0,
     1);
-  dword_AC1DD0 = 1; /*0x610bd6*/
+  *(unsigned int *)&g_DialogPool.__pad_208[776] = 1; /*0x610bd6*/
   return 1; /*0x610b61*/
-}
 }
 // 0x610BF0
 namespace gamemd {
 AbstractClass * * sub_610BF0()
 {
-  unsigned int v1[2]; // [esp+4h] [ebp-20h] BYREF
-  int64_t v2; // [esp+Ch] [ebp-18h]
-  __int128 v3; // [esp+14h] [ebp-10h] BYREF
+  unsigned int v2[2]; // [esp+4h] [ebp-20h] BYREF
+  int64_t v3; // [esp+Ch] [ebp-18h]
+  unsigned long long v4[2]; // [esp+14h] [ebp-10h] BYREF
 
-  if ( !dword_AC1DCC ) /*0x610bfd*/
+  if ( !*(unsigned int *)&g_DialogPool.__pad_208[772] ) /*0x610bfd*/
     return 0; /*0x610c05*/
-  if ( dword_AC1DD0 == 1 ) /*0x610c0d*/
+  if ( *(unsigned int *)&g_DialogPool.__pad_208[776] == 1 ) /*0x610c0d*/
     goto LABEL_6; /*0x610c0d*/
-  if ( dword_AC1CC8 ) /*0x610c17*/
+  if ( *(unsigned int *)&g_DialogPool.__pad_208[512] ) /*0x610c17*/
   {
-    v3 = xmmword_AC1CB8; /*0x610c35*/
-    v1[0] = 0; /*0x610c53*/
-    v1[1] = 0; /*0x610c57*/
-    v2 = *((unsigned long long *)&xmmword_AC1CB8 + 1); /*0x610c5b*/
-    (*(void (__thiscall **)(int, __int128 *, int, unsigned int *, unsigned int, int))(*(unsigned int *)g_DSurface_Primary + 8))( /*0x610c66*/
+    v4[0] = *(unsigned long long *)&g_DialogPool.__pad_208[496]; /*0x610c35*/
+    v4[1] = *(unsigned long long *)&g_DialogPool.__pad_208[504]; /*0x610c4f*/
+    v2[0] = 0; /*0x610c53*/
+    v2[1] = 0; /*0x610c57*/
+    v3 = *(unsigned long long *)&g_DialogPool.__pad_208[504]; /*0x610c5b*/
+    (*((void (__thiscall **)(DSurface *, unsigned long long *, unsigned int, unsigned int *, unsigned int, int))g_DSurface_Primary->DSurface_field_0x0 /*0x610c66*/
+     + 2))(
       g_DSurface_Primary,
-      &v3,
-      dword_AC1CC8,
-      v1,
+      v4,
+      *(unsigned int *)&g_DialogPool.__pad_208[512],
+      v2,
       0,
       1);
-    dword_AC1DD0 = 1; /*0x610c69*/
+    *(unsigned int *)&g_DialogPool.__pad_208[776] = 1; /*0x610c69*/
   LABEL_6:
-    if ( dword_AC1CC8 ) /*0x610c7c*/
-      (**(void (__thiscall ***)(int, int))dword_AC1CC8)(dword_AC1CC8, 1); /*0x610c82*/
+    if ( *(unsigned int *)&g_DialogPool.__pad_208[512] ) /*0x610c7c*/
+      (***(void (__thiscall ****)(unsigned int, int))&g_DialogPool.__pad_208[512])(*(unsigned int *)&g_DialogPool.__pad_208[512], 1); /*0x610c82*/
   }
-  dword_AC1CC8 = (unsigned int)((gamemd::AbstractClass **)(0));
-  dword_AC1DCC = (unsigned int)((gamemd::AbstractClass **)(0));
-  dword_AC1DD0 = (unsigned int)((gamemd::AbstractClass **)(0));
-  return (gamemd::AbstractClass **)(1);
-}
+  *(unsigned int *)&g_DialogPool.__pad_208[512] = 0; /*0x610c84*/
+  *(unsigned int *)&g_DialogPool.__pad_208[772] = 0; /*0x610c8a*/
+  *(unsigned int *)&g_DialogPool.__pad_208[776] = 0; /*0x610c90*/
+  return 1; /*0x610c01*/
 }
 // 0x612930
 namespace gamemd {
@@ -298,7 +299,7 @@ void sub_612930()
       v6 = v0; /*0x6129af*/
       dword_AC1860 = v0 >> 1; /*0x6129b4*/
       --dword_AC1864; /*0x6129c0*/
-      dword_AC1858 = operator new(4 * (v0 >> 1)); /*0x6129d9*/
+      dword_AC1858 = RA2_OPNEW(4 * (v0 >> 1)); /*0x6129d9*/
       memset(dword_AC1858, 0, 4 * dword_AC1860); /*0x6129e1*/
       if ( v6 > 0 ) /*0x6129e3*/
       {
@@ -333,7 +334,6 @@ void sub_612930()
   }
   RA2_OPDEL(dword_AC1858); /*0x612a46*/
 }
-}
 // 0x612A60
 namespace gamemd {
 AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
@@ -343,7 +343,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   HWND v6; // ecx
   LRESULT (__stdcall **v7)(HWND, UINT, WPARAM, LPARAM); // eax
   int v8; // eax
-  AbstractClass ** v9;
+  HWND v9; // ecx
   HDC v10; // esi
   struct tagRECT v12; // [esp+4h] [ebp-20h] BYREF
   struct tagRECT Rect; // [esp+14h] [ebp-10h] BYREF
@@ -374,7 +374,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   if ( g_DialogHashMap_Count /*0x612aff*/
     && (v8 = *((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&hWnd) & ((1 << g_DialogHashMap_Buckets) - 1)))) != 0 )
   {
-    v9 = (gamemd::AbstractClass **)(hWnd);
+    v9 = hWnd; /*0x612b01*/
     do /*0x612b11*/
     {
       if ( *(HWND *)v8 == hWnd ) /*0x612b07*/
@@ -385,7 +385,7 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   }
   else
   {
-    v9 = (gamemd::AbstractClass **)((HWND)((gamemd::AbstractClass **)(hWnd)));
+    v9 = hWnd; /*0x612b15*/
   }
   if ( Msg != 307 ) /*0x612b22*/
     return (HGDIOBJ)CallWindowProcA(v4, v9, Msg, (WPARAM)hdc, lParam); /*0x612b5b*/
@@ -393,7 +393,6 @@ AbstractClass * * sub_612A60(HWND hWnd, UINT Msg, HDC hdc, LPARAM lParam)
   SetTextColor(hdc, yTop); /*0x612b30*/
   SetBkMode(v10, 1); /*0x612b39*/
   return GetStockObject(5); /*0x612b47*/
-}
 }
 // 0x61D6D0
 namespace gamemd {
@@ -406,8 +405,8 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
   int v8; // eax
   unsigned int *v9; // edi
   int v10; // ecx
-  unsigned char (*)[4] v11;
-  unsigned int *v12; // ecx
+  int v11; // eax
+  unsigned char (*)[4] v12;
   int v13; // eax
   struct tagRECT Rect; // [esp+18h] [ebp-30h] BYREF
   unsigned int v15[4]; // [esp+28h] [ebp-20h] BYREF
@@ -461,7 +460,7 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
       v15[3] = v18; /*0x61d7d6*/
       if ( !v8 ) /*0x61d7da*/
       {
-        v9 = (unsigned int *)(operator new(0x20u));
+        v9 = (unsigned int *)(RA2_OPNEW(0x20u));
         if ( v9 ) /*0x61d7ee*/
         {
           v10 = (unsigned int)(Rect.bottom - Rect.top + 1);
@@ -478,9 +477,9 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
         }
         else
         {
-          v12 = 0; /*0x61d83a*/
+          v12 = (unsigned int)(0);
         }
-        v6[4] = (unsigned int)(v12);
+        v6[4] = v12; /*0x61d83c*/
         ++g_GameScreenState; /*0x61d847*/
         (*(void (__thiscall **)(unsigned int *, unsigned int *, int, unsigned int *, unsigned int, int))(*v12 + 8))( /*0x61d860*/
           v12,
@@ -509,7 +508,6 @@ AbstractClass * * NetworkLobbyPaintProc(HWND hWnd, unsigned int a2, int a3, unsi
       return 0; /*0x61d76b*/
   }
 }
-}
 // 0x61ECA0
 namespace gamemd {
 AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
@@ -520,11 +518,11 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
   AbstractClass ** v7;
   LRESULT (__stdcall **v8)(HWND, UINT, WPARAM, LPARAM); // eax
   AbstractClass ** result;
-  AbstractClass ** v10;
+  int v10; // edi
   unsigned int *v11; // esi
-  unsigned char (*)[4] v12;
+  int v12; // eax
   int v13; // ecx
-  unsigned int *v14; // ecx
+  unsigned char (*)[4] v14;
   LRESULT v15; // eax
   int v16; // eax
   struct tagRECT Rect; // [esp+28h] [ebp-B4h] BYREF
@@ -560,21 +558,21 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
             if ( !result ) /*0x61edfe*/
               return result; /*0x61edfe*/
           }
-          v10 = (gamemd::AbstractClass **)((int)(result + 4));
+          v10 = (int)(result + 4);
           if ( result != -4 ) /*0x61ee18*/
           {
             if ( !*(unsigned int *)(result + 20) ) /*0x61ee1e*/
             {
-              v11 = (unsigned int *)(operator new(0x20u));
+              v11 = (unsigned int *)(RA2_OPNEW(0x20u));
               if ( v11 ) /*0x61ee33*/
               {
                 v12 = (unsigned int)(v21);
                 v13 = (unsigned int)(v20);
                 v11[2] = (unsigned int)(v21);
-                v11[1] = (unsigned int)(v13);
-                v11[3] = (unsigned int)(0);
-                *v11 = (unsigned int)(&XSurface_Vtable);
-                v11[4] = (unsigned int)(2);
+                v11[1] = v13; /*0x61ee45*/
+                v11[3] = 0; /*0x61ee4e*/
+                *v11 = &XSurface_Vtable; /*0x61ee55*/
+                v11[4] = 2; /*0x61ee5b*/
                 Buffer::Init(v11 + 5, 0, 2 * v13 * v12); /*0x61ee62*/
                 *v11 = &BSurface_Vtable; /*0x61ee67*/
                 v14 = v11; /*0x61ee6d*/
@@ -628,10 +626,10 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
     && (v6 = *((unsigned int *)g_DialogHashMap_Entries
              + (g_DialogHashMap_Callback(&hWnd) & ((1 << g_DialogHashMap_Insert) - 1)))) != 0 )
   {
-    v7 = (gamemd::AbstractClass **)((HWND)((gamemd::AbstractClass **)(hWnd)));
+    v7 = (gamemd::AbstractClass **)(hWnd);
     while ( *(HWND *)v6 != hWnd ) /*0x61ed09*/
     {
-      v6 = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(*(unsigned int *)(v6 + 8))));
+      v6 = (int)((gamemd::AbstractClass **)(*(unsigned int *)(v6 + 8)));
       if ( !v6 ) /*0x61ed10*/
         return CallWindowProcA(v5, v7, v4, wParam, lParam); /*0x61ed10*/
     }
@@ -641,25 +639,24 @@ AbstractClass * * RenderDialogSurface(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM
   }
   else
   {
-    v7 = hWnd; /*0x61ed23*/
+    v7 = (HWND)((gamemd::AbstractClass **)(hWnd));
   }
-  return CallWindowProcA(v5, v7, v4, wParam, lParam, unsigned int a1, unsigned int a2); /*0x61ed43*/
-}
+  return CallWindowProcA(v5, v7, v4, wParam, lParam); /*0x61ed43*/
 }
 // 0x61EF70
 namespace gamemd {
 void FormatHotkeyDisplayString(void * a1, void * a2)
 {
   int result; // eax
-  void * v3;
-  void * v4;
-  void * v5;
+  int16_t v3; // kr1C_2
+  UINT v4; // eax
+  UINT v5; // eax
   UINT v6; // eax
   UINT v7; // eax
   CHAR String[32]; // [esp+Ch] [ebp-214h] BYREF
   wchar_t Format[250]; // [esp+2Ch] [ebp-1F4h] BYREF
 
-  result = (int16_t)(IDA_HIBYTE(a1));
+  result = (short)(IDA_HIBYTE(a1));
   v3 = a1; /*0x61ef84*/
   IDA_LOBYTE(Format[0]) = 0; /*0x61ef88*/
   *a2 = 0; /*0x61ef8d*/
@@ -667,7 +664,7 @@ void FormatHotkeyDisplayString(void * a1, void * a2)
   {
     if ( (a1 & 0x400) != 0 ) /*0x61efaa*/
     {
-      v4 = (unsigned char)(MapVirtualKeyA(0x12u, 0));
+      v4 = MapVirtualKeyA(0x12u, 0); /*0x61efb0*/
       GetKeyNameTextA((v4 << 16) | 0x2000001, String, 32); /*0x61efc2*/
       strcat((char *)Format, String); /*0x61efe8*/
       strcat((char *)Format, asc_835A34); /*0x61f014*/
@@ -676,7 +673,7 @@ void FormatHotkeyDisplayString(void * a1, void * a2)
     }
     if ( (result & 2) != 0 ) /*0x61f027*/
     {
-      v5 = (unsigned char)(MapVirtualKeyA(0x11u, 0));
+      v5 = MapVirtualKeyA(0x11u, 0); /*0x61f02d*/
       GetKeyNameTextA((v5 << 16) | 0x2000001, String, 32); /*0x61f03f*/
       strcat((char *)Format, String); /*0x61f065*/
       strcat((char *)Format, asc_835A34); /*0x61f091*/
@@ -685,7 +682,7 @@ void FormatHotkeyDisplayString(void * a1, void * a2)
     }
     if ( (result & 1) != 0 ) /*0x61f0a4*/
     {
-      v6 = (unsigned char)(MapVirtualKeyA(0x10u, 0));
+      v6 = MapVirtualKeyA(0x10u, 0); /*0x61f0aa*/
       GetKeyNameTextA((v6 << 16) | 0x2000001, String, 32); /*0x61f0bc*/
       strcat((char *)Format, String); /*0x61f0e2*/
       strcat((char *)Format, asc_835A34); /*0x61f10e*/
@@ -697,7 +694,6 @@ void FormatHotkeyDisplayString(void * a1, void * a2)
     return swprintf(a2, (const size_t)g_Str_Trace__hs, Format); /*0x61f174*/
   }
   return result; /*0x61f180*/
-}
 }
 // 0x61F210
 namespace gamemd {
@@ -1107,16 +1103,16 @@ int sub_6107A0()
 namespace gamemd {
 unsigned int * E4Recv_6107E0::sub_6107E0()
 {
-  *this = 0; /*0x6107e4*/
-  this->M4 = 0; /*0x6107e6*/
-  this->M8 = 0; /*0x6107e9*/
-  this->M12 = 0; /*0x6107ec*/
-  this->M16 = 0; /*0x6107ef*/
-  this->M20 = 0; /*0x6107f2*/
-  *(&this->q0189) = 0; /*0x6107f6*/
+  this->vtable0 = 0; /*0x6107e4*/
+  this->vtable1 = 0; /*0x6107e6*/
+  this->vtable2 = 0; /*0x6107e9*/
+  this->vtable3 = 0; /*0x6107ec*/
+  this->uniqueId = 0; /*0x6107ef*/
+  IDA_LOWORD(this->abstractFlags) = 0; /*0x6107f2*/
+  this->M276 = 0; /*0x6107f6*/
   this->M280 = 0; /*0x6107fc*/
   this->M284 = 0; /*0x610802*/
-  return this; /*0x610808*/
+  return &this->vtable0; /*0x610808*/
 }
 } // namespace gamemd
 

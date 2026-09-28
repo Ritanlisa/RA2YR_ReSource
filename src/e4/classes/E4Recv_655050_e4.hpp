@@ -24,9 +24,6 @@ struct E4Recv_655050 {
     unsigned int q5264;  // 0x5264
     unsigned int q5444;  // 0x5444
     unsigned int q6408;  // 0x6408
-    unsigned int u32_185;
-    unsigned int u32_20C6;
-    unsigned int u32_20C8;
 // --- flat members (END) ---
     unsigned int * sub_655050(unsigned int * a2,  short * a3);    // 0x655050
 };

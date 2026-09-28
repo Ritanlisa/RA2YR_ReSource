@@ -112,45 +112,6 @@ struct Scenario {
     unsigned char q1650;  // 0x1650
     unsigned char q1908;  // 0x1908
     void* q1910;  // 0x1910
-    unsigned char q1CDD;  // 0x1CDD
-    unsigned int q2084;  // 0x2084
-    unsigned char q2100;  // 0x2100
-    unsigned int q2178;  // 0x2178
-    unsigned int q2198;  // 0x2198
-    unsigned int q2304;  // 0x2304
-    void* q34AC;  // 0x34AC
-    void* q34B0;  // 0x34B0
-    unsigned char q34B4;  // 0x34B4
-    unsigned char q34C1;  // 0x34C1
-    void* q34CC;  // 0x34CC
-    unsigned char q34D0;  // 0x34D0
-    void* q3530;  // 0x3530
-    unsigned char q3534;  // 0x3534
-    void* q3578;  // 0x3578
-    unsigned char q357C;  // 0x357C
-    void* q3594;  // 0x3594
-    void* q3598;  // 0x3598
-    unsigned char q359C;  // 0x359C
-    void* q35A0;  // 0x35A0
-    unsigned char q35A4;  // 0x35A4
-    unsigned char q35A6;  // 0x35A6
-    void* q4584;  // 0x4584
-    unsigned char q4588;  // 0x4588
-    unsigned char q5170;  // 0x5170
-    unsigned char q5294;  // 0x5294
-    unsigned char q5298;  // 0x5298
-    void* q5444;  // 0x5444
-    unsigned char q5460;  // 0x5460
-    unsigned char q5494;  // 0x5494
-    void* q5508;  // 0x5508
-    void* q5640;  // 0x5640
-    unsigned char q5668;  // 0x5668
-    void* q5684;  // 0x5684
-    unsigned int tail_577D;  // 0x577D
-    unsigned char q6408;  // 0x6408
-    unsigned char q640C;  // 0x640C
-    unsigned char q6438;  // 0x6438
-    unsigned char q643C;  // 0x643C
 // --- flat members (END) ---
     int ReadTeams();  // 0x44F820
     int CopyLocalScenarioData();  // 0x4C6180

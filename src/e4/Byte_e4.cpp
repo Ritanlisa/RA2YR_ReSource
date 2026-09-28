@@ -10,7 +10,7 @@
 namespace gamemd {
 unsigned char * Byte::Zero()
 {
-  *(unsigned int *)this = 0; /*0x4f4c22*/
+  IDA_LOBYTE(this->Byte_field_00) = 0; /*0x4f4c22*/
   return this; /*0x4f4c25*/
 }
 } // namespace gamemd

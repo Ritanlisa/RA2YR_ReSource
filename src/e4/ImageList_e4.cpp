@@ -13,4 +13,3 @@ int ImageList_DragShowNolock()
 {
   return ImageList_DragShowNolock(fShow);
 }
-}

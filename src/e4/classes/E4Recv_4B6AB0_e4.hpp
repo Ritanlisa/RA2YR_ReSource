@@ -18,7 +18,6 @@ struct E4Recv_4B6AB0 {
     unsigned int q304;  // 0x304
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
-    unsigned int u32_40;
 // --- flat members (END) ---
     char sub_4B6AB0(int a2);  // 0x4B6AB0
 };

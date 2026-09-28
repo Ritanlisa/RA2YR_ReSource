@@ -41,18 +41,21 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
   int i; // ebx
   uint8_t *StringByIndex; // eax
   int v7; // esi
-  unsigned int *v8; // eax
-  unsigned int *v9; // esi
+  TeamTypeClass *v8; // eax
+  unsigned int *Base; // esi
   char Source[32]; // [esp+10h] [ebp-20h] BYREF
 
-  result = (int)(INIClass::GetKeyCount(a1, (uint8_t *)g_INI_Key_TeamTypes));
+  result = INIClass::GetKeyCount(a1->__pad_0, (uint8_t *)g_INI_Key_TRUCKA.DebrisMaximums); /*0x6f19c1*/
   v4 = result; /*0x6f19c6*/
-  for ( i = 0; i < v4; v9[58] = a2 ) /*0x6f19cc*/
+  for ( i = 0; i < v4; Base[58] = a2 ) /*0x6f19cc*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1, (uint8_t *)g_INI_Key_TeamTypes, i); /*0x6f19db*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex( /*0x6f19db*/
+                                         a1->__pad_0,
+                                         (uint8_t *)g_INI_Key_TRUCKA.DebrisMaximums,
+                                         i);
     INIClass::GetString( /*0x6f19f4*/
-      (uint8_t ***)a1,
-      (uint8_t *)g_INI_Key_TeamTypes,
+      a1,
+      (uint8_t *)g_INI_Key_TRUCKA.DebrisMaximums,
       StringByIndex,
       &g_INI_DefaultBuffer,
       Source,
@@ -60,28 +63,28 @@ TeamTypeClass * * SmallFunc_6F19B0(char * a1, int a2)
     if ( !_strcmpi(g_Str__none_, Source) || !_strcmpi(g_Str_none, Source) ) /*0x6f1a19*/
       goto LABEL_10; /*0x6f1a19*/
     v7 = 0; /*0x6f1a2a*/
-    if ( g_MultiplayerLogState > 0 ) /*0x6f1a2e*/
+    if ( *(int *)&stru_A8EB00.gapE4[204] > 0 ) /*0x6f1a2e*/
     {
-      while ( _strcmpi((const void *)(*((unsigned int *)g_TeamTypePool + v7) + 36), Source) ) /*0x6f1a4c*/
+      while ( _strcmpi((char *)(*(unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[192] + 4 * v7) + 36), Source) ) /*0x6f1a4c*/
       {
-        if ( ++v7 >= g_MultiplayerLogState ) /*0x6f1a56*/
+        if ( ++v7 >= *(int *)&stru_A8EB00.gapE4[204] ) /*0x6f1a56*/
           goto LABEL_7; /*0x6f1a56*/
       }
-      v9 = (unsigned int *)*((unsigned int *)g_TeamTypePool + v7); /*0x6f1a7f*/
+      Base = *(unsigned int **)(*(unsigned int *)&stru_A8EB00.gapE4[192] + 4 * v7); /*0x6f1a7f*/
       goto LABEL_11; /*0x6f1a82*/
     }
-  LABEL_7: v8 = (unsigned int *)(operator new(0xF8u));
+  LABEL_7:
+    v8 = (TeamTypeClass *)RA2_OPNEW(0xF8u); /*0x6f1a5d*/
     if ( v8 ) /*0x6f1a67*/
-      v9 = TechnoTypeClass::LoadBase(v8, Source); /*0x6f1a75*/
+      Base = TechnoTypeClass::LoadBase(v8, Source); /*0x6f1a75*/
     else
   LABEL_10:
-      v9 = 0; /*0x6f1a84*/
+      Base = 0; /*0x6f1a84*/
   LABEL_11:
-    result = (*(int (__thiscall **)(unsigned int *, char *))(*v9 + 100))(v9, a1); /*0x6f1a86*/
+    result = (*(int (__thiscall **)(unsigned int *, INIClass *))(*Base + 100))(Base, a1); /*0x6f1a86*/
     ++i; /*0x6f1a8e*/
   }
   return (gamemd::TeamTypeClass **)(result);
-}
 }
 // 0x40D1B0
 namespace gamemd {
@@ -89,19 +92,21 @@ void sub_40D1B0()
 {
   int *v0; // esi
   int v1; // edi
+  ObjectClass *v2; // [esp+0h] [ebp-8h]
 
+  *(unsigned int *)&stru_87F5F0.__pad_58[416] = (void*)&MouseClass_vftable; /*0x40d1b2*/
   dword_884D00 = (int)&MouseClass_vftable; /*0x40d1bc*/
   v0 = &dword_884B84; /*0x40d1c6*/
   v1 = 4; /*0x40d1cb*/
   do /*0x40d1f0*/
   {
     v0 -= 997; /*0x40d1d0*/
-    Array::ForEachReverse((int)(v0 + 20), 52, 75, (int (__thiscall *)(int))nullsub_56); /*0x40d1e3*/
-    nullsub_57(v0); /*0x40d1ea*/
+    Array::ForEachReverse(v0 + 20, 52, 75, (int (__thiscall *)(int))nullsub_56); /*0x40d1e3*/
+    nullsub_57(v2); /*0x40d1ea*/
     --v1; /*0x40d1ef*/
   }
   while ( v1 ); /*0x40d1f0*/
-  RadarClass::Destruct(&MapClass_Instance); /*0x40d1f7*/
+  RadarClass::Destruct((RadarClass *)&stru_87F5F0.__pad_58[416]); /*0x40d1f7*/
 }
 } // namespace gamemd
 
@@ -180,17 +185,20 @@ char sub_5A1F60()
 namespace gamemd {
 int E4Recv_5AFEF0::sub_5AFEF0()
 {
+  int v2; // eax
 
-  LocomotionClass::Init(); /*0x5afef3*/
-  this->q018 = g_MatrixTransformState; /*0x5aff01*/
-  this->M28 = dword_ABEE14; /*0x5aff0a*/
-  this->M32 = dword_ABEE18; /*0x5aff16*/
-  this->M24 = g_MatrixTransformState; /*0x5aff1e*/
-  this->q028 = dword_ABEE14; /*0x5aff26*/
-  dword_ABEE18 = dword_ABEE18; /*0x5aff29*/
-  this->M48 = 0; /*0x5aff2e*/
-  this->M44 = dword_ABEE18; /*0x5aff38*/
-  return this; /*0x5aff44*/
+  LocomotionClass::Init((LocomotionClass *)this); /*0x5afef3*/
+  this->MovingDestination[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff01*/
+  this->MovingDestination[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff0a*/
+  this->MovingDestination[2] = g_MissionQueueFrame.localVariables[229]; /*0x5aff16*/
+  this->HeadToCoord[0] = g_MissionQueueFrame.localVariables[227]; /*0x5aff1e*/
+  this->HeadToCoord[1] = g_MissionQueueFrame.localVariables[228]; /*0x5aff26*/
+  v2 = g_MissionQueueFrame.localVariables[229]; /*0x5aff29*/
+  this->IsMoving = 0; /*0x5aff2e*/
+  *(unsigned int *)this->__pad_0 = (void*)&MechLocomotionClass_vftable; /*0x5aff32*/
+  this->HeadToCoord[2] = v2; /*0x5aff38*/
+  *(unsigned int *)&this->__pad_0[4] = (void*)&MechLocomotionClass_vftable; /*0x5aff3b*/
+  return (int)this->__pad_0; /*0x5aff44*/
 }
 } // namespace gamemd
 
@@ -200,7 +208,7 @@ int SmallFunc_67B500(unsigned char *** a1, INIClass * edx0, unsigned char * a2, 
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString(a1, edx0, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67b51e*/
+  if ( INIClass::GetString((INIClass *)a1, edx0, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67b51e*/
     return WarheadTypeClass::FindOrCreate(Destination); /*0x67b52b*/
   else
     return a4; /*0x67b539*/
@@ -213,7 +221,7 @@ BuildingTypeClass * SmallFunc_67BCE0(unsigned char *** a0, INIClass * aP1, unsig
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString(a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bcfe*/
+  if ( INIClass::GetString((INIClass *)a0, aP1, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bcfe*/
     return BuildingTypeClass::FindOrCreate(Destination); /*0x67bd0b*/
   else
     return a4; /*0x67bd19*/
@@ -226,7 +234,7 @@ TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsig
 {
   char Destination[128]; // [esp+0h] [ebp-80h] BYREF
 
-  if ( INIClass::GetString(a1, edx0, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd9e*/
+  if ( INIClass::GetString((INIClass *)a1, edx0, a2, &g_INI_DefaultBuffer, Destination, 128) ) /*0x67bd9e*/
     return TerrainTypeClass::FindOrCreate(Destination); /*0x67bdab*/
   else
     return a4; /*0x67bdb9*/
@@ -237,16 +245,18 @@ TerrainTypeClass * SmallFunc_67BD80(unsigned char *** a1, INIClass * edx0, unsig
 namespace gamemd {
 char sub_6E2660(int a1, int a2, int a3, int a4)
 {
-  g_RadarBlipPool = 0; /*0x6e2669*/
-  g_RadarBlipManager = 0; /*0x6e266f*/
-  dword_880994 = -1; /*0x6e2675*/
-  Mouse::SetBounds((int)&MapClass_Instance, 0); /*0x6e267f*/
-  BuildingClass::TogglePower2(&MapClass_Instance, 0); /*0x6e268a*/
-  BuildingClass::TogglePower(&MapClass_Instance, 0); /*0x6e2695*/
-  byte_88099A = 0; /*0x6e269a*/
-  byte_88099B = 0; /*0x6e26a0*/
-  byte_88099C = 0; /*0x6e26a6*/
-  Scenario::ClearScreen(unsigned int a6); /*0x6e26ac*/
+  Scenario *v5; // [esp+0h] [ebp-4h]
+
+  *(unsigned int *)&stru_87F5F0.__pad_E12[1418] = 0; /*0x6e2669*/
+  *(unsigned int *)&stru_87F5F0.__pad_E12[1422] = 0; /*0x6e266f*/
+  *(unsigned int *)&stru_87F5F0.__pad_E12[1426] = -1; /*0x6e2675*/
+  Mouse::SetBounds((int)&stru_87F5F0.__pad_58[416], 0); /*0x6e267f*/
+  BuildingClass::TogglePower2((BuildingClass *)&stru_87F5F0.__pad_58[416], 0); /*0x6e268a*/
+  BuildingClass::TogglePower((BuildingClass *)&stru_87F5F0.__pad_58[416], 0); /*0x6e2695*/
+  stru_87F5F0.__pad_E12[1432] = 0; /*0x6e269a*/
+  stru_87F5F0.__pad_E12[1433] = 0; /*0x6e26a0*/
+  stru_87F5F0.__pad_E12[1434] = 0; /*0x6e26a6*/
+  Scenario::ClearScreen(v5); /*0x6e26ac*/
   return 1; /*0x6e26b3*/
 }
 } // namespace gamemd
@@ -255,28 +265,29 @@ char sub_6E2660(int a1, int a2, int a3, int a4)
 namespace gamemd {
 char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int _18, unsigned int * a5, int a7, void * a3, void * a4, void * a6)
 {
-  void *v7; // esi
+  HouseClass *v7; // esi
   int Field11; // eax
+  HouseClass *v10; // [esp+0h] [ebp-4h]
 
-  v7 = *(void **)(a1 + 144); /*0x6e3121*/
+  v7 = *(HouseClass **)(a1 + 144); /*0x6e3121*/
   if ( !a6 ) /*0x6e312d*/
     return 0; /*0x6e312d*/
-  if ( v7 == (void *)8997 ) /*0x6e3135*/
+  if ( v7 == (HouseClass *)8997 ) /*0x6e3135*/
   {
     Field11 = Property::GetField11(a6); /*0x6e3137*/
   }
   else
   {
-    if ( v7 == (void *)-1 ) /*0x6e3141*/
+    if ( v7 == (HouseClass *)-1 ) /*0x6e3141*/
       return 0; /*0x6e3163*/
-    if ( BuildingType::IsSpecialType(v7) ) /*0x6e3145*/
+    if ( (uint8_t)BuildingType::IsSpecialType(v7) ) /*0x6e3145*/
       Field11 = BuildingType::FindOwnerHouse(v7); /*0x6e3150*/
     else
-      Field11 = HouseClass::FindOwner(v7, unsigned int a3); /*0x6e3157*/
+      Field11 = HouseClass::FindOwner(v7); /*0x6e3157*/
   }
   if ( !Field11 ) /*0x6e315e*/
     return 0; /*0x6e315e*/
-  HouseClass::RespawnStartingBuildings(Field11, a2, a3, (int)v7); /*0x6e3168*/
+  HouseClass::RespawnStartingBuildings(v10, a2, a3, (int)v7); /*0x6e3168*/
   return 1; /*0x6e3162*/
 }
 } // namespace gamemd
@@ -285,15 +296,17 @@ char SmallFunc_6E3120(int _8, void ** a1, unsigned int * a2, IUnknown * aP3, int
 namespace gamemd {
 int E4Recv_728A00::sub_728A00()
 {
-  LocomotionClass::Init(); /*0x728a03*/
-  *(unsigned int *)((char *)&this->q056 + 10) = 0; /*0x728a0d*/
-  *(unsigned int *)((char *)&this->q064 + 12) = dword_B0F910; /*0x728a16*/
-  this->q080 = dword_B0F914; /*0x728a1e*/
-  *(unsigned int *)((char *)&this->q086 + 10) = dword_B0F918; /*0x728a27*/
-  *(unsigned int *)((char *)&this->q086 + 26) = g_CurrentFrame; /*0x728a30*/
-  *(unsigned int *)((char *)&this->q086 + 58) = 0; /*0x728a33*/
-  *(unsigned int *)((char *)&this->q086 + 74) = 0; /*0x728a36*/
-  *(unsigned char *)&this->M56 = 0; /*0x728a39*/
-  return this; /*0x728a4b*/
+  LocomotionClass::Init((LocomotionClass *)this); /*0x728a03*/
+  this->CurrentState[0] = 0; /*0x728a0d*/
+  this->CurrentState[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728a16*/
+  this->CurrentState[2] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728a1e*/
+  this->CurrentState[3] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[360]; /*0x728a27*/
+  this->CurrentState[4] = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x728a30*/
+  this->CurrentState[6] = 0; /*0x728a33*/
+  this->CurrentState[7] = 0; /*0x728a36*/
+  IDA_LOBYTE(this->CurrentState[8]) = 0; /*0x728a39*/
+  *(unsigned int *)this->__pad_0 = (void*)&TunnelLocomotionClass_vftable; /*0x728a3c*/
+  *(unsigned int *)&this->__pad_0[4] = (void*)&TunnelLocomotionClass_vftable; /*0x728a42*/
+  return (int)this->__pad_0; /*0x728a4b*/
 }
 } // namespace gamemd

@@ -16,6 +16,9 @@
 #include "e4/classes/TypeList_Particle_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/TypeList_flat_e4.hpp"
+#include "e4/classes/Tiberium_e4.hpp"
+#include "e4/classes/TiberiumClass_e4.hpp"
+#include "e4/classes/TypeList_TechnoType_e4.hpp"
 
 // 0x5F8CE0
 namespace gamemd {
@@ -145,7 +148,7 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
             BufferIOFileClass::Dtor(v20); /*0x5f8ff7*/
           }
         }
-        v25 = (void **)((unsigned int)(0));
+        v25 = (void **)((unsigned int)((void **)((unsigned int)(0))));
         Vector::Clear((int)v24); /*0x5f9013*/
         v23[0] = &off_7E1668; /*0x5f9021*/
         BufferIOFileClass::Dtor(v23); /*0x5f9025*/
@@ -163,27 +166,32 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
 namespace gamemd {
 float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
 {
-  signed int v3; // edi
+  LocomotionClass *v3; // edi
   unsigned int *v4; // esi
   float *result; // eax
   float v6; // [esp+0h] [ebp-40h]
   int v7; // [esp+Ch] [ebp-34h] BYREF
-  float v8[12]; // [esp+10h] [ebp-30h] BYREF
+  Matrix3x4 v8; // [esp+10h] [ebp-30h] BYREF
 
-  Matrix3x4::Identity(v8); /*0x55a739*/
+  Matrix3x4::Identity(&v8); /*0x55a739*/
   v3 = a1; /*0x55a73e*/
-  a1 = (((unsigned int)((*ProgressTimer::GetValue((unsigned short *)(*(unsigned int *)(a1 + 8) + 904), &v7) >> 10) + 1) >> 1) & 0x1F) /*0x55a763*/
-     - 8;
-  v6 = (double)a1 * -0.1963495408493621; /*0x55a776*/
-  Matrix2D::Rotate(v8, v6); /*0x55a779*/
+  a1 = (LocomotionClass *)((((unsigned int)((*ProgressTimer::GetValue( /*0x55a763*/
+                                                  (ProgressTimer *)a1->Owner->primaryFacing,
+                                                  &v7) >> 10)
+                                            + 1) >> 1)
+                            & 0x1F)
+                           - 8);
+  v6 = (double)(int)a1 * -0.1963495408493621; /*0x55a776*/
+  Matrix2D::Rotate(v8.m_Data, v6); /*0x55a779*/
   v4 = a3; /*0x55a77e*/
   if ( a3 && *a3 != -1 ) /*0x55a78b*/
   {
     *a3 *= 32; /*0x55a790*/
-    *v4 |= ((unsigned int)((*ProgressTimer::GetValue((unsigned short *)(*(unsigned int *)(v3 + 8) + 904), &a1) >> 10) + 1) >> 1) & 0x1F; /*0x55a7b4*/
+    *v4 |= ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)v3->Owner->primaryFacing, &a1) >> 10) + 1) >> 1) /*0x55a7b4*/
+         & 0x1F;
   }
   result = a2; /*0x55a7b6*/
-  qmemcpy(a2, v8, 0x30u); /*0x55a7c5*/
+  qmemcpy(a2, &v8, 0x30u); /*0x55a7c5*/
   return result; /*0x55a7c7*/
 }
 } // namespace gamemd

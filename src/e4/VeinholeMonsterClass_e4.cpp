@@ -23,7 +23,7 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
   int v6; // ecx
   int v7; // eax
   int v8; // ecx
-  unsigned int * v9;
+  unsigned int v9; // eax
   unsigned int v10;
   int v12; // [esp+14h] [ebp+4h]
 
@@ -46,11 +46,11 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
   IDA_HIWORD(v12) = v5; /*0x5862f0*/
   while ( 1 ) /*0x5862fb*/
   {
-    v9 = (unsigned int *)(((int16_t)v5 << 9) + (int16_t)v8);
+    v9 = (unsigned int)(((int16_t)v5 << 9) + (int16_t)v8);
     IDA_LOWORD(v12) = v8; /*0x5862fd*/
     if ( v9 >= 0x40000 || (v10 = *(unsigned int **)(g_Shroud_CellArray + 4 * v9)) == 0 ) /*0x586311*/
     {
-      g_Map_GlobalCellIndex = v12; /*0x586317*/
+      g_Map_GlobalCellIndex = (int)((unsigned int *)(v12));
       v10 = g_CellClassArray; /*0x58631c*/
     }
     if ( v10[57] ) /*0x586321*/
@@ -59,11 +59,10 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
       goto LABEL_9; /*0x586332*/
   }
 }
-}
 // 0x74EEE0
 int VeinholeMonsterClass::Update(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x74eef4*/
+  return AbstractClass::SaveLoad_Prefix((int *)aP0->__pad_0, a1, aP2); /*0x74eef4*/
 }
 // 0x74EF00
 int VeinholeMonsterClass::CheckStatus()
@@ -94,8 +93,8 @@ int VeinholeMonsterClass::StubReturn264()
 // 0x74F340
 VeinholeMonsterClass * VeinholeMonsterClass::SpreadTiberium(char a2)
 {
-  DestroyVeinholeMonster(); /*0x74f343*/
+  DestroyVeinholeMonster(this); /*0x74f343*/
   if ( (a2 & 1) != 0 ) /*0x74f34d*/
-    RA2_OPDEL(); /*0x74f350*/
-  return this; /*0x74f35a*/
+    RA2_OPDEL(this); /*0x74f350*/
+  return (void **)this; /*0x74f35a*/
 }

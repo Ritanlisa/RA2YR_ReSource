@@ -28,7 +28,7 @@ int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, 
   void **v3; // esi
   int result; // eax
   unsigned int *v5; // eax
-  bool v6; // ebp
+  BOOL v6; // ebp
   int (__stdcall *v7)(char *, unsigned int *, char **, void *); // eax
   void *v8; // eax
   char *v9; // esi
@@ -67,7 +67,6 @@ int WonlineStringDialogControl_28::QueryInterface(char * a1, unsigned int * a2, 
   (*(void (__stdcall **)(char *))(*(unsigned int *)v9 + 4))(v9); /*0x7ad775*/
   *a3 = v9; /*0x7ad778*/
   return 0; /*0x7ad6a1*/
-}
 }
 // 0x7AC970
 namespace gamemd {
@@ -298,7 +297,6 @@ int WonlineStringDialogControl_12::FindItem(unsigned int * a2)
   }
   return result; /*0x7ad2e2*/
 }
-}
 // 0x7AD370
 namespace gamemd {
 VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(char a2)
@@ -306,15 +304,16 @@ VectorClass_flat * WonlineStringDialogControl_12::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x7ad373*/
+  *(void **)this = (void*)&VectorClass_tConnInfoStruct___vftable; /*0x7ad376*/
   if ( v3 && this->IsAllocated ) /*0x7ad380*/
   {
     RA2_OPDEL(v3); /*0x7ad388*/
     this->q004 = 0; /*0x7ad390*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
+  this->IsAllocated = 0; /*0x7ad39b*/
+  this->q008 = 0; /*0x7ad3a1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3a8*/
-    RA2_OPDEL(); /*0x7ad3ab*/
+    RA2_OPDEL(this); /*0x7ad3ab*/
   return this; /*0x7ad3b5*/
 }
 } // namespace gamemd
@@ -326,15 +325,16 @@ DynamicVector * WonlineStringDialogControl_12::Constructor_VectorClass_tConnInfo
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x7ad3c3*/
+  *(void **)this = (void*)&VectorClass_tConnInfoStruct___vftable; /*0x7ad3c6*/
   if ( v3 && this->IsAllocated ) /*0x7ad3d0*/
   {
     RA2_OPDEL(v3); /*0x7ad3d8*/
     this->q004 = 0; /*0x7ad3e0*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = (int)((gamemd::DynamicVector *)(0));
+  this->IsAllocated = 0; /*0x7ad3eb*/
+  this->q008 = 0; /*0x7ad3f1*/
   if ( (a2 & 1) != 0 ) /*0x7ad3f8*/
-    RA2_OPDEL(); /*0x7ad3fb*/
+    RA2_OPDEL(this); /*0x7ad3fb*/
   return this; /*0x7ad405*/
 }
 } // namespace gamemd
@@ -451,6 +451,7 @@ LONG WonlineStringDialogControl_28::Release(char * Block)
   v1 = InterlockedDecrement((volatile LONG *)Block + 1); /*0x7ad654*/
   if ( !v1 && Block ) /*0x7ad65c*/
   {
+    *(unsigned int *)Block = (void*)&ATL_CComObject_CDownloadEventSink_vftable; /*0x7ad663*/
     *((unsigned int *)Block + 1) = 1; /*0x7ad669*/
     InterlockedDecrement(&Addend); /*0x7ad66f*/
     DeleteCriticalSection((LPCRITICAL_SECTION)(Block + 8)); /*0x7ad675*/

@@ -12,14 +12,14 @@
 namespace gamemd {
 void sub_72DC20()
 {
-  unsigned int v0;
-  unsigned int v1;
-  unsigned int v2;
-  unsigned int v3;
+  void *v0; // esi
+  void *v1; // esi
+  void *v2; // esi
+  void *v3; // esi
 
   if ( byte_B0FCC8 ) /*0x72dc2b*/
   {
-    v0 = dword_B0FB48; /*0x72dc2d*/
+    v0 = (void *)(dword_B0FB48);
     if ( dword_B0FB48 ) /*0x72dc35*/
     {
       FileTreeNode::Destroy(dword_B0FB48); /*0x72dc39*/
@@ -30,7 +30,7 @@ void sub_72DC20()
   dword_B0FB48 = 0; /*0x72dc52*/
   if ( byte_B0FCCA ) /*0x72dc5a*/
   {
-    v1 = dword_B0FB10; /*0x72dc5c*/
+    v1 = (void *)(dword_B0FB10);
     if ( dword_B0FB10 ) /*0x72dc64*/
     {
       FileTreeNode::Destroy(dword_B0FB10); /*0x72dc68*/
@@ -41,7 +41,7 @@ void sub_72DC20()
   dword_B0FB10 = 0; /*0x72dc81*/
   if ( byte_B0FCCB ) /*0x72dc89*/
   {
-    v2 = dword_B0F9F8; /*0x72dc8b*/
+    v2 = (void *)(dword_B0F9F8);
     if ( dword_B0F9F8 ) /*0x72dc93*/
     {
       FileTreeNode::Destroy(dword_B0F9F8); /*0x72dc97*/
@@ -52,7 +52,7 @@ void sub_72DC20()
   dword_B0F9F8 = 0; /*0x72dcb0*/
   if ( byte_B0FCCC ) /*0x72dcb8*/
   {
-    v3 = dword_B0FA6C; /*0x72dcba*/
+    v3 = (void *)(dword_B0FA6C);
     if ( dword_B0FA6C ) /*0x72dcc2*/
     {
       FileTreeNode::Destroy(dword_B0FA6C); /*0x72dcc6*/

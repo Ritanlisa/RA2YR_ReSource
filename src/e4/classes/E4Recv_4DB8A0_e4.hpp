@@ -12,7 +12,6 @@ struct E4Recv_4DB8A0 {
     unsigned int M1652;  // 0x674
     unsigned int q854;  // 0x854
     unsigned int q5714;  // 0x5714
-    unsigned int u32_A43;
 // --- flat members (END) ---
     LPVOID sub_4DB8A0();  // 0x4DB8A0
 };

@@ -103,13 +103,16 @@ int Theme::Stop(ObjectClass * aP1)
 namespace gamemd {
 int Theme::IsPlaying()
 {
-  if ( !this->audioSample ) /*0x720fd3*/
+  AudioSample *v2; // ecx
+
+  v2 = (AudioSample *)this->audioSample; /*0x720fd3*/
+  if ( !v2 ) /*0x720fd8*/
     return 0; /*0x721002*/
   if ( this->u8_11 ) /*0x720fda*/
   {
-    if ( !AudioSample::IsBuffering() ) /*0x720fe1*/
-      Audio::Release(*(unsigned int **)(&this->ptr_44)); /*0x720fed*/
+    if ( !AudioSample::IsBuffering(v2) ) /*0x720fe1*/
+      Audio::Release(*((Audio **)&this->ptr_41)); /*0x720fed*/
   }
-  return Audio::IsSoundPlaying(*(unsigned int **)(&this->ptr_44)) != 0; /*0x720ffe*/
+  return Audio::IsSoundPlaying(*((Audio **)&this->ptr_41)) != 0; /*0x720ffe*/
 }
 } // namespace gamemd

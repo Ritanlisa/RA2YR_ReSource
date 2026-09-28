@@ -180,17 +180,17 @@ void  __spoils<ecx> sub_7E01D2(unsigned char * a1, unsigned char * a2, unsigned 
 namespace gamemd {
 void sub_7E01FB(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
 {
-  unsigned int v5;
+  unsigned char *v5; // [esp-24h] [ebp-34h]
   unsigned char * v6;
-  unsigned char * v7;
-  unsigned int v8; // [esp+8h] [ebp-8h]
+  unsigned int v7;
+  unsigned char * v8;
   char *v10; // [esp+Ch] [ebp-4h]
   int *v11; // [esp+18h] [ebp+8h]
   int v12; // [esp+20h] [ebp+10h]
   unsigned int v13; // [esp+28h] [ebp+18h]
 
-  v8 = (unsigned int)(a4 >> 1);
-  v13 = (unsigned int)(a5 >> 1);
+  v8 = (unsigned char *)(a4 >> 1);
+  v13 = (unsigned int *)(a5 >> 1);
   ObfuscateDataBlock(a1, dword_877D20, a4); /*0x7e022a*/
   v7 = &unk_878720; /*0x7e023b*/
   v6 = dword_877D20; /*0x7e023e*/

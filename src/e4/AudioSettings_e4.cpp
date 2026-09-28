@@ -24,7 +24,7 @@
 namespace gamemd {
 void AudioSettings::SetFlag70(char a2)
 {
-  *(&this->u32_1C0) = a2; /*0x5fa444*/
+  this->u32_46 = a2; /*0x5fa444*/
   a2 = a2; /*0x5fa447*/
   Debug::Log(); /*0x5fa463*/
 }
@@ -33,7 +33,7 @@ void AudioSettings::SetFlag70(char a2)
 namespace gamemd {
 void AudioSettings::SetFlag68(char a2)
 {
-  *(&this->q0188) = a2; /*0x5fa474*/
+  this->u32_44 = a2; /*0x5fa474*/
   a2 = a2; /*0x5fa477*/
   Debug::Log(); /*0x5fa493*/
 }
@@ -43,7 +43,7 @@ namespace gamemd {
 AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
   AbstractClass ** result;
-  bool IsSoundEnabled; // ebx
+  BOOL IsSoundEnabled; // ebx
   HWND DlgItem; // eax
   HWND v7; // edi
   LPARAM v8; // eax
@@ -81,7 +81,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   float v40; // [esp+0h] [ebp-F0h]
   float v41; // [esp+0h] [ebp-F0h]
   float v42; // [esp+0h] [ebp-F0h]
-  bool bEnable; // [esp+18h] [ebp-D8h]
+  BOOL bEnable; // [esp+18h] [ebp-D8h]
   WPARAM v44; // [esp+1Ch] [ebp-D4h]
   int Format; // [esp+20h] [ebp-D0h]
   int v46; // [esp+24h] [ebp-CCh]

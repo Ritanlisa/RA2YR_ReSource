@@ -19,11 +19,11 @@ int TubeClass::LoadState(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x7281b6*/
     {
-      AbstractClass::Constructor(aP0); /*0x7281ba*/
-      aP0->parent_gap[0] = (int)&TubeClass_vftable; /*0x7281bf*/
-      aP0->parent_gap[1] = (int)&TubeClass_vftable; /*0x7281c5*/
-      aP0->parent_gap[2] = (int)&TubeClass_vftable; /*0x7281cc*/
-      aP0->parent_gap[3] = (int)&TubeClass_vftable; /*0x7281d3*/
+      AbstractClass::Constructor((AbstractClass *)aP0); /*0x7281ba*/
+      aP0->vtable0 = (void*)&TubeClass_vftable; /*0x7281bf*/
+      aP0->vtable1 = (void*)&TubeClass_vftable; /*0x7281c5*/
+      aP0->vtable2 = (void*)&TubeClass_vftable; /*0x7281cc*/
+      aP0->vtable3 = (void*)&TubeClass_vftable; /*0x7281d3*/
     }
     return 0; /*0x7281da*/
   }
@@ -37,7 +37,7 @@ int TubeClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 {
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x7281ef*/
+  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x7281ef*/
   if ( result >= 0 ) /*0x7281f6*/
     return 0; /*0x7281f8*/
   return result; /*0x7281fa*/
@@ -69,7 +69,7 @@ int TubeClass::ddtor(int a1, unsigned int * a2)
   *a2 = 189572124; /*0x7286e6*/
   a2[1] = 298955687; /*0x7286ee*/
   a2[2] = 1610635188; /*0x7286f7*/
-  a2[3] = 2041169559; /*0x728700*/
+  a2[3] = unk_7E975C; /*0x728700*/
   return 0; /*0x7286dd*/
 }
 } // namespace gamemd

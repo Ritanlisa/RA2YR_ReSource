@@ -55,7 +55,7 @@ long MainMenu_Screen()
       if ( g_DisplayWidth == 640 ) /*0x531d9a*/
         SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM)aRa2tsS); /*0x531da1*/
       else
-        SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM, unsigned int a1, unsigned int a2)aRa2tsL); /*0x531db0*/
+        SendMessageA(DlgItem, 0x4E4u, 0, (LPARAM)aRa2tsL); /*0x531db0*/
     }
     do /*0x531f04*/
     {
@@ -65,7 +65,7 @@ long MainMenu_Screen()
       {
         g_LoadScreenFlag = 0; /*0x531dd0*/
         Screen::Capture(1, 0, a1, a2); /*0x531dd7*/
-        Frame::Present(0, unsigned int a1, unsigned int a2); /*0x531de6*/
+        Frame::Present(0); /*0x531de6*/
       }
       if ( (uint16_t)EventQueue::Process(g_BinkMoviePlayer) ) /*0x531df1*/
       {
@@ -76,7 +76,7 @@ long MainMenu_Screen()
           a2 = (char)v6; /*0x531e1c*/
           if ( !isalnum((char)v6) || (unsigned char)a1 == 126 ) /*0x531e33*/
           {
-            memset(Str, 0, sizeof(Str, unsigned int a1)); /*0x531f3e*/
+            memset(Str, 0, sizeof(Str)); /*0x531f3e*/
           }
           else
           {
@@ -96,7 +96,7 @@ long MainMenu_Screen()
             {
               v9 += 4; /*0x531e98*/
               ++v8; /*0x531e9b*/
-              if ( (int, unsigned int a1, unsigned int a2)v9 >= (int)off_825C6C ) /*0x531ea2*/
+              if ( (int)v9 >= (int)off_825C6C ) /*0x531ea2*/
                 goto LABEL_27; /*0x531ea2*/
             }
             *(unsigned char *)*(&g_PlayerHouseFlags + 4 * v8) = *(unsigned char *)*(&g_PlayerHouseFlags + 4 * v8) == 0; /*0x531ebf*/
@@ -122,7 +122,6 @@ long MainMenu_Screen()
   }
   SetFocus(g_hWnd); /*0x531f50*/
   return dwNewLong; /*0x531f5a*/
-}
 }
 // 0x531F60
 int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)

@@ -18,10 +18,10 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
 {
   int *v9; // eax
   int result; // eax
-  void * v11;
+  int v11; // edi
   LONG v12; // eax
-  void * v13;
-  void * v14;
+  int v13; // edx
+  LONG v14; // edi
   int v15; // edi
   int v16; // eax
   int v17; // edi
@@ -30,9 +30,9 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
   void * v20;
   LONG v21; // edi
   LONG v22; // ebx
-  int v23; // eax
+  void * v23;
   double v24; // st7
-  void * v25;
+  LPPERSISTSTREAM v25; // edi
   int v26; // eax
   double v27; // st7
   LONG v28; // ebx
@@ -55,7 +55,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
   int v45; // [esp+5Ah] [ebp-24h] BYREF
   int v46; // [esp+5Eh] [ebp-20h] BYREF
   LONG v47; // [esp+62h] [ebp-1Ch]
-  void * v48;
+  LONG v48; // [esp+66h] [ebp-18h]
   unsigned int v49;
   struct tagRECT Rect; // [esp+6Eh] [ebp-10h] BYREF
   int v51; // [esp+8Eh] [ebp+10h]
@@ -66,7 +66,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
     v39 = *v9; /*0x4f47a0*/
     v40 = v9[1]; /*0x4f47a7*/
     v41 = v9[2]; /*0x4f47b6*/
-    IDA_LODWORD(v42, unsigned int a1, unsigned int a2, unsigned int a3, unsigned int a4) = v9[3]; /*0x4f47bd*/
+    IDA_LODWORD(v42) = v9[3]; /*0x4f47bd*/
   }
   result = GetClientRect(g_hWnd, &Rect); /*0x4f47cc*/
   if ( result ) /*0x4f47d4*/
@@ -75,8 +75,8 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
     result = ClientToScreen(g_hWnd, (LPPOINT)&v38[4]); /*0x4f47f6*/
     if ( result ) /*0x4f47fe*/
     {
-      v11 = (void *)((int)((void *)((*(int (__thiscall **)(int, int, int, int))(*(unsigned int *)a1 + 128))(a1, a4, a3, a2))));
-      v12 = (LONG)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1));
+      v11 = (*(int (__thiscall **)(int, int, int, int))(*(unsigned int *)a1 + 128))(a1, a4, a3, a2); /*0x4f4811*/
+      v12 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4817*/
       v13 = dword_87F7F0; /*0x4f4828*/
       v45 = v40; /*0x4f4830*/
       v46 = v41; /*0x4f4834*/
@@ -95,7 +95,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
   LABEL_13:
           if ( dword_87F7F0 > 0 ) /*0x4f4860*/
           {
-            v14 = (void *)((LONG)(v11 - dword_87F7F0));
+            v14 = v11 - dword_87F7F0; /*0x4f4865*/
             v46 = dword_87F7F0 + v41; /*0x4f4867*/
   LABEL_17:
             v48 = v14; /*0x4f4871*/
@@ -103,7 +103,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
           }
           if ( dword_87F7F0 < 0 ) /*0x4f486d*/
           {
-            v14 = (void *)((LONG)(dword_87F7F0 + v11));
+            v14 = dword_87F7F0 + v11; /*0x4f486f*/
             goto LABEL_17; /*0x4f486f*/
           }
   LABEL_18:
@@ -124,34 +124,34 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
               if ( (*(int (__thiscall **)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar) >= v17 ) /*0x4f48cc*/
                 v18 = v17; /*0x4f48db*/
               else
-                v18 = (*(int (__thiscall **, unsigned int a8, unsigned int a1)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x4f48d6*/
+                v18 = (*(int (__thiscall **)(int))(*(unsigned int *)DSurface_Sidebar + 124))(DSurface_Sidebar); /*0x4f48d6*/
             }
-            v13 = (unsigned int)((void *)((unsigned int)((void *)(dword_87F7F0))));
+            v13 = dword_87F7F0; /*0x4f48e5*/
             v19 = v18 + v45; /*0x4f48eb*/
             v12 = v47; /*0x4f48ed*/
             v45 = v19; /*0x4f48f1*/
           }
-          v20 = (unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((LONG)(*a8)))))))))));
+          v20 = (unsigned int)((void *)((LONG)(*a8)));
           v21 = (int)(a8[1]);
           v22 = (void *)(a8[2]);
-          Rect.right = (unsigned int)((LONG)((unsigned int)(a8[3])));
-          v49 = (void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)((void *)((unsigned int)(v20))))))));
+          Rect.right = a8[3]; /*0x4f4904*/
+          v49 = v20; /*0x4f4910*/
           Rect.left = v21; /*0x4f4914*/
           Rect.top = v22; /*0x4f4918*/
           if ( g_TacticalClass_Instance /*0x4f4934*/
-            && (g_TacticalClass_Instance[48].lpVtbl
-             || g_TacticalClass_Instance[49].lpVtbl != (struct IPersistStreamVtbl *, void * a1)1072693248) )
+            && (g_TacticalClass_Instance[48].__tail_0
+             || g_TacticalClass_Instance[49].__tail_0 != (struct IPersistStreamVtbl *)1072693248) )
           {
             v51 = (int)((LPPERSISTSTREAM)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1)));
-            v23 = (int)((LPPERSISTSTREAM)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 128))(a1)));
-            v24 = (int)((double)v51);
-            v25 = (LPPERSISTSTREAM)((void *)(g_TacticalClass_Instance));
+            v23 = (int)((void *)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 128))(a1)));
+            v24 = (void *)((double)v51);
+            v25 = g_TacticalClass_Instance; /*0x4f4953*/
             *(unsigned int *)v38 = v23; /*0x4f4959*/
-            v42 = v24 / *(double *)&g_TacticalClass_Instance[48].lpVtbl; /*0x4f4965*/
+            v42 = v24 / *(double *)&g_TacticalClass_Instance[48].__tail_0; /*0x4f4965*/
             v26 = Math::RoundToInt((v24 - v42) * 0.5); /*0x4f4973*/
             v27 = (double)*(int *)v38; /*0x4f4978*/
             v20 = v26; /*0x4f497c*/
-            *(double *)v38 = v27 / *(double *)&v25[48].lpVtbl; /*0x4f4986*/
+            *(double *)v38 = v27 / *(double *)&v25[48].__tail_0; /*0x4f4986*/
             v21 = Math::RoundToInt((v27 - *(double *)v38) * 0.5); /*0x4f499d*/
             v28 = Math::RoundToInt(v42); /*0x4f49a8*/
             v29 = Math::RoundToInt(*(double *)v38); /*0x4f49aa*/
@@ -178,13 +178,13 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
           {
             if ( (uint8_t)Frame::Init() ) /*0x4f4a0b*/
             {
-              v13 = (unsigned int)((void *)((unsigned int)((void *)(dword_87F7F0))));
+              v13 = dword_87F7F0; /*0x4f4a14*/
               v30 = 1; /*0x4f4a1a*/
   LABEL_47:
               if ( !byte_884D2E && !v13 && !v30 ) /*0x4f4a36*/
               {
                 v48 -= *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a4a*/
-                Rect.right -= *((unsigned int *, unsigned int a1)dword_B0FC58 + 3); /*0x4f4a53*/
+                Rect.right -= *((unsigned int *)dword_B0FC58 + 3); /*0x4f4a53*/
               }
   LABEL_51:
               if ( dword_87F7EC ) /*0x4f4a5e*/
@@ -203,13 +203,13 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
                         v38,
                         &v42,
                         0);
-                (*(void (__thiscall **, unsigned int a1)(int, int))(v32 + 16))(g_DSurface_Primary, v33); /*0x4f4acf*/
+                (*(void (__thiscall **)(int, int))(v32 + 16))(g_DSurface_Primary, v33); /*0x4f4acf*/
                 v13 = dword_87F7F0; /*0x4f4ad2*/
               }
               if ( v13 ) /*0x4f4ada*/
               {
-                v34 = (unsigned int)(abs32(v13));
-                v43 = (unsigned int)((*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1));
+                v34 = abs32(v13); /*0x4f4ae7*/
+                v43 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 124))(a1); /*0x4f4af0*/
                 IDA_LODWORD(v42) = v40; /*0x4f4af9*/
                 v44 = v34; /*0x4f4aff*/
                 if ( dword_87F7F0 >= 0 ) /*0x4f4b03*/
@@ -222,7 +222,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
                         v38,
                         &v42,
                         0);
-                (*(void (__thiscall **, unsigned int a1)(int, int))(v35 + 16))(g_DSurface_Primary, v36); /*0x4f4b3d*/
+                (*(void (__thiscall **)(int, int))(v35 + 16))(g_DSurface_Primary, v36); /*0x4f4b3d*/
               }
               if ( v37 && g_WWMouseClass_Instance ) /*0x4f4b50*/
                 (*(void (__thiscall **)(int, int, unsigned int))(*(unsigned int *)g_WWMouseClass_Instance + 60))( /*0x4f4b57*/
@@ -247,7 +247,7 @@ TechnoTypeClass * * Frame::Present(IUnknown * aP1, void * a1, void * a2, void * 
               }
               return result; /*0x4f4ba1*/
             }
-            v13 = (unsigned int)((void *)((unsigned int)((void *)(dword_87F7F0))));
+            v13 = dword_87F7F0; /*0x4f4a1e*/
           }
           v30 = 0; /*0x4f4a24*/
           goto LABEL_47; /*0x4f4a24*/

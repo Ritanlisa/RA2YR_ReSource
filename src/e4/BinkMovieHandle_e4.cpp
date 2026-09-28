@@ -95,53 +95,53 @@ int BinkMovieHandle::RenderFrameClipped(int a2, int v11)
 namespace gamemd {
 unsigned int * BinkMovieHandle::CopyFrameToSurface()
 {
-  int v2; // edi
+  DSurface *width; // edi
   int v3; // ebx
   int v4; // ebp
   int v5; // eax
-  int v6; // ebp
+  int currentFrame; // ebp
   int v7; // ebx
   int v8; // eax
   int v10; // [esp+10h] [ebp-18h]
   int v11; // [esp+10h] [ebp-18h]
   int v12; // [esp+14h] [ebp-14h]
-  int v13; // [esp+14h] [ebp-14h]
+  int height; // [esp+14h] [ebp-14h]
   struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF
 
-  v2 = this->width; /*0x43306e*/
-  if ( v2 == g_DSurface_Primary ) /*0x433073*/
+  width = (DSurface *)this->width; /*0x43306e*/
+  if ( width == g_DSurface_Primary ) /*0x433073*/
   {
     GetClientRect(g_hWnd, &Rect); /*0x433085*/
     ClientToScreen(g_hWnd, (LPPOINT)&Rect); /*0x433096*/
     v3 = Rect.left + this->height; /*0x4330a7*/
     v4 = Rect.top + this->currentFrame; /*0x4330ae*/
-    v2 = this->width; /*0x4330b0*/
-    BinkMovie::AdjustSurfaceFormat(v2); /*0x4330b4*/
-    v12 = (*(int (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)v2 + 92))(v2, 0, 0); /*0x4330c8*/
+    width = (DSurface *)this->width; /*0x4330b0*/
+    BinkMovie::AdjustSurfaceFormat((BinkMovie *)this, (int)width); /*0x4330b4*/
+    v12 = (*((int (__thiscall **)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x4330c8*/
     if ( v12 ) /*0x4330cc*/
     {
-      v10 = (*(int (__thiscall **)(int))(*(unsigned int *)v2 + 116))(v2); /*0x4330dd*/
-      v5 = (*(int (__thiscall **)(int))(*(unsigned int *)v2 + 128))(v2); /*0x4330e1*/
-      BinkCopyToBuffer(this->tempPath, v12, v10, v5, v3, v4, this->renderTarget | 0x80000000); /*0x4330fe*/
+      v10 = (*((int (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 29))(width); /*0x4330dd*/
+      v5 = (*((int (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 32))(width); /*0x4330e1*/
+      BinkCopyToBuffer(this->tempPath, v12, v10, v5, v3, v4, (int)this->renderTarget | 0x80000000); /*0x4330fe*/
   LABEL_6:
-      (*(void (__thiscall **)(int))(*(unsigned int *)v2 + 96))(v2); /*0x43315b*/
+      (*((void (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 24))(width); /*0x43315b*/
     }
   }
   else
   {
-    v6 = this->currentFrame; /*0x433103*/
-    v13 = this->height; /*0x433109*/
-    BinkMovie::AdjustSurfaceFormat(this->width); /*0x43310d*/
-    v7 = (*(int (__thiscall **)(int, unsigned int, unsigned int))(*(unsigned int *)v2 + 92))(v2, 0, 0); /*0x43311f*/
+    currentFrame = this->currentFrame; /*0x433103*/
+    height = this->height; /*0x433109*/
+    BinkMovie::AdjustSurfaceFormat((BinkMovie *)this, this->width); /*0x43310d*/
+    v7 = (*((int (__thiscall **)(DSurface *, unsigned int, unsigned int))width->DSurface_field_0x0 + 23))(width, 0, 0); /*0x43311f*/
     if ( v7 ) /*0x433123*/
     {
-      v11 = (*(int (__thiscall **)(int))(*(unsigned int *)v2 + 116))(v2); /*0x433130*/
-      v8 = (*(int (__thiscall **)(int))(*(unsigned int *)v2 + 128))(v2); /*0x433134*/
-      BinkCopyToBuffer(this->tempPath, v7, v11, v8, v13, v6, this->renderTarget | 0x80000000); /*0x433155*/
+      v11 = (*((int (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 29))(width); /*0x433130*/
+      v8 = (*((int (__thiscall **)(DSurface *))width->DSurface_field_0x0 + 32))(width); /*0x433134*/
+      BinkCopyToBuffer(this->tempPath, v7, v11, v8, height, currentFrame, (int)this->renderTarget | 0x80000000); /*0x433155*/
       goto LABEL_6; /*0x433155*/
     }
   }
-  return BinkMovie::BlitToTarget(v2); /*0x43316a*/
+  return BinkMovie::BlitToTarget((BinkMovie *)this, (int)width); /*0x43316a*/
 }
 } // namespace gamemd
 // 0x432BD0
@@ -161,9 +161,9 @@ int BinkMovieHandle::InitFromFile()
 {
   int result; // eax
 
-  dword_ABF3F8 = (int)this; /*0x5c0550*/
-  result = BinkMovie::Play(this->height); /*0x5c0559*/
-  dword_ABF3F8 = 0; /*0x5c055e*/
+  g_MissionQueueFrame.localVariables[605] = (int)this; /*0x5c0550*/
+  result = BinkMovie::Play((BinkMovie *)this->height); /*0x5c0559*/
+  g_MissionQueueFrame.localVariables[605] = 0; /*0x5c055e*/
   return result; /*0x5c0568*/
 }
 } // namespace gamemd
@@ -171,27 +171,27 @@ int BinkMovieHandle::InitFromFile()
 namespace gamemd {
 BOOL BinkMovieHandle::COMStub()
 {
-  return BinkMovie::IsAtEnd(this->height);
+  return BinkMovie::IsAtEnd((BinkMovieHandle *)this->height);
 }
 } // namespace gamemd
 // 0x5C0580
 namespace gamemd {
 bool BinkMovieHandle::AddRef()
 {
-  return BinkMovie::RenderFrameToSurface(this->height);
+  return BinkMovie::RenderFrameToSurface((BinkMovieHandle *)this->height);
 }
 } // namespace gamemd
 // 0x5C0590
 namespace gamemd {
 int BinkMovieHandle::Release()
 {
-  int v1; // esi
+  int height; // esi
   int result; // eax
 
-  v1 = this->height; /*0x433021*/
-  result = BinkWait(*(unsigned int *)(v1 + 4)); /*0x433027*/
+  height = this->height; /*0x433021*/
+  result = BinkWait(*(unsigned int *)(height + 4)); /*0x433027*/
   if ( !result ) /*0x43302f*/
-    *(unsigned char *)(v1 + 45) = 1; /*0x433031*/
+    *(unsigned char *)(height + 45) = 1; /*0x433031*/
   return result; /*0x433036*/
 }
 } // namespace gamemd
@@ -206,14 +206,14 @@ int BinkMovieHandle::Pause(int a2, int a3)
 namespace gamemd {
 int BinkMovieHandle::RenderLoop(int a2)
 {
-  return COMStub_432C10(this->height, a2); /*0x5c05cd*/
+  return COMStub_432C10((WeaponTypeClass *)this->height, a2); /*0x5c05cd*/
 }
 } // namespace gamemd
 // 0x5C05D0
 namespace gamemd {
 int BinkMovieHandle::AdjustSurfaceFormat(int a2)
 {
-  return BinkMovieHandle::Check(this->height, a2); /*0x5c05dd*/
+  return BinkMovieHandle::Check((BinkMovieHandle *)this->height, a2); /*0x5c05dd*/
 }
 } // namespace gamemd
 // 0x5C05E0
@@ -228,23 +228,25 @@ unsigned int BinkMovieHandle::BlitToTarget()
 namespace gamemd {
 unsigned int * BinkMovieHandle::Close()
 {
-  return BinkMovieHandle::CopyFrameToSurface(this->height);
+  return BinkMovieHandle::CopyFrameToSurface((BinkMovieHandle *)this->height);
 }
 } // namespace gamemd
 // 0x5C0A30
 namespace gamemd {
 BinkMovieHandle * BinkMovieHandle::QueryInterface(char a2)
 {
-  void *v3; // edi
+  BinkMovie *height; // edi
 
-  v3 = (void *)this->height; /*0x5c0a34*/
-  if ( v3 ) /*0x5c0a3f*/
+  height = (gamemd::BinkMovie *)((unsigned int)((BinkMovie *)this->height));
+  *(unsigned int *)this->__pad_0 = (void*)&BinkMovieHandle_vftable; /*0x5c0a37*/
+  if ( height ) /*0x5c0a3f*/
   {
-    BinkMovie::Stop((int)v3); /*0x5c0a43*/
-    RA2_OPDEL(v3); /*0x5c0a49*/
+    BinkMovie::Stop(height); /*0x5c0a43*/
+    RA2_OPDEL(height); /*0x5c0a49*/
   }
+  *(unsigned int *)this->__pad_0 = (void*)&MovieHandle_vftable; /*0x5c0a55*/
   if ( (a2 & 1) != 0 ) /*0x5c0a5d*/
-    RA2_OPDEL(); /*0x5c0a60*/
-  return this; /*0x5c0a6a*/
+    RA2_OPDEL(this); /*0x5c0a60*/
+  return this->__pad_0; /*0x5c0a6a*/
 }
 } // namespace gamemd

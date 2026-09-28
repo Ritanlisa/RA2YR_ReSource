@@ -31,32 +31,34 @@ char sub_72B8E0()
 namespace gamemd {
 void sub_72B930()
 {
-  unsigned int v0;
+  void *v1; // esi
 
-  if ( byte_B0FD5D ) /*0x72b93a*/
+  if ( g_BuildingLoadQueue_Array.__pad_F70[1453] ) /*0x72b93a*/
   {
-    if ( byte_B0FD5C ) /*0x72b942*/
+    if ( g_BuildingLoadQueue_Array.__pad_F70[1452] ) /*0x72b942*/
     {
-      v0 = dword_B0FB54; /*0x72b945*/
-      if ( dword_B0FB54 ) /*0x72b94d*/
+      v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[932]; /*0x72b945*/
+      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[932] ) /*0x72b94d*/
       {
-        FileTreeNode::Destroy(dword_B0FB54); /*0x72b951*/
-        RA2_OPDEL(v0); /*0x72b957*/
+        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[932]); /*0x72b951*/
+        RA2_OPDEL(v1); /*0x72b957*/
       }
-      byte_B0FD5C = 0; /*0x72b95f*/
+      g_BuildingLoadQueue_Array.__pad_F70[1452] = 0; /*0x72b95f*/
     }
-    dword_B0FB54 = 0; /*0x72b96b*/
-    if ( dword_B0FD60 ) /*0x72b973*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[932] = 0; /*0x72b96b*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1456] ) /*0x72b973*/
     {
-      RA2_OPDEL(dword_B0FD60); /*0x72b976*/
-      dword_B0FD60 = 0; /*0x72b97e*/
+      RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1456]); /*0x72b976*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1456] = 0; /*0x72b97e*/
     }
-    if ( dword_B0FD64 ) /*0x72b98c*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1460] ) /*0x72b98c*/
     {
-      (**(void (__thiscall ***)(int, int))dword_B0FD64)(dword_B0FD64, 1); /*0x72b992*/
-      dword_B0FD64 = 0; /*0x72b994*/
+      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1460])( /*0x72b992*/
+        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1460],
+        1);
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1460] = 0; /*0x72b994*/
     }
   }
-  byte_B0FD5D = 0; /*0x72b99a*/
+  g_BuildingLoadQueue_Array.__pad_F70[1453] = 0; /*0x72b99a*/
 }
 } // namespace gamemd

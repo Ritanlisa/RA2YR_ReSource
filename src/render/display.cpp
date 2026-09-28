@@ -88,22 +88,22 @@ bool FramePresent(Surface* composite_surface, int flags, int arg3, int arg4)
 
     if (g_ScrollOffsetX < 0)
     {
-        src_x = -g_ScrollOffsetX;
+        src_x = (int)(-g_ScrollOffsetX);
         src_w += g_ScrollOffsetX;
     }
     else if (g_ScrollOffsetX > 0)
     {
-        dst_x = g_ScrollOffsetX;
+        dst_x = (int)(g_ScrollOffsetX);
     }
 
     if (g_ScrollOffsetY < 0)
     {
-        src_y = -g_ScrollOffsetY;
+        src_y = (int)(-g_ScrollOffsetY);
         src_h += g_ScrollOffsetY;
     }
     else if (g_ScrollOffsetY > 0)
     {
-        dst_y = g_ScrollOffsetY;
+        dst_y = (int)(g_ScrollOffsetY);
     }
 
     // Clamp to window size

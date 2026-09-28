@@ -110,11 +110,11 @@ struct DisplayClass {
     unsigned int q124;  // 0x124
     unsigned int q128;  // 0x128
     void* q12C;  // 0x12C
-    unsigned int q130;  // 0x130
+    void* q130;  // 0x130
     void* q134;  // 0x134
     unsigned int MaxLevel;  // 0x138
     unsigned int MaxWidth;  // 0x13C
-    unsigned int q140;  // 0x140
+    void* q140;  // 0x140
     unsigned char q144;  // 0x144
     unsigned int q145;  // 0x145
     unsigned int Crates;  // 0x148
@@ -432,338 +432,29 @@ struct DisplayClass {
     unsigned int q11B3;  // 0x11B3
     unsigned int q11B4;  // 0x11B4
     unsigned char q11B8;  // 0x11B8
+    unsigned int u32_11C0;  // 0x11C0
     void* q11CC;  // 0x11CC
     unsigned int q11CD;  // 0x11CD
     unsigned int q11CE;  // 0x11CE
     unsigned int q11CF;  // 0x11CF
     void* q11D0;  // 0x11D0
+    unsigned int u32_11D1;  // 0x11D1
     void* q11D4;  // 0x11D4
     void* q11D8;  // 0x11D8
     void* q11DC;  // 0x11DC
     void* q11E0;  // 0x11E0
-    unsigned char q11E4;  // 0x11E4
-    void* q1258;  // 0x1258
-    unsigned char q125C;  // 0x125C
-    BuildingTypeClass* q1288;  // 0x1288
-    unsigned int q1298;  // 0x1298
-    int q1300;  // 0x1300
-    unsigned char q1304;  // 0x1304
-    unsigned char q1320;  // 0x1320
-    void* q1324;  // 0x1324
-    unsigned int q1328;  // 0x1328
-    unsigned int q1330;  // 0x1330
-    AbstractClass* q1344;  // 0x1344
-    unsigned int q1348;  // 0x1348
-    unsigned char q1398;  // 0x1398
-    unsigned int q1400;  // 0x1400
-    unsigned int q1404;  // 0x1404
-    unsigned int q1408;  // 0x1408
-    unsigned int q1420;  // 0x1420
-    unsigned int q1428;  // 0x1428
-    unsigned int q1430;  // 0x1430
-    unsigned int q1444;  // 0x1444
-    int q1464;  // 0x1464
-    unsigned char q1468;  // 0x1468
-    unsigned int q14EB;  // 0x14EB
-    void* q14EC;  // 0x14EC
-    unsigned int q14ED;  // 0x14ED
-    unsigned int q14EE;  // 0x14EE
-    unsigned int q14EF;  // 0x14EF
-    unsigned int q14F3;  // 0x14F3
-    unsigned char q14F7;  // 0x14F7
-    unsigned char q1500;  // 0x1500
-    int q1524;  // 0x1524
-    unsigned int q1525;  // 0x1525
-    unsigned char q1529;  // 0x1529
-    unsigned char q1540;  // 0x1540
-    unsigned int q1544;  // 0x1544
-    unsigned char q1548;  // 0x1548
-    unsigned int q1554;  // 0x1554
-    unsigned int q1558;  // 0x1558
-    unsigned int q1568;  // 0x1568
-    unsigned int q1574;  // 0x1574
-    unsigned char q1580;  // 0x1580
-    unsigned int q1584;  // 0x1584
-    char q1588[4];  // 0x1588
-    unsigned int q158B;  // 0x158B
-    unsigned char q158F;  // 0x158F
-    unsigned int q1590;  // 0x1590
-    unsigned int q15E2;  // 0x15E2
-    unsigned char q15E6;  // 0x15E6
-    unsigned int q1600;  // 0x1600
-    unsigned int q1604;  // 0x1604
-    unsigned int q1608;  // 0x1608
-    unsigned char q1618;  // 0x1618
-    unsigned int q1624;  // 0x1624
-    unsigned char q1628;  // 0x1628
-    unsigned int q1634;  // 0x1634
-    unsigned char q1638;  // 0x1638
-    unsigned char q1640;  // 0x1640
-    void* q1654;  // 0x1654
-    unsigned char q1658;  // 0x1658
-    unsigned int q1660;  // 0x1660
-    unsigned char q1664;  // 0x1664
-    char q1668;  // 0x1668
-    void* q16C0;  // 0x16C0
-    unsigned char q16C4;  // 0x16C4
-    unsigned char q1718;  // 0x1718
-    unsigned char q1720;  // 0x1720
-    unsigned char q1724;  // 0x1724
-    unsigned int q1728;  // 0x1728
-    unsigned int q1780;  // 0x1780
-    unsigned char q1784;  // 0x1784
-    unsigned char q1794;  // 0x1794
-    unsigned char q1800;  // 0x1800
-    unsigned int q1808;  // 0x1808
-    unsigned int q1820;  // 0x1820
-    unsigned int q1824;  // 0x1824
-    unsigned int q1860;  // 0x1860
-    unsigned char q1864;  // 0x1864
-    unsigned int q1878;  // 0x1878
-    unsigned int q1888;  // 0x1888
-    unsigned char q1900;  // 0x1900
-    unsigned int q1908;  // 0x1908
-    unsigned int q1910;  // 0x1910
-    unsigned char q1914;  // 0x1914
-    unsigned char q1920;  // 0x1920
-    unsigned int q1924;  // 0x1924
-    unsigned char q1940;  // 0x1940
-    void* q2048;  // 0x2048
-    unsigned char q2054;  // 0x2054
-    unsigned int q2088;  // 0x2088
-    unsigned int q2098;  // 0x2098
-    Coord* q2100;  // 0x2100
-    unsigned int q2120;  // 0x2120
-    AbstractClass* q2128;  // 0x2128
-    unsigned int q2148;  // 0x2148
-    unsigned char q2178;  // 0x2178
-    unsigned int q2180;  // 0x2180
-    unsigned int q2198;  // 0x2198
-    unsigned int q2304;  // 0x2304
-    ParticleSystemClass* q2308;  // 0x2308
-    char q2324[4];  // 0x2324
-    unsigned char q2328;  // 0x2328
-    unsigned int q2344;  // 0x2344
-    unsigned char q2348;  // 0x2348
-    char q2390[4];  // 0x2390
-    unsigned char q2394;  // 0x2394
-    unsigned char q2400;  // 0x2400
-    unsigned int q2408;  // 0x2408
-    unsigned char q2504;  // 0x2504
-    unsigned char q2508;  // 0x2508
-    Coord* q3000;  // 0x3000
-    Coord* q3004;  // 0x3004
-    unsigned char q3278;  // 0x3278
-    unsigned int q3428;  // 0x3428
-    unsigned int q3444;  // 0x3444
-    unsigned int q3448;  // 0x3448
-    unsigned int q3668;  // 0x3668
-    unsigned char q4134;  // 0x4134
-    unsigned int q4168;  // 0x4168
-    unsigned char q4178;  // 0x4178
-    unsigned char q4180;  // 0x4180
-    unsigned int q4184;  // 0x4184
-    HouseClass* q4200;  // 0x4200
-    unsigned int q4358;  // 0x4358
-    unsigned int q4368;  // 0x4368
-    unsigned int q4388;  // 0x4388
-    unsigned int q4408;  // 0x4408
-    unsigned char q4418;  // 0x4418
-    AbstractTypeClass* q4434;  // 0x4434
-    char q4438;  // 0x4438
-    unsigned int q4440;  // 0x4440
-    unsigned int q4444;  // 0x4444
-    unsigned int q4448;  // 0x4448
-    unsigned int q4460;  // 0x4460
-    unsigned char q4464;  // 0x4464
-    unsigned int q4468;  // 0x4468
-    unsigned char q4480;  // 0x4480
-    void* q4500;  // 0x4500
-    unsigned char q4504;  // 0x4504
-    unsigned int q4508;  // 0x4508
-    void* q4520;  // 0x4520
-    unsigned char q4524;  // 0x4524
-    void* q4528;  // 0x4528
-    unsigned char q4530;  // 0x4530
-    unsigned int q4558;  // 0x4558
-    void* q4560;  // 0x4560
-    void* q4564;  // 0x4564
-    void* q4568;  // 0x4568
-    unsigned char q4580;  // 0x4580
-    unsigned char q4700;  // 0x4700
-    BuildingTypeClass* q4744;  // 0x4744
-    unsigned int q4760;  // 0x4760
-    int q4864;  // 0x4864
-    unsigned char q4868;  // 0x4868
-    void* q4900;  // 0x4900
-    AnimClass* q4904;  // 0x4904
-    unsigned int q4914;  // 0x4914
-    unsigned int q4918;  // 0x4918
-    unsigned int q4994;  // 0x4994
-    unsigned int q5120;  // 0x5120
-    unsigned int q5124;  // 0x5124
-    unsigned int q5128;  // 0x5128
-    OverlayTypeClass* q5138;  // 0x5138
-    unsigned char q5158;  // 0x5158
-    ObjectClass* q5160;  // 0x5160
-    unsigned int q5168;  // 0x5168
-    void* q5170;  // 0x5170
-    unsigned int q5188;  // 0x5188
-    int q5220;  // 0x5220
-    unsigned int q5270;  // 0x5270
-    unsigned int q5358;  // 0x5358
-    unsigned char q53D0;  // 0x53D0
-    unsigned int q53D1;  // 0x53D1
-    unsigned int q53D2;  // 0x53D2
-    unsigned int q53D3;  // 0x53D3
-    unsigned int q53D4;  // 0x53D4
-    unsigned int q53D8;  // 0x53D8
-    unsigned char q53DC;  // 0x53DC
-    unsigned char q53E0;  // 0x53E0
-    unsigned char q53E4;  // 0x53E4
-    unsigned char q53E8;  // 0x53E8
-    unsigned char q53EC;  // 0x53EC
-    unsigned char q53F0;  // 0x53F0
-    unsigned char q53F4;  // 0x53F4
-    unsigned char q53F8;  // 0x53F8
-    unsigned char q53FC;  // 0x53FC
-    unsigned char q5400;  // 0x5400
-    unsigned char q5404;  // 0x5404
-    unsigned char q5408;  // 0x5408
-    unsigned char q540C;  // 0x540C
-    bool q5430;  // 0x5430
-    unsigned char q5434;  // 0x5434
-    unsigned char q5438;  // 0x5438
-    unsigned int q5444;  // 0x5444
-    unsigned char q5448;  // 0x5448
-    unsigned char q544C;  // 0x544C
-    void* q5460;  // 0x5460
-    unsigned char q5464;  // 0x5464
-    unsigned char q5468;  // 0x5468
-    unsigned int q5480;  // 0x5480
-    unsigned char q5484;  // 0x5484
-    unsigned char q5488;  // 0x5488
-    void* q5494;  // 0x5494
-    unsigned char q5498;  // 0x5498
-    unsigned char q549C;  // 0x549C
-    unsigned char q54A0;  // 0x54A0
-    unsigned char q54A4;  // 0x54A4
-    unsigned char q54A8;  // 0x54A8
-    unsigned char q54AC;  // 0x54AC
-    unsigned char q54B0;  // 0x54B0
-    unsigned char q54B4;  // 0x54B4
-    ObjectClass * q5508;  // 0x5508
-    unsigned char q550C;  // 0x550C
-    bool q5510;  // 0x5510
-    unsigned char q5514;  // 0x5514
-    unsigned char q5518;  // 0x5518
-    unsigned int q5520;  // 0x5520
-    unsigned char q5524;  // 0x5524
-    DynamicVector* q5550;  // 0x5550
-    unsigned char q5554;  // 0x5554
-    unsigned char q5558;  // 0x5558
-    unsigned char q556C;  // 0x556C
-    unsigned char q5570;  // 0x5570
-    unsigned char q5574;  // 0x5574
-    unsigned char q5578;  // 0x5578
-    unsigned char q557C;  // 0x557C
-    unsigned char q5580;  // 0x5580
-    unsigned char q5584;  // 0x5584
-    unsigned char q5588;  // 0x5588
-    unsigned char q558C;  // 0x558C
-    unsigned char q5590;  // 0x5590
-    unsigned char q5594;  // 0x5594
-    unsigned char q5598;  // 0x5598
-    unsigned char q559C;  // 0x559C
-    unsigned char q5604;  // 0x5604
-    unsigned char q5608;  // 0x5608
-    unsigned char q560C;  // 0x560C
-    unsigned char q5610;  // 0x5610
-    unsigned char q5618;  // 0x5618
-    unsigned char q561C;  // 0x561C
-    unsigned char q5634;  // 0x5634
-    unsigned char q5638;  // 0x5638
-    unsigned char q563C;  // 0x563C
-    unsigned char q5640;  // 0x5640
-    unsigned char q5644;  // 0x5644
-    unsigned char q5648;  // 0x5648
-    AbstractTypeClass* q5660;  // 0x5660
-    AbstractTypeClass* q5664;  // 0x5664
-    AbstractTypeClass* q5668;  // 0x5668
-    unsigned char q566C;  // 0x566C
-    unsigned char q5670;  // 0x5670
-    unsigned int q5684;  // 0x5684
-    unsigned char q5688;  // 0x5688
-    unsigned char q568C;  // 0x568C
-    unsigned char q56E0;  // 0x56E0
-    unsigned char q56E4;  // 0x56E4
-    unsigned char q56E8;  // 0x56E8
-    unsigned char q56EC;  // 0x56EC
-    unsigned char q56F0;  // 0x56F0
-    unsigned int q5728;  // 0x5728
-    unsigned char q572C;  // 0x572C
-    unsigned char q5730;  // 0x5730
-    unsigned char q5734;  // 0x5734
-    AudioController* q5750;  // 0x5750
-    unsigned char q5754;  // 0x5754
-    unsigned char q5758;  // 0x5758
-    void* q5774;  // 0x5774
-    unsigned char q5778;  // 0x5778
-    unsigned char q577C;  // 0x577C
-    unsigned char q5780;  // 0x5780
-    unsigned char q5784;  // 0x5784
-    void* ptr_5788;  // 0x5788
-    unsigned char q578C;  // 0x578C
-    unsigned char q5790;  // 0x5790
-    unsigned char q5794;  // 0x5794
-    void* q5798;  // 0x5798
-    unsigned char q579C;  // 0x579C
-    unsigned char q57A0;  // 0x57A0
-    unsigned char q57A4;  // 0x57A4
-    unsigned char q57A8;  // 0x57A8
-    unsigned char q57AC;  // 0x57AC
-    void* q5824;  // 0x5824
-    unsigned char q5828;  // 0x5828
-    unsigned char q582C;  // 0x582C
-    int q5884;  // 0x5884
-    unsigned char q5888;  // 0x5888
-    unsigned char q588C;  // 0x588C
-    unsigned char q5920;  // 0x5920
-    unsigned char q5924;  // 0x5924
-    unsigned int q5928;  // 0x5928
-    unsigned char q592C;  // 0x592C
-    unsigned char q5930;  // 0x5930
-    unsigned int q5938;  // 0x5938
-    unsigned char q593C;  // 0x593C
-    unsigned int q6038;  // 0x6038
-    unsigned char q603C;  // 0x603C
-    unsigned int q6180;  // 0x6180
-    unsigned char q6184;  // 0x6184
-    unsigned int q6194;  // 0x6194
-    unsigned char q6198;  // 0x6198
-    unsigned char q619C;  // 0x619C
-    unsigned int q6230;  // 0x6230
-    unsigned char q6234;  // 0x6234
-    unsigned int q6240;  // 0x6240
-    unsigned char q6244;  // 0x6244
-    unsigned char q6248;  // 0x6248
-    unsigned int q6264;  // 0x6264
-    unsigned char q6268;  // 0x6268
-    unsigned int q6280;  // 0x6280
-    unsigned char q6284;  // 0x6284
-    void* q6294;  // 0x6294
-    unsigned char q6298;  // 0x6298
-    Coord* q6408;  // 0x6408
-    unsigned char q640C;  // 0x640C
-    unsigned char q6410;  // 0x6410
-    unsigned char q6438;  // 0x6438
-    unsigned char q643C;  // 0x643C
-    unsigned char q6440;  // 0x6440
-    unsigned int q6454;  // 0x6454
-    unsigned char q6458;  // 0x6458
-    unsigned int q01C5;
-    unsigned int q01C6;
-    unsigned int q0200;
+    unsigned int DisplayClass_field_0x0;
+    unsigned int DisplayClass_field_0x11A8;
+    unsigned int DisplayClass_field_0x11B0;
+    unsigned int DisplayClass_field_0x11D0;
+    unsigned int DisplayClass_field_0x12C;
+    unsigned int DisplayClass_field_0x130;
+    unsigned int DisplayClass_field_0x134;
+    unsigned int DisplayClass_field_0x140;
+    unsigned int __pad_1198;
+    unsigned int __pad_11AC;
+    unsigned int __pad_11B4;
+    unsigned int __pad_41E;
 // --- flat members (END) ---
     DisplayClass * Read(char a2);
     HWND Render();

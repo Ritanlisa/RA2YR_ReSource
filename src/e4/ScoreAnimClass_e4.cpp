@@ -10,17 +10,19 @@
 namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_0(char a2)
 {
+  *(unsigned int *)this->__pad_0 = (void*)&ScoreAnimClass_vftable; /*0x691009*/
   if ( (a2 & 1) != 0 ) /*0x69100f*/
-    RA2_OPDEL(); /*0x691012*/
-  return this; /*0x69101c*/
+    RA2_OPDEL(this); /*0x691012*/
+  return this->__pad_0; /*0x69101c*/
 }
 } // namespace gamemd
 // 0x691020
 namespace gamemd {
 unsigned int * ScoreAnimClass::Constructor_ScoreAnimClass_1(char a2)
 {
+  *(void **)this = (unsigned int *)((void*)&ScoreAnimClass_vftable);
   if ( (a2 & 1) != 0 ) /*0x69102f*/
-    RA2_OPDEL(); /*0x691032*/
+    RA2_OPDEL(this); /*0x691032*/
   return this; /*0x69103c*/
 }
 } // namespace gamemd
@@ -31,26 +33,27 @@ unsigned int * ScoreAnimClass::Constructor_ScoreFontClass(char a2)
   void *v3; // eax
   char *v4; // eax
 
-  v3 = (void *)this->u32_C; /*0x6910a6*/
+  v3 = (void *)((unsigned int)((void *)this->field_C));
+  *(unsigned int *)this->__pad_0 = (void*)&ScoreFontClass_vftable; /*0x6910a9*/
   if ( v3 && this->q010 == 1 ) /*0x6910b7*/
   {
     RA2_OPDEL(v3); /*0x6910ba*/
-    this->u32_C = 0; /*0x6910c2*/
+    this->field_C = 0; /*0x6910c2*/
     this->q010 = 0; /*0x6910c5*/
   }
-  if ( !--dword_B0558C ) /*0x6910d3*/
+  if ( !--unk_B0558C ) /*0x6910d3*/
   {
-    v4 = (char *)(&byte_B05594);
+    v4 = (char *)&unk_B05594; /*0x6910d5*/
     do /*0x6910e7*/
     {
       *((unsigned int *)v4 - 1) = 0; /*0x6910da*/
       *v4 = 0; /*0x6910dd*/
       v4 += 8; /*0x6910df*/
     }
-    while ( (int)v4 < (int)((char *)&dbl_B055A8 + 4) ); /*0x6910e7*/
+    while ( (int)v4 < (int)byte_B055AC ); /*0x6910e7*/
   }
   if ( (a2 & 1) != 0 ) /*0x6910ee*/
-    RA2_OPDEL(); /*0x6910f1*/
-  return this; /*0x6910fb*/
+    RA2_OPDEL(this); /*0x6910f1*/
+  return this->__pad_0; /*0x6910fb*/
 }
 } // namespace gamemd

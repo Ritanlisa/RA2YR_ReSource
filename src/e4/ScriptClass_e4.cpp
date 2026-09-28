@@ -17,7 +17,7 @@ int ScriptClass::ddtor(int a1, unsigned int * a2)
   *a2 = 1123264070; /*0x691606*/
   a2[1] = 298977161; /*0x69160e*/
   a2[2] = 1610655148; /*0x691617*/
-  a2[3] = -1252326136; /*0x691620*/
+  a2[3] = unk_7E97AC; /*0x691620*/
   return 0; /*0x6915fd*/
 }
 } // namespace gamemd
@@ -33,9 +33,13 @@ int ScriptClass::LoadState(AbstractClass * aP0, int aP1)
   {
     if ( aP0 ) /*0x691646*/
     {
-      AbstractClass::InitVtables(aP0, (int)&aP1); /*0x69164f*/
+      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x69164f*/
+      aP0->vtable0 = (void*)&ScriptClass_vftable; /*0x691654*/
+      aP0->vtable1 = (void*)&ScriptClass_vftable; /*0x69165a*/
+      aP0->vtable2 = (void*)&ScriptClass_vftable; /*0x691661*/
+      aP0->vtable3 = (void*)&ScriptClass_vftable; /*0x691668*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x691678*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->buildingType); /*0x691678*/
     return 0; /*0x69167d*/
   }
   return result; /*0x69167f*/
@@ -48,7 +52,7 @@ int ScriptClass::SaveState(TechnoTypeClass * aP0, int * a1, int aP2)
 {
   int result; // eax
 
-  result = AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x69169f*/
+  result = AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x69169f*/
   if ( result >= 0 ) /*0x6916a6*/
     return 0; /*0x6916a8*/
   return result; /*0x6916aa*/

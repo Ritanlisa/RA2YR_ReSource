@@ -15,21 +15,25 @@
 // 0x718000
 TeleportLocomotionClass::TeleportLocomotionClass()
 {
+  int v2; // ecx
 
-  LocomotionClass::Init(); /*0x718003*/
-  this->MovingDestination = dword_B0EBF8; /*0x718011*/
-  this->q020 = dword_B0EBFC; /*0x71801a*/
-  this->u32_24 = dword_B0EC00; /*0x718026*/
-  this->LastCoords = dword_B0EBF8; /*0x71802e*/
-  this->u32_2C = dword_B0EBFC; /*0x718036*/
-  this->ptr_30 = dword_B0EC00; /*0x71803e*/
+  LocomotionClass::Init((LocomotionClass *)this); /*0x718003*/
+  this->MovingDestination[0] = g_BuildingLoadQueue_Array.BuildLimit; /*0x718011*/
+  this->MovingDestination[1] = g_BuildingLoadQueue_Array.Category[0]; /*0x71801a*/
+  this->MovingDestination[2] = g_BuildingLoadQueue_Array.unknown_3C0[0]; /*0x718026*/
+  this->LastCoords[0] = g_BuildingLoadQueue_Array.BuildLimit; /*0x71802e*/
+  this->LastCoords[1] = g_BuildingLoadQueue_Array.Category[0]; /*0x718036*/
+  this->LastCoords[2] = g_BuildingLoadQueue_Array.unknown_3C0[0]; /*0x71803e*/
   this->Moving = 0; /*0x718043*/
   this->TeleportLocomotionClass_field_bool_35 = 0; /*0x718046*/
   this->TeleportLocomotionClass_field_bool_36 = 0; /*0x718049*/
   this->State = 0; /*0x71804c*/
-  g_CurrentFrame = g_CurrentFrame; /*0x71804f*/
-  this->q044 = 0; /*0x718055*/
-  this->Timer = g_CurrentFrame; /*0x718058*/
+  v2 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x71804f*/
+  this->Timer[2] = 0; /*0x718055*/
+  this->Timer[0] = v2; /*0x718058*/
   this->Piggybackee = 0; /*0x71805b*/
-  return this; /*0x718074*/
+  *(unsigned int *)this->__pad_0 = (void*)&TeleportLocomotionClass_vftable; /*0x71805e*/
+  *(unsigned int *)&this->__pad_0[4] = (void*)&TeleportLocomotionClass_vftable; /*0x718064*/
+  *(unsigned int *)this->__pad_18 = (void*)&TeleportLocomotionClass_vftable; /*0x71806b*/
+  return (int)this->__pad_0; /*0x718074*/
 }

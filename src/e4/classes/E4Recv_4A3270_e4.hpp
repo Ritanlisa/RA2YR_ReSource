@@ -40,6 +40,15 @@ struct E4Recv_4A3270 {
     unsigned int q5494;  // 0x5494
     unsigned int q5510;  // 0x5510
     unsigned int q6408;  // 0x6408
+    unsigned int estimatedHealth;
+    unsigned int vtable0;
+    unsigned int health;
+    unsigned int isOnMap;
+    unsigned int referenceCount;
+    unsigned int uniqueId;
+    unsigned int vtable1;
+    unsigned int vtable2;
+    unsigned int vtable3;
 // --- flat members (END) ---
     int * sub_4A3270(int a2,  int a3,  int a4);    // 0x4A3270
 };

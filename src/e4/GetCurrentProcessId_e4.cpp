@@ -11,4 +11,3 @@ int GetCurrentProcessId_0()
 {
   return (int)(GetCurrentProcessId());
 }
-}

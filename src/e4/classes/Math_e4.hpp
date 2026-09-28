@@ -11,20 +11,33 @@ struct Math {
     void* q00C;  // 0xC
     unsigned int u32_14;  // 0x14
     void* q018;  // 0x18
+    unsigned int u32_1C;  // 0x1C
     unsigned int q020;  // 0x20
     unsigned int u32_24;  // 0x24
     unsigned int u32_28;  // 0x28
     unsigned int u32_2C;  // 0x2C
     unsigned int q034;  // 0x34
+    unsigned int u32_38;  // 0x38
+    unsigned int u32_3C;  // 0x3C
     unsigned int q040;  // 0x40
     unsigned int q044;  // 0x44
     unsigned int u32_48;  // 0x48
     unsigned int q050;  // 0x50
     unsigned int q054;  // 0x54
+    unsigned int u32_5C;  // 0x5C
     unsigned int q064;  // 0x64
     unsigned int q068;  // 0x68
+    unsigned int u32_6D;  // 0x6D
+    unsigned int u32_6F;  // 0x6F
+    unsigned int u32_74;  // 0x74
+    unsigned int u32_7C;  // 0x7C
     unsigned int q080;  // 0x80
     unsigned int q084;  // 0x84
+    unsigned int u32_88;  // 0x88
+    unsigned int u32_8C;  // 0x8C
+    unsigned int u32_B4;  // 0xB4
+    unsigned int u32_B8;  // 0xB8
+    unsigned int u32_BC;  // 0xBC
     unsigned int q100;  // 0x100
     unsigned int q104;  // 0x104
     unsigned int q114;  // 0x114
@@ -44,8 +57,9 @@ struct Math {
     unsigned int q5444;  // 0x5444
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
-    unsigned int referenceCount2;
-    unsigned int u32_1C;
+    unsigned int __pad_0;
+    unsigned int field_4;
+    unsigned int field_8;
     unsigned int u32_40;
     unsigned int u32_41;
 // --- flat members (END) ---

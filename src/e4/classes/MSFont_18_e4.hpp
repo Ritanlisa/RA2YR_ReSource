@@ -8,26 +8,15 @@ struct MSFont_18 {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
-    void* pad_008;  // 0x8
+    int q008;  // 0x8
     bool q00C;  // 0xC
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
-    int Count;  // 0x16
-    bool q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    bool q024;  // 0x24
-    unsigned char q028;  // 0x28
-    int q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q04C;  // 0x4C
-    unsigned char q050;  // 0x50
-    bool q054;  // 0x54
     unsigned int Capacity;
     unsigned int Items;
     unsigned int Items2;
     unsigned int q0042;
-    unsigned int q008;
 // --- flat members (END) ---
     char SetCapacity8(int a2,  unsigned int * a3);    // 0x5D55A0
     void ClearBuffer();  // 0x5D5080

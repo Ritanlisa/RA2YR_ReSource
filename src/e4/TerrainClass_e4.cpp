@@ -33,6 +33,8 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/RandomMap_e4.hpp"
+#include "e4/classes/TiberiumClass_e4.hpp"
 
 // 0x6DD8B0
 namespace gamemd {
@@ -1195,89 +1197,98 @@ LABEL_290:
 namespace gamemd {
 void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
 {
-  unsigned int *v2; // ebp
-  unsigned int *v3; // esi
+  ObjectClass *v2; // ebp
+  void **p_vtable1; // esi
   int v4; // eax
-  void *v5; // ecx
-  int v6; // edx
+  ObjectClass *vtable0; // ecx
+  void *vtable1; // edx
   int v7; // edi
   int v8; // eax
-  int v9; // eax
-  signed int v10; // ecx
-  size_t i; // eax
+  signed int v9; // eax
+  int v10; // ecx
+  char *i; // eax
   unsigned int *v12; // eax
   int Register; // edi
   int v14; // esi
-  int v15; // eax
+  int vtable2; // eax
   int v17; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = a1; /*0x71cda4*/
-  v3 = a1 + 1; /*0x71cdad*/
-  v4 = (*(int (__stdcall **)(unsigned int *))(a1[1] + 16))(a1 + 1); /*0x71cdb1*/
-  v6 = g_BuildingLoadQueue_Count; /*0x71cdb4*/
+  v2 = (ObjectClass *)a1; /*0x71cda4*/
+  p_vtable1 = &a1->vtable1; /*0x71cdad*/
+  v4 = (*((int (__stdcall **)(void **))a1->vtable1 + 4))(&a1->vtable1); /*0x71cdb1*/
+  vtable1 = g_BuildingLoadQueue_Array.vtable1; /*0x71cdb4*/
   v7 = v4; /*0x71cdba*/
-  if ( g_BuildingLoadQueue_Count ) /*0x71cdbe*/
+  if ( g_BuildingLoadQueue_Array.vtable1 ) /*0x71cdbe*/
   {
-    if ( !g_BuildingLoadQueue_Dirty ) /*0x71cdcb*/
+    if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array.vtable3) ) /*0x71cdcb*/
     {
-      qsort(g_BuildingLoadQueue_Array, g_BuildingLoadQueue_Count, 8u, CompareFunction); /*0x71cddc*/
-      v6 = g_BuildingLoadQueue_Count; /*0x71cde1*/
-      g_BuildingLoadQueue_Active = 0; /*0x71cdea*/
-      g_BuildingLoadQueue_Dirty = 1; /*0x71cdf4*/
+      qsort( /*0x71cddc*/
+        g_BuildingLoadQueue_Array.vtable0,
+        (size_t)g_BuildingLoadQueue_Array.vtable1,
+        8u,
+        (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
+      vtable1 = g_BuildingLoadQueue_Array.vtable1; /*0x71cde1*/
+      g_BuildingLoadQueue_Array.uniqueId = 0; /*0x71cdea*/
+      IDA_LOBYTE(g_BuildingLoadQueue_Array.vtable3) = 1; /*0x71cdf4*/
     }
     v17 = v7; /*0x71ce06*/
-    v8 = BinaryArraySearch((int)g_BuildingLoadQueue_Array, v6, &v17); /*0x71ce0a*/
+    v8 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.vtable0, (int)vtable1, &v17); /*0x71ce0a*/
     if ( v8 ) /*0x71ce11*/
     {
-      v9 = (v8 - (int)g_BuildingLoadQueue_Array) >> 3; /*0x71ce19*/
+      v9 = (signed int)(v8 - (unsigned int)g_BuildingLoadQueue_Array.vtable0) >> 3; /*0x71ce19*/
       if ( v9 != -1 ) /*0x71ce1f*/
       {
         v10 = v9 + 1; /*0x71ce21*/
-        for ( i = g_BuildingLoadQueue_Count; v10 < (int)g_BuildingLoadQueue_Count; i = g_BuildingLoadQueue_Count ) /*0x71ce2b*/
+        for ( i = (char *)g_BuildingLoadQueue_Array.vtable1; /*0x71ce2b*/
+              v10 < (int)g_BuildingLoadQueue_Array.vtable1;
+              i = (char *)g_BuildingLoadQueue_Array.vtable1 )
         {
-          v12 = (unsigned int *)((char *)g_BuildingLoadQueue_Array + 8 * v10++); /*0x71ce33*/
+          v12 = (char *)g_BuildingLoadQueue_Array.vtable0 + 8 * v10++; /*0x71ce33*/
           *(v12 - 2) = *v12; /*0x71ce39*/
           *(v12 - 1) = v12[1]; /*0x71ce3f*/
         }
-        g_BuildingLoadQueue_Count = i - 1; /*0x71ce54*/
-        *((unsigned int *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count) = 0; /*0x71ce59*/
-        v5 = g_BuildingLoadQueue_Array; /*0x71ce61*/
-        *((unsigned int *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count + 1) = 0; /*0x71ce69*/
-        g_BuildingLoadQueue_Active = 0; /*0x71ce6d*/
+        g_BuildingLoadQueue_Array.vtable1 = i - 1; /*0x71ce54*/
+        *((unsigned int *)g_BuildingLoadQueue_Array.vtable0 + 2 * (int)g_BuildingLoadQueue_Array.vtable1) = 0; /*0x71ce59*/
+        vtable0 = (ObjectClass *)g_BuildingLoadQueue_Array.vtable0; /*0x71ce61*/
+        *((unsigned int *)g_BuildingLoadQueue_Array.vtable0 + 2 * (int)g_BuildingLoadQueue_Array.vtable1 + 1) = 0; /*0x71ce69*/
+        g_BuildingLoadQueue_Array.uniqueId = 0; /*0x71ce6d*/
       }
     }
   }
-  Register = BuildingClass::SaveLoad_Register(v5); /*0x71ce7e*/
+  Register = BuildingClass::SaveLoad_Register(vtable0); /*0x71ce7e*/
   if ( Register >= 0 ) /*0x71ce82*/
   {
     if ( v2 ) /*0x71ce8a*/
     {
       ObjectClass::Init(v2, (int)&a1); /*0x71ce93*/
-      *v3 = &off_7F5200; /*0x71ce9f*/
+      v2->vtable0 = (void*)&TerrainClass_vftable; /*0x71ce98*/
+      *p_vtable1 = &off_7F5200; /*0x71ce9f*/
+      v2->vtable2 = (void*)&TerrainClass_vftable; /*0x71cea5*/
+      v2->vtable3 = (void*)&TerrainClass_vftable; /*0x71ceac*/
     }
-    v14 = (*(int (__stdcall **)(unsigned int *))(*v3 + 16))(v3); /*0x71cebf*/
-    v15 = g_BuildingLoadQueue_Capacity; /*0x71cec1*/
-    if ( (int)(g_BuildingLoadQueue_Count + 1) <= g_BuildingLoadQueue_Capacity ) /*0x71cec9*/
+    v14 = (*((int (__stdcall **)(void **))*p_vtable1 + 4))(p_vtable1); /*0x71cebf*/
+    vtable2 = (int)g_BuildingLoadQueue_Array.vtable2; /*0x71cec1*/
+    if ( (int)g_BuildingLoadQueue_Array.vtable1 + 1 <= (int)g_BuildingLoadQueue_Array.vtable2 ) /*0x71cec9*/
       goto LABEL_16; /*0x71cec9*/
-    if ( !g_BuildingLoadQueue_Capacity ) /*0x71cecd*/
-      v15 = 10; /*0x71cecf*/
-    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, v15) ) /*0x71ceda*/
+    if ( !g_BuildingLoadQueue_Array.vtable2 ) /*0x71cecd*/
+      vtable2 = 10; /*0x71cecf*/
+    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, vtable2) ) /*0x71ceda*/
     {
   LABEL_16:
-      *((unsigned int *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count) = v14; /*0x71ceee*/
-      *((unsigned int *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count + 1) = v2; /*0x71cefc*/
-      g_BuildingLoadQueue_Dirty = 0; /*0x71cf06*/
-      ++g_BuildingLoadQueue_Count; /*0x71cf0d*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.vtable0 + 2 * (int)g_BuildingLoadQueue_Array.vtable1) = v14; /*0x71ceee*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.vtable0 + 2 * (int)g_BuildingLoadQueue_Array.vtable1 + 1) = v2; /*0x71cefc*/
+      IDA_LOBYTE(g_BuildingLoadQueue_Array.vtable3) = 0; /*0x71cf06*/
+      ++g_BuildingLoadQueue_Array.vtable1; /*0x71cf0d*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 50); /*0x71cf1e*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2[1].referenceCount); /*0x71cf1e*/
   }
   return Register; /*0x71cf25*/
-}
 }
 // 0x71D000
 namespace gamemd {
 AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * aP2, AbstractClass * aP2)
 {
+  unsigned int *v3; // ebp
   int v4; // edi
   int v5; // ebx
   int i; // esi
@@ -1285,47 +1296,46 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * aP2, AbstractCla
   int16_t v8; // ax
   unsigned char *v9; // eax
   unsigned int *v10; // eax
-  char *v11; // edi
+  int v11; // edi
   char v14[12]; // [esp+8h] [ebp-Ch] BYREF
 
-  aP2 = aP2; /*0x71d008*/
-  if ( !(uint8_t)ObjectClass::Deploy((void *)this) ) /*0x71d012*/
+  v3 = aP2; /*0x71d008*/
+  if ( !(uint8_t)ObjectClass::Deploy((ObjectClass *)this) ) /*0x71d012*/
     return 0; /*0x71d13e*/
-  v4 = *aP2 / 256; /*0x71d03e*/
-  v5 = aP2[1] / 256; /*0x71d041*/
+  v4 = *v3 / 256; /*0x71d03e*/
+  v5 = v3[1] / 256; /*0x71d041*/
   for ( i = 0; i < 8; ++i ) /*0x71d044*/
   {
     v7 = i & 7; /*0x71d048*/
-    v8 = IDA_HIWORD(Direction_X_Offsets[v7]); /*0x71d05d*/
-    IDA_LOWORD(aP2) = v4 + IDA_LOWORD(Direction_X_Offsets[v7]); /*0x71d061*/
+    v8 = IDA_HIWORD(g_DDrawSurfaceManager.scenario[v7 + 82]); /*0x71d05d*/
+    IDA_LOWORD(aP2) = v4 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v7 + 82]); /*0x71d061*/
     IDA_HIWORD(aP2) = v5 + v8; /*0x71d06d*/
     aP2 = aP2; /*0x71d076*/
-    v9 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP2); /*0x71d080*/
+    v9 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP2); /*0x71d080*/
     ++v9[290]; /*0x71d091*/
   }
-  v10 = (unsigned int *)(*(int (__stdcall **)(char *))(((unsigned int)(this->q0442))))(v14); /*0x71d0ab*/
-  Coord::To_Screen(g_TacticalClass_Instance, v10, (int *)(&this->u32_546)); /*0x71d0b8*/
-  v11 = (char *)g_TacticalClass_Instance[45].lpVtbl + this->q0DC; /*0x71d0d6*/
-  this->q0D8 += g_TacticalClass_Instance[44].lpVtbl; /*0x71d0dd*/
-  this->q0DC = v11; /*0x71d0df*/
-  if ( *((unsigned int *)Coord::To_Cell(&MapClass_Instance, aP2) + 17) != -1 ) /*0x71d0ef*/
+  v10 = (unsigned int *)(*((int (__stdcall **)(char *))this->vtable0 + 43))(v14); /*0x71d0ab*/
+  Coord::To_Screen((Coord *)g_TacticalClass_Instance, v10, &this->TerrainClass_field_rect_D0[2]); /*0x71d0b8*/
+  v11 = *(unsigned int *)&g_TacticalClass_Instance[45] + this->TerrainClass_field_rect_D0[3]; /*0x71d0d6*/
+  this->TerrainClass_field_rect_D0[2] += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x71d0dd*/
+  this->TerrainClass_field_rect_D0[3] = v11; /*0x71d0df*/
+  if ( *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] != -1 ) /*0x71d0ef*/
   {
-    if ( *(unsigned char *)(*(unsigned int *)&g_BuildingTypeClass_Array->gap0[4 /*0x71d108*/
-                                                              * *((unsigned int *)Coord::To_Cell(&MapClass_Instance, aP2) + 17)]
+    if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 /*0x71d108*/
+                              + 4 * *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28])
                   + 681) )
     {
-      *((unsigned int *)Coord::To_Cell(&MapClass_Instance, aP2) + 17) = -1; /*0x71d123*/
-      *((unsigned char *)Coord::To_Cell(&MapClass_Instance, aP2) + 286) = 0; /*0x71d12b*/
+      *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] = -1; /*0x71d123*/
+      Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->powerup = 0; /*0x71d12b*/
     }
   }
   return 1; /*0x71d137*/
-}
 }
 // 0x71CF30
 namespace gamemd {
 int TerrainClass::CheckFrameUpdate(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x71cf44*/
+  return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x71cf44*/
 }
 } // namespace gamemd
 
@@ -1354,7 +1364,7 @@ int TerrainClass::MissionStubReturnZero3(int a1, unsigned int * a2)
   *a2 = 237448654; /*0x71d326*/
   a2[1] = 298949647; /*0x71d32e*/
   a2[2] = -1610610249; /*0x71d337*/
-  a2[3] = -777003740; /*0x71d340*/
+  a2[3] = unk_7E974C; /*0x71d340*/
   return 0; /*0x71d31d*/
 }
 } // namespace gamemd

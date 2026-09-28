@@ -18,13 +18,14 @@
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/Mission_e4.hpp"
+#include "e4/classes/VoxClass_e4.hpp"
 
 // 0x5D5DE0
 namespace gamemd {
 int GameMode::IsValid(unsigned int a2)
 {
-  return (!*(&this->u32_183) || a2 != -2) && a2 < 4; /*0x5d5df2*/
-}
+  return (!this->u32_FC || a2 != -2) && a2 < 4; /*0x5d5df2*/
 }
 // 0x6B8CA0
 namespace gamemd {
@@ -59,62 +60,73 @@ unsigned int GameMode::ReadFlagsFromINI(CCINIClass * aP1)
   char v29; // al
   int v30; // ecx
 
-  INIClass::ResetSection(aP1); /*0x6b8caa*/
-  Bool_Overwrite = INIClass::ReadBool_Overwrite(off_8401CC, g_INI_Key_TiberiumExplosive, (*this & 0x4000) != 0); /*0x6b8cc5*/
-  v4 = *this; /*0x6b8cca*/
-  IDA_BYTE1(v4) = IDA_BYTE1(*this) & 0xBF; /*0x6b8cd2*/
+  INIClass::ResetSection((INIClass *)aP1); /*0x6b8caa*/
+  Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x6b8cc5*/
+                     aP1,
+                     off_8401CC,
+                     (uint8_t *)g_INI_Key_TiberiumExplosive,
+                     (*(unsigned int *)this & 0x4000) != 0);
+  v4 = *(unsigned int *)this; /*0x6b8cca*/
+  IDA_BYTE1(v4) = IDA_BYTE1(*(unsigned int *)this) & 0xBF; /*0x6b8cd2*/
   v5 = v4 | ((Bool_Overwrite & 1) << 14); /*0x6b8cd7*/
   *(unsigned int *)this = v5; /*0x6b8cd9*/
-  v6 = INIClass::ReadBool_Overwrite(off_8401CC, aMcvdeploy, IDA_BYTE1(v5) & 1); /*0x6b8cec*/
-  v7 = *this; /*0x6b8cf1*/
-  IDA_BYTE1(v7) = IDA_BYTE1(*this) & 0xFE; /*0x6b8cf9*/
+  v6 = INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aMcvdeploy, IDA_BYTE1(v5) & 1); /*0x6b8cec*/
+  v7 = *(unsigned int *)this; /*0x6b8cf1*/
+  IDA_BYTE1(v7) = IDA_BYTE1(*(unsigned int *)this) & 0xFE; /*0x6b8cf9*/
   v8 = v7 | ((v6 & 1) << 8); /*0x6b8cfc*/
   *(unsigned int *)this = v8; /*0x6b8d00*/
-  v9 = INIClass::ReadBool_Overwrite(off_8401CC, aInitialveteran, (v8 & 0x200) != 0); /*0x6b8d14*/
-  v10 = *this; /*0x6b8d19*/
-  IDA_BYTE1(v10) = IDA_BYTE1(*this) & 0xFD; /*0x6b8d21*/
+  v9 = INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aInitialveteran, (v8 & 0x200) != 0); /*0x6b8d14*/
+  v10 = *(unsigned int *)this; /*0x6b8d19*/
+  IDA_BYTE1(v10) = IDA_BYTE1(*(unsigned int *)this) & 0xFD; /*0x6b8d21*/
   v11 = v10 | ((v9 & 1) << 9); /*0x6b8d24*/
   *(unsigned int *)this = v11; /*0x6b8d28*/
-  v12 = *this & 0xFFFDFFFF | ((INIClass::ReadBool_Overwrite(off_8401CC, aIonstorms, (v11 & 0x20000) != 0) & 1) << 17); /*0x6b8d4f*/
+  v12 = *(unsigned int *)this & 0xFFFDFFFF /*0x6b8d4f*/
+      | ((INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aIonstorms, (v11 & 0x20000) != 0) & 1) << 17);
   *(unsigned int *)this = v12; /*0x6b8d53*/
-  v13 = *this & 0xFFFEFFFF | ((INIClass::ReadBool_Overwrite(off_8401CC, aMeteorites, IDA_BYTE2(v12) & 1) & 1) << 16); /*0x6b8d7a*/
+  v13 = *(unsigned int *)this & 0xFFFEFFFF /*0x6b8d7a*/
+      | ((INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aMeteorites, IDA_BYTE2(v12) & 1) & 1) << 16);
   *(unsigned int *)this = v13; /*0x6b8d7c*/
-  result = *this & 0xFFFBFFFF /*0x6b8da5*/
-         | ((INIClass::ReadBool_Overwrite(off_8401CC, aVisceroids, (v13 & 0x40000) != 0) & 1) << 18);
+  result = *(unsigned int *)this & 0xFFFBFFFF /*0x6b8da5*/
+         | ((INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aVisceroids, (v13 & 0x40000) != 0) & 1) << 18);
   *(unsigned int *)this = result; /*0x6b8da7*/
-  if ( !g_GameMode_Current[0] || g_ArmageddonMode ) /*0x6b8dbb*/
+  if ( !*(unsigned int *)&unk_A8B238 || stru_A8EB00.gapE4[391] ) /*0x6b8dbb*/
   {
-    v15 = *this & 0xFFFFFFBF /*0x6b8de5*/
-        | ((INIClass::ReadBool_Overwrite(off_8401CC, g_INI_Key_TiberiumGrows, (result & 0x40) != 0) & 1) << 6);
+    v15 = *(unsigned int *)this & 0xFFFFFFBF /*0x6b8de5*/
+        | ((INIClass::ReadBool_Overwrite(
+              aP1,
+              off_8401CC,
+              (uint8_t *)g_INI_Key_TiberiumGrows,
+              (result & 0x40) != 0)
+          & 1) << 6);
     *(unsigned int *)this = v15; /*0x6b8de9*/
-    v16 = INIClass::ReadBool_Overwrite(off_8401CC, aTiberiumspread, (v15 & 0x80) != 0); /*0x6b8dfd*/
-    v17 = *this; /*0x6b8e02*/
-    IDA_LOBYTE(v17) = *this & 0x7F; /*0x6b8e0a*/
-    v18 = (int)(v17 | ((v16 & 1) << 7));
+    v16 = INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aTiberiumspread, (v15 & 0x80) != 0); /*0x6b8dfd*/
+    v17 = *(unsigned int *)this; /*0x6b8e02*/
+    IDA_LOBYTE(v17) = *(unsigned int *)this & 0x7F; /*0x6b8e0a*/
+    v18 = v17 | ((v16 & 1) << 7); /*0x6b8e0d*/
     *(unsigned int *)this = v18; /*0x6b8e11*/
-    v19 = INIClass::ReadBool_Overwrite(off_8401CC, aDestroyablebri, (v18 & 0x8000) != 0); /*0x6b8e25*/
-    v20 = *this; /*0x6b8e2a*/
-    IDA_BYTE1(v20) = IDA_BYTE1(*this) & 0x7F; /*0x6b8e32*/
+    v19 = INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aDestroyablebri, (v18 & 0x8000) != 0); /*0x6b8e25*/
+    v20 = *(unsigned int *)this; /*0x6b8e2a*/
+    IDA_BYTE1(v20) = IDA_BYTE1(*(unsigned int *)this) & 0x7F; /*0x6b8e32*/
     v21 = v20 | ((v19 & 1) << 15); /*0x6b8e35*/
     *(unsigned int *)this = v21; /*0x6b8e39*/
-    v22 = INIClass::ReadBool_Overwrite(off_8401CC, aFixedalliance, (v21 & 0x400) != 0); /*0x6b8e4d*/
-    v23 = *this; /*0x6b8e52*/
-    IDA_BYTE1(v23) = IDA_BYTE1(*this) & 0xFB; /*0x6b8e5a*/
+    v22 = INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aFixedalliance, (v21 & 0x400) != 0); /*0x6b8e4d*/
+    v23 = *(unsigned int *)this; /*0x6b8e52*/
+    IDA_BYTE1(v23) = IDA_BYTE1(*(unsigned int *)this) & 0xFB; /*0x6b8e5a*/
     v24 = v23 | ((v22 & 1) << 10); /*0x6b8e5d*/
     *(unsigned int *)this = v24; /*0x6b8e61*/
-    v25 = INIClass::ReadBool_Overwrite(off_8401CC, g_INI_Key_FogOfWar, (v24 & 0x1000) != 0); /*0x6b8e75*/
-    v26 = *this; /*0x6b8e7a*/
-    IDA_BYTE1(v26) = IDA_BYTE1(*this) & 0xEF; /*0x6b8e82*/
+    v25 = INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)g_INI_Key_FogOfWar, (v24 & 0x1000) != 0); /*0x6b8e75*/
+    v26 = *(unsigned int *)this; /*0x6b8e7a*/
+    IDA_BYTE1(v26) = IDA_BYTE1(*(unsigned int *)this) & 0xEF; /*0x6b8e82*/
     v27 = v26 | ((v25 & 1) << 12); /*0x6b8e85*/
     *(unsigned int *)this = v27; /*0x6b8e89*/
-    v28 = *this & 0xFFFFFFDF | (32 * (INIClass::ReadBool_Overwrite(off_8401CC, aInert, (v27 & 0x20) != 0) & 1)); /*0x6b8ead*/
+    v28 = *(unsigned int *)this & 0xFFFFFFDF /*0x6b8ead*/
+        | (32 * (INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aInert, (v27 & 0x20) != 0) & 1));
     *(unsigned int *)this = v28; /*0x6b8eb1*/
-    v29 = INIClass::ReadBool_Overwrite(off_8401CC, aHarvesterimmun, (v28 & 0x800) != 0); /*0x6b8ec5*/
-    v30 = *this; /*0x6b8eca*/
-    IDA_BYTE1(v30) = IDA_BYTE1(*this) & 0xF7; /*0x6b8ed2*/
+    v29 = INIClass::ReadBool_Overwrite(aP1, off_8401CC, (uint8_t *)aHarvesterimmun, (v28 & 0x800) != 0); /*0x6b8ec5*/
+    v30 = *(unsigned int *)this; /*0x6b8eca*/
+    IDA_BYTE1(v30) = IDA_BYTE1(*(unsigned int *)this) & 0xF7; /*0x6b8ed2*/
     result = v30 | ((v29 & 1) << 11); /*0x6b8ed5*/
     *(unsigned int *)this = result; /*0x6b8ed7*/
   }
   return result; /*0x6b8ed9*/
-}
 }

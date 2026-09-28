@@ -46,6 +46,7 @@ struct WalkLocomotion {
     unsigned char q098;  // 0x98
     void* q09C;  // 0x9C
     unsigned char q0A0;  // 0xA0
+    unsigned int u32_B0;  // 0xB0
     unsigned char q100;  // 0x100
     void* q104;  // 0x104
     unsigned char q114;  // 0x114
@@ -56,7 +57,7 @@ struct WalkLocomotion {
     unsigned int q128;  // 0x128
     AbstractClass * q130;  // 0x130
     unsigned int q134;  // 0x134
-    unsigned int q140;  // 0x140
+    unsigned int ;  // 0x140
     unsigned char q144;  // 0x144
     unsigned char q148;  // 0x148
     unsigned char q14C;  // 0x14C
@@ -92,6 +93,7 @@ struct WalkLocomotion {
     unsigned char q340;  // 0x340
     unsigned char q350;  // 0x350
     unsigned char q3D1;  // 0x3D1
+    unsigned int u32_48C;  // 0x48C
     void* q570;  // 0x570
     unsigned char q574;  // 0x574
     void* q578;  // 0x578
@@ -104,6 +106,7 @@ struct WalkLocomotion {
     void* q5E0;  // 0x5E0
     void* q5E4;  // 0x5E4
     unsigned char q5E8;  // 0x5E8
+    unsigned int u32_5EC;  // 0x5EC
     void* q608;  // 0x608
     unsigned char q620;  // 0x620
     unsigned char q624;  // 0x624
@@ -125,6 +128,7 @@ struct WalkLocomotion {
     unsigned char q689;  // 0x689
     unsigned char q68C;  // 0x68C
     unsigned char q68F;  // 0x68F
+    unsigned int u32_697;  // 0x697
     unsigned char q6BB;  // 0x6BB
     void* q6C4;  // 0x6C4
     unsigned char q6C8;  // 0x6C8
@@ -162,150 +166,12 @@ struct WalkLocomotion {
     unsigned char q1668;  // 0x1668
     unsigned char q1674;  // 0x1674
     void* q1768;  // 0x1768
-    unsigned char q176C;  // 0x176C
-    unsigned int q1908;  // 0x1908
-    unsigned char q190C;  // 0x190C
-    unsigned int q1910;  // 0x1910
-    unsigned char q1914;  // 0x1914
-    void* q1924;  // 0x1924
-    unsigned char q1928;  // 0x1928
-    void* q2048;  // 0x2048
-    unsigned char q204C;  // 0x204C
-    unsigned char q2050;  // 0x2050
-    unsigned char q2054;  // 0x2054
-    unsigned char q2058;  // 0x2058
-    unsigned char q2084;  // 0x2084
-    unsigned char q2088;  // 0x2088
-    unsigned char q2098;  // 0x2098
-    unsigned char q209C;  // 0x209C
-    void* q2100;  // 0x2100
-    unsigned char q2104;  // 0x2104
-    unsigned char q2108;  // 0x2108
-    unsigned char q2120;  // 0x2120
-    unsigned char q2124;  // 0x2124
-    unsigned char q2128;  // 0x2128
-    unsigned char q212C;  // 0x212C
-    unsigned char q3600;  // 0x3600
-    unsigned char q3604;  // 0x3604
-    unsigned char q3F58;  // 0x3F58
-    unsigned char q3F5C;  // 0x3F5C
-    unsigned char q3F60;  // 0x3F60
-    unsigned char q3F64;  // 0x3F64
-    unsigned char q3F68;  // 0x3F68
-    void* q5010;  // 0x5010
-    unsigned char q5014;  // 0x5014
-    unsigned char q5018;  // 0x5018
-    unsigned char q501C;  // 0x501C
-    unsigned char q5020;  // 0x5020
-    unsigned char q5024;  // 0x5024
-    unsigned char q5028;  // 0x5028
-    void* q5120;  // 0x5120
-    void* q5124;  // 0x5124
-    unsigned char q5128;  // 0x5128
-    unsigned char q512C;  // 0x512C
-    unsigned char q5140;  // 0x5140
-    unsigned char q5144;  // 0x5144
-    unsigned char q5148;  // 0x5148
-    unsigned char q514C;  // 0x514C
-    unsigned char q5150;  // 0x5150
-    void* q5170;  // 0x5170
-    unsigned char q5174;  // 0x5174
-    unsigned char q5178;  // 0x5178
-    unsigned char q51AC;  // 0x51AC
-    unsigned char q51B0;  // 0x51B0
-    unsigned char q51B4;  // 0x51B4
-    unsigned char q51B8;  // 0x51B8
-    unsigned char q51BC;  // 0x51BC
-    unsigned char q5270;  // 0x5270
-    unsigned char q5274;  // 0x5274
-    unsigned char q5278;  // 0x5278
-    unsigned char q527C;  // 0x527C
-    unsigned char q5280;  // 0x5280
-    unsigned char q5284;  // 0x5284
-    unsigned char q5288;  // 0x5288
-    void* q5380;  // 0x5380
-    void* q5384;  // 0x5384
-    unsigned char q5388;  // 0x5388
-    unsigned char q538C;  // 0x538C
-    unsigned char q5390;  // 0x5390
-    unsigned char q5394;  // 0x5394
-    unsigned char q5398;  // 0x5398
-    unsigned char q53E8;  // 0x53E8
-    unsigned char q53EC;  // 0x53EC
-    unsigned char q53F0;  // 0x53F0
-    unsigned char q53F4;  // 0x53F4
-    unsigned char q53F8;  // 0x53F8
-    void* q5444;  // 0x5444
-    unsigned char q5448;  // 0x5448
-    unsigned char q544C;  // 0x544C
-    unsigned char q5450;  // 0x5450
-    unsigned char q5454;  // 0x5454
-    unsigned char q5458;  // 0x5458
-    unsigned char q5460;  // 0x5460
-    unsigned char q5464;  // 0x5464
-    unsigned char q5468;  // 0x5468
-    unsigned char q5480;  // 0x5480
-    unsigned char q5484;  // 0x5484
-    unsigned char q5490;  // 0x5490
-    unsigned char q5494;  // 0x5494
-    unsigned char q5498;  // 0x5498
-    unsigned char q5508;  // 0x5508
-    unsigned char q550C;  // 0x550C
-    void* q5510;  // 0x5510
-    unsigned char q5514;  // 0x5514
-    unsigned char q5518;  // 0x5518
-    unsigned char q551C;  // 0x551C
-    unsigned char q5520;  // 0x5520
-    unsigned char q5524;  // 0x5524
-    unsigned char q5528;  // 0x5528
-    void* q5640;  // 0x5640
-    unsigned char q5644;  // 0x5644
-    void* q5650;  // 0x5650
-    unsigned char q5654;  // 0x5654
-    unsigned char q5658;  // 0x5658
-    unsigned char q566C;  // 0x566C
-    unsigned char q5670;  // 0x5670
-    unsigned char q5674;  // 0x5674
-    unsigned char q5678;  // 0x5678
-    unsigned char q567C;  // 0x567C
-    unsigned int q5684;  // 0x5684
-    unsigned char q5688;  // 0x5688
-    unsigned char q568C;  // 0x568C
-    unsigned char q5690;  // 0x5690
-    unsigned char q5694;  // 0x5694
-    unsigned char q5698;  // 0x5698
-    unsigned char q5700;  // 0x5700
-    void* q5704;  // 0x5704
-    unsigned char q5708;  // 0x5708
-    unsigned char q570C;  // 0x570C
-    unsigned char q5710;  // 0x5710
-    unsigned char q5714;  // 0x5714
-    unsigned char q5718;  // 0x5718
-    unsigned char q5748;  // 0x5748
-    unsigned char q574C;  // 0x574C
-    unsigned char q5750;  // 0x5750
-    unsigned char q5754;  // 0x5754
-    unsigned char q592C;  // 0x592C
-    unsigned char q5930;  // 0x5930
-    unsigned char q5934;  // 0x5934
-    void* q5938;  // 0x5938
-    unsigned char q593C;  // 0x593C
-    unsigned char q5940;  // 0x5940
-    unsigned char q5944;  // 0x5944
-    unsigned int q6408;  // 0x6408
-    unsigned char q640C;  // 0x640C
-    unsigned char q6410;  // 0x6410
-    unsigned char q6414;  // 0x6414
-    unsigned char q6418;  // 0x6418
-    unsigned char q79D0;  // 0x79D0
-    unsigned char q79D4;  // 0x79D4
-    unsigned char q79D8;  // 0x79D8
-    unsigned char q79DC;  // 0x79DC
     unsigned int WalkLocomotion_field_0x40;
     unsigned int WalkLocomotion_field_0x44;
     unsigned int WalkLocomotion_field_0x58;
     unsigned int q0042;
     unsigned int u32_184;
+    unsigned int q140;
 // --- flat members (END) ---
     char MoveTo(IUnknown * aP1,  int aP3);    // 0x6A01A0
     char ProcessCollision(char a2);  // 0x6A05F0

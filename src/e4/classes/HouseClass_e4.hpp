@@ -79,7 +79,7 @@ struct HouseClass {
     char countWarfactories[4];  // 0xC4
     char infantrySelfHeal[4];  // 0xC8
     char unitsSelfHeal[4];  // 0xCC
-    void** startingUnits;  // 0xD0
+    StartingTechnoStruct** startingUnits;  // 0xD0
     char startingUnitsCount[4];  // 0xD4
     unsigned int q0D5;  // 0xD5
     unsigned int q0D6;  // 0xD6
@@ -102,6 +102,7 @@ struct HouseClass {
     CampaignClass* q0FC;  // 0xFC
     double rofMultiplier;  // 0x100
     unsigned int q104;  // 0x104
+    unsigned int u32_105;  // 0x105
     double costMultiplier;  // 0x108
     unsigned int q10C;  // 0x10C
     unsigned int q10F;  // 0x10F
@@ -481,6 +482,7 @@ struct HouseClass {
     unsigned char q650;  // 0x650
     unsigned int q658;  // 0x658
     AbstractClass* q65C;  // 0x65C
+    unsigned int u32_65E;  // 0x65E
     unsigned int q660;  // 0x660
     unsigned int q664;  // 0x664
     unsigned int q668;  // 0x668
@@ -1615,10 +1617,10 @@ struct HouseClass {
     char attackDelayA[4];  // 0x55F8
     char attackDelayB[4];  // 0x55FC
     char enemyHouseIndex[4];  // 0x5600
-    void* angerNodes;  // 0x5604
+    AngerStruct* angerNodes;  // 0x5604
     char angerNodesCount[4];  // 0x5608
     char angerNodesCapacity[4];  // 0x560C
-    void* scoutNodes;  // 0x5610
+    ScoutStruct* scoutNodes;  // 0x5610
     unsigned int q5611;  // 0x5611
     char scoutNodesCount[4];  // 0x5614
     char scoutNodesCapacity[4];  // 0x5618
@@ -1684,7 +1686,7 @@ struct HouseClass {
     char teamDelayTimer[12];  // 0x5758
     unsigned int u32_575C;  // 0x575C
     void* q5760;  // 0x5760
-    void* ptr_5764;  // 0x5764
+    TimerStruct * ptr_5764;  // 0x5764
     unsigned char q5768;  // 0x5768
     unsigned char q576C;  // 0x576C
     char HouseClass_field_timer_B[12];  // 0x5770
@@ -1818,13 +1820,11 @@ struct HouseClass {
     unsigned int q6528;  // 0x6528
     unsigned int q6900;  // 0x6900
     unsigned int q7724;  // 0x7724
-    unsigned int occupiables8;
-    unsigned int productionFactory_plants5;
-    unsigned int q54E4;
-    unsigned int gap0;
+    unsigned int u32_54E4;
+    unsigned int vtable0;
+    unsigned int AIBuildBase;
     unsigned int CheckWinCondition;
     unsigned int FindOwner;
-    unsigned int GetPowerRatio;
 // --- flat members (END) ---
     AbstractClass * * AIDecision(ObjectClass * aP0, int * a1);
     AbstractClass * * AutoBuildScanAndSort(int a2, unsigned int * a3);
@@ -1896,6 +1896,7 @@ struct HouseClass {
     static double ProcessPowerDrain(...);  // C2597 interim stub
     static double ShouldDisableCameo(...);  // C2597 interim stub
     static double UpdateProduction(...);  // C2597 interim stub
+    static double GetPowerRatio(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

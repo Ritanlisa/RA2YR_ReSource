@@ -9,43 +9,50 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/SuperClass_e4.hpp"
+#include "e4/classes/Struct_e4.hpp"
 
 // 0x439110
 namespace gamemd {
 int Stream::FlushAndReset()
 {
-  int v2; // eax
-  int v3; // edi
-  int v4; // eax
-  void * v5;
-
-  v2 = (int)(*this);
-  v3 = (int)(this->Stream_field_08);
-  *(&this->Stream_field_042) = 45; /*0x439119*/
-  this->vt_slot_12(); /*0x439120*/
-  this->vt_slot_8(v3, 0); /*0x43912a*/
-  v4 = this->q018; /*0x43912d*/
-  v5 = this->q020; /*0x439130*/
-  this += 6; /*0x439133*/
-  (*(void (__thiscall **)(unsigned int *))(v4 + 12))(this); /*0x439138*/
-  return this->vt_slot_8(v5, 0); /*0x439145*/
+  Stream *v1; // esi
+  StreamClass *m_Stream; // eax
+  int Stream_field_08; // edi
+  int Stream_field_04; // eax
+  int Stream_field_0C; // edi
+v1 = (gamemd::Stream *)((int)(this));
+  m_Stream = (gamemd::StreamClass *)((int)(this->m_Stream));
+  Stream_field_08 = (int)(this->Stream_field_08);
+  this->Stream_field_0C = 45; /*0x439119*/
+  ((void (*)(void))m_Stream->m_Size)(); /*0x439120*/
+  ((void (__thiscall *)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_08, 0); /*0x43912a*/
+  Stream_field_04 = v1[1].Stream_field_04; /*0x43912d*/
+  Stream_field_0C = v1[1].Stream_field_0C; /*0x439130*/
+  v1 = (Stream *)((char *)v1 + 24); /*0x439133*/
+  (*(void (__thiscall **)(Stream *))(Stream_field_04 + 12))(v1); /*0x439138*/
+  return ((int (__thiscall *)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_0C, 0); /*0x439145*/
 }
 } // namespace gamemd
 // 0x49FB70
 namespace gamemd {
 int Stream::ReadIntArray(int a2)
 {
+  int v2; // esi
   int result; // eax
   int v5; // eax
   int v6; // ebx
 
-  a2 = a2; /*0x49fb72*/
-  result = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, &this->u32_10, 4, 0); /*0x49fb84*/
+  v2 = a2; /*0x49fb72*/
+  result = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 16))( /*0x49fb84*/
+             a2,
+             &this->Stream_field_10,
+             4,
+             0);
   if ( result >= 0 ) /*0x49fb89*/
   {
-    v5 = (int)(*(unsigned int *)a2);
-    a2 = (int)(this->Stream_field_08);
-    result = (*(int (__stdcall **)(int, int *, int, unsigned int))(v5 + 16))(a2, &a2, 4, 0); /*0x49fb9e*/
+    v5 = *(unsigned int *)v2; /*0x49fb8e*/
+    a2 = this->a2; /*0x49fb9a*/
+    result = (*(int (__stdcall **)(int, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x49fb9e*/
     if ( result >= 0 ) /*0x49fba3*/
     {
       v6 = 0; /*0x49fba9*/
@@ -57,7 +64,11 @@ int Stream::ReadIntArray(int a2)
       {
         while ( 1 ) /*0x49fbbd*/
         {
-          result = (*(int (__stdcall **)(int, int, int, unsigned int))(*(unsigned int *)a2 + 16))(a2, this->Stream_field_04 + 4 * v6, 4, 0); /*0x49fbbd*/
+          result = (*(int (__stdcall **)(int, int, int, unsigned int))(*(unsigned int *)v2 + 16))( /*0x49fbbd*/
+                     v2,
+                     this->Stream_field_04 + 4 * v6,
+                     4,
+                     0);
           if ( result < 0 ) /*0x49fbc2*/
             break; /*0x49fbc2*/
           if ( ++v6 >= a2 ) /*0x49fbcb*/
@@ -76,16 +87,16 @@ int Stream::WriteIntArray(TechnoTypeClass * aP1)
   int v3; // ecx
   int result; // eax
   int i; // esi
-  int v6; // [esp+20h] [ebp-4h] BYREF
+  int Stream_field_10; // [esp+20h] [ebp-4h] BYREF
 
   v3 = (int)(*aP1);
-  v6 = this->u32_10; /*0x67a4b9*/
-  (*(void (__stdcall **)(int *, int *, int, unsigned int))(v3 + 16))(aP1, &v6, 4, 0); /*0x67a4bd*/
-  result = v6; /*0x67a4c0*/
-  for ( i = 0; i < v6; ++i ) /*0x67a4c8*/
+  Stream_field_10 = this->Stream_field_10; /*0x67a4b9*/
+  aP1->IsClean(&Stream_field_10, 4, 0); /*0x67a4bd*/
+  result = Stream_field_10; /*0x67a4c0*/
+  for ( i = 0; i < Stream_field_10; ++i ) /*0x67a4c8*/
   {
     (*(void (__stdcall **)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->Stream_field_04 + 4 * i, 4, 0); /*0x67a4d8*/
-    result = v6; /*0x67a4db*/
+    result = Stream_field_10; /*0x67a4db*/
   }
   return result; /*0x67a4e4*/
 }
@@ -218,8 +229,8 @@ void * Stream::InitializeBinkAudio(const char * a1, IUnknown * aP2, int a4, int 
 namespace gamemd {
 int Stream::GetChecked()
 {
-  if ( !*(unsigned int *)this ) /*0x45a053*/
+  if ( !this->m_Stream ) /*0x45a053*/
     WinAPI::Wrapper(-2147467261); /*0x45a05d*/
-  return *(unsigned int *)this; /*0x45a064*/
+  return (int)this->m_Stream->__pad_0; /*0x45a064*/
 }
 } // namespace gamemd

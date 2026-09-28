@@ -30,26 +30,26 @@ void TagClass::NotifyLocalChanged(int idx_local)
 // 0x6e5320
 bool TagClass::HasCrossesHorizontalLineEvent() const
 {
-  unsigned int *v1; // ecx
+  TagTypeClass *buildingType; // ecx
 
-  v1 = (unsigned int *)this->buildingType; /*0x6e5320*/
-  return v1 && TagTypeClass::HasCrossesHorizontalLineEvent(v1); /*0x6e5335*/
+  buildingType = this->buildingType; /*0x6e5320*/
+  return buildingType && TagTypeClass::HasCrossesHorizontalLineEvent(buildingType); /*0x6e5335*/
 }
 // 0x6e5300
 bool TagClass::HasCrossesVerticalLineEvent() const
 {
-  unsigned int *v1; // ecx
+  TagTypeClass *buildingType; // ecx
 
-  v1 = (unsigned int *)this->buildingType; /*0x6e5300*/
-  return v1 && TagTypeClass::HasCrossesVerticalLineEvent(v1); /*0x6e5315*/
+  buildingType = this->buildingType; /*0x6e5300*/
+  return buildingType && TagTypeClass::HasCrossesVerticalLineEvent(buildingType); /*0x6e5315*/
 }
 // 0x6e5340
 bool TagClass::HasZoneEntryByEvent() const
 {
-  unsigned int *v1; // ecx
+  TagTypeClass *buildingType; // ecx
 
-  v1 = (unsigned int *)this->buildingType; /*0x6e5340*/
-  return v1 && TagTypeClass::HasZoneEntryByEvent(v1); /*0x6e5355*/
+  buildingType = this->buildingType; /*0x6e5340*/
+  return buildingType && TagTypeClass::HasZoneEntryByEvent(buildingType); /*0x6e5355*/
 }
 bool TagClass::HasAllowWinAction() const
 {
@@ -104,7 +104,9 @@ bool TagClass::IsOnlyInstanceOfType() const
   v1 = 0; /*0x6e5859*/
   if ( g_GameObjectCleanup <= 0 ) /*0x6e585d*/
     return 1; /*0x6e587d*/
-  for ( i = (char *)g_TagClassCount; *(unsigned int **)i == this || *(unsigned int *)(i->q024 != this->buildingType; i += 4 ) /*0x6e585f*/
+  for ( i = (char *)g_TagClassCount; /*0x6e585f*/
+        *(TagClass **)i == this || *(TagTypeClass **)(i->u32_24 != this->buildingType;
+        i += 4 )
   {
     if ( ++v1 >= g_GameObjectCleanup ) /*0x6e587b*/
       return 1; /*0x6e587b*/
@@ -174,19 +176,19 @@ void TagClass::Destroy()
 {
   int result; // eax
 
-  *(&this->abstractFlags2) = 1; /*0x6e5233*/
-  result = dword_B0F6A0; /*0x6e5237*/
-  if ( g_LaserDrawConfig < dword_B0F6A0 /*0x6e5270*/
-    || (byte_B0F6A5 || !dword_B0F6A0)
-    && dword_B0F6AC > 0
-    && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_DiskLaserManager + 8))(
-                   &g_DiskLaserManager,
-                   dword_B0F6A0 + dword_B0F6AC,
+  this->destroyed = 1; /*0x6e5233*/
+  result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x6e5237*/
+  if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x6e5270*/
+    || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
+    && g_BuildingLoadQueue_Array.UnitExitSound > 0
+    && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
+                   &g_BuildingLoadQueue_Array.ToTile,
+                   *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
                    0),
         (unsigned char)result) )
   {
-    result = g_LaserDrawConfig++; /*0x6e5278*/
-    *((unsigned int *)dword_B0F69C + result) = this; /*0x6e5287*/
+    result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x6e5278*/
+    *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x6e5287*/
   }
   return result; /*0x6e528a*/
 }
@@ -260,14 +262,14 @@ bool TagTypeClass::HasAllowWinAction() const
 // 0x6e6250
 bool TagTypeClass::HasCrossesHorizontalLineEvent() const
 {
-  unsigned int *v1; // esi
+  HouseClass *v1; // esi
 
-  v1 = (unsigned int *)*(&this->uniqueId0); /*0x6e6251*/
+  v1 = (HouseClass *)this->persistence; /*0x6e6251*/
   if ( !v1 ) /*0x6e6259*/
     return 0; /*0x6e6270*/
-  while ( !HouseClass::HasType25Building(v1) ) /*0x6e6264*/
+  while ( !(uint8_t)HouseClass::HasType25Building(v1) ) /*0x6e6264*/
   {
-    v1 = (unsigned int *)v1[42]; /*0x6e6266*/
+    v1 = (HouseClass *)v1->psychicDetectionCount; /*0x6e6266*/
     if ( !v1 ) /*0x6e626e*/
       return 0; /*0x6e626e*/
   }
@@ -276,14 +278,14 @@ bool TagTypeClass::HasCrossesHorizontalLineEvent() const
 // 0x6e6280
 bool TagTypeClass::HasCrossesVerticalLineEvent() const
 {
-  unsigned int *v1; // esi
+  HouseClass *v1; // esi
 
-  v1 = (unsigned int *)*(&this->uniqueId0); /*0x6e6281*/
+  v1 = (HouseClass *)this->persistence; /*0x6e6281*/
   if ( !v1 ) /*0x6e6289*/
     return 0; /*0x6e62a0*/
-  while ( !HouseClass::HasType26Building(v1) ) /*0x6e6294*/
+  while ( !(uint8_t)HouseClass::HasType26Building(v1) ) /*0x6e6294*/
   {
-    v1 = (unsigned int *)v1[42]; /*0x6e6296*/
+    v1 = (HouseClass *)v1->psychicDetectionCount; /*0x6e6296*/
     if ( !v1 ) /*0x6e629e*/
       return 0; /*0x6e629e*/
   }
@@ -292,14 +294,14 @@ bool TagTypeClass::HasCrossesVerticalLineEvent() const
 // 0x6e62b0
 bool TagTypeClass::HasZoneEntryByEvent() const
 {
-  int v1; // esi
+  HouseClass *v1; // esi
 
-  v1 = *(&this->uniqueId0); /*0x6e62b1*/
+  v1 = (HouseClass *)this->persistence; /*0x6e62b1*/
   if ( !v1 ) /*0x6e62b9*/
     return 0; /*0x6e62d0*/
-  while ( !HouseClass::FindType24((std::codecvt_base **)v1) ) /*0x6e62c4*/
+  while ( !HouseClass::FindType24(v1) ) /*0x6e62c4*/
   {
-    v1 = *(unsigned int *)(v1 + 168); /*0x6e62c6*/
+    v1 = (HouseClass *)v1->psychicDetectionCount; /*0x6e62c6*/
     if ( !v1 ) /*0x6e62ce*/
       return 0; /*0x6e62ce*/
   }

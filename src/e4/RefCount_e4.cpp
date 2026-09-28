@@ -10,12 +10,12 @@
 namespace gamemd {
 int RefCount::Decrement()
 {
-  void * result;
+  int result; // eax
 
-  result = (void *)((int)(this->q00C - 1));
-  this->q00C = (int)(result);
+  result = this->u32_C - 1; /*0x401f93*/
+  this->u32_C = result; /*0x401f96*/
   if ( result < 0 ) /*0x401f99*/
-    this->q00C = 0; /*0x401f9b*/
+    this->u32_C = 0; /*0x401f9b*/
   return result; /*0x401fa2*/
 }
 } // namespace gamemd
@@ -24,20 +24,20 @@ namespace gamemd {
 int RefCount::Increment(int a2)
 {
   int v3; // edi
-  int v5; // ecx
+  int RefCount_field_04; // ecx
 
-  v3 = this->q008; /*0x49fa09*/
+  v3 = this->u32_8; /*0x49fa09*/
   if ( a2 < v3 ) /*0x49fa0e*/
   {
   LABEL_5:
     ++*(unsigned int *)(this->RefCount_field_04 + 4 * a2); /*0x49fa3d*/
-    v5 = this->RefCount_field_04; /*0x49fa4d*/
-    ++this->q010; /*0x49fa51*/
-    return *(unsigned int *)(v5 + 4 * a2); /*0x49fa59*/
+    RefCount_field_04 = this->RefCount_field_04; /*0x49fa4d*/
+    ++this->RefCount_field_04; /*0x49fa51*/
+    return *(unsigned int *)(RefCount_field_04 + 4 * a2); /*0x49fa59*/
   }
-  if ( this->vt_slot_8(a2 + 10, 0) ) /*0x49fa1a*/
+  if ( (*(uint8_t (__thiscall **)(RefCount *, int, unsigned int))(this->m_RefCount + 8))(this, a2 + 10, 0) ) /*0x49fa1a*/
   {
-    for ( v3 = v3; v3 < this->q008; *(unsigned int *)(this->RefCount_field_04 + 4 * v3 - 4) = 0 ) /*0x49fa28*/
+    for ( v3 = v3; v3 < this->u32_8; *(unsigned int *)(this->RefCount_field_04 + 4 * v3 - 4) = 0 ) /*0x49fa28*/
       ++v3; /*0x49fa2d*/
     goto LABEL_5; /*0x49fa3b*/
   }

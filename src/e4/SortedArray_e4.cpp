@@ -10,46 +10,47 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/SpawnManagerClass_e4.hpp"
+#include "e4/classes/Power_e4.hpp"
 
 // 0x52B620
 namespace gamemd {
 int SortedArray::BinarySearch(CCINIClass * aP1)
 {
-  size_t result; // eax
-  char *v4; // edi
+  int result; // eax
+  int v4; // edi
   int v5; // ebx
-  int v6; // ecx
+  int SortedArray_field_0x04; // ecx
   int v7; // esi
 
-  result = (size_t)this->q004; /*0x52b623*/
+  result = this->SortedArray_field_0x04; /*0x52b623*/
   if ( result ) /*0x52b628*/
   {
-    if ( !this->q00C ) /*0x52b62e*/
+    if ( !IDA_LOBYTE(this->SortedArray_field_0x0C) ) /*0x52b62e*/
     {
-      qsort(result, 8u, CompareFunc4Int); /*0x52b640*/
-      this->q010 = 0; /*0x52b648*/
-      this->q00C = 1; /*0x52b64f*/
+      qsort(*(void **)this->__pad_0, result, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunc4Int); /*0x52b640*/
+      this->SortedArray_field_0x10 = 0; /*0x52b648*/
+      IDA_LOBYTE(this->SortedArray_field_0x0C) = 1; /*0x52b64f*/
     }
-    v4 = (int)(*this);
+    v4 = (int)(*(unsigned int *)this->__pad_0);
     v5 = (int)(*aP1);
-    v6 = (int)this->q004; /*0x52b65d*/
-    if ( v6 <= 0 ) /*0x52b662*/
+    SortedArray_field_0x04 = this->SortedArray_field_0x04; /*0x52b65d*/
+    if ( SortedArray_field_0x04 <= 0 ) /*0x52b662*/
       return 0; /*0x52b68e*/
     while ( 1 ) /*0x52b66b*/
     {
-      v7 = *(unsigned int *)&v4[8 * (v6 / 2)]; /*0x52b66b*/
+      v7 = *(unsigned int *)(v4 + 8 * (SortedArray_field_0x04 / 2)); /*0x52b66b*/
       if ( v7 <= v5 ) /*0x52b673*/
       {
         if ( v7 == v5 ) /*0x52b679*/
-          return (size_t)&v4[8 * (v6 / 2)]; /*0x52b693*/
-        v4 += 8 * (v6 / 2) + 8; /*0x52b67b*/
-        v6 += -1 - v6 / 2; /*0x52b683*/
+          return v4 + 8 * (SortedArray_field_0x04 / 2); /*0x52b693*/
+        v4 += 8 * (SortedArray_field_0x04 / 2) + 8; /*0x52b67b*/
+        SortedArray_field_0x04 += -1 - SortedArray_field_0x04 / 2; /*0x52b683*/
       }
       else
       {
-        v6 /= 2; /*0x52b675*/
+        SortedArray_field_0x04 /= 2; /*0x52b675*/
       }
-      if ( v6 <= 0 ) /*0x52b687*/
+      if ( SortedArray_field_0x04 <= 0 ) /*0x52b687*/
         return 0; /*0x52b687*/
     }
   }
@@ -123,7 +124,7 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
   int v11; // edi
   int v12; // eax
   unsigned int *v13; // edi
-  ObjectClass ** v14;
+  int v14; // eax
   int v15; // [esp+10h] [ebp-8h]
 
   v3 = this->q004; /*0x5388a9*/
@@ -131,13 +132,13 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     return 0; /*0x5388ae*/
   if ( !this->q00C ) /*0x5388b0*/
   {
-    qsort(v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5388c2*/
+    qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5388c2*/
     this->q010 = 0; /*0x5388ca*/
     this->q00C = 1; /*0x5388d1*/
   }
-  v4 = (int)(this->q004);
+  v4 = (unsigned int *)((int)(this->q004));
   v5 = (int)(*(unsigned int **)this);
-  v15 = (int)(*aP1);
+  v15 = *aP1; /*0x5388e4*/
   if ( v4 <= 0 ) /*0x5388e8*/
     return 0; /*0x5388e8*/
   while ( 1 ) /*0x5388f1*/
@@ -168,10 +169,10 @@ ObjectClass * * SortedArray::RemoveByKey(DynamicVector * aP1)
     v12 = ((unsigned int)(this->u32_20)) * i++; /*0x538940*/
     *(unsigned int *)(v12 - 8) = v11; /*0x538944*/
   }
-  v13 = (unsigned int *)((gamemd::ObjectClass **)(*(unsigned int **)this));
-  v14 = (gamemd::ObjectClass **)((unsigned int)((gamemd::ObjectClass **)((int)((gamemd::ObjectClass **)(this->q004 - 1)))));
-  this->q004 = (unsigned char)((gamemd::ObjectClass **)(v14));
-  v13[2 * v14] = (unsigned int)((gamemd::ObjectClass **)(0));
+  v13 = (int)((unsigned int *)((gamemd::ObjectClass **)(*(unsigned int **)this)));
+  v14 = (gamemd::ObjectClass **)(this->q004 - 1);
+  this->q004 = (gamemd::ObjectClass **)(v14);
+  v13[2 * v14] = 0; /*0x53895f*/
   v13[2 * v14 + 1] = 0; /*0x538962*/
   this->q010 = 0; /*0x538966*/
   return 1; /*0x538917*/
@@ -197,7 +198,7 @@ int SortedArray::FindPair(int * a2)
     return 1; /*0x5389a6*/
   if ( !this->q00C ) /*0x5389a9*/
   {
-    qsort(v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5389bb*/
+    qsort(*(void **)this, v3, 8u, (_CoreCrtNonSecureSearchSortCompareFunction)CompareFuncInt); /*0x5389bb*/
     this->q010 = 0; /*0x5389c3*/
     this->q00C = 1; /*0x5389ca*/
   }

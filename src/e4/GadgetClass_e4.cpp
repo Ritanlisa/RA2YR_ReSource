@@ -16,91 +16,93 @@
 namespace gamemd {
 void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass * aP3, ControlClass * aP4, GadgetClass * aP5, GadgetClass * aP6)
 {
+  unsigned int *result; // eax
 
+  result = this->__pad_0; /*0x4e12f4*/
   this->Height = aP2; /*0x4e12fb*/
   this->Width = aP1; /*0x4e1302*/
   this->ID = aP4; /*0x4e1309*/
-  this->Visible = aP3; /*0x4e1312*/
+  *(unsigned int *)&this->Visible = aP3; /*0x4e1312*/
   this->X = 0; /*0x4e1319*/
   this->Y = 0; /*0x4e131c*/
-  this->q01C = 0; /*0x4e131f*/
-  this->q01E = 0; /*0x4e1322*/
-  this->q01D = aP6; /*0x4e1327*/
-  this->u32_20 = aP5; /*0x4e132a*/
+  this->u32_1C = 0; /*0x4e131f*/
+  this->u32_1E = 0; /*0x4e1322*/
+  this->u32_1D = aP6; /*0x4e1327*/
+  this->Y = aP5; /*0x4e132a*/
+  *(unsigned int *)this->__pad_0 = (void*)&GadgetClass_vftable; /*0x4e132d*/
   if ( aP6 ) /*0x4e1334*/
-    this->u32_20 = aP5 | 5; /*0x4e1339*/
-}
+    this->Y = aP5 | 5; /*0x4e1339*/
+  return result; /*0x4e1333*/
 }
 // 0x4E1390
 namespace gamemd {
 GadgetClass * * GadgetClass::Dtor()
 {
-  int v1; // eax
+  GadgetClass *v1; // eax
   int v2; // eax
 
-  v1 = dword_8B3E90; /*0x4e1396*/
-  if ( this == (unsigned int *)dword_8B3E90 ) /*0x4e139f*/
+  *(unsigned int *)this->__pad_0 = (void*)&GadgetClass_vftable; /*0x4e1390*/
+  v1 = (GadgetClass *)FootClass_Array.missionTimer[2]; /*0x4e1396*/
+  if ( this == (GadgetClass *)FootClass_Array.missionTimer[2] ) /*0x4e139f*/
   {
-    v2 = this->u32_20; /*0x4e13a1*/
+    v2 = this->Y; /*0x4e13a1*/
     IDA_BYTE1(v2) &= ~1u; /*0x4e13a4*/
-    this->u32_20 = v2; /*0x4e13a7*/
+    this->Y = v2; /*0x4e13a7*/
     v1 = 0; /*0x4e13aa*/
-    dword_8B3E90 = 0; /*0x4e13ac*/
+    FootClass_Array.missionTimer[2] = 0; /*0x4e13ac*/
   }
-  if ( this == (unsigned int *)dword_8B3E88 ) /*0x4e13ba*/
-    dword_8B3E88 = 0; /*0x4e13bc*/
-  if ( this == (unsigned int *)dword_8B3E8C ) /*0x4e13cb*/
-    dword_8B3E8C = 0; /*0x4e13cd*/
-  if ( this == (unsigned int *)v1 ) /*0x4e13d5*/
-    dword_8B3E90 = 0; /*0x4e13d7*/
-  return LinkClass::Destruct();
-}
+  if ( this == (GadgetClass *)FootClass_Array.missionTimer[0] ) /*0x4e13ba*/
+    FootClass_Array.missionTimer[0] = 0; /*0x4e13bc*/
+  if ( this == (GadgetClass *)FootClass_Array.missionTimer[1] ) /*0x4e13cb*/
+    FootClass_Array.missionTimer[1] = 0; /*0x4e13cd*/
+  if ( this == v1 ) /*0x4e13d5*/
+    FootClass_Array.missionTimer[2] = 0; /*0x4e13d7*/
+  return LinkClass::Destruct((LinkClass *)this);
 }
 // 0x557920
 namespace gamemd {
 int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 {
-  int v3; // ecx
-  int v4; // eax
-  int v5; // edx
+  int ListClass_field_0x14; // ecx
+  int ListClass_field_0x10; // eax
+  int ListClass_field_0x18; // edx
   int i; // edi
   int v7; // eax
   int v9[4]; // [esp+10h] [ebp-10h] BYREF
 
-  if ( !GadgetClass::ClearState((unsigned char *)this, aP1) ) /*0x55792e*/
+  if ( !GadgetClass::ClearState((GadgetClass *)this, aP1) ) /*0x55792e*/
     return 0; /*0x557a0b*/
-  (*(void (__thiscall **)(int, unsigned int, unsigned int, unsigned int, unsigned int))(*(unsigned int *)g_WWMouseClass_Instance + 32))( /*0x557965*/
-    g_WWMouseClass_Instance,
-    this->q00C,
-    this->u32_10,
-    this->q014,
-    this->u32_18);
-  v3 = this->q014; /*0x55796b*/
-  v4 = this->u32_10; /*0x55796e*/
-  v9[0] = this->q00C; /*0x557971*/
-  v5 = this->u32_18; /*0x557975*/
-  v9[2] = v3; /*0x557978*/
-  v9[3] = v5; /*0x55797c*/
-  v9[1] = v4; /*0x55798b*/
+  (*(void (__thiscall **)(void *, int, int, int, int))(*(unsigned int *)stru_887598.lineTrailer + 32))( /*0x557965*/
+    stru_887598.lineTrailer,
+    this->ListClass_field_0x0C,
+    this->ListClass_field_0x10,
+    this->ListClass_field_0x14,
+    this->ListClass_field_0x18);
+  ListClass_field_0x14 = this->ListClass_field_0x14; /*0x55796b*/
+  ListClass_field_0x10 = this->ListClass_field_0x10; /*0x55796e*/
+  v9[0] = this->ListClass_field_0x0C; /*0x557971*/
+  ListClass_field_0x18 = this->ListClass_field_0x18; /*0x557975*/
+  v9[2] = ListClass_field_0x14; /*0x557978*/
+  v9[3] = ListClass_field_0x18; /*0x55797c*/
+  v9[1] = ListClass_field_0x10; /*0x55798b*/
   DrawBuildingTilesSHP(v9, 4, 1); /*0x55798f*/
-  if ( this->q044 ) /*0x557994*/
+  if ( this->u32_44 ) /*0x557994*/
   {
-    for ( i = 0; i < this->q050; ++i ) /*0x5579a2*/
+    for ( i = 0; i < this->Visible; ++i ) /*0x5579a2*/
     {
-      v7 = i + this->q170; /*0x5579ad*/
-      if ( this->q044 > v7 ) /*0x5579b1*/
-        (*(void (__thiscall **)(int, int, int, int, int, bool))(*(unsigned int *)&this->q0500))( /*0x5579e0*/
+      v7 = i + this->u32_170; /*0x5579ad*/
+      if ( this->u32_44 > v7 ) /*0x5579b1*/
+        (*(void (__thiscall **)(ListClass *, int, int, int, int, bool))(*(unsigned int *)this->__pad_0 + 200))( /*0x5579e0*/
           this,
           v7,
-          this->q00C + 1,
-          i * this->q04C + this->u32_10 + 1,
-          this->q014 - 2,
-          v7 == this->__pad_16C);
+          this->ListClass_field_0x0C + 1,
+          i * this->u32_4C + this->ListClass_field_0x10 + 1,
+          this->ListClass_field_0x14 - 2,
+          v7 == this->u32_16C);
     }
   }
-  (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 36))(g_WWMouseClass_Instance); /*0x5579f6*/
+  (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 36))(stru_887598.lineTrailer); /*0x5579f6*/
   return 1; /*0x5579fe*/
-}
 }
 // 0x60AAB0
 namespace gamemd {
@@ -120,7 +122,6 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
   HWND v14; // [esp+Ch] [ebp-94h] BYREF
   unsigned int *v15; // [esp+10h] [ebp-90h]
   int v16; // [esp+14h] [ebp-8Ch] BYREF
-  HWND v17; // [esp+18h] [ebp-88h] BYREF
   HWND v18; // [esp+1Ch] [ebp-84h] BYREF
   CHAR ClassName[128]; // [esp+20h] [ebp-80h] BYREF
 
@@ -238,56 +239,56 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
       goto LABEL_86; /*0x60adc9*/
     }
     *((unsigned int *)v14 + 44) = 2; /*0x60adcf*/
-    v17 = hWnd; /*0x60ade4*/
+    hWnd = hWnd; /*0x60ade4*/
     GetClassNameA(hWnd, ClassName, 128); /*0x60ade8*/
     if ( !strcmp(ClassName, g_INI_Key_Edit) || !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x60ae37*/
       goto LABEL_85; /*0x60ae5c*/
-    if ( !strcmp(ClassName, g_INI_Key_ListBox) && (v16 = 0, HashTable::Get(&g_DialogHashMap_Base, &v17, &v16)) ) /*0x60aeab*/
+    if ( !strcmp(ClassName, g_INI_Key_ListBox) && (v16 = 0, HashTable::Get(&g_DialogHashMap_Base, &hWnd, &v16)) ) /*0x60aeab*/
     {
-      v11 = *(unsigned int *)(v16 + 104) == 1; /*0x60aebc*/
+      v11 = v16->q068 == 1; /*0x60aebc*/
     }
     else
     {
       if ( strcmp(ClassName, g_INI_Key_ComboBox) ) /*0x60aed0*/
         goto LABEL_86; /*0x60aef5*/
-      v11 = (GetWindowLongA(v17, -16) & 3) != 3; /*0x60af09*/
+      v11 = (GetWindowLongA(hWnd, -16) & 3) != 3; /*0x60af09*/
     }
     if ( v11 ) /*0x60af0e*/
     {
-  LABEL_85: v12 = (int)((gamemd::AbstractClass **)(192));
-  LABEL_87: v15[50] = (unsigned int)((gamemd::AbstractClass **)(v12));
-      return (gamemd::AbstractClass **)(1);
+  LABEL_85:
+      v12 = 192; /*0x60af10*/
+  LABEL_87:
+      v15[50] = v12; /*0x60af19*/
+      return 1; /*0x60af1d*/
     }
   LABEL_86:
     v12 = 0; /*0x60af17*/
     goto LABEL_87; /*0x60af17*/
   }
-  return (gamemd::AbstractClass **)(1);
-}
+  return 1; /*0x60af23*/
 }
 // 0x623560
 namespace gamemd {
 AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
 {
-  size_t v3; // eax
+  int v3; // eax
   wchar_t *v4; // eax
 
-  if ( *(&this->vtable20) ) /*0x623564*/
+  if ( this->u32_28 ) /*0x623564*/
   {
-    RA2_OPDEL(*(&this->vtable20)); /*0x62356c*/
-    *(&this->vtable20) = 0; /*0x623574*/
+    RA2_OPDEL(*((void **)&this->X0)); /*0x62356c*/
+    this->u32_28 = 0; /*0x623574*/
   }
   if ( aP1 ) /*0x623581*/
   {
     if ( *aP1 ) /*0x623583*/
     {
       v3 = (unsigned int)(wcslen(aP1));
-      v4 = (wchar_t *)((unsigned int)((wchar_t *)new wchar_t));
-      *(&this->vtable20) = v4; /*0x62359b*/
+      v4 = (unsigned int)((wchar_t *)RA2_OPNEW(2 * v3 + 2));
+      this->u32_28 = v4; /*0x62359b*/
       wcscpy(v4, aP1); /*0x62359e*/
     }
   }
-}
 }
 // 0x723EA0
 namespace gamemd {
@@ -295,8 +296,7 @@ int GadgetClass::Show()
 {
   int v1; // eax
 
-  v1 = *(unsigned int *)this; /*0x723ea0*/
-  this->q0B4 = 1; /*0x723ea2*/
+  v1 = *(unsigned int *)this->__pad_0; /*0x723ea0*/
+  *((unsigned char *)this + 45) = 1; /*0x723ea2*/
   return (*(int (**)(void))(v1 + 72))();
-}
 }

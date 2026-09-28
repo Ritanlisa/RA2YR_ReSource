@@ -15,21 +15,23 @@
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/TagTypeClass_e4.hpp"
+#include "e4/classes/TemporalClass_e4.hpp"
 
 // 0x536290
 namespace gamemd {
 unsigned int * TauntCommandClass::Construct(int a2)
 {
   this->TauntCommandClass_field_00 = (unsigned int *)(a2);
-  return (unsigned int *)(this);
+  *(unsigned int *)this->__pad_0 = (void*)&TauntCommandClass_vftable; /*0x536299*/
+  return this->__pad_0; /*0x53629f*/
 }
 } // namespace gamemd
 // 0x5362B0
 namespace gamemd {
 void * TauntCommandClass::AddRef()
 {
-  sprintf(byte_A8F5B4, "Taunt_%d", this->TauntCommandClass_field_00); /*0x5362be*/
-  return byte_A8F5B4; /*0x5362cb*/
+  sprintf(&stru_A8EB00.gapE4[2512], "Taunt_%d", this->TauntCommandClass_field_00); /*0x5362be*/
+  return &stru_A8EB00.gapE4[2512]; /*0x5362cb*/
 }
 } // namespace gamemd
 // 0x5362D0
@@ -37,12 +39,12 @@ namespace gamemd {
 void * TauntCommandClass::Release()
 {
   wchar_t *StringCSF; // eax
-  const wchar_t *v3; // [esp-4h] [ebp-4h]
+  const wchar_t *TauntCommandClass_field_00; // [esp-4h] [ebp-4h]
 
-  v3 = (const wchar_t *)(this->TauntCommandClass_field_00);
+  TauntCommandClass_field_00 = (const wchar_t *)this->TauntCommandClass_field_00; /*0x5362d5*/
   StringCSF = GetStringCSF(aTxtTauntNumber, 0, g_Str_File_Init_CPP, 6400); /*0x5362e5*/
-  swprintf(&g_TeamCommandBuffer, (const size_t)StringCSF, v3); /*0x5362f0*/
-  return &g_TeamCommandBuffer; /*0x5362fd*/
+  swprintf((wchar_t *const)&stru_A8EB00.gapE4[2672], (const size_t)StringCSF, TauntCommandClass_field_00); /*0x5362f0*/
+  return (wchar_t *)&stru_A8EB00.gapE4[2672]; /*0x5362fd*/
 }
 } // namespace gamemd
 // 0x536300

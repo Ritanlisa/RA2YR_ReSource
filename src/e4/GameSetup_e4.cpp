@@ -19,23 +19,26 @@
 namespace gamemd {
 int GameSetup::LookupDialogHash()
 {
-  unsigned int *v1; // eax
+  GameSetup **v1; // eax
   unsigned int *v3; // eax
-  void *v4; // [esp+0h] [ebp-4h] BYREF
+  GameSetup *v4; // [esp+0h] [ebp-4h] BYREF
 
   v4 = this; /*0x60d326*/
-  if ( !g_DialogHashMap_Count ) /*0x60d32c*/
+  if ( !*(unsigned int *)&g_DialogPool.__pad_208[60] ) /*0x60d32c*/
     return 0; /*0x60d32c*/
-  v1 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v4) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x60d34d*/
+  v1 = *(GameSetup ***)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60d34d*/
+                      + 4
+                      * ((*(int (__thiscall **)(GameSetup **))&g_DialogPool.__pad_208[80])(&v4)
+                       & ((1 << g_DialogPool.__pad_208[68]) - 1)));
   if ( !v1 ) /*0x60d352*/
     return 0; /*0x60d352*/
-  while ( (void *)*v1 != v4 ) /*0x60d35a*/
+  while ( *v1 != v4 ) /*0x60d35a*/
   {
-    v1 = (unsigned int *)v1[129]; /*0x60d35c*/
+    v1 = (GameSetup **)v1[129]; /*0x60d35c*/
     if ( !v1 ) /*0x60d364*/
       return 0; /*0x60d364*/
   }
-  v3 = v1 + 1; /*0x60d36e*/
+  v3 = (unsigned int *)(v1 + 1);
   if ( v3 ) /*0x60d373*/
     return v3[27]; /*0x60d375*/
   else

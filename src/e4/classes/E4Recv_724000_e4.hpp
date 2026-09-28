@@ -24,7 +24,7 @@ struct E4Recv_724000 {
     unsigned int q134;  // 0x134
     unsigned int q150;  // 0x150
     unsigned int M552;  // 0x228
-    void* pad_230;  // 0x230
+    void* ;  // 0x230
     unsigned int q240;  // 0x240
     unsigned int M588;  // 0x24C
     unsigned int M592;  // 0x250

@@ -115,159 +115,10 @@ struct Network {
     unsigned char q1A8;  // 0x1A8
     unsigned char q1AA;  // 0x1AA
     unsigned char u8_1EC;  // 0x1EC
+    unsigned int u32_1F6;  // 0x1F6
+    unsigned int u32_1F7;  // 0x1F7
     void* q1F8;  // 0x1F8
-    unsigned char q1FC;  // 0x1FC
-    unsigned int q200;  // 0x200
-    unsigned char q204;  // 0x204
-    unsigned char q208;  // 0x208
-    unsigned char q220;  // 0x220
-    unsigned char q224;  // 0x224
-    unsigned char q228;  // 0x228
-    unsigned char q240;  // 0x240
-    unsigned char q244;  // 0x244
-    unsigned char q248;  // 0x248
-    unsigned int q260;  // 0x260
-    unsigned int q264;  // 0x264
-    unsigned char q268;  // 0x268
-    unsigned char q274;  // 0x274
-    unsigned int q278;  // 0x278
-    unsigned int q280;  // 0x280
-    unsigned int q298;  // 0x298
-    unsigned int q29C;  // 0x29C
-    unsigned int q2A0;  // 0x2A0
-    unsigned char q2A4;  // 0x2A4
-    unsigned char q300;  // 0x300
-    unsigned char q304;  // 0x304
-    unsigned int q310;  // 0x310
-    unsigned int q320;  // 0x320
-    unsigned char q324;  // 0x324
-    unsigned char q334;  // 0x334
-    unsigned char q340;  // 0x340
-    unsigned char q360;  // 0x360
-    unsigned char q364;  // 0x364
-    unsigned char q368;  // 0x368
-    unsigned char q370;  // 0x370
-    unsigned char q374;  // 0x374
-    unsigned char q378;  // 0x378
-    unsigned char q380;  // 0x380
-    unsigned char q384;  // 0x384
-    unsigned int q388;  // 0x388
-    unsigned char q394;  // 0x394
-    unsigned char q400;  // 0x400
-    unsigned int q404;  // 0x404
-    unsigned int q408;  // 0x408
-    unsigned char q420;  // 0x420
-    unsigned char q424;  // 0x424
-    unsigned int q504;  // 0x504
-    unsigned char q508;  // 0x508
-    unsigned char q520;  // 0x520
-    unsigned char q530;  // 0x530
-    unsigned char q534;  // 0x534
-    unsigned char q544;  // 0x544
-    unsigned char q548;  // 0x548
-    unsigned char q580;  // 0x580
-    unsigned char q584;  // 0x584
-    unsigned char q598;  // 0x598
-    unsigned int q608;  // 0x608
-    unsigned char q628;  // 0x628
-    unsigned int q630;  // 0x630
-    unsigned int q640;  // 0x640
-    unsigned int q664;  // 0x664
-    unsigned int q668;  // 0x668
-    unsigned char q768;  // 0x768
-    unsigned int q774;  // 0x774
-    unsigned int q784;  // 0x784
-    unsigned int q800;  // 0x800
-    unsigned char q804;  // 0x804
-    unsigned char q820;  // 0x820
-    unsigned int q834;  // 0x834
-    unsigned char q838;  // 0x838
-    unsigned int q850;  // 0x850
-    unsigned int q854;  // 0x854
-    unsigned char q864;  // 0x864
-    unsigned char q868;  // 0x868
-    unsigned char q880;  // 0x880
-    unsigned char q884;  // 0x884
-    unsigned char q888;  // 0x888
-    unsigned char q900;  // 0x900
-    unsigned int q904;  // 0x904
-    unsigned char q914;  // 0x914
-    unsigned char q918;  // 0x918
-    unsigned int q9CA;  // 0x9CA
-    unsigned int q9CB;  // 0x9CB
-    unsigned char q9CC;  // 0x9CC
-    unsigned char q9D0;  // 0x9D0
-    unsigned char q1024;  // 0x1024
-    unsigned int q1028;  // 0x1028
-    unsigned char q1030;  // 0x1030
-    unsigned char q1060;  // 0x1060
-    unsigned char q1170;  // 0x1170
-    unsigned int q1284;  // 0x1284
-    unsigned char q1288;  // 0x1288
-    unsigned int q1298;  // 0x1298
-    unsigned char q1328;  // 0x1328
-    unsigned char q1348;  // 0x1348
-    unsigned char q1378;  // 0x1378
-    unsigned char q1398;  // 0x1398
-    unsigned char q1408;  // 0x1408
-    unsigned int q1544;  // 0x1544
-    unsigned int q1554;  // 0x1554
-    unsigned char q1558;  // 0x1558
-    unsigned char q1574;  // 0x1574
-    unsigned int q1584;  // 0x1584
-    unsigned int q1600;  // 0x1600
-    unsigned int q1634;  // 0x1634
-    unsigned int q1640;  // 0x1640
-    unsigned int q1650;  // 0x1650
-    unsigned char q1654;  // 0x1654
-    unsigned int q1908;  // 0x1908
-    unsigned int q1924;  // 0x1924
-    unsigned int q2048;  // 0x2048
-    unsigned int q2054;  // 0x2054
-    unsigned char q2080;  // 0x2080
-    unsigned char q2098;  // 0x2098
-    unsigned int q2100;  // 0x2100
-    unsigned char q2104;  // 0x2104
-    unsigned int q2128;  // 0x2128
-    unsigned char q2148;  // 0x2148
-    unsigned char q2178;  // 0x2178
-    unsigned char q2180;  // 0x2180
-    unsigned char q2184;  // 0x2184
-    unsigned char q2198;  // 0x2198
-    unsigned char q2304;  // 0x2304
-    unsigned int q2308;  // 0x2308
-    unsigned char q2324;  // 0x2324
-    unsigned char q2328;  // 0x2328
-    unsigned char q2508;  // 0x2508
-    void* q271C;  // 0x271C
-    void* q2720;  // 0x2720
-    unsigned char q2724;  // 0x2724
-    void* q2734;  // 0x2734
-    unsigned char q2738;  // 0x2738
-    unsigned char q4134;  // 0x4134
-    unsigned char q4144;  // 0x4144
-    unsigned char q4194;  // 0x4194
-    unsigned char q4464;  // 0x4464
-    unsigned int q4738;  // 0x4738
-    unsigned int q4740;  // 0x4740
-    unsigned char q4744;  // 0x4744
-    unsigned int q4760;  // 0x4760
-    unsigned char q4904;  // 0x4904
-    unsigned char q4914;  // 0x4914
-    unsigned char q4984;  // 0x4984
-    unsigned char q4994;  // 0x4994
-    unsigned char q5138;  // 0x5138
-    unsigned char q5170;  // 0x5170
-    unsigned int q5444;  // 0x5444
-    unsigned int q5460;  // 0x5460
-    unsigned char q5464;  // 0x5464
-    unsigned char q5494;  // 0x5494
-    unsigned int q5508;  // 0x5508
-    unsigned int q5510;  // 0x5510
-    unsigned char q5634;  // 0x5634
-    unsigned int q5684;  // 0x5684
-    unsigned char q6294;  // 0x6294
-    unsigned int q6408;  // 0x6408
+    unsigned int Network_field_0x0;
     unsigned int q0084;
 // --- flat members (END) ---
     char SendBeaconDelete(int a2,  int a3);    // 0x4311C0
@@ -287,7 +138,7 @@ struct Network {
     int GetClass(int a2);  // 0x540FC0
     int FindPlayerByID(DynamicVector * aP1);  // 0x541000
     int SendMessage(int a2,  int a3,  int a4,  int a5,  int a6,  int a7);    // 0x5410F0
-    int SendToPlayer(int a2,  int a3,  int a4,  wchar_t * String2);    // 0x541260
+    AbstractClass * * SendToPlayer(int a2, int a3, int a4, wchar_t * String2);    // 0x541260
     int Send(int a2,  int a3,  TechnoTypeClass * aP3,  int a5);    // 0x541370
     int SendPacketThunk(int a2,  int a3,  int a4,  int a5,  int a6,  int a7);    // 0x5413B0
     char receiveData(int a2);  // 0x5413F0

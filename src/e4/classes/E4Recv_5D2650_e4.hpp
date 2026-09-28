@@ -16,8 +16,8 @@ struct E4Recv_5D2650 {
     unsigned int q304;  // 0x304
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
-    unsigned int vtable23;
-    unsigned int vtable26;
+    unsigned int ambientSoundController;
+    unsigned int attachedTag;
 // --- flat members (END) ---
     void sub_5D2650(void * a2,  int a3);    // 0x5D2650
 };

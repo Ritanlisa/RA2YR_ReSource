@@ -181,6 +181,7 @@ struct E4Recv_557380 {
     unsigned int q5684;  // 0x5684
     unsigned int q6214;  // 0x6214
     unsigned int q6408;  // 0x6408
+    unsigned int u32_142;
 // --- flat members (END) ---
     int sub_557380(int a2);  // 0x557380
 };

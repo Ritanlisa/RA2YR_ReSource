@@ -7,35 +7,38 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/Math_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/RulesClass_e4.hpp"
 
 // 0x4E1480
 namespace gamemd {
 int LinkClass::Destroy()
 {
-  this->vt_slot_84(); /*0x4e1485*/
-  return LinkedList::RemoveNode(); /*0x4e148f*/
+  (*(void (__thiscall **)(GadgetClass *))(*(unsigned int *)this->__pad_0 + 84))(this); /*0x4e1485*/
+  return LinkedList::RemoveNode((LinkClass *)this); /*0x4e148f*/
 }
 } // namespace gamemd
 // 0x5565A0
 namespace gamemd {
 int LinkClass::Destruct()
 {
-  unsigned int *Prev; // edi
+  LinkClass *Prev; // edi
   int result; // eax
-  LinkClass * v4;
-  LinkClass * v5;
+  LinkClass *m_Prev; // edx
+  LinkClass *m_Next; // edx
 
-  Prev = LinkedList::FindPrev(this); /*0x5565b1*/
-  result = this->FindNext(); /*0x5565b7*/
-  v4 = this->m_Prev; /*0x5565ba*/
-  if ( v4 ) /*0x5565c1*/
-    v4->m_Next = this->m_Next; /*0x5565c6*/
-  v5 = this->m_Next; /*0x5565c9*/
-  if ( v5 ) /*0x5565ce*/
-    v5->m_Prev = this->m_Prev; /*0x5565d3*/
+  *(unsigned int *)this->__pad_0 = (void*)&LinkClass_vftable; /*0x5565a5*/
+  Prev = (LinkClass *)LinkedList::FindPrev(this); /*0x5565b1*/
+  result = (*(int (__thiscall **)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this); /*0x5565b7*/
+  m_Prev = this->m_Prev; /*0x5565ba*/
+  if ( m_Prev ) /*0x5565c1*/
+    m_Prev->m_Next = this->m_Next; /*0x5565c6*/
+  m_Next = this->m_Next; /*0x5565c9*/
+  if ( m_Next ) /*0x5565ce*/
+    m_Next->m_Prev = this->m_Prev; /*0x5565d3*/
   this->m_Prev = 0; /*0x5565d8*/
   this->m_Next = 0; /*0x5565db*/
-  if ( Prev == this && (unsigned int *)result != this ) /*0x5565e2*/
+  if ( Prev == this && (LinkClass *)result != this ) /*0x5565e2*/
     return (*(int (__thiscall **)(int))(*(unsigned int *)result + 24))(result); /*0x5565e8*/
   return result; /*0x5565eb*/
 }
@@ -44,9 +47,9 @@ int LinkClass::Destruct()
 namespace gamemd {
 LinkClass * LinkClass::Destru_vt00(char a2)
 {
-  LinkClass::Destruct(); /*0x4e1ad3*/
+  LinkClass::Destruct(this); /*0x4e1ad3*/
   if ( (a2 & 1) != 0 ) /*0x4e1add*/
-    RA2_OPDEL(); /*0x4e1ae0*/
-  return this; /*0x4e1aea*/
+    RA2_OPDEL(this); /*0x4e1ae0*/
+  return this->__pad_0; /*0x4e1aea*/
 }
 } // namespace gamemd

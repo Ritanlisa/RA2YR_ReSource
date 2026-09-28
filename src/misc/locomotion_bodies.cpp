@@ -7,8 +7,8 @@
 namespace gamemd {
 // 0x55a9b0
 HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv) {
-  int v4; // ecx
-  int v5; // ecx
+  char *v4; // ecx
+  char *v5; // ecx
 
   if ( !ppv ) /*0x55a9b6*/
     return -2147467261; /*0x55a9b8*/
@@ -16,7 +16,7 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv) {
   if ( !memcmp(iid, &IID_IUnknown, 0x10u) ) /*0x55a9df*/
   {
     if ( this ) /*0x55a9e5*/
-      v4 = &this->u32_10; /*0x55a9e7*/
+      v4 = &this->__pad_0[4]; /*0x55a9e7*/
     else
       v4 = 0; /*0x55a9ec*/
     *ppv = v4; /*0x55a9ee*/
@@ -26,7 +26,7 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv) {
   if ( !memcmp(iid, &IID_ILocomotion, 0x10u) ) /*0x55aa13*/
   {
     if ( this ) /*0x55aa1a*/
-      v5 = &this->u32_10; /*0x55aa1c*/
+      v5 = &this->__pad_0[4]; /*0x55aa1c*/
     else
       v5 = 0; /*0x55aa21*/
     *ppv = v5; /*0x55aa23*/
@@ -35,7 +35,7 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv) {
     *ppv = this; /*0x55aa3a*/
   if ( !*ppv ) /*0x55aa3c*/
     return -2147467262; /*0x55aa41*/
-  (*(void (__stdcall **)(int))(this->vtable2)(this); /*0x55aa4c*/
+  (*(void (__stdcall **)(LocomotionClass *))(*(unsigned int *)this->__pad_0 + 4))(this); /*0x55aa4c*/
   return 0; /*0x55a9bd*/
 }
 ULONG __stdcall LocomotionClass::AddRef() { return ++RefCount; }
@@ -138,8 +138,8 @@ bool __stdcall LocomotionClass::Process() { return true; }
   this->q064 = 0; /*0x69ecc8*/
   this->u32_65 = 1; /*0x69eccb*/
   this->q068 = 0; /*0x69eccf*/
-  *(unsigned int *)this = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd2*/
-  this->vtable2 = &(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd8*/
+  *(unsigned int *)this = &(void*)(void*)(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd2*/
+  this->vtable2 = &(void*)(void*)(void*)(void*)&ShipLocomotionClass_vftable; /*0x69ecd8*/
   this->ptr_18 = &off_7F2D68; /*0x69ecdf*/
   return this; /*0x69ece8*/
 }

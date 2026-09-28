@@ -24,4 +24,3 @@ int sub_717840()
   }
   return result; /*0x71787b*/
 }
-}

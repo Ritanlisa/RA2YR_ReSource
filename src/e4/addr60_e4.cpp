@@ -21,6 +21,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/Movie_e4.hpp"
+#include "e4/classes/CoordStruct_e4.hpp"
 
 // 0x600750
 namespace gamemd {
@@ -64,7 +65,7 @@ void sub_600750()
       v6 = v0; /*0x6007cf*/
       dword_AC1B50 = v0 >> 1; /*0x6007d4*/
       --g_DialogHashMap_Insert; /*0x6007e0*/
-      g_DialogHashMap_Entries = operator new(4 * (v0 >> 1)); /*0x6007f9*/
+      g_DialogHashMap_Entries = RA2_OPNEW(4 * (v0 >> 1)); /*0x6007f9*/
       memset(g_DialogHashMap_Entries, 0, 4 * dword_AC1B50); /*0x600801*/
       if ( v6 > 0 ) /*0x600803*/
       {
@@ -98,7 +99,6 @@ void sub_600750()
     while ( dword_AC1B50 > (unsigned int)dword_AC1B78 ); /*0x60085a*/
   }
   RA2_OPDEL(g_DialogHashMap_Entries); /*0x600866*/
-}
 }
 // 0x600920
 namespace gamemd {
@@ -142,7 +142,7 @@ void sub_600920()
       v6 = v0; /*0x60099f*/
       g_DialogBuffer = v0 >> 1; /*0x6009a4*/
       --dword_AC18CC; /*0x6009b0*/
-      g_DialogPool = operator new(4 * (v0 >> 1)); /*0x6009c9*/
+      g_DialogPool = RA2_OPNEW(4 * (v0 >> 1)); /*0x6009c9*/
       memset(g_DialogPool, 0, 4 * g_DialogBuffer); /*0x6009d1*/
       if ( v6 > 0 ) /*0x6009d3*/
       {
@@ -176,7 +176,6 @@ void sub_600920()
     while ( g_DialogBuffer > (unsigned int)dword_AC18F0 ); /*0x600a2a*/
   }
   RA2_OPDEL(g_DialogPool); /*0x600a36*/
-}
 }
 // 0x600AF0
 namespace gamemd {
@@ -234,7 +233,7 @@ void sub_600AF0()
       v8 = v0; /*0x600bb7*/
       dword_AC1B08 = v0 >> 1; /*0x600bbb*/
       --g_DialogHashMap_Buckets; /*0x600bc5*/
-      g_DialogHashMap_Base = operator new(4 * (v0 >> 1)); /*0x600bdd*/
+      g_DialogHashMap_Base = RA2_OPNEW(4 * (v0 >> 1)); /*0x600bdd*/
       memset(g_DialogHashMap_Base, 0, 4 * dword_AC1B08); /*0x600be5*/
       if ( v8 > 0 ) /*0x600be7*/
       {
@@ -269,21 +268,25 @@ void sub_600AF0()
   }
   RA2_OPDEL(g_DialogHashMap_Base); /*0x600c53*/
 }
-}
 // 0x600C70
 namespace gamemd {
 void NavigateDialogTab(HWND hCtl, bool a2)
 {
   HWND Parent; // eax
-  HWND NextDlgTabItem; // eax
+  int result; // eax
 
   Parent = GetParent(hCtl); /*0x600c77*/
-  NextDlgTabItem = GetNextDlgTabItem(Parent, hCtl, a2); /*0x600c86*/
-  if ( NextDlgTabItem == hCtl ) /*0x600c90*/
-    return 0; /*0x600c9c*/
-  SetFocus(NextDlgTabItem); /*0x600c93*/
-  return 1; /*0x600c8e*/
-}
+  result = (int)GetNextDlgTabItem(Parent, hCtl, a2); /*0x600c86*/
+  if ( (HWND)result == hCtl ) /*0x600c90*/
+  {
+    IDA_LOBYTE(result) = 0; /*0x600c9c*/
+  }
+  else
+  {
+    result = (int)SetFocus((HWND)result); /*0x600c93*/
+    IDA_LOBYTE(result) = 1; /*0x600c99*/
+  }
+  return result; /*0x600c8e*/
 }
 // 0x600CA0
 namespace gamemd {
@@ -493,7 +496,6 @@ void ValidateDialogEvent(int a1, HWND a2)
   }
   return 15; /*0x600f07*/
 }
-}
 // 0x6015E0
 namespace gamemd {
 void CtlDialogColorHandler(int a1, HWND a2)
@@ -695,7 +697,6 @@ void CtlDialogColorHandler(int a1, HWND a2)
   if ( v6 != 1685 ) /*0x601d0d*/
     return 1; /*0x601d0f*/
   return result; /*0x6018af*/
-}
 }
 // 0x601D20
 namespace gamemd {
@@ -900,7 +901,6 @@ void ValidateDialogControl(int a1, HWND a2)
   }
   return 8; /*0x601fef*/
 }
-}
 // 0x6023F0
 namespace gamemd {
 int sub_6023F0(int a1, HWND a2)
@@ -931,10 +931,9 @@ int sub_6023F0(int a1, HWND a2)
     v4 = 0; /*0x60243a*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x60243d*/
   if ( (v4 == 259 || v4 == 3015) && DlgCtrlID == 1780 ) /*0x602458*/
-    return IDA_HIDWORD(g_RulesClass_Instance->SpotlightAngle); /*0x602462*/
+    return IDA_HIDWORD(g_RulesClass_Instance->GenericClick); /*0x602462*/
   else
     return -1; /*0x60247b*/
-}
 }
 // 0x602490
 namespace gamemd {
@@ -1114,7 +1113,6 @@ void IsValidActionDialog(int a1, HWND a2)
   }
   return Event::IsValidActionType(v4) && DlgCtrlID == 1685 && !SessionClass::GetGameSpeed(g_GameMode_Current); /*0x60262e*/
 }
-}
 // 0x602DD0
 namespace gamemd {
 char IsDialogControlHidden(int a1, HWND a2)
@@ -1199,7 +1197,6 @@ char IsDialogControlHidden(int a1, HWND a2)
   }
   return 0; /*0x602f56*/
 }
-}
 // 0x603040
 namespace gamemd {
 int LoadCampaignMissionData(int a1, HWND a2)
@@ -1269,7 +1266,6 @@ int LoadCampaignMissionData(int a1, HWND a2)
     return 14; /*0x60322f*/
   }
   return 0; /*0x6031c6*/
-}
 }
 // 0x6035F0
 namespace gamemd {
@@ -1360,7 +1356,6 @@ AbstractClass * * DispatchDialogControlAction(int a1, HWND a2)
   }
   return (gamemd::AbstractClass **)(result);
 }
-}
 // 0x603870
 namespace gamemd {
 AbstractClass * * GetDialogControlSHP(int a1, HWND a2, bool * a3)
@@ -1441,7 +1436,6 @@ AbstractClass * * GetDialogControlSHP(int a1, HWND a2, bool * a3)
     return (gamemd::AbstractClass **)((void *)dword_B0FAD0);
   }
   return 0; /*0x603a05*/
-}
 }
 // 0x603AA0
 namespace gamemd {
@@ -1524,7 +1518,6 @@ int IsDialogWindowClass(HWND a1, HWND a2)
     return 0; /*0x603afb*/
   return 192; /*0x603af0*/
 }
-}
 // 0x603D30
 namespace gamemd {
 void * CacheDialogInvalidate(HWND hWnd, HWND a2)
@@ -1556,7 +1549,6 @@ void * CacheDialogInvalidate(HWND hWnd, HWND a2)
   }
   return result; /*0x603d7c*/
 }
-}
 // 0x603E40
 namespace gamemd {
 unsigned int * sub_603E40(int a1, int a2)
@@ -1584,7 +1576,6 @@ unsigned int * sub_603E40(int a1, int a2)
   }
   return result; /*0x603e89*/
 }
-}
 // 0x604060
 namespace gamemd {
 wchar_t ** GetSkirmishMenuOwnerName(SkirmishDialog * aP0, HWND a2, HWND a3)
@@ -1595,15 +1586,14 @@ wchar_t ** GetSkirmishMenuOwnerName(SkirmishDialog * aP0, HWND a2, HWND a3)
   v4 = (char *)(DlgSkirmishMenuProc(a2, a3));
   if ( v4 ) /*0x604072*/
   {
-    String = GetStringCSF((wchar_t *)v4, 0, g_Str_File_ownrdraw_cpp, 1957); /*0x604082*/
+    String = (wchar_t *)(GetStringCSF((wchar_t *)v4, 0, g_Str_File_ownrdraw_cpp, 1957));
     WideString::Assign(aP0, String); /*0x60408a*/
   }
   else
   {
     WideString::Assign(aP0, &g_TypeClass_DefaultString); /*0x60409c*/
   }
-  return aP0; /*0x604091*/
-}
+  return (wchar_t **)(aP0);
 }
 // 0x6040B0
 namespace gamemd {
@@ -1634,7 +1624,6 @@ AbstractClass * * DlgSkirmishMenuProc(HWND a1, HWND a2)
       goto LABEL_5; /*0x6040f8*/
 }
 }
-}
 // 0x606740
 namespace gamemd {
 int Dialog_SetActiveFlag(int a1, char a2)
@@ -1661,7 +1650,6 @@ int Dialog_SetActiveFlag(int a1, char a2)
     }
   }
   return result; /*0x606789*/
-}
 }
 // 0x6071E0
 namespace gamemd {
@@ -2209,7 +2197,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         if ( v7 ) /*0x608704*/
         {
   LABEL_31:
-          v6 = operator new(0x10u); /*0x608706*/
+          v6 = RA2_OPNEW(0x10u); /*0x608706*/
           if ( !v6 ) /*0x608715*/
             return 0; /*0x608715*/
           *v6 = 103; /*0x60871b*/
@@ -2235,7 +2223,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         if ( v8 ) /*0x608765*/
           goto LABEL_31; /*0x608765*/
   LABEL_39:
-        v6 = operator new(0x10u); /*0x608767*/
+        v6 = RA2_OPNEW(0x10u); /*0x608767*/
         if ( !v6 ) /*0x608773*/
           return 0; /*0x608773*/
         *v6 = 104; /*0x608779*/
@@ -2248,14 +2236,14 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
       if ( !v8 ) /*0x60879b*/
       {
   LABEL_43:
-        v6 = operator new(0x10u); /*0x60879d*/
+        v6 = RA2_OPNEW(0x10u); /*0x60879d*/
         if ( !v6 ) /*0x6087a9*/
           return 0; /*0x6087a9*/
         *v6 = 24; /*0x6087af*/
         goto LABEL_41; /*0x6087b5*/
       }
   LABEL_45:
-      v6 = operator new(0x10u); /*0x6087b7*/
+      v6 = RA2_OPNEW(0x10u); /*0x6087b7*/
       if ( !v6 ) /*0x6087c6*/
         return 0; /*0x6087c6*/
       *v6 = 23; /*0x6087cc*/
@@ -2291,7 +2279,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
               case 1842: /*0x608975*/
                 if ( g_DisplayWidth == 640 ) /*0x608984*/
                 {
-                  v6 = operator new(0x10u); /*0x608988*/
+                  v6 = RA2_OPNEW(0x10u); /*0x608988*/
                   if ( !v6 ) /*0x608992*/
                     return 0; /*0x608992*/
                   *v6 = 110; /*0x608998*/
@@ -2303,7 +2291,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                 }
                 if ( g_DisplayWidth != 800 && g_DisplayWidth != 1024 ) /*0x6089b1*/
                   return 0; /*0x6089b1*/
-                v6 = operator new(0x10u); /*0x6089b9*/
+                v6 = RA2_OPNEW(0x10u); /*0x6089b9*/
                 if ( !v6 ) /*0x6089c3*/
                   return 0; /*0x6089c3*/
                 *v6 = 180; /*0x6089c9*/
@@ -2327,7 +2315,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
               goto LABEL_96; /*0x608a0e*/
             }
   LABEL_135:
-            v6 = operator new(0x10u); /*0x608c42*/
+            v6 = RA2_OPNEW(0x10u); /*0x608c42*/
             if ( !v6 ) /*0x608c4e*/
               return 0; /*0x608c4e*/
             *v6 = 346; /*0x608c50*/
@@ -2363,7 +2351,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                   goto LABEL_123; /*0x608b9c*/
                 }
   LABEL_119:
-                v6 = operator new(0x10u); /*0x608b79*/
+                v6 = RA2_OPNEW(0x10u); /*0x608b79*/
                 if ( !v6 ) /*0x608b85*/
                   return 0; /*0x608b85*/
                 *v6 = 80; /*0x608b8b*/
@@ -2377,7 +2365,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                   goto LABEL_131; /*0x608c00*/
                 }
   LABEL_127:
-                v6 = operator new(0x10u); /*0x608bdd*/
+                v6 = RA2_OPNEW(0x10u); /*0x608bdd*/
                 if ( !v6 ) /*0x608be9*/
                   return 0; /*0x608be9*/
                 *v6 = 228; /*0x608bef*/
@@ -2389,7 +2377,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
             {
               if ( g_DisplayWidth != 800 && g_DisplayWidth != 1024 ) /*0x608c66*/
                 return 0; /*0x608c66*/
-              v6 = operator new(0x10u); /*0x608c6a*/
+              v6 = RA2_OPNEW(0x10u); /*0x608c6a*/
               if ( !v6 ) /*0x608c74*/
                 return 0; /*0x608c74*/
   LABEL_140:
@@ -2409,7 +2397,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
             goto LABEL_105; /*0x608a91*/
           }
         }
-        v6 = operator new(0x10u); /*0x608a5b*/
+        v6 = RA2_OPNEW(0x10u); /*0x608a5b*/
         if ( v6 ) /*0x608a65*/
         {
           *v6 = 52; /*0x608a6b*/
@@ -2427,7 +2415,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
           if ( g_DisplayWidth == 640 ) /*0x608910*/
           {
   LABEL_51:
-            v6 = operator new(0x10u); /*0x608812*/
+            v6 = RA2_OPNEW(0x10u); /*0x608812*/
             if ( v6 ) /*0x60881e*/
             {
               *v6 = 52; /*0x608824*/
@@ -2446,7 +2434,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
               return 0; /*0x608a99*/
           }
   LABEL_105:
-          v6 = operator new(0x10u); /*0x608a9f*/
+          v6 = RA2_OPNEW(0x10u); /*0x608a9f*/
           if ( v6 ) /*0x608aab*/
           {
             *v6 = 60; /*0x608ab1*/
@@ -2468,14 +2456,14 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                 return 0; /*0x608b2b*/
             }
   LABEL_114:
-            v6 = operator new(0x10u); /*0x608b31*/
+            v6 = RA2_OPNEW(0x10u); /*0x608b31*/
             if ( !v6 ) /*0x608b3d*/
               return 0; /*0x608b3d*/
             *v6 = 180; /*0x608b43*/
             goto LABEL_116; /*0x608b43*/
           }
   LABEL_109:
-          v6 = operator new(0x10u); /*0x608aeb*/
+          v6 = RA2_OPNEW(0x10u); /*0x608aeb*/
           if ( !v6 ) /*0x608af7*/
             return 0; /*0x608af7*/
           *v6 = 110; /*0x608afd*/
@@ -2492,7 +2480,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                 return 0; /*0x608ba4*/
             }
   LABEL_123:
-            v6 = operator new(0x10u); /*0x608baa*/
+            v6 = RA2_OPNEW(0x10u); /*0x608baa*/
             if ( !v6 ) /*0x608bb6*/
               return 0; /*0x608bb6*/
             *v6 = 170; /*0x608bbc*/
@@ -2511,7 +2499,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
                 return 0; /*0x608c08*/
             }
   LABEL_131:
-            v6 = operator new(0x10u); /*0x608c0e*/
+            v6 = RA2_OPNEW(0x10u); /*0x608c0e*/
             if ( !v6 ) /*0x608c1a*/
               return 0; /*0x608c1a*/
             *v6 = 295; /*0x608c20*/
@@ -2532,7 +2520,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
           return 0; /*0x608a16*/
       }
   LABEL_96:
-      v6 = operator new(0x10u); /*0x608a1c*/
+      v6 = RA2_OPNEW(0x10u); /*0x608a1c*/
       if ( !v6 ) /*0x608a28*/
         return 0; /*0x608a28*/
       goto LABEL_140; /*0x608a28*/
@@ -2543,7 +2531,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     return 0; /*0x608557*/
   if ( DlgCtrlID == 1770 ) /*0x608562*/
   {
-    v6 = operator new(0x10u); /*0x608566*/
+    v6 = RA2_OPNEW(0x10u); /*0x608566*/
     if ( v6 ) /*0x608570*/
     {
       *v6 = 141; /*0x608576*/
@@ -2565,7 +2553,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     switch ( DlgCtrlID ) /*0x6085d4*/
     {
       case 1295: /*0x6085d4*/
-        v6 = operator new(0x10u); /*0x6085d8*/
+        v6 = RA2_OPNEW(0x10u); /*0x6085d8*/
         if ( v6 ) /*0x6085e2*/
         {
           *v6 = 177; /*0x6085e8*/
@@ -2576,7 +2564,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         }
         return 0; /*0x6085e2*/
       case 1822: /*0x6085d4*/
-        v6 = operator new(0x10u); /*0x608611*/
+        v6 = RA2_OPNEW(0x10u); /*0x608611*/
         if ( !v6 ) /*0x60861b*/
           return 0; /*0x60861b*/
         *v6 = 177; /*0x608621*/
@@ -2584,7 +2572,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         v6[2] = 141; /*0x60862e*/
         break;
       case 1648: /*0x6085d4*/
-        v6 = operator new(0x10u); /*0x608643*/
+        v6 = RA2_OPNEW(0x10u); /*0x608643*/
         if ( !v6 ) /*0x60864d*/
           return 0; /*0x60864d*/
         *v6 = 309; /*0x608653*/
@@ -2592,7 +2580,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         v6[2] = 141; /*0x608660*/
         break;
       case 1959: /*0x6085d4*/
-        v6 = operator new(0x10u); /*0x608675*/
+        v6 = RA2_OPNEW(0x10u); /*0x608675*/
         if ( !v6 ) /*0x60867f*/
           return 0; /*0x60867f*/
         *v6 = 10; /*0x608685*/
@@ -2600,7 +2588,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
         v6[2] = 610; /*0x608692*/
         break;
       case 1960: /*0x6085d4*/
-        v6 = operator new(0x10u); /*0x6086ab*/
+        v6 = RA2_OPNEW(0x10u); /*0x6086ab*/
         if ( !v6 ) /*0x6086b5*/
           return 0; /*0x6086b5*/
         *v6 = 10; /*0x6086bb*/
@@ -2614,7 +2602,7 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
     v6[3] = 20; /*0x608c8a*/
     goto LABEL_143; /*0x608c8a*/
   }
-  v6 = operator new(0x10u); /*0x60859f*/
+  v6 = RA2_OPNEW(0x10u); /*0x60859f*/
   if ( v6 ) /*0x6085a9*/
   {
     *v6 = 141; /*0x6085af*/
@@ -2625,37 +2613,36 @@ AbstractClass * * ControlDialogHandler(int a1, HWND a2, unsigned int * a3)
   }
   return 0; /*0x608cbc*/
 }
-}
 // 0x608CD0
 namespace gamemd {
 void IsDialogControlVisible(int a1, HWND a2)
 {
   unsigned int *v3; // eax
   int v4; // esi
-  int DlgCtrlID; // eax
-  unsigned int *v7; // eax
-  bool v9; // zf
-  int v10; // [esp+8h] [ebp-4h] BYREF
+  int result; // eax
+  unsigned int *v6; // eax
+  bool v8; // zf
+  int v9; // [esp+8h] [ebp-4h] BYREF
 
-  v10 = a1; /*0x608cdc*/
+  v9 = a1; /*0x608cdc*/
   if ( !g_DialogHashMap_Count ) /*0x608ce0*/
     goto LABEL_5; /*0x608ce0*/
-  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v10) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x608d01*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x608d01*/
   if ( !v3 ) /*0x608d06*/
     goto LABEL_5; /*0x608d06*/
-  while ( *v3 != v10 ) /*0x608d0e*/
+  while ( *v3 != v9 ) /*0x608d0e*/
   {
     v3 = (unsigned int *)v3[129]; /*0x608d14*/
     if ( !v3 ) /*0x608d1c*/
       goto LABEL_5; /*0x608d1c*/
   }
-  v7 = v3 + 1; /*0x608f42*/
-  if ( v7 ) /*0x608f47*/
-    v4 = v7[27]; /*0x608f4d*/
+  v6 = v3 + 1; /*0x608f42*/
+  if ( v6 ) /*0x608f47*/
+    v4 = v6[27]; /*0x608f4d*/
   else
   LABEL_5:
     v4 = 0; /*0x608d1e*/
-  DlgCtrlID = GetDlgCtrlID(a2); /*0x608d21*/
+  result = GetDlgCtrlID(a2); /*0x608d21*/
   if ( (v4 == 268 /*0x608f32*/
      || v4 == 148
      || v4 == 163
@@ -2705,9 +2692,10 @@ void IsDialogControlVisible(int a1, HWND a2)
      || v4 == 244
      || v4 == 270
      || v4 == 274)
-    && DlgCtrlID == 1684 )
+    && result == 1684 )
   {
-    return 1; /*0x608f39*/
+    IDA_LOBYTE(result) = 1; /*0x608f35*/
+    return result; /*0x608f39*/
   }
   if ( (v4 == 148 /*0x609082*/
      || v4 == 216
@@ -2739,9 +2727,10 @@ void IsDialogControlVisible(int a1, HWND a2)
      || v4 == 264
      || v4 == 3014
      || v4 == 3015)
-    && DlgCtrlID == 1820 )
+    && result == 1820 )
   {
-    return 1; /*0x609089*/
+    IDA_LOBYTE(result) = 1; /*0x609085*/
+    return result; /*0x609089*/
   }
   if ( (v4 == 188 /*0x6090d4*/
      || v4 == 189
@@ -2752,160 +2741,170 @@ void IsDialogControlVisible(int a1, HWND a2)
      || v4 == 261
      || v4 == 107
      || v4 == 275)
-    && DlgCtrlID == 1128 )
+    && result == 1128 )
   {
-    return 1; /*0x6090db*/
+    IDA_LOBYTE(result) = 1; /*0x6090d7*/
+    return result; /*0x6090db*/
   }
   switch ( v4 ) /*0x6090e2*/
   {
     case 226: /*0x6090e2*/
-      if ( DlgCtrlID != 1670 && DlgCtrlID != 1400 && DlgCtrlID != 1372 && DlgCtrlID != 1667 && DlgCtrlID != 1375 ) /*0x609115*/
-        return DlgCtrlID == 1668; /*0x609120*/
+      if ( result != 1670 && result != 1400 && result != 1372 && result != 1667 && result != 1375 ) /*0x609115*/
+        return result == 1668; /*0x609120*/
       return 1; /*0x609115*/
     case 257: /*0x6090e2*/
-      if ( DlgCtrlID == 1678 || DlgCtrlID == 1677 ) /*0x60913d*/
+      if ( result == 1678 || result == 1677 ) /*0x60913d*/
         return 1; /*0x60913d*/
-      return DlgCtrlID == 1679; /*0x609148*/
+      return result == 1679; /*0x609148*/
     case 297: /*0x6090e2*/
-      return DlgCtrlID == 1861; /*0x609164*/
+      IDA_LOBYTE(result) = result == 1861; /*0x609160*/
+      return result; /*0x609164*/
     case 256: /*0x6090e2*/
-      if ( DlgCtrlID == 1673 || DlgCtrlID == 1672 ) /*0x60917d*/
+      if ( result == 1673 || result == 1672 ) /*0x60917d*/
         return 1; /*0x60917d*/
-      return DlgCtrlID == 1401; /*0x609188*/
+      return result == 1401; /*0x609188*/
     case 148: /*0x6090e2*/
-      return DlgCtrlID == 1038; /*0x6091a4*/
+      IDA_LOBYTE(result) = result == 1038; /*0x6091a0*/
+      return result; /*0x6091a4*/
     case 183: /*0x6090e2*/
-      return DlgCtrlID == 1039; /*0x6091bc*/
+      IDA_LOBYTE(result) = result == 1039; /*0x6091b8*/
+      return result; /*0x6091bc*/
     case 692: /*0x6090e2*/
-      return DlgCtrlID == 1735; /*0x6091d4*/
+      IDA_LOBYTE(result) = result == 1735; /*0x6091d0*/
+      return result; /*0x6091d4*/
     case 693: /*0x6090e2*/
-      return DlgCtrlID == 1736; /*0x6091ec*/
+      IDA_LOBYTE(result) = result == 1736; /*0x6091e8*/
+      return result; /*0x6091ec*/
     case 261: /*0x6090e2*/
-      if ( DlgCtrlID == 1732 || DlgCtrlID == 1730 || DlgCtrlID == 1731 ) /*0x609210*/
+      if ( result == 1732 || result == 1730 || result == 1731 ) /*0x609210*/
         return 1; /*0x609210*/
-      return DlgCtrlID == 1733; /*0x60921b*/
+      return result == 1733; /*0x60921b*/
     case 258: /*0x6090e2*/
-      if ( DlgCtrlID == 1772 || DlgCtrlID == 1450 || DlgCtrlID == 1448 ) /*0x609243*/
+      if ( result == 1772 || result == 1450 || result == 1448 ) /*0x609243*/
         return 1; /*0x609243*/
-      return DlgCtrlID == 1559; /*0x60924e*/
+      return result == 1559; /*0x60924e*/
     case 181: /*0x6090e2*/
-      if ( DlgCtrlID == 1314 || DlgCtrlID == 1313 || DlgCtrlID == 1310 || DlgCtrlID == 1311 ) /*0x609281*/
+      if ( result == 1314 || result == 1313 || result == 1310 || result == 1311 ) /*0x609281*/
         return 1; /*0x609281*/
-      return DlgCtrlID == 1312; /*0x60928c*/
+      return result == 1312; /*0x60928c*/
     case 3002: /*0x6090e2*/
-      if ( DlgCtrlID == 1314 ) /*0x60929e*/
+      if ( result == 1314 ) /*0x60929e*/
         return 1; /*0x60929e*/
-      return DlgCtrlID == 1313; /*0x609662*/
+      return result == 1313; /*0x609662*/
     case 3003: /*0x6090e2*/
-      if ( DlgCtrlID == 1324 ) /*0x6092bb*/
+      if ( result == 1324 ) /*0x6092bb*/
         return 1; /*0x6092bb*/
-      return DlgCtrlID == 1325; /*0x6092c6*/
+      return result == 1325; /*0x6092c6*/
     case 213: /*0x6090e2*/
-      if ( DlgCtrlID == 1486 ) /*0x6092d8*/
+      if ( result == 1486 ) /*0x6092d8*/
         return 1; /*0x6092d8*/
-      return DlgCtrlID == 1485; /*0x6092e3*/
+      return result == 1485; /*0x6092e3*/
     case 251: /*0x6090e2*/
-      if ( DlgCtrlID == 6 ) /*0x6092f3*/
+      if ( result == 6 ) /*0x6092f3*/
         return 1; /*0x6092f3*/
-      return DlgCtrlID == 1; /*0x6092fc*/
+      return result == 1; /*0x6092fc*/
     case 216: /*0x6090e2*/
-      return DlgCtrlID == 1739; /*0x609318*/
+      IDA_LOBYTE(result) = result == 1739; /*0x609314*/
+      return result; /*0x609318*/
     case 215: /*0x6090e2*/
-      return DlgCtrlID == 1; /*0x60932e*/
+      IDA_LOBYTE(result) = result == 1; /*0x60932a*/
+      return result; /*0x60932e*/
     case 188: /*0x6090e2*/
     case 194: /*0x6090e2*/
-      return DlgCtrlID == 1772 || DlgCtrlID == 1416 || DlgCtrlID == 1450 || DlgCtrlID == 1448 || DlgCtrlID == 1474; /*0x60968b*/
+      return result == 1772 || result == 1416 || result == 1450 || result == 1448 || result == 1474; /*0x60968b*/
     case 189: /*0x6090e2*/
     case 201: /*0x6090e2*/
-      if ( DlgCtrlID == 1439 || DlgCtrlID == 1772 ) /*0x609654*/
+      if ( result == 1439 || result == 1772 ) /*0x609654*/
         return 1; /*0x609654*/
-      v9 = DlgCtrlID == 1448; /*0x609656*/
+      v8 = result == 1448; /*0x609656*/
   LABEL_244:
-      if ( v9 ) /*0x60965b*/
+      if ( v8 ) /*0x60965b*/
         return 1; /*0x60965b*/
-      return DlgCtrlID == 1474; /*0x60965d*/
+      return result == 1474; /*0x60965d*/
     case 187: /*0x6090e2*/
-      if ( DlgCtrlID == 1741 || DlgCtrlID == 1740 ) /*0x609377*/
+      if ( result == 1741 || result == 1740 ) /*0x609377*/
         return 1; /*0x609377*/
-      return DlgCtrlID == 1742; /*0x609382*/
+      return result == 1742; /*0x609382*/
     case 182: /*0x6090e2*/
-      if ( DlgCtrlID == 1737 || DlgCtrlID == 1810 ) /*0x60939f*/
+      if ( result == 1737 || result == 1810 ) /*0x60939f*/
         return 1; /*0x60939f*/
-      return DlgCtrlID == 1316; /*0x6093aa*/
+      return result == 1316; /*0x6093aa*/
     case 107: /*0x6090e2*/
-      if ( DlgCtrlID == 1411 ) /*0x6093b9*/
+      if ( result == 1411 ) /*0x6093b9*/
         return 1; /*0x6093b9*/
-      return DlgCtrlID == 1733; /*0x6093c4*/
+      return result == 1733; /*0x6093c4*/
     case 3014: /*0x6090e2*/
-      if ( DlgCtrlID == 1745 || DlgCtrlID == 1772 ) /*0x6093e1*/
+      if ( result == 1745 || result == 1772 ) /*0x6093e1*/
         return 1; /*0x6093e1*/
-      return DlgCtrlID == 1448; /*0x6093ec*/
+      return result == 1448; /*0x6093ec*/
     case 271: /*0x6090e2*/
     case 285: /*0x6090e2*/
-      return DlgCtrlID == 1337 || DlgCtrlID == 1772 || DlgCtrlID == 1771; /*0x609640*/
+      return result == 1337 || result == 1772 || result == 1771; /*0x609640*/
     case 265: /*0x6090e2*/
-      if ( DlgCtrlID == 1 || DlgCtrlID == 1573 ) /*0x60941f*/
+      if ( result == 1 || result == 1573 ) /*0x60941f*/
         return 1; /*0x60941f*/
-      return DlgCtrlID == 1339; /*0x60942a*/
+      return result == 1339; /*0x60942a*/
     case 270: /*0x6090e2*/
     case 284: /*0x6090e2*/
-      return DlgCtrlID == 1760 /*0x609625*/
-          || DlgCtrlID == 1761
-          || DlgCtrlID == 1762
-          || DlgCtrlID == 1764
-          || DlgCtrlID == 1905
-          || DlgCtrlID == 1375;
+      return result == 1760 || result == 1761 || result == 1762 || result == 1764 || result == 1905 || result == 1375; /*0x609625*/
     case 276: /*0x6090e2*/
-      if ( DlgCtrlID == 1671 || DlgCtrlID == 1772 || DlgCtrlID == 1771 || DlgCtrlID == 1672 ) /*0x609475*/
+      if ( result == 1671 || result == 1772 || result == 1771 || result == 1672 ) /*0x609475*/
         return 1; /*0x609475*/
-      return DlgCtrlID == 1955; /*0x609480*/
+      return result == 1955; /*0x609480*/
     case 275: /*0x6090e2*/
-      if ( DlgCtrlID == 1567 /*0x6094d4*/
-        || DlgCtrlID == 1672
-        || DlgCtrlID == 1955
-        || DlgCtrlID == 1958
-        || DlgCtrlID == 1673
-        || DlgCtrlID == 1581
-        || DlgCtrlID == 1579 )
+      if ( result == 1567 /*0x6094d4*/
+        || result == 1672
+        || result == 1955
+        || result == 1958
+        || result == 1673
+        || result == 1581
+        || result == 1579 )
       {
         return 1; /*0x6094d4*/
       }
-      v9 = DlgCtrlID == 1341; /*0x6094da*/
+      v8 = result == 1341; /*0x6094da*/
       goto LABEL_244; /*0x6094df*/
     case 700: /*0x6090e2*/
-      if ( DlgCtrlID != 1 && DlgCtrlID != 1594 ) /*0x6094fa*/
+      if ( result != 1 && result != 1594 ) /*0x6094fa*/
         return 0; /*0x609505*/
       break;
     case 278: /*0x6090e2*/
-      if ( DlgCtrlID != 1579 && DlgCtrlID != 1581 && DlgCtrlID != 1474 && DlgCtrlID != 1794 && DlgCtrlID != 1795 ) /*0x60953f*/
+      if ( result != 1579 && result != 1581 && result != 1474 && result != 1794 && result != 1795 ) /*0x60953f*/
         return 0; /*0x60954a*/
       break;
     case 255: /*0x6090e2*/
-      if ( DlgCtrlID != 1313 && DlgCtrlID != 1314 ) /*0x609563*/
+      if ( result != 1313 && result != 1314 ) /*0x609563*/
         return 0; /*0x60956e*/
       break;
     case 290: /*0x6090e2*/
-      return DlgCtrlID == 1; /*0x609584*/
+      IDA_LOBYTE(result) = result == 1; /*0x609580*/
+      return result; /*0x609584*/
     default:
       if ( v4 != 274 ) /*0x60958b*/
       {
         if ( v4 == 231 ) /*0x6095a1*/
-          return DlgCtrlID == 1 || DlgCtrlID == 1398; /*0x6095b1*/
+          return result == 1 || result == 1398; /*0x6095b1*/
         if ( v4 == 254 ) /*0x6095c3*/
-          return DlgCtrlID == 1; /*0x6095d2*/
+        {
+          IDA_LOBYTE(result) = result == 1; /*0x6095ce*/
+          return result; /*0x6095d2*/
+        }
         if ( v4 != 230 && v4 != 243 && v4 != 244 ) /*0x6095e9*/
-          return 0; /*0x6095f0*/
+        {
+          IDA_LOBYTE(result) = 0; /*0x6095ec*/
+          return result; /*0x6095f0*/
+        }
       }
-      return DlgCtrlID == 1; /*0x60959a*/
+      IDA_LOBYTE(result) = result == 1; /*0x609596*/
+      return result; /*0x60959a*/
   }
   return 1; /*0x608f34*/
-}
 }
 // 0x6096A0
 namespace gamemd {
 char sub_6096A0(int a1, HWND a2)
 {
-  unsigned int *v4; // eax
+  HWND *v4; // eax
   unsigned int *v6; // eax
   HWND v7; // [esp+8h] [ebp-4h] BYREF
 
@@ -2914,12 +2913,12 @@ char sub_6096A0(int a1, HWND a2)
   v7 = a2; /*0x6096bc*/
   if ( !g_DialogHashMap_Count ) /*0x6096c2*/
     return 0; /*0x6096c2*/
-  v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6096e3*/
+  v4 = (HWND *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x6096e3*/
   if ( !v4 ) /*0x6096e8*/
     return 0; /*0x6096e8*/
-  while ( (HWND)*v4 != v7 ) /*0x6096f0*/
+  while ( *v4 != v7 ) /*0x6096f0*/
   {
-    v4 = (unsigned int *)v4[129]; /*0x6096f2*/
+    v4 = (HWND *)v4[129]; /*0x6096f2*/
     if ( !v4 ) /*0x6096fa*/
       return 0; /*0x6096fa*/
   }
@@ -2929,47 +2928,49 @@ char sub_6096A0(int a1, HWND a2)
   else
     return 0; /*0x6096fc*/
 }
-}
 // 0x609730
 namespace gamemd {
 void GetDialogDefaultButton(int a1, HWND a2)
 {
   unsigned int *v3; // eax
   int v4; // esi
-  int DlgCtrlID; // eax
-  unsigned int *v7; // eax
-  int v8; // [esp+8h] [ebp-4h] BYREF
+  int result; // eax
+  unsigned int *v6; // eax
+  int v7; // [esp+8h] [ebp-4h] BYREF
 
-  v8 = a1; /*0x60973c*/
+  v7 = a1; /*0x60973c*/
   if ( !g_DialogHashMap_Count ) /*0x609740*/
     goto LABEL_5; /*0x609740*/
-  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v8) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609761*/
+  v3 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609761*/
   if ( !v3 ) /*0x609766*/
     goto LABEL_5; /*0x609766*/
-  while ( *v3 != v8 ) /*0x60976e*/
+  while ( *v3 != v7 ) /*0x60976e*/
   {
     v3 = (unsigned int *)v3[129]; /*0x609770*/
     if ( !v3 ) /*0x609778*/
       goto LABEL_5; /*0x609778*/
   }
-  v7 = v3 + 1; /*0x60979f*/
-  if ( v7 ) /*0x6097a4*/
-    v4 = v7[27]; /*0x6097a6*/
+  v6 = v3 + 1; /*0x60979f*/
+  if ( v6 ) /*0x6097a4*/
+    v4 = v6[27]; /*0x6097a6*/
   else
   LABEL_5:
     v4 = 0; /*0x60977a*/
-  DlgCtrlID = GetDlgCtrlID(a2); /*0x60977d*/
+  result = GetDlgCtrlID(a2); /*0x60977d*/
   switch ( v4 ) /*0x609789*/
   {
     case 226: /*0x609789*/
-      return DlgCtrlID == 1006; /*0x609796*/
+      IDA_LOBYTE(result) = result == 1006; /*0x609796*/
+      break;
     case 115: /*0x609789*/
     case 268: /*0x609789*/
     case 259: /*0x609789*/
-      return DlgCtrlID == 1059; /*0x609a8c*/
+      IDA_LOBYTE(result) = result == 1059; /*0x609a8c*/
+      break;
     case 264: /*0x609789*/
     case 3015: /*0x609789*/
-      return DlgCtrlID == 1745; /*0x609a7c*/
+      IDA_LOBYTE(result) = result == 1745; /*0x609a7c*/
+      break;
     case 148: /*0x609789*/
     case 182: /*0x609789*/
     case 163: /*0x609789*/
@@ -2996,14 +2997,16 @@ void GetDialogDefaultButton(int a1, HWND a2)
     case 271: /*0x609789*/
     case 276: /*0x609789*/
     case 270: /*0x609789*/
-      return DlgCtrlID == 1670; /*0x609a6c*/
+      IDA_LOBYTE(result) = result == 1670; /*0x609a6c*/
+      break;
     case 258: /*0x609789*/
     case 261: /*0x609789*/
     case 107: /*0x609789*/
     case 187: /*0x609789*/
     case 279: /*0x609789*/
     case 3014: /*0x609789*/
-      return DlgCtrlID == 1472; /*0x609a5c*/
+      IDA_LOBYTE(result) = result == 1472; /*0x609a5c*/
+      break;
     case 188: /*0x609789*/
     case 189: /*0x609789*/
     case 234: /*0x609789*/
@@ -3019,22 +3022,25 @@ void GetDialogDefaultButton(int a1, HWND a2)
     case 274: /*0x609789*/
     case 254: /*0x609789*/
     case 252: /*0x609789*/
-      return DlgCtrlID == 2; /*0x609a4c*/
+      IDA_LOBYTE(result) = result == 2; /*0x609a4c*/
+      break;
     case 212: /*0x609789*/
-      return DlgCtrlID == 1; /*0x609a0a*/
+      IDA_LOBYTE(result) = result == 1; /*0x609a0a*/
+      break;
     case 251: /*0x609789*/
-      return DlgCtrlID == 7; /*0x609a20*/
-    case 255: /*0x609789*/
-      return DlgCtrlID == 1653; /*0x609a38*/
+      IDA_LOBYTE(result) = result == 7; /*0x609a20*/
+      break;
+    default:
+      IDA_LOBYTE(result) = v4 == 255 && result == 1653; /*0x609a38*/
+      break;
   }
-  return 0; /*0x609795*/
-}
+  return result; /*0x609795*/
 }
 // 0x609AA0
 namespace gamemd {
 bool sub_609AA0(int a1, HWND a2)
 {
-  unsigned int *v4; // eax
+  HWND *v4; // eax
   unsigned int *v6; // eax
   HWND v7; // [esp+8h] [ebp-4h] BYREF
 
@@ -3043,18 +3049,20 @@ bool sub_609AA0(int a1, HWND a2)
   v7 = a2; /*0x609abc*/
   if ( !g_DialogHashMap_Count ) /*0x609ac2*/
     return 0; /*0x609ac2*/
-  v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609ae3*/
+  v4 = (HWND *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v7) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609ae3*/
   if ( !v4 ) /*0x609ae8*/
     return 0; /*0x609ae8*/
-  while ( (HWND)*v4 != v7 ) /*0x609af0*/
+  while ( *v4 != v7 ) /*0x609af0*/
   {
-    v4 = (unsigned int *)v4[129]; /*0x609af2*/
+    v4 = (HWND *)v4[129]; /*0x609af2*/
     if ( !v4 ) /*0x609afa*/
       return 0; /*0x609afa*/
   }
   v6 = v4 + 1; /*0x609b06*/
-  return v6 && !v6[26] && GetDialogDefaultButton(a1, a2); /*0x609b18*/
-}
+  if ( v6 && !v6[26] ) /*0x609b0d*/
+    return GetDialogDefaultButton(a1, a2); /*0x609b18*/
+  else
+    return 0; /*0x609afc*/
 }
 // 0x609B30
 namespace gamemd {
@@ -3087,38 +3095,37 @@ bool sub_609B30(int a1, HWND a2)
   DlgCtrlID = GetDlgCtrlID(a2); /*0x609b85*/
   return Event::IsValidActionType(v4) && DlgCtrlID == 1685; /*0x609b98*/
 }
-}
 // 0x609BC0
 namespace gamemd {
 bool sub_609BC0(int a1, HWND a2)
 {
-  unsigned int *v4; // eax
-  unsigned int *v5; // eax
+  HWND *v4; // eax
+  HWND *v5; // eax
   unsigned int *v7; // eax
   unsigned int *v8; // eax
   HWND v9; // [esp+Ch] [ebp-4h] BYREF
 
-  if ( SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x609bcd*/
+  if ( (uint8_t)SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x609bcd*/
     return 0; /*0x609bcd*/
   if ( (GetWindowLongA(a2, -16) & 0xB) == 0xB ) /*0x609bea*/
   {
     v9 = a2; /*0x609bf1*/
     if ( g_DialogHashMap_Count ) /*0x609bf7*/
     {
-      v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base /*0x609c18*/
-                     + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1)));
+      v4 = (HWND *)*((unsigned int *)g_DialogHashMap_Base /*0x609c18*/
+                   + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1)));
       if ( v4 ) /*0x609c1d*/
       {
-        while ( (HWND)*v4 != v9 ) /*0x609c25*/
+        while ( *v4 != v9 ) /*0x609c25*/
         {
-          v4 = (unsigned int *)v4[129]; /*0x609c27*/
+          v4 = (HWND *)v4[129]; /*0x609c27*/
           if ( !v4 ) /*0x609c2f*/
             goto LABEL_7; /*0x609c2f*/
         }
         v7 = v4 + 1; /*0x609c95*/
         if ( v7 ) /*0x609c9a*/
         {
-          if ( !v7[26] && IsDialogControlVisible(a1, a2) ) /*0x609ca7*/
+          if ( !v7[26] && (uint8_t)IsDialogControlVisible(a1, a2) ) /*0x609ca7*/
             return 1; /*0x609cb6*/
         }
       }
@@ -3130,50 +3137,49 @@ bool sub_609BC0(int a1, HWND a2)
   v9 = a2; /*0x609c46*/
   if ( !g_DialogHashMap_Count ) /*0x609c4c*/
     return 0; /*0x609c4c*/
-  v5 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609c71*/
+  v5 = (HWND *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609c71*/
   if ( !v5 ) /*0x609c76*/
     return 0; /*0x609c76*/
-  while ( (HWND)*v5 != v9 ) /*0x609c7e*/
+  while ( *v5 != v9 ) /*0x609c7e*/
   {
-    v5 = (unsigned int *)v5[129]; /*0x609c80*/
+    v5 = (HWND *)v5[129]; /*0x609c80*/
     if ( !v5 ) /*0x609c88*/
       return 0; /*0x609c90*/
   }
   v8 = v5 + 1; /*0x609cbb*/
-  return v8 && !v8[26] && GetDialogDefaultButton(a1, a2); /*0x609cd8*/
-}
+  return v8 && !v8[26] && (uint8_t)GetDialogDefaultButton(a1, a2); /*0x609cd8*/
 }
 // 0x609CF0
 namespace gamemd {
 bool sub_609CF0(int a1, HWND a2)
 {
-  unsigned int *v4; // eax
-  unsigned int *v5; // eax
+  HWND *v4; // eax
+  HWND *v5; // eax
   unsigned int *v7; // eax
   unsigned int *v8; // eax
   HWND v9; // [esp+Ch] [ebp-4h] BYREF
 
-  if ( !SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x609cfd*/
+  if ( !(uint8_t)SessionClass::GetGameSpeed(g_GameMode_Current) ) /*0x609cfd*/
     return 0; /*0x609cfd*/
   if ( (GetWindowLongA(a2, -16) & 0xB) == 0xB ) /*0x609d1a*/
   {
     v9 = a2; /*0x609d21*/
     if ( g_DialogHashMap_Count ) /*0x609d27*/
     {
-      v4 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base /*0x609d48*/
-                     + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1)));
+      v4 = (HWND *)*((unsigned int *)g_DialogHashMap_Base /*0x609d48*/
+                   + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1)));
       if ( v4 ) /*0x609d4d*/
       {
-        while ( (HWND)*v4 != v9 ) /*0x609d55*/
+        while ( *v4 != v9 ) /*0x609d55*/
         {
-          v4 = (unsigned int *)v4[129]; /*0x609d57*/
+          v4 = (HWND *)v4[129]; /*0x609d57*/
           if ( !v4 ) /*0x609d5f*/
             goto LABEL_7; /*0x609d5f*/
         }
         v7 = v4 + 1; /*0x609dc5*/
         if ( v7 ) /*0x609dca*/
         {
-          if ( !v7[26] && IsDialogControlVisible(a1, a2) ) /*0x609dd7*/
+          if ( !v7[26] && (uint8_t)IsDialogControlVisible(a1, a2) ) /*0x609dd7*/
             return 1; /*0x609de6*/
         }
       }
@@ -3185,18 +3191,17 @@ bool sub_609CF0(int a1, HWND a2)
   v9 = a2; /*0x609d76*/
   if ( !g_DialogHashMap_Count ) /*0x609d7c*/
     return 0; /*0x609d7c*/
-  v5 = (unsigned int *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609da1*/
+  v5 = (HWND *)*((unsigned int *)g_DialogHashMap_Base + (g_DialogHashMap_Hasher(&v9) & ((1 << g_DialogHashMap_Buckets) - 1))); /*0x609da1*/
   if ( !v5 ) /*0x609da6*/
     return 0; /*0x609da6*/
-  while ( (HWND)*v5 != v9 ) /*0x609dae*/
+  while ( *v5 != v9 ) /*0x609dae*/
   {
-    v5 = (unsigned int *)v5[129]; /*0x609db0*/
+    v5 = (HWND *)v5[129]; /*0x609db0*/
     if ( !v5 ) /*0x609db8*/
       return 0; /*0x609dc0*/
   }
   v8 = v5 + 1; /*0x609deb*/
-  return v8 && !v8[26] && GetDialogDefaultButton(a1, a2); /*0x609e08*/
-}
+  return v8 && !v8[26] && (uint8_t)GetDialogDefaultButton(a1, a2); /*0x609e08*/
 }
 // 0x609E20
 namespace gamemd {
@@ -3317,7 +3322,6 @@ void FilterDialogButtonAction(int a1, HWND a2)
   }
   return 0; /*0x609f09*/
 }
-}
 // 0x60A100
 namespace gamemd {
 bool sub_60A100(int a1, HWND a2)
@@ -3348,7 +3352,6 @@ bool sub_60A100(int a1, HWND a2)
     v4 = 0; /*0x60a14a*/
   DlgCtrlID = GetDlgCtrlID(a2); /*0x60a14d*/
   return v4 == 226 && DlgCtrlID == 1821; /*0x60a159*/
-}
 }
 // 0x60A180
 namespace gamemd {
@@ -3386,7 +3389,6 @@ void EnumFunc(HWND hWnd, LPARAM a2)
   }
   return 1; /*0x60a1e4*/
 }
-}
 // 0x60A250
 namespace gamemd {
 void sub_60A250(HWND hWnd, LPARAM a2)
@@ -3422,7 +3424,6 @@ void sub_60A250(HWND hWnd, LPARAM a2)
     }
   }
   return 1; /*0x60a2b4*/
-}
 }
 // 0x60B000
 namespace gamemd {
@@ -3490,7 +3491,6 @@ AbstractClass * * RepositionGameSpeedIndicator(HWND hWnd, int a2)
              0);
   }
 }
-}
 // 0x60B880
 namespace gamemd {
 bool sub_60B880(int a1, HWND a2)
@@ -3531,7 +3531,6 @@ bool sub_60B880(int a1, HWND a2)
       || v4 == 115
       || v4 == 255
       || v4 == 234;
-}
 }
 // 0x60C0C0
 namespace gamemd {
@@ -3709,13 +3708,12 @@ void RepositionDialogControls(HWND hWnd, HWND a2)
     }
   }
 }
-}
 // 0x60C4A0
 int SkirmishDialog::ResizeDialogAndEnum()
 {
-  MoveWindow(hWndParent, 0, 0, g_DisplayWidth, DataGlobal_8A00A8, 0); /*0x60c4ba*/
+  MoveWindow(hWndParent, 0, 0, g_DisplayWidth, *(&g_DisplayWidth + 1), 0); /*0x60c4ba*/
   dword_AC48A8 = (int)hWndParent; /*0x60c4c0*/
-  return EnumChildWindows(hWndParent, RepositionDialogControls, lParam); /*0x60c4d3*/
+  return EnumChildWindows(hWndParent, (WNDENUMPROC)RepositionDialogControls, lParam); /*0x60c4d3*/
 }
 // 0x60F4B0
 namespace gamemd {
@@ -3761,7 +3759,7 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
     memset(v17, 0, sizeof(v17)); /*0x60f528*/
     v17[26] = (void *)11; /*0x60f53d*/
     v17[25] = (void *)g_FogOfWarState; /*0x60f548*/
-    v5 = operator new(4u); /*0x60f54f*/
+    v5 = RA2_OPNEW(4u); /*0x60f54f*/
     if ( v5 ) /*0x60f559*/
       v6 = (void *)unknown_libname_74(v5); /*0x60f55d*/
     else
@@ -3816,7 +3814,7 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
     memset(v17, 0, sizeof(v17)); /*0x60f667*/
     v17[26] = (void *)11; /*0x60f67c*/
     v17[25] = (void *)g_FogOfWarState; /*0x60f687*/
-    v10 = operator new(4u); /*0x60f68e*/
+    v10 = RA2_OPNEW(4u); /*0x60f68e*/
     if ( v10 ) /*0x60f698*/
       v11 = (void *)unknown_libname_74(v10); /*0x60f69c*/
     else
@@ -3835,7 +3833,6 @@ AbstractClass * * InitializeDialogControls(HWND a1, LPARAM a2)
     v15[8] = 0; /*0x60f734*/
     return 1; /*0x60f738*/
   }
-}
 }
 // 0x600320
 namespace gamemd {
@@ -3995,7 +3992,7 @@ int unknown_libname_26()
 namespace gamemd {
 ObjectClass * E4Recv_600660::ReadPointerFromECX()
 {
-  return *(unsigned int *)this; /*0x600662*/
+  return (int)this->vtable0; /*0x600662*/
 }
 } // namespace gamemd
 
@@ -4022,7 +4019,7 @@ int sub_6006B0()
   g_DialogHashMap_Grow = 0; /*0x6006ff*/
   byte_AC1B5C = 0; /*0x600705*/
   dword_AC1B50 = 1 << (v1 - 1); /*0x60070b*/
-  g_DialogHashMap_Entries = operator new(4 * (1 << (v1 - 1))); /*0x600723*/
+  g_DialogHashMap_Entries = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x600723*/
   memset(g_DialogHashMap_Entries, 0, 4 * dword_AC1B50); /*0x600729*/
   g_DialogHashMap_Callback = (int (__thiscall *)(unsigned int))ReadPointerFromECX; /*0x600730*/
   return atexit(sub_600750); /*0x600742*/
@@ -4052,7 +4049,7 @@ int sub_600880()
   g_DialogPoolCount = 0; /*0x6008cf*/
   byte_AC18D4 = 0; /*0x6008d5*/
   g_DialogBuffer = 1 << (v1 - 1); /*0x6008db*/
-  g_DialogPool = operator new(4 * (1 << (v1 - 1))); /*0x6008f3*/
+  g_DialogPool = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x6008f3*/
   memset(g_DialogPool, 0, 4 * g_DialogBuffer); /*0x6008f9*/
   dword_AC18D8 = (int (__thiscall *)(unsigned int))ReadPointerFromECX; /*0x600900*/
   return atexit(sub_600920); /*0x600912*/
@@ -4082,7 +4079,7 @@ int sub_600A50()
   g_DialogHashMap_Count = 0; /*0x600a9f*/
   byte_AC1B14 = 0; /*0x600aa5*/
   dword_AC1B08 = 1 << (v1 - 1); /*0x600aab*/
-  g_DialogHashMap_Base = operator new(4 * (1 << (v1 - 1))); /*0x600ac3*/
+  g_DialogHashMap_Base = RA2_OPNEW(4 * (1 << (v1 - 1))); /*0x600ac3*/
   memset(g_DialogHashMap_Base, 0, 4 * dword_AC1B08); /*0x600ac9*/
   g_DialogHashMap_Hasher = (int (__thiscall *)(unsigned int))ReadPointerFromECX; /*0x600ad0*/
   return atexit(sub_600AF0); /*0x600ae2*/
@@ -4139,10 +4136,10 @@ BOOL E4Recv_60B740::sub_60B740()
   struct tagRECT v4; // [esp+8h] [ebp-20h] BYREF
   struct tagRECT Rect; // [esp+18h] [ebp-10h] BYREF
 
-  Parent = GetParent(hWnd); /*0x60b748*/
+  Parent = GetParent((HWND)this); /*0x60b748*/
   GetWindowRect(Parent, &Rect); /*0x60b75a*/
-  GetWindowRect(hWnd, &v4); /*0x60b762*/
-  return MoveWindow(hWnd, v4.left - Rect.left, v4.top - Rect.top, v4.right - v4.left, v4.bottom - v4.top, 0); /*0x60b791*/
+  GetWindowRect((HWND)this, &v4); /*0x60b762*/
+  return MoveWindow((HWND)this, v4.left - Rect.left, v4.top - Rect.top, v4.right - v4.left, v4.bottom - v4.top, 0); /*0x60b791*/
 }
 } // namespace gamemd
 

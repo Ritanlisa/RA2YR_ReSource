@@ -46,13 +46,10 @@ struct E4Recv_5D25D0 {
     unsigned int q5170;  // 0x5170
     unsigned int q5444;  // 0x5444
     unsigned int q5508;  // 0x5508
+    unsigned int ambientSoundController;
     unsigned int attachedBomb;
     unsigned int attachedTag;
     unsigned int nextObject;
-    unsigned int q03D;
-    unsigned int q040;
-    unsigned int q044;
-    unsigned int q0C0;
 // --- flat members (END) ---
     char sub_5D25D0(char * Source,  int a3);    // 0x5D25D0
 };

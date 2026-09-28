@@ -5,14 +5,15 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/WDTState_4_e4.hpp"
 
 // 0x76EFE0
 namespace gamemd {
 void * WOL::QueryInterface(char a2)
 {
-  SelectionInitializeWOL(); /*0x76efe3*/
+  SelectionInitializeWOL((int)this); /*0x76efe3*/
   if ( (a2 & 1) != 0 ) /*0x76efed*/
-    RA2_OPDEL(); /*0x76eff0*/
+    RA2_OPDEL(this); /*0x76eff0*/
   return this; /*0x76effa*/
 }
 } // namespace gamemd

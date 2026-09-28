@@ -16,11 +16,11 @@ void DeleteCommandClass_Undo()
 {
   return UI_Delete(); /*0x537f95*/
 }
-}
 // 0x537F10
 unsigned int * DeleteCommandClass::Constructor()
 {
-  return this; /*0x537f18*/
+  *(unsigned int *)this->__pad_0 = (void*)&DeleteCommandClass_vftable; /*0x537f12*/
+  return this->__pad_0; /*0x537f18*/
 }
 // 0x537F20
 char * DeleteCommandClass::AddRef()
@@ -271,7 +271,6 @@ int DeleteCommandClass_28::FindItem(unsigned int * a2)
   }
   return result; /*0x53c772*/
 }
-}
 // 0x53C780
 namespace gamemd {
 VectorClass_flat * DeleteCommandClass_28::QueryInterface(char a2)
@@ -279,15 +278,16 @@ VectorClass_flat * DeleteCommandClass_28::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x53c783*/
+  *(void **)this = (void*)&VectorClass_AnimClass_const___vftable; /*0x53c786*/
   if ( v3 && this->IsAllocated ) /*0x53c790*/
   {
     RA2_OPDEL(v3); /*0x53c798*/
     this->q004 = 0; /*0x53c7a0*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = (int)((gamemd::VectorClass_flat *)(0));
+  this->IsAllocated = 0; /*0x53c7ab*/
+  this->q008 = 0; /*0x53c7b1*/
   if ( (a2 & 1) != 0 ) /*0x53c7b8*/
-    RA2_OPDEL(); /*0x53c7bb*/
+    RA2_OPDEL(this); /*0x53c7bb*/
   return this; /*0x53c7c5*/
 }
 } // namespace gamemd
@@ -299,15 +299,16 @@ DynamicVector * DeleteCommandClass_28::Constructor(char a2)
   void *v3; // eax
 
   v3 = (void *)this->q004; /*0x53c7d3*/
+  *(void **)this = (void*)&VectorClass_AnimClass_const___vftable; /*0x53c7d6*/
   if ( v3 && this->IsAllocated ) /*0x53c7e0*/
   {
     RA2_OPDEL(v3); /*0x53c7e8*/
     this->q004 = 0; /*0x53c7f0*/
   }
-  this->IsAllocated = (gamemd::DynamicVector *)(0);
-  this->q008 = (int)((gamemd::DynamicVector *)(0));
+  this->IsAllocated = 0; /*0x53c7fb*/
+  this->q008 = 0; /*0x53c801*/
   if ( (a2 & 1) != 0 ) /*0x53c808*/
-    RA2_OPDEL(); /*0x53c80b*/
+    RA2_OPDEL(this); /*0x53c80b*/
   return this; /*0x53c815*/
 }
 } // namespace gamemd

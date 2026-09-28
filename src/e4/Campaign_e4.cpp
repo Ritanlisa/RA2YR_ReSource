@@ -43,6 +43,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x7658c7*/
       {
         ComPtr::Constructor(v6); /*0x7658b8*/
+        *v6 = (void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x7658bd*/
         v6 += 2; /*0x7658c3*/
         --a2; /*0x7658c6*/
       }
@@ -52,7 +53,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
   }
   else
   {
-    v5 = operator new(8 * a2 + 4); /*0x765867*/
+    v5 = RA2_OPNEW(8 * a2 + 4); /*0x765867*/
     if ( !v5 ) /*0x765871*/
     {
       v8 = 0; /*0x76589f*/
@@ -67,6 +68,7 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
       do /*0x765897*/
       {
         ComPtr::Constructor(v6); /*0x765888*/
+        *v6 = (void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x76588d*/
         v6 += 2; /*0x765893*/
         --a2; /*0x765896*/
       }
@@ -99,13 +101,11 @@ int Campaign_WorldDominationTour_16::Release(int a2, unsigned int * a3)
   *(&this->q0043) = a3 == 0; /*0x76593c*/
   return 1; /*0x7658d7*/
 }
-}
 // 0x765700
 namespace gamemd {
 int Campaign_WorldDominationTour_24::AddRef()
 {
   return this->q008 < *(unsigned int *)(this->q004 + 16); /*0x76570d*/
-}
 }
 // 0x765B40
 namespace gamemd {
@@ -114,7 +114,6 @@ unsigned int * Campaign_WorldDominationTour_24::Release()
   ++this->q008; /*0x765b42*/
   return this; /*0x765b45*/
 }
-}
 // 0x765B50
 namespace gamemd {
 unsigned int * Campaign_WorldDominationTour_24::ddtor()
@@ -122,38 +121,40 @@ unsigned int * Campaign_WorldDominationTour_24::ddtor()
   --this->q008; /*0x765b52*/
   return this; /*0x765b55*/
 }
-}
 // 0x60D380
 LONG Campaign::Screen(char a1)
 {
-  HWND v1; // esi
-  LONG result; // eax
+  INT_PTR (__stdcall *v1)(HWND, UINT, WPARAM, LPARAM); // edx
+  uint16_t v2; // cx
+  BINK *Dialog; // esi
+  int result; // eax
+  ObjectClass *v5; // [esp+0h] [ebp-8h]
   LONG dwNewLong; // [esp+4h] [ebp-4h] BYREF
 
-  v1 = (HWND)CreateDialog(0); /*0x60d389*/
+  Dialog = (BINK *)CreateDialog(v2, v1, 0); /*0x60d389*/
   result = 0; /*0x60d38b*/
   dwNewLong = 0; /*0x60d38f*/
-  if ( v1 ) /*0x60d393*/
+  if ( Dialog ) /*0x60d393*/
   {
-    SetWindowLongA(v1, 8, (LONG)&dwNewLong); /*0x60d3a1*/
-    ShowWindow(v1, 1); /*0x60d3aa*/
-    SetForegroundWindow(v1); /*0x60d3b1*/
-    Timer::PumpMessages(g_BinkMoviePlayer); /*0x60d3bd*/
+    SetWindowLongA((HWND)Dialog, 8, (LONG)&dwNewLong); /*0x60d3a1*/
+    ShowWindow((HWND)Dialog, 1); /*0x60d3aa*/
+    SetForegroundWindow((HWND)Dialog); /*0x60d3b1*/
+    Timer::PumpMessages(*(Timer **)&stru_87F5F0.__pad_58[296]); /*0x60d3bd*/
     if ( a1 ) /*0x60d3c8*/
-      BINK::Background_Setup(v1); /*0x60d3cc*/
+      BINK::Background_Setup(Dialog); /*0x60d3cc*/
     while ( !dwNewLong ) /*0x60d3d7*/
     {
       MessageLoop(); /*0x60d3d9*/
-      if ( !g_GameMode_Current || g_GameMode_Current == 5 || g_NetworkQuitFlag || g_GameFlags_Campaign ) /*0x60d3fc*/
+      if ( !*(unsigned int *)&unk_A8B238 || *(unsigned int *)&unk_A8B238 == 5 || IDA_BYTE2(stru_A8D600.Network_field_0xC) || unk_A8DAB4 ) /*0x60d3fc*/
       {
         Event::Dispatch(); /*0x60d412*/
       }
-      else if ( !(uint8_t)VtableStub::55CBF0() && GameFrameLoop() ) /*0x60d407*/
+      else if ( !VtableStub::55CBF0() && (uint8_t)GameFrameLoop(v5) ) /*0x60d407*/
       {
         break; /*0x60d40e*/
       }
     }
-    Dialog::Destroy(v1); /*0x60d41f*/
+    Dialog::Destroy((Dialog *)Dialog); /*0x60d41f*/
     return dwNewLong; /*0x60d426*/
   }
   return result; /*0x60d42a*/
@@ -166,6 +167,7 @@ unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3)
 
   v3 = this->Items + 8 * a3; /*0x7656dd*/
   ComPtr::Constructor(a2); /*0x7656e2*/
+  *a2 = (void*)&rc_ptr_WorldDominationTour_Conflict_vftable; /*0x7656e7*/
   ComPtr::Set(a2, v3->q010); /*0x7656f3*/
   return a2; /*0x7656fa*/
 }
@@ -175,9 +177,10 @@ unsigned int * Campaign_WorldDominationTour_16::Seek(unsigned int * a2, int a3)
 namespace gamemd {
 rc_ptr * Campaign_WorldDominationTour_16::Constructor(char a2)
 {
-  ComPtr::Release(); /*0x765719*/
+  *this = (void*)&rc_ptr_WorldDominationTour_CampaignProperties_vftable; /*0x765713*/
+  ComPtr::Release(this); /*0x765719*/
   if ( (a2 & 1) != 0 ) /*0x765723*/
-    RA2_OPDEL(); /*0x765726*/
+    RA2_OPDEL(this); /*0x765726*/
   return this; /*0x765730*/
 }
 } // namespace gamemd
@@ -186,9 +189,10 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor(char a2)
 namespace gamemd {
 rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char a2)
 {
-  ComPtr::Release(); /*0x765749*/
+  *this = (void*)&rc_ptr_WorldDominationTour_History_vftable; /*0x765743*/
+  ComPtr::Release(this); /*0x765749*/
   if ( (a2 & 1) != 0 ) /*0x765753*/
-    RA2_OPDEL(); /*0x765756*/
+    RA2_OPDEL(this); /*0x765756*/
   return this; /*0x765760*/
 }
 } // namespace gamemd
@@ -197,8 +201,9 @@ rc_ptr * Campaign_WorldDominationTour_16::Constructor_0(char a2)
 namespace gamemd {
 VectorCursor * Campaign_WorldDominationTour_16::Constructor_1(char a2)
 {
+  *this = (void*)&VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765779*/
   if ( (a2 & 1) != 0 ) /*0x76577f*/
-    RA2_OPDEL(); /*0x765782*/
+    RA2_OPDEL(this); /*0x765782*/
   return this; /*0x76578c*/
 }
 } // namespace gamemd
@@ -270,7 +275,6 @@ int Campaign_WorldDominationTour_16::Read(int a2)
       return -1; /*0x7659be*/
   }
   return result; /*0x76599a*/
-}
 }
 // 0x7659D0
 namespace gamemd {

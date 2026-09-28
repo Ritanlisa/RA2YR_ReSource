@@ -36,7 +36,6 @@ int sub_6F2040()
   }
   return result; /*0x6f2063*/
 }
-}
 // 0x4371D0
 char Helper::ProcessData(void ** a1, int a2, int * a3)
 {
@@ -45,32 +44,29 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
   int v8; // edx
   void *v9; // eax
   void *v10[4]; // [esp+8h] [ebp-30h] BYREF
-  int (__thiscall **v11)(void *, char); // [esp+18h] [ebp-20h] BYREF
-  int v12; // [esp+1Ch] [ebp-1Ch]
-  int v13; // [esp+20h] [ebp-18h]
-  int v14; // [esp+24h] [ebp-14h]
-  int v15; // [esp+28h] [ebp-10h]
-  unsigned int v16[3]; // [esp+2Ch] [ebp-Ch] BYREF
+  XSurface v11; // [esp+18h] [ebp-20h] BYREF
+  int v12; // [esp+28h] [ebp-10h]
+  int v13[3]; // [esp+2Ch] [ebp-Ch] BYREF
 
   if ( *(int *)(a2 + 8) <= 0 || *(int *)(a2 + 12) <= 0 ) /*0x4371e5*/
     return 0; /*0x4371e8*/
   v6 = *a3; /*0x4371fa*/
   v7 = (*((int (__thiscall **)(void **))*a1 + 28))(a1); /*0x4371fc*/
   v8 = *(unsigned int *)(a2 + 12); /*0x437202*/
-  v12 = *(unsigned int *)(a2 + 8); /*0x437205*/
-  v13 = v8; /*0x437215*/
-  v14 = 0; /*0x437219*/
-  v11 = &XSurface_Vtable; /*0x437221*/
-  v15 = v7; /*0x437229*/
-  Buffer::Init(v16, v6, v7 * v8 * v12); /*0x43722d*/
+  v11.Width = *(unsigned int *)(a2 + 8); /*0x437205*/
+  v11.Height = v8; /*0x437215*/
+  v11.LockCount = 0; /*0x437219*/
+  *(unsigned int *)v11.__pad_0 = &XSurface_Vtable; /*0x437221*/
+  v12 = v7; /*0x437229*/
+  Buffer::Init((Buffer *)v13, v6, v7 * v8 * v11.Width); /*0x43722d*/
   v9 = *(void **)(a2 + 8); /*0x437235*/
   v10[3] = *(void **)(a2 + 12); /*0x437241*/
-  v11 = &BSurface_Vtable; /*0x43724b*/
+  *(unsigned int *)v11.__pad_0 = &BSurface_Vtable; /*0x43724b*/
   v10[0] = 0; /*0x437253*/
   v10[1] = 0; /*0x43725b*/
   v10[2] = v9; /*0x437263*/
-  IDA_LOBYTE(v6) = XSurface::BlitPart((int *)&v11, v10, a1, (void **)a2, 0, 1); /*0x437270*/
-  Vector::Clear((int)v16); /*0x437272*/
+  IDA_LOBYTE(v6) = XSurface::BlitPart(&v11, v10, a1, (void **)a2, 0, 1); /*0x437270*/
+  Vector::Clear((int)v13); /*0x437272*/
   return v6; /*0x4371e7*/
 }
 // 0x550240
@@ -80,9 +76,9 @@ char sub_550240()
   char result; // al
   int i; // esi
 
-  result = g_TimerPool; /*0x550240*/
-  for ( i = g_TimerPool - 1; i >= 0; --i ) /*0x55024b*/
-    result = TacticalClass::RenderCells(*((unsigned int *)dword_ABC87C + i)); /*0x550256*/
+  result = g_MissionQueueFrame.random[31]; /*0x550240*/
+  for ( i = g_MissionQueueFrame.random[31] - 1; i >= 0; --i ) /*0x55024b*/
+    result = TacticalClass::RenderCells(*(TacticalClass **)(g_MissionQueueFrame.random[28] + 4 * i)); /*0x550256*/
   return result; /*0x55025e*/
 }
 } // namespace gamemd
@@ -93,7 +89,7 @@ unsigned int * sub_5D81B0(const wchar_t ** a1, const wchar_t ** a2, const char *
 {
   unsigned int *v6; // eax
 
-  v6 = (unsigned int *)(operator new(0x40u));
+  v6 = (unsigned int *)(RA2_OPNEW(0x40u));
   if ( v6 ) /*0x5d81bc*/
     return MPBattleClass::MPManBattleClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d81de*/
   else

@@ -19,27 +19,27 @@ namespace gamemd {
 void BulkData::InitMissionHashing()
 {
   DWORD v2; // eax
-  char *v3; // eax
+  char *inited; // eax
   unsigned int v5; // ebx
   DWORD Time; // [esp+10h] [ebp-4h] BYREF
 
-  SessionClass::LoadMissionList(); /*0x697ad7*/
+  SessionClass::LoadMissionList((SessionClass *)this); /*0x697ad7*/
   Time = timeGetTime(); /*0x697ae2*/
   v2 = DiskSpace::CheckAvailable(); /*0x697ae6*/
   ComputeHash(&Time, v2); /*0x697af1*/
-  v3 = Object_Init_7CBC11(aPath); /*0x697afb*/
-  v3 = v3; /*0x697b00*/
-  if ( v3 ) /*0x697b07*/
+  inited = Object_Init_7CBC11(aPath); /*0x697afb*/
+  inited = inited; /*0x697b00*/
+  if ( inited ) /*0x697b07*/
   {
     v5 = 0; /*0x697b10*/
-    if ( strlen(v3) ) /*0x697b12*/
+    if ( strlen(inited) ) /*0x697b12*/
     {
       do /*0x697b35*/
-        ComputeHash(&Time, v3[v5++]); /*0x697b21*/
-      while ( v5 < strlen(v3) ); /*0x697b35*/
+        ComputeHash(&Time, inited[v5++]); /*0x697b21*/
+      while ( v5 < strlen(inited) ); /*0x697b35*/
     }
   }
-  this->ptr_144 = (void *)(Time);
+  this->ptr_144 = (gamemd::AbstractClass *)(Time);
   Debug::Log(); /*0x697b47*/
 }
 } // namespace gamemd

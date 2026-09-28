@@ -15,13 +15,13 @@
 namespace gamemd {
 unsigned int * TabClass::initStripClass()
 {
-  *(unsigned int *)this = 0; /*0x4a2354*/
-  this->q004 = 0; /*0x4a2356*/
-  this->u32_8 = 0; /*0x4a2359*/
-  this->q024 = 0; /*0x4a235c*/
-  this->u8_A = 0; /*0x4a235f*/
-  this->q00C = 0; /*0x4a2362*/
-  return this; /*0x4a2365*/
+  this->TabClass_field_0x0 = 0; /*0x4a2354*/
+  this->TabClass_field_0x4 = 0; /*0x4a2356*/
+  IDA_LOBYTE(this->TabClass_field_0x8[0]) = 0; /*0x4a2359*/
+  IDA_BYTE1(this->TabClass_field_0x8[0]) = 0; /*0x4a235c*/
+  IDA_BYTE2(this->TabClass_field_0x8[0]) = 0; /*0x4a235f*/
+  this->TabClass_field_0xC = 0; /*0x4a2362*/
+  return &this->TabClass_field_0x0; /*0x4a2365*/
 }
 } // namespace gamemd
 // 0x658330

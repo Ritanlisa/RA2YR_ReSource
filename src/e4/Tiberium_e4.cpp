@@ -20,6 +20,11 @@
 #include "e4/classes/TechnoTypeClass_e4.hpp"
 #include "e4/classes/TimerClass_e4.hpp"
 #include "e4/classes/Time_e4.hpp"
+#include "e4/classes/File_e4.hpp"
+#include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/classes/ProgressTimer_e4.hpp"
+#include "e4/classes/Turret_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
 
 // 0x59D510
 namespace gamemd {
@@ -295,7 +300,7 @@ LABEL_42:
 LABEL_45:
           if ( v30 )
             v30[20 * SLOWORD(v85) + 14 + 20 * unk_89C2DC * IDA_SWORD1(v85)] = v81->q308;
-          v99[0] = v31;
+          v99[0] = (unsigned int)(v31);
           v99[1] = v34;
           unsigned char * v39 = (unsigned char *)(CellCoord::To_CellObj(&DataGlobal_87F7E8, v99));
           v40 = (unsigned int)(*(Random **)&g_NetworkPlayerBuffer[78076]);

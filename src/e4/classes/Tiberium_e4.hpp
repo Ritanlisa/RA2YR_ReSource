@@ -7,6 +7,7 @@ namespace gamemd {
 struct Tiberium {
 // --- flat members (BEGIN) ---
     void* q038;  // 0x38
+    unsigned int u32_4C;  // 0x4C
     void* q134;  // 0x134
     void* q308;  // 0x308
     void* q1910;  // 0x1910

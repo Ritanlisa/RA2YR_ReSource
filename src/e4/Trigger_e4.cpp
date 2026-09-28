@@ -21,44 +21,44 @@
 namespace gamemd {
 int Trigger::EnableOnce(AbstractClass * aP1)
 {
-  char result; // al
+  int result; // eax
 
-  result = *(&this->u32_1C2); /*0x554a60*/
-  if ( !result ) /*0x554a65*/
+  IDA_LOBYTE(result) = this->Trigger_field_0x48; /*0x554a60*/
+  if ( !(unsigned char)result ) /*0x554a65*/
   {
-    *(&this->u32_1C2) = 1; /*0x554a6b*/
-    return TacticalClass::ScrollView(aP1); /*0x554a70*/
+    IDA_LOBYTE(this->Trigger_field_0x48) = 1; /*0x554a6b*/
+    return TacticalClass::ScrollView((TacticalClass *)this, aP1); /*0x554a70*/
   }
   return result; /*0x554a75*/
-}
 }
 // 0x5CBD20
 namespace gamemd {
 MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a4, int a5, int a6, int a7, MSShapeAnim * aP7)
 {
   int FileClassToBuffer; // eax
-  MSShapeAnim * v10;
+  int v10; // edx
 
-  this->u32_8 = (unsigned char)(a4);
-  this->ptr_4 = (void *)((unsigned char)(aP2));
-  this->q00C = (unsigned char)(1);
-  this->q010 = (unsigned char)(Timer::GetTicks());
-  this->ptr_18 = (gamemd::CampaignClass *)((unsigned char)(0));
-  this->q020 = (unsigned char)(a5);
-  this->u32_38 = (unsigned char)(a7);
-  this->q024 = (unsigned char)(a6);
-  this->u32_28 = (unsigned char)(0);
-  this->u8_34 = (unsigned char)(0);
-  this->u8_3C = (unsigned char)(0);
-  FileClassToBuffer = (unsigned char)(LoadFileClassToBuffer(aP1, (bool *)&this->ptr_180));
-  this->u32_1C = (unsigned char)(FileClassToBuffer);
-  this->q02C = (gamemd::MSShapeAnim *)((unsigned char)(0));
-  v10 = (unsigned char)(*(int16_t *)(FileClassToBuffer + 6) - 1);
-  this->u32_44 = (unsigned char)(aP7);
-  this->q030 = v10; /*0x5cbd87*/
-  this->q040 = 0; /*0x5cbd8a*/
+  *(unsigned int *)this->__pad_8 = a4; /*0x5cbd2c*/
+  this->Trigger_field_0x4 = (MSAnim *)aP2; /*0x5cbd32*/
+  this->__pad_8[4] = 1; /*0x5cbd35*/
+  this->Trigger_field_0x10 = (void *)Timer::GetTicks(); /*0x5cbd48*/
+  *(unsigned int *)this->__pad_18 = 0; /*0x5cbd4f*/
+  *(unsigned int *)&this->__pad_18[8] = a5; /*0x5cbd52*/
+  *(unsigned int *)&this->__pad_30[8] = a7; /*0x5cbd58*/
+  *(unsigned int *)&this->__pad_18[12] = a6; /*0x5cbd5f*/
+  *(unsigned int *)&this->__pad_18[16] = 0; /*0x5cbd62*/
+  this->__pad_30[4] = 0; /*0x5cbd65*/
+  this->__pad_30[12] = 0; /*0x5cbd68*/
+  *(unsigned int *)this->__pad_0 = (void*)&MSShapeAnim_vftable; /*0x5cbd6a*/
+  FileClassToBuffer = LoadFileClassToBuffer(aP1, (bool *)&this->__pad_30[12]); /*0x5cbd70*/
+  *(unsigned int *)&this->__pad_18[4] = FileClassToBuffer; /*0x5cbd75*/
+  this->Trigger_field_0x2C = 0; /*0x5cbd78*/
+  v10 = *(int16_t *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
+  *(unsigned int *)&this->__pad_30[20] = aP7; /*0x5cbd84*/
+  *(unsigned int *)this->__pad_30 = v10; /*0x5cbd87*/
+  *(unsigned int *)&this->__pad_30[16] = 0; /*0x5cbd8a*/
+  *(unsigned int *)this->__pad_0 = (void*)&MSFadeAnim_vftable; /*0x5cbd8d*/
   return this; /*0x5cbd95*/
-}
 }
 // 0x76D4D0
 namespace gamemd {
@@ -273,37 +273,36 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
 namespace gamemd {
 unsigned int * Trigger::processTrigger(int a2, int a3)
 {
-  this->ptr_4 = (unsigned int *)(a2);
-  this->u32_8 = (unsigned int *)(a3);
-  return (unsigned int *)(this);
-}
+  this->Trigger_field_0x4 = (unsigned int)((MSAnim *)a2);
+  *(unsigned int *)this->__pad_8 = a3; /*0x76f09d*/
+  *(unsigned int *)this->__pad_0 = (void*)&VectorCursor_MSSfxEntry___DynamicVectorClass_MSSfxEntry___vftable; /*0x76f0a0*/
+  return this->__pad_0; /*0x76f0a6*/
 }
 // 0x76F1C0
 namespace gamemd {
 unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
 {
-  this->ptr_4 = (void *)((unsigned int)(0));
-  this->u32_8 = (unsigned int)(aP1);
-  this->q00C = 1; /*0x76f1d1*/
-  this->u8_D = 0; /*0x76f1d5*/
+  this->Trigger_field_0x4 = (unsigned int)(0);
+  *(unsigned int *)this->__pad_8 = aP1; /*0x76f1ce*/
+  this->__pad_8[4] = 1; /*0x76f1d1*/
+  this->__pad_8[5] = 0; /*0x76f1d5*/
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_MSAnim___vftable; /*0x76f1d8*/
   if ( aP1 ) /*0x76f1de*/
   {
     if ( aP2 ) /*0x76f1e6*/
     {
-      this->ptr_4 = (unsigned int *)(aP2);
-      return (unsigned int *)(this);
+      this->Trigger_field_0x4 = (unsigned int)((MSAnim *)aP2);
+      return this->__pad_0; /*0x76f1ee*/
     }
-    this->ptr_4 = operator new(4 * aP1); /*0x76f1fd*/
-    this->u8_D = 1; /*0x76f200*/
+    this->Trigger_field_0x4 = (MSAnim *)RA2_OPNEW(4 * aP1); /*0x76f1fd*/
+    this->__pad_8[5] = 1; /*0x76f200*/
   }
-  return (unsigned int *)(this);
-}
+  return this->__pad_0; /*0x76f1ed*/
 }
 // 0x76FF20
 namespace gamemd {
 int Trigger::executeActions(int a2)
 {
-  *(&this->ptr_41) = a2; /*0x76ff24*/
+  this->Trigger_field_0x2C = (unsigned int)((void *)a2);
   return a2; /*0x76ff27*/
-}
 }

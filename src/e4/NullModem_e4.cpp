@@ -15,119 +15,118 @@
 
 // 0x5F03B0
 namespace gamemd {
-char NullModem_TestConnection()
+char NullModem_TestConnection(void * a1)
 {
-  wchar_t * v0;
-  wchar_t *String; // esi
-  wchar_t *v2; // eax
-  HWND v3; // eax
-  int v4; // esi
-  int v5; // ebp
-  int v6; // eax
-  int v7; // esi
-  DWORD Ticks; // ecx
-  int v9; // esi
+  wchar_t * v1;
+  wchar_t *StringCSF; // esi
+  wchar_t *v3; // eax
+  HWND MessageBox; // eax
+  int v5; // esi
+  int v6; // ebp
+  int v7; // eax
+  int v8; // esi
+  int Ticks; // ecx
   int v10; // esi
-  int v11; // edi
-  int v12; // esi
+  int v11; // esi
+  int v12; // edi
   int v13; // esi
-  wchar_t *v14; // eax
-  wchar_t *v16; // [esp-18h] [ebp-228h]
-  wchar_t * v17;
-  int v18; // [esp+Ch] [ebp-204h]
+  int v14; // esi
+  int *v15; // eax
+  wchar_t *v17; // [esp-18h] [ebp-228h]
+  char v19; // [esp+Bh] [ebp-205h]
+  int v20; // [esp+Ch] [ebp-204h]
   HWND hWnd; // [esp+10h] [ebp-200h]
-  unsigned char v20[4]; // [esp+14h] [ebp-1FCh] BYREF
-  unsigned int v21[62]; // [esp+18h] [ebp-1F8h] BYREF
-  int16_t v22; // [esp+110h] [ebp-100h]
-  unsigned int v23[6]; // [esp+114h] [ebp-FCh] BYREF
-  int v24; // [esp+12Ch] [ebp-E4h]
+  unsigned char v22[4]; // [esp+14h] [ebp-1FCh] BYREF
+  int v23[62]; // [esp+18h] [ebp-1F8h] BYREF
+  int16_t v24; // [esp+110h] [ebp-100h]
+  unsigned int v25[6]; // [esp+114h] [ebp-FCh] BYREF
+  int v26; // [esp+12Ch] [ebp-E4h]
 
-  v0 = (wchar_t *)((char)((wchar_t *)(0)));
-  v17 = (wchar_t *)((char)((wchar_t *)(1)));
-  g_NetworkTestFlag = (int)((wchar_t *)(0));
-  String = (wchar_t *)(GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullDlg_CPP, 6489));
-  v2 = GetStringCSF(aTxtNullConnerr, 0, g_Str_File_NullDlg_CPP, 6489); /*0x5f03f3*/
-  v3 = CreateMessageBox((LPARAM)v2, (LPARAM)String, (LONG)&g_NetworkTestFlag); /*0x5f03fc*/
-  hWnd = v3; /*0x5f0403*/
-  if ( !v3 ) /*0x5f0407*/
+  v1 = (wchar_t *)((char)((wchar_t *)(0)));
+  v19 = (char)((wchar_t *)(1));
+  g_NetworkTestFlag = (wchar_t *)(0);
+  StringCSF = GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullDlg_CPP, 6489); /*0x5f03f1*/
+  v3 = GetStringCSF(aTxtNullConnerr, 0, g_Str_File_NullDlg_CPP, 6489); /*0x5f03f3*/
+  MessageBox = CreateMessageBox((LPARAM)v3, (LPARAM)StringCSF, (LONG)&g_NetworkTestFlag); /*0x5f03fc*/
+  hWnd = MessageBox; /*0x5f0403*/
+  if ( !MessageBox ) /*0x5f0407*/
     return 0; /*0x5f067c*/
-  Dialog::Show(v3); /*0x5f040f*/
-  v4 = g_PerformanceTickOffset; /*0x5f0419*/
+  Dialog::Show(MessageBox); /*0x5f040f*/
+  v5 = g_PerformanceTickOffset; /*0x5f0419*/
   if ( g_LastPerformanceTick != -1 ) /*0x5f0422*/
-    v4 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5f0434*/
-  v18 = v4; /*0x5f0438*/
-  v5 = v4; /*0x5f043c*/
-  while ( Dialog::PumpMessages() != 1 && !g_NetworkTestFlag ) /*0x5f0452*/
+    v5 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5f0434*/
+  v20 = v5; /*0x5f0438*/
+  v6 = v5; /*0x5f043c*/
+  while ( (uint8_t)Dialog::PumpMessages() != 1 && !g_NetworkTestFlag ) /*0x5f0452*/
   {
     Stream::ReadPacket((int)&g_EventManager); /*0x5f045d*/
-    v6 = g_LastPerformanceTick; /*0x5f0462*/
-    v7 = g_PerformanceTickOffset; /*0x5f0467*/
+    v7 = g_LastPerformanceTick; /*0x5f0462*/
+    v8 = g_PerformanceTickOffset; /*0x5f0467*/
     if ( g_LastPerformanceTick != -1 ) /*0x5f0470*/
     {
       Ticks = Timer::GetTicks(); /*0x5f047c*/
-      v6 = g_LastPerformanceTick; /*0x5f047e*/
-      v7 += Ticks - g_LastPerformanceTick; /*0x5f0485*/
+      v7 = g_LastPerformanceTick; /*0x5f047e*/
+      v8 += Ticks - g_LastPerformanceTick; /*0x5f0485*/
     }
-    if ( (unsigned int)(v7 - v5) > 0x1E ) /*0x5f048c*/
+    if ( (unsigned int)(v8 - v6) > 0x1E ) /*0x5f048c*/
     {
-      v9 = g_PerformanceTickOffset; /*0x5f048e*/
-      if ( v6 != -1 ) /*0x5f0497*/
-        v9 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5f04a9*/
-      memset(v21, 0, sizeof(v21)); /*0x5f04bc*/
-      v22 = 0; /*0x5f04be*/
-      v5 = v9; /*0x5f04d1*/
-      v21[0] = 100; /*0x5f04d3*/
-      IDA_LOBYTE(v21[6]) = g_TauntCommandState; /*0x5f04db*/
-      Stream::WriteBlock((int)&g_EventManager, (int)v21, 250, 0); /*0x5f04df*/
+      v10 = g_PerformanceTickOffset; /*0x5f048e*/
+      if ( v7 != -1 ) /*0x5f0497*/
+        v10 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5f04a9*/
+      memset(v23, 0, sizeof(v23)); /*0x5f04bc*/
+      v24 = 0; /*0x5f04be*/
+      v6 = v10; /*0x5f04d1*/
+      v23[0] = 100; /*0x5f04d3*/
+      IDA_LOBYTE(v23[6]) = g_TauntCommandState; /*0x5f04db*/
+      Stream::WriteBlock(&g_EventManager, (int, unsigned int a1)v23, 250, 0); /*0x5f04df*/
     }
-    if ( ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v23, (int)v20) > 0 ) /*0x5f04fd*/
+    if ( ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v25, (int)v22) > 0 ) /*0x5f04fd*/
     {
-      v10 = g_PerformanceTickOffset; /*0x5f0508*/
+      v11 = g_PerformanceTickOffset; /*0x5f0508*/
       if ( g_LastPerformanceTick != -1 ) /*0x5f0511*/
-        v10 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5f0523*/
-      v18 = v10; /*0x5f052c*/
-      if ( v23[0] == 100 ) /*0x5f0533*/
+        v11 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5f0523*/
+      v20 = v11; /*0x5f052c*/
+      if ( v25[0] == 100 ) /*0x5f0533*/
       {
-        if ( (uint8_t)v24 == g_TauntCommandState ) /*0x5f054d*/
+        if ( (uint8_t)v26 == g_TauntCommandState ) /*0x5f054d*/
         {
-          v16 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullDlg_CPP, 6530));
-          v14 = (wchar_t *)(GetStringCSF(g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, g_Str_File_NullDlg_CPP, 6530));
-          Dialog::ShowMessageBox(v5, v14, v16, 0, 0, 0); /*0x5f065f*/
+          v17 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullDlg_CPP, 6530));
+          v15 = (int *)GetStringCSF(g_Str_TXT_SYSTEM_NOT_RESPONDING, 0, g_Str_File_NullDlg_CPP, 6530); /*0x5f0655*/
+          Dialog::ShowMessageBox(v15, v17, 0, 0, 0, a1); /*0x5f065f*/
           break; /*0x5f065f*/
         }
-        memset(v21, 0, sizeof(v21)); /*0x5f0560*/
-        v22 = 0; /*0x5f0571*/
-        v21[0] = 100; /*0x5f0573*/
-        IDA_LOBYTE(v21[6]) = g_TauntCommandState; /*0x5f057b*/
-        Stream::WriteBlock((int)&g_EventManager, (int)v21, 250, 1); /*0x5f057f*/
-        v11 = g_PerformanceTickOffset; /*0x5f0589*/
+        memset(v23, 0, sizeof(v23)); /*0x5f0560*/
+        v24 = 0; /*0x5f0571*/
+        v23[0] = 100; /*0x5f0573*/
+        IDA_LOBYTE(v23[6]) = g_TauntCommandState; /*0x5f057b*/
+        Stream::WriteBlock(&g_EventManager, (int)v23, 250, 1); /*0x5f057f*/
+        v12 = g_PerformanceTickOffset; /*0x5f0589*/
         if ( g_LastPerformanceTick != -1 ) /*0x5f0594*/
-          v11 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5f05a6*/
-        v5 = v11; /*0x5f05a8*/
+          v12 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5f05a6*/
+        v6 = v12; /*0x5f05a8*/
         while ( 1 ) /*0x5f05af*/
         {
-          v12 = g_PerformanceTickOffset; /*0x5f05af*/
+          v13 = g_PerformanceTickOffset; /*0x5f05af*/
           if ( g_LastPerformanceTick != -1 ) /*0x5f05b7*/
-            v12 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5f05c9*/
-          if ( (unsigned int)(v12 - v11) >= 0x3C ) /*0x5f05d0*/
+            v13 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5f05c9*/
+          if ( (unsigned int)(v13 - v12) >= 0x3C ) /*0x5f05d0*/
             break; /*0x5f05d0*/
           Stream::ReadPacket((int)&g_EventManager); /*0x5f05d7*/
         }
-        v0 = (wchar_t *)(1);
-        v17 = 0; /*0x5f05e0*/
+        v1 = (wchar_t *)(1);
+        v19 = 0; /*0x5f05e0*/
       }
     }
-    v13 = g_PerformanceTickOffset; /*0x5f05ea*/
+    v14 = g_PerformanceTickOffset; /*0x5f05ea*/
     if ( g_LastPerformanceTick != -1 ) /*0x5f05f3*/
-      v13 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5f0605*/
-    if ( (unsigned int)(v13 - v18) > 0x384 ) /*0x5f0611*/
+      v14 += Timer::GetTicks() - g_LastPerformanceTick; /*0x5f0605*/
+    if ( (unsigned int)(v14 - v20) > 0x384 ) /*0x5f0611*/
       break; /*0x5f0611*/
-    if ( v17 != 1 ) /*0x5f0618*/
+    if ( v19 != 1 ) /*0x5f0618*/
       goto LABEL_33; /*0x5f0618*/
   }
-  v0 = (wchar_t *)((char)(0));
+  v1 = (char)(0);
   LABEL_33:
   Dialog::Destroy(hWnd); /*0x5f0666*/
-  return v0; /*0x5f0673*/
-}
+  return v1; /*0x5f0673*/
 }

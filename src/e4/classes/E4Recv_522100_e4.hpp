@@ -18,8 +18,6 @@ struct E4Recv_522100 {
     unsigned int q1728;  // 0x1728
     unsigned int q5714;  // 0x5714
     unsigned int q5928;  // 0x5928
-    unsigned int u32_A43;
-    unsigned int u32_AC2;
 // --- flat members (END) ---
     bool sub_522100();  // 0x522100
 };

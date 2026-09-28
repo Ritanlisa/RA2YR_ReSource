@@ -230,8 +230,8 @@ int UpdateAudio406F40()
 
 // IDA: 0x4CCA70  proposal: LocomotionClass::SetMember1
 // IDA: void __thiscall sub_4CCA70(unsigned int *this)
-//   ((void**)this)[0] = (void*)(void*)(void*)&FlyLocomotionClass_vftable;
-//   *(this + 1) = (void*)(void*)&FlyLocomotionClass_vftable;
+//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)&FlyLocomotionClass_vftable;
+//   *(this + 1) = (void*)(void*)(void*)(void*)&FlyLocomotionClass_vftable;
 //   LocomotionClass::Construct(this);
 void LocomotionClass_SetMember1(void* _this) // thiscall
 {
@@ -239,8 +239,8 @@ void LocomotionClass_SetMember1(void* _this) // thiscall
 
 // IDA: 0x513D00  proposal: LocomotionClass::SetMember1513D00
 // IDA: void __thiscall sub_513D00(unsigned int *this)
-//   ((void**)this)[0] = (void*)(void*)(void*)&HoverLocomotionClass_vftable;
-//   *(this + 1) = (void*)(void*)&HoverLocomotionClass_vftable;
+//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)&HoverLocomotionClass_vftable;
+//   *(this + 1) = (void*)(void*)(void*)(void*)&HoverLocomotionClass_vftable;
 //   LocomotionClass::Construct(this);
 void LocomotionClass_SetMember1513D00(void* _this) // thiscall
 {
@@ -248,8 +248,8 @@ void LocomotionClass_SetMember1513D00(void* _this) // thiscall
 
 // IDA: 0x5AFF50  proposal: LocomotionClass::SetMember15AFF50
 // IDA: void __thiscall sub_5AFF50(unsigned int *this)
-//   ((void**)this)[0] = (void*)(void*)(void*)&MechLocomotionClass_vftable;
-//   *(this + 1) = (void*)(void*)&MechLocomotionClass_vftable;
+//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)&MechLocomotionClass_vftable;
+//   *(this + 1) = (void*)(void*)(void*)(void*)&MechLocomotionClass_vftable;
 //   LocomotionClass::Construct(this);
 void LocomotionClass_SetMember15AFF50(void* _this) // thiscall
 {
@@ -257,8 +257,8 @@ void LocomotionClass_SetMember15AFF50(void* _this) // thiscall
 
 // IDA: 0x661F30  proposal: LocomotionClass::SetMember1661F30
 // IDA: void __thiscall sub_661F30(unsigned int *this)
-//   ((void**)this)[0] = (void*)(void*)(void*)&RocketLocomotionClass_vftable;
-//   *(this + 1) = (void*)(void*)&RocketLocomotionClass_vftable;
+//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)&RocketLocomotionClass_vftable;
+//   *(this + 1) = (void*)(void*)(void*)(void*)&RocketLocomotionClass_vftable;
 //   LocomotionClass::Construct(this);
 void LocomotionClass_SetMember1661F30(void* _this) // thiscall
 {

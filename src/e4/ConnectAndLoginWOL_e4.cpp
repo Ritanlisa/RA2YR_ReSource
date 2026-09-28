@@ -9,12 +9,13 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Conflict_WorldDominationTour_12_e4.hpp"
 
 // 0x77D1F0
 namespace gamemd {
 void E4Recv_77D1F0::ConnectAndLoginWOL_Connect()
 {
-  *this = &off_7F7624; /*0x77d1f0*/
-  OwnerDrawControl::InitVtable(); /*0x77d1f6*/
+  *(unsigned int *)this->__pad_0 = &off_7F7624; /*0x77d1f0*/
+  OwnerDrawControl::InitVtable((OwnerDrawControl *)this); /*0x77d1f6*/
 }
 } // namespace gamemd

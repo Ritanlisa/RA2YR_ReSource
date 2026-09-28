@@ -11,9 +11,6 @@ struct FilePipe_38 {
     int q008;  // 0x8
     unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned int q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned int q024;  // 0x24
     unsigned int Capacity;
     unsigned int IsInitialized;
     unsigned int Items2;

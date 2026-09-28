@@ -13,6 +13,7 @@ struct Menu {
     unsigned int q020;  // 0x20
     unsigned int q024;  // 0x24
     unsigned int u16_30;  // 0x30
+    unsigned int u32_34;  // 0x34
     unsigned int u32_38;  // 0x38
     unsigned int u32_3C;  // 0x3C
     unsigned int u16_40;  // 0x40
@@ -25,7 +26,6 @@ struct Menu {
     unsigned int q114;  // 0x114
     unsigned int q134;  // 0x134
     unsigned int q150;  // 0x150
-    unsigned int u32_34;
 // --- flat members (END) ---
     int Reset();
 };

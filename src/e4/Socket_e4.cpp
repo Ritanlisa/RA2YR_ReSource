@@ -11,22 +11,25 @@
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
 #include "e4/classes/LayerClass_e4.hpp"
+#include "e4/classes/E4Recv_5AFEF0_e4.hpp"
 
 // 0x7B2630
 namespace gamemd {
 int Socket::ConfigureBuffers(AnimClass * aP1)
 {
   SOCKET v2; // esi
+  int result; // eax
 
   v2 = aP1; /*0x7b2631*/
   if ( aP1 == -1 ) /*0x7b2638*/
-    v2 = this->q3F06C; /*0x7b263a*/
+    v2 = this->u32_3F06C; /*0x7b263a*/
   if ( setsockopt(v2, 0xFFFF, 4098, optval, 4) == -1 ) /*0x7b265a*/
     WSAGetLastError(); /*0x7b265c*/
   Debug::Log(); /*0x7b2667*/
   if ( setsockopt(v2, 0xFFFF, 4097, byte_84DD9C, 4) == -1 ) /*0x7b2699*/
     WSAGetLastError(); /*0x7b269b*/
-  Debug::Log(); /*0x7b26a6*/
-  return 1; /*0x7b26b0*/
+  result = Debug::Log(); /*0x7b26a6*/
+  IDA_LOBYTE(result) = 1; /*0x7b26ae*/
+  return result; /*0x7b26b0*/
 }
 } // namespace gamemd

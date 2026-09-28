@@ -12,16 +12,17 @@ VectorClass_flat * SmudgeTypeVector::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)this->q004; /*0x67c0b3*/
-  if ( v3 && this->IsAllocated ) /*0x67c0c0*/
+  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_SmudgeTypeClass_const___vftable; /*0x67c0b6*/
+  if ( v3 && IDA_BYTE1(this->m_C) ) /*0x67c0c0*/
   {
     RA2_OPDEL(v3); /*0x67c0c8*/
-    this->q004 = 0; /*0x67c0d0*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x67c0d0*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->q008 = (unsigned char)((gamemd::VectorClass_flat *)(0));
+  IDA_BYTE1(this->m_C) = 0; /*0x67c0db*/
+  this->m_8 = 0; /*0x67c0e1*/
   if ( (a2 & 1) != 0 ) /*0x67c0e8*/
-    RA2_OPDEL(); /*0x67c0eb*/
-  return this; /*0x67c0f5*/
+    RA2_OPDEL(this); /*0x67c0eb*/
+  return this->__pad_0; /*0x67c0f5*/
 }
 } // namespace gamemd

@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/EventClass_e4.hpp"
 
 // 0x54F000
 namespace gamemd {
@@ -99,8 +100,7 @@ namespace gamemd {
 int EventQueue::Check()
 {
   void * v1;
-
-  v1 = this->q314; /*0x54f650*/
+v1 = (void *)((int)(this->q314));
   if ( v1 == this->q318 ) /*0x54f65e*/
     return 0; /*0x54f669*/
   else

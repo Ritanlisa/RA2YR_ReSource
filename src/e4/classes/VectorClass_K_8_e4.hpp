@@ -6,16 +6,16 @@
 namespace gamemd {
 struct VectorClass_K_8 {
 // --- flat members (BEGIN) ---
-    unsigned int u32_4;  // 0x4
-    void* pad_008;  // 0x8
-    void* pad_00C;  // 0xC
+    void* ;  // 0x4
+    unsigned int u32_8;  // 0x8
+    unsigned int u32_C;  // 0xC
     unsigned char u8_10;  // 0x10
     unsigned char u8_11;  // 0x11
     unsigned int u32_14;  // 0x14
-    unsigned int u32_18;  // 0x18
-    unsigned int u32_1C;  // 0x1C
-    void* q020;  // 0x20
-    void* pad_024;  // 0x24
+    void* ;  // 0x18
+    void* ;  // 0x1C
+    void* ;  // 0x20
+    unsigned int q024;  // 0x24
     unsigned int q028;  // 0x28
     unsigned char q034;  // 0x34
     unsigned int q040;  // 0x40
@@ -35,15 +35,10 @@ struct VectorClass_K_8 {
     unsigned int q5170;  // 0x5170
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int q010;
-    unsigned int q014;
-    unsigned int q018;
-    unsigned int q01C;
-    unsigned int q044;
-    unsigned int vtable2;
-    unsigned int u32_8;
-    unsigned int u32_C;
-    unsigned int q024;
+    unsigned int q020;
+    unsigned int u32_1C;
+    unsigned int u32_18;
+    unsigned int u32_4;
 // --- flat members (END) ---
     unsigned int * Constructor();  // 0x4A2820
     int QueryInterface(int a1,  const void * a2,  unsigned int * a3);    // 0x6BEE50

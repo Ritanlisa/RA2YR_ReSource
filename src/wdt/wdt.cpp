@@ -86,12 +86,12 @@ void Map::Release() noexcept
 // 0x552c90
 WDTError Map::Load()
 {
-  WDTError result; // eax (retyped G34: fn returns WDTError)
+  int result; // eax
 
-  result = WDTError{-1, ""}; /*0x552c96*/
-  if ( g_GameMode_Current )  // IDA array-notation: scalar at 0xA8B238
-    return g_DisplayWidth != 640 ? WDTError{406, ""} : WDTError{326, ""};
-  return result; /*0x552cb6*/
+  result = -1; /*0x552c96*/
+  if ( g_GameMode_Current[0] )
+    return (gamemd::wdt::WDTError)(g_DisplayWidth != 640 ? 406 : 326);
+  return (gamemd::wdt::WDTError)(result);
 }
 WDTError Map::Draw()
 {

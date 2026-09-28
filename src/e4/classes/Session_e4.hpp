@@ -6,6 +6,7 @@
 namespace gamemd {
 struct Session {
 // --- flat members (BEGIN) ---
+    unsigned int u32_16;  // 0x16
     unsigned int u32_18;  // 0x18
     unsigned int q024;  // 0x24
     unsigned int q050;  // 0x50
@@ -37,6 +38,8 @@ struct Session {
     unsigned int MaxAvgRoundTrip;  // 0x38C
     unsigned int FrameSyncStalls;  // 0x390
     unsigned int CommandCoundStalls;  // 0x394
+    unsigned int LoadGame;  // 0x680
+    unsigned int SaveGame;  // 0x684
     unsigned int SawCompletion;  // 0x689
     unsigned int OutOfSync;  // 0x68A
     unsigned int GameVersion;  // 0x68C
@@ -78,8 +81,10 @@ struct Session {
     unsigned int q5750;  // 0x5750
     unsigned int q6408;  // 0x6408
     unsigned int q6440;  // 0x6440
-    unsigned int q0243;
-    unsigned int q0244;
+    unsigned int field_15C;
+    unsigned int field_160;
+    unsigned int field_174;
+    unsigned int field_178;
 // --- flat members (END) ---
     int RemoveTeam(MSShapeAnim * aP1);  // 0x5D1D80
     int PrepareGame();  // 0x5E74E0

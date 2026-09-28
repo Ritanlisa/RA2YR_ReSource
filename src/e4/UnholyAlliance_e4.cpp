@@ -14,6 +14,9 @@
 #include "e4/classes/RadarClass_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/SkirmishDialog_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
+#include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/Network_e4.hpp"
 
 // 0x5CB440
 namespace gamemd {
@@ -85,25 +88,26 @@ AbstractClass * * UnholyAlliance_GetResult()
 // 0x5CB540
 UnholyAlliance * UnholyAlliance::QueryInterface(char a2)
 {
-  MultiplayerGameMode::Dtor(); /*0x5cb549*/
+  *(unsigned int *)&this->m_Enabled = (void*)&UnholyAlliance_vftable; /*0x5cb543*/
+  MultiplayerGameMode::Dtor((MultiplayerGameMode *)this); /*0x5cb549*/
   if ( (a2 & 1) != 0 ) /*0x5cb553*/
-    RA2_OPDEL(); /*0x5cb556*/
-  return this; /*0x5cb560*/
+    RA2_OPDEL(this); /*0x5cb556*/
+  return &this->m_Enabled; /*0x5cb560*/
 }
 // 0x5CB3F0
 char UnholyAlliance::Read()
 {
-  Bases = 1; /*0x5cb3f2*/
+  stru_A8B250.__pad_0[8] = 1; /*0x5cb3f2*/
   return 1; /*0x5cb3f7*/
 }
 // 0x5CB400
 BOOL UnholyAlliance::Write(MPCooperative * aP0)
 {
-  return Bases && ScenarioClass::MissionStubReturnZero2(aP0); /*0x5cb41c*/
+  return stru_A8B250.__pad_0[8] && (uint8_t)ScenarioClass::MissionStubReturnZero2((int *)&aP0->m_Enabled); /*0x5cb41c*/
 }
 // 0x5CB430
 char UnholyAlliance::Seek()
 {
-  Bases = 1; /*0x5cb432*/
+  stru_A8B250.__pad_0[8] = 1; /*0x5cb432*/
   return 1; /*0x5cb437*/
 }

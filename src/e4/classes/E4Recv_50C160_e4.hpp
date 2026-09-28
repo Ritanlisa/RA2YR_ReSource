@@ -10,6 +10,7 @@ struct E4Recv_50C160 {
     unsigned int M52;  // 0x34
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
+    unsigned int attachedTag;
 // --- flat members (END) ---
     double sub_50C160();  // 0x50C160
 };

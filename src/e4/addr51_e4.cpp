@@ -30,25 +30,24 @@ int globalHelper_0108F0(unsigned int * a1, unsigned int * a2)
   else
     return *a1 >= *a2 ? 1 : -1;
 }
-}
 // 0x517360
 namespace gamemd {
 unsigned char E4Recv_517360::sub_517360(unsigned char a2, unsigned char * a3)
 {
   uint8_t v3; // bl
-  uint8_t v4; // al
-  uint8_t v5; // bl
-  uint8_t result; // al
+  char v4; // al
+  uint8_t vtable0; // bl
+  unsigned int result; // eax
 
-  v3 = (uint8_t)(this->u32_4);
-  this->u32_8 += a2 * (a3[2] - this->u32_8) / 256; /*0x517397*/
+  v3 = IDA_BYTE1(this->vtable0); /*0x517394*/
+  IDA_BYTE2(this->vtable0) += a2 * (a3[2] - IDA_BYTE2(this->vtable0)) / 256; /*0x517397*/
   v4 = v3 + a2 * (a3[1] - v3) / 256; /*0x5173b8*/
-  v5 = *this; /*0x5173ba*/
-  this->u32_4 = v4; /*0x5173bc*/
-  result = v5 + a2 * (*a3 - v5) / 256; /*0x5173de*/
-  *(unsigned int *)this = result; /*0x5173e1*/
+  vtable0 = (uint8_t)this->vtable0; /*0x5173ba*/
+  IDA_BYTE1(this->vtable0) = v4; /*0x5173bc*/
+  result = a2 * (*a3 - vtable0) / 256; /*0x5173db*/
+  IDA_LOBYTE(result) = vtable0 + result; /*0x5173de*/
+  IDA_LOBYTE(this->vtable0) = result; /*0x5173e1*/
   return result; /*0x5173cb*/
-}
 }
 // 0x5173F0
 namespace gamemd {
@@ -58,114 +57,94 @@ int E4Recv_5173F0::sub_5173F0(unsigned char * a2)
   int v3; // edx
   int v4; // eax
 
-  v2 = *this - *a2; /*0x517400*/
+  v2 = IDA_LOBYTE(this->vtable0) - *a2; /*0x517400*/
   if ( v2 < 0 ) /*0x517402*/
-    v2 = *a2 - *this; /*0x517404*/
-  v3 = this->u32_4 - a2[1]; /*0x517410*/
+    v2 = *a2 - IDA_LOBYTE(this->vtable0); /*0x517404*/
+  v3 = IDA_BYTE1(this->vtable0) - a2[1]; /*0x517410*/
   if ( v3 < 0 ) /*0x517412*/
-    v3 = a2[1] - this->u32_4; /*0x517414*/
-  v4 = this->u32_8 - a2[2]; /*0x517422*/
-  if (v4 < 0, unsigned int a1) /*0x517424*/
-    v4 = a2[2] - this->u32_8; /*0x517426*/
+    v3 = a2[1] - IDA_BYTE1(this->vtable0); /*0x517414*/
+  v4 = IDA_BYTE2(this->vtable0) - a2[2]; /*0x517422*/
+  if ( v4 < 0 ) /*0x517424*/
+    v4 = a2[2] - IDA_BYTE2(this->vtable0, unsigned int a2, unsigned int a3); /*0x517426*/
   return v2 * v2 + v3 * v3 + v4 * v4; /*0x517437*/
-}
 }
 // 0x51FEF0
 namespace gamemd {
-void SaveInfantryToINI(void * a1)
+void SaveInfantryToINI(void * a1, void * a2, void * a3)
 {
+  int *v3; // ecx
+  double v4; // st7
   int result; // eax
-  int v4; // esi
-  unsigned int v5; // edi
-  int v6; // ebp
-  const char *v7; // ebx
-  int v8; // edx
-  int v9; // eax
-  int v10; // eax
-  int v11; // eax
-  double HealthRatio; // st7
+  BuildingClass *v6; // esi
+  unsigned int v7; // edi
+  HouseClass *owner; // ebp
+  int v9; // ebx
+  int isRecruitableByEnemy; // edx
+  int isRecruitableByAlly; // eax
+  int v12; // eax
   int v13; // eax
-  int v14; // [esp-34h] [ebp-F0h]
-  int v15; // [esp-30h] [ebp-ECh]
-  int v16; // [esp-2Ch] [ebp-E8h]
-  const char *v17; // [esp-28h] [ebp-E4h]
-  int v18; // [esp-24h] [ebp-E0h]
-  char *v19; // [esp-20h] [ebp-DCh]
-  const char *v20; // [esp-20h] [ebp-DCh]
-  int v21; // [esp-1Ch] [ebp-D8h]
-  int v22; // [esp-18h] [ebp-D4h]
-  int v23; // [esp-14h] [ebp-D0h]
-  int v24; // [esp-14h] [ebp-D0h]
-  int v25; // [esp-10h] [ebp-CCh]
-  int v26; // [esp-Ch] [ebp-C8h]
+  int v14; // eax
+  int v15; // [esp-34h] [ebp-F0h]
+  char *v16; // [esp-20h] [ebp-DCh]
+  int Field; // [esp-14h] [ebp-D0h]
+  int controlGroup; // [esp-10h] [ebp-CCh]
+  int onBridge; // [esp-Ch] [ebp-C8h]
   int i; // [esp+8h] [ebp-B4h]
-  char *v30; // [esp+14h] [ebp-A8h]
-  unsigned int v31[3]; // [esp+20h] [ebp-9Ch] BYREF
-  int v32; // [esp+2Ch] [ebp-90h] BYREF
+  char *queuedMission; // [esp+14h] [ebp-A8h]
+  Input v24; // [esp+20h] [ebp-9Ch] BYREF
+  int v25; // [esp+24h] [ebp-98h]
+  int v26; // [esp+28h] [ebp-94h]
+  int v27; // [esp+2Ch] [ebp-90h] BYREF
   char Buffer[12]; // [esp+30h] [ebp-8Ch] BYREF
   char Source[128]; // [esp+3Ch] [ebp-80h] BYREF
 
-  INIClass::ClearSection(a1, (int)g_INI_Key_Infantry, 0); /*0x51ff02*/
+  INIClass::ClearSection(v3, (int)&g_INI_Key_Special.SidebarImage, 0); /*0x51ff02*/
   result = 0; /*0x51ff0d*/
-  for ( i = 0; result < g_BuildingClass_Count; i = result ) /*0x51ff15*/
+  for ( i = 0; result < *(int *)&stru_A83D50.__pad_80[40]; i = result ) /*0x51ff15*/
   {
-    v4 = *((unsigned int *)g_InfantryClassLimit + result); /*0x51ff25*/
-    if ( !v4->u8_81 ) /*0x51ff28*/
+    v6 = *(BuildingClass **)(*(unsigned int *)&stru_A83D50.__pad_80[28] + 4 * result); /*0x51ff25*/
+    if ( !v6->inLimbo ) /*0x51ff28*/
     {
       sprintf(Buffer, "%d", result); /*0x51ff41*/
-      if ( (*(int (__thiscall **)(int, int, int))(v4->q184)(v4, v9, v8) == -1 ) /*0x51ff71*/
-        v30 = v4->u32_B4; /*0x51ff79*/
+      if ( (*((int (__thiscall **)(BuildingClass *, int, int))v6->vtable0 + 97))(v6, a2, a3) == -1 ) /*0x51ff71*/
+        queuedMission = (char *)v6->queuedMission; /*0x51ff79*/
       else
-        v30 = (char *)(*(int (__thiscall **)(int))(v4->q184)(v4); /*0x51ff89*/
-      v5 = *ProgressTimer::GetValue((unsigned short *)(v4 + 904), &v32); /*0x51ff9d*/
-      v6 = v4->q21C; /*0x51ffab*/
-      v7 = (const char *)(v4->u32_6C0 + 36); /*0x51ffb3*/
-      v31[0] = v4->q09C; /*0x51ffb6*/
-      v8 = v4->u32_422; /*0x51ffbf*/
-      v31[1] = v4->q280; /*0x51ffc5*/
-      v9 = *(uint8_t *)(v4 + 1057); /*0x51ffce*/
-      v31[2] = v4->q0A4; /*0x51ffd4*/
-      v8 = v8; /*0x51ffe0*/
-      v9 = v9; /*0x51ffe7*/
-      v23 = FootClass::GetField(v4 + 336, v4->u32_214, v4->q08C); /*0x52000b*/
-      v19 = FromNameIndex((int)v30); /*0x52001b*/
-      IDA_LOBYTE(v10) = Input::OffsetToDirection(v31); /*0x52001c*/
-      v11 = (*(int (__thiscall **)(int, char *, int, char *, unsigned int))(v4->u32_1B8)( /*0x52002b*/
-              v4,
+        queuedMission = (char *)(*((int (__thiscall **)(BuildingClass *))v6->vtable0 + 97))(v6); /*0x51ff89*/
+      v7 = *ProgressTimer::GetValue((ProgressTimer *)v6->primaryFacing, &v27); /*0x51ff9d*/
+      owner = v6->owner; /*0x51ffab*/
+      v9 = *(unsigned int *)&v6->__pad_6B8[8] + 36; /*0x51ffb3*/
+      v24.Input_field_00 = v6->location[0]; /*0x51ffb6*/
+      isRecruitableByEnemy = (uint8_t)v6->isRecruitableByEnemy; /*0x51ffbf*/
+      v25 = v6->location[1]; /*0x51ffc5*/
+      isRecruitableByAlly = (uint8_t)v6->isRecruitableByAlly; /*0x51ffce*/
+      v26 = v6->location[2]; /*0x51ffd4*/
+      a3 = isRecruitableByEnemy; /*0x51ffe0*/
+      a2 = isRecruitableByAlly; /*0x51ffe7*/
+      onBridge = (uint8_t)v6->onBridge; /*0x51ffec*/
+      controlGroup = v6->controlGroup; /*0x51ffef*/
+      Field = FootClass::GetField(v6->veterancy); /*0x52000b*/
+      v16 = FromNameIndex((int)queuedMission); /*0x52001b*/
+      v12 = Input::OffsetToDirection(&v24); /*0x52001c*/
+      v13 = (*((int (__thiscall **)(BuildingClass *, char *, int, char *, unsigned int))v6->vtable0 + 110))( /*0x52002b*/
+              v6,
               Buffer,
-              v10,
-              v19,
-              (uint8_t)(((v5 >> 7) + 1) >> 1));
-      v14 = *(int16_t *)(*(int (__thiscall **)(int, char *, unsigned int))(v4->u32_1B8)( /*0x520048*/
-                          v4,
+              v12,
+              v16,
+              (uint8_t)(((v7 >> 7) + 1) >> 1));
+      v15 = *(int16_t *)(*((int (__thiscall **)(BuildingClass *, char *, unsigned int))v6->vtable0 + 110))( /*0x520048*/
+                          v6,
                           Buffer,
-                          *(int16_t *)(v11 + 2));
-      HealthRatio = BuildingClass::GetHealthRatio((int *)v4); /*0x52004b*/
-      v13 = Math::RoundToInt(HealthRatio * 256.0); /*0x520056*/
-      sprintf( /*0x520068*/
-        Source,
-        "%s,%s,%d,%d,%d,%d,%s,%d,%s,%d,%d,%d,%d,%d",
-        (const char *)(v6 + 90100),
-        v7,
-        v13,
-        v14,
-        v15,
-        v16,
-        v17,
-        v18,
-        v20,
-        v21,
-        v22,
-        v24,
-        v25,
-        v26);
-      INIClass::SetString(v30, (uint8_t *)g_INI_Key_Infantry, Buffer, Source); /*0x520085*/
+                          *(int16_t *)(v13 + 2));
+      BuildingClass::GetHealthRatio(v6); /*0x52004b*/
+      v4 = v4 * 256.0; /*0x520050*/
+      IDA_LOWORD(v14) = Math::RoundToInt(v4); /*0x520056*/
+      sprintf(Source, (const char *const)stru_825538.Type, &owner->plainName[4], v9, v14, v15); /*0x520068*/
+      INIClass::SetString(queuedMission, (uint8_t *)&g_INI_Key_Special.SidebarImage, Buffer, Source); /*0x520085*/
       result = i; /*0x52008a*/
     }
     ++result; /*0x520094*/
   }
   return result; /*0x5200a5*/
-}
 }
 // 0x510B00
 namespace gamemd {
@@ -630,7 +609,9 @@ int sub_513C00()
 namespace gamemd {
 void E4Recv_513D00::sub_513D00()
 {
-  LocomotionClass::Construct(); /*0x513d0d*/
+  *(unsigned int *)this->__pad_0 = (void*)&HoverLocomotionClass_vftable; /*0x513d00*/
+  *(unsigned int *)&this->__pad_0[4] = (void*)&HoverLocomotionClass_vftable; /*0x513d06*/
+  LocomotionClass::Construct((LocomotionClass *)this); /*0x513d0d*/
 }
 } // namespace gamemd
 
@@ -642,28 +623,28 @@ int E4Recv_517110::sub_517110()
   int v3; // ebx
   unsigned short *v4; // eax
   bool v5; // bl
-  int v6; // ecx
+  void *vtable3; // ecx
   int result; // eax
   unsigned char v8[4]; // [esp+8h] [ebp-4h] BYREF
 
   v5 = 1; /*0x51717d*/
-  if ( this->q024 != g_ScoreDisplayState1 /*0x517138*/
-    || this->q028 != g_ScoreDisplayState2
-    || this->M44 != g_ScoreDisplayState3 )
+  if ( this->occupant != *(unsigned int *)&stru_A8EB00.gapE4[1436] /*0x517138*/
+    || this->owningHouseIndex != *(unsigned int *)&stru_A8EB00.gapE4[1440]
+    || this->fallRate != *(unsigned int *)&stru_A8EB00.gapE4[1444] )
   {
-    v2 = this->q024 / 256; /*0x517161*/
-    v3 = this->q028 / 256; /*0x517164*/
-    v4 = (unsigned short *)(*(int (__thiscall **)(unsigned int, unsigned char *))(**(unsigned int **)(&this->u32_42) + 440))(this->M12, v8); /*0x517167*/
+    v2 = this->occupant / 256; /*0x517161*/
+    v3 = this->owningHouseIndex / 256; /*0x517164*/
+    v4 = (unsigned short *)(*(int (__thiscall **)(void *, unsigned char *))(*(unsigned int *)this->vtable3 + 440))(this->vtable3, v8); /*0x517167*/
     if ( *v4 != (unsigned short)v2 || v4[1] != (unsigned short)v3 ) /*0x517177*/
       v5 = 0; /*0x517138*/
   }
-  v6 = this->M12; /*0x51717f*/
-  this->M72 = 0; /*0x517182*/
-  this->M76 = 1072693248; /*0x517189*/
-  (*(void (__thiscall **)(int, unsigned int, int))(*(unsigned int *)v6 + 1348))(v6, 0, 1072693248); /*0x517199*/
-  result = MovementAI::StepFootClass((int *)this, 0); /*0x5171a3*/
+  vtable3 = (void *)(this->vtable3);
+  this->ambientSoundController[3] = 0; /*0x517182*/
+  this->ambientSoundController[4] = 1072693248; /*0x517189*/
+  (*(void (__thiscall **)(void *, unsigned int, int))(*(unsigned int *)vtable3 + 1348))(vtable3, 0, 1072693248); /*0x517199*/
+  result = MovementAI::StepFootClass((MovementAI *)this, 0); /*0x5171a3*/
   if ( v5 ) /*0x5171aa*/
-    return MovementAI::MainFootClass(1); /*0x5171b0*/
+    return MovementAI::MainFootClass((MovementAI *)this, 1); /*0x5171b0*/
   return result; /*0x5171b5*/
 }
 } // namespace gamemd
@@ -683,7 +664,7 @@ char sub_517340()
 namespace gamemd {
 char E4Recv_5176D0::sub_5176D0(BYTE Data)
 {
-  int v4; // ecx
+  void *v4; // ecx
   char v5; // [esp+13h] [ebp-119h]
   HKEY phkResult; // [esp+14h] [ebp-118h] BYREF
   BYTE v7[4]; // [esp+18h] [ebp-114h] BYREF
@@ -704,7 +685,7 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
   if ( !RegSetValueExA(phkResult, g_INI_Key_Options, 0, 4u, &Data, 4u) ) /*0x51777b*/
     v5 = 1; /*0x517785*/
   RegCloseKey(phkResult); /*0x51778f*/
-  this->u32_10 = 0; /*0x51779f*/
+  IDA_LOBYTE(this->vtable1) = 0; /*0x51779f*/
   strcpy(v13, g_Str_SOFTWARE_Westwood_WOLAPI_); /*0x5177c0*/
   cbData = 4; /*0x5177c4*/
   if ( !RegOpenKeyExA(HKEY_LOCAL_MACHINE, v13, 0, 0xF003Fu, &hKey) ) /*0x5177e3*/
@@ -712,9 +693,9 @@ char E4Recv_5176D0::sub_5176D0(BYTE Data)
     *(unsigned int *)v7 = 0; /*0x5177e9*/
     if ( !RegQueryValueExA(hKey, g_INI_Key_Options, 0, &Type, v7, &cbData) && Type == 4 ) /*0x517817*/
     {
-      v4 = *(unsigned int *)v7; /*0x517819*/
-      this->u32_10 = 1; /*0x51781d*/
-      *(unsigned int *)this = v4; /*0x517821*/
+      v4 = (void *)((unsigned int)(*(void **)v7));
+      IDA_LOBYTE(this->vtable1) = 1; /*0x51781d*/
+      this->vtable0 = v4; /*0x517821*/
     }
     RegCloseKey(hKey); /*0x517829*/
   }

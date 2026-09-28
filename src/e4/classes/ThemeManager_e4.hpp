@@ -10,6 +10,7 @@ struct ThemeManager {
     unsigned char u8_C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
+    unsigned int u32_18;  // 0x18
     unsigned int q020;  // 0x20
     unsigned int q024;  // 0x24
     unsigned int u32_2C;  // 0x2C
@@ -20,7 +21,6 @@ struct ThemeManager {
     unsigned int q068;  // 0x68
     unsigned int q104;  // 0x104
     unsigned int u32_104;
-    unsigned int u32_18;
 // --- flat members (END) ---
     int ProcessCallback();
     void Cleanup();

@@ -13,95 +13,99 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/RefCount_e4.hpp"
 
 // 0x4AF540
 namespace gamemd {
 int LocomotionClass::Initialize()
 {
+  int v2; // ecx
   int v3; // ecx
 
-  LocomotionClass::Init(); /*0x4af543*/
+  LocomotionClass::Init(this); /*0x4af543*/
   this->u32_1C = 0; /*0x4af54d*/
-  this->q020 = 0; /*0x4af550*/
-  g_CurrentFrame = g_CurrentFrame; /*0x4af553*/
-  this->u32_2C = 0; /*0x4af559*/
-  this->q024 = (gamemd::Coord *)(g_CurrentFrame);
-  this->u32_30 = (int)(0);
-  this->q034 = (int)(g_DDraw_ClipRect);
-  this->q038 = (int)(qword_8A0794);
-  this->q040 = (int)(g_DDraw_ClipRect);
-  this->q044 = (int)(qword_8A0794);
-  v3 = (int)(IDA_HIDWORD(qword_8A0794));
-  this->q050 = (int)(0);
-  this->u32_4C = (int)(0);
-  this->q048 = (int)(v3);
-  this->ptr_24 = (gamemd::Coord *)((int)(0));
-  this->q058 = (int)(-1);
-  this->q05C = (int)(-1);
-  this->u8_60 = (int)(0);
-  this->__pad_061 = (int)(0);
-  this->u8_62 = (int)(0);
-  this->u8_63 = (int)(0);
-  this->q064 = (int)(0);
-  this->u32_65 = (int)(1);
-  this->q068 = 0; /*0x4af5bf*/
-  this->ptr_18 = &off_7E7E8C; /*0x4af5cf*/
-  return this; /*0x4af5d8*/
+  this->u32_8 = 0; /*0x4af550*/
+  v2 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x4af553*/
+  this->u32_2C = (unsigned int)(0);
+  this->u32_24 = (gamemd::FootClass *)(v2);
+  this->LinkedTo = (unsigned int)(0);
+  this->u32_34 = (unsigned int)(g_DDraw_ClipRect);
+  this->u32_38 = qword_8A0794; /*0x4af570*/
+  this->u32_10 = g_DDraw_ClipRect; /*0x4af585*/
+  this->Dirty = qword_8A0794; /*0x4af58e*/
+  v3 = IDA_HIDWORD(qword_8A0794); /*0x4af591*/
+  this->u8_14 = 0; /*0x4af597*/
+  this->u32_4C = 0; /*0x4af59a*/
+  this->u32_48 = v3; /*0x4af59d*/
+  this->__pad_015 = 0; /*0x4af5a3*/
+  this->u32_58 = -1; /*0x4af5a6*/
+  this->u32_5C = -1; /*0x4af5a9*/
+  this->u32_60 = 0; /*0x4af5ac*/
+  this->u32_61 = 0; /*0x4af5af*/
+  this->u32_62 = 0; /*0x4af5b2*/
+  this->u32_63 = 0; /*0x4af5b5*/
+  this->u32_64 = 0; /*0x4af5b8*/
+  this->u32_65 = 1; /*0x4af5bb*/
+  this->u32_68 = 0; /*0x4af5bf*/
+  *(unsigned int *)this->__pad_0 = (void*)&DriveLocomotionClass_vftable; /*0x4af5c2*/
+  *(unsigned int *)&this->__pad_0[4] = (void*)&DriveLocomotionClass_vftable; /*0x4af5c8*/
+  this->u32_18 = &off_7E7E8C; /*0x4af5cf*/
+  return (int)this->__pad_0; /*0x4af5d8*/
 }
 } // namespace gamemd
 // 0x4C54A0
 namespace gamemd {
 void * LocomotionClass::UpdateAll()
 {
-  wchar_t * result;
+  wchar_t *result; // eax
   int i; // esi
-  unsigned int *v2; // ecx
+  unsigned int *v3; // ecx
 
-  result = (wchar_t *)((unsigned int)((wchar_t *)((unsigned int)((wchar_t *)dword_8A3880))));
+  result = (wchar_t *)dword_8A3880; /*0x4c54a0*/
   for ( i = dword_8A3880 - 1; i >= 0; --i ) /*0x4c54ab*/
   {
-    v2 = (unsigned int *)((wchar_t *)((unsigned int *)*((unsigned int *)dword_8A3874 + i)));
-    result = (wchar_t *)(g_CurrentFrame);
-    if ( (int)g_CurrentFrame >= v2[11] + v2[12] ) /*0x4c54c5*/
+    v3 = (unsigned int *)*((unsigned int *)dword_8A3874 + i); /*0x4c54b3*/
+    result = *(wchar_t **)&stru_A8EB00.gapE4[416]; /*0x4c54be*/
+    if ( *(int *)&stru_A8EB00.gapE4[416] >= v3[11] + v3[12] ) /*0x4c54c5*/
     {
-      if ( v2 ) /*0x4c54c9*/
-        result = (wchar_t *)(*(int (__thiscall **)(unsigned int *, int))(*v2 + 32))(v2, 1); /*0x4c54cf*/
+      if ( v3 ) /*0x4c54c9*/
+        result = (wchar_t *)(*(int (__thiscall **)(unsigned int *, int))(*v3 + 32))(v3, 1); /*0x4c54cf*/
     }
   }
-  return (void *)(result);
+  return result; /*0x4c54d5*/
 }
 } // namespace gamemd
 // 0x4CFA70
 namespace gamemd {
 int LocomotionClass::CheckBridgeBlock()
 {
-  int v2; // eax
-  unsigned int *v3; // edi
-  unsigned int *v4; // eax
+  int vtable1; // eax
+  FootClass *LinkedTo; // edi
+  Cell *v4; // eax
   unsigned int *v5; // eax
 
-  if ( (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable22) + 388))(this->LinkedTo) == 7 /*0x4cfa8e*/
-    || (IDA_LOBYTE(v2) = BuildingClass::GetType_Thunk(), !(unsigned char)v2) )
+  if ( (*((int (__thiscall **)(FootClass *))this->LinkedTo->vtable0 + 97))(this->LinkedTo) == 7 /*0x4cfa8e*/
+    || (IDA_LOBYTE(vtable1) = BuildingClass::GetType_Thunk(&this->LinkedTo->vtable0), !(unsigned char)vtable1) )
   {
-    v2 = (*(int (__thiscall **)(unsigned int))(**(unsigned int **)(&this->vtable22) + 44))(this->LinkedTo); /*0x4cfa95*/
-    if ( v2 == 2 /*0x4cfacc*/
-      && (v3 = *(unsigned int **)(&this->vtable22), v2 = v3[433], *(unsigned char *)(v2 + 3597))
-      && (v4 = (unsigned int *)(*(int (__thiscall **)(unsigned int))(*v3 + 444))(this->LinkedTo),
+    vtable1 = (*((int (__thiscall **)(FootClass *))this->LinkedTo->vtable0 + 11))(this->LinkedTo); /*0x4cfa95*/
+    if ( vtable1 == 2 /*0x4cfacc*/
+      && (LinkedTo = this->LinkedTo, vtable1 = (int)LinkedTo[1].vtable1, *(unsigned char *)(vtable1 + 3597))
+      && (v4 = (Cell *)(*((int (__thiscall **)(FootClass *))LinkedTo->vtable0 + 111))(this->LinkedTo),
           v5 = Cell::IsBridge(v4),
-          IDA_LOBYTE(v2) = Array::Contains(*(int **)(&this->vtable22), (int)v5),
-          !(unsigned char)v2) )
+          IDA_LOBYTE(vtable1) = Array::Contains((Array *)this->LinkedTo, (int)v5),
+          !(unsigned char)vtable1) )
     {
-      IDA_LOBYTE(v2) = (*(int (__thiscall **)(unsigned int *, unsigned int, int))(*v3 + 1156))(v3, 0, 1); /*0x4cfad6*/
+      IDA_LOBYTE(vtable1) = (*((char (__thiscall **)(FootClass *, unsigned int, int))LinkedTo->vtable0 + 289))(LinkedTo, 0, 1); /*0x4cfad6*/
     }
     else
     {
-      this->q050 = 0; /*0x4cfadf*/
-      this->q144 = 1; /*0x4cfae3*/
-      this->q148 = 0; /*0x4cfae7*/
-      this->q038 = 0; /*0x4cfaeb*/
+      this->u8_14 = 0; /*0x4cfadf*/
+      this->u32_51 = 1; /*0x4cfae3*/
+      this->u32_52 = 0; /*0x4cfae7*/
+      this->u32_38 = 0; /*0x4cfaeb*/
     }
   }
-  return v2; /*0x4cfadc*/
+  return vtable1; /*0x4cfadc*/
 }
 } // namespace gamemd
 // 0x4DC760
@@ -109,8 +113,7 @@ namespace gamemd {
 int LocomotionClass::GetSpeedMultiplier()
 {
   void * v1;
-
-  v1 = this->q5D4; /*0x4dc760*/
+v1 = (void *)(this->q5D4);
   if ( v1 && v1->q024->q0F2 ) /*0x4dc76d*/
     return 1.0; /*0x4dc777*/
   else
@@ -121,75 +124,87 @@ int LocomotionClass::GetSpeedMultiplier()
 namespace gamemd {
 int LocomotionClass::ProcessData()
 {
-  LocomotionClass::Init(); /*0x513c24*/
-  this->Dest = g_ScoreDisplayState1; /*0x513c34*/
-  this->HoverLocomotionClass_field_bool_70 = g_ScoreDisplayState2; /*0x513c3d*/
-  this->q020 = g_ScoreDisplayState3; /*0x513c49*/
-  this->HeadToCoord = g_ScoreDisplayState1; /*0x513c51*/
-  this->q028 = g_ScoreDisplayState2; /*0x513c59*/
-  this->u32_2C = g_ScoreDisplayState3; /*0x513c64*/
-  FrameSnapshot::InitMax((unsigned short *)(&this->q0108), 0); /*0x513c67*/
-  this->MaxSpeed = 0; /*0x513c6c*/
-  this->CurrentSpeed = 0; /*0x513c6f*/
-  this->BoostSpeed = 0; /*0x513c72*/
-  this->CurrentWobbles = 0; /*0x513c75*/
-  this->q130 = 0; /*0x513c78*/
-  this->q054 = 0; /*0x513c7b*/
-  this->q170 = 1072693248; /*0x513c7e*/
-  this->q064 = 0; /*0x513c85*/
-  this->HoverLocomotionClass_field_bool_68 = 0; /*0x513c88*/
-  this->HoverLocomotionClass_field_6C = 0; /*0x513c8b*/
-  this->HoverLocomotionClass_field_bool_70 = 0; /*0x513c8e*/
-  return this; /*0x513ca0*/
+  LocomotionClass::Init(this); /*0x513c24*/
+  this->u32_18 = *(unsigned int *)&stru_A8EB00.gapE4[1436]; /*0x513c34*/
+  this->u32_1C = *(unsigned int *)&stru_A8EB00.gapE4[1440]; /*0x513c3d*/
+  this->u32_8 = *(unsigned int *)&stru_A8EB00.gapE4[1444]; /*0x513c49*/
+  this->u32_24 = *(unsigned int *)&stru_A8EB00.gapE4[1436]; /*0x513c51*/
+  this->u32_28 = *(unsigned int *)&stru_A8EB00.gapE4[1440]; /*0x513c59*/
+  this->u32_2C = *(unsigned int *)&stru_A8EB00.gapE4[1444]; /*0x513c64*/
+  FrameSnapshot::InitMax((FrameSnapshot *)this + 6, 0); /*0x513c67*/
+  this->u32_48 = 0; /*0x513c6c*/
+  this->u8_14 = 0; /*0x513c6f*/
+  this->u32_58 = 0; /*0x513c72*/
+  this->u32_60 = 0; /*0x513c75*/
+  this->u32_4C = 0; /*0x513c78*/
+  this->__pad_015 = 0; /*0x513c7b*/
+  this->u32_5C = 1072693248; /*0x513c7e*/
+  this->u32_64 = 0; /*0x513c85*/
+  this->u32_68 = 0; /*0x513c88*/
+  this->u32_6C = 0; /*0x513c8b*/
+  this->u32_70 = 0; /*0x513c8e*/
+  *(unsigned int *)this->__pad_0 = (void*)&HoverLocomotionClass_vftable; /*0x513c91*/
+  *(unsigned int *)&this->__pad_0[4] = (void*)&HoverLocomotionClass_vftable; /*0x513c97*/
+  return (int)this->__pad_0; /*0x513ca0*/
 }
 } // namespace gamemd
 // 0x54AC40
 namespace gamemd {
 int LocomotionClass::Update()
 {
+  int v2; // ecx
   int v4; // [esp+Ch] [ebp-4h] BYREF
 
-  LocomotionClass::Init(); /*0x54ac46*/
-  this->DestinationCoords = dword_ABC5A8; /*0x54ac59*/
-  this->q044 = (int)(dword_ABC5AC);
-  dword_ABC5B0 = (int)(dword_ABC5B0);
-  this->IsMoving = (int)(0);
-  this->CurrentState = (int)(0);
-  this->ptr_48 = (void *)((int)(dword_ABC5B0));
-  FrameSnapshot::InitMax((unsigned short *)(&this->Climb4), g_RulesClass_Instance->V3Rocket[8]); /*0x54ac82*/
+  LocomotionClass::Init((LocomotionClass *)this); /*0x54ac46*/
+  this->DestinationCoords[0] = dword_ABC5A8; /*0x54ac59*/
+  this->DestinationCoords[1] = dword_ABC5AC; /*0x54ac61*/
+  v2 = dword_ABC5B0; /*0x54ac64*/
+  this->IsMoving = 0; /*0x54ac6a*/
+  *(unsigned int *)this->__pad_50 = 0; /*0x54ac6d*/
+  this->DestinationCoords[2] = v2; /*0x54ac70*/
+  FrameSnapshot::InitMax( /*0x54ac82*/
+    (FrameSnapshot *)&this->__pad_50[4],
+    *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 1036));
   this->CurrentHeight = 0; /*0x54ac87*/
-  this->q078 = 0; /*0x54ac8a*/
-  this->DestinationReached = 0; /*0x54ac8d*/
-  this->q074 = 0; /*0x54ac93*/
-  this->u32_7C = 0; /*0x54ac96*/
-  this->q080 = 0; /*0x54ac99*/
-  this->q08C = 0; /*0x54ac9f*/
-  this->u32_90 = 0; /*0x54aca5*/
+  *(unsigned int *)&this->__pad_74[4] = 0; /*0x54ac8a*/
+  this->DestinationReached = (unsigned int)(0); /*0x54ac8d*/
+  *(unsigned int *)this->__pad_74 = 0; /*0x54ac93*/
+  *(unsigned int *)&this->__pad_74[8] = 0; /*0x54ac96*/
+  *(unsigned int *)&this->__pad_74[12] = 0; /*0x54ac99*/
+  *(unsigned int *)&this->__pad_89[3] = 0; /*0x54ac9f*/
+  this->__pad_89[7] = 0; /*0x54aca5*/
   this->unknown_91 = 0; /*0x54acab*/
   this->Piggybackee = 0; /*0x54acb5*/
+  this->__pad_0[0] = (int)&JumpjetLocomotionClass_vftable; /*0x54acc3*/
+  this->__pad_0[1] = (int)&JumpjetLocomotionClass_vftable; /*0x54acc9*/
+  this->TurnRate = (int)&JumpjetLocomotionClass_vftable; /*0x54acd0*/
   IDA_LOWORD(v4) = 0x4000; /*0x54acd7*/
-  FacingClass::Update((char *)(&this->Climb4), &v4); /*0x54acdc*/
+  FacingClass::Update(&this->__pad_50[4], &v4); /*0x54acdc*/
   IDA_LOWORD(v4) = 0x4000; /*0x54ace8*/
-  FacingClass::Set_SyncLog((char *)(&this->Climb4), &v4); /*0x54aced*/
-  return this; /*0x54acf4*/
+  FacingClass::Set_SyncLog(&this->__pad_50[4], &v4); /*0x54aced*/
+  return (int)this->__pad_0; /*0x54acf4*/
 }
 } // namespace gamemd
 // 0x55A6C0
 namespace gamemd {
 unsigned int * LocomotionClass::Init()
 {
-  this->u32_8 = (unsigned int *)(0);
+  this->Owner = (unsigned int *)(0);
   this->LinkedTo = (unsigned int *)(0);
-  this->u32_10 = (unsigned int *)(1);
-  this->Dirty = (unsigned int *)(1);
-  this->u8_14 = (unsigned int *)(0);
-  return (unsigned int *)(this);
+  this->Powered = 1; /*0x55a6cc*/
+  this->Dirty = 1; /*0x55a6cf*/
+  this->RefCount = 0; /*0x55a6d2*/
+  *(unsigned int *)this->__pad_0 = (void*)&LocomotionClass_vftable; /*0x55a6d5*/
+  *(unsigned int *)&this->__pad_0[4] = (void*)&LocomotionClass_vftable; /*0x55a6db*/
+  return this->__pad_0; /*0x55a6e2*/
 }
 } // namespace gamemd
 // 0x55A6F0
 namespace gamemd {
 void LocomotionClass::Construct()
 {
+  *(unsigned int *)this->__pad_0 = (void*)&LocomotionClass_vftable; /*0x55a6f0*/
+  *(unsigned int *)&this->__pad_0[4] = (void*)&LocomotionClass_vftable; /*0x55a6f6*/
   this->LinkedTo = 0; /*0x55a6fd*/
 }
 } // namespace gamemd
@@ -197,9 +212,9 @@ void LocomotionClass::Construct()
 namespace gamemd {
 LocomotionClass * LocomotionClass::ProcessMove(char a2)
 {
-  LocomotionClass::Construct(); /*0x5172f3*/
+  LocomotionClass::Construct(this); /*0x5172f3*/
   if ( (a2 & 1) != 0 ) /*0x5172fd*/
-    RA2_OPDEL(); /*0x517300*/
-  return this; /*0x51730a*/
+    RA2_OPDEL(this); /*0x517300*/
+  return this->__pad_0; /*0x51730a*/
 }
 } // namespace gamemd

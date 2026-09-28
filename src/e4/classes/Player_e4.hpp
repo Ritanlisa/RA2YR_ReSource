@@ -8,6 +8,7 @@ namespace gamemd {
 struct Player {
 // --- flat members (BEGIN) ---
     void* q004;  // 0x4
+    unsigned int u32_54;  // 0x54
 // --- flat members (END) ---
     BOOL IsObserver();
     void BuildListString();

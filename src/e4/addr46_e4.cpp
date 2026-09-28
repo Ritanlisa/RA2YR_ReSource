@@ -27,6 +27,7 @@
 namespace gamemd {
 void E4Recv_46D350::sub_46D350()
 {
+  *(void **)this = (void*)&CampaignScoreClass_vftable; /*0x46d350*/
 }
 } // namespace gamemd
 
@@ -113,85 +114,83 @@ bool sub_46D650()
   while ( (int)v4 < (int)&g_PlayerNameListEnd ); /*0x46d7fd*/
   return v0; /*0x46d808*/
 }
-}
 // 0x46D8B0
 namespace gamemd {
 void sub_46D8B0()
 {
-  char v0; // bl
-  int v1; // edi
-  const wchar_t **v2; // esi
-  char *v3; // eax
-  int v5; // esi
+  char v1; // bl
+  int v2; // edi
+  const wchar_t **v3; // esi
+  char *v4; // eax
+  uint8_t (__thiscall **vtable0)(ObjectClass *, int); // esi
   int PlayerSide; // eax
-  int v7; // [esp-4h] [ebp-10h]
+  int v8; // [esp-4h] [ebp-10h]
 
-  v0 = 0; /*0x46d8b3*/
-  v1 = 0; /*0x46d8b5*/
-  v2 = (const wchar_t **)&g_NetworkPlayerName; /*0x46d8b7*/
+  v1 = 0; /*0x46d8b3*/
+  v2 = 0; /*0x46d8b5*/
+  v3 = (const wchar_t **)dword_A8DA90; /*0x46d8b7*/
   while ( 1 ) /*0x46d8c1*/
   {
-    v3 = (char *)(CharToWideString(g_NetworkPlayerBuffer));
-    if ( !wcscmp((const wchar_t *)v3, *v2) ) /*0x46d8ca*/
+    v4 = CharToWideString(&stru_A8D600.__pad_34[8]); /*0x46d8c1*/
+    if ( !wcscmp((const wchar_t *)v4, *v3) ) /*0x46d8ca*/
       break; /*0x46d8ca*/
-    ++v2; /*0x46d8d6*/
-    ++v1; /*0x46d8d9*/
-    if ( (int)v2 >= (int)&g_PlayerNameListEnd ) /*0x46d8e0*/
+    ++v3; /*0x46d8d6*/
+    ++v2; /*0x46d8d9*/
+    if ( (int)v3 >= (int)&dword_A8DAB0 ) /*0x46d8e0*/
       return 0; /*0x46d8e7*/
   }
-  if ( v1 == -1 ) /*0x46d8eb*/
+  if ( v2 == -1 ) /*0x46d8eb*/
     return 0; /*0x46d8f2*/
-  if ( SessionClass::GetPlayerSide(*(&g_NetworkPlayerName + v1)) != *((unsigned int *)&qword_A8D667 + 1) ) /*0x46d907*/
-    v0 = 1; /*0x46d909*/
-  if ( g_GameStateFlags ) /*0x46d913*/
+  if ( SessionClass::GetPlayerSide((int *)dword_A8DA90[v2]) != *(unsigned int *)&stru_A8D600.__pad_64[7] ) /*0x46d907*/
+    v1 = 1; /*0x46d909*/
+  if ( dword_A8B23C ) /*0x46d913*/
   {
-    if ( (*(uint8_t (__thiscall **)(int, unsigned int))(*(unsigned int *)g_GameStateFlags + 28))( /*0x46d918*/
-           g_GameStateFlags,
-           *((unsigned int *)&qword_A8D667 + 1)) )
+    if ( (*((uint8_t (__thiscall **)(ObjectClass *, unsigned int))dword_A8B23C->vtable0 + 7))( /*0x46d918*/
+           dword_A8B23C,
+           *(unsigned int *)&stru_A8D600.__pad_64[7]) )
     {
-      SessionClass::SetPlayerOption(*(&g_NetworkPlayerName + v1), *((int *)&qword_A8D667 + 1)); /*0x46d926*/
+      SessionClass::SetPlayerOption((int *)dword_A8DA90[v2], *(int *)&stru_A8D600.__pad_64[7]); /*0x46d926*/
     }
-    else if ( g_GameStateFlags ) /*0x46d92f*/
+    else if ( dword_A8B23C ) /*0x46d92f*/
     {
-      v5 = *(unsigned int *)g_GameStateFlags; /*0x46d938*/
-      PlayerSide = SessionClass::GetPlayerSide(*(&g_NetworkPlayerName + v1)); /*0x46d93a*/
-      if ( !(*(uint8_t (__thiscall **)(int, int))(v5 + 28))(g_GameStateFlags, PlayerSide) ) /*0x46d946*/
+      vtable0 = (uint8_t (__thiscall **)(ObjectClass *, int))dword_A8B23C->vtable0; /*0x46d938*/
+      PlayerSide = SessionClass::GetPlayerSide((int *)dword_A8DA90[v2]); /*0x46d93a*/
+      if ( !vtable0[7](dword_A8B23C, PlayerSide) ) /*0x46d946*/
       {
-        v7 = (*(int (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 40))(g_GameStateFlags); /*0x46d958*/
-        SessionClass::SetPlayerOption(*(&g_NetworkPlayerName + v1), v7); /*0x46d960*/
+        v8 = (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->vtable0 + 10))(dword_A8B23C); /*0x46d958*/
+        SessionClass::SetPlayerOption((int *)dword_A8DA90[v2], v8); /*0x46d960*/
       }
     }
   }
-  if ( SessionClass::GetPlayerColor(*(&g_NetworkPlayerName + v1)) != dword_A8D66F ) /*0x46d979*/
-    v0 = 1; /*0x46d97b*/
-  if ( (uint8_t)IsAvailableColorhWnd() ) /*0x46d97d*/
+  if ( SessionClass::GetPlayerColor((SessionClass *)dword_A8DA90[v2]) != *(unsigned int *)stru_A8D600.Network_field_0x6F ) /*0x46d979*/
+    v1 = 1; /*0x46d97b*/
+  if ( IsAvailableColorhWnd(*(int *)stru_A8D600.Network_field_0x6F) ) /*0x46d97d*/
   {
-    if ( SessionClass::GetPlayerColor(*(&g_NetworkPlayerName + v1)) != dword_A8D66F ) /*0x46d998*/
+    if ( SessionClass::GetPlayerColor((SessionClass *)dword_A8DA90[v2]) != *(unsigned int *)stru_A8D600.Network_field_0x6F ) /*0x46d998*/
     {
-      SessionClass::SetPlayerColor(*(&g_NetworkPlayerName + v1), -2); /*0x46d9a3*/
-      v0 = 1; /*0x46d9a8*/
+      SessionClass::SetPlayerColor((int *)dword_A8DA90[v2], -2); /*0x46d9a3*/
+      v1 = 1; /*0x46d9a8*/
     }
   }
   else
   {
-    SessionClass::SetPlayerColor(*(&g_NetworkPlayerName + v1), dword_A8D66F); /*0x46d9b9*/
+    SessionClass::SetPlayerColor((int *)dword_A8DA90[v2], *(int *)stru_A8D600.Network_field_0x6F); /*0x46d9b9*/
   }
-  if ( SessionClass::GetPlayerColor(*(&g_NetworkPlayerName + v1)) != *(unsigned int *)&qword_A8D667 ) /*0x46d9d2*/
-    v0 = 1; /*0x46d9d4*/
-  if ( (uint8_t)sub_4E50A0() ) /*0x46d9d6*/
+  if ( SessionClass::GetPlayerColor((SessionClass *)dword_A8DA90[v2]) != *(unsigned int *)&stru_A8D600.__pad_64[3] ) /*0x46d9d2*/
+    v1 = 1; /*0x46d9d4*/
+  if ( sub_4E50A0(*(int *)&stru_A8D600.__pad_64[3]) ) /*0x46d9d6*/
   {
-    if ( SessionClass::GetOption(*(&g_NetworkPlayerName + v1)) != *(unsigned int *)&qword_A8D667 ) /*0x46d9f1*/
+    if ( SessionClass::GetOption((int *)dword_A8DA90[v2]) != *(unsigned int *)&stru_A8D600.__pad_64[3] ) /*0x46d9f1*/
     {
-      SessionClass::SetOption(*(&g_NetworkPlayerName + v1), -2); /*0x46d9fc*/
-      return v0; /*0x46da06*/
+      SessionClass::SetOption((int *)dword_A8DA90[v2], -2); /*0x46d9fc*/
+      return v1; /*0x46da06*/
     }
   }
   else
   {
-    SessionClass::SetOption(*(&g_NetworkPlayerName + v1), *(int *)&qword_A8D667); /*0x46da15*/
+    SessionClass::SetOption((int *)dword_A8DA90[v2], *(int *)&stru_A8D600.__pad_64[3]); /*0x46da15*/
   }
-  return v0; /*0x46d8e2*/
-}
+  return v1; /*0x46d8e2*/
 }
 // 0x46DA70
 namespace gamemd {
@@ -285,9 +284,9 @@ namespace gamemd {
 void sub_46DCC0(HWND hDlg, bool a2)
 {
   int i; // edi
-  bool result; // eax
+  BOOL result; // eax
   int v5; // eax
-  int DlgItem;
+  HWND DlgItem; // eax
   int ResourceID2CSF; // eax
   HWND v8; // eax
   int ResourceIDCSF; // eax
@@ -319,17 +318,16 @@ void sub_46DCC0(HWND hDlg, bool a2)
   }
   return result; /*0x46dd60*/
 }
-}
 // 0x46DD70
 namespace gamemd {
 void EnableGameModeControls(HWND hDlg, bool a2)
 {
   int v4; // eax
-  int DlgItem;
+  HWND DlgItem; // eax
   int ResourceID2; // eax
-  int v7;
+  HWND v7; // eax
   int ResourceID; // eax
-  int v9;
+  HWND v9; // eax
   int ResourceID3; // eax
   HWND v11; // eax
   HWND result; // eax
@@ -362,7 +360,6 @@ void EnableGameModeControls(HWND hDlg, bool a2)
     }
   }
   return result; /*0x46de10*/
-}
 }
 // 0x46DE20
 namespace gamemd {
@@ -468,7 +465,6 @@ void sub_46DE20(HWND hDlg, int nCmdShow)
     return (HWND)ShowWindow(result, nCmdShow); /*0x46dfbf*/
   return result; /*0x46dfc1*/
 }
-}
 // 0x465CB0
 namespace gamemd {
 void nullsub_7()
@@ -481,7 +477,7 @@ void nullsub_7()
 namespace gamemd {
 Iostream_init * E4Recv_465D80::__0Iostream_init_QAE_XZ_2()
 {
-  return (gamemd::Iostream_init *)(this);
+  return this; /*0x465d82*/
 }
 } // namespace gamemd
 
@@ -672,12 +668,12 @@ LPVOID CreateUIObjectCOM(IUnknown * aP0, AbstractClass * aP1, AbstractClass * aP
   LPVOID v10; // esi
   LPVOID ppv; // [esp+8h] [ebp-4h] BYREF
 
-  ppv = 0; /*0x46b06a*/
+  ppv = (LPVOID)(0);
   if ( CoCreateInstance(&rclsid, 0, 7u, &IID_IUnknown, &ppv) < 0 ) /*0x46b07a*/
     return 0; /*0x46b07d*/
   v10 = ppv; /*0x46b0a4*/
-  Particle::Init(aP0, aP1, aP2, aP3, aP4, a6, aP7); /*0x46b0a6*/
-  return v10; /*0x46b07c*/
+  Particle::Init((int *)ppv, aP0, aP1, aP2, aP3, aP4, a6, aP7); /*0x46b0a6*/
+  return (int)v10; /*0x46b07c*/
 }
 } // namespace gamemd
 
@@ -1084,9 +1080,10 @@ int sub_46D310()
 namespace gamemd {
 void sub_46D480(void * a1, void * a2)
 {
+  int64_t result; // rax
+
   *((unsigned char *)&g_GameModeOptionState + a2) = IDA_BYTE4(result); /*0x46d480*/
   return result; /*0x46d486*/
-}
 }
 // 0x46D490
 namespace gamemd {
@@ -1101,22 +1098,22 @@ namespace gamemd {
 int sub_46D810()
 {
   int result; // eax
-  int v1; // [esp+8h] [ebp-1C8h] BYREF
-  char v2[43]; // [esp+Ch] [ebp-1C4h] BYREF
+  int v2; // [esp+8h] [ebp-1C8h] BYREF
+  char v3[43]; // [esp+Ch] [ebp-1C4h] BYREF
   int Option; // [esp+37h] [ebp-199h]
   int PlayerSide; // [esp+3Bh] [ebp-195h]
   int PlayerColor; // [esp+3Fh] [ebp-191h]
 
-  v1 = 51; /*0x46d82c*/
-  strcpy(v2, g_GameSetupBuffer); /*0x46d83d*/
-  Option = SessionClass::GetOption(*(unsigned int *)Game_PlayerInfoArray); /*0x46d859*/
-  PlayerSide = SessionClass::GetPlayerSide(*(unsigned int *)Game_PlayerInfoArray); /*0x46d864*/
-  PlayerColor = SessionClass::GetPlayerColor(*(unsigned int *)Game_PlayerInfoArray); /*0x46d874*/
-  result = g_NetworkPlayerName; /*0x46d878*/
-  if ( g_NetworkPlayerName ) /*0x46d881*/
+  v2 = 51; /*0x46d82c*/
+  strcpy(v3, unk_A8B380); /*0x46d83d*/
+  Option = SessionClass::GetOption((int *)*dword_A8DA78); /*0x46d859*/
+  PlayerSide = SessionClass::GetPlayerSide((int *)*dword_A8DA78); /*0x46d864*/
+  PlayerColor = SessionClass::GetPlayerColor((SessionClass *)*dword_A8DA78); /*0x46d874*/
+  result = unk_A8DA90; /*0x46d878*/
+  if ( unk_A8DA90 ) /*0x46d881*/
   {
-    Network::SendToPlayer((int)g_NetworkManager, (int)&v1, 455, 1, (wchar_t *)g_NetworkPlayerName); /*0x46d895*/
-    return Network::ReceiveLoop(g_NetworkManager); /*0x46d89f*/
+    Network::SendToPlayer((int)&unk_A8E9C0, (int)&v2, 455, 1, (wchar_t *)unk_A8DA90); /*0x46d895*/
+    return Network::ReceiveLoop(&unk_A8E9C0); /*0x46d89f*/
   }
   return result; /*0x46d87d*/
 }

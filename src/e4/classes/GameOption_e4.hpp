@@ -7,6 +7,7 @@ namespace gamemd {
 
 struct GameOption {
 // --- flat members (BEGIN) ---
+    unsigned int u32_9;  // 0x9
     unsigned int u32_10;  // 0x10
     unsigned int q034;  // 0x34
     unsigned int q054;  // 0x54
@@ -35,6 +36,7 @@ struct GameOption {
     unsigned int q5010;  // 0x5010
     unsigned int q5398;  // 0x5398
     unsigned int q5458;  // 0x5458
+    unsigned int field_18C;
     unsigned int u32_949;
 // --- flat members (END) ---
     char CheckDuplicate();

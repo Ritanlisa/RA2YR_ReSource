@@ -11,10 +11,6 @@ struct Map_WorldDominationTour_28 {
     int q008;  // 0x8
     bool q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    bool IsInitialized;  // 0x12
-    bool q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    bool q024;  // 0x24
 // --- flat members (END) ---
     char AddRef(int a2);  // 0x76A130
     char Release(int a2,  unsigned int * a3);    // 0x76A170

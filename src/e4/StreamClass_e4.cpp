@@ -8,6 +8,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/TagClass_e4.hpp"
 
 // 0x411310
 namespace gamemd {
@@ -23,11 +24,11 @@ unsigned int StreamClass::ReadAndSeek(MouseClass * aP1, MouseClass * aP2)
   int v4; // edi
   char * result;
 
-  v4 = (unsigned int)((*(int (__thiscall **)(unsigned int, int, int))(**(unsigned int **)(&this->u32_80) + 92))(this->q014, aP1, aP2));
-  (*(void (__thiscall **)(unsigned int))(**(unsigned int **)(&this->u32_80) + 96))(this->q014); /*0x4114cd*/
+  v4 = (unsigned int)((*(int (__thiscall **)(unsigned int, int, int))(*(unsigned int *)this->u32_14 + 92))(this->u32_14, aP1, aP2));
+  (*(void (__thiscall **)(unsigned int))(*(unsigned int *)this->u32_14 + 96))(this->u32_14); /*0x4114cd*/
   result = v4 + this->StreamClass_field_0C; /*0x4114d6*/
-  if ( result >= this->u32_1C ) /*0x4114da*/
-    result -= this->q020; /*0x4114dc*/
+  if ( result >= (unsigned int)this->u32_1C ) /*0x4114da*/
+    result -= this->u32_8; /*0x4114dc*/
   return result; /*0x4114df*/
 }
 } // namespace gamemd
@@ -44,26 +45,26 @@ int StreamClass::Set2(unsigned int * a2)
     v3 = (**(int (__stdcall ***)(unsigned int, void *, unsigned int **))*a2)(*a2, &unk_818858, &a2); /*0x45aebd*/
     if ( v3 >= 0 ) /*0x45aec1*/
     {
-      v5 = a2; /*0x45aedf*/
-      if ( *this ) /*0x45aedc*/
-        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*&this->u32_8))(*this); /*0x45aeea*/
-      *this = v5; /*0x45aeed*/
+      v5 = (unsigned int)(a2);
+      if ( *(unsigned int *)this->__pad_0 ) /*0x45aedc*/
+        (*(void (__stdcall **)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x45aeea*/
+      *(unsigned int *)this->__pad_0 = v5; /*0x45aeed*/
       return v3; /*0x45aef0*/
     }
     else
     {
-      if ( *this ) /*0x45aec3*/
-        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*&this->u32_8))(*this); /*0x45aecc*/
-      *(unsigned int *)this = 0; /*0x45aed1*/
+      if ( *(unsigned int *)this->__pad_0 ) /*0x45aec3*/
+        (*(void (__stdcall **)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x45aecc*/
+      *(unsigned int *)this->__pad_0 = 0; /*0x45aed1*/
       return v3; /*0x45aecf*/
     }
   }
   else
   {
-    v6 = (int)(*this);
-    if ( *this ) /*0x45aef7*/
+    v6 = *(unsigned int *)this->__pad_0; /*0x45aef7*/
+    if ( *(unsigned int *)this->__pad_0 ) /*0x45aef7*/
     {
-      *(unsigned int *)this = 0; /*0x45aefd*/
+      *(unsigned int *)this->__pad_0 = 0; /*0x45aefd*/
       (*(void (__stdcall **)(int))(*(unsigned int *)v6 + 8))(v6); /*0x45af06*/
     }
     return -2147467262; /*0x45af0e*/
@@ -80,29 +81,29 @@ int StreamClass::Set(IUnknown * aP1)
 
   if ( *aP1 ) /*0x45af28*/
   {
-    v3 = (**(int (__stdcall ***)(unsigned int, void *, unsigned int **))*aP1)(*aP1, &unk_819088, &aP1); /*0x45af3d*/
+    v3 = (unsigned int *)((**(int (__stdcall ***)(unsigned int, int *, unsigned int **))*aP1)(*aP1, &stru_818E00.VoxelCaches[17], &aP1));
     if ( v3 >= 0 ) /*0x45af41*/
     {
-      v5 = (unsigned int *)(aP1);
-      if ( *this ) /*0x45af5c*/
-        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*&this->u32_8))(*this); /*0x45af6a*/
-      *this = v5; /*0x45af6d*/
+      v5 = (unsigned int)(aP1);
+      if ( *(unsigned int *)this->__pad_0 ) /*0x45af5c*/
+        (*(void (__stdcall **)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x45af6a*/
+      *(unsigned int *)this->__pad_0 = v5; /*0x45af6d*/
       return v3; /*0x45af70*/
     }
     else
     {
-      if ( *this ) /*0x45af43*/
-        (*(void (__stdcall **)(unsigned int))(*(unsigned int *)*&this->u32_8))(*this); /*0x45af4c*/
-      *(unsigned int *)this = 0; /*0x45af51*/
+      if ( *(unsigned int *)this->__pad_0 ) /*0x45af43*/
+        (*(void (__stdcall **)(unsigned int))(**(unsigned int **)this->__pad_0 + 8))(*(unsigned int *)this->__pad_0); /*0x45af4c*/
+      *(unsigned int *)this->__pad_0 = 0; /*0x45af51*/
       return v3; /*0x45af4f*/
     }
   }
   else
   {
-    v6 = (int)(*this);
-    if ( *this ) /*0x45af77*/
+    v6 = *(unsigned int *)this->__pad_0; /*0x45af77*/
+    if ( *(unsigned int *)this->__pad_0 ) /*0x45af77*/
     {
-      *(unsigned int *)this = 0; /*0x45af7d*/
+      *(unsigned int *)this->__pad_0 = 0; /*0x45af7d*/
       (*(void (__stdcall **)(int))(*(unsigned int *)v6 + 8))(v6); /*0x45af86*/
     }
     return -2147467262; /*0x45af8e*/
@@ -113,22 +114,22 @@ int StreamClass::Set(IUnknown * aP1)
 namespace gamemd {
 BOOL StreamClass::IsInactive(IUnknown * aP0)
 {
-  return aP0->u8_11 == 0; /*0x4b4c3e*/
+  return IDA_BYTE1(aP0->field_10) == 0; /*0x4b4c3e*/
 }
 } // namespace gamemd
 // 0x4B4C50
 namespace gamemd {
 int StreamClass::Vt32Thunk(int a1)
 {
-  return (*(int (__stdcall **)(int))(*(unsigned int *)a1 + 128))(a1); /*0x4b4c5d*/
+  return (*(int (__stdcall **)(IUnknown *))(a1->field_0 + 128))(a1); /*0x4b4c5d*/
 }
 } // namespace gamemd
 // 0x55A710
 namespace gamemd {
 int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 {
-  aP0->u32_8 = (unsigned int)((void *)(a2));
-  aP0->vtable2 = (void *)(a2);
+  aP0->Owner = (unsigned int)((FootClass *)a2);
+  *(unsigned int *)&aP0->__pad_0[4] = a2; /*0x55a71b*/
   return 0; /*0x55a720*/
 }
 } // namespace gamemd
@@ -136,22 +137,26 @@ int StreamClass::ResetPosition(LocomotionClass * aP0, int a2)
 namespace gamemd {
 int StreamClass::SetDirty(unsigned char * a1)
 {
-  a1[12] = 1; /*0x55a8f5*/
-  return (*(int (__stdcall **)(unsigned char *))(*(unsigned int *)a1 + 96))(a1); /*0x55a8fe*/
+  IDA_LOBYTE(a1->field_C) = 1; /*0x55a8f5*/
+  return (*(int (__stdcall **)(IUnknown *))(a1->field_0 + 96))(a1); /*0x55a8fe*/
 }
 } // namespace gamemd
 // 0x55A910
 namespace gamemd {
 int StreamClass::ClearDirty(unsigned char * a1)
 {
-  a1[12] = 0; /*0x55a915*/
-  return (*(int (__stdcall **)(unsigned char *))(*(unsigned int *)a1 + 96))(a1); /*0x55a91e*/
+  IDA_LOBYTE(a1->field_C) = 0; /*0x55a915*/
+  return (*(int (__stdcall **)(IUnknown *))(a1->field_0 + 96))(a1); /*0x55a91e*/
 }
 } // namespace gamemd
 // 0x55A930
 namespace gamemd {
 char StreamClass::GetDirty(int a1)
 {
-  return *(unsigned char *)(a1 + 12); /*0x55a937*/
+  int result; // eax
+
+  result = (int)a1; /*0x55a930*/
+  IDA_LOBYTE(result) = a1->field_C; /*0x55a934*/
+  return result; /*0x55a937*/
 }
 } // namespace gamemd

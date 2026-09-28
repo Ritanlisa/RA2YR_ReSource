@@ -29,7 +29,7 @@ int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
   if ( v3[2] <= 0 || v3[3] <= 0 ) /*0x487f5b*/
   {
     *(unsigned int *)v4 = *aP0; /*0x488012*/
-    return (BOOL)v4; /*0x488026*/
+    return (int)v4; /*0x488026*/
   }
   else
   {
@@ -40,7 +40,7 @@ int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
       v5->top = v3[1]; /*0x487ff5*/
       v5->right = v3[2]; /*0x487ffb*/
       v5->bottom = v3[3]; /*0x488001*/
-      return (BOOL)v5; /*0x487fec*/
+      return (int)v5; /*0x487fec*/
     }
     else
     {
@@ -68,7 +68,7 @@ int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
       v15->top = v9; /*0x487fd7*/
       v15->right = v10; /*0x487fda*/
       v15->bottom = v11; /*0x487fe0*/
-      return (BOOL)v15; /*0x487fcf*/
+      return (int)v15; /*0x487fcf*/
     }
   }
 }
@@ -77,21 +77,22 @@ int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
 namespace gamemd {
 IUnknown * Rect::Set(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3, IUnknown * aP4)
 {
-  *aP1 = aP1; /*0x42e41a*/
-  aP1->vtable2 = aP2; /*0x42e420*/
-  aP1->vtable3 = aP3; /*0x42e427*/
-  aP1->vtable4 = aP4; /*0x42e42a*/
+  this->X = aP1; /*0x42e41a*/
+  this->Y = aP2; /*0x42e420*/
+  this->Width = aP3; /*0x42e427*/
+  this->Height = aP4; /*0x42e42a*/
+  return &this->X; /*0x42e42d*/
 }
 } // namespace gamemd
 // 0x45A130
 namespace gamemd {
 AbstractClass * Rect::Construct(IUnknown * aP1, AbstractClass * aP2, AbstractClass * aP3)
 {
-  *(unsigned int *)this = *aP1; /*0x45a138*/
-  this->u32_4 = aP1[1]; /*0x45a141*/
-  this->q008 = aP2; /*0x45a148*/
-  this->q00C = aP3; /*0x45a14b*/
-  return this; /*0x45a14e*/
+  this->X = *aP1; /*0x45a138*/
+  this->Y = aP1[1]; /*0x45a141*/
+  this->Width = aP2; /*0x45a148*/
+  this->Height = aP3; /*0x45a14b*/
+  return &this->X; /*0x45a14e*/
 }
 } // namespace gamemd
 // 0x72A9E0

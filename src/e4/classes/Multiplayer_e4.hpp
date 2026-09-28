@@ -7,6 +7,8 @@ namespace gamemd {
 
 struct Multiplayer {
 // --- flat members (BEGIN) ---
+    unsigned int u32_4;  // 0x4
+    unsigned int u32_8;  // 0x8
     unsigned char u8_C;  // 0xC
     unsigned char u8_D;  // 0xD
     unsigned char q018;  // 0x18
@@ -15,11 +17,8 @@ struct Multiplayer {
     unsigned int qA13;  // 0xA13
     unsigned int q1028;  // 0x1028
     unsigned int u32_284C;  // 0x284C
-    unsigned int u32_4;
-    unsigned int u32_4049;
-    unsigned int u32_8;
-    unsigned int vt_slot_12;
     unsigned int Screen;
+    unsigned int u32_42;
 // --- flat members (END) ---
     unsigned int * CopyDataArray(ObjectClass * aP1);
     void * FindStartPositions();

@@ -15,7 +15,7 @@
 namespace gamemd {
 int NullModemClass::COMStub()
 {
-  return *(&this->PlayerIndex5); /*0x5f1953*/
+  return this->u32_3C; /*0x5f1953*/
 }
 } // namespace gamemd
 // 0x5F1F00
@@ -24,9 +24,9 @@ int NullModemClass::Flush(int a2)
 {
   int result; // eax
 
-  result = this->linkObject; /*0x5f1f00*/
+  result = this->u32_38; /*0x5f1f00*/
   if ( result ) /*0x5f1f05*/
-    return Rect::SetRedraw(result->PlayerIndex, 1); /*0x5f1f0c*/
+    return Rect::SetRedraw(result->vtable2, 1); /*0x5f1f0c*/
   return result; /*0x5f1f11*/
 }
 } // namespace gamemd
@@ -37,16 +37,16 @@ int NullModemClass::Release(int a2, int a3, int a4, int a5)
 {
   int result; // eax
 
-  if ( !this->q03C ) /*0x5f3563*/
+  if ( !this->u32_3C ) /*0x5f3563*/
     return 0; /*0x5f356a*/
-  result = (*(int (__thiscall **)(unsigned int, int, int, int, unsigned int))(**(unsigned int **)(&this->PacketsReceived6) + 8))( /*0x5f3586*/
-             this->q038,
+  result = (*(int (__thiscall **)(unsigned int, int, int, int, unsigned int))(**((unsigned int **)&this->PlayerIndex4) + 8))( /*0x5f3586*/
+             this->u32_38,
              a2,
              a3,
              a4,
              0);
   if ( !result ) /*0x5f358b*/
-    ++this->q068; /*0x5f358d*/
+    ++this->u32_68; /*0x5f358d*/
   return result; /*0x5f356c*/
 }
 } // namespace gamemd
@@ -54,8 +54,8 @@ int NullModemClass::Release(int a2, int a3, int a4, int a5)
 namespace gamemd {
 int NullModemClass::ddtor(int a2, int a3, int a4)
 {
-  if ( this->q03C ) /*0x5f35a0*/
-    return (*(int (__thiscall **)(unsigned int, int, int))(**(unsigned int **)(&this->PacketsReceived6) + 16))(this->q038, a2, a3); /*0x5f35bb*/
+  if ( this->u32_3C ) /*0x5f35a0*/
+    return (*(int (__thiscall **)(unsigned int, int, int))(**((unsigned int **)&this->PlayerIndex4) + 16))(this->u32_38, a2, a3); /*0x5f35bb*/
   else
     return 0; /*0x5f35a7*/
 }
@@ -66,9 +66,9 @@ int NullModemClass::Receive()
 {
   int v1; // eax
 
-  v1 = *(&this->PlayerIndex4); /*0x5f35d0*/
+  v1 = this->u32_38; /*0x5f35d0*/
   if ( v1 ) /*0x5f35d5*/
-    return *(unsigned int *)(v1->PlayerIndex + 40); /*0x5f35da*/
+    return *(unsigned int *)(v1->vtable2 + 40); /*0x5f35da*/
   else
     return 0; /*0x5f35de*/
 }
@@ -79,9 +79,9 @@ int NullModemClass::CheckStatus()
 {
   int v1; // eax
 
-  v1 = *(&this->PlayerIndex4); /*0x5f35f0*/
+  v1 = this->u32_38; /*0x5f35f0*/
   if ( v1 ) /*0x5f35f5*/
-    return *(unsigned int *)(v1->PlayerIndex + 56); /*0x5f35fa*/
+    return *(unsigned int *)(v1->vtable2 + 56); /*0x5f35fa*/
   else
     return 0; /*0x5f35fe*/
 }
@@ -92,9 +92,9 @@ int NullModemClass::GetAddress(int a2)
 {
   int v2; // eax
 
-  v2 = *(&this->PlayerIndex4); /*0x5f3610*/
+  v2 = this->u32_38; /*0x5f3610*/
   if ( v2 ) /*0x5f3615*/
-    return *(unsigned int *)(v2->PlayerIndex + 40); /*0x5f361a*/
+    return *(unsigned int *)(v2->vtable2 + 40); /*0x5f361a*/
   else
     return 0; /*0x5f3620*/
 }
@@ -105,9 +105,9 @@ int NullModemClass::SetAddress(int a2)
 {
   int v2; // eax
 
-  v2 = *(&this->PlayerIndex4); /*0x5f3630*/
+  v2 = this->u32_38; /*0x5f3630*/
   if ( v2 ) /*0x5f3635*/
-    return *(unsigned int *)(v2->PlayerIndex + 56); /*0x5f363a*/
+    return *(unsigned int *)(v2->vtable2 + 56); /*0x5f363a*/
   else
     return 0; /*0x5f3640*/
 }
@@ -116,25 +116,26 @@ int NullModemClass::SetAddress(int a2)
 namespace gamemd {
 void * NullModemClass::QueryInterface(char a2)
 {
-  void *v3; // edi
+  void **v3; // edi
 
-  v3 = (void *)*(&this->PlayerIndex3); /*0x5f3654*/
+  v3 = (void **)((unsigned int)((void **)this->u32_34));
+  *(unsigned int *)this->__pad_0 = (void*)&NullModemClass_vftable; /*0x5f3657*/
   if ( v3 ) /*0x5f365f*/
   {
-    FileFind::Close(); /*0x5f3663*/
+    FileFind::Close(v3); /*0x5f3663*/
     RA2_OPDEL(v3); /*0x5f3669*/
   }
-  ObjectClass::FreeResources(); /*0x5f3673*/
-  if ( *(&this->PlayerIndex6) != -1 ) /*0x5f3680*/
+  ObjectClass::FreeResources((ObjectClass *)this); /*0x5f3673*/
+  if ( this->PacketsSent != -1 ) /*0x5f3680*/
   {
     if ( !g_ClipboardBuffer ) /*0x5f368a*/
       goto LABEL_10; /*0x5f368a*/
-    SerialPort::Close((HANDLE *)g_ClipboardBuffer); /*0x5f368c*/
+    SerialPort::Close((SerialPort *)g_ClipboardBuffer); /*0x5f368c*/
     if ( g_ClipboardBuffer ) /*0x5f3699*/
       (**(void (__thiscall ***)(HWND, int))g_ClipboardBuffer)(g_ClipboardBuffer, 1); /*0x5f369f*/
     g_ClipboardBuffer = 0; /*0x5f36a1*/
-    *(&this->PlayerIndex6) = -1; /*0x5f36ad*/
-    ObjectClass::FreeResources(); /*0x5f36b0*/
+    this->PacketsSent = -1; /*0x5f36ad*/
+    ObjectClass::FreeResources((ObjectClass *)this); /*0x5f36b0*/
   }
   if ( g_ClipboardBuffer ) /*0x5f36bd*/
   {
@@ -142,9 +143,10 @@ void * NullModemClass::QueryInterface(char a2)
     g_ClipboardBuffer = 0; /*0x5f36c5*/
   }
   LABEL_10:
+  *(unsigned int *)this->__pad_0 = (void*)&ConnManClass_vftable; /*0x5f36cf*/
   if ( (a2 & 1) != 0 ) /*0x5f36db*/
-    RA2_OPDEL(); /*0x5f36de*/
-  return this; /*0x5f36e8*/
+    RA2_OPDEL(this); /*0x5f36de*/
+  return this->__pad_0; /*0x5f36e8*/
 }
 } // namespace gamemd
 // 0x774670
@@ -152,7 +154,7 @@ namespace gamemd {
 int NullModemClass::sendData()
 {
   void *v2; // ecx
-  DWORD v4; // edx
+  void * v4;
   DWORD cbInQue; // eax
   DWORD cbOutQue; // ecx
   bool v7; // zf
@@ -163,15 +165,15 @@ int NullModemClass::sendData()
   struct _DCB DCB; // [esp+20h] [ebp-1Ch] BYREF
 
   Debug::Log(); /*0x77467d*/
-  PurgeComm(*(HANDLE *)(&this->q0242), 0xFu); /*0x77468b*/
-  ResetEvent(*(HANDLE *)(&this->PacketsReceived6)); /*0x77469b*/
-  ResetEvent(*(HANDLE *)(&this->q01C6)); /*0x7746a1*/
-  v8 = *(void **)(&this->q0242); /*0x7746ad*/
-  this->q050 = 0; /*0x7746ae*/
-  this->ptr_51 = 0; /*0x7746b1*/
+  PurgeComm(*((HANDLE *)&this->Active3), 0xFu); /*0x77468b*/
+  ResetEvent(*((HANDLE *)&this->PlayerIndex4)); /*0x77469b*/
+  ResetEvent(*((HANDLE *)&this->PlayerIndex9)); /*0x7746a1*/
+  v8 = (void *)this->u32_5C; /*0x7746ad*/
+  this->PacketsReceived = 0; /*0x7746ae*/
+  this->u32_51 = 0; /*0x7746b1*/
   if ( GetCommState(v8, &DCB) ) /*0x7746b4*/
   {
-    v2 = *(void **)(&this->q0242); /*0x7746c2*/
+    v2 = (void *)this->u32_5C; /*0x7746c2*/
     DCB.BaudRate = 9600; /*0x7746d7*/
     DCB.Parity = 0; /*0x7746df*/
     DCB.ByteSize = 8; /*0x7746e3*/
@@ -187,24 +189,24 @@ int NullModemClass::sendData()
   {
     Debug::Log(); /*0x774717*/
   }
-  GetCommMask(*(HANDLE *)(&this->q0242), &EvtMask); /*0x774728*/
-  (*(void (__thiscall **)(int, int))(((unsigned int)(this->PlayerIndex6))))(this, 1); /*0x774734*/
-  (*(void (__thiscall **)(int))(((unsigned int)(this->PlayerIndex2))))(this); /*0x77473b*/
-  if ( !EscapeCommFunction(*(HANDLE *)(&this->q0242), 3u) ) /*0x774744*/
+  GetCommMask(*((HANDLE *)&this->Active3), &EvtMask); /*0x774728*/
+  (*(void (__thiscall **)(NullModemClass *, int))(*(unsigned int *)this->__pad_0 + 16))(this, 1); /*0x774734*/
+  (*(void (__thiscall **)(NullModemClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x77473b*/
+  if ( !EscapeCommFunction(*((HANDLE *)&this->Active3), 3u) ) /*0x774744*/
   {
     GetLastError(); /*0x77474f*/
     Debug::Log(); /*0x77475b*/
   }
-  if ( ClearCommError(*(HANDLE *)(&this->q0242), &Errors, &Stat) ) /*0x774771*/
+  if ( ClearCommError(*((HANDLE *)&this->Active3), &Errors, &Stat) ) /*0x774771*/
   {
-    v4 = Errors; /*0x77477b*/
+    v4 = (void *)((DWORD)((void *)(Errors)));
     cbInQue = Stat.cbInQue; /*0x77477f*/
     cbOutQue = Stat.cbOutQue; /*0x774783*/
     v7 = Errors == 0; /*0x774787*/
-    this->q01C = Stat.cbInQue; /*0x774789*/
-    this->u32_20 = cbOutQue; /*0x77478c*/
+    this->u32_1C = Stat.cbInQue; /*0x774789*/
+    this->Active = cbOutQue; /*0x77478c*/
     if ( !v7 ) /*0x77478f*/
-      WinModemClass::LogCommErrors(v4, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x7747a5*/
+      WinModemClass::LogCommErrors((WinModemClass *)this, v4, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x7747a5*/
   }
   return 1; /*0x77470a*/
 }
@@ -213,7 +215,7 @@ int NullModemClass::sendData()
 namespace gamemd {
 int NullModemClass::receiveData()
 {
-  DWORD v2; // edx
+  void * v2;
   DWORD cbInQue; // eax
   DWORD cbOutQue; // ecx
   bool v5; // zf
@@ -222,38 +224,38 @@ int NullModemClass::receiveData()
   struct _COMSTAT Stat; // [esp+10h] [ebp-Ch] BYREF
 
   Debug::Log(); /*0x7747cd*/
-  PurgeComm(*(HANDLE *)(&this->q0242), 0xFu); /*0x7747db*/
-  ResetEvent(*(HANDLE *)(&this->PacketsReceived6)); /*0x7747eb*/
-  ResetEvent(*(HANDLE *)(&this->q01C6)); /*0x7747f1*/
-  v7 = *(void **)(&this->q0242); /*0x7747ff*/
-  this->q050 = 0; /*0x774800*/
-  this->ptr_51 = 0; /*0x774803*/
-  if ( !SetCommState(v7, (LPDCB)(&this->u32_CF80)) ) /*0x774806*/
+  PurgeComm(*((HANDLE *)&this->Active3), 0xFu); /*0x7747db*/
+  ResetEvent(*((HANDLE *)&this->PlayerIndex4)); /*0x7747eb*/
+  ResetEvent(*((HANDLE *)&this->PlayerIndex9)); /*0x7747f1*/
+  v7 = (void *)this->u32_5C; /*0x7747ff*/
+  this->PacketsReceived = 0; /*0x774800*/
+  this->u32_51 = 0; /*0x774803*/
+  if ( !SetCommState(v7, (LPDCB)((char *)this + 8300)) ) /*0x774806*/
     Debug::Log(); /*0x774816*/
-  if ( !EscapeCommFunction(*(HANDLE *)(&this->q0242), 3u) ) /*0x774824*/
+  if ( !EscapeCommFunction(*((HANDLE *)&this->Active3), 3u) ) /*0x774824*/
   {
     GetLastError(); /*0x77482f*/
     Debug::Log(); /*0x77483b*/
   }
-  if ( ClearCommError(*(HANDLE *)(&this->q0242), &Errors, &Stat) ) /*0x774851*/
+  if ( ClearCommError(*((HANDLE *)&this->Active3), &Errors, &Stat) ) /*0x774851*/
   {
-    v2 = Errors; /*0x77485b*/
+    v2 = (void *)((DWORD)((void *)(Errors)));
     cbInQue = Stat.cbInQue; /*0x77485f*/
     cbOutQue = Stat.cbOutQue; /*0x774863*/
     v5 = Errors == 0; /*0x774867*/
-    this->q01C = Stat.cbInQue; /*0x774869*/
-    this->u32_20 = cbOutQue; /*0x77486c*/
+    this->u32_1C = Stat.cbInQue; /*0x774869*/
+    this->Active = cbOutQue; /*0x77486c*/
     if ( !v5 ) /*0x77486f*/
-      WinModemClass::LogCommErrors(v2, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774885*/
+      WinModemClass::LogCommErrors((WinModemClass *)this, v2, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774885*/
   }
-  return (1); /*0x774893*/
+  return (*(int (__thiscall **)(NullModemClass *, int))(*(unsigned int *)this->__pad_0 + 16))(this, 1); /*0x774893*/
 }
 } // namespace gamemd
 // 0x7754C0
 namespace gamemd {
 int NullModemClass::GetMember23()
 {
-  return *(&this->Active3); /*0x7754c3*/
+  return this->u32_5C; /*0x7754c3*/
 }
 } // namespace gamemd
 // 0x5F3520
@@ -274,6 +276,11 @@ int NullModemClass::Send(int a1)
 namespace gamemd {
 int NullModemClass::Disconnect(int a2, int a3, int a4)
 {
-  return (a2, a3, a4, 1); /*0x5f3556*/
+  return (*(int (__thiscall **)(NullModemClass *, int, int, int, int))(*(unsigned int *)this->__pad_0 + 52))( /*0x5f3556*/
+           this,
+           a2,
+           a3,
+           a4,
+           1);
 }
 } // namespace gamemd

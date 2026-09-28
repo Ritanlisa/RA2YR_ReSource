@@ -15,8 +15,8 @@
 namespace gamemd {
 int ScrollClass::Scroll(int * a1, MouseClass * aP2)
 {
-  TacticalClass::ProcessView(); /*0x6922e3*/
-  return BlowStraw_29_::Seek(a1, aP2); /*0x6922f9*/
+  TacticalClass::ProcessView((TacticalClass *)this); /*0x6922e3*/
+  return BlowStraw_29_::Seek(&this->m_ScrollX, a1, aP2); /*0x6922f9*/
 }
 } // namespace gamemd
 // 0x6938F0

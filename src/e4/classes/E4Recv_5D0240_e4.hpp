@@ -17,8 +17,8 @@ struct E4Recv_5D0240 {
     unsigned int q784;  // 0x784
     unsigned int q1924;  // 0x1924
     unsigned int q5170;  // 0x5170
-    unsigned int u32_82;
-    unsigned int u32_85;
+    unsigned int customSound;
+    unsigned int customSound_controller;
 // --- flat members (END) ---
     char ** sub_5D0240(char ** a2,  char a3);    // 0x5D0240
 };

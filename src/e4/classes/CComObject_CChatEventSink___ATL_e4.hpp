@@ -9,20 +9,6 @@ struct CComObject_CChatEventSink___ATL {
     unsigned char q000;  // 0x0
     unsigned int u32_4;  // 0x4
     void* q008;  // 0x8
-    unsigned int u32_C;  // 0xC
-    unsigned char q010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned int q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned int q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    unsigned char q050;  // 0x50
 // --- flat members (END) ---
     int DispatchConnectionPairs();  // 0x7937B0
     int DispatchStub_32(int a1,  int a2,  int a3,  int a4);    // 0x7A4EC0

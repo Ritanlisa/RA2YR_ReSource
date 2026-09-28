@@ -9,11 +9,13 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/DamageArea_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x5BD0D0
 namespace gamemd {
 int Debug::ScrollText(CellStruct * aP1)
 {
+  char result; // al
   int v4; // eax
   int v5; // ebp
   int v6; // edx
@@ -21,26 +23,26 @@ int Debug::ScrollText(CellStruct * aP1)
   const char *v9; // eax
   int v10; // eax
   unsigned int *v11; // [esp+4h] [ebp-10h]
-  unsigned char *v12; // [esp+8h] [ebp-Ch]
+  char *v12; // [esp+8h] [ebp-Ch]
   int v13; // [esp+Ch] [ebp-8h]
   const char *i; // [esp+10h] [ebp-4h]
   char v15; // [esp+18h] [ebp+4h]
 
-  g_MiscFlag = g_MiscFlag; /*0x5bd0d0*/
-  if ( g_MiscFlag ) /*0x5bd0dd*/
+  result = IDA_BYTE2(g_MissionQueueFrame.localVariables[493]); /*0x5bd0d0*/
+  if ( IDA_BYTE2(g_MissionQueueFrame.localVariables[493]) ) /*0x5bd0dd*/
   {
     v4 = this->u32_2724; /*0x5bd0ef*/
     v5 = this->u32_271C + v4; /*0x5bd108*/
     v13 = this->u32_2720 + this->u32_2728; /*0x5bd10e*/
     v6 = v4 + this->u32_272C; /*0x5bd112*/
-    this->u8_2734 = 0; /*0x5bd119*/
+    this->u32_2734 = 0; /*0x5bd119*/
     v7 = v5 + strlen(aP1); /*0x5bd127*/
     if ( v7 > v6 ) /*0x5bd12b*/
       v7 = v6; /*0x5bd12d*/
     v5 = v5; /*0x5bd131*/
     if ( v5 < v7 ) /*0x5bd133*/
     {
-      v12 = (const char *)((unsigned char *)(this + v13 + 20 * v5 + 5 * v5));
+      v12 = (const char *)((char *)(this + v13 + 20 * v5 + 5 * v5));
       v9 = (const char *)(&aP1[-v5]);
       v11 = (const char *)((unsigned int *)(&this->u32_10 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)));
       for ( i = &aP1[-v5]; ; v9 = i ) /*0x5bd162*/
@@ -65,32 +67,33 @@ int Debug::ScrollText(CellStruct * aP1)
           break; /*0x5bd1d1*/
       }
     }
-    return Text::DrawRepeated(v5, v13, v7 - v5, 1); /*0x5bd1e0*/
+    return Text::DrawRepeated((Text *)this, v5, v13, v7 - v5, 1); /*0x5bd1e0*/
   }
-}
+  return result; /*0x5bd1e8*/
 }
 // 0x6E61F0
 namespace gamemd {
 int Debug::AccumFlags()
 {
-  int v1; // esi
+  TriggerTypeClass *Debug_field_0xA0; // esi
   int i; // edi
-  int v3; // eax
+  int Flags; // eax
 
-  v1 = *(&this->uniqueId0); /*0x6e61f1*/
-  for ( i = 0; v1; i |= v3 ) /*0x6e61fc*/
+  Debug_field_0xA0 = (TriggerTypeClass *)this->Debug_field_0xA0; /*0x6e61f1*/
+  for ( i = 0; Debug_field_0xA0; i |= Flags ) /*0x6e61fc*/
   {
-    v3 = TriggerTypeClass::GetFlags(v1); /*0x6e6200*/
-    v1 = *(unsigned int *)(v1 + 168); /*0x6e6205*/
+    Flags = TriggerTypeClass::GetFlags(Debug_field_0xA0); /*0x6e6200*/
+    Debug_field_0xA0 = Debug_field_0xA0->NextTrigger; /*0x6e6205*/
   }
   return i; /*0x6e6213*/
-}
 }
 // 0x4068E0
 namespace gamemd {
 void Debug::Log()
 {
-  ; /*0x4068e0*/
+  int result; // eax
+
+  return result; /*0x4068e0*/
 }
 } // namespace gamemd
 
@@ -128,7 +131,7 @@ char Debug_Helper(ObjectClass * aP0)
 {
   ObjectClass * result;
 
-  result = aP0; /*0x5bd360*/
+  result = (gamemd::ObjectClass *)((char)(aP0));
   switch ( aP0 ) /*0x5bd366*/
   {
     case 10: /*0x5bd366*/

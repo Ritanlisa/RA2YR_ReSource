@@ -21,24 +21,24 @@ int VoxelRenderer::ProjectVertex(float a2, float a3, float a4, char a5)
   float v15; // [esp+Ch] [ebp-8h]
 
   if ( a5 ) /*0x758eae*/
-    v6 = *this; /*0x758eb0*/
+    v6 = *(unsigned int *)this->__pad_0; /*0x758eb0*/
   else
     IDA_LOBYTE(v6) = 1; /*0x758eb4*/
   v15 = 100000.0; /*0x758eb9*/
   v7 = 1; /*0x758ec1*/
   for ( i = 3; i < 768; i += 3 ) /*0x758ec6*/
   {
-    v9 = (int)(*this);
+    v9 = *(unsigned int *)this->__pad_0; /*0x758ed1*/
     if ( a5 ) /*0x758ed3*/
     {
-      if ( v7 < v9 || v7 > this->q004 ) /*0x758edc*/
+      if ( v7 < v9 || v7 > this->VoxelRenderer_field_0x04 ) /*0x758edc*/
         goto LABEL_13; /*0x758edc*/
     }
-    else if ( v7 >= v9 && v7 <= this->q004 ) /*0x758ee7*/
+    else if ( v7 >= v9 && v7 <= this->VoxelRenderer_field_0x04 ) /*0x758ee7*/
     {
       goto LABEL_13; /*0x758ee7*/
     }
-    v10 = (uint8_t *)(i + this->u32_10); /*0x758eee*/
+    v10 = (uint8_t *)(i + this->VoxelRenderer_field_0x10); /*0x758eee*/
     v11 = a3 - (double)v10[1]; /*0x758f14*/
     v12 = a4 - (double)v10[2]; /*0x758f1c*/
     v13 = v12 * v12 + v11 * v11 + (a2 - (double)*v10) * (a2 - (double)*v10); /*0x758f2e*/

@@ -8,8 +8,6 @@ struct Campaign_WorldDominationTour_24 {
 // --- flat members (BEGIN) ---
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
-    unsigned int q004;
-    unsigned int q008;
 // --- flat members (END) ---
     BOOL AddRef();  // 0x765700
     unsigned int * Release();  // 0x765B40

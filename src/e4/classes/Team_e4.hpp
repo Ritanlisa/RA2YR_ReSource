@@ -21,7 +21,7 @@ struct Team {
     unsigned int IsForcedActive;  // 0x77
     unsigned int IsFullStrength;  // 0x79
     unsigned int q080;  // 0x80
-    unsigned int TargetNotAssigned q081;  // 0x81
+    unsigned int TargetNotAssigned;  // 0x81
     unsigned int IsLeavingMap;  // 0x82
     void* q0E4;  // 0xE4
     void* q0E8;  // 0xE8
@@ -43,8 +43,6 @@ struct Team {
     void* q4984;  // 0x4984
     unsigned int q5170;  // 0x5170
     unsigned int q5510;  // 0x5510
-    unsigned int u32_147;
-    unsigned int u32_148;
 // --- flat members (END) ---
     int ReleaseAll(ObjectClass * aP1);  // 0x5D26C0
     int GetMember(AbstractClass * aP1);  // 0x65AD30

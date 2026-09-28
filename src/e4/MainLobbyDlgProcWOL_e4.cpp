@@ -23,7 +23,7 @@ LRESULT MainLobbyDlgProcWOL_Assign(HWND hWnd, WPARAM wParam, void ** a3)
   v5 = SendMessageA(hWnd, 0x149u, wParam, 0); /*0x624039*/
   if ( v5 <= 0 ) /*0x62403d*/
     SafeDelete::Ptr(a3); /*0x624043*/
-  v6 = (wchar_t *)new wchar_t; /*0x624055*/
+  v6 = (wchar_t *)RA2_OPNEW(2 * v5 + 4); /*0x624055*/
   v7 = SendMessageA(hWnd, 0x4C3u, wParam, (LPARAM)v6); /*0x624061*/
   WideString::Assign_Alt(a3, v6); /*0x624068*/
   RA2_OPDEL(v6); /*0x62406e*/

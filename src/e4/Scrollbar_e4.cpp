@@ -11,7 +11,7 @@
 namespace gamemd {
 void Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a5, unsigned char a6, unsigned char a7, unsigned char a8)
 {
-  char result; // al
+  int result; // eax
   int v9; // esi
   int16_t v10; // bp
   int v13; // ecx
@@ -87,5 +87,4 @@ void Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a
     while ( v9 < a4 ); /*0x620710*/
   }
   return result; /*0x620716*/
-}
 }

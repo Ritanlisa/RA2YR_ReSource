@@ -19,6 +19,9 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ParticleSystemClass_32_e4.hpp"
 #include "e4/classes/SessionClass_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
+#include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/ParticleSystemClass_32__e4.hpp"
 
 // 0x6442D0
 namespace gamemd {
@@ -75,7 +78,7 @@ void* ParticleSystemTypeClass::GetType(unsigned char *** aP1)
     Destination,
     64);
   v3 = (int)(BuildingTypeClass::FindOrCreateEx(Destination));
-  v4 = this->q298; /*0x64431d*/
+  v4 = (char)((void *)(this->q298));
   this->q294 = v3; /*0x644323*/
   Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x644332*/
                      (int)aP1,
@@ -230,41 +233,50 @@ void* ParticleSystemTypeClass::PowerDrainUpdate(int * a2)
 {
   int v3; // ecx
 
-  AbstractTypeClass::ProcessPower(a2); /*0x644709*/
-  Power::TimerProcess(this->q294); /*0x644717*/
-  IDA_LOBYTE(v3) = this->q298; /*0x64471c*/
-  Power::FlagProcess(a2, v3); /*0x644725*/
-  Power::TimerProcess(this->q29C); /*0x644733*/
-  Checksummer::Add_float((unsigned int *)a2, this->q2A0); /*0x644741*/
-  Power::TimerProcess(this->q2A4); /*0x64474f*/
-  Power::TimerProcess(this->q2A8); /*0x64475d*/
-  Checksummer::Add_float((unsigned int *)a2, this->q2AC); /*0x64476b*/
-  Checksummer::Add_float((unsigned int *)a2, this->DamageDelay); /*0x644779*/
-  Power::TimerProcess(this->q2B4); /*0x644787*/
-  return Power::TimerProcess(this->q2B8); /*0x64479a*/
-}
+  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x644709*/
+  Power::TimerProcess((int)this->ParticleSystemTypeClass_field_0x294); /*0x644717*/
+  IDA_LOBYTE(v3) = this->__pad_298[0]; /*0x64471c*/
+  Power::FlagProcess((Power *)a2, v3); /*0x644725*/
+  Power::TimerProcess((int)this->ParticleSystemTypeClass_field_0x29C); /*0x644733*/
+  Checksummer::Add_float((Checksummer *)a2, (int)this->ParticleSystemTypeClass_field_0x2A0); /*0x644741*/
+  Power::TimerProcess(IDA_LODWORD(this->ParticleSystemTypeClass_field_0x2A4)); /*0x64474f*/
+  Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2A8); /*0x64475d*/
+  Checksummer::Add_float((Checksummer *)a2, this->ParticleSystemTypeClass_field_0x2AC); /*0x64476b*/
+  Checksummer::Add_float((Checksummer *)a2, this->DamageDelay); /*0x644779*/
+  Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B4); /*0x644787*/
+  return Power::TimerProcess(this->ParticleSystemTypeClass_field_0x2B8); /*0x64479a*/
 }
 // 0x644960
 namespace gamemd {
 ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
 {
   int v3; // eax
+  ParticleSystemTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  AbstractClass::AnnounceExpiredPointer(1); /*0x644981*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(dword_A83D68 + 16))(&dword_A83D68, &this); /*0x64499a*/
-  if ( v3 != -1 && v3 < g_InfantryTypeInitState && v3 < --g_InfantryTypeInitState ) /*0x6449b5*/
+  this->ParticleSystemTypeClass_field_0x0 = (int)((void*)&ParticleSystemTypeClass_vftable);
+  this->ParticleSystemTypeClass_field_0x4 = (unsigned int)((void*)&ParticleSystemTypeClass_vftable);
+  this->ParticleSystemTypeClass_field_0x8 = (void*)&ParticleSystemTypeClass_vftable; /*0x644973*/
+  this->SpawnCount = (void*)&ParticleSystemTypeClass_vftable; /*0x64497a*/
+  AbstractClass::AnnounceExpiredPointer(&this->ParticleSystemTypeClass_field_0x0, 1); /*0x644981*/
+  v5 = this; /*0x644996*/
+  v3 = (*(int (__thiscall **)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 16))( /*0x64499a*/
+         &stru_A83D50.__pad_14[4],
+         &v5);
+  if ( v3 != -1 && v3 < (int)stru_A83D50.SuperClass_field_0x28 ) /*0x6449aa*/
   {
-    do /*0x6449cd*/
+    --stru_A83D50.SuperClass_field_0x28; /*0x6449af*/
+    for ( ; /*0x6449b5*/
+          v3 < (int)stru_A83D50.SuperClass_field_0x28;
+          *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8]
+                                                                                    + 4 * v3) )
     {
       ++v3; /*0x6449bd*/
-      *((unsigned int *)dword_A83D6C + v3 - 1) = *((unsigned int *)dword_A83D6C + v3); /*0x6449c1*/
     }
-    while ( v3 < g_InfantryTypeInitState ); /*0x6449cd*/
   }
-  ObjectTypeClass::Destruct(); /*0x6449d1*/
+  ObjectTypeClass::Destruct((int)this); /*0x6449d1*/
   if ( (a2 & 1) != 0 ) /*0x6449db*/
-    RA2_OPDEL(); /*0x6449de*/
-  return this; /*0x6449e8*/
+    RA2_OPDEL(this); /*0x6449de*/
+  return &this->ParticleSystemTypeClass_field_0x0; /*0x6449e8*/
 }
 } // namespace gamemd
 
@@ -275,24 +287,25 @@ float * ParticleSystemTypeClass::ReadXYZFromINI(float * a1, CCINIClass * aP2, un
   char *v5; // eax
   char *v6; // eax
   char *v7; // eax
-  double v8; // st7
-  float v10; // [esp+4h] [ebp-20Ch]
-  float v11; // [esp+8h] [ebp-208h]
-  float v12; // [esp+Ch] [ebp-204h]
+  float v9; // [esp+4h] [ebp-20Ch]
+  float v10; // [esp+8h] [ebp-208h]
+  float v11; // [esp+Ch] [ebp-204h]
   char String[512]; // [esp+10h] [ebp-200h] BYREF
 
-  if ( INIClass::GetString(this, aP2, a3, &g_INI_DefaultBuffer, String, 512) ) /*0x476383*/
+  if ( INIClass::GetString((INIClass *)this, aP2, a3, &g_INI_DefaultBuffer, String, 512) ) /*0x476383*/
   {
-    v5 = strtok(String, Delimiter); /*0x476396*/
-    v10 = atof(v5); /*0x4763a1*/
-    v6 = strtok(0, Delimiter); /*0x4763ac*/
-    v11 = atof(v6); /*0x4763b7*/
-    v7 = strtok(0, Delimiter); /*0x4763c2*/
-    v8 = atof(v7); /*0x4763c8*/
-    v12 = v8; /*0x4763d8*/
-    *a1 = v10; /*0x4763e1*/
-    a1[1] = v11; /*0x4763e8*/
-    a1[2] = v12; /*0x4763ef*/
+    v5 = strtok(String, Str); /*0x476396*/
+    atof(v5); /*0x47639c*/
+    __asm { fstp [esp+21Ch+var_20C] } /*0x4763a1*/
+    v6 = strtok(0, Str); /*0x4763ac*/
+    atof(v6); /*0x4763b2*/
+    __asm { fstp [esp+228h+var_208] } /*0x4763b7*/
+    v7 = strtok(0, Str); /*0x4763c2*/
+    atof(v7); /*0x4763c8*/
+    __asm { fstp [esp+234h+var_204] } /*0x4763d8*/
+    *a1 = v9; /*0x4763e1*/
+    a1[1] = v10; /*0x4763e8*/
+    a1[2] = v11; /*0x4763ef*/
     return a1; /*0x4763cd*/
   }
   else
@@ -314,7 +327,7 @@ int ParticleSystemTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   *a2 = 1883112522; /*0x6447b6*/
   a2[1] = 298979249; /*0x6447be*/
   a2[2] = 1610642049; /*0x6447c7*/
-  a2[3] = -1252326136; /*0x6447d0*/
+  a2[3] = unk_7E96DC; /*0x6447d0*/
   return 0; /*0x6447ad*/
 }
 } // namespace gamemd
@@ -323,9 +336,13 @@ int ParticleSystemTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
 namespace gamemd {
 int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 {
-  if ( ObjectTypeClass::LoadCleanup((int)aP0, aP1) >= 0 && aP0 ) /*0x6447f6*/
+  if ( ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1) >= 0 && aP0 ) /*0x6447f6*/
   {
-    ObjectTypeClass::Construct(aP0, (int)&aP1); /*0x6447ff*/
+    ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6447ff*/
+    aP0->ParticleSystemTypeClass_field_0x0 = (void*)&ParticleSystemTypeClass_vftable; /*0x644804*/
+    aP0->ParticleSystemTypeClass_field_0x4 = (void*)&ParticleSystemTypeClass_vftable; /*0x64480a*/
+    aP0->ParticleSystemTypeClass_field_0x8 = (void*)&ParticleSystemTypeClass_vftable; /*0x644811*/
+    aP0->SpawnCount = (void*)&ParticleSystemTypeClass_vftable; /*0x644818*/
   }
   return 0; /*0x644821*/
 }
@@ -335,7 +352,7 @@ int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
 namespace gamemd {
 int ParticleSystemTypeClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int aP2)
 {
-  AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, aP2); /*0x64483f*/
+  AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x64483f*/
   return 0; /*0x644846*/
 }
 } // namespace gamemd

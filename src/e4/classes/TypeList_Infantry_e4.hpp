@@ -8,30 +8,16 @@ struct TypeList_Infantry {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     void* Items;  // 0x4
-    unsigned int q008;  // 0x8
-    unsigned int q00C;  // 0xC
+    void* Capacity;  // 0x8
+    void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
-    unsigned int pad_010;  // 0x10
-    unsigned char q014;  // 0x14
-    unsigned int q018;  // 0x18
-    unsigned char q01C;  // 0x1C
-    unsigned char q020;  // 0x20
-    unsigned int q024;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    unsigned char q030;  // 0x30
-    unsigned int q034;  // 0x34
-    unsigned char q038;  // 0x38
-    unsigned char q03C;  // 0x3C
-    unsigned char q044;  // 0x44
-    unsigned char q048;  // 0x48
-    unsigned char q050;  // 0x50
-    unsigned int q054;  // 0x54
-    unsigned int IsInitialized;
-    unsigned int Capacity;
-    unsigned int Items2;
-    unsigned int Count;
+    void* Count;  // 0x10
+    unsigned int m_1;
+    unsigned int m_10;
+    unsigned int m_8;
+    unsigned int m_C;
+    unsigned int __pad_0;
 // --- flat members (END) ---
     void ddtor();  // 0x5128A0
     unsigned int GetIndex(int a2);  // 0x5128D0

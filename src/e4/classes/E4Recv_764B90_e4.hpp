@@ -9,7 +9,7 @@ struct E4Recv_764B90 {
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
     unsigned int u32_C;  // 0xC
-    void* pad_018;  // 0x18
+    unsigned int q018;  // 0x18
     unsigned int M28;  // 0x1C
     unsigned int M32;  // 0x20
     unsigned int M24;  // 0x24
@@ -62,7 +62,6 @@ struct E4Recv_764B90 {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
     unsigned int u32_C7;
-    unsigned int q018;
 // --- flat members (END) ---
     char * WDT_Campaign_Constructor(const char ** a2,  int a3);    // 0x764B90
 };

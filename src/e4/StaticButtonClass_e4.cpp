@@ -14,13 +14,14 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (void *)*(&this->u32_42); /*0x6c6883*/
+  v3 = (gamemd::StaticButtonClass *)((void *)this->q00C);
+  *(unsigned int *)this->__pad_0 = (void*)&StaticButtonClass_vftable; /*0x6c6886*/
   if ( v3 ) /*0x6c688e*/
     RA2_OPDEL(v3); /*0x6c6891*/
-  Vector::Clear((int)&this->q024); /*0x6c689c*/
-  GadgetClass::Dtor(); /*0x6c68a3*/
+  Vector::Clear((int)&this->q00C6); /*0x6c689c*/
+  GadgetClass::Dtor((GadgetClass *)this); /*0x6c68a3*/
   if ( (a2 & 1) != 0 ) /*0x6c68ad*/
-    RA2_OPDEL(); /*0x6c68b0*/
-  return this; /*0x6c68ba*/
+    RA2_OPDEL(this); /*0x6c68b0*/
+  return this->__pad_0; /*0x6c68ba*/
 }
 } // namespace gamemd

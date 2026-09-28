@@ -6,6 +6,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/Socket_e4.hpp"
 
 // 0x540D80
 namespace gamemd {
@@ -36,20 +37,20 @@ int IPXManagerClass::sendPacket(int a2, int a3, int a4)
 namespace gamemd {
 int IPXManagerClass::send(int a2)
 {
-  unsigned int * v2;
-  unsigned int * result;
-  unsigned int *i; // ecx
+  IPXManagerClass * v2;
+  IPXManagerClass * result;
+  IPXManagerClass *i; // ecx
 
-  v2 = (int)((unsigned int *)(*(&this->Initialized7)));
-  result = (int)((unsigned int *)(0));
+  v2 = (gamemd::IPXManagerClass *)((int)((gamemd::IPXManagerClass *)(this->u32_44)));
+  result = (int)((gamemd::IPXManagerClass *)(0));
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
-  for ( i = &this->q028; *(unsigned int *)(*i + 100) != a2; ++i ) /*0x54104f*/
+  for ( i = &this->Active; *(unsigned int *)(i->Socket + 100) != a2; i = (IPXManagerClass *)((char *)i + 4) ) /*0x54104f*/
   {
     if ( ++result >= v2 ) /*0x54105f*/
       return -1; /*0x54105f*/
   }
-  return (int)(result);
+  return result; /*0x541064*/
 }
 } // namespace gamemd
 // 0x541070
@@ -58,33 +59,33 @@ int IPXManagerClass::receivePacket(int a2)
 {
   int v2; // edx
   int result; // eax
-  unsigned int *v4; // esi
+  IPXManagerClass *v4; // esi
 
-  v2 = *(&this->Initialized7); /*0x541070*/
+  v2 = this->u32_44; /*0x541070*/
   result = 0; /*0x541074*/
   if ( v2 <= 0 ) /*0x54107d*/
   {
   LABEL_5:
-    if ( a2 == *(&this->q0080) ) /*0x541091*/
+    if ( a2 == this->u32_50 ) /*0x541091*/
     {
       return -4; /*0x541095*/
     }
-    else if ( a2 == *(&this->Initialized9) ) /*0x5410a0*/
+    else if ( a2 == this->u32_4C ) /*0x5410a0*/
     {
       return -3; /*0x5410a4*/
     }
     else
     {
-      return (a2 != *(&this->Initialized8)) - 2; /*0x5410b6*/
+      return (a2 != this->u32_48) - 2; /*0x5410b6*/
     }
   }
   else
   {
-    v4 = (unsigned int *)(&this->q028);
-    while ( *v4 != a2 ) /*0x541084*/
+    v4 = (gamemd::IPXManagerClass *)(&this->Active);
+    while ( v4->Socket != a2 ) /*0x541084*/
     {
       ++result; /*0x541086*/
-      ++v4; /*0x541087*/
+      v4 = (IPXManagerClass *)((char *)v4 + 4); /*0x541087*/
       if ( result >= v2 ) /*0x54108c*/
         goto LABEL_5; /*0x54108c*/
     }
@@ -119,8 +120,8 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)
     return 0; /*0x541661*/
   while ( 1 ) /*0x54162b*/
   {
-    v6 = *(unsigned int *)(&this->q010 * this->curConnIndex + 40); /*0x54162b*/
-    v7 = (*(int (__thiscall **)(int, int, int))(*(unsigned int *)v6 + 16))(v6, a2, a3); /*0x541631*/
+    v6 = (void *)(*(unsigned int *)(&this->q010 * this->curConnIndex + 40));
+    v7 = (void *)((*(int (__thiscall **)(int, int, int))(*(unsigned int *)v6 + 16))(v6, a2, a3));
     v8 = this->curConnIndex; /*0x541634*/
     v9 = *(unsigned int *)(&this->q010 * v8++ + 40); /*0x541637*/
     v10 = *(unsigned int *)(v9 + 100); /*0x54163c*/
@@ -148,9 +149,9 @@ void IPXManagerClass::StubReturnFalse(int a1, int a2)
 namespace gamemd {
 IPXManagerClass * IPXManagerClass::QueryInterface(char a2)
 {
-  IPXManagerClass::processPacket(); /*0x5430e3*/
+  IPXManagerClass::processPacket((char *)this); /*0x5430e3*/
   if ( (a2 & 1) != 0 ) /*0x5430ed*/
-    RA2_OPDEL(); /*0x5430f0*/
-  return this; /*0x5430fa*/
+    RA2_OPDEL(this); /*0x5430f0*/
+  return (char *)this; /*0x5430fa*/
 }
 } // namespace gamemd

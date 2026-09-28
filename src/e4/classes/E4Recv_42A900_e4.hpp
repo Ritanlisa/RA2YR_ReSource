@@ -27,6 +27,9 @@ struct E4Recv_42A900 {
     unsigned int M104;  // 0x68
     unsigned int q080;  // 0x80
     unsigned int q084;  // 0x84
+    unsigned int u32_C0;  // 0xC0
+    unsigned int u32_C4;  // 0xC4
+    unsigned int u32_C9;  // 0xC9
     unsigned int q100;  // 0x100
     unsigned int q104;  // 0x104
     unsigned int q128;  // 0x128

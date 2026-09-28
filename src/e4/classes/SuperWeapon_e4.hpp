@@ -14,6 +14,7 @@ struct SuperWeapon {
     unsigned int u32_18;  // 0x18
     unsigned int u32_1C;  // 0x1C
     unsigned int q020;  // 0x20
+    unsigned int u32_24;  // 0x24
     void* q028;  // 0x28
     unsigned int q030;  // 0x30
     unsigned int q038;  // 0x38
@@ -59,7 +60,9 @@ struct SuperWeapon {
     void* q1FC;  // 0x1FC
     unsigned int q200;  // 0x200
     void* q21C;  // 0x21C
+    unsigned int u32_22C;  // 0x22C
     void* q240;  // 0x240
+    unsigned int u32_254;  // 0x254
     unsigned int q258;  // 0x258
     unsigned int q260;  // 0x260
     unsigned int q264;  // 0x264
@@ -121,11 +124,14 @@ struct SuperWeapon {
     void* q5480;  // 0x5480
     unsigned int q5490;  // 0x5490
     unsigned int u32_5494;  // 0x5494
+    unsigned int u32_54EC;  // 0x54EC
+    unsigned int u32_54F0;  // 0x54F0
+    unsigned int u32_54F2;  // 0x54F2
     unsigned int q54F4;  // 0x54F4
     unsigned int q54FC;  // 0x54FC
+    unsigned int u32_5600;  // 0x5600
     unsigned int q5788;  // 0x5788
     void* q6120;  // 0x6120
-    unsigned int q0040;
 // --- flat members (END) ---
     int GetField10();
 };

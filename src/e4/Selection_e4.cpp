@@ -13,8 +13,11 @@
 namespace gamemd {
 void Selection::SetCurrent()
 {
-  dword_B0FE54 = (int)this; /*0x731d00*/
-  byte_B0FE58 = 0; /*0x731d06*/
+  int result; // eax
+
+  *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] = this; /*0x731d00*/
+  IDA_LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 0; /*0x731d06*/
+  return result; /*0x731d0d*/
 }
 } // namespace gamemd
 // 0x732D00
@@ -33,19 +36,19 @@ int Selection::ClearGlobals()
   result = 0; /*0x734270*/
   if ( this ) /*0x734274*/
   {
-    if ( this == (void *)dword_B0FE5C ) /*0x734287*/
+    if ( this == (Selection *)g_BuildingLoadQueue_Array.QueueingCell[1] ) /*0x734287*/
     {
-      dword_B0FE5C = 0; /*0x734289*/
+      g_BuildingLoadQueue_Array.QueueingCell[1] = 0; /*0x734289*/
     }
-    else if ( this == (void *)dword_B0FE60 ) /*0x734295*/
+    else if ( this == (Selection *)g_BuildingLoadQueue_Array.NumberImpassableRows ) /*0x734295*/
     {
-      dword_B0FE60 = 0; /*0x734297*/
+      g_BuildingLoadQueue_Array.NumberImpassableRows = 0; /*0x734297*/
     }
   }
   else
   {
-    dword_B0FE5C = 0; /*0x734276*/
-    dword_B0FE60 = 0; /*0x73427b*/
+    g_BuildingLoadQueue_Array.QueueingCell[1] = 0; /*0x734276*/
+    g_BuildingLoadQueue_Array.NumberImpassableRows = 0; /*0x73427b*/
   }
   return result; /*0x734280*/
 }

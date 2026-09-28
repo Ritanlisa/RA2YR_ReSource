@@ -16,7 +16,7 @@ namespace gamemd {
 unsigned int * VectorCursor::Release()
 {
   ++this->q008; /*0x76f182*/
-  return this; /*0x76f185*/
+  return this->__pad_0; /*0x76f185*/
 }
 } // namespace gamemd
 // 0x76F190
@@ -24,7 +24,7 @@ namespace gamemd {
 unsigned int * VectorCursor::ddtor()
 {
   --this->q008; /*0x76f192*/
-  return this; /*0x76f195*/
+  return this->__pad_0; /*0x76f195*/
 }
 } // namespace gamemd
 // 0x4F42D0
@@ -32,7 +32,6 @@ namespace gamemd {
 void VectorCursor_uint_DynamicVectorClass_uint____13::Remove()
 {
   this->u32_C = 2; /*0x4f42d0*/
-}
 }
 // 0x4F4BB0
 namespace gamemd {
@@ -68,7 +67,6 @@ void VectorCursor_uint_DynamicVectorClass_uint____13::Count(int a2, int a3)
       this->u32_8 = -1 - v5; /*0x4f4bdd*/
     }
   }
-}
 }
 // 0x4F42A0
 namespace gamemd {

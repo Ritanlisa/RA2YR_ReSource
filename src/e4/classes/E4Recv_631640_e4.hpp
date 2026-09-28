@@ -8,7 +8,8 @@ struct E4Recv_631640 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     unsigned int M8;  // 0x8
-    unsigned int vtable3;
+    unsigned int vtable0;
+    unsigned int vtable2;
 // --- flat members (END) ---
     void sub_631640();  // 0x631640
 };

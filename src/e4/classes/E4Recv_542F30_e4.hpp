@@ -21,7 +21,8 @@ struct E4Recv_542F30 {
     unsigned int q1544;  // 0x1544
     unsigned int q5170;  // 0x5170
     unsigned int q5444;  // 0x5444
-    unsigned int u32_47;
+    unsigned int ambientSoundController;
+    unsigned int owningHouseIndex;
 // --- flat members (END) ---
     int sub_542F30();  // 0x542F30
 };

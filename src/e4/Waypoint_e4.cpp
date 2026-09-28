@@ -21,15 +21,15 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
   unsigned int *v6; // ecx
   int v7; // edi
   unsigned int *Element; // esi
-  char * v10;
+  signed int v10; // [esp+10h] [ebp-4h]
 
   v2 = (char *)((int)((char *)(0)));
-  v10 = (char *)((int)((char *)(0)));
+  v10 = (int)((char *)(0));
   for ( i = &this->u32_840; ; i += 4 ) /*0x5023bf*/
   {
     if ( !*(unsigned int *)i ) /*0x5023c5*/
     {
-      v4 = operator new(0x40u); /*0x5023cc*/
+      v4 = RA2_OPNEW(0x40u); /*0x5023cc*/
       if ( v4 ) /*0x5023d6*/
         v5 = WaypointPathClass::Construct((int)v4, v2); /*0x5023db*/
       else
@@ -53,28 +53,26 @@ unsigned int * Waypoint::FindByCell(IUnknown * aP1)
     v6 = *(unsigned int **)i; /*0x502424*/
     if ( ++v7 >= *(unsigned int *)(this->u32_878 ) /*0x50242a*/
     {
-      v2 = (char *)(v10);
+      v2 = v10; /*0x50242c*/
       goto LABEL_12; /*0x50242c*/
     }
   }
-}
 }
 // 0x53ECB0
 namespace gamemd {
 void * Waypoint::InitInvalid()
 {
-  *this = -1; /*0x53ecb4*/
-  this->ptr_4 = -1; /*0x53ecb6*/
-  this->ptr_8 = -1; /*0x53ecb9*/
-  this->u32_C = -1; /*0x53ecbc*/
-  this->u32_10 = -1; /*0x53ecbf*/
-  this->u32_14 = -1; /*0x53ecc2*/
-  this->u32_18 = -1; /*0x53ecc5*/
-  this->u32_1C = -1; /*0x53ecc8*/
-  this->q020 = -1; /*0x53eccb*/
-  this->q024 = -1; /*0x53ecce*/
-  return this; /*0x53ecd1*/
-}
+  this->__pad_0[0] = -1; /*0x53ecb4*/
+  this->__pad_0[1] = -1; /*0x53ecb6*/
+  this->__pad_0[2] = -1; /*0x53ecb9*/
+  this->__pad_0[3] = -1; /*0x53ecbc*/
+  this->__pad_0[4] = -1; /*0x53ecbf*/
+  this->__pad_0[5] = -1; /*0x53ecc2*/
+  this->__pad_0[6] = -1; /*0x53ecc5*/
+  this->__pad_0[7] = -1; /*0x53ecc8*/
+  this->__pad_0[8] = -1; /*0x53eccb*/
+  this->__pad_0[9] = -1; /*0x53ecce*/
+  return this->__pad_0; /*0x53ecd1*/
 }
 // 0x763A50
 namespace gamemd {
@@ -82,23 +80,24 @@ int Waypoint::FindCell(unsigned int * a2)
 {
   int v3; // ecx
   unsigned int *i; // edi
-  void * v6;
+  void *v6; // [esp+10h] [ebp-8h]
+  Waypoint *v7; // [esp+14h] [ebp-4h]
 
   v3 = 0; /*0x763a59*/
-  v6 = *(&this->ptr_44); /*0x763a64*/
-  if ( v6 <= 0 ) /*0x763a68*/
+  v7 = this; /*0x763a5b*/
+  v6 = this->field_38; /*0x763a64*/
+  if ( (int)v6 <= 0 ) /*0x763a68*/
     return 0; /*0x763adc*/
-  for ( i = (unsigned int *)*(&this->ptr_41); /*0x763a6e*/
+  for ( i = *(unsigned int **)&this->__pad_0[44]; /*0x763a6e*/
         (uint16_t)(*i / 256) != (uint16_t)(*a2 / 256)
      || (uint16_t)(i[1] / 256) != (uint16_t)(a2[1] / 256);
         i += 3 )
   {
-    if ( ++v3 >= v6 ) /*0x763ac5*/
+    if ( ++v3 >= (int)v6 ) /*0x763ac5*/
       return 0; /*0x763ac5*/
   }
-  this->q024 = v3; /*0x763ad0*/
+  *(unsigned int *)&v7->__pad_0[36] = v3; /*0x763ad0*/
   return 1; /*0x763acd*/
-}
 }
 // 0x763610
 namespace gamemd {
@@ -106,8 +105,8 @@ CHAR * Waypoint::To_String(CCINIClass * aP0)
 {
   if ( aP0 == -1 ) /*0x763613*/
   {
-    byte_B72654 = (unsigned char)((CHAR *)(0));
-    return (CHAR *)(&byte_B72654);
+    byte_B72654 = 0; /*0x763615*/
+    return &byte_B72654; /*0x76361c*/
   }
   else
   {

@@ -48,8 +48,7 @@ struct Waypoint {
     unsigned int q5444;  // 0x5444
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    void* ptr_41;
-    void* ptr_44;
+    unsigned int __pad_0;
 // --- flat members (END) ---
     unsigned int * FindByCell(IUnknown * aP1);  // 0x5023B0
     IPXManagerClass * InitInvalid();  // 0x53ECB0

@@ -14,71 +14,75 @@
 namespace gamemd {
 void CheckListClass_OnClick(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7)
 {
+  ListClass *v7; // ecx
+  ListClass *v8; // esi
   size_t *result; // eax
-  int v9; // edi
+  int ListClass_field_0x0C; // edi
   int Type; // ebx
-  int v11; // ecx
-  int v12; // eax
+  int v12; // ecx
   int v13; // eax
-  int v14; // eax
-  int v15; // [esp-20h] [ebp-114h]
-  size_t v16; // [esp-10h] [ebp-104h]
-  int v17; // [esp-10h] [ebp-104h]
-  unsigned int v18[4]; // [esp+4h] [ebp-F0h] BYREF
-  unsigned int v19[2]; // [esp+14h] [ebp-E0h] BYREF
-  unsigned char v20[16]; // [esp+1Ch] [ebp-D8h] BYREF
-  unsigned short v21[100]; // [esp+2Ch] [ebp-C8h] BYREF
+  int ListClass_field_0x10; // eax
+  int v15; // eax
+  int v16; // [esp-20h] [ebp-114h]
+  size_t v17; // [esp-10h] [ebp-104h]
+  int v18; // [esp-10h] [ebp-104h]
+  unsigned int v19[4]; // [esp+4h] [ebp-F0h] BYREF
+  unsigned int v20[2]; // [esp+14h] [ebp-E0h] BYREF
+  unsigned char v21[16]; // [esp+1Ch] [ebp-D8h] BYREF
+  unsigned short v22[100]; // [esp+2Ch] [ebp-C8h] BYREF
 
-  result = (size_t *)(*(int (__thiscall **)(unsigned int *))(*a1 + 148))(a1); /*0x48852b*/
-  if ( a3 < (int)result )
+  v8 = v7; /*0x488527*/
+  result = (size_t *)(*(int (**)(void))(*(unsigned int *)v7->__pad_0 + 148))(); /*0x48852b*/
+  if ( (int)this < (int)result )
   {
-    result = (size_t *)Array::GetClamped(a1, a3); /*0x488543*/
+    result = (size_t *)Array::GetClamped(v8, (int)this); /*0x488543*/
     if ( result )
     {
-      memset(&v21[1], 0, 198); /*0x488560*/
-      v16 = *result; /*0x48856b*/
-      v21[0] = *((unsigned char *)result + 4) != 0 ? 3 : 32;
-      v21[1] = (int)(32);
-      swprintf(&v21[2], v16, a2); /*0x488585*/
-      v9 = a1[11]; /*0x48858a*/
+      memset(&v22[1], 0, 198); /*0x488560*/
+      v17 = *result; /*0x48856b*/
+      v22[0] = *((unsigned char *)result + 4) != 0 ? 3 : 32;
+      v22[1] = 32; /*0x48857e*/
+      swprintf(&v22[2], v17, a2); /*0x488585*/
+      ListClass_field_0x0C = v8[1].ListClass_field_0x0C; /*0x48858a*/
       Type = BuildingAnim::GetType(); /*0x48859c*/
-      if ( a7 ) /*0x4885a7*/
+      if ( a6 ) /*0x4885a7*/
       {
-        v9 |= 0x2000u; /*0x4885b4*/
-        v11 = *(unsigned int *)(*((unsigned int *)BuildingTypeClass_AnimTable + Type) + 796); /*0x4885bd*/
-        if ( *(unsigned int *)(g_FileSystem_THEATER_PAL + 4) == 1 ) /*0x4885c9*/
-          v12 = *(uint8_t *)(*(unsigned int *)(g_FileSystem_THEATER_PAL + 372) + v11); /*0x4885d6*/
+        ListClass_field_0x0C |= 0x2000u; /*0x4885b4*/
+        v12 = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * Type) + 796); /*0x4885bd*/
+        if ( *(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 4) == 1 ) /*0x4885c9*/
+          v13 = *(uint8_t *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + v12); /*0x4885d6*/
         else
-          v12 = *(uint16_t *)(*(unsigned int *)(g_FileSystem_THEATER_PAL + 372) + 2 * v11); /*0x4885e2*/
-        v18[0] = a4; /*0x4885f4*/
-        v18[3] = a1[19]; /*0x4885fb*/
-        v18[1] = a5; /*0x488606*/
-        v18[2] = a6; /*0x48860a*/
-        (*(void (__thiscall **)(int, unsigned int *, int))(*(unsigned int *)g_DSurface_Hidden_2 + 20))( /*0x488615*/
+          v13 = *(uint16_t *)(*(unsigned int *)(*(unsigned int *)&stru_87F5F0.__pad_58[124] + 372) + 2 * v12); /*0x4885e2*/
+        v19[0] = a3; /*0x4885f4*/
+        v19[3] = v8[2].ListClass_field_0x0C; /*0x4885fb*/
+        v19[1] = a4; /*0x488606*/
+        v19[2] = a5; /*0x48860a*/
+        (*(void (__thiscall **)(AudioStream *, unsigned int *, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 20))( /*0x488615*/
           g_DSurface_Hidden_2,
-          v18,
-          v12);
+          v19,
+          v13);
       }
-      else if ( (v9 & 0x4000) == 0 ) /*0x488620*/
+      else if ( (ListClass_field_0x0C & 0x4000) == 0 ) /*0x488620*/
       {
-        v9 |= 0x1000u; /*0x488622*/
+        ListClass_field_0x0C |= 0x1000u; /*0x488622*/
       }
-      v13 = (unsigned int)(a1[12]);
-      v19[0] = (unsigned int)(a4);
-      v17 = (unsigned int)(v13);
-      v19[1] = (unsigned int)(a5);
-      v15 = *((unsigned int *)BuildingTypeClass_AnimTable + Type); /*0x488659*/
-      v14 = (*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2 + 120))(g_DSurface_Hidden_2, v20); /*0x488662*/
-      return FillRectangle(v18, (int)v21, g_DSurface_Hidden_2, v14, (int)v19, v15, 0, v9, a6, v17); /*0x488675*/
+      ListClass_field_0x10 = (unsigned int)(v8[1].ListClass_field_0x10);
+      v20[0] = (unsigned int)(a3);
+      v18 = (unsigned int)(ListClass_field_0x10);
+      v20[1] = a4; /*0x488644*/
+      v16 = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * Type); /*0x488659*/
+      v15 = (*(int (__thiscall **)(AudioStream *, unsigned char *))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 120))( /*0x488662*/
+              g_DSurface_Hidden_2,
+              v21);
+            return FillRectangle((IUnknown *)(/*0x488675*/                v19),                (int)v22,                (int)g_DSurface_Hidden_2,                v15,                (int)v20,                v16,                0,                ListClass_field_0x0C,                a5,                v18);
     }
   }
   return result; /*0x48867d*/
 }
-}
 // 0x4886B0
 int CheckListClass::COMStub()
 {
-  return *(&this->q0047); /*0x4886b3*/
+  return this->q044; /*0x4886b3*/
 }
 // 0x557E10
 int CheckListClass::ddtor(int a2)

@@ -43,7 +43,15 @@ struct E4Recv_4C2790 {
     unsigned int q5444;  // 0x5444
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int M42;
+    unsigned int abstractFlags;
+    unsigned int fallRate;
+    unsigned int owningHouseIndex;
+    unsigned int referenceCount;
+    unsigned int uniqueId;
+    unsigned int vtable0;
+    unsigned int vtable1;
+    unsigned int vtable2;
+    unsigned int vtable3;
 // --- flat members (END) ---
     int sub_4C2790();  // 0x4C2790
 };

@@ -11,7 +11,8 @@ struct E4Recv_5176D0 {
     unsigned int q034;  // 0x34
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
-    unsigned int u32_10;
+    unsigned int vtable0;
+    unsigned int vtable1;
 // --- flat members (END) ---
     char sub_5176D0(BYTE Data);  // 0x5176D0
 };

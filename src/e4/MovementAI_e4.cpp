@@ -12,44 +12,49 @@ namespace gamemd {
 int MovementAI::IsPathMovementAllowed()
 {
   unsigned int *v2; // esi
+  BOOL v3; // eax
 
-  if ( !g_WTFMode ) /*0x487e0b*/
-    return *(&this->MovementAI_field_184) != 0; /*0x487e0b*/
-  v2 = (unsigned int *)*(&this->MovementAI_field_147); /*0x487e0d*/
+  if ( !unk_A8E9A0 ) /*0x487e0b*/
+    return this->u32_100 != 0; /*0x487e0b*/
+  v2 = (unsigned int *)this->u32_E4; /*0x487e0d*/
   if ( !v2 ) /*0x487e15*/
-    return *(&this->MovementAI_field_184) != 0; /*0x487e15*/
+    return this->u32_100 != 0; /*0x487e15*/
   while ( (*(int (__thiscall **)(unsigned int *))(*v2 + 44))(v2) != 6 ) /*0x487e21*/
   {
     v2 = (unsigned int *)v2[12]; /*0x487e23*/
     if ( !v2 ) /*0x487e28*/
-      return *(&this->MovementAI_field_184) != 0; /*0x487e28*/
+      return this->u32_100 != 0; /*0x487e28*/
   }
-  return *(&this->MovementAI_field_184) != 1 && *(&this->MovementAI_field_184) != 0; /*0x487e48*/
+  if ( this->u32_100 == 1 ) /*0x487e45*/
+    IDA_LOBYTE(v3) = 0; /*0x487e48*/
+  else
+    return this->u32_100 != 0; /*0x487e2a*/
+  return v3; /*0x487e34*/
 }
 } // namespace gamemd
 // 0x4A5150
 namespace gamemd {
 int MovementAI::IsProgressAtEnd()
 {
-  int v1; // esi
+  int MovementAI_field_14; // esi
   int v2; // edx
-  int v3; // eax
+  int MovementAI_field_10; // eax
 
-  if ( !this->MovementAI_field_18 ) /*0x4a5150*/
+  if ( !IDA_LOBYTE(this->MovementAI_field_18) ) /*0x4a5150*/
     return 1; /*0x4a5150*/
-  v1 = this->MovementAI_field_14; /*0x4a515b*/
-  if ( !v1 ) /*0x4a5164*/
+  MovementAI_field_14 = this->MovementAI_field_14; /*0x4a515b*/
+  if ( !MovementAI_field_14 ) /*0x4a5164*/
     return 1; /*0x4a5164*/
-  v2 = this->u32_8; /*0x4a5166*/
-  v3 = this->u32_10; /*0x4a5169*/
+  v2 = this->m_Target[2]; /*0x4a5166*/
+  MovementAI_field_10 = this->MovementAI_field_10; /*0x4a5169*/
   if ( v2 != -1 ) /*0x4a516f*/
   {
-    if ( (int)g_CurrentFrame - v2 >= v3 ) /*0x4a517b*/
-      v3 = 0; /*0x4a5181*/
+    if ( *(unsigned int *)&stru_A8EB00.gapE4[416] - v2 >= MovementAI_field_10 ) /*0x4a517b*/
+      MovementAI_field_10 = 0; /*0x4a5181*/
     else
-      v3 -= (int)g_CurrentFrame - v2; /*0x4a517d*/
+      MovementAI_field_10 -= *(unsigned int *)&stru_A8EB00.gapE4[416] - v2; /*0x4a517d*/
   }
-  return (double)(v1 - v3) / (double)this->MovementAI_field_14 == 1.0; /*0x4a519e*/
+  return (double)(MovementAI_field_14 - MovementAI_field_10) / (double)this->MovementAI_field_14 == 1.0; /*0x4a519e*/
 }
 } // namespace gamemd
 // 0x4A5360
@@ -59,19 +64,19 @@ int MovementAI::Check()
   char result; // al
 
   result = 0; /*0x4a5363*/
-  if ( *(&this->u32_84) ) /*0x4a5360*/
+  if ( IDA_LOBYTE(this->MovementAI_field_18) ) /*0x4a5360*/
   {
-    if ( *(&this->u32_85) ) /*0x4a5369*/
+    if ( IDA_BYTE1(this->MovementAI_field_18) ) /*0x4a5369*/
     {
-      *(&this->u32_84) = 0; /*0x4a536e*/
-      *(&this->u32_85) = 1; /*0x4a5371*/
+      IDA_LOBYTE(this->MovementAI_field_18) = 0; /*0x4a536e*/
+      IDA_BYTE1(this->MovementAI_field_18) = 1; /*0x4a5371*/
     }
-    if ( *(&this->u32_84) ) /*0x4a5375*/
+    if ( IDA_LOBYTE(this->MovementAI_field_18) ) /*0x4a5375*/
     {
-      if ( !*(&this->u32_85) ) /*0x4a537a*/
+      if ( !IDA_BYTE1(this->MovementAI_field_18) ) /*0x4a537a*/
       {
-        *(&this->u32_84) = 0; /*0x4a537f*/
-        *(&this->u32_85) = 0; /*0x4a5382*/
+        IDA_LOBYTE(this->MovementAI_field_18) = 0; /*0x4a537f*/
+        IDA_BYTE1(this->MovementAI_field_18) = 0; /*0x4a5382*/
       }
     }
   }

@@ -386,7 +386,6 @@ int SwizzleManagerClass_19::FindItem(unsigned int * a2)
   }
   return result; /*0x6cf842*/
 }
-}
 // 0x6CF850
 namespace gamemd {
 VectorClass_flat * SwizzleManagerClass_19::QueryInterface(char a2)
@@ -394,15 +393,16 @@ VectorClass_flat * SwizzleManagerClass_19::QueryInterface(char a2)
   void *v3; // eax
 
   v3 = (void *)this->Items; /*0x6cf853*/
+  *(void **)this = (void*)&VectorClass_SwizzlePointerClass_vftable; /*0x6cf856*/
   if ( v3 && this->IsAllocated ) /*0x6cf860*/
   {
     RA2_OPDEL(v3); /*0x6cf868*/
     this->Items = 0; /*0x6cf870*/
   }
-  this->IsAllocated = (gamemd::VectorClass_flat *)(0);
-  this->Capacity = (unsigned int)((gamemd::VectorClass_flat *)(0));
+  this->IsAllocated = 0; /*0x6cf87b*/
+  this->Capacity = 0; /*0x6cf881*/
   if ( (a2 & 1) != 0 ) /*0x6cf888*/
-    RA2_OPDEL(); /*0x6cf88b*/
+    RA2_OPDEL(this); /*0x6cf88b*/
   return this; /*0x6cf895*/
 }
 } // namespace gamemd

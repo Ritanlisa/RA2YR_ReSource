@@ -35,13 +35,11 @@ struct E4Recv_528220 {
     unsigned int q2128;  // 0x2128
     unsigned int q5444;  // 0x5444
     unsigned int q5684;  // 0x5684
-    unsigned int abstractFlags6;
     unsigned int attachedBomb;
     unsigned int fallRate;
-    unsigned int q0A0;
-    unsigned int uniqueId0;
+    unsigned int owningHouseIndex;
+    unsigned int vtable1;
     unsigned int vtable2;
-    unsigned int vtable3;
 // --- flat members (END) ---
     int sub_528220(unsigned char * a2,  unsigned char * a3,  int a4);    // 0x528220
 };

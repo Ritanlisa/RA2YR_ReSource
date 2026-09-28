@@ -30,40 +30,52 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 // 0x4f4410
 int Hash::InsertOrdered(void* table, const void* entry)
 {
-  if ( (*(uint8_t (__thiscall **)(void *, int))(*(unsigned int *)table + 44))(table, entry) ) /*0x4f4418*/
-    return 0; /*0x4f441f*/
-  if ( dword_A8EF54 ) /*0x4f442c*/
-    (*(void (__thiscall **)(int, int))(*(unsigned int *)entry + 16))(entry, dword_A8EF54); /*0x4f4433*/
+  int result; // eax
+
+  result = (*(int (__thiscall **)(GScreenClass *, int))(table->parent_gap[0] + 44))(table, entry); /*0x4f4418*/
+  if ( (unsigned char)result ) /*0x4f441d*/
+  {
+    IDA_LOBYTE(result) = 0; /*0x4f441f*/
+  }
+  else if ( *(unsigned int *)&stru_A8EB00.gapE4[880] ) /*0x4f442c*/
+  {
+    result = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)entry + 16))(entry, *(unsigned int *)&stru_A8EB00.gapE4[880]); /*0x4f4433*/
+    IDA_LOBYTE(result) = 1; /*0x4f4436*/
+  }
   else
-    dword_A8EF54 = entry; /*0x4f443c*/
-  return 1; /*0x4f4421*/
+  {
+    *(unsigned int *)&stru_A8EB00.gapE4[880] = entry; /*0x4f443c*/
+    return 1; /*0x4f4442*/
+  }
+  return result; /*0x4f4421*/
 }
 // 0x69d960
 EditClass * * SHA1::Process(const void* data, uint32_t size)
 {
+  int *v5; // edi
   int v6; // ebx
 
-  *(unsigned char *)this = 0; /*0x69d96f*/
-  SHA1::ProcessBlock(&data, &size); /*0x69d972*/
+  this->__pad_0[0] = 0; /*0x69d96f*/
+  SHA1::ProcessBlock(this, (const void **)&data, &size); /*0x69d972*/
   size = size; /*0x69d977*/
   if ( size ) /*0x69d97d*/
   {
-    data = data; /*0x69d984*/
+    v5 = (int *)data; /*0x69d984*/
     if ( size / 64 > 0 ) /*0x69d98f*/
     {
       v6 = size / 64; /*0x69d996*/
       do /*0x69d9bb*/
       {
-        SHA1::Transform(data, this + 6); /*0x69d99c*/
-        data += 64; /*0x69d9ab*/
-        *(&this->u32_41) += 64; /*0x69d9ad*/
+        SHA1::Transform(v5, (unsigned int *)this + 6); /*0x69d99c*/
+        v5 += 16; /*0x69d9ab*/
+        this->u32_2C += 64; /*0x69d9ad*/
         --v6; /*0x69d9b6*/
         size -= 64; /*0x69d9b7*/
       }
       while ( v6 ); /*0x69d9bb*/
     }
-    data = data; /*0x69d9cb*/
-    return SHA1::ProcessBlock(&data, &size, unsigned int a2); /*0x69d9cf*/
+    data = (const void *)((int)v5);
+    return (int)SHA1::ProcessBlock(this, (const void **)&data, &size); /*0x69d9cf*/
   }
 }
 // 0x69d9e0
@@ -74,20 +86,20 @@ int SHA1::Compute(uint8_t digest[20], void * a1, void * a2)
   unsigned int v5; // ebx
   int v6; // edx
   uint16_t v7; // cx
-  unsigned int *v8; // ecx
+  int *p_SHA1_field_0x04; // ecx
   int v9; // esi
   unsigned int v10; // eax
-  unsigned char v12[20]; // [esp+14h] [ebp-54h] BYREF
-  unsigned int v13[16]; // [esp+28h] [ebp-40h] BYREF
+  unsigned int v12[5]; // [esp+14h] [ebp-54h] BYREF
+  int v13[16]; // [esp+28h] [ebp-40h] BYREF
 
-  if ( *(unsigned char *)this ) /*0x69d9e9*/
-    qmemcpy(a2, this + 1, 0x14u); /*0x69d9fb*/
-  v3 = *(this + 12); /*0x69d9fd*/
-  v4 = *(this + 11); /*0x69da00*/
-  qmemcpy(v13, this + 13, sizeof(v13)); /*0x69da14*/
+  if ( a1->__pad_0[0] ) /*0x69d9e9*/
+    qmemcpy(a2, &a1->SHA1_field_0x04, 0x14u); /*0x69d9fb*/
+  v3 = *((unsigned int *)a1 + 12); /*0x69d9fd*/
+  v4 = *((unsigned int *)a1 + 11); /*0x69da00*/
+  qmemcpy(v13, (char *)a1 + 52, sizeof(v13)); /*0x69da14*/
   v5 = v3 + v4; /*0x69da18*/
   *((unsigned char *)v13 + v3) = 0x80; /*0x69da29*/
-  qmemcpy(v12, this + 6, sizeof(v12)); /*0x69da2e*/
+  qmemcpy(v12, a1 + 1, sizeof(v12)); /*0x69da2e*/
   if ( 64 - v3 >= 9 ) /*0x69da30*/
   {
     v6 = v3 + 1; /*0x69da6a*/
@@ -104,18 +116,18 @@ int SHA1::Compute(uint8_t digest[20], void * a1, void * a2)
   IDA_HIBYTE(v7) = v5 >> 13; /*0x69da9e*/
   v13[15] = (v5 << 27) | (v5 << 11) & 0xFF0000 | v7; /*0x69dab8*/
   SHA1::Transform(v13, v12); /*0x69dac3*/
-  qmemcpy(this + 1, v12, 0x14u); /*0x69dad6*/
-  v8 = this + 1; /*0x69dad8*/
+  qmemcpy(&a1->SHA1_field_0x04, v12, 0x14u); /*0x69dad6*/
+  p_SHA1_field_0x04 = &a1->SHA1_field_0x04; /*0x69dad8*/
   v9 = 5; /*0x69dada*/
   do /*0x69db0b*/
   {
-    v10 = *v8++; /*0x69dadf*/
+    v10 = *p_SHA1_field_0x04++; /*0x69dadf*/
     --v9; /*0x69db07*/
-    *(v8 - 1, unsigned int a2) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((IDA_HIWORD(v10) | v10 & 0xFF0000) >> 8); /*0x69db08*/
+    *(p_SHA1_field_0x04 - 1) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((IDA_HIWORD(v10) | v10 & 0xFF0000) >> 8); /*0x69db08*/
   }
   while ( v9 ); /*0x69db0b*/
-  *(unsigned char *)this = 1; /*0x69db18*/
-  qmemcpy(a2, this + 1, 0x14u, unsigned int a1); /*0x69db1c*/
+  a1->__pad_0[0] = 1; /*0x69db18*/
+  qmemcpy(a2, &a1->SHA1_field_0x04, 0x14u); /*0x69db1c*/
   return 20; /*0x69db1e*/
 }
 // 0x69db30
@@ -145,9 +157,9 @@ void SHA1::Transform(void * a1, void * a2)
   unsigned int v23; // edx
   unsigned int v24; // ebx
   unsigned int v25; // eax
-  int v26; // ebx
+  unsigned int v26; // ebx
   int v27; // edx
-  unsigned int result; // eax
+  int result; // eax
   unsigned int *v29; // [esp+10h] [ebp-160h]
   int v30; // [esp+14h] [ebp-15Ch]
   int v31; // [esp+18h] [ebp-158h]
@@ -176,7 +188,7 @@ void SHA1::Transform(void * a1, void * a2)
     v10 = v6[6] ^ v6[11]; /*0x69db8c*/
     ++v6; /*0x69db8e*/
     --v7; /*0x69db9e*/
-    v6[13] = (2 * (v9 ^ v8 ^ v10, unsigned int a2)) | ((v9 ^ v8 ^ (unsigned int)v10) >> 31); /*0x69db9f*/
+    v6[13] = (2 * (v9 ^ v8 ^ v10)) | ((v9 ^ v8 ^ (unsigned int)v10) >> 31); /*0x69db9f*/
   }
   while ( v7 ); /*0x69dba2*/
   v11 = 0; /*0x69dbb4*/
@@ -223,7 +235,7 @@ void SHA1::Transform(void * a1, void * a2)
     v13 = (v12 >> 2) | (v12 << 30); /*0x69dc68*/
     v11 = v31 + 1; /*0x69dc6e*/
     v12 = v15; /*0x69dc72*/
-    v21 = (unsigned int, unsigned int a2)(v31 + 1) < 0x50; /*0x69dc74*/
+    v21 = (unsigned int)(v31 + 1) < 0x50; /*0x69dc74*/
     v15 = v20; /*0x69dc77*/
     ++v31; /*0x69dc79*/
     ++v29; /*0x69dc7d*/
@@ -231,9 +243,9 @@ void SHA1::Transform(void * a1, void * a2)
   while ( v21 );
   v22 = (void *)(v12 + a2[1]);
   v23 = (void *)(a2[3]);
-  v24 = (unsigned int)((void *)(v20 + *a2));
-  v25 = (unsigned int)((void *)(a2[4]));
-  *a2 = (void *)(v24);
+  v24 = (void *)(v20 + *a2);
+  v25 = a2[4]; /*0x69dc9a*/
+  *a2 = v24; /*0x69dc9d*/
   v26 = v13 + a2[2]; /*0x69dca4*/
   a2[3] = v14 + v23; /*0x69dca6*/
   v27 = v32[4]; /*0x69dca9*/
@@ -345,5 +357,4 @@ int CRC32::Compute(const void* data, uint32_t size)
     while ( v6 ); /*0x4a1fde*/
   }
   return ~v5; /*0x4a1fe3*/
-}
 }

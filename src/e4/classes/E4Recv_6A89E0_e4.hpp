@@ -26,9 +26,8 @@ struct E4Recv_6A89E0 {
     unsigned int q5444;  // 0x5444
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
-    unsigned int u32_47;
-    unsigned int u32_48;
-    unsigned int u32_81;
+    unsigned int ambientSoundController;
+    unsigned int customSound_controller;
 // --- flat members (END) ---
     char sub_6A89E0(char a2);  // 0x6A89E0
 };

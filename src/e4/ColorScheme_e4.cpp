@@ -12,24 +12,29 @@ int ColorScheme::Destructor()
 {
   void (__thiscall ***v2)(unsigned int, int); // ecx
   int result; // eax
+  ColorScheme *v4; // [esp+4h] [ebp-4h] BYREF
 
-  if ( this->q304 ) /*0x68c8d4*/
-    free(*(void **)(&this->u32_1342)); /*0x68c8df*/
-  v2 = *(void (__thiscall ****)(unsigned int, int))(&this->u32_1380); /*0x68c8e7*/
-  this->q304 = 0; /*0x68c8ed*/
+  if ( this->data[193] ) /*0x68c8d4*/
+    free((void *)this->data[193]); /*0x68c8df*/
+  v2 = (void (__thiscall ***)(unsigned int, int))this->data[195]; /*0x68c8e7*/
+  this->data[193] = 0; /*0x68c8ed*/
   if ( v2 ) /*0x68c8f9*/
     (**v2)(v2, 1); /*0x68c8ff*/
-  this->u32_30C = 0; /*0x68c905*/
-  result = (*(int (__thiscall **)(int *, int *))(ColorScheme_Array + 16))(&ColorScheme_Array, &this); /*0x68c91f*/
-  if ( result != -1 && result < g_AnimClass_SaveState && result < --g_AnimClass_SaveState ) /*0x68c93b*/
+  this->data[195] = 0; /*0x68c905*/
+  v4 = this; /*0x68c91b*/
+  result = (*(int (__thiscall **)(_VectorClass_PAVColorScheme *, ColorScheme **))(*(unsigned int *)stru_B054D0.__pad_0 + 16))( /*0x68c91f*/
+             &stru_B054D0,
+             &v4);
+  if ( result != -1 && result < *(int *)stru_B054D0.__tail_10 ) /*0x68c930*/
   {
-    do /*0x68c953*/
+    --*(unsigned int *)stru_B054D0.__tail_10; /*0x68c935*/
+    for ( ; /*0x68c93b*/
+          result < *(int *)stru_B054D0.__tail_10;
+          *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * result - 4) = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3]
+                                                                                   + 4 * result) )
     {
       ++result; /*0x68c943*/
-      *((unsigned int *)BuildingTypeClass_AnimTable + result - 1) = *((unsigned int *)BuildingTypeClass_AnimTable + result); /*0x68c947*/
     }
-    while ( result < g_AnimClass_SaveState ); /*0x68c953*/
   }
   return result; /*0x68c925*/
-}
 }

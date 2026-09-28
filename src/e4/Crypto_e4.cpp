@@ -9,8 +9,8 @@
 namespace gamemd {
 bool Crypto_Helper(unsigned int * a0, unsigned int * a1, unsigned int * a2, Crypto * aP3, int a5)
 {
-  Crypto * result;
-  unsigned int v7; // esi
+  bool result; // al
+  Crypto * v7;
   Crypto * v8;
 
   if ( !a5 ) /*0x5c6a3a*/
@@ -18,10 +18,10 @@ bool Crypto_Helper(unsigned int * a0, unsigned int * a1, unsigned int * a2, Cryp
   result = aP3; /*0x5c6a47*/
   do /*0x5c6a89*/
   {
-    v7 = (unsigned int)(*a1 + *a2);
-    v8 = (gamemd::Crypto *)((unsigned int)(v7 + aP3));
-    result = (gamemd::Crypto *)((unsigned int)(v7 < *a1 || result && !v8));
-    *a0 = (unsigned int)(v8);
+    v7 = (gamemd::Crypto *)((unsigned int)((gamemd::Crypto *)(*a1 + *a2)));
+    v8 = (gamemd::Crypto *)(v7 + aP3);
+    result = (gamemd::Crypto *)(v7 < *a1 || result && !v8);
+    *a0 = v8; /*0x5c6a75*/
     ++a2; /*0x5c6a77*/
     ++a1; /*0x5c6a7a*/
     ++a0; /*0x5c6a7d*/

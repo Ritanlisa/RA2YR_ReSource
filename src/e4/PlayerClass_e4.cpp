@@ -13,10 +13,10 @@ int PlayerClass::SetHouse(int a2)
 {
   char result; // al
 
-  result = this->vt_slot_4(a2); /*0x5d8cbb*/
+  result = (*(int (__thiscall **)(MultiplayerTeam *, int))(*(unsigned int *)this->__pad_0 + 4))(this, a2); /*0x5d8cbb*/
   if ( result ) /*0x5d8cc0*/
   {
-    *(unsigned int *)(*(unsigned int *)(Game_PlayerInfoArray + 4 * a2) + 107) = this->q008; /*0x5d8cd5*/
+    *(unsigned int *)(dword_A8DA78[a2] + 107) = this->q008; /*0x5d8cd5*/
     return 1; /*0x5d8cd8*/
   }
   return result; /*0x5d8cc2*/
@@ -28,12 +28,12 @@ char PlayerClass::AssignPlayerIndex()
 {
   int i; // esi
 
-  for ( i = 0; i < Game_PlayerCount; ++i ) /*0x5d62ca*/
+  for ( i = 0; i < dword_A8DA84; ++i ) /*0x5d62ca*/
   {
-    if ( SessionClass::GetPlayerSide(*(unsigned int *)(Game_PlayerInfoArray + 4 * i)) == -3 ) /*0x5d62dc*/
-      *(unsigned int *)(*(unsigned int *)(Game_PlayerInfoArray + 4 * i) + 107) = -1; /*0x5d62e7*/
+    if ( SessionClass::GetPlayerSide((int *)dword_A8DA78[i]) == -3 ) /*0x5d62dc*/
+      *(unsigned int *)(dword_A8DA78[i] + 107) = -1; /*0x5d62e7*/
     else
-      *(unsigned int *)(*(unsigned int *)(Game_PlayerInfoArray + 4 * i) + 107) = i; /*0x5d62f8*/
+      *(unsigned int *)(dword_A8DA78[i] + 107) = i; /*0x5d62f8*/
   }
   return 1; /*0x5d6307*/
 }

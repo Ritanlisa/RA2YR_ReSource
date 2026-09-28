@@ -14,31 +14,31 @@
 namespace gamemd {
 HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
 {
-  IStream *v2; // edi
+  int *v2; // edi
   int v3; // ebx
-  int v4; // eax
-  LPVOID *v5; // esi
+  ILocomotion *Piggybackee; // eax
+  LPVOID *p_Piggybackee; // esi
 
-  v2 = (IStream *)pStm; /*0x4af787*/
-  v3 = SwizzleManager::SaveLoad(a1, pStm); /*0x4af792*/
+  v2 = (int)(pStm);
+  v3 = SwizzleManager::SaveLoad((int *)a1->__pad_0, pStm); /*0x4af792*/
   if ( v3 < 0 ) /*0x4af796*/
     return v3; /*0x4af796*/
   if ( a1 ) /*0x4af79a*/
   {
-    a1[26] = 0; /*0x4af79c*/
-    *a1 = (int)&DriveLocomotionClass_vftable; /*0x4af7a3*/
-    a1[1] = (int)&DriveLocomotionClass_vftable; /*0x4af7a9*/
-    a1[6] = (int)&off_7E7E8C; /*0x4af7b0*/
+    a1->Piggybackee = 0; /*0x4af79c*/
+    *(unsigned int *)a1->__pad_0 = (void*)&DriveLocomotionClass_vftable; /*0x4af7a3*/
+    *(unsigned int *)&a1->__pad_0[4] = (void*)&DriveLocomotionClass_vftable; /*0x4af7a9*/
+    *(unsigned int *)a1->__pad_18 = &off_7E7E8C; /*0x4af7b0*/
   }
-  v2->lpVtbl->Read(v2, &pStm, 1, 0); /*0x4af7c3*/
+  (*(void (__stdcall **)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x4af7c3*/
   if ( !(unsigned char)pStm ) /*0x4af7cc*/
     return v3; /*0x4af7f8*/
-  v4 = a1[26]; /*0x4af7ce*/
-  v5 = (LPVOID *)(a1 + 26); /*0x4af7d1*/
-  if ( v4 ) /*0x4af7d6*/
-    (*(void (__stdcall **)(int))(*(unsigned int *)v4 + 8))(v4); /*0x4af7db*/
-  *v5 = 0; /*0x4af7e5*/
-  return OleLoadFromStream(v2, &IID_ILocomotion, v5); /*0x4af7f1*/
+  Piggybackee = a1->Piggybackee; /*0x4af7ce*/
+  p_Piggybackee = (LPVOID *)&a1->Piggybackee; /*0x4af7d1*/
+  if ( Piggybackee ) /*0x4af7d6*/
+    (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4af7db*/
+  *p_Piggybackee = 0; /*0x4af7e5*/
+  return OleLoadFromStream((LPSTREAM)v2, &IID_ILocomotion, p_Piggybackee); /*0x4af7f1*/
 }
 } // namespace gamemd
 // 0x4AF800
@@ -46,41 +46,44 @@ namespace gamemd {
 HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
 {
   IStream *v3; // esi
-  int *v4; // edi
-  int v5; // ebx
-  struct IStreamVtbl *lpVtbl; // ecx
-  int (__stdcall ***v7)(unsigned int, void *, int **); // eax
+  DriveLocomotionClass *v4; // edi
+  int IPersistStream; // ebx
+  ILocomotion * v6;
+  ILocomotion *Piggybackee; // eax
   int v8; // edi
-  IPersistStream *v9; // ebx
+  int *v9; // ebx
   HRESULT v10; // esi
-  IStream v12; // edx
+  int v12; // edx
 
-  v3 = (IStream *)pPStm; /*0x4af806*/
-  v4 = a1; /*0x4af80b*/
-  v5 = LoadIPersistStream(a1, pPStm, a3); /*0x4af817*/
-  if ( v5 < 0 ) /*0x4af81b*/
-    return v5; /*0x4af81b*/
-  if ( !v4[26] ) /*0x4af826*/
+  v3 = (gamemd::IStream *)((gamemd::DriveLocomotionClass *)((IStream *)pPStm));
+  v4 = (gamemd::DriveLocomotionClass *)(a1);
+  IPersistStream = LoadIPersistStream((LocomotionClass *)a1, pPStm, a3); /*0x4af817*/
+  if ( IPersistStream < 0 ) /*0x4af81b*/
+    return IPersistStream; /*0x4af81b*/
+  if ( !v4->Piggybackee ) /*0x4af826*/
   {
-    v12.lpVtbl = v3->lpVtbl; /*0x4af8c3*/
+    v12 = *(unsigned int *)v3->__pad_0; /*0x4af8c3*/
     IDA_LOBYTE(a3) = 0; /*0x4af8cf*/
-    v12.lpVtbl->Write(v3, &a3, 1, 0); /*0x4af8d4*/
-    return v5; /*0x4af8d8*/
+    (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x4af8d4*/
+    return IPersistStream; /*0x4af8d8*/
   }
-  lpVtbl = (gamemd::DriveLocomotionClass::LoadFromStream::IStreamVtbl *)(v3->lpVtbl);
+  v6 = (int)((gamemd::ILocomotion *)(*(unsigned int *)v3->__pad_0));
   IDA_LOBYTE(a3) = 1; /*0x4af838*/
-  lpVtbl->Write(v3, &a3, 1, 0); /*0x4af83d*/
-  v7 = (int (__stdcall ***)(unsigned int, void *, int **))v4[26]; /*0x4af840*/
+  (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x4af83d*/
+  Piggybackee = v4->Piggybackee; /*0x4af840*/
   pPStm = 0; /*0x4af843*/
-  if ( v7 ) /*0x4af84d*/
+  if ( Piggybackee ) /*0x4af84d*/
   {
-    v8 = (**v7)(v7, &unk_820270, &a1); /*0x4af85e*/
+    v8 = (**(int (__stdcall ***)(ILocomotion *, void *, DriveLocomotionClass **))Piggybackee)( /*0x4af85e*/
+           Piggybackee,
+           &unk_820270,
+           &a1);
     if ( v8 >= 0 ) /*0x4af862*/
     {
-      v9 = (IPersistStream *)a1; /*0x4af87b*/
+      v9 = (int *)a1; /*0x4af87b*/
       if ( pPStm ) /*0x4af881*/
         (*(void (__stdcall **)(int *))(*pPStm + 8))(pPStm); /*0x4af886*/
-      pPStm = (int *)v9; /*0x4af889*/
+      pPStm = v9; /*0x4af889*/
     }
     else
     {
@@ -105,7 +108,7 @@ int DriveLocomotionClass::ddtor(int a1, unsigned int * a2)
   *a2 = 1247291201; /*0x4b4846*/
   a2[1] = 298948665; /*0x4b484e*/
   a2[2] = -1610610249; /*0x4b4857*/
-  a2[3] = -777003740; /*0x4b4860*/
+  a2[3] = unk_7E9A3C; /*0x4b4860*/
   return 0; /*0x4b483d*/
 }
 } // namespace gamemd
@@ -120,15 +123,17 @@ int DriveLocomotionClass::StubReturn112()
 namespace gamemd {
 DriveLocomotionClass * DriveLocomotionClass::ProcessMove(char a2)
 {
-  int v3; // eax
+  ILocomotion *Piggybackee; // eax
 
-  this->vtable3 = &off_7E7E8C; /*0x4b4d10*/
-  v3 = *(&this->u32_86); /*0x4b4d17*/
-  if ( v3 ) /*0x4b4d1c*/
-    (*(void (__stdcall **)(int))(v3->q008)(v3); /*0x4b4d21*/
-  LocomotionClass::Construct(); /*0x4b4d26*/
+  *(unsigned int *)this->__pad_0 = (void*)&DriveLocomotionClass_vftable; /*0x4b4d03*/
+  *(unsigned int *)&this->__pad_0[4] = (void*)&DriveLocomotionClass_vftable; /*0x4b4d09*/
+  *(unsigned int *)this->__pad_18 = &off_7E7E8C; /*0x4b4d10*/
+  Piggybackee = this->Piggybackee; /*0x4b4d17*/
+  if ( Piggybackee ) /*0x4b4d1c*/
+    (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b4d21*/
+  LocomotionClass::Construct((LocomotionClass *)this); /*0x4b4d26*/
   if ( (a2 & 1) != 0 ) /*0x4b4d30*/
-    RA2_OPDEL(); /*0x4b4d33*/
-  return this; /*0x4b4d3d*/
+    RA2_OPDEL(this); /*0x4b4d33*/
+  return this->__pad_0; /*0x4b4d3d*/
 }
 } // namespace gamemd

@@ -40,17 +40,14 @@ struct Shroud {
     unsigned int q5280;  // 0x5280
     unsigned int q5284;  // 0x5284
     unsigned int q5288;  // 0x5288
-    unsigned int u32_181;
-    unsigned int u32_183;
-    unsigned int u32_184;
-    unsigned int u32_185;
-    unsigned int u32_20C6;
-    unsigned int u32_20C7;
-    unsigned int u32_20C8;
-    unsigned int u32_20C9;
-    unsigned int u32_2100;
-    unsigned int u32_2101;
-    unsigned int u32_2102;
+    unsigned int RadarClass_field_0x1490;
+    unsigned int RadarClass_field_0x1494;
+    unsigned int RadarClass_field_0x1498;
+    unsigned int RadarClass_field_0x149C;
+    unsigned int RadarClass_field_0x14A4;
+    unsigned int __pad_14A0;
+    unsigned int __pad_14A8;
+    unsigned int __pad_C0;
 // --- flat members (END) ---
     RadarClass * * ProcessCellVisibility(MouseClass * aP1);
 };

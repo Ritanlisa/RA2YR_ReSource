@@ -21,133 +21,127 @@ int Map::GetInvalidCoord() {
   v2[2] = dword_887688; /*0x4104dd*/
   return (int)v2; /*0x4104e0*/
 }
-}
-}
 // 0x4F28B0
 namespace gamemd { namespace wdt { 
 bool Map::CanScroll() {
-  return this->Height < *(unsigned int *)(this->Width + 16); /*0x4f28bd*/
-}
-}
+  return this->Height < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x4f28bd*/
 }
 // 0x4F3A90
 namespace gamemd { namespace wdt { 
 int State::SetIfChanged(int a1) {
+  int result; // eax
   int v3; // edx
 
-  a1 = a1; /*0x4f3a90*/
-  if ( (unsigned char)a1 != this->ScenIndex ) /*0x4f3a99*/
+  result = a1; /*0x4f3a90*/
+  if ( (unsigned char)a1 != IDA_LOBYTE(this->AIPlayers) ) /*0x4f3a99*/
   {
-    v3 = *(unsigned int *)this; /*0x4f3a9b*/
-    this->ScenIndex = a1; /*0x4f3a9e*/
+    v3 = *(unsigned int *)this->__pad_0; /*0x4f3a9b*/
+    IDA_LOBYTE(this->AIPlayers) = a1; /*0x4f3a9e*/
     return (*(int (__stdcall **)(int))(v3 + 16))(a1); /*0x4f3aa1*/
   }
-}
-}
+  return result; /*0x4f3aa4*/
 }
 // 0x5C2500
 namespace gamemd { namespace wdt { 
 void Campaign::SetupMovie() {
-  HWND v2; // ebx
-  char *v3; // edi
-  int *v4; // ebp
-  int v5; // ecx
-  int v6; // esi
-  int v7; // edx
-  int v8; // ecx
-  int v9; // eax
-  int *v10; // ebp
-  int ResourceID2; // esi
+  int result; // eax
+  HWND v3; // ebx
+  ObjectClass *v4; // edi
+  CampaignCoop *v5; // ebp
+  int v6; // ecx
+  int v7; // esi
+  int v8; // edx
+  int *v9; // ecx
+  int **v10; // ebp
+  int ResourceID2CSF; // esi
   int v12; // ebx
-  HWND GameUI; // eax
-  int v14; // [esp+10h] [ebp-14h] BYREF
-  int v15; // [esp+14h] [ebp-10h] BYREF
-  int v18; // [esp+20h] [ebp-4h]
+  int v13; // [esp+10h] [ebp-14h] BYREF
+  int v14; // [esp+14h] [ebp-10h] BYREF
+  MovieClass *v16; // [esp+1Ch] [ebp-8h]
+  int v17; // [esp+20h] [ebp-4h]
 
-  v2 = hDlg; /*0x5c2504*/
-  v3 = 0; /*0x5c250b*/
-  v4 = this; /*0x5c250d*/
+  v3 = hDlg; /*0x5c2504*/
+  v4 = 0; /*0x5c250b*/
+  v5 = (CampaignCoop *)this; /*0x5c250d*/
+  v16 = (MovieClass *)this; /*0x5c2511*/
   if ( hDlg ) /*0x5c2515*/
   {
-    v5 = *(&this->ptr_507); /*0x5c251b*/
-    v6 = dword_A8BB0C; /*0x5c2521*/
-    dword_A8BB0C = dword_A8BB0C; /*0x5c252b*/
-    v14 = 0; /*0x5c2536*/
-    Movie::GetSection((int)&g_DDrawSurfaceManager, v5, &v15); /*0x5c253a*/
-    v7 = v15; /*0x5c253f*/
-    if ( v15 ) /*0x5c2545*/
+    v6 = this->q33C; /*0x5c251b*/
+    v7 = unk_A8BB0C; /*0x5c2521*/
+    unk_A8BB0C = unk_A8BB0C; /*0x5c252b*/
+    v13 = 0; /*0x5c2536*/
+    IDA_LOBYTE(result) = Movie::GetSection((int)&g_DDrawSurfaceManager, v6, &v14); /*0x5c253a*/
+    v8 = v14; /*0x5c253f*/
+    if ( v14 ) /*0x5c2545*/
     {
-      if ( v15->NeedsSaveOrLink ) /*0x5c254b*/
+      if ( v14->NeedsSaveOrLink ) /*0x5c254b*/
       {
-        v8 = v4[16]; /*0x5c2554*/
-        if ( v8 ) /*0x5c2559*/
+        v9 = (int *)v5[16]; /*0x5c2554*/
+        if ( v9 ) /*0x5c2559*/
         {
-          if ( Movie::GetState(v8, &v14) ) /*0x5c2560*/
+          if ( (uint8_t)Movie::GetState(v9, &v13) ) /*0x5c2560*/
           {
-            v9 = v14; /*0x5c2579*/
+            result = v13; /*0x5c2579*/
           }
           else
           {
-            v9 = 0; /*0x5c2569*/
-            v14 = 0; /*0x5c256b*/
+            result = 0; /*0x5c2569*/
+            v13 = 0; /*0x5c256b*/
           }
-          v7 = v15; /*0x5c257d*/
+          v8 = v14; /*0x5c257d*/
         }
         else
         {
-          v9 = 0; /*0x5c2571*/
-          v14 = 0; /*0x5c2573*/
+          result = 0; /*0x5c2571*/
+          v13 = 0; /*0x5c2573*/
         }
-        if ( v9 < v7->NeedsSaveOrLink ) /*0x5c2584*/
+        if ( result < v8->NeedsSaveOrLink ) /*0x5c2584*/
         {
-          v18 = *(unsigned int *)(*(unsigned int *)(v7->abstractFlags + 4 * v9) + 16); /*0x5c2595*/
-          if ( v6 > 0 ) /*0x5c2599*/
+          v17 = *(unsigned int *)(*(unsigned int *)(v8->abstractFlags + 4 * result) + 16); /*0x5c2595*/
+          if ( v7 > 0 ) /*0x5c2599*/
           {
-            v10 = &g_NetworkPlayerName; /*0x5c259b*/
+            v10 = (int **)dword_A8DA90; /*0x5c259b*/
             do /*0x5c260f*/
             {
-              ResourceID2 = GetResourceID2CSF(v3); /*0x5c25ab*/
-              MovieClass::ReadConfig(v2, ResourceID2); /*0x5c25af*/
-              if ( v18 <= 1 ) /*0x5c25b9*/
+              ResourceID2CSF = GetResourceID2CSF(v4); /*0x5c25ab*/
+              MovieClass::ReadConfig(v16, v3, ResourceID2CSF); /*0x5c25af*/
+              if ( v17 <= 1 ) /*0x5c25b9*/
               {
-                v12 = SideClass::FindByName(**(void ***)(*(unsigned int *)(v15->abstractFlags + 4 * v14) + 4)); /*0x5c25ee*/
-                SetupLobbyCountryCombo(hDlg, ResourceID2, v12); /*0x5c25f3*/
+                v12 = SideClass::FindByName(**(SideClass ***)(*(unsigned int *)(v14->abstractFlags + 4 * v13) + 4)); /*0x5c25ee*/
+                SetupLobbyCountryCombo(hDlg, ResourceID2CSF, v12); /*0x5c25f3*/
                 SessionClass::SetPlayerOption(*v10, v12); /*0x5c25fc*/
-                v2 = hDlg; /*0x5c2601*/
+                v3 = hDlg; /*0x5c2601*/
               }
               else
               {
-                SetupLobbyCountryCombo(v2, ResourceID2, -2); /*0x5c25c1*/
+                SetupLobbyCountryCombo(v3, ResourceID2CSF, -2); /*0x5c25c1*/
                 SessionClass::SetPlayerOption(*v10, -2); /*0x5c25cb*/
               }
-              ++v3; /*0x5c2609*/
+              v4 = (ObjectClass *)((char *)v4 + 1); /*0x5c2609*/
               ++v10; /*0x5c260a*/
             }
-            while ( (int)v3 < dword_A8BB0C ); /*0x5c260f*/
-            v4 = this; /*0x5c2611*/
-            v6 = dword_A8BB0C; /*0x5c2615*/
+            while ( (int)v4 < unk_A8BB0C ); /*0x5c260f*/
+            v5 = (CampaignCoop *)v16; /*0x5c2611*/
+            v7 = unk_A8BB0C; /*0x5c2615*/
           }
-          DisableCampaignSlots(v2, v6); /*0x5c261b*/
-          GameUI = (HWND)Dialog::FindGameUI(); /*0x5c2620*/
-          if ( GameUI ) /*0x5c2627*/
-            CampaignCoop::Setup(v4, GameUI, 1); /*0x5c262e*/
+          DisableCampaignSlots(v3, v7); /*0x5c261b*/
+          result = Dialog::FindGameUI(); /*0x5c2620*/
+          if ( result ) /*0x5c2627*/
+            return CampaignCoop::Setup(v5, (HWND)result, 1); /*0x5c262e*/
         }
       }
     }
   }
-}
-}
+  return result; /*0x5c2633*/
 }
 // 0x76BFE0
 namespace gamemd { namespace wdt { 
 int Conflict::GetOwnerHouse() {
-  int v1; // eax
+  int Outcome; // eax
 
-  v1 = *(this + 3); /*0x76bfe0*/
-  if ( v1 ) /*0x76bfe5*/
-    return *(unsigned int *)(v1 + 36) - 1; /*0x76bfea*/
+  Outcome = this->Outcome; /*0x76bfe0*/
+  if ( Outcome ) /*0x76bfe5*/
+    return *(unsigned int *)(Outcome + 36) - 1; /*0x76bfea*/
   else
     return 0; /*0x76bfec*/
-}
-}
 }

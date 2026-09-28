@@ -17,6 +17,7 @@ struct E4Recv_56AF40 {
     unsigned int M244;  // 0xF4
     unsigned int M248;  // 0xF8
     unsigned int q128;  // 0x128
+    unsigned int u32_13C;  // 0x13C
     unsigned int M320;  // 0x140
     unsigned int q244;  // 0x244
     unsigned int q248;  // 0x248

@@ -13,7 +13,8 @@ struct BufferIOFile {
     unsigned int u32_150;  // 0x150
     unsigned int q1634;  // 0x1634
     unsigned int q5684;  // 0x5684
-    unsigned int u32_204;
+    unsigned int __pad_0;
+    unsigned int m_54;
 // --- flat members (END) ---
     void* Constructor(char * Source);  // 0x47A9D0
     unsigned char * Init();  // 0x47AA30

@@ -205,9 +205,9 @@ int CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds, vo
     {
       IDA_BYTE1(v5) |= 0x80u; /*0x48e5b8*/
       *a3 = v5; /*0x48e5be*/
-      if ( (a2 & 0x40) != 0 && (this->overlayTypeIndex & 0x10) != 0 ) /*0x48e5c6*/
+      if ( (a2 & 0x40) != 0 && (this->vtable3 & 0x10) != 0 ) /*0x48e5c6*/
       {
-        IDA_BYTE1(v5, unsigned int a3) |= 0x40u; /*0x48e5c8*/
+        IDA_BYTE1(v5) |= 0x40u; /*0x48e5c8*/
         *a3 = v5; /*0x48e5cb*/
       }
     }
@@ -218,8 +218,8 @@ int CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds, vo
   }
   v6 = this->attached1; /*0x48e5d5*/
   if ( v6 ) /*0x48e5da*/
-    (*(void (__thiscall **)(int, int, unsigned int *, int))(*(unsigned int *)v6 + 76))(v6, a2, a3, this); /*0x48e5e1*/
-  return COMObject::ActivateThunk(a2, a3, 0); /*0x48e5ef*/
+    (*(void (__thiscall **)(int, int, unsigned int *, ControlClass *))(*(unsigned int *)v6 + 76))(v6, a2, a3, this); /*0x48e5e1*/
+  return COMObject::ActivateThunk((GadgetClass *)this, a2, (int)a3, 0); /*0x48e5ef*/
 }
 // 0x7235a0
 int CellClass::RegisterForRedraw(void * a1, void * a2)
@@ -236,23 +236,18 @@ int CellClass::RegisterForRedraw(void * a1, void * a2)
   int v13; // [esp+Ch] [ebp-4h]
   float v14; // [esp+14h] [ebp+4h]
 
-  v13 = Cell::PosToIndex(a2); /*0x7235b8*/
-  result = CellCoord::To_CellObj(&MapClass_Instance, a2); /*0x7235bc*/
+  v13 = Cell::PosToIndex((Cell *)a2); /*0x7235b8*/
+  result = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2); /*0x7235bc*/
   if ( result[286] < 0xBu ) /*0x7235c8*/
   {
-    if ( this->CellClass_field_10C > Object::ComputeAllocationSize() - 10 ) /*0x7235de*/
-      BuildingClass::RebuildOccupancy2((int **)this); /*0x7235e2*/
-    *(unsigned int *)(this->unknown118 + 8 * this->CellClass_field_10C) = *(unsigned int *)a2; /*0x7235f6*/
-    *(float *)(this->unknown118 + 8 * this->CellClass_field_10C + 4) = (float)((int)g_CurrentFrame /*0x723632*/
-                                                                                  + (int)abs32(
-                                                                                           Random::State(
-                                                                                             (unsigned int *)g_ScenarioClass_Instance
-                                                                                           + 134))
-                                                                                  % 50);
-    v4 = this->CellClass_field_10C; /*0x723636*/
-    v5 = *(unsigned int **)(&this->CellClass_field_6C2); /*0x723642*/
-    v6 = this->unknown118 + 8 * v4; /*0x723648*/
-    this->CellClass_field_10C = v4 + 1; /*0x72364c*/
+    if ( *(unsigned int *)a1->CellClass_field_10C > Object::ComputeAllocationSize() - 10 ) /*0x7235de*/
+      BuildingClass::RebuildOccupancy2((BuildingClass *)a1); /*0x7235e2*/
+    *(unsigned int *)(*(unsigned int *)&a1->unknown118 + 8 * *(unsigned int *)a1->CellClass_field_10C) = *(unsigned int *)a2; /*0x7235f6*/
+    *(float *)(*(unsigned int *)&a1->unknown118 + 8 * *(unsigned int *)a1->CellClass_field_10C + 4) = (float)(*(unsigned int *)&stru_A8EB00.gapE4[416] + (int)abs32(Random::State((Random *)&unk_A8B230[14].NeedsSaveOrLink)) % 50); /*0x723632*/
+    v4 = *(unsigned int *)a1->CellClass_field_10C; /*0x723636*/
+    v5 = *(unsigned int **)a1->unknown110; /*0x723642*/
+    v6 = *(unsigned int *)&a1->unknown118 + 8 * v4; /*0x723648*/
+    *(unsigned int *)a1->CellClass_field_10C = v4 + 1; /*0x72364c*/
     v7 = *v5 + 1; /*0x723657*/
     v14 = v6->q004; /*0x72365a*/
     v6 = v6; /*0x723661*/
@@ -282,7 +277,7 @@ int CellClass::RegisterForRedraw(void * a1, void * a2)
       if ( v6 < v5[4] ) /*0x7236ae*/
         v5[4] = v6; /*0x7236b0*/
     }
-    result = *(unsigned char **)(&this->CellClass_field_6C6); /*0x7236b3*/
+    result = *(unsigned char **)a1->unknown114; /*0x7236b3*/
     result[v13] = 1; /*0x7236be*/
   }
   return result; /*0x7236c2*/
@@ -308,32 +303,32 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
 
   IDA_LOBYTE(v3) = on_bridge; /*0x47e8a0*/
   if ( on_bridge ) /*0x47e8ae*/
-    v5 = this->q0E8; /*0x47e8b0*/
+    v5 = this->u32_E8; /*0x47e8b0*/
   else
-    v5 = this->q0E4; /*0x47e8b8*/
+    v5 = this->u32_E4; /*0x47e8b8*/
   if ( content ) /*0x47e8c4*/
   {
     if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) == 6 && v5 ) /*0x47e8d9*/
     {
-      for ( i = v5->u32_30; i; i = *(unsigned int *)(i + 48) ) /*0x47e8e0*/
+      for ( i = v5->Wobbles; i; i = *(unsigned int *)(i + 48) ) /*0x47e8e0*/
         v5 = i; /*0x47e8e2*/
-      v5->u32_30 = content; /*0x47e8eb*/
+      v5->Wobbles = content; /*0x47e8eb*/
       content[12] = 0; /*0x47e8ee*/
     }
     else if ( on_bridge ) /*0x47e8fd*/
     {
-      if ( !v5 || v5->u32_30 != content ) /*0x47e906*/
+      if ( !v5 || v5->Wobbles != content ) /*0x47e906*/
       {
         content[12] = v5; /*0x47e908*/
-        this->q0E8 = content; /*0x47e90b*/
+        this->u32_E8 = content; /*0x47e90b*/
       }
     }
-    else if ( !v5 || v5->u32_30 != content ) /*0x47e91a*/
+    else if ( !v5 || v5->Wobbles != content ) /*0x47e91a*/
     {
       content[12] = v5; /*0x47e91c*/
-      this->q0E4 = content; /*0x47e91f*/
+      this->u32_E4 = content; /*0x47e91f*/
     }
-    v18 = this->q024; /*0x47e929*/
+    v18 = this->u32_24; /*0x47e929*/
     v13 = 128; /*0x47e94b*/
     v14 = 128; /*0x47e94f*/
     inited = Isometric::InitTables(this, &v13); /*0x47e953*/
@@ -341,7 +336,7 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
     v16 = (IDA_SHIWORD(v18) << 8) + 128; /*0x47e966*/
     v17 = inited; /*0x47e96a*/
     if ( !Cell::IsPassable(&v15) /*0x47e9cf*/
-      && (v19 = this->q024,
+      && (v19 = this->u32_24,
           v13 = 128,
           v14 = 128,
           v8 = Isometric::InitTables(this, &v13),
@@ -362,8 +357,8 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
         if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47ea0e*/
         {
           v9 = (int)(*(int16_t *)(&this->vtable46));
-          v10 = (int)(*(int16_t *)(&this->vtable48));
-          v11 = (int)(*content);
+          v10 = *(int16_t *)(&this->vtable48); /*0x47ea14*/
+          v11 = *content; /*0x47ea18*/
           v17 = 0; /*0x47ea1b*/
           v15 = (v9 << 8) + 128; /*0x47ea2e*/
           v16 = (v10 << 8) + 128; /*0x47ea3c*/
@@ -373,7 +368,7 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
           v15 = (int)(content[39]);
           v11 = (int)(*content);
           v16 = (int)(content[40]);
-          v17 = (int)(content[41]);
+          v17 = content[41]; /*0x47ea74*/
         }
         IDA_LOBYTE(v3) = (*(int (__thiscall **)(unsigned int *, int *))(v11 + 240))(content, &v15); /*0x47ea43*/
       }
@@ -430,8 +425,8 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
     if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47eb1f*/
     {
       v6 = (int)(*(int16_t *)(this + 36));
-      v7 = (int)(*(int16_t *)(this + 38));
-      v8 = (int)(*content);
+      v7 = *(int16_t *)(this + 38); /*0x47eb25*/
+      v8 = *content; /*0x47eb29*/
       v11 = 0; /*0x47eb2b*/
       v9 = (v6 << 8) + 128; /*0x47eb3c*/
       v10 = (v7 << 8) + 128; /*0x47eb50*/
@@ -441,7 +436,7 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
       v9 = (int)(content[39]);
       v8 = (int)(*content);
       v10 = (int)(content[40]);
-      v11 = (int)(content[41]);
+      v11 = content[41]; /*0x47eb85*/
     }
     (*(void (__thiscall **)(unsigned int *, int *))(v8 + 244))(content, &v9); /*0x47eb54*/
   }
@@ -552,18 +547,18 @@ bool CellClass::IsShrouded() const
 // 0x4876f0
 void CellClass::Unshroud()
 {
-  int v1; // eax
+  int copyFlags; // eax
   int result; // eax
 
-  v1 = (int)(*(this + 75));
-  IDA_LOBYTE(v1) = v1 | 0x18; /*0x4876f6*/
-  *(this + 75) = v1; /*0x4876f8*/
-  result = *(this + 76); /*0x4876fe*/
+  copyFlags = this->copyFlags; /*0x4876f0*/
+  IDA_LOBYTE(copyFlags) = copyFlags | 0x18; /*0x4876f6*/
+  this->copyFlags = copyFlags; /*0x4876f8*/
+  result = this->shroudCounter; /*0x4876fe*/
   if ( result > 0 ) /*0x487706*/
   {
-    result = (int)(*(this + 80));
+    result = this->flags[0]; /*0x487708*/
     IDA_LOBYTE(result) = result | 0x20; /*0x48770e*/
-    *(this + 80) = result; /*0x487710*/
+    this->flags[0] = result; /*0x487710*/
   }
   return result; /*0x487716*/
 }
@@ -656,11 +651,11 @@ const wchar_t* CellClass::GetUIName() const
 {
   int BuildingByTiberiumType; // eax
 
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*(this + 17)); /*0x484ff3*/
+  BuildingByTiberiumType = FindBuildingByTiberiumType(*(unsigned int *)&this->__pad_28[28]); /*0x484ff3*/
   if ( BuildingByTiberiumType == -1 ) /*0x484ffb*/
     return 0; /*0x48500a*/
   else
-    return *(unsigned int *)(*(unsigned int *)&BuildingClass_InstanceArray->gap0[4 * BuildingByTiberiumType] + 96); /*0x485006*/
+    return *(const wchar_t **)(*(unsigned int *)(g_BuildingLoadQueue_Array.TurretAnimData[2] + 4 * BuildingByTiberiumType) + 96); /*0x485006*/
 }
 int CellClass::GetContainedTiberiumIndex() const
 {
@@ -682,8 +677,8 @@ bool CellClass::IncreaseTiberium(int idx_tiberium, int amount)
 // 0x480a80
 void CellClass::ReduceTiberium(int amount)
 {
-  int *v3; // edi
-  int *v4; // eax
+  int *PlacementRect; // edi
+  int *StartCoords; // eax
   int v5; // ecx
   int v6; // edx
   int v7; // ebp
@@ -694,10 +689,10 @@ void CellClass::ReduceTiberium(int amount)
   int v12; // edx
   int v13; // ecx
   int v14; // ebx
-  int v15; // eax
+  int BuildingByTiberiumType; // eax
   int v16; // ebx
-  int v17; // ebp
-  unsigned short *v18; // esi
+  CellClass *v17; // ebp
+  int *v18; // esi
   int i; // edi
   int v20; // eax
   int v22; // [esp+10h] [ebp-3Ch]
@@ -708,40 +703,40 @@ void CellClass::ReduceTiberium(int amount)
   char v31[16]; // [esp+2Ch] [ebp-20h] BYREF
   char v32[16]; // [esp+3Ch] [ebp-10h] BYREF
 
-  v3 = (int *)BuildingClass::GetPlacementRect(v31); /*0x480a97*/
-  v4 = (int *)House::GetStartCoords(v32); /*0x480a9c*/
-  if ( v4[2] <= 0 || v4[3] <= 0 ) /*0x480ab1*/
+  PlacementRect = (int *)(BuildingClass::GetPlacementRect((BuildingClass *)this, (int *)v31));
+  StartCoords = House::GetStartCoords((House *)this, v32); /*0x480a9c*/
+  if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x480ab1*/
   {
-    v12 = *v3; /*0x480b44*/
-    v13 = v3[1]; /*0x480b46*/
-    v14 = v3[2]; /*0x480b49*/
-    v9 = v3[3]; /*0x480b4c*/
+    v12 = *PlacementRect; /*0x480b44*/
+    v13 = PlacementRect[1]; /*0x480b46*/
+    v14 = PlacementRect[2]; /*0x480b49*/
+    v9 = PlacementRect[3]; /*0x480b4c*/
   }
   else
   {
-    v22 = v3[2]; /*0x480abc*/
-    if ( v22 <= 0 || (v25 = v3[3], v25 <= 0) ) /*0x480acb*/
+    v22 = PlacementRect[2]; /*0x480abc*/
+    if ( v22 <= 0 || (v25 = PlacementRect[3], v25 <= 0) ) /*0x480acb*/
     {
-      v12 = *v4; /*0x480b37*/
-      v13 = v4[1]; /*0x480b39*/
-      v14 = v4[2]; /*0x480b3c*/
-      v9 = v4[3]; /*0x480b3f*/
+      v12 = *StartCoords; /*0x480b37*/
+      v13 = StartCoords[1]; /*0x480b39*/
+      v14 = StartCoords[2]; /*0x480b3c*/
+      v9 = StartCoords[3]; /*0x480b3f*/
     }
     else
     {
-      v5 = *v4; /*0x480acd*/
-      v6 = *v3; /*0x480acf*/
-      v7 = v4[2]; /*0x480ad1*/
-      v8 = v4[1]; /*0x480ad4*/
-      v9 = v4[3]; /*0x480ad7*/
+      v5 = *StartCoords; /*0x480acd*/
+      v6 = *PlacementRect; /*0x480acf*/
+      v7 = StartCoords[2]; /*0x480ad1*/
+      v8 = StartCoords[1]; /*0x480ad4*/
+      v9 = StartCoords[3]; /*0x480ad7*/
       v28 = v7; /*0x480adc*/
-      if ( v5 > *v3 ) /*0x480ae0*/
+      if ( v5 > *PlacementRect ) /*0x480ae0*/
       {
         v7 += v5 - v6; /*0x480ae4*/
-        v5 = *v3; /*0x480ae6*/
+        v5 = *PlacementRect; /*0x480ae6*/
         v28 = v7; /*0x480ae8*/
       }
-      v10 = v3[1]; /*0x480aec*/
+      v10 = PlacementRect[1]; /*0x480aec*/
       v10 = v10; /*0x480af1*/
       if ( v8 > v10 ) /*0x480af5*/
       {
@@ -760,41 +755,41 @@ void CellClass::ReduceTiberium(int amount)
     }
   }
   v12 = v12; /*0x480b4f*/
-  v27 = v13 - g_Map_VisibleRect; /*0x480b5f*/
+  v27 = v13 - (unsigned int)DSurface_ViewBounds.field_4; /*0x480b5f*/
   v14 = v14; /*0x480b66*/
   v9 = v9; /*0x480b6a*/
-  v15 = FindBuildingByTiberiumType(this->q044); /*0x480b6e*/
+  BuildingByTiberiumType = FindBuildingByTiberiumType(*(&this->vtable27)); /*0x480b6e*/
   v16 = v23; /*0x480b73*/
-  if ( v23 <= 0 || v15 == -1 ) /*0x480b82*/
+  if ( v23 <= 0 || BuildingByTiberiumType == -1 ) /*0x480b82*/
     return 0; /*0x480ca3*/
-  v17 = *((unsigned int *)BuildingClass_InstanceArray + v15); /*0x480b8e*/
-  if ( this->u8_11E == 11 ) /*0x480b99*/
-    CellClass::RegisterForRedraw(&this->q00C6); /*0x480ba1*/
-  if ( *(uint8_t *)(&this->q0706) + 1 <= v16 ) /*0x480bb9*/
+  v17 = *(CellClass **)(g_BuildingLoadQueue_Array.TurretAnimData[2] + 4 * BuildingByTiberiumType); /*0x480b8e*/
+  if ( this->u32_11E == 11 ) /*0x480b99*/
+    CellClass::RegisterForRedraw(v17, (int16_t *)&this->vtable28); /*0x480ba1*/
+  if ( *((uint8_t *)&this->estimatedHealth6) + 1 <= v16 ) /*0x480bb9*/
   {
-    v16 = *(uint8_t *)(&this->q0706); /*0x480bc8*/
-    this->q044 = -1; /*0x480bce*/
-    this->u8_11E = 0; /*0x480bd5*/
-    House::AnnounceUpgrade(this, -1); /*0x480bdc*/
-    v18 = (unsigned short *)(&this->q00C6); /*0x480be1*/
-    BuildingClass::AddUpgrade(v18); /*0x480bea*/
-    CellClass::ClearCrateStateForAll(v18); /*0x480bf1*/
+    v16 = *((uint8_t *)&this->estimatedHealth6); /*0x480bc8*/
+    *(&this->vtable27) = -1; /*0x480bce*/
+    this->u32_11E = 0; /*0x480bd5*/
+    House::AnnounceUpgrade((int)this, -1); /*0x480bdc*/
+    v18 = &this->objectTypeFlags; /*0x480be1*/
+    BuildingClass::AddUpgrade((int *)&stru_87F5F0.__pad_58[416], (int)v18); /*0x480bea*/
+    CellClass::ClearCrateStateForAll((CellClass *)v18); /*0x480bf1*/
     for ( i = 0; i < 8; ++i ) /*0x480bf6*/
     {
       v20 = i & 7; /*0x480bfa*/
-      IDA_LOWORD(v23) = *v18 + IDA_LOWORD(Direction_X_Offsets[v20]); /*0x480c1b*/
-      IDA_HIWORD(v23) = v18[1] + IDA_HIWORD(Direction_X_Offsets[v20]); /*0x480c24*/
+      IDA_LOWORD(v23) = *(unsigned short *)v18 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v20 + 82]); /*0x480c1b*/
+      IDA_HIWORD(v23) = *((unsigned short *)v18 + 1) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v20 + 82]); /*0x480c24*/
       v23 = v23; /*0x480c33*/
-      if ( (uint8_t)LayerClass::CoordinatesLegal(&v23) ) /*0x480c37*/
+      if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], (int16_t *)&v23) ) /*0x480c37*/
       {
-        if ( !*(unsigned char *)(Cell::PosToIndex(&v23) + *(unsigned int *)(v17 + 248)) ) /*0x480c4f*/
-          BuildingClass::AddOccupancy(&v23); /*0x480c5c*/
+        if ( !*((unsigned char *)&v17->radSite->vtable0 + Cell::PosToIndex((Cell *)&v23)) ) /*0x480c4f*/
+          BuildingClass::AddOccupancy(v17->mapCoords, (int16_t *)&v23); /*0x480c5c*/
       }
     }
   }
   else
   {
-    this->u8_11E -= v16; /*0x480bbd*/
+    this->u32_11E -= v16; /*0x480bbd*/
   }
   Cell::CreateCrater(v12, v27, v14, v9, 0); /*0x480c8f*/
   return v16; /*0x480c96*/
@@ -853,7 +848,6 @@ int CellClass::IsTunnelEntrance()
 {
   int16_t v1; // ax
 
-  v1 = *(unsigned short *)(this + 278); /*0x484ab0*/
-  return v1 >= 0 && v1 < g_UnitTypeCount && *(unsigned int *)(this + 236) == 10; /*0x484ad7*/
-}
+  v1 = IDA_HIWORD(this->passengers[0]); /*0x484ab0*/
+  return v1 >= 0 && v1 < FootClass_Array.primaryFacing[0] && this->radioLinks[3] == 10; /*0x484ad7*/
 }

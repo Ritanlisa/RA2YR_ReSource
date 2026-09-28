@@ -549,7 +549,7 @@ void NetworkAssignAddress(void* addr, void* port, int arg) {
   unsigned int *result; // eax
 
   result = this;
-  char * v5 = (char *)(this + 1);
+  char * v5 = &this->u32_4;
   *(unsigned int *)v5 = *(unsigned int *)a3;
   *((unsigned short *)v5 + 2) = *(unsigned short *)(a3 + 4);
   if ( dword_828140 == 1 )
@@ -605,7 +605,7 @@ void NetworkGetField(int port) {
     IDA_LOWORD(result) = result; /*0x542430*/
     IDA_LOBYTE(v3) = IDA_HIBYTE(result); /*0x542437*/
     IDA_HIBYTE(v3) = result; /*0x542439*/
-    *(this + 17) = v3; /*0x54243b*/
+    *(unsigned short *)this->Network_field_0x22 = v3; /*0x54243b*/
     return result; /*0x54243f*/
   }
     (void)mode;
@@ -653,13 +653,13 @@ void DumpNetworkStats() {
   {
     char result; // al
 
-    result = *(result + 12504); /*0x69bab0*/
+    result = result->q30D8; /*0x69bab0*/
     if ( !result ) /*0x69bab8*/
     {
       result = g_WTFMode; /*0x69babe*/
       if ( g_WTFMode ) /*0x69bac5*/
       {
-        *(result + 12504) = 1; /*0x69bac7*/
+        result->q30D8 = 1; /*0x69bac7*/
         if ( dword_83ED20 == -1 ) /*0x69bad6*/
           dword_83ED20 = *(unsigned int *)g_GameModeOptions; /*0x69badd*/
         if ( !*(unsigned int *)result ) /*0x69bae2*/
@@ -843,10 +843,10 @@ void NetworkShutdownInterface() {
   {
     int result; // eax
 
-    g_CurrentPlayerName[0] = 0; /*0x5da72b*/
-    if ( g_NetworkInterface ) /*0x5da732*/
-      result = (**(int (__thiscall ***)(int, int))g_NetworkInterface)(g_NetworkInterface, 1); /*0x5da738*/
-    g_NetworkInterface = 0; /*0x5da73a*/
+    IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x5da72b*/
+    if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x5da732*/
+      result = (***(int (__thiscall ****)(unsigned int, int))&stru_887598.isAliveFlag)(*(unsigned int *)&stru_887598.isAliveFlag, 1); /*0x5da738*/
+    *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x5da73a*/
     return result; /*0x5da740*/
   }
 // 0x5f9e80

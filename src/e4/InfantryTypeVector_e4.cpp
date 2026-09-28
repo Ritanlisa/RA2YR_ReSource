@@ -15,24 +15,30 @@
 namespace gamemd {
 int InfantryTypeVector::Add(InfantryTypeClass * aP1)
 {
-  int v3; // ecx
-  int v4; // eax
-  int v6; // eax
-  int v7; // edx
+  int InfantryTypeVector_field_0x08; // ecx
+  int InfantryTypeVector_field_0x14; // eax
+  int InfantryTypeVector_field_0x10; // eax
+  int InfantryTypeVector_field_0x04; // edx
 
-  v3 = this->q008; /*0x512f23*/
-  if ( this->q010 >= v3 ) /*0x512f2b*/
+  InfantryTypeVector_field_0x08 = this->InfantryTypeVector_field_0x08; /*0x512f23*/
+  if ( this->InfantryTypeVector_field_0x10 >= InfantryTypeVector_field_0x08 ) /*0x512f2b*/
   {
-    if ( !this->u8_D && v3 ) /*0x512f36*/
+    if ( !IDA_BYTE1(this->InfantryTypeVector_field_0x0C) && InfantryTypeVector_field_0x08 ) /*0x512f36*/
       return 0; /*0x512f36*/
-    v4 = this->q014; /*0x512f38*/
-    if ( v4 <= 0 || !this->vt_slot_8(v3 + v4, 0) ) /*0x512f48*/
+    InfantryTypeVector_field_0x14 = this->InfantryTypeVector_field_0x14; /*0x512f38*/
+    if ( InfantryTypeVector_field_0x14 <= 0 /*0x512f48*/
+      || !(*(uint8_t (__thiscall **)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)this->__pad_0 + 8))(
+            this,
+            InfantryTypeVector_field_0x08 + InfantryTypeVector_field_0x14,
+            0) )
+    {
       return 0; /*0x512f4f*/
+    }
   }
-  v6 = (unsigned int)(this->q010);
-  v7 = (unsigned int)(this->u32_4);
-  this->q010 = (unsigned int)(v6 + 1);
-  *(unsigned int *)(v7 + 4 * v6) = *aP1; /*0x512f68*/
+  InfantryTypeVector_field_0x10 = (unsigned int)(this->InfantryTypeVector_field_0x10);
+  InfantryTypeVector_field_0x04 = (unsigned int)(this->InfantryTypeVector_field_0x04);
+  this->InfantryTypeVector_field_0x10 = (unsigned int)(InfantryTypeVector_field_0x10 + 1);
+  *(unsigned int *)(InfantryTypeVector_field_0x04 + 4 * InfantryTypeVector_field_0x10) = *aP1; /*0x512f68*/
   return 1; /*0x512f51*/
 }
 } // namespace gamemd
@@ -40,41 +46,43 @@ int InfantryTypeVector::Add(InfantryTypeClass * aP1)
 namespace gamemd {
 unsigned int * InfantryTypeVector::Construct2(int a2, int a3)
 {
-  this->u32_4 = 0; /*0x5138fb*/
-  this->q008 = a2; /*0x5138fe*/
-  this->q00C = 1; /*0x513901*/
-  this->u8_D = 0; /*0x513905*/
+  this->InfantryTypeVector_field_0x04 = (unsigned int)(0);
+  this->InfantryTypeVector_field_0x08 = (unsigned int)(a2);
+  IDA_LOBYTE(this->InfantryTypeVector_field_0x0C) = 1; /*0x513901*/
+  IDA_BYTE1(this->InfantryTypeVector_field_0x0C) = 0; /*0x513905*/
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x513908*/
   if ( a2 ) /*0x51390e*/
   {
     if ( a3 ) /*0x513916*/
     {
-      this->u32_4 = (unsigned int *)(a3);
-      return (unsigned int *)(this);
+      this->InfantryTypeVector_field_0x04 = (unsigned int *)(a3);
+      return (unsigned int *)(this->__pad_0);
     }
-    this->u32_4 = (unsigned int)(operator new(4 * a2));
-    this->u8_D = 1; /*0x513930*/
+    this->InfantryTypeVector_field_0x04 = (unsigned int)(RA2_OPNEW(4 * a2));
+    IDA_BYTE1(this->InfantryTypeVector_field_0x0C) = 1; /*0x513930*/
   }
-  return (unsigned int *)(this);
+  return (unsigned int *)(this->__pad_0);
 }
 } // namespace gamemd
 // 0x5D89A0
 namespace gamemd {
 unsigned int * InfantryTypeVector::ConstructFromData(int a2, int a3)
 {
-  this->u32_4 = 0; /*0x5d89ab*/
-  this->q008 = a2; /*0x5d89ae*/
-  this->q00C = 1; /*0x5d89b1*/
-  this->u8_D = 0; /*0x5d89b5*/
+  this->InfantryTypeVector_field_0x04 = (unsigned int)(0);
+  this->InfantryTypeVector_field_0x08 = (unsigned int)(a2);
+  IDA_LOBYTE(this->InfantryTypeVector_field_0x0C) = 1; /*0x5d89b1*/
+  IDA_BYTE1(this->InfantryTypeVector_field_0x0C) = 0; /*0x5d89b5*/
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_InfantryTypeClass___vftable; /*0x5d89b8*/
   if ( a2 ) /*0x5d89be*/
   {
     if ( a3 ) /*0x5d89c6*/
     {
-      this->u32_4 = (unsigned int *)(a3);
-      return (unsigned int *)(this);
+      this->InfantryTypeVector_field_0x04 = (unsigned int *)(a3);
+      return (unsigned int *)(this->__pad_0);
     }
-    this->u32_4 = (unsigned int)(operator new(4 * a2));
-    this->u8_D = 1; /*0x5d89e0*/
+    this->InfantryTypeVector_field_0x04 = (unsigned int)(RA2_OPNEW(4 * a2));
+    IDA_BYTE1(this->InfantryTypeVector_field_0x0C) = 1; /*0x5d89e0*/
   }
-  return (unsigned int *)(this);
+  return (unsigned int *)(this->__pad_0);
 }
 } // namespace gamemd

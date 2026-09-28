@@ -22,16 +22,14 @@
 namespace gamemd {
 int CellClass::EnsureFileLoaded()
 {
-  if ( !this->q0A4 && this->u8_2F4 ) /*0x544c8d*/
-    MapClass::LoadFileData(); /*0x544c97*/
-  return this->q0A4 != 0; /*0x544ca9*/
-}
+  if ( !this->sensorsOfHouses[10] && this->u32_2F4 ) /*0x544c8d*/
+    MapClass::LoadFileData((MapClass *)this); /*0x544c97*/
+  return this->sensorsOfHouses[10] != 0; /*0x544ca9*/
 }
 // 0x56EF50
 namespace gamemd {
 HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
 {
-  IUnknown * v2;
   int v3; // ecx
   unsigned int v4; // eax
   unsigned char *v5; // eax
@@ -60,12 +58,12 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
   void *v28; // eax
   void *v29; // ecx
   void *v30; // eax
-  int16_t v32[4]; // [esp+Ch] [ebp-8h] BYREF
+  int16_t v3[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = (IUnknown *)(aP1);
+  aP1 = (IUnknown *)(aP1);
   v3 = (IUnknown *)(*CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)));
   aP1 = (IUnknown *)(v3);
-  *(unsigned int *)v32 = v3; /*0x56ef7d*/
+  *(unsigned int *)v3 = v3; /*0x56ef7d*/
   v4 = (int16_t)v3 + (IDA_SHIWORD(v3) << 9); /*0x56ef8c*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(g_Shroud_CellArray + 4 * v4)) != 0 ) /*0x56efa2*/
   {
@@ -85,7 +83,7 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
     }
     else if ( v7 == 8 ) /*0x56efc8*/
     {
-      CellClass::UpdateVariant3(v32, v2); /*0x56efd2*/
+      CellClass::UpdateVariant3(v3, aP1); /*0x56efd2*/
       SetCellClassOccupancyFlags((int)v6, v8, 0, 0); /*0x56efdd*/
       v6[286] = 0; /*0x56efe5*/
       *((unsigned int *)v6 + 17) = -1; /*0x56eff2*/
@@ -95,20 +93,20 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
   v9 = *((unsigned int *)v6 + 14) - g_TerrainBridgeIndex + 1; /*0x56f018*/
   if ( v9 == dword_ABC1E8 || v9 == dword_AA0E38 ) /*0x56f027*/
   {
-    IDA_LOBYTE(v9) = Cell::UpdateTileType(v32, 1, 0); /*0x56f2d7*/
+    IDA_LOBYTE(v9) = Cell::UpdateTileType(v3, 1, 0); /*0x56f2d7*/
   }
   else if ( v9 == g_TerrainSoundTable2 || v9 == g_TerrainSoundTable2 + 2 ) /*0x56f042*/
   {
-    IDA_LOBYTE(v9) = Cell::SetTileType(v32, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x56f2be*/
+    IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x56f2be*/
   }
   else if ( v9 == g_TerrainSoundTable2 + 3 ) /*0x56f04d*/
   {
-    CellClass::UpdateVariant3(v32, v2); /*0x56f05b*/
+    CellClass::UpdateVariant3(v3, aP1); /*0x56f05b*/
     if ( (v6[282] & 1) != 0 ) /*0x56f067*/
     {
-      IDA_HIWORD(aP1) = v32[1]; /*0x56f078*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x56f07d*/
-      v10 = (int16_t)(v32[0] - 1) + (v32[1] << 9); /*0x56f08b*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x56f078*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x56f07d*/
+      v10 = (int16_t)(v3[0] - 1) + (v3[1] << 9); /*0x56f08b*/
       if ( v10 < 0x40000 && (v11 = *(void **)(g_Shroud_CellArray + 4 * v10)) != 0 ) /*0x56f0a1*/
       {
         v12 = v11; /*0x56f0a3*/
@@ -119,9 +117,9 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v12); /*0x56f0b5*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x56f0c6*/
-      IDA_HIWORD(aP1) = v32[1] - 1; /*0x56f0cb*/
-      v13 = (int16_t)(v32[0] - 1) + ((int16_t)(v32[1] - 1) << 9); /*0x56f0d9*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x56f0c6*/
+      IDA_HIWORD(aP1) = v3[1] - 1; /*0x56f0cb*/
+      v13 = (int16_t)(v3[0] - 1) + ((int16_t)(v3[1] - 1) << 9); /*0x56f0d9*/
       if ( v13 < 0x40000 && (v14 = *(void **)(g_Shroud_CellArray + 4 * v13)) != 0 ) /*0x56f0ef*/
       {
         v15 = v14; /*0x56f0f1*/
@@ -132,9 +130,9 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v15); /*0x56f103*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x56f114*/
-      IDA_HIWORD(aP1) = v32[1] + 1; /*0x56f119*/
-      v16 = (int16_t)(v32[0] - 1) + ((int16_t)(v32[1] + 1) << 9); /*0x56f127*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x56f114*/
+      IDA_HIWORD(aP1) = v3[1] + 1; /*0x56f119*/
+      v16 = (int16_t)(v3[0] - 1) + ((int16_t)(v3[1] + 1) << 9); /*0x56f127*/
       if ( v16 < 0x40000 && (v17 = *(void **)(g_Shroud_CellArray + 4 * v16)) != 0 ) /*0x56f13d*/
       {
         v18 = v17; /*0x56f13f*/
@@ -145,12 +143,12 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v18); /*0x56f151*/
-      IDA_HIWORD(aP1) = v32[1]; /*0x56f15e*/
-      v19 = (int16_t)(v32[0] - 1); /*0x56f167*/
-      v20 = v32[1] << 9; /*0x56f16a*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x56f15e*/
+      v19 = (int16_t)(v3[0] - 1); /*0x56f167*/
+      v20 = v3[1] << 9; /*0x56f16a*/
       v21 = v19 + v20 < 0; /*0x56f16d*/
       v22 = v19 + v20; /*0x56f16d*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x56f16f*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x56f16f*/
       if ( v21 || v22 >= 0x40000 || (v23 = *(char **)(g_Shroud_CellArray + 4 * v22)) == 0 ) /*0x56f188*/
       {
         v23 = (char *)((int)((char *)&g_CellClassArray));
@@ -159,8 +157,8 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
     }
     else
     {
-      aP1 = (IUnknown *)(*(unsigned int *)v32);
-      v24 = v32[0] + (v32[1] << 9); /*0x56f1e9*/
+      aP1 = (IUnknown *)(*(unsigned int *)v3);
+      v24 = v3[0] + (v3[1] << 9); /*0x56f1e9*/
       if ( v24 < 0x40000 && (v25 = *(void **)(g_Shroud_CellArray + 4 * v24)) != 0 ) /*0x56f1ff*/
       {
         v26 = v25; /*0x56f201*/
@@ -171,8 +169,8 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v26); /*0x56f214*/
-      aP1 = *(unsigned int *)v32 - 0x10000; /*0x56f227*/
-      v27 = v32[0] + ((int16_t)(v32[1] - 1) << 9); /*0x56f235*/
+      aP1 = *(unsigned int *)v3 - 0x10000; /*0x56f227*/
+      v27 = v3[0] + ((int16_t)(v3[1] - 1) << 9); /*0x56f235*/
       if ( v27 < 0x40000 && (v28 = *(void **)(g_Shroud_CellArray + 4 * v27)) != 0 ) /*0x56f24b*/
       {
         v29 = v28; /*0x56f24d*/
@@ -183,21 +181,19 @@ HouseClass * * CellClass::UpdateVariant3(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v29); /*0x56f25f*/
-      aP1 = *(unsigned int *)v32 + 0x10000; /*0x56f277*/
+      aP1 = *(unsigned int *)v3 + 0x10000; /*0x56f277*/
       v30 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP1); /*0x56f28a*/
       CellClass::UpdateAnimations((int)v30); /*0x56f291*/
-      v23 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v32); /*0x56f2a2*/
+      v23 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v3); /*0x56f2a2*/
     }
-    IDA_LOBYTE(v9) = Cell::SetTileType(v32, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 3, -1, v23[283] - 4, 0); /*0x56f1c0*/
+    IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 3, -1, v23[283] - 4, 0); /*0x56f1c0*/
   }
   return v9; /*0x56f1c5*/
-}
 }
 // 0x56F2F0
 namespace gamemd {
 HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
 {
-  IUnknown * v2;
   int v3; // ecx
   unsigned int v4; // eax
   unsigned char *v5; // eax
@@ -226,12 +222,12 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
   void *v28; // eax
   void *v29; // ecx
   void *v30; // eax
-  int16_t v32[4]; // [esp+Ch] [ebp-8h] BYREF
+  int16_t v3[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = (IUnknown *)(aP1);
+  aP1 = (IUnknown *)(aP1);
   v3 = (IUnknown *)(*CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)));
   aP1 = (IUnknown *)(v3);
-  *(unsigned int *)v32 = v3; /*0x56f31d*/
+  *(unsigned int *)v3 = v3; /*0x56f31d*/
   v4 = (int16_t)v3 + (IDA_SHIWORD(v3) << 9); /*0x56f32c*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(g_Shroud_CellArray + 4 * v4)) != 0 ) /*0x56f342*/
   {
@@ -251,7 +247,7 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
     }
     else if ( v7 == 7 ) /*0x56f368*/
     {
-      CellClass::UpdateVariant4(v32, v2); /*0x56f372*/
+      CellClass::UpdateVariant4(v3, aP1); /*0x56f372*/
       SetCellClassOccupancyFlags((int)v6, v8, 0, 0); /*0x56f37d*/
       v6[286] = 0; /*0x56f385*/
       *((unsigned int *)v6 + 17) = -1; /*0x56f392*/
@@ -261,20 +257,20 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
   v9 = *((unsigned int *)v6 + 14) - g_TerrainBridgeIndex + 1; /*0x56f3b8*/
   if ( v9 == dword_ABC2B4 || v9 == dword_AA1130 ) /*0x56f3c7*/
   {
-    IDA_LOBYTE(v9) = Cell::UpdateTileType(v32, 1, 0); /*0x56f677*/
+    IDA_LOBYTE(v9) = Cell::UpdateTileType(v3, 1, 0); /*0x56f677*/
   }
   else if ( v9 == g_TerrainSoundTable2 || v9 == g_TerrainSoundTable2 + 1 ) /*0x56f3e2*/
   {
-    IDA_LOBYTE(v9) = Cell::SetTileType(v32, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x56f65e*/
+    IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x56f65e*/
   }
   else if ( v9 == g_TerrainSoundTable2 + 3 ) /*0x56f3ed*/
   {
-    CellClass::UpdateVariant4(v32, v2); /*0x56f3fb*/
+    CellClass::UpdateVariant4(v3, aP1); /*0x56f3fb*/
     if ( (v6[282] & 1) != 0 ) /*0x56f407*/
     {
-      IDA_HIWORD(aP1) = v32[1]; /*0x56f418*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x56f41d*/
-      v10 = (int16_t)(v32[0] - 1) + (v32[1] << 9); /*0x56f42b*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x56f418*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x56f41d*/
+      v10 = (int16_t)(v3[0] - 1) + (v3[1] << 9); /*0x56f42b*/
       if ( v10 < 0x40000 && (v11 = *(void **)(g_Shroud_CellArray + 4 * v10)) != 0 ) /*0x56f441*/
       {
         v12 = v11; /*0x56f443*/
@@ -285,9 +281,9 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v12); /*0x56f455*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x56f466*/
-      IDA_HIWORD(aP1) = v32[1] - 1; /*0x56f46b*/
-      v13 = (int16_t)(v32[0] - 1) + ((int16_t)(v32[1] - 1) << 9); /*0x56f479*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x56f466*/
+      IDA_HIWORD(aP1) = v3[1] - 1; /*0x56f46b*/
+      v13 = (int16_t)(v3[0] - 1) + ((int16_t)(v3[1] - 1) << 9); /*0x56f479*/
       if ( v13 < 0x40000 && (v14 = *(void **)(g_Shroud_CellArray + 4 * v13)) != 0 ) /*0x56f48f*/
       {
         v15 = v14; /*0x56f491*/
@@ -298,9 +294,9 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v15); /*0x56f4a3*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x56f4b4*/
-      IDA_HIWORD(aP1) = v32[1] + 1; /*0x56f4b9*/
-      v16 = (int16_t)(v32[0] - 1) + ((int16_t)(v32[1] + 1) << 9); /*0x56f4c7*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x56f4b4*/
+      IDA_HIWORD(aP1) = v3[1] + 1; /*0x56f4b9*/
+      v16 = (int16_t)(v3[0] - 1) + ((int16_t)(v3[1] + 1) << 9); /*0x56f4c7*/
       if ( v16 < 0x40000 && (v17 = *(void **)(g_Shroud_CellArray + 4 * v16)) != 0 ) /*0x56f4dd*/
       {
         v18 = v17; /*0x56f4df*/
@@ -311,12 +307,12 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v18); /*0x56f4f1*/
-      IDA_HIWORD(aP1) = v32[1]; /*0x56f4fe*/
-      v19 = (int16_t)(v32[0] - 1); /*0x56f507*/
-      v20 = v32[1] << 9; /*0x56f50a*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x56f4fe*/
+      v19 = (int16_t)(v3[0] - 1); /*0x56f507*/
+      v20 = v3[1] << 9; /*0x56f50a*/
       v21 = v19 + v20 < 0; /*0x56f50d*/
       v22 = v19 + v20; /*0x56f50d*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x56f50f*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x56f50f*/
       if ( v21 || v22 >= 0x40000 || (v23 = *(char **)(g_Shroud_CellArray + 4 * v22)) == 0 ) /*0x56f528*/
       {
         v23 = (char *)((int)((char *)&g_CellClassArray));
@@ -325,8 +321,8 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
     }
     else
     {
-      aP1 = (IUnknown *)(*(unsigned int *)v32);
-      v24 = v32[0] + (v32[1] << 9); /*0x56f589*/
+      aP1 = (IUnknown *)(*(unsigned int *)v3);
+      v24 = v3[0] + (v3[1] << 9); /*0x56f589*/
       if ( v24 < 0x40000 && (v25 = *(void **)(g_Shroud_CellArray + 4 * v24)) != 0 ) /*0x56f59f*/
       {
         v26 = v25; /*0x56f5a1*/
@@ -337,8 +333,8 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v26); /*0x56f5b4*/
-      aP1 = *(unsigned int *)v32 - 0x10000; /*0x56f5c7*/
-      v27 = v32[0] + ((int16_t)(v32[1] - 1) << 9); /*0x56f5d5*/
+      aP1 = *(unsigned int *)v3 - 0x10000; /*0x56f5c7*/
+      v27 = v3[0] + ((int16_t)(v3[1] - 1) << 9); /*0x56f5d5*/
       if ( v27 < 0x40000 && (v28 = *(void **)(g_Shroud_CellArray + 4 * v27)) != 0 ) /*0x56f5eb*/
       {
         v29 = v28; /*0x56f5ed*/
@@ -349,21 +345,19 @@ HouseClass * * CellClass::UpdateVariant4(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = (int)(aP1);
       }
       CellClass::UpdateAnimations((int)v29); /*0x56f5ff*/
-      aP1 = *(unsigned int *)v32 + 0x10000; /*0x56f617*/
+      aP1 = *(unsigned int *)v3 + 0x10000; /*0x56f617*/
       v30 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP1); /*0x56f62a*/
       CellClass::UpdateAnimations((int)v30); /*0x56f631*/
-      v23 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v32); /*0x56f642*/
+      v23 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v3); /*0x56f642*/
     }
-    IDA_LOBYTE(v9) = Cell::SetTileType(v32, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 3, -1, v23[283] - 4, 0); /*0x56f560*/
+    IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundTable2 + g_TerrainBridgeIndex + 3, -1, v23[283] - 4, 0); /*0x56f560*/
   }
   return v9; /*0x56f565*/
-}
 }
 // 0x56F8B0
 namespace gamemd {
 HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
 {
-  IUnknown * v2;
   int v3; // ecx
   unsigned int v4; // eax
   unsigned char *v5; // eax
@@ -391,12 +385,12 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
   void *v27; // ecx
   void *v28; // eax
   char *v29; // eax
-  int16_t v31[4]; // [esp+Ch] [ebp-8h] BYREF
+  int16_t v3[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = (IUnknown *)(aP1);
-  v3 = (IUnknown *)(*CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)));
-  aP1 = (IUnknown *)(v3);
-  *(unsigned int *)v31 = v3; /*0x56f8dd*/
+  aP1 = (IUnknown *)(aP1);
+  v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56f8d7*/
+  aP1 = v3; /*0x56f8d9*/
+  *(unsigned int *)v3 = v3; /*0x56f8dd*/
   v4 = (int16_t)v3 + (IDA_SHIWORD(v3) << 9); /*0x56f8ec*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(g_Shroud_CellArray + 4 * v4)) != 0 ) /*0x56f902*/
   {
@@ -404,8 +398,8 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
   }
   else
   {
-    g_Map_GlobalCellIndex = (int)((unsigned char *)(v3));
-    v6 = (unsigned char *)(&g_CellClassArray);
+    g_Map_GlobalCellIndex = (unsigned char *)(v3);
+    v6 = &g_CellClassArray; /*0x56f90e*/
   }
   if ( (char)v6[320] < 0 ) /*0x56f91a*/
   {
@@ -418,7 +412,7 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
       }
       else if ( v7 == 16 ) /*0x56f92c*/
       {
-        CellClass::UpdateTerrain(v31, v2); /*0x56f936*/
+        CellClass::UpdateTerrain(v3, aP1); /*0x56f936*/
         SetCellClassOccupancyFlags((int)v6, v8, 6u, 0); /*0x56f941*/
         v6[286] = 0; /*0x56f949*/
         *((unsigned int *)v6 + 17) = -1; /*0x56f956*/
@@ -429,108 +423,107 @@ HouseClass * * CellClass::UpdateTerrain(IUnknown * aP0, IUnknown * aP1)
   v9 = *((unsigned int *)v6 + 14) - g_TerrainBridgeIndex + 1; /*0x56f97c*/
   if ( v9 == dword_ABC1D0 || v9 == dword_AA1540 ) /*0x56f98b*/
   {
-    IDA_LOBYTE(v9) = Cell::UpdateTileType(v31, 1, 0); /*0x56fc66*/
+    IDA_LOBYTE(v9) = Cell::UpdateTileType(v3, 1, 0); /*0x56fc66*/
   }
   else if ( v9 == g_TerrainSoundConfig || v9 == g_TerrainSoundConfig + 2 ) /*0x56f9a6*/
   {
-    IDA_LOBYTE(v9) = Cell::SetTileType(v31, g_TerrainSoundConfig + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x56fc4d*/
+    IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundConfig + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x56fc4d*/
   }
   else if ( v9 == g_TerrainSoundConfig + 3 ) /*0x56f9b1*/
   {
-    CellClass::UpdateTerrain(v31, v2); /*0x56f9bf*/
-    v10 = v31[0] - 1; /*0x56f9d0*/
+    CellClass::UpdateTerrain(v3, aP1); /*0x56f9bf*/
+    v10 = v3[0] - 1; /*0x56f9d0*/
     if ( v6[282] <= 4u ) /*0x56f9d3*/
     {
-      IDA_LOWORD(aP1) = v31[0] - 1; /*0x56fb39*/
-      IDA_HIWORD(aP1) = v31[1]; /*0x56fb3e*/
-      v22 = v10 + (v31[1] << 9); /*0x56fb4c*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x56fb39*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x56fb3e*/
+      v22 = v10 + (v3[1] << 9); /*0x56fb4c*/
       if ( v22 < 0x40000 && (v23 = *(void **)(g_Shroud_CellArray + 4 * v22)) != 0 ) /*0x56fb62*/
       {
         v24 = v23; /*0x56fb64*/
       }
       else
       {
-        v24 = (void *)((int)(&g_CellClassArray));
-        g_Map_GlobalCellIndex = (int)(aP1);
+        v24 = &g_CellClassArray; /*0x56fb6c*/
+        g_Map_GlobalCellIndex = aP1; /*0x56fb71*/
       }
       CellClass::UpdateAnimations((int)v24); /*0x56fb76*/
-      aP1 = *(unsigned int *)v31; /*0x56fb88*/
-      v25 = v31[0] + (v31[1] << 9); /*0x56fb96*/
+      aP1 = *(unsigned int *)v3; /*0x56fb88*/
+      v25 = v3[0] + (v3[1] << 9); /*0x56fb96*/
       if ( v25 < 0x40000 && (v26 = *(void **)(g_Shroud_CellArray + 4 * v25)) != 0 ) /*0x56fbac*/
       {
         v27 = v26; /*0x56fbae*/
       }
       else
       {
-        v27 = (void *)((int)(&g_CellClassArray));
-        g_Map_GlobalCellIndex = (int)(aP1);
+        v27 = &g_CellClassArray; /*0x56fbb6*/
+        g_Map_GlobalCellIndex = aP1; /*0x56fbbb*/
       }
       CellClass::UpdateAnimations((int)v27); /*0x56fbc0*/
-      IDA_HIWORD(aP1) = v31[1]; /*0x56fbcf*/
-      IDA_LOWORD(aP1) = v31[0] + 1; /*0x56fbd4*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x56fbcf*/
+      IDA_LOWORD(aP1) = v3[0] + 1; /*0x56fbd4*/
       v28 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP1); /*0x56fbeb*/
       CellClass::UpdateAnimations((int)v28); /*0x56fbf2*/
-      v29 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v31); /*0x56fc03*/
-      IDA_LOBYTE(v9) = Cell::SetTileType(v31, g_TerrainSoundConfig + g_TerrainBridgeIndex + 3, -1, v29[283] - 4, 0); /*0x56fc2d*/
+      v29 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v3); /*0x56fc03*/
+      IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundConfig + g_TerrainBridgeIndex + 3, -1, v29[283] - 4, 0); /*0x56fc2d*/
     }
     else
     {
-      IDA_LOWORD(aP1) = v31[0] - 1; /*0x56f9dd*/
-      IDA_HIWORD(aP1) = v31[1] - 1; /*0x56f9e8*/
-      v11 = v10 + ((int16_t)(v31[1] - 1) << 9); /*0x56f9f3*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x56f9dd*/
+      IDA_HIWORD(aP1) = v3[1] - 1; /*0x56f9e8*/
+      v11 = v10 + ((int16_t)(v3[1] - 1) << 9); /*0x56f9f3*/
       if ( v11 < 0x40000 && (v12 = *(void **)(g_Shroud_CellArray + 4 * v11)) != 0 ) /*0x56fa09*/
       {
         v13 = v12; /*0x56fa0b*/
       }
       else
       {
-        v13 = (void *)((int)(&g_CellClassArray));
-        g_Map_GlobalCellIndex = (int)(aP1);
+        v13 = &g_CellClassArray; /*0x56fa13*/
+        g_Map_GlobalCellIndex = aP1; /*0x56fa18*/
       }
       CellClass::UpdateAnimations((int)v13); /*0x56fa1d*/
-      aP1 = *(unsigned int *)v31 - 0x10000; /*0x56fa32*/
-      v14 = v31[0] + ((int16_t)(v31[1] - 1) << 9); /*0x56fa40*/
+      aP1 = *(unsigned int *)v3 - 0x10000; /*0x56fa32*/
+      v14 = v3[0] + ((int16_t)(v3[1] - 1) << 9); /*0x56fa40*/
       if ( v14 < 0x40000 && (v15 = *(void **)(g_Shroud_CellArray + 4 * v14)) != 0 ) /*0x56fa56*/
       {
         v16 = v15; /*0x56fa58*/
       }
       else
       {
-        v16 = (void *)((int)(&g_CellClassArray));
-        g_Map_GlobalCellIndex = (int)(aP1);
+        v16 = &g_CellClassArray; /*0x56fa60*/
+        g_Map_GlobalCellIndex = aP1; /*0x56fa65*/
       }
       CellClass::UpdateAnimations((int)v16); /*0x56fa6a*/
-      IDA_LOWORD(aP1) = v31[0] + 1; /*0x56fa7b*/
-      IDA_HIWORD(aP1) = v31[1] - 1; /*0x56fa80*/
-      v17 = (int16_t)(v31[0] + 1) + ((int16_t)(v31[1] - 1) << 9); /*0x56fa8e*/
+      IDA_LOWORD(aP1) = v3[0] + 1; /*0x56fa7b*/
+      IDA_HIWORD(aP1) = v3[1] - 1; /*0x56fa80*/
+      v17 = (int16_t)(v3[0] + 1) + ((int16_t)(v3[1] - 1) << 9); /*0x56fa8e*/
       if ( v17 < 0x40000 && (v18 = *(void **)(g_Shroud_CellArray + 4 * v17)) != 0 ) /*0x56faa4*/
       {
         v19 = v18; /*0x56faa6*/
       }
       else
       {
-        v19 = (void *)((int)(&g_CellClassArray));
-        g_Map_GlobalCellIndex = (int)(aP1);
+        v19 = &g_CellClassArray; /*0x56faae*/
+        g_Map_GlobalCellIndex = aP1; /*0x56fab3*/
       }
       CellClass::UpdateAnimations((int)v19); /*0x56fab8*/
-      aP1 = *(unsigned int *)v31 - 0x10000; /*0x56facd*/
-      v20 = v31[0] + ((int16_t)(v31[1] - 1) << 9); /*0x56fadb*/
+      aP1 = *(unsigned int *)v3 - 0x10000; /*0x56facd*/
+      v20 = v3[0] + ((int16_t)(v3[1] - 1) << 9); /*0x56fadb*/
       if ( v20 >= 0x40000 || (v21 = *(char **)(g_Shroud_CellArray + 4 * v20)) == 0 ) /*0x56faf1*/
       {
-        g_Map_GlobalCellIndex = (int)(aP1);
-        v21 = (char *)((unsigned char)((char *)&g_CellClassArray));
+        g_Map_GlobalCellIndex = aP1; /*0x56faf7*/
+        v21 = (char *)&g_CellClassArray; /*0x56fafc*/
       }
-      IDA_LOBYTE(v9) = Cell::SetTileType(v31, g_TerrainSoundConfig + g_TerrainBridgeIndex + 3, -1, v21[283] - 4, 0); /*0x56fb27*/
+      IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundConfig + g_TerrainBridgeIndex + 3, -1, v21[283] - 4, 0); /*0x56fb27*/
     }
   }
   return v9; /*0x56fb2c*/
-}
 }
 // 0x56FC80
 namespace gamemd {
 HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
 {
-  IUnknown * v2;
+  int v2; // edi
   int v3; // ecx
   unsigned int v4; // eax
   unsigned char *v5; // eax
@@ -547,7 +540,7 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
   void *v16; // ecx
   unsigned int v17; // eax
   void *v18; // eax
-  IUnknown * v19;
+  void *v19; // ecx
   unsigned int v20; // eax
   char *v21; // eax
   unsigned int v22; // eax
@@ -558,12 +551,12 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
   void *v27; // ecx
   void *v28; // eax
   char *v29; // eax
-  int16_t v31[4]; // [esp+Ch] [ebp-8h] BYREF
+  int16_t v3[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = (IUnknown *)(aP1);
-  v3 = (IUnknown *)(*CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)));
-  aP1 = (IUnknown *)(v3);
-  *(unsigned int *)v31 = v3; /*0x56fcad*/
+  aP1 = aP1; /*0x56fc86*/
+  v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x56fca7*/
+  aP1 = v3; /*0x56fca9*/
+  *(unsigned int *)v3 = v3; /*0x56fcad*/
   v4 = (int16_t)v3 + (IDA_SHIWORD(v3) << 9); /*0x56fcbc*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(g_Shroud_CellArray + 4 * v4)) != 0 ) /*0x56fcd2*/
   {
@@ -571,8 +564,8 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
   }
   else
   {
-    g_Map_GlobalCellIndex = (int)((unsigned char *)(v3));
-    v6 = (unsigned char *)(&g_CellClassArray);
+    g_Map_GlobalCellIndex = v3; /*0x56fcd8*/
+    v6 = &g_CellClassArray; /*0x56fcde*/
   }
   if ( (char)v6[320] < 0 ) /*0x56fcea*/
   {
@@ -585,7 +578,7 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
       }
       else if ( v7 == 17 ) /*0x56fcfc*/
       {
-        CellClass::UpdateTileVariant2(v31, v2); /*0x56fd06*/
+        CellClass::UpdateTileVariant2(v3, aP1); /*0x56fd06*/
         SetCellClassOccupancyFlags((int)v6, v8, 6u, 0); /*0x56fd11*/
         v6[286] = 0; /*0x56fd19*/
         *((unsigned int *)v6 + 17) = -1; /*0x56fd26*/
@@ -596,102 +589,101 @@ HouseClass * * CellClass::UpdateTileVariant2(IUnknown * aP0, IUnknown * aP1)
   v9 = *((unsigned int *)v6 + 14) - g_TerrainBridgeIndex + 1; /*0x56fd4c*/
   if ( v9 == dword_AA1548 || v9 == dword_AA0740 ) /*0x56fd5b*/
   {
-    IDA_LOBYTE(v9) = Cell::UpdateTileType(v31, 1, 0); /*0x570036*/
+    IDA_LOBYTE(v9) = Cell::UpdateTileType(v3, 1, 0); /*0x570036*/
   }
   else if ( v9 == g_TerrainSoundConfig || v9 == g_TerrainSoundConfig + 1 ) /*0x56fd76*/
   {
-    IDA_LOBYTE(v9) = Cell::SetTileType(v31, g_TerrainSoundConfig + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x57001d*/
+    IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundConfig + g_TerrainBridgeIndex + 2, -1, -1, 0); /*0x57001d*/
   }
   else if ( v9 == g_TerrainSoundConfig + 3 ) /*0x56fd81*/
   {
-    CellClass::UpdateTileVariant2(v31, v2); /*0x56fd8f*/
-    v10 = v31[0] - 1; /*0x56fda0*/
+    CellClass::UpdateTileVariant2(v3, aP1); /*0x56fd8f*/
+    v10 = v3[0] - 1; /*0x56fda0*/
     if ( v6[282] <= 4u ) /*0x56fda3*/
     {
-      IDA_LOWORD(aP1) = v31[0] - 1; /*0x56ff09*/
-      IDA_HIWORD(aP1) = v31[1]; /*0x56ff0e*/
-      v22 = v10 + (v31[1] << 9); /*0x56ff1c*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x56ff09*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x56ff0e*/
+      v22 = v10 + (v3[1] << 9); /*0x56ff1c*/
       if ( v22 < 0x40000 && (v23 = *(void **)(g_Shroud_CellArray + 4 * v22)) != 0 ) /*0x56ff32*/
       {
         v24 = v23; /*0x56ff34*/
       }
       else
       {
-        v24 = (void *)((int)(&g_CellClassArray));
-        g_Map_GlobalCellIndex = (int)(aP1);
+        v24 = &g_CellClassArray; /*0x56ff3c*/
+        g_Map_GlobalCellIndex = aP1; /*0x56ff41*/
       }
       CellClass::UpdateAnimations((int)v24); /*0x56ff46*/
-      aP1 = *(unsigned int *)v31; /*0x56ff58*/
-      v25 = v31[0] + (v31[1] << 9); /*0x56ff66*/
+      aP1 = *(unsigned int *)v3; /*0x56ff58*/
+      v25 = v3[0] + (v3[1] << 9); /*0x56ff66*/
       if ( v25 < 0x40000 && (v26 = *(void **)(g_Shroud_CellArray + 4 * v25)) != 0 ) /*0x56ff7c*/
       {
         v27 = v26; /*0x56ff7e*/
       }
       else
       {
-        v27 = (void *)((int)(&g_CellClassArray));
-        g_Map_GlobalCellIndex = (int)(aP1);
+        v27 = &g_CellClassArray; /*0x56ff86*/
+        g_Map_GlobalCellIndex = aP1; /*0x56ff8b*/
       }
       CellClass::UpdateAnimations((int)v27); /*0x56ff90*/
-      IDA_HIWORD(aP1) = v31[1]; /*0x56ff9f*/
-      IDA_LOWORD(aP1) = v31[0] + 1; /*0x56ffa4*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x56ff9f*/
+      IDA_LOWORD(aP1) = v3[0] + 1; /*0x56ffa4*/
       v28 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP1); /*0x56ffbb*/
       CellClass::UpdateAnimations((int)v28); /*0x56ffc2*/
-      v29 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v31); /*0x56ffd3*/
-      IDA_LOBYTE(v9) = Cell::SetTileType(v31, g_TerrainSoundConfig + g_TerrainBridgeIndex + 3, -1, v29[283] - 4, 0); /*0x56fffd*/
+      v29 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v3); /*0x56ffd3*/
+      IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundConfig + g_TerrainBridgeIndex + 3, -1, v29[283] - 4, 0); /*0x56fffd*/
     }
     else
     {
-      IDA_LOWORD(aP1) = v31[0] - 1; /*0x56fdad*/
-      IDA_HIWORD(aP1) = v31[1] - 1; /*0x56fdb8*/
-      v11 = v10 + ((int16_t)(v31[1] - 1) << 9); /*0x56fdc3*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x56fdad*/
+      IDA_HIWORD(aP1) = v3[1] - 1; /*0x56fdb8*/
+      v11 = v10 + ((int16_t)(v3[1] - 1) << 9); /*0x56fdc3*/
       if ( v11 < 0x40000 && (v12 = *(void **)(g_Shroud_CellArray + 4 * v11)) != 0 ) /*0x56fdd9*/
       {
         v13 = v12; /*0x56fddb*/
       }
       else
       {
-        v13 = (void *)((int)(&g_CellClassArray));
-        g_Map_GlobalCellIndex = (int)(aP1);
+        v13 = &g_CellClassArray; /*0x56fde3*/
+        g_Map_GlobalCellIndex = aP1; /*0x56fde8*/
       }
       CellClass::UpdateAnimations((int)v13); /*0x56fded*/
-      aP1 = *(unsigned int *)v31 - 0x10000; /*0x56fe02*/
-      v14 = v31[0] + ((int16_t)(v31[1] - 1) << 9); /*0x56fe10*/
+      aP1 = *(unsigned int *)v3 - 0x10000; /*0x56fe02*/
+      v14 = v3[0] + ((int16_t)(v3[1] - 1) << 9); /*0x56fe10*/
       if ( v14 < 0x40000 && (v15 = *(void **)(g_Shroud_CellArray + 4 * v14)) != 0 ) /*0x56fe26*/
       {
         v16 = v15; /*0x56fe28*/
       }
       else
       {
-        v16 = (void *)((int)(&g_CellClassArray));
-        g_Map_GlobalCellIndex = (int)(aP1);
+        v16 = &g_CellClassArray; /*0x56fe30*/
+        g_Map_GlobalCellIndex = aP1; /*0x56fe35*/
       }
       CellClass::UpdateAnimations((int)v16); /*0x56fe3a*/
-      IDA_LOWORD(aP1) = v31[0] + 1; /*0x56fe4b*/
-      IDA_HIWORD(aP1) = v31[1] - 1; /*0x56fe50*/
-      v17 = (int16_t)(v31[0] + 1) + ((int16_t)(v31[1] - 1) << 9); /*0x56fe5e*/
+      IDA_LOWORD(aP1) = v3[0] + 1; /*0x56fe4b*/
+      IDA_HIWORD(aP1) = v3[1] - 1; /*0x56fe50*/
+      v17 = (int16_t)(v3[0] + 1) + ((int16_t)(v3[1] - 1) << 9); /*0x56fe5e*/
       if ( v17 < 0x40000 && (v18 = *(void **)(g_Shroud_CellArray + 4 * v17)) != 0 ) /*0x56fe74*/
       {
-        v19 = (IUnknown *)(v18);
+        v19 = v18; /*0x56fe76*/
       }
       else
       {
-        v19 = (IUnknown *)((int)(&g_CellClassArray));
-        g_Map_GlobalCellIndex = (int)(aP1);
+        v19 = &g_CellClassArray; /*0x56fe7e*/
+        g_Map_GlobalCellIndex = aP1; /*0x56fe83*/
       }
       CellClass::UpdateAnimations((int)v19); /*0x56fe88*/
-      aP1 = *(unsigned int *)v31 - 0x10000; /*0x56fe9d*/
-      v20 = v31[0] + ((int16_t)(v31[1] - 1) << 9); /*0x56feab*/
+      aP1 = *(unsigned int *)v3 - 0x10000; /*0x56fe9d*/
+      v20 = v3[0] + ((int16_t)(v3[1] - 1) << 9); /*0x56feab*/
       if ( v20 >= 0x40000 || (v21 = *(char **)(g_Shroud_CellArray + 4 * v20)) == 0 ) /*0x56fec1*/
       {
         g_Map_GlobalCellIndex = aP1; /*0x56fec7*/
         v21 = (char *)&g_CellClassArray; /*0x56fecc*/
       }
-      IDA_LOBYTE(v9) = Cell::SetTileType(v31, g_TerrainSoundConfig + g_TerrainBridgeIndex + 3, -1, v21[283] - 4, 0); /*0x56fef7*/
+      IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundConfig + g_TerrainBridgeIndex + 3, -1, v21[283] - 4, 0); /*0x56fef7*/
     }
   }
   return v9; /*0x56fefc*/
-}
 }
 // 0x572440
 namespace gamemd {
@@ -726,12 +718,12 @@ HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
   void *v28; // eax
   void *v29; // ecx
   void *v30; // eax
-  int16_t v32[4]; // [esp+Ch] [ebp-8h] BYREF
+  int16_t v3[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = aP1; /*0x572446*/
+  aP1 = aP1; /*0x572446*/
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x572467*/
   aP1 = v3; /*0x572469*/
-  *(unsigned int *)v32 = v3; /*0x57246d*/
+  *(unsigned int *)v3 = v3; /*0x57246d*/
   v4 = (int16_t)v3 + (IDA_SHIWORD(v3) << 9); /*0x57247c*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(g_Shroud_CellArray + 4 * v4)) != 0 ) /*0x572492*/
   {
@@ -751,7 +743,7 @@ HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
     }
     else if ( v7 == 8 ) /*0x5724b8*/
     {
-      CellClass::UpdateVariant7(v32, v2); /*0x5724c2*/
+      CellClass::UpdateVariant7(v3, aP1); /*0x5724c2*/
       UpdateCellClassNeighborTerrain((int)v6, v8, 0, 0); /*0x5724cd*/
       v6[286] = 0; /*0x5724d5*/
       *((unsigned int *)v6 + 17) = -1; /*0x5724e2*/
@@ -761,20 +753,20 @@ HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
   v9 = *((unsigned int *)v6 + 14) - g_Cell_BuildabilityLUT + 1; /*0x572508*/
   if ( v9 == dword_ABC1E8 || v9 == dword_AA0E38 ) /*0x572517*/
   {
-    IDA_LOBYTE(v9) = Cell::UpdateTileType(v32, 1, 0); /*0x5727c7*/
+    IDA_LOBYTE(v9) = Cell::UpdateTileType(v3, 1, 0); /*0x5727c7*/
   }
   else if ( v9 == g_TerrainSoundTable2 || v9 == g_TerrainSoundTable2 + 2 ) /*0x572532*/
   {
-    IDA_LOBYTE(v9) = Cell::SetTileType(v32, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 2, -1, -1, 0); /*0x5727ae*/
+    IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 2, -1, -1, 0); /*0x5727ae*/
   }
   else if ( v9 == g_TerrainSoundTable2 + 3 ) /*0x57253d*/
   {
-    CellClass::UpdateVariant7(v32, v2); /*0x57254b*/
+    CellClass::UpdateVariant7(v3, aP1); /*0x57254b*/
     if ( (v6[282] & 1) != 0 ) /*0x572557*/
     {
-      IDA_HIWORD(aP1) = v32[1]; /*0x572568*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x57256d*/
-      v10 = (int16_t)(v32[0] - 1) + (v32[1] << 9); /*0x57257b*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x572568*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x57256d*/
+      v10 = (int16_t)(v3[0] - 1) + (v3[1] << 9); /*0x57257b*/
       if ( v10 < 0x40000 && (v11 = *(void **)(g_Shroud_CellArray + 4 * v10)) != 0 ) /*0x572591*/
       {
         v12 = v11; /*0x572593*/
@@ -785,9 +777,9 @@ HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x5725a0*/
       }
       CellClass::UpdateAnimations((int)v12); /*0x5725a5*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x5725b6*/
-      IDA_HIWORD(aP1) = v32[1] - 1; /*0x5725bb*/
-      v13 = (int16_t)(v32[0] - 1) + ((int16_t)(v32[1] - 1) << 9); /*0x5725c9*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x5725b6*/
+      IDA_HIWORD(aP1) = v3[1] - 1; /*0x5725bb*/
+      v13 = (int16_t)(v3[0] - 1) + ((int16_t)(v3[1] - 1) << 9); /*0x5725c9*/
       if ( v13 < 0x40000 && (v14 = *(void **)(g_Shroud_CellArray + 4 * v13)) != 0 ) /*0x5725df*/
       {
         v15 = v14; /*0x5725e1*/
@@ -798,9 +790,9 @@ HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x5725ee*/
       }
       CellClass::UpdateAnimations((int)v15); /*0x5725f3*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x572604*/
-      IDA_HIWORD(aP1) = v32[1] + 1; /*0x572609*/
-      v16 = (int16_t)(v32[0] - 1) + ((int16_t)(v32[1] + 1) << 9); /*0x572617*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x572604*/
+      IDA_HIWORD(aP1) = v3[1] + 1; /*0x572609*/
+      v16 = (int16_t)(v3[0] - 1) + ((int16_t)(v3[1] + 1) << 9); /*0x572617*/
       if ( v16 < 0x40000 && (v17 = *(void **)(g_Shroud_CellArray + 4 * v16)) != 0 ) /*0x57262d*/
       {
         v18 = v17; /*0x57262f*/
@@ -811,12 +803,12 @@ HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x57263c*/
       }
       CellClass::UpdateAnimations((int)v18); /*0x572641*/
-      IDA_HIWORD(aP1) = v32[1]; /*0x57264e*/
-      v19 = (int16_t)(v32[0] - 1); /*0x572657*/
-      v20 = v32[1] << 9; /*0x57265a*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x57264e*/
+      v19 = (int16_t)(v3[0] - 1); /*0x572657*/
+      v20 = v3[1] << 9; /*0x57265a*/
       v21 = v19 + v20 < 0; /*0x57265d*/
       v22 = v19 + v20; /*0x57265d*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x57265f*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x57265f*/
       if ( v21 || v22 >= 0x40000 || (v23 = *(char **)(g_Shroud_CellArray + 4 * v22)) == 0 ) /*0x572678*/
       {
         v23 = (char *)&g_CellClassArray; /*0x57267e*/
@@ -825,8 +817,8 @@ HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
     }
     else
     {
-      aP1 = *(unsigned int *)v32; /*0x5726cb*/
-      v24 = v32[0] + (v32[1] << 9); /*0x5726d9*/
+      aP1 = *(unsigned int *)v3; /*0x5726cb*/
+      v24 = v3[0] + (v3[1] << 9); /*0x5726d9*/
       if ( v24 < 0x40000 && (v25 = *(void **)(g_Shroud_CellArray + 4 * v24)) != 0 ) /*0x5726ef*/
       {
         v26 = v25; /*0x5726f1*/
@@ -837,8 +829,8 @@ HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x5726fe*/
       }
       CellClass::UpdateAnimations((int)v26); /*0x572704*/
-      aP1 = *(unsigned int *)v32 - 0x10000; /*0x572717*/
-      v27 = v32[0] + ((int16_t)(v32[1] - 1) << 9); /*0x572725*/
+      aP1 = *(unsigned int *)v3 - 0x10000; /*0x572717*/
+      v27 = v3[0] + ((int16_t)(v3[1] - 1) << 9); /*0x572725*/
       if ( v27 < 0x40000 && (v28 = *(void **)(g_Shroud_CellArray + 4 * v27)) != 0 ) /*0x57273b*/
       {
         v29 = v28; /*0x57273d*/
@@ -849,15 +841,14 @@ HouseClass * * CellClass::UpdateVariant7(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x57274a*/
       }
       CellClass::UpdateAnimations((int)v29); /*0x57274f*/
-      aP1 = *(unsigned int *)v32 + 0x10000; /*0x572767*/
+      aP1 = *(unsigned int *)v3 + 0x10000; /*0x572767*/
       v30 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP1); /*0x57277a*/
       CellClass::UpdateAnimations((int)v30); /*0x572781*/
-      v23 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v32); /*0x572792*/
+      v23 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v3); /*0x572792*/
     }
-    IDA_LOBYTE(v9) = Cell::SetTileType(v32, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 3, -1, v23[283] - 4, 0); /*0x5726b0*/
+    IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 3, -1, v23[283] - 4, 0); /*0x5726b0*/
   }
   return v9; /*0x5726b5*/
-}
 }
 // 0x5727E0
 namespace gamemd {
@@ -892,12 +883,12 @@ HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
   void *v28; // eax
   void *v29; // ecx
   void *v30; // eax
-  int16_t v32[4]; // [esp+Ch] [ebp-8h] BYREF
+  int16_t v3[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = aP1; /*0x5727e6*/
+  aP1 = aP1; /*0x5727e6*/
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x572807*/
   aP1 = v3; /*0x572809*/
-  *(unsigned int *)v32 = v3; /*0x57280d*/
+  *(unsigned int *)v3 = v3; /*0x57280d*/
   v4 = (int16_t)v3 + (IDA_SHIWORD(v3) << 9); /*0x57281c*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(g_Shroud_CellArray + 4 * v4)) != 0 ) /*0x572832*/
   {
@@ -917,7 +908,7 @@ HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
     }
     else if ( v7 == 7 ) /*0x572858*/
     {
-      CellClass::UpdateVariant8(v32, v2); /*0x572862*/
+      CellClass::UpdateVariant8(v3, aP1); /*0x572862*/
       UpdateCellClassNeighborTerrain((int)v6, v8, 0, 0); /*0x57286d*/
       v6[286] = 0; /*0x572875*/
       *((unsigned int *)v6 + 17) = -1; /*0x572882*/
@@ -927,20 +918,20 @@ HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
   v9 = *((unsigned int *)v6 + 14) - g_Cell_BuildabilityLUT + 1; /*0x5728a8*/
   if ( v9 == dword_ABC2B4 || v9 == dword_AA1130 ) /*0x5728b7*/
   {
-    IDA_LOBYTE(v9) = Cell::UpdateTileType(v32, 1, 0); /*0x572b67*/
+    IDA_LOBYTE(v9) = Cell::UpdateTileType(v3, 1, 0); /*0x572b67*/
   }
   else if ( v9 == g_TerrainSoundTable2 || v9 == g_TerrainSoundTable2 + 1 ) /*0x5728d2*/
   {
-    IDA_LOBYTE(v9) = Cell::SetTileType(v32, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 2, -1, -1, 0); /*0x572b4e*/
+    IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 2, -1, -1, 0); /*0x572b4e*/
   }
   else if ( v9 == g_TerrainSoundTable2 + 3 ) /*0x5728dd*/
   {
-    CellClass::UpdateVariant8(v32, v2); /*0x5728eb*/
+    CellClass::UpdateVariant8(v3, aP1); /*0x5728eb*/
     if ( (v6[282] & 1) != 0 ) /*0x5728f7*/
     {
-      IDA_HIWORD(aP1) = v32[1]; /*0x572908*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x57290d*/
-      v10 = (int16_t)(v32[0] - 1) + (v32[1] << 9); /*0x57291b*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x572908*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x57290d*/
+      v10 = (int16_t)(v3[0] - 1) + (v3[1] << 9); /*0x57291b*/
       if ( v10 < 0x40000 && (v11 = *(void **)(g_Shroud_CellArray + 4 * v10)) != 0 ) /*0x572931*/
       {
         v12 = v11; /*0x572933*/
@@ -951,9 +942,9 @@ HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x572940*/
       }
       CellClass::UpdateAnimations((int)v12); /*0x572945*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x572956*/
-      IDA_HIWORD(aP1) = v32[1] - 1; /*0x57295b*/
-      v13 = (int16_t)(v32[0] - 1) + ((int16_t)(v32[1] - 1) << 9); /*0x572969*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x572956*/
+      IDA_HIWORD(aP1) = v3[1] - 1; /*0x57295b*/
+      v13 = (int16_t)(v3[0] - 1) + ((int16_t)(v3[1] - 1) << 9); /*0x572969*/
       if ( v13 < 0x40000 && (v14 = *(void **)(g_Shroud_CellArray + 4 * v13)) != 0 ) /*0x57297f*/
       {
         v15 = v14; /*0x572981*/
@@ -964,9 +955,9 @@ HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x57298e*/
       }
       CellClass::UpdateAnimations((int)v15); /*0x572993*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x5729a4*/
-      IDA_HIWORD(aP1) = v32[1] + 1; /*0x5729a9*/
-      v16 = (int16_t)(v32[0] - 1) + ((int16_t)(v32[1] + 1) << 9); /*0x5729b7*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x5729a4*/
+      IDA_HIWORD(aP1) = v3[1] + 1; /*0x5729a9*/
+      v16 = (int16_t)(v3[0] - 1) + ((int16_t)(v3[1] + 1) << 9); /*0x5729b7*/
       if ( v16 < 0x40000 && (v17 = *(void **)(g_Shroud_CellArray + 4 * v16)) != 0 ) /*0x5729cd*/
       {
         v18 = v17; /*0x5729cf*/
@@ -977,12 +968,12 @@ HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x5729dc*/
       }
       CellClass::UpdateAnimations((int)v18); /*0x5729e1*/
-      IDA_HIWORD(aP1) = v32[1]; /*0x5729ee*/
-      v19 = (int16_t)(v32[0] - 1); /*0x5729f7*/
-      v20 = v32[1] << 9; /*0x5729fa*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x5729ee*/
+      v19 = (int16_t)(v3[0] - 1); /*0x5729f7*/
+      v20 = v3[1] << 9; /*0x5729fa*/
       v21 = v19 + v20 < 0; /*0x5729fd*/
       v22 = v19 + v20; /*0x5729fd*/
-      IDA_LOWORD(aP1) = v32[0] - 1; /*0x5729ff*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x5729ff*/
       if ( v21 || v22 >= 0x40000 || (v23 = *(char **)(g_Shroud_CellArray + 4 * v22)) == 0 ) /*0x572a18*/
       {
         v23 = (char *)&g_CellClassArray; /*0x572a1e*/
@@ -991,8 +982,8 @@ HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
     }
     else
     {
-      aP1 = *(unsigned int *)v32; /*0x572a6b*/
-      v24 = v32[0] + (v32[1] << 9); /*0x572a79*/
+      aP1 = *(unsigned int *)v3; /*0x572a6b*/
+      v24 = v3[0] + (v3[1] << 9); /*0x572a79*/
       if ( v24 < 0x40000 && (v25 = *(void **)(g_Shroud_CellArray + 4 * v24)) != 0 ) /*0x572a8f*/
       {
         v26 = v25; /*0x572a91*/
@@ -1003,8 +994,8 @@ HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x572a9e*/
       }
       CellClass::UpdateAnimations((int)v26); /*0x572aa4*/
-      aP1 = *(unsigned int *)v32 - 0x10000; /*0x572ab7*/
-      v27 = v32[0] + ((int16_t)(v32[1] - 1) << 9); /*0x572ac5*/
+      aP1 = *(unsigned int *)v3 - 0x10000; /*0x572ab7*/
+      v27 = v3[0] + ((int16_t)(v3[1] - 1) << 9); /*0x572ac5*/
       if ( v27 < 0x40000 && (v28 = *(void **)(g_Shroud_CellArray + 4 * v27)) != 0 ) /*0x572adb*/
       {
         v29 = v28; /*0x572add*/
@@ -1015,15 +1006,14 @@ HouseClass * * CellClass::UpdateVariant8(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x572aea*/
       }
       CellClass::UpdateAnimations((int)v29); /*0x572aef*/
-      aP1 = *(unsigned int *)v32 + 0x10000; /*0x572b07*/
+      aP1 = *(unsigned int *)v3 + 0x10000; /*0x572b07*/
       v30 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP1); /*0x572b1a*/
       CellClass::UpdateAnimations((int)v30); /*0x572b21*/
-      v23 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v32); /*0x572b32*/
+      v23 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v3); /*0x572b32*/
     }
-    IDA_LOBYTE(v9) = Cell::SetTileType(v32, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 3, -1, v23[283] - 4, 0); /*0x572a50*/
+    IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundTable2 + g_Cell_BuildabilityLUT + 3, -1, v23[283] - 4, 0); /*0x572a50*/
   }
   return v9; /*0x572a55*/
-}
 }
 // 0x572DA0
 namespace gamemd {
@@ -1057,12 +1047,12 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
   void *v27; // ecx
   void *v28; // eax
   char *v29; // eax
-  int16_t v31[4]; // [esp+Ch] [ebp-8h] BYREF
+  int16_t v3[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = aP1; /*0x572da6*/
+  aP1 = aP1; /*0x572da6*/
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x572dc7*/
   aP1 = v3; /*0x572dc9*/
-  *(unsigned int *)v31 = v3; /*0x572dcd*/
+  *(unsigned int *)v3 = v3; /*0x572dcd*/
   v4 = (int16_t)v3 + (IDA_SHIWORD(v3) << 9); /*0x572ddc*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(g_Shroud_CellArray + 4 * v4)) != 0 ) /*0x572df2*/
   {
@@ -1084,7 +1074,7 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
       }
       else if ( v7 == 16 ) /*0x572e1c*/
       {
-        CellClass::UpdateVariant5(v31, v2); /*0x572e26*/
+        CellClass::UpdateVariant5(v3, aP1); /*0x572e26*/
         UpdateCellClassNeighborTerrain((int)v6, v8, 6u, 0); /*0x572e31*/
         v6[286] = 0; /*0x572e39*/
         *((unsigned int *)v6 + 17) = -1; /*0x572e46*/
@@ -1095,21 +1085,21 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
   v9 = *((unsigned int *)v6 + 14) - g_Cell_BuildabilityLUT + 1; /*0x572e6c*/
   if ( v9 == dword_ABC1D0 || v9 == dword_AA1540 ) /*0x572e7b*/
   {
-    IDA_LOBYTE(v9) = Cell::UpdateTileType(v31, 1, 0); /*0x573156*/
+    IDA_LOBYTE(v9) = Cell::UpdateTileType(v3, 1, 0); /*0x573156*/
   }
   else if ( v9 == g_TerrainSoundConfig || v9 == g_TerrainSoundConfig + 2 ) /*0x572e96*/
   {
-    IDA_LOBYTE(v9) = Cell::SetTileType(v31, g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 2, -1, -1, 0); /*0x57313d*/
+    IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 2, -1, -1, 0); /*0x57313d*/
   }
   else if ( v9 == g_TerrainSoundConfig + 3 ) /*0x572ea1*/
   {
-    CellClass::UpdateVariant5(v31, v2); /*0x572eaf*/
-    v10 = v31[0] - 1; /*0x572ec0*/
+    CellClass::UpdateVariant5(v3, aP1); /*0x572eaf*/
+    v10 = v3[0] - 1; /*0x572ec0*/
     if ( v6[282] <= 4u ) /*0x572ec3*/
     {
-      IDA_LOWORD(aP1) = v31[0] - 1; /*0x573029*/
-      IDA_HIWORD(aP1) = v31[1]; /*0x57302e*/
-      v22 = v10 + (v31[1] << 9); /*0x57303c*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x573029*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x57302e*/
+      v22 = v10 + (v3[1] << 9); /*0x57303c*/
       if ( v22 < 0x40000 && (v23 = *(void **)(g_Shroud_CellArray + 4 * v22)) != 0 ) /*0x573052*/
       {
         v24 = v23; /*0x573054*/
@@ -1120,8 +1110,8 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x573061*/
       }
       CellClass::UpdateAnimations((int)v24); /*0x573066*/
-      aP1 = *(unsigned int *)v31; /*0x573078*/
-      v25 = v31[0] + (v31[1] << 9); /*0x573086*/
+      aP1 = *(unsigned int *)v3; /*0x573078*/
+      v25 = v3[0] + (v3[1] << 9); /*0x573086*/
       if ( v25 < 0x40000 && (v26 = *(void **)(g_Shroud_CellArray + 4 * v25)) != 0 ) /*0x57309c*/
       {
         v27 = v26; /*0x57309e*/
@@ -1132,18 +1122,18 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x5730ab*/
       }
       CellClass::UpdateAnimations((int)v27); /*0x5730b0*/
-      IDA_HIWORD(aP1) = v31[1]; /*0x5730bf*/
-      IDA_LOWORD(aP1) = v31[0] + 1; /*0x5730c4*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x5730bf*/
+      IDA_LOWORD(aP1) = v3[0] + 1; /*0x5730c4*/
       v28 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP1); /*0x5730db*/
       CellClass::UpdateAnimations((int)v28); /*0x5730e2*/
-      v29 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v31); /*0x5730f3*/
-      IDA_LOBYTE(v9) = Cell::SetTileType(v31, g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 3, -1, v29[283] - 4, 0); /*0x57311d*/
+      v29 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v3); /*0x5730f3*/
+      IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 3, -1, v29[283] - 4, 0); /*0x57311d*/
     }
     else
     {
-      IDA_LOWORD(aP1) = v31[0] - 1; /*0x572ecd*/
-      IDA_HIWORD(aP1) = v31[1] - 1; /*0x572ed8*/
-      v11 = v10 + ((int16_t)(v31[1] - 1) << 9); /*0x572ee3*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x572ecd*/
+      IDA_HIWORD(aP1) = v3[1] - 1; /*0x572ed8*/
+      v11 = v10 + ((int16_t)(v3[1] - 1) << 9); /*0x572ee3*/
       if ( v11 < 0x40000 && (v12 = *(void **)(g_Shroud_CellArray + 4 * v11)) != 0 ) /*0x572ef9*/
       {
         v13 = v12; /*0x572efb*/
@@ -1154,8 +1144,8 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x572f08*/
       }
       CellClass::UpdateAnimations((int)v13); /*0x572f0d*/
-      aP1 = *(unsigned int *)v31 - 0x10000; /*0x572f22*/
-      v14 = v31[0] + ((int16_t)(v31[1] - 1) << 9); /*0x572f30*/
+      aP1 = *(unsigned int *)v3 - 0x10000; /*0x572f22*/
+      v14 = v3[0] + ((int16_t)(v3[1] - 1) << 9); /*0x572f30*/
       if ( v14 < 0x40000 && (v15 = *(void **)(g_Shroud_CellArray + 4 * v14)) != 0 ) /*0x572f46*/
       {
         v16 = v15; /*0x572f48*/
@@ -1166,9 +1156,9 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x572f55*/
       }
       CellClass::UpdateAnimations((int)v16); /*0x572f5a*/
-      IDA_LOWORD(aP1) = v31[0] + 1; /*0x572f6b*/
-      IDA_HIWORD(aP1) = v31[1] - 1; /*0x572f70*/
-      v17 = (int16_t)(v31[0] + 1) + ((int16_t)(v31[1] - 1) << 9); /*0x572f7e*/
+      IDA_LOWORD(aP1) = v3[0] + 1; /*0x572f6b*/
+      IDA_HIWORD(aP1) = v3[1] - 1; /*0x572f70*/
+      v17 = (int16_t)(v3[0] + 1) + ((int16_t)(v3[1] - 1) << 9); /*0x572f7e*/
       if ( v17 < 0x40000 && (v18 = *(void **)(g_Shroud_CellArray + 4 * v17)) != 0 ) /*0x572f94*/
       {
         v19 = v18; /*0x572f96*/
@@ -1179,18 +1169,17 @@ HouseClass * * CellClass::UpdateVariant5(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x572fa3*/
       }
       CellClass::UpdateAnimations((int)v19); /*0x572fa8*/
-      aP1 = *(unsigned int *)v31 - 0x10000; /*0x572fbd*/
-      v20 = v31[0] + ((int16_t)(v31[1] - 1) << 9); /*0x572fcb*/
+      aP1 = *(unsigned int *)v3 - 0x10000; /*0x572fbd*/
+      v20 = v3[0] + ((int16_t)(v3[1] - 1) << 9); /*0x572fcb*/
       if ( v20 >= 0x40000 || (v21 = *(char **)(g_Shroud_CellArray + 4 * v20)) == 0 ) /*0x572fe1*/
       {
         g_Map_GlobalCellIndex = aP1; /*0x572fe7*/
         v21 = (char *)&g_CellClassArray; /*0x572fec*/
       }
-      IDA_LOBYTE(v9) = Cell::SetTileType(v31, g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 3, -1, v21[283] - 4, 0); /*0x573017*/
+      IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 3, -1, v21[283] - 4, 0); /*0x573017*/
     }
   }
   return v9; /*0x57301c*/
-}
 }
 // 0x573170
 namespace gamemd {
@@ -1224,12 +1213,12 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
   void *v27; // ecx
   void *v28; // eax
   char *v29; // eax
-  int16_t v31[4]; // [esp+Ch] [ebp-8h] BYREF
+  int16_t v3[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v2 = aP1; /*0x573176*/
+  aP1 = aP1; /*0x573176*/
   v3 = *CellStruct::Add(aP0, &aP1, (unsigned short *)(4 * (aP1 & 7) + 9041544)); /*0x573197*/
   aP1 = v3; /*0x573199*/
-  *(unsigned int *)v31 = v3; /*0x57319d*/
+  *(unsigned int *)v3 = v3; /*0x57319d*/
   v4 = (int16_t)v3 + (IDA_SHIWORD(v3) << 9); /*0x5731ac*/
   if ( v4 < 0x40000 && (v5 = *(unsigned char **)(g_Shroud_CellArray + 4 * v4)) != 0 ) /*0x5731c2*/
   {
@@ -1251,7 +1240,7 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
       }
       else if ( v7 == 17 ) /*0x5731ec*/
       {
-        CellClass::UpdateVariant6(v31, v2); /*0x5731f6*/
+        CellClass::UpdateVariant6(v3, aP1); /*0x5731f6*/
         UpdateCellClassNeighborTerrain((int)v6, v8, 6u, 0); /*0x573201*/
         v6[286] = 0; /*0x573209*/
         *((unsigned int *)v6 + 17) = -1; /*0x573216*/
@@ -1262,21 +1251,21 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
   v9 = *((unsigned int *)v6 + 14) - g_Cell_BuildabilityLUT + 1; /*0x57323c*/
   if ( v9 == dword_AA1548 || v9 == dword_AA0740 ) /*0x57324b*/
   {
-    IDA_LOBYTE(v9) = Cell::UpdateTileType(v31, 1, 0); /*0x573526*/
+    IDA_LOBYTE(v9) = Cell::UpdateTileType(v3, 1, 0); /*0x573526*/
   }
   else if ( v9 == g_TerrainSoundConfig || v9 == g_TerrainSoundConfig + 1 ) /*0x573266*/
   {
-    IDA_LOBYTE(v9) = Cell::SetTileType(v31, g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 2, -1, -1, 0); /*0x57350d*/
+    IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 2, -1, -1, 0); /*0x57350d*/
   }
   else if ( v9 == g_TerrainSoundConfig + 3 ) /*0x573271*/
   {
-    CellClass::UpdateVariant6(v31, v2); /*0x57327f*/
-    v10 = v31[0] - 1; /*0x573290*/
+    CellClass::UpdateVariant6(v3, aP1); /*0x57327f*/
+    v10 = v3[0] - 1; /*0x573290*/
     if ( v6[282] <= 4u ) /*0x573293*/
     {
-      IDA_LOWORD(aP1) = v31[0] - 1; /*0x5733f9*/
-      IDA_HIWORD(aP1) = v31[1]; /*0x5733fe*/
-      v22 = v10 + (v31[1] << 9); /*0x57340c*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x5733f9*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x5733fe*/
+      v22 = v10 + (v3[1] << 9); /*0x57340c*/
       if ( v22 < 0x40000 && (v23 = *(void **)(g_Shroud_CellArray + 4 * v22)) != 0 ) /*0x573422*/
       {
         v24 = v23; /*0x573424*/
@@ -1287,8 +1276,8 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x573431*/
       }
       CellClass::UpdateAnimations((int)v24); /*0x573436*/
-      aP1 = *(unsigned int *)v31; /*0x573448*/
-      v25 = v31[0] + (v31[1] << 9); /*0x573456*/
+      aP1 = *(unsigned int *)v3; /*0x573448*/
+      v25 = v3[0] + (v3[1] << 9); /*0x573456*/
       if ( v25 < 0x40000 && (v26 = *(void **)(g_Shroud_CellArray + 4 * v25)) != 0 ) /*0x57346c*/
       {
         v27 = v26; /*0x57346e*/
@@ -1299,18 +1288,18 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x57347b*/
       }
       CellClass::UpdateAnimations((int)v27); /*0x573480*/
-      IDA_HIWORD(aP1) = v31[1]; /*0x57348f*/
-      IDA_LOWORD(aP1) = v31[0] + 1; /*0x573494*/
+      IDA_HIWORD(aP1) = v3[1]; /*0x57348f*/
+      IDA_LOWORD(aP1) = v3[0] + 1; /*0x573494*/
       v28 = CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&aP1); /*0x5734ab*/
       CellClass::UpdateAnimations((int)v28); /*0x5734b2*/
-      v29 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v31); /*0x5734c3*/
-      IDA_LOBYTE(v9) = Cell::SetTileType(v31, g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 3, -1, v29[283] - 4, 0); /*0x5734ed*/
+      v29 = (char *)CellCoord::To_CellObj(&MapClass_Instance, v3); /*0x5734c3*/
+      IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 3, -1, v29[283] - 4, 0); /*0x5734ed*/
     }
     else
     {
-      IDA_LOWORD(aP1) = v31[0] - 1; /*0x57329d*/
-      IDA_HIWORD(aP1) = v31[1] - 1; /*0x5732a8*/
-      v11 = v10 + ((int16_t)(v31[1] - 1) << 9); /*0x5732b3*/
+      IDA_LOWORD(aP1) = v3[0] - 1; /*0x57329d*/
+      IDA_HIWORD(aP1) = v3[1] - 1; /*0x5732a8*/
+      v11 = v10 + ((int16_t)(v3[1] - 1) << 9); /*0x5732b3*/
       if ( v11 < 0x40000 && (v12 = *(void **)(g_Shroud_CellArray + 4 * v11)) != 0 ) /*0x5732c9*/
       {
         v13 = v12; /*0x5732cb*/
@@ -1321,8 +1310,8 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x5732d8*/
       }
       CellClass::UpdateAnimations((int)v13); /*0x5732dd*/
-      aP1 = *(unsigned int *)v31 - 0x10000; /*0x5732f2*/
-      v14 = v31[0] + ((int16_t)(v31[1] - 1) << 9); /*0x573300*/
+      aP1 = *(unsigned int *)v3 - 0x10000; /*0x5732f2*/
+      v14 = v3[0] + ((int16_t)(v3[1] - 1) << 9); /*0x573300*/
       if ( v14 < 0x40000 && (v15 = *(void **)(g_Shroud_CellArray + 4 * v14)) != 0 ) /*0x573316*/
       {
         v16 = v15; /*0x573318*/
@@ -1333,9 +1322,9 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x573325*/
       }
       CellClass::UpdateAnimations((int)v16); /*0x57332a*/
-      IDA_LOWORD(aP1) = v31[0] + 1; /*0x57333b*/
-      IDA_HIWORD(aP1) = v31[1] - 1; /*0x573340*/
-      v17 = (int16_t)(v31[0] + 1) + ((int16_t)(v31[1] - 1) << 9); /*0x57334e*/
+      IDA_LOWORD(aP1) = v3[0] + 1; /*0x57333b*/
+      IDA_HIWORD(aP1) = v3[1] - 1; /*0x573340*/
+      v17 = (int16_t)(v3[0] + 1) + ((int16_t)(v3[1] - 1) << 9); /*0x57334e*/
       if ( v17 < 0x40000 && (v18 = *(void **)(g_Shroud_CellArray + 4 * v17)) != 0 ) /*0x573364*/
       {
         v19 = v18; /*0x573366*/
@@ -1346,18 +1335,17 @@ HouseClass * * CellClass::UpdateVariant6(IUnknown * aP0, IUnknown * aP1)
         g_Map_GlobalCellIndex = aP1; /*0x573373*/
       }
       CellClass::UpdateAnimations((int)v19); /*0x573378*/
-      aP1 = *(unsigned int *)v31 - 0x10000; /*0x57338d*/
-      v20 = v31[0] + ((int16_t)(v31[1] - 1) << 9); /*0x57339b*/
+      aP1 = *(unsigned int *)v3 - 0x10000; /*0x57338d*/
+      v20 = v3[0] + ((int16_t)(v3[1] - 1) << 9); /*0x57339b*/
       if ( v20 >= 0x40000 || (v21 = *(char **)(g_Shroud_CellArray + 4 * v20)) == 0 ) /*0x5733b1*/
       {
         g_Map_GlobalCellIndex = aP1; /*0x5733b7*/
         v21 = (char *)&g_CellClassArray; /*0x5733bc*/
       }
-      IDA_LOBYTE(v9) = Cell::SetTileType(v31, g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 3, -1, v21[283] - 4, 0); /*0x5733e7*/
+      IDA_LOBYTE(v9) = Cell::SetTileType(v3, g_TerrainSoundConfig + g_Cell_BuildabilityLUT + 3, -1, v21[283] - 4, 0); /*0x5733e7*/
     }
   }
   return v9; /*0x5733ec*/
-}
 }
 // 0x57BAA0
 namespace gamemd {
@@ -1561,14 +1549,13 @@ int CellClass::CheckTilePassable(IUnknown * aP0)
 namespace gamemd {
 int CellClass::GetOccupiedRatio()
 {
-  int v1; // esi
+  int CellClass_field_6C; // esi
 
-  v1 = *(&this->vtable37); /*0x65b511*/
-  if ( v1 > 0 ) /*0x65b516*/
-    return *(&this->vtable29) * *(&this->vtable38) / v1; /*0x65b524*/
+  CellClass_field_6C = this->CellClass_field_6C; /*0x65b511*/
+  if ( CellClass_field_6C > 0 ) /*0x65b516*/
+    return this->CellClass_field_4C * this->unknown70 / CellClass_field_6C; /*0x65b524*/
   else
     return 0; /*0x65b518*/
-}
 }
 // 0x487E60
 namespace gamemd {
@@ -1590,7 +1577,7 @@ int CellClass::StubReturn328()
 namespace gamemd {
 int CellClass::GetBridgeIndex()
 {
-  return this->rubble; /*0x48ba83*/
+  return (int)this->rubble; /*0x48ba83*/
 }
 } // namespace gamemd
 

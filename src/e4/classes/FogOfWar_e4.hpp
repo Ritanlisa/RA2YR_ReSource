@@ -29,7 +29,7 @@ struct FogOfWar {
     unsigned int q1124;  // 0x1124
     char q1160[4];  // 0x1160
     unsigned int u32_121C;  // 0x121C
-    unsigned int q220;  // 0x1220
+    unsigned int ;  // 0x1220
     MapClass * ptr_1258;  // 0x1258
     unsigned int u32_125C;  // 0x125C
     unsigned int u32_1260;  // 0x1260
@@ -58,15 +58,13 @@ struct FogOfWar {
     unsigned int u32_4970;  // 0x4970
     int q5264;  // 0x5264
     unsigned int q5280;  // 0x5280
-    unsigned int u32_1CC9;
-    unsigned int u32_1D00;
+    unsigned int Render;
     unsigned int u32_7380;
     unsigned int u32_73C6;
     unsigned int u32_7400;
     unsigned int u32_7546;
     unsigned int u32_7604;
     void* ptr_1220;
-    unsigned int Render;
 // --- flat members (END) ---
     AbstractClass * * RevealCell(void* aP1);
     MapClass * * RevealArea(RadarClass * aP1);

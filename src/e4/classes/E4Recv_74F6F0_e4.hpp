@@ -12,6 +12,8 @@ struct E4Recv_74F6F0 {
     unsigned int q034;  // 0x34
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
+    unsigned int uniqueId;
+    unsigned int vtable1;
 // --- flat members (END) ---
     char DestroyVeinholeMonster_Destroy_74F6F0(DynamicVector * aP1);  // 0x74F6F0
 };

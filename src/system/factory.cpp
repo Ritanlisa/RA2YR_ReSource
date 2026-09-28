@@ -74,4 +74,3 @@ HouseClass * * FactoryClass::AbandonProduction() {
   --g_IKnowWhatImDoing; /*0x4ca109*/
   return 1; /*0x4ca108*/
 }
-}

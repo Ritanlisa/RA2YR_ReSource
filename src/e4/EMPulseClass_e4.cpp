@@ -29,11 +29,15 @@ EMPulseClass * EMPulseClass::CopyTo(AbstractClass * a2, char a3)
   int v3; // eax
   unsigned int v5;
 
-  if ( g_WTFMode ) /*0x4c5ae6*/
-    EMPulseClass::IterateCellsInRadius((int)a3); /*0x4c5ae8*/
-  AbstractClass::AnnounceExpiredPointer(a3, 1); /*0x4c5af1*/
+  *(unsigned int *)a3->__pad_0 = (void*)&EMPulseClass_vftable; /*0x4c5ac4*/
+  a3->EMPulseClass_field_0x04 = (int)&EMPulseClass_vftable; /*0x4c5aca*/
+  a3->EMPulseClass_field_0x08 = (int)&EMPulseClass_vftable; /*0x4c5ad1*/
+  a3->EMPulseClass_field_0x0C = (int)&EMPulseClass_vftable; /*0x4c5ad8*/
+  if ( unk_A8E9A0 ) /*0x4c5ae6*/
+    EMPulseClass::IterateCellsInRadius(a3); /*0x4c5ae8*/
+  AbstractClass::AnnounceExpiredPointer((void **)a3, 1); /*0x4c5af1*/
   v5 = a3; /*0x4c5b06*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(dword_8A3870 + 16))(&dword_8A3870, &v5); /*0x4c5b0a*/
+  v3 = (*(int (__thiscall **)(int *, EMPulseClass **))(dword_8A3870 + 16))(&dword_8A3870, &v5); /*0x4c5b0a*/
   if ( v3 != -1 && v3 < dword_8A3880 && v3 < --dword_8A3880 ) /*0x4c5b25*/
   {
     do /*0x4c5b3d*/
@@ -43,9 +47,9 @@ EMPulseClass * EMPulseClass::CopyTo(AbstractClass * a2, char a3)
     }
     while ( v3 < dword_8A3880 ); /*0x4c5b3d*/
   }
-  AbstractClass::DTOR(a3); /*0x4c5b41*/
+  AbstractClass::DTOR((AbstractClass *)a3); /*0x4c5b41*/
   if ( (a3 & 1) != 0 ) /*0x4c5b4b*/
     RA2_OPDEL(a3); /*0x4c5b4e*/
-  return a3; /*0x4c5b58*/
+  return (void **)a3; /*0x4c5b58*/
 }
 } // namespace gamemd

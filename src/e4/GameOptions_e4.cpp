@@ -11,21 +11,22 @@
 #include "e4/classes/ScenarioClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/Audio_e4.hpp"
 
 // 0x682780
 namespace gamemd {
 void sub_682780(int a1, int a2, wchar_t * String)
 {
-  unsigned int * v3;
+  int v3; // ecx
   unsigned int *v4; // eax
   void **v5; // ecx
   int v6; // esi
   size_t v7; // eax
-  int v9;
+  unsigned int * v9;
 
   v9 = (int)((unsigned int *)(0));
-  v3 = (int)((unsigned int *)(0));
-  v4 = (unsigned int *)(&unk_83D658);
+  v3 = (unsigned int *)(0);
+  v4 = &unk_83D658; /*0x682790*/
   while ( *v4 != a2 ) /*0x682797*/
   {
     v4 += 2; /*0x682799*/
@@ -73,7 +74,6 @@ void sub_682780(int a1, int a2, wchar_t * String)
   }
   return v6; /*0x6827d6*/
 }
-}
 // 0x6829A0
 namespace gamemd {
 void sub_6829A0(int * a1, int a2, int a3)
@@ -120,5 +120,4 @@ void sub_6829A0(int * a1, int a2, int a3)
     return v4; /*0x682a0f*/
   }
   return v4; /*0x682a0b*/
-}
 }

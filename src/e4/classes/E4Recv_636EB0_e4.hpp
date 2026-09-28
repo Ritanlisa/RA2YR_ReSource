@@ -15,6 +15,8 @@ struct E4Recv_636EB0 {
     unsigned int q128;  // 0x128
     unsigned int q1634;  // 0x1634
     unsigned int q5684;  // 0x5684
+    unsigned int abstractFlags;
+    unsigned int vtable2;
 // --- flat members (END) ---
     int sub_636EB0();  // 0x636EB0
 };

@@ -20,26 +20,28 @@ TriggerClass* TriggerClass::GetInstance(TriggerTypeClass* type)
 // 0x726250
 bool TriggerClass::HasCrossesHorizontalLineEvent() const
 {
-  int v2; // eax
-  unsigned int *v3; // ecx
+  TriggerClass *nextTrigger; // eax
+  HouseClass *buildingType; // ecx
 
-  v2 = *(&this->vtable20); /*0x726253*/
-  v3 = (unsigned int *)this->buildingType; /*0x726256*/
-  if ( !v2 ) /*0x72625b*/
-    return HouseClass::HasType25Building(v3); /*0x72627d*/
-  return HouseClass::HasType25Building(v3) || (uint8_t)TriggerClass::HasCrossesHorizontalLineEvent(*(&this->vtable20)); /*0x726274*/
+  nextTrigger = this->nextTrigger; /*0x726253*/
+  buildingType = (HouseClass *)this->buildingType; /*0x726256*/
+  if ( !nextTrigger ) /*0x72625b*/
+    return HouseClass::HasType25Building(buildingType); /*0x72627d*/
+  return (uint8_t)HouseClass::HasType25Building(buildingType) /*0x726274*/
+      || TriggerClass::HasCrossesHorizontalLineEvent(this->nextTrigger);
 }
 // 0x726290
 bool TriggerClass::HasCrossesVerticalLineEvent() const
 {
-  int v2; // eax
-  unsigned int *v3; // ecx
+  TriggerClass *nextTrigger; // eax
+  HouseClass *buildingType; // ecx
 
-  v2 = *(&this->vtable20); /*0x726293*/
-  v3 = (unsigned int *)this->buildingType; /*0x726296*/
-  if ( !v2 ) /*0x72629b*/
-    return HouseClass::HasType26Building(v3); /*0x7262bd*/
-  return HouseClass::HasType26Building(v3) || (uint8_t)TriggerClass::HasCrossesVerticalLineEvent(*(&this->vtable20)); /*0x7262b4*/
+  nextTrigger = this->nextTrigger; /*0x726293*/
+  buildingType = (HouseClass *)this->buildingType; /*0x726296*/
+  if ( !nextTrigger ) /*0x72629b*/
+    return HouseClass::HasType26Building(buildingType); /*0x7262bd*/
+  return (uint8_t)HouseClass::HasType26Building(buildingType) /*0x7262b4*/
+      || TriggerClass::HasCrossesVerticalLineEvent(this->nextTrigger);
 }
 bool TriggerClass::HasZoneEntryByEvent() const
 {
@@ -74,23 +76,23 @@ bool TriggerClass::HasGlobalSetOrClearedEvent(int idx_global) const
 // 0x7263a0
 void TriggerClass::NotifyGlobalChanged(int idx_global)
 {
-  int *i; // esi
+  TriggerClass *i; // esi
 
-  for ( i = this; i; i = (int *)i[10] ) /*0x7263a5*/
+  for ( i = this; i; i = i->nextTrigger ) /*0x7263a5*/
   {
-    if ( HouseClass::FindType2728((unsigned int *)i[9], idx_global) ) /*0x7263b0*/
-      BuildingClass::ProcessUpgradeEffects(i); /*0x7263bb*/
+    if ( HouseClass::FindType2728((HouseClass *)i->buildingType, idx_global) ) /*0x7263b0*/
+      BuildingClass::ProcessUpgradeEffects((BuildingClass *)i); /*0x7263bb*/
   }
 }
 // 0x7263d0
 void TriggerClass::NotifyLocalChanged(int idx_local)
 {
-  int *i; // esi
+  TriggerClass *i; // esi
 
-  for ( i = this; i; i = (int *)i[10] ) /*0x7263d5*/
+  for ( i = this; i; i = i->nextTrigger ) /*0x7263d5*/
   {
-    if ( TriggerTypeClass::HasLocalSetOrClearedEvent((unsigned int *)i[9], idx_local) ) /*0x7263e0*/
-      BuildingClass::ProcessUpgradeEffects(i); /*0x7263eb*/
+    if ( TriggerTypeClass::HasLocalSetOrClearedEvent(i->buildingType, idx_local) ) /*0x7263e0*/
+      BuildingClass::ProcessUpgradeEffects((BuildingClass *)i); /*0x7263eb*/
   }
 }
 void TriggerClass::ResetTimers()
@@ -107,7 +109,7 @@ void TriggerClass::Destroy()
 bool TriggerClass::RegisterEvent(int event, ObjectClass* object,
 {
   char v7; // bl
-  unsigned int *v8; // edi
+  TriggerClass *v8; // edi
   int Owner; // eax
   int v11; // [esp-10h] [ebp-18h]
   char v12; // [esp+7h] [ebp-1h]
@@ -125,19 +127,19 @@ bool TriggerClass::RegisterEvent(int event, ObjectClass* object,
   {
     if ( (this->occuredEvents & (1 << v7)) != 0 /*0x726540*/
       || (v11 = a6,
-          Owner = HouseClass::FindOwner(*(void **)(this->buildingType->House + 180)),
-          TEventClass::Execute(v8, a2, Owner, a3, (int *)(&this->abstractFlags2), (int)&a5, v11)) )
+          Owner = HouseClass::FindOwner(*(HouseClass **)(this->buildingType->House + 180)),
+          TEventClass::Execute((TEventClass *)v8, a2, Owner, a3, (int *)(&this->abstractFlags2), (int)&a5, v11)) )
     {
       if ( TriggerClass::GetValue(v8) ) /*0x726551*/
         this->house = TriggerClass::GetValue(v8); /*0x726561*/
-      if ( a5 && TEventClass::GetStateA(v8) && TEventClass::GetStateB_SpyEvent(v8) ) /*0x726579*/
+      if ( a5 && TEventClass::GetStateA((TEventClass *)v8) && TEventClass::GetStateB_SpyEvent((TEventClass *)v8) ) /*0x726579*/
         this->occuredEvents |= 1 << v7; /*0x726582*/
     }
     else
     {
       v12 = 0; /*0x726549*/
     }
-    v8 = (unsigned int *)v8[10]; /*0x726585*/
+    v8 = v8->nextTrigger; /*0x726585*/
     ++v7; /*0x726588*/
   }
   while ( v8 ); /*0x72658b*/
@@ -145,7 +147,7 @@ bool TriggerClass::RegisterEvent(int event, ObjectClass* object,
   {
   LABEL_16:
     if ( a5 ) /*0x7265a0*/
-      BuildingClass::ProcessUpgradeEffects((int *)this); /*0x7265a4*/
+      BuildingClass::ProcessUpgradeEffects((BuildingClass *)this); /*0x7265a4*/
   }
   return v12; /*0x7265af*/
 }
@@ -186,27 +188,27 @@ void TriggerTypeClass::SaveToINIList(CCINIClass* ini)
 // 0x7271e0
 TriggerTypeClass::Flags TriggerTypeClass::GetFlags() const
 {
-  int v2; // esi
+  TEventClass *FirstEvent; // esi
   int i; // edi
-  int v4; // eax
-  int j; // esi
+  int ActionCategoryFlags; // eax
+  TActionClass *j; // esi
   int v6; // eax
-  int v7; // ecx
+  TriggerTypeClass *NextTrigger; // ecx
 
-  v2 = *(&this->uniqueId3); /*0x7271e5*/
-  for ( i = 0; v2; i |= v4 ) /*0x7271ef*/
+  FirstEvent = this->FirstEvent; /*0x7271e5*/
+  for ( i = 0; FirstEvent; i |= ActionCategoryFlags ) /*0x7271ef*/
   {
-    v4 = TriggerTypeClass::GetActionCategoryFlags(*(void **)(v2 + 44)); /*0x7271f4*/
-    v2 = *(unsigned int *)(v2 + 40); /*0x7271f9*/
+    ActionCategoryFlags = TriggerTypeClass::GetActionCategoryFlags((TriggerTypeClass *)FirstEvent->TEventClass_field_2C); /*0x7271f4*/
+    FirstEvent = (TEventClass *)FirstEvent->TEventClass_field_28; /*0x7271f9*/
   }
-  for ( j = *(&this->uniqueId4); j; i |= v6 ) /*0x72720a*/
+  for ( j = this->FirstAction; j; i |= v6 ) /*0x72720a*/
   {
-    v6 = TriggerTypeClass::Dispatch(*(void **)(j + 44)); /*0x72720f*/
-    j = *(unsigned int *)(j + 40); /*0x727214*/
+    v6 = TriggerTypeClass::Dispatch((TriggerTypeClass *)j->TActionClass_field_2C); /*0x72720f*/
+    j = (TActionClass *)j->TActionClass_field_28; /*0x727214*/
   }
-  v7 = *(&this->uniqueId2); /*0x72721d*/
-  if ( v7 ) /*0x727225*/
-    return i | TriggerTypeClass::GetFlags(v7); /*0x72722c*/
+  NextTrigger = this->NextTrigger; /*0x72721d*/
+  if ( NextTrigger ) /*0x727225*/
+    return i | TriggerTypeClass::GetFlags(NextTrigger); /*0x72722c*/
   else
     return i; /*0x727232*/
 }
@@ -240,21 +242,21 @@ bool TriggerTypeClass::HasGlobalSetOrClearedEvent(int idx_global) const
 // 0x727050
 bool TriggerTypeClass::HasLocalSetOrClearedEvent(int idx_local) const
 {
-  unsigned int *v2; // ecx
-  char result; // al
-  int v4; // edx
+  TEventClass *FirstEvent; // ecx
+  bool result; // al
+  int TEventClass_field_2C; // edx
 
-  v2 = (unsigned int *)*(&this->uniqueId3); /*0x727050*/
+  FirstEvent = this->FirstEvent; /*0x727050*/
   result = 0; /*0x727056*/
-  if ( v2 ) /*0x72705b*/
+  if ( FirstEvent ) /*0x72705b*/
   {
     while ( 1 ) /*0x727061*/
     {
-      v4 = v2[11]; /*0x727061*/
-      if ( (v4 == 36 || v4 == 37) && v2[13] == idx_local ) /*0x727071*/
+      TEventClass_field_2C = FirstEvent->TEventClass_field_2C; /*0x727061*/
+      if ( (TEventClass_field_2C == 36 || TEventClass_field_2C == 37) && FirstEvent->TEventClass_field_34 == idx_local ) /*0x727071*/
         break; /*0x727071*/
-      v2 = (unsigned int *)v2[10]; /*0x727073*/
-      if ( !v2 ) /*0x727078*/
+      FirstEvent = (TEventClass *)FirstEvent->TEventClass_field_28; /*0x727073*/
+      if ( !FirstEvent ) /*0x727078*/
         return result; /*0x727078*/
     }
     return 1; /*0x72707e*/

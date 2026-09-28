@@ -46,6 +46,7 @@ struct Warhead {
     void* q158;  // 0x158
     unsigned int q160;  // 0x160
     unsigned int q164;  // 0x164
+    unsigned int u32_1A3;  // 0x1A3
     void* q1C4;  // 0x1C4
     void* q1C8;  // 0x1C8
     void* q214;  // 0x214
@@ -96,14 +97,9 @@ struct Warhead {
     unsigned int u32_101;
     unsigned int u32_103;
     unsigned int u32_104;
-    unsigned int u32_1A3;
-    unsigned int u32_A41;
     unsigned int u32_C9;
     unsigned int vt_slot_440;
     unsigned int vt_slot_444;
-    unsigned int q136;
-    unsigned int q176;
-    unsigned int u32_24;
 // --- flat members (END) ---
     int ApplyDamage(ObjectClass * aP1);
     int ApplyPostDamageEffects();

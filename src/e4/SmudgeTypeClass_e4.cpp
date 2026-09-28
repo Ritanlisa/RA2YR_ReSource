@@ -28,6 +28,9 @@
 #include "e4/classes/SkirmishDialog_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
 #include "e4/classes/Dialog_e4.hpp"
+#include "e4/classes/E4Recv_5AFEF0_e4.hpp"
+#include "e4/classes/SmudgeTypeVector_e4.hpp"
+#include "e4/classes/E4Recv_728A00_e4.hpp"
 
 // 0x6B5260
 SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
@@ -37,13 +40,17 @@ SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
   int v5; // ecx
   void **v6; // edx
 
-  ObjectTypeClass::ConstructFull(aP1); /*0x6b5269*/
+  ObjectTypeClass::ConstructFull((int)this, aP1); /*0x6b5269*/
   this->ArrayIndex = -1; /*0x6b5277*/
   this->Width = 1; /*0x6b5281*/
   this->Height = 1; /*0x6b5287*/
   *(&this->q10C2) = 0; /*0x6b528d*/
   *(&this->q10C3) = 0; /*0x6b5294*/
-  AbstractClass::GenerateUniqueID((int)&this->uniqueId); /*0x6b52b5*/
+  *(unsigned int *)this = (void*)&SmudgeTypeClass_vftable; /*0x6b529b*/
+  this->vtable2 = (void*)&SmudgeTypeClass_vftable; /*0x6b52a1*/
+  this->vtable3 = (void*)&SmudgeTypeClass_vftable; /*0x6b52a7*/
+  this->vtable4 = (void*)&SmudgeTypeClass_vftable; /*0x6b52ae*/
+  AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x6b52b5*/
   this->q22F = 1; /*0x6b52ba*/
   *(&this->q0E01) = 0; /*0x6b52c7*/
   *(&this->q0E02) = 1; /*0x6b52ce*/
@@ -90,113 +97,125 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
 {
   int v7; // ebx
   int v8; // edx
-  int v9; // ecx
+  int Width; // ecx
   unsigned int *v10; // esi
   int v11; // eax
   int v12; // [esp-1Ch] [ebp-2Ch]
   int v13; // [esp+8h] [ebp-8h] BYREF
+  int v14; // [esp+Ch] [ebp-4h]
 
-  v7 = this->GetMember41_2(); /*0x6b55ff*/
+  v7 = (*((int (__thiscall **)(SmudgeTypeClass *))this->vtable0 + 39))(this); /*0x6b55ff*/
   if ( v7 ) /*0x6b5603*/
   {
     v8 = a2[1]; /*0x6b5614*/
     v13 = *a2; /*0x6b5619*/
-    v8 = v8; /*0x6b561d*/
+    v14 = v8; /*0x6b561d*/
     if ( a4 ) /*0x6b5621*/
     {
-      v9 = *(&this->q0406); /*0x6b5623*/
-      v8 += -15 * (a4 / v9 + a4 % v9); /*0x6b5659*/
-      v13 += 60 * (a4 / v9 - a4 % v9) / 2; /*0x6b5661*/
+      Width = this->Width; /*0x6b5623*/
+      v14 += -15 * (a4 / Width + a4 % Width); /*0x6b5659*/
+      v13 += 60 * (a4 / Width - a4 % Width) / 2; /*0x6b5661*/
     }
-    v10 = CellCoord::To_CellObj(&MapClass_Instance, a6); /*0x6b5674*/
+    v10 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a6); /*0x6b5674*/
     v12 = *((int16_t *)v10 + 134); /*0x6b568a*/
     v11 = ZCoordToScreenY(a5); /*0x6b568c*/
-    DrawToSurfaceSHP(g_DSurface_Hidden_2, v10[13], v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0, unsigned int a2); /*0x6b56b4*/
+    DrawToSurfaceSHP((int)g_DSurface_Hidden_2, v10[13], v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
   }
 }
 // 0x6B56D0
 int SmudgeTypeClass::GetSize(unsigned char *** aP1, void * a1, void * a2)
 {
+  int result; // eax
   char Bool_Overwrite; // al
-  char v4; // cl
-  char v5; // al
-  int v7; // [esp-8h] [ebp-210h]
+  char Burn; // cl
+  char v6; // al
+  int Width; // [esp-8h] [ebp-210h]
   char Buffer[512]; // [esp+8h] [ebp-200h] BYREF
 
-  INIClass::ResetSection(aP1); /*0x6b56e3*/
-  if ( !ObjectTypeClass::LoadFromINI((char *)this, aP1) ) /*0x6b56eb*/
-    return 0; /*0x6b57db*/
-  Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x6b570b*/
-                     (int)aP1,
-                     (uint8_t *)(&this->vtable46),
-                     (uint8_t *)aCrater,
-                     this->q2A0);
-  v4 = this->q2A1; /*0x6b5710*/
-  this->q2A0 = Bool_Overwrite; /*0x6b5716*/
-  v5 = INIClass::ReadBool_Overwrite((int)aP1, (uint8_t *)(&this->vtable46), (uint8_t *)aBurn, v4); /*0x6b5725*/
-  v7 = this->Width; /*0x6b5732*/
-  this->q2A1 = v5; /*0x6b5739*/
-  this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
-                              (int)aP1,
-                              (uint8_t *)(&this->vtable46),
-                              (uint8_t *)g_INI_Key_Width,
-                              v7);
-  this->Height = INIClass::ReadInt_Overwrite( /*0x6b575e*/
-                              (int)aP1,
-                              (uint8_t *)(&this->vtable46),
-                              (uint8_t *)g_INI_Key_Height,
-                              this->Height);
-  if ( this->q22C ) /*0x6b5764*/
-    _makepath( /*0x6b57b4*/
-      Buffer,
-      0,
-      0,
-      (const char *)(&this->u32_C84),
-      (const char *)&off_7E1BC6 + 112 * *((unsigned int *)g_ScenarioClass_Instance + 1174));
+  INIClass::ResetSection((INIClass *)a2); /*0x6b56e3*/
+  if ( ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, a2) ) /*0x6b56eb*/
+  {
+    Bool_Overwrite = INIClass::ReadBool_Overwrite( /*0x6b570b*/
+                       (int *)a2,
+                       (uint8_t *)this->BarrelVoxel,
+                       aCrater,
+                       this->Crater);
+    Burn = this->Burn; /*0x6b5710*/
+    this->Crater = Bool_Overwrite; /*0x6b5716*/
+    v6 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)this->BarrelVoxel, aBurn, Burn); /*0x6b5725*/
+    Width = this->Width; /*0x6b5732*/
+    this->Burn = v6; /*0x6b5739*/
+    this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
+                    (bool *)a2,
+                    (uint8_t *)this->BarrelVoxel,
+                    (uint8_t *)&stru_82BA00.__pad_14D[151],
+                    Width);
+    this->Height = INIClass::ReadInt_Overwrite( /*0x6b575e*/
+                     (bool *)a2,
+                     (uint8_t *)this->BarrelVoxel,
+                     (uint8_t *)g_INI_Key_Height,
+                     this->Height);
+    if ( this->Theater ) /*0x6b5764*/
+      _makepath(Buffer, 0, 0, this->ImageFile, (const char *)&off_7E1BC6 + 112 * unk_A8B230[130].uniqueId); /*0x6b57b4*/
+    else
+      _makepath(Buffer, 0, 0, this->ImageFile, Ext); /*0x6b5784*/
+    result = (int)SearchMIXFile(Buffer, 0); /*0x6b57c2*/
+    this->Image = (SHPStruct *)result; /*0x6b57c7*/
+    IDA_LOBYTE(result) = 1; /*0x6b57ce*/
+  }
   else
-    _makepath(Buffer, 0, 0, (const char *)(&this->u32_C84), Ext); /*0x6b5784*/
-  this->Image = SearchMIXFile(Buffer, 0, unsigned int a2); /*0x6b57c7*/
-  return 1; /*0x6b57cd*/
+  {
+    IDA_LOBYTE(result, unsigned int a2) = 0; /*0x6b57db*/
+  }
+  return result; /*0x6b57cd*/
 }
 // 0x6B6160
 SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass *a2, char a3, void * a1)
 {
-  void *v3; // eax
+  SHPStruct *Image; // eax
   int v4; // eax
-  void **v6; // [esp+4h] [ebp-4h] BYREF
+  SmudgeTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  v3 = *(a3 + 41); /*0x6b6164*/
-  if ( v3 ) /*0x6b6187*/
+  Image = this->Image; /*0x6b6164*/
+  this->vtable0 = (void*)&SmudgeTypeClass_vftable; /*0x6b616a*/
+  this->vtable1 = (void*)&SmudgeTypeClass_vftable; /*0x6b6172*/
+  this->vtable2 = (void*)&SmudgeTypeClass_vftable; /*0x6b6179*/
+  this->vtable3 = (void*)&SmudgeTypeClass_vftable; /*0x6b6180*/
+  if ( Image ) /*0x6b6187*/
   {
-    RA2_OPDEL(v3); /*0x6b618a*/
-    *(a3 + 41) = 0; /*0x6b6192*/
+    RA2_OPDEL(Image); /*0x6b618a*/
+    this->Image = 0; /*0x6b6192*/
   }
-  AbstractClass::AnnounceExpiredPointer(a3, 1); /*0x6b61a0*/
-  v6 = a3; /*0x6b61b5*/
-  v4 = (*(int (__thiscall **)(int *, void ***))(dword_A8EC18 + 16))(&dword_A8EC18, &v6); /*0x6b61b9*/
-  if ( v4 != -1 && v4 < FactoryClass_Count && v4 < --FactoryClass_Count ) /*0x6b61d4*/
+  AbstractClass::AnnounceExpiredPointer(&this->vtable0, 1); /*0x6b61a0*/
+  v6 = this; /*0x6b61b5*/
+  v4 = (*(int (__thiscall **)(unsigned char *, SmudgeTypeClass **))(*(unsigned int *)&stru_A8EB00.gapE4[52] + 16))( /*0x6b61b9*/
+         &stru_A8EB00.gapE4[52],
+         &v6);
+  if ( v4 != -1 && v4 < *(int *)&stru_A8EB00.gapE4[68] ) /*0x6b61c9*/
   {
-    do /*0x6b61ec*/
+    --*(unsigned int *)&stru_A8EB00.gapE4[68]; /*0x6b61ce*/
+    for ( ; /*0x6b61d4*/
+          v4 < *(int *)&stru_A8EB00.gapE4[68];
+          *(unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[56] + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[56]
+                                                                                  + 4 * v4) )
     {
       ++v4; /*0x6b61dc*/
-      *((unsigned int *)FactoryClass_Array + v4 - 1) = *((unsigned int *)FactoryClass_Array + v4); /*0x6b61e0*/
     }
-    while ( v4 < FactoryClass_Count ); /*0x6b61ec*/
   }
-  ObjectTypeClass::Destruct((int)a3); /*0x6b61f0*/
-  if ( (a3 & 1) != 0 ) /*0x6b61fa*/
-    RA2_OPDEL(a3); /*0x6b61fd*/
-  return a3; /*0x6b6207*/
+  ObjectTypeClass::Destruct((int)this); /*0x6b61f0*/
+  if ( (a2 & 1) != 0 ) /*0x6b61fa*/
+    RA2_OPDEL(this); /*0x6b61fd*/
+  return &this->vtable0; /*0x6b6207*/
 }
 // 0x6B5550
 bool SmudgeTypeClass::GetType(short * a2, int a3)
 {
-  void **v4; // eax
+  UnitClass *v4; // eax
   int v5; // edx
   bool result; // al
-  int v7[3]; // [esp+4h] [ebp-Ch] BYREF
+  unsigned int v7[3]; // [esp+4h] [ebp-Ch] BYREF
 
-  v4 = (void *)operator new(0xB0u); /*0x6b555b*/
+  v4 = (UnitClass *)RA2_OPNEW(0xB0u); /*0x6b555b*/
   result = 0; /*0x6b55a7*/
   if ( v4 ) /*0x6b5565*/
   {
@@ -212,9 +231,9 @@ bool SmudgeTypeClass::GetType(short * a2, int a3)
 // 0x6B55C0
 SmudgeClass * SmudgeTypeClass::GetFlag(int a2)
 {
-  void **v3; // eax
+  UnitClass *v3; // eax
 
-  v3 = (void *)operator new(0xB0u); /*0x6b55c8*/
+  v3 = (UnitClass *)RA2_OPNEW(0xB0u); /*0x6b55c8*/
   if ( v3 ) /*0x6b55d2*/
     return UnitClass::Create(v3, this, &dword_B0B7A8, -1); /*0x6b55de*/
   else
@@ -226,12 +245,12 @@ int SmudgeTypeClass::PowerDrainUpdate(int * a2)
   int v3; // ecx
   int v4; // edx
 
-  AbstractTypeClass::ProcessPower(a2); /*0x6b57f9*/
+  AbstractTypeClass::ProcessPower((AbstractTypeClass *)this, a2); /*0x6b57f9*/
   Power::TimerProcess(this->ArrayIndex); /*0x6b5807*/
-  IDA_LOBYTE(v3) = this->q2A0; /*0x6b580c*/
-  Power::FlagProcess(a2, v3); /*0x6b5815*/
-  IDA_LOBYTE(v4) = this->q2A1; /*0x6b581a*/
-  Power::FlagProcess(a2, v4); /*0x6b5823*/
+  IDA_LOBYTE(v3) = this->Crater; /*0x6b580c*/
+  Power::FlagProcess((Power *)a2, v3); /*0x6b5815*/
+  IDA_LOBYTE(v4) = this->Burn; /*0x6b581a*/
+  Power::FlagProcess((Power *)a2, v4); /*0x6b5823*/
   Power::TimerProcess(this->Width); /*0x6b5831*/
   return Power::TimerProcess(this->Height); /*0x6b5844*/
 }
@@ -240,15 +259,19 @@ int SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
 {
   int result; // eax
 
-  result = ObjectTypeClass::LoadCleanup((int)aP0, aP1); /*0x6b585b*/
+  result = ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1); /*0x6b585b*/
   if ( result >= 0 ) /*0x6b5862*/
   {
     if ( aP0 ) /*0x6b5866*/
     {
-      ObjectTypeClass::Construct(aP0, (int)&aP1); /*0x6b586f*/
+      ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6b586f*/
+      aP0->vtable0 = (void*)&SmudgeTypeClass_vftable; /*0x6b5874*/
+      aP0->vtable1 = (void*)&SmudgeTypeClass_vftable; /*0x6b587a*/
+      aP0->vtable2 = (void*)&SmudgeTypeClass_vftable; /*0x6b5881*/
+      aP0->vtable3 = (void*)&SmudgeTypeClass_vftable; /*0x6b5888*/
     }
-    VoxelAnimType::LoadAnim(aP0); /*0x6b5891*/
-    ObjectTypeClass::Load2DArt(aP0); /*0x6b5898*/
+    VoxelAnimType::LoadAnim((char *)aP0); /*0x6b5891*/
+    ObjectTypeClass::Load2DArt((char *)aP0); /*0x6b5898*/
     return 0; /*0x6b589d*/
   }
   return result; /*0x6b589f*/
@@ -258,7 +281,7 @@ int SmudgeTypeClass::SaveToINI(TechnoTypeClass * aP0, ObjectTypeClass * aP1, int
 {
   int result; // eax
 
-  result = AbstractClass::SaveLoad_PrefixWrapper(aP0, aP1, aP2); /*0x6b58bf*/
+  result = AbstractClass::SaveLoad_PrefixWrapper((AbstractClass *)aP0, aP1, aP2); /*0x6b58bf*/
   if ( result >= 0 ) /*0x6b58c6*/
     return 0; /*0x6b58c8*/
   return result; /*0x6b58ca*/
@@ -271,7 +294,7 @@ int SmudgeTypeClass::GetClassIdentifier(int a1, unsigned int * a2)
   *a2 = 1525862008; /*0x6b58e6*/
   a2[1] = 298976820; /*0x6b58ee*/
   a2[2] = 1610654892; /*0x6b58f7*/
-  a2[3] = -1252326136; /*0x6b5900*/
+  a2[3] = unk_7E961C; /*0x6b5900*/
   return 0; /*0x6b58dd*/
 }
 // 0x6B6130

@@ -10,39 +10,30 @@ struct BinkMovie {
     unsigned int u32_4;  // 0x4
     void* q008;  // 0x8
     bool q00A;  // 0xA
-    void* pad_00C;  // 0xC
-    void* pad_010;  // 0x10
-    void* pad_014;  // 0x14
+    unsigned int ;  // 0xC
+    void* ;  // 0x10
+    unsigned int u32_14;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
     void* q020;  // 0x20
-    unsigned int u32_24;  // 0x24
-    unsigned char q028;  // 0x28
-    unsigned char q02C;  // 0x2C
-    bool q02D;  // 0x2D
-    unsigned char q031;  // 0x31
-    void* binkHandle;  // 0x32
-    unsigned int q034;  // 0x34
-    unsigned char q040;  // 0x40
-    unsigned char q044;  // 0x44
-    AbstractClass * ptr_48;  // 0x48
-    void* q050;  // 0x50
-    unsigned int q054;  // 0x54
-    unsigned char q068;  // 0x68
-    void* q080;  // 0x80
-    unsigned int q084;  // 0x84
-    unsigned char q104;  // 0x104
-    AbstractClass * q114;  // 0x114
-    void* q128;  // 0x128
-    unsigned int q130;  // 0x130
-    int q201;  // 0x201
+    unsigned int BinkMovie_field_0x10;
+    unsigned int BinkMovie_field_0x14;
+    unsigned int BinkMovie_field_0x20;
+    unsigned int BinkMovie_field_0x4;
+    unsigned int BinkMovie_field_0xC;
+    unsigned int __pad_0;
+    unsigned int memoryBuffer;
     unsigned int q00C2;
+    unsigned int tempPath;
     unsigned int u32_100;
+    unsigned int u32_24;
+    unsigned int u32_2C;
+    unsigned int u32_2D;
     unsigned int u32_40;
     unsigned int u32_42;
+    unsigned int __pad_18;
     unsigned int q00C;
     unsigned int u32_10;
-    unsigned int u32_14;
 // --- flat members (END) ---
     unsigned int * Close(char * FullPath);  // 0x432690
     unsigned int * Open(char * FullPath,  int a3);    // 0x4326C0

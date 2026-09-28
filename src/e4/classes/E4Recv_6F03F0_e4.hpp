@@ -12,6 +12,7 @@ struct E4Recv_6F03F0 {
     unsigned int q774;  // 0x774
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
+    unsigned int customSound_controller;
 // --- flat members (END) ---
     char sub_6F03F0();  // 0x6F03F0
 };

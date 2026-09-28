@@ -45,8 +45,8 @@ struct E4Recv_728A00 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int q056;
-    unsigned int q086;
+    unsigned int CurrentState;
+    unsigned int __pad_0;
 // --- flat members (END) ---
     int sub_728A00();  // 0x728A00
 };

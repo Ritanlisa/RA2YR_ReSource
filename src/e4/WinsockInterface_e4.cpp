@@ -19,6 +19,8 @@
 #include "e4/classes/WinModemClass_e4.hpp"
 #include "e4/classes/WonlineStringDialogControl_12_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/VectorClass_Wstring_e4.hpp"
+#include "e4/classes/WideString_e4.hpp"
 
 // 0x770270
 namespace gamemd {

@@ -85,26 +85,26 @@ void LoadOptions::Construct() {
 
 // 0x558740
 LoadOptions::LoadOptions() {
-  unsigned int *v2; // ecx
+  char *p_is_active; // ecx
   int v3; // eax
 
-  v2 = (unsigned int)(&this->is_active);
-  v2[1] = (unsigned int)(0);
-  v2[2] = (unsigned int)(0);
-  *((unsigned char *)v2 + 12) = 1; /*0x55874e*/
-  *((unsigned char *)v2 + 13) = 0; /*0x558752*/
-  *v2 = &(void*)(void*)&DynamicVectorClass_FileEntryClass___vftable; /*0x558755*/
-  v2[5] = 10; /*0x55875b*/
-  v2[4] = 0; /*0x558762*/
-  this->Items = 0; /*0x558765*/
-  this->q00C = 0; /*0x558768*/
-  this->q014 = 0; /*0x55876b*/
-  v3 = *v2; /*0x55876e*/
-  *this = &(void*)(void*)&LoadOptionsClass_vftable; /*0x558770*/
-  this->Capacity = &off_829EA0; /*0x558776*/
+  p_is_active = (char *)((const char *)(&this->is_active));
+  *((unsigned int *)p_is_active + 1) = 0; /*0x558748*/
+  *((unsigned int *)p_is_active + 2) = 0; /*0x55874b*/
+  p_is_active[12] = 1; /*0x55874e*/
+  p_is_active[13] = 0; /*0x558752*/
+  *(unsigned int *)p_is_active = &(void*)(void*)&DynamicVectorClass_FileEntryClass___vftable; /*0x558755*/
+  *((unsigned int *)p_is_active + 5) = 10; /*0x55875b*/
+  *((unsigned int *)p_is_active + 4) = 0; /*0x558762*/
+  *(unsigned int *)this->__pad_4 = 0; /*0x558765*/
+  this->field_0C = 0; /*0x558768*/
+  this->field_14 = 0; /*0x55876b*/
+  v3 = *(unsigned int *)p_is_active; /*0x55876e*/
+  this->extension = &(void*)(void*)&LoadOptionsClass_vftable; /*0x558770*/
+  *(unsigned int *)&this->__pad_4[4] = &off_829EA0; /*0x558776*/
   this->max_entries = 2048; /*0x55877d*/
-  (*(void (__thiscall **)(unsigned int *))(v3 + 12))(v2); /*0x558784*/
-  return this; /*0x558789*/
+  (*(void (__thiscall **)(char *))(v3 + 12))(p_is_active); /*0x558784*/
+  return &this->extension; /*0x558789*/
 }
 LoadOptions::~LoadOptions() {
     Cleanup();
@@ -115,24 +115,25 @@ LoadOptions::~LoadOptions() {
 void LoadOptions::Cleanup() {
   int v2; // edi
   int v3; // edx
-  unsigned int *v4; // esi
-  void *v5; // eax
+  char *p_is_active; // esi
+  int result; // eax
 
   v2 = (unsigned int)(0);
-  for ( *this = &(void*)(void*)&LoadOptionsClass_vftable; v2 < *(&this->Items2); ++v2 ) /*0x5587a4*/
-    RA2_OPDEL(*(void **)(this->q024 + 4 * v2)); /*0x5587ad*/
-  v3 = this->is_active; /*0x5587bd*/
-  v4 = &this->is_active; /*0x5587c0*/
-  (*(void (__thiscall **)(unsigned int *))(v3 + 12))(v4); /*0x5587c5*/
-  v5 = (void *)v4[1]; /*0x5587c8*/
-  *v4 = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x5587cb*/
-  if ( v5 && *((unsigned char *)v4 + 13) ) /*0x5587d5*/
+  for ( this->extension = &(void*)(void*)&LoadOptionsClass_vftable; v2 < this->capacity; ++v2 ) /*0x5587a4*/
+    RA2_OPDEL(*(void **)(*(unsigned int *)&this->__pad_22[2] + 4 * v2)); /*0x5587ad*/
+  v3 = *(unsigned int *)&this->is_active; /*0x5587bd*/
+  p_is_active = &this->is_active; /*0x5587c0*/
+  (*(void (__thiscall **)(char *))(v3 + 12))(p_is_active); /*0x5587c5*/
+  result = *((unsigned int *)p_is_active + 1); /*0x5587c8*/
+  *(unsigned int *)p_is_active = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x5587cb*/
+  if ( result && p_is_active[13] ) /*0x5587d5*/
   {
-    RA2_OPDEL(v5); /*0x5587db*/
-    v4[1] = 0; /*0x5587e3*/
+    RA2_OPDEL((void *)result); /*0x5587db*/
+    *((unsigned int *)p_is_active + 1) = 0; /*0x5587e3*/
   }
-  *((unsigned char *)v4 + 13) = 0; /*0x5587e6*/
-  v4[2] = 0; /*0x5587e9*/
+  p_is_active[13] = 0; /*0x5587e6*/
+  *((unsigned int *)p_is_active + 2) = 0; /*0x5587e9*/
+  return result; /*0x5587ec*/
 }
 // IDA 0x55A0D0: VT00_Destroy (QueryInterface destructor)
 void LoadOptions::VT00_Destroy(char free_self) {
@@ -150,9 +151,12 @@ bool LoadOptions::DeleteSaveFile(const char* filename) {
 // IDA 0x5587F0: Run — launch save/load dialog
 // 0x5587f0
 int LoadOptions::Run() {
-  this->Items = 1; /*0x5587f0*/
-  this->q00C = 0; /*0x5587f7*/
-  return SaveLoadDialog::DlgProc((LONG)this);
+  int result; // eax
+
+  *(unsigned int *)this->__pad_4 = 1; /*0x5587f0*/
+  this->field_0C = 0; /*0x5587f7*/
+  IDA_LOBYTE(result) = SaveLoadDialog::DlgProc((SaveLoadDialog *)this); /*0x5587fe*/
+  return result;
 }
 // 0x559c20
 bool LoadOptions::Check() {
@@ -174,7 +178,7 @@ bool LoadOptions::Check() {
   struct _WIN32_FIND_DATAA FindFileData; // [esp+208h] [ebp-140h] BYREF
 
   v2 = 0; /*0x559c2f*/
-  v3 = this->Capacity; /*0x559c31*/
+  v3 = *(const char **)&this->__pad_4[4]; /*0x559c31*/
   v9 = 0; /*0x559c34*/
   v10 = -1; /*0x559c42*/
   v12 = -1; /*0x559c4d*/
@@ -192,7 +196,7 @@ bool LoadOptions::Check() {
   {
     while ( (FindFileData.dwFileAttributes & 0x116) != 0 /*0x559cf7*/
          || !_strcmpi(FindFileData.cFileName, MultiByteStr)
-         || (*((uint8_t (__thiscall **)(const char **, unsigned short *, struct _WIN32_FIND_DATAA *))*this + 4))(
+         || (*((uint8_t (__thiscall **)(LoadOptions *, unsigned short *, struct _WIN32_FIND_DATAA *))this->extension + 4))(
               this,
               v7,
               &FindFileData) != 1
@@ -228,7 +232,7 @@ bool LoadOptions::Check() {
       struct _WIN32_FIND_DATAA FindFileData; // [esp+208h] [ebp-140h] BYREF
 
       v2 = 0; /*0x559c2f*/
-      v3 = this->Capacity; /*0x559c31*/
+      v3 = *(const char **)&this->__pad_4[4]; /*0x559c31*/
       v9 = 0; /*0x559c34*/
       v10 = -1; /*0x559c42*/
       v12 = -1; /*0x559c4d*/
@@ -246,7 +250,7 @@ bool LoadOptions::Check() {
       {
         while ( (FindFileData.dwFileAttributes & 0x116) != 0 /*0x559cf7*/
              || !_strcmpi(FindFileData.cFileName, MultiByteStr)
-             || (*((uint8_t (__thiscall **)(const char **, unsigned short *, struct _WIN32_FIND_DATAA *))*this + 4))(
+             || (*((uint8_t (__thiscall **)(LoadOptions *, unsigned short *, struct _WIN32_FIND_DATAA *))this->extension + 4))(
                   this,
                   v7,
                   &FindFileData) != 1
@@ -389,35 +393,35 @@ bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
 // 0x55a1f0
 AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
   unsigned int *v4; // edi
-  int v6; // ecx
+  int m_8; // ecx
   int i; // eax
 
   if ( new_size ) /*0x55a1fc*/
   {
-    this->q00C = 0; /*0x55a206*/
+    IDA_LOBYTE(this->m_C) = 0; /*0x55a206*/
     if ( out_buffer ) /*0x55a20c*/
       v4 = out_buffer; /*0x55a222*/
     else
-      v4 = RA2_OPNEW(4 * new_size); /*0x55a21e*/
-    this->q00C = 1; /*0x55a226*/
+      v4 = (unsigned int *)RA2_OPNEW(4 * new_size); /*0x55a21e*/
+    IDA_LOBYTE(this->m_C) = 1; /*0x55a226*/
     if ( v4 ) /*0x55a22a*/
     {
-      if ( this->Items ) /*0x55a235*/
+      if ( *(unsigned int *)&this->m_1[3] ) /*0x55a235*/
       {
-        v6 = this->Capacity; /*0x55a23c*/
-        if ( new_size < v6 ) /*0x55a241*/
-          v6 = new_size; /*0x55a243*/
-        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x55a249*/
+        m_8 = this->m_8; /*0x55a23c*/
+        if ( new_size < m_8 ) /*0x55a241*/
+          m_8 = new_size; /*0x55a243*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x55a249*/
           ++i; /*0x55a24e*/
-        if ( this->IsAllocated ) /*0x55a25b*/
+        if ( IDA_BYTE1(this->m_C) ) /*0x55a25b*/
         {
-          RA2_OPDEL(*((void **)this + 1)); /*0x55a266*/
-          this->Items = 0; /*0x55a26e*/
+          RA2_OPDEL(*(void **)&this->m_1[3]); /*0x55a266*/
+          *(unsigned int *)&this->m_1[3] = 0; /*0x55a26e*/
         }
       }
-      this->Items = v4; /*0x55a277*/
-      this->Capacity = new_size; /*0x55a27f*/
-      this->IsAllocated = out_buffer == 0; /*0x55a282*/
+      *(unsigned int *)&this->m_1[3] = v4; /*0x55a277*/
+      this->m_8 = new_size; /*0x55a27f*/
+      IDA_BYTE1(this->m_C) = out_buffer == 0; /*0x55a282*/
       return 1; /*0x55a288*/
     }
     else
@@ -427,43 +431,43 @@ AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out
   }
   else
   {
-    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x55a292*/
+    (*(void (__thiscall **)(_VectorClass_PAVFileEntryClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x55a292*/
     return 1; /*0x55a298*/
   }
 }
 // 0x55a2a0
 void LoadOptions::ClearBuffer() {
-  if ( this->Items && this->IsAllocated ) /*0x55a2ad*/
+  if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x55a2ad*/
   {
-    RA2_OPDEL(this->Items); /*0x55a2b3*/
-    this->Items = 0; /*0x55a2bb*/
+    RA2_OPDEL(*(void **)&this->m_1[3]); /*0x55a2b3*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x55a2bb*/
   }
-  this->IsAllocated = 0; /*0x55a2be*/
-  this->Capacity = 0; /*0x55a2c1*/
+  IDA_BYTE1(this->m_C) = 0; /*0x55a2be*/
+  this->m_8 = 0; /*0x55a2c1*/
 }
 // 0x55a2d0
 int LoadOptions::FindItem(FileEntryClass* const* key) {
   int result; // eax
-  int v3; // edx
+  int m_8; // edx
   unsigned int *i; // ecx
 
-  if ( !this->q00C ) /*0x55a2d0*/
+  if ( !IDA_LOBYTE(this->m_C) ) /*0x55a2d0*/
     return 0; /*0x55a2d8*/
-  v3 = this->Capacity; /*0x55a2de*/
+  m_8 = this->m_8; /*0x55a2de*/
   result = 0; /*0x55a2e1*/
-  if ( v3 <= 0 ) /*0x55a2e5*/
+  if ( m_8 <= 0 ) /*0x55a2e5*/
     return -1; /*0x55a2fc*/
-  for ( i = this->Items; *i != *key; ++i ) /*0x55a2eb*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *key; ++i ) /*0x55a2eb*/
   {
-    if ( ++result >= v3 ) /*0x55a2fa*/
+    if ( ++result >= m_8 ) /*0x55a2fa*/
       return -1; /*0x55a2fa*/
   }
   return result; /*0x55a2da*/
 }
 // 0x55a310
 uint32_t LoadOptions::PointerToIndex(FileEntryClass* ptr) {
-  if ( this->q00C ) /*0x55a310*/
-    return (unsigned int)(ptr - this->Items) >> 2; /*0x55a325*/
+  if ( IDA_LOBYTE(this->m_C) ) /*0x55a310*/
+    return (unsigned int)(ptr - *(unsigned int *)&this->m_1[3]) >> 2; /*0x55a325*/
   else
     return 0; /*0x55a317*/
 }
@@ -669,15 +673,15 @@ namespace gamemd {
 char* LoadOptions::GetDataPtr() { return (char*)(this) + 264; }
 // 0x681120
 uint32_t LoadOptions::GetFlag98() const {
-  return *(&this->q0248); /*0x681126*/
+  return this->u32_188; /*0x681126*/
 }
 // 0x681140
 uint32_t LoadOptions::GetFlag99() const {
-  return *(&this->q0249); /*0x681146*/
+  return this->u32_18C; /*0x681146*/
 }
 // 0x6812d0
 uint32_t LoadOptions::GetFlag252() const {
-  return *(&this->q0642); /*0x6812d6*/
+  return this->u32_3F0; /*0x6812d6*/
 }
 uint32_t LoadOptions::GetMode() const { return m; }
 void LoadOptions::SetMode(uint32_t m) { m = m; }

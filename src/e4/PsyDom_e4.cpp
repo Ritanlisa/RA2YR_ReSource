@@ -13,6 +13,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/RadBeam_e4.hpp"
+#include "e4/classes/Progress_e4.hpp"
 
 // 0x53B080
 namespace gamemd {
@@ -183,6 +184,10 @@ void PsyDom::Fire()
 namespace gamemd {
 bool PsyDom::IsActive()
 {
-  return PsyDom_Status != 0; /*0x53b40a*/
+  int result; // eax
+
+  result = PsyDom_Status; /*0x53b400*/
+  IDA_LOBYTE(result) = PsyDom_Status != 0; /*0x53b407*/
+  return result; /*0x53b40a*/
 }
 } // namespace gamemd

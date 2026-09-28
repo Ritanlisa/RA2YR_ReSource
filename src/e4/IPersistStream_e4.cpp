@@ -65,7 +65,7 @@ void IPersistStream::Stub(BuildingTypeClass * aP0, int a2)
 namespace gamemd {
 int IPersistStream::GetSizeMax(int a0, RadioClass * aP1, int a3)
 {
-  RadioClass::SaveState(a0, aP1, a3); /*0x70c25f*/
+  RadioClass::SaveState((RadioClass *)a0, (int *)aP1, a3); /*0x70c25f*/
   return 0; /*0x70c266*/
 }
 } // namespace gamemd

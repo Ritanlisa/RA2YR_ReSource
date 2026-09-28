@@ -18,6 +18,8 @@ struct Super {
     void* q1908;  // 0x1908
     void* q5170;  // 0x5170
     void* q6408;  // 0x6408
+    unsigned int field_24;
+    unsigned int field_28;
 // --- flat members (END) ---
     int GetDefaultTimer();  // 0x6CC260
 };

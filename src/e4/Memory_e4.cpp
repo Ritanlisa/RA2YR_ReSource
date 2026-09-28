@@ -22,7 +22,6 @@ int sub_53EC40(unsigned char a1, char a2)
     word_AA0168[a1] = a2 != 0 ? 0 : 0x8000;
   return result; /*0x53ec67*/
 }
-}
 // 0x6149B0
 namespace gamemd {
 void Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
@@ -84,7 +83,7 @@ void Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   if ( cchWideChar > 0 ) /*0x614a8e*/
     v9[cchWideChar - 1] = 0; /*0x614a90*/
   v10 = wcslen(v9); /*0x614a9d*/
-  v11 = operator new(2 * v10 + 6); /*0x614aab*/
+  v11 = RA2_OPNEW(2 * v10 + 6); /*0x614aab*/
   memset(v11, 0, 2 * v10 + 6); /*0x614ab9*/
   v12 = 0; /*0x614abd*/
   if ( v10 > 0 ) /*0x614ac6*/

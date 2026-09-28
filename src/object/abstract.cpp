@@ -30,7 +30,7 @@ REVERSE(0x410260, "AbstractClass::QueryInterface: IDA verified", "None")
 // Checks IUnknown / IPersistStream / IPersist / IRTTITypeInfo IIDs
 // 0x410260
 HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
-  int *v2; // ecx
+  void **p_vtable1; // ecx
   AbstractClass *thisa; // [esp+8h] [ebp+4h]
   const void *iid; // [esp+Ch] [ebp+8h]
   void **ppv; // [esp+10h] [ebp+Ch]
@@ -47,14 +47,14 @@ HRESULT AbstractClass::QueryInterface(const IID& iid, void** ppv) {
   if ( !memcmp(iid, &IID_IRTTITypeInfo, 0x10u) ) /*0x4102ce*/
   {
     if ( thisa ) /*0x4102d6*/
-      v2 = &thisa->parent_gap[1]; /*0x4102d8*/
+      p_vtable1 = &thisa->vtable1; /*0x4102d8*/
     else
-      v2 = 0; /*0x4102dd*/
-    *ppv = v2; /*0x4102df*/
+      p_vtable1 = 0; /*0x4102dd*/
+    *ppv = p_vtable1; /*0x4102df*/
   }
   if ( !*ppv ) /*0x4102e1*/
     return -2147467262; /*0x4102e6*/
-  (*(void (__stdcall **)(AbstractClass *))(thisa->parent_gap[0] + 4))(thisa); /*0x4102f2*/
+  (*((void (__stdcall **)(AbstractClass *))thisa->vtable0 + 1))(thisa); /*0x4102f2*/
   return 0; /*0x41026e*/
 }
 // IDA: 0x410300 -- vtable[0][1] (COMStub_AddRef)
@@ -118,9 +118,9 @@ CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const {
   unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
   CoordStruct *out; // [esp+14h] [ebp+4h]
 
-  v1 = (int *)(*(int (__thiscall **)(void *, unsigned char *))(out->u32_48)(out, v3); /*0x41054e*/
-  out->X = *v1; /*0x410558*/
-  out->Y = v1[1]; /*0x41055d*/
+  v1 = (gamemd::CoordStruct *)((int *)(*((int (__thiscall **)(AbstractClass *, unsigned char *))out->vtable0 + 18))(out, v3));
+  out->X = (T)((gamemd::CoordStruct *)(*v1));
+  out->Y = (gamemd::CoordStruct *)(v1[1]);
   out->Z = v1[2]; /*0x410564*/
   return (int)out; /*0x410560*/
 }

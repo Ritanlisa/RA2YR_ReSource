@@ -7,8 +7,8 @@ namespace gamemd {
 
 struct Input {
 // --- flat members (BEGIN) ---
-    char Input_field_00[4];  // 0x0
-    void* q004;  // 0x4
+    unsigned int Input_field_00;  // 0x0
+    unsigned int u32_4;
 // --- flat members (END) ---
     int OffsetToDirection();
 };

@@ -55,6 +55,11 @@ struct E4Recv_752CB0 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
+    unsigned int ambientSoundController;
+    unsigned int attachedTag;
+    unsigned int customSound_controller;
+    unsigned int fallRate;
+    unsigned int owningHouseIndex;
 // --- flat members (END) ---
     int sub_752CB0(const char * a2);  // 0x752CB0
 };

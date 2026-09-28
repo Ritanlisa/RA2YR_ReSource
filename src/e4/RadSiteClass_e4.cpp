@@ -15,26 +15,31 @@
 namespace gamemd {
 RadSiteClass::RadSiteClass()
 {
-  RadSiteClass * v3;
+  int v2; // edx
+  int v3; // eax
 
-  AbstractClass::Constructor(); /*0x65b1e3*/
+  AbstractClass::Constructor((AbstractClass *)this); /*0x65b1e3*/
   this->LightSource = 0; /*0x65b1ea*/
-  *(&this->vtable20) = g_CurrentFrame; /*0x65b1f3*/
-  *(&this->vtable22) = 0; /*0x65b1f6*/
-  g_CurrentFrame = g_CurrentFrame; /*0x65b1f9*/
-  *(&this->vtable25) = 0; /*0x65b1ff*/
-  *(&this->vtable23) = g_CurrentFrame; /*0x65b202*/
-  this->BaseCell = 0; /*0x65b205*/
-  this->ptr_42 = 0; /*0x65b209*/
-  *(&this->vtable27) = 0; /*0x65b20d*/
-  *(&this->vtable28) = 0; /*0x65b210*/
-  *(&this->vtable29) = 0; /*0x65b213*/
-  *(&this->vtable30) = 0; /*0x65b216*/
-  *(&this->vtable31) = 0; /*0x65b219*/
-  *(&this->vtable35) = 0; /*0x65b21c*/
-  *(&this->vtable36) = 0; /*0x65b21f*/
-  *(&this->vtable37) = 0; /*0x65b222*/
-  *(&this->vtable38) = 0; /*0x65b225*/
+  this->RadLevelTimer[0] = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x65b1f3*/
+  this->RadLevelTimer[2] = 0; /*0x65b1f6*/
+  v2 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x65b1f9*/
+  this->RadLightTimer[2] = 0; /*0x65b1ff*/
+  this->RadLightTimer[0] = v2; /*0x65b202*/
+  IDA_LOWORD(this->BaseCell[0]) = 0; /*0x65b205*/
+  IDA_HIWORD(this->BaseCell[0]) = 0; /*0x65b209*/
+  this->Spread = 0; /*0x65b20d*/
+  this->SpreadInLeptons = 0; /*0x65b210*/
+  this->RadLevel = 0; /*0x65b213*/
+  this->LevelSteps = 0; /*0x65b216*/
+  this->Intensity = 0; /*0x65b219*/
+  this->IntensitySteps = 0; /*0x65b21c*/
+  this->IntensityDecrement = 0; /*0x65b21f*/
+  this->RadDuration = 0; /*0x65b222*/
+  this->RadTimeLeft = 0; /*0x65b225*/
+  this->vtable0 = (void*)&RadSiteClass_vftable; /*0x65b228*/
+  this->vtable1 = (void*)&RadSiteClass_vftable; /*0x65b22e*/
+  this->vtable2 = (void*)&RadSiteClass_vftable; /*0x65b235*/
+  this->vtable3 = (void*)&RadSiteClass_vftable; /*0x65b23c*/
   if ( dword_B04BE0 < dword_B04BD8 /*0x65b277*/
     || (byte_B04BDD || !dword_B04BD8)
     && dword_B04BE4 > 0
@@ -43,11 +48,10 @@ RadSiteClass::RadSiteClass()
          dword_B04BD8 + dword_B04BE4,
          0) )
   {
-    v3 = (gamemd::RadSiteClass *)(dword_B04BE0++);
+    v3 = (unsigned int)(dword_B04BE0++);
     *((unsigned int *)dword_B04BD4 + v3) = this; /*0x65b293*/
   }
-  return this; /*0x65b298*/
-}
+  return &this->vtable0; /*0x65b298*/
 }
 // 0x65B3A0
 namespace gamemd {
@@ -70,21 +74,25 @@ namespace gamemd {
 int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
 {
   int Prefix_0; // edi
-  unsigned int v3;
+  int v3; // edx
 
   Prefix_0 = AbstractClass::SaveLoad_Prefix_0(aP0, aP1); /*0x65b3e1*/
   if ( Prefix_0 >= 0 ) /*0x65b3e5*/
   {
     if ( aP0 ) /*0x65b3e9*/
     {
-      AbstractClass::InitVtables(aP0, (int)&aP1); /*0x65b3f2*/
-      v3 = g_CurrentFrame; /*0x65b3f7*/
-      aP0[12] = 0; /*0x65b3fd*/
-      aP0[10] = v3; /*0x65b404*/
-      aP0[13] = g_CurrentFrame; /*0x65b40c*/
-      aP0[15] = 0; /*0x65b40f*/
+      AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x65b3f2*/
+      v3 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x65b3f7*/
+      aP0->RadLevelTimer[2] = 0; /*0x65b3fd*/
+      aP0->RadLevelTimer[0] = v3; /*0x65b404*/
+      aP0->RadLightTimer[0] = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x65b40c*/
+      aP0->RadLightTimer[2] = 0; /*0x65b40f*/
+      aP0->vtable0 = (void*)&RadSiteClass_vftable; /*0x65b416*/
+      aP0->vtable1 = (void*)&RadSiteClass_vftable; /*0x65b41c*/
+      aP0->vtable2 = (void*)&RadSiteClass_vftable; /*0x65b423*/
+      aP0->vtable3 = (void*)&RadSiteClass_vftable; /*0x65b42a*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP0 + 9); /*0x65b43a*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&aP0->LightSource); /*0x65b43a*/
   }
   return Prefix_0; /*0x65b441*/
 }
@@ -94,7 +102,7 @@ int RadSiteClass::SaveLoad_Prefix(AbstractClass * aP0, int aP1)
 namespace gamemd {
 int RadSiteClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
 {
-  return AbstractClass::SaveLoad_Prefix(aP0, a1, aP2); /*0x65b464*/
+  return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x65b464*/
 }
 } // namespace gamemd
 
@@ -107,7 +115,7 @@ int RadSiteClass::ddtor(int a1, unsigned int * a2)
   *a2 = 1090836288; /*0x65b486*/
   a2[1] = 299095303; /*0x65b48e*/
   a2[2] = -1610598260; /*0x65b497*/
-  a2[3] = 1153315785; /*0x65b4a0*/
+  a2[3] = unk_7E98CC; /*0x65b4a0*/
   return 0; /*0x65b47d*/
 }
 } // namespace gamemd

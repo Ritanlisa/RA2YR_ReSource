@@ -5,6 +5,13 @@
 
 namespace gamemd {
 struct Mouse {
+    unsigned int __pad_5;
+    unsigned int m_1;
+    unsigned int q048;
+    unsigned int q04C;
+    unsigned int q050;
+    unsigned int q054;
+    unsigned int u32_555A;
     unsigned int q008;
     unsigned int u32_48;
     unsigned int u32_49;

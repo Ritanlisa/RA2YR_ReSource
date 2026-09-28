@@ -22,6 +22,7 @@
 #include "e4/classes/ThemeClass_e4.hpp"
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/WWMouseClass_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x5E3850
 namespace gamemd {
@@ -35,13 +36,12 @@ int INIClass::WOLobby_Play(void * a1, void * a2)
   unsigned int v8[113]; // [esp+80h] [ebp-1C8h] BYREF
   int16_t v9; // [esp+244h] [ebp-4h]
   char v10; // [esp+246h] [ebp-2h]
-
-  v2 = (LPVOID)(ppv);
+v2 = (LPVOID)(ppv);
   if ( ppv ) /*0x5e3864*/
   {
     memset(v7, 0, sizeof(v7)); /*0x5e3875*/
     strcpy(&v7[36], a1); /*0x5e3892*/
-    return (*(int (__stdcall **, unsigned int a2, unsigned int a1)(LPVOID, char *, const char *))(*(unsigned int *)v2 + 56))(v2, v7, a2); /*0x5e38a3*/
+    return (*(int (__stdcall **)(LPVOID, char *, const char *))(*(unsigned int *)v2 + 56))(v2, v7, a2); /*0x5e38a3*/
   }
   else
   {
@@ -75,11 +75,10 @@ int INIClass::WOLobby_Play(void * a1, void * a2)
   }
   return result; /*0x5e38a6*/
 }
-}
 // 0x78F7F0
 int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, HWND hWnd)
 {
-  int result; // eax
+  SkirmishDialog * result;
   HWND DlgItem; // eax
   HWND v7; // eax
   HWND v8; // eax
@@ -184,8 +183,7 @@ int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, H
   struct in_addr String[32]; // [esp+54h] [ebp-208h] BYREF
   wchar_t Destination[66]; // [esp+D4h] [ebp-188h] BYREF
   wchar_t String1[130]; // [esp+158h] [ebp-104h] BYREF
-
-  result = BaseDialogProc(hDlg, a2, nIDDlgItem, (unsigned int)hWnd);
+result = (gamemd::SkirmishDialog *)((int)(BaseDialogProc(hDlg, a2, nIDDlgItem, (unsigned int)hWnd)));
   if ( result )
     return result;
   int v5 = g_NetworkLobbyState;
@@ -277,7 +275,7 @@ int WOLobby::SetupDlgProc(HWND hDlg, unsigned int a2, unsigned int nIDDlgItem, H
             goto LABEL_57;
         }
       }
-      unsigned int * v12 = &unk_B76EF4;
+      unsigned int * v12 = (unsigned int *)(&unk_B76EF4);
       do
       {
         *v12 = 0;
@@ -297,8 +295,8 @@ LABEL_56:
         if ( GetDlgItem(hDlg, 1026) )
           g_Rules_Bases = SendDlgItemMessageA(hDlg, 1026, 0x400u, 0, 0);
         if ( GetDlgItem(hDlg, 1321) )
-          g_Rules_EngineerCount = 6 - SendDlgItemMessageA(hDlg, 1321, 0x400u, 0, 0);
-        unsigned int * v11 = &unk_B76EF4;
+          g_Rules_EngineerCount = (int)((unsigned int *)(6 - SendDlgItemMessageA(hDlg, 1321, 0x400u, 0, 0)));
+        unsigned int * v11 = (unsigned int *)(&unk_B76EF4);
         do
         {
           *v11 = 0;
@@ -447,8 +445,7 @@ LABEL_320:
             ntoainet(String[6]);
             Debug::Log();
             v167 = *(void (__stdcall ***)(LPVOID, char *, int, char **))g_UIPointerTable;
-            char * v137 = ntoainet((struct in_addr)S_addr);
-            v167[6](g_UIPointerTable, v137, 1000, (char **)&v164);
+            unsigned int v137 = (unsigned int)(v167[6](g_UIPointerTable, v137, 1000, (char **)&v164));
             ++v128;
             v135 += 108;
           }
@@ -2160,33 +2157,35 @@ char sub_72BAC0()
 namespace gamemd {
 void sub_72BB10()
 {
-  void *v0; // esi
+  void *v1; // esi
 
-  if ( byte_B0FD51 ) /*0x72bb1a*/
+  if ( g_BuildingLoadQueue_Array.__pad_F70[1441] ) /*0x72bb1a*/
   {
-    if ( byte_B0FD50 ) /*0x72bb22*/
+    if ( g_BuildingLoadQueue_Array.__pad_F70[1440] ) /*0x72bb22*/
     {
-      v0 = dword_B0FB2C; /*0x72bb25*/
-      if ( dword_B0FB2C ) /*0x72bb2d*/
+      v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[892]; /*0x72bb25*/
+      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[892] ) /*0x72bb2d*/
       {
-        FileTreeNode::Destroy(dword_B0FB2C); /*0x72bb31*/
-        RA2_OPDEL(v0); /*0x72bb37*/
+        FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[892]); /*0x72bb31*/
+        RA2_OPDEL(v1); /*0x72bb37*/
       }
-      byte_B0FD50 = 0; /*0x72bb3f*/
+      g_BuildingLoadQueue_Array.__pad_F70[1440] = 0; /*0x72bb3f*/
     }
-    dword_B0FB2C = 0; /*0x72bb4b*/
-    if ( dword_B0FD54 ) /*0x72bb53*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[892] = 0; /*0x72bb4b*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1444] ) /*0x72bb53*/
     {
-      RA2_OPDEL(dword_B0FD54); /*0x72bb56*/
-      dword_B0FD54 = 0; /*0x72bb5e*/
+      RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1444]); /*0x72bb56*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1444] = 0; /*0x72bb5e*/
     }
-    if ( dword_B0FD58 ) /*0x72bb6c*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448] ) /*0x72bb6c*/
     {
-      (**(void (__thiscall ***)(int, int))dword_B0FD58)(dword_B0FD58, 1); /*0x72bb72*/
-      dword_B0FD58 = 0; /*0x72bb74*/
+      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1448])( /*0x72bb72*/
+        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448],
+        1);
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448] = 0; /*0x72bb74*/
     }
   }
-  byte_B0FD51 = 0; /*0x72bb7a*/
+  g_BuildingLoadQueue_Array.__pad_F70[1441] = 0; /*0x72bb7a*/
 }
 } // namespace gamemd
 

@@ -30,4 +30,3 @@ int sub_7781B0(short a1)
   v1 = MultiByteToWideChar(0, 0, &MultiByteStr, strlen(&MultiByteStr), WideCharStr, 1); /*0x7781f3*/
   return v1 == 1 ? *(unsigned int *)WideCharStr : 0;
 }
-}

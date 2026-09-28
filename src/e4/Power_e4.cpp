@@ -17,9 +17,8 @@
 namespace gamemd {
 int Power::Update(int * a2)
 {
-  AbstractClass::ProcessPower(a2); /*0x43a5d9*/
-  return Power::TimerProcess((int)g_CurrentFrame - *(&this->q0042)); /*0x43a5f0*/
-}
+  AbstractClass::ProcessPower((AbstractClass *)this); /*0x43a5d9*/
+  return Power::TimerProcess(*(unsigned int *)&stru_A8EB00.gapE4[416] - this->q00C); /*0x43a5f0*/
 }
 // 0x67C6E0
 namespace gamemd {
@@ -424,39 +423,40 @@ void* Power::ComputeHousePowerChecksum(unsigned int * a2)
 namespace gamemd {
 int Power::FinalizeDrain(int a2)
 {
-  void * v2;
-  void * result;
-  unsigned int i; // eax
-  uint8_t *v5; // esi
+  void *Power_field_0x4; // eax
+  int result; // eax
+  char *i; // eax
+  int *p_Power_field_0x8; // esi
   unsigned int v6; // eax
   int v7; // edi
 
-  v2 = (void *)((unsigned int)(this->q004));
-  if ( !v2 ) /*0x4a1c15*/
-    this->q008 = 0; /*0x4a1c17*/
-  *((unsigned char *)this + v2 + 8) = a2; /*0x4a1c1f*/
-  result = this->q004 + 1; /*0x4a1c27*/
-  this->q004 = result; /*0x4a1c29*/
+  Power_field_0x4 = (unsigned int)(this->Power_field_0x4);
+  if ( !Power_field_0x4 ) /*0x4a1c15*/
+    this->a2 = 0; /*0x4a1c17*/
+  *((unsigned char *)&this->a2 + (unsigned int)Power_field_0x4) = a2; /*0x4a1c1f*/
+  result = (int)this->Power_field_0x4 + 1; /*0x4a1c27*/
+  this->Power_field_0x4 = (void *)result; /*0x4a1c29*/
   if ( result == 4 ) /*0x4a1c2f*/
   {
-    *(unsigned char *)&this->q00C = *(unsigned char *)&this->q004; /*0x4a1c34*/
-    for ( i = this->q004 + 1; i < 4; ++i ) /*0x4a1c3d*/
-      *((unsigned char *)this + i + 8) = *(unsigned char *)&this->q008; /*0x4a1c42*/
-    a2 = this->q008; /*0x4a1c50*/
-    v5 = (uint8_t *)&a2; /*0x4a1c57*/
-    v6 = ~*this; /*0x4a1c5b*/
+    IDA_LOBYTE(this->Power_field_0xC) = this->Power_field_0x4; /*0x4a1c34*/
+    for ( i = (char *)this->Power_field_0x4 + 1; (unsigned int)i < 4; ++i ) /*0x4a1c3d*/
+      i[(unsigned int)&this->q008] = (char)this->a2; /*0x4a1c42*/
+    a2 = (int)this->a2; /*0x4a1c50*/
+    p_Power_field_0x8 = &a2; /*0x4a1c57*/
+    v6 = ~this->Power_field_0x0; /*0x4a1c5b*/
     v7 = 4; /*0x4a1c5d*/
     do /*0x4a1c7e*/
     {
-      v6 = CRC32_Table[*v5++ ^ (uint8_t)v6] ^ (v6 >> 8); /*0x4a1c7a*/
+      v6 = CRC32_Table[*(uint8_t *)p_Power_field_0x8 ^ (uint8_t)v6] ^ (v6 >> 8); /*0x4a1c7a*/
+      p_Power_field_0x8 = (int *)((char *)p_Power_field_0x8 + 1); /*0x4a1c7c*/
       --v7; /*0x4a1c7d*/
     }
     while ( v7 ); /*0x4a1c7e*/
     result = ~v6; /*0x4a1c80*/
-    *(unsigned int *)this = result; /*0x4a1c83*/
-    this->q004 = 0; /*0x4a1c85*/
+    this->Power_field_0x0 = result; /*0x4a1c83*/
+    this->Power_field_0x4 = 0; /*0x4a1c85*/
   }
-  return (int)(result);
+  return result; /*0x4a1c8e*/
 }
 } // namespace gamemd
 
@@ -464,39 +464,40 @@ int Power::FinalizeDrain(int a2)
 namespace gamemd {
 int Power::FlagProcess(int a2)
 {
-  void * v2;
-  void * result;
-  unsigned int i; // eax
-  uint8_t *v5; // esi
+  void *Power_field_0x4; // eax
+  int result; // eax
+  char *i; // eax
+  int *p_Power_field_0x8; // esi
   unsigned int v6; // eax
   int v7; // edi
 
-  v2 = (void *)((unsigned int)(this->q004));
-  if ( !v2 ) /*0x4a1ca7*/
-    this->q008 = 0; /*0x4a1ca9*/
-  *((unsigned char *)this + v2 + 8) = (unsigned char)a2 != 0; /*0x4a1cb7*/
-  result = this->q004 + 1; /*0x4a1cbf*/
-  this->q004 = result; /*0x4a1cc1*/
+  Power_field_0x4 = (unsigned int)(this->Power_field_0x4);
+  if ( !Power_field_0x4 ) /*0x4a1ca7*/
+    this->a2 = 0; /*0x4a1ca9*/
+  *((unsigned char *)&this->a2 + (unsigned int)Power_field_0x4) = (unsigned char)a2 != 0; /*0x4a1cb7*/
+  result = (int)this->Power_field_0x4 + 1; /*0x4a1cbf*/
+  this->Power_field_0x4 = (void *)result; /*0x4a1cc1*/
   if ( result == 4 ) /*0x4a1cc7*/
   {
-    *(unsigned char *)&this->q00C = *(unsigned char *)&this->q004; /*0x4a1ccc*/
-    for ( i = this->q004 + 1; i < 4; ++i ) /*0x4a1cd5*/
-      *((unsigned char *)this + i + 8) = *(unsigned char *)&this->q008; /*0x4a1cda*/
-    a2 = this->q008; /*0x4a1ce8*/
-    v5 = (uint8_t *)&a2; /*0x4a1cef*/
-    v6 = ~*this; /*0x4a1cf3*/
+    IDA_LOBYTE(this->Power_field_0xC) = this->Power_field_0x4; /*0x4a1ccc*/
+    for ( i = (char *)this->Power_field_0x4 + 1; (unsigned int)i < 4; ++i ) /*0x4a1cd5*/
+      i[(unsigned int)&this->q008] = (char)this->a2; /*0x4a1cda*/
+    a2 = (int)this->a2; /*0x4a1ce8*/
+    p_Power_field_0x8 = &a2; /*0x4a1cef*/
+    v6 = ~this->Power_field_0x0; /*0x4a1cf3*/
     v7 = 4; /*0x4a1cf5*/
     do /*0x4a1d16*/
     {
-      v6 = CRC32_Table[*v5++ ^ (uint8_t)v6] ^ (v6 >> 8); /*0x4a1d12*/
+      v6 = CRC32_Table[*(uint8_t *)p_Power_field_0x8 ^ (uint8_t)v6] ^ (v6 >> 8); /*0x4a1d12*/
+      p_Power_field_0x8 = (int *)((char *)p_Power_field_0x8 + 1); /*0x4a1d14*/
       --v7; /*0x4a1d15*/
     }
     while ( v7 ); /*0x4a1d16*/
     result = ~v6; /*0x4a1d18*/
-    *(unsigned int *)this = result; /*0x4a1d1b*/
-    *(((char *, unsigned int a1)&this->q000 + 1), unsigned int a1) = 0; /*0x4a1d1d*/
+    this->Power_field_0x0 = result; /*0x4a1d1b*/
+    this->Power_field_0x4 = 0; /*0x4a1d1d*/
   }
-  return (int)(result);
+  return result; /*0x4a1d23*/
 }
 } // namespace gamemd
 
@@ -512,13 +513,13 @@ int Power::TimerProcess(void * a1)
 namespace gamemd {
 char Power::ChangedHouse(char a2)
 {
-  char result; // al
+  int result; // eax
 
-  result = a2; /*0x750090*/
+  IDA_LOBYTE(result) = a2; /*0x750090*/
   if ( a2 ) /*0x750096*/
-    *(unsigned int *)this = 1065353216; /*0x750098*/
+    this->Power_field_0x0 = 1065353216; /*0x750098*/
   else
-    *(unsigned int *)this = 0; /*0x7500a1*/
+    this->Power_field_0x0 = 0; /*0x7500a1*/
   return result; /*0x75009e*/
 }
 } // namespace gamemd

@@ -9,6 +9,7 @@ struct SaveGame {
     unsigned char q004;  // 0x4
     bool q00A;  // 0xA
     unsigned int u32_10;  // 0x10
+    unsigned int u32_1C;  // 0x1C
     unsigned int u32_20;  // 0x20
     unsigned int q028;  // 0x28
     unsigned int q034;  // 0x34
@@ -30,9 +31,6 @@ struct SaveGame {
     unsigned int q5170;  // 0x5170
     unsigned int q5684;  // 0x5684
     unsigned int __pad_0;
-    unsigned int q0040;
-    unsigned int u32_1C;
-    unsigned int vt_slot_16;
 // --- flat members (END) ---
     int LoadArrayData(int * a2);  // 0x4391C0
     int WriteDataArray(int * a2);  // 0x54E750

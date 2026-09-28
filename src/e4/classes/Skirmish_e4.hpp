@@ -8,7 +8,7 @@ namespace gamemd {
 struct Skirmish {
 // --- flat members (BEGIN) ---
     unsigned int u32_38;  // 0x38
-    void* q03C;  // 0x3C
+    unsigned int ;  // 0x3C
     unsigned int u32_40;  // 0x40
     TechnoTypeClass * ptr_44;  // 0x44
     unsigned int u32_48;  // 0x48
@@ -18,9 +18,11 @@ struct Skirmish {
     unsigned int u32_58;  // 0x58
     unsigned int u32_5C;  // 0x5C
     TechnoTypeClass * ptr_60;  // 0x60
+    unsigned int u32_64;  // 0x64
+    unsigned int u32_68;  // 0x68
     unsigned int u32_6C;  // 0x6C
     TechnoTypeClass * ptr_70;  // 0x70
-    TechnoTypeClass * ptr_74;  // 0x74
+    unsigned int ;  // 0x74
     unsigned int q080;  // 0x80
     unsigned int q084;  // 0x84
     unsigned int q088;  // 0x88
@@ -50,19 +52,8 @@ struct Skirmish {
     void* q4400;  // 0x4400
     void* q4580;  // 0x4580
     void* q5260;  // 0x5260
-    unsigned int q0046;
-    unsigned int q0047;
-    unsigned int q0049;
-    unsigned int q0081;
-    unsigned int q0082;
-    unsigned int q0083;
-    unsigned int q0084;
-    unsigned int q0087;
-    unsigned int q0088;
-    unsigned int q0089;
-    unsigned int u32_64;
-    unsigned int u32_68;
-    unsigned int q076;
+    void* ptr_74;
+    unsigned int q03C;
 // --- flat members (END) ---
     AbstractClass * * SetupGame(int a2);
     CampaignClass * * SetupAllSpawnLocations();

@@ -187,57 +187,73 @@ int BlowStraw_29::Seek(TabClass * aP1, unsigned int * a2)
 namespace gamemd {
 CellStruct * * sub_731AF0()
 {
-  wchar_t * result;
+  wchar_t *result; // eax
   wchar_t *StringCSF; // eax
-  int v2; // ecx
-  unsigned int v3;
-  int v4; // esi
-  unsigned char *v5; // ecx
-  wchar_t *v6; // eax
-  int v7; // ecx
+  int v3; // ecx
+  int v4; // edi
+  int v5; // esi
+  unsigned char *v6; // ecx
+  wchar_t *v7; // eax
+  int v8; // ecx
 
-  result = (wchar_t *)(g_SelectionManager);
-  if ( !g_SelectionManager ) /*0x731afa*/
+  result = *(wchar_t **)&stru_A8EB00.gapE4[228]; /*0x731af1*/
+  if ( !*(unsigned int *)&stru_A8EB00.gapE4[228] ) /*0x731afa*/
   {
     StringCSF = (wchar_t *)(GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 856));
-    v2 = (unsigned int)(3);
-    if ( HouseClass_Player ) /*0x731b1f*/
-      v2 = *((unsigned int *)HouseClass_Player + 22549); /*0x731b21*/
-    result = (wchar_t *)MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, StringCSF, v2, 16454, 240, 1); /*0x731b3e*/
+    v3 = 3; /*0x731b18*/
+    if ( dword_A83D4C ) /*0x731b1f*/
+      v3 = *(unsigned int *)&dword_A83D4C[134].__pad_90[4]; /*0x731b21*/
+    result = (wchar_t *)MessageListClass::AddMessage( /*0x731b3e*/
+                          (MessageListClass *)&stru_A8BB1C.__pad_87[189],
+                          0,
+                          0,
+                          StringCSF,
+                          v3,
+                          16454,
+                          240,
+                          1);
     goto LABEL_5; /*0x731b3e*/
   }
-  v3 = g_SelectionManager; /*0x731b4e*/
-  v4 = 0; /*0x731b50*/
-  if ( (int)g_SelectionManager <= 0 ) /*0x731b54*/
+  v4 = *(unsigned int *)&stru_A8EB00.gapE4[228]; /*0x731b4e*/
+  v5 = 0; /*0x731b50*/
+  if ( *(int *)&stru_A8EB00.gapE4[228] <= 0 ) /*0x731b54*/
   {
-  unsigned int byte_B0FE58 =
-    return (gamemd::CellStruct **)(result);
+  LABEL_5:
+    IDA_LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 1; /*0x731b43*/
+    return result; /*0x731b4d*/
   }
   while ( 1 ) /*0x731b56*/
   {
-    result = (wchar_t *)((unsigned int)((wchar_t *)g_ObjectClass_CurrentCount));
-    v5 = (unsigned char *)*((unsigned int *)g_ObjectClass_CurrentCount + v4); /*0x731b5b*/
-    if ( v5 ) /*0x731b60*/
+    result = *(wchar_t **)&stru_A8EB00.gapE4[216]; /*0x731b56*/
+    v6 = *(unsigned char **)(*(unsigned int *)&stru_A8EB00.gapE4[216] + 4 * v5); /*0x731b5b*/
+    if ( v6 ) /*0x731b60*/
     {
-      if ( (v5[20] & 1) != 0 ) /*0x731b6c*/
+      if ( (v6[20] & 1) != 0 ) /*0x731b6c*/
       {
-        result = (wchar_t *)((unsigned int)((wchar_t *)(*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v5 + 1216))(v5)));
+        result = (wchar_t *)(*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 1216))(v6); /*0x731b70*/
         if ( !(unsigned char)result ) /*0x731b78*/
           break; /*0x731b78*/
       }
     }
-    if ( ++v4 >= (int)v3 ) /*0x731b7d*/
+    if ( ++v5 >= v4 ) /*0x731b7d*/
     {
-      byte_B0FE58 = (unsigned char)((gamemd::CellStruct **)(1));
-      return (gamemd::CellStruct **)(result);
+      IDA_LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 1; /*0x731b80*/
+      return result; /*0x731b89*/
     }
   }
-  v6 = (gamemd::CellStruct **)(GetStringCSF(aMsgAttackmoveu, 0, g_Str_File_UICmnds_cpp, 862));
-  v7 = 3; /*0x731ba6*/
-  if ( HouseClass_Player ) /*0x731bad*/
-    v7 = *((unsigned int *)HouseClass_Player + 22549); /*0x731baf*/
-  return (wchar_t *)MessageListClass::AddMessage(g_GameNetworkObject, 0, 0, v6, v7, 16454, 240, 1); /*0x731b43*/
-}
+  v7 = GetStringCSF(aMsgAttackmoveu, 0, g_Str_File_UICmnds_cpp, 862); /*0x731b9b*/
+  v8 = 3; /*0x731ba6*/
+  if ( dword_A83D4C ) /*0x731bad*/
+    v8 = *(unsigned int *)&dword_A83D4C[134].__pad_90[4]; /*0x731baf*/
+  return (wchar_t *)MessageListClass::AddMessage( /*0x731b43*/
+                      (MessageListClass *)&stru_A8BB1C.__pad_87[189],
+                      0,
+                      0,
+                      v7,
+                      v8,
+                      16454,
+                      240,
+                      1);
 }
 // 0x5BE9E0
 namespace gamemd {
@@ -266,6 +282,6 @@ TabClass * BlowStraw_29::Read(char a2)
 namespace gamemd {
 int BlowStraw_29_::Stub()
 {
-  return ObjectClass::processDamage();
+  return ObjectClass::processDamage(this);
 }
 } // namespace gamemd

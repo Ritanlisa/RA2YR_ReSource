@@ -22,99 +22,105 @@
 #include "e4/classes/BuildingLightClass_e4.hpp"
 #include "e4/classes/BulletTypeClass_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/CCINIClass_e4.hpp"
+#include "e4/classes/CCToolTip_e4.hpp"
+#include "e4/classes/INIClass_e4.hpp"
+#include "e4/classes/AnimClass_e4.hpp"
 
 // 0x453E20
 namespace gamemd {
 void* BuildingClass::LoadFromStream()
 {
-  int v1; // edi
-  int v2; // esi
-  size_t v3; // eax
+  BuildingClass *v1; // edi
+  void **p_vtable1; // esi
+  int v3; // eax
   int v4; // ebx
-  int v5; // eax
-  signed int v6; // ecx
-  size_t i; // eax
+  signed int v5; // eax
+  int v6; // ecx
+  char *i; // eax
   unsigned int *v8; // eax
   int v9; // ebp
-  int result; // eax
+  BuildingClass * result;
   int v11; // esi
-  int v12; // eax
+  int vtable2; // eax
   int v13; // eax
-  int v14; // ecx
+  int FiringOccupantIndex; // ecx
   int v15; // eax
-  int v16; // eax
-  int v17; // edx
+  BuildingClass * v16;
+  BuildingClass * v17;
   int v18; // esi
   int v19; // eax
   int v20; // ebx
   int v21; // ecx
   int v22; // eax
-  int v23; // eax
-  int v24; // edx
+  BuildingClass * v23;
+  BuildingClass * v24;
   int v25; // esi
-  int *v26; // esi
+  int *Anims; // esi
   int v27; // ebp
-  int *v28; // esi
+  int *Upgrades; // esi
   int v29; // ebp
-  int *v30; // esi
+  int *DamageFireAnims; // esi
   int v31; // ebp
   int v32; // [esp+58h] [ebp-4h]
-  int v33; // [esp+60h] [ebp+4h] BYREF
+  BuildingClass *v33; // [esp+60h] [ebp+4h] BYREF
   int v34; // [esp+64h] [ebp+8h] BYREF
 
   v1 = v33; /*0x453e25*/
-  v2 = v33 + 4; /*0x453e2c*/
-  v33 = (*(int (__stdcall **)(int))(*(unsigned int *)(v33 + 4) + 16))(v33 + 4); /*0x453e3d*/
-  v3 = BuildingTypeClass::Dequeue((char **)&g_BuildingLoadQueue_Array, &v33); /*0x453e41*/
+  p_vtable1 = &v33->vtable1; /*0x453e2c*/
+  v33 = (BuildingClass *)(*((int (__stdcall **)(void **))v33->vtable1 + 4))(&v33->vtable1); /*0x453e3d*/
+  v3 = BuildingTypeClass::Dequeue(&g_BuildingLoadQueue_Array, (int *)&v33); /*0x453e41*/
   v4 = 0; /*0x453e46*/
   if ( v3 ) /*0x453e4a*/
   {
-    v5 = (int)(v3 - (unsigned int)g_BuildingLoadQueue_Array) >> 3; /*0x453e52*/
+    v5 = (signed int)(v3 - (unsigned int)g_BuildingLoadQueue_Array.vtable0) >> 3; /*0x453e52*/
     if ( v5 != -1 ) /*0x453e58*/
     {
       v6 = v5 + 1; /*0x453e5a*/
-      for ( i = g_BuildingLoadQueue_Count; v6 < (int)g_BuildingLoadQueue_Count; i = g_BuildingLoadQueue_Count ) /*0x453e64*/
+      for ( i = (char *)g_BuildingLoadQueue_Array.vtable1; /*0x453e64*/
+            v6 < (int)g_BuildingLoadQueue_Array.vtable1;
+            i = (char *)g_BuildingLoadQueue_Array.vtable1 )
       {
-        v8 = (unsigned int *)((char *)g_BuildingLoadQueue_Array + 8 * v6++); /*0x453e6c*/
+        v8 = (char *)g_BuildingLoadQueue_Array.vtable0 + 8 * v6++; /*0x453e6c*/
         *(v8 - 2) = *v8; /*0x453e72*/
         *(v8 - 1) = v8[1]; /*0x453e78*/
       }
-      g_BuildingLoadQueue_Count = i - 1; /*0x453e8d*/
-      *((unsigned int *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count) = 0; /*0x453e92*/
-      *((unsigned int *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count + 1) = 0; /*0x453ea3*/
-      g_BuildingLoadQueue_Active = 0; /*0x453ea7*/
+      g_BuildingLoadQueue_Array.vtable1 = i - 1; /*0x453e8d*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.vtable0 + 2 * (int)g_BuildingLoadQueue_Array.vtable1) = 0; /*0x453e92*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.vtable0 + 2 * (int)g_BuildingLoadQueue_Array.vtable1 + 1) = 0; /*0x453ea3*/
+      g_BuildingLoadQueue_Array.uniqueId = 0; /*0x453ea7*/
     }
   }
   v9 = v34; /*0x453ead*/
-  result = BuildingClass::AllocAndCtor(v1, v34); /*0x453eb3*/
+  result = BuildingClass::AllocAndCtor((int)v1, v34); /*0x453eb3*/
   v32 = result; /*0x453eba*/
   if ( result >= 0 ) /*0x453ebe*/
   {
     if ( v1 ) /*0x453ec6*/
-      BuildingClass::ctor((unsigned int *)v1, (int)&v33); /*0x453ecf*/
-    v11 = (*(int (__stdcall **)(int))(*(unsigned int *)v2 + 16))(v2); /*0x453ee0*/
-    v12 = g_BuildingLoadQueue_Capacity; /*0x453ee2*/
-    if ( (int)(g_BuildingLoadQueue_Count + 1) <= g_BuildingLoadQueue_Capacity ) /*0x453eea*/
+      BuildingClass::ctor(v1, (int)&v33); /*0x453ecf*/
+    v11 = (*((int (__stdcall **)(void **))*p_vtable1 + 4))(p_vtable1); /*0x453ee0*/
+    vtable2 = (int)g_BuildingLoadQueue_Array.vtable2; /*0x453ee2*/
+    if ( (int)g_BuildingLoadQueue_Array.vtable1 + 1 <= (int)g_BuildingLoadQueue_Array.vtable2 ) /*0x453eea*/
       goto LABEL_13; /*0x453eea*/
-    if ( !g_BuildingLoadQueue_Capacity ) /*0x453eee*/
-      v12 = 10; /*0x453ef0*/
-    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, v12) ) /*0x453efb*/
+    if ( !g_BuildingLoadQueue_Array.vtable2 ) /*0x453eee*/
+      vtable2 = 10; /*0x453ef0*/
+    if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, vtable2) ) /*0x453efb*/
     {
   LABEL_13:
-      *((unsigned int *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count) = v11; /*0x453f0f*/
-      *((unsigned int *)g_BuildingLoadQueue_Array + 2 * g_BuildingLoadQueue_Count + 1) = v1; /*0x453f1e*/
-      g_BuildingLoadQueue_Dirty = 0; /*0x453f28*/
-      ++g_BuildingLoadQueue_Count; /*0x453f2f*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.vtable0 + 2 * (int)g_BuildingLoadQueue_Array.vtable1) = v11; /*0x453f0f*/
+      *((unsigned int *)g_BuildingLoadQueue_Array.vtable0 + 2 * (int)g_BuildingLoadQueue_Array.vtable1 + 1) = v1; /*0x453f1e*/
+      IDA_LOBYTE(g_BuildingLoadQueue_Array.vtable3) = 0; /*0x453f28*/
+      ++g_BuildingLoadQueue_Array.vtable1; /*0x453f2f*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 1312)); /*0x453f40*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 1316)); /*0x453f51*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 1344)); /*0x453f62*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 1352)); /*0x453f73*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 1356)); /*0x453f84*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 1536)); /*0x453f95*/
-    AudioController::Init((unsigned int *)(v1 + 1696)); /*0x453fa0*/
-    AudioController::Init((unsigned int *)(v1 + 1716)); /*0x453fab*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1 + 1780)); /*0x453fbc*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1->Type); /*0x453f40*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1->Factory); /*0x453f51*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1->C4AppliedBy); /*0x453f62*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1->FirestormAnim); /*0x453f73*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1->PsiWarnAnim); /*0x453f84*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1->Spotlight); /*0x453f95*/
+    AudioController::Init((AudioController *)&v1->WasOnline); /*0x453fa0*/
+    AudioController::Init((AudioController *)v1->Audio8_2); /*0x453fab*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)&v1->SecretProduction); /*0x453fbc*/
     result = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v34, 4, 0); /*0x453fcd*/
     if ( result >= 0 ) /*0x453fd2*/
     {
@@ -126,9 +132,7 @@ void* BuildingClass::LoadFromStream()
         if ( v13 > 0 ) /*0x454050*/
         {
           do /*0x45406b*/
-            ObjectPtr::RegisterForTracking( /*0x454061*/
-              (int)&SwizzleManagerClass_Instance,
-              (int *)(*(unsigned int *)(v1 + 1648) + 4 * v18++));
+            ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1->Occupants[0] + 4 * v18++)); /*0x454061*/
           while ( v18 < v34 ); /*0x45406b*/
         }
         result = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v34, 4, 0); /*0x45407a*/
@@ -143,57 +147,55 @@ void* BuildingClass::LoadFromStream()
             if ( v19 > 0 ) /*0x4540ff*/
             {
               do /*0x45411a*/
-                ObjectPtr::RegisterForTracking( /*0x454110*/
-                  (int)&SwizzleManagerClass_Instance,
-                  (int *)(*(unsigned int *)(v1 + 1672) + 4 * v25++));
+                ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v1->Audio7[4] + 4 * v25++)); /*0x454110*/
               while ( v25 < v34 ); /*0x45411a*/
             }
-            v26 = (int *)(v1 + 1372); /*0x45411c*/
+            Anims = (int *)(v1->Anims);
             v27 = 21; /*0x454122*/
             do /*0x454136*/
             {
-              ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v26++); /*0x45412d*/
+              ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, Anims++); /*0x45412d*/
               --v27; /*0x454135*/
             }
             while ( v27 ); /*0x454136*/
-            v28 = (int *)(v1 + 1516); /*0x454138*/
+            Upgrades = v1->Upgrades; /*0x454138*/
             v29 = 3; /*0x45413e*/
             do /*0x454152*/
             {
-              ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v28++); /*0x454149*/
+              ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, Upgrades++); /*0x454149*/
               --v29; /*0x454151*/
             }
             while ( v29 ); /*0x454152*/
-            v30 = (int *)(v1 + 1480); /*0x454154*/
+            DamageFireAnims = v1->DamageFireAnims; /*0x454154*/
             v31 = 8; /*0x45415a*/
             do /*0x45416e*/
             {
-              ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v30++); /*0x454165*/
+              ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, DamageFireAnims++); /*0x454165*/
               --v31; /*0x45416d*/
             }
             while ( v31 ); /*0x45416e*/
-            *(unsigned int *)(v1 + 1556) = 0; /*0x454174*/
+            v1->LightSource = 0; /*0x454174*/
             return v32; /*0x454170*/
           }
           else
           {
             while ( 1 ) /*0x45409c*/
             {
-              result = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v33, 4, 0); /*0x45409c*/
+              result = (int)((gamemd::BuildingClass *)((*(int (__stdcall **)(int, BuildingClass **, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v33, 4, 0)));
               if ( result < 0 ) /*0x4540a1*/
                 break; /*0x4540a1*/
-              v21 = *(unsigned int *)(v1 + 1676); /*0x4540a7*/
-              if ( *(unsigned int *)(v1 + 1684) < v21 /*0x4540d8*/
-                || (*(unsigned char *)(v1 + 1681) || !v21)
-                && (v22 = *(unsigned int *)(v1 + 1688), v22 > 0)
-                && (*(uint8_t (__thiscall **)(int, int, unsigned int))(*(unsigned int *)(v1 + 1668) + 8))(
-                     v1 + 1668,
+              v21 = v1->Audio8[0]; /*0x4540a7*/
+              if ( v1->Audio8[2] < v21 /*0x4540d8*/
+                || (IDA_BYTE1(v1->Audio8[1]) || !v21)
+                && (v22 = v1->Audio8[3], v22 > 0)
+                && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(v1->Audio7[3] + 8))(
+                     &v1->Audio7[3],
                      v21 + v22,
                      0) )
               {
-                v23 = *(unsigned int *)(v1 + 1684); /*0x4540df*/
-                v24 = *(unsigned int *)(v1 + 1672); /*0x4540e2*/
-                *(unsigned int *)(v1 + 1684) = v23 + 1; /*0x4540e8*/
+                v23 = (gamemd::BuildingClass *)((unsigned int)(v1->Audio8[2]));
+                v24 = (gamemd::BuildingClass *)((char)(v1->Audio7[4]));
+                v1->Audio8[2] = (char)(v23 + 1);
                 *(unsigned int *)(v24 + 4 * v23) = v33; /*0x4540ef*/
               }
               v19 = v34; /*0x4540f2*/
@@ -207,21 +209,21 @@ void* BuildingClass::LoadFromStream()
       {
         while ( 1 ) /*0x453fed*/
         {
-          result = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v33, 4, 0); /*0x453fed*/
+          result = (int)((gamemd::BuildingClass *)((*(int (__stdcall **)(int, BuildingClass **, int, unsigned int))(*(unsigned int *)v9 + 12))(v9, &v33, 4, 0)));
           if ( result < 0 ) /*0x453ff2*/
             break; /*0x453ff2*/
-          v14 = *(unsigned int *)(v1 + 1652); /*0x453ff8*/
-          if ( *(unsigned int *)(v1 + 1660) < v14 /*0x454029*/
-            || (*(unsigned char *)(v1 + 1657) || !v14)
-            && (v15 = *(unsigned int *)(v1 + 1664), v15 > 0)
-            && (*(uint8_t (__thiscall **)(int, int, unsigned int))(*(unsigned int *)(v1 + 1644) + 8))(
-                 v1 + 1644,
-                 v14 + v15,
+          FiringOccupantIndex = v1->FiringOccupantIndex; /*0x453ff8*/
+          if ( v1->Audio7[1] < FiringOccupantIndex /*0x454029*/
+            || (IDA_BYTE1(v1->Audio7[0]) || !FiringOccupantIndex)
+            && (v15 = v1->Audio7[2], v15 > 0)
+            && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(v1->Overpowerers[0] + 8))(
+                 v1->Overpowerers,
+                 FiringOccupantIndex + v15,
                  0) )
           {
-            v16 = *(unsigned int *)(v1 + 1660); /*0x454030*/
-            v17 = *(unsigned int *)(v1 + 1648); /*0x454033*/
-            *(unsigned int *)(v1 + 1660) = v16 + 1; /*0x454039*/
+            v16 = (gamemd::BuildingClass *)((unsigned int)(v1->Audio7[1]));
+            v17 = (char)(v1->Occupants[0]);
+            v1->Audio7[1] = (char)(v16 + 1);
             *(unsigned int *)(v17 + 4 * v16) = v33; /*0x454040*/
           }
           v13 = v34; /*0x454043*/
@@ -233,159 +235,157 @@ void* BuildingClass::LoadFromStream()
   }
   return (void *)(result);
 }
-}
 // 0x455D50
 namespace gamemd {
 int BuildingClass::AssignDestination_SyncLog()
 {
   int result; // eax
-  int v3; // [esp+8h] [ebp+4h]
+  TechnoClass *v3; // [esp+8h] [ebp+4h]
   int v4; // [esp+Ch] [ebp+8h]
 
   if ( this->currentMission != 19 ) /*0x455d5a*/
   {
-    if ( (*(uint8_t (__thiscall **)(void *))(((unsigned int)(this->turretChargeTimer4))))(this) /*0x455d73*/
+    if ( (*((uint8_t (__thiscall **)(BuildingClass *))this->vtable0 + 161))(this) /*0x455d73*/
       || this->Type->ConstructionYard )
     {
-      TechnoClass::SetFocus(v3); /*0x455d80*/
+      TechnoClass::SetFocus((TechnoClass *)this, (int)v3); /*0x455d80*/
     }
-    return IPersistStream::Stub(v3, v4); /*0x455d8d*/
+    IPersistStream::Stub(v3, v4); /*0x455d8d*/
   }
   return result; /*0x455d93*/
-}
 }
 // 0x4DFCB0
 namespace gamemd {
 int BuildingClass::FindClosestForRepair(unsigned int * a1)
 {
-  int v2; // ebp
-  unsigned int *v3; // ebx
-  unsigned int *v4; // edi
-  unsigned int *v5; // eax
-  double v6; // st7
-  int v7; // edi
-  int v8; // eax
-  unsigned int *v10; // ecx
-  int v11; // [esp+24h] [ebp-2Ch]
-  unsigned int *v12; // [esp+28h] [ebp-28h]
-  int v13; // [esp+30h] [ebp-20h]
-  int v14; // [esp+34h] [ebp-1Ch]
-  char v15[12]; // [esp+38h] [ebp-18h] BYREF
-  char v16[12]; // [esp+44h] [ebp-Ch] BYREF
+  double v1; // st7
+  int v3; // ebp
+  BuildingClass *v4; // ebx
+  unsigned int *v5; // edi
+  unsigned int *v6; // eax
+  int v7; // eax
+  int v8; // edi
+  int v9; // eax
+  AbstractClass *movementDestination; // ecx
+  int v12; // [esp+24h] [ebp-2Ch]
+  AbstractClass *v13; // [esp+28h] [ebp-28h]
+  int v14; // [esp+30h] [ebp-20h]
+  int v15; // [esp+34h] [ebp-1Ch]
+  char v16[12]; // [esp+38h] [ebp-18h] BYREF
+  char v17[12]; // [esp+44h] [ebp-Ch] BYREF
 
-  v12 = 0; /*0x4dfcbf*/
-  v11 = 0x7FFFFFFF; /*0x4dfccd*/
-  v2 = *(unsigned int *)(a1[135] + 240) - 1; /*0x4dfcdb*/
-  if ( v2 < 0 ) /*0x4dfcdc*/
+  v13 = 0; /*0x4dfcbf*/
+  v12 = 0x7FFFFFFF; /*0x4dfccd*/
+  v3 = a1->owner->airspeedMultiplier[0] - 1; /*0x4dfcdb*/
+  if ( v3 < 0 ) /*0x4dfcdc*/
     goto LABEL_10; /*0x4dfcdc*/
   do
   {
-    v3 = *(unsigned int **)(*(unsigned int *)(a1[135] + 228) + 4 * v2); /*0x4dfcf3*/
-    v4 = (unsigned int *)(*(int (__thiscall **)(unsigned int *, char *))(*v3 + 72))(v3, v15); /*0x4dfcff*/
-    v5 = (unsigned int *)(*(int (__thiscall **)(unsigned int *, char *))(*a1 + 72))(a1, v16); /*0x4dfd08*/
-    v13 = v5[1] - v4[1]; /*0x4dfd28*/
-    v14 = v5[2] - v4[2]; /*0x4dfd2c*/
-    v6 = Math::Sqrt((double)(*v5 - *v4) * (double)(*v5 - *v4) + (double)v13 * (double)v13 + (double)v14 * (double)v14); /*0x4dfd55*/
-    v7 = Math::RoundToInt(v6); /*0x4dfd62*/
-    if ( v7 < v11 )
+    v4 = *(BuildingClass **)(a1->owner->firepowerMultiplier[1] + 4 * v3); /*0x4dfcf3*/
+    v5 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *, char *))v4->vtable0 + 18))(v4, v16); /*0x4dfcff*/
+    v6 = (unsigned int *)(*((int (__thiscall **)(FootClass *, char *))a1->vtable0 + 18))(a1, v17); /*0x4dfd08*/
+    v14 = v6[1] - v5[1]; /*0x4dfd28*/
+    v15 = v6[2] - v5[2]; /*0x4dfd2c*/
+    Math::Sqrt((double)(*v6 - *v5) * (double)(*v6 - *v5) + (double)v14 * (double)v14 + (double)v15 * (double)v15); /*0x4dfd55*/
+    IDA_LOWORD(v7) = Math::RoundToInt(v1); /*0x4dfd5d*/
+    v8 = v7; /*0x4dfd62*/
+    if ( v7 < v12 )
     {
-      v8 = a1 ? ((*(int (__thiscall **)(unsigned int *))(*a1 + 44))(a1) == 15 ? (unsigned int)a1 : 0) : 0;
-      if ( BuildingClass::CanRepair(v3, v8) ) /*0x4dfd89*/
+      v9 = a1 ? ((*((int (__thiscall **)(FootClass *))a1->vtable0 + 11))(a1) == 15 ? (unsigned int)a1 : 0) : 0;
+      if ( (uint8_t)BuildingClass::CanRepair(v4, v9) ) /*0x4dfd89*/
       {
-        v11 = v7; /*0x4dfd92*/
-        v12 = v3; /*0x4dfd96*/
+        v12 = v8; /*0x4dfd92*/
+        v13 = (AbstractClass *)v4; /*0x4dfd96*/
       }
     }
-    --v2; /*0x4dfd9a*/
+    --v3; /*0x4dfd9a*/
   }
-  while ( v2 >= 0 );
-  if ( v12 ) /*0x4dfda7*/
+  while ( v3 >= 0 );
+  if ( v13 ) /*0x4dfda7*/
   {
-    v10 = (unsigned int *)a1[361]; /*0x4dfdba*/
-    *((unsigned char *)a1 + 1680) = 1; /*0x4dfdc0*/
-    if ( v10 != v12 || a1[43] != 8 ) /*0x4dfdd2*/
+    movementDestination = a1->movementDestination; /*0x4dfdba*/
+    a1->shouldEnterOccupiable = 1; /*0x4dfdc0*/
+    if ( movementDestination != v13 || a1->currentMission != 8 ) /*0x4dfdd2*/
     {
-      (*(void (__thiscall **)(unsigned int *, unsigned int *, int))(*a1 + 1152))(a1, v12, 1); /*0x4dfddb*/
-      (*(void (__thiscall **)(unsigned int *, int, int))(*a1 + 488))(a1, 8, 1); /*0x4dfde9*/
+      (*((void (__thiscall **)(FootClass *, AbstractClass *, int))a1->vtable0 + 288))(a1, v13, 1); /*0x4dfddb*/
+      (*((void (__thiscall **)(FootClass *, int, int))a1->vtable0 + 122))(a1, 8, 1); /*0x4dfde9*/
     }
     return 1; /*0x4dfdf0*/
   }
   else
   {
   LABEL_10:
-    *((unsigned char *)a1 + 1680) = 0; /*0x4dfda9*/
+    a1->shouldEnterOccupiable = 0; /*0x4dfda9*/
     return 0; /*0x4dfdb0*/
   }
-}
 }
 // 0x4DFE00
 namespace gamemd {
 int BuildingClass::FindClosestForRepair2(int a1)
 {
-  int v1; // eax
-  int v3; // ebp
-  unsigned int *v4; // ebx
-  int v5; // eax
-  unsigned int *v6; // edi
-  unsigned int *v7; // eax
-  double v8; // st7
+  double v1; // st7
+  int v2; // eax
+  int v4; // ebp
+  BuildingClass *v5; // ebx
+  FootClass *v6; // eax
+  unsigned int *v7; // edi
+  unsigned int *v8; // eax
   int v9; // eax
-  unsigned int *v11; // ecx
+  AbstractClass *movementDestination; // ecx
   int v12; // [esp+24h] [ebp-2Ch]
-  unsigned int *v13; // [esp+28h] [ebp-28h]
+  AbstractClass *v13; // [esp+28h] [ebp-28h]
   int v14; // [esp+30h] [ebp-20h]
   int v15; // [esp+34h] [ebp-1Ch]
   char v16[12]; // [esp+38h] [ebp-18h] BYREF
   char v17[12]; // [esp+44h] [ebp-Ch] BYREF
 
-  v1 = g_BuildingProductionState - 1; /*0x4dfe0f*/
+  v2 = stru_A8EB00.parent_gap[20] - 1; /*0x4dfe0f*/
   v13 = 0; /*0x4dfe17*/
-  v3 = 0x7FFFFFFF; /*0x4dfe1f*/
-  v12 = g_BuildingProductionState - 1; /*0x4dfe24*/
-  if ( g_BuildingProductionState - 1 < 0 ) /*0x4dfe28*/
+  v4 = 0x7FFFFFFF; /*0x4dfe1f*/
+  v12 = stru_A8EB00.parent_gap[20] - 1; /*0x4dfe24*/
+  if ( stru_A8EB00.parent_gap[20] - 1 < 0 ) /*0x4dfe28*/
     goto LABEL_10; /*0x4dfe28*/
   do
   {
-    v4 = (unsigned int *)*((unsigned int *)g_BuildingClass_InstanceCount + v1); /*0x4dfe36*/
+    v5 = *(BuildingClass **)(stru_A8EB00.parent_gap[17] + 4 * v2); /*0x4dfe36*/
     if ( a1 )
-      v5 = (*(int (__thiscall **)(int))(*(unsigned int *)a1 + 44))(a1) == 15 ? a1 : 0;
+      v6 = (*((int (__thiscall **)(FootClass *))a1->vtable0 + 11))(a1) == 15 ? a1 : 0;
     else
-      v5 = 0; /*0x4dfe3b*/
-    if ( BuildingClass::CanRepair(v4, v5) ) /*0x4dfe54*/
+      v6 = 0; /*0x4dfe3b*/
+    if ( (uint8_t)BuildingClass::CanRepair(v5, (int)v6) ) /*0x4dfe54*/
     {
-      v6 = (unsigned int *)(*(int (__thiscall **)(unsigned int *, char *))(*v4 + 72))(v4, v16); /*0x4dfe6b*/
-      v7 = (unsigned int *)(*(int (__thiscall **)(int, char *))(*(unsigned int *)a1 + 72))(a1, v17); /*0x4dfe74*/
-      v14 = v7[1] - v6[1]; /*0x4dfe92*/
-      v15 = v7[2] - v6[2]; /*0x4dfe9c*/
-      v8 = Math::Sqrt((double)(*v7 - *v6) * (double)(*v7 - *v6) + (double)v15 * (double)v15 + (double)v14 * (double)v14); /*0x4dfec1*/
-      v9 = Math::RoundToInt(v8); /*0x4dfec9*/
-      if ( v9 < v3 ) /*0x4dfed0*/
+      v7 = (unsigned int *)(*((int (__thiscall **)(BuildingClass *, char *))v5->vtable0 + 18))(v5, v16); /*0x4dfe6b*/
+      v8 = (unsigned int *)(*((int (__thiscall **)(FootClass *, char *))a1->vtable0 + 18))(a1, v17); /*0x4dfe74*/
+      v14 = v8[1] - v7[1]; /*0x4dfe92*/
+      v15 = v8[2] - v7[2]; /*0x4dfe9c*/
+      Math::Sqrt((double)(*v8 - *v7) * (double)(*v8 - *v7) + (double)v15 * (double)v15 + (double)v14 * (double)v14); /*0x4dfec1*/
+      IDA_LOWORD(v9) = Math::RoundToInt(v1); /*0x4dfec9*/
+      if ( v9 < v4 ) /*0x4dfed0*/
       {
-        v3 = v9; /*0x4dfed2*/
-        v13 = v4; /*0x4dfed4*/
+        v4 = v9; /*0x4dfed2*/
+        v13 = (AbstractClass *)v5; /*0x4dfed4*/
       }
     }
-    v1 = --v12; /*0x4dfedc*/
+    v2 = --v12; /*0x4dfedc*/
   }
   while ( v12 >= 0 );
   if ( v13 ) /*0x4dfeed*/
   {
-    v11 = *(unsigned int **)(a1 + 1444); /*0x4dff00*/
-    *(unsigned char *)(a1 + 1681) = 1; /*0x4dff06*/
-    if ( v11 != v13 || *(unsigned int *)(a1 + 172) != 8 ) /*0x4dff18*/
+    movementDestination = a1->movementDestination; /*0x4dff00*/
+    a1->shouldGarrisonStructure = 1; /*0x4dff06*/
+    if ( movementDestination != v13 || a1->currentMission != 8 ) /*0x4dff18*/
     {
-      (*(void (__thiscall **)(int, unsigned int *, int))(*(unsigned int *)a1 + 1152))(a1, v13, 1); /*0x4dff21*/
-      (*(void (__thiscall **)(int, int, int))(*(unsigned int *)a1 + 488))(a1, 8, 1); /*0x4dff2f*/
+      (*((void (__thiscall **)(FootClass *, AbstractClass *, int))a1->vtable0 + 288))(a1, v13, 1); /*0x4dff21*/
+      (*((void (__thiscall **)(FootClass *, int, int))a1->vtable0 + 122))(a1, 8, 1); /*0x4dff2f*/
     }
     return 1; /*0x4dff36*/
   }
   else
   {
   LABEL_10:
-    *(unsigned char *)(a1 + 1681) = 0; /*0x4dfeef*/
+    a1->shouldGarrisonStructure = 0; /*0x4dfeef*/
     return 0; /*0x4dfef6*/
   }
-}
 }
 // 0x629720
 namespace gamemd {
@@ -402,8 +402,8 @@ int BuildingClass::AnimController()
   int v11; // edx
   unsigned int v12[4]; // [esp+Ch] [ebp-10h] BYREF
 
-  Value = ProgressTimer::GetValue((unsigned short *)(*(&this->vtable20) + 904), v12); /*0x629736*/
-  v3 = *(&this->vtable28); /*0x62973b*/
+  Value = ProgressTimer::GetValue((ProgressTimer *)(this->owningHouseIndex + 904), v12); /*0x629736*/
+  v3 = this->ambientSoundController[3]; /*0x62973b*/
   v4 = *Value; /*0x62973e*/
   if ( v3 < 0 ) /*0x629742*/
     goto LABEL_6; /*0x629742*/
@@ -420,28 +420,29 @@ int BuildingClass::AnimController()
     v5 = 160; /*0x62975e*/
   v6 = 4; /*0x629763*/
   LABEL_8:
-  v7 = *(&this->vtable30) + 1; /*0x629768*/
-  *(&this->vtable30) = v7; /*0x62976e*/
+  v7 = this->customSound_controller[0] + 1; /*0x629768*/
+  this->customSound_controller[0] = v7; /*0x62976e*/
   if ( v7 >= v6 ) /*0x629773*/
   {
-    v8 = *(&this->vtable29); /*0x629775*/
-    *(&this->vtable30) = 0; /*0x629778*/
-    *(&this->vtable29) = ++v8; /*0x629782*/
-    if ( v8 >= 10 ) /*0x629788*/
+    v8 = this->ambientSoundController[4]; /*0x629775*/
+    this->customSound_controller[0] = 0; /*0x629778*/
+    this->ambientSoundController[4] = v8 + 1; /*0x629782*/
+    if ( v8 + 1 >= 10 ) /*0x629788*/
       return 1; /*0x629792*/
-    v10 = (unsigned int *)*(&this->vtable27); /*0x629793*/
+    v10 = (unsigned int *)this->ambientSoundController[2]; /*0x629793*/
     if ( v10 ) /*0x629798*/
     {
-      v10[45] = g_CurrentFrame; /*0x6297af*/
+      v10[45] = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x6297af*/
       v11 = v12[2]; /*0x6297b2*/
       v10[48] = 128; /*0x6297b7*/
       v10[46] = v11; /*0x6297bf*/
       v10[47] = 128; /*0x6297c5*/
-      *(unsigned int *)(*(&this->vtable27) + 172) = v5 + *(&this->vtable29) + 10 * ((((v4 >> 12) + 1) >> 1) & 7); /*0x6297d7*/
+      *(unsigned int *)(this->ambientSoundController[2] + 172) = v5 /*0x6297d7*/
+                                                         + this->ambientSoundController[4]
+                                                         + 10 * ((((v4 >> 12) + 1) >> 1) & 7);
     }
   }
   return 0; /*0x62978a*/
-}
 }
 // 0x70BF50
 namespace gamemd {
@@ -451,10 +452,10 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
   BuildingClass * v3;
   int v4; // ebp
 
-  result = RadioClass::LoadState(aP0, aP2); /*0x70bf5c*/
+  result = (int)(RadioClass::LoadState(aP0, aP2));
   if ( result >= 0 ) /*0x70bf65*/
   {
-    aP0->planningToken = 0; /*0x70bf79*/
+    aP0->planningToken = (void *)((int)(0));
     ObjectPtr::RegisterForTracking(&SwizzleManagerClass_Instance, aP0 + 540); /*0x70bf7f*/
     v3 = aP0 + 772; /*0x70bf84*/
     v4 = 8; /*0x70bf8a*/
@@ -515,7 +516,6 @@ int BuildingClass::AllocAndCtor(BuildingClass * aP0, int aP2)
   }
   return result; /*0x70c249*/
 }
-}
 // 0x712130
 namespace gamemd {
 int BuildingClass::processCapture()
@@ -524,15 +524,14 @@ int BuildingClass::processCapture()
   int v2; // ecx
   char result; // al
 
-  v1 = *(&this->q0DC0); /*0x712130*/
+  v1 = this->u32_898; /*0x712130*/
   if ( !v1 ) /*0x712138*/
     return 0; /*0x712138*/
-  v2 = *(&this->q0DC7); /*0x71213a*/
+  v2 = this->u32_8B4; /*0x71213a*/
   result = 1; /*0x712140*/
-  if ( v1 != v2 && *(int *)(v1 + 156) <= 1 && (!v2 || *(int *)(v2 + 156) <= 1) ) /*0x71215f*/
+  if ( v1 != v2 && v1->location <= 1 && (!v2 || *(int *)(v2 + 156) <= 1) ) /*0x71215f*/
     return 0; /*0x712161*/
   return result; /*0x712163*/
-}
 }
 // 0x739EC0
 namespace gamemd {
@@ -547,6 +546,7 @@ namespace gamemd {
 void BuildingClass::ClearSuperWeaponAnim()
 {
   char result; // al
+  int v3; // ecx
   bool v4; // bl
   int v5; // eax
   char v6; // cl
@@ -554,29 +554,29 @@ void BuildingClass::ClearSuperWeaponAnim()
   result = this->UpgradeLevel; /*0x451694*/
   if ( result ) /*0x45169c*/
   {
-    result = result; /*0x4516a1*/
+    v3 = result; /*0x4516a1*/
     v4 = 0; /*0x4516a4*/
-    v5 = *(unsigned int *)(&this->uniqueId * result + 1512); /*0x4516a6*/
+    v5 = this->DamageFireAnims[result + 8]; /*0x4516a6*/
     if ( v5 && (v4 = *(unsigned int *)(v5 + 5872) != -1, *(unsigned char *)(v5 + 3233)) ) /*0x4516c0*/
     {
-      BuildingClass::ClearAnims(9); /*0x4516ce*/
-      *(unsigned int *)(&this->uniqueId * this->UpgradeLevel + 1512) = 0; /*0x4516dc*/
+      BuildingClass::ClearAnims(this, 9); /*0x4516ce*/
+      this->DamageFireAnims[this->UpgradeLevel + 8] = 0; /*0x4516dc*/
       this->UpgradeLevel = 0; /*0x4516e7*/
-      this->BuildingClass_field_5FC = -1; /*0x4516ee*/
+      this->SuperWeaponToken = -1; /*0x4516ee*/
       if ( v4 ) /*0x4516f8*/
       {
-        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->owner); /*0x451700*/
+        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass((SuperWeapon *)this->owner); /*0x451700*/
         return 1; /*0x451709*/
       }
     }
     else
     {
-      BuildingClass::ClearAnims(result - 1); /*0x45170e*/
+      BuildingClass::ClearAnims(this, v3 - 1); /*0x45170e*/
       v6 = this->UpgradeLevel - 1; /*0x451719*/
       this->UpgradeLevel = v6; /*0x45171b*/
-      *(unsigned int *)(&this->uniqueId * v6 + 1516) = 0; /*0x451726*/
+      this->Upgrades[v6] = 0; /*0x451726*/
       if ( v4 ) /*0x451731*/
-        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass(this->owner); /*0x451739*/
+        SuperWeapon::UpdateSuperWeaponsOwnedHouseClass((SuperWeapon *)this->owner); /*0x451739*/
     }
     return 1; /*0x45173f*/
   }
@@ -590,7 +590,7 @@ TechnoClass * BuildingClass::ClearLimpetCheck()
 {
   unsigned int *v2; // [esp+4h] [ebp+4h]
 
-  *v2 = (gamemd::TechnoClass *)(g_TerrainTypeTable);
+  *v2 = g_TerrainTypeTable; /*0x459dba*/
   return (int)v2; /*0x459dbc*/
 }
 } // namespace gamemd
@@ -611,37 +611,36 @@ int BuildingClass::FindInPointerArray(unsigned int * a2)
   int result; // eax
   unsigned int *i; // ecx
 
-  v2 = this->q010; /*0x45a610*/
+  v2 = this->uniqueId; /*0x45a610*/
   result = 0; /*0x45a613*/
   if ( v2 <= 0 ) /*0x45a618*/
     return -1; /*0x45a62f*/
-  for ( i = (unsigned int *)this->Items; *i != *a2; ++i ) /*0x45a61e*/
+  for ( i = (unsigned int *)this->vtable2; *i != *a2; ++i ) /*0x45a61e*/
   {
     if ( ++result >= v2 ) /*0x45a62d*/
       return -1; /*0x45a62d*/
   }
   return result; /*0x45a632*/
 }
-}
 // 0x5F5E80
 namespace gamemd {
 int BuildingClass::SaveLoad_Register()
 {
   int result; // eax
-  int *v2; // [esp+8h] [ebp+4h]
+  int v2; // [esp+8h] [ebp+4h]
   int v3; // [esp+Ch] [ebp+8h]
 
-  result = AbstractClass::SaveLoad_Prefix_0(v2, v3); /*0x5f5e8b*/
+  result = AbstractClass::SaveLoad_Prefix_0((unsigned int *)v2, v3); /*0x5f5e8b*/
   if ( result >= 0 ) /*0x5f5e92*/
   {
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 12); /*0x5f5e9d*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 13); /*0x5f5eab*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 14); /*0x5f5eb9*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 6); /*0x5f5ec7*/
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, v2 + 34); /*0x5f5ed8*/
-    AudioController::Init(v2 + 15); /*0x5f5ee0*/
-    AudioController::Init(v2 + 20); /*0x5f5ee8*/
-    v2[42] = 0; /*0x5f5eed*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 48)); /*0x5f5e9d*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 52)); /*0x5f5eab*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 56)); /*0x5f5eb9*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 24)); /*0x5f5ec7*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)(v2 + 136)); /*0x5f5ed8*/
+    AudioController::Init((AudioController *)(v2 + 60)); /*0x5f5ee0*/
+    AudioController::Init((AudioController *)(v2 + 80)); /*0x5f5ee8*/
+    *(unsigned int *)(v2 + 168) = 0; /*0x5f5eed*/
     return 0; /*0x5f5ef7*/
   }
   return result; /*0x5f5ef9*/

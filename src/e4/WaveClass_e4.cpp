@@ -20,6 +20,8 @@
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
 #include "e4/classes/ParticleSystemTypeClass_e4.hpp"
+#include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/WaypointPathClass_e4.hpp"
 
 // 0x75F650
 namespace gamemd {
@@ -104,32 +106,39 @@ WaveClass * WaveClass::ddtor(char a2)
 {
   int v3; // eax
   void *v4; // eax
-
-  this->vtable4 = &off_7F6BC8; /*0x76321a*/
-  AbstractClass::AnnounceExpiredPointer(1); /*0x763221*/
-  v3 = (*(int (__thiscall **)(int *, void ***))(dword_A8EC38 + 16))(&dword_A8EC38, &this); /*0x76323a*/
-  if ( v3 != -1 && v3 < dword_A8EC48 && v3 < --dword_A8EC48 ) /*0x763255*/
+this->vtable0 = (unsigned int)((void*)&WaveClass_vftable);
+  this->vtable1 = (void*)&WaveClass_vftable; /*0x76320c*/
+  this->vtable2 = (void*)&WaveClass_vftable; /*0x763213*/
+  this->vtable3 = &off_7F6BC8; /*0x76321a*/
+  AbstractClass::AnnounceExpiredPointer((AbstractClass *)this, 1); /*0x763221*/
+  v3 = (*(int (__thiscall **)(unsigned char *, WaveClass **))(*(unsigned int *)&stru_A8EB00.gapE4[84] + 16))( /*0x76323a*/
+         &stru_A8EB00.gapE4[84],
+         &this);
+  if ( v3 != -1 && v3 < *(int *)&stru_A8EB00.gapE4[100] ) /*0x76324a*/
   {
-    do /*0x76326d*/
+    --*(unsigned int *)&stru_A8EB00.gapE4[100]; /*0x76324f*/
+    for ( ; /*0x763255*/
+          v3 < *(int *)&stru_A8EB00.gapE4[100];
+          *(unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[88] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[88]
+                                                                                  + 4 * v3) )
     {
       ++v3; /*0x76325d*/
-      *((unsigned int *)dword_A8EC3C + v3 - 1) = *((unsigned int *)dword_A8EC3C + v3); /*0x763261*/
     }
-    while ( v3 < dword_A8EC48 ); /*0x76326d*/
   }
-  (*((void (__thiscall **)(char *))*(&this->WaveClass_field_DC4) + 3))((char *)&this->WaveClass_field_1706); /*0x76327e*/
-  v4 = *(&this->WaveClass_field_DC5); /*0x763281*/
-  if ( v4 && this->q1FD ) /*0x76328e*/
+  (*(void (__thiscall **)(char *))(this->WaveClass_field_128 + 12))((char *)&this->WaveClass_field_1706); /*0x76327e*/
+  v4 = (void *)this->u32_1F4; /*0x763281*/
+  this->WaveClass_field_128 = (void*)&VectorClass_CellClass___vftable; /*0x763284*/
+  if ( v4 && this->u32_1FD ) /*0x76328e*/
   {
     RA2_OPDEL(v4); /*0x763296*/
-    *(&this->WaveClass_field_DC5) = 0; /*0x76329e*/
+    this->u32_1F4 = 0; /*0x76329e*/
   }
-  this->q1FD = 0; /*0x7632a7*/
-  *(&this->WaveClass_field_DC6) = 0; /*0x7632ab*/
-  ObjectClass::Dtor(); /*0x7632b2*/
+  this->u32_1FD = (gamemd::WaveClass *)(0);
+  this->u32_1F8 = (gamemd::WaveClass *)(0);
+  ObjectClass::Dtor((ObjectClass *)this); /*0x7632b2*/
   if ( (a2 & 1) != 0 ) /*0x7632be*/
-    RA2_OPDEL(); /*0x7632c1*/
-  return this; /*0x7632cb*/
+    RA2_OPDEL(this); /*0x7632c1*/
+  return &this->vtable0; /*0x7632cb*/
 }
 } // namespace gamemd
 
@@ -212,15 +221,15 @@ int WaveClass::ProcessWaveTick(int * a1, int * a2, int a3)
   int result; // eax
   int i; // ebx
 
-  AbstractClass::SaveLoad_Prefix(a1, a2, a3); /*0x75f7e2*/
+  AbstractClass::SaveLoad_Prefix((int *)a1, a2, a3); /*0x75f7e2*/
   v3 = *a2; /*0x75f7ed*/
-  a3 = a1[128]; /*0x75f7f9*/
+  a3 = *((unsigned int *)a1 + 128); /*0x75f7f9*/
   result = (*(int (__stdcall **)(int *, int *, int, unsigned int))(v3 + 16))(a2, &a3, 4, 0); /*0x75f7fd*/
   if ( result >= 0 ) /*0x75f802*/
   {
     for ( i = 0; i < a3; ++i ) /*0x75f80c*/
     {
-      result = (*(int (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, a1[125] + 4 * i, 4, 0); /*0x75f81f*/
+      result = (*(int (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, *((unsigned int *)a1 + 125) + 4 * i, 4, 0); /*0x75f81f*/
       if ( result < 0 ) /*0x75f824*/
         break; /*0x75f824*/
     }
@@ -238,7 +247,7 @@ int WaveClass::GetClassIdentifier(int a1, unsigned int * a2)
   *a2 = 237448653; /*0x75f856*/
   a2[1] = 298949647; /*0x75f85e*/
   a2[2] = -1610610249; /*0x75f867*/
-  a2[3] = -777003740; /*0x75f870*/
+  a2[3] = unk_7E972C; /*0x75f870*/
   return 0; /*0x75f84d*/
 }
 } // namespace gamemd

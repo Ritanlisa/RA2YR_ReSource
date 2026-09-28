@@ -17,7 +17,7 @@ struct E4Recv_6E0270 {
     unsigned int q804;  // 0x804
     unsigned int q1398;  // 0x1398
     unsigned int q1910;  // 0x1910
-    unsigned int u32_384;
+    unsigned int isAliveFlag;
 // --- flat members (END) ---
     char sub_6E0270(int a2,  int a3,  int a4,  int a5);    // 0x6E0270
 };

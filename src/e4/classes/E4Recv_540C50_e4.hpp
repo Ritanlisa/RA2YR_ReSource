@@ -12,6 +12,7 @@ struct E4Recv_540C50 {
     unsigned int q034;  // 0x34
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
+    unsigned int vtable1;
 // --- flat members (END) ---
     int sub_540C50();  // 0x540C50
 };

@@ -10,29 +10,37 @@
 namespace gamemd {
 void UnitClass::ProcessIdleOrders()
 {
-  int i; // edi
-  int *v3; // eax
+  int result; // eax
+  int v3; // edi
   int v4; // eax
-  int v5; // [esp+Ch] [ebp-8h]
+  unsigned int *v5; // eax
+  int v6; // [esp+Ch] [ebp-8h]
 
-  for ( i = 0; i < *(&this->vtable28); ++i ) /*0x6b7bbc*/
+  v3 = 0; /*0x6b7bb7*/
+  if ( this->ambientSoundController[3] > 0 ) /*0x6b7bbc*/
   {
-    v3 = *(int **)(*(&this->vtable25) + 4 * i); /*0x6b7bc6*/
-    if ( v3[1] == 2 ) /*0x6b7bcd*/
+    do /*0x6b7c21*/
     {
-      v4 = *v3; /*0x6b7bcf*/
-      if ( *(unsigned char *)(*(unsigned int *)(v4 + 1732) + 3432) ) /*0x6b7bd7*/
+      v4 = *(unsigned int *)(this->ambientSoundController[0] + 4 * v3); /*0x6b7bc6*/
+      if ( *(unsigned int *)(v4 + 4) == 2 ) /*0x6b7bcd*/
       {
-        UnitClass::GetExitCell(v4, *(&this->vtable36)); /*0x6b7beb*/
-        g_MissionQueueFrame = (int)g_CurrentFrame; /*0x6b7bfa*/
-        v5 = v5; /*0x6b7bff*/
-        g_MissionQueueType = 2; /*0x6b7c05*/
-        UnitClass::ClearTargetRef(**(unsigned int **)(*(&this->vtable25) + 4 * i)); /*0x6b7c16*/
+        v5 = *(unsigned int **)v4; /*0x6b7bcf*/
+        if ( *(unsigned char *)(v5[433] + 3432) ) /*0x6b7bd7*/
+        {
+          UnitClass::GetExitCell((int)&g_MissionQueueFrame, v5, *(unsigned int **)&this->bombVisible); /*0x6b7beb*/
+          g_MissionQueueFrame.nextScenario[0] = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x6b7bfa*/
+          g_MissionQueueFrame.nextScenario[1] = v6; /*0x6b7bff*/
+          g_MissionQueueFrame.nextScenario[2] = 2; /*0x6b7c05*/
+          UnitClass::ClearTargetRef(this, **(unsigned int **)(this->ambientSoundController[0] + 4 * v3)); /*0x6b7c16*/
+        }
       }
+      result = this->ambientSoundController[3]; /*0x6b7c1b*/
+      ++v3; /*0x6b7c1e*/
     }
+    while ( v3 < result ); /*0x6b7c21*/
   }
-  *(&this->vtable38) = 0; /*0x6b7c26*/
-  *(&this->vtable37) = 0; /*0x6b7c29*/
-  *(&this->vtable36) = 0; /*0x6b7c2c*/
-}
+  this->estimatedHealth = 0; /*0x6b7c26*/
+  this->health = 0; /*0x6b7c29*/
+  *(unsigned int *)&this->bombVisible = 0; /*0x6b7c2c*/
+  return result; /*0x6b7c2f*/
 }

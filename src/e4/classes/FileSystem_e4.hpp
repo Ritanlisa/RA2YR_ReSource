@@ -10,6 +10,7 @@ struct FileSystem {
     void* q004;  // 0x4
     void* q008;  // 0x8
     void* q00C;  // 0xC
+    unsigned int u32_D;  // 0xD
     void* q010;  // 0x10
     void* q014;  // 0x14
     void* q018;  // 0x18

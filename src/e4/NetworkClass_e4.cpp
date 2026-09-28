@@ -17,6 +17,8 @@
 #include "e4/classes/CellStruct_e4.hpp"
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/NetworkGameSetup_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x639FD0
 namespace gamemd {
@@ -35,7 +37,7 @@ int NetworkClass::ExecutePlanningModeCmd()
       StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)g_Str_MSG_PlanningModeNoDeploy, 0, g_Str_File_PlanMgr_cpp, 3233));
   LABEL_10:
       AddMessageListPlayerMessage(StringCSF, 480); /*0x63a07b*/
-      PlayVocClass(g_RulesClass_Instance->Scorches1[3], 0x2000, 1.0, 0); /*0x63a09e*/
+      PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a09e*/
     }
   }
   else if ( v1 == 6 ) /*0x639fff*/
@@ -45,7 +47,7 @@ int NetworkClass::ExecutePlanningModeCmd()
       g_PlanningModeActive = (int)((wchar_t *)(1));
       v3 = (wchar_t *)(GetStringCSF(g_Str_MSG_PlanningModeNoStop, 0, g_Str_File_PlanMgr_cpp, 3233));
       AddMessageListPlayerMessage(v3, 480); /*0x63a032*/
-      PlayVocClass(g_RulesClass_Instance->Scorches1[3], 0x2000, 1.0, 0); /*0x63a04f*/
+      PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a04f*/
     }
   }
   else if ( v1 == 7 && !g_PlanningModeActive ) /*0x63a05c*/
@@ -54,8 +56,7 @@ int NetworkClass::ExecutePlanningModeCmd()
     StringCSF = (wchar_t *)(GetStringCSF(g_Str_MSG_PlanningModeNoScatter, 0, g_Str_File_PlanMgr_cpp, 3233));
     goto LABEL_10; /*0x63a076*/
   }
-  return PlayVocClass(g_RulesClass_Instance->Scorches1[3], 0x2000, 1.0, 0); /*0x63a0c0*/
-}
+  return PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a0c0*/
 }
 // 0x6FFE00
 namespace gamemd {
@@ -70,30 +71,30 @@ AbstractClass * * NetworkClass::RecordEvent()
   char v7; // [esp+7Eh] [ebp-2h]
   uint8_t v8; // [esp+84h] [ebp+4h]
 
-  WaypointCoords = ScriptAction::GetWaypointCoords(v4, this); /*0x6ffe0a*/
-  EventClass::Add(v5, *((unsigned int *)HouseClass_Player + 12), v8, *(unsigned int *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
-  if ( FactoryClass::GetFlag() ) /*0x6ffe39*/
+  WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v4, this); /*0x6ffe0a*/
+  EventClass::Add(v5, (int)dword_A83D4C->Object_field_0x30, v8, *(unsigned int *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
+  result = FactoryClass::GetFlag(); /*0x6ffe39*/
+  if ( (unsigned char)result ) /*0x6ffe40*/
   {
     result = NetworkClass::ExecutePlanningModeCmd(v5); /*0x6ffe46*/
     IDA_LOBYTE(result) = 0; /*0x6ffe4b*/
   }
   else
   {
-    if ( Networking_LastEventIndex < 128 ) /*0x6ffe5f*/
+    if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ffe5f*/
     {
-      v3 = &g_NetworkPacketIndex[111 * Networking_NextPacketIndex]; /*0x6ffe75*/
+      v3 = (char *)&unk_A802D4 + 111 * dword_A802D0; /*0x6ffe75*/
       qmemcpy(v3, v5, 0x6Cu); /*0x6ffe7c*/
       v3 += 108; /*0x6ffe7c*/
       *(unsigned short *)v3 = v6; /*0x6ffe7e*/
       v3[2] = v7; /*0x6ffe80*/
-      g_CrateSystemState[Networking_NextPacketIndex] = timeGetTime(); /*0x6ffe8d*/
-      Networking_NextPacketIndex = ((unsigned char)Networking_NextPacketIndex + 1) & 0x7F; /*0x6ffe9d*/
-      result = ++Networking_LastEventIndex; /*0x6ffea7*/
+      dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ffe8d*/
+      dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ffe9d*/
+      result = (int)++stru_A80220.lineTrailer; /*0x6ffea7*/
     }
     IDA_LOBYTE(result) = 1; /*0x6ffeae*/
   }
   return result; /*0x6ffe4d*/
-}
 }
 // 0x7B1C50
 namespace gamemd {
@@ -117,5 +118,4 @@ AnimClass * * NetworkClass::UnregisterAsync()
       return WSAAsyncSelect(result, v2, 0, 0); /*0x7b1c8f*/
   }
   return result; /*0x7b1c7f*/
-}
 }

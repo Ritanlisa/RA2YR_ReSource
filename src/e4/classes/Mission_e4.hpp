@@ -207,90 +207,10 @@ struct Mission {
     unsigned int q1640;  // 0x1640
     unsigned char q1654;  // 0x1654
     void* q171C;  // 0x171C
-    unsigned char q1720;  // 0x1720
-    unsigned int q1728;  // 0x1728
-    void * q1908;  // 0x1908
-    unsigned int q1910;  // 0x1910
-    unsigned char q1924;  // 0x1924
-    unsigned char q2048;  // 0x2048
-    unsigned char q2050;  // 0x2050
-    unsigned char q2084;  // 0x2084
-    unsigned int q2100;  // 0x2100
-    unsigned char q2104;  // 0x2104
-    unsigned int q2128;  // 0x2128
-    unsigned char q2148;  // 0x2148
-    unsigned char q2180;  // 0x2180
-    unsigned int q2184;  // 0x2184
-    unsigned int q2304;  // 0x2304
-    unsigned char q2308;  // 0x2308
-    unsigned int q2324;  // 0x2324
-    unsigned char q2328;  // 0x2328
-    void* q3644;  // 0x3644
-    unsigned char q3648;  // 0x3648
-    void* q3680;  // 0x3680
-    unsigned char q3684;  // 0x3684
-    unsigned char q4134;  // 0x4134
-    unsigned char q4144;  // 0x4144
-    unsigned char q4168;  // 0x4168
-    unsigned char q4760;  // 0x4760
-    unsigned char q4904;  // 0x4904
-    double q5120;  // 0x5120
-    unsigned int q5138;  // 0x5138
-    unsigned char q5160;  // 0x5160
-    unsigned int q5170;  // 0x5170
-    unsigned int q5188;  // 0x5188
-    unsigned char q5220;  // 0x5220
-    unsigned char q5444;  // 0x5444
-    unsigned char q5460;  // 0x5460
-    unsigned int q5464;  // 0x5464
-    unsigned char q5494;  // 0x5494
-    unsigned char q5508;  // 0x5508
-    unsigned char q5510;  // 0x5510
-    void* q5564;  // 0x5564
-    unsigned char q5568;  // 0x5568
-    unsigned char q5640;  // 0x5640
-    unsigned char q5644;  // 0x5644
-    void* q5668;  // 0x5668
-    unsigned char q566C;  // 0x566C
-    unsigned char q5684;  // 0x5684
-    unsigned char q5688;  // 0x5688
-    unsigned int q5714;  // 0x5714
-    unsigned char q5718;  // 0x5718
-    unsigned char q5920;  // 0x5920
-    unsigned char q5924;  // 0x5924
-    unsigned int q5928;  // 0x5928
-    unsigned char q592C;  // 0x592C
-    unsigned int q5938;  // 0x5938
-    unsigned char q593C;  // 0x593C
-    unsigned char q5974;  // 0x5974
-    unsigned char q5978;  // 0x5978
-    unsigned int q6034;  // 0x6034
-    unsigned char q6038;  // 0x6038
-    unsigned char q6294;  // 0x6294
-    unsigned char q6298;  // 0x6298
-    void * q6408;  // 0x6408
-    unsigned char q640C;  // 0x640C
-    unsigned int u32_100;
-    unsigned int u32_101;
-    unsigned int u32_182;
-    unsigned int u32_405;
-    unsigned int u32_443;
-    unsigned int u32_901;
-    unsigned int u32_A43;
-    unsigned int u32_AC2;
-    unsigned int u32_AC3;
-    unsigned int u32_C9;
-    unsigned int vt_slot_1152;
-    unsigned int vt_slot_1156;
-    unsigned int vt_slot_1348;
-    unsigned int vt_slot_1368;
-    unsigned int vt_slot_188;
-    unsigned int vt_slot_248;
-    unsigned int vt_slot_388;
-    unsigned int vt_slot_452;
-    unsigned int vt_slot_72;
-    unsigned int vt_slot_76;
-    unsigned int vt_slot_800;
+    unsigned int __pad_0;
+    unsigned int __pad_18C;
+    unsigned int __pad_5B8;
+    unsigned int __pad_C;
 // --- flat members (END) ---
     int ExecuteTechnoMissionAction();  // 0x520AE0
     char ProcessUnitMissionAI();  // 0x520F40

@@ -19,53 +19,59 @@
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x5C0DD0
 namespace gamemd {
 unsigned int * MPBattleClass::initGame(const wchar_t ** a1, MultiplayerBattle * aP2, const char ** a3, MultiplayerBattle * aP4, char aP5, MultiplayerBattle * aP6)
 {
-  MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c0df3*/
-  return this; /*0x5c0e00*/
+  MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5c0df3*/
+  *(unsigned int *)this->__pad_0 = (void*)&MultiplayerBattle_vftable; /*0x5c0df8*/
+  return this->__pad_0; /*0x5c0e00*/
 }
 } // namespace gamemd
 // 0x5C5CE0
 namespace gamemd {
 unsigned int * MPBattleClass::MPFreeForAllClass(const wchar_t ** a1, FreeForAll * aP2, const char ** a3, FreeForAll * aP4, char aP5, FreeForAll * aP6)
 {
-  MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c5d03*/
-  return this; /*0x5c5d10*/
+  MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5c5d03*/
+  *(unsigned int *)this->__pad_0 = (void*)&FreeForAll_vftable; /*0x5c5d08*/
+  return this->__pad_0; /*0x5c5d10*/
 }
 } // namespace gamemd
 // 0x5C6150
 namespace gamemd {
 unsigned int * MPBattleClass::MPManBattleClass(const wchar_t ** a1, MultiplayerManBattle * aP2, const char ** a3, MultiplayerManBattle * aP4, char aP5, MultiplayerManBattle * aP6)
 {
-  MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5c6173*/
-  return this; /*0x5c6180*/
+  MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5c6173*/
+  *(unsigned int *)this->__pad_0 = (void*)&MultiplayerManBattle_vftable; /*0x5c6178*/
+  return this->__pad_0; /*0x5c6180*/
 }
 } // namespace gamemd
 // 0x5C93E0
 namespace gamemd {
 unsigned int * MPBattleClass::MPMegawealthClass(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, MPCooperative * aP4, char aP5, int aP6)
 {
-  MultiplayerGameMode::Construct(a1, a2, a3, aP4, aP5, aP6); /*0x5c9403*/
-  return this; /*0x5c9410*/
+  MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, a2, a3, aP4, aP5, aP6); /*0x5c9403*/
+  *(unsigned int *)this->__pad_0 = (void*)&Megawealth_vftable; /*0x5c9408*/
+  return this->__pad_0; /*0x5c9410*/
 }
 } // namespace gamemd
 // 0x5CA630
 namespace gamemd {
 unsigned int * MPBattleClass::MPSiegeClass(const wchar_t ** a1, MultiplayerSiege * aP2, const char ** a3, MultiplayerSiege * aP4, char aP5, MultiplayerSiege * aP6)
 {
-  MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5ca653*/
-  return this; /*0x5ca660*/
+  MultiplayerGameMode::Construct((MultiplayerGameMode *)this, a1, aP2, a3, aP4, aP5, aP6); /*0x5ca653*/
+  *(unsigned int *)this->__pad_0 = (void*)&MultiplayerSiege_vftable; /*0x5ca658*/
+  return this->__pad_0; /*0x5ca660*/
 }
 } // namespace gamemd
 // 0x5CA7D0
 namespace gamemd {
 int MPBattleClass::vt_entry_18()
 {
-  return ScenarioClass::createStartingForces();
-}
+  return ScenarioClass::createStartingForces((MultiplayerGameMode *)this);
 }
 // 0x5CACF0
 long long MPBattleClass::isValidMap()
@@ -176,8 +182,9 @@ int MPBattleClass::isAIAllowed()
 // 0x5CB3A0
 unsigned int * MPBattleClass::MPUnholyAllianceClass(const wchar_t ** a1, UnholyAlliance * aP2, const char ** a3, UnholyAlliance * aP4, char aP5, UnholyAlliance * aP6, void * a2)
 {
-  MultiplayerGameMode::Construct(a1, aP2, a3, aP4, aP5, aP6); /*0x5cb3c3*/
-  return this; /*0x5cb3d0*/
+  MultiplayerGameMode::Construct((MultiplayerGameMode *)a1, aP2, a3, aP4, aP5, aP6, a2); /*0x5cb3c3*/
+  *(unsigned int *)a1->__pad_0 = (void*)&UnholyAlliance_vftable; /*0x5cb3c8*/
+  return a1->__pad_0; /*0x5cb3d0*/
 }
 // 0x5CB570
 int MPBattleClass::isTeamsAllowed()
@@ -337,7 +344,7 @@ MPBattleClass::MPBattleClass(const wchar_t ** a1, const wchar_t ** a2, const cha
 {
   unsigned int *v6; // eax
 
-  v6 = operator new(0x40u); /*0x5d8172*/
+  v6 = (unsigned int *)(RA2_OPNEW(0x40u));
   if ( v6 ) /*0x5d817c*/
     return MPBattleClass::initGame(v6, a1, a2, a3, a4, a5, a6); /*0x5d819e*/
   else

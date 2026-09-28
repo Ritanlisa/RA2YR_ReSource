@@ -12,6 +12,10 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/WideString_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Coord_e4.hpp"
+#include "e4/classes/ObjectVector_e4.hpp"
+#include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/InfantryClass_e4.hpp"
 
 // 0x773600
 namespace gamemd {
@@ -41,7 +45,7 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
     return 0; /*0x7736ca*/
   Debug::Log(); /*0x7736e5*/
   if ( !this->q008 ) /*0x7736f2*/
-    return (void *)(WebBrowser::OpenURL(Data));
+    return (int)(WebBrowser::OpenURL(Data));
   mbstowcs((wchar_t *)(&this->u32_42), (const char *)Data, 0x200u); /*0x773709*/
   if ( RegOpenKeyExA(HKEY_LOCAL_MACHINE, g_Str_Software_Westwood_Yuri_s_Reven, 0, 0x20019u, &phkResult) ) /*0x773726*/
     return 0; /*0x773726*/
@@ -65,10 +69,9 @@ int WebBrowser::LoadURLFromRegistry(const char * a2)
   if ( v6 ) /*0x77380f*/
   {
     (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v6 + 28))(this->q008); /*0x773814*/
-    this->u8_40C = 1; /*0x773817*/
+    this->u32_40C = 1; /*0x773817*/
   }
   return 1; /*0x77381e*/
-}
 }
 // 0x773E90
 namespace gamemd {
@@ -88,8 +91,7 @@ int WebBrowser::ShowDialog()
   int v12; // [esp+38h] [ebp-Ch]
   int v13; // [esp+3Ch] [ebp-8h]
   int v14; // [esp+40h] [ebp-4h]
-
-  v1 = (const char *)(this);
+v1 = (const char *)(this);
   v9 = (const char *)(this);
   if ( !this || !strlen(this) ) /*0x773eaa*/
     return (HWND)Debug::Log(aDowebpagedialo); /*0x774060*/
@@ -108,7 +110,7 @@ int WebBrowser::ShowDialog()
     v13 = v11 + 800; /*0x773f39*/
     v12 = Rect.top + (Rect.bottom - Rect.top - 600) / 2; /*0x773f4f*/
     v14 = v12 + 600; /*0x773f58*/
-    v5 = operator new(0x414u); /*0x773f5c*/
+    v5 = RA2_OPNEW(0x414u); /*0x773f5c*/
     v6 = (int)v5; /*0x773f61*/
     if ( v5 ) /*0x773f68*/
     {
@@ -117,6 +119,7 @@ int WebBrowser::ShowDialog()
       v5[2] = (unsigned int)(0);
       *((unsigned char *)v5 + 1036) = 0; /*0x773f84*/
       v5[260] = 0; /*0x773f8b*/
+      *(void **)v5 = (void*)&WebBrowser_vftable; /*0x773f95*/
       Debug::Log(g_Str_Instantiating_embedded_WebBrow); /*0x773f9b*/
       *(unsigned int *)(v6 + 1040) = v3; /*0x773fa3*/
       Debug::Log(g_Str_Creating_WOLBrowser_component_); /*0x773fae*/
@@ -148,28 +151,29 @@ int WebBrowser::ShowDialog()
   }
   return result; /*0x774051*/
 }
-}
 // 0x7740A0
 namespace gamemd {
 int WebBrowser::GoForward()
 {
-  void * v2;
+  void *WebBrowser_field_0x8; // eax
   char v4; // [esp+10h] [ebp+4h]
 
+  *(unsigned int *)this->__pad_0 = (void*)&WebBrowser_vftable; /*0x7740a8*/
   Debug::Log(); /*0x7740ae*/
-  if ( this->q008 ) /*0x7740b3*/
+  if ( this->WebBrowser_field_0x8 ) /*0x7740b3*/
   {
     Debug::Log(); /*0x7740c2*/
-    (*(void (__stdcall **)(unsigned int, WebBrowser *))(*this->q008 + 24))(this->q008, this); /*0x7740d1*/
-    (*(void (__stdcall **)(unsigned int))(*this->q008 + 16))(this->q008); /*0x7740da*/
+    (*(void (__stdcall **)(void *, WebBrowser *))(*(unsigned int *)this->WebBrowser_field_0x8 + 24))( /*0x7740d1*/
+      this->WebBrowser_field_0x8,
+      this);
+    (*(void (__stdcall **)(void *))(*(unsigned int *)this->WebBrowser_field_0x8 + 16))(this->WebBrowser_field_0x8); /*0x7740da*/
   }
-  v2 = (void *)(this->q008);
-  if ( v2 ) /*0x7740e2*/
-    (*(void (__stdcall **)(unsigned int))(*(unsigned int *)v2 + 8))(this->q008); /*0x7740e7*/
+  WebBrowser_field_0x8 = (void *)(this->WebBrowser_field_0x8);
+  if ( WebBrowser_field_0x8 ) /*0x7740e2*/
+    (*(void (__stdcall **)(void *))(*(unsigned int *)WebBrowser_field_0x8 + 8))(this->WebBrowser_field_0x8); /*0x7740e7*/
   if ( (v4 & 1) != 0 ) /*0x7740ef*/
-    RA2_OPDEL(); /*0x7740f2*/
-  return (int)this; /*0x7740fc*/
-}
+    RA2_OPDEL(this); /*0x7740f2*/
+  return (int)this->__pad_0; /*0x7740fc*/
 }
 // 0x551630
 namespace gamemd {
@@ -395,32 +399,31 @@ int WebBrowser::Navigate()
 namespace gamemd {
 int WebBrowser::GoBack()
 {
-  void *v2; // [esp+0h] [ebp-94h] BYREF
-  unsigned int v3[2]; // [esp+4h] [ebp-90h] BYREF
-  int v4; // [esp+Ch] [ebp-88h] BYREF
-  char v5; // [esp+10h] [ebp-84h]
-  char Dest[64]; // [esp+14h] [ebp-80h] BYREF
-  char v7[64]; // [esp+54h] [ebp-40h] BYREF
+  String v2; // [esp+0h] [ebp-94h] BYREF
+  int v3; // [esp+8h] [ebp-8Ch]
+  Flag v4[6]; // [esp+Ch] [ebp-88h] BYREF
+  char v5[64]; // [esp+54h] [ebp-40h] BYREF
   wchar_t *Source; // [esp+9Ch] [ebp+8h]
-  wchar_t *v9; // [esp+A0h] [ebp+Ch]
+  wchar_t *v7; // [esp+A0h] [ebp+Ch]
 
-  wcstombs(Dest, Source, 0x40u); /*0x773d55*/
-  wcstombs(v7, v9, 0x40u); /*0x773d69*/
-  String::Assign((char **)&v2, Dest); /*0x773d7a*/
+  wcstombs((char *)&v4[0].Flag_field_0x08, Source, 0x40u); /*0x773d55*/
+  wcstombs(v5, v7, 0x40u); /*0x773d69*/
+  String::Assign(&v2, (const char *)&v4[0].Flag_field_0x08); /*0x773d7a*/
   Debug::Log(); /*0x773d8e*/
-  LoadPlayerProfile(v3, (const char **)&v2); /*0x773d9e*/
-  v4 = 0; /*0x773da9*/
-  v5 = 0; /*0x773dad*/
-  ReadRegistryOptionsWOL(&v4); /*0x773db1*/
-  if ( Flag::IsNot2(&v4) ) /*0x773dba*/
+  LoadPlayerProfile(&v2.m_3[1], (const char **)&v2); /*0x773d9e*/
+  *(unsigned int *)v4[0].__pad_0 = 0; /*0x773da9*/
+  IDA_LOBYTE(v4[0].Flag_field_0x04) = 0; /*0x773dad*/
+  ReadRegistryOptionsWOL((ObjectClass *)v4); /*0x773db1*/
+  if ( (uint8_t)Flag::IsNot2(v4) ) /*0x773dba*/
   {
-    FindChannelWOL(Dest, (int)v7, 1u, *(unsigned int *)(v3[1] + 16)); /*0x773dd5*/
-    SaveConfigWOL((int)g_GameMode_Current); /*0x773ddf*/
+    FindChannelWOL((const char *)&v4[0].Flag_field_0x08, (int)v5, 1u, *(unsigned int *)(v3 + 16)); /*0x773dd5*/
+    SaveConfigWOL((ObjectClass *)&unk_A8B238); /*0x773ddf*/
   }
-  String::Assign_Alt((void **)&g_WebBrowser, Dest); /*0x773dee*/
-  String::Assign_Alt((void **)&g_WebBrowserConfig, v7); /*0x773dfd*/
-  ComPtr::Release(v3); /*0x773e0e*/
-  DeleteAndZero(&v2); /*0x773e17*/
+  String::Assign_Alt((String *)&g_WindowManager.__pad_EC[684], (const char *)&v4[0].Flag_field_0x08); /*0x773dee*/
+  String::Assign_Alt((String *)&g_WebBrowserConfig, v5); /*0x773dfd*/
+  *(unsigned int *)&v2.m_3[1] = (void*)&rc_ptr_PlayerProfile_vftable; /*0x773e06*/
+  ComPtr::Release((ComPtr *)&v2.m_3[1]); /*0x773e0e*/
+  DeleteAndZero((ObjectClass *)&v2); /*0x773e17*/
   return 0; /*0x773e1e*/
 }
 } // namespace gamemd

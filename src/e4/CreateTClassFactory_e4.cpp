@@ -90,7 +90,7 @@ int E4Recv_6BF8D0::CreateTClassFactory_CellClass(void * a1, void * a2, void * a3
     *a3 = a1; /*0x6bf916*/
   if ( !*a3 ) /*0x6bf918*/
     return -2147467262; /*0x6bf920*/
-  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6bf92c*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6bf92c*/
   return 0; /*0x6bf8de*/
 }
 } // namespace gamemd
@@ -106,7 +106,7 @@ int E4Recv_6BFA50::CreateTClassFactory_EMPulseClass(void * a1, void * a2, void *
     *a3 = a1; /*0x6bfa96*/
   if ( !*a3 ) /*0x6bfa98*/
     return -2147467262; /*0x6bfaa0*/
-  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6bfaac*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6bfaac*/
   return 0; /*0x6bfa5e*/
 }
 } // namespace gamemd
@@ -122,7 +122,7 @@ int E4Recv_6BFBD0::CreateTClassFactory_LightSourceClass(void * a1, void * a2, vo
     *a3 = a1; /*0x6bfc16*/
   if ( !*a3 ) /*0x6bfc18*/
     return -2147467262; /*0x6bfc20*/
-  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6bfc2c*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6bfc2c*/
   return 0; /*0x6bfbde*/
 }
 } // namespace gamemd
@@ -138,7 +138,7 @@ int E4Recv_6BFD50::CreateTClassFactory_SideClass(void * a1, void * a2, void * a3
     *a3 = a1; /*0x6bfd96*/
   if ( !*a3 ) /*0x6bfd98*/
     return -2147467262; /*0x6bfda0*/
-  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6bfdac*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6bfdac*/
   return 0; /*0x6bfd5e*/
 }
 } // namespace gamemd
@@ -154,7 +154,7 @@ int E4Recv_6BFED0::CreateTClassFactory_TiberiumClass(void * a1, void * a2, void 
     *a3 = a1; /*0x6bff16*/
   if ( !*a3 ) /*0x6bff18*/
     return -2147467262; /*0x6bff20*/
-  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6bff2c*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6bff2c*/
   return 0; /*0x6bfede*/
 }
 } // namespace gamemd
@@ -170,7 +170,7 @@ int E4Recv_6C01D0::CreateTClassFactory_CampaignClass(void * a1, void * a2, void 
     *a3 = a1; /*0x6c0216*/
   if ( !*a3 ) /*0x6c0218*/
     return -2147467262; /*0x6c0220*/
-  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c022c*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c022c*/
   return 0; /*0x6c01de*/
 }
 } // namespace gamemd
@@ -186,7 +186,7 @@ int E4Recv_6C0350::CreateTClassFactory_BuildingLightClass(void * a1, void * a2, 
     *a3 = a1; /*0x6c0396*/
   if ( !*a3 ) /*0x6c0398*/
     return -2147467262; /*0x6c03a0*/
-  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c03ac*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c03ac*/
   return 0; /*0x6c035e*/
 }
 } // namespace gamemd
@@ -202,7 +202,7 @@ int E4Recv_6C04D0::CreateTClassFactory_WaypointPathClass(void * a1, void * a2, v
     *a3 = a1; /*0x6c0516*/
   if ( !*a3 ) /*0x6c0518*/
     return -2147467262; /*0x6c0520*/
-  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c052c*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c052c*/
   return 0; /*0x6c04de*/
 }
 } // namespace gamemd
@@ -218,7 +218,7 @@ int E4Recv_6C0650::CreateTClassFactory_TemporalClass(void * a1, void * a2, void 
     *a3 = a1; /*0x6c0696*/
   if ( !*a3 ) /*0x6c0698*/
     return -2147467262; /*0x6c06a0*/
-  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c06ac*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c06ac*/
   return 0; /*0x6c065e*/
 }
 } // namespace gamemd
@@ -234,7 +234,7 @@ int E4Recv_6C07D0::CreateTClassFactory_AirstrikeClass(void * a1, void * a2, void
     *a3 = a1; /*0x6c0816*/
   if ( !*a3 ) /*0x6c0818*/
     return -2147467262; /*0x6c0820*/
-  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c082c*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c082c*/
   return 0; /*0x6c07de*/
 }
 } // namespace gamemd
@@ -250,7 +250,7 @@ int E4Recv_6C0950::CreateTClassFactory_SpawnManagerClass(void * a1, void * a2, v
     *a3 = a1; /*0x6c0996*/
   if ( !*a3 ) /*0x6c0998*/
     return -2147467262; /*0x6c09a0*/
-  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c09ac*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c09ac*/
   return 0; /*0x6c095e*/
 }
 } // namespace gamemd
@@ -266,7 +266,7 @@ int E4Recv_6C0AD0::CreateTClassFactory_SlaveManagerClass(void * a1, void * a2, v
     *a3 = a1; /*0x6c0b16*/
   if ( !*a3 ) /*0x6c0b18*/
     return -2147467262; /*0x6c0b20*/
-  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c0b2c*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c0b2c*/
   return 0; /*0x6c0ade*/
 }
 } // namespace gamemd
@@ -282,7 +282,7 @@ int E4Recv_6C0C50::CreateTClassFactory_CaptureManagerClass(void * a1, void * a2,
     *a3 = a1; /*0x6c0c96*/
   if ( !*a3 ) /*0x6c0c98*/
     return -2147467262; /*0x6c0ca0*/
-  (*(void (__stdcall **, unsigned int a3, unsigned int a2)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c0cac*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c0cac*/
   return 0; /*0x6c0c5e*/
 }
 } // namespace gamemd
@@ -298,7 +298,7 @@ int E4Recv_6C0DD0::CreateTClassFactory_DiskLaserClass(void * a1, void * a2, void
     *a3 = a1; /*0x6c0e16*/
   if ( !*a3 ) /*0x6c0e18*/
     return -2147467262; /*0x6c0e20*/
-  (*(void (__stdcall **, unsigned int a3)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c0e2c*/
+  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c0e2c*/
   return 0; /*0x6c0dde*/
 }
 } // namespace gamemd
@@ -314,14 +314,14 @@ int E4Recv_6C0F50::CreateTClassFactory_ParasiteClass(void * a1, void * a2, void 
     *a3 = a1; /*0x6c0f96*/
   if ( !*a3 ) /*0x6c0f98*/
     return -2147467262; /*0x6c0fa0*/
-  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c0fac*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c0fac*/
   return 0; /*0x6c0f5e*/
 }
 } // namespace gamemd
 
 // 0x6C10D0
 namespace gamemd {
-int E4Recv_6C10D0::CreateTClassFactory_BombClass()
+int E4Recv_6C10D0::CreateTClassFactory_BombClass(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6c10d7*/
     return -2147467261; /*0x6c10d9*/
@@ -330,14 +330,14 @@ int E4Recv_6C10D0::CreateTClassFactory_BombClass()
     *a3 = a1; /*0x6c1116*/
   if ( !*a3 ) /*0x6c1118*/
     return -2147467262; /*0x6c1120*/
-  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c112c*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2, unsigned int a1)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c112c*/
   return 0; /*0x6c10de*/
 }
 } // namespace gamemd
 
 // 0x6C1250
 namespace gamemd {
-int E4Recv_6C1250::CreateTClassFactory_RadSiteClass()
+int E4Recv_6C1250::CreateTClassFactory_RadSiteClass(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6c1257*/
     return -2147467261; /*0x6c1259*/
@@ -346,14 +346,14 @@ int E4Recv_6C1250::CreateTClassFactory_RadSiteClass()
     *a3 = a1; /*0x6c1296*/
   if ( !*a3 ) /*0x6c1298*/
     return -2147467262; /*0x6c12a0*/
-  (*(void (__stdcall **)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c12ac*/
+  (*(void (__stdcall **, unsigned int a3, unsigned int a2)(int))(*(unsigned int *)a1 + 4))(a1); /*0x6c12ac*/
   return 0; /*0x6c125e*/
 }
 } // namespace gamemd
 
 // 0x6C13D0
 namespace gamemd {
-int E4Recv_6C13D0::CreateTClassFactory_TEventClass()
+int E4Recv_6C13D0::CreateTClassFactory_TEventClass(void * a1, void * a2, void * a3)
 {
   if ( !a3 ) /*0x6c13d7*/
     return -2147467261; /*0x6c13d9*/

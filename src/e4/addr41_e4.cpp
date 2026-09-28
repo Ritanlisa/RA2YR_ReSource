@@ -28,6 +28,7 @@
 #include "e4/classes/House_e4.hpp"
 #include "e4/classes/Radar_e4.hpp"
 #include "e4/classes/Building_e4.hpp"
+#include "e4/classes/XSurface_e4.hpp"
 
 // 0x4116A0
 namespace gamemd {
@@ -126,7 +127,6 @@ int sub_4116A0(unsigned int a1)
     return v15; /*0x4117fe*/
   }
   return *(unsigned int *)(v3 + 32); /*0x4116da*/
-}
 }
 // 0x411820
 namespace gamemd {
@@ -263,12 +263,11 @@ int ManageMultimediaTimer(struct _RTL_CRITICAL_SECTION * dwUser, int a2, int a3,
   }
   return result; /*0x411840*/
 }
-}
 // 0x411B20
 namespace gamemd {
 AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
 {
-  int v3; // eax
+  unsigned int v3;
   unsigned int v4;
   unsigned char *v5; // esi
   int v6; // eax
@@ -277,7 +276,7 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   LPDIRECTSOUND DirectSound; // [esp+8h] [ebp-64h]
   unsigned int v11[24]; // [esp+Ch] [ebp-60h] BYREF
 
-  DirectSound = (gamemd::AbstractClass **)(Audio::GetDirectSound());
+  DirectSound = (char *)(Audio::GetDirectSound());
   Debug::Log(); /*0x411b33*/
   GetCurrentThreadId(); /*0x411b3b*/
   Debug::Log(); /*0x411b47*/
@@ -331,7 +330,6 @@ AbstractClass * * sub_411B20(DWORD_PTR dwUser, AnimClass * aP1, int a3)
   *((unsigned int *)v5 + 24) = timeSetEvent(0x10u, 1u, fptc, dwUser, 1u); /*0x411cb6*/
   Debug::Log(); /*0x411cb9*/
   return *((unsigned int *)v5 + 24) != 0 ? -1 : -13;
-}
 }
 // 0x411DF0
 namespace gamemd {
@@ -448,7 +446,6 @@ void InitializeSoundBufferPlayback(LPCRITICAL_SECTION lpCriticalSection)
     return -1; /*0x411e7a*/
   }
 }
-}
 // 0x412000
 namespace gamemd {
 void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
@@ -521,7 +518,7 @@ void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
     LeaveCriticalSection(lpCriticalSection); /*0x4120c1*/
     return -13; /*0x4120d3*/
   }
-  v12 = (char *)((unsigned int)((char *)((unsigned int)(a3))));
+  v12 = (char *)((unsigned int)(a3));
   *(unsigned int *)(v5 + 4 * v10 + 80) = v4; /*0x4120d8*/
   *(unsigned int *)(v5 + 4 * v10 + 88) = v12; /*0x4120dc*/
   *(unsigned int *)(v5 + 4 * v10 + 72) = 1; /*0x4120e0*/
@@ -604,7 +601,6 @@ void SubmitDirectSoundBufferData(unsigned int a1, char * a2, char * a3)
   LeaveCriticalSection(v35); /*0x412211*/
   return -1; /*0x4120c7*/
 }
-}
 // 0x4123A0
 namespace gamemd {
 void fptc(UINT uTimerID, UINT uMsg, DWORD_PTR dwUser, DWORD_PTR dw1, DWORD_PTR dw2)
@@ -681,7 +677,6 @@ void fptc(UINT uTimerID, UINT uMsg, DWORD_PTR dwUser, DWORD_PTR dw1, DWORD_PTR d
   LeaveCriticalSection(v8); /*0x41250d*/
   InterlockedDecrement(lpAddend); /*0x412518*/
 }
-}
 // 0x413CD0
 namespace gamemd {
 bool sub_413CD0(int a1)
@@ -694,9 +689,8 @@ bool sub_413CD0(int a1)
   if ( !v2 ) /*0x413ced*/
     return 0; /*0x413cef*/
   if ( *(unsigned char *)(*(unsigned int *)(v2 + 1728) + 3777) ) /*0x413cf9*/
-    return *(unsigned char *, unsigned int a1)(v2 + 1753) == 0; /*0x413d10*/
+    return *(unsigned char *)(v2 + 1753) == 0; /*0x413d10*/
   return 0; /*0x413cd9*/
-}
 }
 // 0x41B110
 namespace gamemd {
@@ -704,13 +698,13 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
 {
   int result; // eax
   int v4; // ecx
-  uint8_t *StringByIndexINIClass; // eax
+  uint8_t *StringByIndex; // eax
   char *v6; // eax
   int v7; // esi
-  char *v8; // eax
+  TypeClass *v8; // eax
   int v9; // edi
-  IUnknown *v10; // esi
-  void *v11; // eax
+  void * v10;
+  void * v11;
   int v12; // esi
   char *v13; // eax
   char *v14; // eax
@@ -723,8 +717,8 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
   char *v21; // eax
   int v22; // ebx
   char *v23; // eax
-  void *v24; // eax
-  int TeamClass; // eax
+  TeamClass *v24; // eax
+  int v25; // eax
   char *v26; // eax
   int v27; // eax
   char *v28; // eax
@@ -742,33 +736,33 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
   char String[128]; // [esp+30h] [ebp-80h] BYREF
 
   INIClass::ResetSection(a1); /*0x41b119*/
-  result = INIClass::GetKeyCount(a1, (uint8_t *)aAircraft); /*0x41b126*/
+  result = INIClass::GetKeyCount(a1->__pad_0, aAircraft); /*0x41b126*/
   v4 = 0; /*0x41b12b*/
   v39 = result; /*0x41b12f*/
   for ( i = 0; i < v39; ++i ) /*0x41b137*/
   {
-    StringByIndexINIClass = (uint8_t *)INIClass::GetStringByIndex(a1, (uint8_t *)aAircraft, v4); /*0x41b14a*/
-    INIClass::GetString((uint8_t ***)a1, (uint8_t *)aAircraft, StringByIndexINIClass, 0, String, 128); /*0x41b164*/
-    v6 = strtok(String, Delimiter); /*0x41b173*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, aAircraft, v4); /*0x41b14a*/
+    INIClass::GetString(a1, aAircraft, StringByIndex, 0, String, 128); /*0x41b164*/
+    v6 = strtok(String, Str); /*0x41b173*/
     v7 = HouseClass::FindByName(v6); /*0x41b182*/
     if ( v7 != -1 ) /*0x41b187*/
     {
-      v8 = strtok(0, Delimiter); /*0x41b194*/
+      v8 = (TypeClass *)strtok(0, Str); /*0x41b194*/
       v9 = TypeClass::FindByName(v8); /*0x41b1a3*/
       if ( v9 != -1 ) /*0x41b1a8*/
       {
-        v10 = *(IUnknown **)&HouseClass_Array->gap0[4 * v7]; /*0x41b1b9*/
-        v11 = operator new(0x6D8u); /*0x41b1bc*/
+        v10 = (int)((IUnknown *)*((unsigned int *)stru_A80220.vtable3 + v7));
+        v11 = (void *)((int)(RA2_OPNEW(0x6D8u)));
         if ( v11 ) /*0x41b1c6*/
         {
-          v12 = AircraftClass::Construct((int)v11, *((unsigned int *)g_AircraftTypeCount + v9), v10); /*0x41b1de*/
+          v12 = AircraftClass::Construct(v11, v9, *((unsigned int *)unk_A8B21C + v9), v10); /*0x41b1de*/
           if ( v12 ) /*0x41b1e2*/
           {
-            v13 = strtok(0, Delimiter); /*0x41b1ef*/
+            v13 = strtok(0, Str); /*0x41b1ef*/
             atoi(v13); /*0x41b1f5*/
-            if ( dword_A8ED7C < 4 ) /*0x41b210*/
+            if ( *(int *)&stru_A8EB00.gapE4[408] < 4 ) /*0x41b210*/
             {
-              v17 = strtok(0, Delimiter); /*0x41b242*/
+              v17 = strtok(0, Str); /*0x41b242*/
               v18 = atoi(v17); /*0x41b248*/
               IDA_LOWORD(v37) = v18 % 128; /*0x41b263*/
               IDA_HIWORD(v37) = v18 / 128; /*0x41b26d*/
@@ -776,46 +770,46 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
             }
             else
             {
-              v14 = strtok(0, Delimiter); /*0x41b212*/
+              v14 = strtok(0, Str); /*0x41b212*/
               IDA_LOWORD(v38) = atoi(v14); /*0x41b224*/
-              v15 = strtok(0, Delimiter); /*0x41b229*/
+              v15 = strtok(0, Str); /*0x41b229*/
               IDA_HIWORD(v38) = atoi(v15); /*0x41b234*/
               v16 = v38; /*0x41b239*/
             }
             v40[0] = ((int16_t)v16 << 8) + 128; /*0x41b29b*/
             v40[1] = (IDA_SHIWORD(v16) << 8) + 128; /*0x41b29f*/
             v40[2] = 0; /*0x41b2a3*/
-            v19 = strtok(0, Delimiter); /*0x41b2a7*/
+            v19 = strtok(0, Str); /*0x41b2a7*/
             v20 = atoi(v19); /*0x41b2b9*/
-            v21 = strtok(0, Delimiter); /*0x41b2bb*/
-            v22 = LookupWaypointName(v21); /*0x41b2ca*/
-            v23 = strtok(0, Delimiter); /*0x41b2d3*/
-            v24 = (void *)ObjectTypeClass::FindByName(v23); /*0x41b2dd*/
+            v21 = strtok(0, Str); /*0x41b2bb*/
+            v22 = LookupWaypointName((ObjectClass *)v21); /*0x41b2ca*/
+            v23 = strtok(0, Str); /*0x41b2d3*/
+            v24 = (TeamClass *)ObjectTypeClass::FindByName((ObjectTypeClass *)v23); /*0x41b2dd*/
             if ( v24 ) /*0x41b2e4*/
             {
-              TeamClass = TeamClass::FindOrCreate(v24); /*0x41b2e8*/
-              if ( TeamClass ) /*0x41b2ef*/
-                ObjectClass::SetReference((unsigned int *)v12, TeamClass); /*0x41b2f4*/
+              v25 = TeamClass::FindOrCreate(v24); /*0x41b2e8*/
+              if ( v25 ) /*0x41b2ef*/
+                ObjectClass::SetReference((ObjectClass *)v12, v25); /*0x41b2f4*/
             }
-            v26 = strtok(0, Delimiter); /*0x41b300*/
+            v26 = strtok(0, Str); /*0x41b300*/
             if ( v26 ) /*0x41b30a*/
             {
               v27 = atoi(v26); /*0x41b30d*/
-              FootClass::SetField(v27); /*0x41b31c*/
+              FootClass::SetField((int *)(v12 + 336), v27); /*0x41b31c*/
             }
-            v28 = strtok(0, Delimiter); /*0x41b328*/
+            v28 = strtok(0, Str); /*0x41b328*/
             if ( v28 ) /*0x41b332*/
               *(unsigned int *)(v12 + 532) = atoi(v28); /*0x41b33d*/
-            v29 = strtok(0, Delimiter); /*0x41b34a*/
+            v29 = strtok(0, Str); /*0x41b34a*/
             if ( v29 ) /*0x41b354*/
               *(unsigned char *)(v12 + 1057) = atoi(v29) != 0; /*0x41b364*/
-            v30 = strtok(0, Delimiter); /*0x41b371*/
+            v30 = strtok(0, Str); /*0x41b371*/
             if ( v30 ) /*0x41b37b*/
               *(unsigned char *)(v12 + 1058) = atoi(v30) != 0; /*0x41b38b*/
             if ( (*(uint8_t (__thiscall **)(int, unsigned int *, int, int))(*(unsigned int *)v12 + 216))(v12, v40, v20, a2) ) /*0x41b39b*/
             {
               v31 = *(unsigned int *)(v12 + 1732); /*0x41b3a9*/
-              v32 = Math::RoundToInt((double)v39 * (double)*(int *)(v31 + 160) * 0.00390625); /*0x41b3bb*/
+              IDA_LOWORD(v32) = Math::RoundToInt((double)v39 * (double)*(int *)(v31 + 160) * 0.00390625); /*0x41b3bb*/
               *(unsigned int *)(v12 + 108) = v32; /*0x41b3c0*/
               v33 = *(unsigned int *)(v31 + 160); /*0x41b3c3*/
               if ( v32 > v33 - 3 ) /*0x41b3ce*/
@@ -842,7 +836,6 @@ INIClass * * PlaceAircraftFromINI(void * a1, void * a2)
   }
   return result; /*0x41b421*/
 }
-}
 // 0x41C610
 namespace gamemd {
 int CompareFunction(unsigned int * a1, unsigned int * a2)
@@ -851,7 +844,6 @@ int CompareFunction(unsigned int * a1, unsigned int * a2)
     return 0; /*0x41c620*/
   else
     return *a1 >= *a2 ? 1 : -1;
-}
 }
 // 0x410070
 namespace gamemd {
@@ -1061,36 +1053,38 @@ int E4Recv_410DC0::sub_410DC0(int a2, int a3, int a4, int a5, int a6)
   int v10; // eax
   int v11; // edx
   int v12; // eax
+  int v13; // ecx
   int16_t v14; // dx
+  int v16; // [esp+14h] [ebp+4h]
 
   v8 = (unsigned short *)(*(int (__thiscall **)(int, int, int))(*(unsigned int *)a2 + 92))(a2, a3, a4); /*0x410de2*/
-  v9 = (int16_t *)(this->M16 + this->M24); /*0x410de9*/
+  v9 = (int16_t *)(this->uniqueId + this->nextArrayIndex); /*0x410de9*/
   v10 = (*(int (__thiscall **)(int))(*(unsigned int *)a2 + 116))(a2); /*0x410deb*/
   v11 = a5; /*0x410df1*/
   v12 = v10 / 2 - a5; /*0x410df7*/
   if ( v8 && a6 > 0 ) /*0x410e03*/
   {
-    a6 = a6; /*0x410e05*/
+    v16 = a6; /*0x410e05*/
     do /*0x410e38*/
     {
       if ( v11 > 0 ) /*0x410e0b*/
       {
-        v11 = v11; /*0x410e0d*/
+        v13 = v11; /*0x410e0d*/
         do /*0x410e26*/
         {
           v14 = *v9++; /*0x410e0f*/
           *v8++ = v14; /*0x410e15*/
-          if ( (unsigned int)v9 >= this->M28 ) /*0x410e20*/
-            v9 = (int16_t *)((char *)v9 - this->M32); /*0x410e22*/
-          --v11; /*0x410e25*/
+          if ( (unsigned int)v9 >= this->referenceCount ) /*0x410e20*/
+            v9 = (int16_t *)((char *)v9 - (unsigned int)this->NeedsSaveOrLink); /*0x410e22*/
+          --v13; /*0x410e25*/
         }
-        while ( v11 ); /*0x410e26*/
+        while ( v13 ); /*0x410e26*/
         v11 = a5; /*0x410e28*/
       }
       v8 += v12; /*0x410e30*/
-      --a6; /*0x410e34*/
+      --v16; /*0x410e34*/
     }
-    while ( a6 ); /*0x410e38*/
+    while ( v16 ); /*0x410e38*/
   }
   return (*(int (__thiscall **)(int))(*(unsigned int *)a2 + 96))(a2); /*0x410e42*/
 }
@@ -1340,6 +1334,7 @@ int sub_412870()
   do /*0x41289c*/
   {
     EventClass::resetEvent(v0, 0, 0); /*0x412883*/
+    *v0 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x412888*/
     v0[5] = 10; /*0x41288e*/
     v0[4] = 0; /*0x412895*/
     v0 += 6; /*0x412898*/
@@ -1397,6 +1392,7 @@ void sub_4128F0()
   {
     v6 = *(v4 - 6); /*0x41297d*/
     v4 -= 6; /*0x412980*/
+    *(v4 - 1) = (void*)&VectorClass_TechnoClass___vftable; /*0x412985*/
     if ( v6 ) /*0x412988*/
     {
       if ( *((unsigned char *)v4 + 9) ) /*0x41298a*/
@@ -1899,9 +1895,9 @@ void sub_41D2C0()
 namespace gamemd {
 char E4Recv_41DD10::sub_41DD10()
 {
-  this->q040 = g_CurrentFrame; /*0x41dd15*/
-  this->ambientSoundController = 0; /*0x41dd1a*/
-  this->q03D = 0; /*0x41dd1d*/
+  this->ambientSoundController[1] = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x41dd15*/
+  IDA_LOBYTE(this->ambientSoundController[0]) = 0; /*0x41dd1a*/
+  IDA_BYTE1(this->ambientSoundController[0]) = 0; /*0x41dd1d*/
   return 0; /*0x41dd20*/
 }
 } // namespace gamemd
@@ -2047,7 +2043,7 @@ int sub_41E330()
 namespace gamemd {
 int E4Recv_41FD30::sub_41FD30(int a2)
 {
-  *(unsigned int *)&this->M216 = a2; /*0x41fd34*/
+  *(&this->u32_144) = a2; /*0x41fd34*/
   return a2; /*0x41fd3a*/
 }
 } // namespace gamemd
@@ -2056,7 +2052,7 @@ int E4Recv_41FD30::sub_41FD30(int a2)
 namespace gamemd {
 int E4Recv_41FD40::sub_41FD40(int a2)
 {
-  *(unsigned int *)&this->M220 = a2; /*0x41fd44*/
+  *(&this->u32_145) = a2; /*0x41fd44*/
   return a2; /*0x41fd4a*/
 }
 } // namespace gamemd
@@ -2065,7 +2061,7 @@ int E4Recv_41FD40::sub_41FD40(int a2)
 namespace gamemd {
 int E4Recv_41FD50::sub_41FD50(int a2)
 {
-  *(unsigned int *)&this->M224 = a2; /*0x41fd54*/
+  *(&this->u32_146) = a2; /*0x41fd54*/
   return a2; /*0x41fd5a*/
 }
 } // namespace gamemd

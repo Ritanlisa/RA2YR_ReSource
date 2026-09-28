@@ -24,91 +24,91 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/EventClass_e4.hpp"
+#include "e4/classes/Explosion_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x48D080
 namespace gamemd {
 int Event::Dispatch()
 {
-  __time32_t v0; // eax
-  unsigned char v2[4]; // [esp+10h] [ebp-100h] BYREF
-  unsigned int v3[6]; // [esp+14h] [ebp-FCh] BYREF
-  unsigned char v4[228]; // [esp+2Ch] [ebp-E4h]
+  int result; // eax
+  unsigned char v1[4]; // [esp+10h] [ebp-100h] BYREF
+  unsigned int v2[6]; // [esp+14h] [ebp-FCh] BYREF
+  unsigned char v3[228]; // [esp+2Ch] [ebp-E4h]
 
   UpdateAudioVideo(); /*0x48d08c*/
   if ( g_AsyncIOState > 0 && *(unsigned int *)AsyncIO_Instance ) /*0x48d09f*/
     (*(void (__thiscall **)(unsigned int))(**(unsigned int **)AsyncIO_Instance + 8))(*(unsigned int *)AsyncIO_Instance); /*0x48d0a7*/
-  v0 = g_GameMode_Current; /*0x48d0aa*/
-  if ( g_GameMode_Current == 3 || g_GameMode_Current == 4 ) /*0x48d0b7*/
+  result = g_GameMode_Current[0]; /*0x48d0aa*/
+  if ( g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4 ) /*0x48d0b7*/
   {
     Network::Dispatch(); /*0x48d0b9*/
-    v0 = g_GameMode_Current; /*0x48d0be*/
+    result = g_GameMode_Current[0]; /*0x48d0be*/
   }
-  if ( v0 == 1 ) /*0x48d0c6*/
+  if ( result == 1 ) /*0x48d0c6*/
   {
     if ( (GameFlags_Campaign & 1) == 0 ) /*0x48d0da*/
-      return v0; /*0x48d0da*/
+      return result; /*0x48d0da*/
     goto LABEL_11; /*0x48d0da*/
   }
-  if ( v0 == 2 ) /*0x48d0cb*/
+  if ( result == 2 ) /*0x48d0cb*/
   {
   LABEL_11:
-    Stream::ReadPacket(&g_EventManager); /*0x48d0e0*/
-    if ( *((unsigned char *)g_ScenarioClass_Instance + 13720) && (int)ObjectTypeClass::CreateInstance(v3, v2) > 0 ) /*0x48d10f*/
+    Stream::ReadPacket((int)&g_EventManager); /*0x48d0e0*/
+    if ( g_ScenarioClass_Instance[13720] && ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v2, (int)v1) > 0 ) /*0x48d10f*/
     {
       do /*0x48d15f*/
       {
-        if ( v3[0] == 108 && v4[0] != g_EventDispatchState ) /*0x48d129*/
-          Network::UpdateLatencyDisplay(1, (double)*(int *)&v4[1], NAN); /*0x48d144*/
+        if ( v2[0] == 108 && v3[0] != g_EventDispatchState ) /*0x48d129*/
+          Network::UpdateLatencyDisplay((int)g_UIManager, 1, (double)*(int *)&v3[1], NAN); /*0x48d144*/
       }
-      while ( (int)ObjectTypeClass::CreateInstance(v3, v2) > 0 ); /*0x48d15f*/
+      while ( ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v2, (int)v1) > 0 ); /*0x48d15f*/
     }
-    v0 = g_GameMode_Current; /*0x48d161*/
+    result = g_GameMode_Current[0]; /*0x48d161*/
   }
-  if ( v0 == 4 ) /*0x48d169*/
+  if ( result == 4 ) /*0x48d169*/
   {
-    IDA_LOBYTE(v0) = byte_B77DC2; /*0x48d16b*/
+    IDA_LOBYTE(result) = byte_B77DC2; /*0x48d16b*/
     if ( !byte_B77DC2 ) /*0x48d172*/
     {
-      v0 = time(0); /*0x48d176*/
-      if ( v0 != dword_89E9B0 ) /*0x48d186*/
+      result = time(0); /*0x48d176*/
+      if ( result != dword_89E9B0 ) /*0x48d186*/
       {
         if ( ppv && !dword_B77DCC ) /*0x48d199*/
           (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 12))(ppv); /*0x48d19e*/
         if ( g_UIPointerTable ) /*0x48d1a8*/
           (*(void (__stdcall **)(LPVOID))(*(unsigned int *)g_UIPointerTable + 28))(g_UIPointerTable); /*0x48d1ad*/
-        v0 = time(0); /*0x48d1b2*/
-        dword_89E9B0 = v0; /*0x48d1ba*/
+        result = time(0); /*0x48d1b2*/
+        dword_89E9B0 = result; /*0x48d1ba*/
       }
     }
   }
-  return v0; /*0x48d1bf*/
-}
+  return result; /*0x48d1bf*/
 }
 // 0x5E2FA0
 namespace gamemd {
 void sub_5E2FA0()
 {
-  WPARAM result; // eax
+  int result; // eax
   HWND Current; // esi
 
   result = Dialog::GetCurrentType(); /*0x5e2fa2*/
   if ( result == 107 ) /*0x5e2faa*/
   {
-    Current = Dialog::GetCurrent(); /*0x5e2fb7*/
+    Current = (HWND)Dialog::GetCurrent(); /*0x5e2fb7*/
     result = SendDlgItemMessageA(Current, 1771, 0x188u, 0, 0); /*0x5e2fc8*/
     if ( result != -1 ) /*0x5e2fcd*/
     {
       result = SendDlgItemMessageA(Current, 1771, 0x199u, result, 0); /*0x5e2fdd*/
       if ( result ) /*0x5e2fe1*/
-        return (*(int (__thiscall **)(WPARAM))(*(unsigned int *)result + 148))(result); /*0x5e2fe7*/
+        return (*(int (__thiscall **)(int))(*(unsigned int *)result + 148))(result); /*0x5e2fe7*/
     }
   }
-  else if ( g_GameStateFlags ) /*0x5e2ff8*/
+  else if ( dword_A8B23C ) /*0x5e2ff8*/
   {
-    return (*(int (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 148))(g_GameStateFlags); /*0x5e2ffc*/
+    return (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->vtable0 + 37))(dword_A8B23C); /*0x5e2ffc*/
   }
   return result; /*0x5e2fed*/
-}
 }
 // 0x5E95E0
 namespace gamemd {
@@ -120,7 +120,7 @@ void sub_5E95E0()
   uint8_t v4; // [esp+0h] [ebp-Ch]
   unsigned int v5;
 
-  v5 = (LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((int)((LPARAM *)(dword_A8B548)))))))))))));
+  v5 = (LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((unsigned int)((LPARAM *)((int)((LPARAM *)(dword_A8B548)))))))))))))));
   if ( dword_A8B548 >= dword_A8BB0C ) /*0x5e95f4*/
     v5 = dword_A8BB0C; /*0x5e95f6*/
   v0 = 0; /*0x5e9618*/
@@ -160,84 +160,84 @@ void sub_5E95E0()
 namespace gamemd {
 void sub_796960()
 {
-  int v0; // eax
-  int v1; // esi
-  char *v2; // eax
-  int v3; // eax
-  char *v4; // edx
-  char *v5; // eax
-  unsigned char v7[12]; // [esp+8h] [ebp-240h] BYREF
-  unsigned int v8[27]; // [esp+14h] [ebp-234h] BYREF
-  int v9[113]; // [esp+80h] [ebp-1C8h] BYREF
-  int16_t v10; // [esp+244h] [ebp-4h]
-  char v11; // [esp+246h] [ebp-2h]
+  Network *v1; // edi
+  int owningHouseIndex; // eax
+  int v3; // esi
+  char *v4; // eax
+  int v5; // eax
+  ObjectClass *nextObject; // edx
+  char *v7; // eax
+  Waypoint v9[2]; // [esp+8h] [ebp-240h] BYREF
+  int v10[113]; // [esp+80h] [ebp-1C8h] BYREF
+  int16_t v11; // [esp+244h] [ebp-4h]
+  char v12; // [esp+246h] [ebp-2h]
 
-  IDA_LOBYTE(v0) = g_GameMode_Current[0]; /*0x796960*/
-  if ( g_GameMode_Current[0] == 4 ) /*0x796970*/
-    return v0; /*0x796970*/
-  Waypoint::InitInvalid(v7); /*0x79697a*/
-  v0 = g_WOL_State; /*0x79697f*/
-  if ( (int)g_WOL_State < 2 ) /*0x796987*/
-    return v0; /*0x796987*/
-  v1 = 0; /*0x79698d*/
-  if ( (int)g_WOL_State <= 0 ) /*0x796996*/
+  IDA_LOBYTE(owningHouseIndex) = unk_A8B238; /*0x796960*/
+  if ( *(unsigned int *)&unk_A8B238 == 4 ) /*0x796970*/
+    return owningHouseIndex; /*0x796970*/
+  Waypoint::InitInvalid(v9); /*0x79697a*/
+  owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x79697f*/
+  if ( g_WOL_UserList.owningHouseIndex < 2 ) /*0x796987*/
+    return owningHouseIndex; /*0x796987*/
+  v3 = 0; /*0x79698d*/
+  if ( g_WOL_UserList.owningHouseIndex <= 0 ) /*0x796996*/
     goto LABEL_10; /*0x796996*/
   while ( 1 ) /*0x7969a3*/
   {
-    StartGameWOL_Start_7ACB90((int *)&g_WOL_State, &g_IsMultiplayerSession, v1); /*0x7969a3*/
-    if ( (g_IsMultiplayerSession & 1) != 0 ) /*0x7969ae*/
+    StartGameWOL_Start_7ACB90((ObjectClass *)&g_WOL_UserList.owningHouseIndex, &g_WebBrowserConfig.occupant, v3); /*0x7969a3*/
+    if ( (g_WebBrowserConfig.occupant & 1) != 0 ) /*0x7969ae*/
       break; /*0x7969ae*/
-    v0 = g_WOL_State; /*0x7969b0*/
-    if ( ++v1 >= (int)g_WOL_State ) /*0x7969b8*/
+    owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7969b0*/
+    if ( ++v3 >= g_WOL_UserList.owningHouseIndex ) /*0x7969b8*/
       goto LABEL_10; /*0x7969b8*/
   }
-  if ( !&g_IsMultiplayerSession /*0x7969df*/
-    || (v2 = String::GetOrEmpty_Alt((char **)&g_WebBrowser), (v0 = _strcmpi(byte_B777D4, v2)) != 0) )
+  if ( &g_WebBrowserConfig == (ObjectClass *)-36 /*0x7969df*/
+    || (v4 = String::GetOrEmpty_Alt((String *)&g_WindowManager.__pad_EC[684]),
+        (owningHouseIndex = _strcmpi((char *)&g_WebBrowserConfig.ambientSoundController[3], v4)) != 0) )
   {
-    v0 = g_WOL_State; /*0x7969e5*/
+    owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x7969e5*/
   LABEL_10:
-    if ( !g_NetworkLobbyState && g_WOL_ProcessIdle ) /*0x796a00*/
+    if ( !g_NetworkLobbyState && stru_B76AC4.ambientSoundController[4] ) /*0x796a00*/
     {
-      if ( v0 > 0 ) /*0x796a0a*/
-        qmemcpy(v8, g_WOL_ConnectionFlags, sizeof(v8)); /*0x796a1b*/
-      v8[8] = 0; /*0x796a21*/
-      Network::SyncPlayerList(); /*0x796a29*/
+      if ( owningHouseIndex > 0 ) /*0x796a0a*/
+        qmemcpy(&v9[0].__pad_0[12], g_WOL_UserList.nextObject, 0x6Cu); /*0x796a1b*/
+      *(unsigned int *)&v9[0].__pad_0[44] = 0; /*0x796a21*/
+      Network::SyncPlayerList(v1); /*0x796a29*/
       Event::Dispatch(); /*0x796a2e*/
-      Network::SetConnectionParams(g_NetworkManager, 50, -1, 5000, 1); /*0x796a42*/
-      Network::FormatAddress((uint16_t *)&g_NetworkRematchObject, 0); /*0x796a4e*/
+      Network::SetConnectionParams(&unk_A8E9C0, 50, -1, 5000, 1); /*0x796a42*/
+      Network::FormatAddress(&stru_A8BB1C, 0); /*0x796a4e*/
       Debug::Log(); /*0x796a59*/
-      memset(v9, 0, sizeof(v9)); /*0x796a6f*/
-      v10 = 0; /*0x796a79*/
-      v11 = 0; /*0x796a7b*/
-      v9[0] = 13; /*0x796a7c*/
-      CopyWideToChar(&v9[1], *(char **)Game_PlayerInfoArray, -1); /*0x796a90*/
-      v3 = 0; /*0x796a9b*/
-      if ( (int)g_WOL_State > 0 ) /*0x796a9f*/
+      memset(v10, 0, sizeof(v10)); /*0x796a6f*/
+      v11 = 0; /*0x796a79*/
+      v12 = 0; /*0x796a7b*/
+      v10[0] = 13; /*0x796a7c*/
+      CopyWideToChar(&v10[1], (char *)*dword_A8DA78, -1); /*0x796a90*/
+      v5 = 0; /*0x796a9b*/
+      if ( g_WOL_UserList.owningHouseIndex > 0 ) /*0x796a9f*/
       {
-        v4 = (char *)g_WOL_ConnectionFlags; /*0x796aa1*/
+        nextObject = g_WOL_UserList.nextObject; /*0x796aa1*/
         while ( 1 ) /*0x796aa7*/
         {
-          if ( v3 >= 0 && v3 < (int)g_WOL_State ) /*0x796aad*/
-            qmemcpy(&g_IsMultiplayerSession, v4, 0x6Cu); /*0x796abb*/
-          if ( (g_IsMultiplayerSession & 1) != 0 ) /*0x796ac3*/
+          if ( v5 >= 0 && v5 < g_WOL_UserList.owningHouseIndex ) /*0x796aad*/
+            qmemcpy(&g_WebBrowserConfig.occupant, nextObject, 0x6Cu); /*0x796abb*/
+          if ( (g_WebBrowserConfig.occupant & 1) != 0 ) /*0x796ac3*/
             break; /*0x796ac3*/
-          ++v3; /*0x796ac5*/
-          v4 += 108; /*0x796ac6*/
-          if ( v3 >= (int)g_WOL_State ) /*0x796acb*/
+          ++v5; /*0x796ac5*/
+          nextObject = (ObjectClass *)((char *)nextObject + 108); /*0x796ac6*/
+          if ( v5 >= g_WOL_UserList.owningHouseIndex ) /*0x796acb*/
             goto LABEL_24; /*0x796acb*/
         }
-        if ( &g_IsMultiplayerSession ) /*0x796ae4*/
+        if ( &g_WebBrowserConfig != (ObjectClass *)-36 ) /*0x796ae4*/
         {
-          v5 = (char *)(CharToWideString(byte_B777D4));
-          Network::SendToPlayer((int)g_NetworkManager, (int)v9, 455, 1, (wchar_t *)v5); /*0x796b04*/
+          v7 = CharToWideString(&g_WebBrowserConfig.ambientSoundController[3]); /*0x796aeb*/
+          Network::SendToPlayer((int)&unk_A8E9C0, (int)v10, 455, 1, (wchar_t *)v7); /*0x796b04*/
         }
       }
   LABEL_24:
-      IDA_LOBYTE(v0) = Event::Dispatch(); /*0x796b09*/
+      IDA_LOBYTE(owningHouseIndex) = Event::Dispatch(); /*0x796b09*/
     }
   }
-  return v0; /*0x796ad4*/
-}
+  return owningHouseIndex; /*0x796ad4*/
 }
 // 0x7A0F40
 namespace gamemd {
@@ -295,7 +295,6 @@ int sub_7A0F40()
   }
   return result; /*0x7a104e*/
 }
-}
 // 0x786270
 namespace gamemd {
 void sub_786270()
@@ -328,11 +327,10 @@ void sub_786270()
   Debug::Log(); /*0x786353*/
   (*(void (__stdcall **)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 44))( /*0x786371*/
     g_UIPointerTable,
-    byte_B73B34,
-    dword_B76B0C,
+    &g_WindowManager.__pad_70[28],
+    stru_B76AC4.ambientSoundController[3],
     3);
   return 1; /*0x78631f*/
-}
 }
 // 0x7C5F3D
 namespace gamemd {
@@ -388,7 +386,6 @@ void sub_7C5F3D()
     return 0; /*0x7c5ff1*/
   }
 }
-}
 // 0x7C5FFF
 namespace gamemd {
 int sub_7C5FFF()
@@ -411,7 +408,6 @@ int sub_7C5FFF()
     return 0; /*0x7c605c*/
   }
 }
-}
 // 0x48D1D0
 char Event_Dispatch::Return0()
 {
@@ -422,63 +418,66 @@ char Event_Dispatch::Return0()
 namespace gamemd {
 bool Event::IsValidActionType()
 {
-  return this == (void *)268 /*0x6015d4*/
-      || this == (void *)148
-      || this == (void *)182
-      || this == (void *)163
-      || this == (void *)115
-      || this == (void *)216
-      || this == (void *)3003
-      || this == (void *)245
-      || this == (void *)261
-      || this == (void *)226
-      || this == (void *)213
-      || this == (void *)693
-      || this == (void *)183
-      || this == (void *)692
-      || this == (void *)257
-      || this == (void *)297
-      || this == (void *)3015
-      || this == (void *)3014
-      || this == (void *)215
-      || this == (void *)264
-      || this == (void *)188
-      || this == (void *)189
-      || this == (void *)187
-      || this == (void *)181
-      || this == (void *)3002
-      || this == (void *)255
-      || this == (void *)234
-      || this == (void *)107
-      || this == (void *)256
-      || this == (void *)258
-      || this == (void *)184
-      || this == (void *)214
-      || this == (void *)259
-      || this == (void *)287
-      || this == (void *)293
-      || this == (void *)277
-      || this == (void *)290
-      || this == (void *)274
-      || this == (void *)231
-      || this == (void *)278
-      || this == (void *)194
-      || this == (void *)201
-      || this == (void *)285
-      || this == (void *)284
-      || this == (void *)275
-      || this == (void *)254
-      || this == (void *)265
-      || this == (void *)271
-      || this == (void *)279
-      || this == (void *)276
-      || this == (void *)195
-      || this == (void *)292
-      || this == (void *)230
-      || this == (void *)243
-      || this == (void *)244
-      || this == (void *)700
-      || this == (void *)283
-      || this == (void *)270;
+  int result; // eax
+
+  IDA_LOBYTE(result) = this == (void *)268 /*0x6015d5*/
+                || this == (void *)148
+                || this == (void *)182
+                || this == (void *)163
+                || this == (void *)115
+                || this == (void *)216
+                || this == (void *)3003
+                || this == (void *)245
+                || this == (void *)261
+                || this == (void *)226
+                || this == (void *)213
+                || this == (void *)693
+                || this == (void *)183
+                || this == (void *)692
+                || this == (void *)257
+                || this == (void *)297
+                || this == (void *)3015
+                || this == (void *)3014
+                || this == (void *)215
+                || this == (void *)264
+                || this == (void *)188
+                || this == (void *)189
+                || this == (void *)187
+                || this == (void *)181
+                || this == (void *)3002
+                || this == (void *)255
+                || this == (void *)234
+                || this == (void *)107
+                || this == (void *)256
+                || this == (void *)258
+                || this == (void *)184
+                || this == (void *)214
+                || this == (void *)259
+                || this == (void *)287
+                || this == (void *)293
+                || this == (void *)277
+                || this == (void *)290
+                || this == (void *)274
+                || this == (void *)231
+                || this == (void *)278
+                || this == (void *)194
+                || this == (void *)201
+                || this == (void *)285
+                || this == (void *)284
+                || this == (void *)275
+                || this == (void *)254
+                || this == (void *)265
+                || this == (void *)271
+                || this == (void *)279
+                || this == (void *)276
+                || this == (void *)195
+                || this == (void *)292
+                || this == (void *)230
+                || this == (void *)243
+                || this == (void *)244
+                || this == (void *)700
+                || this == (void *)283
+                || this == (void *)270;
+  return result; /*0x6015d4*/
 }
 } // namespace gamemd

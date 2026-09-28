@@ -6,24 +6,33 @@
 namespace gamemd {
 struct String {
 // --- flat members (BEGIN) ---
-    unsigned int q004;  // 0x4
+    unsigned int ;  // 0x4
     unsigned int u16_6;  // 0x6
-    unsigned int q008;  // 0x8
+    unsigned int ;  // 0x8
     unsigned int u32_C;  // 0xC
+    unsigned int u32_14;  // 0x14
     unsigned int q018;  // 0x18
     unsigned int q024;  // 0x24
+    unsigned int u32_28;  // 0x28
+    unsigned int u32_2C;  // 0x2C
+    unsigned int u32_34;  // 0x34
+    unsigned int u32_38;  // 0x38
     unsigned int q054;  // 0x54
     unsigned int u32_70;  // 0x70
     unsigned int q084;  // 0x84
     unsigned int q274;  // 0x274
+    unsigned int u32_45C;  // 0x45C
     unsigned int q628;  // 0x628
     unsigned int q774;  // 0x774
     unsigned int q1908;  // 0x1908
     unsigned int q5494;  // 0x5494
     unsigned int q6408;  // 0x6408
+    unsigned int __pad_0;
+    unsigned int m_3;
+    void* ptr_88;
+    unsigned int NotEquals;
     void* ptr_4;
     void* ptr_8;
-    void* ptr_88;
 // --- flat members (END) ---
     void AssignWideToChar(CampaignScore * aP1,  CampaignScore * aP2);    // 0x49B760
     char * AllocAndCopy(RandomStruct * aP1,  IUnknown * aP2);    // 0x4CB5E0
@@ -48,7 +57,7 @@ struct String {
     char ** AssignFromPtr(const char ** a2);  // 0x7B4690
     bool Equals_Alt(const char * a2);  // 0x7B4710
     bool Compare(const char ** a2);  // 0x7B4780
-    bool NotEquals(const char * a2);  // 0x7B47F0
+    bool Equals(ObjectClass * aP1);  // 0x7B47F0
     void ** Assign_Alt(CCINIClass * aP1);  // 0x7B48D0
     char ** Reassign(AbstractClass * aP1);  // 0x7B4940
     const char ** Append(CCINIClass * aP1);  // 0x7B4C20

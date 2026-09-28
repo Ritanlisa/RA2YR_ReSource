@@ -8,6 +8,7 @@ namespace gamemd {
 struct Isometric {
 // --- flat members (BEGIN) ---
     unsigned int u32_70;  // 0x70
+    unsigned int u32_E4;  // 0xE4
     char u32_11B;  // 0x11B
     unsigned char u8_11C;  // 0x11C
     unsigned int q274;  // 0x274

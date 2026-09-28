@@ -110,7 +110,6 @@ extern void* DynamicVectorClass_CoopCampaignClass___vftable[1];
 extern void* DynamicVectorClass_DiscreteDistributionClass_AITriggerTypeClass_DistributionObject_AITriggerTypeClass___vftable[1];
 extern void* DynamicVectorClass_DiscreteDistributionClass_CellClass_DistributionObject_CellClass___vftable[1];
 extern void* DynamicVectorClass_DiskLaserClass___vftable[1];
-extern void* DynamicVectorClass_DynamicVectorClass_char_____vftable[1];
 extern void* DynamicVectorClass_EBolt___vftable[1];
 extern void* DynamicVectorClass_EMPulseClass___vftable[1];
 extern void* DynamicVectorClass_EgoClass___vftable[1];

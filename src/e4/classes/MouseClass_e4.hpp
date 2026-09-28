@@ -988,7 +988,7 @@ struct MouseClass {
     unsigned int q5558;  // 0x5558
     unsigned int u32_555C;  // 0x555C
     unsigned int u32_5560;  // 0x5560
-    void* q5564;  // 0x5564
+    unsigned int u32_5564;  // 0x5564
     unsigned int u32_5568;  // 0x5568
     unsigned char q556C;  // 0x556C
     unsigned char q5570;  // 0x5570
@@ -1045,7 +1045,7 @@ struct MouseClass {
     unsigned char q577C;  // 0x577C
     unsigned char q5780;  // 0x5780
     unsigned char q5784;  // 0x5784
-    void* ptr_5788;  // 0x5788
+    TimerStruct * ptr_5788;  // 0x5788
     unsigned char q578C;  // 0x578C
     unsigned char q5790;  // 0x5790
     unsigned char q5794;  // 0x5794
@@ -1129,6 +1129,8 @@ struct MouseClass {
     unsigned int _file;
     unsigned int _flag;
     unsigned int _ptr;
+    unsigned int __pad_1D4;
+    unsigned int field_0;
     unsigned int LoadGameAssets;
 // --- flat members (END) ---
     char LoadCursors();

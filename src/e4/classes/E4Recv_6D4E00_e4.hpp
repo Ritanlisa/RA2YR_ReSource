@@ -22,6 +22,8 @@ struct E4Recv_6D4E00 {
     unsigned int q1908;  // 0x1908
     unsigned int q5170;  // 0x5170
     unsigned int q6408;  // 0x6408
+    unsigned int location;
+    unsigned int occupant;
 // --- flat members (END) ---
     void sub_6D4E00();  // 0x6D4E00
 };
