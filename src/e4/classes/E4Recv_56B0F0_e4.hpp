@@ -25,6 +25,17 @@ struct E4Recv_56B0F0 {
     unsigned int q1408;  // 0x1408
     unsigned int q5128;  // 0x5128
     unsigned int q6454;  // 0x6454
+    unsigned int q25684;  // 0x25684
+    unsigned int q153220;  // 0x153220
+    unsigned int q1255810;  // 0x1255810
+    unsigned int q1389088;  // 0x1389088
+    unsigned int q421676434;  // 0x421676434
+    unsigned int q541606450;  // 0x541606450
+    unsigned int q1611689177458;  // 0x1611689177458
+    unsigned int q2359839630934;  // 0x2359839630934
+    unsigned int q388224393901144;  // 0x388224393901144
+    unsigned int q621877867514164;  // 0x621877867514164
+    unsigned int q441783189658222948;  // 0x441783189658222948
 // --- flat members (END) ---
     int sub_56B0F0(int * a2);  // 0x56B0F0
 };

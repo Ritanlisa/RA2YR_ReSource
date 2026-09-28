@@ -14,7 +14,7 @@
 // 0x4104C0
 namespace gamemd { namespace wdt { 
 int Map::GetInvalidCoord() {
-  unsigned int *v2; // [esp+4h] [ebp+4h]
+  _DWORD *v2; // [esp+4h] [ebp+4h]
 
   *v2 = dword_887680; /*0x4104cc*/
   v2[1] = dword_887684; /*0x4104d4*/
@@ -26,7 +26,7 @@ int Map::GetInvalidCoord() {
 // 0x4F28B0
 namespace gamemd { namespace wdt { 
 bool Map::CanScroll() {
-  return this->Height < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x4f28bd*/
+  return this->Height < *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 16); /*0x4f28bd*/
 }
 }
 }
@@ -37,9 +37,9 @@ int State::SetIfChanged(int a1) {
   int v3; // edx
 
   result = a1; /*0x4f3a90*/
-  if ( (unsigned char)a1 != IDA_LOBYTE(this->AIPlayers) ) /*0x4f3a99*/
+  if ( (_BYTE)a1 != IDA_LOBYTE(this->AIPlayers) ) /*0x4f3a99*/
   {
-    v3 = *(unsigned int *)this->__pad_0; /*0x4f3a9b*/
+    v3 = *(_DWORD *)this->__pad_0; /*0x4f3a9b*/
     IDA_LOBYTE(this->AIPlayers) = a1; /*0x4f3a9e*/
     return (*(int (__stdcall **)(int))(v3 + 16))(a1); /*0x4f3aa1*/
   }
@@ -73,8 +73,8 @@ void Campaign::SetupMovie() {
   if ( hDlg ) /*0x5c2515*/
   {
     v6 = this->q33C; /*0x5c251b*/
-    v7 = unk_A8BB0C; /*0x5c2521*/
-    unk_A8BB0C = unk_A8BB0C; /*0x5c252b*/
+    v7 = dword_A8BB0C; /*0x5c2521*/
+    dword_A8BB0C = dword_A8BB0C; /*0x5c252b*/
     v13 = 0; /*0x5c2536*/
     IDA_LOBYTE(result) = Movie::GetSection((int)&g_DDrawSurfaceManager, v6, &v14); /*0x5c253a*/
     v8 = v14; /*0x5c253f*/
@@ -85,7 +85,7 @@ void Campaign::SetupMovie() {
         v9 = (int *)v5[16]; /*0x5c2554*/
         if ( v9 ) /*0x5c2559*/
         {
-          if ( (uint8_t)Movie::GetState(v9, &v13) ) /*0x5c2560*/
+          if ( (unsigned __int8)Movie::GetState(v9, &v13) ) /*0x5c2560*/
           {
             result = v13; /*0x5c2579*/
           }
@@ -103,7 +103,7 @@ void Campaign::SetupMovie() {
         }
         if ( result < v8->NeedsSaveOrLink ) /*0x5c2584*/
         {
-          v17 = *(unsigned int *)(*(unsigned int *)(v8->abstractFlags + 4 * result) + 16); /*0x5c2595*/
+          v17 = *(_DWORD *)(*(_DWORD *)(v8->abstractFlags + 4 * result) + 16); /*0x5c2595*/
           if ( v7 > 0 ) /*0x5c2599*/
           {
             v10 = (int **)dword_A8DA90; /*0x5c259b*/
@@ -113,7 +113,7 @@ void Campaign::SetupMovie() {
               MovieClass::ReadConfig(v16, v3, ResourceID2CSF); /*0x5c25af*/
               if ( v17 <= 1 ) /*0x5c25b9*/
               {
-                v12 = SideClass::FindByName(**(SideClass ***)(*(unsigned int *)(v14->abstractFlags + 4 * v13) + 4)); /*0x5c25ee*/
+                v12 = SideClass::FindByName(**(SideClass ***)(*(_DWORD *)(v14->abstractFlags + 4 * v13) + 4)); /*0x5c25ee*/
                 SetupLobbyCountryCombo(hDlg, ResourceID2CSF, v12); /*0x5c25f3*/
                 SessionClass::SetPlayerOption(*v10, v12); /*0x5c25fc*/
                 v3 = hDlg; /*0x5c2601*/
@@ -126,9 +126,9 @@ void Campaign::SetupMovie() {
               v4 = (ObjectClass *)((char *)v4 + 1); /*0x5c2609*/
               ++v10; /*0x5c260a*/
             }
-            while ( (int)v4 < unk_A8BB0C ); /*0x5c260f*/
+            while ( (int)v4 < dword_A8BB0C ); /*0x5c260f*/
             v5 = (CampaignCoop *)v16; /*0x5c2611*/
-            v7 = unk_A8BB0C; /*0x5c2615*/
+            v7 = dword_A8BB0C; /*0x5c2615*/
           }
           DisableCampaignSlots(v3, v7); /*0x5c261b*/
           result = Dialog::FindGameUI(); /*0x5c2620*/
@@ -149,7 +149,7 @@ int Conflict::GetOwnerHouse() {
 
   Outcome = this->Outcome; /*0x76bfe0*/
   if ( Outcome ) /*0x76bfe5*/
-    return *(unsigned int *)(Outcome + 36) - 1; /*0x76bfea*/
+    return *(_DWORD *)(Outcome + 36) - 1; /*0x76bfea*/
   else
     return 0; /*0x76bfec*/
 }

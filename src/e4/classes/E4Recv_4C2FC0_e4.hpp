@@ -50,6 +50,38 @@ struct E4Recv_4C2FC0 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
+    unsigned int q20848;  // 0x20848
+    unsigned int q21768;  // 0x21768
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q33570;  // 0x33570
+    unsigned int q137064;  // 0x137064
+    unsigned int q153094;  // 0x153094
+    unsigned int q210288;  // 0x210288
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1271138;  // 0x1271138
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q1388834;  // 0x1388834
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19337528;  // 0x19337528
+    unsigned int q19347798;  // 0x19347798
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q20481684;  // 0x20481684
+    unsigned int q20482100;  // 0x20482100
+    unsigned int q35009334;  // 0x35009334
+    unsigned int q422802728;  // 0x422802728
+    unsigned int q422868888;  // 0x422868888
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q541595268;  // 0x541595268
+    unsigned int q17758693160;  // 0x17758693160
+    unsigned int q17759111304;  // 0x17759111304
+    unsigned int q22571209318;  // 0x22571209318
+    unsigned int q1612096024928;  // 0x1612096024928
+    unsigned int q1612107027204;  // 0x1612107027204
+    unsigned int q2359835005720;  // 0x2359835005720
+    unsigned int q388226446628134;  // 0x388226446628134
+    unsigned int q388267560290600;  // 0x388267560290600
 // --- flat members (END) ---
     int Vf72(int,  ...);    // G6 vtable slot dispatch
     int * sub_4C2FC0(DropListClass * aP1,  void* aP2,  int a4,  DropListClass * aP4,  void* aP5,  void* aP6,  void* aP7,  int a9,  int a10);    // 0x4C2FC0

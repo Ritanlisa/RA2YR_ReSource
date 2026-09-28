@@ -11,10 +11,6 @@ struct CampaignProperties_WorldDominationTour_22 {
     int q008;  // 0x8
     unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned int __pad_0;
-    unsigned int m_1;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     int Seek(int a2);  // 0x5D2770
     int Read(unsigned int * a2);  // 0x5D2900

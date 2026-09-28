@@ -11,17 +11,6 @@ struct IPXManagerClass {
     bool Initialized;  // 0x4
     bool Active;  // 0x5
     unsigned short tail_6;  // 0x6
-    unsigned int Initialized9;
-    unsigned int Socket;
-    unsigned int curConnIndex;
-    unsigned int processPacket;
-    unsigned int q0080;
-    unsigned int q010;
-    unsigned int q044;
-    unsigned int u32_44;
-    unsigned int u32_48;
-    unsigned int u32_4C;
-    unsigned int u32_50;
 // --- flat members (END) ---
     IPXManagerClass * QueryInterface(char a2);
     int ddtor(int a2, int a3, unsigned int * v10);

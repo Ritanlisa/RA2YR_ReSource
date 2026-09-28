@@ -19,7 +19,7 @@ wchar_t ** WDTGame_Helper(CampaignScore * aP0, const wchar_t * a1, wchar_t * For
 
   swprintf(String, (const size_t)a0Dd_0, Format); /*0x7b7e58*/
   swprintf(String, (const size_t)String, a1); /*0x7b7e68*/
-  *(_DWORD *)aP0 = 0; /*0x7b7e76*/
+  *aP0 = 0; /*0x7b7e76*/
   if ( String ) /*0x7b7e7c*/
     v5 = wcslen(String) + 1; /*0x7b7e8b*/
   else

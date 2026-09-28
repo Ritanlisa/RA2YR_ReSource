@@ -20,24 +20,24 @@ HRESULT DriveLocomotionClass::BeginMove(int * a1, int * pStm)
   ILocomotion *Piggybackee; // eax
   LPVOID *p_Piggybackee; // esi
 
-  v2 = (int)(pStm);
-  v3 = SwizzleManager::SaveLoad((int *)a1->__pad_0, pStm); /*0x4af792*/
+  v2 = pStm; /*0x4af787*/
+  v3 = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, pStm); /*0x4af792*/
   if ( v3 < 0 ) /*0x4af796*/
     return v3; /*0x4af796*/
   if ( a1 ) /*0x4af79a*/
   {
     a1->Piggybackee = 0; /*0x4af79c*/
-    *(unsigned int *)a1->__pad_0 = (void*)&DriveLocomotionClass_vftable; /*0x4af7a3*/
-    *(unsigned int *)&a1->__pad_0[4] = (void*)&DriveLocomotionClass_vftable; /*0x4af7a9*/
-    *(unsigned int *)a1->__pad_18 = &off_7E7E8C; /*0x4af7b0*/
+    *(_DWORD *)a1->LocomotionClass = &(void*)(void*)&DriveLocomotionClass_vftable; /*0x4af7a3*/
+    *(_DWORD *)&a1->LocomotionClass[4] = &(void*)(void*)&DriveLocomotionClass_vftable; /*0x4af7a9*/
+    *(_DWORD *)a1->__pad_18 = &off_7E7E8C; /*0x4af7b0*/
   }
-  (*(void (__stdcall **)(int *, int **, int, unsigned int))(*v2 + 12))(v2, &pStm, 1, 0); /*0x4af7c3*/
-  if ( !(unsigned char)pStm ) /*0x4af7cc*/
+  (*(void (__stdcall **)(int *, int **, int, _DWORD))(*v2 + 12))(v2, &pStm, 1, 0); /*0x4af7c3*/
+  if ( !(_BYTE)pStm ) /*0x4af7cc*/
     return v3; /*0x4af7f8*/
   Piggybackee = a1->Piggybackee; /*0x4af7ce*/
   p_Piggybackee = (LPVOID *)&a1->Piggybackee; /*0x4af7d1*/
   if ( Piggybackee ) /*0x4af7d6*/
-    (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4af7db*/
+    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)Piggybackee + 8))(Piggybackee); /*0x4af7db*/
   *p_Piggybackee = 0; /*0x4af7e5*/
   return OleLoadFromStream((LPSTREAM)v2, &IID_ILocomotion, p_Piggybackee); /*0x4af7f1*/
 }
@@ -56,21 +56,21 @@ HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
   HRESULT v10; // esi
   int v12; // edx
 
-  v3 = (gamemd::IStream *)((gamemd::DriveLocomotionClass *)((IStream *)pPStm));
-  v4 = (gamemd::DriveLocomotionClass *)(a1);
+  v3 = (IStream *)pPStm; /*0x4af806*/
+  v4 = a1; /*0x4af80b*/
   IPersistStream = LoadIPersistStream((LocomotionClass *)a1, pPStm, a3); /*0x4af817*/
   if ( IPersistStream < 0 ) /*0x4af81b*/
     return IPersistStream; /*0x4af81b*/
   if ( !v4->Piggybackee ) /*0x4af826*/
   {
-    v12 = *(unsigned int *)v3->__pad_0; /*0x4af8c3*/
+    v12 = *(_DWORD *)v3->__pad_0; /*0x4af8c3*/
     IDA_LOBYTE(a3) = 0; /*0x4af8cf*/
-    (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v12 + 16))(v3, &a3, 1, 0); /*0x4af8d4*/
+    (*(void (__stdcall **)(IStream *, int *, int, _DWORD))(v12 + 16))(v3, &a3, 1, 0); /*0x4af8d4*/
     return IPersistStream; /*0x4af8d8*/
   }
-  v6 = (int)((gamemd::ILocomotion *)(*(unsigned int *)v3->__pad_0));
+  v6 = *(_DWORD *)v3->__pad_0; /*0x4af82c*/
   IDA_LOBYTE(a3) = 1; /*0x4af838*/
-  (*(void (__stdcall **)(IStream *, int *, int, unsigned int))(v6 + 16))(v3, &a3, 1, 0); /*0x4af83d*/
+  (*(void (__stdcall **)(IStream *, int *, int, _DWORD))(v6 + 16))(v3, &a3, 1, 0); /*0x4af83d*/
   Piggybackee = v4->Piggybackee; /*0x4af840*/
   pPStm = 0; /*0x4af843*/
   if ( Piggybackee ) /*0x4af84d*/
@@ -88,7 +88,7 @@ HRESULT DriveLocomotionClass::LoadFromStream(int * a1, int * pPStm, int a3)
     }
     else
     {
-      Function::4B4D60((int *)&pPStm); /*0x4af868*/
+      Function::Method_4B4D60((int *)&pPStm); /*0x4af868*/
       pPStm = 0; /*0x4af86d*/
     }
     if ( v8 < 0 && v8 != -2147467262 ) /*0x4af897*/
@@ -126,15 +126,15 @@ DriveLocomotionClass * DriveLocomotionClass::ProcessMove(char a2)
 {
   ILocomotion *Piggybackee; // eax
 
-  *(unsigned int *)this->__pad_0 = (void*)&DriveLocomotionClass_vftable; /*0x4b4d03*/
-  *(unsigned int *)&this->__pad_0[4] = (void*)&DriveLocomotionClass_vftable; /*0x4b4d09*/
-  *(unsigned int *)this->__pad_18 = &off_7E7E8C; /*0x4b4d10*/
+  *(_DWORD *)this->LocomotionClass = &(void*)(void*)&DriveLocomotionClass_vftable; /*0x4b4d03*/
+  *(_DWORD *)&this->LocomotionClass[4] = &(void*)(void*)&DriveLocomotionClass_vftable; /*0x4b4d09*/
+  *(_DWORD *)this->__pad_18 = &off_7E7E8C; /*0x4b4d10*/
   Piggybackee = this->Piggybackee; /*0x4b4d17*/
   if ( Piggybackee ) /*0x4b4d1c*/
-    (*(void (__stdcall **)(ILocomotion *))(*(unsigned int *)Piggybackee + 8))(Piggybackee); /*0x4b4d21*/
+    (*(void (__stdcall **)(ILocomotion *))(*(_DWORD *)Piggybackee + 8))(Piggybackee); /*0x4b4d21*/
   LocomotionClass::Construct(); /*0x4b4d26*/
   if ( (a2 & 1) != 0 ) /*0x4b4d30*/
     RA2_OPDEL(); /*0x4b4d33*/
-  return this->__pad_0; /*0x4b4d3d*/
+  return this->LocomotionClass; /*0x4b4d3d*/
 }
 } // namespace gamemd

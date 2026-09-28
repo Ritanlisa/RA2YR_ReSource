@@ -22,6 +22,17 @@ struct E4Recv_4F9670 {
     unsigned int q1608;  // 0x1608
     unsigned int q5460;  // 0x5460
     unsigned int q5640;  // 0x5640
+    unsigned int q21600;  // 0x21600
+    unsigned int q22080;  // 0x22080
+    unsigned int q136704;  // 0x136704
+    unsigned int q19409250;  // 0x19409250
+    unsigned int q422806914;  // 0x422806914
+    unsigned int q423662160;  // 0x423662160
+    unsigned int q17773764960;  // 0x17773764960
+    unsigned int q1612096536630;  // 0x1612096536630
+    unsigned int q388267565606448;  // 0x388267565606448
+    unsigned int q254495664600278088;  // 0x254495664600278088
+    unsigned int q254497871881323270;  // 0x254497871881323270
 // --- flat members (END) ---
     int sub_4F9670();  // 0x4F9670
 };

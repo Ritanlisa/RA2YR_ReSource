@@ -22,12 +22,12 @@ namespace gamemd {
 void  __spoils<ecx> sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int a5)
 {
   unsigned int v6; // ecx
-  unsigned int *v7; // edi
+  _DWORD *v7; // edi
   int v8; // eax
   int v9; // ebx
   int v10; // ebx
-  uint16_t v11; // ax
-  unsigned char *v12; // edi
+  unsigned __int16 v11; // ax
+  _BYTE *v12; // edi
 
   do /*0x7e0099*/
   {
@@ -38,7 +38,7 @@ void  __spoils<ecx> sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int 
       v8 = *a1; /*0x7e0040*/
       a1 = (int *)((char *)a1 + 2); /*0x7e0042*/
       v9 = __ROR4__(v8, 8); /*0x7e004f*/
-      IDA_LOBYTE(v9) = byte_A8F91C[(uint16_t)v8]; /*0x7e0052*/
+      IDA_LOBYTE(v9) = byte_A8F91C[(unsigned __int16)v8]; /*0x7e0052*/
       IDA_BYTE1(v9) = IDA_BYTE1(v8); /*0x7e0058*/
       v10 = __ROR4__(v9, 8); /*0x7e005f*/
       IDA_BYTE1(v10) = byte_A8F91C[(v8 & 0xFFFF00u) >> 8]; /*0x7e0065*/
@@ -46,14 +46,14 @@ void  __spoils<ecx> sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int 
       --v6; /*0x7e0073*/
     }
     while ( v6 ); /*0x7e0074*/
-    v11 = *(unsigned short *)a1; /*0x7e0078*/
-    *(unsigned char *)v7 = *(unsigned short *)a1; /*0x7e007b*/
+    v11 = *(_WORD *)a1; /*0x7e0078*/
+    *(_BYTE *)v7 = *(_WORD *)a1; /*0x7e007b*/
     v12 = (char *)v7 + 1; /*0x7e007d*/
     a1 = (int *)((char *)a1 + 2); /*0x7e007e*/
     *v12++ = byte_A8F91C[v11]; /*0x7e0087*/
     *v12 = IDA_HIBYTE(v11); /*0x7e008a*/
     v12[1] = 0; /*0x7e008d*/
-    a2 = (unsigned int *)((char *)a2 + a5); /*0x7e0093*/
+    a2 = (_DWORD *)((char *)a2 + a5); /*0x7e0093*/
     --a3; /*0x7e0096*/
   }
   while ( a3 ); /*0x7e0099*/
@@ -64,15 +64,15 @@ void  __spoils<ecx> sub_7E0001(int * a1, unsigned int * a2, int a3, int a4, int 
 namespace gamemd {
 void  __spoils<ecx> sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
 {
-  unsigned int *v6; // ecx
-  unsigned int *v7; // edi
+  _DWORD *v6; // ecx
+  _DWORD *v7; // edi
   int v8; // eax
   int v9; // ebx
   int v10; // ebx
   int v11; // ebx
-  uint16_t v12; // ax
-  unsigned char *v13; // edi
-  unsigned char *v14; // ecx
+  unsigned __int16 v12; // ax
+  _BYTE *v13; // edi
+  _BYTE *v14; // ecx
   unsigned int v15; // [esp+0h] [ebp-Ch]
   char *v17; // [esp+8h] [ebp-4h]
 
@@ -86,7 +86,7 @@ void  __spoils<ecx> sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, uns
       v8 = *a1; /*0x7e00e0*/
       a1 = (int *)((char *)a1 + 2); /*0x7e00e2*/
       v9 = __ROR4__(v8, 8); /*0x7e00ef*/
-      IDA_LOBYTE(v9) = byte_A8F91C[(uint16_t)v8]; /*0x7e00f2*/
+      IDA_LOBYTE(v9) = byte_A8F91C[(unsigned __int16)v8]; /*0x7e00f2*/
       IDA_BYTE1(v9) = IDA_BYTE1(v8); /*0x7e00f8*/
       v10 = __ROR4__(v9, 8); /*0x7e00ff*/
       IDA_BYTE1(v10) = byte_A8F91C[(v8 & 0xFFFF00u) >> 8]; /*0x7e0105*/
@@ -98,9 +98,9 @@ void  __spoils<ecx> sub_7E00A6(int * a1, char * a2, int a3, unsigned int a4, uns
       --v15; /*0x7e0118*/
     }
     while ( v15 ); /*0x7e011b*/
-    v12 = *(unsigned short *)a1; /*0x7e011f*/
-    *(unsigned char *)v7 = *(unsigned short *)a1; /*0x7e0122*/
-    *(unsigned char *)v6 = v12; /*0x7e0124*/
+    v12 = *(_WORD *)a1; /*0x7e011f*/
+    *(_BYTE *)v7 = *(_WORD *)a1; /*0x7e0122*/
+    *(_BYTE *)v6 = v12; /*0x7e0124*/
     v13 = (char *)v7 + 1; /*0x7e0126*/
     v14 = (char *)v6 + 1; /*0x7e0127*/
     IDA_LOBYTE(v12) = byte_A8F91C[v12]; /*0x7e012b*/
@@ -130,8 +130,8 @@ void  __spoils<ecx> ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
   int v6; // eax
   int v7; // ebx
   int v8; // ebx
-  uint16_t v9; // ax
-  unsigned char *v10; // edi
+  unsigned __int16 v9; // ax
+  _BYTE *v10; // edi
 
   v3 = (unsigned int)(a3 - 2) >> 1; /*0x7e017a*/
   do /*0x7e01b6*/
@@ -139,7 +139,7 @@ void  __spoils<ecx> ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
     v6 = *a1; /*0x7e0182*/
     a1 = (int *)((char *)a1 + 2); /*0x7e0184*/
     v7 = __ROR4__(v6, 8); /*0x7e0191*/
-    IDA_LOBYTE(v7) = byte_A8F91C[(uint16_t)v6]; /*0x7e0194*/
+    IDA_LOBYTE(v7) = byte_A8F91C[(unsigned __int16)v6]; /*0x7e0194*/
     IDA_BYTE1(v7) = IDA_BYTE1(v6); /*0x7e019a*/
     v8 = __ROR4__(v7, 8); /*0x7e01a1*/
     IDA_BYTE1(v8) = byte_A8F91C[(v6 & 0xFFFF00u) >> 8]; /*0x7e01a7*/
@@ -147,8 +147,8 @@ void  __spoils<ecx> ObfuscateDataBlock(int * a1, unsigned int * a2, int a3)
     --v3; /*0x7e01b5*/
   }
   while ( v3 ); /*0x7e01b6*/
-  v9 = *(unsigned short *)a1; /*0x7e01ba*/
-  *(unsigned char *)a2 = *(unsigned short *)a1; /*0x7e01bd*/
+  v9 = *(_WORD *)a1; /*0x7e01ba*/
+  *(_BYTE *)a2 = *(_WORD *)a1; /*0x7e01bd*/
   v10 = (char *)a2 + 1; /*0x7e01bf*/
   *v10++ = byte_A8F91C[v9]; /*0x7e01c6*/
   *v10 = IDA_HIBYTE(v9); /*0x7e01c9*/
@@ -182,17 +182,17 @@ void  __spoils<ecx> sub_7E01D2(unsigned char * a1, unsigned char * a2, unsigned 
 namespace gamemd {
 void sub_7E01FB(int * a1, char * a2, int a3, unsigned int a4, unsigned int a5)
 {
-  unsigned char *v5; // [esp-24h] [ebp-34h]
-  unsigned int v6;
-  unsigned int *v7; // [esp+4h] [ebp-Ch]
-  unsigned char * v8;
+  _BYTE *v5; // [esp-24h] [ebp-34h]
+  _BYTE *v6; // [esp+0h] [ebp-10h]
+  _DWORD *v7; // [esp+4h] [ebp-Ch]
+  unsigned int v8; // [esp+8h] [ebp-8h]
   char *v10; // [esp+Ch] [ebp-4h]
   int *v11; // [esp+18h] [ebp+8h]
   int v12; // [esp+20h] [ebp+10h]
   unsigned int v13; // [esp+28h] [ebp+18h]
 
-  v8 = (unsigned char *)(a4 >> 1);
-  v13 = (unsigned char *)(a5 >> 1);
+  v8 = a4 >> 1; /*0x7e021b*/
+  v13 = a5 >> 1; /*0x7e021e*/
   ObfuscateDataBlock(a1, dword_877D20, a4); /*0x7e022a*/
   v7 = &unk_878720; /*0x7e023b*/
   v6 = dword_877D20; /*0x7e023e*/

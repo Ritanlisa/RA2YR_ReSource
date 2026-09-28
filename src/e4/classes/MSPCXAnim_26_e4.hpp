@@ -13,10 +13,6 @@ struct MSPCXAnim_26 {
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned int m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     void ddtor();  // 0x5D06D0
     unsigned int Draw(int a2);  // 0x5D0700

@@ -12,36 +12,40 @@ namespace gamemd {
 void RawFileClass::Dtor()
 {
   int result; // eax
-  int v3; // edi
+  FileClass v3; // edi
   DWORD LastError; // eax
   int v5; // [esp-8h] [ebp-Ch]
 
-  *(unsigned int *)this->__pad_0 = (void*)&RawFileClass_vftable; /*0x65ca03*/
+  this->FileClass = (FileClass)&(void*)(void*)&RawFileClass_vftable; /*0x65ca03*/
   result = RawFileClass::Write(this); /*0x65ca09*/
-  if ( (unsigned char)result ) /*0x65ca11*/
+  if ( (_BYTE)result ) /*0x65ca11*/
   {
     result = CloseHandle(*(HANDLE *)this->FileTimeDateLo); /*0x65ca17*/
     if ( !result ) /*0x65ca1f*/
     {
-      v3 = *(unsigned int *)this->__pad_0; /*0x65ca25*/
-      v5 = *(unsigned int *)&this->FileNameAllocated; /*0x65ca27*/
+      v3 = this->FileClass; /*0x65ca25*/
+      v5 = *(_DWORD *)this->FileNameAllocated; /*0x65ca27*/
       LastError = GetLastError(); /*0x65ca29*/
-      result = (*(int (__thiscall **)(RawFileClass *, DWORD, unsigned int, int))(v3 + 64))(this, LastError, 0, v5); /*0x65ca32*/
+      result = (*(int (__thiscall **)(BufferIOFileClass *, DWORD, _DWORD, int))(*(_DWORD *)&v3 + 64))( /*0x65ca32*/
+                 this,
+                 LastError,
+                 0,
+                 v5);
     }
-    *(unsigned int *)this->FileTimeDateLo = -1; /*0x65ca36*/
+    *(_DWORD *)this->FileTimeDateLo = -1; /*0x65ca36*/
   }
-  IDA_LOBYTE(result) = this->FileSize; /*0x65ca3d*/
-  if ( (unsigned char)result ) /*0x65ca42*/
+  IDA_LOBYTE(result) = this->CacheReadAhead[0]; /*0x65ca3d*/
+  if ( (_BYTE)result ) /*0x65ca42*/
   {
-    result = *(unsigned int *)&this->FileNameAllocated; /*0x65ca44*/
+    result = *(_DWORD *)this->FileNameAllocated; /*0x65ca44*/
     if ( result ) /*0x65ca49*/
     {
-      result = (int)(free(*(void **)&this->FileNameAllocated));
-      *(unsigned int *)&this->FileNameAllocated = 0; /*0x65ca54*/
-      this->FileSize = 0; /*0x65ca5b*/
+      result = free(*(void **)this->FileNameAllocated); /*0x65ca4c*/
+      *(_DWORD *)this->FileNameAllocated = 0; /*0x65ca54*/
+      this->CacheReadAhead[0] = 0; /*0x65ca5b*/
     }
   }
-  *(unsigned int *)this->__pad_0 = (void*)&FileClass_vftable; /*0x65ca5f*/
+  this->FileClass = (FileClass)&(void*)(void*)&FileClass_vftable; /*0x65ca5f*/
   return result; /*0x65ca65*/
 }
 } // namespace gamemd
@@ -49,7 +53,7 @@ void RawFileClass::Dtor()
 namespace gamemd {
 int RawFileClass::Close(int a2, int a3)
 {
-  (*(void (__thiscall **)(RawFileClass *, int))(*(unsigned int *)this->__pad_0 + 8))(this, a2); /*0x65cb3c*/
-  return (*(int (__thiscall **)(RawFileClass *, int))(*(unsigned int *)this->__pad_0 + 28))(this, a3); /*0x65cb4b*/
+  (*(void (__thiscall **)(RawFileClass *, int))(*(_DWORD *)this->FileClass + 8))(this, a2); /*0x65cb3c*/
+  return (*(int (__thiscall **)(RawFileClass *, int))(*(_DWORD *)this->FileClass + 28))(this, a3); /*0x65cb4b*/
 }
 } // namespace gamemd

@@ -23,8 +23,8 @@ namespace gamemd {
 int MoveFeedback::ProcessCommand()
 {
   char v1; // bl
-  void * result;
-  void * v3;
+  int result; // eax
+  int v3; // esi
   int v4; // ebp
   int v5; // ebx
   int v6; // edi
@@ -41,13 +41,13 @@ int MoveFeedback::ProcessCommand()
   g_MoveFeedback = 0; /*0x7327ec*/
   if ( g_BuildingLoadQueue_Array.__pad_1624[0] ) /*0x7327f5*/
   {
-    result = (void *)((int)(RA2_OPNEW(0x18u)));
-    v3 = (void *)((int)(result));
+    result = RA2_OPNEW(0x18u); /*0x7327fb*/
+    v3 = result; /*0x732800*/
     v4 = 0; /*0x732802*/
     if ( result ) /*0x732809*/
     {
-      result = (void *)((unsigned int)((int)EventClass::resetEvent((EventClass *)result, 0, 0)));
-      *(unsigned int *)v3 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x732814*/
+      result = (int)EventClass::resetEvent((EventClass *)result, 0, 0); /*0x73280f*/
+      *(_DWORD *)v3 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x732814*/
       v3->u32_14 = 10; /*0x73281a*/
       v3->Items = 0; /*0x732821*/
     }
@@ -55,26 +55,26 @@ int MoveFeedback::ProcessCommand()
     {
       v3 = 0; /*0x732826*/
     }
-    v5 = *(unsigned int *)&stru_A8EB00.gapE4[164]; /*0x732828*/
-    if ( *(int *)&stru_A8EB00.gapE4[164] > 0 ) /*0x732830*/
+    v5 = *(_DWORD *)&stru_A8EB00.?[164]; /*0x732828*/
+    if ( *(int *)&stru_A8EB00.?[164] > 0 ) /*0x732830*/
     {
       do /*0x732887*/
       {
-        v6 = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[152] + 4 * v4); /*0x73283b*/
+        v6 = *(_DWORD *)(*(_DWORD *)&stru_A8EB00.?[152] + 4 * v4); /*0x73283b*/
         result = StepTechnoClassCleanupIfHuman(v6, this); /*0x732840*/
-        if ( (unsigned char)result ) /*0x732847*/
+        if ( (_BYTE)result ) /*0x732847*/
         {
           v7 = v3->Capacity; /*0x732849*/
           result = v3->Items; /*0x73284c*/
           if ( result < v7 /*0x732873*/
-            || ((IDA_LOBYTE(result) = v3->IsAllocated, (unsigned char)result) || !v7)
+            || ((IDA_LOBYTE(result) = v3->IsAllocated, (_BYTE)result) || !v7)
             && (result = v3->u32_14, result > 0)
-            && (result = (*(int (__thiscall **)(int, int, unsigned int))(v3->Capacity)(v3, v7 + result, 0), (unsigned char)result) )
+            && (result = (*(int (__thiscall **)(int, int, _DWORD))(v3->Capacity)(v3, v7 + result, 0), (_BYTE)result) )
           {
             result = v3->Items; /*0x732875*/
             v8 = v3->Items; /*0x732878*/
             v3->Items = result + 1; /*0x73287e*/
-            *(unsigned int *)(v8 + 4 * result) = v6; /*0x732881*/
+            *(_DWORD *)(v8 + 4 * result) = v6; /*0x732881*/
           }
         }
         ++v4; /*0x732884*/
@@ -91,7 +91,7 @@ int MoveFeedback::ProcessCommand()
     if ( v9 ) /*0x73289d*/
     {
       EventClass::resetEvent(v9, 0, 0); /*0x7328a3*/
-      *(unsigned int *)v3 = (void*)&DynamicVectorClass_TechnoClass___vftable; /*0x7328a8*/
+      *(_DWORD *)v3 = &(void*)(void*)&DynamicVectorClass_TechnoClass___vftable; /*0x7328a8*/
       v3->u32_14 = 10; /*0x7328ae*/
       v3->Items = 0; /*0x7328b5*/
     }
@@ -108,11 +108,11 @@ int MoveFeedback::ProcessCommand()
         result = GetCoordDataMap(v10); /*0x7328d4*/
         if ( result ) /*0x7328db*/
         {
-          if ( (*(unsigned char *)(result + 20) & 1) != 0 ) /*0x7328e7*/
+          if ( (*(_BYTE *)(result + 20) & 1) != 0 ) /*0x7328e7*/
           {
             result = result; /*0x7328ef*/
             result = StepTechnoClassCleanupIfHuman(result, this); /*0x7328f3*/
-            if ( (unsigned char)result ) /*0x7328fa*/
+            if ( (_BYTE)result ) /*0x7328fa*/
               result = DynamicVector::AddItem((DynamicVector *)v3, &result); /*0x732903*/
           }
         }
@@ -124,8 +124,8 @@ int MoveFeedback::ProcessCommand()
   v12 = v3->Items; /*0x73290d*/
   for ( i = 0; i < v12; ++i ) /*0x732914*/
   {
-    v14 = *(unsigned int *)(v3->Items + 4 * i); /*0x732919*/
-    result = (*(int (__thiscall **)(int))(*(unsigned int *)v14 + 332))(v14); /*0x73291e*/
+    v14 = *(_DWORD *)(v3->Items + 4 * i); /*0x732919*/
+    result = (*(int (__thiscall **)(int))(*(_DWORD *)v14 + 332))(v14); /*0x73291e*/
   }
   if ( v3 ) /*0x73292b*/
     result = (**(int (__thiscall ***)(int, int))v3)(v3, 1); /*0x732933*/
@@ -139,18 +139,18 @@ char MoveFeedback::AddRef(int a2)
 {
   int m_8; // esi
   int v3; // edx
-  unsigned int *v4; // eax
+  _DWORD *v4; // eax
   int v5; // ecx
 
   m_8 = this->m_8; /*0x40b962*/
-  if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x40b96d*/
+  if ( m_8 == *(_DWORD *)(a2 + 8) ) /*0x40b96d*/
   {
     v3 = 0; /*0x40b96f*/
     if ( m_8 <= 0 ) /*0x40b973*/
       return 1; /*0x40b993*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x40b975*/
-    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x40b97b*/
-    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x40b984*/
+    v4 = *(_DWORD **)&this->m_1[3]; /*0x40b975*/
+    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x40b97b*/
+    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x40b984*/
     {
       ++v3; /*0x40b986*/
       ++v4; /*0x40b987*/
@@ -167,13 +167,13 @@ int MoveFeedback::Draw(unsigned int * a2)
 {
   int m_10; // edx
   int result; // eax
-  unsigned int *i; // ecx
+  _DWORD *i; // ecx
 
   m_10 = this->m_10; /*0x40bb90*/
   result = 0; /*0x40bb93*/
   if ( m_10 <= 0 ) /*0x40bb98*/
     return -1; /*0x40bbaf*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x40bb9e*/
+  for ( i = *(_DWORD **)&this->m_1[3]; *i != *a2; ++i ) /*0x40bb9e*/
   {
     if ( ++result >= m_10 ) /*0x40bbad*/
       return -1; /*0x40bbad*/
@@ -187,12 +187,12 @@ DynamicVector * MoveFeedback::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_TechnoClass___vftable; /*0x40bcb6*/
+  v3 = *(void **)&this->m_1[3]; /*0x40bcb3*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_TechnoClass___vftable; /*0x40bcb6*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x40bcc0*/
   {
     RA2_OPDEL(v3); /*0x40bcc8*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x40bcd0*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x40bcd0*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x40bcdb*/
   this->m_8 = 0; /*0x40bce1*/
@@ -212,7 +212,7 @@ void MoveFeedback::Destroy()
   if ( v2 && IDA_BYTE1(this->m_C) ) /*0x40be60*/
   {
     RA2_OPDEL(v2); /*0x40be66*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x40be6e*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x40be6e*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x40be71*/
   this->m_8 = 0; /*0x40be74*/
@@ -223,7 +223,7 @@ namespace gamemd {
 unsigned int MoveFeedback::GetIndex2(int a2)
 {
   if ( IDA_LOBYTE(this->m_C) ) /*0x40be80*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x40be95*/
+    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2; /*0x40be95*/
   else
     return 0; /*0x40be87*/
 }
@@ -232,7 +232,7 @@ unsigned int MoveFeedback::GetIndex2(int a2)
 namespace gamemd {
 char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
 {
-  unsigned int *v4; // edi
+  _DWORD *v4; // edi
   int m_8; // ecx
   int i; // eax
   int v7; // eax
@@ -243,30 +243,30 @@ char MoveFeedback::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x40c048*/
       v4 = a3; /*0x40c05e*/
     else
-      v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x40c05a*/
+      v4 = (_DWORD *)RA2_OPNEW(4 * a2); /*0x40c05a*/
     IDA_LOBYTE(this->m_C) = 1; /*0x40c062*/
     if ( !v4 ) /*0x40c066*/
       return 0; /*0x40c0da*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x40c068*/
+    if ( *(_DWORD *)&this->m_1[3] ) /*0x40c068*/
     {
       m_8 = this->m_8; /*0x40c06f*/
       if ( a2 < m_8 ) /*0x40c074*/
         m_8 = a2; /*0x40c076*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x40c07c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * i - 4) ) /*0x40c07c*/
         ++i; /*0x40c081*/
       if ( IDA_BYTE1(this->m_C) ) /*0x40c08e*/
       {
         RA2_OPDEL(*(void **)&this->m_1[3]); /*0x40c099*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x40c0a1*/
+        *(_DWORD *)&this->m_1[3] = 0; /*0x40c0a1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x40c0aa*/
+    *(_DWORD *)&this->m_1[3] = v4; /*0x40c0aa*/
     this->m_8 = a2; /*0x40c0b2*/
     IDA_BYTE1(this->m_C) = a3 == 0; /*0x40c0b5*/
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PBVCommandClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x40c0be*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PBVCommandClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x40c0be*/
   }
   v7 = this->m_8; /*0x40c0c1*/
   if ( v7 < this->m_10 ) /*0x40c0c9*/
@@ -280,13 +280,13 @@ int MoveFeedback::FindMoveItem(unsigned int * a2)
 {
   int m_10; // edx
   int result; // eax
-  unsigned int *i; // ecx
+  _DWORD *i; // ecx
 
   m_10 = this->m_10; /*0x40c0e0*/
   result = 0; /*0x40c0e3*/
   if ( m_10 <= 0 ) /*0x40c0e8*/
     return -1; /*0x40c0ff*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x40c0ee*/
+  for ( i = *(_DWORD **)&this->m_1[3]; *i != *a2; ++i ) /*0x40c0ee*/
   {
     if ( ++result >= m_10 ) /*0x40c0fd*/
       return -1; /*0x40c0fd*/
@@ -300,12 +300,12 @@ DynamicVector * MoveFeedback::Constructor(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_CommandClass_const___vftable; /*0x40c166*/
+  v3 = *(void **)&this->m_1[3]; /*0x40c163*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_CommandClass_const___vftable; /*0x40c166*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x40c170*/
   {
     RA2_OPDEL(v3); /*0x40c178*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x40c180*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x40c180*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x40c18b*/
   this->m_8 = 0; /*0x40c191*/

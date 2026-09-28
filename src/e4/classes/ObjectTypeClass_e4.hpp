@@ -61,7 +61,7 @@ struct ObjectTypeClass {
     unsigned int u32_88;  // 0x88
     void* q08C;  // 0x8C
     unsigned int u32_90;  // 0x90
-    void* ;  // 0x94
+    unsigned int q094;  // 0x94
     unsigned int tail_95;  // 0x95
     Color* q098;  // 0x98
     unsigned char unused_9B;  // 0x9B
@@ -208,7 +208,7 @@ struct ObjectTypeClass {
     unsigned char u8_23C;  // 0x23C
     bool q23D;  // 0x23D
     int LineTrailColorDecrement;  // 0x240
-    unsigned int VoxelCaches_4;  // 0x244
+    char VoxelCaches_4[80];  // 0x244
     SomeVoxelCache* q248;  // 0x248
     SomeVoxelCache* q24C;  // 0x24C
     SomeVoxelCache* q254;  // 0x254
@@ -227,56 +227,6 @@ struct ObjectTypeClass {
     SomeVoxelCache* q288;  // 0x288
     char q28C[4];  // 0x28C
     SomeVoxelCache* q290;  // 0x290
-    unsigned int NoSpawnAlt3;
-    unsigned int NoSpawnAlt4;
-    unsigned int NoSpawnAlt5;
-    unsigned int NoSpawnAlt6;
-    unsigned int VoxelCaches;
-    unsigned int __pad_14D;
-    unsigned int q0400;
-    unsigned int q0401;
-    unsigned int q0402;
-    unsigned int q0404;
-    unsigned int u32_384;
-    unsigned int u32_385;
-    unsigned int u32_386;
-    unsigned int u32_387;
-    unsigned int u32_389;
-    unsigned int u32_D41;
-    unsigned int uniqueId0;
-    unsigned int uniqueId1;
-    unsigned int uniqueId3;
-    unsigned int uniqueId4;
-    unsigned int uniqueId5;
-    unsigned int uniqueId6;
-    unsigned int uniqueId7;
-    unsigned int uniqueId8;
-    unsigned int uniqueId9;
-    unsigned int vtable49;
-    unsigned int zero_3C0;
-    unsigned int zero_3C1;
-    unsigned int zero_3C2;
-    unsigned int zero_3C4;
-    unsigned int zero_3C5;
-    unsigned int zero_3C6;
-    unsigned int zero_3C7;
-    unsigned int zero_3C9;
-    unsigned int ParticleSystemTypeClass_field_0x0;
-    unsigned int ParticleSystemTypeClass_field_0x4;
-    unsigned int ParticleSystemTypeClass_field_0x8;
-    unsigned int SpawnCount;
-    unsigned int q0E80;
-    unsigned int q0F00;
-    unsigned int q0F80;
-    unsigned int q1000;
-    unsigned int u32_446;
-    unsigned int u32_484;
-    unsigned int u32_4C2;
-    unsigned int u32_884;
-    unsigned int u32_C08;
-    unsigned int vtable0;
-    unsigned int q094;
-    unsigned int q0D09;
 // --- flat members (END) ---
     AbstractClass * * Load2DArt();
     BOOL loadTypeMember_5717AE0();

@@ -26,8 +26,8 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   int v7; // edi
   void *v8; // eax
   void *v9; // eax
-  unsigned int v11[22]; // [esp+10h] [ebp-6Ch] BYREF
-  unsigned char v12[12]; // [esp+68h] [ebp-14h] BYREF
+  _DWORD v11[22]; // [esp+10h] [ebp-6Ch] BYREF
+  _BYTE v12[12]; // [esp+68h] [ebp-14h] BYREF
   int v13; // [esp+74h] [ebp-8h]
 
   v5 = (char **)(&this->u32_C2); /*0x76fc68*/
@@ -36,17 +36,17 @@ int ArtConfig::validateConfig(Selection_WorldDominationTour * aP1, int a3, Selec
   CCFileClass::Construct2(v11, (char **)(&this->u32_C2)); /*0x76fc74*/
   if ( CCFileClass::Open(v11, 0) ) /*0x76fc7f*/
   {
-    v8 = (void *)((unsigned int)(RA2_OPNEW(0x4Cu)));
+    v8 = RA2_OPNEW(0x4Cu); /*0x76fc8a*/
     if ( v8 ) /*0x76fc94*/
       v9 = MSOverlayAnim::Init(v8, v5, v7, v6, a3, 0, (int)(aP1 + 6), 1, 0, 0); /*0x76fcb6*/
     else
       v9 = 0; /*0x76fcbd*/
     this->u32_28 = v9; /*0x76fcbf*/
-    (*(void (__thiscall **)(void *, unsigned int))(v9->q004)(v9, 0); /*0x76fcc8*/
+    (*(void (__thiscall **)(void *, _DWORD))(v9->q004)(v9, 0); /*0x76fcc8*/
     PriorityQueue::Add(aP1, this->u32_28); /*0x76fcd6*/
   }
-  v11[0] = (unsigned int)((void*)&CCFileClass_vftable);
-  v13 = (unsigned int)(0);
+  v11[0] = &(void*)(void*)&CCFileClass_vftable; /*0x76fcdf*/
+  v13 = 0; /*0x76fce7*/
   Vector::Clear((int)v12); /*0x76fcef*/
   v11[0] = &off_7E1668; /*0x76fcf8*/
   return BufferIOFileClass::Dtor(v11); /*0x76fd05*/
@@ -65,7 +65,7 @@ rc_ptr * ArtConfig_Read(rc_ptr_base * a1, int edx0, unsigned int * a2, Reference
   else
     v9 = 0; /*0x76f944*/
   ComPtr::Constructor((ComPtr *)a1); /*0x76f948*/
-  *(unsigned int *)a1 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76f94f*/
+  *(_DWORD *)a1 = &(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76f94f*/
   ComPtr::Set((ComPtr *)a1, (int)v9); /*0x76f956*/
   return a1; /*0x76f95d*/
 }

@@ -23,6 +23,14 @@ struct E4Recv_5EF010 {
     unsigned int q1908;  // 0x1908
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q20481684;  // 0x20481684
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q541595268;  // 0x541595268
 // --- flat members (END) ---
     int Vf4(int,  ...);    // G6 vtable slot dispatch
     void sub_5EF010();  // 0x5EF010

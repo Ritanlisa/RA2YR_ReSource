@@ -54,13 +54,6 @@ struct CreateTeamCommand {
     unsigned char q138;  // 0x138
     unsigned char q140;  // 0x140
     unsigned char q144;  // 0x144
-    unsigned int CreateTeamCommand_field_0x4;
-    unsigned int __pad_0;
-    unsigned int __pad_14;
-    unsigned int m_1;
-    unsigned int q0042;
-    unsigned int q0046;
-    unsigned int u32_539C;
 // --- flat members (END) ---
     int vt02();  // 0x535CF0
     unsigned int * performAction_148();  // 0x537350

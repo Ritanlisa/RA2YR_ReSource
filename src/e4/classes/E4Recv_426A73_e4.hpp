@@ -14,6 +14,14 @@ struct E4Recv_426A73 {
     unsigned int q304;  // 0x304
     unsigned int q850;  // 0x850
     unsigned int q2128;  // 0x2128
+    unsigned int q8488;  // 0x8488
+    unsigned int q33928;  // 0x33928
+    unsigned int q211240;  // 0x211240
+    unsigned int q2167360;  // 0x2167360
+    unsigned int q35025760;  // 0x35025760
+    unsigned int q889345888;  // 0x889345888
+    unsigned int q3738255520918;  // 0x3738255520918
+    unsigned int q971428544514328;  // 0x971428544514328
 // --- flat members (END) ---
     struct Concurrency::details::VirtualProcessor * _UNSAFE_CurrentVirtualProcessor_uint_nternalContextBase_details_Concurrency__uint_BEPAVVirtualProcessor_23_XZ();  // 0x426A73
 };

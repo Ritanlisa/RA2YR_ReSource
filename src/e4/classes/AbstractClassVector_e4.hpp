@@ -7,19 +7,14 @@ namespace gamemd {
 
 struct AbstractClassVector {
 // --- flat members (BEGIN) ---
-    unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
     unsigned char q00C;  // 0xC
     bool IsAllocated;  // 0xD
     unsigned char q010;  // 0x10
-    bool IsInitialized;  // 0x12
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
-    unsigned int m_1;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     int Read(unsigned int * a2);
     unsigned int * Construct(void* aP1, void* aP2);

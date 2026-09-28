@@ -10,9 +10,6 @@ struct GUID {
     unsigned short Data2;  // 0x0
     unsigned short Data3;  // 0x2
     unsigned char Data4;  // 0x4
-    unsigned int q020;
-    unsigned int u32_10;
-    unsigned int u32_C;
 // --- flat members (END) ---
     bool Compare(int a2);
 };

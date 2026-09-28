@@ -27,13 +27,13 @@ namespace gamemd {
 EMPulseClass * EMPulseClass::CopyTo(AbstractClass * a2, char a3)
 {
   int v3; // eax
-  unsigned int v5;
+  EMPulseClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)a3->__pad_0 = (void*)&EMPulseClass_vftable; /*0x4c5ac4*/
-  a3->EMPulseClass_field_0x04 = (int)&EMPulseClass_vftable; /*0x4c5aca*/
-  a3->EMPulseClass_field_0x08 = (int)&EMPulseClass_vftable; /*0x4c5ad1*/
-  a3->EMPulseClass_field_0x0C = (int)&EMPulseClass_vftable; /*0x4c5ad8*/
-  if ( unk_A8E9A0 ) /*0x4c5ae6*/
+  *(_DWORD *)a3->__pad_0 = &(void*)(void*)&EMPulseClass_vftable; /*0x4c5ac4*/
+  a3->EMPulseClass_field_0x04 = (int)&(void*)(void*)&EMPulseClass_vftable; /*0x4c5aca*/
+  a3->EMPulseClass_field_0x08 = (int)&(void*)(void*)&EMPulseClass_vftable; /*0x4c5ad1*/
+  a3->EMPulseClass_field_0x0C = (int)&(void*)(void*)&EMPulseClass_vftable; /*0x4c5ad8*/
+  if ( byte_A8E9A0 ) /*0x4c5ae6*/
     EMPulseClass::IterateCellsInRadius(a3); /*0x4c5ae8*/
   AbstractClass::AnnounceExpiredPointer((void **)a3, 1); /*0x4c5af1*/
   v5 = a3; /*0x4c5b06*/
@@ -43,7 +43,7 @@ EMPulseClass * EMPulseClass::CopyTo(AbstractClass * a2, char a3)
     do /*0x4c5b3d*/
     {
       ++v3; /*0x4c5b2d*/
-      *((unsigned int *)dword_8A3874 + v3 - 1) = *((unsigned int *)dword_8A3874 + v3); /*0x4c5b31*/
+      *((_DWORD *)dword_8A3874 + v3 - 1) = *((_DWORD *)dword_8A3874 + v3); /*0x4c5b31*/
     }
     while ( v3 < dword_8A3880 ); /*0x4c5b3d*/
   }

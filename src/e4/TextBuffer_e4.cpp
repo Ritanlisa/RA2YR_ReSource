@@ -13,13 +13,14 @@
 namespace gamemd {
 int TextBuffer::Init()
 {
-  TextBuffer * v1;
+  int v1; // edi
   TextBuffer *v2; // ebx
   TextBuffer *v3; // edx
   TextBuffer *v4; // eax
   int v5; // esi
-v1 = (gamemd::TextBuffer *)((int)((gamemd::TextBuffer *)(0)));
-  v2 = (gamemd::TextBuffer *)(&this->u32_1F40);
+
+  v1 = 0; /*0x5bcc93*/
+  v2 = &this->u32_1F40; /*0x5bcc95*/
   do /*0x5bccbe*/
   {
     v3 = this + v1; /*0x5bcc9b*/
@@ -28,7 +29,7 @@ v1 = (gamemd::TextBuffer *)((int)((gamemd::TextBuffer *)(0)));
     do /*0x5bccb5*/
     {
       *v3 = (TextBuffer)32; /*0x5bcca5*/
-      *(unsigned int *)v4 = 0; /*0x5bcca8*/
+      *(_DWORD *)v4 = 0; /*0x5bcca8*/
       v4 += 100; /*0x5bccae*/
       v3 += 25; /*0x5bccb1*/
       --v5; /*0x5bccb4*/

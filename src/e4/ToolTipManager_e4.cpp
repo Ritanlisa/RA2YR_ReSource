@@ -29,7 +29,7 @@ int ToolTipManager::ddtor(char a2)
     ToolTipClass::initString(); /*0x724b8b*/
   result = this->Position[0]; /*0x724b90*/
   if ( result ) /*0x724b95*/
-    return (*(int (__thiscall **)(ToolTipManager *, int *))(((unsigned int)(this->IsVisible)) + 16))( /*0x724b9f*/
+    return (*(int (__thiscall **)(ToolTipManager *, int *))(*(_DWORD *)&this->IsVisible + 16))( /*0x724b9f*/
              this,
              &this->DisplayTimer[1]);
   return result; /*0x724ba2*/
@@ -55,12 +55,12 @@ DynamicVector * ToolTipManager_7::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_ToolTip_const___vftable; /*0x724f46*/
+  v3 = *(void **)&this->m_1[3]; /*0x724f43*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_ToolTip_const___vftable; /*0x724f46*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x724f50*/
   {
     RA2_OPDEL(v3); /*0x724f58*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x724f60*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x724f60*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x724f6b*/
   this->m_8 = 0; /*0x724f71*/

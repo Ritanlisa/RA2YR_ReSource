@@ -31,7 +31,7 @@ int NetworkGameSetup::ReadRulesUnknown()
   if ( result ) /*0x5b9763*/
   {
     result = SendMessageA((HWND)result, 0x400u, 0, 0); /*0x5b976f*/
-    *(unsigned int *)&stru_A8B250.__pad_0[40] = result; /*0x5b9775*/
+    *(_DWORD *)&stru_A8B250.__pad_0[40] = result; /*0x5b9775*/
     IDA_BYTE1(this->NetworkGameSetup_field_0x08) = 1; /*0x5b977a*/
   }
   return result; /*0x5b977e*/
@@ -47,7 +47,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
   int (__usercall *v6)@<eax>(char@<cf>, char@<zf>); // edi
   wchar_t *Format; // [esp+10h] [ebp-300h]
   int v8[62]; // [esp+14h] [ebp-2FCh] BYREF
-  int16_t v9; // [esp+10Ch] [ebp-204h]
+  __int16 v9; // [esp+10Ch] [ebp-204h]
   wchar_t Buffer[256]; // [esp+110h] [ebp-200h] BYREF
 
   if ( Source ) /*0x5ba985*/
@@ -56,12 +56,12 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
     v9 = 0; /*0x5ba99c*/
     v8[0] = 104; /*0x5ba9a8*/
     strcpy((char *)&v8[1], unk_A8B380); /*0x5ba9c4*/
-    IDA_LOBYTE(v8[6]) = unk_A8B394; /*0x5ba9d4*/
+    IDA_LOBYTE(v8[6]) = dword_A8B394; /*0x5ba9d4*/
     wcscpy((wchar_t *)((char *)&v8[6] + 1), Source); /*0x5ba9d8*/
     Stream::WriteBlock((int *)&unk_A8EA70, (int)v8, 250, 1); /*0x5ba9f1*/
     Stream::ReadPacket((int)&unk_A8EA70); /*0x5ba9fb*/
     v3 = CharToWideString(unk_A8B380); /*0x5baa05*/
-    v4 = unk_A8B394; /*0x5baa0d*/
+    v4 = dword_A8B394; /*0x5baa0d*/
     Format = (wchar_t *)v3; /*0x5baa19*/
     DlgItem = GetDlgItem(*(HWND *)this->__pad_0, 1343); /*0x5baa23*/
     if ( DlgItem ) /*0x5baa27*/

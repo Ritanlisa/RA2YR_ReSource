@@ -16,14 +16,14 @@ struct SideClass {
     void* houseTypes;  // 0x12
     bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14
-    unsigned int houseTypesCount;  // 0x16
+    char houseTypesCount[4];  // 0x16
     unsigned int nextArrayIndex;  // 0x18
     unsigned int q01A;  // 0x1A
     char referenceCount[4];  // 0x1C
     bool q01D;  // 0x1D
     bool NeedsSaveOrLink;  // 0x20
     char id;  // 0x24
-    unsigned int q028;  // 0x28
+    char q028[4];  // 0x28
     bool q02B;  // 0x2B
     unsigned int q02C;  // 0x2C
     unsigned char q030;  // 0x30
@@ -64,10 +64,6 @@ struct SideClass {
     unsigned int tail_95;  // 0x95
     void* q098;  // 0x98
     char q09C[4];  // 0x9C
-    unsigned int u32_A4;
-    unsigned int u32_A5;
-    unsigned int u32_A8;
-    unsigned int vtable0;
 // --- flat members (END) ---
     int FindByName();
     int GetCountry(int * a2);

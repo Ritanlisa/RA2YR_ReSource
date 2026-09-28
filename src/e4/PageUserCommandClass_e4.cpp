@@ -20,8 +20,8 @@
 // 0x537DD0
 PageUserCommandClass::PageUserCommandClass()
 {
-  *(unsigned int *)this->__pad_0 = (void*)&PageUserCommandClass_vftable; /*0x537dd2*/
-  return this->__pad_0; /*0x537dd8*/
+  *(_DWORD *)this->CommandClass = &(void*)(void*)&PageUserCommandClass_vftable; /*0x537dd2*/
+  return this->CommandClass; /*0x537dd8*/
 }
 // 0x537DE0
 char * PageUserCommandClass::AddRef()

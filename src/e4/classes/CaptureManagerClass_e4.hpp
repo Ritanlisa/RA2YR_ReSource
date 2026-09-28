@@ -22,9 +22,9 @@ struct CaptureManagerClass {
     bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     unsigned int controlNodes;  // 0x24
-    unsigned int controlNodeCount;  // 0x28
+    char controlNodeCount[4];  // 0x28
     bool q02B;  // 0x2B
-    unsigned int controlNodeCapacity;  // 0x2C
+    char controlNodeCapacity[4];  // 0x2C
     TechnoClass* owner;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
@@ -38,13 +38,12 @@ struct CaptureManagerClass {
     bool CaptureManagerClass_field_40;  // 0x40
     bool CaptureManagerClass_field_41;  // 0x41
     unsigned char pad_42;  // 0x42
-    unsigned int overloadLimit;  // 0x44
-    unsigned int overloadCount;  // 0x48
+    char overloadLimit[4];  // 0x44
+    char overloadCount[4];  // 0x48
     bool q04A;  // 0x4A
-    unsigned int linkCount;  // 0x4C
+    char linkCount[4];  // 0x4C
     unsigned char q04F;  // 0x4F
     char CaptureManagerClass_field_2C[4];  // 0x50
-    unsigned int __pad_3C;
 // --- flat members (END) ---
     AbstractClass * * DecideUnitFate(void* aP1);
     AnimClass * * FreeUnit(void* aP0, int _28, void* a2, void* aP1, int _34, void** a5);

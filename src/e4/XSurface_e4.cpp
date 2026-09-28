@@ -21,7 +21,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
   signed int v11; // esi
   signed int v12; // eax
   int v13; // esi
-  int16_t *v14; // eax
+  __int16 *v14; // eax
   int v15; // edi
   int v16; // ecx
   int v17; // esi
@@ -48,7 +48,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
   int v40; // [esp+1Ch] [ebp-4h]
   int v41; // [esp+24h] [ebp+4h]
   int *v42; // [esp+28h] [ebp+8h]
-  int16_t *v43; // [esp+34h] [ebp+14h]
+  __int16 *v43; // [esp+34h] [ebp+14h]
 
   v7 = *a1; /*0x7ba8cd*/
   v40 = a1[1]; /*0x7ba8cf*/
@@ -73,8 +73,8 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
     v13 = (a6 + v11) % 16; /*0x7ba927*/
     v41 = -1; /*0x7ba92c*/
   }
-  v42 = (int *)(*(int (__thiscall **)(XSurface *))(*(unsigned int *)this->__pad_0 + 112))(this); /*0x7ba947*/
-  v14 = (int16_t *)(*(int (__thiscall **)(XSurface *, int, int))(*(unsigned int *)this->__pad_0 + 92))(this, v7, v40); /*0x7ba94f*/
+  v42 = (int *)(*(int (__thiscall **)(XSurface *))(*(_DWORD *)this->Surface + 112))(this); /*0x7ba947*/
+  v14 = (__int16 *)(*(int (__thiscall **)(XSurface *, int, int))(*(_DWORD *)this->Surface + 92))(this, v7, v40); /*0x7ba94f*/
   v43 = v14; /*0x7ba954*/
   if ( v14 )
   {
@@ -89,7 +89,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
           v17 = v13 + (v13 < 0 ? 0x10 : 0);
           if ( v17 >= 16 ) /*0x7ba983*/
             v17 -= 16; /*0x7ba985*/
-          if ( *(unsigned char *)(a5 + v17) ) /*0x7ba988*/
+          if ( *(_BYTE *)(a5 + v17) ) /*0x7ba988*/
             *v14 = aP3; /*0x7ba98e*/
           ++v14; /*0x7ba995*/
           v13 = v41 + v17; /*0x7ba998*/
@@ -101,9 +101,9 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
     else if ( v7 == v8 )
     {
       if ( v40 <= v9 ) /*0x7ba9ac*/
-        v18 = (*(int (__thiscall **)(XSurface *))(*(unsigned int *)this->__pad_0 + 116))(this); /*0x7ba9be*/
+        v18 = (*(int (__thiscall **)(XSurface *))(*(_DWORD *)this->Surface + 116))(this); /*0x7ba9be*/
       else
-        v18 = -(*(int (__thiscall **)(XSurface *))(*(unsigned int *)this->__pad_0 + 116))(this); /*0x7ba9b5*/
+        v18 = -(*(int (__thiscall **)(XSurface *))(*(_DWORD *)this->Surface + 116))(this); /*0x7ba9b5*/
       v19 = abs32(v9 - v40); /*0x7ba9cb*/
       if ( v19 >= 0 )
       {
@@ -113,16 +113,16 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
           v21 = v13 + (v13 < 0 ? 0x10 : 0);
           if ( v21 >= 16 ) /*0x7ba9e6*/
             v21 -= 16; /*0x7ba9e8*/
-          if ( *(unsigned char *)(a5 + v21) ) /*0x7ba9eb*/
+          if ( *(_BYTE *)(a5 + v21) ) /*0x7ba9eb*/
           {
             if ( v42 == (int *)1 ) /*0x7ba9fc*/
-              *(unsigned char *)v43 = aP3; /*0x7ba9fe*/
+              *(_BYTE *)v43 = aP3; /*0x7ba9fe*/
             else
               *v43 = aP3; /*0x7baa02*/
           }
           v13 = v41 + v21; /*0x7baa0f*/
           --v20; /*0x7baa11*/
-          v43 = (int16_t *)((char *)v43 + v18); /*0x7baa12*/
+          v43 = (__int16 *)((char *)v43 + v18); /*0x7baa12*/
         }
         while ( v20 );
       }
@@ -131,7 +131,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
     {
       v22 = v9 - v40; /*0x7baa1d*/
       v23 = v8 - v7; /*0x7baa23*/
-      v24 = (*(int (__thiscall **)(XSurface *))(*(unsigned int *)this->__pad_0 + 116))(this); /*0x7baa27*/
+      v24 = (*(int (__thiscall **)(XSurface *))(*(_DWORD *)this->Surface + 116))(this); /*0x7baa27*/
       v25 = v24; /*0x7baa2a*/
       v39 = v24; /*0x7baa2e*/
       if ( v22 < 0 ) /*0x7baa32*/
@@ -155,10 +155,10 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
             v35 = v13 + (v13 < 0 ? 0x10 : 0);
             if ( v35 >= 16 ) /*0x7baad5*/
               v35 -= 16; /*0x7baad7*/
-            if ( *(unsigned char *)(a5 + v35) ) /*0x7baade*/
+            if ( *(_BYTE *)(a5 + v35) ) /*0x7baade*/
             {
               if ( v42 == (int *)1 ) /*0x7baaef*/
-                *((unsigned char *)v43 + v32) = aP3; /*0x7baaf1*/
+                *((_BYTE *)v43 + v32) = aP3; /*0x7baaf1*/
               else
                 v43[v32] = aP3; /*0x7baaf6*/
             }
@@ -168,7 +168,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
               v33 -= v38; /*0x7bab03*/
             }
             v33 += v27; /*0x7bab09*/
-            v43 = (int16_t *)((char *)v43 + v39); /*0x7bab0b*/
+            v43 = (__int16 *)((char *)v43 + v39); /*0x7bab0b*/
             v13 = v41 + v35; /*0x7bab13*/
             --v34; /*0x7bab15*/
           }
@@ -183,16 +183,16 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
           v31 = v13 + (v13 < 0 ? 0x10 : 0);
           if ( v31 >= 16 ) /*0x7baa65*/
             v31 -= 16; /*0x7baa67*/
-          if ( *(unsigned char *)(a5 + v31) ) /*0x7baa6e*/
+          if ( *(_BYTE *)(a5 + v31) ) /*0x7baa6e*/
           {
             if ( v42 == (int *)1 ) /*0x7baa79*/
-              *((unsigned char *)v43 + i) = aP3; /*0x7baa83*/
+              *((_BYTE *)v43 + i) = aP3; /*0x7baa83*/
             else
               v43[i] = aP3; /*0x7baa91*/
           }
           if ( v29 > 0 ) /*0x7baa97*/
           {
-            v43 = (int16_t *)((char *)v43 + v25); /*0x7baa9f*/
+            v43 = (__int16 *)((char *)v43 + v25); /*0x7baa9f*/
             v29 -= 2 * v23; /*0x7baaa6*/
           }
           v29 += v38; /*0x7baaac*/
@@ -200,7 +200,7 @@ int XSurface::DrawDashedLine(int * a1, int * a2, XSurface * aP3, int a5, int a6)
         }
       }
     }
-    (*(void (__thiscall **)(XSurface *))(*(unsigned int *)this->__pad_0 + 96))(this); /*0x7bab1e*/
+    (*(void (__thiscall **)(XSurface *))(*(_DWORD *)this->Surface + 96))(this); /*0x7bab1e*/
   }
   return v13; /*0x7bab23*/
 }
@@ -247,8 +247,8 @@ void* XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__t
   int v40; // [esp+50h] [ebp+8h]
   int v41; // [esp+54h] [ebp+Ch]
 
-  v5 = (int *)(*(unsigned int *)a4->__pad_0);
-  v28 = (gamemd::XSurface *)((int *)(a4));
+  v5 = *(_DWORD *)a4->Surface; /*0x7bab93*/
+  v28 = a4; /*0x7bab9b*/
   v6 = (int *)(*(int (__stdcall **)(int *))(v5 + 120))(&v33); /*0x7bab9f*/
   v7 = ClipRectIntersection(&v26, (int *)a4, v6, 0, 0); /*0x7babaf*/
   v35 = *v7; /*0x7babb6*/
@@ -370,10 +370,10 @@ void* XSurface::WalkLine(int a2, unsigned int * a3, unsigned int * a4, void (__t
         }
       }
     }
-    (*(void (__thiscall **)(XSurface *))(*(unsigned int *)v28->__pad_0 + 96))(v28); /*0x7bad80*/
+    (*(void (__thiscall **)(XSurface *))(*(_DWORD *)v28->Surface + 96))(v28); /*0x7bad80*/
     return 1; /*0x7bad86*/
   }
-  return (void *)(result);
+  return result; /*0x7bac0f*/
 }
 } // namespace gamemd
 // 0x7BB050
@@ -390,31 +390,31 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
   int v11; // ecx
   int v12; // edx
   int *v13; // eax
-  unsigned int *v14; // eax
+  _DWORD *v14; // eax
   int v15; // ebx
   int v16; // eax
-  unsigned int *v17; // eax
+  _DWORD *v17; // eax
   int v18; // esi
   int v19; // edx
   char v20; // dl
   int v21; // eax
   unsigned int v22; // ecx
-  unsigned short *v24; // edi
+  _WORD *v24; // edi
   int i; // ecx
-  unsigned int *v26; // eax
+  _DWORD *v26; // eax
   int v27; // ebx
   char v28; // dl
-  XSurface * v29;
+  __int16 v29; // bx
   int v30; // edx
   signed int v31; // ecx
   char *v32; // edi
-  unsigned short *v33; // eax
+  _WORD *v33; // eax
   char v34; // dl
-  XSurface * v35;
+  __int16 v35; // bx
   int v36; // edx
   signed int v37; // ecx
   char *v38; // edi
-  unsigned short *v39; // eax
+  _WORD *v39; // eax
   bool v40; // zf
   XSurface *v41; // [esp-4h] [ebp-7Ch]
   XSurface *v42; // [esp-4h] [ebp-7Ch]
@@ -422,7 +422,7 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
   Rect v44; // [esp+1Ch] [ebp-5Ch] BYREF
   int v45[4]; // [esp+2Ch] [ebp-4Ch] BYREF
   int v46[4]; // [esp+3Ch] [ebp-3Ch] BYREF
-  unsigned int v47[2]; // [esp+4Ch] [ebp-2Ch] BYREF
+  _DWORD v47[2]; // [esp+4Ch] [ebp-2Ch] BYREF
   unsigned int v48; // [esp+54h] [ebp-24h]
   int v49; // [esp+58h] [ebp-20h]
   int v50; // [esp+5Ch] [ebp-1Ch] BYREF
@@ -431,20 +431,20 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
   char *v53; // [esp+6Ch] [ebp-Ch]
   signed int v54; // [esp+70h] [ebp-8h]
   XSurface *v55; // [esp+74h] [ebp-4h]
-  unsigned int *v56; // [esp+80h] [ebp+8h]
-  unsigned int *v57; // [esp+80h] [ebp+8h]
+  _DWORD *v56; // [esp+80h] [ebp+8h]
+  _DWORD *v57; // [esp+80h] [ebp+8h]
   int *v58; // [esp+84h] [ebp+Ch]
   int v59; // [esp+88h] [ebp+10h]
   int v60; // [esp+88h] [ebp+10h]
 
-  v4 = (gamemd::XSurface *)((int)(this));
-  v5 = (int)(a2[2]);
-  v55 = (int)(this);
+  v4 = this; /*0x7bb05c*/
+  v5 = a2[2]; /*0x7bb05e*/
+  v55 = this; /*0x7bb061*/
   if ( v5 <= 0 ) /*0x7bb066*/
     return 0; /*0x7bb066*/
   if ( a2[3] <= 0 ) /*0x7bb071*/
     return 0; /*0x7bb071*/
-  v6 = (int *)(*(int (__thiscall **)(XSurface *, int *))(*(unsigned int *)this->__pad_0 + 120))(this, v45); /*0x7bb07f*/
+  v6 = (int *)(*(int (__thiscall **)(XSurface *, int *))(*(_DWORD *)this->Surface + 120))(this, v45); /*0x7bb07f*/
   v7 = ClipRectIntersection(&v50, aP1, v6, 0, 0); /*0x7bb08f*/
   v46[0] = *v7; /*0x7bb096*/
   v46[1] = v7[1]; /*0x7bb09c*/
@@ -473,14 +473,14 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
     return 0; /*0x7bb117*/
   if ( v16 <= 0 ) /*0x7bb11f*/
     return 0; /*0x7bb11f*/
-  v56 = (unsigned int *)v16; /*0x7bb125*/
-  v58 = (int *)(*(int (__thiscall **)(XSurface *))(*(unsigned int *)v4->__pad_0 + 116))(v4); /*0x7bb132*/
+  v56 = (_DWORD *)v16; /*0x7bb125*/
+  v58 = (int *)(*(int (__thiscall **)(XSurface *))(*(_DWORD *)v4->Surface + 116))(v4); /*0x7bb132*/
   v17 = CellStruct::Copy((CellStruct *)v47, &v51); /*0x7bb139*/
-  v18 = (*(int (__thiscall **)(XSurface *, unsigned int, unsigned int))(*(unsigned int *)v4->__pad_0 + 92))(v4, *v17, v17[1]); /*0x7bb154*/
+  v18 = (*(int (__thiscall **)(XSurface *, _DWORD, _DWORD))(*(_DWORD *)v4->Surface + 92))(v4, *v17, v17[1]); /*0x7bb154*/
   v53 = (char *)v18; /*0x7bb158*/
   if ( !v18 ) /*0x7bb15b*/
     return 0; /*0x7bb333*/
-  if ( (*(int (__thiscall **)(XSurface *))(*(unsigned int *)v4->__pad_0 + 112))(v4) == 1 ) /*0x7bb16b*/
+  if ( (*(int (__thiscall **)(XSurface *))(*(_DWORD *)v4->Surface + 112))(v4) == 1 ) /*0x7bb16b*/
   {
     v57 = 0; /*0x7bb170*/
     if ( v49 > 0 ) /*0x7bb179*/
@@ -496,11 +496,11 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
         memset32((void *)v18, v21, v48 >> 2); /*0x7bb198*/
         memset((void *)(v18 + 4 * v22), aP3, v20 & 3); /*0x7bb19f*/
         v18 += (int)v58; /*0x7bb1aa*/
-        v57 = (unsigned int *)((char *)v57 + 1); /*0x7bb1af*/
+        v57 = (_DWORD *)((char *)v57 + 1); /*0x7bb1af*/
       }
       while ( (int)v57 < v49 ); /*0x7bb1b2*/
   LABEL_9:
-      (*(void (__thiscall **)(XSurface *))(*(unsigned int *)v55->__pad_0 + 96))(v55); /*0x7bb1b4*/
+      (*(void (__thiscall **)(XSurface *))(*(_DWORD *)v55->Surface + 96))(v55); /*0x7bb1b4*/
       return 1; /*0x7bb1c6*/
     }
   }
@@ -510,8 +510,8 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
     {
       if ( v15 > 1 ) /*0x7bb22f*/
       {
-        v27 = (short)(v15 - 1);
-        v28 = (int16_t)(v27);
+        v27 = v15 - 1; /*0x7bb262*/
+        v28 = v27; /*0x7bb263*/
         v54 = v27 >> 1; /*0x7bb267*/
         v29 = aP3; /*0x7bb26a*/
         v30 = v28 & 1; /*0x7bb26f*/
@@ -519,7 +519,7 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
         v59 = (int)v56; /*0x7bb285*/
         do /*0x7bb2b8*/
         {
-          *(unsigned short *)v18 = v29; /*0x7bb28b*/
+          *(_WORD *)v18 = v29; /*0x7bb28b*/
           v41 = v4; /*0x7bb291*/
           v31 = v54; /*0x7bb292*/
           v32 = (char *)(v18 + 2); /*0x7bb295*/
@@ -528,8 +528,8 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
             memset32(v32, (int)v53, v54); /*0x7bb2a0*/
             v32 += 4 * v31; /*0x7bb2a0*/
           }
-          v33 = (unsigned short *)(v32);
-          v4 = (unsigned short)(v41);
+          v33 = v32; /*0x7bb2a2*/
+          v4 = v41; /*0x7bb2a4*/
           if ( v30 ) /*0x7bb2a7*/
             *v33 = v29; /*0x7bb2a9*/
           v18 += (int)v58; /*0x7bb2b2*/
@@ -541,9 +541,9 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
       v26 = v56; /*0x7bb237*/
       do /*0x7bb24e*/
       {
-        *(unsigned short *)v18 = aP3; /*0x7bb248*/
+        *(_WORD *)v18 = aP3; /*0x7bb248*/
         v18 += (int)v58; /*0x7bb24b*/
-        v26 = (unsigned int *)((char *)v26 - 1); /*0x7bb24d*/
+        v26 = (_DWORD *)((char *)v26 - 1); /*0x7bb24d*/
       }
       while ( v26 ); /*0x7bb24e*/
     }
@@ -555,20 +555,20 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
         v19 <<= 16; /*0x7bb1f8*/
         IDA_LOWORD(v19) = aP3; /*0x7bb1fb*/
         memset32((void *)v18, v19, (unsigned int)v15 >> 1); /*0x7bb202*/
-        v24 = (unsigned short *)(v18 + 4 * ((unsigned int)v15 >> 1)); /*0x7bb202*/
+        v24 = (_WORD *)(v18 + 4 * ((unsigned int)v15 >> 1)); /*0x7bb202*/
         for ( i = v15 & 1; i; --i ) /*0x7bb204*/
           *v24++ = aP3; /*0x7bb206*/
         v4 = v55; /*0x7bb209*/
         v18 += (int)v58; /*0x7bb212*/
-        v56 = (unsigned int *)((char *)v56 - 1); /*0x7bb215*/
+        v56 = (_DWORD *)((char *)v56 - 1); /*0x7bb215*/
       }
       while ( v56 ); /*0x7bb218*/
     }
   }
   else
   {
-    v34 = (short)(v15);
-    v54 = (int16_t)(v15 >> 1);
+    v34 = v15; /*0x7bb2cf*/
+    v54 = v15 >> 1; /*0x7bb2d3*/
     v35 = aP3; /*0x7bb2d6*/
     v36 = v34 & 1; /*0x7bb2db*/
     v52 = aP3 | (aP3 << 16); /*0x7bb2e3*/
@@ -583,8 +583,8 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
         memset32(v53, v52, v54); /*0x7bb2ff*/
         v38 += 4 * v37; /*0x7bb2ff*/
       }
-      v39 = (unsigned short *)(v38);
-      v4 = (unsigned short)(v42);
+      v39 = v38; /*0x7bb301*/
+      v4 = v42; /*0x7bb303*/
       if ( v36 ) /*0x7bb306*/
         *v39 = v35; /*0x7bb308*/
       v18 += (int)v58; /*0x7bb311*/
@@ -595,7 +595,7 @@ XSurface * * XSurface::FillRectEx(XSurface * aP1, int * a2, XSurface * aP3)
     while ( !v40 ); /*0x7bb31a*/
     v4 = v55; /*0x7bb31c*/
   }
-  (*(void (__thiscall **)(XSurface *))(*(unsigned int *)v4->__pad_0 + 96))(v4); /*0x7bb21e*/
+  (*(void (__thiscall **)(XSurface *))(*(_DWORD *)v4->Surface + 96))(v4); /*0x7bb21e*/
   return 1; /*0x7bb1c0*/
 }
 } // namespace gamemd
@@ -839,12 +839,12 @@ XSurface * * XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void **
   int v10; // edx
   int v12[4]; // [esp+Ch] [ebp-40h] BYREF
   int v13[4]; // [esp+1Ch] [ebp-30h] BYREF
-  unsigned char v14[16]; // [esp+2Ch] [ebp-20h] BYREF
-  unsigned char v15[16]; // [esp+3Ch] [ebp-10h] BYREF
+  _BYTE v14[16]; // [esp+2Ch] [ebp-20h] BYREF
+  _BYTE v15[16]; // [esp+3Ch] [ebp-10h] BYREF
 
-  v6 = (void **)(a3);
-  v8 = (*((int (__thiscall **)(void **, unsigned char *))*a3 + 30))(a3, v14); /*0x7bbbaa*/
-  v9 = (*(int (__thiscall **)(XSurface *, unsigned char *))(*(unsigned int *)this->__pad_0 + 120))(this, v15); /*0x7bbbb3*/
+  v6 = a3; /*0x7bbb96*/
+  v8 = (*((int (__thiscall **)(void **, _BYTE *))*a3 + 30))(a3, v14); /*0x7bbbaa*/
+  v9 = (*(int (__thiscall **)(XSurface *, _BYTE *))(*(_DWORD *)this->Surface + 120))(this, v15); /*0x7bbbb3*/
   v13[0] = (int)*a2; /*0x7bbbbd*/
   v13[1] = (int)a2[1]; /*0x7bbbc4*/
   v13[2] = (int)a2[2]; /*0x7bbbcb*/
@@ -853,31 +853,31 @@ XSurface * * XSurface::BlitPart(void ** a2, XSurface * a3, void ** arg8, void **
   v12[1] = (int)arg8[1]; /*0x7bbbe3*/
   v12[2] = (int)arg8[2]; /*0x7bbbea*/
   v12[3] = (int)arg8[3]; /*0x7bbbf6*/
-  if ( !(uint8_t)IntersectSurfaceRects(v13, v9, v12, v8) ) /*0x7bbc00*/
+  if ( !(unsigned __int8)IntersectSurfaceRects(v13, v9, v12, v8) ) /*0x7bbc00*/
     return 0; /*0x7bbcda*/
-  v10 = *(unsigned int *)this->__pad_0; /*0x7bbc11*/
-  if ( (unsigned char)a4 ) /*0x7bbc17*/
+  v10 = *(_DWORD *)this->Surface; /*0x7bbc11*/
+  if ( (_BYTE)a4 ) /*0x7bbc17*/
   {
     if ( (*(int (__thiscall **)(XSurface *))(v10 + 112))(this) == 1 ) /*0x7bbc1f*/
     {
-      a4 = (void*)&BlitTrans_unsigned_char_vftable; /*0x7bbc3d*/
-      return BlitterCopySimpleSHP((int *)this->__pad_0, v13, (int)v6, (int)v12, (int *)&a4, 0, 3, 1000, 0); /*0x7bbc45*/
+      a4 = &(void*)(void*)&BlitTrans_unsigned_char_vftable; /*0x7bbc3d*/
+      return BlitterCopySimpleSHP((int *)this->Surface, v13, (int)v6, (int)v12, (int *)&a4, 0, 3, 1000, 0); /*0x7bbc45*/
     }
     else
     {
-      a3 = (gamemd::XSurface *)((void*)&BlitTrans_unsigned_short_vftable);
-      return BlitterCopySimpleSHP((int *)this->__pad_0, v13, (int)v6, (int)v12, (int *)&a3, 0, 3, 1000, 0); /*0x7bbc6a*/
+      a3 = &(void*)(void*)&BlitTrans_unsigned_short_vftable; /*0x7bbc5c*/
+      return BlitterCopySimpleSHP((int *)this->Surface, v13, (int)v6, (int)v12, (int *)&a3, 0, 3, 1000, 0); /*0x7bbc6a*/
     }
   }
   else if ( (*(int (__thiscall **)(XSurface *))(v10 + 112))(this) == 1 ) /*0x7bbc72*/
   {
-    a2 = (void*)&BlitPlain_unsigned_char_vftable; /*0x7bbc90*/
-    return BlitterCopySimpleSHP((int *)this->__pad_0, v13, (int)v6, (int)v12, (int *)&a2, 0, 3, 1000, 0); /*0x7bbc98*/
+    a2 = &(void*)(void*)&BlitPlain_unsigned_char_vftable; /*0x7bbc90*/
+    return BlitterCopySimpleSHP((int *)this->Surface, v13, (int)v6, (int)v12, (int *)&a2, 0, 3, 1000, 0); /*0x7bbc98*/
   }
   else
   {
-    arg8 = (void*)&BlitPlain_unsigned_short_vftable; /*0x7bbcaf*/
-    return BlitterCopySimpleSHP((int *)this->__pad_0, v13, (int)v6, (int)v12, (int *)&arg8, 0, 3, 1000, 0); /*0x7bbcca*/
+    arg8 = &(void*)(void*)&BlitPlain_unsigned_short_vftable; /*0x7bbcaf*/
+    return BlitterCopySimpleSHP((int *)this->Surface, v13, (int)v6, (int)v12, (int *)&arg8, 0, 3, 1000, 0); /*0x7bbcca*/
   }
 }
 } // namespace gamemd
@@ -896,30 +896,30 @@ XSurface * * XSurface::Blit(int a2, void ** a3, XSurface * arg8, int a5, unsigne
   v10[1] = a6[1]; /*0x7bbd22*/
   v10[2] = a6[2]; /*0x7bbd29*/
   v10[3] = a6[3]; /*0x7bbd39*/
-  if ( !(uint8_t)IntersectSurfaceRects(v11, a2, v10, a5) ) /*0x7bbd46*/
+  if ( !(unsigned __int8)IntersectSurfaceRects(v11, a2, v10, a5) ) /*0x7bbd46*/
     return 0; /*0x7bbe0d*/
-  if ( (unsigned char)a4 ) /*0x7bbd59*/
+  if ( (_BYTE)a4 ) /*0x7bbd59*/
   {
-    if ( (*(int (__thiscall **)(XSurface *))(*(unsigned int *)this->__pad_0 + 112))(this) == 1 ) /*0x7bbd65*/
+    if ( (*(int (__thiscall **)(XSurface *))(*(_DWORD *)this->Surface + 112))(this) == 1 ) /*0x7bbd65*/
     {
-      a4 = (void*)&BlitTrans_unsigned_char_vftable; /*0x7bbd70*/
-      return BlitterCopySimpleSHP((int *)this->__pad_0, v11, arg8, (int)v10, (int *)&a4, 0, 3, 1000, 0); /*0x7bbd7e*/
+      a4 = &(void*)(void*)&BlitTrans_unsigned_char_vftable; /*0x7bbd70*/
+      return BlitterCopySimpleSHP((int *)this->Surface, v11, arg8, (int)v10, (int *)&a4, 0, 3, 1000, 0); /*0x7bbd7e*/
     }
     else
     {
-      a3 = (void*)&BlitTrans_unsigned_short_vftable; /*0x7bbd89*/
-      return BlitterCopySimpleSHP((int *)this->__pad_0, v11, arg8, (int)v10, (int *)&a3, 0, 3, 1000, 0); /*0x7bbda8*/
+      a3 = &(void*)(void*)&BlitTrans_unsigned_short_vftable; /*0x7bbd89*/
+      return BlitterCopySimpleSHP((int *)this->Surface, v11, arg8, (int)v10, (int *)&a3, 0, 3, 1000, 0); /*0x7bbda8*/
     }
   }
-  else if ( (*(int (__thiscall **)(XSurface *))(*(unsigned int *)this->__pad_0 + 112))(this) == 1 ) /*0x7bbdbe*/
+  else if ( (*(int (__thiscall **)(XSurface *))(*(_DWORD *)this->Surface + 112))(this) == 1 ) /*0x7bbdbe*/
   {
-    a4 = (void*)&BlitPlain_unsigned_char_vftable; /*0x7bbdc9*/
-    return BlitterCopySimpleSHP((int *)this->__pad_0, v11, arg8, (int)v10, (int *)&a4, 0, 3, 1000, 0); /*0x7bbdd7*/
+    a4 = &(void*)(void*)&BlitPlain_unsigned_char_vftable; /*0x7bbdc9*/
+    return BlitterCopySimpleSHP((int *)this->Surface, v11, arg8, (int)v10, (int *)&a4, 0, 3, 1000, 0); /*0x7bbdd7*/
   }
   else
   {
-    a3 = (void*)&BlitPlain_unsigned_short_vftable; /*0x7bbde2*/
-    return BlitterCopySimpleSHP((int *)this->__pad_0, v11, arg8, (int)v10, (int *)&a3, 0, 3, 1000, 0); /*0x7bbe01*/
+    a3 = &(void*)(void*)&BlitPlain_unsigned_short_vftable; /*0x7bbde2*/
+    return BlitterCopySimpleSHP((int *)this->Surface, v11, arg8, (int)v10, (int *)&a3, 0, 3, 1000, 0); /*0x7bbe01*/
   }
 }
 } // namespace gamemd
@@ -966,7 +966,7 @@ char XSurface::StubReturnFalse()
 namespace gamemd {
 XSurface * XSurface::ScalarDtor(char a2)
 {
-  *(unsigned int *)this->__pad_0 = &Surface_Vtable; /*0x4115a9*/
+  *(_DWORD *)this->Surface = &Surface_Vtable; /*0x4115a9*/
   if ( (a2 & 1) != 0 ) /*0x4115af*/
     RA2_OPDEL(); /*0x4115b2*/
   return (std::locale::facet *)this; /*0x4115bc*/
@@ -1026,9 +1026,9 @@ char XSurface::DrawRectEx(int a2, unsigned int * a3, int a4)
   int v5; // edx
   int v6; // eax
   int v7; // edi
-  unsigned int v9[2]; // [esp+20h] [ebp-20h] BYREF
-  unsigned int v10[2]; // [esp+28h] [ebp-18h] BYREF
-  unsigned int v11[2]; // [esp+30h] [ebp-10h] BYREF
+  _DWORD v9[2]; // [esp+20h] [ebp-20h] BYREF
+  _DWORD v10[2]; // [esp+28h] [ebp-18h] BYREF
+  _DWORD v11[2]; // [esp+30h] [ebp-10h] BYREF
   int v12; // [esp+38h] [ebp-8h] BYREF
   int v13; // [esp+3Ch] [ebp-4h]
 
@@ -1043,25 +1043,25 @@ char XSurface::DrawRectEx(int a2, unsigned int * a3, int a4)
   v12 = v9[0]; /*0x7badfb*/
   v9[1] = v5; /*0x7bae08*/
   v10[1] = v5; /*0x7bae0c*/
-  (*(void (__thiscall **)(XSurface *, int, unsigned int *, unsigned int *, int))(*(unsigned int *)this->__pad_0 + 44))( /*0x7bae17*/
+  (*(void (__thiscall **)(XSurface *, int, _DWORD *, _DWORD *, int))(*(_DWORD *)this->Surface + 44))( /*0x7bae17*/
     this,
     a2,
     v9,
     v10,
     a4);
-  (*(void (__thiscall **)(XSurface *, int, unsigned int *, int *, int))(*(unsigned int *)this->__pad_0 + 44))( /*0x7bae2a*/
+  (*(void (__thiscall **)(XSurface *, int, _DWORD *, int *, int))(*(_DWORD *)this->Surface + 44))( /*0x7bae2a*/
     this,
     a2,
     v9,
     &v12,
     a4);
-  (*(void (__thiscall **)(XSurface *, int, unsigned int *, unsigned int *, int))(*(unsigned int *)this->__pad_0 + 44))( /*0x7bae3d*/
+  (*(void (__thiscall **)(XSurface *, int, _DWORD *, _DWORD *, int))(*(_DWORD *)this->Surface + 44))( /*0x7bae3d*/
     this,
     a2,
     v10,
     v11,
     a4);
-  (*(void (__thiscall **)(XSurface *, int, int *, unsigned int *, int))(*(unsigned int *)this->__pad_0 + 44))( /*0x7bae50*/
+  (*(void (__thiscall **)(XSurface *, int, int *, _DWORD *, int))(*(_DWORD *)this->Surface + 44))( /*0x7bae50*/
     this,
     a2,
     &v12,

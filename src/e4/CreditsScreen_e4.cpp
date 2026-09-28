@@ -16,14 +16,14 @@
 namespace gamemd {
 INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
-  INIClass ** result;
-  unsigned int *WindowLongA; // eax
+  int result; // eax
+  _DWORD *WindowLongA; // eax
   HWND DlgItem; // esi
   wchar_t *String; // eax
   char *ModuleVersion; // eax
   char *ModuleInternalVersion; // eax
   const char *v10; // eax
-  const const char * v11;
+  const char *v11; // eax
   const char *v12; // [esp-8h] [ebp-29Ch]
   char v13; // [esp+Fh] [ebp-285h] BYREF
   int v14; // [esp+10h] [ebp-284h] BYREF
@@ -32,14 +32,14 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   char v17[128]; // [esp+194h] [ebp-100h] BYREF
   char Destination[128]; // [esp+214h] [ebp-80h] BYREF
 
-  result = (gamemd::INIClass **)((int)((gamemd::INIClass **)(BaseDialogProc(hWnd, a2, a3, a4))));
+  result = BaseDialogProc(hWnd, a2, a3, a4); /*0x531a28*/
   if ( result ) /*0x531a2f*/
     return result; /*0x531a2f*/
-  WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x531a38*/
+  WindowLongA = (_DWORD *)GetWindowLongA(hWnd, 8); /*0x531a38*/
   if ( a2 == 273 ) /*0x531a44*/
   {
-    if ( (unsigned short)a3 && (uint16_t)a3 <= 2u ) /*0x531c19*/
-      *WindowLongA = (uint16_t)a3; /*0x531c1b*/
+    if ( (_WORD)a3 && (unsigned __int16)a3 <= 2u ) /*0x531c19*/
+      *WindowLongA = (unsigned __int16)a3; /*0x531c1b*/
     return 0; /*0x531c1b*/
   }
   if ( a2 != 1175 ) /*0x531a50*/
@@ -50,7 +50,7 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   ModuleVersion = GetModuleVersion(); /*0x531a8b*/
   sprintf(Buffer, "Version %s", ModuleVersion); /*0x531a9b*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531ab0*/
-  ModuleInternalVersion = GetModuleInternalVersion((int)&g_CoordScatterManager); /*0x531ab7*/
+  ModuleInternalVersion = GetModuleInternalVersion((int)&dword_A8ECE0); /*0x531ab7*/
   sprintf(Buffer, "Internal Version %s", ModuleInternalVersion); /*0x531ac7*/
   SendMessageA(DlgItem, 0x4C8u, 0, (LPARAM)Buffer); /*0x531adc*/
   v16[0] = 0; /*0x531aea*/
@@ -81,6 +81,6 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
 namespace gamemd {
 void CreditsScreen::Init()
 {
-  *(unsigned int *)this = 0; /*0x4a3c00*/
+  *this = 0; /*0x4a3c00*/
 }
 } // namespace gamemd

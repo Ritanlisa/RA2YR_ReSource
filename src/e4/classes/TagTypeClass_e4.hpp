@@ -21,19 +21,8 @@ struct TagTypeClass {
     bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     char arrayIndex[4];  // 0x24
-    unsigned int persistence;  // 0x28
+    char persistence[4];  // 0x28
     bool q02B;  // 0x2B
-    unsigned int persistence0;
-    unsigned int q094;
-    unsigned int q098;
-    unsigned int q09C;
-    unsigned int q0A0;
-    unsigned int u32_250;
-    unsigned int u32_98;
-    unsigned int u32_9C;
-    unsigned int uniqueId0;
-    unsigned int vtable0;
-    unsigned int vtable46;
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers();
     AbstractTypeClass * * Construct(ObjectClass * aP1);

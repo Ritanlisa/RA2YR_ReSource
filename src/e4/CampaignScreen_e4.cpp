@@ -21,7 +21,7 @@ void CampaignScreen_Init()
 {
   const wchar_t *v5; // ebp
   int result; // eax
-  unsigned int *WindowLongA; // eax
+  _DWORD *WindowLongA; // eax
   HWND v8; // eax
   wchar_t *StringCSF; // eax
   HWND v10; // eax
@@ -82,7 +82,7 @@ void CampaignScreen_Init()
   if ( !result ) /*0x470d5f*/
   {
     v51 = v5; /*0x470d65*/
-    WindowLongA = (unsigned int *)GetWindowLongA((HWND)this, 8); /*0x470d69*/
+    WindowLongA = (_DWORD *)GetWindowLongA((HWND)this, 8); /*0x470d69*/
     if ( (unsigned int)hWnd > 0x497 ) /*0x470d75*/
     {
       if ( hWnd == (HWND)1240 ) /*0x47138e*/
@@ -117,7 +117,7 @@ void CampaignScreen_Init()
     }
     if ( hWnd != (HWND)272 ) /*0x470d90*/
     {
-      if ( hWnd == (HWND)273 && (unsigned short)wParam == 1745 ) /*0x470d9e*/
+      if ( hWnd == (HWND)273 && (_WORD)wParam == 1745 ) /*0x470d9e*/
       {
         *WindowLongA = 1; /*0x470da6*/
         return 0; /*0x470db6*/
@@ -180,41 +180,41 @@ void CampaignScreen_Init()
     while ( 1 ) /*0x47102c*/
     {
       v21 = Color::ConvertToRGB( /*0x47102c*/
-              (Color *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)(dword_89DFE0[v53] + 40)) + 776),
+              (Color *)(*(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * *(_DWORD *)(dword_89DFE0[v53] + 40)) + 776),
               (int)v57);
-      IDA_LOWORD(v56) = *(unsigned short *)v21; /*0x471034*/
-      IDA_BYTE2(v56) = *(unsigned char *)(v21 + 2); /*0x47103c*/
+      IDA_LOWORD(v56) = *(_WORD *)v21; /*0x471034*/
+      IDA_BYTE2(v56) = *(_BYTE *)(v21 + 2); /*0x47103c*/
       v22 = dword_89DFE0[v53]; /*0x471067*/
       v55 = 24 * v53; /*0x471071*/
-      v23 = (uint8_t)v56 | (*(uint16_t *)((char *)&v56 + 1) << 8); /*0x471081*/
-      nIDDlgItem = stru_81AF8C.VoxelCaches[6 * v53 + 7]; /*0x471085*/
+      v23 = (unsigned __int8)v56 | (*(unsigned __int16 *)((char *)&v56 + 1) << 8); /*0x471081*/
+      nIDDlgItem = stru_81AF8C.?[6 * v53 + 7]; /*0x471085*/
       lParam = v22; /*0x471089*/
       v24 = GetDlgItem((HWND)this, nIDDlgItem); /*0x47108d*/
       SendMessageA(v24, 0x4B2u, 0, lParam); /*0x47109c*/
       v25 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4710a4*/
       SendMessageA(v25, 0x498u, 0, v23); /*0x4710af*/
       v26 = dword_89DFE0[v53]; /*0x4710bf*/
-      nIDDlgItem = stru_81AF8C.VoxelCaches[v55 / 4 + 8]; /*0x4710c6*/
+      nIDDlgItem = stru_81AF8C.?[v55 / 4 + 8]; /*0x4710c6*/
       swprintf(v59, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(v26 + 64)); /*0x4710d8*/
       v27 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4710e6*/
       SendMessageA(v27, 0x4B2u, 0, (LPARAM)v59); /*0x4710f5*/
       v28 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4710fd*/
       SendMessageA(v28, 0x498u, 0, v23); /*0x471108*/
-      nIDDlgItem = stru_81AF8C.VoxelCaches[v55 / 4 + 9]; /*0x471118*/
+      nIDDlgItem = stru_81AF8C.?[v55 / 4 + 9]; /*0x471118*/
       swprintf(v61, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(dword_89DFE0[v53] + 48)); /*0x471134*/
       v29 = GetDlgItem((HWND)this, nIDDlgItem); /*0x471142*/
       SendMessageA(v29, 0x4B2u, 0, (LPARAM)v61); /*0x471154*/
       v30 = GetDlgItem((HWND)this, nIDDlgItem); /*0x47115c*/
       SendMessageA(v30, 0x498u, 0, v23); /*0x471167*/
       v31 = dword_89DFE0[v53]; /*0x471177*/
-      nIDDlgItem = stru_81AF8C.VoxelCaches[v55 / 4 + 10]; /*0x47117e*/
+      nIDDlgItem = stru_81AF8C.?[v55 / 4 + 10]; /*0x47117e*/
       swprintf(v60, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(v31 + 80)); /*0x471193*/
       v32 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4711a1*/
       SendMessageA(v32, 0x4B2u, 0, (LPARAM)v60); /*0x4711b3*/
       v33 = GetDlgItem((HWND)this, nIDDlgItem); /*0x4711bb*/
       SendMessageA(v33, 0x498u, 0, v23); /*0x4711c6*/
       v34 = dword_89DFE0[v53]; /*0x4711d6*/
-      nIDDlgItem = stru_81AF8C.VoxelCaches[v55 / 4 + 11]; /*0x4711dd*/
+      nIDDlgItem = stru_81AF8C.?[v55 / 4 + 11]; /*0x4711dd*/
       swprintf(v62, (const size_t)g_Str_Fmt_PctD, *(const wchar_t *const *)(v34 + 96)); /*0x4711f2*/
       v35 = GetDlgItem((HWND)this, nIDDlgItem); /*0x471200*/
       SendMessageA(v35, 0x4B2u, 0, (LPARAM)v62); /*0x471212*/

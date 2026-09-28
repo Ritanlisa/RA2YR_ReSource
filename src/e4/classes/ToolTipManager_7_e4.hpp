@@ -9,10 +9,6 @@ struct ToolTipManager_7 {
     void* Items;  // 0x4
     int Capacity;  // 0x8
     bool IsAllocated;  // 0xD
-    unsigned int __pad_0;
-    unsigned int m_1;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     DynamicVector * QueryInterface(char a2);  // 0x724F40
 };

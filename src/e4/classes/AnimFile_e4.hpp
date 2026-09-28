@@ -14,14 +14,6 @@ struct AnimFile {
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
-    unsigned int __pad_0;
-    unsigned int q00C3;
-    unsigned int u32_1430;
-    unsigned int u32_84;
-    unsigned int u32_88;
-    unsigned int u32_89;
-    unsigned int u32_E0C;
-    unsigned int u32_E10;
 // --- flat members (END) ---
     AnimFile * QueryInterface(char a2);
     char * Stub();

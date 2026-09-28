@@ -11,10 +11,6 @@ struct FilePipe_38 {
     int q008;  // 0x8
     unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned int __pad_0;
-    unsigned int m_1;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     char Release(int a2,  char * a3);    // 0x478340
     int Seek(int a2,  int a3);    // 0x477960

@@ -22,17 +22,17 @@ int Stream::FlushAndReset()
   int Stream_field_04; // eax
   int Stream_field_0C; // edi
 
-  v1 = (gamemd::Stream *)((int)(this));
-  m_Stream = (gamemd::StreamClass *)((int)(this->m_Stream));
-  Stream_field_08 = (int)(this->Stream_field_08);
+  v1 = this; /*0x439111*/
+  m_Stream = this->m_Stream; /*0x439114*/
+  Stream_field_08 = this->Stream_field_08; /*0x439116*/
   this->Stream_field_0C = 45; /*0x439119*/
   ((void (*)(void))m_Stream->m_Size)(); /*0x439120*/
-  ((void (__thiscall *)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_08, 0); /*0x43912a*/
+  ((void (__thiscall *)(Stream *, int, _DWORD))v1->m_Stream->m_Position)(v1, Stream_field_08, 0); /*0x43912a*/
   Stream_field_04 = v1[1].Stream_field_04; /*0x43912d*/
   Stream_field_0C = v1[1].Stream_field_0C; /*0x439130*/
   v1 = (Stream *)((char *)v1 + 24); /*0x439133*/
   (*(void (__thiscall **)(Stream *))(Stream_field_04 + 12))(v1); /*0x439138*/
-  return ((int (__thiscall *)(Stream *, int, unsigned int))v1->m_Stream->m_Position)(v1, Stream_field_0C, 0); /*0x439145*/
+  return ((int (__thiscall *)(Stream *, int, _DWORD))v1->m_Stream->m_Position)(v1, Stream_field_0C, 0); /*0x439145*/
 }
 } // namespace gamemd
 // 0x49FB70
@@ -45,16 +45,16 @@ int Stream::ReadIntArray(int a2)
   int v6; // ebx
 
   v2 = a2; /*0x49fb72*/
-  result = (*(int (__stdcall **)(int, int *, int, unsigned int))(*(unsigned int *)a2 + 16))( /*0x49fb84*/
+  result = (*(int (__stdcall **)(int, int *, int, _DWORD))(*(_DWORD *)a2 + 16))( /*0x49fb84*/
              a2,
              &this->Stream_field_10,
              4,
              0);
   if ( result >= 0 ) /*0x49fb89*/
   {
-    v5 = *(unsigned int *)v2; /*0x49fb8e*/
+    v5 = *(_DWORD *)v2; /*0x49fb8e*/
     a2 = this->a2; /*0x49fb9a*/
-    result = (*(int (__stdcall **)(int, int *, int, unsigned int))(v5 + 16))(v2, &a2, 4, 0); /*0x49fb9e*/
+    result = (*(int (__stdcall **)(int, int *, int, _DWORD))(v5 + 16))(v2, &a2, 4, 0); /*0x49fb9e*/
     if ( result >= 0 ) /*0x49fba3*/
     {
       v6 = 0; /*0x49fba9*/
@@ -66,7 +66,7 @@ int Stream::ReadIntArray(int a2)
       {
         while ( 1 ) /*0x49fbbd*/
         {
-          result = (*(int (__stdcall **)(int, int, int, unsigned int))(*(unsigned int *)v2 + 16))( /*0x49fbbd*/
+          result = (*(int (__stdcall **)(int, int, int, _DWORD))(*(_DWORD *)v2 + 16))( /*0x49fbbd*/
                      v2,
                      this->Stream_field_04 + 4 * v6,
                      4,
@@ -90,13 +90,14 @@ int Stream::WriteIntArray(TechnoTypeClass * aP1)
   int result; // eax
   int i; // esi
   int Stream_field_10; // [esp+20h] [ebp-4h] BYREF
-v3 = (int)(*aP1);
+
+  v3 = *aP1; /*0x67a4ac*/
   Stream_field_10 = this->Stream_field_10; /*0x67a4b9*/
   aP1->IsClean(&Stream_field_10, 4, 0); /*0x67a4bd*/
   result = Stream_field_10; /*0x67a4c0*/
   for ( i = 0; i < Stream_field_10; ++i ) /*0x67a4c8*/
   {
-    (*(void (__stdcall **)(int *, int, int, unsigned int))(*aP1 + 16))(aP1, this->Stream_field_04 + 4 * i, 4, 0); /*0x67a4d8*/
+    (*(void (__stdcall **)(int *, int, int, _DWORD))(*aP1 + 16))(aP1, this->Stream_field_04 + 4 * i, 4, 0); /*0x67a4d8*/
     result = Stream_field_10; /*0x67a4db*/
   }
   return result; /*0x67a4e4*/

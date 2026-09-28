@@ -16,6 +16,15 @@ struct E4Recv_6B0A90 {
     unsigned int q630;  // 0x630
     unsigned int q1584;  // 0x1584
     unsigned int q5508;  // 0x5508
+    unsigned int q21768;  // 0x21768
+    unsigned int q33570;  // 0x33570
+    unsigned int q137064;  // 0x137064
+    unsigned int q210288;  // 0x210288
+    unsigned int q19347798;  // 0x19347798
+    unsigned int q35009334;  // 0x35009334
+    unsigned int q422868888;  // 0x422868888
+    unsigned int q17759111304;  // 0x17759111304
+    unsigned int q1612107027204;  // 0x1612107027204
 // --- flat members (END) ---
     unsigned int * sub_6B0A90(int a2);  // 0x6B0A90
 };

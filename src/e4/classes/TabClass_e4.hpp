@@ -47,10 +47,6 @@ struct TabClass {
     unsigned int u32_50;  // 0x50
     unsigned int u32_54;  // 0x54
     unsigned int q058;  // 0x58
-    unsigned int TabClass_field_0x0;
-    unsigned int TabClass_field_0x4;
-    unsigned int TabClass_field_0x8;
-    unsigned int TabClass_field_0xC;
 // --- flat members (END) ---
     int DrawPower(HWND hDlg, void * a1, AbstractClass * aP2);
     unsigned int * initStripClass();

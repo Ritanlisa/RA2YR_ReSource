@@ -10,6 +10,6 @@
 namespace gamemd {
 ObjectClass * E4Recv_633A80::ReadPointerFromECX_2()
 {
-  return (gamemd::ObjectClass *)((int)this->vtable0);
+  return (int)this->AbstractClass; /*0x633a82*/
 }
 } // namespace gamemd

@@ -17,35 +17,6 @@ struct TacticalMap {
     unsigned char u8_19;  // 0x19
     char TacticalMap_field_1C[4];  // 0x1C
     char TacticalMap_field_20[4];  // 0x20
-    unsigned int Render;
-    unsigned int TacticalMap_field_040;
-    unsigned int Tactical_field_0xA8;
-    unsigned int __pad_11F;
-    unsigned int __pad_AC;
-    unsigned int parent_gap;
-    unsigned int q104;
-    unsigned int q108;
-    unsigned short u16_10A;
-    unsigned short u16_10C;
-    unsigned short u16_10E;
-    unsigned int u32_11B;
-    unsigned int u32_24;
-    unsigned int u32_2B0;
-    unsigned int u32_2B4;
-    unsigned int u32_2B8;
-    unsigned int u32_686;
-    unsigned int u32_6C0;
-    unsigned int Tactical_field_0x2;
-    unsigned int Tactical_field_0x8;
-    unsigned int Tactical_field_0xC;
-    unsigned int Tactical_field_0xDA4;
-    unsigned int Tactical_field_0xDB4;
-    unsigned int __pad_0;
-    unsigned int __pad_10;
-    unsigned int __pad_34;
-    unsigned int __pad_DA8;
-    unsigned int u32_DE4;
-    unsigned int u32_DE8;
 // --- flat members (END) ---
     ScenarioClass * * ComputeScreenTint();
     int Construct();

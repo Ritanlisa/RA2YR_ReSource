@@ -14,11 +14,11 @@ namespace gamemd {
 void * IPXConnClass::constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3, IPXConnClass * aP4, unsigned int * a5, int a7, wchar_t * Source, int aP8)
 {
   int v13; // [esp+8h] [ebp-8h] BYREF
-  int16_t v14; // [esp+Ch] [ebp-4h]
+  __int16 v14; // [esp+Ch] [ebp-4h]
 
   IPXConnClass::initConnection(aP1, aP2, aP3, aP4, 2, -1, 60, aP8); /*0x53f458*/
   Waypoint::InitInvalid((Waypoint *)((char *)&this->RemoteAddress6)); /*0x53f462*/
-  *(unsigned int *)this->__pad_0 = (void*)&IPXConnClass_vftable; /*0x53f46b*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&IPXConnClass_vftable; /*0x53f46b*/
   if ( a5 ) /*0x53f473*/
   {
     this->u32_4C = *a5; /*0x53f479*/

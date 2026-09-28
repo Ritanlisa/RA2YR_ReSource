@@ -33,7 +33,7 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
     v2 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d1780*/
     if ( v2 <= 0x18 ) /*0x6d1789*/
     {
-      v3 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v2);
+      v3 = &stru_B0C1C0 + 8 * v2; /*0x6d1796*/
       if ( v3 ) /*0x6d179e*/
       {
         if ( !IDA_BYTE1(v3[3].ShapeButtonClass_field_0x08) ) /*0x6d17a0*/
@@ -47,7 +47,7 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
     v5 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d17be*/
     if ( v5 <= 0x18 ) /*0x6d17c7*/
     {
-      v6 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v5);
+      v6 = &stru_B0C1C0 + 8 * v5; /*0x6d17d4*/
       if ( v6 ) /*0x6d17dc*/
       {
         if ( IDA_BYTE1(v6[3].ShapeButtonClass_field_0x08) ) /*0x6d17de*/
@@ -75,7 +75,7 @@ char MouseClass::LoadCursors()
     dword_B0FAC4 = LoadFileSHP(off_844CD4, (bool *)&byte_B0FC95); /*0x72dddd*/
     dword_B0F9DC = LoadFileSHP(off_844CD8, (bool *)&byte_B0FC96); /*0x72ddf2*/
     dword_B0FAC0 = LoadFileSHP(off_844CDC, (bool *)&byte_B0FC97); /*0x72de07*/
-    g_DialogControlPool = LoadFileSHP(off_844CE0, (bool *)&byte_B0FC98); /*0x72de1c*/
+    dword_B0FB50 = LoadFileSHP(off_844CE0, (bool *)&byte_B0FC98); /*0x72de1c*/
     dword_B0FA04 = LoadFileSHP(off_844CE4, (bool *)&byte_B0FC99); /*0x72de31*/
     dword_B0FAF8 = LoadFileSHP(off_844CE8, (bool *)&byte_B0FC9A); /*0x72de46*/
     dword_B0FA74 = LoadFileSHP(off_844CEC, (bool *)&byte_B0FC9B); /*0x72de5b*/

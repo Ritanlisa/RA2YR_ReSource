@@ -18,7 +18,8 @@ struct E4Recv_44F6E0 {
     unsigned int q1584;  // 0x1584
     unsigned int q5170;  // 0x5170
     unsigned int q5508;  // 0x5508
-    unsigned int vtable0;
+    unsigned int q21768;  // 0x21768
+    unsigned int q137064;  // 0x137064
 // --- flat members (END) ---
     int Vf72(int,  ...);    // G6 vtable slot dispatch
     unsigned int * sub_44F6E0(unsigned int * a2,  int a3);    // 0x44F6E0

@@ -10,8 +10,6 @@ struct SkirmishDialog {
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
     unsigned char q008;  // 0x8
-    unsigned int FillComboBoxes;
-    unsigned int __pad_0;
 // --- flat members (END) ---
     int ResizeDialogAndEnum();
     static double Show(...);  // C2597 interim stub

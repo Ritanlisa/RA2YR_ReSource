@@ -28,7 +28,7 @@ int Rect::Union(IUnknown * aP0, const RECT * lprcSrc1, const RECT * lprcSrc2)
   v15 = v4; /*0x487f4c*/
   if ( v3[2] <= 0 || v3[3] <= 0 ) /*0x487f5b*/
   {
-    *(unsigned int *)v4 = *aP0; /*0x488012*/
+    *v4 = *aP0; /*0x488012*/
     return (int)v4; /*0x488026*/
   }
   else
@@ -100,7 +100,7 @@ namespace gamemd {
 BOOL Rect::Inflate(LPRECT lprc, int dx, int dy)
 {
   int v3; // edx
-  unsigned int *v4; // ecx
+  _DWORD *v4; // ecx
 
   *v4 += v3; /*0x72a9e4*/
   v4[1] += v3; /*0x72a9eb*/

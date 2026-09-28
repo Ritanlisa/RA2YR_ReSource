@@ -27,11 +27,11 @@ void Vector::Cleanup()
 {
   int result; // eax
 
-  result = *(unsigned int *)&this->m_1[3]; /*0x512d36*/
+  result = *(_DWORD *)&this->m_1[3]; /*0x512d36*/
   if ( result && IDA_BYTE1(this->m_C) ) /*0x512d3d*/
   {
     RA2_OPDEL(*(void **)&this->m_1[3]); /*0x512d43*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x512d4b*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x512d4b*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x512d4e*/
   this->m_8 = 0; /*0x512d51*/
@@ -44,11 +44,11 @@ void Vector::Destructor()
 {
   int result; // eax
 
-  result = *(unsigned int *)&this->m_1[3]; /*0x513106*/
+  result = *(_DWORD *)&this->m_1[3]; /*0x513106*/
   if ( result && IDA_BYTE1(this->m_C) ) /*0x51310d*/
   {
     RA2_OPDEL(*(void **)&this->m_1[3]); /*0x513113*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x51311b*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x51311b*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x51311e*/
   this->m_8 = 0; /*0x513121*/
@@ -82,11 +82,11 @@ void Vector::Cleanup2()
 {
   int result; // eax
 
-  result = *(unsigned int *)&this->m_1[3]; /*0x67abe6*/
+  result = *(_DWORD *)&this->m_1[3]; /*0x67abe6*/
   if ( result && IDA_BYTE1(this->m_C) ) /*0x67abed*/
   {
     RA2_OPDEL(*(void **)&this->m_1[3]); /*0x67abf3*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x67abfb*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x67abfb*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x67abfe*/
   this->m_8 = 0; /*0x67ac01*/
@@ -114,9 +114,9 @@ void Vector::Clear()
   int result; // eax
 
   IDA_LOBYTE(result) = this->q008; /*0x43ae53*/
-  if ( (unsigned char)result ) /*0x43ae58*/
+  if ( (_BYTE)result ) /*0x43ae58*/
     RA2_OPDEL(); /*0x43ae5d*/
-  *(unsigned int *)this = 0; /*0x43ae65*/
+  *(_DWORD *)this = 0; /*0x43ae65*/
   this->q004 = 0; /*0x43ae6b*/
   this->q008 = 0; /*0x43ae72*/
   return result; /*0x43ae76*/
@@ -128,31 +128,31 @@ namespace gamemd {
 char Vector::RemoveAt(AbstractClass * aP1)
 {
   char *Vector_field_0x10; // edx
-  AbstractClass * result;
+  int result; // eax
   char *v4; // edx
 
-  Vector_field_0x10 = (char *)((int)((char *)this->Vector_field_0x10));
-  result = (gamemd::AbstractClass *)((int)(aP1));
+  Vector_field_0x10 = (char *)this->Vector_field_0x10; /*0x45ae10*/
+  result = aP1; /*0x45ae13*/
   if ( aP1 >= (int)Vector_field_0x10 ) /*0x45ae19*/
   {
     IDA_LOBYTE(result) = 0; /*0x45ae3c*/
   }
   else
   {
-    v4 = (char *)((unsigned int)(Vector_field_0x10 - 1));
-    this->Vector_field_0x10 = (unsigned int)(v4);
+    v4 = Vector_field_0x10 - 1; /*0x45ae1b*/
+    this->Vector_field_0x10 = v4; /*0x45ae1e*/
     if ( aP1 < (int)v4 ) /*0x45ae21*/
     {
       do /*0x45ae34*/
       {
         ++result; /*0x45ae27*/
-        *((unsigned int *)this->Vector_field_0x4 + result - 1) = *((unsigned int *)this->Vector_field_0x4 + result); /*0x45ae2b*/
+        *((_DWORD *)this->Vector_field_0x4 + result - 1) = *((_DWORD *)this->Vector_field_0x4 + result); /*0x45ae2b*/
       }
       while ( result < (int)this->Vector_field_0x10 ); /*0x45ae34*/
     }
     IDA_LOBYTE(result) = 1; /*0x45ae37*/
   }
-  return (char)(result);
+  return result; /*0x45ae39*/
 }
 } // namespace gamemd
 
@@ -163,7 +163,7 @@ char Vector::ReallocDynamic(int a2)
   char *v3; // edi
   int i; // ecx
   int v5; // eax
-  unsigned int *v6; // edx
+  _DWORD *v6; // edx
   int v7; // eax
 
   if ( a2 < 0 ) /*0x4d2e4c*/
@@ -171,15 +171,15 @@ char Vector::ReallocDynamic(int a2)
   v3 = (char *)RA2_OPNEW(8 * (a2 + v3->vtable3)); /*0x4d2e60*/
   if ( !v3 ) /*0x4d2e67*/
     return 0; /*0x4d2ec0*/
-  for ( i = 0; i < v3->vtable2; *(unsigned int *)&v3[v5 + 4] = v6[1] ) /*0x4d2e75*/
+  for ( i = 0; i < v3->vtable2; *(_DWORD *)&v3[v5 + 4] = v6[1] ) /*0x4d2e75*/
   {
     v5 = 8 * i; /*0x4d2e79*/
-    v6 = (unsigned int *)(*(unsigned int *)v3 + 8 * i++); /*0x4d2e82*/
-    *(unsigned int *)&v3[v5] = *v6; /*0x4d2e87*/
+    v6 = (_DWORD *)(*(_DWORD *)v3 + 8 * i++); /*0x4d2e82*/
+    *(_DWORD *)&v3[v5] = *v6; /*0x4d2e87*/
   }
   RA2_OPDEL(); /*0x4d2e9b*/
   v7 = a2 + v3->vtable3; /*0x4d2ea6*/
-  *(unsigned int *)v3 = v3; /*0x4d2ea8*/
+  *(_DWORD *)v3 = v3; /*0x4d2ea8*/
   v3->vtable3 = v7; /*0x4d2eaa*/
   v3->uniqueId = 0; /*0x4d2ead*/
   return 1; /*0x4d2eb4*/
@@ -192,13 +192,13 @@ int Vector::Find(unsigned int * a2)
 {
   int v2; // edx
   int result; // eax
-  unsigned int *i; // ecx
+  _DWORD *i; // ecx
 
-  v2 = (int)(this->q010);
+  v2 = this->q010; /*0x4e0550*/
   result = 0; /*0x4e0553*/
   if ( v2 <= 0 ) /*0x4e0558*/
     return -1; /*0x4e056f*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e055e*/
+  for ( i = *(_DWORD **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e055e*/
   {
     if ( ++result >= v2 ) /*0x4e056d*/
       return -1; /*0x4e056d*/
@@ -210,7 +210,7 @@ int Vector::Find(unsigned int * a2)
 namespace gamemd {
 BOOL Vector::HasCapacity()
 {
-  return this->q008 < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76f0bd*/
+  return this->q008 < *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 16); /*0x76f0bd*/
 }
 } // namespace gamemd
 
@@ -223,8 +223,8 @@ char Vector::Grow()
   void *v5; // ebp
   int v6; // [esp+4h] [ebp-4h]
 
-  v2 = *(unsigned int *)this->__pad_0; /*0x7aeec4*/
-  if ( *(unsigned int *)this->__pad_0 < (int)this->Vector_field_0x4 ) /*0x7aeecb*/
+  v2 = *(_DWORD *)this->__pad_0; /*0x7aeec4*/
+  if ( *(_DWORD *)this->__pad_0 < (int)this->Vector_field_0x4 ) /*0x7aeecb*/
     return 0; /*0x7aeecd*/
   v4 = 2 * v2; /*0x7aeed4*/
   v6 = 2 * v2; /*0x7aeedb*/
@@ -237,7 +237,7 @@ char Vector::Grow()
   memset(v5, 0, 4 * ((unsigned int)(4 * v4) >> 2)); /*0x7aef0a*/
   if ( this->Vector_field_0x8 ) /*0x7aef13*/
   {
-    qmemcpy(v5, this->Vector_field_0x8, 4 * *(unsigned int *)this->__pad_0); /*0x7aef28*/
+    qmemcpy(v5, this->Vector_field_0x8, 4 * *(_DWORD *)this->__pad_0); /*0x7aef28*/
     v4 = v6; /*0x7aef31*/
   }
   RA2_OPDEL(this->Vector_field_0x8); /*0x7aef39*/

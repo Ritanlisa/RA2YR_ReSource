@@ -24,7 +24,7 @@ struct DynamicVectorClass_uint {
     unsigned char q028;  // 0x28
     BufferIOFileClass* q02A;  // 0x2A
     bool q02B;  // 0x2B
-    unsigned int q02C;  // 0x2C
+    char q02C[4];  // 0x2C
     bool q02D;  // 0x2D
     CampaignClass* q030;  // 0x30
     unsigned char q031;  // 0x31
@@ -41,11 +41,6 @@ struct DynamicVectorClass_uint {
     unsigned char q064;  // 0x64
     char q068[4];  // 0x68
     ObjectClass* q070;  // 0x70
-    unsigned int m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
-    unsigned int __pad_0;
 // --- flat members (END) ---
     void ddtor();  // 0x42D540
     int Clear(int a2);  // 0x42D590

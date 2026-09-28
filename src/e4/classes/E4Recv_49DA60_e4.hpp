@@ -19,6 +19,11 @@ struct E4Recv_49DA60 {
     unsigned int q304;  // 0x304
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
+    unsigned int q20848;  // 0x20848
+    ObjectClass * q33570;  // 0x33570
+    unsigned int q153094;  // 0x153094
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q19232884;  // 0x19232884
 // --- flat members (END) ---
     unsigned int * sub_49DA60();  // 0x49DA60
 };

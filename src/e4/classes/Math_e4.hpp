@@ -70,11 +70,20 @@ struct Math {
     unsigned int q5444;  // 0x5444
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
-    unsigned int __pad_0;
-    unsigned int field_4;
-    unsigned int field_8;
-    unsigned int u32_40;
-    unsigned int u32_41;
+    unsigned int q20848;  // 0x20848
+    unsigned int q21768;  // 0x21768
+    unsigned int q25608;  // 0x25608
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1271138;  // 0x1271138
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19337528;  // 0x19337528
+    unsigned int q20481684;  // 0x20481684
+    unsigned int q422802728;  // 0x422802728
+    unsigned int q541595268;  // 0x541595268
+    unsigned int q17758693160;  // 0x17758693160
+    unsigned int q22571209320;  // 0x22571209320
+    unsigned int q1612096024928;  // 0x1612096024928
 // --- flat members (END) ---
     void Hypotenuse2D();  // 0x41C350
     double Sin(double a1);  // 0x4CAD50

@@ -28,13 +28,16 @@ int HashTable_flat::Get(IUnknown * aP1, IUnknown * result)
 {
   int result; // eax
 
-  result = (IUnknown *)(this->HashTable_field_0x04);
+  result = this->HashTable_field_0x04; /*0x624764*/
   if ( result ) /*0x624769*/
   {
-    result = (IUnknown *)(*(unsigned int *)(*(unsigned int *)this->__pad_0 /*0x62478a*/ + 4 * (((int (__thiscall *)(unsigned int *))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1))));
+    result = *(_DWORD *)(*(_DWORD *)this->__pad_0 /*0x62478a*/
+                       + 4
+                       * (((int (__thiscall *)(_DWORD *))this->HashTable_field_0x18)(aP1)
+                        & ((1 << this->HashTable_field_0x0C) - 1)));
     if ( result ) /*0x62478f*/
     {
-      while ( *(unsigned int *)result != *aP1 ) /*0x62479c*/
+      while ( *(_DWORD *)result != *aP1 ) /*0x62479c*/
       {
         result = result->q204; /*0x62479e*/
         if ( !result ) /*0x6247a6*/
@@ -56,7 +59,7 @@ int HashTable_flat::Get(IUnknown * aP1, IUnknown * result)
   {
     IDA_LOBYTE(result) = 0; /*0x62476c*/
   }
-  return (int)(result);
+  return result; /*0x62476b*/
 }
 } // namespace gamemd
 // 0x624FC0
@@ -64,7 +67,7 @@ namespace gamemd {
 AbstractClass * * HashTable_flat::Grow2()
 {
   int HashTable_field_0x08; // esi
-  unsigned int *v3; // ebp
+  _DWORD *v3; // ebp
   int v4; // edi
   void *v5; // edi
   unsigned int v6; // edx
@@ -74,23 +77,23 @@ AbstractClass * * HashTable_flat::Grow2()
   int v10; // edx
   int v11; // ecx
   int v12; // eax
-  unsigned int *v13; // [esp+4h] [ebp-4h]
+  _DWORD *v13; // [esp+4h] [ebp-4h]
 
   if ( IDA_LOBYTE(this->HashTable_field_0x14) != 1 ) /*0x624fc8*/
   {
-    HashTable_field_0x08 = (unsigned int)(this->HashTable_field_0x08);
-    v3 = *(unsigned int **)this->__pad_0; /*0x624fd3*/
+    HashTable_field_0x08 = this->HashTable_field_0x08; /*0x624fd0*/
+    v3 = *(_DWORD **)this->__pad_0; /*0x624fd3*/
     v4 = this->HashTable_field_0x0C + 1; /*0x624fdc*/
     this->HashTable_field_0x08 = 2 * HashTable_field_0x08; /*0x624fdd*/
     v13 = v3; /*0x624fe0*/
     this->HashTable_field_0x0C = v4; /*0x624fe8*/
     v5 = (void *)RA2_OPNEW(8 * HashTable_field_0x08); /*0x624ff3*/
     v6 = 4 * this->HashTable_field_0x08; /*0x624ff8*/
-    *(unsigned int *)this->__pad_0 = v5; /*0x624fff*/
+    *(_DWORD *)this->__pad_0 = v5; /*0x624fff*/
     memset(v5, 0, v6); /*0x625004*/
     if ( HashTable_field_0x08 > 0 ) /*0x62500f*/
     {
-      v7 = (int *)(v3);
+      v7 = v3; /*0x625011*/
       v8 = HashTable_field_0x08; /*0x625013*/
       do /*0x62504d*/
       {
@@ -100,10 +103,10 @@ AbstractClass * * HashTable_flat::Grow2()
           do /*0x625047*/
           {
             v10 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v9) & ((1 << this->HashTable_field_0x0C) - 1); /*0x62502b*/
-            v11 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10); /*0x62502f*/
-            *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10) = v9; /*0x625035*/
-            v12 = *(unsigned int *)(v9 + 516); /*0x625037*/
-            *(unsigned int *)(v9 + 516) = v11; /*0x62503d*/
+            v11 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v10); /*0x62502f*/
+            *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v10) = v9; /*0x625035*/
+            v12 = *(_DWORD *)(v9 + 516); /*0x625037*/
+            *(_DWORD *)(v9 + 516) = v11; /*0x62503d*/
             v9 = v12; /*0x625043*/
           }
           while ( v12 ); /*0x625047*/
@@ -124,7 +127,7 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
 {
   int HashTable_field_0x04; // eax
   int v7; // edi
-  unsigned char *v8; // ecx
+  _BYTE *v8; // ecx
   int v9; // edx
   int v10; // ebp
   bool v11; // c0
@@ -138,7 +141,7 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
   int v19; // edx
   int v20; // ecx
   int v21; // eax
-  unsigned char *v22; // eax
+  _BYTE *v22; // eax
   unsigned int v23; // ebp
   int HashTable_field_0x0C; // edi
   int *v25; // ebx
@@ -148,7 +151,7 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
   int v29; // edx
   int v30; // ecx
   int v31; // eax
-  unsigned int *v32; // [esp-4h] [ebp-1Ch]
+  _DWORD *v32; // [esp-4h] [ebp-1Ch]
   float v33; // [esp+10h] [ebp-8h]
   char v34; // [esp+1Ch] [ebp+4h]
   int *v35; // [esp+20h] [ebp+8h]
@@ -158,34 +161,34 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
   if ( !HashTable_field_0x04 ) /*0x6250a0*/
     return 0; /*0x6250a5*/
   v33 = (double)(unsigned int)(HashTable_field_0x04 - 1) / (double)this->HashTable_field_0x08; /*0x6250d0*/
-  v7 = ((int (__thiscall *)(unsigned int *))this->HashTable_field_0x18)(a2) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6250e4*/
-  v8 = *(unsigned char **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x6250e6*/
+  v7 = ((int (__thiscall *)(_DWORD *))this->HashTable_field_0x18)(a2) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6250e4*/
+  v8 = *(_BYTE **)(*(_DWORD *)this->__pad_0 + 4 * v7); /*0x6250e6*/
   if ( !v8 ) /*0x6250eb*/
     return 0; /*0x6250f0*/
   v9 = a2[1]; /*0x6250f9*/
-  if ( v9 == *((unsigned int *)v8 + 1) && *a2 == *(unsigned int *)v8 ) /*0x62510e*/
+  if ( v9 == *((_DWORD *)v8 + 1) && *a2 == *(_DWORD *)v8 ) /*0x62510e*/
   {
     *a3 = v8[8]; /*0x62511b*/
-    v32 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x625122*/
+    v32 = *(_DWORD **)(*(_DWORD *)this->__pad_0 + 4 * v7); /*0x625122*/
     v10 = v32[3]; /*0x625123*/
     RA2_OPDEL(v32); /*0x625126*/
-    *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7) = v10; /*0x625134*/
+    *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v7) = v10; /*0x625134*/
     v11 = v33 < *(double *)&this->HashTable_field_0x20; /*0x62513a*/
     v12 = v33 == *(double *)&this->HashTable_field_0x20; /*0x62513a*/
     --this->HashTable_field_0x04; /*0x62513e*/
     if ( v11 || v12 ) /*0x625143*/
     {
-      HashTable_field_0x08 = (int *)(this->HashTable_field_0x08);
+      HashTable_field_0x08 = this->HashTable_field_0x08; /*0x62514c*/
       if ( HashTable_field_0x08 > this->HashTable_field_0x30 && IDA_LOBYTE(this->HashTable_field_0x14) != 1 ) /*0x62515e*/
       {
-        v14 = (unsigned int)(*(int **)this->__pad_0);
-        v35 = (unsigned int)(*(int **)this->__pad_0);
+        v14 = *(int **)this->__pad_0; /*0x625167*/
+        v35 = *(int **)this->__pad_0; /*0x62516b*/
         v15 = this->HashTable_field_0x0C - 1; /*0x625171*/
         this->HashTable_field_0x08 = HashTable_field_0x08 >> 1; /*0x625172*/
         this->HashTable_field_0x0C = v15; /*0x62517c*/
         v16 = (void *)RA2_OPNEW(4 * (HashTable_field_0x08 >> 1)); /*0x625188*/
         v17 = 4 * this->HashTable_field_0x08; /*0x62518d*/
-        *(unsigned int *)this->__pad_0 = v16; /*0x625194*/
+        *(_DWORD *)this->__pad_0 = v16; /*0x625194*/
         memset(v16, 0, v17); /*0x625199*/
         if ( (int)HashTable_field_0x08 > 0 ) /*0x6251a4*/
         {
@@ -198,10 +201,10 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
               {
                 v19 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v18) /*0x6251bc*/
                     & ((1 << this->HashTable_field_0x0C) - 1);
-                v20 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v19); /*0x6251c0*/
-                *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v19) = v18; /*0x6251c6*/
-                v21 = *(unsigned int *)(v18 + 12); /*0x6251c8*/
-                *(unsigned int *)(v18 + 12) = v20; /*0x6251cb*/
+                v20 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v19); /*0x6251c0*/
+                *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v19) = v18; /*0x6251c6*/
+                v21 = *(_DWORD *)(v18 + 12); /*0x6251c8*/
+                *(_DWORD *)(v18 + 12) = v20; /*0x6251cb*/
                 v18 = v21; /*0x6251ce*/
               }
               while ( v21 ); /*0x6251d2*/
@@ -215,23 +218,23 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
         RA2_OPDEL(v14); /*0x6251df*/
       }
     }
-    return (gamemd::AbstractClass **)(1);
+    return 1; /*0x6251ea*/
   }
   else
   {
-    v22 = (unsigned char *)*((unsigned int *)v8 + 3); /*0x6251f3*/
+    v22 = (_BYTE *)*((_DWORD *)v8 + 3); /*0x6251f3*/
     v34 = 0; /*0x6251f6*/
     if ( v22 ) /*0x6251fd*/
     {
-      while ( v9 != *((unsigned int *)v22 + 1) || *a2 != *(unsigned int *)v22 ) /*0x62520b*/
+      while ( v9 != *((_DWORD *)v22 + 1) || *a2 != *(_DWORD *)v22 ) /*0x62520b*/
       {
         v8 = v22; /*0x62520d*/
-        v22 = (unsigned char *)*((unsigned int *)v22 + 3); /*0x62520f*/
+        v22 = (_BYTE *)*((_DWORD *)v22 + 3); /*0x62520f*/
         if ( !v22 ) /*0x625214*/
           goto LABEL_23; /*0x625214*/
       }
       *a3 = v22[8]; /*0x625220*/
-      *((unsigned int *)v8 + 3) = *((unsigned int *)v22 + 3); /*0x625225*/
+      *((_DWORD *)v8 + 3) = *((_DWORD *)v22 + 3); /*0x625225*/
       --this->HashTable_field_0x04; /*0x62522c*/
       RA2_OPDEL(v22); /*0x62522f*/
       v34 = 1; /*0x625237*/
@@ -242,14 +245,14 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
       v23 = this->HashTable_field_0x08; /*0x62524e*/
       if ( v23 > this->HashTable_field_0x30 && IDA_LOBYTE(this->HashTable_field_0x14) != 1 ) /*0x625260*/
       {
-        HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
-        v25 = (unsigned int)(*(int **)this->__pad_0);
+        HashTable_field_0x0C = this->HashTable_field_0x0C; /*0x625262*/
+        v25 = *(int **)this->__pad_0; /*0x625265*/
         v36 = *(int **)this->__pad_0; /*0x625269*/
         this->HashTable_field_0x08 = v23 >> 1; /*0x62526f*/
         this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x625277*/
         v26 = (void *)RA2_OPNEW(4 * (v23 >> 1)); /*0x625282*/
         v27 = 4 * this->HashTable_field_0x08; /*0x625287*/
-        *(unsigned int *)this->__pad_0 = v26; /*0x62528e*/
+        *(_DWORD *)this->__pad_0 = v26; /*0x62528e*/
         memset(v26, 0, v27); /*0x625293*/
         if ( (int)v23 > 0 ) /*0x62529e*/
         {
@@ -262,10 +265,10 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
               {
                 v29 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v28) /*0x6252b6*/
                     & ((1 << this->HashTable_field_0x0C) - 1);
-                v30 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v29); /*0x6252ba*/
-                *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v29) = v28; /*0x6252c0*/
-                v31 = *(unsigned int *)(v28 + 12); /*0x6252c2*/
-                *(unsigned int *)(v28 + 12) = v30; /*0x6252c5*/
+                v30 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v29); /*0x6252ba*/
+                *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v29) = v28; /*0x6252c0*/
+                v31 = *(_DWORD *)(v28 + 12); /*0x6252c2*/
+                *(_DWORD *)(v28 + 12) = v30; /*0x6252c5*/
                 v28 = v31; /*0x6252c8*/
               }
               while ( v31 ); /*0x6252cc*/
@@ -279,7 +282,7 @@ AbstractClass * * HashTable_flat::RemoveAndResize(unsigned int * a2, unsigned ch
         RA2_OPDEL(v25); /*0x6252d9*/
       }
     }
-    return (gamemd::AbstractClass **)(v34);
+    return v34; /*0x6252e1*/
   }
 }
 } // namespace gamemd
@@ -300,17 +303,17 @@ void HashTable_flat::Shrink2()
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  HashTable_field_0x08 = (int *)(this->HashTable_field_0x08);
+  HashTable_field_0x08 = this->HashTable_field_0x08; /*0x625785*/
   if ( HashTable_field_0x08 > this->HashTable_field_0x30 && IDA_LOBYTE(this->HashTable_field_0x14) != 1 ) /*0x625797*/
   {
-    v3 = (unsigned int)(*(int **)this->__pad_0);
-    HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
+    v3 = *(int **)this->__pad_0; /*0x6257a0*/
+    HashTable_field_0x0C = this->HashTable_field_0x0C; /*0x6257a3*/
     v13 = *(int **)this->__pad_0; /*0x6257a6*/
     this->HashTable_field_0x08 = HashTable_field_0x08 >> 1; /*0x6257ac*/
     this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x6257b4*/
     v5 = (void *)RA2_OPNEW(4 * (HashTable_field_0x08 >> 1)); /*0x6257bf*/
     v6 = 4 * this->HashTable_field_0x08; /*0x6257c4*/
-    *(unsigned int *)this->__pad_0 = v5; /*0x6257cb*/
+    *(_DWORD *)this->__pad_0 = v5; /*0x6257cb*/
     memset(v5, 0, v6); /*0x6257d0*/
     if ( (int)HashTable_field_0x08 > 0 ) /*0x6257db*/
     {
@@ -324,10 +327,10 @@ void HashTable_flat::Shrink2()
           do /*0x62580d*/
           {
             v10 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v9) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6257f7*/
-            v11 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10); /*0x6257fb*/
-            *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10) = v9; /*0x625801*/
-            v12 = *(unsigned int *)(v9 + 8); /*0x625803*/
-            *(unsigned int *)(v9 + 8) = v11; /*0x625806*/
+            v11 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v10); /*0x6257fb*/
+            *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v10) = v9; /*0x625801*/
+            v12 = *(_DWORD *)(v9 + 8); /*0x625803*/
+            *(_DWORD *)(v9 + 8) = v11; /*0x625806*/
             v9 = v12; /*0x625809*/
           }
           while ( v12 ); /*0x62580d*/
@@ -359,17 +362,17 @@ void HashTable_flat::Rebuild2()
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  HashTable_field_0x08 = (int *)(this->HashTable_field_0x08);
+  HashTable_field_0x08 = this->HashTable_field_0x08; /*0x625835*/
   if ( HashTable_field_0x08 > this->HashTable_field_0x30 && IDA_LOBYTE(this->HashTable_field_0x14) != 1 ) /*0x625847*/
   {
-    v3 = (unsigned int)(*(int **)this->__pad_0);
-    HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
+    v3 = *(int **)this->__pad_0; /*0x625850*/
+    HashTable_field_0x0C = this->HashTable_field_0x0C; /*0x625853*/
     v13 = *(int **)this->__pad_0; /*0x625856*/
     this->HashTable_field_0x08 = HashTable_field_0x08 >> 1; /*0x62585c*/
     this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x625864*/
     v5 = (void *)RA2_OPNEW(4 * (HashTable_field_0x08 >> 1)); /*0x62586f*/
     v6 = 4 * this->HashTable_field_0x08; /*0x625874*/
-    *(unsigned int *)this->__pad_0 = v5; /*0x62587b*/
+    *(_DWORD *)this->__pad_0 = v5; /*0x62587b*/
     memset(v5, 0, v6); /*0x625880*/
     if ( (int)HashTable_field_0x08 > 0 ) /*0x62588b*/
     {
@@ -383,10 +386,10 @@ void HashTable_flat::Rebuild2()
           do /*0x6258c3*/
           {
             v10 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v9) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6258a7*/
-            v11 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10); /*0x6258ab*/
-            *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10) = v9; /*0x6258b1*/
-            v12 = *(unsigned int *)(v9 + 516); /*0x6258b3*/
-            *(unsigned int *)(v9 + 516) = v11; /*0x6258b9*/
+            v11 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v10); /*0x6258ab*/
+            *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v10) = v9; /*0x6258b1*/
+            v12 = *(_DWORD *)(v9 + 516); /*0x6258b3*/
+            *(_DWORD *)(v9 + 516) = v11; /*0x6258b9*/
             v9 = v12; /*0x6258bf*/
           }
           while ( v12 ); /*0x6258c3*/
@@ -413,12 +416,12 @@ int HashTable_flat::FindString(char * Str1, IUnknown * aP2)
     return 0; /*0x625f84*/
   while ( strncmp(Str1, (const char *)HashTable_field_0x04, 4u) ) /*0x625f7b*/
   {
-    HashTable_field_0x04 = *(unsigned int *)(HashTable_field_0x04 + 12); /*0x625f7d*/
+    HashTable_field_0x04 = *(_DWORD *)(HashTable_field_0x04 + 12); /*0x625f7d*/
     if ( !HashTable_field_0x04 ) /*0x625f82*/
       return 0; /*0x625f82*/
   }
   result = HashTable_field_0x04; /*0x625f92*/
-  *(unsigned int *)aP2 = **(unsigned int **)(HashTable_field_0x04 + 8); /*0x625f9f*/
+  *aP2 = **(_DWORD **)(HashTable_field_0x04 + 8); /*0x625f9f*/
   IDA_LOBYTE(result) = HashTable_field_0x04 != 0; /*0x625fa5*/
   return result; /*0x625f86*/
 }
@@ -439,16 +442,16 @@ int HashTable_flat::FindChunk(char * Str1, void * a2, CCINIClass * aP3)
       result = strncmp(Str1, (const char *)HashTable_field_0x04, 4u); /*0x625fc1*/
       if ( !result ) /*0x625fcb*/
         break; /*0x625fcb*/
-      HashTable_field_0x04 = *(unsigned int *)(HashTable_field_0x04 + 12); /*0x625fcd*/
+      HashTable_field_0x04 = *(_DWORD *)(HashTable_field_0x04 + 12); /*0x625fcd*/
       if ( !HashTable_field_0x04 ) /*0x625fd2*/
         goto LABEL_4; /*0x625fd2*/
     }
-    v6 = (int)(*aP3);
-    if ( *(uint16_t *)(HashTable_field_0x04 + 6) < (int)*aP3 ) /*0x625ff2*/
-      v6 = *(uint16_t *)(HashTable_field_0x04 + 6); /*0x625ff4*/
+    v6 = *aP3; /*0x625fee*/
+    if ( *(unsigned __int16 *)(HashTable_field_0x04 + 6) < (int)*aP3 ) /*0x625ff2*/
+      v6 = *(unsigned __int16 *)(HashTable_field_0x04 + 6); /*0x625ff4*/
     result = v6; /*0x625ff9*/
     qmemcpy(a2, *(const void **)(HashTable_field_0x04 + 8), v6); /*0x626003*/
-    *aP3 = *(uint16_t *)(HashTable_field_0x04 + 6); /*0x626013*/
+    *aP3 = *(unsigned __int16 *)(HashTable_field_0x04 + 6); /*0x626013*/
     IDA_LOBYTE(result) = HashTable_field_0x04 != 0; /*0x626019*/
   }
   else
@@ -467,10 +470,10 @@ CampaignClass * * HashTable_flat::Clear()
   unsigned int v3; // edi
   int HashTable_field_0x08; // eax
   int v5; // ebx
-  unsigned int *v6; // ecx
+  _DWORD *v6; // ecx
   const char **v7; // esi
   int v8; // eax
-  unsigned int *v9; // esi
+  _DWORD *v9; // esi
   int v10; // edi
   bool v11; // c0
   bool v12; // c3
@@ -491,7 +494,7 @@ CampaignClass * * HashTable_flat::Clear()
   unsigned int HashTable_field_0x30; // eax
   float v28; // [esp+10h] [ebp-31Ch]
   int *v29; // [esp+10h] [ebp-31Ch]
-  unsigned char v30[792]; // [esp+14h] [ebp-318h] BYREF
+  _BYTE v30[792]; // [esp+14h] [ebp-318h] BYREF
 
   unknown_libname_73(v30); /*0x6b9540*/
   while ( 1 ) /*0x6b9545*/
@@ -501,14 +504,14 @@ CampaignClass * * HashTable_flat::Clear()
     if ( !HashTable_field_0x04 ) /*0x6b954c*/
       break; /*0x6b954c*/
     HashTable_field_0x08 = this->HashTable_field_0x08; /*0x6b9552*/
-    *(unsigned long long *)&v30[4] = (unsigned int)(HashTable_field_0x04 - 1); /*0x6b9556*/
-    *(unsigned int *)&v30[12] = HashTable_field_0x08; /*0x6b9562*/
-    *(unsigned int *)&v30[16] = 0; /*0x6b9566*/
+    *(_QWORD *)&v30[4] = (unsigned int)(HashTable_field_0x04 - 1); /*0x6b9556*/
+    *(_DWORD *)&v30[12] = HashTable_field_0x08; /*0x6b9562*/
+    *(_DWORD *)&v30[16] = 0; /*0x6b9566*/
     v5 = 0; /*0x6b956e*/
-    v28 = (double)*(int64_t *)&v30[4] / (double)HashTable_field_0x08; /*0x6b9572*/
+    v28 = (double)*(__int64 *)&v30[4] / (double)HashTable_field_0x08; /*0x6b9572*/
     if ( HashTable_field_0x08 <= 0 ) /*0x6b9576*/
       break; /*0x6b9576*/
-    v6 = *(unsigned int **)this->__pad_0; /*0x6b957f*/
+    v6 = *(_DWORD **)this->__pad_0; /*0x6b957f*/
     while ( !*v6 ) /*0x6b9583*/
     {
       ++v5; /*0x6b9585*/
@@ -518,18 +521,18 @@ CampaignClass * * HashTable_flat::Clear()
     }
     if ( v5 == -1 ) /*0x6b9596*/
       break; /*0x6b9596*/
-    v7 = *(const char ***)(*(unsigned int *)this->__pad_0 + 4 * v5); /*0x6b959c*/
+    v7 = *(const char ***)(*(_DWORD *)this->__pad_0 + 4 * v5); /*0x6b959c*/
     String::Reassign((String *)v30, v7); /*0x6b95a4*/
-    v8 = *(unsigned int *)this->__pad_0; /*0x6b95a9*/
+    v8 = *(_DWORD *)this->__pad_0; /*0x6b95a9*/
     qmemcpy(&v30[20], v7 + 1, 0x304u); /*0x6b95b8*/
-    v9 = *(unsigned int **)(v8 + 4 * v5); /*0x6b95ba*/
+    v9 = *(_DWORD **)(v8 + 4 * v5); /*0x6b95ba*/
     v10 = v9[194]; /*0x6b95bf*/
     if ( v9 ) /*0x6b95c5*/
     {
       DeleteAndZero(*(ObjectClass **)(v8 + 4 * v5)); /*0x6b95c9*/
       RA2_OPDEL(v9); /*0x6b95cf*/
     }
-    *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v5) = v10; /*0x6b95de*/
+    *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v5) = v10; /*0x6b95de*/
     v11 = v28 < *(double *)&this->HashTable_field_0x20; /*0x6b95e4*/
     v12 = v28 == *(double *)&this->HashTable_field_0x20; /*0x6b95e4*/
     --this->HashTable_field_0x04; /*0x6b95e8*/
@@ -538,14 +541,14 @@ CampaignClass * * HashTable_flat::Clear()
       v13 = this->HashTable_field_0x08; /*0x6b95f6*/
       if ( v13 > this->HashTable_field_0x30 && IDA_LOBYTE(this->HashTable_field_0x14) != 1 ) /*0x6b9608*/
       {
-        HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
-        v15 = (unsigned int)(*(int **)this->__pad_0);
+        HashTable_field_0x0C = this->HashTable_field_0x0C; /*0x6b960e*/
+        v15 = *(int **)this->__pad_0; /*0x6b9611*/
         v29 = *(int **)this->__pad_0; /*0x6b9616*/
         this->HashTable_field_0x08 = v13 >> 1; /*0x6b961d*/
         this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x6b9627*/
         v16 = (void *)RA2_OPNEW(4 * (v13 >> 1)); /*0x6b9633*/
         v17 = 4 * this->HashTable_field_0x08; /*0x6b9638*/
-        *(unsigned int *)this->__pad_0 = v16; /*0x6b963f*/
+        *(_DWORD *)this->__pad_0 = v16; /*0x6b963f*/
         memset(v16, 0, v17); /*0x6b9645*/
         if ( (int)v13 > 0 ) /*0x6b9650*/
         {
@@ -560,10 +563,10 @@ CampaignClass * * HashTable_flat::Clear()
               {
                 v21 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v20) /*0x6b966c*/
                     & ((1 << this->HashTable_field_0x0C) - 1);
-                v22 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v21); /*0x6b9671*/
-                *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v21) = v20; /*0x6b9677*/
-                v23 = *(unsigned int *)(v20 + 776); /*0x6b9679*/
-                *(unsigned int *)(v20 + 776) = v22; /*0x6b967f*/
+                v22 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v21); /*0x6b9671*/
+                *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v21) = v20; /*0x6b9677*/
+                v23 = *(_DWORD *)(v20 + 776); /*0x6b9679*/
+                *(_DWORD *)(v20 + 776) = v22; /*0x6b967f*/
                 v20 = v23; /*0x6b9685*/
               }
               while ( v23 ); /*0x6b9689*/
@@ -577,8 +580,8 @@ CampaignClass * * HashTable_flat::Clear()
         RA2_OPDEL(v15); /*0x6b9696*/
       }
     }
-    if ( *(unsigned int *)&v30[20] ) /*0x6b96a4*/
-      (***(void (__thiscall ****)(unsigned int, int))&v30[20])(*(unsigned int *)&v30[20], 1); /*0x6b96ae*/
+    if ( *(_DWORD *)&v30[20] ) /*0x6b96a4*/
+      (***(void (__thiscall ****)(_DWORD, int))&v30[20])(*(_DWORD *)&v30[20], 1); /*0x6b96ae*/
   }
   LABEL_23:
   DeleteAndZero((ObjectClass *)v30); /*0x6b96b5*/
@@ -586,7 +589,7 @@ CampaignClass * * HashTable_flat::Clear()
   {
     do /*0x6b96fe*/
     {
-      v24 = *(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v3); /*0x6b96c6*/
+      v24 = *(ObjectClass **)(*(_DWORD *)this->__pad_0 + 4 * v3); /*0x6b96c6*/
       while ( v24 ) /*0x6b96cb*/
       {
         v25 = v24; /*0x6b96cd*/
@@ -595,7 +598,7 @@ CampaignClass * * HashTable_flat::Clear()
         RA2_OPDEL(v25); /*0x6b96e1*/
       }
       ++v3; /*0x6b96f0*/
-      *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v3 - 4) = 0; /*0x6b96f1*/
+      *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v3 - 4) = 0; /*0x6b96f1*/
     }
     while ( v3 < this->HashTable_field_0x08 ); /*0x6b96fe*/
   }
@@ -632,14 +635,14 @@ int HashTable_flat::Find(const char * a1, ConvertClass * aP2)
   }
   dword_B0B948 = 0; /*0x6ba17c*/
   if ( this->HashTable_field_0x04 /*0x6ba1a8*/
-    && (v4 = *(unsigned int *)(*(unsigned int *)this->__pad_0
+    && (v4 = *(_DWORD *)(*(_DWORD *)this->__pad_0
                        + 4
                        * (((int (__thiscall *)(const char **))this->HashTable_field_0x18)(&a1)
                         & ((1 << this->HashTable_field_0x0C) - 1)))) != 0 )
   {
-    while ( !(uint8_t)String::Compare((String *)v4, &a1) ) /*0x6ba1b8*/
+    while ( !(unsigned __int8)String::Compare((String *)v4, &a1) ) /*0x6ba1b8*/
     {
-      v4 = *(unsigned int *)(v4 + 776); /*0x6ba1ba*/
+      v4 = *(_DWORD *)(v4 + 776); /*0x6ba1ba*/
       if ( !v4 ) /*0x6ba1c2*/
         goto LABEL_7; /*0x6ba1c2*/
     }
@@ -671,28 +674,28 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
   int HashTable_field_0x08; // edx
   int v8; // esi
   int v9; // edi
-  unsigned int *v10; // edi
+  _DWORD *v10; // edi
   int v11; // ebp
   double v12; // st7
   bool v13; // c0
   bool v14; // c3
   int v15; // esi
-  unsigned char v16[784]; // [esp+Ch] [ebp-310h] BYREF
+  _BYTE v16[784]; // [esp+Ch] [ebp-310h] BYREF
 
   String::Assign((String *)v16, a2); /*0x6ba247*/
   HashTable_field_0x04 = this->HashTable_field_0x04; /*0x6ba24c*/
-  *(unsigned int *)&v16[12] = 0; /*0x6ba253*/
+  *(_DWORD *)&v16[12] = 0; /*0x6ba253*/
   if ( !HashTable_field_0x04 ) /*0x6ba257*/
     goto LABEL_24; /*0x6ba257*/
-  v4 = *(unsigned int *)(*(unsigned int *)this->__pad_0 /*0x6ba273*/
+  v4 = *(_DWORD *)(*(_DWORD *)this->__pad_0 /*0x6ba273*/
                  + 4
-                 * (((int (__thiscall *)(unsigned char *))this->HashTable_field_0x18)(v16)
+                 * (((int (__thiscall *)(_BYTE *))this->HashTable_field_0x18)(v16)
                   & ((1 << this->HashTable_field_0x0C) - 1)));
   if ( !v4 ) /*0x6ba278*/
     goto LABEL_24; /*0x6ba278*/
-  while ( !(uint8_t)String::Compare((String *)v4, (const char **)v16) ) /*0x6ba28c*/
+  while ( !(unsigned __int8)String::Compare((String *)v4, (const char **)v16) ) /*0x6ba28c*/
   {
-    v4 = *(unsigned int *)(v4 + 776); /*0x6ba28e*/
+    v4 = *(_DWORD *)(v4 + 776); /*0x6ba28e*/
     if ( !v4 ) /*0x6ba296*/
       goto LABEL_24; /*0x6ba296*/
   }
@@ -703,23 +706,23 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
   if ( v6 ) /*0x6ba2bd*/
   {
     HashTable_field_0x08 = this->HashTable_field_0x08; /*0x6ba2c3*/
-    *(unsigned long long *)&v16[4] = (unsigned int)(v6 - 1); /*0x6ba2c7*/
-    *(float *)&v16[4] = (double)*(int64_t *)&v16[4] / (double)HashTable_field_0x08; /*0x6ba2e3*/
-    v8 = ((int (__thiscall *)(unsigned char *))this->HashTable_field_0x18)(v16) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6ba2f5*/
-    v9 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v8); /*0x6ba2f9*/
+    *(_QWORD *)&v16[4] = (unsigned int)(v6 - 1); /*0x6ba2c7*/
+    *(float *)&v16[4] = (double)*(__int64 *)&v16[4] / (double)HashTable_field_0x08; /*0x6ba2e3*/
+    v8 = ((int (__thiscall *)(_BYTE *))this->HashTable_field_0x18)(v16) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6ba2f5*/
+    v9 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v8); /*0x6ba2f9*/
     if ( v9 ) /*0x6ba2fe*/
     {
-      if ( (uint8_t)String::Compare((String *)v9, (const char **)v16) ) /*0x6ba30b*/
+      if ( (unsigned __int8)String::Compare((String *)v9, (const char **)v16) ) /*0x6ba30b*/
       {
-        v10 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v8); /*0x6ba316*/
+        v10 = *(_DWORD **)(*(_DWORD *)this->__pad_0 + 4 * v8); /*0x6ba316*/
         v11 = v10[194]; /*0x6ba31b*/
         if ( v10 ) /*0x6ba321*/
         {
-          DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v8)); /*0x6ba325*/
+          DeleteAndZero(*(ObjectClass **)(*(_DWORD *)this->__pad_0 + 4 * v8)); /*0x6ba325*/
           RA2_OPDEL(v10); /*0x6ba32b*/
         }
         v12 = *(float *)&v16[4]; /*0x6ba335*/
-        *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v8) = v11; /*0x6ba339*/
+        *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v8) = v11; /*0x6ba339*/
         v13 = v12 < *(double *)&this->HashTable_field_0x20; /*0x6ba33f*/
         v14 = v12 == *(double *)&this->HashTable_field_0x20; /*0x6ba33f*/
         --this->HashTable_field_0x04; /*0x6ba343*/
@@ -728,17 +731,17 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
       }
       else
       {
-        v15 = *(unsigned int *)(v9 + 776); /*0x6ba34f*/
+        v15 = *(_DWORD *)(v9 + 776); /*0x6ba34f*/
         if ( v15 ) /*0x6ba357*/
         {
-          while ( !(uint8_t)String::Compare((String *)v15, (const char **)v16) ) /*0x6ba367*/
+          while ( !(unsigned __int8)String::Compare((String *)v15, (const char **)v16) ) /*0x6ba367*/
           {
             v9 = v15; /*0x6ba369*/
-            v15 = *(unsigned int *)(v15 + 776); /*0x6ba36b*/
+            v15 = *(_DWORD *)(v15 + 776); /*0x6ba36b*/
             if ( !v15 ) /*0x6ba373*/
               goto LABEL_20; /*0x6ba373*/
           }
-          *(unsigned int *)(v9 + 776) = *(unsigned int *)(v15 + 776); /*0x6ba37d*/
+          *(_DWORD *)(v9 + 776) = *(_DWORD *)(v15 + 776); /*0x6ba37d*/
           --this->HashTable_field_0x04; /*0x6ba389*/
           DeleteAndZero((ObjectClass *)v15); /*0x6ba390*/
           RA2_OPDEL((void *)v15); /*0x6ba396*/
@@ -751,8 +754,8 @@ CampaignClass * * HashTable_flat::RemoveEntry(const char * a2)
     }
   }
   LABEL_22:
-  if ( *(unsigned int *)&v16[12] ) /*0x6ba3ba*/
-    (***(void (__thiscall ****)(unsigned int, int))&v16[12])(*(unsigned int *)&v16[12], 1); /*0x6ba3c0*/
+  if ( *(_DWORD *)&v16[12] ) /*0x6ba3ba*/
+    (***(void (__thiscall ****)(_DWORD, int))&v16[12])(*(_DWORD *)&v16[12], 1); /*0x6ba3c0*/
   LABEL_24:
   DeleteAndZero((ObjectClass *)v16); /*0x6ba3c2*/
 }
@@ -949,17 +952,17 @@ AbstractClass * * HashTable_flat::RebuildEx()
   int v12; // eax
   int *v13; // [esp+8h] [ebp-4h]
 
-  HashTable_field_0x08 = (int *)(this->HashTable_field_0x08);
+  HashTable_field_0x08 = this->HashTable_field_0x08; /*0x6baef5*/
   if ( HashTable_field_0x08 > this->HashTable_field_0x30 && IDA_LOBYTE(this->HashTable_field_0x14) != 1 ) /*0x6baf07*/
   {
-    v3 = (unsigned int)(*(int **)this->__pad_0);
-    HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
+    v3 = *(int **)this->__pad_0; /*0x6baf10*/
+    HashTable_field_0x0C = this->HashTable_field_0x0C; /*0x6baf13*/
     v13 = *(int **)this->__pad_0; /*0x6baf16*/
     this->HashTable_field_0x08 = HashTable_field_0x08 >> 1; /*0x6baf1c*/
     this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x6baf24*/
     v5 = (void *)RA2_OPNEW(4 * (HashTable_field_0x08 >> 1)); /*0x6baf2f*/
     v6 = 4 * this->HashTable_field_0x08; /*0x6baf34*/
-    *(unsigned int *)this->__pad_0 = v5; /*0x6baf3b*/
+    *(_DWORD *)this->__pad_0 = v5; /*0x6baf3b*/
     memset(v5, 0, v6); /*0x6baf40*/
     if ( (int)HashTable_field_0x08 > 0 ) /*0x6baf4b*/
     {
@@ -973,10 +976,10 @@ AbstractClass * * HashTable_flat::RebuildEx()
           do /*0x6baf83*/
           {
             v10 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v9) & ((1 << this->HashTable_field_0x0C) - 1); /*0x6baf67*/
-            v11 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10); /*0x6baf6b*/
-            *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10) = v9; /*0x6baf71*/
-            v12 = *(unsigned int *)(v9 + 776); /*0x6baf73*/
-            *(unsigned int *)(v9 + 776) = v11; /*0x6baf79*/
+            v11 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v10); /*0x6baf6b*/
+            *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v10) = v9; /*0x6baf71*/
+            v12 = *(_DWORD *)(v9 + 776); /*0x6baf73*/
+            *(_DWORD *)(v9 + 776) = v11; /*0x6baf79*/
             v9 = v12; /*0x6baf7f*/
           }
           while ( v12 ); /*0x6baf83*/
@@ -1125,13 +1128,13 @@ unsigned int HashTable_flat::CleanupAndResize()
   int v16; // eax
   int *v17; // [esp+10h] [ebp-4h]
 
-  for ( i = 0; i < this->HashTable_field_0x08; *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * i - 4) = 0 ) /*0x7ace67*/
+  for ( i = 0; i < this->HashTable_field_0x08; *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * i - 4) = 0 ) /*0x7ace67*/
   {
-    v3 = *(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * i); /*0x7ace72*/
+    v3 = *(ObjectClass **)(*(_DWORD *)this->__pad_0 + 4 * i); /*0x7ace72*/
     while ( v3 ) /*0x7ace77*/
     {
       v4 = v3; /*0x7ace79*/
-      v3 = (ObjectClass *)v3->vtable2; /*0x7ace7b*/
+      v3 = (ObjectClass *)v3->?; /*0x7ace7b*/
       DeleteAndZero(v4); /*0x7ace84*/
       RA2_OPDEL(v4); /*0x7ace8a*/
     }
@@ -1145,14 +1148,14 @@ unsigned int HashTable_flat::CleanupAndResize()
       break; /*0x7acec2*/
     if ( HashTable_field_0x08 > result ) /*0x7aceca*/
     {
-      HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
-      v8 = (unsigned int)(*(int **)this->__pad_0);
+      HashTable_field_0x0C = this->HashTable_field_0x0C; /*0x7aced0*/
+      v8 = *(int **)this->__pad_0; /*0x7aced3*/
       v17 = *(int **)this->__pad_0; /*0x7aced7*/
       this->HashTable_field_0x08 = HashTable_field_0x08 >> 1; /*0x7acede*/
       this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x7acee8*/
       v9 = (void *)RA2_OPNEW(4 * (HashTable_field_0x08 >> 1)); /*0x7acef4*/
       v10 = 4 * this->HashTable_field_0x08; /*0x7acef9*/
-      *(unsigned int *)this->__pad_0 = v9; /*0x7acf00*/
+      *(_DWORD *)this->__pad_0 = v9; /*0x7acf00*/
       memset(v9, 0, v10); /*0x7acf05*/
       if ( (int)HashTable_field_0x08 > 0 ) /*0x7acf10*/
       {
@@ -1166,10 +1169,10 @@ unsigned int HashTable_flat::CleanupAndResize()
             do /*0x7acf42*/
             {
               v14 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v13) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7acf2c*/
-              v15 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v14); /*0x7acf30*/
-              *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v14) = v13; /*0x7acf36*/
-              v16 = *(unsigned int *)(v13 + 8); /*0x7acf38*/
-              *(unsigned int *)(v13 + 8) = v15; /*0x7acf3b*/
+              v15 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v14); /*0x7acf30*/
+              *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v14) = v13; /*0x7acf36*/
+              v16 = *(_DWORD *)(v13 + 8); /*0x7acf38*/
+              *(_DWORD *)(v13 + 8) = v15; /*0x7acf3b*/
               v13 = v16; /*0x7acf3e*/
             }
             while ( v16 ); /*0x7acf42*/
@@ -1208,9 +1211,9 @@ unsigned int HashTable_flat::Rebuild()
   int v16; // eax
   int *v17; // [esp+10h] [ebp-4h]
 
-  for ( i = 0; i < this->HashTable_field_0x08; *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * i - 4) = 0 ) /*0x7acf77*/
+  for ( i = 0; i < this->HashTable_field_0x08; *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * i - 4) = 0 ) /*0x7acf77*/
   {
-    customSound = *(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * i); /*0x7acf82*/
+    customSound = *(ObjectClass **)(*(_DWORD *)this->__pad_0 + 4 * i); /*0x7acf82*/
     while ( customSound ) /*0x7acf87*/
     {
       v4 = customSound; /*0x7acf89*/
@@ -1228,14 +1231,14 @@ unsigned int HashTable_flat::Rebuild()
       break; /*0x7acfd5*/
     if ( HashTable_field_0x08 > result ) /*0x7acfdd*/
     {
-      HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
-      v8 = (unsigned int)(*(int **)this->__pad_0);
+      HashTable_field_0x0C = this->HashTable_field_0x0C; /*0x7acfe3*/
+      v8 = *(int **)this->__pad_0; /*0x7acfe6*/
       v17 = *(int **)this->__pad_0; /*0x7acfea*/
       this->HashTable_field_0x08 = HashTable_field_0x08 >> 1; /*0x7acff1*/
       this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x7acffb*/
       v9 = (void *)RA2_OPNEW(4 * (HashTable_field_0x08 >> 1)); /*0x7ad007*/
       v10 = 4 * this->HashTable_field_0x08; /*0x7ad00c*/
-      *(unsigned int *)this->__pad_0 = v9; /*0x7ad013*/
+      *(_DWORD *)this->__pad_0 = v9; /*0x7ad013*/
       memset(v9, 0, v10); /*0x7ad018*/
       if ( (int)HashTable_field_0x08 > 0 ) /*0x7ad023*/
       {
@@ -1249,10 +1252,10 @@ unsigned int HashTable_flat::Rebuild()
             do /*0x7ad05b*/
             {
               v14 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v13) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7ad03f*/
-              v15 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v14); /*0x7ad043*/
-              *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v14) = v13; /*0x7ad049*/
-              v16 = *(unsigned int *)(v13 + 272); /*0x7ad04b*/
-              *(unsigned int *)(v13 + 272) = v15; /*0x7ad051*/
+              v15 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v14); /*0x7ad043*/
+              *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v14) = v13; /*0x7ad049*/
+              v16 = *(_DWORD *)(v13 + 272); /*0x7ad04b*/
+              *(_DWORD *)(v13 + 272) = v15; /*0x7ad051*/
               v13 = v16; /*0x7ad057*/
             }
             while ( v16 ); /*0x7ad05b*/
@@ -1282,16 +1285,16 @@ int HashTable_flat::LookupString(const char ** a2, unsigned int * a3)
   if ( result ) /*0x7adc69*/
   {
     v5 = ((int (__thiscall *)(const char **))this->HashTable_field_0x18)(a2) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7adc86*/
-    result = *(unsigned int *)this->__pad_0; /*0x7adc88*/
-    v6 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v5); /*0x7adc8a*/
+    result = *(_DWORD *)this->__pad_0; /*0x7adc88*/
+    v6 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v5); /*0x7adc8a*/
     if ( v6 ) /*0x7adc8f*/
     {
       while ( 1 ) /*0x7adc9b*/
       {
         result = String::Compare((String *)v6, a2); /*0x7adc9b*/
-        if ( (unsigned char)result ) /*0x7adca2*/
+        if ( (_BYTE)result ) /*0x7adca2*/
           break; /*0x7adca2*/
-        v6 = *(unsigned int *)(v6 + 112); /*0x7adca4*/
+        v6 = *(_DWORD *)(v6 + 112); /*0x7adca4*/
         if ( !v6 ) /*0x7adca9*/
           return result; /*0x7adca9*/
       }
@@ -1317,7 +1320,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
   int HashTable_field_0x04; // eax
   int v7; // ebx
   int v8; // esi
-  unsigned int *v9; // esi
+  _DWORD *v9; // esi
   int v10; // edi
   bool v11; // c0
   bool v12; // c3
@@ -1352,37 +1355,37 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
     return 0; /*0x7adce5*/
   v37 = (double)(unsigned int)(HashTable_field_0x04 - 1) / (double)this->HashTable_field_0x08; /*0x7add10*/
   v7 = ((int (__thiscall *)(const char **))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7add25*/
-  v8 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7add27*/
+  v8 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v7); /*0x7add27*/
   v36 = v8; /*0x7add2c*/
   if ( !v8 ) /*0x7add30*/
     return 0; /*0x7add35*/
-  if ( (uint8_t)String::Compare((String *)v8, aP1) ) /*0x7add41*/
+  if ( (unsigned __int8)String::Compare((String *)v8, aP1) ) /*0x7add41*/
   {
     qmemcpy(a2, (const void *)(v8 + 4), 0x6Cu); /*0x7add5a*/
-    v9 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7add5f*/
+    v9 = *(_DWORD **)(*(_DWORD *)this->__pad_0 + 4 * v7); /*0x7add5f*/
     v10 = v9[28]; /*0x7add64*/
     if ( v9 ) /*0x7add67*/
     {
-      DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v7)); /*0x7add6b*/
+      DeleteAndZero(*(ObjectClass **)(*(_DWORD *)this->__pad_0 + 4 * v7)); /*0x7add6b*/
       RA2_OPDEL(v9); /*0x7add71*/
     }
-    *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7) = v10; /*0x7add80*/
+    *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v7) = v10; /*0x7add80*/
     v11 = v37 < *(double *)&this->HashTable_field_0x20; /*0x7add86*/
     v12 = v37 == *(double *)&this->HashTable_field_0x20; /*0x7add86*/
     --this->HashTable_field_0x04; /*0x7add8a*/
     if ( v11 || v12 ) /*0x7add8f*/
     {
-      HashTable_field_0x08 = (int *)(this->HashTable_field_0x08);
+      HashTable_field_0x08 = this->HashTable_field_0x08; /*0x7add98*/
       if ( HashTable_field_0x08 > this->HashTable_field_0x30 && IDA_LOBYTE(this->HashTable_field_0x14) != 1 ) /*0x7addaa*/
       {
-        v14 = (unsigned int)(*(int **)this->__pad_0);
-        v39 = (unsigned int)(*(int **)this->__pad_0);
+        v14 = *(int **)this->__pad_0; /*0x7addb3*/
+        v39 = *(int **)this->__pad_0; /*0x7addb8*/
         v15 = this->HashTable_field_0x0C - 1; /*0x7addbe*/
         this->HashTable_field_0x08 = HashTable_field_0x08 >> 1; /*0x7addbf*/
         this->HashTable_field_0x0C = v15; /*0x7addc9*/
         v16 = (void *)RA2_OPNEW(4 * (HashTable_field_0x08 >> 1)); /*0x7addd5*/
         v17 = 4 * this->HashTable_field_0x08; /*0x7addda*/
-        *(unsigned int *)this->__pad_0 = v16; /*0x7adde1*/
+        *(_DWORD *)this->__pad_0 = v16; /*0x7adde1*/
         memset(v16, 0, v17); /*0x7adde7*/
         if ( (int)HashTable_field_0x08 > 0 ) /*0x7addf2*/
         {
@@ -1397,10 +1400,10 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
               {
                 v21 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v20) /*0x7ade0e*/
                     & ((1 << this->HashTable_field_0x0C) - 1);
-                v22 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v21); /*0x7ade13*/
-                *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v21) = v20; /*0x7ade19*/
-                v23 = *(unsigned int *)(v20 + 112); /*0x7ade1b*/
-                *(unsigned int *)(v20 + 112) = v22; /*0x7ade1e*/
+                v22 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v21); /*0x7ade13*/
+                *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v21) = v20; /*0x7ade19*/
+                v23 = *(_DWORD *)(v20 + 112); /*0x7ade1b*/
+                *(_DWORD *)(v20 + 112) = v22; /*0x7ade1e*/
                 v20 = v23; /*0x7ade21*/
               }
               while ( v23 ); /*0x7ade25*/
@@ -1414,15 +1417,15 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
         RA2_OPDEL(v14); /*0x7ade32*/
       }
     }
-    return (gamemd::AbstractClass **)(1);
+    return 1; /*0x7ade3d*/
   }
   else
   {
-    v24 = *(unsigned int *)(v8 + 112); /*0x7ade46*/
+    v24 = *(_DWORD *)(v8 + 112); /*0x7ade46*/
     v38 = 0; /*0x7ade49*/
     if ( v24 ) /*0x7ade50*/
     {
-      while ( !(uint8_t)String::Compare((String *)v24, aP1) ) /*0x7ade5c*/
+      while ( !(unsigned __int8)String::Compare((String *)v24, aP1) ) /*0x7ade5c*/
       {
         v36 = v24; /*0x7ade5e*/
         v24 = v24->estimatedHealth; /*0x7ade62*/
@@ -1442,14 +1445,14 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
       v25 = this->HashTable_field_0x08; /*0x7adeb5*/
       if ( v25 > this->HashTable_field_0x30 && IDA_LOBYTE(this->HashTable_field_0x14) != 1 ) /*0x7adec7*/
       {
-        HashTable_field_0x0C = (unsigned int)(this->HashTable_field_0x0C);
+        HashTable_field_0x0C = this->HashTable_field_0x0C; /*0x7adecd*/
         v27 = *(int **)this->__pad_0; /*0x7aded0*/
         v40 = *(int **)this->__pad_0; /*0x7aded5*/
         this->HashTable_field_0x08 = v25 >> 1; /*0x7adedb*/
         this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x7adee3*/
         v28 = (void *)RA2_OPNEW(4 * (v25 >> 1)); /*0x7adeee*/
         v29 = 4 * this->HashTable_field_0x08; /*0x7adef3*/
-        *(unsigned int *)this->__pad_0 = v28; /*0x7adefa*/
+        *(_DWORD *)this->__pad_0 = v28; /*0x7adefa*/
         memset(v28, 0, v29); /*0x7adf00*/
         if ( (int)v25 > 0 ) /*0x7adf0b*/
         {
@@ -1464,8 +1467,8 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
               {
                 v33 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v32) /*0x7adf27*/
                     & ((1 << this->HashTable_field_0x0C) - 1);
-                v34 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v33); /*0x7adf2c*/
-                *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v33) = v32; /*0x7adf32*/
+                v34 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v33); /*0x7adf2c*/
+                *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v33) = v32; /*0x7adf32*/
                 v35 = v32->estimatedHealth; /*0x7adf34*/
                 v32->estimatedHealth = v34; /*0x7adf37*/
                 v32 = v35; /*0x7adf3a*/
@@ -1481,7 +1484,7 @@ AbstractClass * * HashTable_flat::Insert(ObjectClass * aP1, void * a2)
         RA2_OPDEL(v27); /*0x7adf4b*/
       }
     }
-    return (gamemd::AbstractClass **)(v38);
+    return v38; /*0x7adf53*/
   }
 }
 } // namespace gamemd
@@ -1492,7 +1495,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
   int HashTable_field_0x04; // eax
   int v7; // edi
   int v8; // ebp
-  unsigned int *v9; // ebp
+  _DWORD *v9; // ebp
   int v10; // ebx
   bool v11; // c0
   bool v12; // c3
@@ -1525,20 +1528,20 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
     return 0; /*0x7ae205*/
   v32 = (double)(unsigned int)(HashTable_field_0x04 - 1) / (double)this->HashTable_field_0x08; /*0x7ae230*/
   v7 = ((int (__thiscall *)(const char **))this->HashTable_field_0x18)(aP1) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7ae244*/
-  v8 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7ae246*/
+  v8 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v7); /*0x7ae246*/
   if ( !v8 ) /*0x7ae24b*/
     return 0; /*0x7ae250*/
-  if ( (uint8_t)String::Compare((String *)v8, aP1) ) /*0x7ae25c*/
+  if ( (unsigned __int8)String::Compare((String *)v8, aP1) ) /*0x7ae25c*/
   {
     *aP2 = v8->vtable2; /*0x7ae270*/
-    v9 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7ae274*/
+    v9 = *(_DWORD **)(*(_DWORD *)this->__pad_0 + 4 * v7); /*0x7ae274*/
     v10 = v9[2]; /*0x7ae279*/
     if ( v9 ) /*0x7ae27c*/
     {
-      DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v7)); /*0x7ae280*/
+      DeleteAndZero(*(ObjectClass **)(*(_DWORD *)this->__pad_0 + 4 * v7)); /*0x7ae280*/
       RA2_OPDEL(v9); /*0x7ae286*/
     }
-    *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7) = v10; /*0x7ae294*/
+    *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v7) = v10; /*0x7ae294*/
     v11 = v32 < *(double *)&this->HashTable_field_0x20; /*0x7ae29a*/
     v12 = v32 == *(double *)&this->HashTable_field_0x20; /*0x7ae29a*/
     --this->HashTable_field_0x04; /*0x7ae29e*/
@@ -1554,7 +1557,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
         this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x7ae2d5*/
         v16 = (void *)RA2_OPNEW(4 * (HashTable_field_0x08 >> 1)); /*0x7ae2e0*/
         v17 = 4 * this->HashTable_field_0x08; /*0x7ae2e5*/
-        *(unsigned int *)this->__pad_0 = v16; /*0x7ae2ec*/
+        *(_DWORD *)this->__pad_0 = v16; /*0x7ae2ec*/
         memset(v16, 0, v17); /*0x7ae2f1*/
         if ( (int)HashTable_field_0x08 > 0 ) /*0x7ae2fc*/
         {
@@ -1567,10 +1570,10 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
               {
                 v19 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v18) /*0x7ae314*/
                     & ((1 << this->HashTable_field_0x0C) - 1);
-                v20 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v19); /*0x7ae318*/
-                *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v19) = v18; /*0x7ae31e*/
-                v21 = *(unsigned int *)(v18 + 8); /*0x7ae320*/
-                *(unsigned int *)(v18 + 8) = v20; /*0x7ae323*/
+                v20 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v19); /*0x7ae318*/
+                *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v19) = v18; /*0x7ae31e*/
+                v21 = *(_DWORD *)(v18 + 8); /*0x7ae320*/
+                *(_DWORD *)(v18 + 8) = v20; /*0x7ae323*/
                 v18 = v21; /*0x7ae326*/
               }
               while ( v21 ); /*0x7ae32a*/
@@ -1592,7 +1595,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
     v33 = 0; /*0x7ae34e*/
     if ( v22 ) /*0x7ae355*/
     {
-      while ( !(uint8_t)String::Compare((String *)v22, aP1) ) /*0x7ae361*/
+      while ( !(unsigned __int8)String::Compare((String *)v22, aP1) ) /*0x7ae361*/
       {
         v8 = v22; /*0x7ae363*/
         v22 = v22->vtable3; /*0x7ae365*/
@@ -1619,7 +1622,7 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
         this->HashTable_field_0x0C = v25; /*0x7ae3df*/
         v26 = (void *)RA2_OPNEW(4 * (v23 >> 1)); /*0x7ae3eb*/
         v27 = 4 * this->HashTable_field_0x08; /*0x7ae3f0*/
-        *(unsigned int *)this->__pad_0 = v26; /*0x7ae3f7*/
+        *(_DWORD *)this->__pad_0 = v26; /*0x7ae3f7*/
         memset(v26, 0, v27); /*0x7ae3fc*/
         if ( (int)v23 > 0 ) /*0x7ae407*/
         {
@@ -1632,10 +1635,10 @@ AbstractClass * * HashTable_flat::Lookup(ObjectClass * aP1, TechnoTypeClass * aP
               {
                 v29 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v28) /*0x7ae41f*/
                     & ((1 << this->HashTable_field_0x0C) - 1);
-                v30 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v29); /*0x7ae423*/
-                *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v29) = v28; /*0x7ae429*/
-                v31 = *(unsigned int *)(v28 + 8); /*0x7ae42b*/
-                *(unsigned int *)(v28 + 8) = v30; /*0x7ae42e*/
+                v30 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v29); /*0x7ae423*/
+                *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v29) = v28; /*0x7ae429*/
+                v31 = *(_DWORD *)(v28 + 8); /*0x7ae42b*/
+                *(_DWORD *)(v28 + 8) = v30; /*0x7ae42e*/
                 v28 = v31; /*0x7ae431*/
               }
               while ( v31 ); /*0x7ae435*/
@@ -1658,7 +1661,7 @@ namespace gamemd {
 AbstractClass * * HashTable_flat::Grow()
 {
   int HashTable_field_0x08; // esi
-  unsigned int *v3; // ebp
+  _DWORD *v3; // ebp
   int v4; // edi
   void *v5; // edi
   unsigned int v6; // edx
@@ -1668,19 +1671,19 @@ AbstractClass * * HashTable_flat::Grow()
   int v10; // edx
   int v11; // ecx
   int v12; // eax
-  unsigned int *v13; // [esp+4h] [ebp-4h]
+  _DWORD *v13; // [esp+4h] [ebp-4h]
 
   if ( IDA_LOBYTE(this->HashTable_field_0x14) != 1 ) /*0x7ae518*/
   {
     HashTable_field_0x08 = this->HashTable_field_0x08; /*0x7ae520*/
-    v3 = *(unsigned int **)this->__pad_0; /*0x7ae523*/
+    v3 = *(_DWORD **)this->__pad_0; /*0x7ae523*/
     v4 = this->HashTable_field_0x0C + 1; /*0x7ae52c*/
     this->HashTable_field_0x08 = 2 * HashTable_field_0x08; /*0x7ae52d*/
     v13 = v3; /*0x7ae530*/
     this->HashTable_field_0x0C = v4; /*0x7ae538*/
     v5 = (void *)RA2_OPNEW(8 * HashTable_field_0x08); /*0x7ae543*/
     v6 = 4 * this->HashTable_field_0x08; /*0x7ae548*/
-    *(unsigned int *)this->__pad_0 = v5; /*0x7ae54f*/
+    *(_DWORD *)this->__pad_0 = v5; /*0x7ae54f*/
     memset(v5, 0, v6); /*0x7ae554*/
     if ( HashTable_field_0x08 > 0 ) /*0x7ae55f*/
     {
@@ -1694,10 +1697,10 @@ AbstractClass * * HashTable_flat::Grow()
           do /*0x7ae591*/
           {
             v10 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v9) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7ae57b*/
-            v11 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10); /*0x7ae57f*/
-            *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v10) = v9; /*0x7ae585*/
-            v12 = *(unsigned int *)(v9 + 8); /*0x7ae587*/
-            *(unsigned int *)(v9 + 8) = v11; /*0x7ae58a*/
+            v11 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v10); /*0x7ae57f*/
+            *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v10) = v9; /*0x7ae585*/
+            v12 = *(_DWORD *)(v9 + 8); /*0x7ae587*/
+            *(_DWORD *)(v9 + 8) = v11; /*0x7ae58a*/
             v9 = v12; /*0x7ae58d*/
           }
           while ( v12 ); /*0x7ae591*/
@@ -1719,7 +1722,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
   int HashTable_field_0x04; // eax
   int v7; // ebx
   int v8; // esi
-  unsigned int *v9; // esi
+  _DWORD *v9; // esi
   int v10; // edi
   bool v11; // c0
   bool v12; // c3
@@ -1754,21 +1757,21 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
     return 0; /*0x7ae965*/
   v37 = (double)(unsigned int)(HashTable_field_0x04 - 1) / (double)this->HashTable_field_0x08; /*0x7ae990*/
   v7 = ((int (__thiscall *)(const char **))this->HashTable_field_0x18)(a2) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7ae9a5*/
-  v8 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7ae9a7*/
+  v8 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v7); /*0x7ae9a7*/
   v36 = v8; /*0x7ae9ac*/
   if ( !v8 ) /*0x7ae9b0*/
     return 0; /*0x7ae9b5*/
-  if ( (uint8_t)String::Compare((String *)v8, a2) ) /*0x7ae9c1*/
+  if ( (unsigned __int8)String::Compare((String *)v8, a2) ) /*0x7ae9c1*/
   {
     qmemcpy(a3, (const void *)(v8 + 4), 0x10Cu); /*0x7ae9da*/
-    v9 = *(unsigned int **)(*(unsigned int *)this->__pad_0 + 4 * v7); /*0x7ae9df*/
+    v9 = *(_DWORD **)(*(_DWORD *)this->__pad_0 + 4 * v7); /*0x7ae9df*/
     v10 = v9[68]; /*0x7ae9e4*/
     if ( v9 ) /*0x7ae9ea*/
     {
-      DeleteAndZero(*(ObjectClass **)(*(unsigned int *)this->__pad_0 + 4 * v7)); /*0x7ae9ee*/
+      DeleteAndZero(*(ObjectClass **)(*(_DWORD *)this->__pad_0 + 4 * v7)); /*0x7ae9ee*/
       RA2_OPDEL(v9); /*0x7ae9f4*/
     }
-    *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v7) = v10; /*0x7aea03*/
+    *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v7) = v10; /*0x7aea03*/
     v11 = v37 < *(double *)&this->HashTable_field_0x20; /*0x7aea09*/
     v12 = v37 == *(double *)&this->HashTable_field_0x20; /*0x7aea09*/
     --this->HashTable_field_0x04; /*0x7aea0d*/
@@ -1784,7 +1787,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
         this->HashTable_field_0x0C = v15; /*0x7aea4c*/
         v16 = (void *)RA2_OPNEW(4 * (HashTable_field_0x08 >> 1)); /*0x7aea58*/
         v17 = 4 * this->HashTable_field_0x08; /*0x7aea5d*/
-        *(unsigned int *)this->__pad_0 = v16; /*0x7aea64*/
+        *(_DWORD *)this->__pad_0 = v16; /*0x7aea64*/
         memset(v16, 0, v17); /*0x7aea6a*/
         if ( (int)HashTable_field_0x08 > 0 ) /*0x7aea75*/
         {
@@ -1799,10 +1802,10 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
               {
                 v21 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v20) /*0x7aea91*/
                     & ((1 << this->HashTable_field_0x0C) - 1);
-                v22 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v21); /*0x7aea96*/
-                *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v21) = v20; /*0x7aea9c*/
-                v23 = *(unsigned int *)(v20 + 272); /*0x7aea9e*/
-                *(unsigned int *)(v20 + 272) = v22; /*0x7aeaa4*/
+                v22 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v21); /*0x7aea96*/
+                *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v21) = v20; /*0x7aea9c*/
+                v23 = *(_DWORD *)(v20 + 272); /*0x7aea9e*/
+                *(_DWORD *)(v20 + 272) = v22; /*0x7aeaa4*/
                 v20 = v23; /*0x7aeaaa*/
               }
               while ( v23 ); /*0x7aeaae*/
@@ -1820,11 +1823,11 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
   }
   else
   {
-    v24 = *(unsigned int *)(v8 + 272); /*0x7aeacf*/
+    v24 = *(_DWORD *)(v8 + 272); /*0x7aeacf*/
     v38 = 0; /*0x7aead5*/
     if ( v24 ) /*0x7aeadc*/
     {
-      while ( !(uint8_t)String::Compare((String *)v24, a2) ) /*0x7aeae8*/
+      while ( !(unsigned __int8)String::Compare((String *)v24, a2) ) /*0x7aeae8*/
       {
         v36 = v24; /*0x7aeaea*/
         v24 = v24->q044; /*0x7aeaee*/
@@ -1851,7 +1854,7 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
         this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x7aeb78*/
         v28 = (void *)RA2_OPNEW(4 * (v25 >> 1)); /*0x7aeb83*/
         v29 = 4 * this->HashTable_field_0x08; /*0x7aeb88*/
-        *(unsigned int *)this->__pad_0 = v28; /*0x7aeb8f*/
+        *(_DWORD *)this->__pad_0 = v28; /*0x7aeb8f*/
         memset(v28, 0, v29); /*0x7aeb95*/
         if ( (int)v25 > 0 ) /*0x7aeba0*/
         {
@@ -1866,8 +1869,8 @@ AbstractClass * * HashTable_flat::FindWOLHashTableEntry(const char ** a2, void *
               {
                 v33 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v32) /*0x7aebbc*/
                     & ((1 << this->HashTable_field_0x0C) - 1);
-                v34 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v33); /*0x7aebc1*/
-                *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v33) = v32; /*0x7aebc7*/
+                v34 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v33); /*0x7aebc1*/
+                *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v33) = v32; /*0x7aebc7*/
                 v35 = v32->q044; /*0x7aebc9*/
                 v32->q044 = v34; /*0x7aebcf*/
                 v32 = v35; /*0x7aebd5*/
@@ -1897,7 +1900,6 @@ void HashTable_flat::Shrink()
   int HashTable_field_0x0C; // edi
   void *v6; // edi
   unsigned int v7; // edx
-  int *v8; // edi
   unsigned int v9; // ebp
   int v10; // esi
   int v11; // edx
@@ -1916,29 +1918,29 @@ void HashTable_flat::Shrink()
     this->HashTable_field_0x0C = HashTable_field_0x0C - 1; /*0x7aec34*/
     v6 = (void *)RA2_OPNEW(4 * (HashTable_field_0x08 >> 1)); /*0x7aec3f*/
     v7 = 4 * this->HashTable_field_0x08; /*0x7aec44*/
-    *(unsigned int *)this->__pad_0 = v6; /*0x7aec4b*/
+    *(_DWORD *)this->__pad_0 = v6; /*0x7aec4b*/
     memset(v6, 0, v7); /*0x7aec50*/
     if ( (int)HashTable_field_0x08 > 0 ) /*0x7aec5b*/
     {
-      v8 = v4; /*0x7aec5d*/
+      v4 = v4; /*0x7aec5d*/
       v9 = HashTable_field_0x08; /*0x7aec5f*/
       do /*0x7aec99*/
       {
-        v10 = *v8; /*0x7aec61*/
-        if ( *v8 ) /*0x7aec61*/
+        v10 = *v4; /*0x7aec61*/
+        if ( *v4 ) /*0x7aec61*/
         {
           do /*0x7aec93*/
           {
             v11 = ((int (__thiscall *)(int))this->HashTable_field_0x18)(v10) & ((1 << this->HashTable_field_0x0C) - 1); /*0x7aec77*/
-            v12 = *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v11); /*0x7aec7b*/
-            *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4 * v11) = v10; /*0x7aec81*/
-            v13 = *(unsigned int *)(v10 + 272); /*0x7aec83*/
-            *(unsigned int *)(v10 + 272) = v12; /*0x7aec89*/
+            v12 = *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v11); /*0x7aec7b*/
+            *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4 * v11) = v10; /*0x7aec81*/
+            v13 = *(_DWORD *)(v10 + 272); /*0x7aec83*/
+            *(_DWORD *)(v10 + 272) = v12; /*0x7aec89*/
             v10 = v13; /*0x7aec8f*/
           }
           while ( v13 ); /*0x7aec93*/
         }
-        ++v8; /*0x7aec95*/
+        ++v4; /*0x7aec95*/
         --v9; /*0x7aec98*/
       }
       while ( v9 ); /*0x7aec99*/
@@ -1953,6 +1955,6 @@ void HashTable_flat::Shrink()
 namespace gamemd {
 int HashTable_flat::ComputeHash(int a2)
 {
-  return (*(int (__thiscall **)(int))&this->q060)(a2) & ((1 << this->q030) - 1); /*0x625084*/
+  return ((int (__thiscall *)(int))this->q018)(a2) & ((1 << this->q00C) - 1); /*0x625084*/
 }
 } // namespace gamemd

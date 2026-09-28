@@ -35,6 +35,17 @@ struct E4Recv_74F730 {
     unsigned int q5170;  // 0x5170
     unsigned char q5430;  // 0x5430
     unsigned int q5444;  // 0x5444
+    unsigned int q20848;  // 0x20848
+    unsigned int q33570;  // 0x33570
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1271138;  // 0x1271138
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19337528;  // 0x19337528
+    unsigned int q422802728;  // 0x422802728
+    unsigned int q17758693160;  // 0x17758693160
+    unsigned int q1612096024928;  // 0x1612096024928
+    unsigned int q388226446628134;  // 0x388226446628134
+    unsigned int q388267560290600;  // 0x388267560290600
 // --- flat members (END) ---
     unsigned int * sub_74F730();  // 0x74F730
 };

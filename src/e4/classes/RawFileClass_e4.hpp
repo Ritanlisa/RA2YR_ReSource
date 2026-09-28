@@ -17,8 +17,6 @@ struct RawFileClass {
     char FileTimeDateHi[2];  // 0x16
     bool FileNameAllocated;  // 0x18
     unsigned char tail_19;  // 0x19
-    unsigned int Write;
-    unsigned int __pad_0;
 // --- flat members (END) ---
     int Close(int a2, int a3);
     void Dtor();

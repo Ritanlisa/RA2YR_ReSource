@@ -375,22 +375,6 @@ struct BulletClass {
     unsigned char q518;  // 0x518
     void* q51C;  // 0x51C
     void* q520;  // 0x520
-    unsigned int BulletClass_field_0x10C;
-    unsigned int BulletClass_field_0x130;
-    unsigned int BulletClass_field_0x140;
-    unsigned int BulletClass_field_0x154;
-    unsigned int BulletClass_field_0x4;
-    unsigned int BulletClass_field_0x8;
-    unsigned int BulletClass_field_0xAC;
-    unsigned int BulletClass_field_0xB0;
-    unsigned int ResetDetonationTimer;
-    unsigned int __pad_0;
-    unsigned int __pad_110;
-    unsigned int __pad_134;
-    unsigned int __pad_144;
-    unsigned int __pad_158;
-    unsigned int __pad_B4;
-    unsigned int __pad_C;
 // --- flat members (END) ---
     BulletClass();
     BulletClass * * Dtor();

@@ -269,7 +269,7 @@ AbstractClass * * GameSettings::Read()
 namespace gamemd {
 void * GameSettings::ParseNetworkAddress()
 {
-  uint16_t v2; // ax
+  unsigned __int16 v2; // ax
   const char *v3; // esi
   char *result; // eax
   size_t v5; // kr04_4
@@ -279,17 +279,17 @@ void * GameSettings::ParseNetworkAddress()
   char v9; // [esp+8h] [ebp-1Ch] BYREF
   int v10; // [esp+Ch] [ebp-18h] BYREF
   int v11; // [esp+10h] [ebp-14h] BYREF
-  int16_t v12; // [esp+14h] [ebp-10h]
-  unsigned int v13[3]; // [esp+18h] [ebp-Ch] BYREF
+  __int16 v12; // [esp+14h] [ebp-10h]
+  _DWORD v13[3]; // [esp+18h] [ebp-Ch] BYREF
 
   v2 = this->u16_4A; /*0x5fb057*/
   if ( v2 == 0xFFFF ) /*0x5fb05f*/
   {
-    Network::GetField(g_NetworkManager, 34835); /*0x5fb066*/
+    Network::GetField(unk_A8E9C0, 34835); /*0x5fb066*/
   }
   else if ( v2 < 0x4000u ) /*0x5fb06c*/
   {
-    Network::GetField(g_NetworkManager, v2 + 0x4000); /*0x5fb079*/
+    Network::GetField(unk_A8E9C0, v2 + 0x4000); /*0x5fb079*/
   }
   v3 = &this->u32_160; /*0x5fb07e*/
   result = 0; /*0x5fb086*/
@@ -305,7 +305,7 @@ void * GameSettings::ParseNetworkAddress()
       do /*0x5fb10f*/
       {
         sscanf(result, "%x", &v9); /*0x5fb0de*/
-        *((unsigned char *)&v10 + v7++) = v9; /*0x5fb0ef*/
+        *((_BYTE *)&v10 + v7++) = v9; /*0x5fb0ef*/
         result = strtok(0, asc_826598); /*0x5fb105*/
       }
       while ( result ); /*0x5fb10f*/
@@ -315,7 +315,7 @@ void * GameSettings::ParseNetworkAddress()
         v12 = -1; /*0x5fb126*/
         dword_A8D5FC = 1; /*0x5fb131*/
         v8 = NetworkAddress::Assign(v13, &v10, (int)&v11, 0); /*0x5fb13b*/
-        dword_A8D600 = *v8; /*0x5fb142*/
+        stru_A8D600 = *v8; /*0x5fb142*/
         dword_A8D604 = v8[1]; /*0x5fb14b*/
         result = (char *)v8[2]; /*0x5fb151*/
         dword_A8D608 = (int)result; /*0x5fb154*/
@@ -334,7 +334,7 @@ void GameSettings::SetScoreVolume(int volume)
   result = volume; /*0x721290*/
   if ( volume >= 255 ) /*0x721299*/
     result = 255; /*0x72129b*/
-  this->parent_gap[3] = result; /*0x7212a0*/
+  this->ObjectTypeClass[3] = result; /*0x7212a0*/
   return result; /*0x7212a3*/
 }
 } // namespace gamemd
@@ -346,17 +346,17 @@ char * GameSettings::FindFlagged()
   char *i; // edx
 
   v0 = 0; /*0x7931a7*/
-  if ( (int)g_WOL_State <= 0 ) /*0x7931ad*/
+  if ( (int)dword_B77900 <= 0 ) /*0x7931ad*/
     return 0; /*0x7931dc*/
-  for ( i = (char *)g_WOL_ConnectionFlags; ; i += 108 ) /*0x7931af*/
+  for ( i = (char *)dword_B77908; ; i += 108 ) /*0x7931af*/
   {
-    if ( v0 >= 0 && v0 < (int)g_WOL_State ) /*0x7931bb*/
-      qmemcpy(&g_IsMultiplayerSession, i, 0x6Cu); /*0x7931c9*/
-    if ( (g_IsMultiplayerSession & 1) != 0 ) /*0x7931d2*/
+    if ( v0 >= 0 && v0 < (int)dword_B77900 ) /*0x7931bb*/
+      qmemcpy(&byte_B777B0, i, 0x6Cu); /*0x7931c9*/
+    if ( (byte_B777B0 & 1) != 0 ) /*0x7931d2*/
       break; /*0x7931d2*/
-    if ( ++v0 >= (int)g_WOL_State ) /*0x7931da*/
+    if ( ++v0 >= (int)dword_B77900 ) /*0x7931da*/
       return 0; /*0x7931da*/
   }
-  return &g_IsMultiplayerSession; /*0x7931dc*/
+  return &byte_B777B0; /*0x7931dc*/
 }
 } // namespace gamemd

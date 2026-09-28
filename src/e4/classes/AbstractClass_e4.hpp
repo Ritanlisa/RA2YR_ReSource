@@ -10,7 +10,7 @@ struct AbstractClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    void* ;  // 0x10
+    unsigned int uniqueId;  // 0x10
     unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
     unsigned int abstractFlags;  // 0x14
@@ -22,55 +22,6 @@ struct AbstractClass {
     unsigned char u8_1E;  // 0x1E
     unsigned char needsSave;  // 0x20
     unsigned int alignmentPadding;  // 0x21
-    unsigned int AlphaShapeClass_field_0x04;
-    unsigned int AlphaShapeClass_field_0x08;
-    unsigned int AlphaShapeClass_field_0x0C;
-    unsigned int AlphaShapeClass_field_0x24;
-    unsigned int AnimClass_field_0x0;
-    unsigned int AnimClass_field_0x1A0;
-    unsigned int AnimClass_field_0x1B4;
-    unsigned int AnimClass_field_0x4;
-    unsigned int AnimClass_field_0x8;
-    unsigned int AnimClass_field_0x9C;
-    unsigned int AnimClass_field_0xA4;
-    unsigned int AnimClass_field_0xC8;
-    unsigned int AnimClass_field_0xCC;
-    unsigned int Dirty;
-    unsigned int LightSource;
-    unsigned int RadLevelTimer;
-    unsigned int RadLightTimer;
-    unsigned int RefCount;
-    unsigned int TEventClass_field_28;
-    unsigned int __pad_0;
-    unsigned int __pad_A0;
-    unsigned int __pad_C;
-    unsigned int buildingType;
-    unsigned int firstTrigger;
-    unsigned int house;
-    unsigned int nextTrigger;
-    unsigned int parent_gap;
-    unsigned int q028;
-    unsigned int q034;
-    unsigned int qAA4;
-    unsigned int u32_1C;
-    unsigned int u32_24;
-    unsigned int u32_2C;
-    unsigned int vtable0;
-    unsigned int vtable22;
-    unsigned int AirstrikeClass_field_50;
-    unsigned int AirstrikeClass_field_54;
-    unsigned int AirstrikeClass_field_58;
-    unsigned int AirstrikeClass_field_5C;
-    unsigned int TEventClass_field_30;
-    unsigned int TEventClass_field_54;
-    unsigned int __pad_28;
-    unsigned int creationFrame;
-    unsigned int owner;
-    unsigned int COMStub_AddRef;
-    unsigned int COMStub_Release;
-    unsigned int ProcessPower;
-    unsigned int QueryInterface;
-    unsigned int uniqueId;
 // --- flat members (END) ---
     void Initialize(TechnoClass * aP1,  TechnoClass * aP2);    // 0x438E70
     unsigned int * checkVisibility(char a2);  // 0x5D7FD0

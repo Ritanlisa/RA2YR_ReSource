@@ -9,11 +9,6 @@ struct GameOption_WorldDominationTour {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
-    unsigned int q008;
-    unsigned int q010;
-    unsigned int q018;
-    unsigned int u32_14;
-    unsigned int u32_C;
 // --- flat members (END) ---
     void * ConstructorWDTFlagOption_Create(int arg0, void * a2, int arg8, void * a4, ObjectClass * aP5);
 };

@@ -11,8 +11,6 @@ struct Node_flat {
     unsigned int u32_8;  // 0x8
     unsigned int u32_C;  // 0xC
     unsigned int u32_10;  // 0x10
-    unsigned int Previous;
-    unsigned int __pad_0;
 // --- flat members (END) ---
 unsigned int * Init();
 };

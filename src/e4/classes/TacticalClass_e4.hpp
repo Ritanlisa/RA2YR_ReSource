@@ -247,44 +247,6 @@ struct TacticalClass {
     double TacticalClass_field_E08;  // 0xE08
     unsigned int TacticalClass_field_E10;  // 0xE10
     unsigned int TacticalClass_field_E14;  // 0xE14
-    unsigned int DisplayClass_field_0x11B0;
-    unsigned int DisplayClass_field_0x11D0;
-    unsigned int DisplayClass_field_0x11D4;
-    unsigned int DisplayClass_field_0x11D8;
-    unsigned int DisplayClass_field_0x11DC;
-    unsigned int DisplayClass_field_0x11E0;
-    unsigned int InitScrollBounds;
-    unsigned int SetView;
-    unsigned int UpdateScrollMaxBounds;
-    unsigned int __pad_11B4;
-    unsigned int foggedness;
-    unsigned int initTacticalMap;
-    unsigned int nextArrayIndex4;
-    void* ptr_34;
-    unsigned int q00C6;
-    unsigned int q02D;
-    unsigned int q048;
-    unsigned int q0688;
-    unsigned int q0702;
-    unsigned int q0707;
-    unsigned int q0B0;
-    unsigned int shroudedness;
-    unsigned int u32_11A8;
-    unsigned int u32_11B0;
-    unsigned int u32_11B1;
-    unsigned int u32_11B2;
-    unsigned int u32_11B3;
-    unsigned int u32_11B4;
-    unsigned int u32_11BC;
-    unsigned int u32_11C0;
-    unsigned int u32_11C4;
-    unsigned int u32_11C8;
-    unsigned int u32_38;
-    unsigned int u32_58C6;
-    unsigned int updateVisibility;
-    unsigned int vtable0;
-    unsigned int vtable46;
-    unsigned int ScrollView;
 // --- flat members (END) ---
     char StubReturnFalse();
     char StubReturnFalse11();

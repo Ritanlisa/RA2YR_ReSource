@@ -110,7 +110,6 @@ struct MissionClass {
     char missionTimer[12];  // 0xC8
     unsigned int q0CC;  // 0xCC
     unsigned int q0D0;  // 0xD0
-    unsigned int vtable0;
 // --- flat members (END) ---
     AbstractClass * * LoadFromINI(unsigned int * a2);
     int HasValidTarget();

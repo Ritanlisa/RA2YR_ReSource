@@ -122,24 +122,24 @@ unsigned int * SideClass::Construct(CCINIClass * aP1)
   this->u32_A5 = 0; /*0x6a4576*/
   this->q02B = 10; /*0x6a457c*/
   this->u32_A8 = 0; /*0x6a4586*/
-  this->houseTypes = (void*)&TypeList_int_vftable; /*0x6a458c*/
-  this->vtable0 = (void*)&SideClass_vftable; /*0x6a4597*/
-  this->vtable1 = (void*)&SideClass_vftable; /*0x6a459d*/
-  this->vtable2 = (void*)&SideClass_vftable; /*0x6a45a3*/
-  this->vtable3 = (void*)&SideClass_vftable; /*0x6a45aa*/
-  AbstractClass::GenerateUniqueID((AbstractClass *)&this->vtable1); /*0x6a45b1*/
-  if ( FootClass_Array.barrelFacing[0] < FootClass_Array.unloadTimer[1] /*0x6a45ea*/
-    || (IDA_BYTE1(FootClass_Array.unloadTimer[2]) || !FootClass_Array.unloadTimer[1])
-    && FootClass_Array.barrelFacing[1] > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(FootClass_Array.tiberiumCollectionState + 8))(
-         &FootClass_Array.tiberiumCollectionState,
-         FootClass_Array.unloadTimer[1] + FootClass_Array.barrelFacing[1],
+  this->houseTypes = &(void*)(void*)&TypeList_int_vftable; /*0x6a458c*/
+  this->AbstractClass = &(void*)(void*)&SideClass_vftable; /*0x6a4597*/
+  this->? = &(void*)(void*)&SideClass_vftable; /*0x6a459d*/
+  this->? = &(void*)(void*)&SideClass_vftable; /*0x6a45a3*/
+  this->? = &(void*)(void*)&SideClass_vftable; /*0x6a45aa*/
+  AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x6a45b1*/
+  if ( FootClass_Array.?[0] < FootClass_Array.?[1] /*0x6a45ea*/
+    || (IDA_BYTE1(FootClass_Array.?[2]) || !FootClass_Array.?[1])
+    && FootClass_Array.?[1] > 0
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(FootClass_Array.? + 8))(
+         &FootClass_Array.?,
+         FootClass_Array.?[1] + FootClass_Array.?[1],
          0) )
   {
-    v3 = FootClass_Array.barrelFacing[0]++; /*0x6a45f7*/
-    *(unsigned int *)(FootClass_Array.unloadTimer[0] + 4 * v3) = this; /*0x6a4606*/
+    v3 = FootClass_Array.?[0]++; /*0x6a45f7*/
+    *(_DWORD *)(FootClass_Array.?[0] + 4 * v3) = this; /*0x6a4606*/
   }
-  return &this->vtable0; /*0x6a460b*/
+  return &this->AbstractClass; /*0x6a460b*/
 }
 }
 // 0x6A4710
@@ -160,7 +160,7 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
   void *v7; // eax
   int v8; // ecx
   void *v9; // eax
-  unsigned int *v10; // edx
+  _DWORD *v10; // edx
 
   a0 = a0; /*0x6a4782*/
   aP1 = aP1; /*0x6a4787*/
@@ -171,40 +171,40 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
     {
       AbstractTypeClass::Init((int)a0, (int)&aP1); /*0x6a47ad*/
       a0->houseTypesCount = 0; /*0x6a47b2*/
-      a0[1].vtable0 = 0; /*0x6a47b8*/
-      IDA_LOBYTE(a0[1].vtable1) = 1; /*0x6a47be*/
-      IDA_BYTE1(a0[1].vtable1) = 0; /*0x6a47c5*/
-      a0[1].vtable3 = (void *)10; /*0x6a47cb*/
-      a0[1].vtable2 = 0; /*0x6a47d1*/
-      a0->houseTypes = (void*)&TypeList_int_vftable; /*0x6a47d7*/
-      a0->vtable0 = (void*)&SideClass_vftable; /*0x6a47e1*/
-      a0->vtable1 = (void*)&SideClass_vftable; /*0x6a47e7*/
-      a0->vtable2 = (void*)&SideClass_vftable; /*0x6a47ee*/
-      a0->vtable3 = (void*)&SideClass_vftable; /*0x6a47f5*/
+      a0[1].AbstractClass = 0; /*0x6a47b8*/
+      IDA_LOBYTE(a0[1].?) = 1; /*0x6a47be*/
+      IDA_BYTE1(a0[1].?) = 0; /*0x6a47c5*/
+      a0[1].? = (void *)10; /*0x6a47cb*/
+      a0[1].? = 0; /*0x6a47d1*/
+      a0->houseTypes = &(void*)(void*)&TypeList_int_vftable; /*0x6a47d7*/
+      a0->AbstractClass = &(void*)(void*)&SideClass_vftable; /*0x6a47e1*/
+      a0->? = &(void*)(void*)&SideClass_vftable; /*0x6a47e7*/
+      a0->? = &(void*)(void*)&SideClass_vftable; /*0x6a47ee*/
+      a0->? = &(void*)(void*)&SideClass_vftable; /*0x6a47f5*/
     }
     p_houseTypes = &a0->houseTypes; /*0x6a47fc*/
     if ( p_houseTypes ) /*0x6a4804*/
     {
       p_houseTypes[1] = 0; /*0x6a4806*/
       p_houseTypes[2] = 0; /*0x6a4809*/
-      *((unsigned char *)p_houseTypes + 12) = 1; /*0x6a480c*/
-      *((unsigned char *)p_houseTypes + 13) = 0; /*0x6a4810*/
+      *((_BYTE *)p_houseTypes + 12) = 1; /*0x6a480c*/
+      *((_BYTE *)p_houseTypes + 13) = 0; /*0x6a4810*/
       p_houseTypes[5] = (void *)10; /*0x6a4813*/
       p_houseTypes[4] = 0; /*0x6a4816*/
-      *p_houseTypes = (void*)&TypeList_int_vftable; /*0x6a4819*/
+      *p_houseTypes = &(void*)(void*)&TypeList_int_vftable; /*0x6a4819*/
     }
-    (*(void (__stdcall **)(int, int *, int, unsigned int))(aP1->vtable4)(aP1, &aP1, 4, 0); /*0x6a482a*/
+    (*(void (__stdcall **)(int, int *, int, _DWORD))(aP1->vtable4)(aP1, &aP1, 4, 0); /*0x6a482a*/
     for ( i = 0; i < aP1; ++i ) /*0x6a4833*/
     {
-      (*(void (__stdcall **)(int, SideClass **, int, unsigned int))(aP1->vtable4)(aP1, &a0, 4, 0); /*0x6a4840*/
+      (*(void (__stdcall **)(int, SideClass **, int, _DWORD))(aP1->vtable4)(aP1, &a0, 4, 0); /*0x6a4840*/
       v7 = p_houseTypes[2]; /*0x6a4843*/
       if ( (int)p_houseTypes[4] >= (int)v7 ) /*0x6a484b*/
       {
-        if ( !*((unsigned char *)p_houseTypes + 13) && v7 ) /*0x6a4854*/
+        if ( !*((_BYTE *)p_houseTypes + 13) && v7 ) /*0x6a4854*/
           continue; /*0x6a4854*/
         v8 = (int)p_houseTypes[5]; /*0x6a4856*/
         if ( v8 <= 0 /*0x6a4865*/
-          || !(*((uint8_t (__thiscall **)(void **, int, unsigned int))*p_houseTypes + 2))(
+          || !(*((unsigned __int8 (__thiscall **)(void **, int, _DWORD))*p_houseTypes + 2))(
                 p_houseTypes,
                 (int)v7 + v8,
                 0) )
@@ -212,10 +212,10 @@ int SideClass::SaveLoad_Prefix(unsigned int * a0, AbstractTypeClass * aP1)
           continue; /*0x6a4865*/
         }
       }
-      v9 = (void *)((unsigned int)(p_houseTypes[4]));
-      v10 = (unsigned int)(p_houseTypes[1]);
-      p_houseTypes[4] = (unsigned int)((char *)v9 + 1);
-      v10[(unsigned int)v9] = a0; /*0x6a487c*/
+      v9 = p_houseTypes[4]; /*0x6a486c*/
+      v10 = p_houseTypes[1]; /*0x6a486f*/
+      p_houseTypes[4] = (char *)v9 + 1; /*0x6a4875*/
+      v10[(_DWORD)v9] = a0; /*0x6a487c*/
     }
     return 0; /*0x6a4888*/
   }
@@ -229,26 +229,24 @@ void * SideClass::Init(char a2)
   int v3; // eax
   void *houseTypesCount; // eax
 
-  this->vtable0 = (unsigned int)((void*)&SideClass_vftable);
-  this->vtable1 = (void*)&SideClass_vftable; /*0x6a493c*/
-  this->vtable2 = (void*)&SideClass_vftable; /*0x6a4943*/
-  this->vtable3 = (void*)&SideClass_vftable; /*0x6a494a*/
-  AbstractClass::AnnounceExpiredPointer(&this->vtable0, 1); /*0x6a4951*/
-  v3 = (*(int (__thiscall **)(int *, SideClass **))(FootClass_Array.tiberiumCollectionState + 16))( /*0x6a496a*/
-         &FootClass_Array.tiberiumCollectionState,
-         &this);
-  if ( v3 != -1 && v3 < FootClass_Array.barrelFacing[0] ) /*0x6a497a*/
+  this->AbstractClass = &(void*)(void*)&SideClass_vftable; /*0x6a4936*/
+  this->? = &(void*)(void*)&SideClass_vftable; /*0x6a493c*/
+  this->? = &(void*)(void*)&SideClass_vftable; /*0x6a4943*/
+  this->? = &(void*)(void*)&SideClass_vftable; /*0x6a494a*/
+  AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x6a4951*/
+  v3 = (*(int (__thiscall **)(int *, SideClass **))(FootClass_Array.? + 16))(&FootClass_Array.?, &this); /*0x6a496a*/
+  if ( v3 != -1 && v3 < FootClass_Array.?[0] ) /*0x6a497a*/
   {
-    --FootClass_Array.barrelFacing[0]; /*0x6a497f*/
+    --FootClass_Array.?[0]; /*0x6a497f*/
     for ( ; /*0x6a4985*/
-          v3 < FootClass_Array.barrelFacing[0];
-          *(unsigned int *)(FootClass_Array.unloadTimer[0] + 4 * v3 - 4) = *(unsigned int *)(FootClass_Array.unloadTimer[0] + 4 * v3) )
+          v3 < FootClass_Array.?[0];
+          *(_DWORD *)(FootClass_Array.?[0] + 4 * v3 - 4) = *(_DWORD *)(FootClass_Array.?[0] + 4 * v3) )
     {
       ++v3; /*0x6a498d*/
     }
   }
   houseTypesCount = (void *)this->houseTypesCount; /*0x6a499f*/
-  this->houseTypes = (void*)&VectorClass_int_vftable; /*0x6a49a5*/
+  this->houseTypes = &(void*)(void*)&VectorClass_int_vftable; /*0x6a49a5*/
   if ( houseTypesCount && this->u32_A5 ) /*0x6a49b3*/
   {
     RA2_OPDEL(houseTypesCount); /*0x6a49be*/
@@ -259,7 +257,7 @@ void * SideClass::Init(char a2)
   AbstractTypeClass::Dtor(); /*0x6a49e3*/
   if ( (a2 & 1) != 0 ) /*0x6a49ed*/
     RA2_OPDEL(); /*0x6a49f0*/
-  return &this->vtable0; /*0x6a49fa*/
+  return &this->AbstractClass; /*0x6a49fa*/
 }
 }
 // 0x49D9F0
@@ -278,7 +276,7 @@ int SideClass::FindByName()
     return -1; /*0x49da53*/
   while ( 1 ) /*0x49da25*/
   {
-    v4 = *((unsigned int *)unk_A83C9C + v3); /*0x49da25*/
+    v4 = *((_DWORD *)dword_A83C9C + v3); /*0x49da25*/
     if ( !_strcmpi((char *)(v4 + 100), (char *)this) || !_strcmpi((char *)(v4 + 36), (char *)this) ) /*0x49da3d*/
       break; /*0x49da3d*/
     if ( ++v3 >= dword_A83CA8 ) /*0x49da51*/
@@ -346,10 +344,10 @@ int SideClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   if ( result >= 0 ) /*0x6a48b8*/
   {
     v4 = *a1; /*0x6a48c0*/
-    aP2 = *((unsigned int *)aP0 + 42); /*0x6a48cd*/
-    (*(void (__stdcall **)(int *, int *, int, unsigned int))(v4 + 16))(a1, &aP2, 4, 0); /*0x6a48d1*/
+    aP2 = *((_DWORD *)aP0 + 42); /*0x6a48cd*/
+    (*(void (__stdcall **)(int *, int *, int, _DWORD))(v4 + 16))(a1, &aP2, 4, 0); /*0x6a48d1*/
     for ( i = 0; i < aP2; ++i ) /*0x6a48dc*/
-      (*(void (__stdcall **)(int *, int, int, unsigned int))(*a1 + 16))(a1, aP0->houseTypesCount + 4 * i, 4, 0); /*0x6a48ef*/
+      (*(void (__stdcall **)(int *, int, int, _DWORD))(*a1 + 16))(a1, aP0->houseTypesCount + 4 * i, 4, 0); /*0x6a48ef*/
     return 0; /*0x6a48f9*/
   }
   return result; /*0x6a48fc*/

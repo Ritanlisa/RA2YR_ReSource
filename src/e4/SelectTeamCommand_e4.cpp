@@ -11,17 +11,17 @@
 namespace gamemd {
 unsigned int * SelectTeamCommand::Construct(int a2)
 {
-  this->SelectTeamCommand_field_00 = (unsigned int *)(a2);
-  *(unsigned int *)this->__pad_0 = (void*)&SelectTeamCommandClass_vftable; /*0x535fc9*/
-  return this->__pad_0; /*0x535fcf*/
+  this->SelectTeamCommand_field_00 = a2; /*0x535fc6*/
+  *(_DWORD *)this->CommandClass = &(void*)(void*)&SelectTeamCommandClass_vftable; /*0x535fc9*/
+  return this->CommandClass; /*0x535fcf*/
 }
 } // namespace gamemd
 // 0x535FE0
 namespace gamemd {
 void * SelectTeamCommand::AddRef()
 {
-  sprintf(&stru_A8EB00.gapE4[2512], "TeamSelect_%d", *(unsigned int *)&this->m_1[3]); /*0x535fee*/
-  return &stru_A8EB00.gapE4[2512]; /*0x535ffb*/
+  sprintf(&stru_A8EB00.?[2512], "TeamSelect_%d", *(_DWORD *)&this->m_1[3]); /*0x535fee*/
+  return &stru_A8EB00.?[2512]; /*0x535ffb*/
 }
 } // namespace gamemd
 // 0x536000
@@ -33,8 +33,8 @@ void * SelectTeamCommand::Release()
 
   v3 = *(const wchar_t **)&this->m_1[3]; /*0x536005*/
   StringCSF = GetStringCSF(aTxtSelectTeam, 0, g_Str_File_Init_CPP, 6292); /*0x536015*/
-  swprintf((wchar_t *const)&stru_A8EB00.gapE4[2672], (const size_t)StringCSF, v3); /*0x536020*/
-  return (wchar_t *)&stru_A8EB00.gapE4[2672]; /*0x53602d*/
+  swprintf((wchar_t *const)&stru_A8EB00.?[2672], (const size_t)StringCSF, v3); /*0x536020*/
+  return (wchar_t *)&stru_A8EB00.?[2672]; /*0x53602d*/
 }
 } // namespace gamemd
 // 0x536030

@@ -12,9 +12,6 @@ struct VectorClass_Cell {
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
-    unsigned int m_1;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     char Release(int a2,  unsigned int * a3);    // 0x42F6F0
     VectorClass_flat * QueryInterface(unsigned int * Block,  char a2);    // 0x42FBA0

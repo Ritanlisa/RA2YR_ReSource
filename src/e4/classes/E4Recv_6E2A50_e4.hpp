@@ -12,6 +12,8 @@ struct E4Recv_6E2A50 {
     unsigned int q280;  // 0x280
     unsigned int q640;  // 0x640
     unsigned int q1600;  // 0x1600
+    unsigned int q1282918;  // 0x1282918
+    unsigned int q1612549859458;  // 0x1612549859458
 // --- flat members (END) ---
     char sub_6E2A50(int a2,  int a3,  int a4,  int a5);    // 0x6E2A50
 };

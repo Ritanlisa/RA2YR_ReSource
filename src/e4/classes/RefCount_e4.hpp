@@ -9,8 +9,6 @@ struct RefCount {
 // --- flat members (BEGIN) ---
     char m_RefCount[4];  // 0x0
     char RefCount_field_04[4];  // 0x4
-    unsigned int u32_8;
-    unsigned int u32_C;
 // --- flat members (END) ---
     int Decrement();
     int Increment(int a2);

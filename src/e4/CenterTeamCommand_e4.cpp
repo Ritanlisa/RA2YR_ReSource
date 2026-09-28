@@ -15,17 +15,17 @@
 namespace gamemd {
 unsigned int * CenterTeamCommand::Construct(int a2)
 {
-  this->CenterTeamCommand_field_00 = (unsigned int *)(a2);
-  *(unsigned int *)this->__pad_0 = (void*)&CenterTeamCommandClass_vftable; /*0x5361a9*/
-  return this->__pad_0; /*0x5361af*/
+  this->CenterTeamCommand_field_00 = a2; /*0x5361a6*/
+  *(_DWORD *)this->CommandClass = &(void*)(void*)&CenterTeamCommandClass_vftable; /*0x5361a9*/
+  return this->CommandClass; /*0x5361af*/
 }
 } // namespace gamemd
 // 0x5361C0
 namespace gamemd {
 void * CenterTeamCommand::AddRef()
 {
-  sprintf(&stru_A8EB00.gapE4[2512], "TeamCenter_%d", *(unsigned int *)&this->m_1[3]); /*0x5361ce*/
-  return &stru_A8EB00.gapE4[2512]; /*0x5361db*/
+  sprintf(&stru_A8EB00.?[2512], "TeamCenter_%d", *(_DWORD *)&this->m_1[3]); /*0x5361ce*/
+  return &stru_A8EB00.?[2512]; /*0x5361db*/
 }
 } // namespace gamemd
 // 0x5361E0
@@ -37,7 +37,7 @@ void * CenterTeamCommand::Release()
 
   v3 = *(const wchar_t **)&this->m_1[3]; /*0x5361e5*/
   StringCSF = GetStringCSF(aTxtCenterTeam, 0, g_Str_File_Init_CPP, 6361); /*0x5361f5*/
-  swprintf((wchar_t *const)&stru_A8EB00.gapE4[2672], (const size_t)StringCSF, v3); /*0x536200*/
-  return (wchar_t *)&stru_A8EB00.gapE4[2672]; /*0x53620d*/
+  swprintf((wchar_t *const)&stru_A8EB00.?[2672], (const size_t)StringCSF, v3); /*0x536200*/
+  return (wchar_t *)&stru_A8EB00.?[2672]; /*0x53620d*/
 }
 } // namespace gamemd

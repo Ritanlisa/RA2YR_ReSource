@@ -17,7 +17,7 @@ namespace gamemd {
 long long Isometric::InitTables(IUnknown * aP1)
 {
   char v2; // al
-  int64_t result; // rax
+  __int64 result; // rax
   int v5; // ecx
   double v6; // st7
 
@@ -38,13 +38,13 @@ long long Isometric::InitTables(IUnknown * aP1)
   {
     byte_89E770 = v2 | 4; /*0x47b3f5*/
     *(double *)dbl_89E720 = dbl_89E720; /*0x47b3ff*/
-    qword_81C940 = *(unsigned long long *)&dbl_89E720; /*0x47b40e*/
-    qword_81C960 = *(unsigned long long *)&dbl_89E720; /*0x47b41d*/
-    qword_81C968 = *(unsigned long long *)&dbl_89E720; /*0x47b433*/
-    qword_81C988 = *(unsigned long long *)&dbl_89E720; /*0x47b442*/
-    qword_81C990 = *(unsigned long long *)&dbl_89E720; /*0x47b451*/
-    qword_81C9B8 = *(unsigned long long *)&dbl_89E720; /*0x47b461*/
-    qword_81C9E0 = *(unsigned long long *)&dbl_89E720; /*0x47b470*/
+    qword_81C940 = *(_QWORD *)&dbl_89E720; /*0x47b40e*/
+    qword_81C960 = *(_QWORD *)&dbl_89E720; /*0x47b41d*/
+    qword_81C968 = *(_QWORD *)&dbl_89E720; /*0x47b433*/
+    qword_81C988 = *(_QWORD *)&dbl_89E720; /*0x47b442*/
+    qword_81C990 = *(_QWORD *)&dbl_89E720; /*0x47b451*/
+    qword_81C9B8 = *(_QWORD *)&dbl_89E720; /*0x47b461*/
+    qword_81C9E0 = *(_QWORD *)&dbl_89E720; /*0x47b470*/
     dbl_81C9B0 = -dbl_89E720; /*0x47b47a*/
     dword_81C920 = 0; /*0x47b482*/
     dword_81C924 = 0; /*0x47b48c*/
@@ -86,14 +86,14 @@ long long Isometric::InitTables(IUnknown * aP1)
     dword_81C9F4 = -1074790400; /*0x47b5f9*/
     dword_81C9F8 = 0; /*0x47b603*/
     dword_81C9FC = -1074790400; /*0x47b60d*/
-    qword_81CA00 = *(unsigned long long *)&dbl_89E720; /*0x47b617*/
-    qword_81CA08 = *(unsigned long long *)&dbl_89E720; /*0x47b627*/
-    qword_81CA30 = *(unsigned long long *)&dbl_89E720; /*0x47b63c*/
-    qword_81CA58 = *(unsigned long long *)&dbl_89E720; /*0x47b64b*/
-    qword_81CA78 = *(unsigned long long *)&dbl_89E720; /*0x47b65b*/
-    qword_81CA80 = *(unsigned long long *)&dbl_89E720; /*0x47b66a*/
-    qword_81CAA8 = *(unsigned long long *)&dbl_89E720; /*0x47b67b*/
-    qword_81CAC8 = *(unsigned long long *)&dbl_89E720; /*0x47b68b*/
+    qword_81CA00 = *(_QWORD *)&dbl_89E720; /*0x47b617*/
+    qword_81CA08 = *(_QWORD *)&dbl_89E720; /*0x47b627*/
+    qword_81CA30 = *(_QWORD *)&dbl_89E720; /*0x47b63c*/
+    qword_81CA58 = *(_QWORD *)&dbl_89E720; /*0x47b64b*/
+    qword_81CA78 = *(_QWORD *)&dbl_89E720; /*0x47b65b*/
+    qword_81CA80 = *(_QWORD *)&dbl_89E720; /*0x47b66a*/
+    qword_81CAA8 = *(_QWORD *)&dbl_89E720; /*0x47b67b*/
+    qword_81CAC8 = *(_QWORD *)&dbl_89E720; /*0x47b68b*/
     dbl_81CAA0 = dbl_89E720 + dbl_89E720; /*0x47b692*/
     dbl_81CAF8 = dbl_89E720 + dbl_89E720; /*0x47b698*/
     dword_81CA10 = 0; /*0x47b6a0*/
@@ -130,7 +130,7 @@ long long Isometric::InitTables(IUnknown * aP1)
     dword_81CABC = 1072693248; /*0x47b7d6*/
     dword_81CAC0 = 0; /*0x47b7e0*/
     dword_81CAC4 = -1074790400; /*0x47b7ea*/
-    qword_81CAD0 = *(unsigned long long *)&dbl_89E720; /*0x47b7fa*/
+    qword_81CAD0 = *(_QWORD *)&dbl_89E720; /*0x47b7fa*/
     dword_81CAD8 = 0; /*0x47b805*/
     dword_81CADC = 0; /*0x47b80f*/
     dword_81CAE0 = 0; /*0x47b819*/
@@ -146,14 +146,14 @@ long long Isometric::InitTables(IUnknown * aP1)
     dbl_81CB40 = dbl_89E720 + dbl_89E720; /*0x47b879*/
     dbl_81CB48 = dbl_89E720 + dbl_89E720; /*0x47b87f*/
     dbl_81CB70 = dbl_89E720 + dbl_89E720; /*0x47b885*/
-    qword_81CB18 = *(unsigned long long *)&dbl_89E720; /*0x47b89b*/
+    qword_81CB18 = *(_QWORD *)&dbl_89E720; /*0x47b89b*/
     dbl_81CB98 = dbl_89E720 * 0.5; /*0x47b8ab*/
     dbl_81CBA0 = dbl_89E720 * 0.5; /*0x47b8b1*/
     dbl_81CBC0 = dbl_89E720 * 0.5; /*0x47b8b7*/
-    qword_81CB68 = *(unsigned long long *)&dbl_89E720; /*0x47b8c9*/
-    qword_81CBB8 = *(unsigned long long *)&dbl_89E720; /*0x47b8da*/
+    qword_81CB68 = *(_QWORD *)&dbl_89E720; /*0x47b8c9*/
+    qword_81CBB8 = *(_QWORD *)&dbl_89E720; /*0x47b8da*/
     dbl_81CBC8 = dbl_89E720 * -0.5; /*0x47b8e4*/
-    qword_81CC08 = *(unsigned long long *)&dbl_89E720; /*0x47b8f5*/
+    qword_81CC08 = *(_QWORD *)&dbl_89E720; /*0x47b8f5*/
     dword_81CB0C = -1074790400; /*0x47b8ff*/
     dbl_81CBE8 = dbl_89E720 * 0.5; /*0x47b909*/
     dbl_81CBF0 = dbl_89E720 * 0.5; /*0x47b90f*/
@@ -199,15 +199,15 @@ long long Isometric::InitTables(IUnknown * aP1)
   result = Math::RoundToInt((double)(dword_89E7C0 * this->u32_11B) + 0.5); /*0x47bab0*/
   if ( this->u8_11C ) /*0x47bab5*/
   {
-    v5 = 40 * (*(uint8_t *)(&this->u32_704) - 1); /*0x47baec*/
-    v6 = (double)(uint8_t)aP1[1] * *(double *)(v5 + 8505608) * dbl_89E740 /*0x47bb17*/
-       + (double)(uint8_t)*aP1 * *(double *)(v5 + 8505600) * dbl_89E740
+    v5 = 40 * (*(unsigned __int8 *)(&this->u32_704) - 1); /*0x47baec*/
+    v6 = (double)(unsigned __int8)aP1[1] * *(double *)(v5 + 8505608) * dbl_89E740 /*0x47bb17*/
+       + (double)(unsigned __int8)*aP1 * *(double *)(v5 + 8505600) * dbl_89E740
        + *(double *)(v5 + 8505616)
        + *(double *)(v5 + 8505632);
     if ( v6 < 0.0 ) /*0x47bb28*/
       v6 = 0.0; /*0x47bb2c*/
-    if ( v6 > *(double *)&dbl_89E720[5 * *(uint8_t *)(&this->u32_704) - 5] ) /*0x47bb3d*/
-      v6 = *(double *)&dbl_89E720[5 * *(uint8_t *)(&this->u32_704) - 5]; /*0x47bb41*/
+    if ( v6 > *(double *)&dbl_89E720[5 * *(unsigned __int8 *)(&this->u32_704) - 5] ) /*0x47bb3d*/
+      v6 = *(double *)&dbl_89E720[5 * *(unsigned __int8 *)(&this->u32_704) - 5]; /*0x47bb41*/
     return Math::RoundToInt(v6); /*0x47bb4d*/
   }
   return result; /*0x47bb54*/

@@ -52,23 +52,6 @@ struct GameClass {
     unsigned int u32_1A8;  // 0x1A8
     unsigned int u32_1B4;  // 0x1B4
     void* q200;  // 0x200
-    unsigned int GameClass_field_0x4;
-    unsigned int __pad_0;
-    unsigned int __pad_24;
-    unsigned int __pad_3D;
-    unsigned int __pad_8;
-    unsigned int field_14;
-    unsigned int field_3C;
-    unsigned int m_10;
-    unsigned int m_13C;
-    unsigned int m_14;
-    unsigned int m_140;
-    unsigned int m_34;
-    unsigned int m_38;
-    unsigned int m_3C;
-    unsigned int m_C;
-    unsigned int q004;
-    unsigned int u32_42;
 // --- flat members (END) ---
     int initGameMode(int a2,  int a3);    // 0x437FD0
     unsigned int * processFrame(int a2,  int a3);    // 0x4381D0

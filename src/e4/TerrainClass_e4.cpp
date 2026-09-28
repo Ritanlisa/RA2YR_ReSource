@@ -1208,51 +1208,51 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
   signed int v9; // eax
   int v10; // ecx
   char *i; // eax
-  unsigned int *v12; // eax
+  _DWORD *v12; // eax
   int Register; // edi
   int v14; // esi
   int vtable2; // eax
   int v17; // [esp+Ch] [ebp-8h] BYREF
 
   v2 = (ObjectClass *)a1; /*0x71cda4*/
-  p_vtable1 = &a1->vtable1; /*0x71cdad*/
-  v4 = (*((int (__stdcall **)(void **))a1->vtable1 + 4))(&a1->vtable1); /*0x71cdb1*/
-  vtable1 = g_BuildingLoadQueue_Array.vtable1; /*0x71cdb4*/
+  p_vtable1 = &a1->?; /*0x71cdad*/
+  v4 = (*((int (__stdcall **)(void **))a1->? + 4))(&a1->?); /*0x71cdb1*/
+  vtable1 = g_BuildingLoadQueue_Array.?; /*0x71cdb4*/
   v7 = v4; /*0x71cdba*/
-  if ( g_BuildingLoadQueue_Array.vtable1 ) /*0x71cdbe*/
+  if ( g_BuildingLoadQueue_Array.? ) /*0x71cdbe*/
   {
-    if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array.vtable3) ) /*0x71cdcb*/
+    if ( !IDA_LOBYTE(g_BuildingLoadQueue_Array.?) ) /*0x71cdcb*/
     {
       qsort( /*0x71cddc*/
-        g_BuildingLoadQueue_Array.vtable0,
-        (size_t)g_BuildingLoadQueue_Array.vtable1,
+        g_BuildingLoadQueue_Array.TechnoTypeClass,
+        (size_t)g_BuildingLoadQueue_Array.?,
         8u,
         (_CoreCrtNonSecureSearchSortCompareFunction)CompareFunction);
-      vtable1 = g_BuildingLoadQueue_Array.vtable1; /*0x71cde1*/
-      g_BuildingLoadQueue_Array.uniqueId = 0; /*0x71cdea*/
-      IDA_LOBYTE(g_BuildingLoadQueue_Array.vtable3) = 1; /*0x71cdf4*/
+      vtable1 = g_BuildingLoadQueue_Array.?; /*0x71cde1*/
+      g_BuildingLoadQueue_Array.? = 0; /*0x71cdea*/
+      IDA_LOBYTE(g_BuildingLoadQueue_Array.?) = 1; /*0x71cdf4*/
     }
     v17 = v7; /*0x71ce06*/
-    v8 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.vtable0, (int)vtable1, &v17); /*0x71ce0a*/
+    v8 = BinaryArraySearch((int)g_BuildingLoadQueue_Array.TechnoTypeClass, (int)vtable1, &v17); /*0x71ce0a*/
     if ( v8 ) /*0x71ce11*/
     {
-      v9 = (signed int)(v8 - (unsigned int)g_BuildingLoadQueue_Array.vtable0) >> 3; /*0x71ce19*/
+      v9 = (signed int)(v8 - (unsigned int)g_BuildingLoadQueue_Array.TechnoTypeClass) >> 3; /*0x71ce19*/
       if ( v9 != -1 ) /*0x71ce1f*/
       {
         v10 = v9 + 1; /*0x71ce21*/
-        for ( i = (char *)g_BuildingLoadQueue_Array.vtable1; /*0x71ce2b*/
-              v10 < (int)g_BuildingLoadQueue_Array.vtable1;
-              i = (char *)g_BuildingLoadQueue_Array.vtable1 )
+        for ( i = (char *)g_BuildingLoadQueue_Array.?; /*0x71ce2b*/
+              v10 < (int)g_BuildingLoadQueue_Array.?;
+              i = (char *)g_BuildingLoadQueue_Array.? )
         {
-          v12 = (char *)g_BuildingLoadQueue_Array.vtable0 + 8 * v10++; /*0x71ce33*/
+          v12 = (char *)g_BuildingLoadQueue_Array.TechnoTypeClass + 8 * v10++; /*0x71ce33*/
           *(v12 - 2) = *v12; /*0x71ce39*/
           *(v12 - 1) = v12[1]; /*0x71ce3f*/
         }
-        g_BuildingLoadQueue_Array.vtable1 = i - 1; /*0x71ce54*/
-        *((unsigned int *)g_BuildingLoadQueue_Array.vtable0 + 2 * (int)g_BuildingLoadQueue_Array.vtable1) = 0; /*0x71ce59*/
-        vtable0 = (ObjectClass *)g_BuildingLoadQueue_Array.vtable0; /*0x71ce61*/
-        *((unsigned int *)g_BuildingLoadQueue_Array.vtable0 + 2 * (int)g_BuildingLoadQueue_Array.vtable1 + 1) = 0; /*0x71ce69*/
-        g_BuildingLoadQueue_Array.uniqueId = 0; /*0x71ce6d*/
+        g_BuildingLoadQueue_Array.? = i - 1; /*0x71ce54*/
+        *((_DWORD *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = 0; /*0x71ce59*/
+        vtable0 = (ObjectClass *)g_BuildingLoadQueue_Array.TechnoTypeClass; /*0x71ce61*/
+        *((_DWORD *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.? + 1) = 0; /*0x71ce69*/
+        g_BuildingLoadQueue_Array.? = 0; /*0x71ce6d*/
       }
     }
   }
@@ -1262,26 +1262,26 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
     if ( v2 ) /*0x71ce8a*/
     {
       ObjectClass::Init(v2, (int)&a1); /*0x71ce93*/
-      v2->vtable0 = (void*)&TerrainClass_vftable; /*0x71ce98*/
+      v2->AbstractClass = &(void*)(void*)&TerrainClass_vftable; /*0x71ce98*/
       *p_vtable1 = &off_7F5200; /*0x71ce9f*/
-      v2->vtable2 = (void*)&TerrainClass_vftable; /*0x71cea5*/
-      v2->vtable3 = (void*)&TerrainClass_vftable; /*0x71ceac*/
+      v2->? = &(void*)(void*)&TerrainClass_vftable; /*0x71cea5*/
+      v2->? = &(void*)(void*)&TerrainClass_vftable; /*0x71ceac*/
     }
     v14 = (*((int (__stdcall **)(void **))*p_vtable1 + 4))(p_vtable1); /*0x71cebf*/
-    vtable2 = (int)g_BuildingLoadQueue_Array.vtable2; /*0x71cec1*/
-    if ( (int)g_BuildingLoadQueue_Array.vtable1 + 1 <= (int)g_BuildingLoadQueue_Array.vtable2 ) /*0x71cec9*/
+    vtable2 = (int)g_BuildingLoadQueue_Array.?; /*0x71cec1*/
+    if ( (int)g_BuildingLoadQueue_Array.? + 1 <= (int)g_BuildingLoadQueue_Array.? ) /*0x71cec9*/
       goto LABEL_16; /*0x71cec9*/
-    if ( !g_BuildingLoadQueue_Array.vtable2 ) /*0x71cecd*/
+    if ( !g_BuildingLoadQueue_Array.? ) /*0x71cecd*/
       vtable2 = 10; /*0x71cecf*/
     if ( BuildingTypeClass::Enqueue((int)&g_BuildingLoadQueue_Array, vtable2) ) /*0x71ceda*/
     {
   LABEL_16:
-      *((unsigned int *)g_BuildingLoadQueue_Array.vtable0 + 2 * (int)g_BuildingLoadQueue_Array.vtable1) = v14; /*0x71ceee*/
-      *((unsigned int *)g_BuildingLoadQueue_Array.vtable0 + 2 * (int)g_BuildingLoadQueue_Array.vtable1 + 1) = v2; /*0x71cefc*/
-      IDA_LOBYTE(g_BuildingLoadQueue_Array.vtable3) = 0; /*0x71cf06*/
-      ++g_BuildingLoadQueue_Array.vtable1; /*0x71cf0d*/
+      *((_DWORD *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.?) = v14; /*0x71ceee*/
+      *((_DWORD *)g_BuildingLoadQueue_Array.TechnoTypeClass + 2 * (int)g_BuildingLoadQueue_Array.? + 1) = v2; /*0x71cefc*/
+      IDA_LOBYTE(g_BuildingLoadQueue_Array.?) = 0; /*0x71cf06*/
+      ++g_BuildingLoadQueue_Array.?; /*0x71cf0d*/
     }
-    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2[1].referenceCount); /*0x71cf1e*/
+    ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &v2[1].?); /*0x71cf1e*/
   }
   return Register; /*0x71cf25*/
 }
@@ -1290,19 +1290,19 @@ void* TerrainClass::LoadFromStream(unsigned int * a1, int a2)
 namespace gamemd {
 AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * aP2, AbstractClass * aP2)
 {
-  unsigned int *v3; // ebp
+  _DWORD *v3; // ebp
   int v4; // edi
   int v5; // ebx
   int i; // esi
   int v7; // ecx
-  int16_t v8; // ax
-  unsigned char *v9; // eax
-  unsigned int *v10; // eax
+  __int16 v8; // ax
+  _BYTE *v9; // eax
+  _DWORD *v10; // eax
   int v11; // edi
   char v14[12]; // [esp+8h] [ebp-Ch] BYREF
 
   v3 = aP2; /*0x71d008*/
-  if ( !(uint8_t)ObjectClass::Deploy((ObjectClass *)this) ) /*0x71d012*/
+  if ( !(unsigned __int8)ObjectClass::Deploy((ObjectClass *)this) ) /*0x71d012*/
     return 0; /*0x71d13e*/
   v4 = *v3 / 256; /*0x71d03e*/
   v5 = v3[1] / 256; /*0x71d041*/
@@ -1313,21 +1313,21 @@ AbstractClass * * TerrainClass::ProcessSpawnAnim(unsigned int * aP2, AbstractCla
     IDA_LOWORD(aP2) = v4 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v7 + 82]); /*0x71d061*/
     IDA_HIWORD(aP2) = v5 + v8; /*0x71d06d*/
     aP2 = aP2; /*0x71d076*/
-    v9 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&aP2); /*0x71d080*/
+    v9 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&aP2); /*0x71d080*/
     ++v9[290]; /*0x71d091*/
   }
-  v10 = (unsigned int *)(*((int (__stdcall **)(char *))this->vtable0 + 43))(v14); /*0x71d0ab*/
+  v10 = (_DWORD *)(*((int (__stdcall **)(char *))this->ObjectClass + 43))(v14); /*0x71d0ab*/
   Coord::To_Screen((Coord *)g_TacticalClass_Instance, v10, &this->TerrainClass_field_rect_D0[2]); /*0x71d0b8*/
-  v11 = *(unsigned int *)&g_TacticalClass_Instance[45] + this->TerrainClass_field_rect_D0[3]; /*0x71d0d6*/
-  this->TerrainClass_field_rect_D0[2] += *(unsigned int *)&g_TacticalClass_Instance[44]; /*0x71d0dd*/
+  v11 = *(_DWORD *)&g_TacticalClass_Instance[45] + this->TerrainClass_field_rect_D0[3]; /*0x71d0d6*/
+  this->TerrainClass_field_rect_D0[2] += *(_DWORD *)&g_TacticalClass_Instance[44]; /*0x71d0dd*/
   this->TerrainClass_field_rect_D0[3] = v11; /*0x71d0df*/
-  if ( *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] != -1 ) /*0x71d0ef*/
+  if ( *(_DWORD *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] != -1 ) /*0x71d0ef*/
   {
-    if ( *(unsigned char *)(*(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_34 /*0x71d108*/
-                              + 4 * *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28])
+    if ( *(_BYTE *)(*(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_34 /*0x71d108*/
+                              + 4 * *(_DWORD *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28])
                   + 681) )
     {
-      *(unsigned int *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] = -1; /*0x71d123*/
+      *(_DWORD *)&Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->__pad_28[28] = -1; /*0x71d123*/
       Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v3)->powerup = 0; /*0x71d12b*/
     }
   }

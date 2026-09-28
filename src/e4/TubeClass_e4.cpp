@@ -20,10 +20,10 @@ int TubeClass::LoadState(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x7281b6*/
     {
       AbstractClass::Constructor((AbstractClass *)aP0); /*0x7281ba*/
-      aP0->vtable0 = (void*)&TubeClass_vftable; /*0x7281bf*/
-      aP0->vtable1 = (void*)&TubeClass_vftable; /*0x7281c5*/
-      aP0->vtable2 = (void*)&TubeClass_vftable; /*0x7281cc*/
-      aP0->vtable3 = (void*)&TubeClass_vftable; /*0x7281d3*/
+      aP0->ObjectClass = &(void*)(void*)&TubeClass_vftable; /*0x7281bf*/
+      aP0->? = &(void*)(void*)&TubeClass_vftable; /*0x7281c5*/
+      aP0->? = &(void*)(void*)&TubeClass_vftable; /*0x7281cc*/
+      aP0->? = &(void*)(void*)&TubeClass_vftable; /*0x7281d3*/
     }
     return 0; /*0x7281da*/
   }

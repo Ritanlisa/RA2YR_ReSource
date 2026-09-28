@@ -13,6 +13,8 @@ struct E4Recv_637030 {
     unsigned int u32_264;  // 0x264
     unsigned int q1554;  // 0x1554
     unsigned int q5460;  // 0x5460
+    unsigned int q21600;  // 0x21600
+    unsigned int q136704;  // 0x136704
 // --- flat members (END) ---
     char sub_637030();  // 0x637030
 };

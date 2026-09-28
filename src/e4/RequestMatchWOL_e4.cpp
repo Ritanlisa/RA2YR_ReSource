@@ -9,6 +9,6 @@
 namespace gamemd {
 int * sub_7B0370()
 {
-  return (int *)(&dword_B77F68);
+  return &stru_B77F68; /*0x7b0375*/
 }
 } // namespace gamemd

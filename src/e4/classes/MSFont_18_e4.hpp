@@ -13,11 +13,6 @@ struct MSFont_18 {
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned int __pad_0;
-    unsigned int m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     char SetCapacity8(int a2,  unsigned int * a3);    // 0x5D55A0
     void ClearBuffer();  // 0x5D5080

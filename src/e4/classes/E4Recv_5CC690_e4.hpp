@@ -12,6 +12,10 @@ struct E4Recv_5CC690 {
     unsigned int q100;  // 0x100
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
+    unsigned int q20848;  // 0x20848
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q388226446628134;  // 0x388226446628134
 // --- flat members (END) ---
     void sub_5CC690();  // 0x5CC690
 };

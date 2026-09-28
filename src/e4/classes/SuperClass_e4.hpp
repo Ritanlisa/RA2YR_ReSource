@@ -24,7 +24,7 @@ struct SuperClass {
     void* q028;  // 0x28
     bool q02B;  // 0x2B
     void* q02C;  // 0x2C
-    unsigned int ;  // 0x30
+    void* q030;  // 0x30
     unsigned char q031;  // 0x31
     unsigned char needsSave;  // 0x32
     unsigned int alignmentPadding;  // 0x33
@@ -38,7 +38,7 @@ struct SuperClass {
     bool BlinkState;  // 0x40
     bool q042;  // 0x42
     HouseClass* Owner;  // 0x44
-    unsigned int BlinkTimer;  // 0x48
+    char BlinkTimer[4];  // 0x48
     bool q04A;  // 0x4A
     unsigned int q04C;  // 0x4C
     unsigned char q04F;  // 0x4F
@@ -46,7 +46,7 @@ struct SuperClass {
     char SpecialSoundLocation[4];  // 0x54
     unsigned char q058;  // 0x58
     unsigned char q05C;  // 0x5C
-    unsigned int ;  // 0x60
+    void* q060;  // 0x60
     char ChronoMapCoords[4];  // 0x62
     bool q064;  // 0x64
     void* q068;  // 0x68
@@ -55,9 +55,9 @@ struct SuperClass {
     void* OneTime;  // 0x6E
     void* IsCharged;  // 0x6F
     void* q070;  // 0x70
-    unsigned int ;  // 0x74
+    void* q074;  // 0x74
     int q078;  // 0x78
-    unsigned int ;  // 0x7C
+    void* q07C;  // 0x7C
     int q080;  // 0x80
     char q084[4];  // 0x84
     unsigned char q088;  // 0x88
@@ -638,41 +638,6 @@ struct SuperClass {
     ObjectTypeClass* qFC4;  // 0xFC4
     unsigned char qFC8;  // 0xFC8
     void* qFE8;  // 0xFE8
-    unsigned int CurrentHeight;
-    unsigned int DestinationCoords;
-    unsigned int Height;
-    unsigned int NoWobbles;
-    unsigned int Powered8;
-    unsigned int SuperClass_field_0x0;
-    unsigned int SuperClass_field_0x24;
-    unsigned int SuperClass_field_0x28;
-    unsigned int SuperClass_field_0x2C;
-    unsigned int SuperClass_field_0x30;
-    unsigned int SuperClass_field_0x38;
-    unsigned int SuperClass_field_0x4;
-    unsigned int SuperClass_field_0x60;
-    unsigned int SuperClass_field_0x68;
-    unsigned int SuperClass_field_0x6C;
-    unsigned int SuperClass_field_0x70;
-    unsigned int SuperClass_field_0x7C;
-    unsigned int SuperClass_field_0x8;
-    unsigned int Wobbles;
-    unsigned int __pad_3C;
-    unsigned int __pad_C;
-    unsigned int unknown_6D;
-    unsigned int unknown_6E;
-    unsigned int Accel;
-    unsigned int AdvanceCountdown;
-    unsigned int Crash;
-    unsigned int Deviation;
-    unsigned int SetCurrentFrame;
-    unsigned int u32_7C;
-    unsigned int unknown_6C;
-    unsigned int unknown_6F;
-    unsigned int q030;
-    unsigned int q060;
-    unsigned int q074;
-    unsigned int q07C;
 // --- flat members (END) ---
     AbstractClass * * Reset();
     AbstractClass * * StartTimer(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3);

@@ -11,8 +11,6 @@ struct Surface {
     int Width;  // 0x4
     int Height;  // 0x8
     unsigned int u32_B;  // 0xB
-    unsigned int LockCount;
-    unsigned int q00C;
 // --- flat members (END) ---
     AbstractClass * * LoadToSurfaceSHP(char * Source);
     LPDIRECTDRAW CreateSurfacePalette();

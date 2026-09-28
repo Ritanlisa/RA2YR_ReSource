@@ -26,7 +26,7 @@ int Territory_WorldDominationTour_8::AddRef(char a2)
     if ( *(int *)(v3 + 976) > 0 ) /*0x7718ba*/
     {
       StopThemeClass(1); /*0x7718be*/
-      (*(void (__thiscall **)(int))(*(unsigned int *)(v3 + 960) + 12))(v3 + 960); /*0x7718cf*/
+      (*(void (__thiscall **)(int))(*(_DWORD *)(v3 + 960) + 12))(v3 + 960); /*0x7718cf*/
     }
     Ticks = Timer::GetTicks(); /*0x7718d6*/
     v4 = (int *)(v3 + 940); /*0x7718e1*/
@@ -44,19 +44,19 @@ signed int Territory_WorldDominationTour_8::Release()
   signed int result; // eax
   int v3; // edi
 
-  result = *(unsigned int *)&this->__pad_C[4]; /*0x771903*/
+  result = *(_DWORD *)&this->__pad_C[4]; /*0x771903*/
   if ( result != -1 ) /*0x771909*/
   {
     v3 = this->field_18; /*0x77190c*/
-    result = Timer::GetTicks() - *(unsigned int *)&this->__pad_C[4]; /*0x77191c*/
+    result = Timer::GetTicks() - *(_DWORD *)&this->__pad_C[4]; /*0x77191c*/
     if ( result >= v3 ) /*0x771921*/
     {
       this->field_18 = 0; /*0x771934*/
-      *(unsigned int *)&this->__pad_C[4] = -1; /*0x771937*/
+      *(_DWORD *)&this->__pad_C[4] = -1; /*0x771937*/
     }
     else
     {
-      *(unsigned int *)&this->__pad_C[4] = -1; /*0x771925*/
+      *(_DWORD *)&this->__pad_C[4] = -1; /*0x771925*/
       this->field_18 = v3 - result; /*0x77192c*/
     }
   }
@@ -67,8 +67,8 @@ signed int Territory_WorldDominationTour_8::Release()
 namespace gamemd {
 void Territory_WorldDominationTour_8::ddtor()
 {
-  if ( *(unsigned int *)&this->__pad_C[4] == -1 ) /*0x771957*/
-    *(unsigned int *)&this->__pad_C[4] = Timer::GetTicks(); /*0x771961*/
+  if ( *(_DWORD *)&this->__pad_C[4] == -1 ) /*0x771957*/
+    *(_DWORD *)&this->__pad_C[4] = Timer::GetTicks(); /*0x771961*/
 }
 } // namespace gamemd
 
@@ -98,7 +98,7 @@ void Territory_WorldDominationTour_8::Close(int a2)
 namespace gamemd {
 unsigned int * Territory_WorldDominationTour_8::QueryInterface(char a2)
 {
-  *(unsigned int *)this->__pad_0 = (void*)&WorldDominationTour_Voices_Anim_vftable; /*0x771a33*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&WorldDominationTour_Voices_Anim_vftable; /*0x771a33*/
   VtableStub::5CB6C0(); /*0x771a39*/
   if ( (a2 & 1) != 0 ) /*0x771a43*/
     RA2_OPDEL(); /*0x771a46*/
@@ -114,10 +114,10 @@ unsigned int * Territory_WorldDominationTour_8::Seek(unsigned int * a1)
   int v4; // [esp+8h] [ebp-8h]
   int v5; // [esp+Ch] [ebp-4h]
 
-  *(unsigned int *)a1->__pad_0 = v2; /*0x77199d*/
+  *(_DWORD *)a1->__pad_0 = v2; /*0x77199d*/
   a1->field_4 = v3; /*0x7719a3*/
   a1->field_8 = v4; /*0x7719aa*/
-  *(unsigned int *)a1->__pad_C = v5; /*0x7719b1*/
+  *(_DWORD *)a1->__pad_C = v5; /*0x7719b1*/
   return a1->__pad_0; /*0x7719b4*/
 }
 } // namespace gamemd
@@ -126,6 +126,6 @@ unsigned int * Territory_WorldDominationTour_8::Seek(unsigned int * a1)
 namespace gamemd {
 BOOL Territory_WorldDominationTour_8::Open()
 {
-  return (uint8_t)Audio::IsPlaying() == 0; /*0x7719ca*/
+  return (unsigned __int8)Audio::IsPlaying() == 0; /*0x7719ca*/
 }
 } // namespace gamemd

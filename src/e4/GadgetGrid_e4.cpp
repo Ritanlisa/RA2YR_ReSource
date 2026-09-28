@@ -75,39 +75,39 @@ int GadgetGrid::RemoveItem(IUnknown * aP1)
   int result; // eax
   int v11; // ecx
   int v12; // ecx
-  int16_t v13; // [esp+Ah] [ebp-6h]
+  __int16 v13; // [esp+Ah] [ebp-6h]
   char v14[4]; // [esp+Ch] [ebp-4h] BYREF
 
-  v3 = *(unsigned int *)(*(int (__thiscall **)(int, char *))(aP1->u32_2F4)(aP1, v14); /*0x4135ec*/
+  v3 = *(_DWORD *)(*(int (__thiscall **)(int, char *))(aP1->u32_2F4)(aP1, v14); /*0x4135ec*/
   v13 = IDA_HIWORD(v3); /*0x4135f4*/
   (*(void (__thiscall **)(int, int))(aP1->u32_2F8)(aP1, dword_887850); /*0x4135fb*/
   if ( (v3 & 0x8000u) == 0 ) /*0x413604*/
-    v3 = (int16_t)v3; /*0x41360a*/
+    v3 = (__int16)v3; /*0x41360a*/
   else
     v3 = 0; /*0x413606*/
   if ( v13 >= 0 ) /*0x413616*/
     v4 = v13; /*0x41361c*/
   else
     v4 = 0; /*0x413618*/
-  v5 = v3 / (*(unsigned int *)&stru_87F5F0.__pad_58[716] / 20); /*0x41363b*/
+  v5 = v3 / (*(_DWORD *)&stru_87F5F0.__pad_58[716] / 20); /*0x41363b*/
   v6 = 19; /*0x41363d*/
   if ( v5 <= 19 ) /*0x413645*/
     v6 = v5; /*0x413647*/
-  v7 = v4 / (*(unsigned int *)&stru_87F5F0.__pad_58[720] / 20); /*0x413666*/
+  v7 = v4 / (*(_DWORD *)&stru_87F5F0.__pad_58[720] / 20); /*0x413666*/
   if ( v7 > 19 ) /*0x41366b*/
     v7 = 19; /*0x41366d*/
-  v8 = *(unsigned int *)&this->__pad_0[480 * v7 + 24 * v6]; /*0x413680*/
+  v8 = *(_DWORD *)&this->__pad_0[480 * v7 + 24 * v6]; /*0x413680*/
   v9 = this + 60 * v7 + 3 * v6; /*0x413683*/
   result = (*(int (__thiscall **)(GadgetGrid *, int *))(v8 + 16))(v9, &aP1); /*0x413688*/
   if ( result != -1 ) /*0x41368e*/
   {
-    v11 = *(unsigned int *)v9[2].__pad_0; /*0x413690*/
+    v11 = *(_DWORD *)v9[2].__pad_0; /*0x413690*/
     if ( result < v11 ) /*0x413695*/
     {
       v12 = v11 - 1; /*0x413697*/
-      for ( *(unsigned int *)v9[2].__pad_0 = v12; /*0x41369d*/
-            result < *(unsigned int *)v9[2].__pad_0;
-            *(unsigned int *)(v9->GadgetGrid_field_0x04 + 4 * result - 4) = *(unsigned int *)(v9->GadgetGrid_field_0x04 + 4 * result) )
+      for ( *(_DWORD *)v9[2].__pad_0 = v12; /*0x41369d*/
+            result < *(_DWORD *)v9[2].__pad_0;
+            *(_DWORD *)(v9->GadgetGrid_field_0x04 + 4 * result - 4) = *(_DWORD *)(v9->GadgetGrid_field_0x04 + 4 * result) )
       {
         ++result; /*0x4136a2*/
       }

@@ -10,9 +10,9 @@
 namespace gamemd {
 char E4Recv_7ACB90::StartGameWOL_Start_7ACB90(IUnknown * aP1, int a3)
 {
-  if ( a3 < 0 || a3 >= (int)this->vtable0 ) /*0x7acb9b*/
+  if ( a3 < 0 || a3 >= (int)this->AbstractClass ) /*0x7acb9b*/
     return 0; /*0x7acbbc*/
-  qmemcpy(aP1, (char *)this->vtable2 + 108 * a3, 0x6Cu); /*0x7acbb3*/
+  qmemcpy(aP1, (char *)this->? + 108 * a3, 0x6Cu); /*0x7acbb3*/
   return 1; /*0x7acbb8*/
 }
 } // namespace gamemd

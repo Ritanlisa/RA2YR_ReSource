@@ -606,18 +606,6 @@ struct RadarClass {
     unsigned int q1660;  // 0x1660
     unsigned char q1664;  // 0x1664
     char q1668;  // 0x1668
-    unsigned int RadarClass_field_0x0;
-    unsigned int RadarClass_field_0x1224;
-    unsigned int RadarClass_field_0x1228;
-    unsigned int RadarClass_field_0x125C;
-    unsigned int RadarClass_field_0x1260;
-    unsigned int RadarClass_field_0x1488;
-    unsigned int RadarClass_field_0x14C0;
-    unsigned int RadarClass_field_0x4;
-    unsigned int RadarClass_field_0x8;
-    unsigned int __pad_122C;
-    unsigned int __pad_1264;
-    unsigned int __pad_C;
 // --- flat members (END) ---
     CampaignClass * * Destruct();
     int GetBlip(int a1, int a2, int a3, ObjectClass * aP3);

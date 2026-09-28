@@ -30,12 +30,6 @@ struct TagClass {
     bool destroyed;  // 0x34
     bool isExecuting;  // 0x35
     unsigned char align36;  // 0x36
-    unsigned int u32_38;
-    unsigned int u32_3C;
-    unsigned int vtable0;
-    unsigned int vtable20;
-    unsigned int vtable26;
-    unsigned int vtable27;
 // --- flat members (END) ---
     Coord * * Unlink();
     TagClass * ProcessTrigger(char a2);

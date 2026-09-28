@@ -52,8 +52,8 @@ int WinModemClass::ReadSerial()
         v5 = 0; /*0x7749bd*/
         do /*0x7749e4*/
         {
-          *(unsigned char *)(this->q024 + this->u32_58) = *(unsigned char *)(this + v5++ + 108); /*0x7749cd*/
-          this->u32_58 = ((uint16_t)this->u32_58 + 1) & 0x1FFF; /*0x7749db*/
+          *(_BYTE *)(this->q024 + this->u32_58) = *(_BYTE *)(this + v5++ + 108); /*0x7749cd*/
+          this->u32_58 = ((unsigned __int16)this->u32_58 + 1) & 0x1FFF; /*0x7749db*/
         }
         while ( v5 < NumberOfBytesTransferred ); /*0x7749e4*/
         v16 = NumberOfBytesTransferred; /*0x7749e6*/
@@ -78,7 +78,7 @@ int WinModemClass::ReadSerial()
     this->u32_20 = cbOutQue; /*0x774a49*/
     if ( !v10 ) /*0x774a4c*/
     {
-      WinModemClass::LogCommErrors(v8, *(unsigned char *)&Stat, cbInQue, cbOutQue); /*0x774a62*/
+      WinModemClass::LogCommErrors(v8, *(_BYTE *)&Stat, cbInQue, cbOutQue); /*0x774a62*/
       cbInQue = Stat.cbInQue; /*0x774a67*/
     }
     if ( cbInQue < 0x2000 ) /*0x774a71*/
@@ -103,8 +103,8 @@ int WinModemClass::ReadSerial()
     {
       for ( i = 0; i < NumberOfBytesTransferred; ++i ) /*0x774ab0*/
       {
-        *(unsigned char *)(this->q024 + this->u32_58) = *(unsigned char *)(i + &this->u32_288); /*0x774abf*/
-        this->u32_58 = ((uint16_t)this->u32_58 + 1) & 0x1FFF; /*0x774acd*/
+        *(_BYTE *)(this->q024 + this->u32_58) = *(_BYTE *)(i + &this->u32_288); /*0x774abf*/
+        this->u32_58 = ((unsigned __int16)this->u32_58 + 1) & 0x1FFF; /*0x774acd*/
       }
       v16 += NumberOfBytesTransferred; /*0x774ada*/
     }

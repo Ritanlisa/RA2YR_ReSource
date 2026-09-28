@@ -21,7 +21,7 @@ struct TActionClass {
     bool q01D;  // 0x1D
     unsigned int q01E;  // 0x1E
     void * NeedsSaveOrLink;  // 0x20
-    unsigned int idxArray;  // 0x24
+    char idxArray[4];  // 0x24
     void* TActionClass_field_28;  // 0x28
     bool q02B;  // 0x2B
     void* TActionClass_field_2C;  // 0x2C
@@ -36,7 +36,7 @@ struct TActionClass {
     unsigned int q03D;  // 0x3D
     void* TActionClass_field_40;  // 0x40
     bool q042;  // 0x42
-    unsigned int ;  // 0x44
+    AbstractClass * TActionClass_field_44;  // 0x44
     unsigned char q045;  // 0x45
     void* q046;  // 0x46
     void* TActionClass_field_48;  // 0x48
@@ -77,16 +77,6 @@ struct TActionClass {
     unsigned char q0B7;  // 0xB7
     void* TActionClass_field_90;  // 0xB8
     unsigned char q0B9;  // 0xB9
-    unsigned int u32_10C;
-    unsigned int u32_1F7;
-    unsigned int u32_1F8;
-    unsigned int u32_298;
-    unsigned int u32_53A0;
-    unsigned int u32_5494;
-    unsigned int u32_54F0;
-    unsigned int u32_54F4;
-    unsigned int u32_54FC;
-    unsigned int TActionClass_field_44;
 // --- flat members (END) ---
     AbstractClass * * ConvertHouseUnits(int a2, int _14, unsigned int * a3, IUnknown * aP4);
     AbstractClass * * CreateWeaponImpactAtWaypoint(int a2, int a3, int a4, IUnknown * aP4);

@@ -37,6 +37,18 @@ struct E4Recv_69E430 {
     unsigned int q5170;  // 0x5170
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
+    unsigned int q20848;  // 0x20848
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q153094;  // 0x153094
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q20481684;  // 0x20481684
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q541595268;  // 0x541595268
 // --- flat members (END) ---
     void* LoadSHPFile(char * Source);  // 0x69E430
 };

@@ -12,17 +12,17 @@ namespace gamemd {
 int TimerClass::Active()
 {
   int v1; // edx
-  void * v2;
+  int v2; // eax
 
-  if ( *(int16_t *)(&this->u32_80) <= 0 ) /*0x4c9485*/
+  if ( *(__int16 *)(&this->u32_80) <= 0 ) /*0x4c9485*/
     return 0; /*0x4c9485*/
   v1 = this->u32_8; /*0x4c9487*/
   v2 = this->q010; /*0x4c948a*/
   if ( v1 != -1 ) /*0x4c9490*/
   {
-    if ( (int)g_CurrentFrame - v1 >= v2 ) /*0x4c949c*/
+    if ( (int)dword_A8ED84 - v1 >= v2 ) /*0x4c949c*/
       return 0; /*0x4c949c*/
-    v2 -= (int)g_CurrentFrame - v1; /*0x4c949e*/
+    v2 -= (int)dword_A8ED84 - v1; /*0x4c949e*/
   }
   return v2 != 0; /*0x4c94a9*/
 }

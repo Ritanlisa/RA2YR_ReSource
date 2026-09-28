@@ -28,54 +28,54 @@ int NetworkClass::ExecutePlanningModeCmd()
   wchar_t *StringCSF; // eax
   wchar_t *v3; // eax
 
-  v1 = (char)(*this);
+  v1 = *this; /*0x639fd0*/
   if ( *this == 9 ) /*0x639fd4*/
   {
-    if ( !g_PlanningModeActive ) /*0x639fdd*/
+    if ( !byte_AC4C08 ) /*0x639fdd*/
     {
-      g_PlanningModeActive = (int)((wchar_t *)(1));
-      StringCSF = (wchar_t *)(GetStringCSF((wchar_t *)g_Str_MSG_PlanningModeNoDeploy, 0, g_Str_File_PlanMgr_cpp, 3233));
+      byte_AC4C08 = 1; /*0x639fe8*/
+      StringCSF = GetStringCSF((wchar_t *)g_Str_MSG_PlanningModeNoDeploy, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x639ffb*/
   LABEL_10:
       AddMessageListPlayerMessage(StringCSF, 480); /*0x63a07b*/
-      PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a09e*/
+      PlayVocClass(dword_8871E0->?[3], 0x2000, 1.0, 0); /*0x63a09e*/
     }
   }
   else if ( v1 == 6 ) /*0x639fff*/
   {
-    if ( !g_PlanningModeActive ) /*0x63a008*/
+    if ( !byte_AC4C08 ) /*0x63a008*/
     {
-      g_PlanningModeActive = (int)((wchar_t *)(1));
-      v3 = (wchar_t *)(GetStringCSF(g_Str_MSG_PlanningModeNoStop, 0, g_Str_File_PlanMgr_cpp, 3233));
+      byte_AC4C08 = 1; /*0x63a01f*/
+      v3 = GetStringCSF(g_Str_MSG_PlanningModeNoStop, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a026*/
       AddMessageListPlayerMessage(v3, 480); /*0x63a032*/
-      PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a04f*/
+      PlayVocClass(dword_8871E0->?[3], 0x2000, 1.0, 0); /*0x63a04f*/
     }
   }
-  else if ( v1 == 7 && !g_PlanningModeActive ) /*0x63a05c*/
+  else if ( v1 == 7 && !byte_AC4C08 ) /*0x63a05c*/
   {
-    g_PlanningModeActive = (int)((wchar_t *)(1));
-    StringCSF = (wchar_t *)(GetStringCSF(g_Str_MSG_PlanningModeNoScatter, 0, g_Str_File_PlanMgr_cpp, 3233));
+    byte_AC4C08 = 1; /*0x63a063*/
+    StringCSF = GetStringCSF(g_Str_MSG_PlanningModeNoScatter, 0, g_Str_File_PlanMgr_cpp, 3233); /*0x63a076*/
     goto LABEL_10; /*0x63a076*/
   }
-  return PlayVocClass(g_RulesClass_Instance->?[3], 0x2000, 1.0, 0); /*0x63a0c0*/
+  return PlayVocClass(dword_8871E0->?[3], 0x2000, 1.0, 0); /*0x63a0c0*/
 }
 }
 // 0x6FFE00
 namespace gamemd {
 AbstractClass * * NetworkClass::RecordEvent()
 {
-  unsigned char *WaypointCoords; // eax
+  _BYTE *WaypointCoords; // eax
   int result; // eax
   char *v3; // edi
-  unsigned char v4[8]; // [esp+8h] [ebp-78h] BYREF
+  _BYTE v4[8]; // [esp+8h] [ebp-78h] BYREF
   char v5[108]; // [esp+10h] [ebp-70h] BYREF
-  int16_t v6; // [esp+7Ch] [ebp-4h]
+  __int16 v6; // [esp+7Ch] [ebp-4h]
   char v7; // [esp+7Eh] [ebp-2h]
-  uint8_t v8; // [esp+84h] [ebp+4h]
+  unsigned __int8 v8; // [esp+84h] [ebp+4h]
 
   WaypointCoords = ScriptAction::GetWaypointCoords((ScriptAction *)v4, this); /*0x6ffe0a*/
-  EventClass::Add(v5, (int)dword_A83D4C->Object_field_0x30, v8, *(unsigned int *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
+  EventClass::Add(v5, (int)dword_A83D4C->Object_field_0x30, v8, *(_DWORD *)WaypointCoords, WaypointCoords[4]); /*0x6ffe34*/
   result = FactoryClass::GetFlag(); /*0x6ffe39*/
-  if ( (unsigned char)result ) /*0x6ffe40*/
+  if ( (_BYTE)result ) /*0x6ffe40*/
   {
     result = NetworkClass::ExecutePlanningModeCmd(v5); /*0x6ffe46*/
     IDA_LOBYTE(result) = 0; /*0x6ffe4b*/
@@ -84,13 +84,13 @@ AbstractClass * * NetworkClass::RecordEvent()
   {
     if ( (int)stru_A80220.lineTrailer < 128 ) /*0x6ffe5f*/
     {
-      v3 = (char *)&unk_A802D4 + 111 * dword_A802D0; /*0x6ffe75*/
+      v3 = (char *)&byte_A802D4 + 111 * dword_A802D0; /*0x6ffe75*/
       qmemcpy(v3, v5, 0x6Cu); /*0x6ffe7c*/
       v3 += 108; /*0x6ffe7c*/
-      *(unsigned short *)v3 = v6; /*0x6ffe7e*/
+      *(_WORD *)v3 = v6; /*0x6ffe7e*/
       v3[2] = v7; /*0x6ffe80*/
       dword_A83A54[dword_A802D0] = timeGetTime(); /*0x6ffe8d*/
-      dword_A802D0 = ((unsigned char)dword_A802D0 + 1) & 0x7F; /*0x6ffe9d*/
+      dword_A802D0 = ((_BYTE)dword_A802D0 + 1) & 0x7F; /*0x6ffe9d*/
       result = (int)++stru_A80220.lineTrailer; /*0x6ffea7*/
     }
     IDA_LOBYTE(result) = 1; /*0x6ffeae*/

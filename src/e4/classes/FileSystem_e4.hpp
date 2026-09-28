@@ -22,7 +22,6 @@ struct FileSystem {
     void* q100;  // 0x100
     unsigned int q114;  // 0x114
     void* q598;  // 0x598
-    unsigned int openFile;
 // --- flat members (END) ---
     int ProcessNextFileExtension();
     void CleanupTrees();

@@ -35,9 +35,6 @@ struct CCFileClass {
     int TotalBytesWritten;  // 0x48
     unsigned int FileID;  // 0x4C
     unsigned int MixFileIndex;  // 0x50
-    unsigned int CacheReadAhead8;
-    unsigned int __pad_0;
-    unsigned int u32_68;
 // --- flat members (END) ---
     AudioController * * Close();
     int Destruct();

@@ -12,6 +12,8 @@ struct E4Recv_77A760 {
     unsigned int q134;  // 0x134
     unsigned int q308;  // 0x308
     unsigned int q1910;  // 0x1910
+    unsigned int q1388834;  // 0x1388834
+    unsigned int q20482100;  // 0x20482100
 // --- flat members (END) ---
     char sub_77A760(char a2);  // 0x77A760
 };

@@ -13,7 +13,7 @@
 namespace gamemd {
 int EventQueue::Process()
 {
-  void * v2;
+  int v2; // eax
 
   if ( (this->q318 + 1) % 256 != this->q314 ) /*0x54f01e*/
     MessageLoop(); /*0x54f020*/
@@ -21,7 +21,7 @@ int EventQueue::Process()
   if ( v2 == this->q318 ) /*0x54f033*/
     return 0; /*0x54f035*/
   else
-    return *((unsigned short *)this + v2 + 138); /*0x54f03a*/
+    return *((_WORD *)this + v2 + 138); /*0x54f03a*/
 }
 } // namespace gamemd
 // 0x54F050
@@ -99,12 +99,12 @@ int EventQueue::Read()
 namespace gamemd {
 int EventQueue::Check()
 {
-  void * v1;
+  int v1; // eax
 
-  v1 = (void *)((int)(this->q314));
+  v1 = this->q314; /*0x54f650*/
   if ( v1 == this->q318 ) /*0x54f65e*/
     return 0; /*0x54f669*/
   else
-    return *((unsigned short *)this + v1 + 138); /*0x54f660*/
+    return *((_WORD *)this + v1 + 138); /*0x54f660*/
 }
 } // namespace gamemd

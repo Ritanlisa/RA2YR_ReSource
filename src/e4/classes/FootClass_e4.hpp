@@ -159,7 +159,7 @@ struct FootClass {
     unsigned char q139;  // 0x139
     char currentWeaponSlot[4];  // 0x13C
     void* currentRank;  // 0x140
-    unsigned int gattlingStage;  // 0x144
+    char gattlingStage[4];  // 0x144
     unsigned int gattlingValue;  // 0x148
     HouseClass* ammoReloadTimer;  // 0x14C
     void* q14E;  // 0x14E
@@ -256,7 +256,7 @@ struct FootClass {
     char lastSightHeight[4];  // 0x264
     bool ambientParticles;  // 0x268
     bool isGeneratingGap;  // 0x269
-    unsigned int gapRadius;  // 0x26C
+    char gapRadius[4];  // 0x26C
     bool isBeingWarpedOut;  // 0x270
     bool isWarpingOut;  // 0x271
     bool isWarpEffectActive;  // 0x272
@@ -652,17 +652,6 @@ struct FootClass {
     bool FootClass_field_6BD;  // 0x6BD
     bool FootClass_field_6BE;  // 0x6BE
     bool FootClass_field_6BF;  // 0x6BF
-    unsigned int Capacity;
-    unsigned int FootClass_field_abstract_array_5AC;
-    unsigned int RemoveFromPointerArray;
-    unsigned int __pad_58C;
-    unsigned int __pad_5B0;
-    unsigned int currentJumpjetMapCoords;
-    unsigned int locomotor;
-    unsigned int parasiteImUsing;
-    unsigned int team;
-    unsigned int unknownAbstractArray588;
-    unsigned int vtable0;
 // --- flat members (END) ---
     AbstractClass * * Destruct();
     int updateThreat();

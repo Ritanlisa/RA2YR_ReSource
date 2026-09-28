@@ -71,7 +71,7 @@ struct AircraftTypeClass {
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
     SHPStruct* AlphaImage;  // 0xAC
-    unsigned int MainVoxel;  // 0xB0
+    char MainVoxel[4];  // 0xB0
     char TurretVoxel[4];  // 0xB4
     char q0B8[4];  // 0xB8
     unsigned char q0B9;  // 0xB9
@@ -133,7 +133,7 @@ struct AircraftTypeClass {
     unsigned char q178;  // 0x178
     unsigned int q17C;  // 0x17C
     char q180[4];  // 0x180
-    unsigned int q184;  // 0x184
+    char q184[4];  // 0x184
     char q188[4];  // 0x188
     unsigned char q18C;  // 0x18C
     unsigned int q190;  // 0x190
@@ -213,17 +213,17 @@ struct AircraftTypeClass {
     unsigned char q258;  // 0x258
     SomeVoxelCache* q25C;  // 0x25C
     char q260[4];  // 0x260
-    unsigned int q264;  // 0x264
+    char q264[4];  // 0x264
     unsigned int q268;  // 0x268
     SomeVoxelCache* q26C;  // 0x26C
     SomeVoxelCache* q270;  // 0x270
     SomeVoxelCache* q274;  // 0x274
-    unsigned int q278;  // 0x278
+    char q278[4];  // 0x278
     SomeVoxelCache* q27C;  // 0x27C
     unsigned int q280;  // 0x280
     unsigned int q284;  // 0x284
     unsigned int q288;  // 0x288
-    unsigned int q28C;  // 0x28C
+    char q28C[4];  // 0x28C
     unsigned char q290;  // 0x290
     int armed;  // 0x294
     unsigned char hasTurretFlag;  // 0x295
@@ -233,7 +233,7 @@ struct AircraftTypeClass {
     void* eliteWeapon1;  // 0x2A4
     unsigned int eliteWeapon2;  // 0x2A8
     unsigned int ammo;  // 0x2AC
-    unsigned int EliteAbilities;  // 0x2AE
+    char EliteAbilities[4];  // 0x2AE
     unsigned int guardRange;  // 0x2B0
     unsigned int sight;  // 0x2B4
     unsigned int cost;  // 0x2B8
@@ -317,13 +317,13 @@ struct AircraftTypeClass {
     unsigned char q3B4;  // 0x3B4
     unsigned int q3B7;  // 0x3B7
     int BuildLimit;  // 0x3B8
-    unsigned int Category;  // 0x3BC
+    char Category[4];  // 0x3BC
     unsigned int unknown_3C0;  // 0x3C0
     unsigned int q3C4;  // 0x3C4
     double DeployTime;  // 0x3C8
     unsigned char q3CC;  // 0x3CC
     int FireAngle;  // 0x3D0
-    unsigned int PipScale;  // 0x3D4
+    char PipScale[4];  // 0x3D4
     unsigned char q3D7;  // 0x3D7
     bool PipsDrawForAll;  // 0x3D8
     int LeptonMindControlOffset;  // 0x3DC
@@ -336,8 +336,8 @@ struct AircraftTypeClass {
     unsigned int BuildingTypeList_FlagByte;  // 0x3F5
     unsigned char q3F9;  // 0x3F9
     unsigned int q400;  // 0x400
-    unsigned int DeploysInto;  // 0x404
-    unsigned int UndeploysInto;  // 0x408
+    char DeploysInto[4];  // 0x404
+    char UndeploysInto[4];  // 0x408
     char PowersUnit[4];  // 0x40C
     bool PoweredUnit;  // 0x410
     unsigned int VoiceSelect;  // 0x414
@@ -490,7 +490,7 @@ struct AircraftTypeClass {
     int FlightLevel;  // 0x618
     int AirstrikeTeam;  // 0x61C
     int EliteAirstrikeTeam;  // 0x620
-    unsigned int AirstrikeTeamType;  // 0x624
+    char AirstrikeTeamType[4];  // 0x624
     char EliteAirstrikeTeamType[4];  // 0x628
     int AirstrikeRechargeTime;  // 0x62C
     int EliteAirstrikeRechargeTime;  // 0x630
@@ -507,7 +507,7 @@ struct AircraftTypeClass {
     AbstractClass* q65C;  // 0x65C
     int WalkRate;  // 0x660
     int IdleRate;  // 0x664
-    unsigned int VeteranAbilities;  // 0x668
+    char VeteranAbilities[4];  // 0x668
     unsigned char q66C;  // 0x66C
     int ThreatPosed;  // 0x670
     int Points;  // 0x674
@@ -887,7 +887,7 @@ struct AircraftTypeClass {
     void* ArrayIndex;  // 0xDF8
     bool qDFC;  // 0xDFC
     unsigned char qDFD;  // 0xDFD
-    unsigned int qE00;  // 0xE00
+    char qE00[4];  // 0xE00
     int qE04;  // 0xE04
     bool qE08;  // 0xE08
     bool qE09;  // 0xE09

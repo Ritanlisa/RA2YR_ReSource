@@ -61,8 +61,8 @@ char CopyProtection::NotifyLauncher()
         if ( timeGetTime() > v2 ) /*0x49f6f0*/
           goto LABEL_9; /*0x49f6f0*/
       }
-      lpBaseAddress = (int)(MapViewOfFileEx((HANDLE)Msg.lParam, 0xF001Fu, 0, 0, 0, 0));
-      if ( lpBaseAddress ) /*0x49f728*/
+      dword_89F75C = MapViewOfFileEx((HANDLE)Msg.lParam, 0xF001Fu, 0, 0, 0, 0); /*0x49f723*/
+      if ( dword_89F75C ) /*0x49f728*/
         return 1; /*0x49f72d*/
     }
   }

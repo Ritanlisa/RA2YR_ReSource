@@ -12,6 +12,15 @@ struct E4Recv_522540 {
     unsigned int q880;  // 0x880
     unsigned int q1728;  // 0x1728
     unsigned int q5928;  // 0x5928
+    unsigned int q22824;  // 0x22824
+    unsigned int q34150;  // 0x34150
+    unsigned int q141348;  // 0x141348
+    unsigned int q213328;  // 0x213328
+    unsigned int q536937858;  // 0x536937858
+    unsigned int q22390470744;  // 0x22390470744
+    unsigned int q621324588828978;  // 0x621324588828978
+    unsigned int q1256002515378745931574;  // 0x1256002515378745931574
+    unsigned int q22166790942693122674726260;  // 0x22166790942693122674726260
 // --- flat members (END) ---
     char sub_522540();  // 0x522540
 };

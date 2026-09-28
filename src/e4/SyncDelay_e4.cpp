@@ -197,9 +197,9 @@ signed int SyncDelay::Start()
 namespace gamemd {
 int SyncDelay::Check(unsigned int * a2)
 {
-  unsigned int *v2; // eax
+  _DWORD *v2; // eax
 
-  v2 = (unsigned int *)this->q010; /*0x55f6c0*/
+  v2 = (_DWORD *)this->q010; /*0x55f6c0*/
   return v2 && *v2 == *a2; /*0x55f6d3*/
 }
 } // namespace gamemd

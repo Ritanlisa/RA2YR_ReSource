@@ -18,11 +18,8 @@ struct E4Recv_7AECD0 {
     unsigned int q774;  // 0x774
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
-    unsigned int Capacity;
-    unsigned int IsAllocated;
-    unsigned int IsInitialized;
-    unsigned int Items;
-    unsigned int vtable0;
+    unsigned int q25608;  // 0x25608
+    unsigned int q1388694;  // 0x1388694
 // --- flat members (END) ---
     unsigned int * sub_7AECD0(int a2,  int a3);    // 0x7AECD0
 };

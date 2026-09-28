@@ -17,7 +17,6 @@ struct MPBattleClass {
     bool q014;  // 0x14
     unsigned char q015;  // 0x15
     bool q020;  // 0x20
-    unsigned int __pad_0;
 // --- flat members (END) ---
     int areTeamChangesAllowed();
     int drawTeamDropdown();

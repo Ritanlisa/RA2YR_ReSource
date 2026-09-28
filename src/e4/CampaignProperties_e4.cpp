@@ -11,7 +11,7 @@
 namespace gamemd {
 int CampaignProperties_WorldDominationTour_22::Seek(int a2)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d277a*/
+  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2); /*0x5d277a*/
 }
 } // namespace gamemd
 
@@ -21,7 +21,7 @@ int CampaignProperties_WorldDominationTour_22::Read(unsigned int * a2)
 {
   int result; // eax
   int m_8; // edx
-  unsigned int *i; // ecx
+  _DWORD *i; // ecx
 
   if ( !IDA_LOBYTE(this->m_C) ) /*0x5d2900*/
     return 0; /*0x5d2908*/
@@ -29,7 +29,7 @@ int CampaignProperties_WorldDominationTour_22::Read(unsigned int * a2)
   result = 0; /*0x5d2911*/
   if ( m_8 <= 0 ) /*0x5d2915*/
     return -1; /*0x5d292c*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x5d291b*/
+  for ( i = *(_DWORD **)&this->m_1[3]; *i != *a2; ++i ) /*0x5d291b*/
   {
     if ( ++result >= m_8 ) /*0x5d292a*/
       return -1; /*0x5d292a*/
@@ -43,7 +43,7 @@ namespace gamemd {
 unsigned int CampaignProperties_WorldDominationTour_22::Write(int a2)
 {
   if ( IDA_LOBYTE(this->m_C) ) /*0x5d2940*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x5d2955*/
+    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2; /*0x5d2955*/
   else
     return 0; /*0x5d2947*/
 }
@@ -55,12 +55,12 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(cha
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_MSAnim___vftable; /*0x5d2ca6*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d2ca3*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_MSAnim___vftable; /*0x5d2ca6*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5d2cb0*/
   {
     RA2_OPDEL(v3); /*0x5d2cb8*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x5d2cc0*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x5d2cc0*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x5d2ccb*/
   this->m_8 = 0; /*0x5d2cd1*/
@@ -74,7 +74,7 @@ VectorClass_flat * CampaignProperties_WorldDominationTour_22::QueryInterface(cha
 namespace gamemd {
 BOOL CampaignProperties_WorldDominationTour_22::AddRef()
 {
-  return this->q008 < *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 16); /*0x76f0fd*/
+  return this->q008 < *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 16); /*0x76f0fd*/
 }
 } // namespace gamemd
 

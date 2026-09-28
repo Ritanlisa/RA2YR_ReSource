@@ -16,12 +16,6 @@ struct InfantryTypeVector {
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
-    unsigned int InfantryTypeVector_field_0x04;
-    unsigned int InfantryTypeVector_field_0x08;
-    unsigned int InfantryTypeVector_field_0x0C;
-    unsigned int InfantryTypeVector_field_0x10;
-    unsigned int InfantryTypeVector_field_0x14;
-    unsigned int __pad_0;
 // --- flat members (END) ---
     int Add(InfantryTypeClass * aP1);
     unsigned int * Construct2(int a2, int a3);

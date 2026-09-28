@@ -37,7 +37,7 @@ int AudioMixer::PlaySample()
   int AudioMixer_field_14; // eax
   int AudioMixer_field_10; // ecx
   unsigned int v13; // edi
-  uint64_t v14; // kr00_8
+  unsigned __int64 v14; // kr00_8
   unsigned int v15; // edx
   int v16; // eax
   int v17; // eax
@@ -119,9 +119,9 @@ int AudioMixer::Init()
   SetupSampleAudioMixer(&this->AudioMixer_field_00, 0x4000); /*0x40100a*/
   SetupSampleAudioMixer((int *)this + 10, 100); /*0x401019*/
   SetupSampleAudioMixer((int *)&this->AudioMixer_field_14, 0x2000); /*0x401028*/
-  SetRateMixerSample((unsigned int *)this + 10, 10, 0x3E8u, 0); /*0x40103b*/
+  SetRateMixerSample((_DWORD *)this + 10, 10, 0x3E8u, 0); /*0x40103b*/
   SetRateMixerSample(0x4000, 0x3E8u, 0); /*0x40104e*/
-  SetRateMixerSample((unsigned int *)&this->AudioMixer_field_14, 0x4000, 0x3E8u, 0); /*0x401061*/
+  SetRateMixerSample((_DWORD *)&this->AudioMixer_field_14, 0x4000, 0x3E8u, 0); /*0x401061*/
   return EndBufferMixer(&this->AudioMixer_field_00, 0x4000); /*0x40106d*/
 }
 } // namespace gamemd
@@ -130,21 +130,21 @@ namespace gamemd {
 int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
 {
   int v2; // eax
-  unsigned int *v4; // esi
+  _DWORD *v4; // esi
 
   v2 = a2; /*0x4061d6*/
   if ( a1[7] == 3 ) /*0x4061d8*/
   {
     if ( a2 > 0x4000 ) /*0x4061e0*/
       v2 = 0x4000; /*0x4061e2*/
-    return RequestBufferMixer(a1 + 46, (unsigned int)(v2 * IDA_HIWORD(*(unsigned int *)(a1[9] + 28))) >> 14); /*0x406204*/
+    return RequestBufferMixer(a1 + 46, (unsigned int)(v2 * IDA_HIWORD(*(_DWORD *)(a1[9] + 28))) >> 14); /*0x406204*/
   }
   else
   {
     if ( a2 > 0x4000 ) /*0x40620f*/
       v2 = 0x4000; /*0x406211*/
     v4 = a1 + 46; /*0x40621f*/
-    EndBufferMixer(a1 + 46, (unsigned int)(v2 * IDA_HIWORD(*(unsigned int *)(a1[9] + 28))) >> 14); /*0x406236*/
+    EndBufferMixer(a1 + 46, (unsigned int)(v2 * IDA_HIWORD(*(_DWORD *)(a1[9] + 28))) >> 14); /*0x406236*/
     return AudioMixer::PlaySample(v4); /*0x40623e*/
   }
 }
@@ -153,7 +153,7 @@ int AudioMixer::PlayBuffer(unsigned int * a1, unsigned int a2)
 namespace gamemd {
 int AudioMixer::RequestOrEndBuffer(int a1, unsigned int a2)
 {
-  if ( *(unsigned int *)(a1 + 28) == 3 ) /*0x406276*/
+  if ( *(_DWORD *)(a1 + 28) == 3 ) /*0x406276*/
   {
     if ( a2 > 0x4000 ) /*0x40627e*/
       a2 = 0x4000; /*0x406280*/

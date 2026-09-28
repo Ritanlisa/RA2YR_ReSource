@@ -46,6 +46,65 @@ struct E4Recv_426ED0 {
     unsigned int q5184;  // 0x5184
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
+    unsigned int q8324;  // 0x8324
+    unsigned int q13824;  // 0x13824
+    unsigned int q18534;  // 0x18534
+    unsigned int q20868;  // 0x20868
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q25654;  // 0x25654
+    unsigned int q33398;  // 0x33398
+    unsigned int q79908;  // 0x79908
+    unsigned int q133224;  // 0x133224
+    unsigned int q153094;  // 0x153094
+    unsigned int q210290;  // 0x210290
+    unsigned int q497928;  // 0x497928
+    unsigned int q497954;  // 0x497954
+    unsigned int q628278;  // 0x628278
+    unsigned int q1258020;  // 0x1258020
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q1388834;  // 0x1388834
+    unsigned int q1388914;  // 0x1388914
+    unsigned int q2163344;  // 0x2163344
+    unsigned int q4815144;  // 0x4815144
+    unsigned int q4815188;  // 0x4815188
+    unsigned int q6455928;  // 0x6455928
+    unsigned int q19234848;  // 0x19234848
+    unsigned int q20481684;  // 0x20481684
+    unsigned int q20482100;  // 0x20482100
+    unsigned int q20482324;  // 0x20482324
+    unsigned int q35009348;  // 0x35009348
+    unsigned int q75583880;  // 0x75583880
+    unsigned int q105208104;  // 0x105208104
+    unsigned int q421742664;  // 0x421742664
+    unsigned int q541595268;  // 0x541595268
+    unsigned int q541598500;  // 0x541598500
+    unsigned int q1968715794;  // 0x1968715794
+    unsigned int q1968715904;  // 0x1968715904
+    unsigned int q22571209318;  // 0x22571209318
+    unsigned int q22571209320;  // 0x22571209320
+    unsigned int q36516995330;  // 0x36516995330
+    unsigned int q36660511058;  // 0x36660511058
+    unsigned int q109126441220;  // 0x109126441220
+    unsigned int q2359835005720;  // 0x2359835005720
+    unsigned int q2359835005728;  // 0x2359835005728
+    unsigned int q2359835107954;  // 0x2359835107954
+    unsigned int q3732705727280;  // 0x3732705727280
+    unsigned int q971036362437248;  // 0x971036362437248
+    unsigned int q971428040484950;  // 0x971428040484950
+    unsigned int q6792050949837090;  // 0x6792050949837090
+    unsigned int q6792050949846578;  // 0x6792050949846578
+    unsigned int q441783186122949910;  // 0x441783186122949910
+    unsigned int q680328744094888520;  // 0x680328744094888520
+    unsigned int q680398137311381840;  // 0x680398137311381840
+    unsigned int q7463033069952528528;  // 0x7463033069952528528
+    unsigned int q7463033069952591224;  // 0x7463033069952591224
+    unsigned int q1918720362029298227264;  // 0x1918720362029298227264
+    unsigned int q34351310592240399225380;  // 0x34351310592240399225380
+    unsigned int q1009836475355210328560984178;  // 0x1009836475355210328560984178
+    unsigned int q1009836475355210328572056448;  // 0x1009836475355210328572056448
+    unsigned int q325272271103424132701932599394680;  // 0x325272271103424132701932599394680
+    unsigned int q325272271103424132701932891759688;  // 0x325272271103424132701932891759688
 // --- flat members (END) ---
     int sub_426ED0(int a2);  // 0x426ED0
 };

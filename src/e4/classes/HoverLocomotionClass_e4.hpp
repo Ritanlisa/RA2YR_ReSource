@@ -47,7 +47,6 @@ struct HoverLocomotionClass {
     char HoverLocomotionClass_field_6C[4];  // 0x6C
     bool HoverLocomotionClass_field_bool_70;  // 0x70
     unsigned char q071;  // 0x71
-    unsigned int __pad_0;
 // --- flat members (END) ---
     HoverLocomotionClass * ProcessMove(char a2);
     int BeginMove(int a1, int * a2);

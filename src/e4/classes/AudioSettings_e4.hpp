@@ -12,10 +12,6 @@ struct AudioSettings {
     unsigned char pad_02;  // 0x2
     char AudioSettings_field_04[4];  // 0x4
     char AudioSettings_field_08[4];  // 0x8
-    unsigned int Check;
-    unsigned int ComputeTransform;
-    unsigned int u32_44;
-    unsigned int u32_46;
 // --- flat members (END) ---
     AbstractClass * * DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd);
     void SetFlag68(char a2);

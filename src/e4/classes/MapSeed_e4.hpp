@@ -16,8 +16,6 @@ struct MapSeed {
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
-    unsigned int __pad_0;
-    unsigned int q00C0;
 // --- flat members (END) ---
     AbstractClass * * InsertName();
     int CheckName();

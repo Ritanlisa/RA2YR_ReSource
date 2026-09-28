@@ -35,7 +35,7 @@ struct TeamClass {
     unsigned int q03D;  // 0x3D
     AbstractClass* focus;  // 0x40
     bool q042;  // 0x42
-    unsigned int unknown44;  // 0x44
+    char unknown44[4];  // 0x44
     unsigned char q045;  // 0x45
     void* q046;  // 0x46
     char totalObjects[4];  // 0x48
@@ -79,13 +79,6 @@ struct TeamClass {
     unsigned char u8_98;  // 0x98
     unsigned char u8_99;  // 0x99
     void* q09C;  // 0x9C
-    unsigned int u32_10C;
-    unsigned int u32_68F;
-    unsigned int u32_690;
-    unsigned int u32_691;
-    unsigned int u32_A8;
-    unsigned int u32_B0;
-    unsigned int vtable0;
 // --- flat members (END) ---
     AbstractClass * * DestroyAllMembers(TechnoClass * aP1);
     AbstractClass * * FindClosestEnemy(AbstractClass * aP1, AbstractClass * aP2);

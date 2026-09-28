@@ -36,7 +36,6 @@ struct BufferIOFileClass {
     int BufferCursor;  // 0x40
     unsigned int TotalBytesRead;  // 0x44
     unsigned int TotalBytesWritten;  // 0x48
-    unsigned int __pad_0;
 // --- flat members (END) ---
     int Destruct();
     void StubReturnFalse(int a1, int a2, int a3);

@@ -42,7 +42,7 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
   int v17; // esi
   IUnknown *ParticleClass_field_0xB4; // ecx
   char *pad_B0; // eax
-  int16_t v20; // dx
+  __int16 v20; // dx
   char v21; // al
   double v22; // st7
   int v23; // eax
@@ -55,25 +55,25 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
   int v30; // [esp+2Ch] [ebp-8h]
   int v31; // [esp+30h] [ebp-4h]
 
-  if ( *(unsigned int *)&g_MissionQueueFrame.waypoints[282] >= (unsigned int)PingPongBuffer::GetWriteOffset() /*0x62cedc*/
-    || *((unsigned int *)this->ParticleClass_field_0xAC + 186) )
+  if ( *(_DWORD *)&g_MissionQueueFrame.waypoints[282] >= (unsigned int)PingPongBuffer::GetWriteOffset() /*0x62cedc*/
+    || *((_DWORD *)this->ParticleClass_field_0xAC + 186) )
   {
-    if ( stru_A8EB00.parent_gap[30] || (v4 = *((unsigned int *)this->ParticleClass_field_0xAC + 197), v4 != 1) && v4 != 3 ) /*0x62cf0b*/
+    if ( stru_A8EB00.ObjectTypeClass[30] || (v4 = *((_DWORD *)this->ParticleClass_field_0xAC + 197), v4 != 1) && v4 != 3 ) /*0x62cf0b*/
     {
-      if ( stru_A8EB00.gapE4[391] /*0x62cf58*/
+      if ( stru_A8EB00.?[391] /*0x62cf58*/
         || !g_hWnd
-        || ((int)unk_A8B230->vtable0 & 0x1000) == 0
-        || (v29 = *(unsigned int *)&this->__pad_28[116],
-            v30 = *(unsigned int *)&this->__pad_28[120],
-            v31 = *(unsigned int *)&this->__pad_28[124],
-            !(uint8_t)Game::Stub3((int)&v29)) )
+        || ((int)dword_A8B230->vtable0 & 0x1000) == 0
+        || (v29 = *(_DWORD *)&this->__pad_28[116],
+            v30 = *(_DWORD *)&this->__pad_28[120],
+            v31 = *(_DWORD *)&this->__pad_28[124],
+            !(unsigned __int8)Game::Stub3((int)&v29)) )
       {
-        v5 = *((unsigned int *)this->ParticleClass_field_0xAC + 197); /*0x62cf6b*/
+        v5 = *((_DWORD *)this->ParticleClass_field_0xAC + 197); /*0x62cf6b*/
         if ( v5 == 3 || v5 == 4 ) /*0x62cf7d*/
         {
-          v28[0] = *(unsigned int *)&this->__pad_28[116]; /*0x62d036*/
-          v28[1] = *(unsigned int *)&this->__pad_28[120]; /*0x62d048*/
-          v28[2] = *(unsigned int *)&this->__pad_28[124]; /*0x62d054*/
+          v28[0] = *(_DWORD *)&this->__pad_28[116]; /*0x62d036*/
+          v28[1] = *(_DWORD *)&this->__pad_28[120]; /*0x62d048*/
+          v28[2] = *(_DWORD *)&this->__pad_28[124]; /*0x62d054*/
           Coord::To_Screen((Coord *)g_TacticalClass_Instance, v28, &v29); /*0x62d058*/
           v12 = (char *)DSurface_ViewBounds.field_4 + v30; /*0x62d06b*/
           v30 += (int)DSurface_ViewBounds.field_4; /*0x62d071*/
@@ -82,29 +82,29 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
             v13 = a3[1]; /*0x62d08c*/
             if ( (int)v12 >= v13 && (int)v12 < v13 + a3[3] ) /*0x62d09e*/
             {
-              v14 = *(uint16_t *)StreamClass::ReadAndSeek( /*0x62d0b6*/
+              v14 = *(unsigned __int16 *)StreamClass::ReadAndSeek( /*0x62d0b6*/
                                            *(int **)&stru_87E790.__pad_D8[60],
                                            v29,
-                                           (int)&v12[-*(unsigned int *)(*(unsigned int *)&stru_87E790.__pad_D8[60] + 4)]);
-              if ( (unsigned short)v14 ) /*0x62d0bb*/
+                                           (int)&v12[-*(_DWORD *)(*(_DWORD *)&stru_87E790.__pad_D8[60] + 4)]);
+              if ( (_WORD)v14 ) /*0x62d0bb*/
               {
                 v15 = v30 - g_ZBufferDescriptor->Stream_field_04; /*0x62d0d4*/
                 v28[0] = v29; /*0x62d0d9*/
-                v16 = ZCoordToScreenY(*(unsigned int *)&this->__pad_28[124]); /*0x62d0e8*/
-                v17 = (uint16_t)(IDA_LOWORD(g_ZBufferDescriptor->Stream_field_04) /*0x62d10f*/
+                v16 = ZCoordToScreenY(*(_DWORD *)&this->__pad_28[124]); /*0x62d0e8*/
+                v17 = (unsigned __int16)(IDA_LOWORD(g_ZBufferDescriptor->Stream_field_04) /*0x62d10f*/
                                        + IDA_LOWORD(g_ZBufferDescriptor[1].Stream_field_10)
                                        - v30)
                     - v16
                     - 50;
-                if ( v17 < *(uint16_t *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v28[0], v15) ) /*0x62d11e*/
+                if ( v17 < *(unsigned __int16 *)Audio::GetSamplePosition((int *)g_ZBufferDescriptor, v28[0], v15) ) /*0x62d11e*/
                 {
-                  ParticleClass_field_0xB4 = (IUnknown *)(this->ParticleClass_field_0xB4);
+                  ParticleClass_field_0xB4 = this->ParticleClass_field_0xB4; /*0x62d124*/
                   if ( ParticleClass_field_0xB4 ) /*0x62d12c*/
-                    pad_B0 = (char *)(*((unsigned int *)this->ParticleClass_field_0xAC + 175) /*0x62d13f*/
-                                    + 3 * (unsigned int)ParticleClass_field_0xB4);
+                    pad_B0 = (char *)(*((_DWORD *)this->ParticleClass_field_0xAC + 175) /*0x62d13f*/
+                                    + 3 * (_DWORD)ParticleClass_field_0xB4);
                   else
                     pad_B0 = this->__pad_B0; /*0x62d12e*/
-                  v20 = *(unsigned short *)pad_B0; /*0x62d145*/
+                  v20 = *(_WORD *)pad_B0; /*0x62d145*/
                   v21 = pad_B0[2]; /*0x62d148*/
                   IDA_LOWORD(v28[0]) = v20; /*0x62d14b*/
                   IDA_BYTE2(v28[0]) = v21; /*0x62d15a*/
@@ -120,12 +120,12 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
                     v26 = (v14 * v26) >> 7; /*0x62d22d*/
                     v27 = (v14 * v27) >> 7; /*0x62d230*/
                   }
-                  (*(void (__thiscall **)(AudioStream *, int *, int))(*(unsigned int *)g_DSurface_Hidden_2->__pad_0 + 36))( /*0x62d288*/
+                  (*(void (__thiscall **)(AudioStream *, int *, int))(*(_DWORD *)g_DSurface_Hidden_2->__pad_0 + 36))( /*0x62d288*/
                     g_DSurface_Hidden_2,
                     &v29,
-                    (uint16_t)(v24 >> g_BitShift_Green_0 << g_BitShift_Red)
-                  | (uint16_t)(v26 >> g_BitMask_Blue << g_BitMask_Green)
-                  | (uint16_t)(v27 >> g_BitMask_Red << g_BitShift_Blue));
+                    (unsigned __int16)(v24 >> g_BitShift_Green_0 << g_BitShift_Red)
+                  | (unsigned __int16)(v26 >> g_BitMask_Blue << g_BitMask_Green)
+                  | (unsigned __int16)(v27 >> g_BitMask_Red << g_BitShift_Blue));
                 }
               }
             }
@@ -133,14 +133,14 @@ void ParticleClass::DrawParticle(int * a2, int * a3)
         }
         else
         {
-          v6 = (*(int (__thiscall **)(ParticleClass *))(*(unsigned int *)this->__pad_0 + 464))(this); /*0x62cf87*/
+          v6 = (*(int (__thiscall **)(ParticleClass *))(*(_DWORD *)this->__pad_0 + 464))(this); /*0x62cf87*/
           v7 = -15 - ZCoordToScreenY(v6); /*0x62cf9d*/
-          v8 = (*(int (__thiscall **)(ParticleClass *))(*(unsigned int *)this->__pad_0 + 108))(this); /*0x62cfa2*/
+          v8 = (*(int (__thiscall **)(ParticleClass *))(*(_DWORD *)this->__pad_0 + 108))(this); /*0x62cfa2*/
           if ( v8 ) /*0x62cfa6*/
           {
             v9 = 10240; /*0x62cfb0*/
-            v10 = (*(int (__thiscall **)(ParticleClass *))(*(unsigned int *)this->__pad_0 + 488))(this); /*0x62cfb5*/
-            if ( stru_A8EB00.parent_gap[30] == 2 ) /*0x62cfc2*/
+            v10 = (*(int (__thiscall **)(ParticleClass *))(*(_DWORD *)this->__pad_0 + 488))(this); /*0x62cfb5*/
+            if ( stru_A8EB00.ObjectTypeClass[30] == 2 ) /*0x62cfc2*/
             {
               v11 = this->__pad_128[7]; /*0x62cfc4*/
               if ( v11 == 25 ) /*0x62cfcd*/
@@ -274,10 +274,10 @@ int ParticleClass::LoadParticleData(ObjectClass * aP1, int aP1a)
     if ( aP1 ) /*0x62d7b6*/
     {
       ObjectClass::Init((ObjectClass *)aP1, (int)&aP1a); /*0x62d7bf*/
-      *aP1 = (void*)&ParticleClass_vftable; /*0x62d7c4*/
-      aP1[1] = (void*)&ParticleClass_vftable; /*0x62d7ca*/
-      aP1[2] = (void*)&ParticleClass_vftable; /*0x62d7d1*/
-      aP1[3] = (void*)&ParticleClass_vftable; /*0x62d7d8*/
+      *aP1 = &(void*)(void*)&ParticleClass_vftable; /*0x62d7c4*/
+      aP1[1] = &(void*)(void*)&ParticleClass_vftable; /*0x62d7ca*/
+      aP1[2] = &(void*)(void*)&ParticleClass_vftable; /*0x62d7d1*/
+      aP1[3] = &(void*)(void*)&ParticleClass_vftable; /*0x62d7d8*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 43); /*0x62d7eb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, aP1 + 73); /*0x62d7fc*/

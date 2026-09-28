@@ -21,11 +21,11 @@ long MainMenu_Screen()
   HWND DlgItem; // esi
   int v4; // ecx
   int v5; // eax
-  uint16_t v6; // ax
+  unsigned __int16 v6; // ax
   int v7; // esi
   int v8; // esi
   const char **v9; // edi
-  unsigned char v11[2]; // [esp+6h] [ebp-1Eh] BYREF
+  _BYTE v11[2]; // [esp+6h] [ebp-1Eh] BYREF
   LONG dwNewLong; // [esp+8h] [ebp-1Ch] BYREF
   struct _SYSTEMTIME SystemTime; // [esp+10h] [ebp-14h] BYREF
 
@@ -59,7 +59,7 @@ long MainMenu_Screen()
     }
     do /*0x531f04*/
     {
-      if ( (uint8_t)Dialog::PumpMessages() ) /*0x531db2*/
+      if ( (unsigned __int8)Dialog::PumpMessages() ) /*0x531db2*/
         dwNewLong = 7; /*0x531dbb*/
       if ( g_LoadScreenFlag ) /*0x531dca*/
       {
@@ -67,40 +67,40 @@ long MainMenu_Screen()
         Screen::Capture(1, 0, a1, a2); /*0x531dd7*/
         Frame::Present(0); /*0x531de6*/
       }
-      if ( (uint16_t)EventQueue::Process(g_BinkMoviePlayer) ) /*0x531df1*/
+      if ( (unsigned __int16)EventQueue::Process(dword_87F770) ) /*0x531df1*/
       {
-        v6 = EventQueue::Read(g_BinkMoviePlayer); /*0x531e05*/
+        v6 = EventQueue::Read(dword_87F770); /*0x531e05*/
         a1 = v6; /*0x531e0d*/
         if ( (v6 & 0x800) == 0 ) /*0x531e16*/
         {
           a2 = (char)v6; /*0x531e1c*/
-          if ( !isalnum((char)v6) || (unsigned char)a1 == 126 ) /*0x531e33*/
+          if ( !isalnum((char)v6) || (_BYTE)a1 == 126 ) /*0x531e33*/
           {
-            memset(Str, 0, sizeof(Str)); /*0x531f3e*/
+            memset(byte_A8F7B8, 0, sizeof(byte_A8F7B8)); /*0x531f3e*/
           }
           else
           {
             v11[0] = a1; /*0x531e3d*/
             v11[1] = 0; /*0x531e42*/
             Debug::Log_0(v11); /*0x531e47*/
-            v7 = strlen(Str); /*0x531e5e*/
+            v7 = strlen(byte_A8F7B8); /*0x531e5e*/
             if ( v7 >= 31 ) /*0x531e63*/
             {
               v7 = 0; /*0x531e65*/
-              Str[0] = 0; /*0x531e67*/
+              byte_A8F7B8[0] = 0; /*0x531e67*/
             }
-            Str[v7] = toupper((char)a1); /*0x531e77*/
+            byte_A8F7B8[v7] = toupper((char)a1); /*0x531e77*/
             v8 = 0; /*0x531e7d*/
             v9 = (const char **)off_825C2C; /*0x531e7f*/
-            while ( !strstr(Str, *v9) ) /*0x531e96*/
+            while ( !strstr(byte_A8F7B8, *v9) ) /*0x531e96*/
             {
               v9 += 4; /*0x531e98*/
               ++v8; /*0x531e9b*/
               if ( (int)v9 >= (int)off_825C6C ) /*0x531ea2*/
                 goto LABEL_27; /*0x531ea2*/
             }
-            *(unsigned char *)*(&g_PlayerHouseFlags + 4 * v8) = *(unsigned char *)*(&g_PlayerHouseFlags + 4 * v8) == 0; /*0x531ebf*/
-            memset(Str, 0, sizeof(Str)); /*0x531ec8*/
+            *(_BYTE *)*(&g_PlayerHouseFlags + 4 * v8) = *(_BYTE *)*(&g_PlayerHouseFlags + 4 * v8) == 0; /*0x531ebf*/
+            memset(byte_A8F7B8, 0, sizeof(byte_A8F7B8)); /*0x531ec8*/
             PlayVocClass(1.0, 0); /*0x531edb*/
             g_LoadScreenFlag = 0; /*0x531ee4*/
             Screen::Capture(1, 0, a1, a2); /*0x531eeb*/
@@ -128,7 +128,7 @@ long MainMenu_Screen()
 int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
 {
   int result; // eax
-  unsigned int *WindowLongA; // eax
+  _DWORD *WindowLongA; // eax
   HWND v6; // esi
   int v7; // eax
   const wchar_t *v8; // eax
@@ -139,7 +139,7 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
   result = BaseDialogProc(hWnd, a3, a4); /*0x531f88*/
   if ( !result ) /*0x531f8f*/
   {
-    WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x531f98*/
+    WindowLongA = (_DWORD *)GetWindowLongA(hWnd, 8); /*0x531f98*/
     switch ( a2 ) /*0x531fa1*/
     {
       case 15: /*0x531fa1*/
@@ -147,14 +147,14 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
         SendMessageA(DlgItem, 0x4F0u, 0, 0); /*0x5320eb*/
         break;
       case 273: /*0x531fa1*/
-        if ( (uint16_t)a3 > 0x683u ) /*0x532033*/
+        if ( (unsigned __int16)a3 > 0x683u ) /*0x532033*/
         {
-          if ( (uint16_t)a3 == 1668 ) /*0x5320a6*/
+          if ( (unsigned __int16)a3 == 1668 ) /*0x5320a6*/
           {
             *WindowLongA = 2; /*0x5320c2*/
             return 0; /*0x5320d2*/
           }
-          if ( (uint16_t)a3 == 1670 ) /*0x5320ab*/
+          if ( (unsigned __int16)a3 == 1670 ) /*0x5320ab*/
           {
             *WindowLongA = 4; /*0x5320ae*/
             return 0; /*0x5320be*/
@@ -162,7 +162,7 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
         }
         else
         {
-          switch ( (uint16_t)a3 ) /*0x532035*/
+          switch ( (unsigned __int16)a3 ) /*0x532035*/
           {
             case 0x683u: /*0x532035*/
               *WindowLongA = 1; /*0x53208d*/
@@ -181,7 +181,7 @@ int MainMenu::DlgProc(HWND hWnd, int a2, int a3, int a4)
         break;
       case 1175: /*0x531fa1*/
         v6 = GetDlgItem(hWnd, 1821); /*0x531fcc*/
-        v7 = GetModuleInternalVersion(&g_CoordScatterManager); /*0x531fce*/
+        v7 = GetModuleInternalVersion(&dword_A8ECE0); /*0x531fce*/
         v10 = CharToWideString(v7); /*0x531fda*/
         v8 = (const wchar_t *)GetStringCSF(aGuiVersion, (int)g_Str_File_Init_CPP, 5975); /*0x531fec*/
         swprintf(lParam, (const size_t)&off_826960, v8, v10); /*0x531ffc*/

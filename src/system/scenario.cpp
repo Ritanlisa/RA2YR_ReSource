@@ -229,34 +229,34 @@ void ScenarioClass::UpdateLighting()
 {
   if ( NukeFlash_Status == 1 || ChronoScreenEffect_Status ) /*0x53c297*/
   {
-    *((unsigned int *)g_ScenarioClass_Instance + 3404) = *((unsigned int *)g_ScenarioClass_Instance + 3416); /*0x53c3be*/
+    *((_DWORD *)dword_A8B230 + 3404) = *((_DWORD *)dword_A8B230 + 3416); /*0x53c3be*/
     return UpdateSurfaceAnimations( /*0x53c43a*/
-             1000 * *((unsigned int *)g_ScenarioClass_Instance + 3417) / 100,
-             1000 * *((unsigned int *)g_ScenarioClass_Instance + 3418) / 100,
-             1000 * *((unsigned int *)g_ScenarioClass_Instance + 3419) / 100,
+             1000 * *((_DWORD *)dword_A8B230 + 3417) / 100,
+             1000 * *((_DWORD *)dword_A8B230 + 3418) / 100,
+             1000 * *((_DWORD *)dword_A8B230 + 3419) / 100,
              1);
   }
   else if ( LightningStorm_Active ) /*0x53c2a4*/
   {
-    *((unsigned int *)g_ScenarioClass_Instance + 3404) = *((unsigned int *)g_ScenarioClass_Instance + 3410); /*0x53c2b3*/
+    *((_DWORD *)dword_A8B230 + 3404) = *((_DWORD *)dword_A8B230 + 3410); /*0x53c2b3*/
     return UpdateSurfaceAnimations( /*0x53c30e*/
-             1000 * *((unsigned int *)g_ScenarioClass_Instance + 3411) / 100,
-             1000 * *((unsigned int *)g_ScenarioClass_Instance + 3412) / 100,
-             1000 * *((unsigned int *)g_ScenarioClass_Instance + 3413) / 100,
+             1000 * *((_DWORD *)dword_A8B230 + 3411) / 100,
+             1000 * *((_DWORD *)dword_A8B230 + 3412) / 100,
+             1000 * *((_DWORD *)dword_A8B230 + 3413) / 100,
              1);
   }
   else if ( !PsyDom_Status || PsyDom_Status == 5 ) /*0x53c31f*/
   {
-    *((unsigned int *)g_ScenarioClass_Instance + 3404) = *((unsigned int *)g_ScenarioClass_Instance + 3402); /*0x53c3a0*/
+    *((_DWORD *)dword_A8B230 + 3404) = *((_DWORD *)dword_A8B230 + 3402); /*0x53c3a0*/
     return UpdateSurfaceAnimations(-1, -1, -1, 0); /*0x53c3a9*/
   }
   else
   {
-    *((unsigned int *)g_ScenarioClass_Instance + 3404) = *((unsigned int *)g_ScenarioClass_Instance + 3423); /*0x53c32e*/
+    *((_DWORD *)dword_A8B230 + 3404) = *((_DWORD *)dword_A8B230 + 3423); /*0x53c32e*/
     return UpdateSurfaceAnimations( /*0x53c389*/
-             1000 * *((unsigned int *)g_ScenarioClass_Instance + 3424) / 100,
-             1000 * *((unsigned int *)g_ScenarioClass_Instance + 3425) / 100,
-             1000 * *((unsigned int *)g_ScenarioClass_Instance + 3426) / 100,
+             1000 * *((_DWORD *)dword_A8B230 + 3424) / 100,
+             1000 * *((_DWORD *)dword_A8B230 + 3425) / 100,
+             1000 * *((_DWORD *)dword_A8B230 + 3426) / 100,
              1);
   }
 }

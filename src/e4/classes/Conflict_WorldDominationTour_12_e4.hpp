@@ -12,13 +12,6 @@ struct Conflict_WorldDominationTour_12 {
     unsigned int q00C;  // 0xC
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
-    unsigned int Capacity;
-    unsigned int Items;
-    unsigned int __pad_0;
-    unsigned int m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     char Release(int a2,  unsigned int * a3);    // 0x766C10
     char Constructor_1(int a2,  unsigned int * a3);    // 0x766DC0

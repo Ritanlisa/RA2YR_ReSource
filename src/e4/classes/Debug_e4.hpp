@@ -15,7 +15,6 @@ struct Debug {
     unsigned char q038;  // 0x38
     unsigned int u32_58;  // 0x58
     void* q0A0;  // 0xA0
-    unsigned int Debug_field_0xA0;
 // --- flat members (END) ---
     char ScrollText(void* aP1);  // 0x5BD0D0
     int AccumFlags();  // 0x6E61F0

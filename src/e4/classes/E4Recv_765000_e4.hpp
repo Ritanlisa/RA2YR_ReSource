@@ -33,6 +33,18 @@ struct E4Recv_765000 {
     unsigned int q5170;  // 0x5170
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
+    unsigned int q20848;  // 0x20848
+    unsigned int q21768;  // 0x21768
+    unsigned int q25608;  // 0x25608
+    unsigned int q137064;  // 0x137064
+    unsigned int q153094;  // 0x153094
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19347798;  // 0x19347798
+    unsigned int q422868888;  // 0x422868888
+    unsigned int q17759111304;  // 0x17759111304
+    unsigned int q1612107027204;  // 0x1612107027204
 // --- flat members (END) ---
     char * sub_765000(ScoreScreen * aP1);  // 0x765000
 };

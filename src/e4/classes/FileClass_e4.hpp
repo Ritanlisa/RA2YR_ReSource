@@ -8,16 +8,6 @@ namespace gamemd {
 struct FileClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned int BufferedWriter;
-    unsigned int FileName;
-    unsigned int FileNameAllocated;
-    unsigned int FileTimeDateLo;
-    unsigned int Handle;
-    unsigned int Open2;
-    unsigned int __pad_0;
-    unsigned int u32_4;
-    unsigned int u32_58;
-    unsigned int OpenWithCDSearch;
 // --- flat members (END) ---
     char Stub(int a1);
     int Close();

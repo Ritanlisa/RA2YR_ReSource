@@ -320,7 +320,7 @@ int InitZero767E70()
 //   *((unsigned char *)this + 12) = 0;
 //   *(this + 4) = Timer::GetTicks();
 //   *(this + 6) = 0;
-//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)(void*)&MSFrameAnim_vftable;
+//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)(void*)(void*)&MSFrameAnim_vftable;
 //   return this;
 int* Timer_SetMember1(void* _this) // thiscall
 {

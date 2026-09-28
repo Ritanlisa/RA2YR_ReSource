@@ -22,13 +22,13 @@
 namespace gamemd {
 int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 {
-  CCINIClass * v2;
+  int v2; // edi
   int result; // eax
   int v5; // ebp
   char *StringByIndex; // esi
-  unsigned int *v7; // esi
+  _DWORD *v7; // esi
   int v8; // edi
-  unsigned int *v9; // eax
+  _DWORD *v9; // eax
   int v10; // ebp
   char *v11; // edi
   int v12; // esi
@@ -36,37 +36,37 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
   int v14; // [esp+10h] [ebp-8h]
   int i; // [esp+10h] [ebp-8h]
 
-  v2 = (gamemd::CCINIClass *)((int)(a2));
-  result = (int)(INIClass::GetKeyCount(a1, (uint8_t *)aAitriggertypes));
+  v2 = a2; /*0x41f2ec*/
+  result = INIClass::GetKeyCount(a1, (unsigned __int8 *)aAitriggertypes); /*0x41f2f5*/
   v5 = 0; /*0x41f2fa*/
   v14 = result; /*0x41f2fe*/
   while ( v5 < v14 ) /*0x41f302*/
   {
-    StringByIndex = (char *)INIClass::GetStringByIndex(a1, (uint8_t *)aAitriggertypes, v5); /*0x41f317*/
+    StringByIndex = (char *)INIClass::GetStringByIndex(a1, (unsigned __int8 *)aAitriggertypes, v5); /*0x41f317*/
     if ( _strcmpi(g_Str__none_, StringByIndex) ) /*0x41f31f*/
     {
       if ( _strcmpi(g_Str_none, StringByIndex) ) /*0x41f335*/
       {
         v8 = 0; /*0x41f34a*/
-        if ( g_AnimTypeInitQueue > 0 ) /*0x41f34e*/
+        if ( dword_A8B210 > 0 ) /*0x41f34e*/
         {
-          while ( _strcmpi((char *)(*((unsigned int *)dword_A8B204 + v8) + 36), StringByIndex) ) /*0x41f368*/
+          while ( _strcmpi((char *)(*((_DWORD *)dword_A8B204 + v8) + 36), StringByIndex) ) /*0x41f368*/
           {
-            if ( ++v8 >= g_AnimTypeInitQueue ) /*0x41f376*/
+            if ( ++v8 >= dword_A8B210 ) /*0x41f376*/
               goto LABEL_9; /*0x41f376*/
           }
-          v7 = (unsigned int *)*((unsigned int *)dword_A8B204 + v8); /*0x41f431*/
+          v7 = (_DWORD *)*((_DWORD *)dword_A8B204 + v8); /*0x41f431*/
           goto LABEL_11; /*0x41f434*/
         }
   LABEL_9:
-        v9 = (unsigned int *)RA2_OPNEW(0x110u); /*0x41f378*/
+        v9 = (_DWORD *)RA2_OPNEW(0x110u); /*0x41f378*/
         if ( v9 ) /*0x41f387*/
         {
           v7 = AnimTypeClass::Construct2(v9, StringByIndex); /*0x41f391*/
   LABEL_11:
           if ( v7 ) /*0x41f395*/
           {
-            (*(void (__thiscall **)(unsigned int *, char *))(*v7 + 100))(v7, a1); /*0x41f39c*/
+            (*(void (__thiscall **)(_DWORD *, char *))(*v7 + 100))(v7, a1); /*0x41f39c*/
             v7[39] = a2; /*0x41f3a3*/
           }
           goto LABEL_13; /*0x41f3a3*/
@@ -78,35 +78,36 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
     {
       v7 = 0; /*0x41f32b*/
     }
-  LABEL_13: v2 = (gamemd::CCINIClass *)((int)(a2));
+  LABEL_13:
+    v2 = a2; /*0x41f3a9*/
     if ( a2 == 1 ) /*0x41f3b0*/
-      *((unsigned char *)v7 + 164) = 1; /*0x41f3b2*/
+      *((_BYTE *)v7 + 164) = 1; /*0x41f3b2*/
     result = v14; /*0x41f3b9*/
     ++v5; /*0x41f3bd*/
   }
   if ( !v2 ) /*0x41f3c8*/
   {
-    result = (int)(INIClass::GetKeyCount(a1, (uint8_t *)aAitriggertypes_0));
+    result = INIClass::GetKeyCount(a1, (unsigned __int8 *)aAitriggertypes_0); /*0x41f3d7*/
     v10 = 0; /*0x41f3dc*/
     for ( i = result; v10 < i; ++v10 ) /*0x41f3e4*/
     {
-      v11 = (char *)INIClass::GetStringByIndex(a1, (uint8_t *)aAitriggertypes_0, v10); /*0x41f3f9*/
+      v11 = (char *)INIClass::GetStringByIndex(a1, (unsigned __int8 *)aAitriggertypes_0, v10); /*0x41f3f9*/
       v12 = 0; /*0x41f400*/
-      if ( g_AnimTypeInitQueue > 0 ) /*0x41f404*/
+      if ( dword_A8B210 > 0 ) /*0x41f404*/
       {
-        while ( _strcmpi((char *)(*((unsigned int *)dword_A8B204 + v12) + 36), v11) ) /*0x41f41d*/
+        while ( _strcmpi((char *)(*((_DWORD *)dword_A8B204 + v12) + 36), v11) ) /*0x41f41d*/
         {
-          if ( ++v12 >= g_AnimTypeInitQueue ) /*0x41f427*/
+          if ( ++v12 >= dword_A8B210 ) /*0x41f427*/
             goto LABEL_28; /*0x41f427*/
         }
-        v13 = *((unsigned int *)dword_A8B204 + v12); /*0x41f43f*/
+        v13 = *((_DWORD *)dword_A8B204 + v12); /*0x41f43f*/
         if ( v13 ) /*0x41f444*/
-          *(unsigned char *)(v13 + 164) = (uint8_t)INIClass::ReadBool_Overwrite( /*0x41f46c*/
+          *(_BYTE *)(v13 + 164) = (unsigned __int8)INIClass::ReadBool_Overwrite( /*0x41f46c*/
                                                      (int *)a1,
-                                                     (uint8_t *)aAitriggertypes_0,
-                                                     (uint8_t *)v11,
+                                                     (unsigned __int8 *)aAitriggertypes_0,
+                                                     (unsigned __int8 *)v11,
                                                      0)
-                               || g_GameMode_Current[0];
+                               || dword_A8B238[0];
       }
   LABEL_28:
       result = i; /*0x41f473*/
@@ -119,7 +120,7 @@ int CCINIClass::ReadTypeList(char * a1, CCINIClass * a2)
 namespace gamemd {
 int CCINIClass::GetDB()
 {
-  return this->headNode[0]; /*0x473453*/
+  return this->?[0]; /*0x473453*/
 }
 }
 // 0x4741F0
@@ -131,7 +132,7 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   int v7; // esi
   bool v8; // zf
   int v10[4]; // [esp+Ch] [ebp-A8h] BYREF
-  MultiplayerGameMode * v11;
+  char v11; // [esp+1Ch] [ebp-98h]
   SHA1 v12; // [esp+20h] [ebp-94h] BYREF
   int v13; // [esp+44h] [ebp-70h]
   int v14; // [esp+48h] [ebp-6Ch]
@@ -142,11 +143,11 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   int v19; // [esp+5Ch] [ebp-58h]
   int v20[5]; // [esp+A0h] [ebp-14h] BYREF
 
-  v10[1] = (int)(0);
-  v10[2] = (int)(0);
-  v10[3] = (int)(aP1);
+  v10[1] = 0; /*0x474213*/
+  v10[2] = 0; /*0x474217*/
+  v10[3] = aP1; /*0x47421b*/
   v11 = 0; /*0x47421f*/
-  v10[0] = (int)&FileStraw_vftable; /*0x474223*/
+  v10[0] = (int)&(void*)(void*)&FileStraw_vftable; /*0x474223*/
   File = INIClass::LoadFile((INIClass *)this, (int)v10, aP2); /*0x474230*/
   this->ownsFile = 0; /*0x474232*/
   if ( !File || !a3 ) /*0x474244*/
@@ -159,7 +160,7 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   }
   if ( Base64Data <= 0 ) /*0x47426e*/
     goto LABEL_7; /*0x47426e*/
-  INIClass::ClearSection((int *)this->__pad_0, (int)g_INI_Key_Digest, 0); /*0x47427d*/
+  INIClass::ClearSection((int *)this->INIClass, (int)g_INI_Key_Digest, 0); /*0x47427d*/
   memset(&v12.SHA1_field_0x04, 0, 9); /*0x474286*/
   v18 = 0; /*0x474295*/
   v19 = 0; /*0x474299*/
@@ -168,7 +169,7 @@ MultiplayerGameMode * * CCINIClass::Load(MultiplayerGameMode * aP1, char a3, cha
   v15 = -1732584194; /*0x4742ad*/
   v16 = 271733878; /*0x4742b5*/
   v17 = -1009589776; /*0x4742bd*/
-  *(unsigned int *)v12.__pad_0 = (void*)&SHAPipe_vftable; /*0x4742c5*/
+  *(_DWORD *)v12.__pad_0 = &(void*)(void*)&SHAPipe_vftable; /*0x4742c5*/
   INIClass::WriteToString((int)&v12); /*0x4742cd*/
   SHA1::ComputeThunk(&v12, this->__pad_41); /*0x4742da*/
   this->ownsFile = 1; /*0x4742e3*/
@@ -243,27 +244,27 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
 {
   int KeyCount; // ebx
   int i; // edi
-  uint8_t *StringByIndex; // eax
+  unsigned __int8 *StringByIndex; // eax
   int result; // eax
   int j; // edi
-  unsigned int *v9; // ecx
+  _DWORD *v9; // ecx
   int k; // edi
   char Destination[32]; // [esp+10h] [ebp-20h] BYREF
 
-  KeyCount = (int)(INIClass::GetKeyCount(a1->__pad_0, (uint8_t *)aAitriggertypes));
+  KeyCount = INIClass::GetKeyCount(a1->__pad_0, (unsigned __int8 *)aAitriggertypes); /*0x41f4a6*/
   for ( i = 0; i < KeyCount; ++i ) /*0x41f4ac*/
   {
-    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, (uint8_t *)aAitriggertypes, i); /*0x41f4b8*/
-    INIClass::GetString(a1, (uint8_t *)aAitriggertypes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32); /*0x41f4d2*/
+    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1->__pad_0, (unsigned __int8 *)aAitriggertypes, i); /*0x41f4b8*/
+    INIClass::GetString(a1, (unsigned __int8 *)aAitriggertypes, StringByIndex, &g_INI_DefaultBuffer, Destination, 32); /*0x41f4d2*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Destination, 0); /*0x41f4e0*/
   }
   INIClass::ClearSection((int *)a1->__pad_0, (int)aAitriggertypes, 0); /*0x41f4f5*/
   result = dword_A8B210; /*0x41f4fa*/
   for ( j = 0; j < dword_A8B210; ++j ) /*0x41f503*/
   {
-    v9 = (unsigned int *)*((unsigned int *)unk_A8B204 + j); /*0x41f50a*/
+    v9 = (_DWORD *)*((_DWORD *)dword_A8B204 + j); /*0x41f50a*/
     if ( v9[39] == a2 ) /*0x41f513*/
-      (*(void (__thiscall **)(unsigned int *, INIClass *))(*v9 + 104))(v9, a1); /*0x41f518*/
+      (*(void (__thiscall **)(_DWORD *, INIClass *))(*v9 + 104))(v9, a1); /*0x41f518*/
     result = dword_A8B210; /*0x41f51b*/
   }
   if ( !a2 ) /*0x41f527*/
@@ -274,13 +275,13 @@ AITriggerTypeClass * CCINIClass::ReadInfantryTypeList(char * a1, int a2)
     {
       INIClass::SetBool( /*0x41f55e*/
         a1->__pad_0,
-        (uint8_t *)aAitriggertypes_0,
-        (char *)(*((unsigned int *)unk_A8B204 + k) + 36),
-        *(unsigned char *)(*((unsigned int *)unk_A8B204 + k) + 164));
+        (unsigned __int8 *)aAitriggertypes_0,
+        (char *)(*((_DWORD *)dword_A8B204 + k) + 36),
+        *(_BYTE *)(*((_DWORD *)dword_A8B204 + k) + 164));
       result = dword_A8B210; /*0x41f563*/
     }
   }
-  return (gamemd::AITriggerTypeClass *)(result);
+  return result; /*0x41f56d*/
 }
 } // namespace gamemd
 

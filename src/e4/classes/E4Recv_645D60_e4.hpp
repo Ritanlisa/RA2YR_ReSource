@@ -17,10 +17,8 @@ struct E4Recv_645D60 {
     unsigned int q774;  // 0x774
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
-    unsigned int vtable0;
-    unsigned int vtable1;
-    unsigned int vtable2;
-    unsigned int vtable3;
+    unsigned int q25608;  // 0x25608
+    unsigned int q1388694;  // 0x1388694
 // --- flat members (END) ---
     float * sub_645D60(float * a2);  // 0x645D60
 };

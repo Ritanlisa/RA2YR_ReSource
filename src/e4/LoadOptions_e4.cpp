@@ -24,8 +24,8 @@ char LoadOptions::AddRef(LPCCH lpMultiByteStr)
   char Saved; // bl
   const CHAR *lpMultiByteStr; // [esp+10h] [ebp+4h]
 
-  v1 = (wchar_t *)((*(int (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640));
-  StringCSF = (wchar_t *)(GetStringCSF(aTxtLoading, 0, g_Str_File_LoadDlg_CPP, 1052));
+  v1 = (*(int (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 40))(dword_887640); /*0x559d81*/
+  StringCSF = GetStringCSF(aTxtLoading, 0, g_Str_File_LoadDlg_CPP, 1052); /*0x559d83*/
   MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559d97*/
   (*(void (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559d9b*/
   if ( MessageBox ) /*0x559da0*/
@@ -53,7 +53,7 @@ char LoadOptions::Release(LPCCH lpMultiByteStr, wchar_t * Source)
   char v4; // bl
   wchar_t *Sourcea; // [esp+10h] [ebp+8h]
 
-  StringCSF = (wchar_t *)(GetStringCSF(aTxtSavingGame, 0, g_Str_File_LoadDlg_CPP, 1107));
+  StringCSF = GetStringCSF(aTxtSavingGame, 0, g_Str_File_LoadDlg_CPP, 1107); /*0x559e55*/
   MessageBox = (Dialog *)CreateMessageBox((LPARAM)StringCSF, 0, 0); /*0x559e69*/
   (*(void (__thiscall **)(MouseClass *))(dword_887640->MouseClass_field_0x0 + 12))(dword_887640); /*0x559e6d*/
   if ( MessageBox ) /*0x559e72*/
@@ -128,25 +128,25 @@ char LoadOptions::Read(wchar_t * Destination, int a2)
   {
     v5 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)&v8); /*0x559f60*/
     wcscpy((wchar_t *)a2, v5); /*0x559f67*/
-    *(unsigned char *)(a2 + 437) = 0; /*0x559f6f*/
+    *(_BYTE *)(a2 + 437) = 0; /*0x559f6f*/
   }
   else
   {
     v4 = (const wchar_t *)_raw_name_type_info__QBEPBDXZ((type_info *)&v8); /*0x559f48*/
     wcscpy((wchar_t *)a2, v4); /*0x559f4f*/
-    *(unsigned char *)(a2 + 437) = 1; /*0x559f57*/
+    *(_BYTE *)(a2 + 437) = 1; /*0x559f57*/
   }
-  *(unsigned char *)(a2 + 436) = Options_Load; /*0x559f7b*/
-  *(unsigned int *)(a2 + 288) = LoadOptions::GetFlag99((LoadOptions *)&v8); /*0x559f8a*/
-  *(unsigned int *)(a2 + 424) = LoadOptions::GetFlag98((LoadOptions *)&v8); /*0x559f99*/
-  *(unsigned int *)(a2 + 440) = LoadOptions::GetFlag252((LoadOptions *)&v8); /*0x559fa4*/
+  *(_BYTE *)(a2 + 436) = Options_Load; /*0x559f7b*/
+  *(_DWORD *)(a2 + 288) = LoadOptions::GetFlag99((LoadOptions *)&v8); /*0x559f8a*/
+  *(_DWORD *)(a2 + 424) = LoadOptions::GetFlag98((LoadOptions *)&v8); /*0x559f99*/
+  *(_DWORD *)(a2 + 440) = LoadOptions::GetFlag252((LoadOptions *)&v8); /*0x559fa4*/
   strcpy((char *)(a2 + 256), v2); /*0x559fc4*/
   Data = LoadOptions::GetData((char *)&v8); /*0x559fd1*/
   wcscpy((wchar_t *)(a2 + 296), (const wchar_t *)Data); /*0x559fde*/
   if ( !strlen((const char *)(a2 + 256)) ) /*0x559fe5*/
     strcpy((char *)(a2 + 256), (const char *)(v9 + 304)); /*0x55a013*/
-  *(unsigned int *)(a2 + 432) = *(unsigned int *)(v9 + 24); /*0x55a020*/
-  *(unsigned int *)(a2 + 428) = *(unsigned int *)(v9 + 20); /*0x55a029*/
+  *(_DWORD *)(a2 + 432) = *(_DWORD *)(v9 + 24); /*0x55a020*/
+  *(_DWORD *)(a2 + 428) = *(_DWORD *)(v9 + 20); /*0x55a029*/
   return 1; /*0x55a02f*/
 }
 } // namespace gamemd
@@ -190,19 +190,19 @@ LoadOptions * LoadOptions::QueryInterface(char a2)
   int v3; // esi
   void *v4; // eax
 
-  v3 = (unsigned char)(0);
-  for ( this->m_0 = (int)&LoadOptionsClass_vftable; v3 < this->capacity; ++v3 ) /*0x55a0e1*/
+  v3 = 0; /*0x55a0d4*/
+  for ( this->m_0 = (int)&(void*)(void*)&LoadOptionsClass_vftable; v3 < this->capacity; ++v3 ) /*0x55a0e1*/
     RA2_OPDEL(*(void **)(this->q024 + 4 * v3)); /*0x55a0ea*/
   (*(void (__thiscall **)(LoadOptionsClass *))(this->is_active + 12))(this + 2); /*0x55a102*/
   v4 = (void *)this->q024; /*0x55a105*/
-  this->is_active = (void*)&VectorClass_FileEntryClass___vftable; /*0x55a108*/
+  this->is_active = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x55a108*/
   if ( v4 && this->u32_2D ) /*0x55a112*/
   {
     RA2_OPDEL(v4); /*0x55a11a*/
     this->q024 = 0; /*0x55a122*/
   }
-  this->u32_2D = (unsigned int)((gamemd::LoadOptions *)(0));
-  this->q028 = (int)((gamemd::LoadOptions *)(0));
+  this->u32_2D = 0; /*0x55a12d*/
+  this->q028 = 0; /*0x55a133*/
   if ( (a2 & 1) != 0 ) /*0x55a13a*/
     RA2_OPDEL(); /*0x55a13d*/
   return (char *)this; /*0x55a147*/
@@ -214,7 +214,7 @@ namespace gamemd {
 unsigned int LoadOptions::vt05(int a2)
 {
   if ( IDA_LOBYTE(this->m_C) ) /*0x55a180*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x55a195*/
+    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2; /*0x55a195*/
   else
     return 0; /*0x55a187*/
 }
@@ -224,7 +224,7 @@ unsigned int LoadOptions::vt05(int a2)
 namespace gamemd {
 int LoadOptions::vt06(int a2)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x55a1aa*/
+  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2); /*0x55a1aa*/
 }
 } // namespace gamemd
 
@@ -234,18 +234,18 @@ char LoadOptions::vt01(int a2)
 {
   int m_8; // esi
   int v3; // edx
-  unsigned int *v4; // eax
+  _DWORD *v4; // eax
   int v5; // ecx
 
   m_8 = this->m_8; /*0x55a1b2*/
-  if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x55a1bd*/
+  if ( m_8 == *(_DWORD *)(a2 + 8) ) /*0x55a1bd*/
   {
     v3 = 0; /*0x55a1bf*/
     if ( m_8 <= 0 ) /*0x55a1c3*/
       return 1; /*0x55a1e3*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x55a1c5*/
-    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x55a1cb*/
-    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x55a1d4*/
+    v4 = *(_DWORD **)&this->m_1[3]; /*0x55a1c5*/
+    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x55a1cb*/
+    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x55a1d4*/
     {
       ++v3; /*0x55a1d6*/
       ++v4; /*0x55a1d7*/
@@ -261,7 +261,7 @@ char LoadOptions::vt01(int a2)
 namespace gamemd {
 char LoadOptions::vt02(int a2, unsigned int * a3)
 {
-  unsigned int *v4; // edi
+  _DWORD *v4; // edi
   int m_8; // ecx
   int i; // eax
   int v7; // eax
@@ -272,30 +272,30 @@ char LoadOptions::vt02(int a2, unsigned int * a3)
     if ( a3 ) /*0x55a348*/
       v4 = a3; /*0x55a35e*/
     else
-      v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x55a35a*/
+      v4 = (_DWORD *)RA2_OPNEW(4 * a2); /*0x55a35a*/
     IDA_LOBYTE(this->m_C) = 1; /*0x55a362*/
     if ( !v4 ) /*0x55a366*/
       return 0; /*0x55a3da*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x55a368*/
+    if ( *(_DWORD *)&this->m_1[3] ) /*0x55a368*/
     {
       m_8 = this->m_8; /*0x55a36f*/
       if ( a2 < m_8 ) /*0x55a374*/
         m_8 = a2; /*0x55a376*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x55a37c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * i - 4) ) /*0x55a37c*/
         ++i; /*0x55a381*/
       if ( IDA_BYTE1(this->m_C) ) /*0x55a38e*/
       {
         RA2_OPDEL(*(void **)&this->m_1[3]); /*0x55a399*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x55a3a1*/
+        *(_DWORD *)&this->m_1[3] = 0; /*0x55a3a1*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x55a3aa*/
+    *(_DWORD *)&this->m_1[3] = v4; /*0x55a3aa*/
     this->m_8 = a2; /*0x55a3b2*/
     IDA_BYTE1(this->m_C) = a3 == 0; /*0x55a3b5*/
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAVFileEntryClass *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x55a3be*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAVFileEntryClass *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x55a3be*/
   }
   v7 = this->m_8; /*0x55a3c1*/
   if ( v7 < this->m_10 ) /*0x55a3c9*/
@@ -310,13 +310,13 @@ int LoadOptions::vt04(unsigned int * a2)
 {
   int m_10; // edx
   int result; // eax
-  unsigned int *i; // ecx
+  _DWORD *i; // ecx
 
   m_10 = this->m_10; /*0x55a3e0*/
   result = 0; /*0x55a3e3*/
   if ( m_10 <= 0 ) /*0x55a3e8*/
     return -1; /*0x55a3ff*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x55a3ee*/
+  for ( i = *(_DWORD **)&this->m_1[3]; *i != *a2; ++i ) /*0x55a3ee*/
   {
     if ( ++result >= m_10 ) /*0x55a3fd*/
       return -1; /*0x55a3fd*/
@@ -330,12 +330,12 @@ VectorClass_flat * LoadOptions::Constructor_VectorClass_FileEntryClass___(char a
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_FileEntryClass___vftable; /*0x55a416*/
+  v3 = *(void **)&this->m_1[3]; /*0x55a413*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x55a416*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x55a420*/
   {
     RA2_OPDEL(v3); /*0x55a428*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x55a430*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x55a430*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x55a43b*/
   this->m_8 = 0; /*0x55a441*/
@@ -351,12 +351,12 @@ DynamicVector * LoadOptions::vt00(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_FileEntryClass___vftable; /*0x55a466*/
+  v3 = *(void **)&this->m_1[3]; /*0x55a463*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x55a466*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x55a470*/
   {
     RA2_OPDEL(v3); /*0x55a478*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x55a480*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x55a480*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x55a48b*/
   this->m_8 = 0; /*0x55a491*/

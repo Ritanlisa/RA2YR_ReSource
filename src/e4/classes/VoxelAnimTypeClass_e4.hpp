@@ -232,7 +232,7 @@ struct VoxelAnimTypeClass {
     bool Normalized;  // 0x294
     bool Translucent;  // 0x295
     bool SourceShared;  // 0x296
-    unsigned int VoxelIndex;  // 0x298
+    char VoxelIndex[4];  // 0x298
     char Duration[4];  // 0x29C
     double Elasticity;  // 0x2A0
     void* q2A4;  // 0x2A4
@@ -248,18 +248,17 @@ struct VoxelAnimTypeClass {
     void* q2CC;  // 0x2CC
     bool IsMeteor;  // 0x2D0
     VoxelAnimTypeClass* Spawns;  // 0x2D4
-    unsigned int SpawnCount;  // 0x2D8
-    unsigned int StartSound;  // 0x2DC
+    char SpawnCount[4];  // 0x2D8
+    char StartSound[4];  // 0x2DC
     char StopSound[4];  // 0x2E0
     AnimTypeClass* BounceAnim;  // 0x2E4
     AnimTypeClass* ExpireAnim;  // 0x2E8
     AnimTypeClass* TrailerAnim;  // 0x2EC
-    unsigned int Damage;  // 0x2F0
+    char Damage[4];  // 0x2F0
     char DamageRadius[4];  // 0x2F4
     WarheadTypeClass* Warhead;  // 0x2F8
     ParticleSystemTypeClass* AttachedSystem;  // 0x2FC
     bool IsTiberium;  // 0x300
-    unsigned int vtable0;
 // --- flat members (END) ---
     AbstractTypeClass * * LoadFromINI(unsigned char *** aP1);
     VoxelAnimTypeClass * ddtor(char a2);

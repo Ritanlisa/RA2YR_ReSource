@@ -28,10 +28,10 @@ DiskLaserClass::DiskLaserClass()
   int v2; // eax
 
   AbstractClass::Constructor(); /*0x4a7a33*/
-  *(unsigned int *)this->__pad_0 = (void*)&DiskLaserClass_vftable; /*0x4a7a3a*/
-  this->DiskLaserClass_field_0x04 = (int)&DiskLaserClass_vftable; /*0x4a7a40*/
-  this->DiskLaserClass_field_0x08 = (int)&DiskLaserClass_vftable; /*0x4a7a47*/
-  this->DiskLaserClass_field_0x0C = (int)&DiskLaserClass_vftable; /*0x4a7a4e*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7a3a*/
+  this->DiskLaserClass_field_0x04 = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7a40*/
+  this->DiskLaserClass_field_0x08 = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7a47*/
+  this->DiskLaserClass_field_0x0C = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7a4e*/
   this->DiskLaserClass_field_0x24 = 0; /*0x4a7a55*/
   this->DiskLaserClass_field_0x28 = 0; /*0x4a7a58*/
   this->u32_2C = 0; /*0x4a7a5b*/
@@ -42,13 +42,13 @@ DiskLaserClass::DiskLaserClass()
   if ( dword_8A0218 < dword_8A0210 /*0x4a7a9e*/
     || (byte_8A0215 || !dword_8A0210)
     && dword_8A021C > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_8A0208 + 8))(
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_8A0208 + 8))(
          &dword_8A0208,
          dword_8A0210 + dword_8A021C,
          0) )
   {
     v2 = dword_8A0218++; /*0x4a7aab*/
-    *((unsigned int *)dword_8A020C + v2) = this; /*0x4a7aba*/
+    *((_DWORD *)dword_8A020C + v2) = this; /*0x4a7aba*/
   }
   return (int)this->__pad_0; /*0x4a7abf*/
 }
@@ -58,10 +58,10 @@ void * DiskLaserClass::CopyTo(char a2)
   int v3; // eax
   DiskLaserClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this->__pad_0 = (void*)&DiskLaserClass_vftable; /*0x4a7c9d*/
-  this->DiskLaserClass_field_0x04 = (int)&DiskLaserClass_vftable; /*0x4a7ca3*/
-  this->DiskLaserClass_field_0x08 = (int)&DiskLaserClass_vftable; /*0x4a7caa*/
-  this->DiskLaserClass_field_0x0C = (int)&DiskLaserClass_vftable; /*0x4a7cb1*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7c9d*/
+  this->DiskLaserClass_field_0x04 = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7ca3*/
+  this->DiskLaserClass_field_0x08 = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7caa*/
+  this->DiskLaserClass_field_0x0C = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7cb1*/
   v5 = this; /*0x4a7cbf*/
   v3 = (*(int (__thiscall **)(int *, DiskLaserClass **))(dword_8A0208 + 16))(&dword_8A0208, &v5); /*0x4a7cc3*/
   if ( v3 != -1 && v3 < dword_8A0218 && v3 < --dword_8A0218 ) /*0x4a7cde*/
@@ -69,7 +69,7 @@ void * DiskLaserClass::CopyTo(char a2)
     do /*0x4a7cf6*/
     {
       ++v3; /*0x4a7ce6*/
-      *((unsigned int *)dword_8A020C + v3 - 1) = *((unsigned int *)dword_8A020C + v3); /*0x4a7cea*/
+      *((_DWORD *)dword_8A020C + v3 - 1) = *((_DWORD *)dword_8A020C + v3); /*0x4a7cea*/
     }
     while ( v3 < dword_8A0218 ); /*0x4a7cf6*/
   }
@@ -89,10 +89,10 @@ int DiskLaserClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x4a7ba9*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x4a7bb2*/
-      *(unsigned int *)aP0->__pad_0 = (void*)&DiskLaserClass_vftable; /*0x4a7bb7*/
-      aP0->DiskLaserClass_field_0x04 = (int)&DiskLaserClass_vftable; /*0x4a7bbd*/
-      aP0->DiskLaserClass_field_0x08 = (int)&DiskLaserClass_vftable; /*0x4a7bc4*/
-      aP0->DiskLaserClass_field_0x0C = (int)&DiskLaserClass_vftable; /*0x4a7bcb*/
+      *(_DWORD *)aP0->__pad_0 = &(void*)(void*)&DiskLaserClass_vftable; /*0x4a7bb7*/
+      aP0->DiskLaserClass_field_0x04 = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7bbd*/
+      aP0->DiskLaserClass_field_0x08 = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7bc4*/
+      aP0->DiskLaserClass_field_0x0C = (int)&(void*)(void*)&DiskLaserClass_vftable; /*0x4a7bcb*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->DiskLaserClass_field_0x24); /*0x4a7bdb*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->DiskLaserClass_field_0x28); /*0x4a7be9*/

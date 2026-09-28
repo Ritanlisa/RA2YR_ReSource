@@ -54,7 +54,6 @@ struct NetworkLobby {
     unsigned int q688;  // 0x688
     void* q6AC;  // 0x6AC
     void* q6B0;  // 0x6B0
-    unsigned int MessageHandler;
 // --- flat members (END) ---
     int MessageList_Append(int a2,  int a3,  void* aP3,  char a5,  int a6);    // 0x5D4210
     char CreateGame();  // 0x5DC350

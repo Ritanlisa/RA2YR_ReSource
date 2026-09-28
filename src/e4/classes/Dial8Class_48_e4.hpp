@@ -13,11 +13,6 @@ struct Dial8Class_48 {
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned int __pad_0;
-    unsigned int m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     void ClearBuffer();  // 0x4A7D20
     int Seek(int a2);  // 0x4A7D70

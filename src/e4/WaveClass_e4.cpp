@@ -108,39 +108,36 @@ WaveClass * WaveClass::ddtor(char a2)
   int v3; // eax
   void *v4; // eax
 
-  this->vtable0 = (unsigned int)((void*)&WaveClass_vftable);
-  this->vtable1 = (void*)&WaveClass_vftable; /*0x76320c*/
-  this->vtable2 = (void*)&WaveClass_vftable; /*0x763213*/
-  this->vtable3 = &off_7F6BC8; /*0x76321a*/
+  this->ObjectClass = &(void*)(void*)&WaveClass_vftable; /*0x763206*/
+  this->? = &(void*)(void*)&WaveClass_vftable; /*0x76320c*/
+  this->? = &(void*)(void*)&WaveClass_vftable; /*0x763213*/
+  this->? = &off_7F6BC8; /*0x76321a*/
   AbstractClass::AnnounceExpiredPointer(1); /*0x763221*/
-  v3 = (*(int (__thiscall **)(unsigned char *, WaveClass **))(*(unsigned int *)&stru_A8EB00.gapE4[84] + 16))( /*0x76323a*/
-         &stru_A8EB00.gapE4[84],
-         &this);
-  if ( v3 != -1 && v3 < *(int *)&stru_A8EB00.gapE4[100] ) /*0x76324a*/
+  v3 = (*(int (__thiscall **)(_BYTE *, WaveClass **))(*(_DWORD *)&stru_A8EB00.?[84] + 16))(&stru_A8EB00.?[84], &this); /*0x76323a*/
+  if ( v3 != -1 && v3 < *(int *)&stru_A8EB00.?[100] ) /*0x76324a*/
   {
-    --*(unsigned int *)&stru_A8EB00.gapE4[100]; /*0x76324f*/
+    --*(_DWORD *)&stru_A8EB00.?[100]; /*0x76324f*/
     for ( ; /*0x763255*/
-          v3 < *(int *)&stru_A8EB00.gapE4[100];
-          *(unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[88] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.gapE4[88]
-                                                                                  + 4 * v3) )
+          v3 < *(int *)&stru_A8EB00.?[100];
+          *(_DWORD *)(*(_DWORD *)&stru_A8EB00.?[88] + 4 * v3 - 4) = *(_DWORD *)(*(_DWORD *)&stru_A8EB00.?[88] + 4 * v3) )
     {
       ++v3; /*0x76325d*/
     }
   }
   (*(void (__thiscall **)(char *))(this->WaveClass_field_128 + 12))((char *)&this->WaveClass_field_1706); /*0x76327e*/
   v4 = (void *)this->u32_1F4; /*0x763281*/
-  this->WaveClass_field_128 = (void*)&VectorClass_CellClass___vftable; /*0x763284*/
+  this->WaveClass_field_128 = &(void*)(void*)&VectorClass_CellClass___vftable; /*0x763284*/
   if ( v4 && this->u32_1FD ) /*0x76328e*/
   {
     RA2_OPDEL(v4); /*0x763296*/
     this->u32_1F4 = 0; /*0x76329e*/
   }
-  this->u32_1FD = (unsigned int)((gamemd::WaveClass *)(0));
-  this->u32_1F8 = (gamemd::WaveClass *)(0);
+  this->u32_1FD = 0; /*0x7632a7*/
+  this->u32_1F8 = 0; /*0x7632ab*/
   ObjectClass::Dtor(); /*0x7632b2*/
   if ( (a2 & 1) != 0 ) /*0x7632be*/
     RA2_OPDEL(); /*0x7632c1*/
-  return &this->vtable0; /*0x7632cb*/
+  return &this->ObjectClass; /*0x7632cb*/
 }
 } // namespace gamemd
 
@@ -225,13 +222,13 @@ int WaveClass::ProcessWaveTick(int * a1, int * a2, int a3)
 
   AbstractClass::SaveLoad_Prefix((int *)a1, a2, a3); /*0x75f7e2*/
   v3 = *a2; /*0x75f7ed*/
-  a3 = *((unsigned int *)a1 + 128); /*0x75f7f9*/
-  result = (*(int (__stdcall **)(int *, int *, int, unsigned int))(v3 + 16))(a2, &a3, 4, 0); /*0x75f7fd*/
+  a3 = *((_DWORD *)a1 + 128); /*0x75f7f9*/
+  result = (*(int (__stdcall **)(int *, int *, int, _DWORD))(v3 + 16))(a2, &a3, 4, 0); /*0x75f7fd*/
   if ( result >= 0 ) /*0x75f802*/
   {
     for ( i = 0; i < a3; ++i ) /*0x75f80c*/
     {
-      result = (*(int (__stdcall **)(int *, int, int, unsigned int))(*a2 + 16))(a2, *((unsigned int *)a1 + 125) + 4 * i, 4, 0); /*0x75f81f*/
+      result = (*(int (__stdcall **)(int *, int, int, _DWORD))(*a2 + 16))(a2, *((_DWORD *)a1 + 125) + 4 * i, 4, 0); /*0x75f81f*/
       if ( result < 0 ) /*0x75f824*/
         break; /*0x75f824*/
     }

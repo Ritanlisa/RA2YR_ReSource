@@ -16,14 +16,14 @@ int DialogQueue::PushEntry()
   if ( g_MissionQueueFrame.ls640BkgdName[11] < g_MissionQueueFrame.ls640BkgdName[9] /*0x5d4eac*/
     || (IDA_BYTE1(g_MissionQueueFrame.ls640BkgdName[10]) || !g_MissionQueueFrame.ls640BkgdName[9])
     && g_MissionQueueFrame.ls640BkgdName[12] > 0
-    && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_MissionQueueFrame.ls640BkgdName[7] + 8))(
+    && (result = (*(int (__thiscall **)(int *, int, _DWORD))(g_MissionQueueFrame.ls640BkgdName[7] + 8))(
                    &g_MissionQueueFrame.ls640BkgdName[7],
                    g_MissionQueueFrame.ls640BkgdName[9] + g_MissionQueueFrame.ls640BkgdName[12],
                    0),
-        (unsigned char)result) )
+        (_BYTE)result) )
   {
     result = g_MissionQueueFrame.ls640BkgdName[11]++; /*0x5d4eb4*/
-    *(unsigned int *)(g_MissionQueueFrame.ls640BkgdName[8] + 4 * result) = this; /*0x5d4ec3*/
+    *(_DWORD *)(g_MissionQueueFrame.ls640BkgdName[8] + 4 * result) = this; /*0x5d4ec3*/
   }
   return result; /*0x5d4ec6*/
 }
@@ -44,7 +44,7 @@ int DialogQueue::RemoveEntry()
     --g_MissionQueueFrame.ls640BkgdName[11]; /*0x5d4efa*/
     for ( ; /*0x5d4f00*/
           result < g_MissionQueueFrame.ls640BkgdName[11];
-          *(unsigned int *)(g_MissionQueueFrame.ls640BkgdName[8] + 4 * result - 4) = *(unsigned int *)(g_MissionQueueFrame.ls640BkgdName[8]
+          *(_DWORD *)(g_MissionQueueFrame.ls640BkgdName[8] + 4 * result - 4) = *(_DWORD *)(g_MissionQueueFrame.ls640BkgdName[8]
                                                                                          + 4 * result) )
     {
       ++result; /*0x5d4f08*/

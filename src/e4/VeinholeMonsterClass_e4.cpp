@@ -29,14 +29,14 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
   CellClass *v10; // eax
   int v12; // [esp+14h] [ebp+4h]
 
-  v3 = (int)(aP0[1]);
-  v4 = (int)(a2 + v3);
+  v3 = aP0[1]; /*0x5862d0*/
+  v4 = a2 + v3; /*0x5862d2*/
   v5 = v3 - a2; /*0x5862d4*/
   if ( v5 > v4 ) /*0x5862d8*/
     return 0; /*0x58633f*/
   while ( 1 ) /*0x5862e3*/
   {
-    v6 = (int)(*aP0);
+    v6 = *aP0; /*0x5862e3*/
     v7 = a2 + v6; /*0x5862e5*/
     v8 = v6 - a2; /*0x5862e7*/
     if ( v8 <= v7 ) /*0x5862eb*/
@@ -48,12 +48,12 @@ void VeinholeMonsterClass_Update(MouseClass * aP0, int a2)
   IDA_HIWORD(v12) = v5; /*0x5862f0*/
   while ( 1 ) /*0x5862fb*/
   {
-    v9 = (unsigned int)(((int16_t)v5 << 9) + (int16_t)v8);
+    v9 = ((__int16)v5 << 9) + (__int16)v8; /*0x5862fb*/
     IDA_LOWORD(v12) = v8; /*0x5862fd*/
     if ( v9 >= 0x40000 || (v10 = *(CellClass **)(dword_87F924 + 4 * v9)) == 0 ) /*0x586311*/
     {
-      dword_ABDC74 = (unsigned int)((gamemd::CellClass *)(v12));
-      v10 = (gamemd::CellClass *)(&unk_ABDC50);
+      dword_ABDC74 = v12; /*0x586317*/
+      v10 = &unk_ABDC50; /*0x58631c*/
     }
     if ( v10->firstObject ) /*0x586321*/
       return 1; /*0x58633f*/

@@ -7909,6 +7909,7 @@ struct Gap2Recv_5EF01;
 struct Gap2Recv_5EF010;
 struct Gap2Recv_6;
 struct Gap2Recv_62;
+struct Gap2Recv_623E00;
 struct Gap2Recv_625;
 struct Gap2Recv_625C;
 struct Gap2Recv_625C0;

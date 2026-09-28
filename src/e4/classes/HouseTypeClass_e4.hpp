@@ -65,7 +65,7 @@ struct HouseTypeClass {
     float buildtimeDefensesMult;  // 0x9C
     float incomeMult;  // 0xA0
     InfantryTypeClass** veteranInfantry;  // 0xA4
-    unsigned int veteranInfantryCount;  // 0xA8
+    char veteranInfantryCount[4];  // 0xA8
     unsigned char q0A9;  // 0xA9
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
@@ -163,8 +163,6 @@ struct HouseTypeClass {
     char q1A8[4];  // 0x1A8
     unsigned char m_padding_1A9;  // 0x1A9
     unsigned int q1AC;  // 0x1AC
-    unsigned int __pad_16D;
-    unsigned int vtable0;
 // --- flat members (END) ---
     AbstractClass * * Dtor();
     AbstractClass * * ProcessPower(int * a2);

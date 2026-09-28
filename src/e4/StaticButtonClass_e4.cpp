@@ -14,8 +14,8 @@ StaticButtonClass * StaticButtonClass::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (gamemd::StaticButtonClass *)((void *)this->q00C);
-  *(unsigned int *)this->__pad_0 = (void*)&StaticButtonClass_vftable; /*0x6c6886*/
+  v3 = (void *)this->q00C; /*0x6c6883*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&StaticButtonClass_vftable; /*0x6c6886*/
   if ( v3 ) /*0x6c688e*/
     RA2_OPDEL(v3); /*0x6c6891*/
   Vector::Clear((int)&this->q00C6); /*0x6c689c*/

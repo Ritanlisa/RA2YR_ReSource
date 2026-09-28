@@ -12,9 +12,6 @@ struct unknown {
     char m_Size[4];  // 0x8
     char unknown_field_0C[4];  // 0xC
     bool IsAllocated;  // 0xD
-    unsigned int Capacity;
-    unsigned int m_1;
-    unsigned int m_C;
 // --- flat members (END) ---
     int Read(unsigned short * a2);
     int Seek(int a2, int a3);

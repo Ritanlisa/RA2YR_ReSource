@@ -29,9 +29,6 @@ struct WalkLocomotionClass {
     ILocomotion * ptr_38;  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int q03B;  // 0x3B
-    unsigned int Piggybackee;
-    unsigned int __pad_0;
-    unsigned int __pad_18;
 // --- flat members (END) ---
     HRESULT BeginMove(int * a1, int * pStm);
     HRESULT LoadFromStream(int * a1, int * pPStm, int a3);

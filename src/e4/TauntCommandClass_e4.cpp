@@ -21,17 +21,17 @@
 namespace gamemd {
 unsigned int * TauntCommandClass::Construct(int a2)
 {
-  this->TauntCommandClass_field_00 = (unsigned int *)(a2);
-  *(unsigned int *)this->__pad_0 = (void*)&TauntCommandClass_vftable; /*0x536299*/
-  return this->__pad_0; /*0x53629f*/
+  this->TauntCommandClass_field_00 = a2; /*0x536296*/
+  *(_DWORD *)this->CommandClass = &(void*)(void*)&TauntCommandClass_vftable; /*0x536299*/
+  return this->CommandClass; /*0x53629f*/
 }
 } // namespace gamemd
 // 0x5362B0
 namespace gamemd {
 void * TauntCommandClass::AddRef()
 {
-  sprintf(&stru_A8EB00.gapE4[2512], "Taunt_%d", this->TauntCommandClass_field_00); /*0x5362be*/
-  return &stru_A8EB00.gapE4[2512]; /*0x5362cb*/
+  sprintf(&stru_A8EB00.?[2512], "Taunt_%d", this->TauntCommandClass_field_00); /*0x5362be*/
+  return &stru_A8EB00.?[2512]; /*0x5362cb*/
 }
 } // namespace gamemd
 // 0x5362D0
@@ -43,8 +43,8 @@ void * TauntCommandClass::Release()
 
   TauntCommandClass_field_00 = (const wchar_t *)this->TauntCommandClass_field_00; /*0x5362d5*/
   StringCSF = GetStringCSF(aTxtTauntNumber, 0, g_Str_File_Init_CPP, 6400); /*0x5362e5*/
-  swprintf((wchar_t *const)&stru_A8EB00.gapE4[2672], (const size_t)StringCSF, TauntCommandClass_field_00); /*0x5362f0*/
-  return (wchar_t *)&stru_A8EB00.gapE4[2672]; /*0x5362fd*/
+  swprintf((wchar_t *const)&stru_A8EB00.?[2672], (const size_t)StringCSF, TauntCommandClass_field_00); /*0x5362f0*/
+  return (wchar_t *)&stru_A8EB00.?[2672]; /*0x5362fd*/
 }
 } // namespace gamemd
 // 0x536300

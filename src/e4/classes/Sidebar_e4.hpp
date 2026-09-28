@@ -80,32 +80,6 @@ struct Sidebar {
     unsigned int u32_868;  // 0x868
     unsigned int u32_870;  // 0x870
     unsigned int u32_878;  // 0x878
-    unsigned int Sidebar_field_0x4;
-    unsigned int Sidebar_field_0x8;
-    unsigned int __pad_0;
-    unsigned int __pad_14;
-    unsigned int __pad_70;
-    unsigned int q53D0;
-    unsigned int q53D4;
-    unsigned int q53D8;
-    unsigned int u32_53AC;
-    unsigned int u32_53B0;
-    unsigned int u32_53B4;
-    unsigned int u32_53B8;
-    unsigned int u32_53BC;
-    unsigned int u32_53CC;
-    unsigned int u32_53D0;
-    unsigned int u32_53D1;
-    unsigned int u32_53D2;
-    unsigned int u32_53D3;
-    unsigned int u32_53D4;
-    unsigned int u32_53D8;
-    unsigned char u8_53D1;
-    unsigned char u8_53D2;
-    unsigned char u8_53D3;
-    unsigned int Sidebar_field_0x10;
-    unsigned int Sidebar_field_0xC;
-    unsigned int field_150C;
 // --- flat members (END) ---
     int StartSidebarProduction(void * a1,  BuildingTypeClass * aP2,  HouseClass * aP3,  char a5);    // 0x4FA350
     int Dispatch(IUnknown * aP1,  char a3,  int a4,  char a5);    // 0x5007A0

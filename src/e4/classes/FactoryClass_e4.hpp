@@ -52,21 +52,13 @@ struct FactoryClass {
     unsigned int q05C;  // 0x5C
     unsigned char u8_5D;  // 0x5D
     unsigned char m_align_5E;  // 0x5E
-    unsigned int balance;  // 0x60
+    char balance[4];  // 0x60
     char originalBalance[4];  // 0x64
     char specialItem[4];  // 0x68
     HouseClass* owner;  // 0x6C
     bool isSuspended;  // 0x70
     bool isManual;  // 0x71
     unsigned char align72;  // 0x72
-    unsigned int NeedsSaveOrLink8;
-    unsigned int __pad_42;
-    unsigned int u32_288;
-    unsigned int vtable0;
-    unsigned int vtable21;
-    unsigned int vtable22;
-    unsigned int vtable23;
-    unsigned int vtable24;
 // --- flat members (END) ---
     AbstractClass * * Stat(int * a2);
     char GetFlag();

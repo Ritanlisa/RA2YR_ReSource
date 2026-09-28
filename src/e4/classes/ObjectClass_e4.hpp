@@ -11,7 +11,7 @@ struct ObjectClass {
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
     void* vtable4;  // 0xC
-    unsigned int ;  // 0x10
+    void* uniqueId;  // 0x10
     unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
     void* abstractFlags;  // 0x14
@@ -107,16 +107,6 @@ struct ObjectClass {
     unsigned char q0A9;  // 0xA9
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
-    unsigned int __pad_0;
-    unsigned int q0E4;
-    unsigned int q0E8;
-    unsigned int q0EC;
-    unsigned int q0ED;
-    unsigned int q21C;
-    unsigned int q6E0;
-    unsigned int qD68;
-    unsigned int vtable0;
-    unsigned int uniqueId;
 // --- flat members (END) ---
     AbstractClass * * BuildTransform(unsigned int * a1, float * a2, unsigned int * a3);
     AbstractClass * * Deploy();

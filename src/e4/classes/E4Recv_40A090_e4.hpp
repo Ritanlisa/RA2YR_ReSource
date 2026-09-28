@@ -51,6 +51,48 @@ struct E4Recv_40A090 {
     unsigned int q5128;  // 0x5128
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
+    unsigned int q8274;  // 0x8274
+    unsigned int q17460;  // 0x17460
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q33570;  // 0x33570
+    unsigned int q91794;  // 0x91794
+    unsigned int q95254;  // 0x95254
+    unsigned int q95328;  // 0x95328
+    unsigned int q209814;  // 0x209814
+    unsigned int q217634;  // 0x217634
+    unsigned int q595860;  // 0x595860
+    unsigned int q610900;  // 0x610900
+    unsigned int q1255810;  // 0x1255810
+    unsigned int q1282918;  // 0x1282918
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q2136084;  // 0x2136084
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q20481684;  // 0x20481684
+    unsigned int q34824324;  // 0x34824324
+    unsigned int q104174230;  // 0x104174230
+    unsigned int q104174438;  // 0x104174438
+    unsigned int q421676434;  // 0x421676434
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q541595268;  // 0x541595268
+    unsigned int q880952100;  // 0x880952100
+    unsigned int q4364202498;  // 0x4364202498
+    unsigned int q22571209320;  // 0x22571209320
+    unsigned int q36516995328;  // 0x36516995328
+    unsigned int q289430047058;  // 0x289430047058
+    unsigned int q1611689177458;  // 0x1611689177458
+    unsigned int q1612549859458;  // 0x1612549859458
+    unsigned int q1612552106354;  // 0x1612552106354
+    unsigned int q2359835005728;  // 0x2359835005728
+    unsigned int q44616925868120;  // 0x44616925868120
+    unsigned int q44617234082130;  // 0x44617234082130
+    unsigned int q388224393901144;  // 0x388224393901144
+    unsigned int q971036362437234;  // 0x971036362437234
+    unsigned int q19247441543438640;  // 0x19247441543438640
+    unsigned int q680328744094888500;  // 0x680328744094888500
+    unsigned int q28987212384706987584;  // 0x28987212384706987584
+    unsigned int q191706784108137269458308;  // 0x191706784108137269458308
 // --- flat members (END) ---
     int sub_40A090();  // 0x40A090
 };

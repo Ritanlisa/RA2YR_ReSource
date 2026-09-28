@@ -18,8 +18,8 @@ int sub_53EC40(unsigned char a1, char a2)
 {
   int result; // eax
 
-  result = g_StreamBufferState; /*0x53ec40*/
-  if ( g_StreamBufferState )
+  result = dword_AA0444; /*0x53ec40*/
+  if ( dword_AA0444 )
     word_AA0168[a1] = a2 != 0 ? 0 : 0x8000;
   return result; /*0x53ec67*/
 }
@@ -52,16 +52,16 @@ void Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   v4 = 0; /*0x6149bd*/
   lpWideCharStr = a2; /*0x6149c3*/
   hWnda = hWnd; /*0x6149c7*/
-  if ( g_DialogHashMap_Grow ) /*0x6149cb*/
+  if ( dword_AC1B4C ) /*0x6149cb*/
   {
-    v5 = g_DialogHashMap_Callback(&hWnda); /*0x6149d1*/
+    v5 = dword_AC1B60(&hWnda); /*0x6149d1*/
     hWnd = hWnda; /*0x6149e4*/
-    v6 = *((unsigned int *)g_DialogHashMap_Entries + (v5 & ((1 << g_DialogHashMap_Insert) - 1))); /*0x6149f0*/
+    v6 = *((_DWORD *)dword_AC1B48 + (v5 & ((1 << dword_AC1B54) - 1))); /*0x6149f0*/
     if ( v6 ) /*0x6149f5*/
     {
       while ( *(HWND *)v6 != hWnda ) /*0x6149f9*/
       {
-        v6 = *(unsigned int *)(v6 + 8); /*0x6149fb*/
+        v6 = *(_DWORD *)(v6 + 8); /*0x6149fb*/
         if ( !v6 ) /*0x614a00*/
           goto LABEL_8; /*0x614a00*/
       }
@@ -81,7 +81,7 @@ void Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   *lpWideCharStr = 0; /*0x614a6d*/
   MultiByteToWideChar(0, 0, lParam, -1, v19, cchWideChar); /*0x614a72*/
   if ( a4 ) /*0x614a7a*/
-    *a4 = _mbsnccnt((const uint8_t *)lParam, v8); /*0x614a8a*/
+    *a4 = _mbsnccnt((const unsigned __int8 *)lParam, v8); /*0x614a8a*/
   if ( cchWideChar > 0 ) /*0x614a8e*/
     v9[cchWideChar - 1] = 0; /*0x614a90*/
   v10 = wcslen(v9); /*0x614a9d*/
@@ -150,7 +150,7 @@ double Memory_Helper_58C6F0(IUnknown * aP0, short * a1, double a3)
   }
   if ( v4 > 3.141592653589793 ) /*0x58c7a0*/
     v11 = 6.283185307179586 - v4; /*0x58c7aa*/
-  return (double)(unsigned int)Random::State(&g_Randomizer) * 2.328306437080797e-10 * 2.5 + 1.5 * v11 + 0.15 * v9; /*0x58c7ee*/
+  return (double)(unsigned int)Random::State(&unk_ABE890) * 2.328306437080797e-10 * 2.5 + 1.5 * v11 + 0.15 * v9; /*0x58c7ee*/
 }
 } // namespace gamemd
 }

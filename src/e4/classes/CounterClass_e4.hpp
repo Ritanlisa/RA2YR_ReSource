@@ -8,10 +8,7 @@ namespace gamemd {
 struct CounterClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    unsigned int count;  // 0x4
-    unsigned int items;
-    unsigned int u32_8;
-    unsigned int u32_D;
+    char count[4];  // 0x4
 // --- flat members (END) ---
     CounterClass * QueryInterface(char a2);
 };

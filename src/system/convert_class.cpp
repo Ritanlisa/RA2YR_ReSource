@@ -118,18 +118,18 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
   int v11; // ebp
   int v12; // edi
   int v13; // ebp
-  unsigned short *v14; // edi
+  _WORD *v14; // edi
   int v15; // esi
   int v16; // ecx
   int v17; // edx
   int v18; // eax
   int v19; // ebp
-  uint8_t *v20; // ecx
+  unsigned __int8 *v20; // ecx
   int v21; // edi
   int v22; // esi
   int v23; // edx
   int v24; // edx
-  unsigned short *v25; // ecx
+  _WORD *v25; // ecx
   int v26; // [esp+10h] [ebp-28h]
   int v27; // [esp+14h] [ebp-24h]
   int v28; // [esp+18h] [ebp-20h]
@@ -140,7 +140,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
   int v33; // [esp+2Ch] [ebp-Ch]
   int v34; // [esp+30h] [ebp-8h]
   int v35; // [esp+34h] [ebp-4h]
-  unsigned short *v36; // [esp+3Ch] [ebp+4h]
+  _WORD *v36; // [esp+3Ch] [ebp+4h]
   int v37; // [esp+40h] [ebp+8h]
   int v38; // [esp+44h] [ebp+Ch]
   int v39; // [esp+48h] [ebp+10h]
@@ -208,7 +208,7 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
     v35 = Math::RoundToInt((double)(1000 * v12) * 0.065536); /*0x5561f8*/
     v13 = 0; /*0x556202*/
     v30 = v6 - 1; /*0x55620e*/
-    v14 = *(unsigned short **)(&this->q0908); /*0x55621e*/
+    v14 = *(_WORD **)(&this->q0908); /*0x55621e*/
     v31 = (30 * v6 / 200 - 1) & ((30 * v6 / 200 - 1 <= 0) - 1); /*0x55623a*/
     if ( v31 >= (v6 - 1) >> 1 ) /*0x55623e*/
       v31 = (v6 - 1) >> 1; /*0x556240*/
@@ -280,8 +280,8 @@ void LightConvertClass::UpdateColors(int red, int green, int blue, bool tinted) 
             v19 = 1; /*0x556389*/
             while ( 1 ) /*0x5563bb*/
             {
-              v20 = (uint8_t *)(this->q188 + 3 * (v19 % 256)); /*0x5563bb*/
-              if ( *(unsigned char *)(this->q190 + v19) ) /*0x55639a*/
+              v20 = (unsigned __int8 *)(this->q188 + 3 * (v19 % 256)); /*0x5563bb*/
+              if ( *(_BYTE *)(this->q190 + v19) ) /*0x55639a*/
               {
                 v21 = (v15 * *v20) >> 16; /*0x5563d7*/
                 v22 = (v37 * v20[1]) >> 16; /*0x5563da*/

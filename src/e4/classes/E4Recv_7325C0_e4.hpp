@@ -29,6 +29,13 @@ struct E4Recv_7325C0 {
     unsigned int q5668;  // 0x5668
     unsigned int q6408;  // 0x6408
     unsigned int q6454;  // 0x6454
+    unsigned int q22120;  // 0x22120
+    unsigned int q25608;  // 0x25608
+    unsigned int q25684;  // 0x25684
+    unsigned int q153220;  // 0x153220
+    unsigned int q1283410;  // 0x1283410
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q1389088;  // 0x1389088
 // --- flat members (END) ---
     int Vf132(int,  ...);    // G6 vtable slot dispatch
     int Vf316(int,  ...);    // G6 vtable slot dispatch

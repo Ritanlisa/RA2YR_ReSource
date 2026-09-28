@@ -19,22 +19,22 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   int v2; // ecx
 
   LocomotionClass::Init(); /*0x718003*/
-  this->MovingDestination[0] = g_BuildingLoadQueue_Array.BuildLimit; /*0x718011*/
-  this->MovingDestination[1] = g_BuildingLoadQueue_Array.Category[0]; /*0x71801a*/
-  this->MovingDestination[2] = g_BuildingLoadQueue_Array.unknown_3C0[0]; /*0x718026*/
-  this->LastCoords[0] = g_BuildingLoadQueue_Array.BuildLimit; /*0x71802e*/
-  this->LastCoords[1] = g_BuildingLoadQueue_Array.Category[0]; /*0x718036*/
-  this->LastCoords[2] = g_BuildingLoadQueue_Array.unknown_3C0[0]; /*0x71803e*/
+  this->MovingDestination[0] = g_BuildingLoadQueue_Array.?; /*0x718011*/
+  this->MovingDestination[1] = g_BuildingLoadQueue_Array.?[0]; /*0x71801a*/
+  this->MovingDestination[2] = g_BuildingLoadQueue_Array.?[0]; /*0x718026*/
+  this->LastCoords[0] = g_BuildingLoadQueue_Array.?; /*0x71802e*/
+  this->LastCoords[1] = g_BuildingLoadQueue_Array.?[0]; /*0x718036*/
+  this->LastCoords[2] = g_BuildingLoadQueue_Array.?[0]; /*0x71803e*/
   this->Moving = 0; /*0x718043*/
   this->TeleportLocomotionClass_field_bool_35 = 0; /*0x718046*/
   this->TeleportLocomotionClass_field_bool_36 = 0; /*0x718049*/
   this->State = 0; /*0x71804c*/
-  v2 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x71804f*/
+  v2 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x71804f*/
   this->Timer[2] = 0; /*0x718055*/
   this->Timer[0] = v2; /*0x718058*/
   this->Piggybackee = 0; /*0x71805b*/
-  *(unsigned int *)this->__pad_0 = (void*)&TeleportLocomotionClass_vftable; /*0x71805e*/
-  *(unsigned int *)&this->__pad_0[4] = (void*)&TeleportLocomotionClass_vftable; /*0x718064*/
-  *(unsigned int *)this->__pad_18 = (void*)&TeleportLocomotionClass_vftable; /*0x71806b*/
-  return (int)this->__pad_0; /*0x718074*/
+  *(_DWORD *)this->LocomotionClass = &(void*)(void*)&TeleportLocomotionClass_vftable; /*0x71805e*/
+  *(_DWORD *)&this->LocomotionClass[4] = &(void*)(void*)&TeleportLocomotionClass_vftable; /*0x718064*/
+  *(_DWORD *)this->__pad_18 = &(void*)(void*)&TeleportLocomotionClass_vftable; /*0x71806b*/
+  return (int)this->LocomotionClass; /*0x718074*/
 }

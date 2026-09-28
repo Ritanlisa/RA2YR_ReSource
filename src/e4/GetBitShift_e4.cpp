@@ -25,6 +25,6 @@ int GetBitShift_Green()
 namespace gamemd {
 XSurface * GetBitShift_Blue()
 {
-  return (gamemd::XSurface *)(g_BitShift_Blue);
+  return g_BitShift_Blue; /*0x4bbc75*/
 }
 } // namespace gamemd

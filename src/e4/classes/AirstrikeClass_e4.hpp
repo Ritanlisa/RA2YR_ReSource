@@ -20,11 +20,11 @@ struct AirstrikeClass {
     int referenceCount;  // 0x1C
     bool q01D;  // 0x1D
     unsigned int NeedsSaveOrLink;  // 0x20
-    unsigned int AirstrikeClass_field_24;  // 0x24
-    unsigned int AirstrikeClass_field_28;  // 0x28
+    char AirstrikeClass_field_24[4];  // 0x24
+    char AirstrikeClass_field_28[4];  // 0x28
     bool q02B;  // 0x2B
     unsigned int q02C;  // 0x2C
-    unsigned int ;  // 0x30
+    void* EliteAirstrikeTeamTypeIndex;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     unsigned int u32_34;  // 0x34
@@ -36,26 +36,15 @@ struct AirstrikeClass {
     unsigned char pad_3E;  // 0x3E
     void* q040;  // 0x40
     bool q042;  // 0x42
-    unsigned int AirstrikeClass_field_44;  // 0x44
-    unsigned int AirstrikeClass_field_48;  // 0x48
+    char AirstrikeClass_field_44[4];  // 0x44
+    char AirstrikeClass_field_48[4];  // 0x48
     bool q04A;  // 0x4A
-    unsigned int ;  // 0x4C
+    TechnoClass* owner;  // 0x4C
     unsigned char q04F;  // 0x4F
     unsigned int u32_50;  // 0x50
-    unsigned int AirstrikeClass_field_54;  // 0x54
-    unsigned int AirstrikeClass_field_58;  // 0x58
-    unsigned int AirstrikeClass_field_5C;  // 0x5C
-    unsigned int q0242;
-    unsigned int q050;
-    unsigned int q05C;
-    unsigned int referenceCount6;
-    unsigned int u32_30;
-    unsigned int u32_3C;
-    unsigned char u8_3D;
-    unsigned int vtable0;
-    unsigned int q140;
-    unsigned int EliteAirstrikeTeamTypeIndex;
-    unsigned int owner;
+    char AirstrikeClass_field_54[4];  // 0x54
+    char AirstrikeClass_field_58[4];  // 0x58
+    char AirstrikeClass_field_5C[4];  // 0x5C
 // --- flat members (END) ---
     AbstractClass * * UpdateAll();
     char StartMission(int * a2);

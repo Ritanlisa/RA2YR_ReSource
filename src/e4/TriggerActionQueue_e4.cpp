@@ -17,7 +17,7 @@ int TriggerActionQueue::ProcessAll()
   result = g_GameObjectCleanup; /*0x6e5820*/
   for ( i = 0; i < g_GameObjectCleanup; ++i ) /*0x6e582d*/
   {
-    TriggerClass::NotifyLocalChanged(*(TriggerClass **)(*((unsigned int *)g_TagClassCount + i) + 40), (int)this); /*0x6e583b*/
+    TriggerClass::NotifyLocalChanged(*(TriggerClass **)(*((_DWORD *)g_TagClassCount + i) + 40), (int)this); /*0x6e583b*/
     result = g_GameObjectCleanup; /*0x6e5840*/
   }
   return result; /*0x6e584a*/

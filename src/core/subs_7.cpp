@@ -984,7 +984,7 @@ int ReturnZero6637E0()
 //   *(this + 2) = 0;
 //   *((unsigned char *)this + 12) = 1;
 //   *((unsigned char *)this + 13) = 0;
-//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)(void*)&DynamicVectorClass_OwnerTalkClass_ConnectionListStruct___vftable;
+//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)(void*)(void*)&DynamicVectorClass_OwnerTalkClass_ConnectionListStruct___vftable;
 //   *(this + 5) = 10;
 //   *(this + 4) = 0;
 //   *((unsigned char *)this + 24) = 0;
@@ -3044,7 +3044,7 @@ void Sub6C6B60()
 
 // IDA: 0x6C8840  proposal: ComPtr::Release6C8840
 // IDA: unsigned int *__thiscall sub_6C8840(unsigned int *Block, char a2)
-//   *Block = (void*)(void*)(void*)(void*)(void*)&rc_ptr_PlayerProfile_vftable;
+//   *Block = (void*)(void*)(void*)(void*)(void*)(void*)&rc_ptr_PlayerProfile_vftable;
 //   ComPtr::Release(Block);
 //   if ( (a2 & 1) != 0 )
 //   RA2_OPDEL(Block);

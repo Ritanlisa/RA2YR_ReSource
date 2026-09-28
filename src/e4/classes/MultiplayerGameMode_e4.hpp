@@ -15,18 +15,6 @@ struct MultiplayerGameMode {
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
-    unsigned int MultiplayerGameMode_field_0x04;
-    unsigned int MultiplayerGameMode_field_0x08;
-    unsigned int MultiplayerGameMode_field_0x0C;
-    unsigned int MultiplayerGameMode_field_0x10;
-    unsigned int MultiplayerGameMode_field_0x14;
-    unsigned int MultiplayerGameMode_field_0x18;
-    unsigned int __pad_0;
-    unsigned int q00C2;
-    unsigned int q0104;
-    unsigned int q0108;
-    unsigned int u32_38;
-    unsigned int GetFirst;
 // --- flat members (END) ---
     MultiplayerGameMode * QueryInterface(char a2);
     unsigned int * ConstructMultiplayerGameModeVectorClass(int a2, int a3);

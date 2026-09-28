@@ -25,7 +25,6 @@ struct MechLocomotionClass {
     unsigned char tail_31;  // 0x31
     ILocomotion * ptr_20;  // 0x32
     unsigned int q033;  // 0x33
-    unsigned int __pad_0;
 // --- flat members (END) ---
     MechLocomotionClass * ProcessMove(char a2);
     int BeginMove(int * a1, int * a2);

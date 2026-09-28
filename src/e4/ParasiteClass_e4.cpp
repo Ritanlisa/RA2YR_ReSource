@@ -28,25 +28,25 @@ int ParasiteClass::Constructor()
   int v3; // eax
 
   AbstractClass::Constructor(); /*0x629213*/
-  *(unsigned int *)&this->__pad_28[4] = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x62921f*/
+  *(_DWORD *)&this->__pad_28[4] = *(_DWORD *)&stru_A8EB00.?[416]; /*0x62921f*/
   this->ParasiteClass_field_34 = 0; /*0x629222*/
-  v2 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x629225*/
+  v2 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x629225*/
   this->ParasiteClass_field_40 = 0; /*0x62922b*/
   this->ParasiteClass_field_38 = v2; /*0x62922e*/
-  this->vtable0 = (void*)&ParasiteClass_vftable; /*0x629231*/
-  this->vtable1 = (void*)&ParasiteClass_vftable; /*0x629237*/
-  this->vtable2 = (void*)&ParasiteClass_vftable; /*0x62923e*/
-  this->vtable3 = (void*)&ParasiteClass_vftable; /*0x629245*/
+  this->AbstractClass = &(void*)(void*)&ParasiteClass_vftable; /*0x629231*/
+  this->? = &(void*)(void*)&ParasiteClass_vftable; /*0x629237*/
+  this->? = &(void*)(void*)&ParasiteClass_vftable; /*0x62923e*/
+  this->? = &(void*)(void*)&ParasiteClass_vftable; /*0x629245*/
   if ( dword_AC4920 < dword_AC4918 /*0x62927e*/
     || (byte_AC491D || !dword_AC4918)
     && dword_AC4924 > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_AC4910 + 8))(
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_AC4910 + 8))(
          &dword_AC4910,
          dword_AC4918 + dword_AC4924,
          0) )
   {
-    v3 = (unsigned int)(dword_AC4920++);
-    *((unsigned int *)dword_AC4914 + v3) = this; /*0x62929a*/
+    v3 = dword_AC4920++; /*0x62928b*/
+    *((_DWORD *)dword_AC4914 + v3) = this; /*0x62929a*/
   }
   return (int)this; /*0x62929f*/
 }
@@ -60,22 +60,22 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
   int v6; // [esp+8h] [ebp-8h]
 
   AbstractClass::Constructor(); /*0x6292b6*/
-  this->q02C = g_CurrentFrame; /*0x6292c4*/
+  this->q02C = dword_A8ED84; /*0x6292c4*/
   this->ParasiteClass_field_34 = 0; /*0x6292c9*/
-  this->u32_38 = g_CurrentFrame; /*0x6292d2*/
+  this->u32_38 = dword_A8ED84; /*0x6292d2*/
   this->ParasiteClass_field_40 = 0; /*0x6292d5*/
-  *(unsigned int *)this = (void*)&ParasiteClass_vftable; /*0x6292d8*/
-  this->vtable2 = (void*)&ParasiteClass_vftable; /*0x6292de*/
-  this->vtable3 = (void*)&ParasiteClass_vftable; /*0x6292e5*/
-  this->vtable4 = (void*)&ParasiteClass_vftable; /*0x6292ec*/
+  *(_DWORD *)this = &(void*)(void*)&ParasiteClass_vftable; /*0x6292d8*/
+  this->vtable2 = &(void*)(void*)&ParasiteClass_vftable; /*0x6292de*/
+  this->vtable3 = &(void*)(void*)&ParasiteClass_vftable; /*0x6292e5*/
+  this->vtable4 = &(void*)(void*)&ParasiteClass_vftable; /*0x6292ec*/
   this->creationFrame = aP1; /*0x6292f3*/
   this->q028 = 0; /*0x6292f6*/
-  this->u32_38 = g_CurrentFrame; /*0x629303*/
+  this->u32_38 = dword_A8ED84; /*0x629303*/
   this->ParasiteClass_field_3C = v6; /*0x62930a*/
   this->ParasiteClass_field_40 = 0; /*0x62930d*/
-  g_CurrentFrame = g_CurrentFrame; /*0x629310*/
+  dword_A8ED84 = dword_A8ED84; /*0x629310*/
   this->u32_54 = 0; /*0x629316*/
-  this->q02C = g_CurrentFrame; /*0x629319*/
+  this->q02C = dword_A8ED84; /*0x629319*/
   this->ParasiteClass_field_30 = v6; /*0x62931c*/
   this->ParasiteClass_field_34 = 0; /*0x62931f*/
   this->IsAllocated = 0; /*0x629322*/
@@ -85,13 +85,13 @@ ParasiteClass::ParasiteClass(TechnoClass * aP1)
   if ( dword_AC4920 < dword_AC4918 /*0x629360*/
     || (byte_AC491D || !dword_AC4918)
     && dword_AC4924 > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_AC4910 + 8))(
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_AC4910 + 8))(
          &dword_AC4910,
          dword_AC4918 + dword_AC4924,
          0) )
   {
-    v4 = (unsigned int)(dword_AC4920++);
-    *((unsigned int *)dword_AC4914 + v4) = this; /*0x62937c*/
+    v4 = dword_AC4920++; /*0x62936d*/
+    *((_DWORD *)dword_AC4914 + v4) = this; /*0x62937c*/
   }
   return this; /*0x629381*/
 }
@@ -665,37 +665,37 @@ int ParasiteClass::CanExistOnVictimCell()
   int v8; // eax
   Cell *v9; // eax
 
-  v2 = *(unsigned int *)this->__pad_28; /*0x62ab44*/
+  v2 = *(_DWORD *)this->__pad_28; /*0x62ab44*/
   if ( !v2 ) /*0x62ab49*/
     return 0; /*0x62ab4f*/
-  if ( (*(uint8_t (__thiscall **)(int))(*(unsigned int *)v2 + 84))(v2) ) /*0x62ab52*/
+  if ( (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)v2 + 84))(v2) ) /*0x62ab52*/
     return 0; /*0x62ab5d*/
-  if ( *(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)this->creationFrame + 132))(this->creationFrame) + 3278) ) /*0x62ab69*/
+  if ( *(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)this->creationFrame + 132))(this->creationFrame) + 3278) ) /*0x62ab69*/
     goto LABEL_20; /*0x62ab69*/
   creationFrame = this->creationFrame; /*0x62ab77*/
   if ( creationFrame ) /*0x62ab7c*/
   {
-    if ( (*(int (__thiscall **)(int))(*(unsigned int *)creationFrame + 44))(creationFrame) == 1 ) /*0x62ab86*/
+    if ( (*(int (__thiscall **)(int))(*(_DWORD *)creationFrame + 44))(creationFrame) == 1 ) /*0x62ab86*/
     {
-      v5 = (CellClass *)(*(int (__thiscall **)(unsigned int))(**(unsigned int **)this->__pad_28 + 444))(*(unsigned int *)this->__pad_28); /*0x62ab8f*/
+      v5 = (CellClass *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->__pad_28 + 444))(*(_DWORD *)this->__pad_28); /*0x62ab8f*/
       if ( CellClass::FindInfantry(v5, 0) ) /*0x62ab97*/
         return 0; /*0x62aba4*/
     }
   }
-  v6 = *(unsigned int *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)this->__pad_28 + 444))(*(unsigned int *)this->__pad_28) + 236); /*0x62abb0*/
+  v6 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->__pad_28 + 444))(*(_DWORD *)this->__pad_28) + 236); /*0x62abb0*/
   if ( v6 == 2 || v6 == 6 || v6 == 3 ) /*0x62abc3*/
   {
-    v7 = (*(unsigned int *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)this->__pad_28 + 444))(*(unsigned int *)this->__pad_28) /*0x62abdc*/
+    v7 = (*(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->__pad_28 + 444))(*(_DWORD *)this->__pad_28) /*0x62abdc*/
                     + 320)
         & 0x100) == 0;
-    v8 = *(unsigned int *)((*(int (__thiscall **)(unsigned int))(**(unsigned int **)this->__pad_28 + 444))(*(unsigned int *)this->__pad_28) + 68); /*0x62abe9*/
+    v8 = *(_DWORD *)((*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->__pad_28 + 444))(*(_DWORD *)this->__pad_28) + 68); /*0x62abe9*/
     if ( v8 >= 74 && v8 <= 99 ) /*0x62abf4*/
       v7 = 0; /*0x62abf6*/
     if ( (v8 < 205 || v8 > 230) && v7 ) /*0x62ac08*/
       return 0; /*0x62ac0b*/
   }
   LABEL_20:
-  v9 = (Cell *)(*(int (__thiscall **)(unsigned int))(**(unsigned int **)this->__pad_28 + 444))(*(unsigned int *)this->__pad_28); /*0x62ac14*/
+  v9 = (Cell *)(*(int (__thiscall **)(_DWORD))(**(_DWORD **)this->__pad_28 + 444))(*(_DWORD *)this->__pad_28); /*0x62ac14*/
   return Cell::IsBridge(v9) == 0; /*0x62ab4b*/
 }
 } // namespace ra2
@@ -709,10 +709,10 @@ void * ParasiteClass::UpdateParasite(char a2)
   int v5; // eax
 
   v3 = this->q011; /*0x62af77*/
-  this->vtable0 = (void*)&ParasiteClass_vftable; /*0x62af7a*/
-  this->vtable1 = (void*)&ParasiteClass_vftable; /*0x62af82*/
-  this->vtable2 = (void*)&ParasiteClass_vftable; /*0x62af89*/
-  this->vtable3 = (void*)&ParasiteClass_vftable; /*0x62af90*/
+  this->AbstractClass = &(void*)(void*)&ParasiteClass_vftable; /*0x62af7a*/
+  this->? = &(void*)(void*)&ParasiteClass_vftable; /*0x62af82*/
+  this->? = &(void*)(void*)&ParasiteClass_vftable; /*0x62af89*/
+  this->? = &(void*)(void*)&ParasiteClass_vftable; /*0x62af90*/
   this->IsAllocated = 0; /*0x62af97*/
   this->abstractFlags = 0; /*0x62af9a*/
   this->u32_48 = 0; /*0x62af9d*/
@@ -723,16 +723,16 @@ void * ParasiteClass::UpdateParasite(char a2)
   }
   if ( this->u32_54 ) /*0x62afad*/
   {
-    v4 = (*(int (__thiscall **)(int *, ParasiteClass **))(g_BuildingLoadQueue_Array.ForbiddenHouses[0] + 16))( /*0x62afc6*/
-           g_BuildingLoadQueue_Array.ForbiddenHouses,
+    v4 = (*(int (__thiscall **)(int *, ParasiteClass **))(g_BuildingLoadQueue_Array.?[0] + 16))( /*0x62afc6*/
+           g_BuildingLoadQueue_Array.?,
            &this);
-    if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.SecondSpawnOffset[1] ) /*0x62afd6*/
+    if ( v4 != -1 && v4 < g_BuildingLoadQueue_Array.?[1] ) /*0x62afd6*/
     {
-      --g_BuildingLoadQueue_Array.SecondSpawnOffset[1]; /*0x62afdb*/
+      --g_BuildingLoadQueue_Array.?[1]; /*0x62afdb*/
       for ( ; /*0x62afe1*/
-            v4 < g_BuildingLoadQueue_Array.SecondSpawnOffset[1];
-            *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0] + 4 * v4 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0]
-                                                                                            + 4 * v4) )
+            v4 < g_BuildingLoadQueue_Array.?[1];
+            *(_DWORD *)(g_BuildingLoadQueue_Array.?[0] + 4 * v4 - 4) = *(_DWORD *)(g_BuildingLoadQueue_Array.?[0]
+                                                                                 + 4 * v4) )
       {
         ++v4; /*0x62afe9*/
       }
@@ -745,14 +745,14 @@ void * ParasiteClass::UpdateParasite(char a2)
     do /*0x62b045*/
     {
       ++v5; /*0x62b035*/
-      *((unsigned int *)dword_AC4914 + v5 - 1) = *((unsigned int *)dword_AC4914 + v5); /*0x62b039*/
+      *((_DWORD *)dword_AC4914 + v5 - 1) = *((_DWORD *)dword_AC4914 + v5); /*0x62b039*/
     }
     while ( v5 < dword_AC4920 ); /*0x62b045*/
   }
   AbstractClass::DTOR(); /*0x62b049*/
   if ( (a2 & 1) != 0 ) /*0x62b053*/
     RA2_OPDEL(); /*0x62b056*/
-  return &this->vtable0; /*0x62b060*/
+  return &this->AbstractClass; /*0x62b060*/
 }
 } // namespace ra2
 
@@ -777,7 +777,7 @@ Coord * * ParasiteClass::Update()
   int v16; // eax
   CellClass *v17; // esi
   double v18; // st7
-  unsigned int *v19; // edi
+  _DWORD *v19; // edi
   int Byte284; // eax
   float *v21; // eax
   double v22; // st7
@@ -798,7 +798,7 @@ Coord * * ParasiteClass::Update()
   int v38; // edx
   int v39; // eax
   void *vtable0; // ebx
-  int64_t v41; // rax
+  __int64 v41; // rax
   int v42; // edi
   int v43; // ebx
   char result; // al
@@ -818,7 +818,7 @@ Coord * * ParasiteClass::Update()
   int GroundHeight; // [esp+2Ch] [ebp-C8h]
   float v66; // [esp+38h] [ebp-BCh]
   int v67; // [esp+3Ch] [ebp-B8h]
-  unsigned int v68[2]; // [esp+40h] [ebp-B4h] BYREF
+  _DWORD v68[2]; // [esp+40h] [ebp-B4h] BYREF
   int v69; // [esp+48h] [ebp-ACh]
   int v70[3]; // [esp+4Ch] [ebp-A8h] BYREF
   int v71[2]; // [esp+58h] [ebp-9Ch] BYREF
@@ -827,19 +827,19 @@ Coord * * ParasiteClass::Update()
   float v74[12]; // [esp+94h] [ebp-60h] BYREF
   float v75[12]; // [esp+C4h] [ebp-30h] BYREF
 
-  if ( ((uint8_t)g_CurrentFrame & 1) != 0 ) /*0x62bd63*/
+  if ( ((unsigned __int8)dword_A8ED84 & 1) != 0 ) /*0x62bd63*/
     goto LABEL_50; /*0x62bd63*/
   v59 = this->u32_9C; /*0x62bd75*/
   v60 = this->q0A0; /*0x62bd88*/
   v61 = this->q0A4; /*0x62bd8f*/
-  if ( (abs32(Random::State((unsigned int *)g_ScenarioClass_Instance + 134)) & 7) == 0 ) /*0x62bd9f*/
+  if ( (abs32(Random::State((_DWORD *)dword_A8B230 + 134)) & 7) == 0 ) /*0x62bd9f*/
   {
     v2 = 0; /*0x62bdab*/
     v3 = 0; /*0x62bdad*/
-    if ( (abs32(Random::State((unsigned int *)g_ScenarioClass_Instance + 134)) & 1) != 0 ) /*0x62bdc1*/
-      v3 = (int)abs32(Random::State((unsigned int *)g_ScenarioClass_Instance + 134)) % 3 - 1; /*0x62be05*/
+    if ( (abs32(Random::State((_DWORD *)dword_A8B230 + 134)) & 1) != 0 ) /*0x62bdc1*/
+      v3 = (int)abs32(Random::State((_DWORD *)dword_A8B230 + 134)) % 3 - 1; /*0x62be05*/
     else
-      v2 = (int)abs32(Random::State((unsigned int *)g_ScenarioClass_Instance + 134)) % 3 - 1; /*0x62bde2*/
+      v2 = (int)abs32(Random::State((_DWORD *)dword_A8B230 + 134)) % 3 - 1; /*0x62bde2*/
     v4 = v2 + this->q0C0; /*0x62be11*/
     v5 = v3 + this->q0C4; /*0x62be1b*/
     this->q0C0 = v4; /*0x62be1f*/
@@ -877,7 +877,7 @@ Coord * * ParasiteClass::Update()
   this->q0D0 = 0; /*0x62bea2*/
   v66 = v10; /*0x62bea5*/
   this->q0D4 = -1073741824; /*0x62bea9*/
-  this->q0D4 = this->q0D4 - (double)g_RulesClass_Instance->RepairRate[0]; /*0x62bebd*/
+  this->q0D4 = this->q0D4 - (double)dword_8871E0->RepairRate[0]; /*0x62bebd*/
   IDA_LOWORD(v11) = Math::RoundToInt(v66); /*0x62bec4*/
   v11 = v11; /*0x62becd*/
   IDA_LOWORD(v12) = Math::RoundToInt(v9); /*0x62bece*/
@@ -893,10 +893,10 @@ Coord * * ParasiteClass::Update()
   Coord3D::Set(v70, v16, v15, v14); /*0x62bf13*/
   GroundHeight = Cell::GetGroundHeight(v70); /*0x62bf2d*/
   v67 = dword_AC4A0C + GroundHeight; /*0x62bf3d*/
-  v17 = Coord::To_Cell(&MapClass_Instance, v70); /*0x62bf46*/
+  v17 = Coord::To_Cell(&dword_87F7E8, v70); /*0x62bf46*/
   v58 = 0; /*0x62bf4d*/
   v57 = 0; /*0x62bf52*/
-  if ( (v17->flags[0] & 0x100) != 0 || (Coord::To_Cell(&MapClass_Instance, v68)->flags[0] & 0x100) != 0 ) /*0x62bf74*/
+  if ( (v17->flags[0] & 0x100) != 0 || (Coord::To_Cell(&dword_87F7E8, v68)->flags[0] & 0x100) != 0 ) /*0x62bf74*/
   {
     if ( v70[2] < v67 ) /*0x62bf84*/
     {
@@ -915,14 +915,14 @@ Coord * * ParasiteClass::Update()
     if ( v66 >= v18 && v66 - 150.0 < v18 ) /*0x62bfdb*/
     {
       v19 = Cell::IsBridge(v17); /*0x62bfe4*/
-      if ( v19 || (uint8_t)BuildingPlacement::ValidateType(v17, -1, -1) ) /*0x62bff0*/
+      if ( v19 || (unsigned __int8)BuildingPlacement::ValidateType(v17, -1, -1) ) /*0x62bff0*/
       {
         v56 = 1; /*0x62c001*/
         if ( v19 ) /*0x62c006*/
         {
-          if ( *(unsigned char *)(v19[328] + 5823) ) /*0x62c00e*/
+          if ( *(_BYTE *)(v19[328] + 5823) ) /*0x62c00e*/
             v56 = v19[390] < 8; /*0x62c021*/
-          if ( (*(uint8_t (__thiscall **)(unsigned int *))(*v19 + 128))(v19) ) /*0x62c02a*/
+          if ( (*(unsigned __int8 (__thiscall **)(_DWORD *))(*v19 + 128))(v19) ) /*0x62c02a*/
             v56 = 0; /*0x62c034*/
         }
       }
@@ -972,13 +972,13 @@ Coord * * ParasiteClass::Update()
   *(float *)&v48 = -v22; /*0x62c0f9*/
   Triple::Set(&v59, v23, v48, this->q0D4); /*0x62c0fd*/
   v24 = Matrix3x3::TransformPoint(v71, (float *)&v59, v53); /*0x62c113*/
-  v59 = *(unsigned int *)v24; /*0x62c11f*/
+  v59 = *(_DWORD *)v24; /*0x62c11f*/
   v60 = *(float *)(v24 + 4); /*0x62c126*/
   v61 = *(float *)(v24 + 8); /*0x62c131*/
   Coord::Scale((int *)0x3F800000, v54); /*0x62c135*/
   v61 = -v61; /*0x62c14a*/
   v25 = Matrix3x3::TransformPoint(v71, (float *)&v59, v55); /*0x62c152*/
-  v59 = *(unsigned int *)v25; /*0x62c159*/
+  v59 = *(_DWORD *)v25; /*0x62c159*/
   v60 = *(float *)(v25 + 4); /*0x62c160*/
   v26 = *(float *)(v25 + 8); /*0x62c164*/
   v59 = v59; /*0x62c167*/
@@ -987,7 +987,7 @@ Coord * * ParasiteClass::Update()
   *v8 = v59; /*0x62c17a*/
   this->q0D4 = v26; /*0x62c17c*/
   LABEL_40:
-  if ( (*(int (__thiscall **)(char *))(*(unsigned int *)&this->q0B46))(this) <= 5 || (int)g_CurrentFrame % 2 )
+  if ( (*(int (__thiscall **)(char *))(*(_DWORD *)&this->q0B46))(this) <= 5 || (int)dword_A8ED84 % 2 )
   {
     v28 = this->q0C8 <= 0 ? 0 : this->q0C8;
   }
@@ -1002,13 +1002,13 @@ Coord * * ParasiteClass::Update()
   if ( !--this->q12A ) /*0x62c207*/
   {
     v29 = this->q0AC; /*0x62c215*/
-    if ( *(unsigned int *)(v29 + 744) ) /*0x62c21b*/
+    if ( *(_DWORD *)(v29 + 744) ) /*0x62c21b*/
     {
-      this->q12A = *(unsigned short *)(v29 + 732); /*0x62c236*/
+      this->q12A = *(_WORD *)(v29 + 732); /*0x62c236*/
       v68[0] = this->u32_9C; /*0x62c23f*/
       v68[1] = this->q0A0; /*0x62c250*/
       v69 = this->q0A4; /*0x62c257*/
-      firstObject = Coord::To_Cell(&MapClass_Instance, v68)->firstObject; /*0x62c260*/
+      firstObject = Coord::To_Cell(&dword_87F7E8, v68)->firstObject; /*0x62c260*/
       if ( firstObject ) /*0x62c268*/
       {
         do /*0x62c30d*/
@@ -1025,16 +1025,16 @@ Coord * * ParasiteClass::Update()
           {
             v37 = this->q124; /*0x62c2c2*/
             if ( v37 ) /*0x62c2ca*/
-              v38 = *(unsigned int *)(v37 + 252); /*0x62c2cc*/
+              v38 = *(_DWORD *)(v37 + 252); /*0x62c2cc*/
             else
               v38 = 0; /*0x62c2d4*/
             v39 = this->q0AC; /*0x62c2d6*/
             v38 = v38; /*0x62c2dc*/
             v62 = *(float *)(v39 + 744); /*0x62c2e9*/
-            vtable0 = firstObject->vtable0; /*0x62c2f3*/
-            v45 = *(unsigned int *)(v39 + 740); /*0x62c2f5*/
+            vtable0 = firstObject->AbstractClass; /*0x62c2f3*/
+            v45 = *(_DWORD *)(v39 + 740); /*0x62c2f5*/
             v41 = ZCoordToScreenY(v36); /*0x62c2f6*/
-            (*((void (__fastcall **)(ObjectClass *, unsigned int, float *, unsigned int, int, unsigned int, unsigned int, unsigned int, int))vtable0 /*0x62c303*/
+            (*((void (__fastcall **)(ObjectClass *, _DWORD, float *, _DWORD, int, _DWORD, _DWORD, _DWORD, int))vtable0 /*0x62c303*/
              + 91))(
               firstObject,
               IDA_HIDWORD(v41),
@@ -1053,15 +1053,15 @@ Coord * * ParasiteClass::Update()
     }
   }
   v42 = this->q0AC; /*0x62c316*/
-  v43 = *(unsigned int *)(v42 + 736) /*0x62c33f*/
-      - *((uint16_t *)&this->q0388)
+  v43 = *(_DWORD *)(v42 + 736) /*0x62c33f*/
+      - *((unsigned __int16 *)&this->q0388)
       + (*(int (__stdcall **)(char *))(this->vtable2 + 16))(this + 4);
   if ( !(v43 % (*(char *)(v42 + 779) + ((*(int (__stdcall **)(char *))(this->vtable2 + 16))(this + 4) & 1))) ) /*0x62c355*/
     ++*(&this->spawnStatus2); /*0x62c35b*/
   result = *(&this->spawnStatus2); /*0x62c361*/
-  if ( result == *(unsigned char *)(v42 + 777) ) /*0x62c36f*/
+  if ( result == *(_BYTE *)(v42 + 777) ) /*0x62c36f*/
   {
-    result = *(unsigned char *)(v42 + 776); /*0x62c371*/
+    result = *(_BYTE *)(v42 + 776); /*0x62c371*/
     if ( result ) /*0x62c379*/
       *(&this->spawnStatus5) = 1; /*0x62c37c*/
     else
@@ -1087,27 +1087,27 @@ int ParasiteClass::LoadParasite(int * a0, AbstractClass * aP1)
     if ( a0 ) /*0x6295cd*/
     {
       AbstractClass::InitVtables((AbstractClass *)a0, (int)&aP1); /*0x6295d6*/
-      v4 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x6295db*/
+      v4 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6295db*/
       a0->ParasiteClass_field_34 = 0; /*0x6295e1*/
-      *(unsigned int *)&a0->__pad_28[4] = v4; /*0x6295e8*/
-      a0->ParasiteClass_field_38 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x6295f0*/
+      *(_DWORD *)&a0->__pad_28[4] = v4; /*0x6295e8*/
+      a0->ParasiteClass_field_38 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x6295f0*/
       a0->ParasiteClass_field_40 = 0; /*0x6295f3*/
-      a0->vtable0 = (void*)&ParasiteClass_vftable; /*0x6295fa*/
-      a0->vtable1 = (void*)&ParasiteClass_vftable; /*0x629600*/
-      a0->vtable2 = (void*)&ParasiteClass_vftable; /*0x629607*/
-      a0->vtable3 = (void*)&ParasiteClass_vftable; /*0x62960e*/
+      a0->AbstractClass = &(void*)(void*)&ParasiteClass_vftable; /*0x6295fa*/
+      a0->? = &(void*)(void*)&ParasiteClass_vftable; /*0x629600*/
+      a0->? = &(void*)(void*)&ParasiteClass_vftable; /*0x629607*/
+      a0->? = &(void*)(void*)&ParasiteClass_vftable; /*0x62960e*/
     }
-    if ( *((unsigned int *)a0 + 17) /*0x629657*/
-      && (g_BuildingLoadQueue_Array.SecondSpawnOffset[1] < g_BuildingLoadQueue_Array.SecretHouses_2
-       || (IDA_BYTE1(g_BuildingLoadQueue_Array.SecondSpawnOffset[0]) || !g_BuildingLoadQueue_Array.SecretHouses_2)
-       && g_BuildingLoadQueue_Array.SecondSpawnOffset[2] > 0
-       && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ForbiddenHouses[0] + 8))(
-            g_BuildingLoadQueue_Array.ForbiddenHouses,
-            g_BuildingLoadQueue_Array.SecretHouses_2 + g_BuildingLoadQueue_Array.SecondSpawnOffset[2],
+    if ( *((_DWORD *)a0 + 17) /*0x629657*/
+      && (g_BuildingLoadQueue_Array.?[1] < g_BuildingLoadQueue_Array.?
+       || (IDA_BYTE1(g_BuildingLoadQueue_Array.?[0]) || !g_BuildingLoadQueue_Array.?)
+       && g_BuildingLoadQueue_Array.?[2] > 0
+       && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.?[0] + 8))(
+            g_BuildingLoadQueue_Array.?,
+            g_BuildingLoadQueue_Array.? + g_BuildingLoadQueue_Array.?[2],
             0)) )
     {
-      v5 = g_BuildingLoadQueue_Array.SecondSpawnOffset[1]++; /*0x629664*/
-      *(unsigned int *)(g_BuildingLoadQueue_Array.SecretHouses[0] + 4 * v5) = a0; /*0x629673*/
+      v5 = g_BuildingLoadQueue_Array.?[1]++; /*0x629664*/
+      *(_DWORD *)(g_BuildingLoadQueue_Array.?[0] + 4 * v5) = a0; /*0x629673*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &a0->creationFrame); /*0x62967f*/
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, (int *)a0->__pad_28); /*0x62968d*/
@@ -1151,27 +1151,27 @@ bool ParasiteClass::CanInfect(unsigned int * a2)
   result = 0; /*0x62a977*/
   if ( a2 ) /*0x62a8ea*/
   {
-    if ( !*((unsigned char *)a2 + 129) ) /*0x62a8f0*/
+    if ( !*((_BYTE *)a2 + 129) ) /*0x62a8f0*/
     {
-      if ( *((unsigned char *)a2 + 144) ) /*0x62a8fa*/
+      if ( *((_BYTE *)a2 + 144) ) /*0x62a8fa*/
       {
         if ( a2[27] ) /*0x62a904*/
         {
           if ( !a2[421] ) /*0x62a90b*/
           {
-            if ( *(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*a2 + 132))(a2) + 3384) ) /*0x62a91f*/
+            if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*a2 + 132))(a2) + 3384) ) /*0x62a91f*/
             {
               if ( !a2[185] ) /*0x62a929*/
               {
                 creationFrame = this->creationFrame; /*0x62a933*/
                 if ( !creationFrame ) /*0x62a938*/
                   return 1; /*0x62a938*/
-                if ( !*(unsigned char *)((*(int (__thiscall **)(int))(*(unsigned int *)creationFrame + 132))(creationFrame) + 3278) ) /*0x62a942*/
+                if ( !*(_BYTE *)((*(int (__thiscall **)(int))(*(_DWORD *)creationFrame + 132))(creationFrame) + 3278) ) /*0x62a942*/
                   return 1; /*0x62a942*/
-                if ( !(*(int (__thiscall **)(unsigned int *))(*a2 + 444))(a2) ) /*0x62a950*/
+                if ( !(*(int (__thiscall **)(_DWORD *))(*a2 + 444))(a2) ) /*0x62a950*/
                   return 1; /*0x62a950*/
-                v4 = (Cell *)(*(int (__thiscall **)(unsigned int *))(*a2 + 444))(a2); /*0x62a95e*/
-                if ( (uint8_t)Cell::IsValidHeight(v4) ) /*0x62a966*/
+                v4 = (Cell *)(*(int (__thiscall **)(_DWORD *))(*a2 + 444))(a2); /*0x62a95e*/
+                if ( (unsigned __int8)Cell::IsValidHeight(v4) ) /*0x62a966*/
                   return 1; /*0x62a8ea*/
               }
             }

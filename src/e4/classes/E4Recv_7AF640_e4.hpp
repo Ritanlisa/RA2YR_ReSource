@@ -14,6 +14,9 @@ struct E4Recv_7AF640 {
     unsigned int q100;  // 0x100
     unsigned int q598;  // 0x598
     unsigned int q5170;  // 0x5170
+    unsigned int q20848;  // 0x20848
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q19232884;  // 0x19232884
 // --- flat members (END) ---
     int sub_7AF640(int a2);  // 0x7AF640
 };

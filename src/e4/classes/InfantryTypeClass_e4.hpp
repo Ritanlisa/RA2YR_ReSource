@@ -991,24 +991,24 @@ struct InfantryTypeClass {
     unsigned char qDD8;  // 0xDD8
     void* qDF0;  // 0xDF0
     unsigned int qDF4;  // 0xDF4
-    unsigned int ;  // 0xDF8
-    unsigned int qDFC;  // 0xDFC
-    unsigned int qE00;  // 0xE00
-    unsigned int qE04;  // 0xE04
+    void* ArrayIndex;  // 0xDF8
+    char qDFC[4];  // 0xDFC
+    char qE00[4];  // 0xE00
+    char qE04[28];  // 0xE04
     unsigned int u32_E08;  // 0xE08
     unsigned int u32_E0C;  // 0xE0C
     void* qE10;  // 0xE10
     unsigned int u32_E14;  // 0xE14
     unsigned int u32_E18;  // 0xE18
     unsigned char u8_E1C;  // 0xE1C
-    unsigned int EliteOccupyWeapon;  // 0xE20
+    char EliteOccupyWeapon[28];  // 0xE20
     unsigned int u32_E24;  // 0xE24
     unsigned int u32_E28;  // 0xE28
     unsigned int u32_E2C;  // 0xE2C
     unsigned char qE30;  // 0xE30
     unsigned int u32_E34;  // 0xE34
     unsigned char u8_E38;  // 0xE38
-    unsigned int qE3C;  // 0xE3C
+    char qE3C[4];  // 0xE3C
     int qE40;  // 0xE40
     int qE44;  // 0xE44
     int qE48;  // 0xE48
@@ -1063,11 +1063,6 @@ struct InfantryTypeClass {
     bool qECA;  // 0xECA
     bool qECB;  // 0xECB
     unsigned long qECC;  // 0xECC
-    unsigned int q5B84;
-    unsigned int q5C42;
-    unsigned int u32_5D00;
-    unsigned int vtable0;
-    unsigned int ArrayIndex;
 // --- flat members (END) ---
     InfantryClass * ConstructInfantry(AbstractClass * ppv);
     InfantryTypeClass * * Constructor(ObjectClass * aP1);

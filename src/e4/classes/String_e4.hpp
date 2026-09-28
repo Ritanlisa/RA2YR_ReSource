@@ -6,9 +6,9 @@
 namespace gamemd {
 struct String {
 // --- flat members (BEGIN) ---
-    unsigned int ;  // 0x4
+    ObjectClass * ptr_4;  // 0x4
     unsigned int u16_6;  // 0x6
-    unsigned int ;  // 0x8
+    ObjectClass * ptr_8;  // 0x8
     unsigned int u32_C;  // 0xC
     unsigned int u32_14;  // 0x14
     unsigned int q018;  // 0x18
@@ -23,16 +23,19 @@ struct String {
     unsigned int q084;  // 0x84
     unsigned int q274;  // 0x274
     unsigned int u32_45C;  // 0x45C
+    unsigned int u32_470;  // 0x470
+    unsigned int u32_474;  // 0x474
+    unsigned int u32_478;  // 0x478
     unsigned int q628;  // 0x628
     unsigned int q774;  // 0x774
     unsigned int q1908;  // 0x1908
     unsigned int q5494;  // 0x5494
     unsigned int q6408;  // 0x6408
-    unsigned int __pad_0;
-    unsigned int m_3;
-    void* ptr_88;
-    void* ptr_4;
-    void* ptr_8;
+    unsigned int q25608;  // 0x25608
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q17758713478;  // 0x17758713478
+    unsigned int q1612096550008;  // 0x1612096550008
+    unsigned int q388267565711368;  // 0x388267565711368
 // --- flat members (END) ---
     void AssignWideToChar(CampaignScore * aP1,  CampaignScore * aP2);    // 0x49B760
     char * AllocAndCopy(RandomStruct * aP1,  IUnknown * aP2);    // 0x4CB5E0

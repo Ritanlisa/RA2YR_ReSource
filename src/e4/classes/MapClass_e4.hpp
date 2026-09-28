@@ -464,23 +464,6 @@ struct MapClass {
     unsigned char q1664;  // 0x1664
     char q1668;  // 0x1668
     void* q16C0;  // 0x16C0
-    unsigned int Activated;
-    unsigned int MapClass_field_0x0;
-    unsigned int MapClass_field_0x13C;
-    unsigned int MapClass_field_0x14;
-    unsigned int MapClass_field_0x28;
-    unsigned int MapClass_field_0x2C;
-    unsigned int MapClass_field_0xF4;
-    unsigned int __pad_1170;
-    unsigned int __pad_11A4;
-    unsigned int __pad_18;
-    unsigned int __pad_298;
-    unsigned int __pad_30;
-    unsigned int __pad_5C;
-    unsigned int __pad_F8;
-    unsigned int q01C6;
-    unsigned int q0086;
-    unsigned int RevealArea2;
 // --- flat members (END) ---
     AbstractClass * * AllocateMapDataBuffer(int a2, int * a3);
     BombClass * * DecompressCellData(MouseClass * aP1);

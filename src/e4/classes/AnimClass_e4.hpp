@@ -47,7 +47,7 @@ struct AnimClass {
     unsigned int q068;  // 0x68
     unsigned int q06A;  // 0x6A
     void* q06C;  // 0x6C
-    unsigned int estimatedHealth;  // 0x70
+    char estimatedHealth[4];  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     void* q078;  // 0x78
@@ -1166,18 +1166,6 @@ struct AnimClass {
     unsigned char q18A8;  // 0x18A8
     void* q18AC;  // 0x18AC
     void* q18B0;  // 0x18B0
-    unsigned int AnimClass_field_0x0;
-    unsigned int AnimClass_field_0x100;
-    unsigned int AnimClass_field_0x190;
-    unsigned int AnimClass_field_0xAC;
-    unsigned int AnimClass_field_0xB4;
-    unsigned int AnimClass_field_0xBC;
-    unsigned int AnimClass_field_0xC0;
-    unsigned int AnimClass_field_0xC8;
-    unsigned int __pad_118;
-    unsigned int __pad_178;
-    unsigned int __pad_194;
-    unsigned int ctor;
 // --- flat members (END) ---
     BuildingTypeClass * * drawFrame();
     char * sub_4C68E0(int a2, int a3, void* aP3, void* aP4, int a6, char a7, int a8, char a9, int a10, int a11);

@@ -13,7 +13,7 @@ struct MPCooperative {
     bool IsAllocated;  // 0xD
     void* q010;  // 0x10
     bool IsInitialized;  // 0x12
-    unsigned int ;  // 0x14
+    void* q014;  // 0x14
     int Count;  // 0x16
     unsigned int u32_18;  // 0x18
     unsigned int u32_1C;  // 0x1C
@@ -23,11 +23,11 @@ struct MPCooperative {
     void* q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
-    unsigned int ;  // 0x38
+    void* q038;  // 0x38
     unsigned int u32_3C;  // 0x3C
     void* q03F;  // 0x3F
     void* q040;  // 0x40
-    unsigned int ;  // 0x44
+    MultiplayerGameMode* q044;  // 0x44
     void* q048;  // 0x48
     unsigned char u8_49;  // 0x49
     void* q04C;  // 0x4C
@@ -183,12 +183,6 @@ struct MPCooperative {
     IPXManagerClass* q1030;  // 0x1030
     unsigned char q1060;  // 0x1060
     void* q11E4;  // 0x11E4
-    unsigned int MPCooperative_field_0x0;
-    unsigned int __pad_18;
-    unsigned int q0088;
-    unsigned int q014;
-    unsigned int q038;
-    unsigned int q044;
 // --- flat members (END) ---
     int processTurn(char * a2,  char * a3);    // 0x49B660
     char BuildScoreEntries(int a2,  CCINIClass * aP2);    // 0x49BCE0

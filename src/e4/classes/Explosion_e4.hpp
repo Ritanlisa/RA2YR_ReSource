@@ -8,8 +8,6 @@ namespace gamemd {
 struct Explosion {
 // --- flat members (BEGIN) ---
     char Explosion_field_00[4];  // 0x0
-    unsigned int u32_10;
-    unsigned int u32_4;
 // --- flat members (END) ---
     int RemoveItem(int a2);
 };

@@ -27,7 +27,7 @@ bool TriggerClass::HasCrossesHorizontalLineEvent() const
   buildingType = (HouseClass *)this->buildingType; /*0x726256*/
   if ( !nextTrigger ) /*0x72625b*/
     return HouseClass::HasType25Building(buildingType); /*0x72627d*/
-  return (uint8_t)HouseClass::HasType25Building(buildingType) /*0x726274*/
+  return (unsigned __int8)HouseClass::HasType25Building(buildingType) /*0x726274*/
       || TriggerClass::HasCrossesHorizontalLineEvent(this->nextTrigger);
 }
 // 0x726290
@@ -40,7 +40,7 @@ bool TriggerClass::HasCrossesVerticalLineEvent() const
   buildingType = (HouseClass *)this->buildingType; /*0x726296*/
   if ( !nextTrigger ) /*0x72629b*/
     return HouseClass::HasType26Building(buildingType); /*0x7262bd*/
-  return (uint8_t)HouseClass::HasType26Building(buildingType) /*0x7262b4*/
+  return (unsigned __int8)HouseClass::HasType26Building(buildingType) /*0x7262b4*/
       || TriggerClass::HasCrossesVerticalLineEvent(this->nextTrigger);
 }
 bool TriggerClass::HasZoneEntryByEvent() const

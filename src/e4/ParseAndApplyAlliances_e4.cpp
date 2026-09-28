@@ -10,19 +10,19 @@
 namespace gamemd {
 unsigned int * E4Recv_69D870::sub_69D870(int a2, int a3)
 {
-  this->Items = (unsigned int)(0);
-  this->Capacity = (unsigned int)(a2);
+  this->Items = 0; /*0x69d87b*/
+  this->Capacity = a2; /*0x69d87e*/
   this->IsInitialized = 1; /*0x69d881*/
   this->IsAllocated = 0; /*0x69d885*/
-  this->vtable0 = (void*)&VectorClass_HouseClass___vftable; /*0x69d888*/
+  this->vtable0 = &(void*)(void*)&VectorClass_HouseClass___vftable; /*0x69d888*/
   if ( a2 ) /*0x69d88e*/
   {
     if ( a3 ) /*0x69d896*/
     {
-      this->Items = (unsigned int)((void *)a3);
+      this->Items = (void *)a3; /*0x69d898*/
       return &this->vtable0; /*0x69d89e*/
     }
-    this->Items = (unsigned int)((void *)RA2_OPNEW(4 * a2));
+    this->Items = (void *)RA2_OPNEW(4 * a2); /*0x69d8ad*/
     this->IsAllocated = 1; /*0x69d8b0*/
   }
   return &this->vtable0; /*0x69d89d*/

@@ -20,7 +20,7 @@ struct LightSourceClass {
     int referenceCount;  // 0x1C
     bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
-    unsigned int LightIntensity;  // 0x24
+    char LightIntensity[4];  // 0x24
     char LightTint[12];  // 0x28
     bool q02B;  // 0x2B
     TintStruct* q02C;  // 0x2C
@@ -39,7 +39,6 @@ struct LightSourceClass {
     bool Activated;  // 0x48
     bool tail_49;  // 0x49
     bool q04A;  // 0x4A
-    unsigned int vtable0;
 // --- flat members (END) ---
     LightSourceClass * CopyTo(char a2);
     int Constructor();

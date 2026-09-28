@@ -18,9 +18,9 @@ char sub_5C8DD0(unsigned int * a1, int a2, int a3, int a4)
     v5 = 32 * a4; /*0x5c8dec*/
   memset(a1, 0, 4 * a4); /*0x5c8dfc*/
   *a1 = 0; /*0x5c8e02*/
-  (*(void (__thiscall **)(int, unsigned int *, int))(*(unsigned int *)a2 + 8))(a2, a1, v5 / 8 + 1); /*0x5c8e0c*/
-  result = ~(-1 << (v5 % 8)) & *((unsigned char *)a1 + v5 / 8); /*0x5c8e2a*/
-  *((unsigned char *)a1 + v5 / 8) = result; /*0x5c8e2c*/
+  (*(void (__thiscall **)(int, _DWORD *, int))(*(_DWORD *)a2 + 8))(a2, a1, v5 / 8 + 1); /*0x5c8e0c*/
+  result = ~(-1 << (v5 % 8)) & *((_BYTE *)a1 + v5 / 8); /*0x5c8e2a*/
+  *((_BYTE *)a1 + v5 / 8) = result; /*0x5c8e2c*/
   return result; /*0x5c8e27*/
 }
 } // namespace gamemd

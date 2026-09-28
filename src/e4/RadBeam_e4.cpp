@@ -22,16 +22,16 @@ void * RadBeam::Create()
   if ( dword_B04A70 < dword_B04A68 /*0x65916a*/
     || (byte_B04A6D || !dword_B04A68)
     && dword_B04A74 > 0
-    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(RadBeam_Array + 8))(
+    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(RadBeam_Array + 8))(
          &RadBeam_Array,
          dword_B04A68 + dword_B04A74,
          0) )
   {
-    v4 = (unsigned int)(dword_B04A70++);
-    *((unsigned int *)dword_B04A64 + v4) = inited; /*0x659186*/
+    v4 = dword_B04A70++; /*0x659177*/
+    *((_DWORD *)dword_B04A64 + v4) = inited; /*0x659186*/
   }
   inited[3] = (double)(this != (RadBeam *)1 ? 20 : 10);
-  return (void *)((int)inited);
+  return (int)inited; /*0x6591a1*/
 }
 } // namespace ra2
 
@@ -39,17 +39,17 @@ void * RadBeam::Create()
 namespace gamemd {
 unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
 {
-  this->nextArrayIndex = (unsigned int)(0);
-  this->vtable0 = (unsigned int)(0);
-  this->vtable1 = (unsigned int)(0);
-  IDA_LOBYTE(this->vtable2) = 0; /*0x659406*/
-  IDA_BYTE1(this->vtable2) = 1; /*0x659409*/
-  this->vtable3 = 0; /*0x65940c*/
-  this->uniqueId = aP1; /*0x65940f*/
-  this->referenceCount = 0; /*0x659412*/
-  IDA_LOBYTE(this->NeedsSaveOrLink) = 0; /*0x659415*/
-  IDA_BYTE1(this->NeedsSaveOrLink) = 0; /*0x659418*/
-  IDA_BYTE2(this->NeedsSaveOrLink) = 0; /*0x65941b*/
+  this->? = 0; /*0x6593fe*/
+  this->AbstractClass = 0; /*0x659401*/
+  this->? = 0; /*0x659403*/
+  IDA_LOBYTE(this->?) = 0; /*0x659406*/
+  IDA_BYTE1(this->?) = 1; /*0x659409*/
+  this->? = 0; /*0x65940c*/
+  this->? = aP1; /*0x65940f*/
+  this->? = 0; /*0x659412*/
+  IDA_LOBYTE(this->?) = 0; /*0x659415*/
+  IDA_BYTE1(this->?) = 0; /*0x659418*/
+  IDA_BYTE2(this->?) = 0; /*0x65941b*/
   this->range[0] = 0; /*0x65941e*/
   this->range[1] = 0; /*0x659421*/
   this->data[0] = 0; /*0x659424*/
@@ -68,6 +68,6 @@ unsigned int * RadBeam::InitState(rc_ptr_base * aP1)
   IDA_LOBYTE(this->data[37]) = 0; /*0x65944b*/
   IDA_BYTE1(this->data[37]) = 0; /*0x659451*/
   IDA_BYTE2(this->data[37]) = 0; /*0x659457*/
-  return &this->vtable0; /*0x65945d*/
+  return &this->AbstractClass; /*0x65945d*/
 }
 } // namespace ra2

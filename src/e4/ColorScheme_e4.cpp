@@ -10,27 +10,27 @@
 namespace gamemd {
 int ColorScheme::Destructor()
 {
-  void (__thiscall ***v2)(unsigned int, int); // ecx
+  void (__thiscall ***v2)(_DWORD, int); // ecx
   int result; // eax
   ColorScheme *v4; // [esp+4h] [ebp-4h] BYREF
 
   if ( this->data[193] ) /*0x68c8d4*/
     free((void *)this->data[193]); /*0x68c8df*/
-  v2 = (void (__thiscall ***)(unsigned int, int))this->data[195]; /*0x68c8e7*/
+  v2 = (void (__thiscall ***)(_DWORD, int))this->data[195]; /*0x68c8e7*/
   this->data[193] = 0; /*0x68c8ed*/
   if ( v2 ) /*0x68c8f9*/
     (**v2)(v2, 1); /*0x68c8ff*/
   this->data[195] = 0; /*0x68c905*/
   v4 = this; /*0x68c91b*/
-  result = (*(int (__thiscall **)(_VectorClass_PAVColorScheme *, ColorScheme **))(*(unsigned int *)stru_B054D0.__pad_0 + 16))( /*0x68c91f*/
+  result = (*(int (__thiscall **)(_VectorClass_PAVColorScheme *, ColorScheme **))(*(_DWORD *)stru_B054D0.__pad_0 + 16))( /*0x68c91f*/
              &stru_B054D0,
              &v4);
   if ( result != -1 && result < *(int *)stru_B054D0.__tail_10 ) /*0x68c930*/
   {
-    --*(unsigned int *)stru_B054D0.__tail_10; /*0x68c935*/
+    --*(_DWORD *)stru_B054D0.__tail_10; /*0x68c935*/
     for ( ; /*0x68c93b*/
           result < *(int *)stru_B054D0.__tail_10;
-          *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * result - 4) = *(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3]
+          *(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * result - 4) = *(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3]
                                                                                    + 4 * result) )
     {
       ++result; /*0x68c943*/

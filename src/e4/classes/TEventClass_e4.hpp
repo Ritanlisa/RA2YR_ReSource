@@ -21,10 +21,10 @@ struct TEventClass {
     bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
     char eventType[4];  // 0x24
-    unsigned int TEventClass_field_28;  // 0x28
+    char TEventClass_field_28[4];  // 0x28
     bool q02B;  // 0x2B
     char TEventClass_field_2C[4];  // 0x2C
-    unsigned int TEventClass_field_30;  // 0x30
+    char TEventClass_field_30[4];  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     char TEventClass_field_34[4];  // 0x34
@@ -41,10 +41,9 @@ struct TEventClass {
     char TEventClass_field_4C[4];  // 0x4C
     unsigned char q04F;  // 0x4F
     char TEventClass_field_50[4];  // 0x50
-    unsigned int TEventClass_field_54;  // 0x54
+    char TEventClass_field_54[4];  // 0x54
     char TEventClass_field_58[4];  // 0x58
     char TEventClass_field_5C[4];  // 0x5C
-    unsigned int vtable0;
 // --- flat members (END) ---
     DynamicVector * * Execute(int a2, int a3, int a4, int * a5, int a6, int a7);
     int CheckConditions(int a2, int a3);

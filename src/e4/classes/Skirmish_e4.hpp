@@ -52,6 +52,12 @@ struct Skirmish {
     void* q4400;  // 0x4400
     void* q4580;  // 0x4580
     void* q5260;  // 0x5260
+    void* q17408;  // 0x17408
+    void* q21088;  // 0x21088
+    void* q94978;  // 0x94978
+    void* q95240;  // 0x95240
+    void* q95270;  // 0x95270
+    void* q135304;  // 0x135304
 // --- flat members (END) ---
     AbstractClass * * SetupGame(int a2);
     CampaignClass * * SetupAllSpawnLocations();

@@ -77,23 +77,23 @@ AbstractClass * * ObjectClass::Destroy()
   attachedBomb = (ObjectClass *)this->attachedBomb; /*0x5f65f3*/
   if ( attachedBomb ) /*0x5f65f8*/
     ObjectClass::CleanupAudioAndRefs(attachedBomb); /*0x5f65fa*/
-  if ( this && (this->abstractFlags & 1) != 0 ) /*0x5f6607*/
+  if ( this && (this->? & 1) != 0 ) /*0x5f6607*/
     TechnoClass::CleanupAll((TechnoClass *)this, 0); /*0x5f660d*/
-  AbstractClass::AnnounceExpiredPointer(&this->vtable0, 1); /*0x5f6616*/
-  (*((void (__thiscall **)(ObjectClass *))this->vtable0 + 53))(this); /*0x5f661f*/
+  AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x5f6616*/
+  (*((void (__thiscall **)(ObjectClass *))this->AbstractClass + 53))(this); /*0x5f661f*/
   this->isAliveFlag = 0; /*0x5f6625*/
-  result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x5f662c*/
+  result = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x5f662c*/
   if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x5f6666*/
-    || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
+    || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
     && g_BuildingLoadQueue_Array.UnitExitSound > 0
-    && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
+    && (result = (*(int (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.ToTile + 8))(
                    &g_BuildingLoadQueue_Array.ToTile,
-                   *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
+                   *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
                    0),
-        (unsigned char)result) )
+        (_BYTE)result) )
   {
-    result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x5f666e*/
-    *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x5f667d*/
+    result = (*(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x5f666e*/
+    *(_DWORD *)(*(_DWORD *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x5f667d*/
   }
   return result; /*0x5f6680*/
 }
@@ -103,7 +103,7 @@ void ObjectClass::MarkForRedraw()
   int result; // eax
 
   IDA_LOBYTE(result) = this->__pad_74[12]; /*0x5f4d10*/
-  if ( !(unsigned char)result ) /*0x5f4d18*/
+  if ( !(_BYTE)result ) /*0x5f4d18*/
   {
     this->__pad_74[12] = 1; /*0x5f4d1a*/
     return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x5f4d28*/
@@ -116,7 +116,7 @@ void ObjectClass::MarkForRedraw()
       int result; // eax
 
       IDA_LOBYTE(result) = this->__pad_74[12]; /*0x5f4d10*/
-      if ( !(unsigned char)result ) /*0x5f4d18*/
+      if ( !(_BYTE)result ) /*0x5f4d18*/
       {
         this->__pad_74[12] = 1; /*0x5f4d1a*/
         return MapClass::MarkForRedraw((GScreenClass *)&stru_87F5F0.__pad_58[416], 0); /*0x5f4d28*/

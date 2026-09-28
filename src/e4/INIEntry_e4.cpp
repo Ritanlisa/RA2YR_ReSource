@@ -22,17 +22,17 @@ int INIEntry::GetTechnoType(CCINIClass * aP1, unsigned char * a2)
   INIClass::GetString(aP1, a2, g_Str__none_, (char *)Destination, 128); /*0x476ed5*/
   ExitCellByName = Factory::FindExitCellByName((Factory *)Destination); /*0x476ede*/
   if ( ExitCellByName != -1 ) /*0x476ee6*/
-    return *((unsigned int *)unk_A8E34C + ExitCellByName); /*0x476eef*/
+    return *((_DWORD *)dword_A8E34C + ExitCellByName); /*0x476eef*/
   Index = BuildingTypeClass::FindIndex((BuildingTypeClass *)Destination); /*0x476eff*/
   if ( Index != -1 ) /*0x476f07*/
-    return *((unsigned int *)unk_A83CE4 + Index); /*0x476f10*/
+    return *((_DWORD *)dword_A83CE4 + Index); /*0x476f10*/
   v6 = TypeClass::FindByName(Destination); /*0x476f20*/
   if ( v6 != -1 ) /*0x476f28*/
-    return *((unsigned int *)unk_A8B21C + v6); /*0x476f31*/
+    return *((_DWORD *)dword_A8B21C + v6); /*0x476f31*/
   IndexByName = BuildingTypeClass::FindIndexByName((BuildingTypeClass *)Destination); /*0x476f41*/
   if ( IndexByName == -1 ) /*0x476f49*/
     return 0; /*0x476f5e*/
   else
-    return *((unsigned int *)unk_A83C6C + IndexByName); /*0x476f52*/
+    return *((_DWORD *)dword_A83C6C + IndexByName); /*0x476f52*/
 }
 } // namespace gamemd

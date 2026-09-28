@@ -284,14 +284,6 @@ struct ParticleTypeClass {
     unsigned char u8_30F;  // 0x30F
     unsigned int q310;  // 0x310
     unsigned int q314;  // 0x314
-    unsigned int ArrayIndex;
-    unsigned int BehavesLike;
-    unsigned int ParticleTypeClass_field_0xC;
-    unsigned int ParticleTypeClass_field_28C;
-    unsigned int m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
 // --- flat members (END) ---
     AbstractClass * * Release(int a2, char * a3);
     ParticleTypeClass * ddtor(char a2);

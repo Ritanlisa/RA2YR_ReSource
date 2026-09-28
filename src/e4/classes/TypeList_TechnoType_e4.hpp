@@ -12,10 +12,6 @@ struct TypeList_TechnoType {
     void* IsInitialized;  // 0xC
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
-    unsigned int m_1;
-    unsigned int m_8;
-    unsigned int m_C;
-    unsigned int __pad_0;
 // --- flat members (END) ---
     int Clear(int a2);  // 0x4778F0
     char AddRef(int a2);  // 0x477FC0

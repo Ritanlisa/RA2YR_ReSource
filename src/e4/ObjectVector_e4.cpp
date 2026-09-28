@@ -15,7 +15,7 @@ unsigned int * ObjectVector::Construct(IUnknown * aP1, IUnknown * aP2)
   this->ObjectVector_field_0x08 = aP1; /*0x4d044e*/
   IDA_LOBYTE(this->ObjectVector_field_0x0C) = 1; /*0x4d0451*/
   IDA_BYTE1(this->ObjectVector_field_0x0C) = 0; /*0x4d0455*/
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_ObjectClass___vftable; /*0x4d0458*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_ObjectClass___vftable; /*0x4d0458*/
   if ( aP1 ) /*0x4d045e*/
   {
     if ( aP2 ) /*0x4d0466*/

@@ -751,12 +751,6 @@ struct UnitClass {
     void* q8C8;  // 0x8C8
     unsigned char q8CC;  // 0x8CC
     void* q8E4;  // 0x8E4
-    unsigned int ClearTargetRef;
-    unsigned int GetExitCell;
-    unsigned int q0405;
-    unsigned int q0406;
-    unsigned int q0407;
-    unsigned int Construct;
 // --- flat members (END) ---
     void ProcessIdleOrders();
 };

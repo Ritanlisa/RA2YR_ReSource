@@ -31,7 +31,6 @@ struct COMClass {
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
-    unsigned int __pad_0;
 // --- flat members (END) ---
     VectorCursor * disconnectPoint(char a2);
     void * lockServer(char a2);

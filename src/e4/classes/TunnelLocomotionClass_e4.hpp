@@ -46,7 +46,6 @@ struct TunnelLocomotionClass {
     unsigned int q068;  // 0x68
     bool IsMoving;  // 0x6C
     unsigned char tail_6D;  // 0x6D
-    unsigned int __pad_0;
 // --- flat members (END) ---
     TunnelLocomotionClass * ProcessMove(char a2);
     int BeginMove(int * a1, int * a2);

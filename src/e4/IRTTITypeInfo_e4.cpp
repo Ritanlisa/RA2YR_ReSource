@@ -11,7 +11,7 @@
 namespace gamemd {
 unsigned int IRTTITypeInfo::GetOffset()
 {
-  return *(unsigned int *)&this->__pad_C0[8]; /*0x71d156*/
+  return *(_DWORD *)&this->__pad_C0[8]; /*0x71d156*/
 }
 } // namespace ra2
 
@@ -41,6 +41,6 @@ unsigned int * IRTTITypeInfo::loc_74F6A0(char a2)
     this->q008 = 0;
     if ( (a2 & 1) != 0 )
     RA2_OPDEL();
-    return ();
+    return 0;
 }
 } // namespace gamemd

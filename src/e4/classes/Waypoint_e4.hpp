@@ -48,8 +48,25 @@ struct Waypoint {
     unsigned int q5444;  // 0x5444
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int __pad_0;
-    unsigned int field_38;
+    unsigned int q20848;  // 0x20848
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q33894;  // 0x33894
+    unsigned int q153094;  // 0x153094
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    void* q1388834;  // 0x1388834
+    unsigned int q2166930;  // 0x2166930
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q20481684;  // 0x20481684
+    void* q20482100;  // 0x20482100
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q541595268;  // 0x541595268
+    unsigned int q22571209320;  // 0x22571209320
+    unsigned int q36661584198;  // 0x36661584198
+    unsigned int q1918720364301116346690;  // 0x1918720364301116346690
 // --- flat members (END) ---
     unsigned int * FindByCell(IUnknown * aP1);  // 0x5023B0
     IPXManagerClass * InitInvalid();  // 0x53ECB0

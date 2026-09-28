@@ -69,7 +69,7 @@ struct BuildingTypeClass {
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
     SHPStruct* AlphaImage;  // 0xAC
-    unsigned int MainVoxel;  // 0xB0
+    char MainVoxel[4];  // 0xB0
     char TurretVoxel[4];  // 0xB4
     char q0B8[4];  // 0xB8
     unsigned char q0B9;  // 0xB9
@@ -214,17 +214,17 @@ struct BuildingTypeClass {
     unsigned char q258;  // 0x258
     SomeVoxelCache* q25C;  // 0x25C
     char q260[4];  // 0x260
-    unsigned int q264;  // 0x264
+    char q264[4];  // 0x264
     unsigned int q268;  // 0x268
     SomeVoxelCache* q26C;  // 0x26C
     SomeVoxelCache* q270;  // 0x270
     SomeVoxelCache* q274;  // 0x274
-    unsigned int q278;  // 0x278
+    char q278[4];  // 0x278
     SomeVoxelCache* q27C;  // 0x27C
     unsigned int q280;  // 0x280
     unsigned int q284;  // 0x284
     unsigned int q288;  // 0x288
-    unsigned int q28C;  // 0x28C
+    char q28C[4];  // 0x28C
     unsigned char q290;  // 0x290
     int armed;  // 0x294
     unsigned char hasTurretFlag;  // 0x295
@@ -235,7 +235,7 @@ struct BuildingTypeClass {
     unsigned char u8_2A5;  // 0x2A5
     unsigned int eliteWeapon2;  // 0x2A8
     unsigned int ammo;  // 0x2AC
-    unsigned int EliteAbilities;  // 0x2AE
+    char EliteAbilities[4];  // 0x2AE
     unsigned int guardRange;  // 0x2B0
     unsigned int sight;  // 0x2B4
     unsigned int cost;  // 0x2B8
@@ -998,27 +998,27 @@ struct BuildingTypeClass {
     unsigned char qDD8;  // 0xDD8
     void* qDF0;  // 0xDF0
     unsigned int qDF4;  // 0xDF4
-    unsigned int ;  // 0xDF8
-    unsigned int qDFC;  // 0xDFC
-    unsigned int qE00;  // 0xE00
+    void* ArrayIndex;  // 0xDF8
+    char qDFC[4];  // 0xDFC
+    char qE00[4];  // 0xE00
     bool qE04;  // 0xE04
     unsigned char qE05;  // 0xE05
-    unsigned int qE08;  // 0xE08
-    unsigned int HalfDamageSmokeLocation1;  // 0xE0C
-    unsigned int ;  // 0xE10
+    char qE08[4];  // 0xE08
+    char HalfDamageSmokeLocation1[12];  // 0xE0C
+    void* qE10;  // 0xE10
     unsigned int u32_E14;  // 0xE14
-    unsigned int HalfDamageSmokeLocation2;  // 0xE18
-    void* ;  // 0xE1C
-    void* ;  // 0xE20
+    char HalfDamageSmokeLocation2[12];  // 0xE18
+    unsigned int u32_E1C;  // 0xE1C
+    unsigned int u32_E20;  // 0xE20
     unsigned long qE24;  // 0xE24
     double GateCloseDelay;  // 0xE28
     SHPStruct* qE2C;  // 0xE2C
     int LightVisibility;  // 0xE30
     int LightIntensity;  // 0xE34
     int LightRedTint;  // 0xE38
-    void* ;  // 0xE3C
+    int LightGreenTint;  // 0xE3C
     int LightBlueTint;  // 0xE40
-    unsigned int PrimaryFirePixelOffset;  // 0xE44
+    char PrimaryFirePixelOffset[8];  // 0xE44
     unsigned int u32_E48;  // 0xE48
     char SecondaryFirePixelOffset[8];  // 0xE4C
     unsigned char qE50;  // 0xE50
@@ -1032,16 +1032,16 @@ struct BuildingTypeClass {
     int WorkingSound;  // 0xE74
     int NotWorkingSound;  // 0xE78
     char PowersUpBuilding_0x18;  // 0xE7C
-    unsigned int ;  // 0xE80
-    unsigned int ;  // 0xE84
+    UnitTypeClass* FreeUnit;  // 0xE80
+    InfantryTypeClass* SecretInfantry;  // 0xE84
     UnitTypeClass* SecretUnit;  // 0xE88
     unsigned char qE8C;  // 0xE8C
     UnitTypeClass* qEA0;  // 0xEA0
     InfantryTypeClass* qEA4;  // 0xEA4
-    unsigned int ExitCoord;  // 0xEA8
+    char ExitCoord[4];  // 0xEA8
     BuildingTypeClass* SecretBuilding;  // 0xEAC
     int BuildingTypeClass_field_EB0;  // 0xEB0
-    unsigned int ;  // 0xEB4
+    void* FoundationOutside;  // 0xEB4
     int BuildingTypeClass_field_ED8;  // 0xEB8
     int DeployFacing;  // 0xEBC
     SHPStruct* qEC0;  // 0xEC0
@@ -1053,12 +1053,12 @@ struct BuildingTypeClass {
     int OccupyHeight;  // 0xED8
     int MidPoint;  // 0xEDC
     int DoorStages;  // 0xEE0
-    unsigned int BuildingAnimFrame_6;  // 0xEE4
-    unsigned int BuildingAnim_0x15;  // 0xEE8
+    char BuildingAnimFrame_6[4];  // 0xEE4
+    char BuildingAnim_0x15[4];  // 0xEE8
     int Upgrades;  // 0xEEC
     SHPStruct* qEF0;  // 0xEF0
     bool DeployingAnimLoaded;  // 0xEF4
-    unsigned int ;  // 0xEF8
+    SHPStruct* UnderDoorAnim;  // 0xEF8
     bool UnderDoorAnimLoaded;  // 0xEFC
     SHPStruct* Rubble;  // 0xF00
     bool RubbleLoaded;  // 0xF04
@@ -1068,7 +1068,7 @@ struct BuildingTypeClass {
     unsigned int u32_F14;  // 0xF14
     SHPStruct* qF18;  // 0xF18
     char BuildingAnim[84];  // 0xF1C
-    unsigned int ;  // 0xF20
+    void* qF20;  // 0xF20
     SHPStruct* qF24;  // 0xF24
     SHPStruct* qF34;  // 0xF34
     unsigned int u32_F38;  // 0xF38
@@ -1331,7 +1331,7 @@ struct BuildingTypeClass {
     unsigned int q1526;  // 0x1526
     int AntiArmorValue;  // 0x1528
     int AntiInfantryValue;  // 0x152C
-    unsigned int ZShapePointMove;  // 0x1530
+    char ZShapePointMove[4];  // 0x1530
     SHPStruct* q1534;  // 0x1534
     int BuildingTypeClass_field_1538;  // 0x1538
     int BuildingTypeClass_field_153C;  // 0x153C
@@ -1382,7 +1382,7 @@ struct BuildingTypeClass {
     unsigned int q1600;  // 0x1600
     unsigned int q1604;  // 0x1604
     unsigned int q1608;  // 0x1608
-    unsigned int QueueingCell;  // 0x1618
+    char QueueingCell[8];  // 0x1618
     SHPStruct* q161C;  // 0x161C
     int NumberImpassableRows;  // 0x1620
     char RemoveOccupy[4];  // 0x1624
@@ -1517,35 +1517,12 @@ struct BuildingTypeClass {
     void* q177C;  // 0x177C
     int NumberOfDocks;  // 0x1780
     char AltCameoFile;  // 0x1781
-    void* ;  // 0x1784
+    unsigned int DockingOffsets;  // 0x1784
     bool PreventsPlacementOverlap;  // 0x1788
     int ProductionCompletionThreshold;  // 0x178C
     double CostRatePerFrame;  // 0x1790
-    unsigned int ;  // 0x1791
+    UnitTypeClass* q1791;  // 0x1791
     unsigned int q1794;  // 0x1794
-    unsigned int __pad_1714;
-    unsigned int __pad_F70;
-    unsigned int gap0;
-    unsigned int q6242;
-    unsigned int q9684;
-    unsigned int u32_89C2;
-    unsigned int u32_8BC2;
-    unsigned int u32_8F42;
-    unsigned int vtable0;
-    unsigned int q16F6;
-    unsigned int q1761;
-    unsigned int ArrayIndex;
-    unsigned int DockingOffsets;
-    unsigned int FoundationOutside;
-    unsigned int FreeUnit;
-    unsigned int LightGreenTint;
-    unsigned int SecretInfantry;
-    unsigned int UnderDoorAnim;
-    unsigned int q1791;
-    unsigned int qE10;
-    unsigned int qF20;
-    unsigned int u32_E1C;
-    unsigned int u32_E20;
 // --- flat members (END) ---
     AbstractClass * * CleanupMembers(AbstractClass * a1, AbstractClass * a2);
     AbstractClass * * FindOrCreateAlt();

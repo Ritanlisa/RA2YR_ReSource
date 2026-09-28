@@ -23,16 +23,16 @@ int sub_5E8D40()
   int v2; // edi
   const wchar_t **v3; // esi
 
-  if ( !Game_PlayerCount ) /*0x5e8d47*/
+  if ( !dword_A8DA84 ) /*0x5e8d47*/
     return -1; /*0x5e8d49*/
-  v1 = *(const wchar_t **)Game_PlayerInfoArray; /*0x5e8d55*/
+  v1 = *(const wchar_t **)dword_A8DA78; /*0x5e8d55*/
   v2 = 0; /*0x5e8d57*/
-  v3 = (const wchar_t **)&g_NetworkPlayerName; /*0x5e8d59*/
+  v3 = (const wchar_t **)&dword_A8DA90; /*0x5e8d59*/
   while ( !*v3 || _wcsicmp(v1, *v3) ) /*0x5e8d70*/
   {
     ++v3; /*0x5e8d72*/
     ++v2; /*0x5e8d75*/
-    if ( (int)v3 >= (int)&g_PlayerNameListEnd ) /*0x5e8d7c*/
+    if ( (int)v3 >= (int)&dword_A8DAB0 ) /*0x5e8d7c*/
       return -1; /*0x5e8d84*/
   }
   return v2; /*0x5e8d4c*/
@@ -46,10 +46,10 @@ int sub_5EA8E0(int a1)
   int v1; // ecx
   int result; // eax
 
-  v1 = *(&g_NetworkPlayerName + a1); /*0x5ea8e0*/
+  v1 = *(&dword_A8DA90 + a1); /*0x5ea8e0*/
   result = 0; /*0x5ea8e7*/
   if ( v1 && (v1 == g_Lobby_PlayerTeam || v1 == g_Lobby_PlayerSide || v1 == g_Lobby_PlayerColor) /*0x5ea909*/
-    || *(unsigned int *)(v1 + 119) == 1 )
+    || *(_DWORD *)(v1 + 119) == 1 )
   {
     return 1; /*0x5ea90b*/
   }
@@ -63,13 +63,13 @@ int sub_5EA9B0(int a1)
 {
   wchar_t *v1; // eax
 
-  v1 = (wchar_t *)*(&g_NetworkPlayerName + a1); /*0x5ea9b0*/
+  v1 = (wchar_t *)*(&dword_A8DA90 + a1); /*0x5ea9b0*/
   if ( v1 /*0x5ea9d1*/
     && (v1 == (wchar_t *)g_Lobby_PlayerTeam
      || v1 == (wchar_t *)g_Lobby_PlayerSide
      || v1 == (wchar_t *)g_Lobby_PlayerColor) )
   {
-    return g_CampaignConfig[a1]; /*0x5ea9d3*/
+    return MEMORY[0xA8B2BC][a1]; /*0x5ea9d3*/
   }
   if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags /*0x5ea9f9*/
     || v1 == (wchar_t *)g_Lobby_PlayerCount
@@ -78,7 +78,7 @@ int sub_5EA9B0(int a1)
   {
     return -2; /*0x5eaa02*/
   }
-  return SessionClass::GetPlayerColor(*(&g_NetworkPlayerName + a1)); /*0x5ea9da*/
+  return SessionClass::GetPlayerColor(*(&dword_A8DA90 + a1)); /*0x5ea9da*/
 }
 } // namespace gamemd
 
@@ -88,13 +88,13 @@ int sub_5EAA10(int a1)
 {
   wchar_t *v1; // eax
 
-  v1 = (wchar_t *)*(&g_NetworkPlayerName + a1); /*0x5eaa10*/
+  v1 = (wchar_t *)*(&dword_A8DA90 + a1); /*0x5eaa10*/
   if ( v1 /*0x5eaa31*/
     && (v1 == (wchar_t *)g_Lobby_PlayerTeam
      || v1 == (wchar_t *)g_Lobby_PlayerSide
      || v1 == (wchar_t *)g_Lobby_PlayerColor) )
   {
-    return g_CampaignSideIndex[a1]; /*0x5eaa33*/
+    return MEMORY[0xA8B2DC][a1]; /*0x5eaa33*/
   }
   if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags /*0x5eaa59*/
     || v1 == (wchar_t *)g_Lobby_PlayerCount
@@ -103,7 +103,7 @@ int sub_5EAA10(int a1)
   {
     return -2; /*0x5eaa62*/
   }
-  return SessionClass::GetOption(*(&g_NetworkPlayerName + a1)); /*0x5eaa3a*/
+  return SessionClass::GetOption(*(&dword_A8DA90 + a1)); /*0x5eaa3a*/
 }
 } // namespace gamemd
 
@@ -113,13 +113,13 @@ int sub_5EAA70(int a1)
 {
   wchar_t *v1; // eax
 
-  v1 = (wchar_t *)*(&g_NetworkPlayerName + a1); /*0x5eaa70*/
+  v1 = (wchar_t *)*(&dword_A8DA90 + a1); /*0x5eaa70*/
   if ( v1 /*0x5eaa91*/
     && (v1 == (wchar_t *)g_Lobby_PlayerTeam
      || v1 == (wchar_t *)g_Lobby_PlayerSide
      || v1 == (wchar_t *)g_Lobby_PlayerColor) )
   {
-    return g_CampaignFactionSlot[a1]; /*0x5eaa93*/
+    return MEMORY[0xA8B2FC][a1]; /*0x5eaa93*/
   }
   if ( v1 == (wchar_t *)g_HouseClass_ObserverFlags /*0x5eaab9*/
     || v1 == (wchar_t *)g_Lobby_PlayerCount
@@ -128,7 +128,7 @@ int sub_5EAA70(int a1)
   {
     return -2; /*0x5eaac2*/
   }
-  return SessionClass::GetOption2(*(&g_NetworkPlayerName + a1)); /*0x5eaa9a*/
+  return SessionClass::GetOption2(*(&dword_A8DA90 + a1)); /*0x5eaa9a*/
 }
 } // namespace gamemd
 
@@ -142,10 +142,10 @@ void sub_7A0E50()
 
   for ( i = 0; i < 8; ++i ) /*0x7a0e51*/
   {
-    v1 = *(wchar_t **)((char *)&g_NetworkPlayerName + i * 4); /*0x7a0e53*/
+    v1 = *(wchar_t **)((char *)&dword_A8DA90 + i * 4); /*0x7a0e53*/
     if ( !v1 || !IsKnownPointer(v1) ) /*0x7a0e5d*/
       dword_B76440[i] = -1; /*0x7a0e66*/
-    v2 = ToWideStringChar(*(char **)((char *)&g_NetworkPlayerName + i * 4)); /*0x7a0e76*/
+    v2 = ToWideStringChar(*(char **)((char *)&dword_A8DA90 + i * 4)); /*0x7a0e76*/
     SetGameOptionsPing(v2, dword_B76440[i]); /*0x7a0e83*/
   }
 }

@@ -42,25 +42,25 @@ void sub_72C290()
     if ( g_BuildingLoadQueue_Array.__pad_F70[1392] ) /*0x72c2a2*/
     {
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[640]; /*0x72c2a5*/
-      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[640] ) /*0x72c2ad*/
+      if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[640] ) /*0x72c2ad*/
       {
         FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[640]); /*0x72c2b1*/
         RA2_OPDEL(v1); /*0x72c2b7*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1392] = 0; /*0x72c2bf*/
     }
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[640] = 0; /*0x72c2cb*/
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1396] ) /*0x72c2d3*/
+    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[640] = 0; /*0x72c2cb*/
+    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1396] ) /*0x72c2d3*/
     {
       RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1396]); /*0x72c2d6*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1396] = 0; /*0x72c2de*/
+      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1396] = 0; /*0x72c2de*/
     }
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1400] ) /*0x72c2ec*/
+    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1400] ) /*0x72c2ec*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1400])( /*0x72c2f2*/
-        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1400],
+      (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1400])( /*0x72c2f2*/
+        *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1400],
         1);
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1400] = 0; /*0x72c2f4*/
+      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1400] = 0; /*0x72c2f4*/
     }
   }
   g_BuildingLoadQueue_Array.__pad_F70[1393] = 0; /*0x72c2fa*/
@@ -96,25 +96,25 @@ void sub_72C470()
     if ( g_BuildingLoadQueue_Array.__pad_F70[1380] ) /*0x72c482*/
     {
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[692]; /*0x72c485*/
-      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[692] ) /*0x72c48d*/
+      if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[692] ) /*0x72c48d*/
       {
         FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[692]); /*0x72c491*/
         RA2_OPDEL(v1); /*0x72c497*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1380] = 0; /*0x72c49f*/
     }
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[692] = 0; /*0x72c4ab*/
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1384] ) /*0x72c4b3*/
+    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[692] = 0; /*0x72c4ab*/
+    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1384] ) /*0x72c4b3*/
     {
       RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1384]); /*0x72c4b6*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1384] = 0; /*0x72c4be*/
+      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1384] = 0; /*0x72c4be*/
     }
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1388] ) /*0x72c4cc*/
+    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1388] ) /*0x72c4cc*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1388])( /*0x72c4d2*/
-        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1388],
+      (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1388])( /*0x72c4d2*/
+        *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1388],
         1);
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1388] = 0; /*0x72c4d4*/
+      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1388] = 0; /*0x72c4d4*/
     }
   }
   g_BuildingLoadQueue_Array.__pad_F70[1381] = 0; /*0x72c4da*/

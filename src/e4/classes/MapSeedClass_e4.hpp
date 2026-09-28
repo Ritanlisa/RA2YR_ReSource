@@ -23,18 +23,6 @@ struct MapSeedClass {
     unsigned char q028;  // 0x28
     unsigned char q02C;  // 0x2C
     unsigned int pad_2E;  // 0x2E
-    unsigned int MapSeedClass_field_0x04;
-    unsigned int MapSeedClass_field_0x08;
-    unsigned int MapSeedClass_field_0x0C;
-    unsigned int MapSeedClass_field_0x10;
-    unsigned int MapSeedClass_field_0x14;
-    unsigned int MapSeedClass_field_0x18;
-    unsigned int MapSeedClass_field_0x1C;
-    unsigned int MapSeedClass_field_0x20;
-    unsigned int MapSeedClass_field_0x24;
-    unsigned int MapSeedClass_field_0x28;
-    unsigned int MapSeedClass_field_0x2C;
-    unsigned int __pad_0;
 // --- flat members (END) ---
     MapSeedClass * * PlaceBuildingClusters(MapSeedClass * aP1);
     MapSeedClass * QueryInterface(char a2);

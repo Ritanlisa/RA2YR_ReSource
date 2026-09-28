@@ -13,15 +13,6 @@ struct LinkedList_flat {
     unsigned int u32_1C;  // 0x1C
     unsigned int u32_28;  // 0x28
     unsigned int u32_34;  // 0x34
-    unsigned int __pad_0;
-    unsigned int __tail_0;
-    unsigned int m_Next;
-    unsigned int m_Prev;
-    unsigned int q004;
-    unsigned int q014;
-    unsigned int q018;
-    unsigned int q01C;
-    unsigned int PushFront;
 // --- flat members (END) ---
 AbstractClass * * LoadScenarioMixFiles(INIClass * aP0, int aP2, int a3, int a4, void * a1, void * a2);
 LinkClass * * Append(int a2);

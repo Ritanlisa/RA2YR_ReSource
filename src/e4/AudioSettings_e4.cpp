@@ -43,7 +43,7 @@ void AudioSettings::SetFlag68(char a2)
 namespace gamemd {
 AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
-  AbstractClass ** result;
+  int result; // eax
   BOOL IsSoundEnabled; // ebx
   HWND DlgItem; // eax
   HWND v7; // edi
@@ -87,7 +87,8 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   int Format; // [esp+20h] [ebp-D0h]
   int v46; // [esp+24h] [ebp-CCh]
   wchar_t lParam[100]; // [esp+28h] [ebp-C8h] BYREF
-result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(BaseDialogProc(hDlg, a2, a3, (unsigned int)hWnd))));
+
+  result = BaseDialogProc(hDlg, a2, a3, (unsigned int)hWnd); /*0x6b632c*/
   if ( result ) /*0x6b6333*/
     return result; /*0x6b6333*/
   if ( a2 != 273 ) /*0x6b633f*/
@@ -99,19 +100,19 @@ result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(BaseDialogP
         if ( hWnd == GetDlgItem(hDlg, 1327) ) /*0x6b664c*/
         {
           v37 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b6674*/
-          Audio::SetScoreVolume((float *)g_GameModeOptions, v37, 1); /*0x6b6677*/
+          Audio::SetScoreVolume((float *)dword_A8EB60, v37, 1); /*0x6b6677*/
           return 0; /*0x6b6688*/
         }
         if ( hWnd == GetDlgItem(hDlg, 1330) ) /*0x6b6695*/
         {
           v38 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b66bd*/
-          Audio::SetSoundVolume((float *)g_GameModeOptions, v38, 1); /*0x6b66c0*/
+          Audio::SetSoundVolume((float *)dword_A8EB60, v38, 1); /*0x6b66c0*/
           return 0; /*0x6b66d1*/
         }
         if ( hWnd == GetDlgItem(hDlg, 1334) ) /*0x6b66de*/
         {
           v39 = (double)SendMessageA(hWnd, 0x400u, 0, 0) * 0.1; /*0x6b670a*/
-          Audio::SetVoiceVolume((float *)g_GameModeOptions, v39, 1); /*0x6b670d*/
+          Audio::SetVoiceVolume((float *)dword_A8EB60, v39, 1); /*0x6b670d*/
           return 0; /*0x6b671e*/
         }
       }
@@ -152,11 +153,11 @@ result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(BaseDialogP
       {
         SendMessageA(v13, 0x4AEu, 0, 0); /*0x6b644e*/
         SendMessageA(v14, 0x406u, 1u, 655360); /*0x6b645d*/
-        v15 = Math::RoundToInt(*(float *)&dword_A8EB9C * 10.0 + 0.5); /*0x6b6471*/
+        v15 = Math::RoundToInt(*(float *)&flt_A8EB9C * 10.0 + 0.5); /*0x6b6471*/
         SendMessageA(v14, 0x405u, 1u, v15); /*0x6b647f*/
         v9(v14, IsSoundEnabled); /*0x6b6483*/
       }
-      if ( g_WTFMode ) /*0x6b648c*/
+      if ( byte_A8E9A0 ) /*0x6b648c*/
       {
         v16 = GetDlgItem(hDlg, 1331); /*0x6b64a5*/
         if ( v16 ) /*0x6b64a9*/
@@ -183,7 +184,7 @@ result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(BaseDialogP
           {
             do /*0x6b65ed*/
             {
-              if ( RulesClass::IsTypeBuildable(&g_BuildingTypeClass_Count, v21) ) /*0x6b6545*/
+              if ( RulesClass::IsTypeBuildable(&unk_A83D10, v21) ) /*0x6b6545*/
               {
                 v22 = AudioSettings::ComputeTransform(v21); /*0x6b6563*/
                 v46 = AudioSettings::Check(v21); /*0x6b656f*/
@@ -215,9 +216,9 @@ result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(BaseDialogP
     }
     return 0; /*0x6b6354*/
   }
-  if ( (uint16_t)a3 <= 0x534u ) /*0x6b672d*/
+  if ( (unsigned __int16)a3 <= 0x534u ) /*0x6b672d*/
   {
-    switch ( (uint16_t)a3 ) /*0x6b6733*/
+    switch ( (unsigned __int16)a3 ) /*0x6b6733*/
     {
       case 0x534u: /*0x6b6733*/
         v32 = SendMessageA(hWnd, 0xF0u, 0, 0); /*0x6b684c*/
@@ -246,8 +247,8 @@ result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(BaseDialogP
                 v31 = dword_A83D18; /*0x6b6809*/
               if ( v31 != v30 ) /*0x6b6810*/
               {
-                Theme::Stop(&g_BuildingTypeClass_Count, 1); /*0x6b681d*/
-                Theme::QueueSong((int)&g_BuildingTypeClass_Count, v30); /*0x6b6828*/
+                Theme::Stop(&unk_A83D10, 1); /*0x6b681d*/
+                Theme::QueueSong((int)&unk_A83D10, v30); /*0x6b6828*/
                 return 0; /*0x6b6839*/
               }
             }
@@ -267,45 +268,45 @@ result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(BaseDialogP
     }
     return 0; /*0x6b677b*/
   }
-  if ( (uint16_t)a3 == 1333 ) /*0x6b68a9*/
+  if ( (unsigned __int16)a3 == 1333 ) /*0x6b68a9*/
   {
     if ( !IDA_HIWORD(a3) ) /*0x6b69c8*/
     {
-      Theme::Stop(&g_BuildingTypeClass_Count, 1); /*0x6b69d4*/
-      Theme::QueueSong((int)&g_BuildingTypeClass_Count, -3); /*0x6b69e0*/
+      Theme::Stop(&unk_A83D10, 1); /*0x6b69d4*/
+      Theme::QueueSong((int)&unk_A83D10, -3); /*0x6b69e0*/
       byte_A8EBA5 = 0; /*0x6b69e5*/
     }
     return 0; /*0x6b69e5*/
   }
-  if ( (uint16_t)a3 != 1670 || IDA_HIWORD(a3) ) /*0x6b68ba*/
+  if ( (unsigned __int16)a3 != 1670 || IDA_HIWORD(a3) ) /*0x6b68ba*/
     return 0; /*0x6b69ec*/
   v33 = GetDlgItem(hDlg, 1327); /*0x6b68cf*/
   if ( v33 ) /*0x6b68d9*/
   {
     v40 = (double)SendMessageA(v33, 0x400u, 0, 0) * 0.1; /*0x6b68fd*/
-    Audio::SetScoreVolume((float *)g_GameModeOptions, v40, 0); /*0x6b6900*/
+    Audio::SetScoreVolume((float *)dword_A8EB60, v40, 0); /*0x6b6900*/
     if ( flt_A8EBA0 == 0.0 ) /*0x6b6916*/
     {
       v34 = dword_A83D14; /*0x6b6918*/
       if ( dword_A83D14 == -1 ) /*0x6b6920*/
         v34 = dword_A83D18; /*0x6b6922*/
-      Theme::QueueSong((int)&g_BuildingTypeClass_Count, v34); /*0x6b692d*/
-      Theme::Stop(&g_BuildingTypeClass_Count, 0); /*0x6b6939*/
+      Theme::QueueSong((int)&unk_A83D10, v34); /*0x6b692d*/
+      Theme::Stop(&unk_A83D10, 0); /*0x6b6939*/
     }
   }
   v35 = GetDlgItem(hDlg, 1330); /*0x6b6944*/
   if ( v35 ) /*0x6b6948*/
   {
     v41 = (double)SendMessageA(v35, 0x400u, 0, 0) * 0.1; /*0x6b696c*/
-    Audio::SetSoundVolume((float *)g_GameModeOptions, v41, 0); /*0x6b696f*/
+    Audio::SetSoundVolume((float *)dword_A8EB60, v41, 0); /*0x6b696f*/
   }
   v36 = GetDlgItem(hDlg, 1334); /*0x6b697a*/
   if ( v36 ) /*0x6b697e*/
   {
     v42 = (double)SendMessageA(v36, 0x400u, 0, 0) * 0.1; /*0x6b69a2*/
-    Audio::SetVoiceVolume((float *)g_GameModeOptions, v42, 0); /*0x6b69a5*/
+    Audio::SetVoiceVolume((float *)dword_A8EB60, v42, 0); /*0x6b69a5*/
   }
-  *(unsigned int *)GetWindowLongA(hDlg, 8) = 1; /*0x6b69b5*/
+  *(_DWORD *)GetWindowLongA(hDlg, 8) = 1; /*0x6b69b5*/
   return 0; /*0x6b6619*/
 }
 } // namespace gamemd

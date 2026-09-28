@@ -22,7 +22,7 @@ void sub_5C7EC0(const void * a1, int a2)
   int v10; // ecx
   unsigned int v11; // edx
   int *v12; // eax
-  int * v14;
+  int v14; // edx
   int *v15; // eax
   int v17; // eax
   int v18; // eax
@@ -31,7 +31,7 @@ void sub_5C7EC0(const void * a1, int a2)
   int v21; // ecx
   bool v22; // zf
   int *v23; // eax
-  int * v24;
+  int v24; // edx
   int *v25; // eax
   int v27; // eax
   int v28; // edx
@@ -86,13 +86,14 @@ void sub_5C7EC0(const void * a1, int a2)
     }
     while ( !*--v12 ); /*0x5c7f4b*/
   }
-  v14 = (int *)(2);
-  dword_ABF8C8 = (int *)(dword_ABF5AC[v2]);
-  v15 = (int *)(&dword_ABF8CC);
+  v14 = 2; /*0x5c7f56*/
+  dword_ABF8C8 = dword_ABF5AC[v2]; /*0x5c7f5e*/
+  v15 = &dword_ABF8CC; /*0x5c7f67*/
   dword_ABF8CC = dword_ABF5B0[v2]; /*0x5c7f6e*/
   if ( dword_ABF8CC ) /*0x5c7f74*/
   {
-  LABEL_16: v18 = (int)(v14);
+  LABEL_16:
+    v18 = v14; /*0x5c7f8b*/
     v19 = dword_ABF8C4[v14]; /*0x5c7f8d*/
     v20 = 0x80000000; /*0x5c7f94*/
     v17 = 32 * v18; /*0x5c7f99*/
@@ -115,7 +116,7 @@ void sub_5C7EC0(const void * a1, int a2)
     }
     v17 = 0; /*0x5c7f87*/
   }
-  dword_ABF8C4[0] = (int *)(v17 - 32);
+  dword_ABF8C4[0] = v17 - 32; /*0x5c7fb1*/
   RotateBitBufferRight(&dword_ABF8C8, v17 - 32, 2); /*0x5c7fb7*/
   DivideBigInteger(&dword_ABF5A4, (char *)&dword_ABF8C8, 2); /*0x5c7fc8*/
   RotateBitBufferRight(&dword_ABF5A4, 1, 2); /*0x5c7fd9*/
@@ -130,11 +131,12 @@ void sub_5C7EC0(const void * a1, int a2)
     if ( !--v21 ) /*0x5c8018*/
       break; /*0x5c8018*/
   }
-  v24 = (int *)(2);
-  v25 = (int *)(&dword_ABF5A8);
+  v24 = 2; /*0x5c8027*/
+  v25 = &dword_ABF5A8; /*0x5c802e*/
   if ( dword_ABF5A8 ) /*0x5c8033*/
   {
-  LABEL_24: v27 = (int)(v24);
+  LABEL_24:
+    v27 = v24; /*0x5c8046*/
     v28 = dword_ABF5A0[v24]; /*0x5c8048*/
     v29 = 0x80000000; /*0x5c804f*/
     v30 = 32 * v27; /*0x5c8054*/

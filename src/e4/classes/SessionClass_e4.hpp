@@ -641,9 +641,6 @@ struct SessionClass {
     unsigned int u32_30D4;  // 0x30D4
     bool CurrentlyInGame;  // 0x30D8
     unsigned char q30D9;  // 0x30D9
-    unsigned int __pad_50;
-    unsigned int unknown_14;
-    unsigned int vtable0;
 // --- flat members (END) ---
     AbstractClass * * BuildLobbyPlayerList();
     AbstractClass * * LoadMapSelection(char ** a1);

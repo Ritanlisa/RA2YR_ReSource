@@ -89,9 +89,9 @@ WDTError Map::Load()
   int result; // eax
 
   result = -1; /*0x552c96*/
-  if ( g_GameMode_Current[0] )
-    return (gamemd::wdt::WDTError)(g_DisplayWidth != 640 ? 406 : 326);
-  return (gamemd::wdt::WDTError)(result);
+  if ( dword_A8B238[0] )
+    return g_DisplayWidth != 640 ? 406 : 326;
+  return result; /*0x552cb6*/
 }
 WDTError Map::Draw()
 {

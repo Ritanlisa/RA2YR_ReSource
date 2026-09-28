@@ -20,37 +20,21 @@ struct ParasiteClass {
     int referenceCount;  // 0x1C
     bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
-    unsigned int creationFrame;  // 0x24
+    char creationFrame[4];  // 0x24
     int q028;  // 0x28
     bool q02B;  // 0x2B
     void* q02C;  // 0x2C
-    unsigned int ParasiteClass_field_30;  // 0x30
+    char ParasiteClass_field_30[4];  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     char ParasiteClass_field_34[4];  // 0x34
-    void* ;  // 0x38
+    unsigned int u32_38;  // 0x38
     unsigned char q03A;  // 0x3A
     unsigned int q03B;  // 0x3B
-    void* ;  // 0x3C
+    char ParasiteClass_field_3C[4];  // 0x3C
     unsigned int q03D;  // 0x3D
-    void* ;  // 0x40
+    char ParasiteClass_field_40[4];  // 0x40
     bool q042;  // 0x42
-    unsigned int ParasiteClass_field_38;
-    unsigned int __pad_28;
-    unsigned int q044;
-    unsigned int q048;
-    unsigned int q04C;
-    unsigned int q054;
-    unsigned int u32_48;
-    unsigned int u32_50;
-    unsigned int u32_54;
-    unsigned int uniqueId0;
-    unsigned int vtable0;
-    unsigned int vtable46;
-    unsigned int nextArrayIndex8;
-    unsigned int ParasiteClass_field_3C;
-    unsigned int ParasiteClass_field_40;
-    unsigned int u32_38;
 // --- flat members (END) ---
     AbstractClass * * TryInfect(unsigned int * a2);
     Coord * * Update();

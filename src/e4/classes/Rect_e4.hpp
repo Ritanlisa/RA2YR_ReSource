@@ -11,10 +11,6 @@ struct Rect {
     char Y[4];  // 0x4
     char Width[4];  // 0x8
     char Height[4];  // 0xC
-    unsigned int u32_14;
-    unsigned int u32_18;
-    unsigned int u32_1C;
-    unsigned int SetRedraw;
 // --- flat members (END) ---
     AbstractClass * Construct(void* aP1, AbstractClass * aP2, AbstractClass * aP3);
     BOOL Inflate(LPRECT lprc, int dx, int dy);

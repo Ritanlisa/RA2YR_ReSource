@@ -125,15 +125,15 @@ struct TechnoClass {
     TechnoClass* transporter;  // 0xFC
     bool q0FF;  // 0xFF
     char q100[4];  // 0x100
-    unsigned int currentTurretNumber;  // 0x104
+    char currentTurretNumber[4];  // 0x104
     TechnoClass* q108;  // 0x108
-    unsigned int turretChargeTimer;  // 0x10C
+    char turretChargeTimer[4];  // 0x10C
     unsigned int q10D;  // 0x10D
     unsigned int q10E;  // 0x10E
     unsigned int q10F;  // 0x10F
     char q110[4];  // 0x110
     unsigned int q111;  // 0x111
-    unsigned int secondaryTurretIndex;  // 0x114
+    char secondaryTurretIndex[1];  // 0x114
     ObjectClass* q118;  // 0x118
     unsigned int q11A;  // 0x11A
     unsigned int q11B;  // 0x11B
@@ -154,7 +154,7 @@ struct TechnoClass {
     char q13C[4];  // 0x13C
     char currentRank[4];  // 0x140
     char gattlingStage[4];  // 0x144
-    unsigned int gattlingValue;  // 0x148
+    char gattlingValue[4];  // 0x148
     unsigned int ammoReloadTimer;  // 0x14C
     void* q14E;  // 0x14E
     HouseClass* initialOwner;  // 0x150
@@ -203,11 +203,12 @@ struct TechnoClass {
     unsigned int q1B5;  // 0x1B5
     unsigned int q1B7;  // 0x1B7
     char airstrikeTintTimer[12];  // 0x1B8
+    unsigned int u32_1BB;  // 0x1BB
     void* q1BC;  // 0x1BC
     void* airstrikeTintStage;  // 0x1C0
     unsigned int q1C4;  // 0x1C4
     unsigned int q1C8;  // 0x1C8
-    unsigned int drainTarget;  // 0x1CC
+    char drainTarget[4];  // 0x1CC
     unsigned char alignmentPadding1BD;  // 0x1CD
     bool drainingMe;  // 0x1D0
     TechnoClass* drainAnim;  // 0x1D4
@@ -267,7 +268,7 @@ struct TechnoClass {
     bool isImmobilized;  // 0x27C
     unsigned char q27D;  // 0x27D
     unsigned char alignmentPadding27E;  // 0x27E
-    unsigned int owningHouseIndex0;  // 0x280
+    char owningHouseIndex0[4];  // 0x280
     bool chronoLockRemaining;  // 0x284
     bool q285;  // 0x285
     bool q286;  // 0x286
@@ -277,9 +278,9 @@ struct TechnoClass {
     bool q290;  // 0x290
     unsigned char alignmentPadding27D;  // 0x291
     unsigned int airstrike;  // 0x294
-    unsigned int isBerserk;  // 0x298
+    char isBerserk[1];  // 0x298
     unsigned char q299;  // 0x299
-    unsigned int isBerserk_duration_left;  // 0x29C
+    char isBerserk_duration_left[4];  // 0x29C
     unsigned int sprayOffsetIndex;  // 0x2A0
     void* isUncrushable;  // 0x2A4
     unsigned char q2A5;  // 0x2A5
@@ -311,7 +312,7 @@ struct TechnoClass {
     HouseClass* q2F4;  // 0x2F4
     TechnoClass* diskLaserChargeState;  // 0x2F8
     float ammo;  // 0x2FC
-    unsigned int unitValue;  // 0x300
+    char unitValue[4];  // 0x300
     ParticleSystemClass* fireParticles;  // 0x304
     void* sparkParticles;  // 0x308
     unsigned int q30A;  // 0x30A
@@ -504,19 +505,6 @@ struct TechnoClass {
     void* planningToken;  // 0x514
     ObjectTypeClass* disguiseAsType;  // 0x518
     HouseClass* disguisedAsHouse;  // 0x51C
-    unsigned int __pad_18C;
-    unsigned int __pad_1C4;
-    unsigned int barrelRecoil;
-    unsigned int checkCloakState;
-    unsigned int damageParticles_2;
-    unsigned int master;
-    unsigned int queueUpToEnter;
-    unsigned int railgunParticles_2;
-    unsigned int vtable0;
-    unsigned int vtable33;
-    unsigned int vtable34;
-    unsigned int FindClosestPlacementCell;
-    unsigned int CalcFlashAlpha;
 // --- flat members (END) ---
     BOOL processDamageAnimation(int a1);
     BOOL updateWeaponCooldown(int a1);

@@ -53,7 +53,7 @@ struct BuildingClass {
     unsigned char alignmentPadding69;  // 0x69
     unsigned int q06A;  // 0x6A
     void* health;  // 0x6C
-    unsigned int estimatedHealth;  // 0x70
+    char estimatedHealth[4];  // 0x70
     void* isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
     unsigned int q077;  // 0x77
@@ -149,11 +149,11 @@ struct BuildingClass {
     AnimClass* q130;  // 0x130
     bool q134;  // 0x134
     unsigned char alignmentPadding139;  // 0x135
-    unsigned int currentWeaponSlot;  // 0x138
+    char currentWeaponSlot[4];  // 0x138
     unsigned char q139;  // 0x139
     char q13C[4];  // 0x13C
     void* currentRank;  // 0x140
-    unsigned int gattlingStage;  // 0x144
+    char gattlingStage[4];  // 0x144
     unsigned int gattlingValue;  // 0x148
     HouseClass* ammoReloadTimer;  // 0x14C
     void* q14E;  // 0x14E
@@ -253,8 +253,8 @@ struct BuildingClass {
     char lastSightCoords[12];  // 0x254
     void* q258;  // 0x258
     unsigned int u32_25C;  // 0x25C
-    unsigned int lastSightRange;  // 0x260
-    unsigned int lastSightHeight;  // 0x264
+    char lastSightRange[4];  // 0x260
+    char lastSightHeight[4];  // 0x264
     void* gapSuperCharged;  // 0x268
     bool isGeneratingGap;  // 0x269
     unsigned int u32_26A;  // 0x26A
@@ -687,17 +687,6 @@ struct BuildingClass {
     double q738;  // 0x738
     unsigned char PipelineStep;  // 0x73C
     unsigned char padProd3;  // 0x73D
-    unsigned int Audio8_2;
-    unsigned int CanRepair;
-    unsigned int GetExitCoords;
-    unsigned int SuperWeaponToken;
-    unsigned int TogglePrimaryFactory;
-    unsigned int __pad_6B8;
-    unsigned int u32_898;
-    unsigned int u32_8B4;
-    unsigned int vtable0;
-    unsigned int UpdateFloatPosition;
-    unsigned int ctor;
 // --- flat members (END) ---
     TechnoClass * ClearLimpetCheck();
     int AllocAndCtor(BuildingClass * aP0, int aP2);

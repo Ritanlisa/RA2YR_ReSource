@@ -194,17 +194,17 @@ CellStruct * * sub_731AF0()
   int v3; // ecx
   int v4; // edi
   int v5; // esi
-  unsigned char *v6; // ecx
+  _BYTE *v6; // ecx
   wchar_t *v7; // eax
   int v8; // ecx
 
-  result = *(wchar_t **)&stru_A8EB00.gapE4[228]; /*0x731af1*/
-  if ( !*(unsigned int *)&stru_A8EB00.gapE4[228] ) /*0x731afa*/
+  result = *(wchar_t **)&stru_A8EB00.?[228]; /*0x731af1*/
+  if ( !*(_DWORD *)&stru_A8EB00.?[228] ) /*0x731afa*/
   {
-    StringCSF = (wchar_t *)(GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 856));
+    StringCSF = GetStringCSF(g_Str_MSG_NothingSelected, 0, g_Str_File_UICmnds_cpp, 856); /*0x731b0d*/
     v3 = 3; /*0x731b18*/
     if ( dword_A83D4C ) /*0x731b1f*/
-      v3 = *(unsigned int *)&dword_A83D4C[134].__pad_90[4]; /*0x731b21*/
+      v3 = *(_DWORD *)&dword_A83D4C[134].__pad_90[4]; /*0x731b21*/
     result = (wchar_t *)MessageListClass::AddMessage( /*0x731b3e*/
                           (MessageListClass *)&stru_A8BB1C.__pad_87[189],
                           0,
@@ -216,9 +216,9 @@ CellStruct * * sub_731AF0()
                           1);
     goto LABEL_5; /*0x731b3e*/
   }
-  v4 = *(unsigned int *)&stru_A8EB00.gapE4[228]; /*0x731b4e*/
+  v4 = *(_DWORD *)&stru_A8EB00.?[228]; /*0x731b4e*/
   v5 = 0; /*0x731b50*/
-  if ( *(int *)&stru_A8EB00.gapE4[228] <= 0 ) /*0x731b54*/
+  if ( *(int *)&stru_A8EB00.?[228] <= 0 ) /*0x731b54*/
   {
   LABEL_5:
     IDA_LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 1; /*0x731b43*/
@@ -226,14 +226,14 @@ CellStruct * * sub_731AF0()
   }
   while ( 1 ) /*0x731b56*/
   {
-    result = *(wchar_t **)&stru_A8EB00.gapE4[216]; /*0x731b56*/
-    v6 = *(unsigned char **)(*(unsigned int *)&stru_A8EB00.gapE4[216] + 4 * v5); /*0x731b5b*/
+    result = *(wchar_t **)&stru_A8EB00.?[216]; /*0x731b56*/
+    v6 = *(_BYTE **)(*(_DWORD *)&stru_A8EB00.?[216] + 4 * v5); /*0x731b5b*/
     if ( v6 ) /*0x731b60*/
     {
       if ( (v6[20] & 1) != 0 ) /*0x731b6c*/
       {
-        result = (wchar_t *)(*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 1216))(v6); /*0x731b70*/
-        if ( !(unsigned char)result ) /*0x731b78*/
+        result = (wchar_t *)(*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v6 + 1216))(v6); /*0x731b70*/
+        if ( !(_BYTE)result ) /*0x731b78*/
           break; /*0x731b78*/
       }
     }
@@ -246,7 +246,7 @@ CellStruct * * sub_731AF0()
   v7 = GetStringCSF(aMsgAttackmoveu, 0, g_Str_File_UICmnds_cpp, 862); /*0x731b9b*/
   v8 = 3; /*0x731ba6*/
   if ( dword_A83D4C ) /*0x731bad*/
-    v8 = *(unsigned int *)&dword_A83D4C[134].__pad_90[4]; /*0x731baf*/
+    v8 = *(_DWORD *)&dword_A83D4C[134].__pad_90[4]; /*0x731baf*/
   return (wchar_t *)MessageListClass::AddMessage( /*0x731b43*/
                       (MessageListClass *)&stru_A8BB1C.__pad_87[189],
                       0,

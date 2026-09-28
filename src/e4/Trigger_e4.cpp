@@ -24,7 +24,7 @@ int Trigger::EnableOnce(AbstractClass * aP1)
   int result; // eax
 
   IDA_LOBYTE(result) = this->Trigger_field_0x48; /*0x554a60*/
-  if ( !(unsigned char)result ) /*0x554a65*/
+  if ( !(_BYTE)result ) /*0x554a65*/
   {
     IDA_LOBYTE(this->Trigger_field_0x48) = 1; /*0x554a6b*/
     return TacticalClass::ScrollView(aP1); /*0x554a70*/
@@ -39,26 +39,26 @@ MSShapeAnim * * Trigger::initTrigger(MSShapeAnim * aP1, MSShapeAnim * aP2, int a
   int FileClassToBuffer; // eax
   int v10; // edx
 
-  *(unsigned int *)this->__pad_8 = a4; /*0x5cbd2c*/
+  *(_DWORD *)this->__pad_8 = a4; /*0x5cbd2c*/
   this->Trigger_field_0x4 = (MSAnim *)aP2; /*0x5cbd32*/
   this->__pad_8[4] = 1; /*0x5cbd35*/
   this->Trigger_field_0x10 = (void *)Timer::GetTicks(); /*0x5cbd48*/
-  *(unsigned int *)this->__pad_18 = 0; /*0x5cbd4f*/
-  *(unsigned int *)&this->__pad_18[8] = a5; /*0x5cbd52*/
-  *(unsigned int *)&this->__pad_30[8] = a7; /*0x5cbd58*/
-  *(unsigned int *)&this->__pad_18[12] = a6; /*0x5cbd5f*/
-  *(unsigned int *)&this->__pad_18[16] = 0; /*0x5cbd62*/
+  *(_DWORD *)this->__pad_18 = 0; /*0x5cbd4f*/
+  *(_DWORD *)&this->__pad_18[8] = a5; /*0x5cbd52*/
+  *(_DWORD *)&this->__pad_30[8] = a7; /*0x5cbd58*/
+  *(_DWORD *)&this->__pad_18[12] = a6; /*0x5cbd5f*/
+  *(_DWORD *)&this->__pad_18[16] = 0; /*0x5cbd62*/
   this->__pad_30[4] = 0; /*0x5cbd65*/
   this->__pad_30[12] = 0; /*0x5cbd68*/
-  *(unsigned int *)this->__pad_0 = (void*)&MSShapeAnim_vftable; /*0x5cbd6a*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&MSShapeAnim_vftable; /*0x5cbd6a*/
   FileClassToBuffer = LoadFileClassToBuffer(aP1, (bool *)&this->__pad_30[12]); /*0x5cbd70*/
-  *(unsigned int *)&this->__pad_18[4] = FileClassToBuffer; /*0x5cbd75*/
+  *(_DWORD *)&this->__pad_18[4] = FileClassToBuffer; /*0x5cbd75*/
   this->Trigger_field_0x2C = 0; /*0x5cbd78*/
-  v10 = *(int16_t *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
-  *(unsigned int *)&this->__pad_30[20] = aP7; /*0x5cbd84*/
-  *(unsigned int *)this->__pad_30 = v10; /*0x5cbd87*/
-  *(unsigned int *)&this->__pad_30[16] = 0; /*0x5cbd8a*/
-  *(unsigned int *)this->__pad_0 = (void*)&MSFadeAnim_vftable; /*0x5cbd8d*/
+  v10 = *(__int16 *)(FileClassToBuffer + 6) - 1; /*0x5cbd83*/
+  *(_DWORD *)&this->__pad_30[20] = aP7; /*0x5cbd84*/
+  *(_DWORD *)this->__pad_30 = v10; /*0x5cbd87*/
+  *(_DWORD *)&this->__pad_30[16] = 0; /*0x5cbd8a*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&MSFadeAnim_vftable; /*0x5cbd8d*/
   return this; /*0x5cbd95*/
 }
 }
@@ -275,9 +275,9 @@ void Trigger::ProcessMapEvents(int this@<ecx> a1, int *a2@<ebp> a2, int a3@<edi>
 namespace gamemd {
 unsigned int * Trigger::processTrigger(int a2, int a3)
 {
-  this->Trigger_field_0x4 = (unsigned int *)((MSAnim *)a2);
-  *(unsigned int *)this->__pad_8 = a3; /*0x76f09d*/
-  *(unsigned int *)this->__pad_0 = (void*)&VectorCursor_MSSfxEntry___DynamicVectorClass_MSSfxEntry___vftable; /*0x76f0a0*/
+  this->Trigger_field_0x4 = (MSAnim *)a2; /*0x76f09a*/
+  *(_DWORD *)this->__pad_8 = a3; /*0x76f09d*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorCursor_MSSfxEntry___DynamicVectorClass_MSSfxEntry___vftable; /*0x76f0a0*/
   return this->__pad_0; /*0x76f0a6*/
 }
 }
@@ -285,29 +285,29 @@ unsigned int * Trigger::processTrigger(int a2, int a3)
 namespace gamemd {
 unsigned int * Trigger::checkCondition(ObjectClass * aP1, ObjectClass * aP2)
 {
-  this->Trigger_field_0x4 = (unsigned int)(0);
-  *(unsigned int *)this->__pad_8 = aP1; /*0x76f1ce*/
+  this->Trigger_field_0x4 = 0; /*0x76f1cb*/
+  *(_DWORD *)this->__pad_8 = aP1; /*0x76f1ce*/
   this->__pad_8[4] = 1; /*0x76f1d1*/
   this->__pad_8[5] = 0; /*0x76f1d5*/
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_MSAnim___vftable; /*0x76f1d8*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_MSAnim___vftable; /*0x76f1d8*/
   if ( aP1 ) /*0x76f1de*/
   {
     if ( aP2 ) /*0x76f1e6*/
     {
-      this->Trigger_field_0x4 = (unsigned int *)((MSAnim *)aP2);
-      return (unsigned int *)(this->__pad_0);
+      this->Trigger_field_0x4 = (MSAnim *)aP2; /*0x76f1e8*/
+      return this->__pad_0; /*0x76f1ee*/
     }
     this->Trigger_field_0x4 = (MSAnim *)RA2_OPNEW(4 * aP1); /*0x76f1fd*/
     this->__pad_8[5] = 1; /*0x76f200*/
   }
-  return (unsigned int *)(this->__pad_0);
+  return this->__pad_0; /*0x76f1ed*/
 }
 }
 // 0x76FF20
 namespace gamemd {
 int Trigger::executeActions(int a2)
 {
-  this->Trigger_field_0x2C = (unsigned int)((void *)a2);
+  this->Trigger_field_0x2C = (void *)a2; /*0x76ff24*/
   return a2; /*0x76ff27*/
 }
 }

@@ -18,21 +18,21 @@
 namespace gamemd {
 char * Commands::AddRef()
 {
-  return (char *)(aMultiplayerdeb);
+  return aMultiplayerdeb; /*0x537a55*/
 }
 } // namespace gamemd
 // 0x537A60
 namespace gamemd {
 const wchar_t * Commands::ddtor()
 {
-  return (const wchar_t *)(g_INI_Key_De);
+  return g_INI_Key_De; /*0x537a65*/
 }
 } // namespace gamemd
 // 0x537A70
 namespace gamemd {
 char ** Commands::Release()
 {
-  return (char **)(&off_8278C0);
+  return &off_8278C0; /*0x537a75*/
 }
 } // namespace gamemd
 // 0x537A80

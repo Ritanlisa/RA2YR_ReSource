@@ -16,17 +16,18 @@
 namespace gamemd {
 void SetupMultiplayerLobbyScreen_Setup(SkirmishDialog * hDlg, char * a2, int nIDDlgItem)
 {
-  char * v3;
-  char * v4;
+  int v3; // ebx
+  int v4; // esi
   int v6; // esi
   LRESULT v7; // eax
   wchar_t *v8; // eax
   int v10; // [esp+Ch] [ebp-Ch]
-  char * v11;
-v3 = (char *)((int)(a2));
-  v4 = (char *)((int)(a2 + nIDDlgItem));
+  int v11; // [esp+10h] [ebp-8h]
+
+  v3 = a2; /*0x5ebec8*/
+  v4 = a2 + nIDDlgItem; /*0x5ebed0*/
   v11 = a2 + nIDDlgItem; /*0x5ebedd*/
-  if ( g_GameMode_Current[0] == 4 ) /*0x5ebee1*/
+  if ( dword_A8B238[0] == 4 ) /*0x5ebee1*/
   {
     if ( !Network::IsMultiplayerActive() || Network::IsLobbyFeature() ) /*0x5ebeec*/
       v10 = 6; /*0x5ebeff*/

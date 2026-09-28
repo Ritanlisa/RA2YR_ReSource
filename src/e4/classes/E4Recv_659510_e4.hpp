@@ -17,7 +17,15 @@ struct E4Recv_659510 {
     unsigned int q1584;  // 0x1584
     unsigned int q1600;  // 0x1600
     unsigned int q5508;  // 0x5508
-    unsigned int ambientSoundController;
+    unsigned int q21768;  // 0x21768
+    unsigned int q137064;  // 0x137064
+    unsigned int q1282918;  // 0x1282918
+    unsigned int q19347798;  // 0x19347798
+    unsigned int q422868888;  // 0x422868888
+    unsigned int q17759111304;  // 0x17759111304
+    unsigned int q1612107027204;  // 0x1612107027204
+    unsigned int q1612549859458;  // 0x1612549859458
+    unsigned int q388269456126468;  // 0x388269456126468
 // --- flat members (END) ---
     int sub_659510(int a2,  int a3);    // 0x659510
 };

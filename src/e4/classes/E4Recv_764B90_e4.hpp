@@ -9,7 +9,7 @@ struct E4Recv_764B90 {
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
     unsigned int u32_C;  // 0xC
-    void* ;  // 0x18
+    unsigned int q018;  // 0x18
     unsigned int M28;  // 0x1C
     unsigned int M32;  // 0x20
     unsigned int M24;  // 0x24
@@ -61,8 +61,54 @@ struct E4Recv_764B90 {
     void * q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int u32_C7;
-    unsigned int q018;
+    unsigned int q8278;  // 0x8278
+    unsigned int q20848;  // 0x20848
+    void * q21768;  // 0x21768
+    unsigned int q22148;  // 0x22148
+    unsigned int q25608;  // 0x25608
+    unsigned int q33400;  // 0x33400
+    unsigned int q33570;  // 0x33570
+    void * q137064;  // 0x137064
+    unsigned int q153094;  // 0x153094
+    unsigned int q209920;  // 0x209920
+    unsigned int q210288;  // 0x210288
+    unsigned int q628354;  // 0x628354
+    unsigned int q1257874;  // 0x1257874
+    unsigned int q1271138;  // 0x1271138
+    unsigned int q1283474;  // 0x1283474
+    unsigned int q1388694;  // 0x1388694
+    unsigned int q1388834;  // 0x1388834
+    unsigned int q6456148;  // 0x6456148
+    unsigned int q19232884;  // 0x19232884
+    unsigned int q19337528;  // 0x19337528
+    void * q19347798;  // 0x19347798
+    unsigned int q19412084;  // 0x19412084
+    unsigned int q20481684;  // 0x20481684
+    unsigned int q20482100;  // 0x20482100
+    unsigned int q35009334;  // 0x35009334
+    unsigned int q105210184;  // 0x105210184
+    unsigned int q422802728;  // 0x422802728
+    void * q422868888;  // 0x422868888
+    unsigned int q423698564;  // 0x423698564
+    unsigned int q541595268;  // 0x541595268
+    unsigned int q880955458;  // 0x880955458
+    unsigned int q17758693160;  // 0x17758693160
+    void * q17759111304;  // 0x17759111304
+    unsigned int q22571209318;  // 0x22571209318
+    unsigned int q289927160914;  // 0x289927160914
+    unsigned int q1612096024928;  // 0x1612096024928
+    void * q1612107027204;  // 0x1612107027204
+    unsigned int q2359835005720;  // 0x2359835005720
+    unsigned int q3732712490098;  // 0x3732712490098
+    unsigned int q44638250862868;  // 0x44638250862868
+    unsigned int q388226446628134;  // 0x388226446628134
+    unsigned int q388267560290600;  // 0x388267560290600
+    void * q388269456126468;  // 0x388269456126468
+    unsigned int q971036577824920;  // 0x971036577824920
+    unsigned int q971428040484870;  // 0x971428040484870
+    unsigned int q19249709764192360;  // 0x19249709764192360
+    unsigned int q680328753041262880;  // 0x680328753041262880
+    unsigned int q28987824272068649824;  // 0x28987824272068649824
 // --- flat members (END) ---
     char * WDT_Campaign_Constructor(const char ** a2,  int a3);    // 0x764B90
 };

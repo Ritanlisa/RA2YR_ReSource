@@ -177,18 +177,18 @@ void TagClass::Destroy()
   int result; // eax
 
   this->destroyed = 1; /*0x6e5233*/
-  result = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x6e5237*/
+  result = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E5C[4]; /*0x6e5237*/
   if ( *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[12] < *(int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] /*0x6e5270*/
-    || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
+    || (g_BuildingLoadQueue_Array.__pad_E5C[9] || !*(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E5C[4])
     && g_BuildingLoadQueue_Array.UnitExitSound > 0
-    && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.ToTile + 8))(
+    && (result = (*(int (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.ToTile + 8))(
                    &g_BuildingLoadQueue_Array.ToTile,
-                   *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
+                   *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E5C[4] + g_BuildingLoadQueue_Array.UnitExitSound,
                    0),
-        (unsigned char)result) )
+        (_BYTE)result) )
   {
-    result = (*(unsigned int *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x6e5278*/
-    *(unsigned int *)(*(unsigned int *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x6e5287*/
+    result = (*(_DWORD *)&g_BuildingLoadQueue_Array.__pad_E5C[12])++; /*0x6e5278*/
+    *(_DWORD *)(*(_DWORD *)g_BuildingLoadQueue_Array.__pad_E5C + 4 * result) = this; /*0x6e5287*/
   }
   return result; /*0x6e528a*/
 }
@@ -267,7 +267,7 @@ bool TagTypeClass::HasCrossesHorizontalLineEvent() const
   v1 = (HouseClass *)this->persistence; /*0x6e6251*/
   if ( !v1 ) /*0x6e6259*/
     return 0; /*0x6e6270*/
-  while ( !(uint8_t)HouseClass::HasType25Building(v1) ) /*0x6e6264*/
+  while ( !(unsigned __int8)HouseClass::HasType25Building(v1) ) /*0x6e6264*/
   {
     v1 = (HouseClass *)v1->psychicDetectionCount; /*0x6e6266*/
     if ( !v1 ) /*0x6e626e*/
@@ -283,7 +283,7 @@ bool TagTypeClass::HasCrossesVerticalLineEvent() const
   v1 = (HouseClass *)this->persistence; /*0x6e6281*/
   if ( !v1 ) /*0x6e6289*/
     return 0; /*0x6e62a0*/
-  while ( !(uint8_t)HouseClass::HasType26Building(v1) ) /*0x6e6294*/
+  while ( !(unsigned __int8)HouseClass::HasType26Building(v1) ) /*0x6e6294*/
   {
     v1 = (HouseClass *)v1->psychicDetectionCount; /*0x6e6296*/
     if ( !v1 ) /*0x6e629e*/

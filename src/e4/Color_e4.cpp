@@ -18,8 +18,8 @@ int Color::ConvertToRGB(int v9)
   unsigned int v5; // eax
   unsigned int v6; // eax
   unsigned int v7; // edx
-  int16_t v9; // [esp+10h] [ebp-20h]
-  unsigned int v10[5]; // [esp+14h] [ebp-1Ch]
+  __int16 v9; // [esp+10h] [ebp-20h]
+  _DWORD v10[5]; // [esp+14h] [ebp-1Ch]
   int v11; // [esp+28h] [ebp-8h]
   unsigned int v12; // [esp+2Ch] [ebp-4h]
 
@@ -39,8 +39,8 @@ int Color::ConvertToRGB(int v9)
   v7 = v6 + (v6 > 4 ? -4 : 2);
   IDA_LOBYTE(v6) = v10[v6]; /*0x51752c*/
   IDA_HIBYTE(v9) = v10[v7]; /*0x517535*/
-  *(unsigned short *)v9 = v9; /*0x517544*/
-  *(unsigned char *)(v9 + 2) = v6; /*0x51754a*/
+  *(_WORD *)v9 = v9; /*0x517544*/
+  *(_BYTE *)(v9 + 2) = v6; /*0x51754a*/
   return v9; /*0x517530*/
 }
 } // namespace gamemd
@@ -54,7 +54,7 @@ unsigned char * Color::Lerp2(int a2, int a3, float a4)
   v4 = 1.0 - a4; /*0x661028*/
   IDA_LOBYTE(this->Color_field_00) = Math::RoundToInt(v4); /*0x66109d*/
   IDA_BYTE1(this->Color_field_00) = Math::RoundToInt(v4); /*0x661105*/
-  v6 = v4 * (double)*(uint8_t *)(a2 + 2) + (double)*(uint8_t *)(a3 + 2) * a4; /*0x661124*/
+  v6 = v4 * (double)*(unsigned __int8 *)(a2 + 2) + (double)*(unsigned __int8 *)(a3 + 2) * a4; /*0x661124*/
   if ( v6 > 255.0 || v6 >= 0.0 ) /*0x661142*/
   {
     if ( v6 > 255.0 ) /*0x661169*/
@@ -118,9 +118,9 @@ unsigned char * Color::ScaleRGB(unsigned char * a2, float a3)
 namespace gamemd {
 unsigned char Color::Lerp(ObjectClass * aP1, unsigned char * a2)
 {
-  uint8_t v3; // bl
+  unsigned __int8 v3; // bl
   char v4; // al
-  uint8_t v5; // bl
+  unsigned __int8 v5; // bl
   unsigned int result; // eax
 
   v3 = IDA_BYTE1(this->Color_field_00); /*0x6612f2*/

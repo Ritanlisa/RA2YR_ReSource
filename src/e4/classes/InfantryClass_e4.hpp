@@ -141,9 +141,9 @@ struct InfantryClass {
     unsigned int q11A;  // 0x11A
     TechnoClass* transporter;  // 0x11C
     unsigned int q11E;  // 0x11E
-    unsigned int turretChargeTimer;  // 0x120
+    char turretChargeTimer[4];  // 0x120
     void* currentTurretNumber;  // 0x124
-    unsigned int secondaryTurretIndex;  // 0x128
+    char secondaryTurretIndex[4];  // 0x128
     AnimClass* behindAnim;  // 0x12C
     unsigned int q12D;  // 0x12D
     unsigned int q12E;  // 0x12E
@@ -152,9 +152,9 @@ struct InfantryClass {
     bool inAirFlag;  // 0x134
     unsigned char alignmentPadding139;  // 0x135
     char radioQueueCount[4];  // 0x138
-    unsigned int currentRank;  // 0x13C
+    char currentRank[4];  // 0x13C
     void* gattlingStage;  // 0x140
-    unsigned int gattlingValue;  // 0x144
+    char gattlingValue[4];  // 0x144
     unsigned int ammoReloadTimer;  // 0x148
     HouseClass* initialOwner;  // 0x14C
     void* q14E;  // 0x14E
@@ -666,7 +666,6 @@ struct InfantryClass {
     unsigned char q6E6;  // 0x6E6
     char waterState[4];  // 0x6E8
     unsigned int unused_6EC;  // 0x6EC
-    unsigned int vtable0;
 // --- flat members (END) ---
     AbstractClass * * ProcessDeploy(void ** a1);
     int ScanTarget(int * a1);

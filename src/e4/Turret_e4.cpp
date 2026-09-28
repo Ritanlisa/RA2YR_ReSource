@@ -169,8 +169,8 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
 namespace gamemd {
 float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
 {
-  unsigned int v3;
-  unsigned int *v4; // esi
+  LocomotionClass *v3; // edi
+  _DWORD *v4; // esi
   float *result; // eax
   float v6; // [esp+0h] [ebp-40h]
   int v7; // [esp+Ch] [ebp-34h] BYREF
@@ -178,10 +178,7 @@ float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
 
   Matrix3x4::Identity(&v8); /*0x55a739*/
   v3 = a1; /*0x55a73e*/
-  a1 = (LocomotionClass *)((((unsigned int)((*ProgressTimer::GetValue( /*0x55a763*/
-                                                  (ProgressTimer *)a1->Owner->primaryFacing,
-                                                  &v7) >> 10)
-                                            + 1) >> 1)
+  a1 = (LocomotionClass *)((((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)a1->Owner->?, &v7) >> 10) + 1) >> 1) /*0x55a763*/
                             & 0x1F)
                            - 8);
   v6 = (double)(int)a1 * -0.1963495408493621; /*0x55a776*/
@@ -190,8 +187,7 @@ float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
   if ( a3 && *a3 != -1 ) /*0x55a78b*/
   {
     *a3 *= 32; /*0x55a790*/
-    *v4 |= ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)v3->Owner->primaryFacing, &a1) >> 10) + 1) >> 1) /*0x55a7b4*/
-         & 0x1F;
+    *v4 |= ((unsigned int)((*ProgressTimer::GetValue((ProgressTimer *)v3->Owner->?, &a1) >> 10) + 1) >> 1) & 0x1F; /*0x55a7b4*/
   }
   result = a2; /*0x55a7b6*/
   qmemcpy(a2, &v8, 0x30u); /*0x55a7c5*/

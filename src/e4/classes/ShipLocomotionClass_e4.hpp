@@ -47,9 +47,6 @@ struct ShipLocomotionClass {
     bool IsRocking;  // 0x64
     bool UnLocked;  // 0x65
     ILocomotion * ptr_68;  // 0x68
-    unsigned int Piggybackee;
-    unsigned int __pad_0;
-    unsigned int __pad_18;
 // --- flat members (END) ---
     HRESULT BeginMove(int * a1, int * pStm);
     HRESULT LoadFromStream(int * a1, int * pPStm, int a3);

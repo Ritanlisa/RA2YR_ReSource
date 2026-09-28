@@ -22,22 +22,10 @@ struct LoadOptions {
     unsigned int q024;  // 0x24
     int q028;  // 0x28
     unsigned char q02C;  // 0x2C
+    unsigned int u32_2D;  // 0x2D
     unsigned char pad_2E;  // 0x2E
     unsigned int capacity;  // 0x30
     unsigned int grow_step;  // 0x34
-    unsigned int GetFlag252;
-    unsigned int GetFlag98;
-    unsigned int GetFlag99;
-    unsigned int __pad_0;
-    unsigned int __pad_22;
-    unsigned int __pad_4;
-    unsigned int m_0;
-    unsigned int m_1;
-    unsigned int m_10;
-    unsigned int m_8;
-    unsigned int m_C;
-    unsigned int u32_2D;
-    unsigned int u32_420;
 // --- flat members (END) ---
     DynamicVector * vt00(char a2);
     LoadOptions * QueryInterface(char a2);

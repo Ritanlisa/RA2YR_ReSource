@@ -8,8 +8,6 @@ struct Conflict_WorldDominationTour_26 {
 // --- flat members (BEGIN) ---
     unsigned int u32_4;  // 0x4
     unsigned int RefCount;  // 0x8
-    unsigned int __pad_0;
-    unsigned int m_1;
 // --- flat members (END) ---
     BOOL AddRef();  // 0x766920
     unsigned int * Release();  // 0x766FA0

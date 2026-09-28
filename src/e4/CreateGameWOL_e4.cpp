@@ -18,8 +18,8 @@ HWND sub_792EC0(int a1)
   v2 = (HWND)Dialog::FindByHandle((void *)0xC4); /*0x792ec8*/
   if ( v2 ) /*0x792ecf*/
   {
-    g_WOL_ChannelList &= ~a1; /*0x792edb*/
-    if ( !g_WOL_ChannelList ) /*0x792ee1*/
+    dword_B77DC8 &= ~a1; /*0x792edb*/
+    if ( !dword_B77DC8 ) /*0x792ee1*/
       CloseDialog(v2, 0); /*0x792ee7*/
   }
   Current = Dialog::GetCurrent(); /*0x792eec*/

@@ -16,8 +16,8 @@ int * sub_72E1B0(int a1, int a2)
   dword_B0FC14 = 0; /*0x72e1dc*/
   RA2_OPDEL(dword_B0FC18); /*0x72e1e3*/
   dword_B0FC18 = 0; /*0x72e1ed*/
-  RA2_OPDEL(g_GadgetAnimState); /*0x72e1f4*/
-  g_GadgetAnimState = 0; /*0x72e1ff*/
+  RA2_OPDEL(dword_B0FC1C); /*0x72e1f4*/
+  dword_B0FC1C = 0; /*0x72e1ff*/
   RA2_OPDEL(dword_B0FC20); /*0x72e206*/
   dword_B0FC20 = 0; /*0x72e211*/
   RA2_OPDEL(dword_B0FC24); /*0x72e218*/

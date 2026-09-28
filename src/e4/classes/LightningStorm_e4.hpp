@@ -21,6 +21,8 @@ struct LightningStorm {
     void* q6064;  // 0x6064
     void* q6208;  // 0x6208
     void* q6210;  // 0x6210
+    void* q25110;  // 0x25110
+    void* q149110;  // 0x149110
 // --- flat members (END) ---
     AnimClass * * Strike(void* aP0);
     char End();

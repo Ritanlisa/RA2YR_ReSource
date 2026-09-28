@@ -31,12 +31,6 @@ struct CCINIClass {
     char CCINIClass_field_4C[4];  // 0x4C
     char unknown50[4];  // 0x50
     char unknown54[4];  // 0x54
-    unsigned int INIClass_field_3C;
-    unsigned int __pad_0;
-    unsigned int __pad_41;
-    unsigned int headNode;
-    unsigned int v3;
-    unsigned int v4;
 // --- flat members (END) ---
     AITriggerTypeClass * ReadInfantryTypeList(char * a1, int a2);
     void* WriteHouses();

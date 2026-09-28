@@ -9,7 +9,7 @@ struct Delegate {
 // --- flat members (BEGIN) ---
     void* m_items;  // 0x0
     char m_count[4];  // 0x4
-    unsigned int Delegate_field_08;  // 0x8
+    char Delegate_field_08[4];  // 0x8
     bool m_allocated;  // 0xC
     unsigned char q00D;  // 0xD
     char Delegate_field_10[4];  // 0x10
@@ -18,14 +18,6 @@ struct Delegate {
     void* m_pipe;  // 0x1C
     char Delegate_field_20[4];  // 0x20
     char Delegate_field_24[4];  // 0x24
-    unsigned int Previous;
-    unsigned int Straw_field_0x04;
-    unsigned int __pad_0;
-    unsigned int __pad_14;
-    unsigned int field_10;
-    unsigned int field_18;
-    unsigned int field_1C;
-    unsigned int field_C;
 // --- flat members (END) ---
     GenericNode * Constructor_GenericNode(char a2);
     int * ClearVectorAndStraw(char a2);

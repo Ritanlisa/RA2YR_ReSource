@@ -33,16 +33,16 @@ int INIClass::WOLobby_Play(void * a1, void * a2)
   int i; // esi
   char *v6; // eax
   char v7[108]; // [esp+14h] [ebp-234h] BYREF
-  unsigned int v8[113]; // [esp+80h] [ebp-1C8h] BYREF
-  int16_t v9; // [esp+244h] [ebp-4h]
+  _DWORD v8[113]; // [esp+80h] [ebp-1C8h] BYREF
+  __int16 v9; // [esp+244h] [ebp-4h]
   char v10; // [esp+246h] [ebp-2h]
 
-  v2 = (LPVOID)(ppv);
+  v2 = ppv; /*0x5e3857*/
   if ( ppv ) /*0x5e3864*/
   {
     memset(v7, 0, sizeof(v7)); /*0x5e3875*/
     strcpy(&v7[36], a1); /*0x5e3892*/
-    return (*(int (__stdcall **)(LPVOID, char *, const char *))(*(unsigned int *)v2 + 56))(v2, v7, a2); /*0x5e38a3*/
+    return (*(int (__stdcall **)(LPVOID, char *, const char *))(*(_DWORD *)v2 + 56))(v2, v7, a2); /*0x5e38a3*/
   }
   else
   {
@@ -50,28 +50,21 @@ int INIClass::WOLobby_Play(void * a1, void * a2)
     v9 = 0; /*0x5e38c8*/
     v10 = 0; /*0x5e38ca*/
     v8[0] = 24; /*0x5e38d5*/
-    strcpy((char *)&v8[1], g_GameSetupBuffer); /*0x5e38f6*/
+    strcpy((char *)&v8[1], unk_A8B380); /*0x5e38f6*/
     strcpy((char *)&v8[11] + 3, a2); /*0x5e3915*/
-    dword_A8D7F7 = Session::GetPlayerColor(g_GameMode_Current); /*0x5e392d*/
-    dword_A8D7FB = WideString::Hash(g_CurrentPlayerName); /*0x5e3937*/
-    result = Game_PlayerCount; /*0x5e393c*/
-    for ( i = 1; i < Game_PlayerCount; ++i ) /*0x5e3948*/
+    dword_A8D7F7 = Session::GetPlayerColor(dword_A8B238); /*0x5e392d*/
+    dword_A8D7FB = WideString::Hash(word_A8D610); /*0x5e3937*/
+    result = dword_A8DA84; /*0x5e393c*/
+    for ( i = 1; i < dword_A8DA84; ++i ) /*0x5e3948*/
     {
-      v6 = ToWideStringChar(*(char **)(Game_PlayerInfoArray + 4 * i)); /*0x5e3953*/
+      v6 = ToWideStringChar(*(char **)(dword_A8DA78 + 4 * i)); /*0x5e3953*/
       if ( !_strcmpi(v6, a1) ) /*0x5e3959*/
       {
         Debug::Log(); /*0x5e3974*/
-        Network::SendMessage( /*0x5e39a0*/
-          (int)g_NetworkManager,
-          (int)v8,
-          455,
-          1,
-          *(unsigned int *)(Game_PlayerInfoArray + 4 * i) + 40,
-          0,
-          0);
+        Network::SendMessage((int)unk_A8E9C0, (int)v8, 455, 1, *(_DWORD *)(dword_A8DA78 + 4 * i) + 40, 0, 0); /*0x5e39a0*/
         Event::Dispatch(); /*0x5e39a5*/
       }
-      result = Game_PlayerCount; /*0x5e39aa*/
+      result = dword_A8DA84; /*0x5e39aa*/
     }
   }
   return result; /*0x5e38a6*/
@@ -2166,25 +2159,25 @@ void sub_72BB10()
     if ( g_BuildingLoadQueue_Array.__pad_F70[1440] ) /*0x72bb22*/
     {
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[892]; /*0x72bb25*/
-      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[892] ) /*0x72bb2d*/
+      if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[892] ) /*0x72bb2d*/
       {
         FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[892]); /*0x72bb31*/
         RA2_OPDEL(v1); /*0x72bb37*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1440] = 0; /*0x72bb3f*/
     }
-    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[892] = 0; /*0x72bb4b*/
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1444] ) /*0x72bb53*/
+    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[892] = 0; /*0x72bb4b*/
+    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1444] ) /*0x72bb53*/
     {
       RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1444]); /*0x72bb56*/
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1444] = 0; /*0x72bb5e*/
+      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1444] = 0; /*0x72bb5e*/
     }
-    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448] ) /*0x72bb6c*/
+    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1448] ) /*0x72bb6c*/
     {
-      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1448])( /*0x72bb72*/
-        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448],
+      (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1448])( /*0x72bb72*/
+        *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1448],
         1);
-      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448] = 0; /*0x72bb74*/
+      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1448] = 0; /*0x72bb74*/
     }
   }
   g_BuildingLoadQueue_Array.__pad_F70[1441] = 0; /*0x72bb7a*/

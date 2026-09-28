@@ -35,6 +35,7 @@ struct Audio {
     unsigned int u32_90;  // 0x90
     unsigned char u8_A4;  // 0xA4
     unsigned int u32_A8;  // 0xA8
+    unsigned int u32_AC;  // 0xAC
     unsigned int u32_D4;  // 0xD4
     unsigned int q100;  // 0x100
     unsigned char q104;  // 0x104
@@ -50,6 +51,7 @@ struct Audio {
     unsigned int q168;  // 0x168
     unsigned char q260;  // 0x260
     unsigned char q28E;  // 0x28E
+    unsigned int u32_2B4;  // 0x2B4
     void* q304;  // 0x304
     void* q308;  // 0x308
     unsigned int q310;  // 0x310
@@ -59,19 +61,12 @@ struct Audio {
     unsigned int q374;  // 0x374
     unsigned int q530;  // 0x530
     unsigned int q598;  // 0x598
+    unsigned int u32_5D4;  // 0x5D4
     unsigned char q608;  // 0x608
     unsigned char q650;  // 0x650
     unsigned char q654;  // 0x654
+    unsigned int u32_6C4;  // 0x6C4
     void* q710;  // 0x710
-    unsigned int Audio_field_0x14;
-    unsigned int Audio_field_0x34;
-    unsigned int Audio_field_0x38;
-    unsigned int Audio_field_0xC;
-    unsigned int __pad_0;
-    unsigned int __pad_10;
-    unsigned int __pad_18;
-    unsigned int __pad_3C;
-    unsigned int u32_C4;
 // --- flat members (END) ---
     int GetChannelStatus();  // 0x402720
     int ReleaseChannelRefs();  // 0x404D80

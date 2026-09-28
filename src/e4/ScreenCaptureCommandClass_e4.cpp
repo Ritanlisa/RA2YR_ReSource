@@ -11,15 +11,15 @@
 namespace gamemd {
 unsigned int * ScreenCaptureCommandClass::Constructor()
 {
-  *(unsigned int *)this->__pad_0 = (void*)&ScreenCaptureCommandClass_vftable; /*0x537b42*/
-  return this->__pad_0; /*0x537b48*/
+  *(_DWORD *)this->CommandClass = &(void*)(void*)&ScreenCaptureCommandClass_vftable; /*0x537b42*/
+  return this->CommandClass; /*0x537b48*/
 }
 } // namespace gamemd
 // 0x537B50
 namespace gamemd {
 char * ScreenCaptureCommandClass::AddRef()
 {
-  return (char *)(aScreencapture);
+  return aScreencapture; /*0x537b55*/
 }
 } // namespace gamemd
 // 0x537B60

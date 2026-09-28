@@ -20,14 +20,6 @@ struct IPXConnClass {
     int q024;  // 0x24
     unsigned short RemoteSocket;  // 0x28
     unsigned char padding;  // 0x2A
-    unsigned int RemoteAddress6;
-    unsigned int __pad_0;
-    unsigned int initConnection;
-    unsigned int u32_4C;
-    unsigned int u32_54;
-    unsigned int u32_58;
-    unsigned int u32_5C;
-    unsigned int u32_64;
 // --- flat members (END) ---
     void * constructor(int aP1, SessionClass * aP2, IPXConnClass * aP3, IPXConnClass * aP4, unsigned int * a5, int a7, wchar_t * Source, int aP8);
 };

@@ -29,7 +29,7 @@
 namespace gamemd {
 void AnimClass::Destruct(AbstractClass * a2)
 {
-  unsigned char *AnimClass_field_0xCC; // ebp
+  _BYTE *AnimClass_field_0xCC; // ebp
   int v3; // ecx
   char *v4; // edx
   Coord *AnimClass_field_0xC8; // eax
@@ -39,25 +39,25 @@ void AnimClass::Destruct(AbstractClass * a2)
   int v9; // eax
   int v10; // eax
   AnimClass *v12; // [esp+10h] [ebp-10h] BYREF
-  unsigned int v13[3]; // [esp+14h] [ebp-Ch] BYREF
+  _DWORD v13[3]; // [esp+14h] [ebp-Ch] BYREF
 
-  a2->AnimClass_field_0x0 = (unsigned int)((void*)&AnimClass_vftable);
-  a2->AnimClass_field_0x4 = (unsigned int)((void*)&AnimClass_vftable);
-  a2->AnimClass_field_0x8 = (void*)&AnimClass_vftable; /*0x4228f8*/
-  *(unsigned int *)a2->__pad_C = &off_7E3328; /*0x4228ff*/
+  a2->AnimClass_field_0x0 = &(void*)(void*)&AnimClass_vftable; /*0x4228eb*/
+  a2->AnimClass_field_0x4 = &(void*)(void*)&AnimClass_vftable; /*0x4228f1*/
+  a2->AnimClass_field_0x8 = &(void*)(void*)&AnimClass_vftable; /*0x4228f8*/
+  *(_DWORD *)a2->__pad_C = &off_7E3328; /*0x4228ff*/
   AbstractClass::AnnounceExpiredPointer(&a2->AnimClass_field_0x0, 1); /*0x422906*/
-  if ( unk_A8E9A0 ) /*0x422914*/
+  if ( byte_A8E9A0 ) /*0x422914*/
   {
-    AnimClass_field_0xCC = (unsigned char *)(a2->AnimClass_field_0xCC);
+    AnimClass_field_0xCC = a2->AnimClass_field_0xCC; /*0x42291a*/
     if ( AnimClass_field_0xCC ) /*0x422922*/
     {
       v3 = 0; /*0x42292a*/
       if ( dword_A8E9B8 > 0 ) /*0x42292e*/
       {
-        v4 = (char *)unk_A8E9AC; /*0x422930*/
+        v4 = (char *)dword_A8E9AC; /*0x422930*/
         do /*0x42294a*/
         {
-          if ( *(AnimClass **)v4 != a2 && *(unsigned char **)(*(unsigned int *)v4 + 204) == AnimClass_field_0xCC ) /*0x422942*/
+          if ( *(AnimClass **)v4 != a2 && *(_BYTE **)(*(_DWORD *)v4 + 204) == AnimClass_field_0xCC ) /*0x422942*/
             break; /*0x422942*/
           ++v3; /*0x422944*/
           v4 += 4; /*0x422945*/
@@ -66,24 +66,24 @@ void AnimClass::Destruct(AbstractClass * a2)
       }
       if ( v3 == dword_A8E9B8 ) /*0x42294e*/
       {
-        (*(void (__thiscall **)(void *))(*(unsigned int *)AnimClass_field_0xCC + 380))(a2->AnimClass_field_0xCC); /*0x422955*/
+        (*(void (__thiscall **)(void *))(*(_DWORD *)AnimClass_field_0xCC + 380))(a2->AnimClass_field_0xCC); /*0x422955*/
         AnimClass_field_0xCC[132] = 0; /*0x42295b*/
       }
       a2->AnimClass_field_0xCC = 0; /*0x422961*/
     }
-    AnimClass_field_0xC8 = (gamemd::Coord *)(a2->AnimClass_field_0xC8);
+    AnimClass_field_0xC8 = a2->AnimClass_field_0xC8; /*0x422967*/
     if ( AnimClass_field_0xC8 && AnimClass_field_0xC8[2].__pad_C[201] ) /*0x422971*/
     {
-      v13[0] = (unsigned int)((gamemd::CellClass *)(a2->AnimClass_field_0x9C));
-      v13[1] = (unsigned int)((gamemd::CellClass *)(*(unsigned int *)a2->__pad_A0));
-      v13[2] = (gamemd::CellClass *)(a2->AnimClass_field_0xA4);
+      v13[0] = a2->AnimClass_field_0x9C; /*0x422985*/
+      v13[1] = *(_DWORD *)a2->__pad_A0; /*0x422991*/
+      v13[2] = a2->AnimClass_field_0xA4; /*0x422998*/
       v6 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v13); /*0x4229a1*/
       v6->flags[0] &= ~0x20000u; /*0x4229b7*/
     }
-    if ( (uint8_t)ObjectClass::Undeploy((ObjectClass *)a2) ) /*0x4229bb*/
+    if ( (unsigned __int8)ObjectClass::Undeploy((ObjectClass *)a2) ) /*0x4229bb*/
       RemoveTarget((int)a2); /*0x4229ca*/
   }
-  v12 = (gamemd::AnimClass *)(a2);
+  v12 = a2; /*0x4229df*/
   v7 = (*(int (__thiscall **)(int *, AnimClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x4229e3*/
          &g_BuildingLoadQueue_Array.LightVisibility,
          &v12);
@@ -92,7 +92,7 @@ void AnimClass::Destruct(AbstractClass * a2)
     --g_BuildingLoadQueue_Array.LightBlueTint; /*0x4229f8*/
     for ( ; /*0x4229fe*/
           v7 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
+          *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7 - 4) = *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity
                                                                                          + 4 * v7) )
     {
       ++v7; /*0x422a06*/
@@ -109,16 +109,16 @@ void AnimClass::Destruct(AbstractClass * a2)
   a2->AnimClass_field_0xC8 = 0; /*0x422a59*/
   if ( AbstractClass::GetVtable3((AbstractClass *)&a2->AnimClass_field_0x4) == -2 ) /*0x422a67*/
   {
-    v12 = (gamemd::AnimClass *)(a2);
+    v12 = a2; /*0x422a79*/
     v9 = (*((int (__thiscall **)(void **, AnimClass **))stru_A83D50.SuperClass_field_0xB0 + 4))( /*0x422a7d*/
            &stru_A83D50.SuperClass_field_0xB0,
            &v12);
     if ( v9 != -1 && v9 < *(int *)&stru_A83D50.__pad_B4[12] ) /*0x422a91*/
     {
-      --*(unsigned int *)&stru_A83D50.__pad_B4[12]; /*0x422a96*/
+      --*(_DWORD *)&stru_A83D50.__pad_B4[12]; /*0x422a96*/
       for ( ; /*0x422a9c*/
             v9 < *(int *)&stru_A83D50.__pad_B4[12];
-            *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_B4 + 4 * v9 - 4) = *(unsigned int *)(*(unsigned int *)stru_A83D50.__pad_B4
+            *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_B4 + 4 * v9 - 4) = *(_DWORD *)(*(_DWORD *)stru_A83D50.__pad_B4
                                                                                   + 4 * v9) )
       {
         ++v9; /*0x422aa4*/
@@ -127,14 +127,14 @@ void AnimClass::Destruct(AbstractClass * a2)
   }
   else
   {
-    v12 = (gamemd::AnimClass *)(a2);
-    v10 = (*(int (__thiscall **)(unsigned int *, AnimClass **))(dword_A8E9A8 + 16))(&dword_A8E9A8, &v12); /*0x422ad9*/
+    v12 = a2; /*0x422ad5*/
+    v10 = (*(int (__thiscall **)(_DWORD *, AnimClass **))(dword_A8E9A8 + 16))(&dword_A8E9A8, &v12); /*0x422ad9*/
     if ( v10 != -1 && v10 < dword_A8E9B8 && v10 < --dword_A8E9B8 ) /*0x422af4*/
     {
       do /*0x422b0c*/
       {
         ++v10; /*0x422afc*/
-        *((unsigned int *)unk_A8E9AC + v10 - 1) = *((unsigned int *)unk_A8E9AC + v10); /*0x422b00*/
+        *((_DWORD *)dword_A8E9AC + v10 - 1) = *((_DWORD *)dword_A8E9AC + v10); /*0x422b00*/
       }
       while ( v10 < dword_A8E9B8 ); /*0x422b0c*/
     }
@@ -151,15 +151,15 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   IUnknown *AnimClass_field_0xBC; // eax
   int v7; // edi
   int v8; // ecx
-  int16_t v9; // bx
+  __int16 v9; // bx
   int v10; // eax
   int v11; // ebp
   int v12; // eax
   int v13; // ebp
   int v14; // eax
-  uint8_t v15; // di
+  unsigned __int8 v15; // di
   int v16; // eax
-  int16_t v17; // ax
+  __int16 v17; // ax
   int v19; // ebx
   Coord *AnimClass_field_0xC8; // eax
   Coord *v21; // eax
@@ -167,14 +167,14 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   double v23; // st7
   double v24; // st6
   Coord *v25; // eax
-  unsigned int *v26; // eax
+  _DWORD *v26; // eax
   int v27; // ecx
   int v28; // eax
   char v29; // al
-  unsigned int *v30; // eax
+  _DWORD *v30; // eax
   int *v31; // edi
   Coord *v32; // ecx
-  unsigned int *v33; // eax
+  _DWORD *v33; // eax
   int v34; // eax
   int v35; // edx
   int v36; // ecx
@@ -183,9 +183,9 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   int v39; // eax
   char v40; // al
   float v41; // ebp
-  unsigned int *v42; // eax
+  _DWORD *v42; // eax
   CellClass *v43; // eax
-  unsigned int *v44; // eax
+  _DWORD *v44; // eax
   int v45; // eax
   int v46; // edx
   int v47; // eax
@@ -201,10 +201,10 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   int v57; // eax
   int v58; // edx
   int v59; // ecx
-  unsigned int *v60; // eax
+  _DWORD *v60; // eax
   CellClass *v61; // eax
   Coord *v62; // eax
-  unsigned int *FoundationSize; // eax
+  _DWORD *FoundationSize; // eax
   int v64; // ecx
   int v65; // edi
   int (__thiscall **v66)(AnimClass *); // edx
@@ -223,8 +223,8 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   int v79; // eax
   int v80; // [esp-20h] [ebp-130h]
   int v81; // [esp-20h] [ebp-130h]
-  uint8_t v84; // [esp+13h] [ebp-FDh]
-  uint8_t v85; // [esp+13h] [ebp-FDh]
+  unsigned __int8 v84; // [esp+13h] [ebp-FDh]
+  unsigned __int8 v85; // [esp+13h] [ebp-FDh]
   char v86; // [esp+13h] [ebp-FDh]
   int v87; // [esp+14h] [ebp-FCh]
   int v88; // [esp+14h] [ebp-FCh]
@@ -234,12 +234,12 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   float v92; // [esp+14h] [ebp-FCh]
   int v94; // [esp+14h] [ebp-FCh]
   int v95; // [esp+14h] [ebp-FCh]
-  uint8_t v96; // [esp+1Ah] [ebp-F6h]
-  uint8_t v97; // [esp+1Ah] [ebp-F6h]
-  uint8_t v98; // [esp+1Bh] [ebp-F5h]
-  uint8_t v99; // [esp+1Bh] [ebp-F5h]
-  uint8_t v100[4]; // [esp+1Ch] [ebp-F4h] BYREF
-  int16_t v101[2]; // [esp+20h] [ebp-F0h] BYREF
+  unsigned __int8 v96; // [esp+1Ah] [ebp-F6h]
+  unsigned __int8 v97; // [esp+1Ah] [ebp-F6h]
+  unsigned __int8 v98; // [esp+1Bh] [ebp-F5h]
+  unsigned __int8 v99; // [esp+1Bh] [ebp-F5h]
+  unsigned __int8 v100[4]; // [esp+1Ch] [ebp-F4h] BYREF
+  __int16 v101[2]; // [esp+20h] [ebp-F0h] BYREF
   int v102; // [esp+24h] [ebp-ECh]
   int v103; // [esp+28h] [ebp-E8h]
   unsigned int v104; // [esp+2Ch] [ebp-E4h]
@@ -252,37 +252,37 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
 
   if ( byte_8A0DF0 /*0x422ccb*/
     && g_ZBufferDescriptor
-    && (uint8_t)ObjectClass::StepCleanup((ObjectClass *)this, &g_INI_Key_Civilian.__pad_16D[31]) )
+    && (unsigned __int8)ObjectClass::StepCleanup((ObjectClass *)this, &g_INI_Key_Civilian.__pad_16D[31]) )
   {
-    AnimClass_field_0xB4 = (IUnknown *)(this->AnimClass_field_0xB4);
-    AnimClass_field_0xC0 = (IUnknown *)(this->AnimClass_field_0xC0);
+    AnimClass_field_0xB4 = this->AnimClass_field_0xB4; /*0x422cd8*/
+    AnimClass_field_0xC0 = this->AnimClass_field_0xC0; /*0x422ce4*/
     AnimClass_field_0xBC = this->AnimClass_field_0xBC; /*0x422cea*/
     if ( AnimClass_field_0xB4 != (IUnknown *)-1 ) /*0x422cf3*/
     {
-      if ( *(unsigned int *)&stru_A8EB00.gapE4[416] - (int)AnimClass_field_0xB4 >= (int)AnimClass_field_0xBC ) /*0x422cff*/
+      if ( *(_DWORD *)&stru_A8EB00.?[416] - (int)AnimClass_field_0xB4 >= (int)AnimClass_field_0xBC ) /*0x422cff*/
         AnimClass_field_0xBC = 0; /*0x422d05*/
       else
         AnimClass_field_0xBC = (IUnknown *)((char *)AnimClass_field_0xBC /*0x422d01*/
-                                          - (*(unsigned int *)&stru_A8EB00.gapE4[416]
-                                           - (unsigned int)AnimClass_field_0xB4));
+                                          - (*(_DWORD *)&stru_A8EB00.?[416]
+                                           - (_DWORD)AnimClass_field_0xB4));
     }
     v7 = (int)AnimClass_field_0xC0 /*0x422d12*/
-       + (int)this->AnimClass_field_0xAC * (unsigned int)AnimClass_field_0xC0
-       - (unsigned int)AnimClass_field_0xBC;
-    v8 = (int)((unsigned int)AnimClass_field_0xC0 * (*((int (__thiscall **)(AnimClass *))this->AnimClass_field_0x0 + 123))(this));
-    v9 = (int)(v7 + 8);
-    v10 = (int)(*a2 + 2 * (v7 + 8));
-    *(unsigned int *)v101 = *a2 - 2 * (v7 + 8); /*0x422d3c*/
+       + (int)this->AnimClass_field_0xAC * (_DWORD)AnimClass_field_0xC0
+       - (_DWORD)AnimClass_field_0xBC;
+    v8 = (_DWORD)AnimClass_field_0xC0 * (*((int (__thiscall **)(AnimClass *))this->AnimClass_field_0x0 + 123))(this); /*0x422d23*/
+    v9 = v7 + 8; /*0x422d28*/
+    v10 = *a2 + 2 * (v7 + 8); /*0x422d30*/
+    *(_DWORD *)v101 = *a2 - 2 * (v7 + 8); /*0x422d3c*/
     v106 = v10; /*0x422d40*/
     v11 = a2[1]; /*0x422d47*/
     v107 = v7 + 8 + v11; /*0x422d4d*/
     v102 = v11 - (v7 + 8); /*0x422d51*/
     v104 = (v8 - v7) << 8; /*0x422d5e*/
-    *(unsigned int *)v100 = (int)v104 / v8; /*0x422d67*/
+    *(_DWORD *)v100 = (int)v104 / v8; /*0x422d67*/
     if ( (int)v104 / v8 >= 0 ) /*0x422d6b*/
     {
       if ( (int)v104 / v8 > 255 ) /*0x422d7c*/
-        *(unsigned int *)v100 = 255; /*0x422d7e*/
+        *(_DWORD *)v100 = 255; /*0x422d7e*/
     }
     else
     {
@@ -320,20 +320,20 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     v16 = (*((int (__thiscall **)(AnimClass *))this->AnimClass_field_0x0 + 116))(this); /*0x422e2d*/
     v17 = IDA_LOWORD(g_ZBufferDescriptor->Stream_field_04) /*0x422e87*/
         + IDA_LOWORD(g_ZBufferDescriptor[1].Stream_field_10)
-        - *((unsigned short *)a2 + 2)
+        - *((_WORD *)a2 + 2)
         - IDA_LOWORD(DSurface_ViewBounds.field_4)
         + this->AnimClass_field_0x100
-        + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184]
+        + *(_DWORD *)&this->AnimClass_field_0xC8[2].__pad_C[184]
         - ZCoordToScreenY(v16)
         - 2;
-    *(float *)&v104 = (double)(uint16_t)(v17 + v9) * 0.000015259022; /*0x422eab*/
-    *(float *)&v103 = (double)(uint16_t)(v17 - v9) * 0.000015259022; /*0x422eb9*/
+    *(float *)&v104 = (double)(unsigned __int16)(v17 + v9) * 0.000015259022; /*0x422eab*/
+    *(float *)&v103 = (double)(unsigned __int16)(v17 - v9) * 0.000015259022; /*0x422eb9*/
     ColorStruct::SetRGB(&v110, v100[0], v13, v15); /*0x422ebd*/
     ColorStruct::SetRGB(&v111, v100[0], v13, v15); /*0x422ecc*/
     *(float *)&v88 = (float)v102; /*0x422ede*/
     v88 = v88; /*0x422ee6*/
     *(float *)v100 = (float)*(int *)v101; /*0x422eef*/
-    v19 = *(unsigned int *)v100; /*0x422ef3*/
+    v19 = *(_DWORD *)v100; /*0x422ef3*/
     Tactical::SetCellTransform(v110.__pad_0, 0, *(int *)v100, v88, v104, 0, 0); /*0x422efa*/
     *(float *)v100 = (float)v107; /*0x422f0f*/
     Tactical::SetCellTransform(v110.__pad_0, 1, v19, *(int *)v100, v103, 0, 1065353216); /*0x422f1f*/
@@ -346,7 +346,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     StructTable::Append(dword_8A0E10, &v111); /*0x422fba*/
     return; /*0x422fc9*/
   }
-  if ( *(unsigned int *)&g_MissionQueueFrame.waypoints[282] < (unsigned int)PingPongBuffer::GetWriteOffset() /*0x422fe6*/
+  if ( *(_DWORD *)&g_MissionQueueFrame.waypoints[282] < (unsigned int)PingPongBuffer::GetWriteOffset() /*0x422fe6*/
     && *(int *)&this->AnimClass_field_0xC8[2].__pad_C[72] > 1 )
   {
     return; /*0x422fe6*/
@@ -354,7 +354,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   if ( this->__pad_194[9] ) /*0x422fec*/
     return; /*0x422fec*/
   AnimClass_field_0xC8 = this->AnimClass_field_0xC8; /*0x422ffa*/
-  if ( *(unsigned int *)&AnimClass_field_0xC8[2].__pad_C[72] > stru_A8EB00.parent_gap[30] /*0x42301e*/
+  if ( *(_DWORD *)&AnimClass_field_0xC8[2].__pad_C[72] > stru_A8EB00.ObjectTypeClass[30] /*0x42301e*/
     || this->__pad_194[5] && AnimClass_field_0xC8[2].__pad_C[232] )
   {
     return; /*0x42301e*/
@@ -365,7 +365,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   v21 = this->AnimClass_field_0xC8; /*0x42303f*/
   AnimClass_field_0x190 = this->AnimClass_field_0x190; /*0x42304b*/
   AnimClass_field_0xAC = this->AnimClass_field_0xAC; /*0x423051*/
-  v104 = (unsigned int)AnimClass_field_0xAC + *(unsigned int *)&v21[2].__pad_C[40]; /*0x42305d*/
+  v104 = (unsigned int)AnimClass_field_0xAC + *(_DWORD *)&v21[2].__pad_C[40]; /*0x42305d*/
   if ( this->__pad_118[1] ) /*0x423061*/
   {
     if ( v21[2].__pad_C[220] ) /*0x42306b*/
@@ -373,11 +373,11 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     else
       AnimClass_field_0x190 |= 4u; /*0x42307a*/
   }
-  if ( *(unsigned int *)&v21[2].__pad_C[76] <= stru_A8EB00.parent_gap[30] ) /*0x42308b*/
+  if ( *(_DWORD *)&v21[2].__pad_C[76] <= stru_A8EB00.ObjectTypeClass[30] ) /*0x42308b*/
   {
     if ( !v21[2].__pad_C[222] ) /*0x423095*/
     {
-      v28 = *(unsigned int *)&v21[2].__pad_C[96]; /*0x423183*/
+      v28 = *(_DWORD *)&v21[2].__pad_C[96]; /*0x423183*/
       if ( v28 <= 0 ) /*0x42318b*/
       {
         v29 = this->__pad_178[0]; /*0x4231c1*/
@@ -437,32 +437,32 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   LABEL_47:
   if ( (AnimClass_field_0x190 & 1) == 0 ) /*0x423101*/
     IDA_BYTE1(AnimClass_field_0x190) |= 8u; /*0x423103*/
-  *(unsigned int *)v101 = (*((int (__thiscall **)(AnimClass *))this->AnimClass_field_0x0 + 114))(this); /*0x423110*/
+  *(_DWORD *)v101 = (*((int (__thiscall **)(AnimClass *))this->AnimClass_field_0x0 + 114))(this); /*0x423110*/
   v25 = this->AnimClass_field_0xC8; /*0x423114*/
   v106 = 1000; /*0x42311a*/
   if ( v25[2].__pad_C[201] ) /*0x423122*/
   {
-    v105[0] = *(unsigned int *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)&dword_A83D4C[134].__pad_90[4]) /*0x42314b*/
+    v105[0] = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * *(_DWORD *)&dword_A83D4C[134].__pad_90[4]) /*0x42314b*/
                         + 780);
     if ( v25[2].__pad_C[209] ) /*0x42314f*/
       goto LABEL_78; /*0x423157*/
-    v26 = (unsigned int *)(*((int (__thiscall **)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v64); /*0x423166*/
-    v27 = *(int16_t *)Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v26)->CellClass_field_10C; /*0x423177*/
+    v26 = (_DWORD *)(*((int (__thiscall **)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v64); /*0x423166*/
+    v27 = *(__int16 *)Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v26)->CellClass_field_10C; /*0x423177*/
     goto LABEL_77; /*0x42317e*/
   }
   if ( this->__pad_194[2] ) /*0x4231f3*/
   {
-    v30 = (gamemd::Coord *)((unsigned int *)(*((int (__thiscall **)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v64));
+    v30 = (_DWORD *)(*((int (__thiscall **)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v64); /*0x42320a*/
     IDA_LOWORD(v91) = *v30 / 256; /*0x423220*/
     IDA_HIWORD(v91) = v30[1] / 256; /*0x423238*/
     *(float *)v100 = v91; /*0x423241*/
-    v31 = (int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)v100); /*0x423250*/
+    v31 = (int *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)v100); /*0x423250*/
     if ( !v31[13] ) /*0x423252*/
       TacticalClass::SetView(v31, 0, 0x10000, 0, 1000, 1000, 1000); /*0x423273*/
     v32 = this->AnimClass_field_0xC8; /*0x42327b*/
     v105[0] = v31[13]; /*0x423281*/
     if ( !v32[2].__pad_C[209] ) /*0x423285*/
-      v106 = *((int16_t *)v31 + 134); /*0x42329a*/
+      v106 = *((__int16 *)v31 + 134); /*0x42329a*/
   }
   else if ( this->AnimClass_field_0xD4 ) /*0x4232a3*/
   {
@@ -472,16 +472,16 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   }
   else
   {
-    v105[0] = *(unsigned int *)&stru_87F5F0.__pad_58[120]; /*0x4232d4*/
+    v105[0] = *(_DWORD *)&stru_87F5F0.__pad_58[120]; /*0x4232d4*/
     if ( v25[2].__pad_C[213] ) /*0x4232d8*/
-      v105[0] = *(unsigned int *)(**(unsigned int **)&stru_B054D0.m_1[3] + 780); /*0x4232f0*/
+      v105[0] = *(_DWORD *)(**(_DWORD **)&stru_B054D0.m_1[3] + 780); /*0x4232f0*/
     if ( !v25[2].__pad_C[209] ) /*0x4232f4*/
     {
-      v33 = (unsigned int *)(*((int (__thiscall **)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v64); /*0x423307*/
+      v33 = (_DWORD *)(*((int (__thiscall **)(AnimClass *, int *))this->AnimClass_field_0x0 + 43))(this, &v64); /*0x423307*/
       IDA_LOWORD(v92) = *v33 / 256; /*0x42331d*/
       IDA_HIWORD(v92) = v33[1] / 256; /*0x423336*/
       *(float *)v100 = v92; /*0x423343*/
-      v27 = *((int16_t *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)v100) + 133); /*0x42334d*/
+      v27 = *((__int16 *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)v100) + 133); /*0x42334d*/
   LABEL_77:
       v106 = v27; /*0x423354*/
     }
@@ -491,10 +491,10 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   {
     v34 = ZCoordToScreenY(*(int *)v101); /*0x423373*/
     v35 = *a2; /*0x423384*/
-    v36 = *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184] + v34 + a2[1]; /*0x42338b*/
+    v36 = *(_DWORD *)&this->AnimClass_field_0xC8[2].__pad_C[184] + v34 + a2[1]; /*0x42338b*/
     AnimClass_field_0x0 = (int (__thiscall **)(AnimClass *))this->AnimClass_field_0x0; /*0x42339a*/
     v102 = v36; /*0x42339c*/
-    *(unsigned int *)v101 = v35; /*0x4233a2*/
+    *(_DWORD *)v101 = v35; /*0x4233a2*/
     v38 = AnimClass_field_0x0[116](this); /*0x4233a6*/
     v39 = ZCoordToScreenY(v38); /*0x4233ae*/
     DrawToSurfaceSHP( /*0x4233e9*/
@@ -506,7 +506,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
       aP5,
       9729,
       0,
-      *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184] - v39,
+      *(_DWORD *)&this->AnimClass_field_0xC8[2].__pad_C[184] - v39,
       0,
       1000,
       0,
@@ -520,7 +520,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   *(float *)v100 = 0.0; /*0x4233f8*/
   if ( !v40 ) /*0x4233fc*/
     goto LABEL_99; /*0x4233fc*/
-  v42 = (unsigned int *)(*((int (__thiscall **)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))(this, &v64); /*0x42340b*/
+  v42 = (_DWORD *)(*((int (__thiscall **)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))(this, &v64); /*0x42340b*/
   v43 = Coord::To_Cell((Coord *)&stru_87F5F0.__pad_58[416], v42); /*0x423414*/
   v44 = Cell::IsBridge((Cell *)v43); /*0x42341b*/
   v44 = v44; /*0x423422*/
@@ -528,12 +528,12 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     goto LABEL_99; /*0x423426*/
   if ( v44[165] ) /*0x42342e*/
   {
-    v45 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6308); /*0x423442*/
-    v46 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2 * v45; /*0x423448*/
-    *(unsigned int *)v101 = v45 + v46; /*0x423454*/
-    v98 = *(unsigned char *)(v45 + v46 + 6260); /*0x42345e*/
-    v96 = *(unsigned char *)(v45 + v46 + 4174 + 2087); /*0x42346d*/
-    v84 = *(unsigned char *)(v45 + v46 + 6262); /*0x423477*/
+    v45 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6308); /*0x423442*/
+    v46 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2 * v45; /*0x423448*/
+    *(_DWORD *)v101 = v45 + v46; /*0x423454*/
+    v98 = *(_BYTE *)(v45 + v46 + 6260); /*0x42345e*/
+    v96 = *(_BYTE *)(v45 + v46 + 4174 + 2087); /*0x42346d*/
+    v84 = *(_BYTE *)(v45 + v46 + 6262); /*0x423477*/
     v47 = DDraw::GetStatus() - 1; /*0x423480*/
     if ( v47 ) /*0x423481*/
     {
@@ -553,7 +553,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     {
       v50 = v96; /*0x4234a7*/
     }
-    IDA_LOWORD(v49) = (uint8_t)v50 >> 1; /*0x4234b2*/
+    IDA_LOWORD(v49) = (unsigned __int8)v50 >> 1; /*0x4234b2*/
     IDA_LOWORD(v48) = v98; /*0x4234b4*/
     v48 *= 32; /*0x4234ba*/
     v51 = v48 | v49; /*0x4234bd*/
@@ -563,18 +563,18 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   LABEL_89:
     IDA_LOWORD(v49) = v98; /*0x4234d2*/
     IDA_LOWORD(v48) = v84; /*0x4234d8*/
-    IDA_LOWORD(v50) = (uint8_t)v50 >> 1; /*0x4234e0*/
+    IDA_LOWORD(v50) = (unsigned __int8)v50 >> 1; /*0x4234e0*/
     IDA_LODWORD(v41) |= v48 | (32 * ((32 * v49) | v50)); /*0x4234ee*/
     *(float *)v100 = v41; /*0x4234f0*/
   }
-  if ( !(*(uint8_t (__thiscall **)(unsigned int *))(*v44 + 352))(v44) || v44[113] != 1 ) /*0x423513*/
+  if ( !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*v44 + 352))(v44) || v44[113] != 1 ) /*0x423513*/
     goto LABEL_99; /*0x423513*/
-  v52 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6320); /*0x42351f*/
-  v53 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 2 * v52; /*0x423525*/
-  *(unsigned int *)v101 = v52 + v53; /*0x423531*/
-  v99 = *(unsigned char *)(v52 + v53 + 6260); /*0x42353b*/
-  v85 = *(unsigned char *)(v52 + v53 + 4174 + 2087); /*0x42354a*/
-  v97 = *(unsigned char *)(v52 + v53 + 6262); /*0x423554*/
+  v52 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6320); /*0x42351f*/
+  v53 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 2 * v52; /*0x423525*/
+  *(_DWORD *)v101 = v52 + v53; /*0x423531*/
+  v99 = *(_BYTE *)(v52 + v53 + 6260); /*0x42353b*/
+  v85 = *(_BYTE *)(v52 + v53 + 4174 + 2087); /*0x42354a*/
+  v97 = *(_BYTE *)(v52 + v53 + 6262); /*0x423554*/
   v54 = DDraw::GetStatus() - 1; /*0x42355d*/
   if ( v54 ) /*0x42355e*/
   {
@@ -596,7 +596,7 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   {
     v57 = v85; /*0x423586*/
   }
-  IDA_LOWORD(v56) = (uint8_t)v57 >> 1; /*0x423591*/
+  IDA_LOWORD(v56) = (unsigned __int8)v57 >> 1; /*0x423591*/
   IDA_LOWORD(v55) = v99; /*0x423593*/
   v55 *= 32; /*0x423599*/
   v59 = v55 | v56; /*0x42359c*/
@@ -606,16 +606,16 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   LABEL_98:
   IDA_LOWORD(v56) = v99; /*0x4235b1*/
   IDA_LOWORD(v55) = v97; /*0x4235b7*/
-  IDA_LOWORD(v57) = (uint8_t)v57 >> 1; /*0x4235bf*/
+  IDA_LOWORD(v57) = (unsigned __int8)v57 >> 1; /*0x4235bf*/
   IDA_LODWORD(v41) |= v55 | (32 * ((32 * v56) | v57)); /*0x4235cd*/
   *(float *)v100 = v41; /*0x4235cf*/
   LABEL_99:
-  v60 = (unsigned int *)(*((int (__thiscall **)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))(this, &v64); /*0x4235d3*/
+  v60 = (_DWORD *)(*((int (__thiscall **)(AnimClass *, int *))this->AnimClass_field_0x0 + 18))(this, &v64); /*0x4235d3*/
   IDA_LOWORD(v94) = *v60 / 256; /*0x4235ef*/
   IDA_HIWORD(v94) = v60[1] / 256; /*0x423608*/
-  *(unsigned int *)v101 = v94; /*0x423615*/
+  *(_DWORD *)v101 = v94; /*0x423615*/
   v61 = (CellClass *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v101); /*0x42361a*/
-  if ( (uint8_t)CellClass::QuickPassable(v61) ) /*0x423621*/
+  if ( (unsigned __int8)CellClass::QuickPassable(v61) ) /*0x423621*/
   {
     v41 = 0.0; /*0x42362a*/
     *(float *)v100 = 0.0; /*0x42362c*/
@@ -626,22 +626,22 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
     FoundationSize = Building::GetFoundationSize(&v64, 0); /*0x42364f*/
     v64 = *a2; /*0x423657*/
     v65 = a2[1]; /*0x423659*/
-    *(unsigned int *)v101 = FoundationSize[3]; /*0x42365c*/
+    *(_DWORD *)v101 = FoundationSize[3]; /*0x42365c*/
     v66 = (int (__thiscall **)(AnimClass *))this->AnimClass_field_0x0; /*0x423663*/
     v64 = v64; /*0x423667*/
     v105[0] = v64; /*0x42366d*/
-    v95 = *(unsigned int *)v101 / 2; /*0x423673*/
-    v67 = v65 - *(unsigned int *)v101 / 2; /*0x423677*/
+    v95 = *(_DWORD *)v101 / 2; /*0x423673*/
+    v67 = v65 - *(_DWORD *)v101 / 2; /*0x423677*/
     v86 = 0; /*0x423679*/
     v68 = v66[116](this); /*0x42367e*/
     v69 = this->AnimClass_field_0x100 /*0x4236a1*/
-        + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184]
+        + *(_DWORD *)&this->AnimClass_field_0xC8[2].__pad_C[184]
         - ZCoordToScreenY(v68)
         - 50;
     IDA_BYTE1(AnimClass_field_0x190) |= 0x20u; /*0x4236a4*/
     do /*0x423719*/
     {
-      v70 = v67 + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184]; /*0x4236bb*/
+      v70 = v67 + *(_DWORD *)&this->AnimClass_field_0xC8[2].__pad_C[184]; /*0x4236bb*/
       v105[0] = v64; /*0x4236bd*/
       v105[1] = v70; /*0x4236c1*/
       DrawToSurfaceSHP( /*0x4236f7*/
@@ -663,23 +663,23 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
         0);
       if ( v67 < 0 ) /*0x4236fe*/
         v86 = 1; /*0x423700*/
-      v67 -= *(unsigned int *)v101; /*0x42370d*/
-      v69 -= *(unsigned int *)v101 + v95; /*0x423715*/
+      v67 -= *(_DWORD *)v101; /*0x42370d*/
+      v69 -= *(_DWORD *)v101 + v95; /*0x423715*/
     }
     while ( !v86 ); /*0x423719*/
   }
   else if ( v62[2].__pad_C[221] ) /*0x423728*/
   {
-    v109 = *(unsigned int *)&v62[2].__pad_C[184]; /*0x42373c*/
+    v109 = *(_DWORD *)&v62[2].__pad_C[184]; /*0x42373c*/
     v71 = a2[1]; /*0x423742*/
-    *(unsigned int *)v101 = *a2; /*0x42374c*/
+    *(_DWORD *)v101 = *a2; /*0x42374c*/
     v106 = v106; /*0x423756*/
     v72 = (int (__thiscall **)(AnimClass *))this->AnimClass_field_0x0; /*0x42375e*/
     v102 = v109 + v71; /*0x423766*/
     v73 = v72[116](this); /*0x42376a*/
     IDA_BYTE1(AnimClass_field_0x190) |= 0x20u; /*0x42379b*/
     v80 = this->AnimClass_field_0x100 /*0x42379e*/
-        + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184]
+        + *(_DWORD *)&this->AnimClass_field_0xC8[2].__pad_C[184]
         - ZCoordToScreenY(v73)
         - 3;
     DrawToSurfaceSHP( /*0x4237a9*/
@@ -703,11 +703,11 @@ void* AnimClass::Render(ConvertClass * a2, ConvertClass * aP5)
   else
   {
     v74 = *a2; /*0x4237b9*/
-    v102 = *(unsigned int *)&v62[2].__pad_C[184] + a2[1]; /*0x4237bb*/
-    *(unsigned int *)v101 = v74; /*0x4237cb*/
+    v102 = *(_DWORD *)&v62[2].__pad_C[184] + a2[1]; /*0x4237bb*/
+    *(_DWORD *)v101 = v74; /*0x4237cb*/
     v106 = v106; /*0x4237d2*/
     v75 = (*((int (__thiscall **)(AnimClass *))this->AnimClass_field_0x0 + 116))(this); /*0x4237d7*/
-    v76 = this->AnimClass_field_0x100 + *(unsigned int *)&this->AnimClass_field_0xC8[2].__pad_C[184] - ZCoordToScreenY(v75); /*0x4237ff*/
+    v76 = this->AnimClass_field_0x100 + *(_DWORD *)&this->AnimClass_field_0xC8[2].__pad_C[184] - ZCoordToScreenY(v75); /*0x4237ff*/
     v77 = AnimClass_field_0x190; /*0x423801*/
     IDA_BYTE1(v77) = IDA_BYTE1(AnimClass_field_0x190) | 0x20; /*0x423806*/
     DrawToSurfaceSHP( /*0x423827*/
@@ -763,7 +763,7 @@ int AnimClass::InWhichLayer_AttachedObjectLayer()
     return 2; /*0x424cba*/
   AnimClass_field_0xC8 = this->AnimClass_field_0xC8; /*0x424cc0*/
   if ( AnimClass_field_0xC8 ) /*0x424cc8*/
-    return *(unsigned int *)&AnimClass_field_0xC8[2].__pad_C[216]; /*0x424cca*/
+    return *(_DWORD *)&AnimClass_field_0xC8[2].__pad_C[216]; /*0x424cca*/
   else
     return 3; /*0x424cd1*/
 }
@@ -777,22 +777,22 @@ int AnimClass::SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2)
   int v5; // ecx
 
   AnimClass_field_0xD4 = aP0->AnimClass_field_0xD4; /*0x4253b6*/
-  if ( AnimClass_field_0xD4 && (v4 = *(unsigned int *)stru_B054D0.__tail_10 - 1, *(unsigned int *)stru_B054D0.__tail_10 - 1 >= 0) ) /*0x4253c8*/
+  if ( AnimClass_field_0xD4 && (v4 = *(_DWORD *)stru_B054D0.__tail_10 - 1, *(_DWORD *)stru_B054D0.__tail_10 - 1 >= 0) ) /*0x4253c8*/
   {
-    v5 = *(unsigned int *)&stru_B054D0.m_1[3] + 4 * v4; /*0x4253d0*/
-    while ( AnimClass_field_0xD4 != *(IUnknown **)(*(unsigned int *)v5 + 780) ) /*0x4253db*/
+    v5 = *(_DWORD *)&stru_B054D0.m_1[3] + 4 * v4; /*0x4253d0*/
+    while ( AnimClass_field_0xD4 != *(IUnknown **)(*(_DWORD *)v5 + 780) ) /*0x4253db*/
     {
       --v4; /*0x4253dd*/
       v5 -= 4; /*0x4253de*/
       if ( v4 < 0 ) /*0x4253e3*/
         goto LABEL_6; /*0x4253e3*/
     }
-    *(unsigned int *)aP0->__pad_D8 = v4; /*0x425404*/
+    *(_DWORD *)aP0->__pad_D8 = v4; /*0x425404*/
   }
   else
   {
   LABEL_6:
-    *(unsigned int *)aP0->__pad_D8 = -1; /*0x4253e5*/
+    *(_DWORD *)aP0->__pad_D8 = -1; /*0x4253e5*/
   }
   return AbstractClass::SaveLoad_Prefix((int *)aP0, a1, aP2); /*0x4253ff*/
 }

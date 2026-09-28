@@ -22,7 +22,7 @@ int Debug::ScrollText(CellStruct * aP1)
   int v7; // edi
   const char *v9; // eax
   int v10; // eax
-  unsigned int *v11; // [esp+4h] [ebp-10h]
+  _DWORD *v11; // [esp+4h] [ebp-10h]
   char *v12; // [esp+8h] [ebp-Ch]
   int v13; // [esp+Ch] [ebp-8h]
   const char *i; // [esp+10h] [ebp-4h]
@@ -42,9 +42,9 @@ int Debug::ScrollText(CellStruct * aP1)
     v5 = v5; /*0x5bd131*/
     if ( v5 < v7 ) /*0x5bd133*/
     {
-      v12 = (const char *)((char *)(this + v13 + 20 * v5 + 5 * v5));
-      v9 = (const char *)(&aP1[-v5]);
-      v11 = (const char *)((unsigned int *)(&this->u32_10 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)));
+      v12 = (char *)(this + v13 + 20 * v5 + 5 * v5); /*0x5bd148*/
+      v9 = &aP1[-v5]; /*0x5bd15c*/
+      v11 = (_DWORD *)(&this->u32_10 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)); /*0x5bd15e*/
       for ( i = &aP1[-v5]; ; v9 = i ) /*0x5bd162*/
       {
         v15 = v9[v5]; /*0x5bd16f*/
@@ -116,8 +116,8 @@ char Debug::Printf()
   va_list va; // [esp+10Ch] [ebp+Ch] BYREF
 
   va_start(va, Format);
-  result = g_MiscFlag; /*0x5bd1f0*/
-  if ( g_MiscFlag ) /*0x5bd1fd*/
+  result = byte_ABF23A; /*0x5bd1f0*/
+  if ( byte_ABF23A ) /*0x5bd1fd*/
   {
     vsprintf(Buffer, Format, va); /*0x5bd214*/
     Buffer[255] = 0; /*0x5bd227*/
@@ -131,9 +131,9 @@ char Debug::Printf()
 namespace gamemd {
 char Debug_Helper(ObjectClass * aP0)
 {
-  ObjectClass * result;
+  char result; // al
 
-  result = (gamemd::ObjectClass *)((char)(aP0));
+  result = aP0; /*0x5bd360*/
   switch ( aP0 ) /*0x5bd366*/
   {
     case 10: /*0x5bd366*/
@@ -160,6 +160,6 @@ char Debug_Helper(ObjectClass * aP0)
     case -76: /*0x5bd366*/
       return 43; /*0x5bd3c0*/
   }
-  return (char)(result);
+  return result; /*0x5bd36a*/
 }
 } // namespace gamemd

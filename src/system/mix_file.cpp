@@ -422,20 +422,20 @@ REVERSE(0x5301a0, "MixFileClass::Bootstrap: IDA verified", "None")
 MixFileClass * * MixFileClass::Bootstrap()
 {
   int i; // edi
-  unsigned int *v2; // eax
+  _DWORD *v2; // eax
   char v3; // bl
   MixFileClass *v4; // eax
-  unsigned int *v5; // esi
+  _DWORD *v5; // esi
   int v6; // eax
   MixFileClass *v7; // eax
   MixFileClass *v8; // eax
-  unsigned int *v9; // eax
+  _DWORD *v9; // eax
   MixFileClass *v11; // eax
   MixFileClass *v12; // eax
-  unsigned int *v13; // eax
+  _DWORD *v13; // eax
   MixFileClass *v14; // eax
   MixFileClass *v15; // eax
-  unsigned int *v16; // eax
+  _DWORD *v16; // eax
   int v17; // [esp+10h] [ebp-68h]
   RawFileClass v18; // [esp+14h] [ebp-64h] BYREF
   char Buffer[64]; // [esp+38h] [ebp-40h] BYREF
@@ -446,26 +446,26 @@ MixFileClass * * MixFileClass::Bootstrap()
   {
     sprintf(Buffer, "EXPANDMD%02d.MIX", i); /*0x5301ca*/
     v2 = RawFileClass::Construct(&v18, (int)Buffer); /*0x5301db*/
-    v3 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v2 + 20))(v2, 0); /*0x5301ee*/
+    v3 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v2 + 20))(v2, 0); /*0x5301ee*/
     RawFileClass::Dtor(&v18); /*0x5301f0*/
     if ( v3 ) /*0x5301f7*/
     {
       v4 = (MixFileClass *)RA2_OPNEW(0x28u); /*0x5301ff*/
       if ( v4 ) /*0x530209*/
       {
-        v5 = (unsigned int *)(MixFileClass::FromFile(v4, Buffer, (int)dword_886980));
+        v5 = MixFileClass::FromFile(v4, Buffer, (int)dword_886980); /*0x53021c*/
         if ( v5 ) /*0x530220*/
         {
           if ( g_MixFilePool_Count < g_MixFilePool_Capacity /*0x530258*/
             || (g_MixFilePool_Flag || !g_MixFilePool_Capacity)
             && g_MixFilePool_GrowSize > 0
-            && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_MixFileArray + 8))(
+            && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_MixFileArray + 8))(
                  &g_MixFileArray,
                  g_MixFilePool_Capacity + g_MixFilePool_GrowSize,
                  0) )
           {
-            v6 = (unsigned int)(g_MixFilePool_Count++);
-            *((unsigned int *)g_MixFilePool + v6) = v5; /*0x530274*/
+            v6 = g_MixFilePool_Count++; /*0x530265*/
+            *((_DWORD *)g_MixFilePool + v6) = v5; /*0x530274*/
           }
           Debug::Log_0(); /*0x530281*/
         }

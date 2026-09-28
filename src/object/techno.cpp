@@ -244,16 +244,16 @@ BulletClass* TechnoClass::Fire(AbstractClass* target, int weapon_index)
   BulletClass *result; // eax
   void *vtable0; // [esp+0h] [ebp-4h]
 
-  result = (BulletClass *)this->vtable0; /*0x70ece1*/
-  vtable0 = this->vtable0; /*0x70ece5*/
-  if ( this->vtable0 ) /*0x70ece5*/
+  result = (BulletClass *)this->RadioClass; /*0x70ece1*/
+  vtable0 = this->RadioClass; /*0x70ece5*/
+  if ( this->RadioClass ) /*0x70ece5*/
   {
-    result = (BulletClass *)this->vtable1; /*0x70eceb*/
-    this->nextArrayIndex = 1; /*0x70ecf5*/
-    this->referenceCount = (int)result; /*0x70ecf8*/
+    result = (BulletClass *)this->?; /*0x70eceb*/
+    this->? = 1; /*0x70ecf5*/
+    this->? = (int)result; /*0x70ecf8*/
     if ( (int)result < 1 ) /*0x70ecfb*/
-      this->referenceCount = 1; /*0x70ecfd*/
-    *(float *)&this->uniqueId = (double)(int)vtable0 / (double)this->referenceCount; /*0x70ed07*/
+      this->? = 1; /*0x70ecfd*/
+    *(float *)&this->? = (double)(int)vtable0 / (double)this->?; /*0x70ed07*/
   }
   return result; /*0x70ed0b*/
 }
@@ -356,114 +356,111 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
   int result; // eax
   int v4; // edi
   int v5; // ebx
-  unsigned char *v6; // ebp
+  _BYTE *v6; // ebp
   int gattlingStage; // esi
   int v8; // eax
   int v9; // eax
   bool v10; // bl
-  unsigned int *v11; // [esp+1Ch] [ebp+4h]
+  _DWORD *v11; // [esp+1Ch] [ebp+4h]
 
-  v2 = (HouseClass *)(*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target); /*0x6f333b*/
-  if ( (uint8_t)HouseClass::HasPower(v2)
-    && !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target) + 3285) )
+  v2 = (HouseClass *)(*((int (__thiscall **)(TechnoClass *))target->RadioClass + 33))(target); /*0x6f333b*/
+  if ( (unsigned __int8)HouseClass::HasPower(v2)
+    && !*(_BYTE *)((*((int (__thiscall **)(TechnoClass *))target->RadioClass + 33))(target) + 3285) )
   {
     return target->currentWeaponSlot != -1 ? target->currentWeaponSlot : 0;
   }
-  if ( (*((uint8_t (__thiscall **)(TechnoClass *))target->vtable0 + 256))(target) ) /*0x6f337d*/
+  if ( (*((unsigned __int8 (__thiscall **)(TechnoClass *))target->RadioClass + 256))(target) ) /*0x6f337d*/
     return 0; /*0x6f337d*/
-  v4 = *(unsigned int *)(*((int (__thiscall **)(TechnoClass *, int))target->vtable0 + 254))(target, 1); /*0x6f3397*/
+  v4 = *(_DWORD *)(*((int (__thiscall **)(TechnoClass *, int))target->RadioClass + 254))(target, 1); /*0x6f3397*/
   if ( !v4 ) /*0x6f339f*/
     return 0; /*0x6f339f*/
-  v5 = *(unsigned int *)(*((int (__thiscall **)(TechnoClass *, unsigned int))target->vtable0 + 254))(target, 0); /*0x6f33b1*/
-  if ( !v5 || *(unsigned char *)(v4 + 310) || !v11 ) /*0x6f33d3*/
+  v5 = *(_DWORD *)(*((int (__thiscall **)(TechnoClass *, _DWORD))target->RadioClass + 254))(target, 0); /*0x6f33b1*/
+  if ( !v5 || *(_BYTE *)(v4 + 310) || !v11 ) /*0x6f33d3*/
     return 0; /*0x6f33d3*/
-  if ( target->inOpenToppedTransport /*0x6f33f4*/
-    && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target) + 3408) != -1 )
+  if ( target->? && *(_DWORD *)((*((int (__thiscall **)(TechnoClass *))target->RadioClass + 33))(target) + 3408) != -1 ) /*0x6f33f4*/
+    return *(_DWORD *)((*((int (__thiscall **)(TechnoClass *))target->RadioClass + 33))(target) + 3408); /*0x6f340d*/
+  v6 = (v11[5] & 1) != 0 ? (_BYTE *)v11 : 0;
+  if ( !*(_BYTE *)((*((int (__thiscall **)(TechnoClass *))target->RadioClass + 33))(target) + 3285) )
   {
-    return *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target) + 3408); /*0x6f340d*/
-  }
-  v6 = (v11[5] & 1) != 0 ? (unsigned char *)v11 : 0;
-  if ( !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target) + 3285) )
-  {
-    if ( *(unsigned char *)(*(unsigned int *)(v4 + 172) + 364) )
+    if ( *(_BYTE *)(*(_DWORD *)(v4 + 172) + 364) )
     {
-      if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 6
-        && *(unsigned char *)(*((*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 6 ? v11 + 328 : (unsigned int *)1312) + 5495) )
+      if ( (*(int (__thiscall **)(_DWORD *))(*v11 + 44))(v11) == 6
+        && *(_BYTE *)(*((*(int (__thiscall **)(_DWORD *))(*v11 + 44))(v11) == 6 ? v11 + 328 : (_DWORD *)1312) + 5495) )
       {
-        v8 = (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11); /*0x6f34c9*/
-        if ( *(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*(v8 == 6 ? v11 : 0) + 132))(v8 == 6 ? v11 : 0) + 1517) )
+        v8 = (*(int (__thiscall **)(_DWORD *))(*v11 + 44))(v11); /*0x6f34c9*/
+        if ( *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*(v8 == 6 ? v11 : 0) + 132))(v8 == 6 ? v11 : 0) + 1517) )
         {
-          v9 = (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11); /*0x6f34f3*/
-          return !*(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*(v9 == 6 ? v11 : 0) + 132))(v9 == 6 ? v11 : 0) + 1516);
+          v9 = (*(int (__thiscall **)(_DWORD *))(*v11 + 44))(v11); /*0x6f34f3*/
+          return !*(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*(v9 == 6 ? v11 : 0) + 132))(v9 == 6 ? v11 : 0) + 1516);
         }
         return 1; /*0x6f380a*/
       }
     }
     else
     {
-      if ( *(unsigned char *)(*(unsigned int *)(v5 + 172) + 347) /*0x6f3547*/
+      if ( *(_BYTE *)(*(_DWORD *)(v5 + 172) + 347) /*0x6f3547*/
         && v6
-        && (*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 44))(v6) == 6 )
+        && (*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v6 + 44))(v6) == 6 )
       {
         return 1; /*0x6f3555*/
       }
-      if ( *(unsigned char *)(v4 + 322) /*0x6f3590*/
+      if ( *(_BYTE *)(v4 + 322) /*0x6f3590*/
         && v6
-        && *(unsigned char *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 132))(v6) + 1519)
+        && *(_BYTE *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v6 + 132))(v6) + 1519)
         && !target->drainTarget
-        && !(uint8_t)Object::IsAlliedWithObjectHouse((Object *)target->owner, (int)v6) )
+        && !(unsigned __int8)Object::IsAlliedWithObjectHouse((Object *)target->owner, (int)v6) )
       {
         return 1; /*0x6f35a5*/
       }
-      if ( *(unsigned char *)(v4 + 336) && (*((int (__thiscall **)(TechnoClass *))target->vtable0 + 97))(target) == 16 ) /*0x6f35c3*/
+      if ( *(_BYTE *)(v4 + 336) && (*((int (__thiscall **)(TechnoClass *))target->RadioClass + 97))(target) == 16 ) /*0x6f35c3*/
         return 1; /*0x6f35d1*/
-      if ( (*((int (__thiscall **)(TechnoClass *))target->vtable0 + 11))(target) == 6 && *((unsigned char *)target + 1633) ) /*0x6f35e0*/
+      if ( (*((int (__thiscall **)(TechnoClass *))target->RadioClass + 11))(target) == 6 && *((_BYTE *)target + 1633) ) /*0x6f35e0*/
         return 1; /*0x6f35f6*/
-      if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 6 /*0x6f362f*/
-        && (uint8_t)Object::IsAlliedWithObjectSimpleHouse((Object *)target->owner, v11)
-        && *(unsigned char *)(*(unsigned int *)(v4 + 172) + 344)
-        && *(unsigned char *)(v11[328] + 5493) )
+      if ( (*(int (__thiscall **)(_DWORD *))(*v11 + 44))(v11) == 6 /*0x6f362f*/
+        && (unsigned __int8)Object::IsAlliedWithObjectSimpleHouse((Object *)target->owner, v11)
+        && *(_BYTE *)(*(_DWORD *)(v4 + 172) + 344)
+        && *(_BYTE *)(v11[328] + 5493) )
       {
         return 1; /*0x6f3645*/
       }
-      if ( (*((int (__thiscall **)(TechnoClass *))target->vtable0 + 11))(target) == 2 && *((unsigned char *)target + 1738) ) /*0x6f3658*/
+      if ( (*((int (__thiscall **)(TechnoClass *))target->RadioClass + 11))(target) == 2 && *((_BYTE *)target + 1738) ) /*0x6f3658*/
         return 1; /*0x6f366e*/
-      if ( (*(int (__thiscall **)(unsigned int *))(*v11 + 44))(v11) == 11 /*0x6f36ca*/
-        && (v11[59] != 2 && (*(uint8_t (__thiscall **)(unsigned int *))(*v11 + 80))(v11)
+      if ( (*(int (__thiscall **)(_DWORD *))(*v11 + 44))(v11) == 11 /*0x6f36ca*/
+        && (v11[59] != 2 && (*(unsigned __int8 (__thiscall **)(_DWORD *))(*v11 + 80))(v11)
          || (v11[80] & 0x100) != 0
-         && *(unsigned char *)((*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target) + 3278))
-        && !(*(uint8_t (__thiscall **)(unsigned int *))(*v11 + 84))(v11)
-        && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target) + 1540) == 2 )
+         && *(_BYTE *)((*((int (__thiscall **)(TechnoClass *))target->RadioClass + 33))(target) + 3278))
+        && !(*(unsigned __int8 (__thiscall **)(_DWORD *))(*v11 + 84))(v11)
+        && *(_DWORD *)((*((int (__thiscall **)(TechnoClass *))target->RadioClass + 33))(target) + 1540) == 2 )
       {
         return 1; /*0x6f36d8*/
       }
       if ( v6 /*0x6f3710*/
-        && *(double *)(*(unsigned int *)(v4 + 172)
-                     + 8 * *(unsigned int *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 132))(v6) + 156)
+        && *(double *)(*(_DWORD *)(v4 + 172)
+                     + 8 * *(_DWORD *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v6 + 132))(v6) + 156)
                      + 160) != 0.0 )
       {
-        if ( *(double *)(*(unsigned int *)(v5 + 172) /*0x6f3743*/
-                       + 8 * *(unsigned int *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 132))(v6) + 156)
+        if ( *(double *)(*(_DWORD *)(v5 + 172) /*0x6f3743*/
+                       + 8 * *(_DWORD *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v6 + 132))(v6) + 156)
                        + 160) == 0.0 )
           return 1; /*0x6f3751*/
-        v10 = *(unsigned int *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 444))(v6) + 236) == 2 /*0x6f377f*/
-           || *(unsigned int *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 444))(v6) + 236) == 6;
-        if ( (*(uint8_t (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 84))(v6) ) /*0x6f3786*/
+        v10 = *(_DWORD *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v6 + 444))(v6) + 236) == 2 /*0x6f377f*/
+           || *(_DWORD *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v6 + 444))(v6) + 236) == 6;
+        if ( (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v6 + 84))(v6) ) /*0x6f3786*/
           v10 = 0; /*0x6f378d*/
         if ( !v6[140] && v10 ) /*0x6f379b*/
         {
-          result = (*((int (__thiscall **)(TechnoClass *, unsigned int *))target->vtable0 + 186))(target, v11); /*0x6f37a2*/
+          result = (*((int (__thiscall **)(TechnoClass *, _DWORD *))target->RadioClass + 186))(target, v11); /*0x6f37a2*/
           if ( result != -1 ) /*0x6f37ab*/
             return result; /*0x6f37ab*/
           return 0; /*0x6f37ab*/
         }
-        if ( !(*(uint8_t (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 84))(v6) /*0x6f37d6*/
-          && *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))target->vtable0 + 33))(target) + 1540) == 2 )
+        if ( !(*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v6 + 84))(v6) /*0x6f37d6*/
+          && *(_DWORD *)((*((int (__thiscall **)(TechnoClass *))target->RadioClass + 33))(target) + 1540) == 2 )
         {
           return 1; /*0x6f37e4*/
         }
-        if ( *(unsigned char *)(*(unsigned int *)(v4 + 160) + 676) /*0x6f3800*/
-          && (*(uint8_t (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 84))(v6) )
+        if ( *(_BYTE *)(*(_DWORD *)(v4 + 160) + 676) /*0x6f3800*/
+          && (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v6 + 84))(v6) )
         {
           return 1; /*0x6f3805*/
         }
@@ -472,9 +469,9 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
     return 0; /*0x6f37ad*/
   }
   gattlingStage = target->gattlingStage; /*0x6f3436*/
-  if ( *(unsigned char *)(*(unsigned int *)(v4 + 160) + 676) /*0x6f3455*/
+  if ( *(_BYTE *)(*(_DWORD *)(v4 + 160) + 676) /*0x6f3455*/
     && v6
-    && (*(uint8_t (__thiscall **)(unsigned char *))(*(unsigned int *)v6 + 84))(v6) )
+    && (*(unsigned __int8 (__thiscall **)(_BYTE *))(*(_DWORD *)v6 + 84))(v6) )
   {
     return 2 * gattlingStage + 1; /*0x6f345c*/
   }
@@ -493,7 +490,7 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
             goto LABEL_10; /*0x4f9af9*/
           if ( (v11[20] & 2) == 0 ) /*0x4f9aff*/
             goto LABEL_10; /*0x4f9aff*/
-          result = (*(int (**)(void))(*(unsigned int *)v11 + 60))(); /*0x4f9b03*/
+          result = (*(int (**)(void))(*(_DWORD *)v11 + 60))(); /*0x4f9b03*/
           if ( !result ) /*0x4f9b08*/
             goto LABEL_10; /*0x4f9b08*/
           if ( (Object *)result == owner ) /*0x4f9b0c*/
@@ -501,7 +498,7 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
             IDA_LOBYTE(result) = 1; /*0x4f9b0e*/
             return result; /*0x4f9b11*/
           }
-          result = *(unsigned int *)(result + 48); /*0x4f9b14*/
+          result = *(_DWORD *)(result + 48); /*0x4f9b14*/
           if ( (void *)result == owner->Object_field_0x30 ) /*0x4f9b1c*/
           {
             IDA_LOBYTE(result) = 1; /*0x4f9b1e*/
@@ -510,7 +507,7 @@ AbstractClass * * TechnoClass::SelectWeapon(AbstractClass* target) const
           if ( result != -1 ) /*0x4f9b27*/
           {
             v4 = result; /*0x4f9b2e*/
-            result = *((unsigned int *)owner + 5602); /*0x4f9b30*/
+            result = *((_DWORD *)owner + 5602); /*0x4f9b30*/
             IDA_LOBYTE(result) = (result & (1 << v4)) != 0; /*0x4f9b3b*/
           }
           else
@@ -3538,7 +3535,7 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
   int v6; // esi
   bool v7; // zf
 
-  if ( !*(unsigned char *)((*((int (__thiscall **)(TechnoClass *))this->vtable0 + 33))(this) + 3277) ) /*0x707d2b*/
+  if ( !*(_BYTE *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 3277) ) /*0x707d2b*/
     return 0; /*0x707d38*/
   owner = this->owner; /*0x707d39*/
   sideIndex = owner->sideIndex; /*0x707d40*/
@@ -3546,19 +3543,33 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
   {
     if ( sideIndex == 1 ) /*0x707d5a*/
     {
-      v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d5c*/
-      v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3964); /*0x707d61*/
+      v5 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d5c*/
+      v6 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3964); /*0x707d61*/
     }
     else
     {
       v7 = sideIndex == 2; /*0x707d69*/
-      v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d6c*/
+      v5 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d6c*/
       if ( v7 ) /*0x707d71*/
-        v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3968); /*0x707d73*/
+        v6 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3968); /*0x707d73*/
       else
-        v6 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 3948); /*0x707d7b*/
+        v6 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3948); /*0x707d7b*/
     }
   }
+  else
+  {
+    v5 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d4a*/
+    v6 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3960); /*0x707d4f*/
+  }
+  if ( *(_DWORD *)(owner->relatedTagsCapacity + 188) == -1 ) /*0x707d8b*/
+    return *(_DWORD *)(v5 + 3948); /*0x707dc5*/
+  if ( (*((unsigned __int8 (__thiscall **)(TechnoClass *))this->RadioClass + 171))(this) /*0x707db2*/
+    && Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 99) < 15 )
+  {
+    return *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 3948); /*0x707dc4*/
+  }
+  return v6; /*0x707d37*/
+}
   else
   {
     v5 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x707d4a*/
@@ -3600,7 +3611,6 @@ InfantryTypeClass* TechnoClass::GetCrew() const { return nullptr; }
     return g_RulesClass_Instance->?; /*0x707dc4*/
   }
   return Scatter; /*0x707d37*/
-}
   else
   {
     v5 = g_RulesClass_Instance; /*0x707d4a*/
@@ -3620,15 +3630,15 @@ int TechnoClass::vt_entry_4B4() {
 // 0x4df1f0
 int TechnoClass::vt_entry_4B8() { return 0; }
   int v2; // eax
-  unsigned int *v3; // edx
+  _DWORD *v3; // edx
   int v5; // ecx
-  unsigned int *v6; // ecx
-  unsigned char v7[12]; // [esp+4h] [ebp-Ch] BYREF
+  _DWORD *v6; // ecx
+  _BYTE v7[12]; // [esp+4h] [ebp-Ch] BYREF
 
   v2 = this->u32_5C8; /*0x4df1f0*/
   if ( v2 ) /*0x4df1fc*/
   {
-    v3 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(v2->q048)(v2, v7); /*0x4df20a*/
+    v3 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(v2->q048)(v2, v7); /*0x4df20a*/
     *a2 = *v3; /*0x4df214*/
     a2[1] = v3[1]; /*0x4df219*/
     a2[2] = v3[2]; /*0x4df220*/
@@ -3639,7 +3649,26 @@ int TechnoClass::vt_entry_4B8() { return 0; }
     v5 = this->q173; /*0x4df229*/
     if ( v5 ) /*0x4df231*/
     {
-      v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(*(unsigned int *)v5 + 72))(v5, v7); /*0x4df23d*/
+      v6 = (_DWORD *)(*(int (__thiscall **)(int, _BYTE *))(*(_DWORD *)v5 + 72))(v5, v7); /*0x4df23d*/
+      *a2 = *v6; /*0x4df247*/
+      a2[1] = v6[1]; /*0x4df24c*/
+      a2[2] = v6[2]; /*0x4df253*/
+    }
+    else
+    {
+      *a2 = -1; /*0x4df26c*/
+      a2[1] = -1; /*0x4df26e*/
+      a2[2] = -1; /*0x4df271*/
+    }
+    return a2; /*0x4df23f*/
+  }
+}
+  else
+  {
+    v5 = this->q173; /*0x4df229*/
+    if ( v5 ) /*0x4df231*/
+    {
+      v6 = (unsigned int *)(*(int (__thiscall **)(int, unsigned char *))(this->u32_1BB)(v5, v7); /*0x4df23d*/
       *a2 = *v6; /*0x4df247*/
       a2[1] = v6[1]; /*0x4df24c*/
       a2[2] = v6[2]; /*0x4df253*/
@@ -3690,7 +3719,6 @@ int TechnoClass::vt_entry_4B8() { return 0; }
     }
     return a2; /*0x4df23f*/
   }
-}
   else
   {
     v5 = *(&this->lastLayer1); /*0x4df229*/
@@ -3766,12 +3794,12 @@ int TechnoClass::FindMatchingUnit() { return -1; }
   return v6; /*0x5f7a68*/
 // 0x659540
 int RadBeam::drawMindControlPips(int a2) {
-  this->customSound_controller[1] = a2; /*0x659544*/
+  this->?[1] = a2; /*0x659544*/
   return a2; /*0x659547*/
 }
 // 0x659550
 char RadBeam::drawPassengerPips(char a2) {
-  IDA_LOBYTE(this->customSound_controller[2]) = a2; /*0x659554*/
+  IDA_LOBYTE(this->?[2]) = a2; /*0x659554*/
   return a2; /*0x659557*/
 }
 // 0x633d30
@@ -3785,12 +3813,12 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
 
   FactoryClass::ClearObjects((FactoryClass *)this); /*0x633d35*/
   v7 = this; /*0x633d4a*/
-  v2 = (*(int (__thiscall **)(char *, TechnoClass **))(*(unsigned int *)&stru_AC4B30.__pad_EC[124] + 16))( /*0x633d4e*/
+  v2 = (*(int (__thiscall **)(char *, TechnoClass **))(*(_DWORD *)&stru_AC4B30.__pad_EC[124] + 16))( /*0x633d4e*/
          &stru_AC4B30.__pad_EC[124],
          &v7);
   if ( v2 != -1 ) /*0x633d54*/
     Array::RemoveAt((Array *)&stru_AC4B30.__pad_EC[124], v2); /*0x633d5c*/
-  v3 = (*(int (__thiscall **)(Array *, TechnoClass **))(*(unsigned int *)stru_AC4B30.__pad_0 + 16))(&stru_AC4B30, &v7); /*0x633d71*/
+  v3 = (*(int (__thiscall **)(Array *, TechnoClass **))(*(_DWORD *)stru_AC4B30.__pad_0 + 16))(&stru_AC4B30, &v7); /*0x633d71*/
   if ( v3 != -1 ) /*0x633d77*/
     Array::RemoveAt(&stru_AC4B30, v3); /*0x633d7f*/
   v4 = (*((int (__thiscall **)(void **, TechnoClass **))stru_AC4B30.Array_field_0xE8 + 4))( /*0x633d94*/
@@ -3798,39 +3826,39 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
          &v7);
   if ( v4 != -1 && v4 < *(int *)&stru_AC4B30.__pad_EC[12] ) /*0x633da4*/
   {
-    --*(unsigned int *)&stru_AC4B30.__pad_EC[12]; /*0x633da9*/
+    --*(_DWORD *)&stru_AC4B30.__pad_EC[12]; /*0x633da9*/
     for ( ; /*0x633daf*/
           v4 < *(int *)&stru_AC4B30.__pad_EC[12];
-          *(unsigned int *)(*(unsigned int *)stru_AC4B30.__pad_EC + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)stru_AC4B30.__pad_EC
+          *(_DWORD *)(*(_DWORD *)stru_AC4B30.__pad_EC + 4 * v4 - 4) = *(_DWORD *)(*(_DWORD *)stru_AC4B30.__pad_EC
                                                                                 + 4 * v4) )
     {
       ++v4; /*0x633db7*/
     }
   }
   if ( *(TechnoClass **)&stru_AC4B30.__pad_EC[176] == v7 ) /*0x633dd7*/
-    *(unsigned int *)&stru_AC4B30.__pad_EC[176] = 0; /*0x633dd9*/
+    *(_DWORD *)&stru_AC4B30.__pad_EC[176] = 0; /*0x633dd9*/
   if ( *(TechnoClass **)&stru_AC4B30.__pad_EC[28] == v7 ) /*0x633de5*/
-    *(unsigned int *)&stru_AC4B30.__pad_EC[28] = 0; /*0x633de7*/
+    *(_DWORD *)&stru_AC4B30.__pad_EC[28] = 0; /*0x633de7*/
   if ( *(TechnoClass **)&stru_AC4B30.__pad_70[80] == v7 ) /*0x633df3*/
-    *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x633df5*/
-  occupant = (void *)this->occupant; /*0x633dfb*/
-  this->NeedsSaveOrLink = &(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
-  if ( occupant && IDA_BYTE1(this->fallRate) ) /*0x633e09*/
+    *(_DWORD *)&stru_AC4B30.__pad_70[80] = 0; /*0x633df5*/
+  occupant = (void *)this->?; /*0x633dfb*/
+  this->? = &(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
+  if ( occupant && IDA_BYTE1(this->?) ) /*0x633e09*/
   {
     RA2_OPDEL(occupant); /*0x633e0f*/
-    this->occupant = 0; /*0x633e17*/
+    this->? = 0; /*0x633e17*/
   }
-  IDA_BYTE1(this->fallRate) = 0; /*0x633e1a*/
-  this->owningHouseIndex = 0; /*0x633e1d*/
-  vtable1 = this->vtable1; /*0x633e20*/
-  this->vtable0 = &(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
-  if ( vtable1 && IDA_BYTE1(this->vtable3) ) /*0x633e2d*/
+  IDA_BYTE1(this->?) = 0; /*0x633e1a*/
+  this->? = 0; /*0x633e1d*/
+  vtable1 = this->?; /*0x633e20*/
+  this->RadioClass = &(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
+  if ( vtable1 && IDA_BYTE1(this->?) ) /*0x633e2d*/
   {
     RA2_OPDEL(vtable1); /*0x633e33*/
-    this->vtable1 = 0; /*0x633e3b*/
+    this->? = 0; /*0x633e3b*/
   }
-  IDA_BYTE1(this->vtable3) = 0; /*0x633e3e*/
-  this->vtable2 = 0; /*0x633e41*/
+  IDA_BYTE1(this->?) = 0; /*0x633e3e*/
+  this->? = 0; /*0x633e41*/
 }
   if ( *(TechnoClass **)&stru_AC4B30.__pad_EC[176] == v7 ) /*0x633dd7*/
     *(unsigned int *)&stru_AC4B30.__pad_EC[176] = 0; /*0x633dd9*/
@@ -3857,30 +3885,30 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   IDA_BYTE1(this->vtable3) = 0; /*0x633e3e*/
   this->vtable2 = 0; /*0x633e41*/
 }
-  if ( g_ScriptPool == v7 ) /*0x633dd7*/
-    g_ScriptPool = 0; /*0x633dd9*/
-  if ( g_ScriptState == v7 ) /*0x633de5*/
-    g_ScriptState = 0; /*0x633de7*/
-  if ( g_ScriptActionPool == v7 ) /*0x633df3*/
-    g_ScriptActionPool = 0; /*0x633df5*/
-  v5 = *(void **)(&this->vtable46); /*0x633dfb*/
+  if ( *(TechnoClass **)&stru_AC4B30.__pad_EC[176] == v7 ) /*0x633dd7*/
+    *(unsigned int *)&stru_AC4B30.__pad_EC[176] = 0; /*0x633dd9*/
+  if ( *(TechnoClass **)&stru_AC4B30.__pad_EC[28] == v7 ) /*0x633de5*/
+    *(unsigned int *)&stru_AC4B30.__pad_EC[28] = 0; /*0x633de7*/
+  if ( *(TechnoClass **)&stru_AC4B30.__pad_70[80] == v7 ) /*0x633df3*/
+    *(unsigned int *)&stru_AC4B30.__pad_70[80] = 0; /*0x633df5*/
+  occupant = (void *)this->occupant; /*0x633dfb*/
   this->NeedsSaveOrLink = &(void*)(void*)(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
-  if ( v5 && this->queuedMission ) /*0x633e09*/
+  if ( occupant && IDA_BYTE1(this->fallRate) ) /*0x633e09*/
   {
-    RA2_OPDEL(v5); /*0x633e0f*/
-    this->objectTypeFlags = 0; /*0x633e17*/
+    RA2_OPDEL(occupant); /*0x633e0f*/
+    this->occupant = 0; /*0x633e17*/
   }
-  this->queuedMission = 0; /*0x633e1a*/
+  IDA_BYTE1(this->fallRate) = 0; /*0x633e1a*/
   this->owningHouseIndex = 0; /*0x633e1d*/
-  v6 = this->vtable2; /*0x633e20*/
-  *(unsigned int *)this = &(void*)(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
-  if ( v6 && this->attachedTag ) /*0x633e2d*/
+  vtable1 = this->vtable1; /*0x633e20*/
+  this->vtable0 = &(void*)(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
+  if ( vtable1 && IDA_BYTE1(this->vtable3) ) /*0x633e2d*/
   {
-    RA2_OPDEL(v6); /*0x633e33*/
-    this->vtable2 = 0; /*0x633e3b*/
+    RA2_OPDEL(vtable1); /*0x633e33*/
+    this->vtable1 = 0; /*0x633e3b*/
   }
-  this->attachedTag = 0; /*0x633e3e*/
-  this->vtable3 = 0; /*0x633e41*/
+  IDA_BYTE1(this->vtable3) = 0; /*0x633e3e*/
+  this->vtable2 = 0; /*0x633e41*/
 }
   if ( g_ScriptPool == v7 ) /*0x633dd7*/
     g_ScriptPool = 0; /*0x633dd9*/
@@ -3899,6 +3927,31 @@ int TechnoClass::ClearScriptPlanningData() { return 0; }
   this->owningHouseIndex = 0; /*0x633e1d*/
   v6 = this->vtable2; /*0x633e20*/
   *(unsigned int *)this = &(void*)(void*)(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
+  if ( v6 && this->attachedTag ) /*0x633e2d*/
+  {
+    RA2_OPDEL(v6); /*0x633e33*/
+    this->vtable2 = 0; /*0x633e3b*/
+  }
+  this->attachedTag = 0; /*0x633e3e*/
+  this->vtable3 = 0; /*0x633e41*/
+}
+  if ( g_ScriptPool == v7 ) /*0x633dd7*/
+    g_ScriptPool = 0; /*0x633dd9*/
+  if ( g_ScriptState == v7 ) /*0x633de5*/
+    g_ScriptState = 0; /*0x633de7*/
+  if ( g_ScriptActionPool == v7 ) /*0x633df3*/
+    g_ScriptActionPool = 0; /*0x633df5*/
+  v5 = *(void **)(&this->vtable46); /*0x633dfb*/
+  this->NeedsSaveOrLink = &(void*)(void*)(void*)(void*)(void*)(void*)&VectorClass_PlanningBranchClass___vftable; /*0x633dfe*/
+  if ( v5 && this->queuedMission ) /*0x633e09*/
+  {
+    RA2_OPDEL(v5); /*0x633e0f*/
+    this->objectTypeFlags = 0; /*0x633e17*/
+  }
+  this->queuedMission = 0; /*0x633e1a*/
+  this->owningHouseIndex = 0; /*0x633e1d*/
+  v6 = this->vtable2; /*0x633e20*/
+  *(unsigned int *)this = &(void*)(void*)(void*)(void*)(void*)(void*)&VectorClass_PlanningMemberClass___vftable; /*0x633e23*/
   if ( v6 && this->attachedTag ) /*0x633e2d*/
   {
     RA2_OPDEL(v6); /*0x633e33*/
@@ -4473,22 +4526,22 @@ retn    4
 */
 // 0x6f3820
 int TechnoClass::CanTargetHouse() const { return false; 
-  unsigned int *v1; // esi
+  _DWORD *v1; // esi
   int result; // eax
   char v4; // bl
   char v5; // [esp+Eh] [ebp-2h]
   bool v6; // [esp+Fh] [ebp-1h]
-  unsigned char *v7; // [esp+14h] [ebp+4h]
+  _BYTE *v7; // [esp+14h] [ebp+4h]
   char v8; // [esp+14h] [ebp+4h]
 
   v1 = v7; /*0x6f3823*/
   if ( !v7 || (v7[20] & 1) == 0 ) /*0x6f3832*/
     return -1; /*0x6f3836*/
-  v4 = *(unsigned char *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v7 + 132))(v7) + 3433); /*0x6f384a*/
-  v8 = *(unsigned char *)((*(int (__thiscall **)(unsigned char *))(*(unsigned int *)v7 + 132))(v7) + 3479); /*0x6f3862*/
-  v6 = *(unsigned int *)((*(int (__thiscall **)(unsigned int *))(*v1 + 132))(v1) + 1660) == 3; /*0x6f3879*/
-  v5 = *(unsigned char *)((*(int (__thiscall **)(unsigned int *))(*v1 + 132))(v1) + 1684); /*0x6f388c*/
-  switch ( *(unsigned int *)((*((int (__thiscall **)(TechnoClass *))this->vtable0 + 33))(this) + 1536) ) /*0x6f38a3*/
+  v4 = *(_BYTE *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v7 + 132))(v7) + 3433); /*0x6f384a*/
+  v8 = *(_BYTE *)((*(int (__thiscall **)(_BYTE *))(*(_DWORD *)v7 + 132))(v7) + 3479); /*0x6f3862*/
+  v6 = *(_DWORD *)((*(int (__thiscall **)(_DWORD *))(*v1 + 132))(v1) + 1660) == 3; /*0x6f3879*/
+  v5 = *(_BYTE *)((*(int (__thiscall **)(_DWORD *))(*v1 + 132))(v1) + 1684); /*0x6f388c*/
+  switch ( *(_DWORD *)((*((int (__thiscall **)(TechnoClass *))this->RadioClass + 33))(this) + 1536) ) /*0x6f38a3*/
   {
     case 0: /*0x6f38a3*/
       if ( !v4 || !v1[136] ) /*0x6f38ae*/
@@ -4523,7 +4576,6 @@ int TechnoClass::CanTargetHouse() const { return false;
     *(unsigned int *)(v2 + 148) = -1; /*0x6389fd*/
     *(unsigned char *)(v2 + 152) = 0; /*0x638a03*/
     *(unsigned char *)(v2 + 153) = 0; /*0x638a0a*/
-  }
   return result; /*0x638a12*/
 int TechnoClass::sub_7441B0() { return 0; 
 int TechnoClass::sub_744180() { return 0; 

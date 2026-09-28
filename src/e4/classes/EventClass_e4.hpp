@@ -78,19 +78,6 @@ struct EventClass {
     unsigned int q1600;  // 0x1600
     void* q1634;  // 0x1634
     void* q16C0;  // 0x16C0
-    unsigned int EventClass_field_0x0;
-    unsigned int EventClass_field_0x24;
-    unsigned int EventClass_field_0x28;
-    unsigned int EventClass_field_0x30;
-    unsigned int EventClass_field_0x4;
-    unsigned int EventClass_field_0x44;
-    unsigned int EventClass_field_0x48;
-    unsigned int EventClass_field_0x4C;
-    unsigned int EventClass_field_0x50;
-    unsigned int EventClass_field_0x54;
-    unsigned int __pad_10;
-    unsigned int q0041;
-    unsigned int q007;
 // --- flat members (END) ---
     int serializeEvent();  // 0x48B390
     int SetData(int a2,  int a3,  int a4,  int a5,  int a6);    // 0x48BAD0

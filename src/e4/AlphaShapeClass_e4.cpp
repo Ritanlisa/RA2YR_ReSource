@@ -53,10 +53,10 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2)
   int v4; // eax
   AlphaShapeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  *(unsigned int *)this->__pad_0 = (void*)&AlphaShapeClass_vftable; /*0x42173d*/
-  this->AlphaShapeClass_field_0x04 = (int)&AlphaShapeClass_vftable; /*0x421743*/
-  this->AlphaShapeClass_field_0x08 = (int)&AlphaShapeClass_vftable; /*0x42174a*/
-  this->AlphaShapeClass_field_0x0C = (int)&AlphaShapeClass_vftable; /*0x421751*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&AlphaShapeClass_vftable; /*0x42173d*/
+  this->AlphaShapeClass_field_0x04 = (int)&(void*)(void*)&AlphaShapeClass_vftable; /*0x421743*/
+  this->AlphaShapeClass_field_0x08 = (int)&(void*)(void*)&AlphaShapeClass_vftable; /*0x42174a*/
+  this->AlphaShapeClass_field_0x0C = (int)&(void*)(void*)&AlphaShapeClass_vftable; /*0x421751*/
   v6 = this; /*0x42175f*/
   v3 = (*(int (__thiscall **)(int *, AlphaShapeClass **))(dword_88A0F0 + 16))(&dword_88A0F0, &v6); /*0x421763*/
   if ( v3 != -1 && v3 < g_AlphaShapeLimit && v3 < --g_AlphaShapeLimit ) /*0x42177e*/
@@ -64,7 +64,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2)
     do /*0x421796*/
     {
       ++v3; /*0x421786*/
-      *((unsigned int *)dword_88A0F4 + v3 - 1) = *((unsigned int *)dword_88A0F4 + v3); /*0x42178a*/
+      *((_DWORD *)dword_88A0F4 + v3 - 1) = *((_DWORD *)dword_88A0F4 + v3); /*0x42178a*/
     }
     while ( v3 < g_AlphaShapeLimit ); /*0x421796*/
   }
@@ -77,7 +77,7 @@ AlphaShapeClass * AlphaShapeClass::SDDTOR(char a2)
     --g_BuildingLoadQueue_Array.Foundation[0]; /*0x4217c1*/
     for ( ; /*0x4217c7*/
           v4 < g_BuildingLoadQueue_Array.Foundation[0];
-          *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v4 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.PowerDrain
+          *(_DWORD *)(g_BuildingLoadQueue_Array.PowerDrain + 4 * v4 - 4) = *(_DWORD *)(g_BuildingLoadQueue_Array.PowerDrain
                                                                                      + 4 * v4) )
     {
       ++v4; /*0x4217cf*/
@@ -101,13 +101,13 @@ int AlphaShapeClass::SD_vt05(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x420df9*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x420e02*/
-      *(unsigned int *)aP0->__pad_0 = (void*)&AlphaShapeClass_vftable; /*0x420e07*/
-      aP0->AlphaShapeClass_field_0x04 = (int)&AlphaShapeClass_vftable; /*0x420e0d*/
-      aP0->AlphaShapeClass_field_0x08 = (int)&AlphaShapeClass_vftable; /*0x420e14*/
-      aP0->AlphaShapeClass_field_0x0C = (int)&AlphaShapeClass_vftable; /*0x420e1b*/
+      *(_DWORD *)aP0->__pad_0 = &(void*)(void*)&AlphaShapeClass_vftable; /*0x420e07*/
+      aP0->AlphaShapeClass_field_0x04 = (int)&(void*)(void*)&AlphaShapeClass_vftable; /*0x420e0d*/
+      aP0->AlphaShapeClass_field_0x08 = (int)&(void*)(void*)&AlphaShapeClass_vftable; /*0x420e14*/
+      aP0->AlphaShapeClass_field_0x0C = (int)&(void*)(void*)&AlphaShapeClass_vftable; /*0x420e1b*/
     }
     ObjectPtr::RegisterForTracking((int)&SwizzleManagerClass_Instance, &aP0->AlphaShapeClass_field_0x24); /*0x420e2b*/
-    *((unsigned int *)aP0 + 14) = 0; /*0x420e30*/
+    *((_DWORD *)aP0 + 14) = 0; /*0x420e30*/
   }
   return Prefix_0; /*0x420e39*/
 }

@@ -11,7 +11,7 @@ struct ToolTipManager {
     char Position[8];  // 0x4
     unsigned int u32_8;  // 0x8
     void* ToolTipText;  // 0xC
-    unsigned int Duration;  // 0x10
+    char Duration[4];  // 0x10
     char DisplayTimer[12];  // 0x14
     void* q018;  // 0x18
     void* q01C;  // 0x1C
@@ -34,7 +34,6 @@ struct ToolTipManager {
     unsigned int q128;  // 0x128
     int q130;  // 0x130
     unsigned int q138;  // 0x138
-    unsigned int IsVisible;
 // --- flat members (END) ---
     char addRef(int a1);
     int ddtor(char a2);

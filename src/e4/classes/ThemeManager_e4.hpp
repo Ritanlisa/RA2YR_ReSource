@@ -20,7 +20,6 @@ struct ThemeManager {
     unsigned int q054;  // 0x54
     unsigned int q068;  // 0x68
     unsigned int q104;  // 0x104
-    unsigned int u32_104;
 // --- flat members (END) ---
     int ProcessCallback();
     void Cleanup();

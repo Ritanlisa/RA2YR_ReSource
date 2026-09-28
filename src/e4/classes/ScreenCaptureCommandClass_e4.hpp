@@ -9,7 +9,6 @@ struct ScreenCaptureCommandClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     char ScreenCaptureCommandClass_field_00[4];  // 0x4
-    unsigned int __pad_0;
 // --- flat members (END) ---
     char * AddRef();
     unsigned int * Constructor();

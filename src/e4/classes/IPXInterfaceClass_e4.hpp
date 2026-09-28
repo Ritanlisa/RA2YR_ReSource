@@ -16,41 +16,6 @@ struct IPXInterfaceClass {
     bool IsAllocated;  // 0xD
     void* Count;  // 0x10
     unsigned short tail_12;  // 0x12
-    unsigned int Socket;
-    unsigned int q3F060;
-    unsigned int q3F06C;
-    unsigned int q3F074;
-    unsigned int q3F2FC;
-    unsigned int q3F300;
-    unsigned int u32_18;
-    unsigned int u32_24;
-    unsigned int u32_3F2FC;
-    unsigned int u32_3F300;
-    unsigned int u32_3F304;
-    unsigned int u32_3F30A;
-    unsigned int u32_7E0F0;
-    unsigned int u32_7E60C;
-    unsigned int u32_CA340;
-    unsigned int u32_CA344;
-    unsigned int u32_FC1D0;
-    unsigned int BoundPort;
-    unsigned int u32_1C;
-    unsigned int u32_28;
-    unsigned int u32_30;
-    unsigned int u32_34;
-    unsigned int u32_4;
-    unsigned int u32_44;
-    unsigned int u32_45;
-    unsigned int u32_8;
-    unsigned int u32_80;
-    unsigned int u32_81;
-    unsigned int u32_C;
-    unsigned int BoundPort8;
-    unsigned int BoundPort9;
-    unsigned int u32_38;
-    unsigned int u32_3C;
-    unsigned int u32_40;
-    unsigned int u32_4C;
 // --- flat members (END) ---
     AbstractClass * * Receive();
     AbstractClass * * SendPacket(ObjectClass * aP1, int a3, int a4, unsigned int fromlen);

@@ -123,12 +123,12 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
   int v3; // eax
   BuildingLightClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->vtable0 = (unsigned int)((void *)((int)&BuildingLightClass_vftable));
-  this->vtable1 = (void *)((int)&BuildingLightClass_vftable);
-  this->vtable2 = (void *)((int)&BuildingLightClass_vftable);
-  this->vtable3 = (int)&BuildingLightClass_vftable; /*0x4370d8*/
-  if ( (uint8_t)ObjectClass::Undeploy(this) ) /*0x4370df*/
-    VectorClass::RemoveItem(&dword_87F778, (int)this); /*0x4370ee*/
+  this->vtable0 = (int)&(void*)(void*)&BuildingLightClass_vftable; /*0x4370c4*/
+  this->vtable1 = (int)&(void*)(void*)&BuildingLightClass_vftable; /*0x4370ca*/
+  this->vtable2 = (int)&(void*)(void*)&BuildingLightClass_vftable; /*0x4370d1*/
+  this->vtable3 = (int)&(void*)(void*)&BuildingLightClass_vftable; /*0x4370d8*/
+  if ( (unsigned __int8)ObjectClass::Undeploy(this) ) /*0x4370df*/
+    VectorClass::RemoveItem((DynamicVectorClass *)&dword_87F778, (int)this); /*0x4370ee*/
   v5 = this; /*0x437103*/
   v3 = (*(int (__thiscall **)(int *, BuildingLightClass **))(dword_8B4190 + 16))(&dword_8B4190, &v5); /*0x437107*/
   if ( v3 != -1 && v3 < dword_8B41A0 && v3 < --dword_8B41A0 ) /*0x437122*/
@@ -136,7 +136,7 @@ BuildingLightClass * BuildingLightClass::SDDTOR(char a2)
     do /*0x43713a*/
     {
       ++v3; /*0x43712a*/
-      *((unsigned int *)dword_8B4194 + v3 - 1) = *((unsigned int *)dword_8B4194 + v3); /*0x43712e*/
+      *((_DWORD *)dword_8B4194 + v3 - 1) = *((_DWORD *)dword_8B4194 + v3); /*0x43712e*/
     }
     while ( v3 < dword_8B41A0 ); /*0x43713a*/
   }

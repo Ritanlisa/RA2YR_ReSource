@@ -63,8 +63,6 @@ struct VocClass {
     char Decay[4];  // 0x13C
     unsigned int VocClass_field_140;  // 0x140
     unsigned int VocClass_field_144;  // 0x144
-    unsigned int GetSampleName;
-    unsigned int u32_278;
 // --- flat members (END) ---
     char * GetSampleNameByIndex(int a1);
     int FindByName();

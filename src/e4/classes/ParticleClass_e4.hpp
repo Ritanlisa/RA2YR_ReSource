@@ -534,22 +534,6 @@ struct ParticleClass {
     unsigned int q7A4;  // 0x7A4
     unsigned char q7A8;  // 0x7A8
     void* q7AC;  // 0x7AC
-    unsigned int CheckWaterImpact;
-    unsigned int ParticleClass_field_0xAC;
-    unsigned int ParticleClass_field_0xB4;
-    unsigned int ParticleClass_field_0xB8;
-    unsigned int SetPosition;
-    unsigned int __pad_0;
-    unsigned int __pad_128;
-    unsigned int __pad_28;
-    unsigned int __pad_B0;
-    unsigned int q0100;
-    unsigned int q0101;
-    unsigned int q0103;
-    unsigned int q0184;
-    unsigned int q0185;
-    unsigned int q0186;
-    unsigned int vtable49;
 // --- flat members (END) ---
     int * CheckDrawFlags(int a1);
     int CheckCollisionFlags(TechnoTypeClass * aP0, int * a1, int aP2);

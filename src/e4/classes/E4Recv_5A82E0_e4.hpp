@@ -11,6 +11,8 @@ struct E4Recv_5A82E0 {
     unsigned int q134;  // 0x134
     unsigned int q308;  // 0x308
     unsigned int q1910;  // 0x1910
+    unsigned int q1388834;  // 0x1388834
+    unsigned int q20482100;  // 0x20482100
 // --- flat members (END) ---
     void MapSeed_PlaceBuildingsScatter(short * a2);  // 0x5A82E0
 };

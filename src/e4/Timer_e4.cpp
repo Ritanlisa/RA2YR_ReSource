@@ -14,8 +14,8 @@
 namespace gamemd {
 void * Timer::Start(DynamicVector * aP1)
 {
-  *(unsigned int *)this->__pad_0 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x46b64c*/
-  *(unsigned int *)&this->__pad_6[2] = aP1; /*0x46b64e*/
+  *(_DWORD *)this->__pad_0 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x46b64c*/
+  *(_DWORD *)&this->__pad_6[2] = aP1; /*0x46b64e*/
   return this->__pad_0; /*0x46b651*/
 }
 }
@@ -27,17 +27,17 @@ int Timer::StartDouble(double a2)
   int v4; // ecx
   int v5; // [esp+8h] [ebp-Ch]
 
-  if ( IDA_LOBYTE(this->m_18) || (IDA_LOBYTE(result) = IDA_BYTE1(this->m_18), (unsigned char)result) ) /*0x4a5252*/
+  if ( IDA_LOBYTE(this->m_18) || (IDA_LOBYTE(result) = IDA_BYTE1(this->m_18), (_BYTE)result) ) /*0x4a5252*/
   {
     IDA_LOBYTE(this->m_18) = 1; /*0x4a525e*/
     *(double *)this->__pad_0 = a2 * 900.0; /*0x4a5262*/
     IDA_LOWORD(result) = Math::RoundToInt(a2 * 900.0); /*0x4a5264*/
-    v4 = *(unsigned int *)&stru_A8EB00.gapE4[416]; /*0x4a5269*/
+    v4 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x4a5269*/
     IDA_BYTE1(this->m_18) = 0; /*0x4a5272*/
-    *(unsigned int *)&this->__pad_6[2] = v4; /*0x4a5276*/
-    *(unsigned int *)&this->__pad_6[6] = v5; /*0x4a527c*/
-    *(unsigned int *)&this->__pad_6[10] = result; /*0x4a527f*/
-    *(unsigned int *)&this->__pad_6[14] = result; /*0x4a5282*/
+    *(_DWORD *)&this->__pad_6[2] = v4; /*0x4a5276*/
+    *(_DWORD *)&this->__pad_6[6] = v5; /*0x4a527c*/
+    *(_DWORD *)&this->__pad_6[10] = result; /*0x4a527f*/
+    *(_DWORD *)&this->__pad_6[14] = result; /*0x4a5282*/
   }
   return result; /*0x4a5285*/
 }
@@ -46,8 +46,8 @@ int Timer::StartDouble(double a2)
 namespace gamemd {
 void * Timer::Init(DWORD a2)
 {
-  *(unsigned int *)this->__pad_0 = Timer::GetTicks(); /*0x4f1b0b*/
-  *(unsigned int *)&this->__pad_6[2] = a2; /*0x4f1b11*/
+  *(_DWORD *)this->__pad_0 = Timer::GetTicks(); /*0x4f1b0b*/
+  *(_DWORD *)&this->__pad_6[2] = a2; /*0x4f1b11*/
   return (DWORD *)this; /*0x4f1b16*/
 }
 }
@@ -58,10 +58,10 @@ int Timer::GetRemainingMs()
   int v1; // edi
   int v2; // ecx
 
-  v1 = *(unsigned int *)&this->__pad_6[2]; /*0x4f1b26*/
-  if ( *(unsigned int *)this->__pad_0 == -1 ) /*0x4f1b2c*/
-    return *(unsigned int *)&this->__pad_6[2]; /*0x4f1b4c*/
-  v2 = Timer::GetTicks() - *(unsigned int *)this->__pad_0; /*0x4f1b3a*/
+  v1 = *(_DWORD *)&this->__pad_6[2]; /*0x4f1b26*/
+  if ( *(_DWORD *)this->__pad_0 == -1 ) /*0x4f1b2c*/
+    return *(_DWORD *)&this->__pad_6[2]; /*0x4f1b4c*/
+  v2 = Timer::GetTicks() - *(_DWORD *)this->__pad_0; /*0x4f1b3a*/
   if ( v2 >= v1 ) /*0x4f1b3e*/
     return 0; /*0x4f1b48*/
   else
@@ -100,7 +100,7 @@ int Timer::GetHighPrecision()
   unsigned int v3; // [esp+4h] [ebp-Ch] BYREF
 
   if ( dword_82C24C == -1 ) /*0x5b1e4e*/
-    GetVersionString(&dword_82C24C, byte_ABEED4, 0, 0); /*0x5b1e5e*/
+    GetVersionString(&dword_82C24C, unk_ABEED4, 0, 0); /*0x5b1e5e*/
   if ( !*this && this->u32_4 == 1072693248 || dword_82C24C <= 4 ) /*0x5b1e78*/
     return timeGetTime(); /*0x5b1eba*/
   result = Timer::ReadTSC(&v3); /*0x5b1e7f*/
@@ -114,9 +114,9 @@ int Timer::GetElapsed()
 {
   int v1; // edi
 
-  v1 = *(unsigned int *)&this->__pad_6[2]; /*0x5f1396*/
-  if ( *(unsigned int *)this->__pad_0 != -1 ) /*0x5f139c*/
-    v1 += Timer::GetTicks() - *(unsigned int *)this->__pad_0; /*0x5f13a8*/
+  v1 = *(_DWORD *)&this->__pad_6[2]; /*0x5f1396*/
+  if ( *(_DWORD *)this->__pad_0 != -1 ) /*0x5f139c*/
+    v1 += Timer::GetTicks() - *(_DWORD *)this->__pad_0; /*0x5f13a8*/
   return v1; /*0x5f13ac*/
 }
 }
@@ -168,9 +168,9 @@ char Timer::SetFlag(char a2)
 
   IDA_LOBYTE(result) = a2; /*0x7500b0*/
   if ( a2 ) /*0x7500b6*/
-    *(unsigned int *)this->__pad_0 = 0x40000000; /*0x7500b8*/
+    *(_DWORD *)this->__pad_0 = 0x40000000; /*0x7500b8*/
   else
-    *(unsigned int *)this->__pad_0 = 0; /*0x7500c1*/
+    *(_DWORD *)this->__pad_0 = 0; /*0x7500c1*/
   return result; /*0x7500be*/
 }
 } // namespace gamemd
@@ -179,7 +179,7 @@ char Timer::SetFlag(char a2)
 namespace gamemd {
 unsigned long long Timer::ReadTSC(unsigned int * a1)
 {
-  uint64_t result; // rax
+  unsigned __int64 result; // rax
 
   result = __rdtsc(); /*0x7c6068*/
   *a1 = IDA_HIDWORD(result); /*0x7c606d*/

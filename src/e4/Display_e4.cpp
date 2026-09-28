@@ -12,7 +12,7 @@
 namespace gamemd {
 long long Display::CalculateDefaultSize()
 {
-  int64_t result; // rax
+  __int64 result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_ABFDD0) + 0.5); /*0x5d5a3b*/
   dword_ABFDC4 = result; /*0x5d5a40*/

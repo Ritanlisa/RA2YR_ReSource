@@ -20,14 +20,7 @@ struct ThemeClass {
     unsigned char u8_21;  // 0x21
     void* q024;  // 0x24
     char ThemeClass_field_28[4];  // 0x28
-    unsigned int ThemeClass_field_2C;  // 0x2C
-    unsigned int m_Name;
-    unsigned int q0646;
-    unsigned int u32_280;
-    unsigned int u32_28C;
-    unsigned int u32_CC2;
-    unsigned char u8_288;
-    unsigned char u8_289;
+    char ThemeClass_field_2C[4];  // 0x2C
 // --- flat members (END) ---
     int ClearQueues();
     int ReadThemeEntry(unsigned char *** a2);

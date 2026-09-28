@@ -19,8 +19,8 @@ struct WaypointPathClass {
     int referenceCount;  // 0x1C
     bool q01D;  // 0x1D
     unsigned char NeedsSaveOrLink;  // 0x20
-    unsigned int idxArray;  // 0x24
-    void* ;  // 0x28
+    char idxArray[4];  // 0x24
+    unsigned int u32_28;  // 0x28
     bool q02B;  // 0x2B
     unsigned int u32_2C;  // 0x2C
     unsigned int u32_30;  // 0x30
@@ -39,9 +39,6 @@ struct WaypointPathClass {
     unsigned char WaypointClass_field_34;  // 0x48
     unsigned char WaypointClass_field_35;  // 0x49
     unsigned char pad_36;  // 0x4A
-    unsigned int vtable0;
-    unsigned int waypoints;
-    unsigned int u32_28;
 // --- flat members (END) ---
     WaypointPathClass * ProcessEvent(char a2);
     int Construct(WaypointClass * aP1);

@@ -40,24 +40,24 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
   int v16; // eax
   int v17; // eax
   int v18; // ecx
-  int16_t v19; // dx
-  int16_t v20; // di
-  int16_t v21; // di
-  int16_t v22; // bx
+  __int16 v19; // dx
+  __int16 v20; // di
+  __int16 v21; // di
+  __int16 v22; // bx
   int v23; // ecx
   int v24; // edx
   int v26; // edi
   int v27; // esi
   int v28; // edx
-  int16_t v29; // cx
+  __int16 v29; // cx
   double v30; // [esp+0h] [ebp-48h]
   int v31; // [esp+14h] [ebp-34h]
   int v32; // [esp+18h] [ebp-30h]
-  int16_t v34[2]; // [esp+20h] [ebp-28h] BYREF
-  int16_t v35[2]; // [esp+24h] [ebp-24h] BYREF
-  int16_t v36[2]; // [esp+28h] [ebp-20h] BYREF
+  __int16 v34[2]; // [esp+20h] [ebp-28h] BYREF
+  __int16 v35[2]; // [esp+24h] [ebp-24h] BYREF
+  __int16 v36[2]; // [esp+28h] [ebp-20h] BYREF
   int v37; // [esp+2Ch] [ebp-1Ch]
-  int16_t v38[2]; // [esp+30h] [ebp-18h] BYREF
+  __int16 v38[2]; // [esp+30h] [ebp-18h] BYREF
   int v39; // [esp+34h] [ebp-14h]
   int v40; // [esp+3Ch] [ebp-Ch]
   int v41; // [esp+40h] [ebp-8h]
@@ -65,24 +65,24 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
 
   v3 = (int *)&this->__pad_C[144]; /*0x425d1d*/
   v4 = v3[1]; /*0x425d29*/
-  v5 = (uint8_t)(*v3 >> 31) + *v3; /*0x425d32*/
+  v5 = (unsigned __int8)(*v3 >> 31) + *v3; /*0x425d32*/
   v37 = 10000; /*0x425d34*/
   v42 = v3[2]; /*0x425d3f*/
   v6 = v5; /*0x425d43*/
   v7 = v4; /*0x425d45*/
   v6 >>= 8; /*0x425d47*/
-  v8 = (int16_t)v6; /*0x425d4b*/
+  v8 = (__int16)v6; /*0x425d4b*/
   IDA_LOWORD(v39) = v6; /*0x425d54*/
-  v9 = (int16_t)v6 - 5; /*0x425d61*/
+  v9 = (__int16)v6 - 5; /*0x425d61*/
   v10 = v7 / 256; /*0x425d67*/
   IDA_HIWORD(v39) = v10; /*0x425d6c*/
-  *(unsigned int *)v34 = dword_89A150; /*0x425d71*/
-  v32 = (int16_t)v6; /*0x425d75*/
-  if ( v9 < (int16_t)v6 + 5 ) /*0x425d79*/
+  *(_DWORD *)v34 = dword_89A150; /*0x425d71*/
+  v32 = (__int16)v6; /*0x425d75*/
+  if ( v9 < (__int16)v6 + 5 ) /*0x425d79*/
   {
-    v11 = (int16_t)v10; /*0x425d7f*/
-    v31 = (int16_t)v10; /*0x425d82*/
-    v12 = (int16_t)v10 + 5; /*0x425d86*/
+    v11 = (__int16)v10; /*0x425d7f*/
+    v31 = (__int16)v10; /*0x425d82*/
+    v12 = (__int16)v10 + 5; /*0x425d86*/
     do /*0x425ec0*/
     {
       v13 = v11 - 5; /*0x425d89*/
@@ -92,18 +92,18 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
         {
           v35[0] = v9; /*0x425da0*/
           v35[1] = v13; /*0x425da5*/
-          if ( (uint8_t)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], v35, 1) ) /*0x425daa*/
+          if ( (unsigned __int8)LayerClass::IsWithinUsableArea((LayerClass *)&stru_87F5F0.__pad_58[416], v35, 1) ) /*0x425daa*/
           {
             v36[0] = v9; /*0x425dbb*/
             v36[1] = v13; /*0x425dc6*/
             v14 = (Cell *)CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], v36); /*0x425dcb*/
             v15 = v14; /*0x425dd0*/
-            if ( *(unsigned int *)&v14->__pad_E8[4] == 2 /*0x425e18*/
+            if ( *(_DWORD *)&v14->__pad_E8[4] == 2 /*0x425e18*/
               && ((int)v14->Cell_field_0x140 & 0x100) == 0
-              && (*((unsigned int *)Cell::GetNeighbourContent(v14, 6u) + 80) & 0x100) == 0
-              && (*((unsigned int *)Cell::GetNeighbourContent(v15, 0) + 80) & 0x100) == 0 )
+              && (*((_DWORD *)Cell::GetNeighbourContent(v14, 6u) + 80) & 0x100) == 0
+              && (*((_DWORD *)Cell::GetNeighbourContent(v15, 0) + 80) & 0x100) == 0 )
             {
-              if ( *(unsigned int *)&v15->__pad_1C[8] == v39 ) /*0x425e27*/
+              if ( *(_DWORD *)&v15->__pad_1C[8] == v39 ) /*0x425e27*/
               {
                 v16 = 0; /*0x425e77*/
               }
@@ -137,7 +137,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
                 v37 = v16; /*0x425e8e*/
                 v38[0] = v9; /*0x425e92*/
                 v38[1] = v13; /*0x425e97*/
-                *(unsigned int *)v34 = *(unsigned int *)v38; /*0x425ea0*/
+                *(_DWORD *)v34 = *(_DWORD *)v38; /*0x425ea0*/
               }
             }
             v8 = v32; /*0x425ea4*/
@@ -151,7 +151,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       ++v9; /*0x425eba*/
     }
     while ( v9 < v8 + 5 ); /*0x425ec0*/
-    if ( *(unsigned int *)v34 != dword_89A150 ) /*0x425ed6*/
+    if ( *(_DWORD *)v34 != dword_89A150 ) /*0x425ed6*/
     {
       v17 = v34[0] - v8; /*0x425eeb*/
       v18 = v34[1] - v11; /*0x425eed*/
@@ -173,7 +173,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       v22 = v19 + IDA_HIWORD(v39); /*0x425f21*/
       v38[0] = v21; /*0x425f28*/
       v38[1] = v19 + IDA_HIWORD(v39); /*0x425f2d*/
-      if ( (uint8_t)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425f3b*/
+      if ( (unsigned __int8)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425f3b*/
       {
         v23 = (v21 << 8) + 128; /*0x425f4a*/
         v24 = v22; /*0x425f50*/
@@ -181,18 +181,18 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
       }
       v38[0] = v21; /*0x425f5d*/
       v38[1] = IDA_HIWORD(v39); /*0x425f62*/
-      if ( (uint8_t)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425f78*/
+      if ( (unsigned __int8)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425f78*/
       {
-        *(unsigned int *)aP1 = (v21 << 8) + 128; /*0x425f99*/
+        *aP1 = (v21 << 8) + 128; /*0x425f99*/
         aP1[1] = (v31 << 8) + 128; /*0x425fa2*/
         aP1[2] = 0; /*0x425fa7*/
         return aP1; /*0x425fb0*/
       }
       v38[1] = v22; /*0x425fb8*/
       v38[0] = v39; /*0x425fbd*/
-      if ( (uint8_t)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425fd3*/
+      if ( (unsigned __int8)BuildingClass::IsCellPlaceable((BuildingClass *)this, v38) ) /*0x425fd3*/
       {
-        *(unsigned int *)aP1 = (v8 << 8) + 128; /*0x425ff0*/
+        *aP1 = (v8 << 8) + 128; /*0x425ff0*/
         aP1[1] = (v22 << 8) + 128; /*0x425ffa*/
         aP1[2] = 0; /*0x425ffd*/
         return aP1; /*0x426006*/
@@ -202,12 +202,12 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
   if ( dword_89A150 ) /*0x426011*/
   {
   LABEL_39:
-    *(unsigned int *)aP1 = Map_InvalidCoord_X; /*0x426090*/
+    *aP1 = Map_InvalidCoord_X; /*0x426090*/
     aP1[1] = Map_InvalidCoord_Y; /*0x4260a3*/
     aP1[2] = Map_InvalidCoord_Z; /*0x4260ac*/
     return aP1; /*0x4260b5*/
   }
-  v26 = Random::Range((Random *)&unk_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x426032*/
+  v26 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, 7); /*0x426032*/
   v27 = 0; /*0x426034*/
   while ( 1 ) /*0x426046*/
   {
@@ -216,8 +216,8 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
     IDA_LOWORD(v28) = IDA_HIWORD(v39) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v28 + 82]); /*0x426061*/
     v38[0] = v29; /*0x426066*/
     v38[1] = v28; /*0x42606f*/
-    *(unsigned int *)v34 = *(unsigned int *)v38; /*0x42607d*/
-    if ( (uint8_t)BuildingClass::IsCellPlaceable((BuildingClass *)this, v34) ) /*0x426081*/
+    *(_DWORD *)v34 = *(_DWORD *)v38; /*0x42607d*/
+    if ( (unsigned __int8)BuildingClass::IsCellPlaceable((BuildingClass *)this, v34) ) /*0x426081*/
       break; /*0x426081*/
     if ( ++v27 >= 8 ) /*0x42608e*/
       goto LABEL_39; /*0x42608e*/
@@ -225,7 +225,7 @@ AnimClass * * Building::ComputePosition(AnimClass * aP1)
   v24 = v34[1]; /*0x4260bd*/
   v23 = (v34[0] << 8) + 128; /*0x4260c5*/
   LABEL_41:
-  *(unsigned int *)aP1 = v23; /*0x4260cb*/
+  *aP1 = v23; /*0x4260cb*/
   aP1[1] = (v24 << 8) + 128; /*0x4260dd*/
   aP1[2] = 0; /*0x4260e0*/
   return aP1; /*0x425faa*/
@@ -237,12 +237,12 @@ int Building::GetNthOfType()
 {
   int BuildingByTiberiumType; // eax
 
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*(unsigned int *)&this->__pad_C[56]); /*0x485026*/
+  BuildingByTiberiumType = FindBuildingByTiberiumType(*(_DWORD *)&this->__pad_C[56]); /*0x485026*/
   if ( BuildingByTiberiumType == -1 ) /*0x48502e*/
     return 0; /*0x485030*/
   else
-    return ((uint8_t)this->__pad_A4[122] + 1) /*0x48504f*/
-         * *(unsigned int *)(*(unsigned int *)(g_BuildingLoadQueue_Array.TurretAnimData[2] + 4 * BuildingByTiberiumType) + 184);
+    return ((unsigned __int8)this->__pad_A4[122] + 1) /*0x48504f*/
+         * *(_DWORD *)(*(_DWORD *)(g_BuildingLoadQueue_Array.?[2] + 4 * BuildingByTiberiumType) + 184);
 }
 }
 // 0x772A90
@@ -266,14 +266,14 @@ namespace gamemd {
 unsigned int * Building::GetFoundationSize(unsigned int * a1, unsigned int a2)
 {
   int v2; // eax
-  int16_t *v3; // eax
+  __int16 *v3; // eax
   int v4; // ecx
   int v5; // edx
   int v6; // esi
   int v7; // edi
 
   v2 = MixFileClass::LoadSubFile(); /*0x69e7e0*/
-  if ( v2 && a2 < v2->nextArrayIndex && (v3 = (int16_t *)(v2 + 24 * a2 + 8)) != 0 ) /*0x69e7fe*/
+  if ( v2 && a2 < v2->nextArrayIndex && (v3 = (__int16 *)(v2 + 24 * a2 + 8)) != 0 ) /*0x69e7fe*/
   {
     v4 = *v3; /*0x69e800*/
     v5 = v3[1]; /*0x69e803*/

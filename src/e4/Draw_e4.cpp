@@ -29,13 +29,13 @@ int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9
   int v26; // [esp+44h] [ebp-44h]
   int v27; // [esp+48h] [ebp-40h]
   int v28; // [esp+4Ch] [ebp-3Ch]
-  unsigned int v29[2]; // [esp+50h] [ebp-38h] BYREF
-  unsigned int v30[2]; // [esp+58h] [ebp-30h] BYREF
-  unsigned int v31[2]; // [esp+60h] [ebp-28h] BYREF
-  unsigned int v32[2]; // [esp+68h] [ebp-20h] BYREF
-  unsigned int v33[2]; // [esp+70h] [ebp-18h] BYREF
-  unsigned int v34[2]; // [esp+78h] [ebp-10h] BYREF
-  unsigned int v35[2]; // [esp+80h] [ebp-8h] BYREF
+  _DWORD v29[2]; // [esp+50h] [ebp-38h] BYREF
+  _DWORD v30[2]; // [esp+58h] [ebp-30h] BYREF
+  _DWORD v31[2]; // [esp+60h] [ebp-28h] BYREF
+  _DWORD v32[2]; // [esp+68h] [ebp-20h] BYREF
+  _DWORD v33[2]; // [esp+70h] [ebp-18h] BYREF
+  _DWORD v34[2]; // [esp+78h] [ebp-10h] BYREF
+  _DWORD v35[2]; // [esp+80h] [ebp-8h] BYREF
 
   v10 = a3; /*0x7bb92c*/
   v11 = a2; /*0x7bb933*/
@@ -49,13 +49,13 @@ int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9
   v25 = v14; /*0x7bb959*/
   while ( 1 ) /*0x7bb970*/
   {
-    a3 = (int)(v12 + v10);
-    a2 = (int)(v11 + v27);
-    v15 = (int)(v13 + v11);
-    Draw_field_00 = (int)(this->Draw_field_00);
+    a3 = v12 + v10; /*0x7bb970*/
+    a2 = v11 + v27; /*0x7bb974*/
+    v15 = v13 + v11; /*0x7bb978*/
+    Draw_field_00 = this->Draw_field_00; /*0x7bb97b*/
     v29[1] = v12 + v10; /*0x7bb97d*/
     v29[0] = v15; /*0x7bb985*/
-    (*(void (__thiscall **)(Draw *, int *, unsigned int *, int *, int))(Draw_field_00 + 44))(this, &a5, v29, &a2, a9); /*0x7bb99b*/
+    (*(void (__thiscall **)(Draw *, int *, _DWORD *, int *, int))(Draw_field_00 + 44))(this, &a5, v29, &a2, a9); /*0x7bb99b*/
     v17 = v12 + v11; /*0x7bb9a2*/
     v18 = -v12; /*0x7bb9a5*/
     v30[0] = v17; /*0x7bb9a7*/
@@ -63,19 +63,19 @@ int Draw::Ellipse(int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9
     v31[0] = v18 + v11; /*0x7bb9b6*/
     v19 = this->Draw_field_00; /*0x7bb9bc*/
     v31[1] = v25; /*0x7bb9be*/
-    (*(void (__thiscall **)(Draw *, int *, unsigned int *, unsigned int *, int))(v19 + 44))(this, &a5, v31, v30, a9); /*0x7bb9d4*/
+    (*(void (__thiscall **)(Draw *, int *, _DWORD *, _DWORD *, int))(v19 + 44))(this, &a5, v31, v30, a9); /*0x7bb9d4*/
     v32[1] = v18 + v10; /*0x7bb9de*/
     v20 = this->Draw_field_00; /*0x7bb9e8*/
     v32[0] = v11 + v27; /*0x7bb9ea*/
     v33[1] = v18 + v10; /*0x7bb9f4*/
     v33[0] = v11 + a4; /*0x7bb9f8*/
-    (*(void (__thiscall **)(Draw *, int *, unsigned int *, unsigned int *, int))(v20 + 44))(this, &a5, v33, v32, a9); /*0x7bba12*/
+    (*(void (__thiscall **)(Draw *, int *, _DWORD *, _DWORD *, int))(v20 + 44))(this, &a5, v33, v32, a9); /*0x7bba12*/
     v21 = this->Draw_field_00; /*0x7bba24*/
     v34[1] = a4 + v10; /*0x7bba26*/
     v35[1] = a4 + v10; /*0x7bba2a*/
     v34[0] = v11 + v28; /*0x7bba32*/
     v35[0] = v11 + v18; /*0x7bba48*/
-    (*(void (__thiscall **)(Draw *, int *, unsigned int *, unsigned int *, int))(v21 + 44))(this, &a5, v35, v34, a9); /*0x7bba4c*/
+    (*(void (__thiscall **)(Draw *, int *, _DWORD *, _DWORD *, int))(v21 + 44))(this, &a5, v35, v34, a9); /*0x7bba4c*/
     if ( v26 >= 0 ) /*0x7bba59*/
     {
       v22 = v28 - v27--; /*0x7bba69*/

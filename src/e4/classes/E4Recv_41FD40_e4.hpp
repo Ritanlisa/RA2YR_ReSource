@@ -16,6 +16,12 @@ struct E4Recv_41FD40 {
     unsigned int q220;  // 0x220
     unsigned int q544;  // 0x544
     unsigned int q1348;  // 0x1348
+    unsigned int q1048930;  // 0x1048930
+    unsigned int q17074480;  // 0x17074480
+    unsigned int q15136531030;  // 0x15136531030
+    unsigned int q1448315392048;  // 0x1448315392048
+    unsigned int q240520674221229394;  // 0x240520674221229394
+    unsigned int q664452195356709655444;  // 0x664452195356709655444
 // --- flat members (END) ---
     int sub_41FD40(int a2);  // 0x41FD40
 };

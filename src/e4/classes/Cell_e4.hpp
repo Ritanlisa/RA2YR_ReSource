@@ -50,6 +50,7 @@ struct Cell {
     unsigned char q0B0;  // 0xB0
     unsigned char q0B4;  // 0xB4
     unsigned char q0B8;  // 0xB8
+    unsigned int u32_C4;  // 0xC4
     void* q0E4;  // 0xE4
     unsigned char q0E8;  // 0xE8
     unsigned int u32_EC;  // 0xEC
@@ -111,20 +112,6 @@ struct Cell {
     unsigned char q288;  // 0x288
     void* q298;  // 0x298
     void* q29C;  // 0x29C
-    unsigned int Cell_field_0x0;
-    unsigned int Cell_field_0x11B;
-    unsigned int Cell_field_0x140;
-    unsigned int Cell_field_0x38;
-    unsigned int Cell_field_0xE4;
-    unsigned int __pad_1C;
-    unsigned int __pad_3C;
-    unsigned int __pad_70;
-    unsigned int __pad_E8;
-    unsigned int __pad_FC;
-    unsigned int u32_5A4;
-    unsigned int u32_6C4;
-    unsigned int u32_901;
-    unsigned int IsBridge;
 // --- flat members (END) ---
     char IsOccupied(short * a2,  char a3);    // 0x419B00
     int PosToIndex();  // 0x42B1C0

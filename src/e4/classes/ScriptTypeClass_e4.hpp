@@ -139,7 +139,6 @@ struct ScriptTypeClass {
     unsigned int q1B0;  // 0x1B0
     unsigned int q1B1;  // 0x1B1
     unsigned int q1B5;  // 0x1B5
-    unsigned int vtable0;
 // --- flat members (END) ---
     ScriptTypeClass * ddtor(char a2);
     TaskForceClass * ReadINI(char * a1, int a2);

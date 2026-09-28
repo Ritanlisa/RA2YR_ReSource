@@ -20,8 +20,8 @@ int Input::OffsetToDirection()
   int v7; // [esp+10h] [ebp-8h]
   int v8; // [esp+14h] [ebp-4h]
 
-  v2 = (uint8_t)this->u32_4; /*0x4810aa*/
-  Input_field_00 = (uint8_t)this->Input_field_00; /*0x4810b0*/
+  v2 = (unsigned __int8)this->u32_4; /*0x4810aa*/
+  Input_field_00 = (unsigned __int8)this->Input_field_00; /*0x4810b0*/
   v8 = v2 - 128; /*0x4810bf*/
   v7 = Input_field_00 - 128; /*0x4810c3*/
   __asm /*0x4810c7*/

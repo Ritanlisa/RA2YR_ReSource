@@ -707,10 +707,10 @@ void MathSinCos6D1BF0()
 
 // IDA: 0x6D1E80  proposal: AbstractClass::SetMember1
 // IDA: void __thiscall sub_6D1E80(unsigned int *this)
-//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)(void*)&Tactical_vftable;
-//   *(this + 1) = (void*)(void*)(void*)(void*)(void*)&Tactical_vftable;
-//   *(this + 2) = (void*)(void*)(void*)(void*)(void*)&Tactical_vftable;
-//   *(this + 3) = (void*)(void*)(void*)(void*)(void*)&Tactical_vftable;
+//   ((void**)this)[0] = (void*)(void*)(void*)(void*)(void*)(void*)(void*)&Tactical_vftable;
+//   *(this + 1) = (void*)(void*)(void*)(void*)(void*)(void*)&Tactical_vftable;
+//   *(this + 2) = (void*)(void*)(void*)(void*)(void*)(void*)&Tactical_vftable;
+//   *(this + 3) = (void*)(void*)(void*)(void*)(void*)(void*)&Tactical_vftable;
 //   TacticalClass_Instance = 0;
 //   AbstractClass::DTOR(this);
 void AbstractClass_SetMember1(void* _this) // thiscall

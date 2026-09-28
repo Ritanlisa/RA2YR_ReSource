@@ -32,39 +32,39 @@ namespace gamemd {
 int Event::Dispatch()
 {
   int result; // eax
-  unsigned char v1[4]; // [esp+10h] [ebp-100h] BYREF
-  unsigned int v2[6]; // [esp+14h] [ebp-FCh] BYREF
-  unsigned char v3[228]; // [esp+2Ch] [ebp-E4h]
+  _BYTE v1[4]; // [esp+10h] [ebp-100h] BYREF
+  _DWORD v2[6]; // [esp+14h] [ebp-FCh] BYREF
+  _BYTE v3[228]; // [esp+2Ch] [ebp-E4h]
 
   UpdateAudioVideo(); /*0x48d08c*/
-  if ( g_AsyncIOState > 0 && *(unsigned int *)AsyncIO_Instance ) /*0x48d09f*/
-    (*(void (__thiscall **)(unsigned int))(**(unsigned int **)AsyncIO_Instance + 8))(*(unsigned int *)AsyncIO_Instance); /*0x48d0a7*/
-  result = g_GameMode_Current[0]; /*0x48d0aa*/
-  if ( g_GameMode_Current[0] == 3 || g_GameMode_Current[0] == 4 ) /*0x48d0b7*/
+  if ( g_AsyncIOState > 0 && *(_DWORD *)AsyncIO_Instance ) /*0x48d09f*/
+    (*(void (__thiscall **)(_DWORD))(**(_DWORD **)AsyncIO_Instance + 8))(*(_DWORD *)AsyncIO_Instance); /*0x48d0a7*/
+  result = dword_A8B238[0]; /*0x48d0aa*/
+  if ( dword_A8B238[0] == 3 || dword_A8B238[0] == 4 ) /*0x48d0b7*/
   {
     Network::Dispatch(); /*0x48d0b9*/
-    result = g_GameMode_Current[0]; /*0x48d0be*/
+    result = dword_A8B238[0]; /*0x48d0be*/
   }
   if ( result == 1 ) /*0x48d0c6*/
   {
-    if ( (GameFlags_Campaign & 1) == 0 ) /*0x48d0da*/
+    if ( (dword_A8DAB8 & 1) == 0 ) /*0x48d0da*/
       return result; /*0x48d0da*/
     goto LABEL_11; /*0x48d0da*/
   }
   if ( result == 2 ) /*0x48d0cb*/
   {
   LABEL_11:
-    Stream::ReadPacket((int)&g_EventManager); /*0x48d0e0*/
-    if ( g_ScenarioClass_Instance[13720] && ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v2, (int)v1) > 0 ) /*0x48d10f*/
+    Stream::ReadPacket((int)&unk_A8EA70); /*0x48d0e0*/
+    if ( dword_A8B230[13720] && ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v2, (int)v1) > 0 ) /*0x48d10f*/
     {
       do /*0x48d15f*/
       {
-        if ( v2[0] == 108 && v3[0] != g_EventDispatchState ) /*0x48d129*/
-          Network::UpdateLatencyDisplay((int)g_UIManager, 1, (double)*(int *)&v3[1], NAN); /*0x48d144*/
+        if ( v2[0] == 108 && v3[0] != dword_A8DB30 ) /*0x48d129*/
+          Network::UpdateLatencyDisplay((int)dword_AC4F58, 1, (double)*(int *)&v3[1], NAN); /*0x48d144*/
       }
-      while ( ObjectTypeClass::CreateInstance((int)&g_EventManager, (int)v2, (int)v1) > 0 ); /*0x48d15f*/
+      while ( ObjectTypeClass::CreateInstance((int)&unk_A8EA70, (int)v2, (int)v1) > 0 ); /*0x48d15f*/
     }
-    result = g_GameMode_Current[0]; /*0x48d161*/
+    result = dword_A8B238[0]; /*0x48d161*/
   }
   if ( result == 4 ) /*0x48d169*/
   {
@@ -75,9 +75,9 @@ int Event::Dispatch()
       if ( result != dword_89E9B0 ) /*0x48d186*/
       {
         if ( ppv && !dword_B77DCC ) /*0x48d199*/
-          (*(void (__stdcall **)(LPVOID))(*(unsigned int *)ppv + 12))(ppv); /*0x48d19e*/
+          (*(void (__stdcall **)(LPVOID))(*(_DWORD *)ppv + 12))(ppv); /*0x48d19e*/
         if ( g_UIPointerTable ) /*0x48d1a8*/
-          (*(void (__stdcall **)(LPVOID))(*(unsigned int *)g_UIPointerTable + 28))(g_UIPointerTable); /*0x48d1ad*/
+          (*(void (__stdcall **)(LPVOID))(*(_DWORD *)g_UIPointerTable + 28))(g_UIPointerTable); /*0x48d1ad*/
         result = time(0); /*0x48d1b2*/
         dword_89E9B0 = result; /*0x48d1ba*/
       }
@@ -102,12 +102,12 @@ void sub_5E2FA0()
     {
       result = SendDlgItemMessageA(Current, 1771, 0x199u, result, 0); /*0x5e2fdd*/
       if ( result ) /*0x5e2fe1*/
-        return (*(int (__thiscall **)(int))(*(unsigned int *)result + 148))(result); /*0x5e2fe7*/
+        return (*(int (__thiscall **)(int))(*(_DWORD *)result + 148))(result); /*0x5e2fe7*/
     }
   }
   else if ( dword_A8B23C ) /*0x5e2ff8*/
   {
-    return (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->vtable0 + 37))(dword_A8B23C); /*0x5e2ffc*/
+    return (*((int (__thiscall **)(ObjectClass *))dword_A8B23C->AbstractClass + 37))(dword_A8B23C); /*0x5e2ffc*/
   }
   return result; /*0x5e2fed*/
 }
@@ -171,11 +171,11 @@ void sub_796960()
   char *v7; // eax
   Waypoint v9[2]; // [esp+8h] [ebp-240h] BYREF
   int v10[113]; // [esp+80h] [ebp-1C8h] BYREF
-  int16_t v11; // [esp+244h] [ebp-4h]
+  __int16 v11; // [esp+244h] [ebp-4h]
   char v12; // [esp+246h] [ebp-2h]
 
-  IDA_LOBYTE(owningHouseIndex) = unk_A8B238; /*0x796960*/
-  if ( *(unsigned int *)&unk_A8B238 == 4 ) /*0x796970*/
+  IDA_LOBYTE(owningHouseIndex) = dword_A8B238; /*0x796960*/
+  if ( *(_DWORD *)&dword_A8B238 == 4 ) /*0x796970*/
     return owningHouseIndex; /*0x796970*/
   Waypoint::InitInvalid(v9); /*0x79697a*/
   owningHouseIndex = g_WOL_UserList.owningHouseIndex; /*0x79697f*/
@@ -203,7 +203,7 @@ void sub_796960()
     {
       if ( owningHouseIndex > 0 ) /*0x796a0a*/
         qmemcpy(&v9[0].__pad_0[12], g_WOL_UserList.nextObject, 0x6Cu); /*0x796a1b*/
-      *(unsigned int *)&v9[0].__pad_0[44] = 0; /*0x796a21*/
+      *(_DWORD *)&v9[0].__pad_0[44] = 0; /*0x796a21*/
       Network::SyncPlayerList(v1); /*0x796a29*/
       Event::Dispatch(); /*0x796a2e*/
       Network::SetConnectionParams(&unk_A8E9C0, 50, -1, 5000, 1); /*0x796a42*/
@@ -257,27 +257,27 @@ int sub_7A0F40()
   int v8; // edx
   int v9; // [esp+Ch] [ebp-1F4h] BYREF
   signed int v10; // [esp+10h] [ebp-1F0h]
-  unsigned int v11[27]; // [esp+14h] [ebp-1ECh] BYREF
+  _DWORD v11[27]; // [esp+14h] [ebp-1ECh] BYREF
   char Source[256]; // [esp+80h] [ebp-180h] BYREF
   char Buffer[128]; // [esp+180h] [ebp-80h] BYREF
 
-  v10 = g_WOL_State; /*0x7a0f58*/
+  v10 = dword_B77900; /*0x7a0f58*/
   memset(v11, 0, sizeof(v11)); /*0x7a0f5c*/
   Source[0] = 80; /*0x7a0f60*/
   Source[2] = 0; /*0x7a0f67*/
-  Source[1] = g_WOL_State + 48; /*0x7a0f6c*/
+  Source[1] = dword_B77900 + 48; /*0x7a0f6c*/
   result = g_NetworkLobbyState; /*0x7a0f70*/
   if ( !g_NetworkLobbyState ) /*0x7a0f77*/
   {
     v1 = 0; /*0x7a0f7e*/
-    if ( (int)g_WOL_State > 0 ) /*0x7a0f82*/
+    if ( (int)dword_B77900 > 0 ) /*0x7a0f82*/
     {
       v2 = 0; /*0x7a0f8a*/
       do /*0x7a102a*/
       {
-        if ( v2 >= 0 && v1 < (int)g_WOL_State ) /*0x7a0f96*/
-          qmemcpy(v11, (char *)g_WOL_ConnectionFlags + v2, sizeof(v11)); /*0x7a0faa*/
-        (*(void (__stdcall **)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))(g_UIPointerTable, v11[6], &v9); /*0x7a0fbe*/
+        if ( v2 >= 0 && v1 < (int)dword_B77900 ) /*0x7a0f96*/
+          qmemcpy(v11, (char *)dword_B77908 + v2, sizeof(v11)); /*0x7a0faa*/
+        (*(void (__stdcall **)(LPVOID, _DWORD, int *))(*(_DWORD *)g_UIPointerTable + 32))(g_UIPointerTable, v11[6], &v9); /*0x7a0fbe*/
         sprintf(Buffer, ",%s,%d", (const char *)&v11[9], v9); /*0x7a0fd8*/
         v3 = strlen(Buffer) + 1; /*0x7a0ffd*/
         v4 = &Source[strlen(Source)]; /*0x7a1006*/
@@ -309,7 +309,7 @@ void sub_786270()
   DWORD Type; // [esp+10h] [ebp-104h] BYREF
   CHAR SubKey[256]; // [esp+14h] [ebp-100h] BYREF
 
-  *(unsigned int *)Data = 0; /*0x78627e*/
+  *(_DWORD *)Data = 0; /*0x78627e*/
   if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven ) /*0x786286*/
   {
     if ( strlen(g_Str_SOFTWARE_Westwood_Yuri_s_Reven) ) /*0x78628e*/
@@ -325,11 +325,11 @@ void sub_786270()
   }
   dword_B77E50 = Data[0]; /*0x786328*/
   if ( ppv ) /*0x78632e*/
-    (*(void (__stdcall **)(LPVOID, unsigned int))(*(unsigned int *)ppv + 140))(ppv, *(unsigned int *)Data); /*0x786334*/
+    (*(void (__stdcall **)(LPVOID, _DWORD))(*(_DWORD *)ppv + 140))(ppv, *(_DWORD *)Data); /*0x786334*/
   if ( !g_UIPointerTable ) /*0x786341*/
     return 0; /*0x78637d*/
   Debug::Log(); /*0x786353*/
-  (*(void (__stdcall **)(LPVOID, char *, int, int))(*(unsigned int *)g_UIPointerTable + 44))( /*0x786371*/
+  (*(void (__stdcall **)(LPVOID, char *, int, int))(*(_DWORD *)g_UIPointerTable + 44))( /*0x786371*/
     g_UIPointerTable,
     &g_WindowManager.__pad_70[28],
     stru_B76AC4.ambientSoundController[3],
@@ -361,21 +361,21 @@ void sub_7C5F3D()
     {
       _EAX = 0; /*0x7c5f7f*/
       __asm { cpuid } /*0x7c5f81*/
-      *(unsigned int *)Source = _EBX; /*0x7c5f83*/
-      *(unsigned int *)&Source[4] = _EDX; /*0x7c5f89*/
-      *(unsigned int *)&Source[8] = _ECX; /*0x7c5f8f*/
-      *(unsigned int *)&Source[12] = 32; /*0x7c5f95*/
+      *(_DWORD *)Source = _EBX; /*0x7c5f83*/
+      *(_DWORD *)&Source[4] = _EDX; /*0x7c5f89*/
+      *(_DWORD *)&Source[8] = _ECX; /*0x7c5f8f*/
+      *(_DWORD *)&Source[12] = 32; /*0x7c5f95*/
       if ( _EAX >= 1 ) /*0x7c5fa2*/
       {
         _EAX = 1; /*0x7c5fa6*/
         __asm { cpuid } /*0x7c5fa7*/
-        byte_84E864 = (uint8_t)(_EAX & 0xF0) >> 4; /*0x7c5fb4*/
-        v19 = (uint16_t)(_EAX & 0xF00) >> 8; /*0x7c5fc2*/
+        byte_84E864 = (unsigned __int8)(_EAX & 0xF0) >> 4; /*0x7c5fb4*/
+        v19 = (unsigned __int16)(_EAX & 0xF00) >> 8; /*0x7c5fc2*/
       }
     }
   }
   byte_84E863 = v19; /*0x7c5fc8*/
-  if ( (uint8_t)v19 < 5u ) /*0x7c5fcf*/
+  if ( (unsigned __int8)v19 < 5u ) /*0x7c5fcf*/
     goto LABEL_8; /*0x7c5fcf*/
   _EAX = 1; /*0x7c5fd1*/
   __asm { cpuid } /*0x7c5fd6*/
@@ -396,13 +396,13 @@ void sub_7C5F3D()
 namespace gamemd {
 int sub_7C5FFF()
 {
-  if ( (uint8_t)byte_84E863 < 5u ) /*0x7c6008*/
+  if ( (unsigned __int8)byte_84E863 < 5u ) /*0x7c6008*/
     goto LABEL_4; /*0x7c6008*/
   _EAX = 1; /*0x7c600a*/
   __asm { cpuid } /*0x7c600f*/
   if ( (_EDX & 0x8000) != 0 ) /*0x7c6017*/
   {
-    byte_84E860 = (uint8_t)byte_84E863 > 5u; /*0x7c6020*/
+    byte_84E860 = (unsigned __int8)byte_84E863 > 5u; /*0x7c6020*/
     byte_84E861 = 1; /*0x7c6029*/
     return 1; /*0x7c6030*/
   }

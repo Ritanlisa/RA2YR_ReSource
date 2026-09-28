@@ -17,16 +17,16 @@ namespace gamemd {
 AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
 {
   int v3; // ebp
-  unsigned int *v5; // edi
-  void * v6;
-  unsigned int *v7; // ecx
+  _DWORD *v5; // edi
+  int v6; // eax
+  _DWORD *v7; // ecx
   int v8; // edx
-  unsigned int *v9; // eax
+  _DWORD *v9; // eax
   int v10; // ecx
   int m_8; // edx
   int v12; // ecx
   int v13; // eax
-  unsigned int *v14; // ebx
+  _DWORD *v14; // ebx
   int v15; // eax
 
   v3 = a2; /*0x5d55a2*/
@@ -52,10 +52,10 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
     }
     else
     {
-      v6 = (void *)((int)(RA2_OPNEW(8 * a2)));
+      v6 = RA2_OPNEW(8 * a2); /*0x5d55c7*/
       if ( v6 ) /*0x5d55d1*/
       {
-        v7 = (unsigned int *)v6; /*0x5d55d6*/
+        v7 = (_DWORD *)v6; /*0x5d55d6*/
         if ( a2 - 1 >= 0 ) /*0x5d55da*/
         {
           v8 = a2; /*0x5d55dc*/
@@ -68,7 +68,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
           }
           while ( v8 ); /*0x5d55e6*/
         }
-        v5 = (unsigned int *)v6; /*0x5d55e8*/
+        v5 = (_DWORD *)v6; /*0x5d55e8*/
       }
       else
       {
@@ -78,7 +78,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
     IDA_LOBYTE(this->m_C) = 1; /*0x5d5607*/
     if ( !v5 ) /*0x5d560b*/
       return 0; /*0x5d5694*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x5d5611*/
+    if ( *(_DWORD *)&this->m_1[3] ) /*0x5d5611*/
     {
       m_8 = this->m_8; /*0x5d5616*/
       if ( a2 < m_8 ) /*0x5d561b*/
@@ -89,7 +89,7 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
         do /*0x5d5642*/
         {
           v13 = 2 * v12; /*0x5d5628*/
-          v14 = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * v12++); /*0x5d5631*/
+          v14 = (_DWORD *)(*(_DWORD *)&this->m_1[3] + 8 * v12++); /*0x5d5631*/
           v5[v13] = *v14; /*0x5d5638*/
           v5[v13 + 1] = v14[1]; /*0x5d563e*/
         }
@@ -99,16 +99,16 @@ AbstractClass * * MSFont_18::SetCapacity8(int a2, unsigned int * a3)
       if ( IDA_BYTE1(this->m_C) ) /*0x5d564a*/
       {
         RA2_OPDEL(*(void **)&this->m_1[3]); /*0x5d5653*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x5d565b*/
+        *(_DWORD *)&this->m_1[3] = 0; /*0x5d565b*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v5; /*0x5d5666*/
+    *(_DWORD *)&this->m_1[3] = v5; /*0x5d5666*/
     this->m_8 = v3; /*0x5d566c*/
     IDA_BYTE1(this->m_C) = a3 == 0; /*0x5d566f*/
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_UAcceleratorTracker *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d5678*/
+    (*(void (__thiscall **)(_DynamicVectorClass_UAcceleratorTracker *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5d5678*/
   }
   v15 = this->m_8; /*0x5d567b*/
   if ( v15 < this->m_10 ) /*0x5d5683*/
@@ -135,7 +135,7 @@ void MSFont_18::ClearBuffer()
   if ( v2 && IDA_BYTE1(this->m_C) ) /*0x5d5090*/
   {
     RA2_OPDEL(v2); /*0x5d5096*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x5d509e*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x5d509e*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x5d50a1*/
   this->m_8 = 0; /*0x5d50a4*/
@@ -147,7 +147,7 @@ namespace gamemd {
 unsigned int MSFont_18::PointerToIndex(int a2)
 {
   if ( IDA_LOBYTE(this->m_C) ) /*0x5d50b0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x5d50c5*/
+    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2; /*0x5d50c5*/
   else
     return 0; /*0x5d50b7*/
 }
@@ -157,7 +157,7 @@ unsigned int MSFont_18::PointerToIndex(int a2)
 namespace gamemd {
 int MSFont_18::GetSize(int a2)
 {
-  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5d50da*/
+  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2); /*0x5d50da*/
 }
 } // namespace gamemd
 
@@ -172,7 +172,7 @@ void MSFont_18::Destroy()
   if ( v2 && IDA_BYTE1(this->m_C) ) /*0x5d50f0*/
   {
     RA2_OPDEL(v2); /*0x5d50f6*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x5d50fe*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x5d50fe*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x5d5101*/
   this->m_8 = 0; /*0x5d5104*/
@@ -184,7 +184,7 @@ namespace gamemd {
 unsigned int MSFont_18::PointerToIndex8(int a2)
 {
   if ( IDA_LOBYTE(this->m_C) ) /*0x5d5110*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 3; /*0x5d5125*/
+    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 3; /*0x5d5125*/
   else
     return 0; /*0x5d5117*/
 }
@@ -196,18 +196,18 @@ char MSFont_18::AddRef(int a2)
 {
   int m_8; // esi
   int v3; // edx
-  unsigned int *v4; // eax
+  _DWORD *v4; // eax
   int v5; // ecx
 
   m_8 = this->m_8; /*0x5d5152*/
-  if ( m_8 == *(unsigned int *)(a2 + 8) ) /*0x5d515d*/
+  if ( m_8 == *(_DWORD *)(a2 + 8) ) /*0x5d515d*/
   {
     v3 = 0; /*0x5d515f*/
     if ( m_8 <= 0 ) /*0x5d5163*/
       return 1; /*0x5d5183*/
-    v4 = *(unsigned int **)&this->m_1[3]; /*0x5d5165*/
-    v5 = *(unsigned int *)(a2 + 4) - (unsigned int)v4; /*0x5d516b*/
-    while ( *v4 == *(unsigned int *)((char *)v4 + v5) ) /*0x5d5174*/
+    v4 = *(_DWORD **)&this->m_1[3]; /*0x5d5165*/
+    v5 = *(_DWORD *)(a2 + 4) - (_DWORD)v4; /*0x5d516b*/
+    while ( *v4 == *(_DWORD *)((char *)v4 + v5) ) /*0x5d5174*/
     {
       ++v3; /*0x5d5176*/
       ++v4; /*0x5d5177*/
@@ -223,7 +223,7 @@ char MSFont_18::AddRef(int a2)
 namespace gamemd {
 char MSFont_18::Release(int a2, unsigned int * a3)
 {
-  unsigned int *v4; // edi
+  _DWORD *v4; // edi
   int m_8; // ecx
   int i; // eax
 
@@ -233,24 +233,24 @@ char MSFont_18::Release(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d51ac*/
       v4 = a3; /*0x5d51c2*/
     else
-      v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x5d51be*/
+      v4 = (_DWORD *)RA2_OPNEW(4 * a2); /*0x5d51be*/
     IDA_LOBYTE(this->m_C) = 1; /*0x5d51c6*/
     if ( v4 ) /*0x5d51ca*/
     {
-      if ( *(unsigned int *)&this->m_1[3] ) /*0x5d51d5*/
+      if ( *(_DWORD *)&this->m_1[3] ) /*0x5d51d5*/
       {
         m_8 = this->m_8; /*0x5d51dc*/
         if ( a2 < m_8 ) /*0x5d51e1*/
           m_8 = a2; /*0x5d51e3*/
-        for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x5d51e9*/
+        for ( i = 0; i < m_8; v4[i - 1] = *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * i - 4) ) /*0x5d51e9*/
           ++i; /*0x5d51ee*/
         if ( IDA_BYTE1(this->m_C) ) /*0x5d51fb*/
         {
           RA2_OPDEL(*(void **)&this->m_1[3]); /*0x5d5206*/
-          *(unsigned int *)&this->m_1[3] = 0; /*0x5d520e*/
+          *(_DWORD *)&this->m_1[3] = 0; /*0x5d520e*/
         }
       }
-      *(unsigned int *)&this->m_1[3] = v4; /*0x5d5217*/
+      *(_DWORD *)&this->m_1[3] = v4; /*0x5d5217*/
       this->m_8 = a2; /*0x5d521f*/
       IDA_BYTE1(this->m_C) = a3 == 0; /*0x5d5222*/
       return 1; /*0x5d5228*/
@@ -262,7 +262,7 @@ char MSFont_18::Release(int a2, unsigned int * a3)
   }
   else
   {
-    (*(void (__thiscall **)(_VectorClass_PAUHWND *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d5232*/
+    (*(void (__thiscall **)(_VectorClass_PAUHWND *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5d5232*/
     return 1; /*0x5d5238*/
   }
 }
@@ -272,10 +272,10 @@ char MSFont_18::Release(int a2, unsigned int * a3)
 namespace gamemd {
 void MSFont_18::ddtor()
 {
-  if ( *(unsigned int *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x5d524d*/
+  if ( *(_DWORD *)&this->m_1[3] && IDA_BYTE1(this->m_C) ) /*0x5d524d*/
   {
     RA2_OPDEL(*(void **)&this->m_1[3]); /*0x5d5253*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x5d525b*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x5d525b*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x5d525e*/
   this->m_8 = 0; /*0x5d5261*/
@@ -288,7 +288,7 @@ int MSFont_18::Create(unsigned int * a2)
 {
   int result; // eax
   int m_8; // edx
-  unsigned int *i; // ecx
+  _DWORD *i; // ecx
 
   if ( !IDA_LOBYTE(this->m_C) ) /*0x5d5270*/
     return 0; /*0x5d5278*/
@@ -296,7 +296,7 @@ int MSFont_18::Create(unsigned int * a2)
   result = 0; /*0x5d5281*/
   if ( m_8 <= 0 ) /*0x5d5285*/
     return -1; /*0x5d529c*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x5d528b*/
+  for ( i = *(_DWORD **)&this->m_1[3]; *i != *a2; ++i ) /*0x5d528b*/
   {
     if ( ++result >= m_8 ) /*0x5d529a*/
       return -1; /*0x5d529a*/
@@ -310,7 +310,7 @@ namespace gamemd {
 unsigned int MSFont_18::Draw(int a2)
 {
   if ( IDA_LOBYTE(this->m_C) ) /*0x5d52b0*/
-    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x5d52c5*/
+    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2; /*0x5d52c5*/
   else
     return 0; /*0x5d52b7*/
 }
@@ -320,7 +320,7 @@ unsigned int MSFont_18::Draw(int a2)
 namespace gamemd {
 char MSFont_18::SetCapacity(int a2, unsigned int * a3)
 {
-  unsigned int *v4; // edi
+  _DWORD *v4; // edi
   int m_8; // ecx
   int i; // eax
   int v7; // eax
@@ -331,30 +331,30 @@ char MSFont_18::SetCapacity(int a2, unsigned int * a3)
     if ( a3 ) /*0x5d52e8*/
       v4 = a3; /*0x5d52fe*/
     else
-      v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x5d52fa*/
+      v4 = (_DWORD *)RA2_OPNEW(4 * a2); /*0x5d52fa*/
     IDA_LOBYTE(this->m_C) = 1; /*0x5d5302*/
     if ( !v4 ) /*0x5d5306*/
       return 0; /*0x5d537a*/
-    if ( *(unsigned int *)&this->m_1[3] ) /*0x5d5308*/
+    if ( *(_DWORD *)&this->m_1[3] ) /*0x5d5308*/
     {
       m_8 = this->m_8; /*0x5d530f*/
       if ( a2 < m_8 ) /*0x5d5314*/
         m_8 = a2; /*0x5d5316*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x5d531c*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * i - 4) ) /*0x5d531c*/
         ++i; /*0x5d5321*/
       if ( IDA_BYTE1(this->m_C) ) /*0x5d532e*/
       {
         RA2_OPDEL(*(void **)&this->m_1[3]); /*0x5d5339*/
-        *(unsigned int *)&this->m_1[3] = 0; /*0x5d5341*/
+        *(_DWORD *)&this->m_1[3] = 0; /*0x5d5341*/
       }
     }
-    *(unsigned int *)&this->m_1[3] = v4; /*0x5d534a*/
+    *(_DWORD *)&this->m_1[3] = v4; /*0x5d534a*/
     this->m_8 = a2; /*0x5d5352*/
     IDA_BYTE1(this->m_C) = a3 == 0; /*0x5d5355*/
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUHWND *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x5d535e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAUHWND *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x5d535e*/
   }
   v7 = this->m_8; /*0x5d5361*/
   if ( v7 < this->m_10 ) /*0x5d5369*/
@@ -369,13 +369,13 @@ int MSFont_18::FindItem(unsigned int * a2)
 {
   int m_10; // edx
   int result; // eax
-  unsigned int *i; // ecx
+  _DWORD *i; // ecx
 
   m_10 = this->m_10; /*0x5d5380*/
   result = 0; /*0x5d5383*/
   if ( m_10 <= 0 ) /*0x5d5388*/
     return -1; /*0x5d539f*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x5d538e*/
+  for ( i = *(_DWORD **)&this->m_1[3]; *i != *a2; ++i ) /*0x5d538e*/
   {
     if ( ++result >= m_10 ) /*0x5d539d*/
       return -1; /*0x5d539d*/
@@ -389,13 +389,13 @@ int MSFont_18::FindPair8(unsigned int * a2)
 {
   int m_10; // edx
   int result; // eax
-  unsigned int *i; // ecx
+  _DWORD *i; // ecx
 
   m_10 = this->m_10; /*0x5d56a0*/
   result = 0; /*0x5d56a5*/
   if ( m_10 <= 0 ) /*0x5d56ab*/
     return -1; /*0x5d56cc*/
-  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x5d56b1*/
+  for ( i = *(_DWORD **)&this->m_1[3]; *i != *a2 || i[1] != a2[1]; i += 2 ) /*0x5d56b1*/
   {
     if ( ++result >= m_10 ) /*0x5d56ca*/
       return -1; /*0x5d56ca*/
@@ -409,12 +409,12 @@ VectorClass_flat * MSFont_18::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_HWND_____vftable; /*0x5d56e6*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d56e3*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_HWND_____vftable; /*0x5d56e6*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5d56f0*/
   {
     RA2_OPDEL(v3); /*0x5d56f8*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x5d5700*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x5d5700*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x5d570b*/
   this->m_8 = 0; /*0x5d5711*/
@@ -430,12 +430,12 @@ DynamicVector * MSFont_18::Constructor_VectorClass_HWND_____(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_HWND_____vftable; /*0x5d5736*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d5733*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_HWND_____vftable; /*0x5d5736*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5d5740*/
   {
     RA2_OPDEL(v3); /*0x5d5748*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x5d5750*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x5d5750*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x5d575b*/
   this->m_8 = 0; /*0x5d5761*/
@@ -451,12 +451,12 @@ DynamicVector * MSFont_18::Constructor_VectorClass_AcceleratorTracker_(char a2)
 {
   void *v3; // eax
 
-  v3 = (unsigned int)(*(void **)&this->m_1[3]);
-  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_AcceleratorTracker_vftable; /*0x5d57d6*/
+  v3 = *(void **)&this->m_1[3]; /*0x5d57d3*/
+  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_AcceleratorTracker_vftable; /*0x5d57d6*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5d57e0*/
   {
     RA2_OPDEL(v3); /*0x5d57e8*/
-    *(unsigned int *)&this->m_1[3] = 0; /*0x5d57f0*/
+    *(_DWORD *)&this->m_1[3] = 0; /*0x5d57f0*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x5d57fb*/
   this->m_8 = 0; /*0x5d5801*/
