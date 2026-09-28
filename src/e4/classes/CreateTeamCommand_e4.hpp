@@ -393,7 +393,7 @@ struct CreateTeamCommand {
     wchar_t * performAction_185();  // 0x5379D0
     wchar_t * performAction_186();  // 0x5379F0
     bool performAction_187();  // 0x537A10
-    _UNKNOWN ** performAction_191();  // 0x537AE0
+    void ** performAction_191();  // 0x537AE0
     int performAction_192();  // 0x537AF0
     char * performAction_193();  // 0x537E80
     wchar_t * performAction_194();  // 0x537E90

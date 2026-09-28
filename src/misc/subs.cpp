@@ -53,29 +53,29 @@ int FindAudio(int a0, int a1) // fastcall
 
 // IDA: 0x406520  proposal: LoadVocFromINIHelper
 // IDA: void __fastcall sub_406520(int a1, int a2)
-//   *(_DWORD *)(a1 + 312) = a2;
+//   *(unsigned int *)(a1 + 312) = a2;
 void LoadVocFromINIHelper(int a0, int a1) // fastcall
 {
 }
 
 // IDA: 0x406530  proposal: LoadVocFromINIHelper406530
 // IDA: void __fastcall sub_406530(int a1, int a2)
-//   *(_DWORD *)(a1 + 316) = a2;
+//   *(unsigned int *)(a1 + 316) = a2;
 void LoadVocFromINIHelper406530(int a0, int a1) // fastcall
 {
 }
 
 // IDA: 0x406540  proposal: LoadVocFromINIHelper406540
 // IDA: void __fastcall sub_406540(int a1, int a2)
-//   *(_DWORD *)(a1 + 64) = a2;
+//   *(unsigned int *)(a1 + 64) = a2;
 void LoadVocFromINIHelper406540(int a0, int a1) // fastcall
 {
 }
 
 // IDA: 0x406550  proposal: EndAudio
 // IDA: int __fastcall sub_406550(int a1, int a2)
-//   _DWORD *v2; // esi
-//   v2 = (_DWORD *)(a1 + 24);
+//   unsigned int *v2; // esi
+//   v2 = (unsigned int *)(a1 + 24);
 //   EndBufferMixer((int *)(a1 + 24), a2);
 //   return AudioMixer::PlaySample(v2);
 int EndAudio(int a0, int a1) // fastcall
@@ -85,21 +85,21 @@ int EndAudio(int a0, int a1) // fastcall
 
 // IDA: 0x4065C0  proposal: LoadVocFromINIHelper4065C0
 // IDA: void __fastcall sub_4065C0(int a1, int a2)
-//   *(_DWORD *)(a1 + 20) = a2;
+//   *(unsigned int *)(a1 + 20) = a2;
 void LoadVocFromINIHelper4065C0(int a0, int a1) // fastcall
 {
 }
 
 // IDA: 0x4065D0  proposal: LoadVocFromINIHelper4065D0
 // IDA: void __fastcall sub_4065D0(int a1, int a2)
-//   *(_DWORD *)(a1 + 72) = a2;
+//   *(unsigned int *)(a1 + 72) = a2;
 void LoadVocFromINIHelper4065D0(int a0, int a1) // fastcall
 {
 }
 
 // IDA: 0x4065E0  proposal: LoadVocFromINIHelper4065E0
 // IDA: void __fastcall sub_4065E0(int a1, int a2)
-//   *(_DWORD *)(a1 + 80) = a2;
+//   *(unsigned int *)(a1 + 80) = a2;
 void LoadVocFromINIHelper4065E0(int a0, int a1) // fastcall
 {
 }
@@ -111,17 +111,17 @@ void LoadVocFromINIHelper4065E0(int a0, int a1) // fastcall
 //   {
 //   if ( a2 >= 0 )
 //   {
-//   *(_DWORD *)(a1 + 104) = a2;
+//   *(unsigned int *)(a1 + 104) = a2;
 //   }
 //   else
 //   {
-//   *(_DWORD *)(a1 + 104) = 0;
+//   *(unsigned int *)(a1 + 104) = 0;
 //   return 0;
 //   }
 //   }
 //   else
 //   {
-//   *(_DWORD *)(a1 + 104) = 100;
+//   *(unsigned int *)(a1 + 104) = 100;
 //   return 100;
 //   }
 //   return result;
@@ -132,7 +132,7 @@ int LoadVocFromINIHelper406620(int a0, int a1) // fastcall
 
 // IDA: 0x406640  proposal: LoadVocFromINIHelper406640
 // IDA: void __fastcall sub_406640(int a1, int a2)
-//   *(_DWORD *)(a1 + 76) = a2;
+//   *(unsigned int *)(a1 + 76) = a2;
 void LoadVocFromINIHelper406640(int a0, int a1) // fastcall
 {
 }
@@ -159,8 +159,8 @@ int UpdateAudio()
 //   result = AudioQueue::GetNext((int *)g_Audio_Enabled + 62);
 //   for ( i = result; result; i = result )
 //   {
-//   if ( (*(_BYTE *)(i + 164) & 4) = 0 && *(_DWORD *)(i + 12) == 1 )
-//   result = AudioChannel::ActivatePlay((_DWORD *)i);
+//   if ( (*(unsigned char *)(i + 164) & 4) = 0 && *(unsigned int *)(i + 12) == 1 )
+//   result = AudioChannel::ActivatePlay((unsigned int *)i);
 //   if ( i )
 //   break;
 //   result = AudioQueue::GetNextAlt((int *)i);
@@ -215,8 +215,8 @@ int UpdateAudio406F00()
 //   result = AudioQueue::GetNext((int *)g_Audio_Enabled + 62);
 //   for ( i = result; result; i = result )
 //   {
-//   if ( (*(_BYTE *)(i + 164) & 4) = 0 && *(_DWORD *)(i + 12) == 1 )
-//   result = AudioChannel::ActivatePlay((_DWORD *)i);
+//   if ( (*(unsigned char *)(i + 164) & 4) = 0 && *(unsigned int *)(i + 12) == 1 )
+//   result = AudioChannel::ActivatePlay((unsigned int *)i);
 //   if ( i )
 //   break;
 //   result = AudioQueue::GetNextAlt((int *)i);
@@ -229,7 +229,7 @@ int UpdateAudio406F40()
 }
 
 // IDA: 0x4CCA70  proposal: LocomotionClass::SetMember1
-// IDA: void __thiscall sub_4CCA70(_DWORD *this)
+// IDA: void __thiscall sub_4CCA70(unsigned int *this)
 //   ((void**)this)[0] = (void*)(void*)(void*)&FlyLocomotionClass_vftable;
 //   *(this + 1) = (void*)(void*)&FlyLocomotionClass_vftable;
 //   LocomotionClass::Construct(this);
@@ -238,7 +238,7 @@ void LocomotionClass_SetMember1(void* _this) // thiscall
 }
 
 // IDA: 0x513D00  proposal: LocomotionClass::SetMember1513D00
-// IDA: void __thiscall sub_513D00(_DWORD *this)
+// IDA: void __thiscall sub_513D00(unsigned int *this)
 //   ((void**)this)[0] = (void*)(void*)(void*)&HoverLocomotionClass_vftable;
 //   *(this + 1) = (void*)(void*)&HoverLocomotionClass_vftable;
 //   LocomotionClass::Construct(this);
@@ -247,7 +247,7 @@ void LocomotionClass_SetMember1513D00(void* _this) // thiscall
 }
 
 // IDA: 0x5AFF50  proposal: LocomotionClass::SetMember15AFF50
-// IDA: void __thiscall sub_5AFF50(_DWORD *this)
+// IDA: void __thiscall sub_5AFF50(unsigned int *this)
 //   ((void**)this)[0] = (void*)(void*)(void*)&MechLocomotionClass_vftable;
 //   *(this + 1) = (void*)(void*)&MechLocomotionClass_vftable;
 //   LocomotionClass::Construct(this);
@@ -256,7 +256,7 @@ void LocomotionClass_SetMember15AFF50(void* _this) // thiscall
 }
 
 // IDA: 0x661F30  proposal: LocomotionClass::SetMember1661F30
-// IDA: void __thiscall sub_661F30(_DWORD *this)
+// IDA: void __thiscall sub_661F30(unsigned int *this)
 //   ((void**)this)[0] = (void*)(void*)(void*)&RocketLocomotionClass_vftable;
 //   *(this + 1) = (void*)(void*)&RocketLocomotionClass_vftable;
 //   LocomotionClass::Construct(this);

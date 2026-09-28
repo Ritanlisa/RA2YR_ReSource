@@ -115,10 +115,10 @@ void AbstractClass::createId() {
 // 0x410540
 CoordStruct* AbstractClass::GetCoords(CoordStruct* out) const {
   int *v1; // ecx
-  _BYTE v3[12]; // [esp+4h] [ebp-Ch] BYREF
+  unsigned char v3[12]; // [esp+4h] [ebp-Ch] BYREF
   CoordStruct *out; // [esp+14h] [ebp+4h]
 
-  v1 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(out->u32_48)(out, v3); /*0x41054e*/
+  v1 = (int *)(*(int (__thiscall **)(void *, unsigned char *))(out->u32_48)(out, v3); /*0x41054e*/
   out->X = *v1; /*0x410558*/
   out->Y = v1[1]; /*0x41055d*/
   out->Z = v1[2]; /*0x410564*/

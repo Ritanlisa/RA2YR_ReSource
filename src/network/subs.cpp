@@ -9,7 +9,7 @@ namespace gamemd {
 
 // IDA: 0x5C0E10  proposal: MultiplayerGameMode::Dtor
 // IDA: void __thiscall sub_5C0E10(void *this)
-//   *(_DWORD *)this = (void*)(void*)&MultiplayerBattle_vftable;
+//   *(unsigned int *)this = (void*)(void*)&MultiplayerBattle_vftable;
 //   MultiplayerGameMode::Dtor(this);
 void MultiplayerGameMode_Dtor(void* _this) // thiscall
 {
@@ -17,7 +17,7 @@ void MultiplayerGameMode_Dtor(void* _this) // thiscall
 
 // IDA: 0x5C5D20  proposal: MultiplayerGameMode::Dtor5C5D20
 // IDA: void __thiscall sub_5C5D20(void *this)
-//   *(_DWORD *)this = (void*)(void*)&FreeForAll_vftable;
+//   *(unsigned int *)this = (void*)(void*)&FreeForAll_vftable;
 //   MultiplayerGameMode::Dtor(this);
 void MultiplayerGameMode_Dtor5C5D20(void* _this) // thiscall
 {
@@ -25,7 +25,7 @@ void MultiplayerGameMode_Dtor5C5D20(void* _this) // thiscall
 
 // IDA: 0x5C6190  proposal: MultiplayerGameMode::Dtor5C6190
 // IDA: void __thiscall sub_5C6190(void *this)
-//   *(_DWORD *)this = (void*)(void*)&MultiplayerManBattle_vftable;
+//   *(unsigned int *)this = (void*)(void*)&MultiplayerManBattle_vftable;
 //   MultiplayerGameMode::Dtor(this);
 void MultiplayerGameMode_Dtor5C6190(void* _this) // thiscall
 {
@@ -33,7 +33,7 @@ void MultiplayerGameMode_Dtor5C6190(void* _this) // thiscall
 
 // IDA: 0x5C9420  proposal: MultiplayerGameMode::Dtor5C9420
 // IDA: void __thiscall sub_5C9420(void *this)
-//   *(_DWORD *)this = (void*)(void*)&Megawealth_vftable;
+//   *(unsigned int *)this = (void*)(void*)&Megawealth_vftable;
 //   MultiplayerGameMode::Dtor(this);
 void MultiplayerGameMode_Dtor5C9420(void* _this) // thiscall
 {
@@ -41,7 +41,7 @@ void MultiplayerGameMode_Dtor5C9420(void* _this) // thiscall
 
 // IDA: 0x5CA670  proposal: MultiplayerGameMode::Dtor5CA670
 // IDA: void __thiscall sub_5CA670(void *this)
-//   *(_DWORD *)this = (void*)(void*)&MultiplayerSiege_vftable;
+//   *(unsigned int *)this = (void*)(void*)&MultiplayerSiege_vftable;
 //   MultiplayerGameMode::Dtor(this);
 void MultiplayerGameMode_Dtor5CA670(void* _this) // thiscall
 {
@@ -49,7 +49,7 @@ void MultiplayerGameMode_Dtor5CA670(void* _this) // thiscall
 
 // IDA: 0x5CB3E0  proposal: MultiplayerGameMode::Dtor5CB3E0
 // IDA: void __thiscall sub_5CB3E0(void *this)
-//   *(_DWORD *)this = (void*)(void*)&UnholyAlliance_vftable;
+//   *(unsigned int *)this = (void*)(void*)&UnholyAlliance_vftable;
 //   MultiplayerGameMode::Dtor(this);
 void MultiplayerGameMode_Dtor5CB3E0(void* _this) // thiscall
 {

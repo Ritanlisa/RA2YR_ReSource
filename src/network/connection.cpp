@@ -30,7 +30,7 @@ void ConnectionClass::queueSendPacket(const uint8_t* data, int32_t length, int32
   int v7; // eax
   int v8; // esi
   int v9; // ebx
-  _BYTE *i; // edi
+  unsigned char *i; // edi
   int v12; // eax
   int v13; // ecx
 
@@ -49,7 +49,7 @@ void ConnectionClass::queueSendPacket(const uint8_t* data, int32_t length, int32
   v9 = 0; /*0x48b433*/
   if ( v7 <= 0 ) /*0x48b437*/
     return 0; /*0x48b437*/
-  for ( i = (_BYTE *)this->q024; (*i & 1) != 0; i += 36 ) /*0x48b440*/
+  for ( i = (unsigned char *)this->q024; (*i & 1) != 0; i += 36 ) /*0x48b440*/
   {
     if ( ++v9 >= v7 ) /*0x48b44d*/
       return 0; /*0x48b455*/
@@ -57,25 +57,25 @@ void ConnectionClass::queueSendPacket(const uint8_t* data, int32_t length, int32
   if ( v9 == -1 ) /*0x48b45b*/
     return 0; /*0x48b55d*/
   v12 = 36 * v9; /*0x48b464*/
-  *(_DWORD *)(this->q024 + v12) = *(_DWORD *)(this->q024 + 36 * v9) | 1; /*0x48b46d*/
-  *(_DWORD *)(36 * v9 + this->q024) &= ~2u; /*0x48b47a*/
-  *(_DWORD *)(36 * v9 + this->q024) &= ~4u; /*0x48b486*/
-  *(_DWORD *)(v12 + this->q024 + 4) = 0; /*0x48b490*/
-  *(_DWORD *)(v12 + this->q024 + 8) = 0; /*0x48b497*/
-  *(_DWORD *)(v12 + this->q024 + 12) = 0; /*0x48b49e*/
-  *(_DWORD *)(v12 + this->q024 + 16) = a3; /*0x48b4a5*/
-  *(_WORD *)(v12 + this->q024 + 32) = a6; /*0x48b4ae*/
+  *(unsigned int *)(this->q024 + v12) = *(unsigned int *)(this->q024 + 36 * v9) | 1; /*0x48b46d*/
+  *(unsigned int *)(36 * v9 + this->q024) &= ~2u; /*0x48b47a*/
+  *(unsigned int *)(36 * v9 + this->q024) &= ~4u; /*0x48b486*/
+  *(unsigned int *)(v12 + this->q024 + 4) = 0; /*0x48b490*/
+  *(unsigned int *)(v12 + this->q024 + 8) = 0; /*0x48b497*/
+  *(unsigned int *)(v12 + this->q024 + 12) = 0; /*0x48b49e*/
+  *(unsigned int *)(v12 + this->q024 + 16) = a3; /*0x48b4a5*/
+  *(unsigned short *)(v12 + this->q024 + 32) = a6; /*0x48b4ae*/
   qmemcpy(*(void **)(36 * v9 + this->q024 + 20), a2, a3); /*0x48b4c1*/
   if ( a4 && a5 > 0 && a5 <= this->PacketsSent ) /*0x48b4dd*/
   {
     qmemcpy(*(void **)(v12 + this->q024 + 28), a4, a5); /*0x48b4eb*/
-    *(_DWORD *)(v12 + this->q024 + 24) = a5; /*0x48b4f9*/
+    *(unsigned int *)(v12 + this->q024 + 24) = a5; /*0x48b4f9*/
   }
   else
   {
-    *(_DWORD *)(v12 + this->q024 + 24) = 0; /*0x48b502*/
+    *(unsigned int *)(v12 + this->q024 + 24) = 0; /*0x48b502*/
   }
-  *(_DWORD *)(*(&this->PlayerIndex2) + 4 * *(&this->PlayerIndex0)) = v9; /*0x48b512*/
+  *(unsigned int *)(*(&this->PlayerIndex2) + 4 * *(&this->PlayerIndex0)) = v9; /*0x48b512*/
   v13 = *(&this->PlayerIndex0) + 1; /*0x48b51b*/
   ++*(&this->PlayerIndex1); /*0x48b51e*/
   *(&this->PlayerIndex0) = v13; /*0x48b521*/
@@ -85,24 +85,24 @@ void ConnectionClass::queueSendPacket(const uint8_t* data, int32_t length, int32
 int ConnectionClass::connect()
 {
   int v2; // esi
-  _DWORD *v3; // ecx
+  unsigned int *v3; // ecx
   int TileType; // eax
   int v5; // eax
 
   v2 = 0; /*0x48c5a4*/
-  v3 = (_DWORD *)this->PlayerIndex; /*0x48c5a6*/
+  v3 = (unsigned int *)this->PlayerIndex; /*0x48c5a6*/
   if ( (int)v3[14] > 0 ) /*0x48c5ae*/
   {
     do /*0x48c5e7*/
     {
       TileType = Terrain::GetTileType(v3, v2); /*0x48c5b1*/
-      if ( (*(_BYTE *)TileType & 2) != 0 ) /*0x48c5b9*/
+      if ( (*(unsigned char *)TileType & 2) != 0 ) /*0x48c5b9*/
       {
-        v5 = *(_DWORD *)(TileType + 12); /*0x48c5bb*/
-        if ( *(_BYTE *)(v5 + 2) == 1 || *(_DWORD *)(v5 + 4) < *(&this->PlayerIndex7) ) /*0x48c5cc*/
-          PacketQueue::ReleaseEntry((_DWORD *)this->PlayerIndex, 0, 0, v2--, 0, 0); /*0x48c5da*/
+        v5 = *(unsigned int *)(TileType + 12); /*0x48c5bb*/
+        if ( *(unsigned char *)(v5 + 2) == 1 || *(unsigned int *)(v5 + 4) < *(&this->PlayerIndex7) ) /*0x48c5cc*/
+          PacketQueue::ReleaseEntry((unsigned int *)this->PlayerIndex, 0, 0, v2--, 0, 0); /*0x48c5da*/
       }
-      v3 = (_DWORD *)this->PlayerIndex; /*0x48c5e0*/
+      v3 = (unsigned int *)this->PlayerIndex; /*0x48c5e0*/
       ++v2; /*0x48c5e3*/
     }
     while ( v2 < v3[14] ); /*0x48c5e7*/
@@ -112,11 +112,11 @@ int ConnectionClass::connect()
 // 0x48be60
 bool IPXConnClass::initConnection(void * a1, void * a2, void * a3, void * a4, void * a5, void * a6, void * a7, void * a8, void * a9)
 {
-  _DWORD *v10; // eax
+  unsigned int *v10; // eax
 
-  this->q024 = (_DWORD *)(a5);
-  this->RemoteSocket = (_DWORD *)(a6);
-  *(_DWORD *)this = &(void*)(void*)&ConnectionClass_vftable; /*0x48be83*/
+  this->q024 = (unsigned int *)(a5);
+  this->RemoteSocket = (unsigned int *)(a6);
+  *(unsigned int *)this = &(void*)(void*)&ConnectionClass_vftable; /*0x48be83*/
   this->RemoteAddress = a4 + 14; /*0x48be89*/
   this->q02C = a7; /*0x48be8c*/
   this->q030 = a8; /*0x48be8f*/
@@ -137,7 +137,7 @@ bool IPXConnClass::closeConnection(void * a1, void * a2)
   v2 = 0; /*0x69bc27*/
   if ( Game_PlayerCount <= 0 ) /*0x69bc2d*/
     return 0; /*0x69bc48*/
-  for ( i = Game_PlayerInfoArray; *(_DWORD *)(*(_DWORD *)i + 111) != a2; i += 4 ) /*0x69bc2f*/
+  for ( i = Game_PlayerInfoArray; *(unsigned int *)(*(unsigned int *)i + 111) != a2; i += 4 ) /*0x69bc2f*/
   {
     if ( ++v2 >= Game_PlayerCount ) /*0x69bc46*/
       return 0; /*0x69bc46*/
@@ -147,7 +147,7 @@ bool IPXConnClass::closeConnection(void * a1, void * a2)
 // 0x53f5d0
 bool IPXConnClass::send(const uint8_t* data, int32_t length, void * a1, void * a2, void * a3, void * a4, void * a5, void * a6)
 {
-  return (*(int (__stdcall **)(int, int, int, _DWORD, int, _DWORD))(*(_DWORD *)&this->PacketsSent0))( /*0x53f5ec*/
+  return (*(int (__stdcall **)(int, int, int, unsigned int, int, unsigned int))(((unsigned int)(this->PacketsSent0))))( /*0x53f5ec*/
            a2,
            a3,
            (int)&this->q130,
@@ -164,7 +164,7 @@ int32_t IPXConnClass::receive(uint8_t* buffer, int32_t maxLen, void * a1, void *
   int v13; // eax
   int v15; // eax
   int ConnectionSpeed; // eax
-  _BYTE v17[8]; // [esp+10h] [ebp-14h] BYREF
+  unsigned char v17[8]; // [esp+10h] [ebp-14h] BYREF
   int v18; // [esp+18h] [ebp-Ch] BYREF
   int v19; // [esp+1Ch] [ebp-8h]
   int v20; // [esp+20h] [ebp-4h]
@@ -181,34 +181,34 @@ int32_t IPXConnClass::receive(uint8_t* buffer, int32_t maxLen, void * a1, void *
     NetworkID::Assign(&v18, &a4, (int)v17, 0); /*0x53f6a9*/
   }
   v9 = 0; /*0x53f6b2*/
-  if ( (_BYTE)a6 || !g_Network_IsHosting ) /*0x53f6c3*/
+  if ( (unsigned char)a6 || !g_Network_IsHosting ) /*0x53f6c3*/
   {
     v10 = (int)(a2);
   LABEL_13:
-    *(_WORD *)(v10 + 12) = 0; /*0x53f76b*/
-    *(_DWORD *)(v10 + 8) = 0; /*0x53f774*/
+    *(unsigned short *)(v10 + 12) = 0; /*0x53f76b*/
+    *(unsigned int *)(v10 + 8) = 0; /*0x53f774*/
     goto LABEL_14; /*0x53f774*/
   }
   v10 = (int)(a2);
-  if ( !*(_BYTE *)(a2 + 3) ) /*0x53f6cd*/
+  if ( !*(unsigned char *)(a2 + 3) ) /*0x53f6cd*/
   {
     LinkedIndex = Factory::GetLinkedIndex(&g_NetworkEventQueue, *(&this->Active5)); /*0x53f6dd*/
     if ( !LinkedIndex ) /*0x53f6e4*/
       return 0; /*0x53f6ef*/
-    *(_BYTE *)(a2 + 3) = LinkedIndex; /*0x53f6f2*/
+    *(unsigned char *)(a2 + 3) = LinkedIndex; /*0x53f6f2*/
   }
   v18 = dword_A8DBA4; /*0x53f706*/
-  v9 = *(_DWORD *)&dword_841F3C; /*0x53f710*/
+  v9 = *(unsigned int *)&dword_841F3C; /*0x53f710*/
   v19 = dword_A8DBA8; /*0x53f716*/
   v20 = dword_A8DBAC; /*0x53f71a*/
-  if ( GUID::Compare((char *)&dword_A8DBB0, *(_DWORD *)Game_PlayerInfoArray + 40) /*0x53f742*/
-    && NetworkID::Compare((int)&v18, *(_DWORD *)Game_PlayerInfoArray + 40) )
+  if ( GUID::Compare((char *)&dword_A8DBB0, *(unsigned int *)Game_PlayerInfoArray + 40) /*0x53f742*/
+    && NetworkID::Compare((int)&v18, *(unsigned int *)Game_PlayerInfoArray + 40) )
   {
     goto LABEL_13; /*0x53f749*/
   }
   v9 = dword_A8DBBC; /*0x53f752*/
-  *(_WORD *)(a2 + 12) = dword_841F3C; /*0x53f75b*/
-  *(_DWORD *)(a2 + 8) = 0; /*0x53f75f*/
+  *(unsigned short *)(a2 + 12) = dword_841F3C; /*0x53f75b*/
+  *(unsigned int *)(a2 + 8) = 0; /*0x53f75f*/
   LABEL_14:
   if ( g_GameMode_Current[0] != 4 || g_Network_IsHosting ) /*0x53f78a*/
     goto LABEL_27; /*0x53f78a*/
@@ -217,7 +217,7 @@ int32_t IPXConnClass::receive(uint8_t* buffer, int32_t maxLen, void * a1, void *
   if ( v13 == -4 ) /*0x53f79c*/
   {
     v15 = dword_A8DBBC; /*0x53f7e5*/
-    if ( !(_WORD)dword_A8DBBC ) /*0x53f7ed*/
+    if ( !(unsigned short)dword_A8DBBC ) /*0x53f7ed*/
       goto LABEL_27; /*0x53f7ed*/
     goto LABEL_26; /*0x53f7ed*/
   }
@@ -241,11 +241,11 @@ int32_t IPXConnClass::receive(uint8_t* buffer, int32_t maxLen, void * a1, void *
     goto LABEL_27; /*0x53f7ef*/
   }
   v15 = dword_A8DBBC; /*0x53f7b1*/
-  if ( (_WORD)dword_A8DBBC ) /*0x53f7b9*/
+  if ( (unsigned short)dword_A8DBBC ) /*0x53f7b9*/
     goto LABEL_26; /*0x53f7b9*/
   LABEL_27:
   if ( g_NetworkInterface ) /*0x53f7f9*/
-    (*(void (__thiscall **)(int, int, int, int *, int, int, _DWORD, int))(*(_DWORD *)g_NetworkInterface + 12))( /*0x53f812*/
+    (*(void (__thiscall **)(int, int, int, int *, int, int, unsigned int, int))(*(unsigned int *)g_NetworkInterface + 12))( /*0x53f812*/
       g_NetworkInterface,
       v10,
       a3,
@@ -275,10 +275,10 @@ void IPXManagerClass::Init()
   int result; // eax
 
   if ( a2 == -1 ) /*0x542fe7*/
-    return EventClass::SetData(*(_DWORD **)(*(&this->Initialized8) + 4), a3, a4, a5, a6, a7); /*0x543008*/
+    return EventClass::SetData(*(unsigned int **)(*(&this->Initialized8) + 4), a3, a4, a5, a6, a7); /*0x543008*/
   result = *(this + a2 + 10); /*0x543010*/
   if ( result ) /*0x543016*/
-    return EventClass::SetData(*(_DWORD **)(result + 4), a3, a4, a5, a6, a7); /*0x543034*/
+    return EventClass::SetData(*(unsigned int **)(result + 4), a3, a4, a5, a6, a7); /*0x543034*/
   return result; /*0x54300d*/
 }
 // 0x48ba90
@@ -290,33 +290,33 @@ void IPXManagerClass::init()
 void IPXManagerClass::processPacket()
 {
   char v2; // al
-  void (__thiscall ***v3)(_DWORD, int); // ecx
-  void (__thiscall ***v4)(_DWORD, int); // ecx
-  void (__thiscall ***v5)(_DWORD, int); // ecx
+  void (__thiscall ***v3)(unsigned int, int); // ecx
+  void (__thiscall ***v4)(unsigned int, int); // ecx
+  void (__thiscall ***v5)(unsigned int, int); // ecx
   int result; // eax
   int v7; // ebp
-  _DWORD *v8; // edi
+  unsigned int *v8; // edi
 
   v2 = this->q014; /*0x5409f7*/
-  *(_DWORD *)this = &(void*)(void*)&IPXManagerClass_vftable; /*0x5409fa*/
+  *(unsigned int *)this = &(void*)(void*)&IPXManagerClass_vftable; /*0x5409fa*/
   if ( v2 ) /*0x540a02*/
   {
     Network_Helper(); /*0x540a04*/
     this->q014 = 0; /*0x540a09*/
   }
-  v3 = (void (__thiscall ***)(_DWORD, int))this->q048; /*0x540a0c*/
+  v3 = (void (__thiscall ***)(unsigned int, int))this->q048; /*0x540a0c*/
   if ( v3 ) /*0x540a11*/
   {
     (**v3)(v3, 1); /*0x540a17*/
     this->q048 = 0; /*0x540a19*/
   }
-  v4 = (void (__thiscall ***)(_DWORD, int))this->q04C; /*0x540a1c*/
+  v4 = (void (__thiscall ***)(unsigned int, int))this->q04C; /*0x540a1c*/
   if ( v4 ) /*0x540a21*/
   {
     (**v4)(v4, 1); /*0x540a27*/
     this->q04C = 0; /*0x540a29*/
   }
-  v5 = (void (__thiscall ***)(_DWORD, int))this->q050; /*0x540a2c*/
+  v5 = (void (__thiscall ***)(unsigned int, int))this->q050; /*0x540a2c*/
   if ( v5 ) /*0x540a31*/
   {
     (**v5)(v5, 1); /*0x540a37*/
@@ -327,7 +327,7 @@ void IPXManagerClass::processPacket()
   if ( result <= 0 ) /*0x540a43*/
   {
     this->q044 = 0; /*0x540a70*/
-    *(_DWORD *)this = &(void*)(void*)&ConnManClass_vftable; /*0x540a73*/
+    *(unsigned int *)this = &(void*)(void*)&ConnManClass_vftable; /*0x540a73*/
   }
   else
   {
@@ -335,7 +335,7 @@ void IPXManagerClass::processPacket()
     do /*0x540a60*/
     {
       if ( *v8 ) /*0x540a49*/
-        (**(void (__thiscall ***)(_DWORD, int))*v8)(*v8, 1); /*0x540a53*/
+        (**(void (__thiscall ***)(unsigned int, int))*v8)(*v8, 1); /*0x540a53*/
       *v8 = 0; /*0x540a55*/
       result = this->q044; /*0x540a57*/
       ++v7; /*0x540a5a*/
@@ -343,21 +343,21 @@ void IPXManagerClass::processPacket()
     }
     while ( v7 < result ); /*0x540a60*/
     this->q044 = 0; /*0x540a62*/
-    *(_DWORD *)this = &(void*)(void*)&ConnManClass_vftable; /*0x540a65*/
+    *(unsigned int *)this = &(void*)(void*)&ConnManClass_vftable; /*0x540a65*/
   }
   return result; /*0x540a6c*/
 }
 // 0x540d40
 IPXConnClass* IPXManagerClass::createConnection()
 {
-  _DWORD *result; // eax
+  unsigned int *result; // eax
 
-  result = (_DWORD *)*(&this->Initialized8); /*0x540d40*/
+  result = (unsigned int *)*(&this->Initialized8); /*0x540d40*/
   if ( result ) /*0x540d45*/
   {
     *(&this->q0085) = result[10]; /*0x540d4a*/
     *(&this->q0086) = result[11]; /*0x540d50*/
-    result = (_DWORD *)result[12]; /*0x540d53*/
+    result = (unsigned int *)result[12]; /*0x540d53*/
     *(&this->q0087) = result; /*0x540d56*/
   }
   return result; /*0x540d59*/
@@ -371,7 +371,7 @@ void IPXManagerClass::destroyConnection(IPXConnClass* conn)
   if ( result ) /*0x540d65*/
   {
     result->q028 = *(conn + 25); /*0x540d6a*/
-    *(_DWORD *)(*(conn + 18) + 44) = *(conn + 26); /*0x540d73*/
+    *(unsigned int *)(*(conn + 18) + 44) = *(conn + 26); /*0x540d73*/
     result = *(conn + 18); /*0x540d76*/
     result->q030 = *(conn + 27); /*0x540d7c*/
   }
@@ -401,13 +401,13 @@ bool IPXManagerClass::IsIPXAvailable() const
 void IPXManagerClass::release()
 {
   int v6; // ecx
-  _DWORD *v7; // ecx
+  unsigned int *v7; // ecx
   int v9; // eax
   char *v10; // edx
   int v11; // edi
-  _DWORD *v12; // ebx
+  unsigned int *v12; // ebx
   int v13; // eax
-  _DWORD *v14; // ecx
+  unsigned int *v14; // ecx
 
   if ( !this->q010 ) /*0x5414c6*/
     return 0; /*0x5414c6*/
@@ -418,13 +418,13 @@ void IPXManagerClass::release()
     return 0; /*0x5414e1*/
   if ( a5 != -1 ) /*0x5414ee*/
   {
-    v13 = (*(int (__thiscall **)(char *, int))(*(_DWORD *)&this->q0084))(this, a5); /*0x54159b*/
+    v13 = (*(int (__thiscall **)(char *, int))(((unsigned int)(this->q0084))))(this, a5); /*0x54159b*/
     if ( v13 != -1 ) /*0x5415a1*/
     {
-      v14 = (_DWORD *)*((_DWORD *)this + v13 + 10); /*0x5415a3*/
-      if ( *(_DWORD *)(v14[1] + 40) != *(_DWORD *)(v14[1] + 4) ) /*0x5415b2*/
+      v14 = (unsigned int *)*((unsigned int *)this + v13 + 10); /*0x5415a3*/
+      if ( *(unsigned int *)(v14[1] + 40) != *(unsigned int *)(v14[1] + 4) ) /*0x5415b2*/
       {
-        (*(void (__thiscall **)(_DWORD *, int, int, int, _DWORD))(*v14 + 8))(v14, a2, a3, a4, 0); /*0x5415c7*/
+        (*(void (__thiscall **)(unsigned int *, int, int, int, unsigned int))(*v14 + 8))(v14, a2, a3, a4, 0); /*0x5415c7*/
         return 1; /*0x5415d3*/
       }
     }
@@ -432,16 +432,16 @@ void IPXManagerClass::release()
   }
   if ( g_GameMode_Current[0] == 4 && g_Network_IsHosting ) /*0x541504*/
   {
-    v7 = (_DWORD *)this->q050; /*0x541506*/
-    if ( *(_DWORD *)(v7[1] + 40) < *(_DWORD *)(v7[1] + 4) ) /*0x541514*/
-      return (*(int (__thiscall **)(_DWORD *, int, int, int, int))(*v7 + 8))(v7, a2, a3, a4, 255); /*0x541537*/
+    v7 = (unsigned int *)this->q050; /*0x541506*/
+    if ( *(unsigned int *)(v7[1] + 40) < *(unsigned int *)(v7[1] + 4) ) /*0x541514*/
+      return (*(int (__thiscall **)(unsigned int *, int, int, int, int))(*v7 + 8))(v7, a2, a3, a4, 255); /*0x541537*/
     goto LABEL_20; /*0x541514*/
   }
   v9 = 0; /*0x54153a*/
   if ( v6 > 0 ) /*0x54153e*/
   {
     v10 = &this->q028; /*0x541540*/
-    while ( *(_DWORD *)(*(_DWORD *)(this->q02C + 40) != *(_DWORD *)(*(_DWORD *)(this->q02C + 4) ) /*0x541550*/
+    while ( *(unsigned int *)(*(unsigned int *)(this->q02C + 40) != *(unsigned int *)(*(unsigned int *)(this->q02C + 4) ) /*0x541550*/
     {
       ++v9; /*0x541556*/
       v10 += 4; /*0x541557*/
@@ -459,7 +459,7 @@ void IPXManagerClass::release()
     v12 = &this->q028; /*0x541568*/
     do /*0x541588*/
     {
-      (*(void (__thiscall **)(_DWORD, int, int, int, _DWORD))(*(_DWORD *)this->q030)(*v12, a2, a3, a4, 0); /*0x54157c*/
+      (*(void (__thiscall **)(unsigned int, int, int, int, unsigned int))(*(unsigned int *)this->q030)(*v12, a2, a3, a4, 0); /*0x54157c*/
       ++v11; /*0x541582*/
       ++v12; /*0x541583*/
     }

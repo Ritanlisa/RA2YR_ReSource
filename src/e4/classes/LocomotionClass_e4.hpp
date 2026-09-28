@@ -10,7 +10,7 @@ struct LocomotionClass {
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* pad_008;  // 0x8
-    _DWORD q00C;  // 0xC
+    unsigned int q00C;  // 0xC
     void* pad_010;  // 0x10
     bool Dirty;  // 0x11
     unsigned char u8_14;  // 0x14

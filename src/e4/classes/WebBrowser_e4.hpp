@@ -8,7 +8,7 @@ struct WebBrowser {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     unsigned int u32_4;  // 0x4
-    _DWORD q008;  // 0x8
+    unsigned int q008;  // 0x8
     unsigned char q00C;  // 0xC
     void* q010;  // 0x10
     unsigned char q014;  // 0x14

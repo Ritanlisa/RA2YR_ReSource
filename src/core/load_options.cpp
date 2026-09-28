@@ -85,14 +85,14 @@ void LoadOptions::Construct() {
 
 // 0x558740
 LoadOptions::LoadOptions() {
-  _DWORD *v2; // ecx
+  unsigned int *v2; // ecx
   int v3; // eax
 
-  v2 = (_DWORD)(&this->is_active);
-  v2[1] = (_DWORD)(0);
-  v2[2] = (_DWORD)(0);
-  *((_BYTE *)v2 + 12) = 1; /*0x55874e*/
-  *((_BYTE *)v2 + 13) = 0; /*0x558752*/
+  v2 = (unsigned int)(&this->is_active);
+  v2[1] = (unsigned int)(0);
+  v2[2] = (unsigned int)(0);
+  *((unsigned char *)v2 + 12) = 1; /*0x55874e*/
+  *((unsigned char *)v2 + 13) = 0; /*0x558752*/
   *v2 = &(void*)(void*)&DynamicVectorClass_FileEntryClass___vftable; /*0x558755*/
   v2[5] = 10; /*0x55875b*/
   v2[4] = 0; /*0x558762*/
@@ -103,7 +103,7 @@ LoadOptions::LoadOptions() {
   *this = &(void*)(void*)&LoadOptionsClass_vftable; /*0x558770*/
   this->Capacity = &off_829EA0; /*0x558776*/
   this->max_entries = 2048; /*0x55877d*/
-  (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v2); /*0x558784*/
+  (*(void (__thiscall **)(unsigned int *))(v3 + 12))(v2); /*0x558784*/
   return this; /*0x558789*/
 }
 LoadOptions::~LoadOptions() {
@@ -115,23 +115,23 @@ LoadOptions::~LoadOptions() {
 void LoadOptions::Cleanup() {
   int v2; // edi
   int v3; // edx
-  _DWORD *v4; // esi
+  unsigned int *v4; // esi
   void *v5; // eax
 
-  v2 = (_DWORD)(0);
+  v2 = (unsigned int)(0);
   for ( *this = &(void*)(void*)&LoadOptionsClass_vftable; v2 < *(&this->Items2); ++v2 ) /*0x5587a4*/
     RA2_OPDEL(*(void **)(this->q024 + 4 * v2)); /*0x5587ad*/
   v3 = this->is_active; /*0x5587bd*/
   v4 = &this->is_active; /*0x5587c0*/
-  (*(void (__thiscall **)(_DWORD *))(v3 + 12))(v4); /*0x5587c5*/
+  (*(void (__thiscall **)(unsigned int *))(v3 + 12))(v4); /*0x5587c5*/
   v5 = (void *)v4[1]; /*0x5587c8*/
   *v4 = &(void*)(void*)&VectorClass_FileEntryClass___vftable; /*0x5587cb*/
-  if ( v5 && *((_BYTE *)v4 + 13) ) /*0x5587d5*/
+  if ( v5 && *((unsigned char *)v4 + 13) ) /*0x5587d5*/
   {
     RA2_OPDEL(v5); /*0x5587db*/
     v4[1] = 0; /*0x5587e3*/
   }
-  *((_BYTE *)v4 + 13) = 0; /*0x5587e6*/
+  *((unsigned char *)v4 + 13) = 0; /*0x5587e6*/
   v4[2] = 0; /*0x5587e9*/
 }
 // IDA 0x55A0D0: VT00_Destroy (QueryInterface destructor)
@@ -160,11 +160,11 @@ bool LoadOptions::Check() {
   const char *v3; // eax
   HANDLE FirstFileA; // edi
   CHAR FileName[64]; // [esp+Ch] [ebp-33Ch] BYREF
-  _WORD v7[128]; // [esp+4Ch] [ebp-2FCh] BYREF
+  unsigned short v7[128]; // [esp+4Ch] [ebp-2FCh] BYREF
   char v8; // [esp+14Ch] [ebp-1FCh]
   int v9; // [esp+16Ch] [ebp-1DCh]
   int v10; // [esp+170h] [ebp-1D8h]
-  __int16 v11; // [esp+174h] [ebp-1D4h]
+  int16_t v11; // [esp+174h] [ebp-1D4h]
   int v12; // [esp+1F4h] [ebp-154h]
   int v13; // [esp+1F8h] [ebp-150h]
   int v14; // [esp+1FCh] [ebp-14Ch]
@@ -192,7 +192,7 @@ bool LoadOptions::Check() {
   {
     while ( (FindFileData.dwFileAttributes & 0x116) != 0 /*0x559cf7*/
          || !_strcmpi(FindFileData.cFileName, MultiByteStr)
-         || (*((unsigned __int8 (__thiscall **)(const char **, _WORD *, struct _WIN32_FIND_DATAA *))*this + 4))(
+         || (*((uint8_t (__thiscall **)(const char **, unsigned short *, struct _WIN32_FIND_DATAA *))*this + 4))(
               this,
               v7,
               &FindFileData) != 1
@@ -214,11 +214,11 @@ bool LoadOptions::Check() {
       const char *v3; // eax
       HANDLE FirstFileA; // edi
       CHAR FileName[64]; // [esp+Ch] [ebp-33Ch] BYREF
-      _WORD v7[128]; // [esp+4Ch] [ebp-2FCh] BYREF
+      unsigned short v7[128]; // [esp+4Ch] [ebp-2FCh] BYREF
       char v8; // [esp+14Ch] [ebp-1FCh]
       int v9; // [esp+16Ch] [ebp-1DCh]
       int v10; // [esp+170h] [ebp-1D8h]
-      __int16 v11; // [esp+174h] [ebp-1D4h]
+      int16_t v11; // [esp+174h] [ebp-1D4h]
       int v12; // [esp+1F4h] [ebp-154h]
       int v13; // [esp+1F8h] [ebp-150h]
       int v14; // [esp+1FCh] [ebp-14Ch]
@@ -246,7 +246,7 @@ bool LoadOptions::Check() {
       {
         while ( (FindFileData.dwFileAttributes & 0x116) != 0 /*0x559cf7*/
              || !_strcmpi(FindFileData.cFileName, MultiByteStr)
-             || (*((unsigned __int8 (__thiscall **)(const char **, _WORD *, struct _WIN32_FIND_DATAA *))*this + 4))(
+             || (*((uint8_t (__thiscall **)(const char **, unsigned short *, struct _WIN32_FIND_DATAA *))*this + 4))(
                   this,
                   v7,
                   &FindFileData) != 1
@@ -388,7 +388,7 @@ bool LoadOptions::ReadEntry(FileEntryClass* dest, int a2) {
 // IDA 0x55A1F0: CopyItems — resize vector, preserve existing entries
 // 0x55a1f0
 AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out_buffer) {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int v6; // ecx
   int i; // eax
 
@@ -407,7 +407,7 @@ AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out
         v6 = this->Capacity; /*0x55a23c*/
         if ( new_size < v6 ) /*0x55a241*/
           v6 = new_size; /*0x55a243*/
-        for ( i = 0; i < v6; v4[i - 1] = *(_DWORD *)(this->Items + 4 * i - 4) ) /*0x55a249*/
+        for ( i = 0; i < v6; v4[i - 1] = *(unsigned int *)(this->Items + 4 * i - 4) ) /*0x55a249*/
           ++i; /*0x55a24e*/
         if ( this->IsAllocated ) /*0x55a25b*/
         {
@@ -427,7 +427,7 @@ AbstractClass * * LoadOptions::CopyItems(uint32_t new_size, FileEntryClass** out
   }
   else
   {
-    (*(void (__thiscall **)(void *))(*(_DWORD *)&this->Items2))(this); /*0x55a292*/
+    (*(void (__thiscall **)(void *))(((unsigned int)(this->Items2))))(this); /*0x55a292*/
     return 1; /*0x55a298*/
   }
 }
@@ -445,7 +445,7 @@ void LoadOptions::ClearBuffer() {
 int LoadOptions::FindItem(FileEntryClass* const* key) {
   int result; // eax
   int v3; // edx
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !this->q00C ) /*0x55a2d0*/
     return 0; /*0x55a2d8*/

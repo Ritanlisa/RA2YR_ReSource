@@ -11,7 +11,7 @@ struct GameClass {
     unsigned int u32_8;  // 0x8
     unsigned int u16_A;  // 0xA
     unsigned char q00B;  // 0xB
-    _DWORD q010;  // 0x10
+    unsigned int q010;  // 0x10
     void* ptr_14;  // 0x14
     unsigned int u32_18;  // 0x18
     CampaignClass * ptr_20;  // 0x20

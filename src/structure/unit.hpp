@@ -78,7 +78,7 @@ public:
 
     // === Phase 3: Movement ===
     virtual int CalcMoveTarget();  // 0x7359F0
-    virtual int AssignDestination_SyncLog(__int64 a2);  // 0x741970
+    virtual int AssignDestination_SyncLog(int64_t a2);  // 0x741970
     virtual int ApproachTarget_DisallowMoving(char a2);  // 0x7414E0
     int UpdateRotation_TurretFacing_EMP();  // 0x736990
     int Scatter(CellStruct* threatPos, bool a3, bool a4);  // 0x743A50

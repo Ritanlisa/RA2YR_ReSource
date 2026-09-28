@@ -98,7 +98,7 @@ public:
     int UpdateBehavior();  // 0x736579
     int CalcFacingToTarget();  // 0x51DBD0
     int EvaluateTarget();  // 0x51BF90
-    int SelectAutoTarget(unsigned int flags, __int64 a3);  // 0x51E140
+    int SelectAutoTarget(unsigned int flags, int64_t a3);  // 0x51E140
     virtual int AssignTarget_SyncLog(int syncFlag) override;  // 0x51B1F0
     virtual int AssignDestination_SyncLog(AbstractClass* dest, int sync_flag);  // 0x51AA40
     int ValidatePlacement();  // 0x51CBA0

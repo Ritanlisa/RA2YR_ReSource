@@ -30,10 +30,10 @@ uint32_t Hash::ComputeHashSHA1(const void* data, uint32_t size)
 // 0x4f4410
 int Hash::InsertOrdered(void* table, const void* entry)
 {
-  if ( (*(unsigned __int8 (__thiscall **)(void *, int))(*(_DWORD *)table + 44))(table, entry) ) /*0x4f4418*/
+  if ( (*(uint8_t (__thiscall **)(void *, int))(*(unsigned int *)table + 44))(table, entry) ) /*0x4f4418*/
     return 0; /*0x4f441f*/
   if ( dword_A8EF54 ) /*0x4f442c*/
-    (*(void (__thiscall **)(int, int))(*(_DWORD *)entry + 16))(entry, dword_A8EF54); /*0x4f4433*/
+    (*(void (__thiscall **)(int, int))(*(unsigned int *)entry + 16))(entry, dword_A8EF54); /*0x4f4433*/
   else
     dword_A8EF54 = entry; /*0x4f443c*/
   return 1; /*0x4f4421*/
@@ -43,7 +43,7 @@ EditClass * * SHA1::Process(const void* data, uint32_t size)
 {
   int v6; // ebx
 
-  *(_BYTE *)this = 0; /*0x69d96f*/
+  *(unsigned char *)this = 0; /*0x69d96f*/
   SHA1::ProcessBlock(&data, &size); /*0x69d972*/
   size = size; /*0x69d977*/
   if ( size ) /*0x69d97d*/
@@ -73,20 +73,20 @@ int SHA1::Compute(uint8_t digest[20], void * a1, void * a2)
   int v4; // ebx
   unsigned int v5; // ebx
   int v6; // edx
-  unsigned __int16 v7; // cx
+  uint16_t v7; // cx
   unsigned int *v8; // ecx
   int v9; // esi
   unsigned int v10; // eax
-  _BYTE v12[20]; // [esp+14h] [ebp-54h] BYREF
-  _DWORD v13[16]; // [esp+28h] [ebp-40h] BYREF
+  unsigned char v12[20]; // [esp+14h] [ebp-54h] BYREF
+  unsigned int v13[16]; // [esp+28h] [ebp-40h] BYREF
 
-  if ( *(_BYTE *)this ) /*0x69d9e9*/
+  if ( *(unsigned char *)this ) /*0x69d9e9*/
     qmemcpy(a2, this + 1, 0x14u); /*0x69d9fb*/
   v3 = *(this + 12); /*0x69d9fd*/
   v4 = *(this + 11); /*0x69da00*/
   qmemcpy(v13, this + 13, sizeof(v13)); /*0x69da14*/
   v5 = v3 + v4; /*0x69da18*/
-  *((_BYTE *)v13 + v3) = 0x80; /*0x69da29*/
+  *((unsigned char *)v13 + v3) = 0x80; /*0x69da29*/
   qmemcpy(v12, this + 6, sizeof(v12)); /*0x69da2e*/
   if ( 64 - v3 >= 9 ) /*0x69da30*/
   {
@@ -114,7 +114,7 @@ int SHA1::Compute(uint8_t digest[20], void * a1, void * a2)
     *(v8 - 1, unsigned int a2) = ((v10 & 0xFF00 | (v10 << 16)) << 8) | ((IDA_HIWORD(v10) | v10 & 0xFF0000) >> 8); /*0x69db08*/
   }
   while ( v9 ); /*0x69db0b*/
-  *(_BYTE *)this = 1; /*0x69db18*/
+  *(unsigned char *)this = 1; /*0x69db18*/
   qmemcpy(a2, this + 1, 0x14u, unsigned int a1); /*0x69db1c*/
   return 20; /*0x69db1e*/
 }
@@ -148,11 +148,11 @@ void SHA1::Transform(void * a1, void * a2)
   int v26; // ebx
   int v27; // edx
   unsigned int result; // eax
-  _DWORD *v29; // [esp+10h] [ebp-160h]
+  unsigned int *v29; // [esp+10h] [ebp-160h]
   int v30; // [esp+14h] [ebp-15Ch]
   int v31; // [esp+18h] [ebp-158h]
-  _DWORD v32[5]; // [esp+1Ch] [ebp-154h] BYREF
-  _BYTE v33[8]; // [esp+30h] [ebp-140h] BYREF
+  unsigned int v32[5]; // [esp+1Ch] [ebp-154h] BYREF
+  unsigned char v33[8]; // [esp+30h] [ebp-140h] BYREF
   char v34; // [esp+38h] [ebp-138h] BYREF
 
   v2 = (int *)(a1);
@@ -164,7 +164,7 @@ void SHA1::Transform(void * a1, void * a2)
     IDA_LOBYTE(v4) = 0; /*0x69db69*/
     IDA_BYTE1(v4) = IDA_BYTE2(v4); /*0x69db6b*/
     --v3; /*0x69db71*/
-    *(int *)((char *)v2 + v33 - (_BYTE *)a1 - 4) = (unsigned __int16)v4 | v5; /*0x69db72*/
+    *(int *)((char *)v2 + v33 - (unsigned char *)a1 - 4) = (uint16_t)v4 | v5; /*0x69db72*/
   }
   while ( v3 ); /*0x69db76*/
   v6 = (int *)&v34; /*0x69db78*/
@@ -339,7 +339,7 @@ int CRC32::Compute(const void* data, uint32_t size)
     v6 = v4 + 1; /*0x4a1fbf*/
     do /*0x4a1fde*/
     {
-      v5 = CRC32_Table[*this++ ^ (unsigned __int8)v5] ^ (v5 >> 8); /*0x4a1fda*/
+      v5 = CRC32_Table[*this++ ^ (uint8_t)v5] ^ (v5 >> 8); /*0x4a1fda*/
       --v6; /*0x4a1fdd*/
     }
     while ( v6 ); /*0x4a1fde*/

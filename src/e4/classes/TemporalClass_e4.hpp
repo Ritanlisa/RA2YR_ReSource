@@ -20,7 +20,7 @@ struct TemporalClass {
     int referenceCount;  // 0x1C
     bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
-    _DWORD q024;  // 0x24
+    unsigned int q024;  // 0x24
     int q028;  // 0x28
     bool q02B;  // 0x2B
     unsigned int q02C;  // 0x2C

@@ -38,7 +38,7 @@ struct VectorCursor {
     unsigned char q080;  // 0x80
     unsigned char q084;  // 0x84
 // --- flat members (END) ---
-    _DWORD* ddtor();
+    unsigned int* ddtor();
     unsigned int * Release();
 };
 

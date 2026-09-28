@@ -13,7 +13,7 @@ struct BSurface {
     bool q00B;  // 0xB
     int LockCount;  // 0xC
     int BytesPerPixel;  // 0x10
-    _DWORD q014;  // 0x14
+    unsigned int q014;  // 0x14
     unsigned int u32_18;  // 0x18
     unsigned char q01C;  // 0x1C
     unsigned int u32_20;  // 0x20

@@ -14,7 +14,7 @@
 // 0x4104C0
 namespace gamemd { namespace wdt { 
 int Map::GetInvalidCoord() {
-  _DWORD *v2; // [esp+4h] [ebp+4h]
+  unsigned int *v2; // [esp+4h] [ebp+4h]
 
   *v2 = dword_887680; /*0x4104cc*/
   v2[1] = dword_887684; /*0x4104d4*/
@@ -26,7 +26,7 @@ int Map::GetInvalidCoord() {
 // 0x4F28B0
 namespace gamemd { namespace wdt { 
 bool Map::CanScroll() {
-  return this->Height < *(_DWORD *)(this->Width + 16); /*0x4f28bd*/
+  return this->Height < *(unsigned int *)(this->Width + 16); /*0x4f28bd*/
 }
 }
 }
@@ -36,9 +36,9 @@ int State::SetIfChanged(int a1) {
   int v3; // edx
 
   a1 = a1; /*0x4f3a90*/
-  if ( (_BYTE)a1 != this->ScenIndex ) /*0x4f3a99*/
+  if ( (unsigned char)a1 != this->ScenIndex ) /*0x4f3a99*/
   {
-    v3 = *(_DWORD *)this; /*0x4f3a9b*/
+    v3 = *(unsigned int *)this; /*0x4f3a9b*/
     this->ScenIndex = a1; /*0x4f3a9e*/
     return (*(int (__stdcall **)(int))(v3 + 16))(a1); /*0x4f3aa1*/
   }
@@ -100,7 +100,7 @@ void Campaign::SetupMovie() {
         }
         if ( v9 < v7->NeedsSaveOrLink ) /*0x5c2584*/
         {
-          v18 = *(_DWORD *)(*(_DWORD *)(v7->abstractFlags + 4 * v9) + 16); /*0x5c2595*/
+          v18 = *(unsigned int *)(*(unsigned int *)(v7->abstractFlags + 4 * v9) + 16); /*0x5c2595*/
           if ( v6 > 0 ) /*0x5c2599*/
           {
             v10 = &g_NetworkPlayerName; /*0x5c259b*/
@@ -110,7 +110,7 @@ void Campaign::SetupMovie() {
               MovieClass::ReadConfig(v2, ResourceID2); /*0x5c25af*/
               if ( v18 <= 1 ) /*0x5c25b9*/
               {
-                v12 = SideClass::FindByName(**(void ***)(*(_DWORD *)(v15->abstractFlags + 4 * v14) + 4)); /*0x5c25ee*/
+                v12 = SideClass::FindByName(**(void ***)(*(unsigned int *)(v15->abstractFlags + 4 * v14) + 4)); /*0x5c25ee*/
                 SetupLobbyCountryCombo(hDlg, ResourceID2, v12); /*0x5c25f3*/
                 SessionClass::SetPlayerOption(*v10, v12); /*0x5c25fc*/
                 v2 = hDlg; /*0x5c2601*/
@@ -145,7 +145,7 @@ int Conflict::GetOwnerHouse() {
 
   v1 = *(this + 3); /*0x76bfe0*/
   if ( v1 ) /*0x76bfe5*/
-    return *(_DWORD *)(v1 + 36) - 1; /*0x76bfea*/
+    return *(unsigned int *)(v1 + 36) - 1; /*0x76bfea*/
   else
     return 0; /*0x76bfec*/
 }

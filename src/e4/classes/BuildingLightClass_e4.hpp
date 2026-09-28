@@ -10,7 +10,7 @@ struct BuildingLightClass {
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
-    _DWORD q00C;  // 0xC
+    unsigned int q00C;  // 0xC
     int uniqueId;  // 0x10
     unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13

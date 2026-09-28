@@ -9,7 +9,7 @@ struct Commands {
 // --- flat members (BEGIN) ---
     char m_RefCount[4];  // 0x0
 // --- flat members (END) ---
-    _UNKNOWN ** StubReturn8550640();
+    void ** StubReturn8550640();
     char * AddRef();
     char ** Release();
     char Execute();

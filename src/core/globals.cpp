@@ -150,10 +150,10 @@ void FindGameDirectoryCD(const char* path) {
     char *v3; // ebp
     char *i; // edx
     char v5; // cl
-    _DWORD *v6; // esi
-    _DWORD *v7; // ecx
-    _DWORD *v8; // eax
-    _DWORD *v9; // eax
+    unsigned int *v6; // esi
+    unsigned int *v7; // ecx
+    unsigned int *v8; // eax
+    unsigned int *v9; // eax
     char Str1[260]; // [esp+8h] [ebp-104h] BYREF
 
     v1 = 0; /*0x47ab17*/
@@ -187,13 +187,13 @@ void FindGameDirectoryCD(const char* path) {
           v7 = CmdLine_NoCD; /*0x47ac8b*/
           if ( CmdLine_NoCD ) /*0x47ac96*/
           {
-            v8 = *(_DWORD **)CmdLine_NoCD; /*0x47aca0*/
-            if ( *(_DWORD *)CmdLine_NoCD ) /*0x47aca0*/
+            v8 = *(unsigned int **)CmdLine_NoCD; /*0x47aca0*/
+            if ( *(unsigned int *)CmdLine_NoCD ) /*0x47aca0*/
             {
               do /*0x47acac*/
               {
                 v7 = v8; /*0x47aca6*/
-                v8 = (_DWORD *)*v8; /*0x47aca8*/
+                v8 = (unsigned int *)*v8; /*0x47aca8*/
               }
               while ( v8 ); /*0x47acac*/
             }
@@ -214,13 +214,13 @@ void FindGameDirectoryCD(const char* path) {
           v7 = CmdLine_NoCD; /*0x47ace9*/
           if ( CmdLine_NoCD ) /*0x47acf4*/
           {
-            v9 = *(_DWORD **)CmdLine_NoCD; /*0x47acfe*/
-            if ( *(_DWORD *)CmdLine_NoCD ) /*0x47acfe*/
+            v9 = *(unsigned int **)CmdLine_NoCD; /*0x47acfe*/
+            if ( *(unsigned int *)CmdLine_NoCD ) /*0x47acfe*/
             {
               do /*0x47ad0a*/
               {
                 v7 = v9; /*0x47ad04*/
-                v9 = (_DWORD *)*v9; /*0x47ad06*/
+                v9 = (unsigned int *)*v9; /*0x47ad06*/
               }
               while ( v9 ); /*0x47ad0a*/
             }
@@ -237,8 +237,8 @@ void FindGameDirectoryCD(const char* path) {
   {
     if ( strlen(i) )
     {
-  _DWORD *v7; // ecx
-  _DWORD *v6; // esi
+  unsigned int *v7; // ecx
+  unsigned int *v6; // esi
       strcpy(Str1, i);
       char v5 = Str1[strlen(Str1) - 1];
       if ( v5 != 58 && v5 != 92 )
@@ -251,19 +251,19 @@ void FindGameDirectoryCD(const char* path) {
         if ( AlwaysFindYRCD() <= -1 )
           continue;
         Str1[0] = IDA_LOBYTE(DataGlobal_87F7E8[31499]) + 65;
-        v6 = (_DWORD *)RA2_OPNEW(8);
+        v6 = (unsigned int *)RA2_OPNEW(8);
         v6[1] = _strdup(Str1);
         *v6 = 0;
-        v7 = (_DWORD *)DataGlobal_87F7E8[31498];
+        v7 = (unsigned int *)DataGlobal_87F7E8[31498];
         if ( DataGlobal_87F7E8[31498] )
         {
-          _DWORD * v8 = *(_DWORD **)DataGlobal_87F7E8[31498];
-          if ( *(_DWORD *)DataGlobal_87F7E8[31498] )
+          unsigned int * v8 = *(unsigned int **)DataGlobal_87F7E8[31498];
+          if ( *(unsigned int *)DataGlobal_87F7E8[31498] )
           {
             do
             {
               v7 = v8;
-              v8 = (_DWORD *)*v8;
+              v8 = (unsigned int *)*v8;
             }
             while ( v8 );
           }
@@ -278,19 +278,19 @@ LABEL_24:
         if ( Str1[0] - 65 <= 0 || AlwaysFindYRCD() != 2 )
           continue;
         v1 = 1;
-        v6 = (_DWORD *)RA2_OPNEW(8);
+        v6 = (unsigned int *)RA2_OPNEW(8);
         v6[1] = _strdup(Str1);
         *v6 = 0;
-        v7 = (_DWORD *)DataGlobal_87F7E8[31498];
+        v7 = (unsigned int *)DataGlobal_87F7E8[31498];
         if ( DataGlobal_87F7E8[31498] )
         {
-          _DWORD * v9 = *(_DWORD **)DataGlobal_87F7E8[31498];
-          if ( *(_DWORD *)DataGlobal_87F7E8[31498] )
+          unsigned int * v9 = *(unsigned int **)DataGlobal_87F7E8[31498];
+          if ( *(unsigned int *)DataGlobal_87F7E8[31498] )
           {
             do
             {
               v7 = v9;
-              v9 = (_DWORD *)*v9;
+              v9 = (unsigned int *)*v9;
             }
             while ( v9 );
           }
@@ -546,12 +546,12 @@ retn
 // 0x53ECE0: NetworkAddress::Assign
 void NetworkAssignAddress(void* addr, void* port, int arg) {
 {
-  _DWORD *result; // eax
+  unsigned int *result; // eax
 
   result = this;
   char * v5 = (char *)(this + 1);
-  *(_DWORD *)v5 = *(_DWORD *)a3;
-  *((_WORD *)v5 + 2) = *(_WORD *)(a3 + 4);
+  *(unsigned int *)v5 = *(unsigned int *)a3;
+  *((unsigned short *)v5 + 2) = *(unsigned short *)(a3 + 4);
   if ( dword_828140 == 1 )
   {
     *result = *a2;
@@ -559,7 +559,7 @@ void NetworkAssignAddress(void* addr, void* port, int arg) {
   else
   {
     *result = 0;
-    *(_WORD *)result = a4;
+    *(unsigned short *)result = a4;
   }
   return result;
 }
@@ -596,11 +596,11 @@ void NetworkGetField(int port) {
 // 0x542430
 {
   int result; // eax
-  __int16 v3; // dx
+  int16_t v3; // dx
   IDA_LOWORD(result) = a2;
   {
     int result; // eax
-    __int16 v3; // dx
+    int16_t v3; // dx
 
     IDA_LOWORD(result) = result; /*0x542430*/
     IDA_LOBYTE(v3) = IDA_HIBYTE(result); /*0x542437*/
@@ -661,16 +661,16 @@ void DumpNetworkStats() {
       {
         *(result + 12504) = 1; /*0x69bac7*/
         if ( dword_83ED20 == -1 ) /*0x69bad6*/
-          dword_83ED20 = *(_DWORD *)g_GameModeOptions; /*0x69badd*/
-        if ( !*(_DWORD *)result ) /*0x69bae2*/
-          *(_DWORD *)g_GameModeOptions = 2; /*0x69bae7*/
-        if ( !*((_BYTE *)g_ScenarioClass_Instance + 13730) ) /*0x69baf7*/
+          dword_83ED20 = *(unsigned int *)g_GameModeOptions; /*0x69badd*/
+        if ( !*(unsigned int *)result ) /*0x69bae2*/
+          *(unsigned int *)g_GameModeOptions = 2; /*0x69bae7*/
+        if ( !*((unsigned char *)g_ScenarioClass_Instance + 13730) ) /*0x69baf7*/
         {
           Scenario::ClearScreen(); /*0x69bb01*/
           dword_B07784 = (int)g_CurrentFrame + 3; /*0x69bb0f*/
         }
-        if ( !(*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 28))(g_WWMouseClass_Instance) ) /*0x69bb1d*/
-          (*(void (__thiscall **)(int))(*(_DWORD *)g_WWMouseClass_Instance + 24))(g_WWMouseClass_Instance); /*0x69bb2c*/
+        if ( !(*(uint8_t (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 28))(g_WWMouseClass_Instance) ) /*0x69bb1d*/
+          (*(void (__thiscall **)(int))(*(unsigned int *)g_WWMouseClass_Instance + 24))(g_WWMouseClass_Instance); /*0x69bb2c*/
         return EndBufferMixer((int *)g_MixerState, 0x4000); /*0x69bb3a*/
       }
     }
@@ -735,10 +735,10 @@ retn
 // 0x5F0070: CleanupCampaignResources
 void CleanupCampaignResources() {
 {
-  __int16 v5; // [esp+74h] [ebp-4h]
+  int16_t v5; // [esp+74h] [ebp-4h]
   int v0; // eax
   IDA_LOBYTE(v0) = DataGlobal_87F7E8[538500];
-  _BYTE v4[108]; // [esp+8h] [ebp-70h] BYREF
+  unsigned char v4[108]; // [esp+8h] [ebp-70h] BYREF
   v4[0] = 0;
   if ( (DataGlobal_87F7E8[538500] & 2) == 0 )
   {
@@ -908,8 +908,8 @@ void NetworkShutdownInterface() {
     if ( v4 < 16 || (v4 & 3) != 0 ) /*0x5f9f1b*/
     {
       v6 = 16; /*0x5f9f20*/
-      if ( (((_BYTE)v4 + 3) & 0xFCu) > 0x10 ) /*0x5f9f2c*/
-        v6 = ((_BYTE)v4 + 3) & 0xFC; /*0x5f9f2e*/
+      if ( (((unsigned char)v4 + 3) & 0xFCu) > 0x10 ) /*0x5f9f2c*/
+        v6 = ((unsigned char)v4 + 3) & 0xFC; /*0x5f9f2e*/
       v7 = v3 - 1; /*0x5f9f32*/
       if ( v4 < v6 ) /*0x5f9f34*/
       {
@@ -927,16 +927,16 @@ void NetworkShutdownInterface() {
     v20 = 0; /*0x5f9f6d*/
     v21 = 0; /*0x5f9f71*/
     v22 = 0; /*0x5f9f75*/
-    Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4); /*0x5f9f79*/
+    Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4); /*0x5f9f79*/
     _strrev(Destination); /*0x5f9f83*/
     v20 = 0; /*0x5f9f93*/
     v21 = 0; /*0x5f9f99*/
     v22 = 0; /*0x5f9f9d*/
-    v18 = Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4); /*0x5f9fa6*/
+    v18 = Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4); /*0x5f9fa6*/
     _strrev(Destination); /*0x5f9faf*/
-    for ( i = 0; i < v4; v18 = (v9 >> 8) | ((unsigned __int8)v9 << 24) ) /*0x5f9fbb*/
+    for ( i = 0; i < v4; v18 = (v9 >> 8) | ((uint8_t)v9 << 24) ) /*0x5f9fbb*/
     {
-      v9 = (unsigned __int8)Destination[i] ^ v18; /*0x5f9fcd*/
+      v9 = (uint8_t)Destination[i] ^ v18; /*0x5f9fcd*/
       Destination[i++] = v18; /*0x5f9fd1*/
     }
     for ( j = 0; j < v4; ++j ) /*0x5f9ff1*/
@@ -961,13 +961,13 @@ void NetworkShutdownInterface() {
     v20 = 0; /*0x5fa0a6*/
     v21 = 0; /*0x5fa0aa*/
     v22 = 0; /*0x5fa0ae*/
-    return Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4); /*0x5f9e91*/
+    return Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4); /*0x5f9e91*/
   }
   if ( v4 < 16 || (v4 & 3) != 0 )
   {
     int v6 = 16;
-    if ( (((_BYTE)v4 + 3) & 0xFCu) > 0x10 )
-      v6 = ((_BYTE)v4 + 3) & 0xFC;
+    if ( (((unsigned char)v4 + 3) & 0xFCu) > 0x10 )
+      v6 = ((unsigned char)v4 + 3) & 0xFC;
     int v7 = v3 - 1;
     if ( v4 < v6 )
     {
@@ -985,17 +985,17 @@ void NetworkShutdownInterface() {
   unsigned int v20 = 0;
   int v21 = 0;
   int v22 = 0;
-  Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4);
+  Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4);
   _strrev(Destination);
   v20 = 0;
   v21 = 0;
   v22 = 0;
-  int v18 = Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4);
+  int v18 = Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4);
   _strrev(Destination);
   int v9; // ecx
-  for ( i = 0; i < v4; v18 = (v9 >> 8) | ((unsigned __int8)v9 << 24) )
+  for ( i = 0; i < v4; v18 = (v9 >> 8) | ((uint8_t)v9 << 24) )
   {
-    v9 = (unsigned __int8)Destination[i] ^ v18;
+    v9 = (uint8_t)Destination[i] ^ v18;
     Destination[i++] = v18;
   }
   for ( j = 0; j < v4; ++j )
@@ -1023,7 +1023,7 @@ void NetworkShutdownInterface() {
   v20 = 0;
   v21 = 0;
   v22 = 0;
-  return Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4);
+  return Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4);
 }
 
 /* ASM:
@@ -1277,15 +1277,15 @@ const wchar_t* GetCSFString(const wchar_t* key, const char* file, int line) {
   if ( v6 )
   {
     if ( a2 )
-      *a2 = *(_DWORD *)(dword_A8ED54[145546] + 4 * *(_DWORD *)(v6 + 36));
-    return *(void **)(dword_A8ED54[145545] + 4 * *(_DWORD *)(v6 + 36));
+      *a2 = *(unsigned int *)(dword_A8ED54[145546] + 4 * *(unsigned int *)(v6 + 36));
+    return *(void **)(dword_A8ED54[145545] + 4 * *(unsigned int *)(v6 + 36));
   }
   else
   {
     int v7 = RA2_OPNEW(520);
     swprintf((void *const)(v7 + 4), aMissingHs);
     Debug::Log();
-    *(_DWORD *)v7 = dword_A8ED54[145549];
+    *(unsigned int *)v7 = dword_A8ED54[145549];
     dword_A8ED54[145549] = v7;
     return (void *)(v7 + 4);
   }

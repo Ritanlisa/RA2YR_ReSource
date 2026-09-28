@@ -12,7 +12,7 @@ struct StreamClass {
     unsigned int u32_8;  // 0x8
     char m_Size[4];  // 0xC
     char StreamClass_field_0C[4];  // 0x10
-    _DWORD q014;  // 0x14
+    unsigned int q014;  // 0x14
     char q018[4];  // 0x18
     unsigned int u32_1C;  // 0x1C
     unsigned char q020;  // 0x20

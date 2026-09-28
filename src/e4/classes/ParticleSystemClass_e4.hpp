@@ -1753,7 +1753,7 @@ struct ParticleSystemClass {
     unsigned char q79F0;  // 0x79F0
 // --- flat members (END) ---
     VectorClass_flat * vt_00_(char a2);
-    _DWORD * ddtor(int a2, int a3);
+    unsigned int * ddtor(int a2, int a3);
     int Draw();
     int GetObjectSize();
     int GetTypeIdentifier();

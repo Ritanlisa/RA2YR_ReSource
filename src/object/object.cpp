@@ -47,7 +47,7 @@ bool ObjectClass::Remove()
   void *this; // [esp+4h] [ebp-4h] BYREF
 
   IDA_LOBYTE(result) = this->isSelected; /*0x5f44a4*/
-  if ( (_BYTE)result ) /*0x5f44ac*/
+  if ( (unsigned char)result ) /*0x5f44ac*/
   {
     v3 = ((int (__thiscall *)(ObjectClass **, void **))ObjectClass_CurrentObjects->parent_gap[4])( /*0x5f44c2*/
            &ObjectClass_CurrentObjects,
@@ -56,7 +56,7 @@ bool ObjectClass::Remove()
     {
       for ( g_SelectionManager = (wchar_t *)((char *)g_SelectionManager - 1); /*0x5f44dd*/
             v3 < (int)g_SelectionManager;
-            *((_DWORD *)g_ObjectClass_CurrentCount + v3 - 1) = *((_DWORD *)g_ObjectClass_CurrentCount + v3) )
+            *((unsigned int *)g_ObjectClass_CurrentCount + v3 - 1) = *((unsigned int *)g_ObjectClass_CurrentCount + v3) )
       {
         ++v3; /*0x5f44e5*/
       }
@@ -80,20 +80,20 @@ AbstractClass * * ObjectClass::Destroy()
   if ( this && (this->abstractFlags & 1) != 0 ) /*0x5f6607*/
     TechnoClass::CleanupAll(this, 0); /*0x5f660d*/
   AbstractClass::AnnounceExpiredPointer((void **)this, 1); /*0x5f6616*/
-  (*(void (__thiscall **)(void *))(*(_DWORD *)&this->q0542))(this); /*0x5f661f*/
+  (*(void (__thiscall **)(void *))(*(unsigned int *)&this->q0542))(this); /*0x5f661f*/
   this->isAliveFlag = 0; /*0x5f6625*/
   result = dword_B0F6A0; /*0x5f662c*/
   if ( g_LaserDrawConfig < dword_B0F6A0 /*0x5f6666*/
     || (byte_B0F6A5 || !dword_B0F6A0)
     && dword_B0F6AC > 0
-    && (result = (*(int (__thiscall **)(int *, int, _DWORD))(g_DiskLaserManager + 8))(
+    && (result = (*(int (__thiscall **)(int *, int, unsigned int))(g_DiskLaserManager + 8))(
                    &g_DiskLaserManager,
                    dword_B0F6A0 + dword_B0F6AC,
                    0),
-        (_BYTE)result) )
+        (unsigned char)result) )
   {
     result = g_LaserDrawConfig++; /*0x5f666e*/
-    *((_DWORD *)dword_B0F69C + result) = this; /*0x5f667d*/
+    *((unsigned int *)dword_B0F69C + result) = this; /*0x5f667d*/
   }
   return result; /*0x5f6680*/
 }
@@ -103,7 +103,7 @@ void ObjectClass::MarkForRedraw()
   int result; // eax
 
   IDA_LOBYTE(result) = this->u32_80; /*0x5f4d10*/
-  if ( !(_BYTE)result ) /*0x5f4d18*/
+  if ( !(unsigned char)result ) /*0x5f4d18*/
   {
     this->u32_80 = 1; /*0x5f4d1a*/
     return MapClass::MarkForRedraw(&MapClass_Instance, 0); /*0x5f4d28*/
@@ -116,7 +116,7 @@ void ObjectClass::MarkForRedraw()
       int result; // eax
 
       IDA_LOBYTE(result) = this->u32_80; /*0x5f4d10*/
-      if ( !(_BYTE)result ) /*0x5f4d18*/
+      if ( !(unsigned char)result ) /*0x5f4d18*/
       {
         this->u32_80 = 1; /*0x5f4d1a*/
         return MapClass::MarkForRedraw(&MapClass_Instance, 0); /*0x5f4d28*/

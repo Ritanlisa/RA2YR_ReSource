@@ -56,7 +56,7 @@ struct WalkLocomotion {
     unsigned int q128;  // 0x128
     AbstractClass * q130;  // 0x130
     unsigned int q134;  // 0x134
-    _DWORD q140;  // 0x140
+    unsigned int q140;  // 0x140
     unsigned char q144;  // 0x144
     unsigned char q148;  // 0x148
     unsigned char q14C;  // 0x14C

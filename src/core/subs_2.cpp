@@ -457,8 +457,8 @@ char ReturnOne42E6C0(int a0) // stdcall
 }
 
 // IDA: 0x42E800  proposal: MethodStub42E800
-// IDA: char __thiscall sub_42E800(_DWORD *this, int a2)
-//   return *(_BYTE *)(16 * a2 + *(this + 2) + 8);
+// IDA: char __thiscall sub_42E800(unsigned int *this, int a2)
+//   return *(unsigned char *)(16 * a2 + *(this + 2) + 8);
 char MethodStub42E800(void* _this, int a0) // thiscall
 {
   return 0;
@@ -493,9 +493,9 @@ void InitFloatConst42FFF0()
 }
 
 // IDA: 0x430070  proposal: MathDispatch430070
-// IDA: __int64 sub_430070()
+// IDA: int64_t sub_430070()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89C378 - dbl_89C3A0);
 //   result = Math::RoundToInt(v0 * dbl_89C398 * 0.5);
 //   dword_89C470 = result;
@@ -520,8 +520,8 @@ void ArcMath4300E0()
 }
 
 // IDA: 0x430110  proposal: MathRoundToInt430110
-// IDA: __int64 sub_430110()
-//   __int64 result; // rax
+// IDA: int64_t sub_430110()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89C470) + 0.5);
 //   dword_89C464 = result;
 //   return result;
@@ -563,7 +563,7 @@ int Callatexit430190()
 }
 
 // IDA: 0x4305E0  proposal: SetMember12
-// IDA: char __thiscall sub_4305E0(_BYTE *this, char a2)
+// IDA: char __thiscall sub_4305E0(unsigned char *this, char a2)
 //   char result; // al
 //   result = *(this + 12) & 0xFD | (2 * (a2 & 1));
 //   *(this + 12) = result;
@@ -574,14 +574,14 @@ char SetMember12(void* _this, int a0) // thiscall
 }
 
 // IDA: 0x430610  proposal: MethodStub430610
-// IDA: void __thiscall sub_430610(_BYTE *this)
+// IDA: void __thiscall sub_430610(unsigned char *this)
 //   *(this + 12) &= ~1u;
 void MethodStub430610(void* _this) // thiscall
 {
 }
 
 // IDA: 0x430F60  proposal: ReturnA1
-// IDA: _DWORD *__stdcall sub_430F60(_DWORD *a1)
+// IDA: unsigned int *__stdcall sub_430F60(unsigned int *a1)
 //   *a1 = 0;
 //   a1[1] = 0;
 //   return a1;
@@ -603,7 +603,7 @@ int ReturnZero4318D0()
 }
 
 // IDA: 0x431920  proposal: SetMember2431920
-// IDA: int __thiscall sub_431920(_DWORD *this)
+// IDA: int __thiscall sub_431920(unsigned int *this)
 //   *(this + 2) = 0;
 //   *(this + 3) = 0;
 //   *(this + 4) = 0;
@@ -626,9 +626,9 @@ int ReturnZero432670()
 }
 
 // IDA: 0x433560  proposal: ArithmeticCompute433560
-// IDA: char __fastcall sub_433560(int a1, _BYTE *a2)
-//   *(_DWORD *)a1 = a2;
-//   *(_BYTE *)(a1 + 4) = 0;
+// IDA: char __fastcall sub_433560(int a1, unsigned char *a2)
+//   *(unsigned int *)a1 = a2;
+//   *(unsigned char *)(a1 + 4) = 0;
 //   return *a2 & 1;
 char ArithmeticCompute433560(int a0, int a1) // fastcall
 {
@@ -636,9 +636,9 @@ char ArithmeticCompute433560(int a0, int a1) // fastcall
 }
 
 // IDA: 0x4335A0  proposal: ArithmeticCompute4335A0
-// IDA: char __fastcall sub_4335A0(int a1, _BYTE *a2, char a3)
-//   *(_DWORD *)a1 = a2;
-//   *(_BYTE *)(a1 + 4) = 0;
+// IDA: char __fastcall sub_4335A0(int a1, unsigned char *a2, char a3)
+//   *(unsigned int *)a1 = a2;
+//   *(unsigned char *)(a1 + 4) = 0;
 //   *a2 = a3;
 //   return a3;
 char ArithmeticCompute4335A0(int a0, int a1, int a2) // fastcall
@@ -659,7 +659,7 @@ int ReturnZero433860()
 }
 
 // IDA: 0x433C80  proposal: GetMember18
-// IDA: __int16 __thiscall sub_433C80(_WORD *this, __int16 a2)
+// IDA: int16_t __thiscall sub_433C80(unsigned short *this, int16_t a2)
 //   *(this + 19) = a2;
 //   return *(this + 18);
 int GetMember18(void* _this, int a0) // thiscall
@@ -668,7 +668,7 @@ int GetMember18(void* _this, int a0) // thiscall
 }
 
 // IDA: 0x433CE0  proposal: SetMember64
-// IDA: char __thiscall sub_433CE0(_BYTE *this, char a2)
+// IDA: char __thiscall sub_433CE0(unsigned char *this, char a2)
 //   char result; // al
 //   result = *(this + 64);
 //   *(this + 64) = a2;
@@ -679,7 +679,7 @@ char SetMember64(void* _this, int a0) // thiscall
 }
 
 // IDA: 0x434100  proposal: SetMember10
-// IDA: int __thiscall sub_434100(_DWORD *this, int a2)
+// IDA: int __thiscall sub_434100(unsigned int *this, int a2)
 //   int result; // eax
 //   result = *(this + 10);
 //   *(this + 10) = a2;
@@ -718,9 +718,9 @@ void InitFloatConst435660()
 }
 
 // IDA: 0x4356E0  proposal: MathDispatch4356E0
-// IDA: __int64 sub_4356E0()
+// IDA: int64_t sub_4356E0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89C4D8 - dbl_89C500);
 //   result = Math::RoundToInt(v0 * dbl_89C4F8 * 0.5);
 //   dword_89C550 = result;
@@ -745,8 +745,8 @@ void ArcMath435750()
 }
 
 // IDA: 0x435780  proposal: MathRoundToInt435780
-// IDA: __int64 sub_435780()
-//   __int64 result; // rax
+// IDA: int64_t sub_435780()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89C550) + 0.5);
 //   dword_89C544 = result;
 //   return result;
@@ -816,9 +816,9 @@ void InitFloatConst438390()
 }
 
 // IDA: 0x438410  proposal: MathDispatch438410
-// IDA: __int64 sub_438410()
+// IDA: int64_t sub_438410()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89C680 - dbl_89C6A8);
 //   result = Math::RoundToInt(v0 * dbl_89C6A0 * 0.5);
 //   dword_89C6F8 = result;
@@ -843,8 +843,8 @@ void ArcMath438480()
 }
 
 // IDA: 0x4384B0  proposal: MathRoundToInt4384B0
-// IDA: __int64 sub_4384B0()
-//   __int64 result; // rax
+// IDA: int64_t sub_4384B0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89C6F8) + 0.5);
 //   dword_89C6EC = result;
 //   return result;
@@ -915,9 +915,9 @@ void InitFloatConst4394F0()
 }
 
 // IDA: 0x439570  proposal: MathDispatch439570
-// IDA: __int64 sub_439570()
+// IDA: int64_t sub_439570()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89C700 - dbl_89C728);
 //   result = Math::RoundToInt(v0 * dbl_89C720 * 0.5);
 //   dword_89C778 = result;
@@ -942,8 +942,8 @@ void ArcMath4395E0()
 }
 
 // IDA: 0x439610  proposal: MathRoundToInt439610
-// IDA: __int64 sub_439610()
-//   __int64 result; // rax
+// IDA: int64_t sub_439610()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89C778) + 0.5);
 //   dword_89C76C = result;
 //   return result;
@@ -990,9 +990,9 @@ void InitFloatConst43A1B0()
 }
 
 // IDA: 0x43A230  proposal: MathDispatch43A230
-// IDA: __int64 sub_43A230()
+// IDA: int64_t sub_43A230()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89C780 - dbl_89C798);
 //   result = Math::RoundToInt(v0 * dbl_89C790 * 0.5);
 //   dword_89C7E8 = result;
@@ -1017,8 +1017,8 @@ void ArcMath43A2A0()
 }
 
 // IDA: 0x43A2D0  proposal: MathRoundToInt43A2D0
-// IDA: __int64 sub_43A2D0()
-//   __int64 result; // rax
+// IDA: int64_t sub_43A2D0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89C7E8) + 0.5);
 //   dword_89C7DC = result;
 //   return result;
@@ -1049,10 +1049,10 @@ int ReturnZero43A310()
 }
 
 // IDA: 0x43ADF0  proposal: SetMember8
-// IDA: _BYTE *__thiscall sub_43ADF0(_BYTE *this, _DWORD *a2)
+// IDA: unsigned char *__thiscall sub_43ADF0(unsigned char *this, unsigned int *a2)
 //   *(this + 8) = 0;
-//   *(_DWORD *)this = *a2;
-//   *((_DWORD *)this + 1) = a2[1];
+//   *(unsigned int *)this = *a2;
+//   *((unsigned int *)this + 1) = a2[1];
 //   return this;
 unsigned char* SetMember8(void* _this, int a0) // thiscall
 {
@@ -1060,10 +1060,10 @@ unsigned char* SetMember8(void* _this, int a0) // thiscall
 }
 
 // IDA: 0x43AF10  proposal: SetMember143AF10
-// IDA: _DWORD *__thiscall sub_43AF10(_DWORD *this)
+// IDA: unsigned int *__thiscall sub_43AF10(unsigned int *this)
 //   *this = 0;
 //   *(this + 1) = 0;
-//   *((_BYTE *)this + 8) = 0;
+//   *((unsigned char *)this + 8) = 0;
 //   return this;
 int* SetMember143AF10(void* _this) // thiscall
 {
@@ -1087,9 +1087,9 @@ void InitFloatConst43AF90()
 }
 
 // IDA: 0x43B010  proposal: MathDispatch43B010
-// IDA: __int64 sub_43B010()
+// IDA: int64_t sub_43B010()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89C7F8 - dbl_89C830);
 //   result = Math::RoundToInt(v0 * dbl_89C820 * 0.5);
 //   dword_89C888 = result;
@@ -1114,8 +1114,8 @@ void ArcMath43B080()
 }
 
 // IDA: 0x43B0B0  proposal: MathRoundToInt43B0B0
-// IDA: __int64 sub_43B0B0()
-//   __int64 result; // rax
+// IDA: int64_t sub_43B0B0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89C888) + 0.5);
 //   dword_89C87C = result;
 //   return result;
@@ -1173,9 +1173,9 @@ void InitFloatConst45AFF0()
 }
 
 // IDA: 0x45B070  proposal: MathDispatch45B070
-// IDA: __int64 sub_45B070()
+// IDA: int64_t sub_45B070()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89C898 - dbl_89C8C0);
 //   result = Math::RoundToInt(v0 * dbl_89C8B8 * 0.5);
 //   dword_89DDB8 = result;
@@ -1200,8 +1200,8 @@ void ArcMath45B0E0()
 }
 
 // IDA: 0x45B110  proposal: MathRoundToInt45B110
-// IDA: __int64 sub_45B110()
-//   __int64 result; // rax
+// IDA: int64_t sub_45B110()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89DDB8) + 0.5);
 //   dword_89D35C = result;
 //   return result;
@@ -1263,13 +1263,13 @@ char* ObjectTypeClass_Method(void* _this) // thiscall
 }
 
 // IDA: 0x45E8B0  proposal: MethodStub45E8B0
-// IDA: int __thiscall sub_45E8B0(_DWORD *this, int a2, int a3, int a4, int a5)
+// IDA: int __thiscall sub_45E8B0(unsigned int *this, int a2, int a3, int a4, int a5)
 //   int result; // eax
 //   char *v6; // edx
 //   result = 3 * a2 + 963;
 //   v6 = (char *)(this + 3 * a2);
-//   *((_DWORD *)v6 + 961) = a3;
-//   *((_DWORD *)v6 + 962) = a4;
+//   *((unsigned int *)v6 + 961) = a3;
+//   *((unsigned int *)v6 + 962) = a4;
 //   *(this + result) = a5;
 //   return result;
 int MethodStub45E8B0(void* _this, int a0, int a1, int a2, int a3) // thiscall
@@ -1294,9 +1294,9 @@ void InitFloatConst466120()
 }
 
 // IDA: 0x4661A0  proposal: MathDispatch4661A0
-// IDA: __int64 sub_4661A0()
+// IDA: int64_t sub_4661A0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89DDD8 - dbl_89DE00);
 //   result = Math::RoundToInt(v0 * dbl_89DDF8 * 0.5);
 //   dword_89DE70 = result;
@@ -1321,8 +1321,8 @@ void ArcMath466210()
 }
 
 // IDA: 0x466240  proposal: MathRoundToInt466240
-// IDA: __int64 sub_466240()
-//   __int64 result; // rax
+// IDA: int64_t sub_466240()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89DE70) + 0.5);
 //   dword_89DE64 = result;
 //   return result;
@@ -1391,9 +1391,9 @@ void InitFloatConst46BA20()
 }
 
 // IDA: 0x46BAA0  proposal: MathDispatch46BAA0
-// IDA: __int64 sub_46BAA0()
+// IDA: int64_t sub_46BAA0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89DE78 - dbl_89DEA0);
 //   result = Math::RoundToInt(v0 * dbl_89DE98 * 0.5);
 //   dword_89DEF0 = result;
@@ -1418,8 +1418,8 @@ void ArcMath46BB10()
 }
 
 // IDA: 0x46BB40  proposal: MathRoundToInt46BB40
-// IDA: __int64 sub_46BB40()
-//   __int64 result; // rax
+// IDA: int64_t sub_46BB40()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89DEF0) + 0.5);
 //   dword_89DEE4 = result;
 //   return result;
@@ -1466,9 +1466,9 @@ void InitFloatConst46C9C0()
 }
 
 // IDA: 0x46CA40  proposal: MathDispatch46CA40
-// IDA: __int64 sub_46CA40()
+// IDA: int64_t sub_46CA40()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89DEF8 - dbl_89DF10);
 //   result = Math::RoundToInt(v0 * dbl_89DF08 * 0.5);
 //   dword_89DF60 = result;
@@ -1493,8 +1493,8 @@ void ArcMath46CAB0()
 }
 
 // IDA: 0x46CAE0  proposal: MathRoundToInt46CAE0
-// IDA: __int64 sub_46CAE0()
-//   __int64 result; // rax
+// IDA: int64_t sub_46CAE0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89DF60) + 0.5);
 //   dword_89DF54 = result;
 //   return result;
@@ -1541,9 +1541,9 @@ void InitFloatConst46D170()
 }
 
 // IDA: 0x46D1F0  proposal: MathDispatch46D1F0
-// IDA: __int64 sub_46D1F0()
+// IDA: int64_t sub_46D1F0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89DF68 - dbl_89DFB0);
 //   result = Math::RoundToInt(v0 * dbl_89DFA8 * 0.5);
 //   dword_89E048 = result;
@@ -1568,8 +1568,8 @@ void ArcMath46D260()
 }
 
 // IDA: 0x46D290  proposal: MathRoundToInt46D290
-// IDA: __int64 sub_46D290()
-//   __int64 result; // rax
+// IDA: int64_t sub_46D290()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89E048) + 0.5);
 //   dword_89E034 = result;
 //   return result;
@@ -1614,8 +1614,8 @@ int ReturnZero46D310()
 // 46D350 stub removed in G28: real translation lives in src/e4/addr46_e4.cpp (vtable install)
 
 // IDA: 0x46D480  proposal: ArithmeticCompute46D480
-// IDA: __int64 __usercall sub_46D480@<edx:eax>(__int64 result@<edx:eax>, int a2@<ecx>)
-//   *((_BYTE *)&g_GameModeOptionState + a2) = IDA_BYTE4(result);
+// IDA: int64_t __usercall sub_46D480@<edx:eax>(int64_t result@<edx:eax>, int a2@<ecx>)
+//   *((unsigned char *)&g_GameModeOptionState + a2) = IDA_BYTE4(result);
 //   return result;
 int ArithmeticCompute46D480(int a0, int a1)
 {
@@ -1624,14 +1624,14 @@ int ArithmeticCompute46D480(int a0, int a1)
 
 // IDA: 0x46D490  proposal: MethodStub46D490
 // IDA: char __thiscall sub_46D490(void *this)
-//   return *((_BYTE *)&g_GameModeOptionState + (_DWORD)this);
+//   return *((unsigned char *)&g_GameModeOptionState + (unsigned int)this);
 char MethodStub46D490(void* _this) // thiscall
 {
   return 0;
 }
 
 // IDA: 0x470C30  proposal: MethodStub470C30
-// IDA: void __thiscall sub_470C30(_DWORD *this)
+// IDA: void __thiscall sub_470C30(unsigned int *this)
 //   ((void**)this)[0] = (void*)(void*)(void*)&CampaignEndScoreClass_vftable;
 void MethodStub470C30(void* _this) // thiscall
 {
@@ -1654,9 +1654,9 @@ void InitFloatConst471590()
 }
 
 // IDA: 0x471610  proposal: MathDispatch471610
-// IDA: __int64 sub_471610()
+// IDA: int64_t sub_471610()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89E0E8 - dbl_89E128);
 //   result = Math::RoundToInt(v0 * dbl_89E120 * 0.5);
 //   dword_89E178 = result;
@@ -1681,8 +1681,8 @@ void ArcMath471680()
 }
 
 // IDA: 0x4716B0  proposal: MathRoundToInt4716B0
-// IDA: __int64 sub_4716B0()
-//   __int64 result; // rax
+// IDA: int64_t sub_4716B0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89E178) + 0.5);
 //   dword_89E16C = result;
 //   return result;
@@ -1741,9 +1741,9 @@ void InitFloatConst4731E0()
 }
 
 // IDA: 0x473260  proposal: MathDispatch473260
-// IDA: __int64 sub_473260()
+// IDA: int64_t sub_473260()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89E180 - dbl_89E1A8);
 //   result = Math::RoundToInt(v0 * dbl_89E1A0 * 0.5);
 //   dword_89E1F8 = result;
@@ -1768,8 +1768,8 @@ void ArcMath4732D0()
 }
 
 // IDA: 0x473300  proposal: MathRoundToInt473300
-// IDA: __int64 sub_473300()
-//   __int64 result; // rax
+// IDA: int64_t sub_473300()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89E1F8) + 0.5);
 //   dword_89E1EC = result;
 //   return result;
@@ -1828,9 +1828,9 @@ void InitFloatConst473590()
 }
 
 // IDA: 0x473610  proposal: MathDispatch473610
-// IDA: __int64 sub_473610()
+// IDA: int64_t sub_473610()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89E200 - dbl_89E228);
 //   result = Math::RoundToInt(v0 * dbl_89E220 * 0.5);
 //   dword_89E278 = result;
@@ -1848,8 +1848,8 @@ void ArcMath473680()
 }
 
 // IDA: 0x4736B0  proposal: MathRoundToInt4736B0
-// IDA: __int64 sub_4736B0()
-//   __int64 result; // rax
+// IDA: int64_t sub_4736B0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89E278) + 0.5);
 //   dword_89E26C = result;
 //   return result;
@@ -1920,9 +1920,9 @@ void InitFloatConst474030()
 }
 
 // IDA: 0x4740B0  proposal: MathDispatch4740B0
-// IDA: __int64 sub_4740B0()
+// IDA: int64_t sub_4740B0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89E290 - dbl_89E2B8);
 //   result = Math::RoundToInt(v0 * dbl_89E2B0 * 0.5);
 //   dword_89E308 = result;
@@ -1947,8 +1947,8 @@ void ArcMath474120()
 }
 
 // IDA: 0x474150  proposal: MathRoundToInt474150
-// IDA: __int64 sub_474150()
-//   __int64 result; // rax
+// IDA: int64_t sub_474150()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89E308) + 0.5);
 //   dword_89E2FC = result;
 //   return result;
@@ -1991,7 +1991,7 @@ int ReturnZero4741D0()
 }
 
 // IDA: 0x476EA0  proposal: SetMember64476EA0
-// IDA: void __thiscall sub_476EA0(_BYTE *this)
+// IDA: void __thiscall sub_476EA0(unsigned char *this)
 //   *(this + 64) = 0;
 void SetMember64476EA0(void* _this) // thiscall
 {
@@ -2026,9 +2026,9 @@ void InitFloatConst478A00()
 }
 
 // IDA: 0x478A80  proposal: MathDispatch478A80
-// IDA: __int64 sub_478A80()
+// IDA: int64_t sub_478A80()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89E310 - dbl_89E338);
 //   result = Math::RoundToInt(v0 * dbl_89E330 * 0.5);
 //   dword_89E388 = result;
@@ -2053,8 +2053,8 @@ void ArcMath478AF0()
 }
 
 // IDA: 0x478B20  proposal: MathRoundToInt478B20
-// IDA: __int64 sub_478B20()
-//   __int64 result; // rax
+// IDA: int64_t sub_478B20()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89E388) + 0.5);
 //   dword_89E37C = result;
 //   return result;
@@ -2106,11 +2106,11 @@ int Callatexit4796E0()
 }
 
 // IDA: 0x47AA00  proposal: String::SetMember84
-// IDA: _BYTE *__thiscall sub_47AA00(_BYTE *this, char **a2)
+// IDA: unsigned char *__thiscall sub_47AA00(unsigned char *this, char **a2)
 //   char *v3; // eax
 //   BufferIOFileClass::Constructor(this);
 //   *(this + 84) = 0;
-//   *(_DWORD *)this = &off_7E1668;
+//   *(unsigned int *)this = &off_7E1668;
 //   v3 = String::GetOrEmpty_Alt(a2);
 //   FileClass::OpenWithCDSearch(this, v3);
 //   return this;
@@ -2136,9 +2136,9 @@ void InitFloatConst47B1A0()
 }
 
 // IDA: 0x47B220  proposal: MathDispatch47B220
-// IDA: __int64 sub_47B220()
+// IDA: int64_t sub_47B220()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89E728 - dbl_89E758);
 //   result = Math::RoundToInt(v0 * dbl_89E750 * 0.5);
 //   dword_89E7C0 = result;
@@ -2163,8 +2163,8 @@ void ArcMath47B290()
 }
 
 // IDA: 0x47B2C0  proposal: MathRoundToInt47B2C0
-// IDA: __int64 sub_47B2C0()
-//   __int64 result; // rax
+// IDA: int64_t sub_47B2C0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89E7C0) + 0.5);
 //   dword_89E7B4 = result;
 //   return result;
@@ -2207,7 +2207,7 @@ int ReturnZero47B340()
 
 // IDA: 0x484A80  proposal: ArithmeticCompute484A80
 // IDA: int __stdcall sub_484A80(int a1)
-//   ++*(_DWORD *)(a1 + 404);
+//   ++*(unsigned int *)(a1 + 404);
 //   return a1;
 int ArithmeticCompute484A80(int a0) // stdcall
 {
@@ -2309,9 +2309,9 @@ void InitFloatConst488FE0()
 }
 
 // IDA: 0x489060  proposal: MathDispatch489060
-// IDA: __int64 sub_489060()
+// IDA: int64_t sub_489060()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89E7F8 - dbl_89E820);
 //   result = Math::RoundToInt(v0 * dbl_89E818 * 0.5);
 //   dword_89E870 = result;
@@ -2336,8 +2336,8 @@ void ArcMath4890D0()
 }
 
 // IDA: 0x489100  proposal: MathRoundToInt489100
-// IDA: __int64 sub_489100()
-//   __int64 result; // rax
+// IDA: int64_t sub_489100()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89E870) + 0.5);
 //   dword_89E864 = result;
 //   return result;
@@ -2408,7 +2408,7 @@ int ReturnZero48BB20()
 //   IDA_BYTE1(a2) &= ~8u;
 //   v2 = a2;
 //   IDA_BYTE1(v2) = IDA_BYTE1(a2) & 0xE8;
-//   return a2 == v2 || (*(unsigned __int8 (__thiscall **)(int, int))(*(_DWORD *)a1 + 20))(a1, a2) == 0;
+//   return a2 == v2 || (*(uint8_t (__thiscall **)(int, int))(*(unsigned int *)a1 + 20))(a1, a2) == 0;
 bool HotkeyOptions_Method(int a0, int a1) // fastcall
 {
   return 0;
@@ -2443,9 +2443,9 @@ void InitFloatConst48BCC0()
 }
 
 // IDA: 0x48BD40  proposal: MathDispatch48BD40
-// IDA: __int64 sub_48BD40()
+// IDA: int64_t sub_48BD40()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89E898 - dbl_89E8C0);
 //   result = Math::RoundToInt(v0 * dbl_89E8B8 * 0.5);
 //   dword_89E910 = result;
@@ -2470,8 +2470,8 @@ void ArcMath48BDB0()
 }
 
 // IDA: 0x48BDE0  proposal: MathRoundToInt48BDE0
-// IDA: __int64 sub_48BDE0()
-//   __int64 result; // rax
+// IDA: int64_t sub_48BDE0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89E910) + 0.5);
 //   dword_89E904 = result;
 //   return result;
@@ -2530,9 +2530,9 @@ void InitFloatConst48C700()
 }
 
 // IDA: 0x48C780  proposal: MathDispatch48C780
-// IDA: __int64 sub_48C780()
+// IDA: int64_t sub_48C780()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89E918 - dbl_89E958);
 //   result = Math::RoundToInt(v0 * dbl_89E948 * 0.5);
 //   dword_89E9A8 = result;
@@ -2557,8 +2557,8 @@ void ArcMath48C7F0()
 }
 
 // IDA: 0x48C820  proposal: MathRoundToInt48C820
-// IDA: __int64 sub_48C820()
-//   __int64 result; // rax
+// IDA: int64_t sub_48C820()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89E9A8) + 0.5);
 //   dword_89E99C = result;
 //   return result;
@@ -2617,9 +2617,9 @@ void InitFloatConst48E2E0()
 }
 
 // IDA: 0x48E360  proposal: MathDispatch48E360
-// IDA: __int64 sub_48E360()
+// IDA: int64_t sub_48E360()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89E9B8 - dbl_89E9E0);
 //   result = Math::RoundToInt(v0 * dbl_89E9D8 * 0.5);
 //   dword_89EC20 = result;
@@ -2644,8 +2644,8 @@ void ArcMath48E3D0()
 }
 
 // IDA: 0x48E400  proposal: MathRoundToInt48E400
-// IDA: __int64 sub_48E400()
-//   __int64 result; // rax
+// IDA: int64_t sub_48E400()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89EC20) + 0.5);
 //   dword_89EC14 = result;
 //   return result;
@@ -2701,7 +2701,7 @@ int ReturnZero48E680()
 
 // IDA: 0x491300  proposal: MethodStub491300
 // IDA: int __thiscall sub_491300(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2718,7 +2718,7 @@ int MethodStub491300(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x491330  proposal: MethodStub491330
 // IDA: int __thiscall sub_491330(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2735,7 +2735,7 @@ int MethodStub491330(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x491360  proposal: MethodStub491360
 // IDA: int __thiscall sub_491360(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2752,7 +2752,7 @@ int MethodStub491360(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4916B0  proposal: MethodStub4916B0
 // IDA: int __thiscall sub_4916B0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2769,7 +2769,7 @@ int MethodStub4916B0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4916E0  proposal: MethodStub4916E0
 // IDA: int __thiscall sub_4916E0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2786,7 +2786,7 @@ int MethodStub4916E0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x491710  proposal: MethodStub491710
 // IDA: int __thiscall sub_491710(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2803,7 +2803,7 @@ int MethodStub491710(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x491790  proposal: MethodStub491790
 // IDA: int __thiscall sub_491790(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2820,7 +2820,7 @@ int MethodStub491790(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4917C0  proposal: MethodStub4917C0
 // IDA: int __thiscall sub_4917C0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2837,7 +2837,7 @@ int MethodStub4917C0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4917F0  proposal: MethodStub4917F0
 // IDA: int __thiscall sub_4917F0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2854,7 +2854,7 @@ int MethodStub4917F0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492500  proposal: MethodStub492500
 // IDA: int __thiscall sub_492500(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2871,7 +2871,7 @@ int MethodStub492500(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492530  proposal: MethodStub492530
 // IDA: int __thiscall sub_492530(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2888,7 +2888,7 @@ int MethodStub492530(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492560  proposal: MethodStub492560
 // IDA: int __thiscall sub_492560(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2905,7 +2905,7 @@ int MethodStub492560(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4925E0  proposal: MethodStub4925E0
 // IDA: int __thiscall sub_4925E0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2922,7 +2922,7 @@ int MethodStub4925E0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492610  proposal: MethodStub492610
 // IDA: int __thiscall sub_492610(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2939,7 +2939,7 @@ int MethodStub492610(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492640  proposal: MethodStub492640
 // IDA: int __thiscall sub_492640(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2956,7 +2956,7 @@ int MethodStub492640(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4926B0  proposal: MethodStub4926B0
 // IDA: int __thiscall sub_4926B0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2973,7 +2973,7 @@ int MethodStub4926B0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4926E0  proposal: MethodStub4926E0
 // IDA: int __thiscall sub_4926E0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -2990,7 +2990,7 @@ int MethodStub4926E0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492710  proposal: MethodStub492710
 // IDA: int __thiscall sub_492710(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3007,7 +3007,7 @@ int MethodStub492710(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4927A0  proposal: MethodStub4927A0
 // IDA: int __thiscall sub_4927A0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3024,7 +3024,7 @@ int MethodStub4927A0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4927D0  proposal: MethodStub4927D0
 // IDA: int __thiscall sub_4927D0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3041,7 +3041,7 @@ int MethodStub4927D0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492800  proposal: MethodStub492800
 // IDA: int __thiscall sub_492800(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3058,7 +3058,7 @@ int MethodStub492800(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492890  proposal: MethodStub492890
 // IDA: int __thiscall sub_492890(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3075,7 +3075,7 @@ int MethodStub492890(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4928C0  proposal: MethodStub4928C0
 // IDA: int __thiscall sub_4928C0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3092,7 +3092,7 @@ int MethodStub4928C0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4928F0  proposal: MethodStub4928F0
 // IDA: int __thiscall sub_4928F0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3109,7 +3109,7 @@ int MethodStub4928F0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492980  proposal: MethodStub492980
 // IDA: int __thiscall sub_492980(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3126,7 +3126,7 @@ int MethodStub492980(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4929B0  proposal: MethodStub4929B0
 // IDA: int __thiscall sub_4929B0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3143,7 +3143,7 @@ int MethodStub4929B0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4929E0  proposal: MethodStub4929E0
 // IDA: int __thiscall sub_4929E0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3160,7 +3160,7 @@ int MethodStub4929E0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492A70  proposal: MethodStub492A70
 // IDA: int __thiscall sub_492A70(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3177,7 +3177,7 @@ int MethodStub492A70(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492AA0  proposal: MethodStub492AA0
 // IDA: int __thiscall sub_492AA0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3194,7 +3194,7 @@ int MethodStub492AA0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492AD0  proposal: MethodStub492AD0
 // IDA: int __thiscall sub_492AD0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3211,7 +3211,7 @@ int MethodStub492AD0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492B70  proposal: MethodStub492B70
 // IDA: int __thiscall sub_492B70(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3228,7 +3228,7 @@ int MethodStub492B70(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492BA0  proposal: MethodStub492BA0
 // IDA: int __thiscall sub_492BA0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3245,7 +3245,7 @@ int MethodStub492BA0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492BD0  proposal: MethodStub492BD0
 // IDA: int __thiscall sub_492BD0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3262,7 +3262,7 @@ int MethodStub492BD0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492C90  proposal: MethodStub492C90
 // IDA: int __thiscall sub_492C90(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3279,7 +3279,7 @@ int MethodStub492C90(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492CC0  proposal: MethodStub492CC0
 // IDA: int __thiscall sub_492CC0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3296,7 +3296,7 @@ int MethodStub492CC0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492CF0  proposal: MethodStub492CF0
 // IDA: int __thiscall sub_492CF0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3313,7 +3313,7 @@ int MethodStub492CF0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492D80  proposal: MethodStub492D80
 // IDA: int __thiscall sub_492D80(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3330,7 +3330,7 @@ int MethodStub492D80(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492DB0  proposal: MethodStub492DB0
 // IDA: int __thiscall sub_492DB0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3347,7 +3347,7 @@ int MethodStub492DB0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492DE0  proposal: MethodStub492DE0
 // IDA: int __thiscall sub_492DE0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3364,7 +3364,7 @@ int MethodStub492DE0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492EA0  proposal: MethodStub492EA0
 // IDA: int __thiscall sub_492EA0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3381,7 +3381,7 @@ int MethodStub492EA0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492ED0  proposal: MethodStub492ED0
 // IDA: int __thiscall sub_492ED0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3398,7 +3398,7 @@ int MethodStub492ED0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492F00  proposal: MethodStub492F00
 // IDA: int __thiscall sub_492F00(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3415,7 +3415,7 @@ int MethodStub492F00(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492FC0  proposal: MethodStub492FC0
 // IDA: int __thiscall sub_492FC0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3432,7 +3432,7 @@ int MethodStub492FC0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x492FF0  proposal: MethodStub492FF0
 // IDA: int __thiscall sub_492FF0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3449,7 +3449,7 @@ int MethodStub492FF0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x493020  proposal: MethodStub493020
 // IDA: int __thiscall sub_493020(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3466,7 +3466,7 @@ int MethodStub493020(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4930E0  proposal: MethodStub4930E0
 // IDA: int __thiscall sub_4930E0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3483,7 +3483,7 @@ int MethodStub4930E0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x493110  proposal: MethodStub493110
 // IDA: int __thiscall sub_493110(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3500,7 +3500,7 @@ int MethodStub493110(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x493140  proposal: MethodStub493140
 // IDA: int __thiscall sub_493140(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3517,7 +3517,7 @@ int MethodStub493140(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x493210  proposal: MethodStub493210
 // IDA: int __thiscall sub_493210(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3534,7 +3534,7 @@ int MethodStub493210(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x493240  proposal: MethodStub493240
 // IDA: int __thiscall sub_493240(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3551,7 +3551,7 @@ int MethodStub493240(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x493270  proposal: MethodStub493270
 // IDA: int __thiscall sub_493270(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3568,7 +3568,7 @@ int MethodStub493270(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x493340  proposal: MethodStub493340
 // IDA: int __thiscall sub_493340(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3585,7 +3585,7 @@ int MethodStub493340(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x493370  proposal: MethodStub493370
 // IDA: int __thiscall sub_493370(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3602,7 +3602,7 @@ int MethodStub493370(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4933A0  proposal: MethodStub4933A0
 // IDA: int __thiscall sub_4933A0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3619,7 +3619,7 @@ int MethodStub4933A0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x493470  proposal: MethodStub493470
 // IDA: int __thiscall sub_493470(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3636,7 +3636,7 @@ int MethodStub493470(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4934A0  proposal: MethodStub4934A0
 // IDA: int __thiscall sub_4934A0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3653,7 +3653,7 @@ int MethodStub4934A0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4934D0  proposal: MethodStub4934D0
 // IDA: int __thiscall sub_4934D0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3670,7 +3670,7 @@ int MethodStub4934D0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x493570  proposal: MethodStub493570
 // IDA: int __thiscall sub_493570(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3687,7 +3687,7 @@ int MethodStub493570(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4935A0  proposal: MethodStub4935A0
 // IDA: int __thiscall sub_4935A0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3704,7 +3704,7 @@ int MethodStub4935A0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4935D0  proposal: MethodStub4935D0
 // IDA: int __thiscall sub_4935D0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3721,7 +3721,7 @@ int MethodStub4935D0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x493680  proposal: MethodStub493680
 // IDA: int __thiscall sub_493680(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3738,7 +3738,7 @@ int MethodStub493680(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4936B0  proposal: MethodStub4936B0
 // IDA: int __thiscall sub_4936B0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3755,7 +3755,7 @@ int MethodStub4936B0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4936E0  proposal: MethodStub4936E0
 // IDA: int __thiscall sub_4936E0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3772,7 +3772,7 @@ int MethodStub4936E0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4937A0  proposal: MethodStub4937A0
 // IDA: int __thiscall sub_4937A0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3789,7 +3789,7 @@ int MethodStub4937A0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4937D0  proposal: MethodStub4937D0
 // IDA: int __thiscall sub_4937D0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3806,7 +3806,7 @@ int MethodStub4937D0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x493800  proposal: MethodStub493800
 // IDA: int __thiscall sub_493800(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3823,7 +3823,7 @@ int MethodStub493800(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4938A0  proposal: MethodStub4938A0
 // IDA: int __thiscall sub_4938A0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3840,7 +3840,7 @@ int MethodStub4938A0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x4938D0  proposal: MethodStub4938D0
 // IDA: int __thiscall sub_4938D0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -3857,7 +3857,7 @@ int MethodStub4938D0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x493900  proposal: MethodStub493900
 // IDA: int __thiscall sub_493900(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,

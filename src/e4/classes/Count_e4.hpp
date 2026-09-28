@@ -41,7 +41,7 @@ struct Count {
     unsigned int q01C;
 // --- flat members (END) ---
     AbstractClass * * DecrementRefCountsAudio();
-    _DWORD* ddtor();
+    unsigned int* ddtor();
     int Get();
     int GetCountQueue();
     int SetupAllCountriesLobby();

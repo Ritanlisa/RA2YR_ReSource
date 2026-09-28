@@ -9,10 +9,10 @@
 // ---- IDA atom typedefs (this TU standalone) ----
 #ifndef G22_GAP2_IDA_ATOMS
 #define G22_GAP2_IDA_ATOMS
-typedef unsigned int _DWORD;
-typedef unsigned short _WORD;
-typedef unsigned char _BYTE;
-typedef unsigned long long _QWORD;
+typedef unsigned int unsigned int;
+typedef unsigned short unsigned short;
+typedef unsigned char unsigned char;
+typedef unsigned long long unsigned long long;
 typedef unsigned short u_short;
 typedef unsigned long u_long;
 typedef unsigned char u_char;
@@ -62,7 +62,7 @@ namespace gamemd {
         char ParsePathDirections(int*);
     };
     struct Gap2Recv_42B7F0 {
-        _DWORD * SimplifyPathFilter(int);
+        unsigned int * SimplifyPathFilter(int);
     };
     struct Gap2Recv_42E1C0 {
         int RenderTooltipBorder();
@@ -182,7 +182,7 @@ namespace gamemd {
         long long ComputeSessionColorVector();
     };
     struct Gap2Recv_50D6D0 {
-        __int16 SelectSimilarBuildingTypes();
+        int16_t SelectSimilarBuildingTypes();
     };
     struct Gap2Recv_50DA10 {
         int GlobalHelper_0E4440_Helper();
@@ -215,7 +215,7 @@ namespace gamemd {
         void FireTechnoAtTarget();
     };
     struct Gap2Recv_5272B0 {
-        unsigned __int8 * LookupCSFString(char*, int);
+        uint8_t * LookupCSFString(char*, int);
     };
     struct Gap2Recv_52A670 {
         void * WinMain_Init(char);
@@ -242,7 +242,7 @@ namespace gamemd {
         int Entity_Read();
     };
     struct Gap2Recv_544E00 {
-        _DWORD * Map_Get();
+        unsigned int * Map_Get();
     };
     struct Gap2Recv_549E50 {
         int Map_Get_549E50(int);
@@ -308,7 +308,7 @@ namespace gamemd {
         char Map_Create_57CBE0();
     };
     struct Gap2Recv_580BC0 {
-        _DWORD * FindMapSpawnCell();
+        unsigned int * FindMapSpawnCell();
     };
     struct Gap2Recv_581090 {
         int CleanupMapSystems();
@@ -374,7 +374,7 @@ namespace gamemd {
         char Map_Helper_5AD930();
     };
     struct Gap2Recv_5AD9F0 {
-        _DWORD * Map_Cleanup(int);
+        unsigned int * Map_Cleanup(int);
     };
     struct Gap2Recv_5B3910 {
         int LookupWaypointName();
@@ -395,7 +395,7 @@ namespace gamemd {
         void Map_Process_5CC690();
     };
     struct Gap2Recv_5CE4A0 {
-        _DWORD * UI_Load(int, char);
+        unsigned int * UI_Load(int, char);
     };
     struct Gap2Recv_5CEDD0 {
         char* Map_Delete_5CEDD0();
@@ -500,7 +500,7 @@ namespace gamemd {
         u_short * Event_Process_625C00();
     };
     struct Gap2Recv_6120 {
-        unsigned __int8 Render_Helper(int);
+        uint8_t Render_Helper(int);
     };
     struct Gap2Recv_62CB10 {
         void UpdateAreaDamageEffect();
@@ -548,7 +548,7 @@ namespace gamemd {
         int Team_Helper_6342E0(int);
     };
     struct Gap2Recv_6345A0 {
-        _DWORD * Render_Render_6345A0();
+        unsigned int * Render_Render_6345A0();
     };
     struct Gap2Recv_634770 {
         int Render_Render_634770();
@@ -590,16 +590,16 @@ namespace gamemd {
         bool HandlePlanningModeClick_Handle(void* a2);
     };
     struct Gap2Recv_63DEC0 {
-        _DWORD * ExecuteActionPlanManager_Helper_63DEC0(int);
+        unsigned int * ExecuteActionPlanManager_Helper_63DEC0(int);
     };
     struct Gap2Recv_63E1D0 {
-        _DWORD * ExecuteActionPlanManager_Helper_63E1D0(int);
+        unsigned int * ExecuteActionPlanManager_Helper_63E1D0(int);
     };
     struct Gap2Recv_63E5D0 {
         char Team_Destroy();
     };
     struct Gap2Recv_63EFB0 {
-        _DWORD * Object_Set(int);
+        unsigned int * Object_Set(int);
     };
     struct Gap2Recv_641B00 {
         char LoadMapPreviewImage();
@@ -626,7 +626,7 @@ namespace gamemd {
         int * GenerateImageThumbnail(int*, int*, char);
     };
     struct Gap2Recv_6550C0 {
-        _DWORD * Team_Load_6550C0(int16_t*);
+        unsigned int * Team_Load_6550C0(int16_t*);
     };
     struct Gap2Recv_659510 {
         int SpreadRadiationAreaEffect_Helper(int);
@@ -650,22 +650,22 @@ namespace gamemd {
         int * Render_Render_65A1B0();
     };
     struct Gap2Recv_65A7E0 {
-        _DWORD * Helper_65A7E0();
+        unsigned int * Helper_65A7E0();
     };
     struct Gap2Recv_65C250 {
-        _BYTE * WinMain_Helper_65C250(int);
+        unsigned char * WinMain_Helper_65C250(int);
     };
     struct Gap2Recv_65C2A0 {
         void WinMain_Helper_65C2A0();
     };
     struct Gap2Recv_65C6D0 {
-        _DWORD * SeedInitRNG();
+        unsigned int * SeedInitRNG();
     };
     struct Gap2Recv_65DD30 {
         void* ConstructTeamMembers();
     };
     struct Gap2Recv_65FB80 {
-        _DWORD * Team_Load_65FB80(int);
+        unsigned int * Team_Load_65FB80(int);
     };
     struct Gap2Recv_65FE00 {
         void Map_Helper_65FE00();
@@ -701,7 +701,7 @@ namespace gamemd {
         int InitInterfaceStubsCOM();
     };
     struct Gap2Recv_67BFA0 {
-        _DWORD * System_Load_67BFA0();
+        unsigned int * System_Load_67BFA0();
     };
     struct Gap2Recv_681060 {
         int Map_Save();
@@ -791,7 +791,7 @@ namespace gamemd {
         void Network_Disconnect_69BBF0();
     };
     struct Gap2Recv_69D870 {
-        _DWORD * ParseAndApplyAlliances_Parse(int);
+        unsigned int * ParseAndApplyAlliances_Parse(int);
     };
     struct Gap2Recv_69E900 {
         char Helper_69E900();
@@ -806,7 +806,7 @@ namespace gamemd {
         char * System_Init_6AC840();
     };
     struct Gap2Recv_6AC8D0 {
-        _DWORD * System_Init_6AC8D0(int);
+        unsigned int * System_Init_6AC8D0(int);
     };
     struct Gap2Recv_6B0490 {
         void* Event_Process_6B0490();
@@ -1031,7 +1031,7 @@ namespace gamemd {
         int COM_SafeRelease();
     };
     struct Gap2Recv_6C6B00 {
-        _DWORD * Audio_Read_6C6B00();
+        unsigned int * Audio_Read_6C6B00();
     };
     struct Gap2Recv_6C8870 {
         char Audio_Read_6C8870();
@@ -1043,7 +1043,7 @@ namespace gamemd {
         int ParseMovieSubtitles();
     };
     struct Gap2Recv_6CABA0 {
-        _DWORD * Render_Parse_6CABA0(int);
+        unsigned int * Render_Parse_6CABA0(int);
     };
     struct Gap2Recv_6CEE60 {
         int ObjectTypeClass_Read();
@@ -1055,7 +1055,7 @@ namespace gamemd {
         int SidebarUpdateAll();
     };
     struct Gap2Recv_6D1E30 {
-        _DWORD * SmallFunc_6D1E30();
+        unsigned int * SmallFunc_6D1E30();
     };
     struct Gap2Recv_6D3290 {
         int DrawBuildingAnimFrame(int*, char);
@@ -1070,7 +1070,7 @@ namespace gamemd {
         int RenderRadarBlips(int);
     };
     struct Gap2Recv_6D6170 {
-        _DWORD * RequestMapSnapshot();
+        unsigned int * RequestMapSnapshot();
     };
     struct Gap2Recv_6D9CE0 {
         int FindBuildingsInScreenRect(int, int, int);
@@ -1118,16 +1118,16 @@ namespace gamemd {
         void DeployTeamMembersAtStart(char);
     };
     struct Gap2Recv_6F2230 {
-        _DWORD * Team_Helper_6F2230(int);
+        unsigned int * Team_Helper_6F2230(int);
     };
     struct Gap2Recv_6F25E0 {
         char Team_Helper_6F25E0();
     };
     struct Gap2Recv_6F2780 {
-        _DWORD * Team_Helper_6F2780();
+        unsigned int * Team_Helper_6F2780();
     };
     struct Gap2Recv_6F27F0 {
-        _DWORD * Team_Helper_6F27F0(int*);
+        unsigned int * Team_Helper_6F27F0(int*);
     };
     struct Gap2Recv_6FD800 {
         int SpreadRadiationAreaEffect();
@@ -1178,7 +1178,7 @@ namespace gamemd {
         char SelectAllOfType_Helper();
     };
     struct Gap2Recv_734330 {
-        _DWORD * SelectFactionThemeMusic_Helper_734330(int);
+        unsigned int * SelectFactionThemeMusic_Helper_734330(int);
     };
     struct Gap2Recv_734390 {
         char SelectFactionThemeMusic_Helper_734390();
@@ -1262,13 +1262,13 @@ namespace gamemd {
         bool ConstructWDTSelection_Create();
     };
     struct Gap2Recv_765380 {
-        _DWORD * FindWDTTerritoryClass_Find(int);
+        unsigned int * FindWDTTerritoryClass_Find(int);
     };
     struct Gap2Recv_765410 {
         char * Team_Start_765410();
     };
     struct Gap2Recv_765C90 {
-        _DWORD * Team_Create_765C90(int*);
+        unsigned int * Team_Create_765C90(int*);
     };
     struct Gap2Recv_766060 {
         int FindWDTTerritoryClass_Find_Find();
@@ -1292,7 +1292,7 @@ namespace gamemd {
         char System_Init_766EE0();
     };
     struct Gap2Recv_766F70 {
-        _DWORD * System_Init_766F70();
+        unsigned int * System_Init_766F70();
     };
     struct Gap2Recv_767820 {
         void * ConstructorWDTFlagOption_Create(void*, int, void*, int);
@@ -1307,10 +1307,10 @@ namespace gamemd {
         int * Map_Load_7694C0();
     };
     struct Gap2Recv_769C20 {
-        _DWORD * Map_Load_769C20();
+        unsigned int * Map_Load_769C20();
     };
     struct Gap2Recv_76A7E0 {
-        _DWORD * ConstructWDTSelection_Create_767FB0_Create_Create(int*);
+        unsigned int * ConstructWDTSelection_Create_767FB0_Create_Create(int*);
     };
     struct Gap2Recv_76AAF0 {
         void* ParseWDTTerritories_Parse();
@@ -1319,7 +1319,7 @@ namespace gamemd {
         char ParseWDTTerritories(int);
     };
     struct Gap2Recv_76B790 {
-        _DWORD * ParseWDTTerritories_Parse_76B790();
+        unsigned int * ParseWDTTerritories_Parse_76B790();
     };
     struct Gap2Recv_76BF00 {
         char * Audio_Create_76BF00();
@@ -1358,7 +1358,7 @@ namespace gamemd {
         int Team_Start_76E430(bool*);
     };
     struct Gap2Recv_76E750 {
-        _DWORD * Team_Start_76E750();
+        unsigned int * Team_Start_76E750();
     };
     struct Gap2Recv_76E8B0 {
         bool Team_Start_76E8B0(int);
@@ -1367,7 +1367,7 @@ namespace gamemd {
         int ConstructWDTSelection_Create_76EEB0();
     };
     struct Gap2Recv_76F210 {
-        _DWORD * ConstructWDTSelection_Create_76F210(int);
+        unsigned int * ConstructWDTSelection_Create_76F210(int);
     };
     struct Gap2Recv_76F500 {
         void* ConstructWDTSelection_Create_76F500();
@@ -1520,7 +1520,7 @@ namespace gamemd {
         bool GameOptionsScreenWOL_Helper_7AE8E0(int*);
     };
     struct Gap2Recv_7AECD0 {
-        _DWORD * QueryNATPortWOL_Helper(int);
+        unsigned int * QueryNATPortWOL_Helper(int);
     };
     struct Gap2Recv_7AF3D0 {
         char* GetRegionStringWOL();
@@ -1592,7 +1592,7 @@ namespace gamemd {
         exception * RTtypeid_Helper();
     };
     struct Gap2Recv_7DCDC0 {
-        _DWORD * ThrowErrorCOM_Helper(int, char);
+        unsigned int * ThrowErrorCOM_Helper(int, char);
     };
 }  // namespace gamemd
 

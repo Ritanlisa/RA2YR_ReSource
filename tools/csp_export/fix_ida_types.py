@@ -421,8 +421,13 @@ def main():
 
     stats = defaultdict(int)
     changed_files = 0
-    files = sorted(list(E4.glob('*.cpp')) + list(E4.glob('*.hpp'))
-                  + list((ROOT / 'src' / '_gap2').glob('*.cpp')))
+    # G34: global scope — regen (step4) re-lands export pseudocode with
+    # IDA vocabulary into EVERY universe (tree included); the fixer must
+    # cover all of src or the vocabulary returns each round.
+    files = sorted(p for p in (ROOT / 'src').rglob('*')
+                   if p.suffix in ('.cpp', '.hpp')
+                   and '_generated' not in str(p)
+                   and 'csp_canon' not in str(p))
     for p in files:
         try:
             txt = p.read_text(encoding='latin-1')

@@ -280,23 +280,23 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
 {
   int v4; // ebx
   int v5; // edi
-  __int16 v6; // di
+  int16_t v6; // di
   int v7; // esi
   unsigned int v8; // eax
-  _DWORD *v9; // eax
-  _DWORD *v10; // ecx
-  _DWORD *v11; // eax
+  unsigned int *v9; // eax
+  unsigned int *v10; // ecx
+  unsigned int *v11; // eax
   int v12; // eax
   int v13; // ecx
   int v14; // ecx
   int v15; // esi
   int v16; // eax
-  __int16 v17; // bx
-  unsigned __int16 i; // si
+  int16_t v17; // bx
+  uint16_t i; // si
   unsigned int v19; // eax
-  _DWORD *v20; // eax
-  _DWORD *v21; // ecx
-  _DWORD *v22; // eax
+  unsigned int *v20; // eax
+  unsigned int *v21; // ecx
+  unsigned int *v22; // eax
   int v23; // eax
   int v25; // eax
   int v26; // eax
@@ -304,15 +304,15 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
   double v28; // st7
   int v29; // edi
   int v30; // ecx
-  _DWORD *v31; // ecx
-  _DWORD *v32; // eax
+  unsigned int *v31; // ecx
+  unsigned int *v32; // eax
   int v33; // eax
-  __int64 v34; // [esp+Ch] [ebp-3Ch]
+  int64_t v34; // [esp+Ch] [ebp-3Ch]
   int v35; // [esp+Ch] [ebp-3Ch]
   int v36; // [esp+10h] [ebp-38h]
   double v37; // [esp+10h] [ebp-38h]
   int v38; // [esp+10h] [ebp-38h]
-  __int16 v39; // [esp+1Ch] [ebp-2Ch]
+  int16_t v39; // [esp+1Ch] [ebp-2Ch]
   int v40; // [esp+1Ch] [ebp-2Ch]
   int v41; // [esp+20h] [ebp-28h]
   int v42; // [esp+20h] [ebp-28h]
@@ -327,17 +327,17 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
   {
     IDA_LODWORD(v34) = v5 / 256; /*0x5880f3*/
     IDA_HIDWORD(v34) = v4 / 256; /*0x5880f7*/
-    if ( (unsigned __int16)(v5 / 256) == (unsigned __int16)(v4 / 256) )
+    if ( (uint16_t)(v5 / 256) == (uint16_t)(v4 / 256) )
     {
       IDA_LOWORD(v34) = v5 / 256; /*0x588104*/
       IDA_WORD1(v34) = start[1] / 256; /*0x58811a*/
       v6 = IDA_WORD1(v34); /*0x588138*/
       v7 = end[1] / 256; /*0x588141*/
-      v39 = IDA_SWORD1(v34) >= (unsigned __int16)v7 ? -1 : 1;
-      while ( (_WORD)v34 != IDA_WORD2(v34) || v6 != (_WORD)v7 ) /*0x58815d*/
+      v39 = IDA_SWORD1(v34) >= (uint16_t)v7 ? -1 : 1;
+      while ( (unsigned short)v34 != IDA_WORD2(v34) || v6 != (unsigned short)v7 ) /*0x58815d*/
       {
-        v8 = (__int16)v34 + (v6 << 9); /*0x58816c*/
-        if ( v8 < 0x40000 && (v9 = *(_DWORD **)(g_Shroud_CellArray + 4 * v8)) != 0 ) /*0x588182*/
+        v8 = (int16_t)v34 + (v6 << 9); /*0x58816c*/
+        if ( v8 < 0x40000 && (v9 = *(unsigned int **)(g_Shroud_CellArray + 4 * v8)) != 0 ) /*0x588182*/
         {
           v10 = v9; /*0x588184*/
         }
@@ -349,14 +349,14 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
         v11 = Cell::IsBridge(v10); /*0x588196*/
         if ( v11 ) /*0x58819d*/
         {
-          if ( *(_BYTE *)(v11[328] + 5824) ) /*0x5881a5*/
+          if ( *(unsigned char *)(v11[328] + 5824) ) /*0x5881a5*/
           {
             v12 = v11[135]; /*0x5881af*/
-            if ( *(_BYTE *)(v12 + 506) ) /*0x5881b5*/
+            if ( *(unsigned char *)(v12 + 506) ) /*0x5881b5*/
             {
               if ( v12 != house ) /*0x5881c2*/
               {
-                v13 = (__int16)v34; /*0x5881d0*/
+                v13 = (int16_t)v34; /*0x5881d0*/
                 goto LABEL_31; /*0x5881d3*/
               }
             }
@@ -372,15 +372,15 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
       v15 = (int)(end[1]);
       v16 = v15 / 256; /*0x588202*/
       v41 = v15 / 256; /*0x588208*/
-      if ( (unsigned __int16)(v14 / 256) == (unsigned __int16)(v15 / 256) )
+      if ( (uint16_t)(v14 / 256) == (uint16_t)(v15 / 256) )
       {
         IDA_WORD1(v34) = v14 / 256; /*0x588223*/
         v6 = IDA_WORD1(v34); /*0x588234*/
-        v17 = (__int16)v34 >= IDA_SWORD2(v34) ? -1 : 1;
-        for ( i = v34; IDA___PAIR32__(i, v16) != *(_DWORD *)((char *)&v34 + 2); IDA_LOWORD(v34) = i ) /*0x58823d*/
+        v17 = (int16_t)v34 >= IDA_SWORD2(v34) ? -1 : 1;
+        for ( i = v34; IDA___PAIR32__(i, v16) != *(unsigned int *)((char *)&v34 + 2); IDA_LOWORD(v34) = i ) /*0x58823d*/
         {
-          v19 = (__int16)i + (IDA_SWORD1(v34) << 9); /*0x588259*/
-          if ( v19 < 0x40000 && (v20 = *(_DWORD **)(g_Shroud_CellArray + 4 * v19)) != 0 ) /*0x58826f*/
+          v19 = (int16_t)i + (IDA_SWORD1(v34) << 9); /*0x588259*/
+          if ( v19 < 0x40000 && (v20 = *(unsigned int **)(g_Shroud_CellArray + 4 * v19)) != 0 ) /*0x58826f*/
           {
             v21 = v20; /*0x588271*/
           }
@@ -392,14 +392,14 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
           v22 = Cell::IsBridge(v21); /*0x588283*/
           if ( v22 ) /*0x58828a*/
           {
-            if ( *(_BYTE *)(v22[328] + 5824) ) /*0x588292*/
+            if ( *(unsigned char *)(v22[328] + 5824) ) /*0x588292*/
             {
               v23 = v22[135]; /*0x58829c*/
-              if ( *(_BYTE *)(v23 + 506) ) /*0x5882a2*/
+              if ( *(unsigned char *)(v23 + 506) ) /*0x5882a2*/
               {
                 if ( v23 != house ) /*0x5882af*/
                 {
-                  v13 = (__int16)i; /*0x5882bf*/
+                  v13 = (int16_t)i; /*0x5882bf*/
   LABEL_31:
                   *out = (v13 << 8) + 128; /*0x5882c2*/
                   out[1] = (v6 << 8) + 128; /*0x5882e0*/
@@ -438,7 +438,7 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
         {
           v29 = v35; /*0x588445*/
           v30 = v27 / 256 + ((v35 / 256) << 9); /*0x58846a*/
-          if ( v30 < 0 || v30 >= dword_87F928 || (v31 = *(_DWORD **)(g_Shroud_CellArray + 4 * v30)) == 0 ) /*0x588481*/
+          if ( v30 < 0 || v30 >= dword_87F928 || (v31 = *(unsigned int **)(g_Shroud_CellArray + 4 * v30)) == 0 ) /*0x588481*/
           {
             IDA_LOWORD(v38) = v27 / 256; /*0x588483*/
             IDA_HIWORD(v38) = v35 / 256; /*0x588488*/
@@ -448,10 +448,10 @@ CoordStruct* MapClass::FindFirstFirestorm(CoordStruct* out, const CoordStruct* s
           v32 = Cell::IsBridge(v31); /*0x58849b*/
           if ( v32 ) /*0x5884a2*/
           {
-            if ( *(_BYTE *)(v32[328] + 5824) ) /*0x5884aa*/
+            if ( *(unsigned char *)(v32[328] + 5824) ) /*0x5884aa*/
             {
               v33 = v32[135]; /*0x5884b4*/
-              if ( *(_BYTE *)(v33 + 506) ) /*0x5884ba*/
+              if ( *(unsigned char *)(v33 + 506) ) /*0x5884ba*/
               {
                 if ( v33 != house ) /*0x5884c7*/
                 {
@@ -491,7 +491,7 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
   int v12; // eax
   int v13; // edi
   int v14; // eax
-  __int64 v15; // rax
+  int64_t v15; // rax
   int v16; // edi
   int v17; // ebx
   int result; // eax
@@ -504,16 +504,16 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
   int *v25; // ebp
   int v27; // esi
   int *v28; // ecx
-  __int16 v29; // ax
-  __int16 v30; // cx
+  int16_t v29; // ax
+  int16_t v30; // cx
   int v31; // edx
   int v32; // esi
   double v33; // st7
   unsigned int v34; // edx
-  _DWORD *v35; // edx
-  _DWORD *v36; // esi
+  unsigned int *v35; // edx
+  unsigned int *v36; // esi
   unsigned int v37; // eax
-  _DWORD *v38; // eax
+  unsigned int *v38; // eax
   int v39; // edx
   int v40; // eax
   unsigned int v41; // edi
@@ -521,10 +521,10 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
   int *v43; // [esp+18h] [ebp-38h]
   int v45; // [esp+20h] [ebp-30h]
   int v46; // [esp+2Ch] [ebp-24h]
-  __int16 v50[4]; // [esp+38h] [ebp-18h] BYREF
+  int16_t v50[4]; // [esp+38h] [ebp-18h] BYREF
   int v50; // [esp+40h] [ebp-10h]
-  __int16 v51; // [esp+48h] [ebp-8h]
-  __int16 v52; // [esp+4Ah] [ebp-6h]
+  int16_t v51; // [esp+48h] [ebp-8h]
+  int16_t v52; // [esp+4Ah] [ebp-6h]
   char v53; // [esp+54h] [ebp+4h]
   int v54; // [esp+60h] [ebp+10h]
 
@@ -533,12 +533,12 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
   v10 = (int)(coords[1]);
   v11 = (int)(coords[2]);
   v12 = ZCoordToScreenY(v11); /*0x567909*/
-  v13 = ((((unsigned int)(((unsigned __int64)(2004318071LL * v12) >> 32) - v12) >> 31) /*0x567928*/
-        + ((int)(((unsigned __int64)(2004318071LL * v12) >> 32) - v12) >> 4)) << 8)
+  v13 = ((((unsigned int)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 31) /*0x567928*/
+        + ((int)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 4)) << 8)
       + v9;
   v14 = ZCoordToScreenY(v11); /*0x56792a*/
-  v15 = (int)(((((unsigned int)(((unsigned __int64)(2004318071LL * v14) >> 32) - v14) >> 31) /*0x567958*/
-              + ((int)(((unsigned __int64)(2004318071LL * v14) >> 32) - v14) >> 4)) << 8)
+  v15 = (int)(((((unsigned int)(((uint64_t)(2004318071LL * v14) >> 32) - v14) >> 31) /*0x567958*/
+              + ((int)(((uint64_t)(2004318071LL * v14) >> 32) - v14) >> 4)) << 8)
             + v10);
   v50[0] = *coords / 256; /*0x567971*/
   v16 = v13 / 256; /*0x567982*/
@@ -550,18 +550,18 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
   v52 = v17 - v50[1] - 2; /*0x5679d3*/
   if ( g_GameMode_Current[0] != 3 && g_GameMode_Current[0] != 4 /*0x5679eb*/
     || !g_GameStateFlags
-    || (v53 = 1, (*(unsigned __int8 (__thiscall **)(int))(*(_DWORD *)g_GameStateFlags + 4))(g_GameStateFlags)) )
+    || (v53 = 1, (*(uint8_t (__thiscall **)(int))(*(unsigned int *)g_GameStateFlags + 4))(g_GameStateFlags)) )
   {
     v53 = 0; /*0x5679f7*/
   }
-  result = (__int16)v17; /*0x5679ff*/
-  v19 = (__int16)v17 + (__int16)v16; /*0x567a06*/
+  result = (int16_t)v17; /*0x5679ff*/
+  v19 = (int16_t)v17 + (int16_t)v16; /*0x567a06*/
   v20 = *(&this->q0181); /*0x567a09*/
   if ( v19 <= v20 ) /*0x567a11*/
     return result; /*0x567a11*/
-  if ( (__int16)v16 - (__int16)v17 >= v20 ) /*0x567a1d*/
+  if ( (int16_t)v16 - (int16_t)v17 >= v20 ) /*0x567a1d*/
     return result; /*0x567a1d*/
-  result = (__int16)v17 - (__int16)v16; /*0x567a23*/
+  result = (int16_t)v17 - (int16_t)v16; /*0x567a23*/
   if ( result >= v20 ) /*0x567a27*/
     return result; /*0x567a27*/
   result = *(&this->q0182); /*0x567a2d*/
@@ -594,14 +594,14 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
     goto LABEL_27; /*0x567abb*/
   if ( owner != HouseClass_Player ) /*0x567abf*/
   {
-    if ( ((1 << *(_DWORD *)(*((_DWORD *)HouseClass_Player + 13) + 184)) & *((_DWORD *)owner + 5433)) != 0 ) /*0x567ad7*/
+    if ( ((1 << *(unsigned int *)(*((unsigned int *)HouseClass_Player + 13) + 184)) & *((unsigned int *)owner + 5433)) != 0 ) /*0x567ad7*/
     {
       v24 = HouseClass_Player; /*0x567ad9*/
       owner = HouseClass_Player; /*0x567adb*/
     }
     if ( v24 != HouseClass_Player ) /*0x567ae1*/
     {
-      if ( (unsigned __int8)HouseClass::IsAlliedWith(v24, HouseClass_Player) /*0x567af4*/
+      if ( (uint8_t)HouseClass::IsAlliedWith(v24, HouseClass_Player) /*0x567af4*/
         && IDA_HIBYTE(g_RulesClass_Instance[1].RadarEventDurations[2]) )
       {
         result = (int)HouseClass_Player; /*0x567afe*/
@@ -623,14 +623,14 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
     v45 = v27 + 1; /*0x567b24*/
     while ( 1 ) /*0x567b37*/
     {
-      v28 = (int *)((_DWORD)(v43++));
-      v29 = (_DWORD)(*(_WORD *)v28 + v16);
-      v30 = (_DWORD)(v17 + *((_WORD *)v28 + 1));
-      v31 = (_DWORD)(*(&this->q0181));
+      v28 = (int *)((unsigned int)(v43++));
+      v29 = (unsigned int)(*(unsigned short *)v28 + v16);
+      v30 = (unsigned int)(v17 + *((unsigned short *)v28 + 1));
+      v31 = (unsigned int)(*(&this->q0181));
       IDA_LOWORD(v50) = v29; /*0x567b55*/
       ++v25; /*0x567b5a*/
       IDA_HIWORD(v50) = v30; /*0x567b5d*/
-      *(_DWORD *)v50 = v50; /*0x567b6c*/
+      *(unsigned int *)v50 = v50; /*0x567b6c*/
       v32 = v30 + v29; /*0x567b70*/
       if ( v32 > v31 /*0x567bb8*/
         && v29 - v30 < v31
@@ -639,26 +639,26 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
         && (int)abs32(v29 - v16) <= radius )
       {
         v33 = Math::Sqrt( /*0x567bf8*/
-                (double)(__int16)(v50 - v16) * (double)(__int16)(v50 - v16)
-              + (double)(__int16)(IDA_HIWORD(v50) - v17) * (double)(__int16)(IDA_HIWORD(v50) - v17));
-        if ( (__int16)Math::RoundToInt(v33) <= radius ) /*0x567c0a*/
+                (double)(int16_t)(v50 - v16) * (double)(int16_t)(v50 - v16)
+              + (double)(int16_t)(IDA_HIWORD(v50) - v17) * (double)(int16_t)(IDA_HIWORD(v50) - v17));
+        if ( (int16_t)Math::RoundToInt(v33) <= radius ) /*0x567c0a*/
         {
           v34 = v50[0] + (v50[1] << 9); /*0x567c21*/
-          if ( v34 < 0x40000 && (v35 = *(_DWORD **)(*(&this->q01C9) + 4 * v34)) != 0 ) /*0x567c38*/
+          if ( v34 < 0x40000 && (v35 = *(unsigned int **)(*(&this->q01C9) + 4 * v34)) != 0 ) /*0x567c38*/
           {
             v36 = v35; /*0x567c3a*/
           }
           else
           {
-            g_Map_GlobalCellIndex = *(_DWORD *)v50; /*0x567c3e*/
+            g_Map_GlobalCellIndex = *(unsigned int *)v50; /*0x567c3e*/
             v36 = g_CellClassArray; /*0x567c43*/
           }
           if ( !arg7 || !IDA_BYTE2(g_RulesClass_Instance[1].IonCannonDamage) ) /*0x567c56*/
             goto LABEL_47; /*0x567c56*/
-          IDA_LOWORD(v54) = v50[0] - v51 + *(_WORD *)v25; /*0x567c7c*/
-          IDA_HIWORD(v54) = v50[1] - v52 + *((_WORD *)v25 + 1); /*0x567c81*/
-          v37 = (__int16)v54 + (IDA_SHIWORD(v54) << 9); /*0x567c8f*/
-          if ( v37 >= 0x40000 || (v38 = *(_DWORD **)(g_Shroud_CellArray + 4 * v37)) == 0 ) /*0x567ca5*/
+          IDA_LOWORD(v54) = v50[0] - v51 + *(unsigned short *)v25; /*0x567c7c*/
+          IDA_HIWORD(v54) = v50[1] - v52 + *((unsigned short *)v25 + 1); /*0x567c81*/
+          v37 = (int16_t)v54 + (IDA_SHIWORD(v54) << 9); /*0x567c8f*/
+          if ( v37 >= 0x40000 || (v38 = *(unsigned int **)(g_Shroud_CellArray + 4 * v37)) == 0 ) /*0x567ca5*/
           {
             g_Map_GlobalCellIndex = v54; /*0x567cab*/
             v38 = g_CellClassArray; /*0x567cb0*/
@@ -666,8 +666,8 @@ void MapClass::RevealArea1(CoordStruct* coords, int radius, HouseClass* owner, C
           if ( *((char *)v38 + 283) <= v46 + 3 ) /*0x567cc5*/
           {
   LABEL_47:
-            v39 = *((__int16 *)v36 + 18); /*0x567cd5*/
-            v40 = *((__int16 *)v36 + 19); /*0x567cd9*/
+            v39 = *((int16_t *)v36 + 18); /*0x567cd5*/
+            v40 = *((int16_t *)v36 + 19); /*0x567cd9*/
             v41 = v36[80] & 0xFFFFFFBF; /*0x567cdd*/
             v36[80] = v41; /*0x567ce2*/
             if ( arg6 ) /*0x567ce8*/
@@ -720,15 +720,15 @@ void MapClass::RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, u
   int v14; // eax
   unsigned int v15; // edx
   int *v16; // ebp
-  __int64 v17; // rax
+  int64_t v17; // rax
   int v18; // esi
   int v19; // edi
   int *v20; // eax
   int v21; // eax
   bool v22; // sf
   int v23; // eax
-  _DWORD *v24; // eax
-  _DWORD *v25; // ebx
+  unsigned int *v24; // eax
+  unsigned int *v25; // ebx
   char AdjacentPassableMask; // al
   int v28; // [esp+Ch] [ebp+8h]
   int v29; // [esp+10h] [ebp+Ch]
@@ -770,11 +770,11 @@ void MapClass::RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, u
     v10 = a2[1]; /*0x567e17*/
     v11 = a2[2]; /*0x567e1a*/
     v12 = ZCoordToScreenY(v11); /*0x567e1f*/
-    v13 = ((((unsigned int)(((unsigned __int64)(2004318071LL * v12) >> 32) - v12) >> 31) /*0x567e3e*/
-          + ((int)(((unsigned __int64)(2004318071LL * v12) >> 32) - v12) >> 4)) << 8)
+    v13 = ((((unsigned int)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 31) /*0x567e3e*/
+          + ((int)(((uint64_t)(2004318071LL * v12) >> 32) - v12) >> 4)) << 8)
         + v9;
     v14 = ZCoordToScreenY(v11); /*0x567e40*/
-    v15 = (int)(((unsigned __int64)(2004318071LL * v14) >> 32) - v14) >> 4; /*0x567e52*/
+    v15 = (int)(((uint64_t)(2004318071LL * v14) >> 32) - v14) >> 4; /*0x567e52*/
     v16 = dword_ABD490; /*0x567e57*/
     v17 = (int)((((v15 >> 31) + v15) << 8) + v10); /*0x567e73*/
     v18 = v13 / 256; /*0x567e82*/
@@ -784,13 +784,13 @@ void MapClass::RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, u
     for ( result = v29 - 1; v29; --v29 ) /*0x567ea3*/
     {
       v20 = v16++; /*0x567eae*/
-      IDA_HIWORD(v28) = v19 + *((_WORD *)v20 + 1); /*0x567ec0*/
-      IDA_LOWORD(v28) = v18 + *(_WORD *)v20; /*0x567ec5*/
+      IDA_HIWORD(v28) = v19 + *((unsigned short *)v20 + 1); /*0x567ec0*/
+      IDA_LOWORD(v28) = v18 + *(unsigned short *)v20; /*0x567ec5*/
       v21 = IDA_SHIWORD(v28) << 9; /*0x567ed4*/
-      v22 = (__int16)v28 + v21 < 0; /*0x567ed7*/
-      v23 = (__int16)v28 + v21; /*0x567ed7*/
+      v22 = (int16_t)v28 + v21 < 0; /*0x567ed7*/
+      v23 = (int16_t)v28 + v21; /*0x567ed7*/
       a5 = v28; /*0x567ed9*/
-      if ( v22 || v23 >= 0x40000 || (v24 = *(_DWORD **)(*(this + 79) + 4 * v23)) == 0 ) /*0x567ef5*/
+      if ( v22 || v23 >= 0x40000 || (v24 = *(unsigned int **)(*(this + 79) + 4 * v23)) == 0 ) /*0x567ef5*/
       {
         g_Map_GlobalCellIndex = v28; /*0x567f0f*/
         v25 = g_CellClassArray; /*0x567f15*/
@@ -799,11 +799,11 @@ void MapClass::RevealArea2(CoordStruct* coords, int radius, HouseClass* owner, u
       {
         v25 = v24; /*0x567ef7*/
       }
-      AdjacentPassableMask = Cell::GetAdjacentPassableMask((__int16 *)&a5, 0); /*0x567f27*/
-      if ( AdjacentPassableMask != *((_BYTE *)v25 + 288) ) /*0x567f32*/
+      AdjacentPassableMask = Cell::GetAdjacentPassableMask((int16_t *)&a5, 0); /*0x567f27*/
+      if ( AdjacentPassableMask != *((unsigned char *)v25 + 288) ) /*0x567f32*/
       {
-        *((_BYTE *)v25 + 288) = AdjacentPassableMask; /*0x567f34*/
-        *((_BYTE *)v25 + 312) = 1; /*0x567f3a*/
+        *((unsigned char *)v25 + 288) = AdjacentPassableMask; /*0x567f34*/
+        *((unsigned char *)v25 + 312) = 1; /*0x567f3a*/
         Tactical::AddCellToDrawList((int)g_TacticalClass_Instance, (int)v25); /*0x567f48*/
       }
       result = v29 - 1; /*0x567f51*/

@@ -16,8 +16,8 @@ char* ReturnGVoxelRenderBuffer()
 }
 
 // IDA: 0x75A100  proposal: InitVoxelRenderer
-// IDA: BOOL __cdecl sub_75A100(int a1, int a2, _DWORD *a3, int a4)
-//   return VoxelRenderer::InitializeBuffers(*(_DWORD *)(a1 + 172), a2, a3, a4);
+// IDA: BOOL __cdecl sub_75A100(int a1, int a2, unsigned int *a3, int a4)
+//   return VoxelRenderer::InitializeBuffers(*(unsigned int *)(a1 + 172), a2, a3, a4);
 int InitVoxelRenderer(int a0, int a1, int a2, int a3)
 {
   return 0;

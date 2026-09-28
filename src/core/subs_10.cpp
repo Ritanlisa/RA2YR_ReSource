@@ -274,8 +274,8 @@ void ArcMath777310()
 }
 
 // IDA: 0x777340  proposal: MathRoundToInt777340
-// IDA: __int64 sub_777340()
-//   __int64 result; // rax
+// IDA: int64_t sub_777340()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_B73540) + 0.5);
 //   dword_B73534 = result;
 //   return result;
@@ -334,9 +334,9 @@ void InitFloatConst778540()
 }
 
 // IDA: 0x7785C0  proposal: MathDispatch7785C0
-// IDA: __int64 sub_7785C0()
+// IDA: int64_t sub_7785C0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_B73578 - dbl_B735A0);
 //   result = Math::RoundToInt(v0 * dbl_B73598 * 0.5);
 //   dword_B735F0 = result;
@@ -361,8 +361,8 @@ void ArcMath778630()
 }
 
 // IDA: 0x778660  proposal: MathRoundToInt778660
-// IDA: __int64 sub_778660()
-//   __int64 result; // rax
+// IDA: int64_t sub_778660()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_B735F0) + 0.5);
 //   dword_B735E4 = result;
 //   return result;
@@ -430,9 +430,9 @@ void InitFloatConst77B0E0()
 }
 
 // IDA: 0x77B160  proposal: MathDispatch77B160
-// IDA: __int64 sub_77B160()
+// IDA: int64_t sub_77B160()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_B735F8 - dbl_B73620);
 //   result = Math::RoundToInt(v0 * dbl_B73618 * 0.5);
 //   dword_B73670 = result;
@@ -457,8 +457,8 @@ void ArcMath77B1D0()
 }
 
 // IDA: 0x77B200  proposal: MathRoundToInt77B200
-// IDA: __int64 sub_77B200()
-//   __int64 result; // rax
+// IDA: int64_t sub_77B200()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_B73670) + 0.5);
 //   dword_B73664 = result;
 //   return result;
@@ -505,9 +505,9 @@ void InitFloatConst77B6E0()
 }
 
 // IDA: 0x77B760  proposal: MathDispatch77B760
-// IDA: __int64 sub_77B760()
+// IDA: int64_t sub_77B760()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_B73AC0 - dbl_B761A0);
 //   result = Math::RoundToInt(v0 * dbl_B75F60 * 0.5);
 //   dword_B77D74 = result;
@@ -532,8 +532,8 @@ void ArcMath77B7D0()
 }
 
 // IDA: 0x77B800  proposal: MathRoundToInt77B800
-// IDA: __int64 sub_77B800()
-//   __int64 result; // rax
+// IDA: int64_t sub_77B800()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_B77D74) + 0.5);
 //   dword_B77CD0 = result;
 //   return result;
@@ -1023,7 +1023,7 @@ int Callunknownlibname7377DA20()
 }
 
 // IDA: 0x781380  proposal: ReturnZero781380
-// IDA: int __cdecl sub_781380(_DWORD *a1, _DWORD *a2)
+// IDA: int __cdecl sub_781380(unsigned int *a1, unsigned int *a2)
 //   int v2; // eax
 //   int v3; // ecx
 //   int v4; // eax
@@ -1048,7 +1048,7 @@ int ReturnZero781380(int a0, int a1)
 }
 
 // IDA: 0x7813B0  proposal: ReturnOne7813B0
-// IDA: int __cdecl sub_7813B0(_DWORD *a1, _DWORD *a2)
+// IDA: int __cdecl sub_7813B0(unsigned int *a1, unsigned int *a2)
 //   int v2; // eax
 //   int v3; // ecx
 //   v2 = a1[1];
@@ -1066,8 +1066,8 @@ int ReturnOne7813B0(int a0, int a1)
 // IDA: int __cdecl sub_781CC0(int a1, int a2)
 //   int v2; // eax
 //   int v3; // eax
-//   v2 = *(_DWORD *)(a1 + 8);
-//   if ( v2 == *(_DWORD *)(a2 + 8) )
+//   v2 = *(unsigned int *)(a1 + 8);
+//   if ( v2 == *(unsigned int *)(a2 + 8) )
 //   return _strcmpi(*(const void **)(a1 + 4), *(const void **)(a2 + 4));
 //   v3 = -(v2 != 0);
 //   IDA_LOBYTE(v3) = v3 & 0xFE;
@@ -1081,7 +1081,7 @@ int Callstrcmpi781CC0(int a0, int a1)
 // IDA: int __cdecl sub_781CF0(const void *a1, const void **a2)
 //   const void *v2; // eax
 //   int v3; // eax
-//   v2 = (const void *)*((_DWORD *)a1 + 2);
+//   v2 = (const void *)*((unsigned int *)a1 + 2);
 //   if ( v2 == a2[2] )
 //   return _strcmpi(a2[1], *((const void **)a1 + 1));
 //   v3 = -(v2 != 0);
@@ -1137,9 +1137,9 @@ void InitFloatConst7AF100()
 }
 
 // IDA: 0x7AF180  proposal: MathDispatch7AF180
-// IDA: __int64 sub_7AF180()
+// IDA: int64_t sub_7AF180()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_B77EB8 - dbl_B77EF8);
 //   result = Math::RoundToInt(v0 * dbl_B77EE8 * 0.5);
 //   dword_B77F90 = result;
@@ -1164,8 +1164,8 @@ void ArcMath7AF1F0()
 }
 
 // IDA: 0x7AF220  proposal: MathRoundToInt7AF220
-// IDA: __int64 sub_7AF220()
-//   __int64 result; // rax
+// IDA: int64_t sub_7AF220()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_B77F90) + 0.5);
 //   dword_B77F80 = result;
 //   return result;
@@ -1314,9 +1314,9 @@ void InitFloatConst7B0BF0()
 }
 
 // IDA: 0x7B0C70  proposal: MathDispatch7B0C70
-// IDA: __int64 sub_7B0C70()
+// IDA: int64_t sub_7B0C70()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_B77FB0 - dbl_B77FC8);
 //   result = Math::RoundToInt(v0 * dbl_B77FC0 * 0.5);
 //   dword_B78018 = result;
@@ -1341,8 +1341,8 @@ void ArcMath7B0CE0()
 }
 
 // IDA: 0x7B0D10  proposal: MathRoundToInt7B0D10
-// IDA: __int64 sub_7B0D10()
-//   __int64 result; // rax
+// IDA: int64_t sub_7B0D10()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_B78018) + 0.5);
 //   dword_B7800C = result;
 //   return result;
@@ -1401,9 +1401,9 @@ void InitFloatConst7B1820()
 }
 
 // IDA: 0x7B18A0  proposal: MathDispatch7B18A0
-// IDA: __int64 sub_7B18A0()
+// IDA: int64_t sub_7B18A0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_B78020 - dbl_B78048);
 //   result = Math::RoundToInt(v0 * dbl_B78040 * 0.5);
 //   dword_B78098 = result;
@@ -1428,8 +1428,8 @@ void ArcMath7B1910()
 }
 
 // IDA: 0x7B1940  proposal: MathRoundToInt7B1940
-// IDA: __int64 sub_7B1940()
-//   __int64 result; // rax
+// IDA: int64_t sub_7B1940()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_B78098) + 0.5);
 //   dword_B7808C = result;
 //   return result;
@@ -1476,9 +1476,9 @@ void InitFloatConst7B2BF0()
 }
 
 // IDA: 0x7B2C70  proposal: MathDispatch7B2C70
-// IDA: __int64 sub_7B2C70()
+// IDA: int64_t sub_7B2C70()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_B780A8 - dbl_B780D0);
 //   result = Math::RoundToInt(v0 * dbl_B780C8 * 0.5);
 //   dword_B78120 = result;
@@ -1503,8 +1503,8 @@ void ArcMath7B2CE0()
 }
 
 // IDA: 0x7B2D10  proposal: MathRoundToInt7B2D10
-// IDA: __int64 sub_7B2D10()
-//   __int64 result; // rax
+// IDA: int64_t sub_7B2D10()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_B78120) + 0.5);
 //   dword_B78114 = result;
 //   return result;
@@ -1585,10 +1585,10 @@ int ReturnZero7BA5C0()
 
 // IDA: 0x7BC610  proposal: Sub7BC610
 // IDA: void __stdcall sub_7BC610(int a1, char *a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   _BYTE *v9; // edi
+//   unsigned char *v9; // edi
 //   int v10; // ecx
 //   char v11; // al
-//   v9 = (_BYTE *)(a1 - 1);
+//   v9 = (unsigned char *)(a1 - 1);
 //   v10 = a3 + 1;
 //   while ( --v10 )
 //   {
@@ -1604,7 +1604,7 @@ void Sub7BC610(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7) /
 
 // IDA: 0x7BC6C0  proposal: MethodStub7BC6C0
 // IDA: int __thiscall sub_7BC6C0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -1621,7 +1621,7 @@ int MethodStub7BC6C0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x7BC6F0  proposal: MethodStub7BC6F0
 // IDA: int __thiscall sub_7BC6F0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -1638,7 +1638,7 @@ int MethodStub7BC6F0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x7BC720  proposal: MethodStub7BC720
 // IDA: int __thiscall sub_7BC720(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -1731,8 +1731,8 @@ void* Callmemcpy7BC870(int a0, int a1, int a2, int a3, int a4, int a5, int a6, i
 }
 
 // IDA: 0x7BC890  proposal: ReturnResult7BC890
-// IDA: __int16 __stdcall sub_7BC890(_WORD *a1, __int16 *a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   __int16 result; // ax
+// IDA: int16_t __stdcall sub_7BC890(unsigned short *a1, int16_t *a2, int a3, int a4, int a5, int a6, int a7, int a8)
+//   int16_t result; // ax
 //   int v11; // esi
 //   result = a3;
 //   if ( a3 > 0 )
@@ -1756,7 +1756,7 @@ int ReturnResult7BC890(int a0, int a1, int a2, int a3, int a4, int a5, int a6, i
 
 // IDA: 0x7BC8C0  proposal: MethodStub7BC8C0
 // IDA: int __thiscall sub_7BC8C0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -1773,7 +1773,7 @@ int MethodStub7BC8C0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x7BC8F0  proposal: MethodStub7BC8F0
 // IDA: int __thiscall sub_7BC8F0(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -1790,7 +1790,7 @@ int MethodStub7BC8F0(void* _this, int a0, int a1, int a2, int a3, int a4, int a5
 
 // IDA: 0x7BC920  proposal: MethodStub7BC920
 // IDA: int __thiscall sub_7BC920(void *this, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
-//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, _DWORD))(*(_DWORD *)this + 4))(
+//   return (*(int (__thiscall **)(void *, int, int, int, int, int, int, int, unsigned int))(*(unsigned int *)this + 4))(
 //   this,
 //   a2,
 //   a3,
@@ -1818,7 +1818,7 @@ int ReturnZero7BC950()
 }
 
 // IDA: 0x7C35B0  proposal: GetMember906
-// IDA: int __thiscall sub_7C35B0(unsigned __int16 *this)
+// IDA: int __thiscall sub_7C35B0(uint16_t *this)
 //   return *(this + 906);
 int GetMember906(void* _this) // thiscall
 {
@@ -1826,7 +1826,7 @@ int GetMember906(void* _this) // thiscall
 }
 
 // IDA: 0x7C3670  proposal: SetMember452
-// IDA: int __thiscall sub_7C3670(_DWORD *this)
+// IDA: int __thiscall sub_7C3670(unsigned int *this)
 //   *(this + 452) = -1;
 //   *(this + 450) = -1;
 //   *(this + 451) = -1;
@@ -1853,9 +1853,9 @@ char* ReturnAVqaPlayback50O()
 }
 
 // IDA: 0x7C3840  proposal: ReturnNegativeOne7C3840
-// IDA: int __fastcall sub_7C3840(int a1, _DWORD *a2, _DWORD *a3)
-//   *a2 = *(unsigned __int16 *)(a1 + 250);
-//   *a3 = *(unsigned __int16 *)(a1 + 252);
+// IDA: int __fastcall sub_7C3840(int a1, unsigned int *a2, unsigned int *a3)
+//   *a2 = *(uint16_t *)(a1 + 250);
+//   *a3 = *(uint16_t *)(a1 + 252);
 //   return -1;
 int ReturnNegativeOne7C3840(int a0, int a1, int a2) // fastcall
 {
@@ -1864,7 +1864,7 @@ int ReturnNegativeOne7C3840(int a0, int a1, int a2) // fastcall
 
 // IDA: 0x7C5EE0  proposal: ArithmeticCompute7C5EE0
 // IDA: void *sub_7C5EE0()
-//   _UNKNOWN *retaddr; // [esp+0h] [ebp+0h]
+//   void *retaddr; // [esp+0h] [ebp+0h]
 //   return retaddr;
 void* ArithmeticCompute7C5EE0()
 {
@@ -1880,7 +1880,7 @@ char* MethodStub7C8B29(void* _this) // thiscall
 }
 
 // IDA: 0x7C8B2D  proposal: MethodStub7C8B2D
-// IDA: _DWORD *__thiscall sub_7C8B2D(_DWORD *this, int a2)
+// IDA: unsigned int *__thiscall sub_7C8B2D(unsigned int *this, int a2)
 //   *this = &off_7F9594;
 //   return this;
 int* MethodStub7C8B2D(void* _this, int a0) // thiscall
@@ -1910,7 +1910,7 @@ void* MethodJExceptionDestructor(void* _this, int a0) // thiscall
 // IDA: 0x7CA9B4  proposal: MethodStub7CA9B4
 // IDA: exception *__thiscall sub_7CA9B4(exception *this, struct exception *a2)
 //   __0exception_QAE_ABV0__Z(this, a2);
-//   *(_DWORD *)this = (void*)(void*)&__non_rtti_object_vftable;
+//   *(unsigned int *)this = (void*)(void*)&__non_rtti_object_vftable;
 //   return this;
 void* MethodStub7CA9B4(void* _this, int a0) // thiscall
 {
@@ -1920,7 +1920,7 @@ void* MethodStub7CA9B4(void* _this, int a0) // thiscall
 // IDA: 0x7CA9CC  proposal: MethodStub7CA9CC
 // IDA: exception *__thiscall sub_7CA9CC(exception *this, struct exception *a2)
 //   __0exception_QAE_ABV0__Z(this, a2);
-//   *(_DWORD *)this = (void*)(void*)&bad_typeid_vftable;
+//   *(unsigned int *)this = (void*)(void*)&bad_typeid_vftable;
 //   return this;
 void* MethodStub7CA9CC(void* _this, int a0) // thiscall
 {
@@ -1952,7 +1952,7 @@ void* MethodJExceptionDestructor3(void* _this, int a0) // thiscall
 // IDA: 0x7CAC34  proposal: MethodStub7CAC34
 // IDA: exception *__thiscall sub_7CAC34(exception *this, struct exception *a2)
 //   __0exception_QAE_ABV0__Z(this, a2);
-//   *(_DWORD *)this = (void*)(void*)&bad_cast_vftable;
+//   *(unsigned int *)this = (void*)(void*)&bad_cast_vftable;
 //   return this;
 void* MethodStub7CAC34(void* _this, int a0) // thiscall
 {
@@ -1960,7 +1960,7 @@ void* MethodStub7CAC34(void* _this, int a0) // thiscall
 }
 
 // IDA: 0x7D2E6E  proposal: SetMember17D2E6E
-// IDA: _DWORD *__thiscall sub_7D2E6E(_DWORD *this)
+// IDA: unsigned int *__thiscall sub_7D2E6E(unsigned int *this)
 //   *(this + 1) = 0;
 //   *(this + 2) = 0;
 //   ((void**)this)[0] = (void*)(void*)(void*)&exception_vftable;
@@ -1982,8 +1982,8 @@ void* Exception_Destructor(void* _this, int a0) // thiscall
 }
 
 // IDA: 0x7D2F9E  proposal: Calllockfile7D2F9E
-// IDA: __int16 __cdecl sub_7D2F9E(wchar_t WCh, FILE *Stream)
-//   __int16 v2; // si
+// IDA: int16_t __cdecl sub_7D2F9E(wchar_t WCh, FILE *Stream)
+//   int16_t v2; // si
 //   _lock_file(Stream);
 //   v2 = _putwc_lk(WCh, Stream);
 //   _unlock_file(Stream);
@@ -2013,7 +2013,7 @@ int Sub7D9FBD()
 }
 
 // IDA: 0x7DB060  proposal: ReturnOff87D620
-// IDA: _UNKNOWN **sub_7DB060()
+// IDA: void **sub_7DB060()
 //   return off_87D620;
 void* ReturnOff87D620()
 {
@@ -2029,7 +2029,7 @@ int ReturnOne7DC278()
 }
 
 // IDA: 0x7DCDF2  proposal: MethodSub7DCE3B
-// IDA: _DWORD *__thiscall sub_7DCDF2(_DWORD *Block, char a2)
+// IDA: unsigned int *__thiscall sub_7DCDF2(unsigned int *Block, char a2)
 //   sub_7DCE3B(Block);
 //   if ( (a2 & 1) != 0 )
 //   RA2_OPDEL(Block);
@@ -2040,15 +2040,15 @@ int* MethodSub7DCE3B(void* _this, int a0) // thiscall
 }
 
 // IDA: 0x7DCE0E  proposal: SetMember17DCE0E
-// IDA: _DWORD *__thiscall sub_7DCE0E(_DWORD *this, int a2)
+// IDA: unsigned int *__thiscall sub_7DCE0E(unsigned int *this, int a2)
 //   int v3; // eax
-//   *(this + 1) = *(_DWORD *)(a2 + 4);
-//   v3 = *(_DWORD *)(a2 + 8);
+//   *(this + 1) = *(unsigned int *)(a2 + 4);
+//   v3 = *(unsigned int *)(a2 + 8);
 //   *(this + 3) = 0;
 //   *(this + 2) = v3;
 //   ((void**)this)[0] = (void*)(void*)(void*)&_com_error_vftable;
 //   if ( v3 )
-//   (*(void (__stdcall **)(int))(*(_DWORD *)v3 + 4))(v3);
+//   (*(void (__stdcall **)(int))(*(unsigned int *)v3 + 4))(v3);
 //   return this;
 int* SetMember17DCE0E(void* _this, int a0) // thiscall
 {
@@ -2056,13 +2056,13 @@ int* SetMember17DCE0E(void* _this, int a0) // thiscall
 }
 
 // IDA: 0x7DCE3B  proposal: MethodStub7DCE3B
-// IDA: HLOCAL __thiscall sub_7DCE3B(_DWORD *this)
+// IDA: HLOCAL __thiscall sub_7DCE3B(unsigned int *this)
 //   HLOCAL result; // eax
 //   void *v3; // esi
 //   result = (HLOCAL)*(this + 2);
 //   ((void**)this)[0] = (void*)(void*)(void*)&_com_error_vftable;
 //   if ( result )
-//   result = (HLOCAL)(*(int (__stdcall **)(HLOCAL))(*(_DWORD *)result + 8))(result);
+//   result = (HLOCAL)(*(int (__stdcall **)(HLOCAL))(*(unsigned int *)result + 8))(result);
 //   v3 = (void *)*(this + 3);
 //   if ( v3 )
 //   return LocalFree(v3);
@@ -2085,7 +2085,7 @@ int Calllock()
 }
 
 // IDA: 0x7E01D2  proposal: Sub7E01D2
-// IDA: void __cdecl __spoils<ecx> sub_7E01D2(_BYTE *a1, _BYTE *a2, _BYTE *a3, int a4)
+// IDA: void __cdecl __spoils<ecx> sub_7E01D2(unsigned char *a1, unsigned char *a2, unsigned char *a3, int a4)
 //   int v7; // eax
 //   int v8; // ecx
 //   IDA_HIWORD(v7) = 0;

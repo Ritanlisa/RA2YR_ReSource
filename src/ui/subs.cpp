@@ -172,7 +172,7 @@ void ShapeButtonProcess6A4CC0()
 
 // IDA: 0x6A4CE0  proposal: InitShapeButton6A4CE0
 // IDA: int sub_6A4CE0()
-//   _BYTE *v0; // esi
+//   unsigned char *v0; // esi
 //   int v1; // edi
 //   v0 = &unk_B07C48;
 //   v1 = 4;
@@ -273,7 +273,7 @@ void GadgetProcess6A4E10()
 
 // IDA: 0x6CFBA0  proposal: InitShapeButton6CFBA0
 // IDA: int sub_6CFBA0()
-//   _BYTE *v0; // esi
+//   unsigned char *v0; // esi
 //   int v1; // edi
 //   v0 = &unk_B0C1C0;
 //   v1 = 25;

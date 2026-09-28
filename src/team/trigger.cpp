@@ -21,25 +21,25 @@ TriggerClass* TriggerClass::GetInstance(TriggerTypeClass* type)
 bool TriggerClass::HasCrossesHorizontalLineEvent() const
 {
   int v2; // eax
-  _DWORD *v3; // ecx
+  unsigned int *v3; // ecx
 
   v2 = *(&this->vtable20); /*0x726253*/
-  v3 = (_DWORD *)this->buildingType; /*0x726256*/
+  v3 = (unsigned int *)this->buildingType; /*0x726256*/
   if ( !v2 ) /*0x72625b*/
     return HouseClass::HasType25Building(v3); /*0x72627d*/
-  return HouseClass::HasType25Building(v3) || (unsigned __int8)TriggerClass::HasCrossesHorizontalLineEvent(*(&this->vtable20)); /*0x726274*/
+  return HouseClass::HasType25Building(v3) || (uint8_t)TriggerClass::HasCrossesHorizontalLineEvent(*(&this->vtable20)); /*0x726274*/
 }
 // 0x726290
 bool TriggerClass::HasCrossesVerticalLineEvent() const
 {
   int v2; // eax
-  _DWORD *v3; // ecx
+  unsigned int *v3; // ecx
 
   v2 = *(&this->vtable20); /*0x726293*/
-  v3 = (_DWORD *)this->buildingType; /*0x726296*/
+  v3 = (unsigned int *)this->buildingType; /*0x726296*/
   if ( !v2 ) /*0x72629b*/
     return HouseClass::HasType26Building(v3); /*0x7262bd*/
-  return HouseClass::HasType26Building(v3) || (unsigned __int8)TriggerClass::HasCrossesVerticalLineEvent(*(&this->vtable20)); /*0x7262b4*/
+  return HouseClass::HasType26Building(v3) || (uint8_t)TriggerClass::HasCrossesVerticalLineEvent(*(&this->vtable20)); /*0x7262b4*/
 }
 bool TriggerClass::HasZoneEntryByEvent() const
 {
@@ -78,7 +78,7 @@ void TriggerClass::NotifyGlobalChanged(int idx_global)
 
   for ( i = this; i; i = (int *)i[10] ) /*0x7263a5*/
   {
-    if ( HouseClass::FindType2728((_DWORD *)i[9], idx_global) ) /*0x7263b0*/
+    if ( HouseClass::FindType2728((unsigned int *)i[9], idx_global) ) /*0x7263b0*/
       BuildingClass::ProcessUpgradeEffects(i); /*0x7263bb*/
   }
 }
@@ -89,7 +89,7 @@ void TriggerClass::NotifyLocalChanged(int idx_local)
 
   for ( i = this; i; i = (int *)i[10] ) /*0x7263d5*/
   {
-    if ( TriggerTypeClass::HasLocalSetOrClearedEvent((_DWORD *)i[9], idx_local) ) /*0x7263e0*/
+    if ( TriggerTypeClass::HasLocalSetOrClearedEvent((unsigned int *)i[9], idx_local) ) /*0x7263e0*/
       BuildingClass::ProcessUpgradeEffects(i); /*0x7263eb*/
   }
 }
@@ -107,7 +107,7 @@ void TriggerClass::Destroy()
 bool TriggerClass::RegisterEvent(int event, ObjectClass* object,
 {
   char v7; // bl
-  _DWORD *v8; // edi
+  unsigned int *v8; // edi
   int Owner; // eax
   int v11; // [esp-10h] [ebp-18h]
   char v12; // [esp+7h] [ebp-1h]
@@ -137,7 +137,7 @@ bool TriggerClass::RegisterEvent(int event, ObjectClass* object,
     {
       v12 = 0; /*0x726549*/
     }
-    v8 = (_DWORD *)v8[10]; /*0x726585*/
+    v8 = (unsigned int *)v8[10]; /*0x726585*/
     ++v7; /*0x726588*/
   }
   while ( v8 ); /*0x72658b*/
@@ -197,12 +197,12 @@ TriggerTypeClass::Flags TriggerTypeClass::GetFlags() const
   for ( i = 0; v2; i |= v4 ) /*0x7271ef*/
   {
     v4 = TriggerTypeClass::GetActionCategoryFlags(*(void **)(v2 + 44)); /*0x7271f4*/
-    v2 = *(_DWORD *)(v2 + 40); /*0x7271f9*/
+    v2 = *(unsigned int *)(v2 + 40); /*0x7271f9*/
   }
   for ( j = *(&this->uniqueId4); j; i |= v6 ) /*0x72720a*/
   {
     v6 = TriggerTypeClass::Dispatch(*(void **)(j + 44)); /*0x72720f*/
-    j = *(_DWORD *)(j + 40); /*0x727214*/
+    j = *(unsigned int *)(j + 40); /*0x727214*/
   }
   v7 = *(&this->uniqueId2); /*0x72721d*/
   if ( v7 ) /*0x727225*/
@@ -240,11 +240,11 @@ bool TriggerTypeClass::HasGlobalSetOrClearedEvent(int idx_global) const
 // 0x727050
 bool TriggerTypeClass::HasLocalSetOrClearedEvent(int idx_local) const
 {
-  _DWORD *v2; // ecx
+  unsigned int *v2; // ecx
   char result; // al
   int v4; // edx
 
-  v2 = (_DWORD *)*(&this->uniqueId3); /*0x727050*/
+  v2 = (unsigned int *)*(&this->uniqueId3); /*0x727050*/
   result = 0; /*0x727056*/
   if ( v2 ) /*0x72705b*/
   {
@@ -253,7 +253,7 @@ bool TriggerTypeClass::HasLocalSetOrClearedEvent(int idx_local) const
       v4 = v2[11]; /*0x727061*/
       if ( (v4 == 36 || v4 == 37) && v2[13] == idx_local ) /*0x727071*/
         break; /*0x727071*/
-      v2 = (_DWORD *)v2[10]; /*0x727073*/
+      v2 = (unsigned int *)v2[10]; /*0x727073*/
       if ( !v2 ) /*0x727078*/
         return result; /*0x727078*/
     }

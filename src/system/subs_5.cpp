@@ -314,10 +314,10 @@ int InitZero767E70()
 }
 
 // IDA: 0x767E90  proposal: Timer::SetMember1
-// IDA: _DWORD *__thiscall sub_767E90(_DWORD *this)
+// IDA: unsigned int *__thiscall sub_767E90(unsigned int *this)
 //   *(this + 1) = 0;
 //   *(this + 2) = 0;
-//   *((_BYTE *)this + 12) = 0;
+//   *((unsigned char *)this + 12) = 0;
 //   *(this + 4) = Timer::GetTicks();
 //   *(this + 6) = 0;
 //   ((void**)this)[0] = (void*)(void*)(void*)&MSFrameAnim_vftable;
@@ -562,10 +562,10 @@ int InitZero770250()
 }
 
 // IDA: 0x771850  proposal: Timer::SetMember1771850
-// IDA: _DWORD *__thiscall sub_771850(_DWORD *this, int a2)
+// IDA: unsigned int *__thiscall sub_771850(unsigned int *this, int a2)
 //   *(this + 1) = 0;
 //   *(this + 2) = 0;
-//   *((_BYTE *)this + 12) = 0;
+//   *((unsigned char *)this + 12) = 0;
 //   *(this + 4) = Timer::GetTicks();
 //   *(this + 6) = 0;
 //   *(this + 7) = a2;

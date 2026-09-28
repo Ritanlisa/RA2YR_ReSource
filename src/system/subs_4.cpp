@@ -2310,9 +2310,9 @@ int InitZero7470B0()
 }
 
 // IDA: 0x748380  proposal: InitGlobal748380
-// IDA: int __fastcall sub_748380(unsigned __int16 *a1, int a2)
+// IDA: int __fastcall sub_748380(uint16_t *a1, int a2)
 //   int result; // eax
-//   unsigned __int16 v3; // dx
+//   uint16_t v3; // dx
 //   result = a2;
 //   if ( a2 > 0 )
 //   {
@@ -2320,7 +2320,7 @@ int InitZero7470B0()
 //   {
 //   v3 = *a1++;
 //   --result;
-//   *(a1 - 1) = *((_WORD *)dword_B1D14C + v3);
+//   *(a1 - 1) = *((unsigned short *)dword_B1D14C + v3);
 //   }
 //   while ( result );
 //   }

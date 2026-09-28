@@ -585,11 +585,11 @@ int InitZero406AF0()
 //   result = dword_87E8A0;
 //   if ( dword_87E8A0 )
 //   {
-//   result = (*(int (__stdcall **)(int, int *))(*(_DWORD *)dword_87E8A0 + 36))(dword_87E8A0, &v2);
+//   result = (*(int (__stdcall **)(int, int *))(*(unsigned int *)dword_87E8A0 + 36))(dword_87E8A0, &v2);
 //   if ( (v2 & 2) = 0 )
-//   result = (*(int (__stdcall **)(int))(*(_DWORD *)dword_87E8A0 + 80))(dword_87E8A0);
+//   result = (*(int (__stdcall **)(int))(*(unsigned int *)dword_87E8A0 + 80))(dword_87E8A0);
 //   if ( (v2 & 1) == 0 )
-//   return (*(int (__stdcall **)(int, _DWORD, _DWORD, int))(*(_DWORD *)dword_87E8A0 + 48))(dword_87E8A0, 0, 0, 1);
+//   return (*(int (__stdcall **)(int, unsigned int, unsigned int, int))(*(unsigned int *)dword_87E8A0 + 48))(dword_87E8A0, 0, 0, 1);
 //   }
 //   }
 //   }
@@ -600,7 +600,7 @@ int MainWindowProcReadHelper(int a0) // fastcall
 }
 
 // IDA: 0x4072B0  proposal: ScenarioClass::Method
-// IDA: int __thiscall sub_4072B0(_DWORD *this)
+// IDA: int __thiscall sub_4072B0(unsigned int *this)
 //   return IDA_HIWORD(*(this + 2));
 int ScenarioClass_Method(void* _this) // thiscall
 {
@@ -608,7 +608,7 @@ int ScenarioClass_Method(void* _this) // thiscall
 }
 
 // IDA: 0x4085E0  proposal: InitDListNode
-// IDA: void __fastcall sub_4085E0(_DWORD *a1, int a2, int a3)
+// IDA: void __fastcall sub_4085E0(unsigned int *a1, int a2, int a3)
 //   a1[4] = a3;
 //   a1[3] = a2;
 //   DListNode::InitEmpty(a1);
@@ -630,7 +630,7 @@ int InitGlobal40A7B0()
 //   int result; // eax
 //   result = dword_87E8A0;
 //   if ( dword_87E8A0 )
-//   return (*(int (__stdcall **)(int))(*(_DWORD *)dword_87E8A0 + 72))(dword_87E8A0);
+//   return (*(int (__stdcall **)(int))(*(unsigned int *)dword_87E8A0 + 72))(dword_87E8A0);
 //   return result;
 int InitGlobal40A940()
 {
@@ -808,7 +808,7 @@ int InitZero40D170()
 // IDA: 0x40D220  proposal: InitGlobal40D220
 // IDA: void __cdecl sub_40D220()
 //   if ( dword_87F7B8 )
-//   (*(void (__stdcall **)(int))(*(_DWORD *)dword_87F7B8 + 8))(dword_87F7B8);
+//   (*(void (__stdcall **)(int))(*(unsigned int *)dword_87F7B8 + 8))(dword_87F7B8);
 void InitGlobal40D220()
 {
 }
@@ -2131,7 +2131,7 @@ int InitZero4741B0()
 }
 
 // IDA: 0x474660  proposal: INIClass::SetINI
-// IDA: char __thiscall sub_474660(char *this, unsigned __int8 *Block, char *a3, int a4)
+// IDA: char __thiscall sub_474660(char *this, uint8_t *Block, char *a3, int a4)
 //   return INIClass::SetDouble(this, Block, a3, (double)a4 * 0.00390625);
 char INIClass_SetINI(void* _this, int a0, int a1, int a2) // thiscall
 {

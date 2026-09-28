@@ -37,12 +37,12 @@ int CCFileClass::Open(const char* pFileName)
   else
   {
     this->GetMember06(); /*0x473c84*/
-    if ( (unsigned __int8)LookupFileInfoCache(0, 0, 0) ) /*0x473c8b*/
+    if ( (uint8_t)LookupFileInfoCache(0, 0, 0) ) /*0x473c8b*/
     {
       *(&this->FileSize6) = 1; /*0x473c94*/
       return 1; /*0x473c97*/
     }
-    else if ( (unsigned __int8)File::IsReady(0) ) /*0x473ca2*/
+    else if ( (uint8_t)File::IsReady(0) ) /*0x473ca2*/
     {
       *(&this->FileSize6) = 1; /*0x473cab*/
       return 1; /*0x473cae*/
@@ -61,12 +61,12 @@ void* CCFileClass::ReadEntireFile()
   size_t v3; // ebx
 
   v2 = 0; /*0x4a3895*/
-  if ( (*(unsigned __int8 (__thiscall **)(void *, _DWORD))(*(_DWORD *)&this->FileSize0))(this, 0) ) /*0x4a389a*/
+  if ( (*(uint8_t (__thiscall **)(void *, unsigned int))(((unsigned int)(this->FileSize0))))(this, 0) ) /*0x4a389a*/
   {
-    v3 = (*(int (__thiscall **)(void *))(*(_DWORD *)&this->FileName4))(this); /*0x4a38a8*/
+    v3 = (*(int (__thiscall **)(void *))(((unsigned int)(this->FileName4))))(this); /*0x4a38a8*/
     v2 = RA2_OPNEW(v3); /*0x4a38b0*/
     if ( v2 ) /*0x4a38b7*/
-      (*(void (__thiscall **)(void *, void *, size_t))(*(_DWORD *)&this->Handle6))(this, v2, v3); /*0x4a38bf*/
+      (*(void (__thiscall **)(void *, void *, size_t))(((unsigned int)(this->Handle6))))(this, v2, v3); /*0x4a38bf*/
   }
   return v2; /*0x4a38c4*/
 }
@@ -75,7 +75,7 @@ REVERSE(0x473ce0, "CCFileClass::Reset: IDA verified", "None")
 // 0x473ce0
 int CCFileClass::Reset()
 {
-  _DWORD *v2; // ecx
+  unsigned int *v2; // ecx
 
   v2 = &this->q058; /*0x473ce3*/
   if ( v2 ) /*0x473ce8*/

@@ -34,8 +34,8 @@ ScriptActionNode* ScriptClass::GetNextAction(
   a2 = a2; /*0x691554*/
   if ( v3 + 1 < v2->u32_A0 ) /*0x691552*/
   {
-    *a2 = *(_DWORD *)(v2 + 8 * v3 + 172); /*0x691571*/
-    a2[1] = *(_DWORD *)(v2 + 8 * v3 + 176); /*0x69157a*/
+    *a2 = *(unsigned int *)(v2 + 8 * v3 + 172); /*0x691571*/
+    a2[1] = *(unsigned int *)(v2 + 8 * v3 + 176); /*0x69157a*/
   }
   else
   {

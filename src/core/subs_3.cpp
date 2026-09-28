@@ -565,12 +565,12 @@ void ArithmeticCompute49B1D0()
 }
 
 // IDA: 0x49B250  proposal: MathDispatch49B250
-// IDA: __int64 sub_49B250()
+// IDA: int64_t sub_49B250()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89F580 - dbl_89F5A8);
 //   result = Math::RoundToInt(v0 * dbl_89F5A0 * 0.5);
-//   *((_DWORD *)&byte_89F5D8 + 40) = result;
+//   *((unsigned int *)&byte_89F5D8 + 40) = result;
 //   return result;
 int MathDispatch49B250()
 {
@@ -586,16 +586,16 @@ void ArcMath49B290()
 
 // IDA: 0x49B2C0  proposal: ArcMath49B2C0
 // IDA: void sub_49B2C0()
-//   dbl_89F5C8 = Math::ArcTan((double)(2 * *((_DWORD *)&byte_89F5D8 + 40)) / dbl_89F5A0);
+//   dbl_89F5C8 = Math::ArcTan((double)(2 * *((unsigned int *)&byte_89F5D8 + 40)) / dbl_89F5A0);
 void ArcMath49B2C0()
 {
 }
 
 // IDA: 0x49B2F0  proposal: MathRoundToInt49B2F0
-// IDA: __int64 sub_49B2F0()
-//   __int64 result; // rax
-//   result = Math::RoundToInt((double)(4 * *((_DWORD *)&byte_89F5D8 + 40)) + 0.5);
-//   *((_DWORD *)&byte_89F5D8 + 37) = result;
+// IDA: int64_t sub_49B2F0()
+//   int64_t result; // rax
+//   result = Math::RoundToInt((double)(4 * *((unsigned int *)&byte_89F5D8 + 40)) + 0.5);
+//   *((unsigned int *)&byte_89F5D8 + 37) = result;
 //   return result;
 int MathRoundToInt49B2F0()
 {
@@ -625,8 +625,8 @@ int ReturnZero49B330()
 
 // IDA: 0x49B350  proposal: ArithmeticCompute49B350
 // IDA: int sub_49B350()
-//   *((_DWORD *)&byte_89F5D8 + 34) = 128;
-//   *(_QWORD *)(&byte_89F5D8 + 70) = 128;
+//   *((unsigned int *)&byte_89F5D8 + 34) = 128;
+//   *(unsigned long long *)(&byte_89F5D8 + 70) = 128;
 //   return 128;
 int ArithmeticCompute49B350()
 {
@@ -669,9 +669,9 @@ void ArithmeticCompute49F190()
 }
 
 // IDA: 0x49F1B0  proposal: MathDispatch49F1B0
-// IDA: __int64 sub_49F1B0()
+// IDA: int64_t sub_49F1B0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(*((double *)&byte_89F5D8 + 21) - dbl_89F6C8);
 //   result = Math::RoundToInt(v0 * dbl_89F6C0 * 0.5);
 //   dword_89F758 = result;
@@ -696,8 +696,8 @@ void ArcMath49F220()
 }
 
 // IDA: 0x49F250  proposal: MathRoundToInt49F250
-// IDA: __int64 sub_49F250()
-//   __int64 result; // rax
+// IDA: int64_t sub_49F250()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89F758) + 0.5);
 //   dword_89F74C = result;
 //   return result;
@@ -768,9 +768,9 @@ void InitFloatConst49FDA0()
 }
 
 // IDA: 0x49FE20  proposal: MathDispatch49FE20
-// IDA: __int64 sub_49FE20()
+// IDA: int64_t sub_49FE20()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89F760 - dbl_89F788);
 //   result = Math::RoundToInt(v0 * dbl_89F780 * 0.5);
 //   dword_89F7D8 = result;
@@ -795,8 +795,8 @@ void ArcMath49FE90()
 }
 
 // IDA: 0x49FEC0  proposal: MathRoundToInt49FEC0
-// IDA: __int64 sub_49FEC0()
-//   __int64 result; // rax
+// IDA: int64_t sub_49FEC0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89F7D8) + 0.5);
 //   dword_89F7CC = result;
 //   return result;
@@ -855,9 +855,9 @@ void InitFloatConst4A15B0()
 }
 
 // IDA: 0x4A1630  proposal: MathDispatch4A1630
-// IDA: __int64 sub_4A1630()
+// IDA: int64_t sub_4A1630()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89F7E0 - dbl_89F808);
 //   result = Math::RoundToInt(v0 * dbl_89F800 * 0.5);
 //   dword_89F858 = result;
@@ -882,8 +882,8 @@ void ArcMath4A16A0()
 }
 
 // IDA: 0x4A16D0  proposal: MathRoundToInt4A16D0
-// IDA: __int64 sub_4A16D0()
-//   __int64 result; // rax
+// IDA: int64_t sub_4A16D0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89F858) + 0.5);
 //   dword_89F84C = result;
 //   return result;
@@ -913,7 +913,7 @@ int ReturnZero4A1710()
 }
 
 // IDA: 0x4A2030  proposal: Checksummer::Add
-// IDA: int __thiscall sub_4A2030(unsigned int *this, unsigned __int8 *a2, int a3)
+// IDA: int __thiscall sub_4A2030(unsigned int *this, uint8_t *a2, int a3)
 //   Checksummer::Add_Buffer(this + 3, a2, a3);
 //   return Delegate::Dispatch(this, (int)a2, a3);
 int Checksummer_Add(void* _this, int a0, int a1) // thiscall
@@ -950,9 +950,9 @@ void InitFloatConst4A21B0()
 }
 
 // IDA: 0x4A2230  proposal: MathDispatch4A2230
-// IDA: __int64 sub_4A2230()
+// IDA: int64_t sub_4A2230()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_89F8E0 - dbl_89F908);
 //   result = Math::RoundToInt(v0 * dbl_89F900 * 0.5);
 //   dword_89F958 = result;
@@ -977,8 +977,8 @@ void ArcMath4A22A0()
 }
 
 // IDA: 0x4A22D0  proposal: MathRoundToInt4A22D0
-// IDA: __int64 sub_4A22D0()
-//   __int64 result; // rax
+// IDA: int64_t sub_4A22D0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_89F958) + 0.5);
 //   dword_89F94C = result;
 //   return result;
@@ -1021,7 +1021,7 @@ int ReturnZero4A3250()
 }
 
 // IDA: 0x4A3630  proposal: SetMember24576
-// IDA: _DWORD *__thiscall sub_4A3630(_DWORD *this)
+// IDA: unsigned int *__thiscall sub_4A3630(unsigned int *this)
 //   *(this + 24576) = 0;
 //   return this;
 int* SetMember24576(void* _this) // thiscall
@@ -1070,9 +1070,9 @@ void InitFloatConst4A4EF0()
 }
 
 // IDA: 0x4A4F70  proposal: MathDispatch4A4F70
-// IDA: __int64 sub_4A4F70()
+// IDA: int64_t sub_4A4F70()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8A00B8 - dbl_8A00E0);
 //   result = Math::RoundToInt(v0 * dbl_8A00D8 * 0.5);
 //   dword_8A0130 = result;
@@ -1097,8 +1097,8 @@ void ArcMath4A4FE0()
 }
 
 // IDA: 0x4A5010  proposal: MathRoundToInt4A5010
-// IDA: __int64 sub_4A5010()
-//   __int64 result; // rax
+// IDA: int64_t sub_4A5010()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8A0130) + 0.5);
 //   dword_8A0124 = result;
 //   return result;
@@ -1129,7 +1129,7 @@ int ReturnZero4A5050()
 }
 
 // IDA: 0x4A52D0  proposal: SetMember24
-// IDA: void __thiscall sub_4A52D0(_BYTE *this)
+// IDA: void __thiscall sub_4A52D0(unsigned char *this)
 //   *(this + 24) = 0;
 //   *(this + 25) = 1;
 void SetMember24(void* _this) // thiscall
@@ -1137,7 +1137,7 @@ void SetMember24(void* _this) // thiscall
 }
 
 // IDA: 0x4A52E0  proposal: SetMember244A52E0
-// IDA: char __thiscall sub_4A52E0(_BYTE *this)
+// IDA: char __thiscall sub_4A52E0(unsigned char *this)
 //   *(this + 24) = 0;
 //   *(this + 25) = 0;
 //   return 0;
@@ -1199,9 +1199,9 @@ void InitFloatConst4A6AB0()
 }
 
 // IDA: 0x4A6B30  proposal: MathDispatch4A6B30
-// IDA: __int64 sub_4A6B30()
+// IDA: int64_t sub_4A6B30()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8A0200 - dbl_8A0240);
 //   result = Math::RoundToInt(v0 * dbl_8A0238 * 0.5);
 //   dword_8A0290 = result;
@@ -1226,8 +1226,8 @@ void ArcMath4A6BA0()
 }
 
 // IDA: 0x4A6BD0  proposal: MathRoundToInt4A6BD0
-// IDA: __int64 sub_4A6BD0()
-//   __int64 result; // rax
+// IDA: int64_t sub_4A6BD0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8A0290) + 0.5);
 //   dword_8A0284 = result;
 //   return result;
@@ -1306,9 +1306,9 @@ void InitFloatConst4A8490()
 }
 
 // IDA: 0x4A8510  proposal: MathDispatch4A8510
-// IDA: __int64 sub_4A8510()
+// IDA: int64_t sub_4A8510()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8A03D8 - dbl_8A0408);
 //   result = Math::RoundToInt(v0 * dbl_8A0400 * 0.5);
 //   dword_8A0740 = result;
@@ -1333,8 +1333,8 @@ void ArcMath4A8580()
 }
 
 // IDA: 0x4A85B0  proposal: MathRoundToInt4A85B0
-// IDA: __int64 sub_4A85B0()
-//   __int64 result; // rax
+// IDA: int64_t sub_4A85B0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8A0740) + 0.5);
 //   dword_8A0730 = result;
 //   return result;
@@ -1392,9 +1392,9 @@ void InitFloatConst4AF380()
 }
 
 // IDA: 0x4AF400  proposal: MathDispatch4AF400
-// IDA: __int64 sub_4AF400()
+// IDA: int64_t sub_4AF400()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8A0758 - dbl_8A0780);
 //   result = Math::RoundToInt(v0 * dbl_8A0778 * 0.5);
 //   dword_8A07D0 = result;
@@ -1419,8 +1419,8 @@ void ArcMath4AF470()
 }
 
 // IDA: 0x4AF4A0  proposal: MathRoundToInt4AF4A0
-// IDA: __int64 sub_4AF4A0()
-//   __int64 result; // rax
+// IDA: int64_t sub_4AF4A0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8A07D0) + 0.5);
 //   dword_8A07C4 = result;
 //   return result;
@@ -1490,9 +1490,9 @@ void InitFloatConst4B58F0()
 }
 
 // IDA: 0x4B5970  proposal: MathDispatch4B5970
-// IDA: __int64 sub_4B5970()
+// IDA: int64_t sub_4B5970()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8A07E8 - dbl_8A0810);
 //   result = Math::RoundToInt(v0 * dbl_8A0808 * 0.5);
 //   dword_8A0860 = result;
@@ -1517,8 +1517,8 @@ void ArcMath4B59E0()
 }
 
 // IDA: 0x4B5A10  proposal: MathRoundToInt4B5A10
-// IDA: __int64 sub_4B5A10()
-//   __int64 result; // rax
+// IDA: int64_t sub_4B5A10()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8A0860) + 0.5);
 //   dword_8A0854 = result;
 //   return result;
@@ -1577,9 +1577,9 @@ void InitFloatConst4B67F0()
 }
 
 // IDA: 0x4B6870  proposal: MathDispatch4B6870
-// IDA: __int64 sub_4B6870()
+// IDA: int64_t sub_4B6870()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8A0868 - dbl_8A08B0);
 //   result = Math::RoundToInt(v0 * dbl_8A08A8 * 0.5);
 //   dword_8A0920 = result;
@@ -1604,8 +1604,8 @@ void ArcMath4B68E0()
 }
 
 // IDA: 0x4B6910  proposal: MathRoundToInt4B6910
-// IDA: __int64 sub_4B6910()
-//   __int64 result; // rax
+// IDA: int64_t sub_4B6910()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8A0920) + 0.5);
 //   dword_8A0914 = result;
 //   return result;
@@ -1651,8 +1651,8 @@ int ReturnZero4B6990()
 // IDA: char __thiscall sub_4B6B80(int this)
 //   int v2; // edi
 //   char result; // al
-//   v2 = *(_DWORD *)(this + 16);
-//   *(_BYTE *)(this + 12) = 0;
+//   v2 = *(unsigned int *)(this + 16);
+//   *(unsigned char *)(this + 12) = 0;
 //   if ( v2 > 0 )
 //   {
 //   do
@@ -1662,8 +1662,8 @@ int ReturnZero4B6990()
 //   }
 //   while ( v2 );
 //   }
-//   *(_DWORD *)(this + 16) = 0;
-//   *(_DWORD *)(this + 40) = 0;
+//   *(unsigned int *)(this + 16) = 0;
+//   *(unsigned int *)(this + 40) = 0;
 //   return result;
 char MethodSub4B6AB0(void* _this) // thiscall
 {
@@ -1671,7 +1671,7 @@ char MethodSub4B6AB0(void* _this) // thiscall
 }
 
 // IDA: 0x4B6BE0  proposal: MethodStub4B6BE0
-// IDA: int __thiscall sub_4B6BE0(_DWORD *this, int a2)
+// IDA: int __thiscall sub_4B6BE0(unsigned int *this, int a2)
 //   return *(this + a2 + 5);
 int MethodStub4B6BE0(void* _this, int a0) // thiscall
 {
@@ -1721,8 +1721,8 @@ void ArcMath4BA4F0()
 }
 
 // IDA: 0x4BA520  proposal: MathRoundToInt4BA520
-// IDA: __int64 sub_4BA520()
-//   __int64 result; // rax
+// IDA: int64_t sub_4BA520()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8A0DC8) + 0.5);
 //   dword_8A0DBC = result;
 //   return result;
@@ -1753,10 +1753,10 @@ int ReturnZero4BA560()
 }
 
 // IDA: 0x4BAFE0  proposal: MethodStub4BAFE0
-// IDA: BOOL __thiscall sub_4BAFE0(_DWORD *this)
+// IDA: BOOL __thiscall sub_4BAFE0(unsigned int *this)
 //   int v1; // eax
 //   v1 = *(this + 7);
-//   return v1 && (*(int (__stdcall **)(int))(*(_DWORD *)v1 + 96))(v1) == -2005532222;
+//   return v1 && (*(int (__stdcall **)(int))(*(unsigned int *)v1 + 96))(v1) == -2005532222;
 int MethodStub4BAFE0(void* _this) // thiscall
 {
   return 0;
@@ -1779,9 +1779,9 @@ void InitFloatConst4C1BD0()
 }
 
 // IDA: 0x4C1C50  proposal: MathDispatch4C1C50
-// IDA: __int64 sub_4C1C50()
+// IDA: int64_t sub_4C1C50()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8A0E18 - dbl_8A0E40);
 //   result = Math::RoundToInt(v0 * dbl_8A0E38 * 0.5);
 //   dword_8A0EB0 = result;
@@ -1806,8 +1806,8 @@ void ArcMath4C1CC0()
 }
 
 // IDA: 0x4C1CF0  proposal: MathRoundToInt4C1CF0
-// IDA: __int64 sub_4C1CF0()
-//   __int64 result; // rax
+// IDA: int64_t sub_4C1CF0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8A0EB0) + 0.5);
 //   dword_8A0EA0 = result;
 //   return result;
@@ -1878,9 +1878,9 @@ void InitFloatConst4C35F0()
 }
 
 // IDA: 0x4C3670  proposal: MathDispatch4C3670
-// IDA: __int64 sub_4C3670()
+// IDA: int64_t sub_4C3670()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8A0EC8 - dbl_8A0EF0);
 //   result = Math::RoundToInt(v0 * dbl_8A0EE8 * 0.5);
 //   dword_8A0F40 = result;
@@ -1905,8 +1905,8 @@ void ArcMath4C36E0()
 }
 
 // IDA: 0x4C3710  proposal: MathRoundToInt4C3710
-// IDA: __int64 sub_4C3710()
-//   __int64 result; // rax
+// IDA: int64_t sub_4C3710()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8A0F40) + 0.5);
 //   dword_8A0F34 = result;
 //   return result;
@@ -1962,7 +1962,7 @@ int ReturnZero4C37B0()
 
 // IDA: 0x4C38D0  proposal: MethodStub4C38D0
 // IDA: int __thiscall sub_4C38D0(void *this)
-//   return ((_DWORD)this + 1) << 8;
+//   return ((unsigned int)this + 1) << 8;
 int MethodStub4C38D0(void* _this) // thiscall
 {
   return 0;
@@ -1997,9 +1997,9 @@ void InitFloatConst4C4D50()
 }
 
 // IDA: 0x4C4DD0  proposal: MathDispatch4C4DD0
-// IDA: __int64 sub_4C4DD0()
+// IDA: int64_t sub_4C4DD0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8A3788 - dbl_8A37C0);
 //   result = Math::RoundToInt(v0 * dbl_8A3798 * 0.5);
 //   dword_8A3810 = result;
@@ -2024,8 +2024,8 @@ void ArcMath4C4E40()
 }
 
 // IDA: 0x4C4E70  proposal: MathRoundToInt4C4E70
-// IDA: __int64 sub_4C4E70()
-//   __int64 result; // rax
+// IDA: int64_t sub_4C4E70()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8A3810) + 0.5);
 //   dword_8A3804 = result;
 //   return result;
@@ -2072,9 +2072,9 @@ void InitFloatConst4C5050()
 }
 
 // IDA: 0x4C50D0  proposal: MathDispatch4C50D0
-// IDA: __int64 sub_4C50D0()
+// IDA: int64_t sub_4C50D0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8A3820 - dbl_8A3848);
 //   result = Math::RoundToInt(v0 * dbl_8A3840 * 0.5);
 //   dword_8A38B0 = result;
@@ -2099,8 +2099,8 @@ void ArcMath4C5140()
 }
 
 // IDA: 0x4C5170  proposal: MathRoundToInt4C5170
-// IDA: __int64 sub_4C5170()
-//   __int64 result; // rax
+// IDA: int64_t sub_4C5170()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8A38B0) + 0.5);
 //   dword_8A38A4 = result;
 //   return result;
@@ -2146,8 +2146,8 @@ int ReturnZero4C51F0()
 //   int result; // eax
 //   for ( result = dword_8A3880; dword_8A3880; result = dword_8A3880 )
 //   {
-//   if ( *(_DWORD *)dword_8A3874 )
-//   (*(void (__thiscall **)(_DWORD, int))(**(_DWORD **)dword_8A3874 + 32))(*(_DWORD *)dword_8A3874, 1);
+//   if ( *(unsigned int *)dword_8A3874 )
+//   (*(void (__thiscall **)(unsigned int, int))(**(unsigned int **)dword_8A3874 + 32))(*(unsigned int *)dword_8A3874, 1);
 //   }
 //   return result;
 int MethodStub4C5470()
@@ -2172,9 +2172,9 @@ void InitFloatConst4C5F30()
 }
 
 // IDA: 0x4C5FB0  proposal: MathDispatch4C5FB0
-// IDA: __int64 sub_4C5FB0()
+// IDA: int64_t sub_4C5FB0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8A38B8 - dbl_8A3928);
 //   result = Math::RoundToInt(v0 * dbl_8A38D8 * 0.5);
 //   dword_8A3978 = result;
@@ -2199,8 +2199,8 @@ void ArcMath4C6020()
 }
 
 // IDA: 0x4C6050  proposal: MathRoundToInt4C6050
-// IDA: __int64 sub_4C6050()
-//   __int64 result; // rax
+// IDA: int64_t sub_4C6050()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8A3978) + 0.5);
 //   dword_8A396C = result;
 //   return result;
@@ -2259,9 +2259,9 @@ void InitFloatConst4C63B0()
 }
 
 // IDA: 0x4C6430  proposal: MathDispatch4C6430
-// IDA: __int64 sub_4C6430()
+// IDA: int64_t sub_4C6430()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8A3980 - dbl_8A39A8);
 //   result = Math::RoundToInt(v0 * dbl_8A39A0 * 0.5);
 //   dword_8A39F8 = result;
@@ -2286,8 +2286,8 @@ void ArcMath4C64A0()
 }
 
 // IDA: 0x4C64D0  proposal: MathRoundToInt4C64D0
-// IDA: __int64 sub_4C64D0()
-//   __int64 result; // rax
+// IDA: int64_t sub_4C64D0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8A39F8) + 0.5);
 //   dword_8A39EC = result;
 //   return result;
@@ -2330,10 +2330,10 @@ int ReturnZero4C6550()
 
 // IDA: 0x4C81D0  proposal: ReturnZero4C81D0
 // IDA: int sub_4C81D0()
-//   *(_DWORD *)&Buffer[0x10000] = 0;
-//   *(_DWORD *)&Buffer[65540] = 0;
-//   *(_DWORD *)&Buffer[65544] = 0;
-//   *(_DWORD *)&Buffer[65548] = 0;
+//   *(unsigned int *)&Buffer[0x10000] = 0;
+//   *(unsigned int *)&Buffer[65540] = 0;
+//   *(unsigned int *)&Buffer[65544] = 0;
+//   *(unsigned int *)&Buffer[65548] = 0;
 //   return 0;
 int ReturnZero4C81D0()
 {
@@ -2378,12 +2378,12 @@ void ArithmeticCompute4C8280()
 }
 
 // IDA: 0x4C82C0  proposal: MathDispatch4C82C0
-// IDA: __int64 sub_4C82C0()
+// IDA: int64_t sub_4C82C0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8A3A00 - *(double *)&Buffer[65568]);
 //   result = Math::RoundToInt(v0 * *(double *)&Buffer[65560] * 0.5);
-//   *(_DWORD *)&Buffer[65648] = result;
+//   *(unsigned int *)&Buffer[65648] = result;
 //   return result;
 int MathDispatch4C82C0()
 {
@@ -2399,16 +2399,16 @@ void ArcMath4C8300()
 
 // IDA: 0x4C8330  proposal: ArcMath4C8330
 // IDA: void sub_4C8330()
-//   *(double *)&Buffer[65600] = Math::ArcTan((double)(2 * *(_DWORD *)&Buffer[65648]) / *(double *)&Buffer[65560]);
+//   *(double *)&Buffer[65600] = Math::ArcTan((double)(2 * *(unsigned int *)&Buffer[65648]) / *(double *)&Buffer[65560]);
 void ArcMath4C8330()
 {
 }
 
 // IDA: 0x4C8360  proposal: MathRoundToInt4C8360
-// IDA: __int64 sub_4C8360()
-//   __int64 result; // rax
-//   result = Math::RoundToInt((double)(4 * *(_DWORD *)&Buffer[65648]) + 0.5);
-//   *(_DWORD *)&Buffer[65636] = result;
+// IDA: int64_t sub_4C8360()
+//   int64_t result; // rax
+//   result = Math::RoundToInt((double)(4 * *(unsigned int *)&Buffer[65648]) + 0.5);
+//   *(unsigned int *)&Buffer[65636] = result;
 //   return result;
 int MathRoundToInt4C8360()
 {
@@ -2417,8 +2417,8 @@ int MathRoundToInt4C8360()
 
 // IDA: 0x4C8390  proposal: ReturnZero4C8390
 // IDA: int sub_4C8390()
-//   *(_WORD *)&Buffer[65552] = 0;
-//   *(_WORD *)&Buffer[65554] = 0;
+//   *(unsigned short *)&Buffer[65552] = 0;
+//   *(unsigned short *)&Buffer[65554] = 0;
 //   return 0;
 int ReturnZero4C8390()
 {
@@ -2427,9 +2427,9 @@ int ReturnZero4C8390()
 
 // IDA: 0x4C83A0  proposal: ReturnZero4C83A0
 // IDA: int sub_4C83A0()
-//   *(_DWORD *)&Buffer[65584] = 0;
-//   *(_DWORD *)&Buffer[65588] = 0;
-//   *(_DWORD *)&Buffer[65592] = 0;
+//   *(unsigned int *)&Buffer[65584] = 0;
+//   *(unsigned int *)&Buffer[65588] = 0;
+//   *(unsigned int *)&Buffer[65592] = 0;
 //   return 0;
 int ReturnZero4C83A0()
 {
@@ -2438,9 +2438,9 @@ int ReturnZero4C83A0()
 
 // IDA: 0x4C83C0  proposal: ArithmeticCompute4C83C0
 // IDA: int sub_4C83C0()
-//   *(_DWORD *)&Buffer[65632] = 0;
-//   *(_DWORD *)&Buffer[65624] = 128;
-//   *(_DWORD *)&Buffer[65628] = 128;
+//   *(unsigned int *)&Buffer[65632] = 0;
+//   *(unsigned int *)&Buffer[65624] = 128;
+//   *(unsigned int *)&Buffer[65628] = 128;
 //   return 128;
 int ArithmeticCompute4C83C0()
 {
@@ -2464,9 +2464,9 @@ void InitFloatConst4C96F0()
 }
 
 // IDA: 0x4C9770  proposal: MathDispatch4C9770
-// IDA: __int64 sub_4C9770()
+// IDA: int64_t sub_4C9770()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8B3AB0 - dbl_8B3AD8);
 //   result = Math::RoundToInt(v0 * dbl_8B3AD0 * 0.5);
 //   dword_8B3B28 = result;
@@ -2491,8 +2491,8 @@ void ArcMath4C97E0()
 }
 
 // IDA: 0x4C9810  proposal: MathRoundToInt4C9810
-// IDA: __int64 sub_4C9810()
-//   __int64 result; // rax
+// IDA: int64_t sub_4C9810()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8B3B28) + 0.5);
 //   dword_8B3B1C = result;
 //   return result;
@@ -2563,9 +2563,9 @@ void InitFloatConst4CBA00()
 }
 
 // IDA: 0x4CBA80  proposal: MathDispatch4CBA80
-// IDA: __int64 sub_4CBA80()
+// IDA: int64_t sub_4CBA80()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8B3B30 - dbl_8B3B58);
 //   result = Math::RoundToInt(v0 * dbl_8B3B50 * 0.5);
 //   dword_8B3BA8 = result;
@@ -2590,8 +2590,8 @@ void ArcMath4CBAF0()
 }
 
 // IDA: 0x4CBB20  proposal: MathRoundToInt4CBB20
-// IDA: __int64 sub_4CBB20()
-//   __int64 result; // rax
+// IDA: int64_t sub_4CBB20()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8B3BA8) + 0.5);
 //   dword_8B3B9C = result;
 //   return result;
@@ -2649,9 +2649,9 @@ void InitFloatConst4CBF60()
 }
 
 // IDA: 0x4CBFE0  proposal: MathDispatch4CBFE0
-// IDA: __int64 sub_4CBFE0()
+// IDA: int64_t sub_4CBFE0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8B3BB0 - dbl_8B3BD8);
 //   result = Math::RoundToInt(v0 * dbl_8B3BD0 * 0.5);
 //   dword_8B3C28 = result;
@@ -2676,8 +2676,8 @@ void ArcMath4CC050()
 }
 
 // IDA: 0x4CC080  proposal: MathRoundToInt4CC080
-// IDA: __int64 sub_4CC080()
-//   __int64 result; // rax
+// IDA: int64_t sub_4CC080()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8B3C28) + 0.5);
 //   dword_8B3C1C = result;
 //   return result;
@@ -2736,9 +2736,9 @@ void InitFloatConst4CC7E0()
 }
 
 // IDA: 0x4CC860  proposal: MathDispatch4CC860
-// IDA: __int64 sub_4CC860()
+// IDA: int64_t sub_4CC860()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8B3C40 - dbl_8B3C68);
 //   result = Math::RoundToInt(v0 * dbl_8B3C60 * 0.5);
 //   dword_8B3CB8 = result;
@@ -2763,8 +2763,8 @@ void ArcMath4CC8D0()
 }
 
 // IDA: 0x4CC900  proposal: MathRoundToInt4CC900
-// IDA: __int64 sub_4CC900()
-//   __int64 result; // rax
+// IDA: int64_t sub_4CC900()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8B3CB8) + 0.5);
 //   dword_8B3CAC = result;
 //   return result;
@@ -2834,9 +2834,9 @@ void InitFloatConst4D05B0()
 }
 
 // IDA: 0x4D0630  proposal: MathDispatch4D0630
-// IDA: __int64 sub_4D0630()
+// IDA: int64_t sub_4D0630()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8B3CD8 - dbl_8B3D00);
 //   result = Math::RoundToInt(v0 * dbl_8B3CF8 * 0.5);
 //   dword_8B3D68 = result;
@@ -2861,8 +2861,8 @@ void ArcMath4D06A0()
 }
 
 // IDA: 0x4D06D0  proposal: MathRoundToInt4D06D0
-// IDA: __int64 sub_4D06D0()
-//   __int64 result; // rax
+// IDA: int64_t sub_4D06D0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8B3D68) + 0.5);
 //   dword_8B3D5C = result;
 //   return result;
@@ -2922,9 +2922,9 @@ void InitFloatConst4D2FA0()
 }
 
 // IDA: 0x4D3020  proposal: MathDispatch4D3020
-// IDA: __int64 sub_4D3020()
+// IDA: int64_t sub_4D3020()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8B3D70 - dbl_8B3D98);
 //   result = Math::RoundToInt(v0 * dbl_8B3D90 * 0.5);
 //   dword_8B3E00 = result;
@@ -2949,8 +2949,8 @@ void ArcMath4D3090()
 }
 
 // IDA: 0x4D30C0  proposal: MathRoundToInt4D30C0
-// IDA: __int64 sub_4D30C0()
-//   __int64 result; // rax
+// IDA: int64_t sub_4D30C0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8B3E00) + 0.5);
 //   dword_8B3DF4 = result;
 //   return result;
@@ -3008,9 +3008,9 @@ void InitFloatConst4E0F60()
 }
 
 // IDA: 0x4E0FE0  proposal: MathDispatch4E0FE0
-// IDA: __int64 sub_4E0FE0()
+// IDA: int64_t sub_4E0FE0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8B3E08 - dbl_8B3E20);
 //   result = Math::RoundToInt(v0 * dbl_8B3E18 * 0.5);
 //   dword_8B3E70 = result;
@@ -3035,8 +3035,8 @@ void ArcMath4E1050()
 }
 
 // IDA: 0x4E1080  proposal: MathRoundToInt4E1080
-// IDA: __int64 sub_4E1080()
-//   __int64 result; // rax
+// IDA: int64_t sub_4E1080()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8B3E70) + 0.5);
 //   dword_8B3E64 = result;
 //   return result;
@@ -3107,9 +3107,9 @@ void InitFloatConst4E1B60()
 }
 
 // IDA: 0x4E1BE0  proposal: MathDispatch4E1BE0
-// IDA: __int64 sub_4E1BE0()
+// IDA: int64_t sub_4E1BE0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8B3E98 - dbl_8B3EC0);
 //   result = Math::RoundToInt(v0 * dbl_8B3EB8 * 0.5);
 //   dword_8B3F10 = result;
@@ -3134,8 +3134,8 @@ void ArcMath4E1C50()
 }
 
 // IDA: 0x4E1C80  proposal: MathRoundToInt4E1C80
-// IDA: __int64 sub_4E1C80()
-//   __int64 result; // rax
+// IDA: int64_t sub_4E1C80()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8B3F10) + 0.5);
 //   dword_8B3F04 = result;
 //   return result;
@@ -3206,9 +3206,9 @@ void InitFloatConst4E3180()
 }
 
 // IDA: 0x4E3200  proposal: MathDispatch4E3200
-// IDA: __int64 sub_4E3200()
+// IDA: int64_t sub_4E3200()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8B3F28 - dbl_8B3FB0);
 //   result = Math::RoundToInt(v0 * dbl_8B3FA8 * 0.5);
 //   dword_8B40C0 = result;
@@ -3233,8 +3233,8 @@ void ArcMath4E3270()
 }
 
 // IDA: 0x4E32A0  proposal: MathRoundToInt4E32A0
-// IDA: __int64 sub_4E32A0()
-//   __int64 result; // rax
+// IDA: int64_t sub_4E32A0()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * dword_8B40C0) + 0.5);
 //   dword_8B40B4 = result;
 //   return result;
@@ -3289,9 +3289,9 @@ void InitFloatConst4E6320()
 }
 
 // IDA: 0x4E63A0  proposal: MathDispatch4E63A0
-// IDA: __int64 sub_4E63A0()
+// IDA: int64_t sub_4E63A0()
 //   double v0; // st7
-//   __int64 result; // rax
+//   int64_t result; // rax
 //   v0 = Math::Sin(dbl_8B4168 - dbl_A83DB0);
 //   result = Math::RoundToInt(v0 * dbl_A83D40 * 0.5);
 //   BounceClass_Array = result;
@@ -3316,8 +3316,8 @@ void ArcMath4E6410()
 }
 
 // IDA: 0x4E6440  proposal: MathRoundToInt4E6440
-// IDA: __int64 sub_4E6440()
-//   __int64 result; // rax
+// IDA: int64_t sub_4E6440()
+//   int64_t result; // rax
 //   result = Math::RoundToInt((double)(4 * BounceClass_Array) + 0.5);
 //   dword_A8EC94 = result;
 //   return result;
@@ -3455,8 +3455,8 @@ char* ArithmeticCompute4E7ED0()
 }
 
 // IDA: 0x4E7F00  proposal: ArithmeticCompute4E7F00
-// IDA: _BYTE *sub_4E7F00()
-//   _BYTE *result; // eax
+// IDA: unsigned char *sub_4E7F00()
+//   unsigned char *result; // eax
 //   int v1; // ecx
 //   result = &unk_A83EDC;
 //   v1 = 256;

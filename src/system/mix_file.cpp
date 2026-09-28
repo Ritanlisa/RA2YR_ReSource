@@ -430,7 +430,7 @@ MixFileClass * * MixFileClass::Bootstrap()
   int v7; // eax
   int v8; // eax
   int v9; // [esp+10h] [ebp-68h]
-  _BYTE v10[36]; // [esp+14h] [ebp-64h] BYREF
+  unsigned char v10[36]; // [esp+14h] [ebp-64h] BYREF
   char Buffer[64]; // [esp+38h] [ebp-40h] BYREF
 
   v9 = dword_81C1D0; /*0x5301b1*/
@@ -439,7 +439,7 @@ MixFileClass * * MixFileClass::Bootstrap()
   {
     sprintf(Buffer, "EXPANDMD%02d.MIX", i); /*0x5301ca*/
     v1 = RawFileClass::Construct(Buffer); /*0x5301db*/
-    v2 = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)v1 + 20))(v1, 0); /*0x5301ee*/
+    v2 = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)v1 + 20))(v1, 0); /*0x5301ee*/
     RawFileClass::Dtor(v10); /*0x5301f0*/
     if ( v2 ) /*0x5301f7*/
     {
@@ -451,13 +451,13 @@ MixFileClass * * MixFileClass::Bootstrap()
           if ( g_MixFilePool_Count < g_MixFilePool_Capacity /*0x530258*/
             || (g_MixFilePool_Flag || !g_MixFilePool_Capacity)
             && g_MixFilePool_GrowSize > 0
-            && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_MixFileArray + 8))(
+            && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_MixFileArray + 8))(
                  &g_MixFileArray,
                  g_MixFilePool_Capacity + g_MixFilePool_GrowSize,
                  0) )
           {
             v4 = g_MixFilePool_Count++; /*0x530265*/
-            *((_DWORD *)g_MixFilePool + v4) = v3; /*0x530274*/
+            *((unsigned int *)g_MixFilePool + v4) = v3; /*0x530274*/
           }
           Debug::Log_0((const char *)&off_826688, Buffer); /*0x530281*/
         }
