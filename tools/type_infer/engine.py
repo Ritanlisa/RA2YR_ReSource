@@ -1408,6 +1408,10 @@ class TypeInferenceEngine:
         }
         _FLOAT_TYPES = {"float", "double", "long double"}
         
+        if typ in ("bool", "BOOL"):
+            # G34: bool 不再折叠进 int——1 字节旗标语义必须在 CSP 中存活，
+            # 否则字节长度信息在摄入层销毁（type_map 中 bool=0 的根因）。
+            return "bool"
         if typ in _INTEGER_TYPES:
             return "int"  # all integer types collapse to "int"
         if typ in _FLOAT_TYPES:

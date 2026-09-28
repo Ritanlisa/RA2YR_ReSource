@@ -36,8 +36,10 @@ LatticeElement = Union[int, str]
 # (int)objPtr` 实证）——伪标量与类指针在同一数据域混合是常态而非矛盾，
 # meet 中标量让位（类指针信息更稀有、对下游更有价值），不产生 TOP。
 # 具体度序（meet 取最具体 / 让位优先级）：char* > float > int。
-_SCALAR_PSEUDO = frozenset({"int", "float", "char*"})
-_PSEUDO_SPECIFICITY = {"int": 0, "float": 1, "char*": 2}
+_SCALAR_PSEUDO = frozenset({"int", "float", "char*", "bool"})
+# G34: bool 进入格（此前漏斗折叠进 int，1 字节旗标永远解不出）。
+# 具体度最高：bool 是 int 域内 0/1 子域的证据，join(bool, int)=bool。
+_PSEUDO_SPECIFICITY = {"int": 0, "float": 1, "char*": 2, "bool": 3}
 
 
 def _most_specific_pseudo(a: str, b: str) -> str:
