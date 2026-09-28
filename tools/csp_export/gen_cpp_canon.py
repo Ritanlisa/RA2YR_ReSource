@@ -95,7 +95,21 @@ PRIM = {'_DWORD':'unsigned int','_WORD':'unsigned short','_BYTE':'unsigned char'
 # declare these as structs (C2371 typedef redefinition), and trust completeness.
 EXTERN_TYPE_NAMES = {'GUID', '_GUID', 'LARGE_INTEGER', 'ULARGE_INTEGER', 'VARIANT',
                      'BSTR', 'FILE', 'va_list', 'IUnknown', 'IClassFactory',
-                     'IMalloc', 'ISMalloc'}
+                     'IMalloc', 'ISMalloc',
+                     # stdint / CRT builtin names that must never be emitted
+                     # as class declarations (C2371 redefinition / C2988)
+                     'int8_t', 'int16_t', 'int32_t', 'int64_t', 'int16',
+                     'int32', 'int64', 'uint8_t', 'uint16_t', 'uint32_t',
+                     'uint64_t', 'uint16', 'uint32', 'uint64', 'wchar_t',
+                     'type_info', 'size_t', 'ptrdiff_t', 'uintptr_t',
+                     'intptr_t', 'max_align_t', 'unknown', 'non_rtti_object',
+                     # Windows base typedefs (winnt.h) -- same C2371 class
+                     'LPVOID', 'LPCTSTR', 'LPSTR', 'LPCSTR', 'LPWSTR',
+                     'LPCWSTR', 'HANDLE', 'HWND', 'HINSTANCE', 'HMODULE',
+                     'HDC', 'HBITMAP', 'HRESULT', 'DWORD', 'WORD', 'BYTE',
+                     'BOOL', 'UINT', 'LONG', 'ULONG', 'SHORT', 'USHORT',
+                     'CHAR', 'WCHAR', 'TCHAR', 'PVOID', 'BOOLEAN', 'FARPROC',
+                     'ATOM', 'COLORREF', 'LRESULT', 'WPARAM', 'LPARAM'}
 
 # Win32 text macros that would expand inside member/method names and wreck the
 # declaration (CreateDialog -> CreateDialogA extraction etc.)
@@ -106,7 +120,8 @@ WIN32_MACROS = {'CreateDialog', 'DialogBox', 'DrawText', 'DrawTextEx', 'GetObjec
                 'DeleteFile', 'CopyFile', 'MoveFile', 'SetProp', 'GetProp',
                 'RemoveProp', 'FindResource', 'LoadResource', 'LockResource',
                 'GetWindowLong', 'SetWindowLong', 'GetWindowWord', 'MessageBeep',
-                'ExitWindows', 'Yield', 'SelectObject', 'NULL'}
+                'ExitWindows', 'Yield', 'SelectObject', 'NULL',
+                'Write', 'Read', 'Close', 'Flush', 'Error', 'ErrorA'}
 WIN32_MACRO_PREFIXES = ('CreateDialog', 'DialogBox', 'DrawText', 'GetMessage',
                         'PeekMessage', 'PostMessage', 'SendMessage', 'LoadIcon',
                         'LoadCursor', 'LoadBitmap', 'LoadImage', 'SetProp',
@@ -456,6 +471,11 @@ for cc in canon_keys:
     if _n in mathenums_names:
         emitted_ident[cc] = None  # math/enums headers own the name
         continue
+    if not re.match(r'^[A-Za-z_]\w*$', _n or ''):
+        # unnameable class (e.g. the literal '?' attribution-loss bucket):
+        # suppress from emission entirely -- never emit an illegal name
+        emitted_ident[cc] = None
+        continue
     _c = _ident_counts.get(_n, 0)
     _ident_counts[_n] = _c + 1
     emitted_ident[cc] = _n if _c == 0 else '%s_%d' % (_n, _c + 1)
@@ -466,26 +486,29 @@ all_idents = {v for v in emitted_ident.values() if v}
 # base resolution, computed ONCE and shared by the topo graph and the emitter
 # (split resolution was the C2504 root cause: the graph and the emitter
 # disagreed on transformed names, so base edges went missing)
+#
+# Inheritance edge = layouts.parent ONLY (ctor-verified main chain, own-start
+# invariant). db['direct_bases'] is the RTTI mixin sub-object list
+# (TechnoClass -> [Flasher, Radio, Stage]) -- declaring it as public bases
+# re-lays-out the object per MSVC MI rules and breaks offsets (G35.2 ruling).
 DROP_BASES = {'IUnknown'}  # real COM root: pure virtuals -> abstract C2259 /
                            # AddRef/Release override-mismatch C2555
 bases_map = {}
 for cc in canon_keys:
     if emitted_ident.get(cc) is None:
         continue
-    _e = db.get(canon_of.get(cc, cc), {})
+    _src = canon_of.get(cc, cc)
+    _lp = (layouts.get(_src) or {}).get('parent')
     bs = []
-    for b in (_e.get('direct_bases') or []):
-        cb = canon(b) or b
+    if _lp:
+        cb = canon(_lp) or _lp
         dep = by_ident.get(ident(cb, cb))
         bn = (emitted_ident.get(dep) if dep else None) or ident(cb, cb)
-        if bn in DROP_BASES or cb in DROP_BASES:
-            continue
-        if dep is not None and emitted_ident.get(dep) is None:
-            continue  # suppressed base (system-header-owned name)
-        if bn not in all_idents and bn not in mathenums_names \
-                and ident(cb, cb) not in all_idents and cb not in mathenums_names:
-            continue  # unresolvable base: ref edges are not load-bearing here
-        bs.append(bn)
+        if cb not in DROP_BASES and bn not in DROP_BASES:
+            if dep is None or emitted_ident.get(dep) is not None:
+                if bn in all_idents or cb in mathenums_names \
+                        or ident(cb, cb) in all_idents:
+                    bs.append(bn)
     bases_map[cc] = bs
 
 # undefined bases referenced by emittable classes -> minimal vfptr holders
@@ -601,13 +624,13 @@ lines = ['// GENERATED by tools/csp_export/gen_cpp_canon.py - mechanical CSP->C+
 # structs (C2371): they are used verbatim and resolved by the include chain.
 lines.append('// forward declarations (mechanical: all canon classes + unresolved types)')
 for _n in sorted(all_idents):
-    lines.append('struct %s;' % _n)
+    lines.append('class %s;' % _n)
 lines.append('')
 if minimal_defs:
     lines.append('// minimal vfptr-holder definitions for referenced-but-undefined bases')
     lines.append('// (mechanical, t14 minimal-struct precedent)')
     for _n in minimal_defs:
-        lines.append('struct %s { void* vfptr; };' % _n)
+        lines.append('class %s { public: void* vfptr; };' % _n)
     lines.append('')
 lines.append('namespace gamemd {')
 lines.append('')
@@ -645,14 +668,99 @@ for cc in emis_order:
     total = lay.get('size') or e.get('size') or 0
     members, _ = build_members(cc)
     lines.append('// === %s  size=%s  src=%s ===' % (cc, total or '?', src_cls))
-    hdr = 'struct ' + emitted_ident[cc]
+    hdr = 'class ' + emitted_ident[cc]
     if bases:
         hdr += ' : ' + ', '.join('public ' + b for b in bases)
-    lines.append(hdr + ' {')
-    for (o, t, n, sz, orig) in members:
+    hdr += ' {'
+    lines.append(hdr)
+    lines.append('public:')
+    # own-region filter: with a resolvable base, layouts.offsets are
+    # whole-object absolute coordinates INCLUDING the base-class region --
+    # re-declaring inherited members in the derived class would re-layout
+    # the object. Emit only [base_size, size); the base sub-object is
+    # provided by the inheritance edge.
+    base_end = 0
+    for b in bases:
+        _dep = name2cc.get(b)
+        _src = canon_of.get(_dep, _dep) if _dep else None
+        _bsz = (layouts.get(_src) or {}).get('size') \
+            or (db.get(_src) or {}).get('size') or 0
+        if not _bsz:
+            base_end = 0  # base size unknown -> honest flat fallback
+            break
+        base_end = max(base_end, _bsz)
+    emit_members = [m for m in members
+                    if not base_end or m[0] >= base_end]
+    # overlap dedup: member_sources (mt+ml) carry overlapping observations
+    # (q-placeholder vs semantic name over the same bytes). Semantic-named
+    # members claim their span first; q/placeholder members overlapping an
+    # occupied span are dropped -- otherwise the sequential layout skips
+    # real members and inflates sizeof.
+    def _q_rank(m):
+        return (m[0], 0 if (m[2] or '') and not m[2].startswith('q')
+                and not m[2].startswith('u8_') and not m[2].startswith('u16_')
+                and not m[2].startswith('u32_') and not m[2].startswith('ptr_')
+                else 1)
+    emit_members = sorted(emit_members, key=_q_rank)
+    _dedup = []
+    for m in emit_members:
+        o, t, n, sz, orig = m
+        _sz = sz or 4
+        if _dedup and o < _dedup[-1][0] + (_dedup[-1][3] or 4):
+            continue  # span already claimed by a higher-ranked observation
+        _dedup.append(m)
+    emit_members = sorted(_dedup, key=lambda m: m[0])
+    _cursor = base_end
+    _drift = 0
+    for (o, t, n, sz, orig) in emit_members:
         cmt = '  // 0x%X' % o + (' (was %s)' % orig if orig and orig != n else '')
+        # alignment guard: mtab type strings are laid out verbatim, so a 4-byte
+        # typed member at a non-4-aligned offset silently re-aligns and drifts
+        # every following member. Degrade to size-faithful char[N] (same rule
+        # as the IDA til hierarchical emitter); semantic type stays in
+        # csp_canon_members.json.
+        _sz = sz or 4
+        _misaligned = (_sz == 4 and o % 4 != 0) or (_sz % 4 != 0 and o % _sz != 0)
+        if _misaligned:
+            t = 'unsigned char'
+            sz = _sz
+        # cursor simulation + explicit gap pad (keeps the C++ layout equal to
+        # the observed whole-object offsets; sparse observation regions become
+        # explicit padding like the til emitter's __tail)
+        tb0 = base_of(t)
+        _declared = '*' in t or '<' in t or (tb0 in complete_names
+                                             or tb0 in defined_idents)
+        _eff_align = 1 if (t in ('unsigned char', 'char')
+                           or (not _declared)) else (2 if 'short' in t or
+                                                     'WORD' in t or '_WORD' in t else 4)
+        if total and o >= total:
+            print('  OOB-MEMBER %s 0x%X >= size 0x%X (junk observation, dropped)'
+                  % (cc, o, total))
+            continue
+        _cur2 = (_cursor + _eff_align - 1) & ~(_eff_align - 1)
+        if o - _cur2 > 0x40000:
+            # observation jumps >256KB: junk offset (no size guard possible
+            # when the class has no declared size) -- drop, don't pad
+            print('  GAP-JUMP %s 0x%X -> 0x%X (dropped)' % (cc, _cur2, o))
+            continue
+        if o > _cursor:  # pad from the REAL cursor: char[] pads align to 1,
+            _gap = o - _cursor  # so filling [cursor, o) is always exact
+            _off = _cursor
+            while _gap > 0:
+                _take = min(_gap, 960)
+                lines.append('    char __pad_%X[%d];' % (_off, _take))
+                _off += _take
+                _gap -= _take
+            _cursor = o
+        elif o < _cursor:
+            _drift += 1  # observation precedes simulated cursor: honest drift
         if n in known_names or n in WIN32_MACROS:
             n = n + '_m'  # member/type or Win32-macro name collision
+        elif n in all_idents:
+            # member name shadows a canon class name (ctor-address artifact
+            # like `unsigned int AbstractClass;` in BombClass) -> any later
+            # `AbstractClass *` member inside the same class fails C2143
+            n = n + '_m'
         tb = base_of(t)
         if '*' not in t and '<' not in t and tb not in complete_names \
                 and tb not in defined_idents:
@@ -661,7 +769,42 @@ for cc in emis_order:
             # semantic type lives in csp_canon_members.json).
             lines.append('    char %s[%d];%s' % (n, sz or 1, cmt))
         else:
-            lines.append('    %s %s;%s' % (safe_type(t, 'int'), n, cmt))
+            # array-ify: a semantic-typed observation may span more than one
+            # element of its declared base type (lastCommands sz=12 int32_t);
+            # emitting it as a scalar leaves a hole the dedup no longer fills
+            _t = safe_type(t, 'int')
+            if '*' not in _t and '<' not in _t:
+                # by-value semantic member: the member class's own sizeof may
+                # be wrong (cascade), breaking the host layout. Layout fidelity
+                # first (t14 ruling): size-faithful char array, semantic type
+                # kept in the comment + mtab.
+                lines.append('    char %s[%d];  /* %s */%s'
+                             % (n, _sz or 1, _t, cmt))
+                _cursor = o + (_sz or 4)
+                continue
+            _bsz = 8 if _t in ('double', 'int64_t', 'uint64_t',
+                               'unsigned long long') else                 2 if _t in ('short', 'unsigned short', 'WORD') else                 1 if _t in ('bool', 'char', 'unsigned char', 'BYTE') else                 4 if '*' in _t else 4
+            _esz = _sz or 4
+            if total and o + _esz > total:
+                # junk observation size overflowing the object: clamp to tail
+                _esz = total - o
+            if _esz > _bsz and _esz % _bsz == 0:
+                lines.append('    %s %s[%d];%s' % (_t, n, _esz // _bsz, cmt))
+            elif _esz < _bsz or _esz % _bsz != 0:
+                lines.append('    char %s[%d];%s' % (n, _esz, cmt))
+            else:
+                lines.append('    %s %s;%s' % (_t, n, cmt))
+        _cursor = o + (_sz or 4)
+    if total and _cursor < total:
+        _gap = total - _cursor
+        _off = _cursor
+        while _gap > 0:
+            _take = min(_gap, 960)
+            lines.append('    char __tail_%X[%d];' % (_off, _take))
+            _off += _take
+            _gap -= _take
+    elif total and _cursor > total:
+        print('  DRIFT %s: cursor 0x%X > size 0x%X' % (cc, _cursor, total))
     for ai in sorted(cls_methods.get(cc, {})):
         s = cls_methods[cc][ai]
         raw = s['name'] or 'vtfn'
@@ -673,6 +816,11 @@ for cc in emis_order:
         if cnt:
             mn = '%s_%d' % (mn, cnt + 1)
         if mn in WIN32_MACROS or mn.startswith(WIN32_MACRO_PREFIXES):
+            mn = mn + '_f'
+        elif mn in all_idents and mn != emitted_ident[cc]:
+            # method name shadows a canon class type (ctor-address artifact
+            # `void AbstractClass();` in BombClass) -> later
+            # `AbstractClass *` members fail C2143
             mn = mn + '_f'
         ps = ', '.join('%s %s' % (safe_type(t, 'int'), n) for t, n in s['params'])
         slots = e.get('methods', {}).get('0x%08X' % ai, {}).get('vtable_slots') or []
