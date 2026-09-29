@@ -46,13 +46,16 @@ def demangle_slot(sym):
 
 def main():
     leaf = 'CDFileClass'
+    obj_suffix = ''
     if '--family' in sys.argv:
         leaf = sys.argv[sys.argv.index('--family') + 1]
+    if '--sigs' in sys.argv:
+        obj_suffix = '_sigs'
     chain, slots = family_truth(leaf)
     root = chain[0]
     n = len(slots[root])
 
-    obj = (HERE / ('pilot_%s.obj' % leaf.lower()))
+    obj = (HERE / ('pilot_%s%s.obj' % (leaf.lower(), obj_suffix)))
     ours = obj_vtables(str(obj))
     our_tables = {}
     for sym, sl in ours.items():
