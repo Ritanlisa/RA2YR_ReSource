@@ -7363,7 +7363,6 @@ int sub_77D160();  // 0x77D160 sig=ida-proto
 void nullsub_263();  // 0x77D190 sig=ida-proto
 int sub_77D1A0();  // 0x77D1A0 sig=ida-proto
 void unknown_libname_53();  // 0x77D1C0 sig=ida-proto
-char j_Game_ProcessIdle();  // 0x77D200 sig=ida-proto
 unsigned int * sub_77D720();  // 0x77D720 sig=ida-proto
 int ShowWOLLobbyDialog();  // 0x77D840 sig=ida-proto
 void* unknown_libname_54();  // 0x77D8C0 sig=ida-proto

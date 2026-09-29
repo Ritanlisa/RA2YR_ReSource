@@ -68674,6 +68674,66 @@
   "sig": "csp",
   "cls": "unknown"
  },
+ "0x00401950": {
+  "name": "CDFileClass::ScalarDtor",
+  "sig": "csp",
+  "cls": "CDFileClass"
+ },
+ "0x004DA2B0": {
+  "name": "FootClass::COMStub_143",
+  "sig": "csp",
+  "cls": "FootClass"
+ },
+ "0x005046F0": {
+  "name": "HouseClass::COMStub_CheckArg",
+  "sig": "csp",
+  "cls": "HouseClass"
+ },
+ "0x00504730": {
+  "name": "HouseClass::StubReturn90808",
+  "sig": "csp",
+  "cls": "HouseClass"
+ },
+ "0x005247C0": {
+  "name": "InfantryTypeClass::CanAttackMove_IgnoreWeapon_0",
+  "sig": "csp",
+  "cls": "InfantryTypeClass"
+ },
+ "0x005C5D30": {
+  "name": "FreeForAll::AssignPlayerIndex_0",
+  "sig": "csp",
+  "cls": "FreeForAll"
+ },
+ "0x005CA7F0": {
+  "name": "MultiplayerSiege::ClearFlag_0",
+  "sig": "csp",
+  "cls": "MultiplayerSiege"
+ },
+ "0x00740EE0": {
+  "name": "TechnoClass::GetCrew_0",
+  "sig": "csp",
+  "cls": "TechnoClass"
+ },
+ "0x007447A0": {
+  "name": "InfantryClass::ScanTarget_0",
+  "sig": "csp",
+  "cls": "InfantryClass"
+ },
+ "0x007473D0": {
+  "name": "TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0",
+  "sig": "csp",
+  "cls": "UnitTypeClass"
+ },
+ "0x0077D200": {
+  "name": "j_Game_ProcessIdle",
+  "sig": "csp",
+  "cls": "SimpleWonlineDialogControl"
+ },
+ "0x007A2E70": {
+  "name": "SimpleWonlineDialogControl::ScalarDtor",
+  "sig": "csp",
+  "cls": "SimpleWonlineDialogControl"
+ },
  "0x00401190": {
   "name": "sub_401190",
   "sig": "ida-proto",
@@ -75174,11 +75234,6 @@
   "sig": "ida-proto",
   "cls": null
  },
- "0x004DA2B0": {
-  "name": "AbstractClass::COMStub_143",
-  "sig": "ida-proto",
-  "cls": "AbstractClass"
- },
  "0x004E0C30": {
   "name": "nullsub_138",
   "sig": "ida-proto",
@@ -76858,11 +76913,6 @@
   "name": "nullsub_147",
   "sig": "ida-proto",
   "cls": null
- },
- "0x005247C0": {
-  "name": "TechnoTypeClass::CanAttackMove_IgnoreWeapon_0",
-  "sig": "ida-proto",
-  "cls": "TechnoTypeClass"
  },
  "0x005256D0": {
   "name": "sub_5256D0",
@@ -80489,11 +80539,6 @@
   "sig": "ida-proto",
   "cls": null
  },
- "0x005C5D30": {
-  "name": "PlayerClass::AssignPlayerIndex_0",
-  "sig": "ida-proto",
-  "cls": "PlayerClass"
- },
  "0x005C5E70": {
   "name": "sub_5C5E70",
   "sig": "ida-proto",
@@ -80858,11 +80903,6 @@
   "name": "sub_5CA610",
   "sig": "ida-proto",
   "cls": null
- },
- "0x005CA7F0": {
-  "name": "ScenarioClass::ClearFlag_0",
-  "sig": "ida-proto",
-  "cls": "ScenarioClass"
  },
  "0x005CAC00": {
   "name": "sub_5CAC00",
@@ -90134,16 +90174,6 @@
   "sig": "ida-proto",
   "cls": null
  },
- "0x00740EE0": {
-  "name": "TechnoClass::GetCrew_0",
-  "sig": "ida-proto",
-  "cls": "TechnoClass"
- },
- "0x007447A0": {
-  "name": "InfantryClass::ScanTarget_0",
-  "sig": "ida-proto",
-  "cls": "InfantryClass"
- },
  "0x00746EC0": {
   "name": "sub_746EC0",
   "sig": "ida-proto",
@@ -90213,11 +90243,6 @@
   "name": "sub_7470B0",
   "sig": "ida-proto",
   "cls": null
- },
- "0x007473D0": {
-  "name": "TechnoTypeClass::CanAttackMove_IgnoreWeapon_0_0",
-  "sig": "ida-proto",
-  "cls": "TechnoTypeClass"
  },
  "0x007483B0": {
   "name": "CopySHPFrameToSurface",
@@ -93276,11 +93301,6 @@
  },
  "0x0077D1C0": {
   "name": "unknown_libname_53",
-  "sig": "ida-proto",
-  "cls": null
- },
- "0x0077D200": {
-  "name": "j_Game_ProcessIdle",
   "sig": "ida-proto",
   "cls": null
  },
