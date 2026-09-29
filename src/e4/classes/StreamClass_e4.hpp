@@ -12,6 +12,10 @@ struct StreamClass {
     unsigned int u32_8;  // 0x8
     char m_Size[4];  // 0xC
     char StreamClass_field_0C[4];  // 0x10
+    unsigned int __pad_0;
+    unsigned int q014;
+    unsigned int u32_14;
+    unsigned int u32_1C;
 // --- flat members (END) ---
     BOOL IsInactive(IUnknown * aP0);
     char GetDirty(int a1);

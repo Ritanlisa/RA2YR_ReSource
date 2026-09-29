@@ -15,11 +15,6 @@ struct E4Recv_4034A0 {
     unsigned int q240;  // 0x240
     unsigned int q774;  // 0x774
     unsigned int q1398;  // 0x1398
-    unsigned int q132354;  // 0x132354
-    unsigned int q1254228;  // 0x1254228
-    unsigned int q19218984;  // 0x19218984
-    unsigned int q1611578946150;  // 0x1611578946150
-    unsigned int q388219821908304;  // 0x388219821908304
 // --- flat members (END) ---
     struct Concurrency::IScheduler * _GetIScheduler_SchedulerBase_details_Concurrency__QAEPAUIScheduler_3_XZ();  // 0x4034A0
 };

@@ -30,16 +30,7 @@ struct SaveGame {
     void* q2304;  // 0x2304
     unsigned int q5170;  // 0x5170
     unsigned int q5684;  // 0x5684
-    void* q8964;  // 0x8964
-    unsigned int q22148;  // 0x22148
-    unsigned int q153094;  // 0x153094
-    void* q217458;  // 0x217458
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q423698564;  // 0x423698564
-    void* q36795154758;  // 0x36795154758
-    void* q3743417714520;  // 0x3743417714520
-    void* q972192010552608;  // 0x972192010552608
+    unsigned int __pad_0;
 // --- flat members (END) ---
     int LoadArrayData(int * a2);  // 0x4391C0
     int WriteDataArray(int * a2);  // 0x54E750

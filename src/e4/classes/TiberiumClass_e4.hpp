@@ -26,7 +26,7 @@ struct TiberiumClass {
     unsigned int owningHouseIndex;  // 0x28
     bool q02B;  // 0x2B
     OverlayTypeClass* fallRate;  // 0x2C
-    char q030[4];  // 0x30
+    unsigned int q030;  // 0x30
     unsigned char q031;  // 0x31
     char Power[4];  // 0x32
     char attachedTag[4];  // 0x34
@@ -36,9 +36,9 @@ struct TiberiumClass {
     unsigned int q03B;  // 0x3B
     char ambientSoundController[20];  // 0x3C
     unsigned int UINameLabel;  // 0x3D
-    char TiberiumClass_field_F4[4];  // 0x40
+    unsigned int TiberiumClass_field_F4;  // 0x40
     bool q042;  // 0x42
-    char TiberiumClass_field_F8[4];  // 0x44
+    unsigned int TiberiumClass_field_F8;  // 0x44
     unsigned char alignmentPadding69_3;  // 0x45
     char TiberiumClass_field_FC[4];  // 0x48
     bool q04A;  // 0x4A
@@ -48,13 +48,13 @@ struct TiberiumClass {
     unsigned char alignmentPadding75_3;  // 0x51
     char NumImages[4];  // 0x52
     unsigned int spawnStatus;  // 0x54
-    char TiberiumClass_field_EC[4];  // 0x56
-    char TiberiumClass_field_10C[4];  // 0x58
-    char TiberiumClass_field_110[4];  // 0x5C
+    unsigned int TiberiumClass_field_EC;  // 0x56
+    unsigned int TiberiumClass_field_10C;  // 0x58
+    unsigned int TiberiumClass_field_110;  // 0x5C
     bool inLimbo;  // 0x5D
     bool inOpenToppedTransport;  // 0x5E
     bool isSelected;  // 0x5F
-    char TiberiumClass_field_114[4];  // 0x60
+    unsigned int TiberiumClass_field_114;  // 0x60
     unsigned char alignmentPadding85_3;  // 0x61
     char customSound[4];  // 0x64
     char bombVisible[1];  // 0x68
@@ -93,7 +93,7 @@ struct TiberiumClass {
     unsigned char q0A9;  // 0xA9
     unsigned char q0AA;  // 0xAA
     unsigned int q0AB;  // 0xAB
-    char ArrayIndex[4];  // 0xAC
+    unsigned int ArrayIndex;  // 0xAC
     double SpreadPercentage;  // 0xB4
     unsigned int q0B8;  // 0xB8
     unsigned char q0B9;  // 0xB9
@@ -112,7 +112,7 @@ struct TiberiumClass {
     unsigned int q0E4;  // 0xE4
     unsigned int q0E8;  // 0xE8
     char q0EC[4];  // 0xEC
-    char TiberiumClass_field_F0[4];  // 0xF0
+    unsigned int TiberiumClass_field_F0;  // 0xF0
     char q0F4[4];  // 0xF4
     void* q0F7;  // 0xF7
     char q0F8[4];  // 0xF8
@@ -130,6 +130,7 @@ struct TiberiumClass {
     char q11C[12];  // 0x11C
     unsigned int q120;  // 0x120
     unsigned int q124;  // 0x124
+    unsigned int __pad_E4;
 // --- flat members (END) ---
     AbstractClass * * SaveLoad_Prefix(int a1, int a2);
     int LoadFromINI(unsigned char *** aP1);

@@ -16,13 +16,14 @@
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/TagTypeClass_e4.hpp"
 #include "e4/classes/TemporalClass_e4.hpp"
+#include "e4/classes/UnitTypeClass_e4.hpp"
 
 // 0x536290
 namespace gamemd {
 unsigned int * TauntCommandClass::Construct(int a2)
 {
-  this->TauntCommandClass_field_00 = a2; /*0x536296*/
-  *(_DWORD *)this->CommandClass = &(void*)(void*)&TauntCommandClass_vftable; /*0x536299*/
+  this->TauntCommandClass_field_00 = (unsigned int *)(a2);
+  *(unsigned int *)this->CommandClass = (void*)&TauntCommandClass_vftable; /*0x536299*/
   return this->CommandClass; /*0x53629f*/
 }
 } // namespace gamemd

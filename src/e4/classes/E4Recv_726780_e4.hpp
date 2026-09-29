@@ -17,14 +17,6 @@ struct E4Recv_726780 {
     unsigned int q1584;  // 0x1584
     unsigned int q4134;  // 0x4134
     unsigned int q5508;  // 0x5508
-    unsigned int q21768;  // 0x21768
-    unsigned int q91794;  // 0x91794
-    unsigned int q137064;  // 0x137064
-    unsigned int q595860;  // 0x595860
-    unsigned int q19347798;  // 0x19347798
-    unsigned int q422868888;  // 0x422868888
-    unsigned int q17759111304;  // 0x17759111304
-    unsigned int q1612107027204;  // 0x1612107027204
 // --- flat members (END) ---
     char sub_726780();  // 0x726780
 };

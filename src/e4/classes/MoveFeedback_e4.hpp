@@ -24,6 +24,11 @@ struct MoveFeedback {
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
+    unsigned int __pad_0;
+    unsigned int m_1;
+    unsigned int m_10;
+    unsigned int m_8;
+    unsigned int m_C;
 // --- flat members (END) ---
     DynamicVector * Constructor(char a2);
     DynamicVector * QueryInterface(char a2);

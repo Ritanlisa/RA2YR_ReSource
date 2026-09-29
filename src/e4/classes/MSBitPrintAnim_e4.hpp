@@ -13,6 +13,8 @@ struct MSBitPrintAnim {
     unsigned char q00C;  // 0xC
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
+    unsigned int __pad_0;
+    unsigned int q0088;
 // --- flat members (END) ---
     MSBitPrintAnim * QueryInterface(char a2);
 };

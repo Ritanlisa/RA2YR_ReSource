@@ -33,18 +33,18 @@ int Hash::InsertOrdered(void* table, const void* entry)
   int result; // eax
 
   result = (*(int (__thiscall **)(GScreenClass *, int))(table->vfptr[0] + 44))(table, entry); /*0x4f4418*/
-  if ( (_BYTE)result ) /*0x4f441d*/
+  if ( (unsigned char)result ) /*0x4f441d*/
   {
     IDA_LOBYTE(result) = 0; /*0x4f441f*/
   }
-  else if ( *(_DWORD *)&stru_A8EB00.?[880] ) /*0x4f442c*/
+  else if ( *(unsigned int *)&stru_A8EB00.?[880] ) /*0x4f442c*/
   {
-    result = (*(int (__thiscall **)(int, _DWORD))(*(_DWORD *)entry + 16))(entry, *(_DWORD *)&stru_A8EB00.?[880]); /*0x4f4433*/
+    result = (*(int (__thiscall **)(int, unsigned int))(*(unsigned int *)entry + 16))(entry, *(unsigned int *)&stru_A8EB00.?[880]); /*0x4f4433*/
     IDA_LOBYTE(result) = 1; /*0x4f4436*/
   }
   else
   {
-    *(_DWORD *)&stru_A8EB00.?[880] = entry; /*0x4f443c*/
+    *(unsigned int *)&stru_A8EB00.?[880] = entry; /*0x4f443c*/
     return 1; /*0x4f4442*/
   }
   return result; /*0x4f4421*/
@@ -74,7 +74,7 @@ EditClass * * SHA1::Process(const void* data, uint32_t size)
       }
       while ( v6 ); /*0x69d9bb*/
     }
-    data = (int)v5; /*0x69d9cb*/
+    data = (const void *)((int)v5);
     return (int)SHA1::ProcessBlock(this, (const void **)&data, &size); /*0x69d9cf*/
   }
 }
@@ -85,7 +85,7 @@ int SHA1::Compute(uint8_t digest[20], void * a1, void * a2)
   int v4; // ebx
   unsigned int v5; // ebx
   int v6; // edx
-  unsigned __int16 v7; // cx
+  uint16_t v7; // cx
   int *p_SHA1_field_0x04; // ecx
   int v9; // esi
   unsigned int v10; // eax
@@ -94,11 +94,11 @@ int SHA1::Compute(uint8_t digest[20], void * a1, void * a2)
 
   if ( a1->__pad_0[0] ) /*0x69d9e9*/
     qmemcpy(a2, &a1->SHA1_field_0x04, 0x14u); /*0x69d9fb*/
-  v3 = *((_DWORD *)a1 + 12); /*0x69d9fd*/
-  v4 = *((_DWORD *)a1 + 11); /*0x69da00*/
+  v3 = *((unsigned int *)a1 + 12); /*0x69d9fd*/
+  v4 = *((unsigned int *)a1 + 11); /*0x69da00*/
   qmemcpy(v13, (char *)a1 + 52, sizeof(v13)); /*0x69da14*/
   v5 = v3 + v4; /*0x69da18*/
-  *((_BYTE *)v13 + v3) = 0x80; /*0x69da29*/
+  *((unsigned char *)v13 + v3) = 0x80; /*0x69da29*/
   qmemcpy(v12, a1 + 1, sizeof(v12)); /*0x69da2e*/
   if ( 64 - v3 >= 9 ) /*0x69da30*/
   {
@@ -160,14 +160,14 @@ void SHA1::Transform(void * a1, void * a2)
   unsigned int v26; // ebx
   int v27; // edx
   int result; // eax
-  _DWORD *v29; // [esp+10h] [ebp-160h]
+  unsigned int *v29; // [esp+10h] [ebp-160h]
   int v30; // [esp+14h] [ebp-15Ch]
   int v31; // [esp+18h] [ebp-158h]
-  _DWORD v32[5]; // [esp+1Ch] [ebp-154h] BYREF
-  _BYTE v33[8]; // [esp+30h] [ebp-140h] BYREF
+  unsigned int v32[5]; // [esp+1Ch] [ebp-154h] BYREF
+  unsigned char v33[8]; // [esp+30h] [ebp-140h] BYREF
   char v34; // [esp+38h] [ebp-138h] BYREF
 
-  v2 = a1; /*0x69db30*/
+  v2 = (int *)(a1);
   v3 = 16; /*0x69db44*/
   do /*0x69db76*/
   {
@@ -176,7 +176,7 @@ void SHA1::Transform(void * a1, void * a2)
     IDA_LOBYTE(v4) = 0; /*0x69db69*/
     IDA_BYTE1(v4) = IDA_BYTE2(v4); /*0x69db6b*/
     --v3; /*0x69db71*/
-    *(int *)((char *)v2 + v33 - (_BYTE *)a1 - 4) = (unsigned __int16)v4 | v5; /*0x69db72*/
+    *(int *)((char *)v2 + v33 - (unsigned char *)a1 - 4) = (uint16_t)v4 | v5; /*0x69db72*/
   }
   while ( v3 ); /*0x69db76*/
   v6 = (int *)&v34; /*0x69db78*/
@@ -241,9 +241,9 @@ void SHA1::Transform(void * a1, void * a2)
     ++v29; /*0x69dc7d*/
   }
   while ( v21 );
-  v22 = v12 + a2[1]; /*0x69dc93*/
-  v23 = a2[3]; /*0x69dc95*/
-  v24 = v20 + *a2; /*0x69dc98*/
+  v22 = (void *)(v12 + a2[1]);
+  v23 = (void *)(a2[3]);
+  v24 = (void *)(v20 + *a2);
   v25 = a2[4]; /*0x69dc9a*/
   *a2 = v24; /*0x69dc9d*/
   v26 = v13 + a2[2]; /*0x69dca4*/
@@ -344,14 +344,14 @@ int CRC32::Compute(const void* data, uint32_t size)
   unsigned int v5; // eax
   int v6; // esi
 
-  v4 = data - 1; /*0x4a1fb7*/
+  v4 = (int)(data - 1);
   v5 = ~size; /*0x4a1fba*/
   if ( data ) /*0x4a1fbc*/
   {
     v6 = v4 + 1; /*0x4a1fbf*/
     do /*0x4a1fde*/
     {
-      v5 = CRC32_Table[*this++ ^ (unsigned __int8)v5] ^ (v5 >> 8); /*0x4a1fda*/
+      v5 = CRC32_Table[*this++ ^ (uint8_t)v5] ^ (v5 >> 8); /*0x4a1fda*/
       --v6; /*0x4a1fdd*/
     }
     while ( v6 ); /*0x4a1fde*/

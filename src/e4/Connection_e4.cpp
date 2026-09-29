@@ -11,7 +11,7 @@ namespace gamemd {
 int Connection::GetSpeed()
 {
   if ( this->Initialized && this->Active ) /*0x5422f7*/
-    return *(_DWORD *)(*(_DWORD *)(this->q048 + 4) + 56); /*0x542304*/
+    return *(unsigned int *)(*(unsigned int *)(this->q048 + 4) + 56); /*0x542304*/
   else
     return 0; /*0x542308*/
 }
@@ -24,7 +24,7 @@ int Connection::Close()
 
   result = (int)this->Connection_field_0x48; /*0x543090*/
   if ( result ) /*0x543095*/
-    *(_BYTE *)(result + 200) = 1; /*0x543097*/
+    *(unsigned char *)(result + 200) = 1; /*0x543097*/
   return result; /*0x54309e*/
 }
 }

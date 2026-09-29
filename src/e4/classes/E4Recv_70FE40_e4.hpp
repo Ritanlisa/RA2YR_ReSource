@@ -18,12 +18,6 @@ struct E4Recv_70FE40 {
     unsigned int q1544;  // 0x1544
     unsigned int q4388;  // 0x4388
     unsigned int q5444;  // 0x5444
-    unsigned int q17288;  // 0x17288
-    unsigned int q6325058;  // 0x6325058
-    unsigned int q103960664;  // 0x103960664
-    unsigned int q4355130980;  // 0x4355130980
-    unsigned int q289190119808;  // 0x289190119808
-    unsigned int q28986893583080950118;  // 0x28986893583080950118
 // --- flat members (END) ---
     int sub_70FE40(int a2);  // 0x70FE40
 };

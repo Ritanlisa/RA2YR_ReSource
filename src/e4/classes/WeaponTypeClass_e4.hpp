@@ -61,7 +61,7 @@ struct WeaponTypeClass {
     unsigned int q094;  // 0x94
     unsigned char tail_95;  // 0x95
     int AmbientDamage;  // 0x98
-    BulletTypeClass* Burst;  // 0x9C
+    unsigned int ;  // 0x9C
     int Projectile;  // 0xA0
     int Damage;  // 0xA4
     WarheadTypeClass* Speed;  // 0xA8
@@ -188,6 +188,10 @@ struct WeaponTypeClass {
     int q158;  // 0x158
     bool q15C;  // 0x15C
     unsigned char tail_15D;  // 0x15D
+    unsigned int DownReport;
+    unsigned int InfiniteMindControl;
+    unsigned int IsMagBeam;
+    unsigned int Burst;
 // --- flat members (END) ---
     WeaponTypeClass * ddtor(char a2);
     char ReadTrajectoryData(WeaponTypeClass * aP1, char * a2, int a4);

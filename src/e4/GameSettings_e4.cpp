@@ -18,6 +18,9 @@
 #include "e4/classes/GameSetup_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/MixFileClass_e4.hpp"
+#include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/Waypoint_e4.hpp"
 
 // 0x5FA620
 namespace gamemd {
@@ -174,7 +177,7 @@ AbstractClass * * GameSettings::Read()
     v26 = (const char *)&off_82C45C; /*0x5fa962*/
   Debug::Log("AllowHiRes is %s\n", v26); /*0x5fa96d*/
   byte_A8ED63 = INIClass::ReadBool_Overwrite(g_INI_Key_Video, aAllowmodetoggl, byte_A8ED63); /*0x5fa990*/
-  v27 = INIClass::ReadBool_Overwrite(g_INI_Key_Video, aAllowvramsideb, *(unsigned char *)&this->q036); /*0x5fa9a8*/
+  v27 = (gamemd::Game *)(INIClass::ReadBool_Overwrite(g_INI_Key_Video, aAllowvramsideb, *(unsigned char *)&this->q036));
   v28 = this->u32_38; /*0x5fa9ad*/
   *(unsigned char *)&this->q036 = v27; /*0x5fa9b8*/
   INIClass::ReadDouble_Overwrite((int)g_INI_Key_Audio, (int)aSoundvolume, v28); /*0x5fa9c8*/
@@ -269,7 +272,7 @@ AbstractClass * * GameSettings::Read()
 namespace gamemd {
 void * GameSettings::ParseNetworkAddress()
 {
-  unsigned __int16 v2; // ax
+  uint16_t v2; // ax
   const char *v3; // esi
   char *result; // eax
   size_t v5; // kr04_4
@@ -279,8 +282,8 @@ void * GameSettings::ParseNetworkAddress()
   char v9; // [esp+8h] [ebp-1Ch] BYREF
   int v10; // [esp+Ch] [ebp-18h] BYREF
   int v11; // [esp+10h] [ebp-14h] BYREF
-  __int16 v12; // [esp+14h] [ebp-10h]
-  _DWORD v13[3]; // [esp+18h] [ebp-Ch] BYREF
+  int16_t v12; // [esp+14h] [ebp-10h]
+  unsigned int v13[3]; // [esp+18h] [ebp-Ch] BYREF
 
   v2 = this->u16_4A; /*0x5fb057*/
   if ( v2 == 0xFFFF ) /*0x5fb05f*/
@@ -305,7 +308,7 @@ void * GameSettings::ParseNetworkAddress()
       do /*0x5fb10f*/
       {
         sscanf(result, "%x", &v9); /*0x5fb0de*/
-        *((_BYTE *)&v10 + v7++) = v9; /*0x5fb0ef*/
+        *((unsigned char *)&v10 + v7++) = v9; /*0x5fb0ef*/
         result = strtok(0, asc_826598); /*0x5fb105*/
       }
       while ( result ); /*0x5fb10f*/

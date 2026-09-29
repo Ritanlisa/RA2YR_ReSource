@@ -25,12 +25,12 @@ int sub_5C61E0()
 namespace gamemd {
 int sub_5E94D0()
 {
-  int result; // eax
+  LPARAM * result;
   LPARAM *v1; // edx
   LPARAM v2; // ecx
 
-  result = 0; /*0x5e94e5*/
-  v1 = &dword_A8DA90; /*0x5e94e7*/
+  result = (LPARAM *)((int)((LPARAM *)(0)));
+  v1 = (LPARAM *)(&dword_A8DA90);
   do /*0x5e9508*/
   {
     v2 = *v1; /*0x5e94ec*/
@@ -47,12 +47,12 @@ int sub_5E94D0()
 namespace gamemd {
 char sub_5E9580()
 {
-  int v0; // edx
+  LPARAM * v0;
   LPARAM *v1; // ecx
   LPARAM v2; // eax
 
-  v0 = 0; /*0x5e9595*/
-  v1 = &dword_A8DA90; /*0x5e9597*/
+  v0 = (LPARAM *)((int)((LPARAM *)(0)));
+  v1 = (LPARAM *)(&dword_A8DA90);
   while ( 1 ) /*0x5e959c*/
   {
     v2 = *v1; /*0x5e959c*/
@@ -63,7 +63,7 @@ char sub_5E9580()
         && v2 != g_Lobby_MaxPlayers
         && (wchar_t *)v2 != g_Lobby_PlayerReady
         && v0 == g_MPCooperativeState
-        && *(_DWORD *)(v2 + 107) == -1 )
+        && *(unsigned int *)(v2 + 107) == -1 )
       {
         break; /*0x5e95c2*/
       }

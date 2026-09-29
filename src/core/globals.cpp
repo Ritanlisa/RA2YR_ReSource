@@ -150,10 +150,10 @@ void FindGameDirectoryCD(const char* path) {
     char *v3; // ebp
     char *i; // edx
     char v5; // cl
-    _DWORD *v6; // esi
-    _DWORD *v7; // ecx
-    _DWORD *v8; // eax
-    _DWORD *v9; // eax
+    unsigned int *v6; // esi
+    unsigned int *v7; // ecx
+    unsigned int *v8; // eax
+    unsigned int *v9; // eax
     char Str1[260]; // [esp+8h] [ebp-104h] BYREF
 
     v1 = 0; /*0x47ab17*/
@@ -187,13 +187,13 @@ void FindGameDirectoryCD(const char* path) {
           v7 = CmdLine_NoCD; /*0x47ac8b*/
           if ( CmdLine_NoCD ) /*0x47ac96*/
           {
-            v8 = *(_DWORD **)CmdLine_NoCD; /*0x47aca0*/
-            if ( *(_DWORD *)CmdLine_NoCD ) /*0x47aca0*/
+            v8 = *(unsigned int **)CmdLine_NoCD; /*0x47aca0*/
+            if ( *(unsigned int *)CmdLine_NoCD ) /*0x47aca0*/
             {
               do /*0x47acac*/
               {
                 v7 = v8; /*0x47aca6*/
-                v8 = (_DWORD *)*v8; /*0x47aca8*/
+                v8 = (unsigned int *)*v8; /*0x47aca8*/
               }
               while ( v8 ); /*0x47acac*/
             }
@@ -214,13 +214,13 @@ void FindGameDirectoryCD(const char* path) {
           v7 = CmdLine_NoCD; /*0x47ace9*/
           if ( CmdLine_NoCD ) /*0x47acf4*/
           {
-            v9 = *(_DWORD **)CmdLine_NoCD; /*0x47acfe*/
-            if ( *(_DWORD *)CmdLine_NoCD ) /*0x47acfe*/
+            v9 = *(unsigned int **)CmdLine_NoCD; /*0x47acfe*/
+            if ( *(unsigned int *)CmdLine_NoCD ) /*0x47acfe*/
             {
               do /*0x47ad0a*/
               {
                 v7 = v9; /*0x47ad04*/
-                v9 = (_DWORD *)*v9; /*0x47ad06*/
+                v9 = (unsigned int *)*v9; /*0x47ad06*/
               }
               while ( v9 ); /*0x47ad0a*/
             }
@@ -600,12 +600,12 @@ void NetworkGetField(int port) {
   IDA_LOWORD(result) = a2;
   {
     int result; // eax
-    __int16 v3; // dx
+    int16_t v3; // dx
 
     IDA_LOWORD(result) = result; /*0x542430*/
     IDA_LOBYTE(v3) = IDA_HIBYTE(result); /*0x542437*/
     IDA_HIBYTE(v3) = result; /*0x542439*/
-    *(_WORD *)this->Network_field_0x22 = v3; /*0x54243b*/
+    *(unsigned short *)this->Network_field_0x22 = v3; /*0x54243b*/
     return result; /*0x54243f*/
   }
     (void)mode;
@@ -844,9 +844,9 @@ void NetworkShutdownInterface() {
     int result; // eax
 
     IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x5da72b*/
-    if ( *(_DWORD *)&stru_887598.isAliveFlag ) /*0x5da732*/
-      result = (***(int (__thiscall ****)(_DWORD, int))&stru_887598.isAliveFlag)(*(_DWORD *)&stru_887598.isAliveFlag, 1); /*0x5da738*/
-    *(_DWORD *)&stru_887598.isAliveFlag = 0; /*0x5da73a*/
+    if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x5da732*/
+      result = (***(int (__thiscall ****)(unsigned int, int))&stru_887598.isAliveFlag)(*(unsigned int *)&stru_887598.isAliveFlag, 1); /*0x5da738*/
+    *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x5da73a*/
     return result; /*0x5da740*/
   }
 // 0x5f9e80
@@ -908,8 +908,8 @@ void NetworkShutdownInterface() {
     if ( v4 < 16 || (v4 & 3) != 0 ) /*0x5f9f1b*/
     {
       v6 = 16; /*0x5f9f20*/
-      if ( (((_BYTE)v4 + 3) & 0xFCu) > 0x10 ) /*0x5f9f2c*/
-        v6 = ((_BYTE)v4 + 3) & 0xFC; /*0x5f9f2e*/
+      if ( (((unsigned char)v4 + 3) & 0xFCu) > 0x10 ) /*0x5f9f2c*/
+        v6 = ((unsigned char)v4 + 3) & 0xFC; /*0x5f9f2e*/
       v7 = v3 - 1; /*0x5f9f32*/
       if ( v4 < v6 ) /*0x5f9f34*/
       {
@@ -927,16 +927,16 @@ void NetworkShutdownInterface() {
     v20 = 0; /*0x5f9f6d*/
     v21 = 0; /*0x5f9f71*/
     v22 = 0; /*0x5f9f75*/
-    Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4); /*0x5f9f79*/
+    Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4); /*0x5f9f79*/
     _strrev(Destination); /*0x5f9f83*/
     v20 = 0; /*0x5f9f93*/
     v21 = 0; /*0x5f9f99*/
     v22 = 0; /*0x5f9f9d*/
-    v18 = Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4); /*0x5f9fa6*/
+    v18 = Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4); /*0x5f9fa6*/
     _strrev(Destination); /*0x5f9faf*/
-    for ( i = 0; i < v4; v18 = (v9 >> 8) | ((unsigned __int8)v9 << 24) ) /*0x5f9fbb*/
+    for ( i = 0; i < v4; v18 = (v9 >> 8) | ((uint8_t)v9 << 24) ) /*0x5f9fbb*/
     {
-      v9 = (unsigned __int8)Destination[i] ^ v18; /*0x5f9fcd*/
+      v9 = (uint8_t)Destination[i] ^ v18; /*0x5f9fcd*/
       Destination[i++] = v18; /*0x5f9fd1*/
     }
     for ( j = 0; j < v4; ++j ) /*0x5f9ff1*/
@@ -961,7 +961,7 @@ void NetworkShutdownInterface() {
     v20 = 0; /*0x5fa0a6*/
     v21 = 0; /*0x5fa0aa*/
     v22 = 0; /*0x5fa0ae*/
-    return Checksummer::Add_Buffer(&v20, (unsigned __int8 *)Destination, v4); /*0x5f9e91*/
+    return Checksummer::Add_Buffer(&v20, (uint8_t *)Destination, v4); /*0x5f9e91*/
   }
   if ( v4 < 16 || (v4 & 3) != 0 )
   {

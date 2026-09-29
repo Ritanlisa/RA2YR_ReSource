@@ -8,7 +8,7 @@ namespace gamemd {
 struct LayerClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    char count[4];  // 0x4
+    unsigned int count;  // 0x4
     char capacity[4];  // 0x8
     char q00B[4];  // 0xB
 // --- flat members (END) ---

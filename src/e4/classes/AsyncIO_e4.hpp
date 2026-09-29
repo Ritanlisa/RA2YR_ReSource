@@ -22,6 +22,9 @@ struct AsyncIO {
     unsigned int q080;  // 0x80
     unsigned int q118;  // 0x118
     unsigned int q280;  // 0x280
+    unsigned int q0242;
+    unsigned int u32_180;
+    unsigned int u32_1C6;
 // --- flat members (END) ---
     AbstractClass * * Shutdown();
     int Read();

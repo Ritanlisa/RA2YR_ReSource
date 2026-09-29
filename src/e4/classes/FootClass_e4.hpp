@@ -157,9 +157,9 @@ struct FootClass {
     unsigned char alignmentPadding139;  // 0x135
     char radioQueueCount[4];  // 0x138
     unsigned char q139;  // 0x139
-    char currentWeaponSlot[4];  // 0x13C
+    unsigned int currentWeaponSlot;  // 0x13C
     void* currentRank;  // 0x140
-    char gattlingStage[4];  // 0x144
+    unsigned int gattlingStage;  // 0x144
     unsigned int gattlingValue;  // 0x148
     HouseClass* ammoReloadTimer;  // 0x14C
     void* q14E;  // 0x14E
@@ -252,11 +252,11 @@ struct FootClass {
     char lastSightCoords[12];  // 0x254
     unsigned int ammo;  // 0x258
     unsigned int unitValue;  // 0x25C
-    char lastSightRange[4];  // 0x260
-    char lastSightHeight[4];  // 0x264
+    unsigned int lastSightRange;  // 0x260
+    unsigned int lastSightHeight;  // 0x264
     bool ambientParticles;  // 0x268
     bool isGeneratingGap;  // 0x269
-    char gapRadius[4];  // 0x26C
+    unsigned int gapRadius;  // 0x26C
     bool isBeingWarpedOut;  // 0x270
     bool isWarpingOut;  // 0x271
     bool isWarpEffectActive;  // 0x272
@@ -515,7 +515,7 @@ struct FootClass {
     bool FootClass_field_53C;  // 0x53C
     unsigned char m_padding_53D;  // 0x53D
     unsigned int q53F;  // 0x53F
-    char FootClass_field_540[4];  // 0x540
+    unsigned int FootClass_field_540;  // 0x540
     char audioController7[20];  // 0x544
     bool q546;  // 0x546
     unsigned int q547;  // 0x547
@@ -551,7 +551,7 @@ struct FootClass {
     unsigned char u8_595;  // 0x595
     unsigned int q598;  // 0x598
     unsigned int q59C;  // 0x59C
-    char FootClass_field_5A0[4];  // 0x5A0
+    unsigned int FootClass_field_5A0;  // 0x5A0
     char FootClass_field_5A4[4];  // 0x5A4
     char FootClass_field_5A8[4];  // 0x5A8
     unsigned int FootClass_DVC_5AC;  // 0x5AC
@@ -652,6 +652,15 @@ struct FootClass {
     bool FootClass_field_6BD;  // 0x6BD
     bool FootClass_field_6BE;  // 0x6BE
     bool FootClass_field_6BF;  // 0x6BF
+    unsigned int FootClass_field_abstract_array_5AC;
+    unsigned int RemoveFromPointerArray;
+    unsigned int __pad_58C;
+    unsigned int __pad_5B0;
+    unsigned int currentJumpjetMapCoords;
+    unsigned int locomotor;
+    unsigned int parasiteImUsing;
+    unsigned int team;
+    unsigned int unknownAbstractArray588;
 // --- flat members (END) ---
     AbstractClass * * Destruct();
     int updateThreat();
@@ -661,6 +670,7 @@ struct FootClass {
     void Stub(int a1);
     static double GetField(...);  // C2597 interim stub
     static double SetField(...);  // C2597 interim stub
+    static double ProcessDeploy(...);  // C2597 interim stub
 };
 
 } // namespace gamemd

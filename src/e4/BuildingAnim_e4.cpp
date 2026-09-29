@@ -15,7 +15,7 @@ int BuildingAnim::GetType()
 
   v0 = FindBuildingAnimByName(off_822724, 1); /*0x4e12db*/
   if ( v0 ) /*0x4e12e2*/
-    return *(_DWORD *)v0; /*0x4e12e4*/
+    return *(unsigned int *)v0; /*0x4e12e4*/
   else
     return 0; /*0x4e12e7*/
 }

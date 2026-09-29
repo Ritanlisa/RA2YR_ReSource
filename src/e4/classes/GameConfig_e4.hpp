@@ -18,6 +18,7 @@ struct GameConfig {
     bool spawn_mode;  // 0xCE
     bool windowed;  // 0xCF
     bool enable_log;  // 0xD0
+    unsigned int __pad_0;
 // --- flat members (END) ---
     void * ptr_41;  // 0x41 (ctor-installed filename pointer, member_set evidence 0x5D67B0)
     static void * Constructor(GameConfig * aP1);  // 0x5D67B0

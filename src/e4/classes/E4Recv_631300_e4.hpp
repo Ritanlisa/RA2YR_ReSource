@@ -5,6 +5,7 @@
 
 namespace gamemd {
 struct E4Recv_631300 {
+    unsigned int AbstractClass;
     unsigned int vtable0;
     void* vfptr;  // minimal E2 declaration
     HWND sub_631300();  // 0x631300

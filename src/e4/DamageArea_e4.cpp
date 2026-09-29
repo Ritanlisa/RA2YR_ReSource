@@ -561,19 +561,19 @@ LABEL_23:
 namespace gamemd {
 int DamageArea::CheckOccupancyEligibility()
 {
-  _DWORD *v2; // esi
-  int (__stdcall ***v3)(_DWORD, void *, int *); // ecx
+  unsigned int *v2; // esi
+  int (__stdcall ***v3)(unsigned int, void *, int *); // ecx
   int v4; // eax
   int v5; // esi
   int v8; // [esp+18h] [ebp-8h] BYREF
   int v9; // [esp+1Ch] [ebp-4h] BYREF
 
-  v2 = (_DWORD *)this->u32_C; /*0x4d0187*/
+  v2 = (unsigned int *)this->u32_C; /*0x4d0187*/
   if ( v2 ) /*0x4d018c*/
   {
-    if ( (*(int (__thiscall **)(_DWORD))(*v2 + 44))(this->u32_C) == 2 ) /*0x4d0198*/
+    if ( (*(int (__thiscall **)(unsigned int))(*v2 + 44))(this->u32_C) == 2 ) /*0x4d0198*/
     {
-      if ( (*(int (__stdcall **)(_DWORD *))(v2[432] + 32))(v2 + 432) ) /*0x4d01ab*/
+      if ( (*(int (__stdcall **)(unsigned int *))(v2[432] + 32))(v2 + 432) ) /*0x4d01ab*/
         return 0; /*0x4d01b0*/
     }
     else
@@ -583,9 +583,9 @@ int DamageArea::CheckOccupancyEligibility()
   }
   if ( this->u32_51 || !this->u32_5C ) /*0x4d01c1*/
     return 1; /*0x4d01c6*/
-  if ( !v2 || !*(_BYTE *)(v2[433] + 3595) ) /*0x4d01d6*/
+  if ( !v2 || !*(unsigned char *)(v2[433] + 3595) ) /*0x4d01d6*/
   {
-    v3 = (int (__stdcall ***)(_DWORD, void *, int *))this->u32_C; /*0x4d01e4*/
+    v3 = (int (__stdcall ***)(unsigned int, void *, int *))this->u32_C; /*0x4d01e4*/
     v4 = 0; /*0x4d01e7*/
     v8 = 0; /*0x4d01eb*/
     if ( v3 ) /*0x4d01ef*/
@@ -608,11 +608,11 @@ int DamageArea::CheckOccupancyEligibility()
         WinAPI::Wrapper(v5); /*0x4d023d*/
       if ( v4 ) /*0x4d0248*/
       {
-        if ( !(*(int (__stdcall **)(int))(*(_DWORD *)v4 + 24))(v4) ) /*0x4d024d*/
+        if ( !(*(int (__stdcall **)(int))(*(unsigned int *)v4 + 24))(v4) ) /*0x4d024d*/
         {
           if ( !v8 ) /*0x4d025a*/
             WinAPI::Wrapper(-2147467261); /*0x4d0261*/
-          if ( !(*(int (__stdcall **)(int))(*(_DWORD *)v8 + 28))(v8) ) /*0x4d026d*/
+          if ( !(*(int (__stdcall **)(int))(*(unsigned int *)v8 + 28))(v8) ) /*0x4d026d*/
           {
             v4 = v8; /*0x4d0274*/
             goto LABEL_24; /*0x4d0278*/
@@ -621,15 +621,15 @@ int DamageArea::CheckOccupancyEligibility()
         v4 = v8; /*0x4d027a*/
       }
     }
-    if ( !*(_DWORD *)(this->u32_C + 764) ) /*0x4d0281*/
+    if ( !*(unsigned int *)(this->u32_C + 764) ) /*0x4d0281*/
     {
   LABEL_24:
       if ( v4 ) /*0x4d028d*/
-        (*(void (__stdcall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x4d0292*/
+        (*(void (__stdcall **)(int))(*(unsigned int *)v4 + 8))(v4); /*0x4d0292*/
       return 1; /*0x4d029c*/
     }
     if ( v4 ) /*0x4d029f*/
-      (*(void (__stdcall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x4d02a4*/
+      (*(void (__stdcall **)(int))(*(unsigned int *)v4 + 8))(v4); /*0x4d02a4*/
   }
   return 0; /*0x4d0295*/
 }

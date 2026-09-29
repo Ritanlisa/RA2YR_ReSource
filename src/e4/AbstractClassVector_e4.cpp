@@ -14,7 +14,7 @@ int AbstractClassVector::Read(unsigned int * a2)
 {
   int result; // eax
   int m_8; // edx
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   if ( !IDA_LOBYTE(this->m_C) ) /*0x4e0440*/
     return 0; /*0x4e0448*/
@@ -22,7 +22,7 @@ int AbstractClassVector::Read(unsigned int * a2)
   result = 0; /*0x4e0451*/
   if ( m_8 <= 0 ) /*0x4e0455*/
     return -1; /*0x4e046c*/
-  for ( i = *(_DWORD **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e045b*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x4e045b*/
   {
     if ( ++result >= m_8 ) /*0x4e046a*/
       return -1; /*0x4e046a*/
@@ -35,7 +35,7 @@ namespace gamemd {
 unsigned int AbstractClassVector::Write(int a2)
 {
   if ( IDA_LOBYTE(this->m_C) ) /*0x4e0480*/
-    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2; /*0x4e0495*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x4e0495*/
   else
     return 0; /*0x4e0487*/
 }
@@ -48,7 +48,7 @@ unsigned int * AbstractClassVector::Construct(IUnknown * aP1, IUnknown * aP2)
   this->AbstractClassVector_field_0x08 = aP1; /*0x4e0e8e*/
   IDA_LOBYTE(this->AbstractClassVector_field_0x0C) = 1; /*0x4e0e91*/
   IDA_BYTE1(this->AbstractClassVector_field_0x0C) = 0; /*0x4e0e95*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_AbstractClass___vftable; /*0x4e0e98*/
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_AbstractClass___vftable; /*0x4e0e98*/
   if ( aP1 ) /*0x4e0e9e*/
   {
     if ( aP2 ) /*0x4e0ea6*/

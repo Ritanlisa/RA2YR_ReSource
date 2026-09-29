@@ -15,10 +15,6 @@ struct E4Recv_42EAD0 {
     unsigned int q128;  // 0x128
     unsigned int q1634;  // 0x1634
     unsigned int q5684;  // 0x5684
-    unsigned int q22148;  // 0x22148
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q423698564;  // 0x423698564
 // --- flat members (END) ---
     int sub_42EAD0(unsigned short * a2);  // 0x42EAD0
 };

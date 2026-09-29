@@ -38,21 +38,21 @@ namespace gamemd {
 int sub_679CC0()
 {
   void *v1[3]; // [esp+4h] [ebp-C4h] BYREF
-  _DWORD v2[10]; // [esp+10h] [ebp-B8h] BYREF
+  unsigned int v2[10]; // [esp+10h] [ebp-B8h] BYREF
   char v3; // [esp+38h] [ebp-90h]
   int v4; // [esp+3Ch] [ebp-8Ch]
   int v5; // [esp+40h] [ebp-88h]
   char v6; // [esp+44h] [ebp-84h]
-  _DWORD v7[22]; // [esp+5Ch] [ebp-6Ch] BYREF
-  _BYTE v8[12]; // [esp+B4h] [ebp-14h] BYREF
+  unsigned int v7[22]; // [esp+5Ch] [ebp-6Ch] BYREF
+  unsigned char v8[12]; // [esp+B4h] [ebp-14h] BYREF
   int v9; // [esp+C0h] [ebp-8h]
 
   if ( !byte_B053B8 ) /*0x679cd0*/
   {
-    v1[1] = 0; /*0x679cda*/
+    v1[1] = (unsigned int)(0);
     v1[2] = 0; /*0x679cde*/
     GenericList::Constructor(v2); /*0x679ce2*/
-    v2[0] = &(void*)(void*)&List_INIClass_INISection___vftable; /*0x679ceb*/
+    v2[0] = (void*)&List_INIClass_INISection___vftable; /*0x679ceb*/
     memset(&v2[7], 0, 12); /*0x679cf8*/
     v3 = 0; /*0x679d04*/
     v4 = 0; /*0x679d08*/
@@ -63,7 +63,7 @@ int sub_679CC0()
     if ( CCINIClass::Load(v1, (int)v7, 0, 0) ) /*0x679d2c*/
       dword_B053B4 = Hash::ComputeHashSHA1((int)v1); /*0x679d3e*/
     byte_B053B8 = 1; /*0x679d4a*/
-    v7[0] = &(void*)(void*)&CCFileClass_vftable; /*0x679d51*/
+    v7[0] = (void*)&CCFileClass_vftable; /*0x679d51*/
     v9 = 0; /*0x679d59*/
     Vector::Clear((int)v8); /*0x679d60*/
     v7[0] = &off_7E1668; /*0x679d69*/
@@ -84,7 +84,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
   void *Items; // eax
   bool v11; // zf
   int Capacity; // eax
-  int v14; // eax
+  void * v14;
   int v15; // ecx
   int v16; // eax
   VectorClass v17; // [esp+Ch] [ebp-9Ch] BYREF
@@ -97,7 +97,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
     VectorClass::BuildingTypeConstructor(&v17, 0, 0); /*0x67b591*/
     v19 = 10; /*0x67b59a*/
     v18 = 0; /*0x67b5a8*/
-    v17.vtable0 = &(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x67b5ac*/
+    v17.vtable0 = (void*)&TypeList_BuildingTypeClass_const___vftable; /*0x67b5ac*/
     for ( i = strtok(String, Str); i; i = strtok(0, Str) ) /*0x67b5be*/
     {
       if ( !*i ) /*0x67b5c0*/
@@ -107,23 +107,23 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
         && (v18 < v17.Capacity
          || (v17.IsAllocated || !v17.Capacity)
          && v19 > 0
-         && (*((unsigned __int8 (__thiscall **)(VectorClass *, int, _DWORD))v17.vtable0 + 2))(
+         && (*((uint8_t (__thiscall **)(VectorClass *, int, unsigned int))v17.vtable0 + 2))(
               &v17,
               v19 + v17.Capacity,
               0)) )
       {
         v8 = v18++; /*0x67b606*/
-        *((_DWORD *)v17.Items + v8) = v7; /*0x67b611*/
+        *((unsigned int *)v17.Items + v8) = v7; /*0x67b611*/
       }
     }
-    aP0->Items = 0; /*0x67b62d*/
+    aP0->Items = (unsigned int)(0);
     aP0->Capacity = 0; /*0x67b630*/
     aP0->IsInitialized = 1; /*0x67b633*/
     aP0->IsAllocated = 0; /*0x67b637*/
-    aP0->vtable0 = &(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67b63a*/
+    aP0->vtable0 = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67b63a*/
     VectorClass::CopyBuilding(aP0, &v17); /*0x67b640*/
-    aP0->vtable0 = &(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x67b645*/
-    v17.vtable0 = &(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67b64b*/
+    aP0->vtable0 = (void*)&TypeList_BuildingTypeClass_const___vftable; /*0x67b645*/
+    v17.vtable0 = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67b64b*/
     v9 = (void *)v19; /*0x67b657*/
     aP0[1].vtable0 = (void *)v18; /*0x67b65b*/
     Items = v17.Items; /*0x67b65e*/
@@ -137,11 +137,11 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
   }
   else
   {
-    aP0->Items = 0; /*0x67b699*/
+    aP0->Items = (unsigned int)(0);
     aP0->Capacity = 0; /*0x67b69c*/
     aP0->IsInitialized = 1; /*0x67b69f*/
     aP0->IsAllocated = 0; /*0x67b6a3*/
-    aP0->vtable0 = &(void*)(void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67b6a6*/
+    aP0->vtable0 = (void*)&VectorClass_BuildingTypeClass_const___vftable; /*0x67b6a6*/
     if ( aP0 != a4 ) /*0x67b6ac*/
     {
       DynamicVectorClass::Destroy((_VectorClass_PBVBuildingTypeClass *)aP0); /*0x67b6b0*/
@@ -149,7 +149,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
       aP0->Capacity = Capacity; /*0x67b6bb*/
       if ( Capacity ) /*0x67b6be*/
       {
-        v14 = RA2_OPNEW(4 * Capacity); /*0x67b6c8*/
+        v14 = (unsigned int)(RA2_OPNEW(4 * Capacity));
         aP0->Items = (void *)v14; /*0x67b6d2*/
         if ( v14 ) /*0x67b6d5*/
         {
@@ -160,7 +160,7 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
           {
             do /*0x67b6f6*/
             {
-              *((_DWORD *)aP0->Items + v16) = *((_DWORD *)a4->Items + v16); /*0x67b6ed*/
+              *((unsigned int *)aP0->Items + v16) = *((unsigned int *)a4->Items + v16); /*0x67b6ed*/
               ++v16; /*0x67b6f3*/
             }
             while ( v16 < aP0->Capacity ); /*0x67b6f6*/
@@ -173,9 +173,9 @@ void ReadINIClassBuildingTypeList(INIClass * aP0, unsigned char *** edx0, Vector
         aP0->IsAllocated = 0; /*0x67b6fd*/
       }
     }
-    aP0[1].vtable0 = a4[1].vtable0; /*0x67b703*/
+    aP0[1].vtable0 = (unsigned int)(a4[1].vtable0);
     aP0[1].Items = a4[1].Items; /*0x67b709*/
-    aP0->vtable0 = &(void*)(void*)&TypeList_BuildingTypeClass_const___vftable; /*0x67b70c*/
+    aP0->vtable0 = (void*)&TypeList_BuildingTypeClass_const___vftable; /*0x67b70c*/
   }
   return aP0; /*0x67b682*/
 }
@@ -191,7 +191,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
   void *InfantryTypeVector_field_0x04; // eax
   bool v11; // zf
   int v13; // eax
-  int v14; // eax
+  void * v14;
   int v15; // ecx
   int v16; // eax
   InfantryTypeVector v17; // [esp+Ch] [ebp-9Ch] BYREF
@@ -207,7 +207,7 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
     InfantryTypeVector::Construct2(&v17, 0, 0); /*0x67bb51*/
     v17.InfantryTypeVector_field_0x14 = 10; /*0x67bb5a*/
     v17.InfantryTypeVector_field_0x10 = 0; /*0x67bb68*/
-    *(_DWORD *)v17.__pad_0 = &(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67bb6c*/
+    *(unsigned int *)v17.__pad_0 = (void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67bb6c*/
     for ( i = strtok((char *)&v17.InfantryTypeVector_field_0x1C, Str); i; i = strtok(0, Str) ) /*0x67bb7e*/
     {
       if ( !*i ) /*0x67bb80*/
@@ -217,28 +217,28 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
         && (v17.InfantryTypeVector_field_0x10 < v17.InfantryTypeVector_field_0x08
          || (IDA_BYTE1(v17.InfantryTypeVector_field_0x0C) || !v17.InfantryTypeVector_field_0x08)
          && v17.InfantryTypeVector_field_0x14 > 0
-         && (*(unsigned __int8 (__thiscall **)(InfantryTypeVector *, int, _DWORD))(*(_DWORD *)v17.__pad_0 + 8))(
+         && (*(uint8_t (__thiscall **)(InfantryTypeVector *, int, unsigned int))(*(unsigned int *)v17.__pad_0 + 8))(
               &v17,
               v17.InfantryTypeVector_field_0x14 + v17.InfantryTypeVector_field_0x08,
               0)) )
       {
         v8 = v17.InfantryTypeVector_field_0x10++; /*0x67bbc6*/
-        *(_DWORD *)(v17.InfantryTypeVector_field_0x04 + 4 * v8) = v7; /*0x67bbd1*/
+        *(unsigned int *)(v17.InfantryTypeVector_field_0x04 + 4 * v8) = v7; /*0x67bbd1*/
       }
     }
-    *(_DWORD *)(aP0 + 4) = 0; /*0x67bbed*/
-    *(_DWORD *)(aP0 + 8) = 0; /*0x67bbf0*/
-    *(_BYTE *)(aP0 + 12) = 1; /*0x67bbf3*/
-    *(_BYTE *)(aP0 + 13) = 0; /*0x67bbf7*/
-    *(_DWORD *)aP0 = &(void*)(void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x67bbfa*/
+    *(unsigned int *)(aP0 + 4) = 0; /*0x67bbed*/
+    *(unsigned int *)(aP0 + 8) = 0; /*0x67bbf0*/
+    *(unsigned char *)(aP0 + 12) = 1; /*0x67bbf3*/
+    *(unsigned char *)(aP0 + 13) = 0; /*0x67bbf7*/
+    *(unsigned int *)aP0 = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x67bbfa*/
     HouseTypeClass::readStartInfantry((HouseTypeClass *)aP0, &v17); /*0x67bc00*/
-    *(_DWORD *)aP0 = &(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67bc05*/
-    *(_DWORD *)v17.__pad_0 = &(void*)(void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x67bc0b*/
+    *(unsigned int *)aP0 = (void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67bc05*/
+    *(unsigned int *)v17.__pad_0 = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x67bc0b*/
     InfantryTypeVector_field_0x14 = v17.InfantryTypeVector_field_0x14; /*0x67bc17*/
-    *(_DWORD *)(aP0 + 16) = v17.InfantryTypeVector_field_0x10; /*0x67bc1b*/
+    *(unsigned int *)(aP0 + 16) = v17.InfantryTypeVector_field_0x10; /*0x67bc1b*/
     InfantryTypeVector_field_0x04 = (void *)v17.InfantryTypeVector_field_0x04; /*0x67bc1e*/
     v11 = v17.InfantryTypeVector_field_0x04 == 0; /*0x67bc22*/
-    *(_DWORD *)(aP0 + 20) = InfantryTypeVector_field_0x14; /*0x67bc24*/
+    *(unsigned int *)(aP0 + 20) = InfantryTypeVector_field_0x14; /*0x67bc24*/
     if ( !v11 && IDA_BYTE1(v17.InfantryTypeVector_field_0x0C) ) /*0x67bc31*/
     {
       RA2_OPDEL(InfantryTypeVector_field_0x04); /*0x67bc38*/
@@ -247,45 +247,45 @@ void * ReadINIClassInfantryTypeList(INIClass * aP0, unsigned char *** edx0, INIC
   }
   else
   {
-    *(_DWORD *)(aP0 + 4) = 0; /*0x67bc59*/
-    *(_DWORD *)(aP0 + 8) = 0; /*0x67bc5c*/
-    *(_BYTE *)(aP0 + 12) = 1; /*0x67bc5f*/
-    *(_BYTE *)(aP0 + 13) = 0; /*0x67bc63*/
-    *(_DWORD *)aP0 = &(void*)(void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x67bc66*/
-    if ( (_DWORD *)aP0 != a4 ) /*0x67bc6c*/
+    *(unsigned int *)(aP0 + 4) = 0; /*0x67bc59*/
+    *(unsigned int *)(aP0 + 8) = 0; /*0x67bc5c*/
+    *(unsigned char *)(aP0 + 12) = 1; /*0x67bc5f*/
+    *(unsigned char *)(aP0 + 13) = 0; /*0x67bc63*/
+    *(unsigned int *)aP0 = (void*)&VectorClass_InfantryTypeClass_const___vftable; /*0x67bc66*/
+    if ( (unsigned int *)aP0 != a4 ) /*0x67bc6c*/
     {
       Vector::Cleanup((_VectorClass_PBVInfantryTypeClass *)aP0); /*0x67bc70*/
       v13 = a4[2]; /*0x67bc76*/
-      *(_DWORD *)(aP0 + 8) = v13; /*0x67bc7b*/
+      *(unsigned int *)(aP0 + 8) = v13; /*0x67bc7b*/
       if ( v13 ) /*0x67bc7e*/
       {
-        v14 = RA2_OPNEW(4 * v13); /*0x67bc88*/
-        *(_DWORD *)(aP0 + 4) = v14; /*0x67bc92*/
+        v14 = (unsigned int)(RA2_OPNEW(4 * v13));
+        *(unsigned int *)(aP0 + 4) = v14; /*0x67bc92*/
         if ( v14 ) /*0x67bc95*/
         {
-          v15 = *(_DWORD *)(aP0 + 8); /*0x67bc97*/
+          v15 = *(unsigned int *)(aP0 + 8); /*0x67bc97*/
           v16 = 0; /*0x67bc9a*/
-          *(_BYTE *)(aP0 + 13) = 1; /*0x67bc9e*/
+          *(unsigned char *)(aP0 + 13) = 1; /*0x67bc9e*/
           if ( v15 > 0 ) /*0x67bca2*/
           {
             do /*0x67bcb6*/
             {
-              *(_DWORD *)(*(_DWORD *)(aP0 + 4) + 4 * v16) = *(_DWORD *)(a4[1] + 4 * v16); /*0x67bcad*/
+              *(unsigned int *)(*(unsigned int *)(aP0 + 4) + 4 * v16) = *(unsigned int *)(a4[1] + 4 * v16); /*0x67bcad*/
               ++v16; /*0x67bcb3*/
             }
-            while ( v16 < *(_DWORD *)(aP0 + 8) ); /*0x67bcb6*/
+            while ( v16 < *(unsigned int *)(aP0 + 8) ); /*0x67bcb6*/
           }
         }
       }
       else
       {
-        *(_DWORD *)(aP0 + 4) = 0; /*0x67bcba*/
-        *(_BYTE *)(aP0 + 13) = 0; /*0x67bcbd*/
+        *(unsigned int *)(aP0 + 4) = 0; /*0x67bcba*/
+        *(unsigned char *)(aP0 + 13) = 0; /*0x67bcbd*/
       }
     }
-    *(_DWORD *)(aP0 + 16) = a4[4]; /*0x67bcc3*/
-    *(_DWORD *)(aP0 + 20) = a4[5]; /*0x67bcc9*/
-    *(_DWORD *)aP0 = &(void*)(void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67bccc*/
+    *(unsigned int *)(aP0 + 16) = a4[4]; /*0x67bcc3*/
+    *(unsigned int *)(aP0 + 20) = a4[5]; /*0x67bcc9*/
+    *(unsigned int *)aP0 = (void*)&TypeList_InfantryTypeClass_const___vftable; /*0x67bccc*/
   }
   return aP0; /*0x67bc42*/
 }
@@ -322,14 +322,14 @@ int unknown_libname_30()
 namespace gamemd {
 int ArtINI_Load()
 {
-  _DWORD v1[22]; // [esp+0h] [ebp-6Ch] BYREF
-  _BYTE v2[12]; // [esp+58h] [ebp-14h] BYREF
+  unsigned int v1[22]; // [esp+0h] [ebp-6Ch] BYREF
+  unsigned char v2[12]; // [esp+58h] [ebp-14h] BYREF
   int v3; // [esp+64h] [ebp-8h]
 
   INIClass::ClearSection((int)&dword_887180, 0, 0); /*0x679eec*/
   CCFileClass::Construct(v1, aArtmdIni); /*0x679efa*/
   CCINIClass::Load(&dword_887180, (int)v1, 0, 0); /*0x679f0d*/
-  v1[0] = &(void*)(void*)&CCFileClass_vftable; /*0x679f16*/
+  v1[0] = (void*)&CCFileClass_vftable; /*0x679f16*/
   v3 = 0; /*0x679f1e*/
   Vector::Clear((int)v2); /*0x679f26*/
   v1[0] = &off_7E1668; /*0x679f2f*/
@@ -431,7 +431,7 @@ namespace gamemd {
 long long sub_67C570()
 {
   double v0; // st7
-  __int64 result; // rax
+  int64_t result; // rax
 
   v0 = Math::Sin(dbl_B053C0 - dbl_B053E8); /*0x67c582*/
   result = Math::RoundToInt(v0 * dbl_B053E0 * 0.5); /*0x67c596*/
@@ -460,7 +460,7 @@ void sub_67C5E0()
 namespace gamemd {
 long long sub_67C610()
 {
-  __int64 result; // rax
+  int64_t result; // rax
 
   result = Math::RoundToInt((double)(4 * dword_B05438) + 0.5); /*0x67c62b*/
   dword_B0542C = result; /*0x67c630*/

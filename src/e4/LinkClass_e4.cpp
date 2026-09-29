@@ -10,12 +10,13 @@
 #include "e4/classes/AnimClass_e4.hpp"
 #include "e4/classes/RulesClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
+#include "e4/classes/ObjectTypeClass_e4.hpp"
 
 // 0x4E1480
 namespace gamemd {
 int LinkClass::Destroy()
 {
-  (*(void (__thiscall **)(GadgetClass *))(*(_DWORD *)this->__pad_0 + 84))(this); /*0x4e1485*/
+  (*(void (__thiscall **)(GadgetClass *))(*(unsigned int *)this->__pad_0 + 84))(this); /*0x4e1485*/
   return LinkedList::RemoveNode(); /*0x4e148f*/
 }
 } // namespace gamemd
@@ -28,9 +29,9 @@ int LinkClass::Destruct()
   LinkClass *m_Prev; // edx
   LinkClass *m_Next; // edx
 
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&LinkClass_vftable; /*0x5565a5*/
+  *(unsigned int *)this->__pad_0 = (void*)&LinkClass_vftable; /*0x5565a5*/
   Prev = (LinkClass *)LinkedList::FindPrev(this); /*0x5565b1*/
-  result = (*(int (__thiscall **)(LinkClass *))(*(_DWORD *)this->__pad_0 + 28))(this); /*0x5565b7*/
+  result = (*(int (__thiscall **)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this); /*0x5565b7*/
   m_Prev = this->m_Prev; /*0x5565ba*/
   if ( m_Prev ) /*0x5565c1*/
     m_Prev->m_Next = this->m_Next; /*0x5565c6*/
@@ -40,7 +41,7 @@ int LinkClass::Destruct()
   this->m_Prev = 0; /*0x5565d8*/
   this->m_Next = 0; /*0x5565db*/
   if ( Prev == this && (LinkClass *)result != this ) /*0x5565e2*/
-    return (*(int (__thiscall **)(int))(*(_DWORD *)result + 24))(result); /*0x5565e8*/
+    return (*(int (__thiscall **)(int))(*(unsigned int *)result + 24))(result); /*0x5565e8*/
   return result; /*0x5565eb*/
 }
 } // namespace gamemd

@@ -16,22 +16,22 @@
 namespace gamemd {
 void * GadgetClass::Construct(GadgetClass * aP1, GadgetClass * aP2, GadgetClass * aP3, ControlClass * aP4, GadgetClass * aP5, GadgetClass * aP6)
 {
-  _DWORD *result; // eax
+  unsigned int *result; // eax
 
   result = this->__pad_0; /*0x4e12f4*/
   this->Height = aP2; /*0x4e12fb*/
   this->Width = aP1; /*0x4e1302*/
   this->ID = aP4; /*0x4e1309*/
-  *(_DWORD *)this->Visible = aP3; /*0x4e1312*/
+  *(unsigned int *)this->Visible = aP3; /*0x4e1312*/
   this->X = 0; /*0x4e1319*/
   this->Y = 0; /*0x4e131c*/
   IDA_LOBYTE(this->Image) = 0; /*0x4e131f*/
   IDA_BYTE2(this->Image) = 0; /*0x4e1322*/
   IDA_BYTE1(this->Image) = aP6; /*0x4e1327*/
-  *(_DWORD *)this->Hovered = aP5; /*0x4e132a*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&GadgetClass_vftable; /*0x4e132d*/
+  *(unsigned int *)this->Hovered = aP5; /*0x4e132a*/
+  *(unsigned int *)this->__pad_0 = (void*)&GadgetClass_vftable; /*0x4e132d*/
   if ( aP6 ) /*0x4e1334*/
-    *(_DWORD *)this->Hovered = aP5 | 5; /*0x4e1339*/
+    *(unsigned int *)this->Hovered = aP5 | 5; /*0x4e1339*/
   return result; /*0x4e1333*/
 }
 }
@@ -42,13 +42,13 @@ GadgetClass * * GadgetClass::Dtor()
   ShpButtonClass *v1; // eax
   int v2; // eax
 
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&GadgetClass_vftable; /*0x4e1390*/
+  *(unsigned int *)this->__pad_0 = (void*)&GadgetClass_vftable; /*0x4e1390*/
   v1 = (ShpButtonClass *)dword_8B3E90; /*0x4e1396*/
   if ( this == (ShpButtonClass *)dword_8B3E90 ) /*0x4e139f*/
   {
-    v2 = *(_DWORD *)this->Hovered; /*0x4e13a1*/
+    v2 = *(unsigned int *)this->Hovered; /*0x4e13a1*/
     IDA_BYTE1(v2) &= ~1u; /*0x4e13a4*/
-    *(_DWORD *)this->Hovered = v2; /*0x4e13a7*/
+    *(unsigned int *)this->Hovered = v2; /*0x4e13a7*/
     v1 = 0; /*0x4e13aa*/
     dword_8B3E90 = 0; /*0x4e13ac*/
   }
@@ -74,7 +74,7 @@ int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
 
   if ( !GadgetClass::ClearState((GadgetClass *)this, aP1) ) /*0x55792e*/
     return 0; /*0x557a0b*/
-  (*(void (__thiscall **)(void *, int, int, int, int))(*(_DWORD *)stru_887598.lineTrailer + 32))( /*0x557965*/
+  (*(void (__thiscall **)(void *, int, int, int, int))(*(unsigned int *)stru_887598.lineTrailer + 32))( /*0x557965*/
     stru_887598.lineTrailer,
     this->ListClass_field_0x0C,
     this->ListClass_field_0x10,
@@ -94,7 +94,7 @@ int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
     {
       v7 = i + this->u32_170; /*0x5579ad*/
       if ( this->u32_44 > v7 ) /*0x5579b1*/
-        (*(void (__thiscall **)(ListClass *, int, int, int, int, bool))(*(_DWORD *)this->__pad_0 + 200))( /*0x5579e0*/
+        (*(void (__thiscall **)(ListClass *, int, int, int, int, bool))(*(unsigned int *)this->__pad_0 + 200))( /*0x5579e0*/
           this,
           v7,
           this->ListClass_field_0x0C + 1,
@@ -103,7 +103,7 @@ int GadgetClass::DrawBuildingPlacement(ControlClass * aP1)
           v7 == this->u32_16C);
     }
   }
-  (*(void (__thiscall **)(void *))(*(_DWORD *)stru_887598.lineTrailer + 36))(stru_887598.lineTrailer); /*0x5579f6*/
+  (*(void (__thiscall **)(void *))(*(unsigned int *)stru_887598.lineTrailer + 36))(stru_887598.lineTrailer); /*0x5579f6*/
   return 1; /*0x5579fe*/
 }
 }
@@ -112,18 +112,18 @@ namespace gamemd {
 AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
 {
   HWND Parent; // edi
-  _DWORD *v3; // esi
+  unsigned int *v3; // esi
   HWND *v4; // eax
   HWND *v5; // eax
   int v6; // esi
   int DlgCtrlID; // eax
   int v8; // eax
-  _DWORD *v9; // eax
+  unsigned int *v9; // eax
   int v10; // eax
   bool v11; // al
   int v12; // eax
   HWND v14; // [esp+Ch] [ebp-94h] BYREF
-  _DWORD *v15; // [esp+10h] [ebp-90h]
+  unsigned int *v15; // [esp+10h] [ebp-90h]
   int v16; // [esp+14h] [ebp-8Ch] BYREF
   HWND v18; // [esp+1Ch] [ebp-84h] BYREF
   CHAR ClassName[128]; // [esp+20h] [ebp-80h] BYREF
@@ -134,7 +134,7 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
   v15 = 0; /*0x60aad6*/
   if ( dword_AC1B04 ) /*0x60aada*/
   {
-    v4 = (HWND *)*((_DWORD *)dword_AC1B00 + (dword_AC1B18(&v14) & ((1 << dword_AC1B0C) - 1))); /*0x60aafb*/
+    v4 = (HWND *)*((unsigned int *)dword_AC1B00 + (dword_AC1B18(&v14) & ((1 << dword_AC1B0C) - 1))); /*0x60aafb*/
     if ( v4 ) /*0x60ab00*/
     {
       while ( *v4 != v14 ) /*0x60ab08*/
@@ -143,8 +143,8 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
         if ( !v4 ) /*0x60ab12*/
           goto LABEL_7; /*0x60ab12*/
       }
-      v3 = v4 + 1; /*0x60ab1a*/
-      v15 = v4 + 1; /*0x60ab1d*/
+      v3 = (unsigned int *)(v4 + 1);
+      v15 = (unsigned int *)(v4 + 1);
     }
   }
   LABEL_7:
@@ -153,7 +153,7 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
     v14 = Parent; /*0x60ab2e*/
     if ( !dword_AC1B04 ) /*0x60ab34*/
       goto LABEL_12; /*0x60ab34*/
-    v5 = (HWND *)*((_DWORD *)dword_AC1B00 + HashTable::ComputeHash((int)&dword_AC1B00, (int)&v14)); /*0x60ab4b*/
+    v5 = (HWND *)*((unsigned int *)dword_AC1B00 + HashTable::ComputeHash((int)&dword_AC1B00, (int)&v14)); /*0x60ab4b*/
     if ( !v5 ) /*0x60ab50*/
       goto LABEL_12; /*0x60ab50*/
     while ( *v5 != v14 ) /*0x60ab58*/
@@ -162,7 +162,7 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
       if ( !v5 ) /*0x60ab66*/
         goto LABEL_12; /*0x60ab66*/
     }
-    v9 = v5 + 1; /*0x60acaf*/
+    v9 = (unsigned int *)(v5 + 1);
     if ( v9 ) /*0x60acb4*/
       v6 = v9[27]; /*0x60acba*/
     else
@@ -218,7 +218,7 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
     HashTable::Get(&dword_AC1B00, &v18, &v14); /*0x60ad2e*/
     if ( !v14 ) /*0x60ad39*/
       goto LABEL_86; /*0x60ad39*/
-    v10 = *((_DWORD *)v14 + 27); /*0x60ad3f*/
+    v10 = *((unsigned int *)v14 + 27); /*0x60ad3f*/
     if ( v10 != 269 /*0x60adc9*/
       && v10 != 217
       && v10 != 240
@@ -241,7 +241,7 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
     {
       goto LABEL_86; /*0x60adc9*/
     }
-    *((_DWORD *)v14 + 44) = 2; /*0x60adcf*/
+    *((unsigned int *)v14 + 44) = 2; /*0x60adcf*/
     hWnd = hWnd; /*0x60ade4*/
     GetClassNameA(hWnd, ClassName, 128); /*0x60ade8*/
     if ( !strcmp(ClassName, g_INI_Key_Edit) || !strcmp(ClassName, g_INI_Key_NewEdit) ) /*0x60ae37*/
@@ -258,17 +258,15 @@ AbstractClass * * GadgetClass::FindByWindow(HWND hWnd, LPARAM a2)
     }
     if ( v11 ) /*0x60af0e*/
     {
-  LABEL_85:
-      v12 = 192; /*0x60af10*/
-  LABEL_87:
-      v15[50] = v12; /*0x60af19*/
-      return 1; /*0x60af1d*/
+  LABEL_85: v12 = (int)((gamemd::AbstractClass **)(192));
+  LABEL_87: v15[50] = (unsigned int)((gamemd::AbstractClass **)(v12));
+      return (gamemd::AbstractClass **)(1);
     }
   LABEL_86:
     v12 = 0; /*0x60af17*/
     goto LABEL_87; /*0x60af17*/
   }
-  return 1; /*0x60af23*/
+  return (gamemd::AbstractClass **)(1);
 }
 }
 // 0x623560
@@ -287,9 +285,9 @@ AbstractClass * * GadgetClass::SetTooltip(CCINIClass * aP1)
   {
     if ( *aP1 ) /*0x623583*/
     {
-      v3 = wcslen(aP1); /*0x62358a*/
-      v4 = (wchar_t *)RA2_OPNEW(2 * v3 + 2); /*0x623594*/
-      this->u32_28 = v4; /*0x62359b*/
+      v3 = (unsigned int)(wcslen(aP1));
+      v4 = (wchar_t *)((unsigned int)((wchar_t *)RA2_OPNEW(2 * v3 + 2)));
+      this->u32_28 = (unsigned int)(v4);
       wcscpy(v4, aP1); /*0x62359e*/
     }
   }
@@ -301,8 +299,8 @@ int GadgetClass::Show()
 {
   int v1; // eax
 
-  v1 = *(_DWORD *)this->__pad_0; /*0x723ea0*/
-  *((_BYTE *)this + 45) = 1; /*0x723ea2*/
+  v1 = *(unsigned int *)this->__pad_0; /*0x723ea0*/
+  *((unsigned char *)this + 45) = 1; /*0x723ea2*/
   return (*(int (**)(void))(v1 + 72))();
 }
 }

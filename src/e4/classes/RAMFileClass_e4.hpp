@@ -12,6 +12,11 @@ struct RAMFileClass {
     AbstractClass * ptr_8;  // 0x8
     AbstractClass* q00C;  // 0xC
     AbstractClass* q010;  // 0x10
+    unsigned int RAMFileClass_field_0x10;
+    unsigned int __pad_0;
+    unsigned int RAMFileClass_field_0x8;
+    unsigned int u32_14;
+    unsigned int u32_1C;
 // --- flat members (END) ---
     int nullsub_0_1();  // 0x65C300
     int nullsub_0_2(int a2);  // 0x65C350

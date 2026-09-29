@@ -23,13 +23,13 @@ int DDraw::ReleaseSurfaces()
   v2 = this->u32_74; /*0x4a3373*/
   if ( v2 ) /*0x4a3378*/
   {
-    (*(void (__stdcall **)(int))(*(_DWORD *)v2 + 8))(v2); /*0x4a337d*/
+    (*(void (__stdcall **)(int))(*(unsigned int *)v2 + 8))(v2); /*0x4a337d*/
     this->u32_74 = 0; /*0x4a3380*/
   }
   result = this->u32_70; /*0x4a3387*/
   if ( result ) /*0x4a338c*/
   {
-    result = (*(int (__stdcall **)(_DWORD))(*(_DWORD *)result + 8))(this->u32_70); /*0x4a3391*/
+    result = (*(int (__stdcall **)(unsigned int))(*(unsigned int *)result + 8))(this->u32_70); /*0x4a3391*/
     this->u32_70 = 0; /*0x4a3394*/
   }
   return result; /*0x4a339b*/
@@ -51,7 +51,7 @@ int DDraw::CapabilityCheck()
   int v3; // [esp+Ch] [ebp-40h]
   int v4; // [esp+10h] [ebp-3Ch]
   int v5; // [esp+14h] [ebp-38h]
-  _DWORD v6[4]; // [esp+18h] [ebp-34h] BYREF
+  unsigned int v6[4]; // [esp+18h] [ebp-34h] BYREF
   int v7[9]; // [esp+28h] [ebp-24h] BYREF
 
   DSurface::Construct((char *)v7, 64, 64, 0, 0); /*0x4a3e51*/
@@ -71,7 +71,7 @@ int DDraw::CapabilityCheck()
     v3 = 5; /*0x4a3eb3*/
     if ( XSurface::GetPixel(v7, &v2) == 1 ) /*0x4a3ebf*/
     {
-      v0 = g_INI_Key_OK; /*0x4a3ed0*/
+      v0 = (const char *)(g_INI_Key_OK);
       if ( byte_8205D4 ) /*0x4a3ed5*/
         goto LABEL_7; /*0x4a3ed5*/
     }
@@ -119,7 +119,7 @@ int DDraw::WaitForIdle()
   int result; // eax
 
   do /*0x4a4846*/
-    result = (*(int (__stdcall **)(int, int))(*(_DWORD *)g_DDraw_PrimarySurface + 52))(g_DDraw_PrimarySurface, 2); /*0x4a483a*/
+    result = (*(int (__stdcall **)(int, int))(*(unsigned int *)g_DDraw_PrimarySurface + 52))(g_DDraw_PrimarySurface, 2); /*0x4a483a*/
   while ( result && result != -2005532222 ); /*0x4a4846*/
   return result; /*0x4a4848*/
 }
@@ -134,28 +134,28 @@ int DDraw::CleanupSurfaces()
   AudioStream *v4; // esi
   int result; // eax
 
-  v1 = dword_8A0E10; /*0x4c19b1*/
+  v1 = (gamemd::StructTable *)(dword_8A0E10);
   if ( dword_8A0E10 ) /*0x4c19bc*/
   {
     DDraw::Init((DDraw *)dword_8A0E10); /*0x4c19c0*/
     RA2_OPDEL(v1); /*0x4c19c6*/
     dword_8A0E10 = 0; /*0x4c19ce*/
   }
-  v2 = dword_8A0E0C; /*0x4c19d4*/
+  v2 = (gamemd::DDraw *)(dword_8A0E0C);
   if ( dword_8A0E0C ) /*0x4c19dc*/
   {
     DDraw::ReleaseSurfaces(dword_8A0E0C); /*0x4c19e0*/
     RA2_OPDEL(v2); /*0x4c19e6*/
     dword_8A0E0C = 0; /*0x4c19ee*/
   }
-  v3 = dword_8A0E08; /*0x4c19f4*/
+  v3 = (gamemd::DDraw *)(dword_8A0E08);
   if ( dword_8A0E08 ) /*0x4c19fc*/
   {
     DDraw::ReleaseSurfaces(dword_8A0E08); /*0x4c1a00*/
     RA2_OPDEL(v3); /*0x4c1a06*/
     dword_8A0E08 = 0; /*0x4c1a0e*/
   }
-  v4 = dword_8A0E04; /*0x4c1a14*/
+  v4 = (gamemd::AudioStream *)(dword_8A0E04);
   if ( dword_8A0E04 ) /*0x4c1a1c*/
   {
     DDraw::ReleaseSurfaces((DDraw *)dword_8A0E04); /*0x4c1a20*/
@@ -164,23 +164,23 @@ int DDraw::CleanupSurfaces()
   }
   if ( IDA_HIDWORD(g_DrawColorState) ) /*0x4c1a3b*/
   {
-    (*(void (__stdcall **)(_DWORD))(*(_DWORD *)IDA_HIDWORD(g_DrawColorState) + 8))(IDA_HIDWORD(g_DrawColorState)); /*0x4c1a40*/
+    (*(void (__stdcall **)(unsigned int))(*(unsigned int *)IDA_HIDWORD(g_DrawColorState) + 8))(IDA_HIDWORD(g_DrawColorState)); /*0x4c1a40*/
     IDA_HIDWORD(g_DrawColorState) = 0; /*0x4c1a43*/
   }
-  if ( (_DWORD)g_DrawColorState ) /*0x4c1a50*/
+  if ( (unsigned int)g_DrawColorState ) /*0x4c1a50*/
   {
-    (*(void (__stdcall **)(_DWORD))(*(_DWORD *)g_DrawColorState + 8))(g_DrawColorState); /*0x4c1a55*/
+    (*(void (__stdcall **)(unsigned int))(*(unsigned int *)g_DrawColorState + 8))(g_DrawColorState); /*0x4c1a55*/
     IDA_LODWORD(g_DrawColorState) = 0; /*0x4c1a58*/
   }
   if ( dword_8A0DF4 ) /*0x4c1a65*/
   {
-    (*(void (__stdcall **)(int))(*(_DWORD *)dword_8A0DF4 + 8))(dword_8A0DF4); /*0x4c1a6a*/
+    (*(void (__stdcall **)(int))(*(unsigned int *)dword_8A0DF4 + 8))(dword_8A0DF4); /*0x4c1a6a*/
     dword_8A0DF4 = 0; /*0x4c1a6d*/
   }
   result = dword_8A0E00; /*0x4c1a73*/
   if ( dword_8A0E00 ) /*0x4c1a7a*/
   {
-    result = (*(int (__stdcall **)(int))(*(_DWORD *)dword_8A0E00 + 8))(dword_8A0E00); /*0x4c1a7f*/
+    result = (*(int (__stdcall **)(int))(*(unsigned int *)dword_8A0E00 + 8))(dword_8A0E00); /*0x4c1a7f*/
     dword_8A0E00 = 0; /*0x4c1a82*/
   }
   return result; /*0x4c1a88*/
@@ -202,8 +202,8 @@ int DDraw::HandleSuspend()
     Debug::Log(); /*0x5d2546*/
     for ( i = 0; i < this->u32_28; ++i ) /*0x5d2555*/
     {
-      v4 = *(_DWORD *)(this->u32_1C + 4 * i); /*0x5d255a*/
-      (*(void (__thiscall **)(int))(*(_DWORD *)v4 + 8))(v4); /*0x5d255f*/
+      v4 = *(unsigned int *)(this->u32_1C + 4 * i); /*0x5d255a*/
+      (*(void (__thiscall **)(int))(*(unsigned int *)v4 + 8))(v4); /*0x5d255f*/
     }
     while ( !stru_A8EB00.?[412] ) /*0x5d2571*/
     {
@@ -215,8 +215,8 @@ int DDraw::HandleSuspend()
     result = this->u32_28; /*0x5d25a5*/
     for ( j = 0; j < result; ++j ) /*0x5d25af*/
     {
-      v6 = *(_DWORD *)(this->u32_1C + 4 * j); /*0x5d25b4*/
-      (*(void (__thiscall **)(int))(*(_DWORD *)v6 + 12))(v6); /*0x5d25b9*/
+      v6 = *(unsigned int *)(this->u32_1C + 4 * j); /*0x5d25b4*/
+      (*(void (__thiscall **)(int))(*(unsigned int *)v6 + 12))(v6); /*0x5d25b9*/
       result = this->u32_28; /*0x5d25bc*/
     }
   }
@@ -256,7 +256,7 @@ char DDraw::CheckCapabilities()
   int v0; // eax
   HRESULT v1; // eax
   CHAR Text[80]; // [esp+Ch] [ebp-18Ch] BYREF
-  _DWORD v4[79]; // [esp+5Ch] [ebp-13Ch] BYREF
+  unsigned int v4[79]; // [esp+5Ch] [ebp-13Ch] BYREF
 
   if ( g_lpDirectDraw7 ) /*0x4a462e*/
   {

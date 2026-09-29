@@ -12,9 +12,9 @@ namespace gamemd {
 int TimerClass::Active()
 {
   int v1; // edx
-  int v2; // eax
+  void * v2;
 
-  if ( *(__int16 *)(&this->u32_80) <= 0 ) /*0x4c9485*/
+  if ( *(int16_t *)(&this->u32_80) <= 0 ) /*0x4c9485*/
     return 0; /*0x4c9485*/
   v1 = this->u32_8; /*0x4c9487*/
   v2 = this->q010; /*0x4c948a*/

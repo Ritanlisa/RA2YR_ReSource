@@ -35,7 +35,7 @@ int MPCooperative::processTurn(char * a2, char * a3)
   if ( a2 ) /*0x49b66e*/
     strcpy(ToWideStringChar(a2)); /*0x49b68b*/
   else
-    *(_BYTE *)this = 0; /*0x49b696*/
+    *(unsigned char *)this = 0; /*0x49b696*/
   if ( a3 ) /*0x49b69f*/
     strcpy((char *)(&this->q0088), ToWideStringChar(a3)); /*0x49b6bf*/
   else
@@ -90,7 +90,7 @@ int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
       v8 = 0; /*0x49bd18*/
       for ( a2->q010 = v7; /*0x49bd1f*/
             v8 < a2->q010;
-            *(_DWORD *)(a2->q004 + 4 * v8 - 4) = *(_DWORD *)(a2->q004 + 4 * v8) )
+            *(unsigned int *)(a2->q004 + 4 * v8 - 4) = *(unsigned int *)(a2->q004 + 4 * v8) )
       {
         ++v8; /*0x49bd24*/
       }
@@ -108,27 +108,27 @@ int MPCooperative::BuildScoreEntries(int a2, CCINIClass * aP2)
   }
   for ( i = 0; i < 2; ++i ) /*0x49bdb0*/
   {
-    v11 = v16; /*0x49bdb2*/
+    v11 = (wchar_t *)((unsigned int)(v16));
     if ( i ) /*0x49bdb8*/
       v11 = v17; /*0x49bdba*/
-    *((_DWORD *)v11 + 16) = *(_DWORD *)(&this->q010 * i + 72); /*0x49bdc2*/
-    *((_DWORD *)v11 + 20) = *(_DWORD *)(&this->q010 * i + 80); /*0x49bdc9*/
-    *((_DWORD *)v11 + 12) = *(_DWORD *)(&this->q010 * i + 88); /*0x49bdd0*/
-    *((_DWORD *)v11 + 11) = this->q038; /*0x49bdd6*/
-    *((_DWORD *)v11 + 24) = *(_DWORD *)(&this->q010 * i + 96); /*0x49bddd*/
+    *((unsigned int *)v11 + 16) = *(unsigned int *)(&this->q010 * i + 72); /*0x49bdc2*/
+    *((unsigned int *)v11 + 20) = *(unsigned int *)(&this->q010 * i + 80); /*0x49bdc9*/
+    *((unsigned int *)v11 + 12) = *(unsigned int *)(&this->q010 * i + 88); /*0x49bdd0*/
+    *((unsigned int *)v11 + 11) = this->q038; /*0x49bdd6*/
+    *((unsigned int *)v11 + 24) = *(unsigned int *)(&this->q010 * i + 96); /*0x49bddd*/
     v12 = a2->u32_8; /*0x49bde0*/
     if ( a2->q010 >= v12 ) /*0x49bde6*/
     {
       if ( !a2->u8_D && v12 ) /*0x49bdf1*/
         continue; /*0x49bdf1*/
       v13 = a2->q014; /*0x49bdf3*/
-      if ( v13 <= 0 || !(*(unsigned __int8 (__thiscall **)(int, int, _DWORD))(a2->u32_8)(a2, v12 + v13, 0) ) /*0x49be03*/
+      if ( v13 <= 0 || !(*(uint8_t (__thiscall **)(int, int, unsigned int))(a2->u32_8)(a2, v12 + v13, 0) ) /*0x49be03*/
         continue; /*0x49be03*/
     }
-    v14 = a2->q010; /*0x49be0a*/
-    v15 = a2->q004; /*0x49be0d*/
+    v14 = (unsigned int)(a2->q010);
+    v15 = (unsigned int)(a2->q004);
     a2->q010 = v14 + 1; /*0x49be13*/
-    *(_DWORD *)(v15 + 4 * v14) = v11; /*0x49be16*/
+    *(unsigned int *)(v15 + 4 * v14) = v11; /*0x49be16*/
   }
   *aP2 = this->q068; /*0x49be28*/
   return 1; /*0x49bced*/
@@ -160,7 +160,7 @@ int MPCooperative::WriteCoopSaveINI()
   int v21; // [esp+134h] [ebp-6Ch]
   char v22[100]; // [esp+13Ch] [ebp-64h] BYREF
 
-  v1 = (char *)this; /*0x49be49*/
+  v1 = (char *)((unsigned int)((char *)this));
   if ( !IDA_LOBYTE(this->MPCooperative_field_0x0) ) /*0x49be4d*/
     return 1; /*0x49be4d*/
   v2 = &this->__pad_18[4]; /*0x49be58*/
@@ -173,7 +173,7 @@ int MPCooperative::WriteCoopSaveINI()
   Node::Init((Node *)&v15.?[8]); /*0x49be8a*/
   v15.? = 0; /*0x49be9d*/
   v15.ownsFile = 0; /*0x49bea1*/
-  *(_DWORD *)v15.INIClass = &CCINIClass_Vtable; /*0x49bea5*/
+  *(unsigned int *)v15.INIClass = &CCINIClass_Vtable; /*0x49bea5*/
   CCINIClass::Load(&v15, (int)&v19, 0, 0); /*0x49bead*/
   CCFileClass::Reset(&v19); /*0x49beb9*/
   v3 = 0; /*0x49bec0*/
@@ -234,25 +234,25 @@ int MPCooperative::WriteCoopSaveINI()
     i = v8[1]; /*0x49bfc2*/
     ++v9; /*0x49bfc5*/
   }
-  g_IsWindowed[v9] = 0; /*0x49bfd5*/
+  g_IsWindowed[v9] = (unsigned int)(0);
   strcat(v22, g_IsWindowed); /*0x49bff9*/
   CCFileClass::Construct3((int)&v16); /*0x49c006*/
-  (*(void (__thiscall **)(CCFileClass *, char *))(*(_DWORD *)v16.CDFileClass + 8))(&v16, g_Str_File_coopsave_ini); /*0x49c018*/
-  (*(void (__thiscall **)(CCFileClass *, int))(*(_DWORD *)v16.CDFileClass + 28))(&v16, 2); /*0x49c025*/
+  (*(void (__thiscall **)(CCFileClass *, char *))(*(unsigned int *)v16.CDFileClass + 8))(&v16, g_Str_File_coopsave_ini); /*0x49c018*/
+  (*(void (__thiscall **)(CCFileClass *, int))(*(unsigned int *)v16.CDFileClass + 28))(&v16, 2); /*0x49c025*/
   INIClass::ClearSection((int *)v15.INIClass, (int)v22, 0); /*0x49c035*/
   INIClass::WriteDigest((INIClass *)&v15, (int)&v16, 0); /*0x49c044*/
   CCFileClass::Reset(&v16); /*0x49c04d*/
-  *(_DWORD *)v16.CDFileClass = &(void*)(void*)&CCFileClass_vftable; /*0x49c05e*/
+  *(unsigned int *)v16.CDFileClass = (void*)&CCFileClass_vftable; /*0x49c05e*/
   v18 = 0; /*0x49c062*/
   Vector::Clear((int)v17); /*0x49c069*/
-  *(_DWORD *)v16.CDFileClass = &off_7E1668; /*0x49c077*/
+  *(unsigned int *)v16.CDFileClass = &off_7E1668; /*0x49c077*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v16); /*0x49c07b*/
   HashTable::DestroyHashTableINIClass((INIClass *)&v15); /*0x49c084*/
-  *(_DWORD *)v19.CDFileClass = &(void*)(void*)&CCFileClass_vftable; /*0x49c090*/
+  *(unsigned int *)v19.CDFileClass = (void*)&CCFileClass_vftable; /*0x49c090*/
   v21 = 0; /*0x49c097*/
   Vector::Clear((int)v20); /*0x49c09e*/
-  *(_DWORD *)v19.CDFileClass = &off_7E1668; /*0x49c0aa*/
-  BufferIOFileClass::Dtor((BufferIOFileClass *)&v19); /*0x49c0b1*/
+  *(unsigned int *)v19.CDFileClass = &off_7E1668; /*0x49c0aa*/
+  BufferIOFileClass::Dtor((BufferIOFileClass *, unsigned int a20, unsigned int a48, unsigned int a24, unsigned int a52, unsigned int a16, unsigned int a44, unsigned int a28, unsigned int a56)&v19); /*0x49c0b1*/
   return 1; /*0x49c0b7*/
 }
 }
@@ -294,12 +294,12 @@ int MPCooperative::ReadCoopSaveINI()
   int v13; // eax
   char v14; // al
   bool v15; // bl
-  _DWORD v16[22]; // [esp+Ch] [ebp-128h] BYREF
-  _BYTE v17[12]; // [esp+64h] [ebp-D0h] BYREF
+  unsigned int v16[22]; // [esp+Ch] [ebp-128h] BYREF
+  unsigned char v17[12]; // [esp+64h] [ebp-D0h] BYREF
   int v18; // [esp+70h] [ebp-C4h]
   void *v19[3]; // [esp+78h] [ebp-BCh] BYREF
-  _DWORD v20[7]; // [esp+84h] [ebp-B0h] BYREF
-  _DWORD v21[6]; // [esp+A0h] [ebp-94h] BYREF
+  unsigned int v20[7]; // [esp+84h] [ebp-B0h] BYREF
+  unsigned int v21[6]; // [esp+A0h] [ebp-94h] BYREF
   char v22; // [esp+B8h] [ebp-7Ch]
   char v23[100]; // [esp+D0h] [ebp-64h] BYREF
 
@@ -320,7 +320,7 @@ int MPCooperative::ReadCoopSaveINI()
   {
     CCFileClass::Reset(v16); /*0x49d1aa*/
     HashTable::DestroyHashTableINIClass(v19); /*0x49d1b3*/
-    v16[0] = &(void*)(void*)&CCFileClass_vftable; /*0x49d1bc*/
+    v16[0] = (void*)&CCFileClass_vftable; /*0x49d1bc*/
     v18 = 0; /*0x49d1c4*/
     Vector::Clear((int)v17); /*0x49d1c8*/
     v16[0] = &off_7E1668; /*0x49d1d1*/
@@ -388,9 +388,9 @@ int MPCooperative::ReadCoopSaveINI()
   }
   g_IsWindowed[v10] = 0; /*0x49d30c*/
   strcat(v23, g_IsWindowed); /*0x49d331*/
-  v15 = INIClass::BinarySearchSection((int)v19, (unsigned __int8 *)v23) != 0; /*0x49d354*/
+  v15 = INIClass::BinarySearchSection((int)v19, (uint8_t *)v23) != 0; /*0x49d354*/
   HashTable::DestroyHashTableINIClass(v19); /*0x49d357*/
-  v16[0] = &(void*)(void*)&CCFileClass_vftable; /*0x49d360*/
+  v16[0] = (void*)&CCFileClass_vftable; /*0x49d360*/
   v18 = 0; /*0x49d368*/
   Vector::Clear((int)v17); /*0x49d36c*/
   v16[0] = &off_7E1668; /*0x49d375*/
@@ -414,7 +414,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   void *v17; // ebx
   int v18; // ebp
   MissionClass *v19; // eax
-  _DWORD *v20; // ebp
+  unsigned int *v20; // ebp
   int v21; // eax
   int v22; // ecx
   int v23; // eax
@@ -422,7 +422,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
 
   MultiplayerGameMode::Construct(aP1, aP2, aP3, aP4, 0, aP6); /*0x5c1494*/
   AbstractClass::updateAnimationState((AbstractClass *)&this->MPCooperative_field_0x58, 0, 0); /*0x5c14a0*/
-  this->MPCooperative_field_0x58 = &(void*)(void*)&DynamicVectorClass_NodeNameType___vftable; /*0x5c14a5*/
+  this->MPCooperative_field_0x58 = (void*)&DynamicVectorClass_NodeNameType___vftable; /*0x5c14a5*/
   this->MPCooperative_field_0x6C = (void *)10; /*0x5c14ab*/
   this->MPCooperative_field_0x68 = 0; /*0x5c14b2*/
   p_MPCooperative_field_0xC4 = &this->MPCooperative_field_0xC4; /*0x5c14b5*/
@@ -439,7 +439,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   do /*0x5c14f5*/
   {
     VectorClass::Construct(MPCooperative_field_0x1A4, 0, 0); /*0x5c14dc*/
-    MPCooperative_field_0x1A4->vtable0 = &(void*)(void*)&DynamicVectorClass_int_vftable; /*0x5c14e1*/
+    MPCooperative_field_0x1A4->vtable0 = (void*)&DynamicVectorClass_int_vftable; /*0x5c14e1*/
     MPCooperative_field_0x1A4[1].Items = (void *)10; /*0x5c14e7*/
     MPCooperative_field_0x1A4[1].vtable0 = 0; /*0x5c14ee*/
     MPCooperative_field_0x1A4 = (VectorClass *)((char *)MPCooperative_field_0x1A4 + 24); /*0x5c14f1*/
@@ -451,7 +451,7 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   do /*0x5c151f*/
   {
     VectorClass::Construct(p_MPCooperative_field_0x264, 0, 0); /*0x5c1506*/
-    p_MPCooperative_field_0x264->vtable0 = &(void*)(void*)&DynamicVectorClass_int_vftable; /*0x5c150b*/
+    p_MPCooperative_field_0x264->vtable0 = (void*)&DynamicVectorClass_int_vftable; /*0x5c150b*/
     p_MPCooperative_field_0x264[1].Items = (void *)10; /*0x5c1511*/
     p_MPCooperative_field_0x264[1].vtable0 = 0; /*0x5c1518*/
     p_MPCooperative_field_0x264 = (VectorClass *)((char *)p_MPCooperative_field_0x264 + 24); /*0x5c151b*/
@@ -460,10 +460,10 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   while ( v13 ); /*0x5c151f*/
   p_MPCooperative_field_0x324 = &this->MPCooperative_field_0x324; /*0x5c1521*/
   CoopCampaignVector::Construct((CoopCampaignVector *)&this->MPCooperative_field_0x324, 0, 0); /*0x5c152b*/
-  this->MPCooperative_field_0x324 = (int)&(void*)(void*)&DynamicVectorClass_CoopCampaignClass___vftable; /*0x5c1530*/
-  *(_DWORD *)&this->__pad_328[16] = 10; /*0x5c1536*/
-  *(_DWORD *)&this->__pad_328[12] = 0; /*0x5c153d*/
-  this->MPCooperative_field_0x0 = &(void*)(void*)&MPCooperative_vftable; /*0x5c1540*/
+  this->MPCooperative_field_0x324 = (int)&DynamicVectorClass_CoopCampaignClass___vftable; /*0x5c1530*/
+  *(unsigned int *)&this->__pad_328[16] = 10; /*0x5c1536*/
+  *(unsigned int *)&this->__pad_328[12] = 0; /*0x5c153d*/
+  this->MPCooperative_field_0x0 = (void*)&MPCooperative_vftable; /*0x5c1540*/
   this->MPCooperative_field_0x40 = 0; /*0x5c1546*/
   this->MPCooperative_field_0x44 = 0; /*0x5c1549*/
   this->MPCooperative_field_0x33C = 0; /*0x5c154c*/
@@ -473,9 +473,9 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
   IDA_BYTE1(this->MPCooperative_field_0x48) = 0; /*0x5c155d*/
   this->MPCooperative_field_0x4C = 0; /*0x5c1561*/
   IDA_LOBYTE(this->MPCooperative_field_0x340) = 1; /*0x5c1564*/
-  for ( i = *(_DWORD *)&this->__pad_328[12] - 1; i >= 0; --i ) /*0x5c1572*/
+  for ( i = *(unsigned int *)&this->__pad_328[12] - 1; i >= 0; --i ) /*0x5c1572*/
   {
-    v16 = *(_DWORD *)this->__pad_328; /*0x5c1574*/
+    v16 = *(unsigned int *)this->__pad_328; /*0x5c1574*/
     v17 = *(void **)(v16 + 4 * i); /*0x5c157a*/
     if ( v17 ) /*0x5c157f*/
     {
@@ -483,9 +483,9 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
       RA2_OPDEL(v17); /*0x5c1589*/
     }
   }
-  v18 = *(_DWORD *)&this->__pad_328[4]; /*0x5c1598*/
+  v18 = *(unsigned int *)&this->__pad_328[4]; /*0x5c1598*/
   (*(void (__thiscall **)(int *))(*p_MPCooperative_field_0x324 + 12))(&this->MPCooperative_field_0x324); /*0x5c159d*/
-  (*(void (__thiscall **)(int *, int, _DWORD))(*p_MPCooperative_field_0x324 + 8))( /*0x5c15a6*/
+  (*(void (__thiscall **)(int *, int, unsigned int))(*p_MPCooperative_field_0x324 + 8))( /*0x5c15a6*/
     &this->MPCooperative_field_0x324,
     v18,
     0);
@@ -498,14 +498,14 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
     else
       v20 = 0; /*0x5c15dd*/
     Movie::SetupScreen((int)v20, aP6); /*0x5c15e6*/
-    v21 = *(_DWORD *)&this->__pad_328[4]; /*0x5c15eb*/
-    if ( *(_DWORD *)&this->__pad_328[12] >= v21 ) /*0x5c15f3*/
+    v21 = *(unsigned int *)&this->__pad_328[4]; /*0x5c15eb*/
+    if ( *(unsigned int *)&this->__pad_328[12] >= v21 ) /*0x5c15f3*/
     {
       if ( !this->__pad_328[9] && v21 ) /*0x5c15fe*/
         continue; /*0x5c15fe*/
-      v22 = *(_DWORD *)&this->__pad_328[16]; /*0x5c1600*/
+      v22 = *(unsigned int *)&this->__pad_328[16]; /*0x5c1600*/
       if ( v22 <= 0 /*0x5c160f*/
-        || !(*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(*p_MPCooperative_field_0x324 + 8))(
+        || !(*(uint8_t (__thiscall **)(int *, int, unsigned int))(*p_MPCooperative_field_0x324 + 8))(
               &this->MPCooperative_field_0x324,
               v21 + v22,
               0) )
@@ -513,10 +513,10 @@ unsigned int * MPCooperative::ctor(MultiplayerGameMode * aP1, MPCooperative * aP
         continue; /*0x5c160f*/
       }
     }
-    v23 = *(_DWORD *)&this->__pad_328[12]; /*0x5c1616*/
-    v24 = *(_DWORD *)this->__pad_328; /*0x5c1619*/
-    *(_DWORD *)&this->__pad_328[12] = v23 + 1; /*0x5c161f*/
-    *(_DWORD *)(v24 + 4 * v23) = v20; /*0x5c1622*/
+    v23 = *(unsigned int *)&this->__pad_328[12]; /*0x5c1616*/
+    v24 = *(unsigned int *)this->__pad_328; /*0x5c1619*/
+    *(unsigned int *)&this->__pad_328[12] = v23 + 1; /*0x5c161f*/
+    *(unsigned int *)(v24 + 4 * v23) = v20; /*0x5c1622*/
   }
   return &this->MPCooperative_field_0x0; /*0x5c1638*/
 }
@@ -532,7 +532,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
   int MultiplayerGameMode_field_0x18; // eax
   void *v7; // esi
   int j; // ebp
-  void (__thiscall ***v9)(_DWORD, int); // ecx
+  void (__thiscall ***v9)(unsigned int, int); // ecx
   void *v10; // eax
   int *p_MultiplayerGameMode_field_0x14; // esi
   int v12; // ebp
@@ -544,7 +544,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
 
   v3 = v2; /*0x5c1643*/
   MultiplayerGameMode_field_0x08 = (Array *)v2[2].MultiplayerGameMode_field_0x08; /*0x5c1647*/
-  *(_DWORD *)v2->__pad_0 = &(void*)(void*)&MPCooperative_vftable; /*0x5c164a*/
+  *(unsigned int *)v2->__pad_0 = (void*)&MPCooperative_vftable; /*0x5c164a*/
   if ( MultiplayerGameMode_field_0x08 ) /*0x5c1652*/
   {
     Array::Cleanup(MultiplayerGameMode_field_0x08); /*0x5c1656*/
@@ -568,7 +568,7 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
     RA2_OPDEL(*(void **)(v3[3].MultiplayerGameMode_field_0x08 + 4 * j)); /*0x5c16af*/
   (*(void (__thiscall **)(int *))(v3[3].MultiplayerGameMode_field_0x04 + 12))(&v3[3].MultiplayerGameMode_field_0x04); /*0x5c16c3*/
   (*(void (__thiscall **)(int *))(v3[3].MultiplayerGameMode_field_0x04 + 8))(&v3[3].MultiplayerGameMode_field_0x04); /*0x5c16ce*/
-  v9 = (void (__thiscall ***)(_DWORD, int))v3[2].MultiplayerGameMode_field_0x18; /*0x5c16d1*/
+  v9 = (void (__thiscall ***)(unsigned int, int))v3[2].MultiplayerGameMode_field_0x18; /*0x5c16d1*/
   if ( v9 ) /*0x5c16d6*/
   {
     (**v9)(v9, 1); /*0x5c16dc*/
@@ -576,28 +576,28 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
   }
   IDA_LOBYTE(v3->MultiplayerGameMode_field_0x04) = 0; /*0x5c16e1*/
   v10 = (void *)v3[28].MultiplayerGameMode_field_0x18; /*0x5c16e4*/
-  v3[28].MultiplayerGameMode_field_0x14 = (int)&(void*)(void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c16e9*/
+  v3[28].MultiplayerGameMode_field_0x14 = (int)&VectorClass_CoopCampaignClass___vftable; /*0x5c16e9*/
   if ( v10 && IDA_BYTE1(v3[29].MultiplayerGameMode_field_0x04) ) /*0x5c16f1*/
   {
     RA2_OPDEL(v10); /*0x5c16f7*/
     v3[28].MultiplayerGameMode_field_0x18 = 0; /*0x5c16ff*/
   }
   IDA_BYTE1(v3[29].MultiplayerGameMode_field_0x04) = 0; /*0x5c1702*/
-  *(_DWORD *)v3[29].__pad_0 = 0; /*0x5c1705*/
+  *(unsigned int *)v3[29].__pad_0 = 0; /*0x5c1705*/
   p_MultiplayerGameMode_field_0x14 = &v3[28].MultiplayerGameMode_field_0x14; /*0x5c1708*/
   v12 = 8; /*0x5c170e*/
   do /*0x5c173b*/
   {
     v13 = (void *)*(p_MultiplayerGameMode_field_0x14 - 5); /*0x5c1713*/
     p_MultiplayerGameMode_field_0x14 -= 6; /*0x5c1716*/
-    *p_MultiplayerGameMode_field_0x14 = (int)&(void*)(void*)&VectorClass_int_vftable; /*0x5c171b*/
-    if ( v13 && *((_BYTE *)p_MultiplayerGameMode_field_0x14 + 13) ) /*0x5c1723*/
+    *p_MultiplayerGameMode_field_0x14 = (int)&VectorClass_int_vftable; /*0x5c171b*/
+    if ( v13 && *((unsigned char *)p_MultiplayerGameMode_field_0x14 + 13) ) /*0x5c1723*/
     {
       RA2_OPDEL(v13); /*0x5c1729*/
       p_MultiplayerGameMode_field_0x14[1] = 0; /*0x5c1731*/
     }
     --v12; /*0x5c1734*/
-    *((_BYTE *)p_MultiplayerGameMode_field_0x14 + 13) = 0; /*0x5c1735*/
+    *((unsigned char *)p_MultiplayerGameMode_field_0x14 + 13) = 0; /*0x5c1735*/
     p_MultiplayerGameMode_field_0x14[2] = 0; /*0x5c1738*/
   }
   while ( v12 ); /*0x5c173b*/
@@ -607,19 +607,19 @@ AbstractClass * * MPCooperative_Cleanup(MPCooperative * aP0, int a2)
   {
     v16 = (void *)*(p_MultiplayerGameMode_field_0x18 - 5); /*0x5c1748*/
     p_MultiplayerGameMode_field_0x18 -= 6; /*0x5c174b*/
-    *p_MultiplayerGameMode_field_0x18 = (int)&(void*)(void*)&VectorClass_int_vftable; /*0x5c1750*/
-    if ( v16 && *((_BYTE *)p_MultiplayerGameMode_field_0x18 + 13) ) /*0x5c1758*/
+    *p_MultiplayerGameMode_field_0x18 = (int)&VectorClass_int_vftable; /*0x5c1750*/
+    if ( v16 && *((unsigned char *)p_MultiplayerGameMode_field_0x18 + 13) ) /*0x5c1758*/
     {
       RA2_OPDEL(v16); /*0x5c175e*/
       p_MultiplayerGameMode_field_0x18[1] = 0; /*0x5c1766*/
     }
     --v15; /*0x5c1769*/
-    *((_BYTE *)p_MultiplayerGameMode_field_0x18 + 13) = 0; /*0x5c176a*/
+    *((unsigned char *)p_MultiplayerGameMode_field_0x18 + 13) = 0; /*0x5c176a*/
     p_MultiplayerGameMode_field_0x18[2] = 0; /*0x5c176d*/
   }
   while ( v15 ); /*0x5c1770*/
   v17 = (void *)v3[3].MultiplayerGameMode_field_0x08; /*0x5c1772*/
-  v3[3].MultiplayerGameMode_field_0x04 = (int)&(void*)(void*)&VectorClass_NodeNameType___vftable; /*0x5c1775*/
+  v3[3].MultiplayerGameMode_field_0x04 = (int)&VectorClass_NodeNameType___vftable; /*0x5c1775*/
   if ( v17 && IDA_BYTE1(v3[3].MultiplayerGameMode_field_0x10) ) /*0x5c1781*/
   {
     RA2_OPDEL(v17); /*0x5c1787*/
@@ -770,7 +770,7 @@ CampaignClass * * MPCooperative::CopyTo()
       Array::GetElementAt(v11, &String2, 0); /*0x5c1bc9*/
       Debug::Log(); /*0x5c1be5*/
       if ( _strnicmp( /*0x5c1c0e*/
-             (const char *)(*(_DWORD *)(dword_A8B8CC + 4 * *(_DWORD *)&stru_A8B250.__pad_0[4]) + 88),
+             (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88),
              String2,
              strlen(String2)) )
       {
@@ -782,7 +782,7 @@ CampaignClass * * MPCooperative::CopyTo()
           Array::GetElementAt((int *)this->MPCooperative_field_0x40, &String2, 0); /*0x5c1c45*/
         }
         while ( _strnicmp( /*0x5c1c6f*/
-                  (const char *)(*(_DWORD *)(dword_A8B8CC + 4 * *(_DWORD *)&stru_A8B250.__pad_0[4]) + 88),
+                  (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88),
                   String2,
                   strlen(String2)) );
       }
@@ -796,18 +796,18 @@ CampaignClass * * MPCooperative::CopyTo()
       v10 = 0; /*0x5c1b3a*/
       if ( dword_A8B8D8 > 0 ) /*0x5c1b3e*/
       {
-        while ( _strnicmp((const char *)(*(_DWORD *)(dword_A8B8CC + 4 * v10) + 88), String2, strlen(String2)) ) /*0x5c1b69*/
+        while ( _strnicmp((const char *)(*(unsigned int *)(dword_A8B8CC + 4 * v10) + 88), String2, strlen(String2)) ) /*0x5c1b69*/
         {
           if ( ++v10 >= dword_A8B8D8 ) /*0x5c1b73*/
             goto LABEL_25; /*0x5c1b73*/
         }
-        *(_DWORD *)&stru_A8B250.__pad_0[4] = v10; /*0x5c1b79*/
+        *(unsigned int *)&stru_A8B250.__pad_0[4] = v10; /*0x5c1b79*/
         LoadScenarioClassByIndex(v10); /*0x5c1b7f*/
       }
   LABEL_25:
       if ( v10 == dword_A8B8D8 ) /*0x5c1b8a*/
       {
-        *(_DWORD *)&stru_A8B250.__pad_0[4] = 0; /*0x5c1b92*/
+        *(unsigned int *)&stru_A8B250.__pad_0[4] = 0; /*0x5c1b92*/
         LoadScenarioClassByIndex(0); /*0x5c1b9c*/
       }
     }
@@ -829,7 +829,7 @@ int MPCooperative::InitSession()
 {
   int v2; // ebx
   MissionClass *v3; // eax
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   int v6; // [esp+10h] [ebp-8h] BYREF
   char *String2; // [esp+14h] [ebp-4h] BYREF
 
@@ -856,7 +856,7 @@ int MPCooperative::InitSession()
     (*((void (__thiscall **)(MPCooperative *))this->MPCooperative_field_0x0 + 4))(this); /*0x5c1d5d*/
     return -1; /*0x5c1d6f*/
   }
-  while ( _strnicmp((const char *)(*(_DWORD *)(dword_A8B8CC + 4 * v2) + 88), String2, strlen(String2)) ) /*0x5c1d51*/
+  while ( _strnicmp((const char *)(*(unsigned int *)(dword_A8B8CC + 4 * v2) + 88), String2, strlen(String2)) ) /*0x5c1d51*/
   {
     if ( ++v2 >= dword_A8B8D8 ) /*0x5c1d5b*/
       goto LABEL_10; /*0x5c1d5b*/
@@ -872,14 +872,14 @@ CampaignClass * * MPCooperative::Seek()
   LRESULT v3; // edi
   void *MPCooperative_field_0x40; // ebx
   MissionClass *v5; // eax
-  _DWORD *v6; // eax
+  unsigned int *v6; // eax
   int *v7; // ecx
   int v8; // eax
   int v9; // ecx
   int v10; // ebx
   HWND GameUI; // eax
   int i; // edi
-  unsigned __int8 (__thiscall **MPCooperative_field_0x0)(MPCooperative *, int); // ebp
+  uint8_t (__thiscall **MPCooperative_field_0x0)(MPCooperative *, int); // ebp
   int PlayerSide; // eax
   CampaignClass *MPCooperative_field_0x33C; // [esp-8h] [ebp-20h]
   int v16; // [esp-8h] [ebp-20h]
@@ -901,14 +901,14 @@ CampaignClass * * MPCooperative::Seek()
         Array::Cleanup((Array *)this->MPCooperative_field_0x40); /*0x5c1e3f*/
         RA2_OPDEL(MPCooperative_field_0x40); /*0x5c1e45*/
       }
-      this->MPCooperative_field_0x40 = *(void **)(*(_DWORD *)this->__pad_328 + 4 * v3); /*0x5c1e58*/
+      this->MPCooperative_field_0x40 = *(void **)(*(unsigned int *)this->__pad_328 + 4 * v3); /*0x5c1e58*/
       v5 = (MissionClass *)RA2_OPNEW(0x70u); /*0x5c1e5b*/
       if ( v5 ) /*0x5c1e65*/
         v6 = MissionClass::Init(v5); /*0x5c1e69*/
       else
         v6 = 0; /*0x5c1e70*/
-      *(_DWORD *)(*(_DWORD *)this->__pad_328 + 4 * v3) = v6; /*0x5c1e79*/
-      Movie::SetupScreen(*(_DWORD *)(*(_DWORD *)this->__pad_328 + 4 * v3), v3); /*0x5c1e85*/
+      *(unsigned int *)(*(unsigned int *)this->__pad_328 + 4 * v3) = v6; /*0x5c1e79*/
+      Movie::SetupScreen(*(unsigned int *)(*(unsigned int *)this->__pad_328 + 4 * v3), v3); /*0x5c1e85*/
       this->MPCooperative_field_0x4C = (void *)v3; /*0x5c1e8a*/
       if ( dword_A8DA84 == 2 ) /*0x5c1e95*/
         String::AssignWideToChar((char *)this->MPCooperative_field_0x40, (char *)*dword_A8DA78, (char *)dword_A8DA78[1]); /*0x5c1ea6*/
@@ -928,7 +928,7 @@ CampaignClass * * MPCooperative::Seek()
     if ( v18 ) /*0x5c1ecf*/
     {
       v7 = (int *)this->MPCooperative_field_0x40; /*0x5c1eda*/
-      if ( v7 && (unsigned __int8)Movie::GetState(v7, &v17) ) /*0x5c1ee6*/
+      if ( v7 && (uint8_t)Movie::GetState(v7, &v17) ) /*0x5c1ee6*/
       {
         v8 = v17; /*0x5c1ef7*/
       }
@@ -942,18 +942,18 @@ CampaignClass * * MPCooperative::Seek()
       {
         if ( v9 ) /*0x5c1f11*/
         {
-          v10 = *(_DWORD *)(*(_DWORD *)(v18->abstractFlags + 4 * v8) + 16); /*0x5c1f22*/
+          v10 = *(unsigned int *)(*(unsigned int *)(v18->abstractFlags + 4 * v8) + 16); /*0x5c1f22*/
           GameUI = (HWND)Dialog::FindGameUI(); /*0x5c1f25*/
           Campaign::SetupMovie(GameUI); /*0x5c1f2d*/
           for ( i = 0; i < dword_A8DA84; ++i ) /*0x5c1f3b*/
           {
-            MPCooperative_field_0x0 = (unsigned __int8 (__thiscall **)(MPCooperative *, int))this->MPCooperative_field_0x0; /*0x5c1f43*/
+            MPCooperative_field_0x0 = (uint8_t (__thiscall **)(MPCooperative *, int))this->MPCooperative_field_0x0; /*0x5c1f43*/
             PlayerSide = SessionClass::GetPlayerSide((int *)dword_A8DA78[i]); /*0x5c1f48*/
             if ( !MPCooperative_field_0x0[7](this, PlayerSide) ) /*0x5c1f50*/
             {
               if ( v10 <= 1 ) /*0x5c1f5a*/
               {
-                v16 = SideClass::FindByName(**(SideClass ***)(*(_DWORD *)(v18->abstractFlags + 4 * v17) + 4)); /*0x5c1f78*/
+                v16 = SideClass::FindByName(**(SideClass ***)(*(unsigned int *)(v18->abstractFlags + 4 * v17) + 4)); /*0x5c1f78*/
                 SessionClass::SetPlayerOption((int *)dword_A8DA78[i], v16); /*0x5c1f82*/
               }
               else
@@ -998,7 +998,7 @@ int MPCooperative::Revert()
   if ( !v8 ) /*0x5c1fca*/
     return -2; /*0x5c1fcc*/
   MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c1fd6*/
-  if ( MPCooperative_field_0x40 && (unsigned __int8)Movie::GetState(MPCooperative_field_0x40, &v7) ) /*0x5c1fe2*/
+  if ( MPCooperative_field_0x40 && (uint8_t)Movie::GetState(MPCooperative_field_0x40, &v7) ) /*0x5c1fe2*/
   {
     v4 = v7; /*0x5c1ff3*/
   }
@@ -1007,10 +1007,10 @@ int MPCooperative::Revert()
     v4 = 0; /*0x5c1feb*/
     v7 = 0; /*0x5c1fed*/
   }
-  if ( v4 >= *(_DWORD *)(v8 + 32) ) /*0x5c1ffe*/
+  if ( v4 >= *(unsigned int *)(v8 + 32) ) /*0x5c1ffe*/
     return -2; /*0x5c2000*/
-  v5 = *(_DWORD *)(*(_DWORD *)(v8 + 20) + 4 * v4); /*0x5c200d*/
-  v6 = *(_DWORD *)(v5 + 16); /*0x5c2010*/
+  v5 = *(unsigned int *)(*(unsigned int *)(v8 + 20) + 4 * v4); /*0x5c200d*/
+  v6 = *(unsigned int *)(v5 + 16); /*0x5c2010*/
   if ( !v6 ) /*0x5c2015*/
     return -2; /*0x5c2017*/
   if ( v6 <= 1 ) /*0x5c2024*/
@@ -1056,14 +1056,14 @@ int MPCooperative::StartGame(int a2, void ** a3, void * Block, int a5, short a6,
       v16);
     v13 = Block; /*0x5c20c7*/
     this->MPCooperative_field_0x33C = (CampaignClass *)a2; /*0x5c20cb*/
-    a3 = &(void*)(void*)&VectorClass_int_vftable; /*0x5c20d3*/
+    a3 = (void*)&VectorClass_int_vftable; /*0x5c20d3*/
     if ( v13 && IDA_HIBYTE(a6) ) /*0x5c20e3*/
       RA2_OPDEL(v13); /*0x5c20e6*/
     return 1; /*0x5c20ef*/
   }
   else
   {
-    a3 = &(void*)(void*)&VectorClass_int_vftable; /*0x5c2063*/
+    a3 = (void*)&VectorClass_int_vftable; /*0x5c2063*/
     if ( Block ) /*0x5c206d*/
     {
       if ( IDA_HIBYTE(a6) ) /*0x5c2075*/
@@ -1233,10 +1233,10 @@ int MPCooperative::SyncState()
   {
     v4 = MPCooperative_field_0x1A4[2]; /*0x5c275e*/
     (*(void (__thiscall **)(int *))(*MPCooperative_field_0x1A4 + 12))(MPCooperative_field_0x1A4); /*0x5c2763*/
-    (*(void (__thiscall **)(int *, int, _DWORD))(*MPCooperative_field_0x1A4 + 8))(MPCooperative_field_0x1A4, v4, 0); /*0x5c276d*/
+    (*(void (__thiscall **)(int *, int, unsigned int))(*MPCooperative_field_0x1A4 + 8))(MPCooperative_field_0x1A4, v4, 0); /*0x5c276d*/
     v5 = MPCooperative_field_0x1A4[50]; /*0x5c2776*/
     (*(void (__thiscall **)(int *))(MPCooperative_field_0x1A4[48] + 12))(MPCooperative_field_0x1A4 + 48); /*0x5c2784*/
-    (*(void (__thiscall **)(int *, int, _DWORD))(MPCooperative_field_0x1A4[48] + 8))( /*0x5c278e*/
+    (*(void (__thiscall **)(int *, int, unsigned int))(MPCooperative_field_0x1A4[48] + 8))( /*0x5c278e*/
       MPCooperative_field_0x1A4 + 48,
       v5,
       0);
@@ -1268,16 +1268,16 @@ int MPCooperative::SyncState()
       if ( v34 >= dword_A8DA84 ) /*0x5c2815*/
       {
         v20 = (*((int (__thiscall **)(MPCooperative *))v8->MPCooperative_field_0x0 + 28))(v8); /*0x5c28d2*/
-        v21 = *(_DWORD *)v10; /*0x5c28d4*/
-        if ( *((_DWORD *)v10 + 2) < *(_DWORD *)v10 /*0x5c28f7*/
+        v21 = *(unsigned int *)v10; /*0x5c28d4*/
+        if ( *((unsigned int *)v10 + 2) < *(unsigned int *)v10 /*0x5c28f7*/
           || (v10[5] || !v21)
-          && (v22 = *((_DWORD *)v10 + 3), v22 > 0)
-          && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*((_DWORD *)v10 - 2) + 8))(v10 - 8, v21 + v22, 0) )
+          && (v22 = *((unsigned int *)v10 + 3), v22 > 0)
+          && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(*((unsigned int *)v10 - 2) + 8))(v10 - 8, v21 + v22, 0) )
         {
-          v23 = *((_DWORD *)v10 + 2); /*0x5c28fe*/
-          v24 = *((_DWORD *)v10 - 1); /*0x5c2901*/
-          *((_DWORD *)v10 + 2) = v23 + 1; /*0x5c2907*/
-          *(_DWORD *)(v24 + 4 * v23) = v20; /*0x5c290a*/
+          v23 = *((unsigned int *)v10 + 2); /*0x5c28fe*/
+          v24 = *((unsigned int *)v10 - 1); /*0x5c2901*/
+          *((unsigned int *)v10 + 2) = v23 + 1; /*0x5c2907*/
+          *(unsigned int *)(v24 + 4 * v23) = v20; /*0x5c290a*/
         }
         while ( 1 ) /*0x5c2921*/
         {
@@ -1293,51 +1293,51 @@ int MPCooperative::SyncState()
         }
   LABEL_31:
         *v9 = v25; /*0x5c293b*/
-        v27 = *((_DWORD *)v10 + 48); /*0x5c293e*/
-        if ( *((_DWORD *)v10 + 50) < v27 /*0x5c2975*/
+        v27 = *((unsigned int *)v10 + 48); /*0x5c293e*/
+        if ( *((unsigned int *)v10 + 50) < v27 /*0x5c2975*/
           || (v10[197] || !v27)
-          && (v28 = *((_DWORD *)v10 + 51), v28 > 0)
-          && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*((_DWORD *)v10 + 46) + 8))(
+          && (v28 = *((unsigned int *)v10 + 51), v28 > 0)
+          && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(*((unsigned int *)v10 + 46) + 8))(
                v10 + 184,
                v27 + v28,
                0) )
         {
-          v29 = *((_DWORD *)v10 + 50); /*0x5c297c*/
-          v30 = *((_DWORD *)v10 + 47); /*0x5c2982*/
-          *((_DWORD *)v10 + 50) = v29 + 1; /*0x5c298b*/
-          *(_DWORD *)(v30 + 4 * v29) = v25; /*0x5c2991*/
+          v29 = *((unsigned int *)v10 + 50); /*0x5c297c*/
+          v30 = *((unsigned int *)v10 + 47); /*0x5c2982*/
+          *((unsigned int *)v10 + 50) = v29 + 1; /*0x5c298b*/
+          *(unsigned int *)(v30 + 4 * v29) = v25; /*0x5c2991*/
         }
       }
       else
       {
         v11 = (*((int (__thiscall **)(MPCooperative *))v8->MPCooperative_field_0x0 + 27))(v8); /*0x5c2823*/
-        v12 = *(_DWORD *)v10; /*0x5c2825*/
-        if ( *((_DWORD *)v10 + 2) < *(_DWORD *)v10 /*0x5c2848*/
+        v12 = *(unsigned int *)v10; /*0x5c2825*/
+        if ( *((unsigned int *)v10 + 2) < *(unsigned int *)v10 /*0x5c2848*/
           || (v10[5] || !v12)
-          && (v13 = *((_DWORD *)v10 + 3), v13 > 0)
-          && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*((_DWORD *)v10 - 2) + 8))(v10 - 8, v12 + v13, 0) )
+          && (v13 = *((unsigned int *)v10 + 3), v13 > 0)
+          && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(*((unsigned int *)v10 - 2) + 8))(v10 - 8, v12 + v13, 0) )
         {
-          v14 = *((_DWORD *)v10 + 2); /*0x5c284f*/
-          v15 = *((_DWORD *)v10 - 1); /*0x5c2852*/
-          *((_DWORD *)v10 + 2) = v14 + 1; /*0x5c2858*/
-          *(_DWORD *)(v15 + 4 * v14) = v11; /*0x5c285b*/
+          v14 = *((unsigned int *)v10 + 2); /*0x5c284f*/
+          v15 = *((unsigned int *)v10 - 1); /*0x5c2852*/
+          *((unsigned int *)v10 + 2) = v14 + 1; /*0x5c2858*/
+          *(unsigned int *)(v15 + 4 * v14) = v11; /*0x5c285b*/
         }
-        v16 = *((_DWORD *)v10 + 48); /*0x5c285e*/
-        if ( *((_DWORD *)v10 + 50) < v16 /*0x5c289f*/
+        v16 = *((unsigned int *)v10 + 48); /*0x5c285e*/
+        if ( *((unsigned int *)v10 + 50) < v16 /*0x5c289f*/
           || (v10[197] || !v16)
-          && (v17 = *((_DWORD *)v10 + 51), v17 > 0)
-          && (*(unsigned __int8 (__thiscall **)(char *, int, _DWORD))(*((_DWORD *)v10 + 46) + 8))(
+          && (v17 = *((unsigned int *)v10 + 51), v17 > 0)
+          && (*(uint8_t (__thiscall **)(char *, int, unsigned int))(*((unsigned int *)v10 + 46) + 8))(
                v10 + 184,
                v16 + v17,
                0) )
         {
-          v18 = *((_DWORD *)v10 + 50); /*0x5c28aa*/
-          v19 = *((_DWORD *)v10 + 47); /*0x5c28b0*/
-          *((_DWORD *)v10 + 50) = v18 + 1; /*0x5c28b9*/
-          *(_DWORD *)(v19 + 4 * v18) = *v9; /*0x5c28c2*/
+          v18 = *((unsigned int *)v10 + 50); /*0x5c28aa*/
+          v19 = *((unsigned int *)v10 + 47); /*0x5c28b0*/
+          *((unsigned int *)v10 + 50) = v18 + 1; /*0x5c28b9*/
+          *(unsigned int *)(v19 + 4 * v18) = *v9; /*0x5c28c2*/
         }
       }
-      sprintf(v38, ",%d,%d", *(_DWORD *)(*((_DWORD *)v10 - 1) + 4 * i), *(_DWORD *)(*((_DWORD *)v10 + 47) + 4 * i)); /*0x5c29b3*/
+      sprintf(v38, ",%d,%d", *(unsigned int *)(*((unsigned int *)v10 - 1) + 4 * i), *(unsigned int *)(*((unsigned int *)v10 + 47) + 4 * i)); /*0x5c29b3*/
       strcat(Buffer, v38); /*0x5c29df*/
       ++v9; /*0x5c29e3*/
       v10 += 24; /*0x5c29e9*/
@@ -1517,30 +1517,30 @@ void MPCooperative_Play(AnimClass * aP0, int a2, int a3)
   int result; // eax
   char v10; // dl
 
-  v3 = *(_DWORD *)(a2 + 16); /*0x5c2d07*/
+  v3 = *(unsigned int *)(a2 + 16); /*0x5c2d07*/
   v4 = 0; /*0x5c2d0a*/
   for ( i = 0; i < v3; ++i ) /*0x5c2d15*/
   {
-    if ( *(_BYTE *)(i + a3) ) /*0x5c2d17*/
+    if ( *(unsigned char *)(i + a3) ) /*0x5c2d17*/
       ++v4; /*0x5c2d1d*/
   }
   v6 = 0; /*0x5c2d28*/
   for ( j = 0; j < dword_A80238; ++j ) /*0x5c2d2e*/
   {
     v8 = *(void **)&dword_A8022C->AbstractClass[4 * j]; /*0x5c2d36*/
-    if ( v8 && (unsigned __int8)House::IsCurrentPlayer(v8) ) /*0x5c2d3d*/
+    if ( v8 && (uint8_t)House::IsCurrentPlayer(v8) ) /*0x5c2d3d*/
       ++v6; /*0x5c2d46*/
   }
   if ( v4 >= v6 ) /*0x5c2d53*/
   {
-    result = *((_DWORD *)dword_A8B230 + 1145); /*0x5c2d96*/
-    if ( *(_BYTE *)(result + a3) ) /*0x5c2d9c*/
+    result = *((unsigned int *)dword_A8B230 + 1145); /*0x5c2d96*/
+    if ( *(unsigned char *)(result + a3) ) /*0x5c2d9c*/
     {
       do /*0x5c2db4*/
       {
-        if ( result >= *(_DWORD *)(a2 + 16) ) /*0x5c2dab*/
+        if ( result >= *(unsigned int *)(a2 + 16) ) /*0x5c2dab*/
           break; /*0x5c2dab*/
-        v10 = *(_BYTE *)(result + a3 + 1); /*0x5c2dad*/
+        v10 = *(unsigned char *)(result + a3 + 1); /*0x5c2dad*/
         ++result; /*0x5c2db1*/
       }
       while ( v10 ); /*0x5c2db4*/
@@ -1548,15 +1548,15 @@ void MPCooperative_Play(AnimClass * aP0, int a2, int a3)
   }
   else
   {
-    for ( result = Random::Range((_DWORD *)dword_A8B230 + 134, 0, *((_DWORD *)dword_A8B230 + 1145) - 1); /*0x5c2d70*/
-          *(_BYTE *)(result + a3);
-          result = (result + 1) % *((_DWORD *)dword_A8B230 + 1145) )
+    for ( result = Random::Range((unsigned int *)dword_A8B230 + 134, 0, *((unsigned int *)dword_A8B230 + 1145) - 1); /*0x5c2d70*/
+          *(unsigned char *)(result + a3);
+          result = (result + 1) % *((unsigned int *)dword_A8B230 + 1145) )
     {
       ; /*0x5c2d86*/
     }
   }
-  *(_BYTE *)(result + a3) = 1; /*0x5c2dba*/
-  *((_DWORD *)dword_A8B230 + result + 1120) = aP0; /*0x5c2dc7*/
+  *(unsigned char *)(result + a3) = 1; /*0x5c2dba*/
+  *((unsigned int *)dword_A8B230 + result + 1120) = aP0; /*0x5c2dc7*/
   return result; /*0x5c2dc4*/
 }
 }
@@ -1579,10 +1579,10 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
 
   v4 = a3; /*0x5c2de0*/
   v5 = 0; /*0x5c2de6*/
-  v6 = *(_DWORD *)(a3 + 16); /*0x5c2de8*/
+  v6 = *(unsigned int *)(a3 + 16); /*0x5c2de8*/
   for ( i = 0; i < v6; ++i ) /*0x5c2df4*/
   {
-    if ( *(_BYTE *)(i + a4) ) /*0x5c2df6*/
+    if ( *(unsigned char *)(i + a4) ) /*0x5c2df6*/
       ++v5; /*0x5c2dfc*/
   }
   v8 = 0; /*0x5c2e08*/
@@ -1591,8 +1591,8 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
   {
     do /*0x5c2e2e*/
     {
-      v10 = (House *)*((_DWORD *)stru_A80220.? + v9); /*0x5c2e15*/
-      if ( v10 && (unsigned __int8)House::IsCurrentPlayer(v10) ) /*0x5c2e1c*/
+      v10 = (House *)*((unsigned int *)stru_A80220.? + v9); /*0x5c2e15*/
+      if ( v10 && (uint8_t)House::IsCurrentPlayer(v10) ) /*0x5c2e1c*/
         ++v8; /*0x5c2e25*/
       ++v9; /*0x5c2e2b*/
     }
@@ -1602,18 +1602,18 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
   if ( v5 >= v8 ) /*0x5c2e37*/
   {
     vtable2 = (int)dword_A8B230[127].vtable2; /*0x5c2ea2*/
-    if ( *(_BYTE *)(vtable2 + a4) ) /*0x5c2ea8*/
+    if ( *(unsigned char *)(vtable2 + a4) ) /*0x5c2ea8*/
     {
       do /*0x5c2ebc*/
       {
         if ( vtable2 >= v4->q010 ) /*0x5c2eb3*/
           break; /*0x5c2eb3*/
-        v15 = *(_BYTE *)(vtable2 + a4 + 1); /*0x5c2eb5*/
+        v15 = *(unsigned char *)(vtable2 + a4 + 1); /*0x5c2eb5*/
         ++vtable2; /*0x5c2eb9*/
       }
       while ( v15 ); /*0x5c2ebc*/
     }
-    *(_BYTE *)(vtable2 + a4) = 1; /*0x5c2ec2*/
+    *(unsigned char *)(vtable2 + a4) = 1; /*0x5c2ec2*/
     *(&dword_A8B230[124].uniqueId + vtable2) = a2; /*0x5c2ecc*/
     v16 = *(void **)(v4->q004 + 4 * vtable2); /*0x5c2ed8*/
     a1->MPCooperative_field_0x0 = v16; /*0x5c2ee0*/
@@ -1622,14 +1622,14 @@ unsigned int * MPCooperative::selectTeam(unsigned int * a1, int a2, int a3, int 
   else
   {
     for ( j = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, (int)dword_A8B230[127].vtable2 - 1); /*0x5c2e54*/
-          *(_BYTE *)(j + a4);
+          *(unsigned char *)(j + a4);
           j = (j + 1) % (int)dword_A8B230[127].vtable2 )
     {
       ; /*0x5c2e6a*/
     }
-    *(_BYTE *)(j + a4) = 1; /*0x5c2e76*/
+    *(unsigned char *)(j + a4) = 1; /*0x5c2e76*/
     *(&dword_A8B230[124].uniqueId + j) = a2; /*0x5c2e83*/
-    v12 = *(void **)(*(_DWORD *)(a3 + 4) + 4 * j); /*0x5c2e91*/
+    v12 = *(void **)(*(unsigned int *)(a3 + 4) + 4 * j); /*0x5c2e91*/
     a1->MPCooperative_field_0x0 = v12; /*0x5c2e98*/
     return &a1->MPCooperative_field_0x0; /*0x5c2e94*/
   }
@@ -1649,7 +1649,7 @@ AbstractClass * * MPCooperative::GetPlayerCount(int a1)
   int *v8; // ecx
   int v9; // ebx
   int v10; // esi
-  _DWORD *v11; // ecx
+  unsigned int *v11; // ecx
   int v12; // ecx
   char *j; // eax
   SessionClass **v14; // edi
@@ -1669,9 +1669,9 @@ AbstractClass * * MPCooperative::GetPlayerCount(int a1)
   {
     v4 = 0; /*0x5c2f44*/
     v5 = -1; /*0x5c2f46*/
-    v6 = (HouseClass *)*((_DWORD *)stru_A80220.? + i); /*0x5c2f49*/
+    v6 = (HouseClass *)*((unsigned int *)stru_A80220.? + i); /*0x5c2f49*/
     thisa = v6; /*0x5c2f4c*/
-    if ( !*(_BYTE *)(v6->relatedTagsCapacity + 422) ) /*0x5c2f53*/
+    if ( !*(unsigned char *)(v6->relatedTagsCapacity + 422) ) /*0x5c2f53*/
     {
       v7 = 0; /*0x5c2f67*/
       v8 = &dword_A8B230[124].uniqueId; /*0x5c2f69*/
@@ -1688,7 +1688,7 @@ AbstractClass * * MPCooperative::GetPlayerCount(int a1)
       while ( v7 < 16 ); /*0x5c2f7e*/
       if ( v4 ) /*0x5c2f82*/
       {
-        HouseClass::SetMapSeed(v6, *((_DWORD *)Block + v5)); /*0x5c3073*/
+        HouseClass::SetMapSeed(v6, *((unsigned int *)Block + v5)); /*0x5c3073*/
       }
       else
       {
@@ -1698,7 +1698,7 @@ AbstractClass * * MPCooperative::GetPlayerCount(int a1)
         if ( dword_A8DA84 <= 0 ) /*0x5c2fb9*/
           goto LABEL_17; /*0x5c2fb9*/
         v11 = dword_A8DA78; /*0x5c2fc1*/
-        while ( *(_DWORD *)(*v11 + 111) != i ) /*0x5c2fc8*/
+        while ( *(unsigned int *)(*v11 + 111) != i ) /*0x5c2fc8*/
         {
           ++v10; /*0x5c2fca*/
           ++v11; /*0x5c2fcb*/
@@ -1710,13 +1710,13 @@ AbstractClass * * MPCooperative::GetPlayerCount(int a1)
   LABEL_17:
           v12 = 0; /*0x5c2fd2*/
           for ( j = &stru_A8B250.__pad_0[140]; /*0x5c2fd4*/
-                (*((_DWORD *)j - 16) == -1 || *(_DWORD *)j != -2) && (int)j < (int)&stru_A8B250.__pad_0[172];
+                (*((unsigned int *)j - 16) == -1 || *(unsigned int *)j != -2) && (int)j < (int)&stru_A8B250.__pad_0[172];
                 j += 4 )
           {
             ++v12; /*0x5c2feb*/
           }
-          *(_DWORD *)&stru_A8B250.__pad_0[4 * v12 + 140] = v9; /*0x5c3031*/
-          *(_DWORD *)&stru_A8B250.__pad_0[4 * v12 + 172] = 1; /*0x5c3038*/
+          *(unsigned int *)&stru_A8B250.__pad_0[4 * v12 + 140] = v9; /*0x5c3031*/
+          *(unsigned int *)&stru_A8B250.__pad_0[4 * v12 + 172] = 1; /*0x5c3038*/
         }
         else
         {
@@ -1727,11 +1727,11 @@ AbstractClass * * MPCooperative::GetPlayerCount(int a1)
           SessionClass::GetOption((*v14)->GameMode); /*0x5c3023*/
         }
         Debug::Log(); /*0x5c3053*/
-        HouseClass::SetMapSeed(thisa, *((_DWORD *)Block + v9)); /*0x5c3067*/
+        HouseClass::SetMapSeed(thisa, *((unsigned int *)Block + v9)); /*0x5c3067*/
       }
     }
   }
-  *(_DWORD *)v17 = &(void*)(void*)&VectorClass_Cell_vftable; /*0x5c308d*/
+  *(unsigned int *)v17 = (void*)&VectorClass_Cell_vftable; /*0x5c308d*/
   if ( Block && v19 ) /*0x5c30a0*/
     RA2_OPDEL(Block); /*0x5c30a3*/
   return 1; /*0x5c30ad*/
@@ -1745,7 +1745,7 @@ ScenarioClass * * MPCooperative::BroadcastMessage()
   CampaignClass *MPCooperative_field_0x33C; // edx
   int *MPCooperative_field_0x40; // ecx
   int vtable2; // edi
-  _DWORD *v7; // esi
+  unsigned int *v7; // esi
   signed int v8; // eax
   int v9; // [esp+10h] [ebp-Ch] BYREF
   signed int v10; // [esp+14h] [ebp-8h]
@@ -1755,24 +1755,24 @@ ScenarioClass * * MPCooperative::BroadcastMessage()
   Debug::Log(); /*0x5c30e7*/
   if ( v2 <= 0 ) /*0x5c30f3*/
     return 0; /*0x5c30f8*/
-  *(_DWORD *)&stru_A8B250.__pad_0[36] = v2; /*0x5c30ff*/
+  *(unsigned int *)&stru_A8B250.__pad_0[36] = v2; /*0x5c30ff*/
   MPCooperative_field_0x33C = this->MPCooperative_field_0x33C; /*0x5c3105*/
   v10 = 0; /*0x5c310f*/
   v9 = 0; /*0x5c311a*/
   Movie::GetSection((int)&g_DDrawSurfaceManager, (int)MPCooperative_field_0x33C, &v11); /*0x5c311e*/
   if ( !v11 ) /*0x5c3129*/
     return 0; /*0x5c312e*/
-  if ( !*(_DWORD *)(v11 + 56) ) /*0x5c3135*/
+  if ( !*(unsigned int *)(v11 + 56) ) /*0x5c3135*/
     return 0; /*0x5c313d*/
   MPCooperative_field_0x40 = (int *)this->MPCooperative_field_0x40; /*0x5c3144*/
-  if ( !MPCooperative_field_0x40 || !(unsigned __int8)Movie::GetState(MPCooperative_field_0x40, &v9) ) /*0x5c3150*/
+  if ( !MPCooperative_field_0x40 || !(uint8_t)Movie::GetState(MPCooperative_field_0x40, &v9) ) /*0x5c3150*/
     v9 = 0; /*0x5c3159*/
-  if ( v9 >= *(_DWORD *)(v11 + 56) ) /*0x5c3168*/
+  if ( v9 >= *(unsigned int *)(v11 + 56) ) /*0x5c3168*/
     return 0; /*0x5c316d*/
   vtable2 = (int)dword_A8B230[127].vtable2; /*0x5c3179*/
   if ( vtable2 < 8 ) /*0x5c3182*/
   {
-    v7 = (_DWORD *)(4 * vtable2 + 11055740); /*0x5c3188*/
+    v7 = (unsigned int *)(4 * vtable2 + 11055740); /*0x5c3188*/
     do /*0x5c320b*/
     {
       if ( v10 >= v2 ) /*0x5c3198*/
@@ -1942,7 +1942,7 @@ int MPCooperative::ReceiveMessage()
   if ( !v12 ) /*0x5c3530*/
     return 0; /*0x5c3535*/
   v6 = (int *)this->MPCooperative_field_0x40; /*0x5c353c*/
-  if ( !v6 || !(unsigned __int8)Movie::GetState(v6, &v11) ) /*0x5c3548*/
+  if ( !v6 || !(uint8_t)Movie::GetState(v6, &v11) ) /*0x5c3548*/
     v11 = 0; /*0x5c3551*/
   if ( v11 >= v12->NeedsSaveOrLink ) /*0x5c3560*/
     return 0; /*0x5c3565*/
@@ -1951,21 +1951,21 @@ int MPCooperative::ReceiveMessage()
   {
     v8 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v7); /*0x5c3586*/
     v9 = 0; /*0x5c358c*/
-    v10 = *(_DWORD *)(v12->abstractFlags + 4 * v11); /*0x5c3591*/
+    v10 = *(unsigned int *)(v12->abstractFlags + 4 * v11); /*0x5c3591*/
     if ( *(int *)(v10 + 16) > 0 ) /*0x5c3599*/
     {
       do /*0x5c35be*/
       {
-        if ( v8 == SideClass::FindByName(*(SideClass **)(*(_DWORD *)(v10 + 4) + 4 * v9)) ) /*0x5c35a8*/
+        if ( v8 == SideClass::FindByName(*(SideClass **)(*(unsigned int *)(v10 + 4) + 4 * v9)) ) /*0x5c35a8*/
           v4 = 1; /*0x5c35aa*/
         ++v9; /*0x5c35b4*/
-        v10 = *(_DWORD *)(v12->abstractFlags + 4 * v11); /*0x5c35b8*/
+        v10 = *(unsigned int *)(v12->abstractFlags + 4 * v11); /*0x5c35b8*/
       }
-      while ( v9 < *(_DWORD *)(v10 + 16) ); /*0x5c35be*/
+      while ( v9 < *(unsigned int *)(v10 + 16) ); /*0x5c35be*/
     }
   }
   while ( !v4 ); /*0x5c35c2*/
-  ToWideStringChar(*(char **)(*((_DWORD *)dword_A83C9C + v8) + 96)); /*0x5c35d0*/
+  ToWideStringChar(*(char **)(*((unsigned int *)dword_A83C9C + v8) + 96)); /*0x5c35d0*/
   Debug::Log(); /*0x5c35dc*/
   return v8; /*0x5c3532*/
 }
@@ -1995,7 +1995,7 @@ int MPCooperative::HandleEvent()
   if ( !v12 ) /*0x5c3630*/
     return 0; /*0x5c3635*/
   v6 = (int *)this->MPCooperative_field_0x40; /*0x5c363c*/
-  if ( !v6 || !(unsigned __int8)Movie::GetState(v6, &v11) ) /*0x5c3648*/
+  if ( !v6 || !(uint8_t)Movie::GetState(v6, &v11) ) /*0x5c3648*/
     v11 = 0; /*0x5c3651*/
   if ( v11 >= v12->u32_38 ) /*0x5c3660*/
     return 0; /*0x5c3665*/
@@ -2004,21 +2004,21 @@ int MPCooperative::HandleEvent()
   {
     v8 = Random::Range((Random *)&dword_A8B230[14].NeedsSaveOrLink, 0, v7); /*0x5c3686*/
     v9 = 0; /*0x5c368c*/
-    v10 = *(_DWORD *)(v12->u32_2C + 4 * v11); /*0x5c3691*/
+    v10 = *(unsigned int *)(v12->u32_2C + 4 * v11); /*0x5c3691*/
     if ( *(int *)(v10 + 16) > 0 ) /*0x5c3699*/
     {
       do /*0x5c36be*/
       {
-        if ( v8 == SideClass::FindByName(*(SideClass **)(*(_DWORD *)(v10 + 4) + 4 * v9)) ) /*0x5c36a8*/
+        if ( v8 == SideClass::FindByName(*(SideClass **)(*(unsigned int *)(v10 + 4) + 4 * v9)) ) /*0x5c36a8*/
           v4 = 1; /*0x5c36aa*/
         ++v9; /*0x5c36b4*/
-        v10 = *(_DWORD *)(v12->u32_2C + 4 * v11); /*0x5c36b8*/
+        v10 = *(unsigned int *)(v12->u32_2C + 4 * v11); /*0x5c36b8*/
       }
-      while ( v9 < *(_DWORD *)(v10 + 16) ); /*0x5c36be*/
+      while ( v9 < *(unsigned int *)(v10 + 16) ); /*0x5c36be*/
     }
   }
   while ( !v4 ); /*0x5c36c2*/
-  ToWideStringChar(*(char **)(*((_DWORD *)dword_A83C9C + v8) + 96)); /*0x5c36d0*/
+  ToWideStringChar(*(char **)(*((unsigned int *)dword_A83C9C + v8) + 96)); /*0x5c36d0*/
   Debug::Log(); /*0x5c36dc*/
   return v8; /*0x5c3632*/
 }
@@ -2035,7 +2035,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
   int v9; // eax
   int i; // ebp
   MissionClass *v11; // eax
-  _DWORD *v12; // ebx
+  unsigned int *v12; // ebx
   int v13; // eax
   int v14; // ecx
   int v15; // eax
@@ -2088,7 +2088,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
     else
       v4->MPCooperative_field_0x40 = 0; /*0x5c3b9c*/
   }
-  if ( !*(_DWORD *)&v4->__pad_328[12] ) /*0x5c3bb5*/
+  if ( !*(unsigned int *)&v4->__pad_328[12] ) /*0x5c3bb5*/
   {
     CampaignClass::GetValue((int *)&g_DDrawSurfaceManager, &v24); /*0x5c3bcd*/
     for ( i = 0; i < v24; ++i ) /*0x5c3bda*/
@@ -2099,14 +2099,14 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
       else
         v12 = 0; /*0x5c3bfb*/
       Movie::SetupScreen((int)v12, i); /*0x5c3c00*/
-      v13 = *(_DWORD *)&v4->__pad_328[4]; /*0x5c3c05*/
-      if ( *(_DWORD *)&v4->__pad_328[12] >= v13 ) /*0x5c3c0d*/
+      v13 = *(unsigned int *)&v4->__pad_328[4]; /*0x5c3c05*/
+      if ( *(unsigned int *)&v4->__pad_328[12] >= v13 ) /*0x5c3c0d*/
       {
         if ( !v4->__pad_328[9] && v13 ) /*0x5c3c18*/
           continue; /*0x5c3c18*/
-        v14 = *(_DWORD *)&v4->__pad_328[16]; /*0x5c3c1a*/
+        v14 = *(unsigned int *)&v4->__pad_328[16]; /*0x5c3c1a*/
         if ( v14 <= 0 /*0x5c3c2a*/
-          || !(*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(v4->MPCooperative_field_0x324 + 8))(
+          || !(*(uint8_t (__thiscall **)(int *, int, unsigned int))(v4->MPCooperative_field_0x324 + 8))(
                 &v4->MPCooperative_field_0x324,
                 v13 + v14,
                 0) )
@@ -2114,15 +2114,15 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
           continue; /*0x5c3c2a*/
         }
       }
-      v15 = *(_DWORD *)&v4->__pad_328[12]; /*0x5c3c31*/
-      v16 = *(_DWORD *)v4->__pad_328; /*0x5c3c34*/
-      *(_DWORD *)&v4->__pad_328[12] = v15 + 1; /*0x5c3c3a*/
-      *(_DWORD *)(v16 + 4 * v15) = v12; /*0x5c3c3d*/
+      v15 = *(unsigned int *)&v4->__pad_328[12]; /*0x5c3c31*/
+      v16 = *(unsigned int *)v4->__pad_328; /*0x5c3c34*/
+      *(unsigned int *)&v4->__pad_328[12] = v15 + 1; /*0x5c3c3a*/
+      *(unsigned int *)(v16 + 4 * v15) = v12; /*0x5c3c3d*/
     }
   }
   v17 = 0; /*0x5c3c49*/
   IsometricTileTypeClass::Constructor_0(&v27, 0, 0); /*0x5c3c51*/
-  *(_DWORD *)v27.__pad_0 = &(void*)(void*)&DynamicVectorClass_unsigned_short___vftable; /*0x5c3c60*/
+  *(unsigned int *)v27.__pad_0 = (void*)&DynamicVectorClass_unsigned_short___vftable; /*0x5c3c60*/
   v27.IsometricTileTypeClass_field_0x14 = 10; /*0x5c3c68*/
   v27.IsometricTileTypeClass_field_0x10 = 0; /*0x5c3c70*/
   SmallFunc_49E740((int)&g_DDrawSurfaceManager, &v27); /*0x5c3c74*/
@@ -2131,10 +2131,10 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
   {
     do /*0x5c3d96*/
     {
-      if ( *(_DWORD *)(v27.IsometricTileTypeClass_field_0x04 + 4 * v17) ) /*0x5c3c94*/
+      if ( *(unsigned int *)(v27.IsometricTileTypeClass_field_0x04 + 4 * v17) ) /*0x5c3c94*/
       {
-        Array::GetElementAt(*(int **)(*(_DWORD *)v4->__pad_328 + 4 * v17), &v27.IsometricTileTypeClass_field_0x18, -1); /*0x5c3cae*/
-        v24 = *(_DWORD *)(a3 + 16); /*0x5c3cc5*/
+        Array::GetElementAt(*(int **)(*(unsigned int *)v4->__pad_328 + 4 * v17), &v27.IsometricTileTypeClass_field_0x18, -1); /*0x5c3cae*/
+        v24 = *(unsigned int *)(a3 + 16); /*0x5c3cc5*/
         v18 = 0; /*0x5c3cc9*/
         sprintf( /*0x5c3ccb*/
           (char *const)&v27.IsometricTileTypeClass_field_0x1C,
@@ -2151,9 +2151,9 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
           while ( !v18 ) /*0x5c3ce3*/
           {
             if ( !_strcmpi( /*0x5c3cf4*/
-                    (char *)(*(_DWORD *)(*(_DWORD *)(a3 + 4) + 4 * v19) + 88),
+                    (char *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 4 * v19) + 88),
                     (char *)&v27.IsometricTileTypeClass_field_0x1C) )
-              v18 = *(_DWORD *)(*(_DWORD *)(a3 + 4) + 4 * v19); /*0x5c3d03*/
+              v18 = *(unsigned int *)(*(unsigned int *)(a3 + 4) + 4 * v19); /*0x5c3d03*/
             if ( ++v19 >= v24 ) /*0x5c3d0d*/
             {
               if ( !v18 ) /*0x5c3d11*/
@@ -2165,7 +2165,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
             v28,
             (const size_t)aDS_0,
             (const wchar_t *const)(v17 + 1),
-            *(_DWORD *)(v27.IsometricTileTypeClass_field_0x04 + 4 * v17));
+            *(unsigned int *)(v27.IsometricTileTypeClass_field_0x04 + 4 * v17));
           SendMessageA(hWnd, 0x4CDu, 0, (LPARAM)v28); /*0x5c3d4b*/
           SendMessageA(hWnd, 0x19Au, v17, v18); /*0x5c3d59*/
         }
@@ -2183,7 +2183,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
     {
       LoadCoopCampaignSave((char *)v4->MPCooperative_field_0x40, (char *)&v27.IsometricTileTypeClass_field_0x1C); /*0x5c3dc7*/
       strcat((char *)&v27.IsometricTileTypeClass_field_0x1C, g_Str_File__MAP); /*0x5c3df1*/
-      IsometricTileTypeClass_field_0x08 = *(_DWORD *)(a3 + 16); /*0x5c3dfb*/
+      IsometricTileTypeClass_field_0x08 = *(unsigned int *)(a3 + 16); /*0x5c3dfb*/
       v21 = 0; /*0x5c3e01*/
       v22 = 0; /*0x5c3e03*/
       if ( IsometricTileTypeClass_field_0x08 > 0 ) /*0x5c3e07*/
@@ -2191,9 +2191,9 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
         while ( !v21 ) /*0x5c3e0b*/
         {
           if ( !_strcmpi( /*0x5c3e1c*/
-                  (char *)(*(_DWORD *)(*(_DWORD *)(a3 + 4) + 4 * v22) + 88),
+                  (char *)(*(unsigned int *)(*(unsigned int *)(a3 + 4) + 4 * v22) + 88),
                   (char *)&v27.IsometricTileTypeClass_field_0x1C) )
-            v21 = *(_DWORD *)(*(_DWORD *)(a3 + 4) + 4 * v22); /*0x5c3e2b*/
+            v21 = *(unsigned int *)(*(unsigned int *)(a3 + 4) + 4 * v22); /*0x5c3e2b*/
           if ( ++v22 >= IsometricTileTypeClass_field_0x08 ) /*0x5c3e35*/
           {
             if ( !v21 ) /*0x5c3e39*/
@@ -2210,7 +2210,7 @@ void MPCooperative::LoadSettings(HWND hWnd, int a3, int a4)
   }
   LABEL_47:
   SendMessageA(hWnd, 0x186u, 0, 0); /*0x5c3e7b*/
-  *(_DWORD *)v27.__pad_0 = &(void*)(void*)&VectorClass_unsigned_short___vftable; /*0x5c3e9b*/
+  *(unsigned int *)v27.__pad_0 = (void*)&VectorClass_unsigned_short___vftable; /*0x5c3e9b*/
   if ( v27.IsometricTileTypeClass_field_0x04 ) /*0x5c3ea4*/
   {
     if ( IDA_BYTE1(v27.IsometricTileTypeClass_field_0x0C) ) /*0x5c3eac*/
@@ -2249,10 +2249,10 @@ void MPCooperative::SetGameMode()
       sprintf(Buffer, "%s.MAP", v11); /*0x5c4074*/
       for ( i = 0; i < v7; ++i ) /*0x5c4080*/
       {
-        if ( !_strcmpi((char *)(*(_DWORD *)(dword_A8B8CC + 4 * i) + 88), Buffer) ) /*0x5c4094*/
+        if ( !_strcmpi((char *)(*(unsigned int *)(dword_A8B8CC + 4 * i) + 88), Buffer) ) /*0x5c4094*/
           break; /*0x5c409e*/
       }
-      *(_DWORD *)&stru_A8B250.__pad_0[4] = i; /*0x5c40ab*/
+      *(unsigned int *)&stru_A8B250.__pad_0[4] = i; /*0x5c40ab*/
       dword_A8B230[130].vtable3 = (void *)i; /*0x5c40b3*/
       LoadScenarioClassByIndex(i); /*0x5c40b9*/
     }
@@ -2295,9 +2295,9 @@ void MPCooperative::SetGameMode()
 namespace gamemd {
 AbstractClass * * MPCooperative::ProcessChat()
 {
-  _DWORD *MPCooperative_field_0x40; // eax
+  unsigned int *MPCooperative_field_0x40; // eax
   MissionClass *v3; // eax
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   char *v5; // ecx
   LPARAM v6; // ebp
   int v7; // edi
@@ -2328,12 +2328,12 @@ AbstractClass * * MPCooperative::ProcessChat()
       String::AssignWideToChar(v5, (char *)*dword_A8DA78, (char *)dword_A8DA78[1]); /*0x5c416c*/
     (*((void (__thiscall **)(MPCooperative *))this->MPCooperative_field_0x0 + 24))(this); /*0x5c4175*/
     IDA_LOBYTE(MPCooperative_field_0x40) = MPCooperative::ReadCoopSaveINI((char *)this->MPCooperative_field_0x40); /*0x5c417b*/
-    if ( (_BYTE)MPCooperative_field_0x40 ) /*0x5c4182*/
+    if ( (unsigned char)MPCooperative_field_0x40 ) /*0x5c4182*/
     {
       if ( Dialog::GetCurrentType() == 107 ) /*0x5c4190*/
       {
         IDA_LOBYTE(MPCooperative_field_0x40) = IDA_BYTE1(this->MPCooperative_field_0x48); /*0x5c4196*/
-        if ( !(_BYTE)MPCooperative_field_0x40 ) /*0x5c419b*/
+        if ( !(unsigned char)MPCooperative_field_0x40 ) /*0x5c419b*/
         {
           LoadCoopCampaignSave((char *)this->MPCooperative_field_0x40, Destination); /*0x5c41a9*/
           IDA_LOBYTE(MPCooperative_field_0x40) = 0; /*0x5c41b6*/
@@ -2343,13 +2343,13 @@ AbstractClass * * MPCooperative::ProcessChat()
           v8 = 0; /*0x5c41e4*/
           if ( dword_A8B8D8 > 0 ) /*0x5c41e8*/
           {
-            MPCooperative_field_0x40 = (_DWORD *)dword_A8B8CC; /*0x5c41ee*/
+            MPCooperative_field_0x40 = (unsigned int *)dword_A8B8CC; /*0x5c41ee*/
             while ( !v6 ) /*0x5c41f5*/
             {
               v9 = _strcmpi((char *)(MPCooperative_field_0x40[v8] + 88), Destination) == 0; /*0x5c420b*/
-              MPCooperative_field_0x40 = (_DWORD *)dword_A8B8CC; /*0x5c420d*/
+              MPCooperative_field_0x40 = (unsigned int *)dword_A8B8CC; /*0x5c420d*/
               if ( v9 ) /*0x5c4212*/
-                v6 = *(_DWORD *)(dword_A8B8CC + 4 * v8); /*0x5c4214*/
+                v6 = *(unsigned int *)(dword_A8B8CC + 4 * v8); /*0x5c4214*/
               if ( ++v8 >= v7 ) /*0x5c421a*/
               {
                 if ( !v6 ) /*0x5c421e*/
@@ -2359,9 +2359,9 @@ AbstractClass * * MPCooperative::ProcessChat()
             }
             Current = (HWND)Dialog::GetCurrent(); /*0x5c4224*/
             DlgItem = GetDlgItem(Current, 1363); /*0x5c423d*/
-            MPCooperative_field_0x40 = (_DWORD *)SendMessageA(DlgItem, 0x18Bu, 0, 0); /*0x5c4247*/
+            MPCooperative_field_0x40 = (unsigned int *)SendMessageA(DlgItem, 0x18Bu, 0, 0); /*0x5c4247*/
             v12 = (WPARAM)MPCooperative_field_0x40; /*0x5c4249*/
-            if ( MPCooperative_field_0x40 != (_DWORD *)-1 ) /*0x5c424e*/
+            if ( MPCooperative_field_0x40 != (unsigned int *)-1 ) /*0x5c424e*/
             {
               StringCSF = GetStringCSF(aTxtCoopUseSave, 0, g_Str_File_MPCoop_cpp, 1914); /*0x5c4261*/
               SendMessageA(DlgItem, 0x4CDu, 0, (LPARAM)StringCSF); /*0x5c426f*/
@@ -2397,11 +2397,11 @@ int MPCooperative::UpdateMovieScore()
   void **v12; // esi
   MultiplayerGameMode *MPCooperative_field_0x50; // ecx
   int v14; // eax
-  _DWORD *v15; // eax
+  unsigned int *v15; // eax
   bool v16; // zf
   int v17; // eax
   char v18; // bl
-  _DWORD v19[6]; // [esp-24h] [ebp-64h] BYREF
+  unsigned int v19[6]; // [esp-24h] [ebp-64h] BYREF
   int v20; // [esp-Ch] [ebp-4Ch]
   int v21; // [esp-8h] [ebp-48h]
   void ***v22; // [esp-4h] [ebp-44h]
@@ -2432,13 +2432,13 @@ int MPCooperative::UpdateMovieScore()
   v23 = (wchar_t *)&v28; /*0x5c431e*/
   v22 = &v29; /*0x5c431f*/
   MPCooperative_field_0x40 = this->MPCooperative_field_0x40; /*0x5c4320*/
-  v29 = &(void*)(void*)&DynamicVectorClass_MPlayerScoreType___vftable; /*0x5c4323*/
+  v29 = (void*)&DynamicVectorClass_MPlayerScoreType___vftable; /*0x5c4323*/
   v33 = 10; /*0x5c432b*/
   v32 = 0; /*0x5c4333*/
   MPCooperative::BuildScoreEntries((int)MPCooperative_field_0x40, (int)&v29, &v28); /*0x5c4337*/
   v6 = (int *)this->MPCooperative_field_0x40; /*0x5c433c*/
   v25 = 0; /*0x5c4344*/
-  if ( (unsigned __int8)Movie::GetSectionID(v6, &v24) ) /*0x5c4348*/
+  if ( (uint8_t)Movie::GetSectionID(v6, &v24) ) /*0x5c4348*/
   {
     Movie::GetSection((int)&g_DDrawSurfaceManager, v24, &v25); /*0x5c4369*/
     v7 = v24; /*0x5c436e*/
@@ -2469,9 +2469,9 @@ int MPCooperative::UpdateMovieScore()
     if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x5c43d8*/
     {
       p_vtable2 = &dword_A8B230[43].vtable2; /*0x5c43cf*/
-      uniqueId += Timer::GetTicks() - (_DWORD)*p_vtable2; /*0x5c43e4*/
+      uniqueId += Timer::GetTicks() - (unsigned int)*p_vtable2; /*0x5c43e4*/
     }
-    v11 = *(_DWORD *)this->MPCooperative_field_0x50; /*0x5c43f0*/
+    v11 = *(unsigned int *)this->MPCooperative_field_0x50; /*0x5c43f0*/
     v23 = *(wchar_t **)(v25 + 4); /*0x5c43f2*/
   }
   else
@@ -2480,11 +2480,11 @@ int MPCooperative::UpdateMovieScore()
     if ( dword_A8B230[43].vtable2 != (void *)-1 ) /*0x5c440f*/
     {
       v12 = &dword_A8B230[43].vtable2; /*0x5c4400*/
-      uniqueId += Timer::GetTicks() - (_DWORD)*v12; /*0x5c441b*/
+      uniqueId += Timer::GetTicks() - (unsigned int)*v12; /*0x5c441b*/
     }
     MPCooperative_field_0x50 = this->MPCooperative_field_0x50; /*0x5c441d*/
     v23 = &g_TypeClass_DefaultString; /*0x5c4420*/
-    v11 = *(_DWORD *)MPCooperative_field_0x50->__pad_0; /*0x5c4425*/
+    v11 = *(unsigned int *)MPCooperative_field_0x50->__pad_0; /*0x5c4425*/
   }
   v14 = v27; /*0x5c442b*/
   v22 = (void ***)v8; /*0x5c4431*/
@@ -2492,7 +2492,7 @@ int MPCooperative::UpdateMovieScore()
   v21 = v14; /*0x5c4435*/
   v20 = uniqueId; /*0x5c4436*/
   MPCooperative::processTurnEnd((MPCooperative *)v19, &v29); /*0x5c4441*/
-  (*(void (__thiscall **)(MultiplayerGameMode *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, int, int, void ***, wchar_t *))(v11 + 4))( /*0x5c4449*/
+  (*(void (__thiscall **)(MultiplayerGameMode *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int, void ***, wchar_t *))(v11 + 4))( /*0x5c4449*/
     this->MPCooperative_field_0x50,
     v19[0],
     v19[1],
@@ -2509,7 +2509,7 @@ int MPCooperative::UpdateMovieScore()
     do /*0x5c449c*/
     {
       v15 = Block; /*0x5c4454*/
-      if ( *(_DWORD *)Block ) /*0x5c4458*/
+      if ( *(unsigned int *)Block ) /*0x5c4458*/
       {
         RA2_OPDEL(*(void **)Block); /*0x5c4461*/
         v15 = Block; /*0x5c4466*/
@@ -2525,7 +2525,7 @@ int MPCooperative::UpdateMovieScore()
           do /*0x5c4498*/
           {
             ++v17; /*0x5c448a*/
-            *((_DWORD *)Block + v17 - 1) = *((_DWORD *)Block + v17); /*0x5c448e*/
+            *((unsigned int *)Block + v17 - 1) = *((unsigned int *)Block + v17); /*0x5c448e*/
           }
           while ( v17 < v32 ); /*0x5c4498*/
           v16 = v32 == 0; /*0x5c449a*/
@@ -2536,7 +2536,7 @@ int MPCooperative::UpdateMovieScore()
   }
   v18 = byte_89E04C; /*0x5c44a2*/
   byte_89E04C = 0; /*0x5c44aa*/
-  v29 = &(void*)(void*)&VectorClass_MPlayerScoreType___vftable; /*0x5c44b1*/
+  v29 = (void*)&VectorClass_MPlayerScoreType___vftable; /*0x5c44b1*/
   if ( Block ) /*0x5c44b9*/
   {
     if ( v31 ) /*0x5c44c1*/
@@ -2551,14 +2551,14 @@ void MPCooperative::ShowScoreScreen(int a2)
 {
   int *MPCooperative_field_0x40; // ecx
   MPCooperative *v4; // eax
-  _DWORD *started; // esi
+  unsigned int *started; // esi
   void *v6; // ecx
   int *v7; // ecx
-  void (__thiscall **v8)(_DWORD *, int); // edi
-  _DWORD *v9; // eax
+  void (__thiscall **v8)(unsigned int *, int); // edi
+  unsigned int *v9; // eax
   bool v10; // zf
   int v11; // eax
-  _DWORD v12[6]; // [esp-14h] [ebp-58h] BYREF
+  unsigned int v12[6]; // [esp-14h] [ebp-58h] BYREF
   int v13; // [esp+4h] [ebp-40h]
   int v14; // [esp+8h] [ebp-3Ch]
   void ***v15; // [esp+Ch] [ebp-38h]
@@ -2578,7 +2578,7 @@ void MPCooperative::ShowScoreScreen(int a2)
   {
     MPCooperative::GetMovieScore(MPCooperative_field_0x40, &v19); /*0x5c44f7*/
     Movie::GetState((int *)this->MPCooperative_field_0x40, &v18); /*0x5c4504*/
-    if ( (_BYTE)a2 ) /*0x5c450f*/
+    if ( (unsigned char)a2 ) /*0x5c450f*/
     {
       if ( v18 >= v19 ) /*0x5c451f*/
       {
@@ -2592,23 +2592,23 @@ void MPCooperative::ShowScoreScreen(int a2)
             v16 = &v20; /*0x5c455d*/
             v15 = &v21; /*0x5c455e*/
             v6 = this->MPCooperative_field_0x40; /*0x5c455f*/
-            v21 = &(void*)(void*)&DynamicVectorClass_MPlayerScoreType___vftable; /*0x5c4562*/
+            v21 = (void*)&DynamicVectorClass_MPlayerScoreType___vftable; /*0x5c4562*/
             v25 = 10; /*0x5c456a*/
             v24 = 0; /*0x5c4572*/
             MPCooperative::BuildScoreEntries((int)v6, (int)&v21, &v20); /*0x5c457a*/
             v7 = (int *)this->MPCooperative_field_0x40; /*0x5c457f*/
             v17 = 0; /*0x5c4587*/
-            if ( (unsigned __int8)Movie::GetSectionID(v7, &a2) ) /*0x5c458f*/
+            if ( (uint8_t)Movie::GetSectionID(v7, &a2) ) /*0x5c458f*/
               Movie::GetSection((int)&g_DDrawSurfaceManager, a2, &v17); /*0x5c45b1*/
             else
               a2 = -1; /*0x5c4598*/
-            v8 = (void (__thiscall **)(_DWORD *, int))*started; /*0x5c45bf*/
+            v8 = (void (__thiscall **)(unsigned int *, int))*started; /*0x5c45bf*/
             v16 = *(int **)(v17 + 4); /*0x5c45ca*/
             v15 = (void ***)(a2 + 1); /*0x5c45cf*/
             v14 = stru_A8EB00.ObjectTypeClass[26]; /*0x5c45d0*/
             v13 = v20; /*0x5c45d1*/
             MPCooperative::processTurnEnd((MPCooperative *)v12, &v21); /*0x5c45dc*/
-            ((void (__thiscall *)(_DWORD *, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, int, int, void ***, int *))v8[1])( /*0x5c45e3*/
+            ((void (__thiscall *)(unsigned int *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, int, int, void ***, int *))v8[1])( /*0x5c45e3*/
               started,
               v12[0],
               v12[1],
@@ -2620,13 +2620,13 @@ void MPCooperative::ShowScoreScreen(int a2)
               v14,
               v15,
               v16);
-            (*(void (__thiscall **)(_DWORD *, int))*started)(started, 1); /*0x5c45ec*/
+            (*(void (__thiscall **)(unsigned int *, int))*started)(started, 1); /*0x5c45ec*/
             if ( v24 ) /*0x5c45f4*/
             {
               do /*0x5c463c*/
               {
                 v9 = Block; /*0x5c45f6*/
-                if ( *(_DWORD *)Block ) /*0x5c45fa*/
+                if ( *(unsigned int *)Block ) /*0x5c45fa*/
                 {
                   RA2_OPDEL(*(void **)Block); /*0x5c4601*/
                   v9 = Block; /*0x5c4606*/
@@ -2642,7 +2642,7 @@ void MPCooperative::ShowScoreScreen(int a2)
                     do /*0x5c4638*/
                     {
                       ++v11; /*0x5c462a*/
-                      *((_DWORD *)Block + v11 - 1) = *((_DWORD *)Block + v11); /*0x5c462e*/
+                      *((unsigned int *)Block + v11 - 1) = *((unsigned int *)Block + v11); /*0x5c462e*/
                     }
                     while ( v11 < v24 ); /*0x5c4638*/
                     v10 = v24 == 0; /*0x5c463a*/
@@ -2651,7 +2651,7 @@ void MPCooperative::ShowScoreScreen(int a2)
               }
               while ( !v10 ); /*0x5c463c*/
             }
-            v21 = &(void*)(void*)&VectorClass_MPlayerScoreType___vftable; /*0x5c4642*/
+            v21 = (void*)&VectorClass_MPlayerScoreType___vftable; /*0x5c4642*/
             if ( Block ) /*0x5c464c*/
             {
               if ( v23 ) /*0x5c4654*/
@@ -2755,7 +2755,7 @@ void MPCooperative_QueryInterface()
 
   v4 = v3; /*0x5c4f11*/
   MPCooperative_Cleanup(v6, a2); /*0x5c4f13*/
-  if ( ((unsigned __int8)this & 1) != 0 ) /*0x5c4f1d*/
+  if ( ((uint8_t)this & 1) != 0 ) /*0x5c4f1d*/
     RA2_OPDEL(v4); /*0x5c4f20*/
   return v4; /*0x5c4f2a*/
 }
@@ -2773,7 +2773,7 @@ unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
   this->MPCooperative_field_0x8 = 0; /*0x5c4f40*/
   IDA_LOBYTE(this->MPCooperative_field_0xC) = 1; /*0x5c4f43*/
   IDA_BYTE1(this->MPCooperative_field_0xC) = 0; /*0x5c4f47*/
-  this->MPCooperative_field_0x0 = &(void*)(void*)&VectorClass_MPlayerScoreType___vftable; /*0x5c4f4a*/
+  this->MPCooperative_field_0x0 = (void*)&VectorClass_MPlayerScoreType___vftable; /*0x5c4f4a*/
   if ( this != (MPCooperative *)a2 ) /*0x5c4f50*/
   {
     MPCooperative::ddtor(); /*0x5c4f52*/
@@ -2781,7 +2781,7 @@ unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
     this->MPCooperative_field_0x8 = v3; /*0x5c4f5d*/
     if ( v3 ) /*0x5c4f60*/
     {
-      v4 = (void *)RA2_OPNEW(4 * (_DWORD)v3); /*0x5c4f66*/
+      v4 = (void *)RA2_OPNEW(4 * (unsigned int)v3); /*0x5c4f66*/
       this->MPCooperative_field_0x4 = v4; /*0x5c4f70*/
       if ( v4 ) /*0x5c4f73*/
       {
@@ -2792,7 +2792,7 @@ unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
         {
           do /*0x5c4f94*/
           {
-            *((_DWORD *)this->MPCooperative_field_0x4 + v6) = *(_DWORD *)(a2[1] + 4 * v6); /*0x5c4f8b*/
+            *((unsigned int *)this->MPCooperative_field_0x4 + v6) = *(unsigned int *)(a2[1] + 4 * v6); /*0x5c4f8b*/
             ++v6; /*0x5c4f91*/
           }
           while ( v6 < (int)this->MPCooperative_field_0x8 ); /*0x5c4f94*/
@@ -2807,7 +2807,7 @@ unsigned int * MPCooperative::processTurnEnd(unsigned int * a2)
   }
   this->MPCooperative_field_0x10 = (void *)a2[4]; /*0x5c4fa1*/
   this->MPCooperative_field_0x14 = a2[5]; /*0x5c4fa7*/
-  this->MPCooperative_field_0x0 = &(void*)(void*)&DynamicVectorClass_MPlayerScoreType___vftable; /*0x5c4faa*/
+  this->MPCooperative_field_0x0 = (void*)&DynamicVectorClass_MPlayerScoreType___vftable; /*0x5c4faa*/
   return &this->MPCooperative_field_0x0; /*0x5c4fb2*/
 }
 }
@@ -2830,7 +2830,7 @@ int MPCooperative::finalizeSession()
 namespace gamemd {
 unsigned int * MPCooperative::initGame()
 {
-  this->MPCooperative_field_0x0 = &(void*)(void*)&CampaignScoreClass_vftable; /*0x46d334*/
+  this->MPCooperative_field_0x0 = (void*)&CampaignScoreClass_vftable; /*0x46d334*/
   this->MPCooperative_field_0x4 = 0; /*0x46d33a*/
   dword_89E050 = 0; /*0x46d33d*/
   stru_81AF8C.?[6] = -1; /*0x46d343*/
@@ -2842,7 +2842,7 @@ unsigned int * MPCooperative::initGame()
 namespace gamemd {
 unsigned int * MPCooperative::startGame()
 {
-  this->MPCooperative_field_0x0 = &(void*)(void*)&CampaignEndScoreClass_vftable; /*0x470c04*/
+  this->MPCooperative_field_0x0 = (void*)&CampaignEndScoreClass_vftable; /*0x470c04*/
   dword_89E008 = -1; /*0x470c0a*/
   dword_89E020 = 0; /*0x470c14*/
   dword_89DFD4 = 0; /*0x470c1a*/
@@ -2881,12 +2881,12 @@ int sub_5C1980()
       Movie::GetSection((int)&g_DDrawSurfaceManager, v2, &v5); /*0x5c19a5*/
       for ( i = 0; i < 780; i += 260 ) /*0x5c19aa*/
       {
-        if ( *(_DWORD *)&stru_A8B250.__pad_0[4] ) /*0x5c19b3*/
+        if ( *(unsigned int *)&stru_A8B250.__pad_0[4] ) /*0x5c19b3*/
         {
           if ( !_strnicmp( /*0x5c19da*/
-                  (const char *)(*(_DWORD *)(dword_A8B8CC + 4 * *(_DWORD *)&stru_A8B250.__pad_0[4]) + 88),
-                  (const char *)(*(_DWORD *)(v5 + 12) + i),
-                  strlen((const char *)(*(_DWORD *)(v5 + 12) + i))) )
+                  (const char *)(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4]) + 88),
+                  (const char *)(*(unsigned int *)(v5 + 12) + i),
+                  strlen((const char *)(*(unsigned int *)(v5 + 12) + i))) )
             v4 = v2; /*0x5c19e6*/
         }
       }
@@ -2994,7 +2994,7 @@ int MPCooperative::Cleanup()
     SkirmishDialog::FillComboBoxes(v3); /*0x5c3f4b*/
   }
   for ( result = 0; result < dword_A8DA84; ++result ) /*0x5c3f5c*/
-    *(_DWORD *)(dword_A8DA78[result] + 107) = result; /*0x5c3f67*/
+    *(unsigned int *)(dword_A8DA78[result] + 107) = result; /*0x5c3f67*/
   return result; /*0x5c3f58*/
 }
 } // namespace gamemd
@@ -3133,7 +3133,7 @@ unsigned int MPCooperative::syncPlayers(int a2)
 namespace gamemd {
 int MPCooperative::dispatchEvent(int a2)
 {
-  return *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * a2); /*0x5c506a*/
+  return *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * a2); /*0x5c506a*/
 }
 } // namespace gamemd
 
@@ -3591,7 +3591,7 @@ unsigned int * MPCooperative::applyVoteResult(int a2, int a3)
   this->MPCooperative_field_0x8 = (void *)a2; /*0x5c59ee*/
   IDA_LOBYTE(this->MPCooperative_field_0xC) = 1; /*0x5c59f1*/
   IDA_BYTE1(this->MPCooperative_field_0xC) = 0; /*0x5c59f5*/
-  this->MPCooperative_field_0x0 = &(void*)(void*)&VectorClass_MPlayerScoreType___vftable; /*0x5c59f8*/
+  this->MPCooperative_field_0x0 = (void*)&VectorClass_MPlayerScoreType___vftable; /*0x5c59f8*/
   if ( a2 ) /*0x5c59fe*/
   {
     if ( a3 ) /*0x5c5a06*/

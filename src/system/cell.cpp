@@ -218,15 +218,15 @@ int CellClass::Draw(const Point2D* screen_pos, const RectangleStruct* bounds, vo
   }
   v6 = this->attached1; /*0x48e5d5*/
   if ( v6 ) /*0x48e5da*/
-    (*(void (__thiscall **)(int, int, _DWORD *, ControlClass *))(*(_DWORD *)v6 + 76))(v6, a2, a3, this); /*0x48e5e1*/
+    (*(void (__thiscall **)(int, int, unsigned int *, ControlClass *))(*(unsigned int *)v6 + 76))(v6, a2, a3, this); /*0x48e5e1*/
   return COMObject::ActivateThunk((GadgetClass *)this, a2, (int)a3, 0); /*0x48e5ef*/
 }
 // 0x7235a0
 int CellClass::RegisterForRedraw(void * a1, void * a2)
 {
-  _BYTE *result; // eax
+  unsigned char *result; // eax
   int v4; // eax
-  _DWORD *v5; // edi
+  unsigned int *v5; // edi
   unsigned int v6; // ebx
   unsigned int v7; // ecx
   unsigned int v8; // edx
@@ -240,14 +240,14 @@ int CellClass::RegisterForRedraw(void * a1, void * a2)
   result = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a2); /*0x7235bc*/
   if ( result[286] < 0xBu ) /*0x7235c8*/
   {
-    if ( *(_DWORD *)a1->CellClass_field_10C > Object::ComputeAllocationSize() - 10 ) /*0x7235de*/
+    if ( *(unsigned int *)a1->CellClass_field_10C > Object::ComputeAllocationSize() - 10 ) /*0x7235de*/
       BuildingClass::RebuildOccupancy2((BuildingClass *)a1); /*0x7235e2*/
-    *(_DWORD *)(*(_DWORD *)&a1->unknown118 + 8 * *(_DWORD *)a1->CellClass_field_10C) = *(_DWORD *)a2; /*0x7235f6*/
-    *(float *)(*(_DWORD *)&a1->unknown118 + 8 * *(_DWORD *)a1->CellClass_field_10C + 4) = (float)(*(_DWORD *)&stru_A8EB00.?[416] + (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 50); /*0x723632*/
-    v4 = *(_DWORD *)a1->CellClass_field_10C; /*0x723636*/
-    v5 = *(_DWORD **)a1->unknown110; /*0x723642*/
-    v6 = *(_DWORD *)&a1->unknown118 + 8 * v4; /*0x723648*/
-    *(_DWORD *)a1->CellClass_field_10C = v4 + 1; /*0x72364c*/
+    *(unsigned int *)(*(unsigned int *)&a1->unknown118 + 8 * *(unsigned int *)a1->CellClass_field_10C) = *(unsigned int *)a2; /*0x7235f6*/
+    *(float *)(*(unsigned int *)&a1->unknown118 + 8 * *(unsigned int *)a1->CellClass_field_10C + 4) = (float)(*(unsigned int *)&stru_A8EB00.?[416] + (int)abs32(Random::State((Random *)&dword_A8B230[14].NeedsSaveOrLink)) % 50); /*0x723632*/
+    v4 = *(unsigned int *)a1->CellClass_field_10C; /*0x723636*/
+    v5 = *(unsigned int **)a1->unknown110; /*0x723642*/
+    v6 = *(unsigned int *)&a1->unknown118 + 8 * v4; /*0x723648*/
+    *(unsigned int *)a1->CellClass_field_10C = v4 + 1; /*0x72364c*/
     v7 = *v5 + 1; /*0x723657*/
     v14 = v6->q004; /*0x72365a*/
     v6 = v6; /*0x723661*/
@@ -259,17 +259,17 @@ int CellClass::RegisterForRedraw(void * a1, void * a2)
         do /*0x72368f*/
         {
           v9 = v5[2]; /*0x723671*/
-          v10 = *(_DWORD *)(v9 + 4 * v8); /*0x723674*/
+          v10 = *(unsigned int *)(v9 + 4 * v8); /*0x723674*/
           if ( *(float *)(v10 + 4) <= (double)v14 ) /*0x723683*/
             break; /*0x723683*/
-          *(_DWORD *)(v9 + 4 * v7) = v10; /*0x723685*/
+          *(unsigned int *)(v9 + 4 * v7) = v10; /*0x723685*/
           v7 = v8; /*0x723688*/
           v8 >>= 1; /*0x72368a*/
         }
         while ( v7 > 1 ); /*0x72368f*/
         v6 = v6; /*0x723691*/
       }
-      *(_DWORD *)(v5[2] + 4 * v7) = v6; /*0x723699*/
+      *(unsigned int *)(v5[2] + 4 * v7) = v6; /*0x723699*/
       v11 = v5[3]; /*0x72369e*/
       ++*v5; /*0x7236a4*/
       if ( v6 > v11 ) /*0x7236a6*/
@@ -277,7 +277,7 @@ int CellClass::RegisterForRedraw(void * a1, void * a2)
       if ( v6 < v5[4] ) /*0x7236ae*/
         v5[4] = v6; /*0x7236b0*/
     }
-    result = *(_BYTE **)a1->unknown114; /*0x7236b3*/
+    result = *(unsigned char **)a1->unknown114; /*0x7236b3*/
     result[v13] = 1; /*0x7236be*/
   }
   return result; /*0x7236c2*/
@@ -308,9 +308,9 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
     v5 = this->u32_E4; /*0x47e8b8*/
   if ( content ) /*0x47e8c4*/
   {
-    if ( (*(int (__thiscall **)(_DWORD *))(*content + 44))(content) == 6 && v5 ) /*0x47e8d9*/
+    if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) == 6 && v5 ) /*0x47e8d9*/
     {
-      for ( i = v5->Wobbles; i; i = *(_DWORD *)(i + 48) ) /*0x47e8e0*/
+      for ( i = v5->Wobbles; i; i = *(unsigned int *)(i + 48) ) /*0x47e8e0*/
         v5 = i; /*0x47e8e2*/
       v5->Wobbles = content; /*0x47e8eb*/
       content[12] = 0; /*0x47e8ee*/
@@ -332,7 +332,7 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
     v13 = 128; /*0x47e94b*/
     v14 = 128; /*0x47e94f*/
     inited = Isometric::InitTables(this, &v13); /*0x47e953*/
-    v15 = ((__int16)v18 << 8) + 128; /*0x47e962*/
+    v15 = ((int16_t)v18 << 8) + 128; /*0x47e962*/
     v16 = (IDA_SHIWORD(v18) << 8) + 128; /*0x47e966*/
     v17 = inited; /*0x47e96a*/
     if ( !Cell::IsPassable(&v15) /*0x47e9cf*/
@@ -340,24 +340,24 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
           v13 = 128,
           v14 = 128,
           v8 = Isometric::InitTables(this, &v13),
-          v15 = ((__int16)v19 << 8) + 128,
+          v15 = ((int16_t)v19 << 8) + 128,
           v16 = (IDA_SHIWORD(v19) << 8) + 128,
           v17 = v8,
           !Game::Stub3((int)&v15))
       || dword_A8B238[0] )
     {
-      (*(void (__thiscall **)(_DWORD *, void *))(*content + 408))(content, dword_A83D4C); /*0x47e9dc*/
+      (*(void (__thiscall **)(unsigned int *, void *))(*content + 408))(content, dword_A83D4C); /*0x47e9dc*/
     }
-    v3 = (*(int (__thiscall **)(_DWORD *))(*content + 44))(content); /*0x47e9e7*/
+    v3 = (*(int (__thiscall **)(unsigned int *))(*content + 44))(content); /*0x47e9e7*/
     if ( v3 != 15 ) /*0x47e9ee*/
     {
-      IDA_LOBYTE(v3) = (*(int (__thiscall **)(_DWORD *))(*content + 192))(content); /*0x47e9f9*/
-      if ( (_BYTE)v3 ) /*0x47ea01*/
+      IDA_LOBYTE(v3) = (*(int (__thiscall **)(unsigned int *))(*content + 192))(content); /*0x47e9f9*/
+      if ( (unsigned char)v3 ) /*0x47ea01*/
       {
-        if ( (*(int (__thiscall **)(_DWORD *))(*content + 44))(content) == 6 ) /*0x47ea0e*/
+        if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47ea0e*/
         {
-          v9 = *(__int16 *)(&this->vtable46); /*0x47ea10*/
-          v10 = *(__int16 *)(&this->vtable48); /*0x47ea14*/
+          v9 = *(int16_t *)(&this->vtable46); /*0x47ea10*/
+          v10 = *(int16_t *)(&this->vtable48); /*0x47ea14*/
           v11 = *content; /*0x47ea18*/
           v17 = 0; /*0x47ea1b*/
           v15 = (v9 << 8) + 128; /*0x47ea2e*/
@@ -365,12 +365,12 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
         }
         else
         {
-          v15 = content[39]; /*0x47ea5e*/
+          v15 = (int)(content[39]);
           v11 = *content; /*0x47ea62*/
           v16 = content[40]; /*0x47ea68*/
           v17 = content[41]; /*0x47ea74*/
         }
-        IDA_LOBYTE(v3) = (*(int (__thiscall **)(_DWORD *, int *))(v11 + 240))(content, &v15); /*0x47ea43*/
+        IDA_LOBYTE(v3) = (*(int (__thiscall **)(unsigned int *, int *))(v11 + 240))(content, &v15); /*0x47ea43*/
       }
     }
   }
@@ -379,8 +379,8 @@ void CellClass::AddContent(ObjectClass* content, bool on_bridge)
 // 0x47ea90
 void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
 {
-  _DWORD *v4; // eax
-  _DWORD *v5; // ecx
+  unsigned int *v4; // eax
+  unsigned int *v5; // ecx
   int v6; // ecx
   int v7; // edx
   int v8; // eax
@@ -391,15 +391,15 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
   if ( !content ) /*0x47ea9d*/
     return; /*0x47ea9d*/
   if ( on_bridge ) /*0x47eaa9*/
-    v4 = *(_DWORD **)(this + 232); /*0x47eaab*/
+    v4 = *(unsigned int **)(this + 232); /*0x47eaab*/
   else
-    v4 = *(_DWORD **)(this + 228); /*0x47eab3*/
+    v4 = *(unsigned int **)(this + 228); /*0x47eab3*/
   if ( v4 == content ) /*0x47eabb*/
   {
     if ( on_bridge ) /*0x47eabf*/
-      *(_DWORD *)(this + 232) = content[12]; /*0x47eac4*/
+      *(unsigned int *)(this + 232) = content[12]; /*0x47eac4*/
     else
-      *(_DWORD *)(this + 228) = content[12]; /*0x47eacf*/
+      *(unsigned int *)(this + 228) = content[12]; /*0x47eacf*/
   LABEL_14:
     content[12] = 0; /*0x47eaf0*/
     goto LABEL_15; /*0x47eaf0*/
@@ -408,24 +408,24 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
   {
     while ( 1 ) /*0x47eadb*/
     {
-      v5 = (_DWORD *)v4[12]; /*0x47eadb*/
+      v5 = (unsigned int *)v4[12]; /*0x47eadb*/
       if ( v5 == content ) /*0x47eae0*/
         break; /*0x47eae0*/
-      v4 = (_DWORD *)v4[12]; /*0x47eae2*/
+      v4 = (unsigned int *)v4[12]; /*0x47eae2*/
       if ( !v5 ) /*0x47eae6*/
         goto LABEL_15; /*0x47eae6*/
     }
-    v4[12] = content[12]; /*0x47eaed*/
+    v4[12] = (unsigned int)(content[12]);
     goto LABEL_14; /*0x47eaed*/
   }
   LABEL_15:
-  if ( (*(int (__thiscall **)(_DWORD *))(*content + 44))(content) != 15 /*0x47eb0b*/
-    && (*(unsigned __int8 (__thiscall **)(_DWORD *))(*content + 192))(content) )
+  if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) != 15 /*0x47eb0b*/
+    && (*(uint8_t (__thiscall **)(unsigned int *))(*content + 192))(content) )
   {
-    if ( (*(int (__thiscall **)(_DWORD *))(*content + 44))(content) == 6 ) /*0x47eb1f*/
+    if ( (*(int (__thiscall **)(unsigned int *))(*content + 44))(content) == 6 ) /*0x47eb1f*/
     {
-      v6 = *(__int16 *)(this + 36); /*0x47eb21*/
-      v7 = *(__int16 *)(this + 38); /*0x47eb25*/
+      v6 = *(int16_t *)(this + 36); /*0x47eb21*/
+      v7 = *(int16_t *)(this + 38); /*0x47eb25*/
       v8 = *content; /*0x47eb29*/
       v11 = 0; /*0x47eb2b*/
       v9 = (v6 << 8) + 128; /*0x47eb3c*/
@@ -433,12 +433,12 @@ void CellClass::RemoveContent(ObjectClass* content, bool on_bridge)
     }
     else
     {
-      v9 = content[39]; /*0x47eb6e*/
+      v9 = (int)(content[39]);
       v8 = *content; /*0x47eb72*/
       v10 = content[40]; /*0x47eb77*/
       v11 = content[41]; /*0x47eb85*/
     }
-    (*(void (__thiscall **)(_DWORD *, int *))(v8 + 244))(content, &v9); /*0x47eb54*/
+    (*(void (__thiscall **)(unsigned int *, int *))(v8 + 244))(content, &v9); /*0x47eb54*/
   }
 }
 ObjectClass* CellClass::GetSomeObject(const CoordStruct& coords, bool alt) const
@@ -651,11 +651,11 @@ const wchar_t* CellClass::GetUIName() const
 {
   int BuildingByTiberiumType; // eax
 
-  BuildingByTiberiumType = FindBuildingByTiberiumType(*(_DWORD *)&this->__pad_28[28]); /*0x484ff3*/
+  BuildingByTiberiumType = FindBuildingByTiberiumType(*(unsigned int *)&this->__pad_28[28]); /*0x484ff3*/
   if ( BuildingByTiberiumType == -1 ) /*0x484ffb*/
     return 0; /*0x48500a*/
   else
-    return *(const wchar_t **)(*(_DWORD *)(g_BuildingLoadQueue_Array.?[2] + 4 * BuildingByTiberiumType) + 96); /*0x485006*/
+    return *(const wchar_t **)(*(unsigned int *)(g_BuildingLoadQueue_Array.?[2] + 4 * BuildingByTiberiumType) + 96); /*0x485006*/
 }
 int CellClass::GetContainedTiberiumIndex() const
 {
@@ -703,7 +703,7 @@ void CellClass::ReduceTiberium(int amount)
   char v31[16]; // [esp+2Ch] [ebp-20h] BYREF
   char v32[16]; // [esp+3Ch] [ebp-10h] BYREF
 
-  PlacementRect = BuildingClass::GetPlacementRect((BuildingClass *)this, (int *)v31); /*0x480a97*/
+  PlacementRect = (int *)(BuildingClass::GetPlacementRect((BuildingClass *)this, (int *)v31));
   StartCoords = House::GetStartCoords((House *)this, v32); /*0x480a9c*/
   if ( StartCoords[2] <= 0 || StartCoords[3] <= 0 ) /*0x480ab1*/
   {
@@ -764,10 +764,10 @@ void CellClass::ReduceTiberium(int amount)
     return 0; /*0x480ca3*/
   v17 = *(CellClass **)(g_BuildingLoadQueue_Array.?[2] + 4 * BuildingByTiberiumType); /*0x480b8e*/
   if ( this->u32_11E == 11 ) /*0x480b99*/
-    CellClass::RegisterForRedraw(v17, (__int16 *)&this->vtable28); /*0x480ba1*/
-  if ( *((unsigned __int8 *)&this->estimatedHealth6) + 1 <= v16 ) /*0x480bb9*/
+    CellClass::RegisterForRedraw(v17, (int16_t *)&this->vtable28); /*0x480ba1*/
+  if ( *((uint8_t *)&this->estimatedHealth6) + 1 <= v16 ) /*0x480bb9*/
   {
-    v16 = *((unsigned __int8 *)&this->estimatedHealth6); /*0x480bc8*/
+    v16 = *((uint8_t *)&this->estimatedHealth6); /*0x480bc8*/
     *(&this->vtable27) = -1; /*0x480bce*/
     this->u32_11E = 0; /*0x480bd5*/
     House::AnnounceUpgrade((int)this, -1); /*0x480bdc*/
@@ -777,13 +777,13 @@ void CellClass::ReduceTiberium(int amount)
     for ( i = 0; i < 8; ++i ) /*0x480bf6*/
     {
       v20 = i & 7; /*0x480bfa*/
-      IDA_LOWORD(v23) = *(_WORD *)v18 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v20 + 82]); /*0x480c1b*/
-      IDA_HIWORD(v23) = *((_WORD *)v18 + 1) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v20 + 82]); /*0x480c24*/
+      IDA_LOWORD(v23) = *(unsigned short *)v18 + IDA_LOWORD(g_DDrawSurfaceManager.scenario[v20 + 82]); /*0x480c1b*/
+      IDA_HIWORD(v23) = *((unsigned short *)v18 + 1) + IDA_HIWORD(g_DDrawSurfaceManager.scenario[v20 + 82]); /*0x480c24*/
       v23 = v23; /*0x480c33*/
-      if ( (unsigned __int8)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], (__int16 *)&v23) ) /*0x480c37*/
+      if ( (uint8_t)LayerClass::CoordinatesLegal((LayerClass *)&stru_87F5F0.__pad_58[416], (int16_t *)&v23) ) /*0x480c37*/
       {
-        if ( !*((_BYTE *)&v17->radSite->AbstractClass + Cell::PosToIndex((Cell *)&v23)) ) /*0x480c4f*/
-          BuildingClass::AddOccupancy(v17->mapCoords, (__int16 *)&v23); /*0x480c5c*/
+        if ( !*((unsigned char *)&v17->radSite->AbstractClass + Cell::PosToIndex((Cell *)&v23)) ) /*0x480c4f*/
+          BuildingClass::AddOccupancy(v17->mapCoords, (int16_t *)&v23); /*0x480c5c*/
       }
     }
   }
@@ -846,7 +846,7 @@ bool CellClass::Tile_Is_DestroyableCliff() const
 // 0x484AB0
 int CellClass::IsTunnelEntrance()
 {
-  __int16 v1; // ax
+  int16_t v1; // ax
 
   v1 = IDA_HIWORD(this->?[0]); /*0x484ab0*/
   return v1 >= 0 && v1 < FootClass_Array.?[0] && this->?[3] == 10; /*0x484ad7*/

@@ -13,7 +13,7 @@ void Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a
 {
   int result; // eax
   int v9; // esi
-  __int16 v10; // bp
+  int16_t v10; // bp
   int v13; // ecx
   int v14; // eax
   int v15; // eax
@@ -24,8 +24,8 @@ void Scrollbar_Draw(ObjectClass * aP0, int * a1, int a3, int a4, unsigned char a
   int v20; // ebp
   int v21; // ecx
   int v22; // edx
-  __int16 v23; // [esp+10h] [ebp-48h]
-  __int16 v24; // [esp+14h] [ebp-44h]
+  int16_t v23; // [esp+10h] [ebp-48h]
+  int16_t v24; // [esp+14h] [ebp-44h]
   int v25[2]; // [esp+18h] [ebp-40h] BYREF
   int v26[2]; // [esp+20h] [ebp-38h] BYREF
   int v27; // [esp+28h] [ebp-30h] BYREF

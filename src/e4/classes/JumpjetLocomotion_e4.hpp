@@ -9,7 +9,7 @@ struct JumpjetLocomotion {
     unsigned char q000;  // 0x0
     void* q004;  // 0x4
     void* q008;  // 0x8
-    void* q00C;  // 0xC
+    unsigned int ;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
     unsigned int u32_18;  // 0x18
@@ -193,6 +193,12 @@ struct JumpjetLocomotion {
     unsigned char q1674;  // 0x1674
     unsigned char q1710;  // 0x1710
     void* q1768;  // 0x1768
+    unsigned int JumpjetLocomotion_field_0x40;
+    unsigned int JumpjetLocomotion_field_0x44;
+    unsigned int JumpjetLocomotion_field_0x58;
+    unsigned int u32_184;
+    unsigned int v22;
+    unsigned int q00C;
 // --- flat members (END) ---
     char MoveTo(void* aP1,  int aP3);    // 0x4B0AD0
     char ProcessCollision(char a2);  // 0x4B0F20

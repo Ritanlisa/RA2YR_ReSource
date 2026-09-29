@@ -18,7 +18,7 @@ namespace gamemd {
 int Power::Update(int * a2)
 {
   AbstractClass::ProcessPower(); /*0x43a5d9*/
-  return Power::TimerProcess(*(_DWORD *)&stru_A8EB00.?[416] - this->q00C); /*0x43a5f0*/
+  return Power::TimerProcess(*(unsigned int *)&stru_A8EB00.?[416] - this->q00C); /*0x43a5f0*/
 }
 }
 // 0x67C6E0
@@ -431,24 +431,24 @@ int Power::FinalizeDrain(int a2)
   unsigned int v6; // eax
   int v7; // edi
 
-  Power_field_0x4 = this->Power_field_0x4; /*0x4a1c10*/
+  Power_field_0x4 = (void *)((unsigned int)(this->Power_field_0x4));
   if ( !Power_field_0x4 ) /*0x4a1c15*/
     this->a2 = 0; /*0x4a1c17*/
-  *((_BYTE *)&this->a2 + (_DWORD)Power_field_0x4) = a2; /*0x4a1c1f*/
+  *((unsigned char *)&this->a2 + (unsigned int)Power_field_0x4) = a2; /*0x4a1c1f*/
   result = (int)this->Power_field_0x4 + 1; /*0x4a1c27*/
   this->Power_field_0x4 = (void *)result; /*0x4a1c29*/
   if ( result == 4 ) /*0x4a1c2f*/
   {
     IDA_LOBYTE(this->Power_field_0xC) = this->Power_field_0x4; /*0x4a1c34*/
     for ( i = (char *)this->Power_field_0x4 + 1; (unsigned int)i < 4; ++i ) /*0x4a1c3d*/
-      i[(_DWORD)&this->q008] = (char)this->a2; /*0x4a1c42*/
+      i[(unsigned int)&this->q008] = (char)this->a2; /*0x4a1c42*/
     a2 = (int)this->a2; /*0x4a1c50*/
     p_Power_field_0x8 = &a2; /*0x4a1c57*/
     v6 = ~this->Power_field_0x0; /*0x4a1c5b*/
     v7 = 4; /*0x4a1c5d*/
     do /*0x4a1c7e*/
     {
-      v6 = CRC32_Table[*(unsigned __int8 *)p_Power_field_0x8 ^ (unsigned __int8)v6] ^ (v6 >> 8); /*0x4a1c7a*/
+      v6 = CRC32_Table[*(uint8_t *)p_Power_field_0x8 ^ (uint8_t)v6] ^ (v6 >> 8); /*0x4a1c7a*/
       p_Power_field_0x8 = (int *)((char *)p_Power_field_0x8 + 1); /*0x4a1c7c*/
       --v7; /*0x4a1c7d*/
     }
@@ -472,24 +472,24 @@ int Power::FlagProcess(int a2)
   unsigned int v6; // eax
   int v7; // edi
 
-  Power_field_0x4 = this->Power_field_0x4; /*0x4a1ca0*/
+  Power_field_0x4 = (void *)((unsigned int)(this->Power_field_0x4));
   if ( !Power_field_0x4 ) /*0x4a1ca7*/
     this->a2 = 0; /*0x4a1ca9*/
-  *((_BYTE *)&this->a2 + (_DWORD)Power_field_0x4) = (_BYTE)a2 != 0; /*0x4a1cb7*/
+  *((unsigned char *)&this->a2 + (unsigned int)Power_field_0x4) = (unsigned char)a2 != 0; /*0x4a1cb7*/
   result = (int)this->Power_field_0x4 + 1; /*0x4a1cbf*/
   this->Power_field_0x4 = (void *)result; /*0x4a1cc1*/
   if ( result == 4 ) /*0x4a1cc7*/
   {
     IDA_LOBYTE(this->Power_field_0xC) = this->Power_field_0x4; /*0x4a1ccc*/
     for ( i = (char *)this->Power_field_0x4 + 1; (unsigned int)i < 4; ++i ) /*0x4a1cd5*/
-      i[(_DWORD)&this->q008] = (char)this->a2; /*0x4a1cda*/
+      i[(unsigned int)&this->q008] = (char)this->a2; /*0x4a1cda*/
     a2 = (int)this->a2; /*0x4a1ce8*/
     p_Power_field_0x8 = &a2; /*0x4a1cef*/
     v6 = ~this->Power_field_0x0; /*0x4a1cf3*/
     v7 = 4; /*0x4a1cf5*/
     do /*0x4a1d16*/
     {
-      v6 = CRC32_Table[*(unsigned __int8 *)p_Power_field_0x8 ^ (unsigned __int8)v6] ^ (v6 >> 8); /*0x4a1d12*/
+      v6 = CRC32_Table[*(uint8_t *)p_Power_field_0x8 ^ (uint8_t)v6] ^ (v6 >> 8); /*0x4a1d12*/
       p_Power_field_0x8 = (int *)((char *)p_Power_field_0x8 + 1); /*0x4a1d14*/
       --v7; /*0x4a1d15*/
     }

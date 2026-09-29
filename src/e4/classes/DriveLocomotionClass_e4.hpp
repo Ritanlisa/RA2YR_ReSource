@@ -47,6 +47,9 @@ struct DriveLocomotionClass {
     bool IsRocking;  // 0x64
     bool UnLocked;  // 0x65
     ILocomotion * ptr_68;  // 0x68
+    unsigned int LocomotionClass;
+    unsigned int Piggybackee;
+    unsigned int __pad_18;
 // --- flat members (END) ---
     DriveLocomotionClass * ProcessMove(char a2);
     HRESULT BeginMove(int * a1, int * pStm);

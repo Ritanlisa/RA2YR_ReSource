@@ -9,8 +9,6 @@ struct E4Recv_5AE530 {
     unsigned int q200;  // 0x200
     unsigned int q1298;  // 0x1298
     unsigned int q4760;  // 0x4760
-    unsigned int q98930;  // 0x98930
-    unsigned int q624944;  // 0x624944
 // --- flat members (END) ---
     DWORD sub_5AE530(ObjectClass * aP1,  ObjectClass * aP2);    // 0x5AE530
 };

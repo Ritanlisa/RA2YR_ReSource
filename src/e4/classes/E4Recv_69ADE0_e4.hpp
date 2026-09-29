@@ -17,18 +17,6 @@ struct E4Recv_69ADE0 {
     unsigned int q2084;  // 0x2084
     unsigned int q2198;  // 0x2198
     unsigned int q5408;  // 0x5408
-    unsigned int q8324;  // 0x8324
-    unsigned int q8600;  // 0x8600
-    unsigned int q34304;  // 0x34304
-    unsigned int q210290;  // 0x210290
-    unsigned int q213764;  // 0x213764
-    unsigned int q2176868;  // 0x2176868
-    unsigned int q35088488;  // 0x35088488
-    unsigned int q889750664;  // 0x889750664
-    unsigned int q36665886308;  // 0x36665886308
-    unsigned int q3738324984584;  // 0x3738324984584
-    unsigned int q971432022001028;  // 0x971432022001028
-    unsigned int q1918720483828242683030;  // 0x1918720483828242683030
 // --- flat members (END) ---
     char sub_69ADE0(char a2);  // 0x69ADE0
 };

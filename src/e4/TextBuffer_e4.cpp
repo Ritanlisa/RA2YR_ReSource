@@ -19,7 +19,7 @@ int TextBuffer::Init()
   TextBuffer *v4; // eax
   int v5; // esi
 
-  v1 = 0; /*0x5bcc93*/
+  v1 = (gamemd::TextBuffer *)(0);
   v2 = &this->u32_1F40; /*0x5bcc95*/
   do /*0x5bccbe*/
   {
@@ -29,7 +29,7 @@ int TextBuffer::Init()
     do /*0x5bccb5*/
     {
       *v3 = (TextBuffer)32; /*0x5bcca5*/
-      *(_DWORD *)v4 = 0; /*0x5bcca8*/
+      *(unsigned int *)v4 = 0; /*0x5bcca8*/
       v4 += 100; /*0x5bccae*/
       v3 += 25; /*0x5bccb1*/
       --v5; /*0x5bccb4*/

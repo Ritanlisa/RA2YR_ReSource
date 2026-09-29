@@ -40,7 +40,7 @@ HWND E4Recv_696AE0::sub_696AE0()
         v6 = SendMessageA(v4, 0x4C4u, 0xFFFFFFFF, (LPARAM)p_vtable2); /*0x696b6e*/
         if ( v6 == -1 ) /*0x696b73*/
         {
-          v8 = (char *)RA2_OPNEW(0x29u); /*0x696b8c*/
+          v8 = (char *)((HWND)((char *)RA2_OPNEW(0x29u)));
           strcpy(v8, p_vtable2); /*0x696ba2*/
           result = SendMessageA(v4, 0x4C8u, 0, (LPARAM)v8); /*0x696bb1*/
           v6 = result; /*0x696bb3*/
@@ -49,23 +49,23 @@ HWND E4Recv_696AE0::sub_696AE0()
           if ( dword_A8DB5C < dword_A8DB54 /*0x696bf1*/
             || (byte_A8DB59 || !dword_A8DB54)
             && dword_A8DB60 > 0
-            && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(dword_A8DB4C + 8))(
+            && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(dword_A8DB4C + 8))(
                  &dword_A8DB4C,
                  dword_A8DB54 + dword_A8DB60,
                  0) )
           {
-            v7 = dword_A8DB5C++; /*0x696c02*/
-            *(_DWORD *)(dword_A8DB50 + 4 * v7) = v8; /*0x696c11*/
+            v7 = (unsigned int)(dword_A8DB5C++);
+            *(unsigned int *)(dword_A8DB50 + 4 * v7) = v8; /*0x696c11*/
           }
         }
         SendMessageA(v4, 0x186u, v6, 0); /*0x696c1d*/
         SendMessageA(v4, 0x197u, v6, 0); /*0x696c28*/
-        *(_DWORD *)&this->isInLogic = v6; /*0x696c2e*/
+        this->isInLogic = (unsigned int)(v6); /*0x696c2e*/
         return (int)this; /*0x696c2a*/
       }
     }
   }
-  return result; /*0x696c34*/
+  return (HWND)(result);
 }
 } // namespace gamemd
 
@@ -98,7 +98,7 @@ HWND E4Recv_696C40::sub_696C40()
             do /*0x696cc0*/
             {
               ++v5; /*0x696cb0*/
-              *(_DWORD *)(dword_A8DB50 + 4 * v5 - 4) = *(_DWORD *)(dword_A8DB50 + 4 * v5); /*0x696cb4*/
+              *(unsigned int *)(dword_A8DB50 + 4 * v5 - 4) = *(unsigned int *)(dword_A8DB50 + 4 * v5); /*0x696cb4*/
             }
             while ( v5 < dword_A8DB5C ); /*0x696cc0*/
           }
@@ -107,10 +107,10 @@ HWND E4Recv_696C40::sub_696C40()
           --v4; /*0x696cd2*/
         SendMessageA(v3, 0x186u, v4, 0); /*0x696cdc*/
         result = SendMessageA(v3, 0x197u, v4, 0); /*0x696ce7*/
-        *(_DWORD *)&this->isInLogic = v4; /*0x696ce9*/
+        this->isInLogic = (unsigned int)(v4); /*0x696ce9*/
       }
     }
   }
-  return result; /*0x696cef*/
+  return (HWND)(result);
 }
 } // namespace gamemd

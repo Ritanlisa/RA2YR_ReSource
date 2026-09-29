@@ -41,92 +41,92 @@ int TabClass::DrawPower(HWND hDlg, void * a1, AbstractClass * aP2)
   int v10; // edx
   HWND Default; // eax
   HWND v12; // eax
-  unsigned __int8 IsAlliedWith; // al
+  uint8_t IsAlliedWith; // al
   HWND v14; // eax
   HWND v15; // edi
   const wchar_t *v16; // eax
-  _DWORD *v17; // ebx
+  unsigned int *v17; // ebx
   int v18; // ecx
   int v19; // edx
   HWND v20; // edi
   HWND v22; // eax
   HWND v23; // eax
   HWND hWnd; // [esp+10h] [ebp-D8h] BYREF
-  __int16 v25; // [esp+14h] [ebp-D4h]
-  unsigned __int8 v26; // [esp+16h] [ebp-D2h]
+  int16_t v25; // [esp+14h] [ebp-D4h]
+  uint8_t v26; // [esp+16h] [ebp-D2h]
   int nIDDlgItem; // [esp+1Ch] [ebp-CCh]
   wchar_t lParam[100]; // [esp+20h] [ebp-C8h] BYREF
   ObjectClass *v29; // [esp+F0h] [ebp+8h]
   void *other; // [esp+F4h] [ebp+Ch]
 
-  v2 = *(&dword_83921C + (_DWORD)v29); /*0x658346*/
-  v3 = *(&dword_8391FC + (_DWORD)v29); /*0x65834f*/
+  v2 = *(&dword_83921C + (unsigned int)v29); /*0x658346*/
+  v3 = *(&dword_8391FC + (unsigned int)v29); /*0x65834f*/
   nIDDlgItem = v2; /*0x658358*/
   lParam[0] = 0; /*0x65835c*/
-  if ( other && *(_BYTE *)(*((_DWORD *)other + 13) + 421) ) /*0x65836c*/
+  if ( other && *(unsigned char *)(*((unsigned int *)other + 13) + 421) ) /*0x65836c*/
   {
     wcscpy(lParam, (const wchar_t *)other + 45077); /*0x658386*/
     if ( other == (void *)HouseClass_Observer ) /*0x658395*/
     {
       BuildingAnimByName = (Color *)FindBuildingAnimByName(g_INI_Key_LightGrey, 1); /*0x6583a1*/
     }
-    else if ( *((_BYTE *)other + 501) ) /*0x6583a8*/
+    else if ( *((unsigned char *)other + 501) ) /*0x6583a8*/
     {
       BuildingAnimByName = (Color *)FindBuildingAnimByName(aGrey, 1); /*0x6583bc*/
     }
     else
     {
-      BuildingAnimByName = (Color *)*((_DWORD *)dword_B054D4 + *((_DWORD *)other + 22549)); /*0x6583cf*/
+      BuildingAnimByName = (Color *)*((unsigned int *)dword_B054D4 + *((unsigned int *)other + 22549)); /*0x6583cf*/
     }
     v5 = Color::ConvertToRGB(BuildingAnimByName + 194, (int)&hWnd); /*0x6583dd*/
-    v25 = *(_WORD *)v5; /*0x6583e6*/
-    v26 = *(_BYTE *)(v5 + 2); /*0x6583ee*/
-    v6 = (unsigned __int8)v25 | ((IDA_HIBYTE(v25) | (v26 << 8)) << 8); /*0x65841f*/
+    v25 = *(unsigned short *)v5; /*0x6583e6*/
+    v26 = *(unsigned char *)(v5 + 2); /*0x6583ee*/
+    v6 = (uint8_t)v25 | ((IDA_HIBYTE(v25) | (v26 << 8)) << 8); /*0x65841f*/
     DlgItem = GetDlgItem((HWND)hDlg, v3); /*0x65842e*/
     SendMessageA(DlgItem, 0x498u, 0, v6); /*0x658438*/
     SendMessageA(DlgItem, 0x4B2u, 0, (LPARAM)lParam); /*0x658447*/
     ResourceIDHardcodedCSF = GetResourceIDHardcodedCSF(v29); /*0x658452*/
     v9 = GetDlgItem((HWND)hDlg, ResourceIDHardcodedCSF); /*0x658460*/
-    v10 = *((_DWORD *)other + 13); /*0x658466*/
+    v10 = *((unsigned int *)other + 13); /*0x658466*/
     hWnd = v9; /*0x658469*/
     Default = (HWND)BuildingType::FindDefault(*(BuildingType **)(v10 + 180)); /*0x658473*/
     if ( other == (void *)HouseClass_Observer ) /*0x65847e*/
       Default = (HWND)BuildingType::FindDefault((BuildingType *)0xFFFFFFFD); /*0x658485*/
     CacheDialogInvalidate(hWnd, Default); /*0x658490*/
-    if ( *(&dword_83923C + (_DWORD)v29) != -1 ) /*0x65849f*/
+    if ( *(&dword_83923C + (unsigned int)v29) != -1 ) /*0x65849f*/
     {
-      v12 = GetDlgItem((HWND)hDlg, *(&dword_83923C + (_DWORD)v29)); /*0x6584ae*/
+      v12 = GetDlgItem((HWND)hDlg, *(&dword_83923C + (unsigned int)v29)); /*0x6584ae*/
       hWnd = v12; /*0x6584ba*/
       if ( dword_A8B538[0] ) /*0x6584c0*/
       {
         EnableWindow(v12, 0); /*0x6584c5*/
         v12 = hWnd; /*0x6584cb*/
       }
-      if ( *((_BYTE *)other + 501) ) /*0x6584cf*/
+      if ( *((unsigned char *)other + 501) ) /*0x6584cf*/
       {
         ShowWindow(v12, 0); /*0x6584dc*/
       }
       else
       {
         IDA_LOBYTE(v25) = HouseClass::IsAlliedWith((HouseClass *)dword_A83D4C); /*0x6584f4*/
-        SendMessageA(hWnd, 0xF1u, (unsigned __int8)v25, 0); /*0x65850b*/
+        SendMessageA(hWnd, 0xF1u, (uint8_t)v25, 0); /*0x65850b*/
       }
       IsAlliedWith = HouseClass::IsAlliedWith((HouseClass *)other); /*0x658515*/
       globalHelper_003DD0(hWnd, IsAlliedWith); /*0x658520*/
     }
-    if ( *((_BYTE *)other + 584) ) /*0x658525*/
+    if ( *((unsigned char *)other + 584) ) /*0x658525*/
     {
-      v14 = GetDlgItem((HWND)hDlg, *(&dword_83925C + (_DWORD)v29)); /*0x65853f*/
+      v14 = GetDlgItem((HWND)hDlg, *(&dword_83925C + (unsigned int)v29)); /*0x65853f*/
       ShowWindow(v14, 0); /*0x658548*/
     }
     else if ( dword_A8B538[0] ) /*0x658557*/
     {
-      v15 = GetDlgItem((HWND)hDlg, *(&dword_83925C + (_DWORD)v29)); /*0x658571*/
+      v15 = GetDlgItem((HWND)hDlg, *(&dword_83925C + (unsigned int)v29)); /*0x658571*/
       SendMessageA(v15, 0xF1u, 1u, 0); /*0x65857b*/
       EnableWindow(v15, 0); /*0x658580*/
     }
     v16 = 0; /*0x658586*/
-    v17 = (_DWORD *)((char *)other + 21476); /*0x658588*/
+    v17 = (unsigned int *)((char *)other + 21476); /*0x658588*/
     v18 = 20; /*0x65858e*/
     do /*0x6585a0*/
     {

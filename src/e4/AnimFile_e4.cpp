@@ -18,16 +18,16 @@ namespace gamemd {
 AnimFile * AnimFile::QueryInterface(char a2)
 {
   char v3; // al
-  void (__thiscall ***v4)(_DWORD, int); // ecx
+  void (__thiscall ***v4)(unsigned int, int); // ecx
 
-  v3 = this->u32_89; /*0x4272a6*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&AnimFile_vftable; /*0x4272ac*/
+  v3 = (unsigned int)(this->u32_89);
+  *(unsigned int *)this->__pad_0 = (void*)&AnimFile_vftable; /*0x4272ac*/
   if ( v3 ) /*0x4272b4*/
   {
-    (*(void (__thiscall **)(_DWORD))(**((_DWORD **)&this->q00C3) + 52))(this->u32_84); /*0x4272be*/
+    (*(void (__thiscall **)(unsigned int))(**((unsigned int **)&this->q00C3) + 52))(this->u32_84); /*0x4272be*/
     this->u32_89 = 0; /*0x4272c1*/
   }
-  v4 = (void (__thiscall ***)(_DWORD, int))this->u32_E0C; /*0x4272c7*/
+  v4 = (void (__thiscall ***)(unsigned int, int))this->u32_E0C; /*0x4272c7*/
   this->u32_84 = 0; /*0x4272cd*/
   if ( v4 ) /*0x4272d5*/
   {
@@ -39,8 +39,8 @@ AnimFile * AnimFile::QueryInterface(char a2)
     RA2_OPDEL(*((void **)this + 900)); /*0x4272ee*/
     this->u32_E10 = 0; /*0x4272f6*/
   }
-  this->u32_88 = 0; /*0x427300*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&Animate_vftable; /*0x427308*/
+  this->u32_88 = (unsigned int)(0);
+  *(unsigned int *)this->__pad_0 = (void*)&Animate_vftable; /*0x427308*/
   if ( (a2 & 1) != 0 ) /*0x42730e*/
     RA2_OPDEL(); /*0x427311*/
   return this; /*0x42731b*/

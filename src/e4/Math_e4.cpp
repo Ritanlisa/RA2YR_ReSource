@@ -37,15 +37,15 @@ void Math::Hypotenuse2D()
 namespace gamemd {
 void Math_Sqrt(void * a1)
 {
-  __int16 v1; // fps
-  double v2; // st7
+  int16_t v1; // fps
+  void * v2;
   bool v3; // c0
   char v4; // c2
   bool v5; // c3
   int result; // eax
-  float v7; // [esp+4h] [ebp+4h]
+  void * v7;
 
-  v2 = a1; /*0x4cac40*/
+  v2 = (double)(a1);
   v3 = a1 < 0.0; /*0x4cac44*/
   v4 = 0; /*0x4cac44*/
   v5 = a1 == 0.0; /*0x4cac44*/
@@ -55,7 +55,7 @@ void Math_Sqrt(void * a1)
     if ( a1 <= 0.0 ) /*0x4cac65*/
       v2 = a1 * -1.0; /*0x4cac67*/
     v7 = v2; /*0x4cac6d*/
-    return (((__int16)((IDA_LODWORD(v7) >> 23) - 127) >> 1) + 127) << 23; /*0x4caca0*/
+    return (((int16_t)((IDA_LODWORD(v7) >> 23) - 127) >> 1) + 127) << 23; /*0x4caca0*/
   }
   return result; /*0x4cac59*/
 }
@@ -72,7 +72,7 @@ void Math_SinCos(void * a1)
   v2 = v1 & 1; /*0x4cacc4*/
   result = (v1 / 2) & 0x80001FFF; /*0x4cacc9*/
   if ( result < 0 )
-    result = (((_WORD)result - 1) | 0xFFFFE000) + 1 + ((int)((((_WORD)result - 1) | 0xFFFFE000) + 1) < 0 ? 0x2000 : 0);
+    result = (((unsigned short)result - 1) | 0xFFFFE000) + 1 + ((int)((((unsigned short)result - 1) | 0xFFFFE000) + 1) < 0 ? 0x2000 : 0);
   if ( v2 ) /*0x4cace0*/
   {
     if ( result < 0x1FFF ) /*0x4cace7*/
@@ -93,7 +93,7 @@ void Math_ArcTan2(void * a1)
   IDA_LOWORD(v1) = Math::RoundToInt(a1 * flt_8223B4); /*0x4cad0a*/
   v2 = v1 & 1; /*0x4cad14*/
   v3 = (v1 / 2) & 0x80001FFF; /*0x4cad19*/
-  if ( v3 >= 0 || (v3 = (((_WORD)v3 - 1) | 0xFFFFE000) + 1, v3 >= 0) ) /*0x4cad27*/
+  if ( v3 >= 0 || (v3 = (((unsigned short)v3 - 1) | 0xFFFFE000) + 1, v3 >= 0) ) /*0x4cad27*/
     result = v3 + 2048; /*0x4cad30*/
   else
     result = v3 + 10240; /*0x4cad29*/
@@ -115,7 +115,7 @@ int Math::Sin(double a1)
   IDA_LOWORD(v1) = Math::RoundToInt(a1 * 651.8986469044033); /*0x4cad5a*/
   result = v1 & 0x80000FFF; /*0x4cad5f*/
   if ( result < 0 )
-    return (((_WORD)result - 1) | 0xFFFFF000) + 1 + ((int)((((_WORD)result - 1) | 0xFFFFF000) + 1) < 0 ? 0x1000 : 0);
+    return (((unsigned short)result - 1) | 0xFFFFF000) + 1 + ((int)((((unsigned short)result - 1) | 0xFFFFF000) + 1) < 0 ? 0x1000 : 0);
   return result; /*0x4cad7b*/
 }
 }
@@ -123,27 +123,27 @@ int Math::Sin(double a1)
 namespace gamemd {
 void Math_CalcAngle(void * a1, void * a2)
 {
-  __int16 v2; // fps
-  double v3; // st7
+  int16_t v2; // fps
+  void * v3;
   char v4; // c3
   bool v5; // c0
   char v6; // c2
   bool v7; // c3
   int result; // eax
-  __int16 v9; // fps
+  int16_t v9; // fps
   bool v10; // c0
   char v11; // c2
   bool v12; // c3
   int v13; // eax
-  __int16 v14; // fps
+  int16_t v14; // fps
   bool v15; // c0
   char v16; // c2
   bool v17; // c3
-  float v18; // [esp+0h] [ebp-4h]
-  float v19; // [esp+10h] [ebp+Ch]
+  void * v18;
+  void * v19;
 
-  v18 = a2; /*0x4cae35*/
-  v19 = a1; /*0x4cae3d*/
+  v18 = (float)(a2);
+  v19 = (double)(a1);
   v3 = v19; /*0x4cae4b*/
   if ( v4 ) /*0x4cae54*/
   {
@@ -186,11 +186,11 @@ void * Math::BuildRotationMatrix(float * a2, float a3)
   double v14; // st7
   float v16; // [esp+10h] [ebp+8h]
 
-  a3 = a3; /*0x5ae762*/
-  v16 = Math::ArcTan2(a3); /*0x5ae76f*/
-  v5 = Math::SinCos(a3); /*0x5ae775*/
+  a3 = (void *)(a3);
+  v16 = (void *)(Math::ArcTan2(a3));
+  v5 = (void *)(Math::SinCos(a3));
   v7 = *a2 * *a2; /*0x5ae787*/
-  *this = (1.0 - v7) * v16 + v7; /*0x5ae797*/
+  *(unsigned int *)this = (1.0 - v7) * v16 + v7; /*0x5ae797*/
   v8 = 1.0 - v16; /*0x5ae7a1*/
   this->u32_4 = *a2 * a2[1] * v8 - v5 * a2[2]; /*0x5ae7b3*/
   v9 = a2[2] * *a2 * v8; /*0x5ae7bb*/
@@ -219,10 +219,10 @@ int Math::DistSq2D(TechnoClass * aP1)
   int *v2; // edx
   int v3; // eax
   int v4; // ecx
-  _BYTE v6[8]; // [esp+4h] [ebp-Ch] BYREF
+  unsigned char v6[8]; // [esp+4h] [ebp-Ch] BYREF
   int v7; // [esp+Ch] [ebp-4h]
 
-  v2 = (int *)(*(int (__thiscall **)(Math *, _BYTE *))(*(_DWORD *)this->__pad_0 + 72))(this, v6); /*0x5f656e*/
+  v2 = (int *)(*(int (__thiscall **)(Math *, unsigned char *))(*(unsigned int *)this->__pad_0 + 72))(this, v6); /*0x5f656e*/
   v3 = *v2; /*0x5f6574*/
   v4 = v2[1]; /*0x5f6576*/
   v7 = v2[2]; /*0x5f657c*/
@@ -319,10 +319,10 @@ unsigned int * Math::QuaternionSlerp(unsigned int * a1, float * a2, float * a3, 
 namespace gamemd {
 void Math_RoundToInt(void * a1)
 {
-  __int64 v1; // rax
+  int64_t v1; // rax
   int result; // dx:ax
 
-  v1 = (__int64)a1; /*0x7c5f20*/
+  v1 = (int64_t)a1; /*0x7c5f20*/
   IDA_LOWORD(result) = v1; /*0x7c5f22*/
   IDA_HIWORD(result) = IDA_WORD2(v1); /*0x7c5f22*/
   return result; /*0x7c5f22*/
@@ -352,7 +352,7 @@ namespace gamemd {
 double Math::ArcTan(double a1)
 {
   int v2; // eax
-  __int16 v3; // fps
+  int16_t v3; // fps
   bool v4; // c0
   char v5; // c2
   bool v6; // c3
@@ -374,7 +374,7 @@ double Math::ArcTan(double a1)
 namespace gamemd {
 IUnknown * Math::Sub16(BuildingTypeClass * aP1, IUnknown * aP2)
 {
-  IDA_LOWORD(aP2) = *(_WORD *)this->__pad_0 - *aP2; /*0x5b295a*/
+  IDA_LOWORD(aP2) = *(unsigned short *)this->__pad_0 - *aP2; /*0x5b295a*/
   *aP1 = aP2; /*0x5b2967*/
   return aP1; /*0x5b2969*/
 }
@@ -384,7 +384,7 @@ IUnknown * Math::Sub16(BuildingTypeClass * aP1, IUnknown * aP2)
 namespace gamemd {
 bool Math::Abs16Cmp(IUnknown * aP1, IUnknown * aP2)
 {
-  return abs16(*aP2) >= (int)abs16(*(_WORD *)this->__pad_0 - *aP1); /*0x5b29b3*/
+  return abs16(*aP2) >= (int)abs16(*(unsigned short *)this->__pad_0 - *aP1); /*0x5b29b3*/
 }
 } // namespace gamemd
 
@@ -394,7 +394,7 @@ void sub_5C7DB0(unsigned short * a1, unsigned short * a2, unsigned short a3, int
 {
   int v4; // ebx
   unsigned int v5; // esi
-  unsigned __int16 v6; // ax
+  uint16_t v6; // ax
   unsigned int v7; // eax
   unsigned int v8; // eax
 
@@ -409,7 +409,7 @@ void sub_5C7DB0(unsigned short * a1, unsigned short * a2, unsigned short a3, int
     do /*0x5c7de8*/
     {
       v6 = *a2++; /*0x5c7dcc*/
-      v7 = v5 + (unsigned __int16)*a1 + a3 * v6; /*0x5c7dda*/
+      v7 = v5 + (uint16_t)*a1 + a3 * v6; /*0x5c7dda*/
       *a1++ = v7; /*0x5c7ddc*/
       v8 = IDA_HIWORD(v7); /*0x5c7de2*/
       --v4; /*0x5c7de5*/

@@ -17,8 +17,6 @@ struct VectorClass_Scenario3 {
     unsigned char q774;  // 0x774
     unsigned char q1908;  // 0x1908
     unsigned char q6408;  // 0x6408
-    unsigned char q25608;  // 0x25608
-    unsigned char q1388694;  // 0x1388694
 // --- flat members (END) ---
     char ResizeAndCopy(int a2,  unsigned int * a3);    // 0x5D8590
 };

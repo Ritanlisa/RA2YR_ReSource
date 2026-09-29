@@ -7,6 +7,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Mouse_e4.hpp"
+#include "e4/classes/MapClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x5C7EC0
 namespace gamemd {
@@ -22,11 +24,11 @@ void sub_5C7EC0(const void * a1, int a2)
   int v10; // ecx
   unsigned int v11; // edx
   int *v12; // eax
-  int v14; // edx
+  int * v14;
   int *v15; // eax
   int v17; // eax
   int v18; // eax
-  int v19; // edx
+  int * v19;
   unsigned int v20; // ecx
   int v21; // ecx
   bool v22; // zf
@@ -86,14 +88,13 @@ void sub_5C7EC0(const void * a1, int a2)
     }
     while ( !*--v12 ); /*0x5c7f4b*/
   }
-  v14 = 2; /*0x5c7f56*/
-  dword_ABF8C8 = dword_ABF5AC[v2]; /*0x5c7f5e*/
-  v15 = &dword_ABF8CC; /*0x5c7f67*/
+  v14 = (int *)(2);
+  dword_ABF8C8 = (int *)(dword_ABF5AC[v2]);
+  v15 = (int *)(&dword_ABF8CC);
   dword_ABF8CC = dword_ABF5B0[v2]; /*0x5c7f6e*/
   if ( dword_ABF8CC ) /*0x5c7f74*/
   {
-  LABEL_16:
-    v18 = v14; /*0x5c7f8b*/
+  LABEL_16: v18 = (int)(v14);
     v19 = dword_ABF8C4[v14]; /*0x5c7f8d*/
     v20 = 0x80000000; /*0x5c7f94*/
     v17 = 32 * v18; /*0x5c7f99*/
@@ -116,7 +117,7 @@ void sub_5C7EC0(const void * a1, int a2)
     }
     v17 = 0; /*0x5c7f87*/
   }
-  dword_ABF8C4[0] = v17 - 32; /*0x5c7fb1*/
+  dword_ABF8C4[0] = (int *)(v17 - 32);
   RotateBitBufferRight(&dword_ABF8C8, v17 - 32, 2); /*0x5c7fb7*/
   DivideBigInteger(&dword_ABF5A4, (char *)&dword_ABF8C8, 2); /*0x5c7fc8*/
   RotateBitBufferRight(&dword_ABF5A4, 1, 2); /*0x5c7fd9*/
@@ -131,8 +132,8 @@ void sub_5C7EC0(const void * a1, int a2)
     if ( !--v21 ) /*0x5c8018*/
       break; /*0x5c8018*/
   }
-  v24 = 2; /*0x5c8027*/
-  v25 = &dword_ABF5A8; /*0x5c802e*/
+  v24 = (int *)(2);
+  v25 = (int *)(&dword_ABF5A8);
   if ( dword_ABF5A8 ) /*0x5c8033*/
   {
   LABEL_24:

@@ -29,9 +29,6 @@ struct E4Recv_71FF20 {
     unsigned int q774;  // 0x774
     unsigned int q1634;  // 0x1634
     CampaignScore * q1910;  // 0x1910
-    unsigned int q33570;  // 0x33570
-    unsigned int q210288;  // 0x210288
-    unsigned int q35009334;  // 0x35009334
 // --- flat members (END) ---
     int sub_71FF20(int aP1,  int a3,  int a4,  int aP2,  int aP3,  int aP4,  int aP5,  char a9,  void* aP9);    // 0x71FF20
 };

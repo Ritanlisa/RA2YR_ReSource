@@ -17,6 +17,7 @@ struct MSPCXAnim {
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
+    unsigned int u32_29;
 // --- flat members (END) ---
     MSPCXAnim * QueryInterface(char a2);
     int Stub();

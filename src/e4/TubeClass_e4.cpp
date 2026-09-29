@@ -7,6 +7,7 @@
 #include "e4/classes/_tree_full_e4.hpp"
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x7281A0
 namespace gamemd {
@@ -20,10 +21,10 @@ int TubeClass::LoadState(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x7281b6*/
     {
       AbstractClass::Constructor((AbstractClass *)aP0); /*0x7281ba*/
-      aP0->ObjectClass = &(void*)(void*)&TubeClass_vftable; /*0x7281bf*/
-      aP0->? = &(void*)(void*)&TubeClass_vftable; /*0x7281c5*/
-      aP0->? = &(void*)(void*)&TubeClass_vftable; /*0x7281cc*/
-      aP0->? = &(void*)(void*)&TubeClass_vftable; /*0x7281d3*/
+      aP0->ObjectClass = (void*)&TubeClass_vftable; /*0x7281bf*/
+      aP0->? = (void*)&TubeClass_vftable; /*0x7281c5*/
+      aP0->? = (void*)&TubeClass_vftable; /*0x7281cc*/
+      aP0->? = (void*)&TubeClass_vftable; /*0x7281d3*/
     }
     return 0; /*0x7281da*/
   }

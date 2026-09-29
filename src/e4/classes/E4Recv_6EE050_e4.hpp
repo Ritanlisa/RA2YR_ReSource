@@ -24,18 +24,6 @@ struct E4Recv_6EE050 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     int q6408;  // 0x6408
-    unsigned int q22148;  // 0x22148
-    int q25608;  // 0x25608
-    unsigned int q1283474;  // 0x1283474
-    int q1388694;  // 0x1388694
-    unsigned int q19412084;  // 0x19412084
-    int q20481684;  // 0x20481684
-    unsigned int q423698564;  // 0x423698564
-    int q541595268;  // 0x541595268
-    int q22571209320;  // 0x22571209320
-    unsigned int q1612552106354;  // 0x1612552106354
-    int q2359835005728;  // 0x2359835005728
-    unsigned int q254497877309523350;  // 0x254497877309523350
 // --- flat members (END) ---
     int sub_6EE050(int a2,  int a3);    // 0x6EE050
 };

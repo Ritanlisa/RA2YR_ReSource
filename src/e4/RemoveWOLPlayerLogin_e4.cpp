@@ -26,9 +26,9 @@ void E4Recv_7AE830::sub_7AE830()
   vtable2 = (unsigned int)this->?; /*0x7ae835*/
   if ( (ObjectClass *)vtable2 > this->nextObject && IDA_LOBYTE(this->?) != 1 ) /*0x7ae847*/
   {
-    vtable0 = (int *)this->AbstractClass; /*0x7ae850*/
-    vtable3 = (char *)this->?; /*0x7ae853*/
-    v13 = (int *)this->AbstractClass; /*0x7ae856*/
+    vtable0 = (int *)((unsigned int)((int *)this->AbstractClass));
+    vtable3 = (unsigned int)((char *)this->?);
+    v13 = (unsigned int)((int *)this->AbstractClass);
     this->? = (void *)(vtable2 >> 1); /*0x7ae85c*/
     this->? = vtable3 - 1; /*0x7ae864*/
     v5 = (void *)RA2_OPNEW(4 * (vtable2 >> 1)); /*0x7ae86f*/
@@ -47,10 +47,10 @@ void E4Recv_7AE830::sub_7AE830()
           do /*0x7ae8bd*/
           {
             v10 = ((int (__thiscall *)(int))this->?)(v9) & ((1 << (int)this->?) - 1); /*0x7ae8a7*/
-            v11 = *((_DWORD *)this->AbstractClass + v10); /*0x7ae8ab*/
-            *((_DWORD *)this->AbstractClass + v10) = v9; /*0x7ae8b1*/
-            v12 = *(_DWORD *)(v9 + 8); /*0x7ae8b3*/
-            *(_DWORD *)(v9 + 8) = v11; /*0x7ae8b6*/
+            v11 = *((unsigned int *)this->AbstractClass + v10); /*0x7ae8ab*/
+            *((unsigned int *)this->AbstractClass + v10) = v9; /*0x7ae8b1*/
+            v12 = *(unsigned int *)(v9 + 8); /*0x7ae8b3*/
+            *(unsigned int *)(v9 + 8) = v11; /*0x7ae8b6*/
             v9 = v12; /*0x7ae8b9*/
           }
           while ( v12 ); /*0x7ae8bd*/

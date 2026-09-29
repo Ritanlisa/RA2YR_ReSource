@@ -17,7 +17,7 @@
 namespace gamemd {
 char NullModem_TestConnection(void * a1)
 {
-  char v1; // bl
+  wchar_t * v1;
   wchar_t *StringCSF; // esi
   wchar_t *v3; // eax
   HWND MessageBox; // eax
@@ -36,14 +36,14 @@ char NullModem_TestConnection(void * a1)
   char v19; // [esp+Bh] [ebp-205h]
   int v20; // [esp+Ch] [ebp-204h]
   HWND hWnd; // [esp+10h] [ebp-200h]
-  _BYTE v22[4]; // [esp+14h] [ebp-1FCh] BYREF
+  unsigned char v22[4]; // [esp+14h] [ebp-1FCh] BYREF
   int v23[62]; // [esp+18h] [ebp-1F8h] BYREF
-  __int16 v24; // [esp+110h] [ebp-100h]
-  _DWORD v25[6]; // [esp+114h] [ebp-FCh] BYREF
+  int16_t v24; // [esp+110h] [ebp-100h]
+  unsigned int v25[6]; // [esp+114h] [ebp-FCh] BYREF
   int v26; // [esp+12Ch] [ebp-E4h]
 
-  v1 = 0; /*0x5f03bd*/
-  v19 = 1; /*0x5f03d0*/
+  v1 = (char)((wchar_t *)(0));
+  v19 = (wchar_t *)(1);
   g_NetworkTestFlag = 0; /*0x5f03d5*/
   StringCSF = GetStringCSF(g_Str_TXT_CANCEL, 0, g_Str_File_NullDlg_CPP, 6489); /*0x5f03f1*/
   v3 = GetStringCSF(aTxtNullConnerr, 0, g_Str_File_NullDlg_CPP, 6489); /*0x5f03f3*/
@@ -57,7 +57,7 @@ char NullModem_TestConnection(void * a1)
     v5 += Timer::GetTicks() - dword_887338; /*0x5f0434*/
   v20 = v5; /*0x5f0438*/
   v6 = v5; /*0x5f043c*/
-  while ( (unsigned __int8)Dialog::PumpMessages() != 1 && !g_NetworkTestFlag ) /*0x5f0452*/
+  while ( (uint8_t)Dialog::PumpMessages() != 1 && !g_NetworkTestFlag ) /*0x5f0452*/
   {
     Stream::ReadPacket((int)&unk_A8EA70); /*0x5f045d*/
     v7 = dword_887338; /*0x5f0462*/
@@ -88,9 +88,9 @@ char NullModem_TestConnection(void * a1)
       v20 = v11; /*0x5f052c*/
       if ( v25[0] == 100 ) /*0x5f0533*/
       {
-        if ( (unsigned __int8)v26 == dword_A8B394 ) /*0x5f054d*/
+        if ( (uint8_t)v26 == dword_A8B394 ) /*0x5f054d*/
         {
-          v17 = GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullDlg_CPP, 6530); /*0x5f064a*/
+          v17 = (wchar_t *)(GetStringCSF(g_Str_TXT_OK, 0, g_Str_File_NullDlg_CPP, 6530));
           v15 = (int *)GetStringCSF(aTxtSystemNotRe, 0, g_Str_File_NullDlg_CPP, 6530); /*0x5f0655*/
           Dialog::ShowMessageBox(v15, v17, 0, 0, 0, a1); /*0x5f065f*/
           break; /*0x5f065f*/

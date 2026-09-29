@@ -36,15 +36,15 @@ int CCFileClass::Open(const char* pFileName)
   }
   else
   {
-    result = (*(int (__thiscall **)(CCFileClass *))(*(_DWORD *)this->CDFileClass + 24))(this); /*0x473c69*/
-    if ( (_BYTE)result ) /*0x473c6e*/
+    result = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 24))(this); /*0x473c69*/
+    if ( (unsigned char)result ) /*0x473c6e*/
     {
       this->u32_68 = 1; /*0x473c70*/
       IDA_LOBYTE(result) = 1; /*0x473c73*/
     }
     else
     {
-      v4 = (const char *)(*(int (__thiscall **)(CCFileClass *))(*(_DWORD *)this->CDFileClass + 4))(this); /*0x473c84*/
+      v4 = (const char *)(*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 4))(this); /*0x473c84*/
       if ( LookupFileInfoCache(v4, 0, 0, 0, 0) ) /*0x473c8b*/
       {
         this->u32_68 = 1; /*0x473c94*/
@@ -53,7 +53,7 @@ int CCFileClass::Open(const char* pFileName)
       else
       {
         result = File::IsReady((BufferIOFileClass *)this, 0); /*0x473ca2*/
-        if ( (_BYTE)result ) /*0x473ca9*/
+        if ( (unsigned char)result ) /*0x473ca9*/
         {
           this->u32_68 = 1; /*0x473cab*/
           IDA_LOBYTE(result) = 1; /*0x473cae*/
@@ -75,12 +75,12 @@ void* CCFileClass::ReadEntireFile()
   size_t v3; // ebx
 
   v2 = 0; /*0x4a3895*/
-  if ( (*(unsigned __int8 (__thiscall **)(CCFileClass *, _DWORD))(*(_DWORD *)this->CDFileClass + 20))(this, 0) ) /*0x4a389a*/
+  if ( (*(uint8_t (__thiscall **)(CCFileClass *, unsigned int))(*(unsigned int *)this->CDFileClass + 20))(this, 0) ) /*0x4a389a*/
   {
-    v3 = (*(int (__thiscall **)(CCFileClass *))(*(_DWORD *)this->CDFileClass + 44))(this); /*0x4a38a8*/
+    v3 = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)this->CDFileClass + 44))(this); /*0x4a38a8*/
     v2 = (void *)RA2_OPNEW(v3); /*0x4a38b0*/
     if ( v2 ) /*0x4a38b7*/
-      (*(void (__thiscall **)(CCFileClass *, void *, size_t))(*(_DWORD *)this->CDFileClass + 36))(this, v2, v3); /*0x4a38bf*/
+      (*(void (__thiscall **)(CCFileClass *, void *, size_t))(*(unsigned int *)this->CDFileClass + 36))(this, v2, v3); /*0x4a38bf*/
   }
   return v2; /*0x4a38c4*/
 }
@@ -92,7 +92,7 @@ int CCFileClass::Reset()
   Buffer *v2; // ecx
   int result; // eax
 
-  v2 = (Buffer *)((char *)&this->CacheReadAhead8); /*0x473ce3*/
+  v2 = (unsigned char)((Buffer *)((char *)&this->CacheReadAhead8));
   if ( v2 ) /*0x473ce8*/
     Buffer::Init(v2, 0, 0); /*0x473cee*/
   this->tail_19 = 0; /*0x473cf5*/

@@ -22,16 +22,16 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
   int TileIndex; // eax
   int v8; // eax
   double v9; // [esp+0h] [ebp-34h]
-  __int16 v10[2]; // [esp+14h] [ebp-20h] BYREF
-  __int16 v11[2]; // [esp+18h] [ebp-1Ch] BYREF
-  __int16 v12[2]; // [esp+1Ch] [ebp-18h] BYREF
-  _BYTE v13[4]; // [esp+20h] [ebp-14h] BYREF
+  int16_t v10[2]; // [esp+14h] [ebp-20h] BYREF
+  int16_t v11[2]; // [esp+18h] [ebp-1Ch] BYREF
+  int16_t v12[2]; // [esp+1Ch] [ebp-18h] BYREF
+  unsigned char v13[4]; // [esp+20h] [ebp-14h] BYREF
   int v14; // [esp+24h] [ebp-10h] BYREF
   int v15; // [esp+28h] [ebp-Ch] BYREF
   int v16; // [esp+2Ch] [ebp-8h]
   int v17; // [esp+30h] [ebp-4h]
   TunnelLocomotionClass *thisa; // [esp+38h] [ebp+4h]
-  unsigned __int16 this_2; // [esp+3Ah] [ebp+6h]
+  uint16_t this_2; // [esp+3Ah] [ebp+6h]
 
   switch ( a1->? ) /*0x728c17*/
   {
@@ -46,9 +46,9 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
     case 3: /*0x728c17*/
       a1->? = 5; /*0x728dd0*/
   LABEL_11:
-      a1->CurrentState[0] = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728de0*/
-      a1->CurrentState[1] = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728df0*/
-      a1->CurrentState[2] = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[360]; /*0x728df9*/
+      a1->CurrentState[0] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728de0*/
+      a1->CurrentState[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728df0*/
+      a1->CurrentState[2] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[360]; /*0x728df9*/
       break; /*0x728df9*/
     case 4: /*0x728c17*/
       CurrentState = a1->CurrentState; /*0x728c29*/
@@ -81,7 +81,7 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
       }
       if ( (IDA_BYTE1(_EAX) & 0x41) == 0 ) /*0x728c84*/
       {
-        *(_DWORD *)v10 = *(_DWORD *)(*((int (__thiscall **)(FootClass *, _BYTE *))a1->?->TechnoClass + 110))( /*0x728c9e*/
+        *(unsigned int *)v10 = *(unsigned int *)(*((int (__thiscall **)(FootClass *, unsigned char *))a1->?->TechnoClass + 110))( /*0x728c9e*/
                                       a1->?,
                                       v13);
         v11[0] = 0; /*0x728cc4*/
@@ -106,9 +106,9 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
                 0,
                 0);
         this_2 = IDA_HIWORD(v8); /*0x728cf3*/
-        if ( (_WORD)v8 != *(_WORD *)&g_BuildingLoadQueue_Array.__pad_F70[320] ) /*0x728cf7*/
+        if ( (unsigned short)v8 != *(unsigned short *)&g_BuildingLoadQueue_Array.__pad_F70[320] ) /*0x728cf7*/
           goto LABEL_8; /*0x728cf7*/
-        if ( IDA_HIWORD(v8) == *(_WORD *)&g_BuildingLoadQueue_Array.__pad_F70[322] ) /*0x728d09*/
+        if ( IDA_HIWORD(v8) == *(unsigned short *)&g_BuildingLoadQueue_Array.__pad_F70[322] ) /*0x728d09*/
         {
           v12[0] = 0; /*0x728d33*/
           v12[1] = 0; /*0x728d38*/
@@ -132,25 +132,25 @@ void TunnelLocomotionClass::ProcessFormationPosition(unsigned int * a1)
                   0);
           this_2 = IDA_HIWORD(v8); /*0x728d44*/
         }
-        if ( IDA___PAIR32__(this_2, v8) == *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[320] ) /*0x728d4f*/
+        if ( IDA___PAIR32__(this_2, v8) == *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[320] ) /*0x728d4f*/
         {
-          (*((void (__stdcall **)(int *, _DWORD, _DWORD, _DWORD, int, int, _DWORD))a1->?->TechnoClass + 91))( /*0x728d7c*/
+          (*((void (__stdcall **)(int *, unsigned int, unsigned int, unsigned int, int, int, unsigned int))a1->?->TechnoClass + 91))( /*0x728d7c*/
             &a1->?->?,
             0,
-            *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
+            *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 4008),
             0,
             1,
             1,
             0);
-          *CurrentState = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728d88*/
-          a1->CurrentState[1] = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728d90*/
-          a1->CurrentState[2] = *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[360]; /*0x728d99*/
+          *CurrentState = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[352]; /*0x728d88*/
+          a1->CurrentState[1] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[356]; /*0x728d90*/
+          a1->CurrentState[2] = *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[360]; /*0x728d99*/
         }
         else
         {
   LABEL_8:
-          *CurrentState = ((__int16)v8 << 8) + 128; /*0x728dbf*/
-          a1->CurrentState[1] = ((__int16)this_2 << 8) + 128; /*0x728dc1*/
+          *CurrentState = ((int16_t)v8 << 8) + 128; /*0x728dbf*/
+          a1->CurrentState[1] = ((int16_t)this_2 << 8) + 128; /*0x728dc1*/
           a1->CurrentState[2] = 0; /*0x728dc4*/
         }
       }
@@ -180,19 +180,19 @@ int TunnelLocomotionClass::BeginMove(int * a1, int * a2)
   int result; // eax
   int v3; // edx
 
-  result = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, a2); /*0x72a15b*/
+  result = (int)(SwizzleManager::SaveLoad((int *)a1->LocomotionClass, a2));
   if ( result >= 0 ) /*0x72a164*/
   {
     if ( a1 ) /*0x72a168*/
     {
-      *(_DWORD *)a1->LocomotionClass = &(void*)(void*)&LocomotionClass_vftable; /*0x72a16a*/
-      *(_DWORD *)&a1->LocomotionClass[4] = &(void*)(void*)&LocomotionClass_vftable; /*0x72a170*/
-      v3 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x72a177*/
+      *(unsigned int *)a1->LocomotionClass = (void*)&LocomotionClass_vftable; /*0x72a16a*/
+      *(unsigned int *)&a1->LocomotionClass[4] = (void*)&LocomotionClass_vftable; /*0x72a170*/
+      v3 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x72a177*/
       a1->CurrentState[6] = 0; /*0x72a17d*/
       a1->CurrentState[4] = v3; /*0x72a180*/
       a1->CurrentState[7] = 0; /*0x72a183*/
-      *(_DWORD *)a1->LocomotionClass = &(void*)(void*)&TunnelLocomotionClass_vftable; /*0x72a186*/
-      *(_DWORD *)&a1->LocomotionClass[4] = &(void*)(void*)&TunnelLocomotionClass_vftable; /*0x72a18c*/
+      *(unsigned int *)a1->LocomotionClass = (void*)&TunnelLocomotionClass_vftable; /*0x72a186*/
+      *(unsigned int *)&a1->LocomotionClass[4] = (void*)&TunnelLocomotionClass_vftable; /*0x72a18c*/
     }
   }
   return result; /*0x72a193*/

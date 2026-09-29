@@ -163,6 +163,7 @@ struct HouseTypeClass {
     char q1A8[4];  // 0x1A8
     unsigned char m_padding_1A9;  // 0x1A9
     unsigned int q1AC;  // 0x1AC
+    unsigned int __pad_16D;
 // --- flat members (END) ---
     AbstractClass * * Dtor();
     AbstractClass * * ProcessPower(int * a2);

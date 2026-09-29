@@ -121,6 +121,17 @@ struct CellClass {
     unsigned int CellClass_field_13C;  // 0x13C
     char flags[4];  // 0x140
     unsigned char padding144;  // 0x144
+    unsigned int __pad_28;
+    unsigned int mapCoords;
+    unsigned int u32_11E;
+    unsigned int u32_24;
+    unsigned int u32_2F4;
+    unsigned int u32_E4;
+    unsigned int u32_E8;
+    unsigned int vtable27;
+    unsigned int vtable28;
+    unsigned int vtable46;
+    unsigned int vtable48;
 // --- flat members (END) ---
     HouseClass * * UpdateTerrain(void* aP0, void* aP1);
     HouseClass * * UpdateTileVariant2(void* aP0, void* aP1);

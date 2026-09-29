@@ -76,6 +76,16 @@ struct Object {
     unsigned int q260;  // 0x260
     unsigned char q264;  // 0x264
     void* q29C;  // 0x29C
+    unsigned int Object_field_0x13C;
+    unsigned int Object_field_0x30;
+    unsigned int Object_field_0xE4;
+    unsigned int Type;
+    unsigned int __pad_EC;
+    unsigned int q03C6;
+    unsigned int q0442;
+    unsigned int q0A0;
+    unsigned int q0A4;
+    unsigned int u32_5788;
 // --- flat members (END) ---
     int FindClosestObjectCell(void* aP1,  void* aP2,  void* aP3);    // 0x47C3D0
     int FindObjectCell(TechnoClass * aP1,  char aP2);    // 0x47C5A0

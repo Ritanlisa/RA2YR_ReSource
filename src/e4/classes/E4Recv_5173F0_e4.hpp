@@ -11,6 +11,7 @@ struct E4Recv_5173F0 {
     unsigned int M2;  // 0x2
     unsigned int u32_4;  // 0x4
     unsigned int u32_8;  // 0x8
+    unsigned int AbstractClass;
 // --- flat members (END) ---
     int sub_5173F0(unsigned char * a2);  // 0x5173F0
 };

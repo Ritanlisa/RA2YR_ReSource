@@ -13,6 +13,10 @@ struct MSPCXAnim_42 {
     bool IsAllocated;  // 0xD
     int q010;  // 0x10
     bool IsInitialized;  // 0x12
+    unsigned int m_1;
+    unsigned int m_10;
+    unsigned int m_8;
+    unsigned int m_C;
 // --- flat members (END) ---
     char AllocCopyData_8B(int a2,  unsigned int * a3);    // 0x5D09C0
     void FreeData();  // 0x5D05A0

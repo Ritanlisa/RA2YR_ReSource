@@ -10,6 +10,7 @@
 #include "e4/classes/CoopCampaignVector_e4.hpp"
 #include "e4/classes/VectorClass_flat_e4.hpp"
 #include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x48E620
 namespace gamemd {
@@ -19,7 +20,7 @@ int Control::DispatchClick(ControlClass * aP1)
 
   v3 = this->u32_28; /*0x48e623*/
   if ( v3 ) /*0x48e628*/
-    (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v3 + 108))(v3, 0); /*0x48e62e*/
+    (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)v3 + 108))(v3, 0); /*0x48e62e*/
   return GadgetClass::ClearState(aP1); /*0x48e63d*/
 }
 } // namespace gamemd
@@ -29,12 +30,12 @@ int Control::RepositionControlsDialog()
 {
   HWND Parent; // esi
   int v3; // ebp
-  _DWORD *v4; // eax
+  unsigned int *v4; // eax
   Dialog *v5; // esi
   int DlgCtrlID; // edi
   int result; // eax
   int v8; // ebx
-  _DWORD *v9; // eax
+  unsigned int *v9; // eax
   int v10; // eax
   int X; // [esp+10h] [ebp-3Ch]
   int nWidth; // [esp+14h] [ebp-38h]
@@ -55,9 +56,9 @@ int Control::RepositionControlsDialog()
   v3 = v18.top - Rect.top; /*0x60b9ab*/
   nWidth = v18.right - v18.left; /*0x60b9ad*/
   v14 = Parent; /*0x60b9b3*/
-  if ( !*(_DWORD *)&g_DialogPool.__pad_208[60] ) /*0x60b9b7*/
+  if ( !*(unsigned int *)&g_DialogPool.__pad_208[60] ) /*0x60b9b7*/
     goto LABEL_5; /*0x60b9b7*/
-  v4 = *(_DWORD **)(*(_DWORD *)&g_DialogPool.__pad_208[56] /*0x60b9d8*/
+  v4 = *(unsigned int **)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60b9d8*/
                   + 4
                   * ((*(int (__thiscall **)(HWND *))&g_DialogPool.__pad_208[80])(&v14)
                    & ((1 << g_DialogPool.__pad_208[68]) - 1)));
@@ -65,7 +66,7 @@ int Control::RepositionControlsDialog()
     goto LABEL_5; /*0x60b9dd*/
   while ( (HWND)*v4 != v14 ) /*0x60b9e5*/
   {
-    v4 = (_DWORD *)v4[129]; /*0x60b9eb*/
+    v4 = (unsigned int *)v4[129]; /*0x60b9eb*/
     if ( !v4 ) /*0x60b9f3*/
       goto LABEL_5; /*0x60b9f3*/
   }
@@ -112,7 +113,7 @@ int Control::RepositionControlsDialog()
     || v5 == (Dialog *)184
     || v5 == (Dialog *)214
     || v5 == (Dialog *)259
-    || (result = Dialog::IsSpecialTemplate(v5), (_BYTE)result) )
+    || (result = Dialog::IsSpecialTemplate(v5), (unsigned char)result) )
   {
     if ( DlgCtrlID == 1684 ) /*0x60bb63*/
     {
@@ -142,7 +143,7 @@ int Control::RepositionControlsDialog()
       {
   LABEL_75:
         result = SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238); /*0x60bce4*/
-        if ( (_BYTE)result ) /*0x60bcf0*/
+        if ( (unsigned char)result ) /*0x60bcf0*/
           return result; /*0x60bcf0*/
         ++v3; /*0x60bcf6*/
         goto LABEL_170; /*0x60bcf7*/
@@ -169,7 +170,7 @@ int Control::RepositionControlsDialog()
           goto LABEL_75; /*0x60bcda*/
         }
         result = SessionClass::GetGameSpeed((SessionClass *)&dword_A8B238); /*0x60bd1c*/
-        if ( (_BYTE)result ) /*0x60bd23*/
+        if ( (unsigned char)result ) /*0x60bd23*/
           return result; /*0x60bd23*/
         v3 += 7; /*0x60bd2d*/
         ++nHeight; /*0x60bd31*/
@@ -335,11 +336,11 @@ int Control::CheckControlTypeDialog()
   int v2; // ecx
   Control *v3; // [esp+4h] [ebp-4h] BYREF
 
-  result = *(_DWORD *)&g_DialogPool.__pad_208[60]; /*0x60c541*/
+  result = *(unsigned int *)&g_DialogPool.__pad_208[60]; /*0x60c541*/
   v3 = this; /*0x60c549*/
-  if ( !*(_DWORD *)&g_DialogPool.__pad_208[60] ) /*0x60c54d*/
+  if ( !*(unsigned int *)&g_DialogPool.__pad_208[60] ) /*0x60c54d*/
     goto LABEL_7; /*0x60c54d*/
-  result = *(_DWORD *)(*(_DWORD *)&g_DialogPool.__pad_208[56] /*0x60c570*/
+  result = *(unsigned int *)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60c570*/
                      + 4
                      * ((*(int (__thiscall **)(Control **))&g_DialogPool.__pad_208[80])(&v3)
                       & ((1 << g_DialogPool.__pad_208[68]) - 1)));
@@ -347,7 +348,7 @@ int Control::CheckControlTypeDialog()
     goto LABEL_7; /*0x60c575*/
   while ( *(Control **)result != v3 ) /*0x60c57d*/
   {
-    result = *(_DWORD *)(result + 516); /*0x60c57f*/
+    result = *(unsigned int *)(result + 516); /*0x60c57f*/
     if ( !result ) /*0x60c587*/
     {
       IDA_LOBYTE(result) = 0; /*0x60c589*/
@@ -357,7 +358,7 @@ int Control::CheckControlTypeDialog()
   v2 = result + 4; /*0x60c592*/
   if ( result != -4 ) /*0x60c597*/
   {
-    result = *(_DWORD *)(result + 112); /*0x60c59e*/
+    result = *(unsigned int *)(result + 112); /*0x60c59e*/
     if ( result == 268 /*0x60c7b0*/
       || result == 148
       || result == 182
@@ -415,8 +416,8 @@ int Control::CheckControlTypeDialog()
       || result == 251 )
     {
       IDA_LOBYTE(result) = 1; /*0x60c7b7*/
-      *(_DWORD *)(v2 + 176) = 1; /*0x60c7b9*/
-      *(_BYTE *)(v2 + 189) = 1; /*0x60c7bf*/
+      *(unsigned int *)(v2 + 176) = 1; /*0x60c7b9*/
+      *(unsigned char *)(v2 + 189) = 1; /*0x60c7bf*/
     }
     else
     {

@@ -23,6 +23,14 @@ struct DynamicVector {
     void* q028;  // 0x28
     BufferIOFileClass* q02A;  // 0x2A
     bool q02B;  // 0x2B
+    unsigned int DynamicVector_field_0x1;
+    unsigned int DynamicVector_field_0x10;
+    unsigned int DynamicVector_field_0x1C;
+    unsigned int DynamicVector_field_0x8;
+    unsigned int __pad_0;
+    unsigned int __pad_14;
+    unsigned int __pad_20;
+    unsigned int __pad_C;
 // --- flat members (END) ---
     unsigned int * Copy(VectorClass_flat * aP1);  // 0x5AC430
     char AddItem(VectorClass_flat * aP1);  // 0x413A70

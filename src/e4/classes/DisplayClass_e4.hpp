@@ -443,6 +443,18 @@ struct DisplayClass {
     void* q11D8;  // 0x11D8
     void* q11DC;  // 0x11DC
     void* q11E0;  // 0x11E0
+    unsigned int DisplayClass_field_0x0;
+    unsigned int DisplayClass_field_0x11A8;
+    unsigned int DisplayClass_field_0x11B0;
+    unsigned int DisplayClass_field_0x11D0;
+    unsigned int DisplayClass_field_0x12C;
+    unsigned int DisplayClass_field_0x130;
+    unsigned int DisplayClass_field_0x134;
+    unsigned int DisplayClass_field_0x140;
+    unsigned int __pad_1198;
+    unsigned int __pad_11AC;
+    unsigned int __pad_11B4;
+    unsigned int __pad_41E;
 // --- flat members (END) ---
     DisplayClass * Read(char a2);
     HWND Render();

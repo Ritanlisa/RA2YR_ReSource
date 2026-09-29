@@ -23,6 +23,8 @@ struct BinkMovieHandle {
     bool memoryOwned;  // 0x2D
     unsigned char q02E;  // 0x2E
     void* memoryBuffer;  // 0x30
+    unsigned int MovieHandle;
+    unsigned int tempPath2;
 // --- flat members (END) ---
     BOOL COMStub();
     BinkMovieHandle * QueryInterface(char a2);

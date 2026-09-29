@@ -13,6 +13,10 @@ struct DynamicVectorClass_SubzoneConn {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
+    unsigned int __pad_5;
+    unsigned int __tail_10;
+    unsigned int m_1;
+    unsigned int m_C;
 // --- flat members (END) ---
     char Release(int a2,  char * a3);    // 0x589190
     DynamicVector * Add(char a2);  // 0x5890B0

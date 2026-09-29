@@ -34,7 +34,7 @@ int sub_6F2040()
   result = dword_A8ECB0; /*0x6f2040*/
   for ( i = 0; i < dword_A8ECB0; ++i ) /*0x6f204a*/
   {
-    TeamTypeClass::ProcessTaskForce(*((_DWORD *)dword_A8ECA4 + i)); /*0x6f2054*/
+    TeamTypeClass::ProcessTaskForce(*((unsigned int *)dword_A8ECA4 + i)); /*0x6f2054*/
     result = dword_A8ECB0; /*0x6f2059*/
   }
   return result; /*0x6f2063*/
@@ -56,16 +56,16 @@ char Helper::ProcessData(void ** a1, int a2, int * a3)
     return 0; /*0x4371e8*/
   v6 = *a3; /*0x4371fa*/
   v7 = (*((int (__thiscall **)(void **))*a1 + 28))(a1); /*0x4371fc*/
-  v8 = *(_DWORD *)(a2 + 12); /*0x437202*/
-  v11.? = *(_DWORD *)(a2 + 8); /*0x437205*/
+  v8 = *(unsigned int *)(a2 + 12); /*0x437202*/
+  v11.? = *(unsigned int *)(a2 + 8); /*0x437205*/
   v11.? = v8; /*0x437215*/
   v11.LockCount = 0; /*0x437219*/
-  *(_DWORD *)v11.Surface = &XSurface_Vtable; /*0x437221*/
+  *(unsigned int *)v11.Surface = &XSurface_Vtable; /*0x437221*/
   v12 = v7; /*0x437229*/
   Buffer::Init((Buffer *)v13, v6, v7 * v8 * v11.?); /*0x43722d*/
   v9 = *(void **)(a2 + 8); /*0x437235*/
   v10[3] = *(void **)(a2 + 12); /*0x437241*/
-  *(_DWORD *)v11.Surface = &BSurface_Vtable; /*0x43724b*/
+  *(unsigned int *)v11.Surface = &BSurface_Vtable; /*0x43724b*/
   v10[0] = 0; /*0x437253*/
   v10[1] = 0; /*0x43725b*/
   v10[2] = v9; /*0x437263*/
@@ -91,9 +91,9 @@ char sub_550240()
 namespace gamemd {
 unsigned int * sub_5D81B0(const wchar_t ** a1, const wchar_t ** a2, const char ** a3, const char ** a4, char a5, int a6)
 {
-  _DWORD *v6; // eax
+  unsigned int *v6; // eax
 
-  v6 = RA2_OPNEW(0x40u); /*0x5d81b2*/
+  v6 = (unsigned int *)(RA2_OPNEW(0x40u));
   if ( v6 ) /*0x5d81bc*/
     return MPBattleClass::MPManBattleClass(v6, a1, a2, a3, a4, a5, a6); /*0x5d81de*/
   else

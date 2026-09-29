@@ -30,17 +30,17 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   int v4; // ecx
   int v6; // eax
   MixFileClass *v8; // eax
-  _DWORD *v9; // eax
+  unsigned int *v9; // eax
   char *v10; // edi
   MixFileClass *v11; // eax
   MixFileClass *v12; // eax
   MixFileClass *v13; // eax
   MixFileClass *v14; // eax
-  _DWORD *v15; // eax
+  unsigned int *v15; // eax
   char v16; // bl
   MixFileClass *v17; // eax
   MixFileClass *v18; // eax
-  _DWORD *v19; // eax
+  unsigned int *v19; // eax
   char v20; // bl
   MixFileClass *v21; // eax
   char Buffer[4]; // [esp+24h] [ebp-ACh] BYREF
@@ -53,12 +53,12 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
 
   v4 = v4; /*0x479201*/
   Debug::Log(); /*0x479208*/
-  if ( *(_DWORD *)(v4 + 4) == -1 ) /*0x479216*/
+  if ( *(unsigned int *)(v4 + 4) == -1 ) /*0x479216*/
   {
     v6 = dword_A83D14; /*0x479218*/
     if ( dword_A83D14 == -1 ) /*0x479220*/
       v6 = dword_A83D18; /*0x479222*/
-    *(_DWORD *)(v4 + 4) = v6; /*0x479227*/
+    *(unsigned int *)(v4 + 4) = v6; /*0x479227*/
   }
   Theme::Stop((Theme *)&unk_A83D10, 0); /*0x479232*/
   if ( g_MixFile_MOVIES ) /*0x47923e*/
@@ -157,8 +157,8 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   if ( !MixFileClass_MULTI ) /*0x4794f7*/
     goto LABEL_61; /*0x4794f7*/
   v15 = CCFileClass::Construct(&v24, g_Str_File_THEMEMD_MIX); /*0x479526*/
-  v16 = (*(int (__thiscall **)(_DWORD *, _DWORD, int))(*v15 + 20))(v15, 0, a2); /*0x47953f*/
-  v24.? = (int)&(void*)(void*)&CCFileClass_vftable; /*0x479541*/
+  v16 = (*(int (__thiscall **)(unsigned int *, unsigned int, int))(*v15 + 20))(v15, 0, a2); /*0x47953f*/
+  v24.? = (int)&CCFileClass_vftable; /*0x479541*/
   v28 = 0; /*0x479545*/
   Vector::Clear((int)v26); /*0x47954c*/
   v24.? = (int)&off_7E1668; /*0x47955a*/
@@ -188,11 +188,11 @@ AbstractClass * * LinkedList_flat::LoadScenarioMixFiles(INIClass * aP0, int aP2,
   Audio::LoadWAVFiles((Audio *)&unk_A83D10); /*0x4795c8*/
   sprintf(Source, "MOVMD%02d.MIX", a3); /*0x4795e4*/
   v19 = CCFileClass::Construct((CCFileClass *)&v24.?, Source); /*0x4795f5*/
-  v20 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v19 + 20))(v19, 0); /*0x479609*/
-  *(_DWORD *)v24.CDFileClass = &(void*)(void*)&CCFileClass_vftable; /*0x47960b*/
+  v20 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v19 + 20))(v19, 0); /*0x479609*/
+  *(unsigned int *)v24.CDFileClass = (void*)&CCFileClass_vftable; /*0x47960b*/
   v27 = 0; /*0x47960f*/
   Vector::Clear((int)&v25); /*0x479616*/
-  *(_DWORD *)v24.CDFileClass = &off_7E1668; /*0x47961f*/
+  *(unsigned int *)v24.CDFileClass = &off_7E1668; /*0x47961f*/
   BufferIOFileClass::Dtor((BufferIOFileClass *)&v24); /*0x479623*/
   if ( v20 ) /*0x47962b*/
   {
@@ -222,8 +222,8 @@ void * LinkedList_flat::MoveNode(void * a2)
 {
   if ( a2 != this ) /*0x55660a*/
   {
-    (*(void (__thiscall **)(LinkedList *))(*(_DWORD *)this->__pad_0 + 36))(this); /*0x55660e*/
-    (*(void (__thiscall **)(LinkedList *, void *))(*(_DWORD *)this->__pad_0 + 12))(this, a2); /*0x556616*/
+    (*(void (__thiscall **)(LinkedList *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x55660e*/
+    (*(void (__thiscall **)(LinkedList *, void *))(*(unsigned int *)this->__pad_0 + 12))(this, a2); /*0x556616*/
   }
   return this; /*0x55661b*/
 }
@@ -233,14 +233,14 @@ namespace gamemd {
 unsigned int * LinkedList_flat::FindPrev()
 {
   LinkClass **p_m_Prev; // edx
-  _DWORD *result; // eax
+  unsigned int *result; // eax
 
-  p_m_Prev = &this->m_Prev; /*0x556643*/
+  p_m_Prev = (gamemd::LinkClass **)((unsigned int *)(&this->m_Prev));
   if ( !this->m_Prev ) /*0x556640*/
     return this->__pad_0; /*0x55665d*/
   do /*0x556651*/
   {
-    result = *p_m_Prev; /*0x55664b*/
+    result = (unsigned int *)(*p_m_Prev);
     if ( *p_m_Prev == this ) /*0x55664f*/
       break; /*0x55664f*/
     p_m_Prev = (LinkClass **)(result + 2); /*0x556654*/
@@ -271,8 +271,8 @@ unsigned int * LinkedList_flat::Attach(int a2)
 {
   LinkClass *v3; // eax
 
-  (*(void (__thiscall **)(LinkClass *))(*(_DWORD *)this->__pad_0 + 36))(this); /*0x5566d5*/
-  v3 = (LinkClass *)(*(int (__thiscall **)(int))(*(_DWORD *)a2 + 24))(a2); /*0x5566de*/
+  (*(void (__thiscall **)(LinkClass *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x5566d5*/
+  v3 = (LinkClass *)(*(int (__thiscall **)(int))(*(unsigned int *)a2 + 24))(a2); /*0x5566de*/
   v3->m_Prev = this; /*0x5566e1*/
   this->m_Next = v3; /*0x5566e4*/
   this->m_Prev = 0; /*0x5566e7*/
@@ -286,11 +286,11 @@ LinkClass * * LinkedList_flat::Append(int a2)
   LinkClass *v3; // eax
   int v4; // eax
 
-  (*(void (__thiscall **)(LinkClass *))(*(_DWORD *)this->__pad_0 + 36))(this); /*0x556705*/
-  v3 = (LinkClass *)(*(int (__thiscall **)(int))(*(_DWORD *)a2 + 28))(a2); /*0x55670e*/
+  (*(void (__thiscall **)(LinkClass *))(*(unsigned int *)this->__pad_0 + 36))(this); /*0x556705*/
+  v3 = (LinkClass *)(*(int (__thiscall **)(int))(*(unsigned int *)a2 + 28))(a2); /*0x55670e*/
   v3->m_Next = this; /*0x556711*/
   this->m_Prev = v3; /*0x556714*/
-  v4 = *(_DWORD *)this->__pad_0; /*0x556717*/
+  v4 = *(unsigned int *)this->__pad_0; /*0x556717*/
   this->m_Next = 0; /*0x55671b*/
   return (); /*0x556725*/
 }
@@ -304,9 +304,9 @@ int LinkedList_flat::RemoveNode()
   LinkClass *m_Prev; // edx
   LinkClass *m_Next; // edx
 
-  v2 = (LinkClass *)(*(int (__thiscall **)(LinkClass *))(*(_DWORD *)this->__pad_0 + 24))(this); /*0x55673e*/
-  v3 = (LinkClass *)(*(int (__thiscall **)(LinkClass *))(*(_DWORD *)this->__pad_0 + 28))(this); /*0x556740*/
-  m_Prev = this->m_Prev; /*0x556743*/
+  v2 = (gamemd::LinkClass *)((LinkClass *)(*(int (__thiscall **)(LinkClass *))(*(unsigned int *)this->__pad_0 + 24))(this));
+  v3 = (gamemd::LinkClass *)((LinkClass *)(*(int (__thiscall **)(LinkClass *))(*(unsigned int *)this->__pad_0 + 28))(this));
+  m_Prev = (gamemd::LinkClass *)(this->m_Prev);
   if ( m_Prev ) /*0x55674a*/
     m_Prev->m_Next = this->m_Next; /*0x55674f*/
   m_Next = this->m_Next; /*0x556752*/
@@ -318,7 +318,7 @@ int LinkedList_flat::RemoveNode()
     return (int)v2->__pad_0; /*0x55677e*/
   if ( v3 == this ) /*0x55676b*/
     return 0; /*0x55676f*/
-  return (*(int (__thiscall **)(LinkClass *))(*(_DWORD *)v3->__pad_0 + 24))(v3); /*0x55676d*/
+  return (*(int (__thiscall **)(LinkClass *))(*(unsigned int *)v3->__pad_0 + 24))(v3); /*0x55676d*/
 }
 } // namespace gamemd
 // 0x623460
@@ -326,23 +326,23 @@ namespace gamemd {
 void LinkedList_flat::Remove(unsigned int * a2)
 {
   int result; // eax
-  _DWORD *v3; // edx
+  unsigned int *v3; // edx
 
   result = this->u32_34; /*0x623460*/
   v3 = 0; /*0x623463*/
   if ( result ) /*0x623468*/
   {
-    while ( a2 != (_DWORD *)result ) /*0x623470*/
+    while ( a2 != (unsigned int *)result ) /*0x623470*/
     {
-      v3 = (_DWORD *)result; /*0x623472*/
-      result = *(_DWORD *)result; /*0x623474*/
+      v3 = (unsigned int *)result; /*0x623472*/
+      result = *(unsigned int *)result; /*0x623474*/
       if ( !result ) /*0x623478*/
         return result; /*0x623478*/
     }
     if ( v3 ) /*0x623484*/
-      *v3 = *(_DWORD *)result; /*0x623489*/
+      *v3 = *(unsigned int *)result; /*0x623489*/
     else
-      this->u32_34 = *(_DWORD *)result; /*0x62349a*/
+      this->u32_34 = *(unsigned int *)result; /*0x62349a*/
     RA2_OPDEL((void *)result); /*0x62348b*/
   }
   return result; /*0x62347a*/
@@ -359,19 +359,19 @@ void LinkedList_flat::RelinkNode(int a2)
   {
     if ( a2 ) /*0x632d1f*/
     {
-      v3 = *(_DWORD *)(a2 + 8); /*0x632d21*/
+      v3 = *(unsigned int *)(a2 + 8); /*0x632d21*/
       if ( v3 ) /*0x632d26*/
       {
-        (*(void (__thiscall **)(int, _DWORD))(*(_DWORD *)v3 + 12))(v3, 0); /*0x632d2c*/
-        *(_DWORD *)(a2 + 8) = 0; /*0x632d2f*/
+        (*(void (__thiscall **)(int, unsigned int))(*(unsigned int *)v3 + 12))(v3, 0); /*0x632d2c*/
+        *(unsigned int *)(a2 + 8) = 0; /*0x632d2f*/
       }
     }
     v4 = this->q018; /*0x632d36*/
     if ( v4 ) /*0x632d3b*/
-      *(_DWORD *)(v4 + 8) = 0; /*0x632d3d*/
+      *(unsigned int *)(v4 + 8) = 0; /*0x632d3d*/
     this->q018 = a2; /*0x632d46*/
     if ( a2 ) /*0x632d49*/
-      *(_DWORD *)(a2 + 8) = &this->q014; /*0x632d4e*/
+      *(unsigned int *)(a2 + 8) = &this->q014; /*0x632d4e*/
     this->q01C = this; /*0x632d54*/
     this->q004 = &this->q014; /*0x632d57*/
   }
@@ -408,10 +408,10 @@ int LinkedList_flat::Init()
 {
   int result; // eax
 
-  *(_DWORD *)this->Tail[0] = *(_DWORD *)this->__pad_0; /*0x407455*/
-  result = *(_DWORD *)this->__pad_0; /*0x407457*/
-  *(_DWORD *)(*(_DWORD *)this->__pad_0 + 4) = this->Tail[0]; /*0x40745c*/
-  *(_DWORD *)this->__pad_0 = this; /*0x40745f*/
+  *(unsigned int *)this->Tail[0] = *(unsigned int *)this->__pad_0; /*0x407455*/
+  result = *(unsigned int *)this->__pad_0; /*0x407457*/
+  *(unsigned int *)(*(unsigned int *)this->__pad_0 + 4) = this->Tail[0]; /*0x40745c*/
+  *(unsigned int *)this->__pad_0 = this; /*0x40745f*/
   this->Tail[0] = (int)this; /*0x407461*/
   return result; /*0x407464*/
 }
@@ -424,10 +424,10 @@ int * LinkedList_flat::Next()
   int v2; // edx
 
   result = *(int **)this->__pad_0; /*0x407520*/
-  if ( *(_DWORD *)this->__pad_0 ) /*0x407520*/
+  if ( *(unsigned int *)this->__pad_0 ) /*0x407520*/
   {
     v2 = *result; /*0x407527*/
-    *(_DWORD *)this->__pad_0 = v2; /*0x40752c*/
+    *(unsigned int *)this->__pad_0 = v2; /*0x40752c*/
     result += 2; /*0x407529*/
   }
   return result; /*0x407526*/
@@ -445,22 +445,22 @@ int LinkedList_flat::Prepend(int a2)
   a2 = a2; /*0x40e340*/
   if ( a2 ) /*0x40e347*/
   {
-    v3 = *(_DWORD *)(a2 + 4); /*0x40e349*/
+    v3 = *(unsigned int *)(a2 + 4); /*0x40e349*/
     if ( v3 ) /*0x40e34e*/
     {
-      v4 = *(_DWORD *)(a2 + 8); /*0x40e350*/
+      v4 = *(unsigned int *)(a2 + 8); /*0x40e350*/
       if ( v4 ) /*0x40e355*/
       {
         v4->Tail = v3; /*0x40e357*/
-        *(_DWORD *)(*(_DWORD *)(a2 + 4) + 8) = *(_DWORD *)(a2 + 8); /*0x40e360*/
-        *(_DWORD *)(a2 + 8) = 0; /*0x40e363*/
-        *(_DWORD *)(a2 + 4) = 0; /*0x40e36a*/
+        *(unsigned int *)(*(unsigned int *)(a2 + 4) + 8) = *(unsigned int *)(a2 + 8); /*0x40e360*/
+        *(unsigned int *)(a2 + 8) = 0; /*0x40e363*/
+        *(unsigned int *)(a2 + 4) = 0; /*0x40e36a*/
       }
     }
   }
   v5 = this->Tail[0]; /*0x40e371*/
-  *(_DWORD *)(a2 + 8) = this; /*0x40e374*/
-  *(_DWORD *)(a2 + 4) = v5; /*0x40e377*/
+  *(unsigned int *)(a2 + 8) = this; /*0x40e374*/
+  *(unsigned int *)(a2 + 4) = v5; /*0x40e377*/
   v6 = this->Tail[0]; /*0x40e37a*/
   if ( v6 ) /*0x40e380*/
     this->a2 = a2; /*0x40e382*/
@@ -488,7 +488,7 @@ namespace gamemd {
 unsigned int * LinkedList_flat::FindNext()
 {
   LinkClass **p_m_Next; // edx
-  _DWORD *result; // eax
+  unsigned int *result; // eax
 
   p_m_Next = &this->m_Next; /*0x556673*/
   if ( !this->m_Next ) /*0x556670*/
@@ -508,7 +508,7 @@ unsigned int * LinkedList_flat::FindNext()
 namespace gamemd {
 int LinkedList_flat::PushFront(IUnknown * aP1)
 {
-  *(_DWORD *)(aP1 + 12) = this->Tail[0]; /*0x625ae7*/
+  *(unsigned int *)(aP1 + 12) = this->Tail[0]; /*0x625ae7*/
   this->Tail[0] = aP1; /*0x625aea*/
   return aP1; /*0x625aed*/
 }

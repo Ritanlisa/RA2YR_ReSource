@@ -20,6 +20,23 @@ struct VectorClass_flat {
     unsigned int u32_E8;  // 0xE8
     unsigned int u32_2580;  // 0x2580
     unsigned int u32_2590;  // 0x2590
+    unsigned int MissionClass;
+    unsigned int __pad_518C;
+    unsigned int baseNodeCapacity;
+    unsigned int baseNodeCount;
+    unsigned int baseNodes;
+    unsigned int cells24;
+    unsigned int cells24Capacity;
+    unsigned int cells24Count;
+    unsigned int cells38Capacity;
+    unsigned int cells38Count;
+    unsigned int center;
+    unsigned int owner;
+    unsigned int percentBuilt;
+    unsigned int radioLinks;
+    unsigned int unknown54;
+    unsigned int v6;
+    unsigned int vtable0;
 // --- flat members (END) ---
 VectorClass_flat * QueryInterface(unsigned int * Block, char a2);
 VectorClass_flat * vt00(unsigned int * Block, char a2);

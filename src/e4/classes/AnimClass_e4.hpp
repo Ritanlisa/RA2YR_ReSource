@@ -1166,6 +1166,18 @@ struct AnimClass {
     unsigned char q18A8;  // 0x18A8
     void* q18AC;  // 0x18AC
     void* q18B0;  // 0x18B0
+    unsigned int AnimClass_field_0x0;
+    unsigned int AnimClass_field_0x100;
+    unsigned int AnimClass_field_0x190;
+    unsigned int AnimClass_field_0xAC;
+    unsigned int AnimClass_field_0xB4;
+    unsigned int AnimClass_field_0xBC;
+    unsigned int AnimClass_field_0xC0;
+    unsigned int AnimClass_field_0xC8;
+    unsigned int __pad_118;
+    unsigned int __pad_194;
+    unsigned int AnimClass_field_0xD4;
+    unsigned int __pad_178;
 // --- flat members (END) ---
     BuildingTypeClass * * drawFrame();
     char * sub_4C68E0(int a2, int a3, void* aP3, void* aP4, int a6, char a7, int a8, char a9, int a10, int a11);

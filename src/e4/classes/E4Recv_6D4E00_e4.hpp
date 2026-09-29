@@ -22,20 +22,8 @@ struct E4Recv_6D4E00 {
     unsigned int q1908;  // 0x1908
     unsigned int q5170;  // 0x5170
     unsigned int q6408;  // 0x6408
-    unsigned int q8498;  // 0x8498
-    unsigned int q20848;  // 0x20848
-    unsigned int q25608;  // 0x25608
-    unsigned int q33944;  // 0x33944
-    unsigned int q211268;  // 0x211268
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q2167400;  // 0x2167400
-    unsigned int q20481684;  // 0x20481684
-    unsigned int q35025920;  // 0x35025920
-    unsigned int q541595268;  // 0x541595268
-    unsigned int q22571209320;  // 0x22571209320
-    unsigned int q36661650230;  // 0x36661650230
-    unsigned int q3738255557168;  // 0x3738255557168
-    unsigned int q971428544737640;  // 0x971428544737640
+    unsigned int location;
+    unsigned int occupant;
 // --- flat members (END) ---
     void sub_6D4E00();  // 0x6D4E00
 };

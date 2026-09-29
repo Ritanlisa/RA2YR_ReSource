@@ -54,7 +54,7 @@ struct AircraftClass {
     bool bombVisible;  // 0x68
     unsigned char alignmentPadding69;  // 0x69
     unsigned int q06A;  // 0x6A
-    char health[4];  // 0x6C
+    unsigned int health;  // 0x6C
     char estimatedHealth[4];  // 0x70
     bool isOnMap;  // 0x74
     unsigned char alignmentPadding75;  // 0x75
@@ -157,9 +157,9 @@ struct AircraftClass {
     unsigned char alignmentPadding139;  // 0x135
     char radioQueueCount[4];  // 0x138
     unsigned char q139;  // 0x139
-    char currentWeaponSlot[4];  // 0x13C
-    char currentRank[4];  // 0x140
-    char gattlingStage[4];  // 0x144
+    unsigned int currentWeaponSlot;  // 0x13C
+    unsigned int currentRank;  // 0x140
+    unsigned int gattlingStage;  // 0x144
     unsigned int gattlingValue;  // 0x148
     HouseClass* ammoReloadTimer;  // 0x14C
     void* q14E;  // 0x14E
@@ -253,11 +253,11 @@ struct AircraftClass {
     char lastSightCoords[12];  // 0x254
     unsigned int ammo;  // 0x258
     unsigned int unitValue;  // 0x25C
-    char lastSightRange[4];  // 0x260
-    char lastSightHeight[4];  // 0x264
+    unsigned int lastSightRange;  // 0x260
+    unsigned int lastSightHeight;  // 0x264
     bool ambientParticles;  // 0x268
     bool isGeneratingGap;  // 0x269
-    char gapRadius[4];  // 0x26C
+    unsigned int gapRadius;  // 0x26C
     bool isBeingWarpedOut;  // 0x270
     bool isWarpingOut;  // 0x271
     bool isWarpEffectActive;  // 0x272
@@ -363,7 +363,7 @@ struct AircraftClass {
     char barrelFacing[24];  // 0x370
     char q374[4];  // 0x374
     unsigned char q378;  // 0x378
-    char currentBurstIndex[4];  // 0x37C
+    unsigned int currentBurstIndex;  // 0x37C
     char q380[4];  // 0x380
     char q384[4];  // 0x384
     char primaryFacing[24];  // 0x388
@@ -548,7 +548,7 @@ struct AircraftClass {
     void* q594;  // 0x594
     unsigned int q598;  // 0x598
     unsigned int q59C;  // 0x59C
-    char FootClass_field_5A0[4];  // 0x5A0
+    unsigned int FootClass_field_5A0;  // 0x5A0
     char movementDestination[4];  // 0x5A4
     char lastDestination[4];  // 0x5A8
     unsigned int FootClass_field_abstract_array_5AC;  // 0x5AC
@@ -662,6 +662,10 @@ struct AircraftClass {
     bool AircraftClass_field_bool_6D4;  // 0x6D4
     bool AircraftClass_field_bool_6D5;  // 0x6D5
     unsigned short tail_6D6;  // 0x6D6
+    unsigned int ReadINI_3;
+    unsigned int SelectVocOrSfx;
+    unsigned int q029;
+    unsigned int q169;
 // --- flat members (END) ---
     AircraftClass * CheckActionStatus(char a2);
     AircraftTypeClass * * GetCursorOverObject(void* aP1, void* a3);

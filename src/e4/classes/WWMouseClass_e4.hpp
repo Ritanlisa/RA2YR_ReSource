@@ -50,6 +50,22 @@ struct WWMouseClass {
     unsigned int q064;  // 0x64
     unsigned int somecount_4C;  // 0x68
     MouseClass* q06C;  // 0x6C
+    unsigned int WWMouseClass_field_0x10;
+    unsigned int WWMouseClass_field_0x1C;
+    unsigned int WWMouseClass_field_0x20;
+    unsigned int WWMouseClass_field_0x24;
+    unsigned int WWMouseClass_field_0x2C;
+    unsigned int WWMouseClass_field_0x30;
+    unsigned int WWMouseClass_field_0x4;
+    unsigned int WWMouseClass_field_0x44;
+    unsigned int WWMouseClass_field_0x8;
+    unsigned int WWMouseClass_field_0xC;
+    unsigned int __pad_0;
+    unsigned int __pad_14;
+    unsigned int __pad_3C;
+    unsigned int __pad_48;
+    unsigned int q0080;
+    unsigned int q0081;
 // --- flat members (END) ---
     MouseClass * updateHotspot(char a2);
     char checkCapture();

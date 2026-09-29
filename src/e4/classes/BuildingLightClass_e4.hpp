@@ -10,7 +10,7 @@ struct BuildingLightClass {
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    unsigned int ;  // 0xC
     int uniqueId;  // 0x10
     unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
@@ -109,6 +109,14 @@ struct BuildingLightClass {
     char BehaviourMode[4];  // 0xDC
     unsigned int BuildingLightClass_field_E0;  // 0xE0
     ObjectClass* FollowingObject;  // 0xE4
+    unsigned int GetCellCoords_Alt;
+    unsigned int abstractFlags5;
+    unsigned int objectTypeFlags6;
+    unsigned int uniqueId4;
+    unsigned int uniqueId5;
+    unsigned int vtable0;
+    unsigned int vtable22;
+    unsigned int vtable4;
 // --- flat members (END) ---
     BuildingLightClass * SDDTOR(char a2);
     int SD_vt03(int a1, unsigned int * a2);

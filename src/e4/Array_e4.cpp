@@ -15,20 +15,20 @@
 namespace gamemd {
 int Array::GetClamped(CheckListClass * aP1)
 {
-  int result; // eax
-  int v3; // edx
-  int v4; // eax
+  void * result;
+  unsigned int v3;
+  void * v4;
 
-  result = this->q044; /*0x557ac0*/
+  result = (void *)((int)(this->q044));
   if ( result ) /*0x557ac5*/
   {
-    v3 = aP1; /*0x557aca*/
-    v4 = result - 1; /*0x557ace*/
+    v3 = (unsigned int)((gamemd::CheckListClass *)((int)(aP1)));
+    v4 = (gamemd::CheckListClass *)(result - 1);
     if ( aP1 >= v4 ) /*0x557ad1*/
       v3 = v4; /*0x557ad3*/
-    return *(_DWORD *)(this->q038 + 4 * v3); /*0x557ad8*/
+    return *(unsigned int *)(this->q038 + 4 * v3); /*0x557ad8*/
   }
-  return result; /*0x557ac7*/
+  return (int)(result);
 }
 }
 // 0x634290
@@ -38,14 +38,14 @@ int Array::FindValue(IUnknown * aP1)
   void *Array_field_0x10; // esi
   int result; // eax
   int v4; // edx
-  _DWORD **i; // ecx
+  unsigned int **i; // ecx
 
-  Array_field_0x10 = this->Array_field_0x10; /*0x634292*/
+  Array_field_0x10 = (void *)(this->Array_field_0x10);
   result = -1; /*0x634295*/
   v4 = 0; /*0x634298*/
   if ( (int)Array_field_0x10 > 0 ) /*0x63429d*/
   {
-    for ( i = (_DWORD **)this->Array_field_0x4; **i != aP1; ++i ) /*0x63429f*/
+    for ( i = (unsigned int **)this->Array_field_0x4; **i != aP1; ++i ) /*0x63429f*/
     {
       if ( ++v4 >= (int)Array_field_0x10 ) /*0x6342b2*/
         return result; /*0x6342b2*/
@@ -71,14 +71,14 @@ int Array::RemoveAt(int a2)
   }
   else
   {
-    v4 = Array_field_0x10 - 1; /*0x63e59b*/
-    this->Array_field_0x10 = v4; /*0x63e59e*/
+    v4 = (char *)((unsigned int)(Array_field_0x10 - 1));
+    this->Array_field_0x10 = (unsigned int)(v4);
     if ( a2 < (int)v4 ) /*0x63e5a1*/
     {
       do /*0x63e5b4*/
       {
         ++result; /*0x63e5a7*/
-        *((_DWORD *)this->Array_field_0x4 + result - 1) = *((_DWORD *)this->Array_field_0x4 + result); /*0x63e5ab*/
+        *((unsigned int *)this->Array_field_0x4 + result - 1) = *((unsigned int *)this->Array_field_0x4 + result); /*0x63e5ab*/
       }
       while ( result < (int)this->Array_field_0x10 ); /*0x63e5b4*/
     }
@@ -91,7 +91,7 @@ int Array::RemoveAt(int a2)
 namespace gamemd {
 int Array::Get(int a2)
 {
-  return *((_DWORD *)this->Array_field_0xE4 + a2); /*0x65ad4d*/
+  return *((unsigned int *)this->Array_field_0xE4 + a2); /*0x65ad4d*/
 }
 }
 // 0x65ADF0
@@ -141,7 +141,7 @@ int Array::Zero()
     v2 = this; /*0x7490dd*/
     do /*0x7490f1*/
     {
-      *(_DWORD *)v2->__pad_0 = 0; /*0x7490df*/
+      *(unsigned int *)v2->__pad_0 = 0; /*0x7490df*/
       ++result; /*0x7490eb*/
       v2 = (Array *)((char *)v2 + 4); /*0x7490ec*/
     }
@@ -192,12 +192,12 @@ int Array::CleanupArrayWOL()
   int i; // edi
   int result; // eax
 
-  for ( i = 0; i < *(_DWORD *)this->__pad_0; ++i ) /*0x7acd39*/
+  for ( i = 0; i < *(unsigned int *)this->__pad_0; ++i ) /*0x7acd39*/
   {
-    DeleteAndZero((ObjectClass *)(*(_DWORD *)this->__pad_8 + 4 * i)); /*0x7acd41*/
-    result = *(_DWORD *)this->__pad_0; /*0x7acd46*/
+    DeleteAndZero((ObjectClass *)(*(unsigned int *)this->__pad_8 + 4 * i)); /*0x7acd41*/
+    result = *(unsigned int *)this->__pad_0; /*0x7acd46*/
   }
-  *(_DWORD *)this->__pad_0 = 0; /*0x7acd4d*/
+  *(unsigned int *)this->__pad_0 = 0; /*0x7acd4d*/
   return result; /*0x7acd53*/
 }
 }
@@ -205,7 +205,7 @@ int Array::CleanupArrayWOL()
 namespace gamemd {
 AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
 {
-  int v4; // esi
+  ObjectClass * v4;
   int v5; // ecx
   void *Array_field_0x4; // eax
   int v7; // ebp
@@ -219,17 +219,17 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
   void *v16; // [esp+Ch] [ebp-4h]
   void *v17; // [esp+Ch] [ebp-4h]
 
-  v4 = v5; /*0x7ad795*/
-  v5 = *(_DWORD *)this->__pad_0; /*0x7ad799*/
+  v4 = (gamemd::ObjectClass *)(v5);
+  v5 = (gamemd::ObjectClass *)(*(unsigned int *)this->__pad_0);
   if ( v5 > v5 ) /*0x7ad79e*/
   {
-    v5 = v5; /*0x7ad7a0*/
+    v5 = (gamemd::ObjectClass *)((int)(v5));
     v4 = v5; /*0x7ad7a4*/
   }
-  Array_field_0x4 = this->Array_field_0x4; /*0x7ad7a6*/
+  Array_field_0x4 = (void *)(this->Array_field_0x4);
   if ( v4 >= (int)Array_field_0x4 && v5 >= (int)Array_field_0x4 ) /*0x7ad7b4*/
   {
-    v7 = 2 * v5; /*0x7ad7b6*/
+    v7 = (unsigned int)(2 * v5);
     if ( 2 * v5 < 10 ) /*0x7ad7bc*/
       v7 = 10; /*0x7ad7be*/
     v8 = (void *)RA2_OPNEW(268 * v7); /*0x7ad7d7*/
@@ -237,16 +237,16 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
     v16 = v8; /*0x7ad7ec*/
     v9 = *(const void **)this->__pad_8; /*0x7ad7f2*/
     if ( v9 ) /*0x7ad7f7*/
-      qmemcpy(v8, v9, 268 * *(_DWORD *)this->__pad_0); /*0x7ad80f*/
+      qmemcpy(v8, v9, 268 * *(unsigned int *)this->__pad_0); /*0x7ad80f*/
     RA2_OPDEL(*(void **)this->__pad_8); /*0x7ad81c*/
     v4 = v5; /*0x7ad825*/
-    *(_DWORD *)this->__pad_8 = v16; /*0x7ad82c*/
+    *(unsigned int *)this->__pad_8 = v16; /*0x7ad82c*/
     this->Array_field_0x4 = (void *)v7; /*0x7ad82f*/
   }
-  v10 = *(_DWORD *)this->__pad_0; /*0x7ad832*/
-  if ( *(_DWORD *)this->__pad_0 >= (int)this->Array_field_0x4 ) /*0x7ad839*/
+  v10 = *(unsigned int *)this->__pad_0; /*0x7ad832*/
+  if ( *(unsigned int *)this->__pad_0 >= (int)this->Array_field_0x4 ) /*0x7ad839*/
   {
-    v11 = 2 * v10; /*0x7ad83b*/
+    v11 = (unsigned int)(2 * v10);
     if ( 2 * v10 < 10 ) /*0x7ad841*/
       v11 = 10; /*0x7ad843*/
     v12 = (void *)RA2_OPNEW(268 * v11); /*0x7ad85c*/
@@ -254,21 +254,21 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
     v17 = v12; /*0x7ad871*/
     v13 = *(const void **)this->__pad_8; /*0x7ad877*/
     if ( v13 ) /*0x7ad87c*/
-      qmemcpy(v12, v13, 268 * *(_DWORD *)this->__pad_0); /*0x7ad894*/
+      qmemcpy(v12, v13, 268 * *(unsigned int *)this->__pad_0); /*0x7ad894*/
     RA2_OPDEL(*(void **)this->__pad_8); /*0x7ad8a1*/
     v4 = v5; /*0x7ad8aa*/
-    *(_DWORD *)this->__pad_8 = v17; /*0x7ad8b1*/
+    *(unsigned int *)this->__pad_8 = v17; /*0x7ad8b1*/
     this->Array_field_0x4 = (void *)v11; /*0x7ad8b4*/
   }
-  if ( v4 < *(_DWORD *)this->__pad_0 ) /*0x7ad8bc*/
+  if ( v4 < *(unsigned int *)this->__pad_0 ) /*0x7ad8bc*/
     memcpy( /*0x7ad8f2*/
-      (void *)(*(_DWORD *)this->__pad_8 + 268 * (v4 + 1)),
-      (const void *)(*(_DWORD *)this->__pad_8 + 268 * v4),
-      268 * *(_DWORD *)this->__pad_0 - 268 * v4);
-  v14 = (void *)(*(_DWORD *)this->__pad_8 + 268 * v4); /*0x7ad907*/
+      (void *)(*(unsigned int *)this->__pad_8 + 268 * (v4 + 1)),
+      (const void *)(*(unsigned int *)this->__pad_8 + 268 * v4),
+      268 * *(unsigned int *)this->__pad_0 - 268 * v4);
+  v14 = (void *)(*(unsigned int *)this->__pad_8 + 268 * v4); /*0x7ad907*/
   if ( v14 ) /*0x7ad90c*/
     qmemcpy(v14, a1, 0x10Cu); /*0x7ad917*/
-  ++*(_DWORD *)this->__pad_0; /*0x7ad91e*/
+  ++*(unsigned int *)this->__pad_0; /*0x7ad91e*/
   return 1; /*0x7ad91b*/
 }
 }
@@ -276,13 +276,13 @@ AbstractClass * * Array::InsertElement(const void * a1, ObjectClass * v5)
 namespace gamemd {
 int Array::ForEach(AbstractClass * aP0, int a2, IUnknown * aP2, int (__thiscall *a4, void * a1, void * a3)(int) a4)
 {
-  int result; // eax
-  int v6; // edi
+  void * result;
+  void * v6;
 
-  result = a3 - 1; /*0x4068f4*/
+  result = (void *)((int)(a3 - 1));
   if ( a3 - 1 >= 0 ) /*0x4068f5*/
   {
-    v6 = a3; /*0x406907*/
+    v6 = (void *)((int)(a3));
     do /*0x406911*/
     {
       result = a4((int)this); /*0x40690c*/
@@ -332,7 +332,7 @@ void Array::Cleanup()
   {
     for ( i = 0; i < (int)this->Array_field_0x40; ++i ) /*0x49b732*/
     {
-      if ( *(_DWORD *)(this->Array_field_0x3C[0] + 4 * i) ) /*0x49b737*/
+      if ( *(unsigned int *)(this->Array_field_0x3C[0] + 4 * i) ) /*0x49b737*/
         RA2_OPDEL(*(void **)(this->Array_field_0x3C[0] + 4 * i)); /*0x49b73f*/
     }
     RA2_OPDEL((void *)this->Array_field_0x3C[0]); /*0x49b753*/
@@ -358,7 +358,7 @@ char Array::GetElementAt(unsigned int * a2, int a3)
   if ( this->q06C ) /*0x49d09a*/
   {
     if ( v3 != -1 ) /*0x49d0a5*/
-      *a2 = *(_DWORD *)(*(&this->q0045) + 4 * v3); /*0x49d0ad*/
+      *a2 = *(unsigned int *)(*(&this->q0045) + 4 * v3); /*0x49d0ad*/
     if ( *a2 ) /*0x49d0af*/
       IDA_LOBYTE(result) = 1; /*0x49d0b4*/
   }
@@ -372,18 +372,18 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
 {
   int v2; // ecx
   int v3; // edx
-  _DWORD *v4; // esi
+  unsigned int v4;
   int v5; // eax
 
   if ( aP0 ) /*0x55b887*/
   {
-    if ( (*(int (__thiscall **)(int))(*(_DWORD *)aP0 + 44))(aP0) == 44 ) /*0x55b893*/
+    if ( (*(int (__thiscall **)(int))(*(unsigned int *)aP0 + 44))(aP0) == 44 ) /*0x55b893*/
     {
       v2 = dword_8B40D8; /*0x55b895*/
       v3 = 0; /*0x55b89b*/
       if ( dword_8B40D8 > 0 ) /*0x55b89f*/
       {
-        v4 = dword_8B40CC; /*0x55b8a2*/
+        v4 = (unsigned int *)(dword_8B40CC);
         do /*0x55b8da*/
         {
           if ( aP0 == v4[v3] ) /*0x55b8ab*/
@@ -394,8 +394,8 @@ void Array::RemoveItemByValue(AbstractClass * aP0, int a2)
               v5 = v3; /*0x55b8b2*/
               for ( dword_8B40D8 = v2; v5 < dword_8B40D8; ++v5 ) /*0x55b8bc*/
               {
-                v4[v5] = v4[v5 + 1]; /*0x55b8c2*/
-                v2 = dword_8B40D8; /*0x55b8c5*/
+                v4[v5] = (unsigned int *)(v4[v5 + 1]);
+                v2 = (unsigned int *)(dword_8B40D8);
                 v4 = dword_8B40CC; /*0x55b8cb*/
               }
             }

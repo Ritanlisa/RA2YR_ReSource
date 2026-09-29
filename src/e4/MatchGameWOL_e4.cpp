@@ -22,19 +22,19 @@ void sub_7A19E0()
   char *v7; // eax
   wchar_t *v8; // eax
   wchar_t *v9; // eax
-  int v10; // [esp+0h] [ebp-80h]
+  wchar_t * v10;
   void *v11; // [esp+0h] [ebp-80h]
   void *v12; // [esp+Ch] [ebp-74h] BYREF
   int v13; // [esp+10h] [ebp-70h] BYREF
-  _DWORD v14[27]; // [esp+14h] [ebp-6Ch] BYREF
+  unsigned int v14[27]; // [esp+14h] [ebp-6Ch] BYREF
 
-  v10 = stru_B76AC4; /*0x7a19f1*/
-  StringCSF = GetStringCSF(aWolMatchfoundw, 0, g_Str_File_wonline_cpp, 28774); /*0x7a19fc*/
+  v10 = (wchar_t *)((int)((wchar_t *)(stru_B76AC4)));
+  StringCSF = (wchar_t *)(GetStringCSF(aWolMatchfoundw, 0, g_Str_File_wonline_cpp, 28774));
   Dialog::ShowMessage(12648447, (size_t)StringCSF, v10); /*0x7a1a07*/
   String::ToLowerCopy((const char **)&stru_B76AC4, (char **)&v12); /*0x7a1a19*/
   if ( dword_B77D84 ) /*0x7a1a25*/
   {
-    for ( i = *((_DWORD *)stru_B77D80 + (dword_B77D98(&v12) & ((1 << dword_B77D8C) - 1))); i; i = *(_DWORD *)(i + 112) ) /*0x7a1a4b*/
+    for ( i = *((unsigned int *)stru_B77D80 + (dword_B77D98(&v12) & ((1 << dword_B77D8C) - 1))); i; i = *(unsigned int *)(i + 112) ) /*0x7a1a4b*/
     {
       if ( String::Compare((const char **)i, (const char **)&v12) ) /*0x7a1a54*/
         break; /*0x7a1a5b*/
@@ -70,7 +70,7 @@ void sub_7A19E0()
   DeleteAndZero((void **)&v13); /*0x7a1ac7*/
   if ( v5 == -1 ) /*0x7a1ad0*/
   {
-    v8 = GetStringCSF(aWolMatchoppone_0, 0, g_Str_File_wonline_cpp, 28787); /*0x7a1ad7*/
+    v8 = (wchar_t *)(GetStringCSF(aWolMatchoppone_0, 0, g_Str_File_wonline_cpp, 28787));
   }
   else
   {
@@ -80,20 +80,20 @@ void sub_7A19E0()
     if ( v14[6] ) /*0x7a1b15*/
     {
       v13 = -1; /*0x7a1b27*/
-      (*(void (__stdcall **)(LPVOID, _DWORD, int *))(*(_DWORD *)g_UIPointerTable + 32))(g_UIPointerTable, v14[6], &v13); /*0x7a1b34*/
+      (*(void (__stdcall **)(LPVOID, unsigned int, int *))(*(unsigned int *)g_UIPointerTable + 32))(g_UIPointerTable, v14[6], &v13); /*0x7a1b34*/
       if ( v13 != -1 ) /*0x7a1b3e*/
       {
-        v11 = (void *)v13; /*0x7a1b40*/
-        v9 = GetStringCSF(aWolMatchoppone, 0, g_Str_File_wonline_cpp, 28800); /*0x7a1b52*/
+        v11 = (wchar_t *)((void *)v13);
+        v9 = (wchar_t *)(GetStringCSF(aWolMatchoppone, 0, g_Str_File_wonline_cpp, 28800));
         Dialog::ShowMessage(12648447, (size_t)v9, v11); /*0x7a1b5d*/
         DeleteAndZero(&v12); /*0x7a1b69*/
         return; /*0x7a1b73*/
       }
-      v8 = GetStringCSF(aWolMatchoppone_0, 0, g_Str_File_wonline_cpp, 28802); /*0x7a1b85*/
+      v8 = (wchar_t *)(GetStringCSF(aWolMatchoppone_0, 0, g_Str_File_wonline_cpp, 28802));
     }
     else
     {
-      v8 = GetStringCSF(aWolMatchoppone_0, 0, g_Str_File_wonline_cpp, 28794); /*0x7a1b1c*/
+      v8 = (wchar_t *)(GetStringCSF(aWolMatchoppone_0, 0, g_Str_File_wonline_cpp, 28794));
     }
   }
   Dialog::ShowMessage(12648447, (size_t)v8); /*0x7a1b90*/

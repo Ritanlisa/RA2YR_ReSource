@@ -65,7 +65,7 @@ struct WaveClass {
     unsigned int q075;  // 0x75
     unsigned char alignmentPadding99_2;  // 0x76
     unsigned int WaveClass_field_124;  // 0x78
-    unsigned int WaveClass_field_128;  // 0x7C
+    void* ;  // 0x7C
     unsigned char WaveClass_field_12C;  // 0x80
     unsigned char WaveClass_field_12D;  // 0x81
     unsigned char WaveClass_field_12E;  // 0x82
@@ -209,6 +209,14 @@ struct WaveClass {
     unsigned int q1D4;  // 0x1D4
     unsigned int q1D8;  // 0x1D8
     unsigned int q1DC;  // 0x1DC
+    unsigned int Constructor_7632D0;
+    unsigned int WaveClass_field_1706;
+    unsigned int fallRate7;
+    unsigned int u32_1F4;
+    unsigned int u32_1F8;
+    unsigned int u32_1FD;
+    unsigned int uniqueId7;
+    unsigned int WaveClass_field_128;
 // --- flat members (END) ---
     WaveClass * ddtor(char a2);
     char DamageArea(ObjectClass * aP1);

@@ -17,10 +17,6 @@ struct E4Recv_565610 {
     unsigned int q774;  // 0x774
     unsigned int q1408;  // 0x1408
     unsigned int q5128;  // 0x5128
-    unsigned int q1255810;  // 0x1255810
-    unsigned int q421676434;  // 0x421676434
-    unsigned int q1611689177458;  // 0x1611689177458
-    unsigned int q388224393901144;  // 0x388224393901144
 // --- flat members (END) ---
     unsigned int * sub_565610(unsigned int * a2,  short * a3);    // 0x565610
 };

@@ -11,6 +11,10 @@ struct CStreamClass_16 {
     int q008;  // 0x8
     bool q00C;  // 0xC
     bool IsAllocated;  // 0xD
+    unsigned int __pad_0;
+    unsigned int m_1;
+    unsigned int m_8;
+    unsigned int m_C;
 // --- flat members (END) ---
     int Seek(int a2);  // 0x4A4B20
     char AddRef(int a2);  // 0x4A4B30

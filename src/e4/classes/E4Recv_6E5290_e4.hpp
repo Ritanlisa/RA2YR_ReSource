@@ -18,10 +18,6 @@ struct E4Recv_6E5290 {
     unsigned int q208;  // 0x208
     unsigned int q304;  // 0x304
     unsigned int q520;  // 0x520
-    unsigned int q153094;  // 0x153094
-    unsigned int q628354;  // 0x628354
-    unsigned int q22571209318;  // 0x22571209318
-    unsigned int q2359835005720;  // 0x2359835005720
 // --- flat members (END) ---
     char sub_6E5290();  // 0x6E5290
 };

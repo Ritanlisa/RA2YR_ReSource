@@ -220,7 +220,7 @@ struct TerrainTypeClass {
     char q28C[4];  // 0x28C
     unsigned char q290;  // 0x290
     int ArrayIndex;  // 0x294
-    char Foundation[4];  // 0x298
+    unsigned int Foundation;  // 0x298
     int RadarColor;  // 0x29C
     void* q29D;  // 0x29D
     void* q29E;  // 0x29E
@@ -238,6 +238,24 @@ struct TerrainTypeClass {
     void* IsVeinhole;  // 0x2B4
     unsigned char q2B5;  // 0x2B5
     void* q2B8;  // 0x2B8
+    unsigned int FoundationData;
+    unsigned int u32_2BC;
+    unsigned int u32_2C4;
+    unsigned int u32_2C8;
+    unsigned int u32_2CC;
+    unsigned int u32_2D4;
+    unsigned int u32_2D8;
+    unsigned int u32_2DC;
+    unsigned int u32_2E1;
+    unsigned int u32_2E2;
+    unsigned int u32_2E3;
+    unsigned int u32_2E8;
+    unsigned int u32_2EC;
+    unsigned int u32_2F4;
+    unsigned int u32_2F5;
+    unsigned int u32_305;
+    unsigned int u32_306;
+    unsigned int u32_308;
 // --- flat members (END) ---
     TerrainClass * GetTileIndex(int a2);
     TerrainTypeClass * * FindOrCreate();

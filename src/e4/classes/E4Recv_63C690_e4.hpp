@@ -32,34 +32,6 @@ struct E4Recv_63C690 {
     unsigned int q2180;  // 0x2180
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
-    unsigned int q8520;  // 0x8520
-    unsigned int q21768;  // 0x21768
-    unsigned int q25608;  // 0x25608
-    unsigned int q34080;  // 0x34080
-    unsigned int q137064;  // 0x137064
-    unsigned int q153094;  // 0x153094
-    unsigned int q213120;  // 0x213120
-    unsigned int q213350;  // 0x213350
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q2175264;  // 0x2175264
-    unsigned int q2175824;  // 0x2175824
-    unsigned int q19347798;  // 0x19347798
-    unsigned int q20481684;  // 0x20481684
-    unsigned int q35084324;  // 0x35084324
-    unsigned int q422868888;  // 0x422868888
-    unsigned int q541595268;  // 0x541595268
-    unsigned int q889727058;  // 0x889727058
-    unsigned int q889733924;  // 0x889733924
-    unsigned int q17759111304;  // 0x17759111304
-    unsigned int q22571209320;  // 0x22571209320
-    unsigned int q36665716824;  // 0x36665716824
-    unsigned int q36665768228;  // 0x36665768228
-    unsigned int q1612107027204;  // 0x1612107027204
-    unsigned int q3738323478564;  // 0x3738323478564
-    unsigned int q3738323812904;  // 0x3738323812904
-    unsigned int q971431999931748;  // 0x971431999931748
-    unsigned int q971432003709188;  // 0x971432003709188
-    unsigned int q680398795939452744;  // 0x680398795939452744
 // --- flat members (END) ---
     int ScenarioClass_RenderActionLines();  // 0x63C690
 };

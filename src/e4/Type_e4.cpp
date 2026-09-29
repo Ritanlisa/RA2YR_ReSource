@@ -16,13 +16,13 @@ int Type::CheckAmbiguity(int a2, char a3)
   int result; // eax
   int v7; // esi
 
-  v3 = *(__int16 *)(a2 + 38); /*0x57854a*/
+  v3 = *(int16_t *)(a2 + 38); /*0x57854a*/
   v4 = 0; /*0x57854f*/
-  v5 = *(__int16 *)(a2 + 36); /*0x578552*/
+  v5 = *(int16_t *)(a2 + 36); /*0x578552*/
   if ( a3 ) /*0x578558*/
   {
     v4 = *(char *)(a2 + 283); /*0x578560*/
-    if ( *(_BYTE *)(a2 + 284) ) /*0x57855a*/
+    if ( *(unsigned char *)(a2 + 284) ) /*0x57855a*/
     {
       if ( v3 + v5 < v4 + this->u32_F4 + 2 * this->u32_100 + 4 ) /*0x578582*/
         ++v4; /*0x578584*/

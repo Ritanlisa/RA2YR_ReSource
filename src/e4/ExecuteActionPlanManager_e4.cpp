@@ -16,7 +16,7 @@ unsigned int * E4Recv_633AC0::sub_633AC0()
 {
   IDA_LOBYTE(this->AbstractClass) = 0; /*0x633ac2*/
   this->estimatedHealth = 0; /*0x633ac5*/
-  *(_DWORD *)&this->isOnMap = -1; /*0x633acc*/
+  this->isOnMap = (unsigned int)(-1); /*0x633acc*/
   return &this->AbstractClass; /*0x633ad3*/
 }
 } // namespace gamemd
@@ -29,7 +29,7 @@ int E4Recv_636EB0::sub_636EB0()
 
   v1 = this->? - 1; /*0x636eb3*/
   if ( v1 >= 0 ) /*0x636eb4*/
-    return *((_DWORD *)this->? + v1); /*0x636ebc*/
+    return *((unsigned int *)this->? + v1); /*0x636ebc*/
   else
     return 0; /*0x636eb6*/
 }

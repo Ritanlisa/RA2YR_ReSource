@@ -974,7 +974,7 @@ struct UnitTypeClass {
     void* qDF0;  // 0xDF0
     unsigned int qDF4;  // 0xDF4
     void* ArrayIndex;  // 0xDF8
-    char qDFC[4];  // 0xDFC
+    unsigned int qDFC;  // 0xDFC
     char qE00[12];  // 0xE00
     unsigned int qE04;  // 0xE04
     unsigned int u32_E08;  // 0xE08

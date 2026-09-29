@@ -10,6 +10,8 @@ struct SelectTeamCommand {
     void* vtable1;  // 0x0
     char SelectTeamCommand_field_00[4];  // 0x4
     char SelectTeamCommand_field_04[4];  // 0x8
+    unsigned int CommandClass;
+    unsigned int m_1;
 // --- flat members (END) ---
     unsigned int * Construct(int a2);
     void * AddRef();

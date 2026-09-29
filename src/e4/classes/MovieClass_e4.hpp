@@ -13,6 +13,9 @@ struct MovieClass {
     unsigned char q00C;  // 0xC
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
+    unsigned int q0080;
+    unsigned int u32_148;
+    unsigned int u32_78;
 // --- flat members (END) ---
     unsigned int ComputeTime();
     static double GetHeight(...);  // C2597 interim stub

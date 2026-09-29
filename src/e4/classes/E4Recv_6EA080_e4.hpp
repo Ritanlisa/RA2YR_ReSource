@@ -51,33 +51,6 @@ struct E4Recv_6EA080 {
     unsigned int q5640;  // 0x5640
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    int q20848;  // 0x20848
-    unsigned int q22080;  // 0x22080
-    unsigned int q22118;  // 0x22118
-    unsigned int q22148;  // 0x22148
-    unsigned int q25608;  // 0x25608
-    unsigned int q139544;  // 0x139544
-    unsigned int q153094;  // 0x153094
-    int q1257874;  // 0x1257874
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q1388694;  // 0x1388694
-    int q19232884;  // 0x19232884
-    unsigned int q19409250;  // 0x19409250
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q20481684;  // 0x20481684
-    unsigned int q423662160;  // 0x423662160
-    unsigned int q423698564;  // 0x423698564
-    unsigned int q541595268;  // 0x541595268
-    unsigned int q17773764960;  // 0x17773764960
-    unsigned int q17773978754;  // 0x17773978754
-    unsigned int q22571209320;  // 0x22571209320
-    unsigned int q1612552046420;  // 0x1612552046420
-    unsigned int q1612552106354;  // 0x1612552106354
-    unsigned int q2359835005728;  // 0x2359835005728
-    unsigned int q388287894414368;  // 0x388287894414368
-    unsigned int q254497871881323270;  // 0x254497871881323270
-    unsigned int q254497877294924648;  // 0x254497877294924648
-    unsigned int q254497877309523350;  // 0x254497877309523350
 // --- flat members (END) ---
     char sub_6EA080();  // 0x6EA080
 };

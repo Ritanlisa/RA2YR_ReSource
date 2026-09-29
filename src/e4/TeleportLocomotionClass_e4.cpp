@@ -29,12 +29,12 @@ TeleportLocomotionClass::TeleportLocomotionClass()
   this->TeleportLocomotionClass_field_bool_35 = 0; /*0x718046*/
   this->TeleportLocomotionClass_field_bool_36 = 0; /*0x718049*/
   this->State = 0; /*0x71804c*/
-  v2 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x71804f*/
+  v2 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x71804f*/
   this->Timer[2] = 0; /*0x718055*/
   this->Timer[0] = v2; /*0x718058*/
   this->Piggybackee = 0; /*0x71805b*/
-  *(_DWORD *)this->LocomotionClass = &(void*)(void*)&TeleportLocomotionClass_vftable; /*0x71805e*/
-  *(_DWORD *)&this->LocomotionClass[4] = &(void*)(void*)&TeleportLocomotionClass_vftable; /*0x718064*/
-  *(_DWORD *)this->__pad_18 = &(void*)(void*)&TeleportLocomotionClass_vftable; /*0x71806b*/
+  *(unsigned int *)this->LocomotionClass = (void*)&TeleportLocomotionClass_vftable; /*0x71805e*/
+  *(unsigned int *)&this->LocomotionClass[4] = (void*)&TeleportLocomotionClass_vftable; /*0x718064*/
+  *(unsigned int *)this->__pad_18 = (void*)&TeleportLocomotionClass_vftable; /*0x71806b*/
   return (int)this->LocomotionClass; /*0x718074*/
 }

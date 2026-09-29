@@ -169,8 +169,8 @@ AbstractClass * * Turret::LoadVoxelTurretAndBarrel()
 namespace gamemd {
 float * Turret::GetTransform(signed int a1, float * a2, unsigned int * a3)
 {
-  LocomotionClass *v3; // edi
-  _DWORD *v4; // esi
+  unsigned int v3;
+  unsigned int *v4; // esi
   float *result; // eax
   float v6; // [esp+0h] [ebp-40h]
   int v7; // [esp+Ch] [ebp-34h] BYREF

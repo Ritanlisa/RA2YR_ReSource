@@ -19,7 +19,7 @@ float Float::Accumulate(float value, int index)
 namespace gamemd {
 double Float::SubtractClamped(BuildingTypeClass * aP1, IUnknown * aP2)
 {
-  __int16 v3; // fps
+  int16_t v3; // fps
   double v4; // st7
   bool v5; // c0
   char v6; // c2

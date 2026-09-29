@@ -29,6 +29,12 @@ struct COMObject {
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned char q050;  // 0x50
+    unsigned int Hovered;
+    unsigned int Image;
+    unsigned int __pad_0;
+    unsigned int __pad_31;
+    unsigned int m_2D;
+    unsigned int vfptr;
 // --- flat members (END) ---
     bool IsSameType(void* aP0);
     int FindNextActive(unsigned char * a1);

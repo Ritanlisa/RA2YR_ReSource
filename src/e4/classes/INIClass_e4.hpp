@@ -23,8 +23,21 @@ struct INIClass {
     char unknown30[4];  // 0x30
     bool needsSave_flag;  // 0x34
     unsigned char q035;  // 0x35
-    unsigned int unknown38;  // 0x38
+    void* ;  // 0x38
     unsigned int INIClass_field_3C;  // 0x3C
+    unsigned int Capacity;
+    unsigned int IsAllocated;
+    unsigned int IsInitialized;
+    unsigned int Items;
+    unsigned int __pad_0;
+    unsigned int __pad_20;
+    unsigned int q0146;
+    unsigned int sectionHead0;
+    unsigned int vtable0;
+    unsigned int SetIntFormat;
+    unsigned int GetCoord2;
+    unsigned int ReadDifficultyModifiers;
+    unsigned int unknown38;
 // --- flat members (END) ---
     INIClass * ReadCoord(double aP1, int a2, INIClass * aP2, int a4);
     ObjectClass * * BinarySearchSection(INIClass * aP1);

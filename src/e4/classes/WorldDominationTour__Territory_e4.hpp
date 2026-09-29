@@ -44,25 +44,6 @@ struct WorldDominationTour__Territory {
     unsigned int q5444;  // 0x5444
     void * q5684;  // 0x5684
     void * q6408;  // 0x6408
-    ReferenceCounted * q20848;  // 0x20848
-    void * q22148;  // 0x22148
-    void * q25608;  // 0x25608
-    unsigned int q33570;  // 0x33570
-    ReferenceCounted * q153094;  // 0x153094
-    ReferenceCounted * q1257874;  // 0x1257874
-    unsigned int q1271138;  // 0x1271138
-    void * q1283474;  // 0x1283474
-    void * q1388694;  // 0x1388694
-    ReferenceCounted * q19232884;  // 0x19232884
-    unsigned int q19337528;  // 0x19337528
-    void * q19412084;  // 0x19412084
-    void * q20481684;  // 0x20481684
-    unsigned int q422802728;  // 0x422802728
-    void * q423698564;  // 0x423698564
-    void * q541595268;  // 0x541595268
-    unsigned int q17758693160;  // 0x17758693160
-    void * q22571209320;  // 0x22571209320
-    unsigned int q1612096024928;  // 0x1612096024928
 // --- flat members (END) ---
     char * Constructor(int aP1,  unsigned int * a2,  ReferenceCounted * aP3,  const char ** a4,  ReferenceCounted * aP5);    // 0x76F970
 };

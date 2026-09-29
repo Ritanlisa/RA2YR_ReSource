@@ -35,9 +35,9 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
   int v22; // ecx
   int v23; // edx
 
-  (*(void (__thiscall **)(int, int))(*(_DWORD *)aP1 + 760))(aP1, aP3); /*0x4138d4*/
+  (*(void (__thiscall **)(int, int))(*(unsigned int *)aP1 + 760))(aP1, aP3); /*0x4138d4*/
   if ( (aP2 & 0x8000u) == 0 ) /*0x4138e1*/
-    v4 = (__int16)aP2; /*0x4138e7*/
+    v4 = (int16_t)aP2; /*0x4138e7*/
   else
     v4 = 0; /*0x4138e3*/
   if ( aP2 >= 0 ) /*0x4138f2*/
@@ -45,22 +45,22 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
   else
     v5 = 0; /*0x4138f4*/
   v6 = 19; /*0x41390d*/
-  if ( v4 / (*(_DWORD *)&stru_87F5F0.__pad_58[716] / 20) <= 19 ) /*0x413921*/
-    v6 = v4 / (*(_DWORD *)&stru_87F5F0.__pad_58[716] / 20); /*0x413923*/
-  v7 = *(_DWORD *)&stru_87F5F0.__pad_58[720] / 20; /*0x41393e*/
-  v8 = v5 / (*(_DWORD *)&stru_87F5F0.__pad_58[720] / 20); /*0x413941*/
+  if ( v4 / (*(unsigned int *)&stru_87F5F0.__pad_58[716] / 20) <= 19 ) /*0x413921*/
+    v6 = v4 / (*(unsigned int *)&stru_87F5F0.__pad_58[716] / 20); /*0x413923*/
+  v7 = *(unsigned int *)&stru_87F5F0.__pad_58[720] / 20; /*0x41393e*/
+  v8 = v5 / (*(unsigned int *)&stru_87F5F0.__pad_58[720] / 20); /*0x413941*/
   if ( v8 > 19 ) /*0x413946*/
     v8 = 19; /*0x413948*/
   v9 = v6 + 20 * v8; /*0x413957*/
   if ( (aP3 & 0x8000u) == 0 ) /*0x41395a*/
-    v10 = (__int16)aP3; /*0x413960*/
+    v10 = (int16_t)aP3; /*0x413960*/
   else
     v10 = 0; /*0x41395c*/
   if ( aP3 >= 0 ) /*0x41396b*/
     v11 = IDA_SHIWORD(aP3); /*0x413971*/
   else
     v11 = 0; /*0x41396d*/
-  v12 = v10 / (*(_DWORD *)&stru_87F5F0.__pad_58[716] / 20); /*0x413975*/
+  v12 = v10 / (*(unsigned int *)&stru_87F5F0.__pad_58[716] / 20); /*0x413975*/
   v13 = 19; /*0x413977*/
   if ( v12 <= 19 ) /*0x41397f*/
     v13 = v12; /*0x413981*/
@@ -75,30 +75,30 @@ int Coord::ToGridIndex(VectorClass_flat * aP1, VectorClass_flat * aP2, VectorCla
     v18 = (*(int (__thiscall **)(char *, int *))(this->q028)(v17, &aP1); /*0x4139b4*/
     if ( v18 != -1 ) /*0x4139ba*/
     {
-      v19 = *((_DWORD *)v17 + 4); /*0x4139bc*/
+      v19 = *((unsigned int *)v17 + 4); /*0x4139bc*/
       if ( v18 < v19 ) /*0x4139c1*/
       {
         v20 = v19 - 1; /*0x4139c3*/
-        for ( *((_DWORD *)v17 + 4) = v20; /*0x4139c9*/
-              v18 < *((_DWORD *)v17 + 4);
-              *(_DWORD *)(*((_DWORD *)v17 + 1) + 4 * v18 - 4) = *(_DWORD *)(*((_DWORD *)v17 + 1) + 4 * v18) )
+        for ( *((unsigned int *)v17 + 4) = v20; /*0x4139c9*/
+              v18 < *((unsigned int *)v17 + 4);
+              *(unsigned int *)(*((unsigned int *)v17 + 1) + 4 * v18 - 4) = *(unsigned int *)(*((unsigned int *)v17 + 1) + 4 * v18) )
         {
           ++v18; /*0x4139ce*/
         }
       }
     }
     v21 = &this->u32_60 * v16; /*0x4139e4*/
-    result = *((_DWORD *)v21 + 2); /*0x4139e7*/
-    if ( *((_DWORD *)v21 + 4) < result /*0x413a0f*/
+    result = *((unsigned int *)v21 + 2); /*0x4139e7*/
+    if ( *((unsigned int *)v21 + 4) < result /*0x413a0f*/
       || (v21[13] || !result)
-      && (v22 = *((_DWORD *)v21 + 5), v22 > 0)
-      && (result = (*(int (__thiscall **)(char *, int, _DWORD))(this->q020)(&this->u32_60 * v16, result + v22, 0),
-          (_BYTE)result) )
+      && (v22 = *((unsigned int *)v21 + 5), v22 > 0)
+      && (result = (*(int (__thiscall **)(char *, int, unsigned int))(this->q020)(&this->u32_60 * v16, result + v22, 0),
+          (unsigned char)result) )
     {
-      result = *((_DWORD *)v21 + 4); /*0x413a11*/
-      v23 = *((_DWORD *)v21 + 1); /*0x413a14*/
-      *((_DWORD *)v21 + 4) = result + 1; /*0x413a1a*/
-      *(_DWORD *)(v23 + 4 * result) = aP1; /*0x413a21*/
+      result = *((unsigned int *)v21 + 4); /*0x413a11*/
+      v23 = *((unsigned int *)v21 + 1); /*0x413a14*/
+      *((unsigned int *)v21 + 4) = result + 1; /*0x413a1a*/
+      *(unsigned int *)(v23 + 4 * result) = aP1; /*0x413a21*/
     }
   }
   return result; /*0x413a24*/
@@ -110,8 +110,8 @@ unsigned int * Coord::ToCell(IUnknown * v3)
 {
   int v3; // [esp+0h] [ebp-4h]
 
-  IDA_LOWORD(v3) = *(_DWORD *)this->__pad_0 / 256; /*0x413a3f*/
-  IDA_HIWORD(v3) = *(_DWORD *)&this->Coord_field_0x2[2] / 256; /*0x413a53*/
+  IDA_LOWORD(v3) = *(unsigned int *)this->__pad_0 / 256; /*0x413a3f*/
+  IDA_HIWORD(v3) = *(unsigned int *)&this->Coord_field_0x2[2] / 256; /*0x413a53*/
   *v3 = v3; /*0x413a60*/
   return v3; /*0x413a63*/
 }
@@ -120,8 +120,8 @@ unsigned int * Coord::ToCell(IUnknown * v3)
 namespace gamemd {
 void * Coord::Subtract(IUnknown * aP1, IUnknown * aP2, IUnknown * aP3)
 {
-  *(_DWORD *)this->__pad_0 = aP1; /*0x41c23a*/
-  *(_DWORD *)&this->Coord_field_0x2[2] = aP2; /*0x41c240*/
+  *(unsigned int *)this->__pad_0 = aP1; /*0x41c23a*/
+  *(unsigned int *)&this->Coord_field_0x2[2] = aP2; /*0x41c240*/
   this->Coord_field_0x8 = (void *)aP3; /*0x41c243*/
   return this->__pad_0; /*0x41c246*/
 }
@@ -131,7 +131,7 @@ namespace gamemd {
 int Coord::Length()
 {
   double Coord_field_0x8; // st7
-  __int64 result; // rax
+  int64_t result; // rax
   int v3; // kr00_4
 
   Coord_field_0x8 = (double)(int)this->Coord_field_0x8; /*0x41c380*/
@@ -178,13 +178,13 @@ void * Coord::To_Cell(IUnknown * aP1)
   int v2; // eax
   int v3; // edx
   CellClass *v4; // edx
-  _DWORD *v6; // [esp+Ch] [ebp+4h]
+  unsigned int *v6; // [esp+Ch] [ebp+4h]
 
   v2 = aP1[1] / 256; /*0x56574f*/
   v3 = *aP1 / 256 + (v2 << 9); /*0x56575a*/
   if ( v3 >= 0 && v3 < this->q050 ) /*0x565764*/
   {
-    v4 = (CellClass *)*((_DWORD *)this->Coord_field_0x13C + v3); /*0x56576c*/
+    v4 = (CellClass *)*((unsigned int *)this->Coord_field_0x13C + v3); /*0x56576c*/
     if ( v4 ) /*0x565771*/
       return v4; /*0x565774*/
   }
@@ -198,7 +198,7 @@ void * Coord::To_Cell(IUnknown * aP1)
 namespace gamemd {
 int Coord::Compare2D(unsigned short * a2)
 {
-  return *(_WORD *)this->__pad_0 != *a2 || *(_WORD *)this->Coord_field_0x2 != a2[1]; /*0x5ac388*/
+  return *(unsigned short *)this->__pad_0 != *a2 || *(unsigned short *)this->Coord_field_0x2 != a2[1]; /*0x5ac388*/
 }
 }
 // 0x6557F0
@@ -213,8 +213,8 @@ void * Coord::WorldToScreen(MouseClass * aP1, MouseClass * aP2, char a4)
   int v10; // ecx
   int v11; // edi
 
-  v4 = *aP2; /*0x6557f7*/
-  v5 = aP2[1]; /*0x6557f9*/
+  v4 = (int)(*aP2);
+  v5 = (int)(aP2[1]);
   IDA_LOWORD(v7) = Math::RoundToInt((double)(*aP2 + (this->u32_1490 << 8) - v5) * this->u32_1488 * 0.00390625); /*0x655820*/
   v8 = v7; /*0x65582b*/
   IDA_LOWORD(v9) = Math::RoundToInt((double)(v4 + v5 - (this->u32_1498 << 8)) * this->u32_1488 * 0.00390625); /*0x655848*/
@@ -244,17 +244,17 @@ AbstractClass * * Coord::To_Screen(unsigned int * a1, IUnknown * aP2)
   int v6; // eax
   int v7; // edi
   int v8; // esi
-  int v10; // [esp+14h] [ebp-4h]
+  AbstractClass ** v10;
 
-  v10 = a1[1]; /*0x6d214f*/
-  v4 = (-60 * v10 / 2 + 60 * *a1 / 2) / 256; /*0x6d21c8*/
+  v10 = (int)((gamemd::AbstractClass **)(a1[1]));
+  v4 = (gamemd::AbstractClass **)((-60 * v10 / 2 + 60 * *a1 / 2) / 256);
   v5 = (30 * v10 / 2 + 30 * *a1 / 2) / 256; /*0x6d21cb*/
   IDA_LOWORD(v6) = Math::RoundToInt((double)(int)a1[2] * dbl_B0CD48 + (double)(a1[2] >= 728) + 0.5); /*0x6d21f2*/
-  *aP2 = v4; /*0x6d21fd*/
+  *(unsigned int *)aP2 = v4; /*0x6d21fd*/
   aP2[1] = v5 - v6; /*0x6d21ff*/
-  v7 = *aP2 - *(_DWORD *)&this->__pad_C[164]; /*0x6d2213*/
-  v8 = aP2[1] - *(_DWORD *)&this->__pad_C[168]; /*0x6d2215*/
-  *aP2 = v7; /*0x6d2217*/
+  v7 = *aP2 - *(unsigned int *)&this->__pad_C[164]; /*0x6d2213*/
+  v8 = aP2[1] - *(unsigned int *)&this->__pad_C[168]; /*0x6d2215*/
+  *(unsigned int *)aP2 = v7; /*0x6d2217*/
   aP2[1] = v8; /*0x6d221b*/
   if ( v7 < -360 ) /*0x6d222a*/
     return 0; /*0x6d222c*/
@@ -274,9 +274,9 @@ void * Coord::Divide(int * a2, int a3)
 
   if ( a3 ) /*0x710708*/
   {
-    v4 = *(_DWORD *)&this->Coord_field_0x2[2] / a3; /*0x71072f*/
+    v4 = *(unsigned int *)&this->Coord_field_0x2[2] / a3; /*0x71072f*/
     v5 = (int)this->Coord_field_0x8 / a3; /*0x710735*/
-    *a2 = *(_DWORD *)this->__pad_0 / a3; /*0x71073d*/
+    *a2 = *(unsigned int *)this->__pad_0 / a3; /*0x71073d*/
     a2[1] = v4; /*0x71073f*/
     a2[2] = v5; /*0x710745*/
   }
@@ -298,7 +298,7 @@ int * Coord::To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1)
   int v4; // esi
   int v6; // [esp+10h] [ebp-4h]
 
-  v6 = aP1[1]; /*0x6d1f1f*/
+  v6 = (int)(aP1[1]);
   v2 = (-60 * v6 / 2 + 60 * *aP1 / 2) / 256; /*0x6d1f95*/
   v3 = (30 * v6 / 2 + 30 * *aP1 / 2) / 256; /*0x6d1f98*/
   v4 = v3 - Math::RoundToInt((double)(int)aP1[2] * dbl_B0CD48 + (double)(aP1[2] >= 728) + 0.5); /*0x6d1fc4*/
@@ -312,7 +312,7 @@ int * Coord::To_ScreenRaw(AbstractClass * aP0, IUnknown * aP1)
 namespace gamemd {
 long long Coord::ScaleToScreenY()
 {
-  __int64 result; // rax
+  int64_t result; // rax
   int v2; // kr00_4
 
   v2 = Math::RoundToInt(((double)(int)this - 0.5) * LightningStorm_CloudHeightFactor); /*0x6d2135*/

@@ -10,6 +10,20 @@ struct HashTable_flat {
     unsigned int u32_4;  // 0x4
     unsigned int u32_C;  // 0xC
     unsigned int u32_18;  // 0x18
+    unsigned int HashTable_field_0x04;
+    unsigned int HashTable_field_0x08;
+    unsigned int HashTable_field_0x0C;
+    unsigned int HashTable_field_0x14;
+    unsigned int HashTable_field_0x18;
+    unsigned int HashTable_field_0x20;
+    unsigned int HashTable_field_0x30;
+    unsigned int __pad_0;
+    unsigned int q01C;
+    unsigned int u32_234;
+    unsigned int u32_238;
+    unsigned int u32_244;
+    unsigned int u32_250;
+    unsigned int u32_25C;
 // --- flat members (END) ---
 AbstractClass * * FindWOLHashTableEntry(const char ** a2, void * a3);
 AbstractClass * * Grow();

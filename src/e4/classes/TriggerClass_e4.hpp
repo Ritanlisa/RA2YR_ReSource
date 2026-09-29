@@ -37,6 +37,8 @@ struct TriggerClass {
     bool q042;  // 0x42
     bool enabled;  // 0x44
     unsigned char align45;  // 0x45
+    unsigned int abstractFlags2;
+    unsigned int u32_54;
 // --- flat members (END) ---
     char FindByEventType(char a1);
     int GetValue();

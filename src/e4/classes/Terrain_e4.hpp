@@ -57,6 +57,16 @@ struct Terrain {
     unsigned char q138;  // 0x138
     void* q13C;  // 0x13C
     void* q140;  // 0x140
+    unsigned int Terrain_field_0x14;
+    unsigned int Terrain_field_0x24;
+    unsigned int Terrain_field_0x30;
+    unsigned int Terrain_field_0x34;
+    unsigned int Terrain_field_0x38;
+    unsigned int Terrain_field_0x40;
+    unsigned int Terrain_field_0x60;
+    unsigned int __pad_18;
+    unsigned int __pad_44;
+    unsigned int __pad_68;
 // --- flat members (END) ---
     int GetTileIndex(int a2);  // 0x48B720
     int GetTileType(AnimClass * aP1);  // 0x48B9E0

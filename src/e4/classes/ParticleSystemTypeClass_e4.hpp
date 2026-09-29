@@ -13,7 +13,7 @@ struct ParticleSystemTypeClass {
     void* vtable4;  // 0xC
     int SlowdownDistance;  // 0x10
     unsigned char alignmentPadding_3;  // 0x11
-    int SpawnCount;  // 0x12
+    void* ;  // 0x12
     bool IsAllocated;  // 0x13
     int ParticleSystemTypeClass_field_29C;  // 0x14
     unsigned char q015;  // 0x15
@@ -262,6 +262,30 @@ struct ParticleSystemTypeClass {
     unsigned int q308;  // 0x308
     unsigned int q30A;  // 0x30A
     unsigned char u8_30B;  // 0x30B
+    unsigned int ParticleSystemTypeClass_field_0x0;
+    unsigned int ParticleSystemTypeClass_field_0x294;
+    unsigned int ParticleSystemTypeClass_field_0x29C;
+    unsigned int ParticleSystemTypeClass_field_0x2A0;
+    unsigned int ParticleSystemTypeClass_field_0x2A4;
+    unsigned int ParticleSystemTypeClass_field_0x2A8;
+    unsigned int ParticleSystemTypeClass_field_0x2AC;
+    unsigned int ParticleSystemTypeClass_field_0x2B4;
+    unsigned int ParticleSystemTypeClass_field_0x2B8;
+    unsigned int __pad_298;
+    unsigned int q1180;
+    unsigned int q11C2;
+    unsigned int q1200;
+    unsigned int q1208;
+    unsigned int q1246;
+    unsigned int q1284;
+    unsigned int q12C2;
+    unsigned int q1300;
+    unsigned int q1346;
+    unsigned int q30C;
+    unsigned int vtable46;
+    unsigned int ParticleSystemTypeClass_field_0x4;
+    unsigned int ParticleSystemTypeClass_field_0x8;
+    unsigned int SpawnCount;
 // --- flat members (END) ---
     ParticleSystemTypeClass * ddtor(char a2);
     char Stub(int a1, int a2);

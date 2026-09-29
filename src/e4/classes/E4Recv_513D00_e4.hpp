@@ -8,6 +8,7 @@ struct E4Recv_513D00 {
 // --- flat members (BEGIN) ---
     unsigned int vfptr;  // 0x0
     unsigned int M4;  // 0x4
+    unsigned int LocomotionClass;
 // --- flat members (END) ---
     void sub_513D00();  // 0x513D00
 };

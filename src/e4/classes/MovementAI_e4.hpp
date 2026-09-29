@@ -14,6 +14,9 @@ struct MovementAI {
     unsigned int u32_10;  // 0x10
     char MovementAI_field_14[4];  // 0x14
     char MovementAI_field_18[4];  // 0x18
+    unsigned int MovementAI_field_10;
+    unsigned int u32_100;
+    unsigned int u32_E4;
 // --- flat members (END) ---
     int Check();
     int IsPathMovementAllowed();

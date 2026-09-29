@@ -9,6 +9,7 @@ struct IStream {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     void* IStream_field_00;  // 0x4
+    unsigned int __pad_0;
 // --- flat members (END) ---
     int Read(IStream * pstm, void * pv, ULONG cb);
 };

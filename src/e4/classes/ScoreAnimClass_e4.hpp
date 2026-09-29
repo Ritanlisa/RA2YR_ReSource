@@ -15,6 +15,9 @@ struct ScoreAnimClass {
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
+    unsigned int __pad_0;
+    unsigned int field_C;
+    unsigned int m_0;
 // --- flat members (END) ---
     unsigned int * Constructor_ScoreAnimClass_0(char a2);
     unsigned int * Constructor_ScoreAnimClass_1(char a2);

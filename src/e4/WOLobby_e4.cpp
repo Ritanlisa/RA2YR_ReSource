@@ -23,6 +23,7 @@
 #include "e4/classes/Audio_e4.hpp"
 #include "e4/classes/WWMouseClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Building_e4.hpp"
 
 // 0x5E3850
 namespace gamemd {
@@ -33,16 +34,15 @@ int INIClass::WOLobby_Play(void * a1, void * a2)
   int i; // esi
   char *v6; // eax
   char v7[108]; // [esp+14h] [ebp-234h] BYREF
-  _DWORD v8[113]; // [esp+80h] [ebp-1C8h] BYREF
-  __int16 v9; // [esp+244h] [ebp-4h]
+  unsigned int v8[113]; // [esp+80h] [ebp-1C8h] BYREF
+  int16_t v9; // [esp+244h] [ebp-4h]
   char v10; // [esp+246h] [ebp-2h]
-
-  v2 = ppv; /*0x5e3857*/
+v2 = (LPVOID)(ppv);
   if ( ppv ) /*0x5e3864*/
   {
     memset(v7, 0, sizeof(v7)); /*0x5e3875*/
     strcpy(&v7[36], a1); /*0x5e3892*/
-    return (*(int (__stdcall **)(LPVOID, char *, const char *))(*(_DWORD *)v2 + 56))(v2, v7, a2); /*0x5e38a3*/
+    return (*(int (__stdcall **)(LPVOID, char *, const char *))(*(unsigned int *)v2 + 56))(v2, v7, a2); /*0x5e38a3*/
   }
   else
   {
@@ -61,7 +61,7 @@ int INIClass::WOLobby_Play(void * a1, void * a2)
       if ( !_strcmpi(v6, a1) ) /*0x5e3959*/
       {
         Debug::Log(); /*0x5e3974*/
-        Network::SendMessage((int)unk_A8E9C0, (int)v8, 455, 1, *(_DWORD *)(dword_A8DA78 + 4 * i) + 40, 0, 0); /*0x5e39a0*/
+        Network::SendMessage((int)unk_A8E9C0, (int)v8, 455, 1, *(unsigned int *)(dword_A8DA78 + 4 * i) + 40, 0, 0); /*0x5e39a0*/
         Event::Dispatch(); /*0x5e39a5*/
       }
       result = dword_A8DA84; /*0x5e39aa*/
@@ -2159,25 +2159,25 @@ void sub_72BB10()
     if ( g_BuildingLoadQueue_Array.__pad_F70[1440] ) /*0x72bb22*/
     {
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[892]; /*0x72bb25*/
-      if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[892] ) /*0x72bb2d*/
+      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[892] ) /*0x72bb2d*/
       {
         FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[892]); /*0x72bb31*/
         RA2_OPDEL(v1); /*0x72bb37*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1440] = 0; /*0x72bb3f*/
     }
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[892] = 0; /*0x72bb4b*/
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1444] ) /*0x72bb53*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[892] = 0; /*0x72bb4b*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1444] ) /*0x72bb53*/
     {
       RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1444]); /*0x72bb56*/
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1444] = 0; /*0x72bb5e*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1444] = 0; /*0x72bb5e*/
     }
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1448] ) /*0x72bb6c*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448] ) /*0x72bb6c*/
     {
-      (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1448])( /*0x72bb72*/
-        *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1448],
+      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1448])( /*0x72bb72*/
+        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448],
         1);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1448] = 0; /*0x72bb74*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1448] = 0; /*0x72bb74*/
     }
   }
   g_BuildingLoadQueue_Array.__pad_F70[1441] = 0; /*0x72bb7a*/

@@ -30,21 +30,6 @@ struct E4Recv_42C900 {
     unsigned int q1910;  // 0x1910
     unsigned int q4388;  // 0x4388
     unsigned int q5684;  // 0x5684
-    unsigned int q17288;  // 0x17288
-    unsigned int q22148;  // 0x22148
-    unsigned int q33570;  // 0x33570
-    unsigned int q210288;  // 0x210288
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q1388834;  // 0x1388834
-    unsigned int q6325058;  // 0x6325058
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q20482100;  // 0x20482100
-    unsigned int q35009334;  // 0x35009334
-    unsigned int q103960664;  // 0x103960664
-    unsigned int q423698564;  // 0x423698564
-    unsigned int q4355130980;  // 0x4355130980
-    unsigned int q289190119808;  // 0x289190119808
-    unsigned int q28986893583080950118;  // 0x28986893583080950118
 // --- flat members (END) ---
     void * FindPathWithRetry(FootClass * aP1,  short * a2,  int aP4,  int a5,  int a6,  int aP3,  int aP6);    // 0x42C900
 };

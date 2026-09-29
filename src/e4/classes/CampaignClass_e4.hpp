@@ -208,6 +208,7 @@ struct CampaignClass {
     CampaignClass* q320;  // 0x320
     int q324;  // 0x324
     unsigned int q328;  // 0x328
+    unsigned int __pad_0;
 // --- flat members (END) ---
     AbstractClass * * SaveProgress();
     CampaignClass(ObjectClass * aP1);

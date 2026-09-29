@@ -28,14 +28,15 @@
 #include "e4/classes/WarheadTypeClass_e4.hpp"
 #include "e4/classes/Array_e4.hpp"
 #include "e4/classes/MouseClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x41D7E0
 namespace gamemd {
 int Warhead::GetWarheadSound(int a2)
 {
-  int v3; // eax
+  Warhead * v3;
 
-  if ( (unsigned __int8)Audio::IsLoud((int *)(this->q130 + 336)) ) /*0x41d7ec*/
+  if ( (uint8_t)Audio::IsLoud((int *)(this->q130 + 336)) ) /*0x41d7ec*/
     v3 = this->q048; /*0x41d7f5*/
   else
     v3 = this->q044; /*0x41d7fa*/
@@ -54,32 +55,32 @@ int Warhead::RemoveFromDamageList(int a2)
   int v7; // eax
   int v8; // edx
 
-  v2 = &this->u32_66C; /*0x452827*/
+  v2 = (gamemd::Warhead *)(&this->u32_66C);
   v3 = (*(int (__thiscall **)(Warhead *, int *))(this->u32_66C + 16))(&this->u32_66C, &a2); /*0x452834*/
   if ( v3 != -1 ) /*0x45283a*/
   {
-    v4 = *(_DWORD *)&v2[16]; /*0x45283c*/
+    v4 = *(unsigned int *)&v2[16]; /*0x45283c*/
     if ( v3 < v4 ) /*0x452841*/
     {
       v5 = v4 - 1; /*0x452843*/
-      for ( *(_DWORD *)&v2[16] = v5; /*0x452849*/
-            v3 < *(_DWORD *)&v2[16];
-            *(_DWORD *)(*(_DWORD *)&v2[4] + 4 * v3 - 4) = *(_DWORD *)(*(_DWORD *)&v2[4] + 4 * v3) )
+      for ( *(unsigned int *)&v2[16] = v5; /*0x452849*/
+            v3 < *(unsigned int *)&v2[16];
+            *(unsigned int *)(*(unsigned int *)&v2[4] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&v2[4] + 4 * v3) )
       {
         ++v3; /*0x45284e*/
       }
     }
   }
-  v6 = *(_DWORD *)&v2[8]; /*0x45285d*/
-  if ( *(_DWORD *)&v2[16] < v6 /*0x452887*/
-    || ((IDA_LOBYTE(v7) = v2[13], (_BYTE)v7) || !v6)
-    && (v7 = *(_DWORD *)&v2[20], v7 > 0)
-    && (IDA_LOBYTE(v7) = (*(int (__thiscall **)(Warhead *, int, _DWORD))(this->u32_1A3)(v2, v6 + v7, 0), (_BYTE)v7) )
+  v6 = *(unsigned int *)&v2[8]; /*0x45285d*/
+  if ( *(unsigned int *)&v2[16] < v6 /*0x452887*/
+    || ((IDA_LOBYTE(v7) = v2[13], (unsigned char)v7) || !v6)
+    && (v7 = *(unsigned int *)&v2[20], v7 > 0)
+    && (IDA_LOBYTE(v7) = (*(int (__thiscall **)(Warhead *, int, unsigned int))(this->u32_1A3)(v2, v6 + v7, 0), (unsigned char)v7) )
   {
-    v7 = *(_DWORD *)&v2[16]; /*0x452889*/
-    v8 = *(_DWORD *)&v2[4]; /*0x45288c*/
-    *(_DWORD *)&v2[16] = v7 + 1; /*0x452892*/
-    *(_DWORD *)(v8 + 4 * v7) = a2; /*0x452899*/
+    v7 = *(unsigned int *)&v2[16]; /*0x452889*/
+    v8 = *(unsigned int *)&v2[4]; /*0x45288c*/
+    *(unsigned int *)&v2[16] = v7 + 1; /*0x452892*/
+    *(unsigned int *)(v8 + 4 * v7) = a2; /*0x452899*/
   }
   return v7; /*0x45289c*/
 }
@@ -1276,7 +1277,7 @@ int Warhead::ProcessDamageArea()
   int *v20; // eax
   int v21; // ecx
   LightSourceClass *v22; // eax
-  _DWORD *v23; // eax
+  unsigned int * v23;
   int v25; // [esp+10h] [ebp-30h]
   int v27; // [esp+18h] [ebp-28h]
   int v28; // [esp+1Ch] [ebp-24h]
@@ -1286,27 +1287,27 @@ int Warhead::ProcessDamageArea()
   int v32; // [esp+2Ch] [ebp-14h]
   int v33; // [esp+2Ch] [ebp-14h]
   int v34; // [esp+30h] [ebp-10h]
-  _BYTE v35[12]; // [esp+34h] [ebp-Ch] BYREF
+  unsigned char v35[12]; // [esp+34h] [ebp-Ch] BYREF
 
-  v28 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6160); /*0x65b5a3*/
-  v29 = *(_DWORD *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6164); /*0x65b5a7*/
-  this->u32_A0 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x65b5ab*/
+  v28 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6160); /*0x65b5a3*/
+  v29 = *(unsigned int *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6164); /*0x65b5a7*/
+  this->u32_A0 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b5ab*/
   this->u32_2C = v32; /*0x65b5b3*/
   this->u32_30 = v28; /*0x65b5b9*/
-  this->q034 = *(_DWORD *)&stru_A8EB00.?[416]; /*0x65b5c2*/
+  this->q034 = *(unsigned int *)&stru_A8EB00.?[416]; /*0x65b5c2*/
   this->u32_38 = v32; /*0x65b5c8*/
   this->u8_3C = v29; /*0x65b5cb*/
-  v2 = *(_DWORD *)&DSurface_ViewBounds.__pad_FC[324]; /*0x65b5ce*/
-  v3 = *(unsigned __int8 *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6194); /*0x65b5e2*/
-  v4 = *(unsigned __int8 *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6193); /*0x65b5e8*/
-  v5 = *(unsigned __int8 *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6192); /*0x65b5f5*/
+  v2 = *(unsigned int *)&DSurface_ViewBounds.__pad_FC[324]; /*0x65b5ce*/
+  v3 = *(uint8_t *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6194); /*0x65b5e2*/
+  v4 = *(uint8_t *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6193); /*0x65b5e8*/
+  v5 = *(uint8_t *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6192); /*0x65b5f5*/
   if ( dword_A8B230[130].uniqueId == 1 ) /*0x65b5fb*/
   {
     v3 = -128; /*0x65b5fd*/
     v5 = -128; /*0x65b602*/
   }
   v25 = 1000 * v5 / 255; /*0x65b62a*/
-  v6 = (double)this->q130 * *(double *)(*(_DWORD *)&DSurface_ViewBounds.__pad_FC[324] + 6176); /*0x65b63e*/
+  v6 = (double)this->q130 * *(double *)(*(unsigned int *)&DSurface_ViewBounds.__pad_FC[324] + 6176); /*0x65b63e*/
   v30 = this->q048; /*0x65b679*/
   v27 = 1000 * v3 / 255; /*0x65b684*/
   if ( v6 > 2000.0 ) /*0x65b68b*/
@@ -1337,8 +1338,8 @@ int Warhead::ProcessDamageArea()
   v18 = v16 / v29; /*0x65b73a*/
   this->u32_64 = v18; /*0x65b741*/
   this->u32_68 = v7 / v18; /*0x65b749*/
-  v19 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (__int16 *)&this->u32_C2); /*0x65b750*/
-  v20 = (int *)(*(int (__thiscall **)(void *, _BYTE *))(*(_DWORD *)v19 + 72))(v19, v35); /*0x65b75e*/
+  v19 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], (int16_t *)&this->u32_C2); /*0x65b750*/
+  v20 = (int *)(*(int (__thiscall **)(void *, unsigned char *))(*(unsigned int *)v19 + 72))(v19, v35); /*0x65b75e*/
   v31 = *v20; /*0x65b763*/
   v33 = v20[1]; /*0x65b76a*/
   v21 = this->u32_24; /*0x65b76e*/

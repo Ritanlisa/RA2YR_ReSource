@@ -29,7 +29,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   HWND v15; // eax
   HWND v16; // eax
   HWND v17; // ebp
-  HWND v18; // ebx
+  wchar_t * v18;
   wchar_t *v19; // eax
   HWND v20; // eax
   int DlgCtrlID; // eax
@@ -45,7 +45,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   int v31; // [esp+14h] [ebp-10h]
   int v32; // [esp+18h] [ebp-Ch]
   int v33; // [esp+1Ch] [ebp-8h]
-  unsigned __int8 IsAlliedWith; // [esp+20h] [ebp-4h]
+  uint8_t IsAlliedWith; // [esp+20h] [ebp-4h]
   void *hDlga; // [esp+28h] [ebp+4h]
   HWND hDlgb; // [esp+28h] [ebp+4h]
   HWND hDlgc; // [esp+28h] [ebp+4h]
@@ -53,7 +53,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   char v39; // [esp+30h] [ebp+Ch]
   char v40; // [esp+34h] [ebp+10h]
 
-  result = BaseDialogProc(hDlg, a2, a3, (unsigned int)a4); /*0x657dbd*/
+  result = (int)(BaseDialogProc(hDlg, a2, a3, (unsigned int)a4));
   if ( result ) /*0x657dc4*/
     return result; /*0x657dc4*/
   if ( a2 != 273 ) /*0x657dd1*/
@@ -84,14 +84,14 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
         hWnd = GetDlgItem(hDlg, dword_839260[v38]); /*0x657e84*/
         v10 = v32; /*0x657e8b*/
         v31 = v32; /*0x657e8d*/
-        if ( v32 == *((_DWORD *)dword_A83D4C + 12) ) /*0x657e91*/
+        if ( v32 == *((unsigned int *)dword_A83D4C + 12) ) /*0x657e91*/
         {
           v31 = 0; /*0x657e93*/
           v10 = 0; /*0x657e9b*/
         }
         if ( v10 < v33 /*0x657ec1*/
-          && (v11 = *(_DWORD *)&dword_A8022C->AbstractClass[4 * v10], (hDlga = (void *)v11) != 0)
-          && *(_BYTE *)(*(_DWORD *)(v11 + 52) + 421) )
+          && (v11 = *(unsigned int *)&dword_A8022C->AbstractClass[4 * v10], (hDlga = (void *)v11) != 0)
+          && *(unsigned char *)(*(unsigned int *)(v11 + 52) + 421) )
         {
           if ( !IDA_BYTE1(dword_8871E0[1].InfantryBrute) || (void *)HouseClass_Observer == dword_A83D4C || dword_A8B244 == 2 ) /*0x657ef9*/
           {
@@ -105,10 +105,10 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
             HouseClass::IsAlliedWith(hDlga, dword_A83D4C); /*0x657f3c*/
             globalHelper_003DD0(v9); /*0x657f45*/
             v40 = 1; /*0x657f4f*/
-            if ( dword_A8B538 || !(unsigned __int8)House::IsCurrentPlayer(hDlga) ) /*0x657f5c*/
+            if ( dword_A8B538 || !(uint8_t)House::IsCurrentPlayer(hDlga) ) /*0x657f5c*/
               EnableWindow(v9, 0); /*0x657f68*/
           }
-          if ( (unsigned __int8)House::IsCurrentPlayer(hDlga) ) /*0x657f79*/
+          if ( (uint8_t)House::IsCurrentPlayer(hDlga) ) /*0x657f79*/
           {
             if ( dword_A8B538 ) /*0x657f97*/
             {
@@ -117,7 +117,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
             }
             else
             {
-              SendMessageA(hWnd, 0xF1u, *((unsigned __int8 *)&byte_A8D108 + v31), 0); /*0x657fb0*/
+              SendMessageA(hWnd, 0xF1u, *((uint8_t *)&byte_A8D108 + v31), 0); /*0x657fb0*/
             }
             v39 = 1; /*0x657fb6*/
           }
@@ -166,7 +166,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
           ShowWindow(v17, 5); /*0x6580d4*/
           if ( dword_A8B238[0] == 3 ) /*0x6580de*/
           {
-            SendMessageA(v17, 0xF1u, (unsigned __int8)dword_A8D110, 0); /*0x6580ef*/
+            SendMessageA(v17, 0xF1u, (uint8_t)dword_A8D110, 0); /*0x6580ef*/
           }
           else if ( dword_A8B238[0] == 4 ) /*0x6580f4*/
           {
@@ -181,8 +181,8 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
       DrawPowerBarForPlayers(hDlg); /*0x658112*/
       if ( dword_A8B238[0] == 3 || dword_A8B238[0] == 4 ) /*0x658124*/
       {
-        v18 = GetDlgItem(hDlg, 1062); /*0x658134*/
-        v19 = WideString::GetOrEmpty_Alt((wchar_t **)(dword_A8B23C + 32)); /*0x658139*/
+        v18 = (wchar_t *)((HWND)((wchar_t *)(GetDlgItem(hDlg, 1062))));
+        v19 = (wchar_t *)(WideString::GetOrEmpty_Alt((wchar_t **)(dword_A8B23C + 32)));
         SendMessageA(v18, 0x4B2u, 0, (LPARAM)v19); /*0x658147*/
       }
       v20 = GetDlgItem(hDlg, 1819); /*0x658153*/
@@ -198,17 +198,17 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
     if ( !IDA_HIWORD(a3) ) /*0x6581b4*/
     {
       KillTimer(hDlg, 0); /*0x6581c0*/
-      *(_DWORD *)GetWindowLongA(hDlg, 8) = 1059; /*0x6581d1*/
+      *(unsigned int *)GetWindowLongA(hDlg, 8) = 1059; /*0x6581d1*/
       return 0; /*0x6581de*/
     }
     return 0; /*0x6581b7*/
   }
-  v22 = &dword_83923C; /*0x6581e1*/
+  v22 = (int *)(&dword_83923C);
   while ( *v22 != DlgCtrlID ) /*0x6581e8*/
   {
     if ( (int)++v22 >= (int)&dword_83925C ) /*0x6581f3*/
     {
-      v23 = &dword_83925C; /*0x6581f5*/
+      v23 = (int *)(&dword_83925C);
       while ( *v23 != DlgCtrlID ) /*0x6581fc*/
       {
         if ( (int)++v23 >= (int)g_Str_File_OPTBTN_SHP ) /*0x658207*/
@@ -244,9 +244,9 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
           break; /*0x6582b2*/
         }
       }
-      if ( v28 == *((_DWORD *)dword_A83D4C + 12) ) /*0x6582bd*/
+      if ( v28 == *((unsigned int *)dword_A83D4C + 12) ) /*0x6582bd*/
         v28 = 0; /*0x6582bf*/
-      *((_BYTE *)&byte_A8D108 + v28) = IDA_HIWORD(a3) == 1; /*0x6582c3*/
+      *((unsigned char *)&byte_A8D108 + v28) = IDA_HIWORD(a3) == 1; /*0x6582c3*/
       return 0; /*0x6582d0*/
     }
   }
@@ -266,7 +266,7 @@ CampaignScore * * Diplomacy::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3
   }
   v26 = v24; /*0x65824e*/
   LABEL_60:
-  if ( v26 == *((_DWORD *)dword_A83D4C + 12) ) /*0x658241*/
+  if ( v26 == *((unsigned int *)dword_A83D4C + 12) ) /*0x658241*/
     v26 = 0; /*0x658243*/
   if ( IDA_HIWORD(a3) ) /*0x65820e*/
     SendMessageA(a4, 0xF1u, 0, 0); /*0x658261*/

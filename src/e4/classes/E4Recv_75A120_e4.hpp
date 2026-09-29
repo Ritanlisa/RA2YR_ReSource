@@ -25,15 +25,6 @@ struct E4Recv_75A120 {
     unsigned int q1544;  // 0x1544
     unsigned int q5444;  // 0x5444
     unsigned int q5494;  // 0x5494
-    unsigned int q153094;  // 0x153094
-    unsigned int q1271138;  // 0x1271138
-    unsigned int q19337528;  // 0x19337528
-    unsigned int q422802728;  // 0x422802728
-    unsigned int q17758693160;  // 0x17758693160
-    unsigned int q17758713478;  // 0x17758713478
-    unsigned int q1612096024928;  // 0x1612096024928
-    unsigned int q1612096550008;  // 0x1612096550008
-    unsigned int q388267565711368;  // 0x388267565711368
 // --- flat members (END) ---
     BOOL sub_75A120(int a2,  int * a3,  int a4);    // 0x75A120
 };

@@ -15,15 +15,8 @@ struct BufferIOFile {
     unsigned int u32_150;  // 0x150
     unsigned int q1634;  // 0x1634
     unsigned int q5684;  // 0x5684
-    unsigned int q22148;  // 0x22148
-    unsigned int q33570;  // 0x33570
-    unsigned int q210288;  // 0x210288
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q35009334;  // 0x35009334
-    unsigned int q423698564;  // 0x423698564
-    unsigned int q971428040484870;  // 0x971428040484870
-    unsigned int q1918720362029298226710;  // 0x1918720362029298226710
+    unsigned int __pad_0;
+    unsigned int m_54;
 // --- flat members (END) ---
     void* Constructor(char * Source);  // 0x47A9D0
     unsigned char * Init();  // 0x47AA30

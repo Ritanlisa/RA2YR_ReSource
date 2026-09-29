@@ -669,6 +669,19 @@ struct VoxelAnimClass {
     void* qBC4;  // 0xBC4
     unsigned char qBC8;  // 0xBC8
     void* qBD0;  // 0xBD0
+    unsigned int VoxelAnimClass_field_0x0;
+    unsigned int VoxelAnimClass_field_0x104;
+    unsigned int VoxelAnimClass_field_0x108;
+    unsigned int VoxelAnimClass_field_0x10C;
+    unsigned int VoxelAnimClass_field_0x114;
+    unsigned int VoxelAnimClass_field_0x128;
+    unsigned int VoxelAnimClass_field_0x4;
+    unsigned int VoxelAnimClass_field_0x8;
+    unsigned int __pad_12C;
+    unsigned int __pad_98;
+    unsigned int __pad_C;
+    unsigned int VoxelAnimClass_field_0x140;
+    unsigned int __pad_110;
 // --- flat members (END) ---
     AbstractClass * * GetFrameCount(int * a2);
     Coord * * ProcessAnim(int * a2, unsigned int * a3);

@@ -15,6 +15,10 @@ struct GadgetClass {
     bool Visible;  // 0x14
     bool Enabled;  // 0x15
     unsigned int ID;  // 0x18
+    unsigned int Hovered;
+    unsigned int X0;
+    unsigned int __pad_0;
+    unsigned int u32_28;
 // --- flat members (END) ---
     AbstractClass * * FindByWindow(HWND hWnd, LPARAM a2);
     AbstractClass * * SetTooltip(CCINIClass * aP1);

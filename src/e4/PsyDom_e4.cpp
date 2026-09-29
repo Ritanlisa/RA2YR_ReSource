@@ -67,7 +67,7 @@ void PsyDom::Fire()
   {
     v1 = (unsigned int *)(CellCoord::To_CellObj(&MapClass_Instance, (int16_t *)&PsyDom_Coords));
     v2 = (int *)((unsigned int *)((int *)(*(int (__thiscall **)(void *, int *))(*(unsigned int *)v1 + 72))(v1, v33)));
-    v3 = ActionQueue::PushEntry(v0, *v2, v2[1], v2[2]); /*0x53b0cb*/
+    v3 = (unsigned int *)(ActionQueue::PushEntry(v0, *v2, v2[1], v2[2]));
   }
   else
   {

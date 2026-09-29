@@ -31,7 +31,7 @@ rc_ptr * ConstructWDTSelection_Create_767FB0(rc_ptr_base * a1, int a2, int a3, R
   else
     v7 = 0; /*0x767fdd*/
   ComPtr::Constructor((ComPtr *)a1); /*0x767fe1*/
-  *(_DWORD *)a1 = &(void*)(void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x767fe8*/
+  *(unsigned int *)a1 = (void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x767fe8*/
   ComPtr::Set((ComPtr *)a1, (int)v7); /*0x767fef*/
   return a1; /*0x767ff6*/
 }

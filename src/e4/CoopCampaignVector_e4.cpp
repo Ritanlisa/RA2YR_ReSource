@@ -14,7 +14,7 @@ namespace gamemd {
 unsigned int CoopCampaignVector::Write(int a2)
 {
   if ( IDA_LOBYTE(this->m_C) ) /*0x5c5750*/
-    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2; /*0x5c5765*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x5c5765*/
   else
     return 0; /*0x5c5757*/
 }
@@ -25,12 +25,12 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x5c5943*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5946*/
+  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5946*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x5c5950*/
   {
     RA2_OPDEL(v3); /*0x5c5958*/
-    *(_DWORD *)&this->m_1[3] = 0; /*0x5c5960*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x5c5960*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x5c596b*/
   this->m_8 = 0; /*0x5c5971*/
@@ -43,21 +43,21 @@ VectorClass_flat * CoopCampaignVector::QueryInterface(char a2)
 namespace gamemd {
 unsigned int * CoopCampaignVector::Construct(MultiplayerGameMode * aP1, MultiplayerGameMode * aP2)
 {
-  this->CoopCampaignVector_field_0x04 = 0; /*0x5c5a8b*/
-  this->CoopCampaignVector_field_0x08 = aP1; /*0x5c5a8e*/
+  this->CoopCampaignVector_field_0x04 = (unsigned int)(0);
+  this->CoopCampaignVector_field_0x08 = (unsigned int)(aP1);
   IDA_LOBYTE(this->CoopCampaignVector_field_0x0C) = 1; /*0x5c5a91*/
   IDA_BYTE1(this->CoopCampaignVector_field_0x0C) = 0; /*0x5c5a95*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5a98*/
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_CoopCampaignClass___vftable; /*0x5c5a98*/
   if ( aP1 ) /*0x5c5a9e*/
   {
     if ( aP2 ) /*0x5c5aa6*/
     {
-      this->CoopCampaignVector_field_0x04 = aP2; /*0x5c5aa8*/
-      return this->__pad_0; /*0x5c5aae*/
+      this->CoopCampaignVector_field_0x04 = (unsigned int *)(aP2);
+      return (unsigned int *)(this->__pad_0);
     }
     this->CoopCampaignVector_field_0x04 = RA2_OPNEW(4 * aP1); /*0x5c5abd*/
     IDA_BYTE1(this->CoopCampaignVector_field_0x0C) = 1; /*0x5c5ac0*/
   }
-  return this->__pad_0; /*0x5c5aad*/
+  return (unsigned int *)(this->__pad_0);
 }
 } // namespace gamemd

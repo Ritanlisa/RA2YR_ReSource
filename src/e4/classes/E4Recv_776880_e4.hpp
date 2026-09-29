@@ -15,8 +15,6 @@ struct E4Recv_776880 {
     unsigned int q774;  // 0x774
     unsigned int q1908;  // 0x1908
     unsigned int q6408;  // 0x6408
-    unsigned int q25608;  // 0x25608
-    unsigned int q1388694;  // 0x1388694
 // --- flat members (END) ---
     BOOL sub_776880();  // 0x776880
 };

@@ -14,6 +14,17 @@ struct Vector {
     bool IsInitialized;  // 0xC
     unsigned char u8_D;  // 0xD
     void* q010;  // 0x10
+    unsigned int Vector_field_0x10;
+    unsigned int Vector_field_0x4;
+    unsigned int Vector_field_0x8;
+    unsigned int __pad_0;
+    unsigned int m_1;
+    unsigned int m_8;
+    unsigned int m_C;
+    unsigned int u32_14;
+    unsigned int u32_18;
+    unsigned int u32_1C;
+    unsigned int u32_24;
 // --- flat members (END) ---
     void Cleanup();  // 0x512D30
     void Destructor();  // 0x513100
@@ -26,5 +37,6 @@ struct Vector {
     int Find(unsigned int * a2);  // 0x4E0550
     BOOL HasCapacity();  // 0x76F0B0
     char Grow();  // 0x7AEEC0
+    static double TwoDMagnitudeMath(...);  // C2597 interim stub
 };
 } // namespace gamemd

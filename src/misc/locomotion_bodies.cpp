@@ -35,7 +35,7 @@ HRESULT __stdcall LocomotionClass::QueryInterface(const IID& iid, void** ppv) {
     *ppv = this; /*0x55aa3a*/
   if ( !*ppv ) /*0x55aa3c*/
     return -2147467262; /*0x55aa41*/
-  (*(void (__stdcall **)(LocomotionClass *))(*(_DWORD *)this->ILocomotion + 4))(this); /*0x55aa4c*/
+  (*(void (__stdcall **)(LocomotionClass *))(*(unsigned int *)this->ILocomotion + 4))(this); /*0x55aa4c*/
   return 0; /*0x55a9bd*/
 }
 ULONG __stdcall LocomotionClass::AddRef() { return ++RefCount; }

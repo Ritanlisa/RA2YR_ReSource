@@ -56,12 +56,12 @@ void Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   {
     v5 = dword_AC1B60(&hWnda); /*0x6149d1*/
     hWnd = hWnda; /*0x6149e4*/
-    v6 = *((_DWORD *)dword_AC1B48 + (v5 & ((1 << dword_AC1B54) - 1))); /*0x6149f0*/
+    v6 = *((unsigned int *)dword_AC1B48 + (v5 & ((1 << dword_AC1B54) - 1))); /*0x6149f0*/
     if ( v6 ) /*0x6149f5*/
     {
       while ( *(HWND *)v6 != hWnda ) /*0x6149f9*/
       {
-        v6 = *(_DWORD *)(v6 + 8); /*0x6149fb*/
+        v6 = *(unsigned int *)(v6 + 8); /*0x6149fb*/
         if ( !v6 ) /*0x614a00*/
           goto LABEL_8; /*0x614a00*/
       }
@@ -81,7 +81,7 @@ void Memory_Helper_6149B0(HWND hWnd, WCHAR * a2, int cchWideChar, size_t * a4)
   *lpWideCharStr = 0; /*0x614a6d*/
   MultiByteToWideChar(0, 0, lParam, -1, v19, cchWideChar); /*0x614a72*/
   if ( a4 ) /*0x614a7a*/
-    *a4 = _mbsnccnt((const unsigned __int8 *)lParam, v8); /*0x614a8a*/
+    *a4 = _mbsnccnt((const uint8_t *)lParam, v8); /*0x614a8a*/
   if ( cchWideChar > 0 ) /*0x614a8e*/
     v9[cchWideChar - 1] = 0; /*0x614a90*/
   v10 = wcslen(v9); /*0x614a9d*/

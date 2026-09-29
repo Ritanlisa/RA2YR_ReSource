@@ -44,6 +44,9 @@ struct BombClass {
     char BombClass_field_54[4];  // 0x54
     bool BombClass_field_58;  // 0x58
     unsigned char pad_59;  // 0x59
+    unsigned int __pad_24;
+    unsigned int vtable22;
+    unsigned int vtable23;
 // --- flat members (END) ---
     BombClass * CopyTo(char a2);
     int InitPool();

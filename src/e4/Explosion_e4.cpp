@@ -25,7 +25,7 @@ int Explosion::RemoveItem(int a2)
     do /*0x53ddc4*/
     {
       ++a2; /*0x53ddb7*/
-      *(_DWORD *)(this->u32_4 + 4 * a2 - 4) = *(_DWORD *)(this->u32_4 + 4 * a2); /*0x53ddbb*/
+      *(unsigned int *)(this->u32_4 + 4 * a2 - 4) = *(unsigned int *)(this->u32_4 + 4 * a2); /*0x53ddbb*/
     }
     while ( a2 < this->u32_10 ); /*0x53ddc4*/
   }

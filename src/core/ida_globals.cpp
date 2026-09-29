@@ -12692,8 +12692,8 @@ unsigned short word_B7853A = 0;
 unsigned short word_B7853E = 0;
 unsigned short word_B78540 = 0;
 unsigned short word_B78594 = 0;
-xmmword_t xmmword_AC1CB8 = 0;
-xmmword_t xmmword_B1CFA8 = 0;
-xmmword_t xmmword_B781B0 = 0;
+xmmword_t xmmword_AC1CB8 = (xmmword_t)(0);
+xmmword_t xmmword_B1CFA8 = (xmmword_t)(0);
+xmmword_t xmmword_B781B0 = (xmmword_t)(0);
 
 } // namespace gamemd

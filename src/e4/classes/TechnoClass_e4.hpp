@@ -125,15 +125,15 @@ struct TechnoClass {
     TechnoClass* transporter;  // 0xFC
     bool q0FF;  // 0xFF
     char q100[4];  // 0x100
-    char currentTurretNumber[4];  // 0x104
+    unsigned int currentTurretNumber;  // 0x104
     TechnoClass* q108;  // 0x108
-    char turretChargeTimer[4];  // 0x10C
+    unsigned int turretChargeTimer;  // 0x10C
     unsigned int q10D;  // 0x10D
     unsigned int q10E;  // 0x10E
     unsigned int q10F;  // 0x10F
     char q110[4];  // 0x110
     unsigned int q111;  // 0x111
-    char secondaryTurretIndex[1];  // 0x114
+    unsigned int secondaryTurretIndex;  // 0x114
     ObjectClass* q118;  // 0x118
     unsigned int q11A;  // 0x11A
     unsigned int q11B;  // 0x11B
@@ -152,7 +152,7 @@ struct TechnoClass {
     char currentWeaponSlot[4];  // 0x138
     unsigned char q139;  // 0x139
     char q13C[4];  // 0x13C
-    char currentRank[4];  // 0x140
+    unsigned int currentRank;  // 0x140
     char gattlingStage[4];  // 0x144
     char gattlingValue[4];  // 0x148
     unsigned int ammoReloadTimer;  // 0x14C
@@ -208,7 +208,7 @@ struct TechnoClass {
     void* airstrikeTintStage;  // 0x1C0
     unsigned int q1C4;  // 0x1C4
     unsigned int q1C8;  // 0x1C8
-    char drainTarget[4];  // 0x1CC
+    unsigned int drainTarget;  // 0x1CC
     unsigned char alignmentPadding1BD;  // 0x1CD
     bool drainingMe;  // 0x1D0
     TechnoClass* drainAnim;  // 0x1D4
@@ -253,12 +253,12 @@ struct TechnoClass {
     char lastSightCoords[12];  // 0x254
     unsigned char q258;  // 0x258
     void* q25C;  // 0x25C
-    char lastSightRange[4];  // 0x260
-    char lastSightHeight[4];  // 0x264
+    unsigned int lastSightRange;  // 0x260
+    unsigned int lastSightHeight;  // 0x264
     bool gapSuperCharged;  // 0x268
     bool isGeneratingGap;  // 0x269
     unsigned short q26A;  // 0x26A
-    char gapRadius[4];  // 0x26C
+    unsigned int gapRadius;  // 0x26C
     bool isBeingWarpedOut;  // 0x270
     bool isWarpingOut;  // 0x271
     bool isWarpEffectActive;  // 0x272
@@ -278,7 +278,7 @@ struct TechnoClass {
     bool q290;  // 0x290
     unsigned char alignmentPadding27D;  // 0x291
     unsigned int airstrike;  // 0x294
-    char isBerserk[1];  // 0x298
+    unsigned int isBerserk;  // 0x298
     unsigned char q299;  // 0x299
     char isBerserk_duration_left[4];  // 0x29C
     unsigned int sprayOffsetIndex;  // 0x2A0
@@ -505,6 +505,21 @@ struct TechnoClass {
     void* planningToken;  // 0x514
     ObjectTypeClass* disguiseAsType;  // 0x518
     HouseClass* disguisedAsHouse;  // 0x51C
+    unsigned int RadioClass;
+    unsigned int __pad_18C;
+    unsigned int __pad_1C4;
+    unsigned int barrelRecoil;
+    unsigned int checkCloakState;
+    unsigned int damageParticles_2;
+    unsigned int master;
+    unsigned int railgunParticles_2;
+    unsigned int vtable33;
+    unsigned int vtable34;
+    unsigned int Deploy;
+    unsigned int vtable30;
+    unsigned int vtable31;
+    unsigned int vtable32;
+    unsigned int CalcFlashAlpha;
 // --- flat members (END) ---
     BOOL processDamageAnimation(int a1);
     BOOL updateWeaponCooldown(int a1);

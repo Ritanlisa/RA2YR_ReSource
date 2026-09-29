@@ -32,14 +32,14 @@ int HoverLocomotionClass::BeginMove(int a1, int * a2)
 {
   int v2; // edi
 
-  v2 = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, a2); /*0x5170c1*/
+  v2 = (int)(SwizzleManager::SaveLoad((int *)a1->LocomotionClass, a2));
   if ( v2 >= 0 && a1 ) /*0x5170c9*/
   {
-    *(_DWORD *)a1->LocomotionClass = &(void*)(void*)&LocomotionClass_vftable; /*0x5170ce*/
-    *(_DWORD *)&a1->LocomotionClass[4] = &(void*)(void*)&LocomotionClass_vftable; /*0x5170d4*/
+    *(unsigned int *)a1->LocomotionClass = (void*)&LocomotionClass_vftable; /*0x5170ce*/
+    *(unsigned int *)&a1->LocomotionClass[4] = (void*)&LocomotionClass_vftable; /*0x5170d4*/
     FrameSnapshot::Init((FrameSnapshot *)a1->LocomotionFacing); /*0x5170db*/
-    *(_DWORD *)a1->LocomotionClass = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5170e0*/
-    *(_DWORD *)&a1->LocomotionClass[4] = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5170e6*/
+    *(unsigned int *)a1->LocomotionClass = (void*)&HoverLocomotionClass_vftable; /*0x5170e0*/
+    *(unsigned int *)&a1->LocomotionClass[4] = (void*)&HoverLocomotionClass_vftable; /*0x5170e6*/
   }
   return v2; /*0x5170ef*/
 }
@@ -55,8 +55,8 @@ int HoverLocomotionClass::StubReturn120()
 namespace gamemd {
 HoverLocomotionClass * HoverLocomotionClass::ProcessMove(char a2)
 {
-  *(_DWORD *)this->LocomotionClass = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5172c3*/
-  *(_DWORD *)&this->LocomotionClass[4] = &(void*)(void*)&HoverLocomotionClass_vftable; /*0x5172c9*/
+  *(unsigned int *)this->LocomotionClass = (void*)&HoverLocomotionClass_vftable; /*0x5172c3*/
+  *(unsigned int *)&this->LocomotionClass[4] = (void*)&HoverLocomotionClass_vftable; /*0x5172c9*/
   LocomotionClass::Construct(); /*0x5172d0*/
   if ( (a2 & 1) != 0 ) /*0x5172da*/
     RA2_OPDEL(); /*0x5172dd*/

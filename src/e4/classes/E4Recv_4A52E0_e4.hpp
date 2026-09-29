@@ -21,12 +21,6 @@ struct E4Recv_4A52E0 {
     unsigned int q1908;  // 0x1908
     unsigned int q5170;  // 0x5170
     unsigned int q6408;  // 0x6408
-    unsigned int q20848;  // 0x20848
-    unsigned int q25608;  // 0x25608
-    unsigned int q33570;  // 0x33570
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q20481684;  // 0x20481684
-    unsigned int q541595268;  // 0x541595268
 // --- flat members (END) ---
     char sub_4A52E0();  // 0x4A52E0
 };

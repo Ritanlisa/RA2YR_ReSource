@@ -14,6 +14,46 @@ struct LocomotionClass {
     unsigned int u32_10;  // 0x10
     bool Dirty;  // 0x11
     unsigned char u8_14;  // 0x14
+    unsigned int CurrentHeight;
+    unsigned int DestinationCoords;
+    unsigned int DestinationReached;
+    unsigned int ILocomotion;
+    unsigned int IsMoving;
+    unsigned int Owner;
+    unsigned int Piggybackee;
+    unsigned int TurnRate;
+    unsigned int __pad_015;
+    unsigned int __pad_50;
+    unsigned int __pad_74;
+    unsigned int __pad_89;
+    unsigned int q020;
+    unsigned int q5D4;
+    unsigned int u32_18;
+    unsigned int u32_1C;
+    unsigned int u32_2108;
+    unsigned int u32_24;
+    unsigned int u32_28;
+    unsigned int u32_2C;
+    unsigned int u32_34;
+    unsigned int u32_38;
+    unsigned int u32_48;
+    unsigned int u32_4C;
+    unsigned int u32_51;
+    unsigned int u32_52;
+    unsigned int u32_58;
+    unsigned int u32_5C;
+    unsigned int u32_60;
+    unsigned int u32_61;
+    unsigned int u32_62;
+    unsigned int u32_63;
+    unsigned int u32_64;
+    unsigned int u32_65;
+    unsigned int u32_68;
+    unsigned int u32_6C;
+    unsigned int u32_70;
+    unsigned int unknown_91;
+    unsigned int Powered;
+    unsigned int RefCount;
 // --- flat members (END) ---
     LocomotionClass * ProcessMove(char a2);
     int CheckBridgeBlock();

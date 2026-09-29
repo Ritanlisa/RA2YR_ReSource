@@ -12,13 +12,13 @@ namespace gamemd {
 long long Range_RandomInt(MouseClass * aP0, MapClass * aP1)
 {
   double v3; // st7
-  __int64 result; // rax
-  __int64 v5; // [esp+8h] [ebp-18h]
-  __int64 v6; // [esp+8h] [ebp-18h]
+  int64_t result; // rax
+  int64_t v5; // [esp+8h] [ebp-18h]
+  int64_t v6; // [esp+8h] [ebp-18h]
   double v7; // [esp+18h] [ebp-8h]
 
-  v5 = aP1 - aP0 + 1; /*0x59803e*/
-  v3 = (double)v5; /*0x598046*/
+  v5 = (unsigned int)(aP1 - aP0 + 1);
+  v3 = (unsigned int)((double)v5);
   IDA_LODWORD(v5) = aP0; /*0x59804a*/
   v7 = (double)v5; /*0x59805a*/
   do /*0x598089*/

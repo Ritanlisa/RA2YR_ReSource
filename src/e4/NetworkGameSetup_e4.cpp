@@ -31,7 +31,7 @@ int NetworkGameSetup::ReadRulesUnknown()
   if ( result ) /*0x5b9763*/
   {
     result = SendMessageA((HWND)result, 0x400u, 0, 0); /*0x5b976f*/
-    *(_DWORD *)&stru_A8B250.__pad_0[40] = result; /*0x5b9775*/
+    *(unsigned int *)&stru_A8B250.__pad_0[40] = result; /*0x5b9775*/
     IDA_BYTE1(this->NetworkGameSetup_field_0x08) = 1; /*0x5b977a*/
   }
   return result; /*0x5b977e*/
@@ -47,7 +47,7 @@ void NetworkGameSetup::SendGameSetupPacket(wchar_t * Source)
   int (__usercall *v6)@<eax>(char@<cf>, char@<zf>); // edi
   wchar_t *Format; // [esp+10h] [ebp-300h]
   int v8[62]; // [esp+14h] [ebp-2FCh] BYREF
-  __int16 v9; // [esp+10Ch] [ebp-204h]
+  int16_t v9; // [esp+10Ch] [ebp-204h]
   wchar_t Buffer[256]; // [esp+110h] [ebp-200h] BYREF
 
   if ( Source ) /*0x5ba985*/

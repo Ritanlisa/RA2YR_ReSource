@@ -13,6 +13,10 @@ struct TypeList_cptr_ParticleSystemTypeClass {
     unsigned char IsAllocated;  // 0xD
     unsigned char q00E;  // 0xE
     void* Count;  // 0x10
+    unsigned int m_1;
+    unsigned int m_10;
+    unsigned int m_8;
+    unsigned int m_C;
 // --- flat members (END) ---
     void GetClassIdentifier();  // 0x459F90
     unsigned int LoadTypeData(int a2);  // 0x459FC0

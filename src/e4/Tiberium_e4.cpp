@@ -25,6 +25,9 @@
 #include "e4/classes/ProgressTimer_e4.hpp"
 #include "e4/classes/Turret_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/VectorClass_flat_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x59D510
 namespace gamemd {

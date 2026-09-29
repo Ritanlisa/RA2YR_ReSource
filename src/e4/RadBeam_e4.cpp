@@ -22,16 +22,16 @@ void * RadBeam::Create()
   if ( dword_B04A70 < dword_B04A68 /*0x65916a*/
     || (byte_B04A6D || !dword_B04A68)
     && dword_B04A74 > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(RadBeam_Array + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(RadBeam_Array + 8))(
          &RadBeam_Array,
          dword_B04A68 + dword_B04A74,
          0) )
   {
-    v4 = dword_B04A70++; /*0x659177*/
-    *((_DWORD *)dword_B04A64 + v4) = inited; /*0x659186*/
+    v4 = (unsigned int)(dword_B04A70++);
+    *((unsigned int *)dword_B04A64 + v4) = inited; /*0x659186*/
   }
   inited[3] = (double)(this != (RadBeam *)1 ? 20 : 10);
-  return (int)inited; /*0x6591a1*/
+  return (void *)((int)inited);
 }
 } // namespace ra2
 

@@ -16,7 +16,7 @@
 namespace gamemd {
 void * MSFrameAnim::QueryInterface(char a2)
 {
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&MSFrameAnim_vftable; /*0x769bd3*/
+  *(unsigned int *)this->__pad_0 = (void*)&MSFrameAnim_vftable; /*0x769bd3*/
   VtableStub::5CB6C0(); /*0x769bd9*/
   if ( (a2 & 1) != 0 ) /*0x769be3*/
     RA2_OPDEL(); /*0x769be6*/
@@ -34,7 +34,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
   ComPtr *v8; // esi
   int v9; // ebx
   int i; // esi
-  void (__thiscall ***v11)(_DWORD, int); // ecx
+  void (__thiscall ***v11)(unsigned int, int); // ecx
   int v12; // eax
   int v14; // [esp+10h] [ebp-4h]
 
@@ -52,7 +52,7 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
         do /*0x76a065*/
         {
           ComPtr::Constructor(v8); /*0x76a056*/
-          *(_DWORD *)v8->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a05b*/
+          *(unsigned int *)v8->__pad_0 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a05b*/
           v8 = (ComPtr *)((char *)v8 + 8); /*0x76a061*/
           --v9; /*0x76a064*/
         }
@@ -89,28 +89,28 @@ AbstractClass * * MSFrameAnim::setFrameRate(int a2, unsigned int * a3)
     IDA_LOBYTE(this->m_C) = 1; /*0x76a06f*/
     if ( !v6 ) /*0x76a073*/
       return 0; /*0x76a0f6*/
-    if ( *(_DWORD *)&this->m_1[3] ) /*0x76a075*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x76a075*/
     {
       if ( a2 >= this->m_8 ) /*0x76a081*/
         m_8 = this->m_8; /*0x76a083*/
       for ( i = 0; i < m_8; ++i ) /*0x76a089*/
-        ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 8 * i + 4)); /*0x76a096*/
+        ComPtr::Set((ComPtr *)((char *)v6 + 8 * i), *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 8 * i + 4)); /*0x76a096*/
       if ( IDA_BYTE1(this->m_C) ) /*0x76a0a0*/
       {
-        v11 = *(void (__thiscall ****)(_DWORD, int))&this->m_1[3]; /*0x76a0a7*/
+        v11 = *(void (__thiscall ****)(unsigned int, int))&this->m_1[3]; /*0x76a0a7*/
         if ( v11 ) /*0x76a0ac*/
           (**v11)(v11, 3); /*0x76a0b2*/
-        *(_DWORD *)&this->m_1[3] = 0; /*0x76a0b4*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x76a0b4*/
       }
       m_8 = a2; /*0x76a0bb*/
     }
-    *(_DWORD *)&this->m_1[3] = v6; /*0x76a0ca*/
+    *(unsigned int *)&this->m_1[3] = v6; /*0x76a0ca*/
     this->m_8 = m_8; /*0x76a0cd*/
     IDA_BYTE1(this->m_C) = a3 == 0; /*0x76a0d0*/
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(_DWORD *)this->__pad_0 + 12))(this); /*0x76a0d9*/
+    (*(void (__thiscall **)(_DynamicVectorClass_V_rc_ptr_VTerritory_WorldDominationTour *))(*(unsigned int *)this->__pad_0 + 12))(this); /*0x76a0d9*/
   }
   v12 = this->m_8; /*0x76a0dc*/
   if ( v12 < this->m_10 ) /*0x76a0e4*/
@@ -144,8 +144,8 @@ void MSFrameAnim::Draw(int a1, int * a2)
 
   if ( byte_8487BD ) /*0x767efc*/
   {
-    v2 = (*(int (__thiscall **)(MSFrameAnim *))(*(_DWORD *)a1->__pad_0 + 124))(a1); /*0x767f0d*/
-    v3 = (*(int (__thiscall **)(MSFrameAnim *))(*(_DWORD *)a1->__pad_0 + 128))(a1); /*0x767f0f*/
+    v2 = (*(int (__thiscall **)(MSFrameAnim *))(*(unsigned int *)a1->__pad_0 + 124))(a1); /*0x767f0d*/
+    v3 = (*(int (__thiscall **)(MSFrameAnim *))(*(unsigned int *)a1->__pad_0 + 128))(a1); /*0x767f0f*/
     if ( a2 ) /*0x767f1b*/
     {
       v4 = a2[1]; /*0x767f1f*/
@@ -172,7 +172,7 @@ void MSFrameAnim::Draw(int a1, int * a2)
 namespace gamemd {
 unsigned int * MSFrameAnim::UpdateFrame(unsigned int * a1)
 {
-  *(_DWORD *)a1->__pad_0 = 0; /*0x767f8c*/
+  *(unsigned int *)a1->__pad_0 = 0; /*0x767f8c*/
   a1->MSFrameAnim_field_0x4 = 0; /*0x767f99*/
   a1->MSFrameAnim_field_0x8 = (void *)640; /*0x767f9c*/
   a1->MSFrameAnim_field_0xC = (void *)480; /*0x767f9f*/
@@ -184,15 +184,15 @@ unsigned int * MSFrameAnim::UpdateFrame(unsigned int * a1)
 namespace gamemd {
 int MSFrameAnim::initAnimation()
 {
-  int (__thiscall ***v2)(_DWORD, int); // ecx
+  int (__thiscall ***v2)(unsigned int, int); // ecx
   int result; // eax
 
-  v2 = *(int (__thiscall ****)(_DWORD, int))&this->m_1[3]; /*0x769c56*/
+  v2 = *(int (__thiscall ****)(unsigned int, int))&this->m_1[3]; /*0x769c56*/
   this->m_10 = 0; /*0x769c59*/
   if ( v2 && IDA_BYTE1(this->m_C) ) /*0x769c60*/
   {
     result = (**v2)(v2, 3); /*0x769c6d*/
-    *(_DWORD *)&this->m_1[3] = 0; /*0x769c6f*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x769c6f*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x769c72*/
   this->m_8 = 0; /*0x769c75*/
@@ -205,7 +205,7 @@ namespace gamemd {
 unsigned int MSFrameAnim::startAnimation(int a2)
 {
   if ( IDA_LOBYTE(this->m_C) ) /*0x769c80*/
-    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 3; /*0x769c95*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 3; /*0x769c95*/
   else
     return 0; /*0x769c87*/
 }
@@ -222,7 +222,7 @@ void MSFrameAnim::stopAnimation()
   if ( v2 && IDA_BYTE1(this->m_C) ) /*0x769ce0*/
   {
     RA2_OPDEL(v2); /*0x769ce6*/
-    *(_DWORD *)&this->m_1[3] = 0; /*0x769cee*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x769cee*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x769cf1*/
   this->m_8 = 0; /*0x769cf4*/
@@ -234,7 +234,7 @@ namespace gamemd {
 unsigned int MSFrameAnim::pauseAnimation(int a2)
 {
   if ( IDA_LOBYTE(this->m_C) ) /*0x769d00*/
-    return (unsigned int)(a2 - *(_DWORD *)&this->m_1[3]) >> 2; /*0x769d15*/
+    return (unsigned int)(a2 - *(unsigned int *)&this->m_1[3]) >> 2; /*0x769d15*/
   else
     return 0; /*0x769d07*/
 }
@@ -244,7 +244,7 @@ unsigned int MSFrameAnim::pauseAnimation(int a2)
 namespace gamemd {
 rc_ptr * MSFrameAnim::resumeAnimation(char a2)
 {
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x769d93*/
+  *(unsigned int *)this->__pad_0 = (void*)&rc_ptr_WorldDominationTour_Map_vftable; /*0x769d93*/
   ComPtr::Release(); /*0x769d99*/
   if ( (a2 & 1) != 0 ) /*0x769da3*/
     RA2_OPDEL(); /*0x769da6*/
@@ -258,13 +258,13 @@ int MSFrameAnim::getCurrentFrame(int a2)
 {
   int m_10; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   m_10 = this->m_10; /*0x76a100*/
   result = 0; /*0x76a103*/
   if ( m_10 <= 0 ) /*0x76a108*/
     return -1; /*0x76a123*/
-  for ( i = (_DWORD *)(*(_DWORD *)&this->m_1[3] + 4); *i != *(_DWORD *)(a2 + 4); i += 2 ) /*0x76a111*/
+  for ( i = (unsigned int *)(*(unsigned int *)&this->m_1[3] + 4); *i != *(unsigned int *)(a2 + 4); i += 2 ) /*0x76a111*/
   {
     if ( ++result >= m_10 ) /*0x76a121*/
       return -1; /*0x76a121*/
@@ -276,7 +276,7 @@ int MSFrameAnim::getCurrentFrame(int a2)
 namespace gamemd {
 char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
 {
-  _DWORD *v4; // edi
+  unsigned int *v4; // edi
   int m_8; // ecx
   int i; // eax
   int v7; // eax
@@ -287,30 +287,30 @@ char MSFrameAnim::loopAnimation(int a2, unsigned int * a3)
     if ( a3 ) /*0x76a2c8*/
       v4 = a3; /*0x76a2de*/
     else
-      v4 = (_DWORD *)RA2_OPNEW(4 * a2); /*0x76a2da*/
+      v4 = (unsigned int *)RA2_OPNEW(4 * a2); /*0x76a2da*/
     IDA_LOBYTE(this->m_C) = 1; /*0x76a2e2*/
     if ( !v4 ) /*0x76a2e6*/
       return 0; /*0x76a35a*/
-    if ( *(_DWORD *)&this->m_1[3] ) /*0x76a2e8*/
+    if ( *(unsigned int *)&this->m_1[3] ) /*0x76a2e8*/
     {
       m_8 = this->m_8; /*0x76a2ef*/
       if ( a2 < m_8 ) /*0x76a2f4*/
         m_8 = a2; /*0x76a2f6*/
-      for ( i = 0; i < m_8; v4[i - 1] = *(_DWORD *)(*(_DWORD *)&this->m_1[3] + 4 * i - 4) ) /*0x76a2fc*/
+      for ( i = 0; i < m_8; v4[i - 1] = *(unsigned int *)(*(unsigned int *)&this->m_1[3] + 4 * i - 4) ) /*0x76a2fc*/
         ++i; /*0x76a301*/
       if ( IDA_BYTE1(this->m_C) ) /*0x76a30e*/
       {
         RA2_OPDEL(*(void **)&this->m_1[3]); /*0x76a319*/
-        *(_DWORD *)&this->m_1[3] = 0; /*0x76a321*/
+        *(unsigned int *)&this->m_1[3] = 0; /*0x76a321*/
       }
     }
-    *(_DWORD *)&this->m_1[3] = v4; /*0x76a32a*/
+    *(unsigned int *)&this->m_1[3] = v4; /*0x76a32a*/
     this->m_8 = a2; /*0x76a332*/
     IDA_BYTE1(this->m_C) = a3 == 0; /*0x76a335*/
   }
   else
   {
-    (*(void (__thiscall **)(_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(_DWORD *)this->__pad_0 /*0x76a33e*/
+    (*(void (__thiscall **)(_DynamicVectorClass_PAUAnimationPalette_Map_WorldDominationTour *))(*(unsigned int *)this->__pad_0 /*0x76a33e*/
                                                                                               + 12))(this);
   }
   v7 = this->m_8; /*0x76a341*/
@@ -326,13 +326,13 @@ int MSFrameAnim::resetAnimation(unsigned int * a2)
 {
   int m_10; // edx
   int result; // eax
-  _DWORD *i; // ecx
+  unsigned int *i; // ecx
 
   m_10 = this->m_10; /*0x76a360*/
   result = 0; /*0x76a363*/
   if ( m_10 <= 0 ) /*0x76a368*/
     return -1; /*0x76a37f*/
-  for ( i = *(_DWORD **)&this->m_1[3]; *i != *a2; ++i ) /*0x76a36e*/
+  for ( i = *(unsigned int **)&this->m_1[3]; *i != *a2; ++i ) /*0x76a36e*/
   {
     if ( ++result >= m_10 ) /*0x76a37d*/
       return -1; /*0x76a37d*/
@@ -344,14 +344,14 @@ int MSFrameAnim::resetAnimation(unsigned int * a2)
 namespace gamemd {
 DynamicVector * MSFrameAnim::setPosition(char a2)
 {
-  void (__thiscall ***v3)(_DWORD, int); // ecx
+  void (__thiscall ***v3)(unsigned int, int); // ecx
 
-  v3 = *(void (__thiscall ****)(_DWORD, int))&this->m_1[3]; /*0x76a683*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a686*/
+  v3 = (unsigned int)(*(void (__thiscall ****)(unsigned int, int))&this->m_1[3]);
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a686*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x76a690*/
   {
     (**v3)(v3, 3); /*0x76a69f*/
-    *(_DWORD *)&this->m_1[3] = 0; /*0x76a6a1*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x76a6a1*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x76a6ac*/
   this->m_8 = 0; /*0x76a6b2*/
@@ -367,12 +367,12 @@ DynamicVector * MSFrameAnim::setScale(char a2)
 {
   void *v3; // eax
 
-  v3 = *(void **)&this->m_1[3]; /*0x76a723*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&VectorClass_WorldDominationTour_Map_AnimationPalette___vftable; /*0x76a726*/
+  v3 = (unsigned int)(*(void **)&this->m_1[3]);
+  *(unsigned int *)this->__pad_0 = (void*)&VectorClass_WorldDominationTour_Map_AnimationPalette___vftable; /*0x76a726*/
   if ( v3 && IDA_BYTE1(this->m_C) ) /*0x76a730*/
   {
     RA2_OPDEL(v3); /*0x76a738*/
-    *(_DWORD *)&this->m_1[3] = 0; /*0x76a740*/
+    *(unsigned int *)&this->m_1[3] = 0; /*0x76a740*/
   }
   IDA_BYTE1(this->m_C) = 0; /*0x76a74b*/
   this->m_8 = 0; /*0x76a751*/
@@ -387,7 +387,7 @@ namespace gamemd {
 unsigned int * MSFrameAnim::drawFrame()
 {
   ComPtr::Constructor(); /*0x76a7c3*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a7c8*/
+  *(unsigned int *)this->__pad_0 = (void*)&rc_ptr_WorldDominationTour_Territory_vftable; /*0x76a7c8*/
   return this->__pad_0; /*0x76a7d0*/
 }
 } // namespace gamemd

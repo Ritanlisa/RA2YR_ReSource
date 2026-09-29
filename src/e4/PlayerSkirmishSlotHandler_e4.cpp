@@ -16,7 +16,7 @@ void sub_5DAF30()
   int v1; // edi
   int i; // esi
   int v3[113]; // [esp+8h] [ebp-1C8h] BYREF
-  __int16 v4; // [esp+1CCh] [ebp-4h]
+  int16_t v4; // [esp+1CCh] [ebp-4h]
   char v5; // [esp+1CEh] [ebp-2h]
 
   memset(v3, 0, sizeof(v3)); /*0x5daf47*/

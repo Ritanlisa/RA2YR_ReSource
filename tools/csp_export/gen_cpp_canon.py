@@ -156,6 +156,15 @@ def size_type(sz):
     return {1:'unsigned char',2:'unsigned short',4:'unsigned int',
             8:'unsigned long long'}.get(sz, 'unsigned char')
 
+# til-seeded classes (G35.2 body-observation + ctor-map mining channel):
+# these exist in the IDA til but not in layouts/db -- merge as a fifth
+# source so the canon universe covers everything the til does
+TIL_SEEDED = J(ROOT / 'anchors/til_seeded_classes.json')
+for _c, _i in TIL_SEEDED.items():
+    if _c not in layouts:
+        layouts.setdefault(_c, {'size': _i.get('size') or 0,
+                                'offsets': _i.get('offsets') or {},
+                                'parent': None, 'til_seeded': True})
 all_classes = set(db.keys()) | set(layouts.keys())
 # classes known only through member evidence (member_types keys, synced
 # member_lookup classes such as Gap2Recv_*) join the canon universe

@@ -24,13 +24,6 @@ struct E4Recv_43A6B0 {
     unsigned int q1634;  // 0x1634
     unsigned int q5170;  // 0x5170
     unsigned int q5684;  // 0x5684
-    unsigned int q20848;  // 0x20848
-    unsigned int q22148;  // 0x22148
-    unsigned int q1257874;  // 0x1257874
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q19232884;  // 0x19232884
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q423698564;  // 0x423698564
 // --- flat members (END) ---
     int sub_43A6B0(int a2,  int a3);    // 0x43A6B0
 };

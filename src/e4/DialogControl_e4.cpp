@@ -12,7 +12,7 @@ int DialogControl::Hide()
 {
   int v1; // eax
 
-  v1 = *(_DWORD *)this->__pad_0; /*0x4e1450*/
+  v1 = *(unsigned int *)this->__pad_0; /*0x4e1450*/
   this->u32_1E = 0; /*0x4e1452*/
   this->u32_1C = 1; /*0x4e1456*/
   return (*(int (**)(void))(v1 + 84))();
@@ -38,13 +38,13 @@ int DialogControl::IsHidden()
 namespace gamemd {
 unsigned int * DialogControl::Constructor()
 {
-  _DWORD *v2; // eax
-  _DWORD *v3; // eax
+  unsigned int *v2; // eax
+  unsigned int *v3; // eax
 
   memset(0, 0x200u); /*0x62334d*/
   this->u32_68 = 11; /*0x62334f*/
   this->u32_64 = g_FogOfWarState; /*0x62335d*/
-  v2 = (_DWORD *)RA2_OPNEW(4u); /*0x623360*/
+  v2 = (unsigned int *)RA2_OPNEW(4u); /*0x623360*/
   if ( v2 ) /*0x62336c*/
     v3 = unknown_libname_74(v2); /*0x623370*/
   else

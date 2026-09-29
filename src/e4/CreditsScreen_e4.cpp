@@ -11,19 +11,21 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/classes/CreateTeamCommand_e4.hpp"
 #include "e4/classes/E4Recv_6C0AD0_e4.hpp"
+#include "e4/classes/E4Recv_6C0650_e4.hpp"
+#include "e4/classes/E4Recv_6C0C50_e4.hpp"
 
 // 0x531A00
 namespace gamemd {
 INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned int a4)
 {
-  int result; // eax
-  _DWORD *WindowLongA; // eax
+  INIClass ** result;
+  unsigned int *WindowLongA; // eax
   HWND DlgItem; // esi
   wchar_t *String; // eax
   char *ModuleVersion; // eax
   char *ModuleInternalVersion; // eax
   const char *v10; // eax
-  const char *v11; // eax
+  const const char * v11;
   const char *v12; // [esp-8h] [ebp-29Ch]
   char v13; // [esp+Fh] [ebp-285h] BYREF
   int v14; // [esp+10h] [ebp-284h] BYREF
@@ -32,14 +34,14 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
   char v17[128]; // [esp+194h] [ebp-100h] BYREF
   char Destination[128]; // [esp+214h] [ebp-80h] BYREF
 
-  result = BaseDialogProc(hWnd, a2, a3, a4); /*0x531a28*/
+  result = (gamemd::INIClass **)((int)((gamemd::INIClass **)(BaseDialogProc(hWnd, a2, a3, a4))));
   if ( result ) /*0x531a2f*/
     return result; /*0x531a2f*/
-  WindowLongA = (_DWORD *)GetWindowLongA(hWnd, 8); /*0x531a38*/
+  WindowLongA = (unsigned int *)GetWindowLongA(hWnd, 8); /*0x531a38*/
   if ( a2 == 273 ) /*0x531a44*/
   {
-    if ( (_WORD)a3 && (unsigned __int16)a3 <= 2u ) /*0x531c19*/
-      *WindowLongA = (unsigned __int16)a3; /*0x531c1b*/
+    if ( (unsigned short)a3 && (uint16_t)a3 <= 2u ) /*0x531c19*/
+      *WindowLongA = (uint16_t)a3; /*0x531c1b*/
     return 0; /*0x531c1b*/
   }
   if ( a2 != 1175 ) /*0x531a50*/
@@ -81,6 +83,6 @@ INIClass * * CreditsScreen::DlgProc(HWND hWnd, unsigned int a2, int a3, unsigned
 namespace gamemd {
 void CreditsScreen::Init()
 {
-  *this = 0; /*0x4a3c00*/
+  *(unsigned int *)this = 0; /*0x4a3c00*/
 }
 } // namespace gamemd

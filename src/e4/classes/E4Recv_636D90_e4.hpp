@@ -16,12 +16,6 @@ struct E4Recv_636D90 {
     unsigned int q320;  // 0x320
     unsigned int q800;  // 0x800
     unsigned int q2048;  // 0x2048
-    unsigned int q8264;  // 0x8264
-    unsigned int q33380;  // 0x33380
-    unsigned int q2135954;  // 0x2135954
-    unsigned int q34822484;  // 0x34822484
-    unsigned int q880944260;  // 0x880944260
-    unsigned int q3732705346358;  // 0x3732705346358
 // --- flat members (END) ---
     unsigned int _GetExecutionResourceId_irtualProcessor_details_Concurrency__QBEIXZ();  // 0x636D90
 };

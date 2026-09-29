@@ -20,6 +20,8 @@
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
 #include "e4/classes/CellClass_e4.hpp"
+#include "e4/classes/RawFileClass_e4.hpp"
+#include "e4/classes/House_e4.hpp"
 
 // 0x7D7C31
 namespace gamemd {
@@ -33,7 +35,7 @@ int sub_7D7C31(int a1, int a2)
 namespace gamemd {
 int sub_7D7CC1(int a1, int a2)
 {
-  _BYTE v3[12]; // [esp+0h] [ebp-Ch] BYREF
+  unsigned char v3[12]; // [esp+0h] [ebp-Ch] BYREF
 
   __strgtold12(v3, &a2, a2, 0, 0, 0, 0); /*0x7d7cd8*/
   return Fltin2_Helper((int)v3, a1); /*0x7d7cec*/
@@ -44,7 +46,7 @@ int sub_7D7CC1(int a1, int a2)
 namespace gamemd {
 int sub_7D7D1C(int a1, int a2)
 {
-  _BYTE v3[12]; // [esp+0h] [ebp-Ch] BYREF
+  unsigned char v3[12]; // [esp+0h] [ebp-Ch] BYREF
 
   __strgtold12(v3, &a2, a2, 0, 0, 0, 0); /*0x7d7d33*/
   return Fassign_Helper_7D7D1C_Helper((int)v3, a1); /*0x7d7d47*/

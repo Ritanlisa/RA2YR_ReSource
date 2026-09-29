@@ -22,9 +22,6 @@ struct BuildingLight {
     unsigned int q304;  // 0x304
     void* q1634;  // 0x1634
     void* q5684;  // 0x5684
-    void* q22148;  // 0x22148
-    void* q1283474;  // 0x1283474
-    void* q19412084;  // 0x19412084
 // --- flat members (END) ---
     char CalculateShading();  // 0x5FF850
     double CalcIntensity(double a1);  // 0x4CAD80

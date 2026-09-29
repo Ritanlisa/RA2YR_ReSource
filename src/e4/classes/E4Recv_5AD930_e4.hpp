@@ -13,7 +13,6 @@ struct E4Recv_5AD930 {
     unsigned int q034;  // 0x34
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
-    unsigned int q153094;  // 0x153094
 // --- flat members (END) ---
     char sub_5AD930(int a2);  // 0x5AD930
 };

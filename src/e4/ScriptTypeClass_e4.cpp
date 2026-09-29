@@ -38,10 +38,10 @@ int ScriptTypeClass::LoadTypeData(AbstractTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x691da6*/
     {
       AbstractTypeClass::Init((int)aP0, (int)&aP1); /*0x691daf*/
-      aP0->AbstractClass = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691db4*/
-      aP0->? = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691dba*/
-      aP0->? = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691dc1*/
-      aP0->? = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691dc8*/
+      aP0->AbstractClass = (void*)&ScriptTypeClass_vftable; /*0x691db4*/
+      aP0->? = (void*)&ScriptTypeClass_vftable; /*0x691dba*/
+      aP0->? = (void*)&ScriptTypeClass_vftable; /*0x691dc1*/
+      aP0->? = (void*)&ScriptTypeClass_vftable; /*0x691dc8*/
     }
     return 0; /*0x691dcf*/
   }
@@ -85,19 +85,19 @@ ScriptTypeClass * ScriptTypeClass::ddtor(char a2)
   int v3; // eax
   ScriptTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractClass = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691fa6*/
-  this->? = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691fac*/
-  this->? = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691fb3*/
-  this->? = &(void*)(void*)&ScriptTypeClass_vftable; /*0x691fba*/
+  this->AbstractClass = (void*)&ScriptTypeClass_vftable; /*0x691fa6*/
+  this->? = (void*)&ScriptTypeClass_vftable; /*0x691fac*/
+  this->? = (void*)&ScriptTypeClass_vftable; /*0x691fb3*/
+  this->? = (void*)&ScriptTypeClass_vftable; /*0x691fba*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x691fc1*/
   v5 = this; /*0x691fd6*/
   v3 = (*(int (__thiscall **)(int *, ScriptTypeClass **))(FootClass_Array.?[4] + 16))(&FootClass_Array.?[4], &v5); /*0x691fda*/
   if ( v3 != -1 && v3 < *(int *)&FootClass_Array.? ) /*0x691fea*/
   {
-    --*(_DWORD *)&FootClass_Array.?; /*0x691fef*/
+    --*(unsigned int *)&FootClass_Array.?; /*0x691fef*/
     for ( ; /*0x691ff5*/
           v3 < *(int *)&FootClass_Array.?;
-          *(_DWORD *)(FootClass_Array.?[5] + 4 * v3 - 4) = *(_DWORD *)(FootClass_Array.?[5] + 4 * v3) )
+          *(unsigned int *)(FootClass_Array.?[5] + 4 * v3 - 4) = *(unsigned int *)(FootClass_Array.?[5] + 4 * v3) )
     {
       ++v3; /*0x691ffd*/
     }
@@ -115,7 +115,7 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2)
 {
   int KeyCount; // ebx
   int i; // edi
-  unsigned __int8 *StringByIndex; // eax
+  uint8_t *StringByIndex; // eax
   int result; // eax
   int v7; // ebx
   int j; // ebp
@@ -123,10 +123,10 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2)
   int v10; // [esp-4h] [ebp-38h]
   char Buffer[32]; // [esp+14h] [ebp-20h] BYREF
 
-  KeyCount = INIClass::GetKeyCount(a1->__pad_0, g_INI_Key_TaskForces); /*0x6e8357*/
+  KeyCount = (int)(INIClass::GetKeyCount(a1->__pad_0, g_INI_Key_TaskForces));
   for ( i = 0; i < KeyCount; ++i ) /*0x6e835d*/
   {
-    StringByIndex = (unsigned __int8 *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, i); /*0x6e8367*/
+    StringByIndex = (uint8_t *)INIClass::GetStringByIndex(a1->__pad_0, g_INI_Key_TaskForces, i); /*0x6e8367*/
     INIClass::GetString(a1, g_INI_Key_TaskForces, StringByIndex, &g_INI_DefaultBuffer, Buffer, 32); /*0x6e8380*/
     INIClass::ClearSection((int *)a1->__pad_0, (int)Buffer, 0); /*0x6e838e*/
   }
@@ -135,17 +135,17 @@ TaskForceClass * ScriptTypeClass::ReadINI(char * a1, int a2)
   v7 = 0; /*0x6e83ab*/
   for ( j = 0; j < dword_A8E8E0; ++j ) /*0x6e83b1*/
   {
-    v9 = *((_DWORD *)dword_A8E8D4 + j); /*0x6e83bc*/
-    if ( *(_DWORD *)(v9 + 160) == a2 ) /*0x6e83c5*/
+    v9 = *((unsigned int *)dword_A8E8D4 + j); /*0x6e83bc*/
+    if ( *(unsigned int *)(v9 + 160) == a2 ) /*0x6e83c5*/
     {
       v10 = v7++; /*0x6e83cd*/
       sprintf(Buffer, "%d", v10); /*0x6e83d5*/
       String::Trim(Buffer); /*0x6e83e1*/
       INIClass::SetString(a1->__pad_0, g_INI_Key_TaskForces, Buffer, (char *)(v9 + 36)); /*0x6e83f6*/
-      (*(void (__thiscall **)(int, INIClass *))(*(_DWORD *)v9 + 104))(v9, a1); /*0x6e8400*/
+      (*(void (__thiscall **)(int, INIClass *))(*(unsigned int *)v9 + 104))(v9, a1); /*0x6e8400*/
     }
     result = dword_A8E8E0; /*0x6e8403*/
   }
-  return result; /*0x6e840d*/
+  return (gamemd::TaskForceClass *)(result);
 }
 } // namespace gamemd

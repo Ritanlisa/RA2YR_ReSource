@@ -20,7 +20,7 @@ struct LightSourceClass {
     int referenceCount;  // 0x1C
     bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
-    char LightIntensity[4];  // 0x24
+    unsigned int LightIntensity;  // 0x24
     char LightTint[12];  // 0x28
     bool q02B;  // 0x2B
     TintStruct* q02C;  // 0x2C

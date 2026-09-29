@@ -76,7 +76,7 @@ void TextRenderer::DrawText(DSurface* target, int x, int y,
   int v10; // eax
   va_list v12; // [esp+0h] [ebp-410h]
   int v13[2]; // [esp+4h] [ebp-40Ch] BYREF
-  _BYTE v14[4]; // [esp+Ch] [ebp-404h] BYREF
+  unsigned char v14[4]; // [esp+Ch] [ebp-404h] BYREF
   wchar_t Buffer[512]; // [esp+10h] [ebp-400h] BYREF
   va_list Format; // [esp+434h] [ebp+24h] BYREF
 
@@ -85,8 +85,8 @@ void TextRenderer::DrawText(DSurface* target, int x, int y,
   {
     vswprintf(Buffer, BufferCount, (const wchar_t *const)Format, v12); /*0x4a61e1*/
     v8 = Color::ConvertToRGB(v14); /*0x4a6202*/
-    IDA_LOWORD(v13[0]) = *(_WORD *)v8; /*0x4a6210*/
-    IDA_BYTE2(v13[0]) = *(_BYTE *)(v8 + 2); /*0x4a621b*/
+    IDA_LOWORD(v13[0]) = *(unsigned short *)v8; /*0x4a6210*/
+    IDA_BYTE2(v13[0]) = *(unsigned char *)(v8 + 2); /*0x4a621b*/
     v9 = RenderTextLabel( /*0x4a6293*/
            v13,
            (int)Buffer,
@@ -103,8 +103,8 @@ void TextRenderer::DrawText(DSurface* target, int x, int y,
   else
   {
     v10 = Color::ConvertToRGB(v14); /*0x4a62b1*/
-    IDA_LOWORD(v13[0]) = *(_WORD *)v10; /*0x4a62bf*/
-    IDA_BYTE2(v13[0]) = *(_BYTE *)(v10 + 2); /*0x4a62ca*/
+    IDA_LOWORD(v13[0]) = *(unsigned short *)v10; /*0x4a62bf*/
+    IDA_BYTE2(v13[0]) = *(unsigned char *)(v10 + 2); /*0x4a62ca*/
     v9 = RenderTextLabel( /*0x4a6340*/
            v13,
            0,
@@ -118,7 +118,7 @@ void TextRenderer::DrawText(DSurface* target, int x, int y,
            a8,
            1);
   }
-  *a1 = *v9; /*0x4a6351*/
+  *a1 = (int *)(*v9);
   a1[1] = v9[1]; /*0x4a6356*/
   return a1; /*0x4a634e*/
 }
@@ -130,7 +130,7 @@ void TextRenderer::DrawText(DSurface* target, int x, int y,
   int v10; // eax
   va_list v12; // [esp+0h] [ebp-410h]
   int v13[2]; // [esp+4h] [ebp-40Ch] BYREF
-  _BYTE v14[4]; // [esp+Ch] [ebp-404h] BYREF
+  unsigned char v14[4]; // [esp+Ch] [ebp-404h] BYREF
   wchar_t Buffer[512]; // [esp+10h] [ebp-400h] BYREF
   va_list Format; // [esp+434h] [ebp+24h] BYREF
 
@@ -139,8 +139,8 @@ void TextRenderer::DrawText(DSurface* target, int x, int y,
   {
     vswprintf(Buffer, BufferCount, (const wchar_t *const)Format, v12); /*0x4a61e1*/
     v8 = Color::ConvertToRGB(v14); /*0x4a6202*/
-    IDA_LOWORD(v13[0]) = *(_WORD *)v8; /*0x4a6210*/
-    IDA_BYTE2(v13[0]) = *(_BYTE *)(v8 + 2); /*0x4a621b*/
+    IDA_LOWORD(v13[0]) = *(unsigned short *)v8; /*0x4a6210*/
+    IDA_BYTE2(v13[0]) = *(unsigned char *)(v8 + 2); /*0x4a621b*/
     v9 = RenderTextLabel( /*0x4a6293*/
            v13,
            (int)Buffer,
@@ -157,8 +157,8 @@ void TextRenderer::DrawText(DSurface* target, int x, int y,
   else
   {
     v10 = Color::ConvertToRGB(v14); /*0x4a62b1*/
-    IDA_LOWORD(v13[0]) = *(_WORD *)v10; /*0x4a62bf*/
-    IDA_BYTE2(v13[0]) = *(_BYTE *)(v10 + 2); /*0x4a62ca*/
+    IDA_LOWORD(v13[0]) = *(unsigned short *)v10; /*0x4a62bf*/
+    IDA_BYTE2(v13[0]) = *(unsigned char *)(v10 + 2); /*0x4a62ca*/
     v9 = RenderTextLabel( /*0x4a6340*/
            v13,
            0,

@@ -17,7 +17,7 @@
 namespace gamemd {
 AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
 {
-  unsigned __int8 result; // al
+  uint8_t result; // al
   DDraw *v2; // [esp+0h] [ebp-4h]
 
   result = g_DDraw_Force3D; /*0x6bb8e0*/
@@ -55,21 +55,21 @@ AbstractClass * * WinMainSetup_Setup_6BB8E0(void * a1)
       (*(void (__thiscall **)(DSurface *, int))g_DSurface_Primary->DSurface_field_0x0)(g_DSurface_Primary, 1); /*0x6bb979*/
       g_DSurface_Primary = 0; /*0x6bb97b*/
     }
-    result = (unsigned __int8)sub_4A44F0((ObjectClass *)v2); /*0x6bb981*/
+    result = (uint8_t)sub_4A44F0((ObjectClass *)v2); /*0x6bb981*/
     byte_B0BCF5 = 1; /*0x6bb986*/
   }
-  return result; /*0x6bb98d*/
+  return (gamemd::AbstractClass **)(result);
 }
 }
 // 0x72B130
 namespace gamemd {
 void sub_72B130()
 {
-  void *v0; // esi
-  void *v1; // esi
-  void *v2; // esi
-  void *v3; // esi
-  void *v4; // esi
+  unsigned int v0;
+  unsigned int v1;
+  unsigned int v2;
+  unsigned int v3;
+  unsigned int v4;
 
   if ( byte_B0FC90 ) /*0x72b13b*/
   {
@@ -132,7 +132,7 @@ void sub_72B130()
 namespace gamemd {
 int sub_53D550()
 {
-  int *v1; // esi
+  unsigned int v1;
   int result; // eax
 
   v1 = dword_A9FFC8; /*0x53d551*/
@@ -151,15 +151,15 @@ int sub_53D550()
 namespace gamemd {
 void sub_5B4310()
 {
-  _DWORD *v0; // esi
-  _DWORD *v1; // ecx
+  unsigned int v0;
+  unsigned int *v1; // ecx
 
   v0 = dword_ABF00C; /*0x5b4318*/
   if ( dword_ABF00C ) /*0x5b431a*/
   {
-    if ( *(_DWORD *)dword_ABF00C ) /*0x5b431c*/
-      Tree::Destructor(*(_DWORD **)dword_ABF00C); /*0x5b4324*/
-    v1 = (_DWORD *)v0[1]; /*0x5b4329*/
+    if ( *(unsigned int *)dword_ABF00C ) /*0x5b431c*/
+      Tree::Destructor(*(unsigned int **)dword_ABF00C); /*0x5b4324*/
+    v1 = (unsigned int *)v0[1]; /*0x5b4329*/
     if ( v1 ) /*0x5b432e*/
       Tree::Destructor(v1); /*0x5b4330*/
     RA2_OPDEL(v0); /*0x5b4336*/
@@ -172,7 +172,7 @@ void sub_5B4310()
 namespace gamemd {
 void sub_5BE940()
 {
-  void *v0; // esi
+  unsigned int v0;
 
   v0 = dword_ABF294; /*0x5be941*/
   if ( dword_ABF294 ) /*0x5be949*/
@@ -193,9 +193,9 @@ int sub_5DB6F0()
 
   result = WinMainSetup_Setup_5DB6F0_Setup(); /*0x5db6f1*/
   IDA_LOWORD(stru_A8D600.Network_field_0x10) = 0; /*0x5db700*/
-  if ( *(_DWORD *)&stru_887598.isAliveFlag ) /*0x5db707*/
-    result = (***(int (__thiscall ****)(_DWORD, int))&stru_887598.isAliveFlag)(*(_DWORD *)&stru_887598.isAliveFlag, 1); /*0x5db70d*/
-  *(_DWORD *)&stru_887598.isAliveFlag = 0; /*0x5db70f*/
+  if ( *(unsigned int *)&stru_887598.isAliveFlag ) /*0x5db707*/
+    result = (***(int (__thiscall ****)(unsigned int, int))&stru_887598.isAliveFlag)(*(unsigned int *)&stru_887598.isAliveFlag, 1); /*0x5db70d*/
+  *(unsigned int *)&stru_887598.isAliveFlag = 0; /*0x5db70f*/
   return result; /*0x5db715*/
 }
 } // namespace gamemd
@@ -247,7 +247,7 @@ int sub_5E8A20()
 namespace gamemd {
 void sub_5FF800()
 {
-  int *v1; // esi
+  unsigned int v1;
 
   if ( dword_AC1838 ) /*0x5ff807*/
   {
@@ -269,7 +269,7 @@ void sub_5FF800()
 namespace gamemd {
 void sub_626FF0()
 {
-  void *v0; // esi
+  unsigned int v0;
 
   v0 = g_FileExtensionState; /*0x626ff1*/
   if ( g_FileExtensionState ) /*0x626ff9*/
@@ -295,14 +295,14 @@ void sub_65FD50()
     v2 = *(void **)(stru_B04DA8.LoadGame_field_0x04 + 4 * i); /*0x65fd65*/
     if ( v2 ) /*0x65fd6a*/
     {
-      v4 = *(_DWORD *)(stru_B04DA8.LoadGame_field_0x04 + 4 * i); /*0x65fd7b*/
-      v3 = (*(int (__thiscall **)(LoadGame *, int *))(*(_DWORD *)stru_B04DA8.__pad_0 + 16))(&stru_B04DA8, &v4); /*0x65fd7f*/
+      v4 = *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * i); /*0x65fd7b*/
+      v3 = (*(int (__thiscall **)(LoadGame *, int *))(*(unsigned int *)stru_B04DA8.__pad_0 + 16))(&stru_B04DA8, &v4); /*0x65fd7f*/
       if ( v3 != -1 && v3 < stru_B04DA8.LoadGame_field_0x10 ) /*0x65fd8f*/
       {
         --stru_B04DA8.LoadGame_field_0x10; /*0x65fd94*/
         for ( ; /*0x65fd9a*/
               v3 < stru_B04DA8.LoadGame_field_0x10;
-              *(_DWORD *)(stru_B04DA8.LoadGame_field_0x04 + 4 * v3 - 4) = *(_DWORD *)(stru_B04DA8.LoadGame_field_0x04
+              *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04 + 4 * v3 - 4) = *(unsigned int *)(stru_B04DA8.LoadGame_field_0x04
                                                                                     + 4 * v3) )
         {
           ++v3; /*0x65fda2*/
@@ -330,21 +330,21 @@ void sub_72AC40()
     LoadingScreen::DestroyFileTrees(); /*0x72ac60*/
     LoadingScreen::CleanupObjects(v1); /*0x72ac65*/
     RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1120]); /*0x72ac70*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1120] = 0; /*0x72ac7b*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1120] = 0; /*0x72ac7b*/
     RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1124]); /*0x72ac82*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1124] = 0; /*0x72ac8d*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1124] = 0; /*0x72ac8d*/
     RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1128]); /*0x72ac94*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1128] = 0; /*0x72ac9e*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1128] = 0; /*0x72ac9e*/
     RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1132]); /*0x72aca5*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1132] = 0; /*0x72acb0*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1132] = 0; /*0x72acb0*/
     RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1136]); /*0x72acb7*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1136] = 0; /*0x72acc2*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1136] = 0; /*0x72acc2*/
     RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1140]); /*0x72acc9*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1140] = 0; /*0x72acd3*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1140] = 0; /*0x72acd3*/
     RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1144]); /*0x72acda*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1144] = 0; /*0x72ace5*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1144] = 0; /*0x72ace5*/
     RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1148]); /*0x72acec*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1148] = 0; /*0x72acf4*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1148] = 0; /*0x72acf4*/
     ReleaseLoadingResources(v2); /*0x72acfa*/
   }
   FileTree::CleanupAll(); /*0x72acff*/
@@ -358,53 +358,53 @@ void sub_72AC40()
 namespace gamemd {
 void sub_72B230()
 {
-  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[956] ) /*0x72b23a*/
+  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[956] ) /*0x72b23a*/
   {
     RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[956]); /*0x72b23d*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[956] = 0; /*0x72b245*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[956] = 0; /*0x72b245*/
   }
-  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[960] ) /*0x72b253*/
+  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[960] ) /*0x72b253*/
   {
-    (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[960])( /*0x72b259*/
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[960],
+    (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[960])( /*0x72b259*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[960],
       3);
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[960] = 0; /*0x72b25b*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[960] = 0; /*0x72b25b*/
   }
-  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[948] ) /*0x72b268*/
+  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[948] ) /*0x72b268*/
   {
     RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[948]); /*0x72b26b*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[948] = 0; /*0x72b273*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[948] = 0; /*0x72b273*/
   }
-  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[952] ) /*0x72b281*/
+  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[952] ) /*0x72b281*/
   {
-    (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[952])( /*0x72b287*/
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[952],
+    (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[952])( /*0x72b287*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[952],
       3);
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[952] = 0; /*0x72b289*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[952] = 0; /*0x72b289*/
   }
-  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[940] ) /*0x72b296*/
+  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[940] ) /*0x72b296*/
   {
     RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[940]); /*0x72b299*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[940] = 0; /*0x72b2a1*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[940] = 0; /*0x72b2a1*/
   }
-  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[944] ) /*0x72b2af*/
+  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[944] ) /*0x72b2af*/
   {
-    (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[944])( /*0x72b2b5*/
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[944],
+    (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[944])( /*0x72b2b5*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[944],
       3);
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[944] = 0; /*0x72b2b7*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[944] = 0; /*0x72b2b7*/
   }
-  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[964] ) /*0x72b2c4*/
+  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[964] ) /*0x72b2c4*/
   {
     RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[964]); /*0x72b2c7*/
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[964] = 0; /*0x72b2cf*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[964] = 0; /*0x72b2cf*/
   }
-  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[968] ) /*0x72b2dd*/
+  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[968] ) /*0x72b2dd*/
   {
-    (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[968])( /*0x72b2e3*/
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[968],
+    (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[968])( /*0x72b2e3*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[968],
       3);
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[968] = 0; /*0x72b2e5*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[968] = 0; /*0x72b2e5*/
   }
 }
 } // namespace gamemd
@@ -415,12 +415,12 @@ int sub_730970()
 {
   int result; // eax
 
-  if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_1624[8] ) /*0x730978*/
+  if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8] ) /*0x730978*/
   {
-    result = (***(int (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_1624[8])( /*0x73097e*/
-               *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_1624[8],
+    result = (***(int (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_1624[8])( /*0x73097e*/
+               *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8],
                1);
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_1624[8] = 0; /*0x730980*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1624[8] = 0; /*0x730980*/
   }
   return result; /*0x73098a*/
 }

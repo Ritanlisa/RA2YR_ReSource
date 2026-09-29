@@ -10,12 +10,16 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/LocomotionClass_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/ConvertClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x786EF0
 namespace gamemd {
 void sub_786EF0()
 {
-  const char *v2; // [esp-8h] [ebp-110h]
+  const unsigned int v2;
   int v3; // [esp-4h] [ebp-10Ch]
   char Buffer[260]; // [esp+4h] [ebp-104h] BYREF
 
@@ -26,7 +30,7 @@ void sub_786EF0()
     || dword_B77DF8 == -2147221387
     || dword_B77DF8 == -2147221386 )
   {
-    if ( ShowDialogConfirm(&word_B77AD0, 4, (unsigned __int8 (*)(void))GameLoop::Thunk, 0) == 6 ) /*0x786f60*/
+    if ( ShowDialogConfirm(&word_B77AD0, 4, (uint8_t (*)(void))GameLoop::Thunk, 0) == 6 ) /*0x786f60*/
     {
       switch ( dword_B77DF8 ) /*0x786f78*/
       {
@@ -61,7 +65,7 @@ void sub_786EF0()
   }
   else
   {
-    ShowDialogConfirm(&word_B77AD0, 0, (unsigned __int8 (*)(void))GameLoop::Thunk, 0); /*0x786f36*/
+    ShowDialogConfirm(&word_B77AD0, 0, (uint8_t (*)(void))GameLoop::Thunk, 0); /*0x786f36*/
     return 0; /*0x786f3b*/
   }
 }
@@ -72,7 +76,7 @@ char sub_72BCA0()
 {
   char result; // al
 
-  result = byte_B0FD45; /*0x72bca0*/
+  result = (unsigned int)(byte_B0FD45);
   if ( !byte_B0FD45 ) /*0x72bca7*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72bcb3*/
@@ -95,25 +99,25 @@ void sub_72BCF0()
     if ( g_BuildingLoadQueue_Array.__pad_F70[1428] ) /*0x72bd02*/
     {
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[744]; /*0x72bd05*/
-      if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[744] ) /*0x72bd0d*/
+      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[744] ) /*0x72bd0d*/
       {
         FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[744]); /*0x72bd11*/
         RA2_OPDEL(v1); /*0x72bd17*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1428] = 0; /*0x72bd1f*/
     }
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[744] = 0; /*0x72bd2b*/
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1432] ) /*0x72bd33*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[744] = 0; /*0x72bd2b*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1432] ) /*0x72bd33*/
     {
       RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1432]); /*0x72bd36*/
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1432] = 0; /*0x72bd3e*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1432] = 0; /*0x72bd3e*/
     }
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1436] ) /*0x72bd4c*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1436] ) /*0x72bd4c*/
     {
-      (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1436])( /*0x72bd52*/
-        *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1436],
+      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1436])( /*0x72bd52*/
+        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1436],
         1);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1436] = 0; /*0x72bd54*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1436] = 0; /*0x72bd54*/
     }
   }
   g_BuildingLoadQueue_Array.__pad_F70[1429] = 0; /*0x72bd5a*/
@@ -126,7 +130,7 @@ char sub_72C600()
 {
   char result; // al
 
-  result = byte_B0FD09; /*0x72c600*/
+  result = (unsigned int)(byte_B0FD09);
   if ( !byte_B0FD09 ) /*0x72c607*/
   {
     if ( g_DisplayWidth == 800 ) /*0x72c613*/
@@ -149,25 +153,25 @@ void sub_72C650()
     if ( g_BuildingLoadQueue_Array.__pad_F70[1368] ) /*0x72c662*/
     {
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[860]; /*0x72c665*/
-      if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[860] ) /*0x72c66d*/
+      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[860] ) /*0x72c66d*/
       {
         FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[860]); /*0x72c671*/
         RA2_OPDEL(v1); /*0x72c677*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1368] = 0; /*0x72c67f*/
     }
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[860] = 0; /*0x72c68b*/
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1372] ) /*0x72c693*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[860] = 0; /*0x72c68b*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1372] ) /*0x72c693*/
     {
       RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1372]); /*0x72c696*/
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1372] = 0; /*0x72c69e*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1372] = 0; /*0x72c69e*/
     }
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1376] ) /*0x72c6ac*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1376] ) /*0x72c6ac*/
     {
-      (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1376])( /*0x72c6b2*/
-        *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1376],
+      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1376])( /*0x72c6b2*/
+        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1376],
         1);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1376] = 0; /*0x72c6b4*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1376] = 0; /*0x72c6b4*/
     }
   }
   g_BuildingLoadQueue_Array.__pad_F70[1369] = 0; /*0x72c6ba*/
@@ -191,7 +195,7 @@ int sub_786390(void * a1)
   LoadNetworkShareStrings(); /*0x7863b4*/
   Game::ResetFlags(); /*0x7863b9*/
   Network::InitPlayerSlots(); /*0x7863be*/
-  *(_DWORD *)Data = 0; /*0x7863c8*/
+  *(unsigned int *)Data = 0; /*0x7863c8*/
   if ( g_Str_SOFTWARE_Westwood_Yuri_s_Reven ) /*0x7863d2*/
   {
     if ( strlen(g_Str_SOFTWARE_Westwood_Yuri_s_Reven) ) /*0x7863da*/
@@ -205,7 +209,7 @@ int sub_786390(void * a1)
       }
     }
   }
-  *(_DWORD *)Data = Data[0]; /*0x786467*/
+  *(unsigned int *)Data = Data[0]; /*0x786467*/
   dword_B77E50 = Data[0]; /*0x78646b*/
   g_NetworkRematchState = Data[0] + 10496; /*0x786475*/
   ResetSystemWOL(a1); /*0x78647a*/

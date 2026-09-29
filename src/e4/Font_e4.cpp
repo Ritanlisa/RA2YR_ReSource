@@ -20,21 +20,22 @@
 #include "e4/classes/CellClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
 #include "e4/classes/Vector_e4.hpp"
+#include "e4/classes/Team_e4.hpp"
 
 // 0x4346C0
 namespace gamemd {
 int Font::GetGlyphDataForChar(AbstractClass * aP1)
 {
-  _DWORD *Font_field_04; // ecx
+  unsigned int *Font_field_04; // ecx
   int result; // eax
   int v4; // edx
 
-  Font_field_04 = (_DWORD *)this->Font_field_04; /*0x4346c0*/
+  Font_field_04 = (unsigned int *)this->Font_field_04; /*0x4346c0*/
   result = 0; /*0x4346c3*/
   if ( Font_field_04 ) /*0x4346c7*/
   {
-    v4 = *(unsigned __int16 *)(Font_field_04[6] + 2 * aP1); /*0x4346da*/
-    if ( (_WORD)v4 ) /*0x4346e2*/
+    v4 = *(uint16_t *)(Font_field_04[6] + 2 * aP1); /*0x4346da*/
+    if ( (unsigned short)v4 ) /*0x4346e2*/
       return Font_field_04[7] + (v4 - 1) * Font_field_04[5]; /*0x4346eb*/
   }
   return result; /*0x4346ee*/

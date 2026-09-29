@@ -26,8 +26,8 @@ unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
   int v3; // eax
 
   AbstractTypeClass::Constructor(aP1); /*0x41e359*/
-  *(_DWORD *)this->? = -1; /*0x41e363*/
-  *(_DWORD *)&this->? = -1; /*0x41e369*/
+  *(unsigned int *)this->? = -1; /*0x41e363*/
+  *(unsigned int *)&this->? = -1; /*0x41e369*/
   this->?[0] = 0; /*0x41e374*/
   this->?[1] = 0; /*0x41e37a*/
   this->?[3] = 0; /*0x41e380*/
@@ -49,21 +49,21 @@ unsigned int * AnimTypeClass::Construct2(ObjectClass * aP1)
   this->?[9] = 0; /*0x41e3ef*/
   this->?[0] = 0; /*0x41e3f5*/
   this->?[1] = 0; /*0x41e3fb*/
-  this->ObjectTypeClass = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e401*/
-  this->? = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e407*/
-  this->? = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e40e*/
-  this->? = &(void*)(void*)&AITriggerTypeClass_vftable; /*0x41e415*/
+  this->ObjectTypeClass = (void*)&AITriggerTypeClass_vftable; /*0x41e401*/
+  this->? = (void*)&AITriggerTypeClass_vftable; /*0x41e407*/
+  this->? = (void*)&AITriggerTypeClass_vftable; /*0x41e40e*/
+  this->? = (void*)&AITriggerTypeClass_vftable; /*0x41e415*/
   memset(&this->?[10], 0, 0x20u); /*0x41e41c*/
   if ( dword_A8B210 < dword_A8B208 /*0x41e452*/
     || (byte_A8B20D || !dword_A8B208)
     && dword_A8B214 > 0
-    && (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(dword_A8B200 + 8))(
+    && (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(dword_A8B200 + 8))(
          &dword_A8B200,
          dword_A8B208 + dword_A8B214,
          0) )
   {
-    v3 = dword_A8B210++; /*0x41e45f*/
-    *((_DWORD *)dword_A8B204 + v3) = this; /*0x41e46e*/
+    v3 = (unsigned int)(dword_A8B210++);
+    *((unsigned int *)dword_A8B204 + v3) = this; /*0x41e46e*/
   }
   return &this->ObjectTypeClass; /*0x41e473*/
 }
@@ -81,7 +81,7 @@ unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
   this->MiddleFrameIndex = -1; /*0x427544*/
   this->MiddleFrameWidth = 0; /*0x42754a*/
   this->MiddleFrameHeight = 0; /*0x427550*/
-  *(_DWORD *)this->__pad_2A0 = 0; /*0x427556*/
+  *(unsigned int *)this->__pad_2A0 = 0; /*0x427556*/
   this->AnimTypeClass_field_2A4 = 0; /*0x42755c*/
   this->Damage[0] = 0; /*0x427562*/
   this->Damage[1] = 0; /*0x427568*/
@@ -155,10 +155,10 @@ unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
   this->Shadow = 0; /*0x42771e*/
   this->PsiWarning = 0; /*0x427724*/
   this->ShouldFogRemove = 1; /*0x42772a*/
-  this->ObjectTypeClass = &(void*)(void*)&AnimTypeClass_vftable; /*0x427731*/
-  this->? = &(void*)(void*)&AnimTypeClass_vftable; /*0x427737*/
-  this->? = &(void*)(void*)&AnimTypeClass_vftable; /*0x42773d*/
-  this->? = &(void*)(void*)&AnimTypeClass_vftable; /*0x427744*/
+  this->ObjectTypeClass = (void*)&AnimTypeClass_vftable; /*0x427731*/
+  this->? = (void*)&AnimTypeClass_vftable; /*0x427737*/
+  this->? = (void*)&AnimTypeClass_vftable; /*0x42773d*/
+  this->? = (void*)&AnimTypeClass_vftable; /*0x427744*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x42774b*/
   this->? = 1; /*0x427750*/
   this->? = 1; /*0x427757*/
@@ -170,24 +170,24 @@ unsigned int * AnimTypeClass::Construct(AbstractClass * aP1)
   if ( FootClass_Array.?[0] < FootClass_Array.?[4] /*0x4277b0*/
     || (IDA_BYTE1(FootClass_Array.?[5]) || !FootClass_Array.?[4])
     && FootClass_Array.?[1] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(FootClass_Array.?[2] + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(FootClass_Array.?[2] + 8))(
          &FootClass_Array.?[2],
          FootClass_Array.?[4] + FootClass_Array.?[1],
          0) )
   {
     v3 = FootClass_Array.?[0]++; /*0x4277bd*/
-    *(_DWORD *)(FootClass_Array.?[3] + 4 * v3) = this; /*0x4277cc*/
+    *(unsigned int *)(FootClass_Array.?[3] + 4 * v3) = this; /*0x4277cc*/
   }
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x427803*/
     || (IDA_BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
          &g_BuildingLoadQueue_Array.LightVisibility,
          g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
          0) )
   {
     v4 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x427810*/
-    *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x42781f*/
+    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v4) = this; /*0x42781f*/
   }
   v5 = 0; /*0x427828*/
   if ( FootClass_Array.?[0] <= 0 ) /*0x42782c*/
@@ -239,7 +239,7 @@ void* AnimTypeClass::GetWarhead(int a2)
       }
       v4 = (int)(this->ImageFile);
       v5 = (int)((const char *)(&this->u32_C84));
-      this->Image = (void *)((unsigned int)((void *)((int)(0))));
+      this->Image = (unsigned int)((void *)((unsigned int)((void *)((int)(0)))));
       if ( !v4 ) /*0x427bb7*/
         v5 = (const char *)(&this->vtable46); /*0x427bb9*/
       _makepath(Buffer, 0, 0, v5, Ext); /*0x427bcb*/
@@ -727,10 +727,10 @@ ScenarioClass * * AnimTypeClass::SaveLoad_Prefix(int a1, int a2)
     if ( a1 ) /*0x428823*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)a1, (int)v3); /*0x42882c*/
-      a1->ObjectTypeClass = &(void*)(void*)&AnimTypeClass_vftable; /*0x428831*/
-      a1->? = &(void*)(void*)&AnimTypeClass_vftable; /*0x428837*/
-      a1->? = &(void*)(void*)&AnimTypeClass_vftable; /*0x42883e*/
-      a1->? = &(void*)(void*)&AnimTypeClass_vftable; /*0x428845*/
+      a1->ObjectTypeClass = (void*)&AnimTypeClass_vftable; /*0x428831*/
+      a1->? = (void*)&AnimTypeClass_vftable; /*0x428837*/
+      a1->? = (void*)&AnimTypeClass_vftable; /*0x42883e*/
+      a1->? = (void*)&AnimTypeClass_vftable; /*0x428845*/
     }
     VoxelAnimType::LoadAnim((char *)a1); /*0x42884e*/
     ObjectTypeClass::Load2DArt((char *)a1); /*0x428855*/
@@ -835,12 +835,12 @@ AnimTypeClass * * AnimTypeClass::FindOrCreate()
       return AnimTypeClass::Construct(v3, Source); /*0x428bf1*/
     return 0; /*0x428be5*/
   }
-  while ( _strcmpi((char *)(*(_DWORD *)(FootClass_Array.?[3] + 4 * v2) + 36), Source) ) /*0x428bca*/
+  while ( _strcmpi((char *)(*(unsigned int *)(FootClass_Array.?[3] + 4 * v2) + 36), Source) ) /*0x428bca*/
   {
     if ( ++v2 >= FootClass_Array.?[0] ) /*0x428bd4*/
       goto LABEL_6; /*0x428bd4*/
   }
-  return *(_DWORD **)(FootClass_Array.?[3] + 4 * v2); /*0x428bef*/
+  return *(unsigned int **)(FootClass_Array.?[3] + 4 * v2); /*0x428bef*/
 }
 }
 // 0x428C30
@@ -891,18 +891,18 @@ int AnimTypeClass::GetDamage()
       this->? = v5; /*0x428d4d*/
       if ( v5 ) /*0x428d53*/
         this->? = 1; /*0x428d55*/
-      *(_DWORD *)v10.CDFileClass = &(void*)(void*)&CCFileClass_vftable; /*0x428d63*/
+      *(unsigned int *)v10.CDFileClass = (void*)&CCFileClass_vftable; /*0x428d63*/
       v12 = 0; /*0x428d6b*/
       Vector::Clear((int)v11); /*0x428d76*/
-      *(_DWORD *)v10.CDFileClass = &off_7E1668; /*0x428d7f*/
+      *(unsigned int *)v10.CDFileClass = &off_7E1668; /*0x428d7f*/
       BufferIOFileClass::Dtor((BufferIOFileClass *)&v10); /*0x428d87*/
     }
     (*((void (__thiscall **)(AnimTypeClass *, int))this->ObjectTypeClass + 40))(this, dword_A8B230[130].uniqueId); /*0x428d9c*/
     Image = this->?; /*0x428da2*/
-    *(_DWORD *)v7.CDFileClass = &(void*)(void*)&CCFileClass_vftable; /*0x428dac*/
+    *(unsigned int *)v7.CDFileClass = (void*)&CCFileClass_vftable; /*0x428dac*/
     v9 = 0; /*0x428db4*/
     Vector::Clear((int)v8); /*0x428dbc*/
-    *(_DWORD *)v7.CDFileClass = &off_7E1668; /*0x428dc5*/
+    *(unsigned int *)v7.CDFileClass = &off_7E1668; /*0x428dc5*/
     BufferIOFileClass::Dtor((BufferIOFileClass *)&v7); /*0x428dcd*/
     return (int)Image; /*0x428dd2*/
   }
@@ -917,10 +917,10 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2)
   int v4; // eax
   AnimTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
-  this->ObjectTypeClass = &(void*)(void*)&AnimTypeClass_vftable; /*0x428ead*/
-  this->? = &(void*)(void*)&AnimTypeClass_vftable; /*0x428eb3*/
-  this->? = &(void*)(void*)&AnimTypeClass_vftable; /*0x428eba*/
-  this->? = &(void*)(void*)&AnimTypeClass_vftable; /*0x428ec1*/
+  this->ObjectTypeClass = (void*)&AnimTypeClass_vftable; /*0x428ead*/
+  this->? = (void*)&AnimTypeClass_vftable; /*0x428eb3*/
+  this->? = (void*)&AnimTypeClass_vftable; /*0x428eba*/
+  this->? = (void*)&AnimTypeClass_vftable; /*0x428ec1*/
   v6 = this; /*0x428ecf*/
   v3 = (*(int (__thiscall **)(int *, AnimTypeClass **))(g_BuildingLoadQueue_Array.LightVisibility + 16))( /*0x428ed3*/
          &g_BuildingLoadQueue_Array.LightVisibility,
@@ -930,7 +930,7 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2)
     --g_BuildingLoadQueue_Array.LightBlueTint; /*0x428ee8*/
     for ( ; /*0x428eee*/
           v3 < g_BuildingLoadQueue_Array.LightBlueTint;
-          *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3 - 4) = *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity
+          *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v3 - 4) = *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity
                                                                                          + 4 * v3) )
     {
       ++v3; /*0x428ef6*/
@@ -943,7 +943,7 @@ AnimTypeClass * AnimTypeClass::ddtor(char a2)
     --FootClass_Array.?[0]; /*0x428f31*/
     for ( ; /*0x428f37*/
           v4 < FootClass_Array.?[0];
-          *(_DWORD *)(FootClass_Array.?[3] + 4 * v4 - 4) = *(_DWORD *)(FootClass_Array.?[3] + 4 * v4) )
+          *(unsigned int *)(FootClass_Array.?[3] + 4 * v4 - 4) = *(unsigned int *)(FootClass_Array.?[3] + 4 * v4) )
     {
       ++v4; /*0x428f3f*/
     }
@@ -989,7 +989,7 @@ char AnimTypeClass::GetLoopCount(int a2)
     if ( !this->? || this->DemandLoad ) /*0x427ab0*/
     {
       IDA_LOBYTE(v2) = this->?; /*0x427b2b*/
-      if ( (_BYTE)v2 ) /*0x427b33*/
+      if ( (unsigned char)v2 ) /*0x427b33*/
         IDA_LOBYTE(v2) = (*((char (__thiscall **)(AnimTypeClass *, int))this->ObjectTypeClass + 40))(this, a2); /*0x427b3a*/
     }
     else
@@ -1020,7 +1020,7 @@ int AnimTypeClass::FindIndex()
   v2 = 0; /*0x427cbd*/
   if ( FootClass_Array.?[0] <= 0 ) /*0x427cc1*/
     return -1; /*0x427ce6*/
-  while ( _strcmpi((char *)(*(_DWORD *)(FootClass_Array.?[3] + 4 * v2) + 36), (char *)this) ) /*0x427cda*/
+  while ( _strcmpi((char *)(*(unsigned int *)(FootClass_Array.?[3] + 4 * v2) + 36), (char *)this) ) /*0x427cda*/
   {
     if ( ++v2 >= FootClass_Array.?[0] ) /*0x427ce4*/
       return -1; /*0x427ce4*/

@@ -15,7 +15,7 @@ void Selection::SetCurrent()
 {
   int result; // eax
 
-  *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_1584[144] = this; /*0x731d00*/
+  *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_1584[144] = this; /*0x731d00*/
   IDA_LOBYTE(g_BuildingLoadQueue_Array.QueueingCell[0]) = 0; /*0x731d06*/
   return result; /*0x731d0d*/
 }

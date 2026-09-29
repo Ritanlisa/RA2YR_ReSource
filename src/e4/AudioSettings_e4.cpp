@@ -20,6 +20,7 @@
 #include "e4/classes/AudioStream_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/Timer_e4.hpp"
+#include "e4/classes/LoadingScreen_e4.hpp"
 
 // 0x5FA440
 namespace gamemd {
@@ -43,7 +44,7 @@ void AudioSettings::SetFlag68(char a2)
 namespace gamemd {
 AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned int a3, HWND hWnd)
 {
-  int result; // eax
+  AbstractClass ** result;
   BOOL IsSoundEnabled; // ebx
   HWND DlgItem; // eax
   HWND v7; // edi
@@ -88,7 +89,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
   int v46; // [esp+24h] [ebp-CCh]
   wchar_t lParam[100]; // [esp+28h] [ebp-C8h] BYREF
 
-  result = BaseDialogProc(hDlg, a2, a3, (unsigned int)hWnd); /*0x6b632c*/
+  result = (gamemd::AbstractClass **)((int)((gamemd::AbstractClass **)(BaseDialogProc(hDlg, a2, a3, (unsigned int)hWnd))));
   if ( result ) /*0x6b6333*/
     return result; /*0x6b6333*/
   if ( a2 != 273 ) /*0x6b633f*/
@@ -216,9 +217,9 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
     }
     return 0; /*0x6b6354*/
   }
-  if ( (unsigned __int16)a3 <= 0x534u ) /*0x6b672d*/
+  if ( (uint16_t)a3 <= 0x534u ) /*0x6b672d*/
   {
-    switch ( (unsigned __int16)a3 ) /*0x6b6733*/
+    switch ( (uint16_t)a3 ) /*0x6b6733*/
     {
       case 0x534u: /*0x6b6733*/
         v32 = SendMessageA(hWnd, 0xF0u, 0, 0); /*0x6b684c*/
@@ -268,7 +269,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
     }
     return 0; /*0x6b677b*/
   }
-  if ( (unsigned __int16)a3 == 1333 ) /*0x6b68a9*/
+  if ( (uint16_t)a3 == 1333 ) /*0x6b68a9*/
   {
     if ( !IDA_HIWORD(a3) ) /*0x6b69c8*/
     {
@@ -278,7 +279,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
     }
     return 0; /*0x6b69e5*/
   }
-  if ( (unsigned __int16)a3 != 1670 || IDA_HIWORD(a3) ) /*0x6b68ba*/
+  if ( (uint16_t)a3 != 1670 || IDA_HIWORD(a3) ) /*0x6b68ba*/
     return 0; /*0x6b69ec*/
   v33 = GetDlgItem(hDlg, 1327); /*0x6b68cf*/
   if ( v33 ) /*0x6b68d9*/
@@ -306,7 +307,7 @@ AbstractClass * * AudioSettings::DlgProc(HWND hDlg, unsigned int a2, unsigned in
     v42 = (double)SendMessageA(v36, 0x400u, 0, 0) * 0.1; /*0x6b69a2*/
     Audio::SetVoiceVolume((float *)dword_A8EB60, v42, 0); /*0x6b69a5*/
   }
-  *(_DWORD *)GetWindowLongA(hDlg, 8) = 1; /*0x6b69b5*/
+  *(unsigned int *)GetWindowLongA(hDlg, 8) = 1; /*0x6b69b5*/
   return 0; /*0x6b6619*/
 }
 } // namespace gamemd

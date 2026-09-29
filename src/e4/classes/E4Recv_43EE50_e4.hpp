@@ -16,17 +16,6 @@ struct E4Recv_43EE50 {
     unsigned int q1808;  // 0x1808
     unsigned int q2048;  // 0x2048
     unsigned int q5128;  // 0x5128
-    unsigned int q8264;  // 0x8264
-    unsigned int q24914;  // 0x24914
-    unsigned int q33380;  // 0x33380
-    unsigned int q149780;  // 0x149780
-    unsigned int q1255810;  // 0x1255810
-    unsigned int q1349504;  // 0x1349504
-    unsigned int q421676434;  // 0x421676434
-    unsigned int q539111990;  // 0x539111990
-    unsigned int q22432258448;  // 0x22432258448
-    unsigned int q1611689177458;  // 0x1611689177458
-    unsigned int q388224393901144;  // 0x388224393901144
 // --- flat members (END) ---
     int Vf1020(int,  ...);    // G6 vtable slot dispatch
     int sub_43EE50();  // 0x43EE50

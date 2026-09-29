@@ -63,6 +63,15 @@ struct TaskForceClass {
     unsigned int u32_9C;  // 0x9C
     unsigned char q0A0;  // 0xA0
     ObjectTypeClass* q0A4;  // 0xA4
+    unsigned int TaskForceClass_field_0x24;
+    unsigned int TaskForceClass_field_0x4;
+    unsigned int TaskForceClass_field_0x98;
+    unsigned int TaskForceClass_field_0x9C;
+    unsigned int TaskForceClass_field_0xA4;
+    unsigned int __pad_0;
+    unsigned int __pad_28;
+    unsigned int __pad_8;
+    unsigned int __pad_A0;
 // --- flat members (END) ---
     unsigned int * ParseUnitCountAndType(char * Buffer);  // 0x4C4EF0
     unsigned int * Construct(ObjectClass * aP1);  // 0x6E7E80

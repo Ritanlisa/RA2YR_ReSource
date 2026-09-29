@@ -19,17 +19,17 @@ char sub_6DA770()
   if ( dword_A8ECC8 != (wchar_t *)1 ) /*0x6da779*/
     return 0; /*0x6da779*/
   v0 = *(int **)dword_A8ECBC; /*0x6da780*/
-  if ( !(*(int (__thiscall **)(_DWORD))(**(_DWORD **)dword_A8ECBC + 60))(*(_DWORD *)dword_A8ECBC) ) /*0x6da786*/
+  if ( !(*(int (__thiscall **)(unsigned int))(**(unsigned int **)dword_A8ECBC + 60))(*(unsigned int *)dword_A8ECBC) ) /*0x6da786*/
     return 0; /*0x6da786*/
   v1 = *v0; /*0x6da796*/
   if ( dword_A8B238[0] ) /*0x6da798*/
   {
     v3 = (void *)(*(int (__thiscall **)(int *))(v1 + 60))(v0); /*0x6da7a7*/
-    v2 = (unsigned __int8)House::IsHumanPlayer(v3) == 0; /*0x6da7b1*/
+    v2 = (uint8_t)House::IsHumanPlayer(v3) == 0; /*0x6da7b1*/
   }
   else
   {
-    v2 = *(_BYTE *)((*(int (__thiscall **)(int *))(v1 + 60))(v0) + 493) == 0; /*0x6da7a3*/
+    v2 = *(unsigned char *)((*(int (__thiscall **)(int *))(v1 + 60))(v0) + 493) == 0; /*0x6da7a3*/
   }
   if ( !v2 ) /*0x6da7b3*/
     return 0; /*0x6da7c3*/

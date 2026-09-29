@@ -20,7 +20,7 @@ int sub_798340()
   HANDLE *v0; // esi
   BOOL result; // eax
 
-  v0 = &Handles; /*0x798348*/
+  v0 = (HANDLE *)(&Handles);
   do /*0x79835b*/
     result = ResetEvent(*v0++); /*0x798350*/
   while ( (int)v0 < (int)g_WOL_RequestObject ); /*0x79835b*/
@@ -56,25 +56,25 @@ void sub_72C0B0()
     if ( g_BuildingLoadQueue_Array.__pad_F70[1404] ) /*0x72c0c2*/
     {
       v1 = *(void **)&g_BuildingLoadQueue_Array.__pad_F70[668]; /*0x72c0c5*/
-      if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[668] ) /*0x72c0cd*/
+      if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[668] ) /*0x72c0cd*/
       {
         FileTreeNode::Destroy(*(FileTreeNode **)&g_BuildingLoadQueue_Array.__pad_F70[668]); /*0x72c0d1*/
         RA2_OPDEL(v1); /*0x72c0d7*/
       }
       g_BuildingLoadQueue_Array.__pad_F70[1404] = 0; /*0x72c0df*/
     }
-    *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[668] = 0; /*0x72c0eb*/
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1408] ) /*0x72c0f3*/
+    *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[668] = 0; /*0x72c0eb*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1408] ) /*0x72c0f3*/
     {
       RA2_OPDEL(*(void **)&g_BuildingLoadQueue_Array.__pad_F70[1408]); /*0x72c0f6*/
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1408] = 0; /*0x72c0fe*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1408] = 0; /*0x72c0fe*/
     }
-    if ( *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1412] ) /*0x72c10c*/
+    if ( *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1412] ) /*0x72c10c*/
     {
-      (***(void (__thiscall ****)(_DWORD, int))&g_BuildingLoadQueue_Array.__pad_F70[1412])( /*0x72c112*/
-        *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1412],
+      (***(void (__thiscall ****)(unsigned int, int))&g_BuildingLoadQueue_Array.__pad_F70[1412])( /*0x72c112*/
+        *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1412],
         1);
-      *(_DWORD *)&g_BuildingLoadQueue_Array.__pad_F70[1412] = 0; /*0x72c114*/
+      *(unsigned int *)&g_BuildingLoadQueue_Array.__pad_F70[1412] = 0; /*0x72c114*/
     }
   }
   g_BuildingLoadQueue_Array.__pad_F70[1405] = 0; /*0x72c11a*/

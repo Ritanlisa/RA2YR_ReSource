@@ -21,7 +21,7 @@ void CampaignScreen_Init()
 {
   const wchar_t *v5; // ebp
   int result; // eax
-  _DWORD *WindowLongA; // eax
+  unsigned int *WindowLongA; // eax
   HWND v8; // eax
   wchar_t *StringCSF; // eax
   HWND v10; // eax
@@ -82,7 +82,7 @@ void CampaignScreen_Init()
   if ( !result ) /*0x470d5f*/
   {
     v51 = v5; /*0x470d65*/
-    WindowLongA = (_DWORD *)GetWindowLongA((HWND)this, 8); /*0x470d69*/
+    WindowLongA = (unsigned int *)GetWindowLongA((HWND)this, 8); /*0x470d69*/
     if ( (unsigned int)hWnd > 0x497 ) /*0x470d75*/
     {
       if ( hWnd == (HWND)1240 ) /*0x47138e*/
@@ -117,7 +117,7 @@ void CampaignScreen_Init()
     }
     if ( hWnd != (HWND)272 ) /*0x470d90*/
     {
-      if ( hWnd == (HWND)273 && (_WORD)wParam == 1745 ) /*0x470d9e*/
+      if ( hWnd == (HWND)273 && (unsigned short)wParam == 1745 ) /*0x470d9e*/
       {
         *WindowLongA = 1; /*0x470da6*/
         return 0; /*0x470db6*/
@@ -180,13 +180,13 @@ void CampaignScreen_Init()
     while ( 1 ) /*0x47102c*/
     {
       v21 = Color::ConvertToRGB( /*0x47102c*/
-              (Color *)(*(_DWORD *)(*(_DWORD *)&stru_B054D0.m_1[3] + 4 * *(_DWORD *)(dword_89DFE0[v53] + 40)) + 776),
+              (Color *)(*(unsigned int *)(*(unsigned int *)&stru_B054D0.m_1[3] + 4 * *(unsigned int *)(dword_89DFE0[v53] + 40)) + 776),
               (int)v57);
-      IDA_LOWORD(v56) = *(_WORD *)v21; /*0x471034*/
-      IDA_BYTE2(v56) = *(_BYTE *)(v21 + 2); /*0x47103c*/
+      IDA_LOWORD(v56) = *(unsigned short *)v21; /*0x471034*/
+      IDA_BYTE2(v56) = *(unsigned char *)(v21 + 2); /*0x47103c*/
       v22 = dword_89DFE0[v53]; /*0x471067*/
       v55 = 24 * v53; /*0x471071*/
-      v23 = (unsigned __int8)v56 | (*(unsigned __int16 *)((char *)&v56 + 1) << 8); /*0x471081*/
+      v23 = (uint8_t)v56 | (*(uint16_t *)((char *)&v56 + 1) << 8); /*0x471081*/
       nIDDlgItem = stru_81AF8C.?[6 * v53 + 7]; /*0x471085*/
       lParam = v22; /*0x471089*/
       v24 = GetDlgItem((HWND)this, nIDDlgItem); /*0x47108d*/

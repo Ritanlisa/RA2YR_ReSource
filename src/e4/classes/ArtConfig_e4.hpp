@@ -13,6 +13,10 @@ struct ArtConfig {
     unsigned int u32_C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned char q014;  // 0x14
+    unsigned int u32_18;
+    unsigned int u32_1C;
+    unsigned int u32_28;
+    unsigned int u32_C2;
 // --- flat members (END) ---
     int validateConfig(Selection_WorldDominationTour * aP1, int a3, Selection_WorldDominationTour * aP3);
 };

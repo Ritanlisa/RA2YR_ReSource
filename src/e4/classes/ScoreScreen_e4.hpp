@@ -21,6 +21,23 @@ struct ScoreScreen {
     unsigned char q01C;  // 0x1C
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
+    unsigned int ScoreScreen_field_0x04;
+    unsigned int ScoreScreen_field_0x08;
+    unsigned int ScoreScreen_field_0x0C;
+    unsigned int ScoreScreen_field_0x10;
+    unsigned int ScoreScreen_field_0x14;
+    unsigned int ScoreScreen_field_0x18;
+    unsigned int __pad_0;
+    unsigned int u32_3AC;
+    unsigned int u32_3B0;
+    unsigned int u32_3B4;
+    unsigned int u32_3B8;
+    unsigned int u32_3BC;
+    unsigned int u32_3C4;
+    unsigned int u32_3C8;
+    unsigned int u32_3CD;
+    unsigned int u32_3D0;
+    unsigned int u32_3D4;
 // --- flat members (END) ---
     unsigned int * Constructor(ScoreAnimClass * aP1, int a3, int a4);
     unsigned int * LoadCountryFlags(int a2);

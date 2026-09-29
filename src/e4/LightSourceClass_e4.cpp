@@ -27,23 +27,23 @@ unsigned int * LightSourceClass::Construct(int a2, int a3, LightSourceClass * aP
   this->DetailLevel = 2; /*0x55478f*/
   this->Location[0] = a2; /*0x554796*/
   this->Activated = 0; /*0x55479c*/
-  this->AbstractClass = &(void*)(void*)&LightSourceClass_vftable; /*0x5547a0*/
+  this->AbstractClass = (void*)&LightSourceClass_vftable; /*0x5547a0*/
   this->Location[1] = a3; /*0x5547a6*/
   this->LightVisibility = a5; /*0x5547ad*/
-  this->? = &(void*)(void*)&LightSourceClass_vftable; /*0x5547b0*/
+  this->? = (void*)&LightSourceClass_vftable; /*0x5547b0*/
   this->Location[2] = aP3; /*0x5547b7*/
-  this->? = &(void*)(void*)&LightSourceClass_vftable; /*0x5547ba*/
-  this->? = &(void*)(void*)&LightSourceClass_vftable; /*0x5547c1*/
+  this->? = (void*)&LightSourceClass_vftable; /*0x5547ba*/
+  this->? = (void*)&LightSourceClass_vftable; /*0x5547c1*/
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5547fd*/
     || (IDA_BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
     && g_MissionQueueFrame.random[134] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_MissionQueueFrame.random[129] + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_MissionQueueFrame.random[129] + 8))(
          &g_MissionQueueFrame.random[129],
          g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134],
          0) )
   {
     v10 = g_MissionQueueFrame.random[133]++; /*0x55480a*/
-    *(_DWORD *)(g_MissionQueueFrame.random[130] + 4 * v10) = this; /*0x554819*/
+    *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v10) = this; /*0x554819*/
   }
   return &this->AbstractClass; /*0x55481e*/
 }
@@ -66,20 +66,20 @@ int LightSourceClass::Constructor()
   this->LightVisibility = 0; /*0x554860*/
   this->Activated = 0; /*0x554863*/
   this->Location[2] = v2; /*0x554866*/
-  this->AbstractClass = &(void*)(void*)&LightSourceClass_vftable; /*0x554869*/
-  this->? = &(void*)(void*)&LightSourceClass_vftable; /*0x55486f*/
-  this->? = &(void*)(void*)&LightSourceClass_vftable; /*0x554876*/
-  this->? = &(void*)(void*)&LightSourceClass_vftable; /*0x55487d*/
+  this->AbstractClass = (void*)&LightSourceClass_vftable; /*0x554869*/
+  this->? = (void*)&LightSourceClass_vftable; /*0x55486f*/
+  this->? = (void*)&LightSourceClass_vftable; /*0x554876*/
+  this->? = (void*)&LightSourceClass_vftable; /*0x55487d*/
   if ( g_MissionQueueFrame.random[133] < g_MissionQueueFrame.random[131] /*0x5548b6*/
     || (IDA_BYTE1(g_MissionQueueFrame.random[132]) || !g_MissionQueueFrame.random[131])
     && g_MissionQueueFrame.random[134] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_MissionQueueFrame.random[129] + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_MissionQueueFrame.random[129] + 8))(
          &g_MissionQueueFrame.random[129],
          g_MissionQueueFrame.random[131] + g_MissionQueueFrame.random[134],
          0) )
   {
     v3 = g_MissionQueueFrame.random[133]++; /*0x5548c3*/
-    *(_DWORD *)(g_MissionQueueFrame.random[130] + 4 * v3) = this; /*0x5548d2*/
+    *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v3) = this; /*0x5548d2*/
   }
   return (int)this; /*0x5548d7*/
 }
@@ -116,10 +116,10 @@ int LightSourceClass::Write(AbstractClass * aP0, int aP1)
     if ( aP0 ) /*0x5550d6*/
     {
       AbstractClass::InitVtables((AbstractClass *)aP0, (int)&aP1); /*0x5550df*/
-      aP0->AbstractClass = &(void*)(void*)&LightSourceClass_vftable; /*0x5550e4*/
-      aP0->? = &(void*)(void*)&LightSourceClass_vftable; /*0x5550ea*/
-      aP0->? = &(void*)(void*)&LightSourceClass_vftable; /*0x5550f1*/
-      aP0->? = &(void*)(void*)&LightSourceClass_vftable; /*0x5550f8*/
+      aP0->AbstractClass = (void*)&LightSourceClass_vftable; /*0x5550e4*/
+      aP0->? = (void*)&LightSourceClass_vftable; /*0x5550ea*/
+      aP0->? = (void*)&LightSourceClass_vftable; /*0x5550f1*/
+      aP0->? = (void*)&LightSourceClass_vftable; /*0x5550f8*/
     }
     return 0; /*0x5550ff*/
   }
@@ -159,10 +159,10 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
   int v3; // eax
   LightSourceClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->AbstractClass = &(void*)(void*)&LightSourceClass_vftable; /*0x555156*/
-  this->? = &(void*)(void*)&LightSourceClass_vftable; /*0x55515c*/
-  this->? = &(void*)(void*)&LightSourceClass_vftable; /*0x555163*/
-  this->? = &(void*)(void*)&LightSourceClass_vftable; /*0x55516a*/
+  this->AbstractClass = (void*)&LightSourceClass_vftable; /*0x555156*/
+  this->? = (void*)&LightSourceClass_vftable; /*0x55515c*/
+  this->? = (void*)&LightSourceClass_vftable; /*0x555163*/
+  this->? = (void*)&LightSourceClass_vftable; /*0x55516a*/
   AbstractClass::AnnounceExpiredPointer(&this->AbstractClass, 1); /*0x555171*/
   v5 = this; /*0x555186*/
   v3 = (*(int (__thiscall **)(int *, LightSourceClass **))(g_MissionQueueFrame.random[129] + 16))( /*0x55518a*/
@@ -173,7 +173,7 @@ LightSourceClass * LightSourceClass::CopyTo(char a2)
     --g_MissionQueueFrame.random[133]; /*0x55519f*/
     for ( ; /*0x5551a5*/
           v3 < g_MissionQueueFrame.random[133];
-          *(_DWORD *)(g_MissionQueueFrame.random[130] + 4 * v3 - 4) = *(_DWORD *)(g_MissionQueueFrame.random[130]
+          *(unsigned int *)(g_MissionQueueFrame.random[130] + 4 * v3 - 4) = *(unsigned int *)(g_MissionQueueFrame.random[130]
                                                                                 + 4 * v3) )
     {
       ++v3; /*0x5551ad*/

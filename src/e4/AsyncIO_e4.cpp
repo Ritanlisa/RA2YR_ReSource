@@ -20,15 +20,15 @@
 namespace gamemd {
 AbstractClass * * AsyncIO::Shutdown()
 {
-  int v1; // esi
-  _DWORD *i; // eax
-  void (__thiscall ***v3)(_DWORD, int); // ecx
+  unsigned int * v1;
+  unsigned int i;
+  void (__thiscall ***v3)(unsigned int, int); // ecx
   char result; // al
 
-  v1 = 0; /*0x5bf459*/
+  v1 = (int)((unsigned int *)(0));
   for ( i = AsyncIO_Instance; v1 < g_AsyncIOState; ++v1 ) /*0x5bf462*/
   {
-    v3 = (void (__thiscall ***)(_DWORD, int))i[v1]; /*0x5bf464*/
+    v3 = (void (__thiscall ***)(unsigned int, int))i[v1]; /*0x5bf464*/
     if ( v3 ) /*0x5bf469*/
     {
       (**v3)(v3, 1); /*0x5bf473*/
@@ -54,7 +54,7 @@ AbstractClass * * AsyncIO::Shutdown()
     result = AudioMixer::Pump(); /*0x5bf4ea*/
     IDA_LOBYTE(g_MissionQueueFrame.localVariables[566]) = 0; /*0x5bf4ef*/
   }
-  return result; /*0x5bf4f5*/
+  return (gamemd::AbstractClass **)(result);
 }
 } // namespace gamemd
 // 0x774BC0
@@ -106,8 +106,8 @@ int AsyncIO::Read()
 
   result = g_AsyncIOState; /*0x5bf500*/
   if ( g_AsyncIOState > 0 ) /*0x5bf507*/
-    return (*(int (__thiscall **)(_DWORD, AsyncIO *))(**(_DWORD **)AsyncIO_Instance + 12))( /*0x5bf515*/
-             *(_DWORD *)AsyncIO_Instance,
+    return (*(int (__thiscall **)(unsigned int, AsyncIO *))(**(unsigned int **)AsyncIO_Instance + 12))( /*0x5bf515*/
+             *(unsigned int *)AsyncIO_Instance,
              this);
   return result; /*0x5bf518*/
 }

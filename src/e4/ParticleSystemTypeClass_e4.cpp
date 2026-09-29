@@ -22,6 +22,7 @@
 #include "e4/classes/BuildingClass_e4.hpp"
 #include "e4/classes/Cell_e4.hpp"
 #include "e4/classes/ParticleSystemClass_32__e4.hpp"
+#include "e4/classes/FilePipe_38_e4.hpp"
 
 // 0x6442D0
 namespace gamemd {
@@ -254,13 +255,13 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
   int v3; // eax
   ParticleSystemTypeClass *v5; // [esp+4h] [ebp-4h] BYREF
 
-  this->ParticleSystemTypeClass_field_0x0 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644966*/
-  this->ParticleSystemTypeClass_field_0x4 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x64496c*/
-  this->ParticleSystemTypeClass_field_0x8 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644973*/
-  this->SpawnCount = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x64497a*/
+  this->ParticleSystemTypeClass_field_0x0 = (int)((void*)&ParticleSystemTypeClass_vftable);
+  this->ParticleSystemTypeClass_field_0x4 = (unsigned int)((void*)&ParticleSystemTypeClass_vftable);
+  this->ParticleSystemTypeClass_field_0x8 = (unsigned int)((void*)&ParticleSystemTypeClass_vftable);
+  this->SpawnCount = (void*)&ParticleSystemTypeClass_vftable; /*0x64497a*/
   AbstractClass::AnnounceExpiredPointer(&this->ParticleSystemTypeClass_field_0x0, 1); /*0x644981*/
   v5 = this; /*0x644996*/
-  v3 = (*(int (__thiscall **)(char *, ParticleSystemTypeClass **))(*(_DWORD *)&stru_A83D50.__pad_14[4] + 16))( /*0x64499a*/
+  v3 = (*(int (__thiscall **)(char *, ParticleSystemTypeClass **))(*(unsigned int *)&stru_A83D50.__pad_14[4] + 16))( /*0x64499a*/
          &stru_A83D50.__pad_14[4],
          &v5);
   if ( v3 != -1 && v3 < (int)stru_A83D50.SuperClass_field_0x28 ) /*0x6449aa*/
@@ -268,7 +269,7 @@ ParticleSystemTypeClass * ParticleSystemTypeClass::ddtor(char a2)
     --stru_A83D50.SuperClass_field_0x28; /*0x6449af*/
     for ( ; /*0x6449b5*/
           v3 < (int)stru_A83D50.SuperClass_field_0x28;
-          *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_14[8] + 4 * v3 - 4) = *(_DWORD *)(*(_DWORD *)&stru_A83D50.__pad_14[8]
+          *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8] + 4 * v3 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A83D50.__pad_14[8]
                                                                                     + 4 * v3) )
     {
       ++v3; /*0x6449bd*/
@@ -340,10 +341,10 @@ int ParticleSystemTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
   if ( ObjectTypeClass::LoadCleanup((ObjectTypeClass *)aP0, aP1) >= 0 && aP0 ) /*0x6447f6*/
   {
     ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6447ff*/
-    aP0->ParticleSystemTypeClass_field_0x0 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644804*/
-    aP0->ParticleSystemTypeClass_field_0x4 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x64480a*/
-    aP0->ParticleSystemTypeClass_field_0x8 = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644811*/
-    aP0->SpawnCount = &(void*)(void*)&ParticleSystemTypeClass_vftable; /*0x644818*/
+    aP0->ParticleSystemTypeClass_field_0x0 = (void*)&ParticleSystemTypeClass_vftable; /*0x644804*/
+    aP0->ParticleSystemTypeClass_field_0x4 = (void*)&ParticleSystemTypeClass_vftable; /*0x64480a*/
+    aP0->ParticleSystemTypeClass_field_0x8 = (void*)&ParticleSystemTypeClass_vftable; /*0x644811*/
+    aP0->SpawnCount = (void*)&ParticleSystemTypeClass_vftable; /*0x644818*/
   }
   return 0; /*0x644821*/
 }

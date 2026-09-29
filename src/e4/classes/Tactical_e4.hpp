@@ -7,13 +7,13 @@ namespace gamemd {
 struct Tactical {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
-    void* vtable2;  // 0x4
+    unsigned int ;  // 0x4
     void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
-    unsigned int u32_10;  // 0x10
+    unsigned int ;  // 0xC
+    void* ;  // 0x10
     unsigned int q011;  // 0x11
     bool IsAllocated;  // 0x13
-    unsigned int u32_14;  // 0x14
+    void* ;  // 0x14
     unsigned int nextArrayIndex;  // 0x18
     unsigned int q01A;  // 0x1A
     int referenceCount;  // 0x1C
@@ -47,8 +47,8 @@ struct Tactical {
     unsigned char q05C;  // 0x5C
     unsigned int q060;  // 0x60
     unsigned char q064;  // 0x64
-    unsigned int q068;  // 0x68
-    ObjectClass* q06C;  // 0x6C
+    void* ;  // 0x68
+    unsigned int ;  // 0x6C
     unsigned char q070;  // 0x70
     unsigned int u16_72;  // 0x72
     bool q074;  // 0x74
@@ -584,6 +584,16 @@ struct Tactical {
     unsigned char qDA8;  // 0xDA8
     void* qDB0;  // 0xDB0
     ObjectClass* qDB4;  // 0xDB4
+    unsigned int Tactical_field_0x11B;
+    unsigned int __pad_10;
+    unsigned int __pad_34;
+    unsigned int u32_146;
+    unsigned int q068;
+    unsigned int q06C;
+    unsigned int u32_10;
+    unsigned int u32_14;
+    unsigned int vtable2;
+    unsigned int vtable4;
 // --- flat members (END) ---
     char * ConstructTacticalSurface();  // 0x42A6D0
     int * CreateTacticalLightSurface(int * a2,  int * a1,  IUnknown * aP2,  int * a3,  int * a4,  IUnknown * aP5);    // 0x484050

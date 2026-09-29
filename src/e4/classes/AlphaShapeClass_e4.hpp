@@ -21,6 +21,15 @@ struct AlphaShapeClass {
     bool q01D;  // 0x1D
     unsigned char q020;  // 0x20
     unsigned char q024;  // 0x24
+    unsigned int AlphaShapeClass_field_0x04;
+    unsigned int AlphaShapeClass_field_0x08;
+    unsigned int AlphaShapeClass_field_0x0C;
+    unsigned int AlphaShapeClass_field_0x24;
+    unsigned int __pad_0;
+    unsigned int u32_28;
+    unsigned int u32_2C;
+    unsigned int u32_34;
+    unsigned int u32_3C;
 // --- flat members (END) ---
     AlphaShapeClass * SDDTOR(char a2);
     int SD_vt05(AbstractClass * aP0, int aP1);

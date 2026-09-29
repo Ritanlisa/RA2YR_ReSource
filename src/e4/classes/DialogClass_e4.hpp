@@ -23,9 +23,6 @@ struct DialogClass {
     unsigned int q208;  // 0x208
     void* q304;  // 0x304
     unsigned int q520;  // 0x520
-    void* q153094;  // 0x153094
-    unsigned int q628354;  // 0x628354
-    void* q22571209318;  // 0x22571209318
 // --- flat members (END) ---
     ATOM RegisterWinClasses();
     int GetFlag();

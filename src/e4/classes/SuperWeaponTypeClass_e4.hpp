@@ -23,9 +23,9 @@ struct SuperWeaponTypeClass {
     bool q01D;  // 0x1D
     SHPStruct* NeedsSaveOrLink;  // 0x20
     char ActionValue[4];  // 0x24
-    char SpecialSound[4];  // 0x28
+    unsigned int SpecialSound;  // 0x28
     bool q02B;  // 0x2B
-    char StartSound[4];  // 0x2C
+    unsigned int StartSound;  // 0x2C
     BuildingTypeClass* AuxBuilding;  // 0x30
     unsigned char q031;  // 0x31
     SHPStruct* SidebarImage;  // 0x32
@@ -41,7 +41,7 @@ struct SuperWeaponTypeClass {
     bool AIDefendAgainst;  // 0x40
     bool PreClick;  // 0x41
     bool PostClick;  // 0x42
-    char PreDependent[4];  // 0x44
+    unsigned int PreDependent;  // 0x44
     bool ShowTimer;  // 0x48
     bool ManualControl;  // 0x49
     bool q04A;  // 0x4A
@@ -68,7 +68,7 @@ struct SuperWeaponTypeClass {
     unsigned int u32_90;  // 0x90
     unsigned int q094;  // 0x94
     unsigned int tail_95;  // 0x95
-    char ArrayIndex[4];  // 0x98
+    unsigned int ArrayIndex;  // 0x98
     WeaponTypeClass* WeaponType;  // 0x9C
     char RechargeVoice[4];  // 0xA0
     char q0A4[4];  // 0xA4
@@ -82,7 +82,7 @@ struct SuperWeaponTypeClass {
     SHPStruct* q0B8;  // 0xB8
     unsigned char q0B9;  // 0xB9
     char q0BC[4];  // 0xBC
-    char q0C0[4];  // 0xC0
+    unsigned int q0C0;  // 0xC0
     unsigned int q0C3;  // 0xC3
     char q0C4[4];  // 0xC4
     BuildingTypeClass* q0C8;  // 0xC8
@@ -96,7 +96,7 @@ struct SuperWeaponTypeClass {
     bool q0E5;  // 0xE5
     bool q0E6;  // 0xE6
     bool q0E7;  // 0xE7
-    char FlashSidebarTabFrames[4];  // 0xE8
+    unsigned int FlashSidebarTabFrames;  // 0xE8
     bool q0EC;  // 0xEC
     bool q0ED;  // 0xED
     bool q0EE;  // 0xEE
@@ -110,6 +110,42 @@ struct SuperWeaponTypeClass {
     unsigned int q0F9;  // 0xF9
     unsigned char q0FB;  // 0xFB
     char q0FC[4];  // 0xFC
+    unsigned int AbstractTypeClass;
+    unsigned int buildtimeUnitsMult0;
+    unsigned int currentSpeed_units_mult2;
+    unsigned int q100;
+    unsigned int q104;
+    unsigned int q108;
+    unsigned int q10C;
+    unsigned int q110;
+    unsigned int q114;
+    unsigned int q118;
+    unsigned int q11C;
+    unsigned int q120;
+    unsigned int q124;
+    unsigned int q128;
+    unsigned int q12C;
+    unsigned int q130;
+    unsigned int q134;
+    unsigned int q138;
+    unsigned int q13C;
+    unsigned int q140;
+    unsigned int q144;
+    unsigned int q148;
+    unsigned int q14C;
+    unsigned int q15C;
+    unsigned int q160;
+    unsigned int q168;
+    unsigned int q184;
+    unsigned int q194;
+    unsigned int q198;
+    unsigned int q1A0;
+    unsigned int q1A4;
+    unsigned int q1A8;
+    unsigned int u32_158;
+    unsigned int u32_178;
+    unsigned int u32_17C;
+    unsigned int vtable46;
 // --- flat members (END) ---
     AbstractClass * * IsAvailable();
     SuperWeaponTypeClass * SDDTOR(char a2);

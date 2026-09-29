@@ -11,8 +11,6 @@ struct E4Recv_5F1F20 {
     unsigned int q134;  // 0x134
     unsigned int q308;  // 0x308
     unsigned int q1910;  // 0x1910
-    unsigned int q1388834;  // 0x1388834
-    unsigned int q20482100;  // 0x20482100
 // --- flat members (END) ---
     int sub_5F1F20();  // 0x5F1F20
 };

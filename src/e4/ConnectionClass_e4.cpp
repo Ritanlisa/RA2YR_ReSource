@@ -22,20 +22,20 @@ int ConnectionClass::allocPacketSlot(const void * a2, signed int a3, const void 
   int v6; // edx
   signed int v8; // ebx
   int v9; // eax
-  _BYTE *v10; // ecx
+  unsigned char *v10; // ecx
   int v12; // ebx
   int v13; // esi
   int v14; // eax
   signed int v15; // [esp+14h] [ebp+8h]
 
-  v6 = *(_DWORD *)this->Active; /*0x48b755*/
+  v6 = *(unsigned int *)this->Active; /*0x48b755*/
   if ( this->PhoneNumber[8] == v6 || a3 > this->LastPacketTime ) /*0x48b768*/
     return 0; /*0x48b768*/
   v8 = 0; /*0x48b76a*/
   if ( v6 <= 0 ) /*0x48b772*/
     goto LABEL_9; /*0x48b772*/
   v9 = this->PhoneNumber[7]; /*0x48b774*/
-  v10 = (_BYTE *)v9; /*0x48b777*/
+  v10 = (unsigned char *)v9; /*0x48b777*/
   while ( (*v10 & 1) != 0 ) /*0x48b77c*/
   {
     ++v8; /*0x48b77e*/
@@ -51,25 +51,25 @@ int ConnectionClass::allocPacketSlot(const void * a2, signed int a3, const void 
     return 0; /*0x48b7a7*/
   }
   v12 = 24 * v8; /*0x48b7ae*/
-  *(_DWORD *)(v9 + v12) |= 1u; /*0x48b7b7*/
-  *(_DWORD *)(v12 + this->PhoneNumber[7]) &= ~2u; /*0x48b7c4*/
-  *(_DWORD *)(this->PhoneNumber[7] + v12) &= ~4u; /*0x48b7d2*/
+  *(unsigned int *)(v9 + v12) |= 1u; /*0x48b7b7*/
+  *(unsigned int *)(v12 + this->PhoneNumber[7]) &= ~2u; /*0x48b7c4*/
+  *(unsigned int *)(this->PhoneNumber[7] + v12) &= ~4u; /*0x48b7d2*/
   v13 = dword_887340; /*0x48b7d9*/
   if ( dword_887338 != -1 ) /*0x48b7e2*/
     v13 += Timer::GetTicks() - dword_887338; /*0x48b7f4*/
-  *(_DWORD *)(this->PhoneNumber[7] + v12 + 4) = v13; /*0x48b7fb*/
-  *(_DWORD *)(this->PhoneNumber[7] + v12 + 8) = a3; /*0x48b806*/
+  *(unsigned int *)(this->PhoneNumber[7] + v12 + 4) = v13; /*0x48b7fb*/
+  *(unsigned int *)(this->PhoneNumber[7] + v12 + 8) = a3; /*0x48b806*/
   qmemcpy(*(void **)(this->PhoneNumber[7] + v12 + 12), a2, a3); /*0x48b816*/
   if ( a4 && a5 > 0 && a5 <= this->PacketsSent ) /*0x48b832*/
   {
     qmemcpy(*(void **)(this->PhoneNumber[7] + v12 + 20), a4, a5); /*0x48b842*/
-    *(_DWORD *)(this->PhoneNumber[7] + v12 + 16) = a5; /*0x48b84e*/
+    *(unsigned int *)(this->PhoneNumber[7] + v12 + 16) = a5; /*0x48b84e*/
   }
   else
   {
-    *(_DWORD *)(this->PhoneNumber[7] + v12 + 16) = 0; /*0x48b857*/
+    *(unsigned int *)(this->PhoneNumber[7] + v12 + 16) = 0; /*0x48b857*/
   }
-  *(_DWORD *)(this->PhoneNumber[10] + 4 * this->PhoneNumber[8]) = v15; /*0x48b86a*/
+  *(unsigned int *)(this->PhoneNumber[10] + 4 * this->PhoneNumber[8]) = v15; /*0x48b86a*/
   v14 = this->PhoneNumber[9] + 1; /*0x48b874*/
   ++this->PhoneNumber[8]; /*0x48b875*/
   this->PhoneNumber[9] = v14; /*0x48b878*/
@@ -92,7 +92,7 @@ unsigned int ConnectionClass::initQueue(unsigned int a2)
   {
     v3 = a2 - this->u32_1C + this->PacketsReceived; /*0x48ba2c*/
     this->PacketsReceived = v3; /*0x48ba2e*/
-    v4 = ((unsigned __int8)v3 > 0x7Fu) + (v3 >> 8); /*0x48ba46*/
+    v4 = ((uint8_t)v3 > 0x7Fu) + (v3 >> 8); /*0x48ba46*/
   }
   else
   {
@@ -114,12 +114,12 @@ namespace gamemd {
 void ConnectionClass::dtor()
 {
   void *v2; // eax
-  void (__thiscall ***PlayerIndex)(_DWORD, int); // ecx
+  void (__thiscall ***PlayerIndex)(unsigned int, int); // ecx
 
-  v2 = (void *)this->Active; /*0x48bee3*/
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&ConnectionClass_vftable; /*0x48bee6*/
+  v2 = (void *)((unsigned int)((void *)this->Active));
+  *(unsigned int *)this->__pad_0 = (void*)&ConnectionClass_vftable; /*0x48bee6*/
   RA2_OPDEL(v2); /*0x48beed*/
-  PlayerIndex = (void (__thiscall ***)(_DWORD, int))this->PlayerIndex; /*0x48bef2*/
+  PlayerIndex = (void (__thiscall ***)(unsigned int, int))this->PlayerIndex; /*0x48bef2*/
   if ( PlayerIndex ) /*0x48befb*/
     (**PlayerIndex)(PlayerIndex, 1); /*0x48bf01*/
 }
@@ -128,20 +128,20 @@ void ConnectionClass::dtor()
 namespace gamemd {
 AbstractClass * * ConnectionClass::sendAck(AnimClass * aP1, AnimClass * aP2, AnimClass * aP3, AnimClass * aP4)
 {
-  **(_WORD **)(&this->LastPacketTime2) = this->__pad_009; /*0x48bf4b*/
+  **(unsigned short **)(&this->LastPacketTime2) = this->__pad_009; /*0x48bf4b*/
   if ( aP3 ) /*0x48bf54*/
   {
-    *(_BYTE *)(this->Active + 2) = 0; /*0x48bf59*/
-    *(_DWORD *)(this->Active + 4) = this->PacketsSent; /*0x48bf63*/
+    *(unsigned char *)(this->Active + 2) = 0; /*0x48bf59*/
+    *(unsigned int *)(this->Active + 4) = this->PacketsSent; /*0x48bf63*/
     Debug::Log(); /*0x48bf6f*/
   }
   else
   {
-    *(_BYTE *)(this->Active + 2) = 1; /*0x48bf7c*/
-    *(_DWORD *)(this->Active + 4) = this->u32_3C; /*0x48bf86*/
+    *(unsigned char *)(this->Active + 2) = 1; /*0x48bf7c*/
+    *(unsigned int *)(this->Active + 4) = this->u32_3C; /*0x48bf86*/
   }
   if ( dword_A8B238[0] == 4 && byte_A8DBA0 ) /*0x48bf99*/
-    *(_BYTE *)(this->Active + 3) = aP4; /*0x48bfa2*/
+    *(unsigned char *)(this->Active + 3) = aP4; /*0x48bfa2*/
   if ( this->u32_1C < aP2 ) /*0x48bfae*/
   {
     Debug::Log(); /*0x48bfb6*/
@@ -349,11 +349,11 @@ int ConnectionClass::processTileUpdate(void * a2, signed int * a3)
   while ( 1 ) /*0x48c333*/
   {
     TileType = Terrain::GetTileType(PlayerIndex, v4); /*0x48c333*/
-    if ( !TileType || (*(_BYTE *)TileType & 2) != 0 ) /*0x48c33f*/
+    if ( !TileType || (*(unsigned char *)TileType & 2) != 0 ) /*0x48c33f*/
       goto LABEL_7; /*0x48c33f*/
-    v7 = *(_DWORD *)(TileType + 12); /*0x48c341*/
-    v8 = *(_BYTE *)(v7 + 2); /*0x48c344*/
-    if ( !v8 && *(_DWORD *)(v7 + 4) == this->PhoneNumber[12] + 1 ) /*0x48c354*/
+    v7 = *(unsigned int *)(TileType + 12); /*0x48c341*/
+    v8 = *(unsigned char *)(v7 + 2); /*0x48c344*/
+    if ( !v8 && *(unsigned int *)(v7 + 4) == this->PhoneNumber[12] + 1 ) /*0x48c354*/
       break; /*0x48c354*/
     if ( v8 == 1 ) /*0x48c359*/
       goto LABEL_10; /*0x48c359*/
@@ -362,13 +362,13 @@ int ConnectionClass::processTileUpdate(void * a2, signed int * a3)
     if ( ++v4 >= PlayerIndex->Terrain_field_0x38 ) /*0x48c362*/
       return 0; /*0x48c362*/
   }
-  this->PhoneNumber[12] = *(_DWORD *)(v7 + 4); /*0x48c370*/
+  this->PhoneNumber[12] = *(unsigned int *)(v7 + 4); /*0x48c370*/
   LABEL_10:
-  v10 = *(_DWORD *)(TileType + 8) - 14; /*0x48c373*/
-  v11 = *(_DWORD *)(TileType + 8) == 14; /*0x48c37e*/
-  *(_DWORD *)TileType |= 2u; /*0x48c380*/
+  v10 = *(unsigned int *)(TileType + 8) - 14; /*0x48c373*/
+  v11 = *(unsigned int *)(TileType + 8) == 14; /*0x48c37e*/
+  *(unsigned int *)TileType |= 2u; /*0x48c380*/
   if ( v10 >= 0 && !v11 ) /*0x48c382*/
-    qmemcpy(a2, (const void *)(*(_DWORD *)(TileType + 12) + 14), v10); /*0x48c395*/
+    qmemcpy(a2, (const void *)(*(unsigned int *)(TileType + 12) + 14), v10); /*0x48c395*/
   *a3 = v10; /*0x48c3a5*/
   return 1; /*0x48c364*/
 }
@@ -398,92 +398,92 @@ int ConnectionClass::serviceSendQueue()
   int v21; // [esp+18h] [ebp-8h]
   int v22; // [esp+1Ch] [ebp-4h]
 
-  v2 = 0; /*0x48c3e9*/
-  v21 = 0; /*0x48c3eb*/
-  PlayerIndex = this->PlayerIndex; /*0x48c3f3*/
+  v2 = (int)(0);
+  v21 = (int)(0);
+  PlayerIndex = (int)(this->PlayerIndex);
   if ( *(int *)(PlayerIndex + 40) > 0 ) /*0x48c3fb*/
   {
     do /*0x48c45f*/
     {
       TileIndex = Terrain::GetTileIndex((Terrain *)PlayerIndex, v2); /*0x48c3fe*/
       v5 = TileIndex; /*0x48c403*/
-      if ( (*(_BYTE *)TileIndex & 2) != 0 ) /*0x48c408*/
+      if ( (*(unsigned char *)TileIndex & 2) != 0 ) /*0x48c408*/
       {
-        if ( !*(_BYTE *)(*(_DWORD *)(TileIndex + 20) + 2) ) /*0x48c40d*/
+        if ( !*(unsigned char *)(*(unsigned int *)(TileIndex + 20) + 2) ) /*0x48c40d*/
         {
           v6 = dword_887340; /*0x48c419*/
           if ( dword_887338 != -1 ) /*0x48c422*/
             v6 += Timer::GetTicks() - dword_887338; /*0x48c434*/
-          ConnectionClass::initQueue((ConnectionClass *)this->PlayerIndex, v6 - *(_DWORD *)(v5 + 4)); /*0x48c43f*/
+          ConnectionClass::initQueue((ConnectionClass *)this->PlayerIndex, v6 - *(unsigned int *)(v5 + 4)); /*0x48c43f*/
         }
         PacketQueue::ExtractEntry((PacketQueue *)this->PlayerIndex, 0, 0, v2--, 0, 0, 0); /*0x48c452*/
       }
-      PlayerIndex = this->PlayerIndex; /*0x48c458*/
+      PlayerIndex = (int)(this->PlayerIndex);
       ++v2; /*0x48c45b*/
     }
-    while ( v2 < *(_DWORD *)(PlayerIndex + 40) ); /*0x48c45f*/
+    while ( v2 < *(unsigned int *)(PlayerIndex + 40) ); /*0x48c45f*/
   }
   v7 = 0; /*0x48c464*/
-  v22 = *(_DWORD *)(this->PlayerIndex + 40); /*0x48c46b*/
+  v22 = *(unsigned int *)(this->PlayerIndex + 40); /*0x48c46b*/
   if ( v22 <= 0 ) /*0x48c46f*/
     return 1; /*0x48c46f*/
   do /*0x48c552*/
   {
     v8 = Terrain::GetTileIndex((Terrain *)this->PlayerIndex, v7); /*0x48c47e*/
-    if ( (*(_BYTE *)v8 & 2) == 0 ) /*0x48c483*/
+    if ( (*(unsigned char *)v8 & 2) == 0 ) /*0x48c483*/
     {
       v9 = dword_887340; /*0x48c48e*/
       if ( dword_887338 != -1 ) /*0x48c497*/
         v9 += Timer::GetTicks() - dword_887338; /*0x48c4a9*/
-      v10 = *(_DWORD *)(v8 + 8); /*0x48c4ab*/
+      v10 = *(unsigned int *)(v8 + 8); /*0x48c4ab*/
       if ( (unsigned int)(v9 - v10) > this->PhoneNumber[4] ) /*0x48c4b7*/
       {
         v11 = dword_A8EA0C; /*0x48c4bd*/
-        IDA_LOWORD(v10) = *(_WORD *)(v8 + 32); /*0x48c4c3*/
+        IDA_LOWORD(v10) = *(unsigned short *)(v8 + 32); /*0x48c4c3*/
         IDA_LOBYTE(v11) = this == (ModemConnectionClass *)dword_A8EA0C; /*0x48c4cb*/
-        (*(void (__thiscall **)(ModemConnectionClass *, _DWORD, _DWORD, _DWORD, _DWORD, int, int))(*(_DWORD *)this->__pad_0 /*0x48c4e2*/
+        (*(void (__thiscall **)(ModemConnectionClass *, unsigned int, unsigned int, unsigned int, unsigned int, int, int))(*(unsigned int *)this->__pad_0 /*0x48c4e2*/
                                                                                                  + 36))(
           this,
-          *(_DWORD *)(v8 + 20),
-          *(_DWORD *)(v8 + 16),
-          *(_DWORD *)(v8 + 28),
-          *(_DWORD *)(v8 + 24),
+          *(unsigned int *)(v8 + 20),
+          *(unsigned int *)(v8 + 16),
+          *(unsigned int *)(v8 + 28),
+          *(unsigned int *)(v8 + 24),
           v11,
           v10);
-        v12 = *(_DWORD *)(v8 + 12); /*0x48c4e5*/
-        *(_DWORD *)(v8 + 8) = v9; /*0x48c4e8*/
+        v12 = *(unsigned int *)(v8 + 12); /*0x48c4e5*/
+        *(unsigned int *)(v8 + 8) = v9; /*0x48c4e8*/
         if ( v12 ) /*0x48c4ed*/
         {
-          ++*(_DWORD *)this->Active; /*0x48c503*/
+          ++*(unsigned int *)this->Active; /*0x48c503*/
         }
         else
         {
-          v13 = *(_DWORD *)(v8 + 20); /*0x48c4ef*/
-          *(_DWORD *)(v8 + 4) = v9; /*0x48c4f2*/
-          if ( *(_BYTE *)(v13 + 2) == 1 ) /*0x48c4f9*/
+          v13 = *(unsigned int *)(v8 + 20); /*0x48c4ef*/
+          *(unsigned int *)(v8 + 4) = v9; /*0x48c4f2*/
+          if ( *(unsigned char *)(v13 + 2) == 1 ) /*0x48c4f9*/
           {
-            v14 = *(_DWORD *)v8; /*0x48c4fb*/
-            IDA_LOBYTE(v14) = *(_DWORD *)v8 | 2; /*0x48c4fd*/
-            *(_DWORD *)v8 = v14; /*0x48c4ff*/
+            v14 = *(unsigned int *)v8; /*0x48c4fb*/
+            IDA_LOBYTE(v14) = *(unsigned int *)v8 | 2; /*0x48c4fd*/
+            *(unsigned int *)v8 = v14; /*0x48c4ff*/
           }
         }
-        v15 = *(_DWORD *)(v8 + 12) + 1; /*0x48c509*/
-        *(_DWORD *)(v8 + 12) = v15; /*0x48c50a*/
+        v15 = *(unsigned int *)(v8 + 12) + 1; /*0x48c509*/
+        *(unsigned int *)(v8 + 12) = v15; /*0x48c50a*/
         v16 = this->PhoneNumber[5]; /*0x48c50d*/
         if ( v16 != -1 && v15 > v16 ) /*0x48c519*/
         {
-          v17 = *(_DWORD *)v8; /*0x48c51b*/
+          v17 = *(unsigned int *)v8; /*0x48c51b*/
           v21 = 1; /*0x48c51d*/
-          IDA_LOBYTE(v17) = *(_DWORD *)v8 | 4; /*0x48c525*/
-          *(_DWORD *)v8 = v17; /*0x48c527*/
+          IDA_LOBYTE(v17) = *(unsigned int *)v8 | 4; /*0x48c525*/
+          *(unsigned int *)v8 = v17; /*0x48c527*/
         }
         v18 = this->PhoneNumber[6]; /*0x48c529*/
-        if ( v18 != -1 && *(_DWORD *)(v8 + 8) - *(_DWORD *)(v8 + 4) > v18 ) /*0x48c53b*/
+        if ( v18 != -1 && *(unsigned int *)(v8 + 8) - *(unsigned int *)(v8 + 4) > v18 ) /*0x48c53b*/
         {
-          v19 = *(_DWORD *)v8; /*0x48c53d*/
+          v19 = *(unsigned int *)v8; /*0x48c53d*/
           v21 = 1; /*0x48c53f*/
-          IDA_LOBYTE(v19) = *(_DWORD *)v8 | 4; /*0x48c547*/
-          *(_DWORD *)v8 = v19; /*0x48c549*/
+          IDA_LOBYTE(v19) = *(unsigned int *)v8 | 4; /*0x48c547*/
+          *(unsigned int *)v8 = v19; /*0x48c549*/
         }
       }
     }

@@ -19,6 +19,7 @@ struct Matrix3x4 {
     void* q024;  // 0x24
     void* q028;  // 0x28
     void* q02C;  // 0x2C
+    unsigned int u32_DE4;
 // --- flat members (END) ---
     int Identity();
     unsigned int * TransformCell(AbstractClass * aP1, AbstractClass * aP2);

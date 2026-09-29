@@ -13,6 +13,8 @@ struct ProgressTimer {
     unsigned char q00C;  // 0xC
     void* q010;  // 0x10
     void* q014;  // 0x14
+    unsigned int vt_slot_24;
+    unsigned int vt_slot_28;
 // --- flat members (END) ---
     unsigned int * GetValue(void* aP1);
 };

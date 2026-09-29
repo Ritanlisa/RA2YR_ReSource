@@ -10,7 +10,7 @@ struct FoggedObjectClass {
     void* vtable1;  // 0x0
     void* vtable2;  // 0x4
     void* vtable3;  // 0x8
-    void* vtable4;  // 0xC
+    unsigned int ;  // 0xC
     int Count;  // 0x10
     unsigned int q011;  // 0x11
     bool IsInitialized;  // 0x12
@@ -21,10 +21,31 @@ struct FoggedObjectClass {
     int referenceCount;  // 0x1C
     bool q01D;  // 0x1D
     void * NeedsSaveOrLink;  // 0x20
-    char LastSight[4];  // 0x24
-    HouseClass* House;  // 0x28
+    void* ;  // 0x24
+    unsigned int ;  // 0x28
     bool q02B;  // 0x2B
     char Cell[4];  // 0x2C
+    unsigned int LastSight2;
+    unsigned int q030;
+    unsigned int q034;
+    unsigned int q038;
+    unsigned int q040;
+    unsigned int q044;
+    unsigned int q048;
+    unsigned int q04C;
+    unsigned int q060;
+    unsigned int q064;
+    unsigned int u32_34;
+    unsigned int u32_38;
+    unsigned int u32_3C;
+    unsigned int u32_54;
+    unsigned int u32_58;
+    unsigned int u32_5C;
+    unsigned int u32_6C;
+    unsigned char u8_69;
+    unsigned int House;
+    unsigned int vtable4;
+    unsigned int LastSight;
 // --- flat members (END) ---
     AbstractClass * * InitDrawRecord(unsigned int * a2);
     AbstractClass * * InitTerrainFog(void* aP1, int a3, int a4);

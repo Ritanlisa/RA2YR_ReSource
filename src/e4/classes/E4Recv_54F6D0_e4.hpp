@@ -17,21 +17,6 @@ struct E4Recv_54F6D0 {
     unsigned int q1928;  // 0x1928
     unsigned int q1938;  // 0x1938
     unsigned int q6440;  // 0x6440
-    unsigned int q25664;  // 0x25664
-    unsigned int q153188;  // 0x153188
-    unsigned int q1389090;  // 0x1389090
-    unsigned int q20482358;  // 0x20482358
-    unsigned int q20484240;  // 0x20484240
-    unsigned int q541606464;  // 0x541606464
-    unsigned int q22571222354;  // 0x22571222354
-    unsigned int q2359835108180;  // 0x2359835108180
-    unsigned int q621877794996608;  // 0x621877794996608
-    unsigned int q621877867514214;  // 0x621877867514214
-    unsigned int q441783186122958344;  // 0x441783186122958344
-    unsigned int q441783189658223124;  // 0x441783189658223124
-    unsigned int q1256072821702542066500;  // 0x1256072821702542066500
-    unsigned int q1256072821931073745188;  // 0x1256072821931073745188
-    unsigned int q22166920289552765214282120;  // 0x22166920289552765214282120
 // --- flat members (END) ---
     bool sub_54F6D0();  // 0x54F6D0
 };

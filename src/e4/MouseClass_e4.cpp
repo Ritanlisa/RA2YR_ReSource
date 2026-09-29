@@ -18,6 +18,7 @@
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/NeuronClass_25_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
 
 // 0x6D1770
 namespace gamemd {
@@ -30,10 +31,10 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
 
   if ( a1 == 4551 ) /*0x6d1779*/
   {
-    v2 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d1780*/
+    v2 = (gamemd::ShapeButtonClass *)(g_ObjectTrackingPool[dword_B0CC1C]);
     if ( v2 <= 0x18 ) /*0x6d1789*/
     {
-      v3 = &stru_B0C1C0 + 8 * v2; /*0x6d1796*/
+      v3 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v2);
       if ( v3 ) /*0x6d179e*/
       {
         if ( !IDA_BYTE1(v3[3].ShapeButtonClass_field_0x08) ) /*0x6d17a0*/
@@ -44,10 +45,10 @@ char MouseClass::ToggleContextGadget(int a1, int a2)
   }
   else if ( a1 == 4552 ) /*0x6d17b6*/
   {
-    v5 = g_ObjectTrackingPool[dword_B0CC1C]; /*0x6d17be*/
+    v5 = (gamemd::ShapeButtonClass *)(g_ObjectTrackingPool[dword_B0CC1C]);
     if ( v5 <= 0x18 ) /*0x6d17c7*/
     {
-      v6 = &stru_B0C1C0 + 8 * v5; /*0x6d17d4*/
+      v6 = (gamemd::ShapeButtonClass *)(&stru_B0C1C0 + 8 * v5);
       if ( v6 ) /*0x6d17dc*/
       {
         if ( IDA_BYTE1(v6[3].ShapeButtonClass_field_0x08) ) /*0x6d17de*/

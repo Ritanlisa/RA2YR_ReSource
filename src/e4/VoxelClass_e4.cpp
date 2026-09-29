@@ -17,6 +17,7 @@
 #include "e4/classes/VoxelPaletteClass_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
 #include "e4/classes/VoxelAnim_e4.hpp"
+#include "e4/classes/TerrainTypeClass_e4.hpp"
 
 // 0x73C5F0
 namespace gamemd {

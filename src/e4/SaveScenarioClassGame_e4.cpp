@@ -11,6 +11,8 @@
 #include "e4/e4_protos.h"
 #include "e4/classes/Timer_e4.hpp"
 #include "e4/classes/ScenarioClass_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
+#include "e4/classes/String_e4.hpp"
 
 // 0x67CEF0
 namespace gamemd {

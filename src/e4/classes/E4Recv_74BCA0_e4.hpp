@@ -29,13 +29,6 @@ struct E4Recv_74BCA0 {
     unsigned int q1908;  // 0x1908
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int q22148;  // 0x22148
-    unsigned int q25608;  // 0x25608
-    unsigned int q153094;  // 0x153094
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q423698564;  // 0x423698564
 // --- flat members (END) ---
     unsigned int * sub_74BCA0(int a2);  // 0x74BCA0
 };

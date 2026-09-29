@@ -67,66 +67,6 @@ struct E4Recv_49D680 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int q16914;  // 0x16914
-    unsigned int q20848;  // 0x20848
-    unsigned int q21600;  // 0x21600
-    unsigned int q21768;  // 0x21768
-    unsigned int q22148;  // 0x22148
-    unsigned int q25608;  // 0x25608
-    unsigned int q25654;  // 0x25654
-    unsigned int q33398;  // 0x33398
-    unsigned int q33570;  // 0x33570
-    unsigned int q136704;  // 0x136704
-    unsigned int q137064;  // 0x137064
-    unsigned int q210288;  // 0x210288
-    unsigned int q599094;  // 0x599094
-    unsigned int q1257874;  // 0x1257874
-    unsigned int q1271138;  // 0x1271138
-    unsigned int q1282918;  // 0x1282918
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q1388834;  // 0x1388834
-    unsigned int q1388914;  // 0x1388914
-    unsigned int q19232884;  // 0x19232884
-    unsigned int q19337528;  // 0x19337528
-    unsigned int q19347798;  // 0x19347798
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q20481684;  // 0x20481684
-    unsigned int q20482100;  // 0x20482100
-    unsigned int q20482324;  // 0x20482324
-    unsigned int q35009334;  // 0x35009334
-    unsigned int q422802728;  // 0x422802728
-    unsigned int q422806914;  // 0x422806914
-    unsigned int q422868888;  // 0x422868888
-    unsigned int q423698564;  // 0x423698564
-    unsigned int q541595268;  // 0x541595268
-    unsigned int q541598500;  // 0x541598500
-    unsigned int q2456839554;  // 0x2456839554
-    unsigned int q17758693160;  // 0x17758693160
-    unsigned int q17758713478;  // 0x17758713478
-    unsigned int q17759111304;  // 0x17759111304
-    unsigned int q22571209320;  // 0x22571209320
-    unsigned int q36516995330;  // 0x36516995330
-    unsigned int q1612096024928;  // 0x1612096024928
-    unsigned int q1612096536630;  // 0x1612096536630
-    unsigned int q1612096550008;  // 0x1612096550008
-    unsigned int q1612107027204;  // 0x1612107027204
-    unsigned int q1612549859458;  // 0x1612549859458
-    unsigned int q1612552106354;  // 0x1612552106354
-    unsigned int q2359835005728;  // 0x2359835005728
-    unsigned int q2359835107954;  // 0x2359835107954
-    unsigned int q3732705727280;  // 0x3732705727280
-    unsigned int q23503942739574;  // 0x23503942739574
-    unsigned int q388226446628134;  // 0x388226446628134
-    unsigned int q388267560290600;  // 0x388267560290600
-    unsigned int q388267565606448;  // 0x388267565606448
-    unsigned int q388267565711368;  // 0x388267565711368
-    unsigned int q388269456126468;  // 0x388269456126468
-    unsigned int q971036362437248;  // 0x971036362437248
-    unsigned int q971428040484870;  // 0x971428040484870
-    unsigned int q9939831043102068;  // 0x9939831043102068
-    unsigned int q254495664600278088;  // 0x254495664600278088
-    unsigned int q80355170113675532071734;  // 0x80355170113675532071734
 // --- flat members (END) ---
     char SerializeCampaignOptions();  // 0x49D680
 };

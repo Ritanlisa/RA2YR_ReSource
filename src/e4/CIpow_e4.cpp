@@ -37,8 +37,8 @@ void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * 
   int v13; // ecx
   int v14; // ecx
   int v15; // eax
-  unsigned __int8 v17; // cl
-  unsigned __int8 v18; // ch
+  uint8_t v17; // cl
+  uint8_t v18; // ch
   char v19; // cl
   double *v20; // [esp+10h] [ebp-7Ch]
   double *v21; // [esp+10h] [ebp-7Ch]
@@ -47,7 +47,7 @@ void CIpow_Helper(void * a1, void * a2, void * a3, void * a4, void * a5, void * 
 
   v6 = v4; /*0x7c8fd2*/
   v23 = v4; /*0x7c8fd4*/
-  if ( (_WORD)v4 != 639 ) /*0x7c8fdf*/
+  if ( (unsigned short)v4 != 639 ) /*0x7c8fdf*/
     _load_CW(); /*0x7c8fe1*/
   v7 = v6 & 0x7FF00000; /*0x7c8fe6*/
   if ( v7 == 2146435072 ) /*0x7c8ff6*/

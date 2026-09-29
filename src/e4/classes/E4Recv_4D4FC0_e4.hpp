@@ -21,11 +21,7 @@ struct E4Recv_4D4FC0 {
     unsigned int q1088;  // 0x1088
     unsigned int q1908;  // 0x1908
     unsigned int q2180;  // 0x2180
-    unsigned int q33570;  // 0x33570
-    unsigned int q213350;  // 0x213350
-    unsigned int q599174;  // 0x599174
-    unsigned int q2175824;  // 0x2175824
-    unsigned int q5869940;  // 0x5869940
+    unsigned int AbstractClass;
 // --- flat members (END) ---
     int Vf440(int,  ...);    // G6 vtable slot dispatch
     int Vf60(int,  ...);    // G6 vtable slot dispatch

@@ -44,27 +44,6 @@ struct E4Recv_632D60 {
     unsigned int q5508;  // 0x5508
     unsigned int q6408;  // 0x6408
     unsigned int q6454;  // 0x6454
-    unsigned int q8264;  // 0x8264
-    unsigned int q25608;  // 0x25608
-    unsigned int q25684;  // 0x25684
-    unsigned int q33380;  // 0x33380
-    unsigned int q153094;  // 0x153094
-    unsigned int q153220;  // 0x153220
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q1388834;  // 0x1388834
-    unsigned int q1389088;  // 0x1389088
-    unsigned int q2135954;  // 0x2135954
-    unsigned int q20482100;  // 0x20482100
-    unsigned int q34822484;  // 0x34822484
-    unsigned int q541606450;  // 0x541606450
-    unsigned int q880944260;  // 0x880944260
-    unsigned int q22571209318;  // 0x22571209318
-    unsigned int q2359835005720;  // 0x2359835005720
-    unsigned int q2359839630934;  // 0x2359839630934
-    unsigned int q3732705346358;  // 0x3732705346358
-    unsigned int q621877867514164;  // 0x621877867514164
-    unsigned int q441783189658222948;  // 0x441783189658222948
-    unsigned int q1918688943235778218370;  // 0x1918688943235778218370
 // --- flat members (END) ---
     int Vf4(int,  ...);    // G6 vtable slot dispatch
     int sub_632D60(int a2);  // 0x632D60

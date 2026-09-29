@@ -19,7 +19,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
   int v5; // eax
   LRESULT (__stdcall **v6)(HWND, UINT, WPARAM, LPARAM); // eax
   HWND *v7; // eax
-  _DWORD *v8; // edi
+  unsigned int *v8; // edi
   LONG WindowLongA; // eax
   LONG v11; // ebx
   UINT v12; // ebp
@@ -28,7 +28,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
   LONG v15; // ebx
   size_t v16; // esi
   char *v17; // ebp
-  unsigned __int16 v18; // ax
+  uint16_t v18; // ax
   HWND v19; // eax
   HWND v20; // esi
   HWND v21; // eax
@@ -63,12 +63,12 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
   lpPrevWndFunc = 0; /*0x6141a7*/
   if ( dword_AC1B4C ) /*0x6141ab*/
   {
-    v5 = *((_DWORD *)dword_AC1B48 + (dword_AC1B60(&hWnd) & ((1 << dword_AC1B54) - 1))); /*0x6141cf*/
+    v5 = *((unsigned int *)dword_AC1B48 + (dword_AC1B60(&hWnd) & ((1 << dword_AC1B54) - 1))); /*0x6141cf*/
     if ( v5 ) /*0x6141d4*/
     {
       while ( *(HWND *)v5 != hWnd ) /*0x6141df*/
       {
-        v5 = *(_DWORD *)(v5 + 8); /*0x6141e1*/
+        v5 = *(unsigned int *)(v5 + 8); /*0x6141e1*/
         if ( !v5 ) /*0x6141e6*/
           goto LABEL_8; /*0x6141e6*/
       }
@@ -84,7 +84,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
   v40 = hWnd; /*0x6141fb*/
   if ( !dword_AC1B04 ) /*0x61420d*/
     return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x61420d*/
-  v7 = (HWND *)*((_DWORD *)dword_AC1B00 + (dword_AC1B18(&v40) & ((1 << dword_AC1B0C) - 1))); /*0x61422e*/
+  v7 = (HWND *)*((unsigned int *)dword_AC1B00 + (dword_AC1B18(&v40) & ((1 << dword_AC1B0C) - 1))); /*0x61422e*/
   if ( !v7 ) /*0x614233*/
     return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614233*/
   while ( *v7 != v40 ) /*0x61423b*/
@@ -93,7 +93,7 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
     if ( !v7 ) /*0x614245*/
       return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614245*/
   }
-  v8 = v7 + 1; /*0x61424d*/
+  v8 = (unsigned int *)(v7 + 1);
   if ( v7 == (HWND *)-4 ) /*0x614252*/
     return CallWindowProcA(v4, hWnd, Msg, wParam, (LPARAM)lParam); /*0x614285*/
   if ( GetFocus() == hWnd && !v8[61] ) /*0x614297*/
@@ -230,11 +230,11 @@ unsigned int ListBox::EditSubclassProc(HWND hWnd, UINT Msg, WPARAM wParam, wchar
         v44.bottom = v42.bottom - v42.top + 1; /*0x614724*/
         v28 = GetWindowLongA(hWnd, -16); /*0x614728*/
         DrawTextRendererMultiline( /*0x614760*/
-          (_DWORD *)DSurface_Alternate,
+          (unsigned int *)DSurface_Alternate,
           &v44.left,
           &unk_AC1E04,
           v41,
-          (_DWORD *)v8[25],
+          (unsigned int *)v8[25],
           dword_AC18A4,
           v8 + 17,
           v8[14],

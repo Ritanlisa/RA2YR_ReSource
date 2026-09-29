@@ -9,6 +9,6 @@
 namespace gamemd {
 int GetCurrentProcessId_0()
 {
-  return GetCurrentProcessId();
+  return (int)(GetCurrentProcessId());
 }
 }

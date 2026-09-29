@@ -12,6 +12,8 @@ struct ScrollClass {
     char m_MaxX[4];  // 0x8
     char m_MaxY[4];  // 0xC
     bool IsAllocated;  // 0xD
+    unsigned int m_ScrollX;
+    unsigned int u32_14FB0;
 // --- flat members (END) ---
     ScrollClass * Read(char a2);
     int Scroll(int * a1, MouseClass * aP2);

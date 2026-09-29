@@ -16,6 +16,8 @@ struct NetworkGameSetup {
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
+    unsigned int NetworkGameSetup_field_0x08;
+    unsigned int __pad_0;
 // --- flat members (END) ---
     int ReadRulesUnknown();
     unsigned int * DeleteComPtr(char a2);

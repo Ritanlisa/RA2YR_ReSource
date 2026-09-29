@@ -9,6 +9,7 @@
 #include "e4/classes/_tree_alias_e4.hpp"
 #include "e4/e4_protos.h"
 #include "e4/classes/AudioController_e4.hpp"
+#include "e4/classes/BuildingClass_e4.hpp"
 
 // 0x4325C0
 namespace gamemd {
@@ -25,9 +26,9 @@ AudioController * * CCFileClass::Close()
   {
     if ( this->MixFileIndex ) /*0x4325d6*/
     {
-      v3 = this->FileClass; /*0x4325dd*/
+      v3 = (gamemd::AudioController **)(this->FileClass);
       IDA_BYTE1(this->BufferSize) = 0; /*0x4325e1*/
-      result = (*(int (__thiscall **)(CCFileClass *))(*(_DWORD *)&v3 + 52))(this); /*0x4325e5*/
+      result = (*(int (__thiscall **)(CCFileClass *))(*(unsigned int *)&v3 + 52))(this); /*0x4325e5*/
       IDA_BYTE1(this->BufferSize) = 1; /*0x4325e8*/
       IDA_BYTE2(this->BufferOffset) = 0; /*0x4325ec*/
       IDA_BYTE1(this->BufferOffset) = 0; /*0x4325f0*/
@@ -44,10 +45,10 @@ AudioController * * CCFileClass::Close()
 namespace gamemd {
 int CCFileClass::Destruct()
 {
-  *(_DWORD *)this->CDFileClass = &(void*)(void*)&CCFileClass_vftable; /*0x535a76*/
+  *(unsigned int *)this->CDFileClass = (void*)&CCFileClass_vftable; /*0x535a76*/
   this->tail_19 = 0; /*0x535a7c*/
   Vector::Clear((int)&this->CacheReadAhead8); /*0x535a83*/
-  *(_DWORD *)this->CDFileClass = &off_7E1668; /*0x535a8a*/
+  *(unsigned int *)this->CDFileClass = &off_7E1668; /*0x535a8a*/
   return BufferIOFileClass::Dtor(); /*0x535a95*/
 }
 } // namespace gamemd
@@ -65,24 +66,24 @@ int CCFileClass::GetFileSize()
   result = (int)this->FileName; /*0x65d0d6*/
   if ( result == -1 ) /*0x65d0dc*/
   {
-    if ( (*(unsigned __int8 (__thiscall **)(RawFileClass *))(*(_DWORD *)this->FileClass + 24))(this) ) /*0x65d0e0*/
+    if ( (*(uint8_t (__thiscall **)(RawFileClass *))(*(unsigned int *)this->FileClass + 24))(this) ) /*0x65d0e0*/
     {
       FileSize = GetFileSize(*(HANDLE *)this->FileTimeDateLo, 0); /*0x65d0f2*/
       if ( FileSize == -1 ) /*0x65d0f7*/
       {
-        v4 = *(_DWORD *)this->FileClass; /*0x65d0fd*/
-        v6 = *(_DWORD *)&this->FileNameAllocated; /*0x65d0ff*/
+        v4 = *(unsigned int *)this->FileClass; /*0x65d0fd*/
+        v6 = *(unsigned int *)&this->FileNameAllocated; /*0x65d0ff*/
         LastError = GetLastError(); /*0x65d102*/
-        (*(void (__thiscall **)(RawFileClass *, DWORD, _DWORD, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
+        (*(void (__thiscall **)(RawFileClass *, DWORD, unsigned int, int))(v4 + 64))(this, LastError, 0, v6); /*0x65d10b*/
         result = -1 - (unsigned int)this->Handle; /*0x65d113*/
         this->FileName = (void *)result; /*0x65d116*/
         return result; /*0x65d11b*/
       }
     }
-    else if ( (*(int (__thiscall **)(RawFileClass *, int))(*(_DWORD *)this->FileClass + 28))(this, 1) ) /*0x65d122*/
+    else if ( (*(int (__thiscall **)(RawFileClass *, int))(*(unsigned int *)this->FileClass + 28))(this, 1) ) /*0x65d122*/
     {
-      FileSize = (*(int (__thiscall **)(RawFileClass *))(*(_DWORD *)this->FileClass + 44))(this); /*0x65d130*/
-      (*(void (__thiscall **)(RawFileClass *))(*(_DWORD *)this->FileClass + 52))(this); /*0x65d136*/
+      FileSize = (*(int (__thiscall **)(RawFileClass *))(*(unsigned int *)this->FileClass + 44))(this); /*0x65d130*/
+      (*(void (__thiscall **)(RawFileClass *))(*(unsigned int *)this->FileClass + 52))(this); /*0x65d136*/
     }
     result = FileSize - (unsigned int)this->Handle; /*0x65d13e*/
     this->FileName = (void *)result; /*0x65d140*/
@@ -94,80 +95,79 @@ int CCFileClass::GetFileSize()
 namespace gamemd {
 void CCFileClass::ProcessStream(unsigned int a1)
 {
-  _DWORD *v1; // edi
+  unsigned int *v1; // edi
   void *v3; // esi
   int v4; // eax
   int v5; // eax
-  void *v6; // esi
-  _BYTE *v7; // ebp
+  unsigned int v6;
+  unsigned char *v7; // ebp
   void *v8; // ecx
-  _DWORD *v9; // edi
+  unsigned int *v9; // edi
   int v10; // eax
   int v11; // eax
-
-  v1 = dword_B077B0; /*0x69e324*/
+v1 = (unsigned int *)(dword_B077B0);
   if ( dword_B077B0 ) /*0x69e330*/
   {
     do /*0x69e3a1*/
     {
-      if ( v1[8] <= a1 && *(_WORD *)v1 == 0xFFFF && *((_BYTE *)v1 + 16) ) /*0x69e33d*/
+      if ( v1[8] <= a1 && *(unsigned short *)v1 == 0xFFFF && *((unsigned char *)v1 + 16) ) /*0x69e33d*/
       {
         v3 = (void *)v1[3]; /*0x69e342*/
         if ( v3 ) /*0x69e347*/
         {
-          if ( *(_WORD *)v3 == 0xFFFF ) /*0x69e34d*/
+          if ( *(unsigned short *)v3 == 0xFFFF ) /*0x69e34d*/
           {
-            BTree::DeleteSubtree((_DWORD *)v1[3]); /*0x69e351*/
-            v4 = *((_DWORD *)v3 + 6); /*0x69e356*/
+            BTree::DeleteSubtree((unsigned int *)v1[3]); /*0x69e351*/
+            v4 = *((unsigned int *)v3 + 6); /*0x69e356*/
             if ( v4 ) /*0x69e35b*/
-              *(_DWORD *)(v4 + 28) = *((_DWORD *)v3 + 7); /*0x69e360*/
-            v5 = *((_DWORD *)v3 + 7); /*0x69e363*/
+              *(unsigned int *)(v4 + 28) = *((unsigned int *)v3 + 7); /*0x69e360*/
+            v5 = *((unsigned int *)v3 + 7); /*0x69e363*/
             if ( v5 ) /*0x69e368*/
-              *(_DWORD *)(v5 + 24) = *((_DWORD *)v3 + 6); /*0x69e36d*/
+              *(unsigned int *)(v5 + 24) = *((unsigned int *)v3 + 6); /*0x69e36d*/
             else
-              dword_B077B0 = (void *)*((_DWORD *)v3 + 6); /*0x69e375*/
-            if ( *((_DWORD *)v3 + 2) ) /*0x69e37a*/
+              dword_B077B0 = (void *)*((unsigned int *)v3 + 6); /*0x69e375*/
+            if ( *((unsigned int *)v3 + 2) ) /*0x69e37a*/
             {
               free(*((void **)v3 + 2)); /*0x69e382*/
-              *((_DWORD *)v3 + 2) = 0; /*0x69e38a*/
+              *((unsigned int *)v3 + 2) = 0; /*0x69e38a*/
             }
           }
           RA2_OPDEL(v3); /*0x69e38e*/
         }
         v1[3] = 0; /*0x69e396*/
-        *((_BYTE *)v1 + 16) = 0; /*0x69e399*/
+        *((unsigned char *)v1 + 16) = 0; /*0x69e399*/
       }
-      v1 = (_DWORD *)v1[6]; /*0x69e39c*/
+      v1 = (unsigned int *)v1[6]; /*0x69e39c*/
     }
     while ( v1 ); /*0x69e3a1*/
   }
   v6 = dword_B077B4; /*0x69e3a3*/
   if ( dword_B077B4 ) /*0x69e3ab*/
   {
-    if ( *(_WORD *)dword_B077B4 == 0xFFFF ) /*0x69e3b1*/
+    if ( *(unsigned short *)dword_B077B4 == 0xFFFF ) /*0x69e3b1*/
     {
-      v7 = (char *)dword_B077B4 + 16; /*0x69e3b6*/
-      if ( *((_BYTE *)dword_B077B4 + 16) ) /*0x69e3b3*/
+      v7 = (unsigned char *)((char *)dword_B077B4 + 16);
+      if ( *((unsigned char *)dword_B077B4 + 16) ) /*0x69e3b3*/
       {
-        v8 = (void *)*((_DWORD *)dword_B077B4 + 3); /*0x69e3bd*/
-        v9 = (char *)dword_B077B4 + 12; /*0x69e3c0*/
+        v8 = (unsigned int *)((void *)*((unsigned int *)dword_B077B4 + 3));
+        v9 = (unsigned int *)((char *)dword_B077B4 + 12);
         if ( v8 ) /*0x69e3c5*/
           MixFileClass::CacheNode_Dtor(v8, 1); /*0x69e3c9*/
         *v9 = 0; /*0x69e3ce*/
         *v7 = 0; /*0x69e3d0*/
       }
-      v10 = *((_DWORD *)v6 + 6); /*0x69e3d3*/
+      v10 = (unsigned int)(*((unsigned int *)v6 + 6));
       if ( v10 ) /*0x69e3d8*/
-        *(_DWORD *)(v10 + 28) = *((_DWORD *)v6 + 7); /*0x69e3dd*/
-      v11 = *((_DWORD *)v6 + 7); /*0x69e3e0*/
+        *(unsigned int *)(v10 + 28) = *((unsigned int *)v6 + 7); /*0x69e3dd*/
+      v11 = *((unsigned int *)v6 + 7); /*0x69e3e0*/
       if ( v11 ) /*0x69e3e5*/
-        *(_DWORD *)(v11 + 24) = *((_DWORD *)v6 + 6); /*0x69e3ea*/
+        *(unsigned int *)(v11 + 24) = *((unsigned int *)v6 + 6); /*0x69e3ea*/
       else
-        dword_B077B0 = (void *)*((_DWORD *)v6 + 6); /*0x69e3f2*/
-      if ( *((_DWORD *)v6 + 2) ) /*0x69e3f7*/
+        dword_B077B0 = (void *)*((unsigned int *)v6 + 6); /*0x69e3f2*/
+      if ( *((unsigned int *)v6 + 2) ) /*0x69e3f7*/
       {
         free(*((void **)v6 + 2)); /*0x69e3ff*/
-        *((_DWORD *)v6 + 2) = 0; /*0x69e407*/
+        *((unsigned int *)v6 + 2) = 0; /*0x69e407*/
       }
     }
     RA2_OPDEL(v6); /*0x69e40b*/

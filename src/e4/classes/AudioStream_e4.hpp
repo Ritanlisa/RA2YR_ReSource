@@ -91,6 +91,38 @@ struct AudioStream {
     unsigned char u8_1A4;  // 0x1A4
     unsigned int u32_1C0;  // 0x1C0
     void* q1E0;  // 0x1E0
+    unsigned int AudioStream_field_0x10;
+    unsigned int AudioStream_field_0x14;
+    unsigned int AudioStream_field_0x18;
+    unsigned int AudioStream_field_0x1C;
+    unsigned int AudioStream_field_0x1E0;
+    unsigned int AudioStream_field_0x20;
+    unsigned int AudioStream_field_0x24;
+    unsigned int AudioStream_field_0x28;
+    unsigned int AudioStream_field_0x2C;
+    unsigned int AudioStream_field_0x30;
+    unsigned int AudioStream_field_0x34;
+    unsigned int AudioStream_field_0x38;
+    unsigned int AudioStream_field_0x3C;
+    unsigned int AudioStream_field_0x4;
+    unsigned int AudioStream_field_0x40;
+    unsigned int AudioStream_field_0x44;
+    unsigned int AudioStream_field_0x48;
+    unsigned int AudioStream_field_0x4C;
+    unsigned int AudioStream_field_0x50;
+    unsigned int AudioStream_field_0x54;
+    unsigned int AudioStream_field_0x8;
+    unsigned int AudioStream_field_0xA8;
+    unsigned int AudioStream_field_0xAC;
+    unsigned int AudioStream_field_0xC;
+    unsigned int AudioStream_field_0xC0;
+    unsigned int AudioStream_field_0xD4;
+    unsigned int __pad_0;
+    unsigned int __pad_9C;
+    unsigned int __pad_D8;
+    unsigned int q00C6;
+    unsigned int u32_1E4;
+    unsigned int __pad_5C;
 // --- flat members (END) ---
     int ReleaseSubsystem();  // 0x401910
     int Stop();  // 0x4026B0

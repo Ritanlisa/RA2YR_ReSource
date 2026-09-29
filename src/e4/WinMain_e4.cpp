@@ -89,31 +89,32 @@
 #include "e4/classes/Dialog_e4.hpp"
 #include "e4/classes/WWMouseClass_e4.hpp"
 #include "e4/classes/ObjectTypeClass_e4.hpp"
+#include "e4/classes/Mouse_e4.hpp"
 
 // 0x5BC180
 namespace gamemd {
 void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
 {
-  int *v3; // edi
-  _DWORD *v4; // eax
-  _BYTE *v5; // esi
+  unsigned int v3;
+  unsigned int *v4; // eax
+  unsigned char *v5; // esi
   int v6; // edi
-  _DWORD *v7; // ebp
-  _BYTE *v8; // ecx
-  _DWORD *v9; // eax
+  unsigned int *v7; // ebp
+  unsigned char *v8; // ecx
+  unsigned int *v9; // eax
   int v10; // edx
-  int *v11; // ebx
-  _BYTE *v12; // ecx
+  unsigned int v11;
+  unsigned char *v12; // ecx
   int v13; // edi
   int v14; // ebp
-  _BYTE *v15; // edx
-  _DWORD *v16; // eax
+  unsigned char *v15; // edx
+  unsigned int *v16; // eax
   int v17; // esi
-  unsigned __int8 result; // al
-  int *v19; // [esp+10h] [ebp-4h]
-  int v20; // [esp+18h] [ebp+4h]
+  uint8_t result; // al
+  unsigned int v19;
+  unsigned int v20;
 
-  v3 = dword_ABF168; /*0x5bc18b*/
+  v3 = (unsigned int)(dword_ABF168);
   dword_ABF230 = aP0; /*0x5bc190*/
   dword_ABF234 = a2; /*0x5bc196*/
   byte_ABF238 = a3; /*0x5bc19c*/
@@ -121,7 +122,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   v19 = dword_ABF168; /*0x5bc1a5*/
   do /*0x5bc24f*/
   {
-    v4 = RA2_OPNEW(0x2738u); /*0x5bc1ae*/
+    v4 = (unsigned char *)(RA2_OPNEW(0x2738u));
     v5 = v4; /*0x5bc1b3*/
     if ( v4 ) /*0x5bc1ba*/
     {
@@ -169,13 +170,13 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
   dword_ABF23C = dword_ABF168[0]; /*0x5bc260*/
   do /*0x5bc2b2*/
   {
-    v12 = (_BYTE *)*v11; /*0x5bc266*/
+    v12 = (unsigned char *)*v11; /*0x5bc266*/
     v13 = 0; /*0x5bc268*/
     v14 = *v11 + 2000; /*0x5bc26a*/
     do /*0x5bc293*/
     {
       v15 = &v12[v13]; /*0x5bc270*/
-      v16 = (_DWORD *)v14; /*0x5bc273*/
+      v16 = (unsigned int *)v14; /*0x5bc273*/
       v17 = 80; /*0x5bc275*/
       do /*0x5bc28a*/
       {
@@ -205,7 +206,7 @@ void char WinMain_Create(ObjectClass * aP0, HWND a2, char a3)
         CreateDebugOutput(); /*0x5bc2d3*/
       byte_ABF23A = 1; /*0x5bc2e0*/
       ShowWindow(dword_ABF240, 1); /*0x5bc2e7*/
-      return (unsigned __int8)SetFocus(dword_ABF234); /*0x5bc2f4*/
+      return (uint8_t)SetFocus(dword_ABF234); /*0x5bc2f4*/
     }
   }
   return result; /*0x5bc2b9*/
@@ -256,8 +257,8 @@ unsigned int * WinMain::ShutdownCleanup()
   int j; // esi
   void **v4; // ecx
   int k; // esi
-  _DWORD *result; // eax
-  _DWORD *v7; // esi
+  unsigned int *result; // eax
+  unsigned int *v7; // esi
 
   for ( i = (void **)dword_B1CF8C; dword_B1CF8C; i = (void **)dword_B1CF8C ) /*0x734d3b*/
   {
@@ -303,7 +304,7 @@ unsigned int * WinMain::ShutdownCleanup()
   {
     do /*0x734e15*/
     {
-      v7 = (_DWORD *)*result; /*0x734e06*/
+      v7 = (unsigned int *)*result; /*0x734e06*/
       RA2_OPDEL(result); /*0x734e09*/
       result = v7; /*0x734e13*/
     }
@@ -319,7 +320,7 @@ void sub_5D7E50()
 {
   int i; // ebp
   char result; // al
-  void (__thiscall ***v3)(_DWORD, int); // ecx
+  void (__thiscall ***v3)(unsigned int, int); // ecx
 
   for ( i = 0; ; ++i ) /*0x5d7e56*/
   {
@@ -330,7 +331,7 @@ void sub_5D7E50()
       g_MultiplayerMode |= 1u; /*0x5d7e7b*/
       g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 = 0; /*0x5d7e81*/
       IDA_LOWORD(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C) = 1; /*0x5d7e87*/
-      *(_DWORD *)g_MultiplayerModeConfig.__pad_0 = &(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7e94*/
+      *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = (void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7e94*/
       g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d7e9a*/
       g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7ea0*/
       result = atexit(MultiplayerConfig::Cleanup); /*0x5d7ea6*/
@@ -343,12 +344,12 @@ void sub_5D7E50()
       g_MultiplayerMode |= 1u; /*0x5d7ecf*/
       g_MultiplayerModeConfig.MultiplayerGameMode_field_0x08 = 0; /*0x5d7ed5*/
       IDA_LOWORD(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x0C) = 1; /*0x5d7edb*/
-      *(_DWORD *)g_MultiplayerModeConfig.__pad_0 = &(void*)(void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7ee8*/
+      *(unsigned int *)g_MultiplayerModeConfig.__pad_0 = (void*)&DynamicVectorClass_MultiplayerGameMode___vftable; /*0x5d7ee8*/
       g_MultiplayerModeConfig.MultiplayerGameMode_field_0x14 = 10; /*0x5d7eee*/
       g_MultiplayerModeConfig.MultiplayerGameMode_field_0x10 = 0; /*0x5d7ef4*/
       atexit(MultiplayerConfig::Cleanup); /*0x5d7efa*/
     }
-    v3 = *(void (__thiscall ****)(_DWORD, int))(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4 * i); /*0x5d7f07*/
+    v3 = *(void (__thiscall ****)(unsigned int, int))(g_MultiplayerModeConfig.MultiplayerGameMode_field_0x04 + 4 * i); /*0x5d7f07*/
     if ( v3 ) /*0x5d7f0c*/
       (**v3)(v3, 1); /*0x5d7f12*/
   }
@@ -363,17 +364,17 @@ void* sub_7B84F0()
   DWORD LastError; // eax
   CHAR Buffer[1024]; // [esp+4h] [ebp-400h] BYREF
 
-  result = hMutex; /*0x7b84f0*/
+  result = (HANDLE)(hMutex);
   if ( !hMutex ) /*0x7b8500*/
   {
-    result = CreateMutexA(0, 0, 0); /*0x7b8505*/
+    result = (int)(CreateMutexA(0, 0, 0));
     hMutex = result; /*0x7b850b*/
   }
   if ( !dword_B7816C ) /*0x7b8516*/
   {
     if ( result ) /*0x7b851e*/
     {
-      dword_B78138 = 0; /*0x7b8524*/
+      dword_B78138 = (unsigned int)(0);
       dword_B78140 = 0; /*0x7b852a*/
       dword_B78150 = 0; /*0x7b8530*/
       dword_B78148 = 16; /*0x7b8536*/
@@ -436,7 +437,7 @@ void sub_53E6B0()
     {
       if ( dword_AA0464 ) /*0x53e6e7*/
       {
-        SampleSize = Audio::GetSampleSize((_DWORD *)dword_AA0464); /*0x53e6eb*/
+        SampleSize = Audio::GetSampleSize((unsigned int *)dword_AA0464); /*0x53e6eb*/
         WriteAudioStreamToFile(dword_AA0464, dword_AA0468, SampleSize, 0); /*0x53e6fd*/
         fflush(dword_AA0468); /*0x53e708*/
       }

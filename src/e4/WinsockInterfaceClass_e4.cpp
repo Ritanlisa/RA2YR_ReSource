@@ -24,7 +24,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   void *v5; // eax
 
   v2 = this->u32_3F068; /*0x7b1ab6*/
-  *(_DWORD *)this = &(void*)(void*)&WinsockInterfaceClass_vftable; /*0x7b1abc*/
+  *(unsigned int *)this = (void*)&WinsockInterfaceClass_vftable; /*0x7b1abc*/
   if ( v2 ) /*0x7b1ac4*/
   {
     NetworkClass::UnregisterAsync(); /*0x7b1ac6*/
@@ -33,7 +33,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
     this->u32_3F068 = 0; /*0x7b1ad8*/
   }
   v3 = *(void **)(&this->BoundPort0); /*0x7b1ade*/
-  this->u32_38 = &(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b1ae1*/
+  this->u32_38 = (void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b1ae1*/
   if ( v3 && this->u32_45 ) /*0x7b1aec*/
   {
     RA2_OPDEL(v3); /*0x7b1af2*/
@@ -42,7 +42,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   this->u32_45 = 0; /*0x7b1afd*/
   this->u32_40 = 0; /*0x7b1b00*/
   v4 = this->u32_24; /*0x7b1b03*/
-  this->u32_8 = &(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b1b06*/
+  this->u32_8 = (void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b1b06*/
   if ( v4 && this->u32_2D ) /*0x7b1b11*/
   {
     RA2_OPDEL(v4); /*0x7b1b17*/
@@ -51,7 +51,7 @@ WinsockInterfaceClass::WinsockInterfaceClass()
   this->u32_2D = 0; /*0x7b1b22*/
   this->u32_28 = 0; /*0x7b1b25*/
   v5 = *(void **)(&this->u32_42); /*0x7b1b28*/
-  this->u32_8 = &(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b1b2b*/
+  this->u32_8 = (void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b1b2b*/
   if ( v5 && this->u32_15 ) /*0x7b1b36*/
   {
     RA2_OPDEL(v5); /*0x7b1b3c*/
@@ -89,7 +89,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
   void *v6; // eax
 
   v3 = this->u32_3F068; /*0x7b2786*/
-  this->Socket = (int)&(void*)(void*)&WinsockInterfaceClass_vftable; /*0x7b278c*/
+  this->Socket = (int)&WinsockInterfaceClass_vftable; /*0x7b278c*/
   if ( v3 ) /*0x7b2794*/
   {
     NetworkClass::UnregisterAsync(); /*0x7b2796*/
@@ -98,7 +98,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
     this->u32_3F068 = 0; /*0x7b27a8*/
   }
   v4 = (void *)this->u32_3C; /*0x7b27ae*/
-  this->u32_38 = &(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b27b1*/
+  this->u32_38 = (void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b27b1*/
   if ( v4 && this->u32_45 ) /*0x7b27bc*/
   {
     RA2_OPDEL(v4); /*0x7b27c2*/
@@ -107,7 +107,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
   this->u32_45 = 0; /*0x7b27cd*/
   this->u32_40 = 0; /*0x7b27d0*/
   v5 = (void *)this->u32_24; /*0x7b27d3*/
-  this->u32_8 = &(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b27d6*/
+  this->u32_8 = (void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b27d6*/
   if ( v5 && this->u32_2D ) /*0x7b27e1*/
   {
     RA2_OPDEL(v5); /*0x7b27e7*/
@@ -116,7 +116,7 @@ SOCKET * WinsockInterfaceClass::Destru_vt00(char a2)
   this->u32_2D = 0; /*0x7b27f2*/
   this->u32_28 = 0; /*0x7b27f5*/
   v6 = (void *)this->u32_C; /*0x7b27f8*/
-  this->LocalAddress = (int)&(void*)(void*)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b27fb*/
+  this->LocalAddress = (int)&VectorClass_WinsockInterfaceClass_WinsockBufferType___vftable; /*0x7b27fb*/
   if ( v6 && this->u32_15 ) /*0x7b2806*/
   {
     RA2_OPDEL(v6); /*0x7b280c*/

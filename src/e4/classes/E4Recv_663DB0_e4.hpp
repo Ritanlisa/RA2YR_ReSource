@@ -22,13 +22,6 @@ struct E4Recv_663DB0 {
     unsigned int q1908;  // 0x1908
     unsigned int q5170;  // 0x5170
     unsigned int q6408;  // 0x6408
-    unsigned int q20848;  // 0x20848
-    unsigned int q25608;  // 0x25608
-    unsigned int q1257874;  // 0x1257874
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q19232884;  // 0x19232884
-    unsigned int q20481684;  // 0x20481684
-    unsigned int q541595268;  // 0x541595268
 // --- flat members (END) ---
     bool LaunchMultiplayerHost(unsigned char * a2);  // 0x663DB0
 };

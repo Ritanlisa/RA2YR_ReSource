@@ -207,6 +207,12 @@ struct Mission {
     unsigned int q1640;  // 0x1640
     unsigned char q1654;  // 0x1654
     void* q171C;  // 0x171C
+    unsigned int __pad_0;
+    unsigned int __pad_18C;
+    unsigned int __pad_5B8;
+    unsigned int __pad_C;
+    unsigned int q0204;
+    unsigned int u32_100;
 // --- flat members (END) ---
     int ExecuteTechnoMissionAction();  // 0x520AE0
     char ProcessUnitMissionAI();  // 0x520F40

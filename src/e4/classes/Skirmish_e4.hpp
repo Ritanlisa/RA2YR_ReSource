@@ -8,7 +8,7 @@ namespace gamemd {
 struct Skirmish {
 // --- flat members (BEGIN) ---
     unsigned int u32_38;  // 0x38
-    void* q03C;  // 0x3C
+    unsigned int ;  // 0x3C
     unsigned int u32_40;  // 0x40
     TechnoTypeClass * ptr_44;  // 0x44
     unsigned int u32_48;  // 0x48
@@ -22,7 +22,7 @@ struct Skirmish {
     unsigned int u32_68;  // 0x68
     unsigned int u32_6C;  // 0x6C
     TechnoTypeClass * ptr_70;  // 0x70
-    TechnoTypeClass * ptr_74;  // 0x74
+    unsigned int ;  // 0x74
     unsigned int q080;  // 0x80
     unsigned int q084;  // 0x84
     unsigned int q088;  // 0x88
@@ -52,12 +52,8 @@ struct Skirmish {
     void* q4400;  // 0x4400
     void* q4580;  // 0x4580
     void* q5260;  // 0x5260
-    void* q17408;  // 0x17408
-    void* q21088;  // 0x21088
-    void* q94978;  // 0x94978
-    void* q95240;  // 0x95240
-    void* q95270;  // 0x95270
-    void* q135304;  // 0x135304
+    unsigned int q03C;
+    void* ptr_74;
 // --- flat members (END) ---
     AbstractClass * * SetupGame(int a2);
     CampaignClass * * SetupAllSpawnLocations();

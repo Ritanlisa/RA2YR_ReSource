@@ -13,13 +13,6 @@ struct E4Recv_543AF0 {
     unsigned int q304;  // 0x304
     unsigned int q370;  // 0x370
     unsigned int q880;  // 0x880
-    unsigned int q34150;  // 0x34150
-    unsigned int q213328;  // 0x213328
-    unsigned int q2175784;  // 0x2175784
-    unsigned int q35084164;  // 0x35084164
-    unsigned int q36665767030;  // 0x36665767030
-    unsigned int q3738323808304;  // 0x3738323808304
-    unsigned int q680398823484712594;  // 0x680398823484712594
 // --- flat members (END) ---
     int nullsub_0_0();  // 0x543AF0
 };

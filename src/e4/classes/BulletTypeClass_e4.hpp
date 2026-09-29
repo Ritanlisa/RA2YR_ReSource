@@ -212,17 +212,17 @@ struct BulletTypeClass {
     unsigned char q258;  // 0x258
     SomeVoxelCache* q25C;  // 0x25C
     unsigned int q260;  // 0x260
-    char q264[4];  // 0x264
+    unsigned int q264;  // 0x264
     unsigned int q268;  // 0x268
     SomeVoxelCache* q26C;  // 0x26C
     SomeVoxelCache* q270;  // 0x270
     SomeVoxelCache* q274;  // 0x274
-    char q278[4];  // 0x278
+    unsigned int q278;  // 0x278
     SomeVoxelCache* q27C;  // 0x27C
     unsigned int q280;  // 0x280
     unsigned int q284;  // 0x284
     unsigned int q288;  // 0x288
-    char q28C[4];  // 0x28C
+    unsigned int q28C;  // 0x28C
     unsigned char q290;  // 0x290
     bool airburst;  // 0x294
     bool floater;  // 0x295
@@ -274,6 +274,7 @@ struct BulletTypeClass {
     unsigned char animHigh;  // 0x2F5
     unsigned char animRate;  // 0x2F6
     bool flat;  // 0x2F7
+    unsigned int delay;
 // --- flat members (END) ---
     BuildingTypeClass * * ReadArmor();
     BuildingTypeClass * * ReadTrailerAnim();

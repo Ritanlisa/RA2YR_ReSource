@@ -8,6 +8,7 @@ struct CellStruct {
 // --- flat members (BEGIN) ---
     short X;  // 0x0
     short Y;  // 0x2
+    unsigned int field_0;
 // --- flat members (END) ---
     void* Add(void* aP1,  void* aP2);    // 0x42D510
     unsigned int * Copy(void* aP1);  // 0x437F30

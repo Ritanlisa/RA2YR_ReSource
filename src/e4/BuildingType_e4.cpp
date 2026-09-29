@@ -128,6 +128,6 @@ int BuildingType::Init(unsigned int a2)
   if ( a2 >= 0x10 ) /*0x68c036*/
     return -1; /*0x68c047*/
   else
-    return *((_DWORD *)this + a2 + 1120); /*0x68c03d*/
+    return *((unsigned int *)this + a2 + 1120); /*0x68c03d*/
 }
 } // namespace gamemd

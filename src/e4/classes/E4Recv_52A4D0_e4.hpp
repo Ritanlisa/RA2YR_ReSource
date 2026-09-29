@@ -46,31 +46,6 @@ struct E4Recv_52A4D0 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int q21768;  // 0x21768
-    unsigned int q22148;  // 0x22148
-    unsigned int q25608;  // 0x25608
-    unsigned int q33570;  // 0x33570
-    unsigned int q137064;  // 0x137064
-    unsigned int q153094;  // 0x153094
-    unsigned int q210288;  // 0x210288
-    unsigned int q1271138;  // 0x1271138
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q1388834;  // 0x1388834
-    unsigned int q19337528;  // 0x19337528
-    unsigned int q19347798;  // 0x19347798
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q20481684;  // 0x20481684
-    unsigned int q20482100;  // 0x20482100
-    unsigned int q35009334;  // 0x35009334
-    unsigned int q422802728;  // 0x422802728
-    unsigned int q422868888;  // 0x422868888
-    unsigned int q423698564;  // 0x423698564
-    unsigned int q541595268;  // 0x541595268
-    unsigned int q17758693160;  // 0x17758693160
-    unsigned int q17759111304;  // 0x17759111304
-    unsigned int q1612096024928;  // 0x1612096024928
-    unsigned int q1612107027204;  // 0x1612107027204
 // --- flat members (END) ---
     int sub_52A4D0(unsigned char * a2);  // 0x52A4D0
 };

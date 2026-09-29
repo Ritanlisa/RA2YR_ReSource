@@ -41,7 +41,7 @@ int Theme::QueueSong(IUnknown * aP1)
             if ( this->u8_11 && !AudioSample::IsBuffering() ) /*0x720b70*/
               Audio::Release(this->audioSample); /*0x720b7c*/
             IDA_LOBYTE(IsSoundEnabled) = Audio::IsSoundPlaying(this->audioSample) != 0; /*0x720b8b*/
-            if ( (_BYTE)IsSoundEnabled == 1 ) /*0x720b90*/
+            if ( (unsigned char)IsSoundEnabled == 1 ) /*0x720b90*/
             {
               if ( this->audioSample ) /*0x720b92*/
                 IDA_LOBYTE(IsSoundEnabled) = ThemeClass::RequestBuffer(); /*0x720b99*/

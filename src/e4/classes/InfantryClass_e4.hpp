@@ -141,9 +141,9 @@ struct InfantryClass {
     unsigned int q11A;  // 0x11A
     TechnoClass* transporter;  // 0x11C
     unsigned int q11E;  // 0x11E
-    char turretChargeTimer[4];  // 0x120
+    unsigned int turretChargeTimer;  // 0x120
     void* currentTurretNumber;  // 0x124
-    char secondaryTurretIndex[4];  // 0x128
+    unsigned int secondaryTurretIndex;  // 0x128
     AnimClass* behindAnim;  // 0x12C
     unsigned int q12D;  // 0x12D
     unsigned int q12E;  // 0x12E
@@ -152,7 +152,7 @@ struct InfantryClass {
     bool inAirFlag;  // 0x134
     unsigned char alignmentPadding139;  // 0x135
     char radioQueueCount[4];  // 0x138
-    char currentRank[4];  // 0x13C
+    unsigned int currentRank;  // 0x13C
     void* gattlingStage;  // 0x140
     char gattlingValue[4];  // 0x144
     unsigned int ammoReloadTimer;  // 0x148
@@ -506,7 +506,7 @@ struct InfantryClass {
     bool FootClass_field_53C;  // 0x53C
     unsigned int m_padding_53D;  // 0x53D
     unsigned int q53F;  // 0x53F
-    char FootClass_field_540[4];  // 0x540
+    unsigned int FootClass_field_540;  // 0x540
     unsigned int audioController7;  // 0x544
     bool q546;  // 0x546
     unsigned int q547;  // 0x547

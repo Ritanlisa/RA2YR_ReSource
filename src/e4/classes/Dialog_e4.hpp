@@ -85,7 +85,7 @@ struct Dialog {
     BOOL HandleTabKey(HWND hWnd,  LPARAM a2);    // 0x60A330
     BOOL DispatchEvent(HWND hWnd,  LPARAM a2);    // 0x60A5B0
     AbstractClass * * InitWindow(SkirmishDialog * aP0, LPARAM a2);    // 0x60F760
-    BOOL InitializeControls(HWND hWnd,  LPARAM a2);    // 0x60F9A0
+    AbstractClass * * InitializeControls(HWND hWnd, LPARAM a2);    // 0x60F9A0
     int DestroyDialogSystem();  // 0x610360
     LONG Resize();  // 0x6213A0
     void DrawBackground();  // 0x621E90
@@ -102,7 +102,7 @@ struct Dialog {
     int SideIDToIndex();  // 0x4E4EC0
     int OptionIDToIndex();  // 0x4E59A0
     int FindGameUI();  // 0x5E26C0
-    HWND ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ...);    // 0x5E2700
+    HWND ShowMessage(ObjectClass * aP0, CampaignScore * BufferCount, ObjectClass Format, ... a4);    // 0x5E2700
     HWND ShowStatusText(SessionClass * aP0,  void* aP1,  void* aP2);    // 0x5E2790
     LRESULT ShowPlayerName();  // 0x5E2F60
     int MapPlayerIDToIndex();  // 0x5E9950

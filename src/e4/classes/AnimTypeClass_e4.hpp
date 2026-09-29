@@ -66,7 +66,7 @@ struct AnimTypeClass {
     unsigned char unused_9B;  // 0x9B
     unsigned int Armor;  // 0x9C
     int Strength;  // 0xA0
-    void * Image;  // 0xA4
+    unsigned int ;  // 0xA4
     char ImageAllocated;  // 0xA8
     unsigned char q0A9;  // 0xA9
     unsigned char q0AA;  // 0xAA
@@ -218,22 +218,22 @@ struct AnimTypeClass {
     unsigned char q258;  // 0x258
     SomeVoxelCache* q25C;  // 0x25C
     unsigned char q260;  // 0x260
-    char q264[4];  // 0x264
+    unsigned int q264;  // 0x264
     unsigned int q268;  // 0x268
     SomeVoxelCache* q26C;  // 0x26C
     SomeVoxelCache* q270;  // 0x270
     int q274;  // 0x274
-    char q278[4];  // 0x278
+    unsigned int q278;  // 0x278
     SomeVoxelCache* q27C;  // 0x27C
     unsigned int q280;  // 0x280
     unsigned int q284;  // 0x284
     unsigned int q288;  // 0x288
-    char q28C[4];  // 0x28C
+    unsigned int q28C;  // 0x28C
     unsigned char q290;  // 0x290
     int MiddleFrameIndex;  // 0x294
     int MiddleFrameWidth;  // 0x298
     int q29C;  // 0x29C
-    AbstractTypeClass* q2A0;  // 0x2A0
+    unsigned int ;  // 0x2A0
     unsigned char AnimTypeClass_field_2A4;  // 0x2A4
     unsigned char q2A5;  // 0x2A5
     double Damage;  // 0x2A8
@@ -311,6 +311,13 @@ struct AnimTypeClass {
     bool PsiWarning;  // 0x373
     bool ShouldFogRemove;  // 0x374
     unsigned char tail_375;  // 0x375
+    unsigned int DetailLevel4;
+    unsigned int Flat_flag;
+    unsigned int __pad_2A0;
+    unsigned int u32_C84;
+    unsigned int vtable46;
+    unsigned int Image;
+    unsigned int q2A0;
 // --- flat members (END) ---
     AnimTypeClass * * FindOrCreate();
     AnimTypeClass * ddtor(char a2);

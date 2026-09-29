@@ -238,7 +238,7 @@ struct ScenarioClass {
     char ambientTimer[12];  // 0x1248
     unsigned int q124C;  // 0x124C
     unsigned int q1250;  // 0x1250
-    char techLevel[4];  // 0x1254
+    unsigned int techLevel;  // 0x1254
     char theater[4];  // 0x1258
     char fileName;  // 0x125C
     void* q1308;  // 0x1308
@@ -423,21 +423,21 @@ struct ScenarioClass {
     void* dropshipUnitCounts;  // 0x34E4
     char dropshipCountsCount[4];  // 0x34E8
     char ambientOriginal[4];  // 0x34EC
-    char ambientCurrent[4];  // 0x34F0
+    unsigned int ambientCurrent;  // 0x34F0
     char ambientTarget[4];  // 0x34F4
     char red[4];  // 0x34F8
     char green[4];  // 0x34FC
     unsigned char u8_34FD;  // 0x34FD
     char blue[4];  // 0x3500
-    char ground[4];  // 0x3504
+    unsigned int ground;  // 0x3504
     char level[4];  // 0x3508
-    char ionAmbient[4];  // 0x350C
+    unsigned int ionAmbient;  // 0x350C
     char ionRed[4];  // 0x3510
     char ionGreen[4];  // 0x3514
     char ionBlue[4];  // 0x3518
     unsigned char u8_3519;  // 0x3519
     char ionGround[4];  // 0x351C
-    char ionLevel[4];  // 0x3520
+    unsigned int ionLevel;  // 0x3520
     char nukeAmbient[4];  // 0x3524
     char nukeRed[4];  // 0x3528
     char nukeGreen[4];  // 0x352C
@@ -490,6 +490,10 @@ struct ScenarioClass {
     char ls640BkgdName;  // 0x367C
     char ls800BkgdName;  // 0x36BC
     char ls800BkgdPal;  // 0x36FC
+    unsigned int InitTimer;
+    unsigned int __pad_0;
+    unsigned int __pad_3566;
+    unsigned int __pad_628;
 // --- flat members (END) ---
     void* checkWinningConditions(char a2);
     ScenarioClass * * CopyStartPositions();

@@ -16,19 +16,20 @@
 #include "e4/classes/Network_e4.hpp"
 #include "e4/classes/ObjectClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/SessionClass_e4.hpp"
 
 // 0x60D320
 namespace gamemd {
 int GameSetup::LookupDialogHash()
 {
   GameSetup **v1; // eax
-  _DWORD *v3; // eax
+  unsigned int *v3; // eax
   GameSetup *v4; // [esp+0h] [ebp-4h] BYREF
 
   v4 = this; /*0x60d326*/
-  if ( !*(_DWORD *)&g_DialogPool.__pad_208[60] ) /*0x60d32c*/
+  if ( !*(unsigned int *)&g_DialogPool.__pad_208[60] ) /*0x60d32c*/
     return 0; /*0x60d32c*/
-  v1 = *(GameSetup ***)(*(_DWORD *)&g_DialogPool.__pad_208[56] /*0x60d34d*/
+  v1 = *(GameSetup ***)(*(unsigned int *)&g_DialogPool.__pad_208[56] /*0x60d34d*/
                       + 4
                       * ((*(int (__thiscall **)(GameSetup **))&g_DialogPool.__pad_208[80])(&v4)
                        & ((1 << g_DialogPool.__pad_208[68]) - 1)));
@@ -36,11 +37,11 @@ int GameSetup::LookupDialogHash()
     return 0; /*0x60d352*/
   while ( *v1 != v4 ) /*0x60d35a*/
   {
-    v1 = (GameSetup **)v1[129]; /*0x60d35c*/
+    v1 = (gamemd::GameSetup **)((unsigned int *)((GameSetup **)v1[129]));
     if ( !v1 ) /*0x60d364*/
       return 0; /*0x60d364*/
   }
-  v3 = v1 + 1; /*0x60d36e*/
+  v3 = (unsigned int *)(v1 + 1);
   if ( v3 ) /*0x60d373*/
     return v3[27]; /*0x60d375*/
   else
@@ -56,7 +57,7 @@ AbstractClass * * GameSetup::WriteINI(CCINIClass * aP1, unsigned char * Block)
   int result; // eax
   char Buffer[16]; // [esp+10h] [ebp-10h] BYREF
 
-  INIClass::SetInt(aP1, Block, g_INI_Key_GameMode, *(_DWORD *)this, 0); /*0x698fae*/
+  INIClass::SetInt(aP1, Block, g_INI_Key_GameMode, *(unsigned int *)this, 0); /*0x698fae*/
   INIClass::SetInt(aP1, Block, aScenindex, this->q004, 0); /*0x698fc1*/
   INIClass::SetInt(aP1, Block, g_INI_Key_GameSpeed, this->ptr_8, 0); /*0x698fd4*/
   INIClass::SetInt(aP1, Block, g_INI_Key_Credits, this->q00C, 0); /*0x698fe7*/

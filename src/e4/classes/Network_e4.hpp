@@ -118,6 +118,8 @@ struct Network {
     unsigned int u32_1F6;  // 0x1F6
     unsigned int u32_1F7;  // 0x1F7
     void* q1F8;  // 0x1F8
+    unsigned int Network_field_0x0;
+    unsigned int q0084;
 // --- flat members (END) ---
     char SendBeaconDelete(int a2,  int a3);    // 0x4311C0
     char SendBeacon(void* aP1,  int a3,  int a4,  char a5);    // 0x431450

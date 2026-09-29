@@ -11,6 +11,44 @@ struct AudioQueue {
     unsigned int u32_C;  // 0xC
     unsigned int u32_10;  // 0x10
     unsigned int u32_14;  // 0x14
+    unsigned int AudioQueue_field_0x14;
+    unsigned int __pad_0;
+    void* ptr_24;
+    unsigned int q3D0;
+    unsigned int q3F054;
+    unsigned int q3F058;
+    unsigned int q3F060;
+    unsigned int q3F064;
+    unsigned int u32_180;
+    unsigned int u32_1804;
+    unsigned int u32_2A0;
+    unsigned int u32_30;
+    unsigned int u32_3AC;
+    unsigned int u32_3B4;
+    unsigned int u32_3BC;
+    unsigned int u32_3C;
+    unsigned int u32_3C4;
+    unsigned int u32_48;
+    unsigned int u32_A80;
+    unsigned int u32_C6;
+    unsigned char u8_3B8;
+    unsigned int q0042;
+    unsigned int q020;
+    unsigned int q0204;
+    unsigned int q034;
+    unsigned int q040;
+    unsigned int q080;
+    unsigned int q3F05C;
+    unsigned int u32_146;
+    unsigned int u32_18;
+    unsigned int u32_28;
+    unsigned int u32_38;
+    unsigned int u32_3F06C;
+    unsigned int u32_3F070;
+    unsigned int u32_4C;
+    unsigned int u32_E0;
+    unsigned char u8_2D;
+    unsigned char u8_45;
 // --- flat members (END) ---
     unsigned int * CreateNode();  // 0x402AF0
     int FindBestChannel(int a1,  int a2);    // 0x4035F0

@@ -31,6 +31,8 @@
 #include "e4/classes/Team_e4.hpp"
 #include "e4/classes/BuildingTypeClass_e4.hpp"
 #include "e4/classes/Object_e4.hpp"
+#include "e4/classes/Debug_e4.hpp"
+#include "e4/classes/ToolTipManager_e4.hpp"
 
 // 0x5447C0
 namespace gamemd {
@@ -44,15 +46,15 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   ObjectTypeClass::ConstructFull(aP4); /*0x5447ce*/
   this->ArrayIndex = a2; /*0x5447d9*/
   this->Foundation = 0xFFFF; /*0x5447e4*/
-  *(_DWORD *)this->RadarColor = 0xFFFF; /*0x5447ea*/
+  *(unsigned int *)this->RadarColor = 0xFFFF; /*0x5447ea*/
   this->AnimationRate = 0; /*0x5447f0*/
   this->TemperateOccupationBits = 0; /*0x5447f8*/
   this->SnowOccupationBits = 0; /*0x5447fe*/
   this->WaterBound = 1; /*0x544804*/
   this->SpawnsTiberium = 0; /*0x54480b*/
-  IDA_LODWORD(this->AnimationProbability) = &(void*)(void*)&DynamicVectorClass_unsigned_short___vftable; /*0x544811*/
+  IDA_LODWORD(this->AnimationProbability) = (void*)&DynamicVectorClass_unsigned_short___vftable; /*0x544811*/
   this->FoundationData = (CellStruct *)10; /*0x54481b*/
-  *(_DWORD *)&this->IsVeinhole = 0; /*0x544825*/
+  *(unsigned int *)&this->IsVeinhole = 0; /*0x544825*/
   this->u32_2CC = 0; /*0x544830*/
   this->MainVoxel = -1; /*0x544836*/
   this->u32_2C4 = -1; /*0x54483c*/
@@ -74,32 +76,32 @@ unsigned int * TerrainTypeClass::Construct(int a2, unsigned char a3, unsigned ch
   this->u32_305 = 1; /*0x5448b5*/
   this->u32_306 = 0; /*0x5448bc*/
   this->u32_308 = 0; /*0x5448c2*/
-  this->ObjectTypeClass = &(void*)(void*)&IsometricTileTypeClass_vftable; /*0x5448c8*/
-  this->? = &(void*)(void*)&IsometricTileTypeClass_vftable; /*0x5448cf*/
-  this->? = &(void*)(void*)&IsometricTileTypeClass_vftable; /*0x5448d6*/
-  this->? = &(void*)(void*)&IsometricTileTypeClass_vftable; /*0x5448dd*/
+  this->ObjectTypeClass = (void*)&IsometricTileTypeClass_vftable; /*0x5448c8*/
+  this->? = (void*)&IsometricTileTypeClass_vftable; /*0x5448cf*/
+  this->? = (void*)&IsometricTileTypeClass_vftable; /*0x5448d6*/
+  this->? = (void*)&IsometricTileTypeClass_vftable; /*0x5448dd*/
   if ( g_BuildingLoadQueue_Array.LightBlueTint < g_BuildingLoadQueue_Array.LightRedTint /*0x544917*/
     || (IDA_BYTE1(g_BuildingLoadQueue_Array.LightGreenTint) || !g_BuildingLoadQueue_Array.LightRedTint)
     && g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0] > 0
-    && (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
+    && (*(uint8_t (__thiscall **)(int *, int, unsigned int))(g_BuildingLoadQueue_Array.LightVisibility + 8))(
          &g_BuildingLoadQueue_Array.LightVisibility,
          g_BuildingLoadQueue_Array.LightRedTint + g_BuildingLoadQueue_Array.PrimaryFirePixelOffset[0],
          0) )
   {
     v7 = g_BuildingLoadQueue_Array.LightBlueTint++; /*0x544924*/
-    *(_DWORD *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = this; /*0x544933*/
+    *(unsigned int *)(g_BuildingLoadQueue_Array.LightIntensity + 4 * v7) = this; /*0x544933*/
   }
   if ( !a6 /*0x544970*/
     && (*(int *)&stru_A8EB00.?[340] < *(int *)&stru_A8EB00.?[332]
-     || (stru_A8EB00.?[337] || !*(_DWORD *)&stru_A8EB00.?[332])
+     || (stru_A8EB00.?[337] || !*(unsigned int *)&stru_A8EB00.?[332])
      && *(int *)&stru_A8EB00.?[344] > 0
-     && (*(unsigned __int8 (__thiscall **)(_BYTE *, int, _DWORD))(*(_DWORD *)&stru_A8EB00.?[324] + 8))(
+     && (*(uint8_t (__thiscall **)(unsigned char *, int, unsigned int))(*(unsigned int *)&stru_A8EB00.?[324] + 8))(
           &stru_A8EB00.?[324],
-          *(_DWORD *)&stru_A8EB00.?[332] + *(_DWORD *)&stru_A8EB00.?[344],
+          *(unsigned int *)&stru_A8EB00.?[332] + *(unsigned int *)&stru_A8EB00.?[344],
           0)) )
   {
-    v8 = (*(_DWORD *)&stru_A8EB00.?[340])++; /*0x54497d*/
-    *(_DWORD *)(*(_DWORD *)&stru_A8EB00.?[328] + 4 * v8) = this; /*0x54498c*/
+    v8 = (*(unsigned int *)&stru_A8EB00.?[340])++; /*0x54497d*/
+    *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[328] + 4 * v8) = this; /*0x54498c*/
   }
   if ( aP4 ) /*0x544991*/
   {
@@ -149,10 +151,10 @@ TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
   this->IsAnimated = 0; /*0x71dae5*/
   this->IsVeinhole = 0; /*0x71daeb*/
   this->FoundationData = 0; /*0x71daf1*/
-  this->ObjectTypeClass = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71daf7*/
-  this->? = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71dafd*/
-  this->? = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71db03*/
-  this->? = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71db0a*/
+  this->ObjectTypeClass = (void*)&TerrainTypeClass_vftable; /*0x71daf7*/
+  this->? = (void*)&TerrainTypeClass_vftable; /*0x71dafd*/
+  this->? = (void*)&TerrainTypeClass_vftable; /*0x71db03*/
+  this->? = (void*)&TerrainTypeClass_vftable; /*0x71db0a*/
   AbstractClass::GenerateUniqueID((AbstractClass *)&this->?); /*0x71db11*/
   this->? = 0; /*0x71db18*/
   this->? = 1; /*0x71db1e*/
@@ -163,7 +165,7 @@ TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
   if ( dword_A8E328 < dword_A8E320 /*0x71db74*/
     || (byte_A8E325 || !dword_A8E320)
     && dword_A8E32C > 0
-    && (v4 = (*(unsigned __int8 (__thiscall **)(_DWORD *, int, _DWORD))(dword_A8E318 + 8))(
+    && (v4 = (*(uint8_t (__thiscall **)(unsigned int *, int, unsigned int))(dword_A8E318 + 8))(
                &dword_A8E318,
                dword_A8E320 + dword_A8E32C,
                0) == 0,
@@ -171,7 +173,7 @@ TerrainTypeClass::TerrainTypeClass(ObjectClass * aP1)
         !v4) )
   {
     dword_A8E328 = v3 + 1; /*0x71db79*/
-    *((_DWORD *)dword_A8E31C + v3) = this; /*0x71db83*/
+    *((unsigned int *)dword_A8E31C + v3) = this; /*0x71db83*/
     v3 = dword_A8E328; /*0x71db86*/
   }
   v5 = 0; /*0x71db8b*/
@@ -297,12 +299,12 @@ TerrainTypeClass * * TerrainTypeClass::FindOrCreate()
       return TerrainTypeClass::TerrainTypeClass(v3, Source); /*0x71e311*/
     return 0; /*0x71e305*/
   }
-  while ( _strcmpi((char *)(*((_DWORD *)dword_A8E31C + v2) + 36), Source) ) /*0x71e2ea*/
+  while ( _strcmpi((char *)(*((unsigned int *)dword_A8E31C + v2) + 36), Source) ) /*0x71e2ea*/
   {
     if ( ++v2 >= dword_A8E328 ) /*0x71e2f4*/
       goto LABEL_6; /*0x71e2f4*/
   }
-  return (_DWORD *)*((_DWORD *)dword_A8E31C + v2); /*0x71e30f*/
+  return (unsigned int *)*((unsigned int *)dword_A8E31C + v2); /*0x71e30f*/
 }
 // 0x71E360
 TerrainTypeClass * TerrainTypeClass::ddtor(AbstractClass *a2, char a3)
@@ -312,10 +314,10 @@ TerrainTypeClass * TerrainTypeClass::ddtor(AbstractClass *a2, char a3)
   TerrainTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Image = a3->?; /*0x71e364*/
-  a3->ObjectTypeClass = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e36a*/
-  a3->? = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e372*/
-  a3->? = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e379*/
-  a3->? = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e380*/
+  a3->ObjectTypeClass = (void*)&TerrainTypeClass_vftable; /*0x71e36a*/
+  a3->? = (void*)&TerrainTypeClass_vftable; /*0x71e372*/
+  a3->? = (void*)&TerrainTypeClass_vftable; /*0x71e379*/
+  a3->? = (void*)&TerrainTypeClass_vftable; /*0x71e380*/
   if ( Image ) /*0x71e387*/
   {
     RA2_OPDEL(Image); /*0x71e38a*/
@@ -323,13 +325,13 @@ TerrainTypeClass * TerrainTypeClass::ddtor(AbstractClass *a2, char a3)
   }
   AbstractClass::AnnounceExpiredPointer(&a3->ObjectTypeClass, 1); /*0x71e3a0*/
   v6 = a3; /*0x71e3b5*/
-  v4 = (*(int (__thiscall **)(_DWORD *, TerrainTypeClass **))(dword_A8E318 + 16))(&dword_A8E318, &v6); /*0x71e3b9*/
+  v4 = (*(int (__thiscall **)(unsigned int *, TerrainTypeClass **))(dword_A8E318 + 16))(&dword_A8E318, &v6); /*0x71e3b9*/
   if ( v4 != -1 && v4 < dword_A8E328 && v4 < --dword_A8E328 ) /*0x71e3d4*/
   {
     do /*0x71e3ec*/
     {
       ++v4; /*0x71e3dc*/
-      *((_DWORD *)dword_A8E31C + v4 - 1) = *((_DWORD *)dword_A8E31C + v4); /*0x71e3e0*/
+      *((unsigned int *)dword_A8E31C + v4 - 1) = *((unsigned int *)dword_A8E31C + v4); /*0x71e3e0*/
     }
     while ( v4 < dword_A8E328 ); /*0x71e3ec*/
   }
@@ -341,30 +343,30 @@ TerrainTypeClass * TerrainTypeClass::ddtor(AbstractClass *a2, char a3)
 // 0x53FFA0
 int TerrainTypeClass::GetTileData(AnimClass * aP1, void * a2, signed int * v10, unsigned int * a4, unsigned short * a5, unsigned int * a6)
 {
-  _DWORD *v7; // ecx
+  unsigned int *v7; // ecx
   int TileType; // eax
   int v9; // ebx
   int v10; // edx
-  _DWORD *v11; // edx
+  unsigned int *v11; // edx
 
-  v7 = (_DWORD *)this->vtable2; /*0x53ffa0*/
+  v7 = (unsigned int *)this->vtable2; /*0x53ffa0*/
   if ( v7[14] < aP1 ) /*0x53ffaa*/
     return 0; /*0x53ffaa*/
   TileType = Terrain::GetTileType(v7, aP1); /*0x53ffad*/
-  if ( !TileType || (*(_BYTE *)TileType & 2) != 0 ) /*0x53ffb9*/
+  if ( !TileType || (*(unsigned char *)TileType & 2) != 0 ) /*0x53ffb9*/
     return 0; /*0x540024*/
-  v9 = *(_DWORD *)(TileType + 12); /*0x53ffbf*/
-  v10 = *(_DWORD *)(TileType + 8) - 16; /*0x53ffc2*/
+  v9 = *(unsigned int *)(TileType + 12); /*0x53ffbf*/
+  v10 = *(unsigned int *)(TileType + 8) - 16; /*0x53ffc2*/
   if ( v10 > 0 ) /*0x53ffc7*/
     qmemcpy(a2, (const void *)(v9 + 16), v10); /*0x53ffda*/
   *v10 = v10; /*0x53ffea*/
-  *a5 = *(_WORD *)(v9 + 14); /*0x53fff4*/
-  v11 = *(_DWORD **)(TileType + 20); /*0x53fff7*/
+  *a5 = *(unsigned short *)(v9 + 14); /*0x53fff4*/
+  v11 = *(unsigned int **)(TileType + 20); /*0x53fff7*/
   *a4 = *v11; /*0x540000*/
   a4[1] = v11[1]; /*0x540005*/
   a4[2] = v11[2]; /*0x54000b*/
   if ( a6 ) /*0x540014*/
-    *a6 = *(_DWORD *)(v9 + 4); /*0x540019*/
+    *a6 = *(unsigned int *)(v9 + 4); /*0x540019*/
   return 1; /*0x540021*/
 }
 // 0x71DDD0
@@ -382,7 +384,7 @@ TerrainClass * TerrainTypeClass::GetTileIndex(int a2)
 
   v3 = (TerrainClass *)RA2_OPNEW(0xE0u); /*0x71de18*/
   if ( v3 ) /*0x71de22*/
-    return TerrainClass::Construct(v3, this, (__int16 *)&g_BuildingLoadQueue_Array.?); /*0x71de2c*/
+    return TerrainClass::Construct(v3, this, (int16_t *)&g_BuildingLoadQueue_Array.?); /*0x71de2c*/
   else
     return 0; /*0x71de35*/
 }
@@ -440,10 +442,10 @@ int TerrainTypeClass::SaveLoad_Prefix(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x71e1e6*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x71e1ef*/
-      aP0->ObjectTypeClass = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e1f4*/
-      aP0->? = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e1fa*/
-      aP0->? = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e201*/
-      aP0->? = &(void*)(void*)&TerrainTypeClass_vftable; /*0x71e208*/
+      aP0->ObjectTypeClass = (void*)&TerrainTypeClass_vftable; /*0x71e1f4*/
+      aP0->? = (void*)&TerrainTypeClass_vftable; /*0x71e1fa*/
+      aP0->? = (void*)&TerrainTypeClass_vftable; /*0x71e201*/
+      aP0->? = (void*)&TerrainTypeClass_vftable; /*0x71e208*/
     }
     VoxelAnimType::LoadAnim((char *)aP0); /*0x71e211*/
     ObjectTypeClass::Load2DArt((char *)aP0); /*0x71e218*/

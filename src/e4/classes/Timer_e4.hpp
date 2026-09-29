@@ -75,38 +75,9 @@ struct Timer {
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
     unsigned int q6440;  // 0x6440
-    unsigned int q20848;  // 0x20848
-    unsigned int q22148;  // 0x22148
-    unsigned int q25608;  // 0x25608
-    unsigned int q25664;  // 0x25664
-    unsigned int q33570;  // 0x33570
-    unsigned int q153094;  // 0x153094
-    unsigned int q153188;  // 0x153188
-    unsigned int q210288;  // 0x210288
-    unsigned int q1257874;  // 0x1257874
-    unsigned int q1282918;  // 0x1282918
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q1389090;  // 0x1389090
-    unsigned int q19232884;  // 0x19232884
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q20482358;  // 0x20482358
-    unsigned int q20484240;  // 0x20484240
-    unsigned int q35009334;  // 0x35009334
-    unsigned int q423698564;  // 0x423698564
-    unsigned int q541606464;  // 0x541606464
-    unsigned int q22571222354;  // 0x22571222354
-    unsigned int q1612549859458;  // 0x1612549859458
-    unsigned int q2359835108180;  // 0x2359835108180
-    unsigned int q388226446628134;  // 0x388226446628134
-    unsigned int q621877794996608;  // 0x621877794996608
-    unsigned int q621877867514214;  // 0x621877867514214
-    unsigned int q971428040484870;  // 0x971428040484870
-    unsigned int q441783186122958344;  // 0x441783186122958344
-    unsigned int q441783189658223124;  // 0x441783189658223124
-    unsigned int q1256072821702542066500;  // 0x1256072821702542066500
-    unsigned int q1256072821931073745188;  // 0x1256072821931073745188
-    unsigned int q22166920289552765214282120;  // 0x22166920289552765214282120
+    unsigned int __pad_0;
+    unsigned int __pad_6;
+    unsigned int m_18;
 // --- flat members (END) ---
     DynamicVector * Start(DynamicVector * aP1);  // 0x46B640
     char StartDouble(double a2);  // 0x4A5240

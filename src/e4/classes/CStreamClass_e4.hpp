@@ -42,6 +42,7 @@ struct CStreamClass {
     unsigned char q04C;  // 0x4C
     unsigned char q04F;  // 0x4F
     unsigned char q050;  // 0x50
+    unsigned int IsEmpty;
 // --- flat members (END) ---
     CStreamClass * ddtor(int a2, char a3);
     LONG IStreamAddRef(int a1);

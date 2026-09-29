@@ -38,15 +38,15 @@ int IPXManagerClass::sendPacket(int a2, int a3, int a4)
 namespace gamemd {
 int IPXManagerClass::send(int a2)
 {
-  int v2; // edx
-  int result; // eax
+  IPXManagerClass * v2;
+  IPXManagerClass * result;
   IPXManagerClass *i; // ecx
 
-  v2 = this->u32_44; /*0x541040*/
-  result = 0; /*0x541043*/
+  v2 = (gamemd::IPXManagerClass *)((int)((gamemd::IPXManagerClass *)(this->u32_44)));
+  result = (int)((gamemd::IPXManagerClass *)(0));
   if ( v2 <= 0 ) /*0x541049*/
     return -1; /*0x541061*/
-  for ( i = &this->Active; *(_DWORD *)(i->Socket + 100) != a2; i = (IPXManagerClass *)((char *)i + 4) ) /*0x54104f*/
+  for ( i = &this->Active; *(unsigned int *)(i->Socket + 100) != a2; i = (IPXManagerClass *)((char *)i + 4) ) /*0x54104f*/
   {
     if ( ++result >= v2 ) /*0x54105f*/
       return -1; /*0x54105f*/
@@ -82,7 +82,7 @@ int IPXManagerClass::receivePacket(int a2)
   }
   else
   {
-    v4 = &this->Active; /*0x54107f*/
+    v4 = (gamemd::IPXManagerClass *)(&this->Active);
     while ( v4->Socket != a2 ) /*0x541084*/
     {
       ++result; /*0x541086*/
@@ -125,9 +125,9 @@ int IPXManagerClass::ddtor(int a2, int a3, unsigned int * v10)
     v7 = (void *)((int)((void *)((*(int (__thiscall **)(int, int, int))(*(unsigned int *)v6 + 16))(v6, a2, a3))));
     v8 = (int)((unsigned int *)(this->curConnIndex));
     v9 = (void *)(*(unsigned int *)(&this->q010 * v8++ + 40));
-    v10 = (void *)(*(unsigned int *)(v9 + 100));
-    v11 = this->q044; /*0x54163f*/
-    this->curConnIndex = v8; /*0x541644*/
+    v10 = (unsigned int *)((void *)(*(unsigned int *)(v9 + 100)));
+    v11 = (void *)((unsigned int)(this->q044));
+    this->curConnIndex = (unsigned int)(v8);
     if ( v8 >= v11 ) /*0x541647*/
       this->curConnIndex = 0; /*0x541649*/
     if ( v7 ) /*0x541652*/

@@ -13,7 +13,10 @@ struct Conflict_WorldDominationTour_12_ {
     AbstractClass * q034;  // 0x34
     AbstractClass * q130;  // 0x130
     AbstractClass * q304;  // 0x304
-    AbstractClass * q153094;  // 0x153094
+    unsigned int m_1;
+    unsigned int m_10;
+    unsigned int m_8;
+    unsigned int m_C;
 // --- flat members (END) ---
     int ReleaseBuffer();  // 0x766800
     static double Constructor_3(...);  // C2597 interim stub

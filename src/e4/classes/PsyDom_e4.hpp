@@ -12,7 +12,6 @@ struct PsyDom {
     void* q768;  // 0x768
     void* q804;  // 0x804
     void* q6294;  // 0x6294
-    void* q8274;  // 0x8274
 // --- flat members (END) ---
     AnimClass * * Update();
     bool IsActive();

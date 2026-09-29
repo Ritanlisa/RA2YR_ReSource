@@ -15,6 +15,13 @@ struct CoopCampaignVector {
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
+    unsigned int CoopCampaignVector_field_0x04;
+    unsigned int CoopCampaignVector_field_0x08;
+    unsigned int CoopCampaignVector_field_0x0C;
+    unsigned int __pad_0;
+    unsigned int m_1;
+    unsigned int m_8;
+    unsigned int m_C;
 // --- flat members (END) ---
     VectorClass_flat * QueryInterface(char a2);
     unsigned int * Construct(MultiplayerGameMode * aP1, MultiplayerGameMode * aP2);

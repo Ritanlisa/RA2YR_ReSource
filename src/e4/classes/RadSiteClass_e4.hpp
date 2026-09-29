@@ -35,13 +35,13 @@ struct RadSiteClass {
     unsigned int q03D;  // 0x3D
     char BaseCell[4];  // 0x40
     void* ptr_42;  // 0x42
-    char Spread[4];  // 0x44
-    char SpreadInLeptons[4];  // 0x48
+    unsigned int Spread;  // 0x44
+    unsigned int SpreadInLeptons;  // 0x48
     bool q04A;  // 0x4A
-    char RadLevel[4];  // 0x4C
+    unsigned int RadLevel;  // 0x4C
     unsigned char q04F;  // 0x4F
-    char LevelSteps[4];  // 0x50
-    char Intensity[4];  // 0x54
+    unsigned int LevelSteps;  // 0x50
+    unsigned int Intensity;  // 0x54
     char Tint[12];  // 0x58
     char IntensityDecrement[4];  // 0x5C
     char q060[4];  // 0x60
@@ -49,6 +49,7 @@ struct RadSiteClass {
     void* q068;  // 0x68
     void* RadDuration;  // 0x6C
     void* RadTimeLeft;  // 0x70
+    unsigned int IntensitySteps;
 // --- flat members (END) ---
     int SaveLoad_Prefix(AbstractClass * aP0, int aP1);
     int SaveLoad_Prefix_0(TechnoTypeClass * aP0, int * a1, int aP2);

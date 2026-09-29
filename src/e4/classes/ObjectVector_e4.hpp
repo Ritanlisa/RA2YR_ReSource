@@ -14,6 +14,12 @@ struct ObjectVector {
     bool IsAllocated;  // 0xD
     unsigned char q010;  // 0x10
     unsigned char q014;  // 0x14
+    unsigned int ObjectVector_field_0x04;
+    unsigned int ObjectVector_field_0x08;
+    unsigned int ObjectVector_field_0x0C;
+    unsigned int ObjectVector_field_0x10;
+    unsigned int ObjectVector_field_0x14;
+    unsigned int __pad_0;
 // --- flat members (END) ---
     unsigned int * Construct(void* aP1, void* aP2);
     static double ddtor(...);  // C2597 interim stub

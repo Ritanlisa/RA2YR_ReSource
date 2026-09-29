@@ -20,6 +20,10 @@ struct LoadGame {
     unsigned char q024;  // 0x24
     unsigned char q028;  // 0x28
     unsigned char q02C;  // 0x2C
+    unsigned int LoadBlock68;
+    unsigned int LoadGame_field_0x04;
+    unsigned int LoadGame_field_0x10;
+    unsigned int __pad_0;
 // --- flat members (END) ---
     int LoadBlock300(int a2);
     int LoadMagicAndAudio();

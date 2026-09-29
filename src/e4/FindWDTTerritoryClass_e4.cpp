@@ -13,27 +13,27 @@
 namespace gamemd {
 unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
 {
-  void **v5; // [esp+4h] [ebp-Ch] BYREF
+  void* v5;
   char *v6; // [esp+8h] [ebp-8h]
-  int v7; // [esp+Ch] [ebp-4h]
+  void ** v7;
 
-  v6 = &this->u32_60; /*0x765387*/
-  v7 = 0; /*0x76538f*/
-  v5 = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765397*/
+  v6 = (char *)(&this->u32_60);
+  v7 = (int)((void **)(0));
+  v5 = (void*)&VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x765397*/
   if ( Campaign_WorldDominationTour_24::AddRef(&v5) ) /*0x76539f*/
   {
     do /*0x7653db*/
     {
-      if ( FindWDTTerritoryClass_Find_Find(*(_DWORD **)(*((_DWORD *)v6 + 1) + 8 * v7 + 4)) == a3 ) /*0x7653c6*/
+      if ( FindWDTTerritoryClass_Find_Find(*(unsigned int **)(*((unsigned int *)v6 + 1) + 8 * v7 + 4)) == a3 ) /*0x7653c6*/
         break; /*0x7653c6*/
       ((void (__thiscall *)(void ***))v5[2])(&v5); /*0x7653d0*/
     }
-    while ( ((unsigned __int8 (__thiscall *)(void ***))v5[1])(&v5) ); /*0x7653db*/
+    while ( ((uint8_t (__thiscall *)(void ***))v5[1])(&v5) ); /*0x7653db*/
   }
-  v7 = v7; /*0x7653ea*/
-  a2[1] = v6; /*0x7653ef*/
+  v7 = (unsigned int)(v7);
+  a2[1] = (unsigned int)(v6);
   a2[2] = v7; /*0x7653f2*/
-  *a2 = &(void*)(void*)&VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x7653f5*/
+  *(void **)a2 = (void*)&VectorCursor_rc_ptr_WorldDominationTour_Conflict_DynamicVectorClass_rc_ptr_WorldDominationTour_Conflict_vftable; /*0x7653f5*/
   return a2; /*0x7653ee*/
 }
 } // namespace gamemd
@@ -42,7 +42,7 @@ unsigned int * E4Recv_765380::sub_765380(unsigned int * a2, int a3)
 namespace gamemd {
 int E4Recv_766060::sub_766060()
 {
-  _DWORD *vtable3; // eax
+  unsigned int *vtable3; // eax
 
   vtable3 = this->?; /*0x766060*/
   if ( vtable3 ) /*0x766065*/

@@ -16,6 +16,7 @@
 #include "e4/classes/HouseClass_e4.hpp"
 #include "e4/classes/InfantryTypeClass_e4.hpp"
 #include "e4/classes/String_e4.hpp"
+#include "e4/classes/AbstractClass_e4.hpp"
 
 // 0x5FB320
 namespace gamemd {
@@ -532,7 +533,7 @@ void sub_5FC120(int a1, int a2, int * a3)
   v4 = *a3; /*0x5fc12d*/
   while ( 1 ) /*0x5fc136*/
   {
-    v5 = *(_DWORD *)(a1 + 8 * (v3 / 2)); /*0x5fc136*/
+    v5 = *(unsigned int *)(a1 + 8 * (v3 / 2)); /*0x5fc136*/
     if ( v5 <= v4 ) /*0x5fc13e*/
       break; /*0x5fc13e*/
     v3 /= 2; /*0x5fc140*/

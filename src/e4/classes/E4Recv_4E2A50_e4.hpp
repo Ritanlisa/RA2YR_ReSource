@@ -54,31 +54,6 @@ struct E4Recv_4E2A50 {
     unsigned int q5444;  // 0x5444
     unsigned int q5494;  // 0x5494
     unsigned int q5508;  // 0x5508
-    unsigned int q20848;  // 0x20848
-    unsigned int q21768;  // 0x21768
-    unsigned int q33570;  // 0x33570
-    unsigned int q137064;  // 0x137064
-    unsigned int q153094;  // 0x153094
-    unsigned int q210288;  // 0x210288
-    unsigned int q1257874;  // 0x1257874
-    unsigned int q1271138;  // 0x1271138
-    unsigned int q1388834;  // 0x1388834
-    unsigned int q19232884;  // 0x19232884
-    unsigned int q19337528;  // 0x19337528
-    unsigned int q19347798;  // 0x19347798
-    unsigned int q20482100;  // 0x20482100
-    unsigned int q35009334;  // 0x35009334
-    unsigned int q422802728;  // 0x422802728
-    unsigned int q422868888;  // 0x422868888
-    unsigned int q17758693160;  // 0x17758693160
-    unsigned int q17758713478;  // 0x17758713478
-    unsigned int q17759111304;  // 0x17759111304
-    unsigned int q22571209318;  // 0x22571209318
-    unsigned int q1612096024928;  // 0x1612096024928
-    unsigned int q1612096550008;  // 0x1612096550008
-    unsigned int q1612107027204;  // 0x1612107027204
-    unsigned int q2359835005720;  // 0x2359835005720
-    unsigned int q388226446628134;  // 0x388226446628134
 // --- flat members (END) ---
     int Vf72(int,  ...);    // G6 vtable slot dispatch
     int sub_4E2A50(void* aP1,  int aP2,  int aP3,  void* aP4,  int aP5);    // 0x4E2A50

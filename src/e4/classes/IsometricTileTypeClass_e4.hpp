@@ -41,6 +41,33 @@ struct IsometricTileTypeClass {
     unsigned char q048;  // 0x48
     unsigned char q04C;  // 0x4C
     unsigned char q04F;  // 0x4F
+    unsigned int CleanupMembers;
+    unsigned int IsometricTileTypeClass_field_0x04;
+    unsigned int IsometricTileTypeClass_field_0x08;
+    unsigned int IsometricTileTypeClass_field_0x0C;
+    unsigned int __pad_0;
+    unsigned int m_1;
+    unsigned int m_10;
+    unsigned int m_8;
+    unsigned int m_C;
+    unsigned int u32_294;
+    unsigned int u32_298;
+    unsigned int u32_29C;
+    unsigned int u32_2A0;
+    unsigned int u32_2B4;
+    unsigned int u32_2BC;
+    unsigned int u32_2C0;
+    unsigned int u32_2C4;
+    unsigned int u32_2C8;
+    unsigned int u32_2D4;
+    unsigned int u32_2D8;
+    unsigned int u32_2DC;
+    unsigned int u32_2E0;
+    unsigned int u32_2E1;
+    unsigned int u32_2E4;
+    unsigned int u32_2E8;
+    unsigned int u32_2EC;
+    unsigned int u32_2F0;
 // --- flat members (END) ---
     AbstractClass * * LoadTypeData(int * a1, int a2);
     DynamicVector * Constructor(char a2);

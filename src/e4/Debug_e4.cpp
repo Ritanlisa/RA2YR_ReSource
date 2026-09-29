@@ -22,7 +22,7 @@ int Debug::ScrollText(CellStruct * aP1)
   int v7; // edi
   const char *v9; // eax
   int v10; // eax
-  _DWORD *v11; // [esp+4h] [ebp-10h]
+  unsigned int *v11; // [esp+4h] [ebp-10h]
   char *v12; // [esp+8h] [ebp-Ch]
   int v13; // [esp+Ch] [ebp-8h]
   const char *i; // [esp+10h] [ebp-4h]
@@ -42,9 +42,9 @@ int Debug::ScrollText(CellStruct * aP1)
     v5 = v5; /*0x5bd131*/
     if ( v5 < v7 ) /*0x5bd133*/
     {
-      v12 = (char *)(this + v13 + 20 * v5 + 5 * v5); /*0x5bd148*/
-      v9 = &aP1[-v5]; /*0x5bd15c*/
-      v11 = (_DWORD *)(&this->u32_10 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)); /*0x5bd15e*/
+      v12 = (const char *)((char *)(this + v13 + 20 * v5 + 5 * v5));
+      v9 = (const char *)(&aP1[-v5]);
+      v11 = (const char *)((unsigned int *)(&this->u32_10 * (v13 + 4 * (5 * v5 + 100) + 5 * v5 + 100)));
       for ( i = &aP1[-v5]; ; v9 = i ) /*0x5bd162*/
       {
         v15 = v9[v5]; /*0x5bd16f*/
@@ -131,9 +131,9 @@ char Debug::Printf()
 namespace gamemd {
 char Debug_Helper(ObjectClass * aP0)
 {
-  char result; // al
+  ObjectClass * result;
 
-  result = aP0; /*0x5bd360*/
+  result = (gamemd::ObjectClass *)((char)(aP0));
   switch ( aP0 ) /*0x5bd366*/
   {
     case 10: /*0x5bd366*/
@@ -160,6 +160,6 @@ char Debug_Helper(ObjectClass * aP0)
     case -76: /*0x5bd366*/
       return 43; /*0x5bd3c0*/
   }
-  return result; /*0x5bd36a*/
+  return (char)(result);
 }
 } // namespace gamemd

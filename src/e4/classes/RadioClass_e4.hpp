@@ -119,6 +119,8 @@ struct RadioClass {
     bool q0EB;  // 0xEB
     unsigned int q0EC;  // 0xEC
     bool q0ED;  // 0xED
+    unsigned int Constructor;
+    unsigned int MissionClass;
 // --- flat members (END) ---
     int ExecuteAction(void* aP1, void* aP2);
     int FindLinkIndex(int a2);

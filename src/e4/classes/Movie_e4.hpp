@@ -21,9 +21,9 @@ struct Movie {
     unsigned char q02C;  // 0x2C
     unsigned char q030;  // 0x30
     unsigned char q034;  // 0x34
-    void* q038;  // 0x38
+    unsigned int ;  // 0x38
     unsigned char q03C;  // 0x3C
-    unsigned int q040;  // 0x40
+    void* ;  // 0x40
     void* q044;  // 0x44
     unsigned char q048;  // 0x48
     unsigned int u32_4C;  // 0x4C
@@ -34,7 +34,7 @@ struct Movie {
     unsigned int u32_60;  // 0x60
     unsigned int u32_64;  // 0x64
     unsigned int u32_68;  // 0x68
-    void* q06C;  // 0x6C
+    unsigned int ;  // 0x6C
     unsigned char q070;  // 0x70
     unsigned char q074;  // 0x74
     unsigned int q080;  // 0x80
@@ -55,6 +55,17 @@ struct Movie {
     unsigned char q278;  // 0x278
     unsigned int q280;  // 0x280
     unsigned char tail_28D;  // 0x28D
+    unsigned int Movie_field_0xC;
+    unsigned int __pad_10;
+    unsigned int __pad_28;
+    unsigned int q0180;
+    unsigned int q058;
+    unsigned int q05C;
+    unsigned int q060;
+    unsigned int Movie_field_0x4;
+    unsigned int Movie_field_0x8;
+    unsigned int q038;
+    unsigned int q06C;
 // --- flat members (END) ---
     char SetupScreen(CCINIClass * aP1);  // 0x49CAF0
     char GetSection(CCINIClass * aP1,  CCINIClass * aP2);    // 0x49E3B0

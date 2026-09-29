@@ -30,23 +30,6 @@ struct E4Recv_6EF450 {
     unsigned int q5508;  // 0x5508
     unsigned int q5684;  // 0x5684
     unsigned int q6408;  // 0x6408
-    unsigned int q22148;  // 0x22148
-    unsigned int q25608;  // 0x25608
-    unsigned int q98930;  // 0x98930
-    unsigned int q99714;  // 0x99714
-    unsigned int q624944;  // 0x624944
-    unsigned int q628500;  // 0x628500
-    unsigned int q1283474;  // 0x1283474
-    unsigned int q1388694;  // 0x1388694
-    unsigned int q6441284;  // 0x6441284
-    unsigned int q19412084;  // 0x19412084
-    unsigned int q20481684;  // 0x20481684
-    unsigned int q423698564;  // 0x423698564
-    unsigned int q541595268;  // 0x541595268
-    unsigned int q22571209320;  // 0x22571209320
-    unsigned int q1612552106354;  // 0x1612552106354
-    unsigned int q2359835005728;  // 0x2359835005728
-    unsigned int q254497877309523350;  // 0x254497877309523350
 // --- flat members (END) ---
     char sub_6EF450(int a2,  int a3);    // 0x6EF450
 };

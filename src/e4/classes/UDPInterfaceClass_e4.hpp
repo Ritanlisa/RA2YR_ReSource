@@ -10,6 +10,26 @@ struct UDPInterfaceClass {
     void* vtable1;  // 0x0
     bool Initialized;  // 0x4
     unsigned short BoundPort;  // 0x6
+    unsigned int Socket;
+    unsigned int q3F06C;
+    unsigned int q3F070;
+    unsigned int q3F330;
+    unsigned int q3F334;
+    unsigned int q3F554;
+    unsigned int q3F560;
+    unsigned int u32_3F068;
+    unsigned int u32_3F300;
+    unsigned int u32_3F330;
+    unsigned int u32_3F334;
+    unsigned int u32_FC1D0;
+    unsigned int u32_FCC00;
+    unsigned int q010;
+    unsigned int q018;
+    unsigned int q020;
+    unsigned int q0208;
+    unsigned int q3F074;
+    unsigned int qFC18;
+    unsigned int u32_FC1E0;
 // --- flat members (END) ---
     AbstractClass * * Flush();
     AbstractClass * * ProcessSocketIO(int a2, SOCKET s, int a4, unsigned int a5);

@@ -13,7 +13,7 @@
 namespace gamemd {
 int DialogClass::GetFlag()
 {
-  return this->q034; /*0x5d6353*/
+  return (int)(this->q034);
 }
 }
 // 0x775BC0
@@ -50,7 +50,7 @@ int DialogClass::Reposition(SkirmishDialog * aP0, LPARAM a2)
   }
   else
   {
-    DialogParamA = CreateDialogParamA(g_hInstance, (LPCSTR)0xC6, 0, sub_775B40, 0); /*0x775cac*/
+    DialogParamA = (int)(CreateDialogParamA(g_hInstance, (LPCSTR)0xC6, 0, sub_775B40, 0));
     GetClientRect(DialogParamA, &v10); /*0x775cb4*/
     DestroyWindow(DialogParamA); /*0x775cbb*/
     right = v10.right; /*0x775cc1*/
@@ -78,9 +78,9 @@ ATOM DialogClass::RegisterWinClasses()
   result = 1; /*0x60d456*/
   if ( dword_AC48CC != 1 ) /*0x60d460*/
   {
-    dword_AC48CC = 1; /*0x60d469*/
-    WndClass.hInstance = g_hInstance; /*0x60d48a*/
-    WndClass.style = 3; /*0x60d496*/
+    dword_AC48CC = (unsigned int)((LPCSTR)(1));
+    WndClass.hInstance = (HINSTANCE)((LPCSTR)(g_hInstance));
+    WndClass.style = (LPCSTR)(3);
     WndClass.lpfnWndProc = (WNDPROC)GameScreen::DlgProc; /*0x60d49e*/
     WndClass.cbClsExtra = 0; /*0x60d4a6*/
     WndClass.cbWndExtra = 0; /*0x60d4aa*/

@@ -12,7 +12,6 @@ struct E4Recv_593AF0 {
     unsigned int q034;  // 0x34
     unsigned int q130;  // 0x130
     unsigned int q304;  // 0x304
-    unsigned int q153094;  // 0x153094
 // --- flat members (END) ---
     char PlaceMapSeedCityBlockVariant2(short * a2,  short * a3,  ObjectClass * aP2);    // 0x593AF0
 };

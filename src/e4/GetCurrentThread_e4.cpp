@@ -9,6 +9,6 @@
 namespace gamemd {
 int GetCurrentThread_0()
 {
-  return GetCurrentThread();
+  return (int)(GetCurrentThread());
 }
 }

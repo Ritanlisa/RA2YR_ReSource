@@ -23,13 +23,13 @@ int MechLocomotionClass::BeginMove(int * a1, int * a2)
 {
   int result; // eax
 
-  result = SwizzleManager::SaveLoad((int *)a1->LocomotionClass, a2); /*0x5b19ab*/
+  result = (int)(SwizzleManager::SaveLoad((int *)a1->LocomotionClass, a2));
   if ( result >= 0 ) /*0x5b19b2*/
   {
     if ( a1 ) /*0x5b19b6*/
     {
-      *(_DWORD *)a1->LocomotionClass = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5b19b8*/
-      *(_DWORD *)&a1->LocomotionClass[4] = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5b19be*/
+      *(unsigned int *)a1->LocomotionClass = (void*)&MechLocomotionClass_vftable; /*0x5b19b8*/
+      *(unsigned int *)&a1->LocomotionClass[4] = (void*)&MechLocomotionClass_vftable; /*0x5b19be*/
     }
   }
   return result; /*0x5b19c5*/
@@ -46,8 +46,8 @@ int MechLocomotionClass::StubReturn52()
 namespace gamemd {
 MechLocomotionClass * MechLocomotionClass::ProcessMove(char a2)
 {
-  *(_DWORD *)this->LocomotionClass = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5b1b53*/
-  *(_DWORD *)&this->LocomotionClass[4] = &(void*)(void*)&MechLocomotionClass_vftable; /*0x5b1b59*/
+  *(unsigned int *)this->LocomotionClass = (void*)&MechLocomotionClass_vftable; /*0x5b1b53*/
+  *(unsigned int *)&this->LocomotionClass[4] = (void*)&MechLocomotionClass_vftable; /*0x5b1b59*/
   LocomotionClass::Construct(); /*0x5b1b60*/
   if ( (a2 & 1) != 0 ) /*0x5b1b6a*/
     RA2_OPDEL(); /*0x5b1b6d*/

@@ -52,10 +52,10 @@ SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
   this->Height = 1; /*0x6b5287*/
   *(&this->q10C2) = 0; /*0x6b528d*/
   *(&this->q10C3) = 0; /*0x6b5294*/
-  *(_DWORD *)this = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b529b*/
-  this->vtable2 = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b52a1*/
-  this->vtable3 = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b52a7*/
-  this->vtable4 = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b52ae*/
+  *(unsigned int *)this = (void*)&SmudgeTypeClass_vftable; /*0x6b529b*/
+  this->vtable2 = (void*)&SmudgeTypeClass_vftable; /*0x6b52a1*/
+  this->vtable3 = (void*)&SmudgeTypeClass_vftable; /*0x6b52a7*/
+  this->vtable4 = (void*)&SmudgeTypeClass_vftable; /*0x6b52ae*/
   AbstractClass::GenerateUniqueID((int)(this + 4)); /*0x6b52b5*/
   this->q22F = 1; /*0x6b52ba*/
   *(&this->q0E01) = 0; /*0x6b52c7*/
@@ -66,7 +66,7 @@ SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
   if ( dword_A8EC28 < dword_A8EC20 /*0x6b5322*/
     || (byte_A8EC25 || !dword_A8EC20)
     && dword_A8EC2C > 0
-    && (v4 = (*(unsigned __int8 (__thiscall **)(int *, int, _DWORD))(dword_A8EC18 + 8))(
+    && (v4 = (*(uint8_t (__thiscall **)(int *, int, unsigned int))(dword_A8EC18 + 8))(
                &dword_A8EC18,
                dword_A8EC20 + dword_A8EC2C,
                0) == 0,
@@ -74,7 +74,7 @@ SmudgeTypeClass::SmudgeTypeClass(ObjectClass * aP1)
         !v4) )
   {
     dword_A8EC28 = v3 + 1; /*0x6b5327*/
-    *((_DWORD *)dword_A8EC1C + v3) = this; /*0x6b5331*/
+    *((unsigned int *)dword_A8EC1C + v3) = this; /*0x6b5331*/
     v3 = dword_A8EC28; /*0x6b5334*/
   }
   v5 = 0; /*0x6b5339*/
@@ -104,7 +104,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
   int v7; // ebx
   int v8; // edx
   int Width; // ecx
-  _DWORD *v10; // esi
+  unsigned int *v10; // esi
   int v11; // eax
   int v12; // [esp-1Ch] [ebp-2Ch]
   int v13; // [esp+8h] [ebp-8h] BYREF
@@ -123,7 +123,7 @@ void SmudgeTypeClass::vt_entry_A0(int * a2, int * a3, int a4, int a5, short * a6
       v13 += 60 * (a4 / Width - a4 % Width) / 2; /*0x6b5661*/
     }
     v10 = CellCoord::To_CellObj((CellCoord *)&stru_87F5F0.__pad_58[416], a6); /*0x6b5674*/
-    v12 = *((__int16 *)v10 + 134); /*0x6b568a*/
+    v12 = *((int16_t *)v10 + 134); /*0x6b568a*/
     v11 = ZCoordToScreenY(a5); /*0x6b568c*/
     DrawToSurfaceSHP((int)g_DSurface_Hidden_2, v10[13], v7, 0, &v13, a3, 3584, 0, -1 - v11, 0, v12, 0, 0, 0, 0, 0); /*0x6b56b4*/
   }
@@ -141,21 +141,21 @@ int SmudgeTypeClass::GetSize(unsigned char *** aP1, void * a1, void * a2)
   INIClass::ResetSection((INIClass *)a2); /*0x6b56e3*/
   if ( ObjectTypeClass::LoadFromINI((ObjectTypeClass *)this, a2) ) /*0x6b56eb*/
   {
-    Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->?, aCrater, this->Crater); /*0x6b570b*/
+    Bool_Overwrite = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)this->?, aCrater, this->Crater); /*0x6b570b*/
     Burn = this->Burn; /*0x6b5710*/
     this->Crater = Bool_Overwrite; /*0x6b5716*/
-    v6 = INIClass::ReadBool_Overwrite((int *)a2, (unsigned __int8 *)this->?, aBurn, Burn); /*0x6b5725*/
+    v6 = INIClass::ReadBool_Overwrite((int *)a2, (uint8_t *)this->?, aBurn, Burn); /*0x6b5725*/
     Width = this->Width; /*0x6b5732*/
     this->Burn = v6; /*0x6b5739*/
     this->Width = INIClass::ReadInt_Overwrite( /*0x6b5744*/
                     (bool *)a2,
-                    (unsigned __int8 *)this->?,
-                    (unsigned __int8 *)&stru_82BA00.?[151],
+                    (uint8_t *)this->?,
+                    (uint8_t *)&stru_82BA00.?[151],
                     Width);
     this->Height = INIClass::ReadInt_Overwrite( /*0x6b575e*/
                      (bool *)a2,
-                     (unsigned __int8 *)this->?,
-                     (unsigned __int8 *)g_INI_Key_Height,
+                     (uint8_t *)this->?,
+                     (uint8_t *)g_INI_Key_Height,
                      this->Height);
     if ( this->? ) /*0x6b5764*/
       _makepath(Buffer, 0, 0, this->?, (const char *)&off_7E1BC6 + 112 * dword_A8B230[130].uniqueId); /*0x6b57b4*/
@@ -167,7 +167,7 @@ int SmudgeTypeClass::GetSize(unsigned char *** aP1, void * a1, void * a2)
   }
   else
   {
-    IDA_LOBYTE(result) = 0; /*0x6b57db*/
+    IDA_LOBYTE(result, unsigned int a2) = 0; /*0x6b57db*/
   }
   return result; /*0x6b57cd*/
 }
@@ -179,10 +179,10 @@ SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass *a2, char a3, void * a1)
   SmudgeTypeClass *v6; // [esp+4h] [ebp-4h] BYREF
 
   Image = this->?; /*0x6b6164*/
-  this->ObjectTypeClass = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b616a*/
-  this->? = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b6172*/
-  this->? = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b6179*/
-  this->? = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b6180*/
+  this->ObjectTypeClass = (void*)&SmudgeTypeClass_vftable; /*0x6b616a*/
+  this->? = (void*)&SmudgeTypeClass_vftable; /*0x6b6172*/
+  this->? = (void*)&SmudgeTypeClass_vftable; /*0x6b6179*/
+  this->? = (void*)&SmudgeTypeClass_vftable; /*0x6b6180*/
   if ( Image ) /*0x6b6187*/
   {
     RA2_OPDEL(Image); /*0x6b618a*/
@@ -190,15 +190,15 @@ SmudgeTypeClass * SmudgeTypeClass::ddtor(AbstractClass *a2, char a3, void * a1)
   }
   AbstractClass::AnnounceExpiredPointer(&this->ObjectTypeClass, 1); /*0x6b61a0*/
   v6 = this; /*0x6b61b5*/
-  v4 = (*(int (__thiscall **)(_BYTE *, SmudgeTypeClass **))(*(_DWORD *)&stru_A8EB00.?[52] + 16))( /*0x6b61b9*/
+  v4 = (*(int (__thiscall **)(unsigned char *, SmudgeTypeClass **))(*(unsigned int *)&stru_A8EB00.?[52] + 16))( /*0x6b61b9*/
          &stru_A8EB00.?[52],
          &v6);
   if ( v4 != -1 && v4 < *(int *)&stru_A8EB00.?[68] ) /*0x6b61c9*/
   {
-    --*(_DWORD *)&stru_A8EB00.?[68]; /*0x6b61ce*/
+    --*(unsigned int *)&stru_A8EB00.?[68]; /*0x6b61ce*/
     for ( ; /*0x6b61d4*/
           v4 < *(int *)&stru_A8EB00.?[68];
-          *(_DWORD *)(*(_DWORD *)&stru_A8EB00.?[56] + 4 * v4 - 4) = *(_DWORD *)(*(_DWORD *)&stru_A8EB00.?[56] + 4 * v4) )
+          *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[56] + 4 * v4 - 4) = *(unsigned int *)(*(unsigned int *)&stru_A8EB00.?[56] + 4 * v4) )
     {
       ++v4; /*0x6b61dc*/
     }
@@ -214,7 +214,7 @@ bool SmudgeTypeClass::GetType(short * a2, int a3)
   UnitClass *v4; // eax
   int v5; // edx
   bool result; // al
-  _DWORD v7[3]; // [esp+4h] [ebp-Ch] BYREF
+  unsigned int v7[3]; // [esp+4h] [ebp-Ch] BYREF
 
   v4 = (UnitClass *)RA2_OPNEW(0xB0u); /*0x6b555b*/
   result = 0; /*0x6b55a7*/
@@ -266,10 +266,10 @@ int SmudgeTypeClass::LoadTypeData(ObjectTypeClass * aP0, int aP1)
     if ( aP0 ) /*0x6b5866*/
     {
       ObjectTypeClass::Construct((ObjectTypeClass *)aP0, (int)&aP1); /*0x6b586f*/
-      aP0->ObjectTypeClass = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b5874*/
-      aP0->? = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b587a*/
-      aP0->? = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b5881*/
-      aP0->? = &(void*)(void*)&SmudgeTypeClass_vftable; /*0x6b5888*/
+      aP0->ObjectTypeClass = (void*)&SmudgeTypeClass_vftable; /*0x6b5874*/
+      aP0->? = (void*)&SmudgeTypeClass_vftable; /*0x6b587a*/
+      aP0->? = (void*)&SmudgeTypeClass_vftable; /*0x6b5881*/
+      aP0->? = (void*)&SmudgeTypeClass_vftable; /*0x6b5888*/
     }
     VoxelAnimType::LoadAnim((char *)aP0); /*0x6b5891*/
     ObjectTypeClass::Load2DArt((char *)aP0); /*0x6b5898*/

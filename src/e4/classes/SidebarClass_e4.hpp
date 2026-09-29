@@ -595,6 +595,16 @@ struct SidebarClass {
     unsigned int q153C;  // 0x153C
     unsigned int q1540;  // 0x1540
     HouseClass* q1544;  // 0x1544
+    unsigned int SidebarClass_field_0x0;
+    unsigned int SidebarClass_field_0x5C;
+    unsigned int SidebarClass_field_0x68;
+    unsigned int __pad_CD2;
+    unsigned int calcSidebarRect;
+    unsigned int q2288;
+    unsigned int u32_539C;
+    unsigned int u32_53A6;
+    unsigned int u32_53A7;
+    unsigned int UpdateStrips;
 // --- flat members (END) ---
     GadgetClass * * LoadResources();
     int CalcBounds(char a1);

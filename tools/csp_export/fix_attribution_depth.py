@@ -95,6 +95,7 @@ print('observations:', n_obs, '| (cls,off) groups:', len(obs))
 
 # ---- 深度升级 ----
 upgrades = {}
+ambig = {}
 n_in = n_ooo = n_up = n_ambig = 0
 for (cls, off), fns in sorted(obs.items()):
     n_in += 0 if off >= LATT[cls]['size'] else 1
@@ -108,6 +109,13 @@ for (cls, off), fns in sorted(obs.items()):
     target = lca(S)
     if not target or target == cls:
         n_ambig += 1  # 跨分支只交于 cls: subsumption 保持基类(正确)
+        for fn in fns:
+            f = csp['functions'][fn]
+            p0 = (f.get('params') or [{}])[0]
+            p0['subsumption_note'] = (
+                'off 0x%X spans multiple subclasses of %s; base class is the '
+                'correct LCA (no-evidence subclass vote forbidden)' % (off, cls))
+            ambig[fn] = {'base': cls, 'off': off, 'S_size': len(S)}
         continue
     if LATT[target]['size'] <= off and len(S) > 1:
         # LCA 自身不覆盖 off(own 起点族): 类型仍升 LCA(格语义),
@@ -128,6 +136,7 @@ print(f'in-bounds groups: {n_in} | out-of-bounds groups: {n_ooo}')
 print(f'upgraded groups: {n_up} | ambiguous(keep base): {n_ambig}')
 json.dump(csp, open(csp_path, 'w', encoding='utf-8'))
 json.dump(upgrades, open('.omo/depth_upgrades.json', 'w'), indent=1)
+json.dump(ambig, open('.omo/depth_ambiguous.json', 'w'), indent=1)
 
 # 函数级统计
 fn_up = set()

@@ -7,9 +7,9 @@ namespace gamemd {
 
 struct RulesClass {
 // --- flat members (BEGIN) ---
-    char DetailMinFrameRateNormal[4];  // 0x0
-    char DetailMinFrameRateMovie[4];  // 0x4
-    char DetailBufferZoneWidth[4];  // 0x8
+    unsigned int DetailMinFrameRateNormal;  // 0x0
+    void* ;  // 0x4
+    unsigned int DetailBufferZoneWidth;  // 0x8
     char AmmoCrateDamage[4];  // 0xC
     unsigned char u8_D;  // 0xD
     UnitTypeClass* LargeVisceroid;  // 0x10
@@ -1098,6 +1098,7 @@ struct RulesClass {
     float DirectRockingCoefficient;  // 0x1854
     float FallBackCoefficient;  // 0x1858
     char CrewCount[4];  // 0x185C
+    unsigned int DetailMinFrameRateMovie;
 // --- flat members (END) ---
     INIClass * * ReadMovies();
     INIClass * * ReadPowerupsSection();

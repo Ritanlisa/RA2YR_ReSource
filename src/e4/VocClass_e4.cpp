@@ -27,13 +27,13 @@ int VocClass::Release()
       if ( (this->Volume[0] & 2) != 0 ) /*0x405317*/
         Voice::Stop(v1); /*0x405319*/
       AudioStream::ReleaseChannel((AudioStream *)this->pVoiceChannel); /*0x405324*/
-      *((_DWORD *)this->pVoiceChannel + 48) = 0; /*0x40532f*/
-      *((_DWORD *)this->pVoiceChannel + 47) = 0; /*0x40533b*/
-      *((_DWORD *)this->pVoiceChannel + 45) = 0; /*0x405347*/
-      *((_DWORD *)this->pVoiceChannel + 46) = 0; /*0x405353*/
-      *((_DWORD *)this->pVoiceChannel + 36) = 0; /*0x40535f*/
-      *((_DWORD *)this->pVoiceChannel + 38) = 0; /*0x40536b*/
-      *((_DWORD *)this->pVoiceChannel + 39) = 0; /*0x405377*/
+      *((unsigned int *)this->pVoiceChannel + 48) = 0; /*0x40532f*/
+      *((unsigned int *)this->pVoiceChannel + 47) = 0; /*0x40533b*/
+      *((unsigned int *)this->pVoiceChannel + 45) = 0; /*0x405347*/
+      *((unsigned int *)this->pVoiceChannel + 46) = 0; /*0x405353*/
+      *((unsigned int *)this->pVoiceChannel + 36) = 0; /*0x40535f*/
+      *((unsigned int *)this->pVoiceChannel + 38) = 0; /*0x40536b*/
+      *((unsigned int *)this->pVoiceChannel + 39) = 0; /*0x405377*/
       this->pVoiceChannel = 0; /*0x40537d*/
     }
     result = this->ActiveBufferCount; /*0x405383*/
@@ -68,7 +68,7 @@ char * VocClass::GetSampleNameByIndex(int a1)
 
   if ( a1 < 0 || a1 >= g_VocPlayState ) /*0x75159a*/
     return g_Str__none_; /*0x7515b5*/
-  v1 = (char *)**((_DWORD **)g_VocAudioConfig + a1); /*0x7515a4*/
+  v1 = (char *)**((unsigned int **)g_VocAudioConfig + a1); /*0x7515a4*/
   if ( v1 ) /*0x7515a8*/
     return VocClass::GetSampleName(v1); /*0x7515aa*/
   else

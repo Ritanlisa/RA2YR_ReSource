@@ -20,7 +20,7 @@ void Player::BuildListString()
   wchar_t *v5; // eax
   DeleteAndZero v6; // [esp+Ch] [ebp-Ch] BYREF
 
-  *(_WORD *)this = 0; /*0x5e8dc8*/
+  *(unsigned short *)this = 0; /*0x5e8dc8*/
   v2 = (wchar_t **)dword_A8DA90; /*0x5e8dcd*/
   do /*0x5e8e89*/
   {
@@ -45,7 +45,7 @@ void Player::BuildListString()
     {
       WideString::Assign_Alt((void **)&v6, v3); /*0x5e8e1e*/
     }
-    v5 = WideString::GetOrEmpty((wchar_t **)&v6); /*0x5e8e5d*/
+    v5 = (wchar_t *)(WideString::GetOrEmpty((wchar_t **)&v6));
     wcscat(v5); /*0x5e8e64*/
     wcscat(asc_8304FC); /*0x5e8e6f*/
     DeleteAndZero::Alt(&v6); /*0x5e8e7b*/

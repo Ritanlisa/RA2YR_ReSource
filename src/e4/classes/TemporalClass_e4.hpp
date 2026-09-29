@@ -24,10 +24,17 @@ struct TemporalClass {
     int q028;  // 0x28
     bool q02B;  // 0x2B
     void* q02C;  // 0x2C
-    char TemporalClass_field_30[4];  // 0x30
+    unsigned int TemporalClass_field_30;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int alignmentPadding;  // 0x33
     char TemporalClass_field_34[4];  // 0x34
+    unsigned int __pad_28;
+    unsigned int u32_308;
+    unsigned int u32_38;
+    unsigned int u32_3C;
+    unsigned int u32_48;
+    unsigned int u32_4A8;
+    unsigned int u32_A6;
 // --- flat members (END) ---
     char CanWarpTarget(unsigned int * a1);
     int Constructor();

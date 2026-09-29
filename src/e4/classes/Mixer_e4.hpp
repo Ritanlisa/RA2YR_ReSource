@@ -7,7 +7,9 @@ namespace gamemd {
 
 struct Mixer {
 // --- flat members (BEGIN) ---
-    char Mixer_field_00[4];  // 0x0
+    unsigned int Mixer_field_00;  // 0x0
+    unsigned int u32_4;
+    unsigned int u32_8;
 // --- flat members (END) ---
     int ReleaseChannel();
     int RequestAllBuffers();

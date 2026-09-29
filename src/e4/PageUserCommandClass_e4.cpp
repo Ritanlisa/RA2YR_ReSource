@@ -16,11 +16,13 @@
 #include "e4/classes/OverlayTypeClass_e4.hpp"
 #include "e4/classes/Tactical_e4.hpp"
 #include "e4/classes/AbstractClass_e4.hpp"
+#include "e4/classes/Object_e4.hpp"
+#include "e4/classes/ObjectClass_e4.hpp"
 
 // 0x537DD0
 PageUserCommandClass::PageUserCommandClass()
 {
-  *(_DWORD *)this->CommandClass = &(void*)(void*)&PageUserCommandClass_vftable; /*0x537dd2*/
+  *(unsigned int *)this->CommandClass = (void*)&PageUserCommandClass_vftable; /*0x537dd2*/
   return this->CommandClass; /*0x537dd8*/
 }
 // 0x537DE0

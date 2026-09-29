@@ -33,34 +33,6 @@ struct E4Recv_578B70 {
     unsigned int q5170;  // 0x5170
     unsigned int q5444;  // 0x5444
     unsigned int q5460;  // 0x5460
-    unsigned int q20848;  // 0x20848
-    unsigned int q21600;  // 0x21600
-    unsigned int q133170;  // 0x133170
-    unsigned int q136704;  // 0x136704
-    unsigned int q1255810;  // 0x1255810
-    unsigned int q1257840;  // 0x1257840
-    unsigned int q1257874;  // 0x1257874
-    unsigned int q1271138;  // 0x1271138
-    unsigned int q19232884;  // 0x19232884
-    unsigned int q19337528;  // 0x19337528
-    unsigned int q421676434;  // 0x421676434
-    unsigned int q421734450;  // 0x421734450
-    unsigned int q422802728;  // 0x422802728
-    unsigned int q422806914;  // 0x422806914
-    unsigned int q17741071440;  // 0x17741071440
-    unsigned int q17758693160;  // 0x17758693160
-    unsigned int q1611689177458;  // 0x1611689177458
-    unsigned int q1612096024928;  // 0x1612096024928
-    unsigned int q1612096536630;  // 0x1612096536630
-    unsigned int q388224393901144;  // 0x388224393901144
-    unsigned int q388226446628134;  // 0x388226446628134
-    unsigned int q388267560290600;  // 0x388267560290600
-    unsigned int q388267565606448;  // 0x388267565606448
-    unsigned int q254491193019355458;  // 0x254491193019355458
-    unsigned int q254495664600278088;  // 0x254495664600278088
-    unsigned int q687470288687827604568;  // 0x687470288687827604568
-    unsigned int q687471499340210910098;  // 0x687471499340210910098
-    unsigned int q687471499344198729864;  // 0x687471499344198729864
 // --- flat members (END) ---
     int sub_578B70(short * a2);  // 0x578B70
 };

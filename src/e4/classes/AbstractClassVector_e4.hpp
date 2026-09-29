@@ -15,6 +15,9 @@ struct AbstractClassVector {
     unsigned char q014;  // 0x14
     unsigned char q018;  // 0x18
     unsigned char q01C;  // 0x1C
+    unsigned int m_1;
+    unsigned int m_8;
+    unsigned int m_C;
 // --- flat members (END) ---
     int Read(unsigned int * a2);
     unsigned int * Construct(void* aP1, void* aP2);

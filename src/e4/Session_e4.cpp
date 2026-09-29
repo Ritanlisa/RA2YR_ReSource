@@ -69,38 +69,38 @@ int Session::PrepareGame()
   int v3; // eax
   char *Flagged; // eax
   char *v5; // eax
-  int result; // eax
+  void ** result;
   char v7; // bl
-  Skirmish *v8; // esi
+  unsigned int v8;
   int v9; // esi
   int v10; // edi
   int v11; // esi
   Skirmish *v12; // esi
-  _DWORD *v13; // eax
+  unsigned int *v13; // eax
   char v14; // al
-  bool v15; // bl
+  void ** v15;
   ScenarioClass *v16; // [esp+0h] [ebp-208h]
-  int v17; // [esp+10h] [ebp-1F8h]
+  void ** v17;
   RawFileClass v18; // [esp+1Ch] [ebp-1ECh] BYREF
-  _BYTE Str[452]; // [esp+40h] [ebp-1C8h] BYREF
-  __int16 v20; // [esp+204h] [ebp-4h]
+  unsigned char Str[452]; // [esp+40h] [ebp-1C8h] BYREF
+  int16_t v20; // [esp+204h] [ebp-4h]
   char v21; // [esp+206h] [ebp-2h]
 
-  v1 = g_UIControlState; /*0x5e74e9*/
+  v1 = (gamemd::Skirmish *)(g_UIControlState);
   if ( g_UIControlState ) /*0x5e74f6*/
   {
     ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5e74fa*/
     RA2_OPDEL(v1); /*0x5e7500*/
   }
   g_UIControlState = 0; /*0x5e7513*/
-  switch ( *(_DWORD *)&dword_A8B238 ) /*0x5e7521*/
+  switch ( *(unsigned int *)&dword_A8B238 ) /*0x5e7521*/
   {
     case 1: /*0x5e7521*/
     case 2: /*0x5e7521*/
       if ( FindAndValidateMap(byte_A8B8E0, dword_A8BB04, &byte_A8BAE2, dword_A8BB08, 0) ) /*0x5e774c*/
         goto LABEL_42; /*0x5e7753*/
       memset(Str, 0, 250); /*0x5e7764*/
-      *(_DWORD *)Str = 119; /*0x5e776c*/
+      *(unsigned int *)Str = 119; /*0x5e776c*/
       result = Timer::GetTicks(); /*0x5e7774*/
       v9 = 1800; /*0x5e7779*/
       v17 = result; /*0x5e777e*/
@@ -108,7 +108,7 @@ int Session::PrepareGame()
       {
         if ( v17 != -1 ) /*0x5e7793*/
         {
-          result = Timer::GetTicks() - v17; /*0x5e779e*/
+          result = (int)(Timer::GetTicks() - v17);
           if ( result >= 1800 ) /*0x5e77a4*/
             return result; /*0x5e77a4*/
           v9 = 1800 - result; /*0x5e77aa*/
@@ -120,7 +120,7 @@ int Session::PrepareGame()
               result > 0;
               result = Count::GetCountQueue((Count *)&unk_A8EA70) )
         {
-          result = v17; /*0x5e77da*/
+          result = (void **)(v17);
           v11 = 1800; /*0x5e77de*/
           if ( v17 != -1 ) /*0x5e77e4*/
           {
@@ -147,7 +147,7 @@ int Session::PrepareGame()
       memset(Str, 0, sizeof(Str)); /*0x5e7571*/
       v20 = 0; /*0x5e7573*/
       v21 = 0; /*0x5e7575*/
-      *(_DWORD *)Str = 27; /*0x5e7576*/
+      *(unsigned int *)Str = 27; /*0x5e7576*/
       break; /*0x5e7576*/
     case 4: /*0x5e7521*/
       if ( !Dialog::FindByHandle((Dialog *)0xC9) ) /*0x5e7609*/
@@ -161,13 +161,12 @@ int Session::PrepareGame()
         if ( !dword_A8BB08 && strstr(Str, aMpr) && strstr(Str, aYrm) ) /*0x5e76a8*/
           goto LABEL_42; /*0x5e76a8*/
         RawFileClass::Construct(&v18, (int)byte_A8B8E0); /*0x5e76c1*/
-        if ( (unsigned __int8)FileClass::Open(&v18, 0) ) /*0x5e76cc*/
+        if ( (uint8_t)FileClass::Open(&v18, 0) ) /*0x5e76cc*/
           v7 = 1; /*0x5e76d5*/
         RawFileClass::Dtor(&v18); /*0x5e76db*/
         if ( !v7 ) /*0x5e76e2*/
         {
-  LABEL_42:
-          v12 = g_UIControlState; /*0x5e7825*/
+  LABEL_42: v12 = (gamemd::Skirmish *)(g_UIControlState);
           if ( g_UIControlState ) /*0x5e782d*/
           {
             ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5e7831*/
@@ -177,7 +176,7 @@ int Session::PrepareGame()
           goto LABEL_44; /*0x5e783f*/
         }
       }
-      if ( (unsigned __int8)IsRandMap::Sed2((IsRandMap *)&dword_A8B238) ) /*0x5e76ef*/
+      if ( (uint8_t)IsRandMap::Sed2((IsRandMap *)&dword_A8B238) ) /*0x5e76ef*/
         return InvalidateRect(0, 0); /*0x5e76ef*/
       v8 = g_UIControlState; /*0x5e76fc*/
       if ( !g_UIControlState ) /*0x5e7704*/
@@ -189,19 +188,19 @@ int Session::PrepareGame()
     default:
   LABEL_44:
       v13 = CCFileClass::Construct((CCFileClass *)Str, byte_A8B8E0); /*0x5e7845*/
-      v14 = (*(int (__thiscall **)(_DWORD *, _DWORD))(*v13 + 20))(v13, 0); /*0x5e7858*/
-      *(_DWORD *)Str = &(void*)(void*)&CCFileClass_vftable; /*0x5e7864*/
+      v14 = (*(int (__thiscall **)(unsigned int *, unsigned int))(*v13 + 20))(v13, 0); /*0x5e7858*/
+      *(unsigned int *)Str = (void*)&CCFileClass_vftable; /*0x5e7864*/
       v15 = v14 == 0; /*0x5e786c*/
-      *(_DWORD *)&Str[100] = 0; /*0x5e786f*/
+      *(unsigned int *)&Str[100] = 0; /*0x5e786f*/
       Vector::Clear((int)&Str[88]); /*0x5e7876*/
-      *(_DWORD *)Str = &off_7E1668; /*0x5e787f*/
+      *(unsigned int *)Str = &off_7E1668; /*0x5e787f*/
       result = BufferIOFileClass::Dtor((BufferIOFileClass *)Str); /*0x5e7887*/
       if ( !v15 ) /*0x5e788e*/
       {
-        result = RA2_OPNEW(4u); /*0x5e7892*/
+        result = (void **)((int)(RA2_OPNEW(4u)));
         if ( !result ) /*0x5e789c*/
         {
-          g_UIControlState = 0; /*0x5e78e4*/
+          g_UIControlState = (int)(0);
           return result; /*0x5e78f4*/
         }
         result = (int)unknown_libname_27((ObjectClass *)result); /*0x5e78a0*/
@@ -209,7 +208,7 @@ int Session::PrepareGame()
       }
       if ( g_UIControlState ) /*0x5e78b0*/
       {
-        if ( (unsigned __int8)IsRandMap::Sed2((IsRandMap *)&dword_A8B238) ) /*0x5e78b7*/
+        if ( (uint8_t)IsRandMap::Sed2((IsRandMap *)&dword_A8B238) ) /*0x5e78b7*/
         {
           ScenarioClass::CopyStartPositions(v16); /*0x5e78f5*/
           return InvalidateRect(0, 0); /*0x5e78fa*/
@@ -220,17 +219,17 @@ int Session::PrepareGame()
           return InvalidateRect(0, 0); /*0x5e78d3*/
         }
       }
-      return result;
+      return (int)(result);
   }
   while ( 1 ) /*0x5e757e*/
   {
-    if ( *(_DWORD *)&dword_A8B238 == 3 ) /*0x5e7584*/
+    if ( *(unsigned int *)&dword_A8B238 == 3 ) /*0x5e7584*/
     {
       v3 = Network::SendMessage(&unk_A8E9C0.Socket, (int)Str, 47, 1, (int)&stru_A8BB1C, 0, 0); /*0x5e759d*/
     }
     else
     {
-      Flagged = GameSettings::FindFlagged(); /*0x5e75a4*/
+      Flagged = (int)(GameSettings::FindFlagged());
       if ( !Flagged ) /*0x5e75ab*/
         goto LABEL_12; /*0x5e75ab*/
       v5 = CharToWideString(Flagged + 36); /*0x5e75b0*/
@@ -279,7 +278,7 @@ int Session::StartGame()
   ObjectClass *v3; // eax
   Skirmish *v4; // eax
 
-  if ( !(unsigned __int8)IsRandMap::Sed(*(_DWORD *)(dword_A8B8CC + 4 * *(_DWORD *)&stru_A8B250.__pad_0[4])) ) /*0x5ed381*/
+  if ( !(uint8_t)IsRandMap::Sed(*(unsigned int *)(dword_A8B8CC + 4 * *(unsigned int *)&stru_A8B250.__pad_0[4])) ) /*0x5ed381*/
     return Session::PrepareGame(); /*0x5ed3f1*/
   v2 = g_UIControlState; /*0x5ed38b*/
   if ( g_UIControlState ) /*0x5ed393*/
@@ -287,14 +286,14 @@ int Session::StartGame()
     ComPtr::Dtor((ComPtr *)g_UIControlState); /*0x5ed397*/
     RA2_OPDEL(v2); /*0x5ed39d*/
   }
-  v3 = (ObjectClass *)RA2_OPNEW(4u); /*0x5ed3a7*/
+  v3 = (int)((ObjectClass *)RA2_OPNEW(4u));
   if ( v3 ) /*0x5ed3b2*/
     v4 = (Skirmish *)unknown_libname_27(v3); /*0x5ed3b6*/
   else
     v4 = 0; /*0x5ed3bd*/
   g_UIControlState = v4; /*0x5ed3c6*/
   Surface::LoadToSurfaceSHP((Surface *)v4, ExistingFileName); /*0x5ed3cb*/
-  if ( !*(_DWORD *)g_UIControlState ) /*0x5ed3d6*/
+  if ( !*(unsigned int *)g_UIControlState ) /*0x5ed3d6*/
     Session::PrepareGame(); /*0x5ed3dd*/
   return InvalidateRect(0, 0); /*0x5ed3ed*/
 }

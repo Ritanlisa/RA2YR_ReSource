@@ -25,6 +25,10 @@ struct CChatEventSink {
     unsigned char q030;  // 0x30
     unsigned char q031;  // 0x31
     unsigned int q033;  // 0x33
+    unsigned int CChatEventSink_field_0x04;
+    unsigned int CChatEventSink_field_0x08;
+    unsigned int __pad_0;
+    unsigned int u32_84;
 // --- flat members (END) ---
     Coord * * HandleChatChannelList(int a1, int a2, const char * a3);
     ObjectClass * DeleteAndZero(char a2);

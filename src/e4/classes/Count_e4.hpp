@@ -8,6 +8,11 @@ namespace gamemd {
 struct Count {
 // --- flat members (BEGIN) ---
     char m_RefCount[4];  // 0x0
+    unsigned int __pad_0;
+    unsigned int u32_1C;
+    unsigned int u32_38;
+    unsigned int u32_4;
+    unsigned int u32_8;
 // --- flat members (END) ---
     AbstractClass * * DecrementRefCountsAudio();
     unsigned int* ddtor();

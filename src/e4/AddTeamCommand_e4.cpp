@@ -11,8 +11,8 @@
 namespace gamemd {
 unsigned int * AddTeamCommand::Construct(int a2)
 {
-  this->AddTeamCommand_field_00 = a2; /*0x5360b6*/
-  *(_DWORD *)this->CommandClass = &(void*)(void*)&AddTeamCommandClass_vftable; /*0x5360b9*/
+  this->AddTeamCommand_field_00 = (unsigned int *)(a2);
+  *(unsigned int *)this->CommandClass = (void*)&AddTeamCommandClass_vftable; /*0x5360b9*/
   return this->CommandClass; /*0x5360bf*/
 }
 } // namespace gamemd
@@ -20,7 +20,7 @@ unsigned int * AddTeamCommand::Construct(int a2)
 namespace gamemd {
 void * AddTeamCommand::AddRef()
 {
-  sprintf(&stru_A8EB00.?[2512], "TeamAddSelect_%d", *(_DWORD *)&this->m_1[3]); /*0x5360de*/
+  sprintf(&stru_A8EB00.?[2512], "TeamAddSelect_%d", *(unsigned int *)&this->m_1[3]); /*0x5360de*/
   return &stru_A8EB00.?[2512]; /*0x5360eb*/
 }
 } // namespace gamemd

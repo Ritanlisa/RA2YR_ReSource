@@ -12,7 +12,7 @@
 namespace gamemd {
 void Main::CreateDialog()
 {
-  unsigned __int16 v2; // cx
+  uint16_t v2; // cx
   HWND Dialog; // eax
   LONG i; // eax
   TechnoTypeClass *v5; // ecx
@@ -32,7 +32,7 @@ void Main::CreateDialog()
     Dialog::Show((Dialog *)this->Main_field_00); /*0x4e1d62*/
     for ( i = dwNewLong; dwNewLong == -1; i = dwNewLong ) /*0x4e1d6e*/
     {
-      if ( (unsigned __int8)Dialog::PumpMessages() == 1 ) /*0x4e1d77*/
+      if ( (uint8_t)Dialog::PumpMessages() == 1 ) /*0x4e1d77*/
         dwNewLong = 2; /*0x4e1d79*/
       if ( !byte_A8E9A0 ) /*0x4e1d88*/
       {

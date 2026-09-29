@@ -34,6 +34,6 @@ HWND BINK::Background_Setup()
     else
       return SendMessageA(v2, 0x4E4u, 0, (LPARAM)aRa2tsL); /*0x52ba4c*/
   }
-  return result; /*0x52ba3c*/
+  return (HWND)(result);
 }
 } // namespace gamemd

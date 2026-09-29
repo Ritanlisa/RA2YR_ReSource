@@ -25,6 +25,6 @@ char * AbstractType::FindName()
     if ( (int)v2 >= (int)&off_817134 ) /*0x40dcc4*/
       return (char *)&dword_817130; /*0x40dccb*/
   }
-  return (&off_816EE0)[2 * v1]; /*0x40dccb*/
+  return (char *)((&off_816EE0)[2 * v1]);
 }
 } // namespace gamemd

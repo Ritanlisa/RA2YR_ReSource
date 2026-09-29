@@ -9,6 +9,9 @@ struct GadgetGrid {
 // --- flat members (BEGIN) ---
     unsigned char q000;  // 0x0
     unsigned char q004;  // 0x4
+    unsigned int q008;
+    unsigned int u32_1E0;
+    unsigned int u32_A;
 // --- flat members (END) ---
     int InsertItem(ObjectClass * aP1);
     int RemoveItem(void* aP1);

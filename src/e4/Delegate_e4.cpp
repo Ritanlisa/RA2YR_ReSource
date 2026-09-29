@@ -23,15 +23,15 @@ namespace gamemd {
 int Delegate::ProcessBitmapStream(char * Src, int a3)
 {
   char *v3; // ebp
-  int v5; // esi
-  _BYTE *v6; // ebx
+  unsigned char * v5;
+  unsigned char *v6; // ebx
   int v7; // ecx
   int v8; // ecx
   int v9; // eax
   int v10; // eax
-  unsigned __int8 *pad_14; // [esp+8h] [ebp-Ch]
+  uint8_t *pad_14; // [esp+8h] [ebp-Ch]
   int v13; // [esp+Ch] [ebp-8h]
-  int Size; // [esp+10h] [ebp-4h]
+  unsigned char * Size;
   int Srca; // [esp+18h] [ebp+4h]
 
   v3 = Src; /*0x42ddb4*/
@@ -40,22 +40,22 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   v13 = 0; /*0x42ddd5*/
   if ( this->field_C ) /*0x42ddce*/
   {
-    v5 = 4; /*0x42ddfb*/
-    pad_14 = (unsigned __int8 *)this->__pad_14; /*0x42de00*/
-    v6 = &this->field_18; /*0x42de04*/
+    v5 = (int)((unsigned char *)(4));
+    pad_14 = (unsigned char *)((uint8_t *)this->__pad_14);
+    v6 = (unsigned char *)(&this->field_18);
     Srca = 3; /*0x42de07*/
   }
   else
   {
-    v5 = 3; /*0x42dde2*/
-    pad_14 = (unsigned __int8 *)&this->field_18; /*0x42dde7*/
-    v6 = this->__pad_14; /*0x42ddeb*/
+    v5 = (int)((unsigned char *)(3));
+    pad_14 = (unsigned char *)((uint8_t *)&this->field_18);
+    v6 = (unsigned char *)(this->__pad_14);
     Srca = 4; /*0x42ddee*/
   }
   v7 = this->field_10; /*0x42de0f*/
   if ( v7 > 0 ) /*0x42de14*/
   {
-    Size = a3; /*0x42de24*/
+    Size = (int)(a3);
     if ( a3 >= v5 - v7 ) /*0x42de28*/
       Size = v5 - v7; /*0x42de2a*/
     memcpy(&pad_14[this->field_10], v3, Size); /*0x42de3e*/
@@ -76,7 +76,7 @@ int Delegate::ProcessBitmapStream(char * Src, int a3)
   for ( ; a3 >= v5; a3 -= v5 ) /*0x42dea5*/
   {
     if ( this->field_C ) /*0x42dea7*/
-      v10 = DecodeBitmapRGB((unsigned __int8 *)v3, v5, v6, Srca); /*0x42dec9*/
+      v10 = DecodeBitmapRGB((uint8_t *)v3, v5, v6, Srca); /*0x42dec9*/
     else
       v10 = EncodeBitmapRGB(v3, v5, v6, Srca); /*0x42deb8*/
     v3 += v5; /*0x42ded2*/
@@ -107,10 +107,10 @@ void * Delegate::Dispatch(Pipe * aP1, Pipe * aP2)
 namespace gamemd {
 unsigned int * Delegate::GetField()
 {
-  this->m_items = 0; /*0x6c95e6*/
-  this->m_count = 0; /*0x6c95e8*/
-  this->Delegate_field_08 = 0; /*0x6c95eb*/
-  *(_DWORD *)&this->m_allocated = 0; /*0x6c95ee*/
+  this->m_items = (unsigned int *)(0);
+  this->m_count = (unsigned int *)(0);
+  this->Delegate_field_08 = (unsigned int *)(0);
+  *(unsigned int *)&this->m_allocated = 0; /*0x6c95ee*/
   return &this->m_items; /*0x6c95f1*/
 }
 } // namespace gamemd
@@ -119,22 +119,22 @@ namespace gamemd {
 void Delegate::Set(AbstractTypeClass * aP1)
 {
   int result; // eax
-  int v4; // ecx
+  void * v4;
 
   if ( this->Straw_field_0x04 != aP1 ) /*0x6c989b*/
   {
     if ( aP1 ) /*0x6c989f*/
     {
-      v4 = aP1->vtable3; /*0x6c98a1*/
+      v4 = (void *)((int)(aP1->vtable3));
       if ( v4 ) /*0x6c98a6*/
       {
-        (*(void (__thiscall **)(int, _DWORD))(v4->q004)(v4, 0); /*0x6c98ac*/
+        (*(void (__thiscall **)(int, unsigned int))(v4->q004)(v4, 0); /*0x6c98ac*/
         aP1->vtable3 = 0; /*0x6c98af*/
       }
     }
-    result = this->Straw_field_0x04; /*0x6c98b6*/
+    result = (unsigned int)(this->Straw_field_0x04);
     if ( result ) /*0x6c98bb*/
-      *(_DWORD *)(result + 8) = 0; /*0x6c98bd*/
+      *(unsigned int *)(result + 8) = 0; /*0x6c98bd*/
     this->Straw_field_0x04 = aP1; /*0x6c98c6*/
     if ( aP1 ) /*0x6c98c9*/
       aP1->vtable3 = this; /*0x6c98cb*/
@@ -170,15 +170,15 @@ int Delegate::ProcessBitmapAndDispatch()
   {
     if ( this->field_C ) /*0x42df4d*/
     {
-      pad_14 = &this->field_18; /*0x42df64*/
-      v5 = DecodeBitmapRGB((unsigned __int8 *)this->__pad_14, v3, &this->field_18, 3); /*0x42df6d*/
+      pad_14 = (void *)((int)(&this->field_18));
+      v5 = (int)(DecodeBitmapRGB((uint8_t *)this->__pad_14, v3, &this->field_18, 3));
     }
     else
     {
-      pad_14 = this->__pad_14; /*0x42df54*/
-      v5 = EncodeBitmapRGB((char *)&this->field_18, v3, this->__pad_14, 4); /*0x42df5d*/
+      pad_14 = (void *)((int)(this->__pad_14));
+      v5 = (int)(EncodeBitmapRGB((char *)&this->field_18, v3, this->__pad_14, 4));
     }
-    v2 = Delegate::Dispatch((Pipe *)this, (int)pad_14, v5); /*0x42df7b*/
+    v2 = (int)(Delegate::Dispatch((Pipe *)this, (int)pad_14, v5));
     this->field_10 = 0; /*0x42df7d*/
   }
   return v2 + GameClass::GetRelatedObject((Pipe *)this); /*0x42df8d*/
@@ -198,7 +198,7 @@ int Delegate::StreamToBuffer(char * a1, int a3)
 
   result = 0; /*0x4a2786*/
   v10 = 0; /*0x4a278c*/
-  if ( *(_DWORD *)&this->__pad_0[12] ) /*0x4a2789*/
+  if ( *(unsigned int *)&this->__pad_0[12] ) /*0x4a2789*/
   {
     v5 = a1; /*0x4a2794*/
     if ( a1 ) /*0x4a279a*/
@@ -213,19 +213,19 @@ int Delegate::StreamToBuffer(char * a1, int a3)
           {
             if ( v7 >= v6 ) /*0x4a27ad*/
               v7 = v6; /*0x4a27af*/
-            memcpy(v5, (const void *)(*(_DWORD *)&this->__pad_0[12] + *(_DWORD *)&this->__pad_14[4]), v7); /*0x4a27bc*/
+            memcpy(v5, (const void *)(*(unsigned int *)&this->__pad_0[12] + *(unsigned int *)&this->__pad_14[4]), v7); /*0x4a27bc*/
             v8 = this->field_1C - v7; /*0x4a27cf*/
             v6 -= v7; /*0x4a27d4*/
-            *(_DWORD *)&this->__pad_14[4] += v7; /*0x4a27d6*/
+            *(unsigned int *)&this->__pad_14[4] += v7; /*0x4a27d6*/
             v10 += v7; /*0x4a27d9*/
             this->field_1C = v8; /*0x4a27dd*/
             v5 += v7; /*0x4a27e0*/
           }
           if ( !v6 ) /*0x4a27e4*/
             break; /*0x4a27e4*/
-          v9 = Delegate::Invoke((Straw *)this, *(_DWORD *)&this->__pad_0[12], this->field_10); /*0x4a27f0*/
+          v9 = Delegate::Invoke((Straw *)this, *(unsigned int *)&this->__pad_0[12], this->field_10); /*0x4a27f0*/
           this->field_1C = v9; /*0x4a27f7*/
-          *(_DWORD *)&this->__pad_14[4] = 0; /*0x4a27fa*/
+          *(unsigned int *)&this->__pad_14[4] = 0; /*0x4a27fa*/
           if ( !v9 ) /*0x4a2801*/
             break; /*0x4a2801*/
         }
@@ -244,18 +244,18 @@ GenericNode * Delegate::Constructor_GenericNode(char a2)
   int Previous; // ecx
   int v4; // eax
 
-  *(_DWORD *)this->__pad_0 = &(void*)(void*)&GenericNode_vftable; /*0x52ae27*/
+  *(unsigned int *)this->__pad_0 = (void*)&GenericNode_vftable; /*0x52ae27*/
   if ( this ) /*0x52ae2d*/
   {
     Previous = this->Previous; /*0x52ae2f*/
     if ( Previous ) /*0x52ae34*/
     {
-      v4 = *(_DWORD *)this->Blowfish; /*0x52ae36*/
+      v4 = *(unsigned int *)this->Blowfish; /*0x52ae36*/
       if ( v4 ) /*0x52ae3b*/
       {
         v4->Previous = Previous; /*0x52ae3d*/
-        *(_DWORD *)(this->Previous + 8) = *(_DWORD *)this->Blowfish; /*0x52ae46*/
-        *(_DWORD *)this->Blowfish = 0; /*0x52ae49*/
+        *(unsigned int *)(this->Previous + 8) = *(unsigned int *)this->Blowfish; /*0x52ae46*/
+        *(unsigned int *)this->Blowfish = 0; /*0x52ae49*/
         this->Previous = 0; /*0x52ae4c*/
       }
     }

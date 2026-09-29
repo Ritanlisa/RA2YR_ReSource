@@ -9,12 +9,25 @@ struct NullModemClass {
 // --- flat members (BEGIN) ---
     void* vtable1;  // 0x0
     int PlayerIndex;  // 0x4
-    void* Active;  // 0x8
+    unsigned int ;  // 0x8
     bool q00A;  // 0xA
     bool q00B;  // 0xB
     void* LastPacketTime;  // 0xC
-    void* PacketsSent;  // 0x10
+    unsigned int ;  // 0x10
     void* PacketsReceived;  // 0x14
+    unsigned int Active3;
+    unsigned int ConnectionClass;
+    unsigned int PlayerIndex4;
+    unsigned int PlayerIndex9;
+    unsigned int u32_1C;
+    unsigned int u32_34;
+    unsigned int u32_38;
+    unsigned int u32_3C;
+    unsigned int u32_51;
+    unsigned int u32_5C;
+    unsigned int u32_68;
+    unsigned int Active;
+    unsigned int PacketsSent;
 // --- flat members (END) ---
     int COMStub();
     int COMStub_Return0(int a1);
